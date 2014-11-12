@@ -235,9 +235,9 @@ static MACHINE_CONFIG_START( dai, dai_state )
 	/* internal ram */
 	MCFG_RAM_ADD(RAM_TAG)
 	MCFG_RAM_DEFAULT_SIZE("48K")
-	
+
 	/* software lists */
-	MCFG_SOFTWARE_LIST_ADD("cass_list","dai_cass")
+	MCFG_SOFTWARE_LIST_ADD("cass_list", "dai_cass")
 MACHINE_CONFIG_END
 
 #define io_dai      io_NULL

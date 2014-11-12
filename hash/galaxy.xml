@@ -37,7 +37,7 @@
 	</software>
 
 	<software name="biorita2">
-		<description>Bioritam (Different)</description>
+		<description>Bioritam (Alt)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass1" interface="galaxy_cass">
@@ -98,6 +98,17 @@
 		<part name="cass1" interface="galaxy_cass">
 			<dataarea name="cass" size="2754">
 				<rom name="dijamantskirudnik.gtp" size="2754" crc="d7c5a9ba" sha1="f1669e88644fe4fca1387b00f617aff80162028e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dijamanta" cloneof="dijamant">
+		<description>Dijamantski Rudnik (Alt Format)</description>
+		<year>1985</year>
+		<publisher>Nenad Balint</publisher>
+		<part name="cass1" interface="galaxy_cass">
+			<dataarea name="cass" size="8244">
+				<rom name="dr.gal" size="8244" crc="c73c2187" sha1="9e2fe7856657df1db846f54f008e7e8a823aa8ac" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -223,7 +234,7 @@
 	</software>
 
 	<software name="lightcy2">
-		<description>Light Cycles (Different)</description>
+		<description>Light Cycles (Alt)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass1" interface="galaxy_cass">
@@ -431,7 +442,7 @@
 		</part>
 	</software>
 
-	<software name="snake2">
+	<software name="snakedv">
 		<description>Snake (Dragan Vujkov)</description>
 		<year>1987</year>
 		<publisher>Dragan Vujkov</publisher>
@@ -453,6 +464,17 @@
 		</part>
 	</software>
 
+	<software name="squasha" cloneof="squash">
+		<description>Squash (Alt Format)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<part name="cass1" interface="galaxy_cass">
+			<dataarea name="cass" size="8244">
+				<rom name="squash.gal" size="8244" crc="a54b6d45" sha1="140530381ea8964bd32cecd13659f7131fcdb709" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="scruiser">
 		<description>Super Cruiser</description>
 		<year>1985</year>
@@ -460,6 +482,17 @@
 		<part name="cass1" interface="galaxy_cass">
 			<dataarea name="cass" size="2569">
 				<rom name="supercruiser.gtp" size="2569" crc="b9faec35" sha1="a68d01975952c117e9620cfcdeb9ca7350964c54" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scruisera" cloneof="scruiser">
+		<description>Super Cruiser (Alt Format)</description>
+		<year>1985</year>
+		<publisher>Jasmin Halilovic</publisher>
+		<part name="cass1" interface="galaxy_cass">
+			<dataarea name="cass" size="8244">
+				<rom name="sc.gal" size="8244" crc="8ae78ffb" sha1="7e4217afd4d725dd14af55bf7d0796dd51cc868d" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -530,13 +563,24 @@
 		</part>
 	</software>
 
-	<software name="tetrisp" cloneof="tetris">
+	<software name="tetrisp">
 		<description>Tetris (Plus)</description>
 		<year>1988</year>
 		<publisher>Dragoljub Obradovic</publisher>
 		<part name="cass1" interface="galaxy_cass">
 			<dataarea name="cass" size="2706">
 				<rom name="tetrisplusq.gtp" size="2706" crc="64015b12" sha1="1d062b4abd1bfdc977568378a61f2bbdf65e2602" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tetrisa" cloneof="tetris">
+		<description>Tetris (Alt Format)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<part name="cass1" interface="galaxy_cass">
+			<dataarea name="cass" size="8244">
+				<rom name="tetris.gal" size="8244" crc="12bc9373" sha1="008d85b379861416c38e3300477a3772959344a1" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -633,7 +677,6 @@
 		<description>Fire</description>
 		<year>2007</year>
 		<publisher>Tomaz Solc</publisher>
-
 		<part name="cass1" interface="galaxy_cass">
 			<dataarea name="cass" size="772">
 				<rom name="fire (2007-06-27)(solc, tomaz).gtp" size="772" crc="4c5758a9" sha1="4d9072f6fa5180e70d7ad4b05555678daf61d4ea" offset="0" />
@@ -645,7 +688,6 @@
 		<description>Hardware</description>
 		<year>2007</year>
 		<publisher>Tomaz Solc</publisher>
-
 		<part name="cass1" interface="galaxy_cass">
 			<dataarea name="cass" size="670">
 				<rom name="hardware (2007-09-22)(solc, tomaz).gtp" size="670" crc="daf12925" sha1="46c9e4a8039a6e4a8e9a2c7715c05fb65da05f5a" offset="0" />
@@ -657,7 +699,6 @@
 		<description>Highres</description>
 		<year>2009</year>
 		<publisher>Tomaz Solc</publisher>
-
 		<part name="cass1" interface="galaxy_cass">
 			<dataarea name="cass" size="2838">
 				<rom name="highres (2009-01-22)(solc, tomaz).gtp" size="2838" crc="663aaef2" sha1="bf60334e341682683bb658a5a5fa9dc00011dfbf" offset="0" />
@@ -669,7 +710,6 @@
 		<description>Particle</description>
 		<year>2007</year>
 		<publisher>Tomaz Solc</publisher>
-
 		<part name="cass1" interface="galaxy_cass">
 			<dataarea name="cass" size="631">
 				<rom name="particle (2007-07-12)(solc, tomaz).gtp" size="631" crc="7f9a2b90" sha1="025169e080857de663f41d3a809325c544fb9de7" offset="0" />
@@ -681,7 +721,6 @@
 		<description>Stars</description>
 		<year>2007</year>
 		<publisher>Tomaz Solc</publisher>
-
 		<part name="cass1" interface="galaxy_cass">
 			<dataarea name="cass" size="573">
 				<rom name="stars (2007-07-12)(solc, tomaz).gtp" size="573" crc="6329e68d" sha1="3c6657ae167ce5ff1076458530da75dc3228e739" offset="0" />

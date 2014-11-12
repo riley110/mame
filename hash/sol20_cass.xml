@@ -2,7 +2,7 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 
 <softwarelist name="sol20_cass" description="PTC SOL-20 cassettes">
-	<software name="2progs">
+	<software name="2progs" supported="no">
 		<description>2 Programs in 1</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -14,7 +14,7 @@
 		</part>
 	</software>
 
-	<software name="metron">
+	<software name="metron" supported="no">
 		<description>Metron Computerware</description>
 		<year>1977</year>
 		<publisher>Tiny C Associates</publisher>
@@ -26,7 +26,7 @@
 		</part>
 	</software>
 
-	<software name="pilot">
+	<software name="pilot" supported="no">
 		<description>Pilot</description>
 		<year>19??</year>
 		<publisher>Processor Techonolgy</publisher>
@@ -38,7 +38,7 @@
 		</part>
 	</software>
 
-	<software name="proteus1">
+	<software name="proteus1" supported="no">
 		<description>Proteus Cassete #1</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -50,7 +50,7 @@
 		</part>
 	</software>
 
-	<software name="proteus2">
+	<software name="proteus2" supported="no">
 		<description>Proteus Cassete #2</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -62,7 +62,7 @@
 		</part>
 	</software>
 
-	<software name="proteus3">
+	<software name="proteus3" supported="no">
 		<description>Proteus Cassete #3</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -74,7 +74,7 @@
 		</part>
 	</software>
 
-	<software name="proteus7">
+	<software name="proteus7" supported="no">
 		<description>Proteus Cassete #7</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -86,7 +86,7 @@
 		</part>
 	</software>
 
-	<software name="proteus8">
+	<software name="proteus8" supported="no">
 		<description>Proteus Cassete #8</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -98,7 +98,7 @@
 		</part>
 	</software>
 
-	<software name="solprint">
+	<software name="solprint" supported="no">
 		<description>Sol Printer</description>
 		<year>19??</year>
 		<publisher>Processor Techonolgy</publisher>
@@ -110,7 +110,7 @@
 		</part>
 	</software>
 
-	<software name="spacegam">
+	<software name="spacegam" supported="no">
 		<description>Spaces Games</description>
 		<year>19??</year>
 		<publisher>Creative Computing Software</publisher>
@@ -122,7 +122,7 @@
 		</part>
 	</software>
 
-	<software name="strategy">
+	<software name="strategy" supported="no">
 		<description>Strategy Games</description>
 		<year>19??</year>
 		<publisher>Creative Computing Software</publisher>
@@ -132,7 +132,14 @@
 				<rom name="strategy games (19xx)(creative computing software).svt" size="67400" crc="54d95385" sha1="54c8ca1542d9ec7cd711866bae3ceb3645735508" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="sol20_cass">
+	</software>
+
+	<software name="strategya" cloneof="strategy" supported="no">
+		<description>Strategy Games (Alt)</description>
+		<year>19??</year>
+		<publisher>Creative Computing Software</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="67359">
 				<rom name="strategy games (19xx)(creative computing software)[a].svt" size="67359" crc="3f7a6908" sha1="230a8e72996f625959c77cd8350a9f7de087db80" offset="0" />
 			</dataarea>

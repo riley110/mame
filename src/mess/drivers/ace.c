@@ -719,10 +719,8 @@ static MACHINE_CONFIG_START( ace, ace_state )
 	MCFG_RAM_ADD(RAM_TAG)
 	MCFG_RAM_DEFAULT_SIZE("1K")
 	MCFG_RAM_EXTRA_OPTIONS("16K,32K,48K")
-	
-	//software lists
-	MCFG_SOFTWARE_LIST_ADD("cass_list","jupace_cass")
-	MCFG_SOFTWARE_LIST_ADD("flop_list","jupace_flop")
+
+	MCFG_SOFTWARE_LIST_ADD("cass_list", "jupace_cass")
 MACHINE_CONFIG_END
 
 

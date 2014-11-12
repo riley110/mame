@@ -624,7 +624,7 @@ static MACHINE_CONFIG_START( m5, m5_state )
 	// software lists
 	MCFG_SOFTWARE_LIST_ADD("cart_list", "m5_cart")
 	MCFG_SOFTWARE_LIST_ADD("cass_list", "m5_cass")
-	
+
 	// internal ram
 	MCFG_RAM_ADD(RAM_TAG)
 	MCFG_RAM_DEFAULT_SIZE("4K")

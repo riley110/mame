@@ -18,7 +18,7 @@
 	</software>
 
 	<software name="bludiste">
-		<description>Bludiste</description>
+		<description>Bludiště</description>
 		<year>1988</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -102,7 +102,7 @@
 	</software>
 
 	<software name="hlipa">
-		<description>Hlipa</description>
+		<description>Hlípa</description>
 		<year>1989</year>
 		<publisher>ZO Svazarmu</publisher>
 
@@ -114,7 +114,7 @@
 	</software>
 
 	<software name="horac">
-		<description>Horac a pavouci</description>
+		<description>Horác a pavouci</description>
 		<year>1985</year>
 		<publisher>ZO Svazarmu</publisher>
 
@@ -125,8 +125,8 @@
 		</part>
 	</software>
 
-	<software name="karelunk">
-		<description>Karel (unknown)</description>
+	<software name="karel">
+		<description>Karel</description>
 		<year>1988</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -162,25 +162,13 @@
 	</software>
 
 	<software name="mestorob">
-		<description>Mesto robotu</description>
+		<description>Město robotů</description>
 		<year>1988</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="pmd85_cass">
 			<dataarea name="cass" size="28221">
 				<rom name="mesto robotu (1988)(-).ptp" size="28221" crc="07938025" sha1="8c4460275829e503cf330c1fc08d27bd41e878ee" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="nahrava">
-		<description>Nahrava se Princ Jason</description>
-		<year>1989</year>
-		<publisher>Ceres Soft</publisher>
-
-		<part name="cass1" interface="pmd85_cass">
-			<dataarea name="cass" size="37194">
-				<rom name="nahrava se princ jason (1989)(ceres soft).ptp" size="37194" crc="f0e67ee4" sha1="3593fc5b95e16cd6c6ac95748f097bf5eb9da5e6" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -222,13 +210,25 @@
 	</software>
 
 	<software name="piskvork">
-		<description>Piskvorky</description>
+		<description>Piškvorky</description>
 		<year>1987</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="pmd85_cass">
 			<dataarea name="cass" size="10132">
 				<rom name="piskvorky (1987)(-).ptp" size="10132" crc="9ea553c2" sha1="4660b90d8d0c06107795a4faf2db7e5be20e92e2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="princjas">
+		<description>Princ Jasoň</description>
+		<year>1989</year>
+		<publisher>Ceres Soft</publisher>
+
+		<part name="cass1" interface="pmd85_cass">
+			<dataarea name="cass" size="37194">
+				<rom name="princ jason (1989)(ceres soft).ptp" size="37194" crc="f0e67ee4" sha1="3593fc5b95e16cd6c6ac95748f097bf5eb9da5e6" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -331,7 +331,7 @@
 | ZIZALA   | Klasická Húsenka alias Wurmi                                     |
 -->
 	<software name="bas20dem">
-		<description>bas20-demo</description>
+		<description>BASIC20 Demo</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -369,7 +369,7 @@
 | WELL+2   | AutoRun   | 2,2A,3   | Karel Šuhajda, Petr Tùma                  |
 -->
 	<software name="copytape">
-		<description>copytape</description>
+		<description>Copy Tape</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -398,7 +398,7 @@
 | DAM+9000 |  ?  | JUMP 9000 | 2A,3     | DAM od adresy 9000H                 |
 -->
 	<software name="dam2">
-		<description>dam+2</description>
+		<description>DAM+2</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -413,7 +413,7 @@
 | DAT PMD  |  ?  | JUMP 0000 | 2,2A,3   |                                     |
 -->
 	<software name="datpmd">
-		<description>dat-pmd</description>
+		<description>DAT PMD</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -432,7 +432,7 @@
 | DISASS   | RUN       | 1,2,2A,3 | Pavol Kiko / disassembler v BASICu        |
 -->
 	<software name="devutils">
-		<description>devutils</description>
+		<description>Development Utils</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -457,7 +457,7 @@
 | EVIMAN 5 |  X  |           |          | /                                   |
 -->
 	<software name="evidence">
-		<description>evidence</description>
+		<description>Evidence</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -469,7 +469,7 @@
 	</software>
 
 	<software name="lemm256k">
-		<description>game-lemmings-256k</description>
+		<description>Lemmings (256k)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -481,7 +481,7 @@
 	</software>
 
 	<software name="lemmings">
-		<description>game-lemmings</description>
+		<description>Lemmings</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -507,7 +507,7 @@
 | REVERZ   | JUMP 0000 | 1,2,2A,3 | SEN SOFTWARE                              |
 -->
 	<software name="games1">
-		<description>games-1</description>
+		<description>Games 1</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -534,7 +534,7 @@
 | SP'DEMIS | AutoRun   | 1        | Ján Miche¾, Igor Kolla                    |
 -->
 	<software name="games2">
-		<description>games-2</description>
+		<description>Games 2</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -555,7 +555,7 @@
 | MICRHYTM | AutoRun   | 1        | Miroslav Urda                             |
 -->
 	<software name="games3">
-		<description>games-3</description>
+		<description>Games 3</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -581,7 +581,7 @@
 | HLIPA    | AutoRun   | 1,2,2A   | Karel Šuhajda, Tomáš Švec                 |
 -->
 	<software name="game4004">
-		<description>games-4004-482</description>
+		<description>Games by 4004/482 ZO Svazarmu</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -597,7 +597,7 @@
 | PSSST    | AutoRun   | 1,2,2A,3 | Konverzia hry zo ZX Spectrum              |
 -->
 	<software name="gameslib">
-		<description>games-libor-lasota</description>
+		<description>Games by Libor Lasota</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -616,7 +616,7 @@
 | GAME2048 | AutoRun | 1,2,2A,3 | Roman Bórik, Martin Bórik                   |
 -->
 	<software name="gamesrm">
-		<description>games-rm-team</description>
+		<description>Games by RM-TEAM</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -644,7 +644,7 @@
 | PONTRIS  | AutoRun   | 1,2,2A,3 | Pontris (nova hra aj vo farbe, rok 2010)  |
 -->
 	<software name="gamesvbg">
-		<description>games-vbg</description>
+		<description>Games by VBG Software</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -663,7 +663,7 @@
 | GR - obr |  C  |           |          | /                                   |
 -->
 	<software name="gr">
-		<description>gr</description>
+		<description>GR v1.00</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -680,7 +680,7 @@
 | *        |  C  |           |          | rôzne obrázky zo ZX Spectrum        |
 -->
 	<software name="gred">
-		<description>gred</description>
+		<description>GRED</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -696,7 +696,7 @@
 | *        |  G  |           |          | ukážkové sprity                     |
 -->
 	<software name="grep">
-		<description>grep</description>
+		<description>GREP</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -728,7 +728,7 @@
 | WURMI    | 1,2,2A   | org. František Fuka / Húsenka :-)                     |
 -->
 	<software name="hry1">
-		<description>hry1</description>
+		<description>HRY1</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -754,7 +754,7 @@
 | POKLAD   | 2,2A     | R&I / chodièka                                        |
 -->
 	<software name="hry2">
-		<description>hry2</description>
+		<description>HRY2</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -769,7 +769,7 @@
 | K-STUDIO |  ?  | AutoRun   | 2,2A,3   |                                     |
 -->
 	<software name="kstudio">
-		<description>k-studio</description>
+		<description>K-Studio</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -788,8 +788,8 @@
 | KAREL3.2 | JUMP 0000 | 1,2,2A,3 | Marián Vittek / 3D Karel v2.0             |
 | KAREL3D2 | JUMP 0000 | 1,2,2A,3 | Marián Vittek / 3D Karel v3.2             |
 -->
-	<software name="karel">
-		<description>karel</description>
+	<software name="karela" cloneof="karel">
+		<description>Karel (Alt)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -806,8 +806,8 @@
 | KAREL3.2 | AutoRun   | 1,2,2A,3 | Marián Vittek / 3D Karel v2.0             |
 | KAREL3D2 | AutoRun   | 1,2,2A,3 | Marián Vittek / 3D Karel v3.2             |
 -->
-	<software name="kare2d3d">
-		<description>karel2d3d</description>
+	<software name="karelb" cloneof="karel">
+		<description>Karel (Alt 2)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -826,7 +826,7 @@
                  Nájde niekto správne riešenie?... :-)
 -->
 	<software name="krivky">
-		<description>krivky</description>
+		<description>Krivky</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -848,7 +848,7 @@
     - T.MRAVEC - jednoduchý logický jazyk Toèi-Mravec (v2/v2A/v3)
 -->
 	<software name="logo">
-		<description>logo</description>
+		<description>LOGO</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -867,7 +867,7 @@
 | BZZZZT   |           |          | zdroják - zabzuèanie z hry Hlípa          |
 -->
 	<software name="mrs">
-		<description>mrs</description>
+		<description>MRS</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -886,7 +886,7 @@
 | *        |  M  |           |          | rôzne ukážkové hudby                |
 -->
 	<software name="musica">
-		<description>musica</description>
+		<description>Musica</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -912,7 +912,7 @@
 | TEST LOG | 1,2,2A,3 | KM PF Nitra / Test logiky a inteligencie              |
 -->
 	<software name="rozne">
-		<description>rozne</description>
+		<description>Rozne</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -930,7 +930,7 @@
     - SNC.PAS  - súèet nepárnych èísel
 -->
 	<software name="rozne_1">
-		<description>rozne (pascal)</description>
+		<description>Rozne (Pascal)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -950,7 +950,7 @@
 | PENETR-3 |  ?  | JUMP 0F90 | 1,2,2A,3 | muzika z hry Penetrator             |
 -->
 	<software name="skladate">
-		<description>skladatel</description>
+		<description>Skladatel</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -970,7 +970,7 @@
 | KASW-CON |  ?  | AutoRun   | 2,2A,3   | KASWORD+2 s inym ovladacom tlaciarne|
 -->
 	<software name="texted">
-		<description>texted</description>
+		<description>Texted</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -989,7 +989,7 @@
 | MANVGP;Q |  X  |           |          | manuál k editoru VEGRAP;Q           |
 -->
 	<software name="vegrap">
-		<description>vegrap</description>
+		<description>Vegrap</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 

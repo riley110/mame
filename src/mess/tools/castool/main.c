@@ -20,26 +20,33 @@
 #include "corestr.h"
 
 #include "formats/a26_cas.h"
+#include "formats/ace_tap.h"
+#include "formats/adam_cas.h"
 #include "formats/apf_apt.h"
 #include "formats/cbm_tap.h"
 #include "formats/cgen_cas.h"
 #include "formats/coco_cas.h"
 #include "formats/csw_cas.h"
+#include "formats/fm7_cas.h"
 #include "formats/fmsx_cas.h"
 #include "formats/gtp_cas.h"
 #include "formats/hect_tap.h"
-#include "formats/ace_tap.h"
-#include "formats/adam_cas.h"
 #include "formats/kc_cas.h"
 #include "formats/kim1_cas.h"
 #include "formats/lviv_lvt.h"
 #include "formats/mz_cas.h"
 #include "formats/orao_cas.h"
 #include "formats/oric_tap.h"
+#include "formats/p6001_cas.h"
+#include "formats/phc25_cas.h"
 #include "formats/pmd_cas.h"
 #include "formats/primoptp.h"
 #include "formats/rk_cas.h"
+#include "formats/sc3000_bit.h"
+#include "formats/sol_cas.h"
+#include "formats/sorc_cas.h"
 #include "formats/sord_cas.h"
+#include "formats/spc1000_cas.h"
 #include "formats/svi_cas.h"
 #include "formats/thom_cas.h"
 #include "formats/trs_cas.h"
@@ -49,16 +56,8 @@
 #include "formats/vg5k_cas.h"
 #include "formats/vt_cas.h"
 #include "formats/x07_cas.h"
-#include "formats/zx81_p.h"
 #include "formats/x1_tap.h"
-#include "formats/p6001_cas.h"
-#include "formats/sc3000_bit.h"
-#include "formats/fm7_cas.h"
-#include "formats/spc1000_cas.h"
-#include "formats/sol_cas.h"
-#include "formats/sorc_cas.h"
-#include "formats/phc25_cas.h"
-#include "formats/apf_apt.h"
+#include "formats/zx81_p.h"
 
 struct SupportedCassetteFormats
 {
@@ -70,13 +69,13 @@ struct SupportedCassetteFormats
 const struct SupportedCassetteFormats formats[] = {
 	{"a26", a26_cassette_formats               ,"Atari 2600 SuperCharger"},
 	{"apf", apf_cassette_formats               ,"APF Imagination Machine"},
-	{"ddp", coleco_adam_cassette_formats       ,"Coleco ADAM"},
 	{"bbc", bbc_cassette_formats               ,"Acorn BBC & Electron"},
 	{"cbm", cbm_cassette_formats               ,"Commodore 8-bit series"},
 	{"cdt", cdt_cassette_formats               ,"Amstrad CPC"},
 	{"cgenie", cgenie_cassette_formats         ,"EACA Colour Genie"},
 	{"coco", coco_cassette_formats             ,"Tandy Radio Shack Color Computer"},
 	{"csw", csw_cassette_formats               ,"Compressed Square Wave"},
+	{"ddp", coleco_adam_cassette_formats       ,"Coleco ADAM"},
 	{"fm7", fm7_cassette_formats               ,"Fujitsu FM-7"},
 	{"fmsx", fmsx_cassette_formats             ,"MSX"},
 	{"gtp", gtp_cassette_formats               ,"Elektronika inzenjering Galaksija"},

@@ -12,22 +12,33 @@
 	<software name="advgame">
 		<description>The Adventure Game</description>
 		<year>1987</year>
-		<publisher>Tamas Juhasz</publisher>
+		<publisher>Tamás Juhász</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="11520">
 				<rom name="adventure game, the (1987)(juhasz, tamas)(hu).cas" size="11520" crc="1b701e01" sha1="f358d159cc50937844f1317bfa19406dabf79836" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="advgamea" cloneof="advgame">
+		<description>The Adventure Game (Alt)</description>
+		<year>1987</year>
+		<publisher>Tamás Juhász</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="11420">
 				<rom name="adventure game, the (1987)(juhasz, tamas)(hu)[a].cas" size="11420" crc="4204ce2d" sha1="885af9c0036681f811b9f90c2727ef0d259bda04" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt 2"/>
+	</software>
+
+	<software name="advgameb" cloneof="advgame">
+		<description>The Adventure Game (Alt 2)</description>
+		<year>1987</year>
+		<publisher>Tamás Juhász</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="11410">
 				<rom name="adventure game, the (1987)(juhasz, tamas)(hu)[a2].cas" size="11410" crc="54744002" sha1="f606e4f0f9605d26979f38cac698447e54ac892b" offset="0" />
 			</dataarea>
@@ -35,18 +46,23 @@
 	</software>
 
 	<software name="aknamezo">
-		<description>Aknamezo</description>
+		<description>Aknamező</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="7040">
 				<rom name="aknamezo (198x)(-)(hu).cas" size="7040" crc="b441bd1c" sha1="bc621ca25b3cd3aea28b4837bf2bec3a1135ce67" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="aknamezoa" cloneof="aknamezo">
+		<description>Aknamező (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="6942">
 				<rom name="aknamezo (198x)(-)(hu)[a].cas" size="6942" crc="8d586c9b" sha1="794aa11042ad7cbc3861a5ffb64392d9d4ab211e" offset="0" />
 			</dataarea>
@@ -56,7 +72,7 @@
 	<software name="alfa">
 		<description>Alfa</description>
 		<year>198?</year>
-		<publisher>JOSZIsoft</publisher>
+		<publisher>JÓSZIsoft?</publisher>
 
 		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="8309">
@@ -78,18 +94,23 @@
 	</software>
 
 	<software name="amoba">
-		<description>Amoba</description>
+		<description>Amőba</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="8320">
 				<rom name="amoba (198x)(-)(hu).cas" size="8320" crc="bd667a7b" sha1="2ab8c1a6362a0ff4d11d507ec2dd273af71a5398" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="amobaa" cloneof="amoba">
+		<description>Amőba (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="8218">
 				<rom name="amoba (198x)(-)(hu)[a].cas" size="8218" crc="af5b27ab" sha1="55c34d00dd873534382b997be3efc07f1f5216b1" offset="0" />
 			</dataarea>
@@ -102,21 +123,14 @@
 		<publisher>Quicksilva - STV</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="13222">
 				<rom name="astro blaster (1991)(quicksilva - stv).cas" size="13222" crc="dbd0c9cf" sha1="962d548729a8de649cbbcc567fe2985408f06bab" offset="0" />
-			</dataarea>
-		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Hacked"/>
-			<dataarea name="cass" size="13425">
-				<rom name="astro blaster (1991)(quicksilva - stv)[h].cas" size="13425" crc="3351b7cd" sha1="a6c21abcc22a9f2da5a95560eb5f856c119c877f" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="astrocsa">
-		<description>Astro Csata</description>
+		<description>Asztro csata</description>
 		<year>1983</year>
 		<publisher>C. Sanders</publisher>
 
@@ -128,9 +142,9 @@
 	</software>
 
 	<software name="atkeles">
-		<description>Atkeles</description>
+		<description>Átkelés</description>
 		<year>198?</year>
-		<publisher>I. Juhasz</publisher>
+		<publisher>I. Juhász</publisher>
 
 		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="3511">
@@ -140,7 +154,7 @@
 	</software>
 
 	<software name="atomerom">
-		<description>Atomeromu</description>
+		<description>Atomerőmű</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -157,13 +171,18 @@
 		<publisher>STV</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="20096">
 				<rom name="atomix (1991)(stv)(hu).cas" size="20096" crc="5f304d25" sha1="c73a82d4bd4dbfe85440785c4014737b22c3bfe3" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="atomixa" cloneof="atomix">
+		<description>Atomix (Alt)</description>
+		<year>1991</year>
+		<publisher>STV</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="20020">
 				<rom name="atomix (1991)(stv)(hu)[a].cas" size="20020" crc="a62b1184" sha1="ee729e1421c9fffc26d6e4eef50cf42c5eeabef6" offset="0" />
 			</dataarea>
@@ -171,9 +190,9 @@
 	</software>
 
 	<software name="automani">
-		<description>Auto Mania</description>
+		<description>Autómánia</description>
 		<year>1990</year>
-		<publisher>Szeplaky Studio</publisher>
+		<publisher>Széplaky Stúdió</publisher>
 
 		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="2983">
@@ -200,21 +219,14 @@
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="10137">
 				<rom name="awari-jatek (198x)(-)(hu).cas" size="10137" crc="e3f5d4bb" sha1="830a5a94832256d211a9505287eeb157b9408b7c" offset="0" />
-			</dataarea>
-		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Hacked"/>
-			<dataarea name="cass" size="10698">
-				<rom name="awari-jatek (198x)(-)(hu)[h].cas" size="10698" crc="02498617" sha1="0f511dab4d9ca244ab4dd6934cd8bcc533813e5a" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="bananfal">
-		<description>Bananfalo</description>
+		<description>Banánfaló</description>
 		<year>198?</year>
 		<publisher>Novotrade</publisher>
 
@@ -226,7 +238,7 @@
 	</software>
 
 	<software name="banyasz">
-		<description>Banyasz jatek</description>
+		<description>Bányász</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -262,7 +274,7 @@
 	</software>
 
 	<software name="bazis">
-		<description>Bazis</description>
+		<description>Bázis</description>
 		<year>198?</year>
 		<publisher>Software in LUX</publisher>
 
@@ -274,18 +286,23 @@
 	</software>
 
 	<software name="bekajate">
-		<description>Beka-jatek</description>
+		<description>Béka-játék</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="8448">
 				<rom name="beka-jatek (198x)(-)(hu).cas" size="8448" crc="835da94f" sha1="b531b6eb8680b63eef703ccf9da1dec840e33d76" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="bekajatea" cloneof="bekajate">
+		<description>Béka-játék (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="8442">
 				<rom name="beka-jatek (198x)(-)(hu)[a].cas" size="8442" crc="bf1a672f" sha1="974565639ea5da4a6d7f9c14a50f0000aa3922a3" offset="0" />
 			</dataarea>
@@ -316,8 +333,8 @@
 		</part>
 	</software>
 
-	<software name="bogarjat">
-		<description>Bogar jatek</description>
+	<software name="bogar">
+		<description>Bogár</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -329,9 +346,9 @@
 	</software>
 
 	<software name="bombazd">
-		<description>Bombazd le Ceausescut!</description>
+		<description>Bombázd le Ceausescut!</description>
 		<year>198?</year>
-		<publisher>Osmagyar Software</publisher>
+		<publisher>Ősmagyar Software</publisher>
 
 		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="7276">
@@ -341,7 +358,7 @@
 	</software>
 
 	<software name="boszorka">
-		<description>Boszorkany II</description>
+		<description>Boszorkány II</description>
 		<year>198?</year>
 		<publisher>Agilar</publisher>
 
@@ -425,18 +442,23 @@
 	</software>
 
 	<software name="clementi">
-		<description>Clementina a boszorkany</description>
+		<description>Clementina a boszorkány</description>
 		<year>198?</year>
-		<publisher>Zsolt Magyar - Zoltan Nagy</publisher>
+		<publisher>Zsolt Magyar - Zoltán Nagy</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="4864">
 				<rom name="clementina a boszorkany (198x)(magyar, zsolt - nagy, zoltan)(hu).cas" size="4864" crc="f9c69eaf" sha1="b389b7bd9446fc8c2063e8b1e80f7c563a0db838" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="clementia" cloneof="clementi">
+		<description>Clementina a boszorkány (Alt)</description>
+		<year>198?</year>
+		<publisher>Zsolt Magyar - Zoltán Nagy</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="3962">
 				<rom name="clementina a boszorkany (198x)(magyar, zsolt - nagy, zoltan)(hu)[a].cas" size="3962" crc="b84b4a07" sha1="9b77d9dd2e72f3316c7d333ff68150971315945a" offset="0" />
 			</dataarea>
@@ -485,13 +507,18 @@
 		<publisher>Intelligent Chess Software</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="19968">
 				<rom name="cyrus ii (1985)(intelligent chess software).cas" size="19968" crc="d181220c" sha1="2bef1ad73d7a77310c2cfa2012b92062f7b046fa" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="cyrus2a" cloneof="cyrus2">
+		<description>Cyrus II (Alt)</description>
+		<year>1985</year>
+		<publisher>Intelligent Chess Software</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="19200">
 				<rom name="cyrus ii (1985)(intelligent chess software)[a].cas" size="19200" crc="e04df8f8" sha1="2d2e5c956613a81e8c9e1c4e7436c3a60ea6cf97" offset="0" />
 			</dataarea>
@@ -499,7 +526,7 @@
 	</software>
 
 	<software name="dama">
-		<description>Dama</description>
+		<description>Dáma</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -511,7 +538,7 @@
 	</software>
 
 	<software name="domino">
-		<description>Domino</description>
+		<description>Dominó</description>
 		<year>198?</year>
 		<publisher>Agilar</publisher>
 
@@ -523,18 +550,23 @@
 	</software>
 
 	<software name="ejtoerny">
-		<description>Ejtoernyo</description>
+		<description>Ejtőernyő</description>
 		<year>198?</year>
 		<publisher>Software in LUX</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="13568">
 				<rom name="ejtoernyo (198x)(software in lux)(hu).cas" size="13568" crc="7999b964" sha1="c7635d341a4bdace4ff0caf9099f134dae65a159" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="ejtoernya" cloneof="ejtoerny">
+		<description>Ejtőernyő (Alt)</description>
+		<year>198?</year>
+		<publisher>Software in LUX</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="13506">
 				<rom name="ejtoernyo (198x)(software in lux)(hu)[a].cas" size="13506" crc="684ceffc" sha1="12bf92b96d38bffecbe2b97d6a0621b13c91d98e" offset="0" />
 			</dataarea>
@@ -566,7 +598,7 @@
 	</software>
 
 	<software name="eletjate">
-		<description>Eletjatek</description>
+		<description>Életjáték</description>
 		<year>198?</year>
 		<publisher>Bela Takacs</publisher>
 
@@ -578,7 +610,7 @@
 	</software>
 
 	<software name="erod">
-		<description>Erod</description>
+		<description>Erőd</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -590,18 +622,23 @@
 	</software>
 
 	<software name="faltoro">
-		<description>Faltoro jatek</description>
+		<description>Faltörő játék</description>
 		<year>1986</year>
 		<publisher>SealProgram</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="3712">
 				<rom name="faltoro jatek (1986)(sealprogram)(hu).cas" size="3712" crc="3740285e" sha1="1c07fa4ac114c6a71a07bb727277378daca94ba0" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="faltoroa" cloneof="faltoro">
+		<description>Faltörő játék (Alt)</description>
+		<year>1986</year>
+		<publisher>SealProgram</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="3702">
 				<rom name="faltoro jatek (1986)(sealprogram)(hu)[a].cas" size="3702" crc="6dd16ad8" sha1="3dabde7552ec606ba9b26f87ec15746b787d8b67" offset="0" />
 			</dataarea>
@@ -609,18 +646,23 @@
 	</software>
 
 	<software name="feketeso">
-		<description>Fekete Solyom</description>
+		<description>Fekete sólyom</description>
 		<year>198?</year>
 		<publisher>Software in LUX</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="7424">
 				<rom name="fekete solyom (198x)(software in lux)(hu).cas" size="7424" crc="a408dd6a" sha1="d19f51b3b12b74a513056af48fbe8fb4e0482ec4" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="feketesoa" cloneof="feketeso">
+		<description>Fekete sólyom (Alt)</description>
+		<year>198?</year>
+		<publisher>Software in LUX</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="7349">
 				<rom name="fekete solyom (198x)(software in lux)(hu)[a].cas" size="7349" crc="eec898bc" sha1="3fe4e067d3aa5e7c9af755b8ffe3fa415f81b776" offset="0" />
 			</dataarea>
@@ -628,18 +670,23 @@
 	</software>
 
 	<software name="felkaru">
-		<description>Felkaru bandita</description>
+		<description>Félkarú rabló</description>
 		<year>1986</year>
-		<publisher>Gabor Balogh</publisher>
+		<publisher>Gábor Balogh</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="4608">
 				<rom name="felkaru bandita (1986)(balogh, gabor)(hu).cas" size="4608" crc="aa15d43b" sha1="479893ff6e058dffe28edc8ea38593e2e656daac" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="felkarua" cloneof="felkaru">
+		<description>Félkarú rabló (Alt)</description>
+		<year>1986</year>
+		<publisher>Gábor Balogh</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="4544">
 				<rom name="felkaru bandita (1986)(balogh, gabor)(hu)[a].cas" size="4544" crc="8ec066bd" sha1="1e448f81f1a19866e83d210ecc93ff621976825a" offset="0" />
 			</dataarea>
@@ -647,7 +694,7 @@
 	</software>
 
 	<software name="festojat">
-		<description>Festo jatek</description>
+		<description>Festő játék</description>
 		<year>198?</year>
 		<publisher>Novotrade</publisher>
 
@@ -671,7 +718,7 @@
 	</software>
 
 	<software name="fogmosos">
-		<description>Fogmosos jatek</description>
+		<description>Fogmosós játék</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -683,24 +730,35 @@
 	</software>
 
 	<software name="fordits">
-		<description>Fordits</description>
+		<description>Fordíts</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="2976">
 				<rom name="fordits (198x)(-)(hu).cas" size="2976" crc="5372f2dd" sha1="c5e2d18cfea16466a64b2f57e0d5e96024e213c2" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="forditsa" cloneof="fordits">
+		<description>Fordíts (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="2971">
 				<rom name="fordits (198x)(-)(hu)[a].cas" size="2971" crc="c635ac5d" sha1="d0300dcf358d7c82e95b260bd82945e3880576f5" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt 2"/>
+	</software>
+
+	<software name="forditsb" cloneof="fordits">
+		<description>Fordíts (Alt 2)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="2960">
 				<rom name="fordits (198x)(-)(hu)[a2].cas" size="2960" crc="c1f68ba7" sha1="226d2490156539e6a90c54ae8d338a905a7ca205" offset="0" />
 			</dataarea>
@@ -722,16 +780,21 @@
 	<software name="fuel">
 		<description>Fuel</description>
 		<year>1988</year>
-		<publisher>Attila Barabas</publisher>
+		<publisher>Attila Barabás</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="35259">
 				<rom name="fuel (1988)(barabas, attila)(hu).cas" size="35259" crc="a315e81c" sha1="8436be078b92e441b2c6601a702d28c9bbfc03fa" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="fuela" cloneof="fuel">
+		<description>Fuel (Alt)</description>
+		<year>1988</year>
+		<publisher>Attila Barabás</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="35191">
 				<rom name="fuel (1988)(barabas, attila)(hu)[h].cas" size="35191" crc="2966720f" sha1="b157990a2c2a255c66d2707777f28901099418d6" offset="0" />
 			</dataarea>
@@ -756,19 +819,30 @@
 		<publisher>Videoton</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="17792">
 				<rom name="geo (1987)(videoton)(hu).cas" size="17792" crc="d8f793d7" sha1="89f41dc0a975409eb63a5cc80cf53fc5dcd2aaec" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="geoa" cloneof="geo">
+		<description>GEO (Alt)</description>
+		<year>1987</year>
+		<publisher>Videoton</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="17765">
 				<rom name="geo (1987)(videoton)(hu)[a].cas" size="17765" crc="e8ecba79" sha1="db600bd38c186441a1384bb3097745ac78186792" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt 2"/>
+	</software>
+
+	<software name="geob" cloneof="geo">
+		<description>GEO (Alt 2)</description>
+		<year>1987</year>
+		<publisher>Videoton</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="17280">
 				<rom name="geo (1987)(videoton)(hu)[a2].cas" size="17280" crc="45a8b2b0" sha1="94832f636501081b0600e392151501b7587f3023" offset="0" />
 			</dataarea>
@@ -776,7 +850,7 @@
 	</software>
 
 	<software name="goblin">
-		<description>Goblin Kastelya</description>
+		<description>Goblin kastélya</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -788,18 +862,23 @@
 	</software>
 
 	<software name="gombocfa">
-		<description>Gombocfalo</description>
+		<description>Gombócfaló</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="6262">
 				<rom name="gombocfalo (198x)(-)(hu).cas" size="6262" crc="5de49f72" sha1="3fe6cc3a0aaeed674168da0adc6c014c15cf6964" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="gombocfaa" cloneof="gombocfa">
+		<description>Gombócfaló (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="5459">
 				<rom name="gombocfalo (198x)(-)(hu)[a].cas" size="5459" crc="21d715be" sha1="6e3239db02dfdbd0b05a5dbdba17a70309a674d3" offset="0" />
 			</dataarea>
@@ -831,18 +910,23 @@
 	</software>
 
 	<software name="gyufajat">
-		<description>Gyufajatek</description>
+		<description>Gyufajáték</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="3712">
 				<rom name="gyufajatek (198x)(-)(hu).cas" size="3712" crc="b467be44" sha1="76ae8e45e9c40fc03b7535e8536aabc5fd570f18" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="gyufajata" cloneof="gyufajat">
+		<description>Gyufajáték (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="3696">
 				<rom name="gyufajatek (198x)(-)(hu)[a].cas" size="3696" crc="c9ea210b" sha1="5980d2053e561169738371ccedee98e0e891d2c7" offset="0" />
 			</dataarea>
@@ -855,19 +939,30 @@
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="8960">
 				<rom name="hamburger (198x)(-)(hu).cas" size="8960" crc="f71ef24a" sha1="3e0c070be43de1576dbf2f383dbc261064d48bcc" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="hamburgra" cloneof="hamburgr">
+		<description>Hamburger (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="8950">
 				<rom name="hamburger (198x)(-)(hu)[a].cas" size="8950" crc="06ff4f4a" sha1="4c580522ceced1d05f848da8597d103db149f97e" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt 2"/>
+	</software>
+
+	<software name="hamburgrb" cloneof="hamburgr">
+		<description>Hamburger (Alt 2)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="8887">
 				<rom name="hamburger (198x)(-)(hu)[a2].cas" size="8887" crc="a30b9a1f" sha1="c987ab7d60cf9fbf5896306ab554a5a1213b93c1" offset="0" />
 			</dataarea>
@@ -901,16 +996,21 @@
 	<software name="hanoitrn">
 		<description>Hanoi torony</description>
 		<year>1985</year>
-		<publisher>Janos Horvath - Gyorgy Vamos</publisher>
+		<publisher>János Horváth - György Vámos</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="4608">
 				<rom name="hanoi torony (1985)(horvath, janos - vamos, gyorgy)(hu).cas" size="4608" crc="e9511839" sha1="ec4cc38b95320bf0f734fe8936dbb4f751e8a2bb" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="hanoitrna" cloneof="hanoitrn">
+		<description>Hanoi torony (Alt)</description>
+		<year>1985</year>
+		<publisher>János Horváth - György Vámos</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="4552">
 				<rom name="hanoi torony (1985)(horvath, janos - vamos, gyorgy)(hu)[a].cas" size="4552" crc="b3ff7b58" sha1="665404ce083849147e76a9e6b72705272200fdd5" offset="0" />
 			</dataarea>
@@ -935,13 +1035,18 @@
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="5376">
 				<rom name="invaders (198x)(-).cas" size="5376" crc="91214ffb" sha1="31691e8e1511485c00e95eaa3eba80f7e4808eb2" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="invadersa" cloneof="invaders">
+		<description>Invaders (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="5372">
 				<rom name="invaders (198x)(-)[a].cas" size="5372" crc="6ec0d267" sha1="4300d222408e8a7010a688db7efb0c8d38e05a25" offset="0" />
 			</dataarea>
@@ -949,7 +1054,7 @@
 	</software>
 
 	<software name="invazio">
-		<description>Invazio</description>
+		<description>Invázió</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -961,7 +1066,7 @@
 	</software>
 
 	<software name="iqteszt">
-		<description>IQ Teszt</description>
+		<description>IQ teszt</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -973,7 +1078,7 @@
 	</software>
 
 	<software name="jancsiva">
-		<description>Jancsi a varban</description>
+		<description>Jancsi a várban</description>
 		<year>1988</year>
 		<publisher>Vipera Szoftver - Vindics</publisher>
 
@@ -985,7 +1090,7 @@
 	</software>
 
 	<software name="jatekok1">
-		<description>Jatekok 01</description>
+		<description>Játékok 01</description>
 		<year>1987</year>
 		<publisher>Jozsef Petrovszki - Szabolcs Rota</publisher>
 
@@ -1002,13 +1107,18 @@
 		<publisher>Software in LUX</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="2816">
 				<rom name="jet pack (198x)(software in lux)(hu).cas" size="2816" crc="0f04937e" sha1="8af14d401d6c12a419b2d95e87423a9947e5b073" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="jetpacka" cloneof="jetpack">
+		<description>Jet Pack (Alt)</description>
+		<year>198?</year>
+		<publisher>Software in LUX</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="2786">
 				<rom name="jet pack (198x)(software in lux)(hu)[a].cas" size="2786" crc="71d126fb" sha1="b203e89e0403e0ba5afb78da5468fcadb83ffe86" offset="0" />
 			</dataarea>
@@ -1030,16 +1140,21 @@
 	<software name="jupiter">
 		<description>Jupiter</description>
 		<year>198?</year>
-		<publisher>Peter Dorner</publisher>
+		<publisher>Péter Dörner</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="5760">
 				<rom name="jupiter (198x)(dorner, peter)(hu).cas" size="5760" crc="86108372" sha1="dd78d7b24d1b0d319a123652d0bca4a5c171be74" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="jupitera" cloneof="jupiter">
+		<description>Jupiter (Alt)</description>
+		<year>198?</year>
+		<publisher>Péter Dörner</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="5738">
 				<rom name="jupiter (198x)(dorner, peter)(hu)[a].cas" size="5738" crc="2cfd2686" sha1="a6644dd905d78c37e0d604264d4d108b1d33b5bc" offset="0" />
 			</dataarea>
@@ -1047,7 +1162,7 @@
 	</software>
 
 	<software name="kalan">
-		<description>Kalan</description>
+		<description>Kalán</description>
 		<year>1989</year>
 		<publisher>Suma Software Service</publisher>
 
@@ -1076,21 +1191,14 @@
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="9856">
 				<rom name="karate (198x)(-)(hu).cas" size="9856" crc="0ec589b7" sha1="a6ccafb08c22867c1dfdcc7f50231a19a69810d8" offset="0" />
-			</dataarea>
-		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Incomplete Dump"/>
-			<dataarea name="cass" size="9856">
-				<rom name="karate (198x)(-)(hu)[b].cas" size="9856" crc="fc00a302" sha1="067e28341081f0f6922904d0cef67d1e6acffdb7" offset="0" status="baddump" />
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="kardhala">
-		<description>Kardhalak es Kincsek</description>
+		<description>Kardhalak és kincsek</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -1114,7 +1222,7 @@
 	</software>
 
 	<software name="kem">
-		<description>Kem</description>
+		<description>Kém</description>
 		<year>1988</year>
 		<publisher>SPT</publisher>
 
@@ -1126,7 +1234,7 @@
 	</software>
 
 	<software name="kigyo">
-		<description>Kigyo</description>
+		<description>Kígyó</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -1138,43 +1246,47 @@
 	</software>
 
 	<software name="kigyosja">
-		<description>Kigyos jatek</description>
+		<description>Kigyós játék</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="3712">
 				<rom name="kigyos jatek (198x)(-)(hu).cas" size="3712" crc="242565c1" sha1="473647d4cac46e3e15534e064d1af0a4c8f8aee6" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="kigyosjaa" cloneof="kigyosja">
+		<description>Kigyós játék (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="3643">
 				<rom name="kigyos jatek (198x)(-)(hu)[a].cas" size="3643" crc="99b93c2a" sha1="b6d4d6efd06e3b051c2ca308c0d24cb5fa34d558" offset="0" />
-			</dataarea>
-		</part>
-		<part name="cass3" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Hacked"/>
-			<dataarea name="cass" size="3911">
-				<rom name="kigyos jatek (198x)(-)(hu)[h].cas" size="3911" crc="df0a9643" sha1="6e769115ef3531954eec76226e0480f69c53675c" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="kiscsava">
-		<description>Kis csavargo</description>
+		<description>Kis csavargó</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="6912">
 				<rom name="kis csavargo (198x)(-)(hu).cas" size="6912" crc="ad3daa37" sha1="6be910a71f05709885a7dd4df9b64e3ef9a000e0" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="kiscsavaa" cloneof="kiscsava">
+		<description>Kis csavargó (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="6820">
 				<rom name="kis csavargo (198x)(-)(hu)[a].cas" size="6820" crc="aae9123d" sha1="726d102d9084b4346a2e1a110ca78818e7f4ed2b" offset="0" />
 			</dataarea>
@@ -1194,18 +1306,23 @@
 	</software>
 
 	<software name="kockapok">
-		<description>Kocka Poker</description>
+		<description>Kockapóker</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="4013">
 				<rom name="kocka poker (198x)(-)(hu).cas" size="4013" crc="552b1478" sha1="ae1f082f307b3174e9254bf48807949643ebc7c6" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="kockapoka" cloneof="kockapok">
+		<description>Kockapóker (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="4096">
 				<rom name="kocka poker (198x)(-)(hu)[a].cas" size="4096" crc="9f0b31f0" sha1="40197f9f43e29f7e0446b949b56e4724c0c7409e" offset="0" />
 			</dataarea>
@@ -1213,7 +1330,7 @@
 	</software>
 
 	<software name="kormoci">
-		<description>Kormoci arany</description>
+		<description>Körmöci arany</description>
 		<year>198?</year>
 		<publisher>Novotrade</publisher>
 
@@ -1237,7 +1354,7 @@
 	</software>
 
 	<software name="kulczha2">
-		<description>Kulcshaz II</description>
+		<description>Kulcsház II</description>
 		<year>198?</year>
 		<publisher>K&amp;K Soft</publisher>
 
@@ -1261,7 +1378,7 @@
 	</software>
 
 	<software name="labirint">
-		<description>Labirintus (Endre Piret - Sandor Vekony)</description>
+		<description>Labirintus (Endre Piret - Sándor Vékony)</description>
 		<year>1987</year>
 		<publisher>Endre Piret - Sandor Vekony</publisher>
 
@@ -1273,9 +1390,9 @@
 	</software>
 	
 	<software name="labirnt1">
-		<description>Labirintus (Zoltan Gugi)</description>
+		<description>Labirintus (Zoltán Gugi)</description>
 		<year>198?</year>
-		<publisher>Zoltan Gugi</publisher>
+		<publisher>Zoltán Gugi</publisher>
 
 		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="4174">
@@ -1321,7 +1438,7 @@
 	</software>
 
 	<software name="lampak">
-		<description>Lampak</description>
+		<description>Lámpák</description>
 		<year>1986</year>
 		<publisher>Istvan Nemeth</publisher>
 
@@ -1332,19 +1449,24 @@
 		</part>
 	</software>
 
-	<software name="letrajat">
-		<description>Letra jatek</description>
+	<software name="letra">
+		<description>Létra</description>
 		<year>198?</year>
 		<publisher>Novotrade</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="11776">
 				<rom name="letra jatek (198x)(novotrade)(hu).cas" size="11776" crc="5e8b9d77" sha1="fe17628a6bc15e52078d632d85207af89c2de0fb" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="letraa" cloneof="letra">
+		<description>Létra (Alt)</description>
+		<year>198?</year>
+		<publisher>Novotrade</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="9479">
 				<rom name="letra jatek (198x)(novotrade)(hu)[a].cas" size="9479" crc="e2381655" sha1="fc343ff3f0fa6f404d6bfca3ff372b57c13d1d27" offset="0" />
 			</dataarea>
@@ -1388,7 +1510,7 @@
 	</software>
 
 	<software name="loversen">
-		<description>Loverseny</description>
+		<description>Lóverseny</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -1400,7 +1522,7 @@
 	</software>
 
 	<software name="magyaror">
-		<description>Magyarorszag</description>
+		<description>Magyarország</description>
 		<year>198?</year>
 		<publisher>King ec Software - Software in LUX</publisher>
 
@@ -1424,9 +1546,9 @@
 	</software>
 
 	<software name="mariolab">
-		<description>Mario a labirintusban</description>
+		<description>Márió a labirintusban</description>
 		<year>198?</year>
-		<publisher>Bela Takacs</publisher>
+		<publisher>Béla Takács</publisher>
 
 		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="26272">
@@ -1436,18 +1558,23 @@
 	</software>
 
 	<software name="marokko">
-		<description>Marokko</description>
+		<description>Marokkó</description>
 		<year>198?</year>
 		<publisher>Videoton</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="8576">
 				<rom name="marokko (198x)(videoton)(hu).cas" size="8576" crc="8691c343" sha1="55b5b00f4f94b5978354ee45171ee66121c7a794" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="marokkoa" cloneof="marokko">
+		<description>Marokkó (Alt)</description>
+		<year>198?</year>
+		<publisher>Videoton</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="8197">
 				<rom name="marokko (198x)(videoton)(hu)[a].cas" size="8197" crc="49b1e2d0" sha1="fe4a25716da8e283dc85eac0edce3fa7516165ba" offset="0" />
 			</dataarea>
@@ -1460,13 +1587,18 @@
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="4224">
 				<rom name="mastermind (198x)(-)(hu).cas" size="4224" crc="95c7cf94" sha1="608537406e4654e8e6246231ed4c3b9d41b7c58f" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="mastminda" cloneof="mastmind">
+		<description>Mastermind (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="3957">
 				<rom name="mastermind (198x)(-)(hu)[a].cas" size="3957" crc="d00667a0" sha1="d3f07b934949fa7c19b83e54a7cabec852400c5a" offset="0" />
 			</dataarea>
@@ -1486,7 +1618,7 @@
 	</software>
 
 	<software name="memoria">
-		<description>Memoria</description>
+		<description>Memória</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -1522,7 +1654,7 @@
 	</software>
 
 	<software name="minigolf">
-		<description>Mini Golf</description>
+		<description>Minigolf</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -1558,18 +1690,23 @@
 	</software>
 
 	<software name="motrodeo">
-		<description>Motorodeo</description>
+		<description>Motorodeó</description>
 		<year>198?</year>
 		<publisher>Imre Ehreth - STV</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="15616">
 				<rom name="motorodeo (198x)(ehreth, imre - stv).cas" size="15616" crc="0a35606f" sha1="a0004dfc937c059b6a21cdf22ea5ce54f76aaf54" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="motrodeoa" cloneof="motrodeo">
+		<description>Motorodeó (Alt)</description>
+		<year>198?</year>
+		<publisher>Imre Ehreth - STV</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="15525">
 				<rom name="motorodeo (198x)(ehreth, imre - stv)[a].cas" size="15525" crc="68b9fcb9" sha1="5a3d7d1a25a6eae926a9efad08296ad65b87c6f1" offset="0" />
 			</dataarea>
@@ -1594,19 +1731,30 @@
 		<publisher>Novotrade</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="19968">
 				<rom name="ninja (198x)(novotrade)(hu).cas" size="19968" crc="06311467" sha1="4dba1796655af05708ad96b7677ac5c342f69d08" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="ninjaa" cloneof="ninja">
+		<description>Ninja (Alt)</description>
+		<year>198?</year>
+		<publisher>Novotrade</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="19845">
 				<rom name="ninja (198x)(novotrade)(hu)[a].cas" size="19845" crc="071c081c" sha1="1f33e094afe97cd6d5b9afc9e10cf360594cad75" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt 2"/>
+	</software>
+
+	<software name="ninjab" cloneof="ninja">
+		<description>Ninja (Alt 2)</description>
+		<year>198?</year>
+		<publisher>Novotrade</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="19822">
 				<rom name="ninja (198x)(novotrade)(hu)[a2].cas" size="19822" crc="62146427" sha1="8afec5d5b3fb073668f9f1b60f73f81bd262d35f" offset="0" />
 			</dataarea>
@@ -1614,18 +1762,23 @@
 	</software>
 
 	<software name="nyulvada">
-		<description>Nyulvadaszat</description>
+		<description>Nyúlvadászat</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="6016">
 				<rom name="nyulvadaszat (198x)(-)(hu).cas" size="6016" crc="7861cf16" sha1="a7f0fb18aea1f084a0634ee58784a91f5df3eddb" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="nyulvadaa" cloneof="nyulvada">
+		<description>Nyúlvadászat (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="6007">
 				<rom name="nyulvadaszat (198x)(-)(hu)[a].cas" size="6007" crc="b80c511a" sha1="c5714e8be58915414faa70970271f1c43a0501cc" offset="0" />
 			</dataarea>
@@ -1681,7 +1834,7 @@
 	</software>
 
 	<software name="oszkar">
-		<description>Oszkar, a lovag</description>
+		<description>Oszkár a lovag</description>
 		<year>1986</year>
 		<publisher>Sandor Bartha</publisher>
 
@@ -1705,9 +1858,9 @@
 	</software>
 
 	<software name="otto">
-		<description>Otto, a lovag</description>
+		<description>Ottó a lovag</description>
 		<year>198?</year>
-		<publisher>Laszlo Giricz</publisher>
+		<publisher>László Giricz</publisher>
 
 		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="8948">
@@ -1722,19 +1875,30 @@
 		<publisher>Videoton</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="10112">
 				<rom name="pack man (198x)(videoton).cas" size="10112" crc="6b403320" sha1="4d3a2d653bd694b9d55f75c6d4971284ede81ce6" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="packmana" cloneof="packman">
+		<description>Pack Man (Alt)</description>
+		<year>198?</year>
+		<publisher>Videoton</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="10017">
 				<rom name="pack man (198x)(videoton)[a].cas" size="10017" crc="1d6603b8" sha1="43dd096d71aa2d14257f545b893a2658620ff113" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt 2"/>
+	</software>
+
+	<software name="packmanb" cloneof="packman">
+		<description>Pack Man (Alt 2)</description>
+		<year>198?</year>
+		<publisher>Videoton</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="10014">
 				<rom name="pack man (198x)(videoton)[a2].cas" size="10014" crc="09cdd171" sha1="fba22e732cf9f6a50bb113e19fc2ae531befe8b2" offset="0" />
 			</dataarea>
@@ -1742,7 +1906,7 @@
 	</software>
 
 	<software name="panik">
-		<description>Panik</description>
+		<description>Pánik</description>
 		<year>1991</year>
 		<publisher>Vindics</publisher>
 
@@ -1754,7 +1918,7 @@
 	</software>
 
 	<software name="parbaj">
-		<description>Parbaj</description>
+		<description>Párbaj</description>
 		<year>1991</year>
 		<publisher>Vindics</publisher>
 
@@ -1766,18 +1930,23 @@
 	</software>
 
 	<software name="poker">
-		<description>Poker (Unisoft Gmk)</description>
+		<description>Póker (Unisoft Gmk)</description>
 		<year>1986</year>
 		<publisher>Unisoft Gmk</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="8832">
 				<rom name="poker (1986)(unisoft gmk)(hu).cas" size="8832" crc="2c949845" sha1="df0d1f81df6913b83ad6a04d507be5f2a6f06c18" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="pokera" cloneof="poker">
+		<description>Póker (Unisoft Gmk, Alt)</description>
+		<year>1986</year>
+		<publisher>Unisoft Gmk</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="8776">
 				<rom name="poker (1986)(unisoft gmk)(hu)[a].cas" size="8776" crc="29560e1d" sha1="566d32032d149b913de32ead20e62f15c81798e9" offset="0" />
 			</dataarea>
@@ -1785,7 +1954,7 @@
 	</software>
 
 	<software name="poker1">
-		<description>Poker (Unknown)</description>
+		<description>Póker (Unknown)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -1799,7 +1968,7 @@
 	<software name="potty">
 		<description>Potty</description>
 		<year>198?</year>
-		<publisher>Nandor Sieben</publisher>
+		<publisher>Nándor Sieben</publisher>
 
 		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="6510">
@@ -1823,7 +1992,7 @@
 	<software name="ramazuri">
 		<description>Ramazuri</description>
 		<year>1988</year>
-		<publisher>Bela Csatlos - Peter Porosz</publisher>
+		<publisher>Béla Csatlós - Peter Porosz</publisher>
 
 		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="7764">
@@ -1850,13 +2019,18 @@
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="8832">
 				<rom name="reversi (198x)(-)(hu).cas" size="8832" crc="d12ab698" sha1="fc89e6dec5dc68ee54a9e2485275fc39e400d958" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="reversia" cloneof="reversi">
+		<description>Reversi (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="8764">
 				<rom name="reversi (198x)(-)(hu)[a].cas" size="8764" crc="bac8108a" sha1="b715ab9cdcb6622b671ff45511f2a9105e35ed05" offset="0" />
 			</dataarea>
@@ -1881,13 +2055,18 @@
 		<publisher>Novotrade</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="22016">
 				<rom name="rohamm (1989)(novotrade)(hu).cas" size="22016" crc="ff244477" sha1="fad7eac50c1b54984af9eae3ca6821d9a5f3afd9" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="rohamma" cloneof="rohamm">
+		<description>RoHAMM (Alt)</description>
+		<year>1989</year>
+		<publisher>Novotrade</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="21795">
 				<rom name="rohamm (1989)(novotrade)(hu)[h].cas" size="21795" crc="fd0dd656" sha1="a9fc50351c3d9e5741913b4b8010037f91831cc0" offset="0" />
 			</dataarea>
@@ -1895,32 +2074,25 @@
 	</software>
 
 	<software name="rombolo">
-		<description>Rombolo</description>
+		<description>Romboló</description>
 		<year>198?</year>
 		<publisher>Police Sowtver</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="6784">
 				<rom name="rombolo (198x)(police sowtver)(hu).cas" size="6784" crc="02920fb1" sha1="62757709c61f4cf16cf127b45fcf8385665953ef" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
-			<dataarea name="cass" size="6727">
-				<rom name="rombolo (198x)(police sowtver)(hu)[a].cas" size="6727" crc="544e98b9" sha1="2efa494e9b5393be979c1dcfbae2c95ab919957f" offset="0" />
-			</dataarea>
-		</part>
 	</software>
 
-	<software name="roulett">
-		<description>Roulette de luxe (Bad)</description>
-		<year>1986</year>
-		<publisher>Ferenc Dobai</publisher>
+	<software name="romboloa" cloneof="rombolo">
+		<description>Romboló (Alt)</description>
+		<year>198?</year>
+		<publisher>Police Sowtver</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-			<dataarea name="cass" size="8230">
-				<rom name="roulette de luxe (1986)(dobai, ferenc)(hu)[b].cas" size="8230" crc="7b235d42" sha1="49b4357d0e8da3b8c5ff530f1420e7ca2fd3e093" offset="0" status="baddump" />
+			<dataarea name="cass" size="6727">
+				<rom name="rombolo (198x)(police sowtver)(hu)[a].cas" size="6727" crc="544e98b9" sha1="2efa494e9b5393be979c1dcfbae2c95ab919957f" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1938,7 +2110,7 @@
 	</software>
 
 	<software name="sajtvajo">
-		<description>Sajtvajo</description>
+		<description>Sajtvájó </description>
 		<year>1991</year>
 		<publisher>Vindics</publisher>
 
@@ -1974,18 +2146,23 @@
 	</software>
 
 	<software name="sarkany">
-		<description>Sarkanybarlang</description>
+		<description>Sárkánybarlang</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="6656">
 				<rom name="sarkanybarlang (198x)(-)(hu).cas" size="6656" crc="a3a24679" sha1="127743090a424f4ed040c515eecf42f467203bfb" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="sarkanya" cloneof="sarkany">
+		<description>Sárkánybarlang (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="6540">
 				<rom name="sarkanybarlang (198x)(-)(hu)[a].cas" size="6540" crc="a69d2de9" sha1="4202a1094ae477b766fb4c1c2efcd934bea1d721" offset="0" />
 			</dataarea>
@@ -1993,18 +2170,23 @@
 	</software>
 
 	<software name="satiroza">
-		<description>Satirozas</description>
+		<description>Satírozás</description>
 		<year>1991</year>
 		<publisher>DGT Software - Vindics</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="14336">
 				<rom name="satirozas (1991)(dgt software - vindics)(hu).cas" size="14336" crc="bc0a679d" sha1="0939d7b1244238e7af6dbf7c3b6b8371440419d1" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="satirozaa" cloneof="satiroza">
+		<description>Satírozás (Alt)</description>
+		<year>1991</year>
+		<publisher>DGT Software - Vindics</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="14321">
 				<rom name="satirozas (1991)(dgt software - vindics)(hu)[a].cas" size="14321" crc="5fd630a4" sha1="c14719c65d8a71134df8d5662914481a7178d912" offset="0" />
 			</dataarea>
@@ -2038,7 +2220,7 @@
 	<software name="sprinter">
 		<description>Sprinter (Hacked)</description>
 		<year>198?</year>
-		<publisher>Zsolt Bertok - Software in LUX</publisher>
+		<publisher>Zsolt Bertók - Software in LUX</publisher>
 
 		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="6226">
@@ -2096,18 +2278,23 @@
 	</software>
 
 	<software name="stripfor">
-		<description>Strip-forgo</description>
+		<description>Strip-forgó</description>
 		<year>198?</year>
 		<publisher>Ubisoft</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="8960">
 				<rom name="strip-forgo (198x)(ubisoft)(hu).cas" size="8960" crc="d5fd07b3" sha1="6140ef21e51445aeb77fcf1ea0c7db8203f9db7d" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="stripfora" cloneof="stripfor">
+		<description>Strip-forgó (Alt)</description>
+		<year>198?</year>
+		<publisher>Ubisoft</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="8887">
 				<rom name="strip-forgo (198x)(ubisoft)(hu)[a].cas" size="8887" crc="bfac1436" sha1="6916346b65109b4918831e8e0885f6edce1059fa" offset="0" />
 			</dataarea>
@@ -2115,7 +2302,7 @@
 	</software>
 
 	<software name="szankove">
-		<description>Szankoverseny</description>
+		<description>Szánkóverseny</description>
 		<year>1985</year>
 		<publisher>Videoton</publisher>
 
@@ -2126,8 +2313,8 @@
 		</part>
 	</software>
 
-	<software name="szextesz">
-		<description>Szex Teszt</description>
+	<software name="sextest">
+		<description>Szex-teszt</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -2139,9 +2326,9 @@
 	</software>
 
 	<software name="szinre">
-		<description>Szinre-szint</description>
+		<description>Színre színt</description>
 		<year>198?</year>
-		<publisher>Zsolt Bertok</publisher>
+		<publisher>Zsolt Bertók</publisher>
 
 		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="21748">
@@ -2151,9 +2338,9 @@
 	</software>
 
 	<software name="szopoker">
-		<description>Szo-Poker</description>
+		<description>Szó-póker</description>
 		<year>1987</year>
-		<publisher>Jozsef Szoldatics</publisher>
+		<publisher>József Szoldatics</publisher>
 
 		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="12572">
@@ -2177,7 +2364,7 @@
 	<software name="szolite1">
 		<description>Szoliter (Jatekgyaros)</description>
 		<year>2003</year>
-		<publisher>Jatekgyaros</publisher>
+		<publisher>Játékgyáros</publisher>
 
 		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="3760">
@@ -2187,7 +2374,7 @@
 	</software>
 
 	<software name="szornyek">
-		<description>Szornyek az utvesztoben (Hacked)</description>
+		<description>Szörnyek az útvesztőben (Hacked)</description>
 		<year>198?</year>
 		<publisher>C.S. Software</publisher>
 
@@ -2199,9 +2386,9 @@
 	</software>
 
 	<software name="talalkoz">
-		<description>Talalkozok</description>
+		<description>Találkozók</description>
 		<year>198?</year>
-		<publisher>Bela Csatlos - Peter Porosz</publisher>
+		<publisher>Béla Csatlós - Peter Porosz</publisher>
 
 		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="6076">
@@ -2211,9 +2398,9 @@
 	</software>
 
 	<software name="tankcsat">
-		<description>Tankcsata jatek</description>
+		<description>Tankcsata</description>
 		<year>1988</year>
-		<publisher>Laszlo Nagy</publisher>
+		<publisher>László Nagy</publisher>
 
 		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="7562">
@@ -2223,7 +2410,7 @@
 	</software>
 
 	<software name="tapsi">
-		<description>Tapsi es a nagy vadasz</description>
+		<description>Tapsi és a nagy vadász</description>
 		<year>1988</year>
 		<publisher>L&amp;M Softver</publisher>
 
@@ -2235,18 +2422,23 @@
 	</software>
 
 	<software name="telex">
-		<description>Telex - 1500 szo magyarul</description>
+		<description>Telex - 1500 szó magyarul</description>
 		<year>1988</year>
 		<publisher>Novotrade</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="17111">
 				<rom name="telex - 1500 szo magyarul (1988)(novotrade)(hu).cas" size="17111" crc="2279dd3d" sha1="20add4d665ba7c76a5c2e568f3574ce6d4c04996" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="telexa" cloneof="telex">
+		<description>Telex - 1500 szó magyarul (Alt)</description>
+		<year>1988</year>
+		<publisher>Novotrade</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="16437">
 				<rom name="telex - 1500 szo magyarul (1988)(novotrade)(hu)[a].cas" size="16437" crc="4afa1cc5" sha1="fe747bd6d99e4a5a9e57d8bb4ab63fa758c965ea" offset="0" />
 			</dataarea>
@@ -2266,7 +2458,7 @@
 	</software>
 
 	<software name="tiktakto">
-		<description>Tik-tak-to</description>
+		<description>Tik-Tak-To</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -2277,19 +2469,24 @@
 		</part>
 	</software>
 
-	<software name="tilitoli">
-		<description>Tili-toli</description>
+	<software name="toli">
+		<description>Toli</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="2816">
 				<rom name="tili-toli (198x)(-)(hu).cas" size="2816" crc="88d116b6" sha1="1d1130d0841883234db8ca8eee4e43eb36692d8b" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="tolia" cloneof="toli">
+		<description>Toli (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="2664">
 				<rom name="tili-toli (198x)(-)(hu)[a].cas" size="2664" crc="9080b642" sha1="21863fd6633efe48a9446ac05e28a6d93629ee9a" offset="0" />
 			</dataarea>
@@ -2302,13 +2499,18 @@
 		<publisher>King ec Software - Endre Piret</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="1792">
 				<rom name="tiszta lappal (1987)(king ec software - piret, endre)(hu).cas" size="1792" crc="60e97cc5" sha1="b459cfcff62b7d02b1925c70e2377c8013080b12" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="tisztaa" cloneof="tiszta">
+		<description>Tiszta lappal (Alt)</description>
+		<year>1987</year>
+		<publisher>King ec Software - Endre Piret</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="1693">
 				<rom name="tiszta lappal (1987)(king ec software - piret, endre)(hu)[a].cas" size="1693" crc="92fb8357" sha1="064d92b54e383f645c0b9f74d05d63c51ec5f665" offset="0" />
 			</dataarea>
@@ -2328,7 +2530,7 @@
 	</software>
 
 	<software name="torpedo"> <!-- game seems to work fine, but marked as bad in TOSEC -->
-		<description>Torpedo (Unisoft, Bad?)</description>
+		<description>Torpedó (Unisoft, Bad?)</description>
 		<year>1986</year>
 		<publisher>Unisoft</publisher>
 
@@ -2340,7 +2542,7 @@
 	</software>
 
 	<software name="torpedo1">
-		<description>Torpedo (Unknown)</description>
+		<description>Torpedó (Unknown)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -2357,13 +2559,18 @@
 		<publisher>TVCM</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="24505">
 				<rom name="transversion (1991)(tvcm)(hu).cas" size="24505" crc="2357bade" sha1="d299b54a479d200f9eec20444c3ecc9c221719c0" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Hacked"/>
+	</software>
+
+	<software name="transvera" cloneof="transver">
+		<description>Transversion (Alt)</description>
+		<year>1991</year>
+		<publisher>TVCM</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="11749">
 				<rom name="transversion (1991)(tvcm)(hu)[h].cas" size="11749" crc="09807ddb" sha1="bed60d830048b7dd464b46b14442008aa270017a" offset="0" />
 			</dataarea>
@@ -2395,18 +2602,23 @@
 	</software>
 
 	<software name="turbrudi">
-		<description>Turbo Rudi</description>
+		<description>Turbó Rudi</description>
 		<year>1987</year>
 		<publisher>Novotrade</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="13440">
 				<rom name="turbo rudi (1987)(novotrade)(hu).cas" size="13440" crc="2c4be8f9" sha1="59f59096358d3fe68fbe73aa34b38d81ad73f05a" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="turbrudia" cloneof="turbrudi">
+		<description>Turbó Rudi (Alt)</description>
+		<year>1987</year>
+		<publisher>Novotrade</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="13315">
 				<rom name="turbo rudi (1987)(novotrade)(hu)[a].cas" size="13315" crc="f09d2e1b" sha1="e6b8b4c032983196344ce0ab3a77fdc49fc2511c" offset="0" />
 			</dataarea>
@@ -2426,39 +2638,25 @@
 	</software>
 
 	<software name="tvcfalto">
-		<description>TV-computer faltoro jatek</description>
+		<description>TV-Computer Faltörő játék</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="3840">
 				<rom name="tv-computer faltoro jatek (198x)(-)(hu).cas" size="3840" crc="43e23051" sha1="47f7a3f58b4a711754b574bb085fe59c3cec79a8" offset="0" />
-			</dataarea>
-		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Hacked"/>
-			<dataarea name="cass" size="3328">
-				<rom name="tv-computer faltoro jatek (198x)(-)(hu)[h].cas" size="3328" crc="42bfa364" sha1="070f2e0b50ddf7baa24c0f84692cf968940e167f" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="tvpoker">
-		<description>TV-Poker</description>
+		<description>TV-Póker</description>
 		<year>198?</year>
 		<publisher>Novotrade</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="15872">
 				<rom name="tv-poker (198x)(novotrade)(hu).cas" size="15872" crc="8a302270" sha1="b989f06ec742e50371cc19cfb3b26ec4a907da48" offset="0" />
-			</dataarea>
-		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Bad"/>
-			<dataarea name="cass" size="15829">
-				<rom name="tv-poker (198x)(novotrade)(hu)[b].cas" size="15829" crc="f5f8155b" sha1="80d10177c8d2cb88e8deaaff024a745b92c17946" offset="0" status="baddump" />
 			</dataarea>
 		</part>
 	</software>
@@ -2476,7 +2674,7 @@
 	</software>
 
 	<software name="tvtenisz">
-		<description>TV-tenisz</description>
+		<description>TV-Tenisz</description>
 		<year>1987</year>
 		<publisher>Zsolt Dobrovics</publisher>
 
@@ -2488,7 +2686,7 @@
 	</software>
 
 	<software name="ubulpinc">
-		<description>Ubul es a pince</description>
+		<description>Ubul és a pince</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -2505,13 +2703,18 @@
 		<publisher>STV</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="12416">
 				<rom name="ufo (1992)(stv)(hu).cas" size="12416" crc="aefa8b27" sha1="1c80958c66d55375ee1ae063b1d2b54f26113954" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="ufoa" cloneof="ufo">
+		<description>UFO (Alt)</description>
+		<year>1992</year>
+		<publisher>STV</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="12413">
 				<rom name="ufo (1992)(stv)(hu)[a].cas" size="12413" crc="6e7d5cac" sha1="2f2ac17d85a9ccf8d159bf23c0f811c978078c11" offset="0" />
 			</dataarea>
@@ -2531,18 +2734,23 @@
 	</software>
 
 	<software name="urcsata">
-		<description>Urcsata</description>
+		<description>Űrcsata</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="1408">
 				<rom name="urcsata (198x)(-).cas" size="1408" crc="b0f5f780" sha1="c1b6b4479894838a2ee42edf9d860a90d2eae527" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="urcsataa" cloneof="urcsata">
+		<description>Űrcsata (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="1288">
 				<rom name="urcsata (198x)(-)[a].cas" size="1288" crc="88571e12" sha1="3aaf1ff3e9581d0578afae4e9ec2b466ecf37987" offset="0" />
 			</dataarea>
@@ -2550,7 +2758,7 @@
 	</software>
 
 	<software name="ursiklo">
-		<description>Ursiklo</description>
+		<description>Űrsikló</description>
 		<year>198?</year>
 		<publisher>Software in LUX</publisher>
 
@@ -2561,19 +2769,24 @@
 		</part>
 	</software>
 
-	<software name="vadaszat">
-		<description>Vadaszat</description>
+	<software name="vadasz">
+		<description>Vadász</description>
 		<year>1987</year>
 		<publisher>Csaba Kiss</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="4608">
 				<rom name="vadaszat (1987)(kiss, csaba)(hu).cas" size="4608" crc="471f9950" sha1="147accc26222e485f5fcd271b9cc36d55df4375c" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="vadasza" cloneof="vadasz">
+		<description>Vadász (Alt)</description>
+		<year>1987</year>
+		<publisher>Csaba Kiss</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="4556">
 				<rom name="vadaszat (1987)(kiss, csaba)(hu)[a].cas" size="4556" crc="ef19b6cc" sha1="4ad497cc129dba592e029cf81f4a588c4c33d80c" offset="0" />
 			</dataarea>
@@ -2583,16 +2796,21 @@
 	<software name="vadnyuga">
 		<description>Vadnyugat</description>
 		<year>1987</year>
-		<publisher>Szabolcs Pocze</publisher>
+		<publisher>Szabolcs Pőcze</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="6400">
 				<rom name="vadnyugat (1987)(pocze, szabolcs)(hu).cas" size="6400" crc="975188dc" sha1="e4be492372d244331774833228b0fc08c4cc36d9" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="vadnyugaa" cloneof="vadnyuga">
+		<description>Vadnyugat (Alt)</description>
+		<year>1987</year>
+		<publisher>Szabolcs Pőcze</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="6332">
 				<rom name="vadnyugat (1987)(pocze, szabolcs)(hu)[a].cas" size="6332" crc="07700ac8" sha1="5399dc1ee9d6a3cb40c8d925469596daf278d342" offset="0" />
 			</dataarea>
@@ -2600,9 +2818,9 @@
 	</software>
 
 	<software name="varazsgo">
-		<description>Varazsgomb</description>
+		<description>Varázsgömb</description>
 		<year>198?</year>
-		<publisher>Zsolt Bertok</publisher>
+		<publisher>Zsolt Bertók</publisher>
 
 		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="7705">
@@ -2612,18 +2830,23 @@
 	</software>
 
 	<software name="varos">
-		<description>Varos</description>
+		<description>Város</description>
 		<year>1986</year>
 		<publisher>Centrum - Ferenc Dobai</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="4736">
 				<rom name="varos (1986)(centrum - dobai, ferenc)(hu).cas" size="4736" crc="aeb4bd34" sha1="a882ac401804f73fe117dbaacd71cf4d027db7a0" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="varosa" cloneof="varos">
+		<description>Város (Alt)</description>
+		<year>1986</year>
+		<publisher>Centrum - Ferenc Dobai</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="4631">
 				<rom name="varos (1986)(centrum - dobai, ferenc)(hu)[a].cas" size="4631" crc="b3786055" sha1="a06028ce70e6bf31283ebf7b9600692d7ceca405" offset="0" />
 			</dataarea>
@@ -2643,18 +2866,23 @@
 	</software>
 
 	<software name="vezetes">
-		<description>Vezetes</description>
+		<description>Vezetés</description>
 		<year>1987</year>
 		<publisher>King ec Software</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="2304">
 				<rom name="vezetes (1987)(king ec software)(hu).cas" size="2304" crc="1175511d" sha1="204d827292d3a7406f4acdddf144ec9e2ddc642a" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="vezetesa" cloneof="vezetes">
+		<description>Vezetés (Alt)</description>
+		<year>1987</year>
+		<publisher>King ec Software</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="2225">
 				<rom name="vezetes (1987)(king ec software)(hu)[a].cas" size="2225" crc="b0eacf1e" sha1="5f507574d4af955ab2d320ed3f03f694152b1590" offset="0" />
 			</dataarea>
@@ -2674,18 +2902,23 @@
 	</software>
 
 	<software name="vilibany">
-		<description>Vili a banyasz</description>
+		<description>Vili a bányász</description>
 		<year>1991</year>
 		<publisher>Vindics</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="20224">
 				<rom name="vili a banyasz (1991)(vindics)(hu).cas" size="20224" crc="f7a663c8" sha1="a0f819f67f7b4943a320c4d0dc450ced72c20b4f" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="vilibanya" cloneof="vilibany">
+		<description>Vili a bányász (Alt)</description>
+		<year>1991</year>
+		<publisher>Vindics</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="20153">
 				<rom name="vili a banyasz (1991)(vindics)(hu)[h].cas" size="20153" crc="55300ca3" sha1="7a8185e82b676d6e16c59b2612e68ad33fcedc54" offset="0" />
 			</dataarea>
@@ -2710,13 +2943,18 @@
 		<publisher>Intelligent Software</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="20736">
 				<rom name="vt bridzs (1985)(intelligent software)(hu).cas" size="20736" crc="44d51c08" sha1="1ca692b1e55ff6f2fd0f3235e3ed8872f00017a9" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="vtbridzsa" cloneof="vtbridzs">
+		<description>VT Bridzs (Alt)</description>
+		<year>1985</year>
+		<publisher>Intelligent Software</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="18177">
 				<rom name="vt bridzs (1985)(intelligent software)(hu)[a].cas" size="18177" crc="8d936ba2" sha1="fd38a85aa9ba9e3355c83f04dbc167fe6589282d" offset="0" />
 			</dataarea>
@@ -2729,13 +2967,18 @@
 		<publisher>STV</publisher>
 
 		<part name="cass1" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="11520">
 				<rom name="walltris (1992)(stv)(hu).cas" size="11520" crc="6c52d2a0" sha1="707f80f751e616108b43448327e1a53df6828296" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="tvc_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="walltrisa" cloneof="walltris">
+		<description>Walltris (Alt)</description>
+		<year>1992</year>
+		<publisher>STV</publisher>
+
+		<part name="cass1" interface="tvc_cass">
 			<dataarea name="cass" size="11499">
 				<rom name="walltris (1992)(stv)(hu)[a].cas" size="11499" crc="9afd0675" sha1="f0c441caaae109f1a64b6af345d76791757acbf0" offset="0" />
 			</dataarea>

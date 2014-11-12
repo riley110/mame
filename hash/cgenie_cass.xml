@@ -1,9 +1,16 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<!-- todo: document basic tapes when they are fixed!" -->
+
+<!-- 
+
+  TODO:
+  * document basic tapes when they are fixed!
+  * add to usage "start with /" for games which need it (those which don't autostart)
+  * check which games work and which don't and fix the supported flag accordingly
+-->
 
 <softwarelist name="cgenie_cass" description="EACA Colour Genie/EG2000 cassettes">
-	<software name="andromed">
+	<software name="andromed" supported="no">
 		<description>Andromeda</description>
 		<year>1982</year>
 		<publisher>TGC</publisher>
@@ -16,7 +23,7 @@
 		</part>
 	</software>
 
-	<software name="andromeda" cloneof="andromed">
+	<software name="andromeda" cloneof="andromed" supported="no">
 		<description>Andromeda (Alt)</description>
 		<year>1982</year>
 		<publisher>TGC</publisher>
@@ -29,7 +36,7 @@
 		</part>
 	</software>
 
-	<software name="astrnaut">
+	<software name="astrnaut" supported="no">
 		<description>Astronaut</description>
 		<year>1984</year>
 		<publisher>N.A. Taylor</publisher>
@@ -41,7 +48,7 @@
 		</part>
 	</software>
 
-	<software name="basicode">
+	<software name="basicode" supported="no">
 		<description>Basicode</description>
 		<year>1983</year>
 		<publisher>TCS</publisher>
@@ -54,7 +61,7 @@
 		</part>
 	</software>
 
-	<software name="baspack">
+	<software name="baspack" supported="no">
 		<description>Basic-Packer 2.13</description>
 		<year>1983</year>
 		<publisher>TCS</publisher>
@@ -67,7 +74,7 @@
 		</part>
 	</software>
 
-	<software name="chopper">
+	<software name="chopper" supported="no">
 		<description>Chopper</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -80,8 +87,8 @@
 		</part>
 	</software>
 
-	<software name="chop83">
-		<description>Chopper (1983)</description>
+	<software name="chop83" supported="no">
+		<description>Chopper (Autostart)</description>
 		<year>1983</year>
 		<publisher>Juergen Buchmueller</publisher>
 		<info name="usage" value="Type SYSTEM and load with CHOP83"/>
@@ -93,7 +100,7 @@
 		</part>
 	</software>
 
-	<software name="colcom">
+	<software name="colcom" supported="no">
 		<description>TCS Colour Basic Compiler Ver. 3.05</description>
 		<year>1982</year>
 		<publisher>TCS</publisher>
@@ -106,7 +113,7 @@
 		</part>
 	</software>
 
-	<software name="colbasp">
+	<software name="colbasp" supported="no">
 		<description>Colour Basic +5</description>
 		<year>1983</year>
 		<publisher>TCS</publisher>
@@ -119,7 +126,7 @@
 		</part>
 	</software>
 
-	<software name="colconv">
+	<software name="colconv" supported="no">
 		<description>EG 2000 Tape-Disk Converter Ver. 1.1</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -132,7 +139,7 @@
 		</part>
 	</software>
 
-	<software name="coldesig">
+	<software name="coldesig" supported="no">
 		<description>Colour Design 3.0</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -145,7 +152,7 @@
 		</part>
 	</software>
 
-	<software name="coldosin">
+	<software name="coldosin" supported="no">
 		<description>Colour DOS - Interface</description>
 		<year>1997</year>
 		<publisher>Juergen Buchmueller</publisher>
@@ -158,7 +165,7 @@
 		</part>
 	</software>
 
-	<software name="colforth">
+	<software name="colforth" supported="no">
 		<description>Colour-Forth v2.0</description>
 		<year>1983</year>
 		<publisher>TCS</publisher>
@@ -171,7 +178,7 @@
 		</part>
 	</software>
 
-	<software name="colfortha" cloneof="colforth">
+	<software name="colfortha" cloneof="colforth" supported="no">
 		<description>Colour-Forth v2.0 (Alt)</description>
 		<year>1983</year>
 		<publisher>TCS</publisher>
@@ -184,7 +191,7 @@
 		</part>
 	</software>
 
-	<software name="colkong">
+	<software name="colkong" supported="no">
 		<description>Colour Kong (16k)</description>
 		<year>1983</year>
 		<publisher>TCS</publisher>
@@ -197,7 +204,7 @@
 		</part>
 	</software>
 
-	<software name="colkong32" cloneof="colkong">
+	<software name="colkong32" cloneof="colkong" supported="no">
 		<description>Colour Kong (32k)</description>
 		<year>1983</year>
 		<publisher>TCS</publisher>
@@ -210,7 +217,7 @@
 		</part>
 	</software>
 
-	<software name="colkonga" cloneof="colkong">
+	<software name="colkonga" cloneof="colkong" supported="no">
 		<description>Colour Kong (16k, Alt)</description>
 		<year>1983</year>
 		<publisher>TCS</publisher>
@@ -223,7 +230,7 @@
 		</part>
 	</software>
 
-	<software name="colmon2">
+	<software name="colmon2" supported="no">
 		<description>Colmon Vers.2</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -236,8 +243,8 @@
 		</part>
 	</software>
 
-	<software name="monrom">
-		<description>&lt;unknown&gt; program "MONROM"</description>
+	<software name="monrom" supported="no">
+		<description>Unknown program "MONROM"</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<info name="usage" value="Type SYSTEM and load with MONROM"/>
@@ -249,7 +256,7 @@
 		</part>
 	</software>
 
-	<software name="colmon30">
+	<software name="colmon30" supported="no">
 		<description>Colour-Monitor 3.0</description>
 		<year>1983</year>
 		<publisher>TCS</publisher>
@@ -262,7 +269,7 @@
 		</part>
 	</software>
 
-	<software name="colpasc">
+	<software name="colpasc" supported="no">
 		<description>Colour-PASCAL 2.0</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -275,7 +282,7 @@
 		</part>
 	</software>
 
-	<software name="colrot">
+	<software name="colrot" supported="no">
 		<description>Colrot</description>
 		<year>1983</year>
 		<publisher>TCS</publisher>
@@ -288,7 +295,7 @@
 		</part>
 	</software>
 
-	<software name="colscha">
+	<software name="colscha" supported="no">
 		<description>Colour-SCHACH</description>
 		<year>1983</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -301,7 +308,7 @@
 		</part>
 	</software>
 
-	<software name="colsch">
+	<software name="colsch" supported="no">
 		<description>Colour Schach</description>
 		<year>1983</year>
 		<publisher>TCS</publisher>
@@ -314,7 +321,7 @@
 		</part>
 	</software>
 
-	<software name="cosmicat">
+	<software name="cosmicat" supported="no">
 		<description>Cosmic Attack</description>
 		<year>198?</year>
 		<publisher>Kansas Software</publisher>
@@ -327,7 +334,7 @@
 		</part>
 	</software>
 
-	<software name="crzpaintb" cloneof="crzpaint">
+	<software name="crzpaintb" cloneof="crzpaint" supported="no">
 		<description>Crazy Paint (Later, Alt)</description>
 		<year>1984</year>
 		<publisher>The Colour Connection</publisher>
@@ -340,7 +347,7 @@
 		</part>
 	</software>
 
-	<software name="eagle">
+	<software name="eagle" supported="no">
 		<description>Eagle</description>
 		<year>1983</year>
 		<publisher>TCS</publisher>
@@ -353,7 +360,7 @@
 		</part>
 	</software>
 
-	<software name="eatman">
+	<software name="eatman" supported="no">
 		<description>Eatman</description>
 		<year>1983</year>
 		<publisher>Computer Service W. Neumann - Molimerx Ltd.</publisher>
@@ -366,7 +373,7 @@
 		</part>
 	</software>
 
-	<software name="eis">
+	<software name="eis" supported="no">
 		<description>Eis</description>
 		<year>1983</year>
 		<publisher>TCS</publisher>
@@ -379,7 +386,7 @@
 		</part>
 	</software>
 
-	<software name="eliminat">
+	<software name="eliminat" supported="no">
 		<description>Eliminator</description>
 		<year>1984</year>
 		<publisher>The Colour Connection</publisher>
@@ -392,8 +399,8 @@
 		</part>
 	</software>
 
-	<software name="fgr">
-		<description>&lt;unknown&gt; program "FGR"</description>
+	<software name="fgr" supported="no">
+		<description>Unknown program "FGR"</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<info name="usage" value="Type SYSTEM and load with FGR"/>
@@ -405,7 +412,7 @@
 		</part>
 	</software>
 
-	<software name="firebird">
+	<software name="firebird" supported="no">
 		<description>Firebird</description>
 		<year>1983</year>
 		<publisher>Heinz Hubben Software</publisher>
@@ -418,7 +425,7 @@
 		</part>
 	</software>
 
-	<software name="flugsim">
+	<software name="flugsim" supported="no">
 		<description>Colour Genie Flugsimulator</description>
 		<year>198?</year>
 		<publisher>TCS</publisher>
@@ -431,7 +438,7 @@
 		</part>
 	</software>
 
-	<software name="fraggles">
+	<software name="fraggles" supported="no">
 		<description>Im Reich der Fraggles</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -444,7 +451,7 @@
 		</part>
 	</software>
 
-	<software name="glueck">
+	<software name="glueck" supported="no">
 		<description>Glueckspilz</description>
 		<year>1983</year>
 		<publisher>TCS?</publisher>
@@ -457,7 +464,7 @@
 		</part>
 	</software>
 
-	<software name="grafiked">
+	<software name="grafiked" supported="no">
 		<description>Grafik Editor</description>
 		<year>1983</year>
 		<publisher>TCS?</publisher>
@@ -470,7 +477,7 @@
 		</part>
 	</software>
 
-	<software name="helikopt">
+	<software name="helikopt" supported="no">
 		<description>Helikopter</description>
 		<year>1983</year>
 		<publisher>Heinz Hubben Software</publisher>
@@ -483,7 +490,7 @@
 		</part>
 	</software>
 
-	<software name="invasion">
+	<software name="invasion" supported="no">
 		<description>Invasion aus dem Weltraum</description>
 		<year>1982</year>
 		<publisher>Harald Boegeholz</publisher>
@@ -514,7 +521,7 @@
 		</part>
 	</software>
 
-	<software name="life">
+	<software name="life" supported="no">
 		<description>Life</description>
 		<year>1983</year>
 		<publisher>TCS</publisher>
@@ -527,7 +534,7 @@
 		</part>
 	</software>
 
-	<software name="lunarlan">
+	<software name="lunarlan" supported="no">
 		<description>Lunar Lander</description>
 		<year>1983</year>
 		<publisher>TCS</publisher>
@@ -540,7 +547,7 @@
 		</part>
 	</software>
 
-	<software name="mampf2">
+	<software name="mampf2" supported="no">
 		<description>Mampf Man II</description>
 		<year>1983</year>
 		<publisher>TCS</publisher>
@@ -553,7 +560,7 @@
 		</part>
 	</software>
 
-	<software name="kaefer">
+	<software name="kaefer" supported="no">
 		<description>Marien Kaefer</description>
 		<year>1984</year>
 		<publisher>TCS?</publisher>
@@ -566,7 +573,7 @@
 		</part>
 	</software>
 
-	<software name="meteor">
+	<software name="meteor" supported="no">
 		<description>Meteor</description>
 		<year>1983</year>
 		<publisher>TCS</publisher>
@@ -579,8 +586,8 @@
 		</part>
 	</software>
 
-	<software name="monroe">
-		<description>&lt;unknown&gt; program "MONROE"</description>
+	<software name="monroe" supported="no">
+		<description>Unknown program "MONROE"</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<info name="usage" value="Type SYSTEM and load with MONROE"/>
@@ -592,7 +599,7 @@
 		</part>
 	</software>
 
-	<software name="motten">
+	<software name="motten" supported="no">
 		<description>Motten</description>
 		<year>1982</year>
 		<publisher>TCS</publisher>
@@ -605,7 +612,7 @@
 		</part>
 	</software>
 
-	<software name="musik">
+	<software name="musik" supported="no">
 		<description>Musik</description>
 		<year>1983</year>
 		<publisher>TCS</publisher>
@@ -618,7 +625,7 @@
 		</part>
 	</software>
 
-	<software name="netzo">
+	<software name="netzo" supported="no">
 		<description>Netzo</description>
 		<year>1983</year>
 		<publisher>TCS</publisher>
@@ -631,7 +638,7 @@
 		</part>
 	</software>
 
-	<software name="pacboy">
+	<software name="pacboy" supported="no">
 		<description>Pac Boy</description>
 		<year>1984</year>
 		<publisher>Heinz Hubben Software</publisher>
@@ -644,7 +651,7 @@
 		</part>
 	</software>
 
-	<software name="crzpaint">
+	<software name="crzpaint" supported="no">
 		<description>Crazy Paint</description>
 		<year>1983</year>
 		<publisher>TCS</publisher>
@@ -657,7 +664,7 @@
 		</part>
 	</software>
 
-	<software name="crzpainta" cloneof="crzpaint">
+	<software name="crzpainta" cloneof="crzpaint" supported="no">
 		<description>Crazy Paint (Later)</description>
 		<year>1984</year>
 		<publisher>The Colour Connection</publisher>
@@ -670,7 +677,7 @@
 		</part>
 	</software>
 
-	<software name="rs232">
+	<software name="rs232" supported="no">
 		<description>RS-232 Treiberprogramm</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -683,7 +690,7 @@
 		</part>
 	</software>
 
-	<software name="saug">
+	<software name="saug" supported="no">
 		<description>Saug</description>
 		<year>1983</year>
 		<publisher>TCS</publisher>
@@ -696,7 +703,7 @@
 		</part>
 	</software>
 
-	<software name="scrprint">
+	<software name="scrprint" supported="no">
 		<description>Screen Printer</description>
 		<year>1983</year>
 		<publisher>TCS</publisher>
@@ -709,7 +716,7 @@
 		</part>
 	</software>
 
-	<software name="scuttle">
+	<software name="scuttle" supported="no">
 		<description>Scuttle</description>
 		<year>1982</year>
 		<publisher>TGC?</publisher>
@@ -722,7 +729,7 @@
 		</part>
 	</software>
 
-	<software name="skramble">
+	<software name="skramble" supported="no">
 		<description>Skramble</description>
 		<year>1983</year>
 		<publisher>Algray Software</publisher>
@@ -735,7 +742,7 @@
 		</part>
 	</software>
 
-	<software name="softschu">
+	<software name="softschu" supported="no">
 		<description>Software-Schutz</description>
 		<year>1983</year>
 		<publisher>Harald Boegeholz</publisher>
@@ -748,7 +755,7 @@
 		</part>
 	</software>
 
-	<software name="spaceatt">
+	<software name="spaceatt" supported="no">
 		<description>Space Attack</description>
 		<year>1984</year>
 		<publisher>The Colour Connection</publisher>
@@ -761,7 +768,7 @@
 		</part>
 	</software>
 
-	<software name="spaceman">
+	<software name="spaceman" supported="no">
 		<description>Spaceman</description>
 		<year>198?</year>
 		<publisher>TCS?</publisher>
@@ -774,7 +781,7 @@
 		</part>
 	</software>
 
-	<software name="superbas">
+	<software name="superbas" supported="no">
 		<description>Super-Basic</description>
 		<year>19??</year>
 		<publisher>Heinz Hubben Software</publisher>
@@ -787,7 +794,7 @@
 		</part>
 	</software>
 
-	<software name="superhrn">
+	<software name="superhrn" supported="no">
 		<description>Superhirn</description>
 		<year>1982</year>
 		<publisher>TTS</publisher>
@@ -800,7 +807,7 @@
 		</part>
 	</software>
 
-	<software name="supergra">
+	<software name="supergra" supported="no">
 		<description>Super-Grafik</description>
 		<year>1984</year>
 		<publisher>The Colour Connection</publisher>
@@ -813,7 +820,7 @@
 		</part>
 	</software>
 
-	<software name="syscopy">
+	<software name="syscopy" supported="no">
 		<description>System Copy</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -826,7 +833,7 @@
 		</part>
 	</software>
 
-	<software name="tausend">
+	<software name="tausend" supported="no">
 		<description>Tausend Fuss</description>
 		<year>1983</year>
 		<publisher>TCS</publisher>
@@ -839,7 +846,7 @@
 		</part>
 	</software>
 
-	<software name="toadman">
+	<software name="toadman" supported="no">
 		<description>Toad Mania</description>
 		<year>1983</year>
 		<publisher>Gumboot Software</publisher>
@@ -852,7 +859,7 @@
 		</part>
 	</software>
 
-	<software name="tracemon">
+	<software name="tracemon" supported="no">
 		<description>Tracemon</description>
 		<year>1983</year>
 		<publisher>Juergen Buchmueller</publisher>
@@ -865,7 +872,7 @@
 		</part>
 	</software>
 
-	<software name="triton">
+	<software name="triton" supported="no">
 		<description>Triton Battle</description>
 		<year>19??</year>
 		<publisher>Schmidtke Electronic</publisher>
@@ -878,7 +885,7 @@
 		</part>
 	</software>
 
-	<software name="ubootjag">
+	<software name="ubootjag" supported="no">
 		<description>U-Boot-Jagd</description>
 		<year>198?</year>
 		<publisher>TGC?</publisher>
@@ -891,8 +898,8 @@
 		</part>
 	</software>
 
-	<software name="unkmulti">
-		<description>&lt;unknown&gt; multi-program tape</description>
+	<software name="unkmulti" supported="no">
+		<description>Unknown multi-program tape</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<info name="usage" value="Type SYSTEM and load with UHRCOP or SCRPRT"/>
@@ -904,7 +911,7 @@
 		</part>
 	</software>
 
-	<software name="zeichen">
+	<software name="zeichen" supported="no">
 		<description>Zeichen Editor</description>
 		<year>1983</year>
 		<publisher>TCS</publisher>
@@ -917,7 +924,7 @@
 		</part>
 	</software>
 
-	<software name="zeichena" cloneof="zeichen">
+	<software name="zeichena" cloneof="zeichen" supported="no">
 		<description>Zeichen Editor (Alt)</description>
 		<year>1983</year>
 		<publisher>TCS</publisher>
