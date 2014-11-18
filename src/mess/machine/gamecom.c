@@ -8,8 +8,8 @@ static const int gamecom_timer_limit[8] = { 2, 1024, 2048, 4096, 8192, 16384, 32
 TIMER_CALLBACK_MEMBER(gamecom_state::gamecom_clock_timer_callback)
 {
 	UINT8 * RAM = m_region_maincpu->base();
-	UINT8 val = ( ( RAM[SM8521_CLKT] & 0x3F ) + 1 ) & 0x3F;
-	RAM[SM8521_CLKT] = ( RAM[SM8521_CLKT] & 0xC0 ) | val;
+	UINT8 val = RAM[SM8521_CLKT] + 1;
+	RAM[SM8521_CLKT] = ( RAM[SM8521_CLKT] & 0xC0 ) | (val & 0x3f);
 	m_maincpu->set_input_line(sm8500_cpu_device::CK_INT, ASSERT_LINE );
 }
 
@@ -62,31 +62,17 @@ void gamecom_state::gamecom_set_mmu(UINT8 mmu, UINT8 data)
 
 void gamecom_state::handle_stylus_press( int column )
 {
-	static const UINT16 row_data[17] = { 0x3FE, 0x3FD, 0x3FB, 0x3F7, 0x3EF, 0x3DF, 0x3BF, 0x37F, 0x2FF, 0x1FF };
-
-	if ( column == 0 )
+	UINT16 data = m_io_grid[column]->read();
+	if (data)
 	{
-		if ( !BIT( m_io_in2->read(), 2) )
-		{
-			m_stylus_x = m_io_styx->read() >> 4;
-			m_stylus_y = m_io_styy->read() >> 4;
-		}
-		else
-		{
-			m_stylus_x = 16;
-			m_stylus_y = 16;
-		}
-	}
-
-	if ( m_stylus_x == column )
-	{
-		m_p_ram[SM8521_P0] = row_data[m_stylus_y];
-		m_p_ram[SM8521_P1] = ( m_p_ram[SM8521_P1] & 0xFC ) | ( ( row_data[m_stylus_y] >> 8 ) & 3 );
+		UINT16 stylus_y = data ^ 0x3ff;
+		m_p_ram[SM8521_P0] = stylus_y;
+		m_p_ram[SM8521_P1] = ( m_p_ram[SM8521_P1] & 0xFC ) | ( stylus_y >> 8 );
 	}
 	else
 	{
 		m_p_ram[SM8521_P0] = 0xFF;
-		m_p_ram[SM8521_P1] = ( m_p_ram[SM8521_P1] & 0xFC ) | 3;
+		m_p_ram[SM8521_P1] |= 3;
 	}
 }
 
@@ -205,8 +191,9 @@ READ8_MEMBER( gamecom_state::gamecom_pio_r )
 
 READ8_MEMBER( gamecom_state::gamecom_internal_r )
 {
-	if(SM8521_LCV == offset + 0x20)
-		popmessage("Read from vblank bit, TODO");
+// ToDo: Read from vblank bit
+//	if(SM8521_LCV == offset + 0x20)
+//		popmessage("Read from vblank bit, TODO");
 
 	return m_p_ram[offset + 0x20];
 }
@@ -487,7 +474,8 @@ WRITE8_MEMBER( gamecom_state::gamecom_handle_dma )
 		m_dma.source_mask = 0x3FFF;
 		if (RAM[SM8521_DMBR] < 16)
 			m_dma.source_bank = m_region_kernel->base() + (RAM[SM8521_DMBR] << 14);
-		else if (m_cart_ptr)
+		else
+		if (m_cart_ptr)
 			m_dma.source_bank = m_cart_ptr + (RAM[SM8521_DMBR] << 14);
 
 		m_dma.dest_bank = &m_p_videoram[(RAM[SM8521_DMVP] & 0x02) ? 0x2000 : 0x0000];

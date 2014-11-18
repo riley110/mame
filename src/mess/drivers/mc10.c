@@ -510,7 +510,6 @@ static MACHINE_CONFIG_START( mc10, mc10_state )
 
 	/* Software lists */
 	MCFG_SOFTWARE_LIST_ADD("cass_list", "mc10")
-	
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_START( alice32, mc10_state )
@@ -565,6 +564,7 @@ static MACHINE_CONFIG_DERIVED( alice90, alice32 )
 	/* Software lists */
 	MCFG_SOFTWARE_LIST_MODIFY("cass_list", "alice90")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("alice32_cass", "alice32")
+	MCFG_DEVICE_REMOVE("mc10_cass")
 MACHINE_CONFIG_END
 
 
