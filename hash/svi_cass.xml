@@ -2,8 +2,7 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <!--
 Info Taken from here: http://www.samdal.com/SVIDOCS/SVI_Softwares_for_SVI318-328.pdf
-                    : http://www.samdal.com/svsoftware.htm
-					: http://www.tosecdev.org/forum/errors-contributions/spectravideo-svi-318-and-svi-328-(tosec)-549/
+                      http://www.samdal.com/svsoftware.htm
 
 These Cassettes are not dumped:
 
@@ -20,6 +19,9 @@ SD-274T Bone of Contention
 SD-235T Introduction to Basic
 SD-266T Spectra Sprite Editor
 SD-292T Ninja
+
+According to http://www.tosecdev.org/forum/errors-contributions/spectravideo-svi-318-and-svi-328-(tosec)-549/
+there is also a large number of other tapes yet to be found and dumped:
 
 Mr Seek Kaivosseikkailu (1985)(Teknopiste)
 Bomulus ja beduiinit (1985)(Teknopiste)
@@ -112,9 +114,11 @@ Grave Digger (198x)
 Fortune Valley (198x)
 Trach Man (198x)
 Ballonies (198x)
+
+
 -->
 
-<softwarelist name="svi_cass" description="Spectravision SVI series cassettes">
+<softwarelist name="svi_cass" description="Spectravision SVI-318 cassettes">
 
 
 	<!--Official Software-->
@@ -124,7 +128,7 @@ Ballonies (198x)
 		<publisher>Spectravideo</publisher>
 		<info name="serial" value="SD-241T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="32768">
 				<rom name="telebunny.cas" size="32768" crc="6585f71f" sha1="eb25060c4e056513f7ebe2d221df15078c1af0ac" offset="0" />
 			</dataarea>
@@ -137,7 +141,7 @@ Ballonies (198x)
 		<publisher>Spectravideo</publisher>
 		<info name="serial" value="SD-243T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="32768">
 				<rom name="sasa.cas" size="32768" crc="5a5be05a" sha1="2e8360134107a479a20e04ec87d46f88687a5097" offset="0" />
 			</dataarea>
@@ -150,7 +154,7 @@ Ballonies (198x)
 		<publisher>Spectravideo</publisher>
 		<info name="serial" value="SD-293T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="32768">
 				<rom name="kung fu master.cas" size="32768" crc="5a3d35b3" sha1="d5f803c537174c3b30ce50a7571f3c382e44115a" offset="0" />
 			</dataarea>
@@ -163,7 +167,7 @@ Ballonies (198x)
 		<publisher>Spectravideo</publisher>
 		<info name="serial" value="SD-216T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="32768">
 				<rom name="tetra horror.cas" size="32768" crc="3a05e2c8" sha1="ea548508c668f8c8713e179e00b2b80cbdc6c80b" offset="0" />
 			</dataarea>
@@ -176,7 +180,7 @@ Ballonies (198x)
 		<publisher>Spectravideo</publisher>
 		<info name="serial" value="SD-211T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="32768">
 				<rom name="old mac farmer.cas" size="32768" crc="7e78bd5c" sha1="d1f995f61833aa6964015b513b8730aec9c509cd" offset="0" />
 			</dataarea>
@@ -189,7 +193,7 @@ Ballonies (198x)
 		<publisher>Spectravideo</publisher>
 		<info name="serial" value="SD-242T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="32768">
 				<rom name="turboat.cas" size="32768" crc="a5b0364a" sha1="37047b2f8cc34d366988ab1ef118e4112656d71a" offset="0" />
 			</dataarea>
@@ -202,7 +206,7 @@ Ballonies (198x)
 		<publisher>Spectravideo</publisher>
 		<info name="serial" value="SD-234T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="16384">
 				<rom name="spectron.cas" size="16384" crc="922c81b8" sha1="4270972f2f0f147bde2a270a4989b2ad8c9aa7f5" offset="0" />
 			</dataarea>
@@ -215,7 +219,7 @@ Ballonies (198x)
 		<publisher>Spectravideo</publisher>
 		<info name="serial" value="SD-233T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="16384">
 				<rom name="armoured assualt.cas" size="16384" crc="a741a408" sha1="a4ad2ceb493ac811fc12972fadcf0474e4ddf163" offset="0" />
 			</dataarea>
@@ -228,7 +232,7 @@ Ballonies (198x)
 		<publisher>Spectravideo</publisher>
 		<info name="serial" value="SD-219T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="8042">
 				<rom name="new york bomb blitz.cas" size="8042" crc="4e79dc11" sha1="f4c7dd3c8336bc89cbd6d7e16a8f89f212199443" offset="0" />
 			</dataarea>
@@ -241,7 +245,7 @@ Ballonies (198x)
 		<publisher>Spectravideo</publisher>
 		<info name="serial" value="SD-257T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="7303">
 				<rom name="rescue.cas" size="7303" crc="13c7106c" sha1="1c5287d7cf9af4dbe3106457a7d04e9688092d26" offset="0" />
 			</dataarea>
@@ -254,7 +258,7 @@ Ballonies (198x)
 		<publisher>Spectravideo</publisher>
 		<info name="serial" value="SD-260T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="8126">
 				<rom name="minigolf.cas" size="8126" crc="214a28c5" sha1="e8525e49b1b8a00993210c4d0811473a57ab917c" offset="0" />
 			</dataarea>
@@ -267,7 +271,7 @@ Ballonies (198x)
 		<publisher>SIL</publisher>
 		<info name="serial" value="SD-260T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="7992">
 				<rom name="junolander.cas" size="7992" crc="024bd117" sha1="88a371381300807af90b4b94e74a8cb5d4222f4a" offset="0" />
 			</dataarea>
@@ -280,7 +284,7 @@ Ballonies (198x)
 		<publisher>Spectravideo</publisher>
 		<info name="serial" value="SD-228T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="8554">
 				<rom name="diary.cas" size="8554" crc="4d869288" sha1="afdc389327f25af266e94ebf26b05693f49bd1f5" offset="0" />
 			</dataarea>
@@ -293,7 +297,7 @@ Ballonies (198x)
 		<publisher>Intellisoft</publisher>
 		<info name="serial" value="SD-229T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="10467">
 				<rom name="home economist.cas" size="10467" crc="71171e2e" sha1="1a77191d439ff594659373ab555cb604f4e38e37" offset="0" />
 			</dataarea>
@@ -306,7 +310,7 @@ Ballonies (198x)
 		<publisher>Intellisoft</publisher>
 		<info name="serial" value="SD-239T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="7903">
 				<rom name="srecipe manager.cas" size="7903" crc="3649c94d" sha1="9ac9950809d789548fc0b0899b4543c282e6f363" offset="0" />
 			</dataarea>
@@ -319,7 +323,7 @@ Ballonies (198x)
 		<publisher>Spectravideo</publisher>
 		<info name="serial" value="SD-225T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="11944">
 				<rom name="filecab.cas" size="11944" crc="d7c3928f" sha1="f5fd759cfe028660f19c96fdd3b34f5f1d360cad" offset="0" />
 			</dataarea>
@@ -332,7 +336,7 @@ Ballonies (198x)
 		<publisher>Spectravideo</publisher>
 		<info name="serial" value="SD-294C Should be a cartridge but a Tape dump exist" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="32768">
 				<rom name="justwrit.cas" size="32768" crc="1db067a3" sha1="00bc3f0365e789c0853a81ebca06c625a35cdd22" offset="0" />
 			</dataarea>
@@ -345,7 +349,7 @@ Ballonies (198x)
 		<publisher>SIL</publisher>
 		<info name="serial" value="SD-308T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="7170">
 				<rom name="compatability.cas" size="7170" crc="1ebede6d" sha1="81fca66fede44597f842ffeee3dda102c6e1f9c1" offset="0" />
 			</dataarea>
@@ -358,7 +362,7 @@ Ballonies (198x)
 		<publisher>SIL</publisher>
 		<info name="serial" value="SD-301T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="8845">
 				<rom name="biorythm.cas" size="8845" crc="fe6eaa6c" sha1="b84b42075ec92ae97f2d5372233fdb1b1d28c707" offset="0" />
 			</dataarea>
@@ -371,7 +375,7 @@ Ballonies (198x)
 		<publisher>Softy</publisher>
 		<info name="serial" value="SD-221T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="11919">
 				<rom name="swingman.cas" size="11919" crc="9c3fe115" sha1="bb827437a3c59fcfa977b31f93928ada2afd70fc" offset="0" />
 			</dataarea>
@@ -384,7 +388,7 @@ Ballonies (198x)
 		<publisher>Spectravideo</publisher>
 		<info name="serial" value="SD-236T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="32768">
 				<rom name="music mentor.cas" size="32768" crc="126b5eec" sha1="ba232a55d0746c0671d1adee08463f93595659c9" offset="0" />
 			</dataarea>
@@ -397,7 +401,7 @@ Ballonies (198x)
 		<publisher>Spectravideo</publisher>
 		<info name="serial" value="SD-256T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="15975">
 				<rom name="starwords.cas" size="15975" crc="95c901db" sha1="966aaf13dab2c306b80a7afd5afb9339f4789bc1" offset="0" />
 			</dataarea>
@@ -410,7 +414,7 @@ Ballonies (198x)
 		<publisher>Spectravideo</publisher>
 		<info name="serial" value="SD-255T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="10151">
 				<rom name="nomis.cas" size="10151" crc="fb527eda" sha1="a75cfb45b8b99da7ac5571f137c3cfbbf7749434" offset="0" />
 			</dataarea>
@@ -423,7 +427,7 @@ Ballonies (198x)
 		<publisher>Softy</publisher>
 		<info name="serial" value="SD-222T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="19433">
 				<rom name="firstep.cas" size="19433" crc="54a94a93" sha1="971c6fd6add7e1b494e43da63aefedf8104385e7" offset="0" />
 			</dataarea>
@@ -436,7 +440,7 @@ Ballonies (198x)
 		<publisher>Spectravideo Israel</publisher>
 		<info name="serial" value="SD-252T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="11547">
 				<rom name="findit.cas" size="11547" crc="d2c16fea" sha1="54219f1ffcae67ef45c47d1d9721813968f85468" offset="0" />
 			</dataarea>
@@ -449,7 +453,7 @@ Ballonies (198x)
 		<publisher>Spectravideo Israel</publisher>
 		<info name="serial" value="SD-254T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="9399">
 				<rom name="munchmath.cas" size="9399" crc="ba202393" sha1="144c8a56d9d8cf6dd1989d9b30e1df6f70d4c600" offset="0" />
 			</dataarea>
@@ -462,7 +466,7 @@ Ballonies (198x)
 		<publisher>Spectravideo</publisher>
 		<info name="serial" value="SD-267T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="7631">
 				<rom name="sfonteditor.cas" size="7631" crc="dfc73d5f" sha1="19001edfc4c53f31687e9ac4101288b8219ee2d2" offset="0" />
 			</dataarea>
@@ -475,7 +479,7 @@ Ballonies (198x)
 		<publisher>Spectravideo</publisher>
 		<info name="serial" value="SD-349T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="6877">
 				<rom name="crunch.cas" size="6877" crc="2913bce3" sha1="caac1d3fc15a4c8317117555a1db70ec46b20583" offset="0" />
 			</dataarea>
@@ -488,7 +492,7 @@ Ballonies (198x)
 		<publisher>John McLachlan</publisher>
 		<info name="serial" value="SD-311T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="2764">
 				<rom name="emergency landing.cas" size="2764" crc="f61981c4" sha1="2555f8482f93d3faca650cb02ca7b1c826aeae29" offset="0" />
 			</dataarea>
@@ -501,7 +505,7 @@ Ballonies (198x)
 		<publisher>Yoga Computing</publisher>
 		<info name="serial" value="SD-347T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="8857">
 				<rom name="ghostrap.cas" size="8857" crc="31ba05de" sha1="670989d09c1a7abf1d4e0f61d4ef833677ae58a7" offset="0" />
 			</dataarea>
@@ -514,7 +518,7 @@ Ballonies (198x)
 		<publisher>Yoga Computing</publisher>
 		<info name="serial" value="SD-617T not sure if it is the same one as it boots it says graph master 2" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="11049">
 				<rom name="graph master.cas" size="11049" crc="b6748d7a" sha1="9fb8fea026f85de36beae026aa5f0f937301bcb0" offset="0" />
 			</dataarea>
@@ -527,7 +531,7 @@ Ballonies (198x)
 		<publisher>Spectravideo</publisher>
 		<info name="serial" value="SD-333T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="6658">
 				<rom name="grave digger.cas" size="6658" crc="e5d5fd0a" sha1="60ace059212e5da759c895268c88263f42b8bc09" offset="0" />
 			</dataarea>
@@ -540,7 +544,7 @@ Ballonies (198x)
 		<publisher>SIL</publisher>
 		<info name="serial" value="SD-326T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="6417">
 				<rom name="horse race.cas" size="6417" crc="0bf03495" sha1="e1a0f33ae7b3801ad53019e0267d3fe2223b42f3" offset="0" />
 			</dataarea>
@@ -553,7 +557,7 @@ Ballonies (198x)
 		<publisher>Spectravideo</publisher>
 		<info name="serial" value="SD-348T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="9228">
 				<rom name="jumping jack.cas" size="9228" crc="9e64abe3" sha1="89539ca4024aa1d48e1051b1abdd0d2a5021fa1b" offset="0" />
 			</dataarea>
@@ -566,7 +570,7 @@ Ballonies (198x)
 		<publisher>TM Software</publisher>
 		<info name="serial" value="SD-663T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="23763">
 				<rom name="jungle jim.cas" size="23763" crc="f05fb9fc" sha1="b5dd3e4cfde938fdc0993146ec66a70eeb2b1963" offset="0" />
 			</dataarea>
@@ -579,7 +583,7 @@ Ballonies (198x)
 		<publisher>Spectravideo</publisher>
 		<info name="serial" value="SD-663T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="9709">
 				<rom name="killer car.cas" size="9709" crc="cf81898b" sha1="b1d6f4f8c68527ab91bcc051b583a33db8ac674a" offset="0" />
 			</dataarea>
@@ -592,7 +596,7 @@ Ballonies (198x)
 		<publisher>Waitaki Software</publisher>
 		<info name="serial" value="SD-343T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="10756">
 				<rom name="kiwi country.cas" size="10756" crc="7bd249ea" sha1="5cccd7e4d399866cac5de0c8f6f071a898575f08" offset="0" />
 			</dataarea>
@@ -605,7 +609,7 @@ Ballonies (198x)
 		<publisher>Spectravideo</publisher>
 		<info name="serial" value="SD-342T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="7332">
 				<rom name="logit.cas" size="7332" crc="baca0c5b" sha1="0c1c601cad87f608eefda02f59fd4d13cc8bfb0a" offset="0" />
 			</dataarea>
@@ -618,7 +622,7 @@ Ballonies (198x)
 		<publisher>Spectravideo</publisher>
 		<info name="serial" value="SD-315T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="1946">
 				<rom name="memory trainer.cas" size="1946" crc="c41818af" sha1="59b1d52a0e4c43de22d486c7c9867c5d14274144" offset="0" />
 			</dataarea>
@@ -631,7 +635,7 @@ Ballonies (198x)
 		<publisher>Spectravideo</publisher>
 		<info name="serial" value="SD-314T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="4576">
 				<rom name="moon lander.cas" size="4576" crc="a92094e7" sha1="27fdb86a1fd636b4db9b592778285e71b7d362aa" offset="0" />
 			</dataarea>
@@ -644,222 +648,13 @@ Ballonies (198x)
 		<publisher>Spectravideo</publisher>
 		<info name="serial" value="SD-316T" />
 
-		<part name="cass1" interface="svi_cass">
+		<part name="cass1" interface="svi318_cass">
 			<dataarea name="cass" size="1902">
 				<rom name="music composer.cas" size="1902" crc="13f99f21" sha1="415108b5073bf26952d7e6a0f7cb259fb7461b27" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="parajump">
-		<description>Para-Jump</description>
-		<year>1984</year>
-		<publisher>Spectravideo</publisher>
-		<info name="serial" value="SD-669T" />
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="6016">
-				<rom name="para-jump.cas" size="6016" crc="eadc1154" sha1="75d47d3b728b42862ca4e922aadead9337c72901" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="plntptrl">
-		<description>Planet Patrol</description>
-		<year>1983</year>
-		<publisher>Spectravideo</publisher>
-		<info name="serial" value="SD-669T" />
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="17124">
-				<rom name="planet patrol.cas" size="17124" crc="09447a47" sha1="7d25e7b65c1c4bcc1c8788787448015916ec3b1d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="plntptrla" cloneof="plntptrl">
-		<description>Planet Patrol (Alt)</description>
-		<year>1983</year>
-		<publisher>Spectravideo</publisher>
-		<info name="serial" value="SD-669T" />
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="32768">
-				<rom name="planet patrol (1983)(spectravideo)[a][bload'cas-',r].cas" size="32768" crc="6adb5186" sha1="c26700c5159c9349d9be6cc4631067e43a2319fc" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="roulette">
-		<description>Roulette</description>
-		<year>1985</year>
-		<publisher>Intersoft</publisher>
-		<info name="serial" value="SD-669T" />
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="20450">
-				<rom name="roulette.cas" size="20450" crc="4e2ab765" sha1="c483d0a10878aedf444c46beeefb96400457935b" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="spctrbrk">
-		<description>Spectra Break</description>
-		<year>1983</year>
-		<publisher>SIL</publisher>
-		<info name="serial" value="SD-???T" />
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="6266">
-				<rom name="spectra break.cas" size="6266" crc="ab295b73" sha1="d363e24c12b072d2cb8c349efdb19fbc852a1e66" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="cryptcub">
-		<description>Spectra Cryptic Cube</description>
-		<year>1984</year>
-		<publisher>Spectravideo</publisher>
-		<info name="serial" value="SD-245T" />
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="6823">
-				<rom name="cryptic cube.cas" size="6823" crc="409d2f40" sha1="c589baeae3a19e5f668c88261be47703c8815560" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="trader">
-		<description>Spectra Trader</description>
-		<year>1984</year>
-		<publisher>A.C. Hunt</publisher>
-		<info name="serial" value="SD-245T" />
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="10420">
-				<rom name="trader.cas" size="10420" crc="d9f4646d" sha1="839f3314787f3005c60345fa7bc2bff2811a85c0" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="spctrmnd">
-		<description>Spectramind</description>
-		<year>1984</year>
-		<publisher>C.A.E.</publisher>
-		<info name="serial" value="SD-245T" />
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="3027">
-				<rom name="spectramind.cas" size="3027" crc="06fb22a3" sha1="313385b027f00e916da7ae7ffbb627c349fc8226" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="adresbok">
-		<description>Address Book</description>
-		<year>1983</year>
-		<publisher>Spectravideo</publisher>
-		<info name="serial" value="SD-269T" />
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="10828">
-				<rom name="address book.cas" size="10828" crc="7c226ab8" sha1="4b475ce52e5d137b8b28a1db411563a329124296" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="treasure">
-		<description>Treasure Chest</description>
-		<year>1984</year>
-		<publisher>Spectravideo</publisher>
-		<info name="serial" value="SD-323T" />
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="2860">
-				<rom name="treasure chess.cas" size="2860" crc="efd7e88d" sha1="3806aeec055267e693cac0b6b9508ff308ffd68a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="unclealb">
-		<description>Uncle Albert</description>
-		<year>1984</year>
-		<publisher>Spectravideo</publisher>
-		<info name="serial" value="SD-341T" />
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="4164">
-				<rom name="treasure chess.cas" size="4164" crc="50e415be" sha1="f8023c62912d0431c52272aaa70107b1cffe6407" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<!-- Released as a cartridge but exist as a tape image too-->
-	<software name="flipper">
-		<description>Flipper Slipper</description>
-		<year>1983</year>
-		<publisher>Spectravideo</publisher>
-		<info name="serial" value="SD-291C" />
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="32768">
-				<rom name="flipper slipper.cas" size="32768" crc="adeec6e7" sha1="5e02eb18da7bab84a09b17a5d7645fbaea23a946" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="ffreddy">
-		<description>Frantic Freddy</description>
-		<year>1983</year>
-		<publisher>Spectravideo</publisher>
-		<info name="serial" value="SD-232C" />
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="16700">
-				<rom name="frantic freddy.cas" size="16700" crc="7aab6fae" sha1="31ae26ceab46efd9abc718e7a5446b38a6160414" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="ffreddya" cloneof="ffreddy">
-		<description>Frantic Freddy (Alt)</description>
-		<year>1983</year>
-		<publisher>Spectravideo</publisher>
-		<info name="serial" value="SD-232C" />
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="32768">
-				<rom name="frantic freddy (1983)(spectravideo)[a][bload'cas-',r].cas" size="32768" crc="5bd12860" sha1="255d8a90d26eb9c1ecdda16ae4da68d44198b47f" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="sectrlph">
-		<description>Sector Alpha</description>
-		<year>1983</year>
-		<publisher>Spectravideo</publisher>
-		<info name="serial" value="SD-220C" />
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="32768">
-				<rom name="sector alpha.cas" size="32768" crc="1ba3279a" sha1="0c8a12003ef8255290d045b3465b300dfdfe2c44" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="scrsfrce">
-		<description>Super Cross Force</description>
-		<year>1983</year>
-		<publisher>Spectravideo</publisher>
-		<info name="serial" value="SD-220C" />
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="32768">
-				<rom name="sector alpha.cas" size="32768" crc="669ad58c" sha1="eec894d6c64f05a82c22fc28b93bba70952afb40" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-	
 	<software name="ninja">
 		<description>Ninja</description>
 		<year>1984</year>
@@ -873,91 +668,220 @@ Ballonies (198x)
 		</part>
 	</software>
 
+	<software name="parajump">
+		<description>Para-Jump</description>
+		<year>1984</year>
+		<publisher>Spectravideo</publisher>
+		<info name="serial" value="SD-669T" />
+
+		<part name="cass1" interface="svi318_cass">
+			<dataarea name="cass" size="6016">
+				<rom name="para-jump.cas" size="6016" crc="eadc1154" sha1="75d47d3b728b42862ca4e922aadead9337c72901" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ppatrol">
+		<description>Planet Patrol</description>
+		<year>1983</year>
+		<publisher>Spectravideo</publisher>
+		<info name="serial" value="SD-669T" />
+
+		<part name="cass1" interface="svi318_cass">
+			<dataarea name="cass" size="17124">
+				<rom name="planet patrol.cas" size="17124" crc="09447a47" sha1="7d25e7b65c1c4bcc1c8788787448015916ec3b1d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ppatrola" cloneof="ppatrol">
+		<description>Planet Patrol (Alt)</description>
+		<year>1983</year>
+		<publisher>Spectravideo</publisher>
+		<info name="serial" value="SD-669T" />
+
+		<part name="cass1" interface="svi318_cass">
+			<dataarea name="cass" size="17124">
+				<rom name="planet patrol (1983)(spectravideo)[a][bload'cas-',r].cas" size="32768" crc="6adb5186" sha1="c26700c5159c9349d9be6cc4631067e43a2319fc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="roulette">
+		<description>Roulette</description>
+		<year>1985</year>
+		<publisher>Intersoft</publisher>
+		<info name="serial" value="SD-669T" />
+
+		<part name="cass1" interface="svi318_cass">
+			<dataarea name="cass" size="20450">
+				<rom name="roulette.cas" size="20450" crc="4e2ab765" sha1="c483d0a10878aedf444c46beeefb96400457935b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spctrbrk">
+		<description>Spectra Break</description>
+		<year>1983</year>
+		<publisher>SIL</publisher>
+		<info name="serial" value="SD-???T" />
+
+		<part name="cass1" interface="svi318_cass">
+			<dataarea name="cass" size="6266">
+				<rom name="spectra break.cas" size="6266" crc="ab295b73" sha1="d363e24c12b072d2cb8c349efdb19fbc852a1e66" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cryptcub">
+		<description>Spectra Cryptic Cube</description>
+		<year>1984</year>
+		<publisher>Spectravideo</publisher>
+		<info name="serial" value="SD-245T" />
+
+		<part name="cass1" interface="svi318_cass">
+			<dataarea name="cass" size="6823">
+				<rom name="cryptic cube.cas" size="6823" crc="409d2f40" sha1="c589baeae3a19e5f668c88261be47703c8815560" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="trader">
+		<description>Spectra Trader</description>
+		<year>1984</year>
+		<publisher>A.C. Hunt</publisher>
+		<info name="serial" value="SD-245T" />
+
+		<part name="cass1" interface="svi318_cass">
+			<dataarea name="cass" size="10420">
+				<rom name="trader.cas" size="10420" crc="d9f4646d" sha1="839f3314787f3005c60345fa7bc2bff2811a85c0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spctrmnd">
+		<description>Spectramind</description>
+		<year>1984</year>
+		<publisher>C.A.E.</publisher>
+		<info name="serial" value="SD-245T" />
+
+		<part name="cass1" interface="svi318_cass">
+			<dataarea name="cass" size="3027">
+				<rom name="spectramind.cas" size="3027" crc="06fb22a3" sha1="313385b027f00e916da7ae7ffbb627c349fc8226" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="adresbok">
+		<description>Address Book</description>
+		<year>1983</year>
+		<publisher>Spectravideo</publisher>
+		<info name="serial" value="SD-269T" />
+
+		<part name="cass1" interface="svi318_cass">
+			<dataarea name="cass" size="10828">
+				<rom name="address book.cas" size="10828" crc="7c226ab8" sha1="4b475ce52e5d137b8b28a1db411563a329124296" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="treasure">
+		<description>Treasure Chest</description>
+		<year>1984</year>
+		<publisher>Spectravideo</publisher>
+		<info name="serial" value="SD-323T" />
+
+		<part name="cass1" interface="svi318_cass">
+			<dataarea name="cass" size="2860">
+				<rom name="treasure chess.cas" size="2860" crc="efd7e88d" sha1="3806aeec055267e693cac0b6b9508ff308ffd68a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unclealb">
+		<description>Uncle Albert</description>
+		<year>1984</year>
+		<publisher>Spectravideo</publisher>
+		<info name="serial" value="SD-341T" />
+
+		<part name="cass1" interface="svi318_cass">
+			<dataarea name="cass" size="4164">
+				<rom name="treasure chess.cas" size="4164" crc="50e415be" sha1="f8023c62912d0431c52272aaa70107b1cffe6407" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Released as a cartridge but exist as a tape image too-->
+	<software name="flipper">
+		<description>Flipper Slipper</description>
+		<year>1984</year>
+		<publisher>John McLachlan</publisher>
+		<info name="serial" value="SD-291C" />
+
+		<part name="cass1" interface="svi318_cass">
+			<dataarea name="cass" size="32768">
+				<rom name="flipper slipper.cas" size="32768" crc="adeec6e7" sha1="5e02eb18da7bab84a09b17a5d7645fbaea23a946" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ffreddy">
+		<description>Frantic Freddy</description>
+		<year>1984</year>
+		<publisher>Spectravideo</publisher>
+		<info name="serial" value="SD-232C" />
+
+		<part name="cass1" interface="svi318_cass">
+			<dataarea name="cass" size="16700">
+				<rom name="frantic freddy.cas" size="16700" crc="7aab6fae" sha1="31ae26ceab46efd9abc718e7a5446b38a6160414" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ffreddya" cloneof="ffreddy">
+		<description>Frantic Freddy (Alt)</description>
+		<year>1984</year>
+		<publisher>Spectravideo</publisher>
+		<info name="serial" value="SD-232C" />
+
+		<part name="cass1" interface="svi318_cass">
+			<dataarea name="cass" size="16700">
+				<rom name="frantic freddy (1983)(spectravideo)[a][bload'cas-',r].cas" size="32768" crc="5bd12860" sha1="255d8a90d26eb9c1ecdda16ae4da68d44198b47f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="secalpha">
+		<description>Sector Alpha</description>
+		<year>1983</year>
+		<publisher>Spectravideo</publisher>
+		<info name="serial" value="SD-220C" />
+
+		<part name="cass1" interface="svi318_cass">
+			<dataarea name="cass" size="32768">
+				<rom name="sector alpha.cas" size="32768" crc="1ba3279a" sha1="0c8a12003ef8255290d045b3465b300dfdfe2c44" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scrsfrce">
+		<description>Super Cross Force</description>
+		<year>1983</year>
+		<publisher>Spectravideo</publisher>
+		<info name="serial" value="SD-220C" />
+
+		<part name="cass1" interface="svi318_cass">
+			<dataarea name="cass" size="32768">
+				<rom name="sector alpha.cas" size="32768" crc="669ad58c" sha1="eec894d6c64f05a82c22fc28b93bba70952afb40" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+
+
 	<!-- Other Publishers-->
 
-	<software name="dialuis2">
-		<description>Diamond Luis II + Editor (Fin)</description>
-		<year>1987</year>
-		<publisher>Ikesoft</publisher>
 
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="33546">
-				<rom name="diamond luis editor.cas" size="33546" crc="1ca9289b" sha1="4697eef9a63c5f41cb684bd55e8018b3d6a1facf" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="explorer">
-		<description>Explorer III</description>
-		<year>1986</year>
-		<publisher>Robert Lindh</publisher>
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="24552">
-				<rom name="explorer3.cas" size="24552" crc="4bc7fef2" sha1="ee54bfb4cf0d4f23012858ab1a04660ba775f6c2" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="megalone">
-		<description>Megalone</description>
-		<year>1986</year>
-		<publisher>JD Team</publisher>
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="58425">
-				<rom name="megalone.cas" size="58425" crc="6609db48" sha1="5ed4c04fd38f362fda500c087811b66ac0e86097" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="msxemu">
-		<description>MSX Emulator</description>
-		<year>1983</year>
-		<publisher>H. Klopper - P. Zevenhoven</publisher>
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="58425">
-				<rom name="msx emulator.cas" size="36864" crc="581497af" sha1="a4cd90130da7058f710c1d283c64978620904c88" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pengwyn">
-		<description>Pengwyn</description>
-		<year>1983</year>
-		<publisher>H. Klopper - P. Zevenhoven</publisher>
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="16384">
-				<rom name="pengwyn.cas" size="16384" crc="44838eee" sha1="24b0e47f05d998c0e5d15a72d8f6431eef19169a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="robotbll">
-		<description>Robot Ball</description>
-		<year>1983</year>
-		<publisher>Mirage Software</publisher>
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="32768">
-				<rom name="robotball.cas" size="32768" crc="83c3ac0a" sha1="85ddd2545afcad313bb31c2e92da9b9e3eefb1c5" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="stockhlm">
-		<description>Stockholm Adventure</description>
-		<year>1983</year>
-		<publisher>Mirage Software</publisher>
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="40960">
-				<rom name="stockholm adventure.cas" size="40960" crc="735d1bdd" sha1="db50d0beaa7974675a9afdd57f8dde4e654bc577" offset="0" />
-			</dataarea>
-		</part>
-	</software>
 	<software name="assiduit">
 		<description>Assiduity (Ger)</description>
 		<year>1984</year>
@@ -1025,7 +949,31 @@ Ballonies (198x)
 
 		<part name="cass1" interface="svi_cass">
 			<dataarea name="cass" size="26014">
-				<rom name="diamond luis i (1986)(ikesoft)[cr morgoth][cload + run].cas" size="26014" crc="a8d8ee21" sha1="7ced3833411e27bdeb958a474e74104fa92576f8" offset="0" />
+				<rom name="diamond luis i (1986)(ikesoft)[cr morgoth][cload + run].cas" size="26014" crc="a8d8ee21" sha1="7ced3833411e27bdeb958a474e74104fa92576f8" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="diamoned">
+		<description>Diamond Luis Editor (Fin)</description>
+		<year>1986</year>
+		<publisher>Ikesoft</publisher>
+
+		<part name="cass1" interface="svi318_cass">
+			<dataarea name="cass" size="33546">
+				<rom name="diamond luis editor.cas" size="33546" crc="1ca9289b" sha1="4697eef9a63c5f41cb684bd55e8018b3d6a1facf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="explorer">
+		<description>Explorer III</description>
+		<year>1986</year>
+		<publisher>Robert Lindh</publisher>
+
+		<part name="cass1" interface="svi318_cass">
+			<dataarea name="cass" size="24552">
+				<rom name="explorer3.cas" size="24552" crc="4bc7fef2" sha1="ee54bfb4cf0d4f23012858ab1a04660ba775f6c2" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1114,6 +1062,18 @@ Ballonies (198x)
 		</part>
 	</software>
 
+	<software name="megalone">
+		<description>Megalone</description>
+		<year>1986</year>
+		<publisher>JD Team</publisher>
+
+		<part name="cass1" interface="svi318_cass">
+			<dataarea name="cass" size="58425">
+				<rom name="megalone.cas" size="58425" crc="6609db48" sha1="5ed4c04fd38f362fda500c087811b66ac0e86097" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="megalonea" cloneof="megalone">
 		<description>Megalone (Alt)</description>
 		<year>1986</year>
@@ -1122,6 +1082,18 @@ Ballonies (198x)
 		<part name="cass1" interface="svi_cass">
 			<dataarea name="cass" size="65636">
 				<rom name="megalone (1986)(j&amp;d team)[a][cload + run].cas" size="65636" crc="40ee709e" sha1="3d5bc3230c4ee7a81b5da0c183f5c3079a9edb26" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="msxemu">
+		<description>MSX Emulator</description>
+		<year>1983</year>
+		<publisher>H. Klopper - P. Zevenhoven</publisher>
+
+		<part name="cass1" interface="svi318_cass">
+			<dataarea name="cass" size="58425">
+				<rom name="msx emulator.cas" size="36864" crc="581497af" sha1="a4cd90130da7058f710c1d283c64978620904c88" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1169,7 +1141,19 @@ Ballonies (198x)
 
 		<part name="cass1" interface="svi_cass">
 			<dataarea name="cass" size="32768">
-				<rom name="music mentor (1983)(spectravideo)[cr hacke][bload'cas-',r].cas" size="32768" crc="e6623f31" sha1="49febbbaa4ae8e2971e0d783397fa74c5c5e2444" offset="0" />
+				<rom name="music mentor (1983)(spectravideo)[cr hacke][bload'cas-',r].cas" size="32768" crc="e6623f31" sha1="49febbbaa4ae8e2971e0d783397fa74c5c5e2444" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pengwyn">
+		<description>Pengwyn</description>
+		<year>1983</year>
+		<publisher>H. Klopper - P. Zevenhoven</publisher>
+
+		<part name="cass1" interface="svi318_cass">
+			<dataarea name="cass" size="16384">
+				<rom name="pengwyn.cas" size="16384" crc="44838eee" sha1="24b0e47f05d998c0e5d15a72d8f6431eef19169a" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1194,6 +1178,30 @@ Ballonies (198x)
 		<part name="cass1" interface="svi_cass">
 			<dataarea name="cass" size="12307">
 				<rom name="pogo stick (1985)(choice software)(de)[cload + run].cas" size="12307" crc="3aab48ce" sha1="1c3a18d187307e734b4741dd0127f11e5913ab56" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="robotbll">
+		<description>Robot Ball</description>
+		<year>1983</year>
+		<publisher>Mirage Software</publisher>
+
+		<part name="cass1" interface="svi318_cass">
+			<dataarea name="cass" size="32768">
+				<rom name="robotball.cas" size="32768" crc="83c3ac0a" sha1="85ddd2545afcad313bb31c2e92da9b9e3eefb1c5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stockhlm">
+		<description>Stockholm Adventure</description>
+		<year>1983</year>
+		<publisher>Mirage Software</publisher>
+
+		<part name="cass1" interface="svi318_cass">
+			<dataarea name="cass" size="40960">
+				<rom name="stockholm adventure.cas" size="40960" crc="735d1bdd" sha1="db50d0beaa7974675a9afdd57f8dde4e654bc577" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1234,7 +1242,34 @@ Ballonies (198x)
 		</part>
 	</software>
 
-	<!--Konami Titles-->
+
+
+	<!-- Conversions from MSX titles -->
+	<!-- Where these unofficial? Who sold them? -->
+
+	<software name="alien8">
+		<description>Alien 8 (MSX Conversion)</description>
+		<year>1985</year>
+		<publisher>Ultimate Play the Game</publisher>
+
+		<part name="cass1" interface="svi_cass">
+			<dataarea name="cass" size="36864">
+				<rom name="alien 8 (1985)(ultimate play the game)[cload + run].cas" size="36864" crc="c6c787de" sha1="d96fefd464ead4621cf588b4e5053b43c92e4c9a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="arkanoid">
+		<description>Arkanoid (MSX Conversion)</description>
+		<year>1986</year>
+		<publisher>Taito</publisher>
+
+		<part name="cass1" interface="svi_cass">
+			<dataarea name="cass" size="53248">
+				<rom name="arkanoid.cas" size="53248" crc="117969bf" sha1="bf298529f40919db9d415805a3a7d3d0a42044f0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
 
 	<software name="cpk">
 		<description>Cabbage Patch Kids (MSX Conversion)</description>
@@ -1301,6 +1336,42 @@ Ballonies (198x)
 		</part>
 	</software>
 
+	<software name="gnfrght">
+		<description>Gun Fright (MSX Conversion)</description>
+		<year>1985</year>
+		<publisher>Ultimate Play The Game</publisher>
+
+		<part name="cass1" interface="svi_cass">
+			<dataarea name="cass" size="57344">
+				<rom name="gunfright.cas" size="57344" crc="a886be3d" sha1="23673101167c3a18700b1c9d8cd6e79abbb3a3a3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hero">
+		<description>H.E.R.O. (MSX Conversion)</description>
+		<year>1984</year>
+		<publisher>Activision</publisher>
+
+		<part name="cass1" interface="svi_cass">
+			<dataarea name="cass" size="32768">
+				<rom name="hero.cas" size="32768" crc="aa8e08f8" sha1="3116dfaff94072111d0bbeaae82e1becd3de075a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hobbit">
+		<description>The Hobbit (MSX Conversion)</description>
+		<year>1985</year>
+		<publisher>Melbourne House</publisher>
+
+		<part name="cass1" interface="svi_cass">
+			<dataarea name="cass" size="81920">
+				<rom name="hobbit.cas" size="81920" crc="a8bb9f09" sha1="382254588f178ade8dcfe959014c61155a917d6c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="hyperol">
 		<description>Hyper Olympic 1 (MSX Conversion)</description>
 		<year>1984</year>
@@ -1310,19 +1381,6 @@ Ballonies (198x)
 		<part name="cass1" interface="svi_cass">
 			<dataarea name="cass" size="36864">
 				<rom name="hyper olympic 1.cas" size="36864" crc="88233a1b" sha1="e28d30191adaa2c408ba6ee52811ab8a6bbc79ea" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="trackfld">
-		<description>Track and Field 1 (MSX Conversion)</description>
-		<year>1984</year>
-		<publisher>Konami</publisher>
-		<info name="serial" value="RC 710" />
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="33161">
-				<rom name="track and field 1.cas" size="33161" crc="da238538" sha1="8d6e20ab0263840cbfb4d87e5dcaf3905aaa03b2" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1375,6 +1433,30 @@ Ballonies (198x)
 		<part name="cass1" interface="svi_cass">
 			<dataarea name="cass" size="33156">
 				<rom name="hyper sport 2.cas" size="33156" crc="24ee0086" sha1="4e66e286a0c9fa204d05096ff795023c33870bad" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ik">
+		<description>International Karate (MSX Conversion)</description>
+		<year>1986</year>
+		<publisher>Endurance Games - Darksloke</publisher>
+
+		<part name="cass1" interface="svi_cass">
+			<dataarea name="cass" size="69632">
+				<rom name="international karate (1986)(endurance games)[cr darksloke][cload + run].cas" size="69632" crc="ddc92a32" sha1="70cf020da2fd8f46ce1b67725834d9acbe2d9650" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="jacknip2">
+		<description>Jack the Nipper II - In Coconut Capers (MSX Conversion, Trained)</description>
+		<year>1987</year>
+		<publisher>Gremlin Graphics</publisher>
+
+		<part name="cass1" interface="svi_cass">
+			<dataarea name="cass" size="77824">
+				<rom name="jack the nipper ii - in coconut capers (1987)(gremlin graphics software)[t][cload + run].cas" size="77824" crc="2531bbd9" sha1="d6eeb92cb8a8d73f83ae9c55b4451ef1c4bae3a9" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1483,92 +1565,14 @@ Ballonies (198x)
 		</part>
 	</software>
 
-	<software name="roadfght">
-		<description>Road Fighter (MSX Conversion)</description>
-		<year>1985</year>
-		<publisher>Konami</publisher>
-		<info name="serial" value="RC 730" />
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="36864">
-				<rom name="road fighter.cas" size="36864" crc="e3fa4805" sha1="183b9f46c7946a6e12fb588568ab841026de8623" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="skyjag">
-		<description>Sky Jaguar (MSX Conversion)</description>
+	<software name="mrdo">
+		<description>Mr. Do (MSX Conversion)</description>
 		<year>1984</year>
-		<publisher>Konami</publisher>
-		<info name="serial" value="RC 721" />
+		<publisher>Nippon Columbia</publisher>
 
 		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="33150">
-				<rom name="sky jaguar.cas" size="33150" crc="b8225999" sha1="9af503c206eb05e90f9606bf14a119f1608e3182" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="yiear1">
-		<description>Yie Ar Kung-Fu (MSX Conversion)</description>
-		<year>1985</year>
-		<publisher>Konami</publisher>
-		<info name="serial" value="RC 725" />
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="36864">
-				<rom name="yie ar kung fu.cas" size="36864" crc="b1a02c2c" sha1="001a547f74e230a53f14ee41a40a0701e5e16c1d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="yiear2">
-		<description>Yie Ar Kung-Fu II - The Emperor Yie-Gah (MSX Conversion)</description>
-		<year>1985</year>
-		<publisher>Konami</publisher>
-		<info name="serial" value="RC 737" />
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="53248">
-				<rom name="yie ar kung fu ii.cas" size="53248" crc="19118024" sha1="b8cd0bd7d92a11dc53379642ba5718cbc6bea75f" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<!--Various MSX Conversions-->
-
-	<software name="alien8">
-		<description>Alien 8 (MSX Conversion)</description>
-		<year>1985</year>
-		<publisher>Ultimate Play the Game</publisher>
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="36864">
-				<rom name="alien 8 (1985)(ultimate play the game)[cload + run].cas" size="36864" crc="c6c787de" sha1="d96fefd464ead4621cf588b4e5053b43c92e4c9a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="ik">
-		<description>International Karate (MSX Conversion)</description>
-		<year>1986</year>
-		<publisher>Endurance Games - Darksloke</publisher>
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="69632">
-				<rom name="international karate (1986)(endurance games)[cr darksloke][cload + run].cas" size="69632" crc="ddc92a32" sha1="70cf020da2fd8f46ce1b67725834d9acbe2d9650" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="jacknip2">
-		<description>Jack the Nipper II - In Coconut Capers (MSX Conversion, Trained)</description>
-		<year>1987</year>
-		<publisher>Gremlin Graphics</publisher>
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="77824">
-				<rom name="jack the nipper ii - in coconut capers (1987)(gremlin graphics software)[t][cload + run].cas" size="77824" crc="2531bbd9" sha1="d6eeb92cb8a8d73f83ae9c55b4451ef1c4bae3a9" offset="0" />
+			<dataarea name="cass" size="50277">
+				<rom name="mrdo.cas" size="50277" crc="1635c81a" sha1="ddcb6eb21dbedc20ba4d592ce3eee4fdb547238f" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1609,6 +1613,19 @@ Ballonies (198x)
 		</part>
 	</software>
 
+	<software name="roadfght">
+		<description>Road Fighter (MSX Conversion)</description>
+		<year>1985</year>
+		<publisher>Konami</publisher>
+		<info name="serial" value="RC 730" />
+
+		<part name="cass1" interface="svi_cass">
+			<dataarea name="cass" size="36864">
+				<rom name="road fighter.cas" size="36864" crc="e3fa4805" sha1="183b9f46c7946a6e12fb588568ab841026de8623" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="robocop">
 		<description>Robocop (MSX Conversion)</description>
 		<year>1988</year>
@@ -1621,74 +1638,15 @@ Ballonies (198x)
 		</part>
 	</software>
 
-	<software name="zaklwood">
-		<description>Zakil Wood (MSX Conversion)</description>
+	<software name="skyjag">
+		<description>Sky Jaguar (MSX Conversion)</description>
 		<year>1984</year>
-		<publisher>Mr. Micro</publisher>
+		<publisher>Konami</publisher>
+		<info name="serial" value="RC 721" />
 
 		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="63082">
-				<rom name="zakil wood.cas" size="63082" crc="705882f2" sha1="e9a29319e0a66a4e05abce0b1d402e5d7cb14437" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="arkanoid">
-		<description>Arkanoid (MSX Conversion)</description>
-		<year>1986</year>
-		<publisher>Taito</publisher>
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="53248">
-				<rom name="arkanoid.cas" size="53248" crc="117969bf" sha1="bf298529f40919db9d415805a3a7d3d0a42044f0" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gnfrght">
-		<description>Gun Fright (MSX Conversion)</description>
-		<year>1985</year>
-		<publisher>Ultimate Play The Game</publisher>
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="57344">
-				<rom name="gunfright.cas" size="57344" crc="a886be3d" sha1="23673101167c3a18700b1c9d8cd6e79abbb3a3a3" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="hero">
-		<description>H.E.R.O. (MSX Conversion)</description>
-		<year>1984</year>
-		<publisher>Activision</publisher>
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="32768">
-				<rom name="hero.cas" size="32768" crc="aa8e08f8" sha1="3116dfaff94072111d0bbeaae82e1becd3de075a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="hobbit">
-		<description>The Hobbit (MSX Conversion)</description>
-		<year>1985</year>
-		<publisher>Melbourne House</publisher>
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="81920">
-				<rom name="hobbit.cas" size="81920" crc="a8bb9f09" sha1="382254588f178ade8dcfe959014c61155a917d6c" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="mrdo">
-		<description>Mr. Do (MSX Conversion)</description>
-		<year>1984</year>
-		<publisher>Nippon Columbia</publisher>
-
-		<part name="cass1" interface="svi_cass">
-			<dataarea name="cass" size="50277">
-				<rom name="mrdo.cas" size="50277" crc="1635c81a" sha1="ddcb6eb21dbedc20ba4d592ce3eee4fdb547238f" offset="0" />
+			<dataarea name="cass" size="33150">
+				<rom name="sky jaguar.cas" size="33150" crc="b8225999" sha1="9af503c206eb05e90f9606bf14a119f1608e3182" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1705,12 +1663,65 @@ Ballonies (198x)
 		</part>
 	</software>
 
+	<software name="trackfld">
+		<description>Track and Field 1 (MSX Conversion)</description>
+		<year>1984</year>
+		<publisher>Konami</publisher>
+		<info name="serial" value="RC 710" />
+
+		<part name="cass1" interface="svi_cass">
+			<dataarea name="cass" size="33161">
+				<rom name="track and field 1.cas" size="33161" crc="da238538" sha1="8d6e20ab0263840cbfb4d87e5dcaf3905aaa03b2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="yiear1">
+		<description>Yie Ar Kung-Fu (MSX Conversion)</description>
+		<year>1985</year>
+		<publisher>Konami</publisher>
+		<info name="serial" value="RC 725" />
+
+		<part name="cass1" interface="svi_cass">
+			<dataarea name="cass" size="36864">
+				<rom name="yie ar kung fu.cas" size="36864" crc="b1a02c2c" sha1="001a547f74e230a53f14ee41a40a0701e5e16c1d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="yiear2">
+		<description>Yie Ar Kung-Fu II - The Emperor Yie-Gah (MSX Conversion)</description>
+		<year>1985</year>
+		<publisher>Konami</publisher>
+		<info name="serial" value="RC 737" />
+
+		<part name="cass1" interface="svi_cass">
+			<dataarea name="cass" size="53248">
+				<rom name="yie ar kung fu ii.cas" size="53248" crc="19118024" sha1="b8cd0bd7d92a11dc53379642ba5718cbc6bea75f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zaklwood">
+		<description>Zakil Wood (MSX Conversion)</description>
+		<year>1984</year>
+		<publisher>Mr. Micro</publisher>
+
+		<part name="cass1" interface="svi_cass">
+			<dataarea name="cass" size="63082">
+				<rom name="zakil wood.cas" size="63082" crc="705882f2" sha1="e9a29319e0a66a4e05abce0b1d402e5d7cb14437" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+
+
 	<!--ColecoVision Conversions-->
 
 	<software name="cavenger">
 		<description>Cosmic Avenger (ColecoVision Conversion)</description>
 		<year>1982</year>
-		<publisher>Coleco - Buggy Software</publisher>
+		<publisher>Buggy Software</publisher>
 
 		<part name="cass1" interface="svi_cass">
 			<dataarea name="cass" size="50277">
@@ -1722,7 +1733,7 @@ Ballonies (198x)
 	<software name="cpk_col">
 		<description>Cabbage Patch Kids (ColecoVision Conversion)</description>
 		<year>1984</year>
-		<publisher>Coleco - Buggy Software</publisher>
+		<publisher>Buggy Software</publisher>
 
 		<part name="cass1" interface="svi_cass">
 			<dataarea name="cass" size="53248">
@@ -1746,7 +1757,7 @@ Ballonies (198x)
 	<software name="dkong">
 		<description>Donkey Kong (ColecoVision Conversion)</description>
 		<year>1982</year>
-		<publisher>Coleco - Buggy Software</publisher>
+		<publisher>Buggy Software</publisher>
 
 		<part name="cass1" interface="svi_cass">
 			<dataarea name="cass" size="50277">
@@ -1770,7 +1781,7 @@ Ballonies (198x)
 	<software name="looping">
 		<description>Looping (ColecoVision Conversion)</description>
 		<year>1983</year>
-		<publisher>Coleco - Buggy Software</publisher>
+		<publisher>Buggy Software</publisher>
 
 		<part name="cass1" interface="svi_cass">
 			<dataarea name="cass" size="50277">
@@ -1782,7 +1793,7 @@ Ballonies (198x)
 	<software name="mtrap">
 		<description>Mouse Trap (ColecoVision Conversion)</description>
 		<year>1983</year>
-		<publisher>Coleco - Buggy Software</publisher>
+		<publisher>Buggy Software</publisher>
 
 		<part name="cass1" interface="svi_cass">
 			<dataarea name="cass" size="50277">
@@ -1794,7 +1805,7 @@ Ballonies (198x)
 	<software name="pepper2">
 		<description>Pepper 2 (ColecoVision Conversion)</description>
 		<year>1983</year>
-		<publisher>Coleco - Buggy Software</publisher>
+		<publisher>Buggy Software</publisher>
 
 		<part name="cass1" interface="svi_cass">
 			<dataarea name="cass" size="50277">
@@ -1806,7 +1817,7 @@ Ballonies (198x)
 	<software name="smurf">
 		<description>Smurf Rescue in Gargamel's Castle (ColecoVision Conversion)</description>
 		<year>1983</year>
-		<publisher>Coleco - Buggy Software</publisher>
+		<publisher>Buggy Software</publisher>
 
 		<part name="cass1" interface="svi_cass">
 			<dataarea name="cass" size="50277">
@@ -1818,7 +1829,7 @@ Ballonies (198x)
 	<software name="wargames">
 		<description>War Games (ColecoVision Conversion)</description>
 		<year>1984</year>
-		<publisher>Coleco - Buggy Software</publisher>
+		<publisher>Buggy Software</publisher>
 
 		<part name="cass1" interface="svi_cass">
 			<dataarea name="cass" size="50277">
@@ -1830,7 +1841,7 @@ Ballonies (198x)
 	<software name="zaxxon">
 		<description>Zaxxon (ColecoVision Conversion)</description>
 		<year>1982</year>
-		<publisher>Coleco - Buggy Software</publisher>
+		<publisher>Buggy Software</publisher>
 
 		<part name="cass1" interface="svi_cass">
 			<dataarea name="cass" size="50277">
@@ -1838,6 +1849,12 @@ Ballonies (198x)
 			</dataarea>
 		</part>
 	</software>
+
+
+
+	<!-- Misc software collections (to sort) -->
+	<!-- Were these covertapes from some magazine? -->
+
 
 	<!-- Burken Soft -->
 
@@ -2614,5 +2631,7 @@ Ballonies (198x)
 			</dataarea>
 		</part>
 	</software>
+
+
 
 </softwarelist>
