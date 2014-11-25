@@ -663,7 +663,8 @@ static MACHINE_CONFIG_START( to7, thomson_state )
 	MCFG_DEVICE_ADD(FLOPPY_3, LEGACY_FLOPPY, 0)
 	MCFG_DEVICE_CONFIG(thomson_floppy_interface)
 	MCFG_LEGACY_FLOPPY_IDX_CB(WRITELINE(thomson_state, fdc_index_3_w))
-	MCFG_SOFTWARE_LIST_ADD("flop_list","to_flop")
+	MCFG_SOFTWARE_LIST_ADD("moto_flop_list","moto_flop")
+	MCFG_SOFTWARE_LIST_ADD("to_flop_list","to_flop")
 
 /* network */
 	MCFG_DEVICE_ADD( "mc6854", MC6854, 0 )
@@ -1106,7 +1107,7 @@ static MACHINE_CONFIG_DERIVED( mo5, to7 )
 	MCFG_GENERIC_LOAD(thomson_state, mo5_cartridge)
 
 	MCFG_DEVICE_REMOVE("cart_list")
-	MCFG_DEVICE_REMOVE("flop_list")
+	MCFG_DEVICE_REMOVE("to_flop_list")
 	MCFG_SOFTWARE_LIST_ADD("cart_list","mo_cart")
 
 	/* internal ram */
@@ -2188,7 +2189,7 @@ static MACHINE_CONFIG_DERIVED( mo6, to7 )
 	MCFG_RAM_DEFAULT_SIZE("128K")
 	
 	MCFG_DEVICE_REMOVE("cart_list")
-	MCFG_DEVICE_REMOVE("flop_list")
+	MCFG_DEVICE_REMOVE("to_flop_list")
 	MCFG_SOFTWARE_LIST_ADD("cart_list","mo_cart")
 MACHINE_CONFIG_END
 
@@ -2438,7 +2439,7 @@ static MACHINE_CONFIG_DERIVED( mo5nr, to7 )
 	MCFG_RAM_DEFAULT_SIZE("128K")
 	
 	MCFG_DEVICE_REMOVE("cart_list")
-	MCFG_DEVICE_REMOVE("flop_list")
+	MCFG_DEVICE_REMOVE("to_flop_list")
 	MCFG_SOFTWARE_LIST_ADD("cart_list","mo_cart")
 MACHINE_CONFIG_END
 

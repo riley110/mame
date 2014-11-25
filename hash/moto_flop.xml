@@ -1,0 +1,304 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!-- This software list is only for games that are tested to work on both Thomson MO and TO series systems. -->
+
+<softwarelist name="moto_flop" description="Thomson MO &amp; TO-series floppies">
+
+	<software name="20kavant">
+		<description>20000 Avant J.C.</description>
+		<year>1987</year>
+		<publisher>Chip</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="20000 avant j.c. (1987)(chip)(fr)[includes mo6 version].fd" size="327680" crc="8b0a7b35" sha1="1b59565b63febe3802731b76a6688bb303f53b4e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+	
+	<software name="20kavanta" cloneof="20kavant">
+		<description>20000 Avant J.C. (Alt)</description>
+		<year>1987</year>
+		<publisher>Chip</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="20000 avant j.c. (1987)(chip)(fr)[a][includes mo6 version].fd" size="327680" crc="983459aa" sha1="7126329367f0c8a07e169e90ad5dc7b0129869b7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+	
+	<software name="20kavantb" cloneof="20kavant">
+		<description>20000 Avant J.C. (SAP Format)</description>
+		<year>1987</year>
+		<publisher>Chip</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="20000 avant j.c. (1987)(chip)(fr)[includes mo6 version].sap" size="335426" crc="0b69d103" sha1="b18d0bce72f507b654cb13aa57de7644eb4f1377" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chicago">
+		<description>Chicago 90</description>
+		<year>1989</year>
+		<publisher>Microids</publisher>
+		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="chicago 90 (1989)(microids)(fr)[boot with microsoft basic 1.0].fd" size="327680" crc="d481639c" sha1="a7c1dd562548337d6db4addc7903c7e10ed3b133" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="classiq2">
+		<description>Classiques Vol.2</description>
+		<year>1987</year>
+		<publisher>Titus</publisher>
+		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="classiques vol.2 (1987)(titus)(fr).fd" size="327680" crc="61c44264" sha1="1b616476d5616ccb7bf93a3096eae847ea3249ad" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="classiq3">
+		<description>Classiques Vol.3</description>
+		<year>1987</year>
+		<publisher>Titus</publisher>
+		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="classiques vol.3 (1987)(titus)(fr).fd" size="327680" crc="6c0f6f65" sha1="99147a84ec0d1d655c4b84c7ba59077ccbf94a1e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="classiq4">
+		<description>Classiques Vol.4</description>
+		<year>1987</year>
+		<publisher>Titus</publisher>
+		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="classiques vol.4 (1987)(titus)(fr).fd" size="327680" crc="085afb85" sha1="a8cb871bc918a5d9d7b20732261a0958b719435f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crepuscu">
+		<description>Le Crepuscule du Naja</description>
+		<year>198?</year>
+		<publisher>Chip</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="crepuscule du naja, le (198x)(chip)(fr)[includes mo6 version].fd" size="327680" crc="d82ae3ad" sha1="a8bd9c396b18ae9a3e7f824db6987a3a51905903" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+	
+	<software name="crepuscua" cloneof="crepuscu">
+		<description>Le Crepuscule du Naja (Alt)</description>
+		<year>198?</year>
+		<publisher>Chip</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="crepuscule du naja, le (198x)(chip)(fr)[a][includes mo6 version].fd" size="327680" crc="093fb473" sha1="7c0239cae5c29254a22c7f332d221d1587af9b00" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+	
+	<software name="crepuscub" cloneof="crepuscu">
+		<description>Le Crepuscule du Naja (SAP Format)</description>
+		<year>198?</year>
+		<publisher>Chip</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="crepuscule du naja, le (198x)(chip)(fr)[includes mo6 version].sap" size="335426" crc="8deda14b" sha1="37bc5b35484cc02616ed899486543e057d26e29f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gp500cc">
+		<description>Grand Prix 500cc</description>
+		<year>1986</year>
+		<publisher>Microids</publisher>
+		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="grand prix 500cc (1986)(microids)(fr)[boot with microsoft basic 1.0].fd" size="327680" crc="feb6f3be" sha1="1212a71207e8daabdb19efaf839f1130f18a23f6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="malefice">
+		<description>Le Malefice des Atlantes</description>
+		<year>1987</year>
+		<publisher>Chip</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="malefice des atlantes, le (1987)(chip)(fr)[includes mo6 version].fd" size="327680" crc="11c0862b" sha1="b8826dc1308706314e55dea009b8bdb73eef999c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+	
+	<software name="maleficea" cloneof="malefice">
+		<description>Le Malefice des Atlantes (Compilation Top Arcade)</description>
+		<year>1987</year>
+		<publisher>Chip</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="malefice des atlantes, le (1987)(chip)(fr)[compilation top arcade][includes mo6 version].fd" size="327680" crc="d2dc73ef" sha1="bc8f483c23f54f84de18c86b7ce15bf61215d590" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+	
+	<software name="menacarc">
+		<description>Menace sur l'Arctique</description>
+		<year>1987</year>
+		<publisher>Chip</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="menace sur l'arctique (1987)(chip)(fr)[includes mo6 version].fd" size="327680" crc="4e28bf43" sha1="09ffecc722243d5ab5e13bcc80cbd72d760b8b95" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+	
+	<software name="menacarca" cloneof="menacarc">
+		<description>Menace sur l'Arctique (Alt)</description>
+		<year>1987</year>
+		<publisher>Chip</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="menace sur l'arctique (chip) (inconnus) (1987) (mo6 to8).fd" size="327680" crc="1510dc96" sha1="d3c3bc925461ecf736dfbb9ee12c2bc0befc3808" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+	
+	<software name="menacarcb" cloneof="menacarc">
+		<description>Menace sur l'Arctique (SAP Format)</description>
+		<year>1987</year>
+		<publisher>Chip</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="menace sur l'arctique (1987)(chip)(fr)[includes mo6 version].sap" size="335426" crc="8545d7ac" sha1="8268344325f6814d4aa24f4ccd80de570d6e4a47" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="quad">
+		<description>Quad</description>
+		<year>1987</year>
+		<publisher>Microids</publisher>
+		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="quad (1987)(microids)(fr)[boot with microsoft basic 1.0].fd" size="327680" crc="95c68b3d" sha1="51e34f395804d76c2b00f5c4bb2ed1723cf826bb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="quada" cloneof="quad">
+		<description>Quad (Alt)</description>
+		<year>1987</year>
+		<publisher>Microids</publisher>
+		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="quad (1987)(microids)(fr)[a][boot with microsoft basic 1.0].fd" size="327680" crc="5d0a6661" sha1="d2bc7e22a42113d8f5efb6bba81043ed814d7910" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+	
+	<software name="quadb" cloneof="quad">
+		<description>Quad (SAP Format)</description>
+		<year>1987</year>
+		<publisher>Microids</publisher>
+		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="quad (1987)(microids)(fr)[boot with microsoft basic 1.0].sap" size="335426" crc="9b01aa0f" sha1="9f65ffc415d066ab704e7484ad1707d76b4e4612" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="talisman">
+		<description>Le Talisman d'Osiris</description>
+		<year>1986</year>
+		<publisher>Chip</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="talisman d'osiris, le (1986)(chip)(fr)[includes mo6 version].fd" size="327680" crc="45b840b1" sha1="706ca22e0e0f3e2f215a6fc2d243a14113dbfda8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+	
+	<software name="talismana" cloneof="talisman">
+		<description>Le Talisman d'Osiris (Non-Bootable)</description>
+		<year>1986</year>
+		<publisher>Chip</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="talisman d'osiris, le (1986)(chip)(fr)[a nonboot][includes mo6 version].fd" size="327680" crc="78ebf713" sha1="96bbc18737b75593344439cbc2e49ac05e1026df" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+	
+	<software name="traitbzz">
+		<description>Traitement Bzzz</description>
+		<year>1987</year>
+		<publisher>Chip</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="327680">
+				<rom name="traitement bzzz (1987)(chip)(fr)[includes mo6 version].fd" size="327680" crc="ecc27728" sha1="4a244ecb46497db31ade42f2a5b1d41b3fd01734" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+	
+	<software name="traitbzza" cloneof="traitbzz">
+		<description>Traitement Bzzz (SAP Format)</description>
+		<year>1987</year>
+		<publisher>Chip</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="traitement bzzz (198x)(chip)(fr)[includes mo6 version].sap" size="335426" crc="87e2bfad" sha1="4926a3acf78b8dcec6018e468ad98af720484147" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+	
+	<software name="traitbzzb" cloneof="traitbzz">
+		<description>Traitement Bzzz (Compilation Top Arcade)</description>
+		<year>1987</year>
+		<publisher>Chip</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="traitement bzzz (1987)(chip)(fr)[compilation top arcade][includes mo6 version].fd" size="327680" crc="e0d5c7d4" sha1="d4c338d43cedd96591be3fb58cbf4d68645eab53" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>
