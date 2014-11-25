@@ -20,13 +20,18 @@
 		<publisher>Reedy Software</publisher>
 
 		<part name="cass1" interface="adam_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="262144">
 				<rom name="addictus v1.01 (1989)(reedy software).ddp" size="262144" crc="0a31f69b" sha1="aa75b3efbc80df9e73ef35fe068bde62d67a7577" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="adam_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+	
+	<software name="addictusa" cloneof="addictus">
+		<description>Addictus (Alt)</description>
+		<year>1989</year>
+		<publisher>Reedy Software</publisher>
+
+		<part name="cass1" interface="adam_cass">
 	        <dataarea name="cass" size="262144">
 	            <rom name="addictus (1989) (reedy software).ddp" size="262144" crc="30584c67" sha1="7c6b6a44647e6fff3f1be207174cb30503f92e2b" offset="0" />
 	        </dataarea>
@@ -51,13 +56,18 @@
 		<publisher>Coleco</publisher>
 
 		<part name="cass1" interface="adam_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="262144">
 				<rom name="buck rogers - planet of doom (1983)(sega).ddp" size="262144" crc="c85f0f99" sha1="443b60e1b703d2c701a9f1e78a0efcdfeca1285e" offset="0" />
 			</dataarea>
 		</part>
-	    <part name="cass2" interface="adam_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+	
+	<software name="sbuckroga" cloneof="sbuckrog">
+		<description>Super Buck Rogers - Planet of Zoom (Alt)</description>
+		<year>1983</year>
+		<publisher>Coleco</publisher>
+
+	    <part name="cass1" interface="adam_cass">
 	        <dataarea name="cass" size="262144">
 	            <rom name="super buck rogers - planet of zoom (1983) (coleco) [a1].ddp" size="262144" crc="69aa76a7" sha1="f394b00b027ea4459eaccb03d1bff4c3dc231cab" offset="0" />
 	        </dataarea>
@@ -136,38 +146,48 @@
 		</part>
 	</software>
 
-	<software name="ff_triv">
+	<software name="fftrivia">
 		<description>Flash Facts - Trivia</description>
 		<year>1984</year>
 		<publisher>Coleco</publisher>
 
 		<part name="cass1" interface="adam_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="262144">
 				<rom name="flash facts - trivia (1984)(coleco).ddp" size="262144" crc="531c3bd4" sha1="9cefe8cef86e6c84a1970f1f71aa69425210a816" offset="0" />
 			</dataarea>
 		</part>
-	    <part name="cass2" interface="adam_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+	
+	<software name="fftriviaa" cloneof="fftrivia">
+		<description>Flash Facts - Trivia (Alt)</description>
+		<year>1984</year>
+		<publisher>Coleco</publisher>
+
+	    <part name="cass1" interface="adam_cass">
 	        <dataarea name="cass" size="262144">
 	            <rom name="flash facts - trivia (1984) (coleco) [a1].ddp" size="262144" crc="f3eede56" sha1="960ee7a48be17d9758978abc2610a3281870425e" offset="0" />
 	        </dataarea>
 	    </part>
 	</software>
 
-	<software name="ff_vocab">
+	<software name="ffvocab">
 		<description>Flash Facts - Vocabulator</description>
 		<year>1984</year>
 		<publisher>Coleco</publisher>
 
 		<part name="cass1" interface="adam_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="262144">
 				<rom name="flash facts - vocabulator (1984)(coleco).ddp" size="262144" crc="3b82819e" sha1="84b3337cbb4f63f8ac13a8acb716f224140391d3" offset="0" />
 			</dataarea>
 		</part>
-	    <part name="cass2" interface="adam_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+	
+	<software name="ffvocaba" cloneof="ffvocab">
+		<description>Flash Facts - Vocabulator (Alt)</description>
+		<year>1984</year>
+		<publisher>Coleco</publisher>
+
+	    <part name="cass1" interface="adam_cass">
 	        <dataarea name="cass" size="262144">
 	            <rom name="flash facts - vocabulator (1984) (coleco).ddp" size="262144" crc="8a3aa11d" sha1="37f6a4895b7ab02e14d2a9825fe03fda64605a22" offset="0" />
 	        </dataarea>
@@ -180,13 +200,18 @@
 		<publisher>Coleco</publisher>
 
 		<part name="cass1" interface="adam_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="262144">
 				<rom name="smart filer (1984)(coleco industries).ddp" size="262144" crc="30f1e1bd" sha1="b83e2e46d089401d6e41bf1d9ea3e82d3681e23e" offset="0" />
 			</dataarea>
 		</part>
-	    <part name="cass2" interface="adam_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+	
+	<software name="smartfila" cloneof="smartfil">
+		<description>SmartFILER (Alt)</description>
+		<year>1984</year>
+		<publisher>Coleco</publisher>
+
+	    <part name="cass1" interface="adam_cass">
 	        <dataarea name="cass" size="262144">
 	            <rom name="smartfiler (1984) (coleco) [a1].ddp" size="262144" crc="8c42d4f7" sha1="ab00c9a084f522905ca70b4706c830d3a8f98497" offset="0" />
 	        </dataarea>
@@ -199,32 +224,42 @@
 		<publisher>Coleco</publisher>
 
 		<part name="cass1" interface="adam_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="262144">
 				<rom name="smart letters and forms (1984)(coleco).ddp" size="262144" crc="8271b8d4" sha1="4b982126a4f27c6350f91b680c1d48d0c2f627f8" offset="0" />
 			</dataarea>
 		</part>
-	    <part name="cass2" interface="adam_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+	
+	<software name="smartleta" cloneof="smartlet">
+		<description>SmartLetters &amp; Forms (Alt)</description>
+		<year>1984</year>
+		<publisher>Coleco</publisher>
+		
+	    <part name="cass1" interface="adam_cass">
 	        <dataarea name="cass" size="262144">
 	            <rom name="smartletters &amp; forms (1984) (coleco).ddp" size="262144" crc="ad4f5532" sha1="19ff45e8975b77a80ea5da09bbc1d8e564903ad8" offset="0" />
 	        </dataarea>
 	    </part>
 	</software>
 
-	<software name="smartlog">
+	<software name="smrtlogo">
 		<description>SmartLOGO</description>
 		<year>1984</year>
 		<publisher>Coleco</publisher>
 
 		<part name="cass1" interface="adam_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="262144">
 				<rom name="smartlogo (1984)(logo computer systems).ddp" size="262144" crc="15377f7e" sha1="6cdd5489c560afa0024a4489e23332ea70e21f05" offset="0" />
 			</dataarea>
 		</part>
-	    <part name="cass2" interface="adam_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+	
+	<software name="smrtlogoa" cloneof="smrtlogo">
+		<description>SmartLOGO (Alt)</description>
+		<year>1984</year>
+		<publisher>Coleco</publisher>
+
+	    <part name="cass1" interface="adam_cass">
 	        <dataarea name="cass" size="262144">
 	            <rom name="smartlogo (1984) (coleco).ddp" size="262144" crc="5628db95" sha1="d04a847f1e3706b7fb4bb4ab6ed608ebbca4f00f" offset="0" />
 	        </dataarea>
@@ -465,13 +500,18 @@
 	    <publisher>Coleco</publisher>
 
 	    <part name="cass1" interface="adam_cass">
-		<feature name="part_id" value="Tape 1"/>
 	        <dataarea name="cass" size="262144">
 	            <rom name="best of broderbund, the (1984) (coleco).ddp" size="262144" crc="8a1d3ab5" sha1="a6646acea19a2d96cc262f478225f8216fdbb2fa" offset="0" />
 	        </dataarea>
 	    </part>
-	    <part name="cass2" interface="adam_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+	
+	<software name="bestbroda" cloneof="bestbrod">
+	    <description>The Best of Broderbund (Alt)</description>
+	    <year>1984</year>
+	    <publisher>Coleco</publisher>
+
+	    <part name="cass1" interface="adam_cass">
 	        <dataarea name="cass" size="262144">
 	            <rom name="best of broderbund, the (1984) (coleco) [a1].ddp" size="262144" crc="cc8d3dc4" sha1="dabbdc85d4cd22c98a864d337958d3e7b48ff120" offset="0" />
 	        </dataarea>
@@ -484,13 +524,18 @@
 	    <publisher>&lt;unknown&gt;</publisher>
 
 	    <part name="cass1" interface="adam_cass">
-		<feature name="part_id" value="Tape 1"/>
 	        <dataarea name="cass" size="262144">
 	            <rom name="blank media (256k digital data pack).ddp" size="262144" crc="3fe56492" sha1="71b8e1122f2693eda166efc29f674d6bc01c3400" offset="0" />
 	        </dataarea>
 	    </part>
-	    <part name="cass2" interface="adam_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+	
+	<software name="blankddpa" cloneof="blankddp">
+	    <description>Blank Digital Data Pack (Alt)</description>
+	    <year>19??</year>
+	    <publisher>&lt;unknown&gt;</publisher>
+
+	    <part name="cass1" interface="adam_cass">
 	        <dataarea name="cass" size="262144">
 	            <rom name="blank media (256k digital data pack [a1]).ddp" size="262144" crc="03781521" sha1="e1a73a5e7df3627c37d13e35ef2a58549d59353a" offset="0" />
 	        </dataarea>
@@ -617,19 +662,24 @@
 	    </part>
 	</software>
 
-	<software name="ff_flash">
+	<software name="ffflash">
 	    <description>Flash Facts - Flashbacks</description>
 	    <year>1984</year>
 	    <publisher>Coleco</publisher>
 
 	    <part name="cass1" interface="adam_cass">
-		<feature name="part_id" value="Tape 1"/>
 	        <dataarea name="cass" size="262144">
 	            <rom name="flash facts - flashbacks (1984) (coleco).ddp" size="262144" crc="3bce9ea3" sha1="aeb6850b90dd38539ab033d2f391305cec8da3ab" offset="0" />
 	        </dataarea>
 	    </part>
-	    <part name="cass2" interface="adam_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+	
+	<software name="ffflasha" cloneof="ffflash">
+	    <description>Flash Facts - Flashbacks (Alt)</description>
+	    <year>1984</year>
+	    <publisher>Coleco</publisher>
+		
+	    <part name="cass1" interface="adam_cass">
 	        <dataarea name="cass" size="262144">
 	            <rom name="flash facts - flashbacks (1984) (coleco) [a1].ddp" size="262144" crc="97847c0f" sha1="62328cd04d99859e3e633d32391e477bf1733db6" offset="0" />
 	        </dataarea>
@@ -745,13 +795,18 @@
 	    <publisher>CBS Loisors - Coleco of France</publisher>
 
 	    <part name="cass1" interface="adam_cass">
-		<feature name="part_id" value="Tape 1"/>
 	        <dataarea name="cass" size="262144">
 	            <rom name="macadam (1984) (cbs loisors - coleco of france).ddp" size="262144" crc="2fe95d33" sha1="e27e3515644c2fcd28b94b1aed69ae0b2cb76afc" offset="0" />
 	        </dataarea>
 	    </part>
-	    <part name="cass2" interface="adam_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+	
+	<software name="macadama" cloneof="macadam">
+	    <description>MacADAM (Fra, Alt)</description>
+	    <year>1984</year>
+	    <publisher>CBS Loisors - Coleco of France</publisher>
+
+	    <part name="cass1" interface="adam_cass">
 	        <dataarea name="cass" size="262144">
 	            <rom name="macadam (1984) (cbs loisors - coleco of france) [a1].ddp" size="262144" crc="5288e332" sha1="4c1de35afefc356db7303f8f584946bbf0f7c528" offset="0" />
 	        </dataarea>
@@ -788,13 +843,18 @@
 	    <publisher>Coleco</publisher>
 
 	    <part name="cass1" interface="adam_cass">
-		<feature name="part_id" value="Tape 1"/>
 	        <dataarea name="cass" size="262144">
 	            <rom name="richard scarry's best electronic wordbook ever (1984) (coleco).ddp" size="262144" crc="dcba7f52" sha1="19274fc480154af210a85bb17d17fb0a8df52887" offset="0" />
 	        </dataarea>
 	    </part>
-	    <part name="cass2" interface="adam_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+	
+	<software name="scarrya" cloneof="scarry">
+	    <description>Richard Scarry's Best Electronic Wordbook Ever (Alt)</description>
+	    <year>1984</year>
+	    <publisher>Coleco</publisher>
+
+	    <part name="cass1" interface="adam_cass">
 	        <dataarea name="cass" size="262144">
 	            <rom name="richard scarry's best electronic wordbook ever (1984) (coleco) [a1].ddp" size="262144" crc="bf33f35b" sha1="5ed65eaafe8075b4f05876bb3158a8742a07817c" offset="0" />
 	        </dataarea>
@@ -819,13 +879,18 @@
 	    <publisher>Coleco</publisher>
 
 	    <part name="cass1" interface="adam_cass">
-		<feature name="part_id" value="Tape 1"/>
 	        <dataarea name="cass" size="262144">
 	            <rom name="smartbasic v1.0 (1983) (coleco).ddp" size="262144" crc="aa52c12f" sha1="bce8367bde3ac49f27480cb5d6a21a657e44255b" offset="0" />
 	        </dataarea>
 	    </part>
-	    <part name="cass2" interface="adam_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+	
+	<software name="smartbasa" cloneof="smartbas">
+	    <description>SmartBASIC (v1.0, Alt)</description>
+	    <year>1983</year>
+	    <publisher>Coleco</publisher>
+
+	    <part name="cass1" interface="adam_cass">
 	        <dataarea name="cass" size="262144">
 	            <rom name="smartbasic v1.0 (1983) (coleco) [a1].ddp" size="262144" crc="e27df400" sha1="280e5c07f0323f819c9a552445135bbfc8728d1c" offset="0" />
 	        </dataarea>
