@@ -5,7 +5,7 @@
 
   This software list collects disks from many different sources, including the 13GB pack with ~90 rar files floating around since 2011
   Origin for many of the disks is Japanese BBS and/or P2P, so it is hard to properly credits whoever dumped them
-  A huge credit goes however to Tokugawa Boards people (Ben, pete_j, Starscream the 2nd, delicious, Ashura, fa123, kobushi, Trickless, etc.) 
+  A huge credit goes however to Tokugawa Boards people (Ben, pete_j, Starscream the 2nd, delicious, Ashura, fa123, kobushi, Trickless, etc.)
   for sharing and dumping a lot of disks and for the researches on the disks
 
 -->
@@ -1090,8 +1090,8 @@ only have some part of Windows file and a Video driver(CLGD?).
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Disk A"/>
-			<dataarea name="flop" size="Dict Std + System 2">
+			<feature name="part_id" value="Disk A - Dict Std + System 2 "/>
+			<dataarea name="flop" size="1265664">
 				<rom name="taro4_2_dict_std_+_system2.fdi" size="1265664" crc="8b92a740" sha1="ab6c4167714baa620acbd47625d6c997a3fb036d" offset="0" />
 			</dataarea>
 		</part>
@@ -7363,7 +7363,7 @@ only have some part of Windows file and a Video driver(CLGD?).
 	</software>
 
 	<software name="casablan">
-		<description>Casablanca ni Ai wo - Satsujin-sha wa Jikuu wo Koete</description>
+		<description>Casablanca ni Ai o - Satsujin-sha wa Jikuu o Koete</description>
 		<year>1986</year>
 		<publisher>シンキングラビット (Thinking Rabbit)</publisher>
 		<info name="alt_title" value="カサブランカに愛を 殺人者は時空を越えて" />
@@ -9928,7 +9928,7 @@ only have some part of Windows file and a Video driver(CLGD?).
 		</part>
 		<part name="flop4" interface="floppy_5_25">
 			<feature name="part_id" value="User Disk"/>
-			<dataarea name="flop" size="1281968">
+			<dataarea name="flop" size="1265664">
 				<rom name="daisenryaku 3'90 (j) user.fdi" size="1265664" crc="28b9452f" sha1="c8930a973cb5b6875631a0cad99b846d067353ae" offset="0" status="baddump" />
 			</dataarea>
 		</part>
@@ -14313,8 +14313,8 @@ only have some part of Windows file and a Video driver(CLGD?).
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Disk B"/>
 			<dataarea name="flop" size="1086448">
-			</dataarea>
 				<rom name="fkekkaib.d88" size="1086448" crc="dc17c384" sha1="63baa05e21bcac3400aa99d2fceba34aae58fc92" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -19361,8 +19361,8 @@ only have some part of Windows file and a Video driver(CLGD?).
 		<info name="alt_title" value="雀ＯＨ！クエスト" />
 		<info name="release" value="19920910" />
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="1265664">
 			<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="1265664">
 				<rom name="joquest1.fdi" size="1265664" crc="38c42198" sha1="655304903923589d053655557a1ef7441ea7ddc8" offset="0" />
 			</dataarea>
 		</part>
@@ -27124,8 +27124,8 @@ Requires MS-DOS 5.00H plus an unknown procedure (HDD install?)
 		<info name="alt_title" value="ヌーク あばかれた陰謀" />
 		<info name="release" value="19921113" />
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="1265664">
 			<feature name="part_id" value="Disk A"/>
+			<dataarea name="flop" size="1265664">
 				<rom name="nooch_a.fdi" size="1265664" crc="6158fa40" sha1="9c38a0ed7023532312c73cef280c185a05c80732" offset="0" />
 			</dataarea>
 		</part>
@@ -27945,8 +27945,8 @@ Requires MS-DOS 5.00H plus an unknown procedure (HDD install?)
 		<info name="alt_title" value="パラ・ダイス ～君は追い剥ぎを見たか？～" />
 		<info name="release" value="19911129" />
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="1265664">
 			<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="1265664">
 				<rom name="paradice (aion)(disk 1 of 2).fdi" size="1265664" crc="c5146886" sha1="c8323412938fe8aa26b02646829355bb8e0d9009" offset="0" />
 			</dataarea>
 		</part>
@@ -30507,8 +30507,8 @@ Requires MS-DOS 5.00H plus an unknown procedure (HDD install?)
 		<info name="alt_title" value="クエストフォーグローリィ" />
 		<info name="release" value="19910412" />
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="1186816">
 			<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="1186816">
 				<rom name="disk 01.fdi" size="1186816" crc="695c079e" sha1="93195094944af1d88338c4a2ce82f9188a7f3898" offset="0" />
 			</dataarea>
 		</part>
@@ -40021,7 +40021,7 @@ Requires MS-DOS 5.00H plus an unknown procedure (HDD install?)
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="1281968">
+			<dataarea name="flop" size="1265664">
 				<rom name="disk.fdi" size="1265664" crc="b18e02c8" sha1="2d3bf3d770c313be529eb83f55699cbf55b438ea" offset="0" />
 			</dataarea>
 		</part>
@@ -40066,7 +40066,7 @@ Requires MS-DOS 5.00H plus an unknown procedure (HDD install?)
 	</software>
 
 	<software name="watagolf">
-		<description>Watashi wo Golf ni Tsuretette</description>
+		<description>Watashi o Golf ni Tsuretette</description>
 		<year>1991</year>
 		<publisher>フェアリーテール (Fairytale)</publisher>
 		<info name="alt_title" value="私をゴルフに連れてって" />
@@ -40869,8 +40869,8 @@ Requires MS-DOS 5.00H plus an unknown procedure (HDD install?)
 		<info name="alt_title" value="ワーズ・ワース スペシャルディスク" />
 		<info name="usage" value="Requires &quot;Words Worth&quot; to work" />
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="1265664">
 			<feature name="part_id" value="Disk A"/>
+			<dataarea name="flop" size="1265664">
 				<rom name="ww_sp_a.fdi" size="1265664" crc="572c9c12" sha1="98fdfadc5bb2d246b4c9d15d4b6c87b117297de8" offset="0" />
 			</dataarea>
 		</part>
@@ -41223,13 +41223,13 @@ Requires MS-DOS 5.00H plus an unknown procedure (HDD install?)
 		<info name="alt_title" value="ＷＸⅢ Ver.3.0" />
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Disk 1"/>
-			<dataarea name="flop" size="1298432">
+			<dataarea name="flop" size="1265664">
 				<rom name="wx3_disk1.fdi" size="1265664" crc="83f22516" sha1="a32b9c8d6f4150897d5bf4b519f181fddcf5dc7c" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Disk 2"/>
-			<dataarea name="flop" size="1298432">
+			<dataarea name="flop" size="1265664">
 				<rom name="wx3_disk2.fdi" size="1265664" crc="73cc0bfd" sha1="81a6fb1173760fe5bcd61d8dd9e6f67b456d97eb" offset="0" />
 			</dataarea>
 		</part>
@@ -41770,7 +41770,7 @@ Requires MS-DOS 5.00H plus an unknown procedure (HDD install?)
 	</software>
 
 	<software name="yaritai2">
-		<description>Yaritai Houdai 2 - Tourist wo Nerae!!</description>
+		<description>Yaritai Houdai 2 - Tourist o Nerae!!</description>
 		<year>1989</year>
 		<publisher>全流通 (Zenryutsu)</publisher>
 		<info name="alt_title" value="やりたい放題２ ツーリストを狙え！！" />
@@ -44121,8 +44121,8 @@ Requires MS-DOS 5.00H plus an unknown procedure (HDD install?)
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="1329680">
 			<feature name="part_id" value="Event Disk"/>
+			<dataarea name="flop" size="1329680">
 				<rom name="event.nfd" size="1329680" crc="c9319157" sha1="2daeff81931661af78006dee5298830e7d7fee3a" offset="0" />
 			</dataarea>
 		</part>
@@ -45191,8 +45191,8 @@ Requires MS-DOS 5.00H plus an unknown procedure (HDD install?)
 			</dataarea>
 		</part>
 		<part name="flop5" interface="floppy_5_25">
-			<dataarea name="flop" size="1261568">
 			<feature name="part_id" value="Opening"/>
+			<dataarea name="flop" size="1261568">
 				<rom name="joshua_o.hdm" size="1261568" crc="3d9089be" sha1="bfaa0ccbbdaa32598b77e6fdcb75e67ed3613f69" offset="0" />
 			</dataarea>
 		</part>
@@ -46740,7 +46740,7 @@ Requires MS-DOS 5.00H plus an unknown procedure (HDD install?)
 			</dataarea>
 		</part>
 	</software>
- 
+
 	<software name="paradox" supported="no">
 		<description>Paradox</description>
 		<year>19??</year>
@@ -47050,7 +47050,7 @@ Requires MS-DOS 5.00H plus an unknown procedure (HDD install?)
 		</part>
 	</software>
 
-	<software name="ppdsk04" suppotred="no">
+	<software name="ppdsk04" supported="no">
 		<description>PP Disk No. 04</description>
 		<year>19??</year>
 		<publisher>メディアックス (Mediax)</publisher>
@@ -47237,7 +47237,7 @@ Requires MS-DOS 5.00H plus an unknown procedure (HDD install?)
 	</software>
 
 	<software name="rance" supported="no">
-		<description>Rance - Hikari wo Motomete</description>
+		<description>Rance - Hikari o Motomete</description>
 		<year>1989</year>
 		<publisher>アリスソフト (AliceSoft)</publisher>
 		<info name="alt_title" value="ランス 光をもとめて" />
@@ -47491,7 +47491,7 @@ Requires MS-DOS 5.00H plus an unknown procedure (HDD install?)
 		</part>
 	</software>
 
-	<software name="rinneten" suppotred="no">
+	<software name="rinneten" supported="no">
 		<description>Rinne Tensei Reversible Game Tanba</description>
 		<year>1988</year>
 		<publisher>マイクロネット (Micronet)</publisher>
@@ -48823,7 +48823,7 @@ Requires MS-DOS 5.00H plus an unknown procedure (HDD install?)
 
 
 
-<!-- 
+<!--
 
   Game Packs, hopefully to be replaced with real disk images of the single games eventually
 
@@ -50793,7 +50793,7 @@ SPACE EMPIRE
 	</software>
 
 	<software name="dennoga3" supported="no">
-		<description>Dennou Gakuen 3 - Cybernetic Hi-School III - Top wo Nerae!</description>
+		<description>Dennou Gakuen 3 - Cybernetic Hi-School III - Top o Nerae!</description>
 		<year>1990</year>
 		<publisher>ガイナックス (Gainax)</publisher>
 		<info name="alt_title" value="電脳学園３ トップをねらえ！" />
@@ -56883,7 +56883,7 @@ SPACE EMPIRE
 
 
 
-<!-- 
+<!--
 
   Coverdisks
 
@@ -57841,7 +57841,7 @@ SPACE EMPIRE
 
 
 
-<!-- 
+<!--
 
   Game and Software Packs / Collections
 
@@ -58323,7 +58323,7 @@ SPACE EMPIRE
 	</software>
 
 
-<!-- 
+<!--
 
   Bio 100% Freeware software
 
@@ -58494,7 +58494,7 @@ SPACE EMPIRE
 		<year>1992</year>
 		<publisher>バイオひゃくパーセント (Bio 100%)</publisher>
 		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1478656">
+			<dataarea name="flop" size="1265664">
 				<rom name="goggle ii (bio 100%).fdi" size="1265664" crc="2a73a48f" sha1="d6ab101cabdf327bc7bdb372a095a16a996d5b29" offset="0" />
 			</dataarea>
 		</part>
@@ -58622,10 +58622,10 @@ SPACE EMPIRE
 	</software>
 
 
-<!-- 
+<!--
 
   VECTOR Freeware software
-  
+
   These were available for download at Vector's homepage
   The disk images below have been created by users to launch the games in emulators
 
@@ -59712,13 +59712,13 @@ doujin?!?
 		<info name="author" value="LTT" />
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Disk A"/>
-			<dataarea name="flop" size="637948">
+			<dataarea name="flop" size="1265664">
 				<rom name="cyber school 98 a.fdi" size="1265664" crc="7f5ba508" sha1="6cc82aa0ab4caacb14aebb77615f434ce1289cc2" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Disk B"/>
-			<dataarea name="flop" size="1308668">
+			<dataarea name="flop" size="1265664">
 				<rom name="cyber school 98 b.fdi" size="1265664" crc="36c00ebb" sha1="19e1ecf4b0c9b3a80f3f778f8d6c43502f7029b1" offset="0" />
 			</dataarea>
 		</part>
@@ -62437,35 +62437,35 @@ Same as Police Quest 2 - Quest for Glory stand-alone disks
 
 
 
-<!--	<software name="">
-		<description>lodoss tou senki - custom (turbo program?) / ロードス島戦記カスタム</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Disk A"/>
-			<dataarea name="flop" size="1265664">
-				<rom name="custom_program.fdi" size="1265664" crc="b78832f3" sha1="853bbf51085570147777460b2481be3149c710e4" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Disk A"/>
-			<dataarea name="flop" size="1265664">
-				<rom name="custom_scenario.fdi" size="1265664" crc="8e8ee17d" sha1="f8b900cfdf557af018634003a6382aa7c35faab6" offset="0" /> <!- - same as in lodoss? - ->
-			</dataarea>
-		</part>
-	</software>
+<!--    <software name="">
+        <description>lodoss tou senki - custom (turbo program?) / ロードス島戦記カスタム</description>
+        <year>19??</year>
+        <publisher>&lt;unknown&gt;</publisher>
+        <part name="flop1" interface="floppy_5_25">
+            <feature name="part_id" value="Disk A"/>
+            <dataarea name="flop" size="1265664">
+                <rom name="custom_program.fdi" size="1265664" crc="b78832f3" sha1="853bbf51085570147777460b2481be3149c710e4" offset="0" />
+            </dataarea>
+        </part>
+        <part name="flop2" interface="floppy_5_25">
+            <feature name="part_id" value="Disk A"/>
+            <dataarea name="flop" size="1265664">
+                <rom name="custom_scenario.fdi" size="1265664" crc="8e8ee17d" sha1="f8b900cfdf557af018634003a6382aa7c35faab6" offset="0" /> <!- - same as in lodoss? - ->
+            </dataarea>
+        </part>
+    </software>
 -->
 
-<!--	<software name="">
-		<description>morita shougi ii + hanyuu data / 森田将棋２＋ 羽生 データ</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="1281968">
-				<rom name="morita2p.d88" size="1281968" crc="99effa5b" sha1="c7c4a60e71b7112d94b85eb4fe0d156fae2c0c35" offset="0" />
-			</dataarea>
-		</part>
-	</software>
+<!--    <software name="">
+        <description>morita shougi ii + hanyuu data / 森田将棋２＋ 羽生 データ</description>
+        <year>19??</year>
+        <publisher>&lt;unknown&gt;</publisher>
+        <part name="flop1" interface="floppy_5_25">
+            <dataarea name="flop" size="1281968">
+                <rom name="morita2p.d88" size="1281968" crc="99effa5b" sha1="c7c4a60e71b7112d94b85eb4fe0d156fae2c0c35" offset="0" />
+            </dataarea>
+        </part>
+    </software>
 -->
 
 
