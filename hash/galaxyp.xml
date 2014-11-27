@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+
+<softwarelist name="galaxyp" description="Galaksija Plus cassettes">
+
+	<software name="pacman">
+		<description>Pac Man</description>
+		<year>19??</year>
+		<publisher>Josip Perusanec</publisher>
+		<part name="cass1" interface="galaxy_cass">
+			<dataarea name="cass" size="12572">
+				<rom name="pacmanplus.gtp" size="12572" crc="cbb8af07" sha1="e3f048454c4a9d62835f80256fdfebbfaef5561b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="svetleci">
+		<description>Svetleci Bicikli</description>
+		<year>1986</year>
+		<publisher>Nenad Balint</publisher>
+		<part name="cass1" interface="galaxy_cass">
+			<dataarea name="cass" size="2583">
+				<rom name="svetlecibicikliplus.gtp" size="2583" crc="2d4000fe" sha1="de2b47c73c3a324a223147e41c327a52c372875e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tetris">
+		<description>Tetris</description>
+		<year>1988</year>
+		<publisher>Dragoljub Obradovic</publisher>
+		<part name="cass1" interface="galaxy_cass">
+			<dataarea name="cass" size="2706">
+				<rom name="tetrisplusq.gtp" size="2706" crc="64015b12" sha1="1d062b4abd1bfdc977568378a61f2bbdf65e2602" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>
