@@ -2,11 +2,13 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="apogee" description="Apogee BK-01 cassettes">
 
+<!-- Documentation comes from TOSEC; any descriptions in lower case are ZZZ_UNK images in that set. -->
+
 <!-- Games -->
 	<software name="badroad">
-		<description>BADROAD</description>
+		<description>Bad Road (v1.0)</description>
 		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<publisher>A. Pahomov</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="4105">
 				<rom name="badroad.rka" size="4105" crc="7126d777" sha1="1c3f93c76bec063e5ca05a6b30e85837e2501b6c" offset="0" />
@@ -14,10 +16,10 @@
 		</part>
 	</software>
 
-	<software name="battlesh">
-		<description>BATTLESH</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+	<software name="morskoj">
+		<description>Morskoj Boj</description>
+		<year>1990</year>
+		<publisher>YUS Corp</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="3361">
 				<rom name="battlesh.rka" size="3361" crc="967781b6" sha1="e3ba8383e096b4f1c54ddc169024a584de2acbad" offset="0" />
@@ -25,21 +27,10 @@
 		</part>
 	</software>
 
-	<software name="bdashall">
-		<description>BDASHALL</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="cass" interface="apogee_cass">
-			<dataarea name="cass" size="23001">
-				<rom name="bdashall.rka" size="23001" crc="a2420cb3" sha1="7a557eb2037861edde18895ca0b9402bf7be6e76" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="bdashfrm">
-		<description>BDASHFRM</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+	<software name="bdash">
+		<description>Boulder Dash (v2.2)</description>
+		<year>1992</year>
+		<publisher>Clever Hands Software</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="15497">
 				<rom name="bdashfrm.rka" size="15497" crc="3dd7b313" sha1="c137ae1c18558b5bf5b380ce4be6426547e78c76" offset="0" />
@@ -47,21 +38,10 @@
 		</part>
 	</software>
 
-	<software name="bdashsmr">
-		<description>BDASHSMR</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="cass" interface="apogee_cass">
-			<dataarea name="cass" size="15497">
-				<rom name="bdashsmr.rka" size="15497" crc="0760b44c" sha1="0b0fd32267d59f6e51eccc95c628c4c46682a475" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="bldrdash">
-		<description>BLDRDASH</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+	<software name="bdasha" cloneof="bdash">
+		<description>Boulder Dash (v2)</description>
+		<year>1989</year>
+		<publisher>Clever Hands Software</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="16393">
 				<rom name="bldrdash.rka" size="16393" crc="0407c111" sha1="7aa3f00f24571d993d0aa8cb9335b25eec5929db" offset="0" />
@@ -69,8 +49,30 @@
 		</part>
 	</software>
 
+	<software name="bdashb" cloneof="bdash">
+		<description>Boulder Dash (v2, Alt)</description>
+		<year>1989</year>
+		<publisher>Clever Hands Software</publisher>
+		<part name="cass" interface="apogee_cass">
+			<dataarea name="cass" size="23001">
+				<rom name="bdashall.rka" size="23001" crc="a2420cb3" sha1="7a557eb2037861edde18895ca0b9402bf7be6e76" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bdashc" cloneof="bdash">
+		<description>Boulder Dash (v2, Alt 2)</description>
+		<year>1989</year>
+		<publisher>Clever Hands Software</publisher>
+		<part name="cass" interface="apogee_cass">
+			<dataarea name="cass" size="15497">
+				<rom name="bdashsmr.rka" size="15497" crc="0760b44c" sha1="0b0fd32267d59f6e51eccc95c628c4c46682a475" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="bombard">
-		<description>BOMBARD</description>
+		<description>Bombardirovtchik</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -80,10 +82,10 @@
 		</part>
 	</software>
 
-	<software name="box">
-		<description>BOX</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+	<software name="boks">
+		<description>Boks</description>
+		<year>1988</year>
+		<publisher>Stavskij Yu.V.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="4105">
 				<rom name="box.rka" size="4105" crc="a0486df5" sha1="452f93b72b3df614b7c83cb1a0c721df7e3f60bf" offset="0" />
@@ -92,7 +94,7 @@
 	</software>
 
 	<software name="buckrog">
-		<description>BUCK_ROG</description>
+		<description>Buck Rogers - Planet of Zoom</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -102,9 +104,9 @@
 		</part>
 	</software>
 
-	<software name="chess">
-		<description>CHESS</description>
-		<year>19??</year>
+	<software name="shahmaty">
+		<description>Shahmaty</description>
+		<year>1987</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="28938">
@@ -113,8 +115,8 @@
 		</part>
 	</software>
 
-	<software name="chudov">
-		<description>CHUDOV</description>
+	<software name="chudovit">
+		<description>Chudovitche</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -125,9 +127,9 @@
 	</software>
 
 	<software name="cirk">
-		<description>CIRK</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Cirk (v1.2)</description>
+		<year>1986</year>
+		<publisher>Popov S.N.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="7689">
 				<rom name="cirk.rka" size="7689" crc="ad2f3340" sha1="90e1d0211e3821f8979faa96c2e2fa2d0de0b249" offset="0" />
@@ -135,10 +137,10 @@
 		</part>
 	</software>
 
-	<software name="crocet">
-		<description>CROCET</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+	<software name="crocket">
+		<description>Crocket</description>
+		<year>1992</year>
+		<publisher>B.M.G. &amp; C</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="19897">
 				<rom name="crocet.rka" size="19897" crc="7f01b26f" sha1="24cefc7df457bd149d360c93de6e6a76496b1f3b" offset="0" />
@@ -147,9 +149,9 @@
 	</software>
 
 	<software name="crossfir">
-		<description>CROSSFIR</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Cross Fire (v002)</description>
+		<year>1988</year>
+		<publisher>Zyryanov A.V.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="11369">
 				<rom name="crossfir.rka" size="11369" crc="c30f872c" sha1="8219d45c3d5b49eb28e72958fe4b14437715db2e" offset="0" />
@@ -157,10 +159,10 @@
 		</part>
 	</software>
 
-	<software name="descent">
-		<description>DESCENT</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+	<software name="discent">
+		<description>Discent</description>
+		<year>1989</year>
+		<publisher>Pogodin D.V.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="10506">
 				<rom name="descent.rka" size="10506" crc="97215e71" sha1="9563efb3ebb582d3c4deaf04b944133c28e1bb19" offset="0" />
@@ -169,9 +171,9 @@
 	</software>
 
 	<software name="digger">
-		<description>DIGGER</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Digger</description>
+		<year>1991</year>
+		<publisher>Grinberg B.P.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="17289">
 				<rom name="digger.rka" size="17289" crc="b5631421" sha1="c2ff2a6fcc3abbde206a0c30ec1a755ec9ec188b" offset="0" />
@@ -179,8 +181,8 @@
 		</part>
 	</software>
 
-	<software name="engl">
-		<description>ENGL</description>
+	<software name="teachaid">
+		<description>Teaching Aids</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -191,9 +193,10 @@
 	</software>
 
 	<software name="football">
-		<description>FOOTBALL</description>
+		<description>Football</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Run with G100"/>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="3194">
 				<rom name="football.rka" size="3194" crc="4f77e321" sha1="dd4cc6d515b441537a52111b74ba04ec4470bbef" offset="0" />
@@ -201,10 +204,10 @@
 		</part>
 	</software>
 
-	<software name="foxhunt">
-		<description>FOXHUNT</description>
+	<software name="ohota">
+		<description>Ohota Na Lis</description>
 		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<publisher>Belov</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="2941">
 				<rom name="foxhunt.rka" size="2941" crc="3630da50" sha1="e2c1fddc643975a28cc2e09131c54ff9b41c1fcb" offset="0" />
@@ -213,9 +216,9 @@
 	</software>
 
 	<software name="froggi15">
-		<description>FROGGI15</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Froggi 15</description>
+		<year>1989</year>
+		<publisher>STF</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="4105">
 				<rom name="froggi15.rka" size="4105" crc="82451761" sha1="045ea8786ff9187bbbeb660c49302527d8615aae" offset="0" />
@@ -223,10 +226,11 @@
 		</part>
 	</software>
 
-	<software name="gonki">
-		<description>GONKI</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+	<software name="gonki1">
+		<description>Gonki-1</description>
+		<year>1988</year>
+		<publisher>WWW Software</publisher>
+		<info name="usage" value="Requires graphics expansion"/>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="29355">
 				<rom name="gonki.rka" size="29355" crc="5c5b3803" sha1="cbd66ce65e14ec35ff3443adeb1edf6c0770a17f" offset="0" />
@@ -235,9 +239,9 @@
 	</software>
 
 	<software name="gorodki">
-		<description>GORODKI</description>
+		<description>Gorodki</description>
 		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<publisher>Sobolev V.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="4438">
 				<rom name="gorodki.rka" size="4438" crc="93aba42b" sha1="4cbf9160fbb28b7b492c1490ab0d918f350d18e0" offset="0" />
@@ -246,9 +250,9 @@
 	</software>
 
 	<software name="klad">
-		<description>KLAD</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Klad (v1.4)</description>
+		<year>1987</year>
+		<publisher>Pujsis-Pujshe E.I.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="13145">
 				<rom name="klad.rka" size="13145" crc="9b3586b6" sha1="79ce2eec3ed572ecc752b99ff1b2aead84ca977a" offset="0" />
@@ -257,7 +261,7 @@
 	</software>
 
 	<software name="kolobok">
-		<description>KOLOBOK</description>
+		<description>Kolobok</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -268,7 +272,7 @@
 	</software>
 
 	<software name="kommutat">
-		<description>KOMMUTAT</description>
+		<description>Kommutator</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -278,10 +282,10 @@
 		</part>
 	</software>
 
-	<software name="landmine">
-		<description>LANDMINE</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+	<software name="landmina">
+		<description>Land Mina</description>
+		<year>1990</year>
+		<publisher>YUS Corp</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="3170">
 				<rom name="landmine.rka" size="3170" crc="38a1c993" sha1="07cded088f5e528296053f1b43cff47d5e5e6964" offset="0" />
@@ -289,10 +293,10 @@
 		</part>
 	</software>
 
-	<software name="lestn">
-		<description>LESTN</description>
+	<software name="lestnic1">
+		<description>Lestnica-1</description>
 		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<publisher>Simonov Yu.B.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="7977">
 				<rom name="lestn.rka" size="7977" crc="6a23b4ac" sha1="89514d18a7f6a16a5bff471517625e63ce9f9d02" offset="0" />
@@ -301,8 +305,8 @@
 	</software>
 
 	<software name="lestnica">
-		<description>LESTNICA</description>
-		<year>19??</year>
+		<description>Lestnica</description>
+		<year>1992</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="1791">
@@ -311,10 +315,10 @@
 		</part>
 	</software>
 
-	<software name="life">
-		<description>LIFE</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+	<software name="zhizn">
+		<description>Zhizn</description>
+		<year>1990</year>
+		<publisher>Belov B.A.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="3290">
 				<rom name="life.rka" size="3290" crc="1587f724" sha1="506a0b1272820117a18fad26c55f311b9c0ed85e" offset="0" />
@@ -322,8 +326,8 @@
 		</part>
 	</software>
 
-	<software name="life1">
-		<description>LIFE1</description>
+	<software name="vosproiz">
+		<description>Vosproizvedenie</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -334,9 +338,9 @@
 	</software>
 
 	<software name="liqsky">
-		<description>LIQSKY</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Liquid Sky</description>
+		<year>1991</year>
+		<publisher>B.M.G. &amp; C</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="6239">
 				<rom name="liqsky.rka" size="6239" crc="e9db15ac" sha1="6c854529c3c234dd44ecabbf1f26ceba97510180" offset="0" />
@@ -344,10 +348,10 @@
 		</part>
 	</software>
 
-	<software name="loderun">
-		<description>LODERUN</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+	<software name="ldrun1">
+		<description>Lode Runner (BSV Corp)</description>
+		<year>1990</year>
+		<publisher>BSV Corp</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="12569">
 				<rom name="loderun.rka" size="12569" crc="cb5a8c2b" sha1="0873b6eba458bc1714d376fe16fa598d370c02ae" offset="0" />
@@ -355,8 +359,8 @@
 		</part>
 	</software>
 
-	<software name="lrunner">
-		<description>LRUNNER</description>
+	<software name="ldrun2">
+		<description>Lode Runner (Unknown)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -367,7 +371,7 @@
 	</software>
 
 	<software name="marafon">
-		<description>MARAFON</description>
+		<description>Voennyj Marafon</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -377,8 +381,8 @@
 		</part>
 	</software>
 
-	<software name="mars">
-		<description>MARS</description>
+	<software name="mars1">
+		<description>Mars (Unknown)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -388,10 +392,10 @@
 		</part>
 	</software>
 
-	<software name="marsa" cloneof="mars">
-		<description>MARS (Alt)</description>
+	<software name="mars2">
+		<description>Mars (Cyvinskij M.M.)</description>
 		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<publisher>Cyvinskij M.M.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="2570">
 				<rom name="mars_alt.rka" size="2570" crc="7a1c6fdf" sha1="852d954c47bf5aa1289c4475ce67b8156d51f8d2" offset="0" />
@@ -399,8 +403,8 @@
 		</part>
 	</software>
 
-	<software name="marsh2">
-		<description>MARSH2</description>
+	<software name="muz_mrsh">
+		<description>Muzykalnaya Programma - Marsh N2</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -410,10 +414,10 @@
 		</part>
 	</software>
 
-	<software name="mesh">
-		<description>MESH</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+	<software name="meshanin">
+		<description>Meshanina (v1.1)</description>
+		<year>1989</year>
+		<publisher>LYEMZ</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="3081">
 				<rom name="mesh.rka" size="3081" crc="5aaa5c6a" sha1="ea885314ee224f6eec6f9c7754d17446e7d7fe76" offset="0" />
@@ -422,9 +426,9 @@
 	</software>
 
 	<software name="mirage">
-		<description>MIRAGE</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Mirage</description>
+		<year>1992</year>
+		<publisher>CHBG</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="4105">
 				<rom name="mirage.rka" size="4105" crc="11246976" sha1="80230c38b2a7c904ca4fc2518833766116313b5f" offset="0" />
@@ -432,8 +436,8 @@
 		</part>
 	</software>
 
-	<software name="mus1">
-		<description>MUS1</description>
+	<software name="muz_kali">
+		<description>Muzykalnaya Programma - Kalinka - Malinka</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -443,8 +447,8 @@
 		</part>
 	</software>
 
-	<software name="mus2">
-		<description>MUS2</description>
+	<software name="muz_yeh">
+		<description>Muzykalnaya Programma - Yeh, Dubinushka, Uhnem!</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -454,8 +458,8 @@
 		</part>
 	</software>
 
-	<software name="mus3">
-		<description>MUS3</description>
+	<software name="muz_hoot">
+		<description>Muzykalnaya Programma - Hootie Blues</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -465,8 +469,8 @@
 		</part>
 	</software>
 
-	<software name="mus4">
-		<description>MUS4</description>
+	<software name="muz_omac">
+		<description>Muzykalnaya Programma - Old McDonald Had A Farm</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -476,8 +480,8 @@
 		</part>
 	</software>
 
-	<software name="mus5">
-		<description>MUS5</description>
+	<software name="muz_yank">
+		<description>Muzykalnaya Programma - Yankee Doole</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -487,8 +491,8 @@
 		</part>
 	</software>
 
-	<software name="mus6">
-		<description>MUS6</description>
+	<software name="muz_sun">
+		<description>Muzykalnaya Programma - I'll Follow the Sun</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -498,8 +502,8 @@
 		</part>
 	</software>
 
-	<software name="mus7">
-		<description>MUS7</description>
+	<software name="muz_polo">
+		<description>Muzykalnaya Programma - Polonez N4</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -510,7 +514,7 @@
 	</software>
 
 	<software name="musicbox">
-		<description>MUSICBOX</description>
+		<description>musicbox</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -520,10 +524,11 @@
 		</part>
 	</software>
 
-	<software name="nesushka">
-		<description>NESUSHKA</description>
+	<software name="ptichij">
+		<description>Ptichij Dvor</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires graphics expansion"/>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="4169">
 				<rom name="nesushka.rka" size="4169" crc="5bd4dbca" sha1="e9af41bdabf833adf9d78b124892450e8d141007" offset="0" />
@@ -532,7 +537,7 @@
 	</software>
 
 	<software name="nim">
-		<description>NIM</description>
+		<description>nim</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -543,7 +548,7 @@
 	</software>
 
 	<software name="pacman">
-		<description>PACMAN</description>
+		<description>Pacman</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -553,8 +558,8 @@
 		</part>
 	</software>
 
-	<software name="pacman2">
-		<description>PACMAN2</description>
+	<software name="pacmana" cloneof="pacman">
+		<description>Pacman (Alt)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -565,9 +570,9 @@
 	</software>
 
 	<software name="panika">
-		<description>PANIKA</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Panika</description>
+		<year>1989</year>
+		<publisher>Sedov E.A.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="6736">
 				<rom name="panika.rka" size="6736" crc="a386c142" sha1="7f0e4c8e3dc30e57cef12455fc666f8d1ab14db8" offset="0" />
@@ -576,9 +581,9 @@
 	</software>
 
 	<software name="pentis">
-		<description>PENTIS</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Pentis</description>
+		<year>1990</year>
+		<publisher>Panov L.V.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="5914">
 				<rom name="pentis.rka" size="5914" crc="937cd247" sha1="515d2bdf95fff61ef6572cda92d9c3a0602ef0ab" offset="0" />
@@ -588,8 +593,8 @@
 
 	<software name="pif">
 		<description>PIF</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<year>1988</year>
+		<publisher>Sterlikov S.A. - Zaharov D.A.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="4505">
 				<rom name="pif.rka" size="4505" crc="c40ae07c" sha1="d44f147c440267f8afff5ce9896326ca572683de" offset="0" />
@@ -598,7 +603,7 @@
 	</software>
 
 	<software name="pingpong">
-		<description>PINGPONG</description>
+		<description>Ping-Pong</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -609,9 +614,10 @@
 	</software>
 
 	<software name="planeta">
-		<description>PLANETA</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Planeta</description>
+		<year>1991</year>
+		<publisher>PS</publisher>
+		<info name="usage" value="Requires graphics expansion"/>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="17401">
 				<rom name="planeta.rka" size="17401" crc="848ca8ac" sha1="ade878341dac66391e894fa4f9beee3d56b8c8bb" offset="0" />
@@ -619,10 +625,10 @@
 		</part>
 	</software>
 
-	<software name="pogonia">
-		<description>POGONIA</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+	<software name="pogonya">
+		<description>Pogonya v Labirinte</description>
+		<year>1989</year>
+		<publisher>Voznyj D.V.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="12809">
 				<rom name="pogonia.rka" size="12809" crc="4b1854c1" sha1="cdd6d2d30197d24b931fff21c3fc0eb63737b418" offset="0" />
@@ -631,8 +637,8 @@
 	</software>
 
 	<software name="pvo87">
-		<description>PVO87</description>
-		<year>19??</year>
+		<description>PVO-87</description>
+		<year>1987</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="1453">
@@ -642,9 +648,9 @@
 	</software>
 
 	<software name="ralli">
-		<description>RALLI</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Ralli</description>
+		<year>1989</year>
+		<publisher>ZD Corp</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="4105">
 				<rom name="ralli.rka" size="4105" crc="5633d9d5" sha1="4fe4ddf7b0f73bf9a7470afdc6c2faf91b8016c0" offset="0" />
@@ -652,8 +658,8 @@
 		</part>
 	</software>
 
-	<software name="ralslal">
-		<description>RALSLAL</description>
+	<software name="paketpro">
+		<description>Paket Programm - Mikron</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -663,10 +669,10 @@
 		</part>
 	</software>
 
-	<software name="redflwr">
-		<description>REDFLWR</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+	<software name="redflowr">
+		<description>Red Flower</description>
+		<year>1990</year>
+		<publisher>Jup Corp</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="5851">
 				<rom name="redflwr.rka" size="5851" crc="6774fdb3" sha1="d97fd18071f076e17d961b058a4f31d09957503c" offset="0" />
@@ -675,9 +681,9 @@
 	</software>
 
 	<software name="rein">
-		<description>REIN</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Rein</description>
+		<year>1989</year>
+		<publisher>Ivanov Yu.V.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="11417">
 				<rom name="rein.rka" size="11417" crc="aee962f9" sha1="bbc1feb0eb82a33e9d2536a09a2043bec7a46791" offset="0" />
@@ -686,9 +692,9 @@
 	</software>
 
 	<software name="rikoshet">
-		<description>RIKOSHET</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Rikoshet (v1.4)</description>
+		<year>1986</year>
+		<publisher>MIYEM</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="12297">
 				<rom name="rikoshet.rka" size="12297" crc="4283ed5d" sha1="f38424510b0bb9d34e9418e29fbf1cc1629f520f" offset="0" />
@@ -697,9 +703,9 @@
 	</software>
 
 	<software name="rise">
-		<description>RISE</description>
+		<description>Rise</description>
 		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<publisher>Sedov E.A.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="9481">
 				<rom name="rise.rka" size="9481" crc="ea70a438" sha1="f67718c2e339333b34fd1d1197bb7eaf52de17dd" offset="0" />
@@ -708,9 +714,9 @@
 	</software>
 
 	<software name="saboteur">
-		<description>SABOTEUR</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Saboteurs (v003)</description>
+		<year>1988</year>
+		<publisher>Sterlikov S.A. - Zaharov D.A.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="3353">
 				<rom name="saboteur.rka" size="3353" crc="7b76172b" sha1="99e1dee796a3930a7589a18f69157ab93db091a1" offset="0" />
@@ -719,7 +725,7 @@
 	</software>
 
 	<software name="sad">
-		<description>SAD</description>
+		<description>Sad</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -730,9 +736,9 @@
 	</software>
 
 	<software name="shahty">
-		<description>SHAHTY</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Shahty</description>
+		<year>1987</year>
+		<publisher>Borinskij Yu.N.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="15305">
 				<rom name="shahty.rka" size="15305" crc="533db960" sha1="0aafc73037ee3043b8f9914dde0c6748e490f532" offset="0" />
@@ -741,9 +747,9 @@
 	</software>
 
 	<software name="shashki">
-		<description>SHASHKI</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Shashki</description>
+		<year>1990</year>
+		<publisher>Skachkov A.M.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="9737">
 				<rom name="shashki.rka" size="9737" crc="a5f99284" sha1="ad781ce86cc085d5e43a6ba0f91c712e10304fed" offset="0" />
@@ -752,9 +758,10 @@
 	</software>
 
 	<software name="shmel">
-		<description>SHMEL</description>
+		<description>Zvezdolyot Shmel</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires graphics expansion"/>		
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="9257">
 				<rom name="shmel.rka" size="9257" crc="7b3a884c" sha1="ed76b4d11e3b13077bab3294e586f7be7ddf7a4c" offset="0" />
@@ -763,7 +770,7 @@
 	</software>
 
 	<software name="shturm">
-		<description>SHTURM</description>
+		<description>Shturm Kreposti</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -774,9 +781,9 @@
 	</software>
 
 	<software name="skachki">
-		<description>SKACHKI</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Skachki (v2.0)</description>
+		<year>1987</year>
+		<publisher>Kondakov M.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="4505">
 				<rom name="skachki.rka" size="4505" crc="1a61d798" sha1="a26a2ddecfeb12cc180bec1938414a2636ea2de0" offset="0" />
@@ -785,9 +792,9 @@
 	</software>
 
 	<software name="skaloed">
-		<description>SKALOED</description>
+		<description>Ohota Na Skaloeda</description>
 		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<publisher>Zaharov D.A.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="2377">
 				<rom name="skaloed.rka" size="2377" crc="e1937741" sha1="3c8a5b4334a8a8016fe03295856a0ddf7fc9f2e0" offset="0" />
@@ -796,9 +803,9 @@
 	</software>
 
 	<software name="slams">
-		<description>SLAMS</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Slams</description>
+		<year>1990</year>
+		<publisher>ZD Corp</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="4262">
 				<rom name="slams.rka" size="4262" crc="c6802ae0" sha1="eaafff202e848cbbd0a696ecf65d8bd7336f802b" offset="0" />
@@ -807,7 +814,7 @@
 	</software>
 
 	<software name="snake">
-		<description>SNAKE</description>
+		<description>Snake</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -818,9 +825,9 @@
 	</software>
 
 	<software name="sos">
-		<description>SOS</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Desantnik 1 - SOS (v0.1)</description>
+		<year>1989</year>
+		<publisher>ZD Corp</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="4105">
 				<rom name="sos.rka" size="4105" crc="5e08d1c3" sha1="c6746f59e0e93490dcde6e63083ff4429763d2f9" offset="0" />
@@ -829,7 +836,7 @@
 	</software>
 
 	<software name="spbattle">
-		<description>SPBATTLE</description>
+		<description>spbattle</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -839,10 +846,10 @@
 		</part>
 	</software>
 
-	<software name="spinsect">
-		<description>SPINSECT</description>
+	<software name="kosmich">
+		<description>Kosmicheskie Nasekomyie</description>
 		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<publisher>Harkovskij D.A.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="5529">
 				<rom name="spinsect.rka" size="5529" crc="170f7b36" sha1="d7bcfa04168ff65f757ede48aaadedd510c3deb2" offset="0" />
@@ -851,9 +858,9 @@
 	</software>
 
 	<software name="spysdem">
-		<description>SPYSDEM</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Spy's Demise</description>
+		<year>1990</year>
+		<publisher>BSV Corp</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="6729">
 				<rom name="spysdem.rka" size="6729" crc="3c862f3f" sha1="469ea963a0303137569b7f441ceea87bf6daac4c" offset="0" />
@@ -862,9 +869,9 @@
 	</software>
 
 	<software name="stakan">
-		<description>STAKAN</description>
+		<description>Stakan</description>
 		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<publisher>Zharkov</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="3871">
 				<rom name="stakan.rka" size="3871" crc="37be2ea3" sha1="d41851532fa0f0c784b8ef489df536988a4dfd7c" offset="0" />
@@ -872,9 +879,9 @@
 		</part>
 	</software>
 
-	<software name="stelbi">
-		<description>STELBI</description>
-		<year>19??</year>
+	<software name="styelbi">
+		<description>Styelbi</description>
+		<year>1988</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="4527">
@@ -884,9 +891,9 @@
 	</software>
 
 	<software name="stena">
-		<description>STENA</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Stena</description>
+		<year>1991</year>
+		<publisher>Bandenok M.A.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="11945">
 				<rom name="stena.rka" size="11945" crc="2e097fea" sha1="f64ca7a4f8ac31249319d64a8db0678776bf0e88" offset="0" />
@@ -895,7 +902,7 @@
 	</software>
 
 	<software name="stonefld">
-		<description>STONEFLD</description>
+		<description>Stonefield</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -905,8 +912,8 @@
 		</part>
 	</software>
 
-	<software name="tarelki">
-		<description>TARELKI</description>
+	<software name="otrataki">
+		<description>Otrazhenie Ataki Inoplanetyan</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -917,9 +924,9 @@
 	</software>
 
 	<software name="tennis">
-		<description>TENNIS</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Tennis</description>
+		<year>1987</year>
+		<publisher>VMSH</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="2377">
 				<rom name="tennis.rka" size="2377" crc="b3444451" sha1="ced24cf9e7fdbd2c7e449373239c54e0a803bb62" offset="0" />
@@ -928,7 +935,7 @@
 	</software>
 
 	<software name="tetris">
-		<description>TETRIS</description>
+		<description>Tetris!</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -939,9 +946,9 @@
 	</software>
 
 	<software name="torpatt">
-		<description>TORPATT</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Torpednaya Ataka</description>
+		<year>1990</year>
+		<publisher>Ratnikov A.L.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="4362">
 				<rom name="torpatt.rka" size="4362" crc="ef59fea8" sha1="519a60e4e0f91222d42283865a29956ab8757fe4" offset="0" />
@@ -949,10 +956,11 @@
 		</part>
 	</software>
 
-	<software name="trasina">
-		<description>TRASINA</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+	<software name="tryasina">
+		<description>Tryasina</description>
+		<year>1991</year>
+		<publisher>PS</publisher>
+		<info name="usage" value="Requires graphics expansion"/>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="8828">
 				<rom name="trasina.rka" size="8828" crc="c2794fa0" sha1="02921f55d664925e090de62a8da08f6fa9311d92" offset="0" />
@@ -960,8 +968,8 @@
 		</part>
 	</software>
 
-	<software name="tulpan">
-		<description>TULPAN</description>
+	<software name="tyulpan">
+		<description>Tyulpan</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -972,9 +980,9 @@
 	</software>
 
 	<software name="udav">
-		<description>UDAV</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Udav</description>
+		<year>1986</year>
+		<publisher>Popov S.N.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="2057">
 				<rom name="udav.rka" size="2057" crc="ecc4fc76" sha1="f913f279847c66ac581aded102ee406853009b7f" offset="0" />
@@ -983,7 +991,7 @@
 	</software>
 
 	<software name="utka">
-		<description>UTKA</description>
+		<description>Utka</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -994,9 +1002,9 @@
 	</software>
 
 	<software name="wood">
-		<description>WOOD</description>
+		<description>Wood (v1.00)</description>
 		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<publisher>Sandy Pat Corp</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="2361">
 				<rom name="wood.rka" size="2361" crc="9fd36743" sha1="79932e8efbfb8c6abee6dc3b465352470f15e5c2" offset="0" />
@@ -1005,7 +1013,7 @@
 	</software>
 
 	<software name="xonixzm">
-		<description>XONIXZM</description>
+		<description>xonixz</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -1016,9 +1024,9 @@
 	</software>
 
 	<software name="xtro">
-		<description>XTRO</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Xtro (v01)</description>
+		<year>1990</year>
+		<publisher>Matveev A.A.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="7802">
 				<rom name="xtro.rka" size="7802" crc="932aa910" sha1="57da1a34a50dc698068b078f5c2e2eef1f6167b1" offset="0" />
@@ -1030,7 +1038,7 @@
 <!-- System -->
 
 	<software name="basgraph">
-		<description>BASGRAPH</description>
+		<description>BASIC for graphic mode</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -1040,9 +1048,9 @@
 		</part>
 	</software>
 
-	<software name="basmicr">
-		<description>BASMICR</description>
-		<year>19??</year>
+	<software name="basmikro">
+		<description>BASIC Mikron</description>
+		<year>1988</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="8200">
@@ -1051,9 +1059,9 @@
 		</part>
 	</software>
 
-	<software name="basmsx">
-		<description>BASMSX</description>
-		<year>19??</year>
+	<software name="bejsikap">
+		<description>Bejsik Apogej (v1)</description>
+		<year>1987</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="17786">
@@ -1062,8 +1070,8 @@
 		</part>
 	</software>
 
-	<software name="basrk">
-		<description>BASRK</description>
+	<software name="basapoge">
+		<description>Apogej BASIC</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -1074,7 +1082,7 @@
 	</software>
 
 	<software name="dumpred">
-		<description>DUMPRED</description>
+		<description>dumpred</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -1085,9 +1093,9 @@
 	</software>
 
 	<software name="graphred">
-		<description>GRAPHRED</description>
+		<description>Graficheskij Redaktor (v1.32)</description>
 		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<publisher>Popov C.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="5129">
 				<rom name="graphred.rka" size="5129" crc="e5b15e4c" sha1="022b72488aa0c293dc3f1d726e585c2157ce3265" offset="0" />
@@ -1096,8 +1104,8 @@
 	</software>
 
 	<software name="poisk">
-		<description>POISK</description>
-		<year>19??</year>
+		<description>Poisk</description>
+		<year>1988</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="1014">
@@ -1107,7 +1115,7 @@
 	</software>
 
 	<software name="proverka">
-		<description>PROVERKA</description>
+		<description>Programma Kontrolya Rabotosposobnosti PYEVM</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -1118,9 +1126,9 @@
 	</software>
 
 	<software name="recorder">
-		<description>RECORDER</description>
+		<description>R&amp;M-A Recorder (v2.1)</description>
 		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<publisher>Kizik M.V.</publisher>
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="1402">
 				<rom name="recorder.rka" size="1402" crc="c0b03aa1" sha1="8bd8ff358233700a889fc8351cfa1bd4dacde200" offset="0" />
@@ -1128,8 +1136,8 @@
 		</part>
 	</software>
 
-	<software name="redasm">
-		<description>REDASM</description>
+	<software name="asmmikro">
+		<description>Assembler Mikron</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -1139,8 +1147,8 @@
 		</part>
 	</software>
 
-	<software name="reddssm">
-		<description>REDDSSM</description>
+	<software name="dasmikro">
+		<description>Disassembler Mikron</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="apogee_cass">
@@ -1149,7 +1157,5 @@
 			</dataarea>
 		</part>
 	</software>
-
-
 
 </softwarelist>
