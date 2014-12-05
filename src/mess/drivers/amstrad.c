@@ -1071,6 +1071,10 @@ static MACHINE_CONFIG_DERIVED( aleste, amstrad )
 	MCFG_DEVICE_REMOVE("flop_list")
 	MCFG_SOFTWARE_LIST_ADD("flop_list","aleste")
 
+	MCFG_DEVICE_REMOVE("flop_list")
+	MCFG_SOFTWARE_LIST_ADD("flop_list", "aleste")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("cpc_list", "cpc_flop")
+
 	/* internal ram */
 	MCFG_RAM_MODIFY(RAM_TAG)
 	MCFG_RAM_DEFAULT_SIZE("2M")

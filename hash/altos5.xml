@@ -2,6 +2,7 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 
 <softwarelist name="altos5" description="Altos Series 5 floppies">
+
 	<software name="altdiag">
 		<description>Altos Diag. Exec. v3.0</description>
 		<year>198?</year>
@@ -14,7 +15,7 @@
 		</part>
 	</software>
 
-	<software name="cpm220so">
+	<software name="cpm220so" supported="no">
 		<description>CP/M v2.20SO</description>
 		<year>198?</year>
 		<publisher>Digital Research</publisher>
@@ -26,7 +27,7 @@
 		</part>
 	</software>
 
-	<software name="mpm210so">
+	<software name="mpm210so" supported="no">
 		<description>MP-M v2.10SO rev.B</description>
 		<year>1982</year>
 		<publisher>Digital Research</publisher>

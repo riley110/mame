@@ -455,6 +455,8 @@ static MACHINE_CONFIG_START( mc1000, mc1000_state )
 	MCFG_CASSETTE_INTERFACE("mc1000_cass")
 	MCFG_SOFTWARE_LIST_ADD("cass_list","mc1000_cass")
 
+	MCFG_SOFTWARE_LIST_ADD("cass_list", "mc1000_cass")
+
 	MCFG_CENTRONICS_ADD(CENTRONICS_TAG, centronics_devices, "printer")
 	MCFG_CENTRONICS_BUSY_HANDLER(WRITELINE(mc1000_state, write_centronics_busy))
 
