@@ -1109,6 +1109,7 @@ static MACHINE_CONFIG_DERIVED( mo5, to7 )
 	MCFG_DEVICE_REMOVE("cart_list")
 	MCFG_DEVICE_REMOVE("to_flop_list")
 	MCFG_SOFTWARE_LIST_ADD("cart_list","mo_cart")
+	MCFG_SOFTWARE_LIST_ADD("mo_flop_list","mo_flop")
 
 	/* internal ram */
 	MCFG_RAM_MODIFY(RAM_TAG)
@@ -2191,6 +2192,7 @@ static MACHINE_CONFIG_DERIVED( mo6, to7 )
 	MCFG_DEVICE_REMOVE("cart_list")
 	MCFG_DEVICE_REMOVE("to_flop_list")
 	MCFG_SOFTWARE_LIST_ADD("cart_list","mo_cart")
+	MCFG_SOFTWARE_LIST_ADD("mo_flop_list","mo_flop")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( pro128, mo6 )
@@ -2441,6 +2443,7 @@ static MACHINE_CONFIG_DERIVED( mo5nr, to7 )
 	MCFG_DEVICE_REMOVE("cart_list")
 	MCFG_DEVICE_REMOVE("to_flop_list")
 	MCFG_SOFTWARE_LIST_ADD("cart_list","mo_cart")
+	MCFG_SOFTWARE_LIST_ADD("mo_flop_list","mo_flop")
 MACHINE_CONFIG_END
 
 COMP ( 1986, mo5nr, 0, 0, mo5nr, mo5nr, driver_device, 0, "Thomson", "MO5 NR", 0 )
