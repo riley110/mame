@@ -53,7 +53,8 @@
 		<description>Jane</description>
 		<year>1985</year>
 		<publisher>Thomson</publisher>
-		<info name="requirement" value="Requires QDD floppy drive"/>
+		<info name="drive_requirement" value="QDD floppy drive"/>
+		<sharedfeat name="requirement" value="mo_cart:jane"/>
 
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1 (Systeme)"/>
@@ -103,7 +104,7 @@
 		<description>MO5 Disk BASIC (v1.0)</description>
 		<year>1985</year>
 		<publisher>Microsoft</publisher>
-		<info name="requirement" value="Requires 5.25 SD floppy drive"/>
+		<info name="drive_requirement" value="5.25 SD floppy drive"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="81920">
@@ -116,7 +117,7 @@
 		<description>MO5 Disk BASIC (v1.1)</description>
 		<year>1985</year>
 		<publisher>Microsoft</publisher>
-		<info name="requirement" value="Requires 5.25 DD floppy drive"/>
+		<info name="drive_requirement" value="5.25 DD floppy drive"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="163840">
@@ -129,7 +130,7 @@
 		<description>MO5 QDD Disk BASIC (v1.0)</description>
 		<year>1985</year>
 		<publisher>Microsoft</publisher>
-		<info name="requirement" value="Requires QDD floppy drive"/>
+		<info name="drive_requirement" value="QDD floppy drive"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="51200">
