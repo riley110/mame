@@ -183,7 +183,7 @@
 		</part>
 	</software>
 
-	<software name="backup">
+	<software name="backupra">
 		<description>Backup Rapide</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -191,6 +191,18 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
 				<rom name="backup rapide (19xx)(-)(fr).fd" size="327680" crc="18253ca1" sha1="db400f33c7d3b78af6c136e7288f9d1160a8fed7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="backupraa" cloneof="backupra">
+		<description>Backup Rapide (SAP Format)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="qbackup.sap" size="335426" crc="2ffb551f" sha1="2826d3842691c04f16dbb9ada2669c2efc00baf9" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -509,6 +521,18 @@
 		</part>
 	</software>
 
+	<software name="emptydska" cloneof="emptydsk">
+		<description>Empty Disk (Alt)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="dos5_10.sap" size="335426" crc="2df61497" sha1="0e0e2f69a77685e14122b6afbb1db48a6490c7fd" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="enigma">
 		<description>Enigma (v2.0)</description>
 		<year>1995</year>
@@ -602,6 +626,18 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
 				<rom name="graphique (1985)(fil)(fr).fd" size="327680" crc="37b97af7" sha1="e72844b39600ecd71d4b32152889b08e97d55637" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="grphiquea" cloneof="grphique">
+		<description>Graphique (SAP Format)</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="graf-to9.sap" size="335426" crc="cabe7182" sha1="5a016bb031ad04c97b400453c34e0437da1a95dd" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -1490,6 +1526,18 @@
 		</part>
 	</software>
 
+	<software name="statistq">
+		<description>Statistiques</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="stat-to9.sap" size="335426" crc="3ce7ca38" sha1="58fca3db1c6ee2a85fa3edd179e5d6cd5854d2e2" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="studio">
 		<description>Studio</description>
 		<year>1986</year>
@@ -1516,34 +1564,83 @@
 		</part>
 	</software>
 
-	<software name="sysppm68" cloneof="sysppm" supported="partial">
-		<description>Systeme P.P.M. (v6.8, Missing Disk 1)</description>
-		<year>2000</year>
+	<software name="sysppm">
+		<description>Systeme P.P.M. (v8.0)</description>
+		<year>2002</year>
 		<publisher>Bledor-Soft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		<feature name="part_id" value="Disk 2"/>
-			<dataarea name="flop" size="335426">
-				<rom name="systeme p.p.m. v6.8 (2000)(bledor-soft)(pd)(disk 2 of 2).sap" size="335426" crc="82d4bb6d" sha1="9e879a4b909dce2c1eb6020ae1fe7fd164329328" offset="0" />
+		<feature name="part_id" value="Disk 1 Side A"/>
+			<dataarea name="flop" size="327680">
+				<rom name="sppm80-a-1.fd" size="327680" crc="f6a65a1b" sha1="b0760f8f9a84b63e4eb989c80ff1c5362043c617" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1 Side B"/>
+			<dataarea name="flop" size="327680">
+				<rom name="sppm80-a-2.fd" size="327680" crc="8346e669" sha1="196e2d25fe49828f3d8a1cac99afea5b78e0cbde" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2 Side A"/>
+			<dataarea name="flop" size="327680">
+				<rom name="sppm80-b-1.fd" size="327680" crc="b0c205fb" sha1="1a10b8399faf87e53de607aa18fa25506b54ad63" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2 Side B"/>
+			<dataarea name="flop" size="327680">
+				<rom name="sppm80-b-2.fd" size="327680" crc="72cb80d7" sha1="15bc8ebc8f69920d17c2b87f4513977fae72493f" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="sysppm69" cloneof="sysppm">
-		<description>Systeme P.P.M. (v6.9)</description>
-		<year>2000</year>
+	<software name="sysppma" cloneof="sysppm">
+		<description>Systeme P.P.M. (v8.0, SAP Format)</description>
+		<year>2002</year>
 		<publisher>Bledor-Soft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		<feature name="part_id" value="Boot Disk"/>
+		<feature name="part_id" value="Disk 1 Side A"/>
 			<dataarea name="flop" size="335426">
-				<rom name="systeme p.p.m. v6.9 (2000)(bledor-soft)(pd)(disk 1 of 2)[boot disk].sap" size="335426" crc="ed6881f8" sha1="064136a19de07a3c8fe38faf3de22429314e4176" offset="0" />
+				<rom name="systeme p.p.m. v8.0 (2002)(bledor-soft)(fr)(disk 1 of 2 side a).sap" size="335426" crc="f76d30b6" sha1="99ad37d6147c90fd45a70753d94606328631bc02" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1 Side B"/>
+			<dataarea name="flop" size="335426">
+				<rom name="systeme p.p.m. v8.0 (2002)(bledor-soft)(fr)(disk 1 of 2 side b).sap" size="335426" crc="687e55e6" sha1="cce2b3bbf9d2d69fd469dd04a276c97203d5adf5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2 Side A"/>
+			<dataarea name="flop" size="335426">
+				<rom name="systeme p.p.m. v8.0 (2002)(bledor-soft)(fr)(disk 2 of 2 side a).sap" size="335426" crc="e475f18f" sha1="fa2c3606e6cc804e6a948abdad135a76f313dc07" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2 Side B"/>
+			<dataarea name="flop" size="335426">
+				<rom name="systeme p.p.m. v8.0 (2002)(bledor-soft)(fr)(disk 2 of 2 side b).sap" size="335426" crc="c5b80d7b" sha1="347443dc9f324e7d4de91d542a7c528bab357e6a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sysppmb" cloneof="sysppm" supported="no">
+		<description>Systeme P.P.M. (v8.0, 640K Disks)</description>
+		<year>2002</year>
+		<publisher>Bledor-Soft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="655360">
+				<rom name="sppm80-a.fd" size="655360" crc="a55d91a0" sha1="99883c221513beb288b625afb2f8040067e5af4d" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 2"/>
-			<dataarea name="flop" size="335426">
-				<rom name="systeme p.p.m. v6.9 (2000)(bledor-soft)(pd)(disk 2 of 2).sap" size="335426" crc="1a954a0b" sha1="ee9a6b5dfd47af0778530dbae50b6b6545a8d67b" offset="0" />
+			<dataarea name="flop" size="655360">
+				<rom name="sppm80-b.fd" size="655360" crc="05f43d13" sha1="c966005c3fba53fc936f43abf7bd54eff0b8219f" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -1573,33 +1670,34 @@
 		</part>
 	</software>
 
-	<software name="sysppm">
-		<description>Systeme P.P.M. (v8.0)</description>
-		<year>2002</year>
+	<software name="sysppm69" cloneof="sysppm">
+		<description>Systeme P.P.M. (v6.9)</description>
+		<year>2000</year>
 		<publisher>Bledor-Soft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		<feature name="part_id" value="Disk 1 Side A"/>
+		<feature name="part_id" value="Boot Disk"/>
 			<dataarea name="flop" size="335426">
-				<rom name="systeme p.p.m. v8.0 (2002)(bledor-soft)(fr)(disk 1 of 2 side a).sap" size="335426" crc="f76d30b6" sha1="99ad37d6147c90fd45a70753d94606328631bc02" offset="0" />
+				<rom name="systeme p.p.m. v6.9 (2000)(bledor-soft)(pd)(disk 1 of 2)[boot disk].sap" size="335426" crc="ed6881f8" sha1="064136a19de07a3c8fe38faf3de22429314e4176" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-		<feature name="part_id" value="Disk 1 Side B"/>
+		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="335426">
-				<rom name="systeme p.p.m. v8.0 (2002)(bledor-soft)(fr)(disk 1 of 2 side b).sap" size="335426" crc="687e55e6" sha1="cce2b3bbf9d2d69fd469dd04a276c97203d5adf5" offset="0" />
+				<rom name="systeme p.p.m. v6.9 (2000)(bledor-soft)(pd)(disk 2 of 2).sap" size="335426" crc="1a954a0b" sha1="ee9a6b5dfd47af0778530dbae50b6b6545a8d67b" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_5_25">
-		<feature name="part_id" value="Disk 2 Side A"/>
+	</software>
+
+	<software name="sysppm68" cloneof="sysppm" supported="partial">
+		<description>Systeme P.P.M. (v6.8, Missing Disk 1)</description>
+		<year>2000</year>
+		<publisher>Bledor-Soft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="335426">
-				<rom name="systeme p.p.m. v8.0 (2002)(bledor-soft)(fr)(disk 2 of 2 side a).sap" size="335426" crc="e475f18f" sha1="fa2c3606e6cc804e6a948abdad135a76f313dc07" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_5_25">
-		<feature name="part_id" value="Disk 2 Side B"/>
-			<dataarea name="flop" size="335426">
-				<rom name="systeme p.p.m. v8.0 (2002)(bledor-soft)(fr)(disk 2 of 2 side b).sap" size="335426" crc="c5b80d7b" sha1="347443dc9f324e7d4de91d542a7c528bab357e6a" offset="0" />
+				<rom name="systeme p.p.m. v6.8 (2000)(bledor-soft)(pd)(disk 2 of 2).sap" size="335426" crc="82d4bb6d" sha1="9e879a4b909dce2c1eb6020ae1fe7fd164329328" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1660,6 +1758,125 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="163840">
 				<rom name="dos-5p25-to7 [a].fd" size="163840" crc="f22a7e02" sha1="637299627509c913f4d2bcc23ad3dec1cb377dd7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="to9papps">
+		<description>TO9+ Applications</description>
+		<year>1986</year>
+		<publisher>Thomson</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="327680">
+				<rom name="applications-to9p-1.fd" size="327680" crc="10045ef1" sha1="41fa1d2f4d8b170640e9fb6ea62def297d357b8a" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="327680">
+				<rom name="applications-to9p-2.fd" size="327680" crc="c160160b" sha1="410abdaac674fe8604a4606d774a3b8ad55ade16" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="to9pappsa" cloneof="to9papps">
+		<description>TO9+ Applications (SAP Format)</description>
+		<year>1986</year>
+		<publisher>Thomson</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="335426">
+				<rom name="appli_0.sap" size="335426" crc="5e2763c6" sha1="ccefaff9603386c2edffc6eb31de7c2022b6d0a8" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="335426">
+				<rom name="appli_1.sap" size="335426" crc="591f609e" sha1="abf01f8b51d209a675c0e1c209ea6be5a4040331" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="to9pappsb" cloneof="to9papps">
+		<description>TO9+ Applications (SAP Format, Alt Disk 1)</description>
+		<year>1986</year>
+		<publisher>Thomson</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="335426">
+				<rom name="to9+ applications (1986)(fil).sap" size="335426" crc="f4f42ae2" sha1="f6415516e98a2edc7c470a0e35d2d933833284f2" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="335426">
+				<rom name="appli_1.sap" size="335426" crc="591f609e" sha1="abf01f8b51d209a675c0e1c209ea6be5a4040331" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="to9pappsc" cloneof="to9papps" supported="no">
+		<description>TO9+ Applications (640K Disk)</description>
+		<year>1986</year>
+		<publisher>Thomson</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="655360">
+				<rom name="applications-to9p.fd" size="655360" crc="95628999" sha1="243fb9c14f7d2f320351e5eebcb6a8cd07aafba7" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="to9pinit">
+		<description>TO9+ Initiations</description>
+		<year>1986</year>
+		<publisher>Thomson</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="327680">
+				<rom name="initiations-to9p-1.fd" size="327680" crc="a44346a4" sha1="745b1091f7151e30795f9758796c21e8cfa160c4" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="327680">
+				<rom name="initiations-to9p-2.fd" size="327680" crc="1a4c61a4" sha1="a90addd69c892904f90dad291947fc8af42c7a8f" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="to9pinita" cloneof="to9pinit">
+		<description>TO9+ Initiations (SAP Format)</description>
+		<year>1986</year>
+		<publisher>Thomson</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="335426">
+				<rom name="to9+ initiation (1986)(fil).sap" size="335426" crc="40fc2a47" sha1="94f08866ea222a06370c316f51f38bf0efb7a6ab" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="335426">
+				<rom name="init_1.sap" size="335426" crc="f2e10f4c" sha1="889e591bd7f2334f8ceb72e200e2cc60efb11426" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="to9pinitb" cloneof="to9pinit">
+		<description>TO9+ Initiations (640K Disk)</description>
+		<year>1986</year>
+		<publisher>Thomson</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="655360">
+				<rom name="initiations-to9p.fd" size="655360" crc="aee9e029" sha1="b86708795997e3774854d0d306f3a83403312060" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -1808,6 +2025,18 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
 				<rom name="typo-7 (1988)(cedic-nathan).fd" size="327680" crc="71f46e2f" sha1="9ada54a5f317048bb13dd2166e7059530413f4eb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="typo7a" cloneof="typo7">
+		<description>Typo-7 (Alt)</description>
+		<year>1988</year>
+		<publisher>Cedic/Nathan</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="typo7-dcmoto.fd" size="327680" crc="f4d9c0fa" sha1="c3b9d8c0c3f2a3671fe04b59fa220fd00ca7007c" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -2296,13 +2525,44 @@
 	</software>
 
 	<software name="skyrim" supported="no">
-		<description>Skyrim</description>
+		<description>Skyrim (to8)</description>
+		<year>2012</year>
+		<publisher>Samuel Devulder</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="327680">
+				<rom name="skyrim (samuel devulder) (2012) (to8)-1.fd" size="327680" crc="2e747394" sha1="78cb134a7c0025fbe62b5567699d3e825187fffd" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="327680">
+				<rom name="skyrim (samuel devulder) (2012) (to8)-2.fd" size="327680" crc="7f46a821" sha1="394ac8d6a4bb14105f71a1e943cf0ec56d66173d" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="skyrima" cloneof="skyrim" supported="no">
+		<description>Skyrim (to7)</description>
 		<year>2012</year>
 		<publisher>Samuel Devulder</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
 				<rom name="skyrim (samuel devulder) (2012) (to7).fd" size="327680" crc="cabf3698" sha1="aead7c153bab10f9ebffdd701bd5773412e7f1a5" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="skyrimb" cloneof="skyrim" supported="no">
+		<description>Skyrim (to8, 640K Disk)</description>
+		<year>2012</year>
+		<publisher>Samuel Devulder</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="655360">
+				<rom name="skyrim (samuel devulder) (2012) (to8).fd" size="655360" crc="30f44523" sha1="59e85500d169ae378568903f76a0f305226175c0" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -3396,6 +3656,37 @@
 		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="335426">
 				<rom name="teo-drive no.6 (1991)(a.s.c.i.).sap" size="335426" crc="eb7462f5" sha1="a8867700557bf947df323ec9e55f0ec23868e2ac" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="RAM Disk A"/>
+			<dataarea name="flop" size="327680">
+				<rom name="teo-drive no.6 (1991)(a.s.c.i.)[ram disk a].fd" size="327680" crc="21c656f4" sha1="63361065ed64f4c114df443b5bd7052f61d8c7d6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="RAM Disk B"/>
+			<dataarea name="flop" size="327680">
+				<rom name="teo-drive no.6 (1991)(a.s.c.i.)[ram disk b].fd" size="327680" crc="07c13e07" sha1="c33fc6a6b50cca0738afaa65d8f2a244292d609d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+		<feature name="part_id" value="RAM Disk C"/>
+			<dataarea name="flop" size="327680">
+				<rom name="teo-drive no.6 (1991)(a.s.c.i.)[ram disk c].fd" size="327680" crc="a6c1e7d8" sha1="e3ee4654cb5f5a13c6960a0afcc9e5fcd6b713aa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="teodriv6b" cloneof="teodriv6">	<!-- flop1 second half is blank -->
+		<description>Teo-Drive no.6 (Disk 1 640K)</description>
+		<year>1991</year>
+		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="655360">
+				<rom name="teo-drive n6 (asci) (michel saint-briant) (1991) (to8).fd" size="655360" crc="fa0fe99f" sha1="111c3d64bb30f3fe1986918c684452fad8a8f59a" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
@@ -5534,7 +5825,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="chevalia" cloneof="chevali">
 		<description>Les Chevaliers de l'An Mil (SAP Format)</description>
 		<year>1989</year>
@@ -5550,6 +5841,18 @@
 		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="335426">
 				<rom name="chevaliers de l'an mil, les (1989)(ubisoft)(fr)(disk 2 of 2).sap" size="335426" crc="f135a97c" sha1="d7bf56d4f477945a103c70356ff9a701e5c52347" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chevalib" cloneof="chevali" supported="no">
+		<description>Les Chevaliers de l'An Mil (640K Disk)</description>
+		<year>1989</year>
+		<publisher>Ubisoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="655360">
+				<rom name="chevaler.fd" size="655360" crc="714c41f1" sha1="d593294b94d912a6ff44ccbd4998a510dd3be347" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -8444,13 +8747,44 @@
 	</software>
 
 	<software name="turbocup">
-		<description>Turbocup (Cracked by The Crapaud Musulman)</description>
+		<description>Turbo Cup</description>
+		<year>1988</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="327680">
+				<rom name="turbo cup (loriciels) (vincent baillet) (1988) (mo6 to8)-1.fd" size="327680" crc="ccc68ffd" sha1="660f9cad0b40f22d753dac46994c559e5a124499" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="327680">
+				<rom name="turbo cup (loriciels) (vincent baillet) (1988) (mo6 to8)-2.fd" size="327680" crc="05162ac3" sha1="e90927dfddf4961a66260f8e8c9fe525a5f2abc5" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="turbocupa" cloneof="turbocup">
+		<description>Turbo Cup (Cracked by The Crapaud Musulman)</description>
 		<year>1988</year>
 		<publisher>Loriciels</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="turbocup (1988)(loriciels)(fr)[cr the crapaud musulman].sap" size="335426" crc="b96330d4" sha1="3d1d24fce7e31de617efa65cca86d7ec64a1df96" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="turbocupb" cloneof="turbocup" supported="no">
+		<description>Turbo Cup (640K Disk)</description>
+		<year>1988</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="655360">
+				<rom name="turbo cup (loriciels) (vincent baillet) (1988) (mo6 to8).fd" size="655360" crc="30023825" sha1="775736698c4d0b0991134420d25efcc5867bb72b" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -10300,6 +10634,18 @@
 		    <dataarea name="flop" size="655360">
 		        <rom name="megasofts10.fd" size="655360" crc="57e0f3ea" sha1="965efceedf477a7861624f5e03322fc19c30b9fa" offset="0" />
 		    </dataarea>
+		</part>
+	</software>
+
+	<software name="n3coktel">
+		<description>No. 3 de Coktel</description>
+		<year>1985</year>
+		<publisher>Coktel Vision</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="n3-de-coktel-to9.fd" size="327680" crc="e76d9a49" sha1="637b345bb4cdb088a3d2ce518ef053c677eabf24" offset="0x0000" />
+			</dataarea>
 		</part>
 	</software>
 
