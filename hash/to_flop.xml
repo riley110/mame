@@ -4,19 +4,19 @@
 
 	<!-- Applications -->
 
-	<software name="35basic">
+	<software name="35basicb">
 		<description>3&quot;1/2 Disk BASIC (v1.1)</description>
 		<year>1986</year>
 		<publisher>Microsoft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="3''1-2 disk basic v1.1 (1986)(microsoft)[3.5''].fd" size="327680" crc="f291912b" sha1="12b6b378c1add6142f47ae08d37dda0f00811bb3" offset="0x0000" />
+				<rom name="3''1-2 disk basic v1.1 (1986)(microsoft)[3.5''].fd" size="327680" crc="f291912b" sha1="12b6b378c1add6142f47ae08d37dda0f00811bb3" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="525basic">
+	<software name="525sdbas">
 		<description>TO7 Disk BASIC (v1.0)</description>
 		<year>1983</year>
 		<publisher>Microsoft</publisher>
@@ -25,7 +25,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="81920">
-				<rom name="to7 disk basic v1.0 (1983)(microsoft)[5.25'' sd].fd" size="81920" crc="27d64e76" sha1="5ddb05bfaabeafffe87c2ff08a0e32809ceb5a22" offset="0x0000" />
+				<rom name="to7 disk basic v1.0 (1983)(microsoft)[5.25'' sd].fd" size="81920" crc="27d64e76" sha1="5ddb05bfaabeafffe87c2ff08a0e32809ceb5a22" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -130,6 +130,31 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="archivor v1.0 (1993)(contacthoms)(fr).sap" size="335426" crc="94b9c467" sha1="9fd72deae1544947a6e6396f0fc65b5510e46de7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="arsene">
+		<description>Arsene</description>
+		<year>1986</year>
+		<publisher>Triel</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="arsene-to9.fd" size="327680" crc="a26e28c1" sha1="fb9562231e11244467fc873a8782e58d822f8bdc" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="arsenea" cloneof="arsene">
+		<description>Arsene (5.25 SD disk)</description>
+		<year>1986</year>
+		<publisher>Triel</publisher>
+		<info name="requirement" value="Requires 5.25 SD floppy drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="81920">
+				<rom name="arsene-to7.fd" size="81920" crc="2600e01f" sha1="d0f8e35d3e5015ab3e68d7b520ab3eed43069ba4" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -371,7 +396,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
-				<rom name="controle to9+ (19xx)(cofadel service)(fr).sap" size="335426" crc="be0ac544" sha1="95307d1727b1c0f4e54f3e36f6dd04dfdf8dac22" offset="0x0000" />
+				<rom name="controle to9+ (19xx)(cofadel service)(fr).sap" size="335426" crc="be0ac544" sha1="95307d1727b1c0f4e54f3e36f6dd04dfdf8dac22" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -460,6 +485,18 @@
 		</part>
 	</software>
 
+	<software name="einfb128">
+		<description>Einfuhrung in BASIC 128 (Ger)</description>
+		<year>1985</year>
+		<publisher>Thomson</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="einfuehrung in basic 128 (thomson) (inconnus) (1985) (to9).fd" size="327680" crc="cc25f007" sha1="41ddd8182e4f0dae9c52e07644829cba16d1fd8b" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="emptydsk">
 		<description>Empty Disk</description>
 		<year>19??</year>
@@ -492,6 +529,19 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="enigma v2.0 (1995)(pukall, alexandre)(fr)(pd)[a].sap" size="335426" crc="9e9459e0" sha1="b396c5e15de38707e2ca9053f7d7e2b8a5a2c428" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="forthdsk">
+		<description>FORTH-TO7 Disk (v1.0)</description>
+		<year>1984</year>
+		<publisher>SEFI/TO-Tek Editions</publisher>
+		<info name="usage" value="Requires FORTH-TO7 cart"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="dos-forth-to7.fd" size="327680" crc="b828a153" sha1="9ba298232d819d724e9264c191e87752abeb0fc4" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -616,6 +666,19 @@
 		</part>
 	</software>
 
+	<software name="initb128">
+		<description>Auto-Initiation BASIC 128 + D.O.S. BASIC 1.0</description>
+		<year>1985</year>
+		<publisher>Thomson</publisher>
+		<info name="alt_title" value="Initiation au BASIC 128"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="auto-initiation-basic128_to9.fd" size="327680" crc="f8830ec5" sha1="27d1d2fa7581a77ab147c1acf9987778add675b8" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="initb512">
 		<description>Initiation au BASIC 512 + Multidos</description>
 		<year>1986</year>
@@ -681,6 +744,66 @@
 		</part>
 	</software>
 
+<!-- 
+	uses double-sided qdd disks, which seem to not be handled correctly 
+	and the same dump is available on dcmoto, so it is likely not bad	
+-->
+	<software name="initb512qd" cloneof="initb512" supported="no">
+		<description>Initiation au BASIC 512 (QDD)</description>
+		<year>1986</year>
+		<publisher>Thomson</publisher>
+		<info name="requirement" value="Requires QD drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1 Side A"/>
+			<dataarea name="flop" size="51200">
+				<rom name="initiation-basic512-1a-to8.qd" size="51200" crc="f9410541" sha1="1557fa03336ef8b7c5916c06b0c61011ef72c02e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1 Side B"/>
+			<dataarea name="flop" size="51200">
+				<rom name="initiation-basic512-1b-to8.qd" size="51200" crc="00165db4" sha1="8eb93709b228ef42a52739434635117ba89532a8" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2 Side A"/>
+			<dataarea name="flop" size="51200">
+				<rom name="initiation-basic512-2a-to8.qd" size="51200" crc="d443f87b" sha1="fdd9f0ffaf6b395199b5a18e13da35c3d1c19dd3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 3 Side B"/>
+			<dataarea name="flop" size="51200">
+				<rom name="initiation-basic512-2b-to8.qd" size="51200" crc="b7a3cd64" sha1="f4727a10c2707e3ee5261996f66cf2b5223d869c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="initto9">
+		<description>Auto-Initiation TO9</description>
+		<year>1985</year>
+		<publisher>Thomson</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="auto-initiation-to9_to9.fd" size="327680" crc="a79a0ab7" sha1="ba17764dd2836e81da7d21eadfc077b79f52c048" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="initto9a" cloneof="initto9">
+		<description>Auto-Initiation TO9 (SAP Format)</description>
+		<year>1985</year>
+		<publisher>Thomson</publisher>
+
+		<part name="flop4" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="init-to9.sap" size="335426" crc="01279827" sha1="1e7e16dc02e6697a03b0e1d42cc08901fa602381" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="intext">
 		<description>Int-Ext (v1.0)</description>
 		<year>2001</year>
@@ -734,7 +857,7 @@
 	<software name="jrnalist">
 		<description>Le Journaliste</description>
 		<year>1988</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 		<info name="usage" value="Press 4 key and load file &quot;JOURNAL&quot;"/>
 
 		<part name="flop1" interface="floppy_5_25">
@@ -766,7 +889,7 @@
 	<software name="jrnalista" cloneof="jrnalist">
 		<description>Le Journaliste (SAP Format)</description>
 		<year>1988</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 		<info name="usage" value="Press 4 key and load file &quot;JOURNAL&quot;"/>
 
 		<part name="flop1" interface="floppy_5_25">
@@ -798,7 +921,7 @@
 	<software name="jrnalistb" cloneof="jrnalist" supported="no">
 		<description>Le Journaliste (1280K Disk)</description>
 		<year>1988</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 		<info name="usage" value="Press 4 key and load file &quot;JOURNAL&quot;"/>
 
 		<part name="flop1" interface="floppy_5_25">
@@ -829,6 +952,18 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
 				<rom name="logo (1984)(totek)(fr)[chg file].fd" size="327680" crc="e1c63c9e" sha1="8c4e804d61790fb040421f53ffedd36a5e17c7bc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="logode">
+		<description>LOGO-TO7 DOS Disk (Ger)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="logo en allemand (thomson micro gmbh) (inconnus) (1986) (to7).fd" size="327680" crc="2fd30cdb" sha1="5f3a119958717a127105254923fdcd79fa4737c6" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -1067,7 +1202,7 @@
 	<software name="parole">
 		<description>Parole - Synthese Vocale</description>
 		<year>1985</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 		
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -1343,6 +1478,18 @@
 		</part>
 	</software>
 
+	<software name="speedyw">
+		<description>Speedy Wonder</description>
+		<year>1986</year>
+		<publisher>Minipuce</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="speedy wonder (minipuce) (c. sotiropoulos, y. beltchenko) (1986) (to7).fd" size="327680" crc="8c6c4d9b" sha1="326bc26de64536b42834534682cf9dd9edd7ff85" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="studio">
 		<description>Studio</description>
 		<year>1986</year>
@@ -1460,7 +1607,7 @@
 	<software name="tabledes">
 		<description>Table a Dessin</description>
 		<year>1986</year>
-		<publisher>Cobra Soft</publisher>
+		<publisher>Cobrasoft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -1489,6 +1636,30 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="theme astral (198x)(infogrames)(fr).sap" size="335426" crc="98634e7b" sha1="733ca233bb01123995eab49d52f974ab0dbea3a2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="to7dbas">
+		<description>TO7 Disk BASIC (v1.2)</description>
+		<year>1985</year>
+		<publisher>Microsoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="163840">
+				<rom name="dos-5p25-to7.fd" size="163840" crc="e5b678c9" sha1="6c651cb14301721bf0daa3802d3aca091bdfd084" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="to7dbasa" cloneof="to7dbas">
+		<description>TO7 Disk BASIC (v1.2, Alt)</description>
+		<year>1985</year>
+		<publisher>Microsoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="163840">
+				<rom name="dos-5p25-to7 [a].fd" size="163840" crc="f22a7e02" sha1="637299627509c913f4d2bcc23ad3dec1cb377dd7" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1624,7 +1795,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="51200">
-				<rom name="transfer (198x)(-).qd" size="51200" crc="28b91794" sha1="a82e85de2c1d5e83827a5d9d40ef54450bc7eac9" offset="0x0000" />
+				<rom name="transfer (198x)(-).qd" size="51200" crc="28b91794" sha1="a82e85de2c1d5e83827a5d9d40ef54450bc7eac9" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1632,7 +1803,7 @@
 	<software name="typo7">
 		<description>Typo-7</description>
 		<year>1988</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -2120,6 +2291,18 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="photo95 (2000)(manta-softs)(fr)(pd).sap" size="335426" crc="7e8ce7c9" sha1="e9726d8af3673eff73cdec8c28e2b95eaf26d450" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="skyrim" supported="no">
+		<description>Skyrim</description>
+		<year>2012</year>
+		<publisher>Samuel Devulder</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="skyrim (samuel devulder) (2012) (to7).fd" size="327680" crc="cabf3698" sha1="aead7c153bab10f9ebffdd701bd5773412e7f1a5" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -3316,7 +3499,7 @@
 	<software name="allemand">
 		<description>Allemand - Volume 2</description>
 		<year>1987</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -3328,7 +3511,7 @@
 	<software name="anglais">
 		<description>Anglais - Volume 1</description>
 		<year>1986</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -3340,7 +3523,7 @@
 	<software name="appcomp">
 		<description>Apprends-moi a Compter</description>
 		<year>1987</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -3352,7 +3535,7 @@
 	<software name="appcompa" cloneof="appcomp">
 		<description>Apprends-moi a Compter (SAP Format)</description>
 		<year>1987</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -3364,7 +3547,7 @@
 	<software name="applire">
 		<description>Apprends-moi a Lire</description>
 		<year>1988</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -3376,11 +3559,23 @@
 	<software name="applirea" cloneof="applire">
 		<description>Apprends-moi a Lire (SAP Format)</description>
 		<year>1988</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="apprends-moi a lire 1 (1988)(cedic - nathan)(fr).sap" size="335426" crc="b3e00def" sha1="370c3e38a0f6daa714df9e8be2b29a0e3f31c6fc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="appecrir"> <!-- works only on to9 -->
+		<description>Apprends-moi a Ecrire</description>
+		<year>1986</year>
+		<publisher>Cedic/Nathan</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="apprends-moi a ecrire (nathan) (michel bussac) (1986) (to9).fd" size="327680" crc="166fac29" sha1="b3ef7017e69f5b06c518321f9dd051f8da0f780a" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -3514,6 +3709,18 @@
 		</part>
 	</software>
 
+	<software name="enigmeox">
+		<description>Enigme a Oxford</description>
+		<year>1986</year>
+		<publisher>Coktel Vision</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="enigme-a-oxford-to9.fd" size="327680" crc="10ee23c6" sha1="f2288a7125f341c4446ea03ffd9a529f8c77f8ba" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="equali">
 		<description>Equali</description>
 		<year>1988</year>
@@ -3541,7 +3748,7 @@
 	<software name="fraction">
 		<description>Fraction</description>
 		<year>1988</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -3553,7 +3760,7 @@
 	<software name="gramfra1">
 		<description>Grammaire - Langue Francaise Volume 1</description>
 		<year>1987</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -3565,7 +3772,7 @@
 	<software name="gramfra2">
 		<description>Grammaire - Langue Francaise Volume 2</description>
 		<year>1987</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -3577,7 +3784,7 @@
 	<software name="gramf651">
 		<description>Grammaire - Langue Francaise 6eme/5eme Volume 1</description>
 		<year>1987</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -3589,7 +3796,7 @@
 	<software name="gramf652">
 		<description>Grammaire - Langue Francaise 6eme/5eme Volume 2</description>
 		<year>1987</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -3637,7 +3844,7 @@
 	<software name="jerevise">
 		<description>Je Revise</description>
 		<year>1986</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -3685,7 +3892,7 @@
 	<software name="calculce">
 		<description>Logiciels Nathan Ecole - Calculs et Rangements CE</description>
 		<year>1986</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -3697,7 +3904,7 @@
 	<software name="chifcpce">
 		<description>Logiciels Nathan Ecole - Chiffres et Formes CP-CE</description>
 		<year>1986</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -3709,7 +3916,7 @@
 	<software name="geometcm">
 		<description>Logiciels Nathan Ecole - Geometrie et Operations CM</description>
 		<year>1986</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -3718,10 +3925,41 @@
 		</part>
 	</software>
 
+	<software name="ecolefra"> <!-- these disks were distributed as one set, but there are two disk 1's and two disk 2's with different content -->
+		<description>Logiciels Nathan Ecoles - Francais</description>
+		<year>1987</year>
+		<publisher>Cedic/Nathan</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Set 1 Disk 1 (CE/CM Aide a l'Orthographe)"/>
+			<dataarea name="flop" size="327680">
+				<rom name="620 044 336 411 r disquette 1.fd" size="327680" crc="378eb8ea" sha1="423866e99afd14da24133538cb15c1f9882e99a9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Set 1 Disk 2 (CM1 Grammaire et Vocabulaire)"/>
+			<dataarea name="flop" size="327680">
+				<rom name="620 044 336 411 r disquette 2.fd" size="327680" crc="f87431aa" sha1="e1721e83fa4d206f7c745c72a8311a0086634961" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Set 2 Disk 1 (CM2/6e Grammaire et Vocabulaire)"/>
+			<dataarea name="flop" size="327680">
+				<rom name="620 064 336 412 n disquette 1.fd" size="327680" crc="da47d71f" sha1="ee3e4e01c59be6c2ce38a0af9e1e6bdd9c56e892" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+		<feature name="part_id" value="Set 2 Disk 2 (CM2 Vocabulaire et Orthographe)"/>
+			<dataarea name="flop" size="327680">
+				<rom name="620 064 336 412 n disquette 2.fd" size="327680" crc="612bd602" sha1="2d4264fc1d831adcd00a2313534ba2d623c37b07" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="mesurecm">
 		<description>Logiciels Nathan Ecole - Mesures et Grandeurs CM-College</description>
 		<year>1986</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -3757,7 +3995,7 @@
 	<software name="math6eme">
 		<description>Mathematiques 6eme</description>
 		<year>1986</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -3802,10 +4040,22 @@
 		</part>
 	</software>
 
-	<software name="motscroi">
-		<description>Mots Croises-Magiques</description>
-		<year>1985</year>
-		<publisher>Cedic - Nathan</publisher>
+	<software name="motscros">
+		<description>Mots Croises Magiques</description>
+		<year>1986</year>
+		<publisher>Cedic/Nathan</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="mots croises magiques (nathan) (antoine mahieu) (1986).fd" size="327680" crc="4d3c3bae" sha1="8b9c73e61f9ea8d3433958750c1b3c8544dcc3df" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="motscrosa" cloneof="motscros">
+		<description>Mots Croises Magiques (SAP Format)</description>
+		<year>1986</year>
+		<publisher>Cedic/Nathan</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -3814,10 +4064,22 @@
 		</part>
 	</software>
 
+	<software name="ordibaby">
+		<description>Ordibaby</description>
+		<year>1986</year>
+		<publisher>Cobrasoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="ordibaby (cobrasoft) (yves dumont) (1986) (to9).fd" size="327680" crc="75214539" sha1="5086c872ae224e9f3ea105af4c3c247e5ad8e96e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="ecrire1">
 		<description>Ortho Graphie - Ecrire sans Fautes Volume 1</description>
 		<year>1987</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -3829,7 +4091,7 @@
 	<software name="ecrire1a" cloneof="ecrire1">
 		<description>Ortho Graphie - Ecrire sans Fautes Volume 1 (SAP Format)</description>
 		<year>1987</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -3841,7 +4103,7 @@
 	<software name="ecrire2">
 		<description>Ortho Graphie - Ecrire sans Fautes Volume 2</description>
 		<year>1987</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -3853,7 +4115,7 @@
 	<software name="ecrire3">
 		<description>Ortho Graphie - Ecrire sans Fautes Volume 3</description>
 		<year>1987</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -4419,6 +4681,18 @@
 	</software>
 	
 	<software name="aigleorb" cloneof="aigleor">
+		<description>L'Aigle d'Or (Alt 2)</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="l-aigle-d-or_to9.fd" size="327680" crc="cd75ef8f" sha1="a830b361a26eeaf8e19e35214ed41d822958e694" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="aigleorc" cloneof="aigleor">
 		<description>L'Aigle d'Or (SAP Format)</description>
 		<year>1985</year>
 		<publisher>Loriciels</publisher>
@@ -4430,7 +4704,7 @@
 		</part>
 	</software>
 	
-	<software name="aigleorc" cloneof="aigleor">
+	<software name="aigleord" cloneof="aigleor">
 		<description>L'Aigle d'Or (SAP Format Alt)</description>
 		<year>1985</year>
 		<publisher>Loriciels</publisher>
@@ -4438,6 +4712,19 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="aigle d'or, l' (1985)(loriciels)(fr)[a].sap" size="335426" crc="fcfdb209" sha1="f247d2344f6fd5248ffa3354754bd8354b0ba550" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+	
+	<software name="aigleorqd" cloneof="aigleor" supported="no">
+		<description>L'Aigle d'Or (QD, Bad?)</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+		<info name="requirement" value="Requires QD drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="l-aigle-d-or_to770.qd" size="51200" crc="9bd93158" sha1="71802bcfa261ff32016ab664d9bb39a6ca423822" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -5317,6 +5604,18 @@
 		</part>
 	</software>
 
+	<software name="conte">
+		<description>Conte</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="conte (fil) (1985) (alain lambert) (to9).fd" size="327680" crc="5625365a" sha1="ebd55e45466e8d16ebed0e27564c1caa847608b7" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="montecry">
 		<description>Les Contes de Monte-Crypto</description>
 		<year>1988</year>
@@ -5546,6 +5845,18 @@
 		</part>
 	</software>
 
+	<software name="empire">
+		<description>Empire</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="empire (loriciels) (philippe darmagnac) (1985) (to9).fd" size="327680" crc="aafaedd6" sha1="690a0941c105e67e9dc0b68c745f6a5bc7ba5e6f" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="enduro">
 		<description>Enduro Racer</description>
 		<year>1988</year>
@@ -5572,6 +5883,18 @@
 
 	<software name="entropie">
 		<description>Entropie</description>
+		<year>1987</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="entropie (infogrames) (william hennebois) (1987) (to9).fd" size="327680" crc="b7b1574e" sha1="1971b7d04c52b919688ac84e0e658086c84b18e9" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="entropiea" cloneof="entropie">
+		<description>Entropie (SAP Format)</description>
 		<year>1987</year>
 		<publisher>Infogrames</publisher>
 
@@ -5800,6 +6123,32 @@
 		</part>
 	</software>
 
+	<software name="histtheaqd" cloneof="histthea">
+		<description>Histoire de Theatre (QDD)</description>
+		<year>1985</year>
+		<publisher>Free Game Blot</publisher>
+		<info name="requirement" value="Requires QD drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="histoire-de-theatre_to770.qd" size="51200" crc="ee4f562d" sha1="f3f48023c0293d7c2d67df983951489fd7e0aa4e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="histtheaqda" cloneof="histthea">
+		<description>Histoire de Theatre (QDD, Alt)</description>
+		<year>1985</year>
+		<publisher>Free Game Blot</publisher>
+		<info name="requirement" value="Requires QD drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="histoire-de-theatre-to7.qd" size="51200" crc="c2549a06" sha1="ceb6c707f415a2c04d3d0b6f24e30184e838746f" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="iznogoud">
 		<description>Iznogoud</description>
 		<year>1987</year>
@@ -5964,6 +6313,20 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="karate (1985)(infogrames)(fr).sap" size="335426" crc="33cdc05f" sha1="ad97acc495e50a8fd66f144b137b530cf0a0b825" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="karateqd" cloneof="karate">
+		<description>Karate (QDD)</description>
+		<year>1985</year>
+		<publisher>Infogrames</publisher>
+		<info name="requirement" value="Requires QD drive"/>
+		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="karate_to770.qd" size="51200" crc="64d50122" sha1="c740c5ea101ea0e7ee0a73838644322a27dd2d99" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -6222,6 +6585,30 @@
 		</part>
 	</software>
 
+	<software name="mandrago">
+		<description>Mandragore</description>
+		<year>1984</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="mandragore-to.fd" size="327680" crc="74fa2c90" sha1="0ac48333dc43645fbce115baa0dd898954ea6efa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mandragoa" cloneof="mandrago">
+		<description>Mandragore (SAP Format)</description>
+		<year>1984</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="mandragore-to.sap" size="335426" crc="593da9a9" sha1="211322b8317b589c79106cde69c32138e190cc33" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="marchomb">
 		<description>Marche a l'Ombre</description>
 		<year>1987</year>
@@ -6261,7 +6648,7 @@
 	<software name="marqjaun">
 		<description>La Marque Jaune</description>
 		<year>1988</year>
-		<publisher>Cobra Soft</publisher>
+		<publisher>Cobrasoft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -6273,7 +6660,7 @@
 	<software name="marqjauna" cloneof="marqjaun">
 		<description>La Marque Jaune (SAP Format)</description>
 		<year>1988</year>
-		<publisher>Cobra Soft</publisher>
+		<publisher>Cobrasoft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -6345,7 +6732,7 @@
 	<software name="maxibour">
 		<description>Maxi Bourse International</description>
 		<year>1988</year>
-		<publisher>Cobra Soft</publisher>
+		<publisher>Cobrasoft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -6357,7 +6744,7 @@
 	<software name="maxiboura" cloneof="maxibour">
 		<description>Maxi Bourse International (SAP Format)</description>
 		<year>1988</year>
-		<publisher>Cobra Soft</publisher>
+		<publisher>Cobrasoft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -6429,7 +6816,7 @@
 	<software name="meurtser">
 		<description>Meurtres en Serie</description>
 		<year>1987</year>
-		<publisher>Cobra Soft</publisher>
+		<publisher>Cobrasoft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -6441,7 +6828,7 @@
 	<software name="meurtsera" cloneof="meurtser">
 		<description>Meurtres en Serie (Alt)</description>
 		<year>1987</year>
-		<publisher>Cobra Soft</publisher>
+		<publisher>Cobrasoft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -6453,7 +6840,7 @@
 	<software name="meurtserb" cloneof="meurtser">
 		<description>Meurtres en Serie (SAP Format)</description>
 		<year>1987</year>
-		<publisher>Cobra Soft</publisher>
+		<publisher>Cobrasoft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -6465,7 +6852,7 @@
 	<software name="meurtserc" cloneof="meurtser">
 		<description>Meurtres en Serie (SAP Format Alt)</description>
 		<year>1987</year>
-		<publisher>Cobra Soft</publisher>
+		<publisher>Cobrasoft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -6511,7 +6898,7 @@
 	</software>
 
 	<software name="scrabble">
-		<description>Micro Scrabble</description>
+		<description>Micro-Scrabble</description>
 		<year>1985</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
 
@@ -6521,9 +6908,21 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="scrabblea" cloneof="scrabble">
-		<description>Micro Scrabble (SAP Format)</description>
+		<description>Micro-Scrabble (Alt)</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="micro-scrabble (fil) (inconnus) (1985) (to9).fd" size="327680" crc="adef8ffc" sha1="e4500ccda9f8cae7bcd6c8feadbeb3fc50362583" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+		
+	<software name="scrabbleb" cloneof="scrabble">
+		<description>Micro-Scrabble (SAP Format)</description>
 		<year>1985</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
 
@@ -6534,8 +6933,8 @@
 		</part>
 	</software>
 	
-	<software name="scrabbleb" cloneof="scrabble">
-		<description>Micro Scrabble (Hacked by Pustulman)</description>
+	<software name="scrabblec" cloneof="scrabble">
+		<description>Micro-Scrabble (Hacked by Pustulman)</description>
 		<year>1985</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
 		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
@@ -6543,6 +6942,32 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="micro scrabble (1985)(fil)(fr)[h pustulman][boot with microsoft basic 1.0].sap" size="335426" crc="818cab3e" sha1="8f997c37e6f5e447823f0fbd4fa561037b745c95" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mbridge">
+		<description>Mini Bridge</description>
+		<year>1986</year>
+		<publisher>Edil</publisher>
+		<info name="requirement" value="Requires QD drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="mini-bridge-to770.qd" size="51200" crc="2eef446b" sha1="babbb621e6b227fb5c249afd804e976a327c9a87" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mbridgea" cloneof="mbridge">
+		<description>Mini Bridge (Alt)</description>
+		<year>1986</year>
+		<publisher>Edil</publisher>
+		<info name="requirement" value="Requires QD drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="mini-bridge_to770.qd" size="51200" crc="02f48840" sha1="4a84044a9cece29ceeb940257060c0eed82527a4" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -6908,6 +7333,19 @@
 		</part>
 	</software>
 
+	<software name="poseidon" supported="no"> <!-- how to run the game? -->
+		<description>Poseidon</description>
+		<year>1985</year>
+		<publisher>Coktel Vision</publisher>
+		<info name="requirement" value="Requires QD drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="poseidon-to770.qd" size="51200" crc="fa5ef752" sha1="9cafeaf09230945c5c5686958a5e0633422e8a1a" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="20mildol">
 		<description>Pour 20 Millions de Dollars</description>
 		<year>198?</year>
@@ -7067,7 +7505,7 @@
 	<software name="ripoux">
 		<description>Les Ripoux</description>
 		<year>1987</year>
-		<publisher>Cobra Soft</publisher>
+		<publisher>Cobrasoft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -7079,7 +7517,7 @@
 	<software name="ripouxa" cloneof="ripoux">
 		<description>Les Ripoux (SAP Format)</description>
 		<year>1987</year>
-		<publisher>Cobra Soft</publisher>
+		<publisher>Cobrasoft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -7355,7 +7793,7 @@
 	<software name="soliel">
 		<description>Le Soliel et ses Planetes</description>
 		<year>1987</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -7367,7 +7805,7 @@
 	<software name="soliela" cloneof="soliel">
 		<description>Le Soliel et ses Planetes (SAP Format)</description>
 		<year>1987</year>
-		<publisher>Cedic - Nathan</publisher>
+		<publisher>Cedic/Nathan</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -7582,7 +8020,7 @@
 		</part>
 	</software>
 
-	<software name="superand">
+	<software name="sandroid">
 		<description>Super Androides</description>
 		<year>1986</year>
 		<publisher>Infogrames</publisher>
@@ -7590,6 +8028,30 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
 				<rom name="super androides (1986)(infogrames)(fr).fd" size="327680" crc="533b1f23" sha1="748e0a8445211d1e6370afed5bc44d581cfd7989" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sandroida" cloneof="sandroid">
+		<description>Super Androides (Alt)</description>
+		<year>1986</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="super androides (infogrames) (william hennebois) (1986).fd" size="327680" crc="29188291" sha1="2ed323a1ed88dca9bd0e7ee113ee61a235edfc5d" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stennis">
+		<description>Super Tennis</description>
+		<year>1986</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="super-tennis-fil-to9.fd" size="327680" crc="7771603f" sha1="f3cd236454694921c8aa1e102de82a1534860a25" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -7996,7 +8458,7 @@
 	<software name="turlogh">
 		<description>Turlogh de Penroth (Cracked by A. Hitler)</description>
 		<year>1988</year>
-		<publisher>Cobra Soft</publisher>
+		<publisher>Cobrasoft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -8008,7 +8470,7 @@
 	<software name="turlogha" cloneof="turlogh">
 		<description>Turlogh de Penroth (Cracked by A. Hitler) (SAP Format)</description>
 		<year>1988</year>
-		<publisher>Cobra Soft</publisher>
+		<publisher>Cobrasoft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -8061,6 +8523,32 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="vampire (1986)(infogrames)(fr).sap" size="335426" crc="e85064fd" sha1="d208954bc491b3ef751e6e48465f196aea5c4161" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vampireqd" cloneof="vampire">
+		<description>Vampire (QDD)</description>
+		<year>1986</year>
+		<publisher>Infogrames</publisher>
+		<info name="requirement" value="Requires QD drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="vampire (infogrames) (alain vialon, philippe nottoli, dominique girou) (1986) (to8).qd" size="51200" crc="2cc62d02" sha1="379d225f6acff33bc2e1bf00e01b1a6713f88f31" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vampireqda" cloneof="vampire" supported="no">
+		<description>Vampire (QDD, Bad)</description>
+		<year>1986</year>
+		<publisher>Infogrames</publisher>
+		<info name="requirement" value="Requires QD drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="vampire-to8-bad.qd" size="51200" crc="a02f3961" sha1="fcdedadd69375a350df8c336194c09a01d2bdaf6" offset="0" status="baddump" />
 			</dataarea>
 		</part>
 	</software>
@@ -8148,7 +8636,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="volsolod" cloneof="volsolo">
 		<description>Vol Solo (SAP Format Alt 2)</description>
 		<year>1986</year>
@@ -8157,6 +8645,32 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="vol solo (1986)(fil)(fr)[a2].sap" size="335426" crc="c392a291" sha1="14168a6e6b2024358ffe0e8dfb20cd4aab122234" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="volsoloqd" cloneof="volsolo">
+		<description>Vol Solo (QDD)</description>
+		<year>1986</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+		<info name="requirement" value="Requires QD drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="vol solo (fil) (joel sana) (1985) (to8).qd" size="51200" crc="9fd0ac72" sha1="50b2d297d8ad428d9424ab95f9218a42c2549544" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="volsoloqda" cloneof="volsolo" supported="no">
+		<description>Vol Solo (QDD, Bad)</description>
+		<year>1986</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+		<info name="requirement" value="Requires QD drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="vol-solo-to8-bad.qd" size="51200" crc="3bfb6836" sha1="d73c7f61ade484742f290f810fa5f40b3321364d" offset="0" status="baddump" />
 			</dataarea>
 		</part>
 	</software>
@@ -8611,6 +9125,18 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="glem disk 2 (198x)(g.l.e.m.)(fr).sap" size="335426" crc="42240c4a" sha1="70c8bdf1a51a482a1827bc24a3659fc806bedd02" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="educatf1">
+		<description>Educatif 1</description>
+		<year>1985</year>
+		<publisher>Cobrasoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="educatif 1 (cobrasoft) (a. cornu) (1985) (to9).fd" size="327680" crc="ed42d0b4" sha1="1fd4c25d6f8cd5c42cefd68d106d38ebbf0823dd" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>

@@ -89,6 +89,18 @@
 		</part>
 	</software>
 
+	<software name="basic128">
+		<description>BASIC 128 (v1.0) (TO7/70)</description>
+		<year>1985</year>
+		<publisher>Microsoft</publisher>
+
+		<part name="cart" interface="to_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="basic 128 v1.0 (1985)(to tek)(fr)(en).m7" size="32768" crc="c9bc204f" sha1="e4c2a684e9186f49c8092d16f0f74764f51ad86c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="blitz">
 		<description>Blitz!</description>
 		<year>1984</year>
@@ -234,10 +246,11 @@
 		</part>
 	</software>
 
-	<software name="forth79">
-		<description>FORTH-79 (v1.0)</description>
+	<software name="forthto7">
+		<description>FORTH-TO7 (v1.0)</description>
 		<year>1983</year>
-		<publisher>To Tek Editions</publisher>
+		<publisher>SEFI - TO-Tek Editions</publisher>
+		<info name="alt_title" value="FORTH-79 S.E.F.I. 1.0"/>
 
 		<part name="cart" interface="to_cart">
 			<dataarea name="rom" size="16384">
