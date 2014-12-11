@@ -10,6 +10,9 @@
   Refer to the official manual for more information, it is not a simple game.
 
 
+  TODO:
+  - MCU clock is unknown
+
 ***************************************************************************/
 
 #include "emu.h"
@@ -17,8 +20,7 @@
 
 #include "cnsector.lh"
 
-
-// master clock is cpu internal, the value below is an approximation
+// master clock is unknown, the value below is an approximation
 #define MASTER_CLOCK (250000)
 
 
@@ -193,14 +195,18 @@ INPUT_PORTS_END
 
 void cnsector_state::machine_start()
 {
+	// zerofill
 	memset(m_leds_state, 0, sizeof(m_leds_state));
 	memset(m_leds_cache, 0, sizeof(m_leds_cache));
 	memset(m_leds_decay, 0, sizeof(m_leds_decay));
+
 	m_o = 0;
 	
+	// register for savestates
 	save_item(NAME(m_leds_state));
 	save_item(NAME(m_leds_cache));
 	save_item(NAME(m_leds_decay));
+
 	save_item(NAME(m_o));
 }
 
@@ -232,7 +238,7 @@ MACHINE_CONFIG_END
 
 ROM_START( cnsector )
 	ROM_REGION( 0x0400, "maincpu", 0 )
-	ROM_LOAD( "mp0905bnl_za0379", 0x0000, 0x0400, CRC(564fe1a0) SHA1(825840a73175eee12e9712c871799f00e3be2c53) )
+	ROM_LOAD( "mp0905bnl_za0379", 0x0000, 0x0400, CRC(201036e9) SHA1(b37fef86bb2bceaf0ac8bb3745b4702d17366914) )
 
 	ROM_REGION( 782, "maincpu:ipla", 0 )
 	ROM_LOAD( "tms0970_default_ipla.pla", 0, 782, CRC(e038fc44) SHA1(dfc280f6d0a5828d1bb14fcd59ac29caf2c2d981) )

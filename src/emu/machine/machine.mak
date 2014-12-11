@@ -1263,6 +1263,7 @@ MACHINEOBJS += $(MACHINEOBJ)/i6300esb.o
 MACHINEOBJS += $(MACHINEOBJ)/lpc.o
 MACHINEOBJS += $(MACHINEOBJ)/lpc-acpi.o
 MACHINEOBJS += $(MACHINEOBJ)/lpc-rtc.o
+MACHINEOBJS += $(MACHINEOBJ)/lpc-pit.o
 endif
 
 #-------------------------------------------------
@@ -1299,6 +1300,15 @@ endif
 
 ifneq ($(filter PLA,$(MACHINES)),)
 MACHINEOBJS += $(MACHINEOBJ)/pla.o
+endif
+
+#-------------------------------------------------
+#
+#@src/emu/machine/r10788.h,MACHINES += R10788
+#-------------------------------------------------
+
+ifneq ($(filter R10788,$(MACHINES)),)
+MACHINEOBJS+= $(MACHINEOBJ)/r10788.o
 endif
 
 #-------------------------------------------------

@@ -16,8 +16,8 @@ This is a "PC-based" arcade system. Different configurations have different colo
 The version documented here is the red box. The PC part of it is mostly just the CPU,
 Intel North/South-bridge chipset and AGP/PCI card slots etc. The main board is still
 a typically custom-made Sega arcade PCB using a custom nVIDIA GeForce video card.
-The main board also has a slot for a compact flash card. Primary storage media is DVD or HDD.
-Both CF and HDD are locked and unreadable on a regular PC.
+The main board also has a slot for a compact flash card. Primary storage media is HDD.
+Games are installed from a DVD. Both the CF and HDD are locked and unreadable on a regular PC.
 
 The familiar PIC is still present on the back of the system and likely decrypts the HDD and/or DVD.
 
@@ -28,7 +28,7 @@ The box has Sega number 845-0001D-02
 Security
 --------
 
-The security seems to work in multiple steps.  The information there
+The security seems to work in multiple steps.  The information here
 is a combination of our research and things found on the internet.
 
 - At boot, the bios unlocks the CF card through an IDE 0x82 command
@@ -74,7 +74,7 @@ Game                                           Dongle Sticker    PIC Number     
  Club Majesty Formal                           ?                 ?               ?
  Derby Owners Club 2008: Feel the Rush         ?                 ?               DVP-0047A
  Derby Owners Club 2008: Feel the Rush V2.0    ?                 ?               ?
-*Ghost Squad Evolution                         ?                 ?               ?
+*Ghost Squad Evolution                         ?                 ?               DVP-0029A
  Harley Davidson: King of the Road             ?                 ?               ?
  Hummer Extreme                                ?                 ?               ?
  Initial D Arcade Stage 4                      ?                 ?               DVP-0019
@@ -222,11 +222,6 @@ Sticker 839-1275R
 DSW(8)    - OFF,OFF,OFF,ON,ON,OFF,OFF,ON
 DIP18.IC1 - DIP18 socket for protection PIC16F648A
 
-                        Sega Security
-            Game        ID Number      Dongle Sticker
-            -----------------------------------------
-            Too Spicy   317-0490-COM   253-5508-0491
-
 
 Video Card (plugged into AGP slot)
 ----------
@@ -293,7 +288,7 @@ Notes:
       EDS1232   - Elpida EDS1232AATA-75-E 128Mbit SDRAM (4M word x 32bit)
       D442012   - NEC D442012AGY-BB70 2Mbit CMOS Static RAM (128k-word x 16bit)
       ISP1106   - NXP Semiconductor ISP1106 Advanced Universal Serial Bus transceiver (SSOIC16)
-      RTL8201   - Realtek RTL8201 Single Chip Single Pport 10/100M Fast Ethernet IC (QFP48)
+      RTL8201   - Realtek RTL8201 Single Chip Single Port 10/100M Fast Ethernet IC (QFP48)
       mUSB      - Mini USB connector
 
 
@@ -328,7 +323,7 @@ Sega 2005
 #include "machine/segabb.h"
 #include "sound/pci-ac97.h"
 #include "sound/sb0400.h"
-#include "video/gf6800gt.h"
+#include "video/gf7600gs.h"
 
 class lindbergh_state : public driver_device
 {
@@ -338,25 +333,6 @@ public:
 	virtual void machine_start();
 	virtual void machine_reset();
 };
-
-#if 0
-static ADDRESS_MAP_START(lindbergh_map, AS_PROGRAM, 32, lindbergh_state)
-	AM_RANGE(0x00000000, 0x0009ffff) AM_RAM
-										//  AM_RANGE(0x000a0000, 0x000bffff) AM_DEVREADWRITE8("vga", vga_device, mem_r, mem_w, 0xffffffff)
-										//  AM_RANGE(0x000c0000, 0x000cffff) AM_ROM AM_REGION("vid_bios", 0)
-//  0xd0000 - 0xdffff tested, wants 0x414d ("AM") in there
-	AM_RANGE(0x000f0000, 0x000fffff) AM_ROM AM_REGION("mb_bios", 0xf0000)
-//  AM_RANGE(0xfd000000, 0xfd3fffff) AM_ROM AM_REGION("jvs_bios", 0)    /* Hack to see the data */
-	AM_RANGE(0xfff00000, 0xffffffff) AM_ROM AM_REGION("mb_bios", 0)     /* System BIOS */
-ADDRESS_MAP_END
-
-static ADDRESS_MAP_START(lindbergh_io, AS_IO, 32, lindbergh_state)
-//  AM_IMPORT_FROM(pcat32_io_common)
-
-//  AM_RANGE(0x00e8, 0x00ef) AM_NOP
-//  AM_RANGE(0x0cf8, 0x0cff) AM_DEVREADWRITE("pcibus", pci_bus_legacy_device, read, write)
-ADDRESS_MAP_END
-#endif
 
 lindbergh_state::lindbergh_state(const machine_config &mconfig, device_type type, const char *tag) : driver_device(mconfig, type, tag)
 {
@@ -371,21 +347,12 @@ void lindbergh_state::machine_reset()
 }
 
 static MACHINE_CONFIG_START(lindbergh, lindbergh_state)
-//  MCFG_CPU_ADD("maincpu", PENTIUM, 2800000000U) /* Actually Celeron D at 2,8 GHz */
 	MCFG_CPU_ADD("maincpu", PENTIUM4, 28000000U*5) /* Actually Celeron D at 2,8 GHz */
-//  MCFG_CPU_PROGRAM_MAP(lindbergh_map)
-//  MCFG_CPU_IO_MAP(lindbergh_io)
-//  MCFG_CPU_IRQ_ACKNOWLEDGE_DEVICE("pic8259_1", pic8259_device, inta_cb)
-
-//  MCFG_FRAGMENT_ADD( pcat_common )
-//  MCFG_FRAGMENT_ADD( pcvideo_vga )
-
-//  MCFG_PCI_BUS_LEGACY_ADD("pcibus", 0)
 
 	MCFG_PCI_ROOT_ADD(                ":pci")
 	MCFG_I82875P_HOST_ADD(            ":pci:00.0",                        0x103382c0, ":maincpu", 512*1024*1024)
 	MCFG_I82875P_AGP_ADD(             ":pci:01.0")
-	MCFG_GEFORCE_6800GT_ADD(          ":pci:01.0:00.0",                   0x10de0204)
+	MCFG_GEFORCE_7600GS_ADD(          ":pci:01.0:00.0",                   0x10de02e1)
 	MCFG_PCI_BRIDGE_ADD(              ":pci:1c.0",      0x808625ae, 0x02)
 	MCFG_I82541PI_ADD(                ":pci:1c.0:00.0",                   0x103382c0)
 	MCFG_USB_UHCI_ADD(                ":pci:1d.0",      0x808625a9, 0x02, 0x103382c0)
@@ -399,6 +366,7 @@ static MACHINE_CONFIG_START(lindbergh, lindbergh_state)
 	MCFG_I6300ESB_LPC_ADD(            ":pci:1f.0")
 	MCFG_LPC_ACPI_ADD(                ":pci:1f.0:acpi")
 	MCFG_LPC_RTC_ADD(                 ":pci:1f.0:rtc")
+	MCFG_LPC_PIT_ADD(                 ":pci:1f.0:pit")
 	MCFG_SATA_ADD(                    ":pci:1f.2",      0x808625a3, 0x02, 0x103382c0)
 	MCFG_SMBUS_ADD(                   ":pci:1f.3",      0x808625a4, 0x02, 0x103382c0)
 	MCFG_AC97_ADD(                    ":pci:1f.5",      0x808625a6, 0x02, 0x103382c0)
@@ -416,7 +384,7 @@ MACHINE_CONFIG_END
 	ROM_REGION(0x400000, ":pci:1e.0:03.0", 0) /* Baseboard MPC firmware */ \
 	ROM_LOAD("fpr-24370b.ic6", 0x000000, 0x400000, CRC(c3b021a4) SHA1(1b6938a50fe0e4ae813864649eb103838c399ac0)) \
 \
-	ROM_REGION32_LE(0x10000, ":pci:01.0:00.0", 0) /* Geforce bios extension (custom or standard?) */ \
+	ROM_REGION32_LE(0x10000, ":pci:01.0:00.0", 0) /* Geforce bios extension (custom for the card) */ \
 	ROM_LOAD("vid_bios.u504", 0x00000, 0x10000, CRC(f78d14d7) SHA1(f129787e487984edd23bf344f2e9500c85052275)) \
 
 ROM_START(lindbios)
@@ -493,6 +461,22 @@ ROM_START(vtennis3)
 	DISK_IMAGE_READONLY("dvp-0005c", 0, SHA1(1fd689753c4b70dff0286cb7f623ee7fd439db62))
 ROM_END
 
+ROM_START(2spicy)
+	LINDBERGH_BIOS
+
+	ROM_REGION(0x2000, ":pic", 0) // PIC security 253-5508-0491 / 317-0491-COM
+	ROM_LOAD("317-0491-com.bin", 0, 0x2000, NO_DUMP)
+
+	DISK_REGION("dvd")
+	DISK_IMAGE_READONLY("dvp-0027a", 0, SHA1(da1aacee9e32e813844f4d434981e69cc5c80682))
+ROM_END
+
+ROM_START(ghostsev)
+	LINDBERGH_BIOS
+
+	DISK_REGION("dvd")
+	DISK_IMAGE_READONLY("dvp-0029a", 0, SHA1(256d9e8a6d61e1bcf65b17b8ed70fbc58796f7b1))
+ROM_END
 
 ROM_START(initiad4)
 	LINDBERGH_BIOS
@@ -534,6 +518,16 @@ ROM_START(hotdex)
 	DISK_IMAGE_READONLY("hotdex", 0, NO_DUMP)
 ROM_END
 
+ROM_START(primevah)
+	LINDBERGH_BIOS
+
+	ROM_REGION(0x2000, ":pic", 0) // PIC security 253-5508-0512 / 317-0512-COM
+	ROM_LOAD("317-0512-com.bin", 0, 0x2000, NO_DUMP)
+
+	DISK_REGION("dvd")
+	DISK_IMAGE_READONLY("dvp-0048a", 0, SHA1(0c3b87b7309cf67ece54fc5cd5bbcfc7dc04083f))
+ROM_END
+
 ROM_START(rambo)
 	LINDBERGH_BIOS
 
@@ -566,10 +560,13 @@ GAME(2006, letsgoju,  lindbios, lindbergh, 0, driver_device, 0, ROT0, "Sega", "L
 GAME(2006, outr2sdx,  lindbios, lindbergh, 0, driver_device, 0, ROT0, "Sega", "Outrun 2 SP SDX",                          GAME_NOT_WORKING|GAME_UNEMULATED_PROTECTION|GAME_NO_SOUND)
 GAME(2006, psmash3,   lindbios, lindbergh, 0, driver_device, 0, ROT0, "Sega", "Power Smash 3 / Virtua Tennis 3 (Export)", GAME_NOT_WORKING|GAME_UNEMULATED_PROTECTION|GAME_NO_SOUND)
 GAME(2006, vtennis3,  lindbios, lindbergh, 0, driver_device, 0, ROT0, "Sega", "Virtua Tennis 3 (Japan)",                  GAME_NOT_WORKING|GAME_UNEMULATED_PROTECTION|GAME_NO_SOUND)
+GAME(2007, 2spicy,    lindbios, lindbergh, 0, driver_device, 0, ROT0, "Sega", "2 Spicy",                                  GAME_NOT_WORKING|GAME_UNEMULATED_PROTECTION|GAME_NO_SOUND)
+GAME(2007, ghostsev,  lindbios, lindbergh, 0, driver_device, 0, ROT0, "Sega", "Ghost Squad Evolution",                    GAME_NOT_WORKING|GAME_UNEMULATED_PROTECTION|GAME_NO_SOUND)
 GAME(2007, initiad4,  lindbios, lindbergh, 0, driver_device, 0, ROT0, "Sega", "Initial D4 (Rev D)",                       GAME_NOT_WORKING|GAME_UNEMULATED_PROTECTION|GAME_NO_SOUND)
 GAME(2007, initiad4c, initiad4, lindbergh, 0, driver_device, 0, ROT0, "Sega", "Initial D4 (Rev C)",                       GAME_NOT_WORKING|GAME_UNEMULATED_PROTECTION|GAME_NO_SOUND)
 GAME(2007, segartv,   lindbios, lindbergh, 0, driver_device, 0, ROT0, "Sega", "Sega Race-TV (Export)",                    GAME_NOT_WORKING|GAME_UNEMULATED_PROTECTION|GAME_NO_SOUND)
 GAME(2008, hotdex,    lindbios, lindbergh, 0, driver_device, 0, ROT0, "Sega", "House of the Dead EX (Japan)",             GAME_NOT_WORKING|GAME_UNEMULATED_PROTECTION|GAME_NO_SOUND)
+GAME(2008, primevah,  lindbios, lindbergh, 0, driver_device, 0, ROT0, "Sega", "Primeval Hunt",                            GAME_NOT_WORKING|GAME_UNEMULATED_PROTECTION|GAME_NO_SOUND)
 GAME(2008, rambo,     lindbios, lindbergh, 0, driver_device, 0, ROT0, "Sega", "Rambo (Export)",                           GAME_NOT_WORKING|GAME_UNEMULATED_PROTECTION|GAME_NO_SOUND)
 GAME(2009, hummerxt,  lindbios, lindbergh, 0, driver_device, 0, ROT0, "Sega", "Hummer Extreme",                           GAME_NOT_WORKING|GAME_UNEMULATED_PROTECTION|GAME_NO_SOUND)
 GAME(200?, lbvbiosu,  lindbios, lindbergh, 0, driver_device, 0, ROT0, "Sega", "VBios updater",                            GAME_NOT_WORKING|GAME_UNEMULATED_PROTECTION|GAME_NO_SOUND)

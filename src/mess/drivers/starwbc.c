@@ -9,7 +9,6 @@
   press BASIC/INTER/ADV and enter P#(number of players), then
   START TURN. Refer to the official manual for more information.
 
-
 ***************************************************************************/
 
 #include "emu.h"
@@ -18,8 +17,8 @@
 
 #include "starwbc.lh"
 
-
-// master clock is unknown, the value below is an approximation
+// master clock is a single stage RC oscillator: R=51K, C=47pf,
+// according to the TMS 1000 series data manual this is around 350kHz
 #define MASTER_CLOCK (350000)
 
 
@@ -141,8 +140,8 @@ READ8_MEMBER(starwbc_state::read_k)
 	// read selected button rows
 	for (int i = 0; i < 5; i++)
 	{
-		const int r[5] = { 0, 1, 3, 5, 7 };
-		if (m_r >> r[i] & 1)
+		const int ki[5] = { 0, 1, 3, 5, 7 };
+		if (m_r >> ki[i] & 1)
 			k |= m_button_matrix[i]->read();
 	}
 
@@ -227,15 +226,19 @@ INPUT_PORTS_END
 
 void starwbc_state::machine_start()
 {
+	// zerofill
 	memset(m_leds_state, 0, sizeof(m_leds_state));
 	memset(m_leds_cache, 0, sizeof(m_leds_cache));
 	memset(m_leds_decay, 0, sizeof(m_leds_decay));
+
 	m_r = 0;
 	m_o = 0;
 	
+	// register for savestates
 	save_item(NAME(m_leds_state));
 	save_item(NAME(m_leds_cache));
 	save_item(NAME(m_leds_decay));
+
 	save_item(NAME(m_r));
 	save_item(NAME(m_o));
 }
@@ -279,5 +282,16 @@ ROM_START( starwbc )
 	ROM_LOAD( "tms1100_starwbc_opla.pla", 0, 365, CRC(d358a76d) SHA1(06b60b207540e9b726439141acadea9aba718013) )
 ROM_END
 
+ROM_START( starwbcp )
+	ROM_REGION( 0x0800, "maincpu", 0 )
+	ROM_LOAD( "us4270755", 0x0000, 0x0800, BAD_DUMP CRC(fb3332f2) SHA1(a79ac81e239983cd699b7cfcc55f89b203b2c9ec) ) // from patent US4270755, may have errors
 
-CONS( 1979, starwbc, 0, 0, starwbc, starwbc, driver_device, 0, "Kenner", "Star Wars - Electronic Battle Command", GAME_SUPPORTS_SAVE )
+	ROM_REGION( 867, "maincpu:mpla", 0 )
+	ROM_LOAD( "tms1100_starwbc_mpla.pla", 0, 867, CRC(03574895) SHA1(04407cabfb3adee2ee5e4218612cb06c12c540f4) )
+	ROM_REGION( 365, "maincpu:opla", 0 )
+	ROM_LOAD( "tms1100_starwbc_opla.pla", 0, 365, CRC(d358a76d) SHA1(06b60b207540e9b726439141acadea9aba718013) )
+ROM_END
+
+
+CONS( 1979, starwbc,  0,       0, starwbc, starwbc, driver_device, 0, "Kenner", "Star Wars - Electronic Battle Command", GAME_SUPPORTS_SAVE )
+CONS( 1979, starwbcp, starwbc, 0, starwbc, starwbc, driver_device, 0, "Kenner", "Star Wars - Electronic Battle Command (prototype)", GAME_SUPPORTS_SAVE )

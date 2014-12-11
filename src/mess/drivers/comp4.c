@@ -13,6 +13,9 @@
   Refer to the official manual for more information.
 
 
+  TODO:
+  - MCU clock is unknown
+
 ***************************************************************************/
 
 #include "emu.h"
@@ -20,8 +23,7 @@
 
 #include "comp4.lh"
 
-
-// master clock is cpu internal, the value below is an approximation
+// master clock is unknown, the value below is an approximation
 #define MASTER_CLOCK (250000)
 
 
@@ -166,12 +168,16 @@ INPUT_PORTS_END
 
 void comp4_state::machine_start()
 {
+	// zerofill
 	m_leds_state = 0;
 	memset(m_leds_decay, 0, sizeof(m_leds_decay));
+
 	m_o = 0;
 	
+	// register for savestates
 	save_item(NAME(m_leds_state));
 	save_item(NAME(m_leds_decay));
+
 	save_item(NAME(m_o));
 }
 

@@ -67,8 +67,9 @@ ToDo:
 
 
 #include "machine/genpin.h"
+#include "machine/r10788.h"
 #include "cpu/pps4/pps4.h"
-//#include "gts1.lh"
+#include "gts1.lh"
 
 #define VERBOSE    1
 
@@ -87,12 +88,17 @@ public:
     { }
 
     DECLARE_DRIVER_INIT(gts1);
+
+    DECLARE_WRITE8_MEMBER(gts1_display_w);
+    DECLARE_READ8_MEMBER (gts1_io_r);
+    DECLARE_WRITE8_MEMBER(gts1_io_w);
     DECLARE_READ8_MEMBER (gts1_pa_r);
     DECLARE_WRITE8_MEMBER(gts1_pa_w);
     DECLARE_WRITE8_MEMBER(gts1_pb_w);
 private:
     virtual void machine_reset();
     required_device<cpu_device> m_maincpu;
+    UINT8 m_io[256];
     UINT8 m_6351_addr;
 };
 
@@ -101,12 +107,14 @@ static ADDRESS_MAP_START( gts1_map, AS_PROGRAM, 8, gts1_state )
 ADDRESS_MAP_END
 
 static ADDRESS_MAP_START( gts1_data, AS_DATA, 8, gts1_state )
-    AM_RANGE(0x0000, 0x0fff) AM_RAM // not correct
+    AM_RANGE(0x0000, 0x00ff) AM_RAM // not correct
 ADDRESS_MAP_END
 
 static ADDRESS_MAP_START( gts1_io, AS_IO, 8, gts1_state )
-    AM_RANGE(0x0000, 0x00ff) AM_RAM // connects to all the other chips
-    AM_RANGE(0x0100, 0x0100) AM_READ (gts1_pa_r) AM_WRITE(gts1_pa_w)
+    AM_RANGE(0x00d0, 0x00df) AM_DEVREADWRITE ( "r10788", r10788_device, io_r, io_w )
+    AM_RANGE(0x0000, 0x00ff) AM_READ ( gts1_io_r )   AM_WRITE( gts1_io_w ) // connects to all the other chips
+
+    AM_RANGE(0x0100, 0x0100) AM_READ ( gts1_pa_r ) AM_WRITE( gts1_pa_w )
     AM_RANGE(0x0101, 0x0101) AM_WRITE(gts1_pb_w)
 ADDRESS_MAP_END
 
@@ -199,6 +207,86 @@ DRIVER_INIT_MEMBER(gts1_state,gts1)
 {
 }
 
+/**
+ * @brief write a 8seg display value
+ * @param offset digit number 0 .. 19
+ * @param data 4-bit value to display
+ */
+WRITE8_MEMBER(gts1_state::gts1_display_w)
+{
+    /*
+     * The 7448 is modified to be disabled through RI/RBO
+     * when the input is 0001, and in this case the extra
+     * output H is generated instead.
+     */
+#define _a (1 << 0)
+#define _b (1 << 1)
+#define _c (1 << 2)
+#define _d (1 << 3)
+#define _e (1 << 4)
+#define _f (1 << 5)
+#define _g (1 << 6)
+#define _h (1 << 7)
+    static const UINT8 ttl7448_mod[16] = {
+    /* 0 */  _a | _b | _c | _d | _e | _f,
+    /* 1 */  _h,
+    /* 2 */  _a | _b | _d | _e | _g,
+    /* 3 */  _a | _b | _c | _d | _g,
+    /* 4 */  _b | _c | _f | _g,
+    /* 5 */  _a | _c | _d | _f | _g,
+    /* 6 */  _a | _c | _d | _e | _f | _g,
+    /* 7 */  _a | _b | _c,
+    /* 8 */  _a | _b | _c | _d | _e | _f | _g,
+    /* 9 */  _a | _b | _c | _d | _f | _g,
+    /* a */  _d | _e | _g,
+    /* b */  _c | _d | _g,
+    /* c */  _b | _f | _g,
+    /* d */  _a | _d | _f | _g,
+    /* e */  _d | _e | _f | _g,
+    /* f */  0
+    };
+    UINT8 a = ttl7448_mod[(data >> 0) & 15];
+    UINT8 b = ttl7448_mod[(data >> 4) & 15];
+    LOG(("%s: offset:%d data:%02x a:%02x b:%02x\n", __FUNCTION__, offset, data, a, b));
+    if ((offset % 8) < 7) {
+        output_set_indexed_value("digit8_", offset, a);
+        output_set_indexed_value("digit8_", offset + 16, b);
+    } else {
+        /*
+         * For the 4 7-seg displays the segment h is turned back into
+         * segments b and c to display the 7-seg "1".
+         */
+        if (a & _h)
+            a = _b | _c;
+        if (b & _h)
+            b = _b | _c;
+        output_set_indexed_value("digit7_", offset, a);
+        // FIXME: there is nothing on outputs 22, 23, 30 and 31?
+        output_set_indexed_value("digit7_", offset + 16, b);
+    }
+#undef _a
+#undef _b
+#undef _c
+#undef _d
+#undef _e
+#undef _f
+#undef _g
+#undef _h
+}
+
+READ8_MEMBER (gts1_state::gts1_io_r)
+{
+    UINT8 data = m_io[offset] & 0x0f;
+    LOG(("%s: io[%02x] -> %x\n", __FUNCTION__, offset, data));
+    return data;
+}
+
+WRITE8_MEMBER(gts1_state::gts1_io_w)
+{
+    LOG(("%s: io[%02x] <- %x\n", __FUNCTION__, offset, data));
+    m_io[offset] = data;
+}
+
 READ8_MEMBER (gts1_state::gts1_pa_r)
 {
     // return ROM nibble
@@ -232,8 +320,12 @@ static MACHINE_CONFIG_START( gts1, gts1_state )
 
     //MCFG_NVRAM_ADD_0FILL("nvram")
 
+    /* General Purpose Display and Keyboard */
+    MCFG_DEVICE_ADD( "r10788", R10788, XTAL_3_579545MHz / 18 )  // divided in the circuit
+    MCFG_R10788_UPDATE( WRITE8(gts1_state,gts1_display_w) )
+
     /* Video */
-    //MCFG_DEFAULT_LAYOUT(layout_gts1)
+    MCFG_DEFAULT_LAYOUT( layout_gts1 )
 
     /* Sound */
     MCFG_FRAGMENT_ADD( genpin_audio )
@@ -512,12 +604,12 @@ GAME(1979,  pinpool,    gts1,       gts1,   gts1, gts1_state,   gts1,   ROT0,   
 
 // sound card
 GAME(1979,  totem,      gts1s,      gts1,   gts1, gts1_state,   gts1,   ROT0,   "Gottlieb",     "Totem",                                GAME_IS_SKELETON_MECHANICAL)
-GAME(1979,  hulk,       gts1s,      gts1,   gts1, gts1_state,   gts1,   ROT0,   "Gottlieb",     "Incredible Hulk,The",                  GAME_IS_SKELETON_MECHANICAL)
-GAME(1979,  geniep,     gts1s,      gts1,   gts1, gts1_state,   gts1,   ROT0,   "Gottlieb",     "Genie (Pinball)",                              GAME_IS_SKELETON_MECHANICAL)
+GAME(1979,  hulk,       gts1s,      gts1,   gts1, gts1_state,   gts1,   ROT0,   "Gottlieb",     "The Incredible Hulk",                  GAME_IS_SKELETON_MECHANICAL)
+GAME(1979,  geniep,     gts1s,      gts1,   gts1, gts1_state,   gts1,   ROT0,   "Gottlieb",     "Genie (Pinball)",                      GAME_IS_SKELETON_MECHANICAL)
 GAME(1980,  buckrgrs,   gts1s,      gts1,   gts1, gts1_state,   gts1,   ROT0,   "Gottlieb",     "Buck Rogers",                          GAME_IS_SKELETON_MECHANICAL)
 GAME(1980,  torch,      gts1s,      gts1,   gts1, gts1_state,   gts1,   ROT0,   "Gottlieb",     "Torch",                                GAME_IS_SKELETON_MECHANICAL)
 GAME(1980,  roldisco,   gts1s,      gts1,   gts1, gts1_state,   gts1,   ROT0,   "Gottlieb",     "Roller Disco",                         GAME_IS_SKELETON_MECHANICAL)
 GAME(1980,  astannie,   gts1s,      gts1,   gts1, gts1_state,   gts1,   ROT0,   "Gottlieb",     "Asteroid Annie and the Aliens",        GAME_IS_SKELETON_MECHANICAL)
 
 // homebrew
-GAME(1986,  hexagone,   gts1s,      gts1,   gts1, gts1_state,   gts1,   ROT0,   "Christian Tabart (France)",        "L'Hexagone",       GAME_IS_SKELETON_MECHANICAL)
+GAME(1986,  hexagone,   gts1s,      gts1,   gts1, gts1_state,   gts1,   ROT0,   "Christian Tabart",        "L'Hexagone (France)",       GAME_IS_SKELETON_MECHANICAL)

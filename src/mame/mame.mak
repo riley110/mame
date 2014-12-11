@@ -292,7 +292,7 @@ VIDEOS += DM9368
 #VIDEOS += EF9340_1
 #VIDEOS += EF9345
 #VIDEOS += GF4500
-VIDEOS += GF6800GT
+VIDEOS += GF7600GS
 VIDEOS += EPIC12
 VIDEOS += FIXFREQ
 VIDEOS += H63484
@@ -499,6 +499,7 @@ MACHINES += PCKEYBRD
 MACHINES += PIC8259
 MACHINES += PIT8253
 MACHINES += PLA
+MACHINES += R10788
 #MACHINES += PROFILE
 #MACHINES += R64H156
 MACHINES += RF5C296
@@ -1695,7 +1696,7 @@ $(MAMEOBJ)/sega.a: \
 	$(DRIVERS)/bingoc.o \
 	$(DRIVERS)/blockade.o $(AUDIO)/blockade.o $(VIDEO)/blockade.o \
 	$(DRIVERS)/calorie.o \
-	$(DRIVERS)/chihiro.o \
+	$(DRIVERS)/chihiro.o $(VIDEO)/chihiro.o  \
 	$(DRIVERS)/coolridr.o \
 	$(DRIVERS)/deniam.o $(VIDEO)/deniam.o \
 	$(DRIVERS)/dotrikun.o \
@@ -2650,6 +2651,7 @@ $(DRIVERS)/goldnpkr.o:  $(LAYOUT)/goldnpkr.lh \
 			$(LAYOUT)/pmpoker.lh \
 			$(LAYOUT)/upndown.lh
 
+$(DRIVERS)/gts1.o:      $(LAYOUT)/gts1.lh
 $(DRIVERS)/gts3.o:      $(LAYOUT)/gts3.lh
 $(DRIVERS)/gts80.o:     $(LAYOUT)/gts80.lh
 $(DRIVERS)/gts80a.o:    $(LAYOUT)/gts80a.lh

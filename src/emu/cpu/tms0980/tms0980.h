@@ -80,12 +80,14 @@ protected:
 	virtual UINT32 disasm_min_opcode_bytes() const { return 1; }
 	virtual UINT32 disasm_max_opcode_bytes() const { return 1; }
 
+	void state_string_export(const device_state_entry &entry, astring &string);
+
 	void next_pc();
-	void execute_fixed_opcode();
-	
+
 	virtual void write_o_output(UINT8 data);
 	virtual UINT8 read_k_input();
 	virtual void set_cki_bus();
+	virtual void dynamic_output() { ; } // not used by default
 	virtual void read_opcode();
 
 	virtual void op_sbit();
@@ -120,13 +122,18 @@ protected:
 	UINT8   m_pa;        // 4-bit page address register
 	UINT8   m_pb;        // 4-bit page buffer register
 	UINT8   m_a;         // 4-bit accumulator
+	UINT8   m_a_prev;
 	UINT8   m_x;         // 2,3,or 4-bit RAM X register
 	UINT8   m_y;         // 4-bit RAM Y register
 	UINT8   m_ca;        // chapter address bit
 	UINT8   m_cb;        // chapter buffer bit
 	UINT8   m_cs;        // chapter subroutine bit
 	UINT16  m_r;
+	UINT16  m_r_prev;
 	UINT16  m_o;
+	UINT8   m_o_latch;   // TMC0270 hold latch
+	UINT8   m_o_latch_low;
+	UINT8   m_o_latch_prev;
 	UINT8   m_cki_bus;
 	UINT8   m_c4;
 	UINT8   m_p;         // 4-bit adder p(lus)-input
@@ -193,7 +200,6 @@ protected:
 	virtual void device_reset();
 	virtual machine_config_constructor device_mconfig_additions() const;
 
-	void state_string_export(const device_state_entry &entry, astring &string);
 
 	virtual offs_t disasm_disassemble(char *buffer, offs_t pc, const UINT8 *oprom, const UINT8 *opram, UINT32 options);
 };
@@ -221,8 +227,6 @@ public:
 protected:
 	// overrides
 	virtual void device_reset();
-
-	void state_string_export(const device_state_entry &entry, astring &string);
 
 	virtual offs_t disasm_disassemble(char *buffer, offs_t pc, const UINT8 *oprom, const UINT8 *opram, UINT32 options);
 	
@@ -259,12 +263,12 @@ class tms0980_cpu_device : public tms0970_cpu_device
 {
 public:
 	tms0980_cpu_device(const machine_config &mconfig, const char *tag, device_t *owner, UINT32 clock);
+	tms0980_cpu_device(const machine_config &mconfig, device_type type, const char *name, const char *tag, device_t *owner, UINT32 clock, UINT8 o_pins, UINT8 r_pins, UINT8 k_pins, UINT8 pc_bits, UINT8 byte_bits, UINT8 x_bits, int prgwidth, address_map_constructor program, int datawidth, address_map_constructor data, const char *shortname, const char *source);
 
 protected:
 	// overrides
 	virtual void device_reset();
 
-	void state_string_export(const device_state_entry &entry, astring &string);
 	virtual machine_config_constructor device_mconfig_additions() const;
 
 	virtual UINT32 disasm_min_opcode_bytes() const { return 2; }
@@ -275,8 +279,28 @@ protected:
 	virtual void read_opcode();
 	
 	virtual void op_comx();
-private:
+
 	UINT32 decode_micro(UINT8 sel);
+};
+
+
+class tmc0270_cpu_device : public tms0980_cpu_device
+{
+public:
+	tmc0270_cpu_device(const machine_config &mconfig, const char *tag, device_t *owner, UINT32 clock);
+
+protected:
+	// overrides
+	virtual machine_config_constructor device_mconfig_additions() const;
+
+	virtual void write_o_output(UINT8 data) { tms1xxx_cpu_device::write_o_output(data); }
+	virtual UINT8 read_k_input();
+	virtual void dynamic_output();
+	virtual void read_opcode();
+	
+	virtual void op_setr() { tms1xxx_cpu_device::op_setr(); }
+	virtual void op_rstr() { tms1xxx_cpu_device::op_rstr(); }
+	virtual void op_tdo();
 };
 
 
@@ -288,6 +312,7 @@ extern const device_type TMS1100;
 extern const device_type TMS1300;
 extern const device_type TMS0970;
 extern const device_type TMS0980;
+extern const device_type TMC0270;
 
 
 #endif /* _TMS0980_H_ */

@@ -19,6 +19,7 @@
 #include "formats/victor9k_dsk.h"
 #include "imagedev/floppy.h"
 #include "machine/6522via.h"
+#include "machine/fdc_pll.h"
 
 
 
@@ -63,13 +64,16 @@ public:
 	DECLARE_FLOPPY_FORMATS( floppy_formats );
 
 	DECLARE_READ8_MEMBER( floppy_p1_r );
+	DECLARE_WRITE8_MEMBER( floppy_p1_w );
 	DECLARE_READ8_MEMBER( floppy_p2_r );
 	DECLARE_WRITE8_MEMBER( floppy_p2_w );
 	DECLARE_READ8_MEMBER( tach0_r );
 	DECLARE_READ8_MEMBER( tach1_r );
 	DECLARE_WRITE8_MEMBER( da_w );
 
+	DECLARE_READ8_MEMBER( via4_pa_r );
 	DECLARE_WRITE8_MEMBER( via4_pa_w );
+	DECLARE_READ8_MEMBER( via4_pb_r );
 	DECLARE_WRITE8_MEMBER( via4_pb_w );
 	DECLARE_WRITE_LINE_MEMBER( wrsync_w );
 	DECLARE_WRITE_LINE_MEMBER( via4_irq_w );
@@ -97,6 +101,8 @@ protected:
 	virtual machine_config_constructor device_mconfig_additions() const;
 
 private:
+	static const int rpm[0x100];
+
 	enum
 	{
 		TM_GEN,
@@ -129,13 +135,11 @@ private:
 		UINT8 e;
 
 		// read
-		attotime edge;
 		UINT16 shift_reg;
 		int bit_counter;
 		int sync_bit_counter;
 		int sync_byte_counter;
 		int brdy;
-		int lbrdy;
 		bool lbrdy_changed;
 		int sync;
 		int syn;
@@ -167,6 +171,8 @@ private:
 
 	void update_stepper_motor(floppy_image_device *floppy, int stp, int old_st, int st);
 	void update_spindle_motor(floppy_image_device *floppy, emu_timer *t_tach, bool start, bool stop, bool sel, UINT8 &da);
+	void set_rdy0(int state);
+	void set_rdy1(int state);
 
 	int load0_cb(floppy_image_device *device);
 	void unload0_cb(floppy_image_device *device);
@@ -210,22 +216,25 @@ private:
 	attotime m_period;
 
 	live_info cur_live, checkpoint_live;
+	fdc_pll_t cur_pll, checkpoint_pll;
 	emu_timer *t_gen, *t_tach0, *t_tach1;
 
 	floppy_image_device* get_floppy();
 	void live_start();
+	void pll_reset(const attotime &when, const attotime clock);
+	void pll_start_writing(const attotime &tm);
+	void pll_commit(floppy_image_device *floppy, const attotime &tm);
+	void pll_stop_writing(floppy_image_device *floppy, const attotime &tm);
+	int pll_get_next_bit(attotime &tm, floppy_image_device *floppy, const attotime &limit);
+	bool pll_write_next_bit(bool bit, attotime &tm, floppy_image_device *floppy, const attotime &limit);
+	void pll_save_checkpoint();
+	void pll_retrieve_checkpoint();
 	void checkpoint();
 	void rollback();
-	bool write_next_bit(bool bit, const attotime &limit);
-	void start_writing(const attotime &tm);
-	void commit(const attotime &tm);
-	void stop_writing(const attotime &tm);
 	void live_delay(int state);
 	void live_sync();
 	void live_abort();
 	void live_run(const attotime &limit = attotime::never);
-	void get_next_edge(const attotime &when);
-	int get_next_bit(attotime &tm, const attotime &limit);
 };
 
 
