@@ -84,10 +84,12 @@ MB81G163222-80 - Fujitsu MB81G163222-80 256k x 32-bit x 2 banks Synchronous Grap
                 (application register reads all 0xFF and the status register reads back 0xFF), so it's probably safe 
                 to assume they're not used on any of them.
                 It appears the DS2430 is not protected from reading and the unique silicon serial number is
-                included in the 40 byte dump. In the Police 911 2 NVRAM dump the serial number is located at both 0x002A and 0x1026
-                so that means it is tied to the DS2430. If the serial number in the NVRAM and DS2430 match then they are 
-                paired. The same serial number is likely present in the CF card image and a compare is done there too.
-                If they don't match the game requires an external DS2430 (i.e. dongle)
+                included in the 40 byte dump. This serial number is used as a check to verify the NVRAM and DS2430.
+                In the Police 911 2 NVRAM dump the serial number of the DS2430 is located at 0x002A and 0x1026
+                If the serial number in the NVRAM and DS2430 match then they are paired and the game accepts the NVRAM.
+                If they don't match the game requires an external DS2430 (i.e. dongle) and flags the NVRAM as 'BAD'
+                The serial number is not present in the CF card (2 different Police 911 2 cards of the same version 
+                were dumped and matched).
                 When the lasered ROM is read from the DS2430, it comes out from LSB to MSB (family code, LSB of 
                 S/N->MSB of S/N, CRC)
                 For Police 911 2 that is 0x14 0xB2 0xB7 0x4A 0x00 0x00 0x00 0x83
@@ -102,10 +104,48 @@ MB81G163222-80 - Fujitsu MB81G163222-80 256k x 32-bit x 2 banks Synchronous Grap
                 It may be possible to hand craft a DS2430 for a dongle-protected version of a game simply by using
                 one of the existing DS2430 dumps and adjusting the serial number found in a dump of the NVRAM to pair them
                 or adjusting the serial number in the NVRAM to match the serial number found in one of the dumped DS2430s.
+                This Police 911 2 board was upgraded from Police 911 by plugging in the dongle and changing the CF card. 
+                The NVRAM had previously died and the board was dead. Normally for a Viper game that is fatal. Using 
+                the NVRAM from Police 911 allowed it to boot and then the NVRAM upgraded itself with some additional 
+                data (the original data remained untouched). This means the dongle does more than just protect the game.
+                Another interesting fact about this upgrade is it has been discovered that the PCB can write to the 
+                external DS2430 in the dongle. This has been proven because the serial number of the DS2430 soldered 
+                on the PCB is present in the EEPROM area of the Police 911 2 DS2430.
+                Here is a dump of the DS2430 from Police 911. Note the EEPROM area is empty and the serial number (from 0x20 onwards)
+                is present in the above Police 911 2 DS2430 dump at locations 0x11, 0x10 and 0x0F
+                00000000h FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+                00000010h FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+                00000020h 14 A9 30 74 00 00 00 E7
+                This proves that the EEPROM area in the DS2430 is unused by an unprotected game and in fact the on-board
+                DS2430 is completely unused by an unprotected game. That is why any unprotected game will work on any 
+                Viper PCB regardless of the on-board DS2430 serial number.
+                The existing DS2430 'common' dump used in the unprotected games was actually from a (dongle-protected) 
+                Mahjong Fight Club PCB but that PCB was used to test and run all of the unprotected Viper games.
       M48T58Y - ST Microelectronics M48T58Y Timekeeper RAM (DIP28 @ U39). When this dies (after 10 year lifespan)
                 the game will complain with error RTC BAD then reset. The data inside the RTC can not be hand created
                 (yet) so to revive the PCB the correct RTC data must be re-programmed to a new RTC and replaced
                 on the PCB.
+                Regarding the RTC and protection-related checks....
+                "RTC OK" checks 0x0000->0x0945 (i.e. I can clear the contents after 0x0945 and the game will still 
+                happily boot). The NVRAM contents are split into chunks, each of which are checksummed.  It is a 16-bit checksum,
+                computed by summing two consecutive bytes as a 16-bit integer, where the final sum must add up to 0xFFFF (mod 
+                65536).  The last two bytes in the chunk are used to make the value 0xFFFF.  There doesn't appear to be a 
+                complete checksum over all the chunks (I can pick and choose chunks from various NVRAMs, as long as each chunk 
+                checksum checks out). The important chunks for booting are the first two.
+                The first chunk goes from 0x0000-0x000F.  This seems to be a game/region identifier, and doesn't like its 
+                contents changed (I didn't try changing every byte, but several of the bytes would throw RTC errors, even with a 
+                fixed checksum).  I'd guess that the CF verifies this value, since it's different for every game (i.e. Mocap 
+                Boxing NVRAM would have a correct checksum, but shouldn't pass Police 911 checks).
+                The second chunk goes from 0x0010-0x0079.  This seems to be a board identifier.  This has (optionally) 
+                several fields, each of which are 20 bytes long.  I'm unsure of the first 6 bytes, the following 6 
+                bytes are the DS2430A S/N, and the last 8 bytes are a game/region/dongle identifier.  If running 
+                without a dongle, only the first 20 byte field is present.  With a dongle, a second 20 byte field will 
+                be present.  Moving this second field into the place of the first field (and fixing the checksum) 
+                doesn't work, and the second field will be ignored if the first field is valid for the game (and in 
+                which case the dongle will be ignored).  For example, Police 911 will boot with a valid first field, 
+                with or without the second field, and with or without the dongle plugged in.  If you have both fields, 
+                and leave the dongle plugged in, you can switch between Police 911 and Police 911/2 by simply swapping 
+                CF cards.
        29F002 - Fujitsu 29F002 256k x8 EEPROM stamped '941B01' (PLCC44 @ U25). Earlier revision stamped '941A01'
       CN4/CN5 - RCA-type network connection jacks
           CN7 - 80 pin connector (unused in all games?)
@@ -114,7 +154,7 @@ MB81G163222-80 - Fujitsu MB81G163222-80 256k x 32-bit x 2 banks Synchronous Grap
                 required and plugged in it overrides the DS2430 on the main board. Without the (on-board)
                 DS2430 the PCB will complain after the CF check with HARDWARE ERROR. If the DS2430 is not
                 correct for the game the error given is RTC BAD even if the RTC is correct. Most games don't require
-                a dongle and use the factory DS2430 on the main board.
+                a dongle and accept any DS2430 on the main board.
          CN12 - 4 pin connector (possibly stereo audio output?)
          CN13 - Power connector for plug-in daughterboard
     CN15/CN16 - Multi-pin IDC connectors for plug-in daughterboard (see detail below)

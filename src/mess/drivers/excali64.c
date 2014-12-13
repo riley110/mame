@@ -3,29 +3,29 @@
 /***************************************************************************
 
 Excalibur 64 kit computer, designed and sold in Australia by BGR Computers.
+The official schematics have a LOT of errors and omissions.
 
 Skeleton driver created on 2014-12-09.
 
 Chips: Z80A, 8251, 8253, 8255, 6845
 We have Basic 1.1. Other known versions are 1.01, 2.1
+There are 2 versions of the colour prom, which have different palettes.
+We have the later version.
 
 Control W then Enter will switch between 40 and 80 characters per line.
 
 ToDo:
-- Some keys can be connected to more than one position in the matrix. Need to
-  determine the correct positions.
-- The position of the "Line Insert" key is unknown.
-- PCGEN command not working.
-- Colours are wrong (colour prom needs to be dumped)
+- Colours are approximate.
 - Disk controller
-- Banking
+- Graphics commands such as LINE and CIRCLE produce a syntax error.
+- Some commands such as HGRCLS are missing from the rom. Perhaps we need a later version?
+- SET command produces random graphics instead of the expected lo-res dot.
 - The schematic shows the audio counter connected to 2MHz, but this produces
   sounds that are too high. Connected to 1MHz for now.
 - Serial
 - Parallel / Centronics
 - Need software
-- Pasting can drop a character or two at the start of a line.
-- Clock change for crtc
+- Pasting can sometimes drop a character.
 
 ****************************************************************************/
 
@@ -55,7 +55,6 @@ public:
 		, m_io_keyboard(*this, "KEY")
 	{ }
 
-	DECLARE_DRIVER_INIT(excali64);
 	DECLARE_PALETTE_INIT(excali64);
 	DECLARE_WRITE8_MEMBER(ppib_w);
 	DECLARE_READ8_MEMBER(ppic_r);
@@ -63,16 +62,16 @@ public:
 	DECLARE_READ8_MEMBER(port00_r);
 	DECLARE_READ8_MEMBER(port50_r);
 	DECLARE_WRITE8_MEMBER(port70_w);
-	DECLARE_WRITE8_MEMBER(video_w);
 	MC6845_UPDATE_ROW(update_row);
 	DECLARE_WRITE_LINE_MEMBER(crtc_de);
 	DECLARE_WRITE_LINE_MEMBER(crtc_vs);
-
+	DECLARE_MACHINE_RESET(excali64);
 	required_device<palette_device> m_palette;
 	
 private:
 	const UINT8 *m_p_chargen;
 	UINT8 *m_p_videoram;
+	UINT8 *m_p_hiresram;
 	UINT8 m_sys_status;
 	UINT8 m_kbdrow;
 	bool m_crtc_vs;
@@ -84,9 +83,11 @@ private:
 };
 
 static ADDRESS_MAP_START(excali64_mem, AS_PROGRAM, 8, excali64_state)
-	AM_RANGE(0x0000, 0x1FFF) AM_ROM
-	AM_RANGE(0x2000, 0x3FFF) AM_ROM AM_WRITE(video_w)
-	AM_RANGE(0x4000, 0xFFFF) AM_RAM
+	AM_RANGE(0x0000, 0x1FFF) AM_READ_BANK("bankr1") AM_WRITE_BANK("bankw1")
+	AM_RANGE(0x2000, 0x2FFF) AM_READ_BANK("bankr2") AM_WRITE_BANK("bankw2")
+	AM_RANGE(0x3000, 0x3FFF) AM_READ_BANK("bankr3") AM_WRITE_BANK("bankw3")
+	AM_RANGE(0x4000, 0x4FFF) AM_READ_BANK("bankr4") AM_WRITE_BANK("bankw4")
+	AM_RANGE(0x5000, 0xFFFF) AM_RAM AM_REGION("rambank", 0x5000)
 ADDRESS_MAP_END
 
 static ADDRESS_MAP_START(excali64_io, AS_IO, 8, excali64_state)
@@ -103,7 +104,6 @@ static ADDRESS_MAP_START(excali64_io, AS_IO, 8, excali64_state)
 ADDRESS_MAP_END
 
 
-/* Input ports */
 static INPUT_PORTS_START( excali64 )
 	PORT_START("KEY.0")    /* line 0 */
 	PORT_BIT(0x01, IP_ACTIVE_LOW, IPT_KEYBOARD) PORT_NAME("R") PORT_CODE(KEYCODE_R) PORT_CHAR('r') PORT_CHAR('R') PORT_CHAR(0x12)
@@ -153,7 +153,7 @@ static INPUT_PORTS_START( excali64 )
 	PORT_BIT(0x10, IP_ACTIVE_LOW, IPT_KEYBOARD) PORT_NAME("DEL") PORT_CODE(KEYCODE_DEL) PORT_CHAR(0x7f) PORT_CHAR(0x7f) PORT_CHAR(0x1f)
 	PORT_BIT(0x20, IP_ACTIVE_LOW, IPT_KEYBOARD) PORT_NAME("ESC") PORT_CODE(KEYCODE_ESC) PORT_CHAR(0x1b)
 	PORT_BIT(0x40, IP_ACTIVE_LOW, IPT_KEYBOARD) PORT_NAME("1 !") PORT_CODE(KEYCODE_1) PORT_CHAR('1') PORT_CHAR('!')
-	PORT_BIT(0x80, IP_ACTIVE_LOW, IPT_UNUSED) //1
+	PORT_BIT(0x80, IP_ACTIVE_LOW, IPT_KEYBOARD) PORT_NAME("INS") PORT_CODE(KEYCODE_INSERT)
 
 	PORT_START("KEY.5")    /* line 5 */
 	PORT_BIT(0x01, IP_ACTIVE_LOW, IPT_KEYBOARD) PORT_NAME("[ {") PORT_CODE(KEYCODE_OPENBRACE) PORT_CHAR('[') PORT_CHAR('{') PORT_CHAR(0x1b)
@@ -198,6 +198,11 @@ READ8_MEMBER( excali64_state::ppic_r )
 	return data;
 }
 
+WRITE8_MEMBER( excali64_state::ppic_w )
+{
+	m_cass->output(BIT(data, 7) ? -1.0 : +1.0);
+}
+
 READ8_MEMBER( excali64_state::port00_r )
 {
 	UINT8 data = 0xff;
@@ -215,35 +220,73 @@ READ8_MEMBER( excali64_state::port00_r )
 d0 : /rom ; screen
 d1 : ram on
 d2 : /low ; high res
-d3 : dispen
+d3 : 2nd colour set (previously, dispen, which is a mistake in hardware and schematic)
 d4 : vsync
+d5 : rombank
 */
 READ8_MEMBER( excali64_state::port50_r )
 {
-	UINT8 data = m_sys_status & 7;
+	UINT8 data = m_sys_status & 0x2f;
 	data |= (UINT8)m_crtc_vs << 4;
-	data |= (UINT8)m_crtc_de << 5;
 	return data;
 }
 
-WRITE8_MEMBER( excali64_state::ppic_w )
-{
-	m_cass->output(BIT(data, 7) ? -1.0 : +1.0);
-}
-
 /*
-d0,1,2 : same as port50
-d3 : 2nd colour set
+d0,1,2,3,5 : same as port50
+(schematic wrongly says d7 used for 2nd colour set)
 */
 WRITE8_MEMBER( excali64_state::port70_w )
 {
 	m_sys_status = data;
 	m_crtc->set_unscaled_clock(BIT(data, 2) ? 2e6 : 1e6);
+	if BIT(data, 1)
+	{
+	// select 64k ram
+		membank("bankr1")->set_entry(0);
+		membank("bankr2")->set_entry(0);
+		membank("bankr3")->set_entry(0);
+		membank("bankw2")->set_entry(0);
+		membank("bankw3")->set_entry(0);
+		membank("bankw4")->set_entry(0);
+	}
+	else
+	if BIT(data, 0)
+	{
+	// select videoram and hiresram for writing, and ROM for reading
+		membank("bankr1")->set_entry(1);
+		membank("bankr2")->set_entry(1);
+		membank("bankr3")->set_entry(1);
+		membank("bankw2")->set_entry(2);
+		membank("bankw3")->set_entry(2);
+		membank("bankw4")->set_entry(2);
+	}
+	else
+	{
+	// as above, except 4000-4FFF is main ram
+		membank("bankr1")->set_entry(1);
+		membank("bankr2")->set_entry(1);
+		membank("bankr3")->set_entry(1);
+		membank("bankw2")->set_entry(2);
+		membank("bankw3")->set_entry(2);
+		membank("bankw4")->set_entry(0);
+	}
+
+	// other half of ROM_1
+	if ((data & 0x22) == 0x20)
+		membank("bankr1")->set_entry(2);
 }
 
-WRITE8_MEMBER( excali64_state::video_w )
+MACHINE_RESET_MEMBER( excali64_state, excali64 )
 {
-	m_p_videoram[offset] = data;
+	membank("bankr1")->set_entry(1); // read from ROM
+	membank("bankr2")->set_entry(1); // read from ROM
+	membank("bankr3")->set_entry(1); // read from ROM
+	membank("bankr4")->set_entry(0); // read from RAM
+	membank("bankw1")->set_entry(0); // write to RAM
+	membank("bankw2")->set_entry(2); // write to videoram
+	membank("bankw3")->set_entry(2); // write to hiresram
+	membank("bankw4")->set_entry(0); // write to RAM
+	m_maincpu->reset();
 }
 
 WRITE_LINE_MEMBER( excali64_state::crtc_de )
@@ -254,12 +297,6 @@ WRITE_LINE_MEMBER( excali64_state::crtc_de )
 WRITE_LINE_MEMBER( excali64_state::crtc_vs )
 {
 	m_crtc_vs = state;
-}
-
-DRIVER_INIT_MEMBER( excali64_state, excali64 )
-{
-	m_p_chargen = memregion("chargen")->base();
-	m_p_videoram = memregion("videoram")->base();
 }
 
 /* F4 Character Displayer */
@@ -280,43 +317,50 @@ static GFXDECODE_START( excali64 )
 	GFXDECODE_ENTRY( "chargen", 0x0000, excali64_charlayout, 0, 1 )
 GFXDECODE_END
 
-// The colour names in the comments are what's needed, the current rgb values are mostly wrong
+// The prom, the schematic, and the manual all contradict each other,
+// so the colours can only be described as wild guesses. Further, the 38
+// colour-load resistors are missing labels and values.
 PALETTE_INIT_MEMBER( excali64_state, excali64 )
 {
-	// Colour Menu A
-	palette.set_pen_color(0, 0x00, 0x00, 0x00);   /*  0 Black     */
-	palette.set_pen_color(1, 0x7f, 0x00, 0x00);   /*  1 Dark Red      */
-	palette.set_pen_color(2, 0xff, 0x00, 0x00);   /*  2 Red       */
-	palette.set_pen_color(3, 0x00, 0x00, 0x00);   /*  3 Pink     */
-	palette.set_pen_color(4, 0xbf, 0xbf, 0xbf);   /*  4 Orange     */
-	palette.set_pen_color(5, 0x00, 0xff, 0xff);   /*  5 Brown     */
-	palette.set_pen_color(6, 0xff, 0xff, 0x00);   /*  6 Yellow        */
-	palette.set_pen_color(7, 0x7f, 0x7f, 0x00);   /*  7 Dark Green */
-	palette.set_pen_color(8, 0x00, 0x7f, 0x00);   /*  8 Green     */
-	palette.set_pen_color(9, 0x00, 0xff, 0x00);   /*  9 Bright Green  */
-	palette.set_pen_color(10, 0x00, 0x00, 0xff);  /* 10 Light Blue    */
-	palette.set_pen_color(11, 0x00, 0x00, 0x7f);  /* 11 Blue      */
-	palette.set_pen_color(12, 0xff, 0x00, 0xff);  /* 12 Magenta       */
-	palette.set_pen_color(13, 0x7f, 0x00, 0x7f);  /* 13 Purple        */
-	palette.set_pen_color(14, 0x80, 0x80, 0x80);  /* 14 Dark Grey      */
-	palette.set_pen_color(15, 0xff, 0xff, 0xff);  /* 15 White     */
-	// Colour Menu B
-	palette.set_pen_color(16, 0x00, 0x00, 0x00);  /*  0 Black     */
-	palette.set_pen_color(17, 0x7f, 0x00, 0x00);  /*  1 Dark Red  */
-	palette.set_pen_color(18, 0xff, 0x00, 0x00);  /*  2 Red       */
-	palette.set_pen_color(19, 0x80, 0x80, 0x80);  /*  3 Flesh     */
-	palette.set_pen_color(20, 0x00, 0x00, 0xff);  /*  4 Pink      */
-	palette.set_pen_color(21, 0xff, 0xff, 0x80);  /*  5 Yellow Brown */
-	palette.set_pen_color(22, 0x00, 0x00, 0x00);  /*  6 Dark Brown     */
-	palette.set_pen_color(23, 0x00, 0xff, 0x00);  /*  7 Dark Purple */
-	palette.set_pen_color(24, 0xff, 0x80, 0xff);  /*  8 Very Dark Green */
-	palette.set_pen_color(25, 0x00, 0xff, 0xff);  /*  9 Yellow Green */
-	palette.set_pen_color(26, 0xff, 0x40, 0x40);  /* 10 Grey Blue */
-	palette.set_pen_color(27, 0xff, 0x00, 0x00);  /* 11 Sky Blue */
-	palette.set_pen_color(28, 0x00, 0x80, 0x80);  /* 12 Very Pale Blue */
-	palette.set_pen_color(29, 0xff, 0x00, 0xff);  /* 13 Dark Grey */
-	palette.set_pen_color(30, 0x80, 0xff, 0x80);  /* 14 Light Grey */
-	palette.set_pen_color(31, 0xff, 0xff, 0xff);  /* 15 White     */
+	// do this here because driver_init hasn't run yet
+	m_p_videoram = memregion("videoram")->base();
+	m_p_chargen = memregion("chargen")->base();
+	m_p_hiresram = memregion("hiresram")->base();
+	UINT8 *main = memregion("roms")->base();
+	UINT8 *ram = memregion("rambank")->base();
+
+	// main ram (cp/m mode)
+	membank("bankr1")->configure_entry(0, &ram[0x0000]);
+	membank("bankr2")->configure_entry(0, &ram[0x2000]);
+	membank("bankr3")->configure_entry(0, &ram[0x3000]);
+	membank("bankr4")->configure_entry(0, &ram[0x4000]);//boot
+	membank("bankw1")->configure_entry(0, &ram[0x0000]);//boot
+	membank("bankw2")->configure_entry(0, &ram[0x2000]);
+	membank("bankw3")->configure_entry(0, &ram[0x3000]);
+	membank("bankw4")->configure_entry(0, &ram[0x4000]);//boot
+	// rom_1
+	membank("bankr1")->configure_entry(1, &main[0x0000]);//boot
+	membank("bankr1")->configure_entry(2, &main[0x2000]);
+	// rom_2
+	membank("bankr2")->configure_entry(1, &main[0x4000]);//boot
+	membank("bankr3")->configure_entry(1, &main[0x5000]);//boot
+	// videoram
+	membank("bankw2")->configure_entry(2, &m_p_videoram[0x0000]);//boot
+	// hiresram
+	membank("bankw3")->configure_entry(2, &m_p_hiresram[0x0000]);//boot
+	membank("bankw4")->configure_entry(2, &m_p_hiresram[0x0000]);
+
+	// Set up foreground palettes
+	UINT8 r,g,b,i,code;
+	for (i = 0; i < 32; i++)
+	{
+		code = m_p_chargen[0x1000+i];
+		r = (BIT(code, 0) ? 38 : 0) + (BIT(code, 1) ? 73 : 0) + (BIT(code, 2) ? 144 : 0);
+		b = (BIT(code, 3) ? 38 : 0) + (BIT(code, 4) ? 73 : 0) + (BIT(code, 5) ? 144 : 0);
+		g = (BIT(code, 6) ? 85 : 0) + (BIT(code, 7) ? 170 : 0);
+		palette.set_pen_color(i, r, g, b);
+	}
+
 	// Background
 	palette.set_pen_color(32, 0x00, 0x00, 0x00);  //  0 Black
 	palette.set_pen_color(33, 0xff, 0x00, 0x00);  //  1 Red
@@ -326,7 +370,6 @@ PALETTE_INIT_MEMBER( excali64_state, excali64 )
 	palette.set_pen_color(37, 0xff, 0xff, 0x00);  //  5 Yellow
 	palette.set_pen_color(38, 0x00, 0xff, 0xff);  //  6 Cyan
 	palette.set_pen_color(39, 0xff, 0xff, 0xff);  //  7 White
-
 }
 
 MC6845_UPDATE_ROW( excali64_state::update_row )
@@ -346,11 +389,11 @@ MC6845_UPDATE_ROW( excali64_state::update_row )
 		bg = 32 + ((col >> 1) & 7);
 
 		if (BIT(col, 0) & BIT(chr, 7))
-			gfx = m_p_videoram[0x800 + (chr<<4) + ra]; // hires definition
+			gfx = m_p_hiresram[(chr<<4) | ra]; // hires definition
 		else
 			gfx = m_p_chargen[(chr<<4) | ra]; // normal character
 		
-		gfx ^= ((x == cursor_x) ? 0xff : 0);
+		gfx ^= (x == cursor_x) ? 0xff : 0;
 
 		/* Display a scanline of a character */
 		*p++ = palette[BIT(gfx, 0) ? fg : bg];
@@ -369,6 +412,8 @@ static MACHINE_CONFIG_START( excali64, excali64_state )
 	MCFG_CPU_ADD("maincpu", Z80, XTAL_16MHz / 4)
 	MCFG_CPU_PROGRAM_MAP(excali64_mem)
 	MCFG_CPU_IO_MAP(excali64_io)
+
+	MCFG_MACHINE_RESET_OVERRIDE(excali64_state, excali64)
 
 	MCFG_DEVICE_ADD("uart", I8251, 0)
 	//MCFG_I8251_TXD_HANDLER(DEVWRITELINE("rs232", rs232_port_device, write_txd))
@@ -423,22 +468,25 @@ static MACHINE_CONFIG_START( excali64, excali64_state )
 
 /* ROM definition */
 ROM_START( excali64 )
-	ROM_REGION(0x10000, "maincpu", 0)
+	ROM_REGION(0x6000, "roms", 0)
 	ROM_LOAD( "rom_1.ic17", 0x0000, 0x4000, CRC(e129a305) SHA1(e43ec7d040c2b2e548d22fd6bbc7df8b45a26e5a) )
-	ROM_LOAD( "rom_2.ic24", 0x2000, 0x2000, CRC(916d9f5a) SHA1(91c527cce963481b7bebf077e955ca89578bb553) )
+	ROM_LOAD( "rom_2.ic24", 0x4000, 0x2000, CRC(916d9f5a) SHA1(91c527cce963481b7bebf077e955ca89578bb553) )
 	// fix a bug that causes screen to be filled with 'p'
 	ROM_FILL(0x4ee, 1, 0)
 	ROM_FILL(0x4ef, 1, 8)
 	ROM_FILL(0x4f6, 1, 0)
 	ROM_FILL(0x4f7, 1, 8)
 
-	ROM_REGION(0x2000, "videoram", ROMREGION_ERASE00)
+	ROM_REGION(0x10000, "rambank", ROMREGION_ERASE00)
+	ROM_REGION(0x1000, "videoram", ROMREGION_ERASE00)
+	ROM_REGION(0x1000, "hiresram", ROMREGION_ERASE00)
 
-	ROM_REGION(0x1000, "chargen", 0)
+	ROM_REGION(0x1020, "chargen", 0)
 	ROM_LOAD( "genex_3.ic43", 0x0000, 0x1000, CRC(b91619a9) SHA1(2ced636cb7b94ba9d329868d7ecf79963cefe9d9) )
+	ROM_LOAD( "hm7603.ic55",  0x1000, 0x0020, CRC(c74f47dc) SHA1(331ff3c913846191ddd97cacb80bd19438c1ff71) )
 ROM_END
 
 /* Driver */
 
-/*    YEAR  NAME      PARENT  COMPAT   MACHINE    INPUT     CLASS             INIT        COMPANY         FULLNAME        FLAGS */
-COMP( 1984, excali64, 0,      0,       excali64,  excali64, excali64_state, excali64,  "BGR Computers", "Excalibur 64", GAME_NOT_WORKING )
+/*    YEAR  NAME      PARENT  COMPAT   MACHINE    INPUT     CLASS         INIT        COMPANY         FULLNAME        FLAGS */
+COMP( 1984, excali64, 0,      0,       excali64,  excali64, driver_device, 0,  "BGR Computers", "Excalibur 64", GAME_NOT_WORKING )

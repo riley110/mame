@@ -67,6 +67,7 @@ ToDo:
 
 
 #include "machine/genpin.h"
+#include "machine/r10696.h"
 #include "machine/r10788.h"
 #include "cpu/pps4/pps4.h"
 #include "gts1.lh"
@@ -92,6 +93,10 @@ public:
     DECLARE_WRITE8_MEMBER(gts1_display_w);
     DECLARE_READ8_MEMBER (gts1_io_r);
     DECLARE_WRITE8_MEMBER(gts1_io_w);
+    DECLARE_READ8_MEMBER (gts1_lamp_apm_r);
+    DECLARE_WRITE8_MEMBER(gts1_lamp_apm_w);
+    DECLARE_READ8_MEMBER (gts1_nvram_r);
+    DECLARE_WRITE8_MEMBER(gts1_nvram_w);
     DECLARE_READ8_MEMBER (gts1_pa_r);
     DECLARE_WRITE8_MEMBER(gts1_pa_w);
     DECLARE_WRITE8_MEMBER(gts1_pb_w);
@@ -99,7 +104,9 @@ private:
     virtual void machine_reset();
     required_device<cpu_device> m_maincpu;
     UINT8 m_io[256];
-    UINT8 m_6351_addr;
+    UINT8 m_nvram_addr;
+    UINT16 m_6351_addr;
+    UINT16 m_z30_out;
 };
 
 static ADDRESS_MAP_START( gts1_map, AS_PROGRAM, 8, gts1_state )
@@ -111,9 +118,10 @@ static ADDRESS_MAP_START( gts1_data, AS_DATA, 8, gts1_state )
 ADDRESS_MAP_END
 
 static ADDRESS_MAP_START( gts1_io, AS_IO, 8, gts1_state )
-    AM_RANGE(0x00d0, 0x00df) AM_DEVREADWRITE ( "r10788", r10788_device, io_r, io_w )
+    AM_RANGE(0x0030, 0x003f) AM_DEVREADWRITE ( "r10696", r10696_device, io_r, io_w ) // (U3) solenoid + dips
+    AM_RANGE(0x0060, 0x006f) AM_DEVREADWRITE ( "r10696", r10696_device, io_r, io_w ) // (U2) NVRAM io chip
+    AM_RANGE(0x00d0, 0x00df) AM_DEVREADWRITE ( "r10788", r10788_device, io_r, io_w ) // (U6) display chip
     AM_RANGE(0x0000, 0x00ff) AM_READ ( gts1_io_r )   AM_WRITE( gts1_io_w ) // connects to all the other chips
-
     AM_RANGE(0x0100, 0x0100) AM_READ ( gts1_pa_r ) AM_WRITE( gts1_pa_w )
     AM_RANGE(0x0101, 0x0101) AM_WRITE(gts1_pb_w)
 ADDRESS_MAP_END
@@ -200,7 +208,9 @@ INPUT_PORTS_END
 
 void gts1_state::machine_reset()
 {
+    m_nvram_addr = 0;
     m_6351_addr = 0;
+    m_z30_out = 0;
 }
 
 DRIVER_INIT_MEMBER(gts1_state,gts1)
@@ -274,6 +284,158 @@ WRITE8_MEMBER(gts1_state::gts1_display_w)
 #undef _h
 }
 
+/**
+ * @brief read input groups A, B, C of NVRAM io chip (U2)
+ * @param offset 0 ... 2 = group
+ * @return 4-bit value read from the group
+ */
+READ8_MEMBER (gts1_state::gts1_nvram_r)
+{
+    UINT8 data = 0x0f;
+    switch (offset)
+    {
+        case 0: // group A
+            // FIXME: Schematics says TO Z5
+            break;
+        case 1: // group B
+        case 2: // group C
+            // Schematics says: SPARES
+            break;
+    }
+    return data;
+}
+
+/**
+ * @brief write output groups A, B, C of NVRAM io chip (U2)
+ * @param offset 0 ... 2 = group
+ * @param data 4 bit value to write
+ */
+WRITE8_MEMBER(gts1_state::gts1_nvram_w)
+{
+    switch (offset)
+    {
+        case 0: // group A - address lines 3:0
+            m_nvram_addr = (m_nvram_addr & ~15) | (data & 15);
+            break;
+        case 1: // group B - address lines 7:4
+            m_nvram_addr = (m_nvram_addr & ~(15 << 4)) | ((data & 15) << 4);
+            break;
+        case 2: // group C - data bits 3:0 of NVRAM
+            // FIXME: schematics says write enable is U4-36 (O14)
+            LOG(("%s: nvram[%02x] <- %x\n", __FUNCTION__, m_nvram_addr, data & 15));
+            break;
+    }
+}
+
+/**
+ * @brief read input groups A, B, C of lamp + apm I/O chip (U3)
+ * @param offset 0 ... 2 = group
+ * @return 4-bit value read from the group
+ */
+READ8_MEMBER (gts1_state::gts1_lamp_apm_r)
+{
+    UINT8 data = 0x0f;
+    switch (offset) {
+        case 0: // group A switches S01-S04, S09-S12, S17-S20
+            if (m_z30_out & 1) {
+                UINT8 dsw0 = ioport("DSW0")->read();
+                if (0 == BIT(dsw0,0)) // S01
+                    data &= ~(1 << 3);
+                if (0 == BIT(dsw0,1)) // S02
+                    data &= ~(1 << 2);
+                if (0 == BIT(dsw0,2)) // S03
+                    data &= ~(1 << 1);
+                if (0 == BIT(dsw0,3)) // S04
+                    data &= ~(1 << 0);
+            }
+            if (m_z30_out & 2) {
+                UINT8 dsw1 = ioport("DSW1")->read();
+                if (0 == BIT(dsw1,0)) // S09
+                    data &= ~(1 << 0);
+                if (0 == BIT(dsw1,1)) // S10
+                    data &= ~(1 << 1);
+                if (0 == BIT(dsw1,2)) // S11
+                    data &= ~(1 << 2);
+                if (0 == BIT(dsw1,3)) // S12
+                    data &= ~(1 << 3);
+            }
+            if (m_z30_out & 4) {
+                UINT8 dsw2 = ioport("DSW2")->read();
+                if (0 == BIT(dsw2,0)) // S17
+                    data &= ~(1 << 0);
+                if (0 == BIT(dsw2,1)) // S18
+                    data &= ~(1 << 1);
+                if (0 == BIT(dsw2,2)) // S19
+                    data &= ~(1 << 2);
+                if (0 == BIT(dsw2,3)) // S20
+                    data &= ~(1 << 3);
+            }
+            break;
+        case 1: // group B switches S05-S08, S09-S12, S17-S20
+            if (m_z30_out & 1) {
+                UINT8 dsw0 = ioport("DSW0")->read();
+                if (0 == BIT(dsw0,4)) // S05
+                    data &= ~(1 << 3);
+                if (0 == BIT(dsw0,5)) // S06
+                    data &= ~(1 << 2);
+                if (0 == BIT(dsw0,6)) // S07
+                    data &= ~(1 << 1);
+                if (0 == BIT(dsw0,7)) // S08
+                    data &= ~(1 << 0);
+            }
+            if (m_z30_out & 2) {
+                UINT8 dsw1 = ioport("DSW1")->read();
+                if (0 == BIT(dsw1,4)) // S13
+                    data &= ~(1 << 0);
+                if (0 == BIT(dsw1,5)) // S14
+                    data &= ~(1 << 1);
+                if (0 == BIT(dsw1,6)) // S15
+                    data &= ~(1 << 2);
+                if (0 == BIT(dsw1,7)) // S16
+                    data &= ~(1 << 3);
+            }
+            if (m_z30_out & 4) {
+                UINT8 dsw2 = ioport("DSW2")->read();
+                if (0 == BIT(dsw2,4)) // S21
+                    data &= ~(1 << 0);
+                if (0 == BIT(dsw2,5)) // S22
+                    data &= ~(1 << 1);
+                if (0 == BIT(dsw2,6)) // S23
+                    data &= ~(1 << 2);
+                if (0 == BIT(dsw2,7)) // S24
+                    data &= ~(1 << 3);
+            }
+            break;
+        case 2: // TODO: connect
+            // IN-9 (unused?)
+            // IN-10 (reset sw25)
+            // IN-11 (outhole sw)
+            // IN-12 (slam sw)
+            break;
+    }
+    return data;
+}
+
+/**
+ * @brief write output groups A, B, C of lamp + apm I/O chip (U3)
+ * @param offset 0 ... 2 = group
+ * @param data 4 bit value to write
+ */
+WRITE8_MEMBER(gts1_state::gts1_lamp_apm_w)
+{
+    switch (offset) {
+        case 0: // LD1-LD4 on jumper J5
+            break;
+        case 1: // Z30 1-of-16 decoder
+            m_z30_out = 1 << (data & 15);
+            break;
+        case 2: // O9: PGOL PROM A8, O10: PGOL PROM A9
+            m_6351_addr = (m_6351_addr & ~(3 << 8)) | ((data & 3) << 8);
+            // O11 and O12 are unused(?)
+            break;
+    }
+}
+
 READ8_MEMBER (gts1_state::gts1_io_r)
 {
     UINT8 data = m_io[offset] & 0x0f;
@@ -319,6 +481,11 @@ static MACHINE_CONFIG_START( gts1, gts1_state )
     MCFG_CPU_IO_MAP(gts1_io)
 
     //MCFG_NVRAM_ADD_0FILL("nvram")
+
+    /* General Purpose Input/Output */
+    MCFG_DEVICE_ADD( "r10696", R10696, 0 )
+    MCFG_R10696_IO( READ8 (gts1_state,gts1_nvram_r),
+                    WRITE8(gts1_state,gts1_nvram_w) )
 
     /* General Purpose Display and Keyboard */
     MCFG_DEVICE_ADD( "r10788", R10788, XTAL_3_579545MHz / 18 )  // divided in the circuit

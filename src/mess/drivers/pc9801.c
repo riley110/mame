@@ -416,9 +416,10 @@ Keyboard TX commands:
 
 #include "formats/pc98_dsk.h"
 #include "formats/pc98fdi_dsk.h"
-#include "formats/pc98dcp_dsk.h"
-#include "formats/pc98dip_dsk.h"
-#include "formats/pc98nfd_dsk.h"
+#include "formats/fdd_dsk.h"
+#include "formats/dcp_dsk.h"
+#include "formats/dip_dsk.h"
+#include "formats/nfd_dsk.h"
 
 #include "machine/pc9801_26.h"
 #include "machine/pc9801_86.h"
@@ -1337,8 +1338,8 @@ inline UINT16 pc9801_state::egc_do_partial_op(int plane, UINT16 src, UINT16 pat,
 
 	if(m_egc.regs[6] & 0x1000)
 	{
-		src_off = 16 - (m_egc.regs[6] & 0xf);
-		dst_off = 16 - ((m_egc.regs[6] >> 4) & 0xf);
+		src_off = 15 - (m_egc.regs[6] & 0xf);
+		dst_off = 15 - ((m_egc.regs[6] >> 4) & 0xf);
 	}
 	else
 	{
@@ -1350,13 +1351,13 @@ inline UINT16 pc9801_state::egc_do_partial_op(int plane, UINT16 src, UINT16 pat,
 	{
 		src = src_tmp << (dst_off - src_off);
 		src |= m_egc.leftover[plane];
-		m_egc.leftover[plane] = src_tmp >> (16 - (dst_off - src_off));
+		m_egc.leftover[plane] = src_tmp >> (15 - (dst_off - src_off));
 	}
 	else
 	{
 		src = src_tmp >> (src_off - dst_off);
-		src |= m_egc.leftover[plane] >> dst_off;
-		m_egc.leftover[plane] = src_tmp << (16 - (src_off - dst_off));
+		src |= m_egc.leftover[plane];
+		m_egc.leftover[plane] = src_tmp << (15 - (src_off - dst_off));
 	}
 
 	for(int i = 7; i >= 0; i--)
@@ -1375,17 +1376,20 @@ void pc9801_state::egc_blit_w(UINT32 offset, UINT16 data, UINT16 mem_mask)
 	UINT16 mask = m_egc.regs[4] & mem_mask, out = 0;
 	bool dir = !(m_egc.regs[6] & 0x1000);
 	int dst_off = (m_egc.regs[6] >> 4) & 0xf;
-	offset &= 0x3fff;
+	offset &= 0x13fff;
 
-	// mask off the bits past the end of the blit
-	if(m_egc.count < 16)
-		mask &= dir ? ((1 << (m_egc.count + 1)) - 1) : ~((1 << (15 - m_egc.count)) - 1);
-
-	// mask off the bits before the start
-	if(m_egc.first)
+	if((((m_egc.regs[2] >> 11) & 3) == 1) || ((((m_egc.regs[2] >> 11) & 3) == 2) && !BIT(m_egc.regs[2], 10)))
 	{
-		m_egc.leftover[0] = m_egc.leftover[1] = m_egc.leftover[2] = m_egc.leftover[3] = 0;
-		mask &= dir ? ~((1 << (15 - dst_off)) - 1) : ((1 << (dst_off + 1)) - 1);
+		// mask off the bits past the end of the blit
+		if(m_egc.count < 16)
+			mask &= dir ? ((1 << m_egc.count) - 1) : ~((1 << (16 - m_egc.count)) - 1);
+
+		// mask off the bits before the start
+		if(m_egc.first)
+		{
+			m_egc.leftover[0] = m_egc.leftover[1] = m_egc.leftover[2] = m_egc.leftover[3] = 0;
+			mask &= dir ? ~((1 << dst_off) - 1) : ((1 << (16 - dst_off)) - 1);
+		}
 	}
 
 	for(int i = 0; i < 4; i++)
@@ -1451,7 +1455,7 @@ void pc9801_state::egc_blit_w(UINT32 offset, UINT16 data, UINT16 mem_mask)
 
 UINT16 pc9801_state::egc_blit_r(UINT32 offset, UINT16 mem_mask)
 {
-	UINT16 plane_off = offset & 0x3fff;
+	UINT16 plane_off = offset & 0x13fff;
 	if((m_egc.regs[2] & 0x300) == 0x100)
 	{
 		m_egc.pat[0] = m_video_ram_2[plane_off + 0x4000];
@@ -1484,7 +1488,7 @@ READ16_MEMBER(pc9801_state::upd7220_grcg_r)
 	{
 		int i;
 
-		offset &= 0x3fff;
+		offset &= 0x13fff;
 		res = 0;
 		for(i=0;i<4;i++)
 		{
@@ -1510,7 +1514,7 @@ WRITE16_MEMBER(pc9801_state::upd7220_grcg_w)
 	{
 		int i;
 		UINT8 *vram = (UINT8 *)m_video_ram_2.target();
-		offset = (offset << 1) & 0x7fff;
+		offset = (offset << 1) & 0x27fff;
 
 		if(m_grcg.mode & 0x40) // RMW
 		{
@@ -2404,7 +2408,7 @@ static ADDRESS_MAP_START( pc9821_io, AS_IO, 32, pc9801_state )
 //  AM_RANGE(0x043d, 0x043d) ROM/RAM bank (NEC)
 	AM_RANGE(0x043c, 0x043f) AM_WRITE8(pc9801rs_bank_w,    0xffffffff) //ROM/RAM bank (EPSON)
 	AM_RANGE(0x0460, 0x0463) AM_READWRITE8(pc9821_window_bank_r,pc9821_window_bank_w, 0xffffffff)
-//  AM_RANGE(0x04a0, 0x04af) EGC
+	AM_RANGE(0x04a0, 0x04af) AM_WRITE16(egc_w, 0xffffffff)
 //  AM_RANGE(0x04be, 0x04be) FDC "RPM" register
 	AM_RANGE(0x0640, 0x064f) AM_DEVREADWRITE16("ide", ata_interface_device, read_cs0, write_cs0, 0xffffffff)
 	AM_RANGE(0x0740, 0x074f) AM_DEVREADWRITE16("ide", ata_interface_device, read_cs1, write_cs1, 0xffffffff)
@@ -3096,9 +3100,10 @@ INTERRUPT_GEN_MEMBER(pc9801_state::pc9801_vrtc_irq)
 FLOPPY_FORMATS_MEMBER( pc9801_state::floppy_formats )
 	FLOPPY_PC98_FORMAT,
 	FLOPPY_PC98FDI_FORMAT,
-	FLOPPY_PC98DCP_FORMAT,
-	FLOPPY_PC98DIP_FORMAT,
-	FLOPPY_PC98NFD_FORMAT
+	FLOPPY_FDD_FORMAT,
+	FLOPPY_DCP_FORMAT,
+	FLOPPY_DIP_FORMAT,
+	FLOPPY_NFD_FORMAT
 FLOPPY_FORMATS_END
 
 TIMER_DEVICE_CALLBACK_MEMBER( pc9801_state::mouse_irq_cb )
@@ -3384,7 +3389,7 @@ MACHINE_CONFIG_END
 	ROM_IGNORE( 0x2000 ) \
 	ROM_IGNORE( 0x2000 ) \
 	ROM_IGNORE( 0x2000 ) \
-//	ROM_FILL( 0x0000, 0x2000, 0xcb )
+	ROM_FILL( 0x0000, 0x2000, 0xcb )
 
 // all of these are half size :/
 #define LOAD_KANJI_ROMS \
