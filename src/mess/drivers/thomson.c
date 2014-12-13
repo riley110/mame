@@ -1114,6 +1114,7 @@ static MACHINE_CONFIG_DERIVED( mo5, to7 )
 	MCFG_DEVICE_REMOVE("to_flop_list")
 
 	MCFG_SOFTWARE_LIST_ADD("mo_cart_list","mo_cart")
+	MCFG_SOFTWARE_LIST_ADD("mo_cass_list","mo_cass")
 	MCFG_SOFTWARE_LIST_ADD("mo_flop_list","mo_flop")
 
 	/* internal ram */
@@ -2199,6 +2200,7 @@ static MACHINE_CONFIG_DERIVED( mo6, to7 )
 	MCFG_DEVICE_REMOVE("to_flop_list")
 
 	MCFG_SOFTWARE_LIST_ADD("mo_cart_list","mo_cart")
+	MCFG_SOFTWARE_LIST_ADD("mo_cass_list","mo_cass")
 	MCFG_SOFTWARE_LIST_ADD("mo_flop_list","mo_flop")
 MACHINE_CONFIG_END
 
@@ -2452,6 +2454,7 @@ static MACHINE_CONFIG_DERIVED( mo5nr, to7 )
 	MCFG_DEVICE_REMOVE("to_flop_list")
 
 	MCFG_SOFTWARE_LIST_ADD("mo_cart_list","mo_cart")
+	MCFG_SOFTWARE_LIST_ADD("mo_cass_list","mo_cass")
 	MCFG_SOFTWARE_LIST_ADD("mo_flop_list","mo_flop")
 MACHINE_CONFIG_END
 
