@@ -187,6 +187,18 @@
 		</part>
 	</software>
 
+	<software name="cartcielb" cloneof="cartciel">
+		<description>Carte du Ciel (Alt 2)</description>
+		<year>1983</year>
+		<publisher>Answare</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="29208">
+				<rom name="carte du ciel (1983)(answare)(fr)(m3)[a2].k7" size="29208" crc="ee0a486e" sha1="0aeb4b8a601d3ecd210ee3d15da7779bb6d5db21" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="cartoonm">
 		<description>Cartoon Maker</description>
 		<year>1985</year>
@@ -1172,6 +1184,25 @@
 		</part>
 	</software>
 
+	<software name="cmcomp">
+		<description>Mathematiques CM - Mesures et Grandeurs</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="40411">
+				<rom name="mathematiques cm - mesures et grandeurs (1985)(vifi-nathan)(fr)(tape 1 of 2)(aires et volumes &amp; linearite).k7" size="40411" crc="9cf7ad67" sha1="886f24b2368c2671a4ed34795d917322415c1ff2" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="32761">
+				<rom name="mathematiques cm - mesures et grandeurs (1985)(vifi-nathan)(fr)(tape 2 of 2)(mesure du temp &amp; changement d'unites).k7" size="32761" crc="a5bd3b7b" sha1="76434b4bd776f90fe4e45f72ea54a60861e360d8" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="cm1cmp1">
 		<description>Mathematiques CM1 - Division &amp; Addition-Soustraction Express</description>
 		<year>1985</year>
@@ -1493,6 +1524,3491 @@
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="32678">
 				<rom name="theogiciels loisir 1 (1984)(micropresse)(fr)[b].k7" size="32678" crc="6cfc358c" sha1="c6220783d7f83905b5b21b1c1390e7f03463e4ac" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Educational -->
+
+	<software name="agd">
+		<description>A.G.D.</description>
+		<year>1984</year>
+		<publisher>Gameco</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="8910">
+				<rom name="a.g.d. (1984)(gameco)(fr).k7" size="8910" crc="18d3da95" sha1="7f6e255e1056f1644bafefbaedb85e022786e431" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="agda" cloneof="agd">
+		<description>A.G.D. (Alt)</description>
+		<year>1984</year>
+		<publisher>Gameco</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="8910">
+				<rom name="a.g.d. (1984)(gameco)(fr)[a].k7" size="8910" crc="20868f22" sha1="f72725b259a5f32eb8460c1426368e27b8ba12a7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ampereme">
+		<description>Amperemetre</description>
+		<year>198?</year>
+		<publisher>CNDP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="12896">
+				<rom name="amperemetre (198x)(cndp)(fr).k7" size="12896" crc="8208c043" sha1="69c6b9c50d9808424478947774463e3e41267b8e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="anglais1">
+		<description>Anglais - Volume 1 - Tests de Niveau</description>
+		<year>1984</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="32580">
+				<rom name="anglais - volume 1 - tests de niveau (1984)(vifi-nathan)(fr)(tape 1 of 2).k7" size="32580" crc="a312956c" sha1="7836a135e206643176685a0d8644535538a41bcc" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="31829">
+				<rom name="anglais - volume 1 - tests de niveau (1984)(vifi-nathan)(fr)(tape 2 of 2).k7" size="31829" crc="3ff67241" sha1="b7d1d8c0663236002363412fce424d44208752e0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="anglais2">
+		<description>Anglais - Volume 2 - Le Systeme Verbal 1</description>
+		<year>1984</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="74268">
+				<rom name="anglais - volume 2 - le systeme verbal 1 (1984)(vifi-nathan)(fr)(tape 1 of 2).k7" size="74268" crc="2484eb35" sha1="4907275480408ab9d7783f51b06a48207bcf34a6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="52139">
+				<rom name="anglais - volume 2 - le systeme verbal 1 (1984)(vifi-nathan)(fr)(tape 2 of 2).k7" size="52139" crc="94c82bb1" sha1="b4b1626700189fc0c917e05be2dd809a7368f959" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="anglais3">
+		<description>Anglais - Volume 3 - Le Systeme Verbal 2</description>
+		<year>1984</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="52134">
+				<rom name="anglais - volume 3 - le systeme verbal 2 (1984)(vifi-nathan)(fr)(tape 1 of 2).k7" size="52134" crc="73fd8701" sha1="33fbd87468a7d3ce73c6f9194961dba9776f2551" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="63535">
+				<rom name="anglais - volume 3 - le systeme verbal 2 (1984)(vifi-nathan)(fr)(tape 2 of 2).k7" size="63535" crc="61c62d3a" sha1="0e26cf49f8ca1c7a7bd20809f18ae1fcfd8bcfd4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="anglais4">
+		<description>Anglais - Volume 4 - Le Groupe Nominal 1</description>
+		<year>1984</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="49475">
+				<rom name="anglais - volume 4 - le groupe nominal 1 (1984)(vifi-nathan)(fr)(tape 1 of 2).k7" size="49475" crc="b35dc59d" sha1="44fc6a01ef0d69eb36777736ca2ee989d3416696" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="51855">
+				<rom name="anglais - volume 4 - le groupe nominal 1 (1984)(vifi-nathan)(fr)(tape 2 of 2).k7" size="51855" crc="148c7215" sha1="435462aa8cd96a1f3e2f46f58ad60029a0775325" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="anglais5">
+		<description>Anglais - Volume 5 - Le Groupe Nominal 2</description>
+		<year>1984</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="46219">
+				<rom name="anglais - volume 5 - le groupe nominal 2 (1984)(vifi-nathan)(fr)(tape 1 of 2).k7" size="46219" crc="b7858639" sha1="9894f3ad9057917343f2d5157c2ae00691eec910" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="44498">
+				<rom name="anglais - volume 5 - le groupe nominal 2 (1984)(vifi-nathan)(fr)(tape 2 of 2).k7" size="44498" crc="b8598ba9" sha1="81b77a61823d3460360d5ffcc9a890e599eaa0b8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="apprecri">
+		<description>Apprends-moi a Ecrire</description>
+		<year>198?</year>
+		<publisher>Cedic/Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="26763">
+				<rom name="apprends moi a ecrire (198x)(cedic-nathan)(fr)(tape 1 of 2).k7" size="26763" crc="f6ca75ca" sha1="77303c558e7a601d93158a8ed0b5a73e106b058e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="28722">
+				<rom name="apprends moi a ecrire (198x)(cedic-nathan)(fr)(tape 2 of 2).k7" size="28722" crc="e7618641" sha1="be575aecf7146199e2fe187cddc04cffef32f446" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ardoise">
+		<description>Ardoise Magique</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="10006">
+				<rom name="ardoise magique (198x)(-)(fr).k7" size="10006" crc="956fcb98" sha1="aa05aee8d564f73c97965ef3031d00f281375314" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ardoisea" cloneof="ardoise">
+		<description>Ardoise Magique (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="10006">
+				<rom name="ardoise magique (198x)(-)(fr)[a].k7" size="10006" crc="93ea2c87" sha1="cae3c885b8d9a7cb8602ce5360af39b7557fb9af" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ascens">
+		<description>Ascens</description>
+		<year>1985</year>
+		<publisher>USTL - IREM</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="22793">
+				<rom name="ascens (1985-09-13)(ustl - irem)(fr).k7" size="22793" crc="069d4255" sha1="4b2be81db4cf87c21171536444df936dc9b835c4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="initbmo5">
+		<description>Auto-Initiation au Basic MO5</description>
+		<year>1984</year>
+		<publisher>TO Tek International</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="57753">
+				<rom name="auto-initiation au basic mo5 (1984)(to tek)(fr)(tape 1 of 2).k7" size="57753" crc="b1961b97" sha1="62c012ab95cbd405d2d674d958416b4e1ede6439" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="77125">
+				<rom name="auto-initiation au basic mo5 (1984)(to tek)(fr)(tape 2 of 2).k7" size="77125" crc="d52f806e" sha1="d5cc43545dcf14414005e7078984cb86bcc3a086" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="initbmo5a" cloneof="initbmo5">
+		<description>Auto-Initiation au Basic MO5 (Single Tape)</description>
+		<year>1984</year>
+		<publisher>TO Tek International</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="134878">
+				<rom name="auto-initiation au basic mo5 (1984)(to tek)(fr)[m single tape].k7" size="134878" crc="c196fee7" sha1="48bb180edd5537fb560eac930a46b847bb1e2eed" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="initbmo5b" cloneof="initbmo5">
+		<description>Auto-Initiation au Basic MO5 (Single Tape, Alt)</description>
+		<year>1984</year>
+		<publisher>TO Tek International</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="134878">
+				<rom name="auto-initiation au basic mo5 (1984)(to tek)(fr)[m2 single tape].k7" size="134878" crc="cbf7aa55" sha1="9acc12c2c54c75bd1c303d0dfde2b15dc98b7d7d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="initbmo5n" cloneof="initbmo5">
+		<description>Auto-Initiation au Basic MO5 - Version NanoReseau</description>
+		<year>1984</year>
+		<publisher>TO Tek International</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="165822">
+				<rom name="auto-initiation au basic mo5 - version nanoreseau (1984)(to tek)(fr).k7" size="165822" crc="30515b15" sha1="436ba645018cfce3e720ae33e76196e168953a82" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="initbmo5na" cloneof="initbmo5">
+		<description>Auto-Initiation au Basic MO5 - Version NanoReseau (Alt)</description>
+		<year>1984</year>
+		<publisher>TO Tek International</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="165822">
+				<rom name="auto-initiation au basic mo5 - version nanoreseau (1984)(to tek)(fr)[a].k7" size="165822" crc="f9352a2d" sha1="069e6a6819ff3c891538e1a4fe9cfc59708c2c8c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="initbmo5nb" cloneof="initbmo5">
+		<description>Auto-Initiation au Basic MO5 - Version NanoReseau (Alt 2)</description>
+		<year>1984</year>
+		<publisher>TO Tek International</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="165822">
+				<rom name="auto-initiation au basic mo5 - version nanoreseau (1984)(to tek)(fr)[a2].k7" size="165822" crc="9bbfe4db" sha1="256fbffac7282446a8eb2d60f153336abfce5da3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="baladins">
+		<description>Baladins</description>
+		<year>198?</year>
+		<publisher>CNDP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="13825">
+				<rom name="baladins (198x)(cndp)(fr).k7" size="13825" crc="9862f766" sha1="2dec8b788b329c0247a27e84638e0dbf0e922297" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="calcmnt1">
+		<description>Calcul Mental (CNDP)</description>
+		<year>1984</year>
+		<publisher>CNDP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="13168">
+				<rom name="calcul mental (1984)(cndp)(fr).k7" size="13168" crc="ae9ab28c" sha1="9306f2eef3a2b5484df82691f2e9a8241a455eb6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="calcmnt2">
+		<description>Calcul Mental (Loriciels)</description>
+		<year>1984</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="19978">
+				<rom name="calcul mental (1984-07)(loriciels)(fr).k7" size="19978" crc="d4bc25c9" sha1="f76d6c8feeb190dab44fe6398e67438fded8ed9c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="calcmnt2a" cloneof="calcmnt2">
+		<description>Calcul Mental (Loriciels, Alt))</description>
+		<year>1984</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="19978">
+				<rom name="calcul mental (1984-07)(loriciels)(fr)[a].k7" size="19978" crc="6dd827a3" sha1="f1882761aebb11b00edd0df287f08e6f61ac0670" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="calcrapi">
+		<description>Calcul Rapide</description>
+		<year>1984</year>
+		<publisher>No Man's Land</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="9667">
+				<rom name="calcul rapide (1984)(no man's land)(fr).k7" size="9667" crc="cc27835f" sha1="401d705f363bb8d75cac588bc1dd4b836dd17a52" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="calcnume">
+		<description>Calculs Numeriques</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="25040">
+				<rom name="calculs numeriques (1985)(vifi-nathan)(fr).k7" size="25040" crc="30f1a612" sha1="f7e6b4a6e960d3567de1673115e6c9473c0d6585" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="carremag">
+		<description>Carre Magique</description>
+		<year>198?</year>
+		<publisher>CNDP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="6766">
+				<rom name="carre magique (198x)(cndp)(fr).k7" size="6766" crc="e1bd12da" sha1="db77bf57eb968b00bf1c3cce4405be8eb4849bfb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="carteuro">
+		<description>Carte d'Europe</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="22824">
+				<rom name="carte d'europe (1985)(vifi-nathan)(fr).k7" size="22824" crc="2f93bfbd" sha1="49d4ffec325c8e72402b15c97f3c43118f90a579" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="carteuroa" cloneof="carteuro">
+		<description>Carte d'Europe (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="22824">
+				<rom name="carte d'europe (1985)(vifi-nathan)(fr)[a].k7" size="22824" crc="08876575" sha1="c702eba07c99f4a2e9b752d8727c31f456f180e8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cartefra">
+		<description>La Carte de France</description>
+		<year>1983</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="34179">
+				<rom name="carte de france, la (1983)(vifi-nathan)(fr).k7" size="34179" crc="f7fffe82" sha1="1111de7bb368bc59199f3e2354c67e863ea89cbc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cartefraa" cloneof="cartefra">
+		<description>La Carte de France (Alt)</description>
+		<year>1983</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="34179">
+				<rom name="carte de france, la (1983)(vifi-nathan)(fr)[a].k7" size="34179" crc="8fa0e9a9" sha1="2e4f00d2996091a371821686e903949bc6ebf5c3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cartefrab" cloneof="cartefra">
+		<description>La Carte de France (Alt 2)</description>
+		<year>1983</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="34179">
+				<rom name="carte de france, la (1983)(vifi-nathan)(fr)[a2].k7" size="34179" crc="ac6f5ad1" sha1="12ddc64c89f07cf244fcccb96cae724f185ed6da" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chifflet">
+		<description>Les Chiffres et les Lettres</description>
+		<year>198?</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="10647">
+				<rom name="chiffres et des lettres, des (198x)(vifi-nathan)(fr).k7" size="10647" crc="7f29764d" sha1="e9f0fe34904d86ef5b9f424783b4f6092b9fb405" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chiffleta" cloneof="chifflet">
+		<description>Les Chiffres et les Lettres (Alt)</description>
+		<year>198?</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="8951">
+				<rom name="chiffres et des lettres, des (198x)(vifi-nathan)(fr)[a].k7" size="8951" crc="75684270" sha1="a588b5013b0598460f074f7cd75eb797bbfe6747" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chiffletb" cloneof="chifflet">
+		<description>Les Chiffres et les Lettres (Alt 2)</description>
+		<year>198?</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="8951">
+				<rom name="chiffres et des lettres, des (198x)(vifi-nathan)(fr)[a2].k7" size="8951" crc="931965bd" sha1="df277e59c29d6bab5afa2eb0f15c432824c0f5ac" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cible">
+		<description>Cible</description>
+		<year>1984</year>
+		<publisher>CNDP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="10287">
+				<rom name="cible (1984-10-20)(cndp)(fr).k7" size="10287" crc="7d6246a0" sha1="f472074d4e36fe90d036b8aee5773a22d3aac917" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="comptero">
+		<description>Le Compte est Rond</description>
+		<year>1984</year>
+		<publisher>Hatier</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="17467">
+				<rom name="compte est rond, le (1984)(hatier)(fr)(m3).k7" size="17467" crc="e239e303" sha1="68505d4dc95bbd18f51e35bf86f07f05594fe7ce" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="compteroa" cloneof="comptero">
+		<description>Le Compte est Rond (Alt)</description>
+		<year>1984</year>
+		<publisher>Hatier</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="17467">
+				<rom name="compte est rond, le (1984)(hatier)(fr)(m3)[a].k7" size="17467" crc="97d1a12a" sha1="73acbd346d9890c11dec480a7cae924d8f45b117" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="compterob" cloneof="comptero">
+		<description>Le Compte est Rond (Alt 2)</description>
+		<year>1984</year>
+		<publisher>Hatier</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="17467">
+				<rom name="compte est rond, le (1984)(hatier)(fr)(m3)[a2].k7" size="17467" crc="bb810063" sha1="135b672c73c54004638bb4a3690b5b0b53e00972" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="concalg">
+		<description>Concours d'Algebre</description>
+		<year>198?</year>
+		<publisher>C. &amp; D. Missenard</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="20757">
+				<rom name="concours d'algebre (198x)(missenard, c. &amp; d.)(fr)(pd).k7" size="20757" crc="dfc92e55" sha1="d3d20b3ec4012746a3838402db2e50c747564b83" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="concgeom">
+		<description>Concours de Geometrie</description>
+		<year>198?</year>
+		<publisher>C. &amp; D. Missenard</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="22661">
+				<rom name="concours de geometrie (198x)(missenard, c. &amp; d.)(fr)(pd).k7" size="22661" crc="e5c01e63" sha1="725c68bfe61c69a7ee36cf573dbe3d3fe915bc50" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="conjugai">
+		<description>La Conjugaichouette</description>
+		<year>1984</year>
+		<publisher>Edil</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="57789">
+				<rom name="conjugaichouette, la (1984)(edil)(fr).k7" size="57789" crc="6f6157fd" sha1="05ef5b244bc553eedb85c66beb1ba6305ceb7a83" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="corpshum">
+		<description>Le Corps Humain</description>
+		<year>1985</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="64831">
+				<rom name="corps humain, le (1985)(infogrames)(fr).k7" size="64831" crc="d55feaed" sha1="388bef1d3e5b51a1351dfadf2f80d50c79214d13" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="corpshuma" cloneof="corpshum">
+		<description>Le Corps Humain (Alt)</description>
+		<year>1985</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="64831">
+				<rom name="corps humain, le (1985)(infogrames)(fr)[a].k7" size="64831" crc="afe3b3e8" sha1="0e2f2ac8c2d8637a15b8a7d1b84695360844f945" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="corpshumb" cloneof="corpshum">
+		<description>Le Corps Humain (Alt 2)</description>
+		<year>1985</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="64831">
+				<rom name="corps humain, le (1985)(infogrames)(fr)[a2].k7" size="64831" crc="85fd4d3c" sha1="60913fc8b76b72c4a8b12adddc7ce5e25b205874" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cubomagi">
+		<description>Cubomagique</description>
+		<year>1984</year>
+		<publisher>Hatier</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="12668">
+				<rom name="cubomagique (1984)(hatier)(fr).k7" size="12668" crc="59b956dd" sha1="4ed85707363dfe9e7bd6e09609f2ea3d0d8a4959" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cubomagia" cloneof="cubomagi">
+		<description>Cubomagique (Alt)</description>
+		<year>1984</year>
+		<publisher>Hatier</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="12668">
+				<rom name="cubomagique (1984)(hatier)(fr)[a].k7" size="12668" crc="04b70f94" sha1="3cbc83f0cca9afd47a34c04fab2c69ca83ef8f34" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cubomagib" cloneof="cubomagi">
+		<description>Cubomagique (Alt 2)</description>
+		<year>1984</year>
+		<publisher>Hatier</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="12668">
+				<rom name="cubomagique (1984)(hatier)(fr)[a2].k7" size="12668" crc="3c89b6a9" sha1="28091646af44b8cb24d637e7d79745bbf28d17bf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="defi">
+		<description>Defi</description>
+		<year>1984</year>
+		<publisher>CNDP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="6367">
+				<rom name="defi (1984-10-20)(cndp)(fr).k7" size="6367" crc="2359b8a1" sha1="9a20acf4e86b8e375d6a31097a9fe7fb4c3969af" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="devin">
+		<description>Devin</description>
+		<year>1984</year>
+		<publisher>CNDP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="7513">
+				<rom name="devin (1984-10-20)(cndp)(fr).k7" size="7513" crc="93a30388" sha1="3657aff0de0c08cd44185b35db93bb707d5a4a82" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sauterel">
+		<description>Dialogue avec une Sauterelle</description>
+		<year>1983</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="18068">
+				<rom name="dialogue avec une sauterelle (1983)(vifi-nathan)(fr).k7" size="18068" crc="b01f54cc" sha1="a0b05c2fbeda995ffe20c8058f2d0dc089dcebb6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="btscomm">
+		<description>Didact-English - BTS Communication</description>
+		<year>1987</year>
+		<publisher>Carraz Editions</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="43810">
+				<rom name="didact-english - bts communication (1987)(carraz editions)(fr)(en-fr).k7" size="43810" crc="94909c92" sha1="e0164444846fc869360f5bc143d2de396ff50d8c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="btscomma" cloneof="btscomm">
+		<description>Didact-English - BTS Communication (Alt)</description>
+		<year>1987</year>
+		<publisher>Carraz Editions</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="43702">
+				<rom name="didact-english - bts communication (1987)(carraz editions)(fr)(en-fr)[a].k7" size="43702" crc="03d99146" sha1="44fd162726a6725f4814f1d613f822c4f57db996" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="btselect">
+		<description>Didact-English - BTS Electronique</description>
+		<year>1987</year>
+		<publisher>Carraz Editions</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="43702">
+				<rom name="didact-english - bts electronique (1987)(carraz editions)(fr)(en-fr).k7" size="43702" crc="8608df7a" sha1="d33e3aaf2b42cc3240ac4ba2abae2c063c95ad08" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="btselecta" cloneof="btselect">
+		<description>Didact-English - BTS Electronique (Alt)</description>
+		<year>1987</year>
+		<publisher>Carraz Editions</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="43810">
+				<rom name="didact-english - bts electronique (1987)(carraz editions)(fr)(en-fr)[a].k7" size="43810" crc="13627d76" sha1="491be2709eb96b7754e157ac59411876ddd4031f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="didact4">
+		<description>Didactimath 4eme</description>
+		<year>1985</year>
+		<publisher>Edil</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="65578">
+				<rom name="didactimath 4eme (1985)(edil)(fr).k7" size="65578" crc="f29a7944" sha1="f7f185d09f367a27c2d3bbdf12686200b809e9f8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="didact4a" cloneof="didact4">
+		<description>Didactimath 4eme (Alt)</description>
+		<year>1985</year>
+		<publisher>Edil</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="66134">
+				<rom name="didactimath 4eme (1985)(edil)(fr)[a].k7" size="66134" crc="0c0c48f7" sha1="5e3655b1be12ff1f1b80d5dd521f6e83b19f0137" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="didact4b" cloneof="didact4">
+		<description>Didactimath 4eme (Alt 2)</description>
+		<year>1985</year>
+		<publisher>Edil</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="65578">
+				<rom name="didactimath 4eme (1985)(edil)(fr)[a2].k7" size="65578" crc="196e6c91" sha1="77a0b8fd41bcf1c54aee91876c2bf3e374290c00" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="didact5">
+		<description>Didactimath 5eme</description>
+		<year>1985</year>
+		<publisher>Edil</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="54495">
+				<rom name="didactimath 5eme (1985)(edil)(fr).k7" size="54495" crc="7ef04078" sha1="b877bdf0c2a95a9471159bd3539aa3fee47e951f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="divisibl">
+		<description>Divisibilite</description>
+		<year>198?</year>
+		<publisher>CDDP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="5869">
+				<rom name="divisibilite (198x)(cddp)(fr).k7" size="5869" crc="d63d11e9" sha1="9e3a8dca6dee8e012a3e4d69a6b5cc08913d3739" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="electric">
+		<description>Electricite</description>
+		<year>1984</year>
+		<publisher>CNDP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="32798">
+				<rom name="electricite (1984)(cndp)(fr).k7" size="32798" crc="d87adb2c" sha1="167da598a88eb62f4845745923eb505ff52966ea" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="empsubjo">
+		<description>Emploi du Subjonctif</description>
+		<year>198?</year>
+		<publisher>CNDP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="3292">
+				<rom name="emploi du subjonctif (198x)(cndp)(fr).k7" size="3292" crc="19474090" sha1="9fd6f9b913d7150c5bcbd19613afcdc133c7509a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cycliste">
+		<description>En Allant a l'Ecole Cycliste</description>
+		<year>1985</year>
+		<publisher>Cedic</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="40484">
+				<rom name="en allant a l'ecole cycliste (1985)(cedic)(fr)(tape 1 of 2).k7" size="40484" crc="05418b66" sha1="8f0973974a8e555dc875255d0acd609e93272199" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="15824">
+				<rom name="en allant a l'ecole cycliste (1985)(cedic)(fr)(tape 2 of 2).k7" size="15824" crc="d40ce57a" sha1="3f0d0ea4aeb057edbd7a2cadd8e1e8cb5fd8923b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ensemblz">
+		<description>Ensemble Z</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="25071">
+				<rom name="ensemble z (198x)(-)(fr).k7" size="25071" crc="0f9034b6" sha1="7160dff3cb1a4e1520f7d30aa55b00df4cfefb0e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="entrcalc">
+		<description>Entrainement au Calcul</description>
+		<year>198?</year>
+		<publisher>CNDP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="4504">
+				<rom name="entrainement au calcul (198x)(cndp)(fr)(tape 01 of 10).k7" size="4504" crc="5f55bb39" sha1="36d796e362d4d9463bcef131be5eecbbd37ce4ed" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="9354">
+				<rom name="entrainement au calcul (198x)(cndp)(fr)(tape 02 of 10).k7" size="9354" crc="7147efb0" sha1="6d0a5ff113c8e61c04861dc95b13be18af5a21a5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="mo_cass">
+		<feature name="part_id" value="Tape 3"/>
+			<dataarea name="cass" size="10457">
+				<rom name="entrainement au calcul (198x)(cndp)(fr)(tape 03 of 10).k7" size="10457" crc="69f37ab8" sha1="e06b628b84246b14fce97906bd7ad0604f4b42dd" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="mo_cass">
+		<feature name="part_id" value="Tape 4"/>
+			<dataarea name="cass" size="11107">
+				<rom name="entrainement au calcul (198x)(cndp)(fr)(tape 04 of 10).k7" size="11107" crc="832eb0a4" sha1="22c4c8d55d4434d51cbb3908a812020c0dec4286" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="mo_cass">
+		<feature name="part_id" value="Tape 5"/>
+			<dataarea name="cass" size="10132">
+				<rom name="entrainement au calcul (198x)(cndp)(fr)(tape 05 of 10).k7" size="10132" crc="7d195071" sha1="e91852d736ecb29ed367b294886bbaf9de0a60e9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="mo_cass">
+		<feature name="part_id" value="Tape 6"/>
+			<dataarea name="cass" size="15077">
+				<rom name="entrainement au calcul (198x)(cndp)(fr)(tape 06 of 10).k7" size="15077" crc="f804e5a0" sha1="0faaa50fa4e8d46d1dd0044fef5ededdd4f7994f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass7" interface="mo_cass">
+		<feature name="part_id" value="Tape 7"/>
+			<dataarea name="cass" size="12278">
+				<rom name="entrainement au calcul (198x)(cndp)(fr)(tape 07 of 10).k7" size="12278" crc="de91f730" sha1="64f8209154cacbdae8bad463c4de3a87903cb273" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass8" interface="mo_cass">
+		<feature name="part_id" value="Tape 8"/>
+			<dataarea name="cass" size="21252">
+				<rom name="entrainement au calcul (198x)(cndp)(fr)(tape 08 of 10).k7" size="21252" crc="0c82adcf" sha1="80bc1ee10a4d8ea360f21ced700355e3b0ef3d9c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass9" interface="mo_cass">
+		<feature name="part_id" value="Tape 9"/>
+			<dataarea name="cass" size="11108">
+				<rom name="entrainement au calcul (198x)(cndp)(fr)(tape 09 of 10).k7" size="11108" crc="166e6aa6" sha1="c8df2aa62e268306b4fd6f50f17b778ce8986637" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass10" interface="mo_cass">
+		<feature name="part_id" value="Tape 10"/>
+			<dataarea name="cass" size="17152">
+				<rom name="entrainement au calcul (198x)(cndp)(fr)(tape 10 of 10).k7" size="17152" crc="c01e10f5" sha1="c3bf70ad9f0acbc77eb84e4208eb8ff321fdf922" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="equation">
+		<description>Equations</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="25400">
+				<rom name="equations (198x)(-)(fr).k7" size="25400" crc="2e0bd6c0" sha1="6846317f2beb81ded4c364f139a176e0d9f26bc4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="equdroit">
+		<description>Equations de Droites</description>
+		<year>1986</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="37661">
+				<rom name="equations de droites (1986)(fil)(fr).k7" size="37661" crc="c90d0234" sha1="a8e5a0a8c8357d5f84f5619d37a9b8742fcd9cbf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="equichim">
+		<description>Equichim</description>
+		<year>198?</year>
+		<publisher>CNDP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="26075">
+				<rom name="equichim (198x)(cndp)(fr).k7" size="26075" crc="d594d2af" sha1="6137467f55eadc03c33c99495be15877966c78a7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="escinfin">
+		<description>Escalier pour l'Infini</description>
+		<year>198?</year>
+		<publisher>CNDP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="16989">
+				<rom name="escalier pour l'infini (198x)(cndp)(fr).k7" size="16989" crc="5c199b72" sha1="cc481b38a145fbe1520b0ed540855de6ecb2665a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="espagnol">
+		<description>Espagnol</description>
+		<year>198?</year>
+		<publisher>Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="145944">
+				<rom name="espagnol (198x)(nathan)(fr)(tape 1 of 3).k7" size="145944" crc="4736bc44" sha1="83c0c35421ec12e40e2289be367ae8c9c219c47d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="139023">
+				<rom name="espagnol (198x)(nathan)(fr)(tape 2 of 3).k7" size="139023" crc="81b71047" sha1="9101864322d9d4c455e89a4eb0d6cefae0b6908a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="mo_cass">
+		<feature name="part_id" value="Tape 3"/>
+			<dataarea name="cass" size="96159">
+				<rom name="espagnol (198x)(nathan)(fr)(tape 3 of 3).k7" size="96159" crc="0cc39c4e" sha1="b5f0f3410aa12110c809afa4fb6970a765d6e926" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="espagnola" cloneof="espagnol">
+		<description>Espagnol (Single Tape)</description>
+		<year>198?</year>
+		<publisher>Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="646500">
+				<rom name="espagnol (198x)(nathan)(fr)[m single tape].k7" size="646500" crc="aac5f591" sha1="29dedaca5a5d594a58e64a2e4871f20ef7b43d84" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="espagnolb" cloneof="espagnol">
+		<description>Espagnol (Single Tape, Alt)</description>
+		<year>198?</year>
+		<publisher>Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="646500">
+				<rom name="espagnol (198x)(nathan)(fr)[m single tape][a].k7" size="646500" crc="8d0fdca2" sha1="53c3e6c56fff5e6d0fb59a02f8f6019eb45dc016" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="etudevit">
+		<description>Etude de la Vitesse Instantanee</description>
+		<year>1984</year>
+		<publisher>CNDP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="16689">
+				<rom name="etude de la vitesse instantanee (1984)(cndp)(fr).k7" size="16689" crc="8de38047" sha1="23fd24e6d64d8bd87c36c8f2d07e23359b5db872" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fairepnt">
+		<description>Faire le Point Bac Maths (v1.2)</description>
+		<year>1985</year>
+		<publisher>Ediciel Hachette</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="61779">
+				<rom name="faire le point bac maths v1.2 (1985)(ediciel hachette)(fr).k7" size="61779" crc="a683a428" sha1="57b46b8b684aa5a492ec550a57ce2921781b2f63" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fairepnta" cloneof="fairepnt">
+		<description>Faire le Point Bac Maths (v1.1)</description>
+		<year>1985</year>
+		<publisher>Ediciel Hachette</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="41398">
+				<rom name="faire le point bac maths v1.1 (1985)(ediciel hachette)(fr).k7" size="41398" crc="5ef7e0d5" sha1="0f0f5c8ef5a55396946757489fed807d4be3bb25" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="feuvert">
+		<description>Feu Vert</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="14640">
+				<rom name="feu vert (1985)(vifi-nathan)(fr).k7" size="14640" crc="705d8a4d" sha1="c1eece8eca1d4cb272eb3b4a47dcf69bebe38d0b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fichanim">
+		<description>Fichier des Animaux</description>
+		<year>198?</year>
+		<publisher>CNDP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="3980">
+				<rom name="fichier des animaux (198x)(cndp)(fr).k7" size="3980" crc="a5ed9f3e" sha1="73673f32151b7436580931ff9d9794ea900b3713" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="forgetmn">
+		<description>Forget Me Not</description>
+		<year>1985</year>
+		<publisher>Ediciel</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="15710">
+				<rom name="forget me not (1985)(ediciel)(fr)(en-fr)(tape 1 of 2).k7" size="15710" crc="86b2b712" sha1="283d6317ecd1958a610c137ad4bea97092f1c1a6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="12492">
+				<rom name="forget me not (1985)(ediciel)(fr)(en-fr)(tape 2 of 2).k7" size="12492" crc="30034610" sha1="70fb53b98020a0d0986f9149523841745ac2f19b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ceaccpar">
+		<description>Francais CE - Grammaire et Orthographe 1 - Accord Parfait</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="51010">
+				<rom name="francais ce - grammaire et orthographe 1 - accord parfait (1985)(vifi-nathan)(fr).k7" size="51010" crc="7fe3aad7" sha1="a4d98607deb58982485c6208032ca62425ecdbfb" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ceaccpara" cloneof="ceaccpar">
+		<description>Francais CE - Grammaire et Orthographe 1 - Accord Parfait (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="51010">
+				<rom name="francais ce - grammaire et orthographe 1 - accord parfait (1985)(vifi-nathan)(fr)[a].k7" size="51010" crc="3e29979a" sha1="3d7315fb45162ecba898792d0923a70d21e9a466" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cemotcrs">
+		<description>Francais CE - Grammaire et Orthographe 1 - Mot Croises-Images</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="36042">
+				<rom name="francais ce - grammaire et orthographe 1 - mot croises-images (1985)(vifi-nathan).k7" size="36042" crc="fa6f9cbc" sha1="b4cf11c9ffadf72b43fc65105a9725d0a4dd27f4" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cemotcrsa" cloneof="cemotcrs">
+		<description>Francais CE - Grammaire et Orthographe 1 - Mot Croises-Images (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="36042">
+				<rom name="francais ce - grammaire et orthographe 1 - mot croises-images (1985)(vifi-nathan)[a].k7" size="36042" crc="4862c190" sha1="fb28dda697e4032c09d897eb0be93b58afbebfe2" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cecnjclc">
+		<description>Francais CE - Grammaire et Orthographe 3 - Conjucalc</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="35710">
+				<rom name="francais ce - grammaire et orthographe 3 - conjucalc (1985)(vifi-nathan)(fr).k7" size="35710" crc="0e0061df" sha1="8f7e871d3d87b491f109a62c9f2bd6223a86e3dd" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cecnjclca" cloneof="cecnjclc">
+		<description>Francais CE - Grammaire et Orthographe 3 - Conjucalc (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="35710">
+				<rom name="francais ce - grammaire et orthographe 3 - conjucalc (1985)(vifi-nathan)(fr)[a].k7" size="35710" crc="5326b62c" sha1="48b0c68546001ebbcf5ad9b08e3e1b61e05fbcb9" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cegraphx">
+		<description>Francais CE - Grammaire et Orthographe 3 - Graphix</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="37812">
+				<rom name="francais ce - grammaire et orthographe 3 - graphix (1985)(vifi-nathan)(fr).k7" size="37812" crc="c3d2e2ee" sha1="c3f25c0412958857b91411e444df7e82c85764e0" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cegraphxa" cloneof="cegraphx">
+		<description>Francais CE - Grammaire et Orthographe 3 - Graphix (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="37812">
+				<rom name="francais ce - grammaire et orthographe 3 - graphix (1985)(vifi-nathan)(fr)[a].k7" size="37812" crc="d4e95bfa" sha1="a093de95aba973781081e2fcc50c0417af79d8be" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ceaccord">
+		<description>Francais CE - Grammaire et Orthographe 4 - Accord, D'Accord!</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="44408">
+				<rom name="francais ce - grammaire et orthographe 4 - accord, d'accord! (1985)(vifi-nathan)(fr).k7" size="44408" crc="dc7ffcb6" sha1="affe06b34bc7e0c2d7bce8de28fe3c2c168affae" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ceaccorda" cloneof="ceaccord">
+		<description>Francais CE - Grammaire et Orthographe 4 - Accord, D'Accord! (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="44408">
+				<rom name="francais ce - grammaire et orthographe 4 - accord, d'accord! (1985)(vifi-nathan)(fr)[a].k7" size="44408" crc="9a40841a" sha1="8d535ead9d7f2e6dc2ea218d250095f3ac431f15" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cebourse">
+		<description>Francais CE - Grammaire et Orthographe 4 - Bourse aux Voyelles</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="21534">
+				<rom name="francais ce - grammaire et orthographe 4 - bourse aux voyelles (1985)(vifi-nathan)(fr).k7" size="21534" crc="b06b3273" sha1="8f29e8f779b58f54993de3538d422884d388b4c6" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ceboursea" cloneof="cebourse">
+		<description>Francais CE - Grammaire et Orthographe 4 - Bourse aux Voyelles (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="21534">
+				<rom name="francais ce - grammaire et orthographe 4 - bourse aux voyelles (1985)(vifi-nathan)(fr)[a].k7" size="21534" crc="3fb292fe" sha1="d178730a348f0a72cf6c29fb16b3429a4ff0ec93" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cecmatel">
+		<description>Francais CE-CM - Aide a l'Orthographe - Atelier</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="21541">
+				<rom name="francais ce-cm - aide a l'orthographe - atelier (1985)(vifi-nathan)(fr).k7" size="21541" crc="831103a5" sha1="61ff3534a110f7608cc73751e45b51d590b1b3de" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cecmatela" cloneof="cecmatel">
+		<description>Francais CE-CM - Aide a l'Orthographe - Atelier (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="21541">
+				<rom name="francais ce-cm - aide a l'orthographe - atelier (1985)(vifi-nathan)(fr)[a].k7" size="21541" crc="fb99998a" sha1="ebb67973c107c569a31bac7e31e4fc23364990e4" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cecmdevi">
+		<description>Francais CE-CM - Aide a l'Orthographe - Deviner</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="38532">
+				<rom name="francais ce-cm - aide a l'orthographe - deviner (1985)(vifi-nathan)(fr).k7" size="38532" crc="3e22d589" sha1="dbce12b1d76e2769dff065403c2a65005f0847c1" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cecmdevia" cloneof="cecmdevi">
+		<description>Francais CE-CM - Aide a l'Orthographe - Deviner (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="38532">
+				<rom name="francais ce-cm - aide a l'orthographe - deviner (1985)(vifi-nathan)(fr)[a].k7" size="38532" crc="f1b96b74" sha1="10b1593d07d58eaafad584b2972b4ec9caa3c6f6" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cecminva">
+		<description>Francais CE-CM - Aide a l'Orthographe - Invasion</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="23023">
+				<rom name="francais ce-cm - aide a l'orthographe - invasion (1985)(vifi-nathan)(fr).k7" size="23023" crc="3037704f" sha1="dc9a83872cc1565391903ba0368fe13d8a4287f6" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cecminvaa" cloneof="cecminva">
+		<description>Francais CE-CM - Aide a l'Orthographe - Invasion (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="23023">
+				<rom name="francais ce-cm - aide a l'orthographe - invasion (1985)(vifi-nathan)(fr)[a].k7" size="23023" crc="e154aab5" sha1="66857d4bb89211e03db963913b8b6d741ba4c99f" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cecmponc">
+		<description>Francais CE-CM - Aide a l'Orthographe - Ponctuation</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="26113">
+				<rom name="francais ce-cm - aide a l'orthographe - ponctuation (1985)(vifi-nathan)(fr).k7" size="26113" crc="daae6a2c" sha1="2a0739c35dfce259cb2096fe0861e61f6c6df772" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cecmponca" cloneof="cecmponc">
+		<description>Francais CE-CM - Aide a l'Orthographe - Ponctuation (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="26113">
+				<rom name="francais ce-cm - aide a l'orthographe - ponctuation (1985)(vifi-nathan)(fr)[a].k7" size="26113" crc="0eff2492" sha1="cb7ddf62e595fab4b0569c44e6f05b3a85d3c00c" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ce1conju">
+		<description>Francais CE1 - Grammaire et Orthographe - Conjugaison</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="37191">
+				<rom name="francais ce1 - grammaire et orthographe - conjugaison (1985)(vifi-nathan)(fr).k7" size="37191" crc="b95dc84f" sha1="91ca1b69f362f7c783c44f221c77fadfa6114428" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ce1conjua" cloneof="ce1conju">
+		<description>Francais CE1 - Grammaire et Orthographe - Conjugaison (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="37191">
+				<rom name="francais ce1 - grammaire et orthographe - conjugaison (1985)(vifi-nathan)(fr)[a].k7" size="37191" crc="e1ca9ef2" sha1="a5ec01e109adf77219f2011a91fa308365ee3520" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ce1devin">
+		<description>Francais CE1 - Grammaire et Orthographe - Devine</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="23403">
+				<rom name="francais ce1 - grammaire et orthographe - devine (1985)(vifi-nathan)(fr).k7" size="23403" crc="baa9e78b" sha1="7bad5f1f2be2bd9dc5646970f959f60593c2e0f9" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ce1devina" cloneof="ce1devin">
+		<description>Francais CE1 - Grammaire et Orthographe - Devine (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="23403">
+				<rom name="francais ce1 - grammaire et orthographe - devine (1985)(vifi-nathan)(fr)[a].k7" size="23403" crc="7028b303" sha1="c09b9fba711653b083cddbeedba1a32615d7043f" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmchenil">
+		<description>Francais CM - Grammaire et Vocabulaire 1 - Chenille Savante</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="32612">
+				<rom name="francais cm - grammaire et vocabulaire 1 - chenille savante (1985)(vifi-nathan)(fr).k7" size="32612" crc="576c619b" sha1="8be1062568a2f197217d2ebb8abb848390438811" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmchenila" cloneof="cmchenil">
+		<description>Francais CM - Grammaire et Vocabulaire 1 - Chenille Savante (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="32612">
+				<rom name="francais cm - grammaire et vocabulaire 1 - chenille savante (1985)(vifi-nathan)(fr)[a].k7" size="32612" crc="63a37dc8" sha1="2b5de1a9998290327308c9088e3982fc0b7d9df9" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmconsti">
+		<description>Francais CM - Grammaire et Vocabulaire 1 - La Phrase et ses Constituants</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="45314">
+				<rom name="francais cm - grammaire et vocabulaire 1 - la phrase et ses constituants (1985)(vifi-nathan)(fr).k7" size="45314" crc="947f23f1" sha1="0c7f66431bcd4e667be0ecf185f1e5e949bd21da" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmconstia" cloneof="cmconsti">
+		<description>Francais CM - Grammaire et Vocabulaire 1 - La Phrase et ses Constituants (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="45314">
+				<rom name="francais cm - grammaire et vocabulaire 1 - la phrase et ses constituants (1985)(vifi-nathan)(fr)[a].k7" size="45314" crc="57558954" sha1="1bb2da442e6f49256321132086693b5c4bd9ed78" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmclasse">
+		<description>Francais CM - Grammaire et Vocabulaire 2 - Classement Alphabetique</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="25801">
+				<rom name="francais cm - grammaire et vocabulaire 2 - classement alphabetique (1985)(vifi-nathan)(fr).k7" size="25801" crc="17b338cc" sha1="6a8fcc965b64644730d3ab020835c4f12a0d6eee" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmclassea" cloneof="cmclasse">
+		<description>Francais CM - Grammaire et Vocabulaire 2 - Classement Alphabetique (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="25801">
+				<rom name="francais cm - grammaire et vocabulaire 2 - classement alphabetique (1985)(vifi-nathan)(fr)[a].k7" size="25801" crc="5b3a9f04" sha1="03625491fd01bd83d978d995ee922cd6414c83fb" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmpronom">
+		<description>Francais CM - Grammaire et Vocabulaire 2 - Pronoms</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="35571">
+				<rom name="francais cm - grammaire et vocabulaire 2 - pronoms (1985)(vifi-nathan)(fr).k7" size="35571" crc="a05dbf35" sha1="af673a4399fffe21ab00ca17a1c133637066a8bc" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmpronoma" cloneof="cmpronom">
+		<description>Francais CM - Grammaire et Vocabulaire 2 - Pronoms (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="35571">
+				<rom name="francais cm - grammaire et vocabulaire 2 - pronoms (1985)(vifi-nathan)(fr)[a].k7" size="35571" crc="64c8c004" sha1="daf91640be5e5093071e25a530511269c42b4e66" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmdemimo">
+		<description>Francais CM - Vocabulaire et Orthographe - A Demi Mot</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="25082">
+				<rom name="francais cm - vocabulaire et orthographe - a demi mot (1985)(vifi-nathan)(fr).k7" size="25082" crc="fe3e42b8" sha1="cfdfae72561e81a814872e2050854bae380e0bce" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmdemimoa" cloneof="cmdemimo">
+		<description>Francais CM - Vocabulaire et Orthographe - A Demi Mot (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="25069">
+				<rom name="francais cm - vocabulaire et orthographe - a demi mot (1985)(vifi-nathan)(fr)[a].k7" size="25069" crc="89a28d2b" sha1="fb8670f9127c090c0b51df4812cb59f1f832b853" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmdemimob" cloneof="cmdemimo">
+		<description>Francais CM - Vocabulaire et Orthographe - A Demi Mot (Alt 2)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="25069">
+				<rom name="francais cm - vocabulaire et orthographe - a demi mot (1985)(vifi-nathan)(fr)[a2].k7" size="25069" crc="63911d1a" sha1="3a518ad376a968276813ea9d88f8289f49af4ddd" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmapi">
+		<description>Francais CM - Vocabulaire et Orthographe 1 - A.P.I.</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="42796">
+				<rom name="francais cm - vocabulaire et orthographe 1 - a.p.i. (1985)(vifi-nathan)(fr).k7" size="42796" crc="74afe34b" sha1="d54d3118b7fa49aa560f5607670eba8aa7061416" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmapia" cloneof="cmapi">
+		<description>Francais CM - Vocabulaire et Orthographe 1 - A.P.I. (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="42796">
+				<rom name="francais cm - vocabulaire et orthographe 1 - a.p.i. (1985)(vifi-nathan)(fr)[a].k7" size="42796" crc="fccf946a" sha1="4a30d38fd14661aa2c560d8a5c95e7a18030ad03" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cm26memo">
+		<description>Francais CM2-6eme - Vocabulaire et Orthographe - Memotex</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="25821">
+				<rom name="francais cm2-6eme - vocabulaire et orthographe - memotex (1985)(vifi-nathan)(fr).k7" size="25821" crc="f3004420" sha1="dc5e2094a697afc27f194e16d9e58e5668c0e756" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cm26memoa" cloneof="cm26memo">
+		<description>Francais CM2-6eme - Vocabulaire et Orthographe - Memotex (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="25821">
+				<rom name="francais cm2-6eme - vocabulaire et orthographe - memotex (1985)(vifi-nathan)(fr)[a].k7" size="25821" crc="6d6929a3" sha1="7cc2706f1e568a040d7f02b6028117898e623ee9" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cm26syno">
+		<description>Francais CM2-6eme - Vocabulaire et Orthographe - Synonymes</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="36064">
+				<rom name="francais cm2-6eme - vocabulaire et orthographe - synonymes (1985)(vifi-nathan)(fr).k7" size="36064" crc="d28941fe" sha1="27294f972cdffa838093da7ce81d961870a2c34c" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cm26synoa" cloneof="cm26syno">
+		<description>Francais CM2-6eme - Vocabulaire et Orthographe - Synonymes (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="36064">
+				<rom name="francais cm2-6eme - vocabulaire et orthographe - synonymes (1985)(vifi-nathan)(fr)[a].k7" size="36064" crc="7fe2c0d8" sha1="16752d3c6e001aa35fc9cc0033e7cb29757d50bc" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpfamile">
+		<description>Francais CP - Aide a la Lecture - Famille</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="23733">
+				<rom name="francais cp - aide a la lecture - famille (1985)(vifi-nathan)(fr).k7" size="23733" crc="addeb7b0" sha1="c38899e5c425f611bfb6d4097d8fda23ee9b3171" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpfamilea" cloneof="cpfamile">
+		<description>Francais CP - Aide a la Lecture - Famille (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="23733">
+				<rom name="francais cp - aide a la lecture - famille (1985)(vifi-nathan)(fr)[b].k7" size="23733" crc="b5875730" sha1="967bb6a26a45567b132fcbfdb94117dd6b198e7e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpfamileb" cloneof="cpfamile">
+		<description>Francais CP - Aide a la Lecture - Famille (No Loader Screen)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="16509">
+				<rom name="francais cp - aide a la lecture - famille (1985)(vifi-nathan)(fr)[m title screen].k7" size="16509" crc="1c412ad7" sha1="12238763c947966f973ced9e44e43c07b7d775aa" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cplectur">
+		<description>Francais CP - Aide a la Lecture - Lecture</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="35942">
+				<rom name="francais cp - aide a la lecture - lecture (1985)(vifi-nathan)(fr).k7" size="35942" crc="4e67bbd3" sha1="d851d4ab00c95973e05cc6c4b3c724b262c4439a" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cplectura" cloneof="cplectur">
+		<description>Francais CP - Aide a la Lecture - Lecture (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="35942">
+				<rom name="francais cp - aide a la lecture - lecture (1985)(vifi-nathan)(fr)[a].k7" size="35942" crc="0a0678d2" sha1="fd7ccca8b0393548d37e20b31698374d33806bd2" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cploto">
+		<description>Francais CP - Aide a la Lecture 2 - Loto</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="38621">
+				<rom name="francais cp - aide a la lecture 2 - loto (1985)(vifi-nathan)(fr).k7" size="38621" crc="7f59ee17" sha1="98fffee48b92980eecbd0672904483db6dec32b4" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cplotoa" cloneof="cploto">
+		<description>Francais CP - Aide a la Lecture 2 - Loto (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="38621">
+				<rom name="francais cp - aide a la lecture 2 - loto (1985)(vifi-nathan)(fr)[a].k7" size="38621" crc="063a1b26" sha1="dda94a4273a2df59072502e0dae058a016f70d59" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpmemoje">
+		<description>Francais CP - Aide a la Lecture 2 - Memo-Jeu</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="38006">
+				<rom name="francais cp - aide a la lecture 2 - memo-jeu (1985)(vifi-nathan)(fr).k7" size="38006" crc="c2379b74" sha1="8cab874f7a5c1622969e036fa2318c2b3cc03951" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpmemojea" cloneof="cpmemoje">
+		<description>Francais CP - Aide a la Lecture 2 - Memo-Jeu (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="38006">
+				<rom name="francais cp - aide a la lecture 2 - memo-jeu (1985)(vifi-nathan)(fr)[a].k7" size="38006" crc="2c5b66b0" sha1="03a3466a68d0cdf614991c7fd53a43c83565a0de" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpcealer">
+		<description>Francais CP-CE - Aide a la Lecture - Alerte</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="39363">
+				<rom name="francais cp-ce - aide a la lecture - alerte (1985)(vifi-nathan)(fr).k7" size="39363" crc="1c35e13d" sha1="58285fce34b6f31f449891cb13a88390204daf28" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpcealera" cloneof="cpcealer">
+		<description>Francais CP-CE - Aide a la Lecture - Alerte (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="39363">
+				<rom name="francais cp-ce - aide a la lecture - alerte (1985)(vifi-nathan)(fr)[a].k7" size="39363" crc="daf8f473" sha1="ee001e316ff7e289857c16001ed03e562e6c2462" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpcememo">
+		<description>Francais CP-CE - Aide a la Lecture - Memot</description>
+		<year>1985</year>
+		<publisher>Nathan Ecoles</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="32904">
+				<rom name="francais cp-ce - aide a la lecture - memot (1985)(nathan ecoles)(fr).k7" size="32904" crc="f2d93334" sha1="07dd3c2b9b0155df759d4912938215e7a6800c36" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpcememoa" cloneof="cpcememo">
+		<description>Francais CP-CE - Aide a la Lecture - Memot (Alt)</description>
+		<year>1985</year>
+		<publisher>Nathan Ecoles</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="32904">
+				<rom name="francais cp-ce - aide a la lecture - memot (1985)(nathan ecoles)(fr)[a].k7" size="32904" crc="7c07c6f8" sha1="022e49524be64061f11d1fcdad932e40a7cbf5f1" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpcepelm">
+		<description>Francais CP-CE - Aide a la Lecture - Pelmel</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="32459">
+				<rom name="francais cp-ce - aide a la lecture - pelmel (1985)(vifi-nathan)(fr).k7" size="32459" crc="24893889" sha1="8047c7a9ef350bba7ece31514fc3b39483b17cac" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpcepelma" cloneof="cpcepelm">
+		<description>Francais CP-CE - Aide a la Lecture - Pelmel (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="32459">
+				<rom name="francais cp-ce - aide a la lecture - pelmel (1985)(vifi-nathan)(fr)[a].k7" size="32459" crc="6c634188" sha1="6c453eb4485414c0d495f3c6a4d997194c4bb3b2" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpcerada">
+		<description>Francais CP-CE - Aide a la Lecture - Radar</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="26855">
+				<rom name="francais cp-ce - aide a la lecture - radar (1985)(vifi-nathan)(fr).k7" size="26855" crc="27c24c49" sha1="5eab2df27abb6999ea10d4f59e47c0897f41fed2" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpceradaa" cloneof="cpcerada">
+		<description>Francais CP-CE - Aide a la Lecture - Radar (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="26855">
+				<rom name="francais cp-ce - aide a la lecture - radar (1985)(vifi-nathan)(fr)[a].k7" size="26855" crc="20022dcc" sha1="1a82b6ea61f3b2dd21c5a0ed96b27652b9138669" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="frontier">
+		<description>Frontier</description>
+		<year>198?</year>
+		<publisher>CDDP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="3875">
+				<rom name="frontier (198x)(cddp)(fr)[b].k7" size="3875" crc="fbe181d2" sha1="94da3bd62fb9a7307f45af7e0522888d685baf0f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="geom5eme">
+		<description>Le Geometre 5eme</description>
+		<year>1985</year>
+		<publisher>Edil</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="71304">
+				<rom name="geometre 5eme, le (1985)(edil)(fr).k7" size="71304" crc="feee5f4f" sha1="d5cdcbddaa99797cb3a216e9da08ae06fd76ccd1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="geometri">
+		<description>Geometrie</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="32484">
+				<rom name="geometrie (1985)(vifi-nathan)(fr).k7" size="32484" crc="8dc36435" sha1="c3f758fdecc4b0799c24b9e8c97a2b6ae2ea1a59" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="grsang">
+		<description>Grsang</description>
+		<year>198?</year>
+		<publisher>CNDP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="23601">
+				<rom name="grsang (198x)(cndp)(fr).k7" size="23601" crc="930d4e3c" sha1="f9a70938f1d2be59866e0746002096d4657f3674" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="histfrnc">
+		<description>Histoire de France</description>
+		<year>1985</year>
+		<publisher>MPS Diffusion</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="164845">
+				<rom name="histoire de france (1985)(mps diffusion)(fr).k7" size="164845" crc="4768face" sha1="8973cc4144ba4e1f7865fe8b55f79386ce1a835f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="histfrnca" cloneof="histfrnc">
+		<description>Histoire de France (Alt)</description>
+		<year>1985</year>
+		<publisher>MPS Diffusion</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="137533">
+				<rom name="histoire de france (1985)(mps diffusion)(fr)[a].k7" size="137533" crc="34a5a4bd" sha1="8c4215f75017d60b1d423856e16aa38b13d93837" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="histfrncb" cloneof="histfrnc">
+		<description>Histoire de France (Alt 2)</description>
+		<year>1985</year>
+		<publisher>MPS Diffusion</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="137533">
+				<rom name="histoire de france (1985)(mps diffusion)(fr)[a2].k7" size="137533" crc="ceb99826" sha1="a956fff2b87f64c4b49da79a3ccc20de64dff816" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="horloge">
+		<description>Horloge</description>
+		<year>1984</year>
+		<publisher>USTL</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="8693">
+				<rom name="horloge (1984)(ustl)(fr).k7" size="8693" crc="e8a2c3b6" sha1="7e22948b0e2216f74dd30238a0797f2867c9e23f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="inequat">
+		<description>Inequations</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="25881">
+				<rom name="inequations (198x)(-)(fr).k7" size="25881" crc="98e4c723" sha1="b1d8189f51f8aae5d23aaeb3fe5946f43685a207" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="initbas">
+		<description>Initiation au Basic</description>
+		<year>1984</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="50882">
+				<rom name="initiation au basic (1984)(infogrames)(fr)(tape 1 of 4).k7" size="50882" crc="ae6fa16e" sha1="e43e9ad1f70159f7e4a05d4814d370106a0afbc5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="21066">
+				<rom name="initiation au basic (1984)(infogrames)(fr)(tape 2 of 4).k7" size="21066" crc="aad9a46a" sha1="d2e4c2d8b15467c78a2c2a3e49e568998377385f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="mo_cass">
+		<feature name="part_id" value="Tape 3"/>
+			<dataarea name="cass" size="46876">
+				<rom name="initiation au basic (1984)(infogrames)(fr)(tape 3 of 4).k7" size="46876" crc="24735cfe" sha1="5597d3e505bd433def9e85357888acf6f5be8fb1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="mo_cass">
+		<feature name="part_id" value="Tape 4"/>
+			<dataarea name="cass" size="22492">
+				<rom name="initiation au basic (1984)(infogrames)(fr)(tape 4 of 4).k7" size="22492" crc="404f0b36" sha1="06cfc87b64f4b0494c7cc5afc6217fe433c30399" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="initbasa" cloneof="initbas">
+		<description>Initiation au Basic (Alt)</description>
+		<year>1984</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="50866">
+				<rom name="initiation au basic (1984)(infogrames)(fr)(tape 1 of 4)[a].k7" size="50866" crc="52ef42c8" sha1="77d8bf0f23a9dfd0d90326a5b7ba63cab9dfa92a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="21058">
+				<rom name="initiation au basic (1984)(infogrames)(fr)(tape 2 of 4)[a].k7" size="21058" crc="be1a3c31" sha1="5ee8180d8b7a597d958ad4ebc64300dafb13c656" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="mo_cass">
+		<feature name="part_id" value="Tape 3"/>
+			<dataarea name="cass" size="46863">
+				<rom name="initiation au basic (1984)(infogrames)(fr)(tape 3 of 4)[a].k7" size="46863" crc="4c401066" sha1="77258c977aad4bfa0d3323d19b240c0aa4696cd1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="mo_cass">
+		<feature name="part_id" value="Tape 4"/>
+			<dataarea name="cass" size="22480">
+				<rom name="initiation au basic (1984)(infogrames)(fr)(tape 4 of 4)[a].k7" size="22480" crc="616bc82d" sha1="53fa6feb62c2b0178b305c40fde365453b2fbcb8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="initbasb" cloneof="initbas">
+		<description>Initiation au Basic (Alt 2)</description>
+		<year>1984</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="50866">
+				<rom name="initiation au basic (1984)(infogrames)(fr)(tape 1 of 4)[a2].k7" size="50866" crc="4d90a71e" sha1="651f76306a2b1f78d5b17be3d83774caf7028ab5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="21058">
+				<rom name="initiation au basic (1984)(infogrames)(fr)(tape 2 of 4)[a2].k7" size="21058" crc="46d3811d" sha1="71a2a1660bae4bb3368548c80f6174f829eac8af" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="mo_cass">
+		<feature name="part_id" value="Tape 3"/>
+			<dataarea name="cass" size="46863">
+				<rom name="initiation au basic (1984)(infogrames)(fr)(tape 3 of 4)[a2].k7" size="46863" crc="2e6a92a2" sha1="211207d0f5fa14107640b2ac50ba08baf49bc7bb" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="mo_cass">
+		<feature name="part_id" value="Tape 4"/>
+			<dataarea name="cass" size="22480">
+				<rom name="initiation au basic (1984)(infogrames)(fr)(tape 4 of 4)[a2].k7" size="22480" crc="156bf56a" sha1="e6c268319ac90288f5b12498479de480e9bd6d8b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="initbasc" cloneof="initbas">
+		<description>Initiation au Basic (Alt 3)</description>
+		<year>1984</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="50866">
+				<rom name="initiation au basic (1984)(infogrames)(fr)(tape 1 of 4)[a3].k7" size="50866" crc="7b847738" sha1="af6e5c35807fd1d3b3c0f93ba8016827f683d515" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="21058">
+				<rom name="initiation au basic (1984)(infogrames)(fr)(tape 2 of 4)[a3].k7" size="21058" crc="830f8ef5" sha1="92ecbf25d926b335ce17ff9405ff3fceb4826723" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="mo_cass">
+		<feature name="part_id" value="Tape 3"/>
+			<dataarea name="cass" size="46863">
+				<rom name="initiation au basic (1984)(infogrames)(fr)(tape 3 of 4)[a3].k7" size="46863" crc="59ef7b48" sha1="d8f63e2b6cdb5f033eb303fe3ea91213fb17476d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="mo_cass">
+		<feature name="part_id" value="Tape 4"/>
+			<dataarea name="cass" size="22480">
+				<rom name="initiation au basic (1984)(infogrames)(fr)(tape 4 of 4)[a3].k7" size="22480" crc="744f6266" sha1="198d8251be546ad5c86f99c13b707d3e312ef473" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="initeche">
+		<description>Initiation aux Echecs</description>
+		<year>1984</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="40029">
+				<rom name="initiation aux echecs (1984)(vifi-nathan)(fr).k7" size="40029" crc="cb04da54" sha1="003b441627a52b288ab1c1c80c947290ea5d8621" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="initechea" cloneof="initeche">
+		<description>Initiation aux Echecs (Alt)</description>
+		<year>1984</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="40029">
+				<rom name="initiation aux echecs (1984)(vifi-nathan)(fr)[b title screen].k7" size="40029" crc="44c70ab1" sha1="7bfad9a19f3bdf2c1faa69f7972d363011adfe0b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="jauge">
+		<description>Jauge</description>
+		<year>1984</year>
+		<publisher>CNDP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="11107">
+				<rom name="jauge (1984-10-20)(cndp)(fr).k7" size="11107" crc="25955a0a" sha1="294e9b08be558afa9a7da0a33be2bac2b7b48d7e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lisecris">
+		<description>Je Lis, J'Ecris</description>
+		<year>1984</year>
+		<publisher>Ediciel</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="29902">
+				<rom name="je lis, j'ecris (1984)(ediciel)(fr)(tape 1 of 2).k7" size="29902" crc="9582b62e" sha1="223ef7d0b9edb77714e4aaf7fef490a314e5f247" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="30170">
+				<rom name="je lis, j'ecris (1984)(ediciel)(fr)(tape 2 of 2).k7" size="30170" crc="fa38c252" sha1="2df2f843a6a030202d121d09396fadf9b08adbce" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="jetuil">
+		<description>Je Tu Il</description>
+		<year>1986</year>
+		<publisher>Ediciel</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="51405">
+				<rom name="je tu il (1986)(ediciel)(fr).k7" size="51405" crc="153c8f28" sha1="825899a852eb28b1341e84e9395c6ec57a62e5eb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="jetuila" cloneof="jetuil">
+		<description>Je Tu Il (Alt)</description>
+		<year>1986</year>
+		<publisher>Ediciel</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="51405">
+				<rom name="je tu il (1986)(ediciel)(fr)[a].k7" size="51405" crc="bd49b89b" sha1="5291ff791b6e186208c6d1494d462a9211e50e39" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="jeuboole">
+		<description>Le Jeu de Boole</description>
+		<year>1984</year>
+		<publisher>Hatier</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="18388">
+				<rom name="jeu de boole, le (1984)(hatier)(fr)(m3).k7" size="18388" crc="0d5335b3" sha1="0cc58c35e2c443ce44f011e882b8ba5fc95de13e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="jeuboolea" cloneof="jeuboole">
+		<description>Le Jeu de Boole (Bad)</description>
+		<year>1984</year>
+		<publisher>Hatier</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="18390">
+				<rom name="jeu de boole, le (1984)(hatier)(fr)(m3)[b].k7" size="18390" crc="3dac3985" sha1="eab6c7f526b05ee039eddba78157a867e7dc282e" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="jeuplane">
+		<description>Jeu des Planetes</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="11570">
+				<rom name="jeu des planetes (198x)(-)(fr).k7" size="11570" crc="cba4dfa1" sha1="2327d7aa274745f3204aebaa0a6a455619203b38" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="jeuplanea" cloneof="jeuplane">
+		<description>Jeu des Planetes (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="11570">
+				<rom name="jeu des planetes (198x)(-)(fr)[a].k7" size="11570" crc="a51022c0" sha1="05c743a26dbd46ce42922b038ec0f1f8ebc69333" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="jeudict">
+		<description>Jeu du Dictionnaire</description>
+		<year>198?</year>
+		<publisher>CNDP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="7117">
+				<rom name="jeu du dictionnaire (198x)(cndp)(fr).k7" size="7117" crc="e10943d0" sha1="7f6faddd6477584396346e9f664103d978a2323a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="jeuxkim">
+		<description>Jeux de Kim</description>
+		<year>1984</year>
+		<publisher>No Man's Land</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="8553">
+				<rom name="jeux de kim (1984)(no man's land)(fr).k7" size="8553" crc="743f0ea7" sha1="2760ce060344408ff955065252a8783b6d30bcde" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="jeuxkima" cloneof="jeuxkim">
+		<description>Jeux de Kim (Alt)</description>
+		<year>1984</year>
+		<publisher>No Man's Land</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="8553">
+				<rom name="jeux de kim (1984)(no man's land)(fr)[a].k7" size="8553" crc="e8383ac8" sha1="1b44f73eeacb6595512cc444f9dc797a8aedf84a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ludoalg">
+		<description>Ludo Algebre</description>
+		<year>1985</year>
+		<publisher>Edumicro</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="21412">
+				<rom name="ludo algebre (1985)(edumicro)(fr).k7" size="21412" crc="032aeb7c" sha1="ea53974a2e885e35ed8a85cbcf2d35874d54b620" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ludoop1">
+		<description>Ludo OP1</description>
+		<year>1985</year>
+		<publisher>Edumicro</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="17382">
+				<rom name="ludo op1 (1985)(edumicro)(fr).k7" size="17382" crc="e5a7e6af" sha1="7e973a9e51809ceb24fd6beffa8cef7879dc93fb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="calccarr">
+		<description>Mathematiques Calculs - Carre Magique</description>
+		<year>1984</year>
+		<publisher>Nathan Ecoles</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="16092">
+				<rom name="mathematiques calculs - carre magique (1984)(nathan ecoles)(fr).k7" size="16092" crc="70f9326d" sha1="c88afea281a71c2b17666eff999cf0f2556367d5" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="calccarra" cloneof="calccarr">
+		<description>Mathematiques Calculs - Carre Magique (Alt)</description>
+		<year>1984</year>
+		<publisher>Nathan Ecoles</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="16078">
+				<rom name="mathematiques calculs - carre magique (1984)(nathan ecoles)(fr)[a].k7" size="16078" crc="e08f3298" sha1="30a663987d7b1ab37271859690ae084e33617772" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="calccarrb" cloneof="calccarr">
+		<description>Mathematiques Calculs - Carre Magique (Alt 2)</description>
+		<year>1984</year>
+		<publisher>Nathan Ecoles</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="16078">
+				<rom name="mathematiques calculs - carre magique (1984)(nathan ecoles)(fr)[a2].k7" size="16078" crc="8c8083f3" sha1="a215e53276674e5668c5a639ebbd5cbbf6796599" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="calccarrc" cloneof="calccarr">
+		<description>Mathematiques Calculs - Carre Magique (Alt 3)</description>
+		<year>1984</year>
+		<publisher>Nathan Ecoles</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="16078">
+				<rom name="mathematiques calculs - carre magique (1984)(nathan ecoles)(fr)[a3].k7" size="16078" crc="7777f8ce" sha1="6b08bde3d2fd8b2bae5e3595d5efd4196c5a9fa4" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="calcinva">
+		<description>Mathematiques Calculs - Invasion des Chiffres</description>
+		<year>1984</year>
+		<publisher>Nathan Ecoles</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="18746">
+				<rom name="mathematiques calculs - invasion des chiffres (1984)(nathan ecoles)(fr).k7" size="18746" crc="29d8eff5" sha1="4f95959aff95dbbc21cb3090612bce251b2887a6" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="calcmult">
+		<description>Mathematiques Calculs - Multiplication</description>
+		<year>1985</year>
+		<publisher>Cedic/Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="15630">
+				<rom name="mathematiques calculs - multiplication (1985)(cedic-nathan)(fr)[m title screen].k7" size="15630" crc="2d02db0e" sha1="815e91c44d1b0284df2431190221ea9844956176" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="calcrang">
+		<description>Mathematiques Calculs - Ranger des Nombres</description>
+		<year>1985</year>
+		<publisher>Cedic/Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="17442">
+				<rom name="mathematiques calculs - ranger des nombres (1985)(cedic-nathan)(fr)[m title screen].k7" size="17442" crc="31538754" sha1="c46258d66f78c27ac089990fe4b1ff88b0251d56" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ceavant">
+		<description>Mathematiques CE - Rangements et Reperages - Avant et Apres</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="15608">
+				<rom name="mathematiques ce - rangements et reperages - avant et apres (1985)(vifi-nathan)(fr).k7" size="15608" crc="a8d775d9" sha1="60362c2461878a6d622e5e65c298047f9e5d28a5" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cecombin">
+		<description>Mathematiques CE - Rangements et Reperages - Combinaisons</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="20416">
+				<rom name="mathematiques ce - rangements et reperages - combinaisons (1985)(vifi-nathan)(fr).k7" size="20416" crc="6df32a25" sha1="2db76500e564925dced102ae98eaf020f378f0f5" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ceprodui">
+		<description>Mathematiques CE - Rangements et Reperages - Produits et Surfaces</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="18884">
+				<rom name="mathematiques ce - rangements et reperages - produits et surfaces (1985)(vifi-nathan)(fr).k7" size="18884" crc="ab4a6419" sha1="5bd26f3adde6102c590fd54b6962f74c654950cc" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cequadri">
+		<description>Mathematiques CE - Rangements et Reperages - Quadrillage</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="22540">
+				<rom name="mathematiques ce - rangements et reperages - quadrillage (1985)(vifi-nathan)(fr).k7" size="22540" crc="3908f783" sha1="da84227e962dc5d0845c7926cb667297766fc314" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cecmangl">
+		<description>Mathematiques CE-CM - Geometrie - Angles</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="21148">
+				<rom name="mathematiques ce-cm - geometrie - angles (1985)(vifi-nathan)(fr).k7" size="21148" crc="3ff35d7d" sha1="6902b8f581cb3e4bea7fd9ccd92c0b0ea0637711" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cecmangla" cloneof="cecmangl">
+		<description>Mathematiques CE-CM - Geometrie - Angles (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="20602">
+				<rom name="mathematiques ce-cm - geometrie - angles (1985)(vifi-nathan)(fr)[a].k7" size="20602" crc="7d18210b" sha1="007426b468473a2962d393e62cca722ee5449281" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cecmanglb" cloneof="cecmangl">
+		<description>Mathematiques CE-CM - Geometrie - Angles (Alt 2)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="38923">
+				<rom name="mathematiques ce-cm - geometrie - angles (1985)(vifi-nathan)(fr)[a2].k7" size="38923" crc="d3115664" sha1="a6106da534247f666999808ba7674fcb05309b42" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cecmdroi">
+		<description>Mathematiques CE-CM - Geometrie - Droites</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="16167">
+				<rom name="mathematiques ce-cm - geometrie - droites (1985)(vifi-nathan)(fr).k7" size="16167" crc="aa6280d2" sha1="e711d44519e1d6297e4681616db909e7fccb3366" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cecmdroia" cloneof="cecmdroi">
+		<description>Mathematiques CE-CM - Geometrie - Droites (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="38100">
+				<rom name="mathematiques ce-cm - geometrie - droites (1985)(vifi-nathan)(fr)[a].k7" size="38100" crc="39d95f6c" sha1="4d56b355aff6ce565d12ffb11d1a763a670ab123" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cecmdroib" cloneof="cecmdroi">
+		<description>Mathematiques CE-CM - Geometrie - Droites (Alt 2)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="38100">
+				<rom name="mathematiques ce-cm - geometrie - droites (1985)(vifi-nathan)(fr)[b].k7" size="38100" crc="d18e11bd" sha1="aad4ca12a5f1e627bfdde7da1d552f7e306ec462" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cecmgolf">
+		<description>Mathematiques CE-CM - Geometrie - Golf</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="21844">
+				<rom name="mathematiques ce-cm - geometrie - golf (1985)(vifi-nathan)(fr).k7" size="21844" crc="9a7c4259" sha1="a616be5a79141d2898d2d4d124404520b9d0ea2d" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cecmgolfa" cloneof="cecmgolf">
+		<description>Mathematiques CE-CM - Geometrie - Golf (No Loader Screen)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="15753">
+				<rom name="mathematiques ce-cm - geometrie - golf (1985)(vifi-nathan)(fr)[m title screen].k7" size="15753" crc="3b887c4b" sha1="40ea0c508477be65186518875fda4962a91528c6" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cecmtria">
+		<description>Mathematiques CE-CM - Geometrie - Triangles et Quadrilateres</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="21933">
+				<rom name="mathematiques ce-cm - geometrie - triangles et quadrilateres (1985)(vifi-nathan)(fr).k7" size="21933" crc="f5194aa4" sha1="a1a765422ef691e7721b67bad1c9b4442bc81b0e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmaires">
+		<description>Mathematiques CM - Mesures et Grandeurs - Aires et Volumes</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="18670">
+				<rom name="mathematiques cm - mesures et grandeurs - aires et volumes (1985)(vifi-nathan)(fr).k7" size="18670" crc="04a61aa5" sha1="3c564c4becc2f60994a39e22832505b44880c9d1" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmairesa" cloneof="cmaires">
+		<description>Mathematiques CM - Mesures et Grandeurs - Aires et Volumes (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="40411">
+				<rom name="mathematiques cm - mesures et grandeurs - aires et volumes (1985)(vifi-nathan)(fr)[a].k7" size="40411" crc="af16237b" sha1="6b926fb6eb53373e59c082b840a2fd5f190269fb" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmmesure">
+		<description>Mathematiques CM - Mesures et Grandeurs - Mesure du Temps</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="32761">
+				<rom name="mathematiques cm - mesures et grandeurs - mesure du temps (1985)(vifi-nathan)(fr).k7" size="32761" crc="b2ce5edf" sha1="c41f168b9d83b4efd9aa94e38fb0ff4bb1163ea1" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmmesurea" cloneof="cmmesure">
+		<description>Mathematiques CM - Mesures et Grandeurs - Mesure du Temps (No Loader Screen)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="16252">
+				<rom name="mathematiques cm - mesures et grandeurs - mesure du temps (1985)(vifi-nathan)(fr)[m title screen].k7" size="16252" crc="36d056f7" sha1="5d34d966981df2d84067bddf21ffb8a3e8cdc305" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cm1adsou">
+		<description>Mathematiques CM1 - Addition-Soustraction Express</description>
+		<year>1985</year>
+		<publisher>Nathan Ecoles</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="14327">
+				<rom name="mathematiques cm1 - addition-soustraction express (1985)(nathan ecoles)(fr).k7" size="14327" crc="277d3db5" sha1="79c576f9b501854a831f4f480ecdea8b585b7f7c" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cm1divis">
+		<description>Mathematiques CM1 - Division</description>
+		<year>1985</year>
+		<publisher>Nathan Ecoles</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="17174">
+				<rom name="mathematiques cm1 - division (1985)(nathan ecoles)(fr).k7" size="17174" crc="eea631e2" sha1="2535d842beb34884b8702faf9fe40bdd1ea052ab" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cm1divisa" cloneof="cm1divis">
+		<description>Mathematiques CM1 - Division (Alt)</description>
+		<year>1985</year>
+		<publisher>Nathan Ecoles</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="30930">
+				<rom name="mathematiques cm1 - division (1985)(nathan ecoles)(fr)[a].k7" size="30930" crc="07ec1940" sha1="87ac2a9481296f54af5d88f4ee23a79697f53402" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cm1divisb" cloneof="cm1divis">
+		<description>Mathematiques CM1 - Division (Alt 2)</description>
+		<year>1985</year>
+		<publisher>Nathan Ecoles</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="17159">
+				<rom name="mathematiques cm1 - division (1985)(nathan ecoles)(fr)[a2].k7" size="17159" crc="806a11c6" sha1="fa3af0afab0e01f573c6d9cd3322c1c1cb62a70f" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cm1lecec">
+		<description>Mathematiques CM1 - Lecture-Ecriture d'Un Nombre</description>
+		<year>1985</year>
+		<publisher>Nathan Ecoles</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="16630">
+				<rom name="mathematiques cm1 - lecture-ecriture d'un nombre (1985)(nathan ecoles)(fr).k7" size="16630" crc="d9437fa5" sha1="9f74fa60cc4705dd5254b5b5eafe5ec5d8ccbea4" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cm1orde">
+		<description>Mathematiques CM1 - Orde de Grandeur</description>
+		<year>1985</year>
+		<publisher>Nathan Ecoles</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="17014">
+				<rom name="mathematiques cm1 - orde de grandeur (1985)(nathan ecoles)(fr).k7" size="17014" crc="e2b124c2" sha1="0cd2f285ec0af04861afaabba7a037c9e1650c99" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cm1ordea" cloneof="cm1orde">
+		<description>Mathematiques CM1 - Orde de Grandeur (Alt)</description>
+		<year>1985</year>
+		<publisher>Nathan Ecoles</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="16453">
+				<rom name="mathematiques cm1 - orde de grandeur (1985)(nathan ecoles)(fr)[a].k7" size="16453" crc="5b98a889" sha1="be920641ca2f3ed58f7e6eb490549ef090bc6db2" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpcompte">
+		<description>Mathematiques CP - Chiffres et Formes - Compter</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="19908">
+				<rom name="mathematiques cp - chiffres et formes - compter (1985)(vifi-nathan)(fr).k7" size="19908" crc="9e772d00" sha1="04811e1e762d4cc6005c807121e1ea623f1c08e5" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpmoins">
+		<description>Mathematiques CP - Chiffres et Formes - Moins, Autant, Plus</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="16175">
+				<rom name="mathematiques cp - chiffres et formes - moins, autant, plus (1985)(vifi-nathan)(fr).k7" size="16175" crc="ff762614" sha1="735bcc3a34ba0cdf95977a18c8855876203f65a6" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cppromen">
+		<description>Mathematiques CP - Chiffres et Formes - Promenade</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="24021">
+				<rom name="mathematiques cp - chiffres et formes - promenade (1985)(vifi-nathan)(fr).k7" size="24021" crc="08470258" sha1="3dc096b3474f724c3f8d6101cd5b8cfe5fc971c3" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cppuzzle">
+		<description>Mathematiques CP - Chiffres et Formes - Puzzle</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="22542">
+				<rom name="mathematiques cp - chiffres et formes - puzzle (1985)(vifi-nathan)(fr).k7" size="22542" crc="87a57a88" sha1="4bdac464c9b0df9b8d1ec92c841f946ba76bc70e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpceclas">
+		<description>Mathematiques CP-CE - Tables et Frises - Classement</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="23060">
+				<rom name="mathematiques cp-ce - tables et frises - classement (1985)(vifi-nathan)(fr).k7" size="23060" crc="a8e056e4" sha1="88379fb6c7768845a68e020a1cc9830fe903709a" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpcefris">
+		<description>Mathematiques CP-CE - Tables et Frises - Frises</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="22337">
+				<rom name="mathematiques cp-ce - tables et frises - frises (1985)(vifi-nathan)(fr).k7" size="22337" crc="9a7b6616" sha1="90761b0bbfd48f5d234eab6a4fb59f52b20344e7" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpcesyme">
+		<description>Mathematiques CP-CE - Tables et Frises - Symetries et Translations</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="15933">
+				<rom name="mathematiques cp-ce - tables et frises - symetries et translations (1985)(vifi-nathan)(fr).k7" size="15933" crc="c87d004c" sha1="40979e81b6f77ed88df59178157a80d6838ac28e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpcetabl">
+		<description>Mathematiques CP-CE - Tables et Frises - Tables d'Operations</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="16856">
+				<rom name="mathematiques cp-ce - tables et frises - tables d'operations (1985)(vifi-nathan)(fr).k7" size="16856" crc="1b22bf70" sha1="a19dc3d5fff87ff79dd73eadc309e9e9f9893ea5" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="melodimu">
+		<description>Melodimus</description>
+		<year>1984</year>
+		<publisher>Logimus</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="23170">
+				<rom name="melodimus (1984)(logimus)(fr).k7" size="23170" crc="d2cf4e4f" sha1="10981af3ce5d7090dd7bba2314b07076cc2c4604" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="melodimua" cloneof="melodimu">
+		<description>Melodimus (Alt)</description>
+		<year>1984</year>
+		<publisher>Logimus</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="23161">
+				<rom name="melodimus (1984)(logimus)(fr)[a].k7" size="23161" crc="07f172d0" sha1="d82e7dddaa645dc24544f0c1b2c6cf633632f1a6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="melodimub" cloneof="melodimu">
+		<description>Melodimus (Alt 2)</description>
+		<year>1984</year>
+		<publisher>Logimus</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="23161">
+				<rom name="melodimus (1984)(logimus)(fr)[a2].k7" size="23161" crc="0c8aff43" sha1="ea39a3eaf44fdf70828c3b8125e4ac900b60002e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="melodimuc" cloneof="melodimu">
+		<description>Melodimus (Alt 3)</description>
+		<year>1984</year>
+		<publisher>Logimus</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="23161">
+				<rom name="melodimus (1984)(logimus)(fr)[a3].k7" size="23161" crc="6d3fd719" sha1="b581afa6a0007c24d2cb95b1256c5fe044b600e8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="micropro">
+		<description>Le Micro-Processeur</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="46082">
+				<rom name="micro-processeur, le (1985)(vifi-nathan)(fr).k7" size="46082" crc="661d43d6" sha1="bc7327e80a5c1139b0ea52dd8b5cc39ccddc25e7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="microsci">
+		<description>Microscillo</description>
+		<year>1984</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="23382">
+				<rom name="microscillo (1984)(infogrames)(fr).k7" size="23382" crc="3b429a24" sha1="9605d4bc7d51d839a1817286edb05284123ad7a3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="microscia" cloneof="microsci">
+		<description>Microscillo (Alt)</description>
+		<year>1984</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="23382">
+				<rom name="microscillo (1984)(infogrames)(fr)[a].k7" size="23382" crc="cff9fc8f" sha1="b80a8093558b770ffa63b0d9aa41e548dfb1b001" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="minotaur">
+		<description>Le Minotaure</description>
+		<year>1984</year>
+		<publisher>Hatier</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="15576">
+				<rom name="minotaure, le (1984)(hatier)(fr).k7" size="15576" crc="d5a10e54" sha1="c1c2812dce713a0ecce4bf48a20796d942fbe067" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="minotaura" cloneof="minotaur">
+		<description>Le Minotaure (Alt)</description>
+		<year>1984</year>
+		<publisher>Hatier</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="15346">
+				<rom name="minotaure, le (1984)(hatier)(fr)[a].k7" size="15346" crc="af73a382" sha1="bc63c4b8e7ffdfc208d4e8b99454ae2fa9856506" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="minotaurb" cloneof="minotaur">
+		<description>Le Minotaure (Alt 2)</description>
+		<year>1984</year>
+		<publisher>Hatier</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="15444">
+				<rom name="minotaure, le (1984)(hatier)(fr)[a2].k7" size="15444" crc="eca56be7" sha1="52321808b17f8dce5ec1ab9f3ab550a9ff36acb6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="minotaurc" cloneof="minotaur">
+		<description>Le Minotaure (Alt 3)</description>
+		<year>1984</year>
+		<publisher>Hatier</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="15444">
+				<rom name="minotaure, le (1984)(hatier)(fr)[a3].k7" size="15444" crc="3de436ca" sha1="8abdb485f1462217279443a623617e6e5eff4d81" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="minotaurd" cloneof="minotaur">
+		<description>Le Minotaure (Alt 4)</description>
+		<year>1984</year>
+		<publisher>Hatier</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="15444">
+				<rom name="minotaure, le (1984)(hatier)(fr)[a4].k7" size="15444" crc="d4a9fa6a" sha1="15eca81ec9997760cb3fe7112753361d7152c000" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="minotaure" cloneof="minotaur">
+		<description>Le Minotaure (Alt 5)</description>
+		<year>1984</year>
+		<publisher>Hatier</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="15444">
+				<rom name="minotaure, le (1984)(hatier)(fr)[a5].k7" size="15444" crc="febb076b" sha1="1ea37bae11e7b42a74d60da6161f9ef67960e418" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mongolfi">
+		<description>Mongolfiere</description>
+		<year>1985</year>
+		<publisher>Cedic/Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="15076">
+				<rom name="mongolfiere (1985)(cedic-nathan)(fr).k7" size="15076" crc="329ad3d8" sha1="6c80292c2f165fba4980a4e3fb74d7373a3831d0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mosaique">
+		<description>Mosaique</description>
+		<year>198?</year>
+		<publisher>Edumicro</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="10572">
+				<rom name="mosaique (198x)(edumicro)(fr).k7" size="10572" crc="0ea45252" sha1="2228ff1075f81729c20d4f87d8f64964067a9d23" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mosaiquea" cloneof="mosaique">
+		<description>Mosaique (Alt)</description>
+		<year>198?</year>
+		<publisher>Edumicro</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="10572">
+				<rom name="mosaique (198x)(edumicro)(fr)[a].k7" size="10572" crc="a412b5d1" sha1="1e2aca1208ea4cbec19604d335bdc26ecbe19fd5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="motcompt">
+		<description>Un Mot pour le Compte</description>
+		<year>1983</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="13726">
+				<rom name="mot pour le compte, un (1983)(vifi-nathan)(fr).k7" size="13726" crc="3ce78dfc" sha1="b416c03e93bde26766445048ece2c2c8b7d18c87" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mpendu">
+		<description>Mpendu</description>
+		<year>1984</year>
+		<publisher>CNDP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="17203">
+				<rom name="mpendu (1984-10-20)(cndp)(fr).k7" size="17203" crc="bd27b69a" sha1="b16bf7124aac01bfbeaed9a33328ef97c1741d4c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="casstete">
+		<description>Multiplications Casse-Tete</description>
+		<year>1984</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="39458">
+				<rom name="multiplications casse-tete (1984)(vifi-nathan)(fr).k7" size="39458" crc="dfca6a0d" sha1="85c2ceb9ef72deedac184610a56256067976ebe7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="casstetea" cloneof="casstete">
+		<description>Multiplications Casse-Tete (Alt)</description>
+		<year>1984</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="30967">
+				<rom name="multiplications casse-tete (1984)(vifi-nathan)(fr)[a].k7" size="30967" crc="5b9b7f54" sha1="1c04543a349e81094805bbc9e569c63cf277b21d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="navire">
+		<description>Navire</description>
+		<year>1985</year>
+		<publisher>USTL - IREM</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="17419">
+				<rom name="navire (1985-09-13)(ustl - irem)(fr).k7" size="17419" crc="2621e3c2" sha1="66a2d7b4f74580d43f2cff33573413855b0ff0dc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nombcach">
+		<description>Le Nombre Cache Ou...</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="18346">
+				<rom name="nombre cache ou..., le (198x)(-)(pd)(fr).k7" size="18346" crc="a93cb758" sha1="bf998bd15f7ed091fa58ea2c6dff9a740b1e37e9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nouvespa">
+		<description>Le Nouvel Espagnol sans Peine</description>
+		<year>1985</year>
+		<publisher>Assimil</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="81819">
+				<rom name="nouvel espagnol sans peine, le (1985)(assimil)(fr)(tape 1 of 8).k7" size="81819" crc="41e04a1b" sha1="68b826ffa59feeaa6db458960baccf59ce6ac54d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="81401">
+				<rom name="nouvel espagnol sans peine, le (1985)(assimil)(fr)(tape 2 of 8).k7" size="81401" crc="1dfef2e8" sha1="d72af8d4e695d4d3ec8f8be4cdddd0eb64cbfa0c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="mo_cass">
+		<feature name="part_id" value="Tape 3"/>
+			<dataarea name="cass" size="61145">
+				<rom name="nouvel espagnol sans peine, le (1985)(assimil)(fr)(tape 3 of 8).k7" size="61145" crc="4136995e" sha1="f9314601a627655dedfcec23390eeadb683a3ea1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="mo_cass">
+		<feature name="part_id" value="Tape 4"/>
+			<dataarea name="cass" size="66324">
+				<rom name="nouvel espagnol sans peine, le (1985)(assimil)(fr)(tape 4 of 8).k7" size="66324" crc="8ee457b9" sha1="1d4a3bb7d79b2574a1f19f48edfcf0b2c4513cb4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nouvespaa" cloneof="nouvespa">
+		<description>Le Nouvel Espagnol sans Peine (Alt)</description>
+		<year>1985</year>
+		<publisher>Assimil</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="81819">
+				<rom name="nouvel espagnol sans peine, le (1985)(assimil)(fr)(tape 1 of 8)[a].k7" size="81819" crc="5dd1e3cd" sha1="b77ba66ecdf5977bfe2a6b0f5e9a66e4414a13db" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="81401">
+				<rom name="nouvel espagnol sans peine, le (1985)(assimil)(fr)(tape 2 of 8)[a].k7" size="81401" crc="d5b6f9a6" sha1="d5c1f38607605569f546d0ab33a574fb63911b2d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="mo_cass">
+		<feature name="part_id" value="Tape 3"/>
+			<dataarea name="cass" size="61145">
+				<rom name="nouvel espagnol sans peine, le (1985)(assimil)(fr)(tape 3 of 8)[a].k7" size="61145" crc="7685f764" sha1="1994cde248ceba10e9f415ddd214db8047b23d48" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="mo_cass">
+		<feature name="part_id" value="Tape 4"/>
+			<dataarea name="cass" size="66324">
+				<rom name="nouvel espagnol sans peine, le (1985)(assimil)(fr)(tape 4 of 8)[a].k7" size="66324" crc="4d1b5f48" sha1="48f058e1b492a34460d92cd0e7f4da83244d0e0d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nouvespab" cloneof="nouvespa">
+		<description>Le Nouvel Espagnol sans Peine (Single Tape)</description>
+		<year>1985</year>
+		<publisher>Assimil</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="646500">
+				<rom name="nouvel espagnol sans peine, le (1985)(assimil)(fr)[m single tape].k7" size="646500" crc="19c2cf4d" sha1="de5dbe92c5ffc94de3091709964d5df47000639e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ordidact">
+		<description>Ordidactic</description>
+		<year>1984</year>
+		<publisher>ERE Informatique</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="9984">
+				<rom name="ordidactic (1984)(ere informatique)(fr).k7" size="9984" crc="5a30eb5d" sha1="1808811fdeea045f20c28a5e912d9d5e6b69fdcc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ordidacta" cloneof="ordidact">
+		<description>Ordidactic (Alt)</description>
+		<year>1984</year>
+		<publisher>ERE Informatique</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="9984">
+				<rom name="ordidactic (1984)(ere informatique)(fr)[a].k7" size="9984" crc="4ddfc641" sha1="47ac44d9ab74f3fc6fef79f877c3897622b34391" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ordidactb" cloneof="ordidact">
+		<description>Ordidactic (Alt 2)</description>
+		<year>1984</year>
+		<publisher>ERE Informatique</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="9984">
+				<rom name="ordidactic (1984)(ere informatique)(fr)[a2].k7" size="9984" crc="5af0f767" sha1="50e66d51f1bd0eb7d0bf8f680b229769f30c4b9c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ordifabl">
+		<description>Les Ordifables</description>
+		<year>1985</year>
+		<publisher>Larousse</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="24325">
+				<rom name="ordifables, les - le corbeau et le renard (1985)(vifi)(fr).k7" size="24325" crc="05f5b792" sha1="3a2952ad4e7bc0c63cea9448eb7c22cc37dbf126" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="26167">
+				<rom name="ordifables, les - la cigale et la fourmi (1985)(vifi)(fr).k7" size="26167" crc="dda47557" sha1="42a661ec0cd09eeb7c894c0d2b63b2266da11cc0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="orthcrk1">
+		<description>Orthocrack 1 - Masculin-Feminin</description>
+		<year>1984</year>
+		<publisher>Hatier</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="19853">
+				<rom name="orthocrack 1 - masculin-feminin (1984)(hatier)(fr).k7" size="19853" crc="82863ff1" sha1="5d7fb7ba716ec72a45f062707d6462d5e1bee60f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="orthcrk2">
+		<description>Orthocrack 2 - Singulier-Pluriel</description>
+		<year>1984</year>
+		<publisher>Hatier</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="22416">
+				<rom name="orthocrack 2 - singulier-pluriel (1984)(hatier)(fr).k7" size="22416" crc="0dc0de3c" sha1="419de49061bc683afe0c2a10ed3cfabc5a9b472d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="orthcrk3">
+		<description>Orthocrack 3 - Present de l'Indicatif</description>
+		<year>1984</year>
+		<publisher>Hatier</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="24791">
+				<rom name="orthocrack 3 - present de l'indicatif (1984)(hatier)(fr).k7" size="24791" crc="3c84453d" sha1="feb3eedc04fc97274a0f14fa6782b3118d3f61f9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ogralexi">
+		<description>Orthographe Lexicale</description>
+		<year>1984</year>
+		<publisher>CNDP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="332492">
+				<rom name="orthographe lexicale (1984)(cndp)(fr).k7" size="332492" crc="5aa6ab58" sha1="e194ee6aa46f97a573657994b4d7f14e8f9dd684" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ogralexia" cloneof="ogralexi">
+		<description>Orthographe Lexicale (Alt)</description>
+		<year>1984</year>
+		<publisher>CNDP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="332492">
+				<rom name="orthographe lexicale (1984)(cndp)(fr)[a].k7" size="332492" crc="66c86c7b" sha1="5b5f8f4f1537823c2b98bb797dc006ddf5a084e0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ogralexib" cloneof="ogralexi">
+		<description>Orthographe Lexicale (Alt 2)</description>
+		<year>1984</year>
+		<publisher>CNDP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="332492">
+				<rom name="orthographe lexicale (1984)(cndp)(fr)[a2].k7" size="332492" crc="58fcbf49" sha1="cba97ce508c7d9d5bb3ed524eebb13748b5e74da" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="paysmond">
+		<description>Pays du Monde</description>
+		<year>1986</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="66841">
+				<rom name="pays du monde (1986)(infogrames)(fr).k7" size="66841" crc="8c86a5a2" sha1="bcdd23d086bbda1c60533448758e8e3396f111e1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pendu">
+		<description>Le Pendu</description>
+		<year>1982</year>
+		<publisher>CNDP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="16431">
+				<rom name="pendu, le (1982)(cndp)(fr).k7" size="16431" crc="618ba2e3" sha1="10770aebe04a83273280b6783f609daca8c3b7a7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="piquefic">
+		<description>Pique-Fiche</description>
+		<year>1984</year>
+		<publisher>Hatier</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="33989">
+				<rom name="pique-fiche (1984)(hatier)(fr).k7" size="33989" crc="51e37e48" sha1="95457135ef9e0a0ad438da398e8c266a7166e408" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="plurnoms">
+		<description>Pluriel des Noms Simples</description>
+		<year>198?</year>
+		<publisher>CNDP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="3185">
+				<rom name="pluriel des noms simples (198x)(cndp)(fr).k7" size="3185" crc="6c6ba04d" sha1="75c400dac1f692c877d396556d16d5dcd903d3e0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pourcent">
+		<description>Pourcentages</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="11543">
+				<rom name="pourcentages (198x)(-)(fr)(pd)[b].k7" size="11543" crc="bc0a3d98" sha1="5fe303ab20394b74d7e6f9c4ca2866cc45aa0923" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="premvrs1">
+		<description>Premiers pas Vers le Basic 1</description>
+		<year>1984</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="cass" size="90200">
+				<rom name="premiers pas vers le basic 1 (1984)(vifi-nathan)(fr)(side a).k7" size="90200" crc="c40d9b7c" sha1="b0b3ffcebe26ce239cf1c151e5c10c0a99bca225" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="cass" size="108331">
+				<rom name="premiers pas vers le basic 1 (1984)(vifi-nathan)(fr)(side b).k7" size="108331" crc="247ee48e" sha1="4c9d3b5d3f1ee4e264b0a46ea9c2f86977b5b4ba" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="premvrs2">
+		<description>Premiers pas Vers le Basic 2</description>
+		<year>1984</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="cass" size="89910">
+				<rom name="premiers pas vers le basic 2 (1984)(vifi-nathan)(fr)(side a).k7" size="89910" crc="889fb0bf" sha1="8a8ab2cf9fbda34495a52acb3cca76054f9ba0ea" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pretstar">
+		<description>Preterite Star</description>
+		<year>1984</year>
+		<publisher>Edil</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="34666">
+				<rom name="preterite star (1984)(edil)(fr)(en-fr)[b2].k7" size="34666" crc="763e0544" sha1="9df621f94efedc6cc98269b015f4784726647552" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pretstara" cloneof="pretstar">
+		<description>Preterite Star (Bad)</description>
+		<year>1984</year>
+		<publisher>Edil</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="34684">
+				<rom name="preterite star (1984)(edil)(fr)(en-fr)[b].k7" size="34684" crc="53fe3906" sha1="6f02625694258047c45b83410fdd0f4ba252c819" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="prologic">
+		<description>Prologic</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="26032">
+				<rom name="prologic (1985)(fil)(fr).k7" size="26032" crc="2c60ec93" sha1="be2ec2b3d8769401dc8649c26fba2667a5fe0138" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="proport">
+		<description>Proportions</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="11074">
+				<rom name="proportions (19xx)(-)(fr).k7" size="11074" crc="164d4f12" sha1="2a8dcd300e1b994218a7a126f78b4ac7d068e4d1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pythagor">
+		<description>Pythagore</description>
+		<year>1984</year>
+		<publisher>Hatier</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="25004">
+				<rom name="pythagore (1984)(hatier)(fr).k7" size="25004" crc="8306dbad" sha1="d279b8e0c3e6ea35204cf7cc3d8daa89264544ca" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="repere">
+		<description>Repere</description>
+		<year>1985</year>
+		<publisher>USTL - IREM</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="19735">
+				<rom name="repere (1985-09-13)(ustl - irem)(fr).k7" size="19735" crc="96f8d319" sha1="eacdec7ffc9a5e5b1c58b0ed5aa732cb6220b523" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rythmamu">
+		<description>Rythmamus (v2)</description>
+		<year>1984</year>
+		<publisher>Logimus</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="23920">
+				<rom name="rythmamus v2 (1984)(logimus)(fr).k7" size="23920" crc="0d714436" sha1="276e3517ab75aa411972e9a425fdd68fa099f1f0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rythmamua" cloneof="rythmamu">
+		<description>Rythmamus (v2, Alt)</description>
+		<year>1984</year>
+		<publisher>Logimus</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="23912">
+				<rom name="rythmamus v2 (1984)(logimus)(fr)[a].k7" size="23912" crc="56bd12e7" sha1="1a95d5207ba82479c00ac6b298e70e5d31f15002" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rythmamub" cloneof="rythmamu">
+		<description>Rythmamus (v2, Alt 2)</description>
+		<year>1984</year>
+		<publisher>Logimus</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="23912">
+				<rom name="rythmamus v2 (1984)(logimus)(fr)[a2].k7" size="23912" crc="6696f0f3" sha1="319ef7b619b6130bf8929f6ef7a00401ea9f94ac" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rythmamuc" cloneof="rythmamu">
+		<description>Rythmamus (v2, Alt 3)</description>
+		<year>1984</year>
+		<publisher>Logimus</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="23912">
+				<rom name="rythmamus v2 (1984)(logimus)(fr)[a3].k7" size="23912" crc="d2a02cdc" sha1="21a4020d4f670e3a0931a883bbdcb981d9960071" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sos">
+		<description>S.O.S. - J'apprends le Morse (v2.3)</description>
+		<year>1985</year>
+		<publisher>Free Game Blot</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="18447">
+				<rom name="s.o.s. - j'apprends le morse v2.3 (1985)(free game blot)(fr).k7" size="18447" crc="49d5c2ed" sha1="c75f01ffc1eb4cec49c59d431b654c850f57a433" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sichvors">
+		<description>Sich Vorstellen</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="40475">
+				<rom name="sich vorstellen (1985)(fil)(fr)(de-fr).k7" size="40475" crc="239d78b7" sha1="cbf5bfa6f395eff52cd405c0ad4f9690a383532d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sichvorsa" cloneof="sichvors">
+		<description>Sich Vorstellen (Alt)</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="33915">
+				<rom name="sich vorstellen (1985)(fil)(fr)(de-fr)[a].k7" size="33915" crc="27297d31" sha1="f699ddce0a4ba4b5175b707985c4b2e00d6a7af3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sichvorsb" cloneof="sichvors">
+		<description>Sich Vorstellen (Alt 2)</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="33915">
+				<rom name="sich vorstellen (1985)(fil)(fr)(de-fr)[a2].k7" size="33915" crc="e70cee30" sha1="e6e6496c4a92b56b5b64bcde72b9739b37d2d74a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sichvorsc" cloneof="sichvors">
+		<description>Sich Vorstellen (Alt 3)</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="33915">
+				<rom name="sich vorstellen (1985)(fil)(fr)(de-fr)[a3].k7" size="33915" crc="440a777e" sha1="4f2a5c9578b1ed4b5ad32721f279fc5334bbbd18" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="signespa">
+		<description>Des Signes dans l'Espace</description>
+		<year>1983</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="57602">
+				<rom name="signes dans l'espace, des (1983)(vifi-nathan)(fr).k7" size="57602" crc="4ce1aa84" sha1="57a0403ebdf79242a15b8187e8037b8e9cafe314" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="signespaa" cloneof="signespa">
+		<description>Des Signes dans l'Espace (Alt)</description>
+		<year>1983</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="58709">
+				<rom name="signes dans l'espace, des (1983)(vifi-nathan)(fr)[a].k7" size="58709" crc="20a86cf0" sha1="74814169a818fd2c3a79c191a221b3ba8c06ca58" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="signespab" cloneof="signespa">
+		<description>Des Signes dans l'Espace (Alt 2)</description>
+		<year>1983</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="58709">
+				<rom name="signes dans l'espace, des (1983)(vifi-nathan)(fr)[a2].k7" size="58709" crc="71727121" sha1="518ed54173cdd324d09120b48619287fba2688eb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="simevol">
+		<description>Simulation de l'Evolution d'Un Objet dans un Champ de Gravitation</description>
+		<year>1985</year>
+		<publisher>CNDP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="6448">
+				<rom name="simulation de l'evolution d'un objet dans un champ de gravitation (1985)(cndp)(fr).k7" size="6448" crc="efd8dbde" sha1="e75c456de67c902ece54ad26fdbd90108d449845" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thermo">
+		<description>Thermo</description>
+		<year>1985</year>
+		<publisher>USTL - IREM</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="17305">
+				<rom name="thermo (1985-09-13)(ustl - irem)(fr).k7" size="17305" crc="8d1dbaea" sha1="a2cdb6c373af9ad1a2e9bcb9342be13f727ea73b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tissage">
+		<description>Tissage</description>
+		<year>1985</year>
+		<publisher>Jean-Louis Sauzade</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="14572">
+				<rom name="tissage (1985)(sauzade, jean-louis)(fr).k7" size="14572" crc="dab19d7c" sha1="ed41ad6812c0e3481f328c9dda5a715d0f528230" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tissagea" cloneof="tissage">
+		<description>Tissage (Alt)</description>
+		<year>1985</year>
+		<publisher>Jean-Louis Sauzade</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="14572">
+				<rom name="tissage (1985)(sauzade, jean-louis)(fr)[a].k7" size="14572" crc="27a0430f" sha1="e720aa40b3260b3c7a92624ac1d9b30fe59b6060" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vecteurs">
+		<description>Vecteurs</description>
+		<year>1985</year>
+		<publisher>USTL - IREM</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="17156">
+				<rom name="vecteurs (1985-09-13)(ustl - irem)(fr).k7" size="17156" crc="c4a826c4" sha1="566cdc405a1156c38c411011f24ac12c422ad324" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wormy">
+		<description>Wormy - Junior Computhink</description>
+		<year>1984</year>
+		<publisher>Hatier</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="29109">
+				<rom name="wormy - junior computhink (1984)(hatier)(fr).k7" size="29109" crc="0a61be8e" sha1="1f699f2ae1fb76c538f684d500a45b2af13671f1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zorro">
+		<description>Zorro</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="12380">
+				<rom name="zorro (1985)(fil)(fr).k7" size="12380" crc="1aa537b1" sha1="ca7abe52e5da5c00f60db8e47e080f8fbb6bb999" offset="0" />
 			</dataarea>
 		</part>
 	</software>
