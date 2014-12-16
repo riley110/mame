@@ -1730,6 +1730,7 @@ $(MESSOBJ)/ti.a:                \
 	$(MESS_DRIVERS)/exelv.o     \
 	$(MESS_DRIVERS)/geneve.o    \
 	$(MESS_DRIVERS)/ticalc1x.o  \
+	$(MESS_DRIVERS)/tispeak.o   \
 	$(MESS_DRIVERS)/ti74.o      \
 	$(MESS_DRIVERS)/ti85.o $(MESS_MACHINE)/ti85.o $(MESS_VIDEO)/ti85.o \
 	$(MESS_DRIVERS)/ti89.o      \
@@ -1773,7 +1774,7 @@ $(MESSOBJ)/toshiba.a:           \
 	$(MESS_DRIVERS)/pasopia7.o  \
 	$(MESS_DRIVERS)/paso1600.o  \
 
-$(MESSOBJ)/trainer.a: \
+$(MESSOBJ)/trainer.a:           \
 	$(MESS_DRIVERS)/amico2k.o   \
 	$(MESS_DRIVERS)/babbage.o   \
 	$(MESS_DRIVERS)/bob85.o     \
@@ -1799,11 +1800,12 @@ $(MESSOBJ)/trs.a:               \
 	$(MESS_MACHINE)/dragon.o    \
 	$(MESS_MACHINE)/dgnalpha.o  \
 	$(MESS_VIDEO)/gime.o        \
+	$(MESS_DRIVERS)/tandy12.o   \
 	$(MESS_DRIVERS)/trs80.o $(MESS_MACHINE)/trs80.o $(MESS_VIDEO)/trs80.o \
 	$(MESS_DRIVERS)/trs80m2.o $(MESS_MACHINE)/trs80m2kb.o \
 	$(MESS_DRIVERS)/tandy2k.o $(MESS_MACHINE)/tandy2kb.o \
 
-$(MESSOBJ)/ultratec.a:        \
+$(MESSOBJ)/ultratec.a:          \
 	$(MESS_DRIVERS)/minicom.o   \
 
 $(MESSOBJ)/unisys.a:            \
@@ -1856,7 +1858,7 @@ $(MESSOBJ)/xerox.a:             \
 	$(MESS_DRIVERS)/bigbord2.o  \
 	$(MESS_DRIVERS)/alto2.o     \
 
-$(MESSOBJ)/xussrpc.a:            \
+$(MESSOBJ)/xussrpc.a:           \
 	$(MESS_DRIVERS)/ec184x.o    \
 	$(MESS_DRIVERS)/iskr103x.o  \
 	$(MESS_DRIVERS)/mc1502.o    \
@@ -1867,9 +1869,9 @@ $(MESSOBJ)/yamaha.a:            \
 	$(MESS_DRIVERS)/fb01.o      \
 
 $(MESS_DRIVERS)/ymmu100.o: $(MESS_DRIVERS)/ymmu100.inc
-$(MESS_DRIVERS)/ymmu100.inc: $(MESSSRC)/drivers/ymmu100.ppm $(FILE2STR_TARGET)
+$(MESS_DRIVERS)/ymmu100.inc: $(MESSSRC)/drivers/ymmu100.ppm $(SRC)/build/file2str.py
 	@echo Converting $<...
-	@$(FILE2STR) $(MESSSRC)/drivers/ymmu100.ppm $@ ymmu100_bkg UINT8
+	@$(PYTHON) $(SRC)/build/file2str.py $(MESSSRC)/drivers/ymmu100.ppm $@ ymmu100_bkg UINT8
 
 $(MESSOBJ)/zenith.a:            \
 	$(MESS_DRIVERS)/z100.o      \
@@ -2166,6 +2168,7 @@ $(MESS_DRIVERS)/supercon.o: $(MESS_LAYOUT)/supercon.lh
 $(MESS_DRIVERS)/svision.o:  $(MESS_LAYOUT)/svision.lh
 $(MESS_DRIVERS)/svmu.o:     $(MESS_LAYOUT)/svmu.lh
 $(MESS_DRIVERS)/sym1.o:     $(MESS_LAYOUT)/sym1.lh
+$(MESS_DRIVERS)/tandy12.o:  $(MESS_LAYOUT)/tandy12.lh
 $(MESS_DRIVERS)/tavernie.o: $(MESS_LAYOUT)/tavernie.lh
 $(MESS_DRIVERS)/tec1.o:     $(MESS_LAYOUT)/tec1.lh
 $(MESS_DRIVERS)/tecnbras.o: $(MESS_LAYOUT)/tecnbras.lh
@@ -2175,6 +2178,7 @@ $(MESS_DRIVERS)/ticalc1x.o: $(MESS_LAYOUT)/ti1270.lh \
 							$(MESS_LAYOUT)/ti30.lh \
 							$(MESS_LAYOUT)/tisr16.lh \
 							$(MESS_LAYOUT)/wizatron.lh
+$(MESS_DRIVERS)/tispeak.o:  $(MESS_LAYOUT)/tispeak.lh
 $(MESS_DRIVERS)/tk80.o:     $(MESS_LAYOUT)/tk80.lh
 $(MESS_DRIVERS)/tm990189.o: $(MESS_LAYOUT)/tm990189.lh \
 							$(MESS_LAYOUT)/tm990189v.lh
