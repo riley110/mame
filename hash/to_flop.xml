@@ -141,7 +141,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="arsene-to9.fd" size="327680" crc="a26e28c1" sha1="fb9562231e11244467fc873a8782e58d822f8bdc" offset="0x0000" />
+				<rom name="arsene-to9.fd" size="327680" crc="a26e28c1" sha1="fb9562231e11244467fc873a8782e58d822f8bdc" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -202,7 +202,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
-				<rom name="qbackup.sap" size="335426" crc="2ffb551f" sha1="2826d3842691c04f16dbb9ada2669c2efc00baf9" offset="0x0000" />
+				<rom name="qbackup.sap" size="335426" crc="2ffb551f" sha1="2826d3842691c04f16dbb9ada2669c2efc00baf9" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -504,7 +504,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="einfuehrung in basic 128 (thomson) (inconnus) (1985) (to9).fd" size="327680" crc="cc25f007" sha1="41ddd8182e4f0dae9c52e07644829cba16d1fd8b" offset="0x0000" />
+				<rom name="einfuehrung in basic 128 (thomson) (inconnus) (1985) (to9).fd" size="327680" crc="cc25f007" sha1="41ddd8182e4f0dae9c52e07644829cba16d1fd8b" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -528,7 +528,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
-				<rom name="dos5_10.sap" size="335426" crc="2df61497" sha1="0e0e2f69a77685e14122b6afbb1db48a6490c7fd" offset="0x0000" />
+				<rom name="dos5_10.sap" size="335426" crc="2df61497" sha1="0e0e2f69a77685e14122b6afbb1db48a6490c7fd" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -637,7 +637,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
-				<rom name="graf-to9.sap" size="335426" crc="cabe7182" sha1="5a016bb031ad04c97b400453c34e0437da1a95dd" offset="0x0000" />
+				<rom name="graf-to9.sap" size="335426" crc="cabe7182" sha1="5a016bb031ad04c97b400453c34e0437da1a95dd" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -710,7 +710,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="auto-initiation-basic128_to9.fd" size="327680" crc="f8830ec5" sha1="27d1d2fa7581a77ab147c1acf9987778add675b8" offset="0x0000" />
+				<rom name="auto-initiation-basic128_to9.fd" size="327680" crc="f8830ec5" sha1="27d1d2fa7581a77ab147c1acf9987778add675b8" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -782,7 +782,7 @@
 
 <!-- 
 	uses double-sided qdd disks, which seem to not be handled correctly 
-	and the same dump is available on dcmoto, so it is likely not bad	
+	the same dump is available on dcmoto, so it is likely not bad	
 -->
 	<software name="initb512qd" cloneof="initb512" supported="no">
 		<description>Initiation au BASIC 512 (QDD)</description>
@@ -823,7 +823,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="auto-initiation-to9_to9.fd" size="327680" crc="a79a0ab7" sha1="ba17764dd2836e81da7d21eadfc077b79f52c048" offset="0x0000" />
+				<rom name="auto-initiation-to9_to9.fd" size="327680" crc="a79a0ab7" sha1="ba17764dd2836e81da7d21eadfc077b79f52c048" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -835,7 +835,7 @@
 
 		<part name="flop4" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
-				<rom name="init-to9.sap" size="335426" crc="01279827" sha1="1e7e16dc02e6697a03b0e1d42cc08901fa602381" offset="0x0000" />
+				<rom name="init-to9.sap" size="335426" crc="01279827" sha1="1e7e16dc02e6697a03b0e1d42cc08901fa602381" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -999,7 +999,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="logo en allemand (thomson micro gmbh) (inconnus) (1986) (to7).fd" size="327680" crc="2fd30cdb" sha1="5f3a119958717a127105254923fdcd79fa4737c6" offset="0x0000" />
+				<rom name="logo en allemand (thomson micro gmbh) (inconnus) (1986) (to7).fd" size="327680" crc="2fd30cdb" sha1="5f3a119958717a127105254923fdcd79fa4737c6" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1521,7 +1521,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="speedy wonder (minipuce) (c. sotiropoulos, y. beltchenko) (1986) (to7).fd" size="327680" crc="8c6c4d9b" sha1="326bc26de64536b42834534682cf9dd9edd7ff85" offset="0x0000" />
+				<rom name="speedy wonder (minipuce) (c. sotiropoulos, y. beltchenko) (1986) (to7).fd" size="327680" crc="8c6c4d9b" sha1="326bc26de64536b42834534682cf9dd9edd7ff85" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1533,7 +1533,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
-				<rom name="stat-to9.sap" size="335426" crc="3ce7ca38" sha1="58fca3db1c6ee2a85fa3edd179e5d6cd5854d2e2" offset="0x0000" />
+				<rom name="stat-to9.sap" size="335426" crc="3ce7ca38" sha1="58fca3db1c6ee2a85fa3edd179e5d6cd5854d2e2" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1572,25 +1572,25 @@
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1 Side A"/>
 			<dataarea name="flop" size="327680">
-				<rom name="sppm80-a-1.fd" size="327680" crc="f6a65a1b" sha1="b0760f8f9a84b63e4eb989c80ff1c5362043c617" offset="0x0000" />
+				<rom name="sppm80-a-1.fd" size="327680" crc="f6a65a1b" sha1="b0760f8f9a84b63e4eb989c80ff1c5362043c617" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1 Side B"/>
 			<dataarea name="flop" size="327680">
-				<rom name="sppm80-a-2.fd" size="327680" crc="8346e669" sha1="196e2d25fe49828f3d8a1cac99afea5b78e0cbde" offset="0x0000" />
+				<rom name="sppm80-a-2.fd" size="327680" crc="8346e669" sha1="196e2d25fe49828f3d8a1cac99afea5b78e0cbde" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 2 Side A"/>
 			<dataarea name="flop" size="327680">
-				<rom name="sppm80-b-1.fd" size="327680" crc="b0c205fb" sha1="1a10b8399faf87e53de607aa18fa25506b54ad63" offset="0x0000" />
+				<rom name="sppm80-b-1.fd" size="327680" crc="b0c205fb" sha1="1a10b8399faf87e53de607aa18fa25506b54ad63" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 2 Side B"/>
 			<dataarea name="flop" size="327680">
-				<rom name="sppm80-b-2.fd" size="327680" crc="72cb80d7" sha1="15bc8ebc8f69920d17c2b87f4513977fae72493f" offset="0x0000" />
+				<rom name="sppm80-b-2.fd" size="327680" crc="72cb80d7" sha1="15bc8ebc8f69920d17c2b87f4513977fae72493f" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1634,13 +1634,13 @@
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="655360">
-				<rom name="sppm80-a.fd" size="655360" crc="a55d91a0" sha1="99883c221513beb288b625afb2f8040067e5af4d" offset="0x0000" />
+				<rom name="sppm80-a.fd" size="655360" crc="a55d91a0" sha1="99883c221513beb288b625afb2f8040067e5af4d" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="655360">
-				<rom name="sppm80-b.fd" size="655360" crc="05f43d13" sha1="c966005c3fba53fc936f43abf7bd54eff0b8219f" offset="0x0000" />
+				<rom name="sppm80-b.fd" size="655360" crc="05f43d13" sha1="c966005c3fba53fc936f43abf7bd54eff0b8219f" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1770,13 +1770,13 @@
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="327680">
-				<rom name="applications-to9p-1.fd" size="327680" crc="10045ef1" sha1="41fa1d2f4d8b170640e9fb6ea62def297d357b8a" offset="0x0000" />
+				<rom name="applications-to9p-1.fd" size="327680" crc="10045ef1" sha1="41fa1d2f4d8b170640e9fb6ea62def297d357b8a" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="327680">
-				<rom name="applications-to9p-2.fd" size="327680" crc="c160160b" sha1="410abdaac674fe8604a4606d774a3b8ad55ade16" offset="0x0000" />
+				<rom name="applications-to9p-2.fd" size="327680" crc="c160160b" sha1="410abdaac674fe8604a4606d774a3b8ad55ade16" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1789,13 +1789,13 @@
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="335426">
-				<rom name="appli_0.sap" size="335426" crc="5e2763c6" sha1="ccefaff9603386c2edffc6eb31de7c2022b6d0a8" offset="0x0000" />
+				<rom name="appli_0.sap" size="335426" crc="5e2763c6" sha1="ccefaff9603386c2edffc6eb31de7c2022b6d0a8" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="335426">
-				<rom name="appli_1.sap" size="335426" crc="591f609e" sha1="abf01f8b51d209a675c0e1c209ea6be5a4040331" offset="0x0000" />
+				<rom name="appli_1.sap" size="335426" crc="591f609e" sha1="abf01f8b51d209a675c0e1c209ea6be5a4040331" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1808,13 +1808,13 @@
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="335426">
-				<rom name="to9+ applications (1986)(fil).sap" size="335426" crc="f4f42ae2" sha1="f6415516e98a2edc7c470a0e35d2d933833284f2" offset="0x0000" />
+				<rom name="to9+ applications (1986)(fil).sap" size="335426" crc="f4f42ae2" sha1="f6415516e98a2edc7c470a0e35d2d933833284f2" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="335426">
-				<rom name="appli_1.sap" size="335426" crc="591f609e" sha1="abf01f8b51d209a675c0e1c209ea6be5a4040331" offset="0x0000" />
+				<rom name="appli_1.sap" size="335426" crc="591f609e" sha1="abf01f8b51d209a675c0e1c209ea6be5a4040331" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1826,7 +1826,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="655360">
-				<rom name="applications-to9p.fd" size="655360" crc="95628999" sha1="243fb9c14f7d2f320351e5eebcb6a8cd07aafba7" offset="0x0000" />
+				<rom name="applications-to9p.fd" size="655360" crc="95628999" sha1="243fb9c14f7d2f320351e5eebcb6a8cd07aafba7" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1839,13 +1839,13 @@
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="327680">
-				<rom name="initiations-to9p-1.fd" size="327680" crc="a44346a4" sha1="745b1091f7151e30795f9758796c21e8cfa160c4" offset="0x0000" />
+				<rom name="initiations-to9p-1.fd" size="327680" crc="a44346a4" sha1="745b1091f7151e30795f9758796c21e8cfa160c4" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="327680">
-				<rom name="initiations-to9p-2.fd" size="327680" crc="1a4c61a4" sha1="a90addd69c892904f90dad291947fc8af42c7a8f" offset="0x0000" />
+				<rom name="initiations-to9p-2.fd" size="327680" crc="1a4c61a4" sha1="a90addd69c892904f90dad291947fc8af42c7a8f" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1858,13 +1858,13 @@
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="335426">
-				<rom name="to9+ initiation (1986)(fil).sap" size="335426" crc="40fc2a47" sha1="94f08866ea222a06370c316f51f38bf0efb7a6ab" offset="0x0000" />
+				<rom name="to9+ initiation (1986)(fil).sap" size="335426" crc="40fc2a47" sha1="94f08866ea222a06370c316f51f38bf0efb7a6ab" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="335426">
-				<rom name="init_1.sap" size="335426" crc="f2e10f4c" sha1="889e591bd7f2334f8ceb72e200e2cc60efb11426" offset="0x0000" />
+				<rom name="init_1.sap" size="335426" crc="f2e10f4c" sha1="889e591bd7f2334f8ceb72e200e2cc60efb11426" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1876,7 +1876,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="655360">
-				<rom name="initiations-to9p.fd" size="655360" crc="aee9e029" sha1="b86708795997e3774854d0d306f3a83403312060" offset="0x0000" />
+				<rom name="initiations-to9p.fd" size="655360" crc="aee9e029" sha1="b86708795997e3774854d0d306f3a83403312060" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2036,7 +2036,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="typo7-dcmoto.fd" size="327680" crc="f4d9c0fa" sha1="c3b9d8c0c3f2a3671fe04b59fa220fd00ca7007c" offset="0x0000" />
+				<rom name="typo7-dcmoto.fd" size="327680" crc="f4d9c0fa" sha1="c3b9d8c0c3f2a3671fe04b59fa220fd00ca7007c" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2532,13 +2532,13 @@
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="327680">
-				<rom name="skyrim (samuel devulder) (2012) (to8)-1.fd" size="327680" crc="2e747394" sha1="78cb134a7c0025fbe62b5567699d3e825187fffd" offset="0x0000" />
+				<rom name="skyrim (samuel devulder) (2012) (to8)-1.fd" size="327680" crc="2e747394" sha1="78cb134a7c0025fbe62b5567699d3e825187fffd" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="327680">
-				<rom name="skyrim (samuel devulder) (2012) (to8)-2.fd" size="327680" crc="7f46a821" sha1="394ac8d6a4bb14105f71a1e943cf0ec56d66173d" offset="0x0000" />
+				<rom name="skyrim (samuel devulder) (2012) (to8)-2.fd" size="327680" crc="7f46a821" sha1="394ac8d6a4bb14105f71a1e943cf0ec56d66173d" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2550,7 +2550,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="skyrim (samuel devulder) (2012) (to7).fd" size="327680" crc="cabf3698" sha1="aead7c153bab10f9ebffdd701bd5773412e7f1a5" offset="0x0000" />
+				<rom name="skyrim (samuel devulder) (2012) (to7).fd" size="327680" crc="cabf3698" sha1="aead7c153bab10f9ebffdd701bd5773412e7f1a5" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2562,7 +2562,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="655360">
-				<rom name="skyrim (samuel devulder) (2012) (to8).fd" size="655360" crc="30f44523" sha1="59e85500d169ae378568903f76a0f305226175c0" offset="0x0000" />
+				<rom name="skyrim (samuel devulder) (2012) (to8).fd" size="655360" crc="30f44523" sha1="59e85500d169ae378568903f76a0f305226175c0" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -3686,7 +3686,7 @@
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="655360">
-				<rom name="teo-drive n6 (asci) (michel saint-briant) (1991) (to8).fd" size="655360" crc="fa0fe99f" sha1="111c3d64bb30f3fe1986918c684452fad8a8f59a" offset="0x0000" />
+				<rom name="teo-drive n6 (asci) (michel saint-briant) (1991) (to8).fd" size="655360" crc="fa0fe99f" sha1="111c3d64bb30f3fe1986918c684452fad8a8f59a" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
@@ -3866,7 +3866,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="apprends-moi a ecrire (nathan) (michel bussac) (1986) (to9).fd" size="327680" crc="166fac29" sha1="b3ef7017e69f5b06c518321f9dd051f8da0f780a" offset="0x0000" />
+				<rom name="apprends-moi a ecrire (nathan) (michel bussac) (1986) (to9).fd" size="327680" crc="166fac29" sha1="b3ef7017e69f5b06c518321f9dd051f8da0f780a" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -4007,7 +4007,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="enigme-a-oxford-to9.fd" size="327680" crc="10ee23c6" sha1="f2288a7125f341c4446ea03ffd9a529f8c77f8ba" offset="0x0000" />
+				<rom name="enigme-a-oxford-to9.fd" size="327680" crc="10ee23c6" sha1="f2288a7125f341c4446ea03ffd9a529f8c77f8ba" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -4338,7 +4338,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="mots croises magiques (nathan) (antoine mahieu) (1986).fd" size="327680" crc="4d3c3bae" sha1="8b9c73e61f9ea8d3433958750c1b3c8544dcc3df" offset="0x0000" />
+				<rom name="mots croises magiques (nathan) (antoine mahieu) (1986).fd" size="327680" crc="4d3c3bae" sha1="8b9c73e61f9ea8d3433958750c1b3c8544dcc3df" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -4362,7 +4362,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="ordibaby (cobrasoft) (yves dumont) (1986) (to9).fd" size="327680" crc="75214539" sha1="5086c872ae224e9f3ea105af4c3c247e5ad8e96e" offset="0x0000" />
+				<rom name="ordibaby (cobrasoft) (yves dumont) (1986) (to9).fd" size="327680" crc="75214539" sha1="5086c872ae224e9f3ea105af4c3c247e5ad8e96e" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -4978,7 +4978,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="l-aigle-d-or_to9.fd" size="327680" crc="cd75ef8f" sha1="a830b361a26eeaf8e19e35214ed41d822958e694" offset="0x0000" />
+				<rom name="l-aigle-d-or_to9.fd" size="327680" crc="cd75ef8f" sha1="a830b361a26eeaf8e19e35214ed41d822958e694" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -5015,7 +5015,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="51200">
-				<rom name="l-aigle-d-or_to770.qd" size="51200" crc="9bd93158" sha1="71802bcfa261ff32016ab664d9bb39a6ca423822" offset="0x0000" />
+				<rom name="l-aigle-d-or_to770.qd" size="51200" crc="9bd93158" sha1="71802bcfa261ff32016ab664d9bb39a6ca423822" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -5852,7 +5852,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="655360">
-				<rom name="chevaler.fd" size="655360" crc="714c41f1" sha1="d593294b94d912a6ff44ccbd4998a510dd3be347" offset="0x0000" />
+				<rom name="chevaler.fd" size="655360" crc="714c41f1" sha1="d593294b94d912a6ff44ccbd4998a510dd3be347" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -5914,7 +5914,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="conte (fil) (1985) (alain lambert) (to9).fd" size="327680" crc="5625365a" sha1="ebd55e45466e8d16ebed0e27564c1caa847608b7" offset="0x0000" />
+				<rom name="conte (fil) (1985) (alain lambert) (to9).fd" size="327680" crc="5625365a" sha1="ebd55e45466e8d16ebed0e27564c1caa847608b7" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -6155,7 +6155,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="empire (loriciels) (philippe darmagnac) (1985) (to9).fd" size="327680" crc="aafaedd6" sha1="690a0941c105e67e9dc0b68c745f6a5bc7ba5e6f" offset="0x0000" />
+				<rom name="empire (loriciels) (philippe darmagnac) (1985) (to9).fd" size="327680" crc="aafaedd6" sha1="690a0941c105e67e9dc0b68c745f6a5bc7ba5e6f" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -6191,7 +6191,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="entropie (infogrames) (william hennebois) (1987) (to9).fd" size="327680" crc="b7b1574e" sha1="1971b7d04c52b919688ac84e0e658086c84b18e9" offset="0x0000" />
+				<rom name="entropie (infogrames) (william hennebois) (1987) (to9).fd" size="327680" crc="b7b1574e" sha1="1971b7d04c52b919688ac84e0e658086c84b18e9" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -6434,7 +6434,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="51200">
-				<rom name="histoire-de-theatre_to770.qd" size="51200" crc="ee4f562d" sha1="f3f48023c0293d7c2d67df983951489fd7e0aa4e" offset="0x0000" />
+				<rom name="histoire-de-theatre_to770.qd" size="51200" crc="ee4f562d" sha1="f3f48023c0293d7c2d67df983951489fd7e0aa4e" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -6447,7 +6447,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="51200">
-				<rom name="histoire-de-theatre-to7.qd" size="51200" crc="c2549a06" sha1="ceb6c707f415a2c04d3d0b6f24e30184e838746f" offset="0x0000" />
+				<rom name="histoire-de-theatre-to7.qd" size="51200" crc="c2549a06" sha1="ceb6c707f415a2c04d3d0b6f24e30184e838746f" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -6629,7 +6629,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="51200">
-				<rom name="karate_to770.qd" size="51200" crc="64d50122" sha1="c740c5ea101ea0e7ee0a73838644322a27dd2d99" offset="0x0000" />
+				<rom name="karate_to770.qd" size="51200" crc="64d50122" sha1="c740c5ea101ea0e7ee0a73838644322a27dd2d99" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -7219,7 +7219,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="micro-scrabble (fil) (inconnus) (1985) (to9).fd" size="327680" crc="adef8ffc" sha1="e4500ccda9f8cae7bcd6c8feadbeb3fc50362583" offset="0x0000" />
+				<rom name="micro-scrabble (fil) (inconnus) (1985) (to9).fd" size="327680" crc="adef8ffc" sha1="e4500ccda9f8cae7bcd6c8feadbeb3fc50362583" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -7257,7 +7257,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="51200">
-				<rom name="mini-bridge-to770.qd" size="51200" crc="2eef446b" sha1="babbb621e6b227fb5c249afd804e976a327c9a87" offset="0x0000" />
+				<rom name="mini-bridge-to770.qd" size="51200" crc="2eef446b" sha1="babbb621e6b227fb5c249afd804e976a327c9a87" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -7270,7 +7270,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="51200">
-				<rom name="mini-bridge_to770.qd" size="51200" crc="02f48840" sha1="4a84044a9cece29ceeb940257060c0eed82527a4" offset="0x0000" />
+				<rom name="mini-bridge_to770.qd" size="51200" crc="02f48840" sha1="4a84044a9cece29ceeb940257060c0eed82527a4" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -7644,7 +7644,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="51200">
-				<rom name="poseidon-to770.qd" size="51200" crc="fa5ef752" sha1="9cafeaf09230945c5c5686958a5e0633422e8a1a" offset="0x0000" />
+				<rom name="poseidon-to770.qd" size="51200" crc="fa5ef752" sha1="9cafeaf09230945c5c5686958a5e0633422e8a1a" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -8342,7 +8342,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="super androides (infogrames) (william hennebois) (1986).fd" size="327680" crc="29188291" sha1="2ed323a1ed88dca9bd0e7ee113ee61a235edfc5d" offset="0x0000" />
+				<rom name="super androides (infogrames) (william hennebois) (1986).fd" size="327680" crc="29188291" sha1="2ed323a1ed88dca9bd0e7ee113ee61a235edfc5d" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -8354,7 +8354,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="super-tennis-fil-to9.fd" size="327680" crc="7771603f" sha1="f3cd236454694921c8aa1e102de82a1534860a25" offset="0x0000" />
+				<rom name="super-tennis-fil-to9.fd" size="327680" crc="7771603f" sha1="f3cd236454694921c8aa1e102de82a1534860a25" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -8754,13 +8754,13 @@
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="327680">
-				<rom name="turbo cup (loriciels) (vincent baillet) (1988) (mo6 to8)-1.fd" size="327680" crc="ccc68ffd" sha1="660f9cad0b40f22d753dac46994c559e5a124499" offset="0x0000" />
+				<rom name="turbo cup (loriciels) (vincent baillet) (1988) (mo6 to8)-1.fd" size="327680" crc="ccc68ffd" sha1="660f9cad0b40f22d753dac46994c559e5a124499" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="327680">
-				<rom name="turbo cup (loriciels) (vincent baillet) (1988) (mo6 to8)-2.fd" size="327680" crc="05162ac3" sha1="e90927dfddf4961a66260f8e8c9fe525a5f2abc5" offset="0x0000" />
+				<rom name="turbo cup (loriciels) (vincent baillet) (1988) (mo6 to8)-2.fd" size="327680" crc="05162ac3" sha1="e90927dfddf4961a66260f8e8c9fe525a5f2abc5" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -8784,7 +8784,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="655360">
-				<rom name="turbo cup (loriciels) (vincent baillet) (1988) (mo6 to8).fd" size="655360" crc="30023825" sha1="775736698c4d0b0991134420d25efcc5867bb72b" offset="0x0000" />
+				<rom name="turbo cup (loriciels) (vincent baillet) (1988) (mo6 to8).fd" size="655360" crc="30023825" sha1="775736698c4d0b0991134420d25efcc5867bb72b" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -9470,7 +9470,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="educatif 1 (cobrasoft) (a. cornu) (1985) (to9).fd" size="327680" crc="ed42d0b4" sha1="1fd4c25d6f8cd5c42cefd68d106d38ebbf0823dd" offset="0x0000" />
+				<rom name="educatif 1 (cobrasoft) (a. cornu) (1985) (to9).fd" size="327680" crc="ed42d0b4" sha1="1fd4c25d6f8cd5c42cefd68d106d38ebbf0823dd" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -10644,7 +10644,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="n3-de-coktel-to9.fd" size="327680" crc="e76d9a49" sha1="637b345bb4cdb088a3d2ce518ef053c677eabf24" offset="0x0000" />
+				<rom name="n3-de-coktel-to9.fd" size="327680" crc="e76d9a49" sha1="637b345bb4cdb088a3d2ce518ef053c677eabf24" offset="0" />
 			</dataarea>
 		</part>
 	</software>
