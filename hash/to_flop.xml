@@ -673,7 +673,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
-				<rom name="hpdriver.sap" size="335426" crc="1fb8f1b0" sha1="27f7af152fd25d357e8b8ac048840633f199516e" offset="0" status="baddump"/>
+				<rom name="hpdriver.sap" size="335426" crc="1fb8f1b0" sha1="27f7af152fd25d357e8b8ac048840633f199516e" status="baddump" offset="0"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2050,13 +2050,13 @@
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="335426">
-				<rom name="ucsd pascal (19xx)(ucsd)(disk 1 of 2)[b][chg file].sap" size="335426" crc="1db3593e" sha1="0eada0f76d7fb13c781f7a455017ecd39887036a" offset="0" status="baddump" />
+				<rom name="ucsd pascal (19xx)(ucsd)(disk 1 of 2)[b][chg file].sap" size="335426" crc="1db3593e" sha1="0eada0f76d7fb13c781f7a455017ecd39887036a" status="baddump" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="335426">
-				<rom name="ucsd pascal (19xx)(ucsd)(disk 2 of 2)[b].sap" size="335426" crc="8a05ad77" sha1="77422b8bcca82a867043d86da92a7e1301af81eb" offset="0" status="baddump" />
+				<rom name="ucsd pascal (19xx)(ucsd)(disk 2 of 2)[b].sap" size="335426" crc="8a05ad77" sha1="77422b8bcca82a867043d86da92a7e1301af81eb" status="baddump" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
@@ -2789,7 +2789,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
-				<rom name="to-snap demo (19xx)(-)(fr)[b].sap" size="335426" crc="8aeaa854" sha1="b28d3b34870493035a43b70eda41b6d92a19689b" offset="0" status="baddump" />
+				<rom name="to-snap demo (19xx)(-)(fr)[b].sap" size="335426" crc="8aeaa854" sha1="b28d3b34870493035a43b70eda41b6d92a19689b" status="baddump" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -7582,7 +7582,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="peter pan (1988)(coktel vision)(fr).fd" size="327680" crc="25e473b9" sha1="8c447d35f355e38047a929de7e145a965ff98f31" offset="0" status="baddump" />
+				<rom name="peter pan (1988)(coktel vision)(fr).fd" size="327680" crc="25e473b9" sha1="8c447d35f355e38047a929de7e145a965ff98f31" status="baddump" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -8220,7 +8220,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
-				<rom name="space tunnel (1987)(softbook)(fr)[b corrupt disk].sap" size="335426" crc="6ba8811f" sha1="bc75556cd42fd5b8cea525c5faebfa5d4c957276" offset="0" status="baddump"/>
+				<rom name="space tunnel (1987)(softbook)(fr)[b corrupt disk].sap" size="335426" crc="6ba8811f" sha1="bc75556cd42fd5b8cea525c5faebfa5d4c957276" status="baddump" offset="0"/>
 			</dataarea>
 		</part>
 	</software>
@@ -8294,7 +8294,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
-				<rom name="star-trek (198x)(-)(pd)[b dir].sap" size="335426" crc="23d72076" sha1="832a49633622acc61f4c4252e58d3f7301d1cac6" offset="0" status="baddump" />
+				<rom name="star-trek (198x)(-)(pd)[b dir].sap" size="335426" crc="23d72076" sha1="832a49633622acc61f4c4252e58d3f7301d1cac6" status="baddump" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -8882,7 +8882,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="51200">
-				<rom name="vampire-to8-bad.qd" size="51200" crc="a02f3961" sha1="fcdedadd69375a350df8c336194c09a01d2bdaf6" offset="0" status="baddump" />
+				<rom name="vampire-to8-bad.qd" size="51200" crc="a02f3961" sha1="fcdedadd69375a350df8c336194c09a01d2bdaf6" status="baddump" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -9004,7 +9004,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="51200">
-				<rom name="vol-solo-to8-bad.qd" size="51200" crc="3bfb6836" sha1="d73c7f61ade484742f290f810fa5f40b3321364d" offset="0" status="baddump" />
+				<rom name="vol-solo-to8-bad.qd" size="51200" crc="3bfb6836" sha1="d73c7f61ade484742f290f810fa5f40b3321364d" status="baddump" offset="0" />
 			</dataarea>
 		</part>
 	</software>

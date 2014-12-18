@@ -2187,7 +2187,7 @@ static MACHINE_CONFIG_DERIVED( mo6, to7 )
 	MCFG_CENTRONICS_OUTPUT_LATCH_ADD("cent_data_out", "centronics")
 
 	MCFG_DEVICE_REMOVE("cartslot")
-	MCFG_GENERIC_CARTSLOT_ADD("cartslot", generic_plain_slot, "mo5_cart")
+	MCFG_GENERIC_CARTSLOT_ADD("cartslot", generic_plain_slot, "mo_cart")
 	MCFG_GENERIC_EXTENSIONS("m5,rom")
 	MCFG_GENERIC_LOAD(thomson_state, mo5_cartridge)
 
@@ -2441,7 +2441,7 @@ static MACHINE_CONFIG_DERIVED( mo5nr, to7 )
 	MCFG_CENTRONICS_OUTPUT_LATCH_ADD("cent_data_out", "centronics")
 
 	MCFG_DEVICE_REMOVE("cartslot")
-	MCFG_GENERIC_CARTSLOT_ADD("cartslot", generic_plain_slot, "mo5_cart")
+	MCFG_GENERIC_CARTSLOT_ADD("cartslot", generic_plain_slot, "mo_cart")
 	MCFG_GENERIC_EXTENSIONS("m5,rom")
 	MCFG_GENERIC_LOAD(thomson_state, mo5_cartridge)
 
