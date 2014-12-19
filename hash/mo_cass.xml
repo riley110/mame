@@ -915,8 +915,8 @@
 		</part>
 	</software>
 
-	<software name="vision">
-		<description>Vision</description>
+	<software name="visionlb">
+		<description>Vision (Loic Bried)</description>
 		<year>1987</year>
 		<publisher>Loic Bried</publisher>
 		<info name="usage" value="Load with LOADM&quot;&quot;,,R"/>
@@ -928,8 +928,8 @@
 		</part>
 	</software>
 
-	<software name="visiona" cloneof="vision">
-		<description>Vision (No Title Screen)</description>
+	<software name="visionlba" cloneof="visionlb">
+		<description>Vision (Loic Bried) (No Title Screen)</description>
 		<year>1987</year>
 		<publisher>Loic Bried</publisher>
 
@@ -1903,6 +1903,18 @@
 		</part>
 	</software>
 
+	<software name="carteurob" cloneof="carteuro">
+		<description>Carte d'Europe (Alt 2)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="22824">
+				<rom name="carte d'europe (1985)(vifi-nathan)(fr)[a2].k7" size="22824" crc="bf1caf1f" sha1="76077ef9c014547507d4b8443a2e0b5c4043adeb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="cartefra">
 		<description>La Carte de France</description>
 		<year>1983</year>
@@ -1935,6 +1947,18 @@
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="34179">
 				<rom name="carte de france, la (1983)(vifi-nathan)(fr)[a2].k7" size="34179" crc="ac6f5ad1" sha1="12ddc64c89f07cf244fcccb96cae724f185ed6da" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cartefrac" cloneof="cartefra">
+		<description>La Carte de France (Alt 3)</description>
+		<year>1983</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="34171">
+				<rom name="carte de france, la (1983)(vifi-nathan)(fr)[a3].k7" size="34171" crc="4b1a3ec3" sha1="7e7dd3ae1db517266149350d49d50df90e6a08b0" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2091,6 +2115,54 @@
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="64831">
 				<rom name="corps humain, le (1985)(infogrames)(fr)[a2].k7" size="64831" crc="85fd4d3c" sha1="60913fc8b76b72c4a8b12adddc7ce5e25b205874" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="courslet">
+		<description>Course aux Lettres</description>
+		<year>1984</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="12829">
+				<rom name="cyprien dans la course aux lettres (1984-07)(loriciels)(fr).k7" size="12829" crc="165464f6" sha1="cb4f77d55e9bceb9b2a3cdbdf5594c9ec35a2e70" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="coursleta" cloneof="courslet">
+		<description>Course aux Lettres (Alt)</description>
+		<year>1984</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="15062">
+				<rom name="cyprien dans la course aux lettres (1984-07)(loriciels)(fr)[a].k7" size="15062" crc="9426ef51" sha1="e8585096863cf7ccf94fbca3e6936d64d7546564" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="coursletb" cloneof="courslet">
+		<description>Course aux Lettres (Alt 2)</description>
+		<year>1984</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="12829">
+				<rom name="cyprien dans la course aux lettres (1984-07)(loriciels)(fr)[a2].k7" size="12829" crc="dc136386" sha1="d642068db0ae11dba251ae8d8b2fa90766a0cf06" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="coursletc" cloneof="courslet">
+		<description>Course aux Lettres (Alt 3)</description>
+		<year>1984</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="12829">
+				<rom name="cyprien dans la course aux lettres (1984-07)(loriciels)(fr)[a3].k7" size="12829" crc="4a1c472c" sha1="fb36978f12a5d388e4b4f5fb87daf04497c8e3ee" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -6689,6 +6761,1645 @@
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="44991">
 				<rom name="cap sur dakar (1985)(coktel vision)(fr)[a2].k7" size="44991" crc="7629d1b3" sha1="6a73c465e76d2fce7df1021c4c059e2a572417d9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="capblood" supported="no"> <!-- protected, works on dcmoto -->
+		<description>Captain Blood (MO6)</description>
+		<year>1988</year>
+		<publisher>ERE Informatique</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="104698">
+				<rom name="captain blood (1985)(ere informatique)(fr)[b].k7" size="104698" crc="7d60692b" sha1="5624ffd9d841f9a2b527abf84decab8f12b363d0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cassebrq">
+		<description>Cassebrique</description>
+		<year>1986</year>
+		<publisher>Hebdogiciel</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="8762">
+				<rom name="cassebrique (1986-04-01)(hebdogiciel)(fr)(pd).k7" size="8762" crc="707a1fdc" sha1="28b457ccd8e66967d5532fb0e39ef4b003320ff0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cassebrqa" cloneof="cassebrq">
+		<description>Cassebrique (Alt)</description>
+		<year>1986</year>
+		<publisher>Hebdogiciel</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="8762">
+				<rom name="cassebrique (1986-04-01)(hebdogiciel)(fr)(pd)[a].k7" size="8762" crc="8df2a959" sha1="12f7abad21ad732d20f6f4c73c5a955ace825a0f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cassebrqb" cloneof="cassebrq">
+		<description>Cassebrique (Alt 2)</description>
+		<year>1986</year>
+		<publisher>Hebdogiciel</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="8762">
+				<rom name="cassebrique (1986-04-01)(hebdogiciel)(fr)(pd)[a2].k7" size="8762" crc="63b04169" sha1="4f1eb6d1ae79811ef189cf9b5bef16a7141e8d14" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="catapult">
+		<description>Catapulte</description>
+		<year>1984</year>
+		<publisher>Hebdogiciel</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="7258">
+				<rom name="catapulte (1984)(hebdogiciel)(fr)(pd).k7" size="7258" crc="b372519e" sha1="a481634016c21fcab76f36ab3a4c24a4b96fef40" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="categori">
+		<description>Categoric</description>
+		<year>1984</year>
+		<publisher>No Man's Land</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="32809">
+				<rom name="categoric (1984)(no man's land)(fr).k7" size="32809" crc="582e7ea4" sha1="a551635fdea1e80b99eedc644863ee2ad49fb07d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="categoria" cloneof="categori">
+		<description>Categoric (Alt)</description>
+		<year>1984</year>
+		<publisher>No Man's Land</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="32809">
+				<rom name="categoric (1984)(no man's land)(fr)[a].k7" size="32809" crc="0c7edfc9" sha1="34bd445945741f5196f85067633bec5c3da3993e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thenebe">
+		<description>Les Cavernes de Thenebe</description>
+		<year>198?</year>
+		<publisher>SoftBook</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="71428">
+				<rom name="cavernes de thenebe, les (198x)(softbook)(fr).k7" size="71428" crc="58b12548" sha1="991c4de9752f17d8061fd3a70ed67100300d1aae" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thenebea" cloneof="thenebe">
+		<description>Les Cavernes de Thenebe (Alt)</description>
+		<year>198?</year>
+		<publisher>SoftBook</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="71428">
+				<rom name="cavernes de thenebe, les (198x)(softbook)(fr)[a].k7" size="71428" crc="4c134f51" sha1="6155013daf0c4d043fec42bcdffc8391a081b6a9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chalvoil">
+		<description>Challenge Voile</description>
+		<year>1984</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="22569">
+				<rom name="challenge voile (1984-10)(loriciels)(fr).k7" size="22569" crc="e066303c" sha1="880363b1cf293e8f7d0a9cf6a60c1d5bb4c4cb00" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chalvoila" cloneof="chalvoil">
+		<description>Challenge Voile (Alt)</description>
+		<year>1984</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="22569">
+				<rom name="challenge voile (1984-10)(loriciels)(fr)[a].k7" size="22569" crc="4a7b05a7" sha1="cb8a631595126c7914634430133e62532fc12a76" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chasomeg">
+		<description>Chasseur Omega</description>
+		<year>1983</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="6479">
+				<rom name="chasseur omega (1983)(infogrames)(fr).k7" size="6479" crc="0f5e91d5" sha1="7ff3a845709cd36fccce9b83c662eeca27c1e04b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chasomega" cloneof="chasomeg">
+		<description>Chasseur Omega (Alt)</description>
+		<year>1983</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="6479">
+				<rom name="chasseur omega (1983)(infogrames)(fr)[a].k7" size="6479" crc="d942ff44" sha1="c1caa863d7f99e1c4ddb38fe0ccfaa131cfc88c1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chatmort">
+		<description>Le Chateau de la Mort</description>
+		<year>1985</year>
+		<publisher>Cobrasoft</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="23249">
+				<rom name="chateau de la mort, le (1985)(cobrasoft)(fr).k7" size="23249" crc="6dcf3f7c" sha1="ec7eccae1f627965e25bbaa49e731bcf60922776" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chatnoir">
+		<description>Chateau Noir et Dragons Rouges</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="32232">
+				<rom name="chateau noir et dragons rouges (1985)(vifi-nathan)(fr).k7" size="32232" crc="9b7d8e91" sha1="af0e2420e9b4d9f6e478461c398e6b9a308cf13e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chatnoira" cloneof="chatnoir">
+		<description>Chateau Noir et Dragons Rouges (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="32190">
+				<rom name="chateau noir et dragons rouges (1985)(vifi-nathan)(fr)[a].k7" size="32190" crc="2a3ac61e" sha1="6e0ba65b5bdc6f78ac3b2cc856f88d3adbb9b84e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chatnoirb" cloneof="chatnoir">
+		<description>Chateau Noir et Dragons Rouges (Alt 2)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="32190">
+				<rom name="chateau noir et dragons rouges (1985)(vifi-nathan)(fr)[a2].k7" size="32190" crc="600d19db" sha1="38f011355f8eba39d37b5c1960833c7ea62cae70" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chicago" supported="no"> <!-- protected, works on dcmoto -->
+		<description>Chicago 90 (MO6)</description>
+		<year>1989</year>
+		<publisher>Microids</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="156943">
+				<rom name="chicago 90 (198x)(microids)[b].k7" size="156943" crc="1c31551e" sha1="1f6351d17838d14f70b6069564073f4b4bec17ed" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cocotte">
+		<description>Cocotte</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="16168">
+				<rom name="cocotte (1985)(fil)(fr).k7" size="16168" crc="599cfd41" sha1="093801baaf2d94fe6a8d90d7d9a68a11378a19ca" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="coliseum">
+		<description>Coliseum</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="51399">
+				<rom name="coliseum (1985)(loriciels)(fr).k7" size="51399" crc="16142072" sha1="a9f2489ebae1638de7973d38b447a751433c682c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="coliseuma" cloneof="coliseum">
+		<description>Coliseum (Alt)</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="51790">
+				<rom name="coliseum (1985)(loriciels)(fr)[a].k7" size="51790" crc="2845ba3f" sha1="f85325d5d70c8d75a543d5bbf9993e822d6c6728" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="coliseumb" cloneof="coliseum">
+		<description>Coliseum (Alt 2)</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="51790">
+				<rom name="coliseum (1985)(loriciels)(fr)[a2].k7" size="51790" crc="4d0e0266" sha1="bbd41b8045b5e50c1c6d750f1acd997edc5c3e20" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="coloric">
+		<description>Coloric</description>
+		<year>1984</year>
+		<publisher>Free Game Blot</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="5718">
+				<rom name="coloric (1984)(free game blot)(fr).k7" size="5718" crc="6a5a221e" sha1="af65ba7cff2923975c4ba353568e145a0233582b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="colorica" cloneof="coloric">
+		<description>Coloric (Alt)</description>
+		<year>1984</year>
+		<publisher>Free Game Blot</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="5718">
+				<rom name="coloric (1984)(free game blot)(fr)[a].k7" size="5718" crc="8fd53734" sha1="305f2a9c044fdecaab706e69ff9519d1370f75c8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="coqinn">
+		<description>Coq Inn</description>
+		<year>1984</year>
+		<publisher>VIFI International</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="51550">
+				<rom name="coq inn (1984)(vifi)(fr).k7" size="51550" crc="3836a66e" sha1="1fec9c768a60d91093a2a6fe5efd562f5c10c622" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="coqinna" cloneof="coqinn">
+		<description>Coq Inn (Alt)</description>
+		<year>1984</year>
+		<publisher>VIFI International</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="51550">
+				<rom name="coq inn (1984)(vifi)(fr)[a].k7" size="51550" crc="e519c464" sha1="2c3bd27b4c7faa0f515ceeb37e0e8cef067e1843" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="coqinnb" cloneof="coqinn">
+		<description>Coq Inn (Alt 2)</description>
+		<year>1984</year>
+		<publisher>VIFI International</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="51550">
+				<rom name="coq inn (1984)(vifi)(fr)[a2].k7" size="51550" crc="35300727" sha1="f1b96d280dae37bbaaaa5159f4ae40c476077e30" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crocky2">
+		<description>Crocky II</description>
+		<year>1984</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="17362">
+				<rom name="crocky ii (1984-09)(loriciels)(fr).k7" size="17362" crc="dac3535e" sha1="d2c5b4504c8023f28aeccfd1d3c7c1ce9cc1bc37" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crocky2a" cloneof="crocky2">
+		<description>Crocky II (Alt)</description>
+		<year>1984</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="18625">
+				<rom name="crocky ii (1984-09)(loriciels)(fr)[a].k7" size="18625" crc="e9676d11" sha1="82a6f679aee2e4bc6cf925d3031b1fd703b73db4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crocky2b" cloneof="crocky2">
+		<description>Crocky II (Alt 2)</description>
+		<year>1984</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="18351">
+				<rom name="crocky ii (1984-09)(loriciels)(fr)[a2].k7" size="18351" crc="572b69b1" sha1="ffb8ca6d5a04e3926dab23624fc77d20852c0709" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crocky2c" cloneof="crocky2">
+		<description>Crocky II (Alt 3)</description>
+		<year>1984</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="18351">
+				<rom name="crocky ii (1984-09)(loriciels)(fr)[a3].k7" size="18351" crc="79362686" sha1="963dc2e4769c3bded10ae8b9cdbff102d1be3bd1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crystann">
+		<description>Crystann</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="34573">
+				<rom name="crystann (1985)(loriciels)(fr).k7" size="34573" crc="6f9713b3" sha1="98982871dc763a489553888cda262c319824be3b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crystanna" cloneof="crystann">
+		<description>Crystann (Alt)</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="34573">
+				<rom name="crystann (1985)(loriciels)(fr)[a].k7" size="34573" crc="f4ce7eb3" sha1="835c477081db62c6fad01f2318c130c0226a3421" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crystannb" cloneof="crystann">
+		<description>Crystann (Alt 2)</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="34573">
+				<rom name="crystann (1985)(loriciels)(fr)[a2].k7" size="34573" crc="d1ea604d" sha1="dc6eee21e0f2b32ff00b408a5d9943f74c7b30c9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cyberlab">
+		<description>Cyberlab</description>
+		<year>1984</year>
+		<publisher>TO Tek International</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="16330">
+				<rom name="cyberlab (1984)(to tek)(fr).k7" size="16330" crc="40bcac29" sha1="a581167d4d243c1c6de29a75c23baa447c9a73ea" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cyberlaba" cloneof="cyberlab">
+		<description>Cyberlab (Alt)</description>
+		<year>1984</year>
+		<publisher>TO Tek International</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="16330">
+				<rom name="cyberlab (1984)(to tek)(fr)[a].k7" size="16330" crc="752306cd" sha1="627345a94d11bdbd71290f37fc1a3fa246040184" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dakar4x4">
+		<description>Dakar 4x4</description>
+		<year>1987</year>
+		<publisher>Coktel Vision</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="47183">
+				<rom name="dakar 4x4 (1987)(coktel vision)(fr)[a].k7" size="47183" crc="3c58aec7" sha1="bbe2ad5820fe962922a00ae9af6ec26d884218fc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dakar4x4a" cloneof="dakar4x4">
+		<description>Dakar 4x4 (Alt)</description>
+		<year>1987</year>
+		<publisher>Coktel Vision</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="47183">
+				<rom name="dakar 4x4 (1987)(coktel vision)(fr)[a2].k7" size="47183" crc="6f6214ad" sha1="a72f46d4cac299458ac9f8b71bb4bf720f6fb2c7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dakar4x4b" cloneof="dakar4x4">
+		<description>Dakar 4x4 (No Title Screen)</description>
+		<year>1987</year>
+		<publisher>Coktel Vision</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="29592">
+				<rom name="dakar 4x4 (1987)(coktel vision)(fr)[m title screen].k7" size="29592" crc="0c1ba7db" sha1="59672953158e76f1e8d0212b12f7bdf6672fc57e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dakar4x4c" cloneof="dakar4x4">
+		<description>Dakar 4x4 (No Title Screen, Alt)</description>
+		<year>1987</year>
+		<publisher>Coktel Vision</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="29592">
+				<rom name="dakar 4x4 (1987)(coktel vision)(fr).k7" size="29592" crc="63cb7ecf" sha1="1d3ea4f1ebb8ba81f2282c61267dd2f1c8771849" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dakar4x4_it" cloneof="dakar4x4">
+		<description>Dakar 4x4 (Ita)</description>
+		<year>1987</year>
+		<publisher>Coktel Vision</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="47188">
+				<rom name="dakar 4x4 (1987)(coktel vision)(fr)(it).k7" size="47188" crc="09591357" sha1="e1ab73089ffe2c0a4a31e3b52326479a88c35e67" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dakarmot">
+		<description>Dakar Moto</description>
+		<year>198?</year>
+		<publisher>Coktel Vision</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="47458">
+				<rom name="dakar moto (198x)(coktel vision)(fr).k7" size="47458" crc="172bcbda" sha1="51d6c9ce37b4d00ac87a291fa6f2ab37f3f3e764" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dakarmota" cloneof="dakarmot">
+		<description>Dakar Moto (Alt)</description>
+		<year>198?</year>
+		<publisher>Coktel Vision</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="47458">
+				<rom name="dakar moto (198x)(coktel vision)(fr)[a].k7" size="47458" crc="737d21fd" sha1="4d4643acf53c6a74aeab8758089a9986d2b4a7c8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="delosatt">
+		<description>Delos Attack</description>
+		<year>1989</year>
+		<publisher>Christophe Lesur</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="7383">
+				<rom name="delos attack (1989)(lesur, christophe)(fr).k7" size="7383" crc="477d97f3" sha1="4c2e4f7213fb6f5153b6ff282879ad1155893036" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="demineur">
+		<description>Demineur (MO6)</description>
+		<year>2002</year>
+		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="14357">
+				<rom name="demineur (1992)(asci)[b].k7" size="14357" crc="42fe77f3" sha1="2604bb36ce6f2e9fb61a5cfee8ef689f4f6f7270" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="devantde">
+		<description>Devant Derriere</description>
+		<year>198?</year>
+		<publisher>Francoise Monnet</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="19942">
+				<rom name="devant derriere (198x)(monnet, francoise)(fr).k7" size="19942" crc="7f0a32b4" sha1="1fd766bd9d1d3b729739278947177ec8f1cb9257" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dianne">
+		<description>Dianne</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="34587">
+				<rom name="dianne - mission rubidiums (1985)(loriciels - novasoft)(fr).k7" size="34587" crc="38f4d036" sha1="49b9d488e15f41f16d72b4d47f313f7819f457a0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="diannea" cloneof="dianne">
+		<description>Dianne (Alt)</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="34587">
+				<rom name="dianne - mission rubidiums (1985)(loriciels - novasoft)(fr)[a].k7" size="34587" crc="1f3b7fd3" sha1="e09b0572b7a7c5d5096d99bc109c0a7ddf80f639" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dianneb" cloneof="dianne">
+		<description>Dianne (Alt 2)</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="34587">
+				<rom name="dianne - mission rubidiums (1985)(loriciels - novasoft)(fr)[a2].k7" size="34587" crc="bd48dcac" sha1="604858c56f229979cf079aa279406b6adc5feedd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dieuxsta">
+		<description>Les Dieux du Stade</description>
+		<year>1985</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="26031">
+				<rom name="dieux du stade, les (1988)(infogrames)(fr).k7" size="26031" crc="3ad54b8d" sha1="f2efda9e92fea10c0addad12e37f96be78d07f2e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dieuxstaa" cloneof="dieuxsta">
+		<description>Les Dieux du Stade (Alt)</description>
+		<year>1985</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="26031">
+				<rom name="dieux du stade, les (1988)(infogrames)(fr)[a].k7" size="26031" crc="487df22d" sha1="44d7e521e8191b6048f100a2a6520be9e306a7ae" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tnt" supported="no"> <!-- protected, works on dcmoto -->
+		<description>T.N.T.</description>
+		<year>1986</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="55605">
+				<rom name="t.n.t. (1986)(infogrames)[b].k7" size="55605" crc="64f6ceb6" sha1="fb4619847ddc9195098f1d82c0fa1b4aaeeac6b6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="taquin">
+		<description>Taquin+</description>
+		<year>1984</year>
+		<publisher>TO Tek International</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="21838">
+				<rom name="taquin+ (1984)(to tek)(fr).k7" size="21838" crc="86ad5b9f" sha1="85d99b12995f15a31d75f54cdffb0b84874fc222" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="taquina" cloneof="taquin">
+		<description>Taquin+ (Alt)</description>
+		<year>1984</year>
+		<publisher>TO Tek International</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="21830">
+				<rom name="taquin+ (1984)(to tek)(fr)[a].k7" size="21830" crc="8a9dfb76" sha1="92bdf546c1a1ed7adfe56ba5f8b72b0941d48f09" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="taquinb" cloneof="taquin">
+		<description>Taquin+ (Alt 2)</description>
+		<year>1984</year>
+		<publisher>TO Tek International</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="21830">
+				<rom name="taquin+ (1984)(to tek)(fr)[a2].k7" size="21830" crc="2c7e046e" sha1="ccfe99360a12268e3bfa2aa9cabb7cbe00cbb54b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tarot">
+		<description>Tarot</description>
+		<year>1986</year>
+		<publisher>DCsoft</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="22061">
+				<rom name="tarot (1986-08)(dcsoft)(fr)(pd).k7" size="22061" crc="a27dfbfc" sha1="205b8c70b2743782bf171e02c0f386e9d4e14a0d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tarota" cloneof="tarot">
+		<description>Tarot (Alt)</description>
+		<year>1986</year>
+		<publisher>DCsoft</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="22061">
+				<rom name="tarot (1986-08)(dcsoft)(fr)(pd)[a].k7" size="22061" crc="8e4c2f29" sha1="06b30ffe464dd38c48706527a092cf433e4c5c50" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tarotb" cloneof="tarot">
+		<description>Tarot (Alt 2)</description>
+		<year>1986</year>
+		<publisher>DCsoft</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="22061">
+				<rom name="tarot (1986-08)(dcsoft)(fr)(pd)[a2].k7" size="22061" crc="ff8f1c85" sha1="bcb1a503cc20a3cc9fee7b630801fcab53b713ea" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="teledomi">
+		<description>Teledomino</description>
+		<year>1986</year>
+		<publisher>Microtom</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="10862">
+				<rom name="teledomino (1986)(microtom)(fr).k7" size="10862" crc="9d03b185" sha1="e3767a3dc87b3429959cc0c019738923853e2b74" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="teledomia" cloneof="teledomi">
+		<description>Teledomino (Alt)</description>
+		<year>1986</year>
+		<publisher>Microtom</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="10862">
+				<rom name="teledomino (1986)(microtom)(fr)[a].k7" size="10862" crc="45b2a033" sha1="d80bda73fc36a0333e29319dd3e325efa1aefd7c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="teleram1">
+		<description>Telerama no.1 - Isola</description>
+		<year>1984</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="6248">
+				<rom name="telerama no.1 (1984)(vifi-nathan)(fr)[isola].k7" size="6248" crc="bdbec1c0" sha1="3d2591b58fd4458f25133f438bb8416e6b4e1b6c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="quauthli">
+		<description>Le Temple de Quauthli</description>
+		<year>1986</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="49705">
+				<rom name="temple de quauthli, le (1986)(loriciels)(fr)(tape 1 of 2).k7" size="49705" crc="f784116b" sha1="f13ab98fb792f35e17c1b608a3fd7f4b4eb43aa2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="33763">
+				<rom name="temple de quauthli, le (1986)(loriciels)(fr)(tape 2 of 2).k7" size="33763" crc="f4232a17" sha1="da1b3b8d03ba0748dbae3ab448b6aa6c27c9541c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="quauthlia" cloneof="quauthli">
+		<description>Le Temple de Quauthli (Single Tape)</description>
+		<year>1986</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="83468">
+				<rom name="temple de quauthli, le (1986)(loriciels)(fr).k7" size="83468" crc="db0a84e2" sha1="74d86b5cef08348062628e9a721572ff04a8d1b2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="quauthlib" cloneof="quauthli">
+		<description>Le Temple de Quauthli (Single Tape, Alt)</description>
+		<year>1986</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="83468">
+				<rom name="temple de quauthli, le (1986)(loriciels)(fr)[a].k7" size="83468" crc="52954732" sha1="f7be813a845a57f319023d015d8f3b607935230d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tetrisgd">
+		<description>Tetris GD</description>
+		<year>1989</year>
+		<publisher>Gilles Daurat</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="3677">
+				<rom name="tetris gd (1989)(daurat, gilles)(fr).k7" size="3677" crc="d649962b" sha1="cb513d05fe730faea537ab10a2e1869635a161d3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thesauru">
+		<description>Thesaurus</description>
+		<year>198?</year>
+		<publisher>Minipuce</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="72028">
+				<rom name="thesaurus (198x)(minipuce)(fr).k7" size="72028" crc="b542a958" sha1="a5a30a2b65dbcbc204fc11ea4fb97610b7978b57" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thirdwar">
+		<description>Third World War</description>
+		<year>198?</year>
+		<publisher>Free Game Blot</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="7954">
+				<rom name="third world war (198x)(free game blot)(fr).k7" size="7954" crc="ec519f11" sha1="1cbaaf71f113a064fa781606bfa72e386530d4bb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thirdwara" cloneof="thirdwar">
+		<description>Third World War (Alt)</description>
+		<year>198?</year>
+		<publisher>Free Game Blot</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="7174">
+				<rom name="third world war (198x)(free game blot)(fr)[a].k7" size="7174" crc="0cd75a0c" sha1="3bc771e318b4bee2e1bbfdee74319b399eff6e9b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thirdwarb" cloneof="thirdwar">
+		<description>Third World War (Alt 2)</description>
+		<year>198?</year>
+		<publisher>Free Game Blot</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="7174">
+				<rom name="third world war (198x)(free game blot)(fr)[a2].k7" size="7174" crc="c8acc05e" sha1="04088f525531120bb4e9b4cbc1a995e38b80f742" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thompuzz">
+		<description>Thom-Puzz</description>
+		<year>1984</year>
+		<publisher>No Man's Land</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="18000">
+				<rom name="thom-puzz (1984)(no man's land)(fr).k7" size="18000" crc="7640f5d7" sha1="956980dabf5ee8878d50ba23f8f9807c2d945247" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tictac">
+		<description>Tic-Tac</description>
+		<year>1984</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="31007">
+				<rom name="tic-tac (1984)(loriciels)(fr).k7" size="31007" crc="e3cc6585" sha1="a2ccb6c411cbfd52789fd7bfe5dfbd0c13b6a950" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tictaca" cloneof="tictac">
+		<description>Tic-Tac (Alt)</description>
+		<year>1984</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="31007">
+				<rom name="tic-tac (1984)(loriciels)(fr)[a].k7" size="31007" crc="b9d2757c" sha1="3ae7602847c6df499231a583884d39f0cce6eb10" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="topgun">
+		<description>Top Gun</description>
+		<year>1987</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="36652">
+				<rom name="top gun (1987)(fil)(fr).k7" size="36652" crc="a951b8c7" sha1="e628e5a4e41419188250a44bce4434e0e2064687" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="topguna" cloneof="topgun">
+		<description>Top Gun (Alt)</description>
+		<year>1987</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="36898">
+				<rom name="top gun (1987)(fil)(fr)[a].k7" size="36898" crc="6cd09338" sha1="7c95e03d340a416d83aba91848c63ee83ad269d2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="topgunb" cloneof="topgun">
+		<description>Top Gun (Alt 2)</description>
+		<year>1987</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="36898">
+				<rom name="top gun (1987)(fil)(fr)[a2].k7" size="36898" crc="66fd03d8" sha1="579b4febef16fe4755095cac4aeea13aedd4ec10" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="topchron">
+		<description>Top-Chrono</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="36316">
+				<rom name="top-chrono (1985)(loriciels)(fr).k7" size="36316" crc="0cc96513" sha1="524d179d3f1bfb66b843851a5efa70e418638e83" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="topchrona" cloneof="topchron">
+		<description>Top-Chrono (Alt)</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="34609">
+				<rom name="top-chrono (1985)(loriciels)(fr)[a].k7" size="34609" crc="a6a025f2" sha1="b0f48a6adb344a0c0848b1ac004968b050e63c04" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="topchronb" cloneof="topchron">
+		<description>Top-Chrono (Alt 2)</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="36325">
+				<rom name="top-chrono (1985)(loriciels)(fr)[a2].k7" size="36325" crc="10be2f49" sha1="9ae47d51ac004840ea29d275bca0706f8bd478ed" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="topchronc" cloneof="topchron">
+		<description>Top-Chrono (Alt 3)</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="36325">
+				<rom name="top-chrono (1985)(loriciels)(fr)[a3].k7" size="36325" crc="6e036ec0" sha1="6d9c2818e9534a113326bb415b652bc4bbe09c00" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="torann">
+		<description>Torann - Mission Blue 5</description>
+		<year>198?</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="34587">
+				<rom name="torann - mission blue 5 (198x)(loriciels)(fr).k7" size="34587" crc="d9b72731" sha1="acaf497b5cd8035e5cada8691c8826a3a7aed9da" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="toranna" cloneof="torann">
+		<description>Torann - Mission Blue 5 (Alt)</description>
+		<year>198?</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="34587">
+				<rom name="torann - mission blue 5 (198x)(loriciels)(fr)[a].k7" size="34587" crc="fe7888d4" sha1="13b48d25631b49d16cb46c8e28c4fe068cbcef51" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="torannb" cloneof="torann">
+		<description>Torann - Mission Blue 5 (Alt 2)</description>
+		<year>198?</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="34587">
+				<rom name="torann - mission blue 5 (198x)(loriciels)(fr)[a2].k7" size="34587" crc="5c0b2bab" sha1="fa791d16f0e2d9fda4b840431a6a48272507b4d3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="toutschu">
+		<description>Tout Schuss</description>
+		<year>1987</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="221948">
+				<rom name="tout schuss (1987)(fil)(fr).k7" size="221948" crc="0e3904a1" sha1="35cbeb09e27eb4c7b80adeb4e85b8d7c7c979ab2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="toutschua" cloneof="toutschu">
+		<description>Tout Schuss (Alt)</description>
+		<year>1987</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="221948">
+				<rom name="tout schuss (1987)(fil)(fr)[a].k7" size="221948" crc="aea059ca" sha1="a7bb455001606a720b587bbade897ca88bce8312" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="toutankh">
+		<description>Toutankhamon</description>
+		<year>1985</year>
+		<publisher>No Man's Land</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="40660">
+				<rom name="toutankhamon (1985)(no man's land)(fr).k7" size="40660" crc="3567168d" sha1="2717d5e11ec122acfab80528ccc5a5372ca6bed5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="toutankha" cloneof="toutankh">
+		<description>Toutankhamon (Alt)</description>
+		<year>1985</year>
+		<publisher>No Man's Land</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="40855">
+				<rom name="toutankhamon (1985)(no man's land)(fr)[a].k7" size="40855" crc="b8f9ac86" sha1="6594265a109a436f72d1e80f18f0332550c08b9c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="toutankhb" cloneof="toutankh">
+		<description>Toutankhamon (Alt 2)</description>
+		<year>1985</year>
+		<publisher>No Man's Land</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="40855">
+				<rom name="toutankhamon (1985)(no man's land)(fr)[a2].k7" size="40855" crc="c48c4959" sha1="5744e001dc6cb66c6e6ce2d4f49e0b9ce438c5a2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="trespir">
+		<description>Le Tresor du Pirate</description>
+		<year>1984</year>
+		<publisher>Free Game Blot</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="21830">
+				<rom name="tresor du pirate, le (1984)(free game blot)(fr).k7" size="21830" crc="95582d2c" sha1="babdf940db6730f11e4e068bcd61086a2322a2fb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="trespira" cloneof="trespir">
+		<description>Le Tresor du Pirate (Alt)</description>
+		<year>1984</year>
+		<publisher>Free Game Blot</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="23091">
+				<rom name="tresor du pirate, le (1984)(free game blot)(fr)[a].k7" size="23091" crc="07336cbf" sha1="846d0411c1b28e79f1c4191968b308281c4a562f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="trespirb" cloneof="trespir">
+		<description>Le Tresor du Pirate (Alt 2)</description>
+		<year>1984</year>
+		<publisher>Free Game Blot</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="23091">
+				<rom name="tresor du pirate, le (1984)(free game blot)(fr)[a2].k7" size="23091" crc="ebd6ee58" sha1="b9e06d353b4262155a1dcf4ebb5e8f4eb380fc3f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="troff">
+		<description>Troff</description>
+		<year>1983</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="6461">
+				<rom name="troff (1983)(infogrames)(fr).k7" size="6461" crc="e733c8fe" sha1="2128fb4ef61ee4f5f13729b85590ed37a07863b0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="troffa" cloneof="troff">
+		<description>Troff (Alt)</description>
+		<year>1983</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="5676">
+				<rom name="troff (1983)(infogrames)(fr)[a].k7" size="5676" crc="c379c8f3" sha1="39bf4130679112c646f80b9774ea1184d41a2785" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="troffb" cloneof="troff">
+		<description>Troff (Alt 2)</description>
+		<year>1983</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="5676">
+				<rom name="troff (1983)(infogrames)(fr)[a2].k7" size="5676" crc="2d927325" sha1="5c4d0083917e1862fab2357a04051b6f50008302" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="troff_it" cloneof="troff">
+		<description>Troff (Ita)</description>
+		<year>1983</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="5676">
+				<rom name="troff (1983)(infogrames)(fr)(it).k7" size="5676" crc="ea092ad2" sha1="eda32ec372d18db23c83e34931e1767fc534270f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="turbocup" supported="no"> <!-- protected, works on dcmoto -->
+		<description>Turbocup (MO6)</description>
+		<year>1988</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="139740">
+				<rom name="turbo cup (1988-10)(loriciels)(fr)[b].k7" size="139740" crc="51005490" sha1="adae08a24bfc05e6e8dfb45e16724fedff1d1e8d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+<!--
+	<software name="">
+		<description>Tyrann (1985)(Norsoft)(FR)[1st Generation MO5]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="40753">
+				<rom name="tyrann (1985)(norsoft)(fr)[1st generation mo5].k7" size="40753" crc="ee1fccf2" sha1="a229c6cecb1dad618c4d0c4c7e099e0aeb3333c3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Tyrann (1985)(Norsoft)(FR)[2nd Generation MO5]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="40753">
+				<rom name="tyrann (1985)(norsoft)(fr)[2nd generation mo5].k7" size="40753" crc="d1b5ca52" sha1="d9d8db32295df1eb8dbf8c2e54b49e563adf4a6e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Tyrann (1985)(Norsoft)(FR)[b2]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="40753">
+				<rom name="tyrann (1985)(norsoft)(fr)[b2].k7" size="40753" crc="09371720" sha1="5bb82a9494d1c7eafa23983382ef9c3f3572b25e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Tyrann (1985)(Norsoft)(FR)[b]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="40668">
+				<rom name="tyrann (1985)(norsoft)(fr)[b].k7" size="40668" crc="99decafb" sha1="932b015db5e8ea89d84e413daeb56212abdb0877" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+-->
+	<software name="vampire">
+		<description>Vampire</description>
+		<year>1986</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="8410873">
+				<rom name="vampire (198x)(infogrames)(fr).wav" size="8410873" crc="1e162d3a" sha1="2728b7d0e0a9bd6dc45b70359f0d32f680ddd916" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vampirea" cloneof="vampire" supported="no"> <!-- protected, works on dcmoto -->
+		<description>Vampire (Alt)</description>
+		<year>1986</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="40145">
+				<rom name="vampire (1986)(infogrames)(fr)[b2].k7" size="40145" crc="78e4ec64" sha1="5f6a5b8e40fa842581f70099f9c289e035284ddf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vampireb" cloneof="vampire" supported="no"> <!-- protected -->
+		<description>Vampire (Bad)</description>
+		<year>1986</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="40145">
+				<rom name="vampire (1986)(infogrames)(fr)[b].k7" size="40145" crc="55d6620a" sha1="1dcea5ff2733c8d609997d07694c6b9bd0e16b64" status="baddump" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vision">
+		<description>Vision (Loriciels)</description>
+		<year>1984</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="31220">
+				<rom name="vision (1984)(loriciels)(fr).k7" size="31220" crc="5ed7733c" sha1="e0b84034a4a486bb758c856e35f5f0d248de7289" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="visiona" cloneof="vision">
+		<description>Vision (Loriciels) (Alt)</description>
+		<year>1984</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="31220">
+				<rom name="vision (1984)(loriciels)(fr)[a].k7" size="31220" crc="e3e37c89" sha1="d3f56689989b794c51b98853917db75db06b31c6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="volsolo">
+		<description>Vol Solo</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="23772">
+				<rom name="vol solo (1985)(fil)(fr).k7" size="23772" crc="23a1aaaa" sha1="b955649085090cad2737094479947099cef36dd4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="volsoloa" cloneof="volsolo">
+		<description>Vol Solo (Alt)</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="25305">
+				<rom name="vol solo (1985)(fil)(fr)[a].k7" size="25305" crc="f7217934" sha1="f0134fe65a7956c3870b63699d44774913fb3e38" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="volsolob" cloneof="volsolo">
+		<description>Vol Solo (Alt 2)</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="25305">
+				<rom name="vol solo (1985)(fil)(fr)[a2].k7" size="25305" crc="09976ba4" sha1="c198556a61eaa797cf494f1c5253279b71eca06a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="volsoloc" cloneof="volsolo">
+		<description>Vol Solo (WAV Format)</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="8365890">
+				<rom name="vol solo (1985)(fil)(fr).wav" size="8365890" crc="0b498fb5" sha1="7f50709ed798acd440d2193e1e361a939e052e96" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="votezmoi">
+		<description>Votez pour Moi</description>
+		<year>1985</year>
+		<publisher>Answare</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="31541">
+				<rom name="votez pour moi (1985)(answare)(fr).k7" size="31541" crc="bd51f0d3" sha1="8f6fceba282c66227b165ccb77ea49494f1bfc3e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="votezmoia" cloneof="votezmoi">
+		<description>Votez pour Moi (Alt)</description>
+		<year>1985</year>
+		<publisher>Answare</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="31720">
+				<rom name="votez pour moi (1985)(answare)(fr)[a].k7" size="31720" crc="8f986024" sha1="b7972b96a10508572d29d670635ec52e40ff58d1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="votezmoib" cloneof="votezmoi">
+		<description>Votez pour Moi (Alt 2)</description>
+		<year>1985</year>
+		<publisher>Answare</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="31720">
+				<rom name="votez pour moi (1985)(answare)(fr)[a2].k7" size="31720" crc="bda8aca6" sha1="cff7b24ca6e655fd2838347321ef4761366f98da" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="centrmo5">
+		<description>Voyage au Centre du MO5</description>
+		<year>1985</year>
+		<publisher>Hebdogiciel</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="26793">
+				<rom name="voyage au centre du mo5 (1985)(hebdogiciel)(fr)(pd).k7" size="26793" crc="7cbae7aa" sha1="594c9cb18b4b1d86db205acb0711e530bf7fe4b8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="centrmo5a" cloneof="centrmo5">
+		<description>Voyage au Centre du MO5 (Alt)</description>
+		<year>1985</year>
+		<publisher>Hebdogiciel</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="26793">
+				<rom name="voyage au centre du mo5 (1985)(hebdogiciel)(fr)(pd)[a2].k7" size="26793" crc="57f3b37f" sha1="47f0e6984df04be38d9456e4d96e1c07db413181" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="centrmo5b" cloneof="centrmo5">
+		<description>Voyage au Centre du MO5 (Alt 2)</description>
+		<year>1985</year>
+		<publisher>Hebdogiciel</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="26793">
+				<rom name="voyage au centre du mo5 (1985)(hebdogiciel)(fr)(pd)[a3].k7" size="26793" crc="d4d5f41c" sha1="66103e2e06aeb32a1b583cb2f39b8502b585c63d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="centrmo5c" cloneof="centrmo5">
+		<description>Voyage au Centre du MO5 (No Title Screen)</description>
+		<year>1985</year>
+		<publisher>Hebdogiciel</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="10462">
+				<rom name="voyage au centre du mo5 (1985)(hebdogiciel)(fr)(pd)[a title screen].k7" size="10462" crc="48581305" sha1="fdc786827d5fba4fb2e2965ee59702bb89d92bcd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="waytiger">
+		<description>The Way of the Tiger</description>
+		<year>1986</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="104264">
+				<rom name="way of the tiger, the (1986)(fil)(fr).k7" size="104264" crc="ad7347c6" sha1="873d7be358d4dbe75530e181e89d09f9520b1971" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="waytigera" cloneof="waytiger">
+		<description>The Way of the Tiger (Alt)</description>
+		<year>1986</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="104264">
+				<rom name="way of the tiger, the (1986)(fil)(fr)[a].k7" size="104264" crc="1591e7a7" sha1="85ee56dbaad0d7e0b242f0135fc238b5d1debd1f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="waytigerb" cloneof="waytiger">
+		<description>The Way of the Tiger (Alt 2)</description>
+		<year>1986</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="104264">
+				<rom name="way of the tiger, the (1986)(fil)(fr)[a2].k7" size="104264" crc="67ffb579" sha1="2d42e09d7bdee669477a90efcb7c76597b09ece2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="westbank">
+		<description>Westbank</description>
+		<year>1987</year>
+		<publisher>Javier Marco Rubio - Angelines Rubio Escudero</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="29030">
+				<rom name="westbank (1987-06-28)(rubio, javier marco - escudero, angelines rubio)(es).k7" size="29030" crc="7a484754" sha1="2862a7d6bf39a360f1f5713fa06f40d2e03f2a23" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="westbanka" cloneof="westbank">
+		<description>Westbank (Alt)</description>
+		<year>1987</year>
+		<publisher>Javier Marco Rubio - Angelines Rubio Escudero</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="29030">
+				<rom name="westbank (1987-06-28)(rubio, javier marco - escudero, angelines rubio)(es)[a].k7" size="29030" crc="5c11384a" sha1="1be315d2b64eea0a6aa93c7457984cb761348257" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wildboy">
+		<description>Wild Boy</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="6262">
+				<rom name="wild boy (19xx)(-)(fr).k7" size="6262" crc="ff160c9f" sha1="3c0d96fb964d0295674b786d04b4661077fb6564" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wizball">
+		<description>Wizball</description>
+		<year>1988</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="57925">
+				<rom name="wizball (1988)(fil)(fr).k7" size="57925" crc="5b6aa9f3" sha1="eb82fbead4806be1049a633394696a9de6bac3c6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wizballa" cloneof="wizball">
+		<description>Wizball (Alt)</description>
+		<year>1988</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="61286">
+				<rom name="wizball (1988)(fil)(fr)[a].k7" size="61286" crc="7b4993e4" sha1="bbb622b913db2f3693453c7842eaca9f7764d4e8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wizballb" cloneof="wizball">
+		<description>Wizball (Alt 2)</description>
+		<year>1988</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="61286">
+				<rom name="wizball (1988)(fil)(fr)[a2].k7" size="61286" crc="a9364da0" sha1="07e3a51c29a378d43e694714a2d2a5aed66051a9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="y">
+		<description>Y</description>
+		<year>1988</year>
+		<publisher>G. Fetis</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="18514">
+				<rom name="y (1988)(fetis, g.).k7" size="18514" crc="b211bcc7" sha1="5d4dd7187d71e6601a3b9194f35e980448dd8ea0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="yahtzee">
+		<description>Yahtzee</description>
+		<year>1985</year>
+		<publisher>Hebdogiciel</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="10652">
+				<rom name="yahtzee (1985)(hebdogiciel)(fr)(pd).k7" size="10652" crc="cca6d3d0" sha1="23ca2b6b0d08f21c32d446067fa879e07659bc76" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="yahtzeea" cloneof="yahtzee">
+		<description>Yahtzee (Alt)</description>
+		<year>1985</year>
+		<publisher>Hebdogiciel</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="10652">
+				<rom name="yahtzee (1985)(hebdogiciel)(fr)(pd)[a].k7" size="10652" crc="e6bff0ae" sha1="53a8903623cdac5787126979f13a3dd6fc7a3b9d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="yahtzeeb" cloneof="yahtzee">
+		<description>Yahtzee (Alt 2)</description>
+		<year>1985</year>
+		<publisher>Hebdogiciel</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="10652">
+				<rom name="yahtzee (1985)(hebdogiciel)(fr)(pd)[a2].k7" size="10652" crc="a3942d56" sha1="353cc6f72a67458f749b5a461d99da4bca9f7331" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="yeti">
+		<description>Yeti</description>
+		<year>1984</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="4474808">
+				<rom name="yeti (1984)(loriciels)(fr).wav" size="4474808" crc="dd65a22d" sha1="0fd108081cb70f1aa696f573a255a848ed63040f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="yetia" cloneof="yeti" supported="no"> <!-- protected, works on dcmoto -->
+		<description>Yeti (Alt)</description>
+		<year>1984</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="13510">
+				<rom name="yeti (1984)(loriciels)(fr)[b3].k7" size="13510" crc="a6be8075" sha1="7ac9be6a94ed3c5c7e686b54df776f00d0a81d51" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="yetib" cloneof="yeti" supported="no"> <!-- protected, works on dcmoto -->
+		<description>Yeti (Alt 2)</description>
+		<year>1984</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="13510">
+				<rom name="yeti (1984)(loriciels)(fr)[b4].k7" size="13510" crc="9646972a" sha1="91376ce256eb381fe85b381c003fc7ff25aba339" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="yetic" cloneof="yeti" supported="no"> <!-- protected -->
+		<description>Yeti (Bad)</description>
+		<year>1984</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="13510">
+				<rom name="yeti (1984)(loriciels)(fr)[b].k7" size="13510" crc="c6f07ee0" sha1="224baa4172769608e541e6df7f6c4ecd57291d4c" status="baddump" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="yetid" cloneof="yeti" supported="no"> <!-- protected -->
+		<description>Yeti (Bad 2)</description>
+		<year>1984</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="38109">
+				<rom name="yeti (1984)(loriciels)(fr)[b2].k7" size="38109" crc="c0ae8b53" sha1="af3e9fb519076ad8be7db6b88e8b7451b474d872" status="baddump" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="yiear2">
+		<description>Yie Ar Kung Fu II</description>
+		<year>1986</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="32886">
+				<rom name="yie ar kung fu ii (1986)(fil)(fr)(en-fr).k7" size="32886" crc="574d042c" sha1="64ec01fde551fb3ae9b6a5f47ed1b50c89c46a36" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="yiear2a" cloneof="yiear2">
+		<description>Yie Ar Kung Fu II (Alt)</description>
+		<year>1986</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="33041">
+				<rom name="yie ar kung fu ii (1986)(fil)(fr)(en-fr)[a].k7" size="33041" crc="01431c54" sha1="62c77ba28bda6b0847ba429fa243aa5ada0cbb34" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="yiear2b" cloneof="yiear2">
+		<description>Yie Ar Kung Fu II (Alt 2)</description>
+		<year>1986</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="33041">
+				<rom name="yie ar kung fu ii (1986)(fil)(fr)(en-fr)[a2].k7" size="33041" crc="04516810" sha1="0fa25862702c024da5454d6cf882c1409f05e3f3" offset="0" />
 			</dataarea>
 		</part>
 	</software>
