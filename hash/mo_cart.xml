@@ -123,6 +123,13 @@
 				<rom name="co 7052.bin" size="32768" crc="1f41dc16" sha1="d1d848d47cc927d44bc4f6fb431437675ba9cb30" offset="0" />
 			</dataarea>
 		</part>
+<!-- bad dump
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="49152">
+				<rom name="colorcalc (1985)(fil)(fr)[b].m5" size="49152" crc="4dbccd60" sha1="928e45a5ffc1ee3e8fe5879207466cfcee54ddef" status="baddump" offset="0" />
+			</dataarea>
+		</part>
+-->
 	</software>
 
 	<software name="colorpnt">
@@ -206,6 +213,18 @@
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
 				<rom name="glouton (alt).bin" size="16384" crc="c7375598" sha1="f4497198af448582eb05c2da1d236cd8cae4219a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gloutonb" cloneof="glouton">
+		<description>Glouton (Alt 2)</description>
+		<year>1986</year>
+		<publisher>Hebdogiciel</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="glouton (alt 2).bin" size="16384" crc="2ddea0ed" sha1="ad8d81f57a398458ea347c5eb569cb21ffc15bdc" offset="0" />
 			</dataarea>
 		</part>
 	</software>

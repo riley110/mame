@@ -5672,6 +5672,18 @@
 		</part>
 	</software>
 
+	<software name="5emeaxec" cloneof="5emeaxe" supported="no"> <!-- protection, works in dcmoto -->
+		<description>Le 5eme Axe (Alt 3)</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="52998">
+				<rom name="5eme axe (1985)(loriciels)[b].k7" size="52998" crc="844284dc" sha1="608fd89dc7609a212a3694467dff92deee90f1b4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="7magici">
 		<description>Les 7 Magiciens</description>
 		<year>1984</year>
@@ -6489,6 +6501,18 @@
 		</part>
 	</software>
 
+	<software name="bluestar">
+		<description>Blue Star (MO6)</description>
+		<year>1987</year>
+		<publisher>Free Game Blot</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="71175">
+				<rom name="blue star (1987)(free game blot).k7" size="71175" crc="07f0944b" sha1="37834182fe5006a2a6ec72cac392aaf3b9f31c3a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="bluewar">
 		<description>Blue War</description>
 		<year>1986</year>
@@ -6497,6 +6521,18 @@
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="38315">
 				<rom name="blue war - le bateau (1986)(free game blot)(fr).k7" size="38315" crc="94f07b56" sha1="aa6c2ad03e17ffb190816e14a0d83641eacbedaf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bluewara" cloneof="bluewar">
+		<description>Blue War (Alt)</description>
+		<year>1986</year>
+		<publisher>Free Game Blot</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="38315">
+				<rom name="blue war (1986)(free game blot).k7" size="38315" crc="4aca3466" sha1="36cb790e3cd1da59b8080b314f366c1fda5a379d" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -6521,6 +6557,18 @@
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="8391">
 				<rom name="bomber (1986)(hebdogiciel)(fr)(pd)[a].k7" size="8391" crc="c6e47553" sha1="da680c3578d5725b99ba1af93cd14ee2bd83bc60" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bomberb" cloneof="bomber">
+		<description>Bomber (Alt 2)</description>
+		<year>1986</year>
+		<publisher>Hebdogiciel</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="8391">
+				<rom name="bomber (19xx)(hebdogiciel)(pd).k7" size="8391" crc="1add4de5" sha1="c3b9d3387816b197e9f43614baaf594dc38c6be2" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -8851,6 +8899,18 @@
 		</part>
 	</software>
 
+	<software name="isabelleb" cloneof="isabelle">
+		<description>Isabelle et le Dragon (Alt 2)</description>
+		<year>1985</year>
+		<publisher>Hebdogiciel</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="20234">
+				<rom name="isabelle et le dragon (19xx)(hebdogiciel)(pd).k7" size="20234" crc="2d19f913" sha1="66f2d528e22364f980f5d9556840b3db6d0c27e9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="island">
 		<description>Island</description>
 		<year>1984</year>
@@ -10195,6 +10255,18 @@
 		</part>
 	</software>
 
+	<software name="missu72b" cloneof="missu72">
+		<description>Mission U-72 (Alt 2)</description>
+		<year>1986</year>
+		<publisher>Hebdogiciel</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="24065">
+				<rom name="mission u72 (19xx)(hebdogiciel)(pd).k7" size="24065" crc="7711543f" sha1="61bbf749774c0bbabf54b86320d423481cadf1f4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="missrafa">
 		<description>Missions en Rafale</description>
 		<year>1987</year>
@@ -10647,6 +10719,18 @@
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="22964">
 				<rom name="orbital mission (1986)(coktel vision)(it).k7" size="22964" crc="532e9dd2" sha1="d9f178b12671bf5e4f215b981149a890f22c4f38" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="orbitala" cloneof="orbital">
+		<description>Orbital Mission (Ita, Alt)</description>
+		<year>1986</year>
+		<publisher>Coktel Vision</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="22964">
+				<rom name="orbital mission (1986)(coktel vision)(it)[a].k7" size="22964" crc="89ac58dc" sha1="3edb74c091e49521355765d6120a2a1109301cb2" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -11134,9 +11218,21 @@
 		</part>
 	</software>
 
+	<software name="quad" supported="no"> <!-- protection, works in dcmoto -->
+		<description>Quad (MO6)</description>
+		<year>198?</year>
+		<publisher>Microids</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="88402">
+				<rom name="quad (19xx)(microid)[nb].k7" size="88402" crc="2e9eec90" sha1="642bf5f24598647633816865eb273fb8f8a2067f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 <!-- this one tries to load for 10 minutes before system resets (shows a loader screen) -->
-	<software name="quad" supported="no">
-		<description>Quad (Bad Crack?)</description>
+	<software name="quada" cloneof="quad" supported="no">
+		<description>Quad (MO6) (Bad Crack?)</description>
 		<year>198?</year>
 		<publisher>Microids</publisher>
 
