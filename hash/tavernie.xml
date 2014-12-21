@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+
+<softwarelist name="tavernie" description="Tavernier floppies">
+	<software name="basicete">
+		<description>BASIC Etendu</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="extbasunlock.dsk" size="102400" crc="67568796" sha1="e04377be7bfce11b18886778db9f8584cb8ced7e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="compbas">
+		<description>Compilateur BASIC</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="combasic.dsk" size="102400" crc="58c1d590" sha1="5a62c5b7bf23faa2e60e2ded6154b7e5f8376bbc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dosexten">
+		<description>DOS et Extensions</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="extdosunlock.dsk" size="102400" crc="7e9d147c" sha1="15c3a4f6ec66cdef744be09484d6a5878cb4ca9b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="comppasc">
+		<description>Compilateur Pascal</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="pascal09.dsk" size="204800" crc="95f19c53" sha1="46a83151fa7c6ef5f90e2d615ecc0b7d9184cab6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="prodos">
+		<description>ProDOS Test</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="prodos-test_tav.dsk" size="204800" crc="ac742944" sha1="11b594dceb797bda5f986e192b71aaaa9c7621e4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>
