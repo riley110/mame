@@ -128,6 +128,30 @@
 		</part>
 	</software>
 
+	<software name="dumprom">
+		<description>Dump rom UC, controleur, cartouche</description>
+		<year>2008</year>
+		<publisher>DCsoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="dump rom uc, controleur, cartouche (dcsoft) (daniel coulom) (2008) (moto).fd" size="327680" crc="b7892d98" sha1="75569792465e92f0a0f821abdb9709494b7c80dd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dumproma" cloneof="dumprom"> <!-- contains 2 duplicates of parent set -->
+		<description>Dump rom UC, controleur, cartouche (640K Disk)</description>
+		<year>2008</year>
+		<publisher>DCsoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="655360">
+				<rom name="dump rom uc, controleur, cartouche (dcsoft) (daniel coulom) (2008) (moto)[640k].fd" size="655360" crc="3a1f761c" sha1="99611d9ea0bbc7435535ccaab8d6c63acaf1f0e9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="gp500cc">
 		<description>Grand Prix 500cc</description>
 		<year>1986</year>
@@ -236,6 +260,61 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="quad (1987)(microids)(fr)[boot with microsoft basic 1.0].sap" size="335426" crc="9b01aa0f" sha1="9f65ffc415d066ab704e7484ad1707d76b4e4612" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="simpack">
+		<description>Simulation Pack</description>
+		<year>1988</year>
+		<publisher>Microids</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="327680">
+				<rom name="simulation pack (microids) (c. bertrand, elliot grassiano, b. masson, a. bonsignore) (1988) (moto)[disk 1].fd" size="327680" crc="7bf09235" sha1="a9cd6df78ed898dd7fb5b91a0a1dd81f350eb394" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="327680">
+				<rom name="simulation pack (microids) (c. bertrand, elliot grassiano, b. masson, a. bonsignore) (1988) (moto)[disk 2].fd" size="327680" crc="8362fc7e" sha1="22464674d827a63f6bba96af76e9a0f84f7c79a4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="simpacka" cloneof="simpack" supported="no">
+		<description>Simulation Pack (640K Disk)</description>
+		<year>1988</year>
+		<publisher>Microids</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="655360">
+				<rom name="simulation pack (microids) (c. bertrand, elliot grassiano, b. masson, a. bonsignore) (1988) (moto).fd" size="655360" crc="1384e4f9" sha1="928ef175b3ea88282f62b87310321543914b9dcc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="superski">
+		<description>Super Ski</description>
+		<year>1987</year>
+		<publisher>Microids</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="super ski (microids) (c. bertrand, elliot grassiano) (1987) (moto).fd" size="327680" crc="eb726265" sha1="00bee271563754af8f43a120908c2a4c334a7f13" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="superskia" cloneof="superski"> <!-- second half blank -->
+		<description>Super Ski (640K Disk)</description>
+		<year>1987</year>
+		<publisher>Microids</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="655360">
+				<rom name="super ski (microids) (c. bertrand, elliot grassiano) (1987) (moto)[640k].fd" size="655360" crc="34ed1b75" sha1="81e308b9b1783c329e32e25841909c95eab5ada9" offset="0" />
 			</dataarea>
 		</part>
 	</software>

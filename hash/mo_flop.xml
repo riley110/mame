@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+
 <softwarelist name="mo_flop" description="Thomson MO-series floppies">
+
 	<software name="35basic">
 		<description>3'5 Disk BASIC (v1.0)</description>
 		<year>1985</year>
@@ -13,14 +15,50 @@
 		</part>
 	</software>
 
+	<software name="arsene">
+		<description>Arsene</description>
+		<year>1986</year>
+		<publisher>Triel</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="81920">
+				<rom name="arsene (triel) (jean-michel cohen) (1986) (mo5).fd" size="81920" crc="c917e4db" sha1="a7b9d8dc9e9e5918686bafb1e5403cfcdc292469" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="blitz">
 		<description>Blitz!</description>
 		<year>1985</year>
 		<publisher>TO Tek International</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="blitz! (intelligent software) (richard lang) (1985) (mo5).fd" size="327680" crc="b0b511eb" sha1="8d5719509cb159a38754c85d28f21033a1e455f1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="blitza" cloneof="blitz">
+		<description>Blitz! (Alt)</description>
+		<year>1985</year>
+		<publisher>TO Tek International</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="163840">
 				<rom name="blitz! (1985)(to tek)(fr)[3.5'', bootable].fd" size="163840" crc="20e73a19" sha1="2bdc70be628878b46ef0afd6ca753c74ee051777" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="clrcalc">
+		<description>Colorcalc</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="colorcalc (fil) (inconnus) (1985) (mo5).fd" size="327680" crc="665494c1" sha1="a6e7821308b71e6482f48ed9392daab6b92053c3" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -49,8 +87,51 @@
 		</part>
 	</software>
 
+	<software name="enigmeox">
+		<description>Enigme a Oxford</description>
+		<year>1986</year>
+		<publisher>Coktel Vision</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="enigme a oxford (coktel vision) (beatrice franzi) (1986) (mo5).fd" size="327680" crc="d2b707dc" sha1="148dc4638b582472e25010fc7b8fc0db68da9823" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="jane">
 		<description>Jane</description>
+		<year>1985</year>
+		<publisher>Thomson</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1 (Chargeur)"/>
+			<dataarea name="flop" size="163840">
+				<rom name="jane (thomson) (arktronics) (1985) (mo5) (chargeur).fd" size="163840" crc="a116ff4f" sha1="c49546a79b448f3e3b5263f08c5471fde7da0490" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2 (Systeme)"/>
+			<dataarea name="flop" size="163840">
+				<rom name="jane (thomson) (arktronics) (1985) (mo5) (systeme).fd" size="163840" crc="3bfdccd3" sha1="972a7fd814f720326fd048eab0daa600d25149e1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 3 (Donnees)"/>
+			<dataarea name="flop" size="163840">
+				<rom name="jane (thomson) (arktronics) (1985) (mo5) (donnees).fd" size="163840" crc="7882c323" sha1="335ee62747b542cb577826cd5242423ce673beee" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 4 (Aide)"/>
+			<dataarea name="flop" size="163840">
+				<rom name="jane (thomson) (arktronics) (1985) (mo5) (aide).fd" size="163840" crc="186ce086" sha1="94cbfa62914aeaed74695aa58d452d8484bec8e7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="janeqd" cloneof="jane">
+		<description>Jane (QDD)</description>
 		<year>1985</year>
 		<publisher>Thomson</publisher>
 		<info name="drive_requirement" value="QDD floppy drive"/>
@@ -63,15 +144,15 @@
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-		<feature name="part_id" value="Disk 2 (Aide)"/>
+		<feature name="part_id" value="Disk 2 (Donnees)"/>
 			<dataarea name="flop" size="51200">
-				<rom name="jane (1985)(thomson)(fr)[aide].qd" size="51200" crc="0a7b4a7a" sha1="f2b225a096330dc94a776c401e11502d7b76ed07" offset="0" />
+				<rom name="jane (1985)(thomson)(fr)[donnees].qd" size="51200" crc="694facba" sha1="bc04601134f873a087d83eaf9abdfad9e6a4ae79" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
-		<feature name="part_id" value="Disk 3 (Donnees)"/>
+		<feature name="part_id" value="Disk 3 (Aide)"/>
 			<dataarea name="flop" size="51200">
-				<rom name="jane (1985)(thomson)(fr)[donnees].qd" size="51200" crc="694facba" sha1="bc04601134f873a087d83eaf9abdfad9e6a4ae79" offset="0" />
+				<rom name="jane (1985)(thomson)(fr)[aide].qd" size="51200" crc="0a7b4a7a" sha1="f2b225a096330dc94a776c401e11502d7b76ed07" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -96,6 +177,18 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="mandragore (1984)(infogrames)(fr)[m prehisto][3.5'', bootable].sap" size="335426" crc="5e31a1e6" sha1="8fc69e896fd22f5fc9b025755f8749c06fa215ca" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="microflp">
+		<description>MicroFloppy Compilation (Ita)</description>
+		<year>1987</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="microfloppy compilation (infogrames) (emile n'guyen) (1987) (pc128).fd" size="327680" crc="4fea64b4" sha1="a028e5b2d0ec34454a12d5dbd29160f496d73d8f" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -151,6 +244,18 @@
 		</part>
 	</software>
 
+	<software name="music3v">
+		<description>Music 3V (MO6)</description>
+		<year>1987</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="163840">
+				<rom name="music 3v (loriciels) (p.o. richez) (1987) (mo6).fd" size="163840" crc="07c91d68" sha1="17dd284f8200592339203973782a11692da8cfc6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="parclexi">
 		<description>Parcours Lexical</description>
 		<year>1987</year>
@@ -171,6 +276,30 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="51200">
 				<rom name="poseidon (1984)(coktel vision)(fr).qd" size="51200" crc="81d0f82d" sha1="cf25c5e691ac4e874ad8fb6f69157ee6e3196f19" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sortelig">
+		<description>Sortileges (Ita)</description>
+		<year>1986</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="sortileges (infogrames) (william hennebois, alain vialon, laurent droulez) (1986) (pc128).fd" size="327680" crc="37df7268" sha1="d0384751ae3514cb1ad2849e8943f4c4a2100d03" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tresrats">
+		<description>Le Tresor des Rats d'Egout (MO6)</description>
+		<year>1986</year>
+		<publisher>Cedic/Nathan</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="le tresor des rats d'egout (nathan) (inconnus) (1986) (mo6).fd" size="327680" crc="b81a6f31" sha1="3a098acdd7d6e116cd6a9b77d500b622bf1355ee" offset="0" />
 			</dataarea>
 		</part>
 	</software>

@@ -29,6 +29,19 @@
 		</part>
 	</software>
 
+	<software name="asm6809b" cloneof="asm6809">
+		<description>Assembleur 6809 (v1.0, Alt 2)</description>
+		<year>1984</year>
+		<publisher>TO Tek International</publisher>
+		<info name="alt_title" value="6809 Language Module"/>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="as 5011 (alt 2).bin" size="16384" crc="13af8b1a" sha1="0eb8d05972502fe092e576ea2f3daa44befba423" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="macroasm" cloneof="asm6809">
 		<description>6809 MacroAssembler (v3.6)</description>
 		<year>2006</year>
@@ -49,6 +62,18 @@
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
 				<rom name="agenda.bin" size="16384" crc="5c1a5dfa" sha1="5a6eadd0fd38b9c66f022bbb6409a6b768fc2925" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="agendaa" cloneof="agenda">
+		<description>Agenda (Alt)</description>
+		<year>1984</year>
+		<publisher>Answare</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="agenda (alt).bin" size="16384" crc="a4460761" sha1="5a77e3709b90f430c0b4c2c282916095e60ee22b" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -130,6 +155,18 @@
 			</dataarea>
 		</part>
 -->
+	</software>
+
+	<software name="clrcalca" cloneof="clrcalc">
+		<description>Colorcalc (Alt)</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="cc 7052 (alt).bin" size="32768" crc="f5a82963" sha1="be96f87a104ff7f65f043345ee2c76fbd90b11dd" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
 	<software name="colorpnt">
@@ -277,6 +314,18 @@
 		</part>
 	</software>
 
+	<software name="logob" cloneof="logo">
+		<description>LOGO (v1.0, Alt 2)</description>
+		<year>1984</year>
+		<publisher>TO Tek International</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="lo 5010 (alt 2).bin" size="16384" crc="6e997494" sha1="039f460f00973da9e192691061b37b493028bc35" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="lsegedl"> <!-- cart label says v3.2, while boot screen says v3.21 -->
 		<description>LSEG-EDL (v3.2)</description>
 		<year>1985</year>
@@ -337,6 +386,18 @@
 		</part>
 	</software>
 
+	<software name="mine2049a" cloneof="mine2049">
+		<description>Miner 2049er (Alt)</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="mn 5527 (alt).bin" size="16384" crc="97aa93c7" sha1="6276d55a07b0eb7e05506203a6b926aff0a8acd2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="motus">
 		<description>Motus</description>
 		<year>1982</year>
@@ -369,6 +430,30 @@
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
 				<rom name="450010.bin" size="16384" crc="6f3eb24d" sha1="0ada709e69073930872190a391a32aac5d38ee92" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pictora" cloneof="pictor">
+		<description>Pictor (Alt)</description>
+		<year>1983</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="450010 (alt).bin" size="16384" crc="85d74738" sha1="9f7a9dd1d81c9b2aaeee460d994d4a5fa2dccedc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scriptor">
+		<description>Scriptor (Ita)</description>
+		<year>1986</year>
+		<publisher>TO Tek International</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="scriptor.bin" size="16384" crc="d15ca6bc" sha1="ad39e669a0d8b8707b06db66cfb6fc389e8610b3" offset="0" />
 			</dataarea>
 		</part>
 	</software>

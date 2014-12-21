@@ -92,11 +92,23 @@
 	<software name="basic128">
 		<description>BASIC 128 (v1.0) (TO7/70)</description>
 		<year>1985</year>
-		<publisher>Microsoft</publisher>
+		<publisher>Thomson</publisher>
 
 		<part name="cart" interface="to_cart">
 			<dataarea name="rom" size="32768">
 				<rom name="basic 128 v1.0 (1985)(to tek)(fr)(en).m7" size="32768" crc="c9bc204f" sha1="e4c2a684e9186f49c8092d16f0f74764f51ad86c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basic128a" cloneof="basic128">
+		<description>Basic 128 (v1.0, Arab) (TO7/70)</description>
+		<year>1985</year>
+		<publisher>Thomson</publisher>
+
+		<part name="cart" interface="to_cart">
+			<dataarea name="rom" size="65536">
+				<rom name="basic 128 et 1.0 en arabe (thomson) (alain delpuch, guy millet) (1985) (memo7).rom" size="65536" crc="ba082b73" sha1="bdcb3b2b0b4f0e56bda55dfeee220da9473143e2" offset="0" />
 			</dataarea>
 		</part>
 	</software>
