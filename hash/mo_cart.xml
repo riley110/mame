@@ -138,7 +138,7 @@
 		</part>
 	</software>
 
-	<software name="clrcalc">
+	<software name="colorclc">
 		<description>Colorcalc</description>
 		<year>1985</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
@@ -157,7 +157,7 @@
 -->
 	</software>
 
-	<software name="clrcalca" cloneof="clrcalc">
+	<software name="colorclca" cloneof="colorclc">
 		<description>Colorcalc (Alt)</description>
 		<year>1985</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
@@ -177,6 +177,18 @@
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="32768">
 				<rom name="colorpaint.bin" size="32768" crc="6548bc4e" sha1="4ab870877ffd25eec93d65507c4afe262369b0a1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="colorpnta" cloneof="colorpnt">
+		<description>Colorpaint (Ita, Alt)</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="color paint (it) (fil) (1985).rom" size="32768" crc="8fa1493b" sha1="d27c6db21adb29dc76df33d7a3855f8532d8cc57" offset="0" />
 			</dataarea>
 		</part>
 	</software>
