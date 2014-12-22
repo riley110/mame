@@ -1,5 +1,5 @@
 // license:BSD-3-Clause
-// copyright-holders:hap
+// copyright-holders:hap, Lord Nightmare
 /***************************************************************************
 
   Texas Instruments Speak & Spell hardware
@@ -13,9 +13,6 @@
 
 #include "tispeak.lh"
 
-// master clock is unknown
-#define MASTER_CLOCK (500000)
-
 
 class tispeak_state : public driver_device
 {
@@ -23,25 +20,91 @@ public:
 	tispeak_state(const machine_config &mconfig, device_type type, const char *tag)
 		: driver_device(mconfig, type, tag),
 		m_maincpu(*this, "maincpu"),
+		m_tms5100(*this, "tms5100"),
+		m_tms6100(*this, "tms6100"),
+		m_filoff_timer(*this, "filoff"),
 		m_button_matrix(*this, "IN")
 	{ }
 
 	required_device<tms0270_cpu_device> m_maincpu;
+	required_device<tms5100_device> m_tms5100;
+	required_device<tms6100_device> m_tms6100;
+	required_device<timer_device> m_filoff_timer;
 	required_ioport_array<9> m_button_matrix;
 
 	UINT16 m_r;
 	UINT16 m_o;
+	int m_filament_on;
+	int m_power_on;
 
-	UINT16 m_leds_state[8];
-	void leds_update();
+	UINT16 m_digit_state[9];
+	void display_update();
+	TIMER_DEVICE_CALLBACK_MEMBER(delayed_filament_off);
 
-	DECLARE_READ8_MEMBER(read_k);
-	DECLARE_WRITE16_MEMBER(write_o);
-	DECLARE_WRITE16_MEMBER(write_r);
+	DECLARE_READ8_MEMBER(snspell_read_k);
+	DECLARE_WRITE16_MEMBER(snmath_write_o);
+	DECLARE_WRITE16_MEMBER(snspell_write_o);
+	DECLARE_WRITE16_MEMBER(snspell_write_r);
+
+	DECLARE_INPUT_CHANGED_MEMBER(power_button);
 	DECLARE_WRITE_LINE_MEMBER(auto_power_off);
+	void power_off();
 
+	virtual void machine_reset();
 	virtual void machine_start();
 };
+
+
+
+/***************************************************************************
+
+  VFD Display
+
+***************************************************************************/
+
+// The device strobes the filament-enable very fast, it is unnoticeable to the user.
+// To prevent flickering here, we need to simulate a decay.
+
+// decay time in milliseconds
+#define FILOFF_DECAY_TIME 20
+
+TIMER_DEVICE_CALLBACK_MEMBER(tispeak_state::delayed_filament_off)
+{
+	// turn off display
+	m_filament_on = 0;
+	display_update();
+}
+
+void tispeak_state::display_update()
+{
+	// filament on/off
+	if (m_r & 0x8000)
+	{
+		m_filament_on = 1;
+		m_filoff_timer->reset();
+	}
+	else if (m_filament_on && m_filoff_timer->time_left() == attotime::never)
+	{
+		// schedule delayed filament-off
+		m_filoff_timer->adjust(attotime::from_msec(FILOFF_DECAY_TIME));
+	}
+	
+	// update digit state
+	for (int i = 0; i < 9; i++)
+		if (m_r >> i & 1)
+			m_digit_state[i] = m_o;
+
+	// send to output
+	for (int i = 0; i < 9; i++)
+	{
+		// standard led14seg
+		output_set_digit_value(i, m_filament_on ? m_digit_state[i] & 0x3fff : 0);
+		
+		// DP(display point) and AP(apostrophe) segments as lamps
+		output_set_lamp_value(i*10 + 0, m_digit_state[i] >> 14 & m_filament_on);
+		output_set_lamp_value(i*10 + 1, m_digit_state[i] >> 15 & m_filament_on);
+	}
+}
 
 
 
@@ -51,21 +114,9 @@ public:
 
 ***************************************************************************/
 
-void tispeak_state::leds_update()
-{
-	// update leds state
-	for (int i = 0; i < 8; i++)
-		if (m_r >> i & 1)
-			m_leds_state[i] = m_o & 0x3fff;
+// common/snspell
 
-	// if filament (R15) is on, send to output
-//	if (m_r & 0x8000) // blank..
-	for (int i = 0; i < 8; i++)
-		output_set_digit_value(i, m_leds_state[i]);
-}
-
-
-READ8_MEMBER(tispeak_state::read_k)
+READ8_MEMBER(tispeak_state::snspell_read_k)
 {
 	// the Vss row is always on
 	UINT8 k = m_button_matrix[8]->read();
@@ -78,21 +129,51 @@ READ8_MEMBER(tispeak_state::read_k)
 	return k;
 }
 
-WRITE16_MEMBER(tispeak_state::write_r)
+WRITE16_MEMBER(tispeak_state::snspell_write_r)
 {
+	// R0-R7: input mux and select digit (+R8 if the device has 9 digits)
+	// R15: filament on
+	// other bits: MCU internal use
 	m_r = data;
-	leds_update();
+	display_update();
 }
 
-WRITE16_MEMBER(tispeak_state::write_o)
+WRITE16_MEMBER(tispeak_state::snspell_write_o)
 {
-	m_o = data;
-	leds_update();
+	// reorder opla to led14seg, plus DP as d14 and AP as d15:
+	// E,D,C,G,B,A,I,M,L,K,N,J,[AP],H,F,[DP] (sidenote: TI KLMN = MAME MLNK)
+	m_o = BITSWAP16(data,12,15,10,7,8,9,11,6,13,3,14,0,1,2,4,5);
+
+	display_update();
+}
+
+
+void tispeak_state::power_off()
+{
+	m_maincpu->set_input_line(INPUT_LINE_RESET, ASSERT_LINE);
+	m_tms5100->reset();
+	m_tms6100->reset();
+
+	m_power_on = 0;
 }
 
 WRITE_LINE_MEMBER(tispeak_state::auto_power_off)
 {
-	//if (state) printf("X");
+	// power-off request from the MCU, when [OFF] is pressed, also typically after a couple of minutes of idling
+	if (state)
+		power_off();
+}
+
+
+// snmath specific
+
+WRITE16_MEMBER(tispeak_state::snmath_write_o)
+{
+	// reorder opla to led14seg, plus DP as d14 and AP as d15:
+	// [DP],D,C,H,F,B,I,M,L,K,N,J,[AP],E,G,A (sidenote: TI KLMN = MAME MLNK)
+	m_o = BITSWAP16(data,12,0,10,7,8,9,11,6,3,14,4,13,1,2,5,15);
+
+	display_update();
 }
 
 
@@ -102,6 +183,19 @@ WRITE_LINE_MEMBER(tispeak_state::auto_power_off)
   Inputs
 
 ***************************************************************************/
+
+INPUT_CHANGED_MEMBER(tispeak_state::power_button)
+{
+	int on = (int)(FPTR)param;
+	
+	if (on)
+	{
+		m_power_on = 1;
+		m_maincpu->set_input_line(INPUT_LINE_RESET, CLEAR_LINE);
+	}
+	else if (m_power_on)
+		power_off();
+}
 
 static INPUT_PORTS_START( snspell )
 	PORT_START("IN.0") // R0
@@ -147,14 +241,10 @@ static INPUT_PORTS_START( snspell )
 	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_ENTER) PORT_NAME("Enter")
 
 	PORT_START("IN.6") // R6
-	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_1_PAD) // unused
-	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_2_PAD) // unused
-	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_3_PAD) // unused
-	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_4_PAD) // unused
-	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_5_PAD) // unused
+	PORT_BIT( 0x1f, IP_ACTIVE_HIGH, IPT_UNUSED )
 
 	PORT_START("IN.7") // R7
-	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_PGDN) PORT_NAME("Off")
+	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_PGDN) PORT_NAME("Off") // -> auto_power_off
 	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_1) PORT_NAME("Go")
 	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_2) PORT_NAME("Replay")
 	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_3) PORT_NAME("Repeat")
@@ -165,73 +255,65 @@ static INPUT_PORTS_START( snspell )
 	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_6) PORT_NAME("Secret Code")
 	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_7) PORT_NAME("Letter")
 	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_8) PORT_NAME("Say It")
-	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_9) PORT_CODE(KEYCODE_PGUP) PORT_NAME("Spell/On")
+	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_9) PORT_CODE(KEYCODE_PGUP) PORT_NAME("Spell/On") PORT_CHANGED_MEMBER(DEVICE_SELF, tispeak_state, power_button, (void *)1)
 INPUT_PORTS_END
 
 
 static INPUT_PORTS_START( snmath )
 	PORT_START("IN.0") // R0
-	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_1) // 0
-	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_2) // 3
-	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_3) // 6
-	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_4) // 9
-	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_1_PAD) // .
+	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_0) PORT_CODE(KEYCODE_0_PAD) PORT_NAME("0")
+	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_3) PORT_CODE(KEYCODE_3_PAD) PORT_NAME("3")
+	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_6) PORT_CODE(KEYCODE_6_PAD) PORT_NAME("6")
+	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_9) PORT_CODE(KEYCODE_9_PAD) PORT_NAME("9")
+	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_DEL_PAD) PORT_NAME(".")
 
 	PORT_START("IN.1") // R1
-	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_5) // 1
-	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_6) // 4
-	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_7) // 7
-	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_8)
-	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_2_PAD)
+	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_1) PORT_CODE(KEYCODE_1_PAD) PORT_NAME("1")
+	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_4) PORT_CODE(KEYCODE_4_PAD) PORT_NAME("4")
+	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_7) PORT_CODE(KEYCODE_7_PAD) PORT_NAME("7")
+	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_UNUSED )
+	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_UNUSED )
 
 	PORT_START("IN.2") // R2
-	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_9) // 2
-	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_0) // 5
-	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_Q) // 8
-	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_W)
-	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_3_PAD)
+	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_2) PORT_CODE(KEYCODE_2_PAD) PORT_NAME("2")
+	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_5) PORT_CODE(KEYCODE_5_PAD) PORT_NAME("5")
+	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_8) PORT_CODE(KEYCODE_8_PAD) PORT_NAME("8")
+	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_UNUSED )
+	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_UNUSED )
 
 	PORT_START("IN.3") // R3
-	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_E)
-	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_R) // ent
-	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_T) // go
-	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_Y) // off
-	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_4_PAD)
+	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED )
+	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_ENTER) PORT_CODE(KEYCODE_ENTER_PAD) PORT_NAME("Enter")
+	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_Q) PORT_NAME("Go")
+	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_PGDN) PORT_NAME("Off") // -> auto_power_off
+	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_UNUSED )
 
 	PORT_START("IN.4") // R4
-	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_U) // clr
-	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_I) // <
-	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_O) // >
-	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_A) // rpt
-	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_5_PAD)
+	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_DEL) PORT_CODE(KEYCODE_BACKSPACE) PORT_NAME("Clear")
+	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_COMMA) PORT_NAME("<")
+	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_STOP) PORT_NAME(">")
+	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_W) PORT_NAME("Repeat")
+	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_UNUSED )
 
 	PORT_START("IN.5") // R5
-	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_S) // +
-	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_D) // -
-	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_F) // x
-	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_G) // /
-	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_6_PAD) // mix
+	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_PLUS_PAD) PORT_NAME("+")
+	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_MINUS_PAD) PORT_NAME("-")
+	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_ASTERISK) PORT_NAME(UTF8_MULTIPLY)
+	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_SLASH_PAD) PORT_NAME(UTF8_DIVIDE) // /
+	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_E) PORT_NAME("Mix It")
 
 	PORT_START("IN.6") // R6
-	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_H) // num stum
-	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_J) // write it
-	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_K) // g/l
-	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_L) // word prob
-	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_7_PAD) // solve it/on
+	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_I) PORT_NAME("Number Stumper")
+	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_U) PORT_NAME("Write It")
+	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_Y) PORT_NAME("Greater/Less")
+	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_T) PORT_NAME("Word Problems")
+	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_R) PORT_CODE(KEYCODE_PGUP) PORT_NAME("Solve It/On") PORT_CHANGED_MEMBER(DEVICE_SELF, tispeak_state, power_button, (void *)1)
 
-	PORT_START("IN.7") // R7
-	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_Z)
-	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_X)
-	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_C)
-	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_V)
-	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_8_PAD)
+	PORT_START("IN.7")
+	PORT_BIT( 0x1f, IP_ACTIVE_HIGH, IPT_UNUSED )
 
-	PORT_START("IN.8") // Vss!
-	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_B)
-	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_N)
-	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_M)
-	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_COMMA)
-	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE(KEYCODE_9_PAD)
+	PORT_START("IN.8")
+	PORT_BIT( 0x1f, IP_ACTIVE_HIGH, IPT_UNUSED )
 INPUT_PORTS_END
 
 
@@ -242,32 +324,45 @@ INPUT_PORTS_END
 
 ***************************************************************************/
 
+void tispeak_state::machine_reset()
+{
+	m_filament_on = 0;
+	m_power_on = 1;
+}
+
 void tispeak_state::machine_start()
 {
-	memset(m_leds_state, 0, sizeof(m_leds_state));
+	// zerofill
+	memset(m_digit_state, 0, sizeof(m_digit_state));
 	m_r = 0;
 	m_o = 0;
+	m_filament_on = 0;
+	m_power_on = 0;
 
-	save_item(NAME(m_leds_state));
+	// register for savestates
+	save_item(NAME(m_digit_state));
 	save_item(NAME(m_r));
 	save_item(NAME(m_o));
+	save_item(NAME(m_filament_on));
+	save_item(NAME(m_power_on));
 }
 
 
-static MACHINE_CONFIG_START( tispeak, tispeak_state )
+static MACHINE_CONFIG_START( snspell, tispeak_state )
 
 	/* basic machine hardware */
 	MCFG_CPU_ADD("maincpu", TMS0270, XTAL_640kHz/2)
-	MCFG_TMS1XXX_READ_K_CB(READ8(tispeak_state, read_k))
-	MCFG_TMS1XXX_WRITE_O_CB(WRITE16(tispeak_state, write_o))
-	MCFG_TMS1XXX_WRITE_R_CB(WRITE16(tispeak_state, write_r))
+	MCFG_TMS1XXX_READ_K_CB(READ8(tispeak_state, snspell_read_k))
+	MCFG_TMS1XXX_WRITE_O_CB(WRITE16(tispeak_state, snspell_write_o))
+	MCFG_TMS1XXX_WRITE_R_CB(WRITE16(tispeak_state, snspell_write_r))
 	MCFG_TMS1XXX_POWER_OFF_CB(WRITELINE(tispeak_state, auto_power_off))
 
 	MCFG_TMS0270_READ_CTL_CB(DEVREAD8("tms5100", tms5100_device, ctl_r))
 	MCFG_TMS0270_WRITE_CTL_CB(DEVWRITE8("tms5100", tms5100_device, ctl_w))
 	MCFG_TMS0270_WRITE_PDC_CB(DEVWRITELINE("tms5100", tms5100_device, pdc_w))
 
-	MCFG_DEFAULT_LAYOUT(layout_tispeak)
+	MCFG_TIMER_DRIVER_ADD("filoff", tispeak_state, delayed_filament_off)
+	MCFG_DEFAULT_LAYOUT(layout_tispeak) // max 9 digits
 
 	/* no video! */
 
@@ -282,7 +377,13 @@ static MACHINE_CONFIG_START( tispeak, tispeak_state )
 	MCFG_TMS5110_DATA_CB(DEVREADLINE("tms6100", tms6100_device, tms6100_data_r))
 	MCFG_TMS5110_ROMCLK_CB(DEVWRITELINE("tms6100", tms6100_device, tms6100_romclock_w))
 	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 1.0)
-	
+MACHINE_CONFIG_END
+
+static MACHINE_CONFIG_DERIVED( snmath, snspell )
+
+	/* basic machine hardware */
+	MCFG_CPU_MODIFY("maincpu")
+	MCFG_TMS1XXX_WRITE_O_CB(WRITE16(tispeak_state, snmath_write_o))
 MACHINE_CONFIG_END
 
 
@@ -295,14 +396,14 @@ MACHINE_CONFIG_END
 
 ROM_START( snspell )
 	ROM_REGION( 0x1000, "maincpu", 0 )
-	ROM_LOAD( "us4189779_tmc0271", 0x0000, 0x1000, BAD_DUMP CRC(d3f5a37d) SHA1(f75ab617a6067d4d3a954a9f86126d2089554df8) ) // from patent 4189779, may have errors
+	ROM_LOAD( "us4189779_tmc0271", 0x0000, 0x1000, BAD_DUMP CRC(d3f5a37d) SHA1(f75ab617a6067d4d3a954a9f86126d2089554df8) ) // typed in from patent 4189779, may have errors
 
 	ROM_REGION( 1246, "maincpu:ipla", 0 )
 	ROM_LOAD( "tms0980_default_ipla.pla", 0, 1246, CRC(42db9a38) SHA1(2d127d98028ec8ec6ea10c179c25e447b14ba4d0) )
 	ROM_REGION( 2127, "maincpu:mpla", 0 )
-	ROM_LOAD( "tms0270_cd2708_mpla.pla", 0, 2127, BAD_DUMP CRC(94333005) SHA1(1583444c73637d859632dd5186cd7e1a2588c78a) ) // taken from cd2708, need to verify if it's same as tmc0271
+	ROM_LOAD( "tms0270_cd2708_mpla.pla", 0, 2127, BAD_DUMP CRC(504b96bb) SHA1(67b691e7c0b97239410587e50e5182bf46475b43) ) // taken from cd2708, need to verify if it's same as tmc0271
 	ROM_REGION( 1246, "maincpu:opla", 0 )
-	ROM_LOAD( "tms0270_cd2708_opla.pla", 0, 1246, BAD_DUMP CRC(e70836e2) SHA1(70e7dcdf81ae2052874fb21c504fcc06b2649f9a) ) // "
+	ROM_LOAD( "tms0270_tmc0271_opla.pla", 0, 1246, CRC(9ebe12ab) SHA1(acb4e07ba26f2daca5f1c234885ac0371c7ce87f) )
 
 	ROM_REGION( 0x8000, "tms6100", 0 )
 	ROM_LOAD( "tmc0351.vsm", 0x0000, 0x4000, CRC(beea3373) SHA1(8b0f7586d2f12c3d4a885fdb528cf23feffa1a3b) )
@@ -311,14 +412,14 @@ ROM_END
 
 ROM_START( snmath )
 	ROM_REGION( 0x1000, "maincpu", 0 )
-	ROM_LOAD( "us4946391_t2074", 0x0000, 0x1000, CRC(011f0c2d) SHA1(d2e14d72e03ca864abd51da78ffb71a9da82f624) ) // from patent 4946391, verified with source code
+	ROM_LOAD( "us4946391_t2074", 0x0000, 0x1000, BAD_DUMP CRC(011f0c2d) SHA1(d2e14d72e03ca864abd51da78ffb71a9da82f624) ) // typed in from patent 4946391, verified with source code (mark BAD_DUMP just to be unsure)
 
 	ROM_REGION( 1246, "maincpu:ipla", 0 )
 	ROM_LOAD( "tms0980_default_ipla.pla", 0, 1246, CRC(42db9a38) SHA1(2d127d98028ec8ec6ea10c179c25e447b14ba4d0) )
 	ROM_REGION( 2127, "maincpu:mpla", 0 )
-	ROM_LOAD( "tms0270_cd2708_mpla.pla", 0, 2127, BAD_DUMP CRC(94333005) SHA1(1583444c73637d859632dd5186cd7e1a2588c78a) ) // taken from cd2708, need to verify if it's same as cd2704
+	ROM_LOAD( "tms0270_cd2708_mpla.pla", 0, 2127, BAD_DUMP CRC(504b96bb) SHA1(67b691e7c0b97239410587e50e5182bf46475b43) ) // taken from cd2708, need to verify if it's same as cd2704
 	ROM_REGION( 1246, "maincpu:opla", 0 )
-	ROM_LOAD( "tms0270_cd2708_opla.pla", 0, 1246, BAD_DUMP CRC(e70836e2) SHA1(70e7dcdf81ae2052874fb21c504fcc06b2649f9a) ) // "
+	ROM_LOAD( "tms0270_cd2708_opla.pla", 0, 1246, BAD_DUMP CRC(1abad753) SHA1(53d20b519ed73ce248368047a056836afbe3cd46) ) // "
 
 	ROM_REGION( 0x8000, "tms6100", 0 )
 	ROM_LOAD( "cd2392.vsm", 0x0000, 0x4000, CRC(4ed2e920) SHA1(8896f29e25126c1e4d9a47c9a325b35dddecc61f) )
@@ -326,5 +427,5 @@ ROM_START( snmath )
 ROM_END
 
 
-COMP( 1978, snspell, 0, 0, tispeak, snspell, driver_device, 0, "Texas Instruments", "Speak & Spell (US, prototype)", GAME_NOT_WORKING )
-COMP( 1980, snmath,  0, 0, tispeak, snmath,  driver_device, 0, "Texas Instruments", "Speak & Math (US, prototype)", GAME_NOT_WORKING )
+COMP( 1978, snspell, 0, 0, snspell, snspell, driver_device, 0, "Texas Instruments", "Speak & Spell (US, prototype)", GAME_NOT_WORKING )
+COMP( 1980, snmath,  0, 0, snmath,  snmath,  driver_device, 0, "Texas Instruments", "Speak & Math (US, prototype)", GAME_NOT_WORKING )

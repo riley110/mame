@@ -17,6 +17,46 @@
 #define ARCOMPACT_OPERATION ((op & 0xf800) >> 11)
 
 
+#define ARCOMPACT_HANDLER04_P11_TYPE(name) \
+ARCOMPACT_RETTYPE arcompact_handle##name##_p11(OPS_32) \
+{ \
+	int M = (op & 0x00000020) >> 5; \
+	 \
+	switch (M) \
+	{ \
+		case 0x00: return arcompact_handle##name##_p11_m0(PARAMS); \
+		case 0x01: return arcompact_handle##name##_p11_m1(PARAMS); \
+	} \
+	 \
+	return 0; \
+}; \
+
+#define ARCOMPACT_HANDLER04_TYPE(name) \
+ARCOMPACT_RETTYPE arcompact_handle##name(OPS_32) \
+{ \
+	int p = (op & 0x00c00000) >> 22; \
+	\
+	switch (p) \
+	{ \
+		case 0x00: return arcompact_handle##name##_p00(PARAMS); \
+		case 0x01: return arcompact_handle##name##_p01(PARAMS); \
+		case 0x02: return arcompact_handle##name##_p10(PARAMS); \
+		case 0x03: return arcompact_handle##name##_p11(PARAMS); \
+	} \
+	\
+	return 0; \
+}; \
+
+
+#define ARCOMPACT_HANDLER04_TYPE_PM(name) \
+	ARCOMPACT_RETTYPE arcompact_handle##name##_p00(OPS_32); \
+	ARCOMPACT_RETTYPE arcompact_handle##name##_p01(OPS_32); \
+	ARCOMPACT_RETTYPE arcompact_handle##name##_p10(OPS_32); \
+	ARCOMPACT_RETTYPE arcompact_handle##name##_p11_m0(OPS_32); \
+	ARCOMPACT_RETTYPE arcompact_handle##name##_p11_m1(OPS_32); \
+	ARCOMPACT_HANDLER04_P11_TYPE(name); \
+	ARCOMPACT_HANDLER04_TYPE(name); \
+
 
 class arcompact_device : public cpu_device
 {
@@ -116,7 +156,7 @@ protected:
 	ARCOMPACT_RETTYPE arcompact_handle04_07(OPS_32);
 	ARCOMPACT_RETTYPE arcompact_handle04_08(OPS_32);
 	ARCOMPACT_RETTYPE arcompact_handle04_09(OPS_32);
-	ARCOMPACT_RETTYPE arcompact_handle04_0a(OPS_32);
+//	ARCOMPACT_RETTYPE arcompact_handle04_0a(OPS_32);
 	ARCOMPACT_RETTYPE arcompact_handle04_0b(OPS_32);
 	ARCOMPACT_RETTYPE arcompact_handle04_0c(OPS_32);
 	ARCOMPACT_RETTYPE arcompact_handle04_0d(OPS_32);
@@ -136,7 +176,7 @@ protected:
 	ARCOMPACT_RETTYPE arcompact_handle04_1b(OPS_32);
 	ARCOMPACT_RETTYPE arcompact_handle04_1c(OPS_32);
 	ARCOMPACT_RETTYPE arcompact_handle04_1d(OPS_32);
-	ARCOMPACT_RETTYPE arcompact_handle04_20(OPS_32);
+//	ARCOMPACT_RETTYPE arcompact_handle04_20(OPS_32);
 	ARCOMPACT_RETTYPE arcompact_handle04_21(OPS_32);
 	ARCOMPACT_RETTYPE arcompact_handle04_22(OPS_32);
 	ARCOMPACT_RETTYPE arcompact_handle04_23(OPS_32);
@@ -727,6 +767,11 @@ protected:
 
 	ARCOMPACT_RETTYPE get_insruction(OPS_32);
 
+
+	ARCOMPACT_HANDLER04_TYPE_PM(04_20);
+	ARCOMPACT_HANDLER04_TYPE_PM(04_0a);
+
+
 private:
 	address_space_config m_program_config;
 
@@ -743,6 +788,8 @@ private:
 	inline void WRITE32(UINT32 address, UINT32 data) { m_program->write_dword(address << 2, data); }
 	inline UINT16 READ16(UINT32 address) { return m_program->read_word(address << 1); }
 	inline void WRITE16(UINT32 address, UINT16 data){ 	m_program->write_word(address << 1, data); }
+	inline UINT8 READ8(UINT32 address) { return m_program->read_byte(address << 0); }
+	inline void WRITE8(UINT32 address, UINT8 data){ 	m_program->write_byte(address << 0, data); }
 
 	UINT32 m_regs[0x40];
 
