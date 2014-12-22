@@ -3,6 +3,7 @@
 <!-- Only TOSEC images are included at the moment, more will be added soon (most from Unrenamed) -->
 
 <softwarelist name="to_cass" description="Thomson TO-series cassetes">
+
 	<software name="3duss">
 		<description>3-D USS</description>
 		<year>198?</year>
@@ -27,6 +28,18 @@
 		</part>
 	</software>
 
+	<software name="3dfight">
+		<description>3D Fight</description>
+		<year>1986</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="31257">
+				<rom name="3d fight (loriciels) (jean-christophe bandini) (1986) (to7).k7" size="31257" crc="fc145755" sha1="2015db7deb0d0b7f273b103fe997753ee46518cc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="5emeaxe">
 		<description>Le 5eme Axe</description>
 		<year>1986</year>
@@ -36,6 +49,18 @@
 		<part name="cass1" interface="to_cass">
 			<dataarea name="cass" size="54965">
 				<rom name="5eme axe, le (1986)(loriciels)(fr)[loadm'''',,r].k7" size="54965" crc="da89a78c" sha1="656e3eab469675835b7fe47b42f96e1b9de1c052" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="agd">
+		<description>A.G.D. (Gameco) (Gilles Delabre) (1984) (to7)</description>
+		<year>1984</year>
+		<publisher>Gameco</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="8836">
+				<rom name="a.g.d. (gameco) (gilles delabre) (1984) (to7).k7" size="8836" crc="9b285962" sha1="8c2163f5ed227e2a41c2a80c5486000e734fafe9" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -65,6 +90,42 @@
 		</part>
 	</software>
 
+	<software name="aattack">
+		<description>Air Attack</description>
+		<year>1985</year>
+		<publisher>Microids</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="50545">
+				<rom name="air attack (microids) (m. beziat, e. grassiano) (1985) (to7).k7" size="50545" crc="a77f0494" sha1="57e224c4b84a7309c19fccb742842604f3144b53" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="alerte">
+		<description>Alerte</description>
+		<year>1986</year>
+		<publisher>ARC</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="72513">
+				<rom name="alerte au tabac (arc) (inconnus) (1986) (to7).k7" size="72513" crc="37a260a0" sha1="f6da6ac4639870397edd6af97096b70156413603" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="algebre">
+		<description>Algebre</description>
+		<year>1986</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="24701">
+				<rom name="algebre (nathan) (jean-philippe et stephane rethore) (1986) (to7).k7" size="24701" crc="3e5f23b9" sha1="e55da25aff05f07c90f6ca60f79c7718b0ee7345" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="android">
 		<description>Androides</description>
 		<year>1985</year>
@@ -73,6 +134,125 @@
 		<part name="cass1" interface="to_cass">
 			<dataarea name="cass" size="23506">
 				<rom name="androides (1985)(infogrames)(fr).k7" size="23506" crc="a220159a" sha1="8c493609f87a31984592b6104c414718f1b51b61" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="androida" cloneof="android">
+		<description>Androides (Alt)</description>
+		<year>1985</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="22864">
+				<rom name="androides + editeur (infogrames) (william hennebois) (1985) (to7).k7" size="22864" crc="62c837ec" sha1="5e24408da70fccea51974889be52ba8b87f47741" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="anglais1">
+		<description>Anglais - Volume 1</description>
+		<year>1984</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="to_cass">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="cass" size="31980">
+				<rom name="anglais - volume 1 (nathan) (cegos - alpha langues) (1984) (to7) (side 1).k7" size="31980" crc="3e40f28e" sha1="bb2e36cb2d56dfef3a2e70b2f71d5c75d9b7f567" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="to_cass">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="cass" size="31229">
+				<rom name="anglais - volume 1 (nathan) (cegos - alpha langues) (1984) (to7) (side 2).k7" size="31229" crc="dab20ddc" sha1="8f67e4d2ec026fb3ad16487b909ef6b300d4003e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="anglais2">
+		<description>Anglais - Volume 2</description>
+		<year>1984</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="to_cass">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="cass" size="74262">
+				<rom name="anglais - volume 2 (nathan) (cegos - alpha langues) (1984) (to7) (side 1).k7" size="74262" crc="a7964323" sha1="1b0e61bf3859a5860d58def847a1a6d494f62717" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="to_cass">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="cass" size="51797">
+				<rom name="anglais - volume 2 (nathan) (cegos - alpha langues) (1984) (to7) (side 2).k7" size="51797" crc="3482ee72" sha1="a72972e41016cebbda21a2c9723da35d7fb42b8c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="anglais3">
+		<description>Anglais - Volume 3</description>
+		<year>1984</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="to_cass">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="cass" size="51673">
+				<rom name="anglais - volume 3 (nathan) (cegos - alpha langues) (1984) (to7) (side 1).k7" size="51673" crc="00effe08" sha1="805cc76910b77570db829fef69e1820d2f00c206" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="to_cass">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="cass" size="63249">
+				<rom name="anglais - volume 3 (nathan) (cegos - alpha langues) (1984) (to7) (side 2).k7" size="63249" crc="073efc22" sha1="8b3282c6a6fb2585b3bc09e2246be8681900af8d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="anglais4">
+		<description>Anglais - Volume 4</description>
+		<year>1984</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="to_cass">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="cass" size="48997">
+				<rom name="anglais - volume 4 (nathan) (cegos - alpha langues) (1984) (to7) (side 1).k7" size="48997" crc="744988c9" sha1="5715f0ac1fddca7f875fd84fb867e8fc07db2e73" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="to_cass">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="cass" size="51701">
+				<rom name="anglais - volume 4 (nathan) (cegos - alpha langues) (1984) (to7) (side 2).k7" size="51701" crc="892057fa" sha1="ec94f94023df95ab3611376f0de2af1d523df153" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="animatix">
+		<description>Animatix</description>
+		<year>1985</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="27937">
+				<rom name="animatix (infogrames) (j. pages, c. belin) (1985) (to7).k7" size="27937" crc="4cfd0830" sha1="20fc676e1e5c3044e9603f085a9ad1724842c2b1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="apprecri">
+		<description>Apprends-moi a Ecrire</description>
+		<year>1986</year>
+		<publisher>Cedic/Nathan</publisher>
+
+		<part name="cass1" interface="to_cass">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="cass" size="26138">
+				<rom name="apprends-moi a ecrire (nathan) (michel bussac) (1986) (to7) (side 1).k7" size="26138" crc="95054fa7" sha1="5063811ad7160a440cee1510d33b235fa7880bff" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="to_cass">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="cass" size="28232">
+				<rom name="apprends-moi a ecrire (nathan) (michel bussac) (1986) (to7) (side 2).k7" size="28232" crc="0a44d486" sha1="636acba301d493e3d20427d9889d970a35943608" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -89,6 +269,30 @@
 		</part>
 	</software>
 
+	<software name="arkanoida" cloneof="arkanoid">
+		<description>Arkanoid (Alt)</description>
+		<year>1987</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="28607">
+				<rom name="arkanoid (fil) (james higgins) (1987) (to7).k7" size="28607" crc="e50cbda6" sha1="56eb2690ebb6a0e3e299c577595b09c94ab55505" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="armada">
+		<description>Armada</description>
+		<year>1984</year>
+		<publisher>Langage et Informatique</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="7283">
+				<rom name="armada (langage et informatique) (j. salon) (1984) (to7).k7" size="7283" crc="8fdd6d1a" sha1="42d1d62895454a0009165571062881fb4e803391" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="asteroid">
 		<description>Asteroides</description>
 		<year>198?</year>
@@ -101,6 +305,147 @@
 		</part>
 	</software>
 
+	<software name="attentio">
+		<description>Attention</description>
+		<year>1985</year>
+		<publisher>CNDP</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="21012">
+				<rom name="attention (cndp) (inconnus) (1985) (to7).k7" size="21012" crc="fd0a95c1" sha1="8ac8c042f9b3d1a0abb4032d1a7da79f541c404e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ainitbas">
+		<description>Auto-initiation au BASIC TO7</description>
+		<year>1984</year>
+		<publisher>Cedic/Nathan - TO Tek International</publisher>
+
+		<part name="cass1" interface="to_cass">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="cass" size="57904">
+				<rom name="auto-initiation au basic to7 (totek) (inconnus) (1984) (to7) (side 1).k7" size="57904" crc="09ee3bea" sha1="ae8b6dd8833f4cf2ee51335b2f38f7b29db95216" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="to_cass">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="cass" size="80820">
+				<rom name="auto-initiation au basic to7 (totek) (inconnus) (1984) (to7) (side 2).k7" size="80820" crc="6ae0f022" sha1="3890d3580d8062f8606170b3164834f5440b1360" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ainitlog">
+		<description>Auto-initiation au LOGO</description>
+		<year>1984</year>
+		<publisher>Cedic/Nathan - TO Tek International</publisher>
+
+		<part name="cass1" interface="to_cass">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="cass" size="39134">
+				<rom name="auto-initiation au logo (nathan) (inconnus) (1985) (to7) (side 1).k7" size="39134" crc="f65a7d10" sha1="28b79d5c54775f8d51dd0053524cd7e798140973" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="to_cass">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="cass" size="35623">
+				<rom name="auto-initiation au logo (nathan) (inconnus) (1985) (to7) (side 2).k7" size="35623" crc="f60f6600" sha1="8199b76f4b1431fd92b4294302c99b5ddaedfb5a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="avenger">
+		<description>Avenger</description>
+		<year>1986</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="50151">
+				<rom name="avenger (fil) (c.kerry, p.harrap, s.hollingworth, g.holmes) (1986) (to7).k7" size="50151" crc="1ff05a51" sha1="d6a0ff4745fec2964b433e45561476442167141b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="backgamm">
+		<description>Backgammon</description>
+		<year>1984</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="17006">
+				<rom name="backgammon (nathan) (philippe barreau, pierre mauvigner) (1984) (to7).k7" size="17006" crc="d7ad0095" sha1="80d8d8b16c9df402f86eccfe2e8cfcdae110dde0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bactron">
+		<description>Bactron (TO8)</description>
+		<year>1986</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="70416">
+				<rom name="bactron (loriciels) (vincent baillet, c. akrich) (1986) (to8).k7" size="70416" crc="23ab9b84" sha1="ef3c21ac58222da495dbfdbb32de42cc4850d30d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bigben">
+		<description>Balade au Pays de Big Ben</description>
+		<year>1988</year>
+		<publisher>Coktel Vision</publisher>
+
+		<part name="cass1" interface="to_cass">
+		<feature name="part_id" value="Side 1"/>
+			<dataarea name="cass" size="35427">
+				<rom name="balade au pays de big ben (coktel vision) (beatrice franzi) (1988) (to7) (side 1).k7" size="35427" crc="010d9344" sha1="70eaaa92303c471f8aaf7fe1911d84f2a3b11ef0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="to_cass">
+		<feature name="part_id" value="Side 2"/>
+			<dataarea name="cass" size="30887">
+				<rom name="balade au pays de big ben (coktel vision) (beatrice franzi) (1988) (to7) (side 2).k7" size="30887" crc="00f5d6eb" sha1="1082257f93d555547c793076b2d4617a5935b0e6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="to_cass">
+		<feature name="part_id" value="Side 3"/>
+			<dataarea name="cass" size="35605">
+				<rom name="balade au pays de big ben (coktel vision) (beatrice franzi) (1988) (to7) (side 3).k7" size="35605" crc="5bc33348" sha1="467bbad41c23988b82fe6919a516f791277bd65c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="to_cass">
+		<feature name="part_id" value="Side 4"/>
+			<dataarea name="cass" size="33679">
+				<rom name="balade au pays de big ben (coktel vision) (beatrice franzi) (1988) (to7) (side 4).k7" size="33679" crc="825a7750" sha1="1a3acf47775be6dd9a2f7b26916abe3001158f23" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="baladeba">
+		<description>Balade en Ballon</description>
+		<year>1985</year>
+		<publisher>Sprites</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="29628">
+				<rom name="balade en ballon (sprites) (gilbert berot) (1985) (to7).k7" size="29628" crc="0009ceee" sha1="319095d5d7e749c8f27f53bfbd1696f4e8403a5c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="balltrap">
+		<description>Ball Trap</description>
+		<year>1985</year>
+		<publisher>Sprites</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="21331">
+				<rom name="ball trap (sprites) (1985) (to7).k7" size="21331" crc="b6e31436" sha1="6d3768718c5f483f2890d5f6600849e83f593112" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="bangue">
 		<description>Banque</description>
 		<year>198?</year>
@@ -109,6 +454,30 @@
 		<part name="cass1" interface="to_cass">
 			<dataarea name="cass" size="2948">
 				<rom name="banque (198x)(huet, sylvain)(fr)(pd).k7" size="2948" crc="b2527306" sha1="52e39bf4a44bfa0dc2bd8266b9452f178a4bd3f7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="beachead">
+		<description>Beach Head</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="27734">
+				<rom name="beach head (fil) (access software) (1985) (to7).k7" size="27734" crc="198b9089" sha1="e881cf6437e16ff4e53d4a83c067e7b5e3e0fb6c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bidul">
+		<description>Bidul</description>
+		<year>1984</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="9587">
+				<rom name="bidul (infogrames) (antoine leca, eric canton) (1984) (to7).k7" size="9587" crc="c32f8885" sha1="18bd42181ec1b99ca5876f58416684e64c681db9" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -137,6 +506,18 @@
 		</part>
 	</software>
 
+	<software name="bluewar">
+		<description>Blue War</description>
+		<year>1986</year>
+		<publisher>Free Game Blot</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="37445">
+				<rom name="blue war (free game blot) (alain guiri) (1986) (to7).k7" size="37445" crc="ac8dadf2" sha1="4bcb64019bb07412582ed86dde1216dca751aa4d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="bombard">
 		<description>Bombardier</description>
 		<year>198?</year>
@@ -145,6 +526,18 @@
 		<part name="cass1" interface="to_cass">
 			<dataarea name="cass" size="2208">
 				<rom name="bombardier (198x)(-)(fr)(pd).k7" size="2208" crc="39da688c" sha1="c3d8cb9c0371af6f16a23803625035dc060c1718" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="brainpwr">
+		<description>Brain Power</description>
+		<year>1987</year>
+		<publisher>SoftBook</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="50346">
+				<rom name="brain power (softbook) (inconnus) (1987) (to7).k7" size="50346" crc="7516f3e6" sha1="1fa9677ba93649d792790d03cdc30fd1bb9d521b" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -161,6 +554,18 @@
 		</part>
 	</software>
 
+	<software name="brigadef">
+		<description>Brigade du Feu</description>
+		<year>1985</year>
+		<publisher>Coktel Vision</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="31979">
+				<rom name="brigade du feu (coktel vision) (alain mosnier) (1985) (to7).k7" size="31979" crc="c850f802" sha1="999ab846c876a16107df25395a9f99549cbaa37b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="bubul">
 		<description>Bubul</description>
 		<year>198?</year>
@@ -169,6 +574,18 @@
 		<part name="cass1" interface="to_cass">
 			<dataarea name="cass" size="6656">
 				<rom name="bubul (198x)(huet, sylvain)(pd).k7" size="6656" crc="c0d91547" sha1="b3e12f723216aa04f425ea6bcd722d155c0326db" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="budgetf">
+		<description>Budget Familial</description>
+		<year>1984</year>
+		<publisher>Free Game Blot</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="15866">
+				<rom name="budget familial free game blot (free game blot) (inconnus) (1984) (to7).k7" size="15866" crc="caaec6ed" sha1="41bc2299b1dc070a52931ae1a4c3726f3ee09558" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -185,6 +602,54 @@
 		</part>
 	</software>
 
+	<software name="cao">
+		<description>C.A.O. - Conception Assistee par Ordinateur</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="69905">
+				<rom name="c.a.o. conception assistee par ordinateur (loriciels) (j.p. h., p. w.) (1985) (to7).k7" size="69905" crc="c1f6e6cc" sha1="00dbfc13a3f9dfeb9b7716a9b8da86ceaaff38a2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="calculra">
+		<description>Calcul Rapide</description>
+		<year>1984</year>
+		<publisher>No Man's Land</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="9159">
+				<rom name="calcul rapide (no man's land) (inconnus) (1984) (to7).k7" size="9159" crc="94aaba61" sha1="823139c260d9311d41e2c75112115a3a36dc7acf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="calcnume">
+		<description>Calculs Numeriques</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="24228">
+				<rom name="calculs numeriques (nathan) (yves biton) (1985) (to7).k7" size="24228" crc="49f3c40b" sha1="d41665582463f37671f1d3c59940b6fb72e115da" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="capdakar">
+		<description>Cap sur Dakar</description>
+		<year>1985</year>
+		<publisher>Coktel Vision</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="45586">
+				<rom name="cap sur dakar (coktel vision) (inconnus) (1985) (to7).k7" size="45586" crc="aa35a1ed" sha1="f3c6bc5d16fefd13dd0cd45dc0c156e3509e18c1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="caractor">
 		<description>Caractor</description>
 		<year>198?</year>
@@ -193,6 +658,56 @@
 		<part name="cass1" interface="to_cass">
 			<dataarea name="cass" size="5215">
 				<rom name="caractor (198x)(huet, sylvain)(fr)(pd).k7" size="5215" crc="91745e5a" sha1="439ee097296b2240048e6de94b3b403d7a307bf3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cartfran">
+		<description>Cartable Francais</description>
+		<year>1984</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="to_cass">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="cass" size="26386">
+				<rom name="cartable francais (infogrames) (inconnus) (1984) (to7) (side 1).k7" size="26386" crc="ab45d57c" sha1="888f2996487b04095fa9b348a010044586e95247" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="to_cass">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="cass" size="29028">
+				<rom name="cartable francais (infogrames) (inconnus) (1984) (to7) (side 2).k7" size="29028" crc="91b1e63b" sha1="3b40047e378b7ddcc3baa3ead42739d033644cde" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="carteuro">
+		<description>Carte d'Europe</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="22962">
+				<rom name="carte d'europe (nathan) (alain beck) (1985) (to7).k7" size="22962" crc="ba0b1cf3" sha1="c4c4cb138173dfbaf276c1df5090700187de3e6f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cartefra">
+		<description>Carte de France</description>
+		<year>1983</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="to_cass">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="cass" size="33422">
+				<rom name="carte de france (nathan) (michel oury) (1983) (to7) (side a).k7" size="33422" crc="ab3da6b9" sha1="7abd50f6654ad4af851a4ee09d9fd700f20afffe" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="to_cass">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="cass" size="41376">
+				<rom name="carte de france (nathan) (michel oury) (1983) (to7) (side b).k7" size="41376" crc="32f125f3" sha1="7787460276e27676a6a1498eff24877969ffe535" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -217,6 +732,18 @@
 		<part name="cass1" interface="to_cass">
 			<dataarea name="cass" size="1794">
 				<rom name="cfa mende (198x)(pjp)(fr)(pd)[b].k7" size="1794" crc="7346bff2" sha1="98914a62659522b2e76210ae94c7ff76ec3569dc" status="baddump" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chaomega">
+		<description>Chasseur Omega</description>
+		<year>1983</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="6323">
+				<rom name="chasseur omega (infogrames) (gregory ruck, sylvain karpf) (1983) (to7).k7" size="6323" crc="72e8ea74" sha1="eb88a9c4c2240c29940ed591521cb80729998dcb" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -257,6 +784,42 @@
 		</part>
 	</software>
 
+	<software name="chicago">
+		<description>Chicago 90 (TO8)</description>
+		<year>1989</year>
+		<publisher>Microids</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="141466">
+				<rom name="chicago 90 (microids) (inconnus) (1989) (to8).k7" size="141466" crc="5f41cf2a" sha1="ae93d4ab923a55f300d5c9b38432893526dc340b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="classiq1">
+		<description>Classiques Volume 1</description>
+		<year>1987</year>
+		<publisher>Titus Software</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="42960">
+				<rom name="classiques volume 1 (titus software) (inconnus) (1987) (to7).k7" size="42960" crc="72041901" sha1="f7188709be3ab56dd1f93bb74c40ad9dfba47a4b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="classiq2">
+		<description>Classiques Volume 2</description>
+		<year>1987</year>
+		<publisher>Titus Software</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="42235">
+				<rom name="classiques volume 2 (titus software) (inconnus) (1987) (to7).k7" size="42235" crc="860eeabb" sha1="7f0e01c9d67db2b136eb74b3294091599019d608" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="codessc">
 		<description>Code-ssc (Password Required)</description>
 		<year>198?</year>
@@ -265,6 +828,18 @@
 		<part name="cass1" interface="to_cass">
 			<dataarea name="cass" size="2729">
 				<rom name="code-ssc (198x)(huet, sylvain)(pd)[password required].k7" size="2729" crc="34aed8b3" sha1="f78b9c38de36730d822055d6bfb1b66383c261e6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="coffretc">
+		<description>Coffret Cadeau</description>
+		<year>1986</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="47129">
+				<rom name="coffret cadeau (fil) (inconnus) (1986) (to7).k7" size="47129" crc="1d92bdd8" sha1="3aa7ded2064c2e5cbaf47b6b964737320f991ed7" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -281,10 +856,58 @@
 		</part>
 	</software>
 
+	<software name="coliseuma" cloneof="coliseum">
+		<description>Coliseum (Alt)</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="49760">
+				<rom name="coliseum (loriciels) (louis-marie rocques) (1985) (to7).k7" size="49760" crc="e5e697af" sha1="ae9fc9d742148b37794f29dcf2df2f2a1dc4d697" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="compmult">
+		<description>Complements et Multiples</description>
+		<year>1983</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="32076">
+				<rom name="complements et multiples (nathan) (jean-pierre girard) (1983) (to7).k7" size="32076" crc="b3608605" sha1="dd1a71995f5803c8cdeb52a68d7203feba131c89" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="connexio">
+		<description>Connexion</description>
+		<year>1983</year>
+		<publisher>Mipso</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="9159">
+				<rom name="connexion (mipso) (1983) (to7).k7" size="9159" crc="63e19479" sha1="3a37854c8c3bc0458f58b3215f0f28fc7b9cac23" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="conte">
 		<description>Conte</description>
-		<year>198?</year>
-		<publisher>Alain Lambert</publisher>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="24691">
+				<rom name="conte (fil) (alain lambert) (1985) (to7).k7" size="24691" crc="f230027b" sha1="9ace2303ea97cb655b820f90ebf0a44cad1f219b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="contea" cloneof="conte">
+		<description>Conte (Alt, Split?)</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
 
 		<part name="cass1" interface="to_cass">
 		<feature name="part_id" value="Tape 1?"/>
@@ -296,6 +919,78 @@
 		<feature name="part_id" value="Tape 2?"/>
 			<dataarea name="cass" size="17294">
 				<rom name="conte (198x)(lambert, alain)(to7-70)(fr)(pd)[b].k7" size="17294" crc="bfeb1efc" sha1="3118681935fa65ea3602e0815d494414c02d0476" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="copieur">
+		<description>Copieur (TO8)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="4663">
+				<rom name="copieur (inconnus) (to8).k7" size="4663" crc="117f89aa" sha1="bf6adb106375b5d8ea0b40608c0942698f5e4b62" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="courrier">
+		<description>Courrier</description>
+		<year>1984</year>
+		<publisher>Answare</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="21360">
+				<rom name="courrier (answare) (inconnus) (1984) (to7).k7" size="21360" crc="1de8cade" sha1="bbe1d1ff748ba8b95766bbbf98b9042d0644325a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cregraph">
+		<description>Cregraphic</description>
+		<year>1985</year>
+		<publisher>Playjeux</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="13653">
+				<rom name="cregraphic (playjeux) (r. richard) (1985) (to7).k7" size="13653" crc="f047f1b4" sha1="0fcb3e5cdc60658f84cf4d24c24d4a7b48b94eb1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crystann">
+		<description>Crystann</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="32155">
+				<rom name="crystann, le donjon de diamant (novasoft) (inconnus) (1985) (to7).k7" size="32155" crc="95aaadc7" sha1="3d8af4cc929d8a6fc9868dd88fd1b9706fa99264" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cyberlab">
+		<description>Cyberlab</description>
+		<year>1984</year>
+		<publisher>TO Tek International</publisher>
+
+		<part name="cass2" interface="to_cass">
+			<dataarea name="cass" size="10908968">
+				<rom name="cyberlab (totek) (philippe descamps, marc rolin) (1984) (to7).wav" size="10908968" crc="fc13e40e" sha1="deb0cec8fb1b1b6120e894552693ea5fc2f76f90" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cyberlaba" cloneof="cyberlab">
+		<description>Cyberlab (Alt)</description>
+		<year>1984</year>
+		<publisher>TO Tek International</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="15882">
+				<rom name="cyberlab (totek) (philippe descamps, marc rolin) (1984) (to7).k7" size="15882" crc="cafdce93" sha1="10fb619f9c18f9ca92923d3a1e93ffea86f266ca" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -312,6 +1007,30 @@
 		</part>
 	</software>
 
+	<software name="dctrans">
+		<description>DC Transferts (TO8)</description>
+		<year>2006</year>
+		<publisher>DCsoft</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="9023161">
+				<rom name="dc transferts (dcsoft) (daniel coulom) (2006) (to8).wav" size="9023161" crc="eb4660ca" sha1="0b94a00719a8301a29b57186ea9b15558213ec12" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dctransa" cloneof="dctrans">
+		<description>DC Transferts (TO8) (Alt)</description>
+		<year>2006</year>
+		<publisher>DCsoft</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="12522">
+				<rom name="dc transferts (dcsoft) (daniel coulom) (2006) (to8).k7" size="12522" crc="9103c255" sha1="e9f2b5c3212fb1a481018a85f8e3f2cac0e87bad" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="dca">
 		<description>DCA</description>
 		<year>198?</year>
@@ -324,6 +1043,18 @@
 		</part>
 	</software>
 
+	<software name="signespa">
+		<description>Des Signes dans l'Espace</description>
+		<year>1983</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="57728">
+				<rom name="des signes dans l'espace (nathan) (viviane barbier, claude barbier) (1983) (to7).k7" size="57728" crc="2467df1b" sha1="1a8b85464ba2d568fee6ed43111cea8ef0943e14" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="descarac">
 		<description>Dessin du Caractere</description>
 		<year>198?</year>
@@ -332,6 +1063,73 @@
 		<part name="cass1" interface="to_cass">
 			<dataarea name="cass" size="1046">
 				<rom name="dessin du caractere (198x)(-)(fr)(pd).k7" size="1046" crc="2584a702" sha1="178f34fcbc0a78917ca3ab217c387da62de4d523" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sauterel">
+		<description>Dialogue avec une sauterelle</description>
+		<year>1983</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="23402">
+				<rom name="dialogue avec une sauterelle (nathan) (bernard delarue) (1983) (to7).k7" size="23402" crc="731fb4ca" sha1="df0afbd3cd33d183ce0f190f92e69407651d323a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dicologo">
+		<description>Dicologo</description>
+		<year>1985</year>
+		<publisher>Act Informatique</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="38911">
+				<rom name="dicologo (act informatique) (inconnus) (to7).k7" size="38911" crc="71adf550" sha1="2e8ea797aec51cc9fce8c429cf409785a8c1e218" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="didact4">
+		<description>Didactimath 4eme</description>
+		<year>1985</year>
+		<publisher>Edil</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="64545">
+				<rom name="didactimath 4eme (edil) (j.f reygnier) (1985) (to7).k7" size="64545" crc="4aea0a42" sha1="1a64a0872c47f82af1b350066c1a5848cfffd921" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="didact5">
+		<description>Didactimath 5eme</description>
+		<year>1985</year>
+		<publisher>Edil</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="48325">
+				<rom name="didactimath 5eme (edil) (j.f reygnier) (1985) (to7).k7" size="48325" crc="06268f85" sha1="0bc09e86c117f76278788b373e1e8b7dafbf46a2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dietetiq">
+		<description>Dietetique</description>
+		<year>1983</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="to_cass">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="cass" size="38014">
+				<rom name="dietetique (nathan) (jacques mateos) (1983) (to7) (side a).k7" size="38014" crc="fe7b3428" sha1="f3a0aa55e607d6d1cdfe7698067f7eb7f6c4d44b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="to_cass">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="cass" size="27631">
+				<rom name="dietetique (nathan) (jacques mateos) (1983) (to7) (side b).k7" size="27631" crc="b74c68ad" sha1="aabe3f29e28307a41b53e785b566171762b3f8e1" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -349,6 +1147,18 @@
 		</part>
 	</software>
 
+	<software name="boerhaav">
+		<description>Dossier Boerhaave</description>
+		<year>1986</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="73593">
+				<rom name="dossier boerhaave (infogrames) (pierre bayle, roger granier) (1986) (to7).k7" size="73593" crc="8a7c551f" sha1="fd9e9814171a440f2034c8ceb81fe97cd234e333" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="dragon">
 		<description>Dragon</description>
 		<year>198?</year>
@@ -357,6 +1167,18 @@
 		<part name="cass1" interface="to_cass">
 			<dataarea name="cass" size="378">
 				<rom name="dragon (198x)(-)(pd).k7" size="378" crc="fb395f2f" sha1="a67a804c2393817d2c57d17724bea8e3bc214d29" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dribble">
+		<description>Dribble</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="9741">
+				<rom name="dribble (fil) (inconnus) (1985) (to7).k7" size="9741" crc="948c5606" sha1="e8582b8f4aa65c3a8557e2a0ce3043d234530dcc" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -373,6 +1195,118 @@
 		</part>
 	</software>
 
+	<software name="ecrito">
+		<description>Ecrito</description>
+		<year>1983</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="17196">
+				<rom name="ecrito (infogrames) (bernard tahon) (1983) (to7).k7" size="17196" crc="53a61657" sha1="94b3040e9127dab8a2c634f8b6e98542b15a76df" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="educndp">
+		<description>Educatifs C.N.D.P. pour TO7</description>
+		<year>1984</year>
+		<publisher>CNDP</publisher>
+
+		<part name="cass1" interface="to_cass">
+		<feature name="part_id" value="Side 1"/>
+			<dataarea name="cass" size="36952">
+				<rom name="educatifs c.n.d.p. pour to7 (cndp) (auteurs divers) (1984) (to7) (side 01).k7" size="36952" crc="9a89c045" sha1="fce191259068cb4d7feac9cc9a77b81798bb6bba" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="to_cass">
+		<feature name="part_id" value="Side 2"/>
+			<dataarea name="cass" size="24463">
+				<rom name="educatifs c.n.d.p. pour to7 (cndp) (auteurs divers) (1984) (to7) (side 02).k7" size="24463" crc="94179f0a" sha1="5338b1e1e7200277427ebc0339891241c51cad9c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="to_cass">
+		<feature name="part_id" value="Side 3"/>
+			<dataarea name="cass" size="27740">
+				<rom name="educatifs c.n.d.p. pour to7 (cndp) (auteurs divers) (1984) (to7) (side 03).k7" size="27740" crc="c0912f34" sha1="ee1092d4d82d0e23516b5e01f3ef35e8b0e1a75b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="to_cass">
+		<feature name="part_id" value="Side 4"/>
+			<dataarea name="cass" size="44810">
+				<rom name="educatifs c.n.d.p. pour to7 (cndp) (auteurs divers) (1984) (to7) (side 04).k7" size="44810" crc="b269784e" sha1="6d1a07e7abf0b04091b14e3b9c8cd915d2fbb4e3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="to_cass">
+		<feature name="part_id" value="Side 5"/>
+			<dataarea name="cass" size="19562">
+				<rom name="educatifs c.n.d.p. pour to7 (cndp) (auteurs divers) (1984) (to7) (side 05).k7" size="19562" crc="5953f38a" sha1="2f47a17b7f924ccf8284d41442d3cf1072cf41a8" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="to_cass">
+		<feature name="part_id" value="Side 6"/>
+			<dataarea name="cass" size="17800">
+				<rom name="educatifs c.n.d.p. pour to7 (cndp) (auteurs divers) (1984) (to7) (side 06).k7" size="17800" crc="35fa0e34" sha1="c544352fe5f8caf860d8c4edbc89cf7d2a6a8324" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass7" interface="to_cass">
+		<feature name="part_id" value="Side 8"/>
+			<dataarea name="cass" size="25510">
+				<rom name="educatifs c.n.d.p. pour to7 (cndp) (auteurs divers) (1984) (to7) (side 08).k7" size="25510" crc="3b2c49c2" sha1="4705bb23762ebed35fa3f98d2c0cab8fe738a103" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass8" interface="to_cass">
+		<feature name="part_id" value="Side 10"/>
+			<dataarea name="cass" size="23626">
+				<rom name="educatifs c.n.d.p. pour to7 (cndp) (auteurs divers) (1984) (to7) (side 10).k7" size="23626" crc="ed353300" sha1="eacc2ad530a289da755fc254e6b25fb10a32dfb7" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass9" interface="to_cass">
+		<feature name="part_id" value="Side 11"/>
+			<dataarea name="cass" size="32823">
+				<rom name="educatifs c.n.d.p. pour to7 (cndp) (auteurs divers) (1984) (to7) (side 11).k7" size="32823" crc="c65831e4" sha1="2846f76c680074de6eab2c1b9ff44be512a6a6be" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!--
+	<software name="einfubas">
+		<description>Einfuehrung in Basic</description>
+		<year>1985</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="to_cass">
+		<feature name="part_id" value="Side 1"/>
+			<dataarea name="cass" size="50421">
+				<rom name="einfuehrung in basic (infogrames) (inconnus) (1985) (to7 k7) (side 1).k7" size="50421" crc="987d3308" sha1="a23b7f265d3d15afd5f7156081536b7cab8d3a59" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="to_cass">
+		<feature name="part_id" value="Side 2"/>
+			<dataarea name="cass" size="20709">
+				<rom name="einfuehrung in basic (infogrames) (inconnus) (1985) (to7 k7) (side 2).k7" size="20709" crc="945d2845" sha1="f9b9ea02fc92eaa506922a9a8bb47ab8c668b148" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="to_cass">
+		<feature name="part_id" value="Side 3"/>
+			<dataarea name="cass" size="45895">
+				<rom name="einfuehrung in basic (infogrames) (inconnus) (1985) (to7 k7) (side 3).k7" size="45895" crc="ebd7d514" sha1="3f16a6f5c5882923f83840f650a2182e2d6130f0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+-->
+
+	<software name="einstein">
+		<description>Einstein 1</description>
+		<year>1984</year>
+		<publisher>Soft &amp; Micro</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="10931">
+				<rom name="einstein 1 (soft &amp; micro) (daniel mavrakis, marie-pierre olivier) (1984) (to7).k7" size="10931" crc="339740cb" sha1="92831f6d55a936f72de91c41bc695b7fbaee03e7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="eliminat">
 		<description>Eliminator</description>
 		<year>1984</year>
@@ -382,6 +1316,139 @@
 		<part name="cass1" interface="to_cass">
 			<dataarea name="cass" size="10752">
 				<rom name="eliminator (1984)(loriciels)(fr)[loadm'''',,r].k7" size="10752" crc="5779c7b7" sha1="78a9a1d809c2f123a7f520132b50ca8ff2f69b0d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="eliminata" cloneof="eliminat">
+		<description>Eliminator (Alt)</description>
+		<year>1984</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="8799">
+				<rom name="eliminator (loriciels) (pascal pellier) (1984) (to7).k7" size="8799" crc="0963fc0a" sha1="a865955e1d9d6910e1ef20e34940117b277a355c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="elmo0">
+		<description>Elmo 0</description>
+		<year>1984</year>
+		<publisher>Association Francaise pour la Lecture</publisher>
+
+		<part name="cass1" interface="to_cass">
+		<feature name="part_id" value="bibli"/>
+			<dataarea name="cass" size="7137">
+				<rom name="elmo 0 (afl) (f.m. blondel, j.c. le touze) (1984) (to7) (bibli).k7" size="7137" crc="229ba8a1" sha1="1b1380118147f0ef86e5ef3d2c725c9685bf3ae9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="to_cass">
+		<feature name="part_id" value="e1a"/>
+			<dataarea name="cass" size="14951">
+				<rom name="elmo 0 (afl) (f.m. blondel, j.c. le touze) (1984) (to7) (e1a).k7" size="14951" crc="3d43076a" sha1="6104f0f2eb54fe4126ed536685b428fd5f2d5a17" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="to_cass">
+		<feature name="part_id" value="e1b"/>
+			<dataarea name="cass" size="17862">
+				<rom name="elmo 0 (afl) (f.m. blondel, j.c. le touze) (1984) (to7) (e1b).k7" size="17862" crc="c0b444c0" sha1="3f923482b3158640ec7ef897f957e433226ce703" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="to_cass">
+		<feature name="part_id" value="e2a"/>
+			<dataarea name="cass" size="17259">
+				<rom name="elmo 0 (afl) (f.m. blondel, j.c. le touze) (1984) (to7) (e2a).k7" size="17259" crc="36ce30fd" sha1="34f8b7f74258ba4aad40b651b661155f827ea8ad" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="to_cass">
+		<feature name="part_id" value="e2b"/>
+			<dataarea name="cass" size="14984">
+				<rom name="elmo 0 (afl) (f.m. blondel, j.c. le touze) (1984) (to7) (e2b).k7" size="14984" crc="7830e857" sha1="fdafe7244e800cf7204f759e082c82133dfd855e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="to_cass">
+		<feature name="part_id" value="e3a"/>
+			<dataarea name="cass" size="16113">
+				<rom name="elmo 0 (afl) (f.m. blondel, j.c. le touze) (1984) (to7) (e3a).k7" size="16113" crc="d1b6a67d" sha1="07ea5fbb35032a6a246d8ee900c10bea83614d31" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass7" interface="to_cass">
+		<feature name="part_id" value="e3b"/>
+			<dataarea name="cass" size="16169">
+				<rom name="elmo 0 (afl) (f.m. blondel, j.c. le touze) (1984) (to7) (e3b).k7" size="16169" crc="e175459a" sha1="c7323c8e8d9c00a34e4520a6c404df394bbb70ae" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass8" interface="to_cass">
+		<feature name="part_id" value="e4a"/>
+			<dataarea name="cass" size="12040">
+				<rom name="elmo 0 (afl) (f.m. blondel, j.c. le touze) (1984) (to7) (e4a).k7" size="12040" crc="0ecd0f2f" sha1="555b0f5e551d2757e870f0cfd59bbc4e75e390f1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass9" interface="to_cass">
+		<feature name="part_id" value="e4b"/>
+			<dataarea name="cass" size="18431">
+				<rom name="elmo 0 (afl) (f.m. blondel, j.c. le touze) (1984) (to7) (e4b).k7" size="18431" crc="75250942" sha1="7576b5f51980574685c3c6973c91515985be947f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass10" interface="to_cass">
+		<feature name="part_id" value="j1a"/>
+			<dataarea name="cass" size="10139">
+				<rom name="elmo 0 (afl) (f.m. blondel, j.c. le touze) (1984) (to7) (j1a).k7" size="10139" crc="90e8758b" sha1="ea2bc2cbe4e26abeb0d2abd41cd6340eb57694f9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass11" interface="to_cass">
+		<feature name="part_id" value="j1b"/>
+			<dataarea name="cass" size="8795">
+				<rom name="elmo 0 (afl) (f.m. blondel, j.c. le touze) (1984) (to7) (j1b).k7" size="8795" crc="c700418c" sha1="13bb8543d846abbe1b633895cc619006334e1882" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass12" interface="to_cass">
+		<feature name="part_id" value="j2a"/>
+			<dataarea name="cass" size="7223">
+				<rom name="elmo 0 (afl) (f.m. blondel, j.c. le touze) (1984) (to7) (j2a).k7" size="7223" crc="0148ebd0" sha1="ed0033f888726882e26468fa44bb9f00fd463ee9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass13" interface="to_cass">
+		<feature name="part_id" value="j2b"/>
+			<dataarea name="cass" size="9013">
+				<rom name="elmo 0 (afl) (f.m. blondel, j.c. le touze) (1984) (to7) (j2b).k7" size="9013" crc="178f1b8f" sha1="b5ad0388710af168f41a995721e09e1867262c48" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass14" interface="to_cass">
+		<feature name="part_id" value="j3a"/>
+			<dataarea name="cass" size="9261">
+				<rom name="elmo 0 (afl) (f.m. blondel, j.c. le touze) (1984) (to7) (j3a).k7" size="9261" crc="0e237980" sha1="e72b2af157051bc546c8128d42659653dc8c574d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass15" interface="to_cass">
+		<feature name="part_id" value="j3b"/>
+			<dataarea name="cass" size="12849">
+				<rom name="elmo 0 (afl) (f.m. blondel, j.c. le touze) (1984) (to7) (j3b).k7" size="12849" crc="a0d05f09" sha1="b15069de0d69781c34a0eac20b90f78d68f5372a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass16" interface="to_cass">
+		<feature name="part_id" value="pra"/>
+			<dataarea name="cass" size="9528">
+				<rom name="elmo 0 (afl) (f.m. blondel, j.c. le touze) (1984) (to7) (pra).k7" size="9528" crc="e4599eb8" sha1="c39834d16254251fe9ef2c236c5bde0430ec8b1a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass17" interface="to_cass">
+		<feature name="part_id" value="prb"/>
+			<dataarea name="cass" size="13601">
+				<rom name="elmo 0 (afl) (f.m. blondel, j.c. le touze) (1984) (to7) (prb).k7" size="13601" crc="b655eb5f" sha1="ed0befaeaadf3dc3e5bd9ccbdfe6b3624eeec4ae" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="empire">
+		<description>Empire</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="28455">
+				<rom name="empire (loriciels) (philippe darmagnac) (1985) (to7).k7" size="28455" crc="00a19ba3" sha1="f5da3d976a1a59d7b8b27a5ba4a3231778fd08c8" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -406,6 +1473,93 @@
 		<part name="cass1" interface="to_cass">
 			<dataarea name="cass" size="2654">
 				<rom name="emploi du subjonctif (198x)(cndp)(fr)[a].k7" size="2654" crc="27633ea3" sha1="4fb604acb49dd41aaba999c194509952aace3d6e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="encadre">
+		<description>Encadrement</description>
+		<year>1983</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="to_cass">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="cass" size="28573">
+				<rom name="encadrement (nathan) (claude brunet) (1983) (to7) (side a).k7" size="28573" crc="efe8c2dd" sha1="4ae8b33886832c693e7f428c92e11466347e9cb4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="to_cass">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="cass" size="28573">
+				<rom name="encadrement (nathan) (claude brunet) (1983) (to7) (side b).k7" size="28573" crc="4c3c62fc" sha1="f81451f460316f4d72a98ceac09ae789542ecd3e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="enigmati">
+		<description>Enigmatika</description>
+		<year>1984</year>
+		<publisher>Answare</publisher>
+
+		<part name="cass1" interface="to_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="20244">
+				<rom name="enigmatika (answare) (inconnus) (1984) (to7) (side 1a).k7" size="20244" crc="636c3253" sha1="273097bd20720a13e0d575e59606899180ef02e9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="to_cass">
+		<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="19127">
+				<rom name="enigmatika (answare) (inconnus) (1984) (to7) (side 2a).k7" size="19127" crc="1a47ed20" sha1="31b2d3f2bd36ae65a234dbfe4a1e866d5a64cb23" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="to_cass">
+		<feature name="part_id" value="Tape 3"/>
+			<dataarea name="cass" size="20769">
+				<rom name="enigmatika (answare) (inconnus) (1984) (to7) (side 3a).k7" size="20769" crc="645dcf49" sha1="829d5c63aee29140ae036485374d7739ece53409" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="to_cass">
+		<feature name="part_id" value="Tape 4"/>
+			<dataarea name="cass" size="19387">
+				<rom name="enigmatika (answare) (inconnus) (1984) (to7) (side 4a).k7" size="19387" crc="0012021a" sha1="f07f7d6a07724329588efd28a7c628000b6ee50e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="to_cass">
+		<feature name="part_id" value="Tape 5"/>
+			<dataarea name="cass" size="19472">
+				<rom name="enigmatika (answare) (inconnus) (1984) (to7) (side 5a).k7" size="19472" crc="94abce52" sha1="e84348bd8359d6ce1ce1357b7583c69391621b62" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="enigmeox">
+		<description>Enigme a Oxford</description>
+		<year>1986</year>
+		<publisher>Coktel Vision</publisher>
+
+		<part name="cass1" interface="to_cass">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="cass" size="57030">
+				<rom name="enigme a oxford (coktel vision) (beatrice franzi) (1986) (to7) (side 1a).k7" size="57030" crc="38232b86" sha1="4e60a546003ae001b76e36ce07efce56962020cb" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="to_cass">
+		<feature name="part_id" value="Side V"/>
+			<dataarea name="cass" size="57034">
+				<rom name="enigme a oxford (coktel vision) (beatrice franzi) (1986) (to7) (side 1b).k7" size="57034" crc="cec310c1" sha1="f12cd6f84b81c8cee57f02c86dd2d0a0aaedb7be" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="equatin">
+		<description>Equations/Inequations</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="43347">
+				<rom name="equations inequations (nathan) (jean-paul germond) (1985) (to7).k7" size="43347" crc="ad87f708" sha1="b0c004123df90f75d4822b3f9cb82d42c0533184" offset="0" />
 			</dataarea>
 		</part>
 	</software>
