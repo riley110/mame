@@ -40,6 +40,45 @@
 		</part>
 	</software>
 
+	<software name="bactmgt">
+		<description>Bactron &amp; MGT</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="bactron &amp; mgt (198x)(-)[boot with microsoft basic 1.0].fd" size="327680" crc="5e1d8af7" sha1="0293c908881c5e39275facd79057adae7bc2d5e4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bactmgta" cloneof="bactmgt">
+		<description>Bactron &amp; MGT (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="bactron-mgt_mo6to8.fd" size="327680" crc="00c99dba" sha1="e49eb12f5b605627cb86feb86ec4ab4683705a75" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bactmgtb" cloneof="bactmgt">
+		<description>Bactron &amp; MGT (SAP Format)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="bactron &amp; mgt (198x)(-)[boot with microsoft basic 1.0].sap" size="335426" crc="16284fa1" sha1="fba2bf0ca6a87da01cc8abfced9992e440709a3d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="chicago">
 		<description>Chicago 90</description>
 		<year>1989</year>
@@ -124,6 +163,18 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="crepuscule du naja, le (198x)(chip)(fr)[includes mo6 version].sap" size="335426" crc="8deda14b" sha1="37bc5b35484cc02616ed899486543e057d26e29f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dcsdboot">
+		<description>dcsdboot</description>
+		<year>201?</year>
+		<publisher>DCMOTO</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="dcsdboot.fd" size="327680" crc="856a4963" sha1="7eaa8a78850182f77ebe8f2cc027bcd4841ebfe7" offset="0" />
 			</dataarea>
 		</part>
 	</software>

@@ -570,6 +570,18 @@
 		</part>
 	</software>
 
+	<software name="montages">
+		<description>Generateur de montages</description>
+		<year>198?</year>
+		<publisher>S. Devulder</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="mt.sap" size="335426" crc="50a29dbf" sha1="af2a5fb900bd4c73d22af52af4f8bc86ed86edf3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="getmenu">
 		<description>GetMenu (v1.0)</description>
 		<year>2001</year>
@@ -711,6 +723,32 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
 				<rom name="auto-initiation-basic128_to9.fd" size="327680" crc="f8830ec5" sha1="27d1d2fa7581a77ab147c1acf9987778add675b8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="initb128a" cloneof="initb128">
+		<description>Auto-Initiation BASIC 128 + D.O.S. BASIC 1.0 (SAP Format)</description>
+		<year>1985</year>
+		<publisher>Thomson</publisher>
+		<info name="alt_title" value="Initiation au BASIC 128"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="init-128.sap" size="335426" crc="027a2f4f" sha1="7f935d4f9e50cc0b33d53b3acdca8d058e414310" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="initb128b" cloneof="initb128">
+		<description>Auto-Initiation BASIC 128 + D.O.S. BASIC 1.0 (SAP Format, Alt)</description>
+		<year>1985</year>
+		<publisher>Thomson</publisher>
+		<info name="alt_title" value="Initiation au BASIC 128"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="init_128.sap" size="335426" crc="aa773a31" sha1="40139cedc43bd5a6d76776e98857b356fe90cbf5" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -9708,32 +9746,6 @@
 		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="335426">
 				<rom name="aventuriers - 1ere partie, les (1988)(infogrames)(fr)(disk 2 of 2).sap" size="335426" crc="f37e7a0b" sha1="e3bc3a9a7819180c619d395c29e275539b40e3d3" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="bactmgt">
-		<description>Bactron &amp; MGT</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="327680">
-				<rom name="bactron &amp; mgt (198x)(-)[boot with microsoft basic 1.0].fd" size="327680" crc="5e1d8af7" sha1="0293c908881c5e39275facd79057adae7bc2d5e4" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="bactmgta" cloneof="bactmgt">
-		<description>Bactron &amp; MGT (SAP Format)</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="335426">
-				<rom name="bactron &amp; mgt (198x)(-)[boot with microsoft basic 1.0].sap" size="335426" crc="16284fa1" sha1="fba2bf0ca6a87da01cc8abfced9992e440709a3d" offset="0" />
 			</dataarea>
 		</part>
 	</software>

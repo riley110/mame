@@ -575,6 +575,18 @@
 		</part>
 	</software>
 
+	<software name="export">
+		<description>Export (MO6)</description>
+		<year>2002</year>
+		<publisher>Michele Alessandrini</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="1540">
+				<rom name="export - mo6.k7" size="1540" crc="11702ebc" sha1="f0186e950ef468843e8f27b875c1581bf926dd8a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="xbasmo5">
 		<description>Extension Basic MO5</description>
 		<year>1986</year>
@@ -1290,6 +1302,18 @@
 		</part>
 	</software>
 
+	<software name="francecm">
+		<description>Francais CE/CM - Aide a l'orthographe</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="44542">
+				<rom name="francecm.k7" size="44542" crc="591986a9" sha1="39e3c0c87827fcadd442198475a2b368e20cd90f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="identite">
 		<description>Identite</description>
 		<year>1985</year>
@@ -1399,7 +1423,7 @@
 	</software>
 
 	<software name="cecmcmp1">
-		<description>Mathematiques CE-CM - Geometrie - Angles &amp; Golf</description>
+		<description>Mathematiques CE/CM - Geometrie - Angles &amp; Golf</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -1411,7 +1435,7 @@
 	</software>
 
 	<software name="cecmcmp1a" cloneof="cecmcmp1">
-		<description>Mathematiques CE-CM - Geometrie - Angles &amp; Golf (Alt)</description>
+		<description>Mathematiques CE/CM - Geometrie - Angles &amp; Golf (Alt)</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -1423,13 +1447,25 @@
 	</software>
 
 	<software name="cecmcmp2">
-		<description>Mathematiques CE-CM - Geometrie - Droites &amp; Triangles et Quadrilateres</description>
+		<description>Mathematiques CE/CM - Geometrie - Droites &amp; Triangles et Quadrilateres</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="38100">
 				<rom name="mathematiques ce-cm - geometrie - droites &amp; triangles et quadrilateres (1985)(vifi-nathan)(fr).k7" size="38100" crc="b951f141" sha1="3e97223b105ce9cb83eb5699a73a3f5047cafcac" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cecmcmp3">
+		<description>Mathematiques CE/CM - Geometrie</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="77023">
+				<rom name="mathcecm.k5" size="77023" crc="e1bf143f" sha1="8e0570e71585d3a8a84f1579d03ddef4bc448b2c" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1449,6 +1485,25 @@
 		<feature name="part_id" value="Tape 2"/>
 			<dataarea name="cass" size="32761">
 				<rom name="mathematiques cm - mesures et grandeurs (1985)(vifi-nathan)(fr)(tape 2 of 2)(mesure du temp &amp; changement d'unites).k7" size="32761" crc="a5bd3b7b" sha1="76434b4bd776f90fe4e45f72ea54a60861e360d8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmcompa" cloneof="cmcomp">
+		<description>Mathematiques CM - Mesures et Grandeurs (Alt)</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="40411">
+				<rom name="mathematiques cm - mesures et grandeurs - aires et volumes (1985)(vifi-nathan)(fr)[a].k7" size="40411" crc="af16237b" sha1="6b926fb6eb53373e59c082b840a2fd5f190269fb" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="32761">
+				<rom name="mathematiques cm - mesures et grandeurs - mesure du temps (1985)(vifi-nathan)(fr).k7" size="32761" crc="b2ce5edf" sha1="c41f168b9d83b4efd9aa94e38fb0ff4bb1163ea1" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1538,7 +1593,7 @@
 	</software>
 
 	<software name="cpcecmp1">
-		<description>Mathematiques CP-CE - Tables et Frises - Frises &amp; Symetries et Translations</description>
+		<description>Mathematiques CP/CE - Tables et Frises - Frises &amp; Symetries et Translations</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -1550,7 +1605,7 @@
 	</software>
 
 	<software name="cpcecmp1a" cloneof="cpcecmp1">
-		<description>Mathematiques CP-CE - Tables et Frises - Frises &amp; Symetries et Translations (Alt)</description>
+		<description>Mathematiques CP/CE - Tables et Frises - Frises &amp; Symetries et Translations (Alt)</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -1562,7 +1617,7 @@
 	</software>
 
 	<software name="cpcecmp2">
-		<description>Mathematiques CP-CE - Tables et Frises - Tables d'Operations &amp; Classement</description>
+		<description>Mathematiques CP/CE - Tables et Frises - Tables d'Operations &amp; Classement</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -1574,7 +1629,7 @@
 	</software>
 
 	<software name="cpcecmp2a" cloneof="cpcecmp2">
-		<description>Mathematiques CP-CE - Tables et Frises - Tables d'Operations &amp; Classement (Alt)</description>
+		<description>Mathematiques CP/CE - Tables et Frises - Tables d'Operations &amp; Classement (Alt)</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -1808,7 +1863,7 @@
 	<software name="teleram2">
 		<description>Telerama no.2</description>
 		<year>1984</year>
-		<publisher>VIFI-Natham</publisher>
+		<publisher>VIFI-Nathan</publisher>
 
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="13474">
@@ -1893,6 +1948,22 @@
 			</dataarea>
 		</part>
 	</software>
+
+	<!-- Demos -->
+
+
+	<software name="hellowld">
+		<description>Hello World!</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="101">
+				<rom name="hello.k7" size="101" crc="d85c5606" sha1="a1e59379afc184420801a23b8a63143f3c4ef071" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 
 	<!-- Educational -->
 
@@ -3336,7 +3407,7 @@
 	</software>
 
 	<software name="cecmatel">
-		<description>Francais CE-CM - Aide a l'Orthographe - Atelier</description>
+		<description>Francais CE/CM - Aide a l'Orthographe - Atelier</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -3348,7 +3419,7 @@
 	</software>
 
 	<software name="cecmatela" cloneof="cecmatel">
-		<description>Francais CE-CM - Aide a l'Orthographe - Atelier (Alt)</description>
+		<description>Francais CE/CM - Aide a l'Orthographe - Atelier (Alt)</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -3360,7 +3431,7 @@
 	</software>
 
 	<software name="cecmatelb" cloneof="cecmatel">
-		<description>Francais CE-CM - Aide a l'Orthographe - Atelier (WAV Format)</description>
+		<description>Francais CE/CM - Aide a l'Orthographe - Atelier (WAV Format)</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -3372,7 +3443,7 @@
 	</software>
 
 	<software name="cecmdevi">
-		<description>Francais CE-CM - Aide a l'Orthographe - Deviner</description>
+		<description>Francais CE/CM - Aide a l'Orthographe - Deviner</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -3384,7 +3455,7 @@
 	</software>
 
 	<software name="cecmdevia" cloneof="cecmdevi">
-		<description>Francais CE-CM - Aide a l'Orthographe - Deviner (Alt)</description>
+		<description>Francais CE/CM - Aide a l'Orthographe - Deviner (Alt)</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -3396,7 +3467,7 @@
 	</software>
 
 	<software name="cecmdevib" cloneof="cecmdevi">
-		<description>Francais CE-CM - Aide a l'Orthographe - Deviner (WAV Format)</description>
+		<description>Francais CE/CM - Aide a l'Orthographe - Deviner (WAV Format)</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -3408,7 +3479,7 @@
 	</software>
 
 	<software name="cecminva">
-		<description>Francais CE-CM - Aide a l'Orthographe - Invasion</description>
+		<description>Francais CE/CM - Aide a l'Orthographe - Invasion</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -3420,7 +3491,7 @@
 	</software>
 
 	<software name="cecminvaa" cloneof="cecminva">
-		<description>Francais CE-CM - Aide a l'Orthographe - Invasion (Alt)</description>
+		<description>Francais CE/CM - Aide a l'Orthographe - Invasion (Alt)</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -3432,7 +3503,7 @@
 	</software>
 
 	<software name="cecminvab" cloneof="cecminva">
-		<description>Francais CE-CM - Aide a l'Orthographe - Invasion (WAV Format)</description>
+		<description>Francais CE/CM - Aide a l'Orthographe - Invasion (WAV Format)</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -3444,7 +3515,7 @@
 	</software>
 
 	<software name="cecmponc">
-		<description>Francais CE-CM - Aide a l'Orthographe - Ponctuation</description>
+		<description>Francais CE/CM - Aide a l'Orthographe - Ponctuation</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -3456,7 +3527,7 @@
 	</software>
 
 	<software name="cecmponca" cloneof="cecmponc">
-		<description>Francais CE-CM - Aide a l'Orthographe - Ponctuation (Alt)</description>
+		<description>Francais CE/CM - Aide a l'Orthographe - Ponctuation (Alt)</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -3468,7 +3539,7 @@
 	</software>
 
 	<software name="cecmponcb" cloneof="cecmponc">
-		<description>Francais CE-CM - Aide a l'Orthographe - Ponctuation (WAV Format)</description>
+		<description>Francais CE/CM - Aide a l'Orthographe - Ponctuation (WAV Format)</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -3756,7 +3827,7 @@
 	</software>
 
 	<software name="cm26memo">
-		<description>Francais CM2-6eme - Vocabulaire et Orthographe - Memotex</description>
+		<description>Francais CM2/6eme - Vocabulaire et Orthographe - Memotex</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -3768,7 +3839,7 @@
 	</software>
 
 	<software name="cm26memoa" cloneof="cm26memo">
-		<description>Francais CM2-6eme - Vocabulaire et Orthographe - Memotex (Alt)</description>
+		<description>Francais CM2/6eme - Vocabulaire et Orthographe - Memotex (Alt)</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -3780,7 +3851,7 @@
 	</software>
 
 	<software name="cm26syno">
-		<description>Francais CM2-6eme - Vocabulaire et Orthographe - Synonymes</description>
+		<description>Francais CM2/6eme - Vocabulaire et Orthographe - Synonymes</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -3792,7 +3863,7 @@
 	</software>
 
 	<software name="cm26synoa" cloneof="cm26syno">
-		<description>Francais CM2-6eme - Vocabulaire et Orthographe - Synonymes (Alt)</description>
+		<description>Francais CM2/6eme - Vocabulaire et Orthographe - Synonymes (Alt)</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -3960,7 +4031,7 @@
 	</software>
 
 	<software name="cpcealer">
-		<description>Francais CP-CE - Aide a la Lecture - Alerte</description>
+		<description>Francais CP/CE - Aide a la Lecture - Alerte</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -3972,7 +4043,7 @@
 	</software>
 
 	<software name="cpcealera" cloneof="cpcealer">
-		<description>Francais CP-CE - Aide a la Lecture - Alerte (Alt)</description>
+		<description>Francais CP/CE - Aide a la Lecture - Alerte (Alt)</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -3984,7 +4055,7 @@
 	</software>
 
 	<software name="cpcealerb" cloneof="cpcealer">
-		<description>Francais CP-CE - Aide a la Lecture - Alerte (WAV Format)</description>
+		<description>Francais CP/CE - Aide a la Lecture - Alerte (WAV Format)</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -3996,7 +4067,7 @@
 	</software>
 
 	<software name="cpcememo">
-		<description>Francais CP-CE - Aide a la Lecture - Memot</description>
+		<description>Francais CP/CE - Aide a la Lecture - Memot</description>
 		<year>1985</year>
 		<publisher>Nathan Ecoles</publisher>
 
@@ -4008,7 +4079,7 @@
 	</software>
 
 	<software name="cpcememoa" cloneof="cpcememo">
-		<description>Francais CP-CE - Aide a la Lecture - Memot (Alt)</description>
+		<description>Francais CP/CE - Aide a la Lecture - Memot (Alt)</description>
 		<year>1985</year>
 		<publisher>Nathan Ecoles</publisher>
 
@@ -4020,7 +4091,7 @@
 	</software>
 
 	<software name="cpcememob" cloneof="cpcememo">
-		<description>Francais CP-CE - Aide a la Lecture - Memot (WAV Format)</description>
+		<description>Francais CP/CE - Aide a la Lecture - Memot (WAV Format)</description>
 		<year>1985</year>
 		<publisher>Nathan Ecoles</publisher>
 
@@ -4032,7 +4103,7 @@
 	</software>
 
 	<software name="cpcepelm">
-		<description>Francais CP-CE - Aide a la Lecture - Pelmel</description>
+		<description>Francais CP/CE - Aide a la Lecture - Pelmel</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -4044,7 +4115,7 @@
 	</software>
 
 	<software name="cpcepelma" cloneof="cpcepelm">
-		<description>Francais CP-CE - Aide a la Lecture - Pelmel (Alt)</description>
+		<description>Francais CP/CE - Aide a la Lecture - Pelmel (Alt)</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -4056,7 +4127,7 @@
 	</software>
 
 	<software name="cpcepelmb" cloneof="cpcepelm">
-		<description>Francais CP-CE - Aide a la Lecture - Pelmel (WAV Format)</description>
+		<description>Francais CP/CE - Aide a la Lecture - Pelmel (WAV Format)</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -4068,7 +4139,7 @@
 	</software>
 
 	<software name="cpcerada">
-		<description>Francais CP-CE - Aide a la Lecture - Radar</description>
+		<description>Francais CP/CE - Aide a la Lecture - Radar</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -4080,7 +4151,7 @@
 	</software>
 
 	<software name="cpceradaa" cloneof="cpcerada">
-		<description>Francais CP-CE - Aide a la Lecture - Radar (Alt)</description>
+		<description>Francais CP/CE - Aide a la Lecture - Radar (Alt)</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -4092,7 +4163,7 @@
 	</software>
 
 	<software name="cpceradab" cloneof="cpcerada">
-		<description>Francais CP-CE - Aide a la Lecture - Radar (WAV Format)</description>
+		<description>Francais CP/CE - Aide a la Lecture - Radar (WAV Format)</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -4823,7 +4894,7 @@
 	</software>
 
 	<software name="cecmangl">
-		<description>Mathematiques CE-CM - Geometrie - Angles</description>
+		<description>Mathematiques CE/CM - Geometrie - Angles</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -4835,7 +4906,7 @@
 	</software>
 
 	<software name="cecmangla" cloneof="cecmangl">
-		<description>Mathematiques CE-CM - Geometrie - Angles (Alt)</description>
+		<description>Mathematiques CE/CM - Geometrie - Angles (Alt)</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -4847,7 +4918,7 @@
 	</software>
 
 	<software name="cecmanglb" cloneof="cecmangl">
-		<description>Mathematiques CE-CM - Geometrie - Angles (Alt 2)</description>
+		<description>Mathematiques CE/CM - Geometrie - Angles (Alt 2)</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -4859,7 +4930,7 @@
 	</software>
 
 	<software name="cecmdroi">
-		<description>Mathematiques CE-CM - Geometrie - Droites</description>
+		<description>Mathematiques CE/CM - Geometrie - Droites</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -4871,7 +4942,7 @@
 	</software>
 
 	<software name="cecmdroia" cloneof="cecmdroi">
-		<description>Mathematiques CE-CM - Geometrie - Droites (Alt)</description>
+		<description>Mathematiques CE/CM - Geometrie - Droites (Alt)</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -4883,7 +4954,7 @@
 	</software>
 
 	<software name="cecmdroib" cloneof="cecmdroi">
-		<description>Mathematiques CE-CM - Geometrie - Droites (Alt 2)</description>
+		<description>Mathematiques CE/CM - Geometrie - Droites (Alt 2)</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -4895,7 +4966,7 @@
 	</software>
 
 	<software name="cecmgolf">
-		<description>Mathematiques CE-CM - Geometrie - Golf</description>
+		<description>Mathematiques CE/CM - Geometrie - Golf</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -4907,7 +4978,7 @@
 	</software>
 
 	<software name="cecmgolfa" cloneof="cecmgolf">
-		<description>Mathematiques CE-CM - Geometrie - Golf (No Loader Screen)</description>
+		<description>Mathematiques CE/CM - Geometrie - Golf (No Loader Screen)</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -4919,7 +4990,7 @@
 	</software>
 
 	<software name="cecmtria">
-		<description>Mathematiques CE-CM - Geometrie - Triangles et Quadrilateres</description>
+		<description>Mathematiques CE/CM - Geometrie - Triangles et Quadrilateres</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -4942,14 +5013,26 @@
 		</part>
 	</software>
 
-	<software name="cmairesa" cloneof="cmaires">
-		<description>Mathematiques CM - Mesures et Grandeurs - Aires et Volumes (Alt)</description>
+	<software name="cmunites">
+		<description>Mathematiques CM - Mesures et Grandeurs - Changement d'Unites</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
 		<part name="cass1" interface="mo_cass">
-			<dataarea name="cass" size="40411">
-				<rom name="mathematiques cm - mesures et grandeurs - aires et volumes (1985)(vifi-nathan)(fr)[a].k7" size="40411" crc="af16237b" sha1="6b926fb6eb53373e59c082b840a2fd5f190269fb" offset="0" />
+			<dataarea name="cass" size="15993">
+				<rom name="maths-cm-changement-d-unites_mo5.k7" size="15993" crc="0c6eafee" sha1="2725d652842ff68123cc9ed26c073e4a9503d905" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmlinear">
+		<description>Mathematiques CM - Mesures et Grandeurs - Linearite</description>
+		<year>1985</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="22277">
+				<rom name="maths-cm-linearite_mo5.k7" size="22277" crc="1192ecae" sha1="fb697f1d846e011fea06fd2bebcde8f26b31c211" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -4960,8 +5043,8 @@
 		<publisher>VIFI-Nathan</publisher>
 
 		<part name="cass1" interface="mo_cass">
-			<dataarea name="cass" size="32761">
-				<rom name="mathematiques cm - mesures et grandeurs - mesure du temps (1985)(vifi-nathan)(fr).k7" size="32761" crc="b2ce5edf" sha1="c41f168b9d83b4efd9aa94e38fb0ff4bb1163ea1" offset="0" />
+			<dataarea name="cass" size="16768">
+				<rom name="maths-cm-mesure-du-temps_mo5.k7" size="16768" crc="c83b775a" sha1="e96e1dc1b98ab106e04ec22661623beda3c7edd6" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -5135,7 +5218,7 @@
 	</software>
 
 	<software name="cpceclas">
-		<description>Mathematiques CP-CE - Tables et Frises - Classement</description>
+		<description>Mathematiques CP/CE - Tables et Frises - Classement</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -5147,7 +5230,7 @@
 	</software>
 
 	<software name="cpcefris">
-		<description>Mathematiques CP-CE - Tables et Frises - Frises</description>
+		<description>Mathematiques CP/CE - Tables et Frises - Frises</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -5159,7 +5242,7 @@
 	</software>
 
 	<software name="cpcesyme">
-		<description>Mathematiques CP-CE - Tables et Frises - Symetries et Translations</description>
+		<description>Mathematiques CP/CE - Tables et Frises - Symetries et Translations</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -5171,7 +5254,7 @@
 	</software>
 
 	<software name="cpcetabl">
-		<description>Mathematiques CP-CE - Tables et Frises - Tables d'Operations</description>
+		<description>Mathematiques CP/CE - Tables et Frises - Tables d'Operations</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
 
@@ -6200,6 +6283,18 @@
 		</part>
 	</software>
 
+	<software name="1000bornc" cloneof="1000born">
+		<description>1000 Bornes (Alt 3)</description>
+		<year>1985</year>
+		<publisher>Free Game Blot</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="20114">
+				<rom name="1000born.k7" size="20114" crc="bce22550" sha1="2698aad5742ecbdff0e5242c057dd179cfc09a48" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="1789">
 		<description>1789</description>
 		<year>1986</year>
@@ -7106,7 +7201,7 @@
 	<software name="backgamm">
 		<description>Backgammon</description>
 		<year>1984</year>
-		<publisher>VIFI-Natham</publisher>
+		<publisher>VIFI-Nathan</publisher>
 
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="17693">
@@ -7118,7 +7213,7 @@
 	<software name="backgamma" cloneof="backgamm">
 		<description>Backgammon (Alt)</description>
 		<year>1984</year>
-		<publisher>VIFI-Natham</publisher>
+		<publisher>VIFI-Nathan</publisher>
 
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="17693">
@@ -7130,7 +7225,7 @@
 	<software name="backgammb" cloneof="backgamm">
 		<description>Backgammon (Alt 2)</description>
 		<year>1984</year>
-		<publisher>VIFI-Natham</publisher>
+		<publisher>VIFI-Nathan</publisher>
 
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="17693">
@@ -8922,6 +9017,18 @@
 		</part>
 	</software>
 
+	<software name="olimpinvc" cloneof="dieuxgli">
+		<description>Olimpiadi Invernali (Ita, Single Tape, Alt 2)</description>
+		<year>1986</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="167425">
+				<rom name="olimpiadi-invernali-pc128.k7" size="167425" crc="d9eef4e8" sha1="ec3f3d64683f460b625a4a23331a96a1718b0757" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="dieuxmer">
 		<description>Les Dieux de la Mer (MO6)</description>
 		<year>1987</year>
@@ -9667,6 +9774,18 @@
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="21306">
 				<rom name="fbi (1984)(infogrames)(fr)[a2].k7" size="21306" crc="15936f44" sha1="01ababd6d840ada8a8cfae173800a3143e31b0fa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fbic" cloneof="fbi">
+		<description>FBI (Alt 3)</description>
+		<year>1984</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="21306">
+				<rom name="fbi.k5" size="21306" crc="de356375" sha1="d5f1f93c12a5f48394ca4a0fcd05375918aea0fe" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -10590,6 +10709,18 @@
 		</part>
 	</software>
 
+	<software name="ereditac" cloneof="heritage" supported="no">  <!-- protection, works in dcmoto -->
+		<description>L'Eredita (Ita, Alt 3)</description>
+		<year>1986</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="38881">
+				<rom name="eredita-pc128.k7" size="38881" crc="3690e9c6" sha1="fc57329b71649fac385bf68c8706f76275d79d78" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="hmscobra">
 		<description>HMS Cobra - Convois pour Mourmansk</description>
 		<year>1987</year>
@@ -10809,7 +10940,7 @@
 	<software name="inspgadg">
 		<description>Inspecteur Gadget</description>
 		<year>1984</year>
-		<publisher>VIFI-Natham</publisher>
+		<publisher>VIFI-Nathan</publisher>
 
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="64132">
@@ -10821,7 +10952,7 @@
 	<software name="inspgadga" cloneof="inspgadg">
 		<description>Inspecteur Gadget (Alt)</description>
 		<year>1984</year>
-		<publisher>VIFI-Natham</publisher>
+		<publisher>VIFI-Nathan</publisher>
 
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="64132">
@@ -11783,6 +11914,18 @@
 		</part>
 	</software>
 
+	<software name="lasvegas_itc" cloneof="lasvegas">
+		<description>Las Vegas (Ita, Single Tape, Alt)</description>
+		<year>1985</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="85913">
+				<rom name="lasvegas-pc128.k7" size="85913" crc="285f5cbd" sha1="b0096790246402c938575454a0468c0955176304" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="lorann">
 		<description>Lorann</description>
 		<year>1985</year>
@@ -12081,6 +12224,18 @@
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="59165">
 				<rom name="le malefice des atlantes (chip) (inconnus) (1987) (mo6).k7" size="59165" crc="2195f578" sha1="ab8e5de94523b42b713499055f00e13ebab6194f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="malefatlb" cloneof="malefatl">
+		<description>Le Malefice des Atlantes (MO6) (Alt 2)</description>
+		<year>1987</year>
+		<publisher>Chip</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="59165">
+				<rom name="le-malefice-des-atlantes-mo6.k7" size="59165" crc="847a5924" sha1="d85dd9c84985701489fe064d9f114f03050ce79f" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -15162,6 +15317,18 @@
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="97604">
 				<rom name="space racer (loriciels) (pascal jarry) (1988)[mo6].k7" size="97604" crc="16658012" sha1="a2c2d80278e6d8b9d26105f86c0385faec592964" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spaceracc" cloneof="spacerac">
+		<description>Space Racer (MO6) (Alt 3)</description>
+		<year>1988</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="97604">
+				<rom name="space-racer-mo6.k7" size="97604" crc="1ea2d752" sha1="8996a5d2fca13f14503f04453b0bd340f66dcc51" offset="0" />
 			</dataarea>
 		</part>
 	</software>

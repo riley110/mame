@@ -15,6 +15,30 @@
 		</part>
 	</software>
 
+	<software name="35basica" cloneof="35basic">
+		<description>3'5 Disk BASIC (v1.0, Alt)</description>
+		<year>1985</year>
+		<publisher>Microsoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="basmo5.sap" size="335426" crc="cc578297" sha1="d4f739d27d79c5c2637b150ee6d9e7ac8fc6b0cc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="35basicb" cloneof="35basic">
+		<description>3'5 Disk BASIC (v1.0, Alt 2)</description>
+		<year>1985</year>
+		<publisher>Microsoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="dos-mo.sap" size="335426" crc="97753fce" sha1="6b9aee850fc64751f247fa83457f6675683858b2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="arsene">
 		<description>Arsene</description>
 		<year>1986</year>
@@ -23,6 +47,175 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="81920">
 				<rom name="arsene (triel) (jean-michel cohen) (1986) (mo5).fd" size="81920" crc="c917e4db" sha1="a7b9d8dc9e9e5918686bafb1e5403cfcdc292469" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basic01">
+		<description>BASIC 01</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="drive_requirement" value="QDD floppy drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="basic01.qd" size="51200" crc="202d3584" sha1="dbd8cef1bc53c9fd45373e75565a1267291a72ca" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basic02">
+		<description>BASIC 02</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="drive_requirement" value="QDD floppy drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="basic02.qd" size="51200" crc="0d0f21b2" sha1="3d6a6b2e05a50e07887ab02db1e29bab2c246d15" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basic03">
+		<description>BASIC 03</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="drive_requirement" value="QDD floppy drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="basic03.qd" size="51200" crc="2a9dae9f" sha1="7ecd029fd788d3db086ccd67ded3a487a554a962" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basic04">
+		<description>BASIC 04</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="drive_requirement" value="QDD floppy drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="basic04.qd" size="51200" crc="2d28c0d5" sha1="8c9e66df8e0ece017a5c77fdeebf97be8261077e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basic05">
+		<description>BASIC 05</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="drive_requirement" value="QDD floppy drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="basic05.qd" size="51200" crc="3266e583" sha1="9dbfeae886be506ad1c0422e7859cc0c715e412b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basic06">
+		<description>BASIC 06</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="drive_requirement" value="QDD floppy drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="basic06.qd" size="51200" crc="95cc8dba" sha1="c5e8054be9a532fd3351a33c1580af0c60a19605" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basic07">
+		<description>BASIC 07</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="drive_requirement" value="QDD floppy drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="basic07.qd" size="51200" crc="6c0f15b4" sha1="066bbe8f56da9a427efa64a2d34337e6383a490a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basic08">
+		<description>BASIC 08</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="drive_requirement" value="QDD floppy drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="basic08.qd" size="51200" crc="bb55f4dc" sha1="3750a81a3ba5200a853ef7987590e9d290bd2a43" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basic09">
+		<description>BASIC 09</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="drive_requirement" value="QDD floppy drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="basic09.qd" size="51200" crc="b7ec472f" sha1="75caf221b8da4e0018f00fb7f80bf30ee6a5bc9c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basic10">
+		<description>BASIC 10</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="drive_requirement" value="QDD floppy drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="basic10.qd" size="51200" crc="6654c44c" sha1="6c65701ca62f7c81fca00ed5c0a8141ca8dfe2a7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basic12">
+		<description>BASIC 12</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="drive_requirement" value="QDD floppy drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="basic12.qd" size="51200" crc="a6d528bf" sha1="6be643fc8b9478c99df00eaa48b4938c1654b596" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basic13">
+		<description>BASIC 13</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="drive_requirement" value="QDD floppy drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="basic13.qd" size="51200" crc="cb33fed3" sha1="917130f09cc472ec9c14affda733d6dc6627bf26" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basic14">
+		<description>BASIC 14</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="drive_requirement" value="QDD floppy drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="basic14.qd" size="51200" crc="29f3454d" sha1="046dc7a581e996a6e2bfd5e32439aaf0122180fc" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -153,6 +346,45 @@
 		<feature name="part_id" value="Disk 3 (Aide)"/>
 			<dataarea name="flop" size="51200">
 				<rom name="jane (1985)(thomson)(fr)[aide].qd" size="51200" crc="0a7b4a7a" sha1="f2b225a096330dc94a776c401e11502d7b76ed07" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="janeqda" cloneof="jane">
+		<description>Jane (QDD, Alt Systeme Disk)</description>
+		<year>1985</year>
+		<publisher>Thomson</publisher>
+		<info name="drive_requirement" value="QDD floppy drive"/>
+		<sharedfeat name="requirement" value="mo_cart:jane"/>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1 (Systeme)"/>
+			<dataarea name="flop" size="51200">
+				<rom name="jane-systeme-mo5 [a].qd" size="51200" crc="824c506e" sha1="286fa17e7876e3316332ee022dae57e21f8e7918" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2 (Donnees)"/>
+			<dataarea name="flop" size="51200">
+				<rom name="jane (1985)(thomson)(fr)[donnees].qd" size="51200" crc="694facba" sha1="bc04601134f873a087d83eaf9abdfad9e6a4ae79" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 3 (Aide)"/>
+			<dataarea name="flop" size="51200">
+				<rom name="jane (1985)(thomson)(fr)[aide].qd" size="51200" crc="0a7b4a7a" sha1="f2b225a096330dc94a776c401e11502d7b76ed07" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="logodos">
+		<description>LOGO DOS</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="dos-logo-mo5.sap" size="335426" crc="656ddf74" sha1="c80c105d6aedd72656603ae090b5a8f2fb24995c" offset="0" />
 			</dataarea>
 		</part>
 	</software>

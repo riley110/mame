@@ -56,7 +56,7 @@
 	<software name="airbus">
 		<description>Airbus</description>
 		<year>1984</year>
-		<publisher>VIFI - Nathan</publisher>
+		<publisher>VIFI-Nathan</publisher>
 
 		<part name="cart" interface="to_cart">
 			<dataarea name="rom" size="16384">
@@ -68,7 +68,7 @@
 	<software name="atomium">
 		<description>Atomium</description>
 		<year>1982</year>
-		<publisher>VIFI - Nathan</publisher>
+		<publisher>VIFI-Nathan</publisher>
 
 		<part name="cart" interface="to_cart">
 			<dataarea name="rom" size="4096">
@@ -212,7 +212,7 @@
 	<software name="controle">
 		<description>Controle Aerien</description>
 		<year>1984</year>
-		<publisher>VIFI - Nathan</publisher>
+		<publisher>VIFI-Nathan</publisher>
 
 		<part name="cart" interface="to_cart">
 			<dataarea name="rom" size="16384">
@@ -224,7 +224,7 @@
 	<software name="crypto">
 		<description>Crypto</description>
 		<year>1982</year>
-		<publisher>VIFI - Nathan</publisher>
+		<publisher>VIFI-Nathan</publisher>
 
 		<part name="cart" interface="to_cart">
 			<dataarea name="rom" size="4096">
@@ -236,7 +236,7 @@
 	<software name="echo">
 		<description>Echo</description>
 		<year>1982</year>
-		<publisher>VIFI - Nathan</publisher>
+		<publisher>VIFI-Nathan</publisher>
 
 		<part name="cart" interface="to_cart">
 			<dataarea name="rom" size="16384">
@@ -274,7 +274,7 @@
 	<software name="gemini">
 		<description>Gemini</description>
 		<year>1982</year>
-		<publisher>VIFI - Nathan</publisher>
+		<publisher>VIFI-Nathan</publisher>
 
 		<part name="cart" interface="to_cart">
 			<dataarea name="rom" size="4096">
@@ -322,7 +322,7 @@
 	<software name="chiflett">
 		<description>Les Chiffres et les Lettres</description>
 		<year>1984</year>
-		<publisher>VIFI - Nathan</publisher>
+		<publisher>VIFI-Nathan</publisher>
 
 		<part name="cart" interface="to_cart">
 			<dataarea name="rom" size="16384">
@@ -334,7 +334,7 @@
 	<software name="logicod">
 		<description>Logicod</description>
 		<year>1982</year>
-		<publisher>VIFI - Nathan</publisher>
+		<publisher>VIFI-Nathan</publisher>
 
 		<part name="cart" interface="to_cart">
 			<dataarea name="rom" size="16384">
@@ -346,7 +346,7 @@
 	<software name="logo">
 		<description>LOGO (v1.0)</description>
 		<year>1984</year>
-		<publisher>VIFI - Nathan + TO Tek International</publisher>
+		<publisher>VIFI-Nathan + TO Tek International</publisher>
 
 		<part name="cart" interface="to_cart">
 			<dataarea name="rom" size="16384">
@@ -358,7 +358,7 @@
 	<software name="logoa" cloneof="logo">
 		<description>LOGO (v1.0, Alt)</description>
 		<year>1984</year>
-		<publisher>VIFI - Nathan + TO Tek International</publisher>
+		<publisher>VIFI-Nathan + TO Tek International</publisher>
 
 		<part name="cart" interface="to_cart">
 			<dataarea name="rom" size="16384">
@@ -430,7 +430,7 @@
 	<software name="melodia">
 		<description>Melodia</description>
 		<year>1982</year>
-		<publisher>VIFI - Nathan</publisher>
+		<publisher>VIFI-Nathan</publisher>
 
 		<part name="cart" interface="to_cart">
 			<dataarea name="rom" size="8192">
@@ -455,11 +455,23 @@
 	<software name="motus">
 		<description>Motus</description>
 		<year>1982</year>
-		<publisher>VIFI - Nathan</publisher>
+		<publisher>VIFI-Nathan</publisher>
 
 		<part name="cart" interface="to_cart">
 			<dataarea name="rom" size="16384">
 				<rom name="motus.bin" size="16384" crc="1be1fcfa" sha1="885db585778471270c544c26b1facc378885ea24" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="motusa" cloneof="motus">
+		<description>Motus (Alt)</description>
+		<year>1982</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cart" interface="to_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="motus (alt).bin" size="16384" crc="9b228aae" sha1="69ad5895d06c6711febd851783e33535473fa11d" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -479,7 +491,7 @@
 	<software name="pictor">
 		<description>Pictor</description>
 		<year>1983</year>
-		<publisher>VIFI - Nathan</publisher>
+		<publisher>VIFI-Nathan</publisher>
 
 		<part name="cart" interface="to_cart">
 			<dataarea name="rom" size="8192">
@@ -527,7 +539,7 @@
 	<software name="quest">
 		<description>Quest</description>
 		<year>1983</year>
-		<publisher>VIFI - Nathan</publisher>
+		<publisher>VIFI-Nathan</publisher>
 
 		<part name="cart" interface="to_cart">
 			<dataarea name="rom" size="4096">
@@ -563,7 +575,7 @@
 	<software name="survivor">
 		<description>Survivor</description>
 		<year>1982</year>
-		<publisher>VIFI - Nathan</publisher>
+		<publisher>VIFI-Nathan</publisher>
 
 		<part name="cart" interface="to_cart">
 			<dataarea name="rom" size="16384">
@@ -575,7 +587,7 @@
 	<software name="synthet">
 		<description>Synthetia</description>
 		<year>1984</year>
-		<publisher>VIFI - Nathan</publisher>
+		<publisher>VIFI-Nathan</publisher>
 
 		<part name="cart" interface="to_cart">
 			<dataarea name="rom" size="16384">
@@ -623,7 +635,7 @@
 	<software name="trap">
 		<description>Trap</description>
 		<year>1982</year>
-		<publisher>VIFI - Nathan</publisher>
+		<publisher>VIFI-Nathan</publisher>
 
 		<part name="cart" interface="to_cart">
 			<dataarea name="rom" size="4096">
@@ -635,7 +647,7 @@
 	<software name="tridi444">
 		<description>Tridi444</description>
 		<year>1982</year>
-		<publisher>VIFI - Nathan</publisher>
+		<publisher>VIFI-Nathan</publisher>
 
 		<part name="cart" interface="to_cart">
 			<dataarea name="rom" size="4096">

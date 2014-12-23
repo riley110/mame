@@ -78,6 +78,18 @@
 		</part>
 	</software>
 
+	<software name="agendab" cloneof="agenda">
+		<description>Agenda (Alt 2)</description>
+		<year>1984</year>
+		<publisher>Answare</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="agenda (alt 2).bin" size="16384" crc="d2e27a2b" sha1="77848e33f3ec75188df8741d20928ec7d59b5d08" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="airbus">
 		<description>Airbus</description>
 		<year>1984</year>
