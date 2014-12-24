@@ -220,6 +220,19 @@
 		</part>
 	</software>
 
+	<software name="beachead">
+		<description>Beach Head</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+		<info name="drive_requirement" value="QDD floppy drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="beach head (fil) (access software) (1985) (mo5 qd).qd" size="51200" crc="e3f35d0e" sha1="69a63c4135d0abbe3ba54b2bae0c6e568d6e53ae" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="blitz">
 		<description>Blitz!</description>
 		<year>1985</year>
@@ -240,6 +253,19 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="163840">
 				<rom name="blitz! (1985)(to tek)(fr)[3.5'', bootable].fd" size="163840" crc="20e73a19" sha1="2bdc70be628878b46ef0afd6ca753c74ee051777" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bluewar">
+		<description>Blue War</description>
+		<year>1986</year>
+		<publisher>Free Game Blot</publisher>
+		<info name="drive_requirement" value="QDD floppy drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="blue war (free game blot) (alain guiri) (1986) (mo5 qd).qd" size="51200" crc="1b3998e5" sha1="9da8fb68fad72b861ec8cc5ee4278029cee5749c" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -288,6 +314,37 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
 				<rom name="enigme a oxford (coktel vision) (beatrice franzi) (1986) (mo5).fd" size="327680" crc="d2b707dc" sha1="148dc4638b582472e25010fc7b8fc0db68da9823" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gameshow">
+		<description>Games Show (MO6)</description>
+		<year>2014</year>
+		<publisher>6502man</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="327680">
+				<rom name="games show (6502man) (2014) (mo6 fd) disk 1.fd" size="327680" crc="3a877e94" sha1="b624da8c77906825fc1218962d8c60b53f430a6c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="327680">
+				<rom name="games show (6502man) (2014) (mo6 fd) disk 2.fd" size="327680" crc="6445a8e3" sha1="56d4e4f55b56ee85319d30aa93fa9c0ec137738a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gameshowa" cloneof="gameshow" supported="partial">
+		<description>Games Show (MO6) (640K Disk)</description>
+		<year>2014</year>
+		<publisher>6502man</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="655360">
+				<rom name="games show (6502man) (2014) (mo6 fd).fd" size="655360" crc="2c49169f" sha1="268ec784f893b57f8a82d4aece4fc8c79afa735f" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -377,6 +434,30 @@
 		</part>
 	</software>
 
+	<software name="jeuxsaya">
+		<description>Jeux Saya</description>
+		<year>198?</year>
+		<publisher>Sayasupacrew</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="jeux saya (sayasupacrew) (mo5 fd).fd" size="327680" crc="13ba899f" sha1="e08d5452d00f9988fd0a1f2b67d14f02efad9f8d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="jeusybex">
+		<description>Jeux sur TO7 et MO5</description>
+		<year>1986</year>
+		<publisher>Sybex</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="jeux sur to7 et mo5 (sybex) (georges fagot-barraly) (1986) (mo fd).fd" size="327680" crc="349a63df" sha1="34313cedb0795bc32874cfd3a6ce08426e9e3ed2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="logodos">
 		<description>LOGO DOS</description>
 		<year>198?</year>
@@ -385,6 +466,19 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="dos-logo-mo5.sap" size="335426" crc="656ddf74" sha1="c80c105d6aedd72656603ae090b5a8f2fb24995c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="malthaar">
+		<description>La Malediction de Thaar</description>
+		<year>1986</year>
+		<publisher>Coktel Vision</publisher>
+		<info name="drive_requirement" value="QDD floppy drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="la malediction de thaar (coktel vision) (inconnus) (1986) (mo5 qd).qd" size="51200" crc="7248952d" sha1="846cf2981ed3fa653db8f2e67efbfef4c2a6acaa" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -544,6 +638,80 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
 				<rom name="visa pour hyde park (1988)(coktel vision)(fr)[bootable].fd" size="327680" crc="394aa11e" sha1="3db9d4c9ebdb6969416753d018005034c3263bbb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="volsolo">
+		<description>Vol Solo (MO6)</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="163840">
+				<rom name="vol solo (fil) (joel sana) (1985) (mo6 fd).fd" size="163840" crc="02ce2ab9" sha1="c8d275d88f0be780db62a4fcba68d9ab09673eef" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxart">
+		<description>ZX Art (MO6)</description>
+		<year>2014</year>
+		<publisher>6502man</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1 Side A"/>
+			<dataarea name="flop" size="327680">
+				<rom name="zx art (6502man) (2014) (mo6 fd) (zxart_disk1a).fd" size="327680" crc="41fdc3bc" sha1="ad8ca9a0c64e6e7ff2e30ac9d9915bfcb740a787" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1 Side B"/>
+			<dataarea name="flop" size="327680">
+				<rom name="zx art (6502man) (2014) (mo6 fd) (zxart_disk1b).fd" size="327680" crc="4e187f88" sha1="c36145395837964a450f9a53629da9f96ef1710b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2 Side A"/>
+			<dataarea name="flop" size="327680">
+				<rom name="zx art (6502man) (2014) (mo6 fd) (zxart_disk2a).fd" size="327680" crc="53d2ac34" sha1="5aadbe674a191d6094a7ab0c2a5e29c2c66c3fb7" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2 Side B"/>
+			<dataarea name="flop" size="327680">
+				<rom name="zx art (6502man) (2014) (mo6 fd) (zxart_disk2b).fd" size="327680" crc="782e32e7" sha1="f1850a2b5abd7d63c842897fd9e312c7f381bcb1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxarta" cloneof="zxart" supported="no">
+		<description>ZX Art (MO6) (640K Disks)</description>
+		<year>2014</year>
+		<publisher>6502man</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="655360">
+				<rom name="zx art (6502man) (2014) (mo6 fd) (zxart_disk1).fd" size="655360" crc="a0747287" sha1="fe5e4e0c3e3ba125794ac1ec87cc7b7a5c5a9b2f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="655360">
+				<rom name="zx art (6502man) (2014) (mo6 fd) (zxart_disk2).fd" size="655360" crc="43fdb60a" sha1="491878883f3d97885e1865b90fab9d4f6e9dd938" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxartb" cloneof="zxart" supported="no">
+		<description>ZX Art (MO6) (1280K Disk)</description>
+		<year>2014</year>
+		<publisher>6502man</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="1310720">
+				<rom name="zx art (6502man) (2014) (mo6 fd) (zxart_disk1 a 2 (for dcmoto)).fd" size="1310720" crc="2aec5c49" sha1="eb7975a01e41df1923d898afe8627d12bcf56e84" offset="0" />
 			</dataarea>
 		</part>
 	</software>

@@ -203,6 +203,38 @@
 		</part>
 	</software>
 
+	<software name="erebus">
+		<description>Erebus</description>
+		<year>1986</year>
+		<publisher>EH Services</publisher>
+		<info name="drive_requirement" value="QDD floppy drive"/>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1 Side A"/>
+			<dataarea name="flop" size="51200">
+				<rom name="erebus (eh services) (eric zmiro, jean-charles meyrignac) (1986) (moto qd) (erebus-1a_moto).qd" size="51200" crc="8bd3f65c" sha1="2c0d9e3abdb0003bd9341a2bcc439517c4a574ab" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1 Side B"/>
+			<dataarea name="flop" size="51200">
+				<rom name="erebus (eh services) (eric zmiro, jean-charles meyrignac) (1986) (moto qd) (erebus-1b_moto).qd" size="51200" crc="c3c0a0a6" sha1="ffa8696cfbefdfaf497ca3694fbea0c32747982f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2 Side A"/>
+			<dataarea name="flop" size="51200">
+				<rom name="erebus (eh services) (eric zmiro, jean-charles meyrignac) (1986) (moto qd) (erebus-2a_moto).qd" size="51200" crc="804f4d94" sha1="1be13476dd5f203c2c89ac035d99455ee2a4790c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2 Side B"/>
+			<dataarea name="flop" size="51200">
+				<rom name="erebus (eh services) (eric zmiro, jean-charles meyrignac) (1986) (moto qd) (erebus-2b_moto).qd" size="51200" crc="0a97ab6f" sha1="704e57de58c4663b26d424fa95270d7076bf48e5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="gp500cc">
 		<description>Grand Prix 500cc</description>
 		<year>1986</year>
@@ -311,6 +343,18 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="quad (1987)(microids)(fr)[boot with microsoft basic 1.0].sap" size="335426" crc="9b01aa0f" sha1="9f65ffc415d066ab704e7484ad1707d76b4e4612" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sdtrans">
+		<description>SDTRANSFERT - Transferts PC-Thomson par carte SD</description>
+		<year>2013</year>
+		<publisher>DCsoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="sdtransfert - transferts pc _-_ thomson par carte sd (dcsoft) (daniel coulom) (2013) (moto fd).fd" size="327680" crc="abb4c3b6" sha1="4643275c00e44e0f5087662b93f697846d172f02" offset="0" />
 			</dataarea>
 		</part>
 	</software>
