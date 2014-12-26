@@ -148,7 +148,7 @@ protected:
 	ARCOMPACT_RETTYPE arcompact_handle03(OPS_32);
 //	ARCOMPACT_RETTYPE arcompact_handle04_00(OPS_32);
 	ARCOMPACT_RETTYPE arcompact_handle04_01(OPS_32);
-	ARCOMPACT_RETTYPE arcompact_handle04_02(OPS_32);
+//	ARCOMPACT_RETTYPE arcompact_handle04_02(OPS_32);
 	ARCOMPACT_RETTYPE arcompact_handle04_03(OPS_32);
 //	ARCOMPACT_RETTYPE arcompact_handle04_04(OPS_32);
 //	ARCOMPACT_RETTYPE arcompact_handle04_05(OPS_32);
@@ -167,7 +167,7 @@ protected:
 	ARCOMPACT_RETTYPE arcompact_handle04_12(OPS_32);
 	ARCOMPACT_RETTYPE arcompact_handle04_13(OPS_32);
 	ARCOMPACT_RETTYPE arcompact_handle04_14(OPS_32);
-	ARCOMPACT_RETTYPE arcompact_handle04_15(OPS_32);
+//	ARCOMPACT_RETTYPE arcompact_handle04_15(OPS_32);
 //	ARCOMPACT_RETTYPE arcompact_handle04_16(OPS_32);
 	ARCOMPACT_RETTYPE arcompact_handle04_17(OPS_32);
 	ARCOMPACT_RETTYPE arcompact_handle04_18(OPS_32);
@@ -767,12 +767,14 @@ protected:
 	ARCOMPACT_RETTYPE get_insruction(OPS_32);
 
 	ARCOMPACT_HANDLER04_TYPE_PM(04_00);
+	ARCOMPACT_HANDLER04_TYPE_PM(04_02);
 	ARCOMPACT_HANDLER04_TYPE_PM(04_04);
 	ARCOMPACT_HANDLER04_TYPE_PM(04_05);
 	ARCOMPACT_HANDLER04_TYPE_PM(04_06);
 	ARCOMPACT_HANDLER04_TYPE_PM(04_07);
 	ARCOMPACT_HANDLER04_TYPE_PM(04_0a);
 	ARCOMPACT_HANDLER04_TYPE_PM(04_0f);
+	ARCOMPACT_HANDLER04_TYPE_PM(04_15);
 	ARCOMPACT_HANDLER04_TYPE_PM(04_16);
 	ARCOMPACT_HANDLER04_TYPE_PM(04_20);
 
@@ -801,6 +803,8 @@ private:
 	inline void WRITE16(UINT32 address, UINT16 data){ 	m_program->write_word(address << 1, data); }
 	inline UINT8 READ8(UINT32 address) { return m_program->read_byte(address << 0); }
 	inline void WRITE8(UINT32 address, UINT8 data){ 	m_program->write_byte(address << 0, data); }
+	
+	int check_condition(UINT8 condition);
 
 	UINT32 m_regs[0x40];
 
@@ -838,6 +842,9 @@ private:
 #define STATUS32_CLEAR_Z (m_status32 &= ~Z_ZERO_FLAG)
 #define STATUS32_CHECK_Z (m_status32 &   Z_ZERO_FLAG)
 
+// Condition 0x0c (LE)
+#define CONDITION_LE ((STATUS32_CHECK_Z) || (STATUS32_CHECK_N && !STATUS32_CHECK_V) ||  (!STATUS32_CHECK_N && STATUS32_CHECK_V)) // Z or (N and /V) or (/N and V) 
+#define CONDITION_EQ (STATUS32_CHECK_Z)
 
 extern const device_type ARCA5;
 
