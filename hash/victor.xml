@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+
+<softwarelist name="victor" description="Micronique Victor cassettes">
+
+	<software name="alunisag">
+		<description>Alunissage</description>
+		<year>1981</year>
+		<publisher>Micro Video</publisher>
+
+		<part name="cass1" interface="interact_cass">
+			<dataarea name="cass" size="13899">
+				<rom name="alunissage (micro video corp) (1981) (victor, basic printer).k7" size="13899" crc="e74d4b07" sha1="3f55fdb82ce89c6cd16c99c2f670453d0d6c35a3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basic3">
+		<description>Basic III</description>
+		<year>198?</year>
+		<publisher>Micronique</publisher>
+
+		<part name="cass1" interface="interact_cass">
+			<dataarea name="cass" size="25504">
+				<rom name="basic 3 #2.00 (micronique) (victor).k7" size="25504" crc="e5db1da0" sha1="f713a193d19fdca65e7598c90a9f4031eabffed4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>

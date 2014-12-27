@@ -33,7 +33,7 @@
                 => add device MX80c and bank switching for the ROM
     Importante note : the keyboard function add been piked from
                     DChector project : http://dchector.free.fr/ made by DanielCoulom
-                    (thank's Daniel)
+                    (thanks Daniel)
         03/01/2010 Update and clean prog  by yo_fr       (jj.stac@aliceadsl.fr)
                 => add the port mapping for keyboard
         20/11/2010 : synchronization between uPD765 and Z80 are now OK, CP/M runnig! JJStacino
@@ -45,6 +45,7 @@
     TODO :  Add the cartridge function,
             Add diskette support, (done !)
             Adjust the one shot and A/D timing (sn76477)
+			Clean up machine configs (and possibly give victor its own, for softlists)
 ****************************************************************************/
 /* Joystick 1 :
  clavier numerique :
@@ -419,6 +420,12 @@ static MACHINE_CONFIG_START( hec2hr, hec2hrp_state )
 	MCFG_CASSETTE_ADD( "cassette" )
 	MCFG_CASSETTE_FORMATS(hector_cassette_formats)
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED)
+	MCFG_CASSETTE_INTERFACE("interact_cass")
+
+	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhr")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("interact_cass_list","interact")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("h1_cass_list","hector1")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("victor_cass_list","victor")
 
 	/* printer */
 	MCFG_DEVICE_ADD("printer", PRINTER, 0)
@@ -454,6 +461,12 @@ static MACHINE_CONFIG_START( hec2hrp, hec2hrp_state )
 	MCFG_CASSETTE_ADD( "cassette" )
 	MCFG_CASSETTE_FORMATS(hector_cassette_formats)
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED)
+	MCFG_CASSETTE_INTERFACE("interact_cass")
+
+	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhr")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("interact_cass_list","interact")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("h1_cass_list","hector1")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("victor_cass_list","victor")
 
 	/* printer */
 	MCFG_DEVICE_ADD("printer", PRINTER, 0)
@@ -503,6 +516,13 @@ static MACHINE_CONFIG_START( hec2mx40, hec2hrp_state )
 	MCFG_CASSETTE_ADD( "cassette" )
 	MCFG_CASSETTE_FORMATS(hector_cassette_formats)
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED)
+	MCFG_CASSETTE_INTERFACE("interact_cass")
+
+	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhrx")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("interact_cass_list","interact")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("h1_cass_list","hector1")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("victor_cass_list","victor")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("hr_cass_list","hectorhr")
 
 	/* printer */
 	MCFG_DEVICE_ADD("printer", PRINTER, 0)
@@ -547,6 +567,13 @@ static MACHINE_CONFIG_START( hec2hrx, hec2hrp_state )
 	MCFG_CASSETTE_ADD( "cassette" )
 	MCFG_CASSETTE_FORMATS(hector_cassette_formats)
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED)
+	MCFG_CASSETTE_INTERFACE("interact_cass")
+
+	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhrx")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("interact_cass_list","interact")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("h1_cass_list","hector1")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("victor_cass_list","victor")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("hr_cass_list","hectorhr")
 
 	/* printer */
 	MCFG_DEVICE_ADD("printer", PRINTER, 0)
@@ -589,6 +616,13 @@ static MACHINE_CONFIG_START( hec2mdhrx, hec2hrp_state )
 	MCFG_CASSETTE_ADD( "cassette" )
 	MCFG_CASSETTE_FORMATS(hector_cassette_formats)
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED)
+	MCFG_CASSETTE_INTERFACE("interact_cass")
+
+	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhrx")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("interact_cass_list","interact")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("h1_cass_list","hector1")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("victor_cass_list","victor")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("hr_cass_list","hectorhr")
 
 	/* printer */
 	MCFG_DEVICE_ADD("printer", PRINTER, 0)
@@ -634,6 +668,13 @@ static MACHINE_CONFIG_START( hec2mx80, hec2hrp_state )
 	MCFG_CASSETTE_ADD( "cassette" )
 	MCFG_CASSETTE_FORMATS(hector_cassette_formats)
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED)
+	MCFG_CASSETTE_INTERFACE("interact_cass")
+
+	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhrx")
+	//MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("interact_cass_list","interact")
+	//MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("h1_cass_list","hector1")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("victor_cass_list","victor")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("hr_cass_list","hectorhr")
 
 	/* printer */
 	MCFG_DEVICE_ADD("printer", PRINTER, 0)
