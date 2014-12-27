@@ -833,6 +833,18 @@
 		</part>
 	</software>
 
+	<software name="lwpinb" cloneof="lwpin">
+		<description>Lost World Pinball (Alt 2)</description>
+		<year>1983</year>
+		<publisher>Tandy</publisher>
+
+		<part name="cass1" interface="mc10_cass">
+			<dataarea name="cass" size="12478">
+				<rom name="lost world pinball (tandy) (1983) (mc10).k7" size="12478" crc="abb85b14" sha1="5c3087373a65b86e11433ab7b5fbb078a4a0036d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="lprintpi">
 		<description>LPrintPi</description>
 		<year>198?</year>
@@ -1181,6 +1193,18 @@
 		</part>
 	</software>
 
+	<software name="pacmana" cloneof="pacman">
+		<description>Pac-Man (Alt)</description>
+		<year>2006</year>
+		<publisher>Greg Dionne</publisher>
+
+		<part name="cass1" interface="mc10_cass">
+			<dataarea name="cass" size="15033">
+				<rom name="pac man (greg dionne) (2006) (mc10).k7" size="15033" crc="9543724f" sha1="1e7690e89db0b50fa244f78a0d5cd12fb756a9ae" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="pagelist">
 		<description>Pagelist</description>
 		<year>1986</year>
@@ -1333,6 +1357,18 @@
 		<part name="cass1" interface="mc10_cass">
 			<dataarea name="cass" size="2704">
 				<rom name="road race (19xx)(barden jr., william)[h input - joystick perosi, charles].cas" size="2704" crc="623171f1" sha1="48e957796d07c599d718daa47dd49db8a6abecb1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="roadracea" cloneof="roadrace">
+		<description>Road Race (Alt)</description>
+		<year>198?</year>
+		<publisher>William Barden Jr.</publisher>
+
+		<part name="cass1" interface="mc10_cass">
+			<dataarea name="cass" size="2536">
+				<rom name="road race (william barden junior) (mc10).k7" size="2536" crc="17642d4d" sha1="31c2c18591545fe292effa42b758af6b1bb558ff" offset="0" />
 			</dataarea>
 		</part>
 	</software>
