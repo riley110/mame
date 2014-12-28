@@ -9,6 +9,7 @@
 		<description>L'Abeille - Spina the Bee</description>
 		<year>1984</year>
 		<publisher>Philips</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="15464">
 				<rom name="abeille.k7" size="15464" crc="9c35675c" sha1="d2c003020a30e8298a536e7e15dc953ab8b7de98" offset="0" />
@@ -20,12 +21,15 @@
 		<description>Anglais Volume 1</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
+
 		<part name="cass1" interface="vg5k_cass">
+		<feature name="part_id" value="Side A"/>
 			<dataarea name="cass" size="41512">
 				<rom name="angl1_a.k7" size="41512" crc="cbbd2e5a" sha1="45f4c16fd23c934b1e8ab41a13d67202a97357ca" offset="0" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="vg5k_cass">
+		<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="28232">
 				<rom name="angl1_b.k7" size="28232" crc="df8e60dc" sha1="3e5eba5f944161953b9a7e6eb98907532b73e4d4" offset="0" />
 			</dataarea>
@@ -36,12 +40,15 @@
 		<description>Anglais Volume 2 - Systeme Verbal</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
+
 		<part name="cass1" interface="vg5k_cass">
+		<feature name="part_id" value="Side A"/>
 			<dataarea name="cass" size="28420">
 				<rom name="angl2_a.k7" size="28420" crc="1d48b225" sha1="3ce4779de8d1e97db952ca41540a0beed55e26db" offset="0" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="vg5k_cass">
+		<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="28833">
 				<rom name="angl2_b.k7" size="28833" crc="07ad59a3" sha1="6aadd6b2cba2122057ae605e7a8887f648d6f477" offset="0" />
 			</dataarea>
@@ -52,6 +59,7 @@
 		<description>Backgammon</description>
 		<year>1984</year>
 		<publisher>Philips</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="13656">
 				<rom name="backgam.k7" size="13656" crc="872a59e3" sha1="808b56acac15462b1c5b7a28a32640a68bb240c8" offset="0" />
@@ -63,6 +71,7 @@
 		<description>Bris de Glace</description>
 		<year>1984</year>
 		<publisher>Philips</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="15720">
 				<rom name="bglace.k7" size="15720" crc="cedf71df" sha1="4f82f7aa7d2ae0abdcac0199d6974aa2c966d436" offset="0" />
@@ -74,6 +83,7 @@
 		<description>Budget</description>
 		<year>1984</year>
 		<publisher>Philips</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="13928">
 				<rom name="budget.k7" size="13928" crc="2070a62f" sha1="940aa3db6acc6ace48f1a8b528fed5aee9149229" offset="0" />
@@ -85,6 +95,7 @@
 		<description>La Carotte Malicieuse - Reperage et Deplacement Sur un Plan Quadrille</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="36057">
 				<rom name="carmal.k7" size="36057" crc="a0d50bb6" sha1="5fec79d04d0312dfa9213cd2ea904be53dc24ab6" offset="0" />
@@ -96,6 +107,7 @@
 		<description>Carnet d'Adresses</description>
 		<year>1984</year>
 		<publisher>Loriciels</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="5045">
 				<rom name="carnet.k7" size="5045" crc="3a0aa1bb" sha1="327c486cfdda62ccde15a514bd819ad6d2c51773" offset="0" />
@@ -107,6 +119,7 @@
 		<description>Carte de France - Mers, Fleuves, Villes et Montagnes de France</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="54608">
 				<rom name="cartfran.k7" size="54608" crc="ddf9dd47" sha1="09847b09bf24cf4c2268a38915b11f49850a955b" offset="0" />
@@ -118,6 +131,7 @@
 		<description>Citadelle</description>
 		<year>1984</year>
 		<publisher>Philips</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="36629">
 				<rom name="citadell.k7" size="36629" crc="8694cd4d" sha1="a1eb4d8507606f77dbc15853b19979d45f5ab408" offset="0" />
@@ -129,6 +143,7 @@
 		<description>La Cle des Chants - Exercices de Solfege</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="24998">
 				<rom name="clechan.k7" size="24998" crc="d4c45b77" sha1="f4ab8d4934ffeb92a4994fd5f7b73182d86f5e0d" offset="0" />
@@ -140,6 +155,7 @@
 		<description>Complements et Multiples</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="22264">
 				<rom name="compmult.k7" size="22264" crc="8f5dd1bd" sha1="af7dc499ea433dc67a01562b7c1aa5ffe0bf20a3" offset="0" />
@@ -151,6 +167,7 @@
 		<description>La Conjugaichouette</description>
 		<year>1985</year>
 		<publisher>Belin</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="74508">
 				<rom name="conjug.k7" size="74508" crc="2dceba96" sha1="922552b5c1b1da4d7fa11656d6e51d123d885749" offset="0" />
@@ -162,6 +179,7 @@
 		<description>Decouverte du Basic - Volume 1</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="88445">
 				<rom name="decbas1.k7" size="88445" crc="ee420d8c" sha1="027a60cdea9c97be4519a8ec92d998e642715fcd" offset="0" />
@@ -173,6 +191,7 @@
 		<description>Decouverte du Basic - Volume 2</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="50508">
 				<rom name="decbas2.k7" size="50508" crc="efb2f34b" sha1="19276ad9fbf6ffcda5330e4125c07cc5baafd00a" offset="0" />
@@ -184,6 +203,7 @@
 		<description>Divertissement</description>
 		<year>1984</year>
 		<publisher>Philips</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="22575">
 				<rom name="divert.k7" size="22575" crc="9d8c8c0c" sha1="0e25a57d270977bcff275a48163faffdfd681b38" offset="0" />
@@ -195,6 +215,7 @@
 		<description>Fichier</description>
 		<year>1984</year>
 		<publisher>Philips</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="13928">
 				<rom name="fichier.k7" size="13928" crc="78e4386f" sha1="99b3178adf2f9abe1ab3e56ee2e26eaa4b47632d" offset="0" />
@@ -206,6 +227,7 @@
 		<description>Football</description>
 		<year>1984</year>
 		<publisher>Philips</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="13672">
 				<rom name="football.k7" size="13672" crc="c9e5b007" sha1="7082f3215509af0afba219589ddcec419ef6aada" offset="0" />
@@ -217,6 +239,7 @@
 		<description>Le Fou Volant - Air Battle</description>
 		<year>1984</year>
 		<publisher>Philips</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="17416">
 				<rom name="fouvol.k7" size="17416" crc="594ffa6d" sha1="2f0789a190327d95ee2d035114182cc38cd8689d" offset="0" />
@@ -228,6 +251,7 @@
 		<description>Helicoptere - Helicopter Rescue</description>
 		<year>1984</year>
 		<publisher>Philips</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="20549">
 				<rom name="helicop.k7" size="20549" crc="6e8de416" sha1="b854bce98078ba6e17b021511172012dfa5b16c0" offset="0" />
@@ -240,6 +264,7 @@
 		<description>Le Labyrinthe et la Princesse (Edisoft)</description>
 		<year>1985</year>
 		<publisher>Edisoft</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="19089">
 				<rom name="labyprie.k7" size="19089" crc="e3783d49" sha1="c68d4c3df010a5664ca4ef5871b93f5408aec490" offset="0" />
@@ -252,6 +277,7 @@
 		<description>Le Labyrinthe et la Princesse (Loriciels)</description>
 		<year>1986</year>
 		<publisher>Loriciels</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="19054">
 				<rom name="labyprl.k7" size="19054" crc="6a0f0a38" sha1="30b50784ed1d1004a37ae98b2062134114ed5fab" offset="0" />
@@ -264,6 +290,7 @@
 		<description>LGraph - VG5216</description>
 		<year>1985</year>
 		<publisher>Philips</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="2984">
 				<rom name="lgraph.k7" size="2984" crc="0f767ebf" sha1="c771308c009a3f0c08d3e37fa94e32af046fb0a8" offset="0" />
@@ -275,6 +302,7 @@
 		<description>Lire Vite et Bien - Apprentissage de la Lecture Rapide</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="47909">
 				<rom name="lvb.k7" size="47909" crc="42bfb303" sha1="d5a88314f87953fcb2dc73c38b51ef5140a1b688" offset="0" />
@@ -283,9 +311,10 @@
 	</software>
 
 	<software name="mcrojeux">
-		<description>Microjeux - Cocktail de Juex</description>
+		<description>Microjeux - Cocktail de Jeux</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="35608">
 				<rom name="mcrojeux.k7" size="35608" crc="45007084" sha1="9481f23c379a7840fb25242727f2719b42fd4e09" offset="0" />
@@ -297,6 +326,7 @@
 		<description>Microprocesseur</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="47185">
 				<rom name="microp.k7" size="47185" crc="c10bac6b" sha1="b7cf2c2130caa6ffee3509118ed683e0d2b58c41" offset="0" />
@@ -308,6 +338,7 @@
 		<description>Mission Omega</description>
 		<year>1984</year>
 		<publisher>Philips</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="16234">
 				<rom name="momega.k7" size="16234" crc="55ec8890" sha1="df4ed720aa1718f48fc6600ee8e7676bf78fd944" offset="0" />
@@ -319,6 +350,7 @@
 		<description>Monkey Academy</description>
 		<year>1984</year>
 		<publisher>Philips</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="13179">
 				<rom name="monkeyac.k7" size="13179" crc="964503f5" sha1="374f925b4b4e27ec248a429251e5f2b91a504356" offset="0" />
@@ -330,12 +362,15 @@
 		<description>Mes Premiers Mots Croises Volume 1 - Francais- Vocabulaire</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
+
 		<part name="cass1" interface="vg5k_cass">
+		<feature name="part_id" value="Side A"/>
 			<dataarea name="cass" size="58189">
 				<rom name="motcr1_a.k7" size="58189" crc="c53213cf" sha1="b91722fbeba19d38bb60617d315b794f41156e06" offset="0" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="vg5k_cass">
+		<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="50733">
 				<rom name="motcr1_b.k7" size="50733" crc="dd0b8d47" sha1="54727b5dfb3adfa375301f0bb0bcce9b356f5669" offset="0" />
 			</dataarea>
@@ -346,12 +381,15 @@
 		<description>Mes Premiers Mots Croises Volume 2 - Francais- Vocabulaire</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
+
 		<part name="cass1" interface="vg5k_cass">
+		<feature name="part_id" value="Side A"/>
 			<dataarea name="cass" size="49762">
 				<rom name="motcr2_a.k7" size="49762" crc="f461dd3d" sha1="7c11906111b70c1fd52b837beca7f64623794762" offset="0" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="vg5k_cass">
+		<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="42225">
 				<rom name="motcr2_b.k7" size="42225" crc="773eb69f" sha1="945fcb2b90ce9299b1a44c783575f9952ee20e35" offset="0" />
 			</dataarea>
@@ -362,12 +400,15 @@
 		<description>Mots en Fleurs - Construire des Mots</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
+
 		<part name="cass1" interface="vg5k_cass">
+		<feature name="part_id" value="Side A"/>
 			<dataarea name="cass" size="25630">
 				<rom name="motflr_a.k7" size="25630" crc="7c62fb17" sha1="45907e1f89b570e4a32f00497aba16db0a730f16" offset="0" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="vg5k_cass">
+		<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="25139">
 				<rom name="motflr_b.k7" size="25139" crc="2d3df2cc" sha1="5ad7bc25a0e6aaee8b26a22a8c16421d68db2a60" offset="0" />
 			</dataarea>
@@ -378,6 +419,7 @@
 		<description>La Moto Infernale</description>
 		<year>1984</year>
 		<publisher>Philips</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="18024">
 				<rom name="motoinfe.k7" size="18024" crc="3555ef7d" sha1="83d4ac1270a1ffc4946a1f4dccd80b0c4301211b" offset="0" />
@@ -389,6 +431,7 @@
 		<description>Glouton - Munchkin</description>
 		<year>1984</year>
 		<publisher>Philips</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="13052">
 				<rom name="munchkin.k7" size="13052" crc="d24b1c63" sha1="36dcf93a4e7cfd94e29ac8fc04740e9798de0f4b" offset="0" />
@@ -400,6 +443,7 @@
 		<description>La Pierre Philosophale - Chapter 1- La Pierre Philosophale</description>
 		<year>198?</year>
 		<publisher>Elite Diffusion</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="4517">
 				<rom name="pphil1.k7" size="4517" crc="e4005fef" sha1="4f670852d9e08b282668f1e28e2c2616ae3fb402" offset="0" />
@@ -411,6 +455,7 @@
 		<description>La Pierre Philosophale - Chapter 2- La Clef de l'Ile</description>
 		<year>198?</year>
 		<publisher>Elite Diffusion</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="3668">
 				<rom name="pphil2.k7" size="3668" crc="8ddda5a3" sha1="a826ea66a2420a8f34b799c75c2cc78887ba8e2b" offset="0" />
@@ -422,6 +467,7 @@
 		<description>La Pierre Philosophale - Chapter 3- La Porte du Jardin des Hesperides</description>
 		<year>198?</year>
 		<publisher>Elite Diffusion</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="5807">
 				<rom name="pphil3.k7" size="5807" crc="b21165b0" sha1="5438fe777048dcc0d12c1322dd13f85ad1e21276" offset="0" />
@@ -433,6 +479,7 @@
 		<description>La Pierre Philosophale - Chapter 4- La Porte des Gnomes</description>
 		<year>198?</year>
 		<publisher>Elite Diffusion</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="3954">
 				<rom name="pphil4.k7" size="3954" crc="77e12fd9" sha1="895b3a50886609533a25ae24c0c2c4c760fd0dff" offset="0" />
@@ -444,6 +491,7 @@
 		<description>La Pierre Philosophale - Chapter 5- La Porte des Pieuvres</description>
 		<year>198?</year>
 		<publisher>Elite Diffusion</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="5997">
 				<rom name="pphil5.k7" size="5997" crc="3d66adc3" sha1="9fb833ec6a826040b0e65db024bc46438f736ad2" offset="0" />
@@ -455,6 +503,7 @@
 		<description>La Pierre Philosophale - Chapter 6- La Porte du Harpie</description>
 		<year>198?</year>
 		<publisher>Elite Diffusion</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="2502">
 				<rom name="pphil6.k7" size="2502" crc="78baf393" sha1="e58355bc6f0f75769e4ef6fa8d193376cd22e02e" offset="0" />
@@ -466,6 +515,7 @@
 		<description>La Pierre Philosophale - Chapter 7- La Porte du Gouffre</description>
 		<year>198?</year>
 		<publisher>Elite Diffusion</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="5152">
 				<rom name="pphil7.k7" size="5152" crc="98b70a50" sha1="71259675c8fc94d152639b8aa1416976dde4e725" offset="0" />
@@ -477,6 +527,7 @@
 		<description>Preterite Star</description>
 		<year>1985</year>
 		<publisher>Belin</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="58504">
 				<rom name="pretstar.k7" size="58504" crc="9a827284" sha1="cc9b38a60f4876cbac46f1d07824cf9357aa6008" offset="0" />
@@ -488,9 +539,34 @@
 		<description>Salut l'Artiste</description>
 		<year>1985</year>
 		<publisher>Nice Ideas</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="15464">
 				<rom name="sa.k7" size="15464" crc="8c54378e" sha1="9c837a6f1c56ec8cc8e7ea4a57f2f13724bcd660" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="salutarta" cloneof="salutart">
+		<description>Salut l'Artiste (Alt)</description>
+		<year>1985</year>
+		<publisher>Nice Ideas</publisher>
+
+		<part name="cass1" interface="vg5k_cass">
+			<dataarea name="cass" size="8999">
+				<rom name="salut l'artiste (nice ideas) (1984) (vg5000) (dcvg5k).k7" size="8999" crc="1fabf55f" sha1="142c9c213492386ec5c005c1310a16158c6aab19" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="salutarth" cloneof="salutart"> <!-- read-write routines hacked to work in dcvg5k -->
+		<description>Salut l'Artiste (Hack)</description>
+		<year>1985</year>
+		<publisher>Nice Ideas</publisher>
+
+		<part name="cass1" interface="vg5k_cass">
+			<dataarea name="cass" size="15464">
+				<rom name="salut l'artiste (1985)(nice ideas)[h][read-write routines hacked to work in dcvg5k].k7" size="15464" crc="ad1b3e50" sha1="ee115d2e6a9065eec2aea5edac75112c01168648" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -500,6 +576,7 @@
 		<description>Simulateur de Vol</description>
 		<year>1984</year>
 		<publisher>Philips</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="22552">
 				<rom name="simvol.k7" size="22552" crc="d93775f6" sha1="ff43222add36f78843fd8b83269692e4c4e21a9c" offset="0" />
@@ -511,6 +588,7 @@
 		<description>Le Monstre - Space Monster</description>
 		<year>1984</year>
 		<publisher>Philips</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="13625">
 				<rom name="spacem.k7" size="13625" crc="14268e03" sha1="3b533fef46a794447c00f92283afda48660f3729" offset="0" />
@@ -522,6 +600,7 @@
 		<description>Staroc</description>
 		<year>1984</year>
 		<publisher>Philips</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="20676">
 				<rom name="staroc.k7" size="20676" crc="99abb5e0" sha1="3171021906cc41513bc528d530bbb16de7692bdc" offset="0" />
@@ -533,6 +612,7 @@
 		<description>Systeme Metrique</description>
 		<year>1985</year>
 		<publisher>VIFI-Nathan</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="13962">
 				<rom name="sysmetr.k7" size="13962" crc="a10c15d7" sha1="81cffc3c45ca625a1683be33c6abc2a7717ce5d8" offset="0" />
@@ -544,9 +624,34 @@
 		<description>Jeu de Tarot</description>
 		<year>1985</year>
 		<publisher>Nice Ideas</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="19048">
 				<rom name="tarot.k7" size="19048" crc="9d1b8a7f" sha1="df4f1a3a197886278ea1eab10ec3f8c30c1dd7ff" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="teleram1">
+		<description>Telerama No. 1</description>
+		<year>1984</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="vg5k_cass">
+			<dataarea name="cass" size="7512">
+				<rom name="telerama no. 1 (nathan) (andre deledicq, jean delcourt, jean-pascal duclos, serge pouts lajus, jean-baptiste touchard) (1984) (vg5000).k7" size="7512" crc="e6b50aa7" sha1="a2e1e9ecb334129657fa0c974be511839c305590" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="teleram2">
+		<description>Telerama No. 2</description>
+		<year>1984</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cass1" interface="vg5k_cass">
+			<dataarea name="cass" size="14918">
+				<rom name="telerama no. 2 (nathan) (alain rigolot, jean delcourt, jean-pascal duclos, serge pouts lajus, jean-baptiste touchard) (1984) (vg5000).k7" size="14918" crc="fdd761f9" sha1="86224300d6e1d176cc0f26697111ab0b19fec5e7" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -555,6 +660,7 @@
 		<description>Tortues - Turtles</description>
 		<year>1984</year>
 		<publisher>Philips</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="13885">
 				<rom name="tortues.k7" size="13885" crc="832fe1b6" sha1="ea869641783930132406f400cd7e79bdaf006b8c" offset="0" />
@@ -566,6 +672,7 @@
 		<description>US Rallye</description>
 		<year>1984</year>
 		<publisher>Philips</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="13492">
 				<rom name="usrallye.k7" size="13492" crc="0af5f00c" sha1="c65097199b55ab2d28fbb1e669fa8f39ddc26056" offset="0" />
@@ -577,6 +684,7 @@
 		<description>Viking</description>
 		<year>1984</year>
 		<publisher>Philips</publisher>
+
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="16299">
 				<rom name="viking.k7" size="16299" crc="ef0206c3" sha1="54aab05018676272305bfdd3ac0cac4e86eda5a3" offset="0" />
@@ -671,7 +779,19 @@
 	</software>
 
 	<software name="demo27">
-		<description>Demo 27 Couleurs</description>
+		<description>Demonstration 27 couleurs</description>
+		<year>2005</year>
+		<publisher>Daniel Coulom</publisher>
+
+		<part name="cass1" interface="vg5k_cass">
+			<dataarea name="cass" size="1654852">
+				<rom name="demonstration 27 couleurs (daniel coulom) (2005) (vg5000).wav" size="1654852" crc="cada66f3" sha1="7aec30b40b2d5de60ddfb50f7cf626f939fb8418" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="demo27a" cloneof="demo27">
+		<description>Demonstration 27 couleurs (Alt)</description>
 		<year>2005</year>
 		<publisher>Daniel Coulom</publisher>
 
@@ -719,7 +839,19 @@
 	</software>
 
 	<software name="demo80">
-		<description>Demo Mode 80 Colonnes</description>
+		<description>Demonstration 80 colonnes</description>
+		<year>2005</year>
+		<publisher>Daniel Coulom</publisher>
+
+		<part name="cass1" interface="vg5k_cass">
+			<dataarea name="cass" size="1731280">
+				<rom name="demonstration 80 colonnes (daniel coulom) (2005) (vg5000).wav" size="1731280" crc="e95c22e0" sha1="64331c09f401e4a1fc2f72ce8727c924b51980fe" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="demo80a" cloneof="demo80">
+		<description>Demonstration 80 colonnes (Alt)</description>
 		<year>2005</year>
 		<publisher>Daniel Coulom</publisher>
 
@@ -750,6 +882,42 @@
 		<part name="cass1" interface="vg5k_cass">
 			<dataarea name="cass" size="1393">
 				<rom name="jeu de dames (1985)(carl hervier).k7" size="1393" crc="2e12fd04" sha1="8650d203437a4cbd175d5ae9eb466899630cf306" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="machaon">
+		<description>Machaon</description>
+		<year>2012</year>
+		<publisher>GPA</publisher>
+
+		<part name="cass1" interface="vg5k_cass">
+			<dataarea name="cass" size="11069">
+				<rom name="machaon (gpa) (herve montchatre) (2012) (vg5000).k7" size="11069" crc="daeb4070" sha1="1c79f6b5249b0113ae7479689a887d09e7994bfa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="machaona" cloneof="machaon">
+		<description>Machaon (WAV Format, 16 mono)</description>
+		<year>2012</year>
+		<publisher>GPA</publisher>
+
+		<part name="cass1" interface="vg5k_cass">
+			<dataarea name="cass" size="6624772">
+				<rom name="machaon (gpa) (herve montchatre) (2012) (vg5000) (16 mono).wav" size="6624772" crc="d8dac698" sha1="8eb5db75d80129c165abc26d1ca762ca33f9ee34" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="machaonb" cloneof="machaon">
+		<description>Machaon (WAV Format, 8 mono)</description>
+		<year>2012</year>
+		<publisher>GPA</publisher>
+
+		<part name="cass1" interface="vg5k_cass">
+			<dataarea name="cass" size="3312148">
+				<rom name="machaon (gpa) (herve montchatre) (2012) (vg5000) (8 mono).wav" size="3312148" crc="c4fe84bc" sha1="ac39a92d9d21022efe69661a60f8515f7902192a" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -838,18 +1006,6 @@
 		</part>
 	</software>
 
-	<software name="salutarth" cloneof="salutart"> <!-- read-write routines hacked to work in dcvg5k -->
-		<description>Salut l'Artiste (Hack)</description>
-		<year>1985</year>
-		<publisher>Nice Ideas</publisher>
-
-		<part name="cass1" interface="vg5k_cass">
-			<dataarea name="cass" size="15464">
-				<rom name="salut l'artiste (1985)(nice ideas)[h][read-write routines hacked to work in dcvg5k].k7" size="15464" crc="ad1b3e50" sha1="ee115d2e6a9065eec2aea5edac75112c01168648" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="salutd1"> <!-- saved from the main program -->
 		<description>Salut l'Artiste - Dessin 1</description>
 		<year>198?</year>
@@ -874,6 +1030,62 @@
 		</part>
 	</software>
 
+	<software name="sokoban">
+		<description>Sokoban</description>
+		<year>2011</year>
+		<publisher>Forthretro</publisher>
+
+		<part name="cass1" interface="vg5k_cass">
+			<dataarea name="cass" size="3782288">
+				<rom name="sokoban (forthretro) (dominique contant) (2011) (vg5000) (avec loader).wav" size="3782288" crc="3837b7c2" sha1="77ef2618dfadc57603fb30d03661c4fb9fe9e602" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sokobana" cloneof="sokoban">
+		<description>Sokoban (Alt)</description>
+		<year>2011</year>
+		<publisher>Forthretro</publisher>
+
+		<part name="cass1" interface="vg5k_cass">
+			<dataarea name="cass" size="13206">
+				<rom name="sokoban (forthretro) (dominique contant) (2011) (vg5000) (avec loader).k7" size="13206" crc="e21126c3" sha1="90dd03d91550223757e6c9983c22f44e734e7290" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!--
+	sokobanb and sokobanc are a bit more complicated to load; use these commands in order (from http://videopac.nl/forum/index.php?topic=1503.0 ):
+
+	CLOAD "SOKO"  (game)
+	CLOAD "ORIG"  (the six first levels)
+	CALL &"5200"
+-->
+
+	<software name="sokobanb" cloneof="sokoban">
+		<description>Sokoban (No Loader)</description>
+		<year>2011</year>
+		<publisher>Forthretro</publisher>
+
+		<part name="cass1" interface="vg5k_cass">
+			<dataarea name="cass" size="2262612">
+				<rom name="sokoban (forthretro) (dominique contant) (2011) (vg5000).wav" size="2262612" crc="cf50bf6a" sha1="13eabf42863def2789d573258fc6f6ecd91eba48" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sokobanc" cloneof="sokoban">
+		<description>Sokoban (No Loader, Alt)</description>
+		<year>2011</year>
+		<publisher>Forthretro</publisher>
+
+		<part name="cass1" interface="vg5k_cass">
+			<dataarea name="cass" size="12974">
+				<rom name="sokoban (forthretro) (dominique contant) (2011) (vg5000).k7" size="12974" crc="1b24e3ee" sha1="4ae837212f9a86e7af019ef29397d4b11832c416" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="spaceinv">
 		<description>Space Invaders</description>
 		<year>1985</year>
@@ -882,6 +1094,30 @@
 		<part name="cass1" interface="vg5k_cass">
 			<dataarea name="cass" size="2493">
 				<rom name="space invaders (1985)(carl hervier).k7" size="2493" crc="d94a5204" sha1="f749b39ddbd2663c46a5cc23ff74184ade44ecbb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spritecr">
+		<description>Sprite Creator</description>
+		<year>1986</year>
+		<publisher>Guillaume Ramey</publisher>
+
+		<part name="cass1" interface="vg5k_cass">
+			<dataarea name="cass" size="962632">
+				<rom name="sprite creator (guillaume ramey) (1986) (vg5000).wav" size="962632" crc="77f7489e" sha1="f476e2af4edda64b15f72393d4f3750921744854" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spritecra" cloneof="spritecr">
+		<description>Sprite Creator (Alt)</description>
+		<year>1986</year>
+		<publisher>Guillaume Ramey</publisher>
+
+		<part name="cass1" interface="vg5k_cass">
+			<dataarea name="cass" size="3020">
+				<rom name="sprite creator (guillaume ramey) (1986) (vg5000).k7" size="3020" crc="c91a5436" sha1="112d8bcaeca6af4f58b9df945d8e2622daa378a2" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -935,13 +1171,37 @@
 	</software>
 
 	<software name="testjoy">
-		<description>Test Pour Joystick</description>
+		<description>Test pour Joystick</description>
 		<year>2005</year>
 		<publisher>Carl Hervier</publisher>
 
 		<part name="cass1" interface="vg5k_cass">
 			<dataarea name="cass" size="761">
 				<rom name="test pour joystick (2005)(carl hervier).k7" size="761" crc="1c436962" sha1="58feffbcbde5c001dffe00a909cb17780c0ed786" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tetris">
+		<description>Tetris</description>
+		<year>2014</year>
+		<publisher>D. Adam</publisher>
+
+		<part name="cass1" interface="vg5k_cass">
+			<dataarea name="cass" size="2069672">
+				<rom name="tetris_vg5000.wav" size="2069672" crc="a3696e0c" sha1="a5f35ddc8632395f93d8a3381345adf2f7de27fb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tetrisa" cloneof="tetris">
+		<description>Tetris (Alt)</description>
+		<year>2014</year>
+		<publisher>D. Adam</publisher>
+
+		<part name="cass1" interface="vg5k_cass">
+			<dataarea name="cass" size="8052">
+				<rom name="tetris_vg5000.k7" size="8052" crc="cc96b457" sha1="db4444c29fb599899b0732895876cafbb52cda84" offset="0" />
 			</dataarea>
 		</part>
 	</software>
