@@ -12545,6 +12545,25 @@
 		</part>
 	</software>
 
+	<software name="lasvegase" cloneof="lasvegas" supported="no">
+		<description>Las Vegas (KCI Format)</description>
+		<year>1985</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="701846">
+				<rom name="vegas12.kci" size="701846" crc="dd104cee" sha1="8a67b7a49f3812c5a3672984e478e4379b417ce9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="449830">
+				<rom name="vegas3.kci" size="449830" crc="44ad5ee8" sha1="4bf3d644032d6720c6298a66aec2b24089f5b1e7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="lasvegas_it" cloneof="lasvegas">
 		<description>Las Vegas (Ita)</description>
 		<year>1985</year>
@@ -15567,6 +15586,18 @@
 		</part>
 	</software>
 
+	<software name="saphire" cloneof="saphir" supported="no">
+		<description>Saphir (Single Tape, KCI Format)</description>
+		<year>1986</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="363927">
+				<rom name="saphir.kci" size="363927" crc="d0f9f566" sha1="369c9c87f868bdab0436eff32faf34fe4138bd60" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="saphir_it" cloneof="saphir">
 		<description>Saphir (Ita)</description>
 		<year>1986</year>
@@ -15641,7 +15672,20 @@
 		</part>
 	</software>
 
-	<software name="sapiensc" cloneof="sapiens" supported="no"> <!-- protection -->
+	<software name="sapiensc" cloneof="sapiens" supported="no">
+		<description>Sapiens (KCI Format)</description>
+		<year>1986</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="298033">
+				<rom name="sapiens.kci" size="298033" crc="ccdb0c93" sha1="4f2a45b7ae65a36b97fe98fdb89ba0e52878c5f1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!--
+	<software name="sapiensc" cloneof="sapiens" supported="no">
 		<description>Sapiens (Bad)</description>
 		<year>1986</year>
 		<publisher>Loriciels</publisher>
@@ -15652,6 +15696,7 @@
 			</dataarea>
 		</part>
 	</software>
+-->
 
 	<software name="sauts">
 		<description>Sauts</description>
@@ -16033,6 +16078,18 @@
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="30438">
 				<rom name="sortileges (infogrames) (william hennebois) (1986).k7" size="30438" crc="6e479d64" sha1="ff995ce534a8efdbd20ceae504b9432e25c819c2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sortilegc" cloneof="sortileg" supported="no">
+		<description>Sortileges (KCI Format)</description>
+		<year>1986</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="278906">
+				<rom name="sortil.kci" size="278906" crc="84d54397" sha1="8a74f5495a9995a02afdb2a8ae4781581e49f456" offset="0" />
 			</dataarea>
 		</part>
 	</software>
