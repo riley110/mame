@@ -582,6 +582,25 @@
 		</part>
 	</software>
 
+	<software name="modecls">
+		<description>ModeCLS</description>
+		<year>200?</year>
+		<publisher>Patrice Lapierre</publisher>
+
+		<part name="cass1" interface="mc10_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="599">
+				<rom name="modecls.cas" size="599" crc="142dfb23" sha1="0756c4dd6ad36501ff5746cf393dc315454b9017" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mc10_cass">
+		<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="803">
+				<rom name="modecls2.cas" size="803" crc="9bc5e1b5" sha1="050811c3b66787bf90dd461c998922cde902b998" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="multipli">
 		<description>Multiplications - Casse-Tete</description>
 		<year>1984</year>
