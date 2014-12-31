@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<softwarelist name="exeltel_flop" description="Exelvision Exeltel floppies">
+
+	<software name="citadele">
+		<description>Citadelle</description>
+		<year>2011</year>
+		<publisher>GPA</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="655360">
+				<rom name="citadelle (gpa) (tom et jerry) (2011) (exeltel).fd" size="655360" crc="64f7c880" sha1="4dbecd6db347e1ef49999ae019d3e99dbf6dade1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="skyrim">
+		<description>Skyrim Slideshow</description>
+		<year>2012</year>
+		<publisher>6502man</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="655360">
+				<rom name="skyrim slideshow (6502man) (2012) (exeltel).fd" size="655360" crc="db166be3" sha1="8487900d45a958dd3b8520b2187fa4e6acee960a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="transylv">
+		<description>Transylvania</description>
+		<year>2012</year>
+		<publisher>6502man - Jester</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="655360">
+				<rom name="transylvania (6502man, jester) (2012) (exeltel).fd" size="655360" crc="891d7942" sha1="c9dc6ac3eaf82b2b78758b0245a04bbbe31644a9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>
