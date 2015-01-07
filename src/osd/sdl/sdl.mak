@@ -77,6 +77,7 @@ USE_DISPATCH_GL = 1
 # change for custom OS X installations
 SDL_FRAMEWORK_PATH = /Library/Frameworks/
 
+# uncomment to use SDL1.2 (depracated)
 # SDL_LIBVER = sdl
 
 ###########################################################################
@@ -321,7 +322,7 @@ endif
 
 ifeq ($(TARGETOS),win32)
 BASE_TARGETOS = win32
-SYNC_IMPLEMENTATION = win32
+SYNC_IMPLEMENTATION = windows
 NO_X11 = 1
 NO_USE_XINPUT = 1
 DEFS += -DSDLMAME_WIN32 -DX64_WINDOWS_ABI
@@ -340,6 +341,7 @@ LDFLAGS += -municode
 ifndef NO_USE_QTDEBUG
 QT_INSTALL_HEADERS = $(shell qmake -query QT_INSTALL_HEADERS)
 INCPATH += -I$(QT_INSTALL_HEADERS)/QtCore -I$(QT_INSTALL_HEADERS)/QtGui -I$(QT_INSTALL_HEADERS)
+BASELIBS += -lcomdlg32 -loleaut32 -limm32 -lwinspool -lmsimg32 -lole32 -luuid -lws2_32 -lshell32 -lkernel32
 LIBS += -L$(shell qmake -query QT_INSTALL_LIBS) -lqtmain -lQtGui4 -lQtCore4 -lcomdlg32 -loleaut32 -limm32 -lwinspool -lmsimg32 -lole32 -luuid -lws2_32 -lshell32 -lkernel32
 endif
 endif
@@ -389,7 +391,7 @@ endif
 SDLSRC = $(SRC)/osd/$(OSD)
 SDLOBJ = $(OBJ)/osd/$(OSD)
 
-OBJDIRS += $(SDLOBJ)
+OBJDIRS += $(SDLOBJ) $(OSDOBJ)/modules/sync
 
 #-------------------------------------------------
 # OSD core library
@@ -403,8 +405,13 @@ OSDCOREOBJS = \
 	$(SDLOBJ)/sdlsocket.o   \
 	$(SDLOBJ)/sdlmisc_$(BASE_TARGETOS).o    \
 	$(SDLOBJ)/sdlos_$(SDLOS_TARGETOS).o \
-	$(SDLOBJ)/sdlsync_$(SYNC_IMPLEMENTATION).o     \
-	$(SDLOBJ)/sdlwork.o
+	$(OSDOBJ)/modules/sync/sync_$(SYNC_IMPLEMENTATION).o
+
+ifdef NOASM
+OSDCOREOBJS += $(OSDOBJ)/modules/sync/work_mini.o
+else
+OSDCOREOBJS += $(OSDOBJ)/modules/sync/work_osd.o
+endif
 
 # any "main" must be in LIBOSD or else the build will fail!
 # for the windows build, we just add it to libocore as well.
@@ -498,8 +505,10 @@ ifndef MACOSX_USE_LIBSDL
 # Compile using framework (compile using libSDL is the exception)
 ifeq ($(SDL_LIBVER),sdl2)
 LIBS += -F$(SDL_FRAMEWORK_PATH) -framework SDL2 -framework Cocoa -framework OpenGL -lpthread
+BASELIBS += -F$(SDL_FRAMEWORK_PATH) -framework SDL2 -framework Cocoa -framework OpenGL -lpthread
 else
 LIBS += -F$(SDL_FRAMEWORK_PATH) -framework SDL -framework Cocoa -framework OpenGL -lpthread
+BASELIBS += -F$(SDL_FRAMEWORK_PATH) -framework SDL -framework Cocoa -framework OpenGL -lpthread
 endif
 INCPATH += -F$(SDL_FRAMEWORK_PATH)
 else
@@ -557,6 +566,7 @@ INCPATH += `$(SDL_CONFIG) --cflags  | sed -e 's:/SDL[2]*::' -e 's:\(-D[^ ]*\)::g
 endif
 CCOMFLAGS += `$(SDL_CONFIG) --cflags  | sed -e 's:/SDL[2]*::' -e 's:\(-I[^ ]*\)::g'`
 
+BASELIBS += `$(SDL_CONFIG) --libs`
 LIBS += `$(SDL_CONFIG) --libs`
 
 ifeq ($(SDL_LIBVER),sdl2)
@@ -579,6 +589,7 @@ endif
 
 # libs that Haiku doesn't want but are mandatory on *IX
 ifneq ($(TARGETOS),haiku)
+BASELIBS += -lm -lutil -lpthread
 LIBS += -lm -lutil -lpthread
 endif
 
@@ -647,11 +658,12 @@ endif
 
 ifeq ($(SDL_LIBVER),sdl2)
 LIBS += -lSDL2 -lImm32 -lversion -lole32 -loleaut32 -static
+BASELIBS += -lImm32 -lversion -lole32 -loleaut32 -static
 else
 LIBS += -lSDL -static
 endif
 LIBS += -luser32 -lgdi32 -lddraw -ldsound -ldxguid -lwinmm -ladvapi32 -lcomctl32 -lshlwapi
-
+BASELIBS += -luser32 -lgdi32 -lddraw -ldsound -ldxguid -lwinmm -ladvapi32 -lcomctl32 -lshlwapi
 endif   # Win32
 
 #-------------------------------------------------
@@ -735,6 +747,9 @@ else
 # Default libs
 DEFS += -DSDLMAME_X11
 LIBS += -lX11 -lXinerama
+ifneq ($(SDL_LIBVER),sdl2)
+BASELIBS += -lX11
+endif
 
 # The newer debugger uses QT
 ifndef NO_USE_QTDEBUG
@@ -845,7 +860,7 @@ TESTKEYSOBJS = \
 
 testkeys$(EXE): $(TESTKEYSOBJS) $(LIBUTIL) $(LIBOCORE) $(SDLUTILMAIN)
 	@echo Linking $@...
-	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
+	$(LD) $(LDFLAGS) $^ $(BASELIBS) -o $@
 
 #-------------------------------------------------
 # clean up

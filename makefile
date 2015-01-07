@@ -291,15 +291,6 @@ ifdef SANITIZE
 SYMBOLS = 1
 endif
 
-# specify a default optimization level if none explicitly stated
-ifndef OPTIMIZE
-ifndef SYMBOLS
-OPTIMIZE = 3
-else
-OPTIMIZE = 0
-endif
-endif
-
 # profiler defaults to on for DEBUG builds
 ifdef DEBUG
 ifndef PROFILER
@@ -307,7 +298,6 @@ PROFILER = 1
 endif
 endif
 
-# TODO: also move it up, so it isn't optimized by default?
 # allow gprof profiling as well, which overrides the internal PROFILER
 # also enable symbols as it is useless without them
 ifdef PROFILE
@@ -315,6 +305,15 @@ PROFILER =
 SYMBOLS = 1
 ifndef SYMLEVEL
 SYMLEVEL = 1
+endif
+endif
+
+# specify a default optimization level if none explicitly stated
+ifndef OPTIMIZE
+ifndef SYMBOLS
+OPTIMIZE = 3
+else
+OPTIMIZE = 0
 endif
 endif
 
@@ -340,8 +339,14 @@ ifeq ($(TARGETOS),os2)
 EXE = .exe
 endif
 
-ifndef BUILD_EXE
-BUILD_EXE = $(EXE)
+# extension for build tools
+BUILD_EXE = 
+
+ifeq ($(OS),Windows_NT)
+BUILD_EXE = .exe
+endif
+ifneq ($(OS2_SHELL),)
+BUILD_EXE = .exe
 endif
 
 # compiler, linker and utilities
@@ -350,7 +355,7 @@ AR = @ar
 CC = @gcc
 LD = @g++
 endif
-MD = -mkdir$(EXE)
+MD = -mkdir$(BUILD_EXE)
 RM = @rm -f
 OBJDUMP = @objdump
 PYTHON = @python
@@ -485,6 +490,25 @@ ifdef FASTDEBUG
 DEFS += -DMAME_DEBUG_FAST
 endif
 
+# add a define identifying the target osd
+
+ifeq ($(OSD),sdl)
+DEFS += -DOSD_SDL
+else
+ifeq ($(OSD),windows)
+DEFS += -DOSD_WINDOWS
+else
+ifeq ($(OSD),winui)
+DEFS += -DOSD_WINDOWS
+else
+ifeq ($(OSD),osdmini)
+DEFS += -DOSD_MINI
+else
+$(error Unknown OSD)
+endif
+endif
+endif
+endif
 
 #-------------------------------------------------
 # compile flags

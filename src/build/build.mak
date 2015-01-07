@@ -31,7 +31,7 @@ PNG2BDC = $(PNG2BDC_TARGET)
 VERINFO = $(VERINFO_TARGET)
 
 ifneq ($(TERM),cygwin)
-ifeq ($(TARGETOS),win32)
+ifeq ($(OS),Windows_NT)
 MAKEDEP = $(subst /,\,$(MAKEDEP_TARGET))
 MAKEMAK = $(subst /,\,$(MAKEMAK_TARGET))
 MAKELIST = $(subst /,\,$(MAKELIST_TARGET))
@@ -64,7 +64,7 @@ MAKEDEPOBJS = \
 
 $(MAKEDEP_TARGET): $(MAKEDEPOBJS) $(LIBOCORE) $(ZLIB)
 	@echo Linking $@...
-	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
+	$(LD) $(LDFLAGS) $^ $(BASELIBS) -o $@
 
 
 
@@ -83,7 +83,7 @@ MAKEMAKOBJS = \
 
 $(MAKEMAK_TARGET): $(MAKEMAKOBJS) $(LIBOCORE) $(ZLIB)
 	@echo Linking $@...
-	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
+	$(LD) $(LDFLAGS) $^ $(BASELIBS) -o $@
 
 
 
@@ -102,7 +102,7 @@ MAKELISTOBJS = \
 
 $(MAKELIST_TARGET): $(MAKELISTOBJS) $(LIBOCORE) $(ZLIB)
 	@echo Linking $@...
-	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
+	$(LD) $(LDFLAGS) $^ $(BASELIBS) -o $@
 
 
 
@@ -122,7 +122,7 @@ PNG2BDCOBJS = \
 
 $(PNG2BDC_TARGET): $(PNG2BDCOBJS) $(LIBOCORE) $(ZLIB)
 	@echo Linking $@...
-	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
+	$(LD) $(LDFLAGS) $^ $(BASELIBS) -o $@
 
 
 
@@ -135,7 +135,7 @@ VERINFOOBJS = \
 
 $(VERINFO_TARGET): $(VERINFOOBJS) $(LIBOCORE)
 	@echo Linking $@...
-	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
+	$(LD) $(LDFLAGS) $^ $(BASELIBS) -o $@
 
 else
 #-------------------------------------------------

@@ -244,8 +244,8 @@ def EmitGroup04(f,funcname, opname, opexecute, opwrite, opwrite_alt, ignore_a, b
         EmitGroup04_Flaghandler(f,funcname,opname,flagcondition,flaghandler)
         print >>f, "	return m_pc + (size >> 0);"
         print >>f, "}"
-        print >>f, ""
-        print >>f, ""
+    print >>f, ""
+    print >>f, ""
     # the mode 0x11 m0 handler    
     print >>f, "ARCOMPACT_RETTYPE arcompact_device::arcompact_handle%s_p11_m0(OPS_32)" % (funcname)
     if ignore_a == 2:
@@ -283,8 +283,8 @@ def EmitGroup04(f,funcname, opname, opexecute, opwrite, opwrite_alt, ignore_a, b
         EmitGroup04_Flaghandler(f,funcname,opname,flagcondition,flaghandler)
         print >>f, "	return m_pc + (size >> 0);"
         print >>f, "}"
-        print >>f, ""
-        print >>f, ""
+    print >>f, ""
+    print >>f, ""
 
 
 # xxx_S  c, b, u3  format opcodes (note c is destination)
@@ -305,6 +305,8 @@ def EmitGroup0d(f,funcname, opname, opexecute, opwrite):
     print >>f, ""
     print >>f, "	return m_pc + (2 >> 0);"
     print >>f, "}"
+    print >>f, ""
+    print >>f, ""
 
 
 # xxx_S b <- b,c format opcodes
@@ -324,6 +326,8 @@ def EmitGroup0f(f,funcname, opname, opexecute, opwrite):
     print >>f, ""
     print >>f, "	return m_pc + (2 >> 0);"
     print >>f, "}"
+    print >>f, ""
+    print >>f, ""
 
 
 #  xxx_S b, b, u5 format opcodes
@@ -377,7 +381,8 @@ EmitGroup04(f, "04_17", "SUB1", "UINT32 result = b - (c << 1);",          "m_reg
 EmitGroup04(f, "04_18", "SUB2", "UINT32 result = b - (c << 2);",          "m_regs[areg] = result;", "m_regs[breg] = result;", 0,0, -1, EmitGroup04_unsupported_Flags  )
 EmitGroup04(f, "04_19", "SUB3", "UINT32 result = b - (c << 3);",          "m_regs[areg] = result;", "m_regs[breg] = result;", 0,0, -1, EmitGroup04_unsupported_Flags  )
 
-EmitGroup04(f, "04_2b", "SR", "WRITEAUX(c,b);", "", "", 1,0, -1, EmitGroup04_unsupported_Flags  ) # this can't be conditional (todo)
+EmitGroup04(f, "04_2a", "LR", "m_regs[breg] = READAUX(c);", "", "", 1,1, -1, EmitGroup04_no_Flags  ) # this can't be conditional (todo)
+EmitGroup04(f, "04_2b", "SR", "WRITEAUX(c,b);", "", "", 1,0, -1, EmitGroup04_no_Flags  ) # this can't be conditional (todo)
 
 
 
@@ -385,7 +390,10 @@ EmitGroup04(f, "05_00", "ASL", "UINT32 result = b << (c&0x1f);", "m_regs[areg] =
 EmitGroup04(f, "05_01", "LSR", "UINT32 result = b >> (c&0x1f);", "m_regs[areg] = result;", "m_regs[breg] = result;", 0,0, -1, EmitGroup04_unsupported_Flags  )
 
 # the 04_2f subgroup uses the same encoding, but the areg is already used as sub-opcode select, so any modes relying on areg bits for other reasons (sign, condition) (modes 10, 11m0, 11m1) are illegal.  the destination is also breg not areg
-EmitGroup04(f, "04_2f_02", "LSR1", "UINT32 result = c >> 1;",          "m_regs[breg] = result;","", 2,1, -1, EmitGroup04_Handle_NZC_LSR1_Flags  ) # no alt handler (invalid path)
+EmitGroup04(f, "04_2f_02", "LSR1", "UINT32 result = c >> 1;",                                                                                                                             "m_regs[breg] = result;","", 2,1, -1, EmitGroup04_Handle_NZC_LSR1_Flags  ) # no alt handler (invalid path)
+EmitGroup04(f, "04_2f_03", "ROR", "int shift = 1; UINT32 mask = (1 << (shift)) - 1; mask <<= (32-shift); UINT32 result = ((c >> shift) & ~mask) | ((c << (32-shift)) & mask);",          "m_regs[breg] = result;","", 2,1, -1, EmitGroup04_Handle_NZC_LSR1_Flags  )
+
+
 EmitGroup04(f, "04_2f_07", "EXTB", "UINT32 result = c & 0x000000ff;",  "m_regs[breg] = result;","", 2,1, -1, EmitGroup04_unsupported_Flags  ) # ^
 EmitGroup04(f, "04_2f_08", "EXTW", "UINT32 result = c & 0x0000ffff;",  "m_regs[breg] = result;","", 2,1, -1, EmitGroup04_unsupported_Flags  ) # ^
 
