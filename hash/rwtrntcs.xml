@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-
 <softwarelist name="rwtrntcs" description="Rowtron Television Computer System cartridges">
 
 	<!-- Same as VC4000 Cassette 3 -->
@@ -9,6 +8,7 @@
 		<year>19??</year>
 		<publisher>Rowtron?</publisher>
 		<info name="serial" value="No.1"/>
+
 		<part name="cart" interface="vc4000_cart">
 			<feature name="slot" value="std" />
 			<dataarea name="rom" size="2048">
@@ -22,6 +22,7 @@
 		<year>19??</year>
 		<publisher>Rowtron?</publisher>
 		<info name="serial" value="No.26"/>
+
 		<part name="cart" interface="vc4000_cart">
 			<feature name="slot" value="std" />
 			<dataarea name="rom" size="2048">

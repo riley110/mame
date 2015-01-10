@@ -20,12 +20,13 @@
 		<publisher>Commodore</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="174848">
 				<rom name="execudesk1.d64" size="174848" crc="1aa9a9aa" sha1="9445cc89d08215d173e84841d3b01ed327d8347c" offset="0" status="baddump" />
 			</dataarea>
 		</part>
-
 		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="174848">
 				<rom name="execudesk2.d64" size="174848" crc="9553ea18" sha1="01ed09de6635522ca69e7d2784c81d3a06cee1c3" offset="0" status="baddump" />
 			</dataarea>

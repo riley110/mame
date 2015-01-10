@@ -17,7 +17,7 @@
 	</software>
 
 	<software name="cpm">
-		<description>CP/M 2.2</description>
+		<description>CP/M (v2.2)</description>
 		<year>1982</year>
 		<publisher>Xerox</publisher>
 
@@ -27,7 +27,6 @@
 				<rom name="820-ii_cpm22.imd" size="138643" crc="60e99303" sha1="85730f4d31aaed44755056d9c6c164df854b4fac" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Diagnostic Work Copy"/>
 			<dataarea name="flop" size="38342">
@@ -37,7 +36,7 @@
 	</software>
 
 	<software name="msdos">
-		<description>MS-DOS 2.0</description>
+		<description>MS-DOS (v2.0)</description>
 		<year>1982</year>
 		<publisher>Xerox</publisher>
 
@@ -47,35 +46,30 @@
 				<rom name="bootdisk.imd" size="338050" crc="f11a529a" sha1="f0f85d2afca5a16caec0a788a9baaba53d877432" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Utility and Macro Asm"/>
 			<dataarea name="flop" size="288789">
 				<rom name="dos_util_asm.imd" size="288789" crc="00a3a9c6" sha1="b427cfbd249a792f880b237650b506d25dd64b36" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="flop3" interface="floppy_5_25">
 			<feature name="part_id" value="Util Macro Asssmb DSDD"/>
 			<dataarea name="flop" size="289509">
 				<rom name="msdutil.imd" size="289509" crc="3a9a74f9" sha1="bc4196d7ccd1fb5c4aaf5f5b1bcd5682b8a1744a" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="flop4" interface="floppy_5_25">
 			<feature name="part_id" value="MS-Load Boot CP/M Boot Track"/>
 			<dataarea name="flop" size="266065">
 				<rom name="msload.imd" size="266065" crc="0be6d91d" sha1="6bda99437cc072505ab4d3b9e65a836bea2a8e97" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="flop5" interface="floppy_5_25">
 			<feature name="part_id" value="Sys Disk"/>
 			<dataarea name="flop" size="344492">
 				<rom name="mssys.imd" size="344492" crc="7e452981" sha1="48fcf83199b452b869c2eb37b29b7783010e5da0" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="flop6" interface="floppy_5_25">
 			<feature name="part_id" value="Utilities"/>
 			<dataarea name="flop" size="306651">
@@ -131,7 +125,6 @@
 				<rom name="xpro.imd" size="159100" crc="2761eeae" sha1="9f8942123ddfdc77f190ae55d792cbe789f89467" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="XPro Source List"/>
 			<dataarea name="flop" size="198224">

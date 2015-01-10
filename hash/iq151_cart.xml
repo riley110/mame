@@ -1,11 +1,12 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-
 <softwarelist name="iq151_cart" description="IQ-151 cartridges">
+
 	<software name="basic6">
 		<description>BASIC 6</description>
 		<year>198?</year>
 		<publisher>ZPA Novy Bor</publisher>
+
 		<part name="cart" interface="iq151_cart">
 			<feature name="slot" value="basic6"/>
 			<dataarea name="rom" size="0x2000">
@@ -18,6 +19,7 @@
 		<description>BASIC-G</description>
 		<year>198?</year>
 		<publisher>ZPA Novy Bor</publisher>
+
 		<part name="cart" interface="iq151_cart">
 			<feature name="slot" value="basicg" />
 			<dataarea name="rom" size="0x3000">
@@ -28,30 +30,29 @@
 	</software>
 
 	<software name="amos">
-		<description>AMOS v4.1</description>
+		<description>AMOS (v4.1)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<info name="usage" value="Execute C8000 in the monitor"/>
-		<part name="cart1" interface="iq151_cart">
-			<!-- AMOS, editor and Pascal run-time -->
+
+		<part name="cart1" interface="iq151_cart">	<!-- AMOS, editor and Pascal run-time -->
 			<feature name="slot" value="amos1" />
 			<dataarea name="rom" size="0x4000">
 				<rom name="amos_pascal.rom" size="0x4000" crc="e6409320" sha1="1da85d3382e3313a79b3e1384d60db48ea350d52" offset="0x00000" />
 			</dataarea>
 		</part>
-		<part name="cart2" interface="iq151_cart">
-			<!-- Pascal compiler -->
+		<part name="cart2" interface="iq151_cart">	<!-- Pascal compiler -->
 			<feature name="slot" value="amos2" />
 			<dataarea name="rom" size="0x4000">
 				<rom name="amos_pascal1.rom" size="0x4000" crc="f6709004" sha1="333340f3e5c20eecd9eb5dcea03b02372e61eeec" offset="0x00000" />
 			</dataarea>
 		</part>
-		<part name="cart3" interface="iq151_cart">
-			<!-- Debugger and assembler -->
+		<part name="cart3" interface="iq151_cart">	<!-- Debugger and assembler -->
 			<feature name="slot" value="amos3" />
 			<dataarea name="rom" size="0x4000">
 				<rom name="amos_assembler.rom" size="0x4000" crc="fea64786" sha1="c531d3d857eea7384ef69c24ce91f576feafa8b0" offset="0x00000" />
 			</dataarea>
 		</part>
 	</software>
+
 </softwarelist>

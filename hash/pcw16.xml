@@ -3,9 +3,10 @@
 <softwarelist name="pcw16" description="Amstrad PCW16 disk images">
 
 	<software name="osrd112">
-		<description>OS Rescue Disk 1.12</description>
+		<description>OS Rescue Disk (v1.12)</description>
 		<year>1997</year>
 		<publisher>Amstrad</publisher>
+
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1474560">
 				<rom name="os rescue disk 1.12.dsk" size="1474560" crc="bb8fb2d8" sha1="623ec354522d87b038d383e0b2a622375efc0f15" offset="0" />
@@ -23,7 +24,6 @@
 			</dataarea>
 		</part>
 	</software>
-
 
 	<software name="cpm22dd">
 		<description>CP/M 2.2 Program Disk (720K)</description>
@@ -46,7 +46,6 @@
 			</dataarea>
 		</part>
 	</software>
-
 
 	<software name="cpm31sod">
 		<description>CP/M 3.1 Start-of-day Disk</description>

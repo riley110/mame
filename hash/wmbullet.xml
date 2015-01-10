@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-
 <softwarelist name="wmbullet" description="WaveMate Bullet disk images">
 
 	<software name="cpm22">
@@ -27,8 +26,8 @@
 		</part>
 	</software>
 
-	<software name="wmate3">
-		<description>CP/M 3.0 (alt 1)</description>
+	<software name="cpm30a" cloneof="cpm30">
+		<description>CP/M 3.0 (Alt)</description>
 		<year>198?</year>
 		<publisher>Digital Research Inc.</publisher>
 
@@ -39,8 +38,8 @@
 		</part>
 	</software>
 
-	<software name="wmate4">
-		<description>CP/M 3.0 (alt 2)</description>
+	<software name="cpm30b" cloneof="cpm30">
+		<description>CP/M 3.0 (Alt 2)</description>
 		<year>198?</year>
 		<publisher>Digital Research Inc.</publisher>
 
@@ -50,4 +49,5 @@
 			</dataarea>
 		</part>
 	</software>
+
 </softwarelist>

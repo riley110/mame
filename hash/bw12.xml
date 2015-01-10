@@ -4,7 +4,7 @@
 <softwarelist name="bw12" description="Bondwell 12 disk images">
 
 	<software name="cpm22">
-		<description>CP/M 2.2</description>
+		<description>CP/M (v2.2)</description>
 		<year>1984</year>
 		<publisher>Digital Research Inc.</publisher>
 
@@ -14,7 +14,6 @@
 				<rom name="bw12cpm2.imd" size="142458" crc="6858234c" sha1="72981d1616402e5071a5364041694f156eafb3c5" offset="0"/>
 			</dataarea>
 		</part>
-
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Virtual Disk"/>
 			<dataarea name="flop" size="166939">

@@ -2,7 +2,6 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="nes_kstudio" description="Nintendo Entertainment System - Karaoke Studio expansion cartridges">
 
-
 	<software name="top20v1" supported="partial">
 		<description>Karaoke Studio - Senyou Cassette - Top Hit 20 Vol. 1 (Jpn)</description>
 		<year>1987</year>
@@ -10,6 +9,7 @@
 		<info name="serial" value="BA-KARAOKE-VOL1"/>
 		<info name="release" value="19871001"/>
 		<info name="alt_title" value="カラオケスタジオ 専用カセット トップヒット20 VOL. 1"/>
+
 		<part name="cart" interface="ks_cart">
 			<feature name="slot" value="ks_exp" />
 			<dataarea name="rom" size="131072">
@@ -25,6 +25,7 @@
 		<info name="serial" value="BA-KARAOKE-VOL2"/>
 		<info name="release" value="19880218"/>
 		<info name="alt_title" value="カラオケスタジオ 専用カセット トップヒット20 VOL. 2"/>
+
 		<part name="cart" interface="ks_cart">
 			<feature name="slot" value="ks_exp" />
 			<dataarea name="rom" size="131072">

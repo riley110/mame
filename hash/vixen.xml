@@ -1,48 +1,48 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="vixen" description="Osborne 4 Vixen Disk Images">
+
 	<software name="system12">
 		<description>OSBORNE 4 System Disk</description>
 		<year>1985</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		<!-- Included on the disk: Wordstar, SuperCalc2, CP/M Utilities, MailMerge -->
+		<feature name="part_id" value="Disk 1 (Wordstar, SuperCalc2, CP/M Utilities, MailMerge)"/>
 		<!-- P/N: 3D49005-01 REV 1.2 03/20/85 -->
 			<dataarea name="flop" size="380287">
-				<rom name="disk1.imd" size="380287" crc="8fe4129b" sha1="3cbc937bd0b0c44dac98af0427ab4430f25a24f3" offset="0" />
+				<rom name="3d49005-01.imd" size="380287" crc="8fe4129b" sha1="3cbc937bd0b0c44dac98af0427ab4430f25a24f3" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="flop2" interface="floppy_5_25">
-		<!-- Included on the disk: MEDIA MASTER, MBASIC, OSBOARD -->
+		<feature name="part_id" value="Disk 2 (MEDIA MASTER, MBASIC, OSBOARD)"/>
 		<!-- P/N: 3D490005-02 REV 1.2 03/20/85 -->
 			<dataarea name="flop" size="360899">
-				<rom name="disk2.imd" size="360899" crc="ccadbac9" sha1="4987b41ced5dd23145f6e3f63c8c30e16c79c400" offset="0" />
+				<rom name="3d490005-02.imd" size="360899" crc="ccadbac9" sha1="4987b41ced5dd23145f6e3f63c8c30e16c79c400" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="flop3" interface="floppy_5_25">
-		<!-- Included on the disk: SUPERCALC2 Templates -->
+		<feature name="part_id" value="Disk 3 (SUPERCALC2 Templates)"/>
 		<!-- P/N: 3D490005-03 REV 1.2 03/20/85 -->
 			<dataarea name="flop" size="195152">
-				<rom name="disk3.imd" size="195152" crc="64141c47" sha1="79aedfc6f2bd8f6bc78a2a7cb69b393aca2339ad" offset="0" />
+				<rom name="3d490005-03.imd" size="195152" crc="64141c47" sha1="79aedfc6f2bd8f6bc78a2a7cb69b393aca2339ad" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="cpm">
-		<description>Vixen CPM</description>
+		<description>Vixen CP/M</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1 (System)"/>
 			<dataarea name="flop" size="69161">
 				<rom name="cpm_system.imd" size="69161" crc="54629cd6" sha1="670690338541246de37c19887ad8a7644d95abdd" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2 (Utilities)"/>
 			<dataarea name="flop" size="50987">
 				<rom name="cpm_utilities.imd" size="50987" crc="4f3f644b" sha1="ba7ca8ade978cc2c17443cbb9018c6d0aeb4b330" offset="0" />
 			</dataarea>
@@ -62,9 +62,9 @@
 	</software>
 
 	<software name="turnkey">
-		<description>Turnkey Rev 2.0</description>
+		<description>Turnkey (Rev 2.0)</description>
 		<year>1985</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<publisher>B &amp; B Engineering</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="14964">
@@ -74,27 +74,28 @@
 	</software>
 
 	<software name="wordstar">
-		<description>WordStar</description>
-		<year>19??</year>
+		<description>WordStar (v3.30)</description>
+		<year>1983</year>
 		<publisher>MicroPro International</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="382201">
 				<rom name="ws disk1.imd" size="382201" crc="def979cd" sha1="9dd9d1d4c7e64933629e675b00069f738a2cdd49" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="177824">
 				<rom name="ws disk2.imd" size="177824" crc="3adc8b8e" sha1="5ffa2590b5a8f8e4a95fbb8d2663e254e04db759" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="vixfix">
-		<description>Vixen Fix Program</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+	<software name="occ4fix">
+		<description>OCC4 Fix Utility (Rev. 1.0)</description>
+		<year>1985</year>
+		<publisher>Osborne</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="213413">
@@ -104,7 +105,7 @@
 	</software>
 
 	<software name="vixdemo">
-		<description>Vixen Demonstration Program Version 1.01</description>
+		<description>Vixen Demonstration Program (v1.01)</description>
 		<year>1985</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -116,9 +117,9 @@
 	</software>
 
 	<software name="surpac">
-		<description>Sur-pac Demo Version 1.0</description>
+		<description>Sur-pac Demo (v1.0)</description>
 		<year>1982</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<publisher>J.R. Henry</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="99156">

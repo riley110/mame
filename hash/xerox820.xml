@@ -17,7 +17,7 @@
 	</software>
 
 	<software name="cpm">
-		<description>CP/M 3.0</description>
+		<description>CP/M (v3.0)</description>
 		<year>1981</year>
 		<publisher>Xerox</publisher>
 		<info name="serial" value="130S22100 (DS)" />
@@ -40,13 +40,11 @@
 				<rom name="analyst-1.imd" size="72026" crc="776ad4d8" sha1="04c3bb656aaded600400273da8c61285714739de" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="flop2" interface="floppy_5_25">
 			<dataarea name="flop" size="74566">
 				<rom name="analyst-2.imd" size="74566" crc="7ea3f1dd" sha1="bea4e68362259bc84d34f5681d0d1293460ab9d6" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="flop3" interface="floppy_5_25">
 			<dataarea name="flop" size="73169">
 				<rom name="analyst-3.imd" size="73169" crc="fe6f3be4" sha1="f60baec7ef8c08a0ed5b255442c1760a7557848c" offset="0" />
@@ -78,7 +76,6 @@
 				<rom name="plus2_system.imd" size="250062" crc="21751e40" sha1="6db8c75fc9c81b00f94bf33ae07f398cba156275" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Plus2 Utilities"/>
 			<dataarea name="flop" size="61787">
@@ -98,14 +95,12 @@
 				<rom name="plus2master.imd" size="251088" crc="30ca0981" sha1="30bc6e16df2de33d05cbd4470db0d2970677e205" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Plus2 System Disk"/>
 			<dataarea name="flop" size="250070">
 				<rom name="plus2_sy.imd" size="250070" crc="36d7c537" sha1="f32b0f57c799d2b2160f193accbd3a8dea8aedf8" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="flop3" interface="floppy_5_25">
 			<feature name="part_id" value="Plus2 Utilities"/>
 			<dataarea name="flop" size="77662">

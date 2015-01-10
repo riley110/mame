@@ -1,15 +1,14 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-
 <softwarelist name="vip" description="RCA VIP cassettes">
 
+	<!--
+	VP701 FLOATING POINT BASIC VER 2.2
+	1-PAGE BOOTSTRAP         'B'-BASIC
+	COPYRIGHT 1980            RCA CORP
+	-->
 	<software name="fpbasic">
-		<!--
-		VP701 FLOATING POINT BASIC VER 2.2
-		1-PAGE BOOTSTRAP         'B'-BASIC
-		COPYRIGHT 1980            RCA CORP
-		-->
-		<description>Floating Point BASIC</description>
+		<description>Floating Point BASIC (v2.2)</description>
 		<year>1980</year>
 		<publisher>RCA</publisher>
 
@@ -19,7 +18,6 @@
 				<rom name="bootstrap.wav" size="1432236" crc="c3a18ac7" sha1="ab8aac817ca0d9e30fc0d345af11e21fdd0eb5d2" offset="0"/>
 			</dataarea>
 		</part>
-
 		<part name="cass2" interface="vip_cass">
 			<feature name="part_id" value="BASIC"/>
 			<dataarea name="cass" size="24276228">

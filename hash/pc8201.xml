@@ -1,16 +1,12 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<!--
-Option ROM booting instructions:
-
-1. Start BASIC
-2. Type POKE 63911,1:EXEC 62394
--->
 <softwarelist name="pc8201" description="NEC PC-8201(A) Option ROMs">
+
 	<software name="r2c">
 		<description>ROM2/Cleuseau</description>
 		<year>198?</year>
 		<publisher>Polar Engineering</publisher>
+		<info name="usage" value="Start BASIC, then type POKE 63911,1:EXEC 62394"/>
 
 		<part name="cart" interface="pc8201_cart">
 			<dataarea name="rom" size="0x8000">
@@ -20,9 +16,10 @@ Option ROM booting instructions:
 	</software>
 
 	<software name="tword">
-		<description>T-Word with Sardine v1.33</description>
+		<description>T-Word with Sardine (v1.33)</description>
 		<year>1986</year>
 		<publisher>Traveling Software</publisher>
+		<info name="usage" value="Start BASIC, then type POKE 63911,1:EXEC 62394"/>
 
 		<part name="cart" interface="pc8201_cart">
 			<dataarea name="rom" size="0x8000">
@@ -32,9 +29,10 @@ Option ROM booting instructions:
 	</software>
 
 	<software name="tsdos">
-		<description>TS-DOS v4.00</description>
+		<description>TS-DOS (v4.00)</description>
 		<year>1987</year>
 		<publisher>Traveling Software</publisher>
+		<info name="usage" value="Start BASIC, then type POKE 63911,1:EXEC 62394"/>
 
 		<part name="cart" interface="pc8201_cart">
 			<dataarea name="rom" size="0x8000">
@@ -44,9 +42,10 @@ Option ROM booting instructions:
 	</software>
 
 	<software name="ur2">
-		<description>The Ultimate ROM II v2.11</description>
+		<description>The Ultimate ROM II (v2.11)</description>
 		<year>1986</year>
 		<publisher>Traveling Software</publisher>
+		<info name="usage" value="Start BASIC, then type POKE 63911,1:EXEC 62394"/>
 
 		<part name="cart" interface="pc8201_cart">
 			<dataarea name="rom" size="0x8000">
@@ -54,4 +53,5 @@ Option ROM booting instructions:
 			</dataarea>
 		</part>
 	</software>
+
 </softwarelist>
