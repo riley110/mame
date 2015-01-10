@@ -1,14 +1,19 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <!--
-Loading Tape BASIC:
+Loading Tape BASIC (aka BASIC Italiano-Inglese da Cassetta):
 
-1. Insert Tape 1 in cass1.
+Before using these instructions, make sure that the LX385 data date
+(configured in Game Configuration menu) matches the cassette data rate
+(in software description). 1200 bps is recommended as it is the fastest
+loading setting. This also applies to any other programs, BASIC or machine-language.
+
+1. Insert Tape 1 (Lettura) in cass1.
 2. Press Control-6, then press A.
 3. Press Play on tape control and watch it load (the numeric display especially looks cool!).
 4. After loading, clear the numeric display by pressing any key on the keypad.
 5. Enter 1000 on the keypad and press Control-4. A nice welcome screen should appear.
-6. Insert Tape 2 in cass1.
+6. Insert Tape 2 (BASIC) in cass1.
 7. Press Play on tape control, and watch it load again.
 8. After this a BASIC V 1.0 screen should appear. Success!
 
@@ -22,19 +27,19 @@ Loading Tape BASIC Programs
 <softwarelist name="z80ne_cass" description="Nuova Elettronica Z80NE cassettes">
 
 	<software name="tapebas">
-		<description>Tape BASIC Italian-English (v1.0, 300bps)</description>
+		<description>BASIC Italiano-Inglese da Cassetta (v1.0, 300bps)</description>
 		<year>198?</year>
-		<publisher>Nuova Elettronica</publisher>
+		<publisher>Nuova Elettronica - Studio LG Genova</publisher>
 		<info name="usage" value="See z80ne_cass.xml for loading instructions"/>
 
 		<part name="cass1" interface="z80ne_cass">
-		<feature name="part_id" value="Tape 1"/>
+		<feature name="part_id" value="Tape 1 (Lettura)"/>
 			<dataarea name="cass" size="2471412">
 				<rom name="basic 1' parte 300bps.wav" size="2471412" crc="4aa6746c" sha1="f4aa0edd0fe9397c51e21cf1ae1cdd166f8789c2" offset="0" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="z80ne_cass">
-		<feature name="part_id" value="Tape 2"/>
+		<feature name="part_id" value="Tape 2 (BASIC)"/>
 			<dataarea name="cass" size="9693228">
 				<rom name="basic 2' parte 300bps.wav" size="9693228" crc="ffa4fe39" sha1="d7bc385bb84017d9453b26c944ca4a6c58bd8014" offset="0" />
 			</dataarea>
@@ -42,19 +47,19 @@ Loading Tape BASIC Programs
 	</software>
 
 	<software name="tapebasa" cloneof="tapebas">
-		<description>Tape BASIC Italian-English (v1.0, 600bps)</description>
+		<description>BASIC Italiano-Inglese da Cassetta (v1.0, 600bps)</description>
 		<year>198?</year>
-		<publisher>Nuova Elettronica</publisher>
+		<publisher>Nuova Elettronica - Studio LG Genova</publisher>
 		<info name="usage" value="See z80ne_cass.xml for loading instructions"/>
 
 		<part name="cass1" interface="z80ne_cass">
-		<feature name="part_id" value="Tape 1"/>
+		<feature name="part_id" value="Tape 1 (Lettura)"/>
 			<dataarea name="cass" size="1566466">
 				<rom name="basic 1' parte 600bps.wav" size="1566466" crc="c323b144" sha1="961fe7cbd1dd80a706533f7f52c80582237fc7ed" offset="0" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="z80ne_cass">
-		<feature name="part_id" value="Tape 2"/>
+		<feature name="part_id" value="Tape 2 (BASIC)"/>
 			<dataarea name="cass" size="5177366">
 				<rom name="basic 2' parte 600bps.wav" size="5177366" crc="37eac04d" sha1="941d5d25253df6876e106e31bb5c76aae7540467" offset="0" />
 			</dataarea>
@@ -62,19 +67,19 @@ Loading Tape BASIC Programs
 	</software>
 
 	<software name="tapebasb" cloneof="tapebas">
-		<description>Tape BASIC Italian-English (v1.0, 1200bps)</description>
+		<description>BASIC Italiano-Inglese da Cassetta (v1.0, 1200bps)</description>
 		<year>198?</year>
-		<publisher>Nuova Elettronica</publisher>
+		<publisher>Nuova Elettronica - Studio LG Genova</publisher>
 		<info name="usage" value="See z80ne_cass.xml for loading instructions"/>
 
 		<part name="cass1" interface="z80ne_cass">
-		<feature name="part_id" value="Tape 1"/>
+		<feature name="part_id" value="Tape 1 (Lettura)"/>
 			<dataarea name="cass" size="1102980">
 				<rom name="basic 1' parte 1200bps.wav" size="1102980" crc="ce366f71" sha1="877c5ad33f6f5d502c950170bc1616f157526d43" offset="0" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="z80ne_cass">
-		<feature name="part_id" value="Tape 2"/>
+		<feature name="part_id" value="Tape 2 (BASIC)"/>
 			<dataarea name="cass" size="2908430">
 				<rom name="basic 2' parte 1200bps.wav" size="2908430" crc="5775a8a0" sha1="bc2a02739db5dfe2460c01ead167edb73a9cb921" offset="0" />
 			</dataarea>
