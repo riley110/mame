@@ -86,6 +86,9 @@ SDL_FRAMEWORK_PATH = /Library/Frameworks/
 OSDSRC = $(SRC)/osd
 OSDOBJ = $(OBJ)/osd
 
+# add a define identifying the target osd
+DEFS += -DOSD_SDL
+
 # default to SDL2 for non-OS/2, non-Emscripten builds now
 ifndef SDL_LIBVER
 ifneq ($(TARGETOS),os2)
@@ -331,7 +334,7 @@ SDLMAIN = $(SDLOBJ)/main.o
 # needed for unidasm
 LDFLAGS += -Wl,--allow-multiple-definition
 SDL_NETWORK = pcap
-INCPATH += -I$(SRC)/lib/winpcap
+INCPATH += -I$(3RDPARTY)/winpcap/Include
 
 # enable UNICODE
 DEFS += -Dmain=utf8_main -DUNICODE -D_UNICODE
@@ -391,7 +394,10 @@ endif
 SDLSRC = $(SRC)/osd/$(OSD)
 SDLOBJ = $(OBJ)/osd/$(OSD)
 
-OBJDIRS += $(SDLOBJ) $(OSDOBJ)/modules/sync
+OBJDIRS += $(SDLOBJ) \
+	$(OSDOBJ)/modules/sync \
+	$(OSDOBJ)/modules/lib \
+	$(OSDOBJ)/modules/midi \
 
 #-------------------------------------------------
 # OSD core library
@@ -405,6 +411,7 @@ OSDCOREOBJS = \
 	$(SDLOBJ)/sdlsocket.o   \
 	$(SDLOBJ)/sdlmisc_$(BASE_TARGETOS).o    \
 	$(SDLOBJ)/sdlos_$(SDLOS_TARGETOS).o \
+	$(OSDOBJ)/modules/lib/osdlib_$(SDLOS_TARGETOS).o \
 	$(OSDOBJ)/modules/sync/sync_$(SYNC_IMPLEMENTATION).o
 
 ifdef NOASM
@@ -426,12 +433,14 @@ OSDOBJS = \
 	$(SDLOBJ)/output.o \
 	$(SDLOBJ)/watchdog.o \
 
-ifeq ($(BASE_TARGETOS),win32)
-	OSDOBJS += $(OSDOBJ)/modules/sound/direct_sound.o
+ifdef NO_USE_MIDI
+	OSDOBJS += $(OSDOBJ)/modules/midi/none.o
+else
+	OSDOBJS += $(OSDOBJ)/modules/midi/portmidi.o
 endif
 
-ifdef NO_USE_MIDI
-DEFS += -DDISABLE_MIDI=1
+ifeq ($(BASE_TARGETOS),win32)
+	OSDOBJS += $(OSDOBJ)/modules/sound/direct_sound.o
 endif
 
 # Add SDL2.0 support
@@ -657,10 +666,11 @@ MOC = @moc
 endif
 
 ifeq ($(SDL_LIBVER),sdl2)
-LIBS += -lSDL2 -lImm32 -lversion -lole32 -loleaut32 -static
-BASELIBS += -lImm32 -lversion -lole32 -loleaut32 -static
+LIBS += -lSDL2 -limm32 -lversion -lole32 -loleaut32 -lws2_32 -static
+BASELIBS += -lSDL2 -limm32 -lversion -lole32 -loleaut32 -lws2_32 -static
 else
 LIBS += -lSDL -static
+BASELIBS += -lSDL -static
 endif
 LIBS += -luser32 -lgdi32 -lddraw -ldsound -ldxguid -lwinmm -ladvapi32 -lcomctl32 -lshlwapi
 BASELIBS += -luser32 -lgdi32 -lddraw -ldsound -ldxguid -lwinmm -ladvapi32 -lcomctl32 -lshlwapi

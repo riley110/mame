@@ -9,16 +9,15 @@
 ***************************************************************************/
 
 #include <limits>
-#include "lua/lua.hpp"
-#include "lua/lib/lualibs.h"
-#include "lua/bridge/LuaBridge.h"
+#include "lua.hpp"
+#include "luabridge/Source/LuaBridge/LuaBridge.h"
 #include <signal.h>
 #include "emu.h"
 #include "emuopts.h"
 #include "osdepend.h"
 #include "drivenum.h"
 #include "ui/ui.h"
-#include "web/mongoose.h"
+#include "mongoose/mongoose.h"
 
 //**************************************************************************
 //  LUA ENGINE
@@ -45,6 +44,9 @@ static lua_State *globalL = NULL;
 const char *const lua_engine::tname_ioport = "lua.ioport";
 lua_engine* lua_engine::luaThis = NULL;
 
+extern "C" {
+	int luaopen_lsqlite3(lua_State *L);
+}
 
 static void lstop(lua_State *L, lua_Debug *ar)
 {

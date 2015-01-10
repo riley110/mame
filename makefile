@@ -420,6 +420,9 @@ EMULATOR = $(FULLNAME)$(EXE)
 # all sources are under the src/ directory
 SRC = src
 
+# all 3rd party sources are under the 3rdparty/ directory
+3RDPARTY = 3rdparty
+
 # build the targets in different object dirs, so they can co-exist
 OBJ = obj/$(PREFIX)$(OSD)$(SUFFIX)$(SUFFIX64)$(SUFFIXDEBUG)$(SUFFIXPROFILE)
 
@@ -490,26 +493,6 @@ ifdef FASTDEBUG
 DEFS += -DMAME_DEBUG_FAST
 endif
 
-# add a define identifying the target osd
-
-ifeq ($(OSD),sdl)
-DEFS += -DOSD_SDL
-else
-ifeq ($(OSD),windows)
-DEFS += -DOSD_WINDOWS
-else
-ifeq ($(OSD),winui)
-DEFS += -DOSD_WINDOWS
-else
-ifeq ($(OSD),osdmini)
-DEFS += -DOSD_MINI
-else
-$(error Unknown OSD)
-endif
-endif
-endif
-endif
-
 #-------------------------------------------------
 # compile flags
 # CCOMFLAGS are common flags
@@ -540,6 +523,11 @@ CCOMFLAGS += -pipe
 # add -g if we need symbols, and ensure we have frame pointers
 ifdef SYMBOLS
 CCOMFLAGS += -g$(SYMLEVEL) -fno-omit-frame-pointer -fno-optimize-sibling-calls
+endif
+
+# we need to disable some additional implicit optimizations for profiling
+ifdef PROFILE
+CCOMFLAGS += -mno-omit-leaf-frame-pointer
 endif
 
 # add -v if we need verbose build information
@@ -654,6 +642,8 @@ INCPATH += \
 	-I$(OBJ)/emu/layout \
 	-I$(SRC)/lib/util \
 	-I$(SRC)/lib \
+	-I$(3RDPARTY) \
+	-I$(3RDPARTY)/lua/src \
 	-I$(SRC)/osd \
 	-I$(SRC)/osd/$(OSD) \
 
@@ -764,7 +754,7 @@ LIBS =
 
 # add expat XML library
 ifeq ($(BUILD_EXPAT),1)
-INCPATH += -I$(SRC)/lib/expat
+INCPATH += -I$(3RDPARTY)/expat/lib
 EXPAT = $(OBJ)/libexpat.a
 else
 LIBS += -lexpat
@@ -773,7 +763,7 @@ endif
 
 # add ZLIB compression library
 ifeq ($(BUILD_ZLIB),1)
-INCPATH += -I$(SRC)/lib/zlib
+INCPATH += -I$(3RDPARTY)/zlib
 ZLIB = $(OBJ)/libz.a
 else
 LIBS += -lz
@@ -792,7 +782,7 @@ endif
 
 # add jpeglib image library
 ifeq ($(BUILD_JPEGLIB),1)
-INCPATH += -I$(SRC)/lib/libjpeg
+INCPATH += -I$(3RDPARTY)/libjpeg
 JPEG_LIB = $(OBJ)/libjpeg.a
 else
 LIBS += -ljpeg
@@ -880,6 +870,13 @@ CDEFS = $(DEFS)
 # TODO: -x c++ should not be hard-coded
 CPPCHECKFLAGS = $(CDEFS) $(INCPATH) -x c++ --enable=style
 
+#-------------------------------------------------
+# sanity check OSD additions
+#-------------------------------------------------
+
+ifeq (,$(findstring -DOSD_,$(CDEFS)))
+$(error $(OSD).mak should have defined -DOSD_)
+endif
 
 #-------------------------------------------------
 # primary targets
@@ -999,9 +996,9 @@ $(OBJ)/%.lh: $(SRC)/%.lay $(SRC)/build/file2str.py
 	@echo Converting $<...
 	@$(PYTHON) $(SRC)/build/file2str.py $< $@ layout_$(basename $(notdir $<))
 
-$(OBJ)/%.fh: $(SRC)/%.png $(PNG2BDC_TARGET) $(SRC)/build/file2str.py
+$(OBJ)/%.fh: $(SRC)/%.png $(SRC)/build/png2bdc.py $(SRC)/build/file2str.py
 	@echo Converting $<...
-	@$(PNG2BDC) $< $(OBJ)/temp.bdc
+	@$(PYTHON) $(SRC)/build/png2bdc.py $< $(OBJ)/temp.bdc
 	@$(PYTHON) $(SRC)/build/file2str.py $(OBJ)/temp.bdc $@ font_$(basename $(notdir $<)) UINT8
 
 $(DRIVLISTOBJ): $(DRIVLISTSRC)
