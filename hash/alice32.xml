@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-
 <!--TODO: split Alice 4k tapes into their own softlist -->
-
 <softwarelist name="alice32" description="Matra Alice 32 cassettes">
 
 	<software name="addition">
@@ -578,6 +576,68 @@
 		<part name="cass" interface="mc10_cass">
 			<dataarea name="cass" size="28144">
 				<rom name="cavevins.k7" size="28144" crc="6a80f39d" sha1="908dd2224d6f6681f33e8c7edb7a6e65a209763e" offset="0"/>
+			</dataarea>
+		</part>
+	</software>
+
+<!-- it seems that the Micro Games tapes below have been modified to work on Alice 32 and 90, as the original MC-10 versions do not work on them-->
+
+	<software name="breakout">
+		<description>Micro Games - Breakout (Hacked)</description>
+		<year>1983</year>
+		<publisher>Tandy</publisher>
+
+		<part name="cass1" interface="mc10_cass">
+			<dataarea name="cass" size="583548">
+				<rom name="breakout (198x)(-).wav" size="583548" crc="6b0a7b20" sha1="552f18dcba7c252a6de6e2f24df3ca989662ceeb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="eggcatch">
+		<description>Micro Games - Egg Catch (Hacked)</description>
+		<year>1983</year>
+		<publisher>Tandy</publisher>
+
+		<part name="cass1" interface="mc10_cass">
+			<dataarea name="cass" size="641964">
+				<rom name="eggs (198x)(-).wav" size="641964" crc="c89fc004" sha1="717352d35bf82280cdffd507c377c37d3c3e203f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="horserac">
+		<description>Micro Games - Horse Race (Hacked)</description>
+		<year>1983</year>
+		<publisher>Tandy</publisher>
+
+		<part name="cass1" interface="mc10_cass">
+			<dataarea name="cass" size="492132">
+				<rom name="horse (198x)(-).wav" size="492132" crc="c4b00021" sha1="b4c21dbdd4312cdd9382d1cd6d3ac75176da6307" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lunland">
+		<description>Micro Games - Lunar Lander (Hacked)</description>
+		<year>1983</year>
+		<publisher>Tandy</publisher>
+
+		<part name="cass1" interface="mc10_cass">
+			<dataarea name="cass" size="367700">
+				<rom name="lander (198x)(-).wav" size="367700" crc="e575c31a" sha1="4bc5b280075e2d4fd5083795d2a6534e53d01b3d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pong">
+		<description>Micro Games - Pong (Hacked)</description>
+		<year>1983</year>
+		<publisher>Tandy</publisher>
+
+		<part name="cass1" interface="mc10_cass">
+			<dataarea name="cass" size="462116">
+				<rom name="pong (198x)(-).wav" size="462116" crc="0f9a954c" sha1="d3abd76385f31aacd14f950166904731e6ecc178" offset="0" />
 			</dataarea>
 		</part>
 	</software>
