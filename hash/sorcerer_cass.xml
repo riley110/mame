@@ -1,55 +1,24 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 
+<!--
+TODO (Jan 10, 2015):
+
+Finish loading instructions for latest additions
+Figure out how to load data tapes in Music Editor
+Remove the MP3 to WAV converted tapes?
+-->
+
 <softwarelist name="sorcerer_cass" description="Exidy Sorcerer cassettes">
 
-<!-- These came from mp3s, so they're marked as bad dumps until they're redumped properly -->
-
-	<software name="chomp">
-		<description>Chomp</description>
-		<year>1981</year>
-		<publisher>W. S. King</publisher>
-		<info name="usage" value="Load in Monitor with &quot;LO&quot; command, then type &quot;GO 0100&quot;" />
-		<part name="cass" interface="sorcerer_cass">
-			<dataarea name="cass" size="23392316">
-				<rom name="chomp (1981)(w.s.king).wav" size="23392316" crc="95971024" sha1="62672de80e5139af35424184c76f1c9c18493c3a" offset="0" status="baddump" />
-			</dataarea>
-		</part>
-	</software>
+<!-- These come from tapes (?); these tapes are also in the UnRenamed Various set -->
 
 	<software name="eliza">
 		<description>Eliza</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
-		<part name="cass" interface="sorcerer_cass">
-			<dataarea name="cass" size="12578876">
-				<rom name="eliza (19xx)(-).wav" size="12578876" crc="9173759e" sha1="23d35784fd1ab492cb0371552bd1a981214c0192" offset="0" status="baddump" />
-			</dataarea>
-		</part>
-	</software>
 
-	<software name="galaxian">
-		<description>Galaxians</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load in Monitor with &quot;LO&quot; command, then type &quot;GO 0100&quot;" />
-		<part name="cass" interface="sorcerer_cass">
-			<dataarea name="cass" size="16506020">
-				<rom name="galaxians (19xx)(-).wav" size="16506020" crc="c6f686b2" sha1="41928aa796e6609de37301b3594d3a9a9eb975ac" offset="0" status="baddump" />
-			</dataarea>
-		</part>
-	</software>
-
-
-
-<!-- These come from tapes  -->
-
-	<software name="elizaa" cloneof="eliza">
-		<description>Eliza (Alt)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
 		<part name="cass" interface="sorcerer_cass">
 			<dataarea name="cass" size="11908260">
 				<rom name="eliza.wav" size="11908260" crc="67868b2a" sha1="bd219fa2b29881add2f06fc7cdf1dc0c63bec0b0" offset="0" />
@@ -57,11 +26,11 @@
 		</part>
 	</software>
 
-	<software name="demo1" supported="no">
+	<software name="demo1" supported="no"> <!-- Gives CRC Error -->
 		<description>DEMO1 (Bad?)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Gives CRC Error" />
+
 		<part name="cass" interface="sorcerer_cass">
 			<dataarea name="cass" size="12770008">
 				<rom name="demo1.wav" size="12770008" crc="e53951a5" sha1="612b60f3f179fa05a86305761e951211e535238e" offset="0" />
@@ -74,6 +43,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
 		<part name="cass" interface="sorcerer_cass">
 			<dataarea name="cass" size="8202538">
 				<rom name="demo2.wav" size="8202538" crc="922dede4" sha1="92005d8e4957a658e2e513083cd240af575fc048" offset="0" />
@@ -86,6 +56,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
 		<part name="cass" interface="sorcerer_cass">
 			<dataarea name="cass" size="7263870">
 				<rom name="demo3.wav" size="7263870" crc="38e5b0d7" sha1="2400651c816b33d67c461c7eee561d80568891be" offset="0" />
@@ -98,6 +69,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
 		<part name="cass" interface="sorcerer_cass">
 			<dataarea name="cass" size="3896482">
 				<rom name="demo4.wav" size="3896482" crc="e66fa049" sha1="d956b3ff42ac7b3178ee76ecb3d2ad388fed81f5" offset="0" />
@@ -110,6 +82,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
 		<part name="cass" interface="sorcerer_cass">
 			<dataarea name="cass" size="5980780">
 				<rom name="demo5.wav" size="5980780" crc="32e5879c" sha1="07d08cb8d35e591d9f5a358fcc6f611df5922c7e" offset="0" />
@@ -122,6 +95,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
 		<part name="cass" interface="sorcerer_cass">
 			<dataarea name="cass" size="11295052">
 				<rom name="demo6.wav" size="11295052" crc="1c3a212f" sha1="a641a1cfaa3c3dc272c31803c738ff3f908f4604" offset="0" />
@@ -134,6 +108,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
 		<part name="cass" interface="sorcerer_cass">
 			<dataarea name="cass" size="11678280">
 				<rom name="demo7.wav" size="11678280" crc="320e3eba" sha1="f2ab46c0b33b5ea42a6ae26fdd06294b62e1331f" offset="0" />
@@ -146,6 +121,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
 		<part name="cass" interface="sorcerer_cass">
 			<dataarea name="cass" size="7556546">
 				<rom name="demo8.wav" size="7556546" crc="baf9361f" sha1="30ab8a8ccafd65fbe82cbfbf5f77f27e0dfc4a78" offset="0" />
@@ -153,11 +129,11 @@
 		</part>
 	</software>
 
-	<software name="martian" supported="no">
+	<software name="martian" supported="no"> <!-- Gives CRC Error -->
 		<description>Martian Invaders (Bad?)</description>
 		<year>1980?</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Gives CRC Error" />
+
 		<part name="cass" interface="sorcerer_cass">
 			<dataarea name="cass" size="843548">
 				<rom name="m- martian invaders (1980).wav" size="843548" crc="355d94ea" sha1="048ef7fa3a321cdcada962135de3f42161de86ab" offset="0" />
@@ -165,5 +141,674 @@
 		</part>
 	</software>
 
+<!-- 
+These tapes were created by loading quickload files in MESS and saving them, with the Monitor or BASIC, to WAV files.
+Riley110 tested most of them and they work (except for the two that didn't work as a quickload)
+-->
+
+	<software name="adv1">
+		<description>Adventure No. 1 - Adventureland</description>
+		<year>1979</year>
+		<publisher>Adams</publisher>
+		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="13414936">
+				<rom name="adventure no. 1 - adventureland (1979)(adams).wav" size="13414936" crc="bac35d4a" sha1="18b80e1d88a9904b91e3ec5c988e2cdf88493486" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="adv3">
+		<description>Adventure No. 3 - Mission Impossible</description>
+		<year>1979</year>
+		<publisher>Adams</publisher>
+		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="12999368">
+				<rom name="adventure no. 3 - mission impossible (1979)(adams).wav" size="12999368" crc="3325c139" sha1="722e274028051c7dcbee0d01eff1f2fd20c14511" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="arrowall">
+		<description>Arrows and Alleys</description>
+		<year>1980</year>
+		<publisher>Quality Software</publisher>
+		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="5519124">
+				<rom name="arrows and alleys (1980)(quality software).wav" size="5519124" crc="4e956134" sha1="6cfdcab7368b67afe550ed30594ab14f012b0e68" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="astroatk">
+		<description>Astro Attacker</description>
+		<year>1982</year>
+		<publisher>Global Software Network</publisher>
+		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="12298398">
+				<rom name="astro attacker (1982)(global software network).wav" size="12298398" crc="961302a3" sha1="103b3139b9fcf47611ab8ff8c058d3a6311e6b8b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="astroatka" cloneof="astroatk">
+		<description>Astro Attacker (Hacked?)</description>
+		<year>1982</year>
+		<publisher>Global Software Network</publisher>
+		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="12298398">
+				<rom name="astro attacker (1982)(global software network)[m].wav" size="12298398" crc="1ac5f71c" sha1="0a15567643ce49c9422f16c59837680cd0dc1072" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atc">
+		<description>ATC</description>
+		<year>1979</year>
+		<publisher>David Mannering</publisher>
+		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="2817926">
+				<rom name="atc (1979)(mannering, david).wav" size="2817926" crc="850ce810" sha1="462e9d142fa15eb3fdcda9a3a74d4abba58f47b4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bjack">
+		<description>Blackjack</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="12261206">
+				<rom name="blackjack (19xx)(-)[basic].wav" size="12261206" crc="4d0b5371" sha1="558bdd96f9e663a5603667e8dbbc3a86dbc26bed" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="breakout">
+		<description>Breakout</description>
+		<year>1980</year>
+		<publisher>Ray Bannon</publisher>
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="5719634">
+				<rom name="breakout (1980-06-27)(bannon, ray)[basic].wav" size="5719634" crc="2b708500" sha1="a210ce832091af575288f09be3e72a036acdbabe" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chardes">
+		<description>Character Designer</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="3027328">
+				<rom name="character designer (19xx)(-).wav" size="3027328" crc="a2404fc8" sha1="f98ccc3a337e59bb035d3a45af9526c635a611a2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmakdemo">
+		<description>Character Maker Demo</description>
+		<year>1980</year>
+		<publisher>Quality Software</publisher>
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="5080110">
+				<rom name="character maker demo (1980)(quality software)[basic].wav" size="5080110" crc="121c86b1" sha1="fd54dfcc23466e031b4a9e544337d1f16d83c372" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chess1">
+		<description>Chess (Sorcerer Computer Users of Australia)</description>
+		<year>198?</year>
+		<publisher>Sorcerer Computer Users of Australia</publisher>
+		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="5936312">
+				<rom name="chess (19xx)(sorcerer computer users of australia).wav" size="5936312" crc="df6fde70" sha1="c4e98a0a11ed913d919fe157508ad210f6821d70" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chess2">
+		<description>Chess (Unknown)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="6350262">
+				<rom name="chess (19xx)(-).wav" size="6350262" crc="fac687c9" sha1="4160556a172954dd6833b16cbbb865288dc6059e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chomp">
+		<description>Chomp</description>
+		<year>1981</year>
+		<publisher>Global Software Network</publisher>
+		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="10921522">
+				<rom name="chomp (1981)(global software network).wav" size="10921522" crc="8a8ebb85" sha1="6c05231422d815afbfc83bee97d149f890d614e2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chompa" cloneof="chomp">
+		<description>Chomp (Hacked?)</description>
+		<year>1981</year>
+		<publisher>Global Software Network</publisher>
+		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="10921522">
+				<rom name="chomp (1981)(global software network)[m].wav" size="10921522" crc="27869059" sha1="c7414e4467006f740919f0da471e45b5196ea484" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cybrpool">
+		<description>Cybernetic Pool</description>
+		<year>198?</year>
+		<publisher>P.J.B. Systems</publisher>
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="5616954">
+				<rom name="cybernetic pool (19xx)(p.j.b. systems)[basic].wav" size="5616954" crc="b3f1e7e9" sha1="331744ebc72b5b1ee60b1349aeffb182edcd70a2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="defender">
+		<description>Defender</description>
+		<year>1982</year>
+		<publisher>System Software</publisher>
+		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="13830504">
+				<rom name="defender (1982)(system software).wav" size="13830504" crc="ff981abb" sha1="875f96724b8e1300fcf30670a0dd54e6a741c08d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dodgem">
+		<description>Dodgem</description>
+		<year>198?</year>
+		<publisher>Creative Computing</publisher>
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="4264332">
+				<rom name="dodgem (19xx)(creative computing)[basic].wav" size="4264332" crc="606acd36" sha1="17fb351c58055912a57d25e78cff25cd303427f3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="eatruck">
+		<description>Eastern Australia Truck Driving</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="6481240">
+				<rom name="eastern australia truck driving (19xx)(-)[basic].wav" size="6481240" crc="958ff742" sha1="bacc47a4593d5e6c740846998271a68ff0f11726" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ezyfile">
+		<description>Ezyfile</description>
+		<year>1981</year>
+		<publisher>Bob Stafford</publisher>
+		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="6038992">
+				<rom name="ezyfile (1981)(stafford, bob).wav" size="6038992" crc="5ef9a458" sha1="523b5d011953888221bddf2f12ce50b0323f1b45" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fastgamm">
+		<description>Fastgammon</description>
+		<year>1979</year>
+		<publisher>Quality Software</publisher>
+		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="5949248">
+				<rom name="fastgammon (1979)(quality software).wav" size="5949248" crc="c69482a8" sha1="60d33ae7021d2cf3634a54ffd088159b08b35704" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="galaxian">
+		<description>Galaxians</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="6959872">
+				<rom name="galaxians (19xx)(-).wav" size="6959872" crc="3d6a845c" sha1="a0ed223b4fd12ccf716e1205fcf26048c1433ce6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="galaxiana" cloneof="galaxian">
+		<description>Galaxians (No Sound)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="6973618">
+				<rom name="galaxians (19xx)(-)[a no sound].wav" size="6973618" crc="250a5343" sha1="92596faaf874bdc3773f2930f717d8714c0a2126" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gas" supported="no"> <!-- doesn't run -->
+		<description>Graphics Animation System (Bad?)</description>
+		<year>1980</year>
+		<publisher>Quality Software</publisher>
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="3408940">
+				<rom name="graphics animation system (1980)(quality software)[b][basic].wav" size="3408940" crc="12e53c4f" sha1="6ee47ef00b0e07a0db1c0b8b298cd04fc43f33bb" status="baddump" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="horserac">
+		<description>Horse Race</description>
+		<year>198?</year>
+		<publisher>Neil Gerard</publisher>
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="6468304">
+				<rom name="horse race (19xx)(neil, gerard)[basic].wav" size="6468304" crc="cd537e28" sha1="6374ae68aad7fdb94bec0372a8503a3b03f37b38" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chessdoc">
+		<description>Instructions for Chess</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="11384792">
+				<rom name="instructions for chess (19xx)(-)[basic].wav" size="11384792" crc="915e2fab" sha1="7bff2e49d29986de836153b39e5df7d216682a21" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="interlud">
+		<description>Interlude (Music Editor data file)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load in Music Editor program" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="1078034">
+				<rom name="interlude (19xx)(-)[music editor data file].wav" size="1078034" crc="d9414f23" sha1="ac58316fb7fc40c6580459eef5fe1ab82d89fd0e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kadath">
+		<description>Kadath</description>
+		<year>1985</year>
+		<publisher>Reni Barnes</publisher>
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="37373216">
+				<rom name="kadath (1985)(barnes, reni)[basic].wav" size="37373216" crc="52167347" sha1="cee0b01b4cef438ff590a75c87d1726720716957" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="labyrint">
+		<description>Labyrinth</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="5029982">
+				<rom name="labyrinth (19xx)(-)[basic].wav" size="5029982" crc="044b301e" sha1="0cdcd5b0372cdc0d599d0eb63c81969f10c686d4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lem">
+		<description>LEM</description>
+		<year>198?</year>
+		<publisher>Creative Computing</publisher>
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="5055046">
+				<rom name="lem (19xx)(creative computing)[basic].wav" size="5055046" crc="b187e6de" sha1="6d1bcff3feda504c371837181767c43db4f7c284" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="memchang">
+		<description>Memory Change</description>
+		<year>198?</year>
+		<publisher>Paul Grimshaw</publisher>
+		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="1441860">
+				<rom name="memory change (19xx)(grimshaw, paul).wav" size="1441860" crc="fa86e6e8" sha1="d768c564861a6fb008fd468b5f8f8cdd0757bdd0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="midas">
+		<description>MIDAS - Microcomputer Database System</description>
+		<year>1980</year>
+		<publisher>R.J.V. Stafford</publisher>
+		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="4755902">
+				<rom name="midas - microcomputer database system (1980)(r.j.v. stafford).wav" size="4755902" crc="164230c8" sha1="89a2d209a28e148f4362d07620516ce172fe1711" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musiced">
+		<description>Music Editor</description>
+		<year>1980</year>
+		<publisher>Arrington Software</publisher>
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="10125958">
+				<rom name="music editor (1980)(arrington software)[basic].wav" size="10125958" crc="e0b54d17" sha1="7abd60105ab0995fbdb25806245b02d43effa39a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="orb">
+		<description>The Orb of Halucidon</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="15424058">
+				<rom name="orb of halucidon, the (19xx)(-)[basic].wav" size="15424058" crc="29d1f5f6" sha1="4aad8baddba840fb52b3b14e0aca4fdb27e4e478" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="piano">
+		<description>Piano Player (Music Editor data file)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load in Music Editor program" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="2194574">
+				<rom name="piano player (19xx)(-)[music editor data file].wav" size="2194574" crc="5c25d538" sha1="0b15be8b652fd79bcf80ab0e7ff77a2469212687" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="plane">
+		<description>Plane</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="5420488">
+				<rom name="plane (19xx)(-)[basic].wav" size="5420488" crc="ca7faa3a" sha1="aa870997b6b3404558b68dcd5345cb6e7122c550" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="qubic">
+		<description>Qubic - 3D Noughts and Crosses</description>
+		<year>1985</year>
+		<publisher>Toowoomba Sorcerer Group</publisher>
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="8572020">
+				<rom name="qubic - 3d noughts and crosses (1985)(toowoomba sorcerer group)[basic].wav" size="8572020" crc="9537bf52" sha1="5f075e5da92937317ee8ab291928ccc685c2a3d7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="reversi">
+		<description>Reversi</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="10450976">
+				<rom name="reversi (19xx)(-)[basic].wav" size="10450976" crc="afc4792f" sha1="9938869c03d345d6f12ad437fecfe25692fbc86a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="snake1">
+		<description>Snake (Steve and Pete Enterprises)</description>
+		<year>198?</year>
+		<publisher>Steve and Pete Enterprises</publisher>
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="3957104">
+				<rom name="snake (19xx)(steve and pete enterprises)[basic].wav" size="3957104" crc="e77475fd" sha1="6b3fdf73b5320de29bf35f57e0199da92bd31ff5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="snake2">
+		<description>Snake (Unknown)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="4156804">
+				<rom name="snake (19xx)(-)[basic].wav" size="4156804" crc="672e6101" sha1="f3260968a055f67f5a9b3d6dfc44a9956ae79900" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="l2basic">
+		<description>Sorcerer Level II BASIC</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="11337092">
+				<rom name="sorcerer level ii basic (19xx)(-).wav" size="11337092" crc="f5169a40" sha1="51217a3a2f46fc27de731da6f48072ad2c7a3640" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spaceinv" supported="no"> <!-- hangs while loading playfield -->
+		<description>Space Invaders (Unfinished?)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="3603790">
+				<rom name="space invaders (19xx)(-)[b][basic].wav" size="3603790" crc="6b36694a" sha1="f9276ccaeb95b0981f497742bf55e333aca59327" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="asteroid">
+		<description>Super Asteroids</description>
+		<year>1981</year>
+		<publisher>System Software</publisher>
+		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="7639820">
+				<rom name="super asteroids (1981)(system software).wav" size="7639820" crc="7ec1ec02" sha1="9a9f69c337cc29fd0e42ed767b753e344a1bf32e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="startrek">
+		<description>Super Star Trek (v2.0)</description>
+		<year>1979</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="19956510">
+				<rom name="super star trek v2.0 (1979-07)(-)[basic].wav" size="19956510" crc="d4ddc475" sha1="151bc23fb2b74e7d87b20d0a33f97425ebb07176" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tanktrp4">
+		<description>Tank Trap IV</description>
+		<year>1979</year>
+		<publisher>Quality Software</publisher>
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="5970268">
+				<rom name="tank trap iv (1979)(quality software)[basic].wav" size="5970268" crc="1262c71f" sha1="dfdffe59919e21acc924a2aa6a6d3b7ed3f4e13d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tico">
+		<description>Tico (Music Editor data file)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load in Music Editor program" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="1426498">
+				<rom name="tico (19xx)(-)[music editor data file].wav" size="1426498" crc="81a09a2e" sha1="24f96e1833201e10224e1a5be6d0729bb9a3df6b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wordproc">
+		<description>Word Processing System</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="17570626">
+				<rom name="word processing system (19xx)(-).wav" size="17570626" crc="4eae7249" sha1="586d33480b7caa8dd1c1b0e8cad66091adf0c911" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="xmastune">
+		<description>Xmas Tune (Music Editor data file)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load in Music Editor program" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="1369904">
+				<rom name="xmas tune (19xx)(-)[music editor data file].wav" size="1369904" crc="0ac6ff47" sha1="8af39f529d1c806d452113031740dd0170774545" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="z80dasm">
+		<description>Z-80 Disassembler (Hacked by B.T.F. Tan)</description>
+		<year>1979</year>
+		<publisher>Ivan Reid</publisher>
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
+		<part name="cass1" interface="sorcerer_cass">
+			<dataarea name="cass" size="5094662">
+				<rom name="z-80 disassembler (1979)(reid, ivan)[m b.t.f. tan][basic].wav" size="5094662" crc="54eb3460" sha1="d7ebeaac98e4a4b083b176f0b5f1282083f8605e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- These were converted from mp3s in the TOSEC set, so they're marked as bad dumps (and should be removed later?) -->
+
+	<software name="chompb" cloneof="chomp">
+		<description>Chomp (Converted from MP3)</description>
+		<year>1981</year>
+		<publisher>Global Software Network</publisher>
+		<info name="usage" value="Load in Monitor with &quot;LO&quot; command, then type &quot;GO 0100&quot;" />
+
+		<part name="cass" interface="sorcerer_cass">
+			<dataarea name="cass" size="23392316">
+				<rom name="chomp (1981)(w.s.king)[mp3 source].wav" size="23392316" crc="95971024" sha1="62672de80e5139af35424184c76f1c9c18493c3a" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="elizaa" cloneof="eliza">
+		<description>Eliza (Converted from MP3)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
+		<part name="cass" interface="sorcerer_cass">
+			<dataarea name="cass" size="12578876">
+				<rom name="eliza (19xx)(-)[mp3 source].wav" size="12578876" crc="9173759e" sha1="23d35784fd1ab492cb0371552bd1a981214c0192" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="galaxianb" cloneof="galaxian">
+		<description>Galaxians (Converted from MP3)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load in Monitor with &quot;LO&quot; command, then type &quot;GO 0100&quot;" />
+
+		<part name="cass" interface="sorcerer_cass">
+			<dataarea name="cass" size="16506020">
+				<rom name="galaxians (19xx)(-)[mp3 source].wav" size="16506020" crc="c6f686b2" sha1="41928aa796e6609de37301b3594d3a9a9eb975ac" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+	</software>
 
 </softwarelist>
