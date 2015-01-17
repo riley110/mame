@@ -2,7 +2,7 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="to_flop" description="Thomson TO-series floppies">
 
-	<!-- Applications -->
+<!-- Applications -->
 
 	<software name="35basicb">
 		<description>3&quot;1/2 Disk BASIC (v1.1)</description>
@@ -169,13 +169,13 @@
 				<rom name="asmext (2000-02)(prehis-to)(fr).sap" size="335426" crc="ac9843a5" sha1="a09c95229881ac8bbc887f2a69b54fa7a9e7e09f" offset="0" />
 			</dataarea>
 		</part>
-	</software>	
+	</software>
 
 	<software name="asmexta" cloneof="asmext">
 		<description>AsmExt (Alt)</description>
 		<year>2000</year>
 		<publisher>Prehis-To</publisher>
-		
+
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="asmext (2000-02)(prehis-to)(fr)[a].sap" size="335426" crc="3a3793f1" sha1="ee6e09d44bb76bcac0fadbd849f03c1d5cf1da5a" offset="0" />
@@ -279,12 +279,12 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="cartoonma" cloneof="cartoonm">
 		<description>Cartoon Maker (Alt)</description>
 		<year>1985</year>
 		<publisher>Free Game Blot</publisher>
-	
+
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
 				<rom name="cartoon maker (1985)(free game blot)(fr)[a].fd" size="327680" crc="dca148bd" sha1="f075a2baa208577b3b0a8839412a1324d217aad3" offset="0" />
@@ -400,7 +400,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="contrto8a" cloneof="contrto8">
 		<description>Controle TO8 (Alt)</description>
 		<year>198?</year>
@@ -496,7 +496,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="dos720a" cloneof="dos720">
 		<description>DOS720 (SAP Format)</description>
 		<year>1989</year>
@@ -617,7 +617,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="graffitia" cloneof="graffiti">
 		<description>Graffiti (SAP Format)</description>
 		<year>198?</year>
@@ -777,7 +777,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="initb512a" cloneof="initb512">
 		<description>Initiation au BASIC 512 + Multidos (Alt)</description>
 		<year>1986</year>
@@ -830,9 +830,9 @@
 		</part>
 	</software>
 
-<!-- 
-	uses double-sided qdd disks, which seem to not be handled correctly 
-	the same dump is available on dcmoto, so it is likely not bad	
+<!--
+    uses double-sided qdd disks, which seem to not be handled correctly
+    the same dump is available on dcmoto, so it is likely not bad
 -->
 	<software name="initb512qd" cloneof="initb512" supported="no">
 		<description>Initiation au BASIC 512 (QDD)</description>
@@ -925,7 +925,7 @@
 		<description>Le Journal de Votre Naissance (Alt Disk 1)</description>
 		<year>1999</year>
 		<publisher>Emmanuel Boulanger</publisher>
-		
+
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="335426">
@@ -1011,9 +1011,9 @@
 		<info name="usage" value="Press 4 key and load file &quot;JOURNAL&quot;"/>
 
 		<part name="flop1" interface="floppy_5_25">
-		    <dataarea name="flop" size="1310720">
-		        <rom name="journaliste, le (1988)(nathan)(fr)[1280k].fd" size="1310720" crc="44312548" sha1="e45a139064b0fa11cb8f1b02a3ed893f737e1927" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="1310720">
+				<rom name="journaliste, le (1988)(nathan)(fr)[1280k].fd" size="1310720" crc="44312548" sha1="e45a139064b0fa11cb8f1b02a3ed893f737e1927" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -1070,7 +1070,7 @@
 		<description>Micro Serveur (v1.20, SAP Format)</description>
 		<year>1987</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
-		
+
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="micro serveur v1.20 (1987)(fil)(fr).sap" size="335426" crc="f641efe9" sha1="dffe57915beb38328622886604467c381ed13e2a" offset="0" />
@@ -1090,13 +1090,13 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="multplana" cloneof="multplan">
 		<description>Microsoft Multiplan (v1.07, SAP Format)</description>
 		<year>1986</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
 		<info name="usage" value="Press E key to load the program"/>
-	
+
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="microsoft multiplan v1.07 (1986)(fil - microsoft)(fr)[chg file].sap" size="335426" crc="8368f6fb" sha1="ec5be765528b8d8c8ce458e69a995c6ef20e09ae" offset="0" />
@@ -1140,7 +1140,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="mserveura" cloneof="mserveur">
 		<description>MSERVEUR (SAP Format)</description>
 		<year>198?</year>
@@ -1258,7 +1258,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="paragrpha" cloneof="paragrph">
 		<description>Paragraphe (v2.0, Alt)</description>
 		<year>1985?</year>
@@ -1271,7 +1271,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="paragrphb" cloneof="paragrph">
 		<description>Paragraphe (v2.0, Alt 2)</description>
 		<year>1985?</year>
@@ -1301,7 +1301,7 @@
 		<description>Parole - Synthese Vocale (SAP Format)</description>
 		<year>1985</year>
 		<publisher>Cedic/Nathan</publisher>
-		
+
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="vocal.sap" size="335426" crc="2595ca06" sha1="b1c5b347a0b044cec0cc873b5a0663ef1398563b" offset="0" />
@@ -1477,7 +1477,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="sauveroma" cloneof="sauverom">
 		<description>Sauvegarde ROM TO8 + TO9 (SAP Format)</description>
 		<year>19??</year>
@@ -2052,7 +2052,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="traceura" cloneof="traceur">
 		<description>Le Traceur (Alt)</description>
 		<year>1991</year>
@@ -2141,7 +2141,7 @@
 		</part>
 	</software>
 
-	<!-- Demos -->
+<!-- Demos -->
 
 	<software name="agathe">
 		<description>Agathe Rage</description>
@@ -2262,7 +2262,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="chaplina" cloneof="chaplin">
 		<description>Thomson Video - Charlie Chaplin (SAP Format)</description>
 		<year>2004</year>
@@ -2286,7 +2286,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="cccdemoa" cloneof="cccdemo">
 		<description>Mega Demo no.1 (SAP Format)</description>
 		<year>1988</year>
@@ -2343,9 +2343,9 @@
 		<publisher>Puls</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		    <dataarea name="flop" size="655360">
-		        <rom name="chinese stack (2004)(puls)(fr)[640k].fd" size="655360" crc="3e2d7c2c" sha1="7803905901eb827f4ec736c8cd923b88af96b0c8" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="chinese stack (2004)(puls)(fr)[640k].fd" size="655360" crc="3e2d7c2c" sha1="7803905901eb827f4ec736c8cd923b88af96b0c8" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -2504,7 +2504,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="hcldemoa" cloneof="hcldemo">
 		<description>HCL Megademo (SAP Format)</description>
 		<year>1990</year>
@@ -2516,7 +2516,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="hcldemob" cloneof="hcldemo" supported="partial"> <!-- black screen after a few parts -->
 		<description>HCL Megademo (2 Disks, Bad?)</description>
 		<year>1990</year>
@@ -2578,16 +2578,16 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="lotusa" cloneof="lotus" supported="no">
 		<description>Lotus Esprit Turbo Challenge (640K Disk)</description>
 		<year>19??</year>
 		<publisher>BC 109 Soft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		    <dataarea name="flop" size="655360">
-		        <rom name="lotus esprit turbo challenge (19xx)(bc 109)(fr)[640k].fd" size="655360" crc="a3367d3f" sha1="8da4a1da7e2096c9f8b62a236ec318fbd5773f80" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="lotus esprit turbo challenge (19xx)(bc 109)(fr)[640k].fd" size="655360" crc="a3367d3f" sha1="8da4a1da7e2096c9f8b62a236ec318fbd5773f80" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -2609,16 +2609,16 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="megara" cloneof="megar" supported="no">
 		<description>Megar Demo #1 - Ruiz (640K)</description>
 		<year>2007</year>
 		<publisher>Megar</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		    <dataarea name="flop" size="655360">
-		        <rom name="megar demo #1 (2007)(megar)(fr)[640k].fd" size="655360" crc="96335410" sha1="013f81b4dbb39164050ba487e596789d192dec6b" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="megar demo #1 (2007)(megar)(fr)[640k].fd" size="655360" crc="96335410" sha1="013f81b4dbb39164050ba487e596789d192dec6b" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -2839,7 +2839,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="spacproja" cloneof="spacproj">
 		<description>Space Project (SAP Format)</description>
 		<year>2007</year>
@@ -2902,15 +2902,15 @@
 
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1"/>
-		    <dataarea name="flop" size="1310720">
-		        <rom name="space project (2007)(puls)(fr)(disk 1 of 2)[1280k].fd" size="1310720" crc="b9d4bd04" sha1="03500499d24c45026083d2795f6c58c0b9c3780d" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="1310720">
+				<rom name="space project (2007)(puls)(fr)(disk 1 of 2)[1280k].fd" size="1310720" crc="b9d4bd04" sha1="03500499d24c45026083d2795f6c58c0b9c3780d" offset="0" />
+			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 2"/>
-		    <dataarea name="flop" size="1310720">
-		        <rom name="space project (2007)(puls)(fr)(disk 2 of 2)[1280k].fd" size="1310720" crc="a8ef82ce" sha1="b91722dc7a7aaea74dba122ed8e34b1cc8e4e566" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="1310720">
+				<rom name="space project (2007)(puls)(fr)(disk 2 of 2)[1280k].fd" size="1310720" crc="a8ef82ce" sha1="b91722dc7a7aaea74dba122ed8e34b1cc8e4e566" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -2921,27 +2921,27 @@
 
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1"/>
-		    <dataarea name="flop" size="655360">
-		        <rom name="space project (2007)(puls)(fr)(disk 1 of 4)[640k].fd" size="655360" crc="cc827379" sha1="71d1da322c621f4325e2c640859450fe4b16633b" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="space project (2007)(puls)(fr)(disk 1 of 4)[640k].fd" size="655360" crc="cc827379" sha1="71d1da322c621f4325e2c640859450fe4b16633b" offset="0" />
+			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 2"/>
-		    <dataarea name="flop" size="655360">
-		        <rom name="space project (2007)(puls)(fr)(disk 2 of 4)[640k].fd" size="655360" crc="23372f28" sha1="db36697024f0813d324f4fe817c8aee1473e1d00" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="space project (2007)(puls)(fr)(disk 2 of 4)[640k].fd" size="655360" crc="23372f28" sha1="db36697024f0813d324f4fe817c8aee1473e1d00" offset="0" />
+			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 3"/>
-		    <dataarea name="flop" size="655360">
-		        <rom name="space project (2007)(puls)(fr)(disk 3 of 4)[640k].fd" size="655360" crc="16ae4f4d" sha1="65ae18aebd554d0786e5d3556e61bd83dc99b4ae" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="space project (2007)(puls)(fr)(disk 3 of 4)[640k].fd" size="655360" crc="16ae4f4d" sha1="65ae18aebd554d0786e5d3556e61bd83dc99b4ae" offset="0" />
+			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 4"/>
-		    <dataarea name="flop" size="655360">
-		        <rom name="space project (2007)(puls)(fr)(disk 4 of 4)[640k].fd" size="655360" crc="9c3cd074" sha1="219a786e2ab214fe1f268ec6b8fa23f335085ac6" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="space project (2007)(puls)(fr)(disk 4 of 4)[640k].fd" size="655360" crc="9c3cd074" sha1="219a786e2ab214fe1f268ec6b8fa23f335085ac6" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -2970,9 +2970,9 @@
 		<publisher>Thomtest</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		    <dataarea name="flop" size="655360">
-		        <rom name="thomtest socery (19xx)(thomtest)(fr)[640k].fd" size="655360" crc="f0f779cd" sha1="e1d92abea5a91463a0a998fe18697bbdc7361c8b" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="thomtest socery (19xx)(thomtest)(fr)[640k].fd" size="655360" crc="f0f779cd" sha1="e1d92abea5a91463a0a998fe18697bbdc7361c8b" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -3092,9 +3092,9 @@
 		<publisher>Puls</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		    <dataarea name="flop" size="655360">
-		        <rom name="truc216i (2010-09)(puls)(fr)[640k, tele].fd" size="655360" crc="bed6bf06" sha1="e956c0d1a4e81eb9599b8ef4b6a69a293c265ffa" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="truc216i (2010-09)(puls)(fr)[640k, tele].fd" size="655360" crc="bed6bf06" sha1="e956c0d1a4e81eb9599b8ef4b6a69a293c265ffa" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -3116,7 +3116,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="truc216iea" cloneof="truc216i">
 		<description>TruC216i (emul) (SAP Format)</description>
 		<year>2010</year>
@@ -3142,9 +3142,9 @@
 		<publisher>Puls</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		    <dataarea name="flop" size="655360">
-		        <rom name="truc216i (2010-09)(puls)(fr)[640k, emul].fd" size="655360" crc="0460cfd9" sha1="6bc04f6b80a679e7c45ce9c287fec490f95baebe" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="truc216i (2010-09)(puls)(fr)[640k, emul].fd" size="655360" crc="0460cfd9" sha1="6bc04f6b80a679e7c45ce9c287fec490f95baebe" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -3166,7 +3166,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="truc40a" cloneof="truc40">
 		<description>TruC40 (tele) (SAP Format)</description>
 		<year>2010</year>
@@ -3192,9 +3192,9 @@
 		<publisher>Puls</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		    <dataarea name="flop" size="655360">
-		        <rom name="truc40 (2010-09)(puls)(fr)[640k, tele].fd" size="655360" crc="56dc16d3" sha1="d653805186cb5f94238736ba121a6deb049aa92d" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="truc40 (2010-09)(puls)(fr)[640k, tele].fd" size="655360" crc="56dc16d3" sha1="d653805186cb5f94238736ba121a6deb049aa92d" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -3242,9 +3242,9 @@
 		<publisher>Puls</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		    <dataarea name="flop" size="655360">
-		        <rom name="truc40 (2010-09)(puls)(fr)[640k, emul].fd" size="655360" crc="a7df4ec7" sha1="a9eba7591f57242f6dbfed49f26aa3d3a6c53542" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="truc40 (2010-09)(puls)(fr)[640k, emul].fd" size="655360" crc="a7df4ec7" sha1="a9eba7591f57242f6dbfed49f26aa3d3a6c53542" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -3292,9 +3292,9 @@
 		<publisher>Puls</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		    <dataarea name="flop" size="655360">
-		        <rom name="truc70 (2010-09)(puls)(fr)[640k].fd" size="655360" crc="5b184e47" sha1="569d3309fb5302f769222626e8e47d4d1ea10816" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="truc70 (2010-09)(puls)(fr)[640k].fd" size="655360" crc="5b184e47" sha1="569d3309fb5302f769222626e8e47d4d1ea10816" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -3342,9 +3342,9 @@
 		<publisher>Puls</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		    <dataarea name="flop" size="655360">
-		        <rom name="truc80i (2010-09)(puls)(fr)[640k].fd" size="655360" crc="8556d621" sha1="df069f9ab5926ef47c00bfb96f45147eea0e9e06" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="truc80i (2010-09)(puls)(fr)[640k].fd" size="655360" crc="8556d621" sha1="df069f9ab5926ef47c00bfb96f45147eea0e9e06" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -3427,7 +3427,7 @@
 		</part>
 	</software>
 
-	<!-- Diskmags -->
+<!-- Diskmags -->
 
 	<software name="ascinew1">
 		<description>ASCINEWS no.1</description>
@@ -3680,7 +3680,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="icdvmag1a" cloneof="icdvmag1">
 		<description>ICDV Magazine no.1 (SAP Format)</description>
 		<year>1991</year>
@@ -3704,7 +3704,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="icdvmag2a" cloneof="icdvmag2">
 		<description>ICDV Magazine no.2 (SAP Format)</description>
 		<year>1991</year>
@@ -3795,7 +3795,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="teodriv1a" cloneof="teodriv1">
 		<description>Teo-Drive no.1 (SAP Format)</description>
 		<year>1991</year>
@@ -3826,7 +3826,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="teodriv2a" cloneof="teodriv2">
 		<description>Teo-Drive no.2 (SAP Format)</description>
 		<year>1991</year>
@@ -3852,9 +3852,9 @@
 		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		    <dataarea name="flop" size="655360">
-		        <rom name="teo-drive no.2 (1991)(a.s.c.i.)[640k].fd" size="655360" crc="20936bfb" sha1="ab335e027fd6607c8a6ea675cd4ecca4001e0e2f" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="teo-drive no.2 (1991)(a.s.c.i.)[640k].fd" size="655360" crc="20936bfb" sha1="ab335e027fd6607c8a6ea675cd4ecca4001e0e2f" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -3895,16 +3895,16 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="teodriv3b" cloneof="teodriv3" supported="no">
 		<description>Teo-Drive no.3 (640K Disk)</description>
 		<year>1991</year>
 		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		    <dataarea name="flop" size="655360">
-		        <rom name="teo-drive no.3 (1991)(a.s.c.i.)[640k].fd" size="655360" crc="5cce0966" sha1="c340f347dfd3a3621a60a7f3779e012ee47e16ff" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="teo-drive no.3 (1991)(a.s.c.i.)[640k].fd" size="655360" crc="5cce0966" sha1="c340f347dfd3a3621a60a7f3779e012ee47e16ff" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -3926,7 +3926,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="teodriv4a" cloneof="teodriv4">
 		<description>Teo-Drive no.4 (SAP Format)</description>
 		<year>1991</year>
@@ -3952,9 +3952,9 @@
 		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		    <dataarea name="flop" size="655360">
-		        <rom name="teo-drive no.4 (1991)(a.s.c.i.)[640k].fd" size="655360" crc="0a020368" sha1="afa0fa2ad038d6c47538ef2d3bb27f709d42b63c" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="teo-drive no.4 (1991)(a.s.c.i.)[640k].fd" size="655360" crc="0a020368" sha1="afa0fa2ad038d6c47538ef2d3bb27f709d42b63c" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -4002,9 +4002,9 @@
 		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		    <dataarea name="flop" size="655360">
-		        <rom name="teo-drive no.5 (1991)(a.s.c.i.)[640k].fd" size="655360" crc="60a5cc06" sha1="5b32a4882d17312b9b96444b923e49128dfee8ad" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="teo-drive no.5 (1991)(a.s.c.i.)[640k].fd" size="655360" crc="60a5cc06" sha1="5b32a4882d17312b9b96444b923e49128dfee8ad" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -4038,7 +4038,7 @@
 			</dataarea>
 		</part>
 	</software>
-		
+
 	<software name="teodriv6a" cloneof="teodriv6">
 		<description>Teo-Drive no.6 (Disk 1 SAP Format)</description>
 		<year>1991</year>
@@ -4070,7 +4070,7 @@
 		</part>
 	</software>
 
-	<software name="teodriv6b" cloneof="teodriv6">	<!-- flop1 second half is blank -->
+	<software name="teodriv6b" cloneof="teodriv6">  <!-- flop1 second half is blank -->
 		<description>Teo-Drive no.6 (Disk 1 640K)</description>
 		<year>1991</year>
 		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
@@ -4113,7 +4113,7 @@
 		</part>
 	</software>
 
-	<!-- Docs -->
+<!-- Docs -->
 
 	<software name="docjeux">
 		<description>Doc Jeux</description>
@@ -4153,7 +4153,7 @@
 		</part>
 	</software>
 
-	<!-- Educational -->
+<!-- Educational -->
 
 	<software name="addisous">
 		<description>Addisous</description>
@@ -4214,7 +4214,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="appcompa" cloneof="appcomp">
 		<description>Apprends-moi a Compter (SAP Format)</description>
 		<year>1987</year>
@@ -4238,7 +4238,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="applirea" cloneof="applire">
 		<description>Apprends-moi a Lire (SAP Format)</description>
 		<year>1988</year>
@@ -4287,7 +4287,7 @@
 			</dataarea>
 		</part>
 	</software>
-		
+
 	<software name="math3emea" cloneof="math3eme">
 		<description>La Bosse des Maths 3eme (SAP Format)</description>
 		<year>1987</year>
@@ -4976,7 +4976,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="diloco2">
 		<description>Diloco 2</description>
 		<year>19??</year>
@@ -5019,7 +5019,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="mbacphys" supported="no"> <!-- works in dcmoto, copy protection? -->
 		<description>Microbac Physique - Chimie</description>
 		<year>19??</year>
@@ -5045,177 +5045,177 @@
 	</software>
 
 	<software name="etpapp1">
-	    <description>Encyclopaedia Thomsonis - Les Papillons Vol. 1</description>
-	    <year>1996</year>
-	    <publisher>Bledor-Soft</publisher>
+		<description>Encyclopaedia Thomsonis - Les Papillons Vol. 1</description>
+		<year>1996</year>
+		<publisher>Bledor-Soft</publisher>
 
-	    <part name="flop1" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1"/>
-	        <dataarea name="flop" size="335426">
-	            <rom name="encyclopaedia thomsonis - les papillons vol. 1 (1996)(bledor-soft)(fr)(pd)(disk 1 of 2).sap" size="335426" crc="f1814a32" sha1="3c88a0ab435e28a08c984943597bf6afec487fe8" offset="0" />
-	        </dataarea>
-	    </part>
-	    <part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="encyclopaedia thomsonis - les papillons vol. 1 (1996)(bledor-soft)(fr)(pd)(disk 1 of 2).sap" size="335426" crc="f1814a32" sha1="3c88a0ab435e28a08c984943597bf6afec487fe8" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 2"/>
-	        <dataarea name="flop" size="335426">
-	            <rom name="encyclopaedia thomsonis - les papillons vol. 1 (1996)(bledor-soft)(fr)(pd)(disk 2 of 2).sap" size="335426" crc="0fe2e126" sha1="190f4bd1f9e27ecd830b14d699e2ffc2034c452e" offset="0" />
-	        </dataarea>
-	    </part>
+			<dataarea name="flop" size="335426">
+				<rom name="encyclopaedia thomsonis - les papillons vol. 1 (1996)(bledor-soft)(fr)(pd)(disk 2 of 2).sap" size="335426" crc="0fe2e126" sha1="190f4bd1f9e27ecd830b14d699e2ffc2034c452e" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
 	<software name="etpapp2">
-	    <description>Encyclopaedia Thomsonis - Les Papillons Vol. 2</description>
-	    <year>1996</year>
-	    <publisher>Bledor-Soft</publisher>
+		<description>Encyclopaedia Thomsonis - Les Papillons Vol. 2</description>
+		<year>1996</year>
+		<publisher>Bledor-Soft</publisher>
 
-	    <part name="flop1" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1"/>
-	        <dataarea name="flop" size="335426">
-	            <rom name="encyclopaedia thomsonis - les papillons vol. 2 (1996)(bledor-soft)(fr)(pd)(disk 1 of 2).sap" size="335426" crc="10c9692a" sha1="82939515aa056a1aaac40bf3fbe28b5e48a622a9" offset="0" />
-	        </dataarea>
-	    </part>
-	    <part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="encyclopaedia thomsonis - les papillons vol. 2 (1996)(bledor-soft)(fr)(pd)(disk 1 of 2).sap" size="335426" crc="10c9692a" sha1="82939515aa056a1aaac40bf3fbe28b5e48a622a9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 2"/>
-	        <dataarea name="flop" size="335426">
-	            <rom name="encyclopaedia thomsonis - les papillons vol. 2 (1996)(bledor-soft)(fr)(pd)(disk 2 of 2).sap" size="335426" crc="ac2c4817" sha1="dd1268c9198780fc8f32b949a1babaa125a2b8a4" offset="0" />
-	        </dataarea>
-	    </part>
+			<dataarea name="flop" size="335426">
+				<rom name="encyclopaedia thomsonis - les papillons vol. 2 (1996)(bledor-soft)(fr)(pd)(disk 2 of 2).sap" size="335426" crc="ac2c4817" sha1="dd1268c9198780fc8f32b949a1babaa125a2b8a4" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
 	<software name="etpapp31">
-	    <description>Encyclopaedia Thomsonis - Les Papillons Vol.3 - Heteroceres 1</description>
-	    <year>1999</year>
-	    <publisher>Bledor-Soft - Serveur 87</publisher>
+		<description>Encyclopaedia Thomsonis - Les Papillons Vol.3 - Heteroceres 1</description>
+		<year>1999</year>
+		<publisher>Bledor-Soft - Serveur 87</publisher>
 
-	    <part name="flop1" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1"/>
-	        <dataarea name="flop" size="335426">
-	            <rom name="encyclopaedia thomsonis - les papillons vol.3 - heteroceres 1 (1999)(bledor-soft - serveur 87)(fr)(pd)(disk 1 of 2).sap" size="335426" crc="ec416841" sha1="9199d19885c8621186798fcd7ea3efc977f00afc" offset="0" />
-	        </dataarea>
-	    </part>
-	    <part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="encyclopaedia thomsonis - les papillons vol.3 - heteroceres 1 (1999)(bledor-soft - serveur 87)(fr)(pd)(disk 1 of 2).sap" size="335426" crc="ec416841" sha1="9199d19885c8621186798fcd7ea3efc977f00afc" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 2"/>
-	        <dataarea name="flop" size="335426">
-	            <rom name="encyclopaedia thomsonis - les papillons vol.3 - heteroceres 1 (1999)(bledor-soft - serveur 87)(fr)(pd)(disk 2 of 2).sap" size="335426" crc="fe3a9e42" sha1="e6c86a0a0e6c7ee5a35476a42cf6b7b3a62a9a5b" offset="0" />
-	        </dataarea>
-	    </part>
+			<dataarea name="flop" size="335426">
+				<rom name="encyclopaedia thomsonis - les papillons vol.3 - heteroceres 1 (1999)(bledor-soft - serveur 87)(fr)(pd)(disk 2 of 2).sap" size="335426" crc="fe3a9e42" sha1="e6c86a0a0e6c7ee5a35476a42cf6b7b3a62a9a5b" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
 	<software name="etpapp32">
-	    <description>Encyclopaedia Thomsonis - Les Papillons Vol.3 - Heteroceres 2</description>
-	    <year>1999</year>
-	    <publisher>Bledor-Soft - Serveur87</publisher>
+		<description>Encyclopaedia Thomsonis - Les Papillons Vol.3 - Heteroceres 2</description>
+		<year>1999</year>
+		<publisher>Bledor-Soft - Serveur87</publisher>
 
-	    <part name="flop1" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1"/>
-	        <dataarea name="flop" size="335426">
-	            <rom name="encyclopaedia thomsonis - les papillons vol.3 - heteroceres 2 (1999)(bledor-soft - serveur 87)(fr)(pd)(disk 1 of 2).sap" size="335426" crc="0d057f5f" sha1="c1ee74b8a272fc3085f053a5a2485d02afdb9c2f" offset="0" />
-	        </dataarea>
-	    </part>
-	    <part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="encyclopaedia thomsonis - les papillons vol.3 - heteroceres 2 (1999)(bledor-soft - serveur 87)(fr)(pd)(disk 1 of 2).sap" size="335426" crc="0d057f5f" sha1="c1ee74b8a272fc3085f053a5a2485d02afdb9c2f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 2"/>
-	        <dataarea name="flop" size="335426">
-	            <rom name="encyclopaedia thomsonis - les papillons vol.3 - heteroceres 2 (1999)(bledor-soft - serveur 87)(fr)(pd)(disk 2 of 2).sap" size="335426" crc="6694ff08" sha1="619f3410ff19b828ff837c2897d0e05879219094" offset="0" />
-	        </dataarea>
-	    </part>
+			<dataarea name="flop" size="335426">
+				<rom name="encyclopaedia thomsonis - les papillons vol.3 - heteroceres 2 (1999)(bledor-soft - serveur 87)(fr)(pd)(disk 2 of 2).sap" size="335426" crc="6694ff08" sha1="619f3410ff19b828ff837c2897d0e05879219094" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
 	<software name="etmamm31">
-	    <description>Encyclopaedia Thomsonis - Mammiferes Vol 3-1</description>
-	    <year>1998</year>
-	    <publisher>Bledor-Soft - Serveur87</publisher>
+		<description>Encyclopaedia Thomsonis - Mammiferes Vol 3-1</description>
+		<year>1998</year>
+		<publisher>Bledor-Soft - Serveur87</publisher>
 
-	    <part name="flop1" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1"/>
-	        <dataarea name="flop" size="335426">
-	            <rom name="encyclopaedia thomsonis - mammiferes vol 3-1 (1998)(bledor-soft - serveur 87)(pd)(disk 1 of 2).sap" size="335426" crc="b758dbaf" sha1="22d68a297107f6624fdcba19e260c4582a64614c" offset="0" />
-	        </dataarea>
-	    </part>
-	    <part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="encyclopaedia thomsonis - mammiferes vol 3-1 (1998)(bledor-soft - serveur 87)(pd)(disk 1 of 2).sap" size="335426" crc="b758dbaf" sha1="22d68a297107f6624fdcba19e260c4582a64614c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 2"/>
-	        <dataarea name="flop" size="335426">
-	            <rom name="encyclopaedia thomsonis - mammiferes vol 3-1 (1998)(bledor-soft - serveur 87)(pd)(disk 2 of 2).sap" size="335426" crc="fc68ead1" sha1="7ee1659d34aee4b4ae9719d7b84bc761e26bc8ad" offset="0" />
-	        </dataarea>
-	    </part>
+			<dataarea name="flop" size="335426">
+				<rom name="encyclopaedia thomsonis - mammiferes vol 3-1 (1998)(bledor-soft - serveur 87)(pd)(disk 2 of 2).sap" size="335426" crc="fc68ead1" sha1="7ee1659d34aee4b4ae9719d7b84bc761e26bc8ad" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
 	<software name="etmamm2">
-	    <description>Encyclopaedia Thomsonis - Mammiferes Vol. 2 - Canides 1</description>
-	    <year>1999</year>
-	    <publisher>Bledor-Soft - Serveur87</publisher>
+		<description>Encyclopaedia Thomsonis - Mammiferes Vol. 2 - Canides 1</description>
+		<year>1999</year>
+		<publisher>Bledor-Soft - Serveur87</publisher>
 
-	    <part name="flop1" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1"/>
-	        <dataarea name="flop" size="335426">
-	            <rom name="encyclopaedia thomsonis - mammiferes vol. 2 - canides 1 (1999)(bledor-soft - serveur87)(fr)(pd)(disk 1 of 2).sap" size="335426" crc="2101f179" sha1="ffeed2f929cd4b238df8837480c0f580efd8ed6a" offset="0" />
-	        </dataarea>
-	    </part>
-	    <part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="encyclopaedia thomsonis - mammiferes vol. 2 - canides 1 (1999)(bledor-soft - serveur87)(fr)(pd)(disk 1 of 2).sap" size="335426" crc="2101f179" sha1="ffeed2f929cd4b238df8837480c0f580efd8ed6a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 2"/>
-	        <dataarea name="flop" size="335426">
-	            <rom name="encyclopaedia thomsonis - mammiferes vol. 2 - canides 1 (1999)(bledor-soft - serveur87)(fr)(pd)(disk 2 of 2).sap" size="335426" crc="f0a45437" sha1="bfea6bd279d6595aa0eba416ba527920d6b68688" offset="0" />
-	        </dataarea>
-	    </part>
+			<dataarea name="flop" size="335426">
+				<rom name="encyclopaedia thomsonis - mammiferes vol. 2 - canides 1 (1999)(bledor-soft - serveur87)(fr)(pd)(disk 2 of 2).sap" size="335426" crc="f0a45437" sha1="bfea6bd279d6595aa0eba416ba527920d6b68688" offset="0" />
+			</dataarea>
+		</part>
 	</software>
-		
-	<software name="etmamm2a" cloneof="etmamm2">
-	    <description>Encyclopaedia Thomsonis - Mammiferes Vol. 2 - Canides 1 (Alt Disk 1)</description>
-	    <year>1999</year>
-	    <publisher>Bledor-Soft - Serveur87</publisher>
 
-	    <part name="flop1" interface="floppy_5_25">
+	<software name="etmamm2a" cloneof="etmamm2">
+		<description>Encyclopaedia Thomsonis - Mammiferes Vol. 2 - Canides 1 (Alt Disk 1)</description>
+		<year>1999</year>
+		<publisher>Bledor-Soft - Serveur87</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1"/>
-	        <dataarea name="flop" size="335426">
-	            <rom name="encyclopaedia thomsonis - mammiferes vol. 2 - canides 1 (1999)(bledor-soft - serveur87)(fr)(pd)(disk 1 of 2)[a].sap" size="335426" crc="d31be36f" sha1="2c5b83b43470268173ed6c3bf5530d6eea1e069b" offset="0" />
-	        </dataarea>
-	    </part>
-	    <part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="encyclopaedia thomsonis - mammiferes vol. 2 - canides 1 (1999)(bledor-soft - serveur87)(fr)(pd)(disk 1 of 2)[a].sap" size="335426" crc="d31be36f" sha1="2c5b83b43470268173ed6c3bf5530d6eea1e069b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 2"/>
-	        <dataarea name="flop" size="335426">
-	            <rom name="encyclopaedia thomsonis - mammiferes vol. 2 - canides 1 (1999)(bledor-soft - serveur87)(fr)(pd)(disk 2 of 2).sap" size="335426" crc="f0a45437" sha1="bfea6bd279d6595aa0eba416ba527920d6b68688" offset="0" />
-	        </dataarea>
-	    </part>
+			<dataarea name="flop" size="335426">
+				<rom name="encyclopaedia thomsonis - mammiferes vol. 2 - canides 1 (1999)(bledor-soft - serveur87)(fr)(pd)(disk 2 of 2).sap" size="335426" crc="f0a45437" sha1="bfea6bd279d6595aa0eba416ba527920d6b68688" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
 	<software name="etmamm3">
-	    <description>Encyclopaedia Thomsonis - Mammiferes vol.3 - Special Loup</description>
-	    <year>2000</year>
-	    <publisher>Bledor-Soft - Serveur87</publisher>
+		<description>Encyclopaedia Thomsonis - Mammiferes vol.3 - Special Loup</description>
+		<year>2000</year>
+		<publisher>Bledor-Soft - Serveur87</publisher>
 
-	    <part name="flop1" interface="floppy_5_25">
-	    <feature name="part_id" value="Disk 1"/>
-	        <dataarea name="flop" size="335426">
-	            <rom name="encyclopaedia thomsonis - mammiferes vol. 3 - special loup (2000)(bledor-soft - serveur87)(fr)(pd)(disk 1 of 2).sap" size="335426" crc="3407c711" sha1="71c13011d552924a809f9de22444ea3019165b3d" offset="0" />
-	        </dataarea>
-	    </part>
-	    <part name="flop2" interface="floppy_5_25">
-	    <feature name="part_id" value="Disk 2"/>
-	        <dataarea name="flop" size="335426">
-	            <rom name="encyclopaedia thomsonis - mammiferes vol. 3 - special loup (2000)(bledor-soft - serveur87)(fr)(pd)(disk 2 of 2).sap" size="335426" crc="49e4e7a8" sha1="d819130624e7ce3e456291abadf44a8a69e0f813" offset="0" />
-	        </dataarea>
-	    </part>
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="335426">
+				<rom name="encyclopaedia thomsonis - mammiferes vol. 3 - special loup (2000)(bledor-soft - serveur87)(fr)(pd)(disk 1 of 2).sap" size="335426" crc="3407c711" sha1="71c13011d552924a809f9de22444ea3019165b3d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="335426">
+				<rom name="encyclopaedia thomsonis - mammiferes vol. 3 - special loup (2000)(bledor-soft - serveur87)(fr)(pd)(disk 2 of 2).sap" size="335426" crc="49e4e7a8" sha1="d819130624e7ce3e456291abadf44a8a69e0f813" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
 	<software name="etmamm3a" cloneof="etmamm3">
-	    <description>Encyclopaedia Thomsonis - Mammiferes vol.3 - Special Loup (Alt)</description>
-	    <year>2000</year>
-	    <publisher>Bledor-Soft - Serveur87</publisher>
+		<description>Encyclopaedia Thomsonis - Mammiferes vol.3 - Special Loup (Alt)</description>
+		<year>2000</year>
+		<publisher>Bledor-Soft - Serveur87</publisher>
 
-	    <part name="flop1" interface="floppy_5_25">
-	    <feature name="part_id" value="Disk 1"/>
-	        <dataarea name="flop" size="335426">
-	            <rom name="encyclopaedia thomsonis - mammiferes vol. 3 - special loup (2000)(bledor-soft - serveur87)(fr)(pd)(disk 1 of 2)[a].sap" size="335426" crc="0121e2ad" sha1="7f47e6d0f0b8a510fb9eab90c69521303ae6188b" offset="0" />
-	        </dataarea>
-	    </part>
-	    <part name="flop2" interface="floppy_5_25">
-	    <feature name="part_id" value="Disk 2"/>
-	        <dataarea name="flop" size="335426">
-	            <rom name="encyclopaedia thomsonis - mammiferes vol. 3 - special loup (2000)(bledor-soft - serveur87)(fr)(pd)(disk 2 of 2)[a].sap" size="335426" crc="c1f177d5" sha1="cc421dfe6354fdaa6dd771a1fd13389e21127c09" offset="0" />
-	        </dataarea>
-	    </part>
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="335426">
+				<rom name="encyclopaedia thomsonis - mammiferes vol. 3 - special loup (2000)(bledor-soft - serveur87)(fr)(pd)(disk 1 of 2)[a].sap" size="335426" crc="0121e2ad" sha1="7f47e6d0f0b8a510fb9eab90c69521303ae6188b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="335426">
+				<rom name="encyclopaedia thomsonis - mammiferes vol. 3 - special loup (2000)(bledor-soft - serveur87)(fr)(pd)(disk 2 of 2)[a].sap" size="335426" crc="c1f177d5" sha1="cc421dfe6354fdaa6dd771a1fd13389e21127c09" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
-	<!-- Games -->
+<!-- Games -->
 
 	<software name="1000born">
 		<description>1000 Bornes</description>
@@ -5228,7 +5228,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="1000borna" cloneof="1000born">
 		<description>1000 Bornes (SAP Format)</description>
 		<year>1985</year>
@@ -5346,7 +5346,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="veracruza" cloneof="veracruz">
 		<description>L'Affaire Vera Cruz (SAP Format)</description>
 		<year>1986</year>
@@ -5370,7 +5370,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="aigleora" cloneof="aigleor">
 		<description>L'Aigle d'Or (Alt)</description>
 		<year>1985</year>
@@ -5382,7 +5382,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="aigleorb" cloneof="aigleor">
 		<description>L'Aigle d'Or (Alt 2)</description>
 		<year>1985</year>
@@ -5406,7 +5406,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="aigleord" cloneof="aigleor">
 		<description>L'Aigle d'Or (SAP Format, Alt)</description>
 		<year>1985</year>
@@ -5418,7 +5418,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="aigleorqd" cloneof="aigleor" supported="no">
 		<description>L'Aigle d'Or (QD, Bad?)</description>
 		<year>1985</year>
@@ -5444,7 +5444,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="airatta" cloneof="airatt">
 		<description>Air Attack (SAP Format)</description>
 		<year>1985</year>
@@ -5505,7 +5505,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="americaa" cloneof="america">
 		<description>America's Cup (SAP Format)</description>
 		<year>1986</year>
@@ -5541,7 +5541,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="aquanauta" cloneof="aquanaut">
 		<description>Aquanaute (SAP Format)</description>
 		<year>1988</year>
@@ -5577,7 +5577,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="astrixraa" cloneof="astrixra">
 		<description>Asterix chez Rahazade (Cracked by Thomsoft)</description>
 		<year>1987</year>
@@ -5589,7 +5589,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="astrixrab" cloneof="astrixra">
 		<description>Asterix chez Rahazade (Hacked by dcmoto)</description>
 		<year>1987</year>
@@ -5606,23 +5606,23 @@
 		<description>Asterix chez Rahazade (Extra Junk Data)</description>
 		<year>1987</year>
 		<publisher>Coktel Vision</publisher>
-		
+
 		<part name="flop1" interface="floppy_5_25">
-		    <dataarea name="flop" size="331776">
-		        <rom name="asterix chez rahazade (1987)(coktel vision)(fr)[4k extra bytes].fd" size="331776" crc="df45d7ab" sha1="b6053e673162bfec1ca87fb4f9ed1f2355143564" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="331776">
+				<rom name="asterix chez rahazade (1987)(coktel vision)(fr)[4k extra bytes].fd" size="331776" crc="df45d7ab" sha1="b6053e673162bfec1ca87fb4f9ed1f2355143564" offset="0" />
+			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="astrixrad" cloneof="astrixra">
 		<description>Asterix chez Rahazade (Hacked by dcmoto, 640K Disk)</description>
 		<year>1987</year>
 		<publisher>Coktel Vision</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		    <dataarea name="flop" size="655360">
-		        <rom name="asterix chez rahazade (1987)(coktel vision)(fr)[h dcmoto.free.fr][640k].fd" size="655360" crc="e9d69766" sha1="2bf62059abf9ea21704b47403baf2e4466b7503d" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="asterix chez rahazade (1987)(coktel vision)(fr)[h dcmoto.free.fr][640k].fd" size="655360" crc="e9d69766" sha1="2bf62059abf9ea21704b47403baf2e4466b7503d" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -5637,7 +5637,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="astrixpoa" cloneof="astrixpo">
 		<description>Asterix et la Potion Magique (SAP Format)</description>
 		<year>1986</year>
@@ -5661,7 +5661,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="atomika" cloneof="atomik">
 		<description>Atomik (SAP Format)</description>
 		<year>1988</year>
@@ -5685,7 +5685,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="auxoriga" cloneof="auxorig">
 		<description>Aux Origines de la Vie (SAP Format)</description>
 		<year>1988</year>
@@ -5709,7 +5709,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="avengera" cloneof="avenger">
 		<description>Avenger (SAP Format)</description>
 		<year>1986</year>
@@ -5721,7 +5721,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="avengerb" cloneof="avenger">
 		<description>Avenger (SAP Format, Alt)</description>
 		<year>1986</year>
@@ -5745,7 +5745,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="baghchala" cloneof="baghchal">
 		<description>Le Bagh Chal (SAP Format)</description>
 		<year>1985</year>
@@ -5806,7 +5806,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="bivouaca" cloneof="bivouac">
 		<description>Bivouac (SAP Format)</description>
 		<year>1987</year>
@@ -5818,7 +5818,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="bivouacb" cloneof="bivouac">
 		<description>Bivouac (Compilation Les Athletes no. 2)</description>
 		<year>1987</year>
@@ -5830,7 +5830,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="bivouacc" cloneof="bivouac">
 		<description>Bivouac (Compilation Les Athletes no.2) (SAP Format)</description>
 		<year>1987</year>
@@ -5891,7 +5891,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="bluewar2a" cloneof="bluewar2">
 		<description>Blue War 2 (SAP Format)</description>
 		<year>198?</year>
@@ -5915,7 +5915,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="bluberrya" cloneof="bluberry">
 		<description>Blueberry (SAP Format)</description>
 		<year>1987</year>
@@ -5939,7 +5939,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="moranecha" cloneof="moranech">
 		<description>Bob Morane - Chevalerie 1 (SAP Format)</description>
 		<year>1987</year>
@@ -5951,7 +5951,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="moranechb" cloneof="moranech">
 		<description>Bob Morane - Chevalerie 1 (Cracked by Shubert)</description>
 		<year>1987</year>
@@ -5975,7 +5975,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="moranejua" cloneof="moraneju">
 		<description>Bob Morane - Jungle 1 (SAP Format)</description>
 		<year>1987</year>
@@ -5999,7 +5999,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="moranesfa" cloneof="moranesf">
 		<description>Bob Morane - Science Fiction 1 (SAP Format)</description>
 		<year>1987</year>
@@ -6011,7 +6011,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="moranesfb" cloneof="moranesf">
 		<description>Bob Morane - Science Fiction 1 (SAP Format, Alt)</description>
 		<year>1987</year>
@@ -6043,7 +6043,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="bobwinnra" cloneof="bobwinnr">
 		<description>Bob Winner (SAP Format)</description>
 		<year>1987</year>
@@ -6071,9 +6071,9 @@
 		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
 
 		<part name="flop1" interface="floppy_5_25">
-		    <dataarea name="flop" size="655360">
-		        <rom name="bob winner (1987)(loriciels)(fr)[640k, boot with microsoft basic 1.0].fd" size="655360" crc="f37405a8" sha1="8a5310412c442ed1097845c19bfd268ec737e36e" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="bob winner (1987)(loriciels)(fr)[640k, boot with microsoft basic 1.0].fd" size="655360" crc="f37405a8" sha1="8a5310412c442ed1097845c19bfd268ec737e36e" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -6088,7 +6088,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="boboa" cloneof="bobo">
 		<description>Bobo (Alt)</description>
 		<year>1988</year>
@@ -6148,7 +6148,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="bugsbusta" cloneof="bugsbust">
 		<description>Bugs Buster (SAP Format)</description>
 		<year>198?</year>
@@ -6196,7 +6196,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="thenebea" cloneof="thenebe">
 		<description>Les Cavernes de Thenebe (Compilation Top Arcade)</description>
 		<year>198?</year>
@@ -6220,7 +6220,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="challenga" cloneof="challeng">
 		<description>Challenge - Simulation d'Entreprise (Alt)</description>
 		<year>1988</year>
@@ -6232,7 +6232,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="challengb" cloneof="challeng">
 		<description>Challenge - Simulation d'Entreprise (SAP Format)</description>
 		<year>1988</year>
@@ -6319,7 +6319,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="cobraa" cloneof="cobra">
 		<description>Cobra (Cracked by Albert Tleri)</description>
 		<year>1987</year>
@@ -6356,7 +6356,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="colorica" cloneof="coloric">
 		<description>Coloric (SAP Format)</description>
 		<year>1984</year>
@@ -6404,7 +6404,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="crazycara" cloneof="crazycar">
 		<description>Crazy Cars (Alt)</description>
 		<year>1987</year>
@@ -6452,7 +6452,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="cyrusecha" cloneof="cyrusech">
 		<description>Cyrus Echecs (SAP Format)</description>
 		<year>1984</year>
@@ -6476,7 +6476,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="deftarota" cloneof="deftarot">
 		<description>Defi au Tarot (Hacked)</description>
 		<year>1988</year>
@@ -6488,7 +6488,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="deftarotb" cloneof="deftarot">
 		<description>Defi au Tarot (Hacked, SAP Format)</description>
 		<year>1988</year>
@@ -6524,7 +6524,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="domcamila" cloneof="domcamil">
 		<description>Dom Camillo (SAP Format)</description>
 		<year>1987</year>
@@ -6560,7 +6560,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="coloradoa" cloneof="colorado">
 		<description>Duel au Colorado (Cracked by The Crapaud Musulman)</description>
 		<year>198?</year>
@@ -6585,7 +6585,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="echoflipa" cloneof="echoflip">
 		<description>Echo-Flipper (SAP Format)</description>
 		<year>1985</year>
@@ -6633,7 +6633,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="enduroa" cloneof="enduro">
 		<description>Enduro Racer (SAP Format)</description>
 		<year>1988</year>
@@ -6693,7 +6693,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="f15eaglea" cloneof="f15eagle">
 		<description>F-15 Strike Eagle (Alt)</description>
 		<year>1987</year>
@@ -6705,7 +6705,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="f15eagleb" cloneof="f15eagle">
 		<description>F-15 Strike Eagle (Modified Loading Screen)</description>
 		<year>1987</year>
@@ -6754,7 +6754,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="foxa" cloneof="fox">
 		<description>Fox (SAP Format)</description>
 		<year>1985</year>
@@ -6815,7 +6815,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="artillaca" cloneof="artillac">
 		<description>La Geste d'Artillac (Alt)</description>
 		<year>1985</year>
@@ -6863,7 +6863,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="histtheaa" cloneof="histthea">
 		<description>Histoire de Theatre (Alt)</description>
 		<year>1985</year>
@@ -6875,7 +6875,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="histtheab" cloneof="histthea">
 		<description>Histoire de Theatre (SAP Format)</description>
 		<year>1985</year>
@@ -6949,7 +6949,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="marellesa" cloneof="marelles">
 		<description>Le Jeu des Marelles (Alt)</description>
 		<year>198?</year>
@@ -6961,7 +6961,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="marellesb" cloneof="marelles">
 		<description>Le Jeu des Marelles (SAP Format)</description>
 		<year>198?</year>
@@ -7009,7 +7009,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="guinnessa" cloneof="guinness">
 		<description>Jeu Guinness des Records (SAP Format)</description>
 		<year>198?</year>
@@ -7045,7 +7045,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="jumpsurva" cloneof="jumpsurv">
 		<description>Jump for Survival (SAP Format)</description>
 		<year>198?</year>
@@ -7181,7 +7181,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="lasvegasa" cloneof="lasvegas">
 		<description>Las Vegas (Alt)</description>
 		<year>1985</year>
@@ -7193,7 +7193,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="lasvegasb" cloneof="lasvegas">
 		<description>Las Vegas (SAP Format)</description>
 		<year>1985</year>
@@ -7249,7 +7249,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="legendea" cloneof="legende">
 		<description>Legende (Alt)</description>
 		<year>1986</year>
@@ -7280,7 +7280,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="lemmingsa" cloneof="lemmings">
 		<description>Lemmings (SAP Format)</description>
 		<year>2006</year>
@@ -7306,9 +7306,9 @@
 		<publisher>YRprod</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		    <dataarea name="flop" size="655360">
-		        <rom name="lemmings (2006)(yrprod)(fr)[640k].fd" size="655360" crc="de483de0" sha1="54479f0158cd17dcee21dbe824f29fc9c87ae228" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="lemmings (2006)(yrprod)(fr)[640k].fd" size="655360" crc="de483de0" sha1="54479f0158cd17dcee21dbe824f29fc9c87ae228" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -7335,7 +7335,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="lotoa" cloneof="loto">
 		<description>Loto (SAP Format)</description>
 		<year>1985</year>
@@ -7371,7 +7371,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="macadama" cloneof="macadam">
 		<description>Macadam Bumper (SAP Format)</description>
 		<year>1989</year>
@@ -7395,7 +7395,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="mach3a" cloneof="mach3">
 		<description>Mach 3 (SAP Format)</description>
 		<year>1987</year>
@@ -7468,7 +7468,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="marchomba" cloneof="marchomb">
 		<description>Marche a l'Ombre (SAP Format)</description>
 		<year>1987</year>
@@ -7480,7 +7480,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="marchombb" cloneof="marchomb">
 		<description>Marche a l'Ombre (SAP Format, Alt)</description>
 		<year>1987</year>
@@ -7504,7 +7504,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="marqjauna" cloneof="marqjaun">
 		<description>La Marque Jaune (SAP Format)</description>
 		<year>1988</year>
@@ -7528,7 +7528,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="mascottea" cloneof="mascotte">
 		<description>La Mascotte (Cracked by The Crapaud Musulman)</description>
 		<year>1988</year>
@@ -7552,7 +7552,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="masquea" cloneof="masque">
 		<description>Masque (SAP Format)</description>
 		<year>1989</year>
@@ -7564,7 +7564,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="masqueb" cloneof="masque">
 		<description>Masque (Compilation Top Adventure)</description>
 		<year>1989</year>
@@ -7588,7 +7588,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="maxiboura" cloneof="maxibour">
 		<description>Maxi Bourse International (SAP Format)</description>
 		<year>1988</year>
@@ -7636,7 +7636,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="megawatta" cloneof="megawatt">
 		<description>Megawatt (SAP Format)</description>
 		<year>1987</year>
@@ -7672,7 +7672,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="meurtsera" cloneof="meurtser">
 		<description>Meurtres en Serie (Alt)</description>
 		<year>1987</year>
@@ -7684,7 +7684,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="meurtserb" cloneof="meurtser">
 		<description>Meurtres en Serie (SAP Format)</description>
 		<year>1987</year>
@@ -7696,7 +7696,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="meurtserc" cloneof="meurtser">
 		<description>Meurtres en Serie (SAP Format, Alt)</description>
 		<year>1987</year>
@@ -7720,7 +7720,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="meurtatla" cloneof="meurtatl">
 		<description>Meurtres sur l'Atlantique (SAP Format)</description>
 		<year>1986</year>
@@ -7732,7 +7732,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="meurtatlb" cloneof="meurtatl">
 		<description>Meurtres sur l'Atlantique (Includes Test)</description>
 		<year>1986</year>
@@ -7788,7 +7788,7 @@
 			</dataarea>
 		</part>
 	</software>
-		
+
 	<software name="scrabbleb" cloneof="scrabble">
 		<description>Micro-Scrabble (SAP Format)</description>
 		<year>1985</year>
@@ -7800,7 +7800,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="scrabblec" cloneof="scrabble">
 		<description>Micro-Scrabble (Hacked by Pustulman)</description>
 		<year>1985</year>
@@ -7864,7 +7864,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="missiona" cloneof="mission">
 		<description>Mission (Cracked by Adolf Hitler)</description>
 		<year>1987</year>
@@ -7888,7 +7888,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="misstresa" cloneof="misstres">
 		<description>Mission Tres Speciale (SAP Format)</description>
 		<year>1985</year>
@@ -7924,7 +7924,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="monopolca" cloneof="monopolc">
 		<description>Monopolic (SAP Format)</description>
 		<year>198?</year>
@@ -7948,7 +7948,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="monopolya" cloneof="monopoly">
 		<description>Monopoly (SAP Format)</description>
 		<year>1986</year>
@@ -7984,7 +7984,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="mysparisa" cloneof="mysparis">
 		<description>Le Mystere de Paris (Alt)</description>
 		<year>1988</year>
@@ -8008,7 +8008,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="nuittempa" cloneof="nuittemp">
 		<description>La Nuit des Templiers (SAP Format)</description>
 		<year>1986</year>
@@ -8020,7 +8020,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="nuittempb" cloneof="nuittemp">
 		<description>La Nuit des Templiers (SAP Format, Alt)</description>
 		<year>1986</year>
@@ -8044,7 +8044,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="okcowboya" cloneof="okcowboy">
 		<description>OK Cowboy (SAP Format)</description>
 		<year>1987</year>
@@ -8056,7 +8056,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="okcowboyb" cloneof="okcowboy">
 		<description>OK Cowboy (SAP Format, Alt)</description>
 		<year>1987</year>
@@ -8080,7 +8080,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="oxphara" cloneof="oxphar">
 		<description>Oxphar (SAP Format)</description>
 		<year>1987</year>
@@ -8128,7 +8128,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="paniqueb" cloneof="panique">
 		<description>Panique Atomique chez Novasprites (Cracked by Snark Software, Alt)</description>
 		<year>1985</year>
@@ -8152,7 +8152,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="passvnt2a" cloneof="passvnt2">
 		<description>Les Passagers du Vent - Partie 2 (SAP Format)</description>
 		<year>1987</year>
@@ -8201,7 +8201,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="pocka" cloneof="pock">
 		<description>Pock (SAP Format)</description>
 		<year>1992</year>
@@ -8262,7 +8262,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="prohibita" cloneof="prohibit">
 		<description>Prohibition (Alt)</description>
 		<year>1987</year>
@@ -8274,7 +8274,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="prohibitb" cloneof="prohibit">
 		<description>Prohibition (SAP Format)</description>
 		<year>1987</year>
@@ -8322,7 +8322,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="manchea" cloneof="manche">
 		<description>Raid sur la Manche (SAP Format)</description>
 		<year>1987</year>
@@ -8358,7 +8358,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="renegadea" cloneof="renegade">
 		<description>Renegade (Cracked by TGR-Krakeur, Alt)</description>
 		<year>1988</year>
@@ -8382,7 +8382,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="reussitea" cloneof="reussite">
 		<description>Reussites (SAP Format)</description>
 		<year>1987</year>
@@ -8418,7 +8418,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="ripouxa" cloneof="ripoux">
 		<description>Les Ripoux (SAP Format)</description>
 		<year>1987</year>
@@ -8454,7 +8454,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="roadkilla" cloneof="roadkill">
 		<description>Road Killer (Cracked by Thomsoft)</description>
 		<year>1987</year>
@@ -8478,7 +8478,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="crusoea" cloneof="crusoe">
 		<description>Robinson Crusoe (Alt)</description>
 		<year>1987</year>
@@ -8526,7 +8526,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="romulusa" cloneof="romulus">
 		<description>Romulus - Rome et Moi (Alt)</description>
 		<year>198?</year>
@@ -8611,7 +8611,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="sapiensa" cloneof="sapiens">
 		<description>Sapiens (SAP Format)</description>
 		<year>1986</year>
@@ -8623,7 +8623,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="sapiensb" cloneof="sapiens">
 		<description>Sapiens (SAP Format, Alt)</description>
 		<year>1986</year>
@@ -8762,7 +8762,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="slapfighb" cloneof="slapfigh">
 		<description>Slap Fight (SAP Format, Alt)</description>
 		<year>1987</year>
@@ -8774,7 +8774,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="slapfighc" cloneof="slapfigh">
 		<description>Slap Fight (SAP Format, Alt 2)</description>
 		<year>1987</year>
@@ -8810,7 +8810,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="soliela" cloneof="soliel">
 		<description>Le Soliel et ses Planetes (SAP Format)</description>
 		<year>1987</year>
@@ -8894,7 +8894,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="spaceraca" cloneof="spacerac">
 		<description>Space Racer (SAP Format)</description>
 		<year>1988</year>
@@ -8906,7 +8906,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="spaceracb" cloneof="spacerac">
 		<description>Space Racer (SAP Format, Alt)</description>
 		<year>1988</year>
@@ -8942,7 +8942,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="spacetuna" cloneof="spacetun">
 		<description>Space Tunnel (Bad Dump)</description>
 		<year>1987</year>
@@ -8979,7 +8979,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="spindizza" cloneof="spindizz">
 		<description>Spindizzy (SAP Format)</description>
 		<year>1986</year>
@@ -9004,7 +9004,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="startrek">
 		<description>Star-Trek</description>
 		<year>198?</year>
@@ -9040,7 +9040,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="stonezona" cloneof="stonezon">
 		<description>Stone Zone (Cracked by Shubert)</description>
 		<year>198?</year>
@@ -9100,7 +9100,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="tnta" cloneof="tnt">
 		<description>T.N.T. (Cracked by G.A.D.J.O.)</description>
 		<year>1986</year>
@@ -9148,7 +9148,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="temphista" cloneof="temphist">
 		<description>Le Temps d'Une Historie (SAP Format)</description>
 		<year>1987</year>
@@ -9160,7 +9160,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="temphistb" cloneof="temphist">
 		<description>Le Temps d'Une Historie (SAP Format, Alt)</description>
 		<year>1987</year>
@@ -9196,7 +9196,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="tetrisyra" cloneof="tetrisyr">
 		<description>Tetris (YRprod) (Alt)</description>
 		<year>2005</year>
@@ -9208,7 +9208,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="tetrisyrb" cloneof="tetrisyr">
 		<description>Tetris (YRprod) (SAP Format)</description>
 		<year>2005</year>
@@ -9288,7 +9288,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="karaokea" cloneof="karaoke">
 		<description>TO-Karaoke (SAP Format)</description>
 		<year>2002</year>
@@ -9326,9 +9326,9 @@
 		<publisher>Bledor-Soft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		    <dataarea name="flop" size="1310720">
-		        <rom name="to-karaoke (2002)(bledor-soft)(fr)[1280k].fd" size="1310720" crc="d97eed8f" sha1="e80e11242359b64ed81e1e8fd27f27fcef6a320c" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="1310720">
+				<rom name="to-karaoke (2002)(bledor-soft)(fr)[1280k].fd" size="1310720" crc="d97eed8f" sha1="e80e11242359b64ed81e1e8fd27f27fcef6a320c" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -9379,7 +9379,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="tresbaska" cloneof="tresbask">
 		<description>Le Tresor des Baskerville (Alt)</description>
 		<year>198?</year>
@@ -9403,7 +9403,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="trespira" cloneof="trespir">
 		<description>Le Tresor du Pirate (SAP Format)</description>
 		<year>1984</year>
@@ -9415,7 +9415,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="trespirb" cloneof="trespir">
 		<description>Le Tresor du Pirate (SAP Format, Alt)</description>
 		<year>1984</year>
@@ -9487,7 +9487,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="trivialpa" cloneof="trivialp">
 		<description>Trivial Pursuit (SAP Format)</description>
 		<year>198?</year>
@@ -9499,7 +9499,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="trivialpb" cloneof="trivialp">
 		<description>Trivial Pursuit (Compilation Top Adventure)</description>
 		<year>198?</year>
@@ -9566,7 +9566,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="turlogha" cloneof="turlogh">
 		<description>Turlogh de Penroth (Cracked by A. Hitler) (SAP Format)</description>
 		<year>1988</year>
@@ -9590,7 +9590,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="affairora" cloneof="affairor">
 		<description>Une Affaire en Or (SAP Format)</description>
 		<year>198?</year>
@@ -9626,7 +9626,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="vampirea" cloneof="vampire">
 		<description>Vampire (SAP Format)</description>
 		<year>1986</year>
@@ -9712,7 +9712,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="volsoloa" cloneof="volsolo">
 		<description>Vol Solo (Alt)</description>
 		<year>1986</year>
@@ -9724,7 +9724,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="volsolob" cloneof="volsolo">
 		<description>Vol Solo (SAP Format)</description>
 		<year>1986</year>
@@ -9736,7 +9736,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="volsoloc" cloneof="volsolo">
 		<description>Vol Solo (SAP Format, Alt)</description>
 		<year>1986</year>
@@ -9822,7 +9822,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="waytigera" cloneof="waytiger">
 		<description>The Way of the Tiger (SAP Format)</description>
 		<year>1986</year>
@@ -9846,7 +9846,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="wizballa" cloneof="wizball">
 		<description>Wizball (Alt)</description>
 		<year>1988</year>
@@ -9882,7 +9882,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="mewiloa" cloneof="mewilo">
 		<description>Mewilo (SAP Format)</description>
 		<year>1987</year>
@@ -9895,7 +9895,7 @@
 		</part>
 	</software>
 
-	<!-- Compilations (Applications) -->
+<!-- Compilations (Applications) -->
 
 	<software name="compil99">
 		<description>Compil99</description>
@@ -10053,7 +10053,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="m_app2">
 		<description>Unknown Applications Compilation Disk 2</description>
 		<year>19??</year>
@@ -10083,7 +10083,7 @@
 		<description>Prehis-To Compilation 2</description>
 		<year>200?</year>
 		<publisher>Serveur87</publisher>
-		
+
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="preisto2.sap" size="335426" crc="d31ea7da" sha1="aab164307517812532849cbc731cb786378f6e94" offset="0" />
@@ -10103,7 +10103,7 @@
 		</part>
 	</software>
 
-	<!-- Compilations (Educational) -->
+<!-- Compilations (Educational) -->
 
 	<software name="edilfran">
 		<description>Collection Francais</description>
@@ -10265,7 +10265,7 @@
 		</part>
 	</software>
 
-	<!-- Compilations (Games) -->
+<!-- Compilations (Games) -->
 
 	<software name="3as">
 		<description>3 As</description>
@@ -10403,7 +10403,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="athletesa" cloneof="athletes">
 		<description>Les Athletes (Alt)</description>
 		<year>198?</year>
@@ -10415,7 +10415,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="athletesb" cloneof="athletes">
 		<description>Les Athletes (SAP Format)</description>
 		<year>198?</year>
@@ -10427,7 +10427,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="athletesc" cloneof="athletes">
 		<description>Les Athletes (SAP Format, Alt)</description>
 		<year>198?</year>
@@ -10439,7 +10439,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="athletesd" cloneof="athletes">
 		<description>Les Athletes (SAP Format, Alt 2)</description>
 		<year>198?</year>
@@ -10451,7 +10451,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="athletese" cloneof="athletes">
 		<description>Les Athletes (SAP Format, Alt 3)</description>
 		<year>198?</year>
@@ -10482,7 +10482,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="aventursa" cloneof="aventurs">
 		<description>Les Aventuriers - 1ere Partie (SAP Format)</description>
 		<year>1988</year>
@@ -10533,7 +10533,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="bda" cloneof="bd">
 		<description>Les B.D. (Alt)</description>
 		<year>1988</year>
@@ -10668,7 +10668,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="bloodbiva" cloneof="bloodbiv">
 		<description>Captain Blood &amp; Bivouac (SAP Format)</description>
 		<year>198?</year>
@@ -10699,7 +10699,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="bloodmuta" cloneof="bloodmut" supported="partial">
 		<description>Captain Blood &amp; Les Mutants (SAP Format, Missing Disk 2?)</description>
 		<year>198?</year>
@@ -10754,7 +10754,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="chevaliea" cloneof="chevalie">
 		<description>Les Chevaliers (SAP Format)</description>
 		<year>1988</year>
@@ -10778,7 +10778,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="chevaliec" cloneof="chevalie">
 		<description>Les Chevaliers (SAP Format, Alt 2)</description>
 		<year>1988</year>
@@ -10802,7 +10802,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="classiq1a" cloneof="classiq1">
 		<description>Classiques Volume 1 (SAP Format)</description>
 		<year>1987</year>
@@ -10850,7 +10850,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="coktel1a" cloneof="coktel1">
 		<description>Coktel Vision Compilation 1 (Hacked Menu 1)</description>
 		<year>198?</year>
@@ -10862,7 +10862,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="coktel1b" cloneof="coktel1">
 		<description>Coktel Vision Compilation 1 (Hacked Menu 2)</description>
 		<year>198?</year>
@@ -10874,7 +10874,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="coktel1c" cloneof="coktel1">
 		<description>Coktel Vision Compilation 1 (Hacked Menu 3)</description>
 		<year>198?</year>
@@ -10898,7 +10898,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="coktel2a" cloneof="coktel2">
 		<description>Coktel Vision Compilation 2 (SAP Format)</description>
 		<year>198?</year>
@@ -10922,7 +10922,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="coktel3a" cloneof="coktel3">
 		<description>Coktel Vision Compilation 3 (SAP Format)</description>
 		<year>198?</year>
@@ -11092,7 +11092,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="greatcola" cloneof="greatcol">
 		<description>The Greatest Collection (SAP Format)</description>
 		<year>1987</year>
@@ -11368,7 +11368,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="jeuxto91a" cloneof="jeuxto91">
 		<description>Jeux TO9 (Carte du Ciel + Super Tennis) (SAP Format)</description>
 		<year>1986</year>
@@ -11404,7 +11404,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="kidkita" cloneof="kidkit">
 		<description>Kidkit (SAP Format)</description>
 		<year>1986</year>
@@ -11416,7 +11416,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="kidkitb" cloneof="kidkit">
 		<description>Kidkit (Hacked Menu)</description>
 		<year>1986</year>
@@ -11440,7 +11440,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="lanceura" cloneof="lanceur">
 		<description>Lanceur Disk Games Compilation (SAP Format)</description>
 		<year>19??</year>
@@ -11452,7 +11452,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="lanceurb" cloneof="lanceur">
 		<description>Lanceur Disk Games Compilation (No Menu, Non-Bootable)</description>
 		<year>19??</year>
@@ -11476,7 +11476,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="macapolia" cloneof="macapoli">
 		<description>Macadam Bumper &amp; Politik Poker (SAP Format)</description>
 		<year>198?</year>
@@ -11512,7 +11512,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="mallettea" cloneof="mallette">
 		<description>Mallette de Jeu Thomson (SAP Format)</description>
 		<year>1987</year>
@@ -11524,7 +11524,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="malletteb" cloneof="mallette">
 		<description>Mallette de Jeu Thomson (SAP Format, Alt)</description>
 		<year>1987</year>
@@ -11544,63 +11544,63 @@
 
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1"/>
-		    <dataarea name="flop" size="655360">
-		        <rom name="megasofts01.fd" size="655360" crc="3130c2ab" sha1="4100c5787635c0316c81e09543583ae671f40bcc" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="megasofts01.fd" size="655360" crc="3130c2ab" sha1="4100c5787635c0316c81e09543583ae671f40bcc" offset="0" />
+			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 2"/>
-		    <dataarea name="flop" size="655360">
-		        <rom name="megasofts02.fd" size="655360" crc="fc90cd09" sha1="0dee02dfeb8713e68b353ceb5654ff0a9dafc255" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="megasofts02.fd" size="655360" crc="fc90cd09" sha1="0dee02dfeb8713e68b353ceb5654ff0a9dafc255" offset="0" />
+			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 3"/>
-		    <dataarea name="flop" size="655360">
-		        <rom name="megasofts03.fd" size="655360" crc="749779e1" sha1="cf083bb56a4567c4c158ec434e014a631c190540" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="megasofts03.fd" size="655360" crc="749779e1" sha1="cf083bb56a4567c4c158ec434e014a631c190540" offset="0" />
+			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 4"/>
-		    <dataarea name="flop" size="655360">
-		        <rom name="megasofts04.fd" size="655360" crc="ddf5b49f" sha1="67b513cb7ee19888c399e981febc5457fe0d0822" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="megasofts04.fd" size="655360" crc="ddf5b49f" sha1="67b513cb7ee19888c399e981febc5457fe0d0822" offset="0" />
+			</dataarea>
 		</part>
 		<part name="flop5" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 5"/>
-		    <dataarea name="flop" size="655360">
-		        <rom name="megasofts05.fd" size="655360" crc="3f5f5793" sha1="747892457af3ede440ee1c2fc0f2d2e0542dc560" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="megasofts05.fd" size="655360" crc="3f5f5793" sha1="747892457af3ede440ee1c2fc0f2d2e0542dc560" offset="0" />
+			</dataarea>
 		</part>
 		<part name="flop6" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 6"/>
-		    <dataarea name="flop" size="655360">
-		        <rom name="megasofts06.fd" size="655360" crc="3325a9da" sha1="9d183c687a2cc688981818278a1d7e3fe6d34cb9" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="megasofts06.fd" size="655360" crc="3325a9da" sha1="9d183c687a2cc688981818278a1d7e3fe6d34cb9" offset="0" />
+			</dataarea>
 		</part>
 		<part name="flop7" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 7"/>
-		    <dataarea name="flop" size="655360">
-		        <rom name="megasofts07.fd" size="655360" crc="c42f423f" sha1="80bc474178031b2d50469c38070a50dbf642a019" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="megasofts07.fd" size="655360" crc="c42f423f" sha1="80bc474178031b2d50469c38070a50dbf642a019" offset="0" />
+			</dataarea>
 		</part>
 		<part name="flop8" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 8"/>
-		    <dataarea name="flop" size="655360">
-		        <rom name="megasofts08.fd" size="655360" crc="c8c9dc1c" sha1="b3755d9dd63cd3277b39af07f662ed0ee0e36422" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="megasofts08.fd" size="655360" crc="c8c9dc1c" sha1="b3755d9dd63cd3277b39af07f662ed0ee0e36422" offset="0" />
+			</dataarea>
 		</part>
-	    <part name="flop9" interface="floppy_5_25">
+		<part name="flop9" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 9"/>
-	        <dataarea name="flop" size="655360">
-	            <rom name="megasofts09.fd" size="655360" crc="c98b7d07" sha1="31da83676e1b12ef8212e58deb7cb6b54c35f775" offset="0" />
-	        </dataarea>
-	    </part>
+			<dataarea name="flop" size="655360">
+				<rom name="megasofts09.fd" size="655360" crc="c98b7d07" sha1="31da83676e1b12ef8212e58deb7cb6b54c35f775" offset="0" />
+			</dataarea>
+		</part>
 		<part name="flop10" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 10"/>
-		    <dataarea name="flop" size="655360">
-		        <rom name="megasofts10.fd" size="655360" crc="57e0f3ea" sha1="965efceedf477a7861624f5e03322fc19c30b9fa" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="megasofts10.fd" size="655360" crc="57e0f3ea" sha1="965efceedf477a7861624f5e03322fc19c30b9fa" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -11639,7 +11639,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="succesa" cloneof="succes">
 		<description>Pack Succes (SAP Format)</description>
 		<year>1987</year>
@@ -11682,7 +11682,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="privesa" cloneof="prives">
 		<description>Les Prives (Alt)</description>
 		<year>1988</year>
@@ -11701,7 +11701,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="privesb" cloneof="prives">
 		<description>Les Prives (SAP Format)</description>
 		<year>1988</year>
@@ -11726,11 +11726,11 @@
 		<year>1988</year>
 		<publisher>Infogrames</publisher>
 
-	    <part name="flop1" interface="floppy_5_25">
-	        <dataarea name="flop" size="655360">
-	            <rom name="prives, les (1988)(infogrames)(fr)[a][640k].fd" size="655360" crc="b67f8a65" sha1="13f842ad8801b6a94afad72ab32124384bd5468e" offset="0" />
-	        </dataarea>
-	    </part>
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="655360">
+				<rom name="prives, les (1988)(infogrames)(fr)[a][640k].fd" size="655360" crc="b67f8a65" sha1="13f842ad8801b6a94afad72ab32124384bd5468e" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
 	<software name="raquette">
@@ -11757,7 +11757,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="futurista" cloneof="futurist">
 		<description>Les Futuristes (Alt)</description>
 		<year>1988</year>
@@ -11791,9 +11791,9 @@
 		<info name="alt_title" value="Science Fiction"/>
 
 		<part name="flop1" interface="floppy_5_25">
-		    <dataarea name="flop" size="655360">
-		        <rom name="science fiction (1988)(infogrames)(fr)[a3][640k, second half blank].fd" size="655360" crc="281a9c22" sha1="5feb138ff943a5e701f9dcc87b1fec9f264489ee" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="science fiction (1988)(infogrames)(fr)[a3][640k, second half blank].fd" size="655360" crc="281a9c22" sha1="5feb138ff943a5e701f9dcc87b1fec9f264489ee" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -11815,7 +11815,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="microma2">
 		<description>SFMI Micromania Compilation 2</description>
 		<year>19??</year>
@@ -11853,9 +11853,9 @@
 		<publisher>Loriciels</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		    <dataarea name="flop" size="655360">
-		        <rom name="simulation hits (1989)(loriciels)(fr)[640k].fd" size="655360" crc="d9ee313b" sha1="97f66fad5c48f671abc9dbb65e955b87e60eee3d" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="simulation hits (1989)(loriciels)(fr)[640k].fd" size="655360" crc="d9ee313b" sha1="97f66fad5c48f671abc9dbb65e955b87e60eee3d" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -11921,16 +11921,16 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="tet2sokoa" cloneof="tet2soko" supported="no"> <!-- selection menu only says "Tetris", but title screen says "Tetris II"  -->
 		<description>Tetris II &amp; Sokoban (640K Disk)</description>
 		<year>19??</year>
 		<publisher>John Breaker?</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		    <dataarea name="flop" size="655360">
-		        <rom name="tetris ii &amp; sokoban (19xx)(-)[640k].fd" size="655360" crc="8ee695dc" sha1="ad9865db0128740015b61cd04da40121d56f8e12" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="tetris ii &amp; sokoban (19xx)(-)[640k].fd" size="655360" crc="8ee695dc" sha1="ad9865db0128740015b61cd04da40121d56f8e12" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -12007,7 +12007,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="unktitusa" cloneof="unktitus">
 		<description>Unknown Titus Compilation (Alt)</description>
 		<year>19??</year>
@@ -12121,7 +12121,7 @@
 		<description>Unknown Games Compilation Disk 8</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
-	
+
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="comp_asterix.sap" size="335426" crc="9714c29a" sha1="04ad885d1e7a11458f93818a4f6e45f628405926" offset="0" />
@@ -12141,7 +12141,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="m_game9a" cloneof="m_game9">
 		<description>Unknown Games Compilation Disk 9 (Alt)</description>
 		<year>198?</year>
@@ -12154,7 +12154,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="m_game10">
 		<description>Unknown Games Compilation Disk 10</description>
 		<year>19??</year>
@@ -12166,7 +12166,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="m_game11">
 		<description>Unknown Games Compilation Disk 11</description>
 		<year>19??</year>
@@ -12184,7 +12184,7 @@
 		<description>futuristes2</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		
+
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="335426">
@@ -12205,7 +12205,7 @@
 		</part>
 	</software>
 
-	<!-- Compilations (Various) -->
+<!-- Compilations (Various) -->
 
 	<software name="chgcomp">
 		<description>CHG File Compilation</description>
@@ -12412,7 +12412,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="teogame2a" cloneof="teogame2">
 		<description>Teo-Games no.2 (SAP Format)</description>
 		<year>1991</year>
@@ -12438,9 +12438,9 @@
 		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		    <dataarea name="flop" size="655360">
-		        <rom name="teo-games no.2 (1991)(a.s.c.i.)(fr)[640k].fd" size="655360" crc="d40363d3" sha1="690a82740dd2d88c25b8b092e4d129abde1e3360" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="teo-games no.2 (1991)(a.s.c.i.)(fr)[640k].fd" size="655360" crc="d40363d3" sha1="690a82740dd2d88c25b8b092e4d129abde1e3360" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -12462,7 +12462,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="teogame3a" cloneof="teogame3">
 		<description>Teo-Games no.3 (SAP Format)</description>
 		<year>1991</year>
@@ -12488,9 +12488,9 @@
 		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		    <dataarea name="flop" size="655360">
-		        <rom name="teo-games no.3 (1991)(a.s.c.i.)(fr)[640k].fd" size="655360" crc="4ca81e3e" sha1="dedc34a367a3f5d4f19e962aa26a8b23e484e9b6" offset="0" />
-		    </dataarea>
+			<dataarea name="flop" size="655360">
+				<rom name="teo-games no.3 (1991)(a.s.c.i.)(fr)[640k].fd" size="655360" crc="4ca81e3e" sha1="dedc34a367a3f5d4f19e962aa26a8b23e484e9b6" offset="0" />
+			</dataarea>
 		</part>
 	</software>
 
@@ -12689,7 +12689,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="m_vari5">
 		<description>Unknown Various Compilation Disk 5</description>
 		<year>19??</year>
@@ -12713,7 +12713,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="thomplu1">
 		<description>Club Thoms+ 1</description>
 		<year>1989</year>
@@ -12853,7 +12853,7 @@
 		</part>
 	</software>
 
-	<!-- Misc. Disks -->
+<!-- Misc. Disks -->
 
 	<software name="lapinou2" supported="no"> <!-- contains only an auto.bat file that tries to load off drive 1: -->
 		<description>Lapinou 2 Boot Disk?</description>
