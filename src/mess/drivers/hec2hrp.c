@@ -423,9 +423,9 @@ static MACHINE_CONFIG_START( hec2hr, hec2hrp_state )
 	MCFG_CASSETTE_INTERFACE("interact_cass")
 
 	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhr")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("interact_cass_list","interact")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("h1_cass_list","hector1")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("victor_cass_list","victor")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("vict_cass_list","victor")
 
 	/* printer */
 	MCFG_DEVICE_ADD("printer", PRINTER, 0)
@@ -464,9 +464,9 @@ static MACHINE_CONFIG_START( hec2hrp, hec2hrp_state )
 	MCFG_CASSETTE_INTERFACE("interact_cass")
 
 	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhr")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("interact_cass_list","interact")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("h1_cass_list","hector1")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("victor_cass_list","victor")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("vict_cass_list","victor")
 
 	/* printer */
 	MCFG_DEVICE_ADD("printer", PRINTER, 0)
@@ -519,9 +519,9 @@ static MACHINE_CONFIG_START( hec2mx40, hec2hrp_state )
 	MCFG_CASSETTE_INTERFACE("interact_cass")
 
 	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhrx")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("interact_cass_list","interact")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("h1_cass_list","hector1")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("victor_cass_list","victor")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("vict_cass_list","victor")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("hr_cass_list","hectorhr")
 
 	/* printer */
@@ -570,9 +570,9 @@ static MACHINE_CONFIG_START( hec2hrx, hec2hrp_state )
 	MCFG_CASSETTE_INTERFACE("interact_cass")
 
 	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhrx")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("interact_cass_list","interact")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("h1_cass_list","hector1")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("victor_cass_list","victor")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("vict_cass_list","victor")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("hr_cass_list","hectorhr")
 
 	/* printer */
@@ -619,9 +619,9 @@ static MACHINE_CONFIG_START( hec2mdhrx, hec2hrp_state )
 	MCFG_CASSETTE_INTERFACE("interact_cass")
 
 	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhrx")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("interact_cass_list","interact")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("h1_cass_list","hector1")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("victor_cass_list","victor")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("vict_cass_list","victor")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("hr_cass_list","hectorhr")
 
 	/* printer */
@@ -671,9 +671,9 @@ static MACHINE_CONFIG_START( hec2mx80, hec2hrp_state )
 	MCFG_CASSETTE_INTERFACE("interact_cass")
 
 	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhrx")
-	//MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("interact_cass_list","interact")
+	//MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
 	//MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("h1_cass_list","hector1")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("victor_cass_list","victor")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("vict_cass_list","victor")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("hr_cass_list","hectorhr")
 
 	/* printer */

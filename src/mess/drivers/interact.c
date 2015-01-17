@@ -186,7 +186,7 @@ static MACHINE_CONFIG_START( hector1, interact_state )
 	MCFG_CASSETTE_INTERFACE("interact_cass")
 
 	MCFG_SOFTWARE_LIST_ADD("cass_list","hector1")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("interact_cass_list","interact")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
 
 	/* printer */
 	MCFG_DEVICE_ADD("printer", PRINTER, 0)
