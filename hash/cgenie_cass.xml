@@ -1,15 +1,12 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-
 <!--
-
   TODO:
-  * document basic tapes when they are fixed!
   * add to usage "start with /" for games which need it (those which don't autostart)
   * check which games work and which don't and fix the supported flag accordingly
 -->
-
 <softwarelist name="cgenie_cass" description="EACA Colour Genie/EG2000 cassettes">
+
 	<software name="andromed" supported="no">
 		<description>Andromeda</description>
 		<year>1982</year>
@@ -933,6 +930,652 @@
 		<part name="cass1" interface="cgenie_cass">
 			<dataarea name="cass" size="9233">
 				<rom name="definierbare zeichen editor (1983)(tcs)[a].cas" size="9233" crc="dff8308e" sha1="b3cb291e5f96141187d19b18edc048aba544d7be" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- BASIC Tapes (not working yet, load a tape and use the LIST command to see why ;-) )-->
+
+	<software name="abenteur" supported="no">
+		<description>Abenteuerland (Ger)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="9205">
+				<rom name="abenteuerland (19xx)(-)(de).cas" size="9205" crc="321710b8" sha1="280e5e36cbd578b94d58d152476de1155c282ae3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="adressd2" supported="no">
+		<description>Adressdatei II (Ger)</description>
+		<year>198?</year>
+		<publisher>Alex D.</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="10858">
+				<rom name="adressdatei ii (19xx)(alex d.)(de).cas" size="10858" crc="917a2513" sha1="032c9f3f84de63af59dff0af6b0cc58296387536" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="adresver" supported="no">
+		<description>Adressen Verwaltung (Ger)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="11598">
+				<rom name="adressen verwaltung (19xx)(-)(de).cas" size="11598" crc="ee642294" sha1="2b7e21ed6ccd8a3d7384f6159cdca1ba6072dd00" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="africa" supported="no">
+		<description>Africa (Ger)</description>
+		<year>1989</year>
+		<publisher>Marcus Schneider</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="6949">
+				<rom name="africa (1989)(schneider, marcus)(de).cas" size="6949" crc="355dd131" sha1="c4490c1fb92eb64be62c166f77bfc02610b32cf7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="backgamm" supported="no">
+		<description>Backgammon</description>
+		<year>1983</year>
+		<publisher>JD Tronics</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="9344">
+				<rom name="backgammon (1983)(jd tronics).cas" size="9344" crc="3520e3d0" sha1="415d43b0c68472a34994e2a950e4d1fd643c5a57" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="benchmrk" supported="no">
+		<description>Benchmark Test</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="35">
+				<rom name="benchmark test (19xx)(-).cas" size="35" crc="0f490f94" sha1="d579a5e298eff5c3ff3e011fe7318fa48220f120" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="berliner" supported="no">
+		<description>Die Berliner uhr (Ger)</description>
+		<year>198?</year>
+		<publisher>Wilhelm Toelke</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="6451">
+				<rom name="berliner uhr, die (19xx)(toelke, wilhelm)(de).cas" size="6451" crc="382907d8" sha1="613aea5c65a3ffea2ad5297d3bf80363562b5701" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bluesmak" supported="no">
+		<description>Blues Maker</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="948">
+				<rom name="blues maker (19xx)(-).cas" size="948" crc="4a7855e2" sha1="90abf3f8207368d26cba65105685fbb7617395e5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bummbumm" supported="no">
+		<description>Bumm Bumm (Ger)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="3913">
+				<rom name="bumm bumm (19xx)(-)(de).cas" size="3913" crc="f94afe05" sha1="e7e8b6f1588baaa2c7ba27cb59950fad1fd2387e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chemie1" supported="no">
+		<description>Chemie 1 (Ger)</description>
+		<year>1981</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="4839">
+				<rom name="chemie 1 (1981)(-)(de).cas" size="4839" crc="d478a0bd" sha1="a8b413f5a740e56ae8695518eb13a9320003d8e7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chemie2" supported="no">
+		<description>Chemie 2 (Ger)</description>
+		<year>1981</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="3516">
+				<rom name="chemie 2 (1981)(-)(de).cas" size="3516" crc="9d90dddc" sha1="e23ad0ee008fde9097d0884f97f713e6c11134eb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chemie4" supported="no">
+		<description>Chemie 4 (Ger)</description>
+		<year>1981</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="3581">
+				<rom name="chemie 4 (1981)(-)(de).cas" size="3581" crc="ab3e1133" sha1="72c7871a671257315a9de8e49a6a6a6410893b07" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ciaagent" supported="no">
+		<description>CIA Agent (Ger)</description>
+		<year>1985</year>
+		<publisher>Sven Schaffarzik</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="16447">
+				<rom name="cia agent (1985)(schaffarzik, sven)(de).cas" size="16447" crc="9aca41aa" sha1="5267a08c72c273aa2920f05cdaa8ec1f3fcd96da" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="coldatei" supported="no">
+		<description>Colour Datei (Ger)</description>
+		<year>198?</year>
+		<publisher>Jan Fischer</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="7470">
+				<rom name="colour datei (19xx)(fischer, jan)(de).cas" size="7470" crc="021d8dae" sha1="b7222c62561e61e4001dd9331a49a6a38ff1d735" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cgdemo" supported="no">
+		<description>Colour Genie Demonstration (Ger)</description>
+		<year>198?</year>
+		<publisher>Carsten Schmidt</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="9002">
+				<rom name="colour genie demonstration (19xx)(schmidt, carsten)(de).cas" size="9002" crc="791aedf8" sha1="e1f5af14184416b90552b12f8aa3fc8738267829" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cgdemo2" supported="no">
+		<description>Colour Genie Demonstration 2</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="8932">
+				<rom name="colour genie demonstration 2 (19xx)(-).cas" size="8932" crc="57acc541" sha1="9db7c8873f5b1404546cc23305075122b65aee74" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="colkopi" supported="no">
+		<description>Colour Kopier (Ger?)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="3660">
+				<rom name="colour kopier (19xx)(-).cas" size="3660" crc="d2ee13b0" sha1="fbd1c47000396036e6a5bd987bb3fb120df5b741" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="coltune" supported="no">
+		<description>Colour Tune (v2.1)</description>
+		<year>1984</year>
+		<publisher>K. Baedker</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="10979">
+				<rom name="colour tune v2.1 (1984)(baedker, k.).cas" size="10979" crc="741e6dfd" sha1="a5cd7e3e865fc231de751a55c57f432b73679012" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="defzeich" supported="no">
+		<description>Definierbare Zeichen Editor (Ger)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="7441">
+				<rom name="definierbare zeichen editor (19xx)(-)(de).cas" size="7441" crc="d675af8f" sha1="7027da67f48f98d1e6fc780b31f9013d61ed262b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="defzeicha" cloneof="defzeich" supported="no">
+		<description>Definierbare Zeichen Editor (Ger, Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="6852">
+				<rom name="definierbare zeichen editor (19xx)(-)(de)[a].cas" size="6852" crc="6e658740" sha1="349bc0a5b624fe484904e55c3c41213f3a55b506" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="daufgabe" supported="no">
+		<description>Deine Aufgabe (Ger)</description>
+		<year>1985</year>
+		<publisher>Sven Schaffarzik</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="11130">
+				<rom name="deine aufgabe (1985)(schaffarzik, sven)(de).cas" size="11130" crc="46431856" sha1="879a00835e4bae90b04f21228a40e325b46f5487" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dezihexa" supported="no">
+		<description>Dezimal-Hexadezimal Umwandlung (Ger)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="694">
+				<rom name="dezimal-hexadezimal umwandlung (19xx)(-)(de).cas" size="694" crc="419b9810" sha1="0c408b9ef2d773a4680f5c4ec5c7f32b0a9d2db2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="disastro" supported="no">
+		<description>Disastrous Villa (Ger)</description>
+		<year>1985</year>
+		<publisher>Stephan Scholz</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="18413">
+				<rom name="disastrous villa (1985)(scholz, stephan)(de).cas" size="18413" crc="1526d46d" sha1="5d65b4eafca7d6fa301d3b8537f5b7ea6851ae35" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="empire" supported="no">
+		<description>Empire (Ger)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="22076">
+				<rom name="empire (19xx)(-)(de).cas" size="22076" crc="3e1415bf" sha1="673e48d334dd95b36bc58d89a101998a36db6964" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="horcastl" supported="no">
+		<description>Horror Castle</description>
+		<year>198?</year>
+		<publisher>Heiko Scholz</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="22199">
+				<rom name="horror castle (19xx)(scholz, heiko).cas" size="22199" crc="7f01d3a9" sha1="3e54bd6763e9ef4cbf40d714b4fc28936759cf38" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="housdeat" supported="no">
+		<description>House of Death (Ger)</description>
+		<year>1985</year>
+		<publisher>Heiko Scholz - Stephan Scholz</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="18218">
+				<rom name="house of death (1985)(scholz, heiko - scholz, stephan)(de).cas" size="18218" crc="60b6dc93" sha1="01c40d73536a5ec078f1cc1c2b02143d9b00e785" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="juwelen" supported="no">
+		<description>Die Juwelen des Grafen Dracula (Ger)</description>
+		<year>198?</year>
+		<publisher>Marcus Schneider</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="3364">
+				<rom name="juwelen des grafen dracula, die (19xx)(schneider, marcus)(de)(part 1 of 2).cas" size="3364" crc="91699102" sha1="0a6f630287c814d89cb3572e5df38a8489b80057" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="cgenie_cass">
+		<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="13386">
+				<rom name="juwelen des grafen dracula, die (19xx)(schneider, marcus)(de)(part 2 of 2).cas" size="13386" crc="1b9f9ac7" sha1="4a2b24639f870a1be4606f3a8af0f43da0b7cbaf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="king" supported="no">
+		<description>King (Ger)</description>
+		<year>1983</year>
+		<publisher>Juergen Buchmueller</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="10864">
+				<rom name="king (1983)(buchmueller, juergen)(de).cas" size="10864" crc="5c47368d" sha1="3094e999f1ddaa1525f0f2f3f7e0bd1dc96b1319" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kniffel" supported="no">
+		<description>Kniffel (Ger)</description>
+		<year>1985</year>
+		<publisher>Alexander Drawe</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="10522">
+				<rom name="kniffel (1985)(drawe, alexander)(de).cas" size="10522" crc="376b6c9d" sha1="68615eb116f0b12f38c916b9f2f27aafef4bb519" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lasvegas" supported="no">
+		<description>Las Vegas (Ger)</description>
+		<year>198?</year>
+		<publisher>Klaus Stuchlich</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="5578">
+				<rom name="las vegas (19xx)(stuchlich, klaus)(de).cas" size="5578" crc="6df6d464" sha1="7ab0fb2d98ffdf0ec01322758522990798694e3a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lineare" supported="no">
+		<description>Lineare Gleichungs Syeteme (Ger)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="2516">
+				<rom name="lineare gleichungs syeteme (19xx)(-)(de).cas" size="2516" crc="002e74cc" sha1="12118485405cd4f9ad2c77da612580f24052e6e5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="listing" supported="no">
+		<description>Listing Formatierer (Ger)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="633">
+				<rom name="listing formatierer (19xx)(-)(de).cas" size="633" crc="7441ec01" sha1="851577cb397f6f35c4ee8b0d2d6dd0d32c9e8614" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="machimem" supported="no">
+		<description>Machime Monitor</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="3664">
+				<rom name="machime monitor (19xx)(-).cas" size="3664" crc="72d2610e" sha1="edeff86dd24091bbf08221503554b5013bf56a0c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mordzepp" supported="no">
+		<description>Mord im Zeppelin (Ger)</description>
+		<year>198?</year>
+		<publisher>Sven Schaffarzik</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="15973">
+				<rom name="mord im zeppelin (198x)(schaffarzik, sven)(de).cas" size="15973" crc="7eb4a417" sha1="7ceff5b23feaef48d2457e503b3a6028302f9463" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mystavrn" supported="no">
+		<description>Mysterious Tavern (Ger)</description>
+		<year>198?</year>
+		<publisher>Heiko Scholz</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="16031">
+				<rom name="mysterious tavern (198x)(scholz, heiko)(de).cas" size="16031" crc="57ebd9ba" sha1="314e75a41a5082e6aa931802ebcfd7a5dfb6b0b2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="physik" supported="no">
+		<description>Die Physik des Transistors (Ger)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="17657">
+				<rom name="physik des transistors, die (19xx)(-)(de).cas" size="17657" crc="b56cc12d" sha1="b393a11266b42596e49294ff26198e5dbed431ae" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="plotter" supported="no">
+		<description>Plotter (Ger, v2.5)</description>
+		<year>1983</year>
+		<publisher>TCS</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="7883">
+				<rom name="plotter 2.5 (1983)(tcs)(de).cas" size="7883" crc="6e397435" sha1="06176658c4b187057ab5c07231e6c007ff3ebc2b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pointchs" supported="no">
+		<description>Point Chase</description>
+		<year>1983</year>
+		<publisher>ROL</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="4562">
+				<rom name="point chase (1983)(rol).cas" size="4562" crc="f7e91077" sha1="25fab349053b4b3d1bddb6b371beb894837de1ff" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="progmodi" supported="no">
+		<description>Programm Modifizierer (Ger)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="633">
+				<rom name="programm modifizierer (19xx)(-)(de).cas" size="633" crc="956a744d" sha1="f5354d4da173447c2ffe19c1a5afca42ca4ad429" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="roulette" supported="no">
+		<description>Roulette</description>
+		<year>1982</year>
+		<publisher>Christian Klein</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="8739">
+				<rom name="roulette (1982)(klein, christian).cas" size="8739" crc="402bba07" sha1="ffe9f3e721f4dc31d2c2b09c12bb1bec8ff910f6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="santapar" supported="no">
+		<description>Santa Paravia (Ger)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="13824">
+				<rom name="santa paravia (19xx)(-)(de).cas" size="13824" crc="4d672a70" sha1="a7328f0663c5ea2beccd57541e4042c274069f55" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="schiffgr" supported="no">
+		<description>Schiff des Grauens (Ger)</description>
+		<year>198?</year>
+		<publisher>Heiko Scholz - Sven Schaffarzik</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="17705">
+				<rom name="schiff des grauens (198x)(schaffarzik, sven - scholz, heiko)(de).cas" size="17705" crc="e0f2e0cb" sha1="2196d66dd0a0209cb513549d5952d13a1f16c24a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="schnick" supported="no">
+		<description>Schnick Schnack Schnuck (Ger)</description>
+		<year>1986</year>
+		<publisher>Alexander Drawe</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="10630">
+				<rom name="schnick schnack schnuck (1986)(drawe, alexander)(de).cas" size="10630" crc="846841d3" sha1="3cad2b333f6f55ea4e1af5c1eb2d215ff409ea4f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scredit" supported="no">
+		<description>Screen Editor</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="1665">
+				<rom name="screen editor (19xx)(-).cas" size="1665" crc="d038dbb6" sha1="8a303ba08801e77f4415227b7b6f6251569f649d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="shapetab" supported="no">
+		<description>Shape Table Editor (Ger)</description>
+		<year>1983</year>
+		<publisher>Udo Gerber</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="8767">
+				<rom name="shape table editor (1983)(gerber, udo)(de).cas" size="8767" crc="2d67c6c1" sha1="fee211f58a13a54e2a38e0b1d4db4201df37d117" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="soundedi" supported="no">
+		<description>Sound Editor (Ger)</description>
+		<year>1984</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="3625">
+				<rom name="sound editor (1984)(-)(de).cas" size="3625" crc="bf667ec4" sha1="f7a307272184599bec74249d8ce80197ee942084" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spritedi" supported="no">
+		<description>Sprite Editor</description>
+		<year>1983</year>
+		<publisher>Patrick Thomas</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="2232">
+				<rom name="sprite editor (1983)(thomas, patrick).cas" size="2232" crc="97053bbe" sha1="9f546bd5266dac346eda231c9f70a4b9e2ee5d35" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="startrek" supported="no">
+		<description>Super Star Trek (Ger)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="16437">
+				<rom name="super star trek (19xx)(-)(de).cas" size="16437" crc="0a6a362b" sha1="1e06a739dcc65d173ebf54e36656c4bbeb7c6486" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="uhrzeit" supported="no">
+		<description>Uhr Zeit (Ger)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="cgenie_cass">
+			<dataarea name="cass" size="201">
+				<rom name="uhr zeit (19xx)(-)(de).cas" size="201" crc="1fdf77b8" sha1="9cf2ce7e3999f0f7449b32b93132ef0ac9671e65" offset="0" />
 			</dataarea>
 		</part>
 	</software>
