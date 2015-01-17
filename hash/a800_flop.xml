@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <!--
-
     Atari 400 / 800 floppies
     (skeleton list)
 
@@ -25,5 +24,30 @@
 		</part>
 	</software>
 
+<!-- TOSEC - Sources [ATR] -->
+
+	<software name="3dbalsrc">
+		<description>3D Balls Source Code (Pol)</description>
+		<year>19??</year>
+		<publisher>NG</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="143376">
+				<rom name="3d balls source code (19xx)(ng)(pl).atr" size="143376" crc="7346a78b" sha1="f75224c22b2f45890ca73064318b98f26aa4c837" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="qwk8src">
+		<description>Qwk8 Offline Reader - Sources</description>
+		<year>19??</year>
+		<publisher>Bob Stout</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="92176">
+				<rom name="qwk8 offline reader - sources (19xx)(stout, bob).atr" size="92176" crc="e7a20fff" sha1="cb6033bf5f24248eb33be51b3ea56ec4f64eadc4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
 
 </softwarelist>
