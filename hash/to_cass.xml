@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-
 <softwarelist name="to_cass" description="Thomson TO-series cassetes">
 
 	<software name="120coule">
@@ -6656,7 +6655,7 @@
 	</software>
 
 	<software name="quauhtlia" cloneof="quauhtli">
-		<description>Le Temple de Quauhtli (ALt)</description>
+		<description>Le Temple de Quauhtli (Alt)</description>
 		<year>1986</year>
 		<publisher>Loriciels</publisher>
 
@@ -6721,16 +6720,19 @@
 		<publisher>Jeulin</publisher>
 
 		<part name="cass1" interface="to_cass">
+		<feature name="part_id" value="Side 2A"/>
 			<dataarea name="cass" size="31909">
 				<rom name="tortue jeulin (jeulin) (t. savatier, y. ollivier) (1985-1988) (to7) (side 2a).k7" size="31909" crc="0627298f" sha1="c5f39f14142d820ea93d85f6a86c4567d66fd610" offset="0" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="to_cass">
+		<feature name="part_id" value="Side 2B"/>
 			<dataarea name="cass" size="4800">
 				<rom name="tortue jeulin (jeulin) (t. savatier, y. ollivier) (1985-1988) (to7) (side 2b).k7" size="4800" crc="bfd41af5" sha1="ade2fbebc867eafff819bd6186bd230b087e0dd8" offset="0" />
 			</dataarea>
 		</part>
 		<part name="cass3" interface="to_cass">
+		<feature name="part_id" value="Side 3"/>
 			<dataarea name="cass" size="12176">
 				<rom name="tortue jeulin (jeulin) (t. savatier, y. ollivier) (1985-1988) (to7) (side 3).k7" size="12176" crc="be279535" sha1="4753412f44ba1bc9446bec011ced6e2fb08794a2" offset="0" />
 			</dataarea>
