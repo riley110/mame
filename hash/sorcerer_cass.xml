@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-
 <!--
 TODO (Jan 10, 2015):
 
@@ -8,10 +7,35 @@ Finish loading instructions for latest additions
 Figure out how to load data tapes in Music Editor
 Remove the MP3 to WAV converted tapes?
 -->
-
 <softwarelist name="sorcerer_cass" description="Exidy Sorcerer cassettes">
 
-<!-- These come from tapes (?); these tapes are also in the UnRenamed Various set -->
+<!-- These come from real(?) tapes -->
+
+	<software name="budget">
+		<description>Interactive Budget Program</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
+		<part name="cass" interface="sorcerer_cass">
+			<dataarea name="cass" size="8202538">
+				<rom name="budgt.wav" size="8202538" crc="922dede4" sha1="92005d8e4957a658e2e513083cd240af575fc048" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crossup">
+		<description>Cross-Up</description>
+		<year>19??</year>
+		<publisher>Ted Crowley</publisher>
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+
+		<part name="cass" interface="sorcerer_cass">
+			<dataarea name="cass" size="5980780">
+				<rom name="cross.wav" size="5980780" crc="32e5879c" sha1="07d08cb8d35e591d9f5a358fcc6f611df5922c7e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
 
 	<software name="eliza">
 		<description>Eliza</description>
@@ -26,74 +50,48 @@ Remove the MP3 to WAV converted tapes?
 		</part>
 	</software>
 
-	<software name="demo1" supported="no"> <!-- Gives CRC Error -->
-		<description>DEMO1 (Bad?)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="cass" interface="sorcerer_cass">
-			<dataarea name="cass" size="12770008">
-				<rom name="demo1.wav" size="12770008" crc="e53951a5" sha1="612b60f3f179fa05a86305761e951211e535238e" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="demo2">
-		<description>DEMO2</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+	<software name="math">
+		<description>Math</description>
+		<year>1979</year>
+		<publisher>J.R. Lucas</publisher>
 		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
 
 		<part name="cass" interface="sorcerer_cass">
-			<dataarea name="cass" size="8202538">
-				<rom name="demo2.wav" size="8202538" crc="922dede4" sha1="92005d8e4957a658e2e513083cd240af575fc048" offset="0" />
+			<dataarea name="cass" size="7556546">
+				<rom name="math.wav" size="7556546" crc="baf9361f" sha1="30ab8a8ccafd65fbe82cbfbf5f77f27e0dfc4a78" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="demo3">
-		<description>DEMO3</description>
+	<software name="martian" supported="no"> <!-- Gives CRC Error -->
+		<description>Martian Invaders (Bad)</description>
+		<year>1980?</year>
+		<publisher>Quality Software</publisher>
+
+		<part name="cass" interface="sorcerer_cass">
+			<dataarea name="cass" size="843548">
+				<rom name="m- martian invaders (1980).wav" size="843548" crc="355d94ea" sha1="048ef7fa3a321cdcada962135de3f42161de86ab" status="baddump" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="presidnt">
+		<description>Presidents Quiz</description>
 		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<publisher>Jim &amp; Linda Staley</publisher>
 		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
 
 		<part name="cass" interface="sorcerer_cass">
-			<dataarea name="cass" size="7263870">
-				<rom name="demo3.wav" size="7263870" crc="38e5b0d7" sha1="2400651c816b33d67c461c7eee561d80568891be" offset="0" />
+			<dataarea name="cass" size="11678280">
+				<rom name="presi.wav" size="11678280" crc="320e3eba" sha1="f2ab46c0b33b5ea42a6ae26fdd06294b62e1331f" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="demo4">
-		<description>DEMO4</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
-
-		<part name="cass" interface="sorcerer_cass">
-			<dataarea name="cass" size="3896482">
-				<rom name="demo4.wav" size="3896482" crc="e66fa049" sha1="d956b3ff42ac7b3178ee76ecb3d2ad388fed81f5" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="demo5">
-		<description>DEMO5</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
-
-		<part name="cass" interface="sorcerer_cass">
-			<dataarea name="cass" size="5980780">
-				<rom name="demo5.wav" size="5980780" crc="32e5879c" sha1="07d08cb8d35e591d9f5a358fcc6f611df5922c7e" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="demo6">
-		<description>DEMO6</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+	<software name="reversi1">
+		<description>Reversi (Terry &amp; Kathleen Beyer)</description>
+		<year>1979</year>
+		<publisher>Terry &amp; Kathleen Beyer</publisher>
 		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
 
 		<part name="cass" interface="sorcerer_cass">
@@ -103,40 +101,40 @@ Remove the MP3 to WAV converted tapes?
 		</part>
 	</software>
 
-	<software name="demo7">
-		<description>DEMO7</description>
+	<software name="sandl" supported="no"> <!-- Gives CRC Error -->
+		<description>SANDL (Bad)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass" interface="sorcerer_cass">
+			<dataarea name="cass" size="12770008">
+				<rom name="sandl.wav" size="12770008" crc="e53951a5" sha1="612b60f3f179fa05a86305761e951211e535238e" status="baddump" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sightspe">
+		<description>Sightspell Program</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
 
 		<part name="cass" interface="sorcerer_cass">
-			<dataarea name="cass" size="11678280">
-				<rom name="demo7.wav" size="11678280" crc="320e3eba" sha1="f2ab46c0b33b5ea42a6ae26fdd06294b62e1331f" offset="0" />
+			<dataarea name="cass" size="3896482">
+				<rom name="spell.wav" size="3896482" crc="e66fa049" sha1="d956b3ff42ac7b3178ee76ecb3d2ad388fed81f5" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="demo8">
-		<description>DEMO8</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+	<software name="tedit">
+		<description>TEDIT - Text Editor Program</description>
+		<year>1979</year>
+		<publisher>Peter J. Elston</publisher>
 		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
 
 		<part name="cass" interface="sorcerer_cass">
-			<dataarea name="cass" size="7556546">
-				<rom name="demo8.wav" size="7556546" crc="baf9361f" sha1="30ab8a8ccafd65fbe82cbfbf5f77f27e0dfc4a78" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="martian" supported="no"> <!-- Gives CRC Error -->
-		<description>Martian Invaders (Bad?)</description>
-		<year>1980?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="cass" interface="sorcerer_cass">
-			<dataarea name="cass" size="843548">
-				<rom name="m- martian invaders (1980).wav" size="843548" crc="355d94ea" sha1="048ef7fa3a321cdcada962135de3f42161de86ab" offset="0" />
+			<dataarea name="cass" size="7263870">
+				<rom name="tedit.wav" size="7263870" crc="38e5b0d7" sha1="2400651c816b33d67c461c7eee561d80568891be" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -614,8 +612,8 @@ Riley110 tested most of them and they work (except for the two that didn't work 
 		</part>
 	</software>
 
-	<software name="reversi">
-		<description>Reversi</description>
+	<software name="reversi2">
+		<description>Reversi (Unknown)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
