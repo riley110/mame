@@ -1,0 +1,2335 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<softwarelist name="primo_cass" description="Microkey Primo cassettes">
+
+	<software name="hash">
+		<description>###</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1487">
+				<rom name="### (198x)(-).ptp" size="1487" crc="92e729ff" sha1="d816263c940a2ebfddcf8a37ea9dc1a26e959487" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!--
+	<software name="3dconv">
+		<description>3D Converter</description>
+		<year>198?</year>
+		<publisher>Kovacs Attila</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2357">
+				<rom name="3d converter (198x)(kovacs attila).ptp" size="2357" crc="e3b24734" sha1="8e5842361aa42371bb480d35c7c9aedd7289d67a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ado">
+		<description>Ado</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="3558">
+				<rom name="ado (198x)(-)(hu).ptp" size="3558" crc="f659a391" sha1="3d2f229a3f1716d30fa63c44fbec6d1ecb30cc4f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amon1" cloneof="amon">
+		<description>AMON (v1.0)</description>
+		<year>1987</year>
+		<publisher>Paller Gabor</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="5914">
+				<rom name="amon v1.0 (1987)(paller gabor).ptp" size="5914" crc="f26df6af" sha1="a46c0e4c6f190b2c2ce95dbfd4595908303bc64c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amon1_32" cloneof="amon">
+		<description>AMON (v1.0, req 32K)</description>
+		<year>1987</year>
+		<publisher>Paller Gabor</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="5913">
+				<rom name="amon v1.0 (1987)(paller gabor)[req 32k].ptp" size="5913" crc="6217a39f" sha1="28da0618dfd3226b964eb9be42be1aec90d00175" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amon1_48" cloneof="amon">
+		<description>AMON (v1.0, req 48K)</description>
+		<year>1987</year>
+		<publisher>Paller Gabor</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="5913">
+				<rom name="amon v1.0 (1987)(paller gabor)[req 48k].ptp" size="5913" crc="a131a7af" sha1="551f0a6fb9dffccdd6aca130ed9ea9316ee1c974" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amon1_64" cloneof="amon">
+		<description>AMON (v1.0, req 64K)</description>
+		<year>1987</year>
+		<publisher>Paller Gabor</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="5913">
+				<rom name="amon v1.0 (1987)(paller gabor)[req 64k].ptp" size="5913" crc="eb20bc8d" sha1="dd2211ac481d3a85d954be54339c4f8c20d1b698" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amon">
+		<description>AMON (v1.1)</description>
+		<year>1988</year>
+		<publisher>Paller Gabor</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="6973">
+				<rom name="amon v1.1 (1988)(paller gabor).ptp" size="6973" crc="eca891f3" sha1="210765395861f83c526d96904a8f604d1d5c6c6c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amortiza">
+		<description>Amortizacio</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1124">
+				<rom name="amortizacio (198x)(-)(hu).ptp" size="1124" crc="22ce0e81" sha1="ea8fdf0123d0940b056ed6c8fcd2379d29fb0758" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="antiauto">
+		<description>Anti Autostart 5</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="517">
+				<rom name="anti autostart 5 (198x)(-).ptp" size="517" crc="ee849145" sha1="4e4fba6f66bac2cfed1e58e0363437540742f2f7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="anticopy">
+		<description>Anticopy '88.MR</description>
+		<year>1988</year>
+		<publisher>Miszlai Robert</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="6956">
+				<rom name="anticopy '88.mr (1988)(miszlai robert).ptp" size="6956" crc="1efcce0e" sha1="0e0cbcfe238bb16792c6565ea889b9ba6d49743c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="anticopm">
+		<description>Anticopy MF</description>
+		<year>1988</year>
+		<publisher>Miszlai Robert</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1694">
+				<rom name="anticopy mf (1988)(miszlai robert).ptp" size="1694" crc="fa9a2b37" sha1="5b6d7a0300b598cdb6d8de5f4a5e9669b2c9307d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="arvetes">
+		<description>Arvetes</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1065">
+				<rom name="arvetes (198x)(-)(hu).ptp" size="1065" crc="030ddbba" sha1="597096d8c547f4ae80102744a2ab9fa58fb6d8d1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ass5asm">
+		<description>ASS 5 Assembler</description>
+		<year>198?</year>
+		<publisher>Kovacs Attila</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="14455">
+				<rom name="ass 5 assembler (198x)(kovacs attila).ptp" size="14455" crc="9d7fb1c0" sha1="4a819611553d94aefe047e68b0b69e6d916d0543" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="asmbasic">
+		<description>Assebler-Basic System</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="3312">
+				<rom name="assebler-basic system (198x)(-)[a].ptp" size="3312" crc="07d6c67e" sha1="b1a0aad6551ee6728ae362d449dc668079c225f2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="asm">
+		<description>Assembler</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="5993">
+				<rom name="assembler (198x)(-).ptp" size="5993" crc="176d7a9a" sha1="2afc1da6a6c9e4ab8282cd36fbf212e6fff7ba34" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atszamoz">
+		<description>Atszamozo</description>
+		<year>19??</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2942">
+				<rom name="atszamozo (19xx)(-)(hu).ptp" size="2942" crc="1a3ee9f6" sha1="185a509269fa348dcc8e8736eb144b27fe0f2d4c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="autonap">
+		<description>Auto naplo</description>
+		<year>1986</year>
+		<publisher>Miszlai Robert</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="4937">
+				<rom name="auto naplo (1986)(miszlai robert)(hu).ptp" size="4937" crc="f0f18d98" sha1="908ed334defa19569d2aeceeaa174856915c9d2d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="autoleal">
+		<description>Auto-leallito 1.1</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="388">
+				<rom name="auto-leallito 1.1 (198x)(-)(hu).ptp" size="388" crc="640f723a" sha1="0cb91aec00f7e89566c2158d44e2a8fca5de23fc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="automat">
+		<description>Automat</description>
+		<year>1985</year>
+		<publisher>Tik-Tak Software</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2148">
+				<rom name="automat (1985)(tik-tak software).ptp" size="2148" crc="27df8e18" sha1="858e3b5e83a3f139cc4ce41ae14b1f9e16c4b254" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="autostar">
+		<description>Basic Auto-Start</description>
+		<year>1985</year>
+		<publisher>Tick Jozsef</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="565">
+				<rom name="basic auto-start (1985)(tick jozsef).ptp" size="565" crc="d306c199" sha1="52095656080d568e7c54d08a9dc1e7a45d719dd8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="baseprom">
+		<description>Basic EPROM programozo</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="3985">
+				<rom name="basic eprom programozo (198x)(-).ptp" size="3985" crc="38cd7241" sha1="8e34db4bf21ede2f434113b6e26445bcdafd2bbc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basicont">
+		<description>BASIC-ontanito - 9. teszt</description>
+		<year>1985</year>
+		<publisher>MTA SZTAKI - COSY</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="7570">
+				<rom name="basic-ontanito - 9. teszt (1985)(mta sztaki - cosy)(hu).ptp" size="7570" crc="a77a2d63" sha1="a390ea42fc5b4e4bfd2450595bd67728ea54a939" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bb00d3ff">
+		<description>BB00-D3FF D18E</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="6659">
+				<rom name="bb00-d3ff d18e (19xx)(-).ptp" size="6659" crc="1464b6b1" sha1="73ff27bddb7b458a7fa6603008e05bbca92bacb1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="beszed">
+		<description>Beszed szimulator</description>
+		<year>1987</year>
+		<publisher>Szarka Zoltan</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="37196">
+				<rom name="beszed szimulator (1987)(szarka zoltan).ptp" size="37196" crc="ff1fed44" sha1="427d56d15c399aa24061e9624f514f25a31ce434" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Betu nagyitas (198x)(-)[incl Graphics '85]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="5550">
+				<rom name="betu nagyitas (198x)(-)[incl graphics '85].ptp" size="5550" crc="c94e11e2" sha1="f2750197fb41237453c2d8f014b91830eaf65520" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Betu nagyitas (198x)(-)[req Graphics '85]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="209">
+				<rom name="betu nagyitas (198x)(-)[req graphics '85].ptp" size="209" crc="d18e9f50" sha1="4ccd33c9478e738fe059c8025cffa6f36d8fb5a5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Bioritmus (198x)(-)(hu)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="3004">
+				<rom name="bioritmus (198x)(-)(hu).ptp" size="3004" crc="f48ee3d3" sha1="23121f6191c930fcd0ee791d0079eab88cfbd811" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Bioritmus (198x)(Szucs Zoltan)(hu)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="4000">
+				<rom name="bioritmus (198x)(szucs zoltan)(hu).ptp" size="4000" crc="1de0f4b1" sha1="4d2ac3bfafc69cfd34b8fb91872d5e7e115cde30" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Bioritmus szamitas (198x)(-)(hu)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2864">
+				<rom name="bioritmus szamitas (198x)(-)(hu).ptp" size="2864" crc="b085159a" sha1="5324c8db0bf4ac4b5310e9337ef5ae59d75760c1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>CAD (1987)(Asztalos Istvan)[incl Graphics '85]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="8751">
+				<rom name="cad (1987)(asztalos istvan)[incl graphics '85].ptp" size="8751" crc="a4c13916" sha1="e1508285c33938f0c6c01100a50d2b749d8058ec" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>CAD (1987)(Asztalos Istvan)[req Graphics '85]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="3410">
+				<rom name="cad (1987)(asztalos istvan)[req graphics '85].ptp" size="3410" crc="2277352e" sha1="0af75ea6ab59e84617ac721f1930a0683cec2002" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>CDOS - Commodore Serial Bus Handler 1.0 (1985)(BME-KSZK)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="3999">
+				<rom name="cdos - commodore serial bus handler 1.0 (1985)(bme-kszk).ptp" size="3999" crc="58221705" sha1="64feaa5d56482420c2c7b77b915a034b65015989" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>CDOS - Commodore Serial Bus Handler 1.0 (1985)(BME-KSZK)[a]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="3997">
+				<rom name="cdos - commodore serial bus handler 1.0 (1985)(bme-kszk)[a].ptp" size="3997" crc="e0cb7b60" sha1="8a90b818983414c4e42e1a2a43a4461cf69fb7cf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>CDOS - Commodore Serial Bus Handler 1.0.B (1985)(BME-KSZK)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="3999">
+				<rom name="cdos - commodore serial bus handler 1.0.b (1985)(bme-kszk).ptp" size="3999" crc="d35c3507" sha1="7f1331157d3361b102f77ebde656250d4d480f4b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Change (198x)(-)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1059">
+				<rom name="change (198x)(-).ptp" size="1059" crc="7bc6fd40" sha1="b04a6100537f454f5356ed20612f308dc43e05f9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Cheops 88 (1988)(Olah Tamas)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1255">
+				<rom name="cheops 88 (1988)(olah tamas).ptp" size="1255" crc="9d5f56dd" sha1="bf279f5616f2fcb1c09c025d22babbd9ae3c77a1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>CMD (1984)(MTA SZTAKI - COSY)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="611">
+				<rom name="cmd (1984)(mta sztaki - cosy).ptp" size="611" crc="806ac9ba" sha1="d685ee81b674e60de6b276c0ce72c98580055096" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>CMD - Printer (1984)(Toth Andras)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="859">
+				<rom name="cmd - printer (1984)(toth andras).ptp" size="859" crc="997d8b15" sha1="219d24450ee2cfccd0e5342645a481d804e7026e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>CMD D000 OB (1984)(MTA SZTAKI - COSY)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="611">
+				<rom name="cmd d000 ob (1984)(mta sztaki - cosy).ptp" size="611" crc="8fefaa56" sha1="ecca28a8735313e234b1cfb8e1f94b357b4376b8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Copy by J.I. (1986)(Juhasz Istvan)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="472">
+				<rom name="copy by j.i. (1986)(juhasz istvan).ptp" size="472" crc="459ab85d" sha1="73f513bb780efc5fdafcf5194dff8d6ac31dee9a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Copy KS 3.8.XXX (1987)(Karacsony Sandor)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="3116">
+				<rom name="copy ks 3.8.xxx (1987)(karacsony sandor).ptp" size="3116" crc="20aa2bb4" sha1="b641de3fa304ccbec6183857a8066e953cd4ba57" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Copy KT 139 (198x)(Kalvin Tamas)(hu)[incl CDOS]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="8402">
+				<rom name="copy kt 139 (198x)(kalvin tamas)(hu)[incl cdos].ptp" size="8402" crc="88a2900a" sha1="a814affcff9c3f765237bdfbdce87c8f2e206f5c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Copy KT 139 (198x)(Kalvin Tamas)(hu)[req CDOS]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="4439">
+				<rom name="copy kt 139 (198x)(kalvin tamas)(hu)[req cdos].ptp" size="4439" crc="aa58d964" sha1="84f4f4ef8d8c8bf133c1ce90d44eefa3f63e4984" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Copy KT 87 (1987)(Kalvin Tamas)(hu)[req CDOS]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="4621">
+				<rom name="copy kt 87 (1987)(kalvin tamas)(hu)[req cdos].ptp" size="4621" crc="ecc7a01a" sha1="7f4be40555dfd3ef290e95b179f4dc3e24741077" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Data File - Betolto (1987)(Szekeres Antal)(hu)(Primo B)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2839">
+				<rom name="data file - betolto (1987)(szekeres antal)(hu)(primo b).ptp" size="2839" crc="aebc453e" sha1="23b168b2c993767df76744beb3ece1b7aca9f7cc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Data keszito (198x)(-)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1511">
+				<rom name="data keszito (198x)(-).ptp" size="1511" crc="e0906588" sha1="5afe0efb8a241a3a27df1297f73e2697d72bf7e3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>DGT masolo (1987)(DGT Software)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2834">
+				<rom name="dgt masolo (1987)(dgt software).ptp" size="2834" crc="e1dc5c4d" sha1="2853ad68bedb8a5dc2c5137bed4e113300d836cc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Diass (198x)(-)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="6914">
+				<rom name="diass (198x)(-).ptp" size="6914" crc="da31968c" sha1="aa7d95400c7cbbc8fc441ed98291735abd272eb7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Disassembler (198x)(Fekete Gyorgy)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="4563">
+				<rom name="disassembler (198x)(fekete gyorgy).ptp" size="4563" crc="82a6084d" sha1="e8e65e723c684f63eae2eb3fc93aa0f00766891b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Disassembler + Copy (1987)(Kalvin Tamas)(hu)[req CDOS]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="14196">
+				<rom name="disassembler + copy (1987)(kalvin tamas)(hu)[req cdos].ptp" size="14196" crc="d24577a0" sha1="2e20c6216086ba870888fc2677b1e62bc7b691e3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Disassembler + Dump (198x)(-)(hu)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="6160">
+				<rom name="disassembler + dump (198x)(-)(hu).ptp" size="6160" crc="9943bcc0" sha1="7187e12d4e9602e4f60391dad24c7cfa692bbce8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Dump (198x)(-)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="277">
+				<rom name="dump (198x)(-).ptp" size="277" crc="dd0ca886" sha1="23df8eceabdfc28ae1851d5eb51ad6b8299a640f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Electric Graphics (198x)(Fromm Zoltan - Kasza Laszlo)(hu)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="9193">
+				<rom name="electric graphics (198x)(fromm zoltan - kasza laszlo)(hu).ptp" size="9193" crc="9be3ea20" sha1="aac557a62d4525066719e7b7878a35ea90d03d53" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>EPROM egeto (198x)(-)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1839">
+				<rom name="eprom egeto (198x)(-).ptp" size="1839" crc="a72902f0" sha1="f9b55f4c71bb5f0e6731d4aef2cb0193b319baa0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Error (19xx)(-)(hu)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="763">
+				<rom name="error (19xx)(-)(hu).ptp" size="763" crc="8f23e242" sha1="159a0d622f7055a602219324d49fbb0f90268702" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Fenyujsag (1985)(Tik-Tak Software)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2362">
+				<rom name="fenyujsag (1985)(tik-tak software).ptp" size="2362" crc="0de0416d" sha1="599581e97ae3d21e5fdf6c8ae2346095563effb7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Gens3 Assembler Primo version (198x)(Paller Gabor)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="9129">
+				<rom name="gens3 assembler primo version (198x)(paller gabor).ptp" size="9129" crc="2ea27a23" sha1="044e0a401771a6a5f8775e33224f0fdfb11f1bd9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Gepi save RS (198x)(Miszlai Robert)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="702">
+				<rom name="gepi save rs (198x)(miszlai robert).ptp" size="702" crc="9140cde2" sha1="4f128d720cabed6cf818c9d7a4be00e9b26e68cf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Graf-Song (198x)(-)[req unk expansion]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2942">
+				<rom name="graf-song (198x)(-)[req unk expansion].ptp" size="2942" crc="0608dabd" sha1="16e04fd2fcb66e8b836d06779db427d94cd11f1e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Grafikus bovito (198x)(Bartha Sandor)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="767">
+				<rom name="grafikus bovito (198x)(bartha sandor).ptp" size="767" crc="cb05b735" sha1="da52d6a5d1ffc4467e55e0a0445f7cfed7fc4a6d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Gyors programtar (198x)(-)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2162">
+				<rom name="gyors programtar (198x)(-).ptp" size="2162" crc="b39f63e0" sha1="98bc28a54779a7b26d757d8a0e390f12b167dcaf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Hard-Copy (198x)(-)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2422">
+				<rom name="hard-copy (198x)(-).ptp" size="2422" crc="f1fd2901" sha1="142732eb55db9ab88f49ecab0f6be8ec07b920e2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Hardcopy (19xx)(-)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1209">
+				<rom name="hardcopy (19xx)(-).ptp" size="1209" crc="fd302e60" sha1="766d52b7c2a664927777b990612b20a035956046" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Hazi dijszamito (198x)(-)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="406">
+				<rom name="hazi dijszamito (198x)(-).ptp" size="406" crc="7e60f6d1" sha1="55e2f8df760e0af28cb8164eb396e52973ccef77" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Hazi Szamla-Konyveles (198x)(Koricsanszky Attila)[incl CDOS]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="9991">
+				<rom name="hazi szamla-konyveles (198x)(koricsanszky attila)[incl cdos].ptp" size="9991" crc="2980c628" sha1="7be0c5aec05059c22f659094853d02d81e91cfc9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Helyfoglalo (198x)(-)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="486">
+				<rom name="helyfoglalo (198x)(-).ptp" size="486" crc="7e786109" sha1="d5aa67d11785479a6e5d68376c2f2bf3827ebdf7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Hexmat (198x)(Kovacs Attila)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1244">
+				<rom name="hexmat (198x)(kovacs attila).ptp" size="1244" crc="addb3ed2" sha1="d66d429c616f543802e70d1e95268158789f82d8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Hibajelzes (19xx)(-)(hu)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1025">
+				<rom name="hibajelzes (19xx)(-)(hu).ptp" size="1025" crc="e52a1082" sha1="cf4c6a3e22570598274dfbbacf3e914669babfdd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Hisoft Pascal v1.6c Primo Version (1987)(-)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="23027">
+				<rom name="hisoft pascal v1.6c primo version (1987)(-).ptp" size="23027" crc="edc36b96" sha1="1300e692379296b18f8d04170e2ceb03ac843a5a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Hisoft-C Compiler v1.1 Primo Version (1987)(Paller Gabor)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="27261">
+				<rom name="hisoft-c compiler v1.1 primo version (1987)(paller gabor).ptp" size="27261" crc="3e2a8dd2" sha1="435369d7041db8cbd33bde225278e49fa068efd6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Hisoft-C Compiler v1.1 Primo Version (1987)(Paller Gabor)[a]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="27261">
+				<rom name="hisoft-c compiler v1.1 primo version (1987)(paller gabor)[a].ptp" size="27261" crc="d83cd482" sha1="2a3c7db8c3528b95d0cf72b889aae59a4363a0ab" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>HT-1080Z Emulator (1985)(Tik-Tak Software)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="4947">
+				<rom name="ht-1080z emulator (1985)(tik-tak software).ptp" size="4947" crc="042b7487" sha1="f59a538d16aff2d7735b913ef03855b742def2d9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>HT-load (1986)(Kovacs Attila)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1608">
+				<rom name="ht-load (1986)(kovacs attila).ptp" size="1608" crc="45261741" sha1="679b94800853661c1807c18112877d603ffd1e33" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Irogep (198x)(-)(hu)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="4714">
+				<rom name="irogep (198x)(-)(hu).ptp" size="4714" crc="20fbf875" sha1="ec30e6671030b60f222f0ed762b6636b697a8258" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Irogep adatait felvevo program (19xx)(-)(hu)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2259">
+				<rom name="irogep adatait felvevo program (19xx)(-)(hu).ptp" size="2259" crc="0998e94d" sha1="09b58c43fb2c0a6be98a1d92788c18ca9627efc0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>K.S. Copy Alap (1987)(Karacsony Sandor)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2103">
+				<rom name="k.s. copy alap (1987)(karacsony sandor).ptp" size="2103" crc="e4074540" sha1="fe34025ed41c673f1474ea2b08b0cccae719425a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Kamat (198x)(-)(hu)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1162">
+				<rom name="kamat (198x)(-)(hu).ptp" size="1162" crc="64443f98" sha1="a59554f68db544cbdb1ab65f148467200e194156" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Karakter tervezo (198x)(-)(hu)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="882">
+				<rom name="karakter tervezo (198x)(-)(hu).ptp" size="882" crc="9559da07" sha1="29d3b65f65c12d5ce48cef4b1a1c5a0f7e474b08" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Kazetta listazo (1988)(Miszlai Robert)(hu)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2517">
+				<rom name="kazetta listazo (1988)(miszlai robert)(hu).ptp" size="2517" crc="7f146b93" sha1="a2a7167201aec7abb4c2a5bd1571515fb7d4b0fc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Kill (1985)(Amtmann Arpad)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1409">
+				<rom name="kill (1985)(amtmann arpad).ptp" size="1409" crc="51b029f8" sha1="7059c994737f77cef0fcb10464be5ac21d121c46" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Kockazatelbiralas (198x)(-)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="19810">
+				<rom name="kockazatelbiralas (198x)(-).ptp" size="19810" crc="821110b3" sha1="317ae328d3b7757a21dc0171d638a30fc1ace7bd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Kodolo (198x)(Somogyi Gyorgy)(hu)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1271">
+				<rom name="kodolo (198x)(somogyi gyorgy)(hu).ptp" size="1271" crc="1f7d3850" sha1="effbed13c2c7316d714d3ebd067449beb62e8906" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Konyvtar (1985)(Miszlai Robert)(hu)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="3724">
+				<rom name="konyvtar (1985)(miszlai robert)(hu).ptp" size="3724" crc="1bb30f86" sha1="76277986998ff71cfcc49f8cb113e3298be5d8a6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Kulcsszo II (198x)(-)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="533">
+				<rom name="kulcsszo ii (198x)(-).ptp" size="533" crc="6220b785" sha1="afdb4dde0fe605c5ebf80521e476213536dd6bbb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Kulcsszo segedprogram (1986)(Reichenbach Laszlo)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="586">
+				<rom name="kulcsszo segedprogram (1986)(reichenbach laszlo).ptp" size="586" crc="a2b2401a" sha1="3ba21911e531f5f05daa67736ee1330d580cd38b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Lap fejleckeszito (1985)(Tik-Tak Software)(hu)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="4434">
+				<rom name="lap fejleckeszito (1985)(tik-tak software)(hu).ptp" size="4434" crc="21c94cc8" sha1="62395c559ef31140cac304f1455e6c0c3f9d5ca7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Lap leado (1985)(Tik-Tak Software)(hu)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="4237">
+				<rom name="lap leado (1985)(tik-tak software)(hu).ptp" size="4237" crc="9fb5ee86" sha1="17e7200cc1ac0d9a220111a50f2e4b1a192078a7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Lap szerkeszto (1985)(Tik-Tak Software)(hu)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="6882">
+				<rom name="lap szerkeszto (1985)(tik-tak software)(hu).ptp" size="6882" crc="0ec501ac" sha1="63da6095d017069b7c7f7a01fbd17136118f0367" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Legnyomas (198x)(-)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="851">
+				<rom name="legnyomas (198x)(-).ptp" size="851" crc="3598a8f1" sha1="21e06ac98e4543b9045d97de502806e84bf6f882" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Line (19xx)(-)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="742">
+				<rom name="line (19xx)(-).ptp" size="742" crc="0be9c561" sha1="1e78d3edaba0993fb5fbdd0e06830814501ba9bc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Logic Probe (1988)(VGZ)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="4432">
+				<rom name="logic probe (1988)(vgz).ptp" size="4432" crc="0d2a0ff3" sha1="a6e052461d3a3e74c5a2ff768a663134a6c00aa5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>LOGO (198x)(-)[a]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="3414">
+				<rom name="logo (198x)(-)[a].ptp" size="3414" crc="8de5356a" sha1="91d8f51b768aff199269f7a9f130ded67e59894f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>LOGO rajzolo (198x)(Horgosi Gabor)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="7175">
+				<rom name="logo rajzolo (198x)(horgosi gabor).ptp" size="7175" crc="1678f8cb" sha1="22fffa0944e99145fdced452f39847698e19eaa8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>LOGO rajzolo (198x)(Horgosi Gabor)[a]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="7186">
+				<rom name="logo rajzolo (198x)(horgosi gabor)[a].ptp" size="7186" crc="56a6f172" sha1="bfbf5d1c31667a224adfd124cacafe8d4433b3c7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Magyar hibauzenet (198x)(-)(hu)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1025">
+				<rom name="magyar hibauzenet (198x)(-)(hu).ptp" size="1025" crc="e076f5da" sha1="1694085346d8eb61e2409e7a29b1e3ddef3a32ae" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Masolo (1985)(BSW)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1867">
+				<rom name="masolo (1985)(bsw).ptp" size="1867" crc="6b4a7e78" sha1="1132aab4b43f46f57a48c94db1f4872617fa7faf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Microprogram PTK (198x)(Kovacs Attila)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2735">
+				<rom name="microprogram ptk (198x)(kovacs attila).ptp" size="2735" crc="715e6458" sha1="21eb69a3c04caa9fa8652fa3abdb4bc4b536b0d0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>mini LOGO rendszer (198x)(NOVA)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="6887">
+				<rom name="mini logo rendszer (198x)(nova).ptp" size="6887" crc="d2f2bcf6" sha1="52d95766b521e161a87e040750679fd8f1ab67f4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Montazskeszito (198x)(Szarka Zoltan)(hu)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1545">
+				<rom name="montazskeszito (198x)(szarka zoltan)(hu).ptp" size="1545" crc="5e79c727" sha1="705e9c42f84f80bab235c185d84c049343d5b697" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Mozimusor (198x)(-)(hu)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2901">
+				<rom name="mozimusor (198x)(-)(hu).ptp" size="2901" crc="0be7c5e7" sha1="3e0e0afd2e349d28e7967fb10738c6ee37040735" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Music Editor System (198x)(-)(hu)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="4778">
+				<rom name="music editor system (198x)(-)(hu).ptp" size="4778" crc="0277b4a1" sha1="ff279b69054e778f1b44927ff831b5947c75f277" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>P-Bug Z80 Monitor V1.0 (198x)(-)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="4317">
+				<rom name="p-bug z80 monitor v1.0 (198x)(-).ptp" size="4317" crc="16746f28" sha1="da0808672cad6b08d12c7b73dff904e62e95e521" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>P-Bug Z80 Monitor V1.0 (198x)(-)[a]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="4273">
+				<rom name="p-bug z80 monitor v1.0 (198x)(-)[a].ptp" size="4273" crc="127ed221" sha1="9229395e6d747f3fdf415c476fae6ecfcddd1cba" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Paint '87 (1987)(Frajka Janos)[incl Graphics '85]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="29796">
+				<rom name="paint '87 (1987)(frajka janos)[incl graphics '85].ptp" size="29796" crc="0e0545d7" sha1="07e68e985cbf5e99d02a0a5350725cdfb5dea7be" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Paint '87.II (1987)(Janos Frajka)[req Graphics '85]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="24455">
+				<rom name="paint '87.ii (1987)(janos frajka)[req graphics '85].ptp" size="24455" crc="f0fb7b36" sha1="447ce7e4f87643346fff6e7986d82fb07f30bdea" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Pallas Z80-Assembly Developing System (1986)(BME-KSZK)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="15996">
+				<rom name="pallas z80-assembly developing system (1986)(bme-kszk).ptp" size="15996" crc="0633638d" sha1="2a98452084d94acf0068b121e749ee4e404c5659" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Pallas Z80-Assembly Developing System (1986)(BME-KSZK)[a2]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="15375">
+				<rom name="pallas z80-assembly developing system (1986)(bme-kszk)[a2].ptp" size="15375" crc="344488a2" sha1="2da567ec9c061019795dced0853399d6c73b355b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Pallas Z80-Assembly Developing System (1986)(BME-KSZK)[a]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="18190">
+				<rom name="pallas z80-assembly developing system (1986)(bme-kszk)[a].ptp" size="18190" crc="db978d19" sha1="95e09aaa45c74e5a4d9925ed38c3ea4a473dc066" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>PAS System (198x)(-)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="7164">
+				<rom name="pas system (198x)(-).ptp" size="7164" crc="56b23b11" sha1="221a9ca637f4d262b4928b1e34cc4fc0b961eb76" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>PDATA (198x)(Kovacs Attila)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="5692">
+				<rom name="pdata (198x)(kovacs attila).ptp" size="5692" crc="3feb4be4" sha1="7ae81b4203d075da596677f038345c5980e249bb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Pohar 3D (198x)(-)[incl Graphics '85]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="9036">
+				<rom name="pohar 3d (198x)(-)[incl graphics '85].ptp" size="9036" crc="5814ae87" sha1="a8b50ffb6d6b7b89dc127c623f4f9f82f7274ee1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Pohar 3D (198x)(-)[req Graphics '85]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="3695">
+				<rom name="pohar 3d (198x)(-)[req graphics '85].ptp" size="3695" crc="d5665fbb" sha1="4a85f0d671170b901ae589705b09b0032be5a981" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Polinom (198x)(Kovacs Attila)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1087">
+				<rom name="polinom (198x)(kovacs attila).ptp" size="1087" crc="ec2fbdd6" sha1="a3e7cce6a3eead36a0efed17f9579cac15a1eed7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo 'T' System 87.8 (1987)(Varga Peter)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="5539">
+				<rom name="primo 't' system 87.8 (1987)(varga peter).ptp" size="5539" crc="29fc599f" sha1="480ef5ddd8c14dd5fabf0779e2256f27f4b6526e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Assembler Editor '85.2 (1985)(Verysoft)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="5818">
+				<rom name="primo assembler editor '85.2 (1985)(verysoft).ptp" size="5818" crc="0a7cfadf" sha1="47185c28e9d188edaf583f0dbbf84756840c2bbf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Assembler Editor '85.2 (1985)(Verysoft)[a]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="5721">
+				<rom name="primo assembler editor '85.2 (1985)(verysoft)[a].ptp" size="5721" crc="2babcd56" sha1="8616d1e5df1b5480e7b66e49add9ca249fc70e4d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Assembler Editor loader (1986)(Sandor Zsolt)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="763">
+				<rom name="primo assembler editor loader (1986)(sandor zsolt).ptp" size="763" crc="d87be0d7" sha1="6e626754ae961f5e54a07d6c47c46a62d606a848" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Assembler System '85.2 (1985)(-)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="5241">
+				<rom name="primo assembler system '85.2 (1985)(-).ptp" size="5241" crc="9c427cb4" sha1="6a9678adca5e5810ef1cd79081919657b0e78e96" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Assembler System '85.2 (1985)(-)[a]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="4895">
+				<rom name="primo assembler system '85.2 (1985)(-)[a].ptp" size="4895" crc="9c232c7b" sha1="01c521a1c45fe82018a103d1d98e835c69f0740e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Assembler System '85.3 (1985)(-)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="5087">
+				<rom name="primo assembler system '85.3 (1985)(-).ptp" size="5087" crc="e76b774c" sha1="0517d71fd976773e55de6d3a88228d3448ae681f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Copy '87.2 (1987)(Paller Gabor)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2152">
+				<rom name="primo copy '87.2 (1987)(paller gabor).ptp" size="2152" crc="12638dfa" sha1="ff6681498e8770ac60a900e4458b34dc82a6aa9f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Disassembler & NK '84 (1984)(-)[start GET]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1805">
+				<rom name="primo disassembler & nk '84 (1984)(-)[start get].ptp" size="1805" crc="a8867c5c" sha1="4384e56c0724443cbe8374fcfced1be4f6feaf6c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Disassembler 88 (1988)(-)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2075">
+				<rom name="primo disassembler 88 (1988)(-).ptp" size="2075" crc="506ae9a3" sha1="0217de141075ff98a409dfd756923d13e45d0681" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Disassembler 88 (1988)(-)[a]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2075">
+				<rom name="primo disassembler 88 (1988)(-)[a].ptp" size="2075" crc="47dfbe81" sha1="76b712b3c6b3d506cbb1a754026ac1733c3b912a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Expanded Basic System '85.1 (1985)(Verysoft)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="6193">
+				<rom name="primo expanded basic system '85.1 (1985)(verysoft).ptp" size="6193" crc="2f65c7a1" sha1="589a60fab0c908f88309232ba06a7c23d2738e0c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Expanded Basic System '86.1 (1986)(Verysoft)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="6600">
+				<rom name="primo expanded basic system '86.1 (1986)(verysoft).ptp" size="6600" crc="07955f62" sha1="cb62fca3244621f3a2440621756f9c4d396fb75a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Forth v1.0 (1985)(BME-KSZK)[a]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="11525">
+				<rom name="primo forth v1.0 (1985)(bme-kszk)[a].ptp" size="11525" crc="37711548" sha1="21ce03a0d0fbbf0fbe4d74bbda34d974424d5510" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Forth v1.2 (1985)(BME-KSZK)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="13770">
+				<rom name="primo forth v1.2 (1985)(bme-kszk).ptp" size="13770" crc="05902326" sha1="5d5a1ae590242fb02f0e795a6034abae97bd67a3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Forth v1.2 (1985)(BME-KSZK)[a]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="13770">
+				<rom name="primo forth v1.2 (1985)(bme-kszk)[a].ptp" size="13770" crc="f9c65dac" sha1="22e6f6eb469ff56ba98d90bbe0bf63acf1bb06a4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo ForthSave (1985)(BME-KSZK)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="12794">
+				<rom name="primo forthsave (1985)(bme-kszk).ptp" size="12794" crc="c9942e32" sha1="50bd505f39c0f2f5891ce1bd95e8eec83a8b68b4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Graphics System '85.1 (1985)(Verysoft)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="5341">
+				<rom name="primo graphics system '85.1 (1985)(verysoft).ptp" size="5341" crc="05b49db0" sha1="e7299ddbdf64dba5d38cdfaa577d0ef6cbf98645" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Graphics System '85.1 (1985)(Verysoft)[a2]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="5341">
+				<rom name="primo graphics system '85.1 (1985)(verysoft)[a2].ptp" size="5341" crc="f41afd92" sha1="63c756a00c7e8d0a5d856cfb53f612d9cca47ea0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Graphics System '85.1 (1985)(Verysoft)[a]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="5333">
+				<rom name="primo graphics system '85.1 (1985)(verysoft)[a].ptp" size="5333" crc="74d1eeef" sha1="bba9b680c55940b385fd24d8b778efa42d9fb124" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Graphics System '86.1-CDOS (1986)(Verysoft)(Primo B)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="4397">
+				<rom name="primo graphics system '86.1-cdos (1986)(verysoft)(primo b).ptp" size="4397" crc="f822f5d9" sha1="0e91a22bb34625586649e3e496073e59b058340c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Graphics System '86.1-CDOS (1986)(Verysoft)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="5195">
+				<rom name="primo graphics system '86.1-cdos (1986)(verysoft).ptp" size="5195" crc="80bdffe9" sha1="82156e0f7f47260ba843374422ab7a6f6ae5c9ab" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo idomeres (198x)(-)(hu)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="637">
+				<rom name="primo idomeres (198x)(-)(hu).ptp" size="637" crc="aaf6a164" sha1="cc570e851468d53cc71dd16b16d6c7b2daf1391f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Lisp (198x)(Paller Gabor)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="7418">
+				<rom name="primo lisp (198x)(paller gabor).ptp" size="7418" crc="a54bbbd3" sha1="b822db379385134e14d2deb1f98f1a4b5f3b8bb4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo microPROLOG System (1988)(Paller Gabor)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="15332">
+				<rom name="primo microprolog system (1988)(paller gabor).ptp" size="15332" crc="8c4d8bf7" sha1="78b00611836688344ef5ad345f08fa324a4044c3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Pascal System 1.0 (1985)(BME-KSZK)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="24322">
+				<rom name="primo pascal system 1.0 (1985)(bme-kszk).ptp" size="24322" crc="3f70b772" sha1="47be627740034e1b3b8209211336aae070f6b01d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Sakk Computer kimento (1986)(Furrier Software)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="19502">
+				<rom name="primo sakk computer kimento (1986)(furrier software).ptp" size="19502" crc="6ab7b045" sha1="2c3960570c91b771ff8f6893fb406660ee318962" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Text Editor kimento (1986-08-11)(Szucs Zoltan)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="7776">
+				<rom name="primo text editor kimento (1986-08-11)(szucs zoltan).ptp" size="7776" crc="dbc5fcce" sha1="5e2171c563c18a8d6f86274df3544a4780584541" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Turbo Copy System 2.5MHz (198x)(-)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="3169">
+				<rom name="primo turbo copy system 2.5mhz (198x)(-).ptp" size="3169" crc="91666577" sha1="e08ce73b279e3c167c759d93a9850e029ce0ca70" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Turbo Copy System 3.75MHz (198x)(-)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2786">
+				<rom name="primo turbo copy system 3.75mhz (198x)(-).ptp" size="2786" crc="abf446dc" sha1="b37edaa0047ad989bf2718ad8c9afabdfb5cbf6e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Turbo Save & Copy System '86.1 (1986)(-)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1843">
+				<rom name="primo turbo save & copy system '86.1 (1986)(-).ptp" size="1843" crc="9ccfb73b" sha1="48687eeb14892dd52f824a2967d47e72c81364f5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primo Video Text Editor (1986)(Szucs Zoltan)(Primo B)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="7343">
+				<rom name="primo video text editor (1986)(szucs zoltan)(primo b).ptp" size="7343" crc="19ea0698" sha1="7e76aef8b3a456d200a31327412453b261630ea3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Primusix (198x)(-)(hu)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="4301">
+				<rom name="primusix (198x)(-)(hu).ptp" size="4301" crc="72fbe247" sha1="a99a88ad6fc50180c7b6d833a5258cfe88771ece" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Program nyilvantarto (198x)(Olah Tamas)(hu)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2839">
+				<rom name="program nyilvantarto (198x)(olah tamas)(hu).ptp" size="2839" crc="0d1c5007" sha1="c0bb49362c18708f0ae2c466c93887c6efce8eea" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Programtar (1987)(Nemeth Janos)(hu)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2233">
+				<rom name="programtar (1987)(nemeth janos)(hu).ptp" size="2233" crc="f92f5d94" sha1="b0f3e8a9ace5976173bf628a8d6ee3de7a6bf1b9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Quartz Clock (1986)(Sandor Zsolt)[incl Graphics '85]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="8089">
+				<rom name="quartz clock (1986)(sandor zsolt)[incl graphics '85].ptp" size="8089" crc="490149f2" sha1="48ffb69a9989a13368161e28ae68595fac5778d7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Quartz Clock (1986)(Sandor Zsolt)[req Graphics '85]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2748">
+				<rom name="quartz clock (1986)(sandor zsolt)[req graphics '85].ptp" size="2748" crc="374f3231" sha1="e53d8d5aeb75add2092b0a1635130fc565cb17ec" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>R.S.S. Loader v1.2 (1987)(Repas Sandor)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="602">
+				<rom name="r.s.s. loader v1.2 (1987)(repas sandor).ptp" size="602" crc="ca483e03" sha1="d285e98ffc6f43438389580b793b27c2303035e9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Rajz botkormannyal (1986)(Gerendas Sandor)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="622">
+				<rom name="rajz botkormannyal (1986)(gerendas sandor).ptp" size="622" crc="fc164ced" sha1="84a43e072844e91f6048c4eacf5a45915b52dd9f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Rajzolo (198x)(-)[incl Graphics '85]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="8206">
+				<rom name="rajzolo (198x)(-)[incl graphics '85].ptp" size="8206" crc="e6cb32fe" sha1="9397dd70076b624c57e2391c3786073e81cbb4e0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Rajzolo (198x)(-)[req Graphics '85]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2865">
+				<rom name="rajzolo (198x)(-)[req graphics '85].ptp" size="2865" crc="386ea4c6" sha1="3e2eba9e75393739f9a8c73579856174a35353db" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Renumber (1987)(Koszper Vilmos)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2143">
+				<rom name="renumber (1987)(koszper vilmos).ptp" size="2143" crc="4783e458" sha1="9ba03e5bd942b3b3c246de0a41e7a3af12c3490b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Renumber (198x)(-)[a]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2179">
+				<rom name="renumber (198x)(-)[a].ptp" size="2179" crc="bae72c0e" sha1="b8f1dc284ed2221121fcdb792167acc8965c1612" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Screen E.S. (198x)(Kovacs Attila)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1104">
+				<rom name="screen e.s. (198x)(kovacs attila).ptp" size="1104" crc="5212c567" sha1="090075e51f441a377130ffcf79d84ded33cceedb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Screen nagyito (1987)(Olah Tamas)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2030">
+				<rom name="screen nagyito (1987)(olah tamas).ptp" size="2030" crc="f0d3b6c9" sha1="2c400398c696459c0ad233157d96875f9f6b2d49" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Shynt (198x)(Kovacs Attila)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1157">
+				<rom name="shynt (198x)(kovacs attila).ptp" size="1157" crc="a67c28d5" sha1="adb58a658566c012294ada95b097c2faba124405" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Sokszogvonal szamitas (198x)(Kovacs Attila)(hu)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2733">
+				<rom name="sokszogvonal szamitas (198x)(kovacs attila)(hu).ptp" size="2733" crc="7169d15d" sha1="797b133873632f9c523dc253095276ca918f0008" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Speaker (1988)(Vitez-Software)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1094">
+				<rom name="speaker (1988)(vitez-software).ptp" size="1094" crc="8975af80" sha1="0282b2085f8e7e5f32c95812fb1837c4773b910d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Speaker (1988)(Vitez-Software)[docs]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1625">
+				<rom name="speaker (1988)(vitez-software)[docs].ptp" size="1625" crc="90f0d588" sha1="835bda757144de1bfd36cd111b9bc60d2f813c96" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Speci GOTO (198x)(-)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="935">
+				<rom name="speci goto (198x)(-).ptp" size="935" crc="095a569e" sha1="17e4388f41a6c16aa30be813fd88b87cd5ee02f8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Spectrum Emulator for Primo (198x)(Paller Gabor)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="17023">
+				<rom name="spectrum emulator for primo (198x)(paller gabor).ptp" size="17023" crc="06442210" sha1="0ddf3fba19e2a28375104c5a8c817948fbe652b1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Spectrum Emulator for Primo (198x)(Paller Gabor)[a]</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="17023">
+				<rom name="spectrum emulator for primo (198x)(paller gabor)[a].ptp" size="17023" crc="45ac74f7" sha1="12ae2a56db3bdd61a328b5a7f56fea02f6e857d6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Spectrum Loader (198x)(BG Primo Software)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2118">
+				<rom name="spectrum loader (198x)(bg primo software).ptp" size="2118" crc="a4be230d" sha1="c3ee9bffd6d6262a36470b5a7f9a4419fa8893b4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Sprite Basic (198x)(-)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="6659">
+				<rom name="sprite basic (198x)(-).ptp" size="6659" crc="7c28bec6" sha1="afc3adc7cab12507b38bc7b1233db4e154cced74" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Spritegraf (198x)(Kovacs Attila)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2839">
+				<rom name="spritegraf (198x)(kovacs attila).ptp" size="2839" crc="76c765ed" sha1="7d43b9c6968f1855351f0013944de70ded01f08d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Stargraphic (198x)(-)(hu)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2556">
+				<rom name="stargraphic (198x)(-)(hu).ptp" size="2556" crc="0b7419e5" sha1="e0180022759ae0ae8e6c4745c338121ed18d3f9f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stopprb1">
+		<description>Stopper (Primo B, Unknown)</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1584">
+				<rom name="stopper (198x)(-)(primo b).ptp" size="1584" crc="3b55ca11" sha1="40f92622956b3fdc33f5f75765b5de529c625c53" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stopper">
+		<description>Stopper</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1200">
+				<rom name="stopper (198x)(-).ptp" size="1200" crc="0f4fc56f" sha1="2a83dd9c6e489669e66d3cb798d67c89f62da4b4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stopperb">
+		<description>Stopper (Primo B, Kormendi Gyorgy)</description>
+		<year>198?</year>
+		<publisher>Kormendi Gyorgy</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1649">
+				<rom name="stopper (198x)(kormendi gyorgy)(primo b).ptp" size="1649" crc="8349b1fb" sha1="e30fdad96223f93d2f0565f9a4a0bb58f70d3791" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stringre">
+		<description>Stringrendezes</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1046">
+				<rom name="stringrendezes (198x)(-).ptp" size="1046" crc="9670c261" sha1="e3f606e475e4017233337491fdf921cb186bcc42" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="suprcalc">
+		<description>Super Calc</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="811">
+				<rom name="super calc (198x)(-)(hu).ptp" size="811" crc="811baccc" sha1="9ef9fcd3209f3d5862798b37ca1e8552b1a7fbb1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="suprcopy">
+		<description>SuperCopy R.S.S. '87</description>
+		<year>1987</year>
+		<publisher>Repas Sandor</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1183">
+				<rom name="supercopy r.s.s. '87 (1987)(repas sandor).ptp" size="1183" crc="b094e428" sha1="4e34f0ec6c828f5ba23a3f072c1d53c7de62812c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="szamrend">
+		<description>Szamrendszerek</description>
+		<year>1987</year>
+		<publisher>Repas Sandor</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1200">
+				<rom name="szamrendszerek (1987)(repas sandor).ptp" size="1200" crc="e259844a" sha1="16e5be96f656c7dde405c3bdbddee6e0dd536cd3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="szemely">
+		<description>Szemely-nyilvantartas</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="3426">
+				<rom name="szemely-nyilvantartas (198x)(-).ptp" size="3426" crc="a569f904" sha1="f46bc795221adf910c619cb51368bb774fe10304" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="szerkesz">
+		<description>Szerkeszto RS</description>
+		<year>1988</year>
+		<publisher>Miszlai Robert</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="9995">
+				<rom name="szerkeszto rs (1988)(miszlai robert).ptp" size="9995" crc="125983d8" sha1="a90a2ff6b555b318504b82b2b5a8700aab5b355a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="szextesz">
+		<description>Szex teszt</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="7140">
+				<rom name="szex teszt (198x)(-)(hu).ptp" size="7140" crc="a4300dd1" sha1="9552ae0fb454a6e70b036722a8d0bb1a245db846" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="szigma12" cloneof="szigma">
+		<description>Szigma Assembler '1.2</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="6489">
+				<rom name="szigma assembler '1.2 (198x)(-).ptp" size="6489" crc="e2e87cd1" sha1="f2fb5709cf54ed96c10d15d4b678547e2246b945" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="szigma">
+		<description>Szigma Assembler '2.2</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="6069">
+				<rom name="szigma assembler '2.2 (198x)(-).ptp" size="6069" crc="17624303" sha1="e010e63787923d9ccf43e37becae3f6d7b3aaabf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="szkop2">
+		<description>Szkop-2</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="1551">
+				<rom name="szkop-2 (198x)(-).ptp" size="1551" crc="7235aa84" sha1="632dc153e131bb3f80136b2d036204e961e6224e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="szotar">
+		<description>Szotar (Szucs Zoltan)</description>
+		<year>1985</year>
+		<publisher>Szucs Zoltan</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="22721">
+				<rom name="szotar (1985)(szucs zoltan).ptp" size="22721" crc="946f2156" sha1="5d16225f09ebce750b41be89ba98948d6e33bce0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="szotar2">
+		<description>Szotar (Szucs Zoltan - Kiss Gyorgy)</description>
+		<year>198?</year>
+		<publisher>Szucs Zoltan - Kiss Gyorgy</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="7653">
+				<rom name="szotar (198x)(szucs zoltan - kiss gyorgy).ptp" size="7653" crc="c58d111b" sha1="b58ae3782f5feabcdeb211d818c5f17096113007" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="token">
+		<description>Token</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="552">
+				<rom name="token (198x)(-).ptp" size="552" crc="eae947ed" sha1="086816d86bd58436bdb696698bcc9dd332861f81" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unimas43">
+		<description>Uni - Masolo CMD-43EAHa</description>
+		<year>198?</year>
+		<publisher>Szekeres Antal</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="935">
+				<rom name="uni - masolo cmd-43eaha (198x)(szekeres antal).ptp" size="935" crc="4c48d95a" sha1="71fadb02fa8f1cd348007470ac9e3084b3ef38b2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unimasdf">
+		<description>Uni - Masolo CMD-DF00Ha</description>
+		<year>198?</year>
+		<publisher>Szekeres Antal</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="931">
+				<rom name="uni - masolo cmd-df00ha (198x)(szekeres antal).ptp" size="931" crc="898712f7" sha1="fc0c5a5b4a8a6818eeb668bbaadbf7b58492cc76" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unigraf">
+		<description>Uni-Graf</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="17532">
+				<rom name="uni-graf (198x)(-).ptp" size="17532" crc="91a964cb" sha1="b93c74723d64e64434507fa224475cda3f6e257b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="varia">
+		<description>Varia</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="2475">
+				<rom name="varia (198x)(-).ptp" size="2475" crc="cc7bd65f" sha1="ebbaf2d63c152d570340efb82f4d7385c8519399" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="verycopy">
+		<description>Verysoft's Copy</description>
+		<year>198?</year>
+		<publisher>Verysoft</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="277">
+				<rom name="verysoft's copy (198x)(verysoft).ptp" size="277" crc="52212e23" sha1="2aae320efe87be2e86be1a106b6c3fe67fdf5092" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vilicopy">
+		<description>Vsoft's Vilicopy</description>
+		<year>198?</year>
+		<publisher>Vsoft</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="492">
+				<rom name="vsoft's vilicopy (198x)(vsoft).ptp" size="492" crc="95c94cdb" sha1="f5aadd8a92ba70489012ce695883f98a58ccbef8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="z80mon">
+		<description>Z80 Monitor</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="4564">
+				<rom name="z80 monitor (198x)(-).ptp" size="4564" crc="69be51ed" sha1="9d0656a811317934a1463b64ea36181d50652e09" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxcopy">
+		<description>ZX Copy</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="982">
+				<rom name="zx copy (198x)(-).ptp" size="982" crc="f9d9befe" sha1="8f2e40d9d4210a9e68bc4cb2856b535e3a73bc6f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+-->
+
+</softwarelist>

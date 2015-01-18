@@ -270,16 +270,20 @@ static MACHINE_CONFIG_START( primoa32, primo_state )
 	MCFG_CASSETTE_FORMATS(primo_ptp_format)
 	MCFG_CASSETTE_CREATE_OPTS(&primo_cassette_options)
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_STOPPED | CASSETTE_SPEAKER_ENABLED)
+	MCFG_CASSETTE_INTERFACE("primo_cass")
 
 	/* floppy from serial bus */
 	MCFG_CBM_IEC_ADD(NULL)
-	MCFG_SOFTWARE_LIST_ADD("flop_list","primo_flop")
 
 	/* cartridge */
 	MCFG_GENERIC_CARTSLOT_ADD("cartslot1", generic_plain_slot, NULL)
 	MCFG_GENERIC_EXTENSIONS("bin,rom")
 	MCFG_GENERIC_CARTSLOT_ADD("cartslot2", generic_plain_slot, NULL)
 	MCFG_GENERIC_EXTENSIONS("bin,rom")
+	
+	/* software lists */
+	MCFG_SOFTWARE_LIST_ADD("cass_list","primo_cass")
+	MCFG_SOFTWARE_LIST_ADD("flop_list","primo_flop")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( primoa48, primoa32 )
