@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <!-- this software list is only partially completed -->
-
 <softwarelist name="oric_flop" description="Tangerine Oric floppy images">
+
 	<software name="3dfongus">
 		<description>3D Fongus</description>
 		<year>1985</year>
@@ -120,13 +120,19 @@
 		<info name="usage" value="Requires Sedoric"/>
 
 		<part name="flop1" interface="floppy_3">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="74136">
 				<rom name="demo mag (19xx)(-)(pd)[sedoric].dsk" size="74136" crc="88b6bb98" sha1="803d318df5d07e442a270e06ecc68e68a3d02163" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="demomaga" cloneof="demomag">
+		<description>Demo Mag (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires Sedoric"/>
+
+		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="537856">
 				<rom name="demo mag (19xx)(-)(pd)[a][sedoric].dsk" size="537856" crc="92da62f0" sha1="519e86ab12f2a0feb3754348bd9bf6c24590bf86" offset="0" />
 			</dataarea>
@@ -252,13 +258,18 @@
 		<publisher>Infocom</publisher>
 
 		<part name="flop1" interface="floppy_3">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="512256">
 				<rom name="infocom interactive fiction #203 - the lurking horror (1983)(infocom).dsk" size="512256" crc="f4c65c3f" sha1="e21d79c3e8a603a9e8ec111ff94ae7c2fdc4ec48" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3">
-		<feature name="part_id" value="Disk 1, Bad?"/>
+	</software>
+
+	<software name="infof203a" cloneof="infof203">
+		<description>Infocom Interactive Fiction #203 - The Lurking Horror (Bad?)</description>
+		<year>1983</year>
+		<publisher>Infocom</publisher>
+
+		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="55103">
 				<rom name="infocom interactive fiction #203 - the lurking horror (1983)(infocom)[b].dsk" size="55103" crc="9eb3323d" sha1="e2083cde315df4a85554f0e4c3986a74b5e38548" status="baddump" offset="0" />
 			</dataarea>
@@ -319,13 +330,18 @@
 		<publisher>Infocom</publisher>
 
 		<part name="flop1" interface="floppy_3">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="512256">
 				<rom name="infocom interactive fiction #47 - hitchhikers guide to the galaxy (1983)(infocom).dsk" size="512256" crc="9fd4f17c" sha1="c5f011ae148bdf5b2e31b7f30a531d6830b11228" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3">
-		<feature name="part_id" value="Disk 1, Bad?"/>
+	</software>
+
+	<software name="infof47a" cloneof="infof47">
+		<description>Infocom Interactive Fiction #47 - Hitchhikers Guide To The Galaxy (Bad?)</description>
+		<year>1983</year>
+		<publisher>Infocom</publisher>
+
+		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="267489">
 				<rom name="infocom interactive fiction #47 - hitchhikers guide to the galaxy (1983)(infocom)[b].dsk" size="267489" crc="a60e8876" status="baddump" sha1="3c1aaf99d52171949b97585fd2e47bc96ef37fb0" offset="0" />
 			</dataarea>
@@ -482,13 +498,18 @@
 		<publisher>Infocom</publisher>
 
 		<part name="flop1" interface="floppy_3">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="512256">
 				<rom name="infocom interlogic science fiction #8 - suspended (1983)(infocom).dsk" size="512256" crc="e3bb48b6" sha1="7c33d3b3177e4fcd170b6b5a7f8515ed0ace5c89" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3">
-		<feature name="part_id" value="Disk 1, Bad?"/>
+	</software>
+
+	<software name="infosf8a" cloneof="infosf8">
+		<description>Infocom Interlogic Science Fiction #8 - Suspended (Bad?)</description>
+		<year>1983</year>
+		<publisher>Infocom</publisher>
+
+		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="306317">
 				<rom name="infocom interlogic science fiction #8 - suspended (1983)(infocom)[b].dsk" size="306317" crc="495f5d79" sha1="9aeb744c1a896cb50c1c423954de21c623a0894a" status="baddump" offset="0" />
 			</dataarea>
@@ -539,13 +560,18 @@
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="512256">
 				<rom name="interactive fiction tutorial - sampler 2 (19xx)(-)[needs pinforic].dsk" size="512256" crc="10c5eed9" sha1="3c072ad7693a4bb4cb2b6296a8742491b5d2f6da" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3">
-		<feature name="part_id" value="Disk 1, Bad?"/>
+	</software>
+
+	<software name="ifts2a" cloneof="ifts2">
+		<description>Interactive Fiction Tutorial - Sampler 2 (Bad?)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="55479">
 				<rom name="interactive fiction tutorial - sampler 2 (19xx)(-)[b][needs pinforic].dsk" size="55479" crc="c4494db4" sha1="ec9971d3b1cbd26ee16d5b2b9dcf340b20b50876" status="baddump" offset="0" />
 			</dataarea>
@@ -571,13 +597,18 @@
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="269056">
 				<rom name="krystal worlds ii (1996)(-)(pd).dsk" size="269056" crc="05658ec4" sha1="178a999205caeac2bf66aa43958c2632f6134c22" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3">
-		<feature name="part_id" value="Disk 1, Alt?"/>
+	</software>
+
+	<software name="krystal2a" cloneof="krystal2">
+		<description>Krystal Worlds II (Alt?)</description>
+		<year>1996</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="269056">
 				<rom name="krystal worlds part 2 (1996) [a].dsk" size="269056" crc="cf5bae66" sha1="0db5f41e47a6fffeaddaa0cb1d21caa76e4a1b2e" offset="0" />
 			</dataarea>
@@ -603,13 +634,18 @@
 		<publisher>Jonathan Bristow</publisher>
 
 		<part name="flop1" interface="floppy_3">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="1049856">
 				<rom name="magnetix (1993)(jonathan bristow)(pd).dsk" size="1049856" crc="edce36ac" sha1="98e2eed67ec1fbe69d443491436c76769812bb45" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="magnetixa" cloneof="magnetix">
+		<description>Magnetix (Alt)</description>
+		<year>1993</year>
+		<publisher>Jonathan Bristow</publisher>
+
+		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="1049856">
 				<rom name="magnetix (1993)(jonathan bristow)(pd)[a].dsk" size="1049856" crc="4972da11" sha1="b4d184d9727ab38eaa1d7c3e69a6b56b29cf4b09" offset="0" />
 			</dataarea>
@@ -622,13 +658,18 @@
 		<publisher>Marvel</publisher>
 
 		<part name="flop1" interface="floppy_3">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="326376">
 				<rom name="marvel adventure #1-the hulk (19xx)(marvel).dsk" size="326376" crc="407acd37" sha1="2e54bd3c0d7dc3a04bc5367ab495425db1c3f127" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3">
-		<feature name="part_id" value="Disk 1 (Alt)"/>
+	</software>
+
+	<software name="marvel1a" cloneof="marvel1">
+		<description>Marvel Adventure #1 - The Hulk (Alt)</description>
+		<year>198?</year>
+		<publisher>Marvel</publisher>
+
+		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="1049856">
 				<rom name="marvel adventure #1-the hulk (19xx)(marvel)[a].dsk" size="1049856" crc="256198b8" sha1="8df4e85c42759718b3193153df2bf59954bce750" offset="0" />
 			</dataarea>
@@ -998,13 +1039,18 @@
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="256256">
 				<rom name="toxic slime-considered harmfull (1995)(-)(pd).dsk" size="256256" crc="07928f06" sha1="277fc79d2d0212d123a28ecf9f0d4a16ee17d981" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="toxicslia" cloneof="toxicsli">
+		<description>Toxic Slime - Considered Harmfull (Alt)</description>
+		<year>1995</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="256256">
 				<rom name="toxic slime-considered harmfull (1995)(-)(pd)[a].dsk" size="256256" crc="8543dc4e" sha1="f43c4546cc52c6a01c6cf179231957f7533aa00f" offset="0" />
 			</dataarea>
@@ -1024,19 +1070,6 @@
 		</part>
 	</software>
 
-	<software name="tyrannf" cloneof="tyrann">
-		<description>Tyrann (Fra)</description>
-		<year>1984</year>
-		<publisher>Norsoft</publisher>
-		<info name="usage" value="Requires Sedoric"/>
-
-		<part name="flop1" interface="floppy_3">
-			<dataarea name="flop" size="256256">
-				<rom name="tyrann (1984)(norsoft)(fr)[sedoric].dsk" size="256256" crc="3abc25d4" sha1="6783bbb9d4705e5e120472a3f2e592a3658803c2" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="tyrann">
 		<description>Tyrann</description>
 		<year>1984</year>
@@ -1046,6 +1079,19 @@
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="256256">
 				<rom name="tyrann (1984)(norsoft)[sedoric].dsk" size="256256" crc="03891bbf" sha1="1c028b286467d2aed70d6c65eeb609d8001fa6ea" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tyrannf" cloneof="tyrann">
+		<description>Tyrann (Fra)</description>
+		<year>1984</year>
+		<publisher>Norsoft</publisher>
+		<info name="usage" value="Requires Sedoric"/>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="256256">
+				<rom name="tyrann (1984)(norsoft)(fr)[sedoric].dsk" size="256256" crc="3abc25d4" sha1="6783bbb9d4705e5e120472a3f2e592a3658803c2" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1106,19 +1152,30 @@
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="512256">
 				<rom name="zipnzap (19xx)(-)(fr)(pd).dsk" size="512256" crc="108282c6" sha1="944e554ff36a0c3e45260b2aba81d7bafdad6ef2" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="zipnzapa" cloneof="zipnzap">
+		<description>Zipnzap (Fra, Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="537856">
 				<rom name="zipnzap (19xx)(-)(fr)(pd)[a].dsk" size="537856" crc="87e7a41c" sha1="4cd5e6df9ed7a9fc8dcf4d56e993219be2f6081a" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_3">
-		<feature name="part_id" value="Disk 1, Alt 2"/>
+	</software>
+
+	<software name="zipnzapb" cloneof="zipnzap">
+		<description>Zipnzap (Fra, Alt 2)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="512256">
 				<rom name="zipnzap (19xx)(-)(fr)(pd)[a2].dsk" size="512256" crc="dc314b5d" sha1="a3a576febfd98b8b7082f36ba892fe6de7e3da6b" offset="0" />
 			</dataarea>
@@ -1240,13 +1297,18 @@
 		<publisher>Defense Force</publisher>
 
 		<part name="flop1" interface="floppy_3">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="537856">
 				<rom name="barbitoric by defense force (2002).dsk" size="537856" crc="f7c2f4ef" sha1="76c1d21a3759ac00a90817b3a309d4613ba9052e" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="barbita" cloneof="barbit">
+		<description>BarbitOric (Alt)</description>
+		<year>2002</year>
+		<publisher>Defense Force</publisher>
+
+		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="537856">
 				<rom name="barbitoric by defense force (2002) [a].dsk" size="537856" crc="c3eb2db4" sha1="17931f03f0cab6243d520524a1b83e77bf945e3b" offset="0" />
 			</dataarea>
@@ -1967,13 +2029,18 @@
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="1024256">
 				<rom name="oricdos.dsk" size="1024256" crc="3f661016" sha1="531c23153c23d845bf775abb10a5f9b029cb673d" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="oricdosa" cloneof="oricdos">
+		<description>ORICDOS (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="256256">
 				<rom name="oricdos -- alt.dsk" size="256256" crc="b36d9f2a" sha1="5994ff8a8322e62d83494457831528139f74dc63" offset="0" />
 			</dataarea>
@@ -2340,18 +2407,6 @@
 		</part>
 	</software>
 
-	<software name="sonix35">
-		<description>Sonix (v3.5)</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_3">
-			<dataarea name="flop" size="1049856">
-				<rom name="sonix v3.5.dsk" size="1049856" crc="d88e9d7a" sha1="129eec84edab16a7bffcffecb225983cf17fde03" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="sonix4">
 		<description>Sonix (v4.00)</description>
 		<year>1993</year>
@@ -2360,6 +2415,18 @@
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="1049856">
 				<rom name="sonix v4.00 (1993).dsk" size="1049856" crc="b09fe69c" sha1="ee7e75bacd45efe35cc32addbb7bf83ce86404a8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sonix35">
+		<description>Sonix (v3.5)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="1049856">
+				<rom name="sonix v3.5.dsk" size="1049856" crc="d88e9d7a" sha1="129eec84edab16a7bffcffecb225983cf17fde03" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2394,13 +2461,18 @@
 		<publisher>Peter TheSpider</publisher>
 
 		<part name="flop1" interface="floppy_3">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="1049856">
 				<rom name="spaint by peter thespider (2003).dsk" size="1049856" crc="ee58a485" sha1="e53a9d5a92eae71c70f9ce52890c2978013328c5" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3">
-		<feature name="part_id" value="Disk 1, Alt?"/>
+	</software>
+
+	<software name="spainta" cloneof="spaint">
+		<description>Spaint (Alt?)</description>
+		<year>2003</year>
+		<publisher>Peter TheSpider</publisher>
+
+		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="1049856">
 				<rom name="spaint (dsk).dsk" size="1049856" crc="97cdc44e" sha1="ed567f8675fb418d4293e2b8e247128c7912b1fb" offset="0" />
 			</dataarea>
@@ -2437,19 +2509,30 @@
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="1049856">
 				<rom name="stratsed.dsk" size="1049856" crc="1645501f" sha1="a2504f424e6a56b1e937ba98a05c3a140277cfe5" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="stratseda" cloneof="stratsed">
+		<description>STRATSED (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="1024256">
 				<rom name="stratsed alt.dsk" size="1024256" crc="71d10bee" sha1="1ae1f0c6b673e7356dcfa89c68737b649746411c" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_3">
-		<feature name="part_id" value="Disk 1, Alt 2"/>
+	</software>
+
+	<software name="stratsedb" cloneof="stratsed">
+		<description>STRATSED (Alt 2)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="269056">
 				<rom name="stratsed -- alt.dsk" size="269056" crc="e3ac4b3c" sha1="0c50fafc80f9ebb78b41a6bdb7cba82d7d231d25" offset="0" />
 			</dataarea>
@@ -2498,13 +2581,18 @@
 		<publisher>Defense Force</publisher>
 
 		<part name="flop1" interface="floppy_3">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="537856">
 				<rom name="vip3 demo by defense force (2001).dsk" size="537856" crc="9ea6c538" sha1="c5a54d85b44772dab851c69906a9f1f0108d18e3" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="vip3a" cloneof="vip3">
+		<description>VIP3 Demo (Alt)</description>
+		<year>2001</year>
+		<publisher>Defense Force</publisher>
+
+		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="537856">
 				<rom name="vip3 demo by defense force (2001) [a].dsk" size="537856" crc="138152be" sha1="b5171c0fd604bbb1f22e5786382bc55d03ddf815" offset="0" />
 			</dataarea>
@@ -2517,13 +2605,18 @@
 		<publisher>Defense Force</publisher>
 
 		<part name="flop1" interface="floppy_3">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="537856">
 				<rom name="vip4 demo by defense force (2001).dsk" size="537856" crc="8cada71f" sha1="1b121064960f5019afa16808c7269c4d790d4fc4" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="vip4a" cloneof="vip4">
+		<description>VIP4 Demo (Alt)</description>
+		<year>2001</year>
+		<publisher>Defense Force</publisher>
+
+		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="537856">
 				<rom name="vip4 demo by defense force (2001) [a].dsk" size="537856" crc="3704c53f" sha1="583e2889d7d1863ef599cdc5261ab9559a41fe80" offset="0" />
 			</dataarea>

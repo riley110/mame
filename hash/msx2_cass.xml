@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-
 <softwarelist name="msx2_cass" description="MSX2 cassettes">
+
 	<software name="chess2">
 		<description>The Chess Game 2 (Euro)</description>
 		<year>1986</year>
 		<publisher>Eaglesoft</publisher>
-		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 		<info name="alt_title" value="The Chess Game - MSX II"/>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="63296">

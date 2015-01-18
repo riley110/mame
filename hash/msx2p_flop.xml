@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-
 <softwarelist name="msx2p_flop" description="MSX2+ floppies">
+
 	<software name="beppin">
 		<description>Beppin (Ned)</description>
 		<year>1988</year>
@@ -44,27 +44,59 @@
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Game Disk A, Alt"/>
-			<dataarea name="flop" size="737280">
-				<rom name="f-1 spirit 3d special (1988)(konami)(disk 2 of 3)(game disk a)[a].dsk" size="737280" crc="b05f67a2" sha1="3fd1c3dacd8fc3b4fc4902ac35296ce30991ac9b" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_3_5">
-		<feature name="part_id" value="Game Disk A, Alt 2"/>
-			<dataarea name="flop" size="737280">
-				<rom name="f-1 spirit 3d special (1988)(konami)(disk 2 of 3)(game disk a)[a2].dsk" size="737280" crc="eb1d19a3" sha1="f3b1dafa72bdc5affaf49bac3481ad5276a51375" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop5" interface="floppy_3_5">
 		<feature name="part_id" value="Game Disk B"/>
 			<dataarea name="flop" size="737280">
 				<rom name="f-1 spirit 3d special (1988)(konami)(disk 3 of 3)(game disk b).dsk" size="737280" crc="72039928" sha1="9ab94b449cb3b2c7ea7f87c2f03eebfacddc4019" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop6" interface="floppy_3_5">
-		<feature name="part_id" value="Game Disk B, Alt"/>
+	</software>
+
+	<software name="f1spirita" cloneof="f1spirit">
+		<description>F-1 Spirit 3D Special (Alt)</description>
+		<year>1988</year>
+		<publisher>Konami</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Opening Disk"/>
+			<dataarea name="flop" size="737280">
+				<rom name="f-1 spirit 3d special (1988)(konami)(disk 1 of 3)(opening disk).dsk" size="737280" crc="69058209" sha1="155702d3d41b8f8b3d4659d42aa474ce12f4d3c9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk A"/>
+			<dataarea name="flop" size="737280">
+				<rom name="f-1 spirit 3d special (1988)(konami)(disk 2 of 3)(game disk a)[a].dsk" size="737280" crc="b05f67a2" sha1="3fd1c3dacd8fc3b4fc4902ac35296ce30991ac9b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk B"/>
 			<dataarea name="flop" size="737280">
 				<rom name="f-1 spirit 3d special (1988)(konami)(disk 3 of 3)(game disk b)[a].dsk" size="737280" crc="94fc3831" sha1="a645c37119c59eab0d42f0a2cfbc47dc9678bc3c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="f1spiritb" cloneof="f1spirit">
+		<description>F-1 Spirit 3D Special (Alt 2)</description>
+		<year>1988</year>
+		<publisher>Konami</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Opening Disk"/>
+			<dataarea name="flop" size="737280">
+				<rom name="f-1 spirit 3d special (1988)(konami)(disk 1 of 3)(opening disk).dsk" size="737280" crc="69058209" sha1="155702d3d41b8f8b3d4659d42aa474ce12f4d3c9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk A"/>
+			<dataarea name="flop" size="737280">
+				<rom name="f-1 spirit 3d special (1988)(konami)(disk 2 of 3)(game disk a)[a2].dsk" size="737280" crc="eb1d19a3" sha1="f3b1dafa72bdc5affaf49bac3481ad5276a51375" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk B"/>
+			<dataarea name="flop" size="737280">
+				<rom name="f-1 spirit 3d special (1988)(konami)(disk 3 of 3)(game disk b).dsk" size="737280" crc="72039928" sha1="9ab94b449cb3b2c7ea7f87c2f03eebfacddc4019" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -160,31 +192,45 @@
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
-			<dataarea name="flop" size="737280">
-				<rom name="laydock 2 - last attack (1988)(t&amp;e soft)(jp)(disk 1 of 2)[a].dsk" size="737280" crc="1b68b1a9" sha1="db7cf4672f46017b69b02eb175b4a446a948c601" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 2"/>
-			<dataarea name="flop" size="737280">
-				<rom name="laydock 2 - last attack (1988)(t&amp;e soft)(jp)(disk 1 of 2)[b].dsk" size="737280" crc="29e5d4e5" sha1="ff1013f6c66b487e1ca0b2f994ef02df43d8b20d" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_3_5">
 		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="737280">
 				<rom name="laydock 2 - last attack (1988)(t&amp;e soft)(jp)(disk 2 of 2).dsk" size="737280" crc="cd89e9d3" sha1="63daaadce6ef18938788f3d1e4b08deff15fe5da" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop5" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 2, Alt"/>
+	</software>
+
+	<software name="laydock2a" cloneof="laydock2">
+		<description>Laydock 2 - Last Attack (Jpn, Alt)</description>
+		<year>1988</year>
+		<publisher>T&amp;E Soft</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="laydock 2 - last attack (1988)(t&amp;e soft)(jp)(disk 1 of 2)[a].dsk" size="737280" crc="1b68b1a9" sha1="db7cf4672f46017b69b02eb175b4a446a948c601" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="737280">
 				<rom name="laydock 2 - last attack (1988)(t&amp;e soft)(jp)(disk 2 of 2)[a].dsk" size="737280" crc="25777c4e" sha1="bbbc09ed823847b567caa1f321f578cbaf3a356f" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop6" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 2, Alt 2"/>
+	</software>
+
+	<software name="laydock2b" cloneof="laydock2">
+		<description>Laydock 2 - Last Attack (Jpn, Alt 2)</description>
+		<year>1988</year>
+		<publisher>T&amp;E Soft</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="laydock 2 - last attack (1988)(t&amp;e soft)(jp)(disk 1 of 2)[b].dsk" size="737280" crc="29e5d4e5" sha1="ff1013f6c66b487e1ca0b2f994ef02df43d8b20d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="737280">
 				<rom name="laydock 2 - last attack (1988)(t&amp;e soft)(jp)(disk 2 of 2)[b].dsk" size="737280" crc="e6aea9a8" sha1="e82116d7b879c500b730d2e8c200ad4bcf4c39c4" offset="0" />
 			</dataarea>
@@ -197,13 +243,18 @@
 		<publisher>MSX Magazine</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="lubeck (1990)(msx magazine)(jp).dsk" size="737280" crc="bc7f8e95" sha1="b143989e8c0a7826a21373b4271713a0465bbcac" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="lubecka" cloneof="lubeck">
+		<description>Lubeck (Jpn, Alt)</description>
+		<year>1990</year>
+		<publisher>MSX Magazine</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="lubeck (1990)(msx magazine)(jp)[a].dsk" size="737280" crc="2ff5b9c9" sha1="8b41aac1d940fe06b2ae806eba1e5d3cebaf5134" offset="0" />
 			</dataarea>
@@ -235,13 +286,18 @@
 		<publisher>First Class Software</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="megadoom (demo) (1992)(first class software)(nl).dsk" size="737280" crc="72aa680e" sha1="196f0e8d263d69215cfc634e0518e7206136468d" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="megadoomda" cloneof="megadoom">
+		<description>Megadoom (Ned, Demo, Alt)</description>
+		<year>1992</year>
+		<publisher>First Class Software</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="megadoom (demo) (1992)(first class software)(nl)[2 disks].dsk" size="737280" crc="f8554ee4" sha1="70d62bfb6505ae91b1afde000d7b5fb771a8b38d" offset="0" />
 			</dataarea>
@@ -278,25 +334,42 @@
 		<publisher>Bit2</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="quinpl (1988)(bit2)(jp).dsk" size="737280" crc="c793829f" sha1="b96445ff9ec43ffa74074257f6e0bf3f33cc219c" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="quinpla" cloneof="quinpl">
+		<description>Quinpl (Jpn, Alt)</description>
+		<year>1988</year>
+		<publisher>Bit2</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="quinpl (1988)(bit2)(jp)[a].dsk" size="737280" crc="4ccbbdd3" sha1="3829be847ab17fc142b769a7d3ec6f7543ee5ddd" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 2"/>
+	</software>
+
+	<software name="quinplb" cloneof="quinpl">
+		<description>Quinpl (Jpn, Alt 2)</description>
+		<year>1988</year>
+		<publisher>Bit2</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="quinpl (1988)(bit2)(jp)[a2].dsk" size="737280" crc="c14a8b04" sha1="6db2182db5f98c60db70cb79bfe8fb0ccb297c58" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop4" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 3"/>
+	</software>
+
+	<software name="quinplc" cloneof="quinpl">
+		<description>Quinpl (Jpn, Alt 3)</description>
+		<year>1988</year>
+		<publisher>Bit2</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="quinpl (1988)(bit2)(jp)[b].dsk" size="737280" crc="0504f544" sha1="6bd1b8a6758a09501f7d68c652a93590f8b9b8a2" offset="0" />
 			</dataarea>
@@ -309,13 +382,18 @@
 		<publisher>MSX Magazine</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="sea sardine (1991)(msx magazine)(jp).dsk" size="737280" crc="f4c7f839" sha1="be457095238dbcac7b66103185c1a702b60e2255" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="seasarda" cloneof="seasard">
+		<description>Sea Sardine (Jpn, Alt)</description>
+		<year>1991</year>
+		<publisher>MSX Magazine</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="sea sardine (1991)(msx magazine)(jp)[a].dsk" size="737280" crc="17f83eb5" sha1="b23a12945e1bcb461be086cf9d0468952d79c703" offset="0" />
 			</dataarea>
@@ -364,13 +442,18 @@
 		<publisher>MSX Magazine</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="twinkle star (1990)(msx magazine)(jp).dsk" size="737280" crc="c97eb5cd" sha1="d89cf80e53210ddd48e64a866d0b073713ba3160" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="twinklea" cloneof="twinkle">
+		<description>Twinkle Star (Jpn, Alt)</description>
+		<year>1990</year>
+		<publisher>MSX Magazine</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="twinkle star (1990)(msx magazine)(jp)[a].dsk" size="737280" crc="06f4dde6" sha1="c27fadbc9188cf959ea74e83557143d9fe5e34fa" offset="0" />
 			</dataarea>
@@ -383,13 +466,18 @@
 		<publisher>MSX Magazine</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="twinkle star ii (1990)(msx magazine)(jp).dsk" size="737280" crc="4e3c96ff" sha1="9f051f845904bf1cd1adf08cbc0ef4804d1f48a5" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="twinkle2a" cloneof="twinkle2">
+		<description>Twinkle Star II (Jpn, Alt)</description>
+		<year>1990</year>
+		<publisher>MSX Magazine</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="twinkle star ii (1990)(msx magazine)(jp)[a].dsk" size="737280" crc="e00896f1" sha1="987c59d42eb13ffff8a021d28f4cce1a31178667" offset="0" />
 			</dataarea>
@@ -402,13 +490,18 @@
 		<publisher>MSX Magazine</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="wig, the (1989)(msx magazine)(jp).dsk" size="737280" crc="c88649e5" sha1="88411e1c1547d032c47bf41522bbadef634cc9f3" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="thewiga" cloneof="thewig">
+		<description>The Wig (Jpn, Alt)</description>
+		<year>1989</year>
+		<publisher>MSX Magazine</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="wig, the (1989)(msx magazine)(jp)[a].dsk" size="737280" crc="781df33a" sha1="ec186a538f45fb22e42b83f5e16d494456879950" offset="0" />
 			</dataarea>
@@ -433,25 +526,42 @@
 		<publisher>MSX Magazine</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="yoshida kensetsu. super zelixer (1990)(msx magazine)(jp).dsk" size="737280" crc="0a42c38f" sha1="d5121af2a9db3b04c52334a200fdd9202f12a920" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="szelixera" cloneof="szelixer">
+		<description>Yoshida Kensetsu. Super Zelixer (Jpn, Alt)</description>
+		<year>1990</year>
+		<publisher>MSX Magazine</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="yoshida kensetsu. super zelixer (1990)(msx magazine)(jp)[a].dsk" size="737280" crc="ea733f7b" sha1="9eef34210d3ae9988f137cf70730a5a1c57a59ee" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 2"/>
+	</software>
+
+	<software name="szelixerb" cloneof="szelixer">
+		<description>Yoshida Kensetsu. Super Zelixer (Jpn, Alt 2)</description>
+		<year>1990</year>
+		<publisher>MSX Magazine</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="yoshida kensetsu. super zelixer (1990)(msx magazine)(jp)[a2].dsk" size="737280" crc="44c87cea" sha1="3fdf86ccb98de95bd7b3775783257e377526e6ca" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop4" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 3"/>
+	</software>
+
+	<software name="szelixerc" cloneof="szelixer">
+		<description>Yoshida Kensetsu. Super Zelixer (Jpn, Alt 3)</description>
+		<year>1990</year>
+		<publisher>MSX Magazine</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="yoshida kensetsu. super zelixer (1990)(msx magazine)(jp)[a3].dsk" size="737280" crc="b6c1d954" sha1="055066483bcad253b0c79af6fa65ec68ea2c45e7" offset="0" />
 			</dataarea>

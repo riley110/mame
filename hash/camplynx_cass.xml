@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-
 <!-- This is currently a documentation-only software list, but is hooked up in camplynx.c -->
 <softwarelist name="camplynx_cass" description="Camputers Lynx cassettes">
+
 	<software name="128gfx">
 		<description>128 Graphics Demo</description>
 		<year>198?</year>
@@ -105,11 +105,13 @@
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="camplynx_cass">
+		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="49">
 				<rom name="assembler (19xx)(-)[b].tap" size="49" crc="199ec88f" sha1="892eae060df01cbfffd380d275cf13032c2a6d90" offset="0" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="camplynx_cass">
+		<feature name="part_id" value="Tape 2"/>
 			<dataarea name="cass" size="6832">
 				<rom name="assembler (19xx)(-)[b2].tap" size="6832" crc="519e593c" sha1="56968befe3334cf427783e025913d89a9ed9f231" offset="0" />
 			</dataarea>
@@ -207,19 +209,30 @@
 		<publisher>Level 9 Computing</publisher>
 
 		<part name="cass1" interface="camplynx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="17394">
 				<rom name="compass v1.1 (1983)(level 9 computing).tap" size="17394" crc="692aaeb6" sha1="6a124363368d5a54c27b96af71a7e5751db96763" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="camplynx_cass">
-		<feature name="part_id" value="Tape 1, Bad?"/>
+	</software>
+
+	<software name="compassa" cloneof="compass">
+		<description>Compass (v1.1, Bad?)</description>
+		<year>1983</year>
+		<publisher>Level 9 Computing</publisher>
+
+		<part name="cass1" interface="camplynx_cass">
 			<dataarea name="cass" size="7988">
 				<rom name="compass v1.1 (1983)(level 9 computing)[b].tap" size="7988" crc="a8cc6768" sha1="17ac7fae5b14372d8705e03233e89731bf8be9af" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="camplynx_cass">
-		<feature name="part_id" value="Tape 1, Bad 2?"/>
+	</software>
+
+	<software name="compassb" cloneof="compass">
+		<description>Compass (v1.1, Bad 2?)</description>
+		<year>1983</year>
+		<publisher>Level 9 Computing</publisher>
+
+		<part name="cass1" interface="camplynx_cass">
 			<dataarea name="cass" size="8708">
 				<rom name="compass v1.1 (1983)(level 9 computing)[b2].tap" size="8708" crc="39b30c83" sha1="21a0ca5e7e077fa15daa83a68efc07a3098c2cad" offset="0" />
 			</dataarea>
@@ -232,13 +245,18 @@
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="camplynx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="225">
 				<rom name="copys (19xx)(-)(96k-128k).tap" size="225" crc="13cb04b3" sha1="a040c7df1f4f7fd475a5f1d52b38e9727262e4f0" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="camplynx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="copysa" cloneof="copys">
+		<description>Copys (96K-128K) (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="camplynx_cass">
 			<dataarea name="cass" size="225">
 				<rom name="copys (19xx)(-)(96k-128k)[a].tap" size="225" crc="a6b87535" sha1="97fb23ad3e116036515830468fe96d593e4610dc" offset="0" />
 			</dataarea>
@@ -384,13 +402,18 @@
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="camplynx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="1737">
 				<rom name="enlarge (19xx)(-)(48k-96k-128k).tap" size="1737" crc="98f7c983" sha1="4ae9ca410a048b00b0f6b8a91dc8f13a5d88dd5a" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="camplynx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="enlargea" cloneof="enlarge">
+		<description>Enlarge (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="camplynx_cass">
 			<dataarea name="cass" size="1737">
 				<rom name="enlarge (19xx)(-)(48k-96k-128k)[a].tap" size="1737" crc="1335cfae" sha1="5cafaee09b85fa89303c730095dc93d16d361ffd" offset="0" />
 			</dataarea>
@@ -982,6 +1005,18 @@
 		</part>
 	</software>
 
+	<software name="reversi">
+		<description>Reversi</description>
+		<year>1983</year>
+		<publisher>C. Hunt</publisher>
+
+		<part name="cass1" interface="camplynx_cass">
+			<dataarea name="cass" size="12449">
+				<rom name="reversi (1983)(hunt, c.).tap" size="12449" crc="9ad5756d" sha1="198af58b11e218f4442eb6a4310f7acb2f79c4f3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="reversia" cloneof="reversi">
 		<description>Reversi (Split)</description>
 		<year>1983</year>
@@ -997,18 +1032,6 @@
 		<feature name="part_id" value="Game"/>
 			<dataarea name="cass" size="12012">
 				<rom name="reversi (1983)(hunt, c.)(tape 2 of 2)[game].tap" size="12012" crc="239f2a37" sha1="9ea841b39e7400003ac181ea26969c8a3280624f" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="reversi">
-		<description>Reversi</description>
-		<year>1983</year>
-		<publisher>C. Hunt</publisher>
-
-		<part name="cass1" interface="camplynx_cass">
-			<dataarea name="cass" size="12449">
-				<rom name="reversi (1983)(hunt, c.).tap" size="12449" crc="9ad5756d" sha1="198af58b11e218f4442eb6a4310f7acb2f79c4f3" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1079,19 +1102,30 @@
 		<publisher>Death Todd</publisher>
 
 		<part name="cass1" interface="camplynx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="177">
 				<rom name="simdisc (19xx)(death todd).tap" size="177" crc="2ca2dcfb" sha1="98341078204bda28aed68d042d0e25ec6aa662a5" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="camplynx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="simdisca" cloneof="simdisc">
+		<description>SimDisc (Alt)</description>
+		<year>198?</year>
+		<publisher>Death Todd</publisher>
+
+		<part name="cass1" interface="camplynx_cass">
 			<dataarea name="cass" size="177">
 				<rom name="simdisc (19xx)(death todd)[a].tap" size="177" crc="a67833bf" sha1="86bc7262158e52994a2b208aca1f6e263a5a0cb3" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="camplynx_cass">
-		<feature name="part_id" value="Tape 1, Bad?"/>
+	</software>
+
+	<software name="simdiscb" cloneof="simdisc">
+		<description>SimDisc (Bad?)</description>
+		<year>198?</year>
+		<publisher>Death Todd</publisher>
+
+		<part name="cass1" interface="camplynx_cass">
 			<dataarea name="cass" size="223">
 				<rom name="simdisc (19xx)(death todd)[b].tap" size="223" crc="a84a9709" sha1="adaeaaba255a1066c50b4ec7533697addaf4fab6" offset="0" />
 			</dataarea>
@@ -1116,13 +1150,18 @@
 		<publisher>C. Hunt</publisher>
 
 		<part name="cass1" interface="camplynx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="9506">
 				<rom name="snake (1983)(hunt, c.).tap" size="9506" crc="7f2b70d9" sha1="a25886242d67b58975b90cce7162f17d9aca0e65" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="camplynx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="snakea" cloneof="snake">
+		<description>Snake (Alt)</description>
+		<year>1983</year>
+		<publisher>C. Hunt</publisher>
+
+		<part name="cass1" interface="camplynx_cass">
 			<dataarea name="cass" size="9506">
 				<rom name="snake (1983)(hunt, c.)[a].tap" size="9506" crc="c2024f42" sha1="de1211fc36ba92af03bcf30c8f0b1788196116a9" offset="0" />
 			</dataarea>
@@ -1238,13 +1277,18 @@
 		<publisher>Camputers</publisher>
 
 		<part name="cass1" interface="camplynx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="4575">
 				<rom name="user-defined characters (1984)(camputers)(gb).tap" size="4575" crc="d322c19e" sha1="0073e194a37c134fec56cd97b18b6b059be13f0b" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="camplynx_cass">
-		<feature name="part_id" value="Tape 1, Bad?"/>
+	</software>
+
+	<software name="userdefa" cloneof="userdef">
+		<description>User-Defined Characters (Bad?)</description>
+		<year>1984</year>
+		<publisher>Camputers</publisher>
+
+		<part name="cass1" interface="camplynx_cass">
 			<dataarea name="cass" size="4574">
 				<rom name="user-defined characters (1984)(camputers)(gb)[b].tap" size="4574" crc="cf0c5187" sha1="63c1a40eb6fd6cee8e957b470d3f7ca06bb9ccea" status="baddump" offset="0" />
 			</dataarea>
