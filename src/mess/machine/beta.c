@@ -190,7 +190,7 @@ static const floppy_interface beta_floppy_interface =
 {
 	FLOPPY_STANDARD_5_25_DSDD,
 	LEGACY_FLOPPY_OPTIONS_NAME(trd),
-	NULL
+	"floppy_5_25"
 };
 
 static MACHINE_CONFIG_FRAGMENT( beta_disk )
@@ -200,6 +200,8 @@ static MACHINE_CONFIG_FRAGMENT( beta_disk )
 	MCFG_WD17XX_DRQ_CALLBACK(WRITELINE(beta_disk_device, wd179x_drq_w))
 
 	MCFG_LEGACY_FLOPPY_4_DRIVES_ADD(beta_floppy_interface)
+	
+	MCFG_SOFTWARE_LIST_ADD("beta_flop_list", "specbeta_flop")
 MACHINE_CONFIG_END
 
 ROM_START( beta_disk )
