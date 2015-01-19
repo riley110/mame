@@ -251,7 +251,7 @@ static const floppy_interface svi318_floppy_interface =
 };
 
 static MACHINE_CONFIG_FRAGMENT( svi318_cartslot )
-	MCFG_GENERIC_CARTSLOT_ADD("cartslot", generic_plain_slot, "svi318_cart")
+	MCFG_GENERIC_CARTSLOT_ADD("cartslot", generic_plain_slot, "svi_cart")
 	MCFG_GENERIC_EXTENSIONS("bin,rom")
 	MCFG_GENERIC_LOAD(svi318_state, svi318_cart)
 
@@ -303,7 +303,7 @@ static MACHINE_CONFIG_START( svi318, svi318_state )
 	MCFG_CASSETTE_ADD("cassette")
 	MCFG_CASSETTE_FORMATS(svi_cassette_formats)
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY)
-	MCFG_CASSETTE_INTERFACE("svi318_cass")
+	MCFG_CASSETTE_INTERFACE("svi_cass")
 
 	MCFG_DEVICE_ADD("wd179x", FD1793, 0)
 	MCFG_WD17XX_DEFAULT_DRIVE2_TAGS
@@ -432,7 +432,7 @@ static MACHINE_CONFIG_START( svi328_806, svi318_state )
 	MCFG_CASSETTE_ADD("cassette")
 	MCFG_CASSETTE_FORMATS(svi_cassette_formats)
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY)
-	MCFG_CASSETTE_INTERFACE("svi318_cass")
+	MCFG_CASSETTE_INTERFACE("svi_cass")
 
 	MCFG_DEVICE_ADD("wd179x", FD1793, 0)
 	MCFG_WD17XX_DEFAULT_DRIVE2_TAGS
@@ -442,8 +442,8 @@ static MACHINE_CONFIG_START( svi328_806, svi318_state )
 	MCFG_LEGACY_FLOPPY_2_DRIVES_ADD(svi318_floppy_interface)
 
 	/* Software lists */
-	MCFG_SOFTWARE_LIST_ADD("cass_list", "svi318_flop")
-	MCFG_SOFTWARE_LIST_ADD("disk_list", "svi318_cass")
+	MCFG_SOFTWARE_LIST_ADD("cass_list", "svi_flop")
+	MCFG_SOFTWARE_LIST_ADD("disk_list", "svi_cass")
 
 	MCFG_FRAGMENT_ADD(svi318_cartslot)
 

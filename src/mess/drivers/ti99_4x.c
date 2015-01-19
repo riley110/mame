@@ -853,6 +853,7 @@ static MACHINE_CONFIG_START( ti99_4, ti99_4x_state )
 
 	/* Software list */
 	MCFG_SOFTWARE_LIST_ADD("cart_list_ti99", "ti99_cart")
+	MCFG_SOFTWARE_LIST_ADD("flop_list_ti99", "ti99_flop")
 
 	/* Peripheral expansion box */
 	MCFG_DEVICE_ADD( PERIBOX_TAG, PERIBOX, 0)
@@ -952,6 +953,7 @@ static MACHINE_CONFIG_START( ti99_4a, ti99_4x_state )
 
 	/* Software list */
 	MCFG_SOFTWARE_LIST_ADD("cart_list_ti99", "ti99_cart")
+	MCFG_SOFTWARE_LIST_ADD("flop_list_ti99", "ti99_flop")
 
 	/* Peripheral expansion box */
 	MCFG_DEVICE_ADD( PERIBOX_TAG, PERIBOX, 0)
@@ -1082,6 +1084,7 @@ static MACHINE_CONFIG_START( ti99_4ev_60hz, ti99_4x_state )
 
 	/* Software list */
 	MCFG_SOFTWARE_LIST_ADD("cart_list_ti99", "ti99_cart")
+	MCFG_SOFTWARE_LIST_ADD("flop_list_ti99", "ti99_flop")
 
 	/* Peripheral expansion box */
 	MCFG_DEVICE_ADD( PERIBOX_TAG, PERIBOX_EV, 0)
