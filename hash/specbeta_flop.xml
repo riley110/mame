@@ -113,7 +113,7 @@
 	</software>
 
 	<software name="guncommd">
-		<description>Gun Commander (Demo v1.06)</description>
+		<description>Gun Commander (Demo, v1.06)</description>
 		<year>1999</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -184,8 +184,8 @@
 		</part>
 	</software>
 
-<!--
-	<software name="pravila">
+<!-- check if the two sets below are related -->
+	<software name="pravila1">
 		<description>Pravila Dorozhnogo Dvizhyeniya (Rus, Demo)</description>
 		<year>1998</year>
 		<publisher>ALS - RLS</publisher>
@@ -197,10 +197,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Pravila Dorozhnogo Dvizhyeniya v1.0 (demo) (2000)(Perspective Group)(ru)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="pravila2">
+		<description>Pravila Dorozhnogo Dvizhyeniya (Rus, Demo, v1.0)</description>
+		<year>2000</year>
+		<publisher>Perspective Group</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="655360">
@@ -209,22 +209,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Soundtracker (demo) (1991)(Pentagram)[h Eugene Stepanoff]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="19968">
-				<rom name="soundtracker (demo) (1991)(pentagram)[h eugene stepanoff].trd" size="19968" crc="98d2ac58" sha1="278e83de38600baf44071e4d98baa1a6adf01e36" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Soundtracker v3.0 (19xx)(KSA Software)(ru)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="soundtrk">
+		<description>Soundtracker (KSA Software) (Rus, v3.0)</description>
+		<year>19??</year>
+		<publisher>KSA Software</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="655360">
@@ -233,10 +221,22 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Super Sonic Music Editor v1.01 (demo) (1993)(Klav)(ru)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="sndtrkd"> <!-- most likely unrelated to the KSA Software Soundtracker -->
+		<description>Soundtracker (Pentagram) (Demo)</description>
+		<year>1991</year>
+		<publisher>Pentagram - Eugene Stepanoff</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="19968">
+				<rom name="soundtracker (demo) (1991)(pentagram)[h eugene stepanoff].trd" size="19968" crc="98d2ac58" sha1="278e83de38600baf44071e4d98baa1a6adf01e36" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sonicmus">
+		<description>Super Sonic Music Editor (Rus, Demo, v1.01)</description>
+		<year>1993</year>
+		<publisher>Klav</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="39168">
@@ -245,10 +245,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Teach Words (1998)(Avalon Software)(ru)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="teachwrk">
+		<description>Teach Words (Rus)</description>
+		<year>1998</year>
+		<publisher>Avalon Software</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="30464">
@@ -257,10 +257,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Ten Fingers (1997)(Digital Reality)(ru)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="10finger">
+		<description>Ten Fingers (Rus)</description>
+		<year>1997</year>
+		<publisher>Digital Reality</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="36608">
@@ -269,10 +269,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Ultra Sonic v1.03 (1999)(Omega Hackers Group)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="ultsonic">
+		<description>Ultra Sonic (v1.03)</description>
+		<year>1999</year>
+		<publisher>Omega Hackers Group</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="655360">
@@ -281,46 +281,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Virtual Z-Machine Emulator v0.60 (2001)(M.V. Vishnevsky)(ru)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="655360">
-				<rom name="virtual z-machine emulator v0.60 (2001)(m.v. vishnevsky)(ru).trd" size="655360" crc="04b48934" sha1="d41c24dbd62988e9f75372d00c6a301ce705b195" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Virtual Z-Machine Emulator v0.62 (2001)(M.V. Vishnevsky)(ru)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="655360">
-				<rom name="virtual z-machine emulator v0.62 (2001)(m.v. vishnevsky)(ru).trd" size="655360" crc="bacb437d" sha1="b3bbd94ebeb87f1ca50915ebe5db629e3bd0a273" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Virtual Z-Machine Emulator v0.63 (2001)(M.V. Vishnevsky)(ru)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="655360">
-				<rom name="virtual z-machine emulator v0.63 (2001)(m.v. vishnevsky)(ru).trd" size="655360" crc="33f5c405" sha1="95cff9a344104f5b7073bcbcd7638534cfc6f80d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Virtual Z-Machine Emulator v0.64 (2001)(M.V. Vishnevsky)(ru)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="zmachine">
+		<description>Virtual Z-Machine Emulator (Rus, v0.64)</description>
+		<year>2001</year>
+		<publisher>M.V. Vishnevsky</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="655360">
@@ -329,10 +293,46 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>ZX Amp v1.00 (2000)(Stall Studio)(ru)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="zmachinea" cloneof="zmachine">
+		<description>Virtual Z-Machine Emulator (Rus, v0.63)</description>
+		<year>2001</year>
+		<publisher>M.V. Vishnevsky</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="655360">
+				<rom name="virtual z-machine emulator v0.63 (2001)(m.v. vishnevsky)(ru).trd" size="655360" crc="33f5c405" sha1="95cff9a344104f5b7073bcbcd7638534cfc6f80d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zmachineb" cloneof="zmachine">
+		<description>Virtual Z-Machine Emulator (Rus, v0.62)</description>
+		<year>2001</year>
+		<publisher>M.V. Vishnevsky</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="655360">
+				<rom name="virtual z-machine emulator v0.62 (2001)(m.v. vishnevsky)(ru).trd" size="655360" crc="bacb437d" sha1="b3bbd94ebeb87f1ca50915ebe5db629e3bd0a273" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zmachinec" cloneof="zmachine">
+		<description>Virtual Z-Machine Emulator (Rus, v0.60)</description>
+		<year>2001</year>
+		<publisher>M.V. Vishnevsky</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="655360">
+				<rom name="virtual z-machine emulator v0.60 (2001)(m.v. vishnevsky)(ru).trd" size="655360" crc="04b48934" sha1="d41c24dbd62988e9f75372d00c6a301ce705b195" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxamp">
+		<description>ZX Amp (Rus, v1.00)</description>
+		<year>2000</year>
+		<publisher>Stall Studio</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="655360">
@@ -341,10 +341,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>ZX Turbo Assembler v3.0 (19xx)(-)(ru)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="zxturbo">
+		<description>ZX Turbo Assembler (Rus, v3.0)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="655360">
@@ -377,27 +377,29 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>ZX-Windows v1.6 (2001)(Myth)(ru)(Disk 1 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="zxwindow">
+		<description>ZX-Windows (Rus, v1.6)</description>
+		<year>2001</year>
+		<publisher>Myth</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="655360">
 				<rom name="zx-windows v1.6 (2001)(myth)(ru)(disk 1 of 2).trd" size="655360" crc="2b0ae2ba" sha1="ba99578402fa6146f55f60521088c10fd97392a9" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop1" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="655360">
 				<rom name="zx-windows v1.6 (2001)(myth)(ru)(disk 2 of 2).trd" size="655360" crc="3628d37d" sha1="d5e8b7d96c46df87007591409471cd78cdc82ea8" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>ZX-Windows v1.4 (1999)(Myth)(ru)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="zxwindowa" cloneof="zxwindow">
+		<description>ZX-Windows (Rus, v1.4)</description>
+		<year>1999</year>
+		<publisher>Myth</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="655360">
@@ -405,6 +407,5 @@
 			</dataarea>
 		</part>
 	</software>
--->
 
 </softwarelist>

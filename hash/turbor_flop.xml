@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-
 <softwarelist name="turbor_flop" description="MSX TurboR floppies">
+
 	<software name="2021snoo">
 		<description>2021 Snooky (Jpn)</description>
 		<year>1991</year>
@@ -68,13 +68,18 @@
 		<publisher>GW's Workshop</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="fishing v1.0 (1996-02-26)(gw's workshop).dsk" size="737280" crc="09c578bb" sha1="b532cc47c08ea406efe3e551e0db2023f4d11154" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="fishinga" cloneof="fishing">
+		<description>Fishing (v1.0, Alt)</description>
+		<year>1996</year>
+		<publisher>GW's Workshop</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="fishing v1.0 (1996-02-26)(gw's workshop)[a].dsk" size="737280" crc="85e05982" sha1="5575d703d7e8290c1c8e434492efc340ba0b0558" offset="0" />
 			</dataarea>
@@ -384,8 +389,8 @@
 	</software>
 
 	<software name="msxwn98i">
-		<description>MSX Windows 98 v1.1e Installer</description>
-		<year>1998</year>
+		<description>MSX Windows 98 Installer (v1.1e)</description>
+		<year>1998?</year>
 		<publisher>CyberSoft</publisher>
 		
 		<part name="flop1" interface="floppy_3_5">
@@ -401,13 +406,18 @@
 		<publisher>Miri Software</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="msx-dos help v2.20 (1994)(miri software)(it).dsk" size="737280" crc="59b4b5b2" sha1="5a7822d0969f30b711dd0a3dfeb416e2d70d0817" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="msxdoshea" cloneof="msxdoshe">
+		<description>MSX-DOS Help (Ita, v2.20, Alt)</description>
+		<year>1994</year>
+		<publisher>Miri Software</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="msx-dos help v2.20 (1994)(miri software)(it)[a].dsk" size="737280" crc="74aa3cdd" sha1="7045228f7df7f049263397d06dd332868e3da271" offset="0" />
 			</dataarea>
@@ -708,13 +718,18 @@
 		<publisher>Nyyrikki</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="shoot that flying windows! (1997)(nyyrikki)[mouse].dsk" size="737280" crc="1c8f1d96" sha1="d69c803efb9558314489ab04a25ec84a2901f49f" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="flywinda" cloneof="flywind">
+		<description>Shoot That Flying Windows! (Alt)</description>
+		<year>1997</year>
+		<publisher>Nyyrikki</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="shoot that flying windows! (1997)(nyyrikki)[a][mouse].dsk" size="737280" crc="07a4a7ef" sha1="14e93cedcdd35e42c46d8d2c7b0b153012507bdb" offset="0" />
 			</dataarea>
@@ -775,13 +790,18 @@
 		<publisher>XelaSoft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="xsc compression program (1995)(xelasoft)(nl)[needs msx-dos 2].dsk" size="737280" crc="9f9cd398" sha1="09970aa6ee691f3f0b33cdd54d9a4e341fa6fbca" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="xsccompa" cloneof="xsccomp">
+		<description>XSC Compression Program (Ned, Alt)</description>
+		<year>1995</year>
+		<publisher>XelaSoft</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="xsc compression program (1995)(xelasoft)(nl)[a][needs msx-dos 2].dsk" size="737280" crc="12eee5d2" sha1="7c70cde2d0b0a5fe952b11bd878d46290dab9231" offset="0" />
 			</dataarea>
@@ -806,19 +826,30 @@
 		<publisher>Quadrivium</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="zone terra (demo) (1994)(quadrivium)(nl).dsk" size="737280" crc="ed4ac074" sha1="a36dec1e71df540c4e87ee7f38660900f3a05efd" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="zoneterrda" cloneof="zoneterr">
+		<description>Zone Terra (Ned, Demo, Alt)</description>
+		<year>1994</year>
+		<publisher>Quadrivium</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="zone terra (demo) (1994)(quadrivium)(nl)[b].dsk" size="737280" crc="1e1bedb5" sha1="78a2990afdc5b60f6e3ee04c3a4b82b2e35d43da" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 2"/>
+	</software>
+
+	<software name="zoneterrdb" cloneof="zoneterr">
+		<description>Zone Terra (Ned, Demo, Alt 2)</description>
+		<year>1994</year>
+		<publisher>Quadrivium</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="zone terra (demo) (1994)(quadrivium)(nl)[b2].dsk" size="737280" crc="f0271d7c" sha1="1a3355499ebf63ea5ec6581cd4a3535887b8c813" offset="0" />
 			</dataarea>
