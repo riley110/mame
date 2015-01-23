@@ -124,11 +124,10 @@
 		</part>
 	</software>
 
-<!--
-	<software name="">
-		<description>IF Creator (2002)(N-Discovery)(ru)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="ifcreator">
+		<description>IF Creator (Rus)</description>
+		<year>2002</year>
+		<publisher>N-Discovery</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="655360">
@@ -137,10 +136,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Inter Mode Player v1.2 (1997)(RDG)(ru)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="intermod">
+		<description>Inter Mode Player (Rus, v1.2)</description>
+		<year>1997</year>
+		<publisher>RDG</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="655360">
@@ -149,10 +148,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Krossword Editor v3.0 (2000)(Metabolizm)(ru)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="krossedi">
+		<description>Krossword Editor (Rus, v3.0)</description>
+		<year>2000</year>
+		<publisher>Metabolizm</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="655360">
@@ -161,10 +160,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Noter v1.0 (2000)(Hackers Design Software)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="noter">
+		<description>Noter (v1.0)</description>
+		<year>2000</year>
+		<publisher>Hackers Design Software</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="655360">
@@ -173,10 +172,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Phone Databook v2.03 (2000)(Moonlight)(ru)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="phonedat">
+		<description>Phone Databook (Rus, v2.03)</description>
+		<year>2000</year>
+		<publisher>Moonlight</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="655360">
@@ -185,10 +184,11 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Pravila Dorozhnogo Dvizhyeniya (demo) (1998)(ALS - RLS)(ru)</description>
-		<year>198?</year>
-		<publisher></publisher>
+<!--
+	<software name="pravila">
+		<description>Pravila Dorozhnogo Dvizhyeniya (Rus, Demo)</description>
+		<year>1998</year>
+		<publisher>ALS - RLS</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="35840">
@@ -353,22 +353,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>ZX-Navigator v1.2 (2001)(Explosive Team)(ru)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="655360">
-				<rom name="zx-navigator v1.2 (2001)(explosive team)(ru).trd" size="655360" crc="0eb17338" sha1="f8d2600e9daae0bda48d54b5081a261c05a16137" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>ZX-Navigator v1.3 (2001)(Explosive Team)(ru)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="zxnaviga">
+		<description>ZX-Navigator (Rus, v1.3)</description>
+		<year>2001</year>
+		<publisher>Explosive Team</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="655360">
@@ -377,14 +365,14 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>ZX-Windows v1.4 (1999)(Myth)(ru)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="zxnavigaa" cloneof="zxnaviga">
+		<description>ZX-Navigator (Rus, v1.2)</description>
+		<year>2001</year>
+		<publisher>Explosive Team</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="655360">
-				<rom name="zx-windows v1.4 (1999)(myth)(ru).trd" size="655360" crc="1d27166a" sha1="50e3c0abc3ecbeddc1cbc30889ff794b317e2c64" offset="0" />
+				<rom name="zx-navigator v1.2 (2001)(explosive team)(ru).trd" size="655360" crc="0eb17338" sha1="f8d2600e9daae0bda48d54b5081a261c05a16137" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -399,16 +387,21 @@
 				<rom name="zx-windows v1.6 (2001)(myth)(ru)(disk 1 of 2).trd" size="655360" crc="2b0ae2ba" sha1="ba99578402fa6146f55f60521088c10fd97392a9" offset="0" />
 			</dataarea>
 		</part>
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="655360">
+				<rom name="zx-windows v1.6 (2001)(myth)(ru)(disk 2 of 2).trd" size="655360" crc="3628d37d" sha1="d5e8b7d96c46df87007591409471cd78cdc82ea8" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
 	<software name="">
-		<description>ZX-Windows v1.6 (2001)(Myth)(ru)(Disk 2 of 2)</description>
+		<description>ZX-Windows v1.4 (1999)(Myth)(ru)</description>
 		<year>198?</year>
 		<publisher></publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="655360">
-				<rom name="zx-windows v1.6 (2001)(myth)(ru)(disk 2 of 2).trd" size="655360" crc="3628d37d" sha1="d5e8b7d96c46df87007591409471cd78cdc82ea8" offset="0" />
+				<rom name="zx-windows v1.4 (1999)(myth)(ru).trd" size="655360" crc="1d27166a" sha1="50e3c0abc3ecbeddc1cbc30889ff794b317e2c64" offset="0" />
 			</dataarea>
 		</part>
 	</software>
