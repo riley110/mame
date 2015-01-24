@@ -124,11 +124,10 @@
 		</part>
 	</software>
 
-<!--
-	<software name="">
-		<description>Balance (19xx)(-)</description>
+	<software name="balance">
+		<description>Balance</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1547">
@@ -137,10 +136,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Bank Account Transform Software (19xx)(-)</description>
+	<software name="bankacct">
+		<description>Bank Account Transform Software</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="9238">
@@ -149,10 +148,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Basic-I Compiler (19xx)(-)</description>
+	<software name="basicic">
+		<description>Basic-I Compiler</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="8359">
@@ -161,10 +160,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Basicode 2 v5.0 (19xx)(H.J. Koevoets)(nl)</description>
+	<software name="basicode">
+		<description>Basicode 2 (Ned, v5.0)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>H.J. Koevoets</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="4180">
@@ -173,10 +172,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Betta Basic (1983)(J. Judge)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="bettabas">
+		<description>Betta Basic</description>
+		<year>1983</year>
+		<publisher>J. Judge</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="2660">
@@ -185,22 +184,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Betta Basic (1983)(J. Judge)[a2]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="zx81_cass">
-			<dataarea name="cass" size="2857">
-				<rom name="betta basic (1983)(j. judge)[a2].p" size="2857" crc="b4c5422d" sha1="7a3c79666092137e07e375e61cbcfd7570c97664" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Betta Basic (1983)(J. Judge)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="bettabasa" cloneof="bettabas">
+		<description>Betta Basic (Alt)</description>
+		<year>1983</year>
+		<publisher>J. Judge</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="2856">
@@ -209,10 +196,22 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Calculator (1982)(J. Gishen)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="bettabasb" cloneof="bettabas">
+		<description>Betta Basic (Alt 2)</description>
+		<year>1983</year>
+		<publisher>J. Judge</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="2857">
+				<rom name="betta basic (1983)(j. judge)[a2].p" size="2857" crc="b4c5422d" sha1="7a3c79666092137e07e375e61cbcfd7570c97664" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="calculat">
+		<description>Calculator</description>
+		<year>1982</year>
+		<publisher>J. Gishen</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="2156">
@@ -221,10 +220,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Calendar (1982)(Sinclair User)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="calenda1">
+		<description>Calendar (Sinclair User)</description>
+		<year>1982</year>
+		<publisher>Sinclair User</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1442">
@@ -233,34 +232,29 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Calendar (1987)(SMC)(File 1 of 2)[CALENDAR.P]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="calenda2">
+		<description>Calendar (SMC)</description>
+		<year>1987</year>
+		<publisher>SMC</publisher>
 
 		<part name="cass1" interface="zx81_cass">
+		<feature name="part_id" value="Tape 1 (Calendar)"/>
 			<dataarea name="cass" size="1586">
 				<rom name="calendar (1987)(smc)(file 1 of 2)[calendar.p].p" size="1586" crc="98940a53" sha1="7846bbfa8bb3a8dd8abaea8266abbb26d35cd91a" offset="0" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Calendar (1987)(SMC)(File 2 of 2)[1987.P]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="zx81_cass">
+		<part name="cass2" interface="zx81_cass">
+		<feature name="part_id" value="Tape 2 (1987)"/>
 			<dataarea name="cass" size="14760">
 				<rom name="calendar (1987)(smc)(file 2 of 2)[1987.p].p" size="14760" crc="22d5a88f" sha1="c9006dc0fcc63411bd03efdbb52e41377d567598" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Calendar Printer (19xx)(-)</description>
+	<software name="calendap">
+		<description>Calendar Printer</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1547">
@@ -269,10 +263,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Cassette Bestand (19xx)(-)(nl)</description>
+	<software name="cassbest">
+		<description>Cassette Bestand (Ned)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="7460">
@@ -281,10 +275,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Cassette Index (19xx)(-)(nl)</description>
+	<software name="casindex">
+		<description>Cassette Index (Ned)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="8918">
@@ -293,10 +287,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Cassette Labels (19xx)(-)</description>
+	<software name="caslabel">
+		<description>Cassette Labels</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="2080">
@@ -305,10 +299,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Common-Emitter, Class-A Transistor Amplifier Design v1.2 (1983)(Syncware)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="commemit">
+		<description>Common-Emitter - Class-A Transistor Amplifier Design (v1.2)</description>
+		<year>1983</year>
+		<publisher>Syncware</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="16020">
@@ -317,10 +311,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Computacalc ZX (19xx)(-)</description>
+	<software name="compcalc">
+		<description>Computacalc ZX</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="9027">
@@ -329,34 +323,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Coral Basic Interpreter Key Repeat (1990)(Carlo Delhez)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="zx81_cass">
-			<dataarea name="cass" size="1486">
-				<rom name="coral basic interpreter key repeat (1990)(carlo delhez).p" size="1486" crc="e0fe8bbe" sha1="44e041ffff01dbbfc2db474ae3456f5111f096c6" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Coral Basic Interpreter Relocator (19xx)(Carlo Delhez)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="zx81_cass">
-			<dataarea name="cass" size="2940">
-				<rom name="coral basic interpreter relocator (19xx)(carlo delhez).p" size="2940" crc="7b167a43" sha1="5a59b729b9159d4c1ffa5463de79428e6308ff15" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Coral Basic Interpreter v7.0 (1987)(Carlo Delhez)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="coralbas">
+		<description>Coral Basic Interpreter (v7.0)</description>
+		<year>1987</year>
+		<publisher>Carlo Delhez</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="7086">
@@ -365,10 +335,34 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>DecHexChar-Dump (19xx)(-)(nl)</description>
+	<software name="coralkey">
+		<description>Coral Basic Interpreter Key Repeat</description>
+		<year>1990</year>
+		<publisher>Carlo Delhez</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="1486">
+				<rom name="coral basic interpreter key repeat (1990)(carlo delhez).p" size="1486" crc="e0fe8bbe" sha1="44e041ffff01dbbfc2db474ae3456f5111f096c6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="coralrel">
+		<description>Coral Basic Interpreter Relocator</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Carlo Delhez</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="2940">
+				<rom name="coral basic interpreter relocator (19xx)(carlo delhez).p" size="2940" crc="7b167a43" sha1="5a59b729b9159d4c1ffa5463de79428e6308ff15" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dhchar">
+		<description>DecHexChar-Dump (Ned)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="3841">
@@ -377,10 +371,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Decimal Point Utility (19xx)(-)</description>
+	<software name="decimalp">
+		<description>Decimal Point Utility</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1193">
@@ -389,10 +383,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Disassembler (1981)(G. Merkel)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="disasm1">
+		<description>Disassembler (G. Merkel)</description>
+		<year>1981</year>
+		<publisher>G. Merkel</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="8799">
@@ -401,10 +395,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Disassembler (1982)(Ch. Zwerschke)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="disasm2">
+		<description>Disassembler (Ch. Zwerschke)</description>
+		<year>1982</year>
+		<publisher>Ch. Zwerschke</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="2905">
@@ -413,10 +407,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Disassembler (19xx)(Campbell Systems)</description>
+	<software name="disasm3">
+		<description>Disassembler (Campbell Systems)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Campbell Systems</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="3325">
@@ -425,22 +419,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Disassembler (19xx)(Campbell Systems)[a2]</description>
+	<software name="disasm3a" cloneof="disasm3">
+		<description>Disassembler (Campbell Systems) (Alt)</description>
 		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="zx81_cass">
-			<dataarea name="cass" size="3582">
-				<rom name="disassembler (19xx)(campbell systems)[a2].p" size="3582" crc="f12c9f34" sha1="6fd8170363f721cdc58bd1270771e3aa8ed2c273" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Disassembler (19xx)(Campbell Systems)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Campbell Systems</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="3899">
@@ -449,10 +431,22 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Disassembler Voor de ZX-81 Met Ingebouwde Relocator (19xx)(Leo van Dorp)(nl)</description>
+	<software name="disasm3b" cloneof="disasm3">
+		<description>Disassembler (Campbell Systems) (Alt 2)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Campbell Systems</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="3582">
+				<rom name="disassembler (19xx)(campbell systems)[a2].p" size="3582" crc="f12c9f34" sha1="6fd8170363f721cdc58bd1270771e3aa8ed2c273" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dasmrelo">
+		<description>Disassembler Voor de ZX-81 Met Ingebouwde Relocator (Ned)</description>
+		<year>198?</year>
+		<publisher>Leo van Dorp</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="3443">
@@ -461,10 +455,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Disassembler Voor de ZX-81 Met Ingebouwde Relocator (19xx)(Leo van Dorp)(nl)[a]</description>
+	<software name="dasmreloa" cloneof="dasmrelo">
+		<description>Disassembler Voor de ZX-81 Met Ingebouwde Relocator (Ned) (Alt)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Leo van Dorp</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="3494">
@@ -473,10 +467,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Exam Performance Analysis (19xx)(Threadneedle Street School)</description>
+	<software name="examperf">
+		<description>Exam Performance Analysis</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Threadneedle Street School</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="5766">
@@ -485,10 +479,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>File Loader (19xx)(-)</description>
+	<software name="fileload">
+		<description>File Loader</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="3617">
@@ -497,10 +491,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>File Text (19xx)(-)</description>
+	<software name="filetext">
+		<description>File Text</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="9256">
@@ -509,10 +503,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Filecopy 2 (19xx)(-)</description>
+	<software name="filecop2">
+		<description>Filecopy 2</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="2144">
@@ -521,10 +515,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Font - Bold (19xx)(Gregory C. Harder)</description>
+	<software name="fontbold">
+		<description>Font - Bold</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Gregory C. Harder</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="2842">
@@ -533,10 +527,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Font - Elite (19xx)(Gregory C. Harder - Fred Nachbaur)</description>
+	<software name="fontelit">
+		<description>Font - Elite</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Gregory C. Harder - Fred Nachbaur</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="11454">
@@ -545,10 +539,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Font - Fancy (1987)(SMC)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="fontfanc">
+		<description>Font - Fancy</description>
+		<year>1987</year>
+		<publisher>SMC</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="7290">
@@ -557,10 +551,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Font - Lower Case (19xx)(Gregory C. Harder - Fred Nachbaur)</description>
+	<software name="fontlcas">
+		<description>Font - Lower Case</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Gregory C. Harder - Fred Nachbaur</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1585">
@@ -569,10 +563,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Font - Old Bold (19xx)(Gregory C. Harder - Fred Nachbaur)</description>
+	<software name="fontobld">
+		<description>Font - Old Bold</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Gregory C. Harder - Fred Nachbaur</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="2842">
@@ -581,10 +575,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Font - Olden (19xx)(Gregory C. Harder - Fred Nachbaur)</description>
+	<software name="fontoldn">
+		<description>Font - Olden</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Gregory C. Harder - Fred Nachbaur</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="2839">
@@ -593,10 +587,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Font - Proportional (19xx)(Gregory C. Harder - Fred Nachbaur)</description>
+	<software name="fontprop">
+		<description>Font - Proportional</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Gregory C. Harder - Fred Nachbaur</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="9897">
@@ -605,10 +599,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Font - Sans-Serif Bold (19xx)(Gregory C. Harder - Fred Nachbaur)</description>
+	<software name="fontssrf">
+		<description>Font - Sans-Serif Bold</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Gregory C. Harder - Fred Nachbaur</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="11490">
@@ -617,10 +611,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>German-English (19xx)(-)</description>
+	<software name="germeng">
+		<description>German-English</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="15406">
@@ -629,10 +623,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Graf. ROM Routine (19xx)(-)(nl)</description>
+	<software name="grafrom">
+		<description>Graf. ROM Routine (Ned)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="2255">
@@ -641,10 +635,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Graph Plotter (19xx)(-)</description>
+	<software name="graphplo">
+		<description>Graph Plotter</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1442">
@@ -653,10 +647,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Graphics Aid (1984)(Sinclair User)[16K]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="graphaid">
+		<description>Graphics Aid (16K)</description>
+		<year>1984</year>
+		<publisher>Sinclair User</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="6101">
@@ -665,10 +659,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Graphics Archiver (19xx)(Gregory C. Harder)</description>
+	<software name="grapharc">
+		<description>Graphics Archiver</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Gregory C. Harder</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="8568">
@@ -677,10 +671,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Graphics Toolkit (1982)(Paul Holmes)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="graphtoo">
+		<description>Graphics Toolkit</description>
+		<year>1982</year>
+		<publisher>Paul Holmes</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="2790">
@@ -689,10 +683,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Graphics Toolkit (1982)(Paul Holmes)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="graphtooa" cloneof="graphtoo">
+		<description>Graphics Toolkit (Alt)</description>
+		<year>1982</year>
+		<publisher>Paul Holmes</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="2759">
@@ -701,10 +695,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Hex Peeker - Hexadecimal Memory Dump (19xx)(-)</description>
+	<software name="hexpeekr">
+		<description>Hex Peeker - Hexadecimal Memory Dump</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="2909">
@@ -713,34 +707,34 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Hex Poke & Peek - Decimal Address (19xx)(-)</description>
+	<software name="pokpeekd">
+		<description>Hex Poke &amp; Peek - Decimal Address</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1454">
-				<rom name="hex poke & peek - decimal address (19xx)(-).p" size="1454" crc="899877ec" sha1="d0626b5ba6557ead8b159727cee93898be78d4ff" offset="0" />
+				<rom name="hex poke &amp; peek - decimal address (19xx)(-).p" size="1454" crc="899877ec" sha1="d0626b5ba6557ead8b159727cee93898be78d4ff" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Hex Poke & Peek - Hex Address (19xx)(-)</description>
+	<software name="pokpeekh">
+		<description>Hex Poke &amp; Peek - Hex Address</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1505">
-				<rom name="hex poke & peek - hex address (19xx)(-).p" size="1505" crc="4de675e5" sha1="99eabe832ccef066605e3a18dabcbc348505dbb6" offset="0" />
+				<rom name="hex poke &amp; peek - hex address (19xx)(-).p" size="1505" crc="4de675e5" sha1="99eabe832ccef066605e3a18dabcbc348505dbb6" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Hex Poke (19xx)(-)</description>
+	<software name="hexpoke">
+		<description>Hex Poke</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1612">
@@ -749,10 +743,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Hex-Dump (19xx)(-)(nl)</description>
+	<software name="hexdump">
+		<description>Hex-Dump (Ned)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1494">
@@ -761,10 +755,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Hexloader (19xx)(-)(de)</description>
+	<software name="hexload">
+		<description>Hexloader (Ger)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1612">
@@ -773,10 +767,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Hi-Res Line Editor 2 (19xx)(-)</description>
+	<software name="hreslin2">
+		<description>Hi-Res Line Editor 2</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="3477">
@@ -785,10 +779,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Hi-Res Typewriter (19xx)(-)</description>
+	<software name="hrestype">
+		<description>Hi-Res Typewriter</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="6562">
@@ -797,10 +791,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Hi-Res Word Processor (1983)(Nissim Elmalehes)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="hresword">
+		<description>Hi-Res Word Processor</description>
+		<year>1983</year>
+		<publisher>Nissim Elmalehes</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="7609">
@@ -809,10 +803,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Hi-Rise-Hive (19xx)(Hogroprog)</description>
+	<software name="hrishive">
+		<description>Hi-Rise-Hive</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Hogroprog</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="5881">
@@ -821,10 +815,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>High Resolution Graphics (19xx)(-)</description>
+	<software name="hrgraph">
+		<description>High Resolution Graphics</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="4868">
@@ -833,10 +827,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>High Resolution Graphics (19xx)(-)[a]</description>
+	<software name="hrgrapha" cloneof="hrgraph">
+		<description>High Resolution Graphics (Alt)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="4170">
@@ -845,10 +839,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>High Resolution Sound Analysis (19xx)(R. de Wit)(nl)</description>
+	<software name="hrsound">
+		<description>High Resolution Sound Analysis (Ned)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>R. de Wit</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="2454">
@@ -857,10 +851,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Index Copy (19xx)(-)(nl)</description>
+	<software name="indexcpy">
+		<description>Index Copy (Ned)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="2697">
@@ -869,10 +863,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Index Programm (1982)(Vincent C. Chase)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="indexprg">
+		<description>Index Programm</description>
+		<year>1982</year>
+		<publisher>Vincent C. Chase</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="7608">
@@ -881,10 +875,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Introduction to Computers - Part 1 (19xx)(Boston Electronic Systems Training)</description>
+	<software name="introc1">
+		<description>Introduction to Computers - Part 1</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Boston Electronic Systems Training</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="7675">
@@ -893,10 +887,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Introduction to Computers - Part 2 (19xx)(Boston Electronic Systems Training)</description>
+	<software name="introc2">
+		<description>Introduction to Computers - Part 2</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Boston Electronic Systems Training</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="7618">
@@ -905,10 +899,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Machine Code Test Tool (1982)(F. Ainley)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="mcodtest">
+		<description>Machine Code Test Tool</description>
+		<year>1982</year>
+		<publisher>F. Ainley</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="2836">
@@ -917,10 +911,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Machine Code Test Tool - MC Routines - REM Creator (19xx)(-)</description>
+	<software name="mcodtrem">
+		<description>Machine Code Test Tool - MC Routines - REM Creator</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="8644">
@@ -929,10 +923,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>MC.Compiler (19xx)(Silversoft)</description>
+	<software name="mccompil">
+		<description>MC.Compiler</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Silversoft</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="6994">
@@ -941,10 +935,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>MCoder II (1983)(PSS)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="mcoder2">
+		<description>MCoder II</description>
+		<year>1983</year>
+		<publisher>PSS</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="5820">
@@ -953,22 +947,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>MCoder II (1983)(PSS)[a2]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="zx81_cass">
-			<dataarea name="cass" size="5829">
-				<rom name="mcoder ii (1983)(pss)[a2].p" size="5829" crc="94d33cf7" sha1="4538a1631559d7c0cdbe0cff924108190481f2a6" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>MCoder II (1983)(PSS)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="mcoder2a" cloneof="mcoder2">
+		<description>MCoder II (Alt)</description>
+		<year>1983</year>
+		<publisher>PSS</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="5816">
@@ -977,10 +959,22 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Notepad (19xx)(-)</description>
+	<software name="mcoder2b" cloneof="mcoder2">
+		<description>MCoder II (Alt 2)</description>
+		<year>1983</year>
+		<publisher>PSS</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="5829">
+				<rom name="mcoder ii (1983)(pss)[a2].p" size="5829" crc="94d33cf7" sha1="4538a1631559d7c0cdbe0cff924108190481f2a6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="notepad">
+		<description>Notepad</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="4092">
@@ -989,10 +983,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Padcalc (19xx)(-)</description>
+	<software name="padcalc">
+		<description>Padcalc</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="5095">
@@ -1001,10 +995,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>PaintBox v2.0 (19xx)(-)(de)</description>
+	<software name="paintbox">
+		<description>PaintBox (Ger, v2.0)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="3821">
@@ -1013,10 +1007,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Painter (19xx)(-)(nl)</description>
+	<software name="painter">
+		<description>Painter (Ned)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="2715">
@@ -1025,10 +1019,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Painter (19xx)(-)(nl)[a]</description>
+	<software name="paintera" cloneof="painter">
+		<description>Painter (Ned, Alt)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="2687">
@@ -1037,10 +1031,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>ROM Test (1983)(-)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="romtest">
+		<description>ROM Test</description>
+		<year>1983</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1321">
@@ -1049,10 +1043,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Scientific Statistical Graph Program (19xx)(-)</description>
+	<software name="scistat">
+		<description>Scientific Statistical Graph Program</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="2078">
@@ -1061,10 +1055,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Score Routine (19xx)(-)</description>
+	<software name="scorout">
+		<description>Score Routine</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1161">
@@ -1073,10 +1067,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Screen File - Archival Storage of Hi-Res Screen Files (19xx)(-)</description>
+	<software name="scrfile">
+		<description>Screen File - Archival Storage of Hi-Res Screen Files</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="8596">
@@ -1085,10 +1079,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Screen Kit 1 (19xx)(Picturesque)</description>
+	<software name="scrkit1">
+		<description>Screen Kit 1</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Picturesque</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1896">
@@ -1097,10 +1091,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Scroll LIST (19xx)(-)</description>
+	<software name="scrolist">
+		<description>Scroll LIST</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1790">
@@ -1109,10 +1103,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Shell for Disassembler Included with Atari ST ZX-81 Emulator (19xx)(-)</description>
+	<software name="stshell">
+		<description>Shell for Disassembler Included with Atari ST ZX-81 Emulator</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1480">
@@ -1121,10 +1115,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>SimDOS-2 v0.04 (1992)(Carlo Delhez)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="simdos2">
+		<description>SimDOS-2 (v0.04)</description>
+		<year>1992</year>
+		<publisher>Carlo Delhez</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="2824">
@@ -1133,6 +1127,7 @@
 		</part>
 	</software>
 
+<!--
 	<software name="">
 		<description>SK Toolkit (19xx)(-)(nl)</description>
 		<year>198?</year>
