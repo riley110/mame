@@ -398,6 +398,7 @@ OBJDIRS += $(SDLOBJ) \
 	$(OSDOBJ)/modules/sync \
 	$(OSDOBJ)/modules/lib \
 	$(OSDOBJ)/modules/midi \
+	$(OSDOBJ)/modules/font \
 
 #-------------------------------------------------
 # OSD core library
@@ -412,7 +413,8 @@ OSDCOREOBJS = \
 	$(SDLOBJ)/sdlmisc_$(BASE_TARGETOS).o    \
 	$(SDLOBJ)/sdlos_$(SDLOS_TARGETOS).o \
 	$(OSDOBJ)/modules/lib/osdlib_$(SDLOS_TARGETOS).o \
-	$(OSDOBJ)/modules/sync/sync_$(SYNC_IMPLEMENTATION).o
+	$(OSDOBJ)/modules/sync/sync_$(SYNC_IMPLEMENTATION).o \
+	$(OSDOBJ)/modules/osdmodule.o \
 
 ifdef NOASM
 OSDCOREOBJS += $(OSDOBJ)/modules/sync/work_mini.o
@@ -426,13 +428,20 @@ OSDOBJS = \
 	$(SDLMAIN) \
 	$(SDLOBJ)/sdlmain.o \
 	$(SDLOBJ)/input.o \
+	$(OSDOBJ)/modules/sound/js_sound.o  \
+	$(OSDOBJ)/modules/sound/direct_sound.o  \
 	$(OSDOBJ)/modules/sound/sdl_sound.o  \
+	$(OSDOBJ)/modules/sound/none.o  \
 	$(SDLOBJ)/video.o \
 	$(SDLOBJ)/drawsdl.o \
 	$(SDLOBJ)/window.o \
 	$(SDLOBJ)/output.o \
 	$(SDLOBJ)/watchdog.o \
 	$(OSDOBJ)/modules/lib/osdobj_common.o  \
+	$(OSDOBJ)/modules/font/font_sdl.o \
+	$(OSDOBJ)/modules/font/font_windows.o \
+	$(OSDOBJ)/modules/font/font_osx.o \
+	$(OSDOBJ)/modules/font/font_none.o \
 
 ifdef NO_USE_MIDI
 	OSDOBJS += $(OSDOBJ)/modules/midi/none.o

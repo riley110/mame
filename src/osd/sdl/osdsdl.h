@@ -7,6 +7,8 @@
 #include "clifront.h"
 #include "modules/lib/osdobj_common.h"
 #include "video.h"
+#include "modules/osdmodule.h"
+#include "modules/font/font_module.h"
 
 //============================================================
 //  System dependent defines
@@ -186,13 +188,7 @@ public:
 	// input overridables
 	virtual void customize_input_type_list(simple_list<input_type_entry> &typelist);
 
-	// font overridables
-	virtual osd_font *font_open(const char *name, int &height);
-	virtual void font_close(osd_font *font);
-	virtual bool font_get_bitmap(osd_font *font, unicode_char chnum, bitmap_argb32 &bitmap, INT32 &width, INT32 &xoffs, INT32 &yoffs);
-
 	virtual void video_register();
-	virtual void sound_register();
 	virtual void debugger_register();
 
 	virtual bool video_init();
@@ -224,7 +220,6 @@ private:
 
 	// FIXME: remove machine usage
 	void extract_video_config(running_machine &machine);
-
 
     sdl_options &m_options;
 

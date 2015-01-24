@@ -91,6 +91,7 @@ OBJDIRS += $(WINOBJ) \
 	$(OSDOBJ)/modules/sync \
 	$(OSDOBJ)/modules/lib \
 	$(OSDOBJ)/modules/midi \
+	$(OSDOBJ)/modules/font \
 
 ifdef USE_QTDEBUG
 OBJDIRS += $(OSDOBJ)/modules/debugger/qt
@@ -356,6 +357,7 @@ OSDCOREOBJS = \
 	$(WINOBJ)/winsocket.o \
 	$(OSDOBJ)/modules/sync/work_osd.o \
 	$(OSDOBJ)/modules/lib/osdlib_win32.o \
+	$(OSDOBJ)/modules/osdmodule.o \
 	$(WINOBJ)/winptty.o \
 
 
@@ -372,13 +374,20 @@ OSDOBJS = \
 	$(WINOBJ)/drawnone.o \
 	$(WINOBJ)/input.o \
 	$(WINOBJ)/output.o \
-	$(OSDOBJ)/modules/sound/direct_sound.o \
+	$(OSDOBJ)/modules/sound/js_sound.o  \
+	$(OSDOBJ)/modules/sound/direct_sound.o  \
+	$(OSDOBJ)/modules/sound/sdl_sound.o  \
+	$(OSDOBJ)/modules/sound/none.o  \
 	$(WINOBJ)/video.o \
 	$(WINOBJ)/window.o \
 	$(WINOBJ)/winmenu.o \
 	$(WINOBJ)/winmain.o \
 	$(OSDOBJ)/modules/midi/portmidi.o \
 	$(OSDOBJ)/modules/lib/osdobj_common.o  \
+	$(OSDOBJ)/modules/font/font_sdl.o \
+	$(OSDOBJ)/modules/font/font_windows.o \
+	$(OSDOBJ)/modules/font/font_osx.o \
+	$(OSDOBJ)/modules/font/font_none.o \
 
 ifdef USE_SDL
 OSDOBJS += \

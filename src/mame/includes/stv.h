@@ -798,28 +798,14 @@ public:
 
 	// protection specific variables and functions (see machine/stvprot.c)
 	UINT32 m_abus_protenable;
-	UINT32 m_abus_prot_addr;
 	UINT32 m_abus_protkey;
 
 	UINT32 m_a_bus[4];
-	UINT32 m_ctrl_index;
-	UINT32 m_internal_counter;
-	UINT8 m_char_offset; //helper to jump the decoding of the NULL chars.
-
-	UINT32 (*m_prot_readback)(address_space&,int,UINT32);
 
 	DECLARE_READ32_MEMBER( common_prot_r );
 	DECLARE_WRITE32_MEMBER( common_prot_w );
 
 	void install_common_protection();
-
-	void install_twcup98_protection();
-	void install_sss_protection();
-	void install_astrass_protection();
-	void install_rsgun_protection();
-	void install_elandore_protection();
-	void install_ffreveng_protection();
-
 	void stv_register_protection_savestates();
 
 	// Decathlete specific variables and functions (see machine/decathlt.c)
