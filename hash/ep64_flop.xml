@@ -2877,6 +2877,18 @@
 		</part>
 	</software>
 
+	<software name="games74b" cloneof="games74">
+		<description>Games Disk 74 (Alt 2)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="games_74.img" size="737280" crc="c1855076" sha1="211ce9160813f44b45daecdac974d3e5d8db61b9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="games74n" cloneof="games74">
 		<description>Games Disk 74 (No Menu)</description>
 		<year>20??</year>
@@ -3093,6 +3105,11 @@
 		</part>
 	</software>
 
+	<!-- 
+	DEMO_01
+	
+	Nasa Guy Demo 1-9
+	-->
 	<software name="demo1">
 		<description>Demo Disk 1</description>
 		<year>19??</year>
@@ -3105,6 +3122,38 @@
 		</part>
 	</software>
 
+	<software name="demo1n" cloneof="demo1">
+		<description>Demo Disk 1 (No Menu)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="demo_01 - without menue.img" size="737280" crc="b7b3debc" sha1="2737badce2bc21e2c9f2ba0040e6ce3ec7bb272d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 
+	DEMO_02
+
+	Demonstration Cassette
+	Demonstration Casettente Ep64
+	Demonstration Cassette (HU)
+	Demonstration Kassette (DE)
+	CD Player
+	Fall Demo
+	BASIC Grafika
+	Kraftwerk Sound Machine
+	Music Demo
+	Micro Sound 128 - Part II.
+	Nasa Guy Demo 10
+	Nasa Guy Demo 11
+	Newton's Demo
+	Pic-Scrolls
+	Somb 2 Demo
+	TFF Demo 2
+	-->
 	<software name="demo2">
 		<description>Demo Disk 2</description>
 		<year>19??</year>
@@ -3117,6 +3166,29 @@
 		</part>
 	</software>
 
+	<software name="demo2n" cloneof="demo2">
+		<description>Demo Disk 2 (No Menu)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="demo_02 - without menue.img" size="737280" crc="023b13fc" sha1="37b919e215a9acb31893870cdb79110d736ba586" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	DEMO_03
+
+	Alpha
+	Eye Demo
+	Girls
+	Images
+	Farao Demo
+	Nick Demo
+	Laser Theatre
+	-->
 	<software name="demo3">
 		<description>Demo Disk 3</description>
 		<year>19??</year>
@@ -3129,6 +3201,33 @@
 		</part>
 	</software>
 
+	<software name="demo3n" cloneof="demo3">
+		<description>Demo Disk 3 (No Menu)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="demo_03 - without menue.img" size="737280" crc="d1ad27e7" sha1="e652e459f5d6e36b532baa2fa48fb29635ba2c57" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	DEMO_04
+
+	Bam Demo (part 1-2)
+	Big Demo
+	Cauldron Demo
+	DOC Show
+	Elite Demo
+	FBT Intro
+	Megademo
+	Megademo II.
+	Megademo III.
+	Rendez-Vous
+	Theo Devil Demo
+	-->
 	<software name="demo4">
 		<description>Demo Disk 4</description>
 		<year>19??</year>
@@ -3141,6 +3240,27 @@
 		</part>
 	</software>
 
+	<software name="demo4n" cloneof="demo4">
+		<description>Demo Disk 4 (No Menu)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="demo_04 - without menue.img" size="737280" crc="6c82f560" sha1="f5e4a320493ecd799822782db7354351b1cfafb9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	DEMO_05
+
+	Scroll Demo
+	Psychial Destruction Demo
+	Saga Demo
+	Saga Demo 2
+	Saga Demo 4
+	-->
 	<software name="demo5">
 		<description>Demo Disk 5</description>
 		<year>19??</year>
@@ -3153,6 +3273,25 @@
 		</part>
 	</software>
 
+	<software name="demo5n" cloneof="demo5">
+		<description>Demo Disk 5 (No Menu)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="demo_05 - without menue.img" size="737280" crc="f0738a5e" sha1="25465de9a2dd428fa5aa2f97638f3b6172d5a050" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	DEMO_06
+	
+	CTS Ball
+	Fractal Demo
+	Galaxy Graphics
+	-->
 	<software name="demo6">
 		<description>Demo Disk 6</description>
 		<year>19??</year>
@@ -3165,6 +3304,28 @@
 		</part>
 	</software>
 
+	<software name="demo6n" cloneof="demo6">
+		<description>Demo Disk 6 (No Menu)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="demo_06 - without menue.img" size="737280" crc="9d07b6db" sha1="e06e5afd5e0209d818c369ce5d785d6e5145e1fa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	DEMO_07
+
+	Girl
+	Kel-Demo
+	Novademo (+Intro)
+	PCX Slideshow
+	PCX Slideshow 2
+	TNT Demo
+	-->
 	<software name="demo7">
 		<description>Demo Disk 7</description>
 		<year>19??</year>
@@ -3177,6 +3338,33 @@
 		</part>
 	</software>
 
+	<software name="demo7n" cloneof="demo7">
+		<description>Demo Disk 7 (No Menu)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="demo_07 - without menue.img" size="737280" crc="e4af870a" sha1="692b2333c46b3ce48b8635c3cd2585a45caa26d1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	DEMO_08
+
+	Amiga Ball
+	Cici Demo
+	Coca-Cola
+	Flight of Fantasy
+	His-Brain Demo
+	Horror Demo
+	Crazy Sample (The Lords)
+	Touch Me
+	Triangle
+	Samantha Fox Picture Show
+	Sátor (Zozolace)
+	-->
 	<software name="demo8">
 		<description>Demo Disk 8</description>
 		<year>19??</year>
@@ -3189,6 +3377,29 @@
 		</part>
 	</software>
 
+	<software name="demo8n" cloneof="demo8">
+		<description>Demo Disk 8 (No Menu)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="demo_08 - without menue.img" size="737280" crc="f8a5faa5" sha1="51a2bc6f57b8829d4c32b38721e52a88a932e512" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	DEMO_09
+
+	Artan Demo
+	Joke
+	MuchDemo
+	RoboForce
+	The Lyra Megademo 2
+	Zozosoft Demo
+	Visions
+	-->
 	<software name="demo9">
 		<description>Demo Disk 9</description>
 		<year>19??</year>
@@ -3201,6 +3412,34 @@
 		</part>
 	</software>
 
+	<software name="demo9n" cloneof="demo9">
+		<description>Demo Disk 9 (No Menu)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="demo_09 - without menue.img" size="737280" crc="60e299f8" sha1="c26100a273cc33d68b02f74be6bdfe1cfaf1dd71" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	DEMO_10
+
+	Com Demo
+	CD Demo part II.
+	David Whittaker's Musical Demo (part 1-2)
+	The Mandel Animator
+	Sex-Krimi
+	The Times' Hand
+	Soundtracker Demo
+	Soundtracker Demo 2
+	Soundtracker Demo 3
+	Soundtracker Demo Remix
+	Prayer Music
+	Rockmonitor Demo
+-->
 	<software name="demo10">
 		<description>Demo Disk 10</description>
 		<year>19??</year>
@@ -3213,6 +3452,27 @@
 		</part>
 	</software>
 
+	<software name="demo10n" cloneof="demo10">
+		<description>Demo Disk 10 (No Menu)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="demo_10 - without menue.img" size="737280" crc="d4500a54" sha1="66ea36674ac8c361b92ffa3fbe5aafad56a0d8e1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	DEVELOP
+	
+	CBasic 2.07
+	Hisoft-C Compiler 1.35
+	PolyPascal-80 3.1
+	Turbo Pascal 3.02A
+	Z80  fig-FORTH 1.1g
+	-->
 	<software name="develop">
 		<description>Develop</description>
 		<year>19??</year>
@@ -3245,6 +3505,18 @@
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="developb.img" size="737280" crc="4787d035" sha1="65f7d4c3449d2c2890e6455f745235220c56fab6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="developc" cloneof="develop">
+		<description>Develop (Alt 3)</description>
+		<year>19??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="developc.img" size="737280" crc="f06dd9f0" sha1="c73757e7ed37f505da86119ecbb1721b7d992f81" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -3559,6 +3831,18 @@
 		</part>
 	</software>
 
+	<software name="pascala" cloneof="pascal">
+		<description>HiSoft Pascal (v1.2, Alt)</description>
+		<year>2013</year>
+		<publisher>HiSoft - PoviSoft</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="pascal.img" size="737280" crc="b94648c4" sha1="918435ac82a2995793d07a63949538e0e8af57a2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="hwp">
 		<description>HWP (v1.1)</description>
 		<year>1994</year>
@@ -3755,6 +4039,25 @@
 		</part>
 	</software>
 
+	<!--
+	MUSIC_01
+	
+	%RBBTRED
+	%SH
+	%SONYI
+	220VOLT
+	6JOY-RID
+	A2
+	A3
+	ACES-HI
+	ACIDEEE
+	AGONY1
+	AGONY2
+	AGONY3
+	ALF
+	ALPHAVIL
+	HANDSKOR
+	-->
 	<software name="music1">
 		<description>Music Disk 1</description>
 		<year>19??</year>
@@ -3767,6 +4070,25 @@
 		</part>
 	</software>
 
+	<!--
+	MUSIC_02
+	
+	AMEGAS
+	AMIGA_N
+	ASTROG
+	AXELF
+	BEATRICE
+	BITOFF
+	BLOD
+	BLUE
+	BMONEY
+	BOLHAK
+	BONANZA
+	BOOTER
+	BRAINY
+	BRILL
+	INNOCENT
+	-->
 	<software name="music2">
 		<description>Music Disk 2</description>
 		<year>19??</year>
@@ -3779,6 +4101,23 @@
 		</part>
 	</software>
 
+	<!--
+	MUSIC_03
+	
+	BS1SONG
+	CALYPSO
+	CAMBOD
+	CASTLE
+	CATACOMB
+	CHANT
+	CONS
+	COOLZAK
+	COUNTRY
+	CROCKETS
+	DEARROB
+	DECTION
+	KOTBIZT
+	-->
 	<software name="music3">
 		<description>Music Disk 3</description>
 		<year>19??</year>
@@ -3791,6 +4130,24 @@
 		</part>
 	</software>
 
+	<!--
+	MUSIC_04
+	
+	DEDOMIX
+	DEEJAY
+	DEP
+	DEXION
+	DIIEEE
+	DNS
+	DOMINAT
+	DONTGO
+	DRA
+	DRUM
+	ECHOING
+	ELYSIUM
+	EMANIA
+	EMP
+	-->
 	<software name="music4">
 		<description>Music Disk 4</description>
 		<year>19??</year>
@@ -3803,6 +4160,22 @@
 		</part>
 	</software>
 
+	<!--
+	MUSIC_05
+	
+	ENOLAGAY
+	EXPRESSW
+	EYE
+	FLAMES
+	FLASH4
+	FTUFFE
+	FUL
+	FULLBASS
+	FULLCONT
+	FUN
+	FUNK
+	TNT2
+	-->
 	<software name="music5">
 		<description>Music Disk 5</description>
 		<year>19??</year>
@@ -3815,6 +4188,23 @@
 		</part>
 	</software>
 
+	<!--
+	MUSIC_06
+	
+	FYC
+	GARDEN
+	GOING
+	GRILLED
+	GUR
+	GURU1
+	HAPPY
+	HARD-DRIV
+	HARLEY
+	HEAVY
+	HIT
+	HUMANOID
+	STRANGE
+	-->
 	<software name="music6">
 		<description>Music Disk 6</description>
 		<year>19??</year>
@@ -3827,6 +4217,25 @@
 		</part>
 	</software>
 
+	<!--
+	MUSIC_07
+	
+	HURRICAN
+	HYH
+	I-PLAY
+	ISONG1
+	JARRE
+	JUICYFNK
+	KATYUSA
+	KILLAL3
+	KYLEMIX
+	LAMBADA
+	LASER
+	LEANDER
+	LOADER
+	LOKOMO
+	VORTEX
+	-->
 	<software name="music7">
 		<description>Music Disk 7</description>
 		<year>19??</year>
@@ -3839,6 +4248,23 @@
 		</part>
 	</software>
 
+	<!--
+	MUSIC_08
+	
+	LISTEN
+	LOTUS2
+	MADMAZE
+	MEDIEVAL
+	MEGADEMO
+	MEGALOGO
+	MEKKMEST
+	METAPHYS
+	MICI
+	MISSION
+	MIX1
+	MOD9
+	VECTORS
+	-->
 	<software name="music8">
 		<description>Music Disk 8</description>
 		<year>19??</year>
@@ -3851,6 +4277,22 @@
 		</part>
 	</software>
 
+	<!--
+	MUSIC_09
+	
+	MONTY
+	MOTHERS
+	MOURNFUL
+	MUSIK
+	MYLOVE
+	NEWLIFE
+	NIAGARA
+	NOISE895
+	NOTHING
+	OLD_TIN
+	O-MAMA2
+	WISHME
+	-->
 	<software name="music9">
 		<description>Music Disk 9</description>
 		<year>19??</year>
@@ -3863,6 +4305,26 @@
 		</part>
 	</software>
 
+	<!--
+	MUSIC10
+	
+	ONCE
+	ONCEMORE
+	PAPILONS
+	PARADISE
+	PERHAPS
+	PHR
+	PIZZAFIL
+	PLEASEME
+	PMPMYHS
+	POC
+	POPCORN
+	POPCORN2
+	R-AND-R
+	RENDEZV
+	REVOLUTI
+	WINTER
+	-->
 	<software name="music10">
 		<description>Music Disk 10</description>
 		<year>19??</year>
@@ -3875,6 +4337,22 @@
 		</part>
 	</software>
 
+	<!--
+	MUSIC_11
+	
+	ROL
+	ROUND
+	RSIHARD
+	RYTHM
+	SAXO
+	SBBS
+	SCRATCH2
+	SEIKO
+	SEXMACH
+	SILENT
+	SLL
+	UPSTAIRS
+	-->
 	<software name="music11">
 		<description>Music Disk 11</description>
 		<year>19??</year>
@@ -3887,6 +4365,22 @@
 		</part>
 	</software>
 
+	<!--
+	MUSIC_12
+	
+	SONG
+	SONG1
+	STARLGHT
+	STEEVE
+	STOPII
+	SUBWAY
+	SUPER2
+	SWATCH
+	SWING
+	SWING1
+	SWIRLING
+	TAR-FUNK
+	-->
 	<software name="music12">
 		<description>Music Disk 12</description>
 		<year>19??</year>
@@ -3899,6 +4393,24 @@
 		</part>
 	</software>
 
+	<!--
+	MUSIC_13
+	
+	TEARDROP
+	TEEKN
+	TENNIS
+	TH_DREAM
+	THATGIRL
+	THECURE
+	THEHERO
+	THEKENT
+	THEMODEL
+	THESONG
+	TIMDEMO
+	TOC
+	TUNEV1
+	UNVEILED
+	-->
 	<software name="music13">
 		<description>Music Disk 13</description>
 		<year>19??</year>
@@ -3911,6 +4423,24 @@
 		</part>
 	</software>
 
+	<!--
+	MUSIC_14
+	
+	VAMPIRE
+	WEARENO1
+	WESTMOON
+	WESTWRLD
+	WHITESNG
+	XXX
+	YAZOO
+	ZOOLOOK
+	AACE2
+	AFTER
+	ALIENBR
+	ARKANOID
+	EMCS
+	GMUS
+	-->
 	<software name="music14">
 		<description>Music Disk 14</description>
 		<year>19??</year>
@@ -3923,6 +4453,25 @@
 		</part>
 	</software>
 
+	<!--
+	MUSIC_15
+	
+	BATMANC
+	BEAT_IT
+	BLOOD
+	C64V2
+	COMMANDO
+	COMMANDHD
+	CYBERNO2
+	DOTC
+	EXPFIST
+	FINALE
+	GHOSTNGB
+	GHOSTSGA
+	GODFATER
+	HAPPY
+	KRAKOUT
+	-->
 	<software name="music15">
 		<description>Music Disk 15</description>
 		<year>19??</year>
@@ -3935,6 +4484,12 @@
 		</part>
 	</software>
 
+	<!--
+	MUSIC_16
+	
+	LAST NINJA 1-2-3
+	PLAYME
+	-->
 	<software name="music16">
 		<description>Music Disk 16</description>
 		<year>19??</year>
@@ -3947,6 +4502,20 @@
 		</part>
 	</software>
 
+	<!--
+	MUSIC_17
+	
+	GOLDENAX
+	ISZAKOS
+	KRAKOUTP
+	LETTRIX
+	LN3LVL6
+	LNKW
+	MICRO2
+	MYBEST
+	ROCKMINI
+	TOWERAS
+	-->
 	<software name="music17">
 		<description>Music Disk 17</description>
 		<year>19??</year>
@@ -3959,6 +4528,33 @@
 		</part>
 	</software>
 
+	<!--
+	MUSIC_18
+	
+	BADSTAR
+	BEHIND-M
+	BIRTHDAY
+	BOCI21
+	BOLHAK
+	BRILL
+	CAMBOD
+	CHANCE
+	CLOUDS
+	DEDOMIX
+	EASYLOVE
+	ELF3
+	FIRE1
+	FLAMES
+	FREE-ME
+	GOZOS
+	GREENS
+	GURU1
+	HUMANOID
+	IGOTRYTM
+	KOTNIZT
+	LAMBADA
+	PERHAPS
+	-->
 	<software name="music18">
 		<description>Music Disk 18</description>
 		<year>19??</year>
@@ -3983,6 +4579,32 @@
 		</part>
 	</software>
 
+	<!--
+	MUSIC_19
+	
+	MEDIEVAL
+	MESSAGE
+	MISSION
+	MIX1
+	MUSIK
+	MY-LORD
+	NAMELESS
+	NEPMESEK
+	NOSTROMO
+	NOTHING
+	OLD-TIN
+	PETSHOP
+	PRAYER1
+	PRAYER2
+	RAINY
+	ROCKLINE
+	SLAVE
+	SLL
+	SUNRISE
+	TEARDROP
+	UPWARDS
+	WOW
+	-->
 	<software name="music19">
 		<description>Music Disk 19</description>
 		<year>19??</year>
@@ -4007,6 +4629,13 @@
 		</part>
 	</software>
 
+	<!--
+	OFFICE
+	
+	dBase II. 2.43
+	dBase II. 2.42 (HUN)
+	Multiplan 1.05
+	-->
 	<software name="office">
 		<description>Office</description>
 		<year>19??</year>
@@ -4172,6 +4801,57 @@
 		</part>
 	</software>
 
+	<!--
+	UTIL_01
+	
+	Spectrum BASIC Converter
+	Asmon 1.3
+	Apollo Assembler 1.0
+	FENAS 1.2
+	HEASS 1.0
+	Hisoft GEN-MON
+	Profase 1.5
+	SIMON 1.1
+	Zen Assembler 1.1
+
+	GenAs
+	BasMon
+	Ellenõr (BASELL, OBJELL)
+	DTest 2.3
+	DDump 2.2
+	Pluto 2.2
+	MEM
+
+	Turbo Pack Tape 1.1 (TPT)
+	Mikrobi
+	XFont
+	Entervideo (VLOAD, VDUMP)
+	Is-Basic
+	Is-Lisp
+	Hisoft Pascal
+	Zzzip 1.1 BASIC Compiller
+	EnterSprite
+	Sounds and Envelopes
+	Print Plus (DPRINT, FONTPRT)
+
+	Ablak 6.0
+	Katalógus 1.1
+	Minibank 1.1
+	PGData 1.6
+
+	PGCopy 1.5
+	BAM Copy 5.0
+	BAM & Creativ Copy
+	BAM Turbo Copy
+	Block-Copy (BCOPY)
+	Ep-Copy
+	Enterprise Copy
+	PSCopy
+	Spectrum Paralel Copy
+	Thief Copy
+	Turbo Loader
+	X-Copy
+	-->
 	<software name="utils1">
 		<description>Utilities Disk 1</description>
 		<year>19??</year>
@@ -4184,6 +4864,18 @@
 		</part>
 	</software>
 
+	<!--
+	UTIL_02
+	
+	Agsys 1.1
+	The Art Studio
+	Ikon
+	Paintbox 1.2
+	Paintbox 2.0R
+	Spred 1.5
+	Fine Pen
+	Zaxial
+	-->
 	<software name="utils2">
 		<description>Utilities Disk 2</description>
 		<year>19??</year>
@@ -4196,6 +4888,13 @@
 		</part>
 	</software>
 
+	<!--
+	UTIL_03
+	
+	PiCi Tools Deluxe 3.06
+	CP/M Utility Pack
+	Text File Service 2.0
+	-->
 	<software name="utils3">
 		<description>Utilities Disk 3</description>
 		<year>19??</year>
@@ -4232,6 +4931,15 @@
 		</part>
 	</software>
 
+	<!--
+	UTIL_04
+	
+	Cobol-80 4.0
+	MBasic 5.2
+	SuperCalc 1.2
+	SuperCalc 2
+	PiCi Tools Deluxe 3.06
+	-->
 	<software name="utils4">
 		<description>Utilities Disk 4</description>
 		<year>19??</year>
@@ -4256,6 +4964,14 @@
 		</part>
 	</software>
 
+	<!--
+	WAV_1
+	
+	FREECLIM
+	SPRING
+	INTRO5
+	CZYCLAR
+	-->
 	<software name="wavmusic">
 		<description>WAV Music 1</description>
 		<year>19??</year>
@@ -4269,7 +4985,7 @@
 	</software>
 
 	<software name="wscomp">
-		<description>WordStar (v3.3 + v4.0)</description>
+		<description>WordStar (v3.3 + v4.4)</description>
 		<year>19??</year>
 		<publisher>ep128.hu</publisher>
 
@@ -4593,6 +5309,31 @@
 		</part>
 	</software>
 
+	<!--
+	GAMES_01
+	
+	720' (+cheat)
+	Abyss
+	Airwolf
+	Alien Attack
+	Batman
+	Beach Head
+	Bruce Lee
+	Bumpy
+	Catacomb (Tombs of Doom) (+cheat)
+	Cyclone (+cheat)
+	H.E.R.O. (+cheat)
+	Nodes of Yesod
+	Out of this World
+	Race Ace
+	Raid over Moscow
+	Snake 1K
+	Spectris
+	Super Pilepile II.
+	Wizard of Wor
+	Wriggler (fixed)
+	Orient Express
+	-->
 	<software name="ep64gam1">
 		<description>EP64 Games 01</description>
 		<year>20??</year>
@@ -4605,6 +5346,42 @@
 		</part>
 	</software>
 
+	<!--
+	GAMES_02
+	
+	Bomber Man
+	Cannon Ball
+	Chains
+	Cyrus Chess II.
+	Chickin Chase
+	Death Driver
+	Devil's Lair
+	Diamonds
+	Dictator
+	Dot Breaker
+	Eat it Up
+	Five in a Row
+	Frog Shooter
+	Lands of Havoc
+	Heathrow ATC
+	Alien Highway
+	Happy Numbers
+	Inernational Karate + Reloaded
+	Itasundorious
+	Jack's House of Cards
+	Kenguru
+	King Of the Castle
+	Market, The
+	Northstar (CPC, +cheat)
+	Packman
+	Playground Adventure
+	Steve Davis Snooker
+	Sokoban 4
+	TVC Invaders
+	Vegetable Crash
+	WindSurfer
+	Animal Vegetable Mineral
+	-->
 	<software name="ep64gam2">
 		<description>EP64 Games 02</description>
 		<year>20??</year>
@@ -4617,6 +5394,13 @@
 		</part>
 	</software>
 
+	<!--
+	GAMES_03
+	
+	Rebelstar
+	Rebelstar 2
+	Laser Squad Remix
+	-->
 	<software name="ep64gam3">
 		<description>EP64 Games 03</description>
 		<year>20??</year>
@@ -4629,6 +5413,30 @@
 		</part>
 	</software>
 
+	<!--
+	GAMES_04
+	
+	Beatcha
+	Castle of Dreams
+	Colossal Adventure
+	Dungeon Adventure
+	Fantasia Diamond
+	Galaxians
+	Emerald Isle
+	Hammerfist	
+	Happy Letters
+	Lord of Time
+	Miner
+	Mordon's Quest
+	Pacman
+	Adventure Quest
+	Return to Eden
+	Snowball
+	Spanish Gold 1-2
+	Sokoban
+	Tetris
+	Wordhang
+	-->
 	<software name="ep64gam4">
 		<description>EP64 Games 04</description>
 		<year>20??</year>
@@ -4641,6 +5449,24 @@
 		</part>
 	</software>
 
+	<!--
+	GAMES_05
+	
+	Boluder Dash 1 CPC (CPC, +cheat)
+	Boulder Dash 1 C64 (CPC, +cheat)
+	Boulder Dash 2 C64 (CPC, +cheat)
+	Boulder Dash 3 C64 (CPC, +cheat)
+	Boulder Dash Classic Collection 1 (CPC, +cheat)
+	Boulder Dash Classic Collection 2 (CPC, +cheat)
+	Birds and the Bees
+	Double Dragon (+cheat)
+	Exolon (+cheat)
+	The Hit Squad (+cheat)
+	Super Hang on part 1 (+cheat)
+	Paperboy (+cheat)
+	The Great Escape (+cheat)
+	W*H*B
+	-->
 	<software name="ep64gam5">
 		<description>EP64 Games 05</description>
 		<year>20??</year>
@@ -4653,6 +5479,26 @@
 		</part>
 	</software>
 
+	<!--
+	GAMES_06
+	
+	4K Race Refueled +
+	Arcadia
+	Armageddon
+	Captain Fizz
+	Cross Road Reloaded
+	Double Dragon
+	Gunfright (CPC)
+	Hammerfist
+	International Karate+
+	Nonamed
+	NorthStar (CPC)
+	Panic Man
+	Penalty Soccer
+	Spindizzy
+	Turbo Esprit
+	Williamsburg Adventure 3
+	-->
 	<software name="ep64gam6">
 		<description>EP64 Games 06</description>
 		<year>20??</year>
@@ -4665,6 +5511,13 @@
 		</part>
 	</software>
 
+	<!--
+	GAMES_07
+	
+	Chaos
+	Chaos 2
+	Lords of Chaos
+	-->
 	<software name="ep64gam7">
 		<description>EP64 Games 07</description>
 		<year>20??</year>
@@ -5457,6 +6310,18 @@
 		</part>
 	</software>
 
+	<software name="gam80065a" cloneof="gam80065">
+		<description>Games 800K 65 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="games_65.img" size="819200" crc="0fc07f4e" sha1="4e3d03ce722df8c0c73f5298c99abc3a30861128" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="mus80001">
 		<description>Music Disk 800K 01</description>
 		<year>20??</year>
@@ -5877,126 +6742,6 @@
 		</part>
 	</software>
 
-	<software name="demo1n" cloneof="demo1">
-		<description>Demo Disk 1 (No Menu)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="demo_01 - without menue.img" size="737280" crc="b7b3debc" sha1="2737badce2bc21e2c9f2ba0040e6ce3ec7bb272d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="demo2n" cloneof="demo2">
-		<description>Demo Disk 2 (No Menu)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="demo_02 - without menue.img" size="737280" crc="023b13fc" sha1="37b919e215a9acb31893870cdb79110d736ba586" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="demo3n" cloneof="demo3">
-		<description>Demo Disk 3 (No Menu)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="demo_03 - without menue.img" size="737280" crc="d1ad27e7" sha1="e652e459f5d6e36b532baa2fa48fb29635ba2c57" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="demo4n" cloneof="demo4">
-		<description>Demo Disk 4 (No Menu)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="demo_04 - without menue.img" size="737280" crc="6c82f560" sha1="f5e4a320493ecd799822782db7354351b1cfafb9" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="demo5n" cloneof="demo5">
-		<description>Demo Disk 5 (No Menu)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="demo_05 - without menue.img" size="737280" crc="f0738a5e" sha1="25465de9a2dd428fa5aa2f97638f3b6172d5a050" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="demo6n" cloneof="demo6">
-		<description>Demo Disk 6 (No Menu)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop2" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="demo_06 - without menue.img" size="737280" crc="9d07b6db" sha1="e06e5afd5e0209d818c369ce5d785d6e5145e1fa" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="demo7n" cloneof="demo7">
-		<description>Demo Disk 7 (No Menu)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="demo_07 - without menue.img" size="737280" crc="e4af870a" sha1="692b2333c46b3ce48b8635c3cd2585a45caa26d1" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="demo8n" cloneof="demo8">
-		<description>Demo Disk 8 (No Menu)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="demo_08 - without menue.img" size="737280" crc="f8a5faa5" sha1="51a2bc6f57b8829d4c32b38721e52a88a932e512" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="demo9n" cloneof="demo9">
-		<description>Demo Disk 9 (No Menu)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="demo_09 - without menue.img" size="737280" crc="60e299f8" sha1="c26100a273cc33d68b02f74be6bdfe1cfaf1dd71" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="demo10n" cloneof="demo10">
-		<description>Demo Disk 10 (No Menu)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="demo_10 - without menue.img" size="737280" crc="d4500a54" sha1="66ea36674ac8c361b92ffa3fbe5aafad56a0d8e1" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="bigdemo">
 		<description>Big Demo</description>
 		<year>1990</year>
@@ -6204,6 +6949,42 @@
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="sokoban 4k - isdos.img" size="737280" crc="3add7865" sha1="d2943556aeb633e6837827947739c7669834c546" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="blank160">
+		<description>Blank Disk (160KB)</description>
+		<year>198?</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="163840">
+				<rom name="160kb.img" size="163840" crc="0f0b57d4" sha1="a9281456b3d41e4c833f61aeee862d05a84a764d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="blank720">
+		<description>Blank Disk (720KB)</description>
+		<year>198?</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="720kb.img" size="737280" crc="eb2b3a45" sha1="59fdc983f89f493dc9297e4c93a423fefaedfb14" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="blank800">
+		<description>Blank Disk (800KB)</description>
+		<year>198?</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="800kb.img" size="819200" crc="bb753e91" sha1="2aec97e659a201c691694cf4b3890c9a4216d4ca" offset="0" />
 			</dataarea>
 		</part>
 	</software>
