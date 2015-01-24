@@ -39,13 +39,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="basic games.img" size="737280" crc="e53d35bc" sha1="50044e902c38e06315879833c0ea6143459f45f6" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="basgamesa" cloneof="basgames">
+		<description>BASIC Games (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk - basic (19xx)(ep-forever-forum).img" size="737280" crc="25fce9c1" sha1="5fc0f1d571b30a9ea7067f091e87c1e8f0883843" offset="0" />
 			</dataarea>
@@ -70,25 +75,42 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 01.img" size="737280" crc="16e55b92" sha1="fe78a68267177d9376303f9242dafa477309584f" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games01a" cloneof="games01">
+		<description>Games Disk 01 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_01 (19xx)(ep-forever-forum).img" size="737280" crc="8e45c4dd" sha1="c5175028d8fac75915619701d2566b5a9931d559" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 2"/>
+	</software>
+
+	<software name="games01b" cloneof="games01">
+		<description>Games Disk 01 (Alt 2)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games_01.img" size="737280" crc="f0279c31" sha1="974d6a7412ef103cff4e0006461549a16919ec3c" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop4" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 3"/>
+	</software>
+
+	<software name="games01c" cloneof="games01">
+		<description>Games Disk 01 (Alt 3)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games_01a.img" size="737280" crc="83a9fa89" sha1="4bec6c9889ab743d1a156be0f297a08cf6079927" offset="0" />
 			</dataarea>
@@ -113,19 +135,30 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 02.img" size="737280" crc="fc85ec0a" sha1="248814981f40e689f8ec0cb0f0853817bfbea5f8" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games02a" cloneof="games02">
+		<description>Games Disk 02 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_02 (19xx)(ep-forever-forum).img" size="737280" crc="0709d27f" sha1="82b1dc5bc49fb7a9fe52fb9ccc073181bed1737b" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 2"/>
+	</software>
+
+	<software name="games02b" cloneof="games02">
+		<description>Games Disk 02 (Alt 2)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games_02.img" size="737280" crc="4a9f90b8" sha1="39bc441baf18fe9e414ab6734b4d8c77f5182dd4" offset="0" />
 			</dataarea>
@@ -150,19 +183,30 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 03.img" size="737280" crc="894d1c1d" sha1="335d445a7ea5365d288c7cefe1969ff4916c4a61" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games03a" cloneof="games03">
+		<description>Games Disk 03 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_03 (19xx)(ep-forever-forum).img" size="737280" crc="d4d14fd6" sha1="f759c52395a5df4c7aef16e03a72829e5ce5d05c" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 2"/>
+	</software>
+
+	<software name="games03b" cloneof="games03">
+		<description>Games Disk 03 (Alt 2)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games_03.img" size="737280" crc="ce9aaf2a" sha1="f0c273ae11ff2d8795e9350de63bca5b3c0e9f97" offset="0" />
 			</dataarea>
@@ -187,31 +231,54 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 04.img" size="737280" crc="43ffd5ed" sha1="0b03c8f7e3ea84e5b87ba4895b519e61926f1658" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games04a" cloneof="games04">
+		<description>Games Disk 04 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_04 (19xx)(ep-forever-forum).img" size="737280" crc="4633a544" sha1="3986e749061a5d9dbbd30ae87a9116e7be2b81ab" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 2"/>
+	</software>
+
+	<software name="games04b" cloneof="games04">
+		<description>Games Disk 04 (Alt 2)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games_04.img" size="737280" crc="f9add1ae" sha1="cebb1920a0a388344d0c5e30da71b8ef85a1b95a" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop4" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 3"/>
+	</software>
+
+	<software name="games04c" cloneof="games04">
+		<description>Games Disk 04 (Alt 3)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games_04a.img" size="737280" crc="af927eb8" sha1="ef494d4c187bd3fc558c29d2c62b1610c06566b3" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop5" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 4"/>
+	</software>
+
+	<software name="games04d" cloneof="games04">
+		<description>Games Disk 04 (Alt 4)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games_04b.img" size="737280" crc="72af000e" sha1="022caac0a1b1a86a886eb16f97aedc34b23bf9c1" offset="0" />
 			</dataarea>
@@ -236,19 +303,30 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 05.img" size="737280" crc="037c703b" sha1="4ccdb5a8af17ddd9e78576b926c70f9febb83f0e" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games05a" cloneof="games05">
+		<description>Games Disk 05 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_05 (19xx)(ep-forever-forum).img" size="737280" crc="a3e4f02e" sha1="9804e87c33a67d987eef2261b4fc2b6e6cc0070d" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 2"/>
+	</software>
+
+	<software name="games05b" cloneof="games05">
+		<description>Games Disk 05 (Alt 2)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games_05.img" size="737280" crc="e4940653" sha1="105c6948f0fa8020f879277fe7449e166397c98a" offset="0" />
 			</dataarea>
@@ -273,19 +351,30 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 06.img" size="737280" crc="13b35dc0" sha1="031d8dc21a740b87f231996aa21cbe237a3ac539" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games06a" cloneof="games06">
+		<description>Games Disk 06 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_06 (19xx)(ep-forever-forum).img" size="737280" crc="7e9f4612" sha1="9b5c02510db27decc31c3d430317f216e383e246" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 2"/>
+	</software>
+
+	<software name="games06b" cloneof="games06">
+		<description>Games Disk 06 (Alt 2)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games_06.img" size="737280" crc="c95dd072" sha1="71141128dcff72d168d5371e18c3bd9213373025" offset="0" />
 			</dataarea>
@@ -310,13 +399,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 07.img" size="737280" crc="ec1929f9" sha1="c80f1e0792b861b989a052ff9c65626885292144" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games07a" cloneof="games07">
+		<description>Games Disk 07 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_07 (19xx)(ep-forever-forum).img" size="737280" crc="d805e9ca" sha1="15d3d79e0f7e3f28974296a3033bf96871ef9a14" offset="0" />
 			</dataarea>
@@ -341,13 +435,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_08 (19xx)(ep-forever-forum).img" size="737280" crc="181f62fa" sha1="7570e771212f370ecc4c2bd29e5ebe3a1d227549" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games08a" cloneof="games08">
+		<description>Games Disk 08 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games_08.img" size="737280" crc="63c99247" sha1="681f78194cd55269acc85f555a63211a99d735d5" offset="0" />
 			</dataarea>
@@ -372,25 +471,42 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 09.img" size="737280" crc="786b5a6e" sha1="f5285fa81ef5f6c39317f8faae6dacf2c9979bf6" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games09a" cloneof="games09">
+		<description>Games Disk 09 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_09 (19xx)(ep-forever-forum).img" size="737280" crc="6b2b77ab" sha1="2c06c5ce1d503de4827590af549849e07f01237e" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 2"/>
+	</software>
+
+	<software name="games09b" cloneof="games09">
+		<description>Games Disk 09 (Alt 2)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games_09.img" size="737280" crc="6ffac0fc" sha1="bae3385998daa00775fe891bad2c06393ae92f6d" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop4" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 3"/>
+	</software>
+
+	<software name="games09c" cloneof="games09">
+		<description>Games Disk 09 (Alt 3)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games_09a.img" size="737280" crc="ad32d220" sha1="b49da107b234c13fc4586a22127e412125acac97" offset="0" />
 			</dataarea>
@@ -439,13 +555,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 11.img" size="737280" crc="3f70ca09" sha1="353a12c10540baa332eb07208c300283ff00cd0a" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games11a" cloneof="games11">
+		<description>Games Disk 11 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_11 (19xx)(ep-forever-forum).img" size="737280" crc="bd240b19" sha1="c0ace0aab56d025199ba15ed63b5e8af4b3d3193" offset="0" />
 			</dataarea>
@@ -470,19 +591,30 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 12.img" size="737280" crc="6a21afed" sha1="93183ecfb12783d164931257258f1a3f3b920be3" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games12a" cloneof="games12">
+		<description>Games Disk 12 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_12 (19xx)(ep-forever-forum).img" size="737280" crc="a6d8c2aa" sha1="02e2415967d0fc70506015bd34392783f2ea9737" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 2"/>
+	</software>
+
+	<software name="games12b" cloneof="games12">
+		<description>Games Disk 12 (Alt 2)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games_12.img" size="737280" crc="c57b9372" sha1="9ca73b3915d9c16ca484f9d39782eb198f65e8e4" offset="0" />
 			</dataarea>
@@ -507,13 +639,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 13.img" size="737280" crc="98bc54a5" sha1="6012ebb7227ba73fe3635764a569ba2454099861" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games13a" cloneof="games13">
+		<description>Games Disk 13 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_13 (19xx)(ep-forever-forum).img" size="737280" crc="17a19be5" sha1="3898b10dc27b6caca7afc8441be627f30584d5e6" offset="0" />
 			</dataarea>
@@ -538,13 +675,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 14.img" size="737280" crc="e9136aab" sha1="1f95ce3e564908651dfa72e2cd7cb291ec70f1c6" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games14a" cloneof="games14">
+		<description>Games Disk 14 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_14 (19xx)(ep-forever-forum).img" size="737280" crc="81288a32" sha1="00ed110691ebc1aa1dbfc10c68ecce12bb728290" offset="0" />
 			</dataarea>
@@ -569,13 +711,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 15.img" size="737280" crc="a0d75347" sha1="041c16c6fe773393491f36f467996bcb1df39417" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games15a" cloneof="games15">
+		<description>Games Disk 15 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_15 (19xx)(ep-forever-forum).img" size="737280" crc="e008c143" sha1="d74477d0169dc75b25ac961d2a249cb3b28bf183" offset="0" />
 			</dataarea>
@@ -600,13 +747,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 16.img" size="737280" crc="9737b12b" sha1="991d7ebfbd39f252269cead5ccc5ca42abe85827" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games16a" cloneof="games16">
+		<description>Games Disk 16 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_16 (19xx)(ep-forever-forum).img" size="737280" crc="3d1c51f8" sha1="2108b05f68ab993f9e849be6c3ad752813548691" offset="0" />
 			</dataarea>
@@ -631,19 +783,30 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 17.img" size="737280" crc="b4fd4801" sha1="b19158cba4401e28c0c56360097de0b91eee4807" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games17a" cloneof="games17">
+		<description>Games Disk 17 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_17 (19xx)(ep-forever-forum).img" size="737280" crc="11f3decc" sha1="d642ecc264b6d6085d10976089ae1c3790b05131" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 2"/>
+	</software>
+
+	<software name="games17b" cloneof="games17">
+		<description>Games Disk 17 (Alt 2)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games_17.img" size="737280" crc="f0c54b06" sha1="8b5a92d60ee803736665bc9ea84f2e6f9ab3c1f6" offset="0" />
 			</dataarea>
@@ -668,13 +831,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 18.img" size="737280" crc="ff7d2529" sha1="af114c2e6e85909464472231eaf651b182eeb393" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games18a" cloneof="games18">
+		<description>Games Disk 18 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_18 (19xx)(ep-forever-forum).img" size="737280" crc="675b304b" sha1="3ed1cfac91bf72a18044a06d4152e36d3a72abc9" offset="0" />
 			</dataarea>
@@ -699,13 +867,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 19.img" size="737280" crc="9dc1fb76" sha1="a083a71dbe638d8761b1405861da35901892d2f5" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games19a" cloneof="games19">
+		<description>Games Disk 19 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_19 (19xx)(ep-forever-forum).img" size="737280" crc="e330e63c" sha1="afa9609d03ce871ae872cab5542640f752072068" offset="0" />
 			</dataarea>
@@ -778,13 +951,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 22.img" size="737280" crc="1e5c3b70" sha1="2f5003f81a7cf1249f2b772e2667c305c4a1ad62" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games22a" cloneof="games22">
+		<description>Games Disk 22 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_22 (19xx)(ep-forever-forum).img" size="737280" crc="0d4e2fdf" sha1="c5c00a54ee0f3fd05d34d5ac16e935f8f2eb1d85" offset="0" />
 			</dataarea>
@@ -809,13 +987,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 23.img" size="737280" crc="a06bf91d" sha1="7ec126128b9aa26256310ea2aadc577308085c5b" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games23a" cloneof="games23">
+		<description>Games Disk 23 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_23 (19xx)(ep-forever-forum).img" size="737280" crc="657d25cd" sha1="930dea450bf243afc93d5ba8ebf5774b1d19d087" offset="0" />
 			</dataarea>
@@ -840,13 +1023,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 24.img" size="737280" crc="f937c310" sha1="6e9df2c3a518e7f40216bda49d423ea283601f0c" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games24a" cloneof="games24">
+		<description>Games Disk 24 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_24 (19xx)(ep-forever-forum).img" size="737280" crc="e337b5d0" sha1="f9482f3f3662f1082604a3655b963f23dc2fe5b3" offset="0" />
 			</dataarea>
@@ -871,19 +1059,30 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 25.img" size="737280" crc="13aa36f5" sha1="5a528d68cc430887967566cd00f957a4b0e06840" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games25a" cloneof="games25">
+		<description>Games Disk 25 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_25 (19xx)(ep-forever-forum).img" size="737280" crc="62c0f3d5" sha1="a9bef2de3d2a71f93a77904a05fd73fa40e9b4e4" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 2"/>
+	</software>
+
+	<software name="games25b" cloneof="games25">
+		<description>Games Disk 25 (Alt 2)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games_25.img" size="737280" crc="57f1a9da" sha1="7b17966ff7910c2a158d704737b6472c36118ef3" offset="0" />
 			</dataarea>
@@ -908,13 +1107,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 26.img" size="737280" crc="e275381b" sha1="69cc24fb313041551efe81f74c94a25274423a37" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games26a" cloneof="games26">
+		<description>Games Disk 26 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_26 (19xx)(ep-forever-forum).img" size="737280" crc="56079b8e" sha1="a11dca5a307425a68c8bc0575074ea473efc7cd1" offset="0" />
 			</dataarea>
@@ -939,13 +1143,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 27.img" size="737280" crc="498bfe9c" sha1="59192b195e2a5125fdc53c80fe5bf18941f049f6" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games27a" cloneof="games27">
+		<description>Games Disk 27 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_27 (19xx)(ep-forever-forum).img" size="737280" crc="1c57d906" sha1="282f511fa0fd5db2fcc1b2ae98e665b57f2a4c57" offset="0" />
 			</dataarea>
@@ -1018,13 +1227,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 30.img" size="737280" crc="ef86b20a" sha1="8b731a2947a6866fcd20ea5fbc530bcebb96c949" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games30a" cloneof="games30">
+		<description>Games Disk 30 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_30 (19xx)(ep-forever-forum).img" size="737280" crc="b86adcc8" sha1="b8cf3ee4f625a547b7d611c92a8b358abeddca17" offset="0" />
 			</dataarea>
@@ -1049,13 +1263,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 31.img" size="737280" crc="941b87c5" sha1="eec4c471a426ac3886a3c07262af4fdc11ff99c5" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games31a" cloneof="games31">
+		<description>Games Disk 31 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_31 (19xx)(ep-forever-forum).img" size="737280" crc="e82468ec" sha1="b3dce54a183a1a3a0dd2e187015a688fc5d2ab0c" offset="0" />
 			</dataarea>
@@ -1080,19 +1299,30 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 32.img" size="737280" crc="841d7f24" sha1="ec6b89ed68b6349c8f0dcb31494978326f5f90e5" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games32a" cloneof="games32">
+		<description>Games Disk 32 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_32 (19xx)(ep-forever-forum).img" size="737280" crc="bd4270fe" sha1="2e87328e2e3e9a283b9c9a4648c3cf37849d64c5" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 2"/>
+	</software>
+
+	<software name="games32b" cloneof="games32">
+		<description>Games Disk 32 (Alt 2)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games_32.img" size="737280" crc="bfb3d334" sha1="e3ed4ca24bc5f58951561e7ba345f4115623fab2" offset="0" />
 			</dataarea>
@@ -1117,13 +1347,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 33.img" size="737280" crc="24bc4619" sha1="af1a16cb5455536c519d75e1c3bc0b7e5dbfb436" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games33a" cloneof="games33">
+		<description>Games Disk 33 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_33 (19xx)(ep-forever-forum).img" size="737280" crc="e649c717" sha1="cdc492b142f9dec805ce2ee077c20d3b26953414" offset="0" />
 			</dataarea>
@@ -1148,13 +1383,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 34.img" size="737280" crc="724443e2" sha1="32d7b8600681bc8613d44db416472d82a985c05d" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games34a" cloneof="games34">
+		<description>Games Disk 34 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_34 (19xx)(ep-forever-forum).img" size="737280" crc="5ef9ceac" sha1="e074536cf034bf82b0f3caf3d2225cd73bd58b3d" offset="0" />
 			</dataarea>
@@ -1179,13 +1419,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 35.img" size="737280" crc="8d0c5c68" sha1="a3075957d86ae9a21546626da7b3a27a516e25be" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games35a" cloneof="games35">
+		<description>Games Disk 35 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_35 (19xx)(ep-forever-forum).img" size="737280" crc="06a9d914" sha1="ece83e79b4732f964d35e4906e5f34872e80c1d6" offset="0" />
 			</dataarea>
@@ -1210,13 +1455,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 36.img" size="737280" crc="d67673ff" sha1="7609477b4b409173f503595eeaee3c469d1bfff8" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games36a" cloneof="games36">
+		<description>Games Disk 36 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_36 (19xx)(ep-forever-forum).img" size="737280" crc="929b9a8b" sha1="e801f4ae821e000cc81889d159c56b85795d42bb" offset="0" />
 			</dataarea>
@@ -1241,13 +1491,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 37.img" size="737280" crc="7e03d990" sha1="4e9e8e151451807ff0f57f4e53b5dcbea456905a" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games37a" cloneof="games37">
+		<description>Games Disk 37 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_37 (19xx)(ep-forever-forum).img" size="737280" crc="7cc40a00" sha1="b9af6364bdab5b1ea3e07eae8d29a0a58f883274" offset="0" />
 			</dataarea>
@@ -1272,13 +1527,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 38.img" size="737280" crc="6db89e33" sha1="3254341da1dc8d9077ecf2c0104327734ce8e8ad" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games38a" cloneof="games38">
+		<description>Games Disk 38 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_38 (19xx)(ep-forever-forum).img" size="737280" crc="b4a52e6c" sha1="4c9c6016533f1b17943946cf06236048b3464fb2" offset="0" />
 			</dataarea>
@@ -1303,19 +1563,30 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 39.img" size="737280" crc="1d2cb921" sha1="ae6b97d0e74da578061a8a25d71900ec02fd4db7" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games39a" cloneof="games39">
+		<description>Games Disk 39 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_39 (19xx)(ep-forever-forum).img" size="737280" crc="cc7bfbbd" sha1="5f0bf5e1531fde4f53efe682ae8891f74517a902" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 2"/>
+	</software>
+
+	<software name="games39b" cloneof="games39">
+		<description>Games Disk 39 (Alt 2)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games_39.img" size="737280" crc="90d5e5f8" sha1="7d35e738af2ac1a03f4d634588e69feb1f346701" offset="0" />
 			</dataarea>
@@ -1340,13 +1611,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 40.img" size="737280" crc="5a03cd37" sha1="74f804bfcc5ac4629762b9bfb8309f1ab15a026f" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games40a" cloneof="games40">
+		<description>Games Disk 40 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_40 (19xx)(ep-forever-forum).img" size="737280" crc="29e43d83" sha1="2fd085991b8eae4812f522fb254cde5f9bb92277" offset="0" />
 			</dataarea>
@@ -1371,13 +1647,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 41.img" size="737280" crc="06e571a9" sha1="012b9b26b116937d1ea0b2611372d2dc46a4ce50" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games41a" cloneof="games41">
+		<description>Games Disk 41 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_41 (19xx)(ep-forever-forum).img" size="737280" crc="a28230e3" sha1="b19f16d39a155a7032d4a95df0e4c54993f8eaf9" offset="0" />
 			</dataarea>
@@ -1402,13 +1683,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 42.img" size="737280" crc="6be3edb2" sha1="810ef6c2ae0620c9e42ca456b8d43895f44abed3" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games42a" cloneof="games42">
+		<description>Games Disk 42 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_42 (19xx)(ep-forever-forum).img" size="737280" crc="ff9890fb" sha1="48e542c2c255ed768fb49448bd302480f0a9baf3" offset="0" />
 			</dataarea>
@@ -1433,13 +1719,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 43.img" size="737280" crc="9df1dbbc" sha1="471b1fc520b1bd6589d06c27277ba289d511dfa8" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games43a" cloneof="games43">
+		<description>Games Disk 43 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_43 (19xx)(ep-forever-forum).img" size="737280" crc="d39f9590" sha1="201776dd3546611e61811bf3015ed4c0cb8831af" offset="0" />
 			</dataarea>
@@ -1464,13 +1755,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 44.img" size="737280" crc="33e4f0e5" sha1="b025aac4a0e8f1b370f2990c26dda68a9b1c06fc" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games44a" cloneof="games44">
+		<description>Games Disk 44 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_44 (19xx)(ep-forever-forum).img" size="737280" crc="db9b75e7" sha1="5a9809d1d5806084791771a146e063711854307b" offset="0" />
 			</dataarea>
@@ -1495,13 +1791,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 45.img" size="737280" crc="9d257a35" sha1="7469a69c94c7978f199ae22e33ef6c91da06e3fc" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games45a" cloneof="games45">
+		<description>Games Disk 45 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_45 (19xx)(ep-forever-forum).img" size="737280" crc="1e025011" sha1="184ec5b89fc3786b531fd79f98a9bb90c9828d85" offset="0" />
 			</dataarea>
@@ -1526,13 +1827,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 46.img" size="737280" crc="7aa6371d" sha1="a38b58742e9c43aab7c6479e660d297e8a02d0d2" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games46a" cloneof="games46">
+		<description>Games Disk 46 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_46 (19xx)(ep-forever-forum).img" size="737280" crc="30bf6e0c" sha1="ec0278ff7562a210002617df1e708372da748409" offset="0" />
 			</dataarea>
@@ -1557,13 +1863,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 47.img" size="737280" crc="75c22fe1" sha1="959da466e2baf3ca3c44684b61a9afcc1af07f26" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games47a" cloneof="games47">
+		<description>Games Disk 47 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_47 (19xx)(ep-forever-forum).img" size="737280" crc="2b23b607" sha1="30f5e6f1623513595746e6ee9c35ed7440e824b8" offset="0" />
 			</dataarea>
@@ -1588,13 +1899,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 48.img" size="737280" crc="82f55968" sha1="9f859d3ba1b0459704ab4a5e165c260f1303bcf3" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games48a" cloneof="games48">
+		<description>Games Disk 48 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_48 (19xx)(ep-forever-forum).img" size="737280" crc="d1adddfa" sha1="0e8646db29477ea3a40a613d0050bf99be906074" offset="0" />
 			</dataarea>
@@ -1619,13 +1935,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 49.img" size="737280" crc="739c885f" sha1="d9d7449177ac12b9eeeedef5799677b0317d6035" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games49a" cloneof="games49">
+		<description>Games Disk 49 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_49 (19xx)(ep-forever-forum).img" size="737280" crc="1239f524" sha1="73e95240a2bba80f9716f6d1da7743c9f3faf0d2" offset="0" />
 			</dataarea>
@@ -1650,13 +1971,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 50.img" size="737280" crc="ddb2861c" sha1="fb8a740d9b9a80d1c5e5fa75f49b5113449a2868" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games50a" cloneof="games50">
+		<description>Games Disk 50 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_50 (19xx)(ep-forever-forum).img" size="737280" crc="a6d0ab85" sha1="d3b2686f4213d09e8fe2718b3e235c07b5f00b54" offset="0" />
 			</dataarea>
@@ -1681,13 +2007,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 51.img" size="737280" crc="b25f4295" sha1="d103381686370e5f61bb7e2b1851c17fed012472" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games51a" cloneof="games51">
+		<description>Games Disk 51 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_51 (19xx)(ep-forever-forum).img" size="737280" crc="12f41cb6" sha1="8ae3bc4ac6e0fe000cd9d92c910bd43dd8ee0c60" offset="0" />
 			</dataarea>
@@ -1712,13 +2043,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 52.img" size="737280" crc="ab650e43" sha1="f70e7edc47b675fc538eea55201d7a48e5cac24a" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games52a" cloneof="games52">
+		<description>Games Disk 52 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_52 (19xx)(ep-forever-forum).img" size="737280" crc="1dd6e08f" sha1="b5fb0dd7dd8114a81f2cdad839248cb9c85fa72c" offset="0" />
 			</dataarea>
@@ -1743,13 +2079,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 53.img" size="737280" crc="d4194fb0" sha1="1b1d0afe5dfdddd8100ad6f30b347899eac99ed4" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games53a" cloneof="games53">
+		<description>Games Disk 53 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_53 (19xx)(ep-forever-forum).img" size="737280" crc="9c42271b" sha1="0fed0ef0cf46b59dc44f7dbd1ef2c2a57f7a447a" offset="0" />
 			</dataarea>
@@ -1774,13 +2115,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 54.img" size="737280" crc="e4e0aa1b" sha1="aa8e53fb91643697187035700c3c0793329487ff" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games54a" cloneof="games54">
+		<description>Games Disk 54 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_54 (19xx)(ep-forever-forum).img" size="737280" crc="4203f85d" sha1="e6c2ff3b66ed40d1367015b7fd0eb145315dc380" offset="0" />
 			</dataarea>
@@ -1805,13 +2151,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 55.img" size="737280" crc="6f93820c" sha1="83bcbd60a0aec6d831a32f2aa5f34154d326ebc4" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games55a" cloneof="games55">
+		<description>Games Disk 55 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_55 (19xx)(ep-forever-forum).img" size="737280" crc="0666d292" sha1="989c7acbbaed92037f9025fc9e7f74e6656c4024" offset="0" />
 			</dataarea>
@@ -1836,13 +2187,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 56.img" size="737280" crc="6311e9fa" sha1="e41c9c1326b6e85b47f51a0ad52189128e98200b" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games56a" cloneof="games56">
+		<description>Games Disk 56 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_56 (19xx)(ep-forever-forum).img" size="737280" crc="db171fc6" sha1="7364904f83975f1ff7809ebde2aa4ad63b632d90" offset="0" />
 			</dataarea>
@@ -1867,13 +2223,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 57.img" size="737280" crc="85d76a31" sha1="c1819d6cf27e80e5edaa9376465e656863d58068" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games57a" cloneof="games57">
+		<description>Games Disk 57 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_57 (19xx)(ep-forever-forum).img" size="737280" crc="be56573b" sha1="ae36491f75f203da20b930bb3d3b7e41b407046c" offset="0" />
 			</dataarea>
@@ -1898,13 +2259,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 58.img" size="737280" crc="9996f0ba" sha1="581e7b0a617273a03a1aa61d702b92a271d581e0" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games58a" cloneof="games58">
+		<description>Games Disk 58 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_58 (19xx)(ep-forever-forum).img" size="737280" crc="f7ead5e3" sha1="c15bbe0448ad7a1cedeb1bc04f3ac7497aa12d2a" offset="0" />
 			</dataarea>
@@ -1929,13 +2295,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 59.img" size="737280" crc="cd01916b" sha1="565af8351bb79baba24858d30b40b5d808ae018d" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games59a" cloneof="games59">
+		<description>Games Disk 59 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_59 (19xx)(ep-forever-forum).img" size="737280" crc="0aeb25f5" sha1="7f55dc9ea27da1bdfec16c001f4dfa40778638ec" offset="0" />
 			</dataarea>
@@ -1960,13 +2331,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 60.img" size="737280" crc="8002a388" sha1="3b36299be005513a54f537d48c744626a9c26065" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games60a" cloneof="games60">
+		<description>Games Disk 60 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_60 (19xx)(ep-forever-forum).img" size="737280" crc="724249e4" sha1="38f81020a16348323598fe25dc4b9b20d8d5b175" offset="0" />
 			</dataarea>
@@ -1991,13 +2367,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 61.img" size="737280" crc="9a90b7a6" sha1="62c84a41a606007b3bb2a05e0b6b236dd8bf89dd" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games61a" cloneof="games61">
+		<description>Games Disk 61 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_61 (19xx)(ep-forever-forum).img" size="737280" crc="92176d7e" sha1="157788330a9752939763418de793df706eec92c4" offset="0" />
 			</dataarea>
@@ -2022,13 +2403,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 62.img" size="737280" crc="68970847" sha1="c75c5330015bcf03f7cbed8c2c78dc3f682d6f09" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games62a" cloneof="games62">
+		<description>Games Disk 62 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_62 (19xx)(ep-forever-forum).img" size="737280" crc="c56d1368" sha1="668daf6ffa7e7f3adfe5bc87ff1020f4de9d8a89" offset="0" />
 			</dataarea>
@@ -2053,13 +2439,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 63.img" size="737280" crc="fbd91f27" sha1="1dd90244f0501c8f9abc83a3253b072f30cc842e" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games63a" cloneof="games63">
+		<description>Games Disk 63 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_63 (19xx)(ep-forever-forum).img" size="737280" crc="9d6cd24f" sha1="d4410ad67fda8ff893a93ab53f502af7c0320384" offset="0" />
 			</dataarea>
@@ -2084,13 +2475,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 64.img" size="737280" crc="ff117a4c" sha1="4f4b467515d8e320a0c1d789ebe7be83f4e1ebe7" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games64a" cloneof="games64">
+		<description>Games Disk 64 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_64 (19xx)(ep-forever-forum).img" size="737280" crc="679e3cbc" sha1="4273b7479e86c41e64c9e741717476ea15e5294a" offset="0" />
 			</dataarea>
@@ -2115,13 +2511,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 65.img" size="737280" crc="08a93863" sha1="f1b9fcfadc79343e6b73879fefa0782bd040ced0" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games65a" cloneof="games65">
+		<description>Games Disk 65 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_65 (19xx)(ep-forever-forum).img" size="737280" crc="d90199da" sha1="eddcbb951d800c8e73f2378f1d265463b81ddb76" offset="0" />
 			</dataarea>
@@ -2146,13 +2547,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 66.img" size="737280" crc="a6712f32" sha1="20b3336ce1a3f4d50912e5a0cc328cc10e47eeba" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games66a" cloneof="games66">
+		<description>Games Disk 66 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_66 (19xx)(ep-forever-forum).img" size="737280" crc="d27c5892" sha1="b91de08e643a5cf48da5227aa2492830bc0a7749" offset="0" />
 			</dataarea>
@@ -2177,13 +2583,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 67.img" size="737280" crc="473920a1" sha1="83e67b2e749735c28d4ea9f4aa59706cde71c600" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games67a" cloneof="games67">
+		<description>Games Disk 67 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_67 (19xx)(ep-forever-forum).img" size="737280" crc="225438ea" sha1="ceb76d18422c03dc669004e590e99101036f3d9a" offset="0" />
 			</dataarea>
@@ -2208,13 +2619,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 68.img" size="737280" crc="5a5734d2" sha1="519395d4c8945d4bb44a56c2ece54fb0d81c3f1d" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games68a" cloneof="games68">
+		<description>Games Disk 68 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_68 (19xx)(ep-forever-forum).img" size="737280" crc="f69d8297" sha1="10af6f78ca215a9862198f7837fb718a18a07535" offset="0" />
 			</dataarea>
@@ -2239,19 +2655,30 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 69.img" size="737280" crc="e0ea973f" sha1="0027f65130e0de8372a71653603173c4eda9e6c8" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games69a" cloneof="games69">
+		<description>Games Disk 69 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_69 (19xx)(ep-forever-forum).img" size="737280" crc="90e42dd7" sha1="d25cf523ce9ca295c18fd950a4e7f899a0f3da2f" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 2"/>
+	</software>
+
+	<software name="games69b" cloneof="games69">
+		<description>Games Disk 69 (Alt 2)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games_69.img" size="737280" crc="9c4e565d" sha1="90c738861b37b4e2ac55fbd9b06cc933d0ec4597" offset="0" />
 			</dataarea>
@@ -2276,13 +2703,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 70.img" size="737280" crc="06ab871d" sha1="a2c9bb803e213485ba1cbadd46764cf66bdcb561" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games70a" cloneof="games70">
+		<description>Games Disk 70 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_70 (19xx)(ep-forever-forum).img" size="737280" crc="d03f45a5" sha1="7af7bb322295ea33c603a803cdce0656246c4385" offset="0" />
 			</dataarea>
@@ -2307,13 +2739,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 71.img" size="737280" crc="911ea12a" sha1="07264f2b3513eb4a3ddba76e95e32e397fa41bca" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games71a" cloneof="games71">
+		<description>Games Disk 71 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_71 (19xx)(ep-forever-forum).img" size="737280" crc="c72afe23" sha1="b602ed4896a0107824df493629c61c08d9ae1e0c" offset="0" />
 			</dataarea>
@@ -2338,13 +2775,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 72.img" size="737280" crc="14e5f873" sha1="2dbc28fa3488e02435a32b4a8d74243df5b08c5c" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games72a" cloneof="games72">
+		<description>Games Disk 72 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_72 (19xx)(ep-forever-forum).img" size="737280" crc="6ba04646" sha1="cfbd4dd16e27292ab866565b18508cc0c2e4d37c" offset="0" />
 			</dataarea>
@@ -2369,19 +2811,30 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 73.img" size="737280" crc="71977bf1" sha1="42df211eeea16ea9dcec3a9a107772b1a9b620b2" offset="0" />
 			</dataarea>
 		</part>
+	</software>
+
+	<software name="games73a" cloneof="games73">
+		<description>Games Disk 73 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
 		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_73 (19xx)(ep-forever-forum).img" size="737280" crc="4d088817" sha1="dc7d3e3c0eebd4e5dc1a41396f01b8d7c430db95" offset="0" />
 			</dataarea>
 		</part>
+	</software>
+
+	<software name="games73b" cloneof="games73">
+		<description>Games Disk 73 (Alt 2)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
 		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 2"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games_73.img" size="737280" crc="df8cb57f" sha1="f59fc9aa1af5a37d274efeebe32727946eba4465" offset="0" />
 			</dataarea>
@@ -2406,13 +2859,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games disk 74.img" size="737280" crc="3d7c0af2" sha1="731c8f27218c8f158a9ca014b131518c6bec35e1" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="games74a" cloneof="games74">
+		<description>Games Disk 74 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games compilation disk_74 (19xx)(ep-forever-forum).img" size="737280" crc="6c72a738" sha1="f2331a489a620b439a9cc446e93f35f71dd343be" offset="0" />
 			</dataarea>
@@ -2432,7 +2890,7 @@
 	</software>
 
 	<software name="isdos">
-		<description>IS-DOS v1.0</description>
+		<description>IS-DOS (v1.0)</description>
 		<year>1985</year>
 		<publisher>Intelligent Software</publisher>
 
@@ -2528,7 +2986,7 @@
 	</software>
 
 	<software name="dbase242hu" cloneof="dbase23">
-		<description>dBase II (v2.42) (Hun)</description>
+		<description>dBase II (Hun, v2.42)</description>
 		<year>1984</year>
 		<publisher>Ashton-Tate/Babsoft</publisher>
 
@@ -2647,18 +3105,6 @@
 		</part>
 	</software>
 
-	<software name="demo10">
-		<description>Demo Disk 10</description>
-		<year>19??</year>
-		<publisher>ep128.hu</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="demo disk 10.img" size="737280" crc="f260bda5" sha1="7bdcc336811a107c9a1b22690a5c662f15273e0a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="demo2">
 		<description>Demo Disk 2</description>
 		<year>19??</year>
@@ -2755,25 +3201,48 @@
 		</part>
 	</software>
 
+	<software name="demo10">
+		<description>Demo Disk 10</description>
+		<year>19??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="demo disk 10.img" size="737280" crc="f260bda5" sha1="7bdcc336811a107c9a1b22690a5c662f15273e0a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="develop">
 		<description>Develop</description>
 		<year>19??</year>
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="develop.img" size="737280" crc="6ce63239" sha1="b80ab43829a09253cb2ac3c28cb17ff07465c8e0" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="developa" cloneof="develop">
+		<description>Develop (Alt)</description>
+		<year>19??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="developa.img" size="737280" crc="59e4549a" sha1="23a22d713f9361e97aeee5552fdc242d7a499824" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 2"/>
+	</software>
+
+	<software name="developb" cloneof="develop">
+		<description>Develop (Alt 2)</description>
+		<year>19??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="developb.img" size="737280" crc="4787d035" sha1="65f7d4c3449d2c2890e6455f745235220c56fab6" offset="0" />
 			</dataarea>
@@ -2884,23 +3353,36 @@
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 2, Alt"/>
-			<dataarea name="flop" size="737280">
-				<rom name="slide2-2.img" size="737280" crc="7ccdf476" sha1="6360dd8f5e97de99d672ce56c76cc7707adcf8e1" offset="0" />
-			</dataarea>
-		</part>		
-		<part name="flop4" interface="floppy_3_5">
 		<feature name="part_id" value="Disk 3"/>
 			<dataarea name="flop" size="737280">
 				<rom name="enterprise slideshow 2 (disk 3).img" size="737280" crc="6529cfff" sha1="0bdb20e23788e01612af0d5247305501c9d2b440" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop5" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 3, Alt"/>
+	</software>
+
+	<software name="slidshw2a" cloneof="slidshw2">
+		<description>Enterprise Slideshow 2 (Alt)</description>
+		<year>2008</year>
+		<publisher>Lacika</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="enterprise slideshow 2 (disk 1).img" size="737280" crc="15a58f55" sha1="549f757e71f0e0b18c5de7745de0ef83c4b49aed" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="737280">
+				<rom name="slide2-2.img" size="737280" crc="7ccdf476" sha1="6360dd8f5e97de99d672ce56c76cc7707adcf8e1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 3"/>
 			<dataarea name="flop" size="737280">
 				<rom name="slide2-3.img" size="737280" crc="21a26dfa" sha1="0d380b4d3526fb66575b3e31f6f3e58c7571ab6c" offset="0" />
 			</dataarea>
-		</part>		
+		</part>
 	</software>
 
 	<software name="slidshw3">
@@ -2915,31 +3397,38 @@
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
-			<dataarea name="flop" size="737280">
-				<rom name="enterprise slideshow 3 - disk 1.img" size="737280" crc="98775fa2" sha1="920b2c8a78b7674307c19b104006b7729aacf92a" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
 		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="737280">
 				<rom name="enterprise slideshow 3 (disk 2).img" size="737280" crc="0281e290" sha1="a5648586e02235cfff34d4bcc065509c78f3a8ca" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop4" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 2, Alt"/>
-			<dataarea name="flop" size="737280">
-				<rom name="enterprise slideshow 3 - disk 2.img" size="737280" crc="3b15a112" sha1="c133e6422d2347bf590b17ea6a6f2d6de5c9e2ee" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop5" interface="floppy_3_5">
+		<part name="flop3" interface="floppy_3_5">
 		<feature name="part_id" value="Disk 3"/>
 			<dataarea name="flop" size="737280">
 				<rom name="enterprise slideshow 3 (disk 3).img" size="737280" crc="a7a8f48f" sha1="4f6904f7a7579a308f240dba41f71132f25a56aa" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop6" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 3, Alt"/>
+	</software>
+
+	<software name="slidshw3a" cloneof="slidshw3">
+		<description>Enterprise Slideshow 3 (Alt)</description>
+		<year>2009</year>
+		<publisher>Lacika</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="enterprise slideshow 3 - disk 1.img" size="737280" crc="98775fa2" sha1="920b2c8a78b7674307c19b104006b7729aacf92a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="737280">
+				<rom name="enterprise slideshow 3 - disk 2.img" size="737280" crc="3b15a112" sha1="c133e6422d2347bf590b17ea6a6f2d6de5c9e2ee" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 3"/>
 			<dataarea name="flop" size="737280">
 				<rom name="enterprise slideshow 3 - disk 3.img" size="737280" crc="3fb54987" sha1="bf74fc1ed9baab4c7bd54963f433578e429d8a2f" offset="0" />
 			</dataarea>
@@ -2958,31 +3447,38 @@
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
-			<dataarea name="flop" size="737280">
-				<rom name="girls2-1.img" size="737280" crc="a3f50b49" sha1="a3df6cb31efab3d040ed16493d8eebacb57ec63d" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
 		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="737280">
 				<rom name="girls 2 (disk 2).img" size="737280" crc="cb8d8085" sha1="82ce4e0e160dd80378858644148a1a9ee018b226" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop4" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 2, Alt"/>
-			<dataarea name="flop" size="737280">
-				<rom name="girls2-2.img" size="737280" crc="908a1cae" sha1="f297f15702fd95f863203f232ed0f0b472401b01" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop5" interface="floppy_3_5">
+		<part name="flop3" interface="floppy_3_5">
 		<feature name="part_id" value="Disk 3"/>
 			<dataarea name="flop" size="737280">
 				<rom name="girls 2 (disk 3).img" size="737280" crc="0a0325b0" sha1="311e94284620d864ae93bd2afe019dd2d3d2d0b9" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop6" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 3, Alt"/>
+	</software>
+
+	<software name="girls2a" cloneof="girls2">
+		<description>Girls 2 (Alt)</description>
+		<year>2008</year>
+		<publisher>Lacika</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="girls2-1.img" size="737280" crc="a3f50b49" sha1="a3df6cb31efab3d040ed16493d8eebacb57ec63d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="737280">
+				<rom name="girls2-2.img" size="737280" crc="908a1cae" sha1="f297f15702fd95f863203f232ed0f0b472401b01" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 3"/>
 			<dataarea name="flop" size="737280">
 				<rom name="girls2-3.img" size="737280" crc="afe63402" sha1="255a4f32b1e652fe57acbcce3218d6835425d4c9" offset="0" />
 			</dataarea>
@@ -3001,31 +3497,38 @@
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
-			<dataarea name="flop" size="737280">
-				<rom name="girls 3 - disk 1.img" size="737280" crc="02e5171c" sha1="a1bfd946bf2c1ec595f0fb6d0121f06e93bff6e1" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
 		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="737280">
 				<rom name="girls 3 (disk 2).img" size="737280" crc="73c0c9ed" sha1="627a70ace3059c5fba15e907258e5b499dccf76e" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop4" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 2, Alt"/>
-			<dataarea name="flop" size="737280">
-				<rom name="girls 3 - disk 2.img" size="737280" crc="b41cca0d" sha1="b068589dfcaf41a324779280089c087b20e36133" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop5" interface="floppy_3_5">
+		<part name="flop3" interface="floppy_3_5">
 		<feature name="part_id" value="Disk 3"/>
 			<dataarea name="flop" size="737280">
 				<rom name="girls 3 (disk 3).img" size="737280" crc="2560e031" sha1="e613250c31b77bfbc150925617182d5cccda4e48" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop6" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 3, Alt"/>
+	</software>
+
+	<software name="girls3a" cloneof="girls3">
+		<description>Girls 3 (Alt)</description>
+		<year>2009</year>
+		<publisher>Lacika</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="girls 3 - disk 1.img" size="737280" crc="02e5171c" sha1="a1bfd946bf2c1ec595f0fb6d0121f06e93bff6e1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="737280">
+				<rom name="girls 3 - disk 2.img" size="737280" crc="b41cca0d" sha1="b068589dfcaf41a324779280089c087b20e36133" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 3"/>
 			<dataarea name="flop" size="737280">
 				<rom name="girls 3 - disk 3.img" size="737280" crc="2296c95e" sha1="c3fd377f44478791adac9a647b37fe33d7f7457b" offset="0" />
 			</dataarea>
@@ -3080,12 +3583,25 @@
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="737280">
+				<rom name="interlace demo 2 (disk 2).img" size="737280" crc="e35b0847" sha1="e642b4dccdc47f69fd2793d925b8f6602c65f116" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="intrlac2a" cloneof="intrlac2">
+		<description>Interlace Demo 2 (Alt Disk 1)</description>
+		<year>2008</year>
+		<publisher>Zozosoft</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="interlace_demo_2 - disk1.img" size="737280" crc="94eefd61" sha1="ae1330f6e3b20b84fa94e2bf57ee1d4585d2fddb" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="737280">
 				<rom name="interlace demo 2 (disk 2).img" size="737280" crc="e35b0847" sha1="e642b4dccdc47f69fd2793d925b8f6602c65f116" offset="0" />
@@ -3105,54 +3621,66 @@
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="interlace_demo_3 - disk1.img" size="737280" crc="118b2d86" sha1="94fda228bc8bcd1071b77ce54249908ffd183375" offset="0" />
-			</dataarea>
-		</part>		
-		<part name="flop3" interface="floppy_3_5">
 		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="737280">
 				<rom name="interlace demo 3 (disk 2).img" size="737280" crc="feeaa84c" sha1="8bd51ca7303a45f399c80cd8beec97ab3a9e4a09" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop4" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="interlace_demo_3 - disk2.img" size="737280" crc="becb0b76" sha1="6fdd23aca9378803db770d0ef813356176a21291" offset="0" />
-			</dataarea>
-		</part>		
-		<part name="flop5" interface="floppy_3_5">
+		<part name="flop3" interface="floppy_3_5">
 		<feature name="part_id" value="Disk 3"/>
 			<dataarea name="flop" size="737280">
 				<rom name="interlace demo 3 (disk 3).img" size="737280" crc="7c9f12bf" sha1="2c0f95e7e6ef950280817e1103b8e877003b7386" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop6" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="interlace_demo_3 - disk3.img" size="737280" crc="204f2a8d" sha1="c1c6fcf38a143b34b8788dd7f3adde1e63de4682" offset="0" />
-			</dataarea>
-		</part>		
-		<part name="flop7" interface="floppy_3_5">
+		<part name="flop4" interface="floppy_3_5">
 		<feature name="part_id" value="Disk 4"/>
 			<dataarea name="flop" size="737280">
 				<rom name="interlace demo 3 (disk 4).img" size="737280" crc="e62a9459" sha1="1dc347c89c050bd2aa90e15e9be2dedde185e8be" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop8" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="interlace_demo_3 - disk4.img" size="737280" crc="30c6ecab" sha1="bcb62f80237ddbaefc5510cd88c58f0dfd40b00f" offset="0" />
-			</dataarea>
-		</part>		
-		<part name="flop9" interface="floppy_3_5">
+		<part name="flop5" interface="floppy_3_5">
 		<feature name="part_id" value="Disk 5"/>
 			<dataarea name="flop" size="737280">
 				<rom name="interlace demo 3 (disk 5).img" size="737280" crc="0b072a28" sha1="d2bcef803abdeb1a165650ed4b93e3dc8a50bc0c" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop10" interface="floppy_3_5">
+	</software>
+
+	<software name="intrlac3a" cloneof="intrlac3">
+		<description>Interlace Demo 3 (Alt)</description>
+		<year>2009</year>
+		<publisher>Zozosoft</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="interlace_demo_3 - disk1.img" size="737280" crc="118b2d86" sha1="94fda228bc8bcd1071b77ce54249908ffd183375" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="737280">
+				<rom name="interlace_demo_3 - disk2.img" size="737280" crc="becb0b76" sha1="6fdd23aca9378803db770d0ef813356176a21291" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 3"/>
+			<dataarea name="flop" size="737280">
+				<rom name="interlace_demo_3 - disk3.img" size="737280" crc="204f2a8d" sha1="c1c6fcf38a143b34b8788dd7f3adde1e63de4682" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 4"/>
+			<dataarea name="flop" size="737280">
+				<rom name="interlace_demo_3 - disk4.img" size="737280" crc="30c6ecab" sha1="bcb62f80237ddbaefc5510cd88c58f0dfd40b00f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 5"/>
 			<dataarea name="flop" size="737280">
 				<rom name="interlace_demo_3 - disk5.img" size="737280" crc="113738d5" sha1="f2470fab806bf073bba18947cf78002f2d0f8d93" offset="0" />
 			</dataarea>
-		</part>		
+		</part>
 	</software>
 
 	<software name="isdos180" cloneof="isdos">
@@ -3185,19 +3713,30 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="misc ork demos.img" size="737280" crc="da2258f0" sha1="55a94a6b776c941edd915baf109aa930a1e7b43f" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="orkdemosa" cloneof="orkdemos">
+		<description>Ork Demos (Alt)</description>
+		<year>19??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="ork_1b.img" size="737280" crc="1d355246" sha1="5baa73dedef2517f40c69de0163d0a3253e2c4d6" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 2"/>
+	</software>
+
+	<software name="orkdemosb" cloneof="orkdemos">
+		<description>Ork Demos (Alt 2)</description>
+		<year>19??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="ork_1a.img" size="737280" crc="3547740c" sha1="4d38c5930138d551ac58e0b183e10abac92ac509" offset="0" />
 			</dataarea>
@@ -3224,6 +3763,102 @@
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="music disk 1.img" size="737280" crc="15bf1d22" sha1="6a3a04c06aea642622f181ae04a4be91ec10a542" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="music2">
+		<description>Music Disk 2</description>
+		<year>19??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="music disk 2.img" size="737280" crc="2d07d656" sha1="215668efd2e6639fe6955e3a5a77544180558d57" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="music3">
+		<description>Music Disk 3</description>
+		<year>19??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="music disk 3.img" size="737280" crc="519a5a63" sha1="317f5211280fa70672922703cf1edcb2aa61e423" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="music4">
+		<description>Music Disk 4</description>
+		<year>19??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="music disk 4.img" size="737280" crc="95b586a3" sha1="6474fc31794fb7163e6fef6e62a1d7efc11d1d27" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="music5">
+		<description>Music Disk 5</description>
+		<year>19??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="music disk 5.img" size="737280" crc="86576641" sha1="c7837ffd8317cc491e9296ea39c54e5154262d44" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="music6">
+		<description>Music Disk 6</description>
+		<year>19??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="music disk 6.img" size="737280" crc="0b647f67" sha1="95b2b234d6bc033d28004ab589ab9367f0f7e6cb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="music7">
+		<description>Music Disk 7</description>
+		<year>19??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="music disk 7.img" size="737280" crc="43cad50d" sha1="ba2b8b61a1b2caaec96ff4bd3ac093ffd17fe46e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="music8">
+		<description>Music Disk 8</description>
+		<year>19??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="music disk 8.img" size="737280" crc="fce26175" sha1="64fbd2d28d4d2331d1241691fd58cc8b641a53b6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="music9">
+		<description>Music Disk 9</description>
+		<year>19??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="music disk 9.img" size="737280" crc="0128e875" sha1="00c81686ef24186122175648e425c60505985f27" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -3330,13 +3965,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="music disk 18.img" size="737280" crc="b241f80b" sha1="842a75d701600d2e165cc8e75810a5b49fb787cc" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="music18a" cloneof="music18">
+		<description>Music Disk 18 (Alt)</description>
+		<year>19??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="music_18.img" size="737280" crc="4830c524" sha1="4738b4455c962ea05ee47826f419bb7f5377f317" offset="0" />
 			</dataarea>
@@ -3349,111 +3989,20 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="music disk 19.img" size="737280" crc="0e5d93ac" sha1="3abe1ceca8f59157112c08310df1865e76ae46db" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="music19a" cloneof="music19">
+		<description>Music Disk 19 (Alt)</description>
+		<year>19??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="music_19.img" size="737280" crc="883da891" sha1="5e0d5b21ed5adb711f2657ce0befed3b98d2678d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="music2">
-		<description>Music Disk 2</description>
-		<year>19??</year>
-		<publisher>ep128.hu</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="music disk 2.img" size="737280" crc="2d07d656" sha1="215668efd2e6639fe6955e3a5a77544180558d57" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="music3">
-		<description>Music Disk 3</description>
-		<year>19??</year>
-		<publisher>ep128.hu</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="music disk 3.img" size="737280" crc="519a5a63" sha1="317f5211280fa70672922703cf1edcb2aa61e423" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="music4">
-		<description>Music Disk 4</description>
-		<year>19??</year>
-		<publisher>ep128.hu</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="music disk 4.img" size="737280" crc="95b586a3" sha1="6474fc31794fb7163e6fef6e62a1d7efc11d1d27" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="music5">
-		<description>Music Disk 5</description>
-		<year>19??</year>
-		<publisher>ep128.hu</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="music disk 5.img" size="737280" crc="86576641" sha1="c7837ffd8317cc491e9296ea39c54e5154262d44" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="music6">
-		<description>Music Disk 6</description>
-		<year>19??</year>
-		<publisher>ep128.hu</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="music disk 6.img" size="737280" crc="0b647f67" sha1="95b2b234d6bc033d28004ab589ab9367f0f7e6cb" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="music7">
-		<description>Music Disk 7</description>
-		<year>19??</year>
-		<publisher>ep128.hu</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="music disk 7.img" size="737280" crc="43cad50d" sha1="ba2b8b61a1b2caaec96ff4bd3ac093ffd17fe46e" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="music8">
-		<description>Music Disk 8</description>
-		<year>19??</year>
-		<publisher>ep128.hu</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="music disk 8.img" size="737280" crc="fce26175" sha1="64fbd2d28d4d2331d1241691fd58cc8b641a53b6" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="music9">
-		<description>Music Disk 9</description>
-		<year>19??</year>
-		<publisher>ep128.hu</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="music disk 9.img" size="737280" crc="0128e875" sha1="00c81686ef24186122175648e425c60505985f27" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -3464,13 +4013,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="office.img" size="737280" crc="a6e09785" sha1="b47b13ab6d38eb72bb391953efb13a7bae9d6b8a" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="officea" cloneof="office">
+		<description>Office (Alt)</description>
+		<year>19??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="officea.img" size="737280" crc="3d568ee2" sha1="7952873f3fd77c7b47dfe6460fd992ad57b43dce" offset="0" />
 			</dataarea>
@@ -3489,19 +4043,26 @@
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
-			<dataarea name="flop" size="737280">
-				<rom name="ork_2 - ork megademo iii. disk 1.img" size="737280" crc="21beff31" sha1="05ddb5fcbf159fa52d773ab5d5e71805d66680a7" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
 		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="737280">
 				<rom name="ork megademo 3 (disk 2).img" size="737280" crc="3d93c437" sha1="36e09e0730323d97ab9566982fcd09ee370f7e50" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop4" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 2, Alt"/>
+	</software>
+
+	<software name="orkmega3a" cloneof="orkmega3">
+		<description>Ork Megademo 3 (Alt)</description>
+		<year>1993</year>
+		<publisher>Orksoft</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ork_2 - ork megademo iii. disk 1.img" size="737280" crc="21beff31" sha1="05ddb5fcbf159fa52d773ab5d5e71805d66680a7" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="737280">
 				<rom name="ork_3 - ork megademo iii. disk 2.img" size="737280" crc="94965598" sha1="e103137ef2d7659845974ad836bf24b06c654ad3" offset="0" />
 			</dataarea>
@@ -3641,23 +4202,34 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="utilities disk 3.img" size="737280" crc="3a8708c1" sha1="a6c52e111d053b4407c603e54252a7497cd11924" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="utils3a" cloneof="utils3">
+		<description>Utilities Disk 3 (Alt)</description>
+		<year>19??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="util03.img" size="737280" crc="27e384f8" sha1="aacdb22c3897e36083df7a3b5a53e47a5c5d4773" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 2"/>
+	</software>
+
+	<software name="utils3b" cloneof="utils3">
+		<description>Utilities Disk 3 (Alt 2)</description>
+		<year>19??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="util03a.img" size="737280" crc="66d5e672" sha1="1a27fc4dd4a8579831b3838eef19327b1b45d90a" offset="0" />
 			</dataarea>
-		</part>		
+		</part>
 	</software>
 
 	<software name="utils4">
@@ -3666,13 +4238,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="utilities disk 4.img" size="737280" crc="16f4d225" sha1="885a812a9159beebc88b62dd22600e037f3b1885" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="utils4a" cloneof="utils4">
+		<description>Utilities Disk 4 (Alt)</description>
+		<year>19??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="util04.img" size="737280" crc="1bdc8331" sha1="d9540403b4304352c8b24e2f9e2becdb862c3410" offset="0" />
 			</dataarea>
@@ -3721,13 +4298,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="cpc games 1.img" size="737280" crc="e0ecd4de" sha1="2a2be22ab075607e6b396bc7ff96bd4f0b24e8db" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="cpcgame1a" cloneof="cpcgame1">
+		<description>CPC Games 1 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games_cpc1.img" size="737280" crc="cce486aa" sha1="75814de9b96494c4ec1db02cd514615bb650019f" offset="0" />
 			</dataarea>
@@ -3740,13 +4322,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="cpc games 2.img" size="737280" crc="a0e57de5" sha1="6a9a50260ab9b1fdbe8c14461494036a4c0b9374" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="cpcgame2a" cloneof="cpcgame2">
+		<description>CPC Games 2 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games_cpc2.img" size="737280" crc="ac3f523f" sha1="07dcdec9b42cdb0259e497130a45fff656631cc9" offset="0" />
 			</dataarea>
@@ -3759,13 +4346,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="cpc games 3.img" size="737280" crc="a07423c7" sha1="4e66c73040fba7ac8bc26496bb7feb7e4e94f024" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="cpcgame3a" cloneof="cpcgame3">
+		<description>CPC Games 3 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games_cpc3.img" size="737280" crc="69e20420" sha1="14404bed773b5d2fb819a11411b3f26b0b55a0bc" offset="0" />
 			</dataarea>
@@ -3778,13 +4370,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="cpc games 4.img" size="737280" crc="5294f664" sha1="1c138156a51ce5dd13a7281d06a505e96009f6dd" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="cpcgame4a" cloneof="cpcgame4">
+		<description>CPC Games 4 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games_cpc4.img" size="737280" crc="9b02d183" sha1="bae96ec5a8d7737e938bcbdd0c5148ba8518ee29" offset="0" />
 			</dataarea>
@@ -3797,13 +4394,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="cpc games 5.img" size="737280" crc="6f9271fa" sha1="f3cdaf28c5cc8eae4baca1412deea80cb54ca8f1" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="cpcgame5a" cloneof="cpcgame5">
+		<description>CPC Games 5 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games_cpc5.img" size="737280" crc="a604561d" sha1="41c0fbea0cf32a8438ed0a1adaee089bf8331125" offset="0" />
 			</dataarea>
@@ -3816,13 +4418,18 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="cpc games 6.img" size="737280" crc="bd89995e" sha1="93cb833b4e7548a5f7cc1ad36a8782b2d0c5824b" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="cpcgame6a" cloneof="cpcgame6">
+		<description>CPC Games 6 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games_cpc6.img" size="737280" crc="b153b684" sha1="88d151e43893d9543d9391591d82b3c060e8963e" offset="0" />
 			</dataarea>
@@ -3960,8 +4567,14 @@
 				<rom name="cpm games 1.img" size="737280" crc="0813dff0" sha1="73622b5c535db2764d4b907df816b508a3294aa5" offset="0" />
 			</dataarea>
 		</part>
+	</software>
+
+	<software name="cpmgame1a" cloneof="cpmgame1">
+		<description>CP/M Games 1 (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
 		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
 			<dataarea name="flop" size="737280">
 				<rom name="games_cpm.img" size="737280" crc="35084002" sha1="7585a6965d8fc36671427173a0ab2e966778b622" offset="0" />
 			</dataarea>
@@ -5246,139 +5859,144 @@
 		<publisher>ep128.hu</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="tvc games.img" size="737280" crc="d0e47e21" sha1="d733ddfcc9fb75c6850cc6120af2b8bc35548b1b" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="tvcgamesa" cloneof="tvcgames">
+		<description>TVC Games (Alt)</description>
+		<year>20??</year>
+		<publisher>ep128.hu</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="games_tvc.img" size="737280" crc="1b3cd457" sha1="a2d2d65af318cbee8479b23a6d8adf3dfe6a3e4b" offset="0" />
 			</dataarea>
-		</part>		
+		</part>
 	</software>
-	
+
 	<software name="demo1n" cloneof="demo1">
 		<description>Demo Disk 1 (No Menu)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
-	
+
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="demo_01 - without menue.img" size="737280" crc="b7b3debc" sha1="2737badce2bc21e2c9f2ba0040e6ce3ec7bb272d" offset="0" />
 			</dataarea>
-		</part>	
+		</part>
 	</software>
-	
+
 	<software name="demo2n" cloneof="demo2">
 		<description>Demo Disk 2 (No Menu)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
-	
+
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="demo_02 - without menue.img" size="737280" crc="023b13fc" sha1="37b919e215a9acb31893870cdb79110d736ba586" offset="0" />
 			</dataarea>
-		</part>	
+		</part>
 	</software>
-	
+
 	<software name="demo3n" cloneof="demo3">
 		<description>Demo Disk 3 (No Menu)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
-	
+
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="demo_03 - without menue.img" size="737280" crc="d1ad27e7" sha1="e652e459f5d6e36b532baa2fa48fb29635ba2c57" offset="0" />
 			</dataarea>
-		</part>	
+		</part>
 	</software>
-	
+
 	<software name="demo4n" cloneof="demo4">
 		<description>Demo Disk 4 (No Menu)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
-	
+
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="demo_04 - without menue.img" size="737280" crc="6c82f560" sha1="f5e4a320493ecd799822782db7354351b1cfafb9" offset="0" />
 			</dataarea>
-		</part>	
+		</part>
 	</software>
-	
+
 	<software name="demo5n" cloneof="demo5">
 		<description>Demo Disk 5 (No Menu)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
-	
+
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="demo_05 - without menue.img" size="737280" crc="f0738a5e" sha1="25465de9a2dd428fa5aa2f97638f3b6172d5a050" offset="0" />
 			</dataarea>
-		</part>	
+		</part>
 	</software>
-	
+
 	<software name="demo6n" cloneof="demo6">
 		<description>Demo Disk 6 (No Menu)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
-	
+
 		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="demo_06 - without menue.img" size="737280" crc="9d07b6db" sha1="e06e5afd5e0209d818c369ce5d785d6e5145e1fa" offset="0" />
 			</dataarea>
-		</part>	
+		</part>
 	</software>
-	
+
 	<software name="demo7n" cloneof="demo7">
 		<description>Demo Disk 7 (No Menu)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
-	
+
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="demo_07 - without menue.img" size="737280" crc="e4af870a" sha1="692b2333c46b3ce48b8635c3cd2585a45caa26d1" offset="0" />
 			</dataarea>
-		</part>	
+		</part>
 	</software>
-	
+
 	<software name="demo8n" cloneof="demo8">
 		<description>Demo Disk 8 (No Menu)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
-	
+
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="demo_08 - without menue.img" size="737280" crc="f8a5faa5" sha1="51a2bc6f57b8829d4c32b38721e52a88a932e512" offset="0" />
 			</dataarea>
-		</part>	
+		</part>
 	</software>
-	
+
 	<software name="demo9n" cloneof="demo9">
 		<description>Demo Disk 9 (No Menu)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
-	
+
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="demo_09 - without menue.img" size="737280" crc="60e299f8" sha1="c26100a273cc33d68b02f74be6bdfe1cfaf1dd71" offset="0" />
 			</dataarea>
-		</part>	
+		</part>
 	</software>
-	
+
 	<software name="demo10n" cloneof="demo10">
 		<description>Demo Disk 10 (No Menu)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
-	
+
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="demo_10 - without menue.img" size="737280" crc="d4500a54" sha1="66ea36674ac8c361b92ffa3fbe5aafad56a0d8e1" offset="0" />
 			</dataarea>
-		</part>	
+		</part>
 	</software>
-	
+
 	<software name="bigdemo">
 		<description>Big Demo</description>
 		<year>1990</year>
@@ -5402,7 +6020,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="ep1">
 		<description>ep1</description>
 		<year>19??</year>
@@ -5414,7 +6032,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="ep2">
 		<description>ep2</description>
 		<year>19??</year>
@@ -5426,7 +6044,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="isdosgam">
 		<description>IS-DOS Games</description>
 		<year>19??</year>
@@ -5450,7 +6068,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="northsta">
 		<description>NorthStar</description>
 		<year>1988</year>
@@ -5462,8 +6080,8 @@
 			</dataarea>
 		</part>
 	</software>
-	
-	<software name="slidshw2a" cloneof="slidshw2">
+
+	<software name="slidshw2b" cloneof="slidshw2">
 		<description>Enterprise SlideShow 2 (4 Disk Version?)</description>
 		<year>2008</year>
 		<publisher>Lacika</publisher>
@@ -5505,7 +6123,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="sorceryp">
 		<description>Sorcery Plus</description>
 		<year>1985</year>
@@ -5517,7 +6135,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="subhunt">
 		<description>Sub Hunter (fixed music)</description>
 		<year>2011</year>
@@ -5529,7 +6147,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="swap">
 		<description>Swap</description>
 		<year>1993</year>
@@ -5541,7 +6159,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="tippek">
 		<description>Tippek es Trukkok</description>
 		<year>19??</year>
@@ -5553,7 +6171,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="bcquest">
 		<description>BC's Quest For Tires</description>
 		<year>1983</year>
@@ -5565,7 +6183,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="wecleman">
 		<description>WEC Le Mans</description>
 		<year>1988</year>
