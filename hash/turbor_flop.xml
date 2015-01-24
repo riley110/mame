@@ -110,93 +110,138 @@
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Opening Disk 0, Alt"/>
-			<dataarea name="flop" size="737280">
-				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 1 of 5)(opening disk 0)[a].dsk" size="737280" crc="ee1ddd5d" sha1="858f9861f5015fd2e04f5a9fa4de971bfe7b5ec4" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Opening Disk 0, Alt 2"/>
-			<dataarea name="flop" size="737280">
-				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 1 of 5)(opening disk 0)[a2].dsk" size="737280" crc="fe161465" sha1="9abd04cfb508567ab4d19e4a0a82fa00f6348286" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_3_5">
-		<feature name="part_id" value="Opening Disk 0, Alt 3"/>
-			<dataarea name="flop" size="737280">
-				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 1 of 5)(opening disk 0)[b].dsk" size="737280" crc="47fbfe46" sha1="ce2ce7c68560e490539482c8b52177403bcffd31" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop5" interface="floppy_3_5">
 		<feature name="part_id" value="Opening Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 2 of 5)(opening disk 1).dsk" size="737280" crc="c33d5ac3" sha1="0b145459326c62254522bf77f063b069d086aa29" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop6" interface="floppy_3_5">
-		<feature name="part_id" value="Opening Disk 1, Alt"/>
-			<dataarea name="flop" size="737280">
-				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 2 of 5)(opening disk 1)[a].dsk" size="737280" crc="df4f5d75" sha1="4508096f7a4d5bf1c9e94df62def933ef1f6630f" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop7" interface="floppy_3_5">
-		<feature name="part_id" value="Opening Disk 1, Alt 2"/>
-			<dataarea name="flop" size="737280">
-				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 2 of 5)(opening disk 1)[b].dsk" size="737280" crc="76a97e6e" sha1="f5d4dacceb3bf0b2150239f3c641d82ec733063e" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop8" interface="floppy_3_5">
+		<part name="flop3" interface="floppy_3_5">
 		<feature name="part_id" value="Opening Disk 2"/>
 			<dataarea name="flop" size="737280">
 				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 3 of 5)(opening disk 2).dsk" size="737280" crc="b770ee14" sha1="80701f4a86a151778c4fc81f56e9088d7b880651" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop9" interface="floppy_3_5">
-		<feature name="part_id" value="Opening Disk 2, Alt"/>
-			<dataarea name="flop" size="737280">
-				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 3 of 5)(opening disk 2)[a].dsk" size="737280" crc="f2d4c059" sha1="ad26d223992b9c7713d2df7bd44b8a1cb09b9209" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop10" interface="floppy_3_5">
+		<part name="flop4" interface="floppy_3_5">
 		<feature name="part_id" value="Game Disk 0"/>
 			<dataarea name="flop" size="737280">
 				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 4 of 5)(game disk 0).dsk" size="737280" crc="8c6d9bed" sha1="0bddc86900b934cb381ce3aac8d9f8614ca49ede" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop11" interface="floppy_3_5">
-		<feature name="part_id" value="Game Disk 0, Alt"/>
-			<dataarea name="flop" size="737280">
-				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 4 of 5)(game disk 0)[a].dsk" size="737280" crc="99dcaab5" sha1="bf2f9b963c8045dca79921c3c08cea9a4a31f129" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop12" interface="floppy_3_5">
-		<feature name="part_id" value="Game Disk 0, Alt 2"/>
-			<dataarea name="flop" size="737280">
-				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 4 of 5)(game disk 0)[a2].dsk" size="737280" crc="4a96b160" sha1="f28e35348dceb9bef0d6e21674bf01d67fd9501b" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop13" interface="floppy_3_5">
-		<feature name="part_id" value="Game Disk 0, Alt 3"/>
-			<dataarea name="flop" size="737280">
-				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 4 of 5)(game disk 0)[b].dsk" size="737280" crc="39f9bf40" sha1="bf09f4a119bba97e26b2a55e4d6c83c1a8dbfbad" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop14" interface="floppy_3_5">
+		<part name="flop5" interface="floppy_3_5">
 		<feature name="part_id" value="Game Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 5 of 5)(game disk 1).dsk" size="737280" crc="d631a475" sha1="c1c35bedb620181846a407d6900db741f751e50f" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop15" interface="floppy_3_5">
-		<feature name="part_id" value="Game Disk 1, Alt"/>
+	</software>
+
+	<software name="fraya" cloneof="fray">
+		<description>Fray - In Magical Adventure (Jpn, Alt)</description>
+		<year>1990</year>
+		<publisher>Micro Cabin</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Opening Disk 0"/>
+			<dataarea name="flop" size="737280">
+				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 1 of 5)(opening disk 0)[a].dsk" size="737280" crc="ee1ddd5d" sha1="858f9861f5015fd2e04f5a9fa4de971bfe7b5ec4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Opening Disk 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 2 of 5)(opening disk 1)[a].dsk" size="737280" crc="df4f5d75" sha1="4508096f7a4d5bf1c9e94df62def933ef1f6630f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+		<feature name="part_id" value="Opening Disk 2"/>
+			<dataarea name="flop" size="737280">
+				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 3 of 5)(opening disk 2)[a].dsk" size="737280" crc="f2d4c059" sha1="ad26d223992b9c7713d2df7bd44b8a1cb09b9209" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 0"/>
+			<dataarea name="flop" size="737280">
+				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 4 of 5)(game disk 0)[a].dsk" size="737280" crc="99dcaab5" sha1="bf2f9b963c8045dca79921c3c08cea9a4a31f129" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 5 of 5)(game disk 1)[a].dsk" size="737280" crc="db96855a" sha1="9fce9c2fb9f684ed2478deacf02a1388975230e5" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop16" interface="floppy_3_5">
-		<feature name="part_id" value="Game Disk 1, Alt 2"/>
+	</software>
+
+	<software name="frayb" cloneof="fray">
+		<description>Fray - In Magical Adventure (Jpn, Alt 2, Opening Disks 0+1, Game Disks 0+1)</description>
+		<year>1990</year>
+		<publisher>Micro Cabin</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Opening Disk 0"/>
+			<dataarea name="flop" size="737280">
+				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 1 of 5)(opening disk 0)[a2].dsk" size="737280" crc="fe161465" sha1="9abd04cfb508567ab4d19e4a0a82fa00f6348286" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Opening Disk 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 2 of 5)(opening disk 1)[b].dsk" size="737280" crc="76a97e6e" sha1="f5d4dacceb3bf0b2150239f3c641d82ec733063e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+		<feature name="part_id" value="Opening Disk 2"/>
+			<dataarea name="flop" size="737280">
+				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 3 of 5)(opening disk 2).dsk" size="737280" crc="b770ee14" sha1="80701f4a86a151778c4fc81f56e9088d7b880651" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 0"/>
+			<dataarea name="flop" size="737280">
+				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 4 of 5)(game disk 0)[a2].dsk" size="737280" crc="4a96b160" sha1="f28e35348dceb9bef0d6e21674bf01d67fd9501b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 5 of 5)(game disk 1)[b].dsk" size="737280" crc="63a580d8" sha1="f8c52bf8405e08e5bb58623b691417f34b4e521c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="frayc" cloneof="fray">
+		<description>Fray - In Magical Adventure (Jpn, Alt 3, Opening Disk 0, Game Disk 0)</description>
+		<year>1990</year>
+		<publisher>Micro Cabin</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Opening Disk 0"/>
+			<dataarea name="flop" size="737280">
+				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 1 of 5)(opening disk 0)[b].dsk" size="737280" crc="47fbfe46" sha1="ce2ce7c68560e490539482c8b52177403bcffd31" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Opening Disk 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 2 of 5)(opening disk 1).dsk" size="737280" crc="c33d5ac3" sha1="0b145459326c62254522bf77f063b069d086aa29" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+		<feature name="part_id" value="Opening Disk 2"/>
+			<dataarea name="flop" size="737280">
+				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 3 of 5)(opening disk 2).dsk" size="737280" crc="b770ee14" sha1="80701f4a86a151778c4fc81f56e9088d7b880651" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 0"/>
+			<dataarea name="flop" size="737280">
+				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 4 of 5)(game disk 0)[b].dsk" size="737280" crc="39f9bf40" sha1="bf09f4a119bba97e26b2a55e4d6c83c1a8dbfbad" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="fray - in magical adventure (1990)(micro cabin)(jp)(disk 5 of 5)(game disk 1).dsk" size="737280" crc="d631a475" sha1="c1c35bedb620181846a407d6900db741f751e50f" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -237,90 +282,303 @@
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Game Disk 1, Alt"/>
-			<dataarea name="flop" size="737280">
-				<rom name="illusion city (1991)(micro cabin)(jp)(disk 01 of 13)(game disk 1)[a].dsk" size="737280" crc="ada84ec2" sha1="f1cebd02bb01238b1d346838b162858ad1356d5b" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Game Disk 1, Alt 2"/>
-			<dataarea name="flop" size="737280">
-				<rom name="illusion city (1991)(micro cabin)(disk 01 of 13)(game disk 1).dsk" size="737280" crc="5d4538bb" sha1="9e9946536f3cb6d90e2433ff19376cb9f9818290" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_3_5">
-		<feature name="part_id" value="Game Disk 1, Alt 3"/>
-			<dataarea name="flop" size="737280">
-				<rom name="illusion city (1991)(micro cabin)(jp)(disk 01 of 13)(game disk 1)[b].dsk" size="737280" crc="f1664f9b" sha1="6b9966cfc56e91c7a9ca66e99b73d7aebc496b54" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop5" interface="floppy_3_5">
 		<feature name="part_id" value="Game Disk 2"/>
 			<dataarea name="flop" size="737280">
 				<rom name="illusion city (1991)(micro cabin)(jp)(disk 02 of 13)(game disk 2).dsk" size="737280" crc="69872539" sha1="4535b5a13a86537e363566bd2a864cbf17bcd2e7" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop6" interface="floppy_3_5">
-		<feature name="part_id" value="Game Disk 2, Alt"/>
-			<dataarea name="flop" size="737280">
-				<rom name="illusion city (1991)(micro cabin)(disk 02 of 13)(game disk 2).dsk" size="737280" crc="e37721f4" sha1="62ad6222dc4e0f47c6a4609ebf618fc2233288cc" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop7" interface="floppy_3_5">
+		<part name="flop3" interface="floppy_3_5">
 		<feature name="part_id" value="Game Disk 3"/>
 			<dataarea name="flop" size="737280">
 				<rom name="illusion city (1991)(micro cabin)(jp)(disk 03 of 13)(game disk 3).dsk" size="737280" crc="494a0db3" sha1="ac94c9f5e735c935a5ed4ff47c9689e5e07ac266" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop8" interface="floppy_3_5">
+		<part name="flop4" interface="floppy_3_5">
 		<feature name="part_id" value="Game Disk 4"/>
 			<dataarea name="flop" size="737280">
 				<rom name="illusion city (1991)(micro cabin)(jp)(disk 04 of 13)(game disk 4).dsk" size="737280" crc="9d31fe9f" sha1="da08fd8c79ebb28a01232734bf607f576f7987cf" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop9" interface="floppy_3_5">
+		<part name="flop5" interface="floppy_3_5">
 		<feature name="part_id" value="Game Disk 5"/>
 			<dataarea name="flop" size="737280">
 				<rom name="illusion city (1991)(micro cabin)(jp)(disk 05 of 13)(game disk 5).dsk" size="737280" crc="d8a0e0c8" sha1="5472f519f06212562d72f5be229b74a4599f13c2" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop10" interface="floppy_3_5">
+		<part name="flop6" interface="floppy_3_5">
 		<feature name="part_id" value="Game Disk 6"/>
 			<dataarea name="flop" size="737280">
 				<rom name="illusion city (1991)(micro cabin)(jp)(disk 06 of 13)(game disk 6).dsk" size="737280" crc="5b89b23d" sha1="1141f0b05250ffde6cbd02a29041c4c520008267" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop11" interface="floppy_3_5">
+		<part name="flop7" interface="floppy_3_5">
 		<feature name="part_id" value="Game Disk 7"/>
 			<dataarea name="flop" size="737280">
 				<rom name="illusion city (1991)(micro cabin)(jp)(disk 07 of 13)(game disk 7).dsk" size="737280" crc="98a4a1ac" sha1="fdad8341a81d1310f00e07057b61ea4ef31cdf06" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop12" interface="floppy_3_5">
+		<part name="flop8" interface="floppy_3_5">
 		<feature name="part_id" value="Game Disk 8"/>
 			<dataarea name="flop" size="737280">
 				<rom name="illusion city (1991)(micro cabin)(jp)(disk 08 of 13)(game disk 8).dsk" size="737280" crc="11998da3" sha1="efa7b70351f0302e112cb9b0ef49dc033c967e3d" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop13" interface="floppy_3_5">
+		<part name="flop9" interface="floppy_3_5">
 		<feature name="part_id" value="Data Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="illusion city (1991)(micro cabin)(jp)(disk 10 of 13)(data disk 1).dsk" size="737280" crc="e5e892e0" sha1="ae943fd7643183366096341403ac387e60897719" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop14" interface="floppy_3_5">
+		<part name="flop10" interface="floppy_3_5">
 		<feature name="part_id" value="Data Disk 2"/>
 			<dataarea name="flop" size="737280">
 				<rom name="illusion city (1991)(micro cabin)(jp)(disk 11 of 13)(data disk 2).dsk" size="737280" crc="18783533" sha1="68754c6308fcb1988e72677cef277325326bf22f" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop15" interface="floppy_3_5">
+		<part name="flop11" interface="floppy_3_5">
 		<feature name="part_id" value="Data Disk 3"/>
 			<dataarea name="flop" size="737280">
 				<rom name="illusion city (1991)(micro cabin)(jp)(disk 12 of 13)(data disk 3).dsk" size="737280" crc="76cf5357" sha1="50b47657f4b911cf244d3992960e7cd8d76c7725" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop16" interface="floppy_3_5">
+		<part name="flop12" interface="floppy_3_5">
+		<feature name="part_id" value="Data Disk 4"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 13 of 13)(data disk 4).dsk" size="737280" crc="79a28c00" sha1="99446c15d42241594bb2dab71a5db188d3f9a213" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="illucitya" cloneof="illucity">
+		<description>Illusion City (Jpn, Alt, Game Disks 1+2)</description>
+		<year>1991</year>
+		<publisher>Micro Cabin</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 01 of 13)(game disk 1)[a].dsk" size="737280" crc="ada84ec2" sha1="f1cebd02bb01238b1d346838b162858ad1356d5b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 2"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(disk 02 of 13)(game disk 2).dsk" size="737280" crc="e37721f4" sha1="62ad6222dc4e0f47c6a4609ebf618fc2233288cc" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 3"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 03 of 13)(game disk 3).dsk" size="737280" crc="494a0db3" sha1="ac94c9f5e735c935a5ed4ff47c9689e5e07ac266" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 4"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 04 of 13)(game disk 4).dsk" size="737280" crc="9d31fe9f" sha1="da08fd8c79ebb28a01232734bf607f576f7987cf" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 5"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 05 of 13)(game disk 5).dsk" size="737280" crc="d8a0e0c8" sha1="5472f519f06212562d72f5be229b74a4599f13c2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 6"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 06 of 13)(game disk 6).dsk" size="737280" crc="5b89b23d" sha1="1141f0b05250ffde6cbd02a29041c4c520008267" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 7"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 07 of 13)(game disk 7).dsk" size="737280" crc="98a4a1ac" sha1="fdad8341a81d1310f00e07057b61ea4ef31cdf06" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop8" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 8"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 08 of 13)(game disk 8).dsk" size="737280" crc="11998da3" sha1="efa7b70351f0302e112cb9b0ef49dc033c967e3d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop9" interface="floppy_3_5">
+		<feature name="part_id" value="Data Disk 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 10 of 13)(data disk 1).dsk" size="737280" crc="e5e892e0" sha1="ae943fd7643183366096341403ac387e60897719" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop10" interface="floppy_3_5">
+		<feature name="part_id" value="Data Disk 2"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 11 of 13)(data disk 2).dsk" size="737280" crc="18783533" sha1="68754c6308fcb1988e72677cef277325326bf22f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop11" interface="floppy_3_5">
+		<feature name="part_id" value="Data Disk 3"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 12 of 13)(data disk 3).dsk" size="737280" crc="76cf5357" sha1="50b47657f4b911cf244d3992960e7cd8d76c7725" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop12" interface="floppy_3_5">
+		<feature name="part_id" value="Data Disk 4"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 13 of 13)(data disk 4).dsk" size="737280" crc="79a28c00" sha1="99446c15d42241594bb2dab71a5db188d3f9a213" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="illucityb" cloneof="illucity">
+		<description>Illusion City (Jpn, Alt 2, Game Disk 1)</description>
+		<year>1991</year>
+		<publisher>Micro Cabin</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(disk 01 of 13)(game disk 1).dsk" size="737280" crc="5d4538bb" sha1="9e9946536f3cb6d90e2433ff19376cb9f9818290" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 2"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 02 of 13)(game disk 2).dsk" size="737280" crc="69872539" sha1="4535b5a13a86537e363566bd2a864cbf17bcd2e7" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 3"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 03 of 13)(game disk 3).dsk" size="737280" crc="494a0db3" sha1="ac94c9f5e735c935a5ed4ff47c9689e5e07ac266" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 4"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 04 of 13)(game disk 4).dsk" size="737280" crc="9d31fe9f" sha1="da08fd8c79ebb28a01232734bf607f576f7987cf" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 5"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 05 of 13)(game disk 5).dsk" size="737280" crc="d8a0e0c8" sha1="5472f519f06212562d72f5be229b74a4599f13c2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 6"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 06 of 13)(game disk 6).dsk" size="737280" crc="5b89b23d" sha1="1141f0b05250ffde6cbd02a29041c4c520008267" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 7"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 07 of 13)(game disk 7).dsk" size="737280" crc="98a4a1ac" sha1="fdad8341a81d1310f00e07057b61ea4ef31cdf06" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop8" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 8"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 08 of 13)(game disk 8).dsk" size="737280" crc="11998da3" sha1="efa7b70351f0302e112cb9b0ef49dc033c967e3d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop9" interface="floppy_3_5">
+		<feature name="part_id" value="Data Disk 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 10 of 13)(data disk 1).dsk" size="737280" crc="e5e892e0" sha1="ae943fd7643183366096341403ac387e60897719" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop10" interface="floppy_3_5">
+		<feature name="part_id" value="Data Disk 2"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 11 of 13)(data disk 2).dsk" size="737280" crc="18783533" sha1="68754c6308fcb1988e72677cef277325326bf22f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop11" interface="floppy_3_5">
+		<feature name="part_id" value="Data Disk 3"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 12 of 13)(data disk 3).dsk" size="737280" crc="76cf5357" sha1="50b47657f4b911cf244d3992960e7cd8d76c7725" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop12" interface="floppy_3_5">
+		<feature name="part_id" value="Data Disk 4"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 13 of 13)(data disk 4).dsk" size="737280" crc="79a28c00" sha1="99446c15d42241594bb2dab71a5db188d3f9a213" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="illucityc" cloneof="illucity">
+		<description>Illusion City (Jpn, Alt 3, Game Disk 1)</description>
+		<year>1991</year>
+		<publisher>Micro Cabin</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 01 of 13)(game disk 1)[b].dsk" size="737280" crc="f1664f9b" sha1="6b9966cfc56e91c7a9ca66e99b73d7aebc496b54" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 2"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 02 of 13)(game disk 2).dsk" size="737280" crc="69872539" sha1="4535b5a13a86537e363566bd2a864cbf17bcd2e7" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 3"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 03 of 13)(game disk 3).dsk" size="737280" crc="494a0db3" sha1="ac94c9f5e735c935a5ed4ff47c9689e5e07ac266" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 4"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 04 of 13)(game disk 4).dsk" size="737280" crc="9d31fe9f" sha1="da08fd8c79ebb28a01232734bf607f576f7987cf" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 5"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 05 of 13)(game disk 5).dsk" size="737280" crc="d8a0e0c8" sha1="5472f519f06212562d72f5be229b74a4599f13c2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 6"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 06 of 13)(game disk 6).dsk" size="737280" crc="5b89b23d" sha1="1141f0b05250ffde6cbd02a29041c4c520008267" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 7"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 07 of 13)(game disk 7).dsk" size="737280" crc="98a4a1ac" sha1="fdad8341a81d1310f00e07057b61ea4ef31cdf06" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop8" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 8"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 08 of 13)(game disk 8).dsk" size="737280" crc="11998da3" sha1="efa7b70351f0302e112cb9b0ef49dc033c967e3d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop9" interface="floppy_3_5">
+		<feature name="part_id" value="Data Disk 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 10 of 13)(data disk 1).dsk" size="737280" crc="e5e892e0" sha1="ae943fd7643183366096341403ac387e60897719" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop10" interface="floppy_3_5">
+		<feature name="part_id" value="Data Disk 2"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 11 of 13)(data disk 2).dsk" size="737280" crc="18783533" sha1="68754c6308fcb1988e72677cef277325326bf22f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop11" interface="floppy_3_5">
+		<feature name="part_id" value="Data Disk 3"/>
+			<dataarea name="flop" size="737280">
+				<rom name="illusion city (1991)(micro cabin)(jp)(disk 12 of 13)(data disk 3).dsk" size="737280" crc="76cf5357" sha1="50b47657f4b911cf244d3992960e7cd8d76c7725" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop12" interface="floppy_3_5">
 		<feature name="part_id" value="Data Disk 4"/>
 			<dataarea name="flop" size="737280">
 				<rom name="illusion city (1991)(micro cabin)(jp)(disk 13 of 13)(data disk 4).dsk" size="737280" crc="79a28c00" sha1="99446c15d42241594bb2dab71a5db188d3f9a213" offset="0" />
@@ -553,7 +811,7 @@
 	</software>
 
 	<software name="ranman12">
-		<description>Ranma Nibunnoichi 1-2 (Jpn)</description>
+		<description>Ranma Nibunnoichi 1/2 (Jpn)</description>
 		<year>1992</year>
 		<publisher>Bothtec</publisher>
 
@@ -564,93 +822,320 @@
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
-			<dataarea name="flop" size="737280">
-				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 1 of 8)[a].dsk" size="737280" crc="9068b80b" sha1="846d114dfdcf6d33997937e03aefb5cfb782e75b" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 2"/>
-			<dataarea name="flop" size="737280">
-				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 1 of 8)[a2].dsk" size="737280" crc="bbd17c43" sha1="50f5d422b5eb45f5e8b340e1030bf65cb91e1a8e" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 3"/>
-			<dataarea name="flop" size="737280">
-				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 1 of 8)[a3].dsk" size="737280" crc="39cf454c" sha1="c627a49182ccf80e231525cb1a3a53e460fc024b" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop5" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 4"/>
-			<dataarea name="flop" size="737280">
-				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 1 of 8)[b].dsk" size="737280" crc="6f8ce94b" sha1="fee621f0426ae26c35cc87b29d770d7056c352e0" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop6" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 5"/>
-			<dataarea name="flop" size="737280">
-				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 1 of 8)[b2].dsk" size="737280" crc="36375928" sha1="b2e154c59fd828ef935d5e4c5e016c2a8fc9cb24" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop7" interface="floppy_3_5">
 		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="737280">
 				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 2 of 8).dsk" size="737280" crc="fbb7805b" sha1="a9e6bfd80298626086e3a81d054b37142db08b52" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop8" interface="floppy_3_5">
+		<part name="flop3" interface="floppy_3_5">
 		<feature name="part_id" value="Disk 3"/>
 			<dataarea name="flop" size="737280">
 				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 3 of 8).dsk" size="737280" crc="26295e10" sha1="7dcfedaafde8cf0b286d80b0f2a930dba15a362c" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop9" interface="floppy_3_5">
+		<part name="flop4" interface="floppy_3_5">
 		<feature name="part_id" value="Disk 4"/>
 			<dataarea name="flop" size="737280">
 				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 4 of 8).dsk" size="737280" crc="4cb5d6f4" sha1="c0750209ce9b36dd76091ed353d762a9f5380adb" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop10" interface="floppy_3_5">
+		<part name="flop5" interface="floppy_3_5">
 		<feature name="part_id" value="Disk 5"/>
 			<dataarea name="flop" size="737280">
 				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 5 of 8).dsk" size="737280" crc="9d9fd03d" sha1="7f92d37b3cb31689a3fa54c374c84366e302afb3" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop11" interface="floppy_3_5">
+		<part name="flop6" interface="floppy_3_5">
 		<feature name="part_id" value="Disk 6"/>
 			<dataarea name="flop" size="737280">
 				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 6 of 8).dsk" size="737280" crc="c90a316e" sha1="27dfae858e543a443521dc3b9a8f70028e0cd033" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop12" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 6, Alt"/>
-			<dataarea name="flop" size="737280">
-				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 6 of 8)[a].dsk" size="737280" crc="b313ebd6" sha1="99d9e9580372e9eccdc69a20e6b349a90e1c1005" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop13" interface="floppy_3_5">
+		<part name="flop7" interface="floppy_3_5">
 		<feature name="part_id" value="Disk 7"/>
 			<dataarea name="flop" size="737280">
 				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 7 of 8).dsk" size="737280" crc="77b007ec" sha1="0f64b6b2a1eefb0597793ccb82a247945a19b5ca" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop14" interface="floppy_3_5">
+		<part name="flop8" interface="floppy_3_5">
 		<feature name="part_id" value="Disk 8"/>
 			<dataarea name="flop" size="737280">
 				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 8 of 8).dsk" size="737280" crc="ea153962" sha1="6ea5f0a2b89f223220ee8003b83a2f537fd63ee3" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop15" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 8, Alt"/>
+	</software>
+
+	<software name="ranman12a" cloneof="ranman12">
+		<description>Ranma Nibunnoichi 1-2 (Jpn, Alt, Disks 1+6+8)</description>
+		<year>1992</year>
+		<publisher>Bothtec</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 1 of 8)[a].dsk" size="737280" crc="9068b80b" sha1="846d114dfdcf6d33997937e03aefb5cfb782e75b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 2 of 8).dsk" size="737280" crc="fbb7805b" sha1="a9e6bfd80298626086e3a81d054b37142db08b52" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 3"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 3 of 8).dsk" size="737280" crc="26295e10" sha1="7dcfedaafde8cf0b286d80b0f2a930dba15a362c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 4"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 4 of 8).dsk" size="737280" crc="4cb5d6f4" sha1="c0750209ce9b36dd76091ed353d762a9f5380adb" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 5"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 5 of 8).dsk" size="737280" crc="9d9fd03d" sha1="7f92d37b3cb31689a3fa54c374c84366e302afb3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 6"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 6 of 8)[a].dsk" size="737280" crc="b313ebd6" sha1="99d9e9580372e9eccdc69a20e6b349a90e1c1005" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 7"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 7 of 8).dsk" size="737280" crc="77b007ec" sha1="0f64b6b2a1eefb0597793ccb82a247945a19b5ca" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop8" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 8"/>
 			<dataarea name="flop" size="737280">
 				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 8 of 8)[a].dsk" size="737280" crc="825b91a9" sha1="9dd478f437147726ba585c1a6446c0150f2de9a2" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop16" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 8, Alt 2"/>
+	</software>
+
+	<software name="ranman12b" cloneof="ranman12">
+		<description>Ranma Nibunnoichi 1-2 (Jpn, Alt 2, Disks 1+8)</description>
+		<year>1992</year>
+		<publisher>Bothtec</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 1, Alt 2"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 1 of 8)[a2].dsk" size="737280" crc="bbd17c43" sha1="50f5d422b5eb45f5e8b340e1030bf65cb91e1a8e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 2 of 8).dsk" size="737280" crc="fbb7805b" sha1="a9e6bfd80298626086e3a81d054b37142db08b52" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 3"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 3 of 8).dsk" size="737280" crc="26295e10" sha1="7dcfedaafde8cf0b286d80b0f2a930dba15a362c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 4"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 4 of 8).dsk" size="737280" crc="4cb5d6f4" sha1="c0750209ce9b36dd76091ed353d762a9f5380adb" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 5"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 5 of 8).dsk" size="737280" crc="9d9fd03d" sha1="7f92d37b3cb31689a3fa54c374c84366e302afb3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 6"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 6 of 8).dsk" size="737280" crc="c90a316e" sha1="27dfae858e543a443521dc3b9a8f70028e0cd033" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 7"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 7 of 8).dsk" size="737280" crc="77b007ec" sha1="0f64b6b2a1eefb0597793ccb82a247945a19b5ca" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop8" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 8"/>
 			<dataarea name="flop" size="737280">
 				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 8 of 8)[a2].dsk" size="737280" crc="742f421d" sha1="34acc7e52b700557071447345f3f7419a972ddae" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ranman12c" cloneof="ranman12">
+		<description>Ranma Nibunnoichi 1-2 (Jpn, Alt 3, Disk 1)</description>
+		<year>1992</year>
+		<publisher>Bothtec</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 1 of 8)[a3].dsk" size="737280" crc="39cf454c" sha1="c627a49182ccf80e231525cb1a3a53e460fc024b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 2 of 8).dsk" size="737280" crc="fbb7805b" sha1="a9e6bfd80298626086e3a81d054b37142db08b52" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 3"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 3 of 8).dsk" size="737280" crc="26295e10" sha1="7dcfedaafde8cf0b286d80b0f2a930dba15a362c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 4"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 4 of 8).dsk" size="737280" crc="4cb5d6f4" sha1="c0750209ce9b36dd76091ed353d762a9f5380adb" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 5"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 5 of 8).dsk" size="737280" crc="9d9fd03d" sha1="7f92d37b3cb31689a3fa54c374c84366e302afb3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 6"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 6 of 8).dsk" size="737280" crc="c90a316e" sha1="27dfae858e543a443521dc3b9a8f70028e0cd033" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 7"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 7 of 8).dsk" size="737280" crc="77b007ec" sha1="0f64b6b2a1eefb0597793ccb82a247945a19b5ca" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop8" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 8"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 8 of 8).dsk" size="737280" crc="ea153962" sha1="6ea5f0a2b89f223220ee8003b83a2f537fd63ee3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ranman12d" cloneof="ranman12">
+		<description>Ranma Nibunnoichi 1-2 (Jpn, Alt 4, Disk 1)</description>
+		<year>1992</year>
+		<publisher>Bothtec</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 1 of 8)[b].dsk" size="737280" crc="6f8ce94b" sha1="fee621f0426ae26c35cc87b29d770d7056c352e0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 2 of 8).dsk" size="737280" crc="fbb7805b" sha1="a9e6bfd80298626086e3a81d054b37142db08b52" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 3"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 3 of 8).dsk" size="737280" crc="26295e10" sha1="7dcfedaafde8cf0b286d80b0f2a930dba15a362c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 4"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 4 of 8).dsk" size="737280" crc="4cb5d6f4" sha1="c0750209ce9b36dd76091ed353d762a9f5380adb" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 5"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 5 of 8).dsk" size="737280" crc="9d9fd03d" sha1="7f92d37b3cb31689a3fa54c374c84366e302afb3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 6"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 6 of 8).dsk" size="737280" crc="c90a316e" sha1="27dfae858e543a443521dc3b9a8f70028e0cd033" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 7"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 7 of 8).dsk" size="737280" crc="77b007ec" sha1="0f64b6b2a1eefb0597793ccb82a247945a19b5ca" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop8" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 8"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 8 of 8).dsk" size="737280" crc="ea153962" sha1="6ea5f0a2b89f223220ee8003b83a2f537fd63ee3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ranman12e" cloneof="ranman12">
+		<description>Ranma Nibunnoichi 1-2 (Jpn, Alt 5, Disk 1)</description>
+		<year>1992</year>
+		<publisher>Bothtec</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 1 of 8)[b2].dsk" size="737280" crc="36375928" sha1="b2e154c59fd828ef935d5e4c5e016c2a8fc9cb24" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 2 of 8).dsk" size="737280" crc="fbb7805b" sha1="a9e6bfd80298626086e3a81d054b37142db08b52" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 3"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 3 of 8).dsk" size="737280" crc="26295e10" sha1="7dcfedaafde8cf0b286d80b0f2a930dba15a362c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 4"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 4 of 8).dsk" size="737280" crc="4cb5d6f4" sha1="c0750209ce9b36dd76091ed353d762a9f5380adb" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 5"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 5 of 8).dsk" size="737280" crc="9d9fd03d" sha1="7f92d37b3cb31689a3fa54c374c84366e302afb3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 6"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 6 of 8).dsk" size="737280" crc="c90a316e" sha1="27dfae858e543a443521dc3b9a8f70028e0cd033" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 7"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 7 of 8).dsk" size="737280" crc="77b007ec" sha1="0f64b6b2a1eefb0597793ccb82a247945a19b5ca" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop8" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 8"/>
+			<dataarea name="flop" size="737280">
+				<rom name="ranma nibunnoichi 1-2 (1992)(bothtec)(jp)(disk 8 of 8).dsk" size="737280" crc="ea153962" sha1="6ea5f0a2b89f223220ee8003b83a2f537fd63ee3" offset="0" />
 			</dataarea>
 		</part>
 	</software>
