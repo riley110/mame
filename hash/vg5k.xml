@@ -1055,11 +1055,11 @@
 	</software>
 
 <!--
-	sokobanb and sokobanc are a bit more complicated to load; use these commands in order (from http://videopac.nl/forum/index.php?topic=1503.0 ):
+    sokobanb and sokobanc are a bit more complicated to load; use these commands in order (from http://videopac.nl/forum/index.php?topic=1503.0 ):
 
-	CLOAD "SOKO"  (game)
-	CLOAD "ORIG"  (the six first levels)
-	CALL &"5200"
+    CLOAD "SOKO"  (game)
+    CLOAD "ORIG"  (the six first levels)
+    CALL &"5200"
 -->
 
 	<software name="sokobanb" cloneof="sokoban">

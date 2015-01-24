@@ -36,16 +36,16 @@ Amoured Assault SD233C // Was availible on Cartridge and/or Tape
 	</software>
 
 	<software name="mmentor">
-	    <description>Music Mentor</description>
-	    <year>1983</year>
-	    <publisher>Spectravideo</publisher>
+		<description>Music Mentor</description>
+		<year>1983</year>
+		<publisher>Spectravideo</publisher>
 		<info name="serial" value="SD-236C" />
-		
-	    <part name="cart" interface="svi_cart">
-	        <dataarea name="rom" size="32768">
-	            <rom name="music mentor.rom" size="32768" crc="ba0c3d3c" sha1="0ebb91dcc99c0c361d8855387079bc62a41d05d8" offset="0" />
-	        </dataarea>
-	    </part>
+
+		<part name="cart" interface="svi_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="music mentor.rom" size="32768" crc="ba0c3d3c" sha1="0ebb91dcc99c0c361d8855387079bc62a41d05d8" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
 	<software name="secalpha">

@@ -3,34 +3,34 @@
 
 <softwarelist name="msx1_cass" description="MSX1 cassettes">
 <!--
-	History:
-	January 25, 2013 (etabeta)
-		Initial version with expansion tapes for Albatross.
-	
-	January 30, 2013 (Kaylee)
-		Small addition.
-	
-	September 18, 2014 (hap)
-		added game "Genius" by YGW - thanks to fukenko!
-	
-	October 11, 2014 (Riley110)
-		All TOSEC images converted to software list.
-		There are still many inaccuracies left in the documentation!
+    History:
+    January 25, 2013 (etabeta)
+        Initial version with expansion tapes for Albatross.
 
-	DONE:
-		Software Descriptions
-		Years
-		Publishers
-		Usage Instructions
-		Part IDs
+    January 30, 2013 (Kaylee)
+        Small addition.
 
-	TODO from highest to lowest priority:
-		Proper regions (TOSEC is VERY incorrect on this)
-		Test "bad" dumps, make sure they aren't marked wrong
-		Add images from "UnRenamed MSX"
-		Clear out TOSEC information from filenames
-		Japanese alt titles?
-		Sort software based on TOSEC categories?
+    September 18, 2014 (hap)
+        added game "Genius" by YGW - thanks to fukenko!
+
+    October 11, 2014 (Riley110)
+        All TOSEC images converted to software list.
+        There are still many inaccuracies left in the documentation!
+
+    DONE:
+        Software Descriptions
+        Years
+        Publishers
+        Usage Instructions
+        Part IDs
+
+    TODO from highest to lowest priority:
+        Proper regions (TOSEC is VERY incorrect on this)
+        Test "bad" dumps, make sure they aren't marked wrong
+        Add images from "UnRenamed MSX"
+        Clear out TOSEC information from filenames
+        Japanese alt titles?
+        Sort software based on TOSEC categories?
 -->
 
 	<!-- Expansion cassettes for cart-based games -->
@@ -78,7 +78,7 @@
 	</software>
 
 	<!-- Games -->
-	
+
 	<software name="genius">
 		<!-- listing printout published in Japan "POPCOM" '87/7 issue -->
 		<description>Genius (Jpn)</description>
@@ -406,7 +406,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="3dgolf">
 		<description>3D Golf Simulation - High Speed Edition (Jpn)</description>
 		<year>1984</year>
@@ -450,7 +450,7 @@
 			<dataarea name="cass" size="32138">
 				<rom name="4x4 off-road racing (1988)(u.s. gold)(gb)(side a)[a][bload'cas-',r].cas" size="32138" crc="b9f3390f" sha1="b3bcd03ae18b44a71b7577306de88253d539c03f" offset="0" />
 			</dataarea>
-		</part>		
+		</part>
 		<part name="cass3" interface="msx_cass">
 		<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="38434">
@@ -1925,7 +1925,7 @@
 		<year>1988</year>
 		<publisher>Eurosoft</publisher>
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
-		
+
 		<part name="cass1" interface="msx_cass">
 		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="69176">
@@ -2471,7 +2471,7 @@
 			</dataarea>
 		</part>
 	</software>
-	
+
 	<software name="camelot">
 		<description>Camelot Warriors (Spa)</description>
 		<year>1986</year>
@@ -13585,7 +13585,7 @@
 		</part>
 	</software>
 
-	<software name="smugglrs">	<!-- requires gunstick -->
+	<software name="smugglrs">  <!-- requires gunstick -->
 		<description>Space Smugglers (Spa)</description>
 		<year>1989</year>
 		<publisher>MHT Ingenieros</publisher>
@@ -16495,7 +16495,7 @@
 			<dataarea name="cass" size="52208">
 				<rom name="winter events (1987)(anco software)(gb)(side b)[martos].cas" size="52208" crc="5e34d1f8" sha1="cf87f620d15a16f4fda690110cd0cdc92e179b5a" offset="0" />
 			</dataarea>
-		</part>		
+		</part>
 	</software>
 
 	<software name="wevents">
@@ -16733,7 +16733,7 @@
 		<year>1985</year>
 		<publisher>Mr. Micro</publisher>
 		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
-		
+
 		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="63472">
 				<rom name="zakil wood (1985)(mr. micro)[bload'cas-',r].cas" size="63472" crc="d49d41df" sha1="bb9c4e1dcecc27bc5ef35705a4abac48d63119e6" offset="0" />
@@ -16746,7 +16746,7 @@
 		<year>1987</year>
 		<publisher>Eaglesoft</publisher>
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
-		
+
 		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="34616">
 				<rom name="zanac (1987)(eaglesoft)(nl)[run'cas-'].cas" size="34616" crc="33ac6012" sha1="0a40388be3878ed654898869a78de40d694b2ad8" offset="0" />
