@@ -392,7 +392,7 @@
 		<description>MSX Windows 98 Installer (v1.1e)</description>
 		<year>1998?</year>
 		<publisher>CyberSoft</publisher>
-		
+
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="368640">
 				<rom name="msx windows 98 v1.1e installer (1989)(cybersoft)[mouse][needs msx-dos 2].dsk" size="368640" crc="256fe779" sha1="d890c64cc33476bd2730183c83fab43701e88652" offset="0" />
@@ -430,13 +430,18 @@
 		<publisher>MIWA</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="multi-plex (1993)(miwa)(jp).dsk" size="737280" crc="126399dc" sha1="a6f75f120c89c22dce27a63f73209d96ccacb92a" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="multiplxa" cloneof="multiplx">
+		<description>Multi-Plex (Jpn, Alt)</description>
+		<year>1993</year>
+		<publisher>MIWA</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="multi-plex (1993)(miwa)(jp)[a].dsk" size="737280" crc="d116b2f7" sha1="8cd400d46b8af6a0f557eda0903ad916898b91cc" offset="0" />
 			</dataarea>
@@ -493,25 +498,42 @@
 		<publisher>RAC House</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="paradream (1992)(rac house)(jp).dsk" size="737280" crc="81f23eae" sha1="1dd663e5b38ce0206f09a8c6a226f9e6562e341a" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt"/>
+	</software>
+
+	<software name="paradreaa" cloneof="paradrea">
+		<description>PaRaDream (Jpn, Alt)</description>
+		<year>1992</year>
+		<publisher>RAC House</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="paradream (1992)(rac house)(jp)[a].dsk" size="737280" crc="cb11589a" sha1="eea7efb3a3f3df9a8985a24bc9838d3ef90b78e7" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 2"/>
+	</software>
+
+	<software name="paradreab" cloneof="paradrea">
+		<description>PaRaDream (Jpn, Alt 2)</description>
+		<year>1992</year>
+		<publisher>RAC House</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="paradream (1992)(rac house)(jp)[a2].dsk" size="737280" crc="7cafcc2c" sha1="7182f010517a9d7f54f2ade133c8f3b7f77b8f3e" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop4" interface="floppy_3_5">
-		<feature name="part_id" value="Disk 1, Alt 3"/>
+	</software>
+
+	<software name="paradreac" cloneof="paradrea">
+		<description>PaRaDream (Jpn, Alt 3)</description>
+		<year>1992</year>
+		<publisher>RAC House</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="paradream (1992)(rac house)(jp)[b].dsk" size="737280" crc="523c10aa" sha1="80d3db313a0787a5a9d4d061ac5d32f2b64a3f7e" offset="0" />
 			</dataarea>
@@ -669,45 +691,90 @@
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Game Disk 1, Alt"/>
-			<dataarea name="flop" size="737280">
-				<rom name="seed of dragon (1990)(riverhill soft)(jp)(disk 1 of 3)(game disk 1)[a].dsk" size="737280" crc="a5f1a706" sha1="0df21b3debfc5bc83eed276ddeed0acf7f62ab30" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-		<feature name="part_id" value="Game Disk 1, Alt 2"/>
-			<dataarea name="flop" size="737280">
-				<rom name="seed of dragon (1990)(riverhill soft)(jp)(disk 1 of 3)(game disk 1)[a2].dsk" size="737280" crc="08fd8f1b" sha1="5803057e6c75a5841dc4f273e7d26b73f83a74f9" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_3_5">
-		<feature name="part_id" value="Game Disk 1, Alt 3"/>
-			<dataarea name="flop" size="737280">
-				<rom name="seed of dragon (1990)(riverhill soft)(jp)(disk 1 of 3)(game disk 1)[b].dsk" size="737280" crc="b6529b25" sha1="137f61f7437b62f643c46d6e8e2193ebd58d8d8a" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop5" interface="floppy_3_5">
 		<feature name="part_id" value="Game Disk 2"/>
 			<dataarea name="flop" size="737280">
 				<rom name="seed of dragon (1990)(riverhill soft)(jp)(disk 2 of 3)(game disk 2).dsk" size="737280" crc="dd1fd600" sha1="16bece552fd1af10c2cf467d1c89e7d2869ded35" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop6" interface="floppy_3_5">
-		<feature name="part_id" value="Game Disk 2, Alt"/>
-			<dataarea name="flop" size="737280">
-				<rom name="seed of dragon (1990)(riverhill soft)(jp)(disk 2 of 3)(game disk 2)[a].dsk" size="737280" crc="86ea43d0" sha1="cf11190db1c36aa9b79c534b131f7258729e0e99" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop7" interface="floppy_3_5">
+		<part name="flop3" interface="floppy_3_5">
 		<feature name="part_id" value="Game Disk 3"/>
 			<dataarea name="flop" size="737280">
 				<rom name="seed of dragon (1990)(riverhill soft)(jp)(disk 3 of 3)(game disk 3).dsk" size="737280" crc="3ac7bc91" sha1="f376d8875548a7910317ab7a34cd2be823101385" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop8" interface="floppy_3_5">
-		<feature name="part_id" value="Game Disk 3, Alt"/>
+	</software>
+
+	<software name="seeddraga" cloneof="seeddrag">
+		<description>Seed of Dragon (Jpn, Alt)</description>
+		<year>1990</year>
+		<publisher>Riverhill Soft</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="seed of dragon (1990)(riverhill soft)(jp)(disk 1 of 3)(game disk 1)[a].dsk" size="737280" crc="a5f1a706" sha1="0df21b3debfc5bc83eed276ddeed0acf7f62ab30" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 2"/>
+			<dataarea name="flop" size="737280">
+				<rom name="seed of dragon (1990)(riverhill soft)(jp)(disk 2 of 3)(game disk 2)[a].dsk" size="737280" crc="86ea43d0" sha1="cf11190db1c36aa9b79c534b131f7258729e0e99" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 3"/>
 			<dataarea name="flop" size="737280">
 				<rom name="seed of dragon (1990)(riverhill soft)(jp)(disk 3 of 3)(game disk 3)[a].dsk" size="737280" crc="d0ef7a8e" sha1="a41729e7ae2e5223374603cadc08f551ae8e40e6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="seeddragb" cloneof="seeddrag">
+		<description>Seed of Dragon (Jpn, Alt Game Disk 1)</description>
+		<year>1990</year>
+		<publisher>Riverhill Soft</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="seed of dragon (1990)(riverhill soft)(jp)(disk 1 of 3)(game disk 1)[a2].dsk" size="737280" crc="08fd8f1b" sha1="5803057e6c75a5841dc4f273e7d26b73f83a74f9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 2"/>
+			<dataarea name="flop" size="737280">
+				<rom name="seed of dragon (1990)(riverhill soft)(jp)(disk 2 of 3)(game disk 2).dsk" size="737280" crc="dd1fd600" sha1="16bece552fd1af10c2cf467d1c89e7d2869ded35" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 3"/>
+			<dataarea name="flop" size="737280">
+				<rom name="seed of dragon (1990)(riverhill soft)(jp)(disk 3 of 3)(game disk 3).dsk" size="737280" crc="3ac7bc91" sha1="f376d8875548a7910317ab7a34cd2be823101385" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="seeddragc" cloneof="seeddrag">
+		<description>Seed of Dragon (Jpn, Bad? Game Disk 1)</description>
+		<year>1990</year>
+		<publisher>Riverhill Soft</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="seed of dragon (1990)(riverhill soft)(jp)(disk 1 of 3)(game disk 1)[b].dsk" size="737280" crc="b6529b25" sha1="137f61f7437b62f643c46d6e8e2193ebd58d8d8a" status="baddump" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 2"/>
+			<dataarea name="flop" size="737280">
+				<rom name="seed of dragon (1990)(riverhill soft)(jp)(disk 2 of 3)(game disk 2).dsk" size="737280" crc="dd1fd600" sha1="16bece552fd1af10c2cf467d1c89e7d2869ded35" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+		<feature name="part_id" value="Game Disk 3"/>
+			<dataarea name="flop" size="737280">
+				<rom name="seed of dragon (1990)(riverhill soft)(jp)(disk 3 of 3)(game disk 3).dsk" size="737280" crc="3ac7bc91" sha1="f376d8875548a7910317ab7a34cd2be823101385" offset="0" />
 			</dataarea>
 		</part>
 	</software>
