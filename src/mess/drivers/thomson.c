@@ -726,11 +726,11 @@ static MACHINE_CONFIG_START( to7, thomson_state )
 	MCFG_RAM_EXTRA_OPTIONS("24K,48K")
 	
 /* software lists */
-	MCFG_SOFTWARE_LIST_ADD("moto_flop_list","moto_flop")
-
 	MCFG_SOFTWARE_LIST_ADD("to_cart_list","to_cart")
 	MCFG_SOFTWARE_LIST_ADD("to_cass_list","to_cass")
 	MCFG_SOFTWARE_LIST_ADD("to_flop_list","to_flop")
+
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("moto_flop_list","moto_flop")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( t9000, to7 )
