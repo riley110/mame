@@ -210,6 +210,7 @@ ifeq ($(TARGETOS),linux)
 BASE_TARGETOS = unix
 SYNC_IMPLEMENTATION = tc
 SDL_NETWORK = taptun
+#SDL_NETWORK = pcap
 
 ifndef NO_USE_MIDI
 INCPATH += `pkg-config --cflags alsa`
@@ -245,9 +246,11 @@ endif
 
 ifeq ($(TARGETOS),solaris)
 BASE_TARGETOS = unix
-DEFS += -DNO_AFFINITY_NP -UHAVE_VSNPRINTF -DNO_vsnprintf
+#DEFS += -DNO_AFFINITY_NP -UHAVE_VSNPRINTF -DNO_vsnprintf
+DEFS += -DNO_AFFINITY_NP
 SYNC_IMPLEMENTATION = tc
 NO_USE_MIDI = 1
+NO_USE_QTDEBUG = 1
 endif
 
 ifeq ($(TARGETOS),haiku)
@@ -410,7 +413,6 @@ OSDCOREOBJS = \
 	$(SDLOBJ)/sdlfile.o     \
 	$(SDLOBJ)/sdlptty_$(BASE_TARGETOS).o    \
 	$(SDLOBJ)/sdlsocket.o   \
-	$(SDLOBJ)/sdlmisc_$(BASE_TARGETOS).o    \
 	$(SDLOBJ)/sdlos_$(SDLOS_TARGETOS).o \
 	$(OSDOBJ)/modules/lib/osdlib_$(SDLOS_TARGETOS).o \
 	$(OSDOBJ)/modules/sync/sync_$(SYNC_IMPLEMENTATION).o \
@@ -606,11 +608,21 @@ else
 LIBS += -lSDL_ttf
 endif
 
+# FIXME: should be dealt with elsewhere
 # libs that Haiku doesn't want but are mandatory on *IX
 ifneq ($(TARGETOS),haiku)
-BASELIBS += -lm -lutil -lpthread
-LIBS += -lm -lutil -lpthread
+BASELIBS += -lm -lpthread
+LIBS += -lm -lpthread
+ifneq ($(TARGETOS),solaris)
+BASELIBS += -lutil
+LIBS += -lutil
+else
+SUPPORTSM32M64 = 1
+BASELIBS += -lsocket -lnsl
+LIBS += -lsocket -lnsl
 endif
+endif
+
 
 endif # not Mac OS X
 
@@ -706,7 +718,6 @@ $(OSDOBJ)/%.moc.c: $(OSDSRC)/%.h
 	$(MOC) $(MOCINCPATH) $(DEFS) $< -o $@
 
 DEBUGOBJS = \
-	$(OSDOBJ)/modules/debugger/debugqt.o \
 	$(OSDOBJ)/modules/debugger/qt/debugqtview.o \
 	$(OSDOBJ)/modules/debugger/qt/debugqtwindow.o \
 	$(OSDOBJ)/modules/debugger/qt/debugqtlogwindow.o \
@@ -725,6 +736,11 @@ DEBUGOBJS = \
 	$(OSDOBJ)/modules/debugger/qt/debugqtbreakpointswindow.moc.o \
 	$(OSDOBJ)/modules/debugger/qt/debugqtdeviceswindow.moc.o \
 	$(OSDOBJ)/modules/debugger/qt/debugqtdeviceinformationwindow.moc.o
+
+DEFS += -DUSE_QTDEBUG=1
+
+else
+DEFS += -DUSE_QTDEBUG=0
 endif
 
 ifeq ($(NO_DEBUGGER),1)
@@ -732,6 +748,14 @@ DEFS += -DNO_DEBUGGER
 else
 OSDOBJS += $(DEBUGOBJS)
 endif # NO_DEBUGGER
+
+# Always add these
+OSDOBJS += \
+	$(OSDOBJ)/modules/debugger/none.o \
+	$(OSDOBJ)/modules/debugger/debugint.o \
+	$(OSDOBJ)/modules/debugger/debugwin.o \
+	$(OSDOBJ)/modules/debugger/debugqt.o \
+
 
 #-------------------------------------------------
 # OPENGL
