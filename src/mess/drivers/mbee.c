@@ -798,6 +798,7 @@ static MACHINE_CONFIG_DERIVED( mbee128, mbeeppc )
 	MCFG_WD2793x_ADD("fdc", XTAL_4MHz / 4)
 	MCFG_FLOPPY_DRIVE_ADD("fdc:0", mbee_floppies, "35dd", mbee_state::floppy_formats)
 	MCFG_FLOPPY_DRIVE_ADD("fdc:1", mbee_floppies, "525dd", mbee_state::floppy_formats)
+	MCFG_SOFTWARE_LIST_ADD("flop_list", "mbee_flop")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( mbee256, mbee128 )
