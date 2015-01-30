@@ -2863,11 +2863,10 @@
 		</part>
 	</software>
 
-<!--
-	<software name="">
-		<description>3D Highway Race (19xx)(Tarusoft)(de)</description>
+	<software name="3dhigh1">
+		<description>3D Highway Race (Tarusoft) (Ger)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Tarusoft</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="4409">
@@ -2876,10 +2875,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>3D Highway Race (19xx)(Tarusoft)(nl)</description>
+	<software name="3dhigh1a" cloneof="3dhigh1">
+		<description>3D Highway Race (Tarusoft) (Ned)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Tarusoft</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="4700">
@@ -2888,10 +2887,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>3D Highway Race v1.0 (1983)(Thomas A. Runkler)(de)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="3dhigh2">
+		<description>3D Highway Race (Thomas A. Runkler) (Ger, v1.0)</description>
+		<year>1983</year>
+		<publisher>Thomas A. Runkler</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="4094">
@@ -2900,10 +2899,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>3D Labyrinth (1983)(H. Stamm)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="3dlabyr1">
+		<description>3D Labyrinth (H. Stamm)</description>
+		<year>1983</year>
+		<publisher>H. Stamm</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="4926">
@@ -2912,22 +2911,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>3D Labyrinth (1983)(H. Stamm)[a2]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="zx81_cass">
-			<dataarea name="cass" size="4902">
-				<rom name="3d labyrinth (1983)(h. stamm)[a2].p" size="4902" crc="d8eef1f0" sha1="43d2dbe96d5265e10a80b71fdd93599ca4b59bc7" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>3D Labyrinth (1983)(H. Stamm)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="3dlabyr1a" cloneof="3dlabyr1">
+		<description>3D Labyrinth (H. Stamm) (Alt)</description>
+		<year>1983</year>
+		<publisher>H. Stamm</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="4870">
@@ -2936,10 +2923,22 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>3D Labyrinth (19xx)(-)(de)</description>
+	<software name="3dlabyr1b" cloneof="3dlabyr1">
+		<description>3D Labyrinth (H. Stamm) (Alt 2)</description>
+		<year>1983</year>
+		<publisher>H. Stamm</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="4902">
+				<rom name="3d labyrinth (1983)(h. stamm)[a2].p" size="4902" crc="d8eef1f0" sha1="43d2dbe96d5265e10a80b71fdd93599ca4b59bc7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="3dlabyr2">
+		<description>3D Labyrinth (Unknown Publisher) (Ger)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="15882">
@@ -2948,10 +2947,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>3D Maze (19xx)(-)</description>
+	<software name="3dmaze">
+		<description>3D Maze</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="10017">
@@ -2960,10 +2959,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>3D Maze (19xx)(-)[a]</description>
+	<software name="3dmazea" cloneof="3dmaze">
+		<description>3D Maze (Alt)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="10044">
@@ -2972,10 +2971,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>3D Monster Labyrinth (19xx)(-)(de)</description>
+	<software name="3dmlabyr">
+		<description>3D Monster Labyrinth (Ger)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="9707">
@@ -2984,10 +2983,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>3D Monster Maze (19xx)(J.K. Greye Software)</description>
+	<software name="3dmmaze">
+		<description>3D Monster Maze</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>J.K. Greye Software</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="10612">
@@ -2996,10 +2995,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>3D Monster Maze (19xx)(J.K. Greye Software)[a]</description>
+	<software name="3dmmazea" cloneof="3dmmaze">
+		<description>3D Monster Maze (Alt)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>J.K. Greye Software</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="10553">
@@ -3008,10 +3007,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>3D Netwerk (19xx)(-)</description>
+	<software name="3dnetwrk">
+		<description>3D Netwerk</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1743">
@@ -3020,10 +3019,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>3D Nought and Crosses (19xx)(-)</description>
+	<software name="3dnought">
+		<description>3D Nought and Crosses</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="4277">
@@ -3032,10 +3031,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>3D Oxo (1984)(A.J. Heathcote)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="3doxo">
+		<description>3D Oxo</description>
+		<year>1984</year>
+		<publisher>A.J. Heathcote</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="3100">
@@ -3044,10 +3043,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>3D Rotatie (19xx)(Frank Moquette)(nl)</description>
+	<software name="3drotati">
+		<description>3D Rotatie (Ned)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Frank Moquette</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="8324">
@@ -3056,10 +3055,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>3D Tic-Tac-Toe (19xx)(-)</description>
+	<software name="3dtictac">
+		<description>3D Tic-Tac-Toe</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="10772">
@@ -3068,10 +3067,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>3D Tic-Tac-Toe (19xx)(-)[a]</description>
+	<software name="3dtictaca" cloneof="3dtictac">
+		<description>3D Tic-Tac-Toe (Alt)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="10809">
@@ -3080,10 +3079,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>3D-Mover (19xx)(-)</description>
+	<software name="3dmover">
+		<description>3D-Mover</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="3963">
@@ -3092,22 +3091,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>4472 Flying Scotsman (19xx)(-)(nl)</description>
+	<software name="4472fly">
+		<description>4472 Flying Scotsman</description>
 		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="zx81_cass">
-			<dataarea name="cass" size="5457">
-				<rom name="4472 flying scotsman (19xx)(-)(nl).p" size="5457" crc="4a2fedf5" sha1="b6bdf5521cecbfdb9d4c6bdc5baa7a9dc17a3298" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>4472 Flying Scotsman (19xx)(-)</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="5269">
@@ -3116,10 +3103,22 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>8 Way Scroll (19xx)(-)</description>
+	<software name="4472flya" cloneof="4472fly">
+		<description>4472 Flying Scotsman (Ned)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="5457">
+				<rom name="4472 flying scotsman (19xx)(-)(nl).p" size="5457" crc="4a2fedf5" sha1="b6bdf5521cecbfdb9d4c6bdc5baa7a9dc17a3298" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8wayscro">
+		<description>8 Way Scroll</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1566">
@@ -3128,10 +3127,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>84 Caves, The (19xx)(-)</description>
+	<software name="84caves">
+		<description>The 84 Caves</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="16008">
@@ -3140,10 +3139,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>84 Caves, The (19xx)(-)[a]</description>
+	<software name="84cavesa" cloneof="84caves">
+		<description>The 84 Caves (Alt)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="16045">
@@ -3152,10 +3151,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>A Day at the Horseraces v2.0 (19xx)(-)</description>
+	<software name="dayhorse">
+		<description>A Day at the Horseraces (v2.0)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="4080">
@@ -3164,10 +3163,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>ABC (1982)(R.J. Connolly)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="abc">
+		<description>ABC</description>
+		<year>1982</year>
+		<publisher>R.J. Connolly</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="16242">
@@ -3176,10 +3175,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>ABC (1982)(R.J. Connolly)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="abca" cloneof="abc">
+		<description>ABC (Alt)</description>
+		<year>1982</year>
+		<publisher>R.J. Connolly</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="16294">
@@ -3188,10 +3187,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Adressen Bestand (19xx)(M.E. Dias da Silva)(nl)</description>
+	<software name="adrsbst1">
+		<description>Adressen Bestand (Ned)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>M.E. Dias da Silva</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="4320">
@@ -3200,10 +3199,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Adressenbestand (19xx)(A.V. Oosten)(nl)</description>
+	<software name="adrsbst2">
+		<description>Adressenbestand (Ned)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>A.V. Oosten</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="6136">
@@ -3212,10 +3211,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Adressverwaltung (19xx)(-)(de)</description>
+	<software name="adrsverw">
+		<description>Adressverwaltung (Ger)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="14550">
@@ -3224,10 +3223,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Advanced Lawnmower Simulator (1998)(Joe Mackay)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="advlawn">
+		<description>Advanced Lawnmower Simulator</description>
+		<year>1998</year>
+		<publisher>Joe Mackay</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="6252">
@@ -3236,10 +3235,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Adventure (19xx)(-)(de)</description>
+	<software name="adventu1">
+		<description>Adventure (Unknown Publisher 1) (Ger)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="6522">
@@ -3248,10 +3247,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Adventure (19xx)(-)</description>
+	<software name="adventu2">
+		<description>Adventure (Unknown Publisher 2)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1514">
@@ -3260,10 +3259,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Adventure A - The Planet of Death (1981)(Artic Computing)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="adventa">
+		<description>Adventure A - The Planet of Death</description>
+		<year>1981</year>
+		<publisher>Artic Computing</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="13446">
@@ -3272,10 +3271,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Adventure B - Inca Treasure (1981)(Artic Computing)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="adventb">
+		<description>Adventure B - Inca Treasure</description>
+		<year>1981</year>
+		<publisher>Artic Computing</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="11976">
@@ -3284,10 +3283,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Adventure C - Alien Spaceship (1982)(Artic Computing)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="adventc">
+		<description>Adventure C - Alien Spaceship</description>
+		<year>1982</year>
+		<publisher>Artic Computing</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="14046">
@@ -3296,22 +3295,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Adventure C - Alien Spaceship (1982)(Artic Computing)[a2]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="zx81_cass">
-			<dataarea name="cass" size="14138">
-				<rom name="adventure c - alien spaceship (1982)(artic computing)[a2].p" size="14138" crc="1c30bbb6" sha1="26f63a7f4c4a13bec2fbf5a622514fc75e0a6ddb" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Adventure C - Alien Spaceship (1982)(Artic Computing)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="adventca" cloneof="adventc">
+		<description>Adventure C - Alien Spaceship (Alt)</description>
+		<year>1982</year>
+		<publisher>Artic Computing</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="14045">
@@ -3320,10 +3307,22 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Adventure D - Espionage Island (1982)(Artic Computing)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="adventcb" cloneof="adventc">
+		<description>Adventure C - Alien Spaceship (Alt 2)</description>
+		<year>1982</year>
+		<publisher>Artic Computing</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="14138">
+				<rom name="adventure c - alien spaceship (1982)(artic computing)[a2].p" size="14138" crc="1c30bbb6" sha1="26f63a7f4c4a13bec2fbf5a622514fc75e0a6ddb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="adventd">
+		<description>Adventure D - Espionage Island</description>
+		<year>1982</year>
+		<publisher>Artic Computing</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="15505">
@@ -3332,10 +3331,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Adventure D - Espionage Island (1982)(Artic Computing)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="adventda" cloneof="adventd">
+		<description>Adventure D - Espionage Island (Alt)</description>
+		<year>1982</year>
+		<publisher>Artic Computing</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="15504">
@@ -3344,10 +3343,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Air Attack (19xx)(-)</description>
+	<software name="airattac">
+		<description>Air Attack</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="2599">
@@ -3356,10 +3355,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Airline (1982)(CCS)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="airline">
+		<description>Airline</description>
+		<year>1982</year>
+		<publisher>CCS</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="15791">
@@ -3368,10 +3367,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Airline (1982)(CCS)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="airlinea" cloneof="airline">
+		<description>Airline (Alt)</description>
+		<year>1982</year>
+		<publisher>CCS</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="15823">
@@ -3380,10 +3379,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Alien (19xx)(-)</description>
+	<software name="alien">
+		<description>Alien</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="7121">
@@ -3392,10 +3391,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Alien Attack (19xx)(J. Jones)</description>
+	<software name="alienatt">
+		<description>Alien Attack</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>J. Jones</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1773">
@@ -3404,10 +3403,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Alien Attack (19xx)(J. Jones)[a]</description>
+	<software name="alienatta" cloneof="alienatt">
+		<description>Alien Attack (Alt)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>J. Jones</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1810">
@@ -3416,10 +3415,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Alien Descender (1983)(Fontana Publishing)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="aliendes">
+		<description>Alien Descender</description>
+		<year>1983</year>
+		<publisher>Fontana Publishing</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="2489">
@@ -3428,10 +3427,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>All Change Routine (19xx)(-)</description>
+	<software name="allchang">
+		<description>All Change Routine</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1763">
@@ -3440,10 +3439,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Als Alfred Hitchcock's Birds (19xx)(nl)</description>
+	<software name="alfred">
+		<description>Als Alfred Hitchcock's Birds (Ned)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="3304">
@@ -3452,10 +3451,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Amaze (1983)(Fontana Publishing)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="amaze">
+		<description>Amaze</description>
+		<year>1983</year>
+		<publisher>Fontana Publishing</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="2791">
@@ -3464,10 +3463,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Ambassador ZX-81 (19xx)(-)(it)</description>
+	<software name="ambassad">
+		<description>Ambassador ZX-81 (Ita)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="13525">
@@ -3476,10 +3475,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Ambulance (1984)(Sinclair User)[16K]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="ambulanc">
+		<description>Ambulance (16K)</description>
+		<year>1984</year>
+		<publisher>Sinclair User</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="3767">
@@ -3488,10 +3487,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Analiser (19xx)(-)(nl)</description>
+	<software name="analiser">
+		<description>Analiser (Ned)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1133">
@@ -3500,10 +3499,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Appel (1983)(-)(nl)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="appel">
+		<description>Appel (Ned)</description>
+		<year>1983</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="4007">
@@ -3512,10 +3511,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Append (19xx)(-)(nl)</description>
+	<software name="append">
+		<description>Append (Ned)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1327">
@@ -3524,10 +3523,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Apple Nuclear Power Plant (19xx)(Stephen R. Berggren)</description>
+	<software name="applenuc">
+		<description>Apple Nuclear Power Plant</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Stephen R. Berggren</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="10598">
@@ -3536,10 +3535,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Archery (19xx)(-)</description>
+	<software name="archery">
+		<description>Archery</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1401">
@@ -3548,10 +3547,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Ardrijkskunde (19xx)(-)(nl)</description>
+	<software name="ardrijks">
+		<description>Ardrijkskunde (Ned)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="12244">
@@ -3560,34 +3559,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Area v1 (19xx)(-)</description>
+	<software name="area">
+		<description>Area (v3)</description>
 		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="zx81_cass">
-			<dataarea name="cass" size="1026">
-				<rom name="area v1 (19xx)(-).p" size="1026" crc="7f011023" sha1="d20e9fe7b3a1c9ed29b3370a382a58f732cbf7a6" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Area v2 (19xx)(-)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="zx81_cass">
-			<dataarea name="cass" size="1132">
-				<rom name="area v2 (19xx)(-).p" size="1132" crc="f131009e" sha1="442bca18ef07dad7bebea2538e012a314b50e8f8" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Area v3 (19xx)(-)</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1162">
@@ -3596,10 +3571,34 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Arithmetic Race (1982)(Sinclair User)[16K]</description>
+	<software name="areaa" cloneof="area">
+		<description>Area (v2)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="1132">
+				<rom name="area v2 (19xx)(-).p" size="1132" crc="f131009e" sha1="442bca18ef07dad7bebea2538e012a314b50e8f8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="areab" cloneof="area">
+		<description>Area (v1)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="1026">
+				<rom name="area v1 (19xx)(-).p" size="1026" crc="7f011023" sha1="d20e9fe7b3a1c9ed29b3370a382a58f732cbf7a6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="arithrac">
+		<description>Arithmetic Race (16K)</description>
+		<year>1982</year>
+		<publisher>Sinclair User</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="2520">
@@ -3608,10 +3607,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Armada (19xx)(-)(de)</description>
+	<software name="armada">
+		<description>Armada (Ger)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="6071">
@@ -3620,10 +3619,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Artillerie (1982)(Ch. Zwerschke)(de)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="artiller">
+		<description>Artillerie (Ger)</description>
+		<year>1982</year>
+		<publisher>Ch. Zwerschke</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="3364">
@@ -3632,10 +3631,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Artillerie (1982)(Ch. Zwerschke)(de)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="artillera" cloneof="artiller">
+		<description>Artillerie (Ger, Alt)</description>
+		<year>1982</year>
+		<publisher>Ch. Zwerschke</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="3312">
@@ -3644,10 +3643,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Artist (19xx)(-)[16K]</description>
+	<software name="artist">
+		<description>Artist (16K)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1493">
@@ -3656,10 +3655,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Artist - Shuttle (19xx)(-)[16K]</description>
+	<software name="artistsh">
+		<description>Artist - Shuttle (16K)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="2246">
@@ -3668,10 +3667,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Assembler (19xx)(-)</description>
+	<software name="assemblr">
+		<description>Assembler</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="8107">
@@ -3680,10 +3679,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Asteroid Belt (1983)(Fontana Publishing)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="astrbelt">
+		<description>Asteroid Belt</description>
+		<year>1983</year>
+		<publisher>Fontana Publishing</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="3161">
@@ -3692,10 +3691,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Asteroid Storm (19xx)(-)</description>
+	<software name="astrstrm">
+		<description>Asteroid Storm</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="3890">
@@ -3704,10 +3703,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Asteroids (1984)(Mike Pike)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="asteroi1">
+		<description>Asteroids (Mike Pike)</description>
+		<year>1984</year>
+		<publisher>Mike Pike</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="5524">
@@ -3716,22 +3715,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Asteroids (1984)(Mike Pike)[a2]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="zx81_cass">
-			<dataarea name="cass" size="5656">
-				<rom name="asteroids (1984)(mike pike)[a2].p" size="5656" crc="9918da4f" sha1="d3e46a94d0cdccfc13ed7dee3b42c843d1df0bb9" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Asteroids (1984)(Mike Pike)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="asteroi1a" cloneof="asteroi1">
+		<description>Asteroids (Mike Pike) (Alt)</description>
+		<year>1984</year>
+		<publisher>Mike Pike</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="5606">
@@ -3740,10 +3727,22 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Asteroids (19xx)(-)</description>
+	<software name="asteroi1b" cloneof="asteroi1">
+		<description>Asteroids (Mike Pike) (Alt 2)</description>
+		<year>1984</year>
+		<publisher>Mike Pike</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="5656">
+				<rom name="asteroids (1984)(mike pike)[a2].p" size="5656" crc="9918da4f" sha1="d3e46a94d0cdccfc13ed7dee3b42c843d1df0bb9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="asteroi2">
+		<description>Asteroids (Unknown Publisher)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="3425">
@@ -3752,46 +3751,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Asteroids (19xx)(-)[a2]</description>
+	<software name="asteroi2a" cloneof="asteroi2">
+		<description>Asteroids (Unknown Publisher) (Alt)</description>
 		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="zx81_cass">
-			<dataarea name="cass" size="3419">
-				<rom name="asteroids (19xx)(-)[a2].p" size="3419" crc="bbbb9be2" sha1="ddc38ba474906884c3c139846b7fb60bfbc7a4f4" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Asteroids (19xx)(-)[a3]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="zx81_cass">
-			<dataarea name="cass" size="3419">
-				<rom name="asteroids (19xx)(-)[a3].p" size="3419" crc="24719e5d" sha1="c2ec566a981cdbf30d53b8a8233e84b912db6d1f" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Asteroids (19xx)(-)[a4]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="zx81_cass">
-			<dataarea name="cass" size="3457">
-				<rom name="asteroids (19xx)(-)[a4].p" size="3457" crc="1c45b63c" sha1="d337610b4a79766a8d268fe663a33442c314547a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Asteroids (19xx)(-)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="3419">
@@ -3800,10 +3763,46 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Astral Convoy (1982)(Vortex Software)</description>
+	<software name="asteroi2b" cloneof="asteroi2">
+		<description>Asteroids (Unknown Publisher) (Alt 2)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="3419">
+				<rom name="asteroids (19xx)(-)[a2].p" size="3419" crc="bbbb9be2" sha1="ddc38ba474906884c3c139846b7fb60bfbc7a4f4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="asteroi2c" cloneof="asteroi2">
+		<description>Asteroids (Unknown Publisher) (Alt 3)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="3419">
+				<rom name="asteroids (19xx)(-)[a3].p" size="3419" crc="24719e5d" sha1="c2ec566a981cdbf30d53b8a8233e84b912db6d1f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="asteroi2d" cloneof="asteroi2">
+		<description>Asteroids (Unknown Publisher) (Alt 4)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="3457">
+				<rom name="asteroids (19xx)(-)[a4].p" size="3457" crc="1c45b63c" sha1="d337610b4a79766a8d268fe663a33442c314547a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="astrconv">
+		<description>Astral Convoy</description>
+		<year>1982</year>
+		<publisher>Vortex Software</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="9119">
@@ -3812,22 +3811,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Astral Convoy (1982)(Vortex Software)[a2]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="zx81_cass">
-			<dataarea name="cass" size="9155">
-				<rom name="astral convoy (1982)(vortex software)[a2].p" size="9155" crc="0411cf5f" sha1="5ede1981bd72a8ddaf80d331380515c47c3aaf44" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Astral Convoy (1982)(Vortex Software)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="astrconva" cloneof="astrconv">
+		<description>Astral Convoy (Alt)</description>
+		<year>1982</year>
+		<publisher>Vortex Software</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="9161">
@@ -3836,10 +3823,22 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Auto Maintenance (1982)(Softsync)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="astrconvb" cloneof="astrconv">
+		<description>Astral Convoy (Alt 2)</description>
+		<year>1982</year>
+		<publisher>Vortex Software</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="9155">
+				<rom name="astral convoy (1982)(vortex software)[a2].p" size="9155" crc="0411cf5f" sha1="5ede1981bd72a8ddaf80d331380515c47c3aaf44" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="automain">
+		<description>Auto Maintenance</description>
+		<year>1982</year>
+		<publisher>Softsync</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="16182">
@@ -3848,10 +3847,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Auto Maintenance (1982)(Softsync)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="automaina" cloneof="automain">
+		<description>Auto Maintenance (Alt)</description>
+		<year>1982</year>
+		<publisher>Softsync</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="16050">
@@ -3860,10 +3859,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Autochef (1982)(CCS)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="autochef">
+		<description>Autochef</description>
+		<year>1982</year>
+		<publisher>CCS</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="15463">
@@ -3872,10 +3871,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Automatical Renumber (19xx)(-)</description>
+	<software name="automati">
+		<description>Automatical Renumber</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1595">
@@ -3884,10 +3883,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Avenger (1982)(Abacus Programs)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="avenger">
+		<description>Avenger</description>
+		<year>1982</year>
+		<publisher>Abacus Programs</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="7184">
@@ -3896,10 +3895,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Avoid (1983)(Fontana Publishing)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="avoid">
+		<description>Avoid</description>
+		<year>1983</year>
+		<publisher>Fontana Publishing</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="1390">
@@ -3908,10 +3907,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Avoider 1 (19xx)(-)[m]</description>
+	<software name="avoider1">
+		<description>Avoider 1 (Hacked)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="2347">
@@ -3920,10 +3919,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Avoider 2 (19xx)(-)[m]</description>
+	<software name="avoider2">
+		<description>Avoider 2 (Hacked)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="4267">
@@ -3932,10 +3931,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Avoider 3 (1989)(-)[m]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="avoider3">
+		<description>Avoider 3 (Hacked)</description>
+		<year>1989</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="4283">
@@ -3944,10 +3943,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Avventura Su Marte (19xx)(-)(it)</description>
+	<software name="avenmart">
+		<description>Avventura Su Marte (Ita)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="13741">
@@ -3956,10 +3955,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Awari (19xx)(-)</description>
+	<software name="awari">
+		<description>Awari</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="8221">
@@ -3968,22 +3967,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Backgammon (19xx)(Chambers)(nl)</description>
+	<software name="backgamm">
+		<description>Backgammon</description>
 		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="zx81_cass">
-			<dataarea name="cass" size="10602">
-				<rom name="backgammon (19xx)(chambers)(nl).p" size="10602" crc="21068c45" sha1="feafac3a029cfa84cfaffa1cdfb6549a5ddcd59d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Backgammon (19xx)(Chambers)</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Chambers</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="12116">
@@ -3992,10 +3979,22 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Balken (19xx)(-)(de)</description>
+	<software name="backgamma" cloneof="backgamm">
+		<description>Backgammon (Ned)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Chambers</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="10602">
+				<rom name="backgammon (19xx)(chambers)(nl).p" size="10602" crc="21068c45" sha1="feafac3a029cfa84cfaffa1cdfb6549a5ddcd59d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="balken">
+		<description>Balken (Ger)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="2337">
@@ -4004,6 +4003,7 @@
 		</part>
 	</software>
 
+<!--
 	<software name="">
 		<description>Ballistik (19xx)(-)</description>
 		<year>198?</year>
