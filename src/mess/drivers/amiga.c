@@ -1530,6 +1530,11 @@ static MACHINE_CONFIG_DERIVED_CLASS( cdtv, amiga_base, cdtv_state )
 	MCFG_CR511B_DRQ_HANDLER(DEVWRITELINE("u36", dmac_device, xdreq_w))
 	MCFG_CR511B_DTEN_HANDLER(DEVWRITELINE("u36", dmac_device, xdreq_w))
 
+	MCFG_DEVICE_REMOVE("wb_list")
+	MCFG_DEVICE_REMOVE("hardware_list")
+	MCFG_DEVICE_REMOVE("apps_list")
+	MCFG_DEVICE_REMOVE("ocs_list")
+	MCFG_DEVICE_REMOVE("misc_list")
 	MCFG_SOFTWARE_LIST_ADD("cd_list", "cdtv")
 MACHINE_CONFIG_END
 
@@ -1828,6 +1833,11 @@ static MACHINE_CONFIG_DERIVED_CLASS( cd32, amiga_base, cd32_state )
 
 	MCFG_DEVICE_REMOVE("kbd")
 
+	MCFG_DEVICE_REMOVE("wb_list")
+	MCFG_DEVICE_REMOVE("hardware_list")
+	MCFG_DEVICE_REMOVE("apps_list")
+	MCFG_DEVICE_REMOVE("ocs_list")
+	MCFG_DEVICE_REMOVE("misc_list")
 	MCFG_SOFTWARE_LIST_ADD("cd32_list", "cd32")
 MACHINE_CONFIG_END
 
