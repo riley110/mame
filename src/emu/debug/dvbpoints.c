@@ -73,26 +73,6 @@ void debug_view_breakpoints::enumerate_sources()
 
 
 //-------------------------------------------------
-//  view_notify - handle notification of updates
-//  to cursor changes
-//-------------------------------------------------
-
-void debug_view_breakpoints::view_notify(debug_view_notification type)
-{
-}
-
-
-//-------------------------------------------------
-//  view_char - handle a character typed within
-//  the current view
-//-------------------------------------------------
-
-void debug_view_breakpoints::view_char(int chval)
-{
-}
-
-
-//-------------------------------------------------
 //  view_click - handle a mouse click within the
 //  current view
 //-------------------------------------------------
@@ -134,7 +114,7 @@ void debug_view_breakpoints::view_click(const int button, const debug_view_xy& p
 		device_debug::breakpoint** bpList = NULL;
 		const int numBPs = breakpoints(SORT_NONE, bpList);
 
-		const int bpIndex = pos.y-1;
+		const int bpIndex = pos.y - 1;
 		if (bpIndex > numBPs || bpIndex < 0)
 			return;
 
@@ -145,9 +125,13 @@ void debug_view_breakpoints::view_click(const int button, const debug_view_xy& p
 			bpList[bpIndex]->setEnabled(true);
 
 		delete[] bpList;
+
+		machine().debug_view().update_all(DVT_DISASSEMBLY);
 	}
 
-	view_update();
+	begin_update();
+	m_update_pending = true;
+	end_update();
 }
 
 
@@ -331,7 +315,7 @@ int debug_view_breakpoints::breakpoints(SortMode sort, device_debug::breakpoint*
 
 //-------------------------------------------------
 //  view_update - update the contents of the
-//  disassembly view
+//  breakpoints view
 //-------------------------------------------------
 
 void debug_view_breakpoints::view_update()
@@ -394,7 +378,7 @@ void debug_view_breakpoints::view_update()
 			device_debug::breakpoint* bp = bpList[bpi];
 
 			astring buffer;
-			buffer.printf("%x", bp->index());
+			buffer.printf("%X", bp->index());
 			pad_astring_to_length(buffer, tableBreaks[0]);
 			buffer.catprintf("%c", bp->enabled() ? 'X' : 'O');
 			pad_astring_to_length(buffer, tableBreaks[1]);

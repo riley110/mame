@@ -35,10 +35,11 @@
 #include "config.h"
 #include "winutf8.h"
 
-extern int drawnone_init(running_machine &machine, win_draw_callbacks *callbacks);
-extern int drawgdi_init(running_machine &machine, win_draw_callbacks *callbacks);
-extern int drawdd_init(running_machine &machine, win_draw_callbacks *callbacks);
-extern int drawd3d_init(running_machine &machine, win_draw_callbacks *callbacks);
+extern int drawnone_init(running_machine &machine, osd_draw_callbacks *callbacks);
+extern int drawgdi_init(running_machine &machine, osd_draw_callbacks *callbacks);
+extern int drawdd_init(running_machine &machine, osd_draw_callbacks *callbacks);
+extern int drawd3d_init(running_machine &machine, osd_draw_callbacks *callbacks);
+extern int drawbgfx_init(running_machine &machine, osd_draw_callbacks *callbacks);
 
 
 //============================================================
@@ -106,7 +107,7 @@ static DWORD window_threadid;
 
 static DWORD last_update_time;
 
-static win_draw_callbacks draw;
+static osd_draw_callbacks draw;
 
 static HANDLE ui_pause_event;
 static HANDLE window_thread_ready_event;
@@ -240,6 +241,8 @@ bool windows_osd_interface::window_init()
 	}
 	if (video_config.mode == VIDEO_MODE_GDI)
 		drawgdi_init(machine(), &draw);
+	if (video_config.mode == VIDEO_MODE_BGFX)
+		drawbgfx_init(machine(), &draw);
 	if (video_config.mode == VIDEO_MODE_NONE)
 		drawnone_init(machine(), &draw);
 
@@ -294,30 +297,23 @@ void windows_osd_interface::window_exit()
 
 
 win_window_info::win_window_info(running_machine &machine)
-		: m_next(NULL),
+		: osd_window(), m_next(NULL),
 		m_init_state(0),
-		m_hwnd(0),
-		m_focus_hwnd(0),
 		m_startmaximized(0),
 		m_isminimized(0),
 		m_ismaximized(0),
-		m_resize_state(0),
-		m_monitor(0),
+		m_monitor(NULL),
 		m_fullscreen(0),
 		m_fullscreen_safe(0),
-		m_maxwidth(0),
-		m_maxheight(0),
-		m_refresh(0),
 		m_aspect(0),
 		m_render_lock(NULL),
 		m_target(NULL),
 		m_targetview(0),
 		m_targetorient(0),
-		m_primlist(NULL),
 		m_lastclicktime(0),
 		m_lastclickx(0),
 		m_lastclicky(0),
-		m_drawdata(NULL),
+		m_renderer(NULL),
 		m_machine(machine)
 {
 	memset(m_title,0,sizeof(m_title));
@@ -325,6 +321,7 @@ win_window_info::win_window_info(running_machine &machine)
 	m_non_fullscreen_bounds.top = 0;
 	m_non_fullscreen_bounds.right  = 0;
 	m_non_fullscreen_bounds.bottom = 0;
+	m_prescale = video_config.prescale;
 }
 
 win_window_info::~win_window_info()
@@ -501,9 +498,6 @@ void winwindow_dispatch_message(running_machine &machine, MSG *message)
 
 void winwindow_take_snap(void)
 {
-	if (draw.window_record == NULL)
-		return;
-
 	win_window_info *window;
 
 	assert(GetCurrentThreadId() == main_threadid);
@@ -511,7 +505,7 @@ void winwindow_take_snap(void)
 	// iterate over windows and request a snap
 	for (window = win_window_list; window != NULL; window = window->m_next)
 	{
-		(*draw.window_save)(window);
+		window->m_renderer->save();
 	}
 }
 
@@ -524,9 +518,6 @@ void winwindow_take_snap(void)
 
 void winwindow_toggle_fsfx(void)
 {
-	if (draw.window_toggle_fsfx == NULL)
-		return;
-
 	win_window_info *window;
 
 	assert(GetCurrentThreadId() == main_threadid);
@@ -534,7 +525,7 @@ void winwindow_toggle_fsfx(void)
 	// iterate over windows and request a snap
 	for (window = win_window_list; window != NULL; window = window->m_next)
 	{
-		(*draw.window_toggle_fsfx)(window);
+		window->m_renderer->toggle_fsfx();
 	}
 }
 
@@ -547,9 +538,6 @@ void winwindow_toggle_fsfx(void)
 
 void winwindow_take_video(void)
 {
-	if (draw.window_record == NULL)
-		return;
-
 	win_window_info *window;
 
 	assert(GetCurrentThreadId() == main_threadid);
@@ -557,7 +545,7 @@ void winwindow_take_video(void)
 	// iterate over windows and request a snap
 	for (window = win_window_list; window != NULL; window = window->m_next)
 	{
-		(*draw.window_record)(window);
+		window->m_renderer->record();
 	}
 }
 
@@ -626,7 +614,7 @@ void winwindow_update_cursor_state(running_machine &machine)
 	//   2. we also hide the cursor in full screen mode and when the window doesn't have a menu
 	//   3. we also hide the cursor in windowed mode if we're not paused and
 	//      the input system requests it
-	if (winwindow_has_focus() && ((!video_config.windowed && !win_has_menu(win_window_list)) || (!machine.paused() && wininput_should_hide_mouse())))
+	if (winwindow_has_focus() && ((!video_config.windowed && !win_window_list->win_has_menu()) || (!machine.paused() && wininput_should_hide_mouse())))
 	{
 		win_window_info *window = win_window_list;
 		RECT bounds;
@@ -809,7 +797,7 @@ void win_window_info::update()
 	}
 
 	// if we're visible and running and not in the middle of a resize, draw
-	if (m_hwnd != NULL && m_target != NULL && m_drawdata != NULL)
+	if (m_hwnd != NULL && m_target != NULL && m_renderer != NULL)
 	{
 		int got_lock = TRUE;
 
@@ -832,7 +820,7 @@ void win_window_info::update()
 			osd_lock_release(m_render_lock);
 
 			// ensure the target bounds are up-to-date, and then get the primitives
-			primlist = (*draw.window_get_primitives)(this);
+			primlist = m_renderer->get_primitives();
 
 			// post a redraw request with the primitive list as a parameter
 			last_update_time = timeGetTime();
@@ -855,22 +843,22 @@ void win_window_info::update()
 //  (window thread)
 //============================================================
 
-win_monitor_info *winwindow_video_window_monitor(win_window_info *window, const RECT *proposed)
+win_monitor_info *win_window_info::winwindow_video_window_monitor(const RECT *proposed)
 {
 	win_monitor_info *monitor;
 
 	// in window mode, find the nearest
-	if (!window->m_fullscreen)
+	if (!m_fullscreen)
 	{
 		if (proposed != NULL)
 			monitor = winvideo_monitor_from_handle(MonitorFromRect(proposed, MONITOR_DEFAULTTONEAREST));
 		else
-			monitor = winvideo_monitor_from_handle(MonitorFromWindow(window->m_hwnd, MONITOR_DEFAULTTONEAREST));
+			monitor = winvideo_monitor_from_handle(MonitorFromWindow(m_hwnd, MONITOR_DEFAULTTONEAREST));
 	}
 
 	// in full screen, just use the configured monitor
 	else
-		monitor = window->m_monitor;
+		monitor = m_monitor;
 
 	// make sure we're up-to-date
 	monitor->refresh();
@@ -1052,7 +1040,7 @@ INLINE int wnd_extra_width(win_window_info *window)
 	RECT temprect = { 100, 100, 200, 200 };
 	if (window->m_fullscreen)
 		return 0;
-	AdjustWindowRectEx(&temprect, WINDOW_STYLE, win_has_menu(window), WINDOW_STYLE_EX);
+	AdjustWindowRectEx(&temprect, WINDOW_STYLE, window->win_has_menu(), WINDOW_STYLE_EX);
 	return rect_width(&temprect) - 100;
 }
 
@@ -1068,7 +1056,7 @@ INLINE int wnd_extra_height(win_window_info *window)
 	RECT temprect = { 100, 100, 200, 200 };
 	if (window->m_fullscreen)
 		return 0;
-	AdjustWindowRectEx(&temprect, WINDOW_STYLE, win_has_menu(window), WINDOW_STYLE_EX);
+	AdjustWindowRectEx(&temprect, WINDOW_STYLE, window->win_has_menu(), WINDOW_STYLE_EX);
 	return rect_height(&temprect) - 100;
 }
 
@@ -1238,7 +1226,8 @@ static int complete_create(win_window_info *window)
 	if (!window->m_fullscreen || window->m_fullscreen_safe)
 	{
 		// finish off by trying to initialize DirectX; if we fail, ignore it
-		if ((*draw.window_init)(window))
+		window->m_renderer = draw.create(window);
+		if (window->m_renderer->create())
 			return 1;
 		ShowWindow(window->m_hwnd, SW_SHOW);
 	}
@@ -1279,7 +1268,7 @@ LRESULT CALLBACK winwindow_video_window_proc(HWND wnd, UINT message, WPARAM wpar
 			PAINTSTRUCT pstruct;
 			HDC hdc = BeginPaint(wnd, &pstruct);
 			draw_video_contents(window, hdc, TRUE);
-			if (win_has_menu(window))
+			if (window->win_has_menu())
 				DrawMenuBar(window->m_hwnd);
 			EndPaint(wnd, &pstruct);
 			break;
@@ -1287,7 +1276,7 @@ LRESULT CALLBACK winwindow_video_window_proc(HWND wnd, UINT message, WPARAM wpar
 
 		// non-client paint: punt if full screen
 		case WM_NCPAINT:
-			if (!window->m_fullscreen || win_has_menu(window))
+			if (!window->m_fullscreen || window->win_has_menu())
 				return DefWindowProc(wnd, message, wparam, lparam);
 			break;
 
@@ -1414,7 +1403,9 @@ LRESULT CALLBACK winwindow_video_window_proc(HWND wnd, UINT message, WPARAM wpar
 
 		// destroy: clean up all attached rendering bits and NULL out our hwnd
 		case WM_DESTROY:
-			(*draw.window_destroy)(window);
+			window->m_renderer->destroy();
+			global_free(window->m_renderer);
+			window->m_renderer = NULL;
 			window->m_hwnd = NULL;
 			return DefWindowProc(wnd, message, wparam, lparam);
 
@@ -1498,7 +1489,7 @@ static void draw_video_contents(win_window_info *window, HDC dc, int update)
 		// otherwise, render with our drawing system
 		else
 		{
-			(*draw.window_draw)(window, dc, update);
+			window->m_renderer->draw(dc, update);
 			mtlog_add("draw_video_contents: drawing finished");
 		}
 	}
@@ -1518,7 +1509,7 @@ static void draw_video_contents(win_window_info *window, HDC dc, int update)
 
 static void constrain_to_aspect_ratio(win_window_info *window, RECT *rect, int adjustment)
 {
-	win_monitor_info *monitor = winwindow_video_window_monitor(window, rect);
+	win_monitor_info *monitor = window->winwindow_video_window_monitor(rect);
 	INT32 extrawidth = wnd_extra_width(window);
 	INT32 extraheight = wnd_extra_height(window);
 	INT32 propwidth, propheight;
@@ -1531,7 +1522,7 @@ static void constrain_to_aspect_ratio(win_window_info *window, RECT *rect, int a
 	assert(GetCurrentThreadId() == window_threadid);
 
 	// get the pixel aspect ratio for the target monitor
-	pixel_aspect = monitor->get_aspect();
+	pixel_aspect = monitor->aspect();
 
 	// determine the proposed width/height
 	propwidth = rect_width(rect) - extrawidth;
@@ -1831,7 +1822,7 @@ static void adjust_window_position_after_major_change(win_window_info *window)
 	// in full screen, make sure it covers the primary display
 	else
 	{
-		win_monitor_info *monitor = winwindow_video_window_monitor(window, NULL);
+		win_monitor_info *monitor = window->winwindow_video_window_monitor(NULL);
 		newrect = monitor->info.rcMonitor;
 	}
 
@@ -1852,7 +1843,6 @@ static void adjust_window_position_after_major_change(win_window_info *window)
 }
 
 
-
 //============================================================
 //  set_fullscreen
 //  (window thread)
@@ -1868,7 +1858,9 @@ static void set_fullscreen(win_window_info *window, int fullscreen)
 	window->m_fullscreen = fullscreen;
 
 	// kill off the drawers
-	(*draw.window_destroy)(window);
+	window->m_renderer->destroy();
+	global_free(window->m_renderer);
+	window->m_renderer = NULL;
 
 	// hide ourself
 	ShowWindow(window->m_hwnd, SW_HIDE);
@@ -1924,7 +1916,8 @@ static void set_fullscreen(win_window_info *window, int fullscreen)
 	{
 		if (video_config.mode != VIDEO_MODE_NONE)
 			ShowWindow(window->m_hwnd, SW_SHOW);
-		if ((*draw.window_init)(window))
+		window->m_renderer = draw.create(window);
+		if (window->m_renderer->create())
 			exit(1);
 	}
 

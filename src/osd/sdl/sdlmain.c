@@ -38,10 +38,6 @@
 #include <os2.h>
 #endif
 
-#ifdef SDLMAME_EMSCRIPTEN
-#include <emscripten.h>
-#endif
-
 #include "sdlinc.h"
 
 // MAME headers
@@ -295,10 +291,6 @@ int main(int argc, char *argv[])
 	MorphToPM();
 	#endif
 
-	#ifdef SDLMAME_EMSCRIPTEN
-	EM_ASM("SDL.defaults.copyOnLock = false; SDL.defaults.discardOnLock = true;");
-	#endif
-
 #if defined(SDLMAME_X11) && (SDL_MAJOR_VERSION == 1) && (SDL_MINOR_VERSION == 2)
 	if (SDL_Linked_Version()->patch < 10)
 	/* workaround for SDL choosing a 32-bit ARGB visual */
@@ -520,6 +512,7 @@ void sdl_osd_interface::video_register()
 {
 	video_options_add("soft", NULL);
 	video_options_add("opengl", NULL);
+	video_options_add("bgfx", NULL);
 	//video_options_add("auto", NULL); // making d3d video default one
 }
 
@@ -564,11 +557,23 @@ void sdl_osd_interface::init(running_machine &machine)
 
 #if (SDLMAME_SDL2)
 		stemp = options().render_driver();
-		if (stemp != NULL && strcmp(stemp, SDLOPTVAL_AUTO) != 0)
+		if (stemp != NULL)
 		{
-			osd_printf_verbose("Setting SDL renderdriver '%s' ...\n", stemp);
-			//osd_setenv(SDLENV_RENDERDRIVER, stemp, 1);
-			SDL_SetHint(SDL_HINT_RENDER_DRIVER, stemp);
+			if (strcmp(stemp, SDLOPTVAL_AUTO) != 0)
+			{
+				osd_printf_verbose("Setting SDL renderdriver '%s' ...\n", stemp);
+				//osd_setenv(SDLENV_RENDERDRIVER, stemp, 1);
+				SDL_SetHint(SDL_HINT_RENDER_DRIVER, stemp);
+			}
+			else
+			{
+#if defined(SDLMAME_WIN32)
+				// OpenGL renderer has less issues with mode switching on windows
+				osd_printf_verbose("Setting SDL renderdriver '%s' ...\n", "opengl");
+				//osd_setenv(SDLENV_RENDERDRIVER, stemp, 1);
+				SDL_SetHint(SDL_HINT_RENDER_DRIVER, "opengl");
+#endif
+			}
 		}
 #endif
 
@@ -606,7 +611,12 @@ void sdl_osd_interface::init(running_machine &machine)
 	if (!SDLMAME_INIT_IN_WORKER_THREAD)
 	{
 #if (SDLMAME_SDL2)
+#ifdef SDLMAME_EMSCRIPTEN
+		// timer brings in threads which are not supported in Emscripten
+		if (SDL_InitSubSystem(SDL_INIT_VIDEO| SDL_INIT_JOYSTICK|SDL_INIT_NOPARACHUTE)) {
+#else
 		if (SDL_InitSubSystem(SDL_INIT_TIMER| SDL_INIT_VIDEO| SDL_INIT_JOYSTICK|SDL_INIT_NOPARACHUTE)) {
+#endif
 #else
 		if (SDL_Init(SDL_INIT_TIMER|SDL_INIT_VIDEO| SDL_INIT_JOYSTICK|SDL_INIT_NOPARACHUTE)) {
 #endif
@@ -642,7 +652,11 @@ void sdl_osd_interface::init(running_machine &machine)
 	}
 
 #if (SDLMAME_SDL2)
+#ifdef SDLMAME_EMSCRIPTEN
+	SDL_EventState(SDL_TEXTINPUT, SDL_FALSE);
+#else
 	SDL_EventState(SDL_TEXTINPUT, SDL_TRUE);
+#endif
 #else
 	SDL_EnableUNICODE(SDL_TRUE);
 #endif

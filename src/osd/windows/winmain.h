@@ -6,6 +6,9 @@
 //
 //============================================================
 
+#ifndef __WINDOWS_WINMAIN_H__
+#define __WINDOWS_WINMAIN_H__
+
 #include "clifront.h"
 #include "osdepend.h"
 #include "modules/lib/osdobj_common.h"
@@ -260,17 +263,11 @@ public:
 	virtual void input_pause();
 	virtual void input_resume();
 	virtual bool output_init();
-	#ifdef USE_NETWORK
-	virtual bool network_init();
-	#endif
 
 	virtual void video_exit();
 	virtual void window_exit();
 	virtual void input_exit();
 	virtual void output_exit();
-	#ifdef USE_NETWORK
-	virtual void network_exit();
-	#endif
 
 private:
 	void osd_exit();
@@ -298,3 +295,5 @@ extern int osd_num_processors;
 // use this to ping the watchdog
 void winmain_watchdog_ping(void);
 void winmain_dump_stack();
+
+#endif

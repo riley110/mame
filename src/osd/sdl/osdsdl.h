@@ -6,7 +6,6 @@
 #include "watchdog.h"
 #include "clifront.h"
 #include "modules/lib/osdobj_common.h"
-#include "video.h"
 #include "modules/osdmodule.h"
 #include "modules/font/font_module.h"
 
@@ -15,7 +14,7 @@
 //============================================================
 
 // Process events in worker thread
-#if defined(SDLMAME_WIN32) || (SDLMAME_SDL2)
+#if defined(SDLMAME_WIN32) || ((SDLMAME_SDL2) && (!defined(SDLMAME_EMSCRIPTEN)) && (!defined(SDLMAME_MACOSX)))
 #define SDLMAME_EVENTS_IN_WORKER_THREAD (1)
 #else
 #define SDLMAME_EVENTS_IN_WORKER_THREAD (0)
@@ -88,6 +87,7 @@
 #define SDLOPTVAL_OPENGL                "opengl"
 #define SDLOPTVAL_SOFT                  "soft"
 #define SDLOPTVAL_SDL2ACCEL             "accel"
+#define SDLOPTVAL_BGFX                  "bgfx"
 
 #define SDLMAME_LED(x)                  "led" #x
 
@@ -196,26 +196,18 @@ public:
 	virtual void input_pause();
 	virtual void input_resume();
 	virtual bool output_init();
-	#ifdef USE_NETWORK
-	virtual bool network_init();
-	#endif
 	//virtual bool midi_init();
 
 	virtual void video_exit();
 	virtual void window_exit();
 	virtual void input_exit();
 	virtual void output_exit();
-	#ifdef USE_NETWORK
-	virtual void network_exit();
-	#endif
 	//virtual void midi_exit();
 
 	sdl_options &options() { return m_options; }
 
 private:
 	virtual void osd_exit();
-
-	void extract_window_config(int index, sdl_window_config *conf);
 
 	// FIXME: remove machine usage
 	void extract_video_config(running_machine &machine);
