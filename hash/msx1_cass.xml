@@ -1,7 +1,5 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-
-<softwarelist name="msx1_cass" description="MSX1 cassettes">
 <!--
     History:
     January 25, 2013 (etabeta)
@@ -14,26 +12,29 @@
         added game "Genius" by YGW - thanks to fukenko!
 
     October 11, 2014 (Riley110)
-        All TOSEC images converted to software list.
+        All TOSEC images added.
         There are still many inaccuracies left in the documentation!
 
-    DONE:
+    DONE (to be verified later):
         Software Descriptions
         Years
         Publishers
         Usage Instructions
-        Part IDs
+        Part IDs (preliminary)
 
     TODO from highest to lowest priority:
-        Proper regions (TOSEC is VERY incorrect on this)
-        Test "bad" dumps, make sure they aren't marked wrong
-        Add images from "UnRenamed MSX"
-        Clear out TOSEC information from filenames
-        Japanese alt titles?
+        Proper parent/clone sets (in progress)
+        Verify part IDs; TOSEC is VERY incorrect on this sometimes!
+        Test "bad" dumps, make sure they aren't marked incorrectly
+        Add images from UnRenamed Files MSX
+        Japanese alt titles, if needed
+        Clean TOSEC stuff from filenames
+        Japanese alt titles, if needed
         Sort software based on TOSEC categories?
 -->
+<softwarelist name="msx1_cass" description="MSX1 cassettes">
 
-	<!-- Expansion cassettes for cart-based games -->
+<!-- Expansion cassettes for cart-based games -->
 
 	<software name="albatex1">
 		<description>Albatross - Extended Course 1 (Jpn)</description>
@@ -63,7 +64,7 @@
 		</part>
 	</software>
 
-	<!-- Cassettes included with MSX computers -->
+<!-- Cassettes included with MSX computers -->
 
 	<software name="hx10smpl">
 		<description>Toshiba Home Computer HX-10 Sample Program (Euro)</description>
@@ -77,10 +78,10 @@
 		</part>
 	</software>
 
-	<!-- Games -->
+<!-- Games -->
 
+	<!-- listing printout published in Japan "POPCOM" '87/7 issue -->
 	<software name="genius">
-		<!-- listing printout published in Japan "POPCOM" '87/7 issue -->
 		<description>Genius (Jpn)</description>
 		<year>1987</year>
 		<publisher>ポプコム(POPCOM)</publisher>
@@ -95,7 +96,7 @@
 		</part>
 	</software>
 
-	<!-- Unsorted cassette images from TOSEC-->
+<!-- Unsorted cassette images from TOSEC -->
 
 	<software name="007view">
 		<description>007 - A View to a Kill (Euro)</description>
@@ -16270,13 +16271,19 @@
 		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="9511">
 				<rom name="wallball (19xx)(tynesoft)(gb)[bload'cas-',r].cas" size="9511" crc="bad81ae7" sha1="bbcf6bc1b080fe857b721af3038835b0fe450a43" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="wallballa" cloneof="wallball">
+		<description>Wallball (Euro, Alt)</description>
+		<year>198?</year>
+		<publisher>Tynesoft</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="9511">
 				<rom name="wallball (19xx)(tynesoft)(gb)[a][bload'cas-',r].cas" size="9511" crc="1c1334f5" sha1="3775ce91376e08ab0e49e5277c0326585aea5b48" offset="0" />
 			</dataarea>
@@ -16374,13 +16381,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="52375">
 				<rom name="wec le mans (1988)(imagine software)(gb)[run'cas-'].cas" size="52375" crc="b10ac049" sha1="a6ca1a129d02e6ca60efa657556db94f8e29aaca" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="weclemana" cloneof="wecleman">
+		<description>WEC Le Mans (Euro, Alt)</description>
+		<year>1988</year>
+		<publisher>Imagine Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="52375">
 				<rom name="wec le mans (1988)(imagine software)(gb)[a][run'cas-'].cas" size="52375" crc="b7004e60" sha1="cc161e6d809c207123b3e72b317fa7dd1b277e13" offset="0" />
 			</dataarea>
@@ -16407,13 +16420,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="65470">
 				<rom name="west bank (1989)(dinamic software)(es)[run'cas-'].cas" size="65470" crc="63937ee7" sha1="26e4da889c06c27d0127ae1185a556f9e7fa6092" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="westbanka" cloneof="westbank">
+		<description>West Bank (Spa, Alt)</description>
+		<year>1989</year>
+		<publisher>Dinamic Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="65470">
 				<rom name="west bank (1989)(dinamic software)(es)[a][run'cas-'].cas" size="65470" crc="663bff16" sha1="a0d9f9cf08b32017eb7c6498f28661c662ed486f" offset="0" />
 			</dataarea>
@@ -16524,12 +16543,26 @@
 			</dataarea>
 		</part>
 		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Side A, Alt"/>
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="cass" size="62052">
+				<rom name="winter games (1986)(u.s. gold)(gb)(side b)[bload'cas-',r].cas" size="62052" crc="914797c9" sha1="61705c66c244c8e27bc22a008d6eaf8af751427b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wntgamesa" cloneof="wntgames">
+		<description>Winter Games (Euro, Alt Side A)</description>
+		<year>1986</year>
+		<publisher>U.S. Gold</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
+		<feature name="part_id" value="Side A"/>
 			<dataarea name="cass" size="47015">
 				<rom name="winter games (1986)(u.s. gold)(gb)(side a)[a][bload'cas-',r].cas" size="47015" crc="f37a405c" sha1="d9f7a9d8a5f02bc1561e47499b87645c15a16c5c" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="msx_cass">
+		<part name="cass2" interface="msx_cass">
 		<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="62052">
 				<rom name="winter games (1986)(u.s. gold)(gb)(side b)[bload'cas-',r].cas" size="62052" crc="914797c9" sha1="61705c66c244c8e27bc22a008d6eaf8af751427b" offset="0" />
@@ -16564,13 +16597,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="48658">
 				<rom name="winterhawk (1988)(eurosoft)(nl)[run'cas-'].cas" size="48658" crc="143c3a53" sha1="e3163b5fb3eec6bd6ae28c2bd17cf8e6a6dfa92e" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="winthawka" cloneof="winthawk">
+		<description>Winterhawk (Euro, Alt)</description>
+		<year>1988</year>
+		<publisher>Eurosoft</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="48656">
 				<rom name="winterhawk (1988)(eurosoft)(nl)[a][run'cas-'].cas" size="48656" crc="4a107f26" sha1="c543949eb2276a866c5857014d29a7a0c2698fd5" offset="0" />
 			</dataarea>
@@ -16584,13 +16623,19 @@
 		<info name="usage" value="Load with CLOAD + RUN"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="50968">
 				<rom name="wizard's lair (1986)(bubble bus software)(gb)(m3)[cload + run].cas" size="50968" crc="8dc78f7b" sha1="8975c7c42fa0685495922a8a66534dad5d7adeb6" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="wizlaira" cloneof="wizlair">
+		<description>Wizard's Lair (Euro, Alt)</description>
+		<year>1986</year>
+		<publisher>Bubble Bus Software</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="50958">
 				<rom name="wizard's lair (1986)(bubble bus software)(gb)(m3)[a][cload + run].cas" size="50958" crc="1a84c274" sha1="617e42e7f50fbaaab0ccaadf9728a1be587481a4" offset="0" />
 			</dataarea>
@@ -16617,13 +16662,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="30037">
 				<rom name="world cup soccer (1986)(eaglesoft)(nl)[run'cas-'].cas" size="30037" crc="d0ce755b" sha1="4b4b0e258d0cc925e025de26aee6b5195cf69a10" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="wcsoccera" cloneof="wcsoccer">
+		<description>World Cup Soccer (Euro, Alt)</description>
+		<year>1986</year>
+		<publisher>Eaglesoft</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="30037">
 				<rom name="world cup soccer (1986)(eaglesoft)(nl)[a][run'cas-'].cas" size="30037" crc="e8b797ed" sha1="f7fecfe1f31d369295ad953c3358c87ad19319e6" offset="0" />
 			</dataarea>
@@ -16670,45 +16721,71 @@
 		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="72561">
 				<rom name="xybots (1989)(domark)(gb)[bload'cas-',r].cas" size="72561" crc="9ad5bf27" sha1="a907e009ae8d6b182e4d6b66e83963bce4e2c7d7" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="xybotsa" cloneof="xybots">
+		<description>Xybots (Euro, Alt)</description>
+		<year>1989</year>
+		<publisher>Domark</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="72561">
 				<rom name="xybots (1989)(domark)(gb)[a][bload'cas-',r].cas" size="72561" crc="3d870557" sha1="cf980214fcf60ca475518fb1b391344a6592f0b6" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="xyxolog">
+	<software name="xyzolog">
 		<description>Xyzolog (Euro)</description>
 		<year>1985</year>
 		<publisher>Electric Software</publisher>
 		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="29479">
 				<rom name="xyxolog. xyzolog (1985)(electric software)(gb)[bload'cas-',r].cas" size="29479" crc="b064382c" sha1="1a843101f1d49518e2e97917e584aef2ad403a16" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="xyzologa" cloneof="xyzolog">
+		<description>Xyzolog (Euro, Alt)</description>
+		<year>1985</year>
+		<publisher>Electric Software</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="29479">
 				<rom name="xyxolog. xyzolog (1985)(electric software)(gb)[a][bload'cas-',r].cas" size="29479" crc="97ed1a62" sha1="37c130066bdde9a6557564800fa284d12bea97bc" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Bad?"/>
+	</software>
+
+	<software name="xyzologb" cloneof="xyzolog">
+		<description>Xyzolog (Euro, Bad?)</description>
+		<year>1985</year>
+		<publisher>Electric Software</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="29478">
 				<rom name="xyxolog. xyzolog (1985)(electric software)(gb)[b][bload'cas-',r].cas" size="29478" crc="30a99a2d" sha1="9e6d1af81581f4790ce1f149642eb71934d39554" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass4" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Bad 2?"/>
+	</software>
+
+	<software name="xyzologc" cloneof="xyzolog">
+		<description>Xyzolog (Euro, Bad 2?)</description>
+		<year>1985</year>
+		<publisher>Electric Software</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="29478">
 				<rom name="xyxolog. xyzolog (1985)(electric software)(gb)[b2][bload'cas-',r].cas" size="29478" crc="bbca7e5c" sha1="0f0a72f5a45de84975732162402127d2a391c5e1" offset="0" />
 			</dataarea>
@@ -16807,11 +16884,13 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
+		<feature name="part_id" value="Side A"/>
 			<dataarea name="cass" size="35224">
 				<rom name="zipi y zape (1989)(dro soft)(es)(side a)[run'cas-'].cas" size="35224" crc="7061c0ca" sha1="5b606ad42c3b5586a925215324fee12f90161850" offset="0" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="msx_cass">
+		<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="36065">
 				<rom name="zipi y zape (1989)(dro soft)(es)(side b)[run'cas-'].cas" size="36065" crc="5baf3c84" sha1="ca0da84527d3f6d3af47020920d427eb78724f0e" offset="0" />
 			</dataarea>
