@@ -287,7 +287,7 @@ int drawd3d_init(running_machine &machine, osd_draw_callbacks *callbacks)
 //  drawd3d_window_draw
 //============================================================
 
-int d3d::renderer::draw(HDC dc, int update)
+int d3d::renderer::draw(const int update)
 {
 	int check = pre_window_draw_check();
 	if (check >= 0)
@@ -1266,7 +1266,7 @@ int renderer::get_adapter_for_monitor()
 		HMONITOR curmonitor = (*d3dintf->d3d.get_adapter_monitor)(d3dintf, adapternum);
 
 		// if we match the proposed monitor, this is it
-		if (curmonitor == window().monitor()->handle)
+		if (curmonitor == window().monitor()->handle())
 		{
 			return adapternum;
 		}
@@ -1334,7 +1334,7 @@ void renderer::pick_best_mode()
 			size_score *= 0.1f;
 
 		// if we're looking for a particular mode, that's a winner
-		if (mode.Width == window().m_maxwidth && mode.Height == window().m_maxheight)
+		if (mode.Width == window().m_win_config.width && mode.Height == window().m_win_config.height)
 			size_score = 2.0f;
 
 		// compute refresh score
@@ -1345,7 +1345,7 @@ void renderer::pick_best_mode()
 			refresh_score *= 0.1f;
 
 		// if we're looking for a particular refresh, make sure it matches
-		if (mode.RefreshRate == window().m_refresh)
+		if (mode.RefreshRate == window().m_win_config.refresh)
 			refresh_score = 2.0f;
 
 		// weight size and refresh equally
