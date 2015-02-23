@@ -78,6 +78,19 @@
 		</part>
 	</software>
 
+	<software name="mpc100">
+		<description>Introducing the Sanyo MPC-100 Micro (Euro)</description>
+		<year>1985</year>
+		<publisher>Sanyo</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="msx_cass">
+			<dataarea name="cass" size="9217">
+				<rom name="typing tutor (1985)(sanyo)(jp)[cload + run].cas" size="9217" crc="7bd85445" sha1="e3eb0ca2633cd5d099ea3937d400a6f123e30013" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 <!-- Games -->
 
 	<!-- listing printout published in Japan "POPCOM" '87/7 issue -->
@@ -15800,19 +15813,6 @@
 		<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="4896">
 				<rom name="tutor (1985)(sony)(es)(side b)[cload + run].cas" size="4896" crc="6204d745" sha1="816e63bfa8ef520b60455a004da0197deb8f1513" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="mpc100">
-		<description>Introducing the Sanyo MPC-100 Micro (Euro)</description>
-		<year>1985</year>
-		<publisher>Sanyo</publisher>
-		<info name="usage" value="Load with CLOAD + RUN"/>
-
-		<part name="cass1" interface="msx_cass">
-			<dataarea name="cass" size="9217">
-				<rom name="typing tutor (1985)(sanyo)(jp)[cload + run].cas" size="9217" crc="7bd85445" sha1="e3eb0ca2633cd5d099ea3937d400a6f123e30013" offset="0" />
 			</dataarea>
 		</part>
 	</software>
