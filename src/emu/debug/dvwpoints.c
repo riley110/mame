@@ -240,7 +240,8 @@ void debug_view_watchpoints::gather_watchpoints()
 	}
 
 	// And now for the sort
-	qsort(&m_buffer[0], m_buffer.count(), sizeof(device_debug::watchpoint *), m_sortType);
+	if (m_buffer.count() > 0)
+		qsort(&m_buffer[0], m_buffer.count(), sizeof(device_debug::watchpoint *), m_sortType);
 }
 
 
@@ -261,8 +262,8 @@ void debug_view_watchpoints::view_update()
 		m_total.y = 10;
 
 	// Draw
-	debug_view_char	*dest = m_viewdata;
-	astring			linebuf;
+	debug_view_char *dest = m_viewdata;
+	astring         linebuf;
 
 	// Header
 	if (m_visible.y > 0)
