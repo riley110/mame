@@ -489,7 +489,7 @@ ROM_START(amazonh)
 ROM_END
 
 /*-------------------------------------------------------------------
-/ Caveman (#PV-810) Pinball/Video Combo
+/ Caveman (#PV-810) Pinball/Video Combo (English)
 /-------------------------------------------------------------------*/
 ROM_START(caveman)
 	ROM_REGION(0x10000, "maincpu", 0)
@@ -506,13 +506,16 @@ ROM_START(caveman)
 	ROM_LOAD16_BYTE("v810-u7.bin", 0x8001, 0x1000, CRC(74c6533e) SHA1(8fe373c28dc4089bd9e573c69682113315236c72))
 	ROM_LOAD16_BYTE("v810-u6.bin", 0xa000, 0x1000, CRC(2fd0ee95) SHA1(8374b7729b2de9e73784617ada6f9d895f54cc8d))
 	ROM_LOAD16_BYTE("v810-u5.bin", 0xa001, 0x1000, CRC(2fb15da3) SHA1(ba2927bc88c1ee1b8dd682234b2616d2013c7e7c))
-	ROM_LOAD16_BYTE("v810-u4.bin", 0xc000, 0x1000, CRC(2dfe8492) SHA1(a29604cda968504f95577e36c715ae97034bb5f8))
-	ROM_LOAD16_BYTE("v810-u3.bin", 0xc001, 0x1000, CRC(740e9ec3) SHA1(ba4839680694bf5acff540147af4319c64c313e8))
-	ROM_LOAD16_BYTE("v810-u2.bin", 0xe000, 0x1000, CRC(b793baf9) SHA1(cf1618cd0134529d057bc8245b9b366c3aae2326))
-	ROM_LOAD16_BYTE("v810-u1.bin", 0xe001, 0x1000, CRC(0a283b15) SHA1(4a57ae5be36500c22b55ac17dc71968bd833298b))
+	ROM_LOAD16_BYTE("v810-u4.bin", 0xc000, 0x1000, CRC(3437c697) SHA1(e35822ed04eeb7f8a54a0bfdd2b63d54fa9b2263))
+	ROM_LOAD16_BYTE("v810-u3.bin", 0xc001, 0x1000, CRC(729819f6) SHA1(6f684d05d1dcdbb975d3b97cfa0b1d657e7a98a5))
+	ROM_LOAD16_BYTE("v810-u2.bin", 0xe000, 0x1000, CRC(ab6193c2) SHA1(eb898b3a3dfef15f992f7ef6f2d636a3e124ca13))
+	ROM_LOAD16_BYTE("v810-u1.bin", 0xe001, 0x1000, CRC(7c6410fb) SHA1(6606d853d4955ce18ace71814bd2ae3d25e0c046))
 ROM_END
 
-ROM_START(cavemana)
+/*-------------------------------------------------------------------
+/ Caveman (#PV-810) Pinball/Video Combo (German)
+/-------------------------------------------------------------------*/
+ROM_START(cavemang)
 	ROM_REGION(0x10000, "maincpu", 0)
 	ROM_LOAD("u2_80a.bin", 0x2000, 0x1000, CRC(241de1d4) SHA1(9d5942704cbdec6565d6335e33e9f7e4c60a41ac))
 	ROM_LOAD("u3_80a.bin", 0x3000, 0x1000, CRC(2d77ccdc) SHA1(47241ccd365e8d74d5aa5b775acf6445cc95b8a8))
@@ -527,10 +530,10 @@ ROM_START(cavemana)
 	ROM_LOAD16_BYTE("v810-u7.bin", 0x8001, 0x1000, CRC(74c6533e) SHA1(8fe373c28dc4089bd9e573c69682113315236c72))
 	ROM_LOAD16_BYTE("v810-u6.bin", 0xa000, 0x1000, CRC(2fd0ee95) SHA1(8374b7729b2de9e73784617ada6f9d895f54cc8d))
 	ROM_LOAD16_BYTE("v810-u5.bin", 0xa001, 0x1000, CRC(2fb15da3) SHA1(ba2927bc88c1ee1b8dd682234b2616d2013c7e7c))
-	ROM_LOAD16_BYTE("v810-u4a.bin", 0xc000, 0x1000, CRC(3437c697) SHA1(e35822ed04eeb7f8a54a0bfdd2b63d54fa9b2263))
-	ROM_LOAD16_BYTE("v810-u3a.bin", 0xc001, 0x1000, CRC(729819f6) SHA1(6f684d05d1dcdbb975d3b97cfa0b1d657e7a98a5))
-	ROM_LOAD16_BYTE("v810-u2a.bin", 0xe000, 0x1000, CRC(ab6193c2) SHA1(eb898b3a3dfef15f992f7ef6f2d636a3e124ca13))
-	ROM_LOAD16_BYTE("v810-u1a.bin", 0xe001, 0x1000, CRC(7c6410fb) SHA1(6606d853d4955ce18ace71814bd2ae3d25e0c046))
+	ROM_LOAD16_BYTE("v810-u4g.bin", 0xc000, 0x1000, CRC(2dfe8492) SHA1(a29604cda968504f95577e36c715ae97034bb5f8))
+	ROM_LOAD16_BYTE("v810-u3g.bin", 0xc001, 0x1000, CRC(740e9ec3) SHA1(ba4839680694bf5acff540147af4319c64c313e8))
+	ROM_LOAD16_BYTE("v810-u2g.bin", 0xe000, 0x1000, CRC(b793baf9) SHA1(cf1618cd0134529d057bc8245b9b366c3aae2326))
+	ROM_LOAD16_BYTE("v810-u1g.bin", 0xe001, 0x1000, CRC(0a283b15) SHA1(4a57ae5be36500c22b55ac17dc71968bd833298b))
 ROM_END
 
 /*-------------------------------------------------------------------
@@ -800,5 +803,5 @@ ROM_END
 /* disp3 */GAME(1985,   icefever,   0,      gts80a_s,   gts80a, gts80a_state,   gts80a, ROT0,   "Gottlieb",     "Ice Fever",            GAME_IS_SKELETON_MECHANICAL)
 
 /* custom (+video) */
-GAME(1981,  caveman,    0,          caveman,    caveman, gts80a_state,  gts80a, ROT0,   "Gottlieb",     "Caveman (Pinball/Video Combo, set 1)", GAME_IS_SKELETON_MECHANICAL)
-GAME(1981,  cavemana,   caveman,    caveman,    caveman, gts80a_state,  gts80a, ROT0,   "Gottlieb",     "Caveman (Pinball/Video Combo, set 2)", GAME_IS_SKELETON_MECHANICAL)
+GAME(1981,  caveman,    0,          caveman,    caveman, gts80a_state,  gts80a, ROT0,   "Gottlieb",     "Caveman (Pinball/Video Combo, English)", GAME_IS_SKELETON_MECHANICAL)
+GAME(1981,  cavemang,   caveman,    caveman,    caveman, gts80a_state,  gts80a, ROT0,   "Gottlieb",     "Caveman (Pinball/Video Combo, German)", GAME_IS_SKELETON_MECHANICAL)
