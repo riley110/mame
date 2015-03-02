@@ -4612,19 +4612,27 @@
 			</dataarea>
 		</part>
 		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Side A, Alt"/>
-			<dataarea name="cass" size="61862">
-				<rom name="dieet (1986)(philips)(nl)(side a)[a][bload'cas-',r].cas" size="61862" crc="53e928ab" sha1="759ad4a63949bcd9242a336296cbe53b65252083" offset="0" />
-			</dataarea>
-		</part>
-		<part name="cass3" interface="msx_cass">
 		<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="61956">
 				<rom name="dieet (1986)(philips)(nl)(side b)[bload'cas-',r].cas" size="61956" crc="7bf7bb28" sha1="41b3e1422556b140400f10bfd8a7ef0800b92442" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass4" interface="msx_cass">
-		<feature name="part_id" value="Side B, Alt"/>
+	</software>
+
+	<software name="dieeta" cloneof="dieet">
+		<description>Dieet (Ned, Alt)</description>
+		<year>1986</year>
+		<publisher>Philips</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="cass" size="61862">
+				<rom name="dieet (1986)(philips)(nl)(side a)[a][bload'cas-',r].cas" size="61862" crc="53e928ab" sha1="759ad4a63949bcd9242a336296cbe53b65252083" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="msx_cass">
+		<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="61851">
 				<rom name="dieet (1986)(philips)(nl)(side b)[a][bload'cas-',r].cas" size="61851" crc="87fc4517" sha1="3c4a4bb0d05475cd1cf8f301582c3308a0c4a4e9" offset="0" />
 			</dataarea>
@@ -4684,20 +4692,26 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="53359">
 				<rom name="disc warrior (1984)(alligata software)(gb)[run'cas-'].cas" size="53359" crc="3999c18f" sha1="0994cd7b3f0a454275d9de4539228501a304fbd9" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="discwarra" cloneof="discwarr">
+		<description>Disc Warrior (Euro, Alt)</description>
+		<year>1984</year>
+		<publisher>Alligata Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="53359">
 				<rom name="disc warrior (1984)(alligata software)(gb)[a][run'cas-'].cas" size="53359" crc="c5c5807f" sha1="e3ec893b58eb6ca7a1b08efd2120ff23cc3f24b3" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="discwarra" cloneof="discwarr">
+	<software name="discwarrb" cloneof="discwarr">
 		<description>Disc Warrior (Euro, Alt Loader)</description>
 		<year>1984</year>
 		<publisher>Alligata Software</publisher>
@@ -4717,19 +4731,32 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="48328">
 				<rom name="discovery (1988)(eurosoft)(nl)[run'cas-'].cas" size="48328" crc="417e057b" sha1="65cd0b42cad09b6aba1cf857b9e64612503bbe87" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="discovera" cloneof="discover">
+		<description>Discovery (Euro, Alt)</description>
+		<year>1988</year>
+		<publisher>Eurosoft</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="56720">
 				<rom name="discovery (1988)(eurosoft)(nl)[a][run'cas-'].cas" size="56720" crc="f2a9986e" sha1="5d0a4c1503ece276a12c25705b5ce57d0a588b28" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt 2"/>
+	</software>
+
+	<software name="discoverb" cloneof="discover">
+		<description>Discovery (Euro, Alt 2)</description>
+		<year>1988</year>
+		<publisher>Eurosoft</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="56720">
 				<rom name="discovery (1988)(eurosoft)(nl)[a2][run'cas-'].cas" size="56720" crc="bfc36f56" sha1="a438a58f8391984e29210307a2ab34010ff62565" offset="0" />
 			</dataarea>
@@ -4789,7 +4816,7 @@
 	</software>
 
 	<software name="dogfightj" cloneof="dogfight">
-		<description>Dog Fighter (Jpn)</description>
+		<description>Dog Fighter (Jpn?)</description>
 		<year>1986</year>
 		<publisher>Sony</publisher>
 		<info name="serial" value="HBJ-G020T"/>
@@ -4809,13 +4836,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="17458">
 				<rom name="domino (1985)(dimensionnew)(es)[run'cas-'].cas" size="17458" crc="7c590d6a" sha1="ff38b545bf72ce274f2a6a11bc6daa34eee965d8" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="dominoa" cloneof="domino">
+		<description>Domino (Spa, Alt)</description>
+		<year>1985</year>
+		<publisher>DIMensionNEW</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="17458">
 				<rom name="domino (1985)(dimensionnew)(es)[a][run'cas-'].cas" size="17458" crc="469e87ab" sha1="352ceae3bce12b0fe5c2856f778cd89ea0eee991" offset="0" />
 			</dataarea>
@@ -4842,6 +4875,32 @@
 		</part>
 	</software>
 
+	<software name="dkong">
+		<description>Donkey Kong (Euro)</description>
+		<year>1986</year>
+		<publisher>Ocean Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
+			<dataarea name="cass" size="35415">
+				<rom name="donkey kong (1986)(ocean software)(gb)[run'cas-'].cas" size="35415" crc="defeed2e" sha1="9ea8e95750f3c81ae650cda92192488f22e4756d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dkonga" cloneof="dkong">
+		<description>Donkey Kong (Euro, Alt)</description>
+		<year>1986</year>
+		<publisher>Ocean Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
+			<dataarea name="cass" size="35375">
+				<rom name="donkey kong (1986)(ocean software)(gb)[a][run'cas-'].cas" size="35375" crc="e2b81e71" sha1="480b4be8ed1e8f179760cb2357d33bcbf0fbb6e1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="dkongs" cloneof="dkong">
 		<description>Donkey Kong (Spa)</description>
 		<year>1986</year>
@@ -4851,26 +4910,6 @@
 		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="36879">
 				<rom name="donkey kong (1986)(erbe software)(es)[run'cas-'].cas" size="36879" crc="a2f69693" sha1="518308ab0c183174d2a387f9e740409b92a5a8d0" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="dkong">
-		<description>Donkey Kong (Euro)</description>
-		<year>1986</year>
-		<publisher>Ocean Software</publisher>
-		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
-
-		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
-			<dataarea name="cass" size="35415">
-				<rom name="donkey kong (1986)(ocean software)(gb)[run'cas-'].cas" size="35415" crc="defeed2e" sha1="9ea8e95750f3c81ae650cda92192488f22e4756d" offset="0" />
-			</dataarea>
-		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
-			<dataarea name="cass" size="35375">
-				<rom name="donkey kong (1986)(ocean software)(gb)[a][run'cas-'].cas" size="35375" crc="e2b81e71" sha1="480b4be8ed1e8f179760cb2357d33bcbf0fbb6e1" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -4915,13 +4954,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="31690">
 				<rom name="dr. jackle and mr. wide (1987)(bulldog)(gb)[run'cas-'].cas" size="31690" crc="0193bc00" sha1="a9400afafa5e89f568333cb3400ccde4ad82ab96" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="drjacklea" cloneof="drjackle">
+		<description>Dr. Jackle and Mr. Wide (Euro, Alt)</description>
+		<year>1987</year>
+		<publisher>Bulldog</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="31650">
 				<rom name="dr. jackle and mr. wide (1987)(bulldog)(gb)[a][run'cas-'].cas" size="31650" crc="4f11dd37" sha1="a3736daf5614071da2d46973749e5dd9b32a13d6" offset="0" />
 			</dataarea>
@@ -4937,6 +4982,19 @@
 		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="12406">
 				<rom name="dracula (1986)(grupo de trabajo software)(es)[run'cas-'].cas" size="12406" crc="e73ead9e" sha1="6669fba06b26a5b6935be29c513137256caeb75a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dninja">
+		<description>Dragon Ninja (Euro)</description>
+		<year>1988</year>
+		<publisher>Imagine Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
+			<dataarea name="cass" size="108260">
+				<rom name="dragon ninja (1988)(imagine software)(gb)[run'cas-'].cas" size="108260" crc="3c495adc" sha1="ad8b46d62f843455514a8c801f7451e992fd7e56" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -4961,20 +5019,7 @@
 		</part>
 	</software>
 
-	<software name="dninja">
-		<description>Dragon Ninja (Euro)</description>
-		<year>1988</year>
-		<publisher>Imagine Software</publisher>
-		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
-
-		<part name="cass1" interface="msx_cass">
-			<dataarea name="cass" size="108260">
-				<rom name="dragon ninja (1988)(imagine software)(gb)[run'cas-'].cas" size="108260" crc="3c495adc" sha1="ad8b46d62f843455514a8c801f7451e992fd7e56" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="dragons">
+	<software name="dslayer">
 		<description>Dragon Slayer (Jpn)</description>
 		<year>1985</year>
 		<publisher>Square</publisher>
@@ -5021,25 +5066,45 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="65600">
 				<rom name="drome (1987)(eaglesoft)(nl)[run'cas-'].cas" size="65600" crc="5d3d2237" sha1="04e3c12d029a5fe24f2957abe22db1cd509b8cee" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="dromea" cloneof="drome">
+		<description>Drome (Euro, Alt)</description>
+		<year>1987</year>
+		<publisher>Eaglesoft</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="65568">
 				<rom name="drome (1987)(eaglesoft)(nl)[a][run'cas-'].cas" size="65568" crc="335b27f1" sha1="ac8322e31e849252946e5167e177624995e8b7db" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt 2"/>
+	</software>
+
+	<software name="dromeb" cloneof="drome">
+		<description>Drome (Euro, Alt 2)</description>
+		<year>1987</year>
+		<publisher>Eaglesoft</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="65576">
 				<rom name="drome (1987)(eaglesoft)(nl)[a2][run'cas-'].cas" size="65576" crc="ede96a50" sha1="e65629352abedff9524c216e3e4cf0fe19cea82c" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass4" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt 3"/>
+	</software>
+
+	<software name="dromec" cloneof="drome">
+		<description>Drome (Euro, Alt 3)</description>
+		<year>1987</year>
+		<publisher>Eaglesoft</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="65560">
 				<rom name="drome (1987)(eaglesoft)(nl)[a3][run'cas-'].cas" size="65560" crc="bd0154ed" sha1="4486fccfe23ceb26d8f9387cc94156d5dc73aab6" offset="0" />
 			</dataarea>
@@ -5092,13 +5157,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="25475">
 				<rom name="eddie kidd jump challenge (1985)(martech games)(gb)[run'cas-'].cas" size="25475" crc="3d86412f" sha1="bebd083f2ee5ea620705b8b85d1088986c859637" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="eddiekida" cloneof="eddiekid">
+		<description>Eddie Kidd Jump Challenge (Euro, Alt)</description>
+		<year>1985</year>
+		<publisher>Martech Games</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="31166">
 				<rom name="eddie kidd jump challenge (1985)(martech games)(gb)[a][run'cas-'].cas" size="31166" crc="f3fd5515" sha1="c13d84a2e9f588e0ae37443f50e07a668a35a036" offset="0" />
 			</dataarea>
@@ -5112,19 +5183,32 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="31854">
 				<rom name="elidon (1986)(aackosoft)(nl)[run'cas-'].cas" size="31854" crc="b8b68e85" sha1="b920f43a83e457836f2b5dab69b774b2ba0ca94b" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="elidona" cloneof="elidon">
+		<description>Elidon (Euro, Alt)</description>
+		<year>1986</year>
+		<publisher>Aackosoft</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="31854">
 				<rom name="elidon (1986)(aackosoft)(nl)[a][run'cas-'].cas" size="31854" crc="dd4f89c6" sha1="55997241ae4cd0abb9caf47415abe9797470014e" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt 2"/>
+	</software>
+
+	<software name="elidonb" cloneof="elidon">
+		<description>Elidon (Euro, Alt 2)</description>
+		<year>1986</year>
+		<publisher>Aackosoft</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="31854">
 				<rom name="elidon (1986)(aackosoft)(nl)[a2][run'cas-'].cas" size="31854" crc="24aa26b1" sha1="90401f9b218e1865b2468280d30e1f99305bafef" offset="0" />
 			</dataarea>
@@ -5216,6 +5300,19 @@
 		</part>
 	</software>
 
+	<software name="eurogame">
+		<description>European Games (Euro)</description>
+		<year>1987</year>
+		<publisher>Tynesoft</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
+			<dataarea name="cass" size="75647">
+				<rom name="european games (1987)(tynesoft)(gb)[run'cas-'].cas" size="75647" crc="46623d73" sha1="ef04a886bb7b77190bac4890772fcbe85bec0791" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="eurogamea" cloneof="eurogame">
 		<description>European Games (Euro, 2 Sides)</description>
 		<year>1987</year>
@@ -5229,12 +5326,6 @@
 			</dataarea>
 		</part>
 		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Side A, Alt"/>
-			<dataarea name="cass" size="35791">
-				<rom name="european games (1987)(tynesoft)(gb)(side a)[a][run'cas-'].cas" size="35791" crc="a5382bb8" sha1="737875966a8e80419b19902869018bafc73ce794" offset="0" />
-			</dataarea>
-		</part>
-		<part name="cass3" interface="msx_cass">
 		<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="39799">
 				<rom name="european games (1987)(tynesoft)(gb)(side b)[run'cas-'].cas" size="39799" crc="97c07dff" sha1="e69ff0b2a0ed967e7ca9c2ea71d39a93d4a1ef50" offset="0" />
@@ -5242,15 +5333,22 @@
 		</part>
 	</software>
 
-	<software name="eurogame">
-		<description>European Games (Euro)</description>
+	<software name="eurogameb" cloneof="eurogame">
+		<description>European Games (Euro, 2 Sides, Alt Side A)</description>
 		<year>1987</year>
 		<publisher>Tynesoft</publisher>
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-			<dataarea name="cass" size="75647">
-				<rom name="european games (1987)(tynesoft)(gb)[run'cas-'].cas" size="75647" crc="46623d73" sha1="ef04a886bb7b77190bac4890772fcbe85bec0791" offset="0" />
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="cass" size="35791">
+				<rom name="european games (1987)(tynesoft)(gb)(side a)[a][run'cas-'].cas" size="35791" crc="a5382bb8" sha1="737875966a8e80419b19902869018bafc73ce794" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="msx_cass">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="cass" size="39799">
+				<rom name="european games (1987)(tynesoft)(gb)(side b)[run'cas-'].cas" size="39799" crc="97c07dff" sha1="e69ff0b2a0ed967e7ca9c2ea71d39a93d4a1ef50" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -5274,12 +5372,32 @@
 			</dataarea>
 		</part>
 		<part name="cass3" interface="msx_cass">
-		<feature name="part_id" value="Tape 2 (Cuby), Alt"/>
+		<feature name="part_id" value="Tape 3 (Hyper Blust)"/>
+			<dataarea name="cass" size="11926">
+				<rom name="exciting pack - hyper blust (1985)(soft pro international)(jp)[cload + run].cas" size="11926" crc="5ce7a576" sha1="2958ad169d53c7f9a68ded1230d5088dd08b337e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="excitinga" cloneof="exciting">
+		<description>Exciting Pack (Jpn, Alt Tape 2)</description>
+		<year>1985</year>
+		<publisher>Soft Pro International</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="msx_cass">
+		<feature name="part_id" value="Tape 1 (Alien Bounce)"/>
+			<dataarea name="cass" size="12054">
+				<rom name="exciting pack - alien bounce (1985)(soft pro international)(jp)[cload + run].cas" size="12054" crc="09b5095f" sha1="641b0c3e08f750c08984cf49af49e41c18551316" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="msx_cass">
+		<feature name="part_id" value="Tape 2 (Cuby)"/>
 			<dataarea name="cass" size="14653">
 				<rom name="exciting pack - cuby (1985)(soft pro international)(jp)[a][cload + run].cas" size="14653" crc="77e1406f" sha1="080f73e12e1dc1c3be4a443d73dc639c4f7ea320" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass4" interface="msx_cass">
+		<part name="cass3" interface="msx_cass">
 		<feature name="part_id" value="Tape 3 (Hyper Blust)"/>
 			<dataarea name="cass" size="11926">
 				<rom name="exciting pack - hyper blust (1985)(soft pro international)(jp)[cload + run].cas" size="11926" crc="5ce7a576" sha1="2958ad169d53c7f9a68ded1230d5088dd08b337e" offset="0" />
@@ -5320,19 +5438,32 @@
 		<info name="usage" value="Load with CLOAD + RUN"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="5189">
 				<rom name="exploding atoms (1985)(sanyo)(jp)[cload + run].cas" size="5189" crc="6756749a" sha1="ec220e7e14c20c5a24938f34a03666b0a913a274" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="expatomsa" cloneof="expatoms">
+		<description>Exploding Atoms (Jpn?, Alt)</description>
+		<year>1985</year>
+		<publisher>Sanyo</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="5181">
 				<rom name="exploding atoms (1985)(sanyo)(jp)[a][cload + run].cas" size="5181" crc="64e961fc" sha1="cdbe64f8f127db0655d14cb37a5c94b54161345b" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt 2"/>
+	</software>
+
+	<software name="expatomsb" cloneof="expatoms">
+		<description>Exploding Atoms (Jpn?, Alt 2)</description>
+		<year>1985</year>
+		<publisher>Sanyo</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="4584">
 				<rom name="exploding atoms (1985)(sanyo)(jp)[a2][cload + run].cas" size="4584" crc="b0d55baa" sha1="f05b6ea308ab963a529532d5ac326582538618c7" offset="0" />
 			</dataarea>
@@ -5372,13 +5503,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="30927">
 				<rom name="fanky punky (1987)(p.j. software)(es)[run'cas-'].cas" size="30927" crc="add7aac3" sha1="c56f8c5a81be62247a5bcf3126efc902c8e9cd54" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="fankpunka" cloneof="fankpunk">
+		<description>Fanky Punky (Spa, Alt)</description>
+		<year>1987</year>
+		<publisher>P.J. Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="30927">
 				<rom name="fanky punky (1987)(p.j. software)(es)[a][run'cas-'].cas" size="30927" crc="0aa08ef2" sha1="bf4aeda97e717ed48367c6e5083bbcaefe4c37af" offset="0" />
 			</dataarea>
@@ -5418,13 +5555,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="48671">
 				<rom name="fernando martin basket master - executive (1987)(dinamic software)(es)[run'cas-'].cas" size="48671" crc="642895c4" sha1="ada4c458fb739c9d29654a2f5398767493a0606c" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="fernbskesa" cloneof="fernbske">
+		<description>Fernando Martin Basket Master - Executive (Spa, Alt)</description>
+		<year>1987</year>
+		<publisher>Dinamic Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="48671">
 				<rom name="fernando martin basket master - executive (1987)(dinamic software)(es)[a][run'cas-'].cas" size="48671" crc="3e18c41d" sha1="182229536440a87dd3e0bea2ca830c21f5009a34" offset="0" />
 			</dataarea>
@@ -5464,13 +5607,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="12907">
 				<rom name="fin pack (1986)(aackosoft)(nl)[run'cas-'].cas" size="12907" crc="6394cf20" sha1="5af30488d1b89922713e2f1d157069e6dff355e1" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="finpacka" cloneof="finpack">
+		<description>Fin Pack (Euro, Alt)</description>
+		<year>1986</year>
+		<publisher>Aackosoft</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="12883">
 				<rom name="fin pack (1986)(aackosoft)(nl)[a][run'cas-'].cas" size="12883" crc="e8842d33" sha1="46616fde62a50af675fe8b180a08889d252a94b6" offset="0" />
 			</dataarea>
@@ -5490,19 +5639,6 @@
 		</part>
 	</software>
 
-	<software name="findkeepa" cloneof="findkeep">
-		<description>Finders Keepers (Euro, 64K)</description>
-		<year>1986</year>
-		<publisher>Mastertronic</publisher>
-		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
-
-		<part name="cass1" interface="msx_cass">
-			<dataarea name="cass" size="40611">
-				<rom name="finders keepers (1986)(mastertronic)(gb)[needs 64k in slot 2][run'cas-'].cas" size="40611" crc="7ec002ea" sha1="fb5e78d237e42fc4cccb1c9b4d8c74cfc0504c8d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="findkeep">
 		<description>Finders Keepers (Euro)</description>
 		<year>1986</year>
@@ -5512,6 +5648,19 @@
 		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="42143">
 				<rom name="finders keepers (1986)(mastertronic)(gb)[run'cas-'].cas" size="42143" crc="685e2505" sha1="3bf6da4a3c3a939dce1ec982fdd975df69409d47" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="findkeepa" cloneof="findkeep">
+		<description>Finders Keepers (Euro, 64K)</description>
+		<year>1986</year>
+		<publisher>Mastertronic</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
+			<dataarea name="cass" size="40611">
+				<rom name="finders keepers (1986)(mastertronic)(gb)[needs 64k in slot 2][run'cas-'].cas" size="40611" crc="7ec002ea" sha1="fb5e78d237e42fc4cccb1c9b4d8c74cfc0504c8d" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -5536,13 +5685,19 @@
 		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="10076">
 				<rom name="fire rescue (1984)(kuma computers)(gb)[bload'cas-',r][martos].cas" size="10076" crc="27b4cf58" sha1="1be8696ae9018680503df1702fe32483bf42b68b" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="fireresca" cloneof="fireresc">
+		<description>Fire Rescue (Euro, Alt)</description>
+		<year>1984</year>
+		<publisher>Kuma Computers</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="10076">
 				<rom name="fire rescue (1984)(kuma computers)(gb)[a][bload'cas-',r][martos].cas" size="10076" crc="55b3592b" sha1="1496fc0f6a1060a40b23204833ca58c1335f7b63" offset="0" />
 			</dataarea>
@@ -5556,13 +5711,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="38719">
 				<rom name="firehawk (1987)(players software)(gb)[run'cas-'].cas" size="38719" crc="c88425df" sha1="5dbfafdf9cd101567b8fdfc92fd6b69b8a4892d4" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="firehawka" cloneof="firehawk">
+		<description>Firehawk (Euro, Alt)</description>
+		<year>1987</year>
+		<publisher>Players Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="38687">
 				<rom name="firehawk (1987)(players software)(gb)[a][run'cas-'].cas" size="38687" crc="097fcfc6" sha1="9272ac45433c095c8c57d291cb2737e53a9f7567" offset="0" />
 			</dataarea>
@@ -5621,22 +5782,28 @@
 		</part>
 	</software>
 
-	<software name="lesflics">
+	<software name="flics">
 		<description>Les Flics (Euro)</description>
 		<year>1985</year>
 		<publisher>PSS</publisher>
 		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="16665">
-				<rom name="flics, les (1985)(pss)(gb)[b][bload'cas-',r].cas" size="16665" crc="c364d786" sha1="8188a2729855703d43c925efb6bb8ea1059c3059" offset="0" />
+				<rom name="flics, les (1985)(pss)(gb)[bload'cas-',r].cas" size="16665" crc="c364d786" sha1="8188a2729855703d43c925efb6bb8ea1059c3059" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="flicsa" cloneof="flics">
+		<description>Les Flics (Euro, Alt)</description>
+		<year>1985</year>
+		<publisher>PSS</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="16673">
-				<rom name="flics, les (1985)(pss)(gb)[b2][bload'cas-',r].cas" size="16673" crc="2f493aa2" sha1="4981931b64eb861cf4273df24497b28c6bca180c" offset="0" />
+				<rom name="flics, les (1985)(pss)(gb)[a][bload'cas-',r].cas" size="16673" crc="2f493aa2" sha1="4981931b64eb861cf4273df24497b28c6bca180c" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -5752,13 +5919,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="31555">
 				<rom name="formula 1 simulator (1985)(mastertronic)(gb)[run'cas-'].cas" size="31555" crc="b5388cf7" sha1="21564e88c02634d91623d5fad06de66dd8a4338f" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="f1simula" cloneof="f1simul">
+		<description>Formula 1 Simulator (Euro, Alt)</description>
+		<year>1985</year>
+		<publisher>Mastertronic</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="31531">
 				<rom name="formula 1 simulator (1985)(mastertronic)(gb)[a][run'cas-'].cas" size="31531" crc="57ad8f13" sha1="7a7649f1ee324fba0fb53a3f4dca1a61c251274f" offset="0" />
 			</dataarea>
@@ -5791,25 +5964,48 @@
 			</dataarea>
 		</part>
 		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Side A, Alt"/>
-			<dataarea name="cass" size="53007">
-				<rom name="freddy hardest (1987)(dinamic software)(es)(side a)[a][run'cas-'].cas" size="53007" crc="9d051f9e" sha1="f3de56de9e1fcdd5cca762980380423ea4d9f78a" offset="0" />
-			</dataarea>
-		</part>
-		<part name="cass3" interface="msx_cass">
 		<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="52687">
 				<rom name="freddy hardest (1987)(dinamic software)(es)(side b)[run'cas-'].cas" size="52687" crc="e4dee6a9" sha1="a8764d402036d54848d5d1c704533da1e087be04" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass4" interface="msx_cass">
-		<feature name="part_id" value="Side B, Alt"/>
+	</software>
+
+	<software name="fredharva" cloneof="fredharv">
+		<description>Freddy Hardest (Spa, Alt)</description>
+		<year>1987</year>
+		<publisher>Dinamic Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="cass" size="53007">
+				<rom name="freddy hardest (1987)(dinamic software)(es)(side a)[a][run'cas-'].cas" size="53007" crc="9d051f9e" sha1="f3de56de9e1fcdd5cca762980380423ea4d9f78a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="msx_cass">
+		<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="52687">
 				<rom name="freddy hardest (1987)(dinamic software)(es)(side b)[a][run'cas-'].cas" size="52687" crc="75e3caba" sha1="edacbd23d21d0fd9be67949d981ba72f521c5915" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass5" interface="msx_cass">
-		<feature name="part_id" value="Side B, Alt 2"/>
+	</software>
+
+	<!-- Uses Side A from parent set -->
+	<software name="fredharvb" cloneof="fredharv">
+		<description>Freddy Hardest (Spa, Alt 2 Side B)</description>
+		<year>1987</year>
+		<publisher>Dinamic Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="cass" size="53007">
+				<rom name="freddy hardest (1987)(dinamic software)(es)(side a)[run'cas-'].cas" size="53007" crc="9e24261a" sha1="a8de75f3585ec6d37a35d7b0089320d70f4602ac" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="msx_cass">
+		<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="52687">
 				<rom name="freddy hardest (1987)(dinamic software)(es)(side b)[a2][run'cas-'].cas" size="52687" crc="bf444fdb" sha1="18ea5a2a1a1dbd8722dc9cb59b57cadbacfce8ea" offset="0" />
 			</dataarea>
@@ -5894,19 +6090,6 @@
 		</part>
 	</software>
 
-	<software name="fknights" cloneof="fknight">
-		<description>Future Knight (Spa)</description>
-		<year>1986</year>
-		<publisher>Erbe Software</publisher>
-		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
-
-		<part name="cass1" interface="msx_cass">
-			<dataarea name="cass" size="63210">
-				<rom name="future knight (1986)(erbe software)(es)[run'cas-'].cas" size="63210" crc="1bd349ba" sha1="ab48b8ef1cefa017fab1d149504657a570de6274" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="fknight">
 		<description>Future Knight (Euro)</description>
 		<year>1986</year>
@@ -5916,6 +6099,19 @@
 		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="61682">
 				<rom name="future knight (1986)(gremlin graphics software)(gb)[bload'cas-',r].cas" size="61682" crc="5e5de060" sha1="320422bbfd54ee2fe59854537b2cebb0dfb34782" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fknights" cloneof="fknight">
+		<description>Future Knight (Spa)</description>
+		<year>1986</year>
+		<publisher>Erbe Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
+			<dataarea name="cass" size="63210">
+				<rom name="future knight (1986)(erbe software)(es)[run'cas-'].cas" size="63210" crc="1bd349ba" sha1="ab48b8ef1cefa017fab1d149504657a570de6274" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -6039,7 +6235,34 @@
 		</part>
 	</software>
 
+	<software name="gangman">
+		<description>Gang Man (Jpn)</description>
+		<year>1983</year>
+		<publisher>Hudson Soft</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
+			<dataarea name="cass" size="8847">
+				<rom name="gangman (1984)(hudson soft)(jp)[run'cas-'].cas" size="8847" crc="e45bc3e0" sha1="812cc43c0e0cd566c05ca54e8eb396cd110f55d9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="gangmana" cloneof="gangman">
+		<description>Gang Man (Jpn, Alt)</description>
+		<year>1983</year>
+		<publisher>Hudson Soft</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
+			<dataarea name="cass" size="8822">
+				<rom name="gangman (1984)(hudson soft)(jp)[a][run'cas-'].cas" size="8822" crc="0dfd55c5" sha1="6c828645745a5938b69bda180c79730688e77aa4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- unofficial? -->
+	<software name="gangmane" cloneof="gangman">
 		<description>Gang Man (Euro)</description>
 		<year>1988</year>
 		<publisher>Armati Software</publisher>
@@ -6048,26 +6271,6 @@
 		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="8551">
 				<rom name="gang man (1988)(armati software)[run'cas-'].cas" size="8551" crc="39aa53da" sha1="2a9343bc6724cbc05183c6940c104a3285d542b7" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gangman">
-		<description>Gang Man (Jpn)</description>
-		<year>1983</year>
-		<publisher>Hudson Soft</publisher>
-		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
-
-		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
-			<dataarea name="cass" size="8847">
-				<rom name="gangman (1984)(hudson soft)(jp)[run'cas-'].cas" size="8847" crc="e45bc3e0" sha1="812cc43c0e0cd566c05ca54e8eb396cd110f55d9" offset="0" />
-			</dataarea>
-		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
-			<dataarea name="cass" size="8822">
-				<rom name="gangman (1984)(hudson soft)(jp)[a][run'cas-'].cas" size="8822" crc="0dfd55c5" sha1="6c828645745a5938b69bda180c79730688e77aa4" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -6085,12 +6288,26 @@
 			</dataarea>
 		</part>
 		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Side A, Alt"/>
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="cass" size="95157">
+				<rom name="gauntlet (1986)(u.s. gold)(gb)(side b)[run'cas-'].cas" size="95157" crc="ce0a53a4" sha1="d48793329d94266ada63d33c4a2897a85d6400b3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gauntleta" cloneof="gauntlet">
+		<description>Gauntlet (Euro, Alt Side A)</description>
+		<year>1986</year>
+		<publisher>U.S. Gold</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
+		<feature name="part_id" value="Side A"/>
 			<dataarea name="cass" size="58101">
 				<rom name="gauntlet (1986)(u.s. gold)(gb)(side a)[a][run'cas-'].cas" size="58101" crc="7e4c19ec" sha1="1905cb98c3929e0ca648cfdac72246c707c47d25" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="msx_cass">
+		<part name="cass2" interface="msx_cass">
 		<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="95157">
 				<rom name="gauntlet (1986)(u.s. gold)(gb)(side b)[run'cas-'].cas" size="95157" crc="ce0a53a4" sha1="d48793329d94266ada63d33c4a2897a85d6400b3" offset="0" />
@@ -6164,13 +6381,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="23928">
 				<rom name="gerente, el (1984)(dimensionnew)(es)[run'cas-'].cas" size="23928" crc="35c78eed" sha1="8094d43164f8d46f40cb2cd0010b5bc99b7ac64f" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="gerentea" cloneof="gerente">
+		<description>El Gerente (Spa, Alt)</description>
+		<year>1984</year>
+		<publisher>DIMensionNEW</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="23928">
 				<rom name="gerente, el (1984)(dimensionnew)(es)[a][run'cas-'].cas" size="23928" crc="95347966" sha1="ae789df8897f0b2f86b76de3d7bfbf0a878e3831" offset="0" />
 			</dataarea>
@@ -6288,13 +6511,19 @@
 		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="58176">
 				<rom name="golden basket (1990)(opera soft)(es)[bload'cas-',r].cas" size="58176" crc="afb90dc3" sha1="31f774dc11da8f294d16c9ccf2ee6734d4d07f6a" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Passworded"/>
+	</software>
+
+	<software name="gbasketa" cloneof="gbasket">
+		<description>Golden Basket (Spa, Passworded)</description>
+		<year>1990</year>
+		<publisher>Opera Soft</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="58176">
 				<rom name="golden basket (1990)(opera soft)(es)[passworded][bload'cas-',r].cas" size="58176" crc="30abb129" sha1="c6a931351347d8ecc50f1adafe3624498e4f2f1c" offset="0" />
 			</dataarea>
@@ -6328,13 +6557,19 @@
 		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="56640">
 				<rom name="goody (1987)(opera soft)(es)[bload'cas-',r].cas" size="56640" crc="8ce47b52" sha1="6124f0b9fc800e4fa2e77006b8fecf5f787dc0aa" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="goodya" cloneof="goody">
+		<description>Goody (Spa, Alt)</description>
+		<year>1987</year>
+		<publisher>Opera Soft</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="56640">
 				<rom name="goody (1987)(opera soft)(es)[a][bload'cas-',r].cas" size="56640" crc="e9919807" sha1="e4848691be85ae7fb441ff565b8efbb6c83ce6a7" offset="0" />
 			</dataarea>
@@ -6374,13 +6609,19 @@
 		<info name="usage" value="Load with CLOAD + RUN"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="18050">
 				<rom name="gramatica ii - verbos (19xx)(mind games espana)(es)[cload + run].cas" size="18050" crc="e97b8c7b" sha1="8d9d9204d4935317a6f9a622b4f82256b37a7d06" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="gramati2a" cloneof="gramati2">
+		<description>Gramatica II - Verbos (Spa, Alt)</description>
+		<year>198?</year>
+		<publisher>Mind Games Espana</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="18050">
 				<rom name="gramatica ii - verbos (19xx)(mind games espana)(es)[a][cload + run].cas" size="18050" crc="5285c039" sha1="c3ac767f767f355f851204b22eb8aacf60fedf5f" offset="0" />
 			</dataarea>
@@ -6420,13 +6661,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="9960">
 				<rom name="grid trap (1985)(livewire software)(gb)[run'cas-'].cas" size="9960" crc="6cacf65f" sha1="499394d36900f00145920450bc47b81510155da8" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="gridtrapa" cloneof="gridtrap">
+		<description>Grid Trap (Euro, Alt)</description>
+		<year>1985</year>
+		<publisher>Livewire Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="9920">
 				<rom name="grid trap (1985)(livewire software)(gb)[a][run'cas-'].cas" size="9920" crc="9c5f2403" sha1="8c08b2c4c8341a85afc17f95bfbce41dc440f2b1" offset="0" />
 			</dataarea>
@@ -6453,13 +6700,19 @@
 		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="40647">
 				<rom name="gunfright (1985)(ultimate play the game)(gb)[bload'cas-',r].cas" size="40647" crc="44f23638" sha1="2e7fe15d2920ab8a6a6a8d2bfef6452a70066771" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="gfrighta" cloneof="gfright">
+		<description>Gunfright (Euro, Alt)</description>
+		<year>1985</year>
+		<publisher>Ultimate Play The Game</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="40383">
 				<rom name="gunfright (1985)(ultimate play the game)(gb)[a][bload'cas-',r].cas" size="40383" crc="a482f5e9" sha1="0dd2d27e1269e12c1955960a8ad682d668b007ca" offset="0" />
 			</dataarea>
@@ -6487,19 +6740,6 @@
 		</part>
 	</software>
 
-	<software name="gusanoa" cloneof="gusano">
-		<description>Gusano (Spa, Alt Loader)</description>
-		<year>1985</year>
-		<publisher>Advance</publisher>
-		<info name="usage" value="Load with CLOAD + RUN"/>
-
-		<part name="cass1" interface="msx_cass">
-			<dataarea name="cass" size="3491">
-				<rom name="gusano (1985)(advance)(es)[cload + run].cas" size="3491" crc="f04566b4" sha1="7566ae8f33a49a99fe989e677c14fe8ea0d4f2dd" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="gusano">
 		<description>Gusano (Spa)</description>
 		<year>1985</year>
@@ -6513,20 +6753,39 @@
 		</part>
 	</software>
 
-	<software name="guttblas">
+	<software name="gusanoa" cloneof="gusano">
+		<description>Gusano (Spa, Alt Loader)</description>
+		<year>1985</year>
+		<publisher>Advance</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="msx_cass">
+			<dataarea name="cass" size="3491">
+				<rom name="gusano (1985)(advance)(es)[cload + run].cas" size="3491" crc="f04566b4" sha1="7566ae8f33a49a99fe989e677c14fe8ea0d4f2dd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="guttblst">
 		<description>Guttblaster (Euro)</description>
 		<year>1988</year>
 		<publisher>Eurosoft</publisher>
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="62872">
 				<rom name="guttblaster (1988)(eurosoft)(nl)[run'cas-'].cas" size="62872" crc="221735ed" sha1="c6f20b85b499652569e95d77eda78dfc172ab9aa" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="guttblsta" cloneof="guttblst">
+		<description>Guttblaster (Euro, Alt)</description>
+		<year>1988</year>
+		<publisher>Eurosoft</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="50576">
 				<rom name="guttblaster (1988)(eurosoft)(nl)[a][run'cas-'].cas" size="50576" crc="9e1dddcd" sha1="e79c6fee317b4eb712dba6493a21f1197583b34e" offset="0" />
 			</dataarea>
@@ -6599,13 +6858,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="18560">
 				<rom name="happy fret (1985)(micro cabin)(jp)[run'cas-'].cas" size="18560" crc="0a3c4556" sha1="4e67433fb83395c487e1283ce5105bbb44da5220" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="happfreta" cloneof="happfret">
+		<description>Happy Fret (Jpn, Alt)</description>
+		<year>1985</year>
+		<publisher>Micro Cabin</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="18584">
 				<rom name="happy fret (1985)(micro cabin)(jp)[a][run'cas-'].cas" size="18584" crc="e074e619" sha1="bb2300dcb0a648ef07613896d7e22eb19fef8fbc" offset="0" />
 			</dataarea>
@@ -6619,13 +6884,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="61240">
 				<rom name="hard boiled (1987)(methodic solutions)(nl)[run'cas-'].cas" size="61240" crc="d7fad1be" sha1="0917fc884fea3ce297982b9c6f5e93a932e16f06" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="hardboila" cloneof="hardboil">
+		<description>Hard Boiled (Euro, Alt)</description>
+		<year>1987</year>
+		<publisher>Methodic Solutions</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="48912">
 				<rom name="hard boiled (1987)(methodic solutions)(nl)[a][run'cas-'].cas" size="48912" crc="1eb953f3" sha1="6719c2a9c522e92e30fa6c0c530418ec947a8a0e" offset="0" />
 			</dataarea>
@@ -6652,13 +6923,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="29608">
 				<rom name="harvey smith's showjumper (1985)(software projects)[run'cas-'].cas" size="29608" crc="3dc22773" sha1="632326044efb6c5cc91bcfe90aadd1e537f5069c" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Passworded"/>
+	</software>
+
+	<software name="harvsmita" cloneof="harvsmit">
+		<description>Harvey Smith's Showjumper (Euro, Passworded)</description>
+		<year>1985</year>
+		<publisher>Software Projects</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="29608">
 				<rom name="harvey smith's showjumper (1985)(software projects)[passworded][run'cas-'].cas" size="29608" crc="b09f475c" sha1="ad1d6435973c143eb895056633fc04451246fa87" offset="0" />
 			</dataarea>
@@ -6672,13 +6949,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="69752">
 				<rom name="haunted house (1988)(eurosoft)(nl)[run'cas-'].cas" size="69752" crc="3c4ee5c3" sha1="b50bd0b427136b20b19b926b78b6c31a7ecc13fb" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="hhousea" cloneof="hhouse">
+		<description>Haunted House (Euro, Alt)</description>
+		<year>1988</year>
+		<publisher>Eurosoft</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="69736">
 				<rom name="haunted house (1988)(eurosoft)(nl)[a][run'cas-'].cas" size="69736" crc="8a6bf37d" sha1="107ef35e3d529a445ef35b6f8be122cdb7aa7088" offset="0" />
 			</dataarea>
@@ -6692,15 +6975,47 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="16720">
 				<rom name="head alignment kit (1985)(aackosoft)(nl)[run'cas-'].cas" size="16720" crc="808d33f1" sha1="acc648c3f70ab58ddc6e76423fda091c6c31cc26" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="headalia" cloneof="headali">
+		<description>Head Alignment Kit (Euro, Alt)</description>
+		<year>1985</year>
+		<publisher>Aackosoft</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="16717">
 				<rom name="head alignment kit (1985)(aackosoft)(nl)[a][run'cas-'].cas" size="16717" crc="d185b8bf" sha1="88f3b15bd9c0ed47857a2940f4a71df4d5361298" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="headheel">
+		<description>Head over Heels (Euro)</description>
+		<year>1987</year>
+		<publisher>Ocean Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
+			<dataarea name="cass" size="49735">
+				<rom name="head over heels (1987)(ocean software)(gb)[run'cas-'].cas" size="49735" crc="b761bbbb" sha1="bd6e77a7c7b18f7cc33154028612d4ebe743b0ee" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="headheela" cloneof="headheel">
+		<description>Head over Heels (Euro, Alt)</description>
+		<year>1987</year>
+		<publisher>Ocean Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
+			<dataarea name="cass" size="49663">
+				<rom name="head over heels (1987)(ocean software)(gb)[a][run'cas-'].cas" size="49663" crc="69b3ecdb" sha1="d01b60272055693fb9100b0b2c5af18c8871da15" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -6714,26 +7029,6 @@
 		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="51191">
 				<rom name="head over heels (1987)(erbe software)(es)[run'cas-'].cas" size="51191" crc="65574f7b" sha1="148b595f94248f95e35ab3cbad49e4408921a175" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="headheel">
-		<description>Head over Heels (Euro)</description>
-		<year>1987</year>
-		<publisher>Ocean Software</publisher>
-		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
-
-		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
-			<dataarea name="cass" size="49735">
-				<rom name="head over heels (1987)(ocean software)(gb)[run'cas-'].cas" size="49735" crc="b761bbbb" sha1="bd6e77a7c7b18f7cc33154028612d4ebe743b0ee" offset="0" />
-			</dataarea>
-		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
-			<dataarea name="cass" size="49663">
-				<rom name="head over heels (1987)(ocean software)(gb)[a][run'cas-'].cas" size="49663" crc="69b3ecdb" sha1="d01b60272055693fb9100b0b2c5af18c8871da15" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -6921,19 +7216,25 @@
 	</software>
 
 	<software name="humphrey">
-		<description>Humphrey (Euro, Mr. Micro)</description>
+		<description>Humphrey (Mr. Micro) (Euro)</description>
 		<year>1984</year>
 		<publisher>Mr. Micro</publisher>
 		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="11577">
 				<rom name="humphrey (1984)(mr. micro)[bload'cas-',r].cas" size="11577" crc="9e6ec1e7" sha1="7184d8d49cb9a44a8a003ed68b9087aa12b87cf8" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="humphreya" cloneof="humphrey">
+		<description>Humphrey (Mr. Micro) (Euro, Alt)</description>
+		<year>1984</year>
+		<publisher>Mr. Micro</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="11561">
 				<rom name="humphrey (1984)(mr. micro)[a][bload'cas-',r].cas" size="11561" crc="c12b793c" sha1="74f3c7b7a44b221acfe23290d307ccb83c3ab716" offset="0" />
 			</dataarea>
@@ -6941,19 +7242,25 @@
 	</software>
 
 	<software name="humphrez">
-		<description>Humphrey (Spa, Zigurat Software)</description>
+		<description>Humphrey (Zigurat Software) (Spa)</description>
 		<year>1988</year>
 		<publisher>Zigurat Software</publisher>
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="75584">
 				<rom name="humphrey (1988)(zigurat software)(es)[run'cas-'].cas" size="75584" crc="b66c14fd" sha1="9bdb2c54d815139a62fb5388d945cd902bb1701e" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="humphreza" cloneof="humphrez">
+		<description>Humphrey (Zigurat Software) (Spa, Alt)</description>
+		<year>1988</year>
+		<publisher>Zigurat Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="75584">
 				<rom name="humphrey (1988)(zigurat software)(es)[a][run'cas-'].cas" size="75584" crc="20ea9ede" sha1="670739d256bd5ff5824ec5f668ee75226a09a3d8" offset="0" />
 			</dataarea>
@@ -6967,13 +7274,19 @@
 		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="16431">
 				<rom name="hunchback (1984)(ocean software)(gb)[bload'cas-',r].cas" size="16431" crc="42b6c9c5" sha1="f9b746dc4875dc418ba2e2cb4d07703852a1edaa" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="hunchbaca" cloneof="hunchbac">
+		<description>Hunchback (Euro, Alt)</description>
+		<year>1984</year>
+		<publisher>Ocean Software</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="16423">
 				<rom name="hunchback (1984)(ocean software)(gb)[a][bload'cas-',r].cas" size="16423" crc="6b8700a3" sha1="7239cd81d24c82678130539e88dca11a957d30ac" offset="0" />
 			</dataarea>
@@ -6987,13 +7300,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="48893">
 				<rom name="hundra (1988)(dinamic software)(es)[run'cas-'].cas" size="48893" crc="e0ad7798" sha1="4a2dfd9ac5a4cc4d3e7e5538ba9fbc72c8d71845" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="hundraa" cloneof="hundra">
+		<description>Hundra (Spa, Alt)</description>
+		<year>1988</year>
+		<publisher>Dinamic Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="49240">
 				<rom name="hundra (1988)(dinamic software)(es)[a][run'cas-'].cas" size="49240" crc="9f976602" sha1="56efd31b3ad19fe6e2da2e4e52bc97ecec0f9def" offset="0" />
 			</dataarea>
@@ -7033,13 +7352,19 @@
 		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="32084">
 				<rom name="hydlide (1985)(t&amp;e soft)(jp)[bload'cas-',r].cas" size="32084" crc="6c21ed60" sha1="06e99a4bfb2b54b9aba3f7ec2b42d7c1317ff53f" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="hydlidea" cloneof="hydlide">
+		<description>Hydlide (Jpn, Alt)</description>
+		<year>1985</year>
+		<publisher>T&amp;E Soft</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="32084">
 				<rom name="hydlide (1985)(t&amp;e soft)(jp)[a][bload'cas-',r].cas" size="32084" crc="c07d9e83" sha1="186c07f2da6c45ba478c100859305198167d6762" offset="0" />
 			</dataarea>
@@ -7047,7 +7372,7 @@
 	</software>
 
 	<software name="hypsys">
-		<description>Hypsys (Euro)</description>
+		<description>Hypsys (Euro?)</description>
 		<year>1989</year>
 		<publisher>Techno Arts</publisher>
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
@@ -7059,12 +7384,26 @@
 			</dataarea>
 		</part>
 		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Side A, Alt"/>
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="cass" size="55596">
+				<rom name="hypsys (1989)(techno arts)(side b)[run'cas-'].cas" size="55596" crc="530efe37" sha1="7c3873b5ad1c5ac36adc6a06da637dc21b5ef4cb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hypsysa" cloneof="hypsys">
+		<description>Hypsys (Euro?, Alt Side A)</description>
+		<year>1989</year>
+		<publisher>Techno Arts</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
+		<feature name="part_id" value="Side A"/>
 			<dataarea name="cass" size="55596">
 				<rom name="hypsys (1989)(techno arts)(side a)[a][run'cas-'].cas" size="55596" crc="ca3913bc" sha1="2fe966bd030cf51283409302ac16ecff787af888" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="msx_cass">
+		<part name="cass2" interface="msx_cass">
 		<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="55596">
 				<rom name="hypsys (1989)(techno arts)(side b)[run'cas-'].cas" size="55596" crc="530efe37" sha1="7c3873b5ad1c5ac36adc6a06da637dc21b5ef4cb" offset="0" />
@@ -7164,13 +7503,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="25992">
 				<rom name="inca (1987)(eaglesoft)(nl)[run'cas-'].cas" size="25992" crc="bf667649" sha1="b04e280295d89dc8b2b7b9a3001a50fe2de6ab58" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="incaa" cloneof="inca">
+		<description>Inca (Euro, Alt)</description>
+		<year>1987</year>
+		<publisher>Eaglesoft</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="38320">
 				<rom name="inca (1987)(eaglesoft)(nl)[a][run'cas-'].cas" size="38320" crc="c6fec233" sha1="5b791bef411de9b2d074b4cb98e15faf2c52be2b" offset="0" />
 			</dataarea>
@@ -7190,12 +7535,26 @@
 			</dataarea>
 		</part>
 		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Side A, Alt"/>
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="cass" size="104154">
+				<rom name="indiana jones and the last crusade (1989)(erbe software)(es)(side b)[run'cas-'].cas" size="104154" crc="c6814441" sha1="23ebb2257b5d6637a7328754bf3b8d079efa43aa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lastcrusa" cloneof="lastcrus">
+		<description>Indiana Jones and the Last Crusade (Spa, Alt Side A)</description>
+		<year>1989</year>
+		<publisher>Erbe Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
+		<feature name="part_id" value="Side A"/>
 			<dataarea name="cass" size="41970">
 				<rom name="indiana jones and the last crusade (1989)(erbe software)(es)(side a)[a][run'cas-'].cas" size="41970" crc="5b68eb98" sha1="f2e8446124434c7790ddd7948c7050fd90c45c7b" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="msx_cass">
+		<part name="cass2" interface="msx_cass">
 		<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="104154">
 				<rom name="indiana jones and the last crusade (1989)(erbe software)(es)(side b)[run'cas-'].cas" size="104154" crc="c6814441" sha1="23ebb2257b5d6637a7328754bf3b8d079efa43aa" offset="0" />
@@ -7241,7 +7600,7 @@
 			</dataarea>
 		</part>
 		<part name="cass4" interface="msx_cass">
-		<feature name="part_id" value="Tape 2 Side b"/>
+		<feature name="part_id" value="Tape 2 Side B"/>
 			<dataarea name="cass" size="20103">
 				<rom name="informatica y basic msx (19xx)(atv)(es)(tape 02 of 12 side b)[bload'cas-',r][martos].cas" size="20103" crc="83fb6003" sha1="32bde8678b462069644899e405338a8341d7b737" offset="0" />
 			</dataarea>
@@ -7375,19 +7734,32 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="51715">
 				<rom name="international karate (1986)(endurance games)(gb)[run'cas-'].cas" size="51715" crc="d7eb1d87" sha1="f155bec090bf3960ab70028eb43f360f8657b56d" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="ikaratea" cloneof="ikarate">
+		<description>International Karate (Euro, Alt)</description>
+		<year>1986</year>
+		<publisher>Endurance Games</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="51908">
 				<rom name="international karate (1986)(endurance games)(gb)[a][run'cas-'].cas" size="51908" crc="3cb922eb" sha1="b2d13f8415014c63fcf879bd943ae5b16fb27ccf" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt 2"/>
+	</software>
+
+	<software name="ikarateb" cloneof="ikarate">
+		<description>International Karate (Euro, Alt 2)</description>
+		<year>1986</year>
+		<publisher>Endurance Games</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="51691">
 				<rom name="international karate (1986)(endurance games)(gb)[a2][run'cas-'].cas" size="51691" crc="0f662b37" sha1="1869a95a36871a859acf0c15c0341a3f7201ce02" offset="0" />
 			</dataarea>
@@ -7433,20 +7805,26 @@
 		</part>
 	</software>
 
-	<software name="invasion">
-		<description>Invasion (Euro, 64K)</description>
+	<software name="invasion"> <!-- requires 64kb in slot 2 -->
+		<description>Invasion (Euro)</description>
 		<year>1987</year>
 		<publisher>Bulldog</publisher>
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="35016">
 				<rom name="invasion (1987)(bulldog)(gb)[run'cas-',r][64kb in slot2][martos].cas" size="35016" crc="5ead1f9d" sha1="bd27815a12a33c7f56ee51bd3027ecb07de74be8" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="invasiona" cloneof="invasion"> <!-- requires 64kb in slot 2 -->
+		<description>Invasion (Euro, Alt)</description>
+		<year>1987</year>
+		<publisher>Bulldog</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="35016">
 				<rom name="invasion (1987)(bulldog)(gb)[a][run'cas-'][64kb in slot2][martos].cas" size="35016" crc="2ced249d" sha1="33162cce5c14bdc2ffa916b731256764ffc03800" offset="0" />
 			</dataarea>
@@ -7519,13 +7897,19 @@
 		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="65074">
 				<rom name="jack the nipper (1986)(gremlin graphics software)(gb)[bload'cas-',r].cas" size="65074" crc="e042a3e1" sha1="8b08517c3cb11b64e0910b5208b6d0188cf2f095" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="jacknipa" cloneof="jacknip">
+		<description>Jack the Nipper (Euro, Alt)</description>
+		<year>1986</year>
+		<publisher>Gremlin Graphics</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="65074">
 				<rom name="jack the nipper (1986)(gremlin graphics software)(gb)[a][bload'cas-',r].cas" size="65074" crc="89408f92" sha1="15522474cc42e61241e3d622318a6f441f2597e2" offset="0" />
 			</dataarea>
@@ -7565,13 +7949,19 @@
 		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="66368">
 				<rom name="jai alai (1991)(opera soft)(es)[bload'cas-',r][martos].cas" size="66368" crc="dc4d5cff" sha1="7389a2d9a36029df026383c969d2b1662a093f2c" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Hacked by Martos"/>
+	</software>
+
+	<software name="jaialaia" cloneof="jaialai">
+		<description>Jai Alai (Spa, Hacked by Martos)</description>
+		<year>1991</year>
+		<publisher>Opera Soft</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="66368">
 				<rom name="jai alai (1991)(opera soft)(es)[m code-protection martos][bload'cas-',r][martos].cas" size="66368" crc="23ce2715" sha1="37d10ec819349a9738f464fa0f55c7283dedb69d" offset="0" />
 			</dataarea>
@@ -7598,21 +7988,66 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="46736">
 				<rom name="jet bomber (1985)(aackosoft)(nl)[run'cas-'].cas" size="46736" crc="1492eeec" sha1="cd4dd0b71c6f527ae783ee4023dbcaa0d7f9df00" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="jetbomba" cloneof="jetbomb">
+		<description>Jet Bomber (Euro, Alt)</description>
+		<year>1985</year>
+		<publisher>Aackosoft</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="46736">
 				<rom name="jet bomber (1985)(aackosoft)(nl)[a][run'cas-'].cas" size="46736" crc="6ed16c9c" sha1="69ab0fd0566d4a25974085eae02d8e5c14de4029" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
+	<software name="jetfight">
+		<description>Jet Fighter (Eurosoft) (Euro)</description>
+		<year>1988</year>
+		<publisher>Eurosoft</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
+			<dataarea name="cass" size="35936">
+				<rom name="jet fighter (1988)(eurosoft)(nl)[run'cas-'].cas" size="35936" crc="0a788a57" sha1="375def5503ed0fb0ee95f29c5037e3a6e9c09cb3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="jetfighta" cloneof="jetfight">
+		<description>Jet Fighter (Eurosoft) (Euro, Alt)</description>
+		<year>1988</year>
+		<publisher>Eurosoft</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
+			<dataarea name="cass" size="37136">
+				<rom name="jet fighter (1988)(eurosoft)(nl)(en)[run'cas-'][martos].cas" size="37136" crc="2915d760" sha1="4bea3b06a6a8ea3413240f1caa50b198161cd15b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="jetfightb" cloneof="jetfight">
+		<description>Jet Fighter (Eurosoft) (Euro, Alt 2)</description>
+		<year>1988</year>
+		<publisher>Eurosoft</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
+			<dataarea name="cass" size="37136">
+				<rom name="jet fighter (1988)(eurosoft)(nl)(en)[a][run'cas-'][martos].cas" size="37136" crc="e4e56502" sha1="79a51ac074fbe5631e7c279c6c73cb6342cc1698" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="jetfigh1">
-		<description>Jet Fighter (Euro, Aackosoft)</description>
+		<description>Jet Fighter (Aackosoft) (Euro)</description>
 		<year>1985</year>
 		<publisher>Aackosoft</publisher>
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
@@ -7624,32 +8059,6 @@
 		</part>
 	</software>
 
-	<software name="jetfight">
-		<description>Jet Fighter (Euro, Eurosoft)</description>
-		<year>1988</year>
-		<publisher>Eurosoft</publisher>
-		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
-
-		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
-			<dataarea name="cass" size="35936">
-				<rom name="jet fighter (1988)(eurosoft)(nl)[run'cas-'].cas" size="35936" crc="0a788a57" sha1="375def5503ed0fb0ee95f29c5037e3a6e9c09cb3" offset="0" />
-			</dataarea>
-		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
-			<dataarea name="cass" size="37136">
-				<rom name="jet fighter (1988)(eurosoft)(nl)(en)[run'cas-'][martos].cas" size="37136" crc="2915d760" sha1="4bea3b06a6a8ea3413240f1caa50b198161cd15b" offset="0" />
-			</dataarea>
-		</part>
-		<part name="cass3" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt 2"/>
-			<dataarea name="cass" size="37136">
-				<rom name="jet fighter (1988)(eurosoft)(nl)(en)[a][run'cas-'][martos].cas" size="37136" crc="e4e56502" sha1="79a51ac074fbe5631e7c279c6c73cb6342cc1698" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="jetset">
 		<description>Jet Set Willy (Euro)</description>
 		<year>1984</year>
@@ -7657,13 +8066,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="27625">
 				<rom name="jet set willy (1984)(software projects)(gb)(en)[run'cas-'][martos].cas" size="27625" crc="9d61af09" sha1="4e2b0a532dbda11783e23225a8f21b364cae6b27" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Hacked by Martos"/>
+	</software>
+
+	<software name="jetseta" cloneof="jetset">
+		<description>Jet Set Willy (Euro, Hacked by Martos)</description>
+		<year>1984</year>
+		<publisher>Software Projects</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="27625">
 				<rom name="jet set willy (1984)(software projects)(gb)(en)[m code-protection martos][run'cas-'][martos].cas" size="27625" crc="c0b19944" sha1="7f1681b105d8ba483727803fa6b020d9ad62d460" offset="0" />
 			</dataarea>
@@ -7677,13 +8092,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="51429">
 				<rom name="jet set willy ii - the final frontier (1985)(software projects)[run'cas-'].cas" size="51429" crc="4aef4095" sha1="168a03de797f1d0e37a6bf4859d2d1d9dfccc2a4" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Passworded"/>
+	</software>
+
+	<software name="jetset2a" cloneof="jetset2">
+		<description>Jet Set Willy II - The Final Frontier (Euro, Passworded)</description>
+		<year>1985</year>
+		<publisher>Software Projects</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="51429">
 				<rom name="jet set willy ii - the final frontier (1985)(software projects)[passworded][run'cas-'].cas" size="51429" crc="06279b7c" sha1="b2185384ec7b7cf9e50e7815a719719d1f540cb1" offset="0" />
 			</dataarea>
@@ -7697,13 +8118,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="57975">
 				<rom name="jewels of darkness i - colossal adventure v2 (1986)(level 9 computing)(gb)[run'cas-'].cas" size="57975" crc="adc6ae15" sha1="04097143729e26b20b28d9fcbe49f5449e0a3351" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="jewels1a" cloneof="jewels1">
+		<description>Jewels of Darkness I - Colossal Adventure v2 (Euro, Alt)</description>
+		<year>1986</year>
+		<publisher>Level 9 Computing</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="57975">
 				<rom name="jewels of darkness i - colossal adventure v2 (1986)(level 9 computing)(gb)[a][run'cas-'].cas" size="57975" crc="887d9a3c" sha1="89f2dabe1adcfcc04bf121c1725d953df50649f2" offset="0" />
 			</dataarea>
@@ -7717,13 +8144,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="57975">
 				<rom name="jewels of darkness ii - adventure quest v2 (1986)(level 9 computing)(gb)[run'cas-'].cas" size="57975" crc="671469b8" sha1="3298364a51fe608694d28fd1f64049830e7d6f8a" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="jewels2a" cloneof="jewels2">
+		<description>Jewels of Darkness II - Adventure Quest v2 (Euro, Alt)</description>
+		<year>1986</year>
+		<publisher>Level 9 Computing</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="57975">
 				<rom name="jewels of darkness ii - adventure quest v2 (1986)(level 9 computing)(gb)[a][run'cas-'].cas" size="57975" crc="305ecbc2" sha1="d491e286921fdb9456460ea3adab3cffd1d8efef" offset="0" />
 			</dataarea>
@@ -7737,13 +8170,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="57975">
 				<rom name="jewels of darkness iii - dungeon adventure v2 (1986)(level 9 computing)(gb)[run'cas-'].cas" size="57975" crc="199bf2f1" sha1="e5999e87b3471d3cf1bd79048c325f6f674d5998" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="jewels3a" cloneof="jewels3">
+		<description>Jewels of Darkness III - Dungeon Adventure v2 (Euro, Alt)</description>
+		<year>1986</year>
+		<publisher>Level 9 Computing</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="57975">
 				<rom name="jewels of darkness iii - dungeon adventure v2 (1986)(level 9 computing)(gb)[a][run'cas-'].cas" size="57975" crc="5bfde3ee" sha1="d526658f1fd48ee98b52754796c0cec531786846" offset="0" />
 			</dataarea>
@@ -7770,13 +8209,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="43399">
 				<rom name="johny comomolo in 3-2-1 fire (1986)(dro soft)(es)[run'cas-'].cas" size="43399" crc="fce73d24" sha1="0527f8b087fade055e5cf789fbc6dd5329d3d416" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="comomoloa" cloneof="comomolo">
+		<description>Johny Comomolo in 3-2-1 Fire (Spa, Alt)</description>
+		<year>1986</year>
+		<publisher>Dro Soft</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="43399">
 				<rom name="johny comomolo in 3-2-1 fire (1986)(dro soft)(es)[run'cas-'][martos].cas" size="43399" crc="7f6120de" sha1="5c4e1efd91ce13a9d0cc1a649b5ef53c3f7c27e5" offset="0" />
 			</dataarea>
@@ -7810,13 +8255,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="16184">
 				<rom name="juegue con su msx - issue 01 - carr 2000 (19xx)(grupo de trabajo software)(es)[run'cas-'].cas" size="16184" crc="3928256a" sha1="f137bd12df779668e8bd6b2a8e3fcfbbe84fe19b" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="juegue01a" cloneof="juegue01">
+		<description>Juegue con su MSX - Issue 01 - Carr 2000 (Spa, Alt)</description>
+		<year>198?</year>
+		<publisher>Grupo de Trabajo Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="16184">
 				<rom name="juegue con su msx - issue 01 - carr 2000 (19xx)(grupo de trabajo software)(es)[a][run'cas-'].cas" size="16184" crc="74c302d4" sha1="a6028581814b489996f079806492424ee4bb688f" offset="0" />
 			</dataarea>
@@ -7909,19 +8360,6 @@
 		</part>
 	</software>
 
-	<software name="kerulena" cloneof="kerulen">
-		<description>Ke Rulen los Petas (Spa, Alt Loader, Bad?)</description>
-		<year>1989</year>
-		<publisher>Iber Soft</publisher>
-		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
-
-		<part name="cass1" interface="msx_cass">
-			<dataarea name="cass" size="63370">
-				<rom name="ke rulen los petas (1989)(iber soft)(es)[b][bload'cas-',r].cas" size="63370" crc="883ee148" sha1="0149d516aeee9b3943b06c54b48a853670f27fb4" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="kerulen">
 		<description>Ke Rulen los Petas (Spa)</description>
 		<year>1989</year>
@@ -7931,6 +8369,19 @@
 		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="63618">
 				<rom name="ke rulen los petas (1989)(iber soft)(es)[run'cas-'].cas" size="63618" crc="fa3e99ae" sha1="dd3975b1c921898665db07157d6883ef54287ecc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kerulena" cloneof="kerulen">
+		<description>Ke Rulen los Petas (Spa, Alt Loader, Bad?)</description>
+		<year>1989</year>
+		<publisher>Iber Soft</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
+			<dataarea name="cass" size="63370">
+				<rom name="ke rulen los petas (1989)(iber soft)(es)[b][bload'cas-',r].cas" size="63370" crc="883ee148" sha1="0149d516aeee9b3943b06c54b48a853670f27fb4" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -8342,19 +8793,32 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="60143">
 				<rom name="knight orc - part 1 - loosed orc (1987)(rainbird software)[run'cas-'].cas" size="60143" crc="adc6b9dd" sha1="3c7474bdaa34486af5d6f9dedde2b332fa311808" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="kniorc1a" cloneof="kniorc1">
+		<description>Knight Orc - Part 1 - Loosed Orc (Euro, Alt)</description>
+		<year>1987</year>
+		<publisher>Rainbird Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="60143">
 				<rom name="knight orc - part 1 - loosed orc (1987)(rainbird software)[a][run'cas-'].cas" size="60143" crc="658494ae" sha1="9e6ca889a34aa77e3522365138207a3da1d55a12" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt 2"/>
+	</software>
+
+	<software name="kniorc1b" cloneof="kniorc1">
+		<description>Knight Orc - Part 1 - Loosed Orc (Euro, Alt 2)</description>
+		<year>1987</year>
+		<publisher>Rainbird Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="60143">
 				<rom name="knight orc - part 1 - loosed orc (1987)(rainbird software)[a2][run'cas-'].cas" size="60143" crc="deae751a" sha1="05efcf8865bb944683c09ec4e52f7c4f0133f06b" offset="0" />
 			</dataarea>
@@ -8368,13 +8832,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="60143">
 				<rom name="knight orc - part 2 - a kind of magic (1987)(rainbird software)[run'cas-'].cas" size="60143" crc="45685a99" sha1="9c8dd03f5642e271643a41b418c11346c5100343" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Passworded"/>
+	</software>
+
+	<software name="kniorc2a" cloneof="kniorc2">
+		<description>Knight Orc - Part 2 - A Kind of Magic (Euro, Passworded)</description>
+		<year>1987</year>
+		<publisher>Rainbird Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="60143">
 				<rom name="knight orc - part 2 - a kind of magic (1987)(rainbird software)[passworded][run'cas-'].cas" size="60143" crc="44de40b5" sha1="09ba7aa0bcf960a237410c67c5da389cbb766eb1" offset="0" />
 			</dataarea>
@@ -8388,13 +8858,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="60143">
 				<rom name="knight orc - part 3 - hordes of the mountain king (1987)(rainbird software)[run'cas-'].cas" size="60143" crc="9c7cad20" sha1="bd6db805c1c5c0c258ff2038d0505e1d705aad2c" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Passworded"/>
+	</software>
+
+	<software name="kniorc3a" cloneof="kniorc3">
+		<description>Knight Orc - Part 3 - Hordes of the Mountain King (Euro, Alt)</description>
+		<year>1987</year>
+		<publisher>Rainbird Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="60143">
 				<rom name="knight orc - part 3 - hordes of the mountain king (1987)(rainbird software)[passworded][run'cas-'].cas" size="60143" crc="cdb41ec5" sha1="bcfb90df2fe3af087c8355c1a5f666bfae1a612e" offset="0" />
 			</dataarea>
@@ -8467,13 +8943,19 @@
 		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="67571">
 				<rom name="krakout (1987)(gremlin graphics software)(gb)[bload'cas-',r].cas" size="67571" crc="5a0776f5" sha1="7a53c8825efcd906c6f579d0209341810e58c65c" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="krakouta" cloneof="krakout">
+		<description>Krakout (Euro, Alt)</description>
+		<year>1987</year>
+		<publisher>Gremlin Graphics</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="67571">
 				<rom name="krakout (1987)(gremlin graphics software)(gb)[a][bload'cas-',r].cas" size="67571" crc="f68953c7" sha1="c88b8ff13a6e817426ac0c99268ef90b141cc05d" offset="0" />
 			</dataarea>
@@ -8526,13 +9008,19 @@
 		<info name="usage" value="Type in BASIC Command &quot;CLEAR200,&amp;H87FF&quot;, then load with BLOAD&quot;CAS:&quot;,R"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="18594">
 				<rom name="kuma forth (1984)(kuma computers)(gb)[clear200,&amp;h87ff + bload'cas-',r].cas" size="18594" crc="72854038" sha1="af4615d7af2cf36a6900a9d1a70a453cbd12442b" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="kumaforta" cloneof="kumafort">
+		<description>Kuma Forth (Euro, Alt)</description>
+		<year>1984</year>
+		<publisher>Kuma Computers</publisher>
+		<info name="usage" value="Type in BASIC Command &quot;CLEAR200,&amp;H87FF&quot;, then load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="18522">
 				<rom name="kuma forth (1984)(kuma computers)(gb)[a][clear200,&amp;h87ff + bload'cas-',r].cas" size="18522" crc="c627d14e" sha1="e656d1908fa5056bebf27b25a781d30b211d44a3" offset="0" />
 			</dataarea>
@@ -8546,35 +9034,21 @@
 		<info name="usage" value="Load with CLOAD + RUN"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="14397">
 				<rom name="kuma logo (1984)(kuma computers)(gb)[cload + run].cas" size="14397" crc="afea09a4" sha1="589fd4cd1ec7d6fd6021d8bbebf193d98bf6d63f" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
-			<dataarea name="cass" size="14389">
-				<rom name="kuma logo (1984)(kuma computers)(gb)[a][cload + run].cas" size="14389" crc="a45a7ea5" sha1="26e6d530c8e2e320c627dc98bf6e98d33a20ee20" offset="0" />
-			</dataarea>
-		</part>
 	</software>
 
-	<software name="herencia">
-		<description>La Herencia (Spa)</description>
-		<year>1987</year>
-		<publisher>Infogrames</publisher>
-		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+	<software name="kumalogoa" cloneof="kumalogo">
+		<description>Kuma Logo (Euro, Alt)</description>
+		<year>1984</year>
+		<publisher>Kuma Computers</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Side A"/>
-			<dataarea name="cass" size="92891">
-				<rom name="l'heritage - panique a las vegas (1987)(idealogic)(es)(side a)[la herencia][bload'cas-',r][martos].cas" size="92891" crc="3ce17294" sha1="a2bcb57ec49ffeeac2392e39ff4a1deb41192a49" offset="0" />
-			</dataarea>
-		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Side B"/>
-			<dataarea name="cass" size="41897">
-				<rom name="l'heritage - panique a las vegas (1987)(idealogic)(es)(side b)[la herencia][martos].cas" size="41897" crc="40f99688" sha1="ed2d94894638b4d3a0dc320dde075c9d436e1f3f" offset="0" />
+			<dataarea name="cass" size="14389">
+				<rom name="kuma logo (1984)(kuma computers)(gb)[a][cload + run].cas" size="14389" crc="a45a7ea5" sha1="26e6d530c8e2e320c627dc98bf6e98d33a20ee20" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -8595,6 +9069,26 @@
 		<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="41897">
 				<rom name="l'heritage - panique a las vegas (19xx)(-)(en)(side b)[inheritance][martos].cas" size="41897" crc="30a8dac9" sha1="725067fd9186e3c9d677acced05d65b9aa90553e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="herencia" cloneof="inherita">
+		<description>La Herencia (Spa)</description>
+		<year>1987</year>
+		<publisher>Infogrames</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="cass" size="92891">
+				<rom name="l'heritage - panique a las vegas (1987)(idealogic)(es)(side a)[la herencia][bload'cas-',r][martos].cas" size="92891" crc="3ce17294" sha1="a2bcb57ec49ffeeac2392e39ff4a1deb41192a49" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="msx_cass">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="cass" size="41897">
+				<rom name="l'heritage - panique a las vegas (1987)(idealogic)(es)(side b)[la herencia][martos].cas" size="41897" crc="40f99688" sha1="ed2d94894638b4d3a0dc320dde075c9d436e1f3f" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -8658,19 +9152,32 @@
 		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="5240">
 				<rom name="lazer bykes (1985)(pss)(gb)[bload'cas-',r].cas" size="5240" crc="9c03372c" sha1="04b86500b17e11c54731c96c2dd773306e469eab" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="lazerbyka" cloneof="lazerbyk">
+		<description>Lazer Bykes (Euro, Alt)</description>
+		<year>1985</year>
+		<publisher>PSS</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="5240">
 				<rom name="lazer bykes (1985)(pss)(gb)[a][bload'cas-',r].cas" size="5240" crc="582d9103" sha1="18a41229a9f9c98a7aa37d021d2607552098f92a" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt 2"/>
+	</software>
+
+	<software name="lazerbykb" cloneof="lazerbyk">
+		<description>Lazer Bykes (Euro, Alt 2)</description>
+		<year>1985</year>
+		<publisher>PSS</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="5240">
 				<rom name="lazer bykes (1985)(pss)(gb)[a2][bload'cas-',r].cas" size="5240" crc="30088397" sha1="6a43c999b0dc8e31698437f836f63fea13036f9e" offset="0" />
 			</dataarea>
@@ -8684,19 +9191,32 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="32936">
 				<rom name="lazy jones (1985)(terminal software)(gb)[run'cas-'].cas" size="32936" crc="1ef2cc6d" sha1="82a6bd07df84214c6865f26e3ed544d062c708e8" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="lazyjonea" cloneof="lazyjone">
+		<description>Lazy Jones (Euro, Alt)</description>
+		<year>1985</year>
+		<publisher>Terminal Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="32928">
 				<rom name="lazy jones (1985)(terminal software)(gb)[a][run'cas-'].cas" size="32928" crc="463ce28d" sha1="c9300993a885a340eb959c525634e28707e6fd16" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt 2"/>
+	</software>
+
+	<software name="lazyjoneb" cloneof="lazyjone">
+		<description>Lazy Jones (Euro, Alt 2)</description>
+		<year>1985</year>
+		<publisher>Terminal Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="32928">
 				<rom name="lazy jones (1985)(terminal software)(gb)[a2][run'cas-'].cas" size="32928" crc="265a4d99" sha1="07ffb2dc2665f1360da7794426520c67f93dc1a3" offset="0" />
 			</dataarea>
@@ -8710,13 +9230,19 @@
 		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="38104">
 				<rom name="le mans (1984)(electric software)(gb)[bload'cas-',r].cas" size="38104" crc="e3055614" sha1="96b828c1c44b58c0d5ea33a7368bda13494af1af" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="lemansa" cloneof="lemans">
+		<description>Le Mans (Euro, Alt)</description>
+		<year>1984</year>
+		<publisher>Electric Software</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="38104">
 				<rom name="le mans (1984)(electric software)(gb)[a][bload'cas-',r].cas" size="38104" crc="3f0e5405" sha1="fa23ff988f3d37a181f0859ca5d4ea5a7c1574e4" offset="0" />
 			</dataarea>
@@ -8840,19 +9366,6 @@
 		</part>
 	</software>
 
-	<software name="livingsta" cloneof="livingst">
-		<description>Livingstone Supongo (Spa, Alt Loader)</description>
-		<year>1986</year>
-		<publisher>Opera Soft</publisher>
-		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
-
-		<part name="cass1" interface="msx_cass">
-			<dataarea name="cass" size="41513">
-				<rom name="livingstone supongo (1986)(opera soft)(es)[bload'cas-',r].cas" size="41513" crc="0220da22" sha1="156cafbe048665d2d2e34ad4167cb48a247e674e" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="livingst">
 		<description>Livingstone Supongo (Spa)</description>
 		<year>1986</year>
@@ -8862,6 +9375,19 @@
 		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="42057">
 				<rom name="livingstone supongo (1986)(opera soft)(es)[run'cas-'].cas" size="42057" crc="a29cf202" sha1="8e4e43a69931f40388b79ee8f7fd8a13292fc203" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="livingsta" cloneof="livingst">
+		<description>Livingstone Supongo (Spa, Alt Loader)</description>
+		<year>1986</year>
+		<publisher>Opera Soft</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
+			<dataarea name="cass" size="41513">
+				<rom name="livingstone supongo (1986)(opera soft)(es)[bload'cas-',r].cas" size="41513" crc="0220da22" sha1="156cafbe048665d2d2e34ad4167cb48a247e674e" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -9133,13 +9659,19 @@
 		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="25004">
 				<rom name="loto (19xx)(manhattan transfer)(es)[bload'cas-',r].cas" size="25004" crc="7c1e18be" sha1="86f69118662990687b42d62be71a4c5a82868066" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="lotoa" cloneof="loto">
+		<description>Loto (Spa, Alt)</description>
+		<year>198?</year>
+		<publisher>Manhattan Transfer</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="25004">
 				<rom name="loto (19xx)(manhattan transfer)(es)[a][bload'cas-',r].cas" size="25004" crc="70b8fae3" sha1="1032b6d24a7fe0f2aa921dc0f8da4c371fb97492" offset="0" />
 			</dataarea>
@@ -9153,13 +9685,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="39574">
 				<rom name="m-droid (19xx)(blue ribbon software)[run'cas-'].cas" size="39574" crc="03869d9e" sha1="784c911a309f5d8b7b06dfc8dcd1beb1cacf314c" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="mdroida" cloneof="mdroid">
+		<description>M-Droid (Euro, Alt)</description>
+		<year>198?</year>
+		<publisher>Blue Ribbon Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="39542">
 				<rom name="m-droid (19xx)(blue ribbon software)[a][run'cas-'].cas" size="39542" crc="2dbfba0a" sha1="e4a2dd70dcfce0877855aa80575897fd2f2c5b3b" offset="0" />
 			</dataarea>
@@ -9186,19 +9724,32 @@
 		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="45578">
 				<rom name="macadam bumper (1985)(players software)(gb)[bload'cas-',r].cas" size="45578" crc="d4b5397b" sha1="90893daf8ce71deb64d6c2e7ee2b09589193f5dc" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="macadama" cloneof="macadam">
+		<description>Macadam Bumper (Euro, Alt)</description>
+		<year>1985</year>
+		<publisher>Players Software</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="45578">
 				<rom name="macadam bumper (1985)(players software)(gb)[a][bload'cas-',r].cas" size="45578" crc="dc9025d8" sha1="6d21a4fedd17dfc42c83e02120a1cc6718db4fd3" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt 2"/>
+	</software>
+
+	<software name="macadamb" cloneof="macadam">
+		<description>Macadam Bumper (Euro, Alt 2)</description>
+		<year>1985</year>
+		<publisher>Players Software</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="45578">
 				<rom name="macadam bumper (1985)(players software)(gb)[a2][bload'cas-',r].cas" size="45578" crc="b47d3386" sha1="1d3d20b3ab4246db934f12aef283c49543f4faf1" offset="0" />
 			</dataarea>
@@ -9290,13 +9841,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="54495">
 				<rom name="mambo (1989)(positive)(es)[run'cas-'][martos].cas" size="54495" crc="d3cd5f8b" sha1="718bba12de06f511ec13b523cba57dcd0d8a4f7f" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="mamboa" cloneof="mambo">
+		<description>Mambo (Spa, Alt)</description>
+		<year>1989</year>
+		<publisher>Positive</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="52463">
 				<rom name="mambo (1989)(positive)(es)[a][run'cas-'][martos].cas" size="52463" crc="db649e30" sha1="2f7381507fb2b713684c2e1085e7e1fde5e25bf8" offset="0" />
 			</dataarea>
@@ -9316,18 +9873,38 @@
 			</dataarea>
 		</part>
 		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
-			<dataarea name="cass" size="55472">
-				<rom name="mandragore (1986)(infogrames)(fr)(fr)(tape 1 of 2)[a][bload'cas-',r][cassette jeu][martos].cas" size="55472" crc="09b26c87" sha1="8901ce2582fca617744943290863ccdc7acc38af" offset="0" />
-			</dataarea>
-		</part>
-		<part name="cass3" interface="msx_cass">
 		<feature name="part_id" value="Tape 2 Side A (Donjons D0-D4)"/>
 			<dataarea name="cass" size="49990">
 				<rom name="mandragore (1986)(infogrames)(fr)(fr)(tape 2 of 2 side a)[bload'cas-',r][cassette donjons d0-d4][martos].cas" size="49990" crc="744402a3" sha1="7a42b75389a0182c96c9fc77941c82c9310a224a" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass4" interface="msx_cass">
+		<part name="cass3" interface="msx_cass">
+		<feature name="part_id" value="Tape 2 Side B (Donjons D5-D9)"/>
+			<dataarea name="cass" size="44374">
+				<rom name="mandragore (1986)(infogrames)(fr)(fr)(tape 2 of 2 side b)[bload'cas-',r][cassette donjons d5-d9][martos].cas" size="44374" crc="3ccadef0" sha1="6cf0593667bca1942816ae7295ac3b9b6029fec0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mandragoa" cloneof="mandrago">
+		<description>Mandragore (Fra, Alt)</description>
+		<year>1986</year>
+		<publisher>Infogrames</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="55472">
+				<rom name="mandragore (1986)(infogrames)(fr)(fr)(tape 1 of 2)[a][bload'cas-',r][cassette jeu][martos].cas" size="55472" crc="09b26c87" sha1="8901ce2582fca617744943290863ccdc7acc38af" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="msx_cass">
+		<feature name="part_id" value="Tape 2 Side A (Donjons D0-D4)"/>
+			<dataarea name="cass" size="49990">
+				<rom name="mandragore (1986)(infogrames)(fr)(fr)(tape 2 of 2 side a)[bload'cas-',r][cassette donjons d0-d4][martos].cas" size="49990" crc="744402a3" sha1="7a42b75389a0182c96c9fc77941c82c9310a224a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="msx_cass">
 		<feature name="part_id" value="Tape 2 Side B (Donjons D5-D9)"/>
 			<dataarea name="cass" size="44374">
 				<rom name="mandragore (1986)(infogrames)(fr)(fr)(tape 2 of 2 side b)[bload'cas-',r][cassette donjons d5-d9][martos].cas" size="44374" crc="3ccadef0" sha1="6cf0593667bca1942816ae7295ac3b9b6029fec0" offset="0" />
@@ -9355,13 +9932,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="26318">
 				<rom name="manic miner (1984)(software projects)[run'cas-'].cas" size="26318" crc="07c75c98" sha1="1d5fa154bcce76648c7d122e47defe90300e9d3c" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="manicmina" cloneof="manicmin">
+		<description>Manic Miner (Euro, Alt)</description>
+		<year>1984</year>
+		<publisher>Software Projects</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="26358">
 				<rom name="manic miner (1984)(software projects)[a][run'cas-'].cas" size="26358" crc="f2bbb5ec" sha1="fde225a6b7fccb5305da73bc629433accdb3484f" offset="0" />
 			</dataarea>
@@ -9440,13 +10023,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="19831">
 				<rom name="master chess (1987)(mastertronic)(gb)[run'cas-'].cas" size="19831" crc="aff67fd1" sha1="b9c56a824149e2d2220cf71d17d9dfb69c27b8a4" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="mastchesa" cloneof="mastches">
+		<description>Master Chess (Euro, Alt)</description>
+		<year>1987</year>
+		<publisher>Mastertronic</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="19831">
 				<rom name="master chess (1987)(mastertronic)(gb)[a][run'cas-'].cas" size="19831" crc="673239ce" sha1="19e71c13a5b4a2c0799888d1a7016adf75f730c6" offset="0" />
 			</dataarea>
@@ -9512,13 +10101,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="44160">
 				<rom name="maths invaders (1985)(aackosoft)(nl)[run'cas-'].cas" size="44160" crc="7191c446" sha1="30f56aaf11aabfdfcf878abd592ffd7ed45c3691" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="mathsinva" cloneof="mathsinv">
+		<description>Maths Invaders (Euro, Alt)</description>
+		<year>1985</year>
+		<publisher>Aackosoft</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="43664">
 				<rom name="maths invaders (1985)(aackosoft)(nl)[a][run'cas-'].cas" size="43664" crc="57bf6d56" sha1="2ae7076a78263bcce7778d938febea3b3e564075" offset="0" />
 			</dataarea>
@@ -9532,13 +10127,19 @@
 		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="13653">
 				<rom name="maxima (1984)(pss)(gb)[bload'cas-',r].cas" size="13653" crc="48d4022f" sha1="284994db1a1938f642fd53bed6e048bc761f042d" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="maximaa" cloneof="maxima">
+		<description>Maxima (Euro, Alt)</description>
+		<year>1984</year>
+		<publisher>PSS</publisher>
+		<info name="usage" value="Load with BLOAD&quot;CAS:&quot;,R"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="13653">
 				<rom name="maxima (1984)(pss)(gb)[a][bload'cas-',r].cas" size="13653" crc="1393a31e" sha1="11502862df9440a5ef9b14be8379baa78ab87ed5" offset="0" />
 			</dataarea>
@@ -9651,6 +10252,19 @@
 		</part>
 	</software>
 
+	<software name="meganova">
+		<description>Meganova (Spa)</description>
+		<year>1988</year>
+		<publisher>Dinamic Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
+			<dataarea name="cass" size="75343">
+				<rom name="meganova (1988)(dinamic software)(es)[run'cas-'].cas" size="75343" crc="a055f596" sha1="9c8b88381cb6f71fa22a6a4f28e9dddbbb26b611" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="meganovaa" cloneof="meganova">
 		<description>Meganova (Spa, 2 Sides)</description>
 		<year>1988</year>
@@ -9666,19 +10280,6 @@
 		<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="30079">
 				<rom name="meganova (1988)(dinamic software)(es)(side b)[run'cas-'].cas" size="30079" crc="934eb5e6" sha1="cfda7342b6da19ddd14de9927b45ae66a0b01a94" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="meganova">
-		<description>Meganova (Spa)</description>
-		<year>1988</year>
-		<publisher>Dinamic Software</publisher>
-		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
-
-		<part name="cass1" interface="msx_cass">
-			<dataarea name="cass" size="75343">
-				<rom name="meganova (1988)(dinamic software)(es)[run'cas-'].cas" size="75343" crc="a055f596" sha1="9c8b88381cb6f71fa22a6a4f28e9dddbbb26b611" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -9703,13 +10304,19 @@
 		<info name="usage" value="Load with CLOAD + RUN"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="19059">
 				<rom name="mejor software - issue 01 - guss en la atlantida (19xx)(creativos editoriales)(es)[cload + run].cas" size="19059" crc="dec44127" sha1="416ea6f6d559d656e30e52fb9f7de20a6d2b70fd" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="mejor01a" cloneof="mejor01">
+		<description>Mejor Software - Issue 01 - Guss en la Atlantida (Spa, Alt)</description>
+		<year>198?</year>
+		<publisher>Creativos Editoriales</publisher>
+		<info name="usage" value="Load with CLOAD + RUN"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="19751">
 				<rom name="mejor software - issue 01 - guss en la atlantida (19xx)(creativos editoriales)(es)[a][cload + run].cas" size="19751" crc="0e1ef5f0" sha1="429a4346ea112fd2f634df3bf08049f9920e6a7b" offset="0" />
 			</dataarea>
@@ -9815,13 +10422,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="46608">
 				<rom name="milk race (1987)(mastertronic)(gb)[run'cas-'].cas" size="46608" crc="74ce546e" sha1="083044f87aca95715fef525ad12c7d7592600a4c" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="milkracea" cloneof="milkrace">
+		<description>Milk Race (Euro, Alt)</description>
+		<year>1987</year>
+		<publisher>Mastertronic</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="46608">
 				<rom name="milk race (1987)(mastertronic)(gb)[a][run'cas-'].cas" size="46608" crc="ef08f672" sha1="e540d89fe9cbc821e92759226bc9b4405bcd9c53" offset="0" />
 			</dataarea>
@@ -9835,19 +10448,32 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="16484">
 				<rom name="miner machine (1987)(eaglesoft)(nl)[run'cas-'][martos].cas" size="16484" crc="d350a552" sha1="7aaebd1e2e8e3d2fb4e8f3b26072aee11830a011" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="minemacha" cloneof="minemach">
+		<description>Miner Machine (Euro, Alt)</description>
+		<year>1987</year>
+		<publisher>Eaglesoft</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="16484">
 				<rom name="miner machine (1987)(eaglesoft)(nl)[a][run'cas-'].cas" size="16484" crc="efd7ad0f" sha1="0ebbb2acc9b2402178a5001e74720019a2d16f6e" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt 2"/>
+	</software>
+
+	<software name="minemachb" cloneof="minemach">
+		<description>Miner Machine (Euro, Alt 2)</description>
+		<year>1987</year>
+		<publisher>Eaglesoft</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="16466">
 				<rom name="miner machine (1987)(eaglesoft)(nl)[a2][run'cas-'].cas" size="16466" crc="8333e7b8" sha1="bd96d9582489a349f9619a43425cec53ccb13759" offset="0" />
 			</dataarea>
@@ -9900,13 +10526,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="61360">
 				<rom name="misterio del nilo, el (1987)(zigurat software)(es)[run'cas-'].cas" size="61360" crc="c32fcce2" sha1="25fee937a84eb4cd45375d74b5ee9434d055022b" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="mistniloa" cloneof="mistnilo">
+		<description>El Misterio del Nilo (Spa, Alt)</description>
+		<year>1987</year>
+		<publisher>Zigurat Software</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="61360">
 				<rom name="misterio del nilo, el (1987)(zigurat software)(es)[a][run'cas-'].cas" size="61360" crc="97a028dc" sha1="a2a21362d455b6c77cfbb1d4d7ba1d5c2d6caf3c" offset="0" />
 			</dataarea>
@@ -9920,13 +10552,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="43687">
 				<rom name="molecule man (1986)(mastertronic)(gb)[run'cas-'].cas" size="43687" crc="4c3ebaee" sha1="2726f91828dd5b92657372d103f3ee94600ce2ed" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="moleculea" cloneof="molecule">
+		<description>Molecule Man (Euro, Alt)</description>
+		<year>1986</year>
+		<publisher>Mastertronic</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="43687">
 				<rom name="molecule man (1986)(mastertronic)(gb)[a][run'cas-'].cas" size="43687" crc="babb4b40" sha1="dca6ddb19f48bde09335f09a5c1a61061019c2d8" offset="0" />
 			</dataarea>
@@ -9966,13 +10604,19 @@
 		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
 
 		<part name="cass1" interface="msx_cass">
-		<feature name="part_id" value="Tape 1"/>
 			<dataarea name="cass" size="236833">
 				<rom name="moonwalker (1989)(u.s. gold)(gb)[run'cas-'].cas" size="236833" crc="7bbf605f" sha1="1787776aeef9420ebb35c3ecb879a7c9a556a512" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="msx_cass">
-		<feature name="part_id" value="Tape 1, Alt"/>
+	</software>
+
+	<software name="moonwalka" cloneof="moonwalk">
+		<description>Moonwalker (Euro, Alt)</description>
+		<year>1989</year>
+		<publisher>U.S. Gold</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
 			<dataarea name="cass" size="236833">
 				<rom name="moonwalker (1989)(u.s. gold)(gb)[a][run'cas-'].cas" size="236833" crc="f631088d" sha1="b9a81c78a2fc89ca863d9160b73a2ee5246dcc01" offset="0" />
 			</dataarea>
@@ -10070,6 +10714,19 @@
 		</part>
 	</software>
 
+	<software name="mountbik">
+		<description>Mountain Bike Racer (Euro)</description>
+		<year>1990</year>
+		<publisher>Positive</publisher>
+		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
+
+		<part name="cass1" interface="msx_cass">
+			<dataarea name="cass" size="44363">
+				<rom name="mountain bike racer (1990)(positive)[run'cas-'].cas" size="44363" crc="5eccfcee" sha1="437680147325dca6dceb0a8a6c490ce5d7a9ab35" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="mountbiks" cloneof="mountbik">
 		<description>Mountain Bike Racer (Spa)</description>
 		<year>1990</year>
@@ -10086,19 +10743,6 @@
 		<feature name="part_id" value="Tape 1, Alt"/>
 			<dataarea name="cass" size="44363">
 				<rom name="mountain bike racer (1990)(positive)(es)[a][run'cas-'][martos].cas" size="44363" crc="577e40e0" sha1="8630b988dbcb2b02337b029e8ada720a39557cf2" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="mountbik">
-		<description>Mountain Bike Racer (Euro)</description>
-		<year>1990</year>
-		<publisher>Positive</publisher>
-		<info name="usage" value="Load with RUN&quot;CAS:&quot;"/>
-
-		<part name="cass1" interface="msx_cass">
-			<dataarea name="cass" size="44363">
-				<rom name="mountain bike racer (1990)(positive)[run'cas-'].cas" size="44363" crc="5eccfcee" sha1="437680147325dca6dceb0a8a6c490ce5d7a9ab35" offset="0" />
 			</dataarea>
 		</part>
 	</software>
