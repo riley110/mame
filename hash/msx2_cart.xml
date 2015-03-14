@@ -3091,10 +3091,7 @@ LZ93A13 (32 pin) - 8KB banks
 		</part>
 	</software>
 
-
-
-
-	<!-- Non-Games -->
+<!-- Non-Games -->
 
 	<software name="testcart" supported="no">
 		<description>Service Test Cart MSX2 (Euro?)</description>
@@ -3120,7 +3117,23 @@ LZ93A13 (32 pin) - 8KB banks
 		</part>
 	</software>
 
-<!-- Needs Kanji rom? -->
+	<!-- This requires a floppy disk to work, see msx2_flop.xml -->
+	<software name="halnote">
+		<description>HalNote (Jpn)</description>
+		<year>1987</year>
+		<publisher>HAL Kenkyuujo</publisher>
+		<part name="cart" interface="msx_cart">
+			<feature name="slot" value="halnote" />
+			<feature name="mapper" value="M60002-0125SP" />
+			<dataarea name="rom" size="1048576">
+				<rom name="hal note (japan) (program).rom" size="1048576" crc="40313fec" sha1="1af617bfd11b10a71936c606174a80019762ea71" status="baddump" offset="0" />
+			</dataarea>
+			<dataarea name="sram" size="16384">
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Needs Kanji rom? -->
 	<software name="msxwrit2" supported="no">
 		<description>Japanese MSX-Write II (Jpn)</description>
 		<year>1988</year>
@@ -3151,10 +3164,10 @@ LZ93A13 (32 pin) - 8KB banks
 		</part>
 	</software>
 
-
-	<!-- This is the sound cartridge that came with the game Snatcher. This should eventually be
-	     combined in one software description including the Sound cartridge and the floppies.
-	     This sound cartridge can also be used with the MSX Game Collections from Konami.
+	<!-- 
+	This is the sound cartridge that came with the game Snatcher. This should eventually be
+	combined in one software description including the Sound cartridge and the floppies.
+	This sound cartridge can also be used with the MSX Game Collections from Konami.
 	-->
 	<software name="snatcher">
 		<description>Snatcher Sound Cartridge</description>
@@ -3167,9 +3180,10 @@ LZ93A13 (32 pin) - 8KB banks
 		</part>
 	</software>
 
-	<!-- This is the sound cartridge that came with the game SD Snatcher. This should eventually be
-	     combined in one software description including the Sound cartridge and the floppies.
-	     This sound cartridge can _not_ be used with the MSX Game Collections from Konami.
+	<!--
+	This is the sound cartridge that came with the game SD Snatcher. This should eventually be
+	combined in one software description including the Sound cartridge and the floppies.
+	This sound cartridge can _not_ be used with the MSX Game Collections from Konami.
 	-->
 	<software name="sdsnatch">
 		<description>SD-Snatcher Sound Cartridge</description>
@@ -3178,6 +3192,19 @@ LZ93A13 (32 pin) - 8KB banks
 		<part name="cart" interface="msx_cart">
 			<feature name="slot" value="sound_sdsnatch" />
 			<dataarea name="ram" size="65536">
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- This requires a floppy disk to work, see msx2_flop.xml -->
+	<software name="arc">
+		<description>Arc</description>
+		<year>1990</year>
+		<publisher>Parallax</publisher>
+		<part name="cart" interface="msx_cart">
+			<feature name="slot" value="arc" />
+			<dataarea name="rom" size="32768">
+				<rom name="arc.rom" size="32768" crc="3f47382f" sha1="ac43445c9e0a097b6d8116017645fe96b054a111" offset="0" />
 			</dataarea>
 		</part>
 	</software>
