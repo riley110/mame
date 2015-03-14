@@ -129,6 +129,8 @@ static MACHINE_CONFIG_START( slicer, slicer_state )
 	MCFG_SCSI_OUTPUT_LATCH_ADD("sasi_data_out", "sasi")
 	MCFG_DEVICE_ADD("sasi_data_in", INPUT_BUFFER, 0)
 	MCFG_DEVICE_ADD("sasi_ctrl_in", INPUT_BUFFER, 0)
+
+	MCFG_SOFTWARE_LIST_ADD("flop_list", "slicer")
 MACHINE_CONFIG_END
 
 ROM_START( slicer )
