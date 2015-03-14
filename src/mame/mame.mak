@@ -152,6 +152,7 @@ CPUS += ARC
 CPUS += ARCOMPACT
 CPUS += AMIS2000
 CPUS += UCOM4
+CPUS += HMCS40
 
 #-------------------------------------------------
 # specify available sound cores
@@ -550,7 +551,7 @@ MACHINES += UPD1990A
 MACHINES += UPD4992
 MACHINES += UPD4701
 MACHINES += UPD7002
-#MACHINES += UPD71071
+MACHINES += UPD71071
 MACHINES += UPD765
 MACHINES += V3021
 MACHINES += WD_FDC
@@ -577,6 +578,7 @@ MACHINES += STEPPERS
 #MACHINES += CORVUSHD
 #MACHINES += WOZFDC
 #MACHINES += DIABLO_HD
+
 
 #-------------------------------------------------
 # specify available bus cores
@@ -1346,7 +1348,6 @@ $(MAMEOBJ)/konami.a: \
 	$(DRIVERS)/firebeat.o $(MACHINE)/midikbd.o \
 	$(DRIVERS)/flkatck.o $(VIDEO)/flkatck.o \
 	$(DRIVERS)/gberet.o $(VIDEO)/gberet.o \
-	$(DRIVERS)/gbusters.o $(VIDEO)/gbusters.o \
 	$(DRIVERS)/gijoe.o $(VIDEO)/gijoe.o \
 	$(DRIVERS)/gradius3.o $(VIDEO)/gradius3.o \
 	$(DRIVERS)/gticlub.o \
@@ -1828,7 +1829,7 @@ $(MAMEOBJ)/sigma.a: \
 $(MAMEOBJ)/snk.a: \
 	$(DRIVERS)/bbusters.o $(VIDEO)/bbusters.o \
 	$(DRIVERS)/dmndrby.o \
-	$(DRIVERS)/hng64.o $(VIDEO)/hng64.o \
+	$(DRIVERS)/hng64.o $(VIDEO)/hng64.o $(AUDIO)/hng64.o $(MACHINE)/hng64_net.o $(VIDEO)/hng64_3d.o $(VIDEO)/hng64_sprite.o \
 	$(DRIVERS)/lasso.o $(VIDEO)/lasso.o \
 	$(DRIVERS)/mainsnk.o $(VIDEO)/mainsnk.o \
 	$(DRIVERS)/munchmo.o $(VIDEO)/munchmo.o \
@@ -2672,9 +2673,21 @@ $(DRIVERS)/gts80b.o:    $(LAYOUT)/gts80b.lh
 $(DRIVERS)/lbeach.o:    $(LAYOUT)/lbeach.lh
 
 $(DRIVERS)/goldstar.o:  $(LAYOUT)/goldstar.lh \
+			$(LAYOUT)/bingowng.lh \
 			$(LAYOUT)/cherryb3.lh \
+			$(LAYOUT)/cmaster.lh \
+			$(LAYOUT)/cmasterb.lh \
+			$(LAYOUT)/cmasterc.lh \
+			$(LAYOUT)/cmpacman.lh \
+			$(LAYOUT)/cmv4.lh \
+			$(LAYOUT)/crazybon.lh \
 			$(LAYOUT)/lucky8.lh \
-			$(LAYOUT)/bingowng.lh
+			$(LAYOUT)/nfb96.lh \
+			$(LAYOUT)/nfb96tx.lh \
+			$(LAYOUT)/pokonl97.lh \
+			$(LAYOUT)/roypok96.lh \
+			$(LAYOUT)/skill98.lh \
+			$(LAYOUT)/tonypok.lh
 
 $(DRIVERS)/grchamp.o:   $(LAYOUT)/grchamp.lh
 

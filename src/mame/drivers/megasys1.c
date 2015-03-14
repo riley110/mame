@@ -8,40 +8,39 @@
 To enter service mode in some games press service1+F3.
 
 
-Year + Game                         System      Protection
-----------------------------------------------------------------------------
+Year + Game                       System    Protection
+---------------------------------------------------------------------
 88  Legend of Makai (World) /       Z
     Makai Densetsu  (Japan)         Z
     P-47  (World) /                 A
     P-47  (Japan) /                 A
     P-47  (Japan, Export)           A
     Kick Off (Japan)                A
-    Takeda Shingen (Japan)          A                 Encryption (key 1)
-    Ninja Kazan (World) /           A           Yes + Encryption (key 1)
-    Iga Ninjyutsuden (Japan)        A           Yes + Encryption (key 1)
-89  Astyanax          (World) /     A           Yes + Encryption (key 2)
-    The Lord of King  (Japan)       A           Yes + Encryption (key 2)
-    Hachoo!                         A           Yes + Encryption (key 2)
-    Jitsuryoku!! Pro Yakyuu (Japan) A           Yes + Encryption (key 2)
-    Plus Alpha                      A           Yes + Encryption (key 2)
-    Saint Dragon                    A           Yes + Encryption (key 1)
-90  RodLand  (World) /              A                 Encryption (key 3)
-    RodLand  (Japan)                A                 Encryption (key 2)
-    Phantasm        (Japan) /       A                 Encryption (key 1)
-91  Avenging Spirit (World)         B           Inputs
-    Earth Defense Force             B           Inputs
-    64th Street  (World) /          C       *   Inputs
-    64th Street  (Japan)            C       *   Inputs
-92  Soldam (Japan)                  A                 Encryption (key 2)
-    Big Striker                     C           Inputs
-93  Chimera Beast                   C       *   Inputs
-    Cybattler                       C           Inputs
-    Hayaoshi Quiz Ouza Ketteisen    B           Inputs
-    Peek-a-Boo!                     D           Inputs
---------------------------------------------^-------------------------------
-                                            |
-                            The Priority Prom is missing for these games !
+    Takeda Shingen (Japan)          A             Encryption (key 1)
+    Ninja Kazan (World) /           A       Yes + Encryption (key 1)
+    Iga Ninjyutsuden (Japan)        A       Yes + Encryption (key 1)
+89  Astyanax          (World) /     A       Yes + Encryption (key 2)
+    The Lord of King  (Japan)       A       Yes + Encryption (key 2)
+    Hachoo!                         A       Yes + Encryption (key 2)
+    Jitsuryoku!! Pro Yakyuu (Japan) A       Yes + Encryption (key 2)
+    Plus Alpha                      A       Yes + Encryption (key 2)
+    Saint Dragon                    A       Yes + Encryption (key 1)
+90  RodLand  (World) /              A             Encryption (key 3)
+    RodLand  (Japan)                A             Encryption (key 2)
+    Phantasm        (Japan) /       A             Encryption (key 1)
+91  Avenging Spirit (World)         B       Inputs
+    Earth Defense Force             B       Inputs
+    64th Street  (World) /          C       Inputs
+    64th Street  (Japan)            C       Inputs
+92  Soldam (Japan)                  A             Encryption (key 2)
+    Big Striker                     C       Inputs
+93  Chimera Beast                   C       Inputs
+    Cybattler                       C       Inputs
+    Hayaoshi Quiz Ouza Ketteisen    B       Inputs
+    Peek-a-Boo!                     D       Inputs
+---------------------------------------------------------------------
 
+NOTE: Chimera Beast is the game game missing a dump of it's priority PROM
 
 
 Hardware    Main CPU    Sound CPU   Sound Chips
@@ -105,8 +104,8 @@ RAM         RW      0f0000-0f3fff       0e0000-0effff?      <
 
 - Understand properly how irqs truly works, kazan / iganinju is (again) broken.
 
-- 64street: player characters in attract mode doesn't move at all, protection
-  or btanb?
+- 64street: player characters in attract mode doesn't move at all, protection?
+  they move on the real PCB
 
 - Understand a handful of unknown bits in video regs
 
@@ -1751,7 +1750,7 @@ ROM_START( 64street )
 	ROM_LOAD( "64th_10.rom", 0x000000, 0x040000, CRC(a3390561) SHA1(f86d5c61e3e80d30408535c2203940ca1e95ac18) )
 
 	ROM_REGION( 0x0200, "proms", 0 )        /* Priority PROM */
-	ROM_LOAD( "prom",        0x0000, 0x0200, NO_DUMP )
+	ROM_LOAD( "pr91009.12",  0x0000, 0x0200, CRC(c69423d6) SHA1(ba9644a9899df2d73a5a16bf7ceef1954c2e25f3) ) // same as pr-91044 on hayaosi1
 ROM_END
 
 
@@ -1787,7 +1786,7 @@ ROM_START( 64streetj )
 	ROM_LOAD( "64th_10.rom", 0x000000, 0x040000, CRC(a3390561) SHA1(f86d5c61e3e80d30408535c2203940ca1e95ac18) )
 
 	ROM_REGION( 0x0200, "proms", 0 )        /* Priority PROM */
-	ROM_LOAD( "prom",        0x0000, 0x0200, NO_DUMP )
+	ROM_LOAD( "pr91009.12",  0x0000, 0x0200, CRC(c69423d6) SHA1(ba9644a9899df2d73a5a16bf7ceef1954c2e25f3) ) // same as pr-91044 on hayaosi1
 ROM_END
 
 
@@ -4104,6 +4103,19 @@ DRIVER_INIT_MEMBER(megasys1_state,monkelf)
 	m_rom_maincpu[0x00744/2] = 0x4e71; // weird check, 0xe000e R is a port-based trap?
 
 	m_maincpu->space(AS_PROGRAM).install_read_handler(0xe0000, 0xe000f, read16_delegate(FUNC(megasys1_state::monkelf_input_r),this));
+	m_maincpu->space(AS_PROGRAM).install_write_handler(0x44000, 0x443ff, write16_delegate(FUNC(megasys1_state::megasys1_vregs_monkelf_w),this));
+
+	// convert bootleg priority format to standard
+	{
+		int i;
+		UINT8 *ROM = memregion("proms")->base();
+
+		for (i = 0x1fe; i >= 0; i -= 2) {
+			ROM[i+0] = ROM[i+1] = (ROM[i/2] >> 4) & 0x0f;
+		}
+	}
+
+	megasys1_priority_create();
 }
 
 /*************************************
@@ -4134,7 +4146,7 @@ GAME( 1990, rodlandj, rodland,  system_A,          rodland,  megasys1_state, rod
 GAME( 1990, rodlandjb,rodland,  system_A,          rodland,  driver_device,  0,        ROT0,   "bootleg","Rod-Land (Japan bootleg)", 0 )
 GAME( 1991, avspirit, 0,        system_B,          avspirit, megasys1_state, avspirit, ROT0,   "Jaleco", "Avenging Spirit", 0 )
 GAME( 1990, phantasm, avspirit, system_A,          phantasm, megasys1_state, phantasm, ROT0,   "Jaleco", "Phantasm (Japan)", 0 )
-GAME( 1990, monkelf,  avspirit, system_B,          avspirit, megasys1_state, monkelf,  ROT0,   "bootleg","Monky Elf (Korean bootleg of Avenging Spirit)", GAME_NOT_WORKING )
+GAME( 1990, monkelf,  avspirit, system_B,          avspirit, megasys1_state, monkelf,  ROT0,   "bootleg","Monky Elf (Korean bootleg of Avenging Spirit)", 0 )
 GAME( 1991, edf,      0,        system_B,          edf,      megasys1_state, edf,      ROT0,   "Jaleco", "E.D.F. : Earth Defense Force", 0 )
 GAME( 1991, edfu,     edf,      system_B,          edf,      megasys1_state, edf,      ROT0,   "Jaleco", "E.D.F. : Earth Defense Force (North America)", 0 )
 GAME( 1991, edfbl,    edf,      system_Bbl,        edf,      megasys1_state, edfbl,    ROT0,   "bootleg","E.D.F. : Earth Defense Force (bootleg)", GAME_NO_SOUND )
