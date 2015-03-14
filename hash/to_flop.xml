@@ -2029,6 +2029,32 @@
 		</part>
 	</software>
 
+	<software name="tosnap">
+		<description>TO-SNAP &amp; Demo (v1.1)</description>
+		<year>1992</year>
+		<publisher>HMEL</publisher>
+		<info name="usage" value="To load TO-SNAP, Press 4 key and load file &quot;TO-SNAP&quot;"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="to-snap &amp; demo v1.1 (1992)(hmel)(fr).sap" size="335426" crc="fac93de3" sha1="54c8a3b1e92232ac4cbd967a69c923ed9675772b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tosnapa" cloneof="tosnap" supported="partial">
+		<description>TO-SNAP &amp; Demo (v1.1, Bad)</description>
+		<year>1992</year>
+		<publisher>HMEL</publisher>
+		<info name="usage" value="To load TO-SNAP, Press 4 key and load file &quot;TO-SNAP&quot;"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="to-snap &amp; demo v1.1 (1992)(hmel)(fr)[b].sap" size="335426" crc="8aeaa854" sha1="b28d3b34870493035a43b70eda41b6d92a19689b" status="baddump" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="tospool">
 		<description>TO-Spool</description>
 		<year>1993</year>
@@ -2988,30 +3014,6 @@
 		</part>
 	</software>
 
-	<software name="tosnapde">
-		<description>TO-Snap Demo</description>
-		<year>199?</year>
-		<publisher>HMEL?</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="335426">
-				<rom name="to-snap demo (19xx)(-)(fr).sap" size="335426" crc="fac93de3" sha1="54c8a3b1e92232ac4cbd967a69c923ed9675772b" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tosnapdea" cloneof="tosnapde" supported="partial">
-		<description>TO-Snap Demo (Bad)</description>
-		<year>199?</year>
-		<publisher>HMEL?</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="335426">
-				<rom name="to-snap demo (19xx)(-)(fr)[b].sap" size="335426" crc="8aeaa854" sha1="b28d3b34870493035a43b70eda41b6d92a19689b" status="baddump" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="topopop">
 		<description>TopOPop</description>
 		<year>2014</year>
@@ -3036,14 +3038,23 @@
 		</part>
 	</software>
 
-	<software name="tpconlin">
+	<!-- since the demo disk itself is only a bunch of .MAP files, the TO-SNAP disk is included as a convenience -->
+	<software name="tpconlin" cloneof="tosnap">
 		<description>TPC Online Demo</description>
 		<year>2003</year>
 		<publisher>Yoann Riou</publisher>
+		<info name="usage" value="Follow usage instructions from TO-SNAP parent set"/>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="TO-SNAP"/>
 			<dataarea name="flop" size="335426">
-				<rom name="zzz-unk-tpconline.sap" size="335426" crc="ad30bc2a" sha1="0c01254828ad01951cc7a072b2522499c2f2019b" offset="0" />
+				<rom name="to-snap &amp; demo v1.1 (1992)(hmel)(fr).sap" size="335426" crc="fac93de3" sha1="54c8a3b1e92232ac4cbd967a69c923ed9675772b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="TPC Online Demo"/>
+			<dataarea name="flop" size="335426">
+				<rom name="tpc online demo (2003)(yoann riou)[req. to-snap].sap" size="335426" crc="ad30bc2a" sha1="0c01254828ad01951cc7a072b2522499c2f2019b" offset="0" />
 			</dataarea>
 		</part>
 	</software>
