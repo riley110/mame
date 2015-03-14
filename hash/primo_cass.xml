@@ -1113,7 +1113,8 @@
 		</part>
 	</software>
 
-	<software name="logo"> <!-- marked as "alt" in TOSEC, where is the parent file? -->
+	<!-- marked as "alt" in TOSEC, where is the parent file? -->
+	<software name="logo">
 		<description>LOGO</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -1475,7 +1476,8 @@
 		</part>
 	</software>
 
-	<software name="primodnk"> <!-- start GET? -->
+	<!-- start GET? -->
+	<software name="primodnk">
 		<description>Primo Disassembler &amp; NK '84</description>
 		<year>1984</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -1885,7 +1887,8 @@
 		</part>
 	</software>
 
-	<software name="renumbera" cloneof="renumber"> <!-- in TOSEC the year and publisher is "unknown" -->
+	<!-- in TOSEC the year and publisher is "unknown" -->
+	<software name="renumbera" cloneof="renumber">
 		<description>Renumber (Alt?)</description>
 		<year>1987?</year>
 		<publisher>Koszper Vilmos?</publisher>
@@ -3392,7 +3395,6 @@
 	</software>
 
 	<!-- the two sets below are likely related to each other (6-byte difference) -->
-
 	<software name="basichlp">
 		<description>Basic Help</description>
 		<year>198?</year>
@@ -5306,9 +5308,8 @@
 		</part>
 	</software>
 
-	<!-- Primo A -->
 	<software name="keljfelj">
-		<description>Keljfeljancsi</description>
+		<description>Keljfeljancsi (Primo A)</description>
 		<year>198?</year>
 		<publisher>MTA SZTAKI - COSY</publisher>
 
@@ -5777,9 +5778,8 @@
 		</part>
 	</software>
 
-	<!-- Primo A -->
 	<software name="manicmin">
-		<description>Manic Miner Primo Version</description>
+		<description>Manic Miner Primo Version (Primo A)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -5790,9 +5790,8 @@
 		</part>
 	</software>
 
-	<!-- Primo A -->
 	<software name="manicmina" cloneof="manicmin">
-		<description>Manic Miner Primo Version (Trained +90)</description>
+		<description>Manic Miner Primo Version (Primo A, Trained +90)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -6002,11 +6001,10 @@
 		</part>
 	</software>
 
-<!--
-	<software name="">
-		<description>Nim jatek (1988-10)(Kiss Gyorgy)(hu)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="nimjatek">
+		<description>Nim jatek</description>
+		<year>1988</year>
+		<publisher>Kiss Gyorgy</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="6267">
@@ -6015,10 +6013,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Ninja a varban (1986)(Vipera Szoftver)(hu)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="ninjavar">
+		<description>Ninja a varban</description>
+		<year>1986</year>
+		<publisher>Vipera Szoftver</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="8735">
@@ -6027,10 +6025,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Ninja a varban (1986)(Vipera Szoftver)(hu)[Eternal Life]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="ninjavara" cloneof="ninjavar">
+		<description>Ninja a varban (Trained? "Eternal Life")</description>
+		<year>1986</year>
+		<publisher>Vipera Szoftver</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="6800">
@@ -6039,22 +6037,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Ordogmotoros (198x)(MTA SZTAKI - COSY)(hu)(Primo B)</description>
+	<software name="ordogmot">
+		<description>Ordogmotoros</description>
 		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="primo_cass">
-			<dataarea name="cass" size="9707">
-				<rom name="ordogmotoros (198x)(mta sztaki - cosy)(hu)(primo b).ptp" size="9707" crc="de1bfbde" sha1="1e26edc4f6d455e0685ccb2156f284bc76010a3c" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Ordogmotoros (198x)(MTA SZTAKI - COSY)(hu)</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<publisher>MTA SZTAKI - COSY</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="14923">
@@ -6063,10 +6049,22 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Ostrom (198x)(-)</description>
+	<software name="ordogmota" cloneof="ordogmot">
+		<description>Ordogmotoros (Primo B)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>MTA SZTAKI - COSY</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="9707">
+				<rom name="ordogmotoros (198x)(mta sztaki - cosy)(hu)(primo b).ptp" size="9707" crc="de1bfbde" sha1="1e26edc4f6d455e0685ccb2156f284bc76010a3c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ostrom">
+		<description>Ostrom</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="1254">
@@ -6075,10 +6073,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Oszkar a lovag (1986)(Bartha Sandor)(hu)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="oszkar">
+		<description>Oszkar a lovag</description>
+		<year>1986</year>
+		<publisher>Bartha Sandor</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="17832">
@@ -6087,10 +6085,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Othello (198x)(-)</description>
+	<software name="othello">
+		<description>Othello</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="7242">
@@ -6099,34 +6097,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Panik (198x)(MTA SZTAKI - COSY)(hu)(Primo B)</description>
+	<software name="panik">
+		<description>Panik</description>
 		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="primo_cass">
-			<dataarea name="cass" size="10164">
-				<rom name="panik (198x)(mta sztaki - cosy)(hu)(primo b).ptp" size="10164" crc="2de885dc" sha1="8e97ca15b6e3e106af57abc432231384eb252b52" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Panik (198x)(MTA SZTAKI - COSY)(hu)(Primo B)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="primo_cass">
-			<dataarea name="cass" size="10175">
-				<rom name="panik (198x)(mta sztaki - cosy)(hu)(primo b)[a].ptp" size="10175" crc="6e984794" sha1="df6b10a16a7a09a18ef907bf3f51f429500af3ea" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Panik (198x)(MTA SZTAKI - COSY)(hu)</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<publisher>MTA SZTAKI - COSY</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="12304">
@@ -6135,10 +6109,34 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Parbaj (198x)(MTA SZTAKI - COSY)(hu)(Primo A)</description>
+	<software name="panikb" cloneof="panik">
+		<description>Panik (Primo B)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>MTA SZTAKI - COSY</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="10164">
+				<rom name="panik (198x)(mta sztaki - cosy)(hu)(primo b).ptp" size="10164" crc="2de885dc" sha1="8e97ca15b6e3e106af57abc432231384eb252b52" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="panikba" cloneof="panik">
+		<description>Panik (Primo B, Alt)</description>
+		<year>198?</year>
+		<publisher>MTA SZTAKI - COSY</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="10175">
+				<rom name="panik (198x)(mta sztaki - cosy)(hu)(primo b)[a].ptp" size="10175" crc="6e984794" sha1="df6b10a16a7a09a18ef907bf3f51f429500af3ea" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="parbaj">
+		<description>Parbaj (Primo A)</description>
+		<year>198?</year>
+		<publisher>MTA SZTAKI - COSY</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="7786">
@@ -6147,10 +6145,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Parbaj (198x)(MTA SZTAKI - COSY)(hu)(Primo B)</description>
+	<software name="parbajb" cloneof="parbaj">
+		<description>Parbaj (Primo B)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>MTA SZTAKI - COSY</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="7796">
@@ -6159,10 +6157,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Parbaj (198x)(MTA SZTAKI - COSY)(hu)(Primo B)[a]</description>
+	<software name="parbajba" cloneof="parbaj">
+		<description>Parbaj (Primo B, Alt)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>MTA SZTAKI - COSY</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="7796">
@@ -6171,10 +6169,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>PC-Man (198x)(-)</description>
+	<software name="pcman">
+		<description>PC-Man</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="9147">
@@ -6183,10 +6181,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Pocket-man (198x)(Hriczo)</description>
+	<software name="pockman">
+		<description>Pocket-man</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Hriczo</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="3672">
@@ -6195,10 +6193,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Poker (1985)(tege software)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="poker">
+		<description>Poker</description>
+		<year>1985</year>
+		<publisher>tege software</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="9741">
@@ -6207,10 +6205,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Poker (1985)(tege software)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="pokera" cloneof="poker">
+		<description>Poker (Alt)</description>
+		<year>1985</year>
+		<publisher>tege software</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="9766">
@@ -6219,10 +6217,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Potty! (1986)(DGT Software)(hu)(Primo A)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="potty">
+		<description>Potty! (Primo A)</description>
+		<year>1986</year>
+		<publisher>DGT Software</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="4193">
@@ -6231,10 +6229,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Potty! (1986)(DGT Software)(hu)(Primo A)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="pottya" cloneof="potty">
+		<description>Potty! (Primo A, Alt)</description>
+		<year>1986</year>
+		<publisher>DGT Software</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="4193">
@@ -6243,10 +6241,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Potty! (1986)(DGT Software)(hu)(Primo B)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="pottyb" cloneof="potty">
+		<description>Potty! (Primo B)</description>
+		<year>1986</year>
+		<publisher>DGT Software</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="4463">
@@ -6255,10 +6253,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Primo Gobang (198x)(-)(hu)</description>
+	<software name="gobang">
+		<description>Primo Gobang</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="4475">
@@ -6267,10 +6265,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Primo Roulette (198x)(-)</description>
+	<software name="roulette">
+		<description>Primo Roulette</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="16083">
@@ -6279,10 +6277,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Primo Sakk Automata (1986)(Furrier Software)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="sakkauto">
+		<description>Primo Sakk Automata</description>
+		<year>1986</year>
+		<publisher>Furrier Software</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="19263">
@@ -6291,10 +6289,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Primo Sakk Automata - Mephisto VIII. (1985)(Furrier Software)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="sakkam8">
+		<description>Primo Sakk Automata - Mephisto VIII.</description>
+		<year>1985</year>
+		<publisher>Furrier Software</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="20996">
@@ -6303,10 +6301,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Primo Sakk Automata - Sargon II (198x)(Furrier Software)</description>
+	<software name="sakkas2">
+		<description>Primo Sakk Automata - Sargon II</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Furrier Software</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="17636">
@@ -6315,10 +6313,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Primo urhajo (198x)(-)</description>
+	<software name="urhajo">
+		<description>Primo urhajo</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="1798">
@@ -6327,10 +6325,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Primo-foci (1987)(Horvath Janos)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="primfoci">
+		<description>Primo-foci</description>
+		<year>1987</year>
+		<publisher>Horvath Janos</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="1244">
@@ -6339,10 +6337,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Reaktor (1985)(Miszlai Robert)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="reaktor1">
+		<description>Reaktor (Miszlai Robert)</description>
+		<year>1985</year>
+		<publisher>Miszlai Robert</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="8338">
@@ -6351,10 +6349,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Reaktor (1985)(Miszlai Robert)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="reaktor1a" cloneof="reaktor1">
+		<description>Reaktor (Miszlai Robert) (Alt)</description>
+		<year>1985</year>
+		<publisher>Miszlai Robert</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="8016">
@@ -6363,10 +6361,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Reaktor (198x)(-)</description>
+	<software name="reaktor2">
+		<description>Reaktor (Unknown)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="6416">
@@ -6375,10 +6373,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Reflex jatekok (198x)(BG Primo Software)</description>
+	<software name="reflex">
+		<description>Reflex jatekok</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>BG Primo Software</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="2459">
@@ -6387,10 +6385,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Reflexjatek (1987)(Kiss Gyorgy)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="reflexja">
+		<description>Reflexjatek</description>
+		<year>1987</year>
+		<publisher>Kiss Gyorgy</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="1735">
@@ -6399,10 +6397,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Roncsderbi (198x)(-)</description>
+	<software name="roncsder">
+		<description>Roncsderbi</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="1037">
@@ -6411,10 +6409,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Rotary (198x)(-)</description>
+	<software name="rotary">
+		<description>Rotary</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="1215">
@@ -6423,10 +6421,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Rulett (1988-01-17)(Miszlai Robert)(hu)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="rulett1">
+		<description>Rulett (Miszlai Robert)</description>
+		<year>1988</year>
+		<publisher>Miszlai Robert</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="6874">
@@ -6435,10 +6433,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Rulett (198x)(Kormendi Gyorgy)(hu)</description>
+	<software name="rulett2">
+		<description>Rulett (Kormendi Gyorgy)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Kormendi Gyorgy</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="8020">
@@ -6447,10 +6445,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Sajtvajo (1988)(Paller Gabor)(hu)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="sajtvajo">
+		<description>Sajtvajo</description>
+		<year>1988</year>
+		<publisher>Paller Gabor</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="9843">
@@ -6459,22 +6457,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Satirozas (1986)(DGT Software)(hu)(Primo B)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="primo_cass">
-			<dataarea name="cass" size="5589">
-				<rom name="satirozas (1986)(dgt software)(hu)(primo b).ptp" size="5589" crc="d96af870" sha1="514fbba6f0cf7fe1e13f1e41245637c79ec4d2f4" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Satirozas (1986)(DGT Software)(hu)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="satiroza">
+		<description>Satirozas</description>
+		<year>1986</year>
+		<publisher>DGT Software</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="5271">
@@ -6483,10 +6469,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Satirozas (1986)(DGT Software)(hu)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="satirozaa" cloneof="satiroza">
+		<description>Satirozas (Alt)</description>
+		<year>1986</year>
+		<publisher>DGT Software</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="4995">
@@ -6495,10 +6481,22 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Scillful es a szkitak (198x)(-)</description>
+	<software name="satirozab" cloneof="satiroza">
+		<description>Satirozas (Primo B)</description>
+		<year>1986</year>
+		<publisher>DGT Software</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="5589">
+				<rom name="satirozas (1986)(dgt software)(hu)(primo b).ptp" size="5589" crc="d96af870" sha1="514fbba6f0cf7fe1e13f1e41245637c79ec4d2f4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scillful">
+		<description>Scillful es a szkitak</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="2740">
@@ -6507,10 +6505,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Si-csel (198x)(BG Primo Software)</description>
+	<software name="sicsel1">
+		<description>Si-csel</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>BG Primo Software</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="2834">
@@ -6519,10 +6517,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Sicsel (1985)(ERKEL Software House)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="sicsel2">
+		<description>Sicsel</description>
+		<year>1985</year>
+		<publisher>ERKEL Software House</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="1583">
@@ -6531,10 +6529,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Sieles (198x)(Eberli Karoly)</description>
+	<software name="sieles">
+		<description>Sieles</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Eberli Karoly</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="7227">
@@ -6543,22 +6541,11 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Sir Fred (1996)(Varaljai Sandor)[incl Graphics '85]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="primo_cass">
-			<dataarea name="cass" size="10576">
-				<rom name="sir fred (1996)(varaljai sandor)[incl graphics '85].ptp" size="10576" crc="eb5ccabd" sha1="ef73b9f4f23e4e4288a49804ff33f749a4f59a3a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Sir Fred (1996)(Varaljai Sandor)[req Graphics '85]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="sirfred">
+		<description>Sir Fred</description>
+		<year>1996</year>
+		<publisher>Varaljai Sandor</publisher>
+		<info name="usage" value="Requires Graphics '85"/>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="5235">
@@ -6567,22 +6554,22 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Skramble Daymon (1985)(HSFT Software)(Primo B)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="sirfreda" cloneof="sirfred">
+		<description>Sir Fred (Includes Graphics '85)</description>
+		<year>1996</year>
+		<publisher>Varaljai Sandor</publisher>
 
 		<part name="cass1" interface="primo_cass">
-			<dataarea name="cass" size="6996">
-				<rom name="skramble daymon (1985)(hsft software)(primo b).ptp" size="6996" crc="5d3db4a6" sha1="8764d4d8c16bd8b731913275487a1f80ce0a2f15" offset="0" />
+			<dataarea name="cass" size="10576">
+				<rom name="sir fred (1996)(varaljai sandor)[incl graphics '85].ptp" size="10576" crc="eb5ccabd" sha1="ef73b9f4f23e4e4288a49804ff33f749a4f59a3a" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Skramble Daymon (1985)(HSFT Software)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="daymon">
+		<description>Skramble Daymon</description>
+		<year>1985</year>
+		<publisher>HSFT Software</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="6993">
@@ -6591,10 +6578,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Skramble Daymon (1985)(HSFT Software)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="daymona" cloneof="daymon">
+		<description>Skramble Daymon (Alt)</description>
+		<year>1985</year>
+		<publisher>HSFT Software</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="6993">
@@ -6603,10 +6590,23 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Skramble Daymon - Basic (198x)(-)[req 64K]</description>
+	<software name="daymonb" cloneof="daymon">
+		<description>Skramble Daymon (Primo B)</description>
+		<year>1985</year>
+		<publisher>HSFT Software</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="6996">
+				<rom name="skramble daymon (1985)(hsft software)(primo b).ptp" size="6996" crc="5d3db4a6" sha1="8764d4d8c16bd8b731913275487a1f80ce0a2f15" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Requires 64K -->
+	<software name="daymonba">
+		<description>Skramble Daymon - Basic</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="14400">
@@ -6615,10 +6615,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Space Shuttle (198x)(Kovacs Attila)</description>
+	<software name="shuttle">
+		<description>Space Shuttle</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Kovacs Attila</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="1514">
@@ -6627,10 +6627,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Sprint (198x)(-)</description>
+	<software name="sprint">
+		<description>Sprint</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="5329">
@@ -6639,10 +6639,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Suni (1986)(Marko Gyorgy)(hu)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="suni1">
+		<description>Suni (Marko Gyorgy)</description>
+		<year>1986</year>
+		<publisher>Marko Gyorgy</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="1685">
@@ -6651,10 +6651,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Suni (1986-08)(Robi Soft)(hu)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="suni2">
+		<description>Suni (Robi Soft)</description>
+		<year>1986</year>
+		<publisher>Robi Soft</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="1793">
@@ -6663,10 +6663,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Szamcsata (1987)(Miszlai Robert)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="szamcsat">
+		<description>Szamcsata</description>
+		<year>1987</year>
+		<publisher>Miszlai Robert</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="3106">
@@ -6675,10 +6675,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Szamkitalalo jatek (198x)(-)</description>
+	<software name="szamkita">
+		<description>Szamkitalalo jatek</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="2780">
@@ -6687,10 +6687,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Szamok invazioja (198x)(BG Primo Software)</description>
+	<software name="szamok">
+		<description>Szamok invazioja</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>BG Primo Software</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="3450">
@@ -6699,10 +6699,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Szarvasbogar (198x)(-)</description>
+	<software name="szarvas">
+		<description>Szarvasbogar</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="9381">
@@ -6711,10 +6711,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Szellemek (198x)(BG Primo Software)</description>
+	<software name="szelemek">
+		<description>Szellemek</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>BG Primo Software</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="2278">
@@ -6723,10 +6723,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Szellemvadasz (1986)(BME-KSZK)(hu)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="szellemv">
+		<description>Szellemvadasz</description>
+		<year>1986</year>
+		<publisher>BME-KSZK</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="6784">
@@ -6735,10 +6735,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Szellemvadasz (1986)(BME-KSZK)(hu)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="szellemva" cloneof="szellemv">
+		<description>Szellemvadasz (Alt)</description>
+		<year>1986</year>
+		<publisher>BME-KSZK</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="6784">
@@ -6747,10 +6747,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Szerpentin (198x)(-)</description>
+	<software name="szerpent">
+		<description>Szerpentin</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="1731">
@@ -6759,10 +6759,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Szlalom (1987)(Fischer Laszlo)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="szlalom">
+		<description>Szlalom</description>
+		<year>1987</year>
+		<publisher>Fischer Laszlo</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="1757">
@@ -6771,10 +6771,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Taltos lo a kaktuszok kozott (198x)(Repas Sandor)</description>
+	<software name="taltos">
+		<description>Taltos lo a kaktuszok kozott</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Repas Sandor</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="3438">
@@ -6783,10 +6783,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Tankcsata (198x)(-)</description>
+	<software name="tankcsat">
+		<description>Tankcsata</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="2182">
@@ -6795,10 +6795,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Tankcsata (198x)(-)[a]</description>
+	<software name="tankcsata" cloneof="tankcsat">
+		<description>Tankcsata (Alt)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="2207">
@@ -6807,10 +6807,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Target (198x)(-)(hu)</description>
+	<software name="target">
+		<description>Target</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="577">
@@ -6819,10 +6819,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Teke (1987)(Miszlai Robert)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="teke1">
+		<description>Teke (Miszlai Robert)</description>
+		<year>1987</year>
+		<publisher>Miszlai Robert</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="3347">
@@ -6831,10 +6831,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Teke (1989)(Kormendi Gyorgy)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="teke2">
+		<description>Teke (Kormendi Gyorgy)</description>
+		<year>1989</year>
+		<publisher>Kormendi Gyorgy</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="1657">
@@ -6843,10 +6843,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Teke (1989)(Kormendi Gyorgy)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="teke2a" cloneof="teke2">
+		<description>Teke (Kormendi Gyorgy) (Alt)</description>
+		<year>1989</year>
+		<publisher>Kormendi Gyorgy</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="1658">
@@ -6855,10 +6855,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Teke (198x)(-)</description>
+	<software name="teke3">
+		<description>Teke (Unknown)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="1461">
@@ -6867,10 +6867,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Teke (198x)(-)[a]</description>
+	<software name="teke3a" cloneof="teke3">
+		<description>Teke (Unknown) (Alt)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="1535">
@@ -6879,10 +6879,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Tengeri kigyo (198x)(BG Primo Software)</description>
+	<software name="tengeri">
+		<description>Tengeri kigyo</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>BG Primo Software</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="1104">
@@ -6891,10 +6891,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Tenisz (198x)(-)(hu)</description>
+	<software name="tenisz1">
+		<description>Tenisz (Unknown)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="846">
@@ -6903,10 +6903,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Tenisz (198x)(-)(hu)[a]</description>
+	<software name="tenisz1a" cloneof="tenisz1">
+		<description>Tenisz (Unknown) (Alt)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="1157">
@@ -6915,10 +6915,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Tenisz (19xx)(Meder Istvan)</description>
+	<software name="tenisz2">
+		<description>Tenisz (Meder Istvan)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Meder Istvan</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="1568">
@@ -6927,10 +6927,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Tevefoci (1987)(BG Primo Software)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="tevefoci">
+		<description>Tevefoci</description>
+		<year>1987</year>
+		<publisher>BG Primo Software</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="2116">
@@ -6939,10 +6939,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Tili-Toli jatek (198x)(-)</description>
+	<software name="tilitoli">
+		<description>Tili-Toli jatek</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="2631">
@@ -6951,10 +6951,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Torpedo (1984)(Midnight-Software)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="torpedo1">
+		<description>Torpedo (Midnight-Software)</description>
+		<year>1984</year>
+		<publisher>Midnight-Software</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="6718">
@@ -6963,10 +6963,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Torpedo (1987)(Miszlai Robert)(hu)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="torpedo2">
+		<description>Torpedo (Miszlai Robert)</description>
+		<year>1987</year>
+		<publisher>Miszlai Robert</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="6682">
@@ -6975,10 +6975,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Turbo Jack (198x)(-)(hu)</description>
+	<software name="turbjack">
+		<description>Turbo Jack</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="9989">
@@ -6987,10 +6987,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Turbo Jack (198x)(-)(hu)[a]</description>
+	<software name="turbjacka" cloneof="turbjack">
+		<description>Turbo Jack (Alt)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="9989">
@@ -6999,10 +6999,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Jet Pac (198x)(-)[Turbo Jack Hack]</description>
+	<software name="jetpac" cloneof="turbjack">
+		<description>Jet Pac (Turbo Jack hack)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="16138">
@@ -7011,10 +7011,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Jet Pac (198x)(-)(Primo B)[Turbo Jack Hack]</description>
+	<software name="jetpaca" cloneof="turbjack">
+		<description>Jet Pac (Turbo Jack hack) (Alt)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="15979">
@@ -7023,10 +7023,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Tuzolto (198x)(BG Primo Software)(hu)</description>
+	<software name="tuzolto">
+		<description>Tuzolto</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>BG Primo Software</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="2225">
@@ -7035,10 +7035,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Ufo (1986)(BME-KSZK)(hu)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="ufo1">
+		<description>Ufo (BME-KSZK)</description>
+		<year>1986</year>
+		<publisher>BME-KSZK</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="7922">
@@ -7047,10 +7047,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Ufo (198x)(Somogyi Gyorgy)(hu)</description>
+	<software name="ufo2">
+		<description>Ufo (Somogyi Gyorgy)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Somogyi Gyorgy</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="4844">
@@ -7059,10 +7059,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Uldozes (1984)(Szabo Arpad)(hu)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="uldozes1">
+		<description>Uldozes (Szabo Arpad)</description>
+		<year>1984</year>
+		<publisher>Szabo Arpad</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="3407">
@@ -7071,10 +7071,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Uldozes (198x)(Kovacs Attila)(hu)</description>
+	<software name="uldozes2">
+		<description>Uldozes (Kovacs Attila)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Kovacs Attila</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="2265">
@@ -7083,10 +7083,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Urhajovezetes (198x)(Amtmann Arpad)</description>
+	<software name="urhajove">
+		<description>Urhajovezetes</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Amtmann Arpad</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="4782">
@@ -7095,10 +7095,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Urvadaszat (198x)(Kovacs Attila)</description>
+	<software name="urvadasz">
+		<description>Urvadaszat</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Kovacs Attila</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="2794">
@@ -7107,10 +7107,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Veba (198x)(-)</description>
+	<software name="veba">
+		<description>Veba</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="3504">
@@ -7119,10 +7119,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Vedelem (198x)(-)</description>
+	<software name="vedelem">
+		<description>Vedelem</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="3665">
@@ -7131,22 +7131,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Vedelem (198x)(-)[a2]</description>
+	<software name="vedelema" cloneof="vedelem">
+		<description>Vedelem (Alt)</description>
 		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="primo_cass">
-			<dataarea name="cass" size="3611">
-				<rom name="vedelem (198x)(-)[a2].ptp" size="3611" crc="cbf4caf5" sha1="82f9bcc4af1f7e1a0d57cd0687782b8932fbfb0e" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Vedelem (198x)(-)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="3577">
@@ -7155,10 +7143,22 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Vili a banyasz (198x)(MTA SZTAKI - COSY)(hu)(Primo A)</description>
+	<software name="vedelemb" cloneof="vedelem">
+		<description>Vedelem (Alt 2)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="primo_cass">
+			<dataarea name="cass" size="3611">
+				<rom name="vedelem (198x)(-)[a2].ptp" size="3611" crc="cbf4caf5" sha1="82f9bcc4af1f7e1a0d57cd0687782b8932fbfb0e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vilibany">
+		<description>Vili a banyasz (Primo A)</description>
+		<year>198?</year>
+		<publisher>MTA SZTAKI - COSY</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="16322">
@@ -7167,10 +7167,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Vili a banyasz (198x)(MTA SZTAKI - COSY)(hu)(Primo A)[a]</description>
+	<software name="vilibanya" cloneof="vilibany">
+		<description>Vili a banyasz (Primo A, Alt)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>MTA SZTAKI - COSY</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="16322">
@@ -7179,10 +7179,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Vili a banyasz (198x)(MTA SZTAKI - COSY)(hu)(Primo B)</description>
+	<software name="vilibanyb" cloneof="vilibany">
+		<description>Vili a banyasz (Primo B)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>MTA SZTAKI - COSY</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="17156">
@@ -7191,10 +7191,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Vili a banyasz (198x)(MTA SZTAKI - COSY)(hu)(Primo B)[a]</description>
+	<software name="vilibanyba" cloneof="vilibany">
+		<description>Vili a banyasz (Primo B, Alt)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>MTA SZTAKI - COSY</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="17156">
@@ -7203,10 +7203,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Vonalvadasz (1988)(Paller Gabor)(hu)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="vonalvad">
+		<description>Vonalvadasz</description>
+		<year>1988</year>
+		<publisher>Paller Gabor</publisher>
 
 		<part name="cass1" interface="primo_cass">
 			<dataarea name="cass" size="10111">
@@ -7214,6 +7214,5 @@
 			</dataarea>
 		</part>
 	</software>
--->
 
 </softwarelist>
