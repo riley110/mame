@@ -337,7 +337,7 @@
 	</software>
 
 	<software name="gameshowa" cloneof="gameshow" supported="partial">
-		<description>Games Show (MO6) (640K Disk)</description>
+		<description>Games Show (MO6) (640K)</description>
 		<year>2014</year>
 		<publisher>6502man</publisher>
 
@@ -502,6 +502,37 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="mandragore (1984)(infogrames)(fr)[m prehisto][3.5'', bootable].sap" size="335426" crc="5e31a1e6" sha1="8fc69e896fd22f5fc9b025755f8749c06fa215ca" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="memo5cha">
+		<description>MEMO5 Chargeur</description>
+		<year>2015</year>
+		<publisher>DSSoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="327680">
+				<rom name="memo5-chargeur_mo5 disk1.fd" size="327680" crc="7c0cbbe8" sha1="c18d2242743ef71ac0c6c78c9f20e43d78e720e0" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="327680">
+				<rom name="memo5-chargeur_mo5 disk2.fd" size="327680" crc="fdcfc6ec" sha1="ed31a176180696c979a21d4c99647403a0dd73e2" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="memo5chaa" cloneof="memo5cha">
+		<description>MEMO5 Chargeur (640K)</description>
+		<year>2015</year>
+		<publisher>DSSoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="655360">
+				<rom name="memo5-chargeur_mo5.fd" size="655360" crc="70b94be6" sha1="a0775e9ae42240dbb4d0d82620e3f352f99b82af" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -685,7 +716,7 @@
 	</software>
 
 	<software name="zxarta" cloneof="zxart" supported="no">
-		<description>ZX Art (MO6) (640K Disks)</description>
+		<description>ZX Art (MO6) (640K)</description>
 		<year>2014</year>
 		<publisher>6502man</publisher>
 
@@ -704,7 +735,7 @@
 	</software>
 
 	<software name="zxartb" cloneof="zxart" supported="no">
-		<description>ZX Art (MO6) (1280K Disk)</description>
+		<description>ZX Art (MO6) (1280K)</description>
 		<year>2014</year>
 		<publisher>6502man</publisher>
 

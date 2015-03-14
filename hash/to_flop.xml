@@ -830,10 +830,10 @@
 		</part>
 	</software>
 
-<!--
+	<!--
     uses double-sided qdd disks, which seem to not be handled correctly
     the same dump is available on dcmoto, so it is likely not bad
--->
+	-->
 	<software name="initb512qd" cloneof="initb512" supported="no">
 		<description>Initiation au BASIC 512 (QDD)</description>
 		<year>1986</year>
@@ -1005,7 +1005,7 @@
 	</software>
 
 	<software name="jrnalistb" cloneof="jrnalist" supported="no">
-		<description>Le Journaliste (1280K Disk)</description>
+		<description>Le Journaliste (1280K)</description>
 		<year>1988</year>
 		<publisher>Cedic/Nathan</publisher>
 		<info name="usage" value="Press 4 key and load file &quot;JOURNAL&quot;"/>
@@ -1882,7 +1882,7 @@
 	</software>
 
 	<software name="to9pappsc" cloneof="to9papps" supported="no">
-		<description>TO9+ Applications (640K Disk)</description>
+		<description>TO9+ Applications (640K)</description>
 		<year>1986</year>
 		<publisher>Thomson</publisher>
 
@@ -1932,7 +1932,7 @@
 	</software>
 
 	<software name="to9pinitb" cloneof="to9pinit" supported="no">
-		<description>TO9+ Initiations (640K Disk)</description>
+		<description>TO9+ Initiations (640K)</description>
 		<year>1986</year>
 		<publisher>Thomson</publisher>
 
@@ -2129,7 +2129,8 @@
 		</part>
 	</software>
 
-	<software name="pascal" supported="no"> <!-- how to get it running? -->
+	<!-- how to get it running? -->
+	<software name="pascal" supported="no">
 		<description>UCSD Pascal (Bad?)</description>
 		<year>198?</year>
 		<publisher>UCSD</publisher>
@@ -2193,8 +2194,9 @@
 		</part>
 	</software>
 
-	<software name="aquaa" cloneof="aqua"> <!-- second half blank -->
-		<description>Aqua (640K Disk)</description>
+	<!-- second half blank -->
+	<software name="aquaa" cloneof="aqua">
+		<description>Aqua (640K)</description>
 		<year>2014</year>
 		<publisher>defcard</publisher>
 
@@ -2364,7 +2366,7 @@
 	</software>
 
 	<software name="chineseb" cloneof="chinese" supported="no">
-		<description>Chinese Stack (640K Disk)</description>
+		<description>Chinese Stack (640K)</description>
 		<year>2004</year>
 		<publisher>Puls</publisher>
 
@@ -2606,7 +2608,7 @@
 	</software>
 
 	<software name="lotusa" cloneof="lotus" supported="no">
-		<description>Lotus Esprit Turbo Challenge (640K Disk)</description>
+		<description>Lotus Esprit Turbo Challenge (640K)</description>
 		<year>19??</year>
 		<publisher>BC 109 Soft</publisher>
 
@@ -2787,8 +2789,34 @@
 		</part>
 	</software>
 
-	<software name="smite">
-		<description>Smite Fenrir</description>
+	<!-- disk image was made in 2014 but released early 2015 -->
+	<software name="smiteaok">
+		<description>Smite - Ao Kuang</description>
+		<year>2015</year>
+		<publisher>defcard</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="smite-aokuang_to8 disk1.fd" size="327680" crc="2eddd09f" sha1="de421d8457cdb8220e9180c0556847c1b9bb9bf4" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- second half blank -->
+	<software name="smiteaoka" cloneof="smiteaok">
+		<description>Smite - Ao Kuang (640K)</description>
+		<year>2015</year>
+		<publisher>defcard</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="655360">
+				<rom name="smite-aokuang_to8.fd" size="655360" crc="3731d6a8" sha1="639305583d5637bc450fd0efa2d54bc61c3d3097" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="smitefen">
+		<description>Smite - Fenrir</description>
 		<year>2014</year>
 		<publisher>defcard</publisher>
 
@@ -2799,8 +2827,9 @@
 		</part>
 	</software>
 
-	<software name="smitea" cloneof="smite"> <!-- second half blank -->
-		<description>Smite Fenrir (640K Disk)</description>
+	<!-- second half blank -->
+	<software name="smitefena" cloneof="smitefen">
+		<description>Smite - Fenrir (640K)</description>
 		<year>2014</year>
 		<publisher>defcard</publisher>
 
@@ -2991,7 +3020,7 @@
 	</software>
 
 	<software name="thomtesta" cloneof="thomtest" supported="no">
-		<description>Sorcery Demo (640K Disk)</description>
+		<description>Sorcery Demo (640K)</description>
 		<year>19??</year>
 		<publisher>Thomtest</publisher>
 
@@ -3098,7 +3127,7 @@
 	</software>
 
 	<software name="truc216ib" cloneof="truc216i" supported="no">
-		<description>TruC216i (tele) (640K Disk)</description>
+		<description>TruC216i (tele) (640K)</description>
 		<year>2010</year>
 		<publisher>Puls</publisher>
 
@@ -3148,7 +3177,7 @@
 	</software>
 
 	<software name="truc216ieb" cloneof="truc216i" supported="no">
-		<description>TruC216i (emul) (640K Disk)</description>
+		<description>TruC216i (emul) (640K)</description>
 		<year>2010</year>
 		<publisher>Puls</publisher>
 
@@ -3198,7 +3227,7 @@
 	</software>
 
 	<software name="truc40b" cloneof="truc40" supported="no">
-		<description>TruC40 (tele) (640K Disk)</description>
+		<description>TruC40 (tele) (640K)</description>
 		<year>2010</year>
 		<publisher>Puls</publisher>
 
@@ -3248,7 +3277,7 @@
 	</software>
 
 	<software name="truc40eb" cloneof="truc40" supported="no">
-		<description>TruC40 (emul) (640K Disk)</description>
+		<description>TruC40 (emul) (640K)</description>
 		<year>2010</year>
 		<publisher>Puls</publisher>
 
@@ -3298,7 +3327,7 @@
 	</software>
 
 	<software name="truc70b" cloneof="truc70" supported="no">
-		<description>TruC70 (640K Disk)</description>
+		<description>TruC70 (640K)</description>
 		<year>2010</year>
 		<publisher>Puls</publisher>
 
@@ -3348,7 +3377,7 @@
 	</software>
 
 	<software name="truc80ib" cloneof="truc80i" supported="no">
-		<description>TruC80i (640K Disk)</description>
+		<description>TruC80i (640K)</description>
 		<year>2010</year>
 		<publisher>Puls</publisher>
 
@@ -3858,7 +3887,7 @@
 	</software>
 
 	<software name="teodriv2b" cloneof="teodriv2" supported="no">
-		<description>Teo-Drive no.2 (640K Disk)</description>
+		<description>Teo-Drive no.2 (640K)</description>
 		<year>1991</year>
 		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
 
@@ -3908,13 +3937,26 @@
 	</software>
 
 	<software name="teodriv3b" cloneof="teodriv3" supported="no">
-		<description>Teo-Drive no.3 (640K Disk)</description>
+		<description>Teo-Drive no.3 (640K)</description>
 		<year>1991</year>
 		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="655360">
 				<rom name="teo-drive no.3 (1991)(a.s.c.i.)[640k].fd" size="655360" crc="5cce0966" sha1="c340f347dfd3a3621a60a7f3779e012ee47e16ff" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- teodriv3 disk 2 with a bootloader -->
+	<software name="tdrvdemo" cloneof="teodriv3">
+		<description>TEODRIVE Demos - Mots Croises + Anima 3D (From Teo-Drive no.3, Hacked)</description>
+		<year>1991</year>
+		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="anima3d.sap" size="335426" crc="ed825a34" sha1="f22ee5bbbac3e6e471d7947a5474dd7df98dce2a" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -3958,7 +4000,7 @@
 	</software>
 
 	<software name="teodriv4b" cloneof="teodriv4" supported="no">
-		<description>Teo-Drive no.4 (640K Disk)</description>
+		<description>Teo-Drive no.4 (640K)</description>
 		<year>1991</year>
 		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
 
@@ -4008,7 +4050,7 @@
 	</software>
 
 	<software name="teodriv5b" cloneof="teodriv5" supported="no">
-		<description>Teo-Drive no.5 (640K Disk)</description>
+		<description>Teo-Drive no.5 (640K)</description>
 		<year>1991</year>
 		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
 
@@ -4081,7 +4123,8 @@
 		</part>
 	</software>
 
-	<software name="teodriv6b" cloneof="teodriv6">  <!-- flop1 second half is blank -->
+	<!-- flop1 second half is blank -->
+	<software name="teodriv6b" cloneof="teodriv6">
 		<description>Teo-Drive no.6 (Disk 1 640K)</description>
 		<year>1991</year>
 		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
@@ -4108,18 +4151,6 @@
 		<feature name="part_id" value="RAM Disk C"/>
 			<dataarea name="flop" size="327680">
 				<rom name="teo-drive no.6 (1991)(a.s.c.i.)[ram disk c].fd" size="327680" crc="a6c1e7d8" sha1="e3ee4654cb5f5a13c6960a0afcc9e5fcd6b713aa" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tdrvdemo" cloneof="teodriv3"> <!-- teodriv3 disk 2 with a bootloader -->
-		<description>TEODRIVE Demos - Mots Croises + Anima 3D (From Teo-Drive no.3, Hacked)</description>
-		<year>1991</year>
-		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="335426">
-				<rom name="anima3d.sap" size="335426" crc="ed825a34" sha1="f22ee5bbbac3e6e471d7947a5474dd7df98dce2a" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -4262,7 +4293,8 @@
 		</part>
 	</software>
 
-	<software name="appecrir"> <!-- works only on to9 -->
+	<!-- works only on to9 -->
+	<software name="appecrir">
 		<description>Apprends-moi a Ecrire</description>
 		<year>1986</year>
 		<publisher>Cedic/Nathan</publisher>
@@ -4619,7 +4651,8 @@
 		</part>
 	</software>
 
-	<software name="ecolefra"> <!-- these disks were distributed as one set, but there are two disk 1's and two disk 2's with different content -->
+	<!-- these disks were distributed as one set, but there are two disk 1's and two disk 2's with different content -->
+	<software name="ecolefra">
 		<description>Logiciels Nathan Ecoles - Francais</description>
 		<year>1987</year>
 		<publisher>Cedic/Nathan</publisher>
@@ -5019,7 +5052,8 @@
 		</part>
 	</software>
 
-	<software name="mbacmath" supported="no"> <!-- works in dcmoto, copy protection? -->
+	<!-- works in dcmoto, copy protection? -->
+	<software name="mbacmath" supported="no">
 		<description>Microbac Maths</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -5031,7 +5065,8 @@
 		</part>
 	</software>
 
-	<software name="mbacphys" supported="no"> <!-- works in dcmoto, copy protection? -->
+	<!-- works in dcmoto, copy protection? -->
+	<software name="mbacphys" supported="no">
 		<description>Microbac Physique - Chimie</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -6076,7 +6111,7 @@
 	</software>
 
 	<software name="bobwinnrb" cloneof="bobwinnr" supported="no">
-		<description>Bob Winner (640K Disk)</description>
+		<description>Bob Winner (640K)</description>
 		<year>1987</year>
 		<publisher>Loriciels</publisher>
 		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
@@ -6307,7 +6342,7 @@
 	</software>
 
 	<software name="chevalib" cloneof="chevali" supported="no">
-		<description>Les Chevaliers de l'An Mil (640K Disk)</description>
+		<description>Les Chevaliers de l'An Mil (640K)</description>
 		<year>1989</year>
 		<publisher>Ubisoft</publisher>
 
@@ -7312,7 +7347,7 @@
 	</software>
 
 	<software name="lemmingsb" cloneof="lemmings" supported="no">
-		<description>Lemmings (640K Disk)</description>
+		<description>Lemmings (640K)</description>
 		<year>2006</year>
 		<publisher>YRprod</publisher>
 
@@ -8176,18 +8211,6 @@
 		</part>
 	</software>
 
-	<software name="peterpan"> <!-- this is actually The Great Syntheman's "Compilations" modified to boot straight to Peter Pan, marked as bad -->
-		<description>Peter Pan (Cracked?)</description>
-		<year>1988</year>
-		<publisher>Coktel Vision</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="327680">
-				<rom name="peter pan (1988)(coktel vision)(fr).fd" size="327680" crc="25e473b9" sha1="8c447d35f355e38047a929de7e145a965ff98f31" status="baddump" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="planetbl">
 		<description>La Planete Bleue</description>
 		<year>1986</year>
@@ -8237,7 +8260,8 @@
 		</part>
 	</software>
 
-	<software name="poseidon" supported="no"> <!-- how to run the game? -->
+	<!-- how to run the game? -->
+	<software name="poseidon" supported="no">
 		<description>Poseidon</description>
 		<year>1985</year>
 		<publisher>Coktel Vision</publisher>
@@ -8691,7 +8715,7 @@
 	</software>
 
 	<software name="sectnoira" cloneof="sectnoir">
-		<description>La Secte Noire (640K Disk)</description>
+		<description>La Secte Noire (640K)</description>
 		<year>2014</year>
 		<publisher>Retrocoding Production</publisher>
 
@@ -9332,7 +9356,7 @@
 	</software>
 
 	<software name="karaokeb" cloneof="karaoke" supported="no">
-		<description>TO-Karaoke (1280K Disk)</description>
+		<description>TO-Karaoke (1280K)</description>
 		<year>2002</year>
 		<publisher>Bledor-Soft</publisher>
 
@@ -9451,7 +9475,8 @@
 		</part>
 	</software>
 
-	<software name="triple7"> <!-- has title screen -->
+	<!-- has title screen -->
+	<software name="triple7">
 		<description>Triple Seven</description>
 		<year>2005</year>
 		<publisher>YRprod</publisher>
@@ -9463,7 +9488,8 @@
 		</part>
 	</software>
 
-	<software name="triple7a" cloneof="triple7"> <!-- no title screen -->
+	<!-- no title screen -->
+	<software name="triple7a" cloneof="triple7">
 		<description>Triple Seven (Older?)</description>
 		<year>2005</year>
 		<publisher>YRprod</publisher>
@@ -9476,7 +9502,7 @@
 	</software>
 
 	<software name="triple7b" cloneof="triple7">
-		<description>Triple Seven (Older?) (SAP Format)</description>
+		<description>Triple Seven (Older?, SAP Format)</description>
 		<year>2005</year>
 		<publisher>YRprod</publisher>
 
@@ -9555,7 +9581,7 @@
 	</software>
 
 	<software name="turbocupb" cloneof="turbocup" supported="no">
-		<description>Turbo Cup (640K Disk)</description>
+		<description>Turbo Cup (640K)</description>
 		<year>1988</year>
 		<publisher>Loriciels</publisher>
 
@@ -10290,7 +10316,8 @@
 		</part>
 	</software>
 
-	<software name="4stars"> <!-- underdumped, but all games work fine -->
+	<!-- underdumped, but all games work fine -->
+	<software name="4stars">
 		<description>4 Stars</description>
 		<year>1988</year>
 		<publisher>Coktel Vision</publisher>
@@ -11017,6 +11044,19 @@
 			</dataarea>
 		</part>
 	</software>
+	
+	<!-- this is compsynt hacked to boot straight to Peter Pan -->
+	<software name="peterpan" cloneof="compsynt">
+		<description>Peter Pan (Cracked?)</description>
+		<year>1988</year>
+		<publisher>Coktel Vision</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="peter pan (1988)(coktel vision)(fr).fd" size="327680" crc="25e473b9" sha1="8c447d35f355e38047a929de7e145a965ff98f31" offset="0" />
+			</dataarea>
+		</part>
+	</software>
 
 	<software name="echange">
 		<description>ECHANGE</description>
@@ -11273,7 +11313,7 @@
 	</software>
 
 	<software name="jeuxbasa" cloneof="jeuxbas">
-		<description>Jeux BASIC TO (640K Disk)</description>
+		<description>Jeux BASIC TO (640K)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -11733,7 +11773,7 @@
 	</software>
 
 	<software name="privesc" cloneof="prives" supported="no">
-		<description>Les Prives (640K Disk)</description>
+		<description>Les Prives (640K)</description>
 		<year>1988</year>
 		<publisher>Infogrames</publisher>
 
@@ -11796,7 +11836,7 @@
 	</software>
 
 	<software name="futuristc" cloneof="futurist" supported="no">
-		<description>Les Futuristes (640K Disk)</description>
+		<description>Les Futuristes (640K)</description>
 		<year>1988</year>
 		<publisher>Infogrames</publisher>
 		<info name="alt_title" value="Science Fiction"/>
@@ -11859,7 +11899,7 @@
 	</software>
 
 	<software name="simhitsa" cloneof="simhits" supported="no">
-		<description>Simulation Hits (640K Disk)</description>
+		<description>Simulation Hits (640K)</description>
 		<year>1989</year>
 		<publisher>Loriciels</publisher>
 
@@ -11903,7 +11943,7 @@
 	</software>
 
 	<software name="superhita" cloneof="superhit" supported="partial">
-		<description>Les Super Hits de Thomson (640K Disk)</description>
+		<description>Les Super Hits de Thomson (640K)</description>
 		<year>1986</year>
 		<publisher>SFMI Micromania</publisher>
 
@@ -11914,7 +11954,8 @@
 		</part>
 	</software>
 
-	<software name="tet2soko"> <!-- selection menu only says "Tetris", but title screen says "Tetris II"  -->
+	<!-- selection menu only says "Tetris", but title screen says "Tetris II"  -->
+	<software name="tet2soko">
 		<description>Tetris II &amp; Sokoban</description>
 		<year>19??</year>
 		<publisher>John Breaker?</publisher>
@@ -11933,8 +11974,9 @@
 		</part>
 	</software>
 
-	<software name="tet2sokoa" cloneof="tet2soko" supported="no"> <!-- selection menu only says "Tetris", but title screen says "Tetris II"  -->
-		<description>Tetris II &amp; Sokoban (640K Disk)</description>
+	<!-- selection menu only says "Tetris", but title screen says "Tetris II"  -->
+	<software name="tet2sokoa" cloneof="tet2soko" supported="no">
+		<description>Tetris II &amp; Sokoban (640K)</description>
 		<year>19??</year>
 		<publisher>John Breaker?</publisher>
 
@@ -12444,7 +12486,7 @@
 	</software>
 
 	<software name="teogame2b" cloneof="teogame2" supported="no">
-		<description>Teo-Games no.2 (640K Disk)</description>
+		<description>Teo-Games no.2 (640K)</description>
 		<year>1991</year>
 		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
 
@@ -12494,7 +12536,7 @@
 	</software>
 
 	<software name="teogame3b" cloneof="teogame3">
-		<description>Teo-Games no.3 (640K Disk)</description>
+		<description>Teo-Games no.3 (640K)</description>
 		<year>1991</year>
 		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
 
@@ -12866,7 +12908,8 @@
 
 <!-- Misc. Disks -->
 
-	<software name="lapinou2" supported="no"> <!-- contains only an auto.bat file that tries to load off drive 1: -->
+	<!-- contains only an auto.bat file that tries to load off drive 1: -->
+	<software name="lapinou2" supported="no">
 		<description>Lapinou 2 Boot Disk?</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
