@@ -38,6 +38,18 @@
 		</part>
 	</software>
 
+	<software name="android">
+		<description>Androides</description>
+		<year>1985</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="androides_mo5.fd" size="327680" crc="99a9f499" sha1="4ac58a32ce73d14ac0896c2af85f6ab4c6c371d6" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="arsene">
 		<description>Arsene</description>
 		<year>1986</year>
@@ -269,6 +281,18 @@
 		</part>
 	</software>
 
+	<software name="brainpwr">
+		<description>Brain Power</description>
+		<year>1987</year>
+		<publisher>SoftBook</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="brain-power_mo5.fd" size="327680" crc="44c047fb" sha1="95db8c5caf4083f32d5b3ab6826ef00af3f5c14e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="clrcalc">
 		<description>Colorcalc</description>
 		<year>1985</year>
@@ -293,14 +317,14 @@
 		</part>
 	</software>
 
-	<software name="donquich">
-		<description>La Folle Lecture de Donne Quichotte</description>
-		<year>1988</year>
-		<publisher>Coktel Vision</publisher>
+	<software name="crystann">
+		<description>Crystann</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="folle lecture de donne quichotte, la (1988)(coktel vision)(fr)[bootable].fd" size="327680" crc="35044566" sha1="f87d465768582ad00397006fc1a39270cf95653a" offset="0" />
+				<rom name="crystann_mo5.fd" size="327680" crc="ebd38671" sha1="2b5891a1b5687ef56db4708e434940d1b8d22126" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -313,6 +337,18 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
 				<rom name="enigme a oxford (coktel vision) (beatrice franzi) (1986) (mo5).fd" size="327680" crc="d2b707dc" sha1="148dc4638b582472e25010fc7b8fc0db68da9823" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="flipper">
+		<description>Flipper</description>
+		<year>1984</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="flipper_mo5.fd" size="327680" crc="b351abd1" sha1="7a30a7400d786ba6e47d3eb49d36526cf34fd26d" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -457,14 +493,26 @@
 		</part>
 	</software>
 
-	<software name="logodos">
-		<description>LOGO DOS</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
+	<software name="aigleor">
+		<description>L'Aigle d'Or</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="335426">
-				<rom name="dos-logo-mo5.sap" size="335426" crc="656ddf74" sha1="c80c105d6aedd72656603ae090b5a8f2fb24995c" offset="0" />
+			<dataarea name="flop" size="327680">
+				<rom name="l-aigle-d-or_mo5.fd" size="327680" crc="ebdd24c9" sha1="29ba415e07e1e35ceb108aaad5ff8487f8ce8a71" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="donquich">
+		<description>La Folle Lecture de Donne Quichotte</description>
+		<year>1988</year>
+		<publisher>Coktel Vision</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="folle lecture de donne quichotte, la (1988)(coktel vision)(fr)[bootable].fd" size="327680" crc="35044566" sha1="f87d465768582ad00397006fc1a39270cf95653a" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -478,6 +526,54 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="51200">
 				<rom name="la malediction de thaar (coktel vision) (inconnus) (1986) (mo5 qd).qd" size="51200" crc="7248952d" sha1="846cf2981ed3fa653db8f2e67efbfef4c2a6acaa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="5emeaxe">
+		<description>Le 5eme Axe</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="le-5eme-axe_mo5.fd" size="327680" crc="9f8945a2" sha1="f0764de7147c3e0715916bf4fe31fd14f3ca7184" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tresrats">
+		<description>Le Tresor des Rats d'Egout (MO6)</description>
+		<year>1986</year>
+		<publisher>Cedic/Nathan</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="le tresor des rats d'egout (nathan) (inconnus) (1986) (mo6).fd" size="327680" crc="b81a6f31" sha1="3a098acdd7d6e116cd6a9b77d500b622bf1355ee" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hitslori">
+		<description>Les Hits de Loriciels 1</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="les-hits-de-loriciels-1_mo5.fd" size="327680" crc="e8420f53" sha1="063278385dc58ac1eebc8e936b6a0fcf81d358e8" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="logodos">
+		<description>LOGO DOS</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="dos-logo-mo5.sap" size="335426" crc="656ddf74" sha1="c80c105d6aedd72656603ae090b5a8f2fb24995c" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -624,6 +720,18 @@
 		</part>
 	</software>
 
+	<software name="parole">
+		<description>Parole</description>
+		<year>1985</year>
+		<publisher>Cedic/Nathan</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="parole_mo5.fd" size="327680" crc="d8daec11" sha1="957cfc7224531508de4afa718bd381b4b242c466" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="poseidon">
 		<description>Poseidon</description>
 		<year>1984</year>
@@ -632,6 +740,18 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="51200">
 				<rom name="poseidon (1984)(coktel vision)(fr).qd" size="51200" crc="81d0f82d" sha1="cf25c5e691ac4e874ad8fb6f69157ee6e3196f19" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sorcery">
+		<description>Sorcery</description>
+		<year>1986</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="sorcery_mo5.fd" size="327680" crc="88802384" sha1="b2e12c15aca2ecff6dc327a3941ec13d4a831aeb" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -648,14 +768,14 @@
 		</part>
 	</software>
 
-	<software name="tresrats">
-		<description>Le Tresor des Rats d'Egout (MO6)</description>
-		<year>1986</year>
-		<publisher>Cedic/Nathan</publisher>
+	<software name="stennis">
+		<description>Super Tennis (Answare)</description>
+		<year>1985</year>
+		<publisher>Answare</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="le tresor des rats d'egout (nathan) (inconnus) (1986) (mo6).fd" size="327680" crc="b81a6f31" sha1="3a098acdd7d6e116cd6a9b77d500b622bf1355ee" offset="0" />
+				<rom name="super-tennis_mo5.fd" size="327680" crc="ac941016" sha1="576314b9824c6fb6022c52c0b8bfde09434fa7a5" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -673,13 +793,38 @@
 	</software>
 
 	<software name="volsolo">
-		<description>Vol Solo (MO6)</description>
+		<description>Vol Solo</description>
 		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="vol-solo_mo5.fd" size="327680" crc="b803a305" sha1="c8ce9c572499c0cdb47ac513c9356a0b5e8bd883" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="volsoloa" cloneof="volsolo">
+		<description>Vol Solo (MO6)</description>
+		<year>198?</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="163840">
 				<rom name="vol solo (fil) (joel sana) (1985) (mo6 fd).fd" size="163840" crc="02ce2ab9" sha1="c8d275d88f0be780db62a4fcba68d9ab09673eef" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vox">
+		<description>Vox - Synthetiseur Vocal</description>
+		<year>1984</year>
+		<publisher>ERE Informatique</publisher>
+		<info name="alt_title" value="Vox Basic"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="1310720">
+				<rom name="vox-basic_mo5.fd" size="1310720" crc="d626e7c0" sha1="a767168d5cdecf009970aba7fb92fea700d1486b" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
