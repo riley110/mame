@@ -80,7 +80,11 @@
 #ifdef _WIN32
 #ifdef _MSC_VER
 #pragma comment(lib, "ws2_32.lib")    // Linking with winsock library
+#include <BaseTsd.h>
+typedef SSIZE_T ssize_t;
 #endif
+#include <winsock2.h>
+#include <ws2tcpip.h>
 #include <windows.h>
 #include <process.h>
 #ifndef EINPROGRESS
@@ -260,7 +264,7 @@ struct ns_connection *ns_bind(struct ns_mgr *, const char *,
 struct ns_connection *ns_connect(struct ns_mgr *, const char *,
                                  ns_callback_t, void *);
 
-int ns_send(struct ns_connection *, const void *buf, int len);
+int ns_send(struct ns_connection *, const void *buf, size_t len);
 int ns_printf(struct ns_connection *, const char *fmt, ...);
 int ns_vprintf(struct ns_connection *, const char *fmt, va_list ap);
 
@@ -606,6 +610,30 @@ int ns_socketpair(sock_t sp[2]) {
 
 // TODO(lsm): use non-blocking resolver
 static int ns_resolve2(const char *host, struct in_addr *ina) {
+#ifdef NS_ENABLE_GETADDRINFO
+  int rv = 0;
+  struct addrinfo hints, *servinfo, *p;
+  struct sockaddr_in *h = NULL;
+  char *ip = NS_MALLOC(17);
+  memset(ip, '\0', 17);
+
+  memset(&hints, 0, sizeof hints);
+  hints.ai_family = AF_INET;
+  hints.ai_socktype = SOCK_STREAM;
+
+  if((rv = getaddrinfo(host, NULL , NULL, &servinfo)) != 0) {
+    DBG(("getaddrinfo(%s) failed: %s", host, strerror(errno)));
+    return 0;
+  }
+
+  for(p = servinfo; p != NULL; p = p->ai_next) {
+    memcpy(&h, &p->ai_addr, sizeof(struct sockaddr_in *));
+    memcpy(ina, &h->sin_addr, sizeof(ina));
+  }
+
+  freeaddrinfo(servinfo);
+  return 1;
+#else
   struct hostent *he;
   if ((he = gethostbyname(host)) == NULL) {
     DBG(("gethostbyname(%s) failed: %s", host, strerror(errno)));
@@ -614,6 +642,7 @@ static int ns_resolve2(const char *host, struct in_addr *ina) {
     return 1;
   }
   return 0;
+#endif
 }
 
 // Resolve FDQN "host", store IP address in the "ip".
@@ -990,14 +1019,14 @@ static void ns_write_to_socket(struct ns_connection *conn) {
   }
 }
 
-int ns_send(struct ns_connection *conn, const void *buf, int len) {
+int ns_send(struct ns_connection *conn, const void *buf, size_t len) {
   return (int) ns_out(conn, buf, len);
 }
 
 static void ns_handle_udp(struct ns_connection *ls) {
   struct ns_connection nc;
   char buf[NS_UDP_RECEIVE_BUFFER_SIZE];
-  int n;
+  ssize_t n;
   socklen_t s_len = sizeof(nc.sa);
 
   memset(&nc, 0, sizeof(nc));
@@ -1354,7 +1383,7 @@ typedef pid_t process_id_t;
 
 struct vec {
   const char *ptr;
-  int len;
+  uintptr_t len;
 };
 
 // For directory listing and WevDAV support
@@ -1459,7 +1488,7 @@ enum endpoint_type {
 };
 
 #define MG_HEADERS_SENT NSF_USER_1
-#define MG_LONG_RUNNING NSF_USER_2
+#define MG_USING_CHUNKED_API NSF_USER_2
 #define MG_CGI_CONN NSF_USER_3
 #define MG_PROXY_CONN NSF_USER_4
 #define MG_PROXY_DONT_PARSE NSF_USER_5
@@ -1474,7 +1503,7 @@ struct connection {
   char *request;
   int64_t num_bytes_recv; // Total number of bytes received
   int64_t cl;             // Reply content length, for Range support
-  int request_len;  // Request length, including last \r\n after last header
+  ssize_t request_len;  // Request length, including last \r\n after last header
 };
 
 #define MG_CONN_2_CONN(c) ((struct connection *) ((char *) (c) - \
@@ -1539,11 +1568,11 @@ static const struct {
   {NULL,  0, NULL}
 };
 
-#ifndef MONGOOSE_NO_THREADS
+#ifdef MONGOOSE_ENABLE_THREADS
 void *mg_start_thread(void *(*f)(void *), void *p) {
   return ns_start_thread(f, p);
 }
-#endif  // MONGOOSE_NO_THREADS
+#endif  // MONGOOSE_ENABLE_THREADS
 
 #ifndef MONGOOSE_NO_MMAP
 #ifdef _WIN32
@@ -1716,7 +1745,7 @@ static int mg_snprintf(char *buf, size_t buflen, const char *fmt, ...) {
 //   -1  if request is malformed
 //    0  if request is not yet fully buffered
 //   >0  actual request length, including last \r\n\r\n
-static int get_request_len(const char *s, int buf_len) {
+static int get_request_len(const char *s, size_t buf_len) {
   const unsigned char *buf = (unsigned char *) s;
   int i;
 
@@ -1758,7 +1787,7 @@ static char *skip(char **buf, const char *delimiters) {
 // Parse HTTP headers from the given buffer, advance buffer to the point
 // where parsing stopped.
 static void parse_http_headers(char **buf, struct mg_connection *ri) {
-  size_t i;
+  int i;
 
   for (i = 0; i < ARRAY_SIZE(ri->http_headers); i++) {
     ri->http_headers[i].name = skip(buf, ": ");
@@ -2309,13 +2338,13 @@ static void on_cgi_data(struct ns_connection *nc) {
   // If reply has not been parsed yet, parse it
   if (conn->ns_conn->flags & NSF_BUFFER_BUT_DONT_SEND) {
     struct iobuf *io = &conn->ns_conn->send_iobuf;
-    int s_len = sizeof(cgi_status) - 1;
-    int len = get_request_len(io->buf + s_len, io->len - s_len);
+    size_t s_len = sizeof(cgi_status) - 1;
+    ssize_t len = get_request_len(io->buf + s_len, io->len - s_len);
     char buf[MAX_REQUEST_SIZE], *s = buf;
 
     if (len == 0) return;
 
-    if (len < 0 || len > (int) sizeof(buf)) {
+    if (len < 0 || len > sizeof(buf)) {
       len = io->len;
       iobuf_remove(io, io->len);
       send_http_error(conn, 500, "CGI program sent malformed headers: [%.*s]",
@@ -2409,8 +2438,8 @@ static void remove_double_dots_and_double_slashes(char *s) {
   *p = '\0';
 }
 
-int mg_url_decode(const char *src, int src_len, char *dst,
-                  int dst_len, int is_form_url_encoded) {
+int mg_url_decode(const char *src, size_t src_len, char *dst,
+                  size_t dst_len, int is_form_url_encoded) {
   int i, j, a, b;
 #define HEXTOI(x) (isdigit(x) ? x - '0' : x - 'W')
 
@@ -2444,7 +2473,7 @@ static int is_valid_http_method(const char *s) {
 // This function modifies the buffer by NUL-terminating
 // HTTP request components, header names and header values.
 // Note that len must point to the last \n of HTTP headers.
-static int parse_http_message(char *buf, int len, struct mg_connection *ri) {
+static size_t parse_http_message(char *buf, size_t len, struct mg_connection *ri) {
   int is_request, n;
 
   // Reset the connection. Make sure that we don't touch fields that are
@@ -2526,7 +2555,7 @@ const char *mg_get_header(const struct mg_connection *ri, const char *s) {
 }
 
 // Perform case-insensitive match of string against pattern
-int mg_match_prefix(const char *pattern, int pattern_len, const char *str) {
+int mg_match_prefix(const char *pattern, ssize_t pattern_len, const char *str) {
   const char *or_str;
   int len, res, i = 0, j = 0;
 
@@ -2617,12 +2646,12 @@ static int convert_uri_to_file_name(struct connection *conn, char *buf,
 #endif
   const char *uri = conn->mg_conn.uri;
   const char *domain = mg_get_header(&conn->mg_conn, "Host");
-  int match_len, root_len = root == NULL ? 0 : strlen(root);
+  size_t match_len, root_len = root == NULL ? 0 : strlen(root);
 
   // Perform virtual hosting rewrites
   if (rewrites != NULL && domain != NULL) {
     const char *colon = strchr(domain, ':');
-    int domain_len = colon == NULL ? (int) strlen(domain) : colon - domain;
+    ssize_t domain_len = colon == NULL ? strlen(domain) : colon - domain;
 
     while ((rewrites = next_option(rewrites, &a, &b)) != NULL) {
       if (a.len > 1 && a.ptr[0] == '@' && a.len == domain_len + 1 &&
@@ -2682,25 +2711,29 @@ static int should_keep_alive(const struct mg_connection *conn) {
      (header == NULL && http_version && !strcmp(http_version, "1.1")));
 }
 
-size_t mg_write(struct mg_connection *c, const void *buf, int len) {
+size_t mg_write(struct mg_connection *c, const void *buf, size_t len) {
   struct connection *conn = MG_CONN_2_CONN(c);
   ns_send(conn->ns_conn, buf, len);
   return conn->ns_conn->send_iobuf.len;
 }
 
 void mg_send_status(struct mg_connection *c, int status) {
+  struct connection *conn = MG_CONN_2_CONN(c);
   if (c->status_code == 0) {
     c->status_code = status;
     mg_printf(c, "HTTP/1.1 %d %s\r\n", status, status_code_to_str(status));
   }
+  conn->ns_conn->flags |= MG_USING_CHUNKED_API;
 }
 
 void mg_send_header(struct mg_connection *c, const char *name, const char *v) {
+  struct connection *conn = MG_CONN_2_CONN(c);
   if (c->status_code == 0) {
     c->status_code = 200;
     mg_printf(c, "HTTP/1.1 %d %s\r\n", 200, status_code_to_str(200));
   }
   mg_printf(c, "%s: %s\r\n", name, v);
+  conn->ns_conn->flags |= MG_USING_CHUNKED_API;
 }
 
 static void terminate_headers(struct mg_connection *c) {
@@ -2842,8 +2875,8 @@ static void SHA1Init(SHA1_CTX *context) {
 }
 
 static void SHA1Update(SHA1_CTX *context, const unsigned char *data,
-                       uint32_t len) {
-  uint32_t i, j;
+                       size_t len) {
+  size_t i, j;
 
   j = context->count[0];
   if ((context->count[0] += len << 3) < j)
@@ -2931,7 +2964,7 @@ static void send_websocket_handshake(struct mg_connection *conn,
   mg_write(conn, buf, strlen(buf));
 }
 
-static int deliver_websocket_frame(struct connection *conn) {
+static size_t deliver_websocket_frame(struct connection *conn) {
   // Having buf unsigned char * is important, as it is used below in arithmetic
   unsigned char *buf = (unsigned char *) conn->ns_conn->recv_iobuf.buf;
   size_t i, len, buf_len = conn->ns_conn->recv_iobuf.len, frame_len = 0,
@@ -3009,9 +3042,9 @@ size_t mg_websocket_write(struct mg_connection *conn, int opcode,
       copy_len = 4 + data_len;
     } else {
       // 64-bit length field
-      copy[1] = 127;
       const uint32_t hi = htonl((uint32_t) ((uint64_t) data_len >> 32));
       const uint32_t lo = htonl(data_len & 0xffffffff);
+      copy[1] = 127;
       memcpy(copy+2,&hi,sizeof(hi));
       memcpy(copy+6,&lo,sizeof(lo));
       memcpy(copy + 10, data, data_len);
@@ -3082,7 +3115,8 @@ static int call_request_handler(struct connection *conn) {
   int result;
   conn->mg_conn.content = conn->ns_conn->recv_iobuf.buf;
   if ((result = call_user(conn, MG_REQUEST)) == MG_TRUE) {
-    if (conn->ns_conn->flags & MG_HEADERS_SENT) {
+    if (conn->ns_conn->flags & MG_USING_CHUNKED_API) {
+      terminate_headers(&conn->mg_conn);
       write_terminating_chunk(conn);
     }
     close_local_endpoint(conn);
@@ -3209,7 +3243,8 @@ static int find_index_file(struct connection *conn, char *path,
   const char *list = conn->server->config_options[INDEX_FILES];
   file_stat_t st;
   struct vec filename_vec;
-  size_t n = strlen(path), found = 0;
+  size_t n = strlen(path);
+  int found = 0;
 
   // The 'path' given to us points to the directory. Remove all trailing
   // directory separator characters from the end of the path, and
@@ -3467,7 +3502,7 @@ static int scan_directory(struct connection *conn, const char *dir,
   return arr_ind;
 }
 
-int mg_url_encode(const char *src, size_t s_len, char *dst, size_t dst_len) {
+size_t mg_url_encode(const char *src, size_t s_len, char *dst, size_t dst_len) {
   static const char *dont_escape = "._-$,;~()";
   static const char *hex = "0123456789abcdef";
   size_t i = 0, j = 0;
@@ -3764,7 +3799,7 @@ static void handle_put(struct connection *conn, const char *path) {
 static void forward_put_data(struct connection *conn) {
   struct iobuf *io = &conn->ns_conn->recv_iobuf;
   size_t k = conn->cl < (int64_t) io->len ? conn->cl : (int64_t) io->len;   // To write
-  int n = write(conn->endpoint.fd, io->buf, k);   // Write them!
+  size_t n = write(conn->endpoint.fd, io->buf, k);   // Write them!
   if (n > 0) {
     iobuf_remove(io, n);
     conn->cl -= n;
@@ -4151,9 +4186,10 @@ static int is_dav_request(const struct connection *conn) {
 }
 #endif // MONGOOSE_NO_AUTH
 
-static int parse_header(const char *str, int str_len, const char *var_name,
+static int parse_header(const char *str, size_t str_len, const char *var_name,
                         char *buf, size_t buf_size) {
-  int ch = ' ', ch1 = ',', len = 0, n = strlen(var_name);
+  int ch = ' ', ch1 = ',', len = 0;
+  size_t n = strlen(var_name);
   const char *p, *end = str + str_len, *s = NULL;
 
   if (buf != NULL && buf_size > 0) buf[0] = '\0';
@@ -4194,7 +4230,7 @@ static void send_ssi_file(struct mg_connection *, const char *, FILE *, int);
 
 static void send_file_data(struct mg_connection *conn, FILE *fp) {
   char buf[IOBUF_SIZE];
-  int n;
+  size_t n;
   while ((n = fread(buf, 1, sizeof(buf), fp)) > 0) {
     mg_write(conn, buf, n);
   }
@@ -4848,7 +4884,7 @@ static void close_local_endpoint(struct connection *conn) {
   conn->cl = conn->num_bytes_recv = conn->request_len = 0;
   conn->ns_conn->flags &= ~(NSF_FINISHED_SENDING_DATA |
                             NSF_BUFFER_BUT_DONT_SEND | NSF_CLOSE_IMMEDIATELY |
-                            MG_HEADERS_SENT | MG_LONG_RUNNING);
+                            MG_HEADERS_SENT | MG_USING_CHUNKED_API);
 
   // Do not memset() the whole structure, as some of the fields
   // (IP addresses & ports, server_param) must survive. Nullify the rest.
@@ -4866,7 +4902,7 @@ static void close_local_endpoint(struct connection *conn) {
 
 static void transfer_file_data(struct connection *conn) {
   char buf[IOBUF_SIZE];
-  int n;
+  size_t n;
 
   // If output buffer is too big, don't send anything. Wait until
   // mongoose drains already buffered data to the client.
@@ -4887,7 +4923,7 @@ static void transfer_file_data(struct connection *conn) {
   }
 }
 
-int mg_poll_server(struct mg_server *server, int milliseconds) {
+time_t mg_poll_server(struct mg_server *server, int milliseconds) {
   return ns_mgr_poll(&server->ns_mgr, milliseconds);
 }
 

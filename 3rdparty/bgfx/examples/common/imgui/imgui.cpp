@@ -387,7 +387,7 @@ struct Imgui
 		, m_textureHeight(512)
 		, m_halfTexel(0.0f)
 		, m_nvg(NULL)
-		, m_view(31)
+		, m_view(255)
 		, m_viewWidth(0)
 		, m_viewHeight(0)
 		, m_currentFontIdx(0)
@@ -813,6 +813,7 @@ struct Imgui
 	void beginFrame(int32_t _mx, int32_t _my, uint8_t _button, int32_t _scroll, uint16_t _width, uint16_t _height, char _inputChar, uint8_t _view)
 	{
 		IMGUI_beginFrame(_mx, _my, _button, _width, _height, _inputChar, _view);
+		nvgViewId(m_nvg, _view);
 
 		m_view = _view;
 		m_viewWidth = _width;
@@ -1405,7 +1406,7 @@ struct Imgui
 		{
 			const size_t cursor = size_t(strlen(_str));
 
-			if (m_char == 0x08) //backspace
+			if (m_char == 0x08 || m_char == 0x7f) //backspace or delete
 			{
 				_str[cursor-1] = '\0';
 			}
@@ -2023,7 +2024,7 @@ struct Imgui
 			xx = -borderSize;
 			yy = -1;
 			width = 2*borderSize+1;
-			height = m_viewHeight;
+			height = m_viewHeight+1;
 			triX = 0;
 			triY = (m_viewHeight-triSize)/2;
 			orientation = _checked ? TriangleOrientation::Left : TriangleOrientation::Right;
@@ -2033,7 +2034,7 @@ struct Imgui
 			xx = m_viewWidth - borderSize;
 			yy = -1;
 			width = 2*borderSize+1;
-			height = m_viewHeight;
+			height = m_viewHeight+1;
 			triX = m_viewWidth - triSize - 2;
 			triY = (m_viewHeight-width)/2;
 			orientation = _checked ? TriangleOrientation::Right : TriangleOrientation::Left;

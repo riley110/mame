@@ -42,12 +42,24 @@
 			scope = "config",
 		},
 
+		buildoptions_c =
+		{
+			kind  = "list",
+			scope = "config",
+		},
+		
 		buildoptions_cpp =
 		{
 			kind  = "list",
 			scope = "config",
 		},
-
+		
+		buildoptions_objc =
+		{
+			kind  = "list",
+			scope = "config",
+		},
+		
 		configurations =
 		{
 			kind  = "list",
@@ -130,6 +142,7 @@
 					NoNativeWChar = 1,
 					NoPCH = 1,
 					NoRTTI = 1,
+					SingleOutputDir = 1,
 					Optimize = 1,
 					OptimizeSize = 1,
 					OptimizeSpeed = 1,
@@ -330,6 +343,12 @@
 			scope = "config",
 		},		
 
+		msgcompile_objc =
+		{
+			kind  = "string",
+			scope = "config",
+		},		
+		
 		msgresource =
 		{
 			kind  = "string",
@@ -516,7 +535,8 @@
 --
 
 
-
+	premake.check_paths = false
+	
 --
 -- Check to see if a value exists in a list of values, using a
 -- case-insensitive match. If the value does exist, the canonical
@@ -642,7 +662,11 @@
 				end
 			elseif type(value) == "string" then
 				if value:find("*") then
-					makeabsolute(matchfunc(value), depth + 1)
+					local arr = matchfunc(value);
+					if (premake.check_paths) and (#arr == 0) then
+						error("Can't find matching files for pattern :" .. value)				
+					end
+					makeabsolute(arr, depth + 1)
 				else
 					table.insert(result, path.getabsolute(value))
 				end

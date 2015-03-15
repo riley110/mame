@@ -143,6 +143,10 @@ typedef uint64_t GLuint64;
 #	define GL_RG16 0x822C
 #endif // GL_RG16
 
+#ifndef GL_RG16UI
+#	define GL_RG16UI 0x823A
+#endif // GL_RG16UI
+
 #ifndef GL_RG16F
 #	define GL_RG16F 0x822F
 #endif // GL_RG16F
@@ -167,6 +171,10 @@ typedef uint64_t GLuint64;
 #	define GL_RGBA32F 0x8814
 #endif // GL_RGBA32F
 
+#ifndef GL_STENCIL_INDEX
+#	define GL_STENCIL_INDEX 0x1901
+#endif // GL_STENCIL_INDEX
+
 #ifndef GL_RED
 #	define GL_RED 0x1903
 #endif // GL_RED
@@ -178,6 +186,10 @@ typedef uint64_t GLuint64;
 #ifndef GL_RG
 #	define GL_RG 0x8227
 #endif // GL_RG
+
+#ifndef GL_RG_INTEGER
+#	define GL_RG_INTEGER 0x8228
+#endif // GL_RG_INTEGER
 
 #ifndef GL_GREEN
 #	define GL_GREEN 0x1904
@@ -471,6 +483,22 @@ typedef uint64_t GLuint64;
 #ifndef GL_IMAGE_CUBE
 #	define GL_IMAGE_CUBE 0x9050
 #endif // GL_IMAGE_CUBE
+
+#ifndef GL_UNSIGNED_INT_IMAGE_1D
+#	define GL_UNSIGNED_INT_IMAGE_1D 0x9062
+#endif // GL_UNSIGNED_INT_IMAGE_1D
+
+#ifndef GL_UNSIGNED_INT_IMAGE_2D
+#	define GL_UNSIGNED_INT_IMAGE_2D 0x9063
+#endif // GL_UNSIGNED_INT_IMAGE_2D
+
+#ifndef GL_UNSIGNED_INT_IMAGE_3D
+#	define GL_UNSIGNED_INT_IMAGE_3D 0x9064
+#endif // GL_UNSIGNED_INT_IMAGE_3D
+
+#ifndef GL_UNSIGNED_INT_IMAGE_CUBE
+#	define GL_UNSIGNED_INT_IMAGE_CUBE 0x9066
+#endif // GL_UNSIGNED_INT_IMAGE_CUBE
 
 #ifndef GL_PROGRAM_INPUT
 #	define GL_PROGRAM_INPUT 0x92E3
@@ -892,7 +920,7 @@ namespace bgfx
 		GLint m_attributes[Attrib::Count]; // sparse
 		GLint m_instanceData[BGFX_CONFIG_MAX_INSTANCE_DATA_COUNT];
 
- 		GLint m_sampler[BGFX_CONFIG_MAX_TEXTURES];
+ 		GLint m_sampler[BGFX_CONFIG_MAX_TEXTURE_SAMPLERS];
  		uint8_t m_numSamplers;
 
 		ConstantBuffer* m_constantBuffer;
