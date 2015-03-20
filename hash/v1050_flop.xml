@@ -14,7 +14,6 @@
 				<rom name="bios20.imd" size="709312" crc="7283244a" sha1="e7acaa95d21da76b7098e3277267f89db12961d0" offset="0"/>
 			</dataarea>
 		</part>
-
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Winchester Setup"/>
 			<dataarea name="flop" size="109151">
@@ -30,18 +29,17 @@
 		<info name="serial" value="CP2768-1"/>
 
 		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="System"/>
 			<dataarea name="flop" size="358022">
 				<rom name="cpm_plus.imd" size="358022" crc="4bdb61ce" sha1="ef7ead3043135ea2d32795baa9ba0bc5f5695d87" offset="0"/>
 			</dataarea>
 		</part>
-
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Additional Files"/>
 			<dataarea name="flop" size="364682">
 				<rom name="cpm_add.imd" size="364682" crc="3b190357" sha1="c733db6d9592088f7b655a156edefbf5b6834555" offset="0"/>
 			</dataarea>
 		</part>
-
 		<part name="flop3" interface="floppy_5_25">
 			<feature name="part_id" value="Winchester Hard Disk Drive Option Disk"/>
 			<dataarea name="flop" size="197582">
@@ -57,11 +55,11 @@
 		<info name="serial" value="CP2768-1"/>
 
 		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="System"/>
 			<dataarea name="flop" size="333493">
 				<rom name="cpm disk1.imd" size="333493" crc="63d4df2c" sha1="4b54c6dbca25ce7dcf5f129c89363ad5120633de" offset="0"/>
 			</dataarea>
 		</part>
-
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Additional Files"/>
 			<dataarea name="flop" size="331979">
@@ -96,9 +94,9 @@
 		</part>
 	</software>
 
+	<!-- Date: 06 Sept 1983 -->
 	<software name="drgraph">
 		<description>DR Graph (v1.01P)</description>
-		<!-- Date: 06 Sept 1983 -->
 		<year>1983</year>
 		<publisher>Digital Research</publisher>
 		<info name="serial" value="5005-0768-000001"/>
@@ -110,9 +108,9 @@
 		</part>
 	</software>
 
+	<!-- Compiled: May 1983 -->
 	<software name="cbasic">
 		<description>CBASIC and Demonstration (v2.8)</description>
-		<!-- Compiled: May 1983 -->
 		<year>1983</year>
 		<publisher>Digital Research</publisher>
 		<info name="serial" value="3000-0768-000001"/>
