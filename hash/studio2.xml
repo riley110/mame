@@ -21,30 +21,8 @@ _________________________________________________________________
 18V600  Blackjack               TV Casino I             yes
 18V601  Bingo                   TV Casino II            no
 18V700  Biorhythm               TV Mystic               yes
-
-
-MPT-02 games list
-
-ID      Title                   Series                  Dumped
-_________________________________________________________________
-MG-200  Grand Pack                                      yes
-MG-201  Bingo                                           yes
-MG-202  Concentration Match                             yes
-MG-203  Star Wars                                       yes
-MG-204  Math Fun                School House II         yes
-MG-205  Pinball                                         yes
-MG-206  Biorhythm                                       yes
-MG-207  Tennis/Squash                                   no
-MG-208  Fun with Numbers                                no
-MG-209  Computer Quiz           School House I          no
-MG-210  Baseball                                        no
-MG-211  Speedway/Tag                                    yes
-MG-212  Spacewar Intercept                              no
-MG-213  Gun Fight/Moon Ship                             yes
 -->
-<softwarelist name="studio2" description="RCA Studio II / Victory MPT-02 cartridges">
-
-	<!-- RCA Studio II -->
+<softwarelist name="studio2" description="RCA Studio II cartridges">
 
 	<software name="spacewar">
 		<description>TV Arcade I: Spacewar</description>
@@ -182,92 +160,6 @@ MG-213  Gun Fight/Moon Ship                             yes
 		<part name="cart" interface="studio2_cart">
 			<dataarea name="rom_400" size="0x400">
 				<rom name="biorhythm.bin" size="0x400" crc="6dcbc525" sha1="9fdab1be5d83aa0ccacf7e9ae2837b2b9e10be1c" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<!-- Victory MPT-02 -->
-
-	<software name="grandpak">
-		<description>Grand Pack</description>
-		<year>1978</year>
-		<publisher>Hanimex</publisher>
-		<info name="serial" value="MG-200" />
-		<info name="usage" value="Works only on the MPT-02" />
-
-		<part name="cart" interface="studio2_cart">
-			<dataarea name="rom_400" size="0x400">
-				<rom name="86677b" size="0x400" crc="82a2d29e" sha1="37e02089d611db10bad070d89c8801de41521189" offset="0" />
-			</dataarea>
-
-			<dataarea name="rom_c00" size="0x400">
-				<rom name="87201" size="0x400" crc="8006a1e3" sha1="b67612d98231485fce55d604915abd19b6d64eac" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="bingo">
-		<description>Bingo</description>
-		<year>1978</year>
-		<publisher>Hanimex</publisher>
-		<info name="serial" value="MG-201" />
-
-		<part name="cart" interface="studio2_cart">
-			<dataarea name="rom_400" size="0x400">
-				<rom name="mg-201-bingo.rom" size="0x400" crc="39ddc4ab" sha1="5e16b9572fda5d8b203df9318b8f1e250bea7432" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="conmatch">
-		<description>Concentration Match</description>
-		<year>1978</year>
-		<publisher>Hanimex</publisher>
-		<info name="serial" value="MG-202" />
-
-		<part name="cart" interface="studio2_cart">
-			<dataarea name="rom_400" size="0x400">
-				<rom name="mg-202-concentration-match.rom" size="0x400" crc="28e21408" sha1="df2b2c7b5ec4c2d33321934ffff29cb41c2b6f68" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="starwars">
-		<description>Star Wars</description>
-		<year>1978</year>
-		<publisher>Hanimex</publisher>
-		<info name="serial" value="MG-203" />
-
-		<part name="cart" interface="studio2_cart">
-			<dataarea name="rom_400" size="0x400">
-				<rom name="mg-203-star-wars.rom" size="0x400" crc="92b55eb4" sha1="63ec52fdf1a5e04ced74560809de550c527ecd38" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pinball">
-		<description>Pinball</description>
-		<year>1978</year>
-		<publisher>Hanimex</publisher>
-		<info name="serial" value="MG-205" />
-
-		<part name="cart" interface="studio2_cart">
-			<dataarea name="rom_400" size="0x400">
-				<rom name="mg-205-pinball.rom" size="0x400" crc="9f7f692e" sha1="6afd1252d72df39482699c1ee76fa28669c7db80" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="speedwaya" cloneof="speedway">
-		<description>Speedway / Tag (MPT-02)</description>
-		<year>1978</year>
-		<publisher>Hanimex</publisher>
-		<info name="serial" value="MG-211" />
-
-		<part name="cart" interface="studio2_cart">
-			<dataarea name="rom_400" size="0x400">
-				<!-- same as speedway, but on a 1KB ROM instead of 512B -->
-				<rom name="mg-211-speedway-tag.rom" size="0x400" crc="b9f6ac68" sha1="4e544fb4105a45e979dd7a007da1540996300f3d" offset="0" />
 			</dataarea>
 		</part>
 	</software>
