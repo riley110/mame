@@ -15,33 +15,6 @@
 	</software>
 
 	<software name="language">
-		<description>Waterloo Language (v1.0)</description>
-		<year>1981</year>
-		<publisher>University of Waterloo</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Language Disk 1"/>
-			<dataarea name="flop" size="174848">
-				<rom name="waterloo-language-1.d64" size="174848" crc="bdafde99" sha1="390bdfd05a3df41e01aa22f4e0e88e693201a69f" offset="0" />
-			</dataarea>
-		</part>
-
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Language Disk 2"/>
-			<dataarea name="flop" size="174848">
-				<rom name="waterloo-language-2.d64" size="174848" crc="cad09315" sha1="7873c7afc983a09dc33163a7f42cc4a1ab7c9112" offset="0" />
-			</dataarea>
-		</part>
-
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Tutorial Disk"/>
-			<dataarea name="flop" size="174848">
-				<rom name="waterloo-tutorial.d64" size="174848" crc="598ec059" sha1="0fe09d80c9469ce8744a42f002fea1a249bcae06" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="language11" cloneof="language">
 		<description>Waterloo Language (v1.1)</description>
 		<year>1981</year>
 		<publisher>University of Waterloo</publisher>
@@ -52,14 +25,12 @@
 				<rom name="waterloo2-language-1.d64" size="174848" crc="76a7323c" sha1="9fe6df6f4ceb90e513709f116dd21bc14a27a89f" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Language Disk 2"/>
 			<dataarea name="flop" size="174848">
 				<rom name="waterloo2-language-2.d64" size="174848" crc="caf417df" sha1="2f2bcc97d1b7bd2be19b6d112e0c0af5225a0514" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="flop3" interface="floppy_5_25">
 			<feature name="part_id" value="Tutorial Disk"/>
 			<dataarea name="flop" size="174848">
@@ -68,7 +39,7 @@
 		</part>
 	</software>
 
-	<software name="language11c" cloneof="language">
+	<software name="languagec" cloneof="language">
 		<description>Waterloo Language (v1.1, 6702 cracked)</description>
 		<year>1981</year>
 		<publisher>University of Waterloo</publisher>
@@ -79,18 +50,41 @@
 				<rom name="waterloo2-language-no6702-1.d64" size="174848" crc="eb076ea0" sha1="eb4330a02a844a47fea9b73e7597a6780e002d52" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Language Disk 2"/>
 			<dataarea name="flop" size="174848">
 				<rom name="waterloo2-language-no6702-2.d64" size="174848" crc="5e49633b" sha1="5f8d774449cf5fbe8a3c354f0bea4d4c0713fda1" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="flop3" interface="floppy_5_25">
 			<feature name="part_id" value="Tutorial Disk"/>
 			<dataarea name="flop" size="174848">
 				<rom name="waterloo2-tutorial.d64" size="174848" crc="cdc2bc2c" sha1="5ebc3ef769e7a0ea0d1ab1b33fa1a5f4612fce3f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="language10" cloneof="language">
+		<description>Waterloo Language (v1.0)</description>
+		<year>1981</year>
+		<publisher>University of Waterloo</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Language Disk 1"/>
+			<dataarea name="flop" size="174848">
+				<rom name="waterloo-language-1.d64" size="174848" crc="bdafde99" sha1="390bdfd05a3df41e01aa22f4e0e88e693201a69f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Language Disk 2"/>
+			<dataarea name="flop" size="174848">
+				<rom name="waterloo-language-2.d64" size="174848" crc="cad09315" sha1="7873c7afc983a09dc33163a7f42cc4a1ab7c9112" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Tutorial Disk"/>
+			<dataarea name="flop" size="174848">
+				<rom name="waterloo-tutorial.d64" size="174848" crc="598ec059" sha1="0fe09d80c9469ce8744a42f002fea1a249bcae06" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -118,21 +112,18 @@
 				<rom name="ospeter1.d80" size="533248" crc="1f05e848" sha1="1656cc3b1e91628d06e8adf7b472798db9f1e203" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="OS Source Paged w/Patches Working (5 Jan 83)"/>
 			<dataarea name="flop" size="533248">
 				<rom name="ospaged1.d80" size="533248" crc="64ae4c58" sha1="9f17beb6e65b9c5db018d9142bbbda3557551346" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="flop3" interface="floppy_5_25">
 			<feature name="part_id" value="OS Source I/O Breakups #D000 Range (2 Jan 83)"/>
 			<dataarea name="flop" size="533248">
 				<rom name="osiobreakup.d80" size="533248" crc="e17c704b" sha1="bae13621b844fa53bb0f51cc7ffb69891ec1e825" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="flop4" interface="floppy_5_25">
 			<feature name="part_id" value="Stuff from Dick"/>
 			<dataarea name="flop" size="533248">
@@ -152,7 +143,6 @@
 				<rom name="apldisasm.d80" size="533248" crc="73942042" sha1="29b24f6cf119f687e280e36be9e443027c51ed5c" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="Bank 2 &amp; Bank 8 Brad Bjorndahl (16 Jul 85)"/>
 			<dataarea name="flop" size="533248">
