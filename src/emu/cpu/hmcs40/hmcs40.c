@@ -315,7 +315,7 @@ void hmcs40_cpu_device::device_reset()
 UINT8 hmcs40_cpu_device::read_r(int index)
 {
 	index &= 7;
-	UINT8 inp = 0xf;
+	UINT8 inp = 0;
 	
 	switch (index)
 	{
@@ -459,6 +459,7 @@ void hmcs40_cpu_device::do_interrupt()
 {
 	m_icount--;
 	push_stack();
+	m_ie = 0;
 	
 	// line 0/1 for external interrupt, let's use 2 for t/c interrupt
 	int line = (m_iri) ? m_eint_line : 2;
@@ -466,8 +467,10 @@ void hmcs40_cpu_device::do_interrupt()
 	// vector $3f, on page 0(timer/counter), or page 1(external)
 	// external interrupt has priority over t/c interrupt
 	m_pc = 0x3f | (m_iri ? 0x40 : 0);
-	m_iri = m_irt = 0;
-	m_ie = 0;
+	if (m_iri)
+		m_iri = 0;
+	else
+		m_irt = 0;
 
 	standard_irq_callback(line);
 }
@@ -554,10 +557,15 @@ void hmcs40_cpu_device::execute_run()
 		
 		// LPU is handled 1 cycle later
 		if ((m_prev_op & 0x3e0) == 0x340)
-			m_pc = ((m_page << 6) | (m_pc & 0x3f)) & m_pcmask;
+		{
+			if ((m_op & 0x1c0) != 0x1c0)
+				logerror("%s LPU without BR/CAL at $%04X\n", tag(), m_prev_pc);
 
-		// check/handle interrupt
-		else if (m_ie && (m_iri || m_irt))
+			m_pc = ((m_page << 6) | (m_pc & 0x3f)) & m_pcmask;
+		}
+
+		// check/handle interrupt, but not in the middle of a long jump
+		if (m_ie && (m_iri || m_irt) && (m_op & 0x3e0) != 0x340)
 			do_interrupt();
 
 		// remember previous state
@@ -567,106 +575,65 @@ void hmcs40_cpu_device::execute_run()
 		// fetch next opcode
 		debugger_instruction_hook(this, m_pc);
 		m_op = m_program->read_word(m_pc << 1) & 0x3ff;
-		m_i = BITSWAP8(m_op,7,6,5,4,0,1,2,3) & 0xf; // reversed bit-order for immediate param
+		m_i = BITSWAP8(m_op,7,6,5,4,0,1,2,3) & 0xf; // reversed bit-order for 4-bit immediate param (except for XAMR, REDD, SEDD)
 		increment_pc();
-
-/*
-
-op_ayy();  - 
-op_syy();  - 
-op_am();   - 34 234 4c
-op_sm()???:- 234
-op_daa();  - 46
-op_das();  - 45
-op_nega(); - 
-op_anem(); - 324 124
-op_bnem(); - 267 024
-op_alem(); - 324 124
-op_blem(); - 267 024
-op_lay();  - 118
-
-*/
 
 		// handle opcode
 		switch (m_op)
 		{
-			case 0x118:
-				op_lay(); // probably lay
-				break;
-			case 0x267:
-				op_blem(); break; // bnem or blem
-			case 0x124:
-				op_alem(); // alem or anem
-				break;
-			case 0x324:
-				op_anem(); break; // "
-			case 0x024:
-				//op_nega();
-				//op_am();
-				op_illegal();
-				break;
-			case 0x234:
-				// sm?
-#if 0
-				m_a = ram_r() - m_a;
-				m_s = ~m_a >> 4 & 1;
-				m_a &= 0xf;
-#else
-				op_am();
-#endif
-				break;
-			case 0x04c:
-				op_illegal();
-				//m_c ^= 1;
-				//op_lat();
-				break;
-
-
-
-
 			/* 0x000 */
 			
 			case 0x000: case 0x001: case 0x002: case 0x003:
-/* ok */		op_xsp(); break;
+				op_xsp(); break;
 			case 0x004: case 0x005: case 0x006: case 0x007:
 				op_sem(); break;
 			case 0x008: case 0x009: case 0x00a: case 0x00b:
-/* ok */		op_lam(); break;
+				op_lam(); break;
 			case 0x010: case 0x011: case 0x012: case 0x013: case 0x014: case 0x015: case 0x016: case 0x017:
 			case 0x018: case 0x019: case 0x01a: case 0x01b: case 0x01c: case 0x01d: case 0x01e: case 0x01f:
-/* ok */		op_lmiiy(); break;
+				op_lmiiy(); break;
 			case 0x020: case 0x021: case 0x022: case 0x023:
 				op_lbm(); break;
+			case 0x024:
+				op_blem(); break;
 			case 0x030:
 				op_amc(); break;
+			case 0x034:
+				op_am(); break;
 			case 0x03c:
 				op_lta(); break;
 			
 			case 0x040:
-/* ok */		op_lxa(); break;
-			case 0x04b:
+				op_lxa(); break;
+			case 0x045:
+				op_das(); break;
+			case 0x046:
+				op_daa(); break;
+			case 0x04c:
 				op_rec(); break;
 			case 0x04f:
 				op_sec(); break;
 			case 0x050:
 				op_lya(); break;
 			case 0x054:
-/* ok */		op_iy(); break;
+				op_iy(); break;
+			case 0x058:
+				op_ayy(); break;
 			case 0x060:
 				op_lba(); break;
 			case 0x064:
 				op_ib(); break;
 			case 0x070: case 0x071: case 0x072: case 0x073: case 0x074: case 0x075: case 0x076: case 0x077:
 			case 0x078: case 0x079: case 0x07a: case 0x07b: case 0x07c: case 0x07d: case 0x07e: case 0x07f:
-/* ok */		op_lai(); break;
+				op_lai(); break;
 			
 			case 0x080: case 0x081: case 0x082: case 0x083: case 0x084: case 0x085: case 0x086: case 0x087:
 			case 0x088: case 0x089: case 0x08a: case 0x08b: case 0x08c: case 0x08d: case 0x08e: case 0x08f:
-/* ok */		op_ai(); break;
+				op_ai(); break;
 			case 0x090:
-/* ok */		op_sed(); break;
+				op_sed(); break;
 			case 0x094:
-/* ok */		op_td(); break;
+				op_td(); break;
 			case 0x0a0:
 				op_seif1(); break;
 			case 0x0a1:
@@ -674,7 +641,7 @@ op_lay();  - 118
 			case 0x0a2:
 				op_seif0(); break;
 			case 0x0a4:
-/* ok */		op_seie(); break;
+				op_seie(); break;
 			case 0x0a5:
 				op_setf(); break;
 
@@ -687,30 +654,34 @@ op_lay();  - 118
 				op_lbr(); break;
 			case 0x0f0: case 0x0f1: case 0x0f2: case 0x0f3: case 0x0f4: case 0x0f5: case 0x0f6: case 0x0f7:
 			case 0x0f8: case 0x0f9: case 0x0fa: case 0x0fb: case 0x0fc: case 0x0fd: case 0x0fe: case 0x0ff:
-/* ok */		op_xamr(); break;
+				op_xamr(); break;
 			
 			
 			/* 0x100 */
 			
-/* ok */	case 0x110: case 0x111:
+			case 0x110: case 0x111:
 				op_lmaiy(); break;
-/* ok */	case 0x114: case 0x115:
+			case 0x114: case 0x115:
 				op_lmady(); break;
+			case 0x118:
+				op_lay(); break;
 			case 0x120:
 				op_or(); break;
+			case 0x124:
+				op_anem(); break;
 
 			case 0x140: case 0x141: case 0x142: case 0x143: case 0x144: case 0x145: case 0x146: case 0x147:
 			case 0x148: case 0x149: case 0x14a: case 0x14b: case 0x14c: case 0x14d: case 0x14e: case 0x14f:
-/* ok */		op_lxi(); break;
+				op_lxi(); break;
 			case 0x150: case 0x151: case 0x152: case 0x153: case 0x154: case 0x155: case 0x156: case 0x157:
 			case 0x158: case 0x159: case 0x15a: case 0x15b: case 0x15c: case 0x15d: case 0x15e: case 0x15f:
-/* ok */		op_lyi(); break;
+				op_lyi(); break;
 			case 0x160: case 0x161: case 0x162: case 0x163: case 0x164: case 0x165: case 0x166: case 0x167:
 			case 0x168: case 0x169: case 0x16a: case 0x16b: case 0x16c: case 0x16d: case 0x16e: case 0x16f:
-/* ok */		op_lbi(); break;
+				op_lbi(); break;
 			case 0x170: case 0x171: case 0x172: case 0x173: case 0x174: case 0x175: case 0x176: case 0x177:
 			case 0x178: case 0x179: case 0x17a: case 0x17b: case 0x17c: case 0x17d: case 0x17e: case 0x17f:
-/* ok */		op_lti(); break;
+				op_lti(); break;
 			
 			case 0x1a0:
 				op_tif1(); break;
@@ -731,7 +702,7 @@ op_lay();  - 118
 			case 0x1e8: case 0x1e9: case 0x1ea: case 0x1eb: case 0x1ec: case 0x1ed: case 0x1ee: case 0x1ef:
 			case 0x1f0: case 0x1f1: case 0x1f2: case 0x1f3: case 0x1f4: case 0x1f5: case 0x1f6: case 0x1f7:
 			case 0x1f8: case 0x1f9: case 0x1fa: case 0x1fb: case 0x1fc: case 0x1fd: case 0x1fe: case 0x1ff:
-/* ok */		op_br(); break;
+				op_br(); break;
 
 
 			/* 0x200 */
@@ -741,42 +712,48 @@ op_lay();  - 118
 			case 0x204: case 0x205: case 0x206: case 0x207:
 				op_rem(); break;
 			case 0x208: case 0x209: case 0x20a: case 0x20b:
-/* ok */		op_xma(); break;
+				op_xma(); break;
 			case 0x210: case 0x211: case 0x212: case 0x213: case 0x214: case 0x215: case 0x216: case 0x217:
 			case 0x218: case 0x219: case 0x21a: case 0x21b: case 0x21c: case 0x21d: case 0x21e: case 0x21f:
 				op_mnei(); break;
 			case 0x220: case 0x221: case 0x222: case 0x223:
-/* ok */		op_xmb(); break;
+				op_xmb(); break;
 			case 0x224:
-/* ok */		op_rotr(); break;
+				op_rotr(); break;
 			case 0x225:
-/* ok */		op_rotl(); break;
+				op_rotl(); break;
 			case 0x230:
 				op_smc(); break;
+			case 0x234:
+				op_alem(); break;
 			case 0x23c:
 				op_lat(); break;
 			
 			case 0x240:
-/* ok */		op_laspx(); break;
+				op_laspx(); break;
+			case 0x244:
+				op_nega(); break;
 			case 0x24f:
 				op_tc(); break;
 			case 0x250:
-/* ok */		op_laspy(); break;
+				op_laspy(); break;
 			case 0x254:
 				op_dy(); break;
+			case 0x258:
+				op_syy(); break;
 			case 0x260:
-/* ok */		op_lab(); break;
-			case 0x264:
+				op_lab(); break;
+			case 0x267:
 				op_db(); break;
 			case 0x270: case 0x271: case 0x272: case 0x273: case 0x274: case 0x275: case 0x276: case 0x277:
 			case 0x278: case 0x279: case 0x27a: case 0x27b: case 0x27c: case 0x27d: case 0x27e: case 0x27f:
-/* ok */		op_alei(); break;
+				op_alei(); break;
 
 			case 0x280: case 0x281: case 0x282: case 0x283: case 0x284: case 0x285: case 0x286: case 0x287:
 			case 0x288: case 0x289: case 0x28a: case 0x28b: case 0x28c: case 0x28d: case 0x28e: case 0x28f:
-/* ok */		op_ynei(); break;
+				op_ynei(); break;
 			case 0x290:
-/* ok */		op_red(); break;
+				op_red(); break;
 			case 0x2a0:
 				op_reif1(); break;
 			case 0x2a1:
@@ -786,10 +763,10 @@ op_lay();  - 118
 			case 0x2a4:
 				op_reie(); break;
 			case 0x2a5:
-/* ok */		op_retf(); break;
+				op_retf(); break;
 
 			case 0x2c0: case 0x2c1: case 0x2c2: case 0x2c3: case 0x2c4: case 0x2c5: case 0x2c6: case 0x2c7:
-/* ok */		op_lra(); break;
+				op_lra(); break;
 			case 0x2d0: case 0x2d1: case 0x2d2: case 0x2d3: case 0x2d4: case 0x2d5: case 0x2d6: case 0x2d7:
 			case 0x2d8: case 0x2d9: case 0x2da: case 0x2db: case 0x2dc: case 0x2dd: case 0x2de: case 0x2df:
 				op_redd(); break;
@@ -800,21 +777,23 @@ op_lay();  - 118
 			/* 0x300 */
 			case 0x320:
 				op_comb(); break;
+			case 0x324:
+				op_bnem(); break;
 
 			case 0x340: case 0x341: case 0x342: case 0x343: case 0x344: case 0x345: case 0x346: case 0x347:
 			case 0x348: case 0x349: case 0x34a: case 0x34b: case 0x34c: case 0x34d: case 0x34e: case 0x34f:
 			case 0x350: case 0x351: case 0x352: case 0x353: case 0x354: case 0x355: case 0x356: case 0x357:
 			case 0x358: case 0x359: case 0x35a: case 0x35b: case 0x35c: case 0x35d: case 0x35e: case 0x35f:
-/* ok */		op_lpu(); break;
+				op_lpu(); break;
 			case 0x360: case 0x361: case 0x362: case 0x363: case 0x364: case 0x365: case 0x366: case 0x367:
 				op_tbr(); break;
 			case 0x368: case 0x369: case 0x36a: case 0x36b: case 0x36c: case 0x36d: case 0x36e: case 0x36f:
-/* ok */		op_p(); break;
+				op_p(); break;
 
 			case 0x3a4:
-/* ok */		op_rtni(); break;
+				op_rtni(); break;
 			case 0x3a7:
-/* ok */		op_rtn(); break;
+				op_rtn(); break;
 
 			case 0x3c0: case 0x3c1: case 0x3c2: case 0x3c3: case 0x3c4: case 0x3c5: case 0x3c6: case 0x3c7:
 			case 0x3c8: case 0x3c9: case 0x3ca: case 0x3cb: case 0x3cc: case 0x3cd: case 0x3ce: case 0x3cf:
@@ -824,7 +803,7 @@ op_lay();  - 118
 			case 0x3e8: case 0x3e9: case 0x3ea: case 0x3eb: case 0x3ec: case 0x3ed: case 0x3ee: case 0x3ef:
 			case 0x3f0: case 0x3f1: case 0x3f2: case 0x3f3: case 0x3f4: case 0x3f5: case 0x3f6: case 0x3f7:
 			case 0x3f8: case 0x3f9: case 0x3fa: case 0x3fb: case 0x3fc: case 0x3fd: case 0x3fe: case 0x3ff:
-/* ok */		op_cal(); break;
+				op_cal(); break;
 			
 			
 			default:
