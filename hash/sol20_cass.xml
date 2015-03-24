@@ -20,8 +20,8 @@ Proteus Cassette Software
 Contents of Proteus software collections at http://www.sol20.org/manuals/proteus_cass_library.txt
 C7 User Manual at http://www.sol20.org/manuals/proteus_c7.pdf
 -->
-	<software name="prtsclib" supported="no">
-		<description>Proteus Cassette Software Library</description>
+	<software name="proteus1" supported="no">
+		<description>Proteus Cassette #1 - Extended Cassette BASIC</description>
 		<year>1979</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -30,22 +30,50 @@ C7 User Manual at http://www.sol20.org/manuals/proteus_c7.pdf
 				<rom name="proteus_1.svt" size="77646" crc="f40fd39a" sha1="fe0b70607dd556ba8dc5ffca7d087b68778cdbcf" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="sol20_cass">
+	</software>
+
+	<software name="proteus2" supported="no">
+		<description>Proteus Cassette #2 - Extended Cassette BASIC</description>
+		<year>1979</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="95354">
 				<rom name="proteus_2.svt" size="95354" crc="2b480f7b" sha1="06376865d8a0ce671c4a647c39f4ad2c4cef952d" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="sol20_cass">
+	</software>
+
+	<software name="proteus3" supported="no">
+		<description>Proteus Cassette #3 - Extended Cassette BASIC</description>
+		<year>1979</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="57116">
 				<rom name="proteus_3.svt" size="57116" crc="b2ee57f0" sha1="561f205f37affbaeba6ef7060f36044f268bf133" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass4" interface="sol20_cass">
+	</software>
+
+	<software name="proteus7" supported="no">
+		<description>Proteus Cassette #7 - Assembly language source and object</description>
+		<year>1979</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="178406">
 				<rom name="proteus_7.svt" size="178406" crc="da305795" sha1="e9ce5023d288f52c303beb480e2a63531661ff90" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass5" interface="sol20_cass">
+	</software>
+
+	<software name="proteus8" supported="no">
+		<description>Proteus Cassette #8 - More Extended Cassette BASIC programs</description>
+		<year>1979</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="79094">
 				<rom name="proteus_8.svt" size="79094" crc="d338d05a" sha1="8264f731acc676243e54d149d29b6cb13e691fa1" offset="0" />
 			</dataarea>
@@ -125,8 +153,6 @@ Owner's Manual at http://primepuzzle.com/tc/tiny_c_docs_8080_PDP11.zip
 		</part>
 	</software>
 
-
-
 <!--
 These programs were downloaded as ASCII text format files (.bs5, .ecb, .ent) and using MESS emu text paste option recreated into .wav tape files.
 NOTE: ALL RECREATED FILES HAVE BEEN TESTED TO WORK FINE WITH MESS EMULATOR ... THE COMPATIBILITY WITH A REAL SOL-20 SYSTEM IS UNKNOWN/UNTESTED!
@@ -203,7 +229,14 @@ User Manual at http://www.sol20.org/manuals/basic5.pdf
 				<rom name="basic5_orig.wav" size="9203116" crc="40c272f8" sha1="69e26f90b6baa5dcf807dbf817105902ec3b2533" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="sol20_cass">
+	</software>
+
+	<software name="basic548" cloneof="basic5">
+		<description>Sol BASIC/5 (fixed for 48K systems)</description>
+		<year>1977</year>
+		<publisher>Processor Technology Corporation</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="5735114">
 				<rom name="basic5_48k.wav" size="5735114" crc="c7ad6c9a" sha1="c6cce3565efa5d0ff6ff7af5e3a3f6bab228756d" offset="0" />
 			</dataarea>
@@ -314,7 +347,14 @@ User Manual at http://www.sol20.org/manuals/extcassbasic.pdf
 				<rom name="extbasic_orig.wav" size="13985418" crc="a7210025" sha1="cd8a115f8b8ce0af857d3bdb9bb9a6404a32531f" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="sol20_cass">
+	</software>
+
+	<software name="extbasica" cloneof="extbasic">
+		<description>Extended Cassette BASIC; P/N 727019 (Bugfix)</description>
+		<year>1977</year>
+		<publisher>Processor Technology Corporation</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="13987042">
 				<rom name="extbasic_patched.wav" size="13987042" crc="2c091090" sha1="4f5ccec14b251f04a9ed4f05ac20cf796fde22f8" offset="0" />
 			</dataarea>
@@ -628,8 +668,8 @@ In SOLOS monitor "XEQ name" to load/autorun or "GET name" and then "EXEC 0".
 
 Note: If in some of games a screen starts blinking, then in MESS select in "Deep Swithches" Cursor Type "Solid"!
 -->
-	<software name="various1">
-		<description>Various games written by Ray White</description>
+	<software name="deathmaz">
+		<description>Deathmaze</description>
 		<year>19??</year>
 		<publisher>Ray White</publisher>
 
@@ -638,42 +678,98 @@ Note: If in some of games a screen starts blinking, then in MESS select in "Deep
 				<rom name="deathmaze.wav" size="22839364" crc="7e6b1de5" sha1="40a12a0c6877017ab3871b6111b11a8d60ac43c5" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="sol20_cass">
+	</software>
+
+	<software name="feudal">
+		<description>Feudal</description>
+		<year>19??</year>
+		<publisher>Ray White</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="5993024">
 				<rom name="feudal.wav" size="5993024" crc="0dfd68da" sha1="b1f6c06dac2524e0f55154d82a64cc5663969189" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="sol20_cass">
+	</software>
+
+	<software name="gobble">
+		<description>Gobble</description>
+		<year>19??</year>
+		<publisher>Ray White</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="1837334">
 				<rom name="gobble.wav" size="1837334" crc="bce45a7b" sha1="2345f874e13042d6f6cb7a357ac18a49217b56b3" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass4" interface="sol20_cass">
+	</software>
+
+	<software name="pacman">
+		<description>Pacman</description>
+		<year>19??</year>
+		<publisher>Ray White</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="3097786">
 				<rom name="pacman.wav" size="3097786" crc="e3a7a2fa" sha1="9b101df9e2cf90ef28cc440e7d4ab4fcf520af9a" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass5" interface="sol20_cass">
+	</software>
+
+	<software name="reversi">
+		<description>Reversi</description>
+		<year>19??</year>
+		<publisher>Ray White</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="3264338">
 				<rom name="reversi.wav" size="3264338" crc="860ed4eb" sha1="2171dc8c0ee9106dfe5f903e037661455aa56f82" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass6" interface="sol20_cass">
+	</software>
+
+	<software name="robot">
+		<description>Robot</description>
+		<year>19??</year>
+		<publisher>Ray White</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="16010788">
 				<rom name="robot.wav" size="16010788" crc="49d7ae4d" sha1="c0ea68df70bcee9c06d36f3d34b8d1427cfc1a43" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass7" interface="sol20_cass">
+	</software>
+
+	<software name="skulcave">
+		<description>Skullcave</description>
+		<year>19??</year>
+		<publisher>Ray White</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="14070748">
 				<rom name="skullcave.wav" size="14070748" crc="05f5b866" sha1="32f943e8e411d4f5efdddf34809f31e18d64a097" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass8" interface="sol20_cass">
+	</software>
+
+	<software name="stomp">
+		<description>Stomp</description>
+		<year>19??</year>
+		<publisher>Ray White</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="2083118">
 				<rom name="stomp.wav" size="2083118" crc="cb9a7cc0" sha1="d7c425ab328f17be875ed9e913b901799d3bb6a1" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass9" interface="sol20_cass">
+	</software>
+
+	<software name="tictacto">
+		<description>Tic Tac Toe</description>
+		<year>19??</year>
+		<publisher>Ray White</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="1769420">
 				<rom name="tic_tac_toe.wav" size="1769420" crc="f7a06473" sha1="1502402948eaa0643fca77258922dc105764b4f2" offset="0" />
 			</dataarea>
@@ -710,8 +806,8 @@ Note for #5: Moves are entered using decimal coordinates, using this grid:
 
 A typical opening move might be entered as 64-44.
 -->
-	<software name="various2">
-		<description>Standalone software of various origins</description>
+	<software name="batlship" cloneof="proteus7">
+		<description>Battleship (from Proteus Cassette #7)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -720,42 +816,98 @@ A typical opening move might be entered as 64-44.
 				<rom name="battleship.wav" size="3952370" crc="691fe9fb" sha1="e16eeb4adee1e4d5a27bd113e14c89d928e32a50" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="sol20_cass">
+	</software>
+
+	<software name="chase">
+		<description>Chase</description>
+		<year>19??</year>
+		<publisher>Dr. Dobbs</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="1618232">
 				<rom name="chase.wav" size="1618232" crc="428a016c" sha1="d13830b5b6d0398343ff1db4d82eda0b06cb80c9" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="sol20_cass">
+	</software>
+
+	<software name="tcdchkr">
+		<description>TCD Checkers</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="8549502">
 				<rom name="chkr2.wav" size="8549502" crc="74840765" sha1="82d6535d4973b57c5663272d9092f959433f4b1f" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass4" interface="sol20_cass">
+	</software>
+
+	<software name="deflect">
+		<description>The Game of Deflection</description>
+		<year>19??</year>
+		<publisher>Andrew A. Recupero</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="926156">
 				<rom name="deflect.wav" size="926156" crc="01de1b7e" sha1="86cc9f4cbdc02391b2b5d528a3b059adb6a29f45" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass5" interface="sol20_cass">
+	</software>
+
+	<software name="mchess">
+		<description>Microchess</description>
+		<year>19??</year>
+		<publisher>Peter Jennings</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="3717098">
 				<rom name="microchess.wav" size="3717098" crc="4812c7a1" sha1="75f486742f5eb38b8a3d60f3b0e53bf390623370" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass6" interface="sol20_cass">
+	</software>
+
+	<software name="minfield">
+		<description>Mine Field</description>
+		<year>19??</year>
+		<publisher>Carl E. Dawson</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="4671448">
 				<rom name="minefield.wav" size="4671448" crc="5a763441" sha1="43a806759dc123a14c35fd067b1e6cd87583665b" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass7" interface="sol20_cass">
+	</software>
+
+	<software name="piranha">
+		<description>Piranha</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="2151032">
 				<rom name="piranha.wav" size="2151032" crc="bddaf8d8" sha1="490ebaa76ca51bc5e453dce14e1467c6e5c790a7" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass8" interface="sol20_cass">
+	</software>
+
+	<software name="sraiders">
+		<description>Space Raiders</description>
+		<year>19??</year>
+		<publisher>Steve Maguire</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="3954796">
 				<rom name="raiders.wav" size="3954796" crc="b3354e6d" sha1="95b2cfbe37d2aab743a417a56cddf338edc902cb" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass9" interface="sol20_cass">
+	</software>
+
+	<software name="target">
+		<description>Target</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="577692">
 				<rom name="target.wav" size="577692" crc="7be287fa" sha1="f5868f21b1045620c3d1d34b8da43a6a545d7d7c" offset="0" />
 			</dataarea>
@@ -775,8 +927,8 @@ Note for #3: Don't forget to SET S=80 from the monitor before playing the game, 
 
 More infos http://www.sol20.org/articles/access_v1n4.pdf
 -->
-	<software name="acs_v1n4">
-		<description>Access newsletter, Volume 1, issue #4</description>
+	<software name="galaxy">
+		<description>Galaxy (from Access newsletter Volume 1 issue #4)</description>
 		<year>1977</year>
 		<publisher>Processor Technology Corporation</publisher>
 
@@ -785,12 +937,26 @@ More infos http://www.sol20.org/articles/access_v1n4.pdf
 				<rom name="galaxy.wav" size="2151032" crc="d910ab91" sha1="85d8e4e80e83eba3679442a36b61983f0559084c" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="sol20_cass">
+	</software>
+
+	<software name="train">
+		<description>Train (from Access newsletter Volume 1 issue #4)</description>
+		<year>1977</year>
+		<publisher>Processor Technology Corporation</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="918070">
 				<rom name="train.wav" size="918070" crc="29512879" sha1="fa11f5efa5e211a238197affacc862fd61e5ff26" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="sol20_cass">
+	</software>
+
+	<software name="winzi">
+		<description>Winzi (from Access newsletter Volume 1 issue #4)</description>
+		<year>1977</year>
+		<publisher>Processor Technology Corporation</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="769306">
 				<rom name="winzi.wav" size="769306" crc="77c656ad" sha1="9168be4ec9f1a1582244a556c8d0bf5ce6df3db9" offset="0" />
 			</dataarea>
@@ -819,8 +985,8 @@ Note that BASIC/5 assumes your computer has 8KB of memory. If you need to work w
 you must give a command "SET M=49000" (or whateer you want the top of memory to be) before running the program.
 Note if you using basic5_48K.wav instead od basic5_orig.wav, there is no need for this.
 -->
-	<software name="bs5_coll">
-		<description>Collection of selected BASIC/5 programs</description>
+	<software name="bomb">
+		<description>Bomb</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -829,42 +995,98 @@ Note if you using basic5_48K.wav instead od basic5_orig.wav, there is no need fo
 				<rom name="bomb_bs5.wav" size="4447494" crc="2edc62a2" sha1="7b20a6d682fefe6a34cc831b49b6e6fc3b702ee1" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="sol20_cass">
+	</software>
+
+	<software name="bombrun">
+		<description>Bombrun</description>
+		<year>1978</year>
+		<publisher>Jim Prelesnik</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="6522912">
 				<rom name="bomrn_bs5.wav" size="6522912" crc="3929f398" sha1="fa069a8b737c3802ffe4aca56fd36fb11f9013a4" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="sol20_cass">
+	</software>
+
+	<software name="afrkorps">
+		<description>Afrika Korps</description>
+		<year>19??</year>
+		<publisher>Ralph Hopkins</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="15889874">
 				<rom name="korps.bs5.wav" size="15889874" crc="45b6365c" sha1="5c8b89578d634514f517f3304b0efb566f7f5dba" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass4" interface="sol20_cass">
+	</software>
+
+	<software name="panzer">
+		<description>Panzer</description>
+		<year>197?</year>
+		<publisher>Ralph Hopkins</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="15632770">
 				<rom name="panzr.bs5.wav" size="15632770" crc="cf788eef" sha1="42aad567ca6a52e1ed16d1f95914e71abc9a6593" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass5" interface="sol20_cass">
+	</software>
+
+	<software name="starwar">
+		<description>Starwar</description>
+		<year>1978</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="8732222">
 				<rom name="strwr.bs5.wav" size="8732222" crc="ca4ccc3d" sha1="243be8c18963a99cf0e091dac7d64cf03d665839" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass6" interface="sol20_cass">
+	</software>
+
+	<software name="startrek">
+		<description>StarTrek</description>
+		<year>197?</year>
+		<publisher>Ralph Hopkins</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="10130928">
 				<rom name="sttr.bs5.wav" size="10130928" crc="049d7f99" sha1="a9e4402af4d610a631d41411d92fb9904542c02d" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass7" interface="sol20_cass">
+	</software>
+
+	<software name="seawolf">
+		<description>SeaWolf</description>
+		<year>1979</year>
+		<publisher>Ralph Hopkins</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="15591536">
 				<rom name="swolf_bs5.wav" size="15591536" crc="041c5adb" sha1="a5054d9c57f068ff974bc61627cd659af32eb0e2" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass8" interface="sol20_cass">
+	</software>
+
+	<software name="tanks">
+		<description>Tanks</description>
+		<year>197?</year>
+		<publisher>Ralph Hopkins</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="15866426">
 				<rom name="tanks_bs5.wav" size="15866426" crc="00756473" sha1="07958d3cf3140eb275d33f0e43eb31956758c1d4" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass9" interface="sol20_cass">
+	</software>
+
+	<software name="tankz">
+		<description>Tankz</description>
+		<year>197?</year>
+		<publisher>Ralph Hopkins</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="15738684">
 				<rom name="tankz.bs5.wav" size="15738684" crc="0ffbfc6b" sha1="8096dff612d5d312168a30015575cd6aa2aff5fc" offset="0" />
 			</dataarea>
@@ -885,32 +1107,60 @@ How to load EC BASIC programs:
 2)run the EC BASIC with command "XEQ BASIC/2"
 3)in EC BASIC load the program with command "GET prgname" and then "RUN"
 -->
-	<software name="ecb_coll">
-		<description>Collection of selected ECB programs</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+	<software name="boule">
+		<description>Boule</description>
+		<year>1978</year>
+		<publisher>Ralph Hopkins</publisher>
 
 		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="9266646">
 				<rom name="boule.ecb.wav" size="9266646" crc="027d6b84" sha1="7a23430c25e82f62e857bbf6d56de6c771c2ae6a" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="sol20_cass">
+	</software>
+
+	<software name="tisland">
+		<description>Treasure Island</description>
+		<year>19??</year>
+		<publisher>Ralph Hopkins</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="17041990">
 				<rom name="iland.ecb.wav" size="17041990" crc="516e415f" sha1="7cb30b363a66b71709f61075657141b1e82d6f9e" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="sol20_cass">
+	</software>
+
+	<software name="6number">
+		<description>6 Number Games</description>
+		<year>1978</year>
+		<publisher>Ralph Hopkins</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="9980552">
 				<rom name="numbr.ecb.wav" size="9980552" crc="fb696a8e" sha1="2636dc0a25123089a8ff6a29c4cae5fedb340724" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass4" interface="sol20_cass">
+	</software>
+
+	<software name="dotsplus">
+		<description>Dots and Pluses</description>
+		<year>1978</year>
+		<publisher>Ralph Hopkins</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="12495794">
 				<rom name="plus.ecb.wav" size="12495794" crc="11a45f67" sha1="aa37eb1b344e70d6c93bdb9a4203787ca3acc5c3" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass5" interface="sol20_cass">
+	</software>
+
+	<software name="rolet">
+		<description>Rolet</description>
+		<year>1978</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="sol20_cass">
 			<dataarea name="cass" size="10569140">
 				<rom name="rolet.ecb.wav" size="10569140" crc="e4880a81" sha1="3432bf1acbd8b05a96071d18cad99470774a2889" offset="0" />
 			</dataarea>
