@@ -5,7 +5,7 @@
   This driver is a collection of simple dedicated handheld and tabletop
   toys based around the TMS1000 MCU series. Anything more complex or clearly
   part of a series is (or will be) in its own driver.
-  
+
   Let's use this driver for a list of known devices and their serials,
   excluding TI's own products (see for example ticalc1x.c, tispeak.c)
 
@@ -24,6 +24,7 @@
  *MP2139   ?        1982, Gakken Galaxy Invader 1000
  *MP2788   ?        1980, Bandai Flight Time
  @MP3226   TMS1000  1978, Milton Bradley Simon
+ *MP3301   TMS1000  1979, Milton Bradley Bigtrak
  *MP3320A  TMS1000  1979, Coleco Head to Head Basketball
   MP3403   TMS1100  1978, Marx Electronic Bowling -> elecbowl.c
  @MP3404   TMS1100  1978, Parker Brothers Merlin
@@ -48,11 +49,11 @@
  *MP7303   TMS1400? 19??, Tiger 7-in-1 Sports Stadium
  @MP7313   TMS1400  1980, Parker Brothers Bank Shot
  @MP7314   TMS1400  1980, Parker Brothers Split Second
- @MP7332   TMS1400  1981, Milton Bradley Dark Tower
+  MP7332   TMS1400  1981, Milton Bradley Dark Tower -> mbdtower.c
  @MP7334   TMS1400  1981, Coleco Total Control 4
 
   inconsistent:
-  
+
  @CD7282SL TMS1100  1981, Tandy/RadioShack Tandy-12 (serial is similar to TI Speak & Spell series?)
 
   (* denotes not yet emulated by MESS, @ denotes it's in this driver)
@@ -70,9 +71,7 @@
 
 ***************************************************************************/
 
-#include "emu.h"
-#include "cpu/tms0980/tms0980.h"
-#include "sound/speaker.h"
+#include "includes/hh_tms1k.h"
 
 // internal artwork
 #include "amaztron.lh"
@@ -84,7 +83,6 @@
 #include "elecdet.lh"
 #include "comp4.lh"
 #include "mathmagi.lh"
-#include "mbdtower.lh"
 #include "merlin.lh" // clickable
 #include "simon.lh" // clickable
 #include "ssimon.lh"
@@ -93,137 +91,6 @@
 #include "stopthie.lh"
 #include "tandy12.lh" // clickable
 #include "tc4.lh"
-
-
-class hh_tms1k_state : public driver_device
-{
-public:
-	hh_tms1k_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
-		m_maincpu(*this, "maincpu"),
-		m_inp_matrix(*this, "IN"),
-		m_speaker(*this, "speaker"),
-		m_display_wait(33),
-		m_display_maxy(1),
-		m_display_maxx(0)
-	{ }
-
-	// devices
-	required_device<cpu_device> m_maincpu;
-	optional_ioport_array<7> m_inp_matrix; // max 7
-	optional_device<speaker_sound_device> m_speaker;
-	
-	// misc common
-	UINT16 m_r;                         // MCU R-pins data
-	UINT16 m_o;                         // MCU O-pins data
-	UINT16 m_inp_mux;                   // multiplexed inputs mask
-	bool m_power_on;
-
-	UINT8 read_inputs(int columns);
-	DECLARE_INPUT_CHANGED_MEMBER(power_button);
-	DECLARE_WRITE_LINE_MEMBER(auto_power_off);
-
-	virtual void machine_start();
-	virtual void machine_reset();
-
-	// display common
-	int m_display_wait;                 // led/lamp off-delay in microseconds (default 33ms)
-	int m_display_maxy;                 // display matrix number of rows
-	int m_display_maxx;                 // display matrix number of columns
-	
-	UINT32 m_display_state[0x20];	    // display matrix rows data
-	UINT16 m_display_segmask[0x20];     // if not 0, display matrix row is a digit, mask indicates connected segments
-	UINT32 m_display_cache[0x20];       // (internal use)
-	UINT8 m_display_decay[0x20][0x20];  // (internal use)
-
-	TIMER_DEVICE_CALLBACK_MEMBER(display_decay_tick);
-	void display_update();
-	void display_matrix(int maxx, int maxy, UINT32 setx, UINT32 sety);
-	
-	// game-specific handlers
-	void mathmagi_display();
-	DECLARE_WRITE16_MEMBER(mathmagi_write_r);
-	DECLARE_WRITE16_MEMBER(mathmagi_write_o);
-	DECLARE_READ8_MEMBER(mathmagi_read_k);
-
-	void amaztron_display();
-	DECLARE_WRITE16_MEMBER(amaztron_write_r);
-	DECLARE_WRITE16_MEMBER(amaztron_write_o);
-	DECLARE_READ8_MEMBER(amaztron_read_k);
-
-	void tc4_display();
-	DECLARE_WRITE16_MEMBER(tc4_write_r);
-	DECLARE_WRITE16_MEMBER(tc4_write_o);
-	DECLARE_READ8_MEMBER(tc4_read_k);
-
-	void ebball_display();
-	DECLARE_WRITE16_MEMBER(ebball_write_r);
-	DECLARE_WRITE16_MEMBER(ebball_write_o);
-	DECLARE_READ8_MEMBER(ebball_read_k);
-
-	void ebball2_display();
-	DECLARE_WRITE16_MEMBER(ebball2_write_r);
-	DECLARE_WRITE16_MEMBER(ebball2_write_o);
-	DECLARE_READ8_MEMBER(ebball2_read_k);
-
-	void ebball3_display();
-	DECLARE_WRITE16_MEMBER(ebball3_write_r);
-	DECLARE_WRITE16_MEMBER(ebball3_write_o);
-	DECLARE_READ8_MEMBER(ebball3_read_k);
-	void ebball3_set_clock();
-	DECLARE_INPUT_CHANGED_MEMBER(ebball3_difficulty_switch);
-	DECLARE_MACHINE_RESET(ebball3);
-
-	DECLARE_WRITE16_MEMBER(elecdet_write_r);
-	DECLARE_WRITE16_MEMBER(elecdet_write_o);
-	DECLARE_READ8_MEMBER(elecdet_read_k);
-
-	void starwbc_display();
-	DECLARE_WRITE16_MEMBER(starwbc_write_r);
-	DECLARE_WRITE16_MEMBER(starwbc_write_o);
-	DECLARE_READ8_MEMBER(starwbc_read_k);
-
-	DECLARE_WRITE16_MEMBER(comp4_write_r);
-	DECLARE_WRITE16_MEMBER(comp4_write_o);
-	DECLARE_READ8_MEMBER(comp4_read_k);
-
-	DECLARE_WRITE16_MEMBER(simon_write_r);
-	DECLARE_WRITE16_MEMBER(simon_write_o);
-	DECLARE_READ8_MEMBER(simon_read_k);
-
-	DECLARE_WRITE16_MEMBER(ssimon_write_r);
-	DECLARE_WRITE16_MEMBER(ssimon_write_o);
-	DECLARE_READ8_MEMBER(ssimon_read_k);
-
-	DECLARE_WRITE16_MEMBER(mbdtower_write_r);
-	DECLARE_WRITE16_MEMBER(mbdtower_write_o);
-	DECLARE_READ8_MEMBER(mbdtower_read_k);
-
-	DECLARE_WRITE16_MEMBER(cnsector_write_r);
-	DECLARE_WRITE16_MEMBER(cnsector_write_o);
-	DECLARE_READ8_MEMBER(cnsector_read_k);
-
-	DECLARE_WRITE16_MEMBER(merlin_write_r);
-	DECLARE_WRITE16_MEMBER(merlin_write_o);
-	DECLARE_READ8_MEMBER(merlin_read_k);
-
-	DECLARE_WRITE16_MEMBER(stopthief_write_r);
-	DECLARE_WRITE16_MEMBER(stopthief_write_o);
-	DECLARE_READ8_MEMBER(stopthief_read_k);
-
-	DECLARE_WRITE16_MEMBER(bankshot_write_r);
-	DECLARE_WRITE16_MEMBER(bankshot_write_o);
-	DECLARE_READ8_MEMBER(bankshot_read_k);
-
-	DECLARE_WRITE16_MEMBER(splitsec_write_r);
-	DECLARE_WRITE16_MEMBER(splitsec_write_o);
-	DECLARE_READ8_MEMBER(splitsec_read_k);
-
-	void tandy12_display();
-	DECLARE_WRITE16_MEMBER(tandy12_write_r);
-	DECLARE_WRITE16_MEMBER(tandy12_write_o);
-	DECLARE_READ8_MEMBER(tandy12_read_k);
-};
 
 
 // machine_start/reset
@@ -235,7 +102,7 @@ void hh_tms1k_state::machine_start()
 	memset(m_display_cache, ~0, sizeof(m_display_cache));
 	memset(m_display_decay, 0, sizeof(m_display_decay));
 	memset(m_display_segmask, 0, sizeof(m_display_segmask));
-	
+
 	m_o = 0;
 	m_r = 0;
 	m_inp_mux = 0;
@@ -270,19 +137,6 @@ void hh_tms1k_state::machine_reset()
 
 ***************************************************************************/
 
-// LED segments
-enum
-{
-	lA = 0x01,
-	lB = 0x02,
-	lC = 0x04,
-	lD = 0x08,
-	lE = 0x10,
-	lF = 0x20,
-	lG = 0x40,
-	lDP = 0x80
-};
-
 // The device may strobe the outputs very fast, it is unnoticeable to the user.
 // To prevent flickering here, we need to simulate a decay.
 
@@ -315,7 +169,15 @@ void hh_tms1k_state::display_update()
 
 			const int mul = (m_display_maxx <= 10) ? 10 : 100;
 			for (int x = 0; x < m_display_maxx; x++)
-				output_set_lamp_value(y * mul + x, active_state[y] >> x & 1);
+			{
+				int state = active_state[y] >> x & 1;
+				output_set_lamp_value(y * mul + x, state);
+
+				// bit coords for svg2lay
+				char buf[10];
+				sprintf(buf, "%d.%d", y, x);
+				output_set_value(buf, state);
+			}
 		}
 
 	memcpy(m_display_cache, active_state, sizeof(m_display_cache));
@@ -328,7 +190,7 @@ TIMER_DEVICE_CALLBACK_MEMBER(hh_tms1k_state::display_decay_tick)
 		for (int x = 0; x < m_display_maxx; x++)
 			if (m_display_decay[y][x] != 0)
 				m_display_decay[y][x]--;
-	
+
 	display_update();
 }
 
@@ -341,7 +203,7 @@ void hh_tms1k_state::display_matrix(int maxx, int maxy, UINT32 setx, UINT32 sety
 	UINT32 mask = (1 << maxx) - 1;
 	for (int y = 0; y < maxy; y++)
 		m_display_state[y] = (sety >> y & 1) ? (setx & mask) : 0;
-	
+
 	display_update();
 }
 
@@ -431,7 +293,7 @@ WRITE16_MEMBER(hh_tms1k_state::mathmagi_write_r)
 {
 	// R3,R5-R7,R9,R10: input mux
 	m_inp_mux = (data >> 3 & 1) | (data >> 4 & 0xe) | (data >> 5 & 0x30);
-	
+
 	// +others:
 	m_r = data;
 	mathmagi_display();
@@ -580,10 +442,10 @@ void hh_tms1k_state::amaztron_display()
 		m_display_segmask[y] = 0x7f;
 		m_display_state[y] = (m_r >> (y + 8) & 1) ? m_o : 0;
 	}
-	
+
 	// R6,R7: lamps (-> lamp20,21)
 	m_display_state[2] = m_r >> 6 & 3;
-	
+
 	display_update();
 }
 
@@ -591,7 +453,7 @@ WRITE16_MEMBER(hh_tms1k_state::amaztron_write_r)
 {
 	// R0-R5: input mux
 	m_inp_mux = data & 0x3f;
-	
+
 	// R10: speaker out
 	m_speaker->level_w(data >> 10 & 1);
 
@@ -720,12 +582,12 @@ MACHINE_CONFIG_END
 void hh_tms1k_state::tc4_display()
 {
 	m_display_wait = 50;
-	
+
 	// R5,7,8,9 are 7segs
 	for (int y = 0; y < 10; y++)
 		if (y >= 5 && y <= 9 && y != 6)
 			m_display_segmask[y] = 0x7f;
-	
+
 	// update current state (note: R6 as extra column!)
 	display_matrix(9, 10, (m_o | (m_r << 2 & 0x100)), m_r);
 }
@@ -738,7 +600,7 @@ WRITE16_MEMBER(hh_tms1k_state::tc4_write_r)
 	// R0-R5: input mux
 	// R9: to cartridge slot
 	m_inp_mux = data & 0x23f;
-	
+
 	// R6: led column 8
 	// +other columns
 	m_r = data;
@@ -837,13 +699,13 @@ MACHINE_CONFIG_END
 
   Entex Electronic Baseball (1)
   * TMS1000NLP MP0914 (die labeled MP0914A)
-  
+
   This is a handheld LED baseball game. One player controls the batter, the CPU
   or other player controls the pitcher. Pitcher throw buttons are on a 'joypad'
   obtained from a compartment in the back. Player scores are supposed to be
   written down manually, the game doesn't save scores or innings (this annoyance
   was resolved in the sequel). For more information, refer to the official manual.
-  
+
   The overlay graphic is known to have 2 versions: one where the field players
   are denoted by words ("left", "center", "short", etc), and an alternate one
   with little guys drawn next to the LEDs.
@@ -868,18 +730,18 @@ void hh_tms1k_state::ebball_display()
 {
 	// R8 is a 7seg
 	m_display_segmask[8] = 0x7f;
-	
-	display_matrix(7, 9, m_o, m_r);
+
+	display_matrix(7, 9, ~m_o, m_r);
 }
 
 WRITE16_MEMBER(hh_tms1k_state::ebball_write_r)
 {
 	// R1-R5: input mux
 	m_inp_mux = data >> 1 & 0x1f;
-	
+
 	// R9: speaker out
 	m_speaker->level_w(data >> 9 & 1);
-	
+
 	// R0-R8: led columns
 	m_r = data;
 	ebball_display();
@@ -889,7 +751,7 @@ WRITE16_MEMBER(hh_tms1k_state::ebball_write_o)
 {
 	// O0-O6: led row
 	// O7: N/C
-	m_o = ~data;
+	m_o = data;
 	ebball_display();
 }
 
@@ -959,15 +821,15 @@ MACHINE_CONFIG_END
   Entex Electronic Baseball 2
   * boards are labeled: ZENY
   * TMS1000 MCU, MP0923 (die labeled MP0923)
-  
+
   The Japanese version was published by Gakken, black casing instead of white.
-  
+
   The sequel to Entex Baseball, this version keeps up with score and innings.
   As its predecessor, the pitcher controls are on a separate joypad.
 
 
   lamp translation table: led zz from game PCB = MESS lampyx:
-  
+
     00 = -        10 = lamp94   20 = lamp74   30 = lamp50
     01 = lamp53   11 = lamp93   21 = lamp75   31 = lamp51
     02 = lamp7    12 = lamp92   22 = lamp80   32 = lamp52
@@ -986,27 +848,27 @@ void hh_tms1k_state::ebball2_display()
 	// the first 3 are 7segs
 	for (int y = 0; y < 3; y++)
 		m_display_segmask[y] = 0x7f;
-	
-	display_matrix(8, 10, m_o, m_r);
+
+	display_matrix(8, 10, ~m_o, m_r ^ 0x7f);
 }
 
 WRITE16_MEMBER(hh_tms1k_state::ebball2_write_r)
 {
 	// R3-R6: input mux
 	m_inp_mux = data >> 3 & 0xf;
-	
+
 	// R10: speaker out
 	m_speaker->level_w(data >> 10 & 1);
-	
+
 	// R0-R9: led columns
-	m_r = data ^ 0x7f;
+	m_r = data;
 	ebball2_display();
 }
 
 WRITE16_MEMBER(hh_tms1k_state::ebball2_write_o)
 {
 	// O0-O7: led row/segment
-	m_o = ~data;
+	m_o = data;
 	ebball2_display();
 }
 
@@ -1070,14 +932,14 @@ MACHINE_CONFIG_END
   * boards are labeled: ZENY
   * TMS1100NLL 6007 MP1204 (die labeled MP1204)
   * 2*SN75492N LED display driver
-  
+
   This is another improvement over Entex Baseball, where gameplay is a bit more
   varied. Like the others, the pitcher controls are on a separate joypad.
 
 
   lamp translation table: led zz from game PCB = MESS lampyx:
   note: unlabeled panel leds are listed here as Sz, Bz, Oz, Iz, z left-to-right
-  
+
     00 = -        10 = lamp75   20 = lamp72
     01 = lamp60   11 = lamp65   21 = lamp84
     02 = lamp61   12 = lamp55   22 = lamp85
@@ -1107,12 +969,12 @@ void hh_tms1k_state::ebball3_display()
 
 	// R0,R1 are normal 7segs
 	m_display_segmask[0] = m_display_segmask[1] = 0x7f;
-	
+
 	// R4,R7 contain segments(only F and B) for the two other digits
 	m_display_state[10] = (m_display_state[4] & 0x20) | (m_display_state[7] & 0x02);
 	m_display_state[11] = ((m_display_state[4] & 0x10) | (m_display_state[7] & 0x01)) << 1;
 	m_display_segmask[10] = m_display_segmask[11] = 0x22;
-	
+
 	display_update();
 }
 
@@ -1120,10 +982,10 @@ WRITE16_MEMBER(hh_tms1k_state::ebball3_write_r)
 {
 	// R0-R2: input mux
 	m_inp_mux = data & 7;
-	
+
 	// R10: speaker out
 	m_speaker->level_w(data >> 10 & 1);
-	
+
 	// R0-R9: led columns
 	m_r = data;
 	ebball3_display();
@@ -1256,7 +1118,7 @@ WRITE16_MEMBER(hh_tms1k_state::elecdet_write_o)
 {
 	// O0,O1,O4,O6: input mux
 	m_inp_mux = (data & 3) | (data >> 2 & 4) | (data >> 3 & 8);
-	
+
 	// O0-O6: led segments A-G
 	// O7: speaker out
 	m_o = data;
@@ -1356,7 +1218,7 @@ void hh_tms1k_state::starwbc_display()
 {
 	// R6,R8 are 7segs
 	m_display_segmask[6] = m_display_segmask[8] = 0x7f;
-	
+
 	display_matrix(8, 10, m_o, m_r);
 }
 
@@ -1540,7 +1402,8 @@ MACHINE_CONFIG_END
   Milton Bradley Simon, created by Ralph Baer
 
   Revision A hardware:
-  * TMS1000 (die labeled MP3226), DS75494 lamp driver
+  * TMS1000 (die labeled MP3226)
+  * DS75494 lamp driver
 
   Newer revisions (also Pocket Simon) have a smaller 16-pin MB4850 chip
   instead of the TMS1000. This one has been decapped too, but we couldn't
@@ -1683,56 +1546,6 @@ MACHINE_CONFIG_END
 
 /***************************************************************************
 
-  Milton Bradley Dark Tower
-  * TMS1400 MP7332-N2LL (die labeled MP7332)
-
-  x
-
-***************************************************************************/
-
-WRITE16_MEMBER(hh_tms1k_state::mbdtower_write_r)
-{
-}
-
-WRITE16_MEMBER(hh_tms1k_state::mbdtower_write_o)
-{
-}
-
-READ8_MEMBER(hh_tms1k_state::mbdtower_read_k)
-{
-	return 0;
-}
-
-
-static INPUT_PORTS_START( mbdtower )
-INPUT_PORTS_END
-
-
-static MACHINE_CONFIG_START( mbdtower, hh_tms1k_state )
-
-	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", TMS1400, 400000) // approximation - RC osc. R=43K, C=56pf, but unknown RC curve
-	MCFG_TMS1XXX_READ_K_CB(READ8(hh_tms1k_state, mbdtower_read_k))
-	MCFG_TMS1XXX_WRITE_R_CB(WRITE16(hh_tms1k_state, mbdtower_write_r))
-	MCFG_TMS1XXX_WRITE_O_CB(WRITE16(hh_tms1k_state, mbdtower_write_o))
-
-	MCFG_TIMER_DRIVER_ADD_PERIODIC("display_decay", hh_tms1k_state, display_decay_tick, attotime::from_msec(1))
-	MCFG_DEFAULT_LAYOUT(layout_mbdtower)
-
-	/* no video! */
-
-	/* sound hardware */
-	MCFG_SPEAKER_STANDARD_MONO("mono")
-	MCFG_SOUND_ADD("speaker", SPEAKER_SOUND, 0)
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.25)
-MACHINE_CONFIG_END
-
-
-
-
-
-/***************************************************************************
-
   Parker Brothers Code Name: Sector, by Bob Doyle
   * TMS0970 MCU, MP0905BNL ZA0379 (die labeled 0970F-05B)
 
@@ -1756,7 +1569,7 @@ WRITE16_MEMBER(hh_tms1k_state::cnsector_write_r)
 
 	// R6-R9: direction leds (-> lamp60-63)
 	m_display_state[6] = data >> 6 & 0xf;
-	
+
 	display_update();
 }
 
@@ -1764,7 +1577,7 @@ WRITE16_MEMBER(hh_tms1k_state::cnsector_write_o)
 {
 	// O0-O4: input mux
 	m_inp_mux = data & 0x1f;
-	
+
 	// O0-O7: digit segments
 	m_o = data;
 }
@@ -1833,7 +1646,7 @@ MACHINE_CONFIG_END
   Parker Bros Merlin handheld game, by Bob Doyle
   * TMS1100NLL MP3404A-N2
   * red LEDs and 1-bit sound
-  
+
   Also published in Japan by Tomy as "Dr. Smith", white case instead of red.
   The one with dark-blue case is the rare sequel Master Merlin. More sequels
   followed too, but on other hardware.
@@ -1967,7 +1780,7 @@ WRITE16_MEMBER(hh_tms1k_state::stopthief_write_o)
 {
 	// O0,O6: input mux
 	m_inp_mux = (data & 1) | (data >> 5 & 2);
-	
+
 	// O3: speaker out
 	// O0-O2,O4-O7: led segments A-G
 	m_o = data;
@@ -2510,17 +2323,6 @@ ROM_START( ssimon )
 ROM_END
 
 
-ROM_START( mbdtower )
-	ROM_REGION( 0x1000, "maincpu", 0 )
-	ROM_LOAD( "mp7332", 0x0000, 0x1000, CRC(ebeab91a) SHA1(7edbff437da371390fa8f28b3d183f833eaa9be9) )
-
-	ROM_REGION( 867, "maincpu:mpla", 0 )
-	ROM_LOAD( "tms1100_default_mpla.pla", 0, 867, CRC(62445fc9) SHA1(d6297f2a4bc7a870b76cc498d19dbb0ce7d69fec) )
-	ROM_REGION( 557, "maincpu:opla", 0 )
-	ROM_LOAD( "tms1400_mbdtower_opla.pla", 0, 557, CRC(64c84697) SHA1(72ce6d24cedf9c606f1742cd5620f75907246e87) )
-ROM_END
-
-
 ROM_START( cnsector )
 	ROM_REGION( 0x0400, "maincpu", 0 )
 	ROM_LOAD( "mp0905bnl_za0379", 0x0000, 0x0400, CRC(201036e9) SHA1(b37fef86bb2bceaf0ac8bb3745b4702d17366914) )
@@ -2628,7 +2430,6 @@ CONS( 1979, starwbcp,  starwbc,  0, starwbc,   starwbc,   driver_device, 0, "Ken
 CONS( 1977, comp4,     0,        0, comp4,     comp4,     driver_device, 0, "Milton Bradley", "Comp IV", GAME_SUPPORTS_SAVE | GAME_NO_SOUND_HW )
 CONS( 1978, simon,     0,        0, simon,     simon,     driver_device, 0, "Milton Bradley", "Simon (Rev. A)", GAME_SUPPORTS_SAVE )
 CONS( 1979, ssimon,    0,        0, ssimon,    ssimon,    driver_device, 0, "Milton Bradley", "Super Simon", GAME_SUPPORTS_SAVE | GAME_NOT_WORKING )
-CONS( 1981, mbdtower,  0,        0, mbdtower,  mbdtower,  driver_device, 0, "Milton Bradley", "Dark Tower (Milton Bradley)", GAME_SUPPORTS_SAVE | GAME_NOT_WORKING ) // ***
 
 CONS( 1977, cnsector,  0,        0, cnsector,  cnsector,  driver_device, 0, "Parker Brothers", "Code Name: Sector", GAME_SUPPORTS_SAVE | GAME_NO_SOUND_HW ) // ***
 CONS( 1978, merlin,    0,        0, merlin,    merlin,    driver_device, 0, "Parker Brothers", "Merlin - The Electronic Wizard", GAME_SUPPORTS_SAVE )
