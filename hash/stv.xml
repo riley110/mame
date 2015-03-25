@@ -1,11 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-
 <!--
-    Note: Most games do not support multi cart system - the ones that are has the text "CART-AM" in the header.
-    All titles that doesn't support it have a supported="no" flag.
+Note: Most games do not support multi cart system - the ones that do have the text "CART-AM" in the header.
+All titles that don't support it have a supported="no" flag.
 -->
-
 <softwarelist name="stv" description="Sega Titan Video cartridges">
 
 	<!-- Game: Astra SuperStars -->
@@ -13,6 +11,7 @@
 		<description>Astra SuperStars (J 980514 V1.002)</description>
 		<year>1998</year>
 		<publisher>Sunsoft</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="epr20825.13" size="0x100000" crc="94a9ad8f" sha1="861311c14cfa9f560752aa5b023c147a539cf135" offset="0x000001" loadflag="load16_byte"/>
@@ -33,6 +32,7 @@
 		<description>Baku Baku Animal (J 950407 V1.000)</description>
 		<year>1995</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="fpr17969.13" size="0x100000" crc="bee327e5" sha1="1d226db72d6ef68fd294f60659df7f882b25def6" offset="0x000001" loadflag="load16_byte"/>
@@ -49,6 +49,7 @@
 		<description>Batman Forever (JUE 960507 V1.000)</description>
 		<year>1996</year>
 		<publisher>Acclaim</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="350-mpa1.u19" size="0x100000" crc="2a5a8c3a" sha1="374ec55a39ea909cc672e4a629422681d1f2da05" offset="0x000000" loadflag="load16_word_swap"/>
@@ -74,6 +75,7 @@
 		<description>Columns '97 (JET 961209 V1.000)</description>
 		<year>1996</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="fpr19553.13" size="0x100000" crc="d4fb6a5e" sha1="bd3cfb4f451b6c9612e42af5ddcbffa14f057329" offset="0x000001" loadflag="load16_byte"/>
@@ -89,6 +91,7 @@
 		<year>1997</year>
 		<publisher>Success</publisher>
 		<part name="cart" interface="stv_cart">
+
 			<dataarea name="rom" size="0x3000000">
 				<rom name="mpr20122.7" size="0x200000" crc="d616f78a" sha1="8039dcdfdafb8327a19a1da46a67c0b3f7eee53a" offset="0x200000" loadflag="load16_word_swap"/>
 				<rom name="mpr20117.2" size="0x400000" crc="893656ea" sha1="11e3160083ba018fbd588f07061a4e55c1efbebb" offset="0x400000" loadflag="load16_word_swap"/>
@@ -107,6 +110,7 @@
 		<description>Cotton Boomerang (JUET 980709 V1.000)</description>
 		<year>1998</year>
 		<publisher>Success</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="mpr21075.7" size="0x200000" crc="200b58ba" sha1="6daad6d70a3a41172e8d9402af775c03e191232d" offset="0x200000" loadflag="load16_word_swap"/>
@@ -125,6 +129,7 @@
 		<description>Critter Crusher (EA 951204 V1.000)</description>
 		<year>1995</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="epr-18821.ic13" size="0x080000" crc="9a6658e2" sha1="16dbae3d9ab584713afcb403f89fe71049609245" offset="0x000001" loadflag="load16_byte"/>
@@ -140,6 +145,7 @@
 		<description>Danchi de Hanafuda (J 990607 V1.400)</description>
 		<year>1999</year>
 		<publisher>Altron (Tecmo license)</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="mpr21974.7" size="0x200000" crc="e7472793" sha1="11b7b11cf492eb9cf69b50e7cfac46a5b86849ac" offset="0x200000" loadflag="load16_word_swap"/>
@@ -156,6 +162,7 @@
 		<description>Danchi de Quiz Okusan Yontaku Desuyo! (J 001128 V1.200)</description>
 		<year>2000</year>
 		<publisher>Altron</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="ic22" size="0x200000" crc="e216bfc8" sha1="7a08fa32281e272dbf5e7daea50a1800cc225c1b" offset="0x200000" loadflag="load16_word_swap"/>
@@ -177,6 +184,7 @@
 		<description>Decathlete (JUET 960709 V1.001)</description>
 		<year>1996</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="epr18967a.13" size="0x100000" crc="ac59c186" sha1="7d4924d1e4c1b9257b58a690de988b3f6486e86f" offset="0x000001" loadflag="load16_byte"/>
@@ -194,6 +202,7 @@
 		<description>Decathlete (JUET 960424 V1.000)</description>
 		<year>1996</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="epr18967.13" size="0x100000" crc="c0446674" sha1="4917089d95613c9d2a936ed9fe3ebd22f461aa4f" offset="0x000001" loadflag="load16_byte"/>
@@ -211,6 +220,7 @@
 		<description>Die Hard Arcade (UET 960515 V1.000)</description>
 		<year>1996</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="fpr19119.13" size="0x100000" crc="de5c4f7c" sha1="35f670a15e9c86edbe2fe718470f5a75b5b096ac" offset="0x000001" loadflag="load16_byte"/>
@@ -227,6 +237,7 @@
 		<description>Dynamite Deka (J 960515 V1.000)</description>
 		<year>1996</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="fpr19114.13" size="0x100000" crc="1fd22a5f" sha1="c3d9653b12354a73a3e15f23a2ab7992ffb83e46" offset="0x000001" loadflag="load16_byte"/>
@@ -243,6 +254,7 @@
 		<description>Ejihon Tantei Jimusyo (J 950613 V1.000)</description>
 		<year>1995</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="epr18137.13" size="0x080000" crc="151aa9bc" sha1="0959c60f31634816825acb57413838dcddb17d31" offset="0x000001" loadflag="load16_byte"/>
@@ -261,6 +273,7 @@
 		<description>Touryuu Densetsu Elan-Doree / Elan Doree - Legend of Dragoon (JUET 980922 V1.006)</description>
 		<year>1998</year>
 		<publisher>Sai-Mate</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="mpr21307.7" size="0x200000" crc="966ad472" sha1="d6db41d1c40d08eb6bce8a8a2f491e7533daf670" offset="0x200000" loadflag="load16_word_swap"/>
@@ -280,6 +293,7 @@
 		<description>Final Fight Revenge (JUET 990714 V1.000)</description>
 		<year>1999</year>
 		<publisher>Capcom</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="opr21872.7" size="0x200000" crc="32d36fee" sha1="441c4254ef2e9301e1006d69462a850ce339314b" offset="0x200000" loadflag="load16_word_swap"/>
@@ -298,6 +312,7 @@
 		<description>Funky Head Boxers (JUETBKAL 951218 V1.000)</description>
 		<year>1995</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="fr18541a.13" size="0x100000" crc="8c61a17c" sha1="a8aef27b53482923a506f7daa4b7a38653b4d8a4" offset="0x000001" loadflag="load16_byte"/>
@@ -319,6 +334,7 @@
 		<description>Find Love (J 971212 V1.000)</description>
 		<year>1997</year>
 		<publisher>Daiki / FCF</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="epr20424.13" size="0x100000" crc="4e61fa46" sha1="e34624d98cbdf2dd04d997167d3c4decd2f208f7" offset="0x000001" loadflag="load16_byte"/>
@@ -343,6 +359,7 @@
 		<description>Final Arch (J 950714 V1.001)</description>
 		<year>1995</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="finlarch.13" size="0x100000" crc="4505fa9e" sha1="96c6399146cf9c8f1d27a8fb6a265f937258004a" offset="0x000001" loadflag="load16_byte"/>
@@ -365,6 +382,7 @@
 		<description>Golden Axe - The Duel (JUETL 950117 V1.000)</description>
 		<year>1994</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="epr17766.13" size="0x080000" crc="a83fcd62" sha1="4ce77ebaa0e93c6553ad8f7fb87cbdc32433402b" offset="0x000001" loadflag="load16_byte"/>
@@ -384,6 +402,7 @@
 		<description>Guardian Force (JUET 980318 V0.105)</description>
 		<year>1998</year>
 		<publisher>Success</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="mpr20844.7" size="0x200000" crc="283e7587" sha1="477fabc27cfe149ad17757e31f10665dcf8c0860" offset="0x200000" loadflag="load16_word_swap"/>
@@ -401,6 +420,7 @@
 		<description>Groove on Fight - Gouketsuji Ichizoku 3 (J 970416 V1.001)</description>
 		<year>1998</year>
 		<publisher>Atlus</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="mpr19820.7" size="0x100000" crc="e93c4513" sha1="f9636529224880c49bd2cc5572bd5bf41dbf911a" offset="0x200000" loadflag="load16_word_swap"/>
@@ -421,6 +441,7 @@
 		<description>Hanagumi Taisen Columns - Sakura Wars (J 971007 V1.010)</description>
 		<year>1997</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="mpr20143.7"  size="0x100000" crc="7bfc38d0" sha1="66f223e7ff2b5456a6f4185b7ab36f9cd833351a" offset="0x200000" loadflag="load16_word_swap"/>
@@ -444,6 +465,7 @@
 		<description>Karaoke Quiz Intro Don Don! (J 960213 V1.000)</description>
 		<year>1996</year>
 		<publisher>Sunsoft / Success</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="epr18937.13" size="0x080000" crc="1f40d766" sha1="35d9751c1b23cfbf448f2a9e9cf3b121929368ae" offset="0x000001" loadflag="load16_byte"/>
@@ -465,6 +487,7 @@
 		<description>Pro Mahjong Kiwame S (J 951020 V1.208)</description>
 		<year>1995</year>
 		<publisher>Athena</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="epr18737.13" size="0x080000" crc="cfad6c49" sha1="fc69980a351ed13307706db506c79c774eabeb66" offset="0x000001" loadflag="load16_byte"/>
@@ -481,6 +504,7 @@
 		<description>Magical Zunou Power (J 961031 V1.000)</description>
 		<year>1996</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="flash.ic13" size="0x100000" crc="e6f0aca0" sha1="251d4d9c5a332d13af3a144c5eb9d8e7836bdd1b" offset="0x000001" loadflag="load16_byte"/>
@@ -499,6 +523,7 @@
 		<description>Maru-Chan de Goo! (J 971216 V1.000)</description>
 		<year>1997</year>
 		<publisher>Sega / Toyosuisan</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="epr20416.13" size="0x100000" crc="8bf0176d" sha1="5bd468e2ffed042ee84e2ceb8712ff5883a1d824" offset="0x000001" loadflag="load16_byte"/>
@@ -519,6 +544,7 @@
 		<description>Mausuke no Ojama the World (J 960314 V1.000)</description>
 		<year>1996</year>
 		<publisher>Data East</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="ic13.bin" size="0x100000" crc="b456f4cd" sha1="91cbe703ec7c1dd45eb3b05bdfeb06e3570599d1" offset="0x000001" loadflag="load16_byte"/>
@@ -540,6 +566,7 @@
 		<description>Microman Battle Charge (J 990326 V1.000)</description>
 		<year>1999</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="ic22"        size="0x200000" crc="8385bc45" sha1="0bd60d7560cb2313d68470d0572850a7b8c501fd" offset="0x200000" loadflag="load16_word_swap"/>
@@ -559,6 +586,7 @@
 		<description>Virtual Mahjong 2 - My Fair Lady (J 980608 V1.000)</description>
 		<year>1998</year>
 		<publisher>Micronet</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="mpr21000.7"  size="0x200000" crc="2581c560" sha1="5fb64f0e09583d50dfea7ad613d45aad30b677a5" offset="0x200000" loadflag="load16_word_swap"/>
@@ -578,6 +606,7 @@
 		<description>Name Club Ver.3 (J 970723 V1.000)</description>
 		<year>1997</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="ic22"       size="0x200000" crc="b4008ed0" sha1="acb3784acad971eb5f4920760dc23a16330e7bad" offset="0x200000" loadflag="load16_word_swap"/>
@@ -599,6 +628,7 @@
 		<description>Othello Shiyouyo (J 980423 V1.002)</description>
 		<year>1998</year>
 		<publisher>Success</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="mpr20967.7" size="0x200000" crc="efc05b97" sha1="a533366c3aaba90dcac8f3654db9ad902efca258" offset="0x200000" loadflag="load16_word_swap"/>
@@ -615,6 +645,7 @@
 		<description>Pebble Beach - The Great Shot (JUE 950913 V0.990)</description>
 		<year>1995</year>
 		<publisher>T&amp;E Soft</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="epr18852.13" size="0x080000" crc="d12414ec" sha1="0f42ec9e41983781b6892622b00398a102072aa7" offset="0x000001" loadflag="load16_byte"/>
@@ -632,6 +663,7 @@
 		<description>Print Club 2 (U 970921 V1.000)</description>
 		<year>1997</year>
 		<publisher>Atlus</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="ic22"      size="0x200000" crc="d2ceade7" sha1="a4300322e582f403d9207290f3900e1a72fcb9b9" offset="0x200000" loadflag="load16_word_swap"/>
@@ -648,6 +680,7 @@
 		<description>Print Club 2 Vol. 3 (U 990310 V1.000)</description>
 		<year>1999</year>
 		<publisher>Atlus</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="ic22" size="0x200000" crc="f88347aa" sha1="3e9ca105edbd6ce11ea4194eb1733785e87f92b2" status="baddump" offset="0x200000" loadflag="load16_word_swap"/>
@@ -664,6 +697,7 @@
 		<description>Print Club Pokemon B (U 991126 V1.000)</description>
 		<year>1999</year>
 		<publisher>Atlus</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="ic22"        size="0x200000" crc="48ab8371" sha1="1c2124afad6bc1f4de2619e6b915f78e91addf05" offset="0x200000" loadflag="load16_word_swap"/>
@@ -680,6 +714,7 @@
 		<description>Princess Clara Daisakusen (J 960910 V1.000)</description>
 		<year>1996</year>
 		<publisher>Atlus</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="mpr19337.7" size="0x200000" crc="76f69ff3" sha1="5af2e1eb3288d70c2a1c71d0b6370125d65c7757" offset="0x200000" loadflag="load16_word_swap"/>
@@ -696,6 +731,7 @@
 		<description>Puyo Puyo Sun (J 961115 V0.001)</description>
 		<year>1996</year>
 		<publisher>Compile</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="epr19531.13" size="0x080000" crc="ac81024f" sha1="b22c7c1798fade7ae992ff83b138dd23e6292d3f" offset="0x000001" loadflag="load16_byte"/>
@@ -717,6 +753,7 @@
 		<description>Radiant Silvergun (JUET 980523 V1.000)</description>
 		<year>1998</year>
 		<publisher>Treasure</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="mpr20958.7" size="0x200000" crc="cbe5a449" sha1="b4744ab71ccbadda1921ba43dd1148e57c0f84c5" offset="0x200000" loadflag="load16_word_swap"/>
@@ -733,6 +770,7 @@
 		<description>Puzzle &amp; Action: Sando-R (J 951114 V1.000)</description>
 		<year>1995</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="sando-r.13"  size="0x100000" crc="fe63a239" sha1="01502d4494f968443581cd2c74f25967d41f775e" offset="0x000001" loadflag="load16_byte"/>
@@ -753,6 +791,7 @@
 		<description>DaeJeon! SanJeon SuJeon (AJTUE 990412 V1.000)</description>
 		<year>1999</year>
 		<publisher>Sega / Deniam</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="ic11" size="0x200000" crc="9abae8d4" sha1="ddbe4c8fff8fa59d63e278e95f245145d2da8aeb" offset="0x000001" loadflag="load16_byte"/>
@@ -776,6 +815,7 @@
 		<description>Taisen Tanto-R Sashissu!! (J 980216 V1.000)</description>
 		<year>1998</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="epr20542.13" size="0x100000" crc="0e632db5" sha1="9bc52794892eec22d381387d13a0388042e30714" offset="0x000001" loadflag="load16_byte"/>
@@ -794,6 +834,7 @@
 		<description>Sea Bass Fishing (JUET 971110 V0.001)</description>
 		<year>1997</year>
 		<publisher>A wave inc. (Able license)</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="seabassf.13" size="0x100000" crc="6d7c39cc" sha1="d9d1663134420b75c65ee07d7d547254785f2f83" offset="0x000001" loadflag="load16_byte"/>
@@ -814,6 +855,7 @@
 		<description>Shanghai - The Great Wall / Shanghai Triple Threat (JUE 950623 V1.005)</description>
 		<year>1995</year>
 		<publisher>Sunsoft / Activision</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="mpr18341.7" size="0x200000" crc="cc5e8646" sha1="a733616c118140ff3887d30d595533f9a1beae06" offset="0x200000" loadflag="load16_word_swap"/>
@@ -827,6 +869,7 @@
 		<description>Shienryu (JUET 961226 V1.000)</description>
 		<year>1997</year>
 		<publisher>Warashi</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="mpr19631.7"          size="0x200000" crc="3a4b1abc" sha1="3b14b7fdebd4817da32ea374c15a38c695ffeff1" offset="0x200000" loadflag="load16_word_swap"/>
@@ -842,6 +885,7 @@
 		<description>Super Major League (U 960108 V1.000)</description>
 		<year>1995</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="epr18777.13" size="0x080000" crc="8d180866" sha1="d47ebabab6e06400312d39f68cd818852e496b96" offset="0x000001" loadflag="load16_byte"/>
@@ -860,6 +904,7 @@
 		<description>Soukyugurentai / Terra Diver (JUET 960821 V1.000)</description>
 		<year>1996</year>
 		<publisher>Raizing / Eighting</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="fpr19188.13" size="0x100000" crc="45a27e32" sha1="96e1bab8bdadf7071afac2a0a6dd8fd8989f12a6" offset="0x000001" loadflag="load16_byte"/>
@@ -876,6 +921,7 @@
 		<description>Steep Slope Sliders (JUET 981110 V1.000)</description>
 		<year>1998</year>
 		<publisher>Capcom / Cave / Victor</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="epr21488.13" size="0x080000" crc="71c9def1" sha1="a544a0b4046307172d2c1bf426ed24845f87d894" offset="0x000001" loadflag="load16_byte"/>
@@ -894,6 +940,7 @@
 		<description>Stress Busters (J 981020 V1.000)</description>
 		<year>1998</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="epr-21300a.ic13" size="0x100000" crc="899d829e" sha1="b6c6da92dc108353998b29c0659d288645541519" offset="0x000001" loadflag="load16_byte"/>
@@ -916,6 +963,7 @@
 		<description>Suikoenbu / Outlaws of the Lost Dynasty (JUETL 950314 V2.001)</description>
 		<year>1995</year>
 		<publisher>Data East</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="fpr17834.13" size="0x100000" crc="746ef686" sha1="e31c317991a687662a8a2a45aed411001e5f1941" offset="0x000001" loadflag="load16_byte"/>
@@ -936,6 +984,7 @@
 		<description>Technical Bowling (J 971212 V1.000)</description>
 		<year>1997</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="ic22"        size="0x200000" crc="5058db21" sha1="eec908bbfb9ec0fdca0002e69f32c1c030086456" offset="0x200000" loadflag="load16_word_swap"/>
@@ -952,6 +1001,7 @@
 		<description>Puzzle &amp; Action: Treasure Hunt (JUET 970901 V2.00E)</description>
 		<year>1997</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="th-ic7_2.stv" size="0x080000" crc="c4e993de" sha1="7aa433bc2623cb19a09d4ef4c8233a2d29901020" offset="0x200000" loadflag="load16_word_swap"/>
@@ -969,6 +1019,7 @@
 		<description>Puzzle &amp; Action: BoMulEul Chajara (JUET 970125 V2.00K)</description>
 		<year>1997</year>
 		<publisher>Sega / Deniam</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="2.ic13_2"      size="0x080000" crc="6cae2926" sha1="e8d5745b4228de24672da5017cb3dab58344f59f" offset="0x200000" loadflag="load16_word_swap"/>
@@ -990,6 +1041,7 @@
 		<description>Tecmo World Cup '98 (JUET 980410 V1.000)</description>
 		<year>1998</year>
 		<publisher>Tecmo</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="epr20819.13" size="0x100000" crc="d930dfc8" sha1="f66cc955181720661a0334fe67fa5750ddf9758b" offset="0x000001" loadflag="load16_byte"/>
@@ -1006,6 +1058,7 @@
 		<description>Virtua Fighter Kids (JUET 960319 V0.000)</description>
 		<year>1996</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="fpr18914.13" size="0x100000" crc="cd35730a" sha1="645b52b449766beb740ab8f99957f8f431351ceb" offset="0x000001" loadflag="load16_byte"/>
@@ -1027,6 +1080,7 @@
 		<description>Virtua Fighter Remix (JUETBKAL 950428 V1.000)</description>
 		<year>1995</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="epr17944.13" size="0x100000" crc="a5bdc560" sha1="d3830480a611b7d88760c672ce46a2ea74076487" offset="0x000001" loadflag="load16_byte"/>
@@ -1045,6 +1099,7 @@
 		<description>Virtual Mahjong (J 961214 V1.000)</description>
 		<year>1997</year>
 		<publisher>Micronet</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="mpr19620.7"  size="0x200000" crc="c98de7e5" sha1="5346f884793bcb080aa01967e91b54ced4a9802f" offset="0x200000" loadflag="load16_word_swap"/>
@@ -1064,6 +1119,7 @@
 		<description>Winter Heat (JUET 971012 V1.000)</description>
 		<year>1997</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="fpr20108.13" size="0x100000" crc="1ef9ced0" sha1="abc90ce341cd17bb77349d611d6879389611f0bf" offset="0x000001" loadflag="load16_byte"/>
@@ -1083,6 +1139,7 @@
 		<description>Zen Nippon Pro-Wrestling Featuring Virtua (J 971123 V1.000)</description>
 		<year>1997</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
 				<rom name="epr20398.13" size="0x100000" crc="3fb56a0b" sha1="13c2fa2d94b106d39e46f71d15fbce3607a5965a" offset="0x000001" loadflag="load16_byte"/>

@@ -10,7 +10,8 @@ CP/M-68K Release 1.04: Disks: All (maybe others)
 
 <!-- System Disks -->
 
-	<software name="cpm68k"> <!-- verified from labels -->
+	<!-- verified from labels -->
+	<software name="cpm68k">
 		<description>CP/M-68K (Release 1.24)</description>
 		<year>1984</year>
 		<publisher>Micro Craft Corporation</publisher>
@@ -49,7 +50,8 @@ CP/M-68K Release 1.04: Disks: All (maybe others)
 		</part>
 	</software>
 
-	<software name="cpm68k_121" cloneof="cpm68k"> <!-- verified from labels? -->
+	<!-- verified from labels? -->
+	<software name="cpm68k_121" cloneof="cpm68k">
 		<description>CP/M-68K (Release 1.21)</description>
 		<year>1984</year>
 		<publisher>Micro Craft Corporation</publisher>
@@ -115,11 +117,12 @@ CP/M-68K Release 1.04: Disks: All (maybe others)
 		</part>
 	</software>
 
+	<!-- the serial number seems weird... -->
 	<software name="cpm68k_102" cloneof="cpm68k">
 		<description>CP/M-68K (Release 1.02)</description>
 		<year>1984</year>
 		<publisher>Micro Craft Corporation</publisher>
-		<info name="serial" value="1509-1004-654321"/> <!-- unverified? -->
+		<info name="serial" value="1509-1004-654321"/>
 
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="System Disk #2 (Utilities)"/>

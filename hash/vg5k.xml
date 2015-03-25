@@ -1,9 +1,8 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-
 <softwarelist name="vg5k" description="Philips VG-5000 cassettes">
 
-	<!-- Commercial software -->
+<!-- Commercial software -->
 
 	<software name="abeille">
 		<description>L'Abeille - Spina the Bee</description>
@@ -259,24 +258,11 @@
 		</part>
 	</software>
 
-	<software name="labyprie">
-		<!-- need 32KB RAM expansion -->
-		<description>Le Labyrinthe et la Princesse (Edisoft)</description>
-		<year>1985</year>
-		<publisher>Edisoft</publisher>
-
-		<part name="cass" interface="vg5k_cass">
-			<dataarea name="cass" size="19089">
-				<rom name="labyprie.k7" size="19089" crc="e3783d49" sha1="c68d4c3df010a5664ca4ef5871b93f5408aec490" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="labyprl">
-		<!-- need 32KB RAM expansion -->
+	<software name="labypri">
 		<description>Le Labyrinthe et la Princesse (Loriciels)</description>
 		<year>1986</year>
 		<publisher>Loriciels</publisher>
+		<info name="usage" value="Requires 32KB RAM expansion" />
 
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="19054">
@@ -285,11 +271,24 @@
 		</part>
 	</software>
 
+	<software name="labyprie" cloneof="labypri">
+		<description>Le Labyrinthe et la Princesse (Edisoft)</description>
+		<year>1985</year>
+		<publisher>Edisoft</publisher>
+		<info name="usage" value="Requires 32KB RAM expansion" />
+
+		<part name="cass" interface="vg5k_cass">
+			<dataarea name="cass" size="19089">
+				<rom name="labyprie.k7" size="19089" crc="e3783d49" sha1="c68d4c3df010a5664ca4ef5871b93f5408aec490" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="lgraph">
-		<!-- need 32KB RAM expansion -->
 		<description>LGraph - VG5216</description>
 		<year>1985</year>
 		<publisher>Philips</publisher>
+		<info name="usage" value="Requires 32KB RAM expansion" />
 
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="2984">
@@ -559,7 +558,8 @@
 		</part>
 	</software>
 
-	<software name="salutarth" cloneof="salutart"> <!-- read-write routines hacked to work in dcvg5k -->
+	<!-- read-write routines hacked to work in dcvg5k -->
+	<software name="salutarth" cloneof="salutart">
 		<description>Salut l'Artiste (Hack)</description>
 		<year>1985</year>
 		<publisher>Nice Ideas</publisher>
@@ -572,10 +572,10 @@
 	</software>
 
 	<software name="simvol">
-		<!-- need 32KB RAM expansion -->
 		<description>Simulateur de Vol</description>
 		<year>1984</year>
 		<publisher>Philips</publisher>
+		<info name="usage" value="Requires 32KB RAM expansion" />
 
 		<part name="cass" interface="vg5k_cass">
 			<dataarea name="cass" size="22552">
@@ -1006,7 +1006,8 @@
 		</part>
 	</software>
 
-	<software name="salutd1"> <!-- saved from the main program -->
+	<!-- saved from the main program -->
+	<software name="salutd1">
 		<description>Salut l'Artiste - Dessin 1</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -1018,7 +1019,8 @@
 		</part>
 	</software>
 
-	<software name="salutd2"> <!-- saved from the main program -->
+	<!-- saved from the main program -->
+	<software name="salutd2">
 		<description>Salut l'Artiste - Dessin 2</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -1054,18 +1056,18 @@
 		</part>
 	</software>
 
-<!--
+	<!--
     sokobanb and sokobanc are a bit more complicated to load; use these commands in order (from http://videopac.nl/forum/index.php?topic=1503.0 ):
 
     CLOAD "SOKO"  (game)
     CLOAD "ORIG"  (the six first levels)
     CALL &"5200"
--->
-
+	-->
 	<software name="sokobanb" cloneof="sokoban">
-		<description>Sokoban (No Loader)</description>
+		<description>Sokoban (Manual Load)</description>
 		<year>2011</year>
 		<publisher>Forthretro</publisher>
+		<info name="usage" value="Follow loading instructions in vg5k.xml file" />
 
 		<part name="cass1" interface="vg5k_cass">
 			<dataarea name="cass" size="2262612">
@@ -1075,9 +1077,10 @@
 	</software>
 
 	<software name="sokobanc" cloneof="sokoban">
-		<description>Sokoban (No Loader, Alt)</description>
+		<description>Sokoban (Manual Load, Alt)</description>
 		<year>2011</year>
 		<publisher>Forthretro</publisher>
+		<info name="usage" value="Follow loading instructions in vg5k.xml file" />
 
 		<part name="cass1" interface="vg5k_cass">
 			<dataarea name="cass" size="12974">

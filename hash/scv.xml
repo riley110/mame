@@ -6,62 +6,63 @@ brand. About half of the games released in Japan were also released in Europe.
 
 Information found at http://www.rhod.fr/yeno_epoch.html
 
-    Japan
-    01 Astro Wars
-    02 Battle in Galaxy
-    03 Super Golf
-    04 Super Mahjong
-    05 Super Baseball
-    06 Punch Boy
-    07 Elevator Fight
-    08 Lupin III
-    09 Nebula
-    10 Wheelie Racer
-    11 Boulder Dash
-    12 Miner 2049er
-    13 Super Soccer
-    14 Comic Circus
-    15 Milky Princess
-    16 Pop & Chips
-    17 Kung Fu Road
-    18 Star Speeder
-    19 Ton Ton Ball
-    20 Super Professor
-    21 Japanese Chess
-    22 Doraemon
-    23 Basic
-    24 Dragon Slayer
-    25 Professional Wrestling
-    26 Wai Wai Monster Land
-    27 Dragon Ball
-    28 Mappy
-    29 Sky Kid
-    30 Pole Position II
+Japan
+01 Astro Wars
+02 Battle in Galaxy
+03 Super Golf
+04 Super Mahjong
+05 Super Baseball
+06 Punch Boy
+07 Elevator Fight
+08 Lupin III
+09 Nebula
+10 Wheelie Racer
+11 Boulder Dash
+12 Miner 2049er
+13 Super Soccer
+14 Comic Circus
+15 Milky Princess
+16 Pop & Chips
+17 Kung Fu Road
+18 Star Speeder
+19 Ton Ton Ball
+20 Super Professor
+21 Japanese Chess
+22 Doraemon
+23 Basic
+24 Dragon Slayer
+25 Professional Wrestling
+26 Wai Wai Monster Land
+27 Dragon Ball
+28 Mappy
+29 Sky Kid
+30 Pole Position II
 
-    Europe
-    01 Astro Wars
-    02 Battle in Galaxy
-    03 Super Golf
-    04 Punchy Boy
-    05 Elevator Fight
-    06 Lupin III
-    07 Nebula
-    08 Wheelie Racer
-    09 Miner 2049er
-    10 Boulder Dash
-    11 Super Soccer
-    12 Comic Circus
-    13 Pop & Chips
-    14 Kung Fu Road
-    15 Star Speeder
-    16 Ton Ton Ball
+Europe
+01 Astro Wars
+02 Battle in Galaxy
+03 Super Golf
+04 Punchy Boy
+05 Elevator Fight
+06 Lupin III
+07 Nebula
+08 Wheelie Racer
+09 Miner 2049er
+10 Boulder Dash
+11 Super Soccer
+12 Comic Circus
+13 Pop & Chips
+14 Kung Fu Road
+15 Star Speeder
+16 Ton Ton Ball
 -->
-
 <softwarelist name="scv" description="Epoch Super Cassette Vision cartridges">
+
 	<software name="astrwrs">
 		<description>Astro Wars - Invader from Space</description>
 		<year>1984</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom8k" />
 			<dataarea name="rom" size="8192">
@@ -74,6 +75,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Astro Wars II - Battle in Galaxy</description>
 		<year>1984</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom8k" />
 			<dataarea name="rom" size="8192">
@@ -86,6 +88,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>BASIC Nyuumon</description>
 		<year>1985</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom32k" />
 			<dataarea name="rom" size="32768">
@@ -99,6 +102,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Super Baseball</description>
 		<year>1984</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom16k" />
 			<dataarea name="rom" size="16384">
@@ -111,6 +115,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Boulder Dash</description>
 		<year>1985</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom16k" />
 			<dataarea name="rom" size="16384">
@@ -123,6 +128,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Comic Circus</description>
 		<year>1985</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom16k" />
 			<dataarea name="rom" size="16384">
@@ -135,6 +141,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Doraemon</description>
 		<year>1985</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom64k" />
 			<dataarea name="rom" size="65536">
@@ -148,6 +155,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Dragon Ball - Dragon Dai Hikyou</description>
 		<year>1986</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom128k" />
 			<dataarea name="rom" size="131072">
@@ -160,6 +168,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Dragon Slayer</description>
 		<year>1986</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom32k_ram" />
 			<dataarea name="rom" size="32768">
@@ -174,6 +183,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Elevator Fight</description>
 		<year>1984</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom16k" />
 			<dataarea name="rom" size="16384">
@@ -187,6 +197,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Nekketsu Kung Fu Road / Kung Fu Road</description>
 		<year>1985</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom64k" />
 			<dataarea name="rom" size="65536">
@@ -201,6 +212,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Lupin III</description>
 		<year>1984</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom16k" />
 			<dataarea name="rom" size="16384">
@@ -213,6 +225,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Mappy</description>
 		<year>1986</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom32k" />
 			<dataarea name="rom" size="32768">
@@ -225,6 +238,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Milky Princess</description>
 		<year>1985</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom32k" />
 			<dataarea name="rom" size="32768">
@@ -237,6 +251,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Miner 2049er</description>
 		<year>1985</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom16k" />
 			<dataarea name="rom" size="16384">
@@ -246,10 +261,11 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 	</software>
 
 	<software name="y2mnstld">
-	<!-- Alt. Title: Wai Wai Monster Land -->
 		<description>Y² Monster Land</description>
 		<year>1986</year>
 		<publisher>Epoch</publisher>
+		<info name="alt_title" value="Wai Wai Monster Land" />
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom128k" />
 			<dataarea name="rom" size="131072">
@@ -262,6 +278,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Nebula</description>
 		<year>1984</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom16k" />
 			<dataarea name="rom" size="16384">
@@ -274,6 +291,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Nebula (Alt)</description>
 		<year>1984</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom16k" />
 			<dataarea name="rom" size="16384">
@@ -286,6 +304,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Pole Position II</description>
 		<year>1985</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom128k_ram" />
 			<dataarea name="rom" size="131072">
@@ -300,6 +319,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Pop &amp; Chips</description>
 		<year>1985</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom32k_ram" />
 			<dataarea name="rom" size="32768">
@@ -314,6 +334,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Professional Wrestling</description>
 		<year>1986</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom128k" />
 			<dataarea name="rom" size="131072">
@@ -326,6 +347,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Punch Boy</description>
 		<year>1984</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom16k" />
 			<dataarea name="rom" size="16384">
@@ -338,6 +360,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Real Graphic Mahjongg</description>
 		<year>1984</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom16k" />
 			<dataarea name="rom" size="16384">
@@ -350,6 +373,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Sky Kid</description>
 		<year>1986</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom64k" />
 			<dataarea name="rom" size="65536">
@@ -362,6 +386,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Star Speeder</description>
 		<year>1985</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom64k" />
 			<dataarea name="rom" size="65536">
@@ -378,6 +403,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Shougi Nyuumon</description>
 		<year>1985</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom32k_ram" />
 			<dataarea name="rom" size="32768">
@@ -392,6 +418,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Super Sansuu Puter</description>
 		<year>1985</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom32k" />
 			<dataarea name="rom" size="32768">
@@ -405,6 +432,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Super Soccer</description>
 		<year>1985</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom16k" />
 			<dataarea name="rom" size="16384">
@@ -418,6 +446,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Super Soccer (Alt)</description>
 		<year>1985</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom16k" />
 			<dataarea name="rom" size="16384">
@@ -431,6 +460,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Super Golf</description>
 		<year>1984</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom16k" />
 			<dataarea name="rom" size="16384">
@@ -443,6 +473,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Ton Ton Ball</description>
 		<year>1985</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom16k" />
 			<dataarea name="rom" size="16384">
@@ -455,6 +486,7 @@ Information found at http://www.rhod.fr/yeno_epoch.html
 		<description>Wheelie Racer</description>
 		<year>1985</year>
 		<publisher>Epoch</publisher>
+
 		<part name="cart" interface="scv_cart">
 			<feature name="slot" value="rom16k" />
 			<dataarea name="rom" size="16384">

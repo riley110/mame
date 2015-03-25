@@ -1,9 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-
 <!-- Note: a Chinese pirate mahjong game is rumored to exist -->
 <!-- Kof95 and Ultraman require additional ROM cartridges to work! -->
-
 <softwarelist name="sat_cart" description="Sega Saturn cartridges">
 
 	<!-- The header would indicate this is the same for both regions -->
@@ -12,9 +10,9 @@
 		<year>1995</year>
 		<publisher>SNK</publisher>
 		<info name="serial" value="T-3101G" />
+
 		<part name="cart" interface="sat_cart">
 			<feature name="slot" value="rom" />
-
 			<!-- PCB info from Jpn cart pic -->
 			<feature name="pcb" value="171-7088A" />
 			<feature name="ic1" value="MPR-18811-MX" />
@@ -28,6 +26,7 @@
 		<description>Ultraman (Jpn) (Support Cartridge)</description>
 		<year>1995</year>
 		<publisher>Bandai</publisher>
+
 		<part name="cart" interface="sat_cart">
 			<feature name="slot" value="rom" />
 			<dataarea name="rom" size="0x200000">
@@ -36,10 +35,11 @@
 		</part>
 	</software>
 
-	<software name="test1f">
-		<description>Test Menu v1.0f</description>
+	<software name="testmenu">
+		<description>Test Menu (v1.0f)</description>
 		<year>1994</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="sat_cart">
 			<feature name="slot" value="rom" />
 			<dataarea name="rom" size="0x80000">
@@ -53,6 +53,7 @@
 		<description>Action Replay</description>
 		<year>199?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+
 		<part name="cart" interface="sat_cart">
 			<feature name="slot" value="rom" />
 			<dataarea name="rom" size="84069">
@@ -67,6 +68,7 @@
 		<description>Extended RAM 8Mbit cartridge</description>
 		<year>199?</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="sat_cart">
 			<feature name="slot" value="ram8" />
 			<dataarea name="dram0" size="0x80000">
@@ -80,6 +82,7 @@
 		<description>Extended RAM 32Mbit cartridge</description>
 		<year>199?</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="sat_cart">
 			<feature name="slot" value="ram32" />
 			<dataarea name="dram0" size="0x200000">
@@ -93,6 +96,7 @@
 		<description>Backup RAM 4Mbit cartridge</description>
 		<year>199?</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="sat_cart">
 			<feature name="slot" value="bram4" />
 			<dataarea name="bram" size="0x80000">
@@ -104,6 +108,7 @@
 		<description>Backup RAM 8Mbit cartridge</description>
 		<year>199?</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="sat_cart">
 			<feature name="slot" value="bram8" />
 			<dataarea name="bram" size="0x100000">
@@ -115,6 +120,7 @@
 		<description>Backup RAM 16Mbit cartridge</description>
 		<year>199?</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="sat_cart">
 			<feature name="slot" value="bram16" />
 			<dataarea name="bram" size="0x200000">
@@ -126,12 +132,12 @@
 		<description>Backup RAM 32Mbit cartridge</description>
 		<year>199?</year>
 		<publisher>Sega</publisher>
+
 		<part name="cart" interface="sat_cart">
 			<feature name="slot" value="bram32" />
 			<dataarea name="bram" size="0x400000">
 			</dataarea>
 		</part>
 	</software>
-
 
 </softwarelist>

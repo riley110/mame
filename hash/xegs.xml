@@ -29,7 +29,8 @@ Compiled by K1W1
 		<description>Ace of Aces</description>
 		<year>1988</year>
 		<publisher>Atari</publisher>
-		<info name="serial" value="RX8099" />
+		<info name="serial" value="RX8099" />>
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="131072">
@@ -42,7 +43,8 @@ Compiled by K1W1
 		<description>Airball</description>
 		<year>1988</year>
 		<publisher>Atari</publisher>
-		<info name="serial" value="RX8109" />
+		<info name="serial" value="RX8109" />>
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="131072">
@@ -56,6 +58,7 @@ Compiled by K1W1
 		<year>1987</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8092" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="32768">
@@ -69,6 +72,7 @@ Compiled by K1W1
 		<year>1987</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8064" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="65536">
@@ -77,26 +81,32 @@ Compiled by K1W1
 		</part>
 	</software>
 
+	<!-- Uses Lightgun -->
 	<software name="barnblst">
 		<description>Barnyard Blaster</description>
 		<year>1987</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8086" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
-			<feature name="peripheral" value="lightgun" /> <!-- Uses Lightgun -->
+			<feature name="peripheral" value="lightgun" />
 			<dataarea name="rom" size="131072">
 				<rom name="barnyard blaster (atari)(1987)(rx8086).rom" size="131072" crc="13ae30ed" sha1="e4b22790fce8e2e0f7c972960aec692b7fd5e016" offset="0" /> <!-- Verified -->
 			</dataarea>
 		</part>
 	</software>
 
+	<!-- 
+	This is the last WIP version by Ken Siders, dated 2005-02-16.
+	It is here as a placeholder until the dump of the final release version by Atari Age becomes avaialable.
+	-->
 	<software name="beefdrop" supported="partial">
 		<description>Beef Drop</description>
-		<!-- This is the last WIP version by Ken Siders, dated 2005-02-16. It is here as a placeholder until the dump of the final release version by Atari Age becomes avaialable. -->
 		<year>2005</year>
 		<publisher>&lt;homebrew&gt;</publisher>
 		<info name="developer" value="Ken Siders" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="32768">
@@ -109,6 +119,7 @@ Compiled by K1W1
 		<description>Bruce Lee (Reproduction)</description>
 		<year>1984</year>
 		<publisher>Video 61 / Datasoft</publisher>
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="65536">
@@ -122,6 +133,7 @@ Compiled by K1W1
 		<year>1987</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8077" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="65536">
@@ -135,6 +147,7 @@ Compiled by K1W1
 		<year>1987</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8081" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="32768">
@@ -143,14 +156,16 @@ Compiled by K1W1
 		</part>
 	</software>
 
+	<!-- Uses Lightgun -->
 	<software name="bughunt">
 		<description>Bug Hunt</description>
 		<year>1987</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8087" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
-			<feature name="peripheral" value="lightgun" /> <!-- Uses Lightgun -->
+			<feature name="peripheral" value="lightgun" />
 			<dataarea name="rom" size="65536">
 				<rom name="bug hunt (atari)(1987)(rx8087).rom" size="65536" crc="246f3872" sha1="48eeec190dbb27e1311938498b087088077dd530" offset="0" /> <!-- Verified -->
 			</dataarea>
@@ -161,6 +176,7 @@ Compiled by K1W1
 		<description>Castle Crisis</description>
 		<year>2003</year>
 		<publisher>Atari Age</publisher>
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="32768">
@@ -174,6 +190,7 @@ Compiled by K1W1
 		<year>1987</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8096" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="65536">
@@ -186,6 +203,7 @@ Compiled by K1W1
 		<description>Commando (Prototype)</description>
 		<year>1988</year>
 		<publisher>Atari</publisher>
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="131072">
@@ -194,28 +212,32 @@ Compiled by K1W1
 		</part>
 	</software>
 
+	<!-- Uses Lightgun -->
 	<software name="crimbstr">
 		<description>Crime Buster</description>
 		<year>1988</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8104" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
-			<feature name="peripheral" value="lightgun" /> <!-- Uses Lightgun -->
+			<feature name="peripheral" value="lightgun" />
 			<dataarea name="rom" size="131072">
 				<rom name="crime buster (atari)(1988)(rx8104).rom" size="131072" crc="143fbad9" sha1="d936dee2676d4fb8ea84960bf6c7cef707dc45a2" offset="0" /> <!-- Verified -->
 			</dataarea>
 		</part>
 	</software>
 
+	<!-- Uses Lightgun -->
 	<software name="crossbow" supported="partial">
 		<description>Crossbow</description>
 		<year>1988</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8088" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
-			<feature name="peripheral" value="lightgun" /> <!-- Uses Lightgun -->
+			<feature name="peripheral" value="lightgun" />
 			<dataarea name="rom" size="131072">
 				<rom name="crossbow (atari)(1988)(rx8088).rom" size="131072" crc="0557a91f" sha1="7778002227315ab9fa3410b3a686634877cdd22e" offset="0" /> <!-- Verified -->
 			</dataarea>
@@ -227,6 +249,7 @@ Compiled by K1W1
 		<year>1988</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8102" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="32768">
@@ -240,6 +263,7 @@ Compiled by K1W1
 		<year>1988</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8101" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="65536">
@@ -253,6 +277,7 @@ Compiled by K1W1
 		<year>1987</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8083" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="65536">
@@ -265,6 +290,7 @@ Compiled by K1W1
 		<description>Deflektor (Prototype)</description>
 		<year>1988</year>
 		<publisher>Atari</publisher>
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="65536">
@@ -278,6 +304,7 @@ Compiled by K1W1
 		<year>1988</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8089" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="65536">
@@ -291,6 +318,7 @@ Compiled by K1W1
 		<year>1987</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8085" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="131072">
@@ -304,6 +332,7 @@ Compiled by K1W1
 		<year>1987</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8091" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="131072">
@@ -317,6 +346,7 @@ Compiled by K1W1
 		<year>1987</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="CA400201" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="65536">
@@ -330,6 +360,7 @@ Compiled by K1W1
 		<year>1987</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8079" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="32768">
@@ -343,6 +374,7 @@ Compiled by K1W1
 		<year>1987</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8090" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="131072">
@@ -356,6 +388,7 @@ Compiled by K1W1
 		<year>1987</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8084" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="65536">
@@ -369,6 +402,7 @@ Compiled by K1W1
 		<year>1988</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8114" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="32768">
@@ -382,6 +416,7 @@ Compiled by K1W1
 		<year>1988</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8095" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="131072">
@@ -395,6 +430,7 @@ Compiled by K1W1
 		<year>1987</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8082" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="65536">
@@ -408,6 +444,7 @@ Compiled by K1W1
 		<year>1988</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8103" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="65536">
@@ -420,6 +457,7 @@ Compiled by K1W1
 		<description>Mean 18 (Prototype)</description>
 		<year>1988</year>
 		<publisher>Atari</publisher>
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="131072">
@@ -432,6 +470,7 @@ Compiled by K1W1
 		<description>MIDI Maze (Reproduction)</description>
 		<year>199?</year>
 		<publisher>Video 61 / Atari</publisher>
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="131072">
@@ -444,6 +483,7 @@ Compiled by K1W1
 		<description>MIDI Maze (Prototype)</description>
 		<year>1988</year>
 		<publisher>Atari</publisher>
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="131072">
@@ -457,6 +497,7 @@ Compiled by K1W1
 		<year>1988</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8108" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="16384">
@@ -470,6 +511,7 @@ Compiled by K1W1
 		<year>1987</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8093" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="32768">
@@ -483,6 +525,7 @@ Compiled by K1W1
 		<year>1987</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8063" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="65536">
@@ -495,6 +538,7 @@ Compiled by K1W1
 		<description>Sinistar (Reproduction)</description>
 		<year>199?</year>
 		<publisher>Video 61 / Atari</publisher>
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="32768">
@@ -508,6 +552,7 @@ Compiled by K1W1
 		<year>1987</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8078" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="32768">
@@ -521,6 +566,7 @@ Compiled by K1W1
 		<year>1987</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8098" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="131072">
@@ -533,6 +579,7 @@ Compiled by K1W1
 		<description>Tapper (Reproduction)</description>
 		<year>20??</year>
 		<publisher>Video 61 / Bally Midway</publisher>
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="65536">
@@ -546,6 +593,7 @@ Compiled by K1W1
 		<year>1988</year>
 		<publisher>Atari</publisher>
 		<info name="serial" value="RX8113" />
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="65536">
@@ -558,6 +606,7 @@ Compiled by K1W1
 		<description>Tower Toppler (Prototype)</description>
 		<year>1988</year>
 		<publisher>Atari</publisher>
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="65536">
@@ -570,6 +619,7 @@ Compiled by K1W1
 		<description>Vanguard (5200 Conversion)</description>
 		<year>199?</year>
 		<publisher>Video 61 / Atari</publisher>
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="65536">
@@ -583,6 +633,7 @@ Compiled by K1W1
 		<description>Xenophobe (Reproduction)</description>
 		<year>2010</year>
 		<publisher>Video 61 / Atari</publisher>
+
 		<part name="cart" interface="a8bit_cart">
 			<feature name="slot" value="xegs" />
 			<dataarea name="rom" size="131072">

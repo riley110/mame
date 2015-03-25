@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="sf7000" description="Sega Super Control Station SF-7000 disk images">
+
 	<software name="102examp">
 		<description>Progs for Yeno (Fra)</description>
 		<year>19??</year>
@@ -127,12 +128,13 @@
 		<publisher>Scorpion</publisher>
 
 		<part name="flop1" interface="floppy_3">
+		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="163840">
 				<rom name="froggy [+cube it].sf7" size="163840" crc="67d2f298" sha1="55625ec47e9be66ff632361823c233d7cae0c839" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="flop2" interface="floppy_3">
+		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="163840">
 				<rom name="gold miner-cyco bikes.sf7" size="163840" crc="cba16c6e" sha1="a41cabd0bdc9d63e5940e310f5f3919c911fb48d" offset="0" />
 			</dataarea>
@@ -212,7 +214,7 @@
 	</software>
 
 	<software name="segabase">
-		<description>Sega Base v1.0</description>
+		<description>Sega Base (v1.0)</description>
 		<year>1984</year>
 		<publisher>Hudson</publisher>
 
@@ -224,7 +226,19 @@
 	</software>
 
 	<software name="basic">
-		<description>Sega Disk BASIC v1.0p</description>
+		<description>Sega Disk BASIC (v1.1p)</description>
+		<year>1984</year>
+		<publisher>Mitec</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="163840">
+				<rom name="sega sc-3000 disk basic v1.1p (1984)(mitec).sf7" size="163840" crc="7f51ef65" sha1="037c3d09b3d9e898a79514c3885bf6e42d28dd4e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basic1" cloneof="basic">
+		<description>Sega Disk BASIC (v1.0p)</description>
 		<year>1984</year>
 		<publisher>Mitec</publisher>
 
@@ -235,8 +249,8 @@
 		</part>
 	</software>
 
-	<software name="basicf" cloneof="basic">
-		<description>Sega Disk BASIC v1.0p (Fra)</description>
+	<software name="basic1f" cloneof="basic">
+		<description>Sega Disk BASIC (Fra, v1.0p)</description>
 		<year>1984</year>
 		<publisher>Yeno</publisher>
 
@@ -248,25 +262,13 @@
 	</software>
 
 	<software name="logo">
-		<description>Sega LOGO v1.0e</description>
+		<description>Sega LOGO (v1.0e)</description>
 		<year>1984</year>
 		<publisher>Sega</publisher>
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="163840">
 				<rom name="sega logo v1.0e (sf-7000) [!].sf7" size="163840" crc="a7b1da17" sha1="1a54fbf5bd1442a96e7806249a6812ea2006e092" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="basic11" cloneof="basic">
-		<description>Sega Disk BASIC v1.1p</description>
-		<year>1984</year>
-		<publisher>Mitec</publisher>
-
-		<part name="flop1" interface="floppy_3">
-			<dataarea name="flop" size="163840">
-				<rom name="sega sc-3000 disk basic v1.1p (1984)(mitec).sf7" size="163840" crc="7f51ef65" sha1="037c3d09b3d9e898a79514c3885bf6e42d28dd4e" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -312,4 +314,5 @@
 			</dataarea>
 		</part>
 	</software>
+
 </softwarelist>

@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<softwarelist name="interact" description="Interact Family Computer cassettes">
 <!--
 UNDUMPED:
 These are from the Spring 1981 catalog from Micro Video, after they aquired the rights from Interact
@@ -73,6 +72,7 @@ Financial Library II
 Not in the catalog:
 Alignment Tape (Micro Video)
 -->
+<softwarelist name="interact" description="Interact Family Computer cassettes">
 
 <!-- Interact-published cassettes -->
 
@@ -167,10 +167,11 @@ Alignment Tape (Micro Video)
 		</part>
 	</software>
 
+	<!-- re-released by Micro Video -->
 	<software name="reversi">
 		<description>Reversi</description>
 		<year>19??</year>
-		<publisher>Interact Electronics</publisher><!-- re-released by Micro Video -->
+		<publisher>Interact Electronics</publisher>
 		<info name="serial" value="QQS-108"/>
 
 		<part name="cass" interface="interact_cass">
@@ -284,10 +285,11 @@ Alignment Tape (Micro Video)
 		</part>
 	</software>
 
+	<!-- re-released by Micro Video -->
 	<software name="trailblz">
 		<description>Trailblazers</description>
 		<year>1978</year>
-		<publisher>Interact Electronics</publisher><!-- re-released by Micro Video -->
+		<publisher>Interact Electronics</publisher>
 		<info name="serial" value="QQA-302"/>
 
 		<part name="cass" interface="interact_cass">
@@ -349,10 +351,11 @@ Alignment Tape (Micro Video)
 		</part>
 	</software>
 
+	<!-- re-released by Micro Video -->
 	<software name="volley">
 		<description>Volleyball</description>
 		<year>1979</year>
-		<publisher>Interact Electronics</publisher><!-- re-released by Micro Video -->
+		<publisher>Interact Electronics</publisher>
 		<info name="serial" value="QQA-307"/>
 
 		<part name="cass" interface="interact_cass">
@@ -362,10 +365,11 @@ Alignment Tape (Micro Video)
 		</part>
 	</software>
 
+	<!-- re-released by Micro Video -->
 	<software name="volleya" cloneof="volley">
 		<description>Volleyball (Alt)</description>
 		<year>1979</year>
-		<publisher>Interact Electronics</publisher><!-- re-released by Micro Video -->
+		<publisher>Interact Electronics</publisher>
 		<info name="serial" value="QQA-307"/>
 
 		<part name="cass1" interface="interact_cass">
@@ -388,10 +392,11 @@ Alignment Tape (Micro Video)
 		</part>
 	</software>
 
+	<!-- re-released by Micro Video -->
 	<software name="calculat">
 		<description>Calculator</description>
 		<year>1979</year>
-		<publisher>Interact Electronics</publisher><!-- re-released by Micro Video -->
+		<publisher>Interact Electronics</publisher>
 		<info name="serial" value="QQM-505"/>
 
 		<part name="cass" interface="interact_cass">
@@ -440,9 +445,10 @@ Alignment Tape (Micro Video)
 	</software>
 
 	<software name="earthout">
-		<description>Earth Outpost I</description><!-- requires 16k of ram -->
+		<description>Earth Outpost I</description>
 		<year>1980</year>
 		<publisher>Micro Video</publisher>
+		<info name="usage" value="Requires 16K of RAM" />
 
 		<part name="cass" interface="interact_cass">
 			<dataarea name="cass" size="12905">
@@ -464,7 +470,7 @@ Alignment Tape (Micro Video)
 	</software>
 
 	<software name="basic">
-		<description>Microsoft Basic v4.7</description>
+		<description>Microsoft BASIC (v4.7)</description>
 		<year>1978</year>
 		<publisher>Microsoft</publisher>
 

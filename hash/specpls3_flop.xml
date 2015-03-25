@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-
-<!-- This software list contains disk images only for the ZX Spectrum +3. Other
-	 formats (TR-DOS, IS-DOS, etc) are for various ZX Spectrum clones, and
-	 therefore should have their own different software lists. -->
-
+<!-- 
+This software list contains disk images only for the ZX Spectrum +3. Other
+formats (TR-DOS, IS-DOS, etc) are for various ZX Spectrum clones, and
+therefore should have their own different software lists.
+-->
 <softwarelist name="specpls3_flop" description="ZX Spectrum +3 disk images">
 
-	<!-- SPS / CAPS Releases -->
+<!-- SPS / CAPS Releases -->
 
 	<software name="aforce" >
 		<!-- SPS (CAPS) release 3500 -->
@@ -1667,13 +1667,13 @@
 		</part>
 	</software>
 
-
-	<!-- Other images -->
+<!-- Other images -->
 
 	<software name="pacmania" >
 		<description>Pac-Mania (Euro, Aus)</description>
 		<year>1988</year>
 		<publisher>Grandslam Entertainments</publisher>
+
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="195328">
 				<rom name="pac-mania.dsk" size="195328" crc="88f5506b" sha1="827c95935dd3a1dd919989fc6d7a0efa4e5aebc1" offset="0" />

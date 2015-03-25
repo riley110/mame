@@ -1,19 +1,20 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <!--
-    Missing dumps:
+Missing dumps:
 
-    325057-01   C16/C116/plus4 DIAGNOSE
+325057-01   C16/C116/plus4 DIAGNOSE
 -->
 <softwarelist name="plus4_cart" description="Commodore Plus/4 cartridges">
 
-	<!-- Games -->
+<!-- Games -->
 
 	<software name="atomicmi">
 		<description>Atomic Mission</description>
 		<year>1984</year>
 		<publisher>Commodore</publisher>
 		<info name="serial" value="T116005" />
+
 		<part name="cart" interface="plus4_cart">
 			<dataarea name="c1l" size="0x4000">
 				<rom name="317042-01.u1" size="0x4000" crc="a059fccb" sha1="e919531d016596ec1a2fd349bbe6691716297f35" offset="0" />
@@ -53,6 +54,7 @@
 		<year>1984</year>
 		<publisher>Commodore</publisher>
 		<info name="serial" value="T116004" />
+
 		<part name="cart" interface="plus4_cart">
 			<dataarea name="c1l" size="0x4000">
 				<rom name="317041-01.u1" size="0x4000" crc="a903dc53" sha1="410ccb6b304ca30e852fdc6ec33d9dacd7de3493" offset="0" />
@@ -114,13 +116,14 @@
 		</part>
 	</software>
 
-	<!-- Applications -->
+<!-- Applications -->
 
 	<software name="calcplus">
 		<description>Calc/Plus</description>
 		<year>1984</year>
 		<publisher>Commodore</publisher>
 		<info name="serial" value="T112003" />
+
 		<part name="cart" interface="plus4_cart">
 			<dataarea name="c1l" size="0x4000">
 				<rom name="calc-lo" size="0x4000" crc="8a085df6" sha1="2b8c748d7be725a1e4106b9cca167bd85786b809" offset="0" />
@@ -136,6 +139,7 @@
 		<year>1984</year>
 		<publisher>Commodore</publisher>
 		<info name="serial" value="T113016" />
+
 		<part name="cart" interface="plus4_cart">
 			<dataarea name="c1l" size="0x4000">
 				<rom name="kb-lo" size="0x4000" crc="c999369c" sha1="fea0b7df5ccec5ce05390c650ff5f4ea878bd468" offset="0" />
@@ -177,6 +181,7 @@
 		<year>1984</year>
 		<publisher>Commodore</publisher>
 		<info name="serial" value="T232001" />
+
 		<part name="cart" interface="plus4_cart">
 			<dataarea name="c1l" size="0x4000">
 				<rom name="317048-01.u1" size="0x4000" crc="5b0e82ae" sha1="0f1b8b20331c8c502fed507eca5d66683667757b" offset="0" />
@@ -190,6 +195,7 @@
 		<publisher>Commodore</publisher>
 		<info name="serial" value="T263001" />
 		<info name="video" value="NTSC" />
+
 		<part name="cart" interface="plus4_cart">
 			<dataarea name="c1l" size="0x4000">
 				<rom name="317046-01.u1" size="0x4000" crc="216fc5a8" sha1="6e22c082ef2659af4eb10f8acb14175941c9edc9" offset="0" />
@@ -209,6 +215,7 @@
 		<description>Octasoft BASIC 7.0 (Hun)</description>
 		<year>1988</year>
 		<publisher>Novotrade</publisher>
+
 		<part name="cart" interface="plus4_cart">
 			<dataarea name="c2l" size="0x4000">
 				<rom name="basic7" size="0x4000" crc="e900a1d5" sha1="5f96bdeffa42c18e869d9d045df65d98a4e561eb" offset="0" />
@@ -251,6 +258,7 @@
 		<description>Speedy</description>
 		<year>1988</year>
 		<publisher>&lt;unknown&gt;</publisher>
+
 		<part name="cart" interface="plus4_cart">
 			<dataarea name="c1l" size="0x4000">
 				<rom name="speedy.u1" size="0x2000" crc="74f180bc" sha1="79a4b19c50bc9a85c0356a3d2d7453b2d1d8266f" offset="0" />
@@ -264,6 +272,7 @@
 		<year>1987</year>
 		<publisher>Kingsoft</publisher>
 		<info name="author" value="Andreas Arens" />
+
 		<part name="cart" interface="plus4_cart">
 			<dataarea name="c1l" size="0x4000">
 				<rom name="turboplus.u1" size="0x2000" crc="88b40daf" sha1="bb02e863193b9f7731e9bf5b554bb1e743a0a573" offset="0" />

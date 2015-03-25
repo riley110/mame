@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<softwarelist name="microvision" description="Milton Bradley MicroVision cartridges">
 <!--
 The following board types are known to exist:
 4952 REV-A - used for tms1100 games, 2 varations exist, one with and one without paddle circuitry
@@ -12,13 +11,14 @@ The "pcb" feature is used to indicate the board type
 The "paddle" feature is used to indicate whether there is paddle circuitry on the board
 The "rc" feature is used to indicate the source of the clock signal
 -->
-
+<softwarelist name="microvision" description="Milton Bradley MicroVision cartridges">
 
 	<software name="alienrdr">
 		<description>Alien Raiders</description>
 		<year>1981</year>
 		<publisher>Milton Bradley</publisher>
 		<info name="serial" value="M34009" />
+
 		<part name="cart" interface="microvision_cart">
 			<feature name="pla" value="1" />
 			<feature name="pcb" value="4952-79 REV-B" />
@@ -35,6 +35,7 @@ The "rc" feature is used to indicate the source of the clock signal
 		<year>1980</year>
 		<publisher>Milton Bradley</publisher>
 		<info name="serial" value="MP3479" />
+
 		<part name="cart" interface="microvision_cart">
 			<feature name="pcb" value="4952-79 REV-B" />
 			<feature name="paddle" value="yes" />
@@ -50,6 +51,7 @@ The "rc" feature is used to indicate the source of the clock signal
 		<year>1979</year>
 		<publisher>Milton Bradley</publisher>
 		<info name="serial" value="MP3450A" />
+
 		<part name="cart" interface="microvision_cart">
 			<feature name="pcb" value="4952 REV-A" />
 			<feature name="paddle" value="yes" />
@@ -65,6 +67,7 @@ The "rc" feature is used to indicate the source of the clock signal
 		<year>1979</year>
 		<publisher>Milton Bradley</publisher>
 		<info name="serial" value="MP3475" />
+
 		<part name="cart" interface="microvision_cart">
 			<!-- also seen with 4952 REV-A -->
 			<feature name="pla" value="1" />
@@ -82,6 +85,7 @@ The "rc" feature is used to indicate the source of the clock signal
 		<year>1979</year>
 		<publisher>Milton Bradley</publisher>
 		<info name="serial" value="MP3481" />
+
 		<part name="cart" interface="microvision_cart">
 			<feature name="pcb" value="4971-REV-C" />
 			<feature name="paddle" value="yes" />
@@ -97,6 +101,7 @@ The "rc" feature is used to indicate the source of the clock signal
 		<year>1979</year>
 		<publisher>Milton Bradley</publisher>
 		<info name="serial" value="MP3481" />
+
 		<part name="cart" interface="microvision_cart">
 			<feature name="pla" value="1" />  <!-- correct? -->
 			<feature name="pcb" value="4952-79 REV-B" />  <!-- correct? -->
@@ -108,10 +113,11 @@ The "rc" feature is used to indicate the source of the clock signal
 	</software>
 
 	<software name="cosmichu">
-		<description>Cosmic hunter</description>
+		<description>Cosmic Hunter</description>
 		<year>1981</year>
 		<publisher>Milton Bradley</publisher>
 		<info name="serial" value="M34017" />
+
 		<part name="cart" interface="microvision_cart">
 			<feature name="pla" value="1" />
 			<feature name="pcb" value="4952-79 REV-B" />
@@ -128,6 +134,7 @@ The "rc" feature is used to indicate the source of the clock signal
 		<year>1979</year>
 		<publisher>Milton Bradley</publisher>
 		<info name="serial" value="MP3457" />
+
 		<part name="cart" interface="microvision_cart">
 			<feature name="pcb" value="4952 REV-A" />
 			<feature name="paddle" value="no" />
@@ -143,6 +150,7 @@ The "rc" feature is used to indicate the source of the clock signal
 		<year>1979</year>
 		<publisher>Milton Bradley</publisher>
 		<info name="serial" value="MP3454" />
+
 		<part name="cart" interface="microvision_cart">
 			<feature name="pcb" value="4952-79 REV-B" />
 			<feature name="paddle" value="no" />
@@ -158,6 +166,7 @@ The "rc" feature is used to indicate the source of the clock signal
 		<year>1980</year>
 		<publisher>Milton Bradley</publisher>
 		<info name="serial" value="MP3455" />
+
 		<part name="cart" interface="microvision_cart">
 			<feature name="pcb" value="4952-79 REV-B" />
 			<feature name="paddle" value="yes" />
@@ -173,6 +182,7 @@ The "rc" feature is used to indicate the source of the clock signal
 		<year>1980</year>
 		<publisher>Milton Bradley</publisher>
 		<info name="serial" value="MP3496" />
+
 		<part name="cart" interface="microvision_cart">
 			<feature name="pla" value="1" />
 			<feature name="pcb" value="4952-79 REV-B" />
@@ -189,6 +199,7 @@ The "rc" feature is used to indicate the source of the clock signal
 		<year>1982</year>
 		<publisher>Milton Bradley</publisher>
 		<info name="serial" value="M34047" />
+
 		<part name="cart" interface="microvision_cart">
 			<feature name="pla" value="1" />
 			<feature name="pcb" value="7924952D02" />
@@ -205,6 +216,7 @@ The "rc" feature is used to indicate the source of the clock signal
 		<year>1979</year>
 		<publisher>Milton Bradley</publisher>
 		<info name="serial" value="MP3474" />
+
 		<part name="cart" interface="microvision_cart">
 			<feature name="pla" value="1" />
 			<feature name="pcb" value="4952 REV-A" />
@@ -222,6 +234,7 @@ The "rc" feature is used to indicate the source of the clock signal
 		<description>Bomber</description>
 		<year>2014</year>
 		<publisher>Paul Robson</publisher>
+
 		<part name="cart" interface="microvision_cart">
 			<feature name="pcb" value="4952 REV-A" />
 			<feature name="paddle" value="no" />
@@ -236,6 +249,7 @@ The "rc" feature is used to indicate the source of the clock signal
 		<description>Demo</description>
 		<year>2013</year>
 		<publisher>Paul Robson</publisher>
+
 		<part name="cart" interface="microvision_cart">
 			<feature name="pcb" value="4952 REV-A" />
 			<feature name="paddle" value="no" />
@@ -250,6 +264,7 @@ The "rc" feature is used to indicate the source of the clock signal
 		<description>Invaders</description>
 		<year>2014</year>
 		<publisher>Paul Robson</publisher>
+
 		<part name="cart" interface="microvision_cart">
 			<feature name="pcb" value="4952 REV-A" />
 			<feature name="paddle" value="no" />

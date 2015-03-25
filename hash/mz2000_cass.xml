@@ -1,11 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-
-
-<softwarelist name="mz2000_cass" description="MZ-2000 cassettes">
+<softwarelist name="mz2000_cass" description="Sharp MZ-2000 cassettes">
 
 	<software name="mz1z001">
-		<description>BASIC MZ-1Z001 v1.0c</description>
+		<description>BASIC MZ-1Z001 (v1.0c)</description>
 		<year>1982</year>
 		<publisher>Sharp</publisher>
 		<part name="cass1" interface="mz_cass">
@@ -16,7 +14,7 @@
 	</software>
 
 	<software name="mz1z002">
-		<description>BASIC MZ-1Z002 v1.0a</description>
+		<description>BASIC MZ-1Z002 (v1.0a)</description>
 		<year>1982</year>
 		<publisher>Sharp</publisher>
 		<part name="cass1" interface="mz_cass">
@@ -48,8 +46,10 @@
 		</part>
 	</software>
 
-<!-- This was was obtained by removing the MTW header from the available jelda.mtw.
-     was any info lost? i.e. was the wav inside the mtw the complete content of the MZ tape? -->
+	<!--
+	This was was obtained by removing the MTW header from the available jelda.mtw.
+	was any info lost? i.e. was the wav inside the mtw the complete content of the MZ tape?
+	-->
 	<software name="jelda" supported="no">
 		<description>Jelda</description>
 		<year>1983</year>
@@ -61,8 +61,10 @@
 		</part>
 	</software>
 
-<!-- This was was obtained by removing the MTW header from the available jelda.mtw.
-     was any info lost? i.e. was the wav inside the mtw the complete content of the MZ tape? -->
+	<!-- 
+	This was was obtained by removing the MTW header from the available jelda.mtw.
+	was any info lost? i.e. was the wav inside the mtw the complete content of the MZ tape?
+	-->
 	<software name="jelda2" supported="no">
 		<description>Jelda 2</description>
 		<year>1984</year>
@@ -95,6 +97,5 @@
 			</dataarea>
 		</part>
 	</software>
-
 
 </softwarelist>

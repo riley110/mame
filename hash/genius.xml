@@ -1,11 +1,10 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!-- this software list contains all available VTech Genius family cartridges, needs to be split to respective systems later -->
 <softwarelist name="genius" description="VTech Genius cartridges">
 
-<!-- this software list contains all available VTech Genius family cartridges, needs to be split to respective systems later -->
-
-
-<!-- First chunk of dumps, compatible with: Notebook Fun, e-Power X, 5005 X, 6600 CX, 8008 CX, Black Magic CX
+<!-- 
+First chunk of dumps, compatible with: Notebook Fun, e-Power X, 5005 X, 6600 CX, 8008 CX, Black Magic CX
 
 +- - - - - - - +- - - - - - - - - - - - - - -+- - - - - - +- - - - - - - - -
 | CARTRIDGE ID |          GAME NAME          |  EPROM-ID  |  EPROM-TYPE   |
@@ -23,7 +22,6 @@ the LH5V1RN6 flash-rom is pin compatible to an LH531V00 which is compatible to a
 VTECH burned two games on one flash-rom, with setting the highest adressline HIGH or LOW, they choosed the game,
 but if you wanted to play both games, you had to buy both cartridges!
 On one was the highest adressline set to HIGH, on the other one this adressline was set to LOW.
-
 -->
 
 	<software name="englisha">
@@ -91,11 +89,9 @@ On one was the highest adressline set to HIGH, on the other one this adressline 
 		</part>
 	</software>
 
-
-
 <!-- Second chunk of dumps, compatible with: Genius Leader series (actual compatible models as listed on the box are documented below) -->
 
-<!-- According to the boxart, this is compatible with: Leader Notebook -->
+	<!-- According to the boxart, this is compatible with: Leader Notebook -->
 	<software name="franzosis">
 		<description>Französisch Total</description>
 		<year>200?</year>
@@ -109,7 +105,7 @@ On one was the highest adressline set to HIGH, on the other one this adressline 
 		</part>
 	</software>
 
-<!-- According to the boxart, this is compatible with: Leader Notebook/Notebook Plus/Power Notebook -->
+<	!-- According to the boxart, this is compatible with: Leader Notebook/Notebook Plus/Power Notebook -->
 	<software name="swga" cloneof="swg">
 		<description>Sport-Wissen-Geschichte (Genius Leader Notebook)</description>
 		<year>200?</year>
@@ -123,7 +119,7 @@ On one was the highest adressline set to HIGH, on the other one this adressline 
 		</part>
 	</software>
 
-<!-- According to the boxart, this is compatible with: Leader Power Notebook -->
+	<!-- According to the boxart, this is compatible with: Leader Power Notebook -->
 	<software name="diktate">
 		<description>Diktate</description>
 		<year>200?</year>
@@ -137,7 +133,7 @@ On one was the highest adressline set to HIGH, on the other one this adressline 
 		</part>
 	</software>
 
-<!-- According to the boxart, this is compatible with: Junior Redstar/Redstar 2 -->
+	<!-- According to the boxart, this is compatible with: Junior Redstar/Redstar 2 -->
 	<software name="wortspie">
 		<description>Wortspiele</description>
 		<year>200?</year>
