@@ -76,6 +76,7 @@
 		</part>
 	</software>
 
+<!--
 	<software name="andreditc" cloneof="andredit">
 		<description>Androides Editeur (Bad)</description>
 		<year>1985</year>
@@ -87,6 +88,7 @@
 			</dataarea>
 		</part>
 	</software>
+-->
 
 	<software name="animatix">
 		<description>Animatix</description>
@@ -4813,6 +4815,7 @@
 		</part>
 	</software>
 
+<!--
 	<software name="jeuboolea" cloneof="jeuboole">
 		<description>Le Jeu de Boole (Bad)</description>
 		<year>1984</year>
@@ -4824,6 +4827,7 @@
 			</dataarea>
 		</part>
 	</software>
+-->
 
 	<software name="jeuplane">
 		<description>Jeu des Planetes</description>
@@ -6098,6 +6102,7 @@
 		</part>
 	</software>
 
+<!--
 	<software name="pretstara" cloneof="pretstar">
 		<description>Preterite Star (Bad)</description>
 		<year>1984</year>
@@ -6109,6 +6114,7 @@
 			</dataarea>
 		</part>
 	</software>
+-->
 
 	<software name="prologic">
 		<description>Prologic</description>
@@ -8884,7 +8890,8 @@
 		</part>
 	</software>
 
-	<software name="eliminatd" cloneof="eliminat" supported="no"> <!-- protection -->
+<!--
+	<software name="eliminatd" cloneof="eliminat" supported="no">
 		<description>Eliminator (Bad)</description>
 		<year>1984</year>
 		<publisher>Loriciels</publisher>
@@ -8895,8 +8902,9 @@
 			</dataarea>
 		</part>
 	</software>
+-->
 
-<!-- NOTE: Empire does NOT work on MO6! -->
+	<!-- NOTE: Empire does NOT work on MO6! -->
 	<software name="empire" supported="no"> <!-- protection, works in dcmoto -->
 		<description>Empire</description>
 		<year>1985</year>
@@ -8958,10 +8966,10 @@
 	</software>
 
 <!-- corrupted data at beginning of file
-    <software name="">
-        <description>Enduro Racer (1988)(FIL)(FR)[b]</description>
-        <year>198?</year>
-        <publisher>&lt;unknown&gt;</publisher>
+	<software name="enduroc" cloneof="enduro">
+		<description>Enduro Racer (Bad)</description>
+		<year>1988</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
 
         <part name="cass1" interface="mo_cass">
             <dataarea name="cass" size="46221">
@@ -10801,10 +10809,10 @@
 	</software>
 
 <!--
-    <software name="">
-        <description>Labyrinthe Survie (1984)(Vifi-Nathan)(FR)[b]</description>
-        <year>198?</year>
-        <publisher>&lt;unknown&gt;</publisher>
+	<software name="labyrinsb" cloneof="labyrins">
+		<description>Labyrinthe Survie (Bad)</description>
+		<year>1984</year>
+		<publisher>VIFI-Nathan</publisher>
 
         <part name="cass1" interface="mo_cass">
             <dataarea name="cass" size="17551">
@@ -12303,10 +12311,10 @@
 	</software>
 
 <!--
-    <software name="">
-        <description>Planete Inconnue, La (198x)(FIL)(FR)[b]</description>
-        <year>198?</year>
-        <publisher>&lt;unknown&gt;</publisher>
+	<software name="planetinc" cloneof="planetin">
+		<description>La Planete Inconnue (Bad)</description>
+		<year>198?</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
 
         <part name="cass1" interface="mo_cass">
             <dataarea name="cass" size="32881">
@@ -12616,7 +12624,7 @@
 		</part>
 	</software>
 
-<!-- This loads and runs in MESS but not in dcmoto (!!!) -->
+	<!-- This loads and runs in MESS but not in dcmoto (!!!) -->
 	<software name="pulsar2d" cloneof="pulsar2">
 		<description>Pulsar II (Cracked?)</description>
 		<year>1984</year>
@@ -12817,10 +12825,10 @@
 	</software>
 
 <!--
-    <software name="">
-        <description>Reverse (198x)(Coulom, Daniel)(FR)(PD)[b]</description>
-        <year>198?</year>
-        <publisher>&lt;unknown&gt;</publisher>
+	<software name="reversec" cloneof="reverse">
+		<description>Reverse (Bad)</description>
+		<year>198?</year>
+		<publisher>Daniel Coulom</publisher>
 
         <part name="cass1" interface="mo_cass">
             <dataarea name="cass" size="7424">
@@ -14778,7 +14786,8 @@
 		</part>
 	</software>
 
-	<software name="yetic" cloneof="yeti" supported="no"> <!-- protected -->
+<!--
+	<software name="yetic" cloneof="yeti" supported="no">
 		<description>Yeti (Bad)</description>
 		<year>1984</year>
 		<publisher>Loriciels</publisher>
@@ -14789,8 +14798,10 @@
 			</dataarea>
 		</part>
 	</software>
+-->
 
-	<software name="yetid" cloneof="yeti" supported="no"> <!-- protected -->
+<!--
+	<software name="yetid" cloneof="yeti" supported="no">
 		<description>Yeti (Bad 2)</description>
 		<year>1984</year>
 		<publisher>Loriciels</publisher>
@@ -14801,6 +14812,7 @@
 			</dataarea>
 		</part>
 	</software>
+-->
 
 	<software name="yiear2">
 		<description>Yie Ar Kung Fu II</description>
