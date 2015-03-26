@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<softwarelist name="mo_cart" description="Thomson MO-series cartridges">
+<softwarelist name="mo5_cart" description="Thomson MO5 cartridges">
 
 	<software name="asm6809">
 		<description>Assembleur 6809 (v1.0)</description>
@@ -183,14 +183,21 @@
 				<rom name="co 7052.bin" size="32768" crc="1f41dc16" sha1="d1d848d47cc927d44bc4f6fb431437675ba9cb30" offset="0" />
 			</dataarea>
 		</part>
-<!-- bad dump
+	</software>
+
+<!--
+	<software name="colorclca" cloneof="colorclc">
+		<description>Colorcalc (Bad)</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
         <part name="cart" interface="mo_cart">
             <dataarea name="rom" size="49152">
                 <rom name="colorcalc (1985)(fil)(fr)[b].m5" size="49152" crc="4dbccd60" sha1="928e45a5ffc1ee3e8fe5879207466cfcee54ddef" status="baddump" offset="0" />
             </dataarea>
         </part>
--->
 	</software>
+-->
 
 	<software name="colorclca" cloneof="colorclc">
 		<description>Colorcalc (Alt)</description>

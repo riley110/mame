@@ -1113,9 +1113,9 @@ static MACHINE_CONFIG_DERIVED( mo5, to7 )
 	MCFG_DEVICE_REMOVE("to_cass_list")
 	MCFG_DEVICE_REMOVE("to_flop_list")
 
-	MCFG_SOFTWARE_LIST_ADD("mo_cart_list","mo_cart")
-	MCFG_SOFTWARE_LIST_ADD("mo_cass_list","mo_cass")
-	MCFG_SOFTWARE_LIST_ADD("mo_flop_list","mo_flop")
+	MCFG_SOFTWARE_LIST_ADD("mo5_cart_list","mo5_cart")
+	MCFG_SOFTWARE_LIST_ADD("mo5_cass_list","mo5_cass")
+	MCFG_SOFTWARE_LIST_ADD("mo5_flop_list","mo5_flop")
 
 	/* internal ram */
 	MCFG_RAM_MODIFY(RAM_TAG)
@@ -2199,15 +2199,13 @@ static MACHINE_CONFIG_DERIVED( mo6, to7 )
 	MCFG_DEVICE_REMOVE("to_cass_list")
 	MCFG_DEVICE_REMOVE("to_flop_list")
 
-	MCFG_SOFTWARE_LIST_ADD("mo_cart_list","mo_cart")
-	MCFG_SOFTWARE_LIST_ADD("mo_cass_list","mo_cass")
-	MCFG_SOFTWARE_LIST_ADD("mo_flop_list","mo_flop")
+	MCFG_SOFTWARE_LIST_ADD("mo6_cass_list","mo6_cass")
+	MCFG_SOFTWARE_LIST_ADD("mo6_flop_list","mo6_flop")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( pro128, mo6 )
-	MCFG_DEVICE_REMOVE("mo_cart_list")
-	MCFG_DEVICE_REMOVE("mo_cass_list")
-	MCFG_DEVICE_REMOVE("mo_flop_list")
+	MCFG_DEVICE_REMOVE("mo6_cass_list")
+	MCFG_DEVICE_REMOVE("mo6_flop_list")
 
 	MCFG_SOFTWARE_LIST_ADD("p128_cart_list","pro128_cart")
 	MCFG_SOFTWARE_LIST_ADD("p128_cass_list","pro128_cass")
@@ -2460,9 +2458,8 @@ static MACHINE_CONFIG_DERIVED( mo5nr, to7 )
 	MCFG_DEVICE_REMOVE("to_cass_list")
 	MCFG_DEVICE_REMOVE("to_flop_list")
 
-	MCFG_SOFTWARE_LIST_ADD("mo_cart_list","mo_cart")
-	MCFG_SOFTWARE_LIST_ADD("mo_cass_list","mo_cass")
-	MCFG_SOFTWARE_LIST_ADD("mo_flop_list","mo_flop")
+	MCFG_SOFTWARE_LIST_ADD("mo6_cass_list","mo6_cass")
+	MCFG_SOFTWARE_LIST_ADD("mo6_flop_list","mo6_flop")
 MACHINE_CONFIG_END
 
 COMP ( 1986, mo5nr, 0, 0, mo5nr, mo5nr, driver_device, 0, "Thomson", "MO5 NR", 0 )
