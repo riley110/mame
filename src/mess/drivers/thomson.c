@@ -2205,6 +2205,13 @@ static MACHINE_CONFIG_DERIVED( mo6, to7 )
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( pro128, mo6 )
+	MCFG_DEVICE_REMOVE("mo_cart_list")
+	MCFG_DEVICE_REMOVE("mo_cass_list")
+	MCFG_DEVICE_REMOVE("mo_flop_list")
+
+	MCFG_SOFTWARE_LIST_ADD("p128_cart_list","pro128_cart")
+	MCFG_SOFTWARE_LIST_ADD("p128_cass_list","pro128_cass")
+	MCFG_SOFTWARE_LIST_ADD("p128_flop_list","pro128_flop")
 MACHINE_CONFIG_END
 
 COMP ( 1986, mo6, 0, 0, mo6, mo6, driver_device, 0, "Thomson", "MO6", 0 )
