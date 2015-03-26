@@ -1092,7 +1092,7 @@ static MACHINE_CONFIG_DERIVED( mo5, to7 )
 
 	MCFG_DEVICE_REMOVE( "mc6846" )
 
-		MCFG_PALETTE_MODIFY( "palette" )
+	MCFG_PALETTE_MODIFY( "palette" )
 	MCFG_PALETTE_INIT_OWNER(thomson_state, mo5)
 
 	MCFG_DEVICE_MODIFY(THOM_PIA_SYS)
@@ -1116,6 +1116,7 @@ static MACHINE_CONFIG_DERIVED( mo5, to7 )
 	MCFG_SOFTWARE_LIST_ADD("mo5_cart_list","mo5_cart")
 	MCFG_SOFTWARE_LIST_ADD("mo5_cass_list","mo5_cass")
 	MCFG_SOFTWARE_LIST_ADD("mo5_flop_list","mo5_flop")
+	MCFG_SOFTWARE_LIST_ADD("mo5_qd_list","mo5_qd")
 
 	/* internal ram */
 	MCFG_RAM_MODIFY(RAM_TAG)
