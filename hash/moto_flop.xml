@@ -439,6 +439,30 @@
 		</part>
 	</software>
 
+	<software name="thomcat">
+		<description>THOM-CAT</description>
+		<year>2015</year>
+		<publisher>Puls</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="thomcat.fd" size="327680" crc="91624ab5" sha1="25bea453e1f28b316ee122d175d228ea5994fae1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thomcata" cloneof="thomcat">
+		<description>THOM-CAT (Alt)</description>
+		<year>2015</year>
+		<publisher>Puls</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="thomcat.sap" size="335426" crc="5c883660" sha1="db34390336538e2326c23b20166f03b6fe0f2fb5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="traitbzz">
 		<description>Traitement Bzzz</description>
 		<year>1987</year>

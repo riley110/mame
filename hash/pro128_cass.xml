@@ -132,12 +132,22 @@
 
 <!-- Compilations (Games) -->
 
-	<!-- Classiques Volume 1 goes here - move from mo5_cass.xml once figured out! -->
+	<software name="classiq1">
+		<description>Classiques Volume 1</description>
+		<year>1989</year>
+		<publisher>Olivetti Prodest</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="43925">
+				<rom name="classiques volume 1 (titus software) (inconnus) (1987) (mo5).k7" size="43925" crc="64d48ed2" sha1="1dde3126a834e45603126eed4945520568b734a2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
 
 	<software name="classiq2">
 		<description>Classiques Volume 2</description>
 		<year>1989</year>
-		<publisher>Titus Software</publisher>
+		<publisher>Olivetti Prodest</publisher>
 
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="43204">
@@ -1792,8 +1802,8 @@
 		</part>
 	</software>
 
-	<software name="tetrismaa" cloneof="tetrisma">
-		<description>Tetris MA (Alt)</description>
+	<software name="tetrisa" cloneof="tetris">
+		<description>Tetris (Alt)</description>
 		<year>1991</year>
 		<publisher>Michele Alessandrini</publisher>
 
