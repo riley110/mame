@@ -8,7 +8,7 @@
     uses double-sided qdd disks, which seem to not be handled correctly
     the same dump is available on dcmoto, so it is likely not bad
 	-->
-	<software name="initb512"supported="no">
+	<software name="initb512" supported="no">
 		<description>Initiation au BASIC 512</description>
 		<year>1986</year>
 		<publisher>Thomson</publisher>
@@ -32,7 +32,7 @@
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_5_25">
-		<feature name="part_id" value="Disk 3 Side B"/>
+		<feature name="part_id" value="Disk 2 Side B"/>
 			<dataarea name="flop" size="51200">
 				<rom name="initiation-basic512-2b-to8.qd" size="51200" crc="b7a3cd64" sha1="f4727a10c2707e3ee5261996f66cf2b5223d869c" offset="0" />
 			</dataarea>
