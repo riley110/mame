@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <!-- Info from http://dcmoto.free.fr/ -->
-<softwarelist name="to_cart" description="Thomson TO series cartridges">
+<softwarelist name="to7_cart" description="Thomson TO7 cartridges">
 
 <!-- Applications -->
 
@@ -73,30 +73,6 @@
 		<part name="cart" interface="to_cart">
 			<dataarea name="rom" size="16384">
 				<rom name="mb 90.001.bin" size="16384" crc="56d03129" sha1="1a23f87c7f7ec6cb132f0b73a5c6710d3653d1ef" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="basic128">
-		<description>BASIC 128 (v1.0) (TO7/70)</description>
-		<year>1985</year>
-		<publisher>Thomson</publisher>
-
-		<part name="cart" interface="to_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="basic 128 v1.0 (1985)(to tek)(fr)(en).m7" size="32768" crc="c9bc204f" sha1="e4c2a684e9186f49c8092d16f0f74764f51ad86c" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="basic128a" cloneof="basic128">
-		<description>BASIC 128 (v1.0, Arab) (TO7/70)</description>
-		<year>1985</year>
-		<publisher>Thomson</publisher>
-
-		<part name="cart" interface="to_cart">
-			<dataarea name="rom" size="65536">
-				<rom name="basic 128 et 1.0 en arabe (thomson) (alain delpuch, guy millet) (1985) (memo7).rom" size="65536" crc="ba082b73" sha1="bdcb3b2b0b4f0e56bda55dfeee220da9473143e2" offset="0" />
 			</dataarea>
 		</part>
 	</software>
