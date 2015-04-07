@@ -2,6 +2,74 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="mo5_qd" description="Thomson MO5 QD disks">
 
+<!-- Applications -->
+
+	<software name="jane">
+		<description>Jane</description>
+		<year>1985</year>
+		<publisher>Thomson</publisher>
+		<sharedfeat name="requirement" value="mo_cart:jane"/>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Systeme"/>
+			<dataarea name="flop" size="51200">
+				<rom name="jane (1985)(thomson)(fr)[systeme].qd" size="51200" crc="6d1d8993" sha1="89d7a846c995b5c0a1f369e5a2b36ba759b6a232" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Donnees"/>
+			<dataarea name="flop" size="51200">
+				<rom name="jane (1985)(thomson)(fr)[donnees].qd" size="51200" crc="694facba" sha1="bc04601134f873a087d83eaf9abdfad9e6a4ae79" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Aide"/>
+			<dataarea name="flop" size="51200">
+				<rom name="jane (1985)(thomson)(fr)[aide].qd" size="51200" crc="0a7b4a7a" sha1="f2b225a096330dc94a776c401e11502d7b76ed07" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="janea" cloneof="jane">
+		<description>Jane (Alt Systeme Disk)</description>
+		<year>1985</year>
+		<publisher>Thomson</publisher>
+		<sharedfeat name="requirement" value="mo_cart:jane"/>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Systeme"/>
+			<dataarea name="flop" size="51200">
+				<rom name="jane-systeme-mo5 [a].qd" size="51200" crc="824c506e" sha1="286fa17e7876e3316332ee022dae57e21f8e7918" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Donnees"/>
+			<dataarea name="flop" size="51200">
+				<rom name="jane (1985)(thomson)(fr)[donnees].qd" size="51200" crc="694facba" sha1="bc04601134f873a087d83eaf9abdfad9e6a4ae79" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Aide"/>
+			<dataarea name="flop" size="51200">
+				<rom name="jane (1985)(thomson)(fr)[aide].qd" size="51200" crc="0a7b4a7a" sha1="f2b225a096330dc94a776c401e11502d7b76ed07" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="qddbasic">
+		<description>MO5 QDD Disk BASIC (v1.0)</description>
+		<year>1985</year>
+		<publisher>Microsoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="51200">
+				<rom name="mo5 qdd disk basic v1.0 (1985)(microsoft).qd" size="51200" crc="b510b9be" sha1="a583cf9779add76a4488821b8cd9b1c5867b704d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Compilations (Various) -->
+
 	<software name="basic01">
 		<description>BASIC 01</description>
 		<year>198?</year>
@@ -158,6 +226,8 @@
 		</part>
 	</software>
 
+<!-- Games -->
+
 	<software name="beachead">
 		<description>Beach Head</description>
 		<year>1985</year>
@@ -182,58 +252,6 @@
 		</part>
 	</software>
 
-	<software name="jane">
-		<description>Jane</description>
-		<year>1985</year>
-		<publisher>Thomson</publisher>
-		<sharedfeat name="requirement" value="mo_cart:jane"/>
-
-		<part name="flop1" interface="floppy_5_25">
-		<feature name="part_id" value="Disk 1 (Systeme)"/>
-			<dataarea name="flop" size="51200">
-				<rom name="jane (1985)(thomson)(fr)[systeme].qd" size="51200" crc="6d1d8993" sha1="89d7a846c995b5c0a1f369e5a2b36ba759b6a232" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-		<feature name="part_id" value="Disk 2 (Donnees)"/>
-			<dataarea name="flop" size="51200">
-				<rom name="jane (1985)(thomson)(fr)[donnees].qd" size="51200" crc="694facba" sha1="bc04601134f873a087d83eaf9abdfad9e6a4ae79" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-		<feature name="part_id" value="Disk 3 (Aide)"/>
-			<dataarea name="flop" size="51200">
-				<rom name="jane (1985)(thomson)(fr)[aide].qd" size="51200" crc="0a7b4a7a" sha1="f2b225a096330dc94a776c401e11502d7b76ed07" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="janea" cloneof="jane">
-		<description>Jane (Alt Systeme Disk)</description>
-		<year>1985</year>
-		<publisher>Thomson</publisher>
-		<sharedfeat name="requirement" value="mo_cart:jane"/>
-
-		<part name="flop1" interface="floppy_5_25">
-		<feature name="part_id" value="Disk 1 (Systeme)"/>
-			<dataarea name="flop" size="51200">
-				<rom name="jane-systeme-mo5 [a].qd" size="51200" crc="824c506e" sha1="286fa17e7876e3316332ee022dae57e21f8e7918" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-		<feature name="part_id" value="Disk 2 (Donnees)"/>
-			<dataarea name="flop" size="51200">
-				<rom name="jane (1985)(thomson)(fr)[donnees].qd" size="51200" crc="694facba" sha1="bc04601134f873a087d83eaf9abdfad9e6a4ae79" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-		<feature name="part_id" value="Disk 3 (Aide)"/>
-			<dataarea name="flop" size="51200">
-				<rom name="jane (1985)(thomson)(fr)[aide].qd" size="51200" crc="0a7b4a7a" sha1="f2b225a096330dc94a776c401e11502d7b76ed07" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="malthaar">
 		<description>La Malediction de Thaar</description>
 		<year>1986</year>
@@ -242,18 +260,6 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="51200">
 				<rom name="la malediction de thaar (coktel vision) (inconnus) (1986) (mo5 qd).qd" size="51200" crc="7248952d" sha1="846cf2981ed3fa653db8f2e67efbfef4c2a6acaa" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="qddbasic">
-		<description>MO5 QDD Disk BASIC (v1.0)</description>
-		<year>1985</year>
-		<publisher>Microsoft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="51200">
-				<rom name="mo5 qdd disk basic v1.0 (1985)(microsoft).qd" size="51200" crc="b510b9be" sha1="a583cf9779add76a4488821b8cd9b1c5867b704d" offset="0" />
 			</dataarea>
 		</part>
 	</software>

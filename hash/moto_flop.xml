@@ -3,41 +3,58 @@
 <!-- This software list is only for games that are tested to work on both Thomson MO and TO series systems. -->
 <softwarelist name="moto_flop" description="Thomson MO &amp; TO series floppies">
 
-	<software name="20kavant">
-		<description>20000 Avant J.C.</description>
-		<year>1987</year>
-		<publisher>Chip</publisher>
+<!-- Applications -->
+
+	<software name="dcsdboot">
+		<description>dcsdboot</description>
+		<year>2012</year>
+		<publisher>DCsoft?</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="20000 avant j.c. (1987)(chip)(fr)[includes mo6 version].fd" size="327680" crc="8b0a7b35" sha1="1b59565b63febe3802731b76a6688bb303f53b4e" offset="0" />
+				<rom name="dcsdboot.fd" size="327680" crc="856a4963" sha1="7eaa8a78850182f77ebe8f2cc027bcd4841ebfe7" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="20kavanta" cloneof="20kavant">
-		<description>20000 Avant J.C. (Alt)</description>
-		<year>1987</year>
-		<publisher>Chip</publisher>
+	<software name="dumprom">
+		<description>Dump rom UC, controleur, cartouche</description>
+		<year>2008</year>
+		<publisher>DCsoft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="20000 avant j.c. (1987)(chip)(fr)[a][includes mo6 version].fd" size="327680" crc="983459aa" sha1="7126329367f0c8a07e169e90ad5dc7b0129869b7" offset="0" />
+				<rom name="dump rom uc, controleur, cartouche (dcsoft) (daniel coulom) (2008) (moto).fd" size="327680" crc="b7892d98" sha1="75569792465e92f0a0f821abdb9709494b7c80dd" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="20kavantb" cloneof="20kavant">
-		<description>20000 Avant J.C. (SAP Format)</description>
-		<year>1987</year>
-		<publisher>Chip</publisher>
+	<!-- contains 2 duplicates of parent set -->
+	<software name="dumproma" cloneof="dumprom">
+		<description>Dump rom UC, controleur, cartouche (640K Disk)</description>
+		<year>2008</year>
+		<publisher>DCsoft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="335426">
-				<rom name="20000 avant j.c. (1987)(chip)(fr)[includes mo6 version].sap" size="335426" crc="0b69d103" sha1="b18d0bce72f507b654cb13aa57de7644eb4f1377" offset="0" />
+			<dataarea name="flop" size="655360">
+				<rom name="dump rom uc, controleur, cartouche (dcsoft) (daniel coulom) (2008) (moto)[640k].fd" size="655360" crc="3a1f761c" sha1="99611d9ea0bbc7435535ccaab8d6c63acaf1f0e9" offset="0" />
 			</dataarea>
 		</part>
 	</software>
+
+	<software name="sdtrans">
+		<description>SDTRANSFERT - Transferts PC-Thomson par carte SD</description>
+		<year>2013</year>
+		<publisher>DCsoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="sdtransfert - transferts pc _-_ thomson par carte sd (dcsoft) (daniel coulom) (2013) (moto fd).fd" size="327680" crc="abb4c3b6" sha1="4643275c00e44e0f5087662b93f697846d172f02" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Compilations (Games) -->
 
 	<software name="bactmgt">
 		<description>Bactron &amp; MGT</description>
@@ -74,19 +91,6 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="bactron &amp; mgt (198x)(-)[boot with microsoft basic 1.0].sap" size="335426" crc="16284fa1" sha1="fba2bf0ca6a87da01cc8abfced9992e440709a3d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="chicago">
-		<description>Chicago 90</description>
-		<year>1989</year>
-		<publisher>Microids</publisher>
-		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="327680">
-				<rom name="chicago 90 (1989)(microids)(fr)[boot with microsoft basic 1.0].fd" size="327680" crc="d481639c" sha1="a7c1dd562548337d6db4addc7903c7e10ed3b133" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -130,6 +134,114 @@
 		</part>
 	</software>
 
+	<software name="simpack">
+		<description>Simulation Pack</description>
+		<year>1988</year>
+		<publisher>Microids</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="327680">
+				<rom name="simulation pack (microids) (c. bertrand, elliot grassiano, b. masson, a. bonsignore) (1988) (moto)[disk 1].fd" size="327680" crc="7bf09235" sha1="a9cd6df78ed898dd7fb5b91a0a1dd81f350eb394" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="327680">
+				<rom name="simulation pack (microids) (c. bertrand, elliot grassiano, b. masson, a. bonsignore) (1988) (moto)[disk 2].fd" size="327680" crc="8362fc7e" sha1="22464674d827a63f6bba96af76e9a0f84f7c79a4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="simpacka" cloneof="simpack" supported="no">
+		<description>Simulation Pack (640K Disk)</description>
+		<year>1988</year>
+		<publisher>Microids</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="655360">
+				<rom name="simulation pack (microids) (c. bertrand, elliot grassiano, b. masson, a. bonsignore) (1988) (moto).fd" size="655360" crc="1384e4f9" sha1="928ef175b3ea88282f62b87310321543914b9dcc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Demos -->
+
+	<software name="thomcat">
+		<description>THOM-CAT</description>
+		<year>2015</year>
+		<publisher>Puls</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="thomcat.fd" size="327680" crc="91624ab5" sha1="25bea453e1f28b316ee122d175d228ea5994fae1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thomcata" cloneof="thomcat">
+		<description>THOM-CAT (SAP Format)</description>
+		<year>2015</year>
+		<publisher>Puls</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="thomcat.sap" size="335426" crc="5c883660" sha1="db34390336538e2326c23b20166f03b6fe0f2fb5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Games -->
+
+	<software name="20kavant">
+		<description>20000 Avant J.C.</description>
+		<year>1987</year>
+		<publisher>Chip</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="20000 avant j.c. (1987)(chip)(fr)[includes mo6 version].fd" size="327680" crc="8b0a7b35" sha1="1b59565b63febe3802731b76a6688bb303f53b4e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="20kavanta" cloneof="20kavant">
+		<description>20000 Avant J.C. (Alt)</description>
+		<year>1987</year>
+		<publisher>Chip</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="20000 avant j.c. (1987)(chip)(fr)[a][includes mo6 version].fd" size="327680" crc="983459aa" sha1="7126329367f0c8a07e169e90ad5dc7b0129869b7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="20kavantb" cloneof="20kavant">
+		<description>20000 Avant J.C. (SAP Format)</description>
+		<year>1987</year>
+		<publisher>Chip</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="20000 avant j.c. (1987)(chip)(fr)[includes mo6 version].sap" size="335426" crc="0b69d103" sha1="b18d0bce72f507b654cb13aa57de7644eb4f1377" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chicago">
+		<description>Chicago 90</description>
+		<year>1989</year>
+		<publisher>Microids</publisher>
+		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="chicago 90 (1989)(microids)(fr)[boot with microsoft basic 1.0].fd" size="327680" crc="d481639c" sha1="a7c1dd562548337d6db4addc7903c7e10ed3b133" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="crepuscu">
 		<description>Le Crepuscule du Naja</description>
 		<year>198?</year>
@@ -162,43 +274,6 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="crepuscule du naja, le (198x)(chip)(fr)[includes mo6 version].sap" size="335426" crc="8deda14b" sha1="37bc5b35484cc02616ed899486543e057d26e29f" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="dcsdboot">
-		<description>dcsdboot</description>
-		<year>2012</year>
-		<publisher>DCsoft?</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="327680">
-				<rom name="dcsdboot.fd" size="327680" crc="856a4963" sha1="7eaa8a78850182f77ebe8f2cc027bcd4841ebfe7" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="dumprom">
-		<description>Dump rom UC, controleur, cartouche</description>
-		<year>2008</year>
-		<publisher>DCsoft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="327680">
-				<rom name="dump rom uc, controleur, cartouche (dcsoft) (daniel coulom) (2008) (moto).fd" size="327680" crc="b7892d98" sha1="75569792465e92f0a0f821abdb9709494b7c80dd" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<!-- contains 2 duplicates of parent set -->
-	<software name="dumproma" cloneof="dumprom">
-		<description>Dump rom UC, controleur, cartouche (640K Disk)</description>
-		<year>2008</year>
-		<publisher>DCsoft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="655360">
-				<rom name="dump rom uc, controleur, cartouche (dcsoft) (daniel coulom) (2008) (moto)[640k].fd" size="655360" crc="3a1f761c" sha1="99611d9ea0bbc7435535ccaab8d6c63acaf1f0e9" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -315,49 +390,6 @@
 		</part>
 	</software>
 
-	<software name="sdtrans">
-		<description>SDTRANSFERT - Transferts PC-Thomson par carte SD</description>
-		<year>2013</year>
-		<publisher>DCsoft</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="327680">
-				<rom name="sdtransfert - transferts pc _-_ thomson par carte sd (dcsoft) (daniel coulom) (2013) (moto fd).fd" size="327680" crc="abb4c3b6" sha1="4643275c00e44e0f5087662b93f697846d172f02" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="simpack">
-		<description>Simulation Pack</description>
-		<year>1988</year>
-		<publisher>Microids</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-		<feature name="part_id" value="Disk 1"/>
-			<dataarea name="flop" size="327680">
-				<rom name="simulation pack (microids) (c. bertrand, elliot grassiano, b. masson, a. bonsignore) (1988) (moto)[disk 1].fd" size="327680" crc="7bf09235" sha1="a9cd6df78ed898dd7fb5b91a0a1dd81f350eb394" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-		<feature name="part_id" value="Disk 2"/>
-			<dataarea name="flop" size="327680">
-				<rom name="simulation pack (microids) (c. bertrand, elliot grassiano, b. masson, a. bonsignore) (1988) (moto)[disk 2].fd" size="327680" crc="8362fc7e" sha1="22464674d827a63f6bba96af76e9a0f84f7c79a4" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="simpacka" cloneof="simpack" supported="no">
-		<description>Simulation Pack (640K Disk)</description>
-		<year>1988</year>
-		<publisher>Microids</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="655360">
-				<rom name="simulation pack (microids) (c. bertrand, elliot grassiano, b. masson, a. bonsignore) (1988) (moto).fd" size="655360" crc="1384e4f9" sha1="928ef175b3ea88282f62b87310321543914b9dcc" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="superski">
 		<description>Super Ski</description>
 		<year>1987</year>
@@ -403,30 +435,6 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
 				<rom name="talisman d'osiris, le (1986)(chip)(fr)[a nonboot][includes mo6 version].fd" size="327680" crc="78ebf713" sha1="96bbc18737b75593344439cbc2e49ac05e1026df" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thomcat">
-		<description>THOM-CAT</description>
-		<year>2015</year>
-		<publisher>Puls</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="327680">
-				<rom name="thomcat.fd" size="327680" crc="91624ab5" sha1="25bea453e1f28b316ee122d175d228ea5994fae1" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="thomcata" cloneof="thomcat">
-		<description>THOM-CAT (Alt)</description>
-		<year>2015</year>
-		<publisher>Puls</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="335426">
-				<rom name="thomcat.sap" size="335426" crc="5c883660" sha1="db34390336538e2326c23b20166f03b6fe0f2fb5" offset="0" />
 			</dataarea>
 		</part>
 	</software>

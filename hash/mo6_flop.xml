@@ -2,6 +2,22 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="mo6_flop" description="Thomson MO6 floppy disks">
 
+<!-- Applications -->
+
+	<software name="music3v">
+		<description>Music 3 Voix</description>
+		<year>1987</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="163840">
+				<rom name="music 3v (loriciels) (p.o. richez) (1987).fd" size="163840" crc="07c91d68" sha1="17dd284f8200592339203973782a11692da8cfc6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Demos -->
+
 	<software name="gameshow">
 		<description>Games Show</description>
 		<year>2014</year>
@@ -29,42 +45,6 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="655360">
 				<rom name="games show (6502man) (2014) (mo6 fd).fd" size="655360" crc="2c49169f" sha1="268ec784f893b57f8a82d4aece4fc8c79afa735f" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tresrats">
-		<description>Le Tresor des Rats d'Egout</description>
-		<year>1986</year>
-		<publisher>Cedic/Nathan</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="327680">
-				<rom name="le tresor des rats d'egout (nathan) (inconnus) (1986).fd" size="327680" crc="b81a6f31" sha1="3a098acdd7d6e116cd6a9b77d500b622bf1355ee" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="music3v">
-		<description>Music 3 Voix</description>
-		<year>1987</year>
-		<publisher>Loriciels</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="163840">
-				<rom name="music 3v (loriciels) (p.o. richez) (1987).fd" size="163840" crc="07c91d68" sha1="17dd284f8200592339203973782a11692da8cfc6" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="volsolo">
-		<description>Vol Solo</description>
-		<year>198?</year>
-		<publisher>France Image Logiciel (FIL)</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="163840">
-				<rom name="vol solo (fil) (joel sana) (1985) (mo6 fd).fd" size="163840" crc="02ce2ab9" sha1="c8d275d88f0be780db62a4fcba68d9ab09673eef" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -127,6 +107,32 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="1310720">
 				<rom name="zx art (6502man) (2014) (mo6 fd) (zxart_disk1 a 2 (for dcmoto)).fd" size="1310720" crc="2aec5c49" sha1="eb7975a01e41df1923d898afe8627d12bcf56e84" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Games -->
+
+	<software name="tresrats">
+		<description>Le Tresor des Rats d'Egout</description>
+		<year>1986</year>
+		<publisher>Cedic/Nathan</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="le tresor des rats d'egout (nathan) (inconnus) (1986).fd" size="327680" crc="b81a6f31" sha1="3a098acdd7d6e116cd6a9b77d500b622bf1355ee" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="volsolo">
+		<description>Vol Solo</description>
+		<year>198?</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="163840">
+				<rom name="vol solo (fil) (joel sana) (1985) (mo6 fd).fd" size="163840" crc="02ce2ab9" sha1="c8d275d88f0be780db62a4fcba68d9ab09673eef" offset="0" />
 			</dataarea>
 		</part>
 	</software>

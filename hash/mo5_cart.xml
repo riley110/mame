@@ -2,6 +2,8 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="mo5_cart" description="Thomson MO5 cartridges">
 
+<!-- Applications -->
+
 	<software name="asm6809">
 		<description>Assembleur 6809 (v1.0)</description>
 		<year>1984</year>
@@ -89,66 +91,6 @@
 		</part>
 	</software>
 
-	<software name="airbus">
-		<description>Airbus</description>
-		<year>1984</year>
-		<publisher>VIFI-Nathan</publisher>
-
-		<part name="cart" interface="mo_cart">
-			<dataarea name="rom" size="16384">
-				<rom name="450023.bin" size="16384" crc="0686d6b5" sha1="f5341425cb3cfeba6358c8199c6cc852334ff624" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="airbusa" cloneof="airbus">
-		<description>Airbus (Alt)</description>
-		<year>1984</year>
-		<publisher>VIFI-Nathan</publisher>
-
-		<part name="cart" interface="mo_cart">
-			<dataarea name="rom" size="16384">
-				<rom name="450023 (alt).bin" size="16384" crc="ec6f23c0" sha1="ee5974ecd150d51b33ca417e10954c67d8205830" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="blitz">
-		<description>Blitz! - Jeu d'Echecs</description>
-		<year>1985</year>
-		<publisher>France Image Logiciel (FIL)</publisher>
-
-		<part name="cart" interface="mo_cart">
-			<dataarea name="rom" size="16384">
-				<rom name="bl 5018.bin" size="16384" crc="9725c110" sha1="d5b8882708e539f449746c5451054359b1273f3a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="blitza" cloneof="blitz">
-		<description>Blitz! - Jeu d'Echecs (Alt)</description>
-		<year>1985</year>
-		<publisher>France Image Logiciel (FIL)</publisher>
-
-		<part name="cart" interface="mo_cart">
-			<dataarea name="rom" size="16384">
-				<rom name="bl 5018 (alt).bin" size="16384" crc="19dde6c1" sha1="625c3b59843859fba13ea27394d9f8fc9faacaeb" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="blitzb" cloneof="blitz">
-		<description>Blitz! - Jeu d'Echecs (Alt 2)</description>
-		<year>1985</year>
-		<publisher>France Image Logiciel (FIL)</publisher>
-
-		<part name="cart" interface="mo_cart">
-			<dataarea name="rom" size="16384">
-				<rom name="bl 5018 (alt 2)" size="16384" crc="f33413b4" sha1="6057dcc96f5e74fd48f1f3e66151431b546e0a48" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="carnet">
 		<description>Carnet d'Adresses</description>
 		<year>1984</year>
@@ -185,6 +127,18 @@
 		</part>
 	</software>
 
+	<software name="colorclca" cloneof="colorclc">
+		<description>Colorcalc (Alt)</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="cc 7052 (alt).bin" size="32768" crc="f5a82963" sha1="be96f87a104ff7f65f043345ee2c76fbd90b11dd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 <!--
 	<software name="colorclca" cloneof="colorclc">
 		<description>Colorcalc (Bad)</description>
@@ -199,30 +153,6 @@
 	</software>
 -->
 
-	<software name="colorclca" cloneof="colorclc">
-		<description>Colorcalc (Alt)</description>
-		<year>1985</year>
-		<publisher>France Image Logiciel (FIL)</publisher>
-
-		<part name="cart" interface="mo_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="cc 7052 (alt).bin" size="32768" crc="f5a82963" sha1="be96f87a104ff7f65f043345ee2c76fbd90b11dd" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="controle">
-		<description>Controle Aerien</description>
-		<year>1984</year>
-		<publisher>VIFI International</publisher>
-
-		<part name="cart" interface="mo_cart">
-			<dataarea name="rom" size="16384">
-				<rom name="4tf031.bin" size="16384" crc="897687fa" sha1="fc3b4ceff31c996a9388fd1dba642dce69c58f18" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="desass">
 		<description>Desassembleur - Dump et Patch (v4.0)</description>
 		<year>1986</year>
@@ -231,91 +161,6 @@
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
 				<rom name="desassembleur.bin" size="16384" crc="85a6bb97" sha1="0d0720075bc879ff331f3345bf77a06cf0588f77" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="enigmati">
-		<description>Enigmatika</description>
-		<year>1984</year>
-		<publisher>Answare</publisher>
-
-		<part name="cart" interface="mo_cart">
-			<dataarea name="rom" size="16384">
-				<rom name="eg 5040.bin" size="16384" crc="af2a0ce5" sha1="f14c167f61ac8c82b34fc689acc5c33eb1829ab6" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-
-	<software name="gemini">
-		<description>Gemini</description>
-		<year>1982</year>
-		<publisher>VIFI-Nathan</publisher>
-
-		<part name="cart" interface="mo_cart">
-			<dataarea name="rom" size="16384">
-				<rom name="gemini.bin" size="16384" crc="cc30bba2" sha1="67be5d9736c50d6c8c4237eec483b0fef1574a4a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="geminia" cloneof="gemini">
-		<description>Gemini (Alt)</description>
-		<year>1982</year>
-		<publisher>VIFI-Nathan</publisher>
-
-		<part name="cart" interface="mo_cart">
-			<dataarea name="rom" size="16384">
-				<rom name="gemini (alt).bin" size="16384" crc="346ce139" sha1="6e7c15f7ba6da96d1484123d32f9a5e6e5c89f3c" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="glouton">
-		<description>Glouton</description>
-		<year>1986</year>
-		<publisher>Hebdogiciel</publisher>
-
-		<part name="cart" interface="mo_cart">
-			<dataarea name="rom" size="16384">
-				<rom name="glouton.bin" size="16384" crc="c4f65bfc" sha1="1090e0acf99b240c5f22e20458464d96e1237eda" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gloutona" cloneof="glouton">
-		<description>Glouton (Alt)</description>
-		<year>1986</year>
-		<publisher>Hebdogiciel</publisher>
-
-		<part name="cart" interface="mo_cart">
-			<dataarea name="rom" size="16384">
-				<rom name="glouton (alt).bin" size="16384" crc="c7375598" sha1="f4497198af448582eb05c2da1d236cd8cae4219a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gloutonb" cloneof="glouton">
-		<description>Glouton (Alt 2)</description>
-		<year>1986</year>
-		<publisher>Hebdogiciel</publisher>
-
-		<part name="cart" interface="mo_cart">
-			<dataarea name="rom" size="16384">
-				<rom name="glouton (alt 2).bin" size="16384" crc="2ddea0ed" sha1="ad8d81f57a398458ea347c5eb569cb21ffc15bdc" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="grille">
-		<description>La Grille</description>
-		<year>1985</year>
-		<publisher>ASELEC</publisher>
-
-		<part name="cart" interface="mo_cart">
-			<dataarea name="rom" size="16384">
-				<rom name="ref a aa 01 009.bin" size="16384" crc="2d1341d4" sha1="5a759ba0240e0afcb9e99bbf55e6460f5786dc85" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -406,6 +251,68 @@
 		</part>
 	</software>
 
+	<software name="melodia">
+		<description>Melodia</description>
+		<year>1982</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="450011.bin" size="16384" crc="f3c9eaf2" sha1="90d1b03febc206c73ea582c0c50d00d551c1e3d0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="melodiaa" cloneof="melodia">
+		<description>Melodia (Alt)</description>
+		<year>1982</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="450011 (alt).bin" size="16384" crc="0b95b069" sha1="4bf3566e34c41d7003f9c5ac517c41a326cd6d16" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pictor">
+		<description>Pictor</description>
+		<year>1983</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="450010.bin" size="16384" crc="6f3eb24d" sha1="0ada709e69073930872190a391a32aac5d38ee92" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pictora" cloneof="pictor">
+		<description>Pictor (Alt)</description>
+		<year>1983</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="450010 (alt).bin" size="16384" crc="85d74738" sha1="9f7a9dd1d81c9b2aaeee460d994d4a5fa2dccedc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Educational -->
+
+	<software name="grille">
+		<description>La Grille</description>
+		<year>1985</year>
+		<publisher>ASELEC</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="ref a aa 01 009.bin" size="16384" crc="2d1341d4" sha1="5a759ba0240e0afcb9e99bbf55e6460f5786dc85" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="maison">
 		<description>La Maison d'Amedee</description>
 		<year>1984</year>
@@ -414,6 +321,165 @@
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
 				<rom name="ref a aa 01 007.bin" size="16384" crc="ec111e92" sha1="a802563b6ab578c60b4eaa1d6aab677c1d2652a3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="peche">
+		<description>La Peche a la Barre</description>
+		<year>1984</year>
+		<publisher>ASELEC</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="ref a aa 01 010.bin" size="16384" crc="79dddaf6" sha1="f80eb48e5e1ede2d3954f57f1132fc2b972521d5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Games -->
+
+	<software name="airbus">
+		<description>Airbus</description>
+		<year>1984</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="450023.bin" size="16384" crc="0686d6b5" sha1="f5341425cb3cfeba6358c8199c6cc852334ff624" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="airbusa" cloneof="airbus">
+		<description>Airbus (Alt)</description>
+		<year>1984</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="450023 (alt).bin" size="16384" crc="ec6f23c0" sha1="ee5974ecd150d51b33ca417e10954c67d8205830" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="blitz">
+		<description>Blitz! - Jeu d'Echecs</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="bl 5018.bin" size="16384" crc="9725c110" sha1="d5b8882708e539f449746c5451054359b1273f3a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="blitza" cloneof="blitz">
+		<description>Blitz! - Jeu d'Echecs (Alt)</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="bl 5018 (alt).bin" size="16384" crc="19dde6c1" sha1="625c3b59843859fba13ea27394d9f8fc9faacaeb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="blitzb" cloneof="blitz">
+		<description>Blitz! - Jeu d'Echecs (Alt 2)</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="bl 5018 (alt 2)" size="16384" crc="f33413b4" sha1="6057dcc96f5e74fd48f1f3e66151431b546e0a48" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="controle">
+		<description>Controle Aerien</description>
+		<year>1984</year>
+		<publisher>VIFI International</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="4tf031.bin" size="16384" crc="897687fa" sha1="fc3b4ceff31c996a9388fd1dba642dce69c58f18" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Programs Stored on Cassette -->
+	<software name="enigmati">
+		<description>Enigmatika</description>
+		<year>1984</year>
+		<publisher>Answare</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="eg 5040.bin" size="16384" crc="af2a0ce5" sha1="f14c167f61ac8c82b34fc689acc5c33eb1829ab6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gemini">
+		<description>Gemini</description>
+		<year>1982</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="gemini.bin" size="16384" crc="cc30bba2" sha1="67be5d9736c50d6c8c4237eec483b0fef1574a4a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="geminia" cloneof="gemini">
+		<description>Gemini (Alt)</description>
+		<year>1982</year>
+		<publisher>VIFI-Nathan</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="gemini (alt).bin" size="16384" crc="346ce139" sha1="6e7c15f7ba6da96d1484123d32f9a5e6e5c89f3c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="glouton">
+		<description>Glouton</description>
+		<year>1986</year>
+		<publisher>Hebdogiciel</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="glouton.bin" size="16384" crc="c4f65bfc" sha1="1090e0acf99b240c5f22e20458464d96e1237eda" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gloutona" cloneof="glouton">
+		<description>Glouton (Alt)</description>
+		<year>1986</year>
+		<publisher>Hebdogiciel</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="glouton (alt).bin" size="16384" crc="c7375598" sha1="f4497198af448582eb05c2da1d236cd8cae4219a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gloutonb" cloneof="glouton">
+		<description>Glouton (Alt 2)</description>
+		<year>1986</year>
+		<publisher>Hebdogiciel</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="glouton (alt 2).bin" size="16384" crc="2ddea0ed" sha1="ad8d81f57a398458ea347c5eb569cb21ffc15bdc" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -438,30 +504,6 @@
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
 				<rom name="melimemot (alt).bin" size="16384" crc="61110cf8" sha1="46c754d1e49063f0fd2cad3941beceff6e60a573" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="melodia">
-		<description>Melodia</description>
-		<year>1982</year>
-		<publisher>VIFI-Nathan</publisher>
-
-		<part name="cart" interface="mo_cart">
-			<dataarea name="rom" size="16384">
-				<rom name="450011.bin" size="16384" crc="f3c9eaf2" sha1="90d1b03febc206c73ea582c0c50d00d551c1e3d0" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="melodiaa" cloneof="melodia">
-		<description>Melodia (Alt)</description>
-		<year>1982</year>
-		<publisher>VIFI-Nathan</publisher>
-
-		<part name="cart" interface="mo_cart">
-			<dataarea name="rom" size="16384">
-				<rom name="450011 (alt).bin" size="16384" crc="0b95b069" sha1="4bf3566e34c41d7003f9c5ac517c41a326cd6d16" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -510,42 +552,6 @@
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
 				<rom name="450007 (alt).bin" size="16384" crc="87709551" sha1="15f373c9b0b4c32e424c0eb4a77f7cc597b4f9e7" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="peche">
-		<description>La Peche a la Barre</description>
-		<year>1984</year>
-		<publisher>ASELEC</publisher>
-
-		<part name="cart" interface="mo_cart">
-			<dataarea name="rom" size="16384">
-				<rom name="ref a aa 01 010.bin" size="16384" crc="79dddaf6" sha1="f80eb48e5e1ede2d3954f57f1132fc2b972521d5" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pictor">
-		<description>Pictor</description>
-		<year>1983</year>
-		<publisher>VIFI-Nathan</publisher>
-
-		<part name="cart" interface="mo_cart">
-			<dataarea name="rom" size="16384">
-				<rom name="450010.bin" size="16384" crc="6f3eb24d" sha1="0ada709e69073930872190a391a32aac5d38ee92" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pictora" cloneof="pictor">
-		<description>Pictor (Alt)</description>
-		<year>1983</year>
-		<publisher>VIFI-Nathan</publisher>
-
-		<part name="cart" interface="mo_cart">
-			<dataarea name="rom" size="16384">
-				<rom name="450010 (alt).bin" size="16384" crc="85d74738" sha1="9f7a9dd1d81c9b2aaeee460d994d4a5fa2dccedc" offset="0" />
 			</dataarea>
 		</part>
 	</software>
