@@ -4,11 +4,11 @@
 
 <!-- Applications -->
 
-	<software name="jane">
+	<software name="janeqd">
 		<description>Jane</description>
 		<year>1985</year>
 		<publisher>Thomson</publisher>
-		<sharedfeat name="requirement" value="mo_cart:jane"/>
+		<info name="usage" value="Insert Jane cartridge first, then load Systeme disk" />
 
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Systeme"/>
@@ -30,11 +30,11 @@
 		</part>
 	</software>
 
-	<software name="janea" cloneof="jane">
+	<software name="janeqda" cloneof="jane">
 		<description>Jane (Alt Systeme Disk)</description>
 		<year>1985</year>
 		<publisher>Thomson</publisher>
-		<sharedfeat name="requirement" value="mo_cart:jane"/>
+		<info name="usage" value="Insert Jane cartridge first, then load Systeme disk" />
 
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Systeme"/>

@@ -76,10 +76,12 @@
 		</part>
 	</software>
 
+	<!-- This version has been modified to boot off a disk instead of a cartridge -->
 	<software name="jane">
-		<description>Jane</description>
-		<year>1985</year>
-		<publisher>Thomson</publisher>
+		<description>Jane (Hacked to use boot disk)</description>
+		<year>2002</year>
+		<publisher>Thomson - E. Forler</publisher>
+		<info name="usage" value="Insert Chargeur disk first, then load Systeme disk when prompted" />
 
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Chargeur"/>

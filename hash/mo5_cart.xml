@@ -166,9 +166,10 @@
 	</software>
 
 	<software name="jane">
-		<description>Jane</description>
+		<description>Jane (For use with QD version)</description>
 		<year>1985</year>
 		<publisher>Thomson</publisher>
+		<sharedfeat name="requirement" value="mo5_qd:janeqd"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="65536">
@@ -178,9 +179,10 @@
 	</software>
 
 	<software name="janea" cloneof="jane">
-		<description>Jane (Alt)</description>
+		<description>Jane (For use with QD version, Alt)</description>
 		<year>1985</year>
 		<publisher>Thomson</publisher>
+		<sharedfeat name="requirement" value="mo5_qd:janeqd"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="65536">
