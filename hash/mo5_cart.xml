@@ -414,10 +414,11 @@
 	</software>
 
 	<!-- Programs Stored on Cassette -->
-	<software name="enigmati">
+	<software name="enigmati" supported="no">
 		<description>Enigmatika</description>
 		<year>1984</year>
 		<publisher>Answare</publisher>
+		<sharedfeat name="requirement" value="mo5_cass:enigmati"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
