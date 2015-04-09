@@ -273,7 +273,7 @@
 	</software>
 
 <!-- this dump will probably need modification to work
-    <software name="pcuser9">
+    <software name="pcuser9b" cloneof="pcuser9">
         <description>PC User #9 Cassette (Bad)</description>
         <year>1987</year>
         <publisher>PC User</publisher>
@@ -357,7 +357,8 @@
 		</part>
 	</software>
 
-	<software name="androida" cloneof="android" supported="no"> <!-- protection, works in dcmoto -->
+	<!-- protection, works in dcmoto -->
+	<software name="androida" cloneof="android" supported="no">
 		<description>Androides (Alt)</description>
 		<year>1987</year>
 		<publisher>Olivetti Prodest</publisher>
@@ -369,7 +370,8 @@
 		</part>
 	</software>
 
-	<software name="androidb" cloneof="android" supported="no"> <!-- protection, works in dcmoto -->
+	<!-- protection, works in dcmoto -->
+	<software name="androidb" cloneof="android" supported="no">
 		<description>Androides (Alt 2)</description>
 		<year>1987</year>
 		<publisher>Olivetti Prodest</publisher>
@@ -381,7 +383,8 @@
 		</part>
 	</software>
 
-	<software name="androidc" cloneof="android" supported="no"> <!-- protection, works in dcmoto -->
+	<!-- protection, works in dcmoto -->
+	<software name="androidc" cloneof="android" supported="no">
 		<description>Androides (Alt 3)</description>
 		<year>1987</year>
 		<publisher>Olivetti Prodest</publisher>
@@ -573,7 +576,8 @@
 		</part>
 	</software>
 
-	<software name="capblood" supported="no"> <!-- protected, works on dcmoto -->
+	<!-- protection, works in dcmoto -->
+	<software name="capblood" supported="no">
 		<description>Captain Blood</description>
 		<year>1988</year>
 		<publisher>Olivetti Prodest</publisher>
@@ -585,7 +589,8 @@
 		</part>
 	</software>
 
-	<software name="capblooda" cloneof="capblood" supported="no"> <!-- protected, works on dcmoto -->
+	<!-- protection, works in dcmoto -->
+	<software name="capblooda" cloneof="capblood" supported="no">
 		<description>Captain Blood (Alt)</description>
 		<year>1988</year>
 		<publisher>Olivetti Prodest</publisher>
@@ -657,7 +662,8 @@
 		</part>
 	</software>
 
-	<software name="chicagoa" cloneof="chicago" supported="no"> <!-- protected, works on dcmoto -->
+	<!-- protection, works in dcmoto -->
+	<software name="chicagoa" cloneof="chicago" supported="no">
 		<description>Chicago 90 (Alt)</description>
 		<year>1990</year>
 		<publisher>Olivetti Prodest</publisher>
@@ -701,61 +707,6 @@
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="47458">
 				<rom name="dakar moto (coktel vision) (inconnus) (1987) (pc128).k7" size="47458" crc="9ce01699" sha1="62316bbb2dc4b9690a3bf3b7f8436adf59234e70" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="olimpinv">
-		<description>Olimpiadi Invernali</description>
-		<year>1986</year>
-		<publisher>Olivetti Prodest</publisher>
-
-		<part name="cass1" interface="mo_cass">
-		<feature name="part_id" value="Side A"/>
-			<dataarea name="cass" size="23327344">
-				<rom name="olimpiadi invernali (infogrames) (kamel bala, alain vialon) (1986) (pc128) (side a).wav" size="23327344" crc="dde7f22a" sha1="eba8854d530b82332061cf9a2c1b102eb14e103f" offset="0" />
-			</dataarea>
-		</part>
-		<part name="cass2" interface="mo_cass">
-		<feature name="part_id" value="Side B"/>
-			<dataarea name="cass" size="16477376">
-				<rom name="olimpiadi invernali (infogrames) (kamel bala, alain vialon) (1986) (pc128) (side b).wav" size="16477376" crc="e8cce6e5" sha1="6c83987e18779d7f80e8ae007b8725ec5197b640" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="olimpinva" cloneof="olimpinv">
-		<description>Olimpiadi Invernali (Single Tape)</description>
-		<year>1986</year>
-		<publisher>Olivetti Prodest</publisher>
-
-		<part name="cass1" interface="mo_cass">
-			<dataarea name="cass" size="172225">
-				<rom name="olimpiadi invernali (infogrames) (kamel bala, alain vialon) (1986) (pc128).k7" size="172225" crc="12f0fc1d" sha1="d4411257fac8fb2462b4adf7d203a971c7c9c8a1" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="olimpinvb" cloneof="olimpinv">
-		<description>Olimpiadi Invernali (Single Tape, Alt)</description>
-		<year>1986</year>
-		<publisher>Olivetti Prodest</publisher>
-
-		<part name="cass1" interface="mo_cass">
-			<dataarea name="cass" size="167425">
-				<rom name="olimpiadi invernali (it) (infogrames) (1986).k7" size="167425" crc="c13d2008" sha1="e49d42b322892ac9cc11d3102f8f7eeec8d1da66" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="olimpinvc" cloneof="olimpinv">
-		<description>Olimpiadi Invernali (Single Tape, Alt 2)</description>
-		<year>1986</year>
-		<publisher>Olivetti Prodest</publisher>
-
-		<part name="cass1" interface="mo_cass">
-			<dataarea name="cass" size="167425">
-				<rom name="olimpiadi-invernali-pc128.k7" size="167425" crc="d9eef4e8" sha1="ec3f3d64683f460b625a4a23331a96a1718b0757" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1030,7 +981,8 @@
 		</part>
 	</software>
 
-	<software name="ereditaa" cloneof="eredita" supported="no">  <!-- protection, works in dcmoto -->
+	<!-- protection, works in dcmoto -->
+	<software name="ereditaa" cloneof="eredita" supported="no">
 		<description>L'Eredita (Alt)</description>
 		<year>1986</year>
 		<publisher>Olivetti Prodest</publisher>
@@ -1042,7 +994,8 @@
 		</part>
 	</software>
 
-	<software name="ereditab" cloneof="eredita" supported="no">  <!-- protection, works in dcmoto -->
+	<!-- protection, works in dcmoto -->
+	<software name="ereditab" cloneof="eredita" supported="no">
 		<description>L'Eredita (Alt 2)</description>
 		<year>1986</year>
 		<publisher>Olivetti Prodest</publisher>
@@ -1054,7 +1007,8 @@
 		</part>
 	</software>
 
-	<software name="ereditac" cloneof="eredita" supported="no">  <!-- protection, works in dcmoto -->
+	<!-- protection, works in dcmoto -->
+	<software name="ereditac" cloneof="eredita" supported="no">
 		<description>L'Eredita (Alt 3)</description>
 		<year>1986</year>
 		<publisher>Olivetti Prodest</publisher>
@@ -1102,7 +1056,8 @@
 		</part>
 	</software>
 
-	<software name="intrigoa" cloneof="intrigo" supported="no">  <!-- protection, works in dcmoto -->
+	<!-- protection, works in dcmoto -->
+	<software name="intrigoa" cloneof="intrigo" supported="no">
 		<description>Intrigo a Parigi (Alt)</description>
 		<year>1986</year>
 		<publisher>Infogrames</publisher>
@@ -1114,7 +1069,8 @@
 		</part>
 	</software>
 
-	<software name="intrigob" cloneof="intrigo" supported="no">  <!-- protection, works in dcmoto -->
+	<!-- protection, works in dcmoto -->
+	<software name="intrigob" cloneof="intrigo" supported="no">
 		<description>Intrigo a Parigi (Alt 2)</description>
 		<year>1986</year>
 		<publisher>Infogrames</publisher>
@@ -1126,7 +1082,8 @@
 		</part>
 	</software>
 
-	<software name="intrigoc" cloneof="intrigo" supported="no">  <!-- protection, works in dcmoto -->
+	<!-- protection, works in dcmoto -->
+	<software name="intrigoc" cloneof="intrigo" supported="no">
 		<description>Intrigo a Parigi (Alt 3)</description>
 		<year>1986</year>
 		<publisher>Infogrames</publisher>
@@ -1404,7 +1361,8 @@
 		</part>
 	</software>
 
-	<software name="okcowboya" cloneof="okcowboy" supported="no"> <!-- protection, works in dcmoto -->
+	<!-- protection, works in dcmoto -->
+	<software name="okcowboya" cloneof="okcowboy" supported="no">
 		<description>OK Cowboy (Alt)</description>
 		<year>1987</year>
 		<publisher>Infogrames</publisher>
@@ -1416,7 +1374,8 @@
 		</part>
 	</software>
 
-	<software name="okcowboyb" cloneof="okcowboy" supported="no"> <!-- protection, works in dcmoto -->
+	<!-- protection, works in dcmoto -->
+	<software name="okcowboyb" cloneof="okcowboy" supported="no">
 		<description>OK Cowboy (Alt 2)</description>
 		<year>1987</year>
 		<publisher>Infogrames</publisher>
@@ -1428,7 +1387,8 @@
 		</part>
 	</software>
 
-	<software name="okcowboyc" cloneof="okcowboy" supported="no"> <!-- protection, works in dcmoto -->
+	<!-- protection, works in dcmoto -->
+	<software name="okcowboyc" cloneof="okcowboy" supported="no">
 		<description>OK Cowboy (Alt 3)</description>
 		<year>1987</year>
 		<publisher>Infogrames</publisher>
@@ -1436,6 +1396,61 @@
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="121574">
 				<rom name="ok cowboy (it) (infogrames) (pierre bayle) (1987).k7" size="121574" crc="01f9afbd" sha1="f56bab450bdb32574f9e1a9e34be3f0284cfb2c2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="olimpinv">
+		<description>Olimpiadi Invernali</description>
+		<year>1986</year>
+		<publisher>Olivetti Prodest</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="cass" size="23327344">
+				<rom name="olimpiadi invernali (infogrames) (kamel bala, alain vialon) (1986) (pc128) (side a).wav" size="23327344" crc="dde7f22a" sha1="eba8854d530b82332061cf9a2c1b102eb14e103f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="cass" size="16477376">
+				<rom name="olimpiadi invernali (infogrames) (kamel bala, alain vialon) (1986) (pc128) (side b).wav" size="16477376" crc="e8cce6e5" sha1="6c83987e18779d7f80e8ae007b8725ec5197b640" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="olimpinva" cloneof="olimpinv">
+		<description>Olimpiadi Invernali (Single Tape)</description>
+		<year>1986</year>
+		<publisher>Olivetti Prodest</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="172225">
+				<rom name="olimpiadi invernali (infogrames) (kamel bala, alain vialon) (1986) (pc128).k7" size="172225" crc="12f0fc1d" sha1="d4411257fac8fb2462b4adf7d203a971c7c9c8a1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="olimpinvb" cloneof="olimpinv">
+		<description>Olimpiadi Invernali (Single Tape, Alt)</description>
+		<year>1986</year>
+		<publisher>Olivetti Prodest</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="167425">
+				<rom name="olimpiadi invernali (it) (infogrames) (1986).k7" size="167425" crc="c13d2008" sha1="e49d42b322892ac9cc11d3102f8f7eeec8d1da66" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="olimpinvc" cloneof="olimpinv">
+		<description>Olimpiadi Invernali (Single Tape, Alt 2)</description>
+		<year>1986</year>
+		<publisher>Olivetti Prodest</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="167425">
+				<rom name="olimpiadi-invernali-pc128.k7" size="167425" crc="d9eef4e8" sha1="ec3f3d64683f460b625a4a23331a96a1718b0757" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1555,7 +1570,8 @@
 		</part>
 	</software>
 
-	<software name="saphira" cloneof="saphir" supported="no"> <!-- protection, works in dcmoto -->
+	<!-- protection, works in dcmoto -->
+	<software name="saphira" cloneof="saphir" supported="no">
 		<description>Saphir (Alt)</description>
 		<year>1986</year>
 		<publisher>Olivetti Prodest</publisher>
@@ -1658,7 +1674,8 @@
 		</part>
 	</software>
 
-	<software name="sorcerya" cloneof="sorcery" supported="no"> <!-- protection, works in dcmoto -->
+	<!-- protection, works in dcmoto -->
+	<software name="sorcerya" cloneof="sorcery" supported="no">
 		<description>Sorcery (Alt)</description>
 		<year>1987</year>
 		<publisher>Olivetti Prodest</publisher>
@@ -1682,7 +1699,8 @@
 		</part>
 	</software>
 
-	<software name="sortilega" cloneof="sortileg" supported="no"> <!-- protection, works in dcmoto -->
+	<!-- protection, works in dcmoto -->
+	<software name="sortilega" cloneof="sortileg" supported="no">
 		<description>Sortileges (Alt)</description>
 		<year>1987</year>
 		<publisher>Olivetti Prodest</publisher>
@@ -1694,7 +1712,8 @@
 		</part>
 	</software>
 
-	<software name="sortilegb" cloneof="sortileg" supported="no"> <!-- protection, works in dcmoto -->
+	<!-- protection, works in dcmoto -->
+	<software name="sortilegb" cloneof="sortileg" supported="no">
 		<description>Sortileges (Alt 2)</description>
 		<year>1987</year>
 		<publisher>Olivetti Prodest</publisher>
@@ -1766,7 +1785,8 @@
 		</part>
 	</software>
 
-	<software name="tnta" cloneof="tnt" supported="no"> <!-- protected, works on dcmoto -->
+	<!-- protection, works in dcmoto -->
+	<software name="tnta" cloneof="tnt" supported="no">
 		<description>T.N.T. - Territorio da Neutralizzare Tempestivamente (Alt)</description>
 		<year>1987</year>
 		<publisher>Olivetti Prodest</publisher>
@@ -1778,7 +1798,8 @@
 		</part>
 	</software>
 
-	<software name="tntb" cloneof="tnt" supported="no"> <!-- protected, works on dcmoto -->
+	<!-- protection, works in dcmoto -->
+	<software name="tntb" cloneof="tnt" supported="no">
 		<description>T.N.T. - Territorio da Neutralizzare Tempestivamente (Alt 2)</description>
 		<year>1987</year>
 		<publisher>Olivetti Prodest</publisher>
@@ -1790,7 +1811,8 @@
 		</part>
 	</software>
 
-	<software name="tntc" cloneof="tnt" supported="no"> <!-- protected, works on dcmoto -->
+	<!-- protection, works in dcmoto -->
+	<software name="tntc" cloneof="tnt" supported="no">
 		<description>T.N.T. - Territorio da Neutralizzare Tempestivamente (Alt 3)</description>
 		<year>1987</year>
 		<publisher>Olivetti Prodest</publisher>
@@ -1862,7 +1884,8 @@
 		</part>
 	</software>
 
-	<software name="vampirea" cloneof="vampire" supported="no"> <!-- protected, works on dcmoto -->
+	<!-- protection, works in dcmoto -->
+	<software name="vampirea" cloneof="vampire" supported="no">
 		<description>Vampire (Alt)</description>
 		<year>1986</year>
 		<publisher>Olivetti Prodest</publisher>
