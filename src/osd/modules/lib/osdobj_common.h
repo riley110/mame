@@ -30,6 +30,8 @@
 #define OSDCOMMAND_LIST_NETWORK_ADAPTERS "listnetwork"
 
 #define OSDOPTION_DEBUGGER              "debugger"
+#define OSDOPTION_DEBUGGER_FONT         "debugger_font"
+#define OSDOPTION_DEBUGGER_FONT_SIZE    "debugger_font_size"
 #define OSDOPTION_WATCHDOG              "watchdog"
 
 #define OSDOPTION_MULTITHREADING        "multithreading"
@@ -67,6 +69,8 @@
 #define OSDOPTION_GL_NOTEXTURERECT      "gl_notexturerect"
 #define OSDOPTION_GL_FORCEPOW2TEXTURE   "gl_forcepow2texture"
 
+#define OSDOPTION_AUDIO_OUTPUT          "audio_output"
+#define OSDOPTION_AUDIO_EFFECT          "audio_effect"
 
 #define OSDOPTVAL_AUTO                  "auto"
 #define OSDOPTVAL_NONE                  "none"
@@ -85,6 +89,8 @@ public:
 
 	// debugging options
 	const char *debugger() const { return value(OSDOPTION_DEBUGGER); }
+	const char *debugger_font() const { return value(OSDOPTION_DEBUGGER_FONT); }
+	float debugger_font_size() const { return float_value(OSDOPTION_DEBUGGER_FONT_SIZE); }
 	int watchdog() const { return int_value(OSDOPTION_WATCHDOG); }
 
 	// performance options
@@ -132,6 +138,10 @@ public:
 	bool glsl_filter() const { return bool_value(OSDOPTION_GLSL_FILTER); }
 	const char *shader_mame(int index) const { astring temp; return value(temp.format("%s%d", OSDOPTION_SHADER_MAME, index)); }
 	const char *shader_screen(int index) const { astring temp; return value(temp.format("%s%d", OSDOPTION_SHADER_SCREEN, index)); }
+
+	// CoreAudio specific options
+	const char *audio_output() const { return value(OSDOPTION_AUDIO_OUTPUT); }
+	const char *audio_effect(int index) const { astring temp; return value(temp.format("%s%d", OSDOPTION_AUDIO_EFFECT, index)); }
 
 private:
 	static const options_entry s_option_entries[];

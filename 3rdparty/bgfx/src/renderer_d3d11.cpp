@@ -8,7 +8,7 @@
 #if BGFX_CONFIG_RENDERER_DIRECT3D11
 #	include "renderer_d3d11.h"
 
-namespace bgfx
+namespace bgfx { namespace d3d11
 {
 	static wchar_t s_viewNameW[BGFX_CONFIG_MAX_VIEWS][BGFX_CONFIG_MAX_VIEW_NAME];
 
@@ -155,7 +155,7 @@ namespace bgfx
 	 * 0x01 // MIP_LINEAR
 	 */
 
-	static const uint32_t s_textureFilter[3][3] =
+	static const uint8_t s_textureFilter[3][3] =
 	{
 		{
 			0x10, // min linear
@@ -513,7 +513,10 @@ namespace bgfx
 			m_driverType = D3D_DRIVER_TYPE_HARDWARE;
 
 			IDXGIAdapter* adapter;
-			for (uint32_t ii = 0; DXGI_ERROR_NOT_FOUND != factory->EnumAdapters(ii, &adapter); ++ii)
+			for (uint32_t ii = 0
+				; DXGI_ERROR_NOT_FOUND != factory->EnumAdapters(ii, &adapter) && ii < BX_COUNTOF(g_caps.gpu)
+				; ++ii
+				)
 			{
 				DXGI_ADAPTER_DESC desc;
 				hr = adapter->GetDesc(&desc);
@@ -536,11 +539,27 @@ namespace bgfx
 						, desc.SharedSystemMemory
 						);
 
-					if (BX_ENABLED(BGFX_CONFIG_DEBUG_PERFHUD)
-					&&  0 != strstr(description, "PerfHUD") )
+					g_caps.gpu[ii].vendorId = (uint16_t)desc.VendorId;
+					g_caps.gpu[ii].deviceId = (uint16_t)desc.DeviceId;
+					++g_caps.numGPUs;
+
+					if (NULL == m_adapter)
 					{
-						m_adapter = adapter;
-						m_driverType = D3D_DRIVER_TYPE_REFERENCE;
+						if ( (BGFX_PCI_ID_NONE != g_caps.vendorId ||             0 != g_caps.deviceId)
+						&&   (BGFX_PCI_ID_NONE == g_caps.vendorId || desc.VendorId == g_caps.vendorId)
+						&&   (               0 == g_caps.deviceId || desc.DeviceId == g_caps.deviceId) )
+						{
+							m_adapter = adapter;
+							m_adapter->AddRef();
+							m_driverType = D3D_DRIVER_TYPE_UNKNOWN;
+						}
+
+						if (BX_ENABLED(BGFX_CONFIG_DEBUG_PERFHUD)
+						&&  0 != strstr(description, "PerfHUD") )
+						{
+							m_adapter = adapter;
+							m_driverType = D3D_DRIVER_TYPE_REFERENCE;
+						}
 					}
 				}
 
@@ -594,16 +613,36 @@ namespace bgfx
 			}
 			BGFX_FATAL(SUCCEEDED(hr), Fatal::UnableToInitialize, "Unable to create Direct3D11 device.");
 
+			if (NULL != m_adapter)
+			{
+				DX_RELEASE(m_adapter, 2);
+			}
+
 			IDXGIDevice* device = NULL;
 			hr = E_FAIL;
 			for (uint32_t ii = 0; ii < BX_COUNTOF(s_deviceIIDs) && FAILED(hr); ++ii)
 			{
 				hr = m_device->QueryInterface(s_deviceIIDs[ii], (void**)&device);
 				BX_TRACE("D3D device 11.%d, hr %x", BX_COUNTOF(s_deviceIIDs)-1-ii, hr);
-			}
-			BGFX_FATAL(SUCCEEDED(hr), Fatal::UnableToInitialize, "Unable to create Direct3D11 device.");
 
-			hr = device->GetParent(IID_IDXGIAdapter, (void**)&adapter);
+				if (SUCCEEDED(hr) )
+				{
+BX_PRAGMA_DIAGNOSTIC_PUSH();
+BX_PRAGMA_DIAGNOSTIC_IGNORED_MSVC(4530) // warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+					try
+					{
+						// QueryInterface above can succeed, but getting adapter call might crash on Win7.
+						hr = device->GetAdapter(&adapter);
+					}
+					catch (...)
+					{
+						BX_TRACE("Failed to get adapter foro IID_IDXGIDevice%d.", BX_COUNTOF(s_deviceIIDs)-1-ii);
+						DX_RELEASE(device, 0);
+						hr = E_FAIL;
+					}
+BX_PRAGMA_DIAGNOSTIC_POP();
+				}
+			}
 			BGFX_FATAL(SUCCEEDED(hr), Fatal::UnableToInitialize, "Unable to create Direct3D11 device.");
 
 			// GPA increases device ref count.
@@ -616,6 +655,8 @@ namespace bgfx
 
 			hr = adapter->GetDesc(&m_adapterDesc);
 			BGFX_FATAL(SUCCEEDED(hr), Fatal::UnableToInitialize, "Unable to create Direct3D11 device.");
+			g_caps.vendorId = (uint16_t)m_adapterDesc.VendorId;
+			g_caps.deviceId = (uint16_t)m_adapterDesc.DeviceId;
 
 #if BX_PLATFORM_WINRT
 			hr = adapter->GetParent(__uuidof(IDXGIFactory2), (void**)&m_factory);
@@ -673,6 +714,7 @@ namespace bgfx
 
 			m_numWindows = 1;
 
+#if !defined(__MINGW32__)
 			if (BX_ENABLED(BGFX_CONFIG_DEBUG) )
 			{
 				ID3D11InfoQueue* infoQueue;
@@ -704,6 +746,7 @@ namespace bgfx
 					setGraphicsDebuggerPresent(true);
 				}
 			}
+#endif // __MINGW__
 
 			UniformHandle handle = BGFX_INVALID_HANDLE;
 			for (uint32_t ii = 0; ii < PredefinedUniform::Count; ++ii)
@@ -724,7 +767,7 @@ namespace bgfx
 								| (m_ovr.isInitialized() ? BGFX_CAPS_HMD : 0)
 								);
 			g_caps.maxTextureSize   = D3D11_REQ_TEXTURE2D_U_OR_V_DIMENSION;
-			g_caps.maxFBAttachments = bx::uint32_min(D3D11_SIMULTANEOUS_RENDER_TARGET_COUNT, BGFX_CONFIG_MAX_FRAME_BUFFER_ATTACHMENTS);
+			g_caps.maxFBAttachments = uint8_t(bx::uint32_min(D3D11_SIMULTANEOUS_RENDER_TARGET_COUNT, BGFX_CONFIG_MAX_FRAME_BUFFER_ATTACHMENTS) );
 
 			for (uint32_t ii = 0; ii < TextureFormat::Count; ++ii)
 			{
@@ -734,7 +777,7 @@ namespace bgfx
 				{
 					D3D11_FEATURE_DATA_FORMAT_SUPPORT data; // D3D11_FEATURE_DATA_FORMAT_SUPPORT2
 					data.InFormat = s_textureFormat[ii].m_fmt;
-					HRESULT hr = m_device->CheckFeatureSupport(D3D11_FEATURE_FORMAT_SUPPORT, &data, sizeof(data) );
+					hr = m_device->CheckFeatureSupport(D3D11_FEATURE_FORMAT_SUPPORT, &data, sizeof(data) );
 					if (SUCCEEDED(hr) )
 					{
 						support |= 0 != (data.OutFormatSupport & (0
@@ -768,7 +811,7 @@ namespace bgfx
 			for (uint32_t ii = 0; ii < BGFX_CONFIG_MAX_VIEWS; ++ii)
 			{
 				char name[BGFX_CONFIG_MAX_VIEW_NAME_RESERVED+1];
-				bx::snprintf(name, sizeof(name), "%3d  ", ii);
+				bx::snprintf(name, sizeof(name), "%3d   ", ii);
 				mbstowcs(s_viewNameW[ii], name, BGFX_CONFIG_MAX_VIEW_NAME_RESERVED);
 			}
 
@@ -1045,10 +1088,13 @@ namespace bgfx
 
 		void updateViewName(uint8_t _id, const char* _name) BX_OVERRIDE
 		{
-			mbstowcs(&s_viewNameW[_id][BGFX_CONFIG_MAX_VIEW_NAME_RESERVED]
-				, _name
-				, BX_COUNTOF(s_viewNameW[0])-BGFX_CONFIG_MAX_VIEW_NAME_RESERVED
-				);
+			if (BX_ENABLED(BGFX_CONFIG_DEBUG_PIX) )
+			{
+				mbstowcs(&s_viewNameW[_id][BGFX_CONFIG_MAX_VIEW_NAME_RESERVED]
+					, _name
+					, BX_COUNTOF(s_viewNameW[0])-BGFX_CONFIG_MAX_VIEW_NAME_RESERVED
+					);
+			}
 		}
 
 		void updateUniform(uint16_t _loc, const void* _data, uint32_t _size) BX_OVERRIDE
@@ -1359,7 +1405,7 @@ namespace bgfx
 			}
 		}
 
-		void setShaderUniform(uint8_t _flags, uint16_t _regIndex, const void* _val, uint16_t _numRegs)
+		void setShaderUniform(uint8_t _flags, uint32_t _regIndex, const void* _val, uint32_t _numRegs)
 		{
 			if (_flags&BGFX_UNIFORM_FRAGMENTBIT)
 			{
@@ -1373,12 +1419,12 @@ namespace bgfx
 			}
 		}
 
-		void setShaderUniform4f(uint8_t _flags, uint16_t _regIndex, const void* _val, uint16_t _numRegs)
+		void setShaderUniform4f(uint8_t _flags, uint32_t _regIndex, const void* _val, uint32_t _numRegs)
 		{
 			setShaderUniform(_flags, _regIndex, _val, _numRegs);
 		}
 
-		void setShaderUniform4x4f(uint8_t _flags, uint16_t _regIndex, const void* _val, uint16_t _numRegs)
+		void setShaderUniform4x4f(uint8_t _flags, uint32_t _regIndex, const void* _val, uint32_t _numRegs)
 		{
 			setShaderUniform(_flags, _regIndex, _val, _numRegs);
 		}
@@ -1408,7 +1454,14 @@ namespace bgfx
 
 		void setFrameBuffer(FrameBufferHandle _fbh, bool _msaa = true)
 		{
-			BX_UNUSED(_msaa);
+			if (isValid(m_fbh)
+			&&  m_fbh.idx != _fbh.idx
+			&&  m_rtMsaa)
+			{
+				FrameBufferD3D11& frameBuffer = m_frameBuffers[m_fbh.idx];
+				frameBuffer.resolve();
+			}
+
 			if (!isValid(_fbh) )
 			{
 				m_deviceCtx->OMSetRenderTargets(1, &m_backBufferColor, m_backBufferDepthStencil);
@@ -1425,14 +1478,6 @@ namespace bgfx
 
 				m_currentColor = frameBuffer.m_rtv[0];
 				m_currentDepthStencil = frameBuffer.m_dsv;
-			}
-
-			if (isValid(m_fbh)
-			&&  m_fbh.idx != _fbh.idx
-			&&  m_rtMsaa)
-			{
-				FrameBufferD3D11& frameBuffer = m_frameBuffers[m_fbh.idx];
-				frameBuffer.resolve();
 			}
 
 			m_fbh = _fbh;
@@ -1483,7 +1528,7 @@ namespace bgfx
 			}
 		}
 
-		void setInputLayout(const VertexDecl& _vertexDecl, const ProgramD3D11& _program, uint8_t _numInstanceData)
+		void setInputLayout(const VertexDecl& _vertexDecl, const ProgramD3D11& _program, uint16_t _numInstanceData)
 		{
 			uint64_t layoutHash = (uint64_t(_vertexDecl.m_hash)<<32) | _program.m_vsh->m_hash;
 			layoutHash ^= _numInstanceData;
@@ -1613,7 +1658,7 @@ namespace bgfx
 				drt->DestBlendAlpha = s_blendFactor[dstA][1];
 				drt->BlendOpAlpha   = s_blendEquation[equA];
 
-				uint32_t writeMask = (_state&BGFX_STATE_ALPHA_WRITE) ? D3D11_COLOR_WRITE_ENABLE_ALPHA : 0;
+				uint8_t writeMask = (_state&BGFX_STATE_ALPHA_WRITE) ? D3D11_COLOR_WRITE_ENABLE_ALPHA : 0;
 				writeMask |= (_state&BGFX_STATE_RGB_WRITE) ? D3D11_COLOR_WRITE_ENABLE_RED|D3D11_COLOR_WRITE_ENABLE_GREEN|D3D11_COLOR_WRITE_ENABLE_BLUE : 0;
 
 				drt->RenderTargetWriteMask = writeMask;
@@ -2038,11 +2083,11 @@ namespace bgfx
 		case UniformType::_uniform: \
 		case UniformType::_uniform|BGFX_UNIFORM_FRAGMENTBIT: \
 				{ \
-					setShaderUniform(type, loc, data, num); \
+					setShaderUniform(uint8_t(type), loc, data, num); \
 				} \
 				break;
 
-				switch ( (int32_t)type)
+				switch ( (uint32_t)type)
 				{
 				case UniformType::Uniform3x3fv:
 				case UniformType::Uniform3x3fv|BGFX_UNIFORM_FRAGMENTBIT: \
@@ -2063,7 +2108,7 @@ namespace bgfx
 							 mtx.un.val[ 9] = value[7];
 							 mtx.un.val[10] = value[8];
 							 mtx.un.val[11] = 0.0f;
-							 setShaderUniform(type, loc, &mtx.un.val[0], 3);
+							 setShaderUniform(uint8_t(type), loc, &mtx.un.val[0], 3);
 						 }
 					}
 					break;
@@ -2299,14 +2344,14 @@ namespace bgfx
 
 	static RendererContextD3D11* s_renderD3D11;
 
-	RendererContextI* rendererCreateD3D11()
+	RendererContextI* rendererCreate()
 	{
 		s_renderD3D11 = BX_NEW(g_allocator, RendererContextD3D11);
 		s_renderD3D11->init();
 		return s_renderD3D11;
 	}
 
-	void rendererDestroyD3D11()
+	void rendererDestroy()
 	{
 		s_renderD3D11->shutdown();
 		BX_DELETE(g_allocator, s_renderD3D11);
@@ -2534,7 +2579,7 @@ namespace bgfx
 					kind = "predefined";
 					m_predefined[m_numPredefined].m_loc   = regIndex;
 					m_predefined[m_numPredefined].m_count = regCount;
-					m_predefined[m_numPredefined].m_type  = predefined|fragmentBit;
+					m_predefined[m_numPredefined].m_type  = uint8_t(predefined|fragmentBit);
 					m_numPredefined++;
 				}
 				else
@@ -2619,7 +2664,7 @@ namespace bgfx
 		if (0 < size)
 		{
 			D3D11_BUFFER_DESC desc;
-			desc.ByteWidth = size;
+			desc.ByteWidth = (size + 0xf) & ~0xf;
 			desc.Usage = D3D11_USAGE_DEFAULT;
 			desc.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
 			desc.CPUAccessFlags = 0;
@@ -2638,7 +2683,7 @@ namespace bgfx
 		if (imageParse(imageContainer, _mem->data, _mem->size) )
 		{
 			uint8_t numMips = imageContainer.m_numMips;
-			const uint32_t startLod = bx::uint32_min(_skip, numMips-1);
+			const uint8_t startLod = uint8_t(bx::uint32_min(_skip, numMips-1) );
 			numMips -= startLod;
 			const ImageBlockInfo& blockInfo = getBlockInfo(TextureFormat::Enum(imageContainer.m_format) );
 			const uint32_t textureWidth  = bx::uint32_max(blockInfo.blockWidth,  imageContainer.m_width >>startLod);
@@ -2698,7 +2743,7 @@ namespace bgfx
 				uint32_t height = textureHeight;
 				uint32_t depth  = imageContainer.m_depth;
 
-				for (uint32_t lod = 0, num = numMips; lod < num; ++lod)
+				for (uint8_t lod = 0, num = numMips; lod < num; ++lod)
 				{
 					width  = bx::uint32_max(1, width);
 					height = bx::uint32_max(1, height);
@@ -3123,6 +3168,7 @@ namespace bgfx
 		uint32_t statsNumPrimsRendered[BX_COUNTOF(s_primInfo)] = {};
 		uint32_t statsNumInstances[BX_COUNTOF(s_primInfo)] = {};
 		uint32_t statsNumIndices = 0;
+		uint32_t statsKeyType[2] = {};
 
 		if (0 == (_render->m_debug&BGFX_DEBUG_IFH) )
 		{
@@ -3135,6 +3181,8 @@ namespace bgfx
 			for (int32_t item = 0, restartItem = numItems; item < numItems || restartItem < numItems;)
 			{
 				const bool isCompute = key.decode(_render->m_sortKeys[item], _render->m_viewRemap);
+				statsKeyType[isCompute]++;
+
 				const bool viewChanged = 0
 					|| key.m_view != view
 					|| item == numItems
@@ -3186,18 +3234,26 @@ namespace bgfx
 					viewState.m_rect = _render->m_rect[view];
 					if (viewRestart)
 					{
-						wchar_t* viewNameW = s_viewNameW[view];
-						viewNameW[3] = eye ? L'R' : L'L';
-						PIX_BEGINEVENT(D3DCOLOR_RGBA(0xff, 0x00, 0x00, 0xff), viewNameW);
+						if (BX_ENABLED(BGFX_CONFIG_DEBUG_PIX) )
+						{
+							wchar_t* viewNameW = s_viewNameW[view];
+							viewNameW[3] = L' ';
+							viewNameW[4] = eye ? L'R' : L'L';
+							PIX_BEGINEVENT(D3DCOLOR_RGBA(0xff, 0x00, 0x00, 0xff), viewNameW);
+						}
 
 						viewState.m_rect.m_x = eye * (viewState.m_rect.m_width+1)/2;
 						viewState.m_rect.m_width /= 2;
 					}
 					else
 					{
-						wchar_t* viewNameW = s_viewNameW[view];
-						viewNameW[3] = L' ';
-						PIX_BEGINEVENT(D3DCOLOR_RGBA(0xff, 0x00, 0x00, 0xff), viewNameW);
+						if (BX_ENABLED(BGFX_CONFIG_DEBUG_PIX) )
+						{
+							wchar_t* viewNameW = s_viewNameW[view];
+							viewNameW[3] = L' ';
+							viewNameW[4] = L' ';
+							PIX_BEGINEVENT(D3DCOLOR_RGBA(0xff, 0x00, 0x00, 0xff), viewNameW);
+						}
 					}
 
 					const Rect& scissorRect = _render->m_scissor[view];
@@ -3226,6 +3282,14 @@ namespace bgfx
 					if (!wasCompute)
 					{
 						wasCompute = true;
+
+						if (BX_ENABLED(BGFX_CONFIG_DEBUG_PIX) )
+						{
+							wchar_t* viewNameW = s_viewNameW[view];
+							viewNameW[3] = L'C';
+							PIX_ENDEVENT();
+							PIX_BEGINEVENT(D3DCOLOR_RGBA(0xff, 0x00, 0x00, 0xff), viewNameW);
+						}
 
 						deviceCtx->IASetVertexBuffers(0, 2, s_zero.m_buffer, s_zero.m_zero, s_zero.m_zero);
 						deviceCtx->IASetIndexBuffer(NULL, DXGI_FORMAT_R16_UINT, 0);
@@ -3345,6 +3409,14 @@ namespace bgfx
 
 				if (wasCompute)
 				{
+					if (BX_ENABLED(BGFX_CONFIG_DEBUG_PIX) )
+					{
+						wchar_t* viewNameW = s_viewNameW[view];
+						viewNameW[3] = L' ';
+						PIX_ENDEVENT();
+						PIX_BEGINEVENT(D3DCOLOR_RGBA(0xff, 0x00, 0x00, 0xff), viewNameW);
+					}
+
 					wasCompute = false;
 
 					programIdx = invalidHandle;
@@ -3532,7 +3604,7 @@ namespace bgfx
 
 				{
 					uint32_t changes = 0;
-					for (uint32_t stage = 0; stage < BGFX_CONFIG_MAX_TEXTURE_SAMPLERS; ++stage)
+					for (uint8_t stage = 0; stage < BGFX_CONFIG_MAX_TEXTURE_SAMPLERS; ++stage)
 					{
 						const Binding& sampler = draw.m_bind[stage];
 						Binding& current = currentState.m_bind[stage];
@@ -3691,6 +3763,14 @@ namespace bgfx
 
 			if (wasCompute)
 			{
+				if (BX_ENABLED(BGFX_CONFIG_DEBUG_PIX) )
+				{
+					wchar_t* viewNameW = s_viewNameW[view];
+					viewNameW[3] = L'C';
+					PIX_ENDEVENT();
+					PIX_BEGINEVENT(D3DCOLOR_RGBA(0xff, 0x00, 0x00, 0xff), viewNameW);
+				}
+
 				invalidateCompute();
 			}
 
@@ -3778,8 +3858,10 @@ namespace bgfx
 					);
 
 				double elapsedCpuMs = double(elapsed)*toMs;
-				tvm.printf(10, pos++, 0x8e, "  Draw calls: %4d / CPU %3.4f [ms]"
+				tvm.printf(10, pos++, 0x8e, "   Submitted: %4d (draw %4d, compute %4d) / CPU %3.4f [ms]"
 					, _render->m_num
+					, statsKeyType[0]
+					, statsKeyType[1]
 					, elapsedCpuMs
 					);
 				for (uint32_t ii = 0; ii < BX_COUNTOF(s_primName); ++ii)
@@ -3839,20 +3921,20 @@ namespace bgfx
 			PIX_ENDEVENT();
 		}
 	}
-} // namespace bgfx
+} /* namespace d3d11 */ } // namespace bgfx
 
 #else
 
-namespace bgfx
+namespace bgfx { namespace d3d11
 {
-	RendererContextI* rendererCreateD3D11()
+	RendererContextI* rendererCreate()
 	{
 		return NULL;
 	}
 
-	void rendererDestroyD3D11()
+	void rendererDestroy()
 	{
 	}
-} // namespace bgfx
+} /* namespace d3d11 */ } // namespace bgfx
 
 #endif // BGFX_CONFIG_RENDERER_DIRECT3D11

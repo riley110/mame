@@ -291,6 +291,12 @@ void hmcs40_cpu_device::device_reset()
 	m_pc = m_pcmask;
 	m_prev_op = m_op = 0;
 
+	// clear interrupts
+	m_cf = 0;
+	m_ie = 0;
+	m_iri = m_irt = 0;
+	m_if[0] = m_if[1] = m_tf = 1;
+
 	// clear i/o
 	m_d = m_polarity;
 	for (int i = 0; i < 16; i++)
@@ -298,12 +304,6 @@ void hmcs40_cpu_device::device_reset()
 
 	for (int i = 0; i < 8; i++)
 		hmcs40_cpu_device::write_r(i, 0);
-
-	// clear interrupts
-	m_cf = 0;
-	m_ie = 0;
-	m_iri = m_irt = 0;
-	m_if[0] = m_if[1] = m_tf = 1;
 }
 
 
@@ -557,12 +557,7 @@ void hmcs40_cpu_device::execute_run()
 
 		// LPU is handled 1 cycle later
 		if ((m_prev_op & 0x3e0) == 0x340)
-		{
-			if ((m_op & 0x1c0) != 0x1c0)
-				logerror("%s LPU without BR/CAL at $%04X\n", tag(), m_prev_pc);
-
 			m_pc = ((m_page << 6) | (m_pc & 0x3f)) & m_pcmask;
-		}
 
 		// check/handle interrupt, but not in the middle of a long jump
 		if (m_ie && (m_iri || m_irt) && (m_op & 0x3e0) != 0x340)
