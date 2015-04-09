@@ -76,6 +76,46 @@
 		</part>
 	</software>
 
+	<!-- can also be found in to_flop.xml -->
+	<software name="dcsdboot">
+		<description>dcsdboot</description>
+		<year>2012</year>
+		<publisher>DCsoft?</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="dcsdboot.fd" size="327680" crc="856a4963" sha1="7eaa8a78850182f77ebe8f2cc027bcd4841ebfe7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- can also be found in to_flop.xml -->
+	<software name="dumprom">
+		<description>Dump rom UC, controleur, cartouche</description>
+		<year>2008</year>
+		<publisher>DCsoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="dump rom uc, controleur, cartouche (dcsoft) (daniel coulom) (2008) (moto).fd" size="327680" crc="b7892d98" sha1="75569792465e92f0a0f821abdb9709494b7c80dd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- can also be found in to_flop.xml -->
+	<!-- contains 2 duplicates of parent set -->
+	<software name="dumproma" cloneof="dumprom">
+		<description>Dump rom UC, controleur, cartouche (640K Disk)</description>
+		<year>2008</year>
+		<publisher>DCsoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="655360">
+				<rom name="dump rom uc, controleur, cartouche (dcsoft) (daniel coulom) (2008) (moto)[640k].fd" size="655360" crc="3a1f761c" sha1="99611d9ea0bbc7435535ccaab8d6c63acaf1f0e9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- This version has been modified to boot off a disk instead of a cartridge -->
 	<software name="jane">
 		<description>Jane (Hacked to use boot disk)</description>
@@ -159,6 +199,19 @@
 		</part>
 	</software>
 
+	<!-- can also be found in to_flop.xml -->
+	<software name="sdtrans">
+		<description>SDTRANSFERT - Transferts PC-Thomson par carte SD</description>
+		<year>2013</year>
+		<publisher>DCsoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="sdtransfert - transferts pc _-_ thomson par carte sd (dcsoft) (daniel coulom) (2013) (moto fd).fd" size="327680" crc="abb4c3b6" sha1="4643275c00e44e0f5087662b93f697846d172f02" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="vox">
 		<description>Vox - Synthetiseur Vocal</description>
 		<year>1984</year>
@@ -173,6 +226,48 @@
 	</software>
 
 <!-- Compilations (Games) -->
+
+	<!-- can also be found in to_flop.xml -->
+	<software name="classiq2">
+		<description>Classiques Volume 2</description>
+		<year>1987</year>
+		<publisher>Titus Software</publisher>
+		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="classiques vol.2 (1987)(titus)(fr).fd" size="327680" crc="61c44264" sha1="1b616476d5616ccb7bf93a3096eae847ea3249ad" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- can also be found in to_flop.xml -->
+	<software name="classiq3">
+		<description>Classiques Volume 3</description>
+		<year>1987</year>
+		<publisher>Titus Software</publisher>
+		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="classiques vol.3 (1987)(titus)(fr).fd" size="327680" crc="6c0f6f65" sha1="99147a84ec0d1d655c4b84c7ba59077ccbf94a1e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- can also be found in to_flop.xml -->
+	<software name="classiq4">
+		<description>Classiques Volume 4</description>
+		<year>1987</year>
+		<publisher>Titus Software</publisher>
+		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="classiques vol.4 (1987)(titus)(fr).fd" size="327680" crc="085afb85" sha1="a8cb871bc918a5d9d7b20732261a0958b719435f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
 
 	<software name="hitslori">
 		<description>Les Hits de Loriciels 1</description>
@@ -237,6 +332,34 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="655360">
 				<rom name="memo5-chargeur_mo5.fd" size="655360" crc="70b94be6" sha1="a0775e9ae42240dbb4d0d82620e3f352f99b82af" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Demos -->
+
+	<!-- can also be found in to_flop.xml -->
+	<software name="thomcat">
+		<description>THOM-CAT</description>
+		<year>2015</year>
+		<publisher>Puls</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="thomcat.fd" size="327680" crc="91624ab5" sha1="25bea453e1f28b316ee122d175d228ea5994fae1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- can also be found in to_flop.xml -->
+	<software name="thomcata" cloneof="thomcat">
+		<description>THOM-CAT (SAP Format)</description>
+		<year>2015</year>
+		<publisher>Puls</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="thomcat.sap" size="335426" crc="5c883660" sha1="db34390336538e2326c23b20166f03b6fe0f2fb5" offset="0" />
 			</dataarea>
 		</part>
 	</software>

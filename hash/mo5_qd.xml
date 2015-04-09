@@ -252,6 +252,38 @@
 		</part>
 	</software>
 
+	<!-- can also be found in to_qd.xml -->
+	<software name="erebus">
+		<description>Erebus</description>
+		<year>1986</year>
+		<publisher>EH Services</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1 Side A"/>
+			<dataarea name="flop" size="51200">
+				<rom name="erebus (eh services) (eric zmiro, jean-charles meyrignac) (1986) (moto qd) (erebus-1a_moto).qd" size="51200" crc="8bd3f65c" sha1="2c0d9e3abdb0003bd9341a2bcc439517c4a574ab" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1 Side B"/>
+			<dataarea name="flop" size="51200">
+				<rom name="erebus (eh services) (eric zmiro, jean-charles meyrignac) (1986) (moto qd) (erebus-1b_moto).qd" size="51200" crc="c3c0a0a6" sha1="ffa8696cfbefdfaf497ca3694fbea0c32747982f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2 Side A"/>
+			<dataarea name="flop" size="51200">
+				<rom name="erebus (eh services) (eric zmiro, jean-charles meyrignac) (1986) (moto qd) (erebus-2a_moto).qd" size="51200" crc="804f4d94" sha1="1be13476dd5f203c2c89ac035d99455ee2a4790c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2 Side B"/>
+			<dataarea name="flop" size="51200">
+				<rom name="erebus (eh services) (eric zmiro, jean-charles meyrignac) (1986) (moto qd) (erebus-2b_moto).qd" size="51200" crc="0a97ab6f" sha1="704e57de58c4663b26d424fa95270d7076bf48e5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="malthaar">
 		<description>La Malediction de Thaar</description>
 		<year>1986</year>

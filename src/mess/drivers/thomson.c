@@ -730,9 +730,6 @@ static MACHINE_CONFIG_START( to7, thomson_state )
 	MCFG_SOFTWARE_LIST_ADD("to_cass_list","to_cass")
 	MCFG_SOFTWARE_LIST_ADD("to_flop_list","to_flop")
 	MCFG_SOFTWARE_LIST_ADD("to_qd_list","to_qd")
-
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("moto_flop_list","moto_flop")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("moto_qd_list","moto_qd")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( t9000, to7 )
