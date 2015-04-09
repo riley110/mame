@@ -5,8 +5,8 @@
 <!-- Applications -->
 
 	<!--
-    uses double-sided qdd disks, which seem to not be handled correctly
-    the same dump is available on dcmoto, so it is likely not bad
+	uses double-sided qdd disks, which seem to not be handled correctly
+	the same dump is available on dcmoto, so it is likely not bad
 	-->
 	<software name="initb512" supported="no">
 		<description>Initiation au BASIC 512</description>
@@ -327,17 +327,17 @@
 	</software>
 
 <!--
-	<software name="vampirea" cloneof="vampire" supported="no">
-		<description>Vampire (Bad)</description>
-		<year>1986</year>
-		<publisher>Infogrames</publisher>
+    <software name="vampirea" cloneof="vampire" supported="no">
+        <description>Vampire (Bad)</description>
+        <year>1986</year>
+        <publisher>Infogrames</publisher>
 
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="51200">
-				<rom name="vampire-to8-bad.qd" size="51200" crc="a02f3961" sha1="fcdedadd69375a350df8c336194c09a01d2bdaf6" status="baddump" offset="0" />
-			</dataarea>
-		</part>
-	</software>
+        <part name="flop1" interface="floppy_5_25">
+            <dataarea name="flop" size="51200">
+                <rom name="vampire-to8-bad.qd" size="51200" crc="a02f3961" sha1="fcdedadd69375a350df8c336194c09a01d2bdaf6" status="baddump" offset="0" />
+            </dataarea>
+        </part>
+    </software>
 -->
 
 	<software name="volsolo">
@@ -353,17 +353,17 @@
 	</software>
 
 <!--
-	<software name="volsoloa" cloneof="volsolo" supported="no">
-		<description>Vol Solo (Bad)</description>
-		<year>1986</year>
-		<publisher>France Image Logiciel (FIL)</publisher>
+    <software name="volsoloa" cloneof="volsolo" supported="no">
+        <description>Vol Solo (Bad)</description>
+        <year>1986</year>
+        <publisher>France Image Logiciel (FIL)</publisher>
 
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="51200">
-				<rom name="vol-solo-to8-bad.qd" size="51200" crc="3bfb6836" sha1="d73c7f61ade484742f290f810fa5f40b3321364d" status="baddump" offset="0" />
-			</dataarea>
-		</part>
-	</software>
+        <part name="flop1" interface="floppy_5_25">
+            <dataarea name="flop" size="51200">
+                <rom name="vol-solo-to8-bad.qd" size="51200" crc="3bfb6836" sha1="d73c7f61ade484742f290f810fa5f40b3321364d" status="baddump" offset="0" />
+            </dataarea>
+        </part>
+    </software>
 -->
 
 </softwarelist>
