@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<softwarelist name="to_cass" description="Thomson TO series cassetes">
+<softwarelist name="to7_cass" description="Thomson TO7 &amp; TO7/70 cassetes">
 
 	<software name="120coule">
 		<description>120 Couleurs pour TO7 70</description>
@@ -605,18 +605,6 @@
 		<part name="cass1" interface="to_cass">
 			<dataarea name="cass" size="17006">
 				<rom name="backgammon (nathan) (philippe barreau, pierre mauvigner) (1984) (to7).k7" size="17006" crc="d7ad0095" sha1="80d8d8b16c9df402f86eccfe2e8cfcdae110dde0" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="bactron">
-		<description>Bactron (TO8)</description>
-		<year>1986</year>
-		<publisher>Loriciels</publisher>
-
-		<part name="cass1" interface="to_cass">
-			<dataarea name="cass" size="70416">
-				<rom name="bactron (loriciels) (vincent baillet, c. akrich) (1986) (to8).k7" size="70416" crc="23ab9b84" sha1="ef3c21ac58222da495dbfdbb32de42cc4850d30d" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1234,18 +1222,6 @@
 		</part>
 	</software>
 
-	<software name="chicago">
-		<description>Chicago 90 (TO8)</description>
-		<year>1989</year>
-		<publisher>Microids</publisher>
-
-		<part name="cass1" interface="to_cass">
-			<dataarea name="cass" size="141466">
-				<rom name="chicago 90 (microids) (inconnus) (1989) (to8).k7" size="141466" crc="5f41cf2a" sha1="ae93d4ab923a55f300d5c9b38432893526dc340b" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="chifflet">
 		<description>Les Chiffres et les Lettres</description>
 		<year>1985</year>
@@ -1445,18 +1421,6 @@
 		</part>
 	</software>
 
-	<software name="copieur">
-		<description>Copieur (TO8)</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="cass1" interface="to_cass">
-			<dataarea name="cass" size="4663">
-				<rom name="copieur (inconnus) (to8).k7" size="4663" crc="117f89aa" sha1="bf6adb106375b5d8ea0b40608c0942698f5e4b62" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="corpshum">
 		<description>Le Corps Humain</description>
 		<year>1985</year>
@@ -1549,30 +1513,6 @@
 		<part name="cass1" interface="to_cass">
 			<dataarea name="cass" size="27315">
 				<rom name="dactylographie (fil) (henri rolland) (1985) (to7 k7).k7" size="27315" crc="cc354e83" sha1="be80509815946cb7ff5ee2275bac403b14d054bb" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="dctrans">
-		<description>DC Transferts (TO8)</description>
-		<year>2006</year>
-		<publisher>DCsoft</publisher>
-
-		<part name="cass1" interface="to_cass">
-			<dataarea name="cass" size="9023161">
-				<rom name="dc transferts (dcsoft) (daniel coulom) (2006) (to8).wav" size="9023161" crc="eb4660ca" sha1="0b94a00719a8301a29b57186ea9b15558213ec12" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="dctransa" cloneof="dctrans">
-		<description>DC Transferts (TO8) (Alt)</description>
-		<year>2006</year>
-		<publisher>DCsoft</publisher>
-
-		<part name="cass1" interface="to_cass">
-			<dataarea name="cass" size="12522">
-				<rom name="dc transferts (dcsoft) (daniel coulom) (2006) (to8).k7" size="12522" crc="9103c255" sha1="e9f2b5c3212fb1a481018a85f8e3f2cac0e87bad" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2984,18 +2924,6 @@
 		</part>
 	</software>
 
-	<software name="gp500cc">
-		<description>Grand Prix 500cc (TO8)</description>
-		<year>1986</year>
-		<publisher>Microids</publisher>
-
-		<part name="cass1" interface="to_cass">
-			<dataarea name="cass" size="76605">
-				<rom name="grand prix 500cc (microids) (elliot grassiano) (1986) (to8).k7" size="76605" crc="b082a964" sha1="3beafb2d556e3b35190c13fda5673eefb120c2ce" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="grandsau">
 		<description>Le Grand Saut</description>
 		<year>1987</year>
@@ -4048,18 +3976,6 @@
 		</part>
 	</software>
 
-	<software name="malefatl">
-		<description>Le Malefice des Atlantes (TO8)</description>
-		<year>1987</year>
-		<publisher>Chip</publisher>
-
-		<part name="cass1" interface="to_cass">
-			<dataarea name="cass" size="58221">
-				<rom name="le malefice des atlantes (chip) (inconnus) (1987) (to8).k7" size="58221" crc="6d01a4d3" sha1="d42c4cc26429d2cdf698ef8d2140c4f6af51442b" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="mallette">
 		<description>Mallette de Jeu Thomson</description>
 		<year>1987</year>
@@ -4482,18 +4398,6 @@
 		</part>
 	</software>
 
-	<software name="mgt">
-		<description>MGT (TO8)</description>
-		<year>1986</year>
-		<publisher>Loriciels</publisher>
-
-		<part name="cass1" interface="to_cass">
-			<dataarea name="cass" size="65780">
-				<rom name="mgt (loriciels) (f. vacher, p. jarry) (1986) (to8).k7" size="65780" crc="482ea9fb" sha1="39929f22b5fe0d4be4c12c078289a70ebfb4f6f6" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="scrabble">
 		<description>Micro-Scrabble</description>
 		<year>1985</year>
@@ -4786,18 +4690,6 @@
 		<part name="cass1" interface="to_cass">
 			<dataarea name="cass" size="2487">
 				<rom name="murs &amp; briques (198x)(huet, sylvain)(fr)(pd).k7" size="2487" crc="85e7e36a" sha1="ca2acbac14c8219095f5f46ffacafdd061c91f1d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="music3v">
-		<description>Music 3 Voix (TO8)</description>
-		<year>1987</year>
-		<publisher>Loriciels</publisher>
-
-		<part name="cass1" interface="to_cass">
-			<dataarea name="cass" size="42339">
-				<rom name="music 3v (loriciels) (p.o. richez) (1987) (to8).k7" size="42339" crc="36b17687" sha1="bb5bad017d97a2e68808ef697cd174687931e4b9" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -5425,18 +5317,6 @@
 		<part name="cass1" interface="to_cass">
 			<dataarea name="cass" size="31870">
 				<rom name="pique-fiche (hatier) (inconnus) (1984) (to7).k7" size="31870" crc="c210946d" sha1="f59c03b09532938bd5f8b5f2228b4f7f3a26929f" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="piquefica" cloneof="piquefic">
-		<description>Pique-Fiche (TO8)</description>
-		<year>1984</year>
-		<publisher>Hatier</publisher>
-
-		<part name="cass1" interface="to_cass">
-			<dataarea name="cass" size="36874">
-				<rom name="pique-fiche (hatier) (inconnus) (1984) (to8).k7" size="36874" crc="47715cda" sha1="a1e2f3709c14d6be6e31e423d39a0b38873a2200" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -6148,18 +6028,6 @@
 		</part>
 	</software>
 
-	<software name="sservice">
-		<description>Silent Service (TO8)</description>
-		<year>1987</year>
-		<publisher>France Image Logiciel (FIL)</publisher>
-
-		<part name="cass1" interface="to_cass">
-			<dataarea name="cass" size="48300">
-				<rom name="silent service (fil) (joel sana) (1987) (to8 k7).k7" size="48300" crc="570a7e9b" sha1="4d001c51cc58f9cfdd1c7a26daf10d143571c9ec" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="simulvol">
 		<description>Simulateur de Vol</description>
 		<year>198?</year>
@@ -6324,18 +6192,6 @@
 		<part name="cass1" interface="to_cass">
 			<dataarea name="cass" size="29225">
 				<rom name="sos space (minipuce) (e. marquis) (to7).k7" size="29225" crc="cc7d0916" sha1="787141efbd71fee6c039d7cabcdcf68332e67465" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="spacerac">
-		<description>Space Racer (TO8)</description>
-		<year>1988</year>
-		<publisher>Loriciels</publisher>
-
-		<part name="cass1" interface="to_cass">
-			<dataarea name="cass" size="91549">
-				<rom name="space racer (loriciels) (pascal jarry) (1988) (to8).k7" size="91549" crc="6af77f6f" sha1="757cd8bce2356eac51f6690fcc8feb1a0c2a2e87" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -6530,18 +6386,6 @@
 		<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="49843">
 				<rom name="sujet complement (carraz) (francois borderie, emmanuel forsans) (1987) (to7) (side 2b).k7" size="49843" crc="f96572bd" sha1="fab078a4120d5d1e4270831f8da0e94cdc0a551e" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="superski">
-		<description>Super Ski (TO8)</description>
-		<year>1987</year>
-		<publisher>Microids</publisher>
-
-		<part name="cass1" interface="to_cass">
-			<dataarea name="cass" size="110461">
-				<rom name="super ski (microids) (c. bertrand, elliot grassiano) (1987) (to8).k7" size="110461" crc="0ace409c" sha1="9c35a837d43201612711433fdbde39bec2f896f3" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -6789,37 +6633,6 @@
 		</part>
 	</software>
 
-	<software name="trivialp">
-		<description>Trivial Pursuit (TO8)</description>
-		<year>198?</year>
-		<publisher>Ubisoft</publisher>
-
-		<part name="cass1" interface="to_cass">
-		<feature name="part_id" value="Tape 1"/>
-			<dataarea name="cass" size="84279">
-				<rom name="trivial pursuit (ubisoft) (inconnus) (to8) (side 1).k7" size="84279" crc="bad716ad" sha1="eb5df3bd272f6294055366a2f8f7db1eb4b8c6b9" offset="0" />
-			</dataarea>
-		</part>
-		<part name="cass2" interface="to_cass">
-		<feature name="part_id" value="Tape 2"/>
-			<dataarea name="cass" size="70238">
-				<rom name="trivial pursuit (ubisoft) (inconnus) (to8) (side 2).k7" size="70238" crc="d4a05cd6" sha1="0b814e4715711e3d88d3d19d1e38d6128b88acdc" offset="0" />
-			</dataarea>
-		</part>
-		<part name="cass3" interface="to_cass">
-		<feature name="part_id" value="Tape 3"/>
-			<dataarea name="cass" size="68394">
-				<rom name="trivial pursuit (ubisoft) (inconnus) (to8) (side 3).k7" size="68394" crc="836bfec2" sha1="000fb6273ca2d0c3d43577f1b362432080451e26" offset="0" />
-			</dataarea>
-		</part>
-		<part name="cass4" interface="to_cass">
-		<feature name="part_id" value="Tape 4"/>
-			<dataarea name="cass" size="62086">
-				<rom name="trivial pursuit (ubisoft) (inconnus) (to8) (side 4).k7" size="62086" crc="6e570923" sha1="2667a0531b9ca34c7de03f7646c5d946bcd0068e" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="troff">
 		<description>Troff</description>
 		<year>1983</year>
@@ -7003,18 +6816,6 @@
 		<part name="cass1" interface="to_cass">
 			<dataarea name="cass" size="24987">
 				<rom name="vol solo (fil) (joel sana) (1985) (to7 k7).k7" size="24987" crc="528d7678" sha1="06a0608eeff08b46c5dc2518e4da93572096e9a1" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="volsoloa" cloneof="volsolo">
-		<description>Vol Solo (TO8)</description>
-		<year>1985</year>
-		<publisher>France Image Logiciel (FIL)</publisher>
-
-		<part name="cass1" interface="to_cass">
-			<dataarea name="cass" size="24781">
-				<rom name="vol solo (fil) (joel sana) (1985) (to8).k7" size="24781" crc="4f107130" sha1="4ff709a8b9ba9103c768fe068921d77c004d3960" offset="0" />
 			</dataarea>
 		</part>
 	</software>

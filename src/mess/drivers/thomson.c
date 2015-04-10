@@ -727,9 +727,9 @@ static MACHINE_CONFIG_START( to7, thomson_state )
 	
 /* software lists */
 	MCFG_SOFTWARE_LIST_ADD("to7_cart_list","to7_cart")
-	MCFG_SOFTWARE_LIST_ADD("to_cass_list","to_cass")
+	MCFG_SOFTWARE_LIST_ADD("to7_cass_list","to7_cass")
 	MCFG_SOFTWARE_LIST_ADD("to_flop_list","to_flop")
-	MCFG_SOFTWARE_LIST_ADD("to_qd_list","to_qd")
+	MCFG_SOFTWARE_LIST_ADD("to7_qd_list","to7_qd")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( t9000, to7 )
@@ -1115,9 +1115,9 @@ static MACHINE_CONFIG_DERIVED( mo5, to7 )
 	MCFG_GENERIC_LOAD(thomson_state, mo5_cartridge)
 
 	MCFG_DEVICE_REMOVE("to7_cart_list")
-	MCFG_DEVICE_REMOVE("to_cass_list")
+	MCFG_DEVICE_REMOVE("to7_cass_list")
 	MCFG_DEVICE_REMOVE("to_flop_list")
-	MCFG_DEVICE_REMOVE("to_qd_list")
+	MCFG_DEVICE_REMOVE("to7_qd_list")
 
 	MCFG_SOFTWARE_LIST_ADD("mo5_cart_list","mo5_cart")
 	MCFG_SOFTWARE_LIST_ADD("mo5_cass_list","mo5_cass")
@@ -1693,6 +1693,14 @@ static MACHINE_CONFIG_DERIVED( to8, to7 )
 	MCFG_RAM_MODIFY(RAM_TAG)
 	MCFG_RAM_DEFAULT_SIZE("512K")
 	MCFG_RAM_EXTRA_OPTIONS("256K")
+
+	MCFG_DEVICE_REMOVE("to7_cass_list")
+	MCFG_DEVICE_REMOVE("to7_qd_list")
+
+	MCFG_SOFTWARE_LIST_ADD("to8_cass_list", "to8_cass")
+	MCFG_SOFTWARE_LIST_ADD("to8_qd_list", "to8_qd")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("to7_cass_list", "to7_cass")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("to7_qd_list", "to7_qd")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( to8d, to8 )
@@ -1848,6 +1856,14 @@ static MACHINE_CONFIG_DERIVED( to9p, to7 )
 	/* internal ram */
 	MCFG_RAM_MODIFY(RAM_TAG)
 	MCFG_RAM_DEFAULT_SIZE("512K")
+
+	MCFG_DEVICE_REMOVE("to7_cass_list")
+	MCFG_DEVICE_REMOVE("to7_qd_list")
+
+	MCFG_SOFTWARE_LIST_ADD("to8_cass_list", "to8_cass")
+	MCFG_SOFTWARE_LIST_ADD("to8_qd_list", "to8_qd")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("to7_cass_list", "to7_cass")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("to7_qd_list", "to7_qd")
 MACHINE_CONFIG_END
 
 COMP ( 1986, to9p, 0, 0, to9p, to9p, driver_device, 0, "Thomson", "TO9+", 0 )
@@ -2203,9 +2219,9 @@ static MACHINE_CONFIG_DERIVED( mo6, to7 )
 	MCFG_RAM_DEFAULT_SIZE("128K")
 	
 	MCFG_DEVICE_REMOVE("to7_cart_list")
-	MCFG_DEVICE_REMOVE("to_cass_list")
+	MCFG_DEVICE_REMOVE("to7_cass_list")
 	MCFG_DEVICE_REMOVE("to_flop_list")
-	MCFG_DEVICE_REMOVE("to_qd_list")
+	MCFG_DEVICE_REMOVE("to7_qd_list")
 
 	MCFG_SOFTWARE_LIST_ADD("mo6_cass_list","mo6_cass")
 	MCFG_SOFTWARE_LIST_ADD("mo6_flop_list","mo6_flop")
@@ -2473,9 +2489,9 @@ static MACHINE_CONFIG_DERIVED( mo5nr, to7 )
 	MCFG_RAM_DEFAULT_SIZE("128K")
 	
 	MCFG_DEVICE_REMOVE("to7_cart_list")
-	MCFG_DEVICE_REMOVE("to_cass_list")
+	MCFG_DEVICE_REMOVE("to7_cass_list")
 	MCFG_DEVICE_REMOVE("to_flop_list")
-	MCFG_DEVICE_REMOVE("to_qd_list")
+	MCFG_DEVICE_REMOVE("to7_qd_list")
 
 	MCFG_SOFTWARE_LIST_ADD("mo6_cass_list","mo6_cass")
 	MCFG_SOFTWARE_LIST_ADD("mo6_flop_list","mo6_flop")
