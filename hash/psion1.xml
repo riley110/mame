@@ -2,6 +2,18 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="psion1" description="Psion Organiser I Datapack">
 
+	<software name="construc" supported="no">
+		<description>Construction Pack</description>
+		<year>198?</year>
+		<publisher>Wessex</publisher>
+
+		<part name="cart" interface="psion_pack">
+			<dataarea name="rom" size="15063">
+				<rom name="wessex.op1" size="15063" crc="44a1d7ef" sha1="3c5e0d103952aafd55c456692e9eaad1eb0f0ceb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="financep" supported="no">
 		<description>Finance Pack</description>
 		<year>198?</year>
@@ -34,6 +46,18 @@
 		<part name="cart" interface="psion_pack">
 			<dataarea name="rom" size="16317">
 				<rom name="maths.op1" size="16317" crc="5dc289af" sha1="31c08efc37313e866b4876be4114a0ebe5fb7979" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="restaur" supported="no">
+		<description>Restaurant Guide </description>
+		<year>198?</year>
+		<publisher>Psion</publisher>
+
+		<part name="cart" interface="psion_pack">
+			<dataarea name="rom" size="11343">
+				<rom name="restguide.op1" size="11343" crc="7224f817" sha1="37d2548f18556bd2fbb7d592fe2a36811a1b1aaf" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -80,30 +104,6 @@
 		<part name="cart2" interface="psion_pack">
 			<dataarea name="rom" size="8105">
 				<rom name="utility2.op1" size="8105" crc="5fded4c4" sha1="65f44d0ce0885fbbb219b3cdc2f48269a997b4f5" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="construc" supported="no">
-		<description>Construction Pack</description>
-		<year>198?</year>
-		<publisher>Wessex</publisher>
-
-		<part name="cart" interface="psion_pack">
-			<dataarea name="rom" size="15063">
-				<rom name="wessex.op1" size="15063" crc="44a1d7ef" sha1="3c5e0d103952aafd55c456692e9eaad1eb0f0ceb" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="restaur" supported="no">
-		<description>Restaurant Guide </description>
-		<year>198?</year>
-		<publisher>Psion</publisher>
-
-		<part name="cart" interface="psion_pack">
-			<dataarea name="rom" size="11343">
-				<rom name="restguide.op1" size="11343" crc="7224f817" sha1="37d2548f18556bd2fbb7d592fe2a36811a1b1aaf" offset="0" />
 			</dataarea>
 		</part>
 	</software>

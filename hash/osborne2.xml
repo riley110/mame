@@ -2,31 +2,6 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="osborne2" description="Osborne 2 Executive diskettes">
 
-	<software name="system">
-		<description>System Disk</description>
-		<year>198?</year>
-		<publisher>Osborne</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-		<feature name="part_id" value="Disk 1"/>
-			<dataarea name="flop" size="142061">
-				<rom name="cpmplus1.imd" size="142061" crc="581a4e02" sha1="00928887a48bd14910eb432df55f24554e2f72c9" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-		<feature name="part_id" value="Disk 2"/>
-			<dataarea name="flop" size="191176">
-				<rom name="cpmplus2.imd" size="191176" crc="ddd36ec1" sha1="741653c8eaeb706a5d2229b98d79d5da53240b8c" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-		<feature name="part_id" value="Disk 3"/>
-			<dataarea name="flop" size="198338">
-				<rom name="cpmplus3.imd" size="198338" crc="352b00ce" sha1="d632c50ef0b2c5eeea23d3d77f6fb73131b0b0e5" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="cpm30">
 		<description>CP/M (v3.0)</description>
 		<year>198?</year>
@@ -60,6 +35,31 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="107630">
 				<rom name="ose-psys.td0" size="107630" crc="1037a24b" sha1="3d33597d05b1b7b2eb543d6ed0f3b7637222e18a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="system">
+		<description>System Disk</description>
+		<year>198?</year>
+		<publisher>Osborne</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="142061">
+				<rom name="cpmplus1.imd" size="142061" crc="581a4e02" sha1="00928887a48bd14910eb432df55f24554e2f72c9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="191176">
+				<rom name="cpmplus2.imd" size="191176" crc="ddd36ec1" sha1="741653c8eaeb706a5d2229b98d79d5da53240b8c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 3"/>
+			<dataarea name="flop" size="198338">
+				<rom name="cpmplus3.imd" size="198338" crc="352b00ce" sha1="d632c50ef0b2c5eeea23d3d77f6fb73131b0b0e5" offset="0" />
 			</dataarea>
 		</part>
 	</software>

@@ -1,9 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!-- Info from http://rk86.ru/catalog/ -->
 <softwarelist name="partner_cass" description="Partner-01.01 cassettes">
-<!--
-  Info from http://rk86.ru/catalog/
--->
 
 <!-- GAMES -->
 
@@ -237,7 +235,8 @@
 		</part>
 	</software>
 
-	<software name="liqsky" supported="no"><!-- hangs after "G" -->
+	<!-- hangs after "G" -->
+	<software name="liqsky" supported="no">
 		<description>LIQSKY</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -494,7 +493,8 @@
 		</part>
 	</software>
 
-	<software name="spysdem" supported="no"><!-- hangs after boot screen? -->
+	<!-- hangs after boot screen? -->
+	<software name="spysdem" supported="no">
 		<description>Spy's Demise</description>
 		<year>19??</year>
 		<publisher>BSV</publisher>
@@ -678,11 +678,10 @@
 		</part>
 	</software>
 
-
-
 <!-- SYSTEM -->
 
-	<software name="asmed" supported="no"><!-- "Error: not enough ram" (Ошибка: Мало озу) occurs -->
+	<!-- "Error: not enough ram" (Ошибка: Мало озу) occurs -->
+	<software name="asmed" supported="no">
 		<description>Assembler and Editor Micron</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -715,8 +714,9 @@
 		</part>
 	</software>
 
+	<!-- BASIC search? -->
 	<software name="bssearch">
-		<description>Search</description><!-- BASIC search? -->
+		<description>Search</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<part name="cass" interface="partner_cass">
