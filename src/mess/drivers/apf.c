@@ -579,7 +579,10 @@ static MACHINE_CONFIG_DERIVED( apfimag, apfm1000 )
 	MCFG_FLOPPY_DRIVE_ADD("fdc:0", apf_floppies, "525dd", floppy_image_device::default_floppy_formats)
 	MCFG_FLOPPY_DRIVE_ADD("fdc:1", apf_floppies, "525dd", floppy_image_device::default_floppy_formats)
 
+	MCFG_DEVICE_REMOVE("cart_list")
 	MCFG_SOFTWARE_LIST_ADD("cass_list", "apfimag_cass")
+	MCFG_SOFTWARE_LIST_ADD("cart_list", "apfimag_cart")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("m1k_cart_list", "apfm1000")
 MACHINE_CONFIG_END
 
 
@@ -613,6 +616,7 @@ ROM_END
 
 ***************************************************************************/
 
-/*    YEAR  NAME     PARENT     COMPAT  MACHINE     INPUT      CLASS          INIT         COMPANY               FULLNAME */
-COMP( 1979, apfimag,  apfm1000,  0,      apfimag,    apfimag,   driver_device,  0,   "APF Electronics Inc.", "APF Imagination Machine", 0 )
+/*    YEAR  NAME      PARENT     COMPAT  MACHINE     INPUT      CLASS           INIT COMPANY                 FULLNAME */
 CONS( 1978, apfm1000, 0,         0,      apfm1000,   apfm1000,  driver_device,  0,   "APF Electronics Inc.", "APF M-1000", 0 )
+
+COMP( 1979, apfimag,  0,         0,      apfimag,    apfimag,   driver_device,  0,   "APF Electronics Inc.", "APF Imagination Machine", 0 )
