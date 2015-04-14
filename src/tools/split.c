@@ -120,19 +120,19 @@ static int split_file(const char *filename, const char *basename, UINT32 splitsi
 	splitfilename.cpy(basename).cat(".split");
 
 	// create the split file
-	filerr = core_fopen(splitfilename, OPEN_FLAG_WRITE | OPEN_FLAG_CREATE | OPEN_FLAG_NO_BOM, &splitfile);
+	filerr = core_fopen(splitfilename.c_str(), OPEN_FLAG_WRITE | OPEN_FLAG_CREATE | OPEN_FLAG_NO_BOM, &splitfile);
 	if (filerr != FILERR_NONE)
 	{
-		fprintf(stderr, "Fatal error: unable to create split file '%s'\n", splitfilename.cstr());
+		fprintf(stderr, "Fatal error: unable to create split file '%s'\n", splitfilename.c_str());
 		goto cleanup;
 	}
 
 	// write the basics out
-	core_fprintf(splitfile, "splitfile=%s\n", basefilename.cstr());
+	core_fprintf(splitfile, "splitfile=%s\n", basefilename.c_str());
 	core_fprintf(splitfile, "splitsize=%d\n", splitsize);
 
-	printf("Split file is '%s'\n", splitfilename.cstr());
-	printf("Splitting file %s into chunks of %dMB...\n", basefilename.cstr(), splitsize / (1024 * 1024));
+	printf("Split file is '%s'\n", splitfilename.c_str());
+	printf("Splitting file %s into chunks of %dMB...\n", basefilename.c_str(), splitsize / (1024 * 1024));
 
 	// now iterate until done
 	for (partnum = 0; partnum < 1000; partnum++)
@@ -150,21 +150,21 @@ static int split_file(const char *filename, const char *basename, UINT32 splitsi
 		compute_hash_as_string(computedhash, splitbuffer, length);
 
 		// write that info to the split file
-		core_fprintf(splitfile, "hash=%s file=%s.%03d\n", computedhash.cstr(), basefilename.cstr(), partnum);
+		core_fprintf(splitfile, "hash=%s file=%s.%03d\n", computedhash.c_str(), basefilename.c_str(), partnum);
 
 		// compute the full filename for this guy
 		outfilename.printf("%s.%03d", basename, partnum);
 
 		// create it
-		filerr = core_fopen(outfilename, OPEN_FLAG_WRITE | OPEN_FLAG_CREATE, &outfile);
+		filerr = core_fopen(outfilename.c_str(), OPEN_FLAG_WRITE | OPEN_FLAG_CREATE, &outfile);
 		if (filerr != FILERR_NONE)
 		{
 			printf("\n");
-			fprintf(stderr, "Fatal error: unable to create output file '%s'\n", outfilename.cstr());
+			fprintf(stderr, "Fatal error: unable to create output file '%s'\n", outfilename.c_str());
 			goto cleanup;
 		}
 
-		printf(" writing %s.%03d...", basefilename.cstr(), partnum);
+		printf(" writing %s.%03d...", basefilename.c_str(), partnum);
 
 		// write the data
 		actual = core_fwrite(outfile, splitbuffer, length);
@@ -193,7 +193,7 @@ cleanup:
 	{
 		core_fclose(splitfile);
 		if (error != 0)
-			remove(splitfilename);
+			remove(splitfilename.c_str());
 	}
 	if (infile != NULL)
 		core_fclose(infile);
@@ -201,7 +201,7 @@ cleanup:
 	{
 		core_fclose(outfile);
 		if (error != 0)
-			remove(outfilename);
+			remove(outfilename.c_str());
 	}
 	if (splitbuffer != NULL)
 		free(splitbuffer);
@@ -268,25 +268,25 @@ static int join_file(const char *filename, const char *outname, int write_output
 	if (write_output)
 	{
 		// don't overwrite the original!
-		filerr = core_fopen(outfilename, OPEN_FLAG_READ, &outfile);
+		filerr = core_fopen(outfilename.c_str(), OPEN_FLAG_READ, &outfile);
 		if (filerr == FILERR_NONE)
 		{
 			core_fclose(outfile);
 			outfile = NULL;
-			fprintf(stderr, "Fatal error: output file '%s' already exists\n", outfilename.cstr());
+			fprintf(stderr, "Fatal error: output file '%s' already exists\n", outfilename.c_str());
 			goto cleanup;
 		}
 
 		// open the output for write
-		filerr = core_fopen(outfilename, OPEN_FLAG_WRITE | OPEN_FLAG_CREATE, &outfile);
+		filerr = core_fopen(outfilename.c_str(), OPEN_FLAG_WRITE | OPEN_FLAG_CREATE, &outfile);
 		if (filerr != FILERR_NONE)
 		{
-			fprintf(stderr, "Fatal error: unable to create file '%s'\n", outfilename.cstr());
+			fprintf(stderr, "Fatal error: unable to create file '%s'\n", outfilename.c_str());
 			goto cleanup;
 		}
 	}
 
-	printf("%s file '%s'...\n", write_output ? "Joining" : "Verifying", outfilename.cstr());
+	printf("%s file '%s'...\n", write_output ? "Joining" : "Verifying", outfilename.c_str());
 
 	// now iterate through each file
 	while (core_fgets(buffer, sizeof(buffer), splitfile))
@@ -302,15 +302,15 @@ static int join_file(const char *filename, const char *outname, int write_output
 		expectedhash.cpy(buffer + 5, SHA1_DIGEST_SIZE * 2);
 		infilename.cpy(buffer + 5 + SHA1_DIGEST_SIZE * 2 + 6).trimspace();
 
-		printf("  Reading file '%s'...", infilename.cstr());
+		printf("  Reading file '%s'...", infilename.c_str());
 
 		// read the file's contents
 		infilename.ins(0, basepath);
-		filerr = core_fload(infilename, &splitbuffer, &length);
+		filerr = core_fload(infilename.c_str(), &splitbuffer, &length);
 		if (filerr != FILERR_NONE)
 		{
 			printf("\n");
-			fprintf(stderr, "Fatal error: unable to load file '%s'\n", infilename.cstr());
+			fprintf(stderr, "Fatal error: unable to load file '%s'\n", infilename.c_str());
 			goto cleanup;
 		}
 
@@ -321,7 +321,7 @@ static int join_file(const char *filename, const char *outname, int write_output
 		if (computedhash != expectedhash)
 		{
 			printf("\n");
-			fprintf(stderr, "Fatal error: file '%s' has incorrect hash\n  Expected: %s\n  Computed: %s\n", infilename.cstr(), expectedhash.cstr(), computedhash.cstr());
+			fprintf(stderr, "Fatal error: file '%s' has incorrect hash\n  Expected: %s\n  Computed: %s\n", infilename.c_str(), expectedhash.c_str(), computedhash.c_str());
 			goto cleanup;
 		}
 
@@ -364,7 +364,7 @@ cleanup:
 	{
 		core_fclose(outfile);
 		if (error != 0)
-			remove(outfilename);
+			remove(outfilename.c_str());
 	}
 	if (splitbuffer != NULL)
 		osd_free(splitbuffer);

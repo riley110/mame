@@ -14,7 +14,8 @@
 #define __DEBUGCPU_H__
 
 #include "express.h"
-#include "simple_set.h"
+
+#include <set>
 
 
 //**************************************************************************
@@ -67,7 +68,7 @@ public:
 		bool enabled() const { return m_enabled; }
 		offs_t address() const { return m_address; }
 		const char *condition() const { return m_condition.original_string(); }
-		const char *action() const { return m_action; }
+		const char *action() const { return m_action.c_str(); }
 
 		// setters
 		void setEnabled(bool value) { m_enabled = value; }
@@ -112,7 +113,7 @@ public:
 		offs_t address() const { return m_address; }
 		offs_t length() const { return m_length; }
 		const char *condition() const { return m_condition.original_string(); }
-		const char *action() const { return m_action; }
+		const char *action() const { return m_action.c_str(); }
 
 		// setters
 		void setEnabled(bool value) { m_enabled = value; }
@@ -147,7 +148,7 @@ public:
 		int index() const { return m_index; }
 		bool enabled() const { return m_enabled; }
 		const char *condition() const { return m_condition.original_string(); }
-		const char *action() const { return m_action; }
+		const char *action() const { return m_action.c_str(); }
 
 	private:
 		// internals
@@ -378,7 +379,7 @@ private:
 	public:
 		dasm_pc_tag(const offs_t& address, const UINT32& crc);
 
-		// required to be included in a simple_set
+		// required to be included in a set
 		bool operator < (const dasm_pc_tag& rhs) const
 		{
 			if (m_address == rhs.m_address)
@@ -389,7 +390,7 @@ private:
 		offs_t m_address;       // Stores [nothing] for a given address & crc32
 		UINT32 m_crc;
 	};
-	simple_set<dasm_pc_tag> m_track_pc_set;
+	std::set<dasm_pc_tag> m_track_pc_set;
 	bool m_track_pc;
 
 	// comments
@@ -401,8 +402,8 @@ private:
 		astring  m_text;        // Stores comment text & color for a given address & crc32
 		rgb_t    m_color;
 	};
-	simple_set<dasm_comment> m_comment_set;             // collection of comments
-	UINT32                   m_comment_change;          // change counter for comments
+	std::set<dasm_comment> m_comment_set;               // collection of comments
+	UINT32                 m_comment_change;            // change counter for comments
 
 	// memory tracking
 	class dasm_memory_access
@@ -413,7 +414,7 @@ private:
 							const UINT64& data,
 							const offs_t& pc);
 
-		// required to be included in a simple_set
+		// required to be included in a set
 		bool operator < (const dasm_memory_access& rhs) const
 		{
 			if ((m_address == rhs.m_address) && (m_address_space == rhs.m_address_space))
@@ -428,9 +429,9 @@ private:
 		address_spacenum m_address_space;
 		offs_t           m_address;
 		UINT64           m_data;
-		offs_t           m_pc;
+		mutable offs_t   m_pc;
 	};
-	simple_set<dasm_memory_access> m_track_mem_set;
+	std::set<dasm_memory_access> m_track_mem_set;
 	bool m_track_mem;
 
 	// internal flag values

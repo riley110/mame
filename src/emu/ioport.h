@@ -830,7 +830,7 @@ public:
 	void post_coded(const char *text, size_t length = 0, const attotime &rate = attotime::zero);
 
 	void frame_update(ioport_port &port, ioport_value &digital);
-	const char *key_name(astring &string, unicode_char ch);
+	const char *key_name(astring &str, unicode_char ch);
 
 	// debugging
 	astring dump();
@@ -969,7 +969,7 @@ public:
 
 	// getters
 	ioport_diplocation *next() const { return m_next; }
-	const char *name() const { return m_name; }
+	const char *name() const { return m_name.c_str(); }
 	UINT8 number() const { return m_number; }
 	bool inverted() const { return m_invert; }
 
@@ -1197,7 +1197,7 @@ public:
 	device_t &device() const { return m_device; }
 	running_machine &machine() const;
 	ioport_field *first_field() const { return m_fieldlist.first(); }
-	const char *tag() const { return m_tag; }
+	const char *tag() const { return m_tag.c_str(); }
 	int modcount() const { return m_modcount; }
 	ioport_value active() const { return m_active; }
 	ioport_value active_safe(ioport_value defval) const { return (this == NULL) ? defval : active(); }
@@ -1397,7 +1397,7 @@ public:
 	void setup_natural_keyboard(ioport_queue_chars_delegate queue_chars, ioport_accept_char_delegate accept_char, ioport_charqueue_empty_delegate charqueue_empty);
 	INT32 frame_interpolate(INT32 oldval, INT32 newval);
 	ioport_type token_to_input_type(const char *string, int &player) const;
-	const char *input_type_to_token(astring &string, ioport_type type, int player);
+	const char *input_type_to_token(astring &str, ioport_type type, int player);
 
 private:
 	// internal helpers

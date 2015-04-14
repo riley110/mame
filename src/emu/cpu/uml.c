@@ -743,7 +743,7 @@ void uml::instruction::simplify()
 	        astring disasm1, disasm2;
 	        orig.disasm(disasm1, block->drcuml);
 	        inst->disasm(disasm2, block->drcuml);
-	        osd_printf_debug("Simplified: %-50.50s -> %s\n", disasm1.cstr(), disasm2.cstr());
+	        osd_printf_debug("Simplified: %-50.50s -> %s\n", disasm1.c_str(), disasm2.c_str());
 	    }
 	*/
 
@@ -1026,5 +1026,5 @@ const char *uml::instruction::disasm(astring &buffer, drcuml_state *drcuml) cons
 		if (m_flags & FLAG_C)
 			buffer.cat('C');
 	}
-	return buffer;
+	return buffer.c_str();
 }

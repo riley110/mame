@@ -56,7 +56,7 @@ public:
 	operator const UINT64 &() const { return m_value; }
 
 	// format the number according to its format
-	const char *format(astring &string) const;
+	const char *format(astring &str) const;
 
 private:
 	// internal state
@@ -104,7 +104,7 @@ private:
 		// getters
 		item *next() const { return m_next; }
 		const number_and_format &value() const { return m_value; }
-		const char *text() const { return m_text; }
+		const char *text() const { return m_text.c_str(); }
 
 	private:
 		// internal state
@@ -221,8 +221,8 @@ public:
 	cheat_manager &manager() const { return m_manager; }
 	cheat_entry *next() const { return m_next; }
 	script_state state() const { return m_state; }
-	const char *description() const { return m_description; }
-	const char *comment() const { return m_comment; }
+	const char *description() const { return m_description.c_str(); }
+	const char *comment() const { return m_comment.c_str(); }
 
 	// script detection
 	bool has_run_script() const { return (m_run_script != NULL); }
@@ -308,7 +308,7 @@ public:
 	astring &get_output_astring(int row, int justify);
 
 	// global helpers
-	static const char *quote_expression(astring &string, const parsed_expression &expression);
+	static const char *quote_expression(astring &str, const parsed_expression &expression);
 	static UINT64 execute_frombcd(symbol_table &table, void *ref, int params, const UINT64 *param);
 	static UINT64 execute_tobcd(symbol_table &table, void *ref, int params, const UINT64 *param);
 

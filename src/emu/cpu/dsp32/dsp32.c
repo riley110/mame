@@ -201,7 +201,7 @@ void dsp32c_device::device_start()
 	state_add(STATE_GENFLAGS,  "GENFLAGS",  m_iotemp).callimport().callexport().formatstr("%6s").noshow();
 	state_add(DSP32_PC,        "PC",        m_r[15]).mask(0xffffff);
 	for (int regnum = 0; regnum <= 14; regnum++)
-		state_add(DSP32_R0 + regnum, tempstr.format("R%d", regnum), m_r[regnum]).mask(0xffffff);
+		state_add(DSP32_R0 + regnum, tempstr.format("R%d", regnum).c_str(), m_r[regnum]).mask(0xffffff);
 	state_add(DSP32_R15,       "R15",       m_r[17]).mask(0xffffff);
 	state_add(DSP32_R16,       "R16",       m_r[18]).mask(0xffffff);
 	state_add(DSP32_R17,       "R17",       m_r[19]).mask(0xffffff);
@@ -369,12 +369,12 @@ void dsp32c_device::state_export(const device_state_entry &entry)
 //  for the debugger
 //-------------------------------------------------
 
-void dsp32c_device::state_string_export(const device_state_entry &entry, astring &string)
+void dsp32c_device::state_string_export(const device_state_entry &entry, astring &str)
 {
 	switch (entry.index())
 	{
 		case STATE_GENFLAGS:
-			string.printf("%c%c%c%c%c%c%c%c",
+			str.printf("%c%c%c%c%c%c%c%c",
 				NFLAG ? 'N':'.',
 				ZFLAG ? 'Z':'.',
 				UFLAG ? 'U':'.',
@@ -389,7 +389,7 @@ void dsp32c_device::state_string_export(const device_state_entry &entry, astring
 		case DSP32_A1:
 		case DSP32_A2:
 		case DSP32_A3:
-			string.printf("%8g", *(double *)entry.dataptr());
+			str.printf("%8g", *(double *)entry.dataptr());
 			break;
 	}
 }

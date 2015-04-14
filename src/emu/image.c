@@ -143,7 +143,7 @@ static int write_config(emu_options &options, const char *filename, const game_d
 	{
 		astring inistring;
 		options.output_ini(inistring);
-		file.puts(inistring);
+		file.puts(inistring.c_str());
 		retval = 0;
 	}
 	return retval;
@@ -232,8 +232,8 @@ void image_device_init(running_machine &machine)
 
 				fatalerror_exitcode(machine, MAMERR_DEVICE, "Device %s load (%s) failed: %s",
 					image->device().name(),
-					image_basename.cstr(),
-					image_err.cstr());
+					image_basename.c_str(),
+					image_err.c_str());
 			}
 		}
 	}
@@ -280,7 +280,7 @@ void image_postdevice_init(running_machine &machine)
 
 				fatalerror_exitcode(machine, MAMERR_DEVICE, "Device %s load failed: %s",
 					image->device().name(),
-					image_err.cstr());
+					image_err.c_str());
 			}
 	}
 

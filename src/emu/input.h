@@ -365,7 +365,7 @@ public:
 	bool parse(const char *mapstring);
 
 	// create a friendly string
-	const char *to_string(astring &string) const;
+	const char *to_string(astring &str) const;
 
 	// update the state of a live map
 	UINT8 update(INT32 xaxisval, INT32 yaxisval);
@@ -500,11 +500,11 @@ public:
 	input_device &device() const { return m_device; }
 	input_manager &manager() const;
 	running_machine &machine() const;
-	const char *name() const { return m_name; }
+	const char *name() const { return m_name.c_str(); }
 	void *internal() const { return m_internal; }
 	input_item_id itemid() const { return m_itemid; }
 	input_item_class itemclass() const { return m_itemclass; }
-	const char *token() const { return m_token; }
+	const char *token() const { return m_token.c_str(); }
 	INT32 current() const { return m_current; }
 	INT32 memory() const { return m_memory; }
 
@@ -549,7 +549,7 @@ public:
 	input_manager &manager() const;
 	running_machine &machine() const;
 	input_device_class devclass() const;
-	const char *name() const { return m_name; }
+	const char *name() const { return m_name.c_str(); }
 	int devindex() const { return m_devindex; }
 	input_device_item *item(input_item_id index) const { return m_item[index]; }
 	input_item_id maxitem() const { return m_maxitem; }
@@ -655,8 +655,8 @@ public:
 	input_device *device_from_code(input_code code) const;
 	input_device_item *item_from_code(input_code code) const;
 	input_code code_from_itemid(input_item_id itemid) const;
-	const char *code_name(astring &string, input_code code) const;
-	const char *code_to_token(astring &string, input_code code) const;
+	const char *code_name(astring &str, input_code code) const;
+	const char *code_to_token(astring &str, input_code code) const;
 	input_code code_from_token(const char *_token);
 
 	// input sequence readers
@@ -669,8 +669,8 @@ public:
 	const input_seq &seq_poll_final() const { return m_poll_seq; }
 
 	// input sequence helpers
-	const char *seq_name(astring &string, const input_seq &seq) const;
-	const char *seq_to_tokens(astring &string, const input_seq &seq) const;
+	const char *seq_name(astring &str, const input_seq &seq) const;
+	const char *seq_to_tokens(astring &str, const input_seq &seq) const;
 	void seq_from_tokens(input_seq &seq, const char *_token);
 
 	// misc

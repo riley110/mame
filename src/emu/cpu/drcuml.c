@@ -129,8 +129,8 @@ drcuml_state::drcuml_state(device_t &device, drc_cache &cache, UINT32 flags, int
 	// if we're to log, create the logfile
 	if (device.machine().options().drc_log_uml())
 	{
-		astring filename("drcuml_", m_device.shortname(), ".asm");
-		m_umllog = fopen(filename.cstr(), "w");
+		astring filename = astring("drcuml_").cat(m_device.shortname()).cat(".asm");
+		m_umllog = fopen(filename.c_str(), "w");
 	}
 }
 
@@ -253,7 +253,7 @@ const char *drcuml_state::symbol_find(void *base, UINT32 *offset)
 			// return the offset and name
 			if (offset != NULL)
 				*offset = search - cursym->m_base;
-			return cursym->m_name;
+			return cursym->m_name.c_str();
 		}
 
 	// not found; return NULL
@@ -396,7 +396,7 @@ void drcuml_block::append_comment(const char *format, ...)
 	char *comment = (char *)m_drcuml.cache().alloc_temporary(temp.len() + 1);
 	if (comment == NULL)
 		return;
-	strcpy(comment, temp);
+	strcpy(comment, temp.c_str());
 
 	// add an instruction with a pointer
 	append().comment(comment);
@@ -490,12 +490,12 @@ void drcuml_block::disassemble()
 			// include the first accumulated comment with this line
 			if (firstcomment != -1)
 			{
-				m_drcuml.log_printf("\t%-50.50s; %s\n", dasm.cstr(), get_comment_text(m_inst[firstcomment], comment));
+				m_drcuml.log_printf("\t%-50.50s; %s\n", dasm.c_str(), get_comment_text(m_inst[firstcomment], comment));
 				firstcomment++;
 				flushcomments = TRUE;
 			}
 			else
-				m_drcuml.log_printf("\t%s\n", dasm.cstr());
+				m_drcuml.log_printf("\t%s\n", dasm.c_str());
 		}
 
 		// flush any comments pending
@@ -524,11 +524,11 @@ const char *drcuml_block::get_comment_text(const instruction &inst, astring &com
 {
 	// comments return their strings
 	if (inst.opcode() == OP_COMMENT)
-		return comment.cpy(inst.param(0).string());
+		return comment.cpy(inst.param(0).string()).c_str();
 
 	// mapvars comment about their values
 	else if (inst.opcode() == OP_MAPVAR)
-		return comment.format("m%d = $%X", (int)inst.param(0).mapvar() - MAPVAR_M0, (UINT32)inst.param(1).immediate());
+		return comment.format("m%d = $%X", (int)inst.param(0).mapvar() - MAPVAR_M0, (UINT32)inst.param(1).immediate()).c_str();
 
 	// everything else is NULL
 	return NULL;

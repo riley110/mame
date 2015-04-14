@@ -101,28 +101,28 @@
 //  the format
 //-------------------------------------------------
 
-inline const char *number_and_format::format(astring &string) const
+inline const char *number_and_format::format(astring &str) const
 {
 	switch (m_format)
 	{
 		default:
 		case XML_INT_FORMAT_DECIMAL:
-			string.printf("%d", (UINT32)m_value);
+			str.printf("%d", (UINT32)m_value);
 			break;
 
 		case XML_INT_FORMAT_DECIMAL_POUND:
-			string.printf("#%d", (UINT32)m_value);
+			str.printf("#%d", (UINT32)m_value);
 			break;
 
 		case XML_INT_FORMAT_HEX_DOLLAR:
-			string.printf("$%X", (UINT32)m_value);
+			str.printf("$%X", (UINT32)m_value);
 			break;
 
 		case XML_INT_FORMAT_HEX_C:
-			string.printf("0x%X", (UINT32)m_value);
+			str.printf("0x%X", (UINT32)m_value);
 			break;
 	}
-	return string;
+	return str.c_str();
 }
 
 
@@ -191,7 +191,7 @@ const char *cheat_parameter::text()
 				break;
 			}
 	}
-	return m_curtext;
+	return m_curtext.c_str();
 }
 
 
@@ -205,15 +205,15 @@ void cheat_parameter::save(emu_file &cheatfile) const
 	cheatfile.printf("\t\t<parameter");
 
 	// if no items, just output min/max/step
-	astring string;
+	astring str;
 	if (!has_itemlist())
 	{
 		if (m_minval != 0)
-			cheatfile.printf(" min=\"%s\"", m_minval.format(string));
+			cheatfile.printf(" min=\"%s\"", m_minval.format(str));
 		if (m_maxval != 0)
-			cheatfile.printf(" max=\"%s\"", m_maxval.format(string));
+			cheatfile.printf(" max=\"%s\"", m_maxval.format(str));
 		if (m_stepval != 1)
-			cheatfile.printf(" step=\"%s\"", m_stepval.format(string));
+			cheatfile.printf(" step=\"%s\"", m_stepval.format(str));
 		cheatfile.printf("/>\n");
 	}
 
@@ -221,7 +221,7 @@ void cheat_parameter::save(emu_file &cheatfile) const
 	else
 	{
 		for (const item *curitem = m_itemlist.first(); curitem != NULL; curitem = curitem->next())
-			cheatfile.printf("\t\t\t<item value=\"%s\">%s</item>\n", curitem->value().format(string), curitem->text());
+			cheatfile.printf("\t\t\t<item value=\"%s\">%s</item>\n", curitem->value().format(str), curitem->text());
 		cheatfile.printf("\t\t</parameter>\n");
 	}
 }
@@ -507,7 +507,7 @@ void cheat_script::script_entry::execute(cheat_manager &manager, UINT64 &arginde
 			curarg += arg->values(argindex, &params[curarg]);
 
 		// generate the astring
-		manager.get_output_astring(m_line, m_justify).printf(m_format,
+		manager.get_output_astring(m_line, m_justify).printf(m_format.c_str(),
 			(UINT32)params[0],  (UINT32)params[1],  (UINT32)params[2],  (UINT32)params[3],
 			(UINT32)params[4],  (UINT32)params[5],  (UINT32)params[6],  (UINT32)params[7],
 			(UINT32)params[8],  (UINT32)params[9],  (UINT32)params[10], (UINT32)params[11],
@@ -540,7 +540,7 @@ void cheat_script::script_entry::save(emu_file &cheatfile) const
 	// output an output
 	else
 	{
-		cheatfile.printf("\t\t\t<output format=\"%s\"", m_format.cstr());
+		cheatfile.printf("\t\t\t<output format=\"%s\"", m_format.c_str());
 		if (!m_condition.is_empty())
 			cheatfile.printf(" condition=\"%s\"", cheat_manager::quote_expression(tempstring, m_condition));
 		if (m_line != 0)
@@ -577,7 +577,7 @@ void cheat_script::script_entry::validate_format(const char *filename, int line)
 		argsprovided += curarg->count();
 
 	// now scan the string for valid argument usage
-	const char *p = strchr(m_format, '%');
+	const char *p = strchr(m_format.c_str(), '%');
 	int argscounted = 0;
 	while (p != NULL)
 	{
@@ -588,7 +588,7 @@ void cheat_script::script_entry::validate_format(const char *filename, int line)
 
 		// look for a valid type
 		if (strchr("cdiouxX", *p) == NULL)
-			throw emu_fatalerror("%s.xml(%d): invalid format specification \"%s\"\n", filename, line, m_format.cstr());
+			throw emu_fatalerror("%s.xml(%d): invalid format specification \"%s\"\n", filename, line, m_format.c_str());
 		argscounted++;
 
 		// look for the next one
@@ -597,9 +597,9 @@ void cheat_script::script_entry::validate_format(const char *filename, int line)
 
 	// did we match?
 	if (argscounted < argsprovided)
-		throw emu_fatalerror("%s.xml(%d): too many arguments provided (%d) for format \"%s\"\n", filename, line, argsprovided, m_format.cstr());
+		throw emu_fatalerror("%s.xml(%d): too many arguments provided (%d) for format \"%s\"\n", filename, line, argsprovided, m_format.c_str());
 	if (argscounted > argsprovided)
-		throw emu_fatalerror("%s.xml(%d): not enough arguments provided (%d) for format \"%s\"\n", filename, line, argsprovided, m_format.cstr());
+		throw emu_fatalerror("%s.xml(%d): not enough arguments provided (%d) for format \"%s\"\n", filename, line, argsprovided, m_format.c_str());
 }
 
 
@@ -711,7 +711,7 @@ cheat_entry::cheat_entry(cheat_manager &manager, symbol_table &globaltable, cons
 		m_symbols.add("argindex", symbol_table::READ_ONLY, &m_argindex);
 		astring tempname;
 		for (int curtemp = 0; curtemp < tempcount; curtemp++)
-			m_symbols.add(tempname.format("temp%d", curtemp), symbol_table::READ_WRITE);
+			m_symbols.add(tempname.format("temp%d", curtemp).c_str(), symbol_table::READ_WRITE);
 
 		// read the first comment node
 		xml_data_node *commentnode = xml_get_sibling(cheatnode.child, "comment");
@@ -782,7 +782,7 @@ void cheat_entry::save(emu_file &cheatfile) const
 	bool has_scripts = (m_off_script != NULL || m_on_script != NULL || m_run_script != NULL || m_change_script != NULL);
 
 	// output the cheat tag
-	cheatfile.printf("\t<cheat desc=\"%s\"", m_description.cstr());
+	cheatfile.printf("\t<cheat desc=\"%s\"", m_description.c_str());
 	if (m_numtemp != DEFAULT_TEMP_VARIABLES)
 		cheatfile.printf(" tempvariables=\"%d\"", m_numtemp);
 	if (!m_comment && m_parameter == NULL && !has_scripts)
@@ -793,7 +793,7 @@ void cheat_entry::save(emu_file &cheatfile) const
 
 		// save the comment
 		if (m_comment)
-			cheatfile.printf("\t\t<comment><![CDATA[\n%s\n\t\t]]></comment>\n", m_comment.cstr());
+			cheatfile.printf("\t\t<comment><![CDATA[\n%s\n\t\t]]></comment>\n", m_comment.c_str());
 
 		// output the parameter, if present
 		if (m_parameter != NULL)
@@ -832,7 +832,7 @@ bool cheat_entry::activate()
 	{
 		execute_on_script();
 		changed = true;
-		popmessage("Activated %s", m_description.cstr());
+		popmessage("Activated %s", m_description.c_str());
 	}
 
 	// if we're a oneshot parameter cheat and we're active, execute the "state change" script and indicate change
@@ -840,7 +840,7 @@ bool cheat_entry::activate()
 	{
 		execute_change_script();
 		changed = true;
-		popmessage("Activated\n %s = %s", m_description.cstr(), m_parameter->text());
+		popmessage("Activated\n %s = %s", m_description.c_str(), m_parameter->text());
 	}
 
 	return changed;
@@ -1151,7 +1151,7 @@ void cheat_manager::reload()
 				{
 					astring filename;
 					filename.printf("%08X", crc);
-					load_cheats(filename);
+					load_cheats(filename.c_str());
 					break;
 				}
 			}
@@ -1221,7 +1221,7 @@ void cheat_manager::render_text(render_container &container)
 		if (m_output[linenum])
 		{
 			// output the text
-			machine().ui().draw_text_full(&container, m_output[linenum],
+			machine().ui().draw_text_full(&container, m_output[linenum].c_str(),
 					0.0f, (float)linenum * machine().ui().get_line_height(), 1.0f,
 					m_justify[linenum], WRAP_NEVER, DRAW_OPAQUE,
 					ARGB_WHITE, ARGB_BLACK, NULL, NULL);
@@ -1263,36 +1263,36 @@ astring &cheat_manager::get_output_astring(int row, int justify)
 //  document
 //-------------------------------------------------
 
-const char *cheat_manager::quote_expression(astring &string, const parsed_expression &expression)
+const char *cheat_manager::quote_expression(astring &str, const parsed_expression &expression)
 {
-	string.cpy(expression.original_string());
+	str.cpy(expression.original_string());
 
-	string.replace(0, " && ", " and ");
-	string.replace(0, " &&", " and ");
-	string.replace(0, "&& ", " and ");
-	string.replace(0, "&&", " and ");
+	str.replace(0, " && ", " and ");
+	str.replace(0, " &&", " and ");
+	str.replace(0, "&& ", " and ");
+	str.replace(0, "&&", " and ");
 
-	string.replace(0, " & ", " band ");
-	string.replace(0, " &", " band ");
-	string.replace(0, "& ", " band ");
-	string.replace(0, "&", " band ");
+	str.replace(0, " & ", " band ");
+	str.replace(0, " &", " band ");
+	str.replace(0, "& ", " band ");
+	str.replace(0, "&", " band ");
 
-	string.replace(0, " <= ", " le ");
-	string.replace(0, " <=", " le ");
-	string.replace(0, "<= ", " le ");
-	string.replace(0, "<=", " le ");
+	str.replace(0, " <= ", " le ");
+	str.replace(0, " <=", " le ");
+	str.replace(0, "<= ", " le ");
+	str.replace(0, "<=", " le ");
 
-	string.replace(0, " < ", " lt ");
-	string.replace(0, " <", " lt ");
-	string.replace(0, "< ", " lt ");
-	string.replace(0, "<", " lt ");
+	str.replace(0, " < ", " lt ");
+	str.replace(0, " <", " lt ");
+	str.replace(0, "< ", " lt ");
+	str.replace(0, "<", " lt ");
 
-	string.replace(0, " << ", " lshift ");
-	string.replace(0, " <<", " lshift ");
-	string.replace(0, "<< ", " lshift ");
-	string.replace(0, "<<", " lshift ");
+	str.replace(0, " << ", " lshift ");
+	str.replace(0, " <<", " lshift ");
+	str.replace(0, "<< ", " lshift ");
+	str.replace(0, "<<", " lshift ");
 
-	return string;
+	return str.c_str();
 }
 
 

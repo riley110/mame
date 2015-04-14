@@ -287,7 +287,7 @@ void integer_symbol_entry::set_value(UINT64 newvalue)
 	if (m_setter != NULL)
 		(*m_setter)(m_table, m_ref, newvalue);
 	else
-		throw emu_fatalerror("Symbol '%s' is read-only", m_name.cstr());
+		throw emu_fatalerror("Symbol '%s' is read-only", m_name.c_str());
 }
 
 
@@ -347,7 +347,7 @@ bool function_symbol_entry::is_lval() const
 
 UINT64 function_symbol_entry::value() const
 {
-	throw emu_fatalerror("Symbol '%s' is a function and cannot be used in this context", m_name.cstr());
+	throw emu_fatalerror("Symbol '%s' is a function and cannot be used in this context", m_name.c_str());
 }
 
 
@@ -357,7 +357,7 @@ UINT64 function_symbol_entry::value() const
 
 void function_symbol_entry::set_value(UINT64 newvalue)
 {
-	throw emu_fatalerror("Symbol '%s' is a function and cannot be written", m_name.cstr());
+	throw emu_fatalerror("Symbol '%s' is a function and cannot be written", m_name.c_str());
 }
 
 
@@ -368,9 +368,9 @@ void function_symbol_entry::set_value(UINT64 newvalue)
 UINT64 function_symbol_entry::execute(int numparams, const UINT64 *paramlist)
 {
 	if (numparams < m_minparams)
-		throw emu_fatalerror("Function '%s' requires at least %d parameters", m_name.cstr(), m_minparams);
+		throw emu_fatalerror("Function '%s' requires at least %d parameters", m_name.c_str(), m_minparams);
 	if (numparams > m_maxparams)
-		throw emu_fatalerror("Function '%s' accepts no more than %d parameters", m_name.cstr(), m_maxparams);
+		throw emu_fatalerror("Function '%s' accepts no more than %d parameters", m_name.c_str(), m_maxparams);
 	return (*m_execute)(m_table, m_ref, numparams, paramlist);
 }
 
@@ -703,7 +703,7 @@ void parsed_expression::print_tokens(FILE *out)
 void parsed_expression::parse_string_into_tokens()
 {
 	// loop until done
-	const char *stringstart = m_original_string;
+	const char *stringstart = m_original_string.c_str();
 	const char *string = stringstart;
 	while (string[0] != 0)
 	{
@@ -876,7 +876,7 @@ void parsed_expression::parse_symbol_or_number(parse_token &token, const char *&
 	if (string[0] == '@')
 	{
 		string += 1;
-		return parse_memory_operator(token, buffer);
+		return parse_memory_operator(token, buffer.c_str());
 	}
 
 	// empty string is automatically invalid
@@ -927,18 +927,18 @@ void parsed_expression::parse_symbol_or_number(parse_token &token, const char *&
 
 	// if we have an 0x prefix, we must be a hex value
 	if (buffer[0] == '0' && buffer[1] == 'x')
-		return parse_number(token, buffer.cstr() + 2, 16, expression_error::INVALID_NUMBER);
+		return parse_number(token, buffer.c_str() + 2, 16, expression_error::INVALID_NUMBER);
 
 	// if we have a # prefix, we must be a decimal value
 	if (buffer[0] == '#')
-		return parse_number(token, buffer.cstr() + 1, 10, expression_error::INVALID_NUMBER);
+		return parse_number(token, buffer.c_str() + 1, 10, expression_error::INVALID_NUMBER);
 
 	// if we have a $ prefix, we are a hex value
 	if (buffer[0] == '$')
-		return parse_number(token, buffer.cstr() + 1, 16, expression_error::INVALID_NUMBER);
+		return parse_number(token, buffer.c_str() + 1, 16, expression_error::INVALID_NUMBER);
 
 	// check for a symbol match
-	symbol_entry *symbol = m_symtable->find_deep(buffer);
+	symbol_entry *symbol = m_symtable->find_deep(buffer.c_str());
 	if (symbol != NULL)
 	{
 		token.configure_symbol(*symbol);
@@ -953,7 +953,7 @@ void parsed_expression::parse_symbol_or_number(parse_token &token, const char *&
 	}
 
 	// attempt to parse as a number in the default base
-	parse_number(token, buffer, DEFAULT_BASE, expression_error::UNKNOWN_SYMBOL);
+	parse_number(token, buffer.c_str(), DEFAULT_BASE, expression_error::UNKNOWN_SYMBOL);
 }
 
 
@@ -1052,7 +1052,7 @@ void parsed_expression::parse_quoted_string(parse_token &token, const char *&str
 	string++;
 
 	// make the token
-	token.configure_string(m_stringlist.append(*global_alloc(expression_string(buffer))));
+	token.configure_string(m_stringlist.append(*global_alloc(expression_string(buffer.c_str()))));
 }
 
 

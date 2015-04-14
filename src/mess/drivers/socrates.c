@@ -318,7 +318,7 @@ void socrates_state::socrates_check_kb_latch(  ) // if kb[1] is full and kb[0] i
 void socrates_state::machine_reset()
 {
 	astring region_tag;
-	m_cart_reg = memregion(region_tag.cpy(m_cart->tag()).cat(GENERIC_ROM_REGION_TAG));
+	m_cart_reg = memregion(region_tag.cpy(m_cart->tag()).cat(GENERIC_ROM_REGION_TAG).c_str());
 
 	m_rom_bank = 0xF3; // actually set semi-randomly on real console but we need to initialize it somewhere...
 	socrates_set_rom_bank();
@@ -500,7 +500,7 @@ WRITE8_MEMBER(socrates_state::speech_command) // write 0x4x
    does not have the rom read mode, which the socrates definitely uses! */
 /* Commands (tc8802):
 SEL 5 4 3 2 1 0
-    0 0 n n n n -  ADLD - ADress LoaD - writes one nybble to the address
+    0 0 n n n n -  ADLD - ADdress LoaD - writes one nybble to the address
                           of vsm rom selected (internal or external) starting
                           from the low 4 bits; each subsequent write writes to
                           the next higher 4 bits; resetting the chip resets
@@ -897,7 +897,7 @@ WRITE8_MEMBER( iqunlim_state::video_regs_w )
 void iqunlim_state::machine_start()
 {
 	astring region_tag;
-	m_cart_reg = memregion(region_tag.cpy(m_cart->tag()).cat(GENERIC_ROM_REGION_TAG));
+	m_cart_reg = memregion(region_tag.cpy(m_cart->tag()).cat(GENERIC_ROM_REGION_TAG).c_str());
 
 	UINT8 *bios = m_bios_reg->base();
 	UINT8 *cart = m_cart_reg ? m_cart_reg->base() : m_bios_reg->base();

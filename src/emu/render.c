@@ -1571,13 +1571,13 @@ bool render_target::load_layout_file(const char *dirname, const char *filename)
 	else
 	{
 		// build the path and optionally prepend the directory
-		astring fname(filename, ".lay");
+		astring fname = astring(filename).cat(".lay");
 		if (dirname != NULL)
 			fname.ins(0, PATH_SEPARATOR).ins(0, dirname);
 
 		// attempt to open the file; bail if we can't
 		emu_file layoutfile(manager().machine().options().art_path(), OPEN_FLAG_READ);
-		file_error filerr = layoutfile.open(fname);
+		file_error filerr = layoutfile.open(fname.c_str());
 		if (filerr != FILERR_NONE)
 			return false;
 

@@ -138,7 +138,7 @@ void MainWindow::setProcessor(device_t* processor)
 	// Window title
 	astring title;
 	title.printf("Debug: %s - %s '%s'", m_machine->system().name, processor->name(), processor->tag());
-	setWindowTitle(title.cstr());
+	setWindowTitle(title.c_str());
 }
 
 
@@ -234,7 +234,7 @@ void MainWindow::toggleBreakpointAtCursor(bool changedTo)
 		{
 			command.printf("bpclear 0x%X", bpindex);
 		}
-		debug_console_execute_command(*m_machine, command, 1);
+		debug_console_execute_command(*m_machine, command.c_str(), 1);
 	}
 
 	refreshAll();
@@ -259,7 +259,7 @@ void MainWindow::enableBreakpointAtCursor(bool changedTo)
 			INT32 const bpindex = bp->index();
 			astring command;
 			command.printf(bp->enabled() ? "bpdisable 0x%X" : "bpenable 0x%X", bpindex);
-			debug_console_execute_command(*m_machine, command, 1);
+			debug_console_execute_command(*m_machine, command.c_str(), 1);
 		}
 	}
 
@@ -275,7 +275,7 @@ void MainWindow::runToCursor(bool changedTo)
 		offs_t address = downcast<debug_view_disasm*>(dasmView)->selected_address();
 		astring command;
 		command.printf("go 0x%X", address);
-		debug_console_execute_command(*m_machine, command, 1);
+		debug_console_execute_command(*m_machine, command.c_str(), 1);
 	}
 }
 
@@ -466,7 +466,7 @@ void MainWindow::createImagesMenu()
 		astring menuName;
 		menuName.format("%s : %s", img->device().name(), img->exists() ? img->filename() : "[empty slot]");
 
-		QMenu* interfaceMenu = imagesMenu->addMenu(menuName.cstr());
+		QMenu* interfaceMenu = imagesMenu->addMenu(menuName.c_str());
 		interfaceMenu->setObjectName(img->device().name());
 
 		QAction* mountAct = new QAction("Mount...", interfaceMenu);

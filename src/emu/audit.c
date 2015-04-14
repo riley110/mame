@@ -64,10 +64,10 @@ const char *driverpath = m_enumerator.config().root_device().searchpath();
 		for (const rom_entry *region = rom_first_region(*device); region != NULL; region = rom_next_region(region))
 		{
 // temporary hack: add the driver path & region name
-astring combinedpath(device->searchpath(), ";", driverpath);
+astring combinedpath = astring(device->searchpath()).cat(";").cat(driverpath);
 if (device->shortname())
 	combinedpath.cat(";").cat(device->shortname());
-m_searchpath = combinedpath;
+m_searchpath = combinedpath.c_str();
 
 			for (const rom_entry *rom = rom_first_file(region); rom; rom = rom_next_file(rom))
 			{
@@ -188,14 +188,21 @@ media_auditor::summary media_auditor::audit_software(const char *list_name, soft
 	// store validation for later
 	m_validation = validation;
 
-	astring combinedpath(swinfo->shortname(), ";", list_name, PATH_SEPARATOR, swinfo->shortname());
-	astring locationtag(list_name, "%", swinfo->shortname(), "%");
+	astring combinedpath(swinfo->shortname());
+	combinedpath.cat(";");
+	combinedpath.cat(list_name);
+	combinedpath.cat(PATH_SEPARATOR);
+	combinedpath.cat(swinfo->shortname());
+	astring locationtag(list_name);
+	locationtag.cat("%");
+	locationtag.cat(swinfo->shortname());
+	locationtag.cat("%");
 	if (swinfo->parentname() != NULL)
 	{
 		locationtag.cat(swinfo->parentname());
 		combinedpath.cat(";").cat(swinfo->parentname()).cat(";").cat(list_name).cat(PATH_SEPARATOR).cat(swinfo->parentname());
 	}
-	m_searchpath = combinedpath;
+	m_searchpath = combinedpath.c_str();
 
 	int found = 0;
 	int required = 0;
@@ -226,7 +233,7 @@ media_auditor::summary media_auditor::audit_software(const char *list_name, soft
 				// audit a disk
 				else if (ROMREGION_ISDISKDATA(region))
 				{
-					record = audit_one_disk(rom, (const char *)locationtag);
+					record = audit_one_disk(rom, locationtag.c_str());
 				}
 
 				// count the number of files that are found.
@@ -284,14 +291,14 @@ media_auditor::summary media_auditor::audit_samples()
 
 			// look for the files
 			emu_file file(m_enumerator.options().sample_path(), OPEN_FLAG_READ | OPEN_FLAG_NO_PRELOAD);
-			path_iterator path(searchpath);
+			path_iterator path(searchpath.c_str());
 			astring curpath;
 			while (path.next(curpath, samplename))
 			{
 				// attempt to access the file (.flac) or (.wav)
-				file_error filerr = file.open(curpath, ".flac");
+				file_error filerr = file.open(curpath.c_str(), ".flac");
 				if (filerr != FILERR_NONE)
-					filerr = file.open(curpath, ".wav");
+					filerr = file.open(curpath.c_str(), ".wav");
 
 				if (filerr == FILERR_NONE)
 				{
@@ -320,7 +327,7 @@ media_auditor::summary media_auditor::audit_samples()
 //  string format
 //-------------------------------------------------
 
-media_auditor::summary media_auditor::summarize(const char *name, astring *string)
+media_auditor::summary media_auditor::summarize(const char *name, astring *output)
 {
 	if (m_record_list.count() == 0)
 	{
@@ -338,60 +345,60 @@ media_auditor::summary media_auditor::summarize(const char *name, astring *strin
 			continue;
 
 		// output the game name, file name, and length (if applicable)
-		if (string != NULL)
+		if (output != NULL)
 		{
-			string->catprintf("%-12s: %s", name, record->name());
+			output->catprintf("%-12s: %s", name, record->name());
 			if (record->expected_length() > 0)
-				string->catprintf(" (%" I64FMT "d bytes)", record->expected_length());
-			string->catprintf(" - ");
+				output->catprintf(" (%" I64FMT "d bytes)", record->expected_length());
+			output->catprintf(" - ");
 		}
 
 		// use the substatus for finer details
 		switch (record->substatus())
 		{
 			case audit_record::SUBSTATUS_GOOD_NEEDS_REDUMP:
-				if (string != NULL) string->catprintf("NEEDS REDUMP\n");
+				if (output != NULL) output->catprintf("NEEDS REDUMP\n");
 				best_new_status = BEST_AVAILABLE;
 				break;
 
 			case audit_record::SUBSTATUS_FOUND_NODUMP:
-				if (string != NULL) string->catprintf("NO GOOD DUMP KNOWN\n");
+				if (output != NULL) output->catprintf("NO GOOD DUMP KNOWN\n");
 				best_new_status = BEST_AVAILABLE;
 				break;
 
 			case audit_record::SUBSTATUS_FOUND_BAD_CHECKSUM:
-				if (string != NULL)
+				if (output != NULL)
 				{
 					astring tempstr;
-					string->catprintf("INCORRECT CHECKSUM:\n");
-					string->catprintf("EXPECTED: %s\n", record->expected_hashes().macro_string(tempstr));
-					string->catprintf("   FOUND: %s\n", record->actual_hashes().macro_string(tempstr));
+					output->catprintf("INCORRECT CHECKSUM:\n");
+					output->catprintf("EXPECTED: %s\n", record->expected_hashes().macro_string(tempstr));
+					output->catprintf("   FOUND: %s\n", record->actual_hashes().macro_string(tempstr));
 				}
 				break;
 
 			case audit_record::SUBSTATUS_FOUND_WRONG_LENGTH:
-				if (string != NULL) string->catprintf("INCORRECT LENGTH: %" I64FMT "d bytes\n", record->actual_length());
+				if (output != NULL) output->catprintf("INCORRECT LENGTH: %" I64FMT "d bytes\n", record->actual_length());
 				break;
 
 			case audit_record::SUBSTATUS_NOT_FOUND:
-				if (string != NULL)
+				if (output != NULL)
 				{
 					device_t *shared_device = record->shared_device();
 					if (shared_device == NULL)
-						string->catprintf("NOT FOUND\n");
+						output->catprintf("NOT FOUND\n");
 					else
-						string->catprintf("NOT FOUND (%s)\n", shared_device->shortname());
+						output->catprintf("NOT FOUND (%s)\n", shared_device->shortname());
 				}
 				best_new_status = NOTFOUND;
 				break;
 
 			case audit_record::SUBSTATUS_NOT_FOUND_NODUMP:
-				if (string != NULL) string->catprintf("NOT FOUND - NO GOOD DUMP KNOWN\n");
+				if (output != NULL) output->catprintf("NOT FOUND - NO GOOD DUMP KNOWN\n");
 				best_new_status = BEST_AVAILABLE;
 				break;
 
 			case audit_record::SUBSTATUS_NOT_FOUND_OPTIONAL:
-				if (string != NULL) string->catprintf("NOT FOUND BUT OPTIONAL\n");
+				if (output != NULL) output->catprintf("NOT FOUND BUT OPTIONAL\n");
 				best_new_status = BEST_AVAILABLE;
 				break;
 
@@ -429,9 +436,9 @@ audit_record *media_auditor::audit_one_rom(const rom_entry *rom)
 		// open the file if we can
 		file_error filerr;
 		if (has_crc)
-			filerr = file.open(curpath, crc);
+			filerr = file.open(curpath.c_str(), crc);
 		else
-			filerr = file.open(curpath);
+			filerr = file.open(curpath.c_str());
 
 		// if it worked, get the actual length and hashes, then stop
 		if (filerr == FILERR_NONE)

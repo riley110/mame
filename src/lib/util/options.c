@@ -364,7 +364,7 @@ bool core_options::parse_command_line(int argc, char **argv, int priority, astri
 			// can only have one command
 			if (m_command)
 			{
-				error_string.catprintf("Error: multiple commands specified -%s and %s\n", m_command.cstr(), curarg);
+				error_string.catprintf("Error: multiple commands specified -%s and %s\n", m_command.c_str(), curarg);
 				return false;
 			}
 			m_command = curentry->name();
@@ -532,7 +532,7 @@ const char *core_options::output_ini(astring &buffer, const core_options *diff)
 			}
 		}
 	}
-	return buffer;
+	return buffer.c_str();
 }
 
 
@@ -556,7 +556,7 @@ const char *core_options::output_help(astring &buffer)
 		else if (curentry->description() != NULL)
 			buffer.catprintf("-%-20s%s\n", curentry->name(), curentry->description());
 	}
-	return buffer;
+	return buffer.c_str();
 }
 
 
@@ -635,14 +635,14 @@ bool core_options::set_value(const char *name, int value, int priority, astring 
 {
 	astring tempstr;
 	tempstr.printf("%d", value);
-	return set_value(name, tempstr.cstr(), priority, error_string);
+	return set_value(name, tempstr.c_str(), priority, error_string);
 }
 
 bool core_options::set_value(const char *name, float value, int priority, astring &error_string)
 {
 	astring tempstr;
 	tempstr.printf("%f", value);
-	return set_value(name, tempstr.cstr(), priority, error_string);
+	return set_value(name, tempstr.c_str(), priority, error_string);
 }
 
 
@@ -687,7 +687,7 @@ void core_options::append_entry(core_options::entry &newentry)
 
 			// for boolean options add a "no" variant as well
 			if (newentry.type() == OPTION_BOOLEAN)
-				m_entrymap.add(astring("no", newentry.name(name)), &newentry);
+				m_entrymap.add(astring("no").cat(newentry.name(name)).c_str(), &newentry);
 		}
 }
 
@@ -702,7 +702,7 @@ void core_options::remove_entry(core_options::entry &delentry)
 	// remove all names from the map
 	for (int name = 0; name < ARRAY_LENGTH(delentry.m_name); name++)
 		if (delentry.m_name[name])
-			m_entrymap.remove(delentry.m_name[name]);
+			m_entrymap.remove(delentry.m_name[name].c_str());
 
 	// remove the entry from the list
 	m_entrylist.remove(delentry);
@@ -750,37 +750,37 @@ bool core_options::validate_and_set_data(core_options::entry &curentry, const ch
 	{
 		// booleans must be 0 or 1
 		case OPTION_BOOLEAN:
-			if (sscanf(data, "%d", &ival) != 1 || ival < 0 || ival > 1)
+			if (sscanf(data.c_str(), "%d", &ival) != 1 || ival < 0 || ival > 1)
 			{
-				error_string.catprintf("Illegal boolean value for %s: \"%s\"; reverting to %s\n", curentry.name(), data.cstr(), curentry.value());
+				error_string.catprintf("Illegal boolean value for %s: \"%s\"; reverting to %s\n", curentry.name(), data.c_str(), curentry.value());
 				return false;
 			}
 			break;
 
 		// integers must be integral
 		case OPTION_INTEGER:
-			if (sscanf(data, "%d", &ival) != 1)
+			if (sscanf(data.c_str(), "%d", &ival) != 1)
 			{
-				error_string.catprintf("Illegal integer value for %s: \"%s\"; reverting to %s\n", curentry.name(), data.cstr(), curentry.value());
+				error_string.catprintf("Illegal integer value for %s: \"%s\"; reverting to %s\n", curentry.name(), data.c_str(), curentry.value());
 				return false;
 			}
 			if (curentry.has_range() && (ival < atoi(curentry.minimum()) || ival > atoi(curentry.maximum())))
 			{
-				error_string.catprintf("Out-of-range integer value for %s: \"%s\" (must be between %s and %s); reverting to %s\n", curentry.name(), data.cstr(), curentry.minimum(), curentry.maximum(), curentry.value());
+				error_string.catprintf("Out-of-range integer value for %s: \"%s\" (must be between %s and %s); reverting to %s\n", curentry.name(), data.c_str(), curentry.minimum(), curentry.maximum(), curentry.value());
 				return false;
 			}
 			break;
 
 		// floating-point values must be numeric
 		case OPTION_FLOAT:
-			if (sscanf(data, "%f", &fval) != 1)
+			if (sscanf(data.c_str(), "%f", &fval) != 1)
 			{
-				error_string.catprintf("Illegal float value for %s: \"%s\"; reverting to %s\n", curentry.name(), data.cstr(), curentry.value());
+				error_string.catprintf("Illegal float value for %s: \"%s\"; reverting to %s\n", curentry.name(), data.c_str(), curentry.value());
 				return false;
 			}
 			if (curentry.has_range() && (fval < atof(curentry.minimum()) || fval > atof(curentry.maximum())))
 			{
-				error_string.catprintf("Out-of-range float value for %s: \"%s\" (must be between %s and %s); reverting to %s\n", curentry.name(), data.cstr(), curentry.minimum(), curentry.maximum(), curentry.value());
+				error_string.catprintf("Out-of-range float value for %s: \"%s\" (must be between %s and %s); reverting to %s\n", curentry.name(), data.c_str(), curentry.minimum(), curentry.maximum(), curentry.value());
 				return false;
 			}
 			break;
@@ -798,6 +798,6 @@ bool core_options::validate_and_set_data(core_options::entry &curentry, const ch
 	}
 
 	// set the data
-	curentry.set_value(data, priority);
+	curentry.set_value(data.c_str(), priority);
 	return true;
 }

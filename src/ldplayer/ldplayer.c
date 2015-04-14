@@ -234,7 +234,7 @@ chd_file *ldplayer_state::get_disc()
 
 				// try to open the CHD
 
-				if (set_disk_handle(machine(), "laserdisc", fullpath) == CHDERR_NONE)
+				if (set_disk_handle(machine(), "laserdisc", fullpath.c_str()) == CHDERR_NONE)
 				{
 					m_filename.cpy(dir->name);
 					found = TRUE;
@@ -371,7 +371,7 @@ void ldplayer_state::machine_reset()
 	timer_set(attotime::zero, TIMER_ID_AUTOPLAY);
 
 	// indicate the name of the file we opened
-	popmessage("Opened %s\n", m_filename.cstr());
+	popmessage("Opened %s\n", m_filename.c_str());
 }
 
 

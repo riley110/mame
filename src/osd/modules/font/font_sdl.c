@@ -72,15 +72,15 @@ bool osd_font_sdl::open(const char *font_path, const char *_name, int &height)
 
 	if (!font)
 	{
-		osd_printf_verbose("Searching font %s in -%s\n", name.cstr(), OPTION_FONTPATH);
+		osd_printf_verbose("Searching font %s in -%s\n", name.c_str(), OPTION_FONTPATH);
 		//emu_file file(options().font_path(), OPEN_FLAG_READ);
 		emu_file file(font_path, OPEN_FLAG_READ);
-		if (file.open(name) == FILERR_NONE)
+		if (file.open(name.c_str()) == FILERR_NONE)
 		{
 			astring full_name = file.fullpath();
 			font = TTF_OpenFont_Magic(full_name, POINT_SIZE);
 			if (font)
-				osd_printf_verbose("Found font %s\n", full_name.cstr());
+				osd_printf_verbose("Found font %s\n", full_name.c_str());
 		}
 	}
 
@@ -96,7 +96,7 @@ bool osd_font_sdl::open(const char *font_path, const char *_name, int &height)
 	{
 		if (!BDF_Check_Magic(name))
 		{
-			osd_printf_verbose("font %s is not TrueType or BDF, using MAME default\n", name.cstr());
+			osd_printf_verbose("font %s is not TrueType or BDF, using MAME default\n", name.c_str());
 		}
 		return NULL;
 	}
@@ -187,7 +187,7 @@ bool osd_font_sdl::get_bitmap(unicode_char chnum, bitmap_argb32 &bitmap, INT32 &
 TTF_Font * osd_font_sdl::TTF_OpenFont_Magic(astring name, int fsize)
 {
 	emu_file file(OPEN_FLAG_READ);
-	if (file.open(name) == FILERR_NONE)
+	if (file.open(name.c_str()) == FILERR_NONE)
 	{
 		unsigned char buffer[5] = { 0xff, 0xff, 0xff, 0xff, 0xff };
 		unsigned char magic[5] = { 0x00, 0x01, 0x00, 0x00, 0x00 };
@@ -195,13 +195,13 @@ TTF_Font * osd_font_sdl::TTF_OpenFont_Magic(astring name, int fsize)
 		if (memcmp(buffer, magic, 5))
 			return NULL;
 	}
-	return TTF_OpenFont(name.cstr(), POINT_SIZE);
+	return TTF_OpenFont(name.c_str(), POINT_SIZE);
 }
 
 bool osd_font_sdl::BDF_Check_Magic(astring name)
 {
 	emu_file file(OPEN_FLAG_READ);
-	if (file.open(name) == FILERR_NONE)
+	if (file.open(name.c_str()) == FILERR_NONE)
 	{
 		unsigned char buffer[9];
 		unsigned char magic[9] = { 'S', 'T', 'A', 'R', 'T', 'F', 'O', 'N', 'T' };
@@ -227,7 +227,7 @@ TTF_Font *osd_font_sdl::search_font_config(astring name, bool bold, bool italic,
 	config = FcConfigGetCurrent();
 	pat = FcPatternCreate();
 	os = FcObjectSetCreate();
-	FcPatternAddString(pat, FC_FAMILY, (const FcChar8 *)name.cstr());
+	FcPatternAddString(pat, FC_FAMILY, (const FcChar8 *)name.c_str());
 
 	// try and get a font with the requested styles baked-in
 	if (bold)
@@ -287,7 +287,7 @@ TTF_Font *osd_font_sdl::search_font_config(astring name, bool bold, bool italic,
 		FcFontSetDestroy(fontset);
 
 		pat = FcPatternCreate();
-		FcPatternAddString(pat, FC_FAMILY, (const FcChar8 *)name.cstr());
+		FcPatternAddString(pat, FC_FAMILY, (const FcChar8 *)name.c_str());
 		FcPatternAddString(pat, FC_STYLE, (const FcChar8 *)"Regular");
 		FcPatternAddString(pat, FC_FONTFORMAT, (const FcChar8 *)"TrueType");
 		fontset = FcFontList(config, pat, os);
