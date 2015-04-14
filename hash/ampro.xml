@@ -2,15 +2,26 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="ampro" description="Ampro Little Z80 Board Disk Images">
 
-	<!-- Boot software is 60k CP/M vers 2.2K Z80 Operating System -->
-	<software name="system">
-		<description>Ampro Z-80 System Software (Rev G)</description>
+	<software name="hdtools">
+		<description>Ampro LittleBoard Hard Disk Tools</description>
 		<year>1986</year>
 		<publisher>Ampro</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="301876">
-				<rom name="system1.imd" size="301876" crc="f9dc2ea8" sha1="3cd0471e3be90db59dc83beb04fedb979c810ca2" offset="0" />
+			<dataarea name="flop" size="61121">
+				<rom name="hdtools.imd" size="61121" crc="21b6d3f5" sha1="005b9357f3fa334f300c0c23ebac878a69955500" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="smrtlock">
+		<description>Ampro LittleBoard SMARTCLOCK Software</description>
+		<year>1986</year>
+		<publisher>Ampro</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="22805">
+				<rom name="smartclk.imd" size="22805" crc="9208340c" sha1="015ee83d53636263a7b61ebbb68437c3be409874" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -40,26 +51,15 @@
 		</part>
 	</software>
 
-	<software name="smrtlock">
-		<description>Ampro LittleBoard SMARTCLOCK Software</description>
+	<!-- Boot software is 60k CP/M vers 2.2K Z80 Operating System -->
+	<software name="system">
+		<description>Ampro Z-80 System Software (Rev G)</description>
 		<year>1986</year>
 		<publisher>Ampro</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="22805">
-				<rom name="smartclk.imd" size="22805" crc="9208340c" sha1="015ee83d53636263a7b61ebbb68437c3be409874" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="hdtools">
-		<description>Ampro LittleBoard Hard Disk Tools</description>
-		<year>1986</year>
-		<publisher>Ampro</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="61121">
-				<rom name="hdtools.imd" size="61121" crc="21b6d3f5" sha1="005b9357f3fa334f300c0c23ebac878a69955500" offset="0" />
+			<dataarea name="flop" size="301876">
+				<rom name="system1.imd" size="301876" crc="f9dc2ea8" sha1="3cd0471e3be90db59dc83beb04fedb979c810ca2" offset="0" />
 			</dataarea>
 		</part>
 	</software>

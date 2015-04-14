@@ -1,15 +1,14 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--- Preliminary List -->
 <softwarelist name="cd32" description="Amiga CD-32 CD-ROMs">
-
-	<!--- Preliminary List -->
-
 
 	<!-- playable but there's a scrolling glitch every few frames -->
 	<software name="morph" supported="partial">
 		<description>Morph</description>
 		<year>1993</year>
 		<publisher>Millennium</publisher>
+
 		<part name="cdrom" interface="cd32_cdrom">
 			<diskarea name="cdrom">
 				<disk name="morph (1993)(millennium)[!]" sha1="3a8909d88d48b17b7e02284866f57085fbe62e2e"/>
@@ -22,6 +21,7 @@
 		<description>Diggers + Oscar</description>
 		<year>1993</year>
 		<publisher>Commodore</publisher>
+
 		<part name="cdrom" interface="cd32_cdrom">
 			<diskarea name="cdrom">
 				<disk name="diggers and oscar (1993)(commodore)(m4)[!][compilation][amiga-cd 31, 54]" sha1="88422ad455a8b8c7255c83812aa69132f15e1bf6"/>
@@ -34,6 +34,7 @@
 		<description>Pinball Fantasies CD Edition</description>
 		<year>1993</year>
 		<publisher>21st Century Entertainment</publisher>
+
 		<part name="cdrom" interface="cd32_cdrom">
 			<diskarea name="cdrom">
 				<disk name="pinball fantasies (1993)(21st century entertainment)[!]" sha1="01b589f79dc0c6e9ebc3ed898aa021c6e59daa70"/>
@@ -46,6 +47,7 @@
 		<description>Pinball Illusions</description>
 		<year>1995</year>
 		<publisher>21st Century Entertainment</publisher>
+
 		<part name="cdrom" interface="cd32_cdrom">
 			<diskarea name="cdrom">
 				<disk name="pinball illusions (1995)(21st century entertainment)[!]" sha1="1b657df40d086d9ce8f498e32033993361f3452b"/>
@@ -59,6 +61,7 @@
 		<description>The Big 6 (Dizzy Collection)</description>
 		<year>1994</year>
 		<publisher>Codemasters</publisher>
+
 		<part name="cdrom" interface="cd32_cdrom">
 			<diskarea name="cdrom">
 				<disk name="big 6, the (1994)(codemasters)(en-de)[!][compilation]" sha1="ecea85b6f6bd167b0b5164fde31b782e6b188e30"/>
@@ -71,6 +74,7 @@
 		<description>Vital Light</description>
 		<year>1994</year>
 		<publisher>Millennium</publisher>
+
 		<part name="cdrom" interface="cd32_cdrom">
 			<diskarea name="cdrom">
 				<disk name="vital light (1994)(millennium)[!][10328981]" sha1="89921bfda42deab7a73e4c55ea4244673788a1bd"/>
@@ -83,6 +87,7 @@
 		<description>Clockwiser</description>
 		<year>1994</year>
 		<publisher>Rasputin</publisher>
+
 		<part name="cdrom" interface="cd32_cdrom">
 			<diskarea name="cdrom">
 				<disk name="clockwiser (1994)(rasputin)[!]" sha1="0d92ecfc00175486022c4c3bcfd7e26a21568d20"/>
@@ -95,6 +100,7 @@
 		<description>Super Stardust</description>
 		<year>1994</year>
 		<publisher>Team 17</publisher>
+
 		<part name="cdrom" interface="cd32_cdrom">
 			<diskarea name="cdrom">
 				<disk name="super stardust (1994)(team 17)[!]" sha1="2fee9d76e9b47a9fb72c2f8833d07cb4fbc6ab82"/>
@@ -107,6 +113,7 @@
 		<description>Super Skidmarks</description>
 		<year>1995</year>
 		<publisher>Guildhall Leisure</publisher>
+
 		<part name="cdrom" interface="cd32_cdrom">
 			<diskarea name="cdrom">
 				<disk name="super skidmarks v2.2 (1995)(guildhall leisure)[!][gh 1 10 aug 95]" sha1="af57f7c92804f460a3d2ae89b5b881414205a21e"/>
@@ -119,6 +126,7 @@
 		<description>Worms - The Director's Cut</description>
 		<year>1995</year>
 		<publisher>Ocean</publisher>
+
 		<part name="cdrom" interface="cd32_cdrom">
 			<diskarea name="cdrom">
 				<disk name="worms - the director's cut (1995)(ocean)(m3)[!]" sha1="7c42b4cf6c089aadd0ed41f8725174ab9c7a0378"/>
@@ -131,13 +139,12 @@
 		<description>Liberation - Captive II</description>
 		<year>1994</year>
 		<publisher>Mindscape</publisher>
+
 		<part name="cdrom" interface="cd32_cdrom">
 			<diskarea name="cdrom">
 				<disk name="liberation - captive ii v2.02-2.00c (1994-04-08)(mindscape)[!][cdd3716]" sha1="e4270283304e913a9397888f536be1b146482af1"/>
 			</diskarea>
 		</part>
 	</software>
-
-
 
 </softwarelist>
