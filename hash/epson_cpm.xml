@@ -30,18 +30,6 @@
 		</part>
 	</software>
 
-	<software name="editor">
-		<description>VDE 2.66</description>
-		<year>????</year>
-		<publisher>&lt;unofficial&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="348848">
-				<rom name="editor.d88" size="348848" crc="871d30ce" sha1="4f0d8342e7d92ba78fd922f0a2e13b2724a921df" offset="0"/>
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="extrauti">
 		<description>Extra Utilities</description>
 		<year>????</year>
@@ -158,6 +146,18 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="348848">
 				<rom name="scratch.d88" size="348848" crc="163fc594" sha1="ae2451d9226ff1a69db5f78f1101f60735ae2789" offset="0"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vde">
+		<description>VDE (v2.66)</description>
+		<year>????</year>
+		<publisher>&lt;unofficial&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="348848">
+				<rom name="editor.d88" size="348848" crc="871d30ce" sha1="4f0d8342e7d92ba78fd922f0a2e13b2724a921df" offset="0"/>
 			</dataarea>
 		</part>
 	</software>

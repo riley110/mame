@@ -14,15 +14,14 @@
 		</part>
 	</software>
 
-	<software name="basic10" cloneof="basic">
-		<description>BASIC (v1.0)</description>
+	<software name="basica" cloneof="basic">
+		<description>BASIC (v2.1, Alt)</description>
 		<year>198?</year>
-		<publisher>Enterprise Computers</publisher>
+		<publisher>Intelligent Software</publisher>
 
 		<part name="cart" interface="ep64_cart">
 			<dataarea name="rom" size="0x4000">
-				<rom name="basic 1.0 - eprom 1-2 (198x)(enterprise).bin" size="0x2000" crc="681961cd" sha1="052ac869da3764b44031328cd584985f705a6516" offset="0x0000" />
-				<rom name="basic 1.0 - eprom 2-2 (198x)(enterprise).bin" size="0x2000" crc="9cddb79e" sha1="7551f74cc332f20923c36b24ae0ad3274f74ec37" offset="0x2000" />
+				<rom name="basic interpreter v2.1 (1985)(intelligent software).bin" size="0x4000" crc="55f96251" sha1="03bbb386cf530e804363acdfc1d13e64cf28af2e" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -39,14 +38,27 @@
 		</part>
 	</software>
 
-	<software name="basic21" cloneof="basic">
-		<description>BASIC (v2.1, Alt)</description>
+	<software name="basic10" cloneof="basic">
+		<description>BASIC (v1.0)</description>
 		<year>198?</year>
-		<publisher>Intelligent Software</publisher>
+		<publisher>Enterprise Computers</publisher>
 
 		<part name="cart" interface="ep64_cart">
 			<dataarea name="rom" size="0x4000">
-				<rom name="basic interpreter v2.1 (1985)(intelligent software).bin" size="0x4000" crc="55f96251" sha1="03bbb386cf530e804363acdfc1d13e64cf28af2e" offset="0" />
+				<rom name="basic 1.0 - eprom 1-2 (198x)(enterprise).bin" size="0x2000" crc="681961cd" sha1="052ac869da3764b44031328cd584985f705a6516" offset="0x0000" />
+				<rom name="basic 1.0 - eprom 2-2 (198x)(enterprise).bin" size="0x2000" crc="9cddb79e" sha1="7551f74cc332f20923c36b24ae0ad3274f74ec37" offset="0x2000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="brd">
+		<description>brd</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="ep64_cart">
+			<dataarea name="rom" size="0x4000">
+				<rom name="brd.rom" size="0x4000" crc="f45a7454" sha1="096c91fad6a4d10323cd67e133b3ebc5c50e2bb2" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -167,18 +179,6 @@
 		<part name="cart" interface="ep64_cart">
 			<dataarea name="rom" size="0x8000">
 				<rom name="zozotools v1.8 (19xx)(zoltan nemeth).bin" size="0x8000" crc="5e8d0aa9" sha1="8b7db07b0ade24b9420cf5d4531e729b637fa5c9" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="brd">
-		<description>brd</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="cart" interface="ep64_cart">
-			<dataarea name="rom" size="0x4000">
-				<rom name="brd.rom" size="0x4000" crc="f45a7454" sha1="096c91fad6a4d10323cd67e133b3ebc5c50e2bb2" offset="0" />
 			</dataarea>
 		</part>
 	</software>

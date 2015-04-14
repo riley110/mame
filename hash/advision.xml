@@ -15,15 +15,15 @@
 		</part>
 	</software>
 
-	<software name="spacefrc">
-		<description>Space Force</description>
+	<software name="turtles">
+		<description>Turtles</description>
 		<year>1982</year>
 		<publisher>Entex Industries</publisher>
-		<info name="serial" value="6078" />
+		<info name="serial" value="6076" />
 
 		<part name="cart" interface="advision_cart">
 			<dataarea name="rom" size="4096">
-				<rom name="spcforce.bin" size="4096" crc="c70d4028" sha1="86c1a6eb8a5070f4be32bf4e83c0d5951e831d27" offset="0" />
+				<rom name="turtles.bin" size="4096" crc="33a23eba" sha1="88748cf4080646e0a2f115a7f6e6001916314816" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -41,15 +41,15 @@
 		</part>
 	</software>
 
-	<software name="turtles">
-		<description>Turtles</description>
+	<software name="spacefrc">
+		<description>Space Force</description>
 		<year>1982</year>
 		<publisher>Entex Industries</publisher>
-		<info name="serial" value="6076" />
+		<info name="serial" value="6078" />
 
 		<part name="cart" interface="advision_cart">
 			<dataarea name="rom" size="4096">
-				<rom name="turtles.bin" size="4096" crc="33a23eba" sha1="88748cf4080646e0a2f115a7f6e6001916314816" offset="0" />
+				<rom name="spcforce.bin" size="4096" crc="c70d4028" sha1="86c1a6eb8a5070f4be32bf4e83c0d5951e831d27" offset="0" />
 			</dataarea>
 		</part>
 	</software>

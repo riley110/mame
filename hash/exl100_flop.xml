@@ -3,6 +3,30 @@
 <!-- This is currently a documentation-only software list, but is hooked up in exelv.c -->
 <softwarelist name="exl100_flop" description="Exelvision EXL 100 floppies">
 
+	<software name="citadele">
+		<description>Citadelle</description>
+		<year>2011</year>
+		<publisher>GPA</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="655360">
+				<rom name="citadelle (gpa) (tom et jerry) (2011) (exl100).fd" size="655360" crc="8352ed3a" sha1="ef26e0beda2b6059f9b57b37434d6dfe330b3a1c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="noel2010">
+		<description>Demo Noel 2010</description>
+		<year>2010</year>
+		<publisher>6502man</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="655360">
+				<rom name="6502man - demo noel 2010 (6502man) (2010) (exl100).fd" size="655360" crc="2a74120e" sha1="66212986137bc9cd503c4fe46c67013c2dd926c9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="exelpntd">
 		<description>Demonstration Exelpaint (Fra)</description>
 		<year>1985</year>
@@ -75,6 +99,18 @@
 		</part>
 	</software>
 
+	<software name="jestslid">
+		<description>Jester's Slideshow</description>
+		<year>2010</year>
+		<publisher>Jester</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="655360">
+				<rom name="jester's slideshow (jester) (2010) (exl100).fd" size="655360" crc="2dfa771b" sha1="61afb131f31b544a212f55e5f7f4f1783ab22e11" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="jeux">
 		<description>Jeux (Fra)</description>
 		<year>198?</year>
@@ -95,42 +131,6 @@
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="655360">
 				<rom name="slideshow (2009-05-28)(6502man).fd" size="655360" crc="51033993" sha1="56a5e83c32f363f247140c90a8458cd943e7dbe7" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="noel2010">
-		<description>Demo Noel 2010</description>
-		<year>2010</year>
-		<publisher>6502man</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="655360">
-				<rom name="6502man - demo noel 2010 (6502man) (2010) (exl100).fd" size="655360" crc="2a74120e" sha1="66212986137bc9cd503c4fe46c67013c2dd926c9" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="citadele">
-		<description>Citadelle</description>
-		<year>2011</year>
-		<publisher>GPA</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="655360">
-				<rom name="citadelle (gpa) (tom et jerry) (2011) (exl100).fd" size="655360" crc="8352ed3a" sha1="ef26e0beda2b6059f9b57b37434d6dfe330b3a1c" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="jestslid">
-		<description>Jester's Slideshow</description>
-		<year>2010</year>
-		<publisher>Jester</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="655360">
-				<rom name="jester's slideshow (jester) (2010) (exl100).fd" size="655360" crc="2dfa771b" sha1="61afb131f31b544a212f55e5f7f4f1783ab22e11" offset="0" />
 			</dataarea>
 		</part>
 	</software>
