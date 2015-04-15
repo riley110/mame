@@ -1581,11 +1581,10 @@
 
 <!-- TOSEC - Compilations -->
 
-<!--
-	<software name="">
-		<description>Affaire, L' + Les Passagers du Vent (1986)(Loriciels)(FR)(nl)[cr Star Frontiers]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="affpass">
+		<description>L' Affaire + Les Passagers du Vent (Fra, Cracked by Star Frontiers)</description>
+		<year>1986</year>
+		<publisher>Loriciels</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -1594,10 +1593,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Django Collection - Disk 1 (1989)(Django)(FR)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="django1">
+		<description>Django Collection - Disk 1 (Fra)</description>
+		<year>1989</year>
+		<publisher>Django</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -1606,10 +1605,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Django Collection - Disk 1 (1989)(Django)(FR)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="django1a" cloneof="django1">
+		<description>Django Collection - Disk 1 (Fra, Alt)</description>
+		<year>1989</year>
+		<publisher>Django</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -1618,10 +1617,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Django Collection - Disk 2 (1989)(Django)(FR)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="django2">
+		<description>Django Collection - Disk 2 (Fra)</description>
+		<year>1989</year>
+		<publisher>Django</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -1630,22 +1629,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Django Collection - Disk 2 (1989)(Django)(FR)[a2]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="django collection - disk 2 (1989)(django)(fr)[a2].dsk" size="737280" crc="1e51f837" sha1="18940b65ba7ca3b8c2ca8cce8c36d8df967303db" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Django Collection - Disk 2 (1989)(Django)(FR)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="django2a" cloneof="django2">
+		<description>Django Collection - Disk 2 (Fra, Alt)</description>
+		<year>1989</year>
+		<publisher>Django</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -1654,10 +1641,22 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Django Collection - Disk 4 (1989)(Django)(FR)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="django2b" cloneof="django2">
+		<description>Django Collection - Disk 2 (Fra, Alt 2)</description>
+		<year>1989</year>
+		<publisher>Django</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="django collection - disk 2 (1989)(django)(fr)[a2].dsk" size="737280" crc="1e51f837" sha1="18940b65ba7ca3b8c2ca8cce8c36d8df967303db" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="django4">
+		<description>Django Collection - Disk 4 (Fra)</description>
+		<year>1989</year>
+		<publisher>Django</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -1666,22 +1665,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Django Collection - Disk 4 (1989)(Django)(FR)[a2]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="django collection - disk 4 (1989)(django)(fr)[a2].dsk" size="737280" crc="2b7743a7" sha1="53d3f3d3a6a97368408c134d1fbf2a0b4401f5ab" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Django Collection - Disk 4 (1989)(Django)(FR)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="django4a" cloneof="django4">
+		<description>Django Collection - Disk 4 (Fra, Alt)</description>
+		<year>1989</year>
+		<publisher>Django</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -1690,250 +1677,171 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Erotic Pac #1 (1989)(Sink System)(FR)(Disk 1 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="django4b" cloneof="django4">
+		<description>Django Collection - Disk 4 (Fra, Alt 2)</description>
+		<year>1989</year>
+		<publisher>Django</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="368640">
-				<rom name="erotic pac #1 (1989)(sink system)(fr)(disk 1 of 2).dsk" size="368640" crc="6c10900b" sha1="0067f7edef0735989ecdd9d535040332fc8bdfac" offset="0" />
+			<dataarea name="flop" size="737280">
+				<rom name="django collection - disk 4 (1989)(django)(fr)[a2].dsk" size="737280" crc="2b7743a7" sha1="53d3f3d3a6a97368408c134d1fbf2a0b4401f5ab" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Erotic Pac #1 (1989)(Sink System)(FR)(Disk 2 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="erotpac">
+		<description>Erotic Pac #1 (Fra)</description>
+		<year>1989</year>
+		<publisher>Sink System</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="368640">
+				<rom name="erotic pac #1 (1989)(sink system)(fr)(disk 1 of 2).dsk" size="368640" crc="6c10900b" sha1="0067f7edef0735989ecdd9d535040332fc8bdfac" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="368640">
 				<rom name="erotic pac #1 (1989)(sink system)(fr)(disk 2 of 2).dsk" size="368640" crc="bf1bdf32" sha1="4401e8603d86119ef00d75b67612d5a2153addb3" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Games Collection 2, The (1988)(Eurosoft)(NL)(Disk 1 of 7)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="gamecoll">
+		<description>The Games Collection (Euro?)</description>
+		<year>1988</year>
+		<publisher>Eurosoft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="368640">
-				<rom name="games collection 2, the (1988)(eurosoft)(nl)(disk 1 of 7).dsk" size="368640" crc="c7dc2c02" sha1="8352ef83d8dd053cd9df6229802c6c66374da0a1" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Games Collection 2, The (1988)(Eurosoft)(NL)(Disk 1 of 7)[b]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="368640">
-				<rom name="games collection 2, the (1988)(eurosoft)(nl)(disk 1 of 7)[b].dsk" size="368640" crc="c241413d" sha1="f4d9b316e4b40d434b8da8ca9a12a4b486ac9277" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Games Collection 2, The (1988)(Eurosoft)(NL)(Disk 2 of 7)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="368640">
-				<rom name="games collection 2, the (1988)(eurosoft)(nl)(disk 2 of 7).dsk" size="368640" crc="5e004a64" sha1="3423ac22b391ab800508182d7da17b4612dbb639" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Games Collection 2, The (1988)(Eurosoft)(NL)(Disk 3 of 7)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="368640">
-				<rom name="games collection 2, the (1988)(eurosoft)(nl)(disk 3 of 7).dsk" size="368640" crc="44f1fdbf" sha1="c5391c78c9ec816ff5de09a01e38b592bc416ef8" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Games Collection 2, The (1988)(Eurosoft)(NL)(Disk 3 of 7)[b]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="368640">
-				<rom name="games collection 2, the (1988)(eurosoft)(nl)(disk 3 of 7)[b].dsk" size="368640" crc="50825a82" sha1="d1907734cee82ef859ed9e1c3d8f224a95119349" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Games Collection 2, The (1988)(Eurosoft)(NL)(Disk 4 of 7)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="368640">
-				<rom name="games collection 2, the (1988)(eurosoft)(nl)(disk 4 of 7).dsk" size="368640" crc="1d447347" sha1="2b099fe74c5c83ff2577aa493775bf73f3fd2547" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Games Collection 2, The (1988)(Eurosoft)(NL)(Disk 5 of 7)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="368640">
-				<rom name="games collection 2, the (1988)(eurosoft)(nl)(disk 5 of 7).dsk" size="368640" crc="baaaf5ff" sha1="c8fdf56eeb698c4ae88bf37d377a89c2f17cde3c" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Games Collection 2, The (1988)(Eurosoft)(NL)(Disk 6 of 7)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="368640">
-				<rom name="games collection 2, the (1988)(eurosoft)(nl)(disk 6 of 7).dsk" size="368640" crc="0d7229f3" sha1="67c003261581ccbeecb0a146f2d41274b09e4660" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Games Collection 2, The (1988)(Eurosoft)(NL)(Disk 7 of 7)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="368640">
-				<rom name="games collection 2, the (1988)(eurosoft)(nl)(disk 7 of 7).dsk" size="368640" crc="d289b333" sha1="b7344e0cb68d5f988b9dab1aa2b757f3d2b4b0ee" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Games Collection, The (1988)(Eurosoft)(NL)(Disk 1 of 4)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="368640">
 				<rom name="games collection, the (1988)(eurosoft)(nl)(disk 1 of 4).dsk" size="368640" crc="9ff65398" sha1="2967b4a7d27dd81c09a670795a5a01ff73f89158" offset="0" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Games Collection, The (1988)(Eurosoft)(NL)(Disk 2 of 4)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="368640">
 				<rom name="games collection, the (1988)(eurosoft)(nl)(disk 2 of 4).dsk" size="368640" crc="d8ac0385" sha1="04e2f09270d19f6205729aa0ecabcd1b083546a5" offset="0" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Games Collection, The (1988)(Eurosoft)(NL)(Disk 3 of 4)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop3" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 3"/>
 			<dataarea name="flop" size="368640">
 				<rom name="games collection, the (1988)(eurosoft)(nl)(disk 3 of 4).dsk" size="368640" crc="c4b50ac6" sha1="111c37d8dc4d33d2f52017afe6edbf3172ad2770" offset="0" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Games Collection, The (1988)(Eurosoft)(NL)(Disk 4 of 4)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop4" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 4"/>
 			<dataarea name="flop" size="368640">
 				<rom name="games collection, the (1988)(eurosoft)(nl)(disk 4 of 4).dsk" size="368640" crc="b1b82819" sha1="6dc5f83daac20a9e8408be300d31c75d811d5980" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Konami Game Collection Special (1989)(Konami)(JP)[a2][SCC]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="gamecol2">
+		<description>The Games Collection 2 (Euro?)</description>
+		<year>1988</year>
+		<publisher>Eurosoft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="konami game collection special (1989)(konami)(jp)[a2][scc].dsk" size="737280" crc="cfa8b79b" sha1="ae0482474955fab8d6443dd4473a8ecf652ba1ec" offset="0" />
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="368640">
+				<rom name="games collection 2, the (1988)(eurosoft)(nl)(disk 1 of 7).dsk" size="368640" crc="c7dc2c02" sha1="8352ef83d8dd053cd9df6229802c6c66374da0a1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="368640">
+				<rom name="games collection 2, the (1988)(eurosoft)(nl)(disk 2 of 7).dsk" size="368640" crc="5e004a64" sha1="3423ac22b391ab800508182d7da17b4612dbb639" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 3"/>
+			<dataarea name="flop" size="368640">
+				<rom name="games collection 2, the (1988)(eurosoft)(nl)(disk 3 of 7).dsk" size="368640" crc="44f1fdbf" sha1="c5391c78c9ec816ff5de09a01e38b592bc416ef8" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 4"/>
+			<dataarea name="flop" size="368640">
+				<rom name="games collection 2, the (1988)(eurosoft)(nl)(disk 4 of 7).dsk" size="368640" crc="1d447347" sha1="2b099fe74c5c83ff2577aa493775bf73f3fd2547" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 5"/>
+			<dataarea name="flop" size="368640">
+				<rom name="games collection 2, the (1988)(eurosoft)(nl)(disk 5 of 7).dsk" size="368640" crc="baaaf5ff" sha1="c8fdf56eeb698c4ae88bf37d377a89c2f17cde3c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 6"/>
+			<dataarea name="flop" size="368640">
+				<rom name="games collection 2, the (1988)(eurosoft)(nl)(disk 6 of 7).dsk" size="368640" crc="0d7229f3" sha1="67c003261581ccbeecb0a146f2d41274b09e4660" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 7"/>
+			<dataarea name="flop" size="368640">
+				<rom name="games collection 2, the (1988)(eurosoft)(nl)(disk 7 of 7).dsk" size="368640" crc="d289b333" sha1="b7344e0cb68d5f988b9dab1aa2b757f3d2b4b0ee" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Konami Game Collection Special (1989)(Konami)(JP)[a][SCC+]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="gamecol2a" cloneof="gamecol2">
+		<description>The Games Collection 2 (Euro?, Bad Disks 1+3?)</description>
+		<year>1988</year>
+		<publisher>Eurosoft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="konami game collection special (1989)(konami)(jp)[a][scc+].dsk" size="737280" crc="b15f292d" sha1="18ebfd4c709d85652673dd6a7381f4a55d06f393" offset="0" />
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="368640">
+				<rom name="games collection 2, the (1988)(eurosoft)(nl)(disk 1 of 7)[b].dsk" size="368640" crc="c241413d" sha1="f4d9b316e4b40d434b8da8ca9a12a4b486ac9277" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="368640">
+				<rom name="games collection 2, the (1988)(eurosoft)(nl)(disk 2 of 7).dsk" size="368640" crc="5e004a64" sha1="3423ac22b391ab800508182d7da17b4612dbb639" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 3"/>
+			<dataarea name="flop" size="368640">
+				<rom name="games collection 2, the (1988)(eurosoft)(nl)(disk 3 of 7)[b].dsk" size="368640" crc="50825a82" sha1="d1907734cee82ef859ed9e1c3d8f224a95119349" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 4"/>
+			<dataarea name="flop" size="368640">
+				<rom name="games collection 2, the (1988)(eurosoft)(nl)(disk 4 of 7).dsk" size="368640" crc="1d447347" sha1="2b099fe74c5c83ff2577aa493775bf73f3fd2547" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 5"/>
+			<dataarea name="flop" size="368640">
+				<rom name="games collection 2, the (1988)(eurosoft)(nl)(disk 5 of 7).dsk" size="368640" crc="baaaf5ff" sha1="c8fdf56eeb698c4ae88bf37d377a89c2f17cde3c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 6"/>
+			<dataarea name="flop" size="368640">
+				<rom name="games collection 2, the (1988)(eurosoft)(nl)(disk 6 of 7).dsk" size="368640" crc="0d7229f3" sha1="67c003261581ccbeecb0a146f2d41274b09e4660" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 7"/>
+			<dataarea name="flop" size="368640">
+				<rom name="games collection 2, the (1988)(eurosoft)(nl)(disk 7 of 7).dsk" size="368640" crc="d289b333" sha1="b7344e0cb68d5f988b9dab1aa2b757f3d2b4b0ee" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Konami Game Collection Special (1989)(Konami)(JP)[a][SCC]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="konami game collection special (1989)(konami)(jp)[a][scc].dsk" size="737280" crc="a961f179" sha1="e58ed393ad348ad658af8d85588f7444c3c7e86a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Konami Game Collection Special (1989)(Konami)(JP)[b][SCC][MSX1ready]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="konami game collection special (1989)(konami)(jp)[b][scc][msx1ready].dsk" size="737280" crc="6f085eb9" sha1="17fd7c7e40c611ca1ecee6f3a50f2953536653ed" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Konami Game Collection Special (1989)(Konami)(JP)[SCC+]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="konami game collection special (1989)(konami)(jp)[scc+].dsk" size="737280" crc="be0fd4c4" sha1="d60c706e73492d8fa48428e79fb29238d2e54f21" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Konami Game Collection Special (1989)(Konami)(JP)[SCC]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="kongcs">
+		<description>Konami Game Collection Special (Jpn)</description>
+		<year>1989</year>
+		<publisher>Konami</publisher>
+		<info name="usage" value="Requires SCC cartridge" />
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -1942,10 +1850,63 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Konami Game Collection Special (1989)(Konami)(JP)[SCC][MSX1ready]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="kongcsa" cloneof="kongcs">
+		<description>Konami Game Collection Special (Jpn, Alt)</description>
+		<year>1989</year>
+		<publisher>Konami</publisher>
+		<info name="usage" value="Requires SCC cartridge" />
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="konami game collection special (1989)(konami)(jp)[a][scc].dsk" size="737280" crc="a961f179" sha1="e58ed393ad348ad658af8d85588f7444c3c7e86a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kongcsb" cloneof="kongcs">
+		<description>Konami Game Collection Special (Jpn, Alt 2)</description>
+		<year>1989</year>
+		<publisher>Konami</publisher>
+		<info name="usage" value="Requires SCC cartridge" />
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="konami game collection special (1989)(konami)(jp)[a2][scc].dsk" size="737280" crc="cfa8b79b" sha1="ae0482474955fab8d6443dd4473a8ecf652ba1ec" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kongcsp" cloneof="kongcs">
+		<description>Konami Game Collection Special (Jpn, SCC+)</description>
+		<year>1989</year>
+		<publisher>Konami</publisher>
+		<info name="usage" value="Requires SCC+ cartridge" />
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="konami game collection special (1989)(konami)(jp)[scc+].dsk" size="737280" crc="be0fd4c4" sha1="d60c706e73492d8fa48428e79fb29238d2e54f21" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kongcspa" cloneof="kongcs">
+		<description>Konami Game Collection Special (Jpn, SCC+, Alt)</description>
+		<year>1989</year>
+		<publisher>Konami</publisher>
+		<info name="usage" value="Requires SCC+ cartridge" />
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="konami game collection special (1989)(konami)(jp)[a][scc+].dsk" size="737280" crc="b15f292d" sha1="18ebfd4c709d85652673dd6a7381f4a55d06f393" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kongcs1" cloneof="kongcs">
+		<description>Konami Game Collection Special (Jpn, MSX1ready?)</description>
+		<year>1989</year>
+		<publisher>Konami</publisher>
+		<info name="usage" value="Requires SCC cartridge" />
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -1954,10 +1915,23 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>MSX-FAN Fandom Library 8 (1990)(Technopolis Soft)(JP)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="kongcs1a" cloneof="kongcs">
+		<description>Konami Game Collection Special (Jpn, MSX1ready?, Bad?)</description>
+		<year>1989</year>
+		<publisher>Konami</publisher>
+		<info name="usage" value="Requires SCC cartridge" />
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="konami game collection special (1989)(konami)(jp)[b][scc][msx1ready].dsk" size="737280" crc="6f085eb9" sha1="17fd7c7e40c611ca1ecee6f3a50f2953536653ed" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="msxfan8">
+		<description>MSX-FAN Fandom Library 8 (Jpn)</description>
+		<year>1990</year>
+		<publisher>Technopolis Soft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -1966,10 +1940,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Nagi-P Soft Games (1991)(Nagi-P Soft)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="nagigame">
+		<description>Nagi-P Soft Games</description>
+		<year>1981</year>
+		<publisher>Nagi-P Soft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -1978,94 +1952,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Pana Amusement Collection 1 (1988)(Panasoft)(JP)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="pana amusement collection 1 (1988)(panasoft)(jp).dsk" size="737280" crc="4dee2cff" sha1="e4bc138daedac129c39923cbe4a07bf79a880f8b" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Pana Amusement Collection 1 (1988)(Panasoft)(JP)[a2]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="pana amusement collection 1 (1988)(panasoft)(jp)[a2].dsk" size="737280" crc="441d35a8" sha1="fe949aa959949e478a22c93b67b2247a1cf3d7f9" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Pana Amusement Collection 1 (1988)(Panasoft)(JP)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="pana amusement collection 1 (1988)(panasoft)(jp)[a].dsk" size="737280" crc="340292e7" sha1="f86f628e6cef41b777796c4797b9153b5c722710" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Pana Amusement Collection 2 (1988)(Panasoft)(JP)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="pana amusement collection 2 (1988)(panasoft)(jp).dsk" size="737280" crc="83f786e1" sha1="94c2cde50db86b91ad7d73cf6354a240c97ab3ea" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Pana Amusement Collection 2 (1988)(Panasoft)(JP)[a2]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="pana amusement collection 2 (1988)(panasoft)(jp)[a2].dsk" size="737280" crc="4bf555e3" sha1="5eeb6b2b85a19664ef9b21c130fe9b995c4b4784" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Pana Amusement Collection 2 (1988)(Panasoft)(JP)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="pana amusement collection 2 (1988)(panasoft)(jp)[a].dsk" size="737280" crc="3ecc097d" sha1="552da3bf49e85911acc8f7a5c744ca86105bd081" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Xevious - Fardraut Saga + Contra. Gryzor (1989)(Namcot - Konami)(JP)[cr SMA][b2]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="xevious - fardraut saga + contra. gryzor (1989)(namcot - konami)(jp)[cr sma][b2].dsk" size="737280" crc="187db52e" sha1="283cfcdeb864d2d296c5271c9b6471171db2b9d7" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Xevious - Fardraut Saga + Contra. Gryzor (1989)(Namcot - Konami)(JP)[cr SMA][b]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="smacomp">
+		<description>Xevious - Fardraut Saga + Contra. Gryzor (Bad?)</description>
+		<year>1989</year>
+		<publisher>SMA</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2074,10 +1964,22 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Yoshida Koumuten Data Library Vol. 1 (1990)(MSX Magazine)(JP)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="smacompa" cloneof="smacomp">
+		<description>Xevious - Fardraut Saga + Contra. Gryzor (Bad 2?)</description>
+		<year>1989</year>
+		<publisher>SMA</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="xevious - fardraut saga + contra. gryzor (1989)(namcot - konami)(jp)[cr sma][b2].dsk" size="737280" crc="187db52e" sha1="283cfcdeb864d2d296c5271c9b6471171db2b9d7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="datalib1">
+		<description>Yoshida Koumuten Data Library Vol. 1 (Jpn)</description>
+		<year>1990</year>
+		<publisher>MSX Magazine</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2086,10 +1988,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Zowazo World. Zaworzo Robot Construction + The Flintstones (1989)(MSX Magazine - Grandslam Entertainments)(GB)</description>
+	<software name="zowflint">
+		<description>Zowazo World - Zaworzo Robot Construction + The Flintstones</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="368640">
@@ -2097,63 +1999,51 @@
 			</dataarea>
 		</part>
 	</software>
--->
 
 <!-- TOSEC - Demos -->
 
-<!--
-	<software name="">
-		<description>Alice Soft Demo (1989)(Alice Soft)(JP)(Disk 1 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="alicdemo">
+		<description>Alice Soft Demo (Jpn)</description>
+		<year>1989</year>
+		<publisher>Alice Soft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="368640">
 				<rom name="alice soft demo (1989)(alice soft)(jp)(disk 1 of 2).dsk" size="368640" crc="f92fc973" sha1="dc002ca6fa7b491dbf46a2e8d91208e0c3bcd32d" offset="0" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Alice Soft Demo (1989)(Alice Soft)(JP)(Disk 1 of 2)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="alice soft demo (1989)(alice soft)(jp)(disk 1 of 2)[a].dsk" size="737280" crc="1a3b5130" sha1="215263e18ce2b1b8b87f03307ee019d08a3f4ef7" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Alice Soft Demo (1989)(Alice Soft)(JP)(Disk 2 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="368640">
 				<rom name="alice soft demo (1989)(alice soft)(jp)(disk 2 of 2).dsk" size="368640" crc="1b85aaec" sha1="2598cabf2ca8544a06f6c7e7fc872f1f282b1e16" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Alice Soft Demo (1989)(Alice Soft)(JP)(Disk 2 of 2)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="alicdemoa" cloneof="alicdemo">
+		<description>Alice Soft Demo (Jpn, 720K Disks)</description>
+		<year>1989</year>
+		<publisher>Alice Soft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="alice soft demo (1989)(alice soft)(jp)(disk 1 of 2)[a].dsk" size="737280" crc="1a3b5130" sha1="215263e18ce2b1b8b87f03307ee019d08a3f4ef7" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="737280">
 				<rom name="alice soft demo (1989)(alice soft)(jp)(disk 2 of 2)[a].dsk" size="737280" crc="280ed362" sha1="9805e91967b6295d38215b61a06f461c811cee73" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Anma's Amusement Disk (1992)(Anma)(NL)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="anmamuse">
+		<description>Anma's Amusement Disk (Ned)</description>
+		<year>1992</year>
+		<publisher>Anma</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2162,10 +2052,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Arc (demo) (1990)(Parallax)(NL)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="arcd" cloneof="arc">
+		<description>Arc (Euro, Demo)</description>
+		<year>1990</year>
+		<publisher>Parallax</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2174,10 +2064,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Arc (demo) (1990)(Parallax)(NL)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="arcda" cloneof="arc">
+		<description>Arc (Euro, Demo, Alt)</description>
+		<year>1990</year>
+		<publisher>Parallax</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2186,10 +2076,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Ark-A-Noah (demo) (2000)(MATRA)(ES)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="arkanoah">
+		<description>Ark-A-Noah (Spa, Demo)</description>
+		<year>2000</year>
+		<publisher>MATRA</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2198,10 +2088,11 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Axe - The Real SCC Demo (1989)(BCF)(NL)[SCC]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="axedemo">
+		<description>Axe - The Real SCC Demo (Ned)</description>
+		<year>1989</year>
+		<publisher>BCF</publisher>
+		<info name="usage" value="Requires SCC cartridge" />
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2210,10 +2101,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Bass Demo, The (1988)(XelaSoft)(NL)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="bassdemo">
+		<description>The Bass Demo (Ned)</description>
+		<year>1988</year>
+		<publisher>XelaSoft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2222,10 +2113,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Bass Demo, The (1988)(XelaSoft)(NL)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="bassdemoa" cloneof="bassdemo">
+		<description>The Bass Demo (Ned, Alt)</description>
+		<year>1988</year>
+		<publisher>XelaSoft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2234,10 +2125,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Bomb Jack (demo) (2004)(Kralizec)(ES)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="bombjckd">
+		<description>Bomb Jack (Spa, Demo)</description>
+		<year>2004</year>
+		<publisher>Kralizec</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2246,10 +2137,11 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Boss, The v1.2 (19xx)(Martos)[SCC]</description>
+	<software name="boss">
+		<description>The Boss (v1.2)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Martos</publisher>
+		<info name="usage" value="Requires SCC cartridge" />
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2258,10 +2150,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Bubble Rain (demo) (2001)(Imanok)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="bubrain">
+		<description>Bubble Rain (Demo)</description>
+		<year>2001</year>
+		<publisher>Imanok</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2270,10 +2162,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Calculus Demo (1997)(Compjoetania)(NL)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="calculus">
+		<description>Calculus Demo (Ned)</description>
+		<year>1987</year>
+		<publisher>Compjoetania</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2282,10 +2174,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Captures Double Vision (1987)(-)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dvision">
+		<description>Captures Double Vision</description>
+		<year>1987</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="368640">
@@ -2294,10 +2186,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Cat 'n' Mouse (demo) (2002)(Imanok)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="catmousd">
+		<description>Cat 'n' Mouse (Demo)</description>
+		<year>2002</year>
+		<publisher>Imanok</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2306,10 +2198,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Cavaleiros do Zodiaco, Os (1996)(-)(BR)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="cavzodia">
+		<description>Os Cavaleiros do Zodiaco (Bra)</description>
+		<year>1996</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2318,10 +2210,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Cavaleiros do Zodiaco, Os (1996)(-)(BR)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="cavzodiaa" cloneof="cavzodia">
+		<description>Os Cavaleiros do Zodiaco (Bra, Alt)</description>
+		<year>1996</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2330,10 +2222,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Cochon (1987)(-)(FR)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="cochon">
+		<description>Cochon (Fra)</description>
+		<year>1987</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2342,10 +2234,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Cochon (1987)(-)(FR)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="cochona" cloneof="cochon">
+		<description>Cochon (Fra, Alt)</description>
+		<year>1987</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2354,10 +2246,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Compile's Music (1988)(-)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="compmus">
+		<description>Compile's Music</description>
+		<year>1988</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2366,10 +2258,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Coral 2 Demo (2004)(Infinite)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="coral2d">
+		<description>Coral 2 Demo</description>
+		<year>2004</year>
+		<publisher>Infinite</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2378,10 +2270,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dahku (demo) (2005)(Kralizec)(ES)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dahkud">
+		<description>Dahku (Spa, Demo)</description>
+		<year>2005</year>
+		<publisher>Kralizec</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2390,10 +2282,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Demo Digitalizaciones (1987)(Majara Soft)(ES)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="demodigi">
+		<description>Demo Digitalizaciones (Spa)</description>
+		<year>1987</year>
+		<publisher>Majara Soft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2402,10 +2294,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Demo Digitalizaciones (1987)(Majara Soft)(ES)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="demodigia" cloneof="demodigi">
+		<description>Demo Digitalizaciones (Spa, Alt)</description>
+		<year>1987</year>
+		<publisher>Majara Soft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2414,10 +2306,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Diskcoo 3 (1989)(Fabrice)(FR)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="diskcoo3">
+		<description>Diskcoo 3 (Fra)</description>
+		<year>1989</year>
+		<publisher>Fabrice</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2426,10 +2318,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Diskcoo 3 (1989)(Fabrice)(FR)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="diskcoo3a" cloneof="diskcoo3">
+		<description>Diskcoo 3 (Fra, Alt)</description>
+		<year>1989</year>
+		<publisher>Fabrice</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2438,10 +2330,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>DIX (demo) (1992)(MSX Engine)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dixd">
+		<description>DIX (Demo)</description>
+		<year>1992</year>
+		<publisher>MSX Engine</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2450,10 +2342,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>DIX (demo) (1992)(MSX Engine)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dixda" cloneof="dixd">
+		<description>DIX (Demo, Alt)</description>
+		<year>1992</year>
+		<publisher>MSX Engine</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2462,10 +2354,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dracula Demo (19xx)(X.M.V.)(ES)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="draculad">
+		<description>Dracula Demo (Spa)</description>
+		<year>19??</year>
+		<publisher>X.M.V.</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2474,10 +2366,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Eggbert (demo) (1993)(Fony)(NL)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="eggbertd">
+		<description>Eggbert (Ned, Demo)</description>
+		<year>1993</year>
+		<publisher>Fony</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2486,10 +2378,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Encuentro Usuarios MSX (1992)(Nexus-Barcelona)(ES)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="encuentr">
+		<description>Encuentro Usuarios MSX (Spa)</description>
+		<year>1992</year>
+		<publisher>Nexus-Barcelona</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2498,10 +2390,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Fac Demo, The (1988)(Gizmo)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="facdemo">
+		<description>The Fac Demo</description>
+		<year>1988</year>
+		<publisher>Gizmo</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2510,10 +2402,11 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Fony's Demo Disk 1 (1991)(Fony)(NL)[SCC]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="fonydd1">
+		<description>Fony's Demo Disk 1 (Ned)</description>
+		<year>1991</year>
+		<publisher>Fony</publisher>
+		<info name="usage" value="Requires SCC cartridge" />
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="368640">
@@ -2522,34 +2415,29 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Fony's Demo Disk 2 (1992)(Fony)(NL)(Disk 1 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="fonydd2">
+		<description>Fony's Demo Disk 2 (Ned)</description>
+		<year>1992</year>
+		<publisher>Fony</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="fony's demo disk 2 (1992)(fony)(nl)(disk 1 of 2).dsk" size="737280" crc="a6add818" sha1="16fdf9ed9eee8422c6e2120c909c1a1804850d8d" offset="0" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Fony's Demo Disk 2 (1992)(Fony)(NL)(Disk 2 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="737280">
 				<rom name="fony's demo disk 2 (1992)(fony)(nl)(disk 2 of 2).dsk" size="737280" crc="b4a45ff0" sha1="5ba908d5831c5473625fa6f928c10eb681f4f17f" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Fony's Demo Disk 2 (1992)(Fony)(NL)(pre-release)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="fonydd2p" cloneof="fonydd2">
+		<description>Fony's Demo Disk 2 (Ned, Pre-Release)</description>
+		<year>1992</year>
+		<publisher>Fony</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2558,10 +2446,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Fruta Prohibida (1988)(-)(FR)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="frutproh">
+		<description>Fruta Prohibida (Spa?)</description>
+		<year>1988</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2570,10 +2458,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Fruta Prohibida (1988)(-)(FR)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="frutproha" cloneof="frutproh">
+		<description>Fruta Prohibida (Spa?, Alt)</description>
+		<year>1988</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2582,10 +2470,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Fun-Demo (1991)(First Class Software)(NL)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="fundemo">
+		<description>Fun-Demo (Ned)</description>
+		<year>1991</year>
+		<publisher>First Class Software</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2594,10 +2482,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Fun-Demo (1991)(First Class Software)(NL)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="fundemoa" cloneof="fundemo">
+		<description>Fun-Demo (Ned, Alt)</description>
+		<year>1991</year>
+		<publisher>First Class Software</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2606,10 +2494,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Future Time Demo (1991)(Sander Soft)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="futime">
+		<description>Future Time Demo</description>
+		<year>1991</year>
+		<publisher>Sander Soft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="368640">
@@ -2618,10 +2506,11 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Future Time Demo Part I (1990)(Sander Soft)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<!-- earlier, incomplete version of the above? -->
+	<software name="futime1" cloneof="futime">
+		<description>Future Time Demo Part I</description>
+		<year>1990</year>
+		<publisher>Sander Soft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2630,10 +2519,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Girl Map (1990)(MAP)(ES)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="girlmap">
+		<description>Girl Map</description>
+		<year>1990</year>
+		<publisher>MAP</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="368640">
@@ -2642,10 +2531,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Graficos (1994)(Betacom Soft)(ES)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="graficos">
+		<description>Graficos (Spa)</description>
+		<year>1994</year>
+		<publisher>Betacom Soft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2654,10 +2543,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Graficos (1994)(Betacom Soft)(ES)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="graficosa" cloneof="graficos">
+		<description>Graficos (Spa, Alt)</description>
+		<year>1994</year>
+		<publisher>Betacom Soft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2666,10 +2555,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Happy Demo (19xx)(Merla Soft)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="happyd">
+		<description>Happy Demo</description>
+		<year>19??</year>
+		<publisher>Merla Soft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2678,10 +2567,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Happy Demo (19xx)(Merla Soft)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="happyda" cloneof="happyd">
+		<description>Happy Demo (Alt)</description>
+		<year>19??</year>
+		<publisher>Merla Soft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2690,10 +2579,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Haunted Demo, The (19xx)(Merla Soft)</description>
+	<software name="haunted">
+		<description>The Haunted Demo</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Merla Soft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2702,10 +2591,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Haunted Demo, The (19xx)(Merla Soft)[a]</description>
+	<software name="haunteda" cloneof="haunted">
+		<description>The Haunted Demo (Alt)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Merla Soft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2714,10 +2603,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Havoc, The (1990)(Traposoft)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="havoc">
+		<description>The Havoc</description>
+		<year>1990</year>
+		<publisher>Traposoft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2726,10 +2615,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Havoc, The (1990)(Traposoft)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="havoca" cloneof="havoc">
+		<description>The Havoc (Alt)</description>
+		<year>1990</year>
+		<publisher>Traposoft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2738,10 +2627,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Hot Love 2 (19xx)(-)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="hotlove2">
+		<description>Hot Love 2</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2750,10 +2639,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Jolt Demo (19xx)(-)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="joltdemo">
+		<description>Jolt Demo</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2762,10 +2651,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Jolt Demo (19xx)(-)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="joltdemoa" cloneof="joltdemo">
+		<description>Jolt Demo (Alt)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2774,10 +2663,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Keinsei II - The Revenge of MSX (1989)(Nikos Software)(IT)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="keinsei2">
+		<description>Keinsei II - The Revenge of MSX (Ita)</description>
+		<year>1989</year>
+		<publisher>Nikos Software</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="368640">
@@ -2786,10 +2675,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Leauty (19xx)(-)</description>
+	<software name="leauty">
+		<description>Leauty</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2798,10 +2687,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Lemon (19xx)(Club Mesxes)</description>
+	<software name="lemon">
+		<description>Lemon</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Club Mesxes</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2810,10 +2699,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Magical Labyrinth Remix (demo) (1995)(Gigamix)(JP)(beta)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="maglabyd">
+		<description>Magical Labyrinth Remix (Jpn, Beta/Demo)</description>
+		<year>1995</year>
+		<publisher>Gigamix</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2822,10 +2711,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Migicon Scroll Text (1991)(Slayerman)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="migicon">
+		<description>Migicon Scroll Text</description>
+		<year>1991</year>
+		<publisher>Slayerman</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2834,10 +2723,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Moni Moni Theater (19xx)(-)(JP)</description>
+	<software name="monimoni">
+		<description>Moni Moni Theater (Jpn)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2846,10 +2735,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Music Demo (19xx)(JLSA Soft)(NL)</description>
+	<software name="musicdmo">
+		<description>Music Demo (Ned)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>JLSA Soft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2858,10 +2747,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Nightmare on Elmstreet 4 (19xx)(Unicorn)(NL)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="elmst4">
+		<description>Nightmare on Elmstreet 4 (Ned)</description>
+		<year>19??</year>
+		<publisher>Unicorn</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2870,10 +2759,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Playboy - Alles Wat Mannen Boeit (1987)(Powersoft)(NL)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="pboydemo">
+		<description>Playboy - Alles Wat Mannen Boeit (Ned)</description>
+		<year>1987</year>
+		<publisher>Powersoft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2882,10 +2771,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Playboy - Alles Wat Mannen Boeit (1987)(Powersoft)(NL)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="pboydemoa" cloneof="pboydemo">
+		<description>Playboy - Alles Wat Mannen Boeit (Ned, Alt)</description>
+		<year>1987</year>
+		<publisher>Powersoft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2894,10 +2783,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Pumpkin Adventure III (demo) (1995)(Umax)(NL)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="pumpkin3">
+		<description>Pumpkin Adventure III (Ned, Demo)</description>
+		<year>1995</year>
+		<publisher>Umax</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2906,10 +2795,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Pumpkin Adventure III (demo) (1995)(Umax)(NL)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="pumpkin3a" cloneof="pumpkin3">
+		<description>Pumpkin Adventure III (Ned, Demo, Alt)</description>
+		<year>1995</year>
+		<publisher>Umax</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2918,58 +2807,36 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Ray Gun - Image Loader v1.0 (1992)(Danilo Danisi)(Disk 1 of 3)(Start Disk)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="raygun">
+		<description>Ray Gun - Image Loader (v1.0)</description>
+		<year>1992</year>
+		<publisher>Danilo Danisi</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Start Disk"/>
 			<dataarea name="flop" size="737280">
 				<rom name="ray gun - image loader v1.0 (1992)(danilo danisi)(disk 1 of 3)(start disk).dsk" size="737280" crc="5c661c84" sha1="705bf0c76944111cb6e13f01955de2d014b82d06" offset="0" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Ray Gun - Image Loader v1.0 (1992)(Danilo Danisi)(Disk 2 of 3)(Images Disk)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Images Disk"/>
 			<dataarea name="flop" size="737280">
 				<rom name="ray gun - image loader v1.0 (1992)(danilo danisi)(disk 2 of 3)(images disk).dsk" size="737280" crc="8019f8d0" sha1="caa2cd7bfbde7f002606e688d19634481ebdf130" offset="0" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Ray Gun - Image Loader v1.0 Demo (1992)(Danilo Danisi)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop3" interface="floppy_3_5">
+		<feature name="part_id" value="Demo Disk"/>
 			<dataarea name="flop" size="737280">
 				<rom name="ray gun - image loader v1.0 demo (1992)(danilo danisi).dsk" size="737280" crc="a13171c2" sha1="4d102f8e814b5a601b518a7a5eef8722b745ceae" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>SCC MUSIXX Music Loader v1.02b (1991)(Gamesoft)(pre-release)[a][SCC]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="scc musixx music loader v1.02b (1991)(gamesoft)(pre-release)[a][scc].dsk" size="737280" crc="4fe102eb" sha1="07a909606e12695f9f9112426c086c7f444347c4" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>SCC MUSIXX Music Loader v1.02b (1991)(Gamesoft)(pre-release)[SCC]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="sccmusix">
+		<description>SCC MUSIXX Music Loader (Pre-Release, v1.02b)</description>
+		<year>1991</year>
+		<publisher>Gamesoft</publisher>
+		<info name="usage" value="Requires SCC cartridge" />
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2978,10 +2845,23 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Sex Bomb Bunny (demo) (2000)(MATRA)(ES)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="sccmusixa" cloneof="sccmusix">
+		<description>SCC MUSIXX Music Loader (Pre-Release, v1.02b, Alt)</description>
+		<year>1991</year>
+		<publisher>Gamesoft</publisher>
+		<info name="usage" value="Requires SCC cartridge" />
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="scc musixx music loader v1.02b (1991)(gamesoft)(pre-release)[a][scc].dsk" size="737280" crc="4fe102eb" sha1="07a909606e12695f9f9112426c086c7f444347c4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sexbomb">
+		<description>Sex Bomb Bunny (Spa, Demo)</description>
+		<year>2000</year>
+		<publisher>MATRA</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -2990,10 +2870,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Sex Bomb Bunny (demo) (2000)(MATRA)(ES)[needs MSX-DOS]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="sexbomba" cloneof="sexbomb">
+		<description>Sex Bomb Bunny (Spa, Demo, Non-Boot)</description>
+		<year>2000</year>
+		<publisher>MATRA</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -3002,10 +2882,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Sexy Academy (19xx)(L.M.)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="sexyacad">
+		<description>Sexy Academy</description>
+		<year>19??</year>
+		<publisher>L.M.</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -3014,10 +2894,11 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Shuffle Puck (demo) (1993)(M.A.D.)[mouse]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="shufpuck">
+		<description>Shuffle Puck (Demo)</description>
+		<year>1993</year>
+		<publisher>M.A.D.</publisher>
+		<info name="usage" value="Requires mouse" />
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -3026,10 +2907,30 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Sphere 2 Demo (19xx)(-)(ES)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="sphered">
+		<description>Sphere Demo</description>
+		<year>2005</year>
+		<publisher>Infinite</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="737280">
+				<rom name="sphere demo (2005)(infinite)(disk 1 of 2).dsk" size="737280" crc="bd967a12" sha1="61654ff25d68794e2c9df017e19069a66567ee06" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="737280">
+				<rom name="sphere demo (2005)(infinite)(disk 2 of 2).dsk" size="737280" crc="1dc57353" sha1="1a0771c29a9a1d1debf094db930fb4d2ac80116e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- related to Infinite's Sphere Demo? -->
+	<software name="sphere2d">
+		<description>Sphere 2 Demo (Spa)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -3038,10 +2939,11 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Sphere 2 Demo (19xx)(-)(ES)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<!-- related to Infinite's Sphere Demo? -->
+	<software name="sphere2da" cloneof="sphere2d">
+		<description>Sphere 2 Demo (Spa, Alt)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -3050,34 +2952,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Sphere Demo (2005)(Infinite)(Disk 1 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="sphere demo (2005)(infinite)(disk 1 of 2).dsk" size="737280" crc="bd967a12" sha1="61654ff25d68794e2c9df017e19069a66567ee06" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Sphere Demo (2005)(Infinite)(Disk 2 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="sphere demo (2005)(infinite)(disk 2 of 2).dsk" size="737280" crc="1dc57353" sha1="1a0771c29a9a1d1debf094db930fb4d2ac80116e" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Star Wars (1988)(FT-Soft)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="starward">
+		<description>Star Wars</description>
+		<year>1988</year>
+		<publisher>FT-Soft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -3086,10 +2964,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Superstars of Wrestling (1992)(Enigma-Soft)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="sswrest">
+		<description>Superstars of Wrestling</description>
+		<year>1992</year>
+		<publisher>Enigma-Soft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -3098,22 +2976,11 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Teddy's in Action Demo v1.2 (1998)(TeddyWarez)[SCC]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="teddy's in action demo v1.2 (1998)(teddywarez)[scc].dsk" size="737280" crc="173065e6" sha1="3c70c4729239e8e24b9eef8c8d04a2e7028a893f" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Teddy's in Action Demo v2.0 (2001)(TeddyWarez)[SCC]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="teddyact">
+		<description>Teddy's in Action Demo (v2.0)</description>
+		<year>2001</year>
+		<publisher>TeddyWarez</publisher>
+		<info name="usage" value="Requires SCC cartridge" />
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -3122,10 +2989,23 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Tenor, The (demo) (1989)(-)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="teddyact12" cloneof="teddyact">
+		<description>Teddy's in Action Demo (v1.2)</description>
+		<year>1998</year>
+		<publisher>TeddyWarez</publisher>
+		<info name="usage" value="Requires SCC cartridge" />
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="teddy's in action demo v1.2 (1998)(teddywarez)[scc].dsk" size="737280" crc="173065e6" sha1="3c70c4729239e8e24b9eef8c8d04a2e7028a893f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tenor">
+		<description>The Tenor (Demo)</description>
+		<year>1989</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -3134,22 +3014,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Tenor, The (demo) (1989)(-)[a2]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="tenor, the (demo) (1989)(-)[a2].dsk" size="737280" crc="a1f8300b" sha1="7234f5df9f891ea492a29835849f44f409b476ae" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Tenor, The (demo) (1989)(-)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="tenora" cloneof="tenor">
+		<description>The Tenor (Demo, Alt)</description>
+		<year>1989</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -3158,10 +3026,22 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Total Parodius (demo) (19xx)(Gemilis Art)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="tenorb" cloneof="tenor">
+		<description>The Tenor (Demo, Alt 2)</description>
+		<year>1989</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="tenor, the (demo) (1989)(-)[a2].dsk" size="737280" crc="a1f8300b" sha1="7234f5df9f891ea492a29835849f44f409b476ae" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="totparod">
+		<description>Total Parodius (Demo)</description>
+		<year>19??</year>
+		<publisher>Gemilis Art</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -3170,10 +3050,10 @@
 		</part>
 	</software>
 
-	<software name="">
+	<software name="tunez">
 		<description>Tunez Demo - Garfield Edition (1999)(TeddyWarez)</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<year>1999</year>
+		<publisher>TeddyWarez</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -3182,10 +3062,11 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Tunez Demo 2 - Asterix Edition (2000)(TeddyWarez)[SCC]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="tunez2">
+		<description>Tunez Demo 2 - Asterix Edition</description>
+		<year>2000</year>
+		<publisher>TeddyWarez</publisher>
+		<info name="usage" value="Requires SCC cartridge" />
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -3194,10 +3075,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Ultra Sonic Waves Demo (1999)(TeddyWarez)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="usonic">
+		<description>Ultra Sonic Waves Demo</description>
+		<year>1999</year>
+		<publisher>TeddyWarez</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -3206,10 +3087,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Uncle in Brazil, An (1995)(Abbys)(BE-NL)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="ubrazil">
+		<description>An Uncle in Brazil (Bel)</description>
+		<year>1995</year>
+		<publisher>Abbys</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -3218,34 +3099,29 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Unicorn Corporation Demo (1990)(Unicorn)(NL)(Disk 1 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="unicorn">
+		<description>Unicorn Corporation Demo (Ned)</description>
+		<year>1990</year>
+		<publisher>Unicorn</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="unicorn corporation demo (1990)(unicorn)(nl)(disk 1 of 2).dsk" size="737280" crc="bce83db2" sha1="701fe761d68809f4cb82506e9330cbc0863d56f6" offset="0" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Unicorn Corporation Demo (1990)(Unicorn)(NL)(Disk 2 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="737280">
 				<rom name="unicorn corporation demo (1990)(unicorn)(nl)(disk 2 of 2).dsk" size="737280" crc="175065df" sha1="8ae9934ba4d83f74d08ffd2f1c4b09e2e16155bb" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Uxsis (19xx)(-)</description>
+	<software name="uxsis">
+		<description>Uxsis</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -3254,10 +3130,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Uxsis (19xx)(-)[a]</description>
+	<software name="uxsisa" cloneof="uxsis">
+		<description>Uxsis (Alt)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -3266,10 +3142,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Wast Year Iron Maiden (1989)(Unicorn)(NL)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="wastyear">
+		<description>Wast Year Iron Maiden (Ned)</description>
+		<year>1989</year>
+		<publisher>Unicorn</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -3278,34 +3154,29 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Wings Demo (2005)(Infinite)(Disk 1 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="wingsdmo">
+		<description>Wings Demo</description>
+		<year>2005</year>
+		<publisher>Infinite</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="737280">
 				<rom name="wings demo (2005)(infinite)(disk 1 of 2).dsk" size="737280" crc="bc2c844c" sha1="6d89d2ad297f001e6411a3c64281a833d4159a59" offset="0" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Wings Demo (2005)(Infinite)(Disk 2 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
+		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="737280">
 				<rom name="wings demo (2005)(infinite)(disk 2 of 2).dsk" size="737280" crc="693c46e7" sha1="ffd38118fe94fa5c38f5fe699008824ceff3498d" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Yupipati (demo) (2004)(Paxanga Soft)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="yupipati">
+		<description>Yupipati (Demo)</description>
+		<year>2004</year>
+		<publisher>Paxanga Soft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -3313,7 +3184,6 @@
 			</dataarea>
 		</part>
 	</software>
--->
 
 <!-- TOSEC - Educational -->
 
