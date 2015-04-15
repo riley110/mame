@@ -239,7 +239,7 @@ namespace uml
 		code_handle *next() const { return m_next; }
 		drccodeptr codeptr() const { return *m_code; }
 		drccodeptr *codeptr_addr() { return m_code; }
-		const char *string() const { return m_string; }
+		const char *string() const { return m_string.c_str(); }
 
 		// setters
 		void set_codeptr(drccodeptr code);
@@ -409,7 +409,7 @@ namespace uml
 		void set_mapvar(int paramnum, UINT32 value) { assert(paramnum < m_numparams); assert(m_param[paramnum].is_mapvar()); m_param[paramnum] = value; }
 
 		// misc
-		const char *disasm(astring &string, drcuml_state *drcuml = NULL) const;
+		const char *disasm(astring &str, drcuml_state *drcuml = NULL) const;
 		UINT8 input_flags() const;
 		UINT8 output_flags() const;
 		UINT8 modified_flags() const;

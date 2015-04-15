@@ -279,7 +279,7 @@ int main(int argc, char *argv[])
 	// read the template file into an astring
 	UINT32 bufsize;
 	void *buffer;
-	if (core_fload(tempfilename, &buffer, &bufsize) == FILERR_NONE)
+	if (core_fload(tempfilename.c_str(), &buffer, &bufsize) == FILERR_NONE)
 	{
 		tempheader.cpy((const char *)buffer, bufsize);
 		osd_free(buffer);
@@ -332,7 +332,7 @@ static int recurse_dir(int srcrootlen, int dstrootlen, astring &srcdir, astring 
 
 	// create an index file
 	astring indexname;
-	indexname.printf("%s%c%s", dstdir.cstr(), PATH_SEPARATOR[0], "index.html");
+	indexname.printf("%s%c%s", dstdir.c_str(), PATH_SEPARATOR[0], "index.html");
 	core_file *indexfile = create_file_and_output_header(indexname, tempheader, srcdir_subpath);
 
 	// output the directory navigation
@@ -347,7 +347,7 @@ static int recurse_dir(int srcrootlen, int dstrootlen, astring &srcdir, astring 
 		osd_dir_entry_type entry_type = typelist[entindex];
 
 		// open the directory and iterate through it
-		osd_directory *dir = osd_opendir(srcdir);
+		osd_directory *dir = osd_opendir(srcdir.c_str());
 		if (dir == NULL)
 		{
 			result = 1;
@@ -402,7 +402,7 @@ static int recurse_dir(int srcrootlen, int dstrootlen, astring &srcdir, astring 
 
 			// build the source filename
 			astring srcfile;
-			srcfile.printf("%s%c%s", srcdir.cstr(), PATH_SEPARATOR[0], curlist->name.cstr());
+			srcfile.printf("%s%c%s", srcdir.c_str(), PATH_SEPARATOR[0], curlist->name.c_str());
 
 			// if we have a file, output it
 			astring dstfile;
@@ -411,7 +411,7 @@ static int recurse_dir(int srcrootlen, int dstrootlen, astring &srcdir, astring 
 				// make sure we care, first
 				file_type type = FILE_TYPE_INVALID;
 				for (int extnum = 0; extnum < ARRAY_LENGTH(extension_lookup); extnum++)
-					if (core_filename_ends_with(curlist->name, extension_lookup[extnum].extension))
+					if (core_filename_ends_with(curlist->name.c_str(), extension_lookup[extnum].extension))
 					{
 						type = extension_lookup[extnum].type;
 						break;
@@ -420,9 +420,9 @@ static int recurse_dir(int srcrootlen, int dstrootlen, astring &srcdir, astring 
 				// if we got a valid file, process it
 				if (type != FILE_TYPE_INVALID)
 				{
-					dstfile.printf("%s%c%s.html", dstdir.cstr(), PATH_SEPARATOR[0], curlist->name.cstr());
+					dstfile.printf("%s%c%s.html", dstdir.c_str(), PATH_SEPARATOR[0], curlist->name.c_str());
 					if (indexfile != NULL)
-						core_fprintf(indexfile, "\t<li><a href=\"%s.html\">%s</a></li>\n", curlist->name.cstr(), curlist->name.cstr());
+						core_fprintf(indexfile, "\t<li><a href=\"%s.html\">%s</a></li>\n", curlist->name.c_str(), curlist->name.c_str());
 					result = output_file(type, srcrootlen, dstrootlen, srcfile, dstfile, srcdir == dstdir, tempheader, tempfooter);
 				}
 			}
@@ -430,9 +430,9 @@ static int recurse_dir(int srcrootlen, int dstrootlen, astring &srcdir, astring 
 			// if we have a directory, recurse
 			else
 			{
-				dstfile.printf("%s%c%s", dstdir.cstr(), PATH_SEPARATOR[0], curlist->name.cstr());
+				dstfile.printf("%s%c%s", dstdir.c_str(), PATH_SEPARATOR[0], curlist->name.c_str());
 				if (indexfile != NULL)
-					core_fprintf(indexfile, "\t<li><a href=\"%s/index.html\">%s/</a></li>\n", curlist->name.cstr(), curlist->name.cstr());
+					core_fprintf(indexfile, "\t<li><a href=\"%s/index.html\">%s/</a></li>\n", curlist->name.c_str(), curlist->name.c_str());
 				result = recurse_dir(srcrootlen, dstrootlen, srcfile, dstfile, tempheader, tempfooter);
 			}
 		}
@@ -467,7 +467,7 @@ static int output_file(file_type type, int srcrootlen, int dstrootlen, astring &
 	astring srcfile_subpath;
 	normalized_subpath(srcfile_subpath, srcfile, srcrootlen + 1);
 
-	fprintf(stderr, "Processing %s\n", srcfile_subpath.cstr());
+	fprintf(stderr, "Processing %s\n", srcfile_subpath.c_str());
 
 	// set some defaults
 	bool color_quotes = false;
@@ -517,9 +517,9 @@ static int output_file(file_type type, int srcrootlen, int dstrootlen, astring &
 
 	// open the source file
 	core_file *src;
-	if (core_fopen(srcfile, OPEN_FLAG_READ, &src) != FILERR_NONE)
+	if (core_fopen(srcfile.c_str(), OPEN_FLAG_READ, &src) != FILERR_NONE)
 	{
-		fprintf(stderr, "Unable to read file '%s'\n", srcfile.cstr());
+		fprintf(stderr, "Unable to read file '%s'\n", srcfile.c_str());
 		return 1;
 	}
 
@@ -527,7 +527,7 @@ static int output_file(file_type type, int srcrootlen, int dstrootlen, astring &
 	core_file *dst = create_file_and_output_header(dstfile, tempheader, srcfile_subpath);
 	if (dst == NULL)
 	{
-		fprintf(stderr, "Unable to write file '%s'\n", dstfile.cstr());
+		fprintf(stderr, "Unable to write file '%s'\n", dstfile.c_str());
 		core_fclose(src);
 		return 1;
 	}
@@ -659,7 +659,7 @@ static int output_file(file_type type, int srcrootlen, int dstrootlen, astring &
 							astring target;
 							if (find_include_file(target, srcrootlen, dstrootlen, srcfile, dstfile, filename))
 							{
-								dstline.catprintf("<a href=\"%s\">", target.cstr());
+								dstline.catprintf("<a href=\"%s\">", target.c_str());
 								quotes_are_linked = true;
 							}
 						}
@@ -706,7 +706,7 @@ static int output_file(file_type type, int srcrootlen, int dstrootlen, astring &
 
 		// append a break and move on
 		dstline.catprintf("\n");
-		core_fputs(dst, dstline);
+		core_fputs(dst, dstline.c_str());
 	}
 
 	// close tags
@@ -733,13 +733,13 @@ static core_file *create_file_and_output_header(astring &filename, astring &temp
 {
 	// create the indexfile
 	core_file *file;
-	if (core_fopen(filename, OPEN_FLAG_WRITE | OPEN_FLAG_CREATE | OPEN_FLAG_CREATE_PATHS | OPEN_FLAG_NO_BOM, &file) != FILERR_NONE)
+	if (core_fopen(filename.c_str(), OPEN_FLAG_WRITE | OPEN_FLAG_CREATE | OPEN_FLAG_CREATE_PATHS | OPEN_FLAG_NO_BOM, &file) != FILERR_NONE)
 		return NULL;
 
 	// print a header
 	astring modified(templatefile);
-	modified.replace(0, "<!--PATH-->", path.cstr());
-	core_fwrite(file, modified.cstr(), modified.len());
+	modified.replace(0, "<!--PATH-->", path.c_str());
+	core_fwrite(file, modified.c_str(), modified.len());
 
 	// return the file
 	return file;
@@ -754,8 +754,8 @@ static core_file *create_file_and_output_header(astring &filename, astring &temp
 static void output_footer_and_close_file(core_file *file, astring &templatefile, astring &path)
 {
 	astring modified(templatefile);
-	modified.replace(0, "<!--PATH-->", path.cstr());
-	core_fwrite(file, modified.cstr(), modified.len());
+	modified.replace(0, "<!--PATH-->", path.c_str());
+	core_fwrite(file, modified.c_str(), modified.len());
 	core_fclose(file);
 }
 
@@ -807,7 +807,7 @@ static void output_path_as_links(core_file *file, astring &path, bool end_is_dir
 		core_fprintf(file, "<a href=\"");
 		for (int depth = curdepth; depth < srcdepth; depth++)
 			core_fprintf(file, "../");
-		core_fprintf(file, "index.html\">%s</a>/", substr.cstr());
+		core_fprintf(file, "index.html\">%s</a>/", substr.c_str());
 
 		lastslash = slashindex + 1;
 	}
@@ -815,11 +815,11 @@ static void output_path_as_links(core_file *file, astring &path, bool end_is_dir
 	// and a final link to the current directory
 	astring substr(path, lastslash, -1);
 	if (end_is_directory)
-		core_fprintf(file, "<a href=\"index.html\">%s</a>", substr.cstr());
+		core_fprintf(file, "<a href=\"index.html\">%s</a>", substr.c_str());
 	else if (link_to_file)
-		core_fprintf(file, "<a href=\"%s\">%s</a>", substr.cstr(), substr.cstr());
+		core_fprintf(file, "<a href=\"%s\">%s</a>", substr.c_str(), substr.c_str());
 	else
-		core_fprintf(file, "<a href=\"%s.html\">%s</a>", substr.cstr(), substr.cstr());
+		core_fprintf(file, "<a href=\"%s.html\">%s</a>", substr.c_str(), substr.c_str());
 }
 
 
@@ -865,7 +865,7 @@ static bool find_include_file(astring &srcincpath, int srcrootlen, int dstrootle
 
 		// see if we can open it
 		core_file *testfile;
-		if (core_fopen(srcincpath, OPEN_FLAG_READ, &testfile) == FILERR_NONE)
+		if (core_fopen(srcincpath.c_str(), OPEN_FLAG_READ, &testfile) == FILERR_NONE)
 		{
 			// close the file
 			core_fclose(testfile);

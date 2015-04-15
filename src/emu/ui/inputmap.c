@@ -414,14 +414,14 @@ void ui_menu_input::populate_and_sort(input_item_data *itemlist)
 		item = itemarray[curitem];
 		assert(nameformat[item->type] != NULL);
 
-		if (item->owner_name && strcmp(item->owner_name, prev_owner.cstr()) != 0)
+		if (item->owner_name && strcmp(item->owner_name, prev_owner.c_str()) != 0)
 		{
 			if (first_entry)
 				first_entry = false;
 			else
 				item_append(MENU_SEPARATOR_ITEM, NULL, 0, NULL);
 			text.printf("[root%s]", item->owner_name);
-			item_append(text, NULL, 0, NULL);
+			item_append(text.c_str(), NULL, 0, NULL);
 			prev_owner.cpy(item->owner_name);
 		}
 
@@ -442,7 +442,7 @@ void ui_menu_input::populate_and_sort(input_item_data *itemlist)
 		}
 
 		/* add the item */
-		item_append(text, subtext, flags, item);
+		item_append(text.c_str(), subtext.c_str(), flags, item);
 	}
 }
 
@@ -568,20 +568,20 @@ void ui_menu_settings::populate()
 					flags |= MENU_FLAG_RIGHT_ARROW;
 
 				/* add the menu item */
-				if (strcmp(field->device().tag(), prev_owner.cstr()) != 0)
+				if (strcmp(field->device().tag(), prev_owner.c_str()) != 0)
 				{
 					if (first_entry)
 						first_entry = false;
 					else
 						item_append(MENU_SEPARATOR_ITEM, NULL, 0, NULL);
 					name.printf("[root%s]", field->device().tag());
-					item_append(name, NULL, 0, NULL);
+					item_append(name.c_str(), NULL, 0, NULL);
 					prev_owner.cpy(field->device().tag());
 				}
 
 				name.cpy(field->name());
 
-				item_append(name, field->setting_name(), flags, (void *)field);
+				item_append(name.c_str(), field->setting_name(), flags, (void *)field);
 
 				/* for DIP switches, build up the model */
 				if (type == IPT_DIPSWITCH && field->first_diplocation() != NULL)
@@ -872,14 +872,14 @@ void ui_menu_analog::populate()
 						analog_item_data *data;
 						UINT32 flags = 0;
 						astring name;
-						if (strcmp(field->device().tag(), prev_owner.cstr()) != 0)
+						if (strcmp(field->device().tag(), prev_owner.c_str()) != 0)
 						{
 							if (first_entry)
 								first_entry = false;
 							else
 								item_append(MENU_SEPARATOR_ITEM, NULL, 0, NULL);
 							name.printf("[root%s]", field->device().tag());
-							item_append(name, NULL, 0, NULL);
+							item_append(name.c_str(), NULL, 0, NULL);
 							prev_owner.cpy(field->device().tag());
 						}
 
@@ -895,7 +895,7 @@ void ui_menu_analog::populate()
 						{
 							default:
 							case ANALOG_ITEM_KEYSPEED:
-								text.printf("%s Digital Speed", name.cstr());
+								text.printf("%s Digital Speed", name.c_str());
 								subtext.printf("%d", settings.delta);
 								data->min = 0;
 								data->max = 255;
@@ -904,7 +904,7 @@ void ui_menu_analog::populate()
 								break;
 
 							case ANALOG_ITEM_CENTERSPEED:
-								text.printf("%s Autocenter Speed", name.cstr());
+								text.printf("%s Autocenter Speed", name.c_str());
 								subtext.printf("%d", settings.centerdelta);
 								data->min = 0;
 								data->max = 255;
@@ -913,7 +913,7 @@ void ui_menu_analog::populate()
 								break;
 
 							case ANALOG_ITEM_REVERSE:
-								text.printf("%s Reverse", name.cstr());
+								text.printf("%s Reverse", name.c_str());
 								subtext.cpy(settings.reverse ? "On" : "Off");
 								data->min = 0;
 								data->max = 1;
@@ -922,7 +922,7 @@ void ui_menu_analog::populate()
 								break;
 
 							case ANALOG_ITEM_SENSITIVITY:
-								text.printf("%s Sensitivity", name.cstr());
+								text.printf("%s Sensitivity", name.c_str());
 								subtext.printf("%d", settings.sensitivity);
 								data->min = 1;
 								data->max = 255;
@@ -938,7 +938,7 @@ void ui_menu_analog::populate()
 							flags |= MENU_FLAG_RIGHT_ARROW;
 
 						/* append a menu item */
-						item_append(text, subtext, flags, data);
+						item_append(text.c_str(), subtext.c_str(), flags, data);
 					}
 			}
 }

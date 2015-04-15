@@ -203,12 +203,12 @@ void validity_checker::check_all()
 		if (m_errors > 0)
 		{
 			m_error_text.replace("\n", "\n   ");
-			output_via_delegate(OSD_OUTPUT_CHANNEL_ERROR, "Errors:\n   %s", m_error_text.cstr());
+			output_via_delegate(OSD_OUTPUT_CHANNEL_ERROR, "Errors:\n   %s", m_error_text.c_str());
 		}
 		if (m_warnings > 0)
 		{
 			m_warning_text.replace("\n", "\n   ");
-			output_via_delegate(OSD_OUTPUT_CHANNEL_ERROR, "Warnings:\n   %s", m_warning_text.cstr());
+			output_via_delegate(OSD_OUTPUT_CHANNEL_ERROR, "Warnings:\n   %s", m_warning_text.c_str());
 		}
 		output_via_delegate(OSD_OUTPUT_CHANNEL_ERROR, "\n");
 	}
@@ -299,16 +299,16 @@ void validity_checker::validate_one(const game_driver &driver)
 	if (m_errors > start_errors || m_warnings > start_warnings)
 	{
 		astring tempstr;
-		output_via_delegate(OSD_OUTPUT_CHANNEL_ERROR, "Driver %s (file %s): %d errors, %d warnings\n", driver.name, core_filename_extract_base(tempstr, driver.source_file).cstr(), m_errors - start_errors, m_warnings - start_warnings);
+		output_via_delegate(OSD_OUTPUT_CHANNEL_ERROR, "Driver %s (file %s): %d errors, %d warnings\n", driver.name, core_filename_extract_base(tempstr, driver.source_file).c_str(), m_errors - start_errors, m_warnings - start_warnings);
 		if (m_errors > start_errors)
 		{
 			m_error_text.replace("\n", "\n   ");
-			output_via_delegate(OSD_OUTPUT_CHANNEL_ERROR, "Errors:\n   %s", m_error_text.cstr());
+			output_via_delegate(OSD_OUTPUT_CHANNEL_ERROR, "Errors:\n   %s", m_error_text.c_str());
 		}
 		if (m_warnings > start_warnings)
 		{
 			m_warning_text.replace("\n", "\n   ");
-			output_via_delegate(OSD_OUTPUT_CHANNEL_ERROR, "Warnings:\n   %s", m_warning_text.cstr());
+			output_via_delegate(OSD_OUTPUT_CHANNEL_ERROR, "Warnings:\n   %s", m_warning_text.c_str());
 		}
 		output_via_delegate(OSD_OUTPUT_CHANNEL_ERROR, "\n");
 	}
@@ -523,14 +523,14 @@ void validity_checker::validate_driver()
 	if (m_names_map.add(m_current_driver->name, m_current_driver, false) == TMERR_DUPLICATE)
 	{
 		const game_driver *match = m_names_map.find(m_current_driver->name);
-		osd_printf_error("Driver name is a duplicate of %s(%s)\n", core_filename_extract_base(tempstr, match->source_file).cstr(), match->name);
+		osd_printf_error("Driver name is a duplicate of %s(%s)\n", core_filename_extract_base(tempstr, match->source_file).c_str(), match->name);
 	}
 
 	// check for duplicate descriptions
 	if (m_descriptions_map.add(m_current_driver->description, m_current_driver, false) == TMERR_DUPLICATE)
 	{
 		const game_driver *match = m_descriptions_map.find(m_current_driver->description);
-		osd_printf_error("Driver description is a duplicate of %s(%s)\n", core_filename_extract_base(tempstr, match->source_file).cstr(), match->name);
+		osd_printf_error("Driver description is a duplicate of %s(%s)\n", core_filename_extract_base(tempstr, match->source_file).c_str(), match->name);
 	}
 
 	// determine if we are a clone
@@ -644,8 +644,8 @@ void validity_checker::validate_roms()
 
 				// attempt to add it to the map, reporting duplicates as errors
 				current_length = ROMREGION_GETLENGTH(romp);
-				if (m_region_map.add(fulltag, current_length, false) == TMERR_DUPLICATE)
-					osd_printf_error("Multiple ROM_REGIONs with the same tag '%s' defined\n", fulltag.cstr());
+				if (m_region_map.add(fulltag.c_str(), current_length, false) == TMERR_DUPLICATE)
+					osd_printf_error("Multiple ROM_REGIONs with the same tag '%s' defined\n", fulltag.c_str());
 			}
 
 			// If this is a system bios, make sure it is using the next available bios number
@@ -852,7 +852,7 @@ void validity_checker::validate_condition(ioport_condition &condition, device_t 
 	device.subtag(porttag, condition.tag());
 
 	// then find a matching port
-	if (port_map.find(porttag) == 0)
+	if (port_map.find(porttag.c_str()) == 0)
 		osd_printf_error("Condition referencing non-existent ioport tag '%s'\n", condition.tag());
 }
 
@@ -883,7 +883,7 @@ void validity_checker::validate_inputs()
 
 		// report any errors during construction
 		if (errorbuf)
-			osd_printf_error("I/O port error during construction:\n%s\n", errorbuf.cstr());
+			osd_printf_error("I/O port error during construction:\n%s\n", errorbuf.c_str());
 
 		// do a first pass over ports to add their names and find duplicates
 		for (ioport_port *port = portlist.first(); port != NULL; port = port->next())
@@ -1010,7 +1010,7 @@ void validity_checker::validate_devices()
 		{
 			astring temptag("_");
 			temptag.cat(option->name());
-			device_t *dev = const_cast<machine_config &>(*m_current_config).device_add(&m_current_config->root_device(), temptag.cstr(), option->devtype(), 0);
+			device_t *dev = const_cast<machine_config &>(*m_current_config).device_add(&m_current_config->root_device(), temptag.c_str(), option->devtype(), 0);
 
 			// notify this device and all its subdevices that they are now configured
 			device_iterator subiter(*dev);
@@ -1023,7 +1023,7 @@ void validity_checker::validate_devices()
 					osd_printf_error("Device '%s' is slot cart device but does not have short name defined\n",dev->name());
 			}
 
-			const_cast<machine_config &>(*m_current_config).device_remove(&m_current_config->root_device(), temptag.cstr());
+			const_cast<machine_config &>(*m_current_config).device_remove(&m_current_config->root_device(), temptag.c_str());
 		}
 	}
 
@@ -1036,18 +1036,18 @@ void validity_checker::validate_devices()
 //  and device
 //-------------------------------------------------
 
-void validity_checker::build_output_prefix(astring &string)
+void validity_checker::build_output_prefix(astring &str)
 {
 	// start empty
-	string.reset();
+	str.reset();
 
 	// if we have a current device, indicate that
 	if (m_current_device != NULL)
-		string.cat(m_current_device->name()).cat(" device '").cat(m_current_device->tag()).cat("': ");
+		str.cat(m_current_device->name()).cat(" device '").cat(m_current_device->tag()).cat("': ");
 
 	// if we have a current port, indicate that as well
 	if (m_current_ioport != NULL)
-		string.cat("ioport '").cat(m_current_ioport).cat("': ");
+		str.cat("ioport '").cat(m_current_ioport).cat("': ");
 }
 
 

@@ -1264,7 +1264,7 @@ const char *natural_keyboard::unicode_to_string(astring &buffer, unicode_char ch
 				buffer.format("U+%04X", unsigned(ch));
 			break;
 	}
-	return buffer;
+	return buffer.c_str();
 }
 
 
@@ -1307,13 +1307,13 @@ void natural_keyboard::frame_update(ioport_port &port, ioport_value &digital)
 //  key_name - returns the name of a specific key
 //-------------------------------------------------
 
-const char *natural_keyboard::key_name(astring &string, unicode_char ch)
+const char *natural_keyboard::key_name(astring &str, unicode_char ch)
 {
 	// attempt to get the string from the character info table
 	const char_info *ci = char_info::find(ch);
 	const char *result = (ci != NULL) ? ci->name : NULL;
 	if (result != NULL)
-		string.cpy(result);
+		str.cpy(result);
 
 	// if that doesn't work, convert to UTF-8
 	else if (ch > 0x7F || isprint(ch))
@@ -1321,13 +1321,13 @@ const char *natural_keyboard::key_name(astring &string, unicode_char ch)
 		char buf[10];
 		int count = utf8_from_uchar(buf, ARRAY_LENGTH(buf), ch);
 		buf[count] = 0;
-		string.cpy(buf);
+		str.cpy(buf);
 	}
 
 	// otherwise, opt for question marks
 	else
-		string.cpy("???");
-	return string;
+		str.cpy("???");
+	return str.c_str();
 }
 
 
@@ -1520,7 +1520,7 @@ const char *ioport_field::name() const
 {
 	// if we have a non-default name, use that
 	if (m_live != NULL && m_live->name)
-		return m_live->name;
+		return m_live->name.c_str();
 	if (m_name != NULL)
 		return m_name;
 
@@ -2066,13 +2066,13 @@ void ioport_field::expand_diplocation(const char *location, astring &errorbuf)
 		tempstr.cpy(curentry, comma - curentry);
 
 		// first extract the switch name if present
-		const char *number = tempstr;
-		const char *colon = strchr(tempstr, ':');
+		const char *number = tempstr.c_str();
+		const char *colon = strchr(tempstr.c_str(), ':');
 
 		// allocate and copy the name if it is present
 		if (colon != NULL)
 		{
-			lastname = name.cpy(number, colon - number);
+			lastname = name.cpy(number, colon - number).c_str();
 			number = colon + 1;
 		}
 
@@ -2101,7 +2101,7 @@ void ioport_field::expand_diplocation(const char *location, astring &errorbuf)
 			errorbuf.catprintf("Switch location '%s' has invalid format!\n", location);
 
 		// allocate a new entry
-		m_diploclist.append(*global_alloc(ioport_diplocation(name, swnum, invert)));
+		m_diploclist.append(*global_alloc(ioport_diplocation(name.c_str(), swnum, invert)));
 		entries++;
 
 		// advance to the next item
@@ -2482,7 +2482,7 @@ time_t ioport_manager::initialize()
 		astring errors;
 		m_portlist.append(*device, errors);
 		if (errors)
-			osd_printf_error("Input port errors:\n%s", errors.cstr());
+			osd_printf_error("Input port errors:\n%s", errors.c_str());
 	}
 
 	// renumber player numbers for controller ports
@@ -3176,7 +3176,7 @@ void ioport_manager::save_sequence(xml_data_node *parentnode, input_seq_type typ
 		machine().input().seq_to_tokens(seqstring, seq);
 
 	// add the new node
-	xml_data_node *seqnode = xml_add_child(parentnode, "newseq", seqstring);
+	xml_data_node *seqnode = xml_add_child(parentnode, "newseq", seqstring.c_str());
 	if (seqnode != NULL)
 		xml_set_attribute(seqnode, "type", seqtypestrings[type]);
 }
@@ -3685,7 +3685,7 @@ void ioport_configurer::port_alloc(const char *tag)
 	m_owner.subtag(fulltag, tag);
 
 	// add it to the list, and reset current field/setting
-	m_curport = &m_portlist.append(fulltag, *global_alloc(ioport_port(m_owner, fulltag)));
+	m_curport = &m_portlist.append(fulltag.c_str(), *global_alloc(ioport_port(m_owner, fulltag.c_str())));
 	m_curfield = NULL;
 	m_cursetting = NULL;
 }
@@ -3703,9 +3703,9 @@ void ioport_configurer::port_modify(const char *tag)
 	m_owner.subtag(fulltag, tag);
 
 	// find the existing port
-	m_curport = m_portlist.find(fulltag.cstr());
+	m_curport = m_portlist.find(fulltag.c_str());
 	if (m_curport == NULL)
-		throw emu_fatalerror("Requested to modify nonexistent port '%s'", fulltag.cstr());
+		throw emu_fatalerror("Requested to modify nonexistent port '%s'", fulltag.c_str());
 
 	// bump the modification count, and reset current field/setting
 	m_curport->m_modcount++;
@@ -4397,15 +4397,15 @@ ioport_type ioport_manager::token_to_input_type(const char *string, int &player)
 //  type and player to a string token
 //-------------------------------------------------
 
-const char *ioport_manager::input_type_to_token(astring &string, ioport_type type, int player)
+const char *ioport_manager::input_type_to_token(astring &str, ioport_type type, int player)
 {
 	// look up the port and return the token
 	input_type_entry *entry = m_type_to_entry[type][player];
 	if (entry != NULL)
-		return string.cpy(entry->token());
+		return str.cpy(entry->token()).c_str();
 
 	// if that fails, carry on
-	return string.format("TYPE_OTHER(%d,%d)", type, player);
+	return str.format("TYPE_OTHER(%d,%d)", type, player).c_str();
 }
 
 

@@ -1044,7 +1044,7 @@ static void execute_ignore(running_machine &machine, int ref, int params, const 
 		/* special message for none */
 		if (!buffer)
 			buffer.printf("Not currently ignoring any devices");
-		debug_console_printf(machine, "%s\n", buffer.cstr());
+		debug_console_printf(machine, "%s\n", buffer.c_str());
 	}
 
 	/* otherwise clear the ignore flag on all requested CPUs */
@@ -1109,7 +1109,7 @@ static void execute_observe(running_machine &machine, int ref, int params, const
 		/* special message for none */
 		if (!buffer)
 			buffer.printf("Not currently observing any devices");
-		debug_console_printf(machine, "%s\n", buffer.cstr());
+		debug_console_printf(machine, "%s\n", buffer.c_str());
 	}
 
 	/* otherwise set the ignore flag on all requested CPUs */
@@ -1332,7 +1332,7 @@ static void execute_bplist(running_machine &machine, int ref, int params, const 
 					buffer.catprintf(" if %s", bp->condition());
 				if (astring(bp->action()) != astring(""))
 					buffer.catprintf(" do %s", bp->action());
-				debug_console_printf(machine, "%s\n", buffer.cstr());
+				debug_console_printf(machine, "%s\n", buffer.c_str());
 				printed++;
 			}
 		}
@@ -1502,7 +1502,7 @@ static void execute_wplist(running_machine &machine, int ref, int params, const 
 						buffer.catprintf(" if %s", wp->condition());
 					if (astring(wp->action()) != astring(""))
 						buffer.catprintf(" do %s", wp->action());
-					debug_console_printf(machine, "%s\n", buffer.cstr());
+					debug_console_printf(machine, "%s\n", buffer.c_str());
 					printed++;
 				}
 			}
@@ -1641,7 +1641,7 @@ static void execute_rplist(running_machine &machine, int ref, int params, const 
 				buffer.catprintf("if %s", rp->condition());
 				if (rp->action() != NULL)
 					buffer.catprintf(" do %s", rp->action());
-				debug_console_printf(machine, "%s\n", buffer.cstr());
+				debug_console_printf(machine, "%s\n", buffer.c_str());
 				printed++;
 			}
 		}
@@ -1702,7 +1702,7 @@ static void execute_hotspot(running_machine &machine, int ref, int params, const
 static void execute_statesave(running_machine &machine, int ref, int params, const char *param[])
 {
 	astring filename(param[0]);
-	machine.immediate_save(filename);
+	machine.immediate_save(filename.c_str());
 	debug_console_printf(machine, "State save attempted.  Please refer to window message popup for results.\n");
 }
 
@@ -1714,7 +1714,7 @@ static void execute_statesave(running_machine &machine, int ref, int params, con
 static void execute_stateload(running_machine &machine, int ref, int params, const char *param[])
 {
 	astring filename(param[0]);
-	machine.immediate_load(filename);
+	machine.immediate_load(filename.c_str());
 
 	// Clear all PC & memory tracks
 	device_iterator iter(machine.root_device());
@@ -2583,7 +2583,7 @@ static void execute_trace_internal(running_machine &machine, int ref, int params
 		return;
 
 	/* open the file */
-	if (core_stricmp(filename, "off") != 0)
+	if (core_stricmp(filename.c_str(), "off") != 0)
 	{
 		mode = "w";
 
@@ -2594,7 +2594,7 @@ static void execute_trace_internal(running_machine &machine, int ref, int params
 			filename = filename.substr(2);
 		}
 
-		f = fopen(filename, mode);
+		f = fopen(filename.c_str(), mode);
 		if (!f)
 		{
 			debug_console_printf(machine, "Error opening file '%s'\n", param[0]);
@@ -2605,7 +2605,7 @@ static void execute_trace_internal(running_machine &machine, int ref, int params
 	/* do it */
 	cpu->debug()->trace(f, trace_over, action);
 	if (f)
-		debug_console_printf(machine, "Tracing CPU '%s' to file %s\n", cpu->tag(), filename.cstr());
+		debug_console_printf(machine, "Tracing CPU '%s' to file %s\n", cpu->tag(), filename.c_str());
 	else
 		debug_console_printf(machine, "Stopped tracing on CPU '%s'\n", cpu->tag());
 }
@@ -2835,7 +2835,7 @@ static void execute_snap(running_machine &machine, int ref, int params, const ch
 		if (fname.find(0, ".png") == -1)
 			fname.cat(".png");
 		emu_file file(machine.options().snapshot_directory(), OPEN_FLAG_WRITE | OPEN_FLAG_CREATE | OPEN_FLAG_CREATE_PATHS);
-		file_error filerr = file.open(fname);
+		file_error filerr = file.open(fname.c_str());
 
 		if (filerr != FILERR_NONE)
 		{
@@ -3100,9 +3100,9 @@ static void execute_dumpkbd(running_machine &machine, int ref, int params, const
 
 	// and output it as appropriate
 	if (file != NULL)
-		fprintf(file, "%s\n", buffer.cstr());
+		fprintf(file, "%s\n", buffer.c_str());
 	else
-		debug_console_printf(machine, "%s\n", buffer.cstr());
+		debug_console_printf(machine, "%s\n", buffer.c_str());
 
 	// cleanup
 	if (file != NULL)

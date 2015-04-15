@@ -370,11 +370,11 @@ void shaders::render_snapshot(surface *surface)
 				return;
 
 			// add two text entries describing the image
-			astring text1(emulator_info::get_appname(), " ", build_version);
-			astring text2(machine->system().manufacturer, " ", machine->system().description);
+			astring text1 = astring(emulator_info::get_appname()).cat(" ").cat(build_version);
+			astring text2 = astring(machine->system().manufacturer).cat(" ").cat(machine->system().description);
 			png_info pnginfo = { 0 };
-			png_add_text(&pnginfo, "Software", text1);
-			png_add_text(&pnginfo, "System", text2);
+			png_add_text(&pnginfo, "Software", text1.c_str());
+			png_add_text(&pnginfo, "System", text2.c_str());
 
 			// now do the actual work
 			png_error error = png_write_bitmap(file, &pnginfo, avi_snap, 1 << 24, NULL);
@@ -567,7 +567,7 @@ void shaders::begin_avi_recording(const char *name)
 	if (filerr == FILERR_NONE)
 	{
 		// create the file and free the string
-		avi_error avierr = avi_create(fullpath, &info, &avi_output_file);
+		avi_error avierr = avi_create(fullpath.c_str(), &info, &avi_output_file);
 		if (avierr != AVIERR_NONE)
 		{
 			osd_printf_error("Error creating AVI: %s\n", avi_error_string(avierr));
@@ -2394,418 +2394,418 @@ static slider_state *slider_alloc(running_machine &machine, const char *title, I
 //  assorted global slider accessors
 //============================================================
 
-static INT32 slider_set(float *option, float scale, const char *fmt, astring *string, INT32 newval)
+static INT32 slider_set(float *option, float scale, const char *fmt, astring *str, INT32 newval)
 {
 	if (option != NULL && newval != SLIDER_NOCHANGE) *option = (float)newval * scale;
-	if (string != NULL) string->printf(fmt, *option);
+	if (str != NULL) str->printf(fmt, *option);
 	return floor(*option / scale + 0.5f);
 }
 
-static INT32 slider_shadow_mask_alpha(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_shadow_mask_alpha(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
-	return slider_set(&(((hlsl_options*)arg)->shadow_mask_alpha), 0.01f, "%2.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->shadow_mask_alpha), 0.01f, "%2.2f", str, newval);
 }
 
-static INT32 slider_shadow_mask_x_count(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_shadow_mask_x_count(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	hlsl_options *options = (hlsl_options*)arg;
 	if (newval != SLIDER_NOCHANGE) options->shadow_mask_count_x = newval;
-	if (string != NULL) string->printf("%d", options->shadow_mask_count_x);
+	if (str != NULL) str->printf("%d", options->shadow_mask_count_x);
 	options->params_dirty = true;
 	return options->shadow_mask_count_x;
 }
 
-static INT32 slider_shadow_mask_y_count(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_shadow_mask_y_count(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	hlsl_options *options = (hlsl_options*)arg;
 	if (newval != SLIDER_NOCHANGE) options->shadow_mask_count_y = newval;
-	if (string != NULL) string->printf("%d", options->shadow_mask_count_y);
+	if (str != NULL) str->printf("%d", options->shadow_mask_count_y);
 	options->params_dirty = true;
 	return options->shadow_mask_count_y;
 }
 
-static INT32 slider_shadow_mask_usize(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_shadow_mask_usize(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->shadow_mask_u_size), 1.0f / 32.0f, "%2.5f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->shadow_mask_u_size), 1.0f / 32.0f, "%2.5f", str, newval);
 }
 
-static INT32 slider_shadow_mask_vsize(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_shadow_mask_vsize(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->shadow_mask_v_size), 1.0f / 32.0f, "%2.5f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->shadow_mask_v_size), 1.0f / 32.0f, "%2.5f", str, newval);
 }
 
-static INT32 slider_curvature(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_curvature(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->curvature), 0.01f, "%2.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->curvature), 0.01f, "%2.2f", str, newval);
 }
 
-static INT32 slider_pincushion(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_pincushion(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->pincushion), 0.01f, "%2.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->pincushion), 0.01f, "%2.2f", str, newval);
 }
 
-static INT32 slider_scanline_alpha(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_scanline_alpha(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->scanline_alpha), 0.01f, "%2.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->scanline_alpha), 0.01f, "%2.2f", str, newval);
 }
 
-static INT32 slider_scanline_scale(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_scanline_scale(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->scanline_scale), 0.05f, "%2.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->scanline_scale), 0.05f, "%2.2f", str, newval);
 }
 
-static INT32 slider_scanline_height(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_scanline_height(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->scanline_height), 0.05f, "%2.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->scanline_height), 0.05f, "%2.2f", str, newval);
 }
 
-static INT32 slider_scanline_bright_scale(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_scanline_bright_scale(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->scanline_bright_scale), 0.05f, "%2.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->scanline_bright_scale), 0.05f, "%2.2f", str, newval);
 }
 
-static INT32 slider_scanline_bright_offset(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_scanline_bright_offset(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->scanline_bright_offset), 0.05f, "%2.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->scanline_bright_offset), 0.05f, "%2.2f", str, newval);
 }
 
-static INT32 slider_scanline_offset(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_scanline_offset(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->scanline_offset), 0.05f, "%2.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->scanline_offset), 0.05f, "%2.2f", str, newval);
 }
 
-static INT32 slider_defocus_x(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_defocus_x(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->defocus[0]), 0.5f, "%2.1f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->defocus[0]), 0.5f, "%2.1f", str, newval);
 }
 
-static INT32 slider_defocus_y(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_defocus_y(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->defocus[1]), 0.5f, "%2.1f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->defocus[1]), 0.5f, "%2.1f", str, newval);
 }
 
-static INT32 slider_red_converge_x(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_red_converge_x(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->converge_x[0]), 0.1f, "%3.1f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->converge_x[0]), 0.1f, "%3.1f", str, newval);
 }
 
-static INT32 slider_red_converge_y(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_red_converge_y(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->converge_y[0]), 0.1f, "%3.1f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->converge_y[0]), 0.1f, "%3.1f", str, newval);
 }
 
-static INT32 slider_green_converge_x(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_green_converge_x(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->converge_x[1]), 0.1f, "%3.1f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->converge_x[1]), 0.1f, "%3.1f", str, newval);
 }
 
-static INT32 slider_green_converge_y(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_green_converge_y(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->converge_y[1]), 0.1f, "%3.1f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->converge_y[1]), 0.1f, "%3.1f", str, newval);
 }
 
-static INT32 slider_blue_converge_x(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_blue_converge_x(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->converge_x[2]), 0.1f, "%3.1f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->converge_x[2]), 0.1f, "%3.1f", str, newval);
 }
 
-static INT32 slider_blue_converge_y(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_blue_converge_y(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->converge_y[2]), 0.1f, "%3.1f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->converge_y[2]), 0.1f, "%3.1f", str, newval);
 }
 
-static INT32 slider_red_radial_converge_x(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_red_radial_converge_x(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->radial_converge_x[0]), 0.1f, "%3.1f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->radial_converge_x[0]), 0.1f, "%3.1f", str, newval);
 }
 
-static INT32 slider_red_radial_converge_y(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_red_radial_converge_y(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->radial_converge_y[0]), 0.1f, "%3.1f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->radial_converge_y[0]), 0.1f, "%3.1f", str, newval);
 }
 
-static INT32 slider_green_radial_converge_x(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_green_radial_converge_x(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->radial_converge_x[1]), 0.1f, "%3.1f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->radial_converge_x[1]), 0.1f, "%3.1f", str, newval);
 }
 
-static INT32 slider_green_radial_converge_y(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_green_radial_converge_y(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->radial_converge_y[1]), 0.1f, "%3.1f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->radial_converge_y[1]), 0.1f, "%3.1f", str, newval);
 }
 
-static INT32 slider_blue_radial_converge_x(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_blue_radial_converge_x(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->radial_converge_x[2]), 0.1f, "%3.1f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->radial_converge_x[2]), 0.1f, "%3.1f", str, newval);
 }
 
-static INT32 slider_blue_radial_converge_y(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_blue_radial_converge_y(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->radial_converge_y[2]), 0.1f, "%3.1f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->radial_converge_y[2]), 0.1f, "%3.1f", str, newval);
 }
 
-static INT32 slider_red_from_r(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_red_from_r(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->red_ratio[0]), 0.005f, "%2.3f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->red_ratio[0]), 0.005f, "%2.3f", str, newval);
 }
 
-static INT32 slider_red_from_g(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_red_from_g(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->red_ratio[1]), 0.005f, "%2.3f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->red_ratio[1]), 0.005f, "%2.3f", str, newval);
 }
 
-static INT32 slider_red_from_b(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_red_from_b(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->red_ratio[2]), 0.005f, "%2.3f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->red_ratio[2]), 0.005f, "%2.3f", str, newval);
 }
 
-static INT32 slider_green_from_r(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_green_from_r(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->grn_ratio[0]), 0.005f, "%2.3f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->grn_ratio[0]), 0.005f, "%2.3f", str, newval);
 }
 
-static INT32 slider_green_from_g(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_green_from_g(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->grn_ratio[1]), 0.005f, "%2.3f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->grn_ratio[1]), 0.005f, "%2.3f", str, newval);
 }
 
-static INT32 slider_green_from_b(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_green_from_b(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->grn_ratio[2]), 0.005f, "%2.3f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->grn_ratio[2]), 0.005f, "%2.3f", str, newval);
 }
 
-static INT32 slider_blue_from_r(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_blue_from_r(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->blu_ratio[0]), 0.005f, "%2.3f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->blu_ratio[0]), 0.005f, "%2.3f", str, newval);
 }
 
-static INT32 slider_blue_from_g(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_blue_from_g(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->blu_ratio[1]), 0.005f, "%2.3f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->blu_ratio[1]), 0.005f, "%2.3f", str, newval);
 }
 
-static INT32 slider_blue_from_b(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_blue_from_b(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->blu_ratio[2]), 0.005f, "%2.3f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->blu_ratio[2]), 0.005f, "%2.3f", str, newval);
 }
 
-static INT32 slider_red_offset(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_red_offset(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->offset[0]), 0.01f, "%2.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->offset[0]), 0.01f, "%2.2f", str, newval);
 }
 
-static INT32 slider_green_offset(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_green_offset(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->offset[1]), 0.01f, "%2.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->offset[1]), 0.01f, "%2.2f", str, newval);
 }
 
-static INT32 slider_blue_offset(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_blue_offset(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->offset[2]), 0.01f, "%2.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->offset[2]), 0.01f, "%2.2f", str, newval);
 }
 
-static INT32 slider_red_scale(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_red_scale(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->scale[0]), 0.01f, "%2.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->scale[0]), 0.01f, "%2.2f", str, newval);
 }
 
-static INT32 slider_green_scale(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_green_scale(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->scale[1]), 0.01f, "%2.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->scale[1]), 0.01f, "%2.2f", str, newval);
 }
 
-static INT32 slider_blue_scale(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_blue_scale(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->scale[2]), 0.01f, "%2.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->scale[2]), 0.01f, "%2.2f", str, newval);
 }
 
-static INT32 slider_red_power(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_red_power(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->power[0]), 0.05f, "%2.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->power[0]), 0.05f, "%2.2f", str, newval);
 }
 
-static INT32 slider_green_power(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_green_power(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->power[1]), 0.05f, "%2.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->power[1]), 0.05f, "%2.2f", str, newval);
 }
 
-static INT32 slider_blue_power(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_blue_power(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->power[2]), 0.05f, "%2.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->power[2]), 0.05f, "%2.2f", str, newval);
 }
 
-static INT32 slider_red_floor(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_red_floor(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->floor[0]), 0.01f, "%2.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->floor[0]), 0.01f, "%2.2f", str, newval);
 }
 
-static INT32 slider_green_floor(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_green_floor(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->floor[1]), 0.01f, "%2.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->floor[1]), 0.01f, "%2.2f", str, newval);
 }
 
-static INT32 slider_blue_floor(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_blue_floor(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->floor[2]), 0.01f, "%2.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->floor[2]), 0.01f, "%2.2f", str, newval);
 }
 
-static INT32 slider_red_phosphor_life(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_red_phosphor_life(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->phosphor[0]), 0.01f, "%2.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->phosphor[0]), 0.01f, "%2.2f", str, newval);
 }
 
-static INT32 slider_green_phosphor_life(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_green_phosphor_life(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->phosphor[1]), 0.01f, "%2.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->phosphor[1]), 0.01f, "%2.2f", str, newval);
 }
 
-static INT32 slider_blue_phosphor_life(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_blue_phosphor_life(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->phosphor[2]), 0.01f, "%2.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->phosphor[2]), 0.01f, "%2.2f", str, newval);
 }
 
-static INT32 slider_saturation(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_saturation(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->saturation), 0.01f, "%2.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->saturation), 0.01f, "%2.2f", str, newval);
 }
 
-static INT32 slider_vector_attenuation(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_vector_attenuation(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->vector_length_scale), 0.01f, "%1.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->vector_length_scale), 0.01f, "%1.2f", str, newval);
 }
 
-static INT32 slider_vector_length_max(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_vector_length_max(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->vector_length_ratio), 1.0f, "%4f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->vector_length_ratio), 1.0f, "%4f", str, newval);
 }
 
-static INT32 slider_vector_bloom_scale(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_vector_bloom_scale(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->vector_bloom_scale), 0.001f, "%1.3f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->vector_bloom_scale), 0.001f, "%1.3f", str, newval);
 }
 
-static INT32 slider_raster_bloom_scale(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_raster_bloom_scale(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->raster_bloom_scale), 0.001f, "%1.3f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->raster_bloom_scale), 0.001f, "%1.3f", str, newval);
 }
 
-static INT32 slider_bloom_lvl0_scale(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_bloom_lvl0_scale(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->bloom_level0_weight), 0.01f, "%1.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->bloom_level0_weight), 0.01f, "%1.2f", str, newval);
 }
 
-static INT32 slider_bloom_lvl1_scale(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_bloom_lvl1_scale(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->bloom_level1_weight), 0.01f, "%1.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->bloom_level1_weight), 0.01f, "%1.2f", str, newval);
 }
 
-static INT32 slider_bloom_lvl2_scale(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_bloom_lvl2_scale(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->bloom_level2_weight), 0.01f, "%1.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->bloom_level2_weight), 0.01f, "%1.2f", str, newval);
 }
 
-static INT32 slider_bloom_lvl3_scale(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_bloom_lvl3_scale(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->bloom_level3_weight), 0.01f, "%1.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->bloom_level3_weight), 0.01f, "%1.2f", str, newval);
 }
 
-static INT32 slider_bloom_lvl4_scale(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_bloom_lvl4_scale(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->bloom_level4_weight), 0.01f, "%1.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->bloom_level4_weight), 0.01f, "%1.2f", str, newval);
 }
 
-static INT32 slider_bloom_lvl5_scale(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_bloom_lvl5_scale(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->bloom_level5_weight), 0.01f, "%1.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->bloom_level5_weight), 0.01f, "%1.2f", str, newval);
 }
 
-static INT32 slider_bloom_lvl6_scale(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_bloom_lvl6_scale(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->bloom_level6_weight), 0.01f, "%1.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->bloom_level6_weight), 0.01f, "%1.2f", str, newval);
 }
 
-static INT32 slider_bloom_lvl7_scale(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_bloom_lvl7_scale(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->bloom_level7_weight), 0.01f, "%1.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->bloom_level7_weight), 0.01f, "%1.2f", str, newval);
 }
 
-static INT32 slider_bloom_lvl8_scale(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_bloom_lvl8_scale(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->bloom_level8_weight), 0.01f, "%1.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->bloom_level8_weight), 0.01f, "%1.2f", str, newval);
 }
 
-static INT32 slider_bloom_lvl9_scale(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_bloom_lvl9_scale(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->bloom_level9_weight), 0.01f, "%1.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->bloom_level9_weight), 0.01f, "%1.2f", str, newval);
 }
 
-static INT32 slider_bloom_lvl10_scale(running_machine &machine, void *arg, astring *string, INT32 newval)
+static INT32 slider_bloom_lvl10_scale(running_machine &machine, void *arg, astring *str, INT32 newval)
 {
 	((hlsl_options*)arg)->params_dirty = true;
-	return slider_set(&(((hlsl_options*)arg)->bloom_level10_weight), 0.01f, "%1.2f", string, newval);
+	return slider_set(&(((hlsl_options*)arg)->bloom_level10_weight), 0.01f, "%1.2f", str, newval);
 }
 
 //============================================================
@@ -3402,12 +3402,12 @@ static file_error open_next(d3d::renderer *d3d, emu_file &file, const char *temp
 
 	// handle %d in the template (for image devices)
 	astring snapdev("%d_");
-	int pos = snapstr.find(0, snapdev);
+	int pos = snapstr.find(0, snapdev.c_str());
 
 	if (pos != -1)
 	{
 		// if more %d are found, revert to default and ignore them all
-		if (snapstr.find(pos + 3, snapdev) != -1)
+		if (snapstr.find(pos + 3, snapdev.c_str()) != -1)
 			snapstr.cpy("%g/%i");
 		// else if there is a single %d, try to create the correct snapname
 		else
@@ -3453,7 +3453,7 @@ static file_error open_next(d3d::renderer *d3d, emu_file &file, const char *temp
 						filename.substr(0, filename.rchr(0, '.'));
 
 						// setup snapname and remove the %d_
-						snapstr.replace(0, snapdevname, filename);
+						snapstr.replace(0, snapdevname.c_str(), filename.c_str());
 						snapstr.del(pos, 3);
 
 						name_found = 1;
@@ -3489,10 +3489,10 @@ static file_error open_next(d3d::renderer *d3d, emu_file &file, const char *temp
 		for (int seq = 0; ; seq++)
 		{
 			// build up the filename
-			fname.cpy(snapstr).replace(0, "%i", seqtext.format("%04d_%d", seq, idx).cstr());
+			fname.cpy(snapstr).replace(0, "%i", seqtext.format("%04d_%d", seq, idx).c_str());
 
 			// try to open the file; stop when we fail
-			file_error filerr = file.open(fname);
+			file_error filerr = file.open(fname.c_str());
 			if (filerr != FILERR_NONE)
 				break;
 		}
@@ -3500,5 +3500,5 @@ static file_error open_next(d3d::renderer *d3d, emu_file &file, const char *temp
 
 	// create the final file
 	file.set_openflags(origflags);
-	return file.open(fname);
+	return file.open(fname.c_str());
 }

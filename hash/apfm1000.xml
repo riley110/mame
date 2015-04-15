@@ -1,11 +1,13 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="apfm1000" description="APF M-1000 cartridges">
-	<software name="backgamm" supported="no">
+
+	<software name="backgamm">
 		<description>Backgammon</description>
 		<year>1979</year>
 		<publisher>APF</publisher>
 		<info name="serial" value="MG1008" />
+
 		<part name="cart" interface="apfm1000_cart">
 			<feature name="slot" value="std" />
 			<dataarea name="rom" size="4096">
@@ -14,11 +16,12 @@
 		</part>
 	</software>
 
-	<software name="baseball" supported="no">
+	<software name="baseball">
 		<description>Baseball</description>
 		<year>1979</year>
 		<publisher>APF</publisher>
 		<info name="serial" value="MG1006" />
+
 		<part name="cart" interface="apfm1000_cart">
 			<feature name="slot" value="std" />
 			<dataarea name="rom" size="4096">
@@ -27,11 +30,12 @@
 		</part>
 	</software>
 
-	<software name="blckjack" supported="no">
+	<software name="blckjack">
 		<description>Blackjack</description>
 		<year>1979</year>
 		<publisher>APF</publisher>
 		<info name="serial" value="MG1007" />
+
 		<part name="cart" interface="apfm1000_cart">
 			<feature name="slot" value="std" />
 			<dataarea name="rom" size="4096">
@@ -40,11 +44,12 @@
 		</part>
 	</software>
 
-	<software name="bowling" supported="no">
+	<software name="bowling">
 		<description>Bowling / Micro Match</description>
 		<year>1979</year>
 		<publisher>APF</publisher>
 		<info name="serial" value="MG1004" />
+
 		<part name="cart" interface="apfm1000_cart">
 			<feature name="slot" value="std" />
 			<dataarea name="rom" size="4096">
@@ -58,6 +63,7 @@
 		<year>1979</year>
 		<publisher>APF</publisher>
 		<info name="serial" value="MG1012" />
+
 		<part name="cart" interface="apfm1000_cart">
 			<feature name="slot" value="std" />
 			<dataarea name="rom" size="4096">
@@ -71,6 +77,7 @@
 		<year>1979</year>
 		<publisher>APF</publisher>
 		<info name="serial" value="MG1005" />
+
 		<part name="cart" interface="apfm1000_cart">
 			<feature name="slot" value="std" />
 			<dataarea name="rom" size="2048">
@@ -84,6 +91,7 @@
 		<year>1979</year>
 		<publisher>APF</publisher>
 		<info name="serial" value="MG1009" />
+
 		<part name="cart" interface="apfm1000_cart">
 			<feature name="slot" value="std" />
 			<dataarea name="rom" size="4096">
@@ -97,6 +105,7 @@
 		<year>1979</year>
 		<publisher>APF</publisher>
 		<info name="serial" value="MG1001" />
+
 		<part name="cart" interface="apfm1000_cart">
 			<feature name="slot" value="std" />
 			<dataarea name="rom" size="2048">
@@ -105,11 +114,12 @@
 		</part>
 	</software>
 
-	<software name="catenaa">
+	<software name="catenaa" cloneof="catena">
 		<description>Catena (Alt)</description>
 		<year>1979</year>
 		<publisher>APF</publisher>
 		<info name="serial" value="MG1002" />
+
 		<part name="cart" interface="apfm1000_cart">
 			<feature name="slot" value="std" />
 			<dataarea name="rom" size="2048">
@@ -118,11 +128,12 @@
 		</part>
 	</software>
 
-	<software name="hangman" supported="no">
+	<software name="hangman">
 		<description>Hangman / Tic Tac Toe / Doodle</description>
 		<year>1979</year>
 		<publisher>APF</publisher>
 		<info name="serial" value="MG1003" />
+
 		<part name="cart" interface="apfm1000_cart">
 			<feature name="slot" value="std" />
 			<dataarea name="rom" size="4096">
@@ -131,11 +142,12 @@
 		</part>
 	</software>
 
-	<software name="pinball" supported="no">
+	<software name="pinball">
 		<description>Pinball / Dungeon Hunt / Blockout</description>
 		<year>1979</year>
 		<publisher>APF</publisher>
 		<info name="serial" value="MG1011" />
+
 		<part name="cart" interface="apfm1000_cart">
 			<feature name="slot" value="std" />
 			<dataarea name="rom" size="4096">
@@ -144,29 +156,21 @@
 		</part>
 	</software>
 
-	<software name="spacedst" supported="no">
+	<!--
+	Space Destroyers has a 2K ROM, a 4K ROM, and 1K RAM.
+	Memory map of the chips inside Space Destroyers:
+	$8000 to $87FF 2k ROM (32768 to 34815)
+	$8800 to $8FFF 2k ROM (34816 to 36863)
+	$9000 to $97FF 2k ROM (36864 to 38911)
+	$9800 to $9BFF 1k RAM (38912 to 39935)
+	$9C00 to $9FFF 1k empty space (39936 to 40959)
+	-->
+	<software name="spacedst">
 		<description>Space Destroyers</description>
 		<year>1979</year>
 		<publisher>APF</publisher>
 		<info name="serial" value="MG1013" />
-<!--
 
-Space Destroyers has a 2K ROM, a 4K ROM, and 1K RAM.  Here's the memory address:
-
-Memory map of the chips inside Space Destroyers:
-
-
-$8000 to $87FF 2k ROM (32768 to 34815)
-
-$8800 to $8FFF 2k ROM (34816 to 36863)
-
-$9000 to $97FF 2k ROM (36864 to 38911)
-
-$9800 to $9BFF 1k RAM (38912 to 39935)
-
-$9C00 to $9FFF 1k empty space (39936 to 40959)
-
--->
 		<part name="cart" interface="apfm1000_cart">
 			<feature name="slot" value="spacedst"/>
 			<dataarea name="rom" size="8192">
@@ -183,6 +187,7 @@ $9C00 to $9FFF 1k empty space (39936 to 40959)
 		<year>1979</year>
 		<publisher>APF</publisher>
 		<info name="serial" value="MG1010" />
+
 		<part name="cart" interface="apfm1000_cart">
 			<feature name="slot" value="std" />
 			<dataarea name="rom" size="4096">
@@ -197,6 +202,7 @@ $9C00 to $9FFF 1k empty space (39936 to 40959)
 		<description>Character Dump</description>
 		<year>2010</year>
 		<publisher>Adam Trionfo</publisher>
+
 		<part name="cart" interface="apfm1000_cart">
 			<feature name="slot" value="std" />
 			<dataarea name="rom" size="4096">
@@ -205,23 +211,11 @@ $9C00 to $9FFF 1k empty space (39936 to 40959)
 		</part>
 	</software>
 
-<!-- columns can only run on the apfimag, and option 3 needs 16K -->
-	<software name="columns" supported="no">
-		<description>Columns / Targets / Bacteria / Autopista</description>
-		<year>1995</year>
-		<publisher>Enrique Collado</publisher>
-		<part name="cart" interface="apfm1000_cart">
-			<feature name="ram" value="16"/>
-			<dataarea name="rom" size="4096">
-				<rom name="columns.bin" size="3733" crc="71c2955c" sha1="7e571e32ff05c92c7be7d2e42a0868538a7c5800" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="movblock">
 		<description>Move Block</description>
 		<year>2010</year>
 		<publisher>Adam Trionfo</publisher>
+
 		<part name="cart" interface="apfm1000_cart">
 			<feature name="slot" value="std" />
 			<dataarea name="rom" size="4096">
@@ -234,6 +228,7 @@ $9C00 to $9FFF 1k empty space (39936 to 40959)
 		<description>Move Block 2</description>
 		<year>2010</year>
 		<publisher>Adam Trionfo</publisher>
+
 		<part name="cart" interface="apfm1000_cart">
 			<feature name="slot" value="std" />
 			<dataarea name="rom" size="4096">
@@ -246,40 +241,11 @@ $9C00 to $9FFF 1k empty space (39936 to 40959)
 		<description>Read PIA</description>
 		<year>2010</year>
 		<publisher>Adam Trionfo</publisher>
+
 		<part name="cart" interface="apfm1000_cart">
 			<feature name="slot" value="std" />
 			<dataarea name="rom" size="4096">
 				<rom name="readpia.bin" size="4096" crc="700c1e39" sha1="701c4f8a9fc20c8f28a5c0562592ed873d9d9ab4" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-<!-- apfimag only -->
-
-	<software name="basic">
-		<description>APF Basic</description>
-		<year>1979</year>
-		<publisher>APF</publisher>
-		<info name="serial" value="AL100A" />
-		<part name="cart" interface="apfm1000_cart">
-			<feature name="slot" value="basic"/>
-			<dataarea name="rom" size="12288">
-				<rom name="basic_80.rom" size="8192" crc="a4c69fae" sha1="7f98aa482589bf7c5a26d338fec105e797ba43f6" offset="0" />
-				<rom name="basic_68.rom" size="4096" crc="5f30370b" sha1="cf11bd975749b88df4d82cd460035cb92563ceff" offset="0x2000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="ebasic">
-		<description>Extended Basic</description>
-		<year>1983</year>
-		<publisher>R.L. Recker</publisher>
-		<part name="cart" interface="apfm1000_cart">
-			<feature name="slot" value="basic"/>
-			<dataarea name="rom" size="14336">
-				<rom name="basic_80.bin" size="8192" crc="3fefbd81" sha1="d8c3ea8a152da50f71b98c464f47919e16743d29" offset="0" />
-				<rom name="basic_68.bin" size="4096" crc="e99b5102" sha1="62a79dc5f25a60d9007c90adf778fba432dfb900" offset="0x2000" />
-				<rom name="basic_78.bin" size="2048" crc="fdcf7782" sha1="aa0b94182920a232c1e2fb7e3a4d9042511572c4" offset="0x3000" />
 			</dataarea>
 		</part>
 	</software>

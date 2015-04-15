@@ -260,11 +260,11 @@ void emu_timer::register_save()
 	}
 
 	// save the bits
-	machine().save().save_item(m_device, "timer", name, index, NAME(m_param));
-	machine().save().save_item(m_device, "timer", name, index, NAME(m_enabled));
-	machine().save().save_item(m_device, "timer", name, index, NAME(m_period));
-	machine().save().save_item(m_device, "timer", name, index, NAME(m_start));
-	machine().save().save_item(m_device, "timer", name, index, NAME(m_expire));
+	machine().save().save_item(m_device, "timer", name.c_str(), index, NAME(m_param));
+	machine().save().save_item(m_device, "timer", name.c_str(), index, NAME(m_enabled));
+	machine().save().save_item(m_device, "timer", name.c_str(), index, NAME(m_period));
+	machine().save().save_item(m_device, "timer", name.c_str(), index, NAME(m_start));
+	machine().save().save_item(m_device, "timer", name.c_str(), index, NAME(m_expire));
 }
 
 
@@ -755,13 +755,13 @@ void device_scheduler::rebuild_execute_list()
 		// if the configuration specifies a device to make perfect, pick that as the minimum
 		if (machine().config().m_perfect_cpu_quantum)
 		{
-			device_t *device = machine().device(machine().config().m_perfect_cpu_quantum);
+			device_t *device = machine().device(machine().config().m_perfect_cpu_quantum.c_str());
 			if (device == NULL)
-				fatalerror("Device '%s' specified for perfect interleave is not present!\n", machine().config().m_perfect_cpu_quantum.cstr());
+				fatalerror("Device '%s' specified for perfect interleave is not present!\n", machine().config().m_perfect_cpu_quantum.c_str());
 
 			device_execute_interface *exec;
 			if (!device->interface(exec))
-				fatalerror("Device '%s' specified for perfect interleave is not an executing device!\n", machine().config().m_perfect_cpu_quantum.cstr());
+				fatalerror("Device '%s' specified for perfect interleave is not an executing device!\n", machine().config().m_perfect_cpu_quantum.c_str());
 
 			min_quantum = min(attotime(0, exec->minimum_quantum()), min_quantum);
 		}

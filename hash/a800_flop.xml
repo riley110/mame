@@ -1,15 +1,16 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <!--
-    Atari 400 / 800 floppies
-    (skeleton list)
+Atari 400 / 800 floppies (skeleton list)
 
-    note: many 'original' floppy images are in .atx format, whereas cracked / unprotected ones are .atr format
-          .atx is unsupported, although apparently has been reverse engineered (insert info link here)
-          There are also images in .xex format?
-
+Notes:
+Many 'original' floppy images are in .atx format, whereas cracked / unprotected ones are .atr format
+.atx is unsupported, although apparently has been reverse engineered (insert info link here)
+There are also images in .xex format, which should be handled as a quickload
 -->
 <softwarelist name="a800_flop" description="Atari 400 / 800 floppy disks">
+
+<!-- Non-TOSEC software -->
 
 	<software name="jumpman">
 		<description>Jumpman</description>

@@ -56,13 +56,13 @@ void ui_menu_barcode_reader::populate()
 		const char *new_barcode;
 
 		// selected device
-		item_append(current_display_name(), "", current_display_flags(), ITEMREF_SELECT_READER);
+		item_append(current_display_name().c_str(), "", current_display_flags(), ITEMREF_SELECT_READER);
 
 		// append the "New Barcode" item
 		if (get_selection() == ITEMREF_NEW_BARCODE)
 		{
 			buffer.cat(m_barcode_buffer);
-			new_barcode = buffer;
+			new_barcode = buffer.c_str();
 		}
 		else
 		{
@@ -118,7 +118,7 @@ void ui_menu_barcode_reader::handle()
 						machine().ui().popup_time(5, "Barcode length invalid!");
 					else
 					{
-						current_device()->write_code(tmp_file.cstr(), tmp_file.len());
+						current_device()->write_code(tmp_file.c_str(), tmp_file.len());
 						// if sending was successful, reset char buffer
 						if (m_barcode_buffer[0] != '\0')
 							memset(m_barcode_buffer, '\0', ARRAY_LENGTH(m_barcode_buffer));

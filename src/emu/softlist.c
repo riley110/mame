@@ -149,14 +149,14 @@ bool software_part::is_compatible(const software_list_device &swlistdev) const
 		return true;
 
 	// copy the comma-delimited strings and ensure they end with a final comma
-	astring comp(compatibility, ",");
-	astring filt(filter, ",");
+	astring comp = astring(compatibility).cat(",");
+	astring filt = astring(filter).cat(",");
 
 	// iterate over filter items and see if they exist in the compatibility list; if so, return true
 	for (int start = 0, end = filt.chr(start, ','); end != -1; start = end + 1, end = filt.chr(start, ','))
 	{
 		astring token(filt, start, end - start + 1);
-		if (comp.find(0, token) != -1)
+		if (comp.find(0, token.c_str()) != -1)
 			return true;
 	}
 	return false;
@@ -175,11 +175,11 @@ bool software_part::matches_interface(const char *interface_list) const
 		return true;
 
 	// copy the comma-delimited interface list and ensure it ends with a final comma
-	astring interfaces(interface_list, ",");
+	astring interfaces = astring(interface_list).cat(",");
 
 	// then add a comma to the end of our interface and return true if we find it in the list string
-	astring our_interface(m_interface, ",");
-	return (interfaces.find(0, our_interface) != -1);
+	astring our_interface = astring(m_interface).cat(",");
+	return (interfaces.find(0, our_interface.c_str()) != -1);
 }
 
 
@@ -476,7 +476,7 @@ void software_list_device::parse()
 	m_errors.reset();
 
 	// attempt to open the file
-	file_error filerr = m_file.open(m_list_name, ".xml");
+	file_error filerr = m_file.open(m_list_name.c_str(), ".xml");
 	if (filerr == FILERR_NONE)
 	{
 		// parse if no error
@@ -500,7 +500,7 @@ void software_list_device::device_validity_check(validity_checker &valid) const
 {
 	// add to the global map whenever we check a list so we don't re-check
 	// it in the future
-	if (valid.already_checked(astring("softlist/", m_list_name.cstr())))
+	if (valid.already_checked(astring("softlist/").cat(m_list_name.c_str()).c_str()))
 		return;
 
 	// do device validation only in case of validate command
@@ -565,7 +565,7 @@ void software_list_device::internal_validity_check(validity_checker &valid)
 		}
 
 		// check for duplicate descriptions
-		if (descriptions.add(astring(swinfo->longname()).makelower().cstr(), swinfo, false) == TMERR_DUPLICATE)
+		if (descriptions.add(astring(swinfo->longname()).makelower().c_str(), swinfo, false) == TMERR_DUPLICATE)
 			osd_printf_error("%s: %s is a duplicate description (%s)\n", filename(), swinfo->longname(), swinfo->shortname());
 
 		bool is_clone = false;
@@ -1172,7 +1172,7 @@ void softlist_parser::parse_data_start(const char *tagname, const char **attribu
 				else if (loadflag != NULL && strcmp(loadflag, "load32_byte") == 0)
 					romflags = ROM_SKIP(3);
 
-				add_rom_entry(name, hashdata, offset, length, ROMENTRYTYPE_ROM | romflags);
+				add_rom_entry(name, hashdata.c_str(), offset, length, ROMENTRYTYPE_ROM | romflags);
 			}
 			else
 				parse_error("Rom name missing");
@@ -1200,7 +1200,7 @@ void softlist_parser::parse_data_start(const char *tagname, const char **attribu
 			astring hashdata;
 			hashdata.printf( "%c%s%s", hash_collection::HASH_SHA1, sha1, (nodump ? NO_DUMP : (baddump ? BAD_DUMP : "")));
 
-			add_rom_entry(name, hashdata, 0, 0, ROMENTRYTYPE_ROM | (writeable ? DISK_READWRITE : DISK_READONLY));
+			add_rom_entry(name, hashdata.c_str(), 0, 0, ROMENTRYTYPE_ROM | (writeable ? DISK_READWRITE : DISK_READONLY));
 		}
 		else if (status == NULL || !strcmp(status, "nodump")) // a no_dump chd is not an incomplete entry
 			parse_error("Incomplete disk definition");
@@ -1225,15 +1225,15 @@ void softlist_parser::parse_soft_end(const char *tagname)
 
 	// <description>
 	if (strcmp(tagname, "description") == 0)
-		m_current_info->m_longname = m_list.add_string(m_data_accum);
+		m_current_info->m_longname = m_list.add_string(m_data_accum.c_str());
 
 	// <year>
 	else if (strcmp(tagname, "year") == 0)
-		m_current_info->m_year = m_list.add_string(m_data_accum);
+		m_current_info->m_year = m_list.add_string(m_data_accum.c_str());
 
 	// <publisher>
 	else if (strcmp(tagname, "publisher") == 0)
-		m_current_info->m_publisher = m_list.add_string(m_data_accum);
+		m_current_info->m_publisher = m_list.add_string(m_data_accum.c_str());
 
 	// </part>
 	else if (strcmp(tagname, "part") == 0)

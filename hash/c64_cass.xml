@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<!-- based on c64tapes.org dumps -->
 <softwarelist name="c64_cass" description="Commodore 64 cassettes">
+
+<!-- c64tapes.org dumps -->
 
 	<software name="jacknip2">
 		<description>Jack the Nipper II: In Coconut Capers</description>
@@ -14,6 +15,8 @@
 			</dataarea>
 		</part>
 	</software>
+
+<!-- Misc dumps to test external hardware -->
 
 	<software name="cmk49">
 		<description>CMK 49 Computer Musical Keyboard</description>
@@ -66,21 +69,18 @@
 				<rom name="get_ready_to_read_with_bj_bear_level_1.tap" size="970430" crc="a7d4dd62" sha1="f0f6812903bc4dd5911bb539bbe4f2f8cd7587b1" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="cass2" interface="cbm_cass">
 			<feature name="part_id" value="Level 2"/>
 			<dataarea name="cass" size="1011790">
 				<rom name="get_ready_to_read_with_bj_bear_level_2.tap" size="1011790" crc="1eefb4bc" sha1="02ec52cab63fa236acc44f43de51edad496a438a" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="cass3" interface="cbm_cass">
 			<feature name="part_id" value="Level 3"/>
 			<dataarea name="cass" size="1117066">
 				<rom name="get_ready_to_read_with_bj_bear_level_3.tap" size="1117066" crc="edb07330" sha1="6fed14fc5cc3e27ce658bf1d26713257d4b8a5f0" offset="0" />
 			</dataarea>
 		</part>
-
 		<part name="cass4" interface="cbm_cass">
 			<feature name="part_id" value="Level 4"/>
 			<dataarea name="cass" size="1165314">

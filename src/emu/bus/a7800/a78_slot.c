@@ -68,7 +68,7 @@ void device_a78_cart_interface::rom_alloc(UINT32 size, const char *tag)
 	{
 		astring tempstring(tag);
 		tempstring.cat(A78SLOT_ROM_REGION_TAG);
-		m_rom = device().machine().memory().region_alloc(tempstring, size, 1, ENDIANNESS_LITTLE)->base();
+		m_rom = device().machine().memory().region_alloc(tempstring.c_str(), size, 1, ENDIANNESS_LITTLE)->base();
 		m_rom_size = size;
 
 		// setup other helpers
@@ -812,7 +812,7 @@ void a78_cart_slot_device::internal_header_logging(UINT8 *header, UINT32 len)
 	logerror( "==============\n\n" );
 	logerror( "\tTitle:           %.32s\n", head_title);
 	logerror( "\tLength:          0x%X [real 0x%X]\n", head_length, len);
-	logerror( "\tMapper:          %s [0x%X]\n", cart_mapper.cstr(), head_mapper);
+	logerror( "\tMapper:          %s [0x%X]\n", cart_mapper.c_str(), head_mapper);
 	logerror( "\t\tPOKEY:           %s\n", BIT(head_mapper, 0) ? "Yes" : "No");
 	logerror( "\t\tSC Bankswitch:   %s\n", BIT(head_mapper, 1) ? "Yes" : "No");
 	logerror( "\t\tRAM at $4000:    %s\n", BIT(head_mapper, 2) ? "Yes" : "No");
@@ -827,7 +827,7 @@ void a78_cart_slot_device::internal_header_logging(UINT8 *header, UINT32 len)
 	}
 	else
 		logerror( "\n");
-	logerror( "\tController 1:    0x%.2X [%s]\n", head_ctrl1, ctrl1.cstr());
-	logerror( "\tController 2:    0x%.2X [%s]\n", head_ctrl2, ctrl2.cstr());
+	logerror( "\tController 1:    0x%.2X [%s]\n", head_ctrl1, ctrl1.c_str());
+	logerror( "\tController 2:    0x%.2X [%s]\n", head_ctrl2, ctrl2.c_str());
 	logerror( "\tVideo:           %s\n", (head_ispal) ? "PAL" : "NTSC");
 }

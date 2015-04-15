@@ -1,35 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<softwarelist name="adam_cart" description="Coleco Adam cartridges">
-
-	<!--software name="adamdev" supported="no">
-	    <description>ADAM Dev (Prototype)</description>
-	    <year>198?</year>
-	    <publisher>Coleco?</publisher>
-
-	    <part name="cart" interface="coleco_cart">
-	        <dataarea name="rom" size="24576">
-	            <rom name="51c9-chip1-12-6-84.bin" size="8192" crc="148c7b1d" sha1="fd32bd9bc6053b263cfc51267e0ef3f7305df121" offset="0x0000" />
-	            <rom name="51c9-chip2-12-6-84.bin" size="8192" crc="4fbea31a" sha1="e17f817f1ab89a8b2c6d8dc2790ffb042da47df3" offset="0x2000" />
-	            <rom name="51c9-chip3-12-6-84.bin" size="8192" crc="0b418ba1" sha1="6cc84dd6dbe9e3e4f3be35695d89ef3d6e1c1244" offset="0x4000" />
-	            <rom name="51c9-chip4-12-6-84.bin" size="8192" crc="653ff925" sha1="0df057b7b1dcd969411abb1f084cb8354013103a" offset="0x6000" />
-	        </dataarea>
-	    </part>
-	</software-->
-
-	<software name="ard" supported="no">
-		<description>ADAM Resident Debugger (Prototype Rev20)</description>
-		<year>198?</year>
-		<publisher>Coleco?</publisher>
-
-		<part name="cart" interface="coleco_cart">
-			<dataarea name="rom" size="0x6000">
-				<rom name="ardrev20-chip1-10-31-6a1a.bin" size="0x2000" crc="4667ea7e" sha1="99543b5fc1b85fa1e543f9a8f96681988d96c4cc" offset="0x0000" />
-				<rom name="ardrev20-chip2-10-31-f5f6.bin" size="0x2000" crc="e6e2dcad" sha1="1ce45aeba3eba6cb8b277d8ba02b98c82f94e59e" offset="0x2000" />
-				<rom name="ardrev20-chip3-10-31-4ede.bin" size="0x2000" crc="f8dd08eb" sha1="16a6c0c66f5bcb8bb67989c951342e691adfd240" offset="0x4000" />
-			</dataarea>
-		</part>
-	</software>
+<softwarelist name="adam_cart" description="Coleco ADAM cartridges">
 
 	<software name="adamdemo">
 		<description>ADAM Demonstration Cartridge</description>
@@ -42,6 +13,23 @@
 			</dataarea>
 		</part>
 	</software>
+
+<!--
+	<software name="adamdev" supported="no">
+	    <description>ADAM Dev (Prototype)</description>
+	    <year>198?</year>
+	    <publisher>Coleco?</publisher>
+
+	    <part name="cart" interface="coleco_cart">
+	        <dataarea name="rom" size="24576">
+	            <rom name="51c9-chip1-12-6-84.bin" size="8192" crc="148c7b1d" sha1="fd32bd9bc6053b263cfc51267e0ef3f7305df121" offset="0x0000" />
+	            <rom name="51c9-chip2-12-6-84.bin" size="8192" crc="4fbea31a" sha1="e17f817f1ab89a8b2c6d8dc2790ffb042da47df3" offset="0x2000" />
+	            <rom name="51c9-chip3-12-6-84.bin" size="8192" crc="0b418ba1" sha1="6cc84dd6dbe9e3e4f3be35695d89ef3d6e1c1244" offset="0x4000" />
+	            <rom name="51c9-chip4-12-6-84.bin" size="8192" crc="653ff925" sha1="0df057b7b1dcd969411abb1f084cb8354013103a" offset="0x6000" />
+	        </dataarea>
+	    </part>
+	</software>
+-->
 
 	<software name="adamdiag">
 		<description>ADAM Diagnostics</description>
@@ -103,6 +91,56 @@
 		</part>
 	</software>
 
+	<software name="ard" supported="no">
+		<description>ADAM Resident Debugger (Prototype Rev. 20)</description>
+		<year>198?</year>
+		<publisher>Coleco?</publisher>
+
+		<part name="cart" interface="coleco_cart">
+			<dataarea name="rom" size="0x6000">
+				<rom name="ardrev20-chip1-10-31-6a1a.bin" size="0x2000" crc="4667ea7e" sha1="99543b5fc1b85fa1e543f9a8f96681988d96c4cc" offset="0x0000" />
+				<rom name="ardrev20-chip2-10-31-f5f6.bin" size="0x2000" crc="e6e2dcad" sha1="1ce45aeba3eba6cb8b277d8ba02b98c82f94e59e" offset="0x2000" />
+				<rom name="ardrev20-chip3-10-31-4ede.bin" size="0x2000" crc="f8dd08eb" sha1="16a6c0c66f5bcb8bb67989c951342e691adfd240" offset="0x4000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="adamtape">
+		<description>ADAM Tape Util (Rev. 22)</description>
+		<year>1982</year>
+		<publisher>Coleco</publisher>
+
+		<part name="cart" interface="coleco_cart">
+			<dataarea name="rom" size="0x2000">
+				<rom name="adam tape util rev. 22 (1984) (coleco).rom" size="0x2000" crc="f235aba4" sha1="4db424c25c6ee010850e6783c844ad75bebf0359" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="blankddp">
+		<description>Blank DDP Restorer (v1.4)</description>
+		<year>198?</year>
+		<publisher>Coleco</publisher>
+
+		<part name="cart" interface="coleco_cart">
+			<dataarea name="rom" size="0x2000">
+				<rom name="blank ddp restorer rev. 1.4 (198x) (coleco).rom" size="0x2000" crc="c63b6cb1" sha1="0aebe6ded955092cfbb13820ee1d07580dd1999f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="buckddp">
+		<description>Buck Rogers DDP Restorer (v1.4)</description>
+		<year>198?</year>
+		<publisher>Coleco</publisher>
+
+		<part name="cart" interface="coleco_cart">
+			<dataarea name="rom" size="0x2000">
+				<rom name="buck rogers ddp restorer rev. 1.4 (198x) (coleco).rom" size="0x2000" crc="60e433e7" sha1="ae6ebb1b2d05e49e301a26098c9b5995f2291d43" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="burnddp">
 		<description>Data Drive Burn-In DDP Test</description>
 		<year>198?</year>
@@ -115,31 +153,7 @@
 		</part>
 	</software>
 
-	<software name="ddpblank">
-		<description>Blank DDP Restorer (v1.4)</description>
-		<year>198?</year>
-		<publisher>Coleco</publisher>
-
-		<part name="cart" interface="coleco_cart">
-			<dataarea name="rom" size="0x2000">
-				<rom name="blank ddp restorer rev. 1.4 (198x) (coleco).rom" size="0x2000" crc="c63b6cb1" sha1="0aebe6ded955092cfbb13820ee1d07580dd1999f" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="ddpbuck">
-		<description>Buck Rogers DDP Restorer (v1.4)</description>
-		<year>198?</year>
-		<publisher>Coleco</publisher>
-
-		<part name="cart" interface="coleco_cart">
-			<dataarea name="rom" size="0x2000">
-				<rom name="buck rogers ddp restorer rev. 1.4 (198x) (coleco).rom" size="0x2000" crc="60e433e7" sha1="ae6ebb1b2d05e49e301a26098c9b5995f2291d43" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="ddpbasic">
+	<software name="sbasddp">
 		<description>SmartBASIC DDP Restorer (v1.4)</description>
 		<year>198?</year>
 		<publisher>Coleco</publisher>
@@ -147,18 +161,6 @@
 		<part name="cart" interface="coleco_cart">
 			<dataarea name="rom" size="0x2000">
 				<rom name="smartbasic ddp restorer rev. 1.4 (198x) (coleco).rom" size="0x2000" crc="e9ebff89" sha1="0e186358583b23eb6ca88f51bc67b3a568350748" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="adamtape">
-		<description>ADAM Tape Util (v22)</description>
-		<year>1982</year>
-		<publisher>Coleco</publisher>
-
-		<part name="cart" interface="coleco_cart">
-			<dataarea name="rom" size="0x2000">
-				<rom name="adam tape util rev. 22 (1984) (coleco).rom" size="0x2000" crc="f235aba4" sha1="4db424c25c6ee010850e6783c844ad75bebf0359" offset="0" />
 			</dataarea>
 		</part>
 	</software>

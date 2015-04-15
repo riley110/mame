@@ -79,7 +79,7 @@ void debug_view_state::enumerate_sources()
 	for (device_state_interface *state = iter.first(); state != NULL; state = iter.next())
 	{
 		name.printf("%s '%s'", state->device().name(), state->device().tag());
-		m_source_list.append(*global_alloc(debug_view_state_source(name, state->device())));
+		m_source_list.append(*global_alloc(debug_view_state_source(name.c_str(), state->device())));
 	}
 
 	// reset the source to a known good entry
@@ -291,13 +291,13 @@ void debug_view_state::view_update()
 				len += m_divider - 1 - curitem->m_symbol.len();
 			}
 
-			memcpy(&temp[len], curitem->m_symbol.cstr(), curitem->m_symbol.len());
+			memcpy(&temp[len], curitem->m_symbol.c_str(), curitem->m_symbol.len());
 			len += curitem->m_symbol.len();
 
 			temp[len++] = ' ';
 			temp[len++] = ' ';
 
-			memcpy(&temp[len], valstr.cstr(), curitem->m_vallen);
+			memcpy(&temp[len], valstr.c_str(), curitem->m_vallen);
 			len += curitem->m_vallen;
 
 			temp[len++] = ' ';
