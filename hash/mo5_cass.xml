@@ -4471,6 +4471,25 @@
 		</part>
 	</software>
 
+	<software name="imagsign">
+		<description>Image et Signes</description>
+		<year>1985</year>
+		<publisher>Cedic/Nathan</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="cass" size="26161">
+				<rom name="image-et-signes-1_mo5.k7" size="26161" crc="ad5d6c37" sha1="a53ccadb602e6c21017379ead9f3180e98e22d1c" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="cass" size="34866">
+				<rom name="image-et-signes-2_mo5.k7" size="34866" crc="390a62a7" sha1="7fe0f3a548f60a601eb1767bb46c9e8f860fe2ae" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="inequat">
 		<description>Inequations</description>
 		<year>198?</year>
