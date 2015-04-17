@@ -1,6 +1,5 @@
 premake.check_paths = true
 premake.make.override = { "TARGET" }
-premake.make.linkoptions_after = true
 MAME_DIR = (path.getabsolute("..") .. "/")
 local MAME_BUILD_DIR = (MAME_DIR .. "build/")
 local naclToolchain = ""
@@ -747,6 +746,9 @@ if _OPTIONS["OPENMP"]=="1" then
 	buildoptions {
 		"-fopenmp",
 	}
+	linkoptions {
+		"-fopenmp"
+	}
 else
 	buildoptions {
 		"-Wno-unknown-pragmas",
@@ -754,9 +756,9 @@ else
 end
 
 if _OPTIONS["LDOPTS"] then
-		linkoptions {
-			_OPTIONS["LDOPTS"]
-		}
+	linkoptions {
+		_OPTIONS["LDOPTS"]
+	}
 end
 
 if _OPTIONS["MAP"] then
@@ -940,10 +942,6 @@ configuration { "osx*" }
 		links {
 			"pthread",
 		}
-		flags {
-			"Symbols",
-		}
-
 
 configuration { "mingw*" }
 		linkoptions {

@@ -122,6 +122,25 @@ void d64_format::get_disk_id(const format &f, io_generic *io, UINT8 &id1, UINT8 
 	id2 = id[1];
 }
 
+int d64_format::get_image_offset(const format &f, int _head, int _track)
+{
+	int offset = 0;
+	if (_head) {
+		for (int track = 0; track < f.track_count; track++) {
+			offset += compute_track_size(f, track);
+		}
+	}
+	for (int track = 0; track < _track; track++) {
+		offset += compute_track_size(f, track);
+	}
+	return offset;
+}
+
+int d64_format::compute_track_size(const format &f, int track)
+{
+	return this->get_sectors_per_track(f, track) * f.sector_base_size;
+}
+
 UINT32 d64_format::get_cell_size(const format &f, int track)
 {
 	return cell_size[speed_zone[track]];
@@ -199,13 +218,14 @@ bool d64_format::load(io_generic *io, UINT32 form_factor, floppy_image *image)
 	dynamic_buffer img;
 
 	if(size == (UINT32)f.sector_count*f.sector_base_size) {
-		img.resize_and_clear(size + f.sector_count, ERROR_00);
+		img.resize(size + f.sector_count);
+		memset(&img[0], ERROR_00, size + f.sector_count);
 	}
 	else {
 		img.resize(size);
 	}
 
-	io_generic_read(io, img, 0, size);
+	io_generic_read(io, &img[0], 0, size);
 
 	int track_offset = 0, error_offset = f.sector_count*f.sector_base_size;
 
@@ -230,7 +250,7 @@ bool d64_format::load(io_generic *io, UINT32 form_factor, floppy_image *image)
 
 			desc_s sectors[40];
 
-			build_sector_description(f, img, track_offset, error_offset, sectors, sector_count);
+			build_sector_description(f, &img[0], track_offset, error_offset, sectors, sector_count);
 			generate_track(desc, physical_track, head, sectors, sector_count, total_size, image);
 
 			track_offset += track_size;
@@ -243,9 +263,51 @@ bool d64_format::load(io_generic *io, UINT32 form_factor, floppy_image *image)
 	return true;
 }
 
-bool d64_format::supports_save() const
+bool d64_format::save(io_generic *io, floppy_image *image)
 {
-	return false;
+	const format &f = formats[0];
+
+	for(int head=0; head < f.head_count; head++) {
+		for(int track=0; track < f.track_count; track++) {
+			int sector_count = this->get_sectors_per_track(f, track);
+			int track_size = compute_track_size(f, track);
+			UINT8 sectdata[40*256];
+			desc_s sectors[40];
+			int offset = get_image_offset(f, head, track);
+
+			build_sector_description(f, sectdata, 0, 0, sectors, sector_count);
+			extract_sectors(image, f, sectors, track, head, sector_count);
+			io_generic_write(io, sectdata, offset, track_size);
+		}
+	}
+
+	return true;
+}
+
+void d64_format::extract_sectors(floppy_image *image, const format &f, desc_s *sdesc, int track, int head, int sector_count)
+{
+	UINT8 bitstream[500000/8];
+	UINT8 sectdata[50000];
+	desc_xs sectors[256];
+	int physical_track = this->get_physical_track(f, head, track);
+	int cell_size = this->get_cell_size(f, track);
+	int track_size;
+
+	// Extract the sectors
+	generate_bitstream_from_track(physical_track, head, cell_size, bitstream, track_size, image);
+	extract_sectors_from_bitstream_gcr5(bitstream, track_size, sectors, sectdata, sizeof(sectdata), head, f.track_count);
+
+	for(int i=0; i<sector_count; i++) {
+		desc_s &ds = sdesc[i];
+		desc_xs &xs = sectors[ds.sector_id];
+		if(!xs.data)
+			memset((void *)ds.data, 0, ds.size);
+		else if(xs.size < ds.size) {
+			memcpy((void *)ds.data, xs.data, xs.size);
+			memset((UINT8 *)ds.data + xs.size, 0, xs.size - ds.size);
+		} else
+			memcpy((void *)ds.data, xs.data, ds.size);
+	}
 }
 
 const floppy_format_type FLOPPY_D64_FORMAT = &floppy_image_format_creator<d64_format>;
