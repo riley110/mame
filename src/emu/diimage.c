@@ -210,7 +210,7 @@ const image_device_format *device_image_interface::device_get_named_creatable_fo
 void device_image_interface::clear_error()
 {
 	m_err = IMAGE_ERROR_SUCCESS;
-	if (m_err_message)
+	if (!m_err_message.empty())
 	{
 		m_err_message.reset();
 	}
@@ -236,7 +236,7 @@ static const char *const messages[] =
 
 const char *device_image_interface::error()
 {
-	return (m_err_message) ? m_err_message.c_str() : messages[m_err];
+	return (!m_err_message.empty()) ? m_err_message.c_str() : messages[m_err];
 }
 
 
@@ -351,7 +351,7 @@ void device_image_interface::setup_working_directory()
 const char * device_image_interface::working_directory()
 {
 	/* check to see if we've never initialized the working directory */
-	if (!m_working_directory)
+	if (m_working_directory.empty())
 		setup_working_directory();
 
 	return m_working_directory.c_str();
@@ -573,7 +573,7 @@ image_error_t device_image_interface::load_image_by_path(UINT32 open_flags, cons
 {
 	file_error filerr = FILERR_NOT_FOUND;
 	image_error_t err = IMAGE_ERROR_FILENOTFOUND;
-	astring revised_path;
+	std::string revised_path;
 
 	/* attempt to read the file */
 	filerr = zippath_fopen(path, open_flags, m_file, revised_path);
@@ -627,7 +627,7 @@ int device_image_interface::reopen_for_write(const char *path)
 
 	file_error filerr = FILERR_NOT_FOUND;
 	image_error_t err = IMAGE_ERROR_FILENOTFOUND;
-	astring revised_path;
+	std::string revised_path;
 
 	/* attempt to open the file for writing*/
 	filerr = zippath_fopen(path, OPEN_FLAG_READ|OPEN_FLAG_WRITE|OPEN_FLAG_CREATE, m_file, revised_path);
@@ -900,7 +900,7 @@ bool device_image_interface::load_internal(const char *path, bool is_create, int
 
 				// if we had launched from softlist with a specified part, e.g. "shortname:part"
 				// we would have recorded the wrong name, so record it again based on software_info
-				if (m_software_info_ptr && m_full_software_name)
+				if (m_software_info_ptr && !m_full_software_name.empty())
 					m_err = set_image_filename(m_full_software_name.c_str());
 
 				// check if image should be read-only
@@ -1171,18 +1171,18 @@ void device_image_interface::update_names(const device_type device_type, const c
 //  case.
 //-------------------------------------------------
 
-void device_image_interface::software_name_split(const char *swlist_swname, astring &swlist_name, astring &swname, astring &swpart)
+void device_image_interface::software_name_split(const char *swlist_swname, std::string &swlist_name, std::string &swname, std::string &swpart)
 {
 	// reset all output parameters
-	swlist_name.reset();
-	swname.reset();
-	swpart.reset();
+	swlist_name.clear();
+	swname.clear();
+	swpart.clear();
 
 	// if no colon, this is the swname by itself
 	const char *split1 = strchr(swlist_swname, ':');
 	if (split1 == NULL)
 	{
-		swname.cpy(swlist_swname);
+		swname.assign(swlist_swname);
 		return;
 	}
 
@@ -1190,22 +1190,22 @@ void device_image_interface::software_name_split(const char *swlist_swname, astr
 	const char *split2 = strchr(split1 + 1, ':');
 	if (split2 == NULL)
 	{
-		swname.cpy(swlist_swname, split1 - swlist_swname);
-		swpart.cpy(split1 + 1);
+		swname.assign(swlist_swname, split1 - swlist_swname);
+		swpart.assign(split1 + 1);
 		return;
 	}
 
 	// if two colons present, split into 3 parts
-	swlist_name.cpy(swlist_swname, split1 - swlist_swname);
-	swname.cpy(split1 + 1, split2 - (split1 + 1));
-	swpart.cpy(split2 + 1);
+	swlist_name.assign(swlist_swname, split1 - swlist_swname);
+	swname.assign(split1 + 1, split2 - (split1 + 1));
+	swpart.assign(split2 + 1);
 }
 
 
 software_part *device_image_interface::find_software_item(const char *path, bool restrict_to_interface)
 {
 	// split full software name into software list name and short software name
-	astring swlist_name, swinfo_name, swpart_name;
+	std::string swlist_name, swinfo_name, swpart_name;
 	software_name_split(path, swlist_name, swinfo_name, swpart_name);
 
 	// determine interface
@@ -1217,7 +1217,7 @@ software_part *device_image_interface::find_software_item(const char *path, bool
 	software_list_device_iterator deviter(device().mconfig().root_device());
 	for (software_list_device *swlistdev = deviter.first(); swlistdev != NULL; swlistdev = deviter.next())
 	{
-		if (swlist_name == swlistdev->list_name() || !(swlist_name.len() > 0))
+		if (swlist_name.compare(swlistdev->list_name())==0 || !(swlist_name.length() > 0))
 		{
 			software_info *info = swlistdev->find(swinfo_name.c_str());
 			if (info != NULL)
@@ -1318,19 +1318,19 @@ bool device_image_interface::load_software_part(const char *path, software_part 
 //  software_get_default_slot
 //-------------------------------------------------
 
-void device_image_interface::software_get_default_slot(astring &result, const char *default_card_slot)
+void device_image_interface::software_get_default_slot(std::string &result, const char *default_card_slot)
 {
 	const char *path = device().mconfig().options().value(instance_name());
-	result.reset();
+	result.clear();
 	if (strlen(path) > 0)
 	{
-		result.cpy(default_card_slot);
+		result.assign(default_card_slot);
 		software_part *swpart = find_software_item(path, true);
 		if (swpart != NULL)
 		{
 			const char *slot = swpart->feature("slot");
 			if (slot != NULL)
-				result.cpy(slot);
+				result.assign(slot);
 		}
 	}
 }

@@ -287,6 +287,15 @@ newoption {
 	}
 }
 
+newoption {
+	trigger = "NO_STRIPPING",
+	description = "Stripping.",
+	allowed = {
+		{ "0",   "Enabled" 	},
+		{ "1",   "Disabled"      },
+	}
+}
+
 
 PYTHON = "python"
 
@@ -749,6 +758,10 @@ if _OPTIONS["OPENMP"]=="1" then
 	linkoptions {
 		"-fopenmp"
 	}
+	defines {
+		"USE_OPENMP=1",
+	}
+	
 else
 	buildoptions {
 		"-Wno-unknown-pragmas",
@@ -902,6 +915,9 @@ configuration { "asmjs" }
 	archivesplit_size "20"
 
 configuration { "android*" }
+	buildoptions {
+		"-Wno-undef",
+	}
 	buildoptions_cpp {
 		"-x c++",
 		"-std=gnu++98",
@@ -1132,11 +1148,12 @@ else
 end
 mainProject(_OPTIONS["target"],_OPTIONS["subtarget"])
 
+if (_OPTIONS["NO_STRIPPING"]~="1") then
+	strip()
+end
+
 if _OPTIONS["with-tools"] then
 	group "tools"
 	dofile(path.join("src", "tools.lua"))
 end
 
-if (_ACTION == "gmake" and _OPTIONS["gcc"]=='asmjs') then
-	strip()
-end

@@ -48,8 +48,8 @@ void device_gba_cart_interface::rom_alloc(UINT32 size, const char *tag)
 {
 	if (m_rom == NULL)
 	{
-		astring tempstring(tag);
-		tempstring.cat(GBASLOT_ROM_REGION_TAG);
+		std::string tempstring(tag);
+		tempstring.append(GBASLOT_ROM_REGION_TAG);
 		// we always alloc 32MB of rom region!
 		m_rom = (UINT32 *)device().machine().memory().region_alloc(tempstring.c_str(), 0x2000000, 4, ENDIANNESS_LITTLE)->base();
 		m_rom_size = size;
@@ -399,7 +399,7 @@ int gba_cart_slot_device::get_cart_type(UINT8 *ROM, UINT32 len)
  get default card software
  -------------------------------------------------*/
 
-void gba_cart_slot_device::get_default_card_software(astring &result)
+void gba_cart_slot_device::get_default_card_software(std::string &result)
 {
 	if (open_image_file(mconfig().options()))
 	{
@@ -416,7 +416,7 @@ void gba_cart_slot_device::get_default_card_software(astring &result)
 		//printf("type: %s\n", slot_string);
 		clear();
 
-		result.cpy(slot_string);
+		result.assign(slot_string);
 		return;
 	}
 

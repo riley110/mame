@@ -1488,7 +1488,7 @@ ioport_field::ioport_field(ioport_port &port, ioport_type type, ioport_value def
 		if (def != NULL)
 		{
 			const char *fulltag = port.tag();
-			astring fullpath;
+			std::string fullpath;
 			for ( ; def->tag != NULL; def++)
 				if (device().subtag(fullpath, def->tag) == fulltag && def->mask == m_mask)
 					m_defvalue = def->defvalue & m_mask;
@@ -1519,7 +1519,7 @@ ioport_field::~ioport_field()
 const char *ioport_field::name() const
 {
 	// if we have a non-default name, use that
-	if (m_live != NULL && m_live->name)
+	if (m_live != NULL && !m_live->name.empty())
 		return m_live->name.c_str();
 	if (m_name != NULL)
 		return m_name;
@@ -2481,7 +2481,7 @@ time_t ioport_manager::initialize()
 	{
 		astring errors;
 		m_portlist.append(*device, errors);
-		if (errors)
+		if (!errors.empty())
 			osd_printf_error("Input port errors:\n%s", errors.c_str());
 	}
 
@@ -3681,7 +3681,7 @@ const char *ioport_configurer::string_from_token(const char *string)
 void ioport_configurer::port_alloc(const char *tag)
 {
 	// create the full tag
-	astring fulltag;
+	std::string fulltag;
 	m_owner.subtag(fulltag, tag);
 
 	// add it to the list, and reset current field/setting
@@ -3699,7 +3699,7 @@ void ioport_configurer::port_alloc(const char *tag)
 void ioport_configurer::port_modify(const char *tag)
 {
 	// create the full tag
-	astring fulltag;
+	std::string fulltag;
 	m_owner.subtag(fulltag, tag);
 
 	// find the existing port

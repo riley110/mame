@@ -76,8 +76,8 @@ void device_sega8_cart_interface::rom_alloc(UINT32 size, const char *tag)
 {
 	if (m_rom == NULL)
 	{
-		astring tempstring(tag);
-		tempstring.cat(S8SLOT_ROM_REGION_TAG);
+		std::string tempstring(tag);
+		tempstring.append(S8SLOT_ROM_REGION_TAG);
 		m_rom = device().machine().memory().region_alloc(tempstring.c_str(), size, 1, ENDIANNESS_LITTLE)->base();
 		m_rom_size = size;
 		m_rom_page_count = size / 0x4000;
@@ -603,7 +603,7 @@ int sega8_cart_slot_device::get_cart_type(UINT8 *ROM, UINT32 len)
  get default card software
  -------------------------------------------------*/
 
-void sega8_cart_slot_device::get_default_card_software(astring &result)
+void sega8_cart_slot_device::get_default_card_software(std::string &result)
 {
 	if (open_image_file(mconfig().options()))
 	{
@@ -623,7 +623,7 @@ void sega8_cart_slot_device::get_default_card_software(astring &result)
 		//printf("type: %s\n", slot_string);
 		clear();
 
-		result.cpy(slot_string);
+		result.assign(slot_string);
 		return;
 	}
 

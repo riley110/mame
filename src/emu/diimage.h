@@ -170,11 +170,11 @@ public:
 	void seterror(image_error_t err, const char *message);
 	void message(const char *format, ...) ATTR_PRINTF(2,3);
 
-	bool exists() { return m_image_name; }
-	const char *filename() { if (!m_image_name) return NULL; else return m_image_name.c_str(); }
-	const char *basename() { if (!m_basename) return NULL; else return m_basename.c_str(); }
-	const char *basename_noext()  { if (!m_basename_noext) return NULL; else return m_basename_noext.c_str(); }
-	const char *filetype()  { if (!m_filetype) return NULL; else return m_filetype.c_str(); }
+	bool exists() { return !m_image_name.empty(); }
+	const char *filename() { if (m_image_name.empty()) return NULL; else return m_image_name.c_str(); }
+	const char *basename() { if (m_basename.empty()) return NULL; else return m_basename.c_str(); }
+	const char *basename_noext()  { if (m_basename_noext.empty()) return NULL; else return m_basename_noext.c_str(); }
+	const char *filetype()  { if (m_filetype.empty()) return NULL; else return m_filetype.c_str(); }
 	core_file *image_core_file() { return m_file; }
 	UINT64 length() { check_for_file(); return core_fsize(m_file); }
 	bool is_readonly() { return m_readonly; }
@@ -234,7 +234,7 @@ public:
 	bool load_software(software_list_device &swlist, const char *swname, const rom_entry *entry);
 	int reopen_for_write(const char *path);
 
-	static void software_name_split(const char *swlist_swname, astring &swlist_name, astring &swname, astring &swpart);
+	static void software_name_split(const char *swlist_swname, std::string &swlist_name, std::string &swname, std::string &swpart);
 
 protected:
 	bool load_internal(const char *path, bool is_create, int create_format, option_resolution *create_args, bool just_load);
@@ -259,7 +259,7 @@ protected:
 
 	software_part *find_software_item(const char *path, bool restrict_to_interface);
 	bool load_software_part(const char *path, software_part *&swpart);
-	void software_get_default_slot(astring &result, const char *default_card_slot);
+	void software_get_default_slot(std::string &result, const char *default_card_slot);
 
 	// derived class overrides
 
@@ -280,7 +280,7 @@ protected:
 	astring m_filetype;
 
 	/* working directory; persists across mounts */
-	astring m_working_directory;
+	std::string m_working_directory;
 
 	/* Software information */
 	astring m_full_software_name;
