@@ -319,9 +319,13 @@ static MACHINE_CONFIG_START( coco3, coco3_state )
 	MCFG_RAM_EXTRA_OPTIONS("128K,2M,8M")
 
 	// software lists
-	MCFG_SOFTWARE_LIST_ADD("cart_list","coco_cart")
+	MCFG_SOFTWARE_LIST_ADD("cart_list","coco3_cart")
+	MCFG_SOFTWARE_LIST_ADD("cass_list","coco3_cass")
+	MCFG_SOFTWARE_LIST_ADD("flop_list","coco3_flop")
 
-	MCFG_SOFTWARE_LIST_ADD("flop_list","coco_flop")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("coco_cart_list","coco_cart")
+	//MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("coco_cass_list","coco_cass")
+	//MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("coco_flop_list","coco_flop")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( coco3p, coco3 )

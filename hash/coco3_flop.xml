@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<softwarelist name="coco_flop" description="Tandy Radio Shack Color Computer disk images">
+<softwarelist name="coco3_flop" description="Tandy Radio Shack Color Computer 3 disk images">
 
 	<!-- coco3 only requires 512Kb, audio is a farty, run best with a 6309? - coco3h driver) -->
 	<software name="dkong" supported ="partial">
@@ -9,7 +9,7 @@
 		<publisher>Sock Master</publisher>
 		<info name="usage" value="Run with RUN&quot;DONKEY&quot;" />
 
-		<part name="flop0" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="dk.dsk" size="161280" crc="87a22c49" sha1="e9c1ac85150ed14ac81c854df13f6c09fa5b4748" offset="0" />
 			</dataarea>

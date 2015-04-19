@@ -1,0 +1,564 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<softwarelist name="coco3_cass" description="Tandy Color Computer 3 cassettes">
+
+	<software name="5linslot">
+		<description>5-Line Fruit Slot Machine</description>
+		<year>1986</year>
+		<publisher>Tom Mix Software</publisher>
+		<info name="usage" value="CLOADM + EXEC" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="15148">
+				<rom name="5-line fruit slot machine.cas" size="15148" crc="b52d28b2" sha1="0b5282e80cc42e3cfceca33b57f011e2a984bdf0" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="5000">
+		<description>5000</description>
+		<year>1987</year>
+		<publisher>Gary James</publisher>
+		<info name="usage" value="CLOAD + RUN" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="9846">
+				<rom name="5000.cas" size="9846" crc="92668740" sha1="4ca074876b53c1c06e56acd61ab8d1f964b8a59e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mmortar">
+		<description>A Mazing World of Malcolm Mortar</description>
+		<year>1987</year>
+		<publisher>Tandy</publisher>
+		<info name="usage" value="CLOADM + EXEC" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="17073">
+				<rom name="a mazing world of malcom mortar.cas" size="17073" crc="97a762b0" sha1="45e1cb04ea3892eab8075bc764896fe4d386f4a1" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bash">
+		<description>Bash</description>
+		<year>1988</year>
+		<publisher>SRB Software</publisher>
+		<info name="usage" value="CLOADM + EXEC" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="14063">
+				<rom name="bash.cas" size="14063" crc="073efe04" sha1="a56783bf07826acdf677586ca685c74160308ac7" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="blox">
+		<description>Blox</description>
+		<year>1991</year>
+		<publisher>Hyper Tech Software</publisher>
+		<info name="usage" value="CLOADM + EXEC" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="11392">
+				<rom name="blox.cas" size="11392" crc="9e1ff7f5" sha1="1bbe3cb7144044c484c2561c4ad63b23794edd6d" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tharogad">
+		<description>Castle of Tharoggad</description>
+		<year>1988</year>
+		<publisher>Tandy</publisher>
+		<info name="usage" value="CLOADM + EXEC" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="19749">
+				<rom name="castle of tharoggad.cas" size="19749" crc="8012443c" sha1="d8b3264eb2302c94cbcc2e13fa1b75c76c2d33b6" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="c3solita">
+		<description>Coco 3 Solitaire</description>
+		<year>1996</year>
+		<publisher>Paul Shoemaker</publisher>
+		<info name="usage" value="CLOAD + RUN" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="10599">
+				<rom name="coco 3 solitaire.cas" size="10599" crc="7056953d" sha1="1217feea0e5c8bb348a29a091189eaac4fd341c6" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cscribe3">
+		<description>Color Scribe III</description>
+		<year>1986</year>
+		<publisher>Computerware</publisher>
+		<info name="usage" value="CLOADM + EXEC" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="11558">
+				<rom name="color scribe iii.cas" size="11558" crc="0b8aa4d6" sha1="108612e34eefaef8c96eb3c6e45ee5cea7f1ef4f" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="drawpokr">
+		<description>Draw Poker</description>
+		<year>1988</year>
+		<publisher>T&amp;D Software</publisher>
+		<info name="usage" value="CLOAD + RUN" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="6516">
+				<rom name="draw poker.cas" size="6516" crc="5b5426ba" sha1="22e79cad84b43b1d0910761ac43f70bcc0cdc0cc" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="f15sim">
+		<description>F-15 Ground Assault Simulator</description>
+		<year>198?</year>
+		<publisher>The Rainbow</publisher>
+		<info name="usage" value="CLOAD + RUN" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="8091">
+				<rom name="f-15 ground assault simulator.cas" size="8091" crc="784547db" sha1="a6e01bb4e1d17203d955f0b90279336943c65d3f" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fruitmbs">
+		<description>Fruit Multi-Bars Slot Machine</description>
+		<year>1986</year>
+		<publisher>Tom Mix Software</publisher>
+		<info name="usage" value="CLOADM + EXEC" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="13137">
+				<rom name="fruit multi-bars slot machine.cas" size="13137" crc="c751182e" sha1="f03d54d101ac4e41d40f56f97e9c954e52aa0342" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mazemstr">
+		<description>Maze Master</description>
+		<year>198?</year>
+		<publisher>Dough Tuttle</publisher>
+		<info name="usage" value="CLOADM + EXEC" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="21684">
+				<rom name="maze master.cas" size="21684" crc="f5eaf413" sha1="be392a03198e18faef69af405526a773e5482db5" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megatank">
+		<description>Mega Tank</description>
+		<year>1991</year>
+		<publisher>The Rainbow</publisher>
+		<info name="usage" value="CLOAD + RUN" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="9046">
+				<rom name="mega tank.cas" size="9046" crc="2093dd93" sha1="55db847573f395f432904647dd6172149836ec1c" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="minerscu">
+		<description>Mine Rescue</description>
+		<year>1988</year>
+		<publisher>Game Point Software</publisher>
+		<info name="usage" value="CLOADM + EXEC" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="29895">
+				<rom name="mine rescue.cas" size="29895" crc="11862698" sha1="5673bc1fe4c1d856917f83eebd80cd71b84ff0f5" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mineswpr">
+		<description>Minesweeper</description>
+		<year>198?</year>
+		<publisher>Tim Franklin</publisher>
+		<info name="usage" value="CLOADM + EXEC" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="15619">
+				<rom name="minesweeper.cas" size="15619" crc="6708b581" sha1="dd614c506014dd20c999076406d90f6303ea8fb4" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="minigolf">
+		<description>Minigolf 3</description>
+		<year>1989</year>
+		<publisher>T&amp;D Software</publisher>
+		<info name="usage" value="CLOAD + RUN" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="6140">
+				<rom name="minigolf 3.cas" size="6140" crc="870cbf12" sha1="dc90e5ba21bca36e52f0eeedf045dcf30098242e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mbarslot">
+		<description>Multi-Bars Slot Machine</description>
+		<year>1986</year>
+		<publisher>Tom Mix Software</publisher>
+		<info name="usage" value="CLOADM + EXEC" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="11026">
+				<rom name="multi-bars slot machine.cas" size="11026" crc="7920ae87" sha1="5faaef968f1be36971a136b48aa9143891a7ff55" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ono">
+		<description>Ono</description>
+		<year>1987</year>
+		<publisher>Charles Bartlett</publisher>
+		<info name="usage" value="CLOAD + RUN" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="9980">
+				<rom name="ono.cas" size="9980" crc="0187c72d" sha1="555e6f1fb90822a9f71cb1bef148c8e785aa98a0" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pelieti">
+		<description>Pelieti</description>
+		<year>1991</year>
+		<publisher>Roger Taylor</publisher>
+		<info name="usage" value="CLOADM + EXEC" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="5041">
+				<rom name="pelieti.cas" size="5041" crc="ce7698cb" sha1="a2f1d6d4447aafb4ec394040dfb547210ef8654e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="penguin">
+		<description>Penguin Icarus</description>
+		<year>1990</year>
+		<publisher>The Rainbow</publisher>
+		<info name="usage" value="CLOAD + RUN" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="10078">
+				<rom name="penguin icarus.cas" size="10078" crc="e492450f" sha1="322fa6d103c7cfb514ff48c0c81706b4177dc8f6" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="plunkit">
+		<description>Plunkit</description>
+		<year>198?</year>
+		<publisher>Roger Taylor</publisher>
+		<info name="usage" value="CLOAD + RUN" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="3695">
+				<rom name="plunkit.cas" size="3695" crc="325dae09" sha1="d33ee91df1764a4582ec7f4c2ff8c69b1b778ae9" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ponk">
+		<description>Ponk</description>
+		<year>1987</year>
+		<publisher>Greg Helton</publisher>
+		<info name="usage" value="CLOADM + EXEC" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="9198">
+				<rom name="ponk.cas" size="9198" crc="abc9a781" sha1="13d7f1bd20bb5babf93c0f55887257474e70d23e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="predator">
+		<description>Predator (Trained)</description>
+		<year>1989</year>
+		<publisher>Tandy</publisher>
+		<info name="usage" value="CLOAD + RUN" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="70444">
+				<rom name="predator.cas" size="70444" crc="e325e361" sha1="020096e518db1ce87a9bcf78643511cb400c5a03" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pursuit">
+		<description>Pursuit</description>
+		<year>198?</year>
+		<publisher>Tandy</publisher>
+		<info name="usage" value="CLOADM + EXEC" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="6511">
+				<rom name="pursuit.cas" size="6511" crc="ab32a9f5" sha1="4ae0b81b9f203686b9668d203cd05f6b0e33c7aa" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rwarrior">
+		<description>Rad Warrior</description>
+		<year>1988</year>
+		<publisher>Epyx</publisher>
+		<info name="usage" value="CLOAD + RUN" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="34509">
+				<rom name="rad warrior.cas" size="34509" crc="b957bcef" sha1="4f6e21d541b7d17b0a9f54557cc3627fbce07a7b" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rampage">
+		<description>Rampage</description>
+		<year>1989</year>
+		<publisher>Tandy</publisher>
+		<info name="usage" value="CLOAD + RUN" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="35175">
+				<rom name="rampage (tandy).cas" size="35175" crc="885f8358" sha1="550a0e2ee08e962139155d6152361301fbf9f509" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="junior">
+		<description>Return of Junior's Revenge</description>
+		<year>1986</year>
+		<publisher>Computerware</publisher>
+		<info name="usage" value="CLOADM + EXEC" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="29372">
+				<rom name="return of junior's revenge.cas" size="29372" crc="a2a1da72" sha1="cee0099a5e50465bb2a1022f546e83404aee2287" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="robocop">
+		<description>Robocop (Trained)</description>
+		<year>1989</year>
+		<publisher>Data East USA</publisher>
+		<info name="usage" value="CLOAD + RUN" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="138892">
+				<rom name="robocop.cas" size="138892" crc="6598159b" sha1="8ad80c527088525f26ebf3c625fb24eb3dc36c91" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="roller">
+		<description>Roller Controller</description>
+		<year>1986</year>
+		<publisher>Spectral Associates</publisher>
+		<info name="usage" value="CLOADM + EXEC" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="11867">
+				<rom name="roller controller.cas" size="11867" crc="98c845c6" sha1="18478a9c1eb541cd3282c8b6d88d56632f23405a" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="shanghai">
+		<description>Shanghai</description>
+		<year>1987</year>
+		<publisher>Tandy</publisher>
+		<info name="usage" value="CLOADM + EXEC" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="16795">
+				<rom name="shanghai.cas" size="16795" crc="f90c1c8a" sha1="34acb0bec1f6980b3c9a39da5e08c1e5478eea55" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="slipheed">
+		<description>Silpheed</description>
+		<year>1988</year>
+		<publisher>Tandy</publisher>
+		<info name="usage" value="CLOAD + RUN" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="35342">
+				<rom name="silpheed.cas" size="35342" crc="0553acac" sha1="ba08c0d3849eb6a8ff8707b0a14caa44da2d31bd" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="solitair">
+		<description>Solitaire</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="CLOAD + RUN" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="7742">
+				<rom name="solitaire.cas" size="7742" crc="1a0af595" sha1="b1233a130217b42f74da5db9bbd6a9fcf234b15c" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="marauder">
+		<description>Space Marauder</description>
+		<year>198?</year>
+		<publisher>Tandy</publisher>
+		<info name="usage" value="CLOADM + EXEC" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="9198">
+				<rom name="space marauder.cas" size="9198" crc="320e3b97" sha1="6389f8709470f7efe1f5504cefa82edc1b912d99" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="springst">
+		<description>Springster</description>
+		<year>1987</year>
+		<publisher>Tandy</publisher>
+		<info name="usage" value="CLOADM + EXEC" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="16843">
+				<rom name="springster.cas" size="16843" crc="5be6f87d" sha1="eef376706108eed0e2d9ff9d3bb9e6e6ffdd63d3" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="strata">
+		<description>Strata</description>
+		<year>1987</year>
+		<publisher>Michael Sirolly</publisher>
+		<info name="usage" value="CLOAD + RUN" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="6498">
+				<rom name="strata.cas" size="6498" crc="75d9a2e7" sha1="dd9653d71a45ace46ca3ddb5ed0e6897700664c3" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spitfall">
+		<description>Super Pitfall</description>
+		<year>1988</year>
+		<publisher>Tandy</publisher>
+		<info name="usage" value="CLOAD + RUN" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="35134">
+				<rom name="super pitfall.cas" size="35134" crc="d7e9395e" sha1="b4113bd7cc8683478abcef43be8d46e7b5a3f053" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spoker2">
+		<description>Super Poker II</description>
+		<year>198?</year>
+		<publisher>Marc Quirion</publisher>
+		<info name="usage" value="CLOAD + RUN" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="10549">
+				<rom name="super poker ii.cas" size="10549" crc="faf245c7" sha1="2d8308863d75a60bd65b8801639c474924239f30" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tetra">
+		<description>Tetra</description>
+		<year>1991</year>
+		<publisher>Brian O'Neill</publisher>
+		<info name="usage" value="CLOADM + EXEC" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="15589">
+				<rom name="tetra.cas" size="15589" crc="6de7a527" sha1="3918e777eb91400a6601f7cc5d7d029fcf3f3755" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tetrapak">
+		<description>Tetrapak</description>
+		<year>198?</year>
+		<publisher>T&amp;D Software</publisher>
+		<info name="usage" value="CLOADM + EXEC" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="4976">
+				<rom name="tetrapak.cas" size="4976" crc="a4336d63" sha1="9318c32ff07fa4e133d1ff349f78a2ea043ea833" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thexder">
+		<description>Thexder</description>
+		<year>198?</year>
+		<publisher>Tandy</publisher>
+		<info name="usage" value="CLOADM + EXEC" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="16795">
+				<rom name="thexder.cas" size="16795" crc="8d717658" sha1="cbbbdc63e712551276992543c4acbdaf13e799f3" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="uscanada">
+		<description>US &amp; Canada Quiz</description>
+		<year>1988</year>
+		<publisher>T&amp;D Software</publisher>
+		<info name="usage" value="CLOAD + RUN" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="13799">
+				<rom name="us &amp; canada quiz.cas" size="13799" crc="413913b2" sha1="6c98255493ff6eae475900a067cd825ccfed288e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wrpfight">
+		<description>Warp Fighter 3D (Cracked by The Inner Circle - Turtle)</description>
+		<year>198?</year>
+		<publisher>SRB Software</publisher>
+		<info name="usage" value="CLOADM + EXEC" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="21544">
+				<rom name="warp fighter 3d.cas" size="21544" crc="a1dc374b" sha1="a11d5fead0c004ddd9ea90023c27573cce97be7e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="yahtzee">
+		<description>Yahtzee</description>
+		<year>1987</year>
+		<publisher>Jim Peasley</publisher>
+		<info name="usage" value="CLOAD + RUN" />
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="11790">
+				<rom name="yahtzee.cas" size="11790" crc="a26346c9" sha1="627e372ca4106fbba87e4e807209c3baef8a99b9" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>

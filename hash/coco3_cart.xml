@@ -1,0 +1,216 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!-- 
+Compiled by K1W1 and Cowering (from GoodCoCo), split and cleaned up by Riley110.
+
+Due to OS & hardware differences these following programs will only run on the CoCo 3.
+-->
+<softwarelist name="coco3_cart" description="Tandy Radio Shack Color Computer 3 cartridges">
+
+	<software name="amazing">
+		<description>A Mazing World of Malcom Mortar</description>
+		<year>1987</year>
+		<publisher>Tandy</publisher>
+		<info name="developer" value="ZCT Systems" />
+		<info name="author" value="Greg L. Zumwalt &amp; Mark W. Easter" />
+		<info name="serial" value="26-3160" />
+
+		<part name="cart" interface="coco_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="26-3160.bin" size="16384" crc="93ddfc53" sha1="bdd56931325648d5ecc860ff77c59d27637687de" status="baddump" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amazinga" cloneof="amazing">
+		<description>A Mazing World of Malcom Mortar (Alt)</description>
+		<year>1987</year>
+		<publisher>Tandy</publisher>
+		<info name="developer" value="ZCT Systems" />
+		<info name="author" value="Greg Zumwalt &amp; Mark Easter" />
+		<info name="serial" value="26-3160" />
+
+		<part name="cart" interface="coco_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="26-3160 [a].bin" size="16384" crc="d4bbe731" sha1="d2a70452a120d3164ae52e16062fb2a4539fd377" status="baddump" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tharogad">
+		<description>Castle of Tharoggad</description>
+		<year>1988</year>
+		<publisher>Tandy</publisher>
+		<info name="developer" value="Computerware" />
+		<info name="author" value="Scott A. Cabit" />
+		<info name="serial" value="26-3159" />
+
+		<part name="cart" interface="coco_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="26-3159.bin" size="16384" crc="82929650" sha1="485477577db4751da4c0db3a402bb9b45fa65667" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gfl2">
+		<description>GFL Champion Football II</description>
+		<year>1988</year>
+		<publisher>Tandy</publisher>
+		<info name="developer" value="ZCT Systems" />
+		<info name="author" value="Greg Zumwalt &amp; Mark Easter" />
+		<info name="serial" value="26-3172" />
+
+		<part name="cart" interface="coco_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="26-3172.bin" size="32768" crc="899978e7" sha1="b575b379a7cf41fadfa5c1b525d5f0103544eafa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="predator">
+		<description>Predator</description>
+		<year>1989</year>
+		<publisher>Tandy</publisher>
+		<info name="developer" value="Activision" />
+		<info name="serial" value="26-3165" />
+
+		<part name="cart" interface="coco_cart">
+			<dataarea name="rom" size="65536">
+				<rom name="26-3165.bin" size="65536" crc="a9680ede" sha1="551d8d95fd310b2d72b1e22028a517c325fe9ab4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="radwar">
+		<description>RAD Warrior</description>
+		<year>1987</year>
+		<publisher>Tandy</publisher>
+		<info name="developer" value="Epyx" />
+		<info name="author" value="Jesse Taylor" />
+		<info name="serial" value="26-3162" />
+
+		<part name="cart" interface="coco_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="26-3162.bin" size="32768" crc="c8b64049" sha1="5e3d4d57cd19a71ecd668ff7ce0d05d0adf30e93" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rampage">
+		<description>Rampage!</description>
+		<year>1989</year>
+		<publisher>Tandy</publisher>
+		<info name="developer" value="Activision" />
+		<info name="author" value="Steve Bjork" />
+		<info name="serial" value="26-3174" />
+
+		<part name="cart" interface="coco_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="26-3174.bin" size="32768" crc="09c2e97d" sha1="02c6a560ede8b3b87fb8420ee05ba9ac6704f101" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="robocop">
+		<description>RoboCop</description>
+		<year>1988</year>
+		<publisher>Tandy</publisher>
+		<info name="developer" value="Data East" />
+		<info name="author" value="Greg Zumwalt" />
+		<info name="serial" value="26-3164" />
+
+		<part name="cart" interface="coco_cart">
+			<dataarea name="rom" size="131072">
+				<rom name="26-3164.bin" size="131072" crc="dd94dd06" sha1="82ad8a207a446d99455926bd27d4490578de2b41" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="shanghai">
+		<description>Shanghai</description>
+		<year>1987</year>
+		<publisher>Tandy</publisher>
+		<info name="developer" value="Activision" />
+		<info name="author" value="Rick Adams" />
+		<info name="serial" value="26-3084" />
+
+		<part name="cart" interface="coco_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="26-3084.bin" size="16384" crc="5a54973c" sha1="0c500d34b4fd1170093cdf3209a201d14b86160a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="silpheed">
+		<description>Silpheed</description>
+		<year>1988</year>
+		<publisher>Tandy</publisher>
+		<info name="developer" value="Sierra On-Line" />
+		<info name="serial" value="26-3054" />
+
+		<part name="cart" interface="coco_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="26-3054.bin" size="32768" crc="ccfd0a0c" sha1="bd0e2bd1fd57b9512bb01414c15ce07afbe298f2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spring">
+		<description>Springster</description>
+		<year>1987</year>
+		<publisher>Tandy</publisher>
+		<info name="developer" value="Spectral Assosciates" />
+		<info name="serial" value="26-3078" />
+
+		<part name="cart" interface="coco_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="26-3078.bin" size="16384" crc="f47d3880" sha1="31b54b74e8c1ee018b905d4f76cd5a6341954301" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="superpit">
+		<description>Super Pitfall</description>
+		<year>1988</year>
+		<publisher>Tandy</publisher>
+		<info name="developer" value="Activision" />
+		<info name="author" value="Steve Bjork" />
+		<info name="serial" value="26-3171" />
+
+		<part name="cart" interface="coco_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="26-3171.bin" size="32768" crc="e8e54cbe" sha1="10f4e78255d61dce2c882f9a136a94cbb7860fc1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thexder">
+		<description>Thexder</description>
+		<year>1987</year>
+		<publisher>Tandy</publisher>
+		<info name="developer" value="Sierra On-Line" />
+		<info name="serial" value="26-3072" />
+
+		<part name="cart" interface="coco_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="26-3072.bin" size="16384" crc="0ef0df20" sha1="36919b37f858ecf71c77ee7a766370fd6d4a6b7e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="typemate">
+		<description>TypeMate</description>
+		<year>1988</year>
+		<publisher>Tandy</publisher>
+		<info name="developer" value="ZCT Systems" />
+		<info name="author" value="Greg Zumwalt &amp; Mark Easter" />
+		<info name="serial" value="26-3155" />
+
+		<part name="cart" interface="coco_cart">
+			<dataarea name="rom" size="16368">
+				<rom name="26-3155.bin" size="16368" crc="54f38ab8" sha1="8249b036ed2add30c864ee167ebfe940ea7e29aa" status="baddump" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>

@@ -172,6 +172,9 @@ static MACHINE_CONFIG_START( dragon_base, dragon_state )
 
 	// sound hardware
 	MCFG_FRAGMENT_ADD( coco_sound )
+
+	// software lists
+	MCFG_SOFTWARE_LIST_ADD("cart_list","dragon_cart")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( dragon32, dragon_base )
