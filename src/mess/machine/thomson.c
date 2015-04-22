@@ -377,8 +377,8 @@ DEVICE_IMAGE_LOAD_MEMBER( thomson_state, to7_cartridge )
 		m_thom_cart_nb_banks = 4;
 	else
 	{
-		astring errmsg;
-		errmsg.printf("Invalid cartridge size %u", size);
+		std::string errmsg;
+		strprintf(errmsg,"Invalid cartridge size %u", size);
 		image.seterror(IMAGE_ERROR_UNSUPPORTED, errmsg.c_str());
 		return IMAGE_INIT_FAIL;
 	}
@@ -1520,8 +1520,8 @@ DEVICE_IMAGE_LOAD_MEMBER( thomson_state, mo5_cartridge )
 		m_thom_cart_nb_banks = 4;
 	else
 	{
-		astring errmsg;
-		errmsg.printf("Invalid cartridge size %" I64FMT "d", size);
+		std::string errmsg;
+		strprintf(errmsg,"Invalid cartridge size %" I64FMT "d", size);
 		image.seterror(IMAGE_ERROR_UNSUPPORTED, errmsg.c_str());
 		return IMAGE_INIT_FAIL;
 	}
