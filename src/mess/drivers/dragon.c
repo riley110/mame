@@ -258,6 +258,11 @@ static MACHINE_CONFIG_DERIVED_CLASS( dgnalpha, dragon_base, dragon_alpha_state )
 	MCFG_PIA_WRITEPA_HANDLER(WRITE8(dragon_alpha_state, pia2_pa_w))
 	MCFG_PIA_IRQA_HANDLER(WRITELINE(dragon_alpha_state, pia2_firq_a))
 	MCFG_PIA_IRQB_HANDLER(WRITELINE(dragon_alpha_state, pia2_firq_b))
+
+	//software lists
+	MCFG_DEVICE_REMOVE("flop_list")
+	MCFG_SOFTWARE_LIST_ADD("flop_list","dgnalpha_flop")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("drgn_flop_list","dragon_flop")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( tanodr64, dragon64 )
