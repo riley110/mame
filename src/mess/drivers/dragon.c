@@ -127,7 +127,7 @@ static const floppy_interface coco_floppy_interface =
 {
 	FLOPPY_STANDARD_5_25_DSHD,
 	LEGACY_FLOPPY_OPTIONS_NAME(coco),
-	NULL
+	"floppy_5_25"
 };
 
 static MACHINE_CONFIG_START( dragon_base, dragon_state )
@@ -175,6 +175,8 @@ static MACHINE_CONFIG_START( dragon_base, dragon_state )
 
 	// software lists
 	MCFG_SOFTWARE_LIST_ADD("cart_list","dragon_cart")
+	MCFG_SOFTWARE_LIST_ADD("cass_list","dragon_cass")
+	MCFG_SOFTWARE_LIST_ADD("flop_list","dragon_flop")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( dragon32, dragon_base )
