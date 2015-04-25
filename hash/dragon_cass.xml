@@ -818,9 +818,9 @@
 		</part>
 	</software>
 
-	<!-- WTF with the title? -->
+	<!-- WTF with the title? it looks like this in emulation too -->
 	<software name="bmkrtty">
-		<description>Bmkrtty G4zqo?</description>
+		<description>BMKRTTY?</description>
 		<year>1984</year>
 		<publisher>Grovesner Software</publisher>
 
@@ -1066,9 +1066,8 @@
 		</part>
 	</software>
 
-<!-- were there separate graphics and text versions, or was it a multi-tape release?
-	<software name="calixto">
-		<description>Calixto Island</description>
+	<software name="calixtog">
+		<description>Calixto Island (Graphical)</description>
 		<year>1982</year>
 		<publisher>Dragon Data Ltd.</publisher>
 
@@ -1077,23 +1076,43 @@
 				<rom name="calixto island (1982) (dragon data ltd) (u) (a).cas" size="29427" crc="f45c2fb1" sha1="dee6f0597aedc4d899aaa82adddec5081f257a51" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="coco_cass">
-			<dataarea name="cass" size="14143">
-				<rom name="calixto island (1982) (dragon data ltd) (!).cas" size="14143" crc="33cecc34" sha1="df6037ef0a68a5d1f7886da8b00f635f9028907c" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass3" interface="coco_cass">
+	</software>
+
+	<software name="calixtoga" cloneof="calixtog">
+		<description>Calixto Island (Graphical) (WAV)</description>
+		<year>1982</year>
+		<publisher>Dragon Data Ltd.</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="8279198">
 				<rom name="calixto island (gfx) (exec) (dragon data ltd).wav" size="8279198" crc="69ec7328" sha1="a7d05ca99ebac5498e34e4f409cbccc811e56b04" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass4" interface="coco_cass">
+	</software>
+
+	<software name="calixtot">
+		<description>Calixto Island (Text)</description>
+		<year>1982</year>
+		<publisher>Dragon Data Ltd.</publisher>
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="14143">
+				<rom name="calixto island (1982) (dragon data ltd) (!).cas" size="14143" crc="33cecc34" sha1="df6037ef0a68a5d1f7886da8b00f635f9028907c" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="calixtota" cloneof="calixtot">
+		<description>Calixto Island (Text) (WAV)</description>
+		<year>1982</year>
+		<publisher>Dragon Data Ltd.</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="3770927">
 				<rom name="calixto island (text) (exec) (dragon data ltd).wav" size="3770927" crc="ebbbe120" sha1="a1516bf1f60f340872acefd3db40ec4ea682e3ef" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
--->
 
 	<software name="cashman">
 		<description>Cashman</description>
@@ -2942,256 +2961,821 @@
 		</part>
 	</software>
 
-<!--
-	<software name="">
-		<description>Dragon Software Issue 1</description>
+	<software name="dsoft1">
+		<description>Dragon Software Issue 1 (Spa, Split)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>GTS</publisher>
 
 		<part name="cass1" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - Krypton"/>
 			<dataarea name="cass" size="7747">
 				<rom name="dragon software issue 1 (198x) (es) (!) (side 1) (krypton).cas" size="7747" crc="3f59f8c1" sha1="863f484cf4e6c1aeb13747da43a76b51f789003f" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - Lab-3D"/>
 			<dataarea name="cass" size="4331">
 				<rom name="dragon software issue 1 (198x) (es) (!) (side 1) (lab-3d).cas" size="4331" crc="f1ff7642" sha1="a3de61177a3bbd6979eecb1839650f4e67d71132" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass3" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - Mapmundi"/>
 			<dataarea name="cass" size="9142">
 				<rom name="dragon software issue 1 (198x) (es) (!) (side 1) (mapmundi).cas" size="9142" crc="ef7e8d9f" sha1="520096ad1a8365c1ebd54eb42bf220d9e0ee7812" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass4" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - Sim-Heli"/>
 			<dataarea name="cass" size="3911">
 				<rom name="dragon software issue 1 (198x) (es) (!) (side 1) (sim-heli).cas" size="3911" crc="b17a07f8" sha1="5626ff530acb50dccd8145026b0677efb325288d" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass5" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - Sumario"/>
 			<dataarea name="cass" size="3910">
 				<rom name="dragon software issue 1 (198x) (es) (!) (side 1) (sumario).cas" size="3910" crc="4b412e8c" sha1="6c0f4fe902b76c7df161b52c0d89714aa98691b2" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass6" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - Comecoco"/>
 			<dataarea name="cass" size="6922">
 				<rom name="dragon software issue 1 (198x) (es) (!) (side 2) (comecoco).cas" size="6922" crc="548e0bf5" sha1="1fcb9f0c4dc0b26ddf1c169bbc91a946958be699" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass7" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - Estadata"/>
 			<dataarea name="cass" size="5173">
 				<rom name="dragon software issue 1 (198x) (es) (!) (side 2) (estadata).cas" size="5173" crc="e34e90af" sha1="2dc7ac2fe9575f0d520455539831c5d5628c9914" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass8" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - Musicusa"/>
 			<dataarea name="cass" size="10288">
 				<rom name="dragon software issue 1 (198x) (es) (!) (side 2) (musicusa).cas" size="10288" crc="539cdcc7" sha1="c4b413ed692de0d353b95d9a5f5707f0b341ffd4" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass9" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - Otelo"/>
 			<dataarea name="cass" size="4097">
 				<rom name="dragon software issue 1 (198x) (es) (!) (side 2) (otelo).cas" size="4097" crc="4054ab8d" sha1="a1494c338e28f67d7d9f1407bc7a6334c28ce7a2" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass10" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - Rotacion"/>
 			<dataarea name="cass" size="2560">
 				<rom name="dragon software issue 1 (198x) (es) (!) (side 2) (rotacion).cas" size="2560" crc="26aa41d4" sha1="236bfe4537b0070af581bdacd6b9901ff01c5722" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dragon Software Issue 10</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dsoft2">
+		<description>Dragon Software Issue 2 (Spa, Split)</description>
+		<year>1985</year>
+		<publisher>GTS</publisher>
 
 		<part name="cass1" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - Numeland"/>
+			<dataarea name="cass" size="1285">
+				<rom name="dragon software issue 2 (1985) (es) (!) (side 1) (numeland).cas" size="1285" crc="fe1dde9a" sha1="262b26fcb9f4fd0c740b42d40f2f31b24060e8d8" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - Paracas"/>
+			<dataarea name="cass" size="3715">
+				<rom name="dragon software issue 2 (1985) (es) (!) (side 1) (paracas).cas" size="3715" crc="45abad48" sha1="986ba805b4f665e37723e75ed60d973ccafdd8fb" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - Pasabola"/>
+			<dataarea name="cass" size="1847">
+				<rom name="dragon software issue 2 (1985) (es) (!) (side 1) (pasabola).cas" size="1847" crc="95c11c7f" sha1="4062383c9bdbb0ed873ffb06a95f223fc63aecd2" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - Sumario"/>
+			<dataarea name="cass" size="3930">
+				<rom name="dragon software issue 2 (1985) (es) (!) (side 1) (sumario).cas" size="3930" crc="d3bdd521" sha1="9e4e029b202d3f49d3cbcd409461bc689e56e533" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - Topolino"/>
+			<dataarea name="cass" size="5899">
+				<rom name="dragon software issue 2 (1985) (es) (!) (side 1) (topolino).cas" size="5899" crc="9861069f" sha1="7f764ddc6dad2a5f4cf21ea65d58c8dbfd5a98dc" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - Graficas"/>
+			<dataarea name="cass" size="2647">
+				<rom name="dragon software issue 2 (1985) (es) (!) (side 2) (graficas).cas" size="2647" crc="0e83ff6b" sha1="7ea6f2121428af527c36d6027b0cbec3c8a3db1d" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass7" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - Morselon"/>
+			<dataarea name="cass" size="8037">
+				<rom name="dragon software issue 2 (1985) (es) (!) (side 2) (morselon).cas" size="8037" crc="b6d18067" sha1="4efbf15c4a989cbfdd4a050df7f461b09eebc524" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass8" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - New York"/>
+			<dataarea name="cass" size="2194">
+				<rom name="dragon software issue 2 (1985) (es) (!) (side 2) (new york).cas" size="2194" crc="9df2b7d1" sha1="4a8332302b6a966f74f0a52757fcefba0a899faf" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass9" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - Plotters"/>
+			<dataarea name="cass" size="1595">
+				<rom name="dragon software issue 2 (1985) (es) (!) (side 2) (plotters).cas" size="1595" crc="7ff1a7ab" sha1="9f830361b2d07177e0a953a1d4faaa7a729f3c66" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass10" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - Roadride"/>
+			<dataarea name="cass" size="2426">
+				<rom name="dragon software issue 2 (1985) (es) (!) (side 2) (roadride).cas" size="2426" crc="11d5e31a" sha1="42b7304ae94938fc3542d0769bd780720f7aee6e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dsoft3">
+		<description>Dragon Software Issue 3 (Spa, Split)</description>
+		<year>1985</year>
+		<publisher>GTS</publisher>
+
+		<part name="cass1" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - Circuito"/>
+			<dataarea name="cass" size="1856">
+				<rom name="dragon software issue 3 (1985) (es) (!) (side 1) (circuito).cas" size="1856" crc="647060f9" sha1="8f038440d0fdef9fda00bd0412528579fd66faa0" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - DEC-ROM"/>
+			<dataarea name="cass" size="847">
+				<rom name="dragon software issue 3 (1985) (es) (!) (side 1) (dec-rom).cas" size="847" crc="bae64a0d" sha1="fe2fc7c1b9812a677a6612a636c99b22c5567b98" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - GRAF_SON"/>
+			<dataarea name="cass" size="651">
+				<rom name="dragon software issue 3 (1985) (es) (!) (side 1) (graf son).cas" size="651" crc="1e7df68e" sha1="fcfd7f3267cd3f3f56e823d71d4f2654292cc952" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - INVASION"/>
+			<dataarea name="cass" size="2175">
+				<rom name="dragon software issue 3 (1985) (es) (!) (side 1) (invasion).cas" size="2175" crc="b5ab6494" sha1="e56057df8d3a5268a9db7b162dab95972d93a333" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - PYR"/>
+			<dataarea name="cass" size="5098">
+				<rom name="dragon software issue 3 (1985) (es) (!) (side 1) (pyr).cas" size="5098" crc="31b3068a" sha1="37a7be4fabd15c389e8e3378d7efc0b6ea1e506d" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - SUMARIO"/>
+			<dataarea name="cass" size="1782">
+				<rom name="dragon software issue 3 (1985) (es) (!) (side 1) (sumario).cas" size="1782" crc="0f7aab39" sha1="5e558d6ae795228c9f48ec42771b4478f266d58c" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass7" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - CABALLOS"/>
+			<dataarea name="cass" size="839">
+				<rom name="dragon software issue 3 (1985) (es) (!) (side 2) (caballos).cas" size="839" crc="8800f8af" sha1="10317815e623b36786619df330fd9114fa067b23" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass8" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - CALENDAR"/>
+			<dataarea name="cass" size="2316">
+				<rom name="dragon software issue 3 (1985) (es) (!) (side 2) (calendar).cas" size="2316" crc="d9621798" sha1="03b1c88ca54fee94193c5e7d783a754cd72f000c" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass9" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - PINTOR"/>
+			<dataarea name="cass" size="5915">
+				<rom name="dragon software issue 3 (1985) (es) (!) (side 2) (pintor).cas" size="5915" crc="bed1537c" sha1="1a741fbb79b0618c0ef5cb6cd8ade112b73b5e16" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass10" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - T_HANOI"/>
+			<dataarea name="cass" size="2425">
+				<rom name="dragon software issue 3 (1985) (es) (!) (side 2) (t hanoi).cas" size="2425" crc="8ceeea6c" sha1="5406719358b87e825340627d58cabf03188b9f18" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass11" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - TONADAS"/>
+			<dataarea name="cass" size="2437">
+				<rom name="dragon software issue 3 (1985) (es) (!) (side 2) (tonadas).cas" size="2437" crc="5a0924ef" sha1="c2c094ee5813bf5fc2d232d5e6e4fbacd3a42145" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dsoft4">
+		<description>Dragon Software Issue 4 (Spa, Split)</description>
+		<year>1985</year>
+		<publisher>GTS</publisher>
+
+		<part name="cass1" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - ANTIAERE"/>
+			<dataarea name="cass" size="4024">
+				<rom name="dragon software issue 4 (1985) (es) (!) (side 1) (antiaere).cas" size="4024" crc="acdfeca4" sha1="e06592f152d3682cfaf107aecc38fa57b71eb7dd" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - AVENTURA"/>
+			<dataarea name="cass" size="8357">
+				<rom name="dragon software issue 4 (1985) (es) (!) (side 1) (aventura).cas" size="8357" crc="51e6f8af" sha1="41ce3f4ca2fd76ab261c0473efb97a03f7f9ef64" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - INVASORE"/>
+			<dataarea name="cass" size="4245">
+				<rom name="dragon software issue 4 (1985) (es) (!) (side 1) (invasore).cas" size="4245" crc="cff9d3f4" sha1="f8a2ffc6ae539ea744c882409a6c4722d86c4d44" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - SIETEYME"/>
+			<dataarea name="cass" size="1601">
+				<rom name="dragon software issue 4 (1985) (es) (!) (side 1) (sieteyme).cas" size="1601" crc="71c31a08" sha1="c191e77a8e2b329dd62e5155f47255162160fc54" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - SUMARIO"/>
+			<dataarea name="cass" size="3930">
+				<rom name="dragon software issue 4 (1985) (es) (!) (side 1) (sumario).cas" size="3930" crc="fcc2259d" sha1="18ebf11507cbb10b572a19d3b53a7d16243696bc" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - CARRERA"/>
+			<dataarea name="cass" size="3696">
+				<rom name="dragon software issue 4 (1985) (es) (!) (side 2) (carrera).cas" size="3696" crc="80758c18" sha1="8fbe3e4f8aa0c17f31c36e600ba5d7eac48ba1b7" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass7" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - POLICIRC"/>
+			<dataarea name="cass" size="1273">
+				<rom name="dragon software issue 4 (1985) (es) (!) (side 2) (policirc).cas" size="1273" crc="8c9076e0" sha1="74c7e91dce8be5eab153c3855d8a9e642f13951b" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass8" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - RALLYE"/>
+			<dataarea name="cass" size="3303">
+				<rom name="dragon software issue 4 (1985) (es) (!) (side 2) (rallye).cas" size="3303" crc="df51b2de" sha1="18535ba85fd42873b99b4573f69ccdf3955822f9" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass9" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - ROMPETAP"/>
+			<dataarea name="cass" size="1800">
+				<rom name="dragon software issue 4 (1985) (es) (!) (side 2) (rompetap).cas" size="1800" crc="d77558da" sha1="7c83b481e06e2877c60b0d64a166172488287840" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass10" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - TENIS"/>
+			<dataarea name="cass" size="2059">
+				<rom name="dragon software issue 4 (1985) (es) (!) (side 2) (tenis).cas" size="2059" crc="05ea2629" sha1="860c514964e00e667e9ad60df72cd8b1ca1c3f2a" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dsoft5">
+		<description>Dragon Software Issue 5 (Spa, Split)</description>
+		<year>1985</year>
+		<publisher>GTS</publisher>
+
+		<part name="cass1" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - CAZA"/>
+			<dataarea name="cass" size="2688">
+				<rom name="dragon software issue 5 (1985) (es) (!) (side 1) (caza).cas" size="2688" crc="dba28be6" sha1="e21c7203af78d737de16694aa7e3e3ce4195b6ba" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - CENTRADO"/>
+			<dataarea name="cass" size="275">
+				<rom name="dragon software issue 5 (1985) (es) (!) (side 1) (centrado).cas" size="275" crc="57aa7ad1" sha1="b3a5b6541dfd57ca2581a5a17642afc147c6098c" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - CHOPPER"/>
+			<dataarea name="cass" size="6845">
+				<rom name="dragon software issue 5 (1985) (es) (!) (side 1) (chopper).cas" size="6845" crc="558b6a74" sha1="6193361a8ddd4edc7acc727dea8c6b52c1c0fa39" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - JUST_DER"/>
+			<dataarea name="cass" size="849">
+				<rom name="dragon software issue 5 (1985) (es) (!) (side 1) (just der).cas" size="849" crc="fb38a2ac" sha1="dc07c4f82f6260a95669057de4fa5e68a8b6b10a" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - PYR"/>
+			<dataarea name="cass" size="4637">
+				<rom name="dragon software issue 5 (1985) (es) (!) (side 1) (pyr).cas" size="4637" crc="3fe9c853" sha1="03a85569a7f36bad44a66ce464d7ae83c3d74416" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - SUMARIO"/>
+			<dataarea name="cass" size="4473">
+				<rom name="dragon software issue 5 (1985) (es) (!) (side 1) (sumario).cas" size="4473" crc="bdd6a7a8" sha1="664b4aa51cd3489fdc01627a0bc7343cf49a7989" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass7" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - BIORITMO"/>
+			<dataarea name="cass" size="9504">
+				<rom name="dragon software issue 5 (1985) (es) (!) (side 2) (bioritmo).cas" size="9504" crc="ced88538" sha1="bea874f0bb570b95763cd563d7fee1266626bc26" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass8" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - COLGADO"/>
+			<dataarea name="cass" size="9835">
+				<rom name="dragon software issue 5 (1985) (es) (!) (side 2) (colgado).cas" size="9835" crc="96420289" sha1="f2dc8350857061de5a8d71538653bafba7935d8a" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass9" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - DEC_HEX"/>
+			<dataarea name="cass" size="465">
+				<rom name="dragon software issue 5 (1985) (es) (!) (side 2) (dec hex).cas" size="465" crc="9de6d410" sha1="f28461f6e65c44579a478b2d92e9714e7bf3e97a" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass10" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - LOMBRIZ"/>
+			<dataarea name="cass" size="783">
+				<rom name="dragon software issue 5 (1985) (es) (!) (side 2) (lombriz).cas" size="783" crc="56546979" sha1="f44c568d35972770bea856a25f162b71c5528fb8" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass11" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - MIXTO"/>
+			<dataarea name="cass" size="3138">
+				<rom name="dragon software issue 5 (1985) (es) (!) (side 2) (mixto).cas" size="3138" crc="cb0d6f14" sha1="5836c64a5842ab5b8ce170250f2864c7e4de7240" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dsoft6">
+		<description>Dragon Software Issue 6 (Spa, Split)</description>
+		<year>198?</year>
+		<publisher>GTS</publisher>
+
+		<part name="cass1" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - ATAQUE"/>
+			<dataarea name="cass" size="2688">
+				<rom name="dragon software issue 6 (198x) (es) (!) (side 1) (ataque).cas" size="2688" crc="55224268" sha1="d2c57c782be51d4f39db521048c73d076ce4b90c" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - CARTAS"/>
+			<dataarea name="cass" size="4706">
+				<rom name="dragon software issue 6 (198x) (es) (!) (side 1) (cartas).cas" size="4706" crc="e3e205b3" sha1="0d8500f05613624ea3eb3c73c840b4b9a1715988" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - MIXTO"/>
+			<dataarea name="cass" size="3138">
+				<rom name="dragon software issue 6 (198x) (es) (!) (side 1) (mixto).cas" size="3138" crc="2a7ccc06" sha1="22fd6ab43f955766a12f5fb77f2bb946ad1b26ad" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - PYR_2"/>
+			<dataarea name="cass" size="4810">
+				<rom name="dragon software issue 6 (198x) (es) (!) (side 1) (pyr 2).cas" size="4810" crc="0676a0d8" sha1="765a296e85775466d09180b4cc0191b2bc438111" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - AHORCADO"/>
+			<dataarea name="cass" size="2812">
+				<rom name="dragon software issue 6 (198x) (es) (!) (side 2) (ahorcado).cas" size="2812" crc="0fc3b955" sha1="e6d6c3750dcf52d91a68c16e8df6cd711d641d3c" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - BIORITMO"/>
+			<dataarea name="cass" size="9504">
+				<rom name="dragon software issue 6 (198x) (es) (!) (side 2) (bioritmo).cas" size="9504" crc="78462f4e" sha1="2dfedc51032593cb2524c3a7d4455065cd347b66" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass7" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - CHOPER"/>
+			<dataarea name="cass" size="6845">
+				<rom name="dragon software issue 6 (198x) (es) (!) (side 2) (choper).cas" size="6845" crc="fdebe9ce" sha1="2b6f972ec8510d0a9da9ac62839bc751c0174430" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass8" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - M_MIND"/>
+			<dataarea name="cass" size="3037">
+				<rom name="dragon software issue 6 (198x) (es) (!) (side 2) (m mind).cas" size="3037" crc="10b75a15" sha1="3d0c2966b25d1f7349c995c01d13c772f4b82347" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dsoft7">
+		<description>Dragon Software Issue 7 (Spa, Split)</description>
+		<year>1986</year>
+		<publisher>GTS</publisher>
+
+		<part name="cass1" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - BOXEO"/>
+			<dataarea name="cass" size="8674">
+				<rom name="dragon software issue 7 (1986) (es) (!) (side 1) (boxeo).cas" size="8674" crc="43d71366" sha1="d8eb723dee9f4c6ed45fb731e62dc98e80296b31" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - CALDOMI"/>
+			<dataarea name="cass" size="1066">
+				<rom name="dragon software issue 7 (1986) (es) (!) (side 1) (caldomi).cas" size="1066" crc="6af5ed96" sha1="83cb2fcf2cc913c599bc44bb50597cf51866a740" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - CALENDAR"/>
+			<dataarea name="cass" size="2419">
+				<rom name="dragon software issue 7 (1986) (es) (!) (side 1) (calendar).cas" size="2419" crc="94c75bce" sha1="2748785b16349db4e7da693ec8f7e3b2a0729e2f" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - ELIMINAD"/>
+			<dataarea name="cass" size="2959">
+				<rom name="dragon software issue 7 (1986) (es) (!) (side 1) (eliminad).cas" size="2959" crc="471e75c0" sha1="e4db111c4857c5e0330089b2ffbbacf8c834b539" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - SUMARIO"/>
+			<dataarea name="cass" size="3920">
+				<rom name="dragon software issue 7 (1986) (es) (!) (side 1) (sumario).cas" size="3920" crc="cd129c00" sha1="6174329402640b0bdb37ce67608c650353f0cd1d" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - ASCENDEN"/>
+			<dataarea name="cass" size="2438">
+				<rom name="dragon software issue 7 (1986) (es) (!) (side 2) (ascenden).cas" size="2438" crc="100c1c10" sha1="c162542f097840852ce3c07c20095295d712c874" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass7" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - BOMBARDE"/>
+			<dataarea name="cass" size="1157">
+				<rom name="dragon software issue 7 (1986) (es) (!) (side 2) (bombarde).cas" size="1157" crc="abd26225" sha1="c9fb5bd9a726316c5ed6b5c635b27103b5950582" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass8" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - DIREC2"/>
+			<dataarea name="cass" size="7229">
+				<rom name="dragon software issue 7 (1986) (es) (!) (side 2) (direc2).cas" size="7229" crc="a9d5b7c2" sha1="4cbcc45518fe381790b77208878362076ebb819b" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass9" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - DIRECTOR"/>
+			<dataarea name="cass" size="6704">
+				<rom name="dragon software issue 7 (1986) (es) (!) (side 2) (director).cas" size="6704" crc="1bf81ffe" sha1="f96b861f2a97961a0dd69693f26d193c4b1b59fa" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass10" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - ROTATOR"/>
+			<dataarea name="cass" size="2235">
+				<rom name="dragon software issue 7 (1986) (es) (!) (side 2) (rotator).cas" size="2235" crc="ea98d624" sha1="0301c52e38fe9788771bb8a2328313ead3086666" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dsoft8">
+		<description>Dragon Software Issue 8 (Spa, Split)</description>
+		<year>1986</year>
+		<publisher>GTS</publisher>
+
+		<part name="cass1" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - AVISAFON"/>
+			<dataarea name="cass" size="10255">
+				<rom name="dragon software issue 8 (1986) (es) (!) (side 1) (avisafon).cas" size="10255" crc="476d037d" sha1="1fcf42e5a0d6620c13d185777860b9c0e9325d43" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - CARRERA"/>
+			<dataarea name="cass" size="2243">
+				<rom name="dragon software issue 8 (1986) (es) (!) (side 1) (carrera).cas" size="2243" crc="1681bea4" sha1="4d44be3e285515d29f45f7fea216e6c016a6d551" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - ECUACION"/>
+			<dataarea name="cass" size="3204">
+				<rom name="dragon software issue 8 (1986) (es) (!) (side 1) (ecuacion).cas" size="3204" crc="e961e72b" sha1="6d8c57752088e901353272f4f7695b5db200fad2" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - FLASH"/>
+			<dataarea name="cass" size="1237">
+				<rom name="dragon software issue 8 (1986) (es) (!) (side 1) (flash).cas" size="1237" crc="b22128b7" sha1="d385ef1d2fce096ffb17343a78594c8ae8935e06" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - SUMARIO"/>
+			<dataarea name="cass" size="1264">
+				<rom name="dragon software issue 8 (1986) (es) (!) (side 1) (sumario).cas" size="1264" crc="3210d85a" sha1="0af1197e1f0dcc8ecf052b0418e41f6d88c3d92a" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - ALT_RES"/>
+			<dataarea name="cass" size="2353">
+				<rom name="dragon software issue 8 (1986) (es) (!) (side 2) (alt res).cas" size="2353" crc="b51e03b9" sha1="e94c3dccec6c620bdc0ad97f10dab093ce3a484b" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass7" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - BASIC_1"/>
+			<dataarea name="cass" size="3835">
+				<rom name="dragon software issue 8 (1986) (es) (!) (side 2) (basic 1).cas" size="3835" crc="656dd0f4" sha1="aa4329a94d379dbd2d6bff425acff7deb1a53fbb" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass8" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - CONTA"/>
+			<dataarea name="cass" size="2770">
+				<rom name="dragon software issue 8 (1986) (es) (!) (side 2) (conta).cas" size="2770" crc="4bd890b1" sha1="801427ec050b3570219610051102a04e0a887b3a" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass9" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - DEMO CONTA"/>
+			<dataarea name="cass" size="386">
+				<rom name="dragon software issue 8 (1986) (es) (!) (side 2) (demo conta).cas" size="386" crc="ddcab439" sha1="45af6c73fee2527306ed13f763660f0139d8c111" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass10" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - TANK"/>
+			<dataarea name="cass" size="9378">
+				<rom name="dragon software issue 8 (1986) (es) (!) (side 2) (tank).cas" size="9378" crc="6197959b" sha1="9378a6d66d577e170232a5ccc0023bb1d84dcf71" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dsoft9">
+		<description>Dragon Software Issue 9 (Spa, Split)</description>
+		<year>1986</year>
+		<publisher>GTS</publisher>
+
+		<part name="cass1" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - BASIC2"/>
+			<dataarea name="cass" size="3991">
+				<rom name="dragon software issue 9 (1986) (es) (!) (side 1) (basic2).cas" size="3991" crc="4efee922" sha1="f03e471045bef577f8549e6faf3c90af484fd3c6" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - DISCO"/>
+			<dataarea name="cass" size="773">
+				<rom name="dragon software issue 9 (1986) (es) (!) (side 1) (disco).cas" size="773" crc="9290f0a0" sha1="3717b860bafabed2f5786624d757f93fb366b3f2" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - ENIGMA"/>
+			<dataarea name="cass" size="19857">
+				<rom name="dragon software issue 9 (1986) (es) (!) (side 1) (enigma).cas" size="19857" crc="4778591f" sha1="f2b6df3220d2d65c94f2894a1df2f2f0b54993f2" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - MULTYS"/>
+			<dataarea name="cass" size="12398">
+				<rom name="dragon software issue 9 (1986) (es) (!) (side 1) (multys).cas" size="12398" crc="9a7e1d41" sha1="bdd14957de49157b44bd278a1038812c9f01772e" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - SUMARIO"/>
+			<dataarea name="cass" size="1869">
+				<rom name="dragon software issue 9 (1986) (es) (!) (side 1) (sumario).cas" size="1869" crc="fb3a051f" sha1="46731527cbd8ccd1a2fcd583f2e649848e1c674e" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - COMECOCO"/>
+			<dataarea name="cass" size="8027">
+				<rom name="dragon software issue 9 (1986) (es) (!) (side 2) (comecoco).cas" size="8027" crc="37d1169e" sha1="fd0943cc7c60ab69a5bdce5fc4fd5888373eff13" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass7" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - NOCTURNO"/>
+			<dataarea name="cass" size="1255">
+				<rom name="dragon software issue 9 (1986) (es) (!) (side 2) (nocturno).cas" size="1255" crc="68068e6c" sha1="b965ad389de5ba2b3d8488e42a9e5d787ca33b19" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass8" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - PIANO"/>
+			<dataarea name="cass" size="1209">
+				<rom name="dragon software issue 9 (1986) (es) (!) (side 2) (piano).cas" size="1209" crc="4ed6d091" sha1="5024208b5148ccd6f6eb60bfecba19c741ebb71b" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dsoft10">
+		<description>Dragon Software Issue 10 (Spa, Split)</description>
+		<year>1986</year>
+		<publisher>GTS</publisher>
+
+		<part name="cass1" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - BAR"/>
 			<dataarea name="cass" size="6305">
 				<rom name="dragon software issue 10 (198x) (es) (!) (side 1) (bar).cas" size="6305" crc="cb87faf6" sha1="b15916f8979463f5cc9fce5330575ed773768a27" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - BASIC3"/>
 			<dataarea name="cass" size="4802">
 				<rom name="dragon software issue 10 (198x) (es) (!) (side 1) (basic3).cas" size="4802" crc="9ae5e1f1" sha1="551bd143424f90f61e272f670e087c78958d5dc6" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass3" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - GUILLOTI"/>
 			<dataarea name="cass" size="1984">
 				<rom name="dragon software issue 10 (198x) (es) (!) (side 1) (guilloti).cas" size="1984" crc="718365c0" sha1="efb56e3d37bc537fb0294eedb329bd18df882f5d" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass4" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - SUMARIO"/>
 			<dataarea name="cass" size="1869">
 				<rom name="dragon software issue 10 (198x) (es) (!) (side 1) (sumario).cas" size="1869" crc="22a6cc75" sha1="57b4b249bfa8bb8f8e3d11c694218b5ebbcc39ef" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass5" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - TIROAL"/>
 			<dataarea name="cass" size="11044">
 				<rom name="dragon software issue 10 (198x) (es) (!) (side 1) (tiroal).cas" size="11044" crc="ec1c649b" sha1="c5693195e3490465a460a2b369fcdb00389ff8e5" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass6" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - CHISTE"/>
 			<dataarea name="cass" size="141">
 				<rom name="dragon software issue 10 (198x) (es) (!) (side 2) (chiste).cas" size="141" crc="d14fc670" sha1="09f8b82aeb0bf674057ddaaa7a44c8b2558534b2" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass7" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - COCODRI"/>
 			<dataarea name="cass" size="3998">
 				<rom name="dragon software issue 10 (198x) (es) (!) (side 2) (cocodri).cas" size="3998" crc="8b52f465" sha1="2c3140dcd7021a9789bab558db08624ff31478bc" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass8" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - GALACTIC"/>
 			<dataarea name="cass" size="3796">
 				<rom name="dragon software issue 10 (198x) (es) (!) (side 2) (galactic).cas" size="3796" crc="3f20f4ce" sha1="3f7c84f29e3cebd36ee2765c7d35ab1b08e80f08" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass9" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - RIOS_INT"/>
 			<dataarea name="cass" size="8927">
 				<rom name="dragon software issue 10 (198x) (es) (!) (side 2) (rios int).cas" size="8927" crc="12c6b56d" sha1="e8e7a5788fb1e7088c391848931f21e25badecfd" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass10" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - SOLFEO"/>
 			<dataarea name="cass" size="2299">
 				<rom name="dragon software issue 10 (198x) (es) (!) (side 2) (solfeo).cas" size="2299" crc="d3a9c82c" sha1="517f4911cdf48405fa9bd0627f2ac98ae3c6b933" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dragon Software Issue 11</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dsoft11">
+		<description>Dragon Software Issue 11 (Spa, Split)</description>
+		<year>1986</year>
+		<publisher>GTS</publisher>
 
 		<part name="cass1" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - C_E"/>
 			<dataarea name="cass" size="2656">
 				<rom name="dragon software issue 11 (198x) (es) (!) (side 1) (c e).cas" size="2656" crc="9f25df47" sha1="e1b9d6345325c86d45a0d37d248b35edf3bb69c9" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - K_J"/>
 			<dataarea name="cass" size="13876">
 				<rom name="dragon software issue 11 (198x) (es) (!) (side 1) (k j).cas" size="13876" crc="39ec484c" sha1="03b9e5826ff4d444a15d4e35dfa8af836fefc1aa" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass3" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - SOS1"/>
 			<dataarea name="cass" size="9716">
 				<rom name="dragon software issue 11 (198x) (es) (!) (side 1) (sos1).cas" size="9716" crc="d34a198e" sha1="5228c77556d34ceea0590d9fb0e1a708a4d95309" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass4" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - SUMARIO"/>
 			<dataarea name="cass" size="2376">
 				<rom name="dragon software issue 11 (198x) (es) (!) (side 1) (sumario).cas" size="2376" crc="d4ad80d2" sha1="dbd844b17877782035267027ff7416e0dee45779" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass5" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - BASIC4"/>
 			<dataarea name="cass" size="5496">
 				<rom name="dragon software issue 11 (198x) (es) (!) (side 2) (basic4).cas" size="5496" crc="9436c3e7" sha1="e01bf5f06deef92da52833af4594c803de4186da" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass6" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - ROTULOS"/>
 			<dataarea name="cass" size="2376">
 				<rom name="dragon software issue 11 (198x) (es) (!) (side 2) (rotulos).cas" size="2376" crc="a7bf5134" sha1="7d31e894421a67a09d38b0abedab59a5dec64b1a" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass7" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - SATELITE"/>
 			<dataarea name="cass" size="8369">
 				<rom name="dragon software issue 11 (198x) (es) (!) (side 2) (satelite).cas" size="8369" crc="199c5c24" sha1="f7c1e29ae1d40d9f81202930e7884c28418ffb1c" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dragon Software Issue 12</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dsoft12">
+		<description>Dragon Software Issue 12 (Spa, Split)</description>
+		<year>1986</year>
+		<publisher>GTS</publisher>
 
 		<part name="cass1" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - CURVAS"/>
 			<dataarea name="cass" size="3416">
 				<rom name="dragon software issue 12 (198x) (es) (!) (side 1) (curvas).cas" size="3416" crc="8e4ab229" sha1="a81cc2c470bd511c9c284c5132a613f5bd59e745" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - DRACO"/>
 			<dataarea name="cass" size="14734">
 				<rom name="dragon software issue 12 (198x) (es) (!) (side 1) (draco).cas" size="14734" crc="dbc478cb" sha1="8c1d85c2c2e6adb0c873244a266e8059a3b8225e" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass3" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - MOTO"/>
 			<dataarea name="cass" size="7128">
 				<rom name="dragon software issue 12 (198x) (es) (!) (side 1) (moto).cas" size="7128" crc="2b742e20" sha1="1ba02f4cd1b891fbf075294f7303e7834a872d28" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass4" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - SUMARIO"/>
 			<dataarea name="cass" size="9172">
 				<rom name="dragon software issue 12 (198x) (es) (!) (side 1) (sumario).cas" size="9172" crc="d978f272" sha1="a918d88bf92e2a43b4c33c3d949114fa34b8d996" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass5" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - DINAMITA"/>
 			<dataarea name="cass" size="1787">
 				<rom name="dragon software issue 12 (198x) (es) (!) (side 2) (dinamita).cas" size="1787" crc="01bb1c10" sha1="55f4b741238a2ba667268e647466bd2636fc5adb" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass6" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - RIOS"/>
 			<dataarea name="cass" size="12925">
 				<rom name="dragon software issue 12 (198x) (es) (!) (side 2) (rios).cas" size="12925" crc="5a357668" sha1="76900176cece8a57d88dd0124e219982a142cffa" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass7" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - TIBURON"/>
 			<dataarea name="cass" size="6608">
 				<rom name="dragon software issue 12 (198x) (es) (!) (side 2) (tiburon).cas" size="6608" crc="452e8b72" sha1="6a7de622dc2f7c2156af6f5064a17a8d80b34cb5" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dragon Software Issue 13</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dsoft13">
+		<description>Dragon Software Issue 13 (Spa, Split)</description>
+		<year>1986</year>
+		<publisher>GTS</publisher>
 
 		<part name="cass1" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - EXTERMI"/>
 			<dataarea name="cass" size="8760">
 				<rom name="dragon software issue 13 (1986) (es) (!) (side 1) (extermi).cas" size="8760" crc="a33eb64d" sha1="1e7ef8a5b988014ef7aedae37a500b84618150db" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - LISTADOR"/>
 			<dataarea name="cass" size="1632">
 				<rom name="dragon software issue 13 (1986) (es) (!) (side 1) (listador).cas" size="1632" crc="42226e60" sha1="215c98370e23be6f7b9069ef0d88ba810b9d4318" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass3" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - MAQUINA"/>
 			<dataarea name="cass" size="11028">
 				<rom name="dragon software issue 13 (1986) (es) (!) (side 1) (maquina).cas" size="11028" crc="8b973bf9" sha1="95e74599c3fc44cbb600754d0dd4c4be35cbb8a8" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass4" interface="coco_cass">
+		<feature name="part_id" value="Side 1 - SUMARIO"/>
 			<dataarea name="cass" size="2376">
 				<rom name="dragon software issue 13 (1986) (es) (!) (side 1) (sumario).cas" size="2376" crc="749c1369" sha1="5a21f3dee3736535648fa7c45fe34f332441b61a" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass5" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - CAR_HEXA"/>
 			<dataarea name="cass" size="1076">
 				<rom name="dragon software issue 13 (1986) (es) (!) (side 2) (car hexa).cas" size="1076" crc="68ed17ca" sha1="bcbdee50d9fadd062c540a45164e6c1fba73f588" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass6" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - COMPUT"/>
 			<dataarea name="cass" size="8724">
 				<rom name="dragon software issue 13 (1986) (es) (!) (side 2) (comput).cas" size="8724" crc="3077eb1b" sha1="31ae722cb2dcc666a582596298fe1f53da53d743" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass7" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - DETERMIN"/>
 			<dataarea name="cass" size="1596">
 				<rom name="dragon software issue 13 (1986) (es) (!) (side 2) (determin).cas" size="1596" crc="fd6f3f09" sha1="66f86212b2ec55def33c7d579725165dacde4eb1" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass8" interface="coco_cass">
+		<feature name="part_id" value="Side 2 - SIEMBRA"/>
 			<dataarea name="cass" size="4528">
 				<rom name="dragon software issue 13 (1986) (es) (!) (side 2) (siembra).cas" size="4528" crc="ae55f9d9" sha1="02d891c64f74713a06ff7e95273560ef368da8fb" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dragon Software Issue 15</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dsoft15">
+		<description>Dragon Software Issue 15 (Spa)</description>
+		<year>1986</year>
+		<publisher>GTS</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="15607">
@@ -3200,72 +3784,96 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dragon Software Issue 16</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dsoft16">
+		<description>Dragon Software Issue 16 (Spa)</description>
+		<year>1986</year>
+		<publisher>GTS</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="12809">
 				<rom name="dragon software issue 16 (1986)(gts)(es)[!] (mania).cas" size="12809" crc="e3769149" sha1="28ac33a5911d5e3c371ceadcba697952c3717e86" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="coco_cass">
+	</software>
+
+	<software name="dsoft16a" cloneof="dsoft16">
+		<description>Dragon Software Issue 16 (Spa, Split)</description>
+		<year>1986</year>
+		<publisher>GTS</publisher>
+
+		<part name="cass1" interface="coco_cass">
+		<feature name="part_id" value="MANIA"/>
 			<dataarea name="cass" size="610">
 				<rom name="dragon software issue 16 (1986)(gts)(es)[a] (1) (mania).cas" size="610" crc="c8731081" sha1="5fd68785f3186ca62dfa9f94d241546a52fc30f2" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="coco_cass">
+		<part name="cass2" interface="coco_cass">
+		<feature name="part_id" value="DBJ"/>
 			<dataarea name="cass" size="1327">
 				<rom name="dragon software issue 16 (1986)(gts)(es)[a] (2) (dbj).cas" size="1327" crc="97adc5ef" sha1="3c1f3b4421248b412a0e5370946bce1290faf865" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass4" interface="coco_cass">
+		<part name="cass3" interface="coco_cass">
+		<feature name="part_id" value="MUS"/>
 			<dataarea name="cass" size="2732">
 				<rom name="dragon software issue 16 (1986)(gts)(es)[a] (3) (mus).cas" size="2732" crc="81cd7ddb" sha1="d94f036b11cf5c06d7809cb2ccb20fed5fefeb8d" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass5" interface="coco_cass">
+		<part name="cass4" interface="coco_cass">
+		<feature name="part_id" value="GRAF"/>
 			<dataarea name="cass" size="1068">
 				<rom name="dragon software issue 16 (1986)(gts)(es)[a] (4) (graf).cas" size="1068" crc="e08e0dc1" sha1="852975e1c85154206af9295ef3ebfefb253a9771" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass6" interface="coco_cass">
+		<part name="cass5" interface="coco_cass">
+		<feature name="part_id" value="MANIA 2"/>
 			<dataarea name="cass" size="7080">
 				<rom name="dragon software issue 16 (1986)(gts)(es)[a] (5) (mania 2).cas" size="7080" crc="c58944f2" sha1="efdd42910ed3a83d7f0ebe219b521394fb009854" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass7" interface="coco_cass">
+	</software>
+
+	<software name="dsoft16b" cloneof="dsoft16">
+		<description>Dragon Software Issue 16 (Spa, Split, WAV)</description>
+		<year>1986</year>
+		<publisher>GTS</publisher>
+
+		<part name="cass1" interface="coco_cass">
+		<feature name="part_id" value="MANIA"/>
 			<dataarea name="cass" size="148624">
 				<rom name="dragon software issue 16 (1986)(gts)(es)[a][wav] (1) (mania).wav" size="148624" crc="ebabd9ee" sha1="961089e3fc08077d4b1fc07f4690e6e0223bef96" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass8" interface="coco_cass">
+		<part name="cass2" interface="coco_cass">
+		<feature name="part_id" value="DBJ"/>
 			<dataarea name="cass" size="329244">
 				<rom name="dragon software issue 16 (1986)(gts)(es)[a][wav] (2) (dbj).wav" size="329244" crc="0959ab1f" sha1="0ec04b28f04238e9382bf33069a92a2a63fa677e" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass9" interface="coco_cass">
+		<part name="cass3" interface="coco_cass">
+		<feature name="part_id" value="MUS"/>
 			<dataarea name="cass" size="706724">
 				<rom name="dragon software issue 16 (1986)(gts)(es)[a][wav] (3) (mus).wav" size="706724" crc="5579daba" sha1="17ab04f381ec8cbd890e6cc8955b9c9ee20942a4" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass10" interface="coco_cass">
+		<part name="cass4" interface="coco_cass">
+		<feature name="part_id" value="GRAF"/>
 			<dataarea name="cass" size="278884">
 				<rom name="dragon software issue 16 (1986)(gts)(es)[a][wav] (4) (graf).wav" size="278884" crc="88717eac" sha1="3d57a11d1b17a57f3a059abb5f6e10fa9a250ef1" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass11" interface="coco_cass">
+		<part name="cass5" interface="coco_cass">
+		<feature name="part_id" value="MANIA 2"/>
 			<dataarea name="cass" size="1783784">
 				<rom name="dragon software issue 16 (1986)(gts)(es)[a][wav] (5) (mania 2).wav" size="1783784" crc="3bfc60f5" sha1="b15a4aa66f6150c77516f858c96c71e7098b9e25" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dragon Software Issue 17</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dsoft17">
+		<description>Dragon Software Issue 17 (Spa)</description>
+		<year>1986</year>
+		<publisher>GTS</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="8815">
@@ -3274,10 +3882,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dragon Software Issue 18</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dsoft18">
+		<description>Dragon Software Issue 18 (Spa)</description>
+		<year>1986</year>
+		<publisher>GTS</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="6131">
@@ -3286,99 +3894,60 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dragon Software Issue 19</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dsoft19">
+		<description>Dragon Software Issue 19 (Spa)</description>
+		<year>1986</year>
+		<publisher>GTS</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="14297">
 				<rom name="dragon software issue 19 (1986)(gts)(es)[!] (laberint).cas" size="14297" crc="71ec371f" sha1="6e2c1110c8ae5ac95ef25f62d4473e4a24b3abce" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="coco_cass">
+	</software>
+
+	<software name="dsoft19a" cloneof="dsoft19">
+		<description>Dragon Software Issue 19 (Spa, Split)</description>
+		<year>1986</year>
+		<publisher>GTS</publisher>
+
+		<part name="cass1" interface="coco_cass">
+		<feature name="part_id" value="LABERINT"/>
 			<dataarea name="cass" size="4866">
 				<rom name="dragon software issue 19 (1986)(gts)(es)[a] (1) (laberint).cas" size="4866" crc="9554d034" sha1="e9aa25a4b6fbf4a3076aeac4681e7ada3e47cc9f" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="coco_cass">
+		<part name="cass2" interface="coco_cass">
+		<feature name="part_id" value="H"/>
 			<dataarea name="cass" size="9431">
 				<rom name="dragon software issue 19 (1986)(gts)(es)[a] (2) (h).cas" size="9431" crc="b50a7726" sha1="ed438e1125ffb7af1ce9aef2b878dfdd40552d46" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass4" interface="coco_cass">
+	</software>
+
+	<software name="dsoft19b" cloneof="dsoft19">
+		<description>Dragon Software Issue 19 (Spa, Split, WAV)</description>
+		<year>1986</year>
+		<publisher>GTS</publisher>
+
+		<part name="cass1" interface="coco_cass">
+		<feature name="part_id" value="LABERINT"/>
 			<dataarea name="cass" size="1252124">
 				<rom name="dragon software issue 19 (1986)(gts)(es)[a][wav] (1) (laberint).wav" size="1252124" crc="0eeb1cc5" sha1="e8efc32819d435828d54402a769dd83f8f5989ee" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass5" interface="coco_cass">
+		<part name="cass2" interface="coco_cass">
+		<feature name="part_id" value="H"/>
 			<dataarea name="cass" size="2275084">
 				<rom name="dragon software issue 19 (1986)(gts)(es)[a][wav] (2) (h).wav" size="2275084" crc="9cdbe780" sha1="66a815696ed5db0a7db3336ee1c73d79c4f7ad21" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dragon Software Issue 2</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="coco_cass">
-			<dataarea name="cass" size="1285">
-				<rom name="dragon software issue 2 (1985) (es) (!) (side 1) (numeland).cas" size="1285" crc="fe1dde9a" sha1="262b26fcb9f4fd0c740b42d40f2f31b24060e8d8" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass2" interface="coco_cass">
-			<dataarea name="cass" size="3715">
-				<rom name="dragon software issue 2 (1985) (es) (!) (side 1) (paracas).cas" size="3715" crc="45abad48" sha1="986ba805b4f665e37723e75ed60d973ccafdd8fb" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass3" interface="coco_cass">
-			<dataarea name="cass" size="1847">
-				<rom name="dragon software issue 2 (1985) (es) (!) (side 1) (pasabola).cas" size="1847" crc="95c11c7f" sha1="4062383c9bdbb0ed873ffb06a95f223fc63aecd2" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass4" interface="coco_cass">
-			<dataarea name="cass" size="3930">
-				<rom name="dragon software issue 2 (1985) (es) (!) (side 1) (sumario).cas" size="3930" crc="d3bdd521" sha1="9e4e029b202d3f49d3cbcd409461bc689e56e533" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass5" interface="coco_cass">
-			<dataarea name="cass" size="5899">
-				<rom name="dragon software issue 2 (1985) (es) (!) (side 1) (topolino).cas" size="5899" crc="9861069f" sha1="7f764ddc6dad2a5f4cf21ea65d58c8dbfd5a98dc" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass6" interface="coco_cass">
-			<dataarea name="cass" size="2647">
-				<rom name="dragon software issue 2 (1985) (es) (!) (side 2) (graficas).cas" size="2647" crc="0e83ff6b" sha1="7ea6f2121428af527c36d6027b0cbec3c8a3db1d" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass7" interface="coco_cass">
-			<dataarea name="cass" size="8037">
-				<rom name="dragon software issue 2 (1985) (es) (!) (side 2) (morselon).cas" size="8037" crc="b6d18067" sha1="4efbf15c4a989cbfdd4a050df7f461b09eebc524" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass8" interface="coco_cass">
-			<dataarea name="cass" size="2194">
-				<rom name="dragon software issue 2 (1985) (es) (!) (side 2) (new york).cas" size="2194" crc="9df2b7d1" sha1="4a8332302b6a966f74f0a52757fcefba0a899faf" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass9" interface="coco_cass">
-			<dataarea name="cass" size="1595">
-				<rom name="dragon software issue 2 (1985) (es) (!) (side 2) (plotters).cas" size="1595" crc="7ff1a7ab" sha1="9f830361b2d07177e0a953a1d4faaa7a729f3c66" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass10" interface="coco_cass">
-			<dataarea name="cass" size="2426">
-				<rom name="dragon software issue 2 (1985) (es) (!) (side 2) (roadride).cas" size="2426" crc="11d5e31a" sha1="42b7304ae94938fc3542d0769bd780720f7aee6e" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Dragon Software Issue 20</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dsoft20">
+		<description>Dragon Software Issue 20 (Spa)</description>
+		<year>1986</year>
+		<publisher>GTS</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="8028">
@@ -3387,489 +3956,143 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dragon Software Issue 21</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dsoft21">
+		<description>Dragon Software Issue 21 (Spa)</description>
+		<year>1986</year>
+		<publisher>GTS</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="9423">
 				<rom name="dragon software issue 21 (1986)(gts)(es)[!] (s o s).cas" size="9423" crc="6d7c4d0a" sha1="3ddb47ac5cb1db737424d6c4ec9183e00a271daf" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="coco_cass">
+	</software>
+
+	<software name="dsoft21a" cloneof="dsoft21">
+		<description>Dragon Software Issue 21 (Spa, Split)</description>
+		<year>1986</year>
+		<publisher>GTS</publisher>
+
+		<part name="cass1" interface="coco_cass">
+		<feature name="part_id" value="S O S"/>
 			<dataarea name="cass" size="1314">
 				<rom name="dragon software issue 21 (1986)(gts)(es)[a] (1) (s o s).cas" size="1314" crc="877dbc16" sha1="615c349d853533305aded8152ce5799cfbdf7981" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="coco_cass">
+		<part name="cass2" interface="coco_cass">
+		<feature name="part_id" value="DU"/>
 			<dataarea name="cass" size="2880">
 				<rom name="dragon software issue 21 (1986)(gts)(es)[a] (2) (du).cas" size="2880" crc="48307f2d" sha1="820412fe74ca79424514f8580ad81d8e7f02045b" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass4" interface="coco_cass">
+		<part name="cass3" interface="coco_cass">
+		<feature name="part_id" value="SOS"/>
 			<dataarea name="cass" size="5229">
 				<rom name="dragon software issue 21 (1986)(gts)(es)[a] (3) (sos).cas" size="5229" crc="35ad45ad" sha1="c12bf50da30df8b0baf6a824b184035205fea86c" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass5" interface="coco_cass">
+	</software>
+
+	<software name="dsoft21b" cloneof="dsoft21">
+		<description>Dragon Software Issue 21 (Spa, Split, WAV)</description>
+		<year>1986</year>
+		<publisher>GTS</publisher>
+
+		<part name="cass1" interface="coco_cass">
+		<feature name="part_id" value="S O S"/>
 			<dataarea name="cass" size="329284">
 				<rom name="dragon software issue 21 (1986)(gts)(es)[a][wav] (1) (s o s).wav" size="329284" crc="35aad83b" sha1="2657a1f80ca74c6d79ea256ea395f39109b6c931" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass6" interface="coco_cass">
+		<part name="cass2" interface="coco_cass">
+		<feature name="part_id" value="DU"/>
 			<dataarea name="cass" size="691004">
 				<rom name="dragon software issue 21 (1986)(gts)(es)[a][wav] (2) (du).wav" size="691004" crc="5540fbc6" sha1="6c01d210f2001a7626c0b31d1ec7a19c3140ee94" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass7" interface="coco_cass">
+		<part name="cass3" interface="coco_cass">
+		<feature name="part_id" value="SOS"/>
 			<dataarea name="cass" size="1329504">
 				<rom name="dragon software issue 21 (1986)(gts)(es)[a][wav] (3) (sos).wav" size="1329504" crc="f1ecfb7d" sha1="ac8421c01076558ef58a95c397358ca358c9d47b" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dragon Software Issue 22</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dsoft22">
+		<description>Dragon Software Issue 22 (Spa)</description>
+		<year>1986</year>
+		<publisher>GTS</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="10032">
 				<rom name="dragon software issue 22 (1986)(gts)(es)[!] (superd).cas" size="10032" crc="db7fba60" sha1="caf24135c783e7dee1d2902fbbb849bb6a56c4bb" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="coco_cass">
+	</software>
+
+	<software name="dsoft22a" cloneof="dsoft22">
+		<description>Dragon Software Issue 22 (Spa, Split)</description>
+		<year>1986</year>
+		<publisher>GTS</publisher>
+
+		<part name="cass1" interface="coco_cass">
+		<feature name="part_id" value="SUPER D"/>
 			<dataarea name="cass" size="1018">
 				<rom name="dragon software issue 22 (1986)(gts)(es)[a] (1) (super d).cas" size="1018" crc="fb2e2102" sha1="6df5137303dc2496992284f3a15209627b59b7bc" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="coco_cass">
+		<part name="cass2" interface="coco_cass">
+		<feature name="part_id" value="DUENDE"/>
 			<dataarea name="cass" size="2823">
 				<rom name="dragon software issue 22 (1986)(gts)(es)[a] (2) (duende).cas" size="2823" crc="d3f9be83" sha1="92b955df2b264ec1c5499ba45f1962870563b3d6" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass4" interface="coco_cass">
+		<part name="cass3" interface="coco_cass">
+		<feature name="part_id" value="EXT"/>
 			<dataarea name="cass" size="1789">
 				<rom name="dragon software issue 22 (1986)(gts)(es)[a] (3) (ext).cas" size="1789" crc="22eead49" sha1="6cfca78c903142d7dfafa3ef347e3b9518654260" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass5" interface="coco_cass">
+		<part name="cass4" interface="coco_cass">
+		<feature name="part_id" value="SUPER"/>
 			<dataarea name="cass" size="4402">
 				<rom name="dragon software issue 22 (1986)(gts)(es)[a] (4) (super).cas" size="4402" crc="3f2c983d" sha1="3cb0eb103055dec3b41885836a17c36cd880b83f" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass6" interface="coco_cass">
+	</software>
+
+	<software name="dsoft22b" cloneof="dsoft22">
+		<description>Dragon Software Issue 22 (Spa, Split, WAV)</description>
+		<year>1986</year>
+		<publisher>GTS</publisher>
+
+		<part name="cass1" interface="coco_cass">
+		<feature name="part_id" value="SUPER D"/>
 			<dataarea name="cass" size="255604">
 				<rom name="dragon software issue 22 (1986)(gts)(es)[a][wav] (1) (super d).wav" size="255604" crc="b0e9db16" sha1="88c80c7db0d5e27b0e92d734ffd35bcd256a10c9" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass7" interface="coco_cass">
+		<part name="cass2" interface="coco_cass">
+		<feature name="part_id" value="DUENDE"/>
 			<dataarea name="cass" size="677224">
 				<rom name="dragon software issue 22 (1986)(gts)(es)[a][wav] (2) (duende).wav" size="677224" crc="70102eb4" sha1="4f8fe64a7f5fcd67e493fea91e99825ab53728e1" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass8" interface="coco_cass">
+		<part name="cass3" interface="coco_cass">
+		<feature name="part_id" value="EXT"/>
 			<dataarea name="cass" size="479464">
 				<rom name="dragon software issue 22 (1986)(gts)(es)[a][wav] (3) (ext).wav" size="479464" crc="248cc218" sha1="4a4442a2340b0fa1b13dce68251ecf5426bfdbd0" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass9" interface="coco_cass">
+		<part name="cass4" interface="coco_cass">
+		<feature name="part_id" value="SUPER"/>
 			<dataarea name="cass" size="1107764">
 				<rom name="dragon software issue 22 (1986)(gts)(es)[a][wav] (4) (super).wav" size="1107764" crc="506a9921" sha1="9df564902eff4f65c0ceafa3e9fba79938f0bca1" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dragon Software Issue 3</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="coco_cass">
-			<dataarea name="cass" size="1856">
-				<rom name="dragon software issue 3 (1985) (es) (!) (side 1) (circuito).cas" size="1856" crc="647060f9" sha1="8f038440d0fdef9fda00bd0412528579fd66faa0" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass2" interface="coco_cass">
-			<dataarea name="cass" size="847">
-				<rom name="dragon software issue 3 (1985) (es) (!) (side 1) (dec-rom).cas" size="847" crc="bae64a0d" sha1="fe2fc7c1b9812a677a6612a636c99b22c5567b98" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass3" interface="coco_cass">
-			<dataarea name="cass" size="651">
-				<rom name="dragon software issue 3 (1985) (es) (!) (side 1) (graf son).cas" size="651" crc="1e7df68e" sha1="fcfd7f3267cd3f3f56e823d71d4f2654292cc952" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass4" interface="coco_cass">
-			<dataarea name="cass" size="2175">
-				<rom name="dragon software issue 3 (1985) (es) (!) (side 1) (invasion).cas" size="2175" crc="b5ab6494" sha1="e56057df8d3a5268a9db7b162dab95972d93a333" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass5" interface="coco_cass">
-			<dataarea name="cass" size="5098">
-				<rom name="dragon software issue 3 (1985) (es) (!) (side 1) (pyr).cas" size="5098" crc="31b3068a" sha1="37a7be4fabd15c389e8e3378d7efc0b6ea1e506d" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass6" interface="coco_cass">
-			<dataarea name="cass" size="1782">
-				<rom name="dragon software issue 3 (1985) (es) (!) (side 1) (sumario).cas" size="1782" crc="0f7aab39" sha1="5e558d6ae795228c9f48ec42771b4478f266d58c" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass7" interface="coco_cass">
-			<dataarea name="cass" size="839">
-				<rom name="dragon software issue 3 (1985) (es) (!) (side 2) (caballos).cas" size="839" crc="8800f8af" sha1="10317815e623b36786619df330fd9114fa067b23" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass8" interface="coco_cass">
-			<dataarea name="cass" size="2316">
-				<rom name="dragon software issue 3 (1985) (es) (!) (side 2) (calendar).cas" size="2316" crc="d9621798" sha1="03b1c88ca54fee94193c5e7d783a754cd72f000c" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass9" interface="coco_cass">
-			<dataarea name="cass" size="5915">
-				<rom name="dragon software issue 3 (1985) (es) (!) (side 2) (pintor).cas" size="5915" crc="bed1537c" sha1="1a741fbb79b0618c0ef5cb6cd8ade112b73b5e16" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass10" interface="coco_cass">
-			<dataarea name="cass" size="2425">
-				<rom name="dragon software issue 3 (1985) (es) (!) (side 2) (t hanoi).cas" size="2425" crc="8ceeea6c" sha1="5406719358b87e825340627d58cabf03188b9f18" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass11" interface="coco_cass">
-			<dataarea name="cass" size="2437">
-				<rom name="dragon software issue 3 (1985) (es) (!) (side 2) (tonadas).cas" size="2437" crc="5a0924ef" sha1="c2c094ee5813bf5fc2d232d5e6e4fbacd3a42145" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Dragon Software Issue 4</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="coco_cass">
-			<dataarea name="cass" size="4024">
-				<rom name="dragon software issue 4 (1985) (es) (!) (side 1) (antiaere).cas" size="4024" crc="acdfeca4" sha1="e06592f152d3682cfaf107aecc38fa57b71eb7dd" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass2" interface="coco_cass">
-			<dataarea name="cass" size="8357">
-				<rom name="dragon software issue 4 (1985) (es) (!) (side 1) (aventura).cas" size="8357" crc="51e6f8af" sha1="41ce3f4ca2fd76ab261c0473efb97a03f7f9ef64" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass3" interface="coco_cass">
-			<dataarea name="cass" size="4245">
-				<rom name="dragon software issue 4 (1985) (es) (!) (side 1) (invasore).cas" size="4245" crc="cff9d3f4" sha1="f8a2ffc6ae539ea744c882409a6c4722d86c4d44" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass4" interface="coco_cass">
-			<dataarea name="cass" size="1601">
-				<rom name="dragon software issue 4 (1985) (es) (!) (side 1) (sieteyme).cas" size="1601" crc="71c31a08" sha1="c191e77a8e2b329dd62e5155f47255162160fc54" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass5" interface="coco_cass">
-			<dataarea name="cass" size="3930">
-				<rom name="dragon software issue 4 (1985) (es) (!) (side 1) (sumario).cas" size="3930" crc="fcc2259d" sha1="18ebf11507cbb10b572a19d3b53a7d16243696bc" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass6" interface="coco_cass">
-			<dataarea name="cass" size="3696">
-				<rom name="dragon software issue 4 (1985) (es) (!) (side 2) (carrera).cas" size="3696" crc="80758c18" sha1="8fbe3e4f8aa0c17f31c36e600ba5d7eac48ba1b7" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass7" interface="coco_cass">
-			<dataarea name="cass" size="1273">
-				<rom name="dragon software issue 4 (1985) (es) (!) (side 2) (policirc).cas" size="1273" crc="8c9076e0" sha1="74c7e91dce8be5eab153c3855d8a9e642f13951b" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass8" interface="coco_cass">
-			<dataarea name="cass" size="3303">
-				<rom name="dragon software issue 4 (1985) (es) (!) (side 2) (rallye).cas" size="3303" crc="df51b2de" sha1="18535ba85fd42873b99b4573f69ccdf3955822f9" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass9" interface="coco_cass">
-			<dataarea name="cass" size="1800">
-				<rom name="dragon software issue 4 (1985) (es) (!) (side 2) (rompetap).cas" size="1800" crc="d77558da" sha1="7c83b481e06e2877c60b0d64a166172488287840" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass10" interface="coco_cass">
-			<dataarea name="cass" size="2059">
-				<rom name="dragon software issue 4 (1985) (es) (!) (side 2) (tenis).cas" size="2059" crc="05ea2629" sha1="860c514964e00e667e9ad60df72cd8b1ca1c3f2a" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Dragon Software Issue 5</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="coco_cass">
-			<dataarea name="cass" size="2688">
-				<rom name="dragon software issue 5 (1985) (es) (!) (side 1) (caza).cas" size="2688" crc="dba28be6" sha1="e21c7203af78d737de16694aa7e3e3ce4195b6ba" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass2" interface="coco_cass">
-			<dataarea name="cass" size="275">
-				<rom name="dragon software issue 5 (1985) (es) (!) (side 1) (centrado).cas" size="275" crc="57aa7ad1" sha1="b3a5b6541dfd57ca2581a5a17642afc147c6098c" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass3" interface="coco_cass">
-			<dataarea name="cass" size="6845">
-				<rom name="dragon software issue 5 (1985) (es) (!) (side 1) (chopper).cas" size="6845" crc="558b6a74" sha1="6193361a8ddd4edc7acc727dea8c6b52c1c0fa39" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass4" interface="coco_cass">
-			<dataarea name="cass" size="849">
-				<rom name="dragon software issue 5 (1985) (es) (!) (side 1) (just der).cas" size="849" crc="fb38a2ac" sha1="dc07c4f82f6260a95669057de4fa5e68a8b6b10a" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass5" interface="coco_cass">
-			<dataarea name="cass" size="4637">
-				<rom name="dragon software issue 5 (1985) (es) (!) (side 1) (pyr).cas" size="4637" crc="3fe9c853" sha1="03a85569a7f36bad44a66ce464d7ae83c3d74416" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass6" interface="coco_cass">
-			<dataarea name="cass" size="4473">
-				<rom name="dragon software issue 5 (1985) (es) (!) (side 1) (sumario).cas" size="4473" crc="bdd6a7a8" sha1="664b4aa51cd3489fdc01627a0bc7343cf49a7989" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass7" interface="coco_cass">
-			<dataarea name="cass" size="9504">
-				<rom name="dragon software issue 5 (1985) (es) (!) (side 2) (bioritmo).cas" size="9504" crc="ced88538" sha1="bea874f0bb570b95763cd563d7fee1266626bc26" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass8" interface="coco_cass">
-			<dataarea name="cass" size="9835">
-				<rom name="dragon software issue 5 (1985) (es) (!) (side 2) (colgado).cas" size="9835" crc="96420289" sha1="f2dc8350857061de5a8d71538653bafba7935d8a" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass9" interface="coco_cass">
-			<dataarea name="cass" size="465">
-				<rom name="dragon software issue 5 (1985) (es) (!) (side 2) (dec hex).cas" size="465" crc="9de6d410" sha1="f28461f6e65c44579a478b2d92e9714e7bf3e97a" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass10" interface="coco_cass">
-			<dataarea name="cass" size="783">
-				<rom name="dragon software issue 5 (1985) (es) (!) (side 2) (lombriz).cas" size="783" crc="56546979" sha1="f44c568d35972770bea856a25f162b71c5528fb8" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass11" interface="coco_cass">
-			<dataarea name="cass" size="3138">
-				<rom name="dragon software issue 5 (1985) (es) (!) (side 2) (mixto).cas" size="3138" crc="cb0d6f14" sha1="5836c64a5842ab5b8ce170250f2864c7e4de7240" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Dragon Software Issue 6</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="coco_cass">
-			<dataarea name="cass" size="2688">
-				<rom name="dragon software issue 6 (198x) (es) (!) (side 1) (ataque).cas" size="2688" crc="55224268" sha1="d2c57c782be51d4f39db521048c73d076ce4b90c" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass2" interface="coco_cass">
-			<dataarea name="cass" size="4706">
-				<rom name="dragon software issue 6 (198x) (es) (!) (side 1) (cartas).cas" size="4706" crc="e3e205b3" sha1="0d8500f05613624ea3eb3c73c840b4b9a1715988" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass3" interface="coco_cass">
-			<dataarea name="cass" size="3138">
-				<rom name="dragon software issue 6 (198x) (es) (!) (side 1) (mixto).cas" size="3138" crc="2a7ccc06" sha1="22fd6ab43f955766a12f5fb77f2bb946ad1b26ad" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass4" interface="coco_cass">
-			<dataarea name="cass" size="4810">
-				<rom name="dragon software issue 6 (198x) (es) (!) (side 1) (pyr 2).cas" size="4810" crc="0676a0d8" sha1="765a296e85775466d09180b4cc0191b2bc438111" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass5" interface="coco_cass">
-			<dataarea name="cass" size="2812">
-				<rom name="dragon software issue 6 (198x) (es) (!) (side 2) (ahorcado).cas" size="2812" crc="0fc3b955" sha1="e6d6c3750dcf52d91a68c16e8df6cd711d641d3c" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass6" interface="coco_cass">
-			<dataarea name="cass" size="9504">
-				<rom name="dragon software issue 6 (198x) (es) (!) (side 2) (bioritmo).cas" size="9504" crc="78462f4e" sha1="2dfedc51032593cb2524c3a7d4455065cd347b66" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass7" interface="coco_cass">
-			<dataarea name="cass" size="6845">
-				<rom name="dragon software issue 6 (198x) (es) (!) (side 2) (choper).cas" size="6845" crc="fdebe9ce" sha1="2b6f972ec8510d0a9da9ac62839bc751c0174430" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass8" interface="coco_cass">
-			<dataarea name="cass" size="3037">
-				<rom name="dragon software issue 6 (198x) (es) (!) (side 2) (m mind).cas" size="3037" crc="10b75a15" sha1="3d0c2966b25d1f7349c995c01d13c772f4b82347" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Dragon Software Issue 7</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="coco_cass">
-			<dataarea name="cass" size="2438">
-				<rom name="dragon software issue 7 (1986) (es) (!) (side 2) (ascenden).cas" size="2438" crc="100c1c10" sha1="c162542f097840852ce3c07c20095295d712c874" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass2" interface="coco_cass">
-			<dataarea name="cass" size="1157">
-				<rom name="dragon software issue 7 (1986) (es) (!) (side 2) (bombarde).cas" size="1157" crc="abd26225" sha1="c9fb5bd9a726316c5ed6b5c635b27103b5950582" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass3" interface="coco_cass">
-			<dataarea name="cass" size="7229">
-				<rom name="dragon software issue 7 (1986) (es) (!) (side 2) (direc2).cas" size="7229" crc="a9d5b7c2" sha1="4cbcc45518fe381790b77208878362076ebb819b" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass4" interface="coco_cass">
-			<dataarea name="cass" size="6704">
-				<rom name="dragon software issue 7 (1986) (es) (!) (side 2) (director).cas" size="6704" crc="1bf81ffe" sha1="f96b861f2a97961a0dd69693f26d193c4b1b59fa" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass5" interface="coco_cass">
-			<dataarea name="cass" size="2235">
-				<rom name="dragon software issue 7 (1986) (es) (!) (side 2) (rotator).cas" size="2235" crc="ea98d624" sha1="0301c52e38fe9788771bb8a2328313ead3086666" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass6" interface="coco_cass">
-			<dataarea name="cass" size="8674">
-				<rom name="dragon software issue 7 (1986) (es) (!) (side 1) (boxeo).cas" size="8674" crc="43d71366" sha1="d8eb723dee9f4c6ed45fb731e62dc98e80296b31" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass7" interface="coco_cass">
-			<dataarea name="cass" size="1066">
-				<rom name="dragon software issue 7 (1986) (es) (!) (side 1) (caldomi).cas" size="1066" crc="6af5ed96" sha1="83cb2fcf2cc913c599bc44bb50597cf51866a740" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass8" interface="coco_cass">
-			<dataarea name="cass" size="2419">
-				<rom name="dragon software issue 7 (1986) (es) (!) (side 1) (calendar).cas" size="2419" crc="94c75bce" sha1="2748785b16349db4e7da693ec8f7e3b2a0729e2f" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass9" interface="coco_cass">
-			<dataarea name="cass" size="2959">
-				<rom name="dragon software issue 7 (1986) (es) (!) (side 1) (eliminad).cas" size="2959" crc="471e75c0" sha1="e4db111c4857c5e0330089b2ffbbacf8c834b539" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass10" interface="coco_cass">
-			<dataarea name="cass" size="3920">
-				<rom name="dragon software issue 7 (1986) (es) (!) (side 1) (sumario).cas" size="3920" crc="cd129c00" sha1="6174329402640b0bdb37ce67608c650353f0cd1d" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Dragon Software Issue 8</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="coco_cass">
-			<dataarea name="cass" size="10255">
-				<rom name="dragon software issue 8 (1986) (es) (!) (side 1) (avisafon).cas" size="10255" crc="476d037d" sha1="1fcf42e5a0d6620c13d185777860b9c0e9325d43" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass2" interface="coco_cass">
-			<dataarea name="cass" size="2243">
-				<rom name="dragon software issue 8 (1986) (es) (!) (side 1) (carrera).cas" size="2243" crc="1681bea4" sha1="4d44be3e285515d29f45f7fea216e6c016a6d551" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass3" interface="coco_cass">
-			<dataarea name="cass" size="3204">
-				<rom name="dragon software issue 8 (1986) (es) (!) (side 1) (ecuacion).cas" size="3204" crc="e961e72b" sha1="6d8c57752088e901353272f4f7695b5db200fad2" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass4" interface="coco_cass">
-			<dataarea name="cass" size="1237">
-				<rom name="dragon software issue 8 (1986) (es) (!) (side 1) (flash).cas" size="1237" crc="b22128b7" sha1="d385ef1d2fce096ffb17343a78594c8ae8935e06" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass5" interface="coco_cass">
-			<dataarea name="cass" size="1264">
-				<rom name="dragon software issue 8 (1986) (es) (!) (side 1) (sumario).cas" size="1264" crc="3210d85a" sha1="0af1197e1f0dcc8ecf052b0418e41f6d88c3d92a" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass6" interface="coco_cass">
-			<dataarea name="cass" size="2353">
-				<rom name="dragon software issue 8 (1986) (es) (!) (side 2) (alt res).cas" size="2353" crc="b51e03b9" sha1="e94c3dccec6c620bdc0ad97f10dab093ce3a484b" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass7" interface="coco_cass">
-			<dataarea name="cass" size="3835">
-				<rom name="dragon software issue 8 (1986) (es) (!) (side 2) (basic 1).cas" size="3835" crc="656dd0f4" sha1="aa4329a94d379dbd2d6bff425acff7deb1a53fbb" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass8" interface="coco_cass">
-			<dataarea name="cass" size="2770">
-				<rom name="dragon software issue 8 (1986) (es) (!) (side 2) (conta).cas" size="2770" crc="4bd890b1" sha1="801427ec050b3570219610051102a04e0a887b3a" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass9" interface="coco_cass">
-			<dataarea name="cass" size="386">
-				<rom name="dragon software issue 8 (1986) (es) (!) (side 2) (demo conta).cas" size="386" crc="ddcab439" sha1="45af6c73fee2527306ed13f763660f0139d8c111" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass10" interface="coco_cass">
-			<dataarea name="cass" size="9378">
-				<rom name="dragon software issue 8 (1986) (es) (!) (side 2) (tank).cas" size="9378" crc="6197959b" sha1="9378a6d66d577e170232a5ccc0023bb1d84dcf71" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Dragon Software Issue 9</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="coco_cass">
-			<dataarea name="cass" size="3991">
-				<rom name="dragon software issue 9 (1986) (es) (!) (side 1) (basic2).cas" size="3991" crc="4efee922" sha1="f03e471045bef577f8549e6faf3c90af484fd3c6" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass2" interface="coco_cass">
-			<dataarea name="cass" size="773">
-				<rom name="dragon software issue 9 (1986) (es) (!) (side 1) (disco).cas" size="773" crc="9290f0a0" sha1="3717b860bafabed2f5786624d757f93fb366b3f2" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass3" interface="coco_cass">
-			<dataarea name="cass" size="19857">
-				<rom name="dragon software issue 9 (1986) (es) (!) (side 1) (enigma).cas" size="19857" crc="4778591f" sha1="f2b6df3220d2d65c94f2894a1df2f2f0b54993f2" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass4" interface="coco_cass">
-			<dataarea name="cass" size="12398">
-				<rom name="dragon software issue 9 (1986) (es) (!) (side 1) (multys).cas" size="12398" crc="9a7e1d41" sha1="bdd14957de49157b44bd278a1038812c9f01772e" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass5" interface="coco_cass">
-			<dataarea name="cass" size="1869">
-				<rom name="dragon software issue 9 (1986) (es) (!) (side 1) (sumario).cas" size="1869" crc="fb3a051f" sha1="46731527cbd8ccd1a2fcd583f2e649848e1c674e" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass6" interface="coco_cass">
-			<dataarea name="cass" size="8027">
-				<rom name="dragon software issue 9 (1986) (es) (!) (side 2) (comecoco).cas" size="8027" crc="37d1169e" sha1="fd0943cc7c60ab69a5bdce5fc4fd5888373eff13" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass7" interface="coco_cass">
-			<dataarea name="cass" size="1255">
-				<rom name="dragon software issue 9 (1986) (es) (!) (side 2) (nocturno).cas" size="1255" crc="68068e6c" sha1="b965ad389de5ba2b3d8488e42a9e5d787ca33b19" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass8" interface="coco_cass">
-			<dataarea name="cass" size="1209">
-				<rom name="dragon software issue 9 (1986) (es) (!) (side 2) (piano).cas" size="1209" crc="4ed6d091" sha1="5024208b5148ccd6f6eb60bfecba19c741ebb71b" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
+<!--
 	<software name="">
 		<description>Dragon Tamer</description>
 		<year>198?</year>
