@@ -5010,11 +5010,10 @@
 		</part>
 	</software>
 
-<!--
-	<software name="">
+	<software name="frnkwond">
 		<description>Franklin In Wonderland</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Salamander Software</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="6596434">
@@ -5023,44 +5022,58 @@
 		</part>
 	</software>
 
-	<software name="">
+	<software name="frnktomb">
 		<description>Franklin's Tomb</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<year>1983</year>
+		<publisher>Salamander Software</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="22580">
 				<rom name="franklin's tomb (1983) (salamander software) (!).cas" size="22580" crc="6f77c8b2" sha1="92d5976543ede2b71cb322ec33041c5f6c14fe8d" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="coco_cass">
+	</software>
+
+	<software name="frnktomba" cloneof="frnktomb">
+		<description>Franklin's Tomb (WAV)</description>
+		<year>1983</year>
+		<publisher>Salamander Software</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="6332573">
 				<rom name="franklins tomb (run) (salamander software).wav" size="6332573" crc="2c47b7a4" sha1="9698d9ea3d30c1737355f7ae9eeee672e0666a76" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
+	<software name="frogger">
 		<description>Frogger</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<year>1983</year>
+		<publisher>Microdeal</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="24155">
 				<rom name="frogger (1983) (microdeal) (!).cas" size="24155" crc="30e9a873" sha1="51c4b4196e7972551f516e1cbed3b308b12f76f7" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="coco_cass">
+	</software>
+
+	<software name="froggera" cloneof="frogger">
+		<description>Frogger (WAV)</description>
+		<year>1983</year>
+		<publisher>Microdeal</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="8104581">
 				<rom name="frogger (microdeal).wav" size="8104581" crc="2de5eaee" sha1="97c85b543a302e2dddf9398507429e757d93f57d" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
+	<software name="froglet">
 		<description>Froglet</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<year>1983</year>
+		<publisher>CRL</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="32779">
@@ -5069,32 +5082,46 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Fruity</description>
+	<software name="fruity1">
+		<description>Fruity (Dragon Data Ltd.)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Dragon Data Ltd.</publisher>
 
 		<part name="cass1" interface="coco_cass">
-			<dataarea name="cass" size="27644">
-				<rom name="fruity (1984)(eurohard)[!].cas" size="27644" crc="74f6ac65" sha1="520186d5826fa632c8d582e730214382bd720de9" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass2" interface="coco_cass">
-			<dataarea name="cass" size="33385">
-				<rom name="fruity (198x) (impsoft) (u) (a).cas" size="33385" crc="5023ba18" sha1="c9367812ec1a677943b439eb17501c18d106acc3" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass3" interface="coco_cass">
 			<dataarea name="cass" size="9563341">
 				<rom name="fruity (dragon data ltd).wav" size="9563341" crc="f6751f81" sha1="470f9d78e219446cc16eed147714367f18e174fa" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Fun And Games</description>
+	<software name="fruity1s" cloneof="fruity1">
+		<description>Fruity (Spa)</description>
+		<year>1984</year>
+		<publisher>Eurohard SA</publisher>
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="27644">
+				<rom name="fruity (1984)(eurohard)[!].cas" size="27644" crc="74f6ac65" sha1="520186d5826fa632c8d582e730214382bd720de9" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fruity2">
+		<description>Fruity (Impsoft)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Impsoft</publisher>
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="33385">
+				<rom name="fruity (198x) (impsoft) (u) (a).cas" size="33385" crc="5023ba18" sha1="c9367812ec1a677943b439eb17501c18d106acc3" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fungames">
+		<description>Fun And Games</description>
+		<year>1983</year>
+		<publisher>Shards Software</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="38708">
@@ -5103,10 +5130,10 @@
 		</part>
 	</software>
 
-	<software name="">
+	<software name="funlearn">
 		<description>Fun To Learn</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Shards Software</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="20095">
@@ -5115,73 +5142,82 @@
 		</part>
 	</software>
 
-	<software name="">
+	<software name="fury">
 		<description>Fury</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<year>1984</year>
+		<publisher>Microdeal</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="29691">
 				<rom name="fury (1984)(microdeal)[!].cas" size="29691" crc="963d2dfd" sha1="a071f34c2e87d8c2b418b499635d07bde85035df" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="coco_cass">
+	</software>
+
+	<software name="furya" cloneof="fury">
+		<description>Fury (WAV)</description>
+		<year>1984</year>
+		<publisher>Microdeal</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="2483289">
 				<rom name="fury (microdeal).wav" size="2483289" crc="c081c9c4" sha1="1255e149799fa84bc38c4cc997c2088d37ecc279" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>G Prix</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="cass1" interface="coco_cass">
-			<dataarea name="cass" size="36153">
-				<rom name="g prix (side 1) (tiger soft).cas" size="36153" crc="ce1015a7" sha1="a77a69a6d70992898fdada9d6dc73e412da8497a" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
+	<software name="gambush">
 		<description>Galactic Ambush</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<year>1983</year>
+		<publisher>Microdeal</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="19671">
 				<rom name="galactic ambush (1983)(microdeal)[!].cas" size="19671" crc="b398d87c" sha1="127442f60b18245a28901c3a67bb7db4df0261ac" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="coco_cass">
+	</software>
+
+	<software name="gambusha" cloneof="gambush">
+		<description>Galactic Ambush (WAV)</description>
+		<year>1983</year>
+		<publisher>Microdeal</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="5328365">
 				<rom name="galactic ambush (microdeal).wav" size="5328365" crc="ec1a7484" sha1="95d27105bf420d371e55cc891907f93272b52326" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
+	<software name="galagon">
 		<description>Galagon</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Microdeal</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="28332">
 				<rom name="galagon (198x) (microdeal) (u).cas" size="28332" crc="e1515a01" sha1="f17f05ea37502615620ad013e7cd06292da4aa66" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="coco_cass">
+	</software>
+
+	<software name="galagona" cloneof="galagon">
+		<description>Galagon (WAV)</description>
+		<year>198?</year>
+		<publisher>Microdeal</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="13834211">
 				<rom name="galagon (microdeal).wav" size="13834211" crc="89469007" sha1="ef27576c4a7e2f3d34d4317af3f2d8c69793ed2a" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
+	<software name="graiders">
 		<description>Galatic Raiders</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Algray</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="13410">
@@ -5190,32 +5226,46 @@
 		</part>
 	</software>
 
-	<software name="">
+	<software name="galattax">
 		<description>Galax Attax</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Dragon Data Ltd.</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="9371">
 				<rom name="galax attax (198x) (dragon data ltd) (u).cas" size="9371" crc="e30a3cb4" sha1="8f733ec8646ca5fbc4357292b517c612b49b176e" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="coco_cass">
-			<dataarea name="cass" size="8928">
-				<rom name="galax attax (198x)(eurohard)[!].cas" size="8928" crc="c7028143" sha1="84b054bd1dc8adc67c8f53c71e801735243a9b1b" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass3" interface="coco_cass">
+	</software>
+
+	<software name="galattaxa" cloneof="galattax">
+		<description>Galax Attax (WAV)</description>
+		<year>198?</year>
+		<publisher>Dragon Data Ltd.</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="2396703">
 				<rom name="galax attax (exec) (dragon data ltd).wav" size="2396703" crc="e3bed93b" sha1="c8943a85a20d6c76933e919b27d13821decfc781" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
+	<software name="galattaxs" cloneof="galattax">
+		<description>Galax Attax (Spa)</description>
+		<year>198?</year>
+		<publisher>Eurohard SA</publisher>
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="8928">
+				<rom name="galax attax (198x)(eurohard)[!].cas" size="8928" crc="c7028143" sha1="84b054bd1dc8adc67c8f53c71e801735243a9b1b" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gampack1">
 		<description>Games Pack 1</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Sceptre Software</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="27840">
@@ -5224,27 +5274,29 @@
 		</part>
 	</software>
 
-	<software name="">
+	<software name="gampack2">
 		<description>Games Pack 2</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Abacus</publisher>
 
 		<part name="cass1" interface="coco_cass">
+		<feature name="part_id" value="Tape A"/>
 			<dataarea name="cass" size="19524">
 				<rom name="games pack 2 (198x) (abacus) (u) (tape a).cas" size="19524" crc="7c42304e" sha1="c2882973db1293d88fea760e0472a53274be481d" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="coco_cass">
+		<feature name="part_id" value="Tape B"/>
 			<dataarea name="cass" size="27373">
 				<rom name="games pack 2 (198x) (abacus) (u) (tape b).cas" size="27373" crc="156d1e56" sha1="9a1243cb517fc8fb7d2e54864cf035c2e721f1ea" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
+	<software name="gemini">
 		<description>Gemini Database</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="3582660">
@@ -5253,49 +5305,72 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Ghost Attack</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<!-- dumped from cart -->
+	<software name="ghostat1">
+		<description>Ghost Attack (Dragon Data Ltd.)</description>
+		<year>1982</year>
+		<publisher>Dragon Data Ltd.</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="6339">
 				<rom name="ghost attack (1982) (dragon data ltd) (m converted from rom).cas" size="6339" crc="a5bdeece" sha1="c5db822f421ad67fae39ea4fceae08584cbc699f" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="coco_cass">
-			<dataarea name="cass" size="14623">
-				<rom name="ghost attack (1985) (microdeal) (!).cas" size="14623" crc="23c76535" sha1="d85f03e01aef6e78b6cdbf5b32695578d9d5390b" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass3" interface="coco_cass">
+	</software>
+
+	<!-- dumped from cart -->
+	<software name="ghostat1a" cloneof="ghostat1">
+		<description>Ghost Attack (Dragon Data Ltd.) (WAV)</description>
+		<year>1982</year>
+		<publisher>Dragon Data Ltd.</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="1656736">
 				<rom name="ghost attack (exec) (dragon data ltd).wav" size="1656736" crc="284252ca" sha1="8e7d766eb30056eacab19c450090dcb88b137fa3" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
+	<software name="ghostat2">
+		<description>Ghost Attack (Microdeal)</description>
+		<year>1985</year>
+		<publisher>Microdeal</publisher>
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="14623">
+				<rom name="ghost attack (1985) (microdeal) (!).cas" size="14623" crc="23c76535" sha1="d85f03e01aef6e78b6cdbf5b32695578d9d5390b" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ghostown">
 		<description>Ghost Town</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Adventure International</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="16626">
 				<rom name="ghost town (198x) (adventure international) (u).cas" size="16626" crc="976d09b4" sha1="2bc12107ed7d19227ef9b6d0c99ef8b63aa9c2f8" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="coco_cass">
+	</software>
+
+	<software name="ghostowna" cloneof="ghostown">
+		<description>Ghost Town (WAV)</description>
+		<year>198?</year>
+		<publisher>Adventure International</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="4754241">
 				<rom name="ghost town (adventure international).wav" size="4754241" crc="0ca03c80" sha1="eea5f21f4fd3523f6c64a7d32f9a67550a68b4e6" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
+	<software name="gcastle">
 		<description>Giants Castle</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Dungeon Software</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="7021516">
@@ -5304,27 +5379,34 @@
 		</part>
 	</software>
 
-	<software name="">
+	<software name="gisajob">
 		<description>Gis A Job</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Blaby Computer Games</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="38175">
 				<rom name="gis a job (198x) (blaby computer games) (u).cas" size="38175" crc="bd2a3910" sha1="8e523ee17aada1346975e8c0f3203abb56fd568e" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="coco_cass">
+	</software>
+
+	<software name="gisajoba" cloneof="gisajob">
+		<description>Gis A Job (WAV)</description>
+		<year>198?</year>
+		<publisher>Blaby Computer Games</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="9888180">
 				<rom name="gis a job (blaby computer games).wav" size="9888180" crc="95a9eb42" sha1="6d23e52f1ac8f1b1b5dcb85ab2dd539911fac225" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
+	<software name="glaxxons">
 		<description>Glaxxons</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Microdeal</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="4771338">
@@ -5333,10 +5415,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Glove Final Release</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="glove">
+		<description>Glove (Final Release)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="29031">
@@ -5348,22 +5430,29 @@
 				<rom name="glove final release (tape 2).cas" size="30763" crc="61546171" sha1="2fa3d10d11f51bb389e6bfab24e603c06809f6a2" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="coco_cass">
+	</software>
+
+	<software name="glovea" cloneof="glove">
+		<description>Glove (Final Release, WAV)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="3932662">
 				<rom name="glove final release (tape 1).wav" size="3932662" crc="9c5a82f7" sha1="3a0514a26760ef9eca02d9fe54f425fd26200c32" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass4" interface="coco_cass">
+		<part name="cass2" interface="coco_cass">
 			<dataarea name="cass" size="3992378">
 				<rom name="glove final release (tape 2).wav" size="3992378" crc="8bbe6da9" sha1="31d8cc8e74eb0548ebd234c5c4a2c6be6b67736d" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
+	<software name="goldappl">
 		<description>Golden Apples Of The Sun</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Bamby Software</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="20022">
@@ -5372,10 +5461,10 @@
 		</part>
 	</software>
 
-	<software name="">
+	<software name="goldbato">
 		<description>Golden Baton</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Channel 8</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="16526">
@@ -5384,69 +5473,118 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Golf</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="golf1">
+		<description>Golf (Audiogenic)</description>
+		<year>1982</year>
+		<publisher>Audiogenic</publisher>
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="26395">
+				<rom name="golf (audiogenic) (1982) (!).cas" size="26395" crc="929a6ce0" sha1="8e93882748876107db6567c2c45b077ecf29c2c7" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="golf1a" cloneof="golf1">
+		<description>Golf (Audiogenic) (WAV)</description>
+		<year>1982</year>
+		<publisher>Audiogenic</publisher>
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="2203446">
+				<rom name="golf (run) (audiogenic).wav" size="2203446" crc="bdcd84f1" sha1="b39d2eafcfe68182a4e44eb76014660d8677ded6" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="golf2">
+		<description>Golf (Gem Software)</description>
+		<year>1983</year>
+		<publisher>Gem Software</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="25140">
 				<rom name="golf (1983) (gem software) (!).cas" size="25140" crc="7abb1578" sha1="84a856ca4137c968562c82bc792be100dd5420a1" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="coco_cass">
-			<dataarea name="cass" size="26395">
-				<rom name="golf (audiogenic) (1982) (!).cas" size="26395" crc="929a6ce0" sha1="8e93882748876107db6567c2c45b077ecf29c2c7" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass3" interface="coco_cass">
+	</software>
+
+	<software name="golf3">
+		<description>Golf (Microdeal)</description>
+		<year>198?</year>
+		<publisher>Microdeal</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="24289">
 				<rom name="golf (198x) (microdeal) (u).cas" size="24289" crc="637878ad" sha1="2484d6383003b2fc7a2cbc30f6e7471054ecf866" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass4" interface="coco_cass">
-			<dataarea name="cass" size="2203446">
-				<rom name="golf (run) (audiogenic).wav" size="2203446" crc="bdcd84f1" sha1="b39d2eafcfe68182a4e44eb76014660d8677ded6" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass5" interface="coco_cass">
+	</software>
+
+	<software name="golf3a" cloneof="golf3">
+		<description>Golf (Microdeal) (WAV)</description>
+		<year>198?</year>
+		<publisher>Microdeal</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="6288897">
 				<rom name="golf (microdeal).wav" size="6288897" crc="3c962dea" sha1="973be7c1a868d0e3e52a7409ab259bd1ad604355" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass6" interface="coco_cass">
+	</software>
+
+	<software name="golf4">
+		<description>Golf (Salamander Software)</description>
+		<year>198?</year>
+		<publisher>Salamander Software</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="4997489">
 				<rom name="golf (run) (salamander software).wav" size="4997489" crc="515bc7c5" sha1="df924f72850ae970f0a2f9a662a486a66b3d8b14" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
+	<software name="grabber">
 		<description>Grabber</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<year>1984</year>
+		<publisher>Microdeal</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="67413">
 				<rom name="grabber (1984) (microdeal) (!).cas" size="67413" crc="91ed8dbc" sha1="7e7b486d333a5531c1d4c912cf51cee4b8ef05c3" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="coco_cass">
+	</software>
+
+	<software name="grabbera" cloneof="grabber">
+		<description>Grabber (WAV)</description>
+		<year>1984</year>
+		<publisher>Microdeal</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="7599826">
 				<rom name="grabber (exec) (microdeal).wav" size="7599826" crc="b030dd19" sha1="f213f98b269a37a9d4e486e6f166585d6529eba0" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="coco_cass">
+	</software>
+
+	<software name="grabberb" cloneof="grabber">
+		<description>Grabber (WAV, Alt)</description>
+		<year>1984</year>
+		<publisher>Microdeal</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="12512185">
 				<rom name="grabber (microdeal) (1).wav" size="12512185" crc="b719bf33" sha1="b75f692e78d06ec01cb5c60ade946fcd2828cea9" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
+	<software name="grandprx">
 		<description>Grand Prix</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Tiger Soft</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="23697">
@@ -5455,27 +5593,46 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Graphic Animator</description>
+	<software name="grandprxa" cloneof="grandprx">
+		<description>Grand Prix (Alt?)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Tiger Soft</publisher>
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="36153">
+				<rom name="g prix (side 1) (tiger soft).cas" size="36153" crc="ce1015a7" sha1="a77a69a6d70992898fdada9d6dc73e412da8497a" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="granimat">
+		<description>Graphic Animator</description>
+		<year>1982</year>
+		<publisher>Dragon Data Ltd.</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="1862">
 				<rom name="graphic animator (1982) (dragon data) (!).cas" size="1862" crc="c1c32512" sha1="8053c66c6004f8828dbad3f6da601d3b671a61d3" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="coco_cass">
+	</software>
+
+	<software name="granimata" cloneof="granimat">
+		<description>Graphic Animator (WAV)</description>
+		<year>1982</year>
+		<publisher>Dragon Data Ltd.</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="1467202">
 				<rom name="graphic animator (dragon data ltd).wav" size="1467202" crc="31fbb839" sha1="07c6e3e2a08ce193a71ebba6b27dad53665ac197" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
+	<software name="gfxcass">
 		<description>Graphics Cassette</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<year>1984</year>
+		<publisher>Touchmaster Ltd.</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="7992">
@@ -5484,10 +5641,10 @@
 		</part>
 	</software>
 
-	<software name="">
+	<software name="gfxdemo">
 		<description>Graphics Demonstration</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>DJL Software</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="14363">
@@ -5496,44 +5653,58 @@
 		</part>
 	</software>
 
-	<software name="">
+	<software name="gridrun">
 		<description>Gridrunner</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<year>1983</year>
+		<publisher>Salamander Software</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="8666">
 				<rom name="gridrunner (1983)(salamander software)[!].cas" size="8666" crc="3150ae28" sha1="aac01302f89443c1c972cfe230957584d0515ca9" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="coco_cass">
+	</software>
+
+	<software name="gridruna" cloneof="gridrun">
+		<description>Gridrunner (WAV)</description>
+		<year>1983</year>
+		<publisher>Salamander Software</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="4031008">
 				<rom name="grid runner (salamander software).wav" size="4031008" crc="58fbcc9d" sha1="24f37f7305cefc3da4719239a28fdd2cb01af602" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
+	<software name="gangel">
 		<description>Guardian Angel</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Blaby Computer Games</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="28252">
 				<rom name="guardian angel (198x) (blaby computer games) (u).cas" size="28252" crc="bbc4762d" sha1="42e763f7fbc8d0527ffa6ef9c50a5c84be3987fd" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="coco_cass">
+	</software>
+
+	<software name="gangela" cloneof="gangel">
+		<description>Guardian Angel (WAV)</description>
+		<year>198?</year>
+		<publisher>Blaby Computer Games</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="7384141">
 				<rom name="guardian angel (blaby computer games).wav" size="7384141" crc="e5f425ce" sha1="fbe65cecf2b5842cf99a2fc4c75b37cba416e631" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
+	<software name="hbdragon">
 		<description>Happy Birthday Dragon</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Dragon Data Ltd.</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="12764043">
@@ -5542,10 +5713,10 @@
 		</part>
 	</software>
 
-	<software name="">
+	<software name="hideseek">
 		<description>Hide &amp; Seek</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Dragon Data Ltd.</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="8894526">
@@ -5554,110 +5725,166 @@
 		</part>
 	</software>
 
-	<software name="">
+	<software name="homeacc">
 		<description>Home Accounts</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>MST Consultants</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="9989">
 				<rom name="home accounts (198x) (mst consultants) (u).cas" size="9989" crc="c9b06acd" sha1="a3639caef08cd5b4389a616dd521fe02c51e207a" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="coco_cass">
+	</software>
+
+	<software name="homeacca" cloneof="homeacc">
+		<description>Home Accounts (WAV)</description>
+		<year>198?</year>
+		<publisher>MST Consultants</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="2686209">
 				<rom name="home accounts (mst) (1).wav" size="2686209" crc="675d601d" sha1="e5076e08fe17ddb94013abe307c4fd0bddc40da8" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
+	<software name="horace">
 		<description>Horace Goes Skiing</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<year>1984</year>
+		<publisher>Melbourne House</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="22325">
 				<rom name="horace goes skiing (1984)(melbourne house)[!].cas" size="22325" crc="3562f20a" sha1="3b0f4313fcc9056edfec21ccfb1f8640fbf68f5d" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="coco_cass">
+	</software>
+
+	<software name="horacea" cloneof="horace">
+		<description>Horace Goes Skiing (WAV)</description>
+		<year>1984</year>
+		<publisher>Melbourne House</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="6318183">
 				<rom name="horace goes ski-ing (melbourne house).wav" size="6318183" crc="b6b5cae3" sha1="ecba71a2686d78f4809734feb4de45ec0651d714" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
+	<software name="hunchbac">
 		<description>Hunchback</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<year>1984</year>
+		<publisher>Ocean Software</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="32527">
 				<rom name="hunchback (1984)(ocean software)[!].cas" size="32527" crc="44a6040a" sha1="a256903c12ab6e6382ecdc1e3081506e3c2ba015" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="coco_cass">
+	</software>
+
+	<software name="hunchbaca" cloneof="hunchbac">
+		<description>Hunchback (Alt)</description>
+		<year>1984</year>
+		<publisher>Ocean Software</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="34565">
 				<rom name="hunchback (198x) (ocean) (u).cas" size="34565" crc="05cd8369" sha1="85f51b06709a23f5b34a7af2d514e2a56386f07f" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="coco_cass">
+	</software>
+
+	<software name="hunchbacb" cloneof="hunchbac">
+		<description>Hunchback (WAV)</description>
+		<year>1984</year>
+		<publisher>Ocean Software</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="8475046">
 				<rom name="hunchback (ocean).wav" size="8475046" crc="bf0b1473" sha1="9afe6758f7e3ee937c5ae644cf6b141e2dcc5a62" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Hungry Horace</description>
+	<software name="hhorace1">
+		<description>Hungry Horace (Melbourne House)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Melbourne House</publisher>
 
 		<part name="cass1" interface="coco_cass">
-			<dataarea name="cass" size="24763">
-				<rom name="hungryhorace (198x) (preston) (!).cas" size="24763" crc="e8ed1552" sha1="2df500f0f6103d1f03c4f436d59b6f90118d9fd2" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass2" interface="coco_cass">
 			<dataarea name="cass" size="28095">
 				<rom name="hungry horace (198x) (melbourne house) (!).cas" size="28095" crc="e8c5e919" sha1="2446e5cf0653f41fb2b1eb558adf0c2cbd6a6d58" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="coco_cass">
-			<dataarea name="cass" size="23918">
-				<rom name="hungry horace (198x) (preston) (u).cas" size="23918" crc="11fc125d" sha1="f9d32b420a5ae79068fbd52e9a17323533359ca8" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cass4" interface="coco_cass">
+	</software>
+
+	<software name="hhorace1a" cloneof="hhorace1">
+		<description>Hungry Horace (Melbourne House) (WAV)</description>
+		<year>198?</year>
+		<publisher>Melbourne House</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="7403784">
 				<rom name="hungry horace (melbourne house).wav" size="7403784" crc="5b24b82a" sha1="9872756388bb0cabd8d842f9aeb969ca634bfe79" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
+	<software name="hhorace2">
+		<description>Hungry Horace (Preston)</description>
+		<year>198?</year>
+		<publisher>Preston</publisher>
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="24763">
+				<rom name="hungryhorace (198x) (preston) (!).cas" size="24763" crc="e8ed1552" sha1="2df500f0f6103d1f03c4f436d59b6f90118d9fd2" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hhorace2a" cloneof="hhorace2">
+		<description>Hungry Horace (Preston) (Alt)</description>
+		<year>198?</year>
+		<publisher>Preston</publisher>
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="23918">
+				<rom name="hungry horace (198x) (preston) (u).cas" size="23918" crc="11fc125d" sha1="f9d32b420a5ae79068fbd52e9a17323533359ca8" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="icecastl">
 		<description>Ice Castles</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Microdeal</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="22995">
 				<rom name="ice castles (1984)(spectral associates)[!].cas" size="22995" crc="b5e6cbbb" sha1="5e9b3a77d6f6b7998e2ebd87bb94ccd5db7d0132" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="coco_cass">
+	</software>
+
+	<software name="icecastla" cloneof="icecastl">
+		<description>Ice Castles (WAV)</description>
+		<year>198?</year>
+		<publisher>Microdeal</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="6603203">
 				<rom name="ice castles (microdeal).wav" size="6603203" crc="a369647d" sha1="a5ea4c89e14856d270e485e62cc3cca73233641c" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Impossiball</description>
+	<software name="iball">
+		<description>Impossiball!</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Pulser Software</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="23863">
@@ -5666,10 +5893,10 @@
 		</part>
 	</software>
 
-	<software name="">
+	<software name="infant">
 		<description>Infant Pack</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Shards Software</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="16529">
@@ -5678,10 +5905,10 @@
 		</part>
 	</software>
 
-	<software name="">
+	<software name="clueseau">
 		<description>Inspector Clueseau</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Eurosoft</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="6090256">
@@ -5690,27 +5917,34 @@
 		</part>
 	</software>
 
-	<software name="">
+	<software name="iforce">
 		<description>Intergalactic Force</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<year>1983</year>
+		<publisher>Microdeal</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="17284">
 				<rom name="intergalactic force (1983) (microdeal) (!).cas" size="17284" crc="110f1d0b" sha1="46eea249573d976709b363ba4ad95082fe14e5ef" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="coco_cass">
+	</software>
+
+	<software name="iforcea" cloneof="iforce">
+		<description>Intergalactic Force (WAV)</description>
+		<year>1983</year>
+		<publisher>Microdeal</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="4577024">
 				<rom name="intergalactic force (microdeal).wav" size="4577024" crc="ffedb883" sha1="f2964f0f04af083d79c4f92d8547f4005349f2dd" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
+	<software name="itrader">
 		<description>Interplanetary Trader</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<year>1983</year>
+		<publisher>Bamby Software</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="12076">
@@ -5719,27 +5953,34 @@
 		</part>
 	</software>
 
-	<software name="">
+	<software name="invader">
 		<description>Invader</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Apex Trading</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="2836">
 				<rom name="invader (198x) (apex trading) (u).cas" size="2836" crc="5507d406" sha1="2d5a793e24354152b0fb096cb4ccff80d6f1c57d" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="coco_cass">
+	</software>
+
+	<software name="invadera" cloneof="invader">
+		<description>Invader (WAV)</description>
+		<year>198?</year>
+		<publisher>Apex Trading</publisher>
+
+		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="774994">
 				<rom name="invader (apex).wav" size="774994" crc="0019adee" sha1="09c9aaa9ff3d0e7ac89b7a9c555ba0e8ea04b7c2" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
+	<software name="invreven">
 		<description>Invaders Revenge</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Microdeal</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="2217474">
@@ -5748,10 +5989,10 @@
 		</part>
 	</software>
 
-	<software name="">
+	<software name="invaders">
 		<description>Invaders</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Alligata</publisher>
 
 		<part name="cass1" interface="coco_cass">
 			<dataarea name="cass" size="28054">
@@ -5760,6 +6001,7 @@
 		</part>
 	</software>
 
+<!--
 	<software name="">
 		<description>J.C.B.Microsystems - Dragon 32 Sound Extension Module</description>
 		<year>198?</year>
