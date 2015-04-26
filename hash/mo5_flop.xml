@@ -293,6 +293,18 @@
 		</part>
 	</software>
 
+	<software name="jeuxsayaa" cloneof="jeuxsaya">
+		<description>Jeux Saya (SAP Format)</description>
+		<year>198?</year>
+		<publisher>Sayasupacrew</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="335426">
+				<rom name="jeusaya-mo5.sap" size="335426" crc="7a03b094" sha1="08f1b3011f12f64542dfb3424216b5b8eeb6a682" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="jeusybex">
 		<description>Jeux sur TO7 et MO5</description>
 		<year>1986</year>
