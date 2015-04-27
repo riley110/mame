@@ -124,6 +124,35 @@
 		</part>
 	</software>
 
+	<!-- Needs mouse support -->
+	<software name="magicpen" supported="no">
+		<description>Magic Pen?</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="magicpen.img" size="737280" crc="3c32c019" sha1="3be57f849737e6557a2daaf6518561109d88b888" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	This program displays a MHz clock; it's unknown what this exactly represents.
+	It changes when the screen refresh rate and overclock CPU sliders (with -cheat on) are adjusted.
+	-->
+	<software name="orajel">
+		<description>Orajel</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="oj.img" size="737280" crc="81ad7c05" sha1="49f464c455126da4353320062cd7498ee012ffe1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="tpascal">
 		<description>Turbo Pascal (v3.03A)</description>
 		<year>1985</year>
@@ -8601,6 +8630,44 @@
 		</part>
 	</software>
 
+	<software name="unkgame1">
+		<description>Unknown Games Compilation 1</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="ep1.img" size="737280" crc="63c4f7a3" sha1="a95e167616cd87ea84b1cadc495dd001630ccd67" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unkgame2">
+		<description>Unknown Games Compilation 2</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="ep2.img" size="737280" crc="a1584de3" sha1="fc56a7ab1b36d5cc962d89a399d8a6269ada99b9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Compilations (Various) -->
+
+	<software name="unkbasic">
+		<description>Unknown BASIC compilation (enter_face)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="enter_face.img" size="737280" crc="f01c230e" sha1="667d32d556ef48719d316040c48ada3c676eff75" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 <!-- Demos -->
 
 	<software name="cpcslide">
@@ -10694,68 +10761,6 @@
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="wav music 1.img" size="737280" crc="7c70bc29" sha1="cc2a9166b0feeb12d58c7dcbc15f9f5996e3e8d4" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-<!-- Unsorted -->
-
-	<software name="enterfac">
-		<description>enter_face</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="enter_face.img" size="737280" crc="f01c230e" sha1="667d32d556ef48719d316040c48ada3c676eff75" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="ep1">
-		<description>ep1</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="ep1.img" size="737280" crc="63c4f7a3" sha1="a95e167616cd87ea84b1cadc495dd001630ccd67" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="ep2">
-		<description>ep2</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="ep2.img" size="737280" crc="a1584de3" sha1="fc56a7ab1b36d5cc962d89a399d8a6269ada99b9" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="magicpen">
-		<description>MagicPen</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="magicpen.img" size="737280" crc="3c32c019" sha1="3be57f849737e6557a2daaf6518561109d88b888" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="orajel">
-		<description>Orajel</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
-				<rom name="oj.img" size="737280" crc="81ad7c05" sha1="49f464c455126da4353320062cd7498ee012ffe1" offset="0" />
 			</dataarea>
 		</part>
 	</software>
