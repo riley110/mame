@@ -2,9 +2,117 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="coco3_flop" description="Tandy Radio Shack Color Computer 3 disk images">
 
+	<software name="256color">
+		<description>256 Colors</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="256 colors (coco 3).dsk" size="161280" crc="94af0e03" sha1="208342858db5358934786b4b5d8e945b8379240e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="256colora" cloneof="256color">
+		<description>256 Colors (Unlocked)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="256 colors (coco 3) (unlocked).dsk" size="161280" crc="c3b25210" sha1="c81bb1dd3deca64f6e208b7b0e631ac3d61967f3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="32emul">
+		<description>32emul - CoCo 1+2 Emulated on CoCo 3</description>
+		<year>198?</year>
+		<publisher>Sock Master</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="82944">
+				<rom name="32emul (sock master) (coco 1,2 emulated on coco 3).dsk" size="82944" crc="bfa75c70" sha1="68ba9586b79cc6dbe2e0f02023f8fec9da0dc05e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="5linslot">
+		<description>5-Line Fruit Slot Machine</description>
+		<year>198?</year>
+		<publisher>Tom Mix Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="5-line fruit slot machine (tom mix software) (coco 3).dsk" size="161280" crc="011081f2" sha1="9a6d0e26cab60458e2624f0eed55f707f3436143" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="5000">
+		<description>5000</description>
+		<year>198?</year>
+		<publisher>Gary James</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="5000 (gary james) (coco 3).dsk" size="161280" crc="4f9cb888" sha1="2cfe48e905e92f3d3e832e0aa2208802c7139f46" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basic512">
+		<description>512K BASIC</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="512k basic (coco 3).dsk" size="161280" crc="f0b514fd" sha1="0fd637257598c77bc4a7399538e4a422a1960c3f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="512utils">
+		<description>512K Utilities</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="512k utilities (coco 3).dsk" size="161280" crc="7765be38" sha1="49684d7c2c62449185604d2e077b073f690b5b9c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8ball">
+		<description>8-Ball</description>
+		<year>198?</year>
+		<publisher>Anteco Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="8-ball (color cc3) (anteco software).dsk" size="161280" crc="d28ac6bb" sha1="626cd4ce6f85802950e256dd4e4497816b608c0b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mmortar">
+		<description>A Mazing World of Malcolm Mortar</description>
+		<year>198?</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="a mazing world of malcom mortar (tandy) (coco 3).dsk" size="161280" crc="ad554e69" sha1="99e48998fa4ab112ff5f0db0a16e3824a7d22ba0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- coco3 only requires 512Kb, audio is a farty, run best with a 6309? - coco3h driver) -->
 	<software name="dkong" supported ="partial">
-		<description>Donkey Kong (Sock Master's Donkey Kong Emulator for CoCo 3) (512Kb)</description>
+		<description>Donkey Kong Emulator for CoCo 3 (512Kb)</description>
 		<year>2007</year>
 		<publisher>Sock Master</publisher>
 		<info name="usage" value="Run with RUN&quot;DONKEY&quot;" />

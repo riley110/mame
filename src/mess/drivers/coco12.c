@@ -349,7 +349,7 @@ static MACHINE_CONFIG_START( coco, coco12_state )
 	// software lists
 	MCFG_SOFTWARE_LIST_ADD("cart_list","coco_cart")
 	MCFG_SOFTWARE_LIST_ADD("cass_list","coco_cass")
-	//MCFG_SOFTWARE_LIST_ADD("flop_list","coco_flop")
+	MCFG_SOFTWARE_LIST_ADD("flop_list","coco_flop")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( cocoe, coco )
