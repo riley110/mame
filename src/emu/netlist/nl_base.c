@@ -139,7 +139,7 @@ netlist_base_t::netlist_base_t()
 	:   netlist_object_t(NETLIST, GENERIC),
 		m_stop(netlist_time::zero),
 		// FIXME:: Use a parameter to set this on a schematics per schematics basis
-	    m_use_deactivate(USE_DEACTIVE_DEVICE),
+		m_use_deactivate(USE_DEACTIVE_DEVICE),
 		m_time(netlist_time::zero),
 		m_queue(*this),
 		m_mainclock(NULL),
@@ -181,6 +181,8 @@ ATTR_HOT const nl_double netlist_base_t::gmin() const
 ATTR_COLD void netlist_base_t::start()
 {
 	/* find the main clock and solver ... */
+
+	NL_VERBOSE_OUT(("Searching for mainclock and solver ...\n"));
 
 	m_mainclock = get_single_device<NETLIB_NAME(mainclock)>("mainclock");
 	m_solver = get_single_device<NETLIB_NAME(solver)>("solver");
