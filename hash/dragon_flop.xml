@@ -97,6 +97,32 @@
 		</part>
 	</software>
 
+	<!-- Also works on CoCo -->
+	<software name="airball">
+		<description>Airball</description>
+		<year>1987</year>
+		<publisher>Microdeal</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="airball (microdeal cornwall).dsk" size="161280" crc="c654ac13" sha1="76f64aa934b20ccdc39541e6ded8926eb86c7f1c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Also works on CoCo -->
+	<software name="airballa" cloneof="airball">
+		<description>Airball (Alt)</description>
+		<year>1987</year>
+		<publisher>Microdeal</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="airball (microdeal) (dragon).dsk" size="161280" crc="db94bab0" sha1="e0480e8a06fba3c6a876478e368327e7946e0916" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="airbalck">
 		<description>Airball Construction Kit</description>
 		<year>198?</year>

@@ -110,6 +110,125 @@
 		</part>
 	</software>
 
+	<software name="ados3">
+		<description>ADOS-3 Disk BASIC (v1.0)</description>
+		<year>1987</year>
+		<publisher>Arthur J. Flexser</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="ados-3 (ados3).dsk" size="161280" crc="0af654a5" sha1="5e445fab15177f97c3fb98d1bc9a26fdf8846c42" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ados3ext">
+		<description>ADOS-3 Extension Disk?</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="ados-3 (ados3ext).dsk" size="161280" crc="94cebc95" sha1="6295ed3fc65e982d4eb8028a3d431ee565783299" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dndragon">
+		<description>Advanced D&amp;D Dragon Maker</description>
+		<year>1995</year>
+		<publisher>Snailsoft Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="advanced d&amp;d dragon maker (coco 3).dsk" size="161280" crc="452d4632" sha1="7d7eabf0b4e3ad7e103cc7b68d696efc130ebe3e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="airwolf">
+		<description>Airwolf</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="airwolf (coco 3).dsk" size="161280" crc="1fcaa00f" sha1="b476d3164792d911fedf13b1bb3db65e2d1c39d9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="altreal">
+		<description>Alternate Reality - The City</description>
+		<year>1987</year>
+		<publisher>Datasoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="City Disk"/>
+			<dataarea name="flop" size="184320">
+				<rom name="alternate reality - the city (cityboot).dsk" size="184320" crc="1aef7ba3" sha1="525daa84553d665d75a1bff115433926fcdecaec" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Char Disk"/>
+			<dataarea name="flop" size="184320">
+				<rom name="alternate reality - the city (datasoft) (coco 3) (char).dsk" size="184320" crc="ac1ab163" sha1="4b0b304d22ed1e62b0057e9f6decff90c574b16b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Requires OS-9 -->
+	<software name="altreala" cloneof="altreal">
+		<description>Alternate Reality - The City (Non-Bootable)</description>
+		<year>1987</year>
+		<publisher>Datasoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="City Disk"/>
+			<dataarea name="flop" size="161280">
+				<rom name="alternate reality - the city (datasoft) (coco 3) (city).dsk" size="161280" crc="b03b13ea" sha1="ac4fbd2cb7ca2680ce3129f26847d0b691b03cbe" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Char Disk"/>
+			<dataarea name="flop" size="184320">
+				<rom name="alternate reality - the city (datasoft) (coco 3) (char).dsk" size="184320" crc="ac1ab163" sha1="4b0b304d22ed1e62b0057e9f6decff90c574b16b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Requires OS-9 -->
+	<software name="altrealb" cloneof="altreal">
+		<description>Alternate Reality - The City (Non-Bootable, Alt)</description>
+		<year>1987</year>
+		<publisher>Datasoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="City Disk"/>
+			<dataarea name="flop" size="161280">
+				<rom name="alternate reality - the city (city).dsk" size="161280" crc="ad1d4fd8" sha1="4397f0729cf4144247a1ed2e946fec4af1312fb8" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Char Disk"/>
+			<dataarea name="flop" size="184320">
+				<rom name="alternate reality - the city (datasoft) (coco 3) (char).dsk" size="184320" crc="ac1ab163" sha1="4b0b304d22ed1e62b0057e9f6decff90c574b16b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="adconvrt">
+		<description>Analog to Digital Converter</description>
+		<year>1994</year>
+		<publisher>Snailsoft Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="analog to digital converter (coco 3).dsk" size="161280" crc="0a64525e" sha1="238d9d165a13fa280235dece28e07a34fcb26616" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- coco3 only requires 512Kb, audio is a farty, run best with a 6309? - coco3h driver) -->
 	<software name="dkong" supported ="partial">
 		<description>Donkey Kong Emulator for CoCo 3 (512Kb)</description>
