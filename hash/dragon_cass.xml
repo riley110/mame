@@ -62,6 +62,18 @@
 		</part>
 	</software>
 
+	<software name="3dspacea" cloneof="3dspace">
+		<description>3D Space Wars (Alt)</description>
+		<year>1984</year>
+		<publisher>Hewson Consultants</publisher>
+
+		<part name="cass1" interface="coco_cass">
+			<dataarea name="cass" size="26932">
+				<rom name="3d space wars (newson consultants).cas" size="26932" crc="d065dcb6" sha1="8cef0fed1668df149637f80be4ad1ffd69633c39" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- where are the rest? -->
 	<software name="60progs">
 		<description>60 Programs For The D32</description>
