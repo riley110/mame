@@ -4873,6 +4873,18 @@
 		</part>
 	</software>
 
+	<software name="nemo">
+		<description>Operation Nemo</description>
+		<year>1986</year>
+		<publisher>Coktel Vision</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="35541">
+				<rom name="operation-nemo_to7.k7" size="35541" crc="52400614" sha1="dd88a2c7b48f786cdaa11c0f11bd2b9a7fa01048" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="orditier">
 		<description>Ordi Tierce</description>
 		<year>1984</year>

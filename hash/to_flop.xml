@@ -5422,7 +5422,7 @@
 	<software name="aqua">
 		<description>Aqua</description>
 		<year>2014</year>
-		<publisher>defcard</publisher>
+		<publisher>Defcard</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -5435,7 +5435,7 @@
 	<software name="aquaa" cloneof="aqua">
 		<description>Aqua (640K)</description>
 		<year>2014</year>
-		<publisher>defcard</publisher>
+		<publisher>Defcard</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="655360">
@@ -6073,7 +6073,7 @@
 	<software name="smiteaok">
 		<description>Smite - Ao Kuang</description>
 		<year>2015</year>
-		<publisher>defcard</publisher>
+		<publisher>Defcard</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -6086,7 +6086,7 @@
 	<software name="smiteaoka" cloneof="smiteaok">
 		<description>Smite - Ao Kuang (640K)</description>
 		<year>2015</year>
-		<publisher>defcard</publisher>
+		<publisher>Defcard</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="655360">
@@ -6098,7 +6098,7 @@
 	<software name="smitefen">
 		<description>Smite - Fenrir</description>
 		<year>2014</year>
-		<publisher>defcard</publisher>
+		<publisher>Defcard</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -6111,7 +6111,7 @@
 	<software name="smitefena" cloneof="smitefen">
 		<description>Smite - Fenrir (640K)</description>
 		<year>2014</year>
-		<publisher>defcard</publisher>
+		<publisher>Defcard</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="655360">
@@ -10626,6 +10626,31 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="labylogic (19xx)(adt soft)(fr).sap" size="335426" crc="e5e8ddab" sha1="a54400f88540e528250361a1a2535bb14ae9c9bf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="torkah">
+		<description>Le Labyrinthe de Torkah</description>
+		<year>2015</year>
+		<publisher>Defcard</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="le-labyrinthe-de-torkah_to8_1.fd" size="327680" crc="ad84e0b0" sha1="6bb292a7f57dc24d50c3f1855c85184933f854ae" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- second half blank -->
+	<software name="torkaha" cloneof="torkah">
+		<description>Le Labyrinthe de Torkah (640K)</description>
+		<year>2015</year>
+		<publisher>Defcard</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="655360">
+				<rom name="le-labyrinthe-de-torkah_to8.fd" size="655360" crc="52285d8a" sha1="cb5923478aabc39ce8306a8220aa4585445c8fb5" offset="0" />
 			</dataarea>
 		</part>
 	</software>

@@ -12125,6 +12125,18 @@
 		</part>
 	</software>
 
+	<software name="nemo">
+		<description>Operation Nemo</description>
+		<year>1986</year>
+		<publisher>Coktel Vision</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="35953">
+				<rom name="operation-nemo_mo5.k7" size="35953" crc="8d82d85b" sha1="24e50996101c2dfc568a0124daaaf0be30aca990" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="pacman">
 		<description>Pac-man</description>
 		<year>1986</year>
@@ -12169,6 +12181,18 @@
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="16476">
 				<rom name="pac-man v2 (1998-06-06)(coulom, remi)(fr)(pd)[a2].k7" size="16476" crc="bea92e79" sha1="bea357d58beca5e6e25082268b07eeca28128651" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pancho">
+		<description>Pancho</description>
+		<year>1984</year>
+		<publisher>Micro Application</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="14466">
+				<rom name="pancho_mo5.k7" size="14466" crc="c3fb5e9d" sha1="89113d091dd4a829692c5a323124d7dc2320d045" offset="0" />
 			</dataarea>
 		</part>
 	</software>
