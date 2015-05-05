@@ -26,19 +26,6 @@
 		</part>
 	</software>
 
-	<!-- Dragon release? -->
-	<software name="3dspace">
-		<description>3D Space Wars</description>
-		<year>198?</year>
-		<publisher>Hewson Consultants</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="3d space wars (newson consultants).dsk" size="161280" crc="0a9ce754" sha1="412243262714fd234bb5f03fa4756ab731a11a7f" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="3dtictac">
 		<description>3D Tic Tac Toe</description>
 		<year>1983</year>
@@ -713,6 +700,18 @@
 		</part>
 	</software>
 
+	<software name="atcsim1a" cloneof="atcsim1">
+		<description>ATC Simulator (Alt)</description>
+		<year>1983</year>
+		<publisher>Tom Mix Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="atc (tom mix) (coco1,2&amp;3).dsk" size="161280" crc="c854fe22" sha1="451ae5c80d3ec3263e25ad9d503437e65a5bb423" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="atcsim2">
 		<description>Air Traffic Control Simulator</description>
 		<year>1984</year>
@@ -911,11 +910,11 @@
 		</part>
 	</software>
 
-<!--
-	<software name="andrea">
+	<!-- Title screen is bugged, but ingame is fine; verify with real CoCo? -->
+	<software name="andrea" supported="partial">
 		<description>Andrea Of Coco</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<year>1985</year>
+		<publisher>Saguaro Software</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -924,22 +923,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Android Attack</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="android attack (spectral assosciates) (space pack).dsk" size="161280" crc="e77d93a7" sha1="c7568a6f4d72b0b4c2e67d0e4fb5f729fc6ccece" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Android Attack</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="andatck">
+		<description>Android Attack (v1.0)</description>
+		<year>1982</year>
+		<publisher>Spectral Associates</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -948,10 +935,22 @@
 		</part>
 	</software>
 
-	<software name="">
+	<software name="andatcka" cloneof="andatck">
+		<description>Android Attack (v1.0, Space Pack)</description>
+		<year>1982</year>
+		<publisher>Spectral Associates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="android attack (spectral assosciates) (space pack).dsk" size="161280" crc="e77d93a7" sha1="c7568a6f4d72b0b4c2e67d0e4fb5f729fc6ccece" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="androne">
 		<description>Androne</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Tandy</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -960,10 +959,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Animal 32</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="guesanim">
+		<description>Guess The Animal</description>
+		<year>1982</year>
+		<publisher>Elite Software</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -972,22 +971,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Annialator</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="annialator (chromasette magazines).dsk" size="161280" crc="480ded6c" sha1="da088674ce620afa062abbb38861c62f14cd426d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
+	<software name="annihila">
 		<description>Annihilator</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<year>1983</year>
+		<publisher>Chomasette</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -996,10 +983,23 @@
 		</part>
 	</software>
 
-	<software name="">
+	<software name="annihilaa" cloneof="annihila">
+		<description>Annihilator (Alt)</description>
+		<year>1983</year>
+		<publisher>Chomasette</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="annialator (chromasette magazines).dsk" size="161280" crc="480ded6c" sha1="da088674ce620afa062abbb38861c62f14cd426d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Can't get it to run -->
+	<software name="apollo" supported="no">
 		<description>Apollo</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Sylvain Payeur</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -1008,10 +1008,10 @@
 		</part>
 	</software>
 
-	<software name="">
+	<software name="apples">
 		<description>Apples</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<year>1982?</year>
+		<publisher>Computerware</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -1020,22 +1020,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Aquarium</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="aquarium (coco 3).dsk" size="161280" crc="3e968b1f" sha1="b5dcfab61e5f5ba0d2f34cf9e1a52d6b2812a4bb" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Archraxar</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="archraxa">
+		<description>Archraxar Defense</description>
+		<year>1988</year>
+		<publisher>T&amp;D Software</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -1044,10 +1032,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Arconiax Assignment, The</description>
+	<software name="arconiax">
+		<description>The Arconiax Assignment</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>The Rainbow</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -1056,22 +1044,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Arena</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="arena (chuck nivision).dsk" size="161280" crc="1c8c33b6" sha1="e1b6113882c18e9da2af7f4e7c5471790335a481" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
+	<software name="arex">
 		<description>Arex</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<year>1983</year>
+		<publisher>Adventure International</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -1080,32 +1056,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Arkanoid</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="arkanoid (coco 3 game) (patched versions and disassembly) (decb) (146ag_02).dsk" size="161280" crc="e2eff42a" sha1="181b21be746e707d0f3317b6aa6345fb27772000" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="arkanoid (coco 3 game) (run ark2) (patched versions and disassembly) (decb) (146ag_01).dsk" size="161280" crc="5eab3ada" sha1="5f9d0c669bd5b052197889d66e2ec7b10e3b2e99" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="arkanoid (decb) (098ag_01).dsk" size="161280" crc="171518c8" sha1="2dd3def540d8fa266a798eeb7b354213509d6fc0" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Arkanoid</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="arkanoid">
+		<description>Arkanoid (Includes CoCo 1/2 &amp; 3 Versions)</description>
+		<year>1989</year>
+		<publisher>Tandy</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -1114,46 +1068,22 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Arkanoid and Rampage</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="arkanoida" cloneof="arkanoid">
+		<description>Arkanoid (Alt)</description>
+		<year>1989</year>
+		<publisher>Tandy</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
-				<rom name="arkanoid and rampage (coco 3 games) (rom dumps) (original, non-patched) (decb) (147ag_01).dsk" size="161280" crc="f2b5065c" sha1="426a308e8e4925d4790f474cec803caf94f7b111" offset="0" />
+				<rom name="arkanoid (decb) (098ag_01).dsk" size="161280" crc="171518c8" sha1="2dd3def540d8fa266a798eeb7b354213509d6fc0" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Armchair Admiral</description>
+	<software name="arrowd2">
+		<description>Arrows Of Death (Part 2)</description>
 		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="armchair admiral (eversoft games) (coco 3).dsk" size="161280" crc="33e372c0" sha1="846307d36757c4cc1c318d1ac64dae224566b1c1" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Armchair Admiral, Predator</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="armchair admiral, predator (rom to disk conversion) (decb) (180ag_02).dsk" size="161280" crc="69895b44" sha1="2ca92ab68194106e6557c1c6e7489c29873474a9" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Arrows Of Death 2</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -1162,22 +1092,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Arthur</description>
+	<software name="arthur">
+		<description>Arthur (Fra)</description>
 		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="arthur.dsk" size="161280" crc="23a0fb3a" sha1="7fd7d2d0d2e6c3b67b86877cad5bd006d59676f4" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Arthur</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Yves &amp; Marc</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -1186,39 +1104,22 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Asimov Awards 2008</description>
+	<software name="arthura" cloneof="arthur">
+		<description>Arthur (Fra, Alt)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Yves &amp; Marc</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
-				<rom name="asimov awards 2008.dsk" size="161280" crc="964ec49a" sha1="5f39e0648be8385dde7b59193ae8a69c6c26416a" offset="0" />
+				<rom name="arthur.dsk" size="161280" crc="23a0fb3a" sha1="7fd7d2d0d2e6c3b67b86877cad5bd006d59676f4" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
+	<software name="assassin">
 		<description>Assasin</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="assasin (the silencer) (alt 1).dsk" size="161280" crc="9999644f" sha1="fd07403932b749108bb1d2e269e098d73a9ed842" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="assasin (the silencer).dsk" size="161280" crc="2e34efc6" sha1="9a57c714e4772dca112c677395106c3736de6578" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Assasin</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<year>1983</year>
+		<publisher>Michael Freeman</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -1227,10 +1128,34 @@
 		</part>
 	</software>
 
-	<software name="">
+	<software name="assassina" cloneof="assassin">
+		<description>Assasin (Alt)</description>
+		<year>1983</year>
+		<publisher>Michael Freeman</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="assasin (the silencer).dsk" size="161280" crc="2e34efc6" sha1="9a57c714e4772dca112c677395106c3736de6578" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="assassinb" cloneof="assassin">
+		<description>Assasin (Alt 2)</description>
+		<year>1983</year>
+		<publisher>Michael Freeman</publisher>
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="assasin (the silencer) (alt 1).dsk" size="161280" crc="9999644f" sha1="fd07403932b749108bb1d2e269e098d73a9ed842" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Requires OS-9 -->
+	<software name="assist09">
 		<description>Assist-09</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -1239,22 +1164,10 @@
 		</part>
 	</software>
 
-	<software name="">
+	<software name="astrblst">
 		<description>Astro Blast</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="astro blast (mark data products).dsk" size="161280" crc="933f3496" sha1="491fc309ff6cdb9c039d962e39a3f7f90b09e612" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Astro Blast</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<year>1982</year>
+		<publisher>Mark Data Products</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -1263,22 +1176,23 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Atc</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="astrblsta" cloneof="astrblst">
+		<description>Astro Blast (Alt)</description>
+		<year>1982</year>
+		<publisher>Mark Data Products</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
-				<rom name="atc (tom mix) (coco1,2&amp;3).dsk" size="161280" crc="c854fe22" sha1="451ae5c80d3ec3263e25ad9d503437e65a5bb423" offset="0" />
+				<rom name="astro blast (mark data products)[a].dsk" size="161280" crc="933f3496" sha1="491fc309ff6cdb9c039d962e39a3f7f90b09e612" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
+	<!-- Is this the Dragon version hacked to remove the Microdeal title screen? -->
+	<software name="athletyx">
 		<description>Athletyx</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<year>1984</year>
+		<publisher>Ken Kalish</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -1287,22 +1201,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Athletyx</description>
+	<software name="atlantis">
+		<description>Voyage to Atlantis</description>
 		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="athletyx (microdeal cornwall).dsk" size="161280" crc="e0908635" sha1="6800b979c1dfa74716b503295175c77d100274b8" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Atlantis</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<publisher>John W. Wulff</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -1311,10 +1213,10 @@
 		</part>
 	</software>
 
-	<software name="">
+	<software name="atom">
 		<description>Atom</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<year>1983</year>
+		<publisher>Tandy</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -1323,6 +1225,7 @@
 		</part>
 	</software>
 
+<!--
 	<software name="">
 		<description>Ausquiz</description>
 		<year>198?</year>
@@ -1334,35 +1237,12 @@
 			</dataarea>
 		</part>
 	</software>
+-->
 
-	<software name="">
-		<description>Aust Quiz Cc3</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="aust quiz cc3 (tandy australia) (aust quiz coco3 version).dsk" size="161280" crc="bf580e76" sha1="8e74e390f99457d96dc2c6cb466bb198df6a1c57" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
+	<software name="avenger">
 		<description>Avenger</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="avenger (cornsoft group).dsk" size="161280" crc="ebd88b97" sha1="7bbb5f8e3830a54dd56590b8ff788a6a3912cdf9" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Avenger</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<year>1982</year>
+		<publisher>The Cornsoft Group</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -1371,10 +1251,22 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Aventura em San Quentin</description>
+	<software name="avengera" cloneof="avenger">
+		<description>Avenger (Alt)</description>
+		<year>1982</year>
+		<publisher>The Cornsoft Group</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="avenger (cornsoft group).dsk" size="161280" crc="ebd88b97" sha1="7bbb5f8e3830a54dd56590b8ff788a6a3912cdf9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sanquent">
+		<description>Aventura em San Quentin (Bra)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -1383,10 +1275,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Aztecs</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="unkc2">
+		<description>Unknown Compilation 2</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -1395,10 +1287,10 @@
 		</part>
 	</software>
 
-	<software name="">
+	<software name="basgames">
 		<description>BASIC Games</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -1407,159 +1299,334 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>BASIC Games</description>
+	<software name="basadv">
+		<description>BASIC Adventures</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="basic games (adventures).dsk" size="161280" crc="c867af39" sha1="fa312e1511052d1885220fc3f934dc8b96d3c3c9" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_5_25">
+	</software>
+
+	<software name="basadv2">
+		<description>BASIC Adventures 2</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="basic games (adventures2).dsk" size="161280" crc="4281b81a" sha1="c299910cb9d1d632bece6840ebde501bdab4926b" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_5_25">
+	</software>
+
+	<software name="basfsim">
+		<description>BASIC Flight Sims</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="basic games (flightsim).dsk" size="161280" crc="6f7c3258" sha1="efaca684a785d7720c70bdb24872769a5be4b6b4" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop4" interface="floppy_5_25">
+	</software>
+
+	<software name="basother">
+		<description>BASIC Others</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="basic games (others).dsk" size="161280" crc="b29c188c" sha1="2ee4352f9423aa5d915eea00d1852a5ab88dd60d" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop5" interface="floppy_5_25">
+	</software>
+
+	<software name="basothr2">
+		<description>BASIC Others 2</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="basic games (others2).dsk" size="161280" crc="842c933d" sha1="1f6f6a7eecb004dce248b0bbc24fd6ac9f74300e" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop6" interface="floppy_5_25">
+	</software>
+
+	<software name="basrpg">
+		<description>BASIC RPGs</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="basic games (rpg).dsk" size="161280" crc="a32b5a84" sha1="7a224cadd0b8313b7ebac4f3baaa4c00d05d7409" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop7" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="basic games (side 12).dsk" size="161280" crc="af2fd537" sha1="4b77428844bf5ce47273b71ddb6cdc43c3ff8951" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop8" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="basic games (side 13).dsk" size="161280" crc="709b8b37" sha1="931c660b470c754db8828d81b0629a9505d48091" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop9" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="basic games (side 14).dsk" size="161280" crc="30d871c7" sha1="3a026f81acb6e97ac232489b7b5c65591f48a6b4" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop10" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="basic games (side 15).dsk" size="161280" crc="23c02890" sha1="05e817d0c0417ae406b8401fba1dcda7830b0250" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop11" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="basic games (side 16).dsk" size="161280" crc="30829795" sha1="be139610bdad81ea14f4e1bd6ebe3e0a6f9acdbb" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop12" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="basic games (wargames).dsk" size="161280" crc="49c8ec1b" sha1="c54069ddce21105e60323fb15d13aacf80143acc" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop13" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="basic games (wargames2).dsk" size="161280" crc="ab96cc23" sha1="312addc7415acbf9eae476dc2aa67d6d8d5815e9" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop14" interface="floppy_5_25">
+	</software>
+
+	<software name="basgam1">
+		<description>BASIC Games 1</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="basic games (side 01).dsk" size="161280" crc="5d53890a" sha1="b266889f8ea5bf290ddbc379cefb8052cbd9518d" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop15" interface="floppy_5_25">
+	</software>
+
+	<software name="basgam2">
+		<description>BASIC Games 2</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="basic games (side 02).dsk" size="161280" crc="0bd61700" sha1="89f8b90fc2ccd72dc740601bf943e6d08961204e" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop16" interface="floppy_5_25">
+	</software>
+
+	<software name="basgam3">
+		<description>BASIC Games 3</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="basic games (side 03).dsk" size="161280" crc="a19191eb" sha1="4d71bda1168c09486744b681b37b5c86d2ffdabb" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop17" interface="floppy_5_25">
+	</software>
+
+	<software name="basgam4">
+		<description>BASIC Games 4</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="basic games (side 04).dsk" size="161280" crc="1d538b77" sha1="09a6d46dbda98a36c409a1a54a8835303f7af148" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop18" interface="floppy_5_25">
+	</software>
+
+	<software name="basgam5">
+		<description>BASIC Games 5</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="basic games (side 05).dsk" size="161280" crc="fd6809a7" sha1="e78394f7db1567a9869d30cbe083c879c557679f" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop19" interface="floppy_5_25">
+	</software>
+
+	<software name="basgam6">
+		<description>BASIC Games 6</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="basic games (side 06).dsk" size="161280" crc="9f4bb617" sha1="8961138817fc6ceae681ca941df4af3b4819ba91" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop20" interface="floppy_5_25">
+	</software>
+
+	<software name="basgam7">
+		<description>BASIC Games 7</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="basic games (side 07).dsk" size="161280" crc="e4fa8de4" sha1="c92fbc8e3558dbfb03ce87170a446a6a47175d4a" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop21" interface="floppy_5_25">
+	</software>
+
+	<software name="basgam8">
+		<description>BASIC Games 8</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="basic games (side 08).dsk" size="161280" crc="607eb5c4" sha1="4258a7aef567713f84ba717153ede714d8d9bd90" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop22" interface="floppy_5_25">
+	</software>
+
+	<software name="basgam9">
+		<description>BASIC Games 9</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="basic games (side 09).dsk" size="161280" crc="5fcae00e" sha1="f48bc2457954d227f513088cd0707c0b8ccfd26e" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop23" interface="floppy_5_25">
+	</software>
+
+	<software name="basgam10">
+		<description>BASIC Games 10</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="basic games (side 10).dsk" size="161280" crc="b911de1f" sha1="060c643af1265207b9c8686acf21fceb59c3f2b7" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop24" interface="floppy_5_25">
+	</software>
+
+	<software name="basgam11">
+		<description>BASIC Games 11</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="basic games (side 11).dsk" size="161280" crc="431f40f5" sha1="62caad5bec7c1b45475766ebfd4f0cef488c8515" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>BASIC Utilities</description>
+	<software name="basgam12">
+		<description>BASIC Games 12</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="basic games (side 12).dsk" size="161280" crc="af2fd537" sha1="4b77428844bf5ce47273b71ddb6cdc43c3ff8951" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basgam13">
+		<description>BASIC Games 13</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="basic games (side 13).dsk" size="161280" crc="709b8b37" sha1="931c660b470c754db8828d81b0629a9505d48091" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basgam14">
+		<description>BASIC Games 14</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="basic games (side 14).dsk" size="161280" crc="30d871c7" sha1="3a026f81acb6e97ac232489b7b5c65591f48a6b4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basgam15">
+		<description>BASIC Games 15</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="basic games (side 15).dsk" size="161280" crc="23c02890" sha1="05e817d0c0417ae406b8401fba1dcda7830b0250" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basgam16">
+		<description>BASIC Games 16</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="basic games (side 16).dsk" size="161280" crc="30829795" sha1="be139610bdad81ea14f4e1bd6ebe3e0a6f9acdbb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="baswar">
+		<description>BASIC Wargames</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="basic games (wargames).dsk" size="161280" crc="49c8ec1b" sha1="c54069ddce21105e60323fb15d13aacf80143acc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="baswar2">
+		<description>BASIC Wargames 2 </description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="basic games (wargames2).dsk" size="161280" crc="ab96cc23" sha1="312addc7415acbf9eae476dc2aa67d6d8d5815e9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basutil1">
+		<description>BASIC Utilities 1</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="basic utilities (side 1).dsk" size="161280" crc="098708de" sha1="89f833a897bed59ab064c819353f42e5c8fa4f93" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_5_25">
+	</software>
+
+	<software name="basutil2">
+		<description>BASIC Utilities 2</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="basic utilities (side 2).dsk" size="161280" crc="7d27dbd9" sha1="f0b268062946f117d5e628293258cce671e5a6a4" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_5_25">
+	</software>
+
+	<software name="basutil3">
+		<description>BASIC Utilities 3</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="basic utilities (side 3).dsk" size="161280" crc="9c324286" sha1="602c9ec464d65e800010458184744e5ba67a5ec7" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
+	<software name="basic09">
 		<description>BASIC-09 for OS-9 Level 1</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -1568,10 +1635,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>BBS-Board Bulletin System</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="bbsbord">
+		<description>BBS-Bord Bulletin System</description>
+		<year>1986</year>
+		<publisher>Mike Jorgenson</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -1580,46 +1647,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>BC Bill</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="bc bill (imagine software).dsk" size="161280" crc="f76ac7d8" sha1="b66bad534b5c174b37d6c51ca54a5abff23a8852" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>BMP Viewer</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="bmp viewer (coco 3).dsk" size="161280" crc="57a8576a" sha1="6e0ecbc4b89ea182b7967f9c06df185bb91167f9" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Back Track</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="back track (incentive software) (dragon).dsk" size="161280" crc="936eba08" sha1="8909e44990845b416e921bd6d79ee19dbcac53d9" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
+	<software name="backgamm">
 		<description>Backgammon</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<year>1980</year>
+		<publisher>Tandy</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -1628,54 +1659,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Background Sound Demo</description>
+	<software name="bagitman">
+		<description>Bagitman (Cracked by Doctor)</description>
 		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="background sound demo (coco 3) (bckdig).dsk" size="161280" crc="019fc5be" sha1="2d74507ccf0965f7cc9d793473158be892c7ebf5" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="background sound demo (coco 3) (bckdig21).dsk" size="161280" crc="f068acfa" sha1="9ce5db6ef4135328a4c80a3e143e11bf183e36f0" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="background sound demo (coco 3) (bgdemo).dsk" size="161280" crc="7b442174" sha1="da53a44f79d5fc1bf5c08db7b7a205868f1e0a97" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Backup Lightning 512K</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161792">
-				<rom name="backup lightning 512k (coco 3) (backup lightning).dsk" size="161792" crc="dd2b55d9" sha1="c9300f06563567ab0c76dd4d068d5c85ca229a41" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="backup lightning 512k (coco 3) (bcklight).dsk" size="161280" crc="26c5ef33" sha1="8088df2d7f55078123cf17c2bbd6a02a4830f741" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="backup lightning 512k (colorventure) (coco 3).dsk" size="161280" crc="cc2fdd37" sha1="34933dc35b5350504d8b7a3c6dd0905463c7a7f1" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Bagitman</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Aardvark</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -1684,10 +1671,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Balloon Attack</description>
+	<software name="bloonat1">
+		<description>Balloon Attack (Falsoft Inc.)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Falsoft Inc.</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -1696,10 +1683,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Balloon Attack</description>
+	<software name="bloonat2">
+		<description>Balloon Attack (T&amp;D Software)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>T&amp;D Software</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -1708,39 +1695,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Balloon Fire</description>
+	<software name="bloonat2a" cloneof="bloonat2">
+		<description>Balloon Attack (T&amp;D Software) (Alt)</description>
 		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="balloon fire (t&amp;d).dsk" size="161280" crc="e5e47f2a" sha1="9c5675501dda9196c3968dabb2be98bb292e4994" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="balloon fire (terry steen).dsk" size="161280" crc="1b9b2fdb" sha1="2baac75b8c9219c5983fa1f5ff227e4803997d52" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Balloon Fire</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="balloon fire (t&amp;d software).dsk" size="161280" crc="76bc7fc9" sha1="66cf3af72f55fdefe9ddee4cf714c74ff124cc5b" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Balloon</description>
-		<year>198?</year>
-		<publisher></publisher>
+		<publisher>T&amp;D Software</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -1749,6 +1707,43 @@
 		</part>
 	</software>
 
+	<software name="bloonfir">
+		<description>Balloon Fire</description>
+		<year>198?</year>
+		<publisher>T&amp;D Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="balloon fire (t&amp;d).dsk" size="161280" crc="e5e47f2a" sha1="9c5675501dda9196c3968dabb2be98bb292e4994" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bloonfira" cloneof="bloonfir">
+		<description>Balloon Fire (Alt)</description>
+		<year>198?</year>
+		<publisher>T&amp;D Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="balloon fire (terry steen).dsk" size="161280" crc="1b9b2fdb" sha1="2baac75b8c9219c5983fa1f5ff227e4803997d52" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bloonfirb" cloneof="bloonfir">
+		<description>Balloon Fire (Alt 2)</description>
+		<year>198?</year>
+		<publisher>T&amp;D Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="balloon fire (t&amp;d software).dsk" size="161280" crc="76bc7fc9" sha1="66cf3af72f55fdefe9ddee4cf714c74ff124cc5b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!--
 	<software name="">
 		<description>Barbarian Q</description>
 		<year>198?</year>

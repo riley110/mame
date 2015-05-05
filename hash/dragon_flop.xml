@@ -1,6 +1,28 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+TODO:
+
+Update with new disks from worldofdragon
+Find any Dragon Plus only disks and separate them into a different list
+Further categorization into apps/games/etc
+Document more games that also work on CoCos
+-->
 <softwarelist name="dragon_flop" description="Dragon Data Dragon series floppy disks">
+
+<!-- BASIC disks -->
+
+	<software name="3dspace">
+		<description>3D Space Wars</description>
+		<year>1984</year>
+		<publisher>Hewson Consultants</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="3d space wars (newson consultants).dsk" size="161280" crc="0a9ce754" sha1="412243262714fd234bb5f03fa4756ab731a11a7f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
 
 	<software name="adven1">
 		<description>Adventure 1</description>
@@ -318,14 +340,26 @@
 		</part>
 	</software>
 
-	<software name="basic42">
-		<description>BASIC42</description>
-		<year>198?</year>
-		<publisher>Harris Micros</publisher>
+	<software name="athletyx">
+		<description>Athletyx</description>
+		<year>1985</year>
+		<publisher>Microdeal</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184340">
-				<rom name="basic42 (harris micros).vdk" size="184340" crc="0e75a42d" sha1="a1d230058a12e7c269e600a73b2df7122ca34404" offset="0" />
+			<dataarea name="flop" size="161280">
+				<rom name="athletyx (microdeal cornwall).dsk" size="161280" crc="e0908635" sha1="6800b979c1dfa74716b503295175c77d100274b8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="backtrck">
+		<description>Back Track</description>
+		<year>198?</year>
+		<publisher>Incentive Software Ltd. (ISL)</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="back track (incentive software) (dragon).dsk" size="161280" crc="936eba08" sha1="8909e44990845b416e921bd6d79ee19dbcac53d9" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -338,6 +372,30 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="184332">
 				<rom name="balldozer (kouga software).vdk" size="184332" crc="f898d395" sha1="74eb72068cba7c0c8c93d96971e75d86a145bb0b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basic42">
+		<description>BASIC42</description>
+		<year>198?</year>
+		<publisher>Harris Micros</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184340">
+				<rom name="basic42 (harris micros).vdk" size="184340" crc="0e75a42d" sha1="a1d230058a12e7c269e600a73b2df7122ca34404" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bcbill">
+		<description>BC Bill</description>
+		<year>1984</year>
+		<publisher>Imagine Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="bc bill (imagine software).dsk" size="161280" crc="f76ac7d8" sha1="b66bad534b5c174b37d6c51ca54a5abff23a8852" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -414,19 +472,6 @@
 		</part>
 	</software>
 
-	<!-- Requires FLEX -->
-	<software name="dbasic">
-		<description>DBASIC (v1.0)</description>
-		<year>198?</year>
-		<publisher>Compusense</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184343">
-				<rom name="dbasic v1.0 (compusense, flex).vdk" size="184343" crc="6d45b2a2" sha1="5f3bf42dad7a4d06dac0f106f4e57d124eb130d6" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="dloadprn">
 		<description>Data load and print</description>
 		<year>198?</year>
@@ -475,19 +520,6 @@
 		</part>
 	</software>
 
-	<!-- Requires FLEX -->
-	<software name="dbargain">
-		<description>Dragon Bargain Pack 2</description>
-		<year>198?</year>
-		<publisher>Compusense</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184343">
-				<rom name="dragon bargain pack 2 (compusense, flex).vdk" size="184343" crc="b0fa9ade" sha1="f427cfc7fe8e6af6695c245a27dcc73c4bfaed1d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="gstudio">
 		<description>Dragon Graphics Studio</description>
 		<year>198?</year>
@@ -496,19 +528,6 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="184332">
 				<rom name="dragon graphics studio (knight software).vdk" size="184332" crc="907ed364" sha1="1a0f945203ae677ffe1facce64cddaa4578a5cb9" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<!-- Requires FLEX -->
-	<software name="dgnplus">
-		<description>Dragon Plus Update</description>
-		<year>198?</year>
-		<publisher>Compusense</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184347">
-				<rom name="dragon plus (update, flex system v2.0.0, dbasic v1.7) (compusense, flex).vdk" size="184347" crc="d925a559" sha1="3b88f299e01cf6979921048d3ec6dfdab354f9a4" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -557,19 +576,6 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="184363">
 				<rom name="duplidisk2 (quickbeam).vdk" size="184363" crc="70dbcd67" sha1="3f6d4281cf7c7728e15d6bbf3b105630e5e08cb2" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<!-- Requires FLEX -->
-	<software name="dynacalc">
-		<description>Dynacalc</description>
-		<year>198?</year>
-		<publisher>Compusense</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184345">
-				<rom name="dynacalc (compusense, flex).vdk" size="184345" crc="9ddcb3cd" sha1="c0b187571f7e01ba43a8a0d8a1f42afa736f1791" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -678,67 +684,6 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="184341">
 				<rom name="fire force (orange software).vdk" size="184341" crc="c0fa218f" sha1="6c6d4ba5499ff108e7ff7e5a1e817c48496fbd6d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="flexsys">
-		<description>FLEX System (v1.3.2)</description>
-		<year>198?</year>
-		<publisher>Compusense</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184336">
-				<rom name="system (v1.3.2) (compusense, flex).vdk" size="184336" crc="b1660797" sha1="c812587dd4b5718d73f4b798f797c47c7f042d44" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="flexsysa" cloneof="flexsys">
-		<description>FLEX System (v1.3.2, with Crunch COBOL v1.1)</description>
-		<year>198?</year>
-		<publisher>Compusense</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184338">
-				<rom name="system (v1.3.2 plus crunch cobol v1.1) (compusense, flex).vdk" size="184338" crc="47574ec3" sha1="8f1f829632442e9e56046de345a09028c80afdee" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="flexsys131" cloneof="flexsys">
-		<description>FLEX System (v1.3.1)</description>
-		<year>198?</year>
-		<publisher>Compusense</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184336">
-				<rom name="system (v1.3.1) (compusense, flex).vdk" size="184336" crc="2ecb2f2b" sha1="eeae2edf20697a2f919cf9a22d87c2c623d5d859" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="flexsys120" cloneof="flexsys">
-		<description>FLEX System (v1.2.0)</description>
-		<year>198?</year>
-		<publisher>Compusense</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184332">
-				<rom name="system (v1.2.0) (compusense, flex).vdk" size="184332" crc="ab8603ba" sha1="3410b3d1373b1a11e6fe2a7878dac47209380179" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<!-- Dragon Plus only -->
-	<software name="flexplus">
-		<description>FLEX System (v2.0.0, with Crunch COBOL v1.1 and DBASIC v1.5)</description>
-		<year>198?</year>
-		<publisher>Compusense</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184339">
-				<rom name="system (v2.0.0 plus crunch cobol v1.1, dbasic v1.5, dragonplus only) (compusense, flex).vdk" size="184339" crc="116eb4ab" sha1="363fb5c10f33a7d14a48e1aca53a9fc898403cbc" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1007,177 +952,6 @@
 		</part>
 	</software>
 
-	<software name="nitros9">
-		<description>NitrOS9 Level One (v030204)</description>
-		<year>19??</year>
-		<publisher>Phill Harvey-Smith</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="368652">
-				<rom name="nitros9 (6809, level 1, v030204, ds40) (phill harvey smith, dragon 64).vdk" size="368652" crc="4f24c964" sha1="703b9a1a7213f951f5726a2fd2c6518bb7d6240b" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="nitros9a" cloneof="nitros9">
-		<description>NitrOS9 Level One (v030204, 51 Column)</description>
-		<year>19??</year>
-		<publisher>Phill Harvey-Smith</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="368652">
-				<rom name="nitros9 (6809, level 1, v030204, ds40, 51 column) (phill harvey smith, dragon 64).vdk" size="368652" crc="1bb2ca15" sha1="51e35756d5c0803a2775af5fe8dd10d7658b5c2c" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="basic09">
-		<description>OS-9 BASIC09</description>
-		<year>198?</year>
-		<publisher>Dragon Data Ltd.</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184344">
-				<rom name="os-9 basic09 (dragon data ltd).vdk" size="184344" crc="46ffb893" sha1="26c75b65f79190efc3a640c6399a0008a46a6cc3" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="os9c">
-		<description>OS-9 C</description>
-		<year>198?</year>
-		<publisher>Dragon Data Ltd.</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 1"/>
-			<dataarea name="flop" size="184332">
-				<rom name="os-9 c (dragon data ltd) (disk 1).vdk" size="184332" crc="2ddbe75e" sha1="14b3a9c8b85c073b18fa8e06e2d779e63064060d" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 2"/>
-			<dataarea name="flop" size="184332">
-				<rom name="os-9 c (dragon data ltd) (disk 2).vdk" size="184332" crc="f36d5a0a" sha1="3eeccff7d6e3eda4e0a794e7db07ab93d9f3d366" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="os9dgnp">
-		<description>OS-9 DragonPlus Update</description>
-		<year>198?</year>
-		<publisher>Compusense</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184339">
-				<rom name="os-9 dragonplus update (compusense).vdk" size="184339" crc="5c57b01e" sha1="bde5e6e3c476af3ddd5f9a6082941d97173b5dc3" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="os9dcalc">
-		<description>OS-9 Dynacalc</description>
-		<year>198?</year>
-		<publisher>Dragon Data Ltd.</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184344">
-				<rom name="os-9 dynacalc (dragon data ltd).vdk" size="184344" crc="f695776e" sha1="54cb2d0f9ea844d5d5e556fcc7ae658daa7043ca" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="os9ead">
-		<description>OS-9 Editor/Assembler and Debugger</description>
-		<year>198?</year>
-		<publisher>Dragon Data Ltd.</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184332">
-				<rom name="os-9 editor assembler (debugger) (198x) (dragon data ltd) (!).vdk" size="184332" crc="f2ba7d84" sha1="46518c3933393a1f93ed3c79594774bc404c3605" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="os9">
-		<description>OS-9 Level One</description>
-		<year>198?</year>
-		<publisher>Dragon Data Ltd.</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184342">
-				<rom name="os-9 system (dragon data ltd).vdk" size="184342" crc="5c33de57" sha1="d5e00fa5cf0c4d28a991866d0daee8cc14e312c2" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="os9s" cloneof="os9">
-		<description>OS-9 Level One (Spa, v2.0)</description>
-		<year>198?</year>
-		<publisher>Eurohard SA</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184339">
-				<rom name="eurohard sa - os-9 level 1 v2.0.vdk" size="184339" crc="73461aad" sha1="e1a834322eeb7ced0e9934f7c3c1c745aa6112b5" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<!-- Dragon Plus only -->
-	<software name="os9plus">
-		<description>OS-9 Level One for Dragon Plus (v1.2)</description>
-		<year>198?</year>
-		<publisher>Compusense</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184338">
-				<rom name="os-9 level 1 (v1.2 for dragonplus) (compusense).vdk" size="184338" crc="0c067eab" sha1="19e4ff1eb6c7b8d49ad33d146cfaa6eb81e96e29" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="os9pasc">
-		<description>OS-9 Pascal</description>
-		<year>198?</year>
-		<publisher>Dragon Data Ltd.</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 1"/>
-			<dataarea name="flop" size="184332">
-				<rom name="os-9 pascal (dragon data ltd) (disk 1).vdk" size="184332" crc="5847b0b5" sha1="c96214d67010ae2c6a9649e7a7df77767cdcd8d3" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 2"/>
-			<dataarea name="flop" size="184332">
-				<rom name="os-9 pascal (dragon data ltd) (disk 2).vdk" size="184332" crc="b50f8f27" sha1="6f4d3e98f1192f98f081de80b637ffe4cd3d0b89" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="os9rms">
-		<description>OS-9 RMS</description>
-		<year>198?</year>
-		<publisher>Dragon Data Ltd.</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184339">
-				<rom name="os-9 rms (dragon data ltd).vdk" size="184339" crc="ce069e1f" sha1="7df31a6c66447dbde7b00a40c4e9ab8ac2492c0a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="stylogra">
-		<description>OS-9 Stylograph</description>
-		<year>198?</year>
-		<publisher>Dragon Data Ltd.</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184342">
-				<rom name="os-9 stylograph (dragon data ltd).vdk" size="184342" crc="78331141" sha1="c055020a44604d090666f64e3c5e67a3bb96e9e3" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="obase">
 		<description>Orange Base (v8.8)</description>
 		<year>198?</year>
@@ -1214,19 +988,6 @@
 		</part>
 	</software>
 
-	<!-- Requires FLEX -->
-	<software name="flexpasc">
-		<description>PASCAL (FLEX)</description>
-		<year>198?</year>
-		<publisher>Compusense</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184332">
-				<rom name="pascal (compusense, flex).vdk" size="184332" crc="ef6ff3b9" sha1="f211bc7e74ecce4822a8f78a1d517efe8a211362" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="pengon">
 		<description>Pengon</description>
 		<year>198?</year>
@@ -1235,19 +996,6 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="184338">
 				<rom name="pengon (microdeal).vdk" size="184338" crc="b94b6864" sha1="33835f83554f1314f7b583b54e1a2274a25607b0" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<!-- Requires FLEX -->
-	<software name="rms">
-		<description>RMS</description>
-		<year>198?</year>
-		<publisher>Compusense</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184343">
-				<rom name="rms (compusense, flex).vdk" size="184343" crc="ddbf10b8" sha1="cb5fce70af4625df820a52df4989564728d292d3" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1284,19 +1032,6 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="151564">
 				<rom name="rotabb (n.d.u.g).vdk" size="151564" crc="9beb879c" sha1="d118dbdf967a83d7c0bcb6eb6253dfbeac1b5d36" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<!-- Requires FLEX -->
-	<software name="spedit">
-		<description>SPEdit (v1.0.8)</description>
-		<year>198?</year>
-		<publisher>Compusense</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184332">
-				<rom name="spedit v1.0.8 (compusense, flex).vdk" size="184332" crc="087807c8" sha1="fadcc929925f9b492e62c8b87c665b8cd179dba6" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2131,19 +1866,6 @@
 		</part>
 	</software>
 
-	<!-- Requires FLEX -->
-	<software name="varflex">
-		<description>Various FLEX programs (Debug v1.5, Dynafast v1.5.0, etc)</description>
-		<year>198?</year>
-		<publisher>Compusense</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184332">
-				<rom name="various (debug v1.5, dynafast 1.5.0 etc) (compusense, flex).vdk" size="184332" crc="66367a4c" sha1="d5fc033232c3d09cb56d70cd1dca60c4d47d6bd1" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="visitext">
 		<description>Visitext Extra</description>
 		<year>198?</year>
@@ -2212,6 +1934,356 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="184340">
 				<rom name="h2g2 (infocom).vdk" size="184340" crc="ea239013" sha1="c98d1b42c23259dabc4c94e9ecb90b0abe88be8f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- FLEX disks -->
+
+	<software name="dbasic">
+		<description>DBASIC (v1.0)</description>
+		<year>198?</year>
+		<publisher>Compusense</publisher>
+		<info name="usage" value="Requires FLEX" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184343">
+				<rom name="dbasic v1.0 (compusense, flex).vdk" size="184343" crc="6d45b2a2" sha1="5f3bf42dad7a4d06dac0f106f4e57d124eb130d6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dbargain">
+		<description>Dragon Bargain Pack 2</description>
+		<year>198?</year>
+		<publisher>Compusense</publisher>
+		<info name="usage" value="Requires FLEX" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184343">
+				<rom name="dragon bargain pack 2 (compusense, flex).vdk" size="184343" crc="b0fa9ade" sha1="f427cfc7fe8e6af6695c245a27dcc73c4bfaed1d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dgnplus">
+		<description>Dragon Plus Update</description>
+		<year>198?</year>
+		<publisher>Compusense</publisher>
+		<info name="usage" value="Requires FLEX" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184347">
+				<rom name="dragon plus (update, flex system v2.0.0, dbasic v1.7) (compusense, flex).vdk" size="184347" crc="d925a559" sha1="3b88f299e01cf6979921048d3ec6dfdab354f9a4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dynacalc">
+		<description>Dynacalc</description>
+		<year>198?</year>
+		<publisher>Compusense</publisher>
+		<info name="usage" value="Requires FLEX" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184345">
+				<rom name="dynacalc (compusense, flex).vdk" size="184345" crc="9ddcb3cd" sha1="c0b187571f7e01ba43a8a0d8a1f42afa736f1791" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="flexsys">
+		<description>FLEX System (v1.3.2)</description>
+		<year>198?</year>
+		<publisher>Compusense</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184336">
+				<rom name="system (v1.3.2) (compusense, flex).vdk" size="184336" crc="b1660797" sha1="c812587dd4b5718d73f4b798f797c47c7f042d44" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="flexsysa" cloneof="flexsys">
+		<description>FLEX System (v1.3.2, with Crunch COBOL v1.1)</description>
+		<year>198?</year>
+		<publisher>Compusense</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184338">
+				<rom name="system (v1.3.2 plus crunch cobol v1.1) (compusense, flex).vdk" size="184338" crc="47574ec3" sha1="8f1f829632442e9e56046de345a09028c80afdee" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="flexsys131" cloneof="flexsys">
+		<description>FLEX System (v1.3.1)</description>
+		<year>198?</year>
+		<publisher>Compusense</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184336">
+				<rom name="system (v1.3.1) (compusense, flex).vdk" size="184336" crc="2ecb2f2b" sha1="eeae2edf20697a2f919cf9a22d87c2c623d5d859" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="flexsys120" cloneof="flexsys">
+		<description>FLEX System (v1.2.0)</description>
+		<year>198?</year>
+		<publisher>Compusense</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184332">
+				<rom name="system (v1.2.0) (compusense, flex).vdk" size="184332" crc="ab8603ba" sha1="3410b3d1373b1a11e6fe2a7878dac47209380179" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Dragon Plus only -->
+	<software name="flexplus">
+		<description>FLEX System (v2.0.0, with Crunch COBOL v1.1 and DBASIC v1.5)</description>
+		<year>198?</year>
+		<publisher>Compusense</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184339">
+				<rom name="system (v2.0.0 plus crunch cobol v1.1, dbasic v1.5, dragonplus only) (compusense, flex).vdk" size="184339" crc="116eb4ab" sha1="363fb5c10f33a7d14a48e1aca53a9fc898403cbc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="flexpasc">
+		<description>PASCAL (FLEX)</description>
+		<year>198?</year>
+		<publisher>Compusense</publisher>
+		<info name="usage" value="Requires FLEX" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184332">
+				<rom name="pascal (compusense, flex).vdk" size="184332" crc="ef6ff3b9" sha1="f211bc7e74ecce4822a8f78a1d517efe8a211362" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rms">
+		<description>RMS</description>
+		<year>198?</year>
+		<publisher>Compusense</publisher>
+		<info name="usage" value="Requires FLEX" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184343">
+				<rom name="rms (compusense, flex).vdk" size="184343" crc="ddbf10b8" sha1="cb5fce70af4625df820a52df4989564728d292d3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spedit">
+		<description>SPEdit (v1.0.8)</description>
+		<year>198?</year>
+		<publisher>Compusense</publisher>
+		<info name="usage" value="Requires FLEX" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184332">
+				<rom name="spedit v1.0.8 (compusense, flex).vdk" size="184332" crc="087807c8" sha1="fadcc929925f9b492e62c8b87c665b8cd179dba6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="varflex">
+		<description>Various FLEX programs (Debug v1.5, Dynafast v1.5.0, etc)</description>
+		<year>198?</year>
+		<publisher>Compusense</publisher>
+		<info name="usage" value="Requires FLEX" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184332">
+				<rom name="various (debug v1.5, dynafast 1.5.0 etc) (compusense, flex).vdk" size="184332" crc="66367a4c" sha1="d5fc033232c3d09cb56d70cd1dca60c4d47d6bd1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- OS-9 disks -->
+
+	<software name="basic09">
+		<description>OS-9 BASIC09</description>
+		<year>198?</year>
+		<publisher>Dragon Data Ltd.</publisher>
+		<info name="usage" value="Requires OS-9" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184344">
+				<rom name="os-9 basic09 (dragon data ltd).vdk" size="184344" crc="46ffb893" sha1="26c75b65f79190efc3a640c6399a0008a46a6cc3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="os9c">
+		<description>OS-9 C</description>
+		<year>198?</year>
+		<publisher>Dragon Data Ltd.</publisher>
+		<info name="usage" value="Requires OS-9" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="184332">
+				<rom name="os-9 c (dragon data ltd) (disk 1).vdk" size="184332" crc="2ddbe75e" sha1="14b3a9c8b85c073b18fa8e06e2d779e63064060d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="184332">
+				<rom name="os-9 c (dragon data ltd) (disk 2).vdk" size="184332" crc="f36d5a0a" sha1="3eeccff7d6e3eda4e0a794e7db07ab93d9f3d366" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="os9dgnp">
+		<description>OS-9 DragonPlus Update</description>
+		<year>198?</year>
+		<publisher>Compusense</publisher>
+		<info name="usage" value="Requires OS-9" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184339">
+				<rom name="os-9 dragonplus update (compusense).vdk" size="184339" crc="5c57b01e" sha1="bde5e6e3c476af3ddd5f9a6082941d97173b5dc3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="os9dcalc">
+		<description>OS-9 Dynacalc</description>
+		<year>198?</year>
+		<publisher>Dragon Data Ltd.</publisher>
+		<info name="usage" value="Requires OS-9" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184344">
+				<rom name="os-9 dynacalc (dragon data ltd).vdk" size="184344" crc="f695776e" sha1="54cb2d0f9ea844d5d5e556fcc7ae658daa7043ca" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="os9ead">
+		<description>OS-9 Editor/Assembler and Debugger</description>
+		<year>198?</year>
+		<publisher>Dragon Data Ltd.</publisher>
+		<info name="usage" value="Requires OS-9" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184332">
+				<rom name="os-9 editor assembler (debugger) (198x) (dragon data ltd) (!).vdk" size="184332" crc="f2ba7d84" sha1="46518c3933393a1f93ed3c79594774bc404c3605" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="os9">
+		<description>OS-9 Level One</description>
+		<year>198?</year>
+		<publisher>Dragon Data Ltd.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184342">
+				<rom name="os-9 system (dragon data ltd).vdk" size="184342" crc="5c33de57" sha1="d5e00fa5cf0c4d28a991866d0daee8cc14e312c2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="os9s" cloneof="os9">
+		<description>OS-9 Level One (Spa, v2.0)</description>
+		<year>198?</year>
+		<publisher>Eurohard SA</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184339">
+				<rom name="eurohard sa - os-9 level 1 v2.0.vdk" size="184339" crc="73461aad" sha1="e1a834322eeb7ced0e9934f7c3c1c745aa6112b5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Dragon Plus only -->
+	<software name="os9plus">
+		<description>OS-9 Level One for Dragon Plus (v1.2)</description>
+		<year>198?</year>
+		<publisher>Compusense</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184338">
+				<rom name="os-9 level 1 (v1.2 for dragonplus) (compusense).vdk" size="184338" crc="0c067eab" sha1="19e4ff1eb6c7b8d49ad33d146cfaa6eb81e96e29" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="os9pasc">
+		<description>OS-9 Pascal</description>
+		<year>198?</year>
+		<publisher>Dragon Data Ltd.</publisher>
+		<info name="usage" value="Requires OS-9" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="184332">
+				<rom name="os-9 pascal (dragon data ltd) (disk 1).vdk" size="184332" crc="5847b0b5" sha1="c96214d67010ae2c6a9649e7a7df77767cdcd8d3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="184332">
+				<rom name="os-9 pascal (dragon data ltd) (disk 2).vdk" size="184332" crc="b50f8f27" sha1="6f4d3e98f1192f98f081de80b637ffe4cd3d0b89" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="os9rms">
+		<description>OS-9 RMS</description>
+		<year>198?</year>
+		<publisher>Dragon Data Ltd.</publisher>
+		<info name="usage" value="Requires OS-9" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184339">
+				<rom name="os-9 rms (dragon data ltd).vdk" size="184339" crc="ce069e1f" sha1="7df31a6c66447dbde7b00a40c4e9ab8ac2492c0a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stylogra">
+		<description>OS-9 Stylograph</description>
+		<year>198?</year>
+		<publisher>Dragon Data Ltd.</publisher>
+		<info name="usage" value="Requires OS-9" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184342">
+				<rom name="os-9 stylograph (dragon data ltd).vdk" size="184342" crc="78331141" sha1="c055020a44604d090666f64e3c5e67a3bb96e9e3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- NitrOS-9 disks -->
+
+	<software name="nitros9">
+		<description>NitrOS-9 Level One (v030204)</description>
+		<year>19??</year>
+		<publisher>Phill Harvey-Smith</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="368652">
+				<rom name="nitros9 (6809, level 1, v030204, ds40) (phill harvey smith, dragon 64).vdk" size="368652" crc="4f24c964" sha1="703b9a1a7213f951f5726a2fd2c6518bb7d6240b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nitros9a" cloneof="nitros9">
+		<description>NitrOS-9 Level One (v030204, 51 Column)</description>
+		<year>19??</year>
+		<publisher>Phill Harvey-Smith</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="368652">
+				<rom name="nitros9 (6809, level 1, v030204, ds40, 51 column) (phill harvey smith, dragon 64).vdk" size="368652" crc="1bb2ca15" sha1="51e35756d5c0803a2775af5fe8dd10d7658b5c2c" offset="0" />
 			</dataarea>
 		</part>
 	</software>
