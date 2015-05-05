@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<softwarelist name="dgnplus_flop" description="Dragon Data Dragon Plus floppy disks">
+
+<!-- FLEX disks -->
+
+	<software name="flexsys">
+		<description>FLEX System (v2.0.0, with Crunch COBOL v1.1 and DBASIC v1.5)</description>
+		<year>198?</year>
+		<publisher>Compusense</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184339">
+				<rom name="system (v2.0.0 plus crunch cobol v1.1, dbasic v1.5, dragonplus only) (compusense, flex).vdk" size="184339" crc="116eb4ab" sha1="363fb5c10f33a7d14a48e1aca53a9fc898403cbc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="flexdgnp">
+		<description>FLEX Dragon Plus Update</description>
+		<year>198?</year>
+		<publisher>Compusense</publisher>
+		<info name="usage" value="Requires FLEX" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184347">
+				<rom name="dragon plus (update, flex system v2.0.0, dbasic v1.7) (compusense, flex).vdk" size="184347" crc="d925a559" sha1="3b88f299e01cf6979921048d3ec6dfdab354f9a4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- OS-9 disks -->
+
+	<software name="os9">
+		<description>OS-9 Level One for Dragon Plus (v1.2)</description>
+		<year>198?</year>
+		<publisher>Compusense</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184338">
+				<rom name="os-9 level 1 (v1.2 for dragonplus) (compusense).vdk" size="184338" crc="0c067eab" sha1="19e4ff1eb6c7b8d49ad33d146cfaa6eb81e96e29" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="os9dgnp">
+		<description>OS-9 Dragon Plus Update</description>
+		<year>198?</year>
+		<publisher>Compusense</publisher>
+		<info name="usage" value="Requires OS-9" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184339">
+				<rom name="os-9 dragonplus update (compusense).vdk" size="184339" crc="5c57b01e" sha1="bde5e6e3c476af3ddd5f9a6082941d97173b5dc3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>

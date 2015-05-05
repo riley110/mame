@@ -222,6 +222,11 @@ static MACHINE_CONFIG_DERIVED_CLASS( d64plus, dragon_base, dragon64_state )
 	// acia
 	MCFG_DEVICE_ADD("acia", MOS6551, 0)
 	MCFG_MOS6551_XTAL(XTAL_1_8432MHz)
+
+	//software lists
+	MCFG_DEVICE_REMOVE("flop_list")
+	MCFG_SOFTWARE_LIST_ADD("flop_list","dgnplus_flop")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("drgn_flop_list","dragon_flop")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED_CLASS( dgnalpha, dragon_base, dragon_alpha_state )
@@ -263,6 +268,7 @@ static MACHINE_CONFIG_DERIVED_CLASS( dgnalpha, dragon_base, dragon_alpha_state )
 	MCFG_DEVICE_REMOVE("flop_list")
 	MCFG_SOFTWARE_LIST_ADD("flop_list","dgnalpha_flop")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("drgn_flop_list","dragon_flop")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("dpls_flop_list","dgnplus_flop")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( tanodr64, dragon64 )
