@@ -119,6 +119,19 @@
 		</part>
 	</software>
 
+	<!-- Has "color cc3" in the filename, what does this mean? -->
+	<software name="8balla" cloneof="8ball">
+		<description>8-Ball (Alt)</description>
+		<year>1983</year>
+		<publisher>Anteco Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="8-ball (color cc3) (anteco software).dsk" size="161280" crc="d28ac6bb" sha1="626cd4ce6f85802950e256dd4e4497816b608c0b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- Requires OS-9 -->
 	<software name="9time33">
 		<description>9-Times Vol. 3 Issue 3 - September 1991</description>
@@ -724,7 +737,7 @@
 		</part>
 	</software>
 
-	<!-- Shows a white screen instead -->
+	<!-- Shows a white screen instead of title -->
 	<software name="atcsim2a" cloneof="atcsim2">
 		<description>Air Traffic Control Simulator (No Title Screen)</description>
 		<year>1984</year>
