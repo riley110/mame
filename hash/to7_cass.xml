@@ -3584,6 +3584,18 @@
 		</part>
 	</software>
 
+	<software name="jumpsurv">
+		<description>Jump for Survival</description>
+		<year>1986</year>
+		<publisher>Free Game Blot</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="22348">
+				<rom name="jump-for-survival_to7.k7" size="22348" crc="712f0220" sha1="dc2c97c55645c46e095439113b81296077b31b65" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="jumpjeep">
 		<description>Jumping Jeep</description>
 		<year>198?</year>
@@ -5412,6 +5424,18 @@
 		</part>
 	</software>
 
+	<software name="poyann">
+		<description>Po Yann</description>
+		<year>198?</year>
+		<publisher>Frederic Chartier</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="4763">
+				<rom name="poyann.k7" size="4763" crc="87a4f02c" sha1="336030dcc85e1c1bbb8d35e4ca57e9ebf02974dd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="poeme">
 		<description>Poeme</description>
 		<year>198?</year>
@@ -5611,14 +5635,26 @@
 		</part>
 	</software>
 
-	<software name="poyann">
-		<description>Po Yann</description>
-		<year>198?</year>
-		<publisher>Frederic Chartier</publisher>
+	<software name="pouvoir">
+		<description>Pouvoir</description>
+		<year>1986</year>
+		<publisher>Loriciels</publisher>
 
 		<part name="cass1" interface="to_cass">
-			<dataarea name="cass" size="4763">
-				<rom name="poyann.k7" size="4763" crc="87a4f02c" sha1="336030dcc85e1c1bbb8d35e4ca57e9ebf02974dd" offset="0" />
+			<dataarea name="cass" size="15871665">
+				<rom name="pouvoir_to7.wav" size="15871665" crc="87f68305" sha1="b6dcb61d85efaddedd9403d50321937f6166e628" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pouvoira" cloneof="pouvoir">
+		<description>Pouvoir (Alt)</description>
+		<year>1986</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="24624">
+				<rom name="pouvoir_to7.k7" size="24624" crc="10db318f" sha1="9027b3a708755e90bc15d53db26d018677f60c15" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
