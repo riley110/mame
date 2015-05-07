@@ -6,7 +6,7 @@ TODO:
 Update with new disks from worldofdragon
 Find any Dragon Plus only disks and move them to dgnplus_flop.xml
 Further categorization into apps/games/etc
-Document more games that also work on CoCos
+Document more games that also work on CoCos (all known are DSK files)
 -->
 <softwarelist name="dragon_flop" description="Dragon Data Dragon series floppy disks">
 
@@ -119,7 +119,7 @@ Document more games that also work on CoCos
 		</part>
 	</software>
 
-	<!-- Also works on CoCo -->
+	<!-- Works with CoCo -->
 	<software name="airball">
 		<description>Airball</description>
 		<year>1987</year>
@@ -132,7 +132,7 @@ Document more games that also work on CoCos
 		</part>
 	</software>
 
-	<!-- Also works on CoCo -->
+	<!-- Works with CoCo -->
 	<software name="airballa" cloneof="airball">
 		<description>Airball (Alt)</description>
 		<year>1987</year>
@@ -340,6 +340,7 @@ Document more games that also work on CoCos
 		</part>
 	</software>
 
+	<!-- Works with CoCo -->
 	<software name="athletyx">
 		<description>Athletyx</description>
 		<year>1985</year>
@@ -352,6 +353,7 @@ Document more games that also work on CoCos
 		</part>
 	</software>
 
+	<!-- Works with CoCo -->
 	<software name="backtrck">
 		<description>Back Track</description>
 		<year>198?</year>
@@ -388,6 +390,7 @@ Document more games that also work on CoCos
 		</part>
 	</software>
 
+	<!-- Works with CoCo -->
 	<software name="bcbill">
 		<description>BC Bill</description>
 		<year>1984</year>
@@ -396,6 +399,71 @@ Document more games that also work on CoCos
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="bc bill (imagine software).dsk" size="161280" crc="f76ac7d8" sha1="b66bad534b5c174b37d6c51ca54a5abff23a8852" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Works with CoCo -->
+	<software name="bcbilla" cloneof="bcbill">
+		<description>BC Bill (Alt)</description>
+		<year>1984</year>
+		<publisher>Imagine Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="bc bill (imagine software)[a].dsk" size="161280" crc="11a691d6" sha1="db45b9180669a1731db414386ce4c299a74cf956" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Works with CoCo -->
+	<software name="beanstlk">
+		<description>Beanstalker</description>
+		<year>1986</year>
+		<publisher>Microvision Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="bean stalker (microvision software).dsk" size="161280" crc="9d7c7c01" sha1="030d997cf450c8d17aff77254898b0fd08f26c05" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Works with CoCo -->
+	<software name="beanstlka" cloneof="beanstlk">
+		<description>Beanstalker (Alt)</description>
+		<year>1986</year>
+		<publisher>Microvision Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="beanstalker (microvision) (dragon).dsk" size="161280" crc="0745fe66" sha1="2097031cdccc56fd703f5bfdaad7a30fca39ec01" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Works with CoCo -->
+	<software name="beanstlkb" cloneof="beanstlk">
+		<description>Beanstalker (Alt 2)</description>
+		<year>1986</year>
+		<publisher>Microvision Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="beanstalker coco (dragon software).dsk" size="161280" crc="fbb60a32" sha1="67b25d2c0f26bbb432414f42db55afb129fa3896" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Works with CoCo -->
+	<software name="boris">
+		<description>Boris</description>
+		<year>1984</year>
+		<publisher>Blaby Computer Games</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="boris the bold (blaby) (dragon).dsk" size="161280" crc="d96cee24" sha1="e07874ac803dad9a6906a1acd947eddb864249bd" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -808,14 +876,28 @@ Document more games that also work on CoCos
 		</part>
 	</software>
 
+	<!-- Works with CoCo? -->
 	<software name="rotabb1">
-		<description>ROTABB (Kouga Software - Pulser?)</description>
+		<description>ROTABB (Kouga Software)</description>
 		<year>198?</year>
-		<publisher>Kouga Software - Pulser?</publisher>
+		<publisher>Kouga Software </publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="184332">
 				<rom name="kouga (rotabb) (pulser).vdk" size="184332" crc="e4182927" sha1="01b85e332d1a3662b6e693c20f54129f28e9c178" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Works with CoCo -->
+	<software name="rotabb1a" cloneof="rotabb1">
+		<description>ROTABB (Kouga Software) (Alt)</description>
+		<year>198?</year>
+		<publisher>Kouga Software </publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="bongo (dragon software) (sure this is coco 3 only).dsk" size="161280" crc="0978faa0" sha1="e06a40b5dbfd4a8b0a1120b7e5145df5b069688d" offset="0" />
 			</dataarea>
 		</part>
 	</software>

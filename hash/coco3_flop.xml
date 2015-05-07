@@ -404,6 +404,128 @@
 		</part>
 	</software>
 
+	<software name="bash">
+		<description>Bash (v01.00.00)</description>
+		<year>1988</year>
+		<publisher>SRB Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="bash (srb software) (coco 1-2, coco 3).dsk" size="161280" crc="46b4b78e" sha1="29f66bd9f08e39004d64fa1229036a950740f424" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unkc2">
+		<description>Unknown Compilation 2</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="bash1 (srb) (cracked coco 3 versions).dsk" size="161280" crc="05667c21" sha1="44fb8068d1d70c3ab7de1b8f9a86abbd6a56777c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basdnd">
+		<description>Basic Dungeons &amp; Dragons</description>
+		<year>19??</year>
+		<publisher>Snailsoft Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="basic dungeons &amp; dragons (snailsoft) (coco 3).dsk" size="161280" crc="8da78e48" sha1="5798c5c72dfa67b54bad6d2ea1484f2ff1409a0a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basfree">
+		<description>BASIC Freedom</description>
+		<year>1987</year>
+		<publisher>ColorVenture</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="basic freedom (coco 3).dsk" size="161280" crc="28413bb5" sha1="6200f0c09684724b7eabd7200797d3e7d776996f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="1on1">
+		<description>Julius Erving and Larry Bird Go One on One (v01.00.00)</description>
+		<year>198?</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="baskball (tandy radio shack).dsk" size="161280" crc="449bd5d2" sha1="2e1ee74055a5258aba624748e54c3a0099681225" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Includes a mix of CoCo 1/2 and CoCo 3 programs -->
+	<software name="unkc3">
+		<description>Unknown Compilation 3</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="batt-stat (tom mix) (coco1,2&amp;3).dsk" size="161280" crc="9dbc8235" sha1="229433c3ef342c2dc96548014b5e042bed1ed2d6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unkc4">
+		<description>Unknown Compilation 4</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="bjork (coco 3).dsk" size="161280" crc="deee9df7" sha1="24f62784320ece3afd12adf772fc327580520a23" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Half of the screen is cut off -->
+	<software name="bsanctum" supported="partial">
+		<description>Black Sanctum (v1.2)</description>
+		<year>198?</year>
+		<publisher>Mark Data Products</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="black sanctum (mark data products) (coco3 patched).dsk" size="161280" crc="03202839" sha1="1e9b9138e7f6b036de78c1a3d6a0c86d2e7243a3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="blox">
+		<description>Blox</description>
+		<year>1991</year>
+		<publisher>Hyper Tech Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="blox (hyper tech software) (coco 3).dsk" size="161280" crc="035abfba" sha1="54eb8c6111c60fcc3b2b491881045305597b9026" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bloxa" cloneof="blox">
+		<description>Blox (Alt)</description>
+		<year>1991</year>
+		<publisher>Hyper Tech Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="blox (media link production) (early chet simpson game rerleases).dsk" size="161280" crc="a4ec3bf9" sha1="adadddb48a0f4702b11e62365450eb9623d77121" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- coco3 only requires 512Kb, audio is a farty, run best with a 6309? - coco3h driver) -->
 	<software name="dkong" supported ="partial">
 		<description>Donkey Kong Emulator for CoCo 3 (512Kb)</description>
@@ -418,7 +540,7 @@
 		</part>
 	</software>
 
-	<software name="wimbmp">
+	<software name="winbmp">
 		<description>Freeware Windows BMP Reader</description>
 		<year>1996</year>
 		<publisher>Stuart Wyss-Gallifent</publisher>
