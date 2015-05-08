@@ -526,6 +526,117 @@
 		</part>
 	</software>
 
+	<software name="be">
+		<description>B.E. Break-In</description>
+		<year>1989</year>
+		<publisher>T&amp;D Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="breakin 3 (bio-ware).dsk" size="161280" crc="a4c0681a" sha1="62b6e6306f6c800bdf97452a80bf4aa49f219b01" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Runs on CoCo 1/2 but with limited features -->
+	<software name="csee">
+		<description>C-SEE (v3.3)</description>
+		<year>1987</year>
+		<publisher>The Micro Works</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="c-see (csee).dsk" size="161280" crc="3f9bfabb" sha1="799ebcfcb97386af8a281ba8c08a73e71f237d8c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unkc5">
+		<description>Unknown Compilation 5</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="cbasic 3 (cer-comp) (coco 3).dsk" size="161280" crc="aee81950" sha1="603fa3436eab3bb900661e08edf4deee8842313b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cc3demo">
+		<description>CC3 Demo</description>
+		<year>1990</year>
+		<publisher>Alan Dekok</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="cc3 demo (coco 3).dsk" size="161280" crc="b2e508ab" sha1="9ed1c8577af9308be18332ca15e47686455113aa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Requires OS-9 -->
+	<software name="cctools">
+		<description>CCTools (1.0)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="cctools 1.0 (coco 3).dsk" size="161280" crc="8059a264" sha1="ca521abdd1067f690a57a71f0acc682b4744199b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="c3dlink">
+		<description>CIII D-Link (v1.3)</description>
+		<year>1989</year>
+		<publisher>Coless Computer Design</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="ciii d-link (coco 3).dsk" size="161280" crc="81dc8bb9" sha1="868aa770f094f72f8183a7fbd8a2eb051e54cdfc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- DOS to boot -->
+	<software name="carmen">
+		<description>Where in the World is Carmen Sandiego?</description>
+		<year>1987</year>
+		<publisher>Broderbund Software - Computerware</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="carmen 1 (os-9 games).dsk" size="161280" crc="7ed72e56" sha1="2f0f5c1d6be8f83a3da266cfc26179c72c4c6736" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tharogad">
+		<description>Castle of Tharoggad (v1.00.00)</description>
+		<year>1988</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="castle of tharoggad (tandy) (coco 3).dsk" size="161280" crc="7367c2ca" sha1="2925ce4641d37e3ed51f92f84f2ed0160c681e5f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="catacomb">
+		<description>Catacomb</description>
+		<year>198?</year>
+		<publisher>L. Miller</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="catacombs (coco 3).dsk" size="161280" crc="9898107e" sha1="eefd25e2f64c592837e3a9f88c19b83989da2282" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- coco3 only requires 512Kb, audio is a farty, run best with a 6309? - coco3h driver) -->
 	<software name="dkong" supported ="partial">
 		<description>Donkey Kong Emulator for CoCo 3 (512Kb)</description>
