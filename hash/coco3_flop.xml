@@ -210,6 +210,57 @@
 		</part>
 	</software>
 
+	<!-- Contains "The Defeater" by Sub Etha Software -->
+	<software name="makcbas3">
+		<description>makcbas3</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="cer-comp software (makcbas3).dsk" size="161280" crc="35c3747c" sha1="9f2af0b0a6e947589fe2ddb53d58dda2c2424df7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Contains "The Defeater" by Sub Etha Software -->
+	<software name="makcctls">
+		<description>makcctls</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="cer-comp software (makcctls).dsk" size="161280" crc="7cebf0ab" sha1="bfd1b78b51ecd4b89dc32a9069e3e3206b4976b7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Requires Window Master -->
+	<software name="patwmstr">
+		<description>Patch Window Master?</description>
+		<year>198?</year>
+		<publisher>&Lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="cer-comp software (patwmstr).dsk" size="161280" crc="5df9df6a" sha1="1afaab046dbcfc9a15acaa5db30e0ee68c7b815a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="winmastr">
+		<description>Window Master (v1.01)</description>
+		<year>1988</year>
+		<publisher>Cer-Comp Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="cer-comp software (makewm).dsk" size="161280" crc="2a7f36fa" sha1="d915ed545ffa681b9916c6fd26d7ef1a89c3ac90" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 <!-- Compilations (Games) -->
 
 	<software name="asimov08">
@@ -294,6 +345,20 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="cc3 demo (coco 3).dsk" size="161280" crc="b2e508ab" sha1="9ed1c8577af9308be18332ca15e47686455113aa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Educational -->
+
+	<software name="cheseasy">
+		<description>Chess Made/Easy</description>
+		<year>198?</year>
+		<publisher>CoCo ChessWare</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="chess made easy (coco madeware).dsk" size="161280" crc="cff62f9c" sha1="e6a03791216582c32272613f0d64f34e47899e54" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -541,6 +606,60 @@
 		</part>
 	</software>
 
+	<!-- Wants disk write enabled -->
+	<software name="caladurl">
+		<description>Caladuril</description>
+		<year>1989</year>
+		<publisher>Oblique Triad</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="caladuril (diecom products).dsk" size="161280" crc="d8fe484f" sha1="d846c3a1823b93c72d801945aadca8e5fcf3f528" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Wants disk write enabled? -->
+	<software name="caladur2" supported="partial">
+		<description>Caladuril 2 - Weatherstone's End</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="256016">
+				<rom name="caladuril 2 (coco 3) (dmk version) (side 1).dsk" size="256016" crc="6c320c7b" sha1="86db23a366e531dac764295406046999e5b59d94" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="256016">
+				<rom name="caladuril 2 (coco 3) (dmk version) (side 2).dsk" size="256016" crc="929bef93" sha1="8ff175bd89d2d4611da01bfba352c432fb163b4d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Use parent set!
+	<software name="caladur2a" cloneof="caladur2" supported="no">
+		<description>Caladuril 2 - Weatherstone's End (Bad?)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="512016">
+				<rom name="caladuril 2 (coco 3) (makecal).dsk" size="512016" crc="46b5a543" sha1="6ab6a0c96842562b3c662491d44639a7b9ef727d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="224016">
+				<rom name="caladuril 2 (coco 3) (makecal2).dsk" size="224016" crc="07e3d6a1" sha1="a86ba82f4105ea1d3c64e0142233c51132fee8e7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+-->
+
 	<software name="tharogad">
 		<description>Castle of Tharoggad (v1.00.00)</description>
 		<year>1988</year>
@@ -561,6 +680,42 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="catacombs (coco 3).dsk" size="161280" crc="9898107e" sha1="eefd25e2f64c592837e3a9f88c19b83989da2282" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unwashed">
+		<description>Caves of the Unwashed Heathen</description>
+		<year>1996</year>
+		<publisher>Paul Shoemaker</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="caves of the unwashed heathen (paul shoemaker) (side 2).dsk" size="161280" crc="a74fb1ac" sha1="aa9243db907145427b33d383e7ab3b7692c593a9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unwasheda" cloneof="unwashed">
+		<description>Caves of the Unwashed Heathen (Alt)</description>
+		<year>1996</year>
+		<publisher>Paul Shoemaker</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184320">
+				<rom name="caves (caves of unwashed heathen).dsk" size="184320" crc="02446242" sha1="7577ae7d5422e1541f54f52f22917712f15a3425" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="csolitai">
+		<description>Classic Solitaire</description>
+		<year>198?</year>
+		<publisher>Eversoft Games</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="classic solitaire (eversoft games) (coco 3).dsk" size="161280" crc="5925577f" sha1="1d1757a5e629348c0661aec12a851aec3bdbf3f4" offset="0" />
 			</dataarea>
 		</part>
 	</software>

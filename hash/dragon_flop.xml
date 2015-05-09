@@ -480,6 +480,32 @@ Document more games that also work on CoCos (all known are DSK files)
 		</part>
 	</software>
 
+	<!-- Works with CoCo -->
+	<software name="chambers">
+		<description>Chambers</description>
+		<year>1984</year>
+		<publisher>Microdeal</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="chambers (tom mix software).dsk" size="161280" crc="29e2de42" sha1="aa85b91775b4957b6af2ca369f278b4db419f8ec" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Works with CoCo -->
+	<software name="chuckegg">
+		<description>Chuckie Egg</description>
+		<year>1983</year>
+		<publisher>A&amp;F Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="chuckie egg (a&amp;f software) (dragon).dsk" size="161280" crc="32d42164" sha1="15d199e8d08914e48f7f51a2f0c154ac2b5ef245" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="composer">
 		<description>Composer Companion</description>
 		<year>198?</year>
