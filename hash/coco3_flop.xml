@@ -2,29 +2,7 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="coco3_flop" description="Tandy Radio Shack Color Computer 3 disk images">
 
-	<software name="256color">
-		<description>256 Colors</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="256 colors (coco 3).dsk" size="161280" crc="94af0e03" sha1="208342858db5358934786b4b5d8e945b8379240e" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="256colora" cloneof="256color">
-		<description>256 Colors (Unlocked)</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="256 colors (coco 3) (unlocked).dsk" size="161280" crc="c3b25210" sha1="c81bb1dd3deca64f6e208b7b0e631ac3d61967f3" offset="0" />
-			</dataarea>
-		</part>
-	</software>
+<!-- Applications/Utilities -->
 
 	<software name="32emul">
 		<description>32emul - CoCo 1+2 Emulated on CoCo 3</description>
@@ -34,30 +12,6 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="82944">
 				<rom name="32emul (sock master) (coco 1,2 emulated on coco 3).dsk" size="82944" crc="bfa75c70" sha1="68ba9586b79cc6dbe2e0f02023f8fec9da0dc05e" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="5linslot">
-		<description>5-Line Fruit Slot Machine</description>
-		<year>198?</year>
-		<publisher>Tom Mix Software</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="5-line fruit slot machine (tom mix software) (coco 3).dsk" size="161280" crc="011081f2" sha1="9a6d0e26cab60458e2624f0eed55f707f3436143" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="5000">
-		<description>5000</description>
-		<year>198?</year>
-		<publisher>Gary James</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="5000 (gary james) (coco 3).dsk" size="161280" crc="4f9cb888" sha1="2cfe48e905e92f3d3e832e0aa2208802c7139f46" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -82,18 +36,6 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="512k utilities (coco 3).dsk" size="161280" crc="7765be38" sha1="49684d7c2c62449185604d2e077b073f690b5b9c" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="mmortar">
-		<description>A Mazing World of Malcolm Mortar</description>
-		<year>198?</year>
-		<publisher>Tandy</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="a mazing world of malcom mortar (tandy) (coco 3).dsk" size="161280" crc="ad554e69" sha1="99e48998fa4ab112ff5f0db0a16e3824a7d22ba0" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -134,6 +76,180 @@
 		</part>
 	</software>
 
+	<software name="adconvrt">
+		<description>Analog to Digital Converter</description>
+		<year>1994</year>
+		<publisher>Snailsoft Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="analog to digital converter (coco 3).dsk" size="161280" crc="0a64525e" sha1="238d9d165a13fa280235dece28e07a34fcb26616" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="backdigi">
+		<description>Backdigi (v3.1)</description>
+		<year>1995</year>
+		<publisher>Sock Master</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="background sound demo (coco 3) (bckdig).dsk" size="161280" crc="019fc5be" sha1="2d74507ccf0965f7cc9d793473158be892c7ebf5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="backdigi21" cloneof="backdigi">
+		<description>Backdigi (v2.1)</description>
+		<year>1995</year>
+		<publisher>Sock Master</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="background sound demo (coco 3) (bckdig21).dsk" size="161280" crc="f068acfa" sha1="9ce5db6ef4135328a4c80a3e143e11bf183e36f0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bcklight">
+		<description>Backup Lightning 512K (v1.2)</description>
+		<year>1987</year>
+		<publisher>ColorVenture</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161792">
+				<rom name="backup lightning 512k (coco 3) (backup lightning).dsk" size="161792" crc="dd2b55d9" sha1="c9300f06563567ab0c76dd4d068d5c85ca229a41" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bcklighta" cloneof="bcklight">
+		<description>Backup Lightning 512K (v1.2, Alt)</description>
+		<year>1987</year>
+		<publisher>ColorVenture</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="backup lightning 512k (coco 3) (bcklight).dsk" size="161280" crc="26c5ef33" sha1="8088df2d7f55078123cf17c2bbd6a02a4830f741" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bcklightb" cloneof="bcklight">
+		<description>Backup Lightning 512K (v1.2, Alt 2)</description>
+		<year>1987</year>
+		<publisher>ColorVenture</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="backup lightning 512k (colorventure) (coco 3).dsk" size="161280" crc="cc2fdd37" sha1="34933dc35b5350504d8b7a3c6dd0905463c7a7f1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basfree">
+		<description>BASIC Freedom</description>
+		<year>1987</year>
+		<publisher>ColorVenture</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="basic freedom (coco 3).dsk" size="161280" crc="28413bb5" sha1="6200f0c09684724b7eabd7200797d3e7d776996f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Runs on CoCo 1/2 but with limited features -->
+	<software name="csee">
+		<description>C-SEE (v3.3)</description>
+		<year>1987</year>
+		<publisher>The Micro Works</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="c-see (csee).dsk" size="161280" crc="3f9bfabb" sha1="799ebcfcb97386af8a281ba8c08a73e71f237d8c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Requires OS-9 -->
+	<software name="cctools">
+		<description>CCTools (1.0)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="cctools 1.0 (coco 3).dsk" size="161280" crc="8059a264" sha1="ca521abdd1067f690a57a71f0acc682b4744199b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="c3dlink">
+		<description>CIII D-Link (v1.3)</description>
+		<year>1989</year>
+		<publisher>Coless Computer Design</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="ciii d-link (coco 3).dsk" size="161280" crc="81dc8bb9" sha1="868aa770f094f72f8183a7fbd8a2eb051e54cdfc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="winbmp">
+		<description>Freeware Windows BMP Reader</description>
+		<year>1996</year>
+		<publisher>Stuart Wyss-Gallifent</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="bmp viewer (coco 3).dsk" size="161280" crc="57a8576a" sha1="6e0ecbc4b89ea182b7967f9c06df185bb91167f9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Compilations (Games) -->
+
+	<software name="asimov08">
+		<description>Asimov Awards 2008</description>
+		<year>2008</year>
+		<publisher>YACCS</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="asimov awards 2008.dsk" size="161280" crc="964ec49a" sha1="5f39e0648be8385dde7b59193ae8a69c6c26416a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Demos -->
+
+	<software name="256color">
+		<description>256 Colors</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="256 colors (coco 3).dsk" size="161280" crc="94af0e03" sha1="208342858db5358934786b4b5d8e945b8379240e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="256colora" cloneof="256color">
+		<description>256 Colors (Unlocked)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="256 colors (coco 3) (unlocked).dsk" size="161280" crc="c3b25210" sha1="c81bb1dd3deca64f6e208b7b0e631ac3d61967f3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="airwolf">
 		<description>Airwolf</description>
 		<year>198?</year>
@@ -142,6 +258,80 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="airwolf (coco 3).dsk" size="161280" crc="1fcaa00f" sha1="b476d3164792d911fedf13b1bb3db65e2d1c39d9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="aquarium">
+		<description>Aquarium</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="aquarium (coco 3).dsk" size="161280" crc="3e968b1f" sha1="b5dcfab61e5f5ba0d2f34cf9e1a52d6b2812a4bb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bgdemo">
+		<description>Background Sound Demo</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="background sound demo (coco 3) (bgdemo).dsk" size="161280" crc="7b442174" sha1="da53a44f79d5fc1bf5c08db7b7a205868f1e0a97" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cc3demo">
+		<description>CC3 Demo</description>
+		<year>1990</year>
+		<publisher>Alan Dekok</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="cc3 demo (coco 3).dsk" size="161280" crc="b2e508ab" sha1="9ed1c8577af9308be18332ca15e47686455113aa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Games -->
+
+	<software name="5linslot">
+		<description>5-Line Fruit Slot Machine</description>
+		<year>198?</year>
+		<publisher>Tom Mix Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="5-line fruit slot machine (tom mix software) (coco 3).dsk" size="161280" crc="011081f2" sha1="9a6d0e26cab60458e2624f0eed55f707f3436143" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="5000">
+		<description>5000</description>
+		<year>198?</year>
+		<publisher>Gary James</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="5000 (gary james) (coco 3).dsk" size="161280" crc="4f9cb888" sha1="2cfe48e905e92f3d3e832e0aa2208802c7139f46" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mmortar">
+		<description>A Mazing World of Malcolm Mortar</description>
+		<year>1987</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="a mazing world of malcom mortar (tandy) (coco 3).dsk" size="161280" crc="ad554e69" sha1="99e48998fa4ab112ff5f0db0a16e3824a7d22ba0" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -201,30 +391,6 @@
 		<feature name="part_id" value="Char Disk"/>
 			<dataarea name="flop" size="184320">
 				<rom name="alternate reality - the city (datasoft) (coco 3) (char).dsk" size="184320" crc="ac1ab163" sha1="4b0b304d22ed1e62b0057e9f6decff90c574b16b" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="adconvrt">
-		<description>Analog to Digital Converter</description>
-		<year>1994</year>
-		<publisher>Snailsoft Software</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="analog to digital converter (coco 3).dsk" size="161280" crc="0a64525e" sha1="238d9d165a13fa280235dece28e07a34fcb26616" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="aquarium">
-		<description>Aquarium</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="aquarium (coco 3).dsk" size="161280" crc="3e968b1f" sha1="b5dcfab61e5f5ba0d2f34cf9e1a52d6b2812a4bb" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -290,36 +456,6 @@
 		</part>
 	</software>
 
-	<!-- 
-	Includes:
-	Armchair Admiral (with working RGB version unlike the standalone disk)
-	Predator (ROM to disk conversion)
-	-->
-	<software name="unkc1">
-		<description>Unknown Compilation 1</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="armchair admiral, predator (rom to disk conversion) (decb) (180ag_02).dsk" size="161280" crc="69895b44" sha1="2ca92ab68194106e6557c1c6e7489c29873474a9" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="asimov08">
-		<description>Asimov Awards 2008</description>
-		<year>2008</year>
-		<publisher>YACCS</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="asimov awards 2008.dsk" size="161280" crc="964ec49a" sha1="5f39e0648be8385dde7b59193ae8a69c6c26416a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	
 	<software name="austquiz">
 		<description>Austquiz</description>
 		<year>1988</year>
@@ -328,78 +464,6 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="aust quiz cc3 (tandy australia) (aust quiz coco3 version).dsk" size="161280" crc="bf580e76" sha1="8e74e390f99457d96dc2c6cb466bb198df6a1c57" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="backdigi">
-		<description>Backdigi (v3.1)</description>
-		<year>1995</year>
-		<publisher>Sock Master</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="background sound demo (coco 3) (bckdig).dsk" size="161280" crc="019fc5be" sha1="2d74507ccf0965f7cc9d793473158be892c7ebf5" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="backdigi21" cloneof="backdigi">
-		<description>Backdigi (v2.1)</description>
-		<year>1995</year>
-		<publisher>Sock Master</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="background sound demo (coco 3) (bckdig21).dsk" size="161280" crc="f068acfa" sha1="9ce5db6ef4135328a4c80a3e143e11bf183e36f0" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="bgdemo">
-		<description>Background Sound Demo</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="background sound demo (coco 3) (bgdemo).dsk" size="161280" crc="7b442174" sha1="da53a44f79d5fc1bf5c08db7b7a205868f1e0a97" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="bcklight">
-		<description>Backup Lightning 512K (v1.2)</description>
-		<year>1987</year>
-		<publisher>ColorVenture</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161792">
-				<rom name="backup lightning 512k (coco 3) (backup lightning).dsk" size="161792" crc="dd2b55d9" sha1="c9300f06563567ab0c76dd4d068d5c85ca229a41" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="bcklighta" cloneof="bcklight">
-		<description>Backup Lightning 512K (v1.2, Alt)</description>
-		<year>1987</year>
-		<publisher>ColorVenture</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="backup lightning 512k (coco 3) (bcklight).dsk" size="161280" crc="26c5ef33" sha1="8088df2d7f55078123cf17c2bbd6a02a4830f741" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="bcklightb" cloneof="bcklight">
-		<description>Backup Lightning 512K (v1.2, Alt 2)</description>
-		<year>1987</year>
-		<publisher>ColorVenture</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="backup lightning 512k (colorventure) (coco 3).dsk" size="161280" crc="cc2fdd37" sha1="34933dc35b5350504d8b7a3c6dd0905463c7a7f1" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -416,18 +480,6 @@
 		</part>
 	</software>
 
-	<software name="unkc2">
-		<description>Unknown Compilation 2</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="bash1 (srb) (cracked coco 3 versions).dsk" size="161280" crc="05667c21" sha1="44fb8068d1d70c3ab7de1b8f9a86abbd6a56777c" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="basdnd">
 		<description>Basic Dungeons &amp; Dragons</description>
 		<year>19??</year>
@@ -436,55 +488,6 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="basic dungeons &amp; dragons (snailsoft) (coco 3).dsk" size="161280" crc="8da78e48" sha1="5798c5c72dfa67b54bad6d2ea1484f2ff1409a0a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="basfree">
-		<description>BASIC Freedom</description>
-		<year>1987</year>
-		<publisher>ColorVenture</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="basic freedom (coco 3).dsk" size="161280" crc="28413bb5" sha1="6200f0c09684724b7eabd7200797d3e7d776996f" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="1on1">
-		<description>Julius Erving and Larry Bird Go One on One (v01.00.00)</description>
-		<year>198?</year>
-		<publisher>Tandy</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="baskball (tandy radio shack).dsk" size="161280" crc="449bd5d2" sha1="2e1ee74055a5258aba624748e54c3a0099681225" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<!-- Includes a mix of CoCo 1/2 and CoCo 3 programs -->
-	<software name="unkc3">
-		<description>Unknown Compilation 3</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="batt-stat (tom mix) (coco1,2&amp;3).dsk" size="161280" crc="9dbc8235" sha1="229433c3ef342c2dc96548014b5e042bed1ed2d6" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="unkc4">
-		<description>Unknown Compilation 4</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="bjork (coco 3).dsk" size="161280" crc="deee9df7" sha1="24f62784320ece3afd12adf772fc327580520a23" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -538,81 +541,6 @@
 		</part>
 	</software>
 
-	<!-- Runs on CoCo 1/2 but with limited features -->
-	<software name="csee">
-		<description>C-SEE (v3.3)</description>
-		<year>1987</year>
-		<publisher>The Micro Works</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="c-see (csee).dsk" size="161280" crc="3f9bfabb" sha1="799ebcfcb97386af8a281ba8c08a73e71f237d8c" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="unkc5">
-		<description>Unknown Compilation 5</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="cbasic 3 (cer-comp) (coco 3).dsk" size="161280" crc="aee81950" sha1="603fa3436eab3bb900661e08edf4deee8842313b" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="cc3demo">
-		<description>CC3 Demo</description>
-		<year>1990</year>
-		<publisher>Alan Dekok</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="cc3 demo (coco 3).dsk" size="161280" crc="b2e508ab" sha1="9ed1c8577af9308be18332ca15e47686455113aa" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<!-- Requires OS-9 -->
-	<software name="cctools">
-		<description>CCTools (1.0)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="cctools 1.0 (coco 3).dsk" size="161280" crc="8059a264" sha1="ca521abdd1067f690a57a71f0acc682b4744199b" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="c3dlink">
-		<description>CIII D-Link (v1.3)</description>
-		<year>1989</year>
-		<publisher>Coless Computer Design</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="ciii d-link (coco 3).dsk" size="161280" crc="81dc8bb9" sha1="868aa770f094f72f8183a7fbd8a2eb051e54cdfc" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<!-- DOS to boot -->
-	<software name="carmen">
-		<description>Where in the World is Carmen Sandiego?</description>
-		<year>1987</year>
-		<publisher>Broderbund Software - Computerware</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="carmen 1 (os-9 games).dsk" size="161280" crc="7ed72e56" sha1="2f0f5c1d6be8f83a3da266cfc26179c72c4c6736" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="tharogad">
 		<description>Castle of Tharoggad (v1.00.00)</description>
 		<year>1988</year>
@@ -651,14 +579,95 @@
 		</part>
 	</software>
 
-	<software name="winbmp">
-		<description>Freeware Windows BMP Reader</description>
-		<year>1996</year>
-		<publisher>Stuart Wyss-Gallifent</publisher>
+	<software name="1on1">
+		<description>Julius Erving and Larry Bird Go One on One (v01.00.00)</description>
+		<year>198?</year>
+		<publisher>Tandy</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
-				<rom name="bmp viewer (coco 3).dsk" size="161280" crc="57a8576a" sha1="6e0ecbc4b89ea182b7967f9c06df185bb91167f9" offset="0" />
+				<rom name="baskball (tandy radio shack).dsk" size="161280" crc="449bd5d2" sha1="2e1ee74055a5258aba624748e54c3a0099681225" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- DOS to boot -->
+	<software name="carmen">
+		<description>Where in the World is Carmen Sandiego?</description>
+		<year>1987</year>
+		<publisher>Broderbund Software - Computerware</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="carmen 1 (os-9 games).dsk" size="161280" crc="7ed72e56" sha1="2f0f5c1d6be8f83a3da266cfc26179c72c4c6736" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Unknown compilations -->
+
+	<!-- 
+	Includes:
+	Armchair Admiral (with working RGB version unlike the standalone disk)
+	Predator (ROM to disk conversion)
+	-->
+	<software name="unkc1">
+		<description>Unknown Compilation 1</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="armchair admiral, predator (rom to disk conversion) (decb) (180ag_02).dsk" size="161280" crc="69895b44" sha1="2ca92ab68194106e6557c1c6e7489c29873474a9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unkc2">
+		<description>Unknown Compilation 2</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="bash1 (srb) (cracked coco 3 versions).dsk" size="161280" crc="05667c21" sha1="44fb8068d1d70c3ab7de1b8f9a86abbd6a56777c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Includes a mix of CoCo 1/2 and CoCo 3 programs -->
+	<software name="unkc3">
+		<description>Unknown Compilation 3</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="batt-stat (tom mix) (coco1,2&amp;3).dsk" size="161280" crc="9dbc8235" sha1="229433c3ef342c2dc96548014b5e042bed1ed2d6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unkc4">
+		<description>Unknown Compilation 4</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="bjork (coco 3).dsk" size="161280" crc="deee9df7" sha1="24f62784320ece3afd12adf772fc327580520a23" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unkc5">
+		<description>Unknown Compilation 5</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="cbasic 3 (cer-comp) (coco 3).dsk" size="161280" crc="aee81950" sha1="603fa3436eab3bb900661e08edf4deee8842313b" offset="0" />
 			</dataarea>
 		</part>
 	</software>

@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<softwarelist name="dgnalpha_flop" description="Dragon Data Dragon Alpha/Professional floppy disks">
+<softwarelist name="dgnalpha_flop" description="Dragon Data Dragon Professional/Project Alpha floppy disks">
+
+<!-- Dragon DOS disks -->
 
 	<software name="drgndos">
 		<description>Dragon DOS (v2.F)</description>
@@ -26,29 +28,19 @@
 		</part>
 	</software>
 
-	<software name="nitros9">
-		<description>NitrOS9 Level One (v030204)</description>
-		<year>19??</year>
+	<software name="superdos">
+		<description>Super DOS E6</description>
+		<year>198?</year>
 		<publisher>Phill Harvey-Smith</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="368652">
-				<rom name="nitros9 (6809, level 1, v030204, ss80) (phill harvey smith, dragon alpha professional).vdk" size="368652" crc="a417d3e2" sha1="823f72a98bd20128c84e20d47df9e0f205cd1fb8" offset="0" />
+				<rom name="super dos e6 (boot) (phill harvey smith, dragon alpha professional).vdk" size="368652" crc="118e6529" sha1="f9265036feded52ea868b97cc98668d7ed4b79a9" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="nitros9a" cloneof="nitros9">
-		<description>NitrOS9 Level One (v030204, 51 Column)</description>
-		<year>19??</year>
-		<publisher>Phill Harvey-Smith</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="368652">
-				<rom name="nitros9 (6809, level 1, v030204, ss80, 51 column) (phill harvey smith, dragon alpha professional).vdk" size="368652" crc="482048d2" sha1="beab9134a0ca4b1412a484f7c5caa7b62677a405" offset="0" />
-			</dataarea>
-		</part>
-	</software>
+<!-- OS-9 disks -->
 
 	<software name="ccompile">
 		<description>OS-9 C Compiler</description>
@@ -170,14 +162,28 @@
 		</part>
 	</software>
 
-	<software name="superdos">
-		<description>Super DOS E6</description>
-		<year>198?</year>
+<!-- NitrOS-9 disks -->
+
+	<software name="nitros9">
+		<description>NitrOS-9 Level One (v030204)</description>
+		<year>19??</year>
 		<publisher>Phill Harvey-Smith</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="368652">
-				<rom name="super dos e6 (boot) (phill harvey smith, dragon alpha professional).vdk" size="368652" crc="118e6529" sha1="f9265036feded52ea868b97cc98668d7ed4b79a9" offset="0" />
+				<rom name="nitros9 (6809, level 1, v030204, ss80) (phill harvey smith, dragon alpha professional).vdk" size="368652" crc="a417d3e2" sha1="823f72a98bd20128c84e20d47df9e0f205cd1fb8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nitros9a" cloneof="nitros9">
+		<description>NitrOS-9 Level One (v030204, 51 Column)</description>
+		<year>19??</year>
+		<publisher>Phill Harvey-Smith</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="368652">
+				<rom name="nitros9 (6809, level 1, v030204, ss80, 51 column) (phill harvey smith, dragon alpha professional).vdk" size="368652" crc="482048d2" sha1="beab9134a0ca4b1412a484f7c5caa7b62677a405" offset="0" />
 			</dataarea>
 		</part>
 	</software>

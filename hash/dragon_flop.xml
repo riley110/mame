@@ -504,18 +504,6 @@ Document more games that also work on CoCos (all known are DSK files)
 		</part>
 	</software>
 
-	<software name="various">
-		<description>Cuthbert Goes Walkabout, Harris Icon Designer, Dungeon Raid etc</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184355">
-				<rom name="cuthbert goes walkabout, harris icon designer (artist), dungeon raid etc (disk) (various).vdk" size="184355" crc="282d9212" sha1="954eb02f66560151faaaf5b614412f4810939b2a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="cuthwalk">
 		<description>Cuthbert Goes Walkabout</description>
 		<year>1983</year>
@@ -524,6 +512,18 @@ Document more games that also work on CoCos (all known are DSK files)
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="184353">
 				<rom name="cuthbert goes walkabout (microdeal).vdk" size="184353" crc="f4ee7818" sha1="881bd44c357642b1c41d72426d23a1e07994eb63" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="various">
+		<description>Cuthbert Goes Walkabout, Harris Icon Designer, Dungeon Raid etc</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184355">
+				<rom name="cuthbert goes walkabout, harris icon designer (artist), dungeon raid etc (disk) (various).vdk" size="184355" crc="282d9212" sha1="954eb02f66560151faaaf5b614412f4810939b2a" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -876,32 +876,6 @@ Document more games that also work on CoCos (all known are DSK files)
 		</part>
 	</software>
 
-	<!-- Works with CoCo? -->
-	<software name="rotabb1">
-		<description>ROTABB (Kouga Software)</description>
-		<year>198?</year>
-		<publisher>Kouga Software </publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="184332">
-				<rom name="kouga (rotabb) (pulser).vdk" size="184332" crc="e4182927" sha1="01b85e332d1a3662b6e693c20f54129f28e9c178" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<!-- Works with CoCo -->
-	<software name="rotabb1a" cloneof="rotabb1">
-		<description>ROTABB (Kouga Software) (Alt)</description>
-		<year>198?</year>
-		<publisher>Kouga Software </publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="bongo (dragon software) (sure this is coco 3 only).dsk" size="161280" crc="0978faa0" sha1="e06a40b5dbfd4a8b0a1120b7e5145df5b069688d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="kungfu">
 		<description>Kung-Fu The Master</description>
 		<year>198?</year>
@@ -1102,6 +1076,32 @@ Document more games that also work on CoCos (all known are DSK files)
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="184332">
 				<rom name="rally2 (pulser).vdk" size="184332" crc="d1a628b7" sha1="764b83e7bacccb4c05d12172e9bc9645eec6fbcb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Works with CoCo? -->
+	<software name="rotabb1">
+		<description>ROTABB (Kouga Software)</description>
+		<year>198?</year>
+		<publisher>Kouga Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184332">
+				<rom name="kouga (rotabb) (pulser).vdk" size="184332" crc="e4182927" sha1="01b85e332d1a3662b6e693c20f54129f28e9c178" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Works with CoCo -->
+	<software name="rotabb1a" cloneof="rotabb1">
+		<description>ROTABB (Kouga Software) (Alt)</description>
+		<year>198?</year>
+		<publisher>Kouga Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="bongo (dragon software) (sure this is coco 3 only).dsk" size="161280" crc="0978faa0" sha1="e06a40b5dbfd4a8b0a1120b7e5145df5b069688d" offset="0" />
 			</dataarea>
 		</part>
 	</software>
