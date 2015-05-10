@@ -3591,7 +3591,7 @@
 
 		<part name="cass1" interface="to_cass">
 			<dataarea name="cass" size="22348">
-				<rom name="jump-for-survival_to7.k7" size="22348" crc="712f0220" sha1="dc2c97c55645c46e095439113b81296077b31b65" offset="0x0000" />
+				<rom name="jump-for-survival_to7.k7" size="22348" crc="712f0220" sha1="dc2c97c55645c46e095439113b81296077b31b65" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -5642,7 +5642,7 @@
 
 		<part name="cass1" interface="to_cass">
 			<dataarea name="cass" size="15871665">
-				<rom name="pouvoir_to7.wav" size="15871665" crc="87f68305" sha1="b6dcb61d85efaddedd9403d50321937f6166e628" offset="0x0000" />
+				<rom name="pouvoir_to7.wav" size="15871665" crc="87f68305" sha1="b6dcb61d85efaddedd9403d50321937f6166e628" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -5654,7 +5654,7 @@
 
 		<part name="cass1" interface="to_cass">
 			<dataarea name="cass" size="24624">
-				<rom name="pouvoir_to7.k7" size="24624" crc="10db318f" sha1="9027b3a708755e90bc15d53db26d018677f60c15" offset="0x0000" />
+				<rom name="pouvoir_to7.k7" size="24624" crc="10db318f" sha1="9027b3a708755e90bc15d53db26d018677f60c15" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -6955,6 +6955,30 @@
 		<part name="cass1" interface="to_cass">
 			<dataarea name="cass" size="14294">
 				<rom name="wormy (hatier) (g. nacam) (1984) (to7).k7" size="14294" crc="771c25e7" sha1="46f8384f8a98bb60a85038cce80420d8c1401831" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="xray">
+		<description>X-Ray</description>
+		<year>1986</year>
+		<publisher>Microids</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="20372977">
+				<rom name="x-ray_to7.wav" size="20372977" crc="d880c8a2" sha1="1aa272e3b1a9a2213ef10b85e8304c91d1c8021a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="xraya" cloneof="xray">
+		<description>X-Ray (Alt)</description>
+		<year>1986</year>
+		<publisher>Microids</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="32924">
+				<rom name="x-ray_to7.k7" size="32924" crc="6349eb14" sha1="cd04d0cb0c4da7cf5f3b48d30733aa86cfc87b14" offset="0" />
 			</dataarea>
 		</part>
 	</software>
