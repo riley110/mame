@@ -1,3 +1,5 @@
+// license:???
+// copyright-holders:Mirko Buffoni
 /***************************************************************************
 
 Vulgus memory map (preliminary)

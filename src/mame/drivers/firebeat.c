@@ -1,3 +1,5 @@
+// license:???
+// copyright-holders:Ville Linde
 /*  Konami FireBeat
 
     Driver by Ville Linde

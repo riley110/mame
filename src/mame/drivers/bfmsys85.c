@@ -1,3 +1,5 @@
+// license:???
+// copyright-holders:J Wallace
 /***************************************************************************
 
     Bellfruit system85 driver, (under heavy construction !!!)

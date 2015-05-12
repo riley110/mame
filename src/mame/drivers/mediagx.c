@@ -1,3 +1,5 @@
+// license:???
+// copyright-holders:Ville Linde
 /*  Atari MediaGX
 
     Driver by Ville Linde

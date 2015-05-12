@@ -1,3 +1,5 @@
+// license:???
+// copyright-holders:Carl,psxAuthor,R.Belmont
 #pragma once
 
 #ifndef _PSXCARD_

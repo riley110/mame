@@ -53,7 +53,7 @@ public:
 		m_active = 1;
 	}
 
-	ATTR_HOT void inc_active()
+	ATTR_HOT virtual void inc_active()
 	{
 		nl_assert(netlist().use_deactivate());
 		if (++m_active == 1)
@@ -62,7 +62,7 @@ public:
 		}
 	}
 
-	ATTR_HOT void dec_active()
+	ATTR_HOT virtual void dec_active()
 	{
 		nl_assert(netlist().use_deactivate());
 		if (--m_active == 0)
@@ -98,8 +98,8 @@ public:
 	}
 
 public:
-	netlist_ttl_input_t m_i[_numdev];
-	netlist_ttl_output_t m_Q[1];
+	netlist_logic_input_t m_i[_numdev];
+	netlist_logic_output_t m_Q[1];
 	INT32 m_active;
 };
 
@@ -148,7 +148,7 @@ public:
 
 	ATTR_HOT ATTR_ALIGN void update()
 	{
-		const netlist_time times[2] = { NLTIME_FROM_NS(15), NLTIME_FROM_NS(22)};
+		static const netlist_time times[2] = { NLTIME_FROM_NS(15), NLTIME_FROM_NS(22)};
 
 		// FIXME: this check is needed because update is called during startup as well
 		//if (m_active == 0 && netlist().use_deactivate())
@@ -175,8 +175,8 @@ public:
 	}
 
 public:
-	netlist_ttl_input_t m_i[2];
-	netlist_ttl_output_t m_Q[1];
+	netlist_logic_input_t m_i[2];
+	netlist_logic_output_t m_Q[1];
 	INT32 m_active;
 
 };

@@ -1,3 +1,5 @@
+// license:???
+// copyright-holders:Jim Stolis
 /*
     Arachnid - English Mark Darts
 

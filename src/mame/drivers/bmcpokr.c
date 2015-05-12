@@ -1,3 +1,5 @@
+// license:???
+// copyright-holders:Luca Elia
 /************************************************************************************************************
 
 Dongfang Shenlong ("Eastern Dragon")

@@ -1,3 +1,5 @@
+// license:???
+// copyright-holders:Luca Elia, Olivier Galibert
 /***************************************************************************
 
                       -= IGS011 (Blitter) Based Hardware =-

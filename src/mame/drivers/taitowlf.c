@@ -1,3 +1,5 @@
+// license:???
+// copyright-holders:Ville Linde
 /*  Taito Wolf System
 
     Driver by Ville Linde

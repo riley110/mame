@@ -1,3 +1,5 @@
+// license:???
+// copyright-holders:Carl,psxAuthor,R.Belmont
 /*
     psxcard.c - Sony PlayStation memory card device
 

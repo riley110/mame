@@ -1,3 +1,5 @@
+// license:???
+// copyright-holders:Luca Elia
 /***************************************************************************
 
                           -= Yun Sung 8 Bit Games =-

@@ -1,3 +1,5 @@
+// license:???
+// copyright-holders:Barry Rodewald
 /*
 
     Convergent NGen series

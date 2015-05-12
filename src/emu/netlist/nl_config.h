@@ -12,6 +12,7 @@
 
 #include "osdcore.h"
 #include "corealloc.h"
+#include "eminline.h"
 #include <math.h>
 #include <exception>
 #include <typeinfo>
@@ -35,6 +36,7 @@
  *
  */
 
+// FIXME: breakout doesn't like this
 #define USE_DEACTIVE_DEVICE     (0)
 
 #define USE_TRUTHTABLE          (0)
@@ -53,9 +55,19 @@
 
 #define NETLIST_GMIN_DEFAULT    (1e-9)
 
-//typedef double   nl_double;
-
 #define nl_double double
+
+//============================================================
+//  Solver defines
+//============================================================
+
+#define USE_MATRIX_GS (0)
+#define USE_PIVOT_SEARCH (0)
+#define USE_GABS (0)
+// savings are eaten up by effort
+// FIXME: Convert into solver parameter
+#define USE_LINEAR_PREDICTION (0)
+
 
 //============================================================
 //  DEBUGGING
@@ -105,8 +117,8 @@
 #if NL_KEEP_STATISTICS
 #define add_to_stat(v,x)        do { v += (x); } while (0)
 #define inc_stat(v)             add_to_stat(v, 1)
-#define begin_timing(v)         do { (v) -= get_profile_ticks(); } while (0)
-#define end_timing(v)           do { (v) += get_profile_ticks(); } while (0)
+#define begin_timing(v)         do { v -= get_profile_ticks(); } while (0)
+#define end_timing(v)           do { v += get_profile_ticks(); } while (0)
 #else
 #define add_to_stat(v,x)        do { } while (0)
 #define inc_stat(v)             add_to_stat(v, 1)

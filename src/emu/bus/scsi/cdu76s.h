@@ -1,11 +1,10 @@
+// license:???
+// copyright-holders:???
 /***************************************************************************
 
     cdu76s.h
 
     Sony CDU-76S
-
-    Copyright Nicola Salmoria and the MAME Team.
-    Visit http://mamedev.org for licensing and usage restrictions.
 
 ***************************************************************************/
 

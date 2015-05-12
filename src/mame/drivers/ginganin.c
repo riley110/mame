@@ -1,3 +1,5 @@
+// license:???
+// copyright-holders:Luca Elia
 /***************************************************************************
 
                             Ginga NinkyouDen

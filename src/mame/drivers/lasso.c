@@ -1,3 +1,5 @@
+// license:???
+// copyright-holders:Phil Stroffolino, Nicola Salmoria, Luca Elia
 /***************************************************************************
 
  Lasso and similar hardware

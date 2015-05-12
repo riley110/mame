@@ -1,3 +1,5 @@
+// license:???
+// copyright-holders:???
 #include "debugger.h"
 
 #include "upd765.h"
@@ -379,7 +381,7 @@ void upd765_family_device::set_rate(int rate)
 
 READ8_MEMBER(upd765_family_device::fifo_r)
 {
-	UINT8 r = 0;
+	UINT8 r = 0xff;
 	switch(main_phase) {
 	case PHASE_EXEC:
 		if(internal_drq)

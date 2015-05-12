@@ -1,3 +1,5 @@
+// license:???
+// copyright-holders:Luca Elia, Mariusz Wojcieszek
 /***************************************************************************
 
                       -= Touch Master / Galaxy Games =-

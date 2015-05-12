@@ -1,3 +1,5 @@
+// license:???
+// copyright-holders:Angelo Salese
 /***************************************************************************
 
     Toshiba Pasopia 1600

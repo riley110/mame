@@ -1,3 +1,5 @@
+// license:???
+// copyright-holders:Luca Elia
 /***************************************************************************
 
                  -= Paradise / Target Ball / Torus =-

@@ -1,3 +1,5 @@
+// license:BSD-3-Clause
+// copyright-holders:Pierpaolo PrazzoliPierpaolo Prazzoli, Tomasz Slanina
 /********************************************************************
 
  dgPIX VRender0 hardware

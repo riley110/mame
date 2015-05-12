@@ -3164,36 +3164,6 @@ LZ93A13 (32 pin) - 8KB banks
 		</part>
 	</software>
 
-	<!-- 
-	This is the sound cartridge that came with the game Snatcher.
-	It can also be used with the MSX Game Collections from Konami.
-	-->
-	<software name="snatcher">
-		<description>Snatcher Sound Cartridge</description>
-		<year>19??</year>
-		<publisher>Konami</publisher>
-		<part name="cart" interface="msx_cart">
-			<feature name="slot" value="sound_snatcher" />
-			<dataarea name="ram" size="65536">
-			</dataarea>
-		</part>
-	</software>
-
-	<!--
-	This is the sound cartridge that came with the game SD Snatcher.
-	It CANNOT be used with the MSX Game Collections from Konami.
-	-->
-	<software name="sdsnatch">
-		<description>SD-Snatcher Sound Cartridge</description>
-		<year>19??</year>
-		<publisher>Konami</publisher>
-		<part name="cart" interface="msx_cart">
-			<feature name="slot" value="sound_sdsnatch" />
-			<dataarea name="ram" size="65536">
-			</dataarea>
-		</part>
-	</software>
-
 	<!-- This requires a floppy disk to work, see msx2_flop.xml -->
 	<software name="arc">
 		<description>Arc</description>

@@ -1,3 +1,5 @@
+// license:???
+// copyright-holders:Phil Bennett, J.Wallace, David Haywood
 /***************************************************************************
 
     JPM System 5

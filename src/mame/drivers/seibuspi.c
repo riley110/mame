@@ -1,3 +1,5 @@
+// license:???
+// copyright-holders:Ville Linde, hap, ???
 /*
       Seibu SPI Hardware
       Seibu SYS386I

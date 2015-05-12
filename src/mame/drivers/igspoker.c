@@ -1,3 +1,5 @@
+// license:???
+// copyright-holders:Mirko Buffoni
 /*****************************************************************************
 
 Champion Poker by IGS   (documented by Mirko Buffoni)

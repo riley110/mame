@@ -1,3 +1,5 @@
+// license:???
+// copyright-holders:Luca Elia, Mirko Buffoni, Takahiro Nogi
 /***************************************************************************
 
 

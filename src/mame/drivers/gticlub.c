@@ -1,3 +1,5 @@
+// license:???
+// copyright-holders:Ville Linde
 /*  Konami GTI Club System
 
     Driver by Ville Linde

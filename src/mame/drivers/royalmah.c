@@ -1,3 +1,5 @@
+// license:???
+// copyright-holders:Zsolt Vasvari, Nicola Salmoria, Luca Elia
 /****************************************************************************
 
 Royal Mahjong (c) 1981 Nichibutsu

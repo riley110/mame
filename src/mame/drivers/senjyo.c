@@ -1,3 +1,5 @@
+// license:???
+// copyright-holders:Mirko Buffoni
 /***************************************************************************
 
 Senjyo / Star Force / Baluba-louk

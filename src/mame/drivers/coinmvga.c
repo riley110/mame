@@ -1,3 +1,5 @@
+// license:???
+// copyright-holders:Roberto Fresca, Angelo Salese
 /******************************************************************************
 
   COINMASTER-GAMING - VGA BOARD
