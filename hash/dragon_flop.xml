@@ -354,6 +354,19 @@ Document more games that also work on CoCos (all known are DSK files)
 	</software>
 
 	<!-- Works with CoCo -->
+	<software name="athletyxa" cloneof="athletyx">
+		<description>Athletyx (Hacked?)</description>
+		<year>1984</year>
+		<publisher>Microdeal?</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="athletyx (ken kalish).dsk" size="161280" crc="29248200" sha1="5de7ed6be0c096671a7cf0caa63b56494a7087b7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Works with CoCo -->
 	<software name="backtrck">
 		<description>Back Track</description>
 		<year>198?</year>

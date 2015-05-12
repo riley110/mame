@@ -76,6 +76,78 @@
 		</part>
 	</software>
 
+	<software name="agiboot">
+		<description>AGI Bootdisk (v2.072, DW3)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="agi (bootdisk) (agi-2.072-dw3).dsk" size="161280" crc="b8722f28" sha1="109d7ebbf35afbd15a3449a7213f394f1aa1fb90" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="agiboota" cloneof="agiboot">
+		<description>AGI Bootdisk (v2.072, DW3 13m)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="agi (bootdisk) (agi) (2.072) (dw3) (13m).dsk" size="161280" crc="a88bfc71" sha1="779d61d8a843f3d80db57e8d5beb6c2a6da2e0e2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="agibootb" cloneof="agiboot">
+		<description>AGI Bootdisk (v2.072, Emu)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="agi (bootdisk) (agi) (2.072) (emu).dsk" size="161280" crc="13be7220" sha1="ea59df4f13aa56ead91a7ea8015b6589148ad47e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="agibootc" cloneof="agiboot">
+		<description>AGI Bootdisk (v2.072, Becker)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="agi (bootdisk) (agi) (2.072) (becker).dsk" size="161280" crc="220a6690" sha1="7df5c35fec84595686b50557148474b1399c012e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="agiboot23" cloneof="agiboot">
+		<description>AGI Bootdisk (v2.023, DW3)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="agi (bootdisk) (agi) (2.023) (dw3).dsk" size="161280" crc="644de24f" sha1="01416af43c08c242c282057fbd1837489f55d8cc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="agiboot23a" cloneof="agiboot">
+		<description>AGI Bootdisk (v2.023, Becker)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="agi (bootdisk) (agi) (2.023) (becker).dsk" size="161280" crc="d96d31a0" sha1="8df3eba428db0d858b86dc6e41e357810fcca23f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="adconvrt">
 		<description>Analog to Digital Converter</description>
 		<year>1994</year>
@@ -1799,6 +1871,47 @@
 		</part>
 	</software>
 
+<!--
+	<software name="">
+		<description>Barbarian Q</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="224144">
+				<rom name="barbarian q (em only) (sportsware) (disk 1).dsk" size="224144" crc="6fb6b488" sha1="25dbfe1ccb73fe48f64113b119cdaa99801b7e80" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="224144">
+				<rom name="barbarian q (em only) (sportsware) (disk 2).dsk" size="224144" crc="063ae6d4" sha1="50a185c40d9d92096ac298830adc2bb83e2d4b54" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="">
+		<description>Barbarian Quest</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="256016">
+				<rom name="barbarian quest (coco 3) (side 1).dsk" size="256016" crc="89fce9ac" sha1="5183056a2795048bc923a25b1a7b345b81922e06" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="256016">
+				<rom name="barbarian quest (coco 3) (side 2).dsk" size="256016" crc="15e9502c" sha1="f9846bf3ed9e1ab8926e6fa1ad0e68ce46e4f534" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<dataarea name="flop" size="505616">
+				<rom name="barbarian quest (coco 3) (diskutil).dsk" size="505616" crc="b0cedc79" sha1="d6b2dd07c503ca322712ecac3f134d84db774bd1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+-->
+
 	<software name="bash">
 		<description>Bash (v01.00.00)</description>
 		<year>1988</year>
@@ -1822,6 +1935,35 @@
 			</dataarea>
 		</part>
 	</software>
+
+<!--
+	<software name="">
+		<description>Black Cauldron, The</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="368640">
+				<rom name="black cauldron, the (coco 3) (360k) (side 1).dsk" size="368640" crc="b048e0bd" sha1="1e5846446d365e145ba77252aa499a60e565c001" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="368640">
+				<rom name="black cauldron, the (coco 3) (360k) (side 2).dsk" size="368640" crc="d16f1977" sha1="d7ca00efcd897fe7a4e3cb1b967182ed8cb85328" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<dataarea name="flop" size="381184">
+				<rom name="black cauldron, the (coco 3) (dw3).dsk" size="381184" crc="27c05565" sha1="fbc343fa517673a3c724824f26ade6afac234a6d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<dataarea name="flop" size="184320">
+				<rom name="black cauldron, the (coco 3) (save).dsk" size="184320" crc="bf0fea9c" sha1="6e32cb9df7022f8b8459181f87722f05607d3a8d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+-->
 
 	<!-- Half of the screen is cut off -->
 	<software name="bsanctum" supported="partial">
@@ -2176,6 +2318,20 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="coco max iii clipart and sailor (coco 2 game) (decb) (133ag_02).dsk" size="161280" crc="a9a90c64" sha1="e6d9f5db0cdc13eb8000706bfda8386223b730b0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Misc. files -->
+
+	<software name="agitoc">
+		<description>AGI TOCfiles</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="agi (tocfiles) (tochd).dsk" size="161280" crc="dec86545" sha1="a0c745afa9cc9da4a4fd1b06c73aca228d9ad63b" offset="0" />
 			</dataarea>
 		</part>
 	</software>
