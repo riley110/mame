@@ -2,11 +2,11 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="super6" description="ADC Super Six diskettes">
 
+	<!-- Should these be split into separate sets? -->
 	<software name="cpm22">
 		<description>CP/M 2.2</description>
 		<year>198?</year>
 		<publisher>Advanced Digital Corporation</publisher>
-		<info name="protection" value="none" />
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Disk 1"/>
@@ -44,7 +44,6 @@
 		<description>digi56</description>
 		<year>198?</year>
 		<publisher>Advanced Digital Corporation</publisher>
-		<info name="protection" value="none" />
 
 		<part name="flop" interface="floppy_5_25">
 			<dataarea name="flop" size="472732">
@@ -53,49 +52,10 @@
 		</part>
 	</software>
 
-	<software name="tdos122p">
-		<description>TurboDOS v1.22p</description>
-		<year>198?</year>
-		<publisher>Advanced Digital Corporation</publisher>
-		<info name="protection" value="none" />
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Operating system disk"/>
-			<dataarea name="flop" size="205576">
-				<rom name="12_1.imd" size="205576" crc="50ba328b" sha1="c40427b7286f8faec207e2a403c6a02e6172636d" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Bootable disk"/>
-			<dataarea name="flop" size="197706">
-				<rom name="12_2.imd" size="197706" crc="88811af4" sha1="374b8e3b6463e19817fd55c2b57329487265fc85" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Disk drivers disk"/>
-			<dataarea name="flop" size="228565">
-				<rom name="12_3.imd" size="228565" crc="928904ca" sha1="04667695851e30b89293a15fea702c1ab714fd33" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="Non-disk drivers disk"/>
-			<dataarea name="flop" size="168239">
-				<rom name="12_4.imd" size="168239" crc="917266c3" sha1="ec69d986abff8bf72289df3ad5e189a31715edb5" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop5" interface="floppy_5_25">
-			<feature name="part_id" value="GEN, PAR and DOC files"/>
-			<dataarea name="flop" size="180559">
-				<rom name="12_5.imd" size="180559" crc="dcb7a3d5" sha1="7a0935bc8d18d7345eae52b055ed2cfd4137f7b5" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tdos14">
-		<description>TurboDOS v1.4</description>
+	<software name="turbodos">
+		<description>TurboDOS (v1.4)</description>
 		<year>1985</year>
 		<publisher>Advanced Digital Corporation</publisher>
-		<info name="protection" value="none" />
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Primary"/>
@@ -154,6 +114,43 @@
 			<feature name="part_id" value="COM files, TurboSlave PAR+GEN files, boot tracks on disk"/>
 			<dataarea name="flop" size="1036746">
 				<rom name="slave.imd" size="1036746" crc="1602ab7c" sha1="5f75c227fb3b9a3838d0a60efab8c1b162638652" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="turbodos122p" cloneof="turbodos">
+		<description>TurboDOS (v1.22p)</description>
+		<year>198?</year>
+		<publisher>Advanced Digital Corporation</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Operating system disk"/>
+			<dataarea name="flop" size="205576">
+				<rom name="12_1.imd" size="205576" crc="50ba328b" sha1="c40427b7286f8faec207e2a403c6a02e6172636d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Bootable disk"/>
+			<dataarea name="flop" size="197706">
+				<rom name="12_2.imd" size="197706" crc="88811af4" sha1="374b8e3b6463e19817fd55c2b57329487265fc85" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Disk drivers disk"/>
+			<dataarea name="flop" size="228565">
+				<rom name="12_3.imd" size="228565" crc="928904ca" sha1="04667695851e30b89293a15fea702c1ab714fd33" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Non-disk drivers disk"/>
+			<dataarea name="flop" size="168239">
+				<rom name="12_4.imd" size="168239" crc="917266c3" sha1="ec69d986abff8bf72289df3ad5e189a31715edb5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<feature name="part_id" value="GEN, PAR and DOC files"/>
+			<dataarea name="flop" size="180559">
+				<rom name="12_5.imd" size="180559" crc="dcb7a3d5" sha1="7a0935bc8d18d7345eae52b055ed2cfd4137f7b5" offset="0" />
 			</dataarea>
 		</part>
 	</software>
