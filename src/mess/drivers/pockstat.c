@@ -998,13 +998,13 @@ static MACHINE_CONFIG_START( pockstat, pockstat_state )
 	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 1.0)
 
 	/* cartridge */
-	MCFG_GENERIC_CARTSLOT_ADD("cartslot", generic_plain_slot, "pockstat_flash")
+	MCFG_GENERIC_CARTSLOT_ADD("cartslot", generic_plain_slot, "pockstat_cart")
 	MCFG_GENERIC_EXTENSIONS("gme")
 	MCFG_GENERIC_WIDTH(GENERIC_ROM32_WIDTH)
 	MCFG_GENERIC_ENDIAN(ENDIANNESS_LITTLE)
 	MCFG_GENERIC_LOAD(pockstat_state, pockstat_flash)
 
-	MCFG_SOFTWARE_LIST_ADD("flash_list","pockstat")
+	MCFG_SOFTWARE_LIST_ADD("cart_list","pockstat")
 MACHINE_CONFIG_END
 
 /* ROM definition */
