@@ -3500,6 +3500,18 @@
 		</part>
 	</software>
 
+	<software name="compsynta" cloneof="compsynt">
+		<description>Compilations (Boots to Peter Pan)</description>
+		<year>198?</year>
+		<publisher>The Great Syntheman</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="peter pan (1988)(coktel vision)(fr).fd" size="327680" crc="25e473b9" sha1="8c447d35f355e38047a929de7e145a965ff98f31" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="echange">
 		<description>ECHANGE</description>
 		<year>19??</year>
@@ -11699,19 +11711,6 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="passagers du vent, les - partie ii (1987)(infogrames)(fr).sap" size="335426" crc="f824ca16" sha1="90138d23f499cc8e658c54ad4fae4ebddd900669" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<!-- this is compsynt hacked to boot straight to Peter Pan -->
-	<software name="peterpan" cloneof="compsynt">
-		<description>Peter Pan (Hacked from Great Syntheman's Compilations)</description>
-		<year>1988</year>
-		<publisher>Coktel Vision</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="327680">
-				<rom name="peter pan (1988)(coktel vision)(fr).fd" size="327680" crc="25e473b9" sha1="8c447d35f355e38047a929de7e145a965ff98f31" offset="0" />
 			</dataarea>
 		</part>
 	</software>
