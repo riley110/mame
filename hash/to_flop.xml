@@ -1582,6 +1582,18 @@
 		</part>
 	</software>
 
+	<software name="sigmabas">
+		<description>Sigma Base</description>
+		<year>1986</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="sigma base (1986)(infogrames)(fr).fd" size="327680" crc="1e81c200" sha1="000c12057d98d8430b7fd65ef644b90c51e014c8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="sos">
 		<description>SOS</description>
 		<year>1985</year>
@@ -12298,18 +12310,6 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
 				<rom name="shotgun (200x)(boulanger, emmanuel)(fr)(pd).sap" size="335426" crc="3cb3017c" sha1="f8ef263fd3e807c5d1ab4f0a65fd09c15784051b" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="sigmabas">
-		<description>Sigma Base</description>
-		<year>1986</year>
-		<publisher>Infogrames</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="327680">
-				<rom name="sigma base (1986)(infogrames)(fr).fd" size="327680" crc="1e81c200" sha1="000c12057d98d8430b7fd65ef644b90c51e014c8" offset="0" />
 			</dataarea>
 		</part>
 	</software>
