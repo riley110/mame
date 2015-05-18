@@ -493,19 +493,27 @@
 		</part>
 	</software>
 
-<!-- Disk Magazines - CoCo Friends (mostly CoCo 3 programs, sort out later!) -->
+<!-- 
+Disk Magazines - CoCo Friends Disk Magazine (CFDM)
+- Distributed by Rick's Computer Enterprises from 1992-2000.
+- Distributed on double-sided disks; Side 1 with the magazine part, and Side 2 with the programs/animations/art/etc.
+- Starting with Issue 8 there were also Bonus Disks that came with every few issues, and then with every issue after the switch to quarterly.
+- These Bonus Disks continued until the magazine's demise.
+- Switched from monthly to quarterly issues starting with Issue 53 (June 1996).
+- Chief Editors - Rick Cooper from 1992-1998, Jim Davis from 1998-2000.
+Thanks to http://www.vavasour.ca/cfdm/ for info.
+
+Most of the magazine parts are missing for now, but can be downloaded at the site above.
+They will be added later on as this software list matures.
+-->
 
 	<software name="cfdm01">
-		<description>CoCo Friends Disk Magazine Issue 01</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 01 - February 1992</description>
+		<year>1992</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 01 (bons) (side 1).dsk" size="161280" crc="e2c5c673" sha1="5cb8f12782872bcc2cb7ae046f45570421be0128" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 01 (cfdm) (side 2).dsk" size="161280" crc="08cba44b" sha1="e310acb9f52b48c08c7594452e50d806f251cfd9" offset="0" />
 			</dataarea>
@@ -513,21 +521,12 @@
 	</software>
 
 	<software name="cfdm02">
-		<description>CoCo Friends Disk Magazine Issue 02</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 02 - March 1992</description>
+		<year>1992</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 02 (bons) (side 1).dsk" size="161280" crc="2a8bb966" sha1="64acd551bfbbd92ff21c49519797e357b47f47d4" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 02 (bons) (side 2).dsk" size="161280" crc="7096b0ed" sha1="414132c91af7918cd23534e0ec7a323041f26b52" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 02 (cfdm) (side 2).dsk" size="161280" crc="24eaec82" sha1="9994cd9cbfb175ba86d8748f146ac4b1b2c3f3b1" offset="0" />
 			</dataarea>
@@ -535,21 +534,12 @@
 	</software>
 
 	<software name="cfdm03">
-		<description>CoCo Friends Disk Magazine Issue 03</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 03 - April 1992</description>
+		<year>1992</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 03 (bons) (side 1).dsk" size="161280" crc="0fd5e56e" sha1="2878441795999d19ae6689e1c778f2da685cb593" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 03 (bons) (side 2).dsk" size="161280" crc="e242b61d" sha1="4c35f3c8a23446eac9862d3470c0d4a46cfdd08f" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 03 (cfdm) (side 2).dsk" size="161280" crc="fd15b319" sha1="05f5438afe0a2ac80919bd4597ee54714071859a" offset="0" />
 			</dataarea>
@@ -557,21 +547,12 @@
 	</software>
 
 	<software name="cfdm04">
-		<description>CoCo Friends Disk Magazine Issue 04</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 04 - May 1992</description>
+		<year>1992</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 04 (bons) (side 1).dsk" size="161280" crc="16848632" sha1="8e105452ea1e76224329a98a7070b3c881b963dc" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 04 (bons) (side 2).dsk" size="161280" crc="bd8e5ff1" sha1="dd7a1f6b368b61858f884dfa14ba80fd1a6ccf21" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 04 (cfdm) (side 2).dsk" size="161280" crc="738b63e6" sha1="7c2ea140c122c870280f37d6f5b752e9f2361d80" offset="0" />
 			</dataarea>
@@ -579,21 +560,12 @@
 	</software>
 
 	<software name="cfdm05">
-		<description>CoCo Friends Disk Magazine Issue 05</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 05 - June 1992</description>
+		<year>1992</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 05 (bons) (side 1).dsk" size="161280" crc="900c2d6c" sha1="0f5a9acdaf2f10c407e547a80a94ea84eaa9604b" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 05 (bons) (side 2).dsk" size="161280" crc="27c6b1d4" sha1="95656baa800a5c79412954807378b6a814eeca62" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 05 (cfdm) (side 2).dsk" size="161280" crc="087397ab" sha1="77db415213f21f6f718d196a2ff9d77d14960370" offset="0" />
 			</dataarea>
@@ -601,21 +573,12 @@
 	</software>
 
 	<software name="cfdm06">
-		<description>CoCo Friends Disk Magazine Issue 06</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 06 - July 1992</description>
+		<year>1992</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 06 (bons) (side 1).dsk" size="161280" crc="2939ed8e" sha1="7e9c6c528b25c2c8697df9a40494294c88fbc9a0" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 06 (bons) (side 2).dsk" size="161280" crc="0cd8c8ef" sha1="6b3fb0f4d6f9712ee08c696afa3fae86265f09d2" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 06 (cfdm) (side 2).dsk" size="161280" crc="e51e2562" sha1="06e06dc1b4d1bc7826fdc24e3a83bb4f877e5c57" offset="0" />
 			</dataarea>
@@ -623,65 +586,45 @@
 	</software>
 
 	<software name="cfdm07">
-		<description>CoCo Friends Disk Magazine Issue 07</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 07 - August 1992</description>
+		<year>1992</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 07 (bons) (side 1).dsk" size="161280" crc="60992303" sha1="f4959e2c3c6bc4faf3f5ccd0929bac477df1d7f1" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 07 (bons) (side 2).dsk" size="161280" crc="229b964b" sha1="9dc840c0f374c6d811e3b318f9d70ae7e265e602" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 07 (cfdm) (side 2).dsk" size="161280" crc="fbae4eb8" sha1="e4e64a832b302bd48b79ad0332dbd18d3e981324" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
+	<!-- Includes Bonus Disk #1 -->
 	<software name="cfdm08">
-		<description>CoCo Friends Disk Magazine Issue 08</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 08 - September 1992</description>
+		<year>1992</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 08 (bons) (side 1).dsk" size="161280" crc="6f1f82bd" sha1="e2a30992fbfa7ee89c018984fbfb61b52f082912" offset="0" />
+				<rom name="coco friends disk magazine issue 08 (cfdm) (side 2).dsk" size="161280" crc="76f29820" sha1="56e0eca2114ea6c9b87b6e2d53c1d2a616ce2854" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 08 (bons) (side 2).dsk" size="161280" crc="d785bcda" sha1="0c7d7e24dc2550c50976d34f8f6a4f98d0d8af6e" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 08 (cfdm) (side 2).dsk" size="161280" crc="76f29820" sha1="56e0eca2114ea6c9b87b6e2d53c1d2a616ce2854" offset="0" />
+				<rom name="coco friends disk magazine issue 01 (bons) (side 1).dsk" size="161280" crc="e2c5c673" sha1="5cb8f12782872bcc2cb7ae046f45570421be0128" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="cfdm09">
-		<description>CoCo Friends Disk Magazine Issue 09</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 09 - October 1992</description>
+		<year>1992</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 09 (bons) (side 1).dsk" size="161280" crc="430f3e3e" sha1="690fb5274428ce7b93b8d31315a31e76410f115c" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 09 (bons) (side 2).dsk" size="161280" crc="25446eec" sha1="74a25dc1156455dfa60217adb0fa1d201f47dc9c" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 09 (cfdm) (side 2).dsk" size="161280" crc="375c7fc3" sha1="0b4e1408a6e5d160dec973f338fc847d9ec1818d" offset="0" />
 			</dataarea>
@@ -689,21 +632,12 @@
 	</software>
 
 	<software name="cfdm10">
-		<description>CoCo Friends Disk Magazine Issue 10</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 10 - November 1992</description>
+		<year>1992</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 10 (bons) (side 1).dsk" size="161280" crc="db12ec48" sha1="c33160005d4c61acd7856a0f984c64ab5cd009b6" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 10 (bons) (side 2).dsk" size="161280" crc="502ac36a" sha1="6cb40bd5a619c644cb286a18e2acc6c6368d7018" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 10 (cfdm) (side 2).dsk" size="161280" crc="86103b03" sha1="a8d645f3a102d2a37df77e8c1187298ae377be81" offset="0" />
 			</dataarea>
@@ -711,109 +645,90 @@
 	</software>
 
 	<software name="cfdm11">
-		<description>CoCo Friends Disk Magazine Issue 11</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 11 - December 1992</description>
+		<year>1992</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 11 (bons) (side 1).dsk" size="161280" crc="58bc1f35" sha1="62a6c0d346f813a268b682e413d057a8c677c68e" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 11 (bons) (side 2).dsk" size="161280" crc="a1919e22" sha1="e699d898e805abd6bbab966a90c92bee02f4138e" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 11 (cfdm) (side 2).dsk" size="161280" crc="90dfd75b" sha1="f923da3d5864e72e9017a92ca22b3eec14c4eb0e" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
+	<!-- Includes Bonus Disk #2 -->
 	<software name="cfdm12">
-		<description>CoCo Friends Disk Magazine Issue 12</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 12 - January 1993</description>
+		<year>1993</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 12 (bons) (side 1).dsk" size="161280" crc="1ee00e85" sha1="ae7c2fb708bfb25f62a189784965084c171dab6c" offset="0" />
+				<rom name="coco friends disk magazine issue 12 (cfdm) (side 2).dsk" size="161280" crc="7654c8f2" sha1="850bb2f156780454d162fcfd5c71c437d5126568" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 12 (bons) (side 2).dsk" size="161280" crc="e06bb102" sha1="0177a9091e48aaea426d64bd841a3260ae48bf14" offset="0" />
+				<rom name="coco friends disk magazine issue 02 (bons) (side 1).dsk" size="161280" crc="2a8bb966" sha1="64acd551bfbbd92ff21c49519797e357b47f47d4" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 12 (cfdm) (side 2).dsk" size="161280" crc="7654c8f2" sha1="850bb2f156780454d162fcfd5c71c437d5126568" offset="0" />
+				<rom name="coco friends disk magazine issue 02 (bons) (side 2).dsk" size="161280" crc="7096b0ed" sha1="414132c91af7918cd23534e0ec7a323041f26b52" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="cfdm13">
-		<description>CoCo Friends Disk Magazine Issue 13</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 13 - February 1993</description>
+		<year>1993</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 13 (bons) (side 1).dsk" size="161280" crc="0539877f" sha1="6b5b10b469461e1aca560abeef06f89c4f1a09ad" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 13 (bons) (side 2).dsk" size="161280" crc="4155fa6c" sha1="6f5289af391cfa28a23c35ed30a8b29edd13e2b9" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 13 (cfdm) (side 2).dsk" size="161280" crc="11e64a01" sha1="b6227e7ff3c516ef4c04e1494dd5f15dc710af07" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
+	<!-- Includes Bonus Disk #3 -->
 	<software name="cfdm14">
-		<description>CoCo Friends Disk Magazine Issue 14</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 14 - March 1993</description>
+		<year>1993</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 14 (bons) (side 1).dsk" size="161280" crc="18170f78" sha1="d408742875ee9e9fb44a4351baf4215016b94667" offset="0" />
+				<rom name="coco friends disk magazine issue 14 (cfdm) (side 2).dsk" size="161280" crc="5c8bc7b6" sha1="c2f6362a6f8f8def46d9c32e60cf2f3e1037b21d" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 14 (bons) (side 2).dsk" size="161280" crc="b560347f" sha1="e929a22a6af80c5616892205856d3d6a4258d52d" offset="0" />
+				<rom name="coco friends disk magazine issue 03 (bons) (side 1).dsk" size="161280" crc="0fd5e56e" sha1="2878441795999d19ae6689e1c778f2da685cb593" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 14 (cfdm) (side 2).dsk" size="161280" crc="5c8bc7b6" sha1="c2f6362a6f8f8def46d9c32e60cf2f3e1037b21d" offset="0" />
+				<rom name="coco friends disk magazine issue 03 (bons) (side 2).dsk" size="161280" crc="e242b61d" sha1="4c35f3c8a23446eac9862d3470c0d4a46cfdd08f" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="cfdm15">
-		<description>CoCo Friends Disk Magazine Issue 15</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 15 - April 1993</description>
+		<year>1993</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 15 (bons) (side 1).dsk" size="161280" crc="37526800" sha1="14deaf83a582b48a1ba65f9af5e542f72cfe37e3" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 15 (bons) (side 2).dsk" size="161280" crc="bdfd546a" sha1="31ad15dc5adb874ea09c4dcad4554d94b0d48cd8" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 15 (cfdm) (side 2).dsk" size="161280" crc="e3f465d3" sha1="c18705f6c4c79d928dc851771895b741b6bb6e9f" offset="0" />
 			</dataarea>
@@ -821,65 +736,51 @@
 	</software>
 
 	<software name="cfdm16">
-		<description>CoCo Friends Disk Magazine Issue 16</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 16 - May 1993</description>
+		<year>1993</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 16 (bons) (side 1).dsk" size="161280" crc="596d36fb" sha1="21dadab4ffc9f7a5f23e8bf1fd0b3b1cd6bce2e4" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 16 (bons) (side 2).dsk" size="161280" crc="6ae8ba1c" sha1="465d3310bd270dbda5e4beb3bdbb5c7ab56c6f7f" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 16 (cfdm) (side 2).dsk" size="161280" crc="7372e4bc" sha1="4badee2bdf1b13e65fd09868ab9fd98e3ed1aa13" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
+	<!-- Includes Bonus Disk #4 -->
 	<software name="cfdm17">
-		<description>CoCo Friends Disk Magazine Issue 17</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 17 - June 1993</description>
+		<year>1993</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 17 (bons) (side 1).dsk" size="161280" crc="2a154996" sha1="72036743140d17625f8570d51739a725da8b0783" offset="0" />
+				<rom name="coco friends disk magazine issue 17 (cfdm) (side 2).dsk" size="161280" crc="b62e884d" sha1="16979da979d15f9c04734401fe4ef807d03afc1d" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 17 (bons) (side 2).dsk" size="161280" crc="7c77899f" sha1="678a42962a76af76a3d66fede9a2b98fd9f4c42f" offset="0" />
+				<rom name="coco friends disk magazine issue 04 (bons) (side 1).dsk" size="161280" crc="16848632" sha1="8e105452ea1e76224329a98a7070b3c881b963dc" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 17 (cfdm) (side 2).dsk" size="161280" crc="b62e884d" sha1="16979da979d15f9c04734401fe4ef807d03afc1d" offset="0" />
+				<rom name="coco friends disk magazine issue 04 (bons) (side 2).dsk" size="161280" crc="bd8e5ff1" sha1="dd7a1f6b368b61858f884dfa14ba80fd1a6ccf21" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="cfdm18">
-		<description>CoCo Friends Disk Magazine Issue 18</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 18 - July 1993</description>
+		<year>1993</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 18 (bons) (side 1).dsk" size="161280" crc="5492eb5f" sha1="da1d4a27c3c05730b035b28772fbdd5416036b50" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 18 (bons) (side 2).dsk" size="161280" crc="04a380d1" sha1="d6701f1d48e3c6a0af95005e87214803abe21db9" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 18 (cfdm) (side 2).dsk" size="161280" crc="4fabd1d3" sha1="9a4ef3b7c146dd72cd40cb43133749baad4decf0" offset="0" />
 			</dataarea>
@@ -887,21 +788,12 @@
 	</software>
 
 	<software name="cfdm19">
-		<description>CoCo Friends Disk Magazine Issue 19</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 19 - August 1993</description>
+		<year>1993</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 19 (bons) (side 1).dsk" size="161280" crc="ccdd8eeb" sha1="b197a2f1e38e38e5d0ecea146129dbf61354eb9c" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 19 (bons) (side 2).dsk" size="161280" crc="85e1d390" sha1="0a44e8b5e528ece8de006ae40464b6e214504f35" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 19 (cfdm) (side 2).dsk" size="161280" crc="ce065b3a" sha1="19eb8e9a3aaf9da874e26d5657e7564db036a5b6" offset="0" />
 			</dataarea>
@@ -909,65 +801,51 @@
 	</software>
 
 	<software name="cfdm20">
-		<description>CoCo Friends Disk Magazine Issue 20</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 20 - September 1993</description>
+		<year>1993</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 20 (bons) (side 1).dsk" size="161280" crc="e40a648d" sha1="f61c712bf8cb2a68bac350b2e173e23c3ef13233" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 20 (bons) (side 2).dsk" size="161280" crc="88ea0277" sha1="368ad7d79fb97212e06242f4cb6a92e27e94c43f" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 20 (cfdm) (side 2).dsk" size="161280" crc="61e7cf6f" sha1="bc1d080626071239f41afc0c606fded2f26771e5" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
+	<!-- Includes Bonus Disk #5 -->
 	<software name="cfdm21">
-		<description>CoCo Friends Disk Magazine Issue 21</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 21 - October 1993</description>
+		<year>1993</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 21 (bons) (side 1).dsk" size="161280" crc="9aa481ac" sha1="0cba743cb80168b05ef669d1981d1cc468318590" offset="0" />
+				<rom name="coco friends disk magazine issue 21 (cfdm) (side 2).dsk" size="161280" crc="8c80c579" sha1="4866b28bfc7f28a1791f38b938a567ab343022a1" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 21 (bons) (side 2).dsk" size="161280" crc="7085d541" sha1="0148ca0a5cb66749e94de3fd6574fbb2a9a09356" offset="0" />
+				<rom name="coco friends disk magazine issue 05 (bons) (side 1).dsk" size="161280" crc="900c2d6c" sha1="0f5a9acdaf2f10c407e547a80a94ea84eaa9604b" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 21 (cfdm) (side 2).dsk" size="161280" crc="8c80c579" sha1="4866b28bfc7f28a1791f38b938a567ab343022a1" offset="0" />
+				<rom name="coco friends disk magazine issue 05 (bons) (side 2).dsk" size="161280" crc="27c6b1d4" sha1="95656baa800a5c79412954807378b6a814eeca62" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="cfdm22">
-		<description>CoCo Friends Disk Magazine Issue 22</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 22 - November 1993</description>
+		<year>1993</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 22 (bons) (side 1).dsk" size="161280" crc="40ed44b0" sha1="7396ebfc37015527b9c5c2bee20f286cacc36018" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="184320">
-				<rom name="coco friends disk magazine issue 22 (bons) (side 2).dsk" size="184320" crc="19387f17" sha1="3985dbda9f2f351a2f8db06b84922cbae8d3e72a" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 22 (cfdm) (side 2).dsk" size="161280" crc="167b512d" sha1="087b6e036ee492af43e2cfbce3c475e2833d4d85" offset="0" />
 			</dataarea>
@@ -975,65 +853,51 @@
 	</software>
 
 	<software name="cfdm23">
-		<description>CoCo Friends Disk Magazine Issue 23</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 23 - December 1993</description>
+		<year>1993</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 23 (bons) (side 1).dsk" size="161280" crc="cafcc3f8" sha1="2eab5f5d639460659f4c90b191b0dda436d8dc12" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 23 (bons) (side 2).dsk" size="161280" crc="c21f59e9" sha1="c64874e54e163cb4def3740b9155f21702f9ca25" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 23 (cfdm) (side 2).dsk" size="161280" crc="7c9ac3b1" sha1="5194aef643faeb526142ce640217c24c24d363ca" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
+	<!-- Includes Bonus Disk #6 -->
 	<software name="cfdm24">
-		<description>CoCo Friends Disk Magazine Issue 24</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 24 - January 1994</description>
+		<year>1994</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 24 (bons) (side 1).dsk" size="161280" crc="bd3a92cb" sha1="4648f8193aaed9fc8866b3db190d6a05f2045a27" offset="0" />
+				<rom name="coco friends disk magazine issue 24 (cfdm) (side 2).dsk" size="161280" crc="666a11bd" sha1="883775d8317abf61f1fa68e394647957feaa92a0" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 24 (bons) (side 2).dsk" size="161280" crc="a87a5dc6" sha1="c055793e12eb11528553174966d2aa4f3eb1506f" offset="0" />
+				<rom name="coco friends disk magazine issue 06 (bons) (side 1).dsk" size="161280" crc="2939ed8e" sha1="7e9c6c528b25c2c8697df9a40494294c88fbc9a0" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 24 (cfdm) (side 2).dsk" size="161280" crc="666a11bd" sha1="883775d8317abf61f1fa68e394647957feaa92a0" offset="0" />
+				<rom name="coco friends disk magazine issue 06 (bons) (side 2).dsk" size="161280" crc="0cd8c8ef" sha1="6b3fb0f4d6f9712ee08c696afa3fae86265f09d2" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="cfdm25">
-		<description>CoCo Friends Disk Magazine Issue 25</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 25 - February 1994</description>
+		<year>1994</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 25 (bons) (side 1).dsk" size="161280" crc="a9a9fe9a" sha1="8cfac6708b912d6ef7d260e530a1ec1ca1d51b44" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 25 (bons) (side 2).dsk" size="161280" crc="066f142d" sha1="57934eeef754d8069d3453ac92cacb4ceae1c990" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 25 (cfdm) (side 2).dsk" size="161280" crc="c238fa51" sha1="3044be1017b9ccb2616086454376d8d84e5906da" offset="0" />
 			</dataarea>
@@ -1041,65 +905,51 @@
 	</software>
 
 	<software name="cfdm26">
-		<description>CoCo Friends Disk Magazine Issue 26</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 26 - March 1994</description>
+		<year>1994</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 26 (bons) (side 1).dsk" size="161280" crc="cd308b9e" sha1="14a547caafc265a7ad25691f9bd59f9307a01855" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 26 (bons) (side 2).dsk" size="161280" crc="4961b82b" sha1="b8222ab978060e7b77a754f5487010b3ce5275ef" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 26 (cfdm) (side 2).dsk" size="161280" crc="3cdeeb1c" sha1="2949f1c8dfdf4fefdd3381963006c5a4c693ccb9" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
+	<!-- Includes Bonus Disk #7 -->
 	<software name="cfdm27">
-		<description>CoCo Friends Disk Magazine Issue 27</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 27 - April 1994</description>
+		<year>1994</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 27 (bons) (side 1).dsk" size="161280" crc="ea17586d" sha1="7d883f46dad11dc69951505a3e06120dab3a31cf" offset="0" />
+				<rom name="coco friends disk magazine issue 27 (cfdm) (side 2).dsk" size="161280" crc="da5b6419" sha1="76d9d0fc7d2973b24bb2a6800df53ef2710223ff" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 27 (bons) (side 2).dsk" size="161280" crc="027bed0e" sha1="c10fd1e9d1f3dea437b038f85864d17e4ac8c7e1" offset="0" />
+				<rom name="coco friends disk magazine issue 07 (bons) (side 1).dsk" size="161280" crc="60992303" sha1="f4959e2c3c6bc4faf3f5ccd0929bac477df1d7f1" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 27 (cfdm) (side 2).dsk" size="161280" crc="da5b6419" sha1="76d9d0fc7d2973b24bb2a6800df53ef2710223ff" offset="0" />
+				<rom name="coco friends disk magazine issue 07 (bons) (side 2).dsk" size="161280" crc="229b964b" sha1="9dc840c0f374c6d811e3b318f9d70ae7e265e602" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="cfdm28">
-		<description>CoCo Friends Disk Magazine Issue 28</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 28 - May 1994</description>
+		<year>1994</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 28 (bons) (side 1).dsk" size="161280" crc="b317c79d" sha1="27f79080cb4c3c7dc835f56f43f00b8095284da1" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 28 (bons) (side 2).dsk" size="161280" crc="d0321698" sha1="750ef8ee9ab92d453fcd9e640f99ccd514839818" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 28 (cfdm) (side 2).dsk" size="161280" crc="187338d7" sha1="2d46c351da5357087cd5fc21a41291bd39f129dd" offset="0" />
 			</dataarea>
@@ -1107,65 +957,51 @@
 	</software>
 
 	<software name="cfdm29">
-		<description>CoCo Friends Disk Magazine Issue 29</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 29 - June 1994</description>
+		<year>1994</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 29 (bons) (side 1).dsk" size="161280" crc="dd7755c7" sha1="1e66c0d72d4df4024829b7df7088ea0ba3b055de" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 29 (bons) (side 2).dsk" size="161280" crc="bfc289c1" sha1="4b4e57102dc66bfc0ea20a32569117a69f83c0ca" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 29 (cfdm) (side 2).dsk" size="161280" crc="35d534fe" sha1="c3612b38e82e9db3023aee1c8b318df70d2f00a8" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
+	<!-- Includes Bonus Disk #8 -->
 	<software name="cfdm30">
-		<description>CoCo Friends Disk Magazine Issue 30</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 30 - July 1994</description>
+		<year>1994</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 30 (bons) (side 1).dsk" size="161280" crc="b37f0ec2" sha1="9265b59f0bac7d17604d40cfaf1956d9883ee7f9" offset="0" />
+				<rom name="coco friends disk magazine issue 30 (cfdm) (side 2).dsk" size="161280" crc="5bb4c49d" sha1="a9c3696413ef7008c6a16cbf7a3030ec16660346" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 30 (bons) (side 2).dsk" size="161280" crc="8adc77c9" sha1="7ca8bd23fb79d3accb7323df8d6fac781de1f430" offset="0" />
+				<rom name="coco friends disk magazine issue 08 (bons) (side 1).dsk" size="161280" crc="6f1f82bd" sha1="e2a30992fbfa7ee89c018984fbfb61b52f082912" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 30 (cfdm) (side 2).dsk" size="161280" crc="5bb4c49d" sha1="a9c3696413ef7008c6a16cbf7a3030ec16660346" offset="0" />
+				<rom name="coco friends disk magazine issue 08 (bons) (side 2).dsk" size="161280" crc="d785bcda" sha1="0c7d7e24dc2550c50976d34f8f6a4f98d0d8af6e" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="cfdm31">
-		<description>CoCo Friends Disk Magazine Issue 31</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 31 - August 1994</description>
+		<year>1994</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 31 (bons) (side 1).dsk" size="161280" crc="9c758787" sha1="3d7ddf4414f7b6236999e045359331807114672f" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 31 (bons) (side 2).dsk" size="161280" crc="76bff02c" sha1="928adfc8dfa00031b6e7e743801070214a335e61" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 31 (cfdm) (side 2).dsk" size="161280" crc="c1c4c4b8" sha1="7fba4140c306abbbf71e0453eb5069f4fff8361c" offset="0" />
 			</dataarea>
@@ -1173,60 +1009,57 @@
 	</software>
 
 	<software name="cfdm32">
-		<description>CoCo Friends Disk Magazine Issue 32</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 32 - September 1994</description>
+		<year>1994</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 32 (bons) (side 1).dsk" size="161280" crc="158d1c2a" sha1="c793666f6abe7ce65072f110fcd7ffe0cebd6632" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 32 (bons) (side 2).dsk" size="161280" crc="b1d2b233" sha1="5494de9dfe74caf56f4eeeefd53c919404e2d594" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 32 (cfdm) (side 2).dsk" size="161280" crc="658c8607" sha1="1002ebdfc84c20ec52f110a0d7de89f01efc6c48" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
+	<!-- Includes Bonus Disk #9 -->
 	<software name="cfdm33">
-		<description>CoCo Friends Disk Magazine Issue 33</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 33 - October 1994</description>
+		<year>1994</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 33 (bons) (side 1).dsk" size="161280" crc="7c6be5f3" sha1="006a8679160dc11a63e7d208e160708f591c6e5f" offset="0" />
+				<rom name="coco friends disk magazine issue 33 (cfdm) (side 2).dsk" size="161280" crc="1a1fa68f" sha1="24180369a5ebafdd1be4bf1cce51eea1a7fb5b63" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 33 (bons) (side 2).dsk" size="161280" crc="9d1d763c" sha1="d5037f97191e992d721a2f64ba7fddae4ff61a9d" offset="0" />
+				<rom name="coco friends disk magazine issue 09 (bons) (side 1).dsk" size="161280" crc="430f3e3e" sha1="690fb5274428ce7b93b8d31315a31e76410f115c" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 33 (cfdm) (side 2).dsk" size="161280" crc="1a1fa68f" sha1="24180369a5ebafdd1be4bf1cce51eea1a7fb5b63" offset="0" />
+				<rom name="coco friends disk magazine issue 09 (bons) (side 2).dsk" size="161280" crc="25446eec" sha1="74a25dc1156455dfa60217adb0fa1d201f47dc9c" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="cfdm34">
-		<description>CoCo Friends Disk Magazine Issue 34</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 34 - November 1994</description>
+		<year>1994</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 1"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 34 (cfdm) (side 1).dsk" size="161280" crc="3583dcc5" sha1="316bec6d4ecdf783d748ec8ba54b4e179c375ad0" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 34 (cfdm) (side 2).dsk" size="161280" crc="891edd45" sha1="e969933470e04c39bebc299ae8e3e83c5179b913" offset="0" />
 			</dataarea>
@@ -1234,35 +1067,50 @@
 	</software>
 
 	<software name="cfdm35">
-		<description>CoCo Friends Disk Magazine Issue 35</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 35 - December 1994</description>
+		<year>1994</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 35 (cfdm) (side 2).dsk" size="161280" crc="c42dc5f4" sha1="6bf80060d255a4dbdd757bda5587178edcb37420" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
+	<!-- Includes Bonus Disk #10 -->
 	<software name="cfdm36">
-		<description>CoCo Friends Disk Magazine Issue 36</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 36 - January 1995</description>
+		<year>1995</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 36 (cfdm) (side 2).dsk" size="161280" crc="ca08e3fc" sha1="2b8277232e33132a3d3da543fc995e75275906ac" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 10 (bons) (side 1).dsk" size="161280" crc="db12ec48" sha1="c33160005d4c61acd7856a0f984c64ab5cd009b6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 10 (bons) (side 2).dsk" size="161280" crc="502ac36a" sha1="6cb40bd5a619c644cb286a18e2acc6c6368d7018" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="cfdm37">
-		<description>CoCo Friends Disk Magazine Issue 37</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 37 - February 1995</description>
+		<year>1995</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 37 (cfdm) (side 2).dsk" size="161280" crc="2cd87f96" sha1="f2d140c77f500d5d94eec6bd8958a88cbe0914d8" offset="0" />
 			</dataarea>
@@ -1270,35 +1118,51 @@
 	</software>
 
 	<software name="cfdm38">
-		<description>CoCo Friends Disk Magazine Issue 38</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 38 - March 1995</description>
+		<year>1995</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 38 (cfdm) (side 2).dsk" size="161280" crc="9079fc25" sha1="b3ff0eb62d7922ac0920269f7298e68b544c167d" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
+	<!-- Includes Bonus Disk #11 -->
 	<software name="cfdm39">
-		<description>CoCo Friends Disk Magazine Issue 39</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 39 - April 1995</description>
+		<year>1995</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 39 (cfdm) (side 2).dsk" size="161280" crc="1dead418" sha1="4843d4c943b46dce7e41be2ae947585372e24364" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 11 (bons) (side 1).dsk" size="161280" crc="58bc1f35" sha1="62a6c0d346f813a268b682e413d057a8c677c68e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 11 (bons) (side 2).dsk" size="161280" crc="a1919e22" sha1="e699d898e805abd6bbab966a90c92bee02f4138e" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="cfdm40">
-		<description>CoCo Friends Disk Magazine Issue 40</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 40 - May 1995</description>
+		<year>1995</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 40 (cfdm) (side 2).dsk" size="161280" crc="22547b68" sha1="f3b0432d9dffb8ea6288d34b30cbcf83abc9ba12" offset="0" />
 			</dataarea>
@@ -1306,35 +1170,51 @@
 	</software>
 
 	<software name="cfdm41">
-		<description>CoCo Friends Disk Magazine Issue 41</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 41 - June 1995</description>
+		<year>1995</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 41 (cfdm) (side 2).dsk" size="161280" crc="994a610a" sha1="3c05d995ade2fc98a43f3cc80f1789f80742834c" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
+	<!-- Includes Bonus Disk #12 -->
 	<software name="cfdm42">
-		<description>CoCo Friends Disk Magazine Issue 42</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 42 - July 1995</description>
+		<year>1995</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 42 (cfdm) (side 2).dsk" size="161280" crc="e90be0d5" sha1="9970a633d6fabd5ad1a9bfcd768111d579dc3cb1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 12 (bons) (side 1).dsk" size="161280" crc="1ee00e85" sha1="ae7c2fb708bfb25f62a189784965084c171dab6c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 12 (bons) (side 2).dsk" size="161280" crc="e06bb102" sha1="0177a9091e48aaea426d64bd841a3260ae48bf14" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="cfdm43">
-		<description>CoCo Friends Disk Magazine Issue 43</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 43 - August 1995</description>
+		<year>1995</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 43 (cfdm) (side 2).dsk" size="161280" crc="9d14d4cd" sha1="41f3c86862188163826f55a07e14583af98fa66b" offset="0" />
 			</dataarea>
@@ -1342,35 +1222,51 @@
 	</software>
 
 	<software name="cfdm44">
-		<description>CoCo Friends Disk Magazine Issue 44</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 44 - September 1995</description>
+		<year>1995</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 44 (cfdm) (side 2).dsk" size="161280" crc="cc0b0bd3" sha1="7a5bf1f78e67f0d71c2d97c33969163dfa8c9132" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
+	<!-- Includes Bonus Disk #13 -->
 	<software name="cfdm45">
-		<description>CoCo Friends Disk Magazine Issue 45</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 45 - October 1995</description>
+		<year>1995</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 45 (cfdm) (side 2).dsk" size="161280" crc="15519558" sha1="109e1162a6bc234533e10a6f37a7619578ff48f4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 13 (bons) (side 1).dsk" size="161280" crc="0539877f" sha1="6b5b10b469461e1aca560abeef06f89c4f1a09ad" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 13 (bons) (side 2).dsk" size="161280" crc="4155fa6c" sha1="6f5289af391cfa28a23c35ed30a8b29edd13e2b9" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="cfdm46">
-		<description>CoCo Friends Disk Magazine Issue 46</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 46 - November 1995</description>
+		<year>1995</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 46 (cfdm) (side 2).dsk" size="161280" crc="931df223" sha1="07f243fa546084303015c7c8b855390d25912967" offset="0" />
 			</dataarea>
@@ -1378,35 +1274,51 @@
 	</software>
 
 	<software name="cfdm47">
-		<description>CoCo Friends Disk Magazine Issue 47</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 47 - December 1995</description>
+		<year>1995</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 47 (cfdm) (side 2).dsk" size="161280" crc="e558f05f" sha1="eb6d8292d1f9c7f2cea64b639e63250389215f24" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
+	<!-- Includes Bonus Disk #14 -->
 	<software name="cfdm48">
-		<description>CoCo Friends Disk Magazine Issue 48</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 48 - January 1996</description>
+		<year>1996</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 48 (cfdm) (side 2).dsk" size="161280" crc="20c1ff1a" sha1="accc2ad5920682ab60dccce8a2de7bcfe6e7dc1b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 14 (bons) (side 1).dsk" size="161280" crc="18170f78" sha1="d408742875ee9e9fb44a4351baf4215016b94667" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 14 (bons) (side 2).dsk" size="161280" crc="b560347f" sha1="e929a22a6af80c5616892205856d3d6a4258d52d" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="cfdm49">
-		<description>CoCo Friends Disk Magazine Issue 49</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 49 - February 1996</description>
+		<year>1996</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 49 (cfdm) (side 2).dsk" size="161280" crc="3071cf17" sha1="ce99abb22a435fe390e87bdd1946854a3af4d5be" offset="0" />
 			</dataarea>
@@ -1414,40 +1326,57 @@
 	</software>
 
 	<software name="cfdm50">
-		<description>CoCo Friends Disk Magazine Issue 50</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 50 - March 1996</description>
+		<year>1996</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 50 (cfdm) (side 2).dsk" size="161280" crc="169784db" sha1="e8a5d575d207b3e3449c76cc2f13f9f700d14d86" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
+	<!-- Includes Bonus Disk #15 -->
 	<software name="cfdm51">
-		<description>CoCo Friends Disk Magazine Issue 51</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 51 - April 1996</description>
+		<year>1996</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 51 (cfdm) (side 2).dsk" size="161280" crc="85325759" sha1="5734c64856de63ffa89f7a4bfe6332ddfa4cd609" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 15 (bons) (side 1).dsk" size="161280" crc="37526800" sha1="14deaf83a582b48a1ba65f9af5e542f72cfe37e3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 15 (bons) (side 2).dsk" size="161280" crc="bdfd546a" sha1="31ad15dc5adb874ea09c4dcad4554d94b0d48cd8" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="cfdm52">
-		<description>CoCo Friends Disk Magazine Issue 52</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 52 - May 1996</description>
+		<year>1996</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 1"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 52 (m).dsk" size="161280" crc="3d5d2cd8" sha1="c199138641431ceaec620cd740066332f0da1247" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 52 (cfdm) (side 2).dsk" size="161280" crc="d6cfb40e" sha1="71057406df2c13c4da2440f616c8c917f93b6368" offset="0" />
 			</dataarea>
@@ -1455,234 +1384,488 @@
 	</software>
 
 	<software name="cfdm53">
-		<description>CoCo Friends Disk Magazine Issue 53</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 53 - June 1996</description>
+		<year>1996</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 53 (cfdm) (side 2).dsk" size="161280" crc="0af4e937" sha1="3c53ad6db20562492d7f71c7dbd7f86b51107c5b" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
+	<!-- Includes Bonus Disk #16 -->
 	<software name="cfdm54">
-		<description>CoCo Friends Disk Magazine Issue 54</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 54 - September 1996</description>
+		<year>1996</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 54 (cfdm) (side 2).dsk" size="161280" crc="51526ec5" sha1="572c52fddb4e029667bc720455c6a8d32da91633" offset="0" />
 			</dataarea>
 		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 16 (bons) (side 1).dsk" size="161280" crc="596d36fb" sha1="21dadab4ffc9f7a5f23e8bf1fd0b3b1cd6bce2e4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 16 (bons) (side 2).dsk" size="161280" crc="6ae8ba1c" sha1="465d3310bd270dbda5e4beb3bdbb5c7ab56c6f7f" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
+	<!-- Includes Bonus Disk #17 -->
 	<software name="cfdm55">
-		<description>CoCo Friends Disk Magazine Issue 55</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine Issue 55 - December 1996</description>
+		<year>1996</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 55 (cfdm) (side 2).dsk" size="161280" crc="cac0e10e" sha1="3e0ceeedbc08ee665ca5b21d4cf1e9eab5f3991e" offset="0" />
 			</dataarea>
 		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 17 (bons) (side 1).dsk" size="161280" crc="2a154996" sha1="72036743140d17625f8570d51739a725da8b0783" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 17 (bons) (side 2).dsk" size="161280" crc="7c77899f" sha1="678a42962a76af76a3d66fede9a2b98fd9f4c42f" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
+	<!-- Includes Bonus Disk #18 -->
 	<software name="cfdm56">
-		<description>CoCo Friends Disk Magazine Issue 56</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine Issue 56 - March 1997</description>
+		<year>1997</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 56 (cfdm) (side 2).dsk" size="161280" crc="c0209b53" sha1="0a809638ebbaa8a8e91aa7aa63e515869650a73a" offset="0" />
 			</dataarea>
 		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 18 (bons) (side 1).dsk" size="161280" crc="5492eb5f" sha1="da1d4a27c3c05730b035b28772fbdd5416036b50" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 18 (bons) (side 2).dsk" size="161280" crc="04a380d1" sha1="d6701f1d48e3c6a0af95005e87214803abe21db9" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
+	<!-- Includes Bonus Disk #19 -->
 	<software name="cfdm57">
-		<description>CoCo Friends Disk Magazine Issue 57</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 57 - June 1997</description>
+		<year>1997</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 57 (cfdm) (side 2).dsk" size="161280" crc="40055252" sha1="e6535cd97b62211d29c1647b692e113ba816b1bb" offset="0" />
 			</dataarea>
 		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 19 (bons) (side 1).dsk" size="161280" crc="ccdd8eeb" sha1="b197a2f1e38e38e5d0ecea146129dbf61354eb9c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 19 (bons) (side 2).dsk" size="161280" crc="85e1d390" sha1="0a44e8b5e528ece8de006ae40464b6e214504f35" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
+	<!-- Includes Bonus Disk #20 -->
 	<software name="cfdm58">
-		<description>CoCo Friends Disk Magazine Issue 58</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 58 - September 1997</description>
+		<year>1997</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 58 (cfdm) (side 2).dsk" size="161280" crc="1d720ce9" sha1="572019bc6895d7549d2c511a0f9538cfc2dc158b" offset="0" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="cfdm59">
-		<description>CoCo Friends Disk Magazine Issue 59</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 59 (cfdm) (side 2).dsk" size="161280" crc="bab5d219" sha1="3a4ad98e12cb27918e0fbf0e4c8b44617b9768ad" offset="0" />
+				<rom name="coco friends disk magazine issue 20 (bons) (side 1).dsk" size="161280" crc="e40a648d" sha1="f61c712bf8cb2a68bac350b2e173e23c3ef13233" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 20 (bons) (side 2).dsk" size="161280" crc="88ea0277" sha1="368ad7d79fb97212e06242f4cb6a92e27e94c43f" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="cfdm60">
-		<description>CoCo Friends Disk Magazine Issue 60</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+	<!-- Includes Bonus Disk #21 -->
+	<software name="cfdm59">
+		<description>CoCo Friends Disk Magazine - Issue 59 - December 1997</description>
+		<year>1997</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 59 (cfdm) (side 2).dsk" size="161280" crc="bab5d219" sha1="3a4ad98e12cb27918e0fbf0e4c8b44617b9768ad" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 21 (bons) (side 1).dsk" size="161280" crc="9aa481ac" sha1="0cba743cb80168b05ef669d1981d1cc468318590" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 21 (bons) (side 2).dsk" size="161280" crc="7085d541" sha1="0148ca0a5cb66749e94de3fd6574fbb2a9a09356" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Includes Bonus Disk #22 -->
+	<software name="cfdm60">
+		<description>CoCo Friends Disk Magazine - Issue 60 - March 1998</description>
+		<year>1998</year>
+		<publisher>Rick's Computer Enterprise</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 1"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 60 (cfdm) (side 1).dsk" size="161280" crc="1dad3ec9" sha1="1317efd39c8f14a1ac22dda076e2c94f60229081" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="169728">
 				<rom name="coco friends disk magazine issue 60 (cfdm) (side 2).dsk" size="169728" crc="03dc8456" sha1="4d0e34cc782972cc4a58951ff4f83257b28cac9d" offset="0" />
 			</dataarea>
 		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 22 (bons) (side 1).dsk" size="161280" crc="40ed44b0" sha1="7396ebfc37015527b9c5c2bee20f286cacc36018" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
+			<dataarea name="flop" size="184320">
+				<rom name="coco friends disk magazine issue 22 (bons) (side 2).dsk" size="184320" crc="19387f17" sha1="3985dbda9f2f351a2f8db06b84922cbae8d3e72a" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
+	<!-- Includes Bonus Disk #23 -->
 	<software name="cfdm61">
-		<description>CoCo Friends Disk Magazine Issue 61</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 61 - June 1998</description>
+		<year>1998</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 61 (cfdm) (side 2).dsk" size="161280" crc="e8994708" sha1="c585a5189eabeb09d2ff50357584a2e5e5de10cf" offset="0" />
 			</dataarea>
 		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 23 (bons) (side 1).dsk" size="161280" crc="cafcc3f8" sha1="2eab5f5d639460659f4c90b191b0dda436d8dc12" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 23 (bons) (side 2).dsk" size="161280" crc="c21f59e9" sha1="c64874e54e163cb4def3740b9155f21702f9ca25" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
+	<!-- Includes Bonus Disk #24 -->
 	<software name="cfdm62">
-		<description>CoCo Friends Disk Magazine Issue 62</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 62 - September 1998</description>
+		<year>1998</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 62 (cfdm) (side 2).dsk" size="161280" crc="cfd60af0" sha1="06dd0459ba486ed7f5350a90cc12ac1c43a57daf" offset="0" />
 			</dataarea>
 		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 24 (bons) (side 1).dsk" size="161280" crc="bd3a92cb" sha1="4648f8193aaed9fc8866b3db190d6a05f2045a27" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 24 (bons) (side 2).dsk" size="161280" crc="a87a5dc6" sha1="c055793e12eb11528553174966d2aa4f3eb1506f" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
+	<!-- Includes Bonus Disk #25 -->
 	<software name="cfdm63">
-		<description>CoCo Friends Disk Magazine Issue 63</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+		<description>CoCo Friends Disk Magazine - Issue 63 - December 1998</description>
+		<year>1998</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 63 (cfdm) (side 2).dsk" size="161280" crc="5890d9f3" sha1="68b0c68e7474062c960e5df580cef25160079c55" offset="0" />
 			</dataarea>
 		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 25 (bons) (side 1).dsk" size="161280" crc="a9a9fe9a" sha1="8cfac6708b912d6ef7d260e530a1ec1ca1d51b44" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 25 (bons) (side 2).dsk" size="161280" crc="066f142d" sha1="57934eeef754d8069d3453ac92cacb4ceae1c990" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
-	<software name="cdfm64">
-		<description>CoCo Friends Disk Magazine Issue 64</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+	<!-- Includes Bonus Disk #26 -->
+	<software name="cfdm64">
+		<description>CoCo Friends Disk Magazine - Issue 64 - March 1999</description>
+		<year>1999</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 64 (cfdm) (side 2).dsk" size="161280" crc="22385b32" sha1="b78e8b77e74b6b20d49a64ebe9d73e948d0909a1" offset="0" />
 			</dataarea>
 		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 26 (bons) (side 1).dsk" size="161280" crc="cd308b9e" sha1="14a547caafc265a7ad25691f9bd59f9307a01855" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 26 (bons) (side 2).dsk" size="161280" crc="4961b82b" sha1="b8222ab978060e7b77a754f5487010b3ce5275ef" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
-	<software name="cdfm65">
-		<description>CoCo Friends Disk Magazine Issue 65</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+	<!-- Includes Bonus Disk #27 -->
+	<software name="cfdm65">
+		<description>CoCo Friends Disk Magazine - Issue 65 - June 1999</description>
+		<year>1999</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 65 (cfdm) (side 2).dsk" size="161280" crc="de6a3e5b" sha1="300f9295517f037c73c804a470a68acb5365b2b0" offset="0" />
 			</dataarea>
 		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 27 (bons) (side 1).dsk" size="161280" crc="ea17586d" sha1="7d883f46dad11dc69951505a3e06120dab3a31cf" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 27 (bons) (side 2).dsk" size="161280" crc="027bed0e" sha1="c10fd1e9d1f3dea437b038f85864d17e4ac8c7e1" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
-	<software name="cdfm66">
-		<description>CoCo Friends Disk Magazine Issue 66</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+	<!-- Includes Bonus Disk #28 -->
+	<software name="cfdm66">
+		<description>CoCo Friends Disk Magazine - Issue 66 - September 1999</description>
+		<year>1999</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 66 (cfdm) (side 2).dsk" size="161280" crc="8e1f5fc5" sha1="ecb624f46f8b0b03e98968d2a8b3b41dc261c558" offset="0" />
 			</dataarea>
 		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 28 (bons) (side 1).dsk" size="161280" crc="b317c79d" sha1="27f79080cb4c3c7dc835f56f43f00b8095284da1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 28 (bons) (side 2).dsk" size="161280" crc="d0321698" sha1="750ef8ee9ab92d453fcd9e640f99ccd514839818" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
-	<software name="cdfm67">
-		<description>CoCo Friends Disk Magazine Issue 67</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+	<!-- Includes Bonus Disk #29 -->
+	<software name="cfdm67">
+		<description>CoCo Friends Disk Magazine - Issue 67 - December 1999</description>
+		<year>1999</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 67 (cfdm) (side 2).dsk" size="161280" crc="cc4e8466" sha1="2142e0c5bac3406568ea5d7cc6919caa7576a48a" offset="0" />
 			</dataarea>
 		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 29 (bons) (side 1).dsk" size="161280" crc="dd7755c7" sha1="1e66c0d72d4df4024829b7df7088ea0ba3b055de" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 29 (bons) (side 2).dsk" size="161280" crc="bfc289c1" sha1="4b4e57102dc66bfc0ea20a32569117a69f83c0ca" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
-	<software name="cdfm68">
-		<description>CoCo Friends Disk Magazine Issue 68</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+	<!-- Includes Bonus Disk #30 -->
+	<software name="cfdm68">
+		<description>CoCo Friends Disk Magazine - Issue 68 - March 2000</description>
+		<year>2000</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 68 (cfdm) (side 2).dsk" size="161280" crc="5a493c16" sha1="bf495e9fb5a4eeb23841a927ef64d6800330f03f" offset="0" />
 			</dataarea>
 		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 30 (bons) (side 1).dsk" size="161280" crc="b37f0ec2" sha1="9265b59f0bac7d17604d40cfaf1956d9883ee7f9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 30 (bons) (side 2).dsk" size="161280" crc="8adc77c9" sha1="7ca8bd23fb79d3accb7323df8d6fac781de1f430" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
-	<software name="cdfm69">
-		<description>CoCo Friends Disk Magazine Issue 69</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+	<!-- Includes Bonus Disk #31 -->
+	<software name="cfdm69">
+		<description>CoCo Friends Disk Magazine Issue 69 - June 2000</description>
+		<year>2000</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 69 (cfdm) (side 2).dsk" size="161280" crc="f4fbb1f7" sha1="be0442d220381d17967db9c24fc7aecbb9f6826e" offset="0" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="cdfm70">
-		<description>CoCo Friends Disk Magazine Issue 70</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
 			<dataarea name="flop" size="161280">
-				<rom name="coco friends disk magazine issue 70 (cfdm) (side 2).dsk" size="161280" crc="135ff40a" sha1="94319431e62d247b2a31591bf7815b24f61eee6a" offset="0" />
+				<rom name="coco friends disk magazine issue 31 (bons) (side 1).dsk" size="161280" crc="9c758787" sha1="3d7ddf4414f7b6236999e045359331807114672f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 31 (bons) (side 2).dsk" size="161280" crc="76bff02c" sha1="928adfc8dfa00031b6e7e743801070214a335e61" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="cdfm71">
-		<description>CoCo Friends Disk Magazine Issue 71</description>
-		<year>198?</year>
-		<publisher>CoCo Friends</publisher>
+	<!-- Includes Bonus Disk #32 -->
+	<software name="cfdm70">
+		<description>CoCo Friends Disk Magazine Issue 70 - September 2000</description>
+		<year>2000</year>
+		<publisher>Rick's Computer Enterprise</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 70 (cfdm) (side 2).dsk" size="161280" crc="135ff40a" sha1="94319431e62d247b2a31591bf7815b24f61eee6a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 32 (bons) (side 1).dsk" size="161280" crc="158d1c2a" sha1="c793666f6abe7ce65072f110fcd7ffe0cebd6632" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 32 (bons) (side 2).dsk" size="161280" crc="b1d2b233" sha1="5494de9dfe74caf56f4eeeefd53c919404e2d594" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Includes Bonus Disk #33 -->
+	<software name="cfdm71">
+		<description>CoCo Friends Disk Magazine Issue 71 - December 2000</description>
+		<year>2000</year>
+		<publisher>Rick's Computer Enterprise</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco friends disk magazine issue 71 (cfdm) (side 2).dsk" size="161280" crc="e399a608" sha1="059da1112e8a6f14111e78b0d2d5830d066d0213" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 1"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 33 (bons) (side 1).dsk" size="161280" crc="7c6be5f3" sha1="006a8679160dc11a63e7d208e160708f591c6e5f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Bonus Disk Side 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco friends disk magazine issue 33 (bons) (side 2).dsk" size="161280" crc="9d1d763c" sha1="d5037f97191e992d721a2f64ba7fddae4ff61a9d" offset="0" />
 			</dataarea>
 		</part>
 	</software>
