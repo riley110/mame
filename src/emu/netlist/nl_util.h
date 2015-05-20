@@ -1,5 +1,5 @@
-// license:???
-// copyright-holders:???
+// license:GPL-2.0+
+// copyright-holders:Couriersud
 /*
  * nl_util.h
  *
@@ -19,9 +19,9 @@ private:
 	nl_util() {};
 
 public:
-	typedef plinearlist_t<pstring, 10> pstring_list;
+	typedef plist_t<pstring> pstring_list;
 
-	static pstring_list split(const pstring &str, const pstring &onstr)
+	static pstring_list split(const pstring &str, const pstring &onstr, bool ignore_empty = false)
 	{
 		pstring_list temp;
 
@@ -31,12 +31,18 @@ public:
 		pn = str.find(onstr, p);
 		while (pn>=0)
 		{
-			temp.add(str.substr(p, pn - p));
+			pstring t = str.substr(p, pn - p);
+			if (!ignore_empty || t.len() != 0)
+				temp.add(t);
 			p = pn + onstr.len();
 			pn = str.find(onstr, p);
 		}
 		if (p<str.len())
-			temp.add(str.substr(p));
+		{
+			pstring t = str.substr(p);
+			if (!ignore_empty || t.len() != 0)
+				temp.add(t);
+		}
 		return temp;
 	}
 };
@@ -54,8 +60,8 @@ public:
 	ATTR_HOT inline static double log(const double x) { return std::log(x); }
 	ATTR_HOT inline static float log(const float x) { return std::log(x); }
 #if defined(_MSC_VER) && _MSC_VER < 1800
-	ATTR_HOT inline static double log1p(const double x) { return nl_math::log(1.0 + x); }
-	ATTR_HOT inline static float log1p(const float x) { return nl_math::log(1.0 + x); }
+	ATTR_HOT inline static double e_log1p(const double x) { return nl_math::log(1.0 + x); }
+	ATTR_HOT inline static float e_log1p(const float x) { return nl_math::log(1.0 + x); }
 #else
 	ATTR_HOT inline static double e_log1p(const double x) { return log1p(x); }
 	ATTR_HOT inline static float e_log1p(const float x) { return log1pf(x); }

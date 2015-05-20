@@ -1,5 +1,5 @@
-// license:???
-// copyright-holders:???
+// license:GPL-2.0+
+// copyright-holders:Couriersud
 /*
  * nld_bjt.c
  *
@@ -100,12 +100,13 @@ NETLIB_START(QBJT_switch)
 		/* Base current is 0.005 / beta
 		 * as a rough estimate, we just scale the conductance down */
 
-		m_gB = d.gI(0.005 / alpha);
+		m_gB = 1.0 / (m_V/(0.005 / BF));
+
+		//m_gB = d.gI(0.005 / alpha);
 
 		if (m_gB < netlist().gmin())
 			m_gB = netlist().gmin();
 		m_gC =  d.gI(0.005); // very rough estimate
-		//printf("%f %f \n", m_V, m_gB);
 	}
 
 }
@@ -117,7 +118,7 @@ NETLIB_RESET(QBJT_switch)
 	m_RB.set(netlist().gmin(), 0.0, 0.0);
 	m_RC.set(netlist().gmin(), 0.0, 0.0);
 
-	m_BC_dummy.set(netlist().gmin(), 0.0, 0.0);
+	m_BC_dummy.set(netlist().gmin() / 10.0, 0.0, 0.0);
 
 }
 
@@ -143,22 +144,11 @@ NETLIB_UPDATE_TERMINALS(QBJT_switch)
 	const int new_state = (m_RB.deltaV() * m > m_V ) ? 1 : 0;
 	if (m_state_on ^ new_state)
 	{
-#if 0
-		nl_double gb = m_gB;
-		nl_double gc = m_gC;
-		nl_double v  = m_V * m;
-		if (!new_state )
-		{
-			// not conducting
-			gb = netlist().gmin();
-			v = 0;
-			gc = netlist().gmin();
-		}
-#else
+
 		const nl_double gb = new_state ? m_gB : netlist().gmin();
 		const nl_double gc = new_state ? m_gC : netlist().gmin();
 		const nl_double v  = new_state ? m_V * m : 0;
-#endif
+
 		m_RB.set(gb, v,   0.0);
 		m_RC.set(gc, 0.0, 0.0);
 		//m_RB.update_dev();
@@ -201,7 +191,6 @@ NETLIB_START(QBJT_EB)
 		//nl_double VJE = m_model.dValue("VJE", 0.75);
 
 		set_qtype((m_model.model_type() == "NPN") ? BJT_NPN : BJT_PNP);
-		//printf("type %s\n", m_model.model_type().cstr());
 
 		m_alpha_f = BF / (1.0 + BF);
 		m_alpha_r = BR / (1.0 + BR);

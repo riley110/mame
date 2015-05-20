@@ -1,11 +1,23 @@
-// license:???
-// copyright-holders:???
+// license:GPL-2.0+
+// copyright-holders:Couriersud
 /*
  * nld_7408.c
  *
  */
 
 #include "nld_7408.h"
+
+#if (USE_TRUTHTABLE)
+nld_7408::truthtable_t nld_7408::m_ttbl;
+const char *nld_7408::m_desc[] = {
+		"A , B | Q ",
+		"X,0|0|15",
+		"0,X|0|15",
+		"1,1|1|22",
+		""
+};
+
+#endif
 
 NETLIB_START(7408_dip)
 {

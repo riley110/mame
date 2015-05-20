@@ -1,5 +1,5 @@
-// license:???
-// copyright-holders:???
+// license:GPL-2.0+
+// copyright-holders:Couriersud
 /*
  * nld_bjt.h
  *
@@ -104,8 +104,7 @@ public:
 	nld_twoterm m_RB;
 	nld_twoterm m_RC;
 
-	// FIXME: the matrix solvers should be devices so we can properly
-	//        schedule them. This is a workaround and blows netgroup size
+	// FIXME: this is needed so we have all terminals belong to one net list
 
 	nld_twoterm m_BC_dummy;
 

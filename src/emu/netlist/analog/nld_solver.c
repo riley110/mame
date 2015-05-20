@@ -1,5 +1,5 @@
-// license:???
-// copyright-holders:???
+// license:GPL-2.0+
+// copyright-holders:Couriersud
 /*
  * nld_solver.c
  *
@@ -236,7 +236,7 @@ void netlist_matrix_solver_t::solve_base(C *p)
 		{
 			update_dynamic();
 			// Gauss-Seidel will revert to Gaussian elemination if steps exceeded.
-			this_resched = p->vsolve_non_dynamic();
+			this_resched = p->vsolve_non_dynamic(true);
 			newton_loops++;
 		} while (this_resched > 1 && newton_loops < m_params.m_nr_loops);
 
@@ -250,7 +250,7 @@ void netlist_matrix_solver_t::solve_base(C *p)
 	}
 	else
 	{
-		p->vsolve_non_dynamic();
+		p->vsolve_non_dynamic(false);
 	}
 }
 
@@ -311,7 +311,7 @@ NETLIB_START(solver)
 
 	register_param("ACCURACY", m_accuracy, 1e-7);
 	register_param("GS_LOOPS", m_gs_loops, 9);              // Gauss-Seidel loops
-	register_param("GS_THRESHOLD", m_gs_threshold, 2);      // below this value, gaussian elimination is used
+	register_param("GS_THRESHOLD", m_gs_threshold, 6);      // below this value, gaussian elimination is used
 	register_param("NR_LOOPS", m_nr_loops, 25);             // Newton-Raphson loops
 	register_param("PARALLEL", m_parallel, 0);
 	register_param("SOR_FACTOR", m_sor, 1.059);
@@ -452,7 +452,7 @@ ATTR_COLD void NETLIB_NAME(solver)::post_start()
 
 	if (m_params.m_dynamic)
 	{
-		m_params.m_max_timestep *= 1000.0;
+		m_params.m_max_timestep *= NL_FCONST(1000.0);
 	}
 	else
 	{

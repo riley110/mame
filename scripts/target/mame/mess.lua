@@ -127,6 +127,7 @@ CPUS["AMIS2000"] = true
 CPUS["UCOM4"] = true
 CPUS["HMCS40"] = true
 CPUS["E0C6200"] = true
+CPUS["MELPS4"] = true
 
 --------------------------------------------------
 -- specify available sound cores; some of these are
@@ -606,6 +607,7 @@ BUSES["MACPDS"] = true
 BUSES["MIDI"] = true
 BUSES["MEGADRIVE"] = true
 BUSES["MSX_SLOT"] = true
+BUSES["NASBUS"] = true
 BUSES["NEOGEO"] = true
 BUSES["NES"] = true
 BUSES["NES_CTRL"] = true
@@ -1754,6 +1756,7 @@ files {
 
 createMESSProjects(_target, _subtarget, "mitsubishi")
 files {        
+	MAME_DIR .. "src/mess/drivers/hh_melps4.c",
 	MAME_DIR .. "src/mess/drivers/multi8.c",    
 	MAME_DIR .. "src/mess/drivers/multi16.c",   
 }
@@ -1790,8 +1793,6 @@ files {
 createMESSProjects(_target, _subtarget, "nascom")
 files {            
 	MAME_DIR .. "src/mess/drivers/nascom1.c",
-	MAME_DIR .. "src/mess/machine/nascom1.c",
-	MAME_DIR .. "src/mess/video/nascom1.c", 
 }
 
 createMESSProjects(_target, _subtarget, "ne")

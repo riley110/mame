@@ -1,5 +1,5 @@
-// license:???
-// copyright-holders:???
+// license:GPL-2.0+
+// copyright-holders:Couriersud
 /*
  * nld_NE555.c
  *
@@ -60,7 +60,7 @@ NETLIB_RESET(NE555)
 	m_R3.set_R(5000);
 	m_RDIS.set_R(R_OFF);
 
-	m_last_out = false;
+	m_last_out = true;
 }
 
 NETLIB_UPDATE(NE555)

@@ -1,5 +1,5 @@
-// license:???
-// copyright-holders:???
+// license:GPL-2.0+
+// copyright-holders:Couriersud
 /*
  * nld_7474.c
  *
@@ -10,7 +10,7 @@
 ATTR_HOT inline void NETLIB_NAME(7474sub)::newstate(const UINT8 stateQ, const UINT8 stateQQ)
 {
 	// 0: High-to-low 40 ns, 1: Low-to-high 25 ns
-	static const netlist_time delay[2] = { NLTIME_FROM_NS(40), NLTIME_FROM_NS(25) };
+	const netlist_time delay[2] = { NLTIME_FROM_NS(40), NLTIME_FROM_NS(25) };
 	OUTLOGIC(m_Q, stateQ, delay[stateQ]);
 	OUTLOGIC(m_QQ, stateQQ, delay[stateQQ]);
 }

@@ -1,5 +1,5 @@
-// license:???
-// copyright-holders:???
+// license:GPL-2.0+
+// copyright-holders:Couriersud
 /*
  * nlbase.c
  *
@@ -23,8 +23,8 @@ public:
 		m_low_thresh_V = 0.8;
 		m_high_thresh_V = 2.0;
 		// m_low_V  - these depend on sinked/sourced current. Values should be suitable for typical applications.
-		m_low_V = 0.3;
-		m_high_V = 3.7;
+		m_low_V = 0.1;
+		m_high_V = 4.0;
 		m_R_low = 1.0;
 		m_R_high = 130.0;
 	}
@@ -43,8 +43,8 @@ public:
 		m_low_thresh_V = 0.8;
 		m_high_thresh_V = 2.0;
 		// m_low_V  - these depend on sinked/sourced current. Values should be suitable for typical applications.
-		m_low_V = 0.3;
-		m_high_V = 3.7;
+		m_low_V = 0.1;
+		m_high_V = 4.0;
 		m_R_low = 1.0;
 		m_R_high = 130.0;
 	}
@@ -162,9 +162,9 @@ netlist_base_t::netlist_base_t()
 	:   netlist_object_t(NETLIST, GENERIC),
 		m_stop(netlist_time::zero),
 		// FIXME:: Use a parameter to set this on a schematics per schematics basis
-		m_use_deactivate(USE_DEACTIVE_DEVICE),
 		m_time(netlist_time::zero),
 		m_queue(*this),
+		m_use_deactivate(0),
 		m_mainclock(NULL),
 		m_solver(NULL),
 		m_gnd(NULL),
@@ -196,7 +196,7 @@ ATTR_COLD void netlist_base_t::save_register()
 	netlist_object_t::save_register();
 }
 
-ATTR_HOT const nl_double netlist_base_t::gmin() const
+ATTR_HOT nl_double netlist_base_t::gmin() const
 {
 	return solver()->gmin();
 }
@@ -210,17 +210,25 @@ ATTR_COLD void netlist_base_t::start()
 	m_mainclock = get_single_device<NETLIB_NAME(mainclock)>("mainclock");
 	m_solver = get_single_device<NETLIB_NAME(solver)>("solver");
 	m_gnd = get_single_device<NETLIB_NAME(gnd)>("gnd");
+	m_params = get_single_device<NETLIB_NAME(netlistparams)>("parameter");
 
-	/* make sure the solver is started first! */
+	/* make sure the solver and parameters are started first! */
 
 	if (m_solver != NULL)
 		m_solver->start_dev();
+
+	if (m_params != NULL)
+	{
+		m_params->start_dev();
+	}
+
+	m_use_deactivate = (m_params->m_use_deactivate.Value() ? true : false);
 
 	NL_VERBOSE_OUT(("Initializing devices ...\n"));
 	for (netlist_device_t * const * entry = m_devices.first(); entry != NULL; entry = m_devices.next(entry))
 	{
 		netlist_device_t *dev = *entry;
-		if (dev != m_solver)
+		if (dev != m_solver && dev != m_params)
 			dev->start_dev();
 	}
 
@@ -285,9 +293,9 @@ ATTR_HOT ATTR_ALIGN void netlist_base_t::process_queue(const netlist_time &delta
 	{
 		while ( (m_time < m_stop) && (m_queue.is_not_empty()))
 		{
-			const netlist_queue_t::entry_t *e = m_queue.pop();
-			m_time = e->exec_time();
-			e->object()->update_devs();
+			const netlist_queue_t::entry_t e = *m_queue.pop();
+			m_time = e.exec_time();
+			e.object()->update_devs();
 
 			add_to_stat(m_perf_out_processed, 1);
 		}
@@ -310,9 +318,9 @@ ATTR_HOT ATTR_ALIGN void netlist_base_t::process_queue(const netlist_time &delta
 					NETLIB_NAME(mainclock)::mc_update(mc_net);
 				}
 
-				const netlist_queue_t::entry_t *e = m_queue.pop();
-				m_time = e->exec_time();
-				e->object()->update_devs();
+				const netlist_queue_t::entry_t e = *m_queue.pop();
+				m_time = e.exec_time();
+				e.object()->update_devs();
 
 			} else {
 				m_time = mc_time;
@@ -378,7 +386,11 @@ ATTR_COLD void netlist_core_device_t::init(netlist_base_t &anetlist, const pstri
 
 #if USE_PMFDELEGATES
 	void (netlist_core_device_t::* pFunc)() = &netlist_core_device_t::update;
+#if NO_USE_PMFCONVERSION
+	static_update = pFunc;
+#else
 	static_update = reinterpret_cast<net_update_delegate>((this->*pFunc));
+#endif
 #endif
 
 }
@@ -395,7 +407,7 @@ ATTR_COLD void netlist_core_device_t::start_dev()
 	start();
 }
 
-ATTR_HOT ATTR_ALIGN const netlist_sig_t netlist_core_device_t::INPLOGIC_PASSIVE(netlist_logic_input_t &inp)
+ATTR_HOT ATTR_ALIGN netlist_sig_t netlist_core_device_t::INPLOGIC_PASSIVE(netlist_logic_input_t &inp)
 {
 	if (inp.state() != netlist_input_t::STATE_INP_PASSIVE)
 		return inp.Q();
@@ -551,6 +563,11 @@ ATTR_HOT void netlist_net_t::inc_active(netlist_core_terminal_t &term)
 	m_list_active.insert(term);
 	if (m_active == 1)
 	{
+		if (netlist().use_deactivate())
+		{
+			railterminal().netdev().inc_active();
+			//m_cur_Q = m_new_Q;
+		}
 		if (m_in_queue == 0)
 		{
 			if (m_time > netlist().time())
@@ -564,14 +581,8 @@ ATTR_HOT void netlist_net_t::inc_active(netlist_core_terminal_t &term)
 				m_in_queue = 2;
 			}
 		}
-		else
-		{
-			if (netlist().use_deactivate())
-			{
-				railterminal().netdev().inc_active();
-				m_cur_Q = m_new_Q;
-			}
-		}
+		//else if (netlist().use_deactivate())
+		//	m_cur_Q = m_new_Q;
 	}
 }
 
@@ -624,27 +635,27 @@ ATTR_HOT /*ATTR_ALIGN*/ inline void netlist_net_t::update_devs()
 	//assert(m_num_cons != 0);
 	nl_assert(this->isRailNet());
 
-	static const UINT32 masks[4] = { 1, 5, 3, 1 };
+	const int masks[4] = { 1, 5, 3, 1 };
 	const UINT32 mask = masks[ (m_cur_Q  << 1) | m_new_Q ];
-	netlist_core_terminal_t *p = m_list_active.first();
 
 	m_in_queue = 2; /* mark as taken ... */
 	m_cur_Q = m_new_Q;
+
+	netlist_core_terminal_t *p = m_list_active.first();
 
 #if 0
 	switch (m_active)
 	{
 	case 2:
-		update_dev(p, mask);
+		p->update_dev(mask);
 		p = m_list_active.next(p);
-		if (p == NULL) break;
 	case 1:
-		update_dev(p, mask);
+		p->update_dev(mask);
 		break;
 	default:
 		while (p != NULL)
 		{
-			update_dev(p, mask);
+			p->update_dev(mask);
 			p = m_list_active.next(p);
 		}
 		break;
@@ -652,7 +663,6 @@ ATTR_HOT /*ATTR_ALIGN*/ inline void netlist_net_t::update_devs()
 #else
 	while (p != NULL)
 	{
-		//update_dev(p, mask);
 		p->update_dev(mask);
 		p = m_list_active.next(p);
 	}
@@ -928,7 +938,8 @@ ATTR_COLD netlist_analog_output_t::netlist_analog_output_t()
 
 ATTR_COLD void netlist_analog_output_t::initial(const nl_double val)
 {
-	net().as_analog().m_cur_Analog = val * 0.99;
+	// FIXME: Really necessary?
+	net().as_analog().m_cur_Analog = val * NL_FCONST(0.99);
 }
 
 // ----------------------------------------------------------------------------------------
@@ -997,7 +1008,7 @@ ATTR_COLD nl_double netlist_param_model_t::model_value(const pstring &entity, co
 		if (pequal < 0)
 			netlist().error("parameter %s misformat in model %s temp %s\n", entity.cstr(), Value().cstr(), tmp.cstr());
 		tmp = tmp.substr(pequal+1);
-		nl_double factor = 1.0;
+		nl_double factor = NL_FCONST(1.0);
 		switch (*(tmp.right(1).cstr()))
 		{
 			case 'm': factor = 1e-3; break;
@@ -1008,12 +1019,15 @@ ATTR_COLD nl_double netlist_param_model_t::model_value(const pstring &entity, co
 			case 'a': factor = 1e-18; break;
 
 		}
-		if (factor != 1.0)
+		if (factor != NL_FCONST(1.0))
 			tmp = tmp.left(tmp.len() - 1);
-		return atof(tmp.cstr()) * factor;
+		return (nl_double) atof(tmp.cstr()) * factor;
 	}
 	else
+	{
+		netlist().log("Entity %s not found in model %s\n", entity.cstr(), tmp.cstr());
 		return defval;
+	}
 }
 
 

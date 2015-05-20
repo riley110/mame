@@ -1,5 +1,5 @@
-// license:?
-// copyright-holders:Angelo Salese, Phil Bennett
+// license:BSD-3-Clause
+// copyright-holders:Angelo Salese, Philip Bennett
 
 // dgPIX 'VRender 2 Beta Rev4' hardware
 // MEDIAGX CPU + 3dFX VooDoo chipset
