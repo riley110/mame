@@ -100,22 +100,22 @@
 	</software>
 
 <!--
-	<software name="">
-		<description>Basic09</description>
-		<year>198?</year>
-		<publisher></publisher>
+    <software name="">
+        <description>Basic09</description>
+        <year>198?</year>
+        <publisher></publisher>
 
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="368640">
-				<rom name="basic09 (os-9 basic09).dsk" size="368640" crc="26714380" sha1="9794d685c5e724da36dc6394d5d61db4ccb723c1" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="basic09 (basic09).dsk" size="161280" crc="5a9a4c35" sha1="d46a7e08125a48230f2ada854c315dc900e1f9a9" offset="0" />
-			</dataarea>
-		</part>
-	</software>
+        <part name="flop1" interface="floppy_5_25">
+            <dataarea name="flop" size="368640">
+                <rom name="basic09 (os-9 basic09).dsk" size="368640" crc="26714380" sha1="9794d685c5e724da36dc6394d5d61db4ccb723c1" offset="0" />
+            </dataarea>
+        </part>
+        <part name="flop2" interface="floppy_5_25">
+            <dataarea name="flop" size="161280">
+                <rom name="basic09 (basic09).dsk" size="161280" crc="5a9a4c35" sha1="d46a7e08125a48230f2ada854c315dc900e1f9a9" offset="0" />
+            </dataarea>
+        </part>
+    </software>
 -->
 
 	<software name="bbsbord">
@@ -303,7 +303,7 @@
 		<description>CoCo III Max (Fake)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		
+
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="cocomax (side 3).dsk" size="161280" crc="58bd45b4" sha1="cb6549c52ed326c15d892b7b6a34defb51d7e514" offset="0" />
@@ -2796,17 +2796,17 @@
 	</software>
 
 <!--
-	<software name="alcatraz" supported="no">
-		<description>Alcatraz (Bad)</description>
-		<year>198?</year>
-		<publisher>Spectral Associates</publisher>
+    <software name="alcatraz" supported="no">
+        <description>Alcatraz (Bad)</description>
+        <year>198?</year>
+        <publisher>Spectral Associates</publisher>
 
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="alcatraz (spectral assosciates).dsk" size="161280" crc="b32656b2" sha1="ac33ee7604350b37d75a64e28a96b802c42b6a40" offset="0" status="baddump" />
-			</dataarea>
-		</part>
-	</software>
+        <part name="flop1" interface="floppy_5_25">
+            <dataarea name="flop" size="161280">
+                <rom name="alcatraz (spectral assosciates).dsk" size="161280" crc="b32656b2" sha1="ac33ee7604350b37d75a64e28a96b802c42b6a40" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+    </software>
 -->
 
 	<software name="alcatrz2">
@@ -3212,17 +3212,17 @@
 	</software>
 
 <!--
-	<software name="">
-		<description>Ausquiz</description>
-		<year>198?</year>
-		<publisher></publisher>
+    <software name="">
+        <description>Ausquiz</description>
+        <year>198?</year>
+        <publisher></publisher>
 
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="441616">
-				<rom name="ausquiz (tandy australia).dsk" size="441616" crc="d869af61" sha1="a527323cd853454e32948253c9f0dd0c3458611a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
+        <part name="flop1" interface="floppy_5_25">
+            <dataarea name="flop" size="441616">
+                <rom name="ausquiz (tandy australia).dsk" size="441616" crc="d869af61" sha1="a527323cd853454e32948253c9f0dd0c3458611a" offset="0" />
+            </dataarea>
+        </part>
+    </software>
 -->
 
 	<software name="avenger">
@@ -3859,7 +3859,7 @@
 	<software name="brewmstr">
 		<description>Brew Master</description>
 		<year>1984</year>
-		<publisher>Tom Mix Software	</publisher>
+		<publisher>Tom Mix Software </publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -3872,7 +3872,7 @@
 	<software name="brewmstra" cloneof="brewmstr">
 		<description>Brew Master (Alt)</description>
 		<year>1984</year>
-		<publisher>Tom Mix Software	</publisher>
+		<publisher>Tom Mix Software </publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -4182,17 +4182,17 @@
 	</software>
 
 <!--
-	<software name="candycob" cloneof="candyco">
-		<description>Candy Co (Cracked, Bad)</description>
-		<year>1984</year>
-		<publisher>Intracolor Corp.</publisher>
+    <software name="candycob" cloneof="candyco">
+        <description>Candy Co (Cracked, Bad)</description>
+        <year>1984</year>
+        <publisher>Intracolor Corp.</publisher>
 
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="candy co (intra color) (alt 1).dsk" size="161280" crc="e3f4dabf" sha1="254a94864d51068dea1292b1b09fd807e0dfae82" offset="0" />
-			</dataarea>
-		</part>
-	</software>
+        <part name="flop1" interface="floppy_5_25">
+            <dataarea name="flop" size="161280">
+                <rom name="candy co (intra color) (alt 1).dsk" size="161280" crc="e3f4dabf" sha1="254a94864d51068dea1292b1b09fd807e0dfae82" offset="0" />
+            </dataarea>
+        </part>
+    </software>
 -->
 
 	<software name="cclimber">
@@ -4605,17 +4605,17 @@
 	</software>
 
 <!--
-	<software name="chessdb" cloneof="chessd" supported="no">
-		<description>ChesSD (Bad?)</description>
-		<year>1984</year>
-		<publisher>Software Dynamics</publisher>
+    <software name="chessdb" cloneof="chessd" supported="no">
+        <description>ChesSD (Bad?)</description>
+        <year>1984</year>
+        <publisher>Software Dynamics</publisher>
 
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="chessd (binary) (coco 2 only) (decb) (114ag_02).dsk" size="161280" crc="8120699a" sha1="fc67b527f9ac65f4032d41bab361ab284dc5a17f" offset="0" />
-			</dataarea>
-		</part>
-	</software>
+        <part name="flop1" interface="floppy_5_25">
+            <dataarea name="flop" size="161280">
+                <rom name="chessd (binary) (coco 2 only) (decb) (114ag_02).dsk" size="161280" crc="8120699a" sha1="fc67b527f9ac65f4032d41bab361ab284dc5a17f" offset="0" />
+            </dataarea>
+        </part>
+    </software>
 -->
 
 	<software name="cclimberf" cloneof="cclimber">
@@ -4932,29 +4932,29 @@
 	</software>
 
 <!-- DOES NOT WORK WITH FLOPPY INTERFACE - USE CASSETTE VERSION
-	<software name="cococlue" supported="no">
-		<description>Color Computer Clue (v4.0.1)</description>
-		<year>1990</year>
-		<publisher>LDG Free Software</publisher>
+    <software name="cococlue" supported="no">
+        <description>Color Computer Clue (v4.0.1)</description>
+        <year>1990</year>
+        <publisher>LDG Free Software</publisher>
 
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="color computer clue (ldg free software).dsk" size="161280" crc="612cef4b" sha1="7422a8cdb113de674ce19137614d6262ec60226a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
+        <part name="flop1" interface="floppy_5_25">
+            <dataarea name="flop" size="161280">
+                <rom name="color computer clue (ldg free software).dsk" size="161280" crc="612cef4b" sha1="7422a8cdb113de674ce19137614d6262ec60226a" offset="0" />
+            </dataarea>
+        </part>
+    </software>
 
-	<software name="cococluea" cloneof="cococlue" supported="no">
-		<description>Color Computer Clue (v4.0.1, Alt)</description>
-		<year>1990</year>
-		<publisher>LDG Free Software</publisher>
+    <software name="cococluea" cloneof="cococlue" supported="no">
+        <description>Color Computer Clue (v4.0.1, Alt)</description>
+        <year>1990</year>
+        <publisher>LDG Free Software</publisher>
 
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="clue (ldg free software).dsk" size="161280" crc="caca1576" sha1="2f39cdae5a42562cdbc8b25f7d6b3b3945e416cf" offset="0" />
-			</dataarea>
-		</part>
-	</software>
+        <part name="flop1" interface="floppy_5_25">
+            <dataarea name="flop" size="161280">
+                <rom name="clue (ldg free software).dsk" size="161280" crc="caca1576" sha1="2f39cdae5a42562cdbc8b25f7d6b3b3945e416cf" offset="0" />
+            </dataarea>
+        </part>
+    </software>
 -->
 
 	<software name="cubes">
@@ -5594,22 +5594,22 @@
 	</software>
 
 <!-- TODO - compare with the other disks
-	<software name="">
-		<description>CoCo Graphic Designer images</description>
-		<year>198?</year>
-		<publisher></publisher>
+    <software name="">
+        <description>CoCo Graphic Designer images</description>
+        <year>198?</year>
+        <publisher></publisher>
 
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco graphic designer images (use cgd from zebra systems, inc. to view) (decb) (084ap_01).dsk" size="161280" crc="fe4cc907" sha1="1433f76e81b3f3231a5d9bcdaa0818aeec383138" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco graphic designer images (use cgd from zebra systems, inc. to view) (decb) (084ap_02).dsk" size="161280" crc="e180ab9c" sha1="506db9cd28f371748b7b3fd984ed6fb307d5f532" offset="0" />
-			</dataarea>
-		</part>
-	</software>
+        <part name="flop1" interface="floppy_5_25">
+            <dataarea name="flop" size="161280">
+                <rom name="coco graphic designer images (use cgd from zebra systems, inc. to view) (decb) (084ap_01).dsk" size="161280" crc="fe4cc907" sha1="1433f76e81b3f3231a5d9bcdaa0818aeec383138" offset="0" />
+            </dataarea>
+        </part>
+        <part name="flop2" interface="floppy_5_25">
+            <dataarea name="flop" size="161280">
+                <rom name="coco graphic designer images (use cgd from zebra systems, inc. to view) (decb) (084ap_02).dsk" size="161280" crc="e180ab9c" sha1="506db9cd28f371748b7b3fd984ed6fb307d5f532" offset="0" />
+            </dataarea>
+        </part>
+    </software>
 -->
 
 	<software name="softdoc1">
@@ -5681,17 +5681,17 @@
 	</software>
 
 <!--
-	<software name="">
-		<description>CoCo Zone</description>
-		<year>198?</year>
-		<publisher></publisher>
+    <software name="">
+        <description>CoCo Zone</description>
+        <year>198?</year>
+        <publisher></publisher>
 
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="coco zone (adventure has errors) (basic) (decb) (110ag_01).dsk" size="161280" crc="b70332ff" sha1="83b1c876b5a6b32c5c5ee916f651b2b472f89f8a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
+        <part name="flop1" interface="floppy_5_25">
+            <dataarea name="flop" size="161280">
+                <rom name="coco zone (adventure has errors) (basic) (decb) (110ag_01).dsk" size="161280" crc="b70332ff" sha1="83b1c876b5a6b32c5c5ee916f651b2b472f89f8a" offset="0" />
+            </dataarea>
+        </part>
+    </software>
 -->
 
 	<software name="colorama">

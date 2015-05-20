@@ -18,7 +18,7 @@ Compiled by K1W1 and Cowering (from GoodCoCo), split and cleaned up by Riley110.
 - Dragon Fire
 - JDOS v1.23    overdumped, trim to 8K works fine
 - Spectaculator proper dump is 8K
- 
+
 * Notes:
 Mindroll, Robocop and Predator all have banking.
 (see https://archive.org/stream/rainbowmagazine-1990-06/The_Rainbow_Magazine_06_1990#page/n59/mode/1up
@@ -42,19 +42,19 @@ Mindroll selects based on detecting CoCo1/2 or 3
 	</software>
 
 <!--
-	<software name="alphazoo">
-	    <description>Alphabet Zoo</description>
-	    <year>1984</year>
-	    <publisher>Tandy</publisher>
-	    <info name="developer" value="Spinnaker" />
-	    <info name="serial" value="26-3170" />
+    <software name="alphazoo">
+        <description>Alphabet Zoo</description>
+        <year>1984</year>
+        <publisher>Tandy</publisher>
+        <info name="developer" value="Spinnaker" />
+        <info name="serial" value="26-3170" />
 
-	    <part name="cart" interface="coco_cart">
-	        <dataarea name="rom" size="16384">
-	            <rom name="26-3170.bin" size="16384" crc="dae0e23d" sha1="f27b97b81eccd0314f71894cbd2e0aed7ccab525" offset="0" />
-	        </dataarea>
-	    </part>
-	</software>
+        <part name="cart" interface="coco_cart">
+            <dataarea name="rom" size="16384">
+                <rom name="26-3170.bin" size="16384" crc="dae0e23d" sha1="f27b97b81eccd0314f71894cbd2e0aed7ccab525" offset="0" />
+            </dataarea>
+        </part>
+    </software>
 -->
 
 	<software name="androne">
