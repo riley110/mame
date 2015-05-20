@@ -300,8 +300,72 @@
 		<publisher>Colorware</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Program Disk"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco max iii (paint-graphics editor) (run boot) (decb) (076aa_01).dsk" size="161280" crc="d489efa3" sha1="17acd8f7423dc73a7c4c5c3ec33e46a0645c9beb" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Work Disk"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco max iii (coco 3) (coco max iii work disk).dsk" size="161280" crc="03fa7207" sha1="09bb5ae09ea722a719fd9c52cc8adbb8a46aa587" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cocomax3a" cloneof="cocomax3">
+		<description>CoCo Max III (v3.5, Alt)</description>
+		<year>1987</year>
+		<publisher>Colorware</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Program Disk"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco max iii (coco 3) (coco max iii v3.5) (hi-res adapter).dsk" size="161280" crc="2c51c14f" sha1="60e98dfe102295468c7b7176b56b9e819dd3edaf" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Work Disk"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco max iii (coco 3) (coco max iii work disk).dsk" size="161280" crc="03fa7207" sha1="09bb5ae09ea722a719fd9c52cc8adbb8a46aa587" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cocomax3b" cloneof="cocomax3">
+		<description>CoCo Max III (v3.5, Alt 2)</description>
+		<year>1987</year>
+		<publisher>Colorware</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Program Disk"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco max iii (coco 3) (coco max iii hi-res adapter driver).dsk" size="161280" crc="e28ac291" sha1="f71df5178070b22c4168aa6a0cc6f7d5b855065d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Work Disk"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco max iii (coco 3) (coco max iii work disk).dsk" size="161280" crc="03fa7207" sha1="09bb5ae09ea722a719fd9c52cc8adbb8a46aa587" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cocomax3c" cloneof="cocomax3">
+		<description>CoCo Max III (v3.5, Alt 3)</description>
+		<year>1987</year>
+		<publisher>Colorware</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Program Disk"/>
+			<dataarea name="flop" size="161280">
+				<rom name="cocomax iii (coco 3) (sysb1).dsk" size="161280" crc="e54ff923" sha1="a57bddb7422b1cc614cbc27549bfb4b48f44441f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Work Disk"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco max iii (coco 3) (coco max iii work disk).dsk" size="161280" crc="03fa7207" sha1="09bb5ae09ea722a719fd9c52cc8adbb8a46aa587" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -312,8 +376,15 @@
 		<publisher>Colorware</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Program Disk"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco max iii (paint-graphics editor) (decb) (075aa_01).dsk" size="161280" crc="2d415b00" sha1="654f6310f3195662f3a1cd2b7268131276807a5e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Work Disk"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco max iii (coco 3) (coco max iii work disk).dsk" size="161280" crc="03fa7207" sha1="09bb5ae09ea722a719fd9c52cc8adbb8a46aa587" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -324,8 +395,155 @@
 		<publisher>Colorware</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Program Disk"/>
 			<dataarea name="flop" size="161280">
 				<rom name="coco max iii (paint-graphics editor) (decb) (088aa_01).dsk" size="161280" crc="ad4b35cb" sha1="0da22f244c558521970fcb854f36e8019e8d7b6c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Work Disk"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco max iii (coco 3) (coco max iii work disk).dsk" size="161280" crc="03fa7207" sha1="09bb5ae09ea722a719fd9c52cc8adbb8a46aa587" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cocomax3_31b" cloneof="cocomax3">
+		<description>CoCo Max III (v3.1, Alt 2)</description>
+		<year>1987</year>
+		<publisher>Colorware</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Program Disk"/>
+			<dataarea name="flop" size="161280">
+				<rom name="cocomax iii (coco 3) (512).dsk" size="161280" crc="f9c90748" sha1="61fa9dfa888d6382b77127de5d5835d9041e53af" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Work Disk"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco max iii (coco 3) (coco max iii work disk).dsk" size="161280" crc="03fa7207" sha1="09bb5ae09ea722a719fd9c52cc8adbb8a46aa587" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cgdp">
+		<description>CoCo Graphics Designer Plus</description>
+		<year>1988</year>
+		<publisher>Zebra Systems Inc.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco graphics designer plus (zebra systems).dsk" size="161280" crc="f76d6038" sha1="43b22305fbbe3224ae96b2e803a0536829d41e4d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="midipro">
+		<description>CoCo MIDI Pro (v1.29)</description>
+		<year>1990</year>
+		<publisher>Musicware</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco midi pro (coco 3) (coco midi pro).dsk" size="161280" crc="2608a96d" sha1="4f6a753b19597beebaa7aa8aa78eaa369beb3110" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cocotrk">
+		<description>CoCo-Tracker 6809</description>
+		<year>19??</year>
+		<publisher>Sock Master</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker (coco 3) (mod6309).dsk" size="161280" crc="d433dd16" sha1="7bff7dbfaf36c6444902861d1c642e01287e98bf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cocotrk63" cloneof="cocotrk">
+		<description>CoCo-Tracker 6309</description>
+		<year>19??</year>
+		<publisher>Sock Master</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker (coco 3) (mod6809).dsk" size="161280" crc="3c33887d" sha1="6c9c7f5a0587ba0b101fcb3684f31a3b933dec77" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- DOS to boot -->
+	<software name="cocoart">
+		<description>Color Computer Artist (v01.00.00)</description>
+		<year>1987</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color computer artist (coco 3).dsk" size="161280" crc="761a4160" sha1="2b3ef08abc62f571fed31c953c7e6045b275687a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="colorfog">
+		<description>Color FOG</description>
+		<year>2004</year>
+		<publisher>Strangiato Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color fog (coco 3).dsk" size="161280" crc="7a3f1e6a" sha1="aa10712609e2eb3d03f7b96d78a6d37754febfcd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cfoggen" cloneof="colorfog">
+		<description>Color FOG Generator (v1.0)</description>
+		<year>2004</year>
+		<publisher>Robert Emery</publisher>
+
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="184320">
+				<rom name="color fog (coco 3) (genr8fog).dsk" size="184320" crc="b8e5eb3a" sha1="797df7ac88dffaa4970d1345ed360ff8eb2b1e33" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="colormax">
+		<description>Color Max 3 (v1.1)</description>
+		<year>1987</year>
+		<publisher>Computize Inc.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color max (coco 3) (clrmx).dsk" size="161280" crc="cba16d29" sha1="66216eb0e46ecd9af296355c6e5b82c651a61dbc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="colmaxd">
+		<description>Color Max Deluxe</description>
+		<year>1987</year>
+		<publisher>Computize Inc.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color max deluxe (computize) (coco 3) (clrmaxd).dsk" size="161280" crc="731ee297" sha1="9264dd3108abf97eeb98d7cfe0a336c67911e536" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="schematc">
+		<description>Color Schematic Creator (v1.0)</description>
+		<year>1988</year>
+		<publisher>Prakash Mishra</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color schematic creator (coco 3).dsk" size="161280" crc="c6054c99" sha1="8b8b102720eb9e265b4f8391413a5399b9b4ceec" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -368,6 +586,18 @@
 		</part>
 	</software>
 
+	<software name="newspapr">
+		<description>The "Newspaper"</description>
+		<year>1987</year>
+		<publisher>Spectrum Projects</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco newsroom (spectrum projects) (coco 3) (newsroom).dsk" size="161280" crc="1e8b79b5" sha1="22c0bba6291c4481d43362df9d725eb07e878182" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- Requires Window Master -->
 	<software name="patwmstr">
 		<description>Patch Window Master?</description>
@@ -389,6 +619,20 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="cer-comp software (makewm).dsk" size="161280" crc="2a7f36fa" sha1="d915ed545ffa681b9916c6fd26d7ef1a89c3ac90" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Compilations (Applications) -->
+
+	<software name="cventutl">
+		<description>ColorVenture Utilities</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="colorventure utilities (coco 3).dsk" size="161280" crc="284d6f72" sha1="773e758dba47559b4d87228978bd6bf185b2ce5e" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -415,6 +659,32 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="coco 3 games (bash, malcom, roller, shanghai, thexder, warp3d) (decb) (159ag_02).dsk" size="161280" crc="2040e903" sha1="a5f7db52c330e20ea4c1ea096ff1090b6ad90493" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Games include CoCo 3 specific palettes, so they belong in this list -->
+	<software name="c3patch1">
+		<description>CoCo Games Patched for Coco 3 Disk 1</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco games patched for coco 3 (side 1).dsk" size="161280" crc="4f4a281e" sha1="375cfa9f756a817894b29d9aaab6daa4d2eddb8a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Games include CoCo 3 specific palettes, so they belong in this list -->
+	<software name="c3patch2">
+		<description>CoCo Games Patched for Coco 3 Disk 2</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco games patched for coco 3 (side 2).dsk" size="161280" crc="ff6857a1" sha1="29e2494e47342da7bc1813ad7fd5973b37988884" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -489,6 +759,30 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="cc3 demo (coco 3).dsk" size="161280" crc="b2e508ab" sha1="9ed1c8577af9308be18332ca15e47686455113aa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cocomax3d" cloneof="cocomax3">
+		<description>Coco Max III Demo</description>
+		<year>198?</year>
+		<publisher>Colorware</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco max iii (coco 3) (coco mac iii demo).dsk" size="161280" crc="bf43d9fc" sha1="a97eb0eee3f5e5190ea73384ad389dec4c6a43ea" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cocomax3da" cloneof="cocomax3">
+		<description>Coco Max III Demo (Alt)</description>
+		<year>198?</year>
+		<publisher>Colorware</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="cocomax 3 (coco 3) (new) (demo).dsk" size="161280" crc="d66fbc08" sha1="64913ad996e833e5abef2169e72a9853b3e547d0" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2311,7 +2605,7 @@ They will be added later on as this software list matures.
 		</part>
 	</software>
 
-	<software name="c3solita">
+	<software name="c3solit1">
 		<description>CoCo 3 Solitaire</description>
 		<year>1996</year>
 		<publisher>Paul Shoemaker</publisher>
@@ -2319,6 +2613,18 @@ They will be added later on as this software list matures.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="coco 3 solitaire (paul shoemaker) (coco 3).dsk" size="161280" crc="36d7d1db" sha1="b00fdf51c0d2b262123cd35a4cdd5629078d4491" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="c3solit2">
+		<description>CoCo-III Solitaire</description>
+		<year>198?</year>
+		<publisher>George Quellhorst</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-iii solitaire (coco 3).dsk" size="161280" crc="a62a97fd" sha1="c513d7ed2c9bf83ccb63f03b5264fb208d8be832" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2394,6 +2700,380 @@ They will be added later on as this software list matures.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="carmen 1 (os-9 games).dsk" size="161280" crc="7ed72e56" sha1="2f0f5c1d6be8f83a3da266cfc26179c72c4c6736" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- MODs for use with CoCo-Tracker -->
+
+	<software name="mod007">
+		<description>Coco-Tracker Mods - 007</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (007).dsk" size="161280" crc="3980f8ba" sha1="08b15368726ba07571570aead88e5216d3bca280" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modaces">
+		<description>Coco-Tracker Mods - ACESHIGH</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (aceshigh).dsk" size="161280" crc="ed99574d" sha1="f0acae5784124af423422365e1ddc6ae8ba540cd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modawlf">
+		<description>Coco-Tracker Mods - AIRWOLF</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (airwolf).dsk" size="161280" crc="69190668" sha1="8d9bf5070ce873f02eda4caf67fe67eba5f959f9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modaxelf">
+		<description>Coco-Tracker Mods - AXELF</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (axelf).dsk" size="161280" crc="9660985e" sha1="e03de6441621bb8aaffe95ef92b4d3c412aa55cd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modblood">
+		<description>Coco-Tracker Mods - BLOODTHI</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (bloodthi).dsk" size="161280" crc="0c786620" sha1="13477abed9a4aa7cd38f19ba3284bafcc6400b3c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modbreat">
+		<description>Coco-Tracker Mods - BREATH</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (breath).dsk" size="161280" crc="b4061360" sha1="2c274b40643dc0f552271e164d3ca611f3180b3a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modclamp">
+		<description>Coco-Tracker Mods - CLAMPTON</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (clampton).dsk" size="161280" crc="60be9566" sha1="903ffb99b0a4d01be7bf799c6c9ed5c0f83b53ab" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modcomea">
+		<description>Coco-Tracker Mods - COMEASUR</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (comeasur).dsk" size="161280" crc="e66db12b" sha1="b096de87bbff4777765d6d8fe46d2c319e73b73f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modcount">
+		<description>Coco-Tracker Mods - COUNTDOW</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (countdow).dsk" size="161280" crc="821d60a3" sha1="ac94e7a177ac4f0b94be07e6fe3e2477763672bc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="moddaley">
+		<description>Coco-Tracker Mods - DALEY</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (daley).dsk" size="161280" crc="101411d3" sha1="c7c4694d1acb86fc6af71e678a0953891bb11574" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modfloat">
+		<description>Coco-Tracker Mods - FLOATING</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (floating).dsk" size="161280" crc="04eeba51" sha1="47b74cc7c714c9e96b79f9338989dc15068dd81a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modfugue">
+		<description>Coco-Tracker Mods - FUGUE</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (fugue).dsk" size="161280" crc="245eb2d0" sha1="7abfa6d9df7024f7fd1ea2f39187967a3cff81c0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modfyc">
+		<description>Coco-Tracker Mods - FYC</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (fyc).dsk" size="161280" crc="e1edd288" sha1="96e5ce639ae5299b155445deb81239ffb6d0fee7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modgaunt">
+		<description>Coco-Tracker Mods - GAUNTLET</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (gauntlet).dsk" size="161280" crc="075150dc" sha1="0013985d5dacd823011f0efb5db15a723e802aa6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modidoit">
+		<description>Coco-Tracker Mods - IDOIT4U</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (idoit4u).dsk" size="161280" crc="a4df2483" sha1="a796e871474a949844208b841d7e772a4ee7e5af" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modjinbe">
+		<description>Coco-Tracker Mods - JINBELS</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (jinbels).dsk" size="161280" crc="5eb045bf" sha1="2bc46db5691c6449c99343032258e434b71286e2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modlandh">
+		<description>Coco-Tracker Mods - LANDHO</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (landho).dsk" size="161280" crc="d6a43156" sha1="9d40a789fc5ea2f6165110abae31b616330ff09b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modmidni">
+		<description>Coco-Tracker Mods - MIDNIGHT</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (midnight).dsk" size="161280" crc="02707f5b" sha1="9e189cd2b495edef1df32982b6cca8ade380d707" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modmrbig">
+		<description>Coco-Tracker Mods - MRBIG</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (mrbig).dsk" size="161280" crc="7cf59e1b" sha1="e8d8a2b8db7804658c595c5fbdf06b0b866384dd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modnir">
+		<description>Coco-Tracker Mods - NIR</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (nir).dsk" size="161280" crc="f6c26bd9" sha1="cdb4290e456b304d6089f4231ffc58272e6c90ea" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modnovem">
+		<description>Coco-Tracker Mods - NOVEMBER</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (november).dsk" size="161280" crc="cb940021" sha1="538585caa9ca7434c5fecea8086fa815eb47c2a7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modohyea">
+		<description>Coco-Tracker Mods - OHYEAH</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (ohyeah).dsk" size="161280" crc="0aec2759" sha1="c06138d4cc78f32304673e4dc42b028244e1eb72" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modok">
+		<description>Coco-Tracker Mods - OK</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (ok).dsk" size="161280" crc="2516715f" sha1="39bc2fb49a658c14bf8bc6410c58a7bd652e1538" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modorion">
+		<description>Coco-Tracker Mods - ORION1</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (orion1).dsk" size="161280" crc="030cc936" sha1="727bfedbccecd2cd8daa1efd2df15987d73679cf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modsahar">
+		<description>Coco-Tracker Mods - SAHARA</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (sahara).dsk" size="161280" crc="011d66f2" sha1="23cd6032a58f56cfe1c65cdaf8caa162db63cd06" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modsmoke">
+		<description>Coco-Tracker Mods - SMOKE</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (smoke).dsk" size="161280" crc="acfa178c" sha1="4a1afe4fb3b2f6a70a17539f536c4097539cbfc7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modsqiii">
+		<description>Coco-Tracker Mods - SQIII</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (sqiii).dsk" size="161280" crc="b36a5263" sha1="e7648e53bc66d66b0405f42bf08d26baf8c62b62" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modstair">
+		<description>Coco-Tracker Mods - STAIRWAY</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (stairway).dsk" size="161280" crc="565369cf" sha1="e8a30567a09223334e0471b74add714dc89e0832" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modt2the">
+		<description>Coco-Tracker Mods - T2 THEME</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (t2 theme).dsk" size="161280" crc="0556a4f5" sha1="7627cde2b002f3e75e82eae5b7ffa2ef29f2947c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modtocat">
+		<description>Coco-Tracker Mods - TOCATTA</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (tocatta).dsk" size="161280" crc="d7240087" sha1="db5d2fc5171b10f919327b7b4bb9aed9b97a4aff" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modu2">
+		<description>Coco-Tracker Mods - U2</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-tracker mods (u2).dsk" size="161280" crc="3840e84d" sha1="03214c735350c2d32ecc9b735f3738bed1c8b102" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2505,6 +3185,18 @@ They will be added later on as this software list matures.
 		</part>
 	</software>
 
+	<software name="unkc9">
+		<description>Unknown Compilation 9</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="cocosid (coco 3).dsk" size="161280" crc="1d47678c" sha1="6d55e3eb22ee536dc8f74c57bae655a4360ec660" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 <!-- Misc. files -->
 
 	<software name="agitoc">
@@ -2515,6 +3207,114 @@ They will be added later on as this software list matures.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="agi (tocfiles) (tochd).dsk" size="161280" crc="dec86545" sha1="a0c745afa9cc9da4a4fd1b06c73aca228d9ad63b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmax3dat">
+		<description>Coco Max III Data</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="cocomax 3 (coco 3) (new) (data).dsk" size="161280" crc="3d345ad5" sha1="ff9703b64db464caf71d6359f831cbba386c03ff" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmax3f1">
+		<description>Coco Max III Fonts Disk 1</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco max iii (coco 3) (coco max iii fonts disk 1).dsk" size="161280" crc="b47bd8a1" sha1="a77caf78e0e43544f293df21cf043295a6e9c9e9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmax3f2">
+		<description>Coco Max III Fonts Disk 2</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco max iii (coco 3) (coco max iii fonts disk 2).dsk" size="161280" crc="50bc4c56" sha1="3d702a4f5bcbf3a649704a423514e0fccae0bb82" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmax3f3">
+		<description>Coco Max III Fonts Disk 3</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco max iii (coco 3) (coco max iii fonts disk 3).dsk" size="161280" crc="c7b48812" sha1="408b424523911c2ee01fa9abcab5569dd971cb56" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmax3f4">
+		<description>Coco Max III Fonts Disk 4</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco max iii (coco 3) (coco max iii fonts disk 4).dsk" size="161280" crc="70f2615b" sha1="1545c5051bac2290700a854d1ab12c9a31e2e9e6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cfogpics">
+		<description>Color FOG Pictures</description>
+		<year>200?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color fog (coco 3) (pictures).dsk" size="161280" crc="27730eaf" sha1="3f2323872eb412f7bf0484d3de035d962405e910" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmaxfont">
+		<description>Color Max Fonts</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color max deluxe (computize) (coco 3) (cmfonts).dsk" size="161280" crc="dff648af" sha1="bd3585e52ee284aa69acf1309013f15f5e01bfe3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmaxpics">
+		<description>Color Max Pictures</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color max deluxe (computize) (coco 3) (pictures).dsk" size="161280" crc="77f2c91e" sha1="438464c86879e1c47ee879940d997cefce8ba0fa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmax3dat">
+		<description>Unknown Color Max 3 Data</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color max (coco 3) (clrmx512).dsk" size="161280" crc="bc56bc4f" sha1="d872f3b5c99e6899dca2652cc32a095ecce52b87" offset="0" />
 			</dataarea>
 		</part>
 	</software>

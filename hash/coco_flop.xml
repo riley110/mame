@@ -191,6 +191,30 @@
 		</part>
 	</software>
 
+	<software name="cf83a" cloneof="cf83">
+		<description>CF83 Forth (v1.01, Alt)</description>
+		<year>1993</year>
+		<publisher>BDS Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color forth 83 (cf83) (original) (decb) (012aa_01).dsk" size="161280" crc="3654ac06" sha1="06d4d23c7aded7e5cdf6589d45161278efc2a151" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cf83demo" cloneof="cf83">
+		<description>CF83 Forth (Demo)</description>
+		<year>1991</year>
+		<publisher>BDS Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color forth 83 demo (cf83demo) (original) (decb) (011aa_01).dsk" size="161280" crc="98ffea47" sha1="186efdf03f54c966ebf99387578d8133bb989b42" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="cheaptlk">
 		<description>CheapTalker</description>
 		<year>1983</year>
@@ -263,6 +287,42 @@
 		</part>
 	</software>
 
+	<software name="cocodrgn">
+		<description>CocoDragon</description>
+		<year>2003</year>
+		<publisher>Stephen J. Woolham</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="cocodragon.dsk" size="161280" crc="9a9b3726" sha1="7973975ddd380e84a561bd022c5383cc584a20aa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cmax3fak" cloneof="cocomax2">
+		<description>CoCo III Max (Fake)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="cocomax (side 3).dsk" size="161280" crc="58bd45b4" sha1="cb6549c52ed326c15d892b7b6a34defb51d7e514" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cocomax2">
+		<description>CoCo Max II (v51016)</description>
+		<year>1985</year>
+		<publisher>ColorWare</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco max ii (colorware) (coco max ii) (original).dsk" size="161280" crc="c636cd17" sha1="83b7d09ec056856cf5d82d1aa1dc8bf7fe318309" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="compac">
 		<description>Color COMPAC (v01.00.00)</description>
 		<year>1983</year>
@@ -271,6 +331,54 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="compac (tandy).dsk" size="161280" crc="6538970f" sha1="6ca28ab1ba13bb7c0bdb49e305ee49e46c11a5e6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="colforth">
+		<description>ColorForth</description>
+		<year>1982</year>
+		<publisher>Armadillo International Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color forth (decb) (052aa_02).dsk" size="161280" crc="0905654e" sha1="80b49fe2450346b3619a75a212b2601ece2f560a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="profile">
+		<description>Color Profile (v01.02.00)</description>
+		<year>1982</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color profile (tandy).dsk" size="161280" crc="4b6cbd4a" sha1="c3d02c69c574602b0f49079fc9cf688b914bbd04" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tapecopy">
+		<description>Color Tape Copy</description>
+		<year>1982</year>
+		<publisher>Big Systems Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color tape copy (copyany) (big systems software).dsk" size="161280" crc="e8016126" sha1="1be57e7d040b20f6f4aabe12e1f59614e89dffe5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="edtasm">
+		<description>Disk EDTASM+ (v01.00.00)</description>
+		<year>1983</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color disk edtasm (tandy).dsk" size="161280" crc="9e44225b" sha1="36def54fdadcf7d1c2ccfa414eed6092a751a4b8" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -284,6 +392,30 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="color flex v5.0.2 (decb) (188au_02).dsk" size="161280" crc="1925db54" sha1="f6a996d53f3423fbee2cdefedf643d4610bcbd88" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="krakomx2" cloneof="cocomax2">
+		<description>Krakomax II (Hack of CoCo Max II)</description>
+		<year>198?</year>
+		<publisher>The Cracker</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco max ii (colorware) (coco max ii) (krakomax).dsk" size="161280" crc="f9c2e363" sha1="98838ce58bf54261fb83c9613dbd551e20200612" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="krakomx2a" cloneof="cocomax2">
+		<description>Krakomax II (Hack of CoCo Max II) (Alt)</description>
+		<year>198?</year>
+		<publisher>The Cracker</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="cocomax (side 1).dsk" size="161280" crc="699366d3" sha1="aaa2438a667df25c23e4decfc58977340af5b420" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1740,6 +1872,18 @@
 		</part>
 	</software>
 
+	<software name="cocosid">
+		<description>CocoSID</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="cocosid (coco 2).dsk" size="161280" crc="1fcef7a5" sha1="19069521faa97b1252307ce7c16182a5ff5f30d3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 <!-- Diskmags (Chromasette) -->
 
 	<software name="cset8107">
@@ -2224,6 +2368,20 @@
 		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="224016">
 				<rom name="best of hot-coco issue 85 (side 2).dsk" size="224016" crc="7e126536" sha1="deb9accf2e65703fc0c5422af146b53fa4221d58" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Educational -->
+
+	<software name="cmath">
+		<description>Color Math (v1.0.0)</description>
+		<year>1983</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color math (tandy).dsk" size="161280" crc="97332272" sha1="ac05c86a5ad2c184d7cac89f3af6f16d2877b540" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -4217,18 +4375,6 @@
 		</part>
 	</software>
 
-	<software name="catrpil3">
-		<description>Caterpillar (Soft Sector Marketing Inc.)</description>
-		<year>1983</year>
-		<publisher>Soft Sector Marketing Inc.</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="caterpiller (soft sector marketing inc).dsk" size="161280" crc="3a631606" sha1="20b992690003ed4c2ee8508c62a97deaa93c3279" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="catrcave">
 		<description>Caterpillar Cave</description>
 		<year>1983</year>
@@ -4581,21 +4727,7 @@
 		</part>
 	</software>
 
-<!---
-	<software name="">
-		<description>Clue</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="161280">
-				<rom name="clue (ldg free software).dsk" size="161280" crc="caca1576" sha1="2f39cdae5a42562cdbc8b25f7d6b3b3945e416cf" offset="0" />
-			</dataarea>
-		</part>
-	</software>
--->
-
-	<software name="clue2">
+	<software name="clue">
 		<description>Clue (T&amp;D Software)</description>
 		<year>198?</year>
 		<publisher>T&amp;D Software</publisher>
@@ -4631,6 +4763,78 @@
 		</part>
 	</software>
 
+	<software name="minigolf">
+		<description>CoCo Miniature Golf</description>
+		<year>198?</year>
+		<publisher>The Rainbow</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco miniature golf (the rainbow).dsk" size="161280" crc="8bfc6855" sha1="8de48c22af42c87784813e68feb4e7963ea3d3d5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cocopin">
+		<description>CoCo Pinball</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco pinball.dsk" size="161280" crc="26dcd5c7" sha1="213b96a00c6f129b0f4dd754ba6a28c473b2f17c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="solitair">
+		<description>CoCo Solitaire</description>
+		<year>19??</year>
+		<publisher>Paul Shoemaker</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco solitaire (paul shoemaker).dsk" size="161280" crc="c7239264" sha1="e98a5f827e9e61d22671bbabf0157a577041a875" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cocoterr">
+		<description>CoCo-Terrestrial</description>
+		<year>198?</year>
+		<publisher>T&amp;D Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco-terrestrial (et) (t&amp;d software).dsk" size="161280" crc="50634425" sha1="592a1a0f1e631d2b64bb2f4243f5c309ed5ca911" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cocozone">
+		<description>CoCo Zone</description>
+		<year>198?</year>
+		<publisher>The Rainbow</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco zone (the rainbow).dsk" size="161280" crc="34000da5" sha1="d953e3f13da1d52000e5adad1364230824e0602b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cocozonea" cloneof="cocozone">
+		<description>CoCo Zone (Alt)</description>
+		<year>198?</year>
+		<publisher>The Rainbow</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="coco zone.dsk" size="161280" crc="68304da0" sha1="64f04b95d68b1bc9ec912d32de447f1c17a6a13c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="baseball">
 		<description>Color Baseball</description>
 		<year>1982</year>
@@ -4643,6 +4847,78 @@
 		</part>
 	</software>
 
+	<software name="cbjack">
+		<description>Color Blackjack</description>
+		<year>198?</year>
+		<publisher>The Rainbow</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color blackjack (the rainbow).dsk" size="161280" crc="7f7ec6e7" sha1="77186dbcc2188128e6b6fd1d10d0d8d1170f6a4b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="caract">
+		<description>Color Car Action</description>
+		<year>1984</year>
+		<publisher>Tom Mix Software?</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color car action (novasoft).dsk" size="161280" crc="39fc1fec" sha1="96e2d0752b8d39fc9f92c5d1f5e33004a5fdcf1e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="caracta" cloneof="caract">
+		<description>Color Car Action (Alt)</description>
+		<year>1984</year>
+		<publisher>Tom Mix Software?</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color car action (tom mix) (coco1,2 to 3 color ports).dsk" size="161280" crc="afbe2d04" sha1="7c70f77b1cc13474a418b988c36a33d40b0cef1e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="caractb" cloneof="caract">
+		<description>Color Car Action (Alt 2)</description>
+		<year>1984</year>
+		<publisher>Tom Mix Software?</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color car action (tom mix) (coco1,2&amp;3).dsk" size="161280" crc="82ebaac3" sha1="9c21dcd25cbc4ccaa5467cdac0bd237ae604cc87" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="catrpil3">
+		<description>Color Caterpillar</description>
+		<year>1983</year>
+		<publisher>Soft Sector Marketing Inc.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="caterpiller (soft sector marketing inc).dsk" size="161280" crc="3a631606" sha1="20b992690003ed4c2ee8508c62a97deaa93c3279" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="catrpil3a" cloneof="catrpil3">
+		<description>Color Caterpillar (Alt)</description>
+		<year>1983</year>
+		<publisher>Soft Sector Marketing Inc.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color caterpillar (soft sector marketing inc.).dsk" size="161280" crc="80fc4b56" sha1="3b68f1a6ee5519ee62b84c95ef9586d16d4c93f9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="champglf">
 		<description>Color Computer Championship Golf</description>
 		<year>198?</year>
@@ -4651,6 +4927,297 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="coco championship golf (the rainbow).dsk" size="161280" crc="ce60100e" sha1="1f464d2a826e2d080297495ac6e16b078b9dcffe" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- DOES NOT WORK WITH FLOPPY INTERFACE - USE CASSETTE VERSION
+	<software name="cococlue" supported="no">
+		<description>Color Computer Clue (v4.0.1)</description>
+		<year>1990</year>
+		<publisher>LDG Free Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color computer clue (ldg free software).dsk" size="161280" crc="612cef4b" sha1="7422a8cdb113de674ce19137614d6262ec60226a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cococluea" cloneof="cococlue" supported="no">
+		<description>Color Computer Clue (v4.0.1, Alt)</description>
+		<year>1990</year>
+		<publisher>LDG Free Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="clue (ldg free software).dsk" size="161280" crc="caca1576" sha1="2f39cdae5a42562cdbc8b25f7d6b3b3945e416cf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+-->
+
+	<software name="cubes">
+		<description>Color Cubes</description>
+		<year>1981</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color cubes (tandy).dsk" size="161280" crc="407d6fd4" sha1="d0a6e18b8213b84f8c60f51a64db070020315e04" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="colordot">
+		<description>Color Dot</description>
+		<year>198?</year>
+		<publisher>CLOAD Publications Inc.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color dot (cload publications inc.).dsk" size="161280" crc="ed6751f0" sha1="81bf7c8e6952f94ff3f907acec67dd6574016061" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cgolf3">
+		<description>Color Golf III (1991)</description>
+		<year>1991</year>
+		<publisher>Tom Mix Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color golf iii (tom mix software).dsk" size="161280" crc="039c38a2" sha1="e7cfab9e76140aa09eb611193d370ece820bd91d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cgolf3a" cloneof="cgolf3">
+		<description>Color Golf III (1983)</description>
+		<year>1983</year>
+		<publisher>Tom Mix Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color golf (tandy australia).dsk" size="161280" crc="5a7594c2" sha1="85ad0acf644b3dc96710f19f8f3fd371a098c20d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cinvader">
+		<description>Color Invaders</description>
+		<year>1982</year>
+		<publisher>Computerware</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color invaders (computerware).dsk" size="161280" crc="8963c946" sha1="f340da4f570d4c12f577b2456da6d3d7a391fb08" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="meteroid">
+		<description>Color Meteoroids (v1.6)</description>
+		<year>1981</year>
+		<publisher>Spectral Associates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color meteroids (spectral associates).dsk" size="161280" crc="9fc23e7a" sha1="6c4691918c28af401b3ab9a6328c6da12565f64c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="meteroida" cloneof="meteroid">
+		<description>Color Meteoroids (Can, v1.6)</description>
+		<year>198?</year>
+		<publisher>Dogwood Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color meteoroids.dsk" size="161280" crc="08c62e65" sha1="b8946b79f6c91ef09edeee161b054bf9eb8322ba" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="colpanic">
+		<description>Color Panic</description>
+		<year>1983</year>
+		<publisher>Spectral Associates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color panic (spectral associates).dsk" size="161280" crc="c1742b62" sha1="773ce7ce228cb99d68ee9ff83d5b87975a640778" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="colpanica" cloneof="colpanic">
+		<description>Color Panic (Alt)</description>
+		<year>1983</year>
+		<publisher>Spectral Associates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color panic (spectral assosciates)[a].dsk" size="161280" crc="3470db8d" sha1="7dc9b9312409fc5e989dcee3374146e09412df8d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="colpede">
+		<description>Color Pede</description>
+		<year>198?</year>
+		<publisher>Intra Color</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color pede (intra color).dsk" size="161280" crc="8ef97752" sha1="2ae45b7a5a24d193c9b45e26ef12fee9f750630c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="planinv">
+		<description>Color Planet Invasion</description>
+		<year>1982</year>
+		<publisher>Spectral Associates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color planet invasion (spectral associates).dsk" size="161280" crc="28a8904a" sha1="6631f5e48945b2805a573b53d84123ed8de1858b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpoker">
+		<description>Color Poker</description>
+		<year>198?</year>
+		<publisher>The Rainbow</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color poker (the rainbow).dsk" size="161280" crc="be8b9bd6" sha1="ecb0ef4b33c04287db48de2f47133e8f7d6298f5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crobobat">
+		<description>Color Robot Battle</description>
+		<year>1981</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color robot battle (tandy).dsk" size="161280" crc="597b28aa" sha1="28a1c8919705de9cf5de2ef990566625c6fa2454" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Corrupted title screen, but game works -->
+	<software name="crobobata" cloneof="crobobat">
+		<description>Color Robot Battle (Alt)</description>
+		<year>1981</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color robot battle.dsk (image producers inc).dsk" size="161280" crc="b49bf514" sha1="6879f80f944dd70c8c8390b70c64ac74196e5d55" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cspacein">
+		<description>Color Space Invaders (v1.6)</description>
+		<year>1981</year>
+		<publisher>Spectral Associates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color space invaders (spectral associates).dsk" size="161280" crc="16e84881" sha1="46dcc18f731b6a58384d9eb0b7e5a324f908acf2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cspaceina" cloneof="cspacein">
+		<description>Color Space Invaders (v1.6, Alt)</description>
+		<year>1981</year>
+		<publisher>Spectral Associates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color space invaders (spectral assosciates) (space pack).dsk" size="161280" crc="10cfa4f2" sha1="73d54af155b1e273fe1b91fb8e210e986870d2b6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cspacein15" cloneof="cspacein">
+		<description>Color Space Invaders (v1.5)</description>
+		<year>1981</year>
+		<publisher>Spectral Associates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color space invaders v1.5 (spectral assosciates) (space pack).dsk" size="161280" crc="b0efdc82" sha1="f6b19704524cc829de43374e400c646ceb71f1dd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cspacein14" cloneof="cspacein">
+		<description>Color Space Invaders (v1.4)</description>
+		<year>1981</year>
+		<publisher>Spectral Associates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color space invaders (pmode 4) (spectral associates).dsk" size="161280" crc="ceae4c39" sha1="846ce35d0f4af52f8a8b4fff84540df5a520621f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="coltrek">
+		<description>Color-Trek</description>
+		<year>198?</year>
+		<publisher>Spectral Associates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color-trek (spectral associates).dsk" size="161280" crc="b0723de6" sha1="13e8f9b5cdd1c5ec7a353edbc96505474db8815d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="coltreka" cloneof="coltrek">
+		<description>Color-Trek (Alt)</description>
+		<year>198?</year>
+		<publisher>Spectral Associates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color-trek (spectral assosciates) (treasury pack).dsk" size="161280" crc="be4e7256" sha1="d88d31fb90a046908a45ce8a4b888ff5e695ab53" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="coltrekb" cloneof="coltrek">
+		<description>Color-Trek (Alt 2)</description>
+		<year>198?</year>
+		<publisher>Spectral Associates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color-trek (spectral assosciates) (treasury pack) (alt 1).dsk" size="161280" crc="a71be411" sha1="7ec06a7ea41c6a88c142b887e9da6121220e1b56" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="colorzap">
+		<description>Color Zap (v1.0)</description>
+		<year>1982</year>
+		<publisher>Spectral Associates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color zap (spectral assosciates) (space pack).dsk" size="161280" crc="bddcc809" sha1="730f57122643575a9731e5342543ba39bc8c867f" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -4699,6 +5266,18 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="alpha ii (basic graphic adventures).dsk" size="161280" crc="9d2067ca" sha1="eb0c484242bbc8b4b150531ef979e407d18a8a3a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="robotbat">
+		<description>Robot Battle (v1.0)</description>
+		<year>1982</year>
+		<publisher>Spectral Associates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="color robot battle (spectral assosciates).dsk" size="161280" crc="46f32f47" sha1="82e06e1dd1b5f392580adf1f7409565a47766e52" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -4809,6 +5388,18 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="ctalk-iii, autoterms (decb) (062aa_02).dsk" size="161280" crc="8305282c" sha1="bd54bb68ccfe46aa3757ac449908d16b8281a9b6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unkc8">
+		<description>Unknown Compilation 8</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="cocozone (falsoft inc) (rainbow marketing).dsk" size="161280" crc="43eadc67" sha1="ffb666ac753981b8eec3ff9afe3285dce08f9180" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -5069,6 +5660,26 @@
 		</part>
 	</software>
 
+	<!-- More info needed! -->
+	<software name="cocotime">
+		<description>CoCo Times Issue 85-86</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco times issue 85-86 (side a).dsk" size="161280" crc="05b46cbc" sha1="543a409bc1aa75319c23a055d77c86489582a995" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="161280">
+				<rom name="coco times issue 85-86 (side b).dsk" size="161280" crc="2e39d451" sha1="6bce4d2304f56f6cf8ecb7ed7c5eddeb514dcd0a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 <!--
 	<software name="">
 		<description>CoCo Zone</description>
@@ -5082,5 +5693,17 @@
 		</part>
 	</software>
 -->
+
+	<software name="colorama">
+		<description>ColorRama BBS Part 3</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="colorrama bbs part 3 (decb) (049aa_01).dsk" size="161280" crc="b5ed7bb2" sha1="fa8606713f64c064abfad2b52225a125164ba464" offset="0" />
+			</dataarea>
+		</part>
+	</software>
 
 </softwarelist>
