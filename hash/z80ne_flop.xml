@@ -3,6 +3,18 @@
 <!-- All comments copy+pasted from z80ne.com, with formatting changes for readability -->
 <softwarelist name="z80ne_flop" description="Nuova Elettronica Z80NE floppies">
 
+	<software name="basic55k">
+		<description>5.5K Floppy BASIC</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="10194">
+				<rom name="basic55k.imd" size="10194" crc="17ae9bbc" sha1="55154ad633e35426e9f927eef8f97aca68c34e67" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="nedos">
 		<description>NE-DOS (v1.5) + BASIC (v2.1) (Original Disk)</description>
 		<year>198?</year>
@@ -35,18 +47,6 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="261136">
 				<rom name="basic21+dos15.dmk" size="261136" crc="27f2e040" sha1="e039a3a798dba61d04ecde637477a9e49ed735b0" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="basic55k">
-		<description>5.5K Floppy BASIC</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="10194">
-				<rom name="basic55k.imd" size="10194" crc="17ae9bbc" sha1="55154ad633e35426e9f927eef8f97aca68c34e67" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -87,6 +87,32 @@
 		</part>
 	</software>
 
+	<software name="sone">
+		<description>SONE (floppy disk)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="261136">
+				<rom name="sone_fd.dmk" size="261136" crc="51153fbb" sha1="c034af693da1c6670fecc8747ce3d47078abd04f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sonehd" cloneof="sone">
+		<description>SONE (hard disk)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="261136">
+				<rom name="sone_hd.dmk" size="261136" crc="da9b67d8" sha1="553c2b25e8f47fc46046fff98a16661e346a9246" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Applications/Utilities -->
+
 	<software name="convflp">
 		<description>convflp</description>
 		<year>198?</year>
@@ -110,6 +136,54 @@
 			</dataarea>
 		</part>
 	</software>
+
+	<software name="editasm">
+		<description>Editor Assember/Disassembler</description>
+		<year>198?</year>
+		<publisher>Nuova Elettronica</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="261136">
+				<rom name="edtasm.dmk" size="261136" crc="341bb98c" sha1="8b79e443154d0167d613571bb350a1cf359cde58" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	An interesting note from z80ne.com:
+
+	This version has been recovered by undeleting some files that were on the original
+	NE-DOS version G.1.0 floppy. Probably, Nuova Elettronica tecnicians saved that files
+	on the master floppy to be distributed, but they deleted them because that files weren't
+	part of the distribution (infact editor assembler/disassembler was sold separately).
+	Anyway, due to the fact that they are recovered files, I cannot guarantee that they are
+	the official version and not a test version instead. However, from the tests I made, they
+	work perfectly.
+
+	From the NE-DOS version G.1.0 original floppy I was able to undelete and recover the
+	following programs, that I saved on this floppy: Editor assembler, Disassembler, Super
+	Debug, Disk Print and LmOffset.
+	The Super Debug has been announced on the magazine, but it was never released.
+	It's clear that it's a preliminar version, because it's clearly a bad preliminar translation
+	in italian of an english program, probably SuperZap that was made for Tandy TRS-80.
+	The Disk Print is a program never named on the magazine, that dumps floppy
+	contents on video or printer.
+	Then the LmOffset program, also never named on the magazine, it's the same
+	program that can be found on the Tandy TRS-80
+	-->
+	<software name="editasmg">
+		<description>Editor Assember/Disassembler G</description>
+		<year>198?</year>
+		<publisher>Nuova Elettronica</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="261136">
+				<rom name="edtasmg.dmk" size="261136" crc="79c323ba" sha1="daf53abe6ca7a1c0b3ba422fc72b3febbaef8c72" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Unknown Disks -->
 
 	<!--
 	- basic 2.1 + ne-dos 1.5    operating system and basic
@@ -658,76 +732,6 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="101956">
 				<rom name="disk29.imd" size="101956" crc="adbb2347" sha1="d730181ed1320128e8508f776b54e66870a3cc73" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="editasm">
-		<description>Editor Assember/Disassembler</description>
-		<year>198?</year>
-		<publisher>Nuova Elettronica</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="261136">
-				<rom name="edtasm.dmk" size="261136" crc="341bb98c" sha1="8b79e443154d0167d613571bb350a1cf359cde58" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<!--
-	An interesting note from z80ne.com:
-
-	This version has been recovered by undeleting some files that were on the original
-	NE-DOS version G.1.0 floppy. Probably, Nuova Elettronica tecnicians saved that files
-	on the master floppy to be distributed, but they deleted them because that files weren't
-	part of the distribution (infact editor assembler/disassembler was sold separately).
-	Anyway, due to the fact that they are recovered files, I cannot guarantee that they are
-	the official version and not a test version instead. However, from the tests I made, they
-	work perfectly.
-
-	From the NE-DOS version G.1.0 original floppy I was able to undelete and recover the
-	following programs, that I saved on this floppy: Editor assembler, Disassembler, Super
-	Debug, Disk Print and LmOffset.
-	The Super Debug has been announced on the magazine, but it was never released.
-	It's clear that it's a preliminar version, because it's clearly a bad preliminar translation
-	in italian of an english program, probably SuperZap that was made for Tandy TRS-80.
-	The Disk Print is a program never named on the magazine, that dumps floppy
-	contents on video or printer.
-	Then the LmOffset program, also never named on the magazine, it's the same
-	program that can be found on the Tandy TRS-80
-	-->
-	<software name="editasmg">
-		<description>Editor Assember/Disassembler G</description>
-		<year>198?</year>
-		<publisher>Nuova Elettronica</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="261136">
-				<rom name="edtasmg.dmk" size="261136" crc="79c323ba" sha1="daf53abe6ca7a1c0b3ba422fc72b3febbaef8c72" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="sone">
-		<description>SONE (floppy disk)</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="261136">
-				<rom name="sone_fd.dmk" size="261136" crc="51153fbb" sha1="c034af693da1c6670fecc8747ce3d47078abd04f" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="sonehd" cloneof="sone">
-		<description>SONE (hard disk)</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="261136">
-				<rom name="sone_hd.dmk" size="261136" crc="da9b67d8" sha1="553c2b25e8f47fc46046fff98a16661e346a9246" offset="0" />
 			</dataarea>
 		</part>
 	</software>
