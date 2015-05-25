@@ -743,14 +743,39 @@
 		</part>
 	</software>
 
-	<software name="pcpm">
-		<description>Personal CP/M (v1.0A)</description>
+	<software name="cobol">
+		<description>Nevada COBOL (Rev 2.1)</description>
 		<year>198?</year>
+		<publisher>Sharp - Ellis Computing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="655360">
+				<rom name="sharpcobol.2d" size="655360" crc="898021bb" sha1="c30c5cb99acf6aadba2b7b431935d8446916c673" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pcpm">
+		<description>Personal CP/M &amp; WordMaster (v1.0A)</description>
+		<year>1985</year>
 		<publisher>Sharp</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="697008">
 				<rom name="personal cpm.d88" size="697008" crc="e33d828d" sha1="ca3b4a9950da0b79755389ced851a57b618e9f65" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Are there any differences aside from being in raw format? -->
+	<software name="pcpma" cloneof="pcpm">
+		<description>Personal CP/M &amp; WordMaster (v1.0A, Alt)</description>
+		<year>1985</year>
+		<publisher>Sharp</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="655360">
+				<rom name="sharpcpm.2d" size="655360" crc="9b3f1d46" sha1="7b901031873437a8824e15ac2577f175b8bffdd4" offset="0" />
 			</dataarea>
 		</part>
 	</software>
