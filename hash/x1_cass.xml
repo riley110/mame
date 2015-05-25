@@ -9,6 +9,8 @@ Titles, publishers and release dates taken from:
 -->
 <softwarelist name="x1_cass" description="Sharp X1 cassettes">
 
+<!-- Games -->
+
 	<software name="15puzzle">
 		<description>15 Puzzle</description>
 		<year>1983?</year>
@@ -19,6 +21,20 @@ Titles, publishers and release dates taken from:
 		<part name="cass" interface="x1_cass">
 			<dataarea name="side1" size="90592">
 				<rom name="15puzzle.tap" size="90592" crc="60b81543" sha1="fba956a2a12b0f529f9aad80ba8da9c9842e9a98" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="198x">
+		<description>198x</description>
+		<year>1983?</year>
+		<publisher>Kiya Overseas Industry</publisher>
+		<info name="usage" value="In BASIC, type LOAD and then RUN"/>
+		<sharedfeat name="requirement" value="x1_flop:tapbas"/>
+
+		<part name="cass" interface="x1_cass">
+			<dataarea name="cass" size="158720">
+				<rom name="198x (1983)(kiya overseas industry)[basic, load+run].tap" size="158720" crc="64e320c4" sha1="d871fb104e4778e5fc9ecd8c6f32d21b0cc4c620" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -59,6 +75,32 @@ Titles, publishers and release dates taken from:
 		<part name="cass" interface="x1_cass">
 			<dataarea name="side1" size="684380">
 				<rom name="3d bomberman.tap" size="684380" crc="1bf0e104" sha1="f5660c81d632babab3268dd4b2d97dbe53f0a0d5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="3dgolf">
+		<description>3D Golf</description>
+		<year>198?</year>
+		<publisher>T&amp;E Soft</publisher>
+
+		<part name="cass" interface="x1_cass">
+			<dataarea name="cass" size="635600">
+				<rom name="3d golf (198x)(t&amp;e soft).tap" size="635600" crc="df54e77a" sha1="79dfe28548577d289a56e0966db55a18a6139634" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="alice">
+		<description>Alice in Wonderland</description>
+		<year>198?</year>
+		<publisher>マイクロキャビン (Micro Cabin)</publisher>
+		<info name="usage" value="In BASIC, type LOAD and then RUN"/>
+		<sharedfeat name="requirement" value="x1_flop:tapbas"/>
+
+		<part name="cass" interface="x1_cass">
+			<dataarea name="cass" size="186522">
+				<rom name="alice in wonderland (198x)(micro cabin)[basic, load+run].tap" size="186522" crc="9ea72137" sha1="9bf28ea5c6c37c5501f1ba637ad40fdfbe5240cc" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -171,6 +213,18 @@ Titles, publishers and release dates taken from:
 		</part>
 	</software>
 
+	<software name="brainbrk">
+		<description>Brain Breaker</description>
+		<year>1985?</year>
+		<publisher>エニックス (Enix)</publisher>
+
+		<part name="cass" interface="x1_cass">
+			<dataarea name="cass" size="283982">
+				<rom name="brain breaker (1985)(enix).tap" size="283982" crc="984a0f15" sha1="e4f5f370812998a9c2e995a55d04778a663c0818" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="buuma">
 		<description>Buuma</description>
 		<year>1985</year>
@@ -202,6 +256,7 @@ Titles, publishers and release dates taken from:
 		<description>Castle Excellent</description>
 		<year>1985?</year>
 		<publisher>アスキー (ASCII)</publisher>
+		<info name="alt_title" value="キャッスル・エクセレント"/>
 
 		<part name="cass" interface="x1_cass">
 			<dataarea name="side1" size="265608">
@@ -296,6 +351,7 @@ Titles, publishers and release dates taken from:
 		<description>Choplifter</description>
 		<year>198?</year>
 		<publisher>Soft Pro International</publisher>
+		<info name="alt_title" value="チョップリフター"/>
 
 		<part name="cass" interface="x1_cass">
 			<dataarea name="side1" size="300004">
@@ -375,6 +431,7 @@ Titles, publishers and release dates taken from:
 		<description>Coron</description>
 		<year>1984?</year>
 		<publisher>ASCII</publisher>
+		<info name="alt_title" value="コロン"/>
 
 		<part name="cass" interface="x1_cass">
 			<dataarea name="side1" size="188744">
@@ -411,10 +468,26 @@ Titles, publishers and release dates taken from:
 		<description>Dai Dassou</description>
 		<year>1985?</year>
 		<publisher>キャリーラボ (Carry Lab)</publisher>
+		<info name="alt_title" value="大脱走"/>
 
 		<part name="cass" interface="x1_cass">
 			<dataarea name="side1" size="232810">
 				<rom name="daidsso.tap" size="232810" crc="1f823ce0" sha1="c6509b2f6d25eaa5be28df3cba5b66ba2f48f608" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="danchits">
+		<description>Danchi Tsuma no Yuwaku</description>
+		<year>1983?</year>
+		<publisher>光栄 (Koei)</publisher>
+		<info name="alt_title" value="団地妻の誘惑"/>
+		<info name="usage" value="In BASIC, type LOAD and then RUN"/>
+		<sharedfeat name="requirement" value="x1_flop:tapbas"/>
+
+		<part name="cass" interface="x1_cass">
+			<dataarea name="cass" size="240004">
+				<rom name="zzz-unk-danchi (198x)(koei).tap" size="240004" crc="ccd863dd" sha1="8952368faf7e592c05d72314c1949496dbf51dd7" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -462,7 +535,7 @@ Titles, publishers and release dates taken from:
 	<software name="diamond">
 		<description>Diamond Adventure</description>
 		<year>198?</year>
-		<publisher>Micro Cabin</publisher>
+		<publisher>マイクロキャビン (Micro Cabin)</publisher>
 		<info name="usage" value="In db-BASIC, type LOAD and then RUN"/>
 		<sharedfeat name="requirement" value="x1_flop:dbbasic"/>
 
@@ -528,10 +601,25 @@ Titles, publishers and release dates taken from:
 		</part>
 	</software>
 
-	<software name="f2">
+	<software name="xpinballa" cloneof="xpinball">
+		<description>Extra Pinball (Alt)</description>
+		<year>1984?</year>
+		<publisher>アスキー (ASCII)</publisher>
+		<info name="usage" value="In BASIC, type LOAD and then RUN"/>
+		<sharedfeat name="requirement" value="x1_flop:tapbas"/>
+
+		<part name="cass" interface="x1_cass">
+			<dataarea name="cass" size="300004">
+				<rom name="extra pinball (1984)(ascii)[a][basic, load+run].tap" size="300004" crc="6198dcc4" sha1="70235d5ea5054906f999294c911d6323f59e7c62" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="f2gp">
 		<description>F2 Grand Prix</description>
-		<year>1984</year>
+		<year>1984?</year>
 		<publisher>Carry Lab</publisher>
+		<info name="alt_title" value="F2グランプリ"/>
 
 		<part name="cass" interface="x1_cass">
 			<dataarea name="side1" size="245537">
@@ -572,6 +660,7 @@ Titles, publishers and release dates taken from:
 		<description>Flappy</description>
 		<year>1983?</year>
 		<publisher>デービーソフト (dB-Soft)</publisher>
+		<info name="alt_title" value="フラッピー"/>
 
 		<part name="cass" interface="x1_cass">
 			<dataarea name="side1" size="300004">
@@ -584,6 +673,7 @@ Titles, publishers and release dates taken from:
 		<description>Flappy (Alt)</description>
 		<year>1983?</year>
 		<publisher>デービーソフト (dB-Soft)</publisher>
+		<info name="alt_title" value="フラッピー"/>
 
 		<part name="cass" interface="x1_cass">
 			<dataarea name="side1" size="300004">
@@ -627,6 +717,30 @@ Titles, publishers and release dates taken from:
 		<part name="cass" interface="x1_cass">
 			<dataarea name="side1" size="240004">
 				<rom name="kitaro.tap" size="240004" crc="e6285c24" sha1="50ee828da97603b2cb936c993006eb388b08cf6b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="golfisla">
+		<description>Golf Island</description>
+		<year>1983?</year>
+		<publisher>テクノソフト (Techno Soft)</publisher>
+
+		<part name="cass" interface="x1_cass">
+			<dataarea name="cass" size="278562">
+				<rom name="golf island (1983)(techno soft).tap" size="278562" crc="f00e178c" sha1="056e050d789964b3ece891933fe7101c6a9ecdef" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="golfislae" cloneof="golfisla">
+		<description>Golf Island Expansion</description>
+		<year>198?</year>
+		<publisher>テクノソフト (Techno Soft)</publisher>
+
+		<part name="cass" interface="x1_cass">
+			<dataarea name="cass" size="123324">
+				<rom name="golf island expansion (198x)(techno soft).tap" size="123324" crc="6b2a8950" sha1="d3d5432fe285c62b1a04425e6ae50d0232922ccc" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -757,6 +871,7 @@ Titles, publishers and release dates taken from:
 		<description>Hover Attack</description>
 		<year>1985?</year>
 		<publisher>コムパック (Compaq)</publisher>
+		<info name="alt_title" value="ホバーアタック"/>
 		<info name="usage" value="In BASIC, type LOAD and then RUN"/>
 		<sharedfeat name="requirement" value="x1_flop:tapbas"/>
 
@@ -771,6 +886,7 @@ Titles, publishers and release dates taken from:
 		<description>Hover Attack (Alt)</description>
 		<year>1985?</year>
 		<publisher>コムパック (Compaq)</publisher>
+		<info name="alt_title" value="ホバーアタック"/>
 		<info name="usage" value="In BASIC, type LOAD and then RUN"/>
 		<sharedfeat name="requirement" value="x1_flop:tapbas"/>
 
@@ -817,6 +933,20 @@ Titles, publishers and release dates taken from:
 		<part name="cass" interface="x1_cass">
 			<dataarea name="side1" size="300004">
 				<rom name="hydlide.tap" size="300004" crc="b53247e3" sha1="f7b52218a75ac189138c7e78fc09c860f5afcff4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hydlidea" cloneof="hydlide">
+		<description>Hydlide (Alt)</description>
+		<year>1985</year>
+		<publisher>T&amp;E Soft</publisher>
+		<info name="release" value="198506xx"/>
+		<info name="alt_title" value="ハイドライド"/>
+
+		<part name="cass" interface="x1_cass">
+			<dataarea name="cass" size="300004">
+				<rom name="hydlide (1985-06)(t&amp;e soft)[a].tap" size="300004" crc="5285d94b" sha1="3ac0bc9324bb98b2eb7d3b7138d84730cd2a4536" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -874,7 +1004,7 @@ Titles, publishers and release dates taken from:
 	<software name="insectwa">
 		<description>Insect-War</description>
 		<year>1983?</year>
-		<publisher>dB-Soft</publisher>
+		<publisher>デービーソフト (dB-Soft)</publisher>
 
 		<part name="cass" interface="x1_cass">
 			<dataarea name="side1" size="313499">
@@ -1042,8 +1172,9 @@ Titles, publishers and release dates taken from:
 
 	<software name="macadam">
 		<description>Macadam</description>
-		<year>1985</year>
-		<publisher>Macadamia Soft?</publisher>
+		<year>1985?</year>
+		<publisher>デービーソフト (dB-Soft)</publisher>
+		<info name="alt_title" value="マカダム"/>
 
 		<part name="cass" interface="x1_cass">
 			<dataarea name="side1" size="1440004">
@@ -1076,6 +1207,18 @@ Titles, publishers and release dates taken from:
 		<part name="cass" interface="x1_cass">
 			<dataarea name="side1" size="846723">
 				<rom name="maharito.tap" size="846723" crc="41723ab2" sha1="e0d7ed99b852de13c5d04c2952cabf620c88a9c7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mahjong">
+		<description>Mahjong</description>
+		<year>1983?</year>
+		<publisher>Unison World Inc.</publisher>
+
+		<part name="cass" interface="x1_cass">
+			<dataarea name="cass" size="209821">
+				<rom name="mahjong (1983)(unison world inc.).tap" size="209821" crc="3efdbb8d" sha1="9d1fe0801ab680dc443e596e0f39a2c44b171777" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1460,6 +1603,19 @@ Titles, publishers and release dates taken from:
 		</part>
 	</software>
 
+	<software name="dragnang">
+		<description>Rukteu Dark Castle - Dragon Angel's Miracle Voyage (Vol. 1)</description>
+		<year>1984?</year>
+		<publisher>エニックス (Enix)</publisher>
+		<info name="alt_title" value="暗黒城 -創造神ギャリアンの復活-"/>
+
+		<part name="cass" interface="x1_cass">
+			<dataarea name="cass" size="897591">
+				<rom name="rukteu dark castle (198x)(enix).tap" size="897591" crc="770d94c5" sha1="e31a3a0b5df860c7d35355d796cd7a14edb20810" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="tomathim" supported="no">
 		<description>Salad no Kuni no Tomato Hime</description>
 		<year>1984?</year>
@@ -1482,6 +1638,19 @@ Titles, publishers and release dates taken from:
 		<part name="cass" interface="x1_cass">
 			<dataarea name="side1" size="3646247">
 				<rom name="tomathima.tap" size="3646247" crc="36c77dfd" sha1="72c2a0eee78ebf213dc218364cba6aa55190007f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tomathimb" cloneof="tomathim" supported="no">
+		<description>Salad no Kuni no Tomato Hime (Alt 2)</description>
+		<year>1984?</year>
+		<publisher>ハドソン (Hudson Soft)</publisher>
+		<info name="alt_title" value="サラダの国のトマト姫"/>
+
+		<part name="cass" interface="x1_cass">
+			<dataarea name="cass" size="3646247">
+				<rom name="salad no kuni no tomato hime (1984)(hudson soft)[a2].tap" size="3646247" crc="f228b22e" sha1="bfcc05fa5a6fdc33cc1e51d97c48e44c77c7e5ee" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1556,13 +1725,26 @@ Titles, publishers and release dates taken from:
 
 	<software name="mephius" supported="no">
 		<description>Star Arthur Densetsu I - Wakusei Mephius</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<year>1983?</year>
+		<publisher>T&amp;E Soft</publisher>
 		<info name="alt_title" value="惑星メフィウス"/>
 
 		<part name="cass" interface="x1_cass">
 			<dataarea name="side1" size="1753088">
 				<rom name="star arthur densetsu - wakusei mephius.tap" size="1753088" crc="f0b5d24b" sha1="551b36eefa433b91eb228be8ebd1b1c4f1013d4a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mephiusa" cloneof="mephius" supported="no">
+		<description>Star Arthur Densetsu I - Wakusei Mephius (Alt)</description>
+		<year>1983?</year>
+		<publisher>T&amp;E Soft</publisher>
+		<info name="alt_title" value="惑星メフィウス"/>
+
+		<part name="cass" interface="x1_cass">
+			<dataarea name="cass" size="1753088">
+				<rom name="star arthur densetsu - wakusei mephius (19xx)(-)[a].tap" size="1753088" crc="ae13d2b7" sha1="67ac703df717d53fe8bb0b7690751cb79cce608e" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1631,7 +1813,7 @@ Titles, publishers and release dates taken from:
 
 	<software name="sgolf2">
 		<description>Super Golf #2</description>
-		<year>19??</year>
+		<year>1982?</year>
 		<publisher>ハドソン (Hudson Soft)</publisher>
 		<info name="usage" value="In BASIC, type LOAD and then RUN"/>
 		<sharedfeat name="requirement" value="x1_flop:tapbas"/>
@@ -1639,6 +1821,20 @@ Titles, publishers and release dates taken from:
 		<part name="cass" interface="x1_cass">
 			<dataarea name="side1" size="180004">
 				<rom name="super golf.tap" size="180004" crc="1193e51d" sha1="374a8d884766a9cac22fb257970459824b6b9d0e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sgolf2a" cloneof="sgolf2">
+		<description>Super Golf #2 (Alt)</description>
+		<year>1982?</year>
+		<publisher>ハドソン (Hudson Soft)</publisher>
+		<info name="usage" value="In BASIC, type LOAD and then RUN"/>
+		<sharedfeat name="requirement" value="x1_flop:tapbas"/>
+
+		<part name="cass" interface="x1_cass">
+			<dataarea name="cass" size="180004">
+				<rom name="super golf 2 (1982)(hudson soft)[a][basic, load+run].tap" size="180004" crc="39db6137" sha1="f879f0fb17c0f6ec3ae6cdf6b168e75dd068320a" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1699,10 +1895,11 @@ Titles, publishers and release dates taken from:
 		</part>
 	</software>
 
-	<software name="tennis">
+	<software name="tennisfr">
 		<description>Tennis Freak</description>
-		<year>198?</year>
-		<publisher>Winky Soft</publisher>
+		<year>1985?</year>
+		<publisher>ウィンキーソフト (Winky Soft)</publisher>
+		<info name="alt_title" value="テニスフリーク"/>
 
 		<part name="cass" interface="x1_cass">
 			<dataarea name="side1" size="313808">
@@ -1737,10 +1934,24 @@ Titles, publishers and release dates taken from:
 		</part>
 	</software>
 
-	<software name="ttunnel">
-		<description>Time Tunnel</description>
-		<year>198?</year>
-		<publisher>Bond Soft</publisher>
+	<software name="timesecra" cloneof="timesecr">
+		<description>Time Secret (Alt)</description>
+		<year>1984?</year>
+		<publisher>ボンドソフト (Bond Soft)</publisher>
+		<info name="alt_title" value="タイムシークレット"/>
+
+		<part name="cass" interface="x1_cass">
+			<dataarea name="cass" size="241422">
+				<rom name="time secret (1984)(bond soft)[a].tap" size="241422" crc="0d98237c" sha1="5bb400ccced634bc10d3f7874d71838aefec0934" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="timetunl">
+		<description>Time Tunnel - Time Secret 2</description>
+		<year>1984?</year>
+		<publisher>ボンドソフト (Bond Soft)</publisher>
+		<info name="alt_title" value="タイムトンネル"/>
 
 		<part name="cass" interface="x1_cass">
 			<dataarea name="side1" size="155382">
@@ -1750,8 +1961,8 @@ Titles, publishers and release dates taken from:
 	</software>
 
 	<software name="tdown">
-		<description>Touch Down</description>
-		<year>19??</year>
+		<description>Touchdown</description>
+		<year>1984?</year>
 		<publisher>ウィンキーソフト (Winky Soft)</publisher>
 		<info name="alt_title" value="タッチダウン"/>
 
@@ -1763,8 +1974,8 @@ Titles, publishers and release dates taken from:
 	</software>
 
 	<software name="tdowna" cloneof="tdown">
-		<description>Touch Down (Alt)</description>
-		<year>19??</year>
+		<description>Touchdown (Alt)</description>
+		<year>1984?</year>
 		<publisher>ウィンキーソフト (Winky Soft)</publisher>
 		<info name="alt_title" value="タッチダウン"/>
 
@@ -1816,6 +2027,19 @@ Titles, publishers and release dates taken from:
 		</part>
 	</software>
 
+	<software name="ultramon">
+		<description>Ultra Monogatari</description>
+		<year>1986?</year>
+		<publisher>ウィンキーソフト (Winky Soft)</publisher>
+		<info name="alt_title" value="ウルトラ物語"/>
+
+		<part name="cass" interface="x1_cass">
+			<dataarea name="cass" size="428309">
+				<rom name="ultra monogatari (198x)(winky soft).tap" size="428309" crc="ebe8c22f" sha1="953736c2d66178db781b2f203b4ba70d6acde645" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="volguard">
 		<description>Volguard</description>
 		<year>19??</year>
@@ -1831,7 +2055,7 @@ Titles, publishers and release dates taken from:
 
 	<software name="wildwest">
 		<description>Wild Western</description>
-		<year>19??</year>
+		<year>1983?</year>
 		<publisher>ニデコム (Nidecom) / タイトー (Taito)</publisher>
 		<info name="alt_title" value="ワイルドウェスタン"/>
 
@@ -1844,13 +2068,26 @@ Titles, publishers and release dates taken from:
 
 	<software name="wildwesta" cloneof="wildwest">
 		<description>Wild Western (Alt)</description>
-		<year>19??</year>
+		<year>1983?</year>
 		<publisher>ニデコム (Nidecom) / タイトー (Taito)</publisher>
 		<info name="alt_title" value="ワイルドウェスタン"/>
 
 		<part name="cass" interface="x1_cass">
 			<dataarea name="side1" size="360004">
 				<rom name="wild western alt.tap" size="360004" crc="09390288" sha1="adcb4ae19919ecc758b62370efc368bce4534d82" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wildwestb" cloneof="wildwest">
+		<description>Wild Western (Alt 2)</description>
+		<year>1983?</year>
+		<publisher>ニデコム (Nidecom) / タイトー (Taito)</publisher>
+		<info name="alt_title" value="ワイルドウェスタン"/>
+
+		<part name="cass" interface="x1_cass">
+			<dataarea name="cass" size="360004">
+				<rom name="wild western (1983)(nidecom)[a2].tap" size="360004" crc="861288d9" sha1="91d67c1ac278a8f2830ea090c559ca35de5ecf7b" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2016,6 +2253,44 @@ Titles, publishers and release dates taken from:
 		<part name="cass" interface="x1_cass">
 			<dataarea name="side1" size="240004">
 				<rom name="zexas.tap" size="240004" crc="940e77b7" sha1="8abc037d37e93e834116513c8e04f3c2b759722f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Applications/Utilities -->
+
+	<software name="basic">
+		<description>BASIC CZ-1Z001 (v1.0A)</description>
+		<year>1983?</year>
+		<publisher>Sharp</publisher>
+
+		<part name="cass" interface="x1_cass">
+			<dataarea name="cass" size="105951">
+				<rom name="basic cz-1z001 v1.0a (1983)(sharp - basic-house).tap" size="105951" crc="f0057f9f" sha1="abf8d1080efaa7a581a8238b3e62990edbba73ec" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dbcompil">
+		<description>dB-Compiler</description>
+		<year>198?</year>
+		<publisher>デービーソフト (dB-Soft)</publisher>
+
+		<part name="cass" interface="x1_cass">
+			<dataarea name="cass" size="240004">
+				<rom name="db-compiler (198x)(db-soft).tap" size="240004" crc="93cb6383" sha1="29ca55702ad95854a3745fb7da5dda5697d1281c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dbibasic">
+		<description>dB-IBASIC</description>
+		<year>1983?</year>
+		<publisher>デービーソフト (dB-Soft)</publisher>
+
+		<part name="cass" interface="x1_cass">
+			<dataarea name="cass" size="180004">
+				<rom name="db-ibasic (1983)(db-soft).tap" size="180004" crc="ecacf525" sha1="da818bb012ebd25a100cdbbe89ab2c19920d2cdd" offset="0" />
 			</dataarea>
 		</part>
 	</software>
