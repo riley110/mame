@@ -12,6 +12,35 @@
 #include "emu.h"
 
 
+// pinout reference
+
+/*
+            ______   ______
+    D9   1 |*     \_/      | 42 D8
+    D10  2 |               | 41 D7
+    D11  3 |               | 40 D6
+  RESET  4 |               | 39 D5
+      T  5 |               | 38 D4
+     K0  6 |               | 37 D3
+     K1  7 |               | 36 D2
+     K2  8 |               | 35 D1
+     K3  9 |               | 34 D0
+     G0 10 |               | 33 Xin
+     G1 11 |     M58846    | 32 Xout
+     G2 12 |               | 31 S7
+     G3 13 |               | 30 S6
+      U 14 |               | 29 S5
+     F0 15 |               | 28 S4
+     F1 16 |               | 27 S3
+     F2 17 |               | 26 S2
+     F3 18 |               | 25 S1
+    INT 19 |               | 24 S0
+  CNVss 20 |               | 23 Vp
+    Vss 21 |_______________| 22 Vdd
+
+*/
+
+
 class melps4_cpu_device : public cpu_device
 {
 public:
@@ -22,6 +51,10 @@ public:
 		, m_data_config("data", ENDIANNESS_LITTLE, 8, datawidth, 0, data)
 		, m_prgwidth(prgwidth)
 		, m_datawidth(datawidth)
+		, m_stack_levels(3)
+		, m_bm_page(14)
+		, m_int_page(12)
+		, m_xami_mask(0xf)
 	{ }
 
 protected:
@@ -34,8 +67,9 @@ protected:
 	virtual UINT64 execute_cycles_to_clocks(UINT64 cycles) const { return (cycles * 6); } // "
 	virtual UINT32 execute_min_cycles() const { return 1; }
 	virtual UINT32 execute_max_cycles() const { return 1; }
-	virtual UINT32 execute_input_lines() const { return 1; }
+	virtual UINT32 execute_input_lines() const { return 3; } // up to 3 (some internal)
 	virtual void execute_run();
+	virtual void execute_one();
 
 	// device_memory_interface overrides
 	virtual const address_space_config *memory_space_config(address_spacenum spacenum = AS_0) const { return(spacenum == AS_PROGRAM) ? &m_program_config : ((spacenum == AS_DATA) ? &m_data_config : NULL); }
@@ -50,29 +84,47 @@ protected:
 	address_space *m_program;
 	address_space *m_data;
 
-	int m_prgwidth;
-	int m_datawidth;
-	int m_prgmask;
-	int m_datamask;
-	
 	int m_icount;
+
+	// fixed settings or mask options
+	int m_prgwidth;         // number of bits and bitmask for ROM/RAM size
+	int m_datawidth;        // "
+	int m_prgmask;          // "
+	int m_datamask;         // "
+
+	UINT8 m_stack_levels;   // 3 levels on MELPS 4, 12 levels on MELPS 41/42
+	UINT8 m_bm_page;        // short BM default page: 14 on '40 to '44, 2 on '45,'46, 0 on '47
+	UINT8 m_int_page;       // interrupt routine page: 12 on '40 to '44, 1 on '45,'46, 2 on '47
+	UINT8 m_xami_mask;      // mask option for XAMI opcode on '40,'41,'45 (0xf for others)
 	
-	UINT16 m_pc;
+	// internal state, misc regs
+	UINT16 m_pc;            // program counter (11 or 10-bit)
 	UINT16 m_prev_pc;
+	UINT16 m_stack[12];     // callstack
 	UINT16 m_op;
+	UINT16 m_prev_op;
+	UINT8 m_bitmask;        // opcode bit argument
 	
-	// registers (unless specified, each is 4-bit)
+	UINT8 m_cps;            // DP,CY or DP',CY' selected
+	bool m_skip;            // skip next opcode
+	UINT8 m_inte;           // interrupt enable flag
+	UINT8 m_intp;           // external interrupt polarity ('40 to '44)
+
+	// work registers (unless specified, each is 4-bit)
 	UINT8 m_a;              // accumulator
 	UINT8 m_b;              // generic
+	UINT8 m_e;              // 8-bit register, hold data for S output
 	UINT8 m_y, m_y2;        // RAM index Y, Y' (Z.XX.YYYY is DP aka Data Pointer)
 	UINT8 m_x, m_x2;        // RAM index X, X', 2-bit
 	UINT8 m_z, m_z2;        // RAM index Z, Z', 1-bit, optional
 	UINT8 m_cy, m_cy2;      // carry flag(s)
-	UINT8 m_e;              // 8-bit register, hold data for S output
 	
-	UINT8 m_cps;            // DP,CY or DP',CY' selected
-	bool m_skip;
-
+	UINT8 m_h;              // A/D converter H or generic
+	UINT8 m_l;              // A/D converter L or generic
+	UINT8 m_c;              // A/D converter counter
+	UINT8 m_v;              // timer control V
+	UINT8 m_w;              // timer control W
+	
 	// misc internal helpers
 	UINT8 ram_r();
 	void ram_w(UINT8 data);

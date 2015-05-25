@@ -79,8 +79,7 @@ ATTR_COLD netlist_matrix_solver_t::netlist_matrix_solver_t(const eSolverType typ
 
 ATTR_COLD netlist_matrix_solver_t::~netlist_matrix_solver_t()
 {
-	for (int i = 0; i < m_inps.count(); i++)
-		global_free(m_inps[i]);
+	m_inps.clear_and_free();
 }
 
 ATTR_COLD void netlist_matrix_solver_t::setup(netlist_analog_net_t::list_t &nets)
@@ -144,7 +143,7 @@ ATTR_COLD void netlist_matrix_solver_t::setup(netlist_analog_net_t::list_t &nets
 
 						if (net_proxy_output == NULL)
 						{
-							net_proxy_output = nl_alloc(netlist_analog_output_t);
+							net_proxy_output = palloc(netlist_analog_output_t);
 							net_proxy_output->init_object(*this, this->name() + "." + pstring::sprintf("m%d", m_inps.count()));
 							m_inps.add(net_proxy_output);
 							net_proxy_output->m_proxied_net = &p->net().as_analog();
@@ -172,7 +171,6 @@ ATTR_HOT void netlist_matrix_solver_t::update_inputs()
 		(*p)->set_Q((*p)->m_proxied_net->m_cur_Analog);
 
 }
-
 
 ATTR_HOT void netlist_matrix_solver_t::update_dynamic()
 {
@@ -320,6 +318,8 @@ NETLIB_START(solver)
 	register_param("LTE", m_lte, 5e-5);                     // diff/timestep
 	register_param("MIN_TIMESTEP", m_min_timestep, 1e-6);   // nl_double timestep resolution
 
+	register_param("LOG_STATS", m_log_stats, 1);   // nl_double timestep resolution
+
 	// internal staff
 
 	register_input("FB_step", m_fb_step);
@@ -339,16 +339,19 @@ NETLIB_UPDATE_PARAM(solver)
 	//m_inc = netlist_time::from_hz(m_freq.Value());
 }
 
-NETLIB_NAME(solver)::~NETLIB_NAME(solver)()
+NETLIB_STOP(solver)
 {
 	for (int i = 0; i < m_mat_solvers.count(); i++)
 		m_mat_solvers[i]->log_stats();
+}
 
+NETLIB_NAME(solver)::~NETLIB_NAME(solver)()
+{
 	netlist_matrix_solver_t * const *e = m_mat_solvers.first();
 	while (e != NULL)
 	{
 		netlist_matrix_solver_t * const *en = m_mat_solvers.next(e);
-		global_free(*e);
+		pfree(*e);
 		e = en;
 	}
 
@@ -406,9 +409,9 @@ template <int m_N, int _storage_N>
 netlist_matrix_solver_t * NETLIB_NAME(solver)::create_solver(int size, const int gs_threshold, const bool use_specific)
 {
 	if (use_specific && m_N == 1)
-		return nl_alloc(netlist_matrix_solver_direct1_t, m_params);
+		return palloc(netlist_matrix_solver_direct1_t, m_params);
 	else if (use_specific && m_N == 2)
-		return nl_alloc(netlist_matrix_solver_direct2_t, m_params);
+		return palloc(netlist_matrix_solver_direct2_t, m_params);
 	else
 	{
 		if (size >= gs_threshold)
@@ -416,18 +419,18 @@ netlist_matrix_solver_t * NETLIB_NAME(solver)::create_solver(int size, const int
 			if (USE_MATRIX_GS)
 			{
 				typedef netlist_matrix_solver_SOR_mat_t<m_N,_storage_N> solver_mat;
-				return nl_alloc(solver_mat, m_params, size);
+				return palloc(solver_mat, m_params, size);
 			}
 			else
 			{
 				typedef netlist_matrix_solver_SOR_t<m_N,_storage_N> solver_GS;
-				return nl_alloc(solver_GS, m_params, size);
+				return palloc(solver_GS, m_params, size);
 			}
 		}
 		else
 		{
 			typedef netlist_matrix_solver_direct_t<m_N,_storage_N> solver_D;
-			return nl_alloc(solver_D, m_params, size);
+			return palloc(solver_D, m_params, size);
 		}
 	}
 }
@@ -458,6 +461,13 @@ ATTR_COLD void NETLIB_NAME(solver)::post_start()
 	{
 		m_params.m_min_timestep = m_params.m_max_timestep;
 	}
+
+	// Override log statistics
+	pstring p = nl_util::environment("NL_STATS");
+	if (p != "")
+		m_params.m_log_stats = (bool) p.as_long();
+	else
+		m_params.m_log_stats = (bool) m_log_stats.Value();
 
 	netlist().log("Scanning net groups ...");
 	// determine net groups

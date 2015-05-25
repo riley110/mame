@@ -10,13 +10,9 @@
 #define NLFACTORY_H_
 
 #include "nl_config.h"
+#include "palloc.h"
 #include "plists.h"
 #include "nl_base.h"
-#if 0
-#include "nl_time.h"
-#include "nl_util.h"
-#include "pstate.h"
-#endif
 #include "pstring.h"
 
 // -----------------------------------------------------------------------------
@@ -59,7 +55,7 @@ public:
 
 	ATTR_COLD netlist_device_t *Create() const
 	{
-		netlist_device_t *r = nl_alloc(C);
+		netlist_device_t *r = palloc(C);
 		//r->init(setup, name);
 		return r;
 	}
@@ -77,7 +73,7 @@ public:
 	ATTR_COLD void register_device(const pstring &name, const pstring &classname,
 			const pstring &def_param)
 	{
-		m_list.add(nl_alloc(net_device_t_factory< _C >, name, classname, def_param));
+		m_list.add(palloc(net_device_t_factory< _C >, name, classname, def_param));
 	}
 
 	ATTR_COLD netlist_device_t *new_device_by_classname(const pstring &classname) const;
