@@ -548,6 +548,18 @@
 		</part>
 	</software>
 
+	<software name="colkey3">
+		<description>Colour Key III</description>
+		<year>1986</year>
+		<publisher>Dave Stampe</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="colour key iii (coco 3).dsk" size="161280" crc="75ce7a26" sha1="61ac6cd34e52fe7d6059ce7bf43aa06be38ece4c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="winbmp">
 		<description>Freeware Windows BMP Reader</description>
 		<year>1996</year>
@@ -783,6 +795,18 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="cocomax 3 (coco 3) (new) (demo).dsk" size="161280" crc="d66fbc08" sha1="64913ad996e833e5abef2169e72a9853b3e547d0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cvox">
+		<description>Cvox Demo</description>
+		<year>198?</year>
+		<publisher>Roger Taylor</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="cvox (coco 3).dsk" size="161280" crc="dc316b14" sha1="b251244f2438a67da458b32164baea0363626137" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2641,6 +2665,171 @@ They will be added later on as this software list matures.
 		</part>
 	</software>
 
+	<!-- DOS to boot -->
+	<software name="colcave">
+		<description>Colossal Cave</description>
+		<year>1991</year>
+		<publisher>CRL</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="colossal cave (crl) (coco 3).dsk" size="161280" crc="dbfe37fe" sha1="19ed5144a6d470b9af7141308635e94ca1676776" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="contras">
+		<description>The Contras</description>
+		<year>1991</year>
+		<publisher>Sundog Systems</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="161280">
+				<rom name="contras, the (coco 3) (side 1).dsk" size="161280" crc="e82568f7" sha1="29a999106f4242433278d88384ddb55670b93b7d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="contras, the (coco 3) (side 2).dsk" size="161280" crc="8c35b73c" sha1="da8478efb31ac57d2ed967a75232b0f5610a50cd" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 3"/>
+			<dataarea name="flop" size="161280">
+				<rom name="contras, the (coco 3) (side 3).dsk" size="161280" crc="274adbbb" sha1="25e3dc4309e82048fab24c970966d2b8f9513936" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="control">
+		<description>The Controllers (v1.0)</description>
+		<year>1987</year>
+		<publisher>Bruce Bell</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="controllers, the (coco 3).dsk" size="161280" crc="38ea27cc" sha1="cd897573a114d99be90dd15d8f4c640eaa49b8d9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="controla" cloneof="control">
+		<description>The Controllers (v1.0, Alt)</description>
+		<year>1987</year>
+		<publisher>Bruce Bell</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="85760">
+				<rom name="control (falsoft inc) (coco3 only).dsk" size="85760" crc="1eab042a" sha1="358b65fcbad0c1b7917530b0e95efc03f049050e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cambush">
+		<description>Cosmic Ambush (Aus, v1.0, Shareware)</description>
+		<year>1992</year>
+		<publisher>Nickolas Marentes</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="cosmic ambush (coco 3).dsk" size="161280" crc="7cf93efc" sha1="47bb42937e34a0f4522a2bf6ab8f304beacb8a75" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cambushf" cloneof="cambush">
+		<description>Cosmic Ambush (Aus, v1.0, Freeware)</description>
+		<year>1992</year>
+		<publisher>Nickolas Marentes</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="cosmic (nick marentas).dsk" size="161280" crc="5f7a69be" sha1="3a1e4f67f9a4de81046aad3cce4dcfec3668dc56" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crazy8">
+		<description>Crazy 8's</description>
+		<year>198?</year>
+		<publisher>Eversoft Games</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="crazy 8's (eversoft games) (coco 3).dsk" size="161280" crc="c13db557" sha1="b9c003f369775af61f7acda69cbba2bbf26c6cc1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crazy8a" cloneof="crazy8">
+		<description>Crazy 8's (Alt)</description>
+		<year>198?</year>
+		<publisher>Eversoft Games</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184320">
+				<rom name="crazy 8's (coco 3).dsk" size="184320" crc="33c581aa" sha1="074e34aa31e3ba92a20f89ee7b0ac0cba38e7380" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="croid">
+		<description>Croid</description>
+		<year>198?</year>
+		<publisher>Andrew Simpson</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="croid (andrew simpson) (coco 3).dsk" size="161280" crc="b84da2bf" sha1="3bb04d28769366e778c89aa2735f5a51471219ba" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="croida" cloneof="croid">
+		<description>Croid (Alt)</description>
+		<year>198?</year>
+		<publisher>Andrew Simpson</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="croid (spectral assosciates) (treasury pack).dsk" size="161280" crc="e7955ba8" sha1="62c53fb12a98aecc3e58509350043d0932291f8b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crystcty">
+		<description>The Crystal City</description>
+		<year>1990</year>
+		<publisher>Jeremy Spiller</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Program"/>
+			<dataarea name="flop" size="161280">
+				<rom name="crystal city (coco 3) (crystal).dsk" size="161280" crc="7494ed8c" sha1="f589b94248a92d9f5f8f9ec1e373eaddca0032c9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Levels"/>
+			<dataarea name="flop" size="161280">
+				<rom name="crystal city (coco 3) (levels).dsk" size="161280" crc="95711894" sha1="cd28bfbcc6a778ffc351c5ca562815124e2d5324" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cyrus">
+		<description>Cyrus Chess (CoCo 3 Palette)</description>
+		<year>19??</year>
+		<publisher>&lt;hack&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="cyrus (tandy) (coco 3 patch).dsk" size="161280" crc="f66c5ff2" sha1="d309677db116a9cd945611e1947e9c31ec3769ba" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- coco3 only requires 512Kb, audio is a farty, run best with a 6309? - coco3h driver) -->
 	<software name="dkong" supported ="partial">
 		<description>Donkey Kong Emulator for CoCo 3 (512Kb)</description>
@@ -2663,6 +2852,18 @@ They will be added later on as this software list matures.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="baskball (tandy radio shack).dsk" size="161280" crc="449bd5d2" sha1="2e1ee74055a5258aba624748e54c3a0099681225" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="maze">
+		<description>The Maze</description>
+		<year>1987</year>
+		<publisher>Colin North</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="crystal 3 (basic graphic adventures).dsk" size="161280" crc="49f7ecfc" sha1="bc92cd40b903f9b6012c53a3acffb8821cc174fb" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -3303,6 +3504,32 @@ They will be added later on as this software list matures.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="color max deluxe (computize) (coco 3) (pictures).dsk" size="161280" crc="77f2c91e" sha1="438464c86879e1c47ee879940d997cefce8ba0fa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- assuming these two below are related to the colcave set -->
+
+	<software name="ccavsrc1" cloneof="colcave">
+		<description>Colossal Cave (OS-9 C Source Code)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="colossal cave (os-9 c source code) (os9) (259cg_02).dsk" size="161280" crc="6452eb9a" sha1="fe113838831758dde3ec4e8a2676b94a0b887361" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ccavsrc2" cloneof="colcave">
+		<description>Colossal Cave (Original IBM PC Source Code)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="colossal cave (original ibm pc c source code) (os9) (260cg_01).dsk" size="161280" crc="94e57db4" sha1="b5f8b082fca2ab247c2f0dac291bec550726043b" offset="0" />
 			</dataarea>
 		</part>
 	</software>

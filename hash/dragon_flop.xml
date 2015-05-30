@@ -531,6 +531,32 @@ Document more games that also work on CoCos (all known are DSK files)
 		</part>
 	</software>
 
+	<!-- Works with CoCo -->
+	<software name="ccruiser">
+		<description>Cosmic Cruiser</description>
+		<year>198?</year>
+		<publisher>Imagine Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="cosmic cruiser (imagine) (dragon).dsk" size="161280" crc="3d0b15fc" sha1="9a8581193c29229eafa4443863200652d13394f7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Works with CoCo -->
+	<software name="ccrusade">
+		<description>Cosmic Crusader</description>
+		<year>1984</year>
+		<publisher>Blaby Computer Games</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="cosmic crusader (blaby) (dragon).dsk" size="161280" crc="0e327d3d" sha1="2365ae9156656e7d62016f7a05787a4b3c570767" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="crazypnt">
 		<description>Crazy Painter</description>
 		<year>1983</year>
@@ -575,6 +601,45 @@ Document more games that also work on CoCos (all known are DSK files)
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="184347">
 				<rom name="cuthbert in space (microdeal).vdk" size="184347" crc="5431de05" sha1="73db7344eb63c248c0be23341dc396297128c93d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Works with CoCo -->
+	<software name="cuthcool">
+		<description>Cuthbert in the Cooler</description>
+		<year>1985</year>
+		<publisher>Microdeal</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="cuthbert in the cooler (microdeal cornwall).dsk" size="161280" crc="e9a34166" sha1="1c356c1c5731638457e6a07aef8277f59fc5b814" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Works with CoCo -->
+	<software name="cuthcoola" cloneof="cuthcool">
+		<description>Cuthbert in the Cooler (Alt)</description>
+		<year>1985</year>
+		<publisher>Microdeal</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="cuthnert in cooler (microdeal cornwall).dsk" size="161280" crc="54075ad7" sha1="ca7afc9c0557de28d2985bbc0ee2fceacd149c23" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Works with CoCo -->
+	<software name="cyclops">
+		<description>Cyclops</description>
+		<year>1983</year>
+		<publisher>Romik Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="cyclops (romik) (dragon).dsk" size="161280" crc="aedcddcc" sha1="547bdb362c09a3c32697f13121f3a233cd422070" offset="0" />
 			</dataarea>
 		</part>
 	</software>
