@@ -2853,11 +2853,6 @@ systems, for the moment they stay here!
 		</part>
 	</software>
 
-	<!-- The following version consists of d88 disks which only differ in the header, but contains the exact same data
-	<rom name="crimsonp.d88" size="348848" crc="bb46dc55" sha1="1cfebfe7b80e4818ca815ee9aa9df337d6bb900b" offset="0" />
-	<rom name="crimsons.d88" size="348848" crc="d3cd8490" sha1="24054ba0c57b14cdaf1fa2fd4c5c8d1d874198d8" offset="0" />
-	<rom name="crimsonu.d88" size="348848" crc="3eeaae89" sha1="460e405c18beac1593ee851d86a2d1dfe4315b34" offset="0" />
-	-->
 	<software name="crimson">
 		<description>Crimson</description>
 		<year>1988</year>
@@ -2882,8 +2877,9 @@ systems, for the moment they stay here!
 		</part>
 	</software>
 
+	<!-- Program and Scenario disks have duplicate data of disks CRC=050b0fe6 and CRC=e2674825; only the headers differ -->
 	<software name="crimsona" cloneof="crimson">
-		<description>Crimson (Alt Disks 1+2)</description>
+		<description>Crimson (Alt Program + Scenario Disks, Different Headers Only)</description>
 		<year>1988</year>
 		<publisher>ブラザー工業 (Brother Kougyou)</publisher>
 		<info name="release" value="198804xx"/>
@@ -7423,9 +7419,9 @@ systems, for the moment they stay here!
 		</part>
 	</software>
 
-	<!-- Duplicate data of disks CRC=05e830ad and CRC=0d154f9c, only the headers differ -->
+	<!-- These have duplicate data of disks CRC=05e830ad and CRC=0d154f9c; only the headers differ -->
 	<software name="wibarmb" cloneof="wibarm">
-		<description>Wibarm (Different Header Only)</description>
+		<description>Wibarm (Alt 2, Different Headers Only)</description>
 		<year>1986</year>
 		<publisher>アルシスソフト (Arsys Soft)</publisher>
 		<info name="release" value="198609xx"/>
