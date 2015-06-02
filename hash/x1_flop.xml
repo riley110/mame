@@ -3804,6 +3804,7 @@ systems, for the moment they stay here!
 		<publisher>コナミ (Konami)</publisher>
 		<info name="release" value="198702xx"/>
 		<info name="alt_title" value="グラディウス"/>
+		<info name="developer" value="Sleep Rever Soft" />
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -3818,6 +3819,7 @@ systems, for the moment they stay here!
 		<publisher>コナミ (Konami)</publisher>
 		<info name="release" value="198702xx"/>
 		<info name="alt_title" value="グラディウス"/>
+		<info name="developer" value="Sleep Rever Soft" />
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="348848">
@@ -3832,6 +3834,7 @@ systems, for the moment they stay here!
 		<publisher>コナミ (Konami)</publisher>
 		<info name="release" value="198702xx"/>
 		<info name="alt_title" value="グラディウス"/>
+		<info name="developer" value="Sleep Rever Soft" />
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -3840,12 +3843,14 @@ systems, for the moment they stay here!
 		</part>
 	</software>
 
+	<!-- Is this from an original disk? -->
 	<software name="gradiusc" cloneof="gradius">
-		<description>Gradius (Hacked by Sleep Rever Soft)</description>
+		<description>Gradius (Includes Credits)</description>
 		<year>1987</year>
 		<publisher>コナミ (Konami)</publisher>
 		<info name="release" value="198702xx"/>
 		<info name="alt_title" value="グラディウス"/>
+		<info name="developer" value="Sleep Rever Soft" />
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="348848">
