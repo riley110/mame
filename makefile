@@ -4,9 +4,6 @@
 #
 #   Core makefile for building MAME and derivatives
 #
-#   Copyright (c) Nicola Salmoria and the MAME Team.
-#   Visit http://mamedev.org for licensing and usage restrictions.
-#
 ###########################################################################
 
 
@@ -22,6 +19,7 @@
 # TARGET = mame
 # SUBTARGET = tiny
 # TOOLS = 1
+# TESTS = 1
 # OSD = sdl
 
 # USE_BGFX = 1
@@ -357,11 +355,7 @@ endif
 
 # specify a default optimization level if none explicitly stated
 ifndef OPTIMIZE
-ifndef SYMBOLS
 OPTIMIZE = 3
-else
-OPTIMIZE = 0
-endif
 endif
 
 # set the symbols level
@@ -373,6 +367,10 @@ endif
 
 ifdef TOOLS
 PARAMS += --with-tools
+endif
+
+ifdef TESTS
+PARAMS += --with-tests
 endif
 
 ifdef SYMBOLS
@@ -393,6 +391,10 @@ endif
 
 ifdef OPTIMIZE
 PARAMS += --OPTIMIZE=$(OPTIMIZE)
+endif
+
+ifdef SHLIB
+PARAMS += --SHLIB=$(SHLIB)
 endif
 
 ifdef ARCHOPTS
@@ -571,6 +573,7 @@ SCRIPTS = scripts/genie.lua \
 	$(wildcard scripts/src/osd/$(OSD)*.lua) \
 	scripts/src/sound.lua \
 	scripts/src/tools.lua \
+	scripts/src/tests.lua \
 	scripts/src/video.lua \
 	scripts/src/bus.lua \
 	scripts/src/netlist.lua \
@@ -734,6 +737,9 @@ vs2013_xp: generate
 
 vs2013_clang: generate
 	$(SILENT) $(GENIE) $(PARAMS) --vs=vs2013-clang vs2013
+
+vs2013_winrt: generate
+	$(SILENT) $(GENIE) $(PARAMS) --vs=winstore81 vs2013
 
 vs2015: generate
 	$(SILENT) $(GENIE) $(PARAMS) vs2015

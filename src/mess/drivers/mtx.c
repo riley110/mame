@@ -1,5 +1,5 @@
 // license:BSD-3-Clause
-// copyright-holders:(Original Author?), Dirk Best, Curt Coder
+// copyright-holders:Lee Ward, Dirk Best, Curt Coder
 /*************************************************************************
 
     Memotech MTX 500, MTX 512 and RS 128
@@ -320,20 +320,18 @@ static MACHINE_CONFIG_START( mtx512, mtx_state )
 	MCFG_CENTRONICS_OUTPUT_LATCH_ADD("cent_data_out", "centronics")
 
 	MCFG_SNAPSHOT_ADD("snapshot", mtx_state, mtx, "mtx", 1)
-
 	MCFG_CASSETTE_ADD("cassette")
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_STOPPED | CASSETTE_MOTOR_ENABLED | CASSETTE_SPEAKER_MUTED)
 	MCFG_CASSETTE_INTERFACE("mtx_cass")
 
 	MCFG_TIMER_DRIVER_ADD_PERIODIC("cassette_timer", mtx_state, cassette_tick, attotime::from_hz(44100))
-	MCFG_SOFTWARE_LIST_ADD("cass_list", "mtx_cass")
-
-
 
 	/* internal ram */
 	MCFG_RAM_ADD(RAM_TAG)
 	MCFG_RAM_DEFAULT_SIZE("64K")
 	MCFG_RAM_EXTRA_OPTIONS("96K,128K,160K,192K,224K,256K,288K,320K,352K,384K,416K,448K,480K,512K")
+
+	MCFG_SOFTWARE_LIST_ADD("cass_list", "mtx_cass")
 MACHINE_CONFIG_END
 
 /*-------------------------------------------------

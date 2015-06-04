@@ -76,7 +76,7 @@ NETLIB_START(extclock)
 	connect(m_feedback, m_Q);
 	{
 		netlist_time base = netlist_time::from_hz(m_freq.Value()*2);
-		nl_util::pstring_list pat = nl_util::split(m_pattern.Value(),",");
+		pstring_list_t pat(m_pattern.Value(),",");
 		m_off = netlist_time::from_double(m_offset.Value());
 
 		int pati[256];
@@ -177,7 +177,7 @@ NETLIB_UPDATE_PARAM(analog_input)
 // nld_d_to_a_proxy
 // ----------------------------------------------------------------------------------------
 
-ATTR_COLD void nld_d_to_a_proxy::start()
+void nld_d_to_a_proxy::start()
 {
 	nld_base_d_to_a_proxy::start();
 
@@ -192,7 +192,7 @@ ATTR_COLD void nld_d_to_a_proxy::start()
 	m_Q.initial(0.0);
 }
 
-ATTR_COLD void nld_d_to_a_proxy::reset()
+void nld_d_to_a_proxy::reset()
 {
 	m_RV.do_reset();
 	m_is_timestep = m_RV.m_P.net().as_analog().solver()->is_timestep();
