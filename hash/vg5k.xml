@@ -692,7 +692,7 @@
 		</part>
 	</software>
 
-	<!-- Unofficial/PD software -->
+<!-- Unofficial/PD software -->
 
 	<software name="ef9345">
 		<description>Affichage des Polices EF9345</description>
@@ -966,6 +966,30 @@
 		<part name="cass1" interface="vg5k_cass">
 			<dataarea name="cass" size="1938">
 				<rom name="ph faible (1985)(carl hervier).k7" size="1938" crc="289a4f9a" sha1="ce9a60d6453fbd836bc9e71f96ab020079515d72" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pyramide">
+		<description>Pyramide</description>
+		<year>2015</year>
+		<publisher>GPA</publisher>
+
+		<part name="cass1" interface="vg5k_cass">
+			<dataarea name="cass" size="13359">
+				<rom name="pyramide_vg5000.k7" size="13359" crc="e77d5d6c" sha1="42423de6f1f0a7b709363cbe1c3da0679788ba6a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pyramidea" cloneof="pyramide">
+		<description>Pyramide (WAV)</description>
+		<year>2015</year>
+		<publisher>GPA</publisher>
+
+		<part name="cass1" interface="vg5k_cass">
+			<dataarea name="cass" size="3237212">
+				<rom name="pyramide_vg5000.wav" size="3237212" crc="51d588aa" sha1="dadc5c2d49b06d752ffd152d950f5214a29eeddd" offset="0" />
 			</dataarea>
 		</part>
 	</software>
