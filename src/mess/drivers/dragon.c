@@ -340,11 +340,15 @@ ROM_START(dgnalpha)
 	ROM_LOAD("alpha_ba.rom",    0x8000,  0x4000, CRC(84f68bf9) SHA1(1983b4fb398e3dd9668d424c666c5a0b3f1e2b69))
 ROM_END
 
+//Dragon Data Ltd. (UK)
+COMP(  1982,    dragon32,   coco,   0,      dragon32,  dragon32, driver_device,  0,      "Dragon Data Ltd.",                           "Dragon 32", 0)
+COMP(  1983,    dragon64,   coco,   0,      dragon64,  dragon32, driver_device,  0,      "Dragon Data Ltd.",                           "Dragon 64", 0)
+COMP(  1983,    d64plus,    coco,   0,      d64plus,   dragon32, driver_device,  0,      "Dragon Data Ltd./Compusense",                "Dragon 64 (with Dragon Plus addon board)", 0)
+COMP(  1984,    dgnalpha,   coco,   0,      dgnalpha,  dragon32, driver_device,  0,      "Dragon Data Ltd.",                           "Dragon Professional/Project Alpha (Prototype)", 0)
 
-COMP(  1982,    dragon32,   coco,   0,      dragon32,  dragon32, driver_device,  0,      "Dragon Data Ltd",            "Dragon 32", 0)
-COMP(  1983,    dragon64,   coco,   0,      dragon64,  dragon32, driver_device,  0,      "Dragon Data Ltd",            "Dragon 64", 0)
-COMP(  1983,    dragon200,  coco,   0,      dragon64,  dragon32, driver_device,  0,      "Dragon Data Ltd",            "Dragon 200", 0)
-COMP(  1983,    dragon200e, coco,   0,      dragon64,  dragon32, driver_device,  0,      "Dragon Data Ltd",            "Dragon 200-E", 0)
-COMP(  1983,    d64plus,    coco,   0,      d64plus,   dragon32, driver_device,  0,      "Dragon Data Ltd",            "Dragon 64 Plus", 0)
-COMP(  1983,    tanodr64,   coco,   0,      tanodr64,  dragon32, driver_device,  0,      "Dragon Data Ltd / Tano Ltd", "Tano Dragon 64 (NTSC)", 0)
-COMP(  1984,    dgnalpha,   coco,   0,      dgnalpha,  dragon32, driver_device,  0,      "Dragon Data Ltd",            "Dragon Professional/Project Alpha (Prototype)", 0)
+//Eurohard S.A. (Spain)
+COMP(  1983,    dragon200,  coco,   0,      dragon64,  dragon32, driver_device,  0,      "Eurohard S.A.",                              "Dragon 200 (Spain)", 0)
+COMP(  1983,    dragon200e, coco,   0,      dragon64,  dragon32, driver_device,  0,      "Eurohard S.A.",                              "Dragon 200-E (Spain)", 0)
+
+//TANO Corporation (USA)
+COMP(  1983,    tanodr64,   coco,   0,      tanodr64,  dragon32, driver_device,  0,      "TANO Corporation (Dragon Data Ltd. license)","Dragon by TANO (USA, NTSC)", 0)
