@@ -287,6 +287,9 @@ static MACHINE_CONFIG_DERIVED( tanodr64, dragon64 )
 	// cartridge
 	MCFG_DEVICE_MODIFY(CARTRIDGE_TAG)
 	MCFG_DEVICE_SLOT_INTERFACE(dragon_cart, "sdtandy_fdc", false)
+
+	MCFG_DEVICE_REMOVE("flop_list")
+	MCFG_SOFTWARE_LIST_ADD("flop_list","drgntano_flop")
 MACHINE_CONFIG_END
 
 
@@ -351,4 +354,4 @@ COMP(  1983,    dragon200,  coco,   0,      dragon64,  dragon32, driver_device, 
 COMP(  1983,    dragon200e, coco,   0,      dragon64,  dragon32, driver_device,  0,      "Eurohard S.A.",                              "Dragon 200-E (Spain)", 0)
 
 //TANO Corporation (USA)
-COMP(  1983,    tanodr64,   coco,   0,      tanodr64,  dragon32, driver_device,  0,      "TANO Corporation (Dragon Data Ltd. license)","Dragon by TANO (USA, NTSC)", 0)
+COMP(  1983,    drgntano,   coco,   0,      tanodr64,  dragon32, driver_device,  0,      "TANO Corporation (Dragon Data Ltd. license)","Dragon by TANO (USA, NTSC)", 0)
