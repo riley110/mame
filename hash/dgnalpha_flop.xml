@@ -42,7 +42,7 @@
 
 <!-- OS-9 disks -->
 
-	<software name="ccompile">
+	<software name="os9ccomp">
 		<description>OS-9 C Compiler</description>
 		<year>198?</year>
 		<publisher>Dragon Data Ltd.</publisher>
@@ -54,7 +54,7 @@
 		</part>
 	</software>
 
-	<software name="dynacalc">
+	<software name="os9dcalc">
 		<description>OS-9 Dynacalc</description>
 		<year>198?</year>
 		<publisher>Dragon Data Ltd.</publisher>
@@ -66,7 +66,7 @@
 		</part>
 	</software>
 
-	<software name="editasm">
+	<software name="os9edasm">
 		<description>OS-9 Editor Assembler</description>
 		<year>198?</year>
 		<publisher>Dragon Data Ltd.</publisher>
@@ -74,66 +74,6 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="368678">
 				<rom name="os-9 editor assembler (dragon data ltd, dragon alpha professional).vdk" size="368678" crc="3c46119f" sha1="98d76fb1ba97877adba0caadbb090c42328814e8" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pascal">
-		<description>OS-9 Pascal Compiler</description>
-		<year>198?</year>
-		<publisher>Dragon Data Ltd.</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="368677">
-				<rom name="os-9 pascal (compiler) (dragon data ltd, dragon alpha professional).vdk" size="368677" crc="1dc5f947" sha1="b7b239c503338e4724e48ca6c7f3a6de60e8130d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="rms">
-		<description>OS-9 RMS</description>
-		<year>198?</year>
-		<publisher>Dragon Data Ltd.</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="368681">
-				<rom name="os-9 rms (dragon data ltd, dragon alpha professional).vdk" size="368681" crc="61f9d523" sha1="aec0fed0a1eda2e14bbdcf44c6fb800c4ae35d92" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="soundemo">
-		<description>OS-9 Sound Demo</description>
-		<year>198?</year>
-		<publisher>Dragon Data Ltd.</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="368673">
-				<rom name="os-9 sound demo (dragon data ltd, dragon alpha professional).vdk" size="368673" crc="b0b8f6a3" sha1="cb79c232d92e8bc3c9253b992dd159970200abe5" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="sourcer">
-		<description>OS-9 Sourcerer</description>
-		<year>198?</year>
-		<publisher>Dragon Data Ltd.</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="368674">
-				<rom name="os-9 sourcerer (dragon data ltd, dragon alpha professional).vdk" size="368674" crc="0352b280" sha1="98a7463f9be24753f7e665d455e87788c994839c" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="stylogra">
-		<description>OS-9 Stylograph</description>
-		<year>198?</year>
-		<publisher>Dragon Data Ltd.</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="368673">
-				<rom name="os-9 stylograph (dragon data ltd, dragon alpha professional).vdk" size="368673" crc="b20e4df5" sha1="6ab24c435208300497c2367fb2dfaea3b97617c5" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -150,7 +90,67 @@
 		</part>
 	</software>
 
-	<software name="viewdata">
+	<software name="os9pasca">
+		<description>OS-9 Pascal Compiler</description>
+		<year>198?</year>
+		<publisher>Dragon Data Ltd.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="368677">
+				<rom name="os-9 pascal (compiler) (dragon data ltd, dragon alpha professional).vdk" size="368677" crc="1dc5f947" sha1="b7b239c503338e4724e48ca6c7f3a6de60e8130d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="os9rms">
+		<description>OS-9 RMS</description>
+		<year>198?</year>
+		<publisher>Dragon Data Ltd.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="368681">
+				<rom name="os-9 rms (dragon data ltd, dragon alpha professional).vdk" size="368681" crc="61f9d523" sha1="aec0fed0a1eda2e14bbdcf44c6fb800c4ae35d92" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="os9sound">
+		<description>OS-9 Sound Demo</description>
+		<year>198?</year>
+		<publisher>Dragon Data Ltd.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="368673">
+				<rom name="os-9 sound demo (dragon data ltd, dragon alpha professional).vdk" size="368673" crc="b0b8f6a3" sha1="cb79c232d92e8bc3c9253b992dd159970200abe5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="os9srcr">
+		<description>OS-9 Sourcerer</description>
+		<year>198?</year>
+		<publisher>Dragon Data Ltd.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="368674">
+				<rom name="os-9 sourcerer (dragon data ltd, dragon alpha professional).vdk" size="368674" crc="0352b280" sha1="98a7463f9be24753f7e665d455e87788c994839c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="os9stylo">
+		<description>OS-9 Stylograph</description>
+		<year>198?</year>
+		<publisher>Dragon Data Ltd.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="368673">
+				<rom name="os-9 stylograph (dragon data ltd, dragon alpha professional).vdk" size="368673" crc="b20e4df5" sha1="6ab24c435208300497c2367fb2dfaea3b97617c5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="os9vdata">
 		<description>OS-9 Viewdata Demo</description>
 		<year>198?</year>
 		<publisher>Telepost Systems Ltd.</publisher>
