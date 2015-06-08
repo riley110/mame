@@ -254,6 +254,58 @@ Most of these should also work on CoCo machines.
 	</software>
 
 	<!-- Works with CoCo -->
+	<software name="dranger">
+		<description>Danger Ranger</description>
+		<year>1983</year>
+		<publisher>Microdeal</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="danger ranger (med systems, screenplay).dsk" size="161280" crc="ed3b2b41" sha1="dc2c07dfa4398c4882edec0b5d9a495e145e443b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Works with CoCo -->
+	<software name="darkpit">
+		<description>The Dark Pit</description>
+		<year>1985</year>
+		<publisher>Microdeal</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dark pit, the (microdeal cornwall).dsk" size="161280" crc="ee48555a" sha1="cc8bac01e9238f39c5ed7f8132285f23db7f4781" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Works with CoCo -->
+	<software name="darkpita" cloneof="darkpit">
+		<description>The Dark Pit (Alt)</description>
+		<year>1985</year>
+		<publisher>Microdeal</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dark pit (microdeal cornwall).dsk" size="161280" crc="49e2a34f" sha1="3eee90c41b5b19a5560e5163fcb0a04aa24e42af" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Works with CoCo -->
+	<software name="darkstar">
+		<description>Dark Star</description>
+		<year>1985</year>
+		<publisher>Design-Design</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dark star (design design) (dragon).dsk" size="161280" crc="3abc4ee1" sha1="eba392237efe9a43c50e5b24b1504c8f78708058" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Works with CoCo -->
 	<software name="rotabb">
 		<description>ROTABB</description>
 		<year>198?</year>

@@ -16,11 +16,11 @@
 		</part>
 	</software>
 
-	<!-- Requires OS-9 -->
 	<software name="assist09">
 		<description>Assist-09</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires OS-9"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -86,11 +86,11 @@
 		</part>
 	</software>
 
-	<!-- Requires OS-9 -->
 	<software name="basic09">
 		<description>BASIC-09 for OS-9 Level 1</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires OS-9"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -103,7 +103,7 @@
     <software name="">
         <description>Basic09</description>
         <year>198?</year>
-        <publisher></publisher>
+        <publisher>&lt;unknown&gt;</publisher>
 
         <part name="flop1" interface="floppy_5_25">
             <dataarea name="flop" size="368640">
@@ -407,6 +407,94 @@
 		</part>
 	</software>
 
+	<software name="dllogo">
+		<description>D.L. Logo</description>
+		<year>1985</year>
+		<publisher>Tandy</publisher>
+		<info name="usage" value="Use DOS command to boot disk"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="d.l. logo (os-9) (tandy).dsk" size="161280" crc="f6985484" sha1="30511ac0099df4f376b6c14fd5145e74ed587a4b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="datamerg">
+		<description>Data Merger</description>
+		<year>198?</year>
+		<publisher>Alpha Software Technologies</publisher>
+		<info name="usage" value="Requires OS-9"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="data merger (os-9) (alpha software technologies).dsk" size="161280" crc="2dfec1ae" sha1="a4d81f9b4a32d4a6bbe154def59082c30982af57" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dda">
+		<description>DDA (v4.01)</description>
+		<year>1983</year>
+		<publisher>J&amp;M Systems</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dda (j&amp;m systems).dsk" size="161280" crc="2e257cb3" sha1="cded438bcaf9a3c6204b2e96d1af6fdc0847fb98" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="deftags">
+		<description>DEFT Advanced Graphics System</description>
+		<year>1985</year>
+		<publisher>TCE</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="deft pascal 4.1 (ags15).dsk" size="161280" crc="45541d97" sha1="29016f1bbc7cedbadb2ed9dedc7e1b5718b136b7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="deftedt2">
+		<description>DEFT Edit II (v4.2)</description>
+		<year>1988</year>
+		<publisher>TCE</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="deft pascal 4.1 (deft systems) (deft41).dsk" size="161280" crc="a9f679df" sha1="c304afcc30b9d9f188a18afc1dca8159f8774670" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="deskmate">
+		<description>DeskMate (v01.00.00)</description>
+		<year>1985</year>
+		<publisher>Tandy</publisher>
+		<info name="usage" value="Use DOS command to boot disk"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="deskmate.dsk" size="161280" crc="9eec1c6a" sha1="ff21f7dd4befb83668b3f453a571f199ab3d7a77" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="deskmatea" cloneof="deskmate">
+		<description>DeskMate (v01.00.00, Alt?, Non-Bootable)</description>
+		<year>1985</year>
+		<publisher>Tandy</publisher>
+		<info name="usage" value="Requires OS-9"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="deskmate (os9) (229ca_01).dsk" size="161280" crc="57e7faf6" sha1="ab69da9069bef2714e55e27ffdd692e85f9a084b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="edtasm">
 		<description>Disk EDTASM+ (v01.00.00)</description>
 		<year>1983</year>
@@ -415,6 +503,30 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="color disk edtasm (tandy).dsk" size="161280" crc="9e44225b" sha1="36def54fdadcf7d1c2ccfa414eed6092a751a4b8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="diskgraf">
+		<description>Disk Graphic (v1.4)</description>
+		<year>1982</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="disk graphic 1.4 (tandy).dsk" size="161280" crc="8aa9613f" sha1="70445c9ad05b951190b4fbc3e9e03c1142f01e89" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="diskoff">
+		<description>Disk Off (Fra)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="disk off.dsk" size="161280" crc="17e6a779" sha1="11af79e20ac729ec3857e9cf56f8b3b9e7bf58ef" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -428,6 +540,18 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="color flex v5.0.2 (decb) (188au_02).dsk" size="161280" crc="1925db54" sha1="f6a996d53f3423fbee2cdefedf643d4610bcbd88" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ivtest">
+		<description>IVTEST</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="diagnostic utilities (side 2).dsk" size="161280" crc="b87abf87" sha1="60295d7a43ab9a2cc27594ec317bf8c45d0f5e3f" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -526,6 +650,18 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="copy utilities.dsk" size="161280" crc="b8c8c856" sha1="ee1ebe95559ae37e02761675705daed5212eb1e6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="deftutil">
+		<description>DEFT Systems Inc. Utilities</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="deft pascal v3.3, deft edit v3.0 (decb) (188au_01).dsk" size="161280" crc="d1d12657" sha1="77da1e93a6a2beaceb2611a789d9f1549a3f3034" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1868,6 +2004,18 @@
 		</part>
 	</software>
 
+	<software name="diecomgp">
+		<description>Diecom Game Pack</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="diecom game pack.dsk" size="161280" crc="0c78a50b" sha1="9aac7a17fded99083c8ecfe2741796de7abf61be" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="advgen">
 		<description>Mini-Adventure Generator &amp; Games (v2.3)</description>
 		<year>198?</year>
@@ -1933,13 +2081,37 @@
 	</software>
 
 	<software name="cocosid">
-		<description>CocoSID</description>
+		<description>CoCoSID</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="cocosid (coco 2).dsk" size="161280" crc="1fcef7a5" sha1="19069521faa97b1252307ce7c16182a5ff5f30d3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ddevil">
+		<description>Color Computer Dancing Devil</description>
+		<year>198?</year>
+		<publisher>Tom Mix Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dancing devil tom mix software).dsk" size="161280" crc="348cbb9d" sha1="2fce4fb63ef6d10fcaaf7b717c113d36b37db46f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ddevila" cloneof="ddevil">
+		<description>Color Computer Dancing Devil (Alt)</description>
+		<year>198?</year>
+		<publisher>Tom Mix Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dancing devil (tom mix) (coco1,2&amp;3).dsk" size="161280" crc="c170853b" sha1="ce8442d08862436b2fcef15fea05567b6715cef3" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2406,11 +2578,11 @@
 
 <!-- Diskmags (Various) -->
 
-	<!-- Requires OS-9 -->
 	<software name="9time33">
 		<description>9-Times Vol. 3 Issue 3 - September 1991</description>
 		<year>1991</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires OS-9"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="184320">
@@ -2419,11 +2591,11 @@
 		</part>
 	</software>
 
-	<!-- Requires OS-9 -->
 	<software name="9time42">
 		<description>9-Times Vol. 4 Issue 2 - July 1992</description>
 		<year>1992</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires OS-9"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="184320">
@@ -2432,11 +2604,11 @@
 		</part>
 	</software>
 
-	<!-- Requires OS-9 -->
 	<software name="9time43">
 		<description>9-Times Vol. 4 Issue 3 - September 1992</description>
 		<year>1992</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires OS-9"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="184320">
@@ -2445,11 +2617,11 @@
 		</part>
 	</software>
 
-	<!-- Requires OS-9 -->
 	<software name="9time43a" cloneof="9time43">
 		<description>9-Times Vol. 4 Issue 3 - September 1992 (Alt?)</description>
 		<year>1992</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires OS-9"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="184320">
@@ -2458,11 +2630,11 @@
 		</part>
 	</software>
 
-	<!-- Requires OS-9 -->
 	<software name="9time43b" cloneof="9time43">
 		<description>9-Times Vol. 4 Issue 3 - September 1992 (Alt 2?)</description>
 		<year>1992</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires OS-9"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="184320">
@@ -2471,11 +2643,11 @@
 		</part>
 	</software>
 
-	<!-- Requires OS-9 -->
 	<software name="9time45">
 		<description>9-Times Vol. 4 Issue 5 - January 1993</description>
 		<year>1993?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires OS-9"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="184320">
@@ -2484,11 +2656,11 @@
 		</part>
 	</software>
 
-	<!-- Requires OS-9 -->
 	<software name="9xmag">
 		<description>9x OS-9 Disk Magazine</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires OS-9"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -3421,7 +3593,7 @@
     <software name="">
         <description>Ausquiz</description>
         <year>198?</year>
-        <publisher></publisher>
+        <publisher>&lt;unknown&gt;</publisher>
 
         <part name="flop1" interface="floppy_5_25">
             <dataarea name="flop" size="441616">
@@ -3768,11 +3940,11 @@
 		</part>
 	</software>
 
-	<!-- DOS to boot -->
 	<software name="biospher">
 		<description>Biosphere (v01.00.00)</description>
 		<year>1985</year>
 		<publisher>Tandy</publisher>
+		<info name="usage" value="Use DOS command to boot disk"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -6043,6 +6215,496 @@
 		</part>
 	</software>
 
+	<!-- looks like protection to me -->
+	<software name="dallas" supported="no">
+		<description>The Dallas Quest (Original?)</description>
+		<year>1984</year>
+		<publisher>Datasoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184320">
+				<rom name="dallas quest, the (datasoft presents - ''the dallas quest'' - rgbdos, ssdd, 40-tracks).dsk" size="184320" crc="7dd6ab94" sha1="58c0bdee08b88849480f05b8f71064331e44cfb7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dallasa" cloneof="dallas">
+		<description>The Dallas Quest (Cracked?)</description>
+		<year>1984</year>
+		<publisher>Datasoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dallas quest, the (dallas).dsk" size="161280" crc="25de443e" sha1="156f245215e53bf9626601d43c9d5a5b848fcf02" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dallasb" cloneof="dallas">
+		<description>The Dallas Quest (Cracked?, Alt)</description>
+		<year>1984</year>
+		<publisher>Datasoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184320">
+				<rom name="dallas quest (adventure game) (run dallas) (decb) (158bg_01).dsk" size="184320" crc="53cb0932" sha1="2434821aab336fc44124f0fca5065f7f12796138" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dranger">
+		<description>Danger Ranger</description>
+		<year>1984</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="danger ranger (med systems).dsk" size="161280" crc="d7880fc2" sha1="c9020c47162bde1d5d19d08e08f6e58dc2532d44" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="darkcast">
+		<description>Dark Castle</description>
+		<year>1984</year>
+		<publisher>Darin Andersen</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dark castle (darin andersen).dsk" size="161280" crc="700fcc22" sha1="3689d22dc693739c602ab53114cf0b10cc0b71b9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="darkcasta" cloneof="darkcast">
+		<description>Dark Castle (Alt)</description>
+		<year>1984</year>
+		<publisher>Darin Andersen</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dark castle (dark castle).dsk" size="161280" crc="295ac576" sha1="43f50a97938706b4cfd171dc03e7b1afa4424bb8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="darkmoor">
+		<description>Darkmoor Hold (Binary Loader)</description>
+		<year>1985</year>
+		<publisher>Prickly-Pear Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="darkmoor hold (darkmoor).dsk" size="161280" crc="0fcc02c2" sha1="90e98e2bc2e6074dd4b93931d30c23b0f9009a0e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="darkmoora" cloneof="darkmoor">
+		<description>Darkmoor Hold (BASIC Loader)</description>
+		<year>1985</year>
+		<publisher>Prickly-Pear Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="darkmoor hold (darkmoor new).dsk" size="161280" crc="5536e2c3" sha1="6272b308c4c4c47ebf8be11d2024a9ad44ed47c6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="datafall">
+		<description>Data Fall</description>
+		<year>198?</year>
+		<publisher>T&amp;D Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="data fall (t&amp;d software).dsk" size="161280" crc="1b1210f3" sha1="f691f31367aefb429964b3d3a075b52137a9dbc7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="deadline">
+		<description>Deadline (Release 26)</description>
+		<year>1982</year>
+		<publisher>Infocom</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="deadline (infocom).dsk" size="161280" crc="3134e924" sha1="affb5ceb911d410c80afd5bde26e4aa12fbccbf2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="deathtrp">
+		<description>Death Trap</description>
+		<year>1983</year>
+		<publisher>Soft Sector Marketing Inc.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="death trap (soft sector marketing).dsk" size="161280" crc="4133aefa" sha1="c314fc49fd1f1a732070254f46ad49c91db09b22" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="deathtrpa" cloneof="deathtrp">
+		<description>Death Trap (Alt)</description>
+		<year>1983</year>
+		<publisher>Soft Sector Marketing Inc.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="death trap (soft sector marketing inc).dsk" size="161280" crc="64d4ce9c" sha1="bb7030e91507015ba0a41d2e0a6b0f8f774393f0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="deathchs">
+		<description>Deathchase</description>
+		<year>2009</year>
+		<publisher>James McKay</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="deathchase (james mckay).dsk" size="161280" crc="7b023670" sha1="d84de681c66f3c618a08e7bc2ffa33558fd0a06e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Press Enter at the garbage screen -->
+	<software name="decathln">
+		<description>Decathlon</description>
+		<year>1984</year>
+		<publisher>Spectral Associates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="decathlon (spectral associates).dsk" size="161280" crc="13cd5612" sha1="0ef2f008c83e33d3a04c51e52ae64c2f8cfcb8be" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Press Enter at the garbage screen -->
+	<software name="decathlna" cloneof="decathln">
+		<description>Decathlon (Alt)</description>
+		<year>1984</year>
+		<publisher>Spectral Associates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="decathlon (spectral assosciates).dsk" size="161280" crc="009c9b6b" sha1="06da1bebfc141dd1a3ed53ee81b165173de92f05" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="decipher">
+		<description>Decipher</description>
+		<year>1983</year>
+		<publisher>Prickly-Pear Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="decipher (prickly-pear software).dsk" size="161280" crc="2468a328" sha1="e6f561d96d6cc57bdc1589dbac621f13cd6b22a4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="deciphera" cloneof="decipher">
+		<description>Decipher (Alt)</description>
+		<year>1983</year>
+		<publisher>Prickly-Pear Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="decipher (prickly pear software).dsk" size="161280" crc="eb9d7740" sha1="390f83102285847b5bd99440aa526cc4c42ca7ba" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cdarwin">
+		<description>Defender of Castle Darwin</description>
+		<year>2001</year>
+		<publisher>Chris Spry</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="defender of castle darwin (chris spry) (coco 3).dsk" size="161280" crc="4467067a" sha1="2f035ce4b5c5865019511dae22c5a5e3cfcf71ea" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="defense">
+		<description>Defense</description>
+		<year>1982</year>
+		<publisher>Colorful Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="defense (spectral associates).dsk" size="161280" crc="555fcbeb" sha1="ab9a605c48d0c754662ad8729efffb457811a6fc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="defensea" cloneof="defense">
+		<description>Defense (Alt)</description>
+		<year>1982</year>
+		<publisher>Colorful Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="defense (softlaw software) (colorful software).dsk" size="161280" crc="af28fcab" sha1="09ddddf5c1d3436b17824c3fa3c27251358f00da" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="demderby">
+		<description>Demolition Derby (v01.00.00)</description>
+		<year>1984</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="demolition derby (tandy).dsk" size="161280" crc="6f7fe7d7" sha1="98646ec5b5ad51b53a4f6a8800f381e967882261" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="demderbya" cloneof="demderby">
+		<description>Demolition Derby (v01.00.00, Cracked by The Spade/Illusions)</description>
+		<year>1984</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="demolition derby (spectral assosciates).dsk" size="161280" crc="6eee80e7" sha1="a99a5f38d154665479f8aae678506f5164fc046b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="demonatk">
+		<description>Demon Attack (v01.00.00)</description>
+		<year>1984</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="demon attack (tandy).dsk" size="161280" crc="d9d7d73f" sha1="279784b233f95793e9feedc2c7e589f0eae2dab3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dmonseed">
+		<description>Demon Seed</description>
+		<year>198?</year>
+		<publisher>Computer Shack - Michtron</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="demon seed (computer shack-michtron).dsk" size="161280" crc="7613ea30" sha1="27f4842b9a63e0fdd1dbd372101248d2836ff72e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dmonseeda" cloneof="dmonseed">
+		<description>Demon Seed (Alt)</description>
+		<year>198?</year>
+		<publisher>Computer Shack - Michtron</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="demon seed (tandy radio shack).dsk" size="161280" crc="e7a4a623" sha1="6659a3cdbf58b3f3f61e23ec7a1e0916d58140fa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dmonseedb" cloneof="dmonseed">
+		<description>Demon Seed (Alt Colors)</description>
+		<year>198?</year>
+		<publisher>Computer Shack - Michtron</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="demon seed (michtron).dsk" size="161280" crc="dfa1f824" sha1="bc4c2d235a0aaed95446e248e58a80fd93963d91" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="despatro">
+		<description>Desert Patrol</description>
+		<year>1983</year>
+		<publisher>Arcade Animation Inc.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="desert patrol (arcade animation inc.).dsk" size="161280" crc="26ea682c" sha1="56f1a2901296b1864d655187e0792d03a4e31bc6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="desrider">
+		<description>Desert Rider (v01.00.00, BASIC Loader)</description>
+		<year>1984</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="desert rider (tandy).dsk" size="161280" crc="2debd12d" sha1="30eb571e169199946d82a896e2a184cc93bf48c9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="desridera" cloneof="desrider">
+		<description>Desert Rider (v01.00.00, BASIC Loader, Alt)</description>
+		<year>1984</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184320">
+				<rom name="desert rider (run rider) (decb) (002bg_02).dsk" size="184320" crc="d7dcc48a" sha1="210ea473a700d94d83668c1d1938c681537d5c3a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="desriderb" cloneof="desrider">
+		<description>Desert Rider (v01.00.00, Binary Loader)</description>
+		<year>1984</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="desert rider (tandy) (alt).dsk" size="161280" crc="bf4951e6" sha1="6fd52357438e682145462c976e2692c69fbf7277" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="devasult">
+		<description>Devil Assault (Tandy)</description>
+		<year>1984</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="devil-assault (tom mix) (coco1,2&amp;3).dsk" size="161280" crc="5981aee6" sha1="d95940c90aea03348fbbacafb62837e0e94a9f0c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="devasulta" cloneof="devasult">
+		<description>Devil Assault (Tom Mix Software)</description>
+		<year>1983</year>
+		<publisher>Tom Mix Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="devil assault (tom mix software).dsk" size="161280" crc="f4822973" sha1="22f8e553307ed5c60f662fc3881b495adde8a04a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="devasultb" cloneof="devasult">
+		<description>Devil Assault (Tom Mix Software, Alt)</description>
+		<year>1983</year>
+		<publisher>Tom Mix Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="devil assault (ken kalish).dsk" size="161280" crc="0a9ed8dd" sha1="4f3c5295ebe8ea2a956113a60875186f59df66f8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="devious">
+		<description>Devious</description>
+		<year>198?</year>
+		<publisher>Spectral Associates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="devious (spectral associates).dsk" size="161280" crc="a0e64620" sha1="d1a3ccc5fb0459e1fcb25cc0438d92001e77fc67" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="deviousa" cloneof="devious">
+		<description>Devious (Alt)</description>
+		<year>198?</year>
+		<publisher>Spectral Associates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="devious (spectral assosciates).dsk" size="161280" crc="dabb0876" sha1="973b56ff66fe7ef25167d468cde91ccd7459e67d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="diarough">
+		<description>Diamond In Rough</description>
+		<year>198?</year>
+		<publisher>Jr &amp; Jr Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="161280">
+				<rom name="diamond in rough (jr &amp; jr software) (side 1).dsk" size="161280" crc="a09ae2dd" sha1="18b13c4b63c6348c9955ff440ae8d683ad966fe2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Picture Disk"/>
+			<dataarea name="flop" size="161280">
+				<rom name="diamond in rough (jr &amp; jr software) (side 2).dsk" size="161280" crc="ee51028a" sha1="f52e01a3700f2204eb85cb86f0d01832b1581ee2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dig">
+		<description>Dig</description>
+		<year>1987</year>
+		<publisher>T&amp;D Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dig (t&amp;d software).dsk" size="161280" crc="fd8404b3" sha1="2a8e635ef8c73cf41e6aa476ed7f8ce8042fcfd5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="diga" cloneof="dig">
+		<description>Dig (BASIC Loader)</description>
+		<year>1987</year>
+		<publisher>T&amp;D Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dig man (t&amp;d).dsk" size="161280" crc="f90f59a6" sha1="37b14a1a4d3cbdd1105b42cd1439be89c2332a7e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="diggem">
+		<description>Diggem (Fra)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="diggem (chromasette) (french translation).dsk" size="161280" crc="e52a875c" sha1="db983568f52832f9cf8b686730886fb798cff54a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dinowars">
+		<description>Dino Wars</description>
+		<year>1980</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dinowars (tandy).dsk" size="161280" crc="30a375ae" sha1="bba532a0276a1f081159296443af951ef31c739f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="euchre">
 		<description>Euchre (v2.1)</description>
 		<year>1983</year>
@@ -6225,7 +6887,45 @@
 		</part>
 	</software>
 
+	<software name="unkc9">
+		<description>Unknown Compilation 9</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="disk toolkit, tom mix goldrunner (decb) (072au_01).dsk" size="161280" crc="d77e39b6" sha1="dfbc8d757ec350148cbaab26254673f4b4733146" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 <!-- Misc. Disks -->
+
+	<software name="6809mods">
+		<description>6809mods</description>
+		<year>19??</year>
+		<publisher>David Keil?</publisher>
+		<info name="usage" value="Requires OS-9"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="256016">
+				<rom name="david keil (coco2-21) (6809mods).dsk" size="256016" crc="8da069fa" sha1="5a3a8474721bd7f353bcac0520410710e2a22a11" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="6309mods">
+		<description>6309mods</description>
+		<year>19??</year>
+		<publisher>David Keil?</publisher>
+		<info name="usage" value="Requires OS-9"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="224016">
+				<rom name="david keil (coco2-21) (6309mods).dsk" size="224016" crc="4034d205" sha1="e8ec0a5f51372628d39a3f5d9bc60fb6dca84499" offset="0" />
+			</dataarea>
+		</part>
+	</software>
 
 	<!-- How is this used? -->
 	<software name="7thmak">
@@ -6240,11 +6940,11 @@
 		</part>
 	</software>
 
-	<!-- Requires OS9 -->
 	<software name="arcity">
 		<description>AR, CITY (DOS Patches, RAM Disk)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires OS-9"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -6279,11 +6979,11 @@
 		</part>
 	</software>
 
-	<!-- Requires OS-9 -->
 	<software name="burke">
 		<description>Burke &amp; Burke</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires OS-9"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -6292,11 +6992,11 @@
 		</part>
 	</software>
 
-	<!-- Requires OS-9 -->
 	<software name="os9docs">
 		<description>CBASIC Docs, SDISK Docs, OS9DISK, other OS-9</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires OS-9"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -6418,7 +7118,7 @@
     <software name="">
         <description>CoCo Graphic Designer images</description>
         <year>198?</year>
-        <publisher></publisher>
+        <publisher>&lt;unknown&gt;</publisher>
 
         <part name="flop1" interface="floppy_5_25">
             <dataarea name="flop" size="161280">
@@ -6505,7 +7205,7 @@
     <software name="">
         <description>CoCo Zone</description>
         <year>198?</year>
-        <publisher></publisher>
+        <publisher>&lt;unknown&gt;</publisher>
 
         <part name="flop1" interface="floppy_5_25">
             <dataarea name="flop" size="161280">
@@ -6542,6 +7242,137 @@
 		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="complete rainbow guide to os-9 (dale puckett peter dibble)(falsoft)(disk 2).dsk" size="161280" crc="f55e2b39" sha1="230b8f6fd40236c89bdf302730d42fc78c96b563" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dmwatch">
+		<description>DataMaster, Watch</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires OS-9"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="datamaster, watch (os9) (181ca_01).dsk" size="161280" crc="725614ee" sha1="0068bbdd1d48fd32b0ca5987b3e10dd579222356" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="deftpasm">
+		<description>DEFT Pascal Runtime Library Disassembly</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="deft pascal runtime library disassembly (decb) (191ad_01).dsk" size="161280" crc="1546442e" sha1="c1094be1c130227cc86be0456c000141a6f9f453" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dmatdat1">
+		<description>DeskMate Data Disk 1</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="deskmate (dmdata1).dsk" size="161280" crc="19320d33" sha1="bce1dff71d278c151b008dc2947dab4290a13be7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dmatdat2">
+		<description>DeskMate Data Disk 2</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="deskmate (data) (disk 2).dsk" size="161280" crc="601feba9" sha1="7e1a34b8c5d0082027130ee4e9f686d713a342c5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dmatdat3">
+		<description>DeskMate Data Disk 3</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="deskmate (dmdata3).dsk" size="161280" crc="70fdc82f" sha1="f02b8b28f64fa3cc25efa69e3105ef85e306c02d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dmatdat4">
+		<description>DeskMate Data Disk 4</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="deskmate (dmdata4).dsk" size="161280" crc="9b7d1e69" sha1="7c1614030c4ed34418f6d6aa13d8e32b0c5f1ff2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Only contains a single empty BAS file -->
+	<software name="df">
+		<description>Df (useless)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="df.dsk" size="161280" crc="9ba52ec3" sha1="54fe2c5c478c7a6eb31c28ffe7d8c89dd3adad72" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dpjfiltr">
+		<description>DP Johnson Filter Kit</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires OS-9?"/>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="161280">
+				<rom name="dp johnson filter kit (side 1).dsk" size="161280" crc="da7032c1" sha1="6aa114050e33c5be9f63b939a59bc3f24648eb29" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="dp johnson filter kit (side 2).dsk" size="161280" crc="413bbcf7" sha1="dc2e4f3e6f1e9ed5fe7608abc8576dcbb0602097" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dpjhack">
+		<description>DP Johnson Hacker's Kit</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires OS-9?"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dp johnson hacker's kit.dsk" size="161280" crc="de43fcdd" sha1="7f2b95296d7cbab84feaa60d4b721a17ccf2da6b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dump2k">
+		<description>DUMP2000 Assembler Source</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dump2000 assembler source (decb) (200ad_02).dsk" size="161280" crc="1a61426b" sha1="5b4ec9e6c0bf5c740222080a8ab049c583f53b74" offset="0" />
 			</dataarea>
 		</part>
 	</software>

@@ -475,11 +475,11 @@
 		</part>
 	</software>
 
-	<!-- DOS to boot -->
 	<software name="cocoart">
 		<description>Color Computer Artist (v01.00.00)</description>
 		<year>1987</year>
 		<publisher>Tandy</publisher>
+		<info name="usage" value="Use DOS command to boot disk"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -556,6 +556,78 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="colour key iii (coco 3).dsk" size="161280" crc="75ce7a26" sha1="61ac6cd34e52fe7d6059ce7bf43aa06be38ece4c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="deskmate">
+		<description>DeskMate 3 (v01.00.00)</description>
+		<year>1987</year>
+		<publisher>Tandy</publisher>
+		<info name="usage" value="Use DOS command to boot disk"/>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Boot Disk"/>
+			<dataarea name="flop" size="161280">
+				<rom name="deskmate 3 (coco 3) (disk 1).dsk" size="161280" crc="e5626d66" sha1="d6ecb2159c470b1d22fcb4f7b89bbb0264c15e3f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="System Disk"/>
+			<dataarea name="flop" size="161280">
+				<rom name="deskmate 3 (coco 3) (side 2).dsk" size="161280" crc="0af29e0d" sha1="934d1d0a3664dbb21da3682a805a067ac07b1530" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="deskmatea" cloneof="deskmate">
+		<description>DeskMate 3 (v01.00.00, Alt)</description>
+		<year>1987</year>
+		<publisher>Tandy</publisher>
+		<info name="usage" value="Use DOS command to boot disk"/>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Boot Disk"/>
+			<dataarea name="flop" size="161280">
+				<rom name="deskmate 3 for os-9 l2 (boot disk) (os9) (230ca_01).dsk" size="161280" crc="2ef64eeb" sha1="c5b2e4398748188c2b855e32021284c69d17e340" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="System Disk"/>
+			<dataarea name="flop" size="161280">
+				<rom name="deskmate 3 for os-9 l2 (system disk) (os9) (230ca_02).dsk" size="161280" crc="af0fba72" sha1="7422381bce22a7219d1dcab9ff1913d69b3c29ec" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="deskmateb" cloneof="deskmate">
+		<description>DeskMate 3 (v01.00.00, Alt 2)</description>
+		<year>1987</year>
+		<publisher>Tandy</publisher>
+		<info name="usage" value="Use DOS command to boot disk"/>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Boot Disk"/>
+			<dataarea name="flop" size="161280">
+				<rom name="deskmate 3 for os-9 l2 (boot disk) (os9) (231ca_01).dsk" size="161280" crc="e4d725b2" sha1="d78575c90b7f56efd7bd27375f768cef73bea073" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="System Disk"/>
+			<dataarea name="flop" size="161280">
+				<rom name="deskmate 3 for os-9 l2 (system disk) (os9) (231ca_02).dsk" size="161280" crc="ceb7b52e" sha1="f4b8dcaf09cf0445eaed2b414685f1549f1233d7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dietrans">
+		<description>DieCom Transfer</description>
+		<year>19??</year>
+		<publisher>Tim Lindner</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="diecom transfer (coco 3).dsk" size="161280" crc="f6a2f6f2" sha1="c4b1b865901cf8f8740ef7d1e33b6a5bcc59c66e" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -637,6 +709,30 @@
 
 <!-- Compilations (Applications) -->
 
+	<software name="cengutil">
+		<description>Carl England Utilities</description>
+		<year>19??</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="defeater, the (carl england) (coco 3).dsk" size="161280" crc="25dabfeb" sha1="6dd9e18d202bde62144e0385c010a89284355dcd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cengutila" cloneof="cengutil">
+		<description>Carl England Utilities (Alt)</description>
+		<year>19??</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="disk utilities.dsk" size="512016" crc="32f2e18a" sha1="a76e232fe74f68422cb5a21dfa1c45cbb15f982b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="cventutl">
 		<description>ColorVenture Utilities</description>
 		<year>19??</year>
@@ -645,6 +741,150 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="colorventure utilities (coco 3).dsk" size="161280" crc="284d6f72" sha1="773e758dba47559b4d87228978bd6bf185b2ce5e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="diagutil">
+		<description>Diagnostic Utilities</description>
+		<year>19??</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="diagnostic utilities (side 1).dsk" size="161280" crc="59f4c6ad" sha1="d73d494a4e1d9deec1bce01e9ad35d9484b6835b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dskutil1">
+		<description>Disk Utilities 1</description>
+		<year>19??</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="disk utilities (side 1).dsk" size="161280" crc="4d835039" sha1="0f8e51faf7c81ec0ccb5e859a36e747ef82ea8a5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dskutil2">
+		<description>Disk Utilities 2</description>
+		<year>19??</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="disk utilities (side 2).dsk" size="161280" crc="0344ef58" sha1="25f7f47b618dd57f89f4a23adfc857fcaa965f3c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dskutil3">
+		<description>Disk Utilities 3</description>
+		<year>19??</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="disk utilities (side 3).dsk" size="161280" crc="25eacd3d" sha1="6176b4d7da8cfc917dd226a90d7cc645ab161d6a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dskutil4">
+		<description>Disk Utilities 4</description>
+		<year>19??</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="disk utilities (side 4).dsk" size="161280" crc="24d84fc5" sha1="155775fbf54b4aca7af30d1d6b533a572a3d874c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dskutil5">
+		<description>Disk Utilities 5</description>
+		<year>19??</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="disk utilities (side 5).dsk" size="161280" crc="baf28d32" sha1="7c38f8a3667ff7ba235896d270cc63d848110f8a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dskutil5a" cloneof="dskutil5">
+		<description>Disk Utilities 5 (Alt)</description>
+		<year>19??</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="disk utilities (disk 5)[a].dsk" size="161280" crc="3055bb9d" sha1="6804f0c861df794cede6658fa8139cc3ced00c9a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dskutil6">
+		<description>Disk Utilities 6</description>
+		<year>19??</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="disk utilities (side 6).dsk" size="161280" crc="2449c230" sha1="4062894f1d6d154f09462df480078f6d25f85fbc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dskutil7">
+		<description>Disk Utilities 7</description>
+		<year>19??</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="disk utilities (side 7).dsk" size="161280" crc="b25b0d27" sha1="5b8af10b200d7a07b752d159925db0f1cdf1e401" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dskutil8">
+		<description>Disk Utilities 8</description>
+		<year>19??</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="disk utilities (side 8).dsk" size="161280" crc="578cb471" sha1="350d5c346649aca1b2f3cc31a41c59e2181715da" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dskutil9">
+		<description>Disk Utilities 9</description>
+		<year>19??</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="disk utilities (side 9).dsk" size="161280" crc="d2424468" sha1="6f268a2b2537272fff0802b7325bf46f0b2c0ccc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="msdosdsk">
+		<description>MS-DOS Disk Utilities (development files)</description>
+		<year>19??</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="decb ms-dos format floppy disk reader (development files) (decb) (114au_01).dsk" size="161280" crc="bd2530b4" sha1="5d7dbd4205601c964772730e7e55e7b0671ec47f" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -807,6 +1047,18 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="cvox (coco 3).dsk" size="161280" crc="dc316b14" sha1="b251244f2438a67da458b32164baea0363626137" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="digispch">
+		<description>Digital Speech Demos</description>
+		<year>19??</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="digital speech demo (coco 3).dsk" size="161280" crc="e9501cf2" sha1="736d44b1338f4b1292e2dcbddfec58063418dad7" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2665,11 +2917,11 @@ They will be added later on as this software list matures.
 		</part>
 	</software>
 
-	<!-- DOS to boot -->
 	<software name="colcave">
 		<description>Colossal Cave</description>
 		<year>1991</year>
 		<publisher>CRL</publisher>
+		<info name="usage" value="Use DOS command to boot disk"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -2830,6 +3082,71 @@ They will be added later on as this software list matures.
 		</part>
 	</software>
 
+	<software name="dmonseed">
+		<description>Demon Seed (CoCo 3 Palette)</description>
+		<year>198?</year>
+		<publisher>&lt;hack&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="demon seed (coco 3) (tandy radio shack).dsk" size="161280" crc="45539c3f" sha1="ee6d2e89d2ade94943c66f98f485204e4d8a3a60" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="digger">
+		<description>Digger</description>
+		<year>1991</year>
+		<publisher>Hyper-Tech Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="184320">
+				<rom name="digger (coco 3).dsk" size="184320" crc="d24a977d" sha1="b5b88f6f020dbd0a26935316ab041daf4c350489" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="diggera" cloneof="digger">
+		<description>Digger (Alt)</description>
+		<year>1991</year>
+		<publisher>Hyper-Tech Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="digger (hyper-tech software) (coco 3).dsk" size="161280" crc="2b04ed68" sha1="420bd91b961c009a4c73d19d5191a11bdca56f15" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="digger2">
+		<description>Digger II: Return of the Saint</description>
+		<year>1997</year>
+		<publisher>MediaLink Development</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="digger 2 - return of the saint (coco 3) (side 1).dsk" size="161280" crc="fa36335b" sha1="7a2ee7480d4cb31ac91cc335ce5e245a1949d152" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="digger 2 - return of the saint (coco 3) (side 2).dsk" size="161280" crc="c9d9629d" sha1="361a3fa292d76604d7cfdf02ff57f8d0c22c7f3b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="digger2a" cloneof="digger2">
+		<description>Digger II: Return of the Saint (Demo)</description>
+		<year>1997</year>
+		<publisher>MediaLink Development?</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="digger 2 demo (coco 3).dsk" size="161280" crc="73b27e45" sha1="d8df98a3e9e4b7f2ec7459c31f18042fcc90e33d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- coco3 only requires 512Kb, audio is a farty, run best with a 6309? - coco3h driver) -->
 	<software name="dkong" supported ="partial">
 		<description>Donkey Kong Emulator for CoCo 3 (512Kb)</description>
@@ -2892,11 +3209,11 @@ They will be added later on as this software list matures.
 		</part>
 	</software>
 
-	<!-- DOS to boot -->
 	<software name="carmen">
 		<description>Where in the World is Carmen Sandiego?</description>
 		<year>1987</year>
 		<publisher>Broderbund Software - Computerware</publisher>
+		<info name="usage" value="Use DOS command to boot disk"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -3530,6 +3847,114 @@ They will be added later on as this software list matures.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="colossal cave (original ibm pc c source code) (os9) (260cg_01).dsk" size="161280" crc="94e57db4" sha1="b5f8b082fca2ab247c2f0dac291bec550726043b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dmatdat1">
+		<description>Deskmate 3 Data Disk 1</description>
+		<year>19??</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="deskmate 3 (coco 3) (dm3data1).dsk" size="161280" crc="d92d7bfe" sha1="2530ef0d466ac7d8839030fd085a75ef021c41a6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dmatdat2">
+		<description>Deskmate 3 Data Disk 2</description>
+		<year>19??</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="deskmate 3 (coco 3) (dm3data2).dsk" size="161280" crc="08eae6d4" sha1="577855f08005cda1ffbc5357cc81af34ede9feb4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dmatdat3">
+		<description>Deskmate 3 Data Disk 3</description>
+		<year>19??</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="deskmate 3 (coco 3) (dm3data3).dsk" size="161280" crc="7434dbce" sha1="4aa9d10f7a5b84cf024b945dfccfe8973c07c890" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dmatdat4">
+		<description>Deskmate 3 Data Disk 4</description>
+		<year>19??</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="deskmate 3 (coco 3) (dm3data4).dsk" size="161280" crc="f9bc85f4" sha1="aef174ca9e83b48a1a8db312d2b443a80821b6d7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dmatdat5">
+		<description>Deskmate 3 Data Disk 5</description>
+		<year>19??</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="deskmate 3 (coco 3) (dm3data5).dsk" size="161280" crc="a7336355" sha1="bce7bddfecfdb5cbdce39f90d38c552f623c68e1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dmatdat6">
+		<description>Deskmate 3 Data Disk 6</description>
+		<year>19??</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="deskmate 3 (coco 3) (dm3data6).dsk" size="161280" crc="1853f686" sha1="59793b220f5c2adb38594083bbc57ff935521fbe" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dmatdat7">
+		<description>Deskmate 3 Data Disk 7</description>
+		<year>19??</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="deskmate 3 (coco 3) (dm3data7).dsk" size="161280" crc="463a22ec" sha1="ed936bd31def0b0ff83be7aea30c4a0554912639" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dmatdat8">
+		<description>Deskmate 3 Data Disk 8</description>
+		<year>19??</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="deskmate 3 (coco 3) (dm3data8).dsk" size="161280" crc="d94fa80c" sha1="05e96b937003d226008a5f10c479d67926770f7b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dmatdat9">
+		<description>Deskmate 3 Data Disk 9</description>
+		<year>19??</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="deskmate 3 (coco 3) (dm3data9).dsk" size="161280" crc="811ffea8" sha1="f6b20f0980339b0357122415466d78fc7a3ed19d" offset="0" />
 			</dataarea>
 		</part>
 	</software>
