@@ -4233,11 +4233,11 @@
 		</part>
 	</software>
 
-	<!-- Press Fire to get past the blank screen -->
 	<software name="brewmstr">
 		<description>Brew Master</description>
 		<year>1984</year>
 		<publisher>Tom Mix Software </publisher>
+		<info name="usage" value="Press joystick button to get past the blank screen"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -4246,11 +4246,11 @@
 		</part>
 	</software>
 
-	<!-- Same instructions as parent -->
 	<software name="brewmstra" cloneof="brewmstr">
 		<description>Brew Master (Alt)</description>
 		<year>1984</year>
 		<publisher>Tom Mix Software </publisher>
+		<info name="usage" value="Press joystick button to get past the blank screen"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -5025,6 +5025,7 @@
 		<description>Chopper Strike</description>
 		<year>198?</year>
 		<publisher>Computer Shack - Michtron</publisher>
+		<info name="usage" value="Press Reset button to run"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -6372,11 +6373,11 @@
 		</part>
 	</software>
 
-	<!-- Press Enter at the garbage screen -->
 	<software name="decathln">
 		<description>Decathlon</description>
 		<year>1984</year>
 		<publisher>Spectral Associates</publisher>
+		<info name="usage" value="Press Enter key at the garbage screen"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
@@ -6385,11 +6386,11 @@
 		</part>
 	</software>
 
-	<!-- Press Enter at the garbage screen -->
 	<software name="decathlna" cloneof="decathln">
 		<description>Decathlon (Alt)</description>
 		<year>1984</year>
 		<publisher>Spectral Associates</publisher>
+		<info name="usage" value="Press Enter key at the garbage screen"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
