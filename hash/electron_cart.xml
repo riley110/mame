@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<!-- 
-Acorn Electron ROM Cartridges
-
-This list contains all known cartridges for the Acorn Electron. The Plus 1 expansion unit is required to add the two cartridge slots.
-
-Loading Instructions: Hold down the SHIFT key and SPACEbar and press and release the BREAK key.
+<!--
+This list contains all known cartridges for the Acorn Electron.
+The Plus 1 expansion unit is required to add the two cartridge slots.
+All carts will auto-run when the emulation is started.
 -->
 <softwarelist name="electron_cart" description="Acorn Electron cartridges">
 
@@ -65,18 +63,6 @@ Loading Instructions: Hold down the SHIFT key and SPACEbar and press and release
 		</part>
 	</software>
 
-	<software name="demo">
-		<description>Electron Demonstration Cartridge</description>
-		<year>198?</year>
-		<publisher>Acorn</publisher>
-
-		<part name="cart" interface="electron_cart">
-			<dataarea name="uprom" size="16384">
-				<rom name="electrondemonstrationcartridge.bin" size="16384" crc="4f4eb0be" sha1="c7514fc7204ab8ff34b4805cff1fdb187d87fe82" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="treeknow">
 		<description>Tree of Knowledge</description>
 		<year>1983</year>
@@ -88,6 +74,20 @@ Loading Instructions: Hold down the SHIFT key and SPACEbar and press and release
 			</dataarea>
 			<dataarea name="lorom" size="16384">
 				<rom name="treeofknowledge_2.bin" size="16384" crc="e21ea237" sha1="cc7b911e0e32866b8739144b198561753d0a89b4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Demos -->
+
+	<software name="demo">
+		<description>Electron Demonstration Cartridge</description>
+		<year>198?</year>
+		<publisher>Acorn</publisher>
+
+		<part name="cart" interface="electron_cart">
+			<dataarea name="uprom" size="16384">
+				<rom name="electrondemonstrationcartridge.bin" size="16384" crc="4f4eb0be" sha1="c7514fc7204ab8ff34b4805cff1fdb187d87fe82" offset="0" />
 			</dataarea>
 		</part>
 	</software>

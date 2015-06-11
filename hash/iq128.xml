@@ -3,7 +3,7 @@
 <softwarelist name="iq128" description="VTech Genius IQ 128 cartridges">
 
 	<!-- According to the boxart, this is compatible with: IQ 128 -->
-	<!-- if used with the French version produce same result of 'Cartouche I' -->
+	<!-- if used with the French version, it produces the same result as 'Cartouche I' -->
 	<software name="fitnatur">
 		<description>Fit in Naturwissenschaften</description>
 		<year>199?</year>
@@ -19,7 +19,7 @@
 	</software>
 
 	<!-- the existence of this cartridge is not yet confirmed -->
-	<!-- if used with the German version produce same result of 'Fit in Naturwissenschaften' -->
+	<!-- if used with the German version, it produces the same result as 'Fit in Naturwissenschaften' -->
 	<software name="cart1">
 		<description>Cartouche I</description>
 		<year>199?</year>
@@ -28,7 +28,7 @@
 		<part name="rom" interface="iq128_cart">
 			<feature name="pcb_type" value="romless1" />
 			<dataarea name="rom" size="1">
-				<!-- cartridge should contains only a jumper wire -->
+				<!-- cartridge should contain only a jumper wire -->
 			</dataarea>
 		</part>
 	</software>
@@ -42,7 +42,7 @@
 		<part name="rom" interface="iq128_cart">
 			<feature name="pcb_type" value="romless2" />
 			<dataarea name="rom" size="1">
-				<!-- cartridge should contains only a jumper wire -->
+				<!-- cartridge should contain only a jumper wire -->
 			</dataarea>
 		</part>
 	</software>
