@@ -8,6 +8,8 @@
 #include "nld_system.h"
 #include "../analog/nld_solver.h"
 
+NETLIB_NAMESPACE_DEVICES_START()
+
 // ----------------------------------------------------------------------------------------
 // netlistparams
 // ----------------------------------------------------------------------------------------
@@ -190,6 +192,8 @@ void nld_d_to_a_proxy::start()
 
 	connect(m_RV.m_N, m_Q);
 	m_Q.initial(0.0);
+
+	save(NLNAME(m_last_state));
 }
 
 void nld_d_to_a_proxy::reset()
@@ -269,3 +273,5 @@ NETLIB_UPDATE_PARAM(res_sw)
 {
 	// nothing, not intended to be called
 }
+
+NETLIB_NAMESPACE_DEVICES_END()

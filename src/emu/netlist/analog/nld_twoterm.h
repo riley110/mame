@@ -85,31 +85,33 @@
 // Implementation
 // ----------------------------------------------------------------------------------------
 
+NETLIB_NAMESPACE_DEVICES_START()
+
 // ----------------------------------------------------------------------------------------
 // nld_twoterm
 // ----------------------------------------------------------------------------------------
 
-class NETLIB_NAME(twoterm) : public netlist_device_t
+class NETLIB_NAME(twoterm) : public device_t
 {
 public:
 	ATTR_COLD NETLIB_NAME(twoterm)(const family_t afamily);
 	ATTR_COLD NETLIB_NAME(twoterm)();
 
-	netlist_terminal_t m_P;
-	netlist_terminal_t m_N;
+	terminal_t m_P;
+	terminal_t m_N;
 
 	virtual NETLIB_UPDATE_TERMINALSI()
 	{
 	}
 
-	ATTR_HOT inline void set(const nl_double G, const nl_double V, const nl_double I)
+	ATTR_HOT /* inline */ void set(const nl_double G, const nl_double V, const nl_double I)
 	{
 		/*      GO, GT, I                */
 		m_P.set( G,  G, (  V) * G - I);
 		m_N.set( G,  G, ( -V) * G + I);
 	}
 
-	ATTR_HOT inline nl_double deltaV() const
+	ATTR_HOT /* inline */ nl_double deltaV() const
 	{
 		return m_P.net().as_analog().Q_Analog() - m_N.net().as_analog().Q_Analog();
 	}
@@ -254,7 +256,7 @@ public:
 
 	/* owning object must save those ... */
 
-	ATTR_COLD void save(pstring name, netlist_object_t &parent);
+	ATTR_COLD void save(pstring name, object_t &parent);
 
 private:
 	nl_double m_Vd;
@@ -292,5 +294,6 @@ protected:
 };
 
 
+NETLIB_NAMESPACE_DEVICES_END()
 
 #endif /* NLD_TWOTERM_H_ */
