@@ -1,8 +1,11 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+This info will eventually be filled out and moved to the main software list.
+It's currently worthless for any other purpose! 
+-->
 <softwarelist name="zx81_cass" description="Sinclair ZX-81 cassettes (WIP)">
 
-<!--
 	<software name="">
 		<description>Deep Space (19xx)(-)</description>
 		<year>198?</year>
@@ -448,13 +451,13 @@
 	</software>
 
 	<software name="">
-		<description>Draw & Store in String (19xx)(-)</description>
+		<description>Draw &amp; Store in String (19xx)(-)</description>
 		<year>198?</year>
 		<publisher></publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="7234">
-				<rom name="draw & store in string (19xx)(-).p" size="7234" crc="73fc9508" sha1="1e4a0c90b717d7c6a8878107433071a56764ebe5" offset="0" />
+				<rom name="draw &amp; store in string (19xx)(-).p" size="7234" crc="73fc9508" sha1="1e4a0c90b717d7c6a8878107433071a56764ebe5" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -544,13 +547,13 @@
 	</software>
 
 	<software name="">
-		<description>Editor 16 (1983)(Robert & Gerald Pearson)</description>
+		<description>Editor 16 (1983)(Robert &amp; Gerald Pearson)</description>
 		<year>198?</year>
 		<publisher></publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="12388">
-				<rom name="editor 16 (1983)(robert & gerald pearson).p" size="12388" crc="cd9139f7" sha1="fedce8849be5c30d70f99317acb594b4c4696394" offset="0" />
+				<rom name="editor 16 (1983)(robert &amp; gerald pearson).p" size="12388" crc="cd9139f7" sha1="fedce8849be5c30d70f99317acb594b4c4696394" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -8524,25 +8527,25 @@
 	</software>
 
 	<software name="">
-		<description>Swamp Fever & Lost in the Swamp (1982)(Linda Kuever)</description>
+		<description>Swamp Fever &amp; Lost in the Swamp (1982)(Linda Kuever)</description>
 		<year>198?</year>
 		<publisher></publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="13730">
-				<rom name="swamp fever & lost in the swamp (1982)(linda kuever).p" size="13730" crc="4f8a1899" sha1="d1421c2ac9cf70c6fd509d2b692b79201544873d" offset="0" />
+				<rom name="swamp fever &amp; lost in the swamp (1982)(linda kuever).p" size="13730" crc="4f8a1899" sha1="d1421c2ac9cf70c6fd509d2b692b79201544873d" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="">
-		<description>Swamp Fever & Lost in the Swamp (1982)(Linda Kuever)[a]</description>
+		<description>Swamp Fever &amp; Lost in the Swamp (1982)(Linda Kuever)[a]</description>
 		<year>198?</year>
 		<publisher></publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="14216">
-				<rom name="swamp fever & lost in the swamp (1982)(linda kuever)[a].p" size="14216" crc="446b0a8c" sha1="76fe2675b8ec7eabb53c22e7dd890c1929c29c16" offset="0" />
+				<rom name="swamp fever &amp; lost in the swamp (1982)(linda kuever)[a].p" size="14216" crc="446b0a8c" sha1="76fe2675b8ec7eabb53c22e7dd890c1929c29c16" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -9892,13 +9895,13 @@
 	</software>
 
 	<software name="">
-		<description>Zuckman (1982)(David & John Looker)</description>
+		<description>Zuckman (1982)(David &amp; John Looker)</description>
 		<year>198?</year>
 		<publisher></publisher>
 
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="9939">
-				<rom name="zuckman (1982)(david & john looker).p" size="9939" crc="6d5c5765" sha1="e475c39f7b54fc04f333be409dcf16e649d64c10" offset="0" />
+				<rom name="zuckman (1982)(david &amp; john looker).p" size="9939" crc="6d5c5765" sha1="e475c39f7b54fc04f333be409dcf16e649d64c10" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -10777,7 +10780,6 @@
 				<rom name="zzz-unk-zxdb.p" size="5857" crc="ba8936a8" sha1="851a394406aa043145bb139c21bb9aafbbadcb05" offset="0" />
 			</dataarea>
 		</part>
-	</software
--->
+	</software>
 
 </softwarelist>
