@@ -743,10 +743,11 @@
 		</part>
 	</software>
 
-	<software name="cobol">
+	<software name="cobol" supported="no">
 		<description>Nevada COBOL (Rev 2.1)</description>
 		<year>198?</year>
-		<publisher>Sharp - Ellis Computing</publisher>
+		<publisher>Sharp</publisher>
+		<info name="developer" value="Ellis Computing"/>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="655360">
@@ -768,7 +769,7 @@
 	</software>
 
 	<!-- Are there any differences aside from being in raw format? -->
-	<software name="pcpma" cloneof="pcpm">
+	<software name="pcpma" cloneof="pcpm" supported="no">
 		<description>Personal CP/M &amp; WordMaster (v1.0A, Alt)</description>
 		<year>1985</year>
 		<publisher>Sharp</publisher>
