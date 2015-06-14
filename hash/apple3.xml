@@ -2,22 +2,3571 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="apple3" description="Apple III 5.25 disks">
 
-	<!-- was also released commercially - need those images, original game is 1983, this is a PD release of it from 1995 -->
-	<software name="magneto">
-		<description>Capt'n Magneto (PD release APPLE-3-WAP-GAM-03)</description>
-		<year>1995</year>
-		<publisher>Al Evans / WAP</publisher>
+<!-- Washington Apple Pi - Fonts -->
+
+	<!--
+	PDS NAME: CustomFONT
+	Disk ID: APPLE-3-WAP-FNT-01
+	BOOTABLE?: Bootable
+
+	CustomFONT is a wonderful font-creation program that has been
+	placed into the PD by Swenson Associates.  It will allow the user to
+	create or adapt Apple /// character sets and even has drivers allowing
+	the user to print out the custom-created fonts!  Disk APPLE-3-WAP-FNT-02 contains
+	the manual.  Demo program is disk APPLE-3-WAP-FNT-03.
+
+	SIDE ONE:   Boot Disk
+	SIDE TWO:   Program Disk
+	-->
+	<software name="wapfnt01">
+		<description>Washington Apple Pi Fonts Disk 1 - CustomFONT</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Side A"/>
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-fnt-01a.dsk" size="143360" crc="d60ce39a" sha1="aeba5a7dbcda3dbc1d3f4216001fed6cd706ad75" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-fnt-01b.dsk" size="143360" crc="3267250c" sha1="2bd2a7254d4b856612aef5def83360761cc4a326" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: CustomFONT Manual
+	Disk ID: APPLE-3-WAP-FNT-02
+	BOOTABLE?: Bootable
+
+	CustomFONT is a wonderful font-creation program that has been
+	placed into the PD by Swenson Associates.  It will allow the user to
+	create or adapt Apple /// character sets and even has drivers allowing
+	the user to print out the custom-created fonts!
+
+	CustomFONT allows you to manipulate and customize the letters, numerals
+	and symbols used by your Apple ///.  Character "sets" are stored on disk in
+	data files called "fontfiles."  The fontfile used by the Apple /// is called
+	"system character set" and is contained in the file named "SOS.DRIVER" on any
+	boot (start-up) diskette like AppleWriter ///, Business Basic, Pascal, Draw
+	On Three and others. In order to use customized fontfiles in an application,
+	you must first use CustomFONT to create the customized fontfile and then use
+	the Apple /// System Utilities to modify your application boot diskette,
+	specifying that a new fontfile is to be used as the "system character set".
+	Fontfile customization is discussed in Chapters 4 though 8, and the Apple ///
+	System Utilities are discussed in Chapter 9.
+
+
+	The two steps to using Customized Character Sets:
+
+	1)  Use CustomFONT to create a customized fontfile and save it to disk.
+
+	2)  Use the Apple /// System Utilities to install the customized fontfile as
+	    the "System Character Set" within the file "SOS.DRIVER" on the
+	    appropriate boot disk.
+
+
+	ON SIDE ONE:
+
+	INTRODUCTION  : System Requirements; Background; Custom Printing
+	CHAPTER3      : Getting Started
+	CHAPTER4      : The Design Screen
+	CHAPTER5      : The View Screen
+	CHAPTER6      : The Print Command
+	CHAPTER7      : The Utilities
+
+	ON SIDE TWO:
+
+	CHAPTER08     : Some Common Moves
+	CHAPTER09     : Setting Up Boot Diskettes with Custom Character Sets
+	CHAPTER10     : Setting Up Your Printer
+	CHAPTER11     : Some Tips on Custom Printing
+	APPENDIX.A    : Word Processing
+	APPENDIX.B    : Spreadsheets
+	APPENDIX.C    : Business Basic and Pascal
+	APPENDIX.D    : Technical Reference
+	APPENDIX.E    : CustomFONT on Hard Disk
+	APPENDIX.F    : Advanced Printer Control
+	-->
+	<software name="wapfnt02">
+		<description>Washington Apple Pi Fonts Disk 2 - CustomFONT Manual</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-fnt-02a.dsk" size="143360" crc="34850e2b" sha1="ffd5136f1e29295c6c1d614fabacec5b5a59cafa" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-fnt-02b.dsk" size="143360" crc="d8912a4e" sha1="a8f7cf40acf60c425f35eab0bede208bbbde8a33" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: CustomFONT Demo
+	Disk ID: APPLE-3-WAP-FNT-03
+	BOOTABLE?: Bootable
+
+	This is a demonstration of CustomFONT, a commercial program
+	now in the public domain.  CustomFONT is an easy-to-use font design
+	program.  The manual is available on disk APPLE-3-WAP-FNT-02 and the actual
+	program is on APPLE-3-WAP-FNT-01.  No previous experience with Apple /// fonts is
+	required.  The WAP /// SIG PD also has a disk full of fonts.  See disk
+	APPLE-3-WAP-FNT-04.
+
+	Side One: CustomFONT Demo disk.
+	Side Two: Bibliography of material in the WAP /// SIG PD dealing with
+	       fonts.  3EZP data base and ASCII text file. Self-booting.
+	-->
+	<software name="wapfnt03">
+		<description>Washington Apple Pi Fonts Disk 3 - CustomFONT Demo</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-fnt-03a.dsk" size="143360" crc="e48aa804" sha1="bb48cd1bad5d275eb27a1e5c06a176f7b79da36a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-fnt-03b.dsk" size="143360" crc="0e379f4b" sha1="0aaf8e7f57dfa5c4acd509ede2d081e182f40149" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME:  Font Generator ///
+	Disk ID:  APPLE-3-WAP-FNT-04
+	BOOTABLE?: YES - Both Sides
+
+	FONT GENERATOR /// is a user-oriented Program that was designed to
+	incorporate many of the Apple ///'s powerful built-in features
+	to help in the designing of character FONTS. With it you can test out how far
+	your font would look before it is saved.
+	But that's not all it can do.  You can also check out how your fonts
+	would look in different text modes, and yes. even with different foreground
+	and background colors.
+	As many as ten character fonts (not including working fonts) may be
+	loaded at one time. FONT GENERATOR /// also has the capability of
+	copying characters from one font into another one.
+	Editing and creating characters can be done from either keyboard or
+	joystick (or both).
+	Menu help is available within the program as well.
+
+
+	Side One:  Contains the Font Generator Manual
+	Side Two:  Contains the actual Font Generator program
+	-->
+	<software name="wapfnt04">
+		<description>Washington Apple Pi Fonts Disk 4 - Font Generator ///</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-fnt-04a.dsk" size="143360" crc="0b27c531" sha1="63abda81398835f93ebae99397575e1513e960c7" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-fnt-04b.dsk" size="143360" crc="3932247e" sha1="8f3e2ac463882f1a0374822b46119fc0618fa4f2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME : FontWriter & Fonts
+	ID#      : APPLE-3-WAP-FNT-05
+	BOOTABLE?: Bootable
+
+	Character Set Editor creates characters for up to 14 x 16 pixels. Allows
+	user to create any symbol necessary. Numeric keypad is programmed as
+	an eight-direction cursor movement pad to move through a matrix. Each
+	pixel can be individually turned on or off to create symbols for almost
+	anything.  Character sets can be saved and loaded as SOS character sets
+	for most programs running under SOS.  A keyboard layout program is
+	included to reassign key values.
+
+	This is a former commercial program originally sold by Sun Remarketing.
+
+	Side One:  Fontwriter Boot/Program disk (Pascal based)
+	Side Two:  Fonts to use with Fontwriter (or other programs) that include:
+
+	TERRY; GREEK; UNCIAL; GOTHIC; OLD.ENGLISH; INVERSE; PUDGY.ROMAN; CELTIC.CHR;
+	CURSIVE.CHR; BOLD.CHR; SPECIAL.CHAR; STANDARD; APPLE; SPACE.AGE.CHR;
+	SMALL.FONT; MATH.FONT; WESTERN; COMPUTER.KEY; UNCIAL.GOTHIC; BIG.OLD.ENGLISH
+	-->
+	<software name="wapfnt05">
+		<description>Washington Apple Pi Fonts Disk 5 - FontWriter &amp; Fonts</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-fnt-05a.dsk" size="143360" crc="db567da1" sha1="d1240df8ffc542174d0fa698801e8c680655c45b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-fnt-05b.dsk" size="143360" crc="d5874fb0" sha1="dc7216f59fbe55ebc5c5e71ddc588efd8a07915f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Fonts Disk One
+	Disk ID: APPLE-3-WAP-FNT-06
+	BOOTABLE?: Bootable
+
+	This WAP PD disk is a double-sided offering with lots of fonts/
+	character sets.  Some are pretty weird (never fully explained by the
+	original author) or for specific purposes.  This disk includes two
+	subdirectories with converted Apple // character sets that don't exactly
+	match A3 fonts, but can be adapted with CustomFONT.
+
+	On Side One:
+	FONTS.1 : ACS3FONT; APPLE.CHR; BUTTERFLY; BYTE.CHR; FUTURA.CHR; GOTHIC.CHR;
+	          INVERSE.CHR
+	FONTS.2 : LARGE.CHR; OUTLINE.CHR; PINOCCHIO.CHR; PLAIN.CHR; PUDGY.CHR;
+	          ROMAN.CHR; SHADOW.CHR; SLANT.CHR; SMALL.CHR
+	FONTS.3 : APL.CHR; MATH; ON3.CHR; SMALL.CHR; SOIL; STANDARD.CHR; STOP.CHR
+	       SWENSON; TIPSY.CHR
+	FONTS.4 : BRITISH; FRENCH; GERMAN; ITALIAN; SPANISH; SWEDISH
+	READ.ME.FIRST: Some notes about this Font disk.
+
+	On Side Two:
+	FONTS.05 : CELTIC; CYRILLIC; DUTCH; ESPERANTO; GREEK; HEBREW; NORWEGIAN;
+	           RUSSIAN; TIBETAN
+	FONTS.06 : ASCII.SET; BAR.SET; BLIPPO.SET; BLOCK.SET; BROADWAY.SET;
+	           SKINNY.SET; SPECIAL.SET; STENCIL.SET; SUPERSUB.SET; WESTERN.SET
+	           WHITE.SET; PINBALL.SET
+	FONTS.07 : CONTRACT.SET; DIGITAL.SET; EDUCATIONAL.SET; GAMES.SET;GRAPHIC.SET
+	           GRAPHICS.SET; HEIGHT.SET; NINETY.SET; NORMAL.SET; OPTICAL.SE
+	           THIN.SET; FLOW.SET
+	FONTS.08 : CURSIVE; GRAPHIC; HORSE1; HORSE2; MISC; OLD.ENGLISH; PUDGY.ROMAN
+	           QUAINT; SCRIPT; SKIP; SPECIAL.CHAR; SPLIT; STITCH; UNCIAL
+	FONTS.09 : BLACK.CHR; BUG.FONT; BUG.FONT.1; COLOSSAL.CHR; COMPUTER;
+	           LARGE.14X24; SMALL; UP.dskWN.CHR
+	FONTS.10 : COUNT.CHR; FANCY.CHR; KATAKANA.CHR; MIRROR.CHR; UPSIDE.CHR
+	           WEIRD.CHR
+	FONT.INFO    :3EZP Data Base bibliography of articles about Apple /// fonts.
+	FONTS.INFO2  :ASCII text version of FONT.INFO.
+	-->
+	<software name="wapfnt06">
+		<description>Washington Apple Pi Fonts Disk 6 - Fonts Disk One</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-fnt-06a.dsk" size="143360" crc="0616cfd7" sha1="81da49481e7f506623b8d395f0965abc7475ea11" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-fnt-06b.dsk" size="143360" crc="30662f7d" sha1="36864a91fe447e7df16c0c9fc58f0648725d2928" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Washington Apple Pi - Games -->
+
+	<!--
+	PDS NAME: Games Disk 1
+	DISK ID : APPLE-3-WAP-GAM-01:
+	BOOTABLE? YES
+
+
+	       This is our first disk of games for the Apple ///. They've been around
+	for awhile as you might imagine.  But they're still a lot of fun.  Why not
+	give them a try?  Both sides are bootable if you like, or you can use
+	Menu.Maker to give you a listing and run programs from either side (boot side
+	one first, though).
+
+
+	-: Side One:
+	-: CANIBAL.ISLAND  : A text adventure that could end in the hot seat.
+	-: DAZZLE          : A graphics experience.
+	-: FOOTBALL.GURU   : Can you pick 'em?
+	-: FRIEND          : Eliza-look alike who likes to ask questions.
+	-: PIANO PLINKER   : A one-octave organ.
+	-: TRUCKER         : Become a Travelin' Man or Woman.
+	-: WORD PUZZLE     : Just try to figure it out.
+
+	-: Side Two:
+	-: AUDIO.DEMO/AUDIO.DEMO2:  Yes, your /// can play music if you let it.
+	-: BIORHYTHM  :  Is it your day or should you stay in bed?
+	-: CAL.COUNTER:  It could help you look like Opra once did.
+	-: CIVIL.WAR  :  Fight it all over again.
+	-: CODEBREAKER:  Get out the Dick Tracy secret decoder ring.
+	-: GOLF       :  Even Arnold Palmer would like this one.
+	-: LIFE               :A text version of this old favorite.
+	-: KNITTING TOOL      :A must if you like to knit.
+	-: PERPETUAL CALENDAR :You ask and it will tell you.  What day is your
+	-:                     birthday in 2001?
+	-:
+	-:
+	-->
+	<software name="wapgam01">
+		<description>Washington Apple Pi Games Disk 1</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-gam-01a.dsk" size="143360" crc="8bd7e1b0" sha1="fd643233d0b89f994d92bc66a93fe2923b8bfe67" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-gam-01b.dsk" size="143360" crc="45a97a93" sha1="0c7ccc46048add29624228e2dbe3eddc739dde39" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME:  GAMES FOR KIDS
+	DISK ID :  APPLE-3-WAP-GAM-02
+	BOOTABLE?  YES
+
+
+	         This disk is primarily for kids, but it's OK if you adults out there
+	want to give some of these games and other goodies a try.  But don't be
+	surprised if the kids beat you on occasion!
+	          These programs are from many sources, both from the Apple // and
+	/// side of the fence.  There's even an original or two.
+
+	Side One:
+	-: ADD                   :Test your addition skills.
+	-: ARITH.DRILL           :Test your +-*/ skills.
+	-: DEPTH.CHARGE          :Don't let them get too close.
+	-: GUESSING.GAME         :This one is fun!
+	-: PEG.GAME/PEG.GAME2    :An old-time favorite in two flavors.
+	-:
+	-:
+
+	Side Two:
+	-:
+	-: CANADA.QUIZ     :Test your knowledge of our friend to the North.
+	-: CONNECT.4       :An old favorite.
+	-: GRAPH.SKETCHER  :A great graphics program.
+	-: HANGMAN         :Don't miss too many or it's all over.
+	-: MD.QUIZ         :Test your knowledge of Lord Baltimore's state.
+	-: NJ.QUIZ         :Test your knowledge of New Jersey.
+	-: PRESIDENT.QUIZ  :Test your knowledge of the Presidents.
+	-: PRESIDENTS      :Another quiz about former residents of the White House.
+	-: STATE.CAPITALS  :Yes, South Dakota is in there.
+	-: US.QUIZ         :Where in the USA is ....
+	-: WV.QUIZ         :West Virginia???
+	-: KIDWORD 1.0     :A simple word processing program for Kids.
+	-: KIDWORD 3.5     :A little more powerful version of Kidword 1.0.
+	-:                  (Documentation is also included on this side.)
+	-->
+	<software name="wapgam02">
+		<description>Washington Apple Pi Games Disk 2 - Games for Kids</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-gam-02a.dsk" size="143360" crc="b5161566" sha1="c9e063adad251844addffcf4c6861c5056e29a41" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-gam-02b.dsk" size="143360" crc="9717e7b7" sha1="8c0b356aef4f4f4955deb6507bd21e9c338a7530" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: CAP'N MAGNETO
+	DISK ID : APPLE-3-WAP-GAM-03
+	BOOTABLE: YES
+
+	Thanks to: Weber Baker for his help.
+
+	NOTE!!!!!
+
+	** Please see the long-lost manual for Cap'n Magneto now on this disk!!! **
+
+
+	Capt'n Magneto is a formerly-commercial Apple /// game placed into the Public
+	Domain by its author, Al Evans.  The program is an interesting one and uses
+	fonts extensively throughout.  Pascal-based, this game is full of surprises. It
+	is not easy to master, however, and will take some practice.
+
+
+	Here are some basic instructions - BUT see the manual on this disk side for
+	complete details!
+
+	1. To use this PD disk as a stand-alone, copy side B to another disk and
+	   place it in .d2.
+
+	2. To use this from Catalyst, simply use the Catalyst interp install routine.
+	   To use from Selector or BOS, simply follow the instructions for installing
+	   a Pascal-based program.
+
+	3. When playing, the numeric keypad serves as a control pad for various
+	   aspects of play.  Thus if you are using DTM (Desktop Manager) or
+	   PowerKeys, you will need to see that those keys do not have macros
+	   defined. You can use the  first letter of the command, however. The escape
+	   key will show you the Command Chart. The period shows the Status Chart.
+
+	4. When you save a game, it gets saved to the current default data directory
+	   in the file CM.SAVE.  To clear all saved games delete this file.
+
+	   There are 9 slots to save different games in, with or without passwords.
+	   Slot 9 came with a game that had processed quite a ways (CAP'N MAGNTO
+	   gains strength and points as he goes if he survives). But it is password
+	   protected (and the password has been lost).
+
+	5. At various times some of the characters in the drama (different ones show
+	   up on the tricorder reading) spout words of wisdom. (Sometimes they just
+	   spout noise and gibberish).  The legible bits of advice are sound, but may
+	   not make sense.
+
+	6. To gain points you will have to fight.  As the Command Chart says, the
+	   shift key raises your weapon (there are several of increasing potency, and
+	   you have to find them) and the arrow keys direct the blow.  Without the
+	   shift key the arrows simply move the good CAP'N.  You do not have to fight
+	   everyone, however.  Friendly folks (see tricorder if you are not sure;
+	   thought unfriendly ones will attack right away) will follow you around and
+	   help you fight.  This is a good thing at first since you are weaponless.
+
+	7. There are items called "magic" which do not appear on the screen (at least
+	   not on a monochrome).  You have some to start, and if you go to drop
+	   something, you will be presented with a list of things to drop.  The last
+	   item will be blank.  These are the magic.  Dropping something, by the way,
+	   is how you offer items to friends and enemies.  Just drop it in their
+	   direction.  The status chart shows you how much of everything you have
+	   (except magic).  Some creatures that are angry become friends and go away
+	   if given the right item (not all items work and not all creatures get
+	   happy).
+
+	8. The world of CAP'N MAGNETO is donut-shaped, so you will always end up
+	   where you started.
+
+	The game uses fonts to perform its deeds, and the theory of doing things this
+	way was presented in one of the first ON THREE's by the game's author, Al Evans.
+
+	1                                            1
+	1     CAP'N MAGNETO-COMMAND CHART            1
+	1   Explanations of command actions          1
+	1                                            1
+	1   * Choose movement mode (when possible).  1
+	1  ** Followed by arrow key pointing to      1
+	1     item to get.                           1
+	1 *** Drop item. Move selector with up       1
+	1     and down arrows, press CHOOSE, then    1
+	1     press arrow key for direction.         1
+	1**** Press and hold SHIFT to ready weapon.  1
+	1     Then press arrow key for direction to  1
+	1     start "LUCK" counter, again to strike. 1
+	1                                            1
+
+	Reviewed and updated a tad: February, 1995
+	By Dave Ottalini
+	-->
+	<software name="wapgam03">
+		<description>Washington Apple Pi Games Disk 3 - Cap'n Magneto</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
 			<dataarea name="flop" size="143360">
 				<rom name="apple-3-wap-gam-03a.dsk" size="143360" crc="fec20dbb" sha1="5ee6b1610649ad32df8ab00a2a272c3b79a92f26" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Side B"/>
+		<feature name="part_id" value="Side B"/>
 			<dataarea name="flop" size="143360">
 				<rom name="apple-3-wap-gam-03b.dsk" size="143360" crc="a489f0b3" sha1="82c369ffec141b551732522edbe6d726b28da181" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: APPLE /// GAMES 02
+	DISK ID : 3GAM.04
+	BOOTABLE: YES
+
+
+	        We searched through a number of Apple /// PD games disks to
+	find some of the better games available.  They include:
+
+	-: Side One:
+	-: HANDICAPPER:  A program to help you pick the best horses. Definately
+	-:               requires knowledge of horse racing.
+	-: PEG.LEAP   :  One more game that tests your ability to leap pegs.
+	-:
+
+	Side Two's programs were all from the fertile mind of Robert Boston:
+
+	-: SCRIBBLER  : A program that scribbles and plays music at the same time.
+	-: BRICABRAC  :  Rearrange the three piles of numbered bricks to win.
+	-: DICTIONARY :  Dictionary used with the Superghost program.
+	-: EBBTIDE    :  Music demo of the song "Ebbtide" using "MUSIC" on this disk.
+	-: FLASHER    :  An electronic Lava Lamp to help your /// relax.
+	-: LOTREC     :  A program to help you pick the right numbers for the
+	-:               lottery.
+	-: SUPERGHOST :  A word-building game you play against the computer.
+	-: MORSE.TUTOR : Practice your di-dah-di-dits.
+	-: MUSIC       : Have fun with some tunes.
+	-: NFL.RANKING : Keep track of your favorite teams each week.
+	-:
+	-:
+	-->
+	<software name="wapgam04">
+		<description>Washington Apple Pi Games Disk 4 - Apple /// Games 02</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-gam-04a.dsk" size="143360" crc="1b652ea3" sha1="48cf87df27c4af6b63df907d0d3e87b63cc4d290" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-gam-04b.dsk" size="143360" crc="6c02d314" sha1="550acad9eec49b0bf948793a54a5ef8c86854e4d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Star Trek
+	Disk ID: APPLE-3-WAP-GAM-05
+	BOOTABLE? YES
+
+
+	        Strictly for Star Trek fans!  This disk includes
+	the only two Star Trek games ever released for the Apple ///:
+	Star Trek and Super Star Trek (Both in Business Basic)
+	This disk also includes:
+
+	-Graphics and music with a Star Trek theme.
+	-Information for fans of STTNG, including clubs and information available
+	 from the Science Fiction Forum on CompuServe.
+
+	On Side One:
+
+	-: ENTERPRISE  :Graphic File
+	-: FAN.CLUBS   :ASCII Data Base of Star Trek Fan Clubs
+	-: FLEET       :Graphic File
+	-:
+	On Side Two:
+
+	-: LOCUTUS      :Graphic File
+	-: STAR.TREK    :The original Star Trek game in Basic.
+	-: SUPER.TREK   :The advanced version of Star Trek, in Basic.
+	-: TREK.DL.REAL : 3EZP's Data Base of information available in the
+	-:                Science Fiction section of CompuServe (as of 1992).
+	-: TREK.SONG    : Your favorite theme song!
+	-: TV.GUIDE     : Text file of stations around the country that may still
+	-:                Star Trek the Next Generation. Likely they also now
+	                  show Deep Space Nine and Star Trek: Voyager.
+
+
+	Updated a Tad: February, 1995
+	By Dave Ottalini
+	-->
+	<software name="wapgam05">
+		<description>Washington Apple Pi Games Disk 5 - Star Trek</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-gam-05a.dsk" size="143360" crc="5d6f9a7f" sha1="29d6d513eafefb2af52d7ebcf00d9177d64aabfa" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-gam-05b.dsk" size="143360" crc="6c1ca095" sha1="7d1a0dc9ca4a9ca0d3e8dc82a1c383030a4b192c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME : SUPER TREK 2 BY PAUL CAMPBELL
+	DISK ID  : APPLE-3-WAP-GAM-06
+	BOOTABLE : YES - SIDE ONE ONLY
+
+
+	Welcome to the latest update of StarTrek for the Apple ///.
+
+	The first change you will notice is the new character set which
+	was created using CustomFont, then modified for this version of
+	StarTrek. Aside from all the characters being enhanced, the
+	characters used to represent the star ships and bases are new
+	to work in harmony with the program code modifications.
+
+	There were a few minor problems with the original Basic program,
+	but nothing really serious except for a syntax error which would
+	pop up and kill the game when you tried to activate communications
+	to the Federation or the Klingons. The fix for this came from Joel
+	Crump via the Washington Apple PI TCS. The other difficulty had to
+	do with the Galactic Memory Map displayed by the ship's computer.
+	This map showed the explored regions of the galaxy, but grew
+	distorted with usage to the point where it was really hard to tell
+	just were everything was located. This and the other minor problems
+	were corrected by simply editing the Basic program code in Apple-
+	Writer ///, then executing the WP file from Basic. (Don't try this
+	on a MS-DOS system!)
+
+	During play your screen will be split, with the top half being
+	for visual display of the Short Range Scanners, the Warp Compass,
+	and the Long Range Scanners, and the bottom half being for
+	commands and warnings. Speaking of warnings, you should know that
+	the starting position of the Enterprise is random, and you may
+	find yourself suddenly in the midst of a Klingon occupied sector
+	with no visual scanners until AFTER you destroy a ship! (preferably
+	not you own...:)
+
+	In playing the game, you will be given a few pointers in the
+	instructions at the beginning of the game. You'll probably want
+	to play at the lower levels until you get promoted to Admiral!
+	At the higher levels, you must have precise control over the warp
+	engines and the ability to plot your course accurately to respond
+	to attacks on distant Federation Bases.
+
+	If that isn't enough, the Klingon ships grow more numerous with
+	stronger shields. They can also effectively dodge your Phasers and
+	Photon torpedoes, and tend to attack Starbases more frequently.
+	If you select a rank that is beyond your ability, you will be
+	reminded of it very quickly by the Federation or the Klingons, but
+	not in that order!
+
+	A word about Warping and Photon Torpedoes
+
+	The warp engines can take you one sector at a time or to the other
+	side of the galaxy. When activated, you be asked for the direction
+	then the warp factor. Entering a warp factor of "1" will place
+	your ship in the next quadrant. Entering a ".1" will move you one
+	sector within the quadrant. An engine efficiency shift takes place
+	at warp ".3". At this warp factor and above, you must consider
+	the sector occupied by your ship as one of the traveled sectors.
+	For example, if you need to dock with a Starbase and there are
+	six markers between the Enterprise and the Starbase, you should
+	enter ".7" to dock with the Starbase.
+
+	You really should check with the computer before firing off those
+	valuable photon torpedoes, because you cannot reload except by
+	docking at a Starbase, and also because you WILL get hit by the
+	Klingon ships whether you hit them or not. When you do ask for
+	photon trajectories, you will be given a high and a low reading
+	for the photon direction. The most accurate trajectory will be
+	the exact middle between the two numbers (H-L/2+L=direct hit).
+	The phasers lock on target automatically and are very effective
+	at close range, but use a lot of energy units. Be sure that you
+	know where the the closest Starbase is if you use them frequently.
+
+	You will be given some pointers at the beginning of the game if
+	you ask for them. The game can be aborted by holding down
+	control-c, or by rebooting if you don't want to complete the
+	game in the normal way. Of course, you COULD take the Klingon
+	approach to ending the game.... naw, maybe not!
+
+
+	- PAUL CAMPBELL
+	  /// SIG CO-CHAIRMAN
+	  FEBRUARY, 1995
+	-->
+	<software name="wapgam06">
+		<description>Washington Apple Pi Games Disk 6 - Super Trek by Paul Campbell</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-gam-06a.dsk" size="143360" crc="02bf42b0" sha1="9e44143331b2593d00a94b955eb8b400dde42a74" offset="0" />
+			</dataarea>
+		</part>
+		<!-- Placeholder for Side B -->
+	</software>
+
+<!-- Washington Apple Pi - Graphics -->
+
+	<!--
+	PDS NAME: Sketchpad and Slideshow
+	Disk ID: APPLE-3-WAP-GRX-01
+	BOOTABLE? Yes
+
+
+	This disk is full of some great graphics programs in Basic.
+
+	On Side One:
+
+	-: SLIDESHOW ///: This program will display Apple /// graphics (Fotofiles)
+	-:                on the screen from whatever disk volume you designate.
+	-: RANDSHOW ///:  This is a rather strange program that randomly compresses
+	-:                Fotofiles and displays them on the screen from whatever
+	-:                disk volume you designate.
+	-:
+	-:
+
+	On Side Two:
+
+	-: SKETCHPAD ///: A great graphics drawing program in Basic.
+	-:                It will use any input device.  The number of printers are a
+	-:                bit limited, but you can save your creations to disk and
+	-:                then pull them into Graphics Manager, Draw On Three or
+	-:                similar program and then print.
+	-:
+	-->
+	<software name="wapgrx01">
+		<description>Washington Apple Pi Graphics Disk 1 - Sketchpad and Slideshow</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-grx-01a.dsk" size="143360" crc="c95797f0" sha1="9e3ee572d86c44cb559e73106514ed7fcc8c6faa" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-grx-01b.dsk" size="143360" crc="4f154ee5" sha1="1570ce911a12bdb36fc6d0d655d6f9311abe5ae7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Fig Factory Manual
+	Disk ID: APPLE-3-WAP-GRX-02
+	BOOTABLE?: Bootable
+
+
+	        On this disk you will find the manuals for Fig Factory, a rather strange
+	graphics program originally offered commercially by SUM Software.
+	Side 1 has the ASCII versions for both the Black and White (disk APPLE-3-WAP-GRX-03)
+	and Color (Disk APPLE-3-WAP-GRX-04) programs.  Side 2 has the 3EZP-AppleWorks WP
+	version.  Thanks to Seth Mize for transcribing these manuals!   Also on
+	side 2, you'll find the latest bibliography of articles on Apple ///
+	graphics in both ASCII and 3EZP-AppleWorks DB formats.  Menu.Maker will
+	let you read the ASCII versions and print them out if you wish.  We hope
+	you find this information useful!
+
+	        Fig Factory is a rather different graphics program.  Originally
+	a commercial program by SUM Software, FF is a "Hi-res graphics system
+	designed to make fast, professional on-screen sketches using your own
+	easily made symbols."  The program uses the hi-res 560x192 Apple ///
+	graphics format.  This disk has the manual for the B&W and Color versions.
+	-->
+	<software name="wapgrx02">
+		<description>Washington Apple Pi Graphics Disk 2 - Fig Factory Manual</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-grx-02a.dsk" size="143360" crc="25f9e7d9" sha1="092aabf478d9d55a7902ac2d70da21c61f6e4426" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-grx-02b.dsk" size="143360" crc="43f5fc3c" sha1="5aa5d86c18aa8c94109f075d234950914c78e726" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Fig Factory (Black and White)
+	Disk ID: APPLE-3-WAP-GRX-03
+	BOOTABLE?: Bootable
+
+
+	        Fig Factory is a rather different graphics program.  Originally
+	a commercial program by SUM Software, FF is a "Hi-res graphics system
+	designed to make fast, professional on-screen sketches using your own
+	easily made symbols."  The program uses the hi-res 560x192 Apple ///
+	graphics format.  This is the Black and White Version.
+
+	NOTE: In order for this program to work properly, you'll need to copy
+	      side 2 onto a second disk and place it in .D2 (your second disk
+	      drive).
+	-->
+	<software name="wapgrx03">
+		<description>Washington Apple Pi Graphics Disk 3 - Fig Factory (Black and White)</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-grx-03a.dsk" size="143360" crc="b569555e" sha1="3b539c04341b2777f7851fab9b18602bc5d89447" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-grx-03b.dsk" size="143360" crc="88e80456" sha1="3a1da9c87c3391bfa344cb0396c80fda3a72cc42" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Fig Factory (Color)
+	Disk ID: APPLE-3-WAP-GRX-04
+	BOOTABLE?: Bootable
+
+
+	        Fig Factory is a rather different graphics program.  Originally
+	a commercial program by SUM Software, FF is a "Hi-res graphics system
+	designed to make fast, professional on-screen sketches using your own
+	easily made symbols."  The program uses the hi-res 560x192 Apple ///
+	graphics format.  This is the Color Version.
+
+	NOTE: In order for this program to work properly, you'll need to copy
+	      side 2 onto a second disk and place it in .D2 (your second disk
+	      drive).
+	-->
+	<software name="wapgrx04">
+		<description>Washington Apple Pi Graphics Disk 4 - Fig Factory (Color)</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-grx-04a.dsk" size="143360" crc="0ea72437" sha1="60f12e609de94cc3a854e9436670b7c6a436b6da" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-grx-04b.dsk" size="143360" crc="e15f0717" sha1="97bb9e85f2e4387d5e3e675f5001a2cf5c137aa9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Raster Graphics Tool Kit
+	Disk ID: APPLE-3-WAP-GRX-05
+	BOOTABLE?: Nonbootable
+
+	DESCRIPTION: A commercial program placed into the PD, disks APPLE-3-WAP-GRX-05 and
+	-: APPLE-3-WAP-GRX-06 were originally sold by Third Wave Graphics. These Pascal
+	-: programs are designed to give power to Apple /// graphics.  The
+	-: procedures are the only ones known that make use of the Apple ///+'s
+	-: interlace mode.  Manual (which is huge) is in the WAP library..
+	-:
+
+	NOTE:  See Disks APPLE-3-WAP-GRX-07 through 10 for demonstrations of most of these
+	       Pascal programs.
+	-->
+	<software name="wapgrx05">
+		<description>Washington Apple Pi Graphics Disk 5 - Raster Graphics Tool Kit</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-grx-05a.dsk" size="143360" crc="aea5dc30" sha1="02c383fd5a995eef519c301016fa090b42d50aef" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-grx-05b.dsk" size="143360" crc="c7b22389" sha1="bedaf4ea90241c9b48c605e1ab40f78bfa08337d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: 3D Modeling Tool Kit
+	Disk ID: APPLE-3-WAP-GRX-06
+	BOOTABLE?: Nonbootable
+
+	DESCRIPTION: A commercial program placed into the PD, disks APPLE-3-WAP-GRX-05 and
+	-: APPLE-3-WAP-GRX-06 were originally sold by Third Wave Graphics. These Pascal
+	-: programs are designed to give power to Apple /// graphics.  The
+	-: procedures are the only ones known that make use of the Apple ///+'s
+	-: interlace mode.  Manual (which is huge) is in the WAP library..
+	-:
+
+	NOTE:  See Disks APPLE-3-WAP-GRX-07 through 10 for demonstrations of most of these
+	       Pascal programs.
+	-->
+	<software name="wapgrx06">
+		<description>Washington Apple Pi Graphics Disk 6 - 3D Modeling Tool Kit</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-grx-06a.dsk" size="143360" crc="ddd70fb8" sha1="8146b4d0fdff23c9cafc1192c5627a2458ffd1c0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-grx-06b.dsk" size="143360" crc="6af1bcb3" sha1="f048e1aec52a3a001781452e672c24a593c947f1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS Name:  Raster Graphics Demos
+	Disk ID:  APPLE-3-WAP-GRX-07:
+	Bootable?  Bootable on Side One
+
+
+	This is the boot disk for disks APPLE-3-WAP-GRX-08 through 10 - that are designed to
+	demonstrate Raster Graphics Tool Kit and the 3D Modeling Tool Kit (PD Disks
+	APPLE-3-WAP-GRX-05 and APPLE-3-WAP-GRX-06).  Compiled by Dr. Al Bloom for the /// SIG.
+
+	Side One:  Boot Disk
+	Side Two:  TMAPIO Demo
+
+	NOTE: You must boot Side One of this disk to run the other demos!
+	-->
+	<software name="wapgrx07">
+		<description>Washington Apple Pi Graphics Disk 7 - Raster Graphics Demos</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-grx-07a.dsk" size="143360" crc="2233c0bf" sha1="fee9bfc576ff2dcaba65b49bc78cc94ce95f91af" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-grx-07b.dsk" size="143360" crc="fdb774f5" sha1="a82caa8f95ac4671e89656d30f351d3aa594d2fa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS Name:  Raster Graphics Demos
+	Disk ID:  APPLE-3-WAP-GRX-08
+	Bootable?  Not Bootable
+
+
+	Our second demo disk designed to demonstrate Raster Graphics Tool Kit and the 3D
+	Modeling Tool Kit (PD Disks APPLE-3-WAP-GRX-05 and APPLE-3-WAP-GRX-06).  Compiled by Dr. Al Bloom for
+	the /// SIG.
+
+	Side One:  Icon Demo
+	Side Two:  TFONT Demo
+
+	NOTE: You must boot Side One of disk APPLE-3-WAP-GRX-07 to run the other demos!
+	-->
+	<software name="wapgrx08">
+		<description>Washington Apple Pi Graphics Disk 8 - Raster Graphics Demos</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-grx-08a.dsk" size="143360" crc="6d24b8b1" sha1="b52fdf3af22e39d67fc0ac224aeb59a53182d26a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-grx-08b.dsk" size="143360" crc="d0118de7" sha1="0efa70be3c0aea254e7b2a016f2650534eab903b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS Name:  Raster Graphics Demos
+	Disk ID:  APPLE-3-WAP-GRX-09
+	Bootable?  Not Bootable
+
+
+	Our third demo disk designed to demonstrate Raster Graphics Tool
+	Kit and the 3D Modeling Tool Kit (PD Disks APPLE-3-WAP-GRX-05 and APPLE-3-WAP-GRX-06).  Compiled by
+	Dr. Al Bloom for the /// SIG.
+
+	Side One:  TRIXELMAP Demo
+	Side Two:  MASK Demo
+
+	NOTE: You must boot Side One of disk APPLE-3-WAP-GRX-07 to run the other demos!
+	-->
+	<software name="wapgrx09">
+		<description>Washington Apple Pi Graphics Disk 9 - Raster Graphics Demos</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-grx-09a.dsk" size="143360" crc="41f802f5" sha1="557cfd2dcb31f2abdd1308c966869fb3b7384260" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-grx-09b.dsk" size="143360" crc="19281248" sha1="2cf03181e423c9a29d3247c70c9386937d20e918" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS Name:  Raster Graphics Demos
+	Disk ID:  APPLE-3-WAP-GRX-10
+	Bootable?  Not Bootable
+
+
+	Our fourth and final demo disk designed to demonstrate Raster Graphics Tool
+	Kit and the 3D Modeling Tool Kit (PD Disks APPLE-3-WAP-GRX-05 and APPLE-3-WAP-GRX-06).  Compiled by
+	Dr. Al Bloom for the /// SIG.
+
+	Side One:  THEM Demo
+	Side Two:  TRECT Demo
+
+	NOTE: You must boot Side One of disk APPLE-3-WAP-GRX-07 to run the other demos!
+	-->
+	<software name="wapgrx10">
+		<description>Washington Apple Pi Graphics Disk 10 - Raster Graphics Demos</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-grx-10a.dsk" size="143360" crc="ccf26e4e" sha1="68585d82778132ac980054076af8d4f00587c255" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-grx-10b.dsk" size="143360" crc="0ecd6470" sha1="0735072343dbff259ab751efc314626fd78a395d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Washington Apple Pi - Journal Articles -->
+
+	<!--
+	PDS NAME: Best of Ottalini: Disk 01
+	DISK ID : APPLE-3-WAP-WAP-01
+	BOOTABLE? Side One
+
+	This disk includes all the back articles by WAP /// SIG Co-Chairman Dave
+	Ottalini, written in 1985 and 1986.
+
+	On Side One under the "WAP.1985" Subdirectory:
+
+	AIM.UPDATE       :Update on Assoc. of Indep. Microdealer's software sale.
+	DISPOSAL.SALE    :Another article on AIM.
+	OAGAZETTE        :Bibliography of an early Apple /// magazine.
+	ON3              :Bibliography of On /// Magazine from 1980-1984.
+	SOFTALK          :Bibliography of Apple /// articles in Softalk Magazine.
+	THREE.FOR.ME     :Another article on AIM and what they were offering.
+	THREE.MAGAZINES  :Bibliography of The Three Newsletter and Magazine.
+
+
+	On Side Two under the subdirectory "WAP.1985":
+
+	A3.BOOKGUIDE     :Apple /// books.
+	APPLE.NEWS       :Apple /// programs into the PD; Titan ///+//e cards.
+	BASIC.ARTICLE    :Searching the magazines for Business Basic articles.
+	DEMO.PROGRAMS    :Some fun things to do with the Apple /// Demo Program.
+	NEWSLETTER.BIB   :/// Newsletter bibliography.
+
+
+	On Side Two under the subdirectory "WAP.1986":
+
+	A3.DRIVERS       :Latest version numbers of Apple /// drivers.
+	BEST.PT.2        :Part 2 of article about the best of everything for the ///.
+	CLUBS            :Discusses existing Apple /// clubs.
+	HAPPY.NEW.YEAR   :Looking back at 1985 and forward to 1986.
+	NEWS.JUNE86      :WAP library and new PD offerings.
+	OCTOBER.TRAIL    :Column title, /// SIG on the WAP BBS.
+	PGM.VERSIONS     :What are the latest Apple /// program versions?
+	SELECTOR         :Discussion of this hard disk switching utility.
+	THE.BEST.IN.86   :Best Apple /// products.
+	UNCOPY.REVIEW    :Review of On Three's Uncopyprotect Driver.
+	WAP.BIBLIO       :Bibliography of Apple /// articles in the WAP Journal.
+	-->
+	<software name="wapwap01">
+		<description>Washington Apple Pi Journal Articles 1 - Best of Ottalini: Disk 01</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wap-01a.dsk" size="143360" crc="ee22f05b" sha1="261ddb06024566a05b0dfe31cff21e74d93ff916" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wap-01b.dsk" size="143360" crc="ed60d2dd" sha1="96312481b24dfda80c97eba8bb517b59f7785e15" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Best of Ottalini: Disk 02
+	DISK ID : APPLE-3-WAP-WAP-02
+	BOOTABLE? Side One
+
+
+	The second in our series of disks containing the articles
+	written by the WAP /// SIG Co-Chairman Dave Ottalini. Articles on
+	this disk are from 1987 primarily.
+
+	On Side One under the "Articles.1987" subdirectory you'll find:
+
+	APLUS.ARTICLE    :Article about the Apple ///.
+	DEMO.PROGRAMS    :Taking apart the Apple /// demo program.
+	DRIVER.VERSIONS  :Latest versions of Apple /// drivers.
+	KIDWORD.3        :A word processing program for the little folks.
+	PGM.VERSIONS     :Latest versions of Apple /// programs.
+
+	On Side Two, under the "Articles.1987" subdirectory:
+
+	BIB.3MAG.86       :Bibliography of the /// Magazine for 1986.
+	BIB.3NEWSLTTR     :Bibliography of the /// Newsletter
+	NEW.MEMBER.DISK   :What's on the new member disk.
+	WAP.01JANUARY     :Sourceware products, Forth for the ///; SOS update.
+	WAP.02FEBRUARY    :New Co-Chairman; Phase /// Update; Al Bloom joins WAP.
+	WAP.03MARCH       :/// EZPs upgrade; Business Basic on the GS.
+	WAP.05MAY         :3EZP Upgrade Dies; On Three News; Meeting and SIG notes.
+	WAP.06JUNE        :Trouble shooting; Titan Card problems; File Compression.
+	WAP.07JULY        :/// SIG Moves; Tip of the Month; Go Forth; ThreeWorks.
+	WAP.09SEPTEMBER   :Farewell to Richard Rowell; News from Sun Systems.
+	WAP.10OCTOBER     :Phase /// preview; Profile for the office; New PD disks.
+	WAP.11NOVEMBER    :Phase /// highlights and lowlights; New GS
+	                   Basic;Hypercard.
+	WAP.12DECEMBER    :A look back at the year.  Music on the ///.
+	-->
+	<software name="wapwap02">
+		<description>Washington Apple Pi Journal Articles 2 - Best of Ottalini: Disk 02</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wap-02a.dsk" size="143360" crc="65dcb290" sha1="964ada28f6cffaef0bf8029cb409fcc6a35e62cf" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wap-02b.dsk" size="143360" crc="f01e57e3" sha1="dc0fdcf6b316682538183877802539f7b04336b0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Best of Ottalini: Disk 03
+	Disk ID: APPLE-3-WAP-WAP-03
+	BOOTABLE? Side One
+
+
+	The third in a series of disks containing the articles of the WAP /// SIG
+	Co-Chairman Dave Ottalini and other selected authors.  Articles on this disk
+	are from 1988.
+
+	One Side One:
+
+	ANDERSON   :The Legacy of Daryl Anderson (placed pgms into the PD)
+	GSBASIC.1  :Taylor Pohlman on GS Basic
+	GSBASIC.2  :Taylor Pohlman on GS Basic
+	ON.3.BIB   :Bibliography of On Three for 1987.
+	TAU.PD.CON :Article detailing WPL program used for PD development.
+
+	DESCRIPTION: On Side Two:
+
+	WAP.01JANUARY   :New products discussed: SOS Driver Optimizer & Graphics
+	                 crd.
+	WAP.02FEBRUARY  :New PD disks discussed; Future disks;WPL pgm "PD.CON".
+	WAP.03MARCH     :D.A. Datasystems puts programs into the public domain.
+	WAP.04APRIL     :Has Frank Moore Returned?; More news from Lt. Sykora.
+	WAP.05MAY       :More Public Domain Disks; /// SIG's New Helper.
+	WAP.06JUNE      :ThreeWorks update; Apple /// News.
+	WAP.07JULY      :Sykora Software Update; On Three News; Sun Remarketing.
+	WAP.08AUGUST    :Menu.Maker Continued; Menu.Maker Take Two; New PD Disk.
+	WAP.09SEPTEMBER :More On Three News; Sykora Software; July SIG Meeting.
+	WAP.10OCTOBER   :Apple /// News; Another Graphics Board; Music MIDI Driver.
+	WAP.11NOVEMBER  :Where Do I Find Parts For My Apple ///?
+	WAP.12DECEMBER  :History of the WAP /// SIG; /// SIG Christmas List.
+	-->
+	<software name="wapwap03">
+		<description>Washington Apple Pi Journal Articles 3 - Best of Ottalini: Disk 03</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wap-03a.dsk" size="143360" crc="219741ae" sha1="66424822ead1c9d4ef3dad3f547104bdc536ea08" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wap-03b.dsk" size="143360" crc="08429259" sha1="763dc766a318f03eb27e51717de17c5f3ff15e91" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Best of Ottalini: Disk 04
+	Disk ID: APPLE-3-WAP-WAP-04
+	BOOTABLE? Side One
+
+
+	The fourth in a series of disks containing the articles of
+	the WAP /// SIG Co-Chairman Dave Ottalini and other authors.
+	Articles on this disk are from 1989.
+
+	On Side One:
+
+	WAP.TCS        :Using the WAP TCS.
+	WAP01.JANUARY  :Happy New Year; Robert Lissner on 3EZ Pieces.
+	WAP02.FEBRUARY :Reprint of January with comments on WAP 10th Anniversary.
+	WAP03.MARCH    :Telecommunications News; TerminALL operation; On Three.
+	WAP04.APRIL    :Spring Maintenance tips; On Three News; PD Disks.
+
+	On Side Two:
+
+	BUYERS.GUIDE    :Bargains for Apple ///ers in hardware and software.
+	EZP.HISTORY     :A history of 3 EZ Pieces, an integrated Apple /// program.
+	INFO.PART2      :More on finding Apple /// information.
+	NEW.LINE        :"Apple Announces New Micro Line."
+	PARTS           :Finding parts for the Apple ///.
+	WAP.PD.XMAS     :Best Public Domain disks for the holidays.
+	WAP05.MAY       :A Visit to On Three; Apple Users Group International.
+	WAP06.JUNE      :Pascal Menu.Maker; Other PD disks; Desktop Publishing on
+	                 the ///.
+	WAP07.JULY      :The Lisa Shop; On Three discontinues 800 number & BBS dies.
+	WAP08.AUGUST    :New ThreeWorks update; PD disks.
+	WAP09.SEPTEMBER :Telecom Month at the WAP /// SIG; Bob Consorti moves.
+	WAP10.OCTOBER   :ThreeWorks update; Parallel Printers; Publish It!2 pbms.
+	WAP11.NOVEMBER  :PD Offerings; Kudos and Comments; Power Supplies.
+	WAP12.DECEMBER  :A look back at 1989 and a look forward to 1990.  On Three
+	                 news.
+	-->
+	<software name="wapwap04">
+		<description>Washington Apple Pi Journal Articles 4 - Best of Ottalini: Disk 04</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wap-04a.dsk" size="143360" crc="3cf3c6b0" sha1="8cccc49c3eebd6d8826c8f49428045c00010f850" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wap-04b.dsk" size="143360" crc="a47796e9" sha1="20396423897db239220cd1c4f5ad6dd048691367" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Best of Ottalini: Disk 05
+	Disk ID: APPLE-3-WAP-WAP-05
+	BOOTABLE? Side One
+
+	This disk contains all of Dave Ottalini's "On The Trail
+	Of the Apple Three" columns written for the WAP Journal in 1990.
+
+	On Side One:
+	WAP01.JANUARY   :The year ahead; Repairs; Color Monitors for the ///.
+	WAP02.FEBRUARY  :More on Repairs; Joe Dobrowolski; Prodigy commentary.
+	WAP03.MARCH     :WAP 10 year anniversary; National Apple Users Conference.
+	:
+
+	On Side Two:
+
+	DISKS01.JAN     :January Public Domain Disks.
+	DISKS02.FEB     :February Public Domain Disks.
+	DISKS03.MARCH   :March Public Domain Disks.
+	DISKS04.APRIL   :April Public Domain Disks.
+	DISKS06.JUNE    :June Public Domain Disks.
+	DISKS07.JULY    :July Public Domain Disks.
+	DISKS08.AUGUST  :August Public Domain Disks.
+
+	COLOR.MONITORS  :Color monitors and the Apple ///.
+	DTP             :Desk Top Publishing in Emulation Mode.
+	ON.THREE.BIB    :On Three Bibliography for 1989.
+	RGB.JULY        :A new RGB circuit for the /// (by D.D. Meisel)
+
+	WAP04.APRIL     :24 pin printers; Keyboards.
+	WAP05.MAY       :Happy Birthday SARA!; On Three moves; ThreeWorks update.
+	WAP06.JUNE      :How to be a power user on the ///; Dealing with Sticky
+	                 Keys.
+	WAP07.JULY      :SIG survey results; Titan ///+//e update.
+	WAP08.AUGUST    :100th PD disk; Apple /// Donation Program; Mentor
+	                 Program.
+	WAP09.SEPTEMBER :More on the Mentor program; IIGIF; Apple /// to Mac.
+	WAP10.OCTOBER   :SCSI on the ///; On Three News; Pair Software News.
+	WAP11.NOVEMBER  :CD ROM Drives; On Three News; Donation program.
+	WAP12.DECEMBER  :Disk Drive Maintenance; End of the Year; PD disks.
+	-->
+	<software name="wapwap05">
+		<description>Washington Apple Pi Journal Articles 5 - Best of Ottalini: Disk 05</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wap-05a.dsk" size="143360" crc="0934b4df" sha1="38976bcda0372d3c2c9886117da7da6149eb117c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wap-05b.dsk" size="143360" crc="fc07a439" sha1="ad2f6ce43f1c05e02f83456f6186f806aba42fdf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Best of Ottalini #6
+	Disk ID: APPLE-3-WAP-WAP-06
+	BOOTABLE?: Bootable
+
+	DESCRIPTION: This is the 1991 version of the Best of Ottalini, all the
+	articles published by the WAP /// SIG's Co-Chairman for 1991.  Some
+	additional articles are also included from other authors.
+
+	On Side One:
+
+	TRAIL.JANUARY    : Some Nice Words; A+/Incider; Dobrowolski News
+	TRAIL.FEBRUARY   : Apple /// emulation on the Mac; February Disks
+	TRAIL.MARCH      : On Three; Printer Questions; Disk Library
+	TRAIL.APRIL      : ///+//e Cards; Apple ///ers Unanimous; EASY Accounting
+	TRAIL.MAY        : Meetings; PD Disks; Directory Damage
+	TRAIL.JUNE       : A3 Donations; Jim Jutzin; On Three
+
+	On Side Two:
+
+	TRAIL.JULY       : GoBack ///; Budget Time; PD Library
+	TRAIL.SEPTEMBER  : Sun Remarketing; Paul Campbell; On Three
+	TRAIL.OCTOBER    : Disk Drive Speed; New BBS; 256K Upgrade
+	TRAIL.NOVEMBER   : Bob Consorti; TCS; Mail
+	TRAIL.DECEMBER   : Holiday Gifts; Other Clubs; PD Library
+
+	PD.DISKS (Subdirectory)
+	-AUG.DISKS
+	-SEPT.DISKS
+	-OCT.DISKS
+	-NOV.DISKS
+
+	OTHER.ARTICLES (Subdirectory):
+	-CAMPBELL.1     :Cooling the Jets on your Hot Apple ///
+	-CAMPBELL.2     :The Apple ///: Death Bed or New Found Life
+
+	-COLLECT        :How to buy and collect old computers By Tim Swenson
+	-TESSELL.MACROS :Using DTM Macros
+	-DTM.REVIEW     :Review of the //GS version of DTM - Author Unknown.
+	-->
+	<software name="wapwap06">
+		<description>Washington Apple Pi Journal Articles 6 - Best of Ottalini #6</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wap-06a.dsk" size="143360" crc="121e7cf4" sha1="3b914b5f5b43e5dd7ae6376c6a149d56e7050811" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wap-06b.dsk" size="143360" crc="ebef00c5" sha1="f06bf3f13b7bab5c4527ec91eeb1f1fb1d9be802" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: The Best of Ottalini Disk 07
+	DISK ID : APPLE-3-WAP-WAP-07
+	Bootable? Side One
+
+
+	        This PD Disk is another in our series of disks that include all
+	the articles written by /// SIG Co-Chair Dave Ottalini. In this case,
+	for the year 1992.  This disk is self-booting and includes a program
+	("Print.All") that will print all the text files for you back to back.
+	Or you can use Menu.Maker to print the specific file you are reading.
+	        See also disk APPLE-3-WAP-WAP-08 "The Best of Ottalini Plus!" for more
+	articles on disk from Ottalini as well as other authors printed in
+	the WAP Journal in 1992.
+
+	On Side One:
+
+	Articles.1992 (subdirectory)
+	- Trail.January    :   SARA and the GS; Why SOS?; Orphan Software; Paul
+	                       Campbell News; How Do I - get a volume ID using
+	                       AppleWriter; - deal with thermal intermittants.
+	- Trail.February   :   New Members; Paul Campbell News; French and
+	                       AppleWriter; Great Deals; Converting /// files
+	                       to the Mac.
+
+	On Side Two:
+
+	Articles.1992 (subdirectory)
+	- Trail.March      :   /// SIG Meting; Titan Sale Continues; Graphics;
+	                       Annie's Craft in Japan; ATUNC News; Appreciation.
+	- Trail.April      :   Sources for A3 Repairs; ATUNC Disks; Price Watch
+	- Trail.May        :   Titan Information on Disk; Titan Card Problems;
+	                       Menu.Maker Upgrade.
+	- Trail.June       :   SARA lives in Cupertino; On Three update; Detroit
+	                       Update; Japan Update; 24 Pin Printers and the ///;
+	                       A3 Repairs.
+	- Trail.July       :   Apple Book Review and the ///; Desktop Manager Tip;
+	                       Parallel Cable Problems; Download Problems;
+	                       Titan Report; More Repair Sources; AppleWriter
+	                       Tip; Modem Eliminators on the ///.
+	- Trail.August     :   On Three News; Test Your ///; Dr. Bloom Upgrades
+	                       SIGN; Disk Notes.
+	- Trail.September  :   Lisa Shop Update; On Three's New Products - Backup ///
+	                       and GoBack; New Font from Paul Campbell; Parallel
+	                       Cables; ATUNC News; Networking on the ///.
+	- Trail.October    :   SuperDrive Project; GoBack News; On Three's Universal
+	                       800K Driver and the CPS drive; New SIGN program; ///
+	                       Users.
+	- Trail.November   :   PD Disks Update; Transfering Files; Superdrive Project
+	                       Update; Steve Truax Hits the Jackpot; 512K Upgrades;
+	                       Paul Campbell and SARA Upgrades.
+	- Trail.December   :   Apple /// Systems; PD Rumblings; Communications
+	                       Manager and 14,400 BPS Modems; Seth Mize in Boston;
+	                       Apple /// Benchmarks; Macs, Apple ///s and
+	                       Imagewriters; TCS Musings.
+	-->
+	<software name="wapwap07">
+		<description>Washington Apple Pi Journal Articles 7 - The Best of Ottalini Disk 07</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wap-07a.dsk" size="143360" crc="afbc2408" sha1="ef22e9b799173bdcf6be2a18c6ac924cc80670d9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wap-07b.dsk" size="143360" crc="fa858d6d" sha1="9c3a2fc38625c3f50834f39a101f3e2850f679e6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: THE BEST OF OTTALINI PLUS!
+	DISK ID : APPLE-3-WAP-WAP-08
+	BOOTABLE? Side One
+
+
+	Disk APPLE-3-WAP-WAP-08 is the second of 1992's "Best of Ottalini" disks.  There was so
+	much material available IN 1992, that we were able to fill a second 5.25"
+	disk for you.  On Side One you'll find all the articles about our PD
+	offerings under the "PD.DISKS" Subdirectory (or Folder if you like):
+
+	JANUARY.PD
+	FEBRUARY.PD
+	APRIL.PD
+	MAY.PD
+	JULY.PD
+	SEPTEMBER.PD
+	DECEMBER.PD
+
+
+	On side two are articles from our good friends Paul Campbell, Tom Linders and
+	John Lomartire.  There's the Apple /// graphic Rick Gast pulled from one of
+	the DOS 3.3 Apple /// Diagnostics disks. C.M.Davidson adds his upgrade to our
+	Pascal Menu Maker program.  And rounding things out - my two articles
+	comparing prices of various Apple family computers:
+
+	BATCH                 :Batch printing on the Apple ///
+	CAMBPELL.LASERS       :LaserJets and legal terms: The Apple /// at work.
+	CAMPBELL.MARCH        :Should you make the switch (to MS-DOS?)
+	DAVIDSON              :Updating the Pascal Menu.Maker Program
+	DAVIDSON.DEC          :The Apple /// System of C.M.Davidson
+	DDS.APPLES            :On Disk Drives and Apples
+	DRIVER.CONFIG         :Dealing with Driver Space Limitations
+	DVORAK                :An Open Letter to John Dvorak
+	LINDERS               :Apple Hardware Lubrication
+	LOMARTIRE             :Designer Disks for the Apple ///
+	LOMARTIRE.2           :Some Tricks of the Trade: Wordprocessing with a
+	                       Spreadsheet
+	NEW.ADVENTURES        :New Sara Adventures with Paul Campbell
+	SOS.MSDOS             :SOS Vs. MSDOS
+	STEMWRITER            :A review of Stemwriter
+	STYLEWRITER           :The Apple Stylewriter and the ///
+	SYS.CONFIG            :The Apple /// System Configuration Program
+	SYS.UTILS             :Little Known Utilities for the System Utilities
+	A3.SCREEN.TEST        :Apple /// FOTOfile
+	PRICES
+	-MAY.PRICES          : May Apple // family price comparisons
+	-JULY.PRICES         : July Apple // family price comparisons
+	-->
+	<software name="wapwap08">
+		<description>Washington Apple Pi Journal Articles 8 - The Best of Ottalini Plus!</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wap-08a.dsk" size="143360" crc="6886f485" sha1="de992fab7f63f4cc58e1c5e5643127a492277300" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wap-08b.dsk" size="143360" crc="7c64c363" sha1="6847eb6429bd95b4f121958caabe0429dd0313f8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: The Best Of Ottalini - Disk 8
+	Disk ID: APPLE-3-WAP-WAP-09
+	BOOTABLE?: Bootable
+
+	DESCRIPTION: This is the 1993 edition of WAP /// SIG Co-Chair Dave
+	Ottalini's articles from the WAP Journal. Also includes articles from
+	other authors and information about PD library additions.
+
+	On Side One
+
+	TRAIL.JANUARY   : Superdrive Driver; Future Apple /// Projects
+	TRAIL.FEBRUARY  : Software Development Fund; Paul Campbell; John Lomartire
+	TRAIL.MARCH     : Software Development Fund; Printer Problems
+	TRAIL.APRIL     : Software Development Fund; Lost Classics Project
+
+	EXTRAS (subdirectory)
+
+	PARALLEL.PS     : Parallel Printers and the /// by Bob Sambolin
+
+
+	On Side Two
+
+	TRAIL.MAY      :  Software Development Fund; Apple /// Information
+	TRAIL.JUNE     :  Software Development Fund; Video Problems; File Transfers
+	TRAIL.JULY     :  Thees Company BBS; Software Development Fund; ATUNC
+	TRAIL.AUGUST   :  Software Development Fund; Threes Company BBS; Titan
+	                  Support
+	TRAIL.SEPTEMBER:  Threes Company - WAP; Software Development Fund; ASCIDIF
+	TRAIL.OCTOBER  :  BOS3; Meeting News; Internet News
+	TRAIL.NOVEMBER :  (Updated version of October)
+	TRAIL.DECEMBER :  BOS3 Now On Sale!; Honor Roll; Apple /// Forever
+
+	PD.LIBRARY (subdirectory)
+
+	 PD.FEBRUARY
+	 PD.MARCH
+	 PD.APRIL
+	 PD.MAY
+	 PD.JUNE
+
+	EXTRAS  (subdirectory)
+
+	PROFILE.LL       : Low Level Format on the ///
+	MICRO.COURIER    : Tips on how to use this program by Earl Brelje
+	TIPS             : Miscellaneous /// Tips by Johnson and Baya
+	FIRST.COMPUTER   : Experiences of a First Computer User by Bob Sambolin
+	APPLE.dskS        : A3 to MS DOS Transfers by John Lomartire
+	TWO.ALIVE        : An open letter to Two Alive Magainze about the ///
+	-->
+	<software name="wapwap09">
+		<description>Washington Apple Pi Journal Articles 9 - The Best of Ottalini - Disk 8</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wap-09a.dsk" size="143360" crc="5593a444" sha1="892a4cd6895c729095e536330084cef4389b4520" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wap-09b.dsk" size="143360" crc="4c6492a6" sha1="51213cc8a92bf14dcb403480e8b7ecb729042e1c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME:  BEST OF OTTALINI #9
+	DISK ID :  APPLE-3-WAP-WAP-10
+	BOOTABLE?  SIDE ONE ONLY
+
+
+	  Here's the 1994 version of our Best of Ottalini disk - including all of
+	Dave's 1994 Trail Columns and PD Library articles.  Also included, a number
+	of other articles by /// SIGers.  Enjoy!
+
+
+	SIDE ONE
+
+	TRAIL.COLUMNS (SUBDIRECTORY)
+
+	 TRAIL.JANUARY  : BOS3; TCS; Paul Campbell News
+	 TRAIL.FEBRUARY : Garage Sale; DAR
+	 TRAIL.APRIL    : SIG Meeting; DARing Along
+	 TRAIL.MAY      : ///ers From The Past; Detroit Doings; Word Juggler
+
+
+	PD.LIBRARY  (SUBDIRECTORY)
+
+	 JANUARY
+	 MAY
+
+
+	Side Two
+
+	TRAIL.COLUMNS (SUBDIRECTRY)
+
+	 TRAIL.JULY      : Apple /// emulation on a MAC; Software Development Fund
+	 TRAIL.SEPTEMBER : A visitor from Japan; Com Manager Update; Internet Qs
+	 TRAIL.OCTOBER   : Bob Consorti Projects; Parallel Printers; On Lamp Repairs
+	 TRAIL.NOVEMBER  : The WAP Move; Linders Keeps Dave Honest; Where Do I Find?
+	 TRAIL.DECEMBER  : Happy Holidays; Software Development Project; ///s Co. WAP
+
+	OTHER.ARTICLES (SUBDIRECTORY)
+
+	 BURR.PATTERSON  : "Profile of a Hard Learned Lesson"
+	 LINDERS         : "Doing a Hard Format on a Profile"
+	 MAC.TO.3        : "Apple /// to Mac, The Hard Way"
+	 DAR.REVIEW      : "DAR - Disk Archival and Retrieval"
+	 QUESTIONS.SEPT  : Q and A Column
+	 QUESTIONS       : Q and A Column
+	 INTERNET.A3     : Apple /// on the Internet - where the Listserver is
+	 PAULS.NEWS      : The latest adventures of Co-Chair Paul Campbell
+	-->
+	<software name="wapwap10">
+		<description>Washington Apple Pi Journal Articles 10 - Best of Ottalini #9</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wap-10a.dsk" size="143360" crc="3fcd9f38" sha1="8100d2ff292555d07cd400231c4e377dad5bda57" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wap-10b.dsk" size="143360" crc="d65b75cc" sha1="dc76681de3521b987ebd36bc1c1afebc14681b03" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME:  BEST OF OTTALINI #10
+	DISK ID :  APPLE-3-WAP-WAP-11
+	BOOTABLE?  Nonbootable
+
+
+	  Here's the 1995 version of our Best of Ottalini disk - including all of
+	Dave's 1995 Trail Columns and PD Library articles.  Also included, a number
+	of other articles about the Apple II and /// by other authors.  Enjoy!
+
+
+	SIDE ONE
+
+	TRAIL.COLUMNS (Directory)
+
+
+	  MAY.JUNE          :Bob Consorti Moves On; Al Bloom Weighs In; But Wait Just
+	                     One Minute; BOS Update; Internet News; A3 Technotes;
+	                     File Transfers; Will Wonders Never Cease.
+
+	  JULY.AUGUST       :SARA on the MAC?; On The Sound Front; Al Bloom and MLM;
+	                     The Year 2000; Applesoft to an Apple /// Text File;
+	                     Apple /// Parts; PD Library Notes.
+
+
+	APPLE.3 (Directory)
+
+	  WARNKE.AW         :Super Apple Writer /// (4.1)
+	  MACRO.MGR.BUGS    :Macro Manager Bug Fixes
+	  SARA.AND.ME       :Dave Wagner's experiences with his ///
+	  EM.MODE.PRINT     :Printing in Emulation Mode
+	  CHARACTER.SETS    :Downloading Apple /// Character Sets
+	  PAUL.REPORT       :Latest News from /// SIG Co-Chair Paul Campbell
+	  AW.TUTORIAL       :AppleWriter Tutorial
+	  BB.PRINTING       :Printing from Basic and Pascal
+
+	PD.LIBRARY (Directory)
+
+	  PD.LIBRARY.JULY   :/// SIG PD Library additions for July
+	                     (also see Inet.Disks on Side Two - Internet/Inet.Disks)
+
+
+	SIDE TWO
+
+	INTERNET (Directory)
+
+	  INET.BY.MAIL      :Getting Internet information with email
+	  INET.DISKS        :Internet PD series for the Apple ///
+	  INET.FILTER       :Filtering Usenet Messages
+	  A3.INET           :Apple /// and the Internet
+	  INTERNET.AND.3    :Apple /// and the Internet
+	  A2.INET.SW        :Apple II software on the Internet
+
+	APPLE.2  (Directory)
+
+	  SECOND.SIGHT      :New Second Sight graphics card for the 2GS
+	  A2.Q.A.11.95      :Apple 2 Q and A
+	  AW.PATCH          :Patching AppleWriter 2.1
+	-->
+	<software name="wapwap11">
+		<description>Washington Apple Pi Journal Articles 11 - Best of Ottalini #10</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wap-11a.dsk" size="143360" crc="405dabd3" sha1="f342cddde15b3f36c88765f6eaca6ceb2a1dbfe1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wap-11b.dsk" size="143360" crc="b0d618a6" sha1="8299a216ed4aad7f71a48617f62cee2f3e661646" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Washington Apple Pi - Source Code -->
+
+	<!--
+	PDS NAME: XMODEM /// SOURCE CODE
+	DISK ID : APPLE-3-WAP-SRC-01
+	BOOTABLE? SIDE ONE ONLY
+
+
+	        This disk contains the source code files to Gary Kato's wonderful
+	XMODEM Protocal Telecommunications Program.  It's Pascal-based - so you will
+	need Pascal to do any modifications (a fact you pretty much already know
+	if you were interested enough to purchase this disk.)
+	        To see how the program acutally runs, you'll need WAP /// SIG PD disk
+	3TEL.05 - XMODEM /// (or you can recomplile the source code).  To help you
+	though, we've also included the manual-on-disk as found on 3TEL.05.
+
+
+	ON SIDE ONE:
+	File Name       Blocks  Modified   Time  File Type    Created   Time      Eof
+
+	 XMODEM.SOURCE       4 29-May-90   7:59  DataFile    26-Sep-93  22:45    1536
+	 XMAIN.TEXT         58 29-May-90   8:21  DataFile    26-Sep-93  22:46   29184
+
+
+	ON SIDE TWO:
+
+	File Name     Blocks  Modified   Time  File Type    Created   Time       Eof
+
+	 XMODEM.SOURCE       4 26-Sep-93  22:37  DataFile    26-Sep-93  19:49   1071
+	 TXMODE.TEXT        32 29-May-90   8:01  DataFile    26-Sep-93  19:49  15872
+	 SOSERR.TEXT         7 29-May-90   8:02  DataFile    26-Sep-93  19:50   3072
+	 SETTIN.TEXT        18 29-May-90   8:03  DataFile    26-Sep-93  19:50   8704
+	 SAVESC.TEXT         7 29-May-90   8:05  DataFile    26-Sep-93  19:50   3072
+	 RXMODE.TEXT        40 29-May-90   8:07  DataFile    26-Sep-93  19:50  19968
+	 MYMACR.TEXT         6 29-May-90   8:13  DataFile    26-Sep-93  19:50   2560
+	 IOERR.TEXT          4 29-May-90   8:14  DataFile    26-Sep-93  19:51   1536
+	 GPACK.TEXT         11 29-May-90   8:15  DataFile    26-Sep-93  19:51   5120
+	 DIALOG.TEXT        50 29-May-90   8:16  DataFile    26-Sep-93  19:51  25088
+	 DATA.TEXT          48 29-May-90   8:17  DataFile    26-Sep-93  19:51  24064
+	 CRC.TEXT            6 29-May-90   8:18  DataFile    26-Sep-93  19:52   2560
+	 CONVER.TEXT         6 29-May-90   8:19  DataFile    26-Sep-93  19:52   2560
+	 ASCIIS.TEXT        13 29-May-90   8:20  DataFile    26-Sep-93  19:52   6144
+	 ALERT.TEXT          4 29-May-90   8:20  DataFile    26-Sep-93  19:52   1536
+	-->
+	<software name="wapsrc01">
+		<description>Washington Apple Pi Source Code Disk 1 - XMODEM /// Source Code</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-src-01a.dsk" size="143360" crc="afb1af11" sha1="64813c14fa3f4013ac40530e4de23eba56fa7788" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-src-01b.dsk" size="143360" crc="d489ab03" sha1="c1a996d2c65c1cc45ea0c463c232ebad76eb6deb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Powerkeys DM+ Source Code: Disk 1
+	Disk ID: APPLE-3-WAP-SCR-02
+	BOOTABLE? Bootable
+
+	This disk, and APPLE-3-WAP-SRC-03 contain the Pascal Source Code files to
+	Daryl Anderson's background utility program, Power Keys DM+.
+
+	On Side One:
+
+	POWER.KEYS.DISK  :Listing of /// SIG PD Disk APPLE-3-WAP-DAD-09, Power Keys DM+
+	LEGACY           :The legacy of Apple /// Programmer Daryl Anderson
+	PK.ARTICLES      :A bibliography of articles about Power Keys
+	POWERKEYS.AD     :Excerpt from an ad about Power Keys
+	POWERKEYS.REVW   :ATUNC review of Power Keys
+	POWERKEYS.DUMP   :Update on how to dump PK Keyboard to the printer
+	ANOTHER.REVIEW   :TAU review of Power Keys
+
+	On Side Two are these source code files:
+	CALC.0.TEXT; CALC.1.TEXT; CALC.2.TEXT; CALC.211.TEXT; CALC.212.TEXT;
+	CALC.3.TEXT; CALC.MAC.TEXT; CALC.MAIN.TEX
+	-->
+	<software name="wapsrc02">
+		<description>Washington Apple Pi Source Code Disk 2 - Powerkeys DM+ Source Code: Disk 1</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-src-02a.dsk" size="143360" crc="d32c30cc" sha1="f1178f9572f76a2b4e656fc6ab86d771decda48a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-src-02b.dsk" size="143360" crc="c18e46ea" sha1="33169374fd9eabd8a3af5062cd915597698ccbe9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Powerkeys DM+ Source Code: Disk 2
+	Disk ID: APPLE-3-WAP-SRC-03
+	BOOTABLE? Bootable
+
+	More Pascal Source Code Files for Daryl Anderson's Power Keys
+	Background Utility program.
+
+	Side One files include:
+
+	CALC.SCT.TEX; CALC.TEX; CALLMACS.TEX; CRPT.202.TEX; CRPT.TEX; DUMP.201.TEX
+	DUMP.TEX; FONT.201.TEX; FONT.TEX; LOAD.TEX; LOCK.201.TEX; LOCK.TEX;
+	MAPIT.TEX; MY.DISP.TEX; OLDCALC.1.TEX; PKYMACS.TEX
+
+	Side Two files include:
+
+	BUK2.TEX; BUK4.TEX; BUK6.TEX; BUK8.TEX; QMON.205.TEX;
+	QMON.TEX;REMO.100.TEX;
+
+	REMO.101.TEX; REMO.102.TEX; REMO.103.TEX; REMO.TEX; SCAN.201.TEX;
+	SCAN.TEX; SHELL.TEX; TEST.ONOFF.TEX; TYPE.203.TEX; TYPE.TEX; ZPCOMMENT.TEX;
+	ZPCOMMON.TEX
+	-->
+	<software name="wapsrc03">
+		<description>Washington Apple Pi Source Code Disk 3 - Powerkeys DM+ Source Code: Disk 2</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-src-03a.dsk" size="143360" crc="8c94457f" sha1="9db80c9c1cc0249b5d8fb0538f2fc6132fd1eade" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-src-03b.dsk" size="143360" crc="bf29fd57" sha1="aaa1d120b2515370b486ffd897f860cb49f12e37" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Washington Apple Pi - System Software -->
+
+	<!--
+	PDS NAME: SOS 1.3 AUTO UPGRADE & DOS TO SOS CONVERTER
+	DISK ID : APPLE-3-WAP-SYS-01
+	BOOTABLE? BOTH SIDES
+
+
+	SIDE ONE : SOS 1.3 Auto Upgrade is an easy way to make sure that all your
+	Apple /// SOS.Interp files have the latest version of SOS. Just run the
+	program and it will give you step-by-step instuctions to upgrade to SOS 1.3.
+	Self-booting and easy to use.
+
+	SIDE TWO: DOS TO SOS Converter is an older Apple program that will allow
+	you to convert Apple // DOS files to Apple /// SOS files. Of limited use
+	today unless you have something in Apple // DOS 3.3 format (generally
+	an ASCII text file) you want to convert to SOS. Self-booting.
+	-->
+	<software name="wapsys01">
+		<description>Washington Apple Pi System Software Disk 1 - SOS 1.3 Auto Upgrade &amp; DOS to SOS Converter</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-sys-01a.dsk" size="143360" crc="6b1cc42d" sha1="b2ebc0c8d51e3630857a9a08b96957f189390419" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-sys-01b.dsk" size="143360" crc="5fbb6d79" sha1="34310cff50362f0feb95fd05063e6374e51519c7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: SYSTEM UTILITIES AND DATA
+	DISK ID : 3SYS.02
+	BOOTABLE? SIDE ONE ONLY
+
+
+	Side one of this disk contains the latest version of the Apple /// System
+	Utilities program. Side two contains different fonts and other goodies.
+
+	Side One:
+	- Apple /// System Utilities Program. Allows you to copy disks and files,
+	 delete, verify disks, format disks, etc. Also contains the System
+	 Configuration Program to set up your SOS.DRIVER files.
+
+	Side Two:
+
+	CONSOLE.DRIVER    :Console Driver
+	RS232.DRIVER      :Modem Driver (uses the ///'s serial port)
+	SERPRINT.DRIVER   :Serial Printer Driver
+	AUDIO.DRIVER      :Audio Driver for sound/music
+	GRAFIX.DRIVER     :Graphics Driver
+	FMTDX.DRIVER      :Formatter Driver (needed to format disks)
+	PROFILE.DRIVER    :Profile 5MB Hard Disk Driver
+	PARPRINT.DRIVER   :Parallel Printer Driver
+	SITYPE.DRIVER     :Silentype Printer Driver
+	SERCRD.DRIVER     :Apple /// Serial Card Driver (the card fits in a slot).
+	MTEK.DRIVER       :M-Tek Hard Disk Driver
+	PROFILE10MEG      :Profile Driver that will work with 5MB or 10MB version.
+	LASERJET.DRIVER   :HP Laserjet Driver
+
+	KEYBOARD.LAYOUT (subdirectory)
+	- SHOLES.1       :Sholes (QWERTY) Keyboard layout (Standard on the ///).
+	- DVORAK.2       :Dvorak-style keyboard layout.
+	- BRITISH.1      :British keyboard.
+	- FRENCH.1       :French keyboard.
+	- FRENCH.CANADA.1:French-Canadian keyboard.
+
+	KEYBOARD.LAYOUT (subdirectory-continued):
+	- GERMAN.1       :German Keyboard.
+	- ITALIAN.1      :Italian Keyboard.
+	- SPANISH.1      :Spanish Keyboard.
+	- SWEDISH.1      :Swedish Keyboard.
+
+	CHARACTER.SETS (subdirectory)
+	- STANDARD; APPLE; ROMAN; BYTE; BRITISH; FRENCH; GERMAN; ITALIAN; SWEDISH;
+	- SPANISH
+	-->
+	<software name="wapsys02">
+		<description>Washington Apple Pi System Software Disk 2 - System Utilities and Data</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-sys-02a.dsk" size="143360" crc="71f8b9c0" sha1="adf39f96f7ad32c89a14ee7cc19fe69d930ceeab" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-sys-02b.dsk" size="143360" crc="e3842328" sha1="625cd525e9cf713c27fbbf9b8e7f87273d4b72c9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Apple /// Demo Disk #1
+	Disk ID: APPLE-3-WAP-SYS-03
+	BOOTABLE? Bootable
+
+	The first of three Demo Disks for the /// to honor the
+	10 year anniversary of SARA and 100 disks in the WAP PD library.
+	Demo Disks either came with the /// or were used by dealers to
+	show off the ///'s capabilities.
+
+	Side One: A specially modified 10th anniversary version of the ///
+	          Demo Program.  Runs continuously.
+
+	Side Two: The original unmodified Apple /// Demo Program v. 1.2.
+	-->
+	<software name="wapsys03">
+		<description>Washington Apple Pi System Software Disk 3 - Apple /// Demo Disk #1</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-sys-03a.dsk" size="143360" crc="d90db49d" sha1="7d16d18aa94463efebd2a74c16a65f543c06e71a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-sys-03b.dsk" size="143360" crc="87232aaa" sha1="c54fa160ce254f8841a5bc45740ea7b29a98675b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Apple /// Demo Disk #2
+	Disk ID: APPLE-3-WAP-SYS-04
+	BOOTABLE? Bootable
+
+	The second of three Demo Disks for the /// to honor the
+	10 year anniversary of SARA and 100 disks in the WAP PD library.
+	Demo Disks either came with the /// or were used by dealers to
+	show off the ///s capabilities.
+
+	Side One: The original 1.0 Dealer Demo program called "Focus '81"
+
+	Side Two: Version 2.2 of dealer demo.
+	-->
+	<software name="wapsys04">
+		<description>Washington Apple Pi System Software Disk 4 - Apple /// Demo Disk #2</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-sys-04a.dsk" size="143360" crc="80ddeaec" sha1="bf2fb6276a9708e3e64c5873d02fd0b47a7d5d2c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-sys-04b.dsk" size="143360" crc="1e10681f" sha1="d89b974e3fd170e16646da99b201ff2ee9ab67ce" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Apple /// Demo Disk #3
+	Disk ID: APPLE-3-WAP-SYS-05
+	BOOTABLE?: Bootable
+
+	The third of three Demo Disks for the /// to honor the
+	10 year anniversary of SARA and 100 disks in the WAP PD library.
+	Demo Disks either came with the /// or were used by dealers to
+	show off the ///s capabilities.
+
+	On this disk: "Apple /// Business Applications ... An Introduction."
+	             - Allows the user to try out word processing, data base,
+	               spreadsheet and graphics on the ///.
+	-->
+	<software name="wapsys05">
+		<description>Washington Apple Pi System Software Disk 5 - Apple /// Demo Disk #3</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-sys-05a.dsk" size="143360" crc="d8f63605" sha1="ada866ef253cec5d62eaa3ac5250fdbc40b18e5c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-sys-05b.dsk" size="143360" crc="ffaa9b0b" sha1="40b5cce678ea610b8774329364a1d5a066003501" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Apple ///+ Keyboard Demo Disk
+	Disk ID: APPLE-3-WAP-SYS-06
+	BOOTABLE? Bootable
+
+	DESCRIPTION: Yet another demonstration disk for the Apple ///.
+	This disk is Specifically for the ///+ and is a keyboard demonstration
+	program that provides hands-on experience.
+	-->
+	<software name="wapsys06">
+		<description>Washington Apple Pi System Software Disk 6 - Apple ///+ Keyboard Demo Disk</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-sys-06a.dsk" size="143360" crc="b09012e5" sha1="e15b7242bbdc05542c2fe5043db5d1040cee3c18" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-sys-06b.dsk" size="143360" crc="3a2f101c" sha1="20267fbc46ce2bded2508add6bdd307008503891" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME : SOS DRIVERS
+	DISK ID #: APPLE-3-WAP-SYS-07
+	BOOTABLE?  Not Bootable
+
+
+	This disk contains many of the driver files still available for the Apple
+	///.  You'll need to use System Utilities (Disk APPLE-3-WAP-SYS-02) and its System
+	Configuration Program to create a customized SOS.DRIVER file for your
+	computer.
+
+	On Side Two of this disk you'll find some SOS.DRIVER files already set up for
+	you.  They are by no means complete and may not match the configuration you
+	have.  We have set them up, however, to give you a start at setting up your
+	system.  In any case, there are drivers on this disk that will work with many
+	of the devices still available (new or used) to hook up to your Apple ///.
+
+	If the SOS.DRIVER files set up on Side Two do NOT match your system
+	configuration needs, you can use them as the basis for putting together a
+	SOS.DRIVER file that will work.
+
+	If you bought your system used, the odds are excellent that the former user
+	has already set up his programs with a SOS.DRIVER that works with that
+	system.  In that case, you can use a SOS.DRIVER file from one of the boot
+	disks you received and use it as the basis for adding additional drivers when
+	you need to (for example, adding a trackball driver, graphics driver,
+	hard disk driver, or additional printer driver.)
+
+	For more information on how to set up your SOS.DRIVER file using the System
+	Configuration Program (SCP) in System Utilities, please see the file on this
+	disk named DRIVER.CONFIG.  If you were lucky enough to get an original set of
+	Apple /// manuals, there is information there as well. There is one other
+	source, of course: your /// SIG.  We have a number of books in the WAP
+	library as well as video and audio tutorial tapes available for take-out.  If
+	you are still having trouble, feel free to come to one of our SIG meetings,
+	usually held quarterly, at the WAP office.
+
+	Below is a listing of the SOS.DRIVERS on Side Two. If you decide to use one
+	of them, you will have to use System Utilities to rename the file (that is,
+	take off the number designation at the end).
+
+
+	SOS.DRIVER1:  .CONSOLE                    (This is the minimum required
+	                                           to operate an Apple ///.)
+
+	SOS.DRIVER2:  .CONSOLE
+	              .PRINTER (SERIAL PORT:SERIAL PRINTER)
+
+	SOS.DRIVER3:  .CONSOLE
+	              .PRINTER (SERIAL CARD IN SLOT 1)
+	              .PROFILE (HARD DISK: CONTROLLER CARD IN SLOT 4)
+
+	SOS.DRIVER4:  .CONSOLE
+	              .PRINTER (SERIAL PORT: SERIAL PRINTER)
+	              .PROFILE (HARD DISK: CONTROLLER CARD IN SLOT 4)
+
+	SOS.DRIVER5   .CONSOLE
+	              .PRINTER (PARALLEL PRINTER: CARD IN SLOT 1)
+	              .PROFILE (HARD DISK: CONTROLLER CARD IN SLOT 4)
+
+	SOS.DRIVER6   .CONSOLE
+	              .PRINTER (PARALLEL PRINTER: CARD IN SLOT 1)
+	              .PROFILE (HARD DISK: CONTROLLER CARD IN SLOT 4)
+	              .GRAFIX  (GRAPHICS DRIVER FOR GRAPHICS PROGRAMS)
+
+	As for the drivers on this disk they include the following (NOTE that you
+	will have to use the SCP program in System Utilities to designate slots for
+	some of these (the driver needs to know where the card is to talk to it.):
+
+	SIDE A
+
+	ATTACH.DRIVER       6       ALLOWS SCREEN DUMPS (ON ALL WAP DISKS)
+	AUDIO.DRIVER        5       FOR MAKING SOUNDS
+	CMC.DRIVER          9       CMC HARD DISK DRIVER
+	CONSOLE.DRIVER     14       THE "PRIMARY" DRIVER NEEDED BY ALL APPLE ///S
+	EPSON.DRIVER        6       EPSON PRINTER DRIVER
+	FMTDX.DRIVER        6       FORMATTER DRIVER USED BY SYSTEM UTILS AND 3EZPS
+	GRAFIX.DRIVER      14       GRAPHICS DRIVER
+	GRAPPLER.DRIVER    13       GRAPPLER PARALLEL PRINTER CARD DRIVER
+	IMAGEWRITER         6       IMAGEWRITER 1 PRINTER DRIVER
+	LASERJET.DRIVER     9       LASERJET PRINTER DRIVER
+	PARPRINT.DRIVER     6       PARALLEL PRINTER DRIVER
+	PROFILE.UNIVERS    10       HARD DISK DRIVER FOR 5 OR 10MB PROFILE. SLOT 4
+	QUME                6       QUME PRINTER DRIVER
+	RS232.DRIVER        8       TELECOMMUNICATIONS DRIVER: SERIAL PORT
+	SERCARD.DRIVER      9       RS232 SERIAL CARD DRIVER
+	SERPRINT.DRIVER     5       SERIAL PRINTER CARD DRIVER
+	SSC.DRIVER          9       APPLE 2 SUPER SERIAL CARD DRIVER
+	STYPE.BIG          16       SILENTYPE DRIVER (BIG VERSION): PORT A
+	STYPE.SMALL        13       SMALLER SILENTYPE DRIVER: PORT A
+	TCLOCK.DRIVER       6       APPLE 2 THUNDERCLOCK CARD DRIVER:
+	UPIC.DRIVER         6       UNIVERSIAL PARALLEL INTERFACE CARD DRIVER
+	UPICEPSON.DRVER     6       UPIC DRIVER FOR EPSON PRINTER
+	USCI.1.4           10       MICRO SCI DISK DRIVE DRIVER
+	USCI.FMTDX          9       FORMATTER DRIVER FOR MICRO SCI DISK DRIVE
+
+
+	SIDE B DRIVERS
+
+	IMAGE2.DRIVER       9       IMAGEWRITER 2 DRIVER
+	MOUSE.PD.DRIVER     7       PUBLIC DOMAIN MOUSE DRIVER (NEED MOUSE)
+	PKSO.DRIVER        13       PKASO PARALLEL PRINTER CARD DRIVER
+	PKSOMINI.DRIVER     5       SMALL VESION OF ABOVE DRIVER
+	PKSOREV3.DRIVER    20       LARGER/IMPROVED VERSION OF PKSO DRIVER
+	TABLET.DRIVER       6       APPLE 3 GRAPHICS TABLET DRIVER
+	DEVONG.DRIVER      11       DEVONG HARD DISK DRIVER
+	SCS.DRIVER          7       SPACE COAST SYSTEMS HARD DISK DRIVER
+	SCS186.DRIVER       7       DIFFERENT VERSION OF ABOVE DRIVER
+	-->
+	<software name="wapsys07">
+		<description>Washington Apple Pi System Software Disk 7 - SOS Drivers</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-sys-07a.dsk" size="143360" crc="dddc04d4" sha1="dd7d68de0ed3843eecb70a451369ef093bc5dbc8" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-sys-07b.dsk" size="143360" crc="1e4b243e" sha1="4e26fa1de1e69d6ddc24819abbccc5a8e63dd7d9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Washington Apple Pi - Telecommunications -->
+
+	<!--
+	PDS NAME: Telecom 01
+	Disk ID: APPLE-3-WAP-TEL-01
+	BOOTABLE?: Bootable
+
+	Telecom 01 is a disk for ///ers interested in getting into
+	telecommunications.  There are a number of articles about telecommunications
+	and even two (one Basic, one Pascal-based) (and self-booting) comm programs you
+	can try out.
+
+	On Side One:
+
+	ARTICLES.TEXT: Bibliography of articles about A3 Telecommunications.
+	BASIC.MODEM (subdirectory)
+	 - BASIC.MODEM.PM : A Business Basic Telecom program.
+
+	TELECOM.1    : Q&A about buying a modem & getting into
+	telecommunications.
+	TELECOM.2    : More questions about telecommunications.
+	TELECOM.3    : Article about telecommunications and the ///.
+	TELECOM.4    : Control an IBM-PC via an Apple ///.
+	TELECOM.5    : What you need to start "Modeming."
+	TELECOM.NOTE : Short note on the Pascal Telecom program on side two.
+	COM.ARTICLES : 3EZP/AppleWorks Data Base of telecommunications articles.
+
+	On Side Two:
+
+	A Pascal-based telecommunications program. Simple and easy to use
+	for the beginner.
+	-->
+	<software name="waptel01">
+		<description>Washington Apple Pi Telecommunications Disk 1 - Telecom 01</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-tel-01a.dsk" size="143360" crc="0a52a3ae" sha1="a9ef6b80c52c037543d2c247e17d562bab5cb70d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-tel-01b.dsk" size="143360" crc="1f1b3c0f" sha1="2e1a302c2679cd9c808a7e7384be5e0a6139f5c9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Telecom 02/Access ///
+	Disk ID: APPLE-3-WAP-TEL-02
+	BOOTABLE?: Bootable
+
+	Telecom 2 contains a super tutorial on how to connect a modem
+	to your Apple /// and get started in telecommunications. Written by
+	Al Bloom, Harry Baya and John Lomartire.  This covers it all, from A to Z.
+	Also under the "Telecom.Desktop" subdirectory, you'll find Nexus /// , a
+	telecommunications program you can use with On Three's Desktop Manager.
+	An "Information" file is included.
+
+	On Side One:
+
+	TELECOM.INFO  : A super tutorial about telecommunications on the ///.
+	READ.ME.FIRST : What you'll find on this disk.
+
+	TELECOM.DESKTOP (subdirectory)
+	 - NEXUS       :Telecommunications program you can install under Desktop
+	                Manager.
+	 - INFORMATION :Some notes on using NEXUS.
+
+
+	On Side Two:
+
+	Access /// Interp version boot disk with associated files.
+	ACCESS3.dskC:  Complete documentation on using this program.
+	-->
+	<software name="waptel02">
+		<description>Washington Apple Pi Telecommunications Disk 2 - Telecom 02/Access ///</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-tel-02a.dsk" size="143360" crc="b9d87fb3" sha1="4bc22093c18e92749573e54df99305530a7b50ae" offset="0" />
+			</dataarea>
+		</part>
+		<!-- Placeholder for Side B -->
+	</software>
+
+	<!--
+	PDS NAME: Telecom 03
+	Disk ID: APPLE-3-WAP-TEL-03
+	BOOTABLE? Bootable
+
+
+
+	Telecom 3 offers a number of Basic telecom utilities, including an
+	auto-dialer for older versions of Access /// (that is, the non-interpreter
+	versions).  There's also a full side of BBS listings.
+
+	On Side One:
+
+	ACCESS3.AUTO  :Basic program to automate dialing with Access ///.
+	AUTO3.TEXT    :Text version of the above.
+	DISK.NOTES    :Notes about the Basic programs on this disk.
+	SMARTPHONEMOD :Basic auto dialer for use with most modems.
+	SMARTPHONETEXT:Text version of the above.
+
+	On Side Two (All 3EZ Pieces Data Bases of Bulletin Boards):
+
+	APPLE3.BBS
+	BBS.FOREIGN
+	BBS.NORTHEAST
+	BBS.NORTHWEST
+	BBS.SOUTHEAST
+	BBS.SOUTHWEST
+	BBS.UNKNOWN
+	NOTES        :About the data bases on this disk side.
+	-->
+	<software name="waptel03">
+		<description>Washington Apple Pi Telecommunications Disk 3 - Telecom 03</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-tel-03a.dsk" size="143360" crc="5674d88d" sha1="fae3e0e51d8b1d0d1acc263dfbec31df0af2d137" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-tel-03b.dsk" size="143360" crc="c165caeb" sha1="a7f0ee4e3b7f4a18f2f0f9041d07ee049e9ca162" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: KERMIT ///
+	Disk ID: APPLE-3-WAP-TEL-04
+	BOOTABLE?: Bootable
+
+	This is a very basic telecom program using the Kermit file Protocal -
+	a way to upload and download files with error checking.  Documention
+	and a review are included on disk. Requires Pascal to run (not
+	included on this disk).
+
+
+	SIDE ONE
+
+	KERMIT.REVIEW    : A review of Kermit ///
+	KERMITDOC        : Kermit /// Manual
+	SOURCE.1         : Subdirectory with source code listings
+	READ.ME.FIRST    : This file
+
+	SIDE TWO
+
+	SOURCE.2         : Subdirectory with additional source code listings
+	STARTUP.CODE     : Startup file for Kermit - Requires Pascal
+	SYSTEM.MISCINFO  : Pascal Miscellaneous Information file for Kermit
+	-->
+	<software name="waptel04">
+		<description>Washington Apple Pi Telecommunications Disk 4 - Kermit ///</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-tel-04a.dsk" size="143360" crc="f3db69b7" sha1="ca818b49d5a67a064cf7f3361c71f3bfe78998b2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-tel-04b.dsk" size="143360" crc="dddc2848" sha1="5737d411975c5d5ce681b12f20640e30af692749" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: XMODEM ///
+	Disk ID: APPLE-3-WAP-TEL-05
+	BOOTABLE?: Bootable
+
+	Originally a commercial program by Gary Kato, XMODEM /// is
+	a wonderful telecom program that gives ///ers access to the XMODEM
+	protocol with Binary II option. It's a way of uploading or downloading all
+	types of files without fear of errors.
+
+	XMODEM /// has several major features:
+
+	XMODEM /// can be used as an ordinary TTY ASCII terminal for most
+	telecommunications needs;
+
+	In the ASCII terminal mode, XMODEM /// allows you to both
+	download and upload ASCII text files of your choosing;
+
+	XMODEM /// is able to use a variety of bit settings, baud rates,
+	half or full duplex, linefeed and line delays;
+
+	XMODEM /// allows you to use the XMODEM protocol, a powerful
+	telecommunications protocol that is highly coordinated and
+	extremely accurate;
+
+	In the XMODEM receive mode, XMODEM /// allows you to both
+	download and upload any file as an ASCII text file in binary
+	format for later conversion;
+
+	And, XMODEM /// features the new BINARY II option for Apple file
+	transmission.  You now can literally send and receive SOS or
+	ProDOS files intact and ready to use!
+
+	XMODEM /// may be run on diskettes or installed under CATALYST or
+	SELECTOR ///.
+
+
+	On Side One:
+	MANUAL (Subdirectory)* : Complete Documentation for XMODEM ///.
+
+	On Side Two:
+	XMODEM /// program disk (self booting - written in assembly language).
+
+
+	*Instruction manual is on disk, transcribed by Jim Suthard.
+	-->
+	<software name="waptel05">
+		<description>Washington Apple Pi Telecommunications Disk 5 - XMODEM ///</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-tel-05a.dsk" size="143360" crc="f5ee6e9f" sha1="4462eba97452957acfa55081e2694a748b1472cf" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-tel-05b.dsk" size="143360" crc="7c29b81f" sha1="9f40f4170c5fa78e1fae75ba8991c6b058853134" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: EASYTERM
+	DISK ID : 3TEL.06
+	BOOTABLE? BOTH SIDES
+
+
+	EASYTERM /// is a terminal program that gives users the ability to send an
+	ASCII file from disk, as well as to receive a file from almost any computer
+	through a modem. Uploading and downloading are as easy as CONTROL-UP-ARROW
+	and CONTROL-DOWN-ARROW.  Supports direct terminal mode with speeds of up to
+	9600 baud. Originally a commercial program from Sun Remarketing.
+
+	SIDE ONE:
+
+	MINI.MANUAL    : A short tutorial on how to use Easyterm ///.
+	READ.ME.FIRST  : This File
+
+	SIDE TWO:
+
+	EASYTERM /// PROGRAM - SELF BOOTING
+	-->
+	<software name="waptel06">
+		<description>Washington Apple Pi Telecommunications Disk 6 - Easyterm</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-tel-06a.dsk" size="143360" crc="56c6b281" sha1="f2b8acdb3f1fa5b74a5beee1555d9a36703213ae" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-tel-06b.dsk" size="143360" crc="8d9c7148" sha1="1120602fbcf57c3241e8d6be8c323cd15a12623b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Three's Company BBS
+	Disk ID: APPLE-3-WAP-TEL-07
+	BOOTABLE? Side One Only
+
+
+	This disk was produced to honor Ed Gooding and his now off-line ///s Company
+	BBS.  It's a guide of sorts for those who never had a chance to call
+	and find out what this tremendous Apple /// resource was all about. It
+	includes many of the menus and files you'd have seen once logged on. The BBS
+	was donated to WAP - which operated it for more than a year in 1993-94 before
+	it was shut down for good. BUT its files are all preserved - and many will
+	ultimately make it into the /// SIG PD or onto the TCS.
+
+	NOTE that this represents ///s Company BBS as it existed in 1990.
+
+	On Side One:
+
+	COMPANY.BIB      :3EZ Pieces Bibliography of articles on Three's Company.
+	COMP.BIB.ASCII   :ASCII version of the above file.
+	TOPIC.AREAS      :Topic areas available on Three's Company BBS.
+	BEST.OF.DISKS    :Three's Company PD disks offered by the /// SIG.
+	LOGON            :Three's Company Logon messages.
+
+
+	On Side Two:
+
+	PROGRAMMING   :Subdirectory listing available Programming files.
+	SOFTWARE      :Subdirectory listing available Software files.
+	HARDWARE      :Subdirectory listing available Hardware files.
+	USER.GROUPS   :Subdirectory listing available User Group files.
+	CLASSIFIEDS   :Subdirectory listing available Classified files.
+	PUBLIC.dskMAIN :Subdirectory listing available Public Domain programs.
+	WHATS.NEW     :What's new on ///'s Company BBS.
+	BULLETINS     :Important Bulletins of interest to those logging on.
+	-->
+	<software name="waptel07">
+		<description>Washington Apple Pi Telecommunications Disk 7 - Three's Company BBS</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-tel-07a.dsk" size="143360" crc="75c2896f" sha1="873d6212cd17f9f6d0e8f820f93a42171b69c92c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-tel-07b.dsk" size="143360" crc="1d19678d" sha1="f0451430966cb85a194a170a8587664258c0789f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: TCS DISK: Side One
+	Disk ID: APPLE-3-WAP-TEL-08
+	BOOTABLE?: Bootable
+
+	An adaptatation of the Apple // TCS disk.  For /// folks, this
+	disk includes all the help files that explain how to use the WAP TCS,
+	with comments on the /// included.
+
+	On Side One:
+	HOW.TO.USE.TCS   :A basic tutorial on using the WAP TCS.
+	BBS.COMMAND.TXT  :BBS Commandments you need to know.
+	BBS.LONG.HLP.TX  :TCS Help information.
+	TCS.FAQ          :Frequently asked Questions about the TCS
+	TCS.AGREEMENT    :What you agree to when you use the TCS
+	TCS.WELCOME      :What do you see when you log on?
+
+	On Side Two:
+	A3.TELECOM.HELP  :A tutorial on Apple /// telecommunications.
+	GUIDELINES.TXT   :TCS User's Guidelines.
+	LURKER.TXT       :Confessions of a lurker.
+	QUICK.HELP.TXT   :TCS Command Card (Quick Help)
+	TCS.TEL.NO.TXT   :TCS Telephone lines .
+	TCS.GUIDELINES   :Guidelines for Using the TCS
+	TCS.EXPLORER     :What is the TCS Explorer Service?
+	TCS.MAP.1        :1 of 2 Maps of the TCS
+	TCS.MAP.2        :2 of 2 Maps of the TCS
+	FILE.TRANSFER    :How to use the TCS File Transfer System
+	TCS.MESSAGES     :How to use the TCS Message Base
+	TCS.EDITOR       :How to use the TCS Editor
+	NEW.TCS.UPDATES  :What's new on the TCS as of 1995?
+	-->
+	<software name="waptel08">
+		<description>Washington Apple Pi Telecommunications Disk 8 - TCS Disk: Side One</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-tel-08a.dsk" size="143360" crc="9827a883" sha1="a7c55af34a21e0731915dd4690d113b77b16492b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-tel-08b.dsk" size="143360" crc="4dea1825" sha1="5c18c61b0229464acb154b2a3022df8eebba158f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Infonet BBS
+	Disk ID: APPLE-3-WAP-TEL-09
+	BOOTABLE?: Nonbootable
+
+	INFONET is an information network software program written for novice to
+	expert computer users.  INFONET was designed for people who need a method of
+	electronic communications between themselves and other computer users.
+
+	INFONET is an easy to use program and has applications for vast numbers of
+	organizations.  Examples of effective usage include:
+
+	 -  Retail stores who link with customers and sales people
+	 -  Computer user group communication
+	 -  School districts communicating with individual schools
+	 -  Cottage industry marketing and customer communications
+	 -  Any group of computer users for electronic communications
+
+
+	INFONET was originally sold by Sun Remarketing of Logan, Utah.  In 1987, it
+	was placed into the public domain.  It was greatly enhanced
+	by Ed Gooding and Walt Pawley and was used for many years (through 1994)
+	as the BBS system for the old ///s Company BBS (files donated to WAP).
+
+
+	SIDE ONE includes Source Code files and the User.Manual file. Our Basic
+	version of Menu.Maker is on this disk if you wish to look from another
+	Basic disk and read the manual. Print.All is also available to print all
+	Text files on this disk (Applewriter or other word processor can also
+	be used to read the text files).
+
+	SIDE TWO includes the actual program itself.
+
+	Not Self-Booting.  Users with knowledge of Pascal recommended.
+	-->
+	<software name="waptel09">
+		<description>Washington Apple Pi Telecommunications Disk 9 - Infonet BBS</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-tel-09a.dsk" size="143360" crc="ba838a3f" sha1="07c1da1332a4b707c725c5d5eff231333ce72358" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-tel-09b.dsk" size="143360" crc="5fc790d9" sha1="f40444efc9ec115c9493847a79c9d4468890b0f7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: hpTERM ///
+	DISK ID : APPLE-3-WAP-TEL-10
+	BOOTABLE? BOTH SIDES
+
+
+	        hpTerm /// is a terminal emulation program for the HP262x terminal.
+	Unfortunately, it did NOT get to WAP with a manual, so we've put together a
+	"Mini Manual" of sorts, to at least give you an idea of what it can - and
+	can not - do.
+
+	SIDE ONE:
+
+	MINI.MANUAL : Some basic information about hpTERM /// and what you'll see
+	              when you boot it up.
+
+	SIDE TWO:    hpTERM /// program (pascal). Self-booting.
+	-->
+	<software name="waptel10">
+		<description>Washington Apple Pi Telecommunications Disk 10 - hpTERM ///</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-tel-10a.dsk" size="143360" crc="040c39f6" sha1="f19491c309d3955e9ca44df971e33aa6d0cec09b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-tel-10b.dsk" size="143360" crc="4dac8a0a" sha1="049dbb20d6580f0e5882e81c443111f1f2c8ac37" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: APPLE ACCESS 3270
+	DISK ID : APPLE-3-WAP-TEL-11
+	BOOTABLE? BOTH SIDES
+
+
+	Apple's Original Description:
+
+	ACCESS 3270 is a versatile and user-friendly package that allows
+	your Apple /// to access any computer that supports IBM 3270 communications.
+	Works exclusively with an Apple 3270 Cluster Controller that rounds out a
+	complete,  interactive communications solution  (NOTE: Also works with a
+	Modem - Please see the Weber Baker review on this disk). Emulates operation
+	on an IBM 3270 keyboard and also gives you reconfiguration options.  Can
+	transfer text files to and from a host computer.  Supports comprehensive
+	command file capability which provides for auto-dial and auto-log-on
+	capabilities.  Provides customized 3270 help screens, ability to filter
+	control to and from host, and quick reference keyboard templates. Requires
+	phone jack, Apple 3270 Cluster Controller Emulator (or a modem) and an
+	applications interface program on the host computer.
+
+
+	ON SIDE ONE:
+
+	The.Menus     : A file containing the menu files found within Access 3270.
+	Read.Me.First : This file.
+	Review        : A tutorial/review of Access 3270 by Weber Baker, as
+	                published in Frank Moore's Three Magazine of Feburary, 1987.
+	                The magazine is no longer published.
+
+	        All the files can be read or printed under Menu.Maker (which is the
+	program that Side One boots into.) We've also included a program called
+	Print.All which will print ALL ASCII (text) files on this disk easily and
+	quickly.
+
+
+	SIDE TWO
+
+	A bootable copy of Apple Access 3270.  The program is copyable and you can
+	place it on your hard disk under BOS3, Selector or Catalyst.The program looks
+	and works remarkably like Access ///, the terminal program for the Apple ///
+	(little wonder - Apple simply adapted Access /// to make this program...)
+
+	Files include: SOS.KERNEL; SOS.DRIVER; ACS3FONT; AUTOLOG; SOS.INTERP; CONFIG;
+	               TERMREC
+
+
+
+	David Ottalini
+	WAP /// SIG
+	September, 1992
+	-->
+	<software name="waptel11">
+		<description>Washington Apple Pi Telecommunications Disk 11 - Apple Access 3270</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-tel-11a.dsk" size="143360" crc="e8f03058" sha1="4987161f62b3d55b0c6faf26e1c361563707b8d5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-tel-11b.dsk" size="143360" crc="19a0e5cf" sha1="8bab6c1d4f7ba60912b610106ff2d9075e55bfa4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: TerminALL Manual/Program
+	Disk ID: APPLE-3-WAP-TEL-12 & 13
+	BOOTABLE?: Bootable (both disks)
+
+	TerminALL is the third program placed into the Public
+	Domain by Foxware, Inc. of Salt Lake City, UT.  TerminALL is a
+	telecommunications program designed to emulate any number of popular
+	terminals, including the DEC VT100 series.
+
+	Disk APPLE-3-WAP-TEL-12 contains the manual for the program and is self-booting.
+	Disk APPLE-3-WAP-TEL-13 offers the actual TerminALL Program Disk - in self-booting
+	Pascal.
+
+
+	SOME IMPORTANT NOTES FOR TERMINALL USERS
+
+
+	       TerminALL  is  an  interesting  telecommunications program, but it has
+	one  major problem.  It can not upload or download!  It was primarily
+	designed to  allow the Apple /// to emulate any of a series of terminals and
+	apparently the   authors  did  NOT  think  uploading  or  downloading  was
+	important  or necessary.
+	       As  such,  this  program  is  basically  worth  using  by  a  beginner
+	interested  in  learning how to use a program that can connect a computer
+	with a computer  service  like  CompuServe, Genie or Source or a BBS, like
+	the WAP Telecommunications System.  TerminALL can be set for different baud
+	rates and protocals,  as  with other telecommunication programs.  We would
+	recommend you read  the  manual carefully to familiarize yourself with its
+	operation.  If you want  to connect to a BBS or telecom service like
+	CompuServe, you can probably use  any  of  the  available terminal modes.
+	But the default mode, VT52  is a standard  that  will  serve  you  well if
+	all you wish to do is "get your feet wet" in the wonderful world of
+	telecomputing.
+	        Despite  it's  rather  glaring  negatives, TerminALL is a
+	well-written program  that  works with few, if any problems.  It is easy to
+	learn and use.  The  WAP  /// SIG again thanks FOXWARE Products for placing
+	TerminALL into the public domain for all to use.
+
+	AUGUST, 1989 NOTE:
+
+	        Since this was written, the /// SIG has placed a number of other
+	telecom programs and information into the PD library.  Check out disks
+	APPLE-3-WAP-TEL-04 or APPLE-3-WAP-TEL-05.  Please also note there are a number of information files
+	on both sides of this disk.  Information on other telecom programs, vendors,
+	etc.  all are ASCII (Text) files and can be read from Menu.Maker or using the
+	program PRINT.ALL on this disk. You can also load these files into any Apple
+	/// (or //) word processing program.
+
+	ADDITIONAL NOTE
+
+	The  PASCAL  source code to this program is available from your SIG
+	leadership if  you  are  a  programmer  wishing  to  take a look at how
+	TerminALL was put together  and/or adapt it to your own needs.  Any
+	contributions to the SIG PD library welcome!
+	-->
+	<software name="waptel12">
+		<description>Washington Apple Pi Telecommunications Disk 12 - TerminALL Manual</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-tel-12a.dsk" size="143360" crc="980178ae" sha1="6b42428abbb98d28b30d067c583e59f9a3f8590b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-tel-12b.dsk" size="143360" crc="f62e98a2" sha1="b5e553d175eeaa9197e29a9bbd1d69ffd12958de" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="waptel13">
+		<description>Washington Apple Pi Telecommunications Disk 13 - TerminALL Program</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-tel-13a.dsk" size="143360" crc="18e3cb2c" sha1="f93a12e38400a9339da2977aa4826de063b6cf07" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-tel-13b.dsk" size="143360" crc="dbe8367a" sha1="10da72a447e8c67107dc60823560064795c0d916" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Washington Apple Pi - Utilities -->
+
+	<!--
+	PDS NAME: Catalyst Release
+	Disk ID: APPLE-3-WAP-UTL-01
+	BOOTABLE? Both Sides
+
+	Catalyst Release is a Pascal-based program that will let you use your boot
+	disks that have been "Catalyzed" by the Catalyst hard disk menu program.
+	When you place certain copy-protected programs onto a hard disk under
+	Catalyst, it "fixes" the original boot disk so it can't be used again.
+	This program returns use of that disk to you.
+
+	Side One:
+
+	Catalyst Release for Catalyst 1.0 users.
+	REVIEW  : A review of Catalyst Release.
+
+	Side Two:
+
+	Catalyst Release for Catalyst 2.1 users.
+	-->
+	<software name="waputl01">
+		<description>Washington Apple Pi Utilities Disk 1 - Catalyst Release</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-utl-01a.dsk" size="143360" crc="f362c93d" sha1="5cad96507b3cbeef32898b9e11ff1bfff5fc9895" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-utl-01b.dsk" size="143360" crc="f8dfae61" sha1="255b03755a749644cf3aa21b8a5f72f90efd64f1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Reformatter ///
+	Disk ID:  APPLE-3-WAP-UTL-02
+	Bootable?: Bootable (Pascal)
+
+
+	REFORMATTER /// lets you load structured text files into a variety of data
+	base and spreadsheet programs.
+
+	The program can  create  Quickfile files directly, and it can create DIF (Data
+	Interchange  Format) files.  Either can be imported by 3EZ Pieces
+	or AppleWorks (or most Apple // or /// data base/spreadsheet programs.)
+
+
+	Side One:  Boot disk and Review of the program.
+	Side Two:  Program Disk
+	-->
+	<software name="waputl02">
+		<description>Washington Apple Pi Utilities Disk 2 - Reformatter ///</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-utl-02a.dsk" size="143360" crc="de625f58" sha1="1253ad1765957e0526152990235c86030263f220" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-utl-02b.dsk" size="143360" crc="be25b1e9" sha1="d8faf8d44a01570205a805fcb083beeb79d33055" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: A3 REBOOT
+	DISK ID : APPLE-3-WAP-UTL-03
+	BOOTABLE? SIDE ONE ONLY
+
+
+	By
+
+	David Ottalini
+	WAP /// SIG CO-Chairman
+
+
+	        A3 REBOOT will let you reboot any program from .D1 with just the
+	press of the RETURN key.  The program can do this because its a specially
+	prepared version of SELECTOR ///, the hardisk utility program sold by On
+	Three.
+	        Selector has a "hook" in it, so that when a program ends it doesn't
+	take you to the "INSERT DISK AND PRESS CONTROL-RESET" message.  Instead,
+	it brings you back to a menu, from which you can then select the next
+	application you desire.
+	        This version will only allow you to reboot a disk from .D1.  But
+	it will give you an idea of what SELECTOR can do.  If you'd like more
+	information about Selector and On Three's entire line of programs, you
+	can call them at 1-805-822-8580. Their address is 1174 Hickory Ave. in
+	Tehachapi, California. Zip is 93561
+	        You are currently reading this file from side one of disk APPLE-3-WAP-UTL-38.
+	It also includes some additional articles about Selector and a database of
+	all articles pertaining to Selector /// (as compiled by the author using
+	his THREEWORKS information disks).
+	        Side Two contains A3 REBOOT/Selector ///.  Remember to replace our
+	SOS.DRIVER file with yours so your system is configured properly.
+	As always, your comments and suggestions are most welcome.
+
+
+	                                                        May 8, 1992
+
+	** May 1995 NOTE:
+
+	If you like Selector /// -  you'll really want to try BOS3 - the new upgrade
+	to SOS that includes a built-in program selector among many other features.
+	Best of all for Selector users is that BOS3 uses the same pathname structure
+	- one that you already know and have used.  For more information, contact
+	the WAP office. BOS3 is available from WAP for just $50.00. (all funds go
+	into a special Software Development Fund for the ///).
+	-->
+	<software name="waputl03">
+		<description>Washington Apple Pi Utilities Disk 3 - A3 Reboot</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-utl-03a.dsk" size="143360" crc="e6e861cd" sha1="0b2a6763e189905df73c0c45e723b19b3767fbd9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-utl-03b.dsk" size="143360" crc="566473a3" sha1="237ae6ff74db003403bffe12616cfa0e1670b066" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Epson Screen Printer
+	Disk ID: APPLE-3-WAP-UTL-04
+	BOOTABLE? Side One
+
+
+	        The Epson Screen Printer will work with any Epson or Epson-
+	compatable printer (like the Panasonic series) and is designed to let
+	the user print text or graphics screens in several different modes.
+	        The program was written by Rick Sidwell and originally marketed
+	by Alpine Computing, Inc., the precursor to Sun Remarketing.  It has not
+	been offered for sale for many years and thus we are happy to place it into
+	the Public Domain for anyone interested.
+
+
+	On Side One you will find:
+
+	MANUAL         : Epson Screen Printer Manual
+	READ.ME        : The file you are currently reading
+	EPSON.PRINTERS : An AppleWorks/3EZ Pieces DB file containing a bibligraphy
+	                 of articles about Epson printers and the Apple ///.
+	                 (Taken From ThreeWorks for the Apple /// (c) 1995 David
+	                 Ottalini - Shareware)
+
+
+	On Side Two you will find the Epson Screen Printer Program.  It is
+	self-booting under Business Basic and includes a Demo program for you to
+	try out on your printer.  Note that we have replaced the orginal SOS.DRIVER
+	file with one that will allow you to print from the Apple ///'s RS232
+	(Serial) printer.  If you have a parallel printer, there is an Epson driver
+	in the SOS.DRIVER file you can make Active using the System Configuration
+	Program of System Utilities (or simply replace the SOS.DRIVER file with one
+	you know works with your Epson or Epson-compatable printer.
+	-->
+	<software name="waputl04">
+		<description>Washington Apple Pi Utilities Disk 4 - Epson Screen Printer</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-utl-04a.dsk" size="143360" crc="034ae899" sha1="a05d14931903841ae865ea2f2bc8263ce719e2a4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-utl-04b.dsk" size="143360" crc="392311e6" sha1="7a4fb767e3954fb8878f8f78cc1bd38285744777" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Jeppson Codefile Utility
+	DISK ID : APPLE-3-WAP-UTL-05
+	BOOTABLE? BOTH SIDES
+
+
+	By David Ottalini
+	   WAP /// SIG Co-Chairman
+
+
+	This is a Business Basic program that will allow you to change the filetypes
+	of your Apple /// files.  All the necessary invokables and documentation are
+	available on disk for you.  Dr. Jeppson was an early supporter of the /// and
+	wrote many of the most interesting programs we have.  He was a mainstay in
+	the old Softalk Magazine. I'll bet he's a pretty good dentist too...
+
+	Side One includes a tutorial in Basic you can run using Menu.Maker.  It will
+	allow you to print out some of the material.  Side two includes the actual
+	program (in Basic) and necessary Invokables.  The programs have been adapted
+	to run with Menu.Maker.
+
+	The filetypes available using this program include:
+
+	File Type/#             Description
+
+	$00       0             Typless File
+	$01       1             Bad Block File
+	$03       2             Pascal Code File
+	$03       3             Pascal Text File
+	$04       4             ASCII Text File
+	$05       5             Pascal Data File
+	$06       6             General Binary File
+	$07       7             Font File
+	$08       8             Graphics Screen File
+	$09       9             Business Basic Program File
+	$0A       10            Business Basic Data File
+	$0B       11            Word Processor File
+	$0C       12            SOS System File
+	$0D-$0E   13-14         SOS Reserved
+	$0F       15            Directory File
+
+	     These are the ones this particular program will not only read - but
+	allow you to change.
+
+	     But there are additional types - which now include those taken by Apple
+	and various other Apple II developers:
+
+	$15          Screen Library File
+	$10          RPS Data File
+	$11          RPS Index File
+	$12          AppleFile Discard File
+	$13          AppleFile Model File
+	$14          AppleFile Report Format File
+	$16-$18      SOS Reserved
+	$19          AW/3EZP Data Base File
+	$1A          AW/3EZP Word Processor File
+	$1B          AW/3EZP Spreadsheet File
+	$1C-$1F      Reserved
+	$20          Global File (Desktop Manager)
+	$25          Desktop Manager
+	$26          Desktop Manager Option
+	$27          Note Pad File (Desktop Manager)
+	$28          Subload File (Desktop Manager)
+	$29-$EE      Reserved
+	$AB          GS Basic File
+	$AD          GS Basic Data File
+	$EF          Pascal Area
+	$F0          ProDos Added Comment File
+	$F1-$F8      ProDos User Defined Files 1-4
+	$F9          ProDos Reserved
+	$FA          Integer Basic Program File
+	$FB          Integer Basic Variables File
+	$FC          Applesoft Program File
+	$FD          Applesoft Variable File
+	$FE          Relocatable Code File (EDASM)
+	$FF          ProDos System File
+
+	        On Three's Communications Manager includes a utility that will allow
+	you to change any filetype into any other.
+	        Note, however,  that you need to be VERY careful when changing file
+	types, since you can really make mash out of a file in moving it from one
+	type to another (For example - you can't change a Basic file to ASCII and
+	expect Applewriter to read it.) Make a copy and do the conversion on it just
+	to be safe.  And as noted above, since the demise of the ///, Apple II
+	developers have, on occasion, taken a /// filetype as their own, which could
+	cause some problems if you're working with Apple II files.
+	-->
+	<software name="waputl05">
+		<description>Washington Apple Pi Utilities Disk 5 - Jeppson Codefile Utility</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-utl-05a.dsk" size="143360" crc="b421d86f" sha1="22bdb2944283fc297c1393eb904b3cd52b463b0c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-utl-05b.dsk" size="143360" crc="1aca98e0" sha1="dc1b807c41ba09629e1fe93c1a8c99dbbed7f854" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: SOSTRAN - File Conversion Utility
+	DISK ID : APPLE-3-WAP-UTL-06
+	BOOTABLE? BOTH SIDES
+
+
+	SOSTRAN is an Apple ///  utility that can transfer Pascal text files or SOS
+	ASCII files to DOS text files. Or  it can move fonts from Apple // Pascal,
+	Pilot or DOS tool kit to a SOS font file.   It  will  also  convert Applesoft
+	and Integer Basic files to Pascal or Business Basic text files.
+
+	As Frank Moore writes in the enclosed review:
+
+	"SOSTRAN is most powerful for cataloging ][ disks, and in the transfer of
+	text, data and font files."
+
+	ON SIDE ONE:
+
+	SOSTRAN.MANUAL   :   An edited but mostly complete transcription of the
+	                     SOSTRAN Manual.
+
+	SOSTRAN.REVIEW   :   A short review of the program by Frank Moore of "The
+	                     Three Magazine."
+
+	* Note that you can view and print either file with the included Menu.Maker
+	  program or by using our "Print.All" program, which will print as many
+	  text files from as many disks as you designate.
+
+	ON SIDE TWO:
+
+	The SOSTRAN boot and program (which is Pascal) files.  It can be placed on
+	your hard disk and run from BOS3, Selector or Catalyst.
+	-->
+	<software name="waputl06">
+		<description>Washington Apple Pi Utilities Disk 6 - SOSTRAN - File Conversion Utility</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-utl-06a.dsk" size="143360" crc="a7c8612d" sha1="efe80accbc0a2922a52869c5fd06c5153b88a7a4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-utl-06b.dsk" size="143360" crc="52294b7d" sha1="7c28250e24d4d7c9178ed9a19d1c7d127c136442" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Washington Apple Pi - Word Processors -->
+
+	<!--
+	PDS NAME: AppleWriter 4.1
+	Disk ID: APPLE-3-WAP-wdp-01
+
+	The 4.1 version of Apple Writer with extensive WPL help files.
+	Flip side has Apple Writer utilities and other goodies, including
+	a bibliography of WPL articles.
+
+	On Side One:
+	AppleWriter program disk with tutorial files.
+
+	On Side Two:
+	AW.ARTICLES :Bibliography of articles about Apple Writer.
+	AW.UTILS :Subdirectory with AW Utilities program (Pascal).
+	HDISK.INSTALL (subdirectory)
+	- DOCUMENTATION :Tutorial on how to install AW onto a hard disk.
+	- GLOS.KEYPAD :Gloss.Keypad used with HDINSTALL
+	- HDINSTALL :WPL program used to install 4.1 Applewriter onto a HD.
+	- STARTUP :Startup WPL program for installing AW onto hard disk.
+	READ.ME.FIRST :Update on the contents of this disk.
+	TEMPLATE.10.CPI :Keypad template you can print (10 CPI).
+	TEMPLATE.12.CPI :Keypad template you can print (12 CPI).
+	WPL.ARTICLES :Bibliography of articles about Word Processing Language.
+	-->
+	<software name="wapwdp01">
+		<description>Washington Apple Pi Word Processors Disk 1 - AppleWriter 4.1</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wdp-01a.dsk" size="143360" crc="213a6b3d" sha1="4b0d4a9c000d97cdbde6116258e5f0d574ac730d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wdp-01b.dsk" size="143360" crc="3483f342" sha1="e6ad7372b47fd228524456759f8e45faa66935cd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Apple Writer 2.0 Demo Disk
+	Disk ID: APPLE-3-WAP-wdp-02
+
+	An excellent disk-based tutorial on how to use Apple Writer.
+	Self-booting Side One.
+
+	Side One:Boot
+	Side Two:Program
+	-->
+	<software name="wapwdp02">
+		<description>Washington Apple Pi Word Processors Disk 2 - Apple Writer 2.0 Demo Disk</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wdp-02a.dsk" size="143360" crc="dfed5d11" sha1="d0421eb8e077f47e6a67bd3e6edc480a67febf26" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wdp-02b.dsk" size="143360" crc="4559a89e" sha1="d1e337701c685c230311269ec3fd5e90f2eb3593" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Footnote ///
+	Disk ID: APPLE-3-WAP-wdp-03
+
+	Footnote /// is a Pascal program that will merge text and
+	footnotes for printing. Double-sided disk includes user manual on
+	side one and the actual program on side two.
+
+	On Side One:
+	FOOTNOTE.TEXT :Pascal Text source code for Footnote ///.
+	USER.MANUAL :User Manual for Footnote ///.
+
+	On Side Two:
+	Footnote /// program (Pascal).
+	-->
+	<software name="wapwdp03">
+		<description>Washington Apple Pi Word Processors Disk 3 - Footnote ///</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wdp-03a.dsk" size="143360" crc="62d13d96" sha1="6b1d1a484e7a4c67cb06e06c5999ead9e81cdecb" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wdp-03b.dsk" size="143360" crc="73ce97ef" sha1="c3a780ca8c0284f2e41dd30086b482a0fa4405ba" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Ink Well Manual
+	Disk ID: APPLE-3-WAP-wdp-04
+
+	Ink Well is the first of three programs placed into the
+	Public Domain by Foxware, Inc. of Salt Lake City, UT. Ink Well is
+	a Business Basic word processing program that is sophisticated and
+	provides the user with a "What You See is What You Get" interface.
+	This double-sided disk contains the manual and other information.
+
+	On Side One:
+	ON.THIS.DISK : Brief description of the files on this disk.
+	TITLE :Inkwell Title Page and disclaimers.
+	CONTENTS :Inkwell manual Table of Contents.
+	INTRO :Welcome to Inkwell. What the program can do.
+	CONCEPTS :An excellent tutorial about the Apple /// system.
+	TUTORIAL :Basic step-by-step tutorial on using Inkwell.
+	OVERVIEW :The organizationa and use of Inkwell.
+	MAKE.BOOT.DISK :How to make Ink Well (3WDP-04) into a Boot Disk.
+	IW.ARTICLES :The only known review of Ink Well.
+
+	On Side Two:
+	COMMAND.MODE :The importance of Command Mode to Ink Well and how to use it.
+	OPTIONS :Modifying your options in Ink Well and how to do it.
+	TEMP :User note on imbedded print commands.
+	EDITOR :Using the Editor to work with your text.
+	BLOCK :Dealing with larger blocks of text in Ink Well.
+	NOTES :Technical notes on Ink Well (printing, etc.)
+	PRINTER :Describes this program that will print, merge and format text.
+	INDEX :Manual index.
+	INK.WELL.V2.0 :Major improvements to Ink Well in Version 2.0.
+	IW.ADVANTAGES :Ink Well's three major advantages.
+	-->
+	<software name="wapwdp04">
+		<description>Washington Apple Pi Word Processors Disk 4 - Ink Well Manual</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wdp-04a.dsk" size="143360" crc="24afca32" sha1="860efb8a5bb017b926de1a3129e9932c31426069" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wdp-04b.dsk" size="143360" crc="5af156de" sha1="e49ed454916477ff47b6452fa688904c2fc1cb64" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Ink Well Program
+	Disk ID: APPLE-3-WAP-wdp-05
+
+	Ink Well is a word processing program placed into the Public
+	Domain by Foxware, Inc. of Salt Lake City, UT. Ink Well is a
+	Business Basic word processing program that is sophisticated and
+	provides the user with a "What You See is What You Get" interface.
+	Disk 3WDP-04 contains the actual Ink Well program. Side One only.
+	-->
+	<software name="wapwdp05">
+		<description>Washington Apple Pi Word Processors Disk 5 - Ink Well Program</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wdp-05a.dsk" size="143360" crc="66562777" sha1="9ea0fffeb5999604faa62e3454b1e5d21d432c73" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wdp-05b.dsk" size="143360" crc="3abbcfda" sha1="1befb40adf8b2beb19afba0a61837974607fdac9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Script ///
+	Disk ID: APPLE-3-WAP-wdp-06
+
+	A Pascal-based word processor designed to be used with the
+	Pascal Text editor. This was one of the original attempts to provide
+	a word processing program of some sort for the Apple ///.
+
+	Side One: Boot
+	Side Two: Program
+	-->
+	<software name="wapwdp06">
+		<description>Washington Apple Pi Word Processors Disk 6 - Script ///</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wdp-06a.dsk" size="143360" crc="9df5f887" sha1="d11551b4e3d4355bdf01d203b32a772b580c3165" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wdp-06b.dsk" size="143360" crc="b5a477d5" sha1="63d8ccad5cd99c00de13f52c5977f00d0825c932" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Stemwriter ///
+	Disk ID: APPLE-3-WAP-wdp-07
+
+	Stemwriter may well be the most powerful word processing
+	program ever written for the Apple ///. It came from Australia and
+	was originally distributed in the US by On Three. The company no
+	longer exists and so we've placed the program into the PD for all to
+	enjoy.
+
+	On Side One:
+	Information/Reviews on Stemwriter ///
+
+	On Side Two:
+	Stemwriter /// program and utilities.
+	Stemwriter ///
+	-->
+	<software name="wapwdp07">
+		<description>Washington Apple Pi Word Processors Disk 7 - Stemwriter ///</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wdp-07a.dsk" size="143360" crc="5800edbd" sha1="771641b1008ed1160979c552fc452545bfcc8a8e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wdp-07b.dsk" size="143360" crc="82be105d" sha1="8f1b9b4df265428671a47f8248b2585ecdb4f6d5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Write On
+	Disk ID: APPLE-3-WAP-wdp-08
+
+	A good general-purpose word processing program. Originally an Apple II program - that was written in Applesoft and then converted over to Business Basic on the Apple ///. You might enjoy taking a look, but AppleWriter remains the cream of the crop.
+
+	SIDE ONE : Some Documentation
+
+	SIDE TWO: Program
+	-->
+	<software name="wapwdp08">
+		<description>Washington Apple Pi Word Processors Disk 8 - Write On</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wdp-08a.dsk" size="143360" crc="4c794d9f" sha1="6b5972d8fdc604b096a16308033b3944113fce4a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-wdp-08b.dsk" size="143360" crc="a87e8c89" sha1="ab072382718bf2d22bd65965cf8d4391c857b6d6" offset="0" />
 			</dataarea>
 		</part>
 	</software>
