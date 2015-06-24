@@ -170,9 +170,8 @@ typedef UINT8 netlist_sig_t;
 //  MACROS / netlist devices
 //============================================================
 
-#define NETLIB_NAMESPACE_DEVICES_START()	namespace netlist { namespace devices {
-
-#define NETLIB_NAMESPACE_DEVICES_END()	}}
+#define NETLIB_NAMESPACE_DEVICES_START()    namespace netlist { namespace devices {
+#define NETLIB_NAMESPACE_DEVICES_END()  }}
 
 #define NETLIB_NAME(_chip) nld_ ## _chip
 
@@ -292,7 +291,7 @@ namespace netlist
 		fatalerror_e(const char *format, va_list ap);
 		virtual ~fatalerror_e() throw() {}
 
-		 const pstring &text() { return m_text; }
+			const pstring &text() { return m_text; }
 	private:
 		pstring m_text;
 	};
@@ -304,6 +303,7 @@ namespace netlist
 	class setup_t;
 	class netlist_t;
 	class core_device_t;
+	class param_model_t;
 
 	// -----------------------------------------------------------------------------
 	// netlist_output_family_t
@@ -312,6 +312,7 @@ namespace netlist
 	class logic_family_desc_t
 	{
 	public:
+		logic_family_desc_t() : m_is_static(false) {}
 		virtual ~logic_family_desc_t() {}
 		virtual devices::nld_base_d_to_a_proxy *create_d_a_proxy(logic_output_t *proxied) const = 0;
 
@@ -321,6 +322,10 @@ namespace netlist
 		nl_double m_high_V;
 		nl_double m_R_low;
 		nl_double m_R_high;
+
+		bool m_is_static;
+
+		static const logic_family_desc_t *from_model(const pstring &model);
 	};
 
 	class logic_family_t
@@ -426,7 +431,7 @@ namespace netlist
 	// -----------------------------------------------------------------------------
 	// netlist_owned_object_t
 	// -----------------------------------------------------------------------------
-	
+
 	class owned_object_t : public object_t
 	{
 		NETLIST_PREVENT_COPYING(owned_object_t)
@@ -986,6 +991,7 @@ namespace netlist
 
 		/* these should be cached! */
 		ATTR_COLD nl_double model_value(const pstring &entity, const nl_double defval = 0.0) const;
+		ATTR_COLD const pstring model_value_str(const pstring &entity, const pstring defval = "") const;
 		ATTR_COLD const pstring model_type() const;
 
 	private:

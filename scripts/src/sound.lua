@@ -1130,6 +1130,7 @@ end
 --@src/emu/sound/ymf262.h,SOUNDS["YMF262"] = true
 --@src/emu/sound/ymf271.h,SOUNDS["YMF271"] = true
 --@src/emu/sound/ymf278b.h,SOUNDS["YMF278B"] = true
+--@src/emu/sound/262intf.h,SOUNDS["YMF262"] = true
 ---------------------------------------------------
 
 if (SOUNDS["YM2151"]~=null) then
@@ -1138,17 +1139,6 @@ if (SOUNDS["YM2151"]~=null) then
 		MAME_DIR .. "src/emu/sound/2151intf.h",
 		MAME_DIR .. "src/emu/sound/ym2151.c",
 		MAME_DIR .. "src/emu/sound/ym2151.h",
-	}
-end
-
-if (SOUNDS["YM2203"]~=null) then
-	files {
-		MAME_DIR .. "src/emu/sound/2203intf.c",
-		MAME_DIR .. "src/emu/sound/2203intf.h",
-		MAME_DIR .. "src/emu/sound/ay8910.c",
-		MAME_DIR .. "src/emu/sound/ay8910.h",
-		MAME_DIR .. "src/emu/sound/fm.c",
-		MAME_DIR .. "src/emu/sound/fm.h",
 	}
 end
 
@@ -1161,7 +1151,20 @@ if (SOUNDS["YM2413"]~=null) then
 	}
 end
 
-if (SOUNDS["YM2608"]~=null) then
+if (SOUNDS["YM2203"]~=null or SOUNDS["YM2608"]~=null or SOUNDS["YM2610"]~=null or SOUNDS["YM2610B"]~=null or SOUNDS["YM2612"]~=null or SOUNDS["YM3438"]~=null) then	
+--if (SOUNDS["YM2203"]~=null) then	
+	files {
+		MAME_DIR .. "src/emu/sound/2203intf.c",
+		MAME_DIR .. "src/emu/sound/2203intf.h",
+		MAME_DIR .. "src/emu/sound/ay8910.c",
+		MAME_DIR .. "src/emu/sound/ay8910.h",
+		MAME_DIR .. "src/emu/sound/fm.c",
+		MAME_DIR .. "src/emu/sound/fm.h",
+	}
+--end
+
+
+--if (SOUNDS["YM2608"]~=null) then
 	files {
 		MAME_DIR .. "src/emu/sound/2608intf.c", 
 		MAME_DIR .. "src/emu/sound/2608intf.h", 
@@ -1172,9 +1175,9 @@ if (SOUNDS["YM2608"]~=null) then
 		MAME_DIR .. "src/emu/sound/ymdeltat.c",
 		MAME_DIR .. "src/emu/sound/ymdeltat.h",
 	}
-end
+--end
 
-if (SOUNDS["YM2610"]~=null or SOUNDS["YM2610B"]~=null) then
+--if (SOUNDS["YM2610"]~=null or SOUNDS["YM2610B"]~=null) then
 	files {
 		MAME_DIR .. "src/emu/sound/2610intf.c", 
 		MAME_DIR .. "src/emu/sound/2610intf.h", 
@@ -1185,9 +1188,9 @@ if (SOUNDS["YM2610"]~=null or SOUNDS["YM2610B"]~=null) then
 		MAME_DIR .. "src/emu/sound/ymdeltat.c",
 		MAME_DIR .. "src/emu/sound/ymdeltat.h",
 	}
-end
+--end
 
-if (SOUNDS["YM2612"]~=null or SOUNDS["YM3438"]~=null) then
+--if (SOUNDS["YM2612"]~=null or SOUNDS["YM3438"]~=null) then
 	files {
 		MAME_DIR .. "src/emu/sound/2612intf.c", 
 		MAME_DIR .. "src/emu/sound/2612intf.h", 
@@ -1195,9 +1198,11 @@ if (SOUNDS["YM2612"]~=null or SOUNDS["YM3438"]~=null) then
 		MAME_DIR .. "src/emu/sound/ay8910.h", 
 		MAME_DIR .. "src/emu/sound/fm2612.c",
 	}
+--end
 end
 
-if (SOUNDS["YM3812"]~=null) then
+if (SOUNDS["YM3812"]~=null or SOUNDS["YM3526"]~=null or SOUNDS["Y8950"]~=null) then
+--if (SOUNDS["YM3812"]~=null) then
 	files {
 		MAME_DIR .. "src/emu/sound/3812intf.c", 
 		MAME_DIR .. "src/emu/sound/3812intf.h", 
@@ -1206,9 +1211,9 @@ if (SOUNDS["YM3812"]~=null) then
 		MAME_DIR .. "src/emu/sound/ymdeltat.c",
 		MAME_DIR .. "src/emu/sound/ymdeltat.h",
 	}
-end
+--end
 
-if (SOUNDS["YM3526"]~=null) then
+--if (SOUNDS["YM3526"]~=null) then
 	files {
 		MAME_DIR .. "src/emu/sound/3526intf.c", 
 		MAME_DIR .. "src/emu/sound/3526intf.h", 
@@ -1217,9 +1222,9 @@ if (SOUNDS["YM3526"]~=null) then
 		MAME_DIR .. "src/emu/sound/ymdeltat.c",
 		MAME_DIR .. "src/emu/sound/ymdeltat.h",
 	}
-end
+--end
 
-if (SOUNDS["Y8950"]~=null) then
+--if (SOUNDS["Y8950"]~=null) then
 	files {
 		MAME_DIR .. "src/emu/sound/8950intf.c", 
 		MAME_DIR .. "src/emu/sound/8950intf.h", 
@@ -1228,6 +1233,7 @@ if (SOUNDS["Y8950"]~=null) then
 		MAME_DIR .. "src/emu/sound/ymdeltat.c",
 		MAME_DIR .. "src/emu/sound/ymdeltat.h",
 	}
+--end
 end
 
 if (SOUNDS["YMF262"]~=null) then

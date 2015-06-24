@@ -6,14 +6,14 @@
 #include "includes/model3.h"
 
 /*
-	TODO:
-	- Tilemap flash effect
-	- Fog
-	- Mipmapping
-	- Mipmap uploads smaller than a tile
-	- Some of the 4-bit and 8-bit textures need their alpha values rechecked
-	- Spotlights
-	- Recheck normal vector transform
+    TODO:
+    - Tilemap flash effect
+    - Fog
+    - Mipmapping
+    - Mipmap uploads smaller than a tile
+    - Some of the 4-bit and 8-bit textures need their alpha values rechecked
+    - Spotlights
+    - Recheck normal vector transform
 
 */
 
@@ -305,7 +305,7 @@ void model3_state::draw_layer(bitmap_rgb32 &bitmap, const rectangle &cliprect, i
 			rowmask = BYTE_REVERSE32(rowmask_ram[(y & 0x1ff) ^ NATIVE_ENDIAN_VALUE_LE_BE(1,0)]) & 0xffff;
 		else
 			rowmask = 0xffff;
-		
+
 		int iix = ix & 0x1ff;
 
 		int rx1 = x1 - (rowscroll * 2);
@@ -847,8 +847,8 @@ cached_texture *model3_state::get_texture(int page, int texx, int texy, int texw
     Polygon Data
 
     0x00:   x------- -------- -------- -------- Supermodel says specular enable
-			-xxxxx-- -------- -------- -------- ?
-			------xx xxxxxxxx xxxxxx-- -------- Polygon ID
+            -xxxxx-- -------- -------- -------- ?
+            ------xx xxxxxxxx xxxxxx-- -------- Polygon ID
             -------- -------- -------- -x------ 0 = Triangle, 1 = Quad
             -------- -------- -------- ----x--- Vertex 3 shared from previous polygon
             -------- -------- -------- -----x-- Vertex 2 shared from previous polygon
@@ -859,9 +859,9 @@ cached_texture *model3_state::get_texture(int page, int texx, int texy, int texw
 
     0x01:   xxxxxxxx xxxxxxxx xxxxxxxx -------- Polygon normal X coordinate (2.22 fixed point)
             -------- -------- -------- -x------ UV format (0 = 13.3, 1 = 16.0)
-			-------- -------- -------- ---x---- 1 = Double-sided polygon
+            -------- -------- -------- ---x---- 1 = Double-sided polygon
             -------- -------- -------- -----x-- If set, this is the last polygon
-			-------- -------- -------- ------x- Poly color, 1 = RGB, 0 = color table
+            -------- -------- -------- ------x- Poly color, 1 = RGB, 0 = color table
             -------- -------- -------- x-x-x--x ?
 
 
@@ -878,7 +878,7 @@ cached_texture *model3_state::get_texture(int page, int texx, int texy, int texw
             -------- -------- -------- -x------ Texture page
             -------- -------- -------- ---xxxxx Upper 5 bits of texture U coordinate
             -------- -------- -------- x------- ?
-			-------- -------- -------- --x----- ?
+            -------- -------- -------- --x----- ?
 
     0x05:   xxxxxxxx xxxxxxxx xxxxxxxx -------- Specular color?
             -------- -------- -------- x------- Low bit of texture U coordinate
@@ -887,27 +887,27 @@ cached_texture *model3_state::get_texture(int page, int texx, int texy, int texw
 
     0x06:   x------- -------- -------- -------- Texture contour enable
             -xxxxx-- -------- -------- -------- Fixed shading?
-			------x- -------- -------- -------- Enable fixed shading?
-			-------x -------- -------- -------- Could be high priority polygon?
+            ------x- -------- -------- -------- Enable fixed shading?
+            -------x -------- -------- -------- Could be high priority polygon?
             -------- x------- -------- -------- 1 = disable transparency?
             -------- -xxxxx-- -------- -------- Polygon translucency (0 = fully transparent)
             -------- -------x -------- -------- 1 = disable lighting
             -------- -------- xxxxx--- -------- Polygon light modifier (Amount that a luminous polygon will burn through fog.
-																		Valid range is 0.0 to 1.0. 0.0 is completely fogged;
-																		1.0 has no fog.)
-			-------- -------- -----x-- -------- Texture enable
+                                                                        Valid range is 0.0 to 1.0. 0.0 is completely fogged;
+                                                                        1.0 has no fog.)
+            -------- -------- -----x-- -------- Texture enable
             -------- -------- ------xx x------- Texture format
             -------- -------- -------- -------x Alpha enable?
-			-------- ------x- -------- -------- Never seen set?
-			-------- -------- -------- -----xx- Always set?
+            -------- ------x- -------- -------- Never seen set?
+            -------- -------- -------- -----xx- Always set?
             -------- -------- -------- -xxxx--- ?
 
-	TODO:	Bits to find (from Real3D dev guide):
-			SetHighPriority(): Indicates that the polygon has higher priority than others in scene
-			PolygonIsLayered(): Indicates a stencil polygon.
-			DoSmoothShading(): Indicates that the polygon will be smooth shaded
-			void SetNPScale ( float np_scale ) ; Sets the texture lod scale for the polygon. A value greater than 1 will increase the
-												 range of the transition of texture level of detail.
+    TODO:   Bits to find (from Real3D dev guide):
+            SetHighPriority(): Indicates that the polygon has higher priority than others in scene
+            PolygonIsLayered(): Indicates a stencil polygon.
+            DoSmoothShading(): Indicates that the polygon will be smooth shaded
+            void SetNPScale ( float np_scale ) ; Sets the texture lod scale for the polygon. A value greater than 1 will increase the
+                                                 range of the transition of texture level of detail.
 
 
     Vertex entry
@@ -953,8 +953,8 @@ WRITE64_MEMBER(model3_state::real3d_polygon_ram_w)
 
 static const UINT8 texture_decode16[64] =
 {
-     0,  1,  4,  5,  8,  9, 12, 13,
-     2,  3,  6,  7, 10, 11, 14, 15,
+		0,  1,  4,  5,  8,  9, 12, 13,
+		2,  3,  6,  7, 10, 11, 14, 15,
 	16, 17, 20, 21, 24, 25, 28, 29,
 	18, 19, 22, 23, 26, 27, 30, 31,
 	32, 33, 36, 37, 40, 41, 44, 45,
@@ -965,10 +965,10 @@ static const UINT8 texture_decode16[64] =
 
 static const UINT8 texture_decode8[32] =
 {
-	 1,  3,  5,  7,
-	 0,  2,  4,  6,
-	 9, 11, 13, 15,
-	 8, 10, 12, 14,
+		1,  3,  5,  7,
+		0,  2,  4,  6,
+		9, 11, 13, 15,
+		8, 10, 12, 14,
 	17, 19, 21, 23,
 	16, 18, 20, 22,
 	25, 27, 29, 31,
@@ -1009,7 +1009,7 @@ inline void model3_state::write_texture8(int xpos, int ypos, int width, int heig
 			int b = 0;
 			for(j=y; j < y+8; j++)
 			{
-				for(i=x; i < x+8; i+=2) 
+				for(i=x; i < x+8; i+=2)
 				{
 					UINT16 d = data[texture_decode8[b]];
 
@@ -1035,21 +1035,21 @@ inline void model3_state::write_texture8(int xpos, int ypos, int width, int heig
 }
 
 /*
-	Texture header:
+    Texture header:
 
-	-------- -------- -------- --xxxxxx X-position
-	-------- -------- ----xxxx x------- Y-position
-	-------- -------x xx------ -------- Width
-	-------- ----xxx- -------- -------- Height
-	-------- ---x---- -------- -------- Texture page
-	-------- --x----- -------- -------- Write 8-bit data to the lower byte of texel
-	-------- -x------ -------- -------- Write 8-bit data to the upper byte of texel
-	-------- x------- -------- -------- Bitdepth, 0 = 8-bit, 1 = 16-bit
-	xxxxxxxx -------- -------- -------- Texture type
-											0x00 = texture with mipmaps
-											0x01 = texture without mipmaps
-											0x02 = only mipmaps
-											0x80 = possibly gamma table
+    -------- -------- -------- --xxxxxx X-position
+    -------- -------- ----xxxx x------- Y-position
+    -------- -------x xx------ -------- Width
+    -------- ----xxx- -------- -------- Height
+    -------- ---x---- -------- -------- Texture page
+    -------- --x----- -------- -------- Write 8-bit data to the lower byte of texel
+    -------- -x------ -------- -------- Write 8-bit data to the upper byte of texel
+    -------- x------- -------- -------- Bitdepth, 0 = 8-bit, 1 = 16-bit
+    xxxxxxxx -------- -------- -------- Texture type
+                                            0x00 = texture with mipmaps
+                                            0x01 = texture without mipmaps
+                                            0x02 = only mipmaps
+                                            0x80 = possibly gamma table
 
 */
 
@@ -1096,7 +1096,7 @@ void model3_state::real3d_upload_texture(UINT32 header, UINT32 *data)
 			{
 				if (bitdepth)
 				{
-					write_texture16(x, y, w, h, page, (UINT16*)data);					
+					write_texture16(x, y, w, h, page, (UINT16*)data);
 				}
 				else
 				{
@@ -1125,7 +1125,7 @@ void model3_state::real3d_upload_texture(UINT32 header, UINT32 *data)
 			else
 			{
 				//printf("write tex8: %08X, w %d, h %d, x %d, y %d, p %d, b %d\n", header, width, height, xpos, ypos, page, bitdepth);
-				write_texture8(xpos, ypos, width, height, page, upper_byte, lower_byte, (UINT16*)data);				
+				write_texture8(xpos, ypos, width, height, page, upper_byte, lower_byte, (UINT16*)data);
 			}
 
 			invalidate_texture(page, header & 0x3f, (header >> 7) & 0x1f, (header >> 14) & 0x7, (header >> 17) & 0x7);
@@ -1144,7 +1144,7 @@ void model3_state::real3d_upload_texture(UINT32 header, UINT32 *data)
 			{
 				if (bitdepth)
 				{
-					write_texture16(x, y, w, h, page, (UINT16*)data);					
+					write_texture16(x, y, w, h, page, (UINT16*)data);
 				}
 				else
 				{
@@ -1450,11 +1450,11 @@ static int clip_w(const m3_clip_vertex* v, int num_vertices, m3_clip_vertex* out
 		int v1_side = (v[i].w < W_PLANE) ? -1 : 1;
 		int v2_side = (v[previ].w < W_PLANE) ? -1 : 1;
 
-		if ((v1_side * v2_side) < 0)		// edge goes through W plane
+		if ((v1_side * v2_side) < 0)        // edge goes through W plane
 		{
 			// insert vertex at intersection point
 			float wdiv = v[previ].w - v[i].w;
-			if (wdiv == 0.0f)		// 0 edge means degenerate polygon
+			if (wdiv == 0.0f)       // 0 edge means degenerate polygon
 				return 0;
 
 			float t = fabs((W_PLANE - v[previ].w) / wdiv);
@@ -1469,7 +1469,7 @@ static int clip_w(const m3_clip_vertex* v, int num_vertices, m3_clip_vertex* out
 			clipv[clip_verts].s = v[previ].s + ((v[i].s - v[previ].s) * t);
 			++clip_verts;
 		}
-		if (v1_side > 0)				// current point is inside
+		if (v1_side > 0)                // current point is inside
 		{
 			clipv[clip_verts] = v[i];
 			++clip_verts;
@@ -1500,12 +1500,12 @@ static int clip(const m3_clip_vertex* v, int num_vertices, m3_clip_vertex* out, 
 
 		float v1_axis, v2_axis;
 
-		if (sign)		// +axis
+		if (sign)       // +axis
 		{
 			v1_axis = v1a[axis];
 			v2_axis = v2a[axis];
 		}
-		else			// -axis
+		else            // -axis
 		{
 			v1_axis = -v1a[axis];
 			v2_axis = -v2a[axis];
@@ -1514,12 +1514,12 @@ static int clip(const m3_clip_vertex* v, int num_vertices, m3_clip_vertex* out, 
 		v1_side = (v1_axis <= v[i].w) ? 1 : -1;
 		v2_side = (v2_axis <= v[previ].w) ? 1 : -1;
 
-		if ((v1_side * v2_side) < 0)		// edge goes through W plane
+		if ((v1_side * v2_side) < 0)        // edge goes through W plane
 		{
 			// insert vertex at intersection point
 			float wdiv = ((v[previ].w - v2_axis) - (v[i].w - v1_axis));
 
-			if (wdiv == 0.0f)			// 0 edge means degenerate polygon
+			if (wdiv == 0.0f)           // 0 edge means degenerate polygon
 				return 0;
 
 			float t = fabs((v[previ].w - v2_axis) / wdiv);
@@ -1534,7 +1534,7 @@ static int clip(const m3_clip_vertex* v, int num_vertices, m3_clip_vertex* out, 
 			clipv[clip_verts].s = v[previ].s + ((v[i].s - v[previ].s) * t);
 			++clip_verts;
 		}
-		if (v1_side > 0)				// current point is inside
+		if (v1_side > 0)                // current point is inside
 		{
 			clipv[clip_verts] = v[i];
 			++clip_verts;
@@ -1708,7 +1708,7 @@ void model3_state::draw_model(UINT32 addr)
 		sn[2] = (normal[0] * transform_matrix[2][0]) +
 				(normal[1] * transform_matrix[2][1]) +
 				(normal[2] * transform_matrix[2][2]);
-				
+
 		// TODO: depth bias
 		// transform and light vertices
 		for (i = 0; i < num_vertices; i++)
@@ -1722,13 +1722,13 @@ void model3_state::draw_model(UINT32 addr)
 
 			// transform to projection space
 			matrix_multiply_vector(vp_matrix, vect, &p[i]);
-		
+
 			clip_vert[i].x = p[i][0];
 			clip_vert[i].y = p[i][1];
 			clip_vert[i].z = p[i][2];
 			clip_vert[i].w = p[i][3];
 
-			clip_vert[i].u = vertex[i].u * texture_coord_scale * 256.0f;		// 8 bits of subtexel accuracy for bilinear filtering
+			clip_vert[i].u = vertex[i].u * texture_coord_scale * 256.0f;        // 8 bits of subtexel accuracy for bilinear filtering
 			clip_vert[i].v = vertex[i].v * texture_coord_scale * 256.0f;
 
 			// transform vertex normal
@@ -1770,31 +1770,31 @@ void model3_state::draw_model(UINT32 addr)
 			clip_vert[i].i = intensity;
 		}
 
-		/* clip against view frustum */	
+		/* clip against view frustum */
 		num_vertices = clip_w(clip_vert, num_vertices, clip_vert);
-		num_vertices = clip(clip_vert, num_vertices, clip_vert, 0, 0);		// W <= -X
-		num_vertices = clip(clip_vert, num_vertices, clip_vert, 0, 1);		// W <= +X
-		num_vertices = clip(clip_vert, num_vertices, clip_vert, 1, 0);		// W <= -Y
-		num_vertices = clip(clip_vert, num_vertices, clip_vert, 1, 1);		// W <= +X
-		num_vertices = clip(clip_vert, num_vertices, clip_vert, 2, 0);		// W <= -Z
-		num_vertices = clip(clip_vert, num_vertices, clip_vert, 2, 1);		// W <= +Z
+		num_vertices = clip(clip_vert, num_vertices, clip_vert, 0, 0);      // W <= -X
+		num_vertices = clip(clip_vert, num_vertices, clip_vert, 0, 1);      // W <= +X
+		num_vertices = clip(clip_vert, num_vertices, clip_vert, 1, 0);      // W <= -Y
+		num_vertices = clip(clip_vert, num_vertices, clip_vert, 1, 1);      // W <= +X
+		num_vertices = clip(clip_vert, num_vertices, clip_vert, 2, 0);      // W <= -Z
+		num_vertices = clip(clip_vert, num_vertices, clip_vert, 2, 1);      // W <= +Z
 
 		/* divide by W, transform to screen coords */
 		for(i=0; i < num_vertices; i++)
 		{
 			float oow = 1.0f / clip_vert[i].w;
-			
+
 			clip_vert[i].x *= oow;
 			clip_vert[i].y *= oow;
 			clip_vert[i].z *= oow;
 			clip_vert[i].u *= oow;
 			clip_vert[i].v *= oow;
-			
+
 			clip_vert[i].x = (((clip_vert[i].x * 0.5f) + 0.5f) * m_viewport_width) + m_viewport_x;
 			clip_vert[i].y = (((clip_vert[i].y * 0.5f) + 0.5f) * m_viewport_height) + m_viewport_y;
 			clip_vert[i].z = (((clip_vert[i].z * 0.5f) + 0.5f) * (m_viewport_far - m_viewport_near)) + m_viewport_near;
 		}
-		
+
 		/* backface culling */
 		if( (header[6] & 0x800000) && (!(header[1] & 0x0010)) )
 		{
@@ -1823,7 +1823,7 @@ void model3_state::draw_model(UINT32 addr)
 				int tex_height = (header[3] & 0x7);
 				int tex_format = (header[6] >> 7) & 0x7;
 
-				if (tex_format != 0 && tex_format != 7)		// enable color modulation if this is not a color texture
+				if (tex_format != 0 && tex_format != 7)     // enable color modulation if this is not a color texture
 					colormod = true;
 
 				if (tex_width >= 6 || tex_height >= 6)      // srally2 poly ram has degenerate polys with 2k tex size (cpu bug or intended?)
@@ -1837,8 +1837,8 @@ void model3_state::draw_model(UINT32 addr)
 			}
 
 			for (i=2; i < num_vertices; i++)
-			{				
-				bool alpha = (header[6] & 0x1) || ((header[6] & 0x800000) == 0);		// put to alpha buffer if there's any transparency involved
+			{
+				bool alpha = (header[6] & 0x1) || ((header[6] & 0x800000) == 0);        // put to alpha buffer if there's any transparency involved
 				m3_triangle* tri = push_triangle(alpha);
 
 				// bail out if tri buffer is maxed out (happens during harley boot)
@@ -2037,12 +2037,12 @@ void model3_state::draw_viewport(int pri, UINT32 address)
 	m_viewport_far = 100000.0f;
 
 	/* set up frustum */
-	float frustum_left		= atan2(*(float *)&node[12], *(float *)&node[13]);
-	float frustum_right		= -atan2(*(float *)&node[16], -*(float *)&node[17]);
-	float frustum_top		= atan2(*(float *)&node[14], *(float *)&node[15]);
-	float frustum_bottom	= -atan2(*(float *)&node[18], -*(float *)&node[19]);
-//	float frustum_1			= atan2(*(float *)&node[9], *(float *)&node[8]);
-//	float frustum_2			= atan2(*(float *)&node[11], *(float *)&node[10]);
+	float frustum_left      = atan2(*(float *)&node[12], *(float *)&node[13]);
+	float frustum_right     = -atan2(*(float *)&node[16], -*(float *)&node[17]);
+	float frustum_top       = atan2(*(float *)&node[14], *(float *)&node[15]);
+	float frustum_bottom    = -atan2(*(float *)&node[18], -*(float *)&node[19]);
+//  float frustum_1         = atan2(*(float *)&node[9], *(float *)&node[8]);
+//  float frustum_2         = atan2(*(float *)&node[11], *(float *)&node[10]);
 
 	/*
 	printf("%f\n", *(float *)&node[3]);
@@ -2159,7 +2159,7 @@ void model3_renderer::draw_opaque_triangles(const m3_triangle* tris, int num_tri
 				v[i].y = tri->v[i].y;
 				v[i].p[0] = tri->v[i].w;
 				v[i].p[1] = 1.0f / tri->v[i].w;
-				v[i].p[2] = tri->v[i].u; 
+				v[i].p[2] = tri->v[i].u;
 				v[i].p[3] = tri->v[i].v;
 				v[i].p[4] = tri->v[i].i;
 			}
@@ -2234,7 +2234,7 @@ void model3_renderer::draw_alpha_triangles(const m3_triangle* tris, int num_tris
 			extra.transparency = tri->transparency;
 			extra.texture_param = tri->param;
 
-			render_triangle(cliprect, render_delegate(FUNC(model3_renderer::draw_scanline_tex_alpha), this), 5, v[0], v[1], v[2]);			
+			render_triangle(cliprect, render_delegate(FUNC(model3_renderer::draw_scanline_tex_alpha), this), 5, v[0], v[1], v[2]);
 		}
 		else
 		{
@@ -2266,19 +2266,17 @@ void model3_renderer::draw_scanline_solid(INT32 scanline, const extent_t &extent
 	float in = extent.param[1].start;
 	float inz = extent.param[1].dpdx;
 
-	rgbint color;
-	rgb_to_rgbint(&color, polydata.color);
+	rgbaint_t color(polydata.color);
 
 	for (int x = extent.startx; x < extent.stopx; x++)
 	{
 		if (z <= zb[x])
 		{
-			rgbint c = color;
-			int ii = (int)(in);
+			rgbaint_t c(color);
 
-			rgbint_scale_immediate_and_clamp(&c, ii);
+			c.scale_imm_and_clamp((int)in);
 
-			fb[x] = 0xff000000 | rgbint_to_rgb_clamp(&c);
+			fb[x] = 0xff000000 | c.to_rgba_clamp();
 			zb[x] = z;
 		}
 
@@ -2298,8 +2296,7 @@ void model3_renderer::draw_scanline_solid_trans(INT32 scanline, const extent_t &
 	float in = extent.param[1].start;
 	float inz = extent.param[1].dpdx;
 
-	rgbint color;
-	rgb_to_rgbint(&color, polydata.color);
+	rgbaint_t color(polydata.color);
 
 	int trans = (polydata.transparency << 3) | (polydata.transparency >> 2);
 
@@ -2307,21 +2304,16 @@ void model3_renderer::draw_scanline_solid_trans(INT32 scanline, const extent_t &
 	{
 		if (z <= zb[x])
 		{
-			rgbint c = color;
+			rgbaint_t c(color);
 
-			int ii = (int)(in);
-
-			rgbint_scale_immediate_and_clamp(&c, ii);
+			c.scale_imm_and_clamp((int)in);
 
 			if (trans != 0xff)
 			{
-				rgbint fbcolor;
-				UINT32 orig = fb[x];
-				rgb_to_rgbint(&fbcolor, orig);
-				rgbint_blend(&c, &fbcolor, trans);
+				c.blend(rgbaint_t(fb[x]), trans);
 			}
 
-			fb[x] = 0xff000000 | rgbint_to_rgb_clamp(&c);
+			fb[x] = 0xff000000 | c.to_rgba_clamp();
 		}
 
 		in += inz;
@@ -2352,7 +2344,7 @@ do {                                                                            
 	UINT32 pix01 = texture->data[(v1 << width) + u2];                           \
 	UINT32 pix10 = texture->data[(v2 << width) + u1];                           \
 	UINT32 pix11 = texture->data[(v2 << width) + u2];                           \
-	texel = rgba_bilinear_filter(pix00, pix01, pix10, pix11, u, v);             \
+	texel = rgbaint_t::bilinear_filter(pix00, pix01, pix10, pix11, u, v);       \
 } while(0);
 
 #if ENABLE_BILINEAR
@@ -2387,15 +2379,13 @@ void model3_renderer::draw_scanline_tex(INT32 scanline, const extent_t &extent, 
 		if (z <= zb[x])
 		{
 			UINT32 texel;
-			TEX_FETCH();		// TODO fetch rgbint instead
+			TEX_FETCH();        // TODO fetch rgbaint_t instead
 
-			rgbint color;
-			rgb_to_rgbint(&color, texel);
+			rgbaint_t color(texel);
 
-			int ii = (int)(in);
-			rgbint_scale_immediate_and_clamp(&color, ii);
+			color.scale_imm_and_clamp((int)in);
 
-			fb[x] = 0xff000000 | rgbint_to_rgb_clamp(&color);
+			fb[x] = 0xff000000 | color.to_rgba_clamp();
 			zb[x] = z;
 		}
 
@@ -2428,25 +2418,21 @@ void model3_renderer::draw_scanline_tex_colormod(INT32 scanline, const extent_t 
 	UINT32 vmask = (((polydata.texture_param & TRI_PARAM_TEXTURE_MIRROR_V) ? 64 : 32) << texture->height) - 1;
 	UINT32 width = 6 + texture->width;
 
-	rgbint polycolor;
-	rgb_to_rgbint(&polycolor, polydata.color);
+	rgbaint_t polycolor(polydata.color);
 
 	for (int x = extent.startx; x < extent.stopx; x++)
 	{
 		if (z <= zb[x])
 		{
 			UINT32 texel;
-			TEX_FETCH();		// TODO fetch rgbint instead
+			TEX_FETCH();        // TODO fetch rgbaint_t instead
 
-			rgbint color;
-			rgb_to_rgbint(&color, texel);
+			rgbaint_t color(texel);
 
-			rgbint_scale_channel_and_clamp(&color, &polycolor);
+			color.scale_and_clamp(polycolor);
+			color.scale_imm_and_clamp((int)in);
 
-			int ii = (int)(in);
-			rgbint_scale_immediate_and_clamp(&color, ii);
-
-			fb[x] = 0xff000000 | rgbint_to_rgb_clamp(&color);
+			fb[x] = 0xff000000 | color.to_rgba_clamp();
 			zb[x] = z;
 		}
 
@@ -2479,8 +2465,7 @@ void model3_renderer::draw_scanline_tex_contour(INT32 scanline, const extent_t &
 	UINT32 vmask = (((polydata.texture_param & TRI_PARAM_TEXTURE_MIRROR_V) ? 64 : 32) << texture->height) - 1;
 	UINT32 width = 6 + texture->width;
 
-	rgbint polycolor;
-	rgb_to_rgbint(&polycolor, polydata.color);
+	rgbaint_t polycolor(polydata.color);
 
 	for (int x = extent.startx; x < extent.stopx; x++)
 	{
@@ -2492,20 +2477,13 @@ void model3_renderer::draw_scanline_tex_contour(INT32 scanline, const extent_t &
 			UINT32 fa = texel >> 24;
 			if (fa >= 0xf8)
 			{
-				rgbint color;
-				rgb_to_rgbint(&color, texel);
-	
-				rgbint_scale_channel_and_clamp(&color, &polycolor);
+				rgbaint_t color(texel);
 
-				int ii = (int)(in);
-				rgbint_scale_immediate_and_clamp(&color, ii);
+				color.scale_and_clamp(polycolor);
+				color.scale_imm_and_clamp((int)in);
+				color.blend(rgbaint_t(fb[x]), fa);
 
-				rgbint fbcolor;
-				UINT32 orig = fb[x];
-				rgb_to_rgbint(&fbcolor, orig);
-				rgbint_blend(&color, &fbcolor, fa);
-
-				fb[x] = 0xff000000 | rgbint_to_rgb_clamp(&color);
+				fb[x] = 0xff000000 | color.to_rgba_clamp();
 				zb[x] = z;
 			}
 		}
@@ -2541,8 +2519,7 @@ void model3_renderer::draw_scanline_tex_trans(INT32 scanline, const extent_t &ex
 	UINT32 vmask = (((polydata.texture_param & TRI_PARAM_TEXTURE_MIRROR_V) ? 64 : 32) << texture->height) - 1;
 	UINT32 width = 6 + texture->width;
 
-	rgbint polycolor;
-	rgb_to_rgbint(&polycolor, polydata.color);
+	rgbaint_t polycolor(polydata.color);
 
 	for (int x = extent.startx; x < extent.stopx; x++)
 	{
@@ -2551,21 +2528,13 @@ void model3_renderer::draw_scanline_tex_trans(INT32 scanline, const extent_t &ex
 			UINT32 texel;
 			TEX_FETCH();
 
-			rgbint color;
-			rgb_to_rgbint(&color, texel);
+			rgbaint_t color(texel);
 
-			rgbint_scale_channel_and_clamp(&color, &polycolor);
+			color.scale_and_clamp(polycolor);
+			color.scale_imm_and_clamp((int)in);
+			color.blend(rgbaint_t(fb[x]), trans);
 
-			int ii = (int)in;
-
-			rgbint_scale_immediate_and_clamp(&color, ii);
-
-			rgbint fbcolor;
-			UINT32 orig = fb[x];
-			rgb_to_rgbint(&fbcolor, orig);
-			rgbint_blend(&color, &fbcolor, trans);
-
-			fb[x] = 0xff000000 | rgbint_to_rgb_clamp(&color);
+			fb[x] = 0xff000000 | color.to_rgba_clamp();
 		}
 
 		ooz += dooz;
@@ -2610,19 +2579,12 @@ void model3_renderer::draw_scanline_tex_alpha(INT32 scanline, const extent_t &ex
 			UINT32 fa = texel >> 24;
 			if (fa != 0)
 			{
-				rgbint color;
-				rgb_to_rgbint(&color, texel);
+				rgbaint_t color(texel);
 
-				int ii = (int)in;
+				color.scale_imm_and_clamp((int)in);
+				color.blend(rgbaint_t(fb[x]), fa);
 
-				rgbint_scale_immediate_and_clamp(&color, ii);
-
-				rgbint fbcolor;
-				UINT32 orig = fb[x];
-				rgb_to_rgbint(&fbcolor, orig);
-				rgbint_blend(&color, &fbcolor, fa);
-
-				fb[x] = 0xff000000 | rgbint_to_rgb_clamp(&color);
+				fb[x] = 0xff000000 | color.to_rgba_clamp();
 			}
 		}
 

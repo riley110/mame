@@ -50,14 +50,14 @@
 #define NETLIST_NAME(_name) netlist ## _ ## _name
 
 #define NETLIST_EXTERNAL(_name)                                                     \
-ATTR_COLD void NETLIST_NAME(_name)(netlist::setup_t &setup)
+		ATTR_COLD void NETLIST_NAME(_name)(netlist::setup_t &setup);
 
 #define NETLIST_START(_name)                                                        \
 ATTR_COLD void NETLIST_NAME(_name)(netlist::setup_t &setup)                          \
 {
 #define NETLIST_END()  }
 
-#define LOCAL_SOURCE(_name)															\
+#define LOCAL_SOURCE(_name)                                                         \
 		setup.register_source(palloc(netlist::source_proc_t, # _name, &NETLIST_NAME(_name)));
 
 #define INCLUDE(_name)                                                              \
@@ -74,7 +74,6 @@ ATTR_COLD void NETLIST_NAME(_name)(netlist::setup_t &setup)                     
 
 namespace netlist
 {
-
 	// Forward definition so we keep nl_factory.h out of the public
 	class factory_list_t;
 
@@ -189,6 +188,11 @@ namespace netlist
 
 		void print_stats() const;
 
+		/* static support functions */
+
+		static const pstring model_value_str(const pstring &model_str, const pstring &entity, const pstring defval);
+		static nl_double model_value(const pstring &model_str, const pstring &entity, const nl_double defval);
+
 	protected:
 
 	private:
@@ -276,8 +280,8 @@ namespace netlist
 	public:
 		source_proc_t(pstring name, void (*setup_func)(setup_t &))
 		: setup_t::source_t(),
-		  m_setup_func(setup_func),
-		  m_setup_func_name(name)
+			m_setup_func(setup_func),
+			m_setup_func_name(name)
 		{
 		}
 

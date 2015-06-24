@@ -9,9 +9,9 @@
 #include "emu.h"
 #include "hdc.h"
 
-#define LOG_HDC_STATUS      1
-#define LOG_HDC_CALL        1
-#define LOG_HDC_DATA        1
+#define LOG_HDC_STATUS      0
+#define LOG_HDC_CALL        0
+#define LOG_HDC_DATA        0
 
 #define CMD_TESTREADY   0x00
 #define CMD_RECALIBRATE 0x01
@@ -163,7 +163,7 @@ const device_type ST11M_HDC = &device_creator<st11m_device>;
 
 xt_hdc_device::xt_hdc_device(const machine_config &mconfig, const char *tag, device_t *owner, UINT32 clock) :
 		device_t(mconfig, XT_HDC, "Generic PC-XT Fixed Disk Controller", tag, owner, clock, "xt_hdc", __FILE__),
-		m_irq_handler(*this),	
+		m_irq_handler(*this),
 		m_drq_handler(*this)
 {
 	m_type = STANDARD;
@@ -171,14 +171,14 @@ xt_hdc_device::xt_hdc_device(const machine_config &mconfig, const char *tag, dev
 
 xt_hdc_device::xt_hdc_device(const machine_config &mconfig, device_type type, const char *name, const char *tag, device_t *owner, UINT32 clock, const char *shortname, const char *source) :
 		device_t(mconfig, type, name, tag, owner, clock, shortname, source),
-		m_irq_handler(*this),	
+		m_irq_handler(*this),
 		m_drq_handler(*this)
 {
 }
 
 ec1841_device::ec1841_device(const machine_config &mconfig, const char *tag, device_t *owner, UINT32 clock) :
 		xt_hdc_device(mconfig, EC1841_HDC, "EC1841 Fixed Disk Controller", tag, owner, clock, "ec1481", __FILE__),
-		m_irq_handler(*this),	
+		m_irq_handler(*this),
 		m_drq_handler(*this)
 {
 	m_type = EC1841;
@@ -186,7 +186,7 @@ ec1841_device::ec1841_device(const machine_config &mconfig, const char *tag, dev
 
 st11m_device::st11m_device(const machine_config &mconfig, const char *tag, device_t *owner, UINT32 clock) :
 		xt_hdc_device(mconfig, EC1841_HDC, "Seagate ST11M Fixed Disk Controller", tag, owner, clock, "st11m", __FILE__),
-		m_irq_handler(*this),	
+		m_irq_handler(*this),
 		m_drq_handler(*this)
 {
 	m_type = ST11M;
@@ -250,7 +250,7 @@ hard_disk_file *xt_hdc_device::pc_hdc_file(int id)
 
 void xt_hdc_device::pc_hdc_result(int set_error_info)
 {
-	if ( ( hdc_control & 0x02 )) 
+	if ( ( hdc_control & 0x02 ))
 	{
 		// dip switch selected IRQ 5 or 2
 		m_irq_handler(1);
@@ -478,7 +478,7 @@ void xt_hdc_device::execute_write()
 	hdcdma_dst = hdcdma_data;
 	hdcdma_write = write_;
 	hdcdma_size = size;
-	
+
 	if (!no_dma())
 	{
 		m_drq_handler(1);
@@ -493,15 +493,11 @@ void xt_hdc_device::execute_writesbuff()
 	hdcdma_write = 512;
 	hdcdma_size = 512;
 
-	if (no_dma())
-	{
-		do
-		{
-			dack_ws(buffer[data_cnt++]);
-		}
-		while (hdcdma_size);
-	}
-	else
+	status |= STA_READY;  // ready to recieve data
+	status |= STA_INPUT;
+	status &= ~STA_COMMAND;
+
+	if (!no_dma())
 	{
 		m_drq_handler(1);
 	}
@@ -631,7 +627,6 @@ void xt_hdc_device::command()
 			}
 
 			execute_writesbuff();
-			if(no_dma()) pc_hdc_result(set_error_info);
 			break;
 
 		case CMD_SETPARAM:
@@ -656,32 +651,6 @@ void xt_hdc_device::command()
 			break;
 	}
 }
-
-void st11m_device::command()
-{
-	int set_error_info = 1;
-
-	csb = 0x00;
-	error = 0;
-
-	buffer_ptr = &buffer[0];
-
-	get_drive();
-
-	switch (m_current_cmd)
-	{
-	case CMD_WRITESBUFF:
-		// Would seem the ST11M has a different command for this opcode, but just what it should do, is unknown.
-		get_chsn();
-		test_ready();
-		if(no_dma()) pc_hdc_result(set_error_info);
-		break;
-	default:
-		xt_hdc_device::command();
-		return;
-	}
-}
-
 
 void xt_hdc_device::device_timer(emu_timer &timer, device_timer_id id, int param, void *ptr)
 {
@@ -723,7 +692,10 @@ void xt_hdc_device::data_w(int data)
 			// write to disk
 			do
 			{
-				dack_w(buffer[data_cnt++]);
+				if(m_current_cmd == CMD_WRITESBUFF)
+					dack_ws(buffer[data_cnt++]);
+				else
+					dack_w(buffer[data_cnt++]);
 			}
 			while (hdcdma_size);
 			data_cnt = 0;
