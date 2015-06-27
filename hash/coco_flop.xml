@@ -531,6 +531,100 @@
 		</part>
 	</software>
 
+	<software name="distrac">
+		<description>Distrac (v2.2 + v2.1)</description>
+		<year>1988</year>
+		<publisher>LAM SoftWare</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="161280">
+				<rom name="distract (dis2xdis).dsk" size="161280" crc="15ae1b9a" sha1="9aab613bb40e93f04562067f3215fc31f8dd0ef1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="distract (dis21).dsk" size="161280" crc="c9403dc2" sha1="1a14b85a36ee15b37fc08fbaa076d3d2493859bd" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 3"/>
+			<dataarea name="flop" size="161280">
+				<rom name="distract (dis21tr).dsk" size="161280" crc="92972872" sha1="911ae60cfe1511df99983aa1cb90eb4eb02325c1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="distrac11" cloneof="distrac">
+		<description>Distrac (v1.1)</description>
+		<year>1988</year>
+		<publisher>LAM SoftWare</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="161280">
+				<rom name="distract (dis11dis).dsk" size="161280" crc="9764c333" sha1="19ed1bc187c9263ab103bfbf72da39f3b391c9d9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="161280">
+				<rom name="distract (dis11scr).dsk" size="161280" crc="8d041a1b" sha1="f279d4323e0980f70153820342d0df9d7da89bb2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dgncoco">
+		<description>Dragon-Coco Conversion</description>
+		<year>19??</year>
+		<publisher>Mark Randall - Cris Erving</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dragon-coco conversion (mark randall &amp; cris erving).dsk" size="161280" crc="c0bcbd92" sha1="6b6d53d8cec1e62ed0f1276f8e43db68c1089a69" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="daggopat" cloneof="daggorat">
+		<description>Dungeons of Daggorath Patch Disk</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dungeons of daggorath (disk patch) (tandy) (dgrptch).dsk" size="161280" crc="e9f906a1" sha1="116d40c58efb476aa8eccc3c86d3399935f73970" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dynacalc">
+		<description>DynaCalc (v01.00.00)</description>
+		<year>1984</year>
+		<publisher>Tandy</publisher>
+		<info name="usage" value="Boot with DOS command"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dynacalc (os-9) (tandy).dsk" size="161280" crc="ffc85ce5" sha1="964a339e8442de136e555bf121d8aec03ec6d585" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dynaspel">
+		<description>DynaSpell</description>
+		<year>198?</year>
+		<publisher>Owl-Ware</publisher>
+		<info name="usage" value="Requires OS-9"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dynaspell (owl-ware).dsk" size="161280" crc="31516ada" sha1="f331b1c6d61b7fce5e22ea3ddca6fe31a83bc866" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- Hangs after date prompt, wants disk write enabled? -->
 	<software name="colorflx" supported="no">
 		<description>FHL Color FLEX</description>
@@ -540,6 +634,18 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="color flex v5.0.2 (decb) (188au_02).dsk" size="161280" crc="1925db54" sha1="f6a996d53f3423fbee2cdefedf643d4610bcbd88" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hdbdos">
+		<description>HDB-DOS (v1.1D)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="drivewire.dsk" size="161280" crc="9600e646" sha1="e9abcdf1ab5340eab7d6c69235ef60c8a618c41c" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2016,6 +2122,31 @@
 		</part>
 	</software>
 
+	<software name="dodgeraz">
+		<description>Dodgem &amp; Erazor</description>
+		<year>19??</year>
+		<publisher>Dino Delbourgo Games</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dodgem &amp; erazor (dino delbourgo games).dsk" size="161280" crc="60cfb366" sha1="9a8640b342e4828827ea5e8e9b7edf21abcc76d1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Includes the Tandy version and the Imagic "Deppelvision" version for CoCo 2 -->
+	<software name="dgnfirec">
+		<description>DragonFire Compilation</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dragonfire (tandy).dsk" size="161280" crc="0b9d0373" sha1="d70a41c115c907fca4f760c06cd3f2f2b8093ff2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="advgen">
 		<description>Mini-Adventure Generator &amp; Games (v2.3)</description>
 		<year>198?</year>
@@ -2763,6 +2894,25 @@
 			</dataarea>
 		</part>
 	</software>
+
+<!--
+	<software name="">
+		<description>Donal Duck's Playground</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="donal duck's playground (side 1).dsk" size="161280" crc="904ee9d1" sha1="d48f05aa05a00becbc9de55ab2d523ac766a686b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="donal duck's playground (side 2).dsk" size="161280" crc="0e7cc290" sha1="b32401c63122aadddcf62e4a0a64ca9e9cb42625" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+-->
 
 <!-- Games -->
 
@@ -6706,6 +6856,379 @@
 		</part>
 	</software>
 
+	<software name="dking">
+		<description>Donkey King</description>
+		<year>198?</year>
+		<publisher>Tom Mix Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="donkey king (tom mix software).dsk" size="161280" crc="4db94e61" sha1="38ba8469f16a07c80ff2a5d3132c215fbd6864f2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="donpan">
+		<description>Donpan</description>
+		<year>1984</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="don pan (tandy).dsk" size="161280" crc="d906c5f6" sha1="779acb49c3c2ad6c414cb09af1dc13757556451c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- contains 3 separate BIN files -->
+	<software name="donpana" cloneof="donpan">
+		<description>Donpan (Alt)</description>
+		<year>1984</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="donpan (tomy).dsk" size="161280" crc="9e38ad2d" sha1="da40798abdb55383f4b6feb501b5dd2a7b7bb05e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="donutdil">
+		<description>Donut Dilemma (Aus)</description>
+		<year>1986</year>
+		<publisher>Tandy Australia</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="donut (tandy australia).dsk" size="161280" crc="547779b6" sha1="0884be88bcaeda1246cb0eddc7a08532211b9140" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="donutdila" cloneof="donutdil">
+		<description>Donut Dilemma (Aus, Alt)</description>
+		<year>1986</year>
+		<publisher>Tandy Australia</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="donut dilemma.dsk" size="161280" crc="4314529d" sha1="501bd12e43d015f7839d40d068b5d18db5562553" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="donutdilb" cloneof="donutdil">
+		<description>Donut Dilemma (Aus, Alt 2)</description>
+		<year>1986</year>
+		<publisher>Tandy Australia</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="donut dilemma (tandy, game point software).dsk" size="161280" crc="ace9fa92" sha1="78158411976cd576af339f64ee0d75cfb2ad39b2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="doodlbug">
+		<description>Doodle Bug</description>
+		<year>198?</year>
+		<publisher>Computerware</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="doodle bug (computerware).dsk" size="161280" crc="90721a24" sha1="c73880ef9c4d5516fef914e748c29ae0f6164d88" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="doodlbuga" cloneof="doodlbug">
+		<description>Doodle Bug (Alt Colors)</description>
+		<year>198?</year>
+		<publisher>Computerware</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="doodle bug (color) (computer ware) (coco3 only).dsk" size="161280" crc="3adc706a" sha1="7cafc6818ff7f129b0f51ad95c930dfc9add3286" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dblback">
+		<description>Double Back</description>
+		<year>1982</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="double back (tandy).dsk" size="161280" crc="6bcfc297" sha1="ad910ff984f14bef618bd9fcb15b0ff5ba000b34" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="downland">
+		<description>Downland</description>
+		<year>1983</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="downland (tandy).dsk" size="161280" crc="47574e33" sha1="03ddadbfe63526520d2b4c6cd6337e354a9fc693" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="draconia">
+		<description>Draconian</description>
+		<year>1984</year>
+		<publisher>Tom Mix Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="draconian (tom mix software).dsk" size="161280" crc="c8c37afc" sha1="4313b99504925aa17b23539e50e758655d179eb2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="draconiaa" cloneof="draconia">
+		<description>Draconian (Alt)</description>
+		<year>1984</year>
+		<publisher>Tom Mix Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="draconian (tom mix) (coco1,2&amp;3).dsk" size="161280" crc="9686fc50" sha1="1ae778ca6d7b6de73835f5a5b10eaa10251516b0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dgnblade">
+		<description>Dragon Blade</description>
+		<year>1986</year>
+		<publisher>Prickly-Pear Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dragon blade (prickly-pear software).dsk" size="161280" crc="c5baa184" sha1="cf6ea46f0d56a9bd331c8e671689fdeaa20f3a2b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dgnbladea" cloneof="dgnblade">
+		<description>Dragon Blade (Alt)</description>
+		<year>1986</year>
+		<publisher>Prickly-Pear Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dragon blade (prickly pear software).dsk" size="161280" crc="6046aa03" sha1="65501ba620c711148a03995a1f1715014ebf2d37" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dgnfire">
+		<description>DragonFire (v01.00.00, Cracked by The LockSmith)</description>
+		<year>1984</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dragon fire (tandy radio shack) (coco3 compatible games).dsk" size="161280" crc="2c167c72" sha1="d8aec99680f9f58d8e3ff6ac0a9e0b4e10b72bed" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dgnslayr">
+		<description>Dragon Slayer (Cracked, Includes Cheat/Bugfix)</description>
+		<year>1984</year>
+		<publisher>Tom Mix Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dragon slayer (drgcheat).dsk" size="161280" crc="4b19fbcb" sha1="e7f2434f675a686bf80ae5c28c83a9be8247c12c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dgnslayra" cloneof="dgnslayr">
+		<description>Dragon Slayer (Cracked, Includes Cheat/Bugfix, Alt)</description>
+		<year>1984</year>
+		<publisher>Tom Mix Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dragon slayer (tom mix software) (coco 2) (decb) (111ag_01).dsk" size="161280" crc="58c175c5" sha1="aa8dc2a9af5386c52a57d336d3d155c06de23e2d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dgntempl">
+		<description>Dragon's Temple (v1.1)</description>
+		<year>1986</year>
+		<publisher>Jade</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dragon's temple (jade).dsk" size="161280" crc="20146a5a" sha1="5ce08508b1abe677f191e0823030b03c8114a904" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dragster">
+		<description>Dragster</description>
+		<year>1987</year>
+		<publisher>Brian M.G.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dragster (brian m.g.).dsk" size="161280" crc="cd5683b6" sha1="a5c798658bd6b4e303a0a810eb5aafad9bae1efe" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="drawpokr">
+		<description>Draw Poker</description>
+		<year>1983</year>
+		<publisher>Tom Mix Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="draw poker (tom mix software).dsk" size="161280" crc="08bef052" sha1="15ad758a582f3bb5aa1ece108f6fcdd74eb160d3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="drawpokra" cloneof="drawpokr">
+		<description>Draw Poker (Alt)</description>
+		<year>1983</year>
+		<publisher>Tom Mix Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="draw poker (tom mix) (coco1,2&amp;3).dsk" size="161280" crc="20bd90d0" sha1="be558fdf53419d54b80c6e3a0f1826a074f191a3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="droidwar">
+		<description>Droid War</description>
+		<year>198?</year>
+		<publisher>Mr. X</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="droid war (public domain).dsk" size="161280" crc="45aab2e1" sha1="920c99c236d810cf8100b8ae054cb0c6f03b5fed" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="droidwara" cloneof="droidwar">
+		<description>Droid War (Alt)</description>
+		<year>198?</year>
+		<publisher>Mr. X</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="droid war.dsk" size="161280" crc="1ee9b378" sha1="66afc4a74e0fa2402aeaa492844bcd8ed06aa742" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="drollatk">
+		<description>Droll Attack</description>
+		<year>198?</year>
+		<publisher>T&amp;D Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="droll attack (t&amp;d).dsk" size="161280" crc="f9775810" sha1="f448f023c08f72a0b1ce7bdd3f65b20d8d2b11dc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dungqst">
+		<description>Dungeon Quest (Cracked by Diskbuster)</description>
+		<year>198?</year>
+		<publisher>Prickly-Pear Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dungeon quest (prickly pear software).dsk" size="161280" crc="d017c423" sha1="20dd81b178352b367781707fddb393d05fde2563" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="daggorat">
+		<description>Dungeons of Daggorath</description>
+		<year>1982</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dungeons of daggorath (tandy).dsk" size="161280" crc="2e7901a2" sha1="9d14541b4e10b07f78a12da7c41e3c2838029aac" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="daggorata" cloneof="daggorat">
+		<description>Dungeons of Daggorath (Alt)</description>
+		<year>1982</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dungeons of daggaroth (tandy radio shack) (dungeons of daggorath).dsk" size="161280" crc="5a3e5613" sha1="d22e346cada2e0afc84f5dbac0db8f68a8f53e5c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="daggoratb" cloneof="daggorat">
+		<description>Dungeons of Daggorath (with Disk Patch)</description>
+		<year>1982</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dungeons of daggorath (disk patch) (tandy) (diskdag).dsk" size="161280" crc="59c8e2c5" sha1="063183498fcd5ca6eab1e69c2e007bea8b56c7ce" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dungdesp">
+		<description>The Dungeons of Despair</description>
+		<year>198?</year>
+		<publisher>The Snail</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dungeons of despair, the (the snail).dsk" size="161280" crc="e5e184f6" sha1="aac3850bc704ee3a54178fdd5d50c02c30900aaa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dunkmunk">
+		<description>Dunkey Munkey</description>
+		<year>1983</year>
+		<publisher>Intellectronics</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dunkey monkey (intellectronics).dsk" size="161280" crc="f00bccba" sha1="32b30de99e2d1e55a8547b2472fbe217c801e0b9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dunkmunka" cloneof="dunkmunk">
+		<description>Dunkey Munkey (Alt)</description>
+		<year>1983</year>
+		<publisher>Intellectronics</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dunkey munkey (intellectronics).dsk" size="161280" crc="baf740d7" sha1="264d11cbd02ea3e597b250b949872129f6673f5a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="euchre">
 		<description>Euchre (v2.1)</description>
 		<year>1983</year>
@@ -6726,6 +7249,30 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="animal 32 (elite software).dsk" size="161280" crc="15d5f0b8" sha1="82f6cd1ec5bdbbb2e17ef598bf90d9e291f99aea" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theking" cloneof="dking">
+		<description>The King (XXX hack of Donkey King)</description>
+		<year>198?</year>
+		<publisher>&lt;hack&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="donkey king xxx hack (tom mix software).dsk" size="161280" crc="e03b0ae7" sha1="c7e9dbc18432fe77f8b9b5bddbcde562b9fc9c40" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pacdroid">
+		<description>Pac Droids</description>
+		<year>1982</year>
+		<publisher>Programmer's Guild</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="droid.dsk" size="161280" crc="cbce55d2" sha1="0e326b35cd7356cdcab80467d4c9f3392a89c05c" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -6896,6 +7443,42 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="disk toolkit, tom mix goldrunner (decb) (072au_01).dsk" size="161280" crc="d77e39b6" sha1="dfbc8d757ec350148cbaab26254673f4b4733146" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unkc10">
+		<description>Unknown Compilation 10</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dragon slayer (dragons).dsk" size="161280" crc="3f99b9a9" sha1="8c13d0b752f5cbb9949575f6460226e01b0d7e5e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unkc10a" cloneof="unkc10">
+		<description>Unknown Compilation 10 (Alt)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dragons (tom mix) (coco1,2&amp;3).dsk" size="161280" crc="a0e423ca" sha1="185da735bcefc1731cadc66f599d252e024fc09e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unkc11">
+		<description>Unknown Compilation 11</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dungeon-master (public domain) (text based adventures).dsk" size="161280" crc="2bada85f" sha1="0d4152ab88d7ffc6f6934c59ffb5a2f501024cf7" offset="0" />
 			</dataarea>
 		</part>
 	</software>

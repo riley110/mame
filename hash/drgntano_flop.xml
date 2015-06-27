@@ -306,6 +306,45 @@ Most of these should also work on CoCo machines.
 	</software>
 
 	<!-- Works with CoCo -->
+	<software name="dungraid">
+		<description>Dungeon Raid</description>
+		<year>1983</year>
+		<publisher>Microdeal</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dungeon raid (microdeal uk).dsk" size="161280" crc="d3aba030" sha1="badb17ed40432bdcdb949ccf50af3940e7c184c2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Works with CoCo -->
+	<software name="dungraida" cloneof="dungraid">
+		<description>Dungeon Raid (Alt)</description>
+		<year>1983</year>
+		<publisher>Microdeal</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dungeon raid (ken kalish).dsk" size="161280" crc="e62c7a1f" sha1="5177c124c747af446b87819c57efd61b20b938bc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Works with CoCo -->
+	<software name="dungraidb" cloneof="dungraid">
+		<description>Dungeon Raid (Alt 2)</description>
+		<year>1983</year>
+		<publisher>Microdeal</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="dungeon (med systems).dsk" size="161280" crc="a2508187" sha1="3b1a02797d0ab45cb376725aae52a2f78ee9f5e4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Works with CoCo -->
 	<software name="rotabb">
 		<description>ROTABB</description>
 		<year>198?</year>
