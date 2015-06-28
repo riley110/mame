@@ -1,5 +1,13 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+All of this information is copy+pasted straight from TOSEC for now...
+
+TODO:
+Verification/correction of TOSEC info is needed after all of the files have been added.
+Properly sort out the "Games" section (it currently contains a jumble of apps/demos/games/etc.)
+Add non-TOSEC images (UnRenamed Files)
+-->
 <softwarelist name="zx81_cass" description="Sinclair ZX-81 cassettes">
 
 <!-- TOSEC - Applications [P]-->
@@ -6003,6 +6011,2112 @@
 		<part name="cass1" interface="zx81_cass">
 			<dataarea name="cass" size="12714">
 				<rom name="declaraties scout in 1983 (1983)(-)(nl).p" size="12714" crc="ebd8017d" sha1="9487f404fcff6025304118ceec7db08f9103d95b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="deepspac">
+		<description>Deep Space</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="6636">
+				<rom name="deep space (19xx)(-).p" size="6636" crc="94920678" sha1="e0650e21202036f90fa62db121f8d31b697f9f7f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="defcomm">
+		<description>Defence Command</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="4815">
+				<rom name="defence command (19xx)(-).p" size="4815" crc="ea5bcce7" sha1="0be6ba117b421d3781a2dbc3b6ea849f6818411e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="deforce">
+		<description>Defence Force</description>
+		<year>198?</year>
+		<publisher>Greg Jarvis</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="6979">
+				<rom name="defence force (19xx)(greg jarvis).p" size="6979" crc="2b0acba8" sha1="7d2dd986e8488b86b71b31e6361f47b5eac5fabd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="defenda">
+		<description>Defenda</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="1749">
+				<rom name="defenda (19xx)(-).p" size="1749" crc="68d7bfd0" sha1="06500bde44ea24082d6b46053c918c6425399359" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="demolit">
+		<description>Demolition</description>
+		<year>1982</year>
+		<publisher>Phipps Associates</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="3601">
+				<rom name="demolition (1982)(phipps associates).p" size="3601" crc="59fd5916" sha1="f2b7683f0477c983af8951473a8db25068eb3fa4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="denkspel">
+		<description>Denkspel (Ger)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="2737">
+				<rom name="denkspel (19xx)(-)(de).p" size="2737" crc="49e610ad" sha1="06dd6be91a6ffc2016642efef40e50f93584101f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="deprecia">
+		<description>Depreciation</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="2034">
+				<rom name="depreciation (19xx)(-).p" size="2034" crc="405c64d7" sha1="5743c7fe05ef15d3930e563f808558ab4268da94" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="depreciaa" cloneof="deprecia">
+		<description>Depreciation (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="2065">
+				<rom name="depreciation (19xx)(-)[a].p" size="2065" crc="0cc966b5" sha1="d95326874979566b444c50faa22bc32bebd378de" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="detectiv">
+		<description>Detective</description>
+		<year>198?</year>
+		<publisher>A. Watney</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="9667">
+				<rom name="detective (19xx)(a. watney).p" size="9667" crc="b16c9753" sha1="4f67f9e3964291c50693b2ec2bbc16993793b714" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="detectiva" cloneof="detectiv">
+		<description>Detective (Alt)</description>
+		<year>198?</year>
+		<publisher>A. Watney</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="9701">
+				<rom name="detective (19xx)(a. watney)[a].p" size="9701" crc="59ead00f" sha1="c11b6eca29e4a42b02e8ff888ebabc69116d2f8e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="detector">
+		<description>Detector (Ned)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="3134">
+				<rom name="detector (19xx)(-)(nl).p" size="3134" crc="593ae881" sha1="4990221e7113e6516aeca9e2222d00386a01a2e7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dice">
+		<description>The Dice</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="282">
+				<rom name="dice, the (19xx)(-).p" size="282" crc="4b3bb0d8" sha1="58545c301c09ba38cd1fdde8a660cb85f59449be" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dictator">
+		<description>Dictator (Ned)</description>
+		<year>1983</year>
+		<publisher>Herosoft</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="15335">
+				<rom name="dictator (1983)(herosoft)(nl).p" size="15335" crc="0106686e" sha1="e9bc5ccb3a9493c8d1489be8203e01361719105a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 16k -->
+	<software name="digger1">
+		<description>Digger (Unknown)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="4556">
+				<rom name="digger (19xx)(-)[16k].p" size="4556" crc="cbef09d7" sha1="d5c16fe0127608ebd48e6748753483d6ffffe754" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 16k -->
+	<software name="digger1a" cloneof="digger1">
+		<description>Digger (Unknown) (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="4620">
+				<rom name="digger (19xx)(-)[a][16k].p" size="4620" crc="fee61073" sha1="aa47bde6517313cc8f7df5358eabdaa43130bb09" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="digger2">
+		<description>Digger (M. Patron) (Ger)</description>
+		<year>198?</year>
+		<publisher>M. Patron</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="15821">
+				<rom name="digger (19xx)(m. patron)(de).p" size="15821" crc="99bb1141" sha1="e5c8b49998ef0f7aa311d5eab03982bc678caeea" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="divrsen1">
+		<description>Diversen 1 (Ned)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="11430">
+				<rom name="diversen 1 (19xx)(-)(nl).p" size="11430" crc="db388d75" sha1="080da122f9036e9234b7f5ab2ebf68518066a6bc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="diversn2">
+		<description>Diversen 2 (Ned)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="11280">
+				<rom name="diversen 2 (19xx)(-)(nl).p" size="11280" crc="aaadd6b9" sha1="2b5b9661b01768d28a7f41a47a5a8b66dcb1e151" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dodgeit">
+		<description>Dodge It</description>
+		<year>198?</year>
+		<publisher>S. Fawkes</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="8084">
+				<rom name="dodge it (19xx)(s. fawkes).p" size="8084" crc="b191c7f6" sha1="fa8bb5ba0cad05c0056068e18ba331ff439afdf9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dodgem">
+		<description>Dodgem</description>
+		<year>198?</year>
+		<publisher>Logical Computers</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="5642">
+				<rom name="dodgem (19xx)(logical computers).p" size="5642" crc="98be2c40" sha1="80db4a494edcc111c68295173193cd4897497dee" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dodgems">
+		<description>Dodgems</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="3686">
+				<rom name="dodgems (19xx)(-).p" size="3686" crc="0326bcb4" sha1="5e2015b2724f142260e65234887b4ab093b4392a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dogs">
+		<description>Dogs</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="1252">
+				<rom name="dogs (19xx)(-).p" size="1252" crc="874c4f1e" sha1="078844156d5e40b79a5ea39177b60d2035098cef" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dominoes">
+		<description>Dominoes</description>
+		<year>198?</year>
+		<publisher>M. Moll</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="15994">
+				<rom name="dominoes (19xx)(m. moll).p" size="15994" crc="bd1a76bb" sha1="85bb40394753e9a9a4a550872b538ea42cc8b0c7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dominos">
+		<description>Dominos</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="1834">
+				<rom name="dominos (19xx)(-).p" size="1834" crc="13ff6a55" sha1="93e57fd7d83c1dcd7dc80006c3a7209f340ff079" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="donraket">
+		<description>Donner Rakete</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="1236">
+				<rom name="donner rakete (19xx)(-).p" size="1236" crc="a9bce3e1" sha1="62e3accf9fa5917d5b2e63136822fdd553f5ee32" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="doolhof1">
+		<description>Doolhof (Ger)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="2155">
+				<rom name="doolhof (19xx)(-)(de).p" size="2155" crc="b2ccb3f4" sha1="0965fbb35606988043444cb911e7f334e2540424" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="doolhof2">
+		<description>Doolhof (Unknown 1) (Ned)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="3096">
+				<rom name="doolhof (19xx)(-)(nl).p" size="3096" crc="d88e9d3c" sha1="13c3fd636a14f60084edee3461f685f123146d65" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="doolhof3">
+		<description>Doolhof (Unknown 2) (Ned)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="2999">
+				<rom name="doolhof (19xx)(-)(nl)[different].p" size="2999" crc="7ce4edd6" sha1="61429bcf826ef511f39f4f02b3962d7b5724fc34" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="doortsto">
+		<description>Doortje Stoot (Ned)</description>
+		<year>198?</year>
+		<publisher>J. Bankras</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="9756">
+				<rom name="doortje stoot (19xx)(j. bankras).p" size="9756" crc="b8449d57" sha1="1b07326b806b64627a8647b0020535893671af97" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="doorzakk">
+		<description>Doorzakken (Ned)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="2486">
+				<rom name="doorzakken (19xx)(-)(nl).p" size="2486" crc="efc795a5" sha1="ac128edb32c003f4be577ec5e58bdb0284800dbd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dotgame">
+		<description>Dot Game Board</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="1146">
+				<rom name="dot game board (19xx)(-).p" size="1146" crc="bc310baa" sha1="0ba2fcd45a3a50b128ad0473168c412fb3bdb6f9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 16k -->
+	<software name="dots1">
+		<description>Dots (Sinclair User)</description>
+		<year>1983</year>
+		<publisher>Sinclair User</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="2648">
+				<rom name="dots (1983)(sinclair user)[16k].p" size="2648" crc="53981145" sha1="b7678a584bd95a9c6e31252af32d59ac2820ff5e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dots2">
+		<description>Dots (Unknown)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="935">
+				<rom name="dots (19xx)(-).p" size="935" crc="18e7149b" sha1="a4c3e24ed1625fee12f2dc30b34d664923494f93" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dotsprnt">
+		<description>Dots Print</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="1081">
+				<rom name="dots print (19xx)(-).p" size="1081" crc="8e0ea28f" sha1="0a506b6221a3632838635c2006a597a9c9eaa3d0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="doublinv">
+		<description>Double Inversion</description>
+		<year>1982</year>
+		<publisher>N.L. Martino</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="16209">
+				<rom name="double inversion (1982)(n.l. martino).p" size="16209" crc="85f28fbd" sha1="7c21ced848525821be7e758761993e277175b4b3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dracula">
+		<description>Dracula</description>
+		<year>198?</year>
+		<publisher>S. Earl</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="4231">
+				<rom name="dracula (19xx)(s. earl).p" size="4231" crc="093b68e0" sha1="d2c869601f17304b935642f881dc77f54da03a64" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dgncurve">
+		<description>Dragon Curve Generator</description>
+		<year>1987</year>
+		<publisher>SMC</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="7845">
+				<rom name="dragon curve generator (1987)(smc).p" size="7845" crc="02baa272" sha1="e5400527599f9c7c1ee7eafe6f22e43464d860d9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="drawstor">
+		<description>Draw &amp; Store in String</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="7234">
+				<rom name="draw &amp; store in string (19xx)(-).p" size="7234" crc="73fc9508" sha1="1e4a0c90b717d7c6a8878107433071a56764ebe5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="drunken">
+		<description>Drunken</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="1145">
+				<rom name="drunken (19xx)(-).p" size="1145" crc="d4d2bf91" sha1="dbcbefbc600daf9b09dc72375f9bf47be1480542" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="duckshot">
+		<description>Duck Shoot</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="2380">
+				<rom name="duck shoot (19xx)(-).p" size="2380" crc="6d58794c" sha1="dcc827fcba1e03cdbde46524fc63aa7f2f981f59" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="duell">
+		<description>Duell (Ger)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="9175">
+				<rom name="duell (19xx)(-)(de).p" size="9175" crc="271949b5" sha1="3b1b562f64f3ae60f47a155f0cde28816f90f34c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dump">
+		<description>Dump (Ned)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="2497">
+				<rom name="dump (19xx)(-)(nl).p" size="2497" crc="b4591925" sha1="807ed4bff723b7d9c12e0ed8adf44b4cbc7fd733" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ymirmaze">
+		<description>Dungeon of Ymir - Custom Mazes Designer</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="4913">
+				<rom name="dungeon of ymir - custom mazes designer (19xx)(-).p" size="4913" crc="3ee0ac35" sha1="f09ee91c80f08790e3c7db64a4d53ee29d4cbd37" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dungeons">
+		<description>Dungeons</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="3133">
+				<rom name="dungeons (19xx)(-).p" size="3133" crc="a0f2ab5b" sha1="717e904d11c791f97b52153d4bee04d20e155ec9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="editor">
+		<description>Editor</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="3282">
+				<rom name="editor (19xx)(-).p" size="3282" crc="d7c8af73" sha1="6807719f4e2ce8690aa310a43ec3ab391287fb7d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="editor16">
+		<description>Editor 16</description>
+		<year>1983</year>
+		<publisher>Robert &amp; Gerald Pearson</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="12388">
+				<rom name="editor 16 (1983)(robert &amp; gerald pearson).p" size="12388" crc="cd9139f7" sha1="fedce8849be5c30d70f99317acb594b4c4696394" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="eeuwige">
+		<description>Eeuwige Kalender (Ned)</description>
+		<year>1982</year>
+		<publisher>Rob Lechanteur</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="4806">
+				<rom name="eeuwige kalender (1982)(rob lechanteur)(nl).p" size="4806" crc="ff37e3c7" sha1="4e26396d79bdc2d7007ff18d52d83595972240ec" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="egg">
+		<description>Egg</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="2295">
+				<rom name="egg (19xx)(-).p" size="2295" crc="e5524347" sha1="8e4e5c6f9dc15c44cd87681a419050daf3c09561" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="egyptian">
+		<description>Egyptian Quiz</description>
+		<year>1983</year>
+		<publisher>J.J. Castillos</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="14203">
+				<rom name="egyptian quiz (1983)(j.j. castillos).p" size="14203" crc="b35b53bb" sha1="7292193244c565f25447afa4d34d11d6e91e2c9c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="einarmin">
+		<description>Einarminger Bandit (Ger)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="5191">
+				<rom name="einarminger bandit (19xx)(-)(de).p" size="5191" crc="1567abbd" sha1="0397f1a78dbbab4bb9fc42ab4ee2f64797c1cfcd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="elefants">
+		<description>Elefants (Ned)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="7461">
+				<rom name="elefants (19xx)(-)(nl).p" size="7461" crc="339e1155" sha1="0f7f43c9d0f47223c7c30fe0fecff9cec1108132" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="eliza">
+		<description>Eliza</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="10152">
+				<rom name="eliza (19xx)(-).p" size="10152" crc="c5340724" sha1="64b564177fa25d3ac2fc49d0c3964577e08e7155" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="endlos">
+		<description>Endlos Schlange (Ger)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="2600">
+				<rom name="endlos schlange (19xx)(-)(de).p" size="2600" crc="ed14c7ea" sha1="2754828cae864328bc09121bdad493823f33c84b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="enigma">
+		<description>Enigma Coder</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="2485">
+				<rom name="enigma coder (19xx)(-).p" size="2485" crc="c9577501" sha1="6dd172f8463db0bb2901ceafea7f76acb39f3e37" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="escape1">
+		<description>Escape</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="8825">
+				<rom name="escape (19xx)(-).p" size="8825" crc="e855a285" sha1="5a34af4a280b9f442c5f948ce0ba20798963cb69" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="escape2">
+		<description>Escape (Ned)</description>
+		<year>198?</year>
+		<publisher>Derf Software</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="4343">
+				<rom name="escape (19xx)(derf software)(nl).p" size="4343" crc="0992b39d" sha1="e26a1b161eb543e3736ca8b6c3c9f75e2f471fd4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="escapes">
+		<description>Escapes</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="3240">
+				<rom name="escapes (19xx)(-).p" size="3240" crc="9a799dbe" sha1="c31fa95627219ad98e8c119712ecb68bb7e777f3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="escher">
+		<description>Escher Boys (Ned)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="12558">
+				<rom name="escher boys (19xx)(-)(nl).p" size="12558" crc="58c7b78d" sha1="05a2337947aa760eddd8b95b18151e35082926ea" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="european">
+		<description>European Countries and Capitals</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="10607">
+				<rom name="european countries and capitals (19xx)(-).p" size="10607" crc="fac6de46" sha1="df1664680d61000fb5ed6d4fd7e43b463962c12a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="executie">
+		<description>Executie (Ned?)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="2772">
+				<rom name="executie (19xx)(-).p" size="2772" crc="fd0851db" sha1="a0ccf6d66c8fbca620d0b0a89ae9396181a0cc3a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="expertsy">
+		<description>Expert System</description>
+		<year>198?</year>
+		<publisher>Chris Maylor</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="4256">
+				<rom name="expert system (19xx)(chris maylor).p" size="4256" crc="dee4eede" sha1="dc652b83485cb8d2b599d8db99388aa05b7f1d1e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fairway">
+		<description>Fairway</description>
+		<year>1983</year>
+		<publisher>Fontana Publishing</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="3495">
+				<rom name="fairway (1983)(fontana publishing).p" size="3495" crc="3d5235f7" sha1="06a09aa3f289bbe079f3bab3111924fe32a03251" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fallcomr">
+		<description>Fallen Comrades</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="2120">
+				<rom name="fallen comrades (19xx)(-).p" size="2120" crc="c7dfbcb7" sha1="38cb409d8efb332e17f3e46b23d542f53252d191" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="famreken">
+		<description>Familie Rekening (Ned)</description>
+		<year>198?</year>
+		<publisher>Peet Penninkhoff</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="15573">
+				<rom name="familie rekening (19xx)(peet penninkhoff)(nl).p" size="15573" crc="7522c633" sha1="1d5849cf0b3c394cf92d663647428b904da39d84" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="famiquiz">
+		<description>Family Quiz</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="15954">
+				<rom name="family quiz (19xx)(-).p" size="15954" crc="480278f0" sha1="a09d963050d3238cb49ffa4c78ddd438cfa360e8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="farmer">
+		<description>Farmer</description>
+		<year>1983</year>
+		<publisher>CCS</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="15691">
+				<rom name="farmer (1983)(ccs).p" size="15691" crc="beacaabc" sha1="4733ff16d71a61a56a32d610f611896fc6194db2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fastone">
+		<description>The Fast One</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="4606">
+				<rom name="fast one, the (19xx)(-).p" size="4606" crc="64552d8d" sha1="916e811e75edf0dbd1f1471e9bdc590dded48ccd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fastonex">
+		<description>The Fast One X</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="4820">
+				<rom name="fast one x, the (19xx)(-).p" size="4820" crc="8b833d66" sha1="46c9e374144aca634a8abf0cfc465f1592bba11e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fastprnt">
+		<description>Fast Print</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="1591">
+				<rom name="fast print (19xx)(-).p" size="1591" crc="d0b2bda7" sha1="874a6d855a4d96d59251b8910d903030d79cb11c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 16k -->
+	<software name="ferry">
+		<description>Ferry</description>
+		<year>1982</year>
+		<publisher>Sinclair User</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="2286">
+				<rom name="ferry (1982)(sinclair user)[16k].p" size="2286" crc="cbf75a64" sha1="7e3cdc3c70b2dfd1477b914e05465e90e2814f01" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="feryboat">
+		<description>Ferry Boat</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="5737">
+				<rom name="ferry boat (19xx)(-).p" size="5737" crc="7f118b5f" sha1="bc1f3ad6f2be05213393cf3393cd6915ed677ebf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fietser">
+		<description>Fietser</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="2798">
+				<rom name="fietser (19xx)(-).p" size="2798" crc="6cf4f740" sha1="bd20aa7a33cef28001e6f4232b55900ef45d615d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="filters">
+		<description>Filters</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="4686">
+				<rom name="filters (19xx)(-).p" size="4686" crc="5150aa8f" sha1="90064842d8a6203556e210b621b744508b34eabc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fishrman">
+		<description>Fisherman</description>
+		<year>1982</year>
+		<publisher>Sinclair User</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="1445">
+				<rom name="fisherman (1982)(sinclair user).p" size="1445" crc="99eee924" sha1="4887a3aa60ce5525a24424e3aa27f953d7e63de4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="flatman">
+		<description>Flatman</description>
+		<year>1983</year>
+		<publisher>J. Dave Rogers</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="3791">
+				<rom name="flatman (1983)(j. dave rogers).p" size="3791" crc="3c12760f" sha1="abb9322e8287baadd4024bfa4729d22586767771" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 16k -->
+	<software name="flisim">
+		<description>Flight Simulation</description>
+		<year>1981</year>
+		<publisher>Psion Software</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="13795">
+				<rom name="flight simulation (1981)(psion software)[16k].p" size="13795" crc="1f0a54e3" sha1="54763f7150e3c0221b59d4dee87a5ba420c41825" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="flipkast">
+		<description>Flipperkast (Ned)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="6661">
+				<rom name="flipperkast (19xx)(-)(nl).p" size="6661" crc="3106f48e" sha1="b5344723bdf30cf4ab27936e3283190e65945c6f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fbmanagr">
+		<description>Football Manager</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="14736">
+				<rom name="football manager (19xx)(-).p" size="14736" crc="fff630de" sha1="5a9fb7c31e7049ed46d1fce4f68551bb063d857d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="formcalc">
+		<description>Formcalc</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="7388">
+				<rom name="formcalc (19xx)(-).p" size="7388" crc="4bc6d4a3" sha1="9c7739828ba86de5602d2d02dec8b795c65542c5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="f1_1">
+		<description>Formula One (P. Dziwior)</description>
+		<year>1983</year>
+		<publisher>P. Dziwior</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="7788">
+				<rom name="formula one (1983)(p. dziwior).p" size="7788" crc="2e5d191a" sha1="50a9b3dbd2f74e8c3b9b79c4c3b85ccf4067fca1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="f1_2">
+		<description>Formula One (John Diependaal)</description>
+		<year>1984</year>
+		<publisher>John Diependaal</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="9053">
+				<rom name="formula one (1984)(john diependaal).p" size="9053" crc="87cbafdf" sha1="542c471212d3d57b0e67fc74fe80ea0f27deb594" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="f1_3">
+		<description>Formula One (Ita)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="2678">
+				<rom name="formula one (19xx)(-)(it).p" size="2678" crc="560605f5" sha1="a92820df69557219a94ccd9d068ef26dacd0e19a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="f1race">
+		<description>Formule One Race (Ned)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="6686">
+				<rom name="formule one race (19xx)(-)(nl).p" size="6686" crc="68ca0361" sha1="ed413f9f0fb5b814ff6a4d39562413f094de9150" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fortknx2">
+		<description>Fort Knox II</description>
+		<year>198?</year>
+		<publisher>Boldie Software</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="13982">
+				<rom name="fort knox ii (19xx)(boldie software).p" size="13982" crc="103d53eb" sha1="bdaaed6564a59ab7fa0f1cd026411a225ac46915" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="49er">
+		<description>Forty Niner</description>
+		<year>198?</year>
+		<publisher>Cosmic Cockerel</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="13870">
+				<rom name="forty niner (19xx)(cosmic cockerel).p" size="13870" crc="74988954" sha1="3a5dc6527c36d67a0edcc6a0a0cf58c484ca49ed" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="49era" cloneof="49er">
+		<description>Forty Niner (Alt)</description>
+		<year>198?</year>
+		<publisher>Cosmic Cockerel</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="13904">
+				<rom name="forty niner (19xx)(cosmic cockerel)[a].p" size="13904" crc="8ad4318e" sha1="e311753fffd3197bd411ff20b128cc6cbadff43f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="49erb" cloneof="49er">
+		<description>Forty Niner (Alt 2)</description>
+		<year>198?</year>
+		<publisher>Cosmic Cockerel</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="13868">
+				<rom name="forty niner (19xx)(cosmic cockerel)[a2].p" size="13868" crc="af159337" sha1="87762753b08c5141614f343e3f2eb56f978b3eea" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="49erc" cloneof="49er">
+		<description>Forty Niner (Alt 3)</description>
+		<year>198?</year>
+		<publisher>Cosmic Cockerel</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="13868">
+				<rom name="forty niner (19xx)(cosmic cockerel)[a3].p" size="13868" crc="4943d1e6" sha1="a56a663ebf97faf2dd310e88aa7271e66ae0d1ab" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="4stroke">
+		<description>Four Stroke Petrol Engine</description>
+		<year>1982</year>
+		<publisher>B. Horsfield</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="3405">
+				<rom name="four stroke petrol engine (1982)(b. horsfield).p" size="3405" crc="92253013" sha1="94100f740e6afaee7dd3795b62bfb3264073ec5e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fouriana">
+		<description>Fourier Analysis</description>
+		<year>1987</year>
+		<publisher>SMC</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="20872">
+				<rom name="fourier analysis (1987)(smc).p" size="20872" crc="570f7e40" sha1="e4b7706d2de41947fd2871811fe39027f57d47c3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fourier">
+		<description>The Fourier Series</description>
+		<year>1983</year>
+		<publisher>Sinclair User</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="1220">
+				<rom name="fourier series, the (1983)(sinclair user).p" size="1220" crc="cfa63f84" sha1="64453473d69575b18fe0c85baaed3e80914c7cc1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fraction">
+		<description>Fractions</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="10747">
+				<rom name="fractions (19xx)(-).p" size="10747" crc="b5e8e763" sha1="5c45380ad51d775e7493cacb375cfe523f5c4a5e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fred">
+		<description>Fred</description>
+		<year>198?</year>
+		<publisher>M.Z. Production</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="3857">
+				<rom name="fred (19xx)(m.z. production).p" size="3857" crc="de6bc5ab" sha1="58857bfd10533f220dc599e6dd18df0eb772ebf7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="freeway">
+		<description>Freeway Crossing</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="2014">
+				<rom name="freeway crossing (19xx)(-).p" size="2014" crc="683c8aff" sha1="878736d163b70c6ed9561b0d06342ebc9eb737ac" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="frekwent">
+		<description>Frekwentie LC (Ned)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="4158">
+				<rom name="frekwentie lc (19xx)(-)(nl).p" size="4158" crc="0b07d625" sha1="8662e43b039cc601701da4d01b16dff49a77dd49" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="frequent">
+		<description>Frequentie (Ned)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="14715">
+				<rom name="frequentie (19xx)(-)(nl).p" size="14715" crc="f4e1668a" sha1="a7a67d9ad8818060835f2a27f130716c929cf658" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="freqmemo">
+		<description>Frequentie Memo (Ned)</description>
+		<year>198?</year>
+		<publisher>J.P.P. de Jong</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="3139">
+				<rom name="frequentie memo (19xx)(j.p.p. de jong)(nl).p" size="3139" crc="4976423b" sha1="e70202f6372946245479bb5966939007e7aad52d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="frogger1">
+		<description>Frogger (Cornsoft)</description>
+		<year>1981</year>
+		<publisher>Cornsoft</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="10670">
+				<rom name="frogger (1981)(cornsoft).p" size="10670" crc="1c44bf27" sha1="53b72d38b4893f553e5d608e40927fe0c0848614" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="frogger2">
+		<description>Frogger (Ger)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="4581">
+				<rom name="frogger (19xx)(-)(de).p" size="4581" crc="38cd7a30" sha1="c3c90326efe4e2437866b1edb0ab3687415feef9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="frogger3">
+		<description>Frogger (Unknown)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="3944">
+				<rom name="frogger (19xx)(-).p" size="3944" crc="780bead2" sha1="655eddd153e58cb7b18d5dcbfd239780847fabac" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="froggie">
+		<description>Froggie</description>
+		<year>1983</year>
+		<publisher>Richard Braunton</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="7459">
+				<rom name="froggie (1983)(richard braunton).p" size="7459" crc="a36b2a25" sha1="dc5c2c2f2e04ff25845afe4ca5cb7a8d1fadc113" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="froggiea" cloneof="froggie">
+		<description>Froggie (Alt)</description>
+		<year>1983</year>
+		<publisher>Richard Braunton</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="7212">
+				<rom name="froggie (1983)(richard braunton)[a].p" size="7212" crc="5ff8906d" sha1="533cce1da47f92dcff43b25fb69bdfed5c51ad46" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="froggieb" cloneof="froggie">
+		<description>Froggie (Alt 2)</description>
+		<year>1983</year>
+		<publisher>Richard Braunton</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="7458">
+				<rom name="froggie (1983)(richard braunton)[a2].p" size="7458" crc="7a11e3c0" sha1="23b8073fd6805e9e6d9de092716c4a3b6e0f1674" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="froggien" cloneof="froggie">
+		<description>Froggie (Ned)</description>
+		<year>1983</year>
+		<publisher>Richard Braunton</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="7633">
+				<rom name="froggie (1983)(richard braunton)(nl).p" size="7633" crc="7c3ed168" sha1="0babb991c8e3c1480c5e06192d0e547f26b8c1bf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="frustrat">
+		<description>Frustration</description>
+		<year>1983</year>
+		<publisher>M.J. Whitcombe</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="3033">
+				<rom name="frustration (1983)(m.j. whitcombe).p" size="3033" crc="165fd5f4" sha1="7d4f419fd7e1cb5c19e6a78ce104a05ecf6197d3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fungloid">
+		<description>Fungaloids</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="9110">
+				<rom name="fungaloids (19xx)(-).p" size="9110" crc="d2662f46" sha1="2b38e47efc9cc0e02ebc8c51d4631fdea650cf3c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="funky">
+		<description>Funky (Ger)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="4478">
+				<rom name="funky (19xx)(-)(de).p" size="4478" crc="e33632ab" sha1="c64fe6abcdd9b4fdc2d93a47222aeedeb3fa29f7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gpopost">
+		<description>G.P.O. Postage Rates</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="1297">
+				<rom name="g.p.o. postage rates (19xx)(-).p" size="1297" crc="c6fa4130" sha1="49aba0fcd86801b09992c3d24a5663fbfb35302c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="galinvas">
+		<description>Galactic Invasion (Ger)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="3434">
+				<rom name="galactic invasion (19xx)(-)(de).p" size="3434" crc="63153375" sha1="234efb28b48f6a457941d36d5134e4d599624112" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="galangrf">
+		<description>Galaktischer Angriff (Ger)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="2756">
+				<rom name="galaktischer angriff (19xx)(-)(de).p" size="2756" crc="81e26d05" sha1="c5324526a6e413cbd3a2be4400091cbe1d6ae6b8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="galaxian">
+		<description>Galaxians</description>
+		<year>1982</year>
+		<publisher>Tony Beckwith</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="4173">
+				<rom name="galaxians (1982)(tony beckwith).p" size="4173" crc="a5c29904" sha1="d688b7c2daeced4990b8e495feb5d2e89cb1781c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="galaxinv">
+		<description>Galaxy Invaders</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="3841">
+				<rom name="galaxy invaders (19xx)(-).p" size="3841" crc="0a10224d" sha1="563bdb6101d6955a9f53ca64d2ef08b7302e5655" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="galaxinva" cloneof="galaxinv">
+		<description>Galaxy Invaders (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="3812">
+				<rom name="galaxy invaders (19xx)(-)[a].p" size="3812" crc="36217c7d" sha1="d65ac555804f0af1414a1cda79f8b240c4d1964b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="galaxwar">
+		<description>Galaxy Warrior</description>
+		<year>1981</year>
+		<publisher>Artic Computing</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="4603">
+				<rom name="galaxy warrior (1981)(artic computing).p" size="4603" crc="8788b326" sha1="73f670363653c785c10b29d6e4e9146c09ca74cb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="galaxwara" cloneof="galaxwar">
+		<description>Galaxy Warrior (Alt)</description>
+		<year>1981</year>
+		<publisher>Artic Computing</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="4583">
+				<rom name="galaxy warrior (1981)(artic computing)[a].p" size="4583" crc="7e0b8ec8" sha1="53a06dd869f19ed13b14135ed694c3bfd8003c96" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="galgje2">
+		<description>Galgje II (Ned)</description>
+		<year>1985</year>
+		<publisher>JSKOSoft</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="3114">
+				<rom name="galgje ii (1985)(jskosoft)(nl).p" size="3114" crc="a8e43eff" sha1="50b7149781ed1b8b1022a71b792e8dd8ab81454f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="puckman">
+		<description>The Game of Puckman</description>
+		<year>1982</year>
+		<publisher>John Hardman</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="10602">
+				<rom name="game of puckman, the (1982)(john hardman).p" size="10602" crc="41bebcdb" sha1="22adcc80fa3c2ab5145e3d938bd0d94796e0e4a9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="puckmana" cloneof="puckman">
+		<description>The Game of Puckman (Alt)</description>
+		<year>1982</year>
+		<publisher>John Hardman</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="10601">
+				<rom name="game of puckman, the (1982)(john hardman)[a].p" size="10601" crc="875cdf1a" sha1="08ea2702ce02010dc7861ea2a5611b4eea09d9bf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="puckmanb" cloneof="puckman">
+		<description>The Game of Puckman (Alt 2)</description>
+		<year>1982</year>
+		<publisher>John Hardman</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="10634">
+				<rom name="game of puckman, the (1982)(john hardman)[a2].p" size="10634" crc="57cda065" sha1="7e3f2d858eee59bd172f3d2283bc31d8d6bd9289" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="games">
+		<description>Games (Ned)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="7841">
+				<rom name="games (19xx)(-)(nl).p" size="7841" crc="9ce82908" sha1="653fd7a59ccdec8ab109d02213036bfbe527ad5a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gamescol">
+		<description>Games Collection</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="10618">
+				<rom name="games collection (19xx)(-).p" size="10618" crc="1afc44d7" sha1="3cedb5d5f1d722e1080341eb40be1a2255616e2e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ganymed2">
+		<description>Ganymede II</description>
+		<year>1982</year>
+		<publisher>Nick Wilson</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="11210">
+				<rom name="ganymede ii (1982)(nick wilson).p" size="11210" crc="9dfbba74" sha1="6bea49ab67b1d923c850922751c3866471b8f671" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ganymed2a" cloneof="ganymed2">
+		<description>Ganymede II (Alt)</description>
+		<year>1982</year>
+		<publisher>Nick Wilson</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="11246">
+				<rom name="ganymede ii (1982)(nick wilson)[a].p" size="11246" crc="887393cd" sha1="2da262626f9dfca0f85862a031d134ec4927f114" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gauntlet">
+		<description>The Gauntlet</description>
+		<year>1982</year>
+		<publisher>Colourmatic Computing</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="14562">
+				<rom name="gauntlet, the (1982)(colourmatic computing).p" size="14562" crc="34763407" sha1="d3544d19c2db5bee493488be48840aa684c3398b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gauntleta" cloneof="gauntlet">
+		<description>The Gauntlet (Alt)</description>
+		<year>1982</year>
+		<publisher>Colourmatic Computing</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="14530">
+				<rom name="gauntlet, the (1982)(colourmatic computing)[a].p" size="14530" crc="a7d26fba" sha1="95e4cdc75bdf979c7197ecf45508b624f2437a6b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gekkenhu">
+		<description>Gekkenhuis (Ned)</description>
+		<year>1984</year>
+		<publisher>S.S.S.</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="12565">
+				<rom name="gekkenhuis (1984)(s.s.s.)(nl).p" size="12565" crc="4a666857" sha1="9cc3ca8fd530b51db712850086104ac7e17c06e8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="geld">
+		<description>Geld (Ned)</description>
+		<year>198?</year>
+		<publisher>Edwin Mol ZX-81 Productions</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="4436">
+				<rom name="geld (19xx)(edwin mol zx-81 productions)(nl).p" size="4436" crc="c9158546" sha1="df8d13cad518d4c5556d9dae9249b0c4c0b0bee3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="genreloc">
+		<description>General Relocater (Ned)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="3035">
+				<rom name="general relocater (19xx)(-)(nl).p" size="3035" crc="9c0d1bdb" sha1="fc5f5688fe83cec0435b44846cbdfde2301dc9d0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="genmande">
+		<description>Generalized Mandelbrot Prototype</description>
+		<year>1988</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="20503">
+				<rom name="generalized mandelbrot prototype (1988)(-).p" size="20503" crc="02e371a9" sha1="34fff31e711b386056cc62435aba3ac86ca89982" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="george">
+		<description>George (Ned)</description>
+		<year>1982</year>
+		<publisher>Aackosoft</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="3578">
+				<rom name="george (1982)(aackosoft)(nl).p" size="3578" crc="ee3df79c" sha1="3e9ef6d845c7372f7465e6fb29f607e46d9d9741" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ghostdrv">
+		<description>Ghost Driver (Ger)</description>
+		<year>1982</year>
+		<publisher>H. Stamm</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="2103">
+				<rom name="ghost driver (1982)(h. stamm)(de).p" size="2103" crc="19c23e67" sha1="fb5512aa02e26d077dfdd12295c9009de39bfe82" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ghostdrva" cloneof="ghostdrv">
+		<description>Ghost Driver (Ger, Alt)</description>
+		<year>1982</year>
+		<publisher>H. Stamm</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="ghost driver (1982)(h. stamm)(de)[a].p" size="2056" crc="c7e7e443" sha1="4459059b38219d65fbbdf19c169242258f1bb60f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ghosthnt">
+		<description>Ghost Hunt</description>
+		<year>198?</year>
+		<publisher>PSS</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="5329">
+				<rom name="ghost hunt (19xx)(pss).p" size="5329" crc="edf86308" sha1="bda1cb33d559581acd28fd247ef86bd9370bfe54" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ghosthnta" cloneof="ghosthnt">
+		<description>Ghost Hunt (Alt)</description>
+		<year>198?</year>
+		<publisher>PSS</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="5242">
+				<rom name="ghost hunt (19xx)(pss)[a].p" size="5242" crc="3fd7e5d0" sha1="7b21c6fd6a6a70692aace5c23e41122ad3a2583c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ghosts">
+		<description>Ghosts</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="5358">
+				<rom name="ghosts (19xx)(-).p" size="5358" crc="825948c6" sha1="74bef529a32b8b85328e083f7f69231215738fcd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="glooper">
+		<description>Glooper</description>
+		<year>198?</year>
+		<publisher>Quicksilva</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="7216">
+				<rom name="glooper (19xx)(quicksilva).p" size="7216" crc="01c580c7" sha1="92857d45f35d907d92b7f9f0699dfb1c4582335c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gloopera" cloneof="glooper">
+		<description>Glooper (Alt)</description>
+		<year>198?</year>
+		<publisher>Quicksilva</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="7195">
+				<rom name="glooper (19xx)(quicksilva)[a].p" size="7195" crc="403ac7fd" sha1="0ad25d64d97b063188878cbc602dcf06a33d276a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gloops">
+		<description>Gloops</description>
+		<year>1982</year>
+		<publisher>Tony Beckwith</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="11986">
+				<rom name="gloops (1982)(tony beckwith).p" size="11986" crc="13c1185e" sha1="177450c78befa5d18509db23184c6ab8908cb4b8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gloopsa" cloneof="gloops">
+		<description>Gloops (Alt)</description>
+		<year>1982</year>
+		<publisher>Tony Beckwith</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="12007">
+				<rom name="gloops (1982)(tony beckwith)[a].p" size="12007" crc="adeb0da1" sha1="970af4cf24fadfd301ae6ab905caf5507348a46b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gmtest">
+		<description>GM Test</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="1407">
+				<rom name="gm test (19xx)(-).p" size="1407" crc="5190136c" sha1="d778258c7ddf78a4115cb00552ae26fa7f3250c4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="goball">
+		<description>Go-Ball</description>
+		<year>198?</year>
+		<publisher>F. Hunold</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="3420">
+				<rom name="go-ball (19xx)(f. hunold).p" size="3420" crc="20a693ef" sha1="21498a738313ea5ded5ab4568edf6e227a93fbd3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gobang">
+		<description>Gobang (Ger)</description>
+		<year>1984</year>
+		<publisher>D. Kriener</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="5065">
+				<rom name="gobang (1984)(d. kriener)(de).p" size="5065" crc="a60a558c" sha1="20636ede322728bdf80aa40b8c25c9af59356a31" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gobangch">
+		<description>Gobang of Chinees Schaak (Ned)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="11142">
+				<rom name="gobang of chinees schaak (19xx)(-)(nl).p" size="11142" crc="c0481fa2" sha1="18416734d0c3a0b63c33f88c605e7f574023176e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 16k -->
+	<software name="goldrush">
+		<description>Gold Rush - Treasure Trails</description>
+		<year>1983</year>
+		<publisher>Sinclair User</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="4742">
+				<rom name="gold rush - treasure trails (1983)(sinclair user)[16k].p" size="4742" crc="f786b3eb" sha1="524d00ffea2d739cd12f0fd15473d5515438c6c6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="golf">
+		<description>Golf</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="5385">
+				<rom name="golf (19xx)(-).p" size="5385" crc="ebdbe17c" sha1="f0b2ef6a9996b18b7144d83a503389ffb3ec2873" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="golfzwei">
+		<description>Golf fuer Zwei (Ger)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="8696">
+				<rom name="golf fuer zwei (19xx)(-)(de).p" size="8696" crc="c462b1ae" sha1="3534afe6ae98f6b667d0987687f6bc1f0a2c457e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="goodhabi">
+		<description>Good Habits</description>
+		<year>1989</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="3148">
+				<rom name="good habits (1989)(-).p" size="3148" crc="be49bc7f" sha1="dfb952c5c269974774215090f4f38002b55d2e3a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="graben">
+		<description>Graben (Ger)</description>
+		<year>1982</year>
+		<publisher>Thoralf Klatt</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="7208">
+				<rom name="graben (1982)(thoralf klatt)(de).p" size="7208" crc="897372ab" sha1="924dec43e7a41e610682e5adfc393f8057929fba" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="graffity">
+		<description>Graffity</description>
+		<year>1989</year>
+		<publisher>Carlo Delhez</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="7991">
+				<rom name="graffity (1989)(carlo delhez).p" size="7991" crc="a34fee44" sha1="51dfaa01390f70c8cb02585acfbe6f7657bcd525" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="graffitya" cloneof="graffity">
+		<description>Graffity (Alt)</description>
+		<year>1989</year>
+		<publisher>Carlo Delhez</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="7161">
+				<rom name="graffity (1989)(carlo delhez)[a].p" size="7161" crc="bb1b58b3" sha1="bf4671bf613a4ea519e0f65809869630721d24e6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="graffityb" cloneof="graffity">
+		<description>Graffity (Alt 2)</description>
+		<year>1989</year>
+		<publisher>Carlo Delhez</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="8023">
+				<rom name="graffity (1989)(carlo delhez)[a2].p" size="8023" crc="91a33ca4" sha1="6ad673383123a9131e25b733129806db953a8192" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="graffityc" cloneof="graffity">
+		<description>Graffity (Alt 3)</description>
+		<year>1989</year>
+		<publisher>Carlo Delhez</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="7201">
+				<rom name="graffity (1989)(carlo delhez)[a3].p" size="7201" crc="28114721" sha1="8e2225e0ca9a7c7b81bb163f6d68efdf71b92fde" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gp1">
+		<description>Grand Prix (Sinclair User)</description>
+		<year>1983</year>
+		<publisher>Sinclair User</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="1482">
+				<rom name="grand prix (1983)(sinclair user).p" size="1482" crc="6ddef21b" sha1="f918ecb997e9f9da52b18d1e1c704b06256552da" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gp2">
+		<description>Grand Prix (Unknown)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="2179">
+				<rom name="grand prix (19xx)(-).p" size="2179" crc="567bb719" sha1="aa9ec5213b8f28caf2d41af28c84087df22bf8c6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gp2a" cloneof="gp2">
+		<description>Grand Prix (Unknown) (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="2133">
+				<rom name="grand prix (19xx)(-)[a].p" size="2133" crc="ddebe229" sha1="d42f33c20d355b7a7dc579db3d7112b3c5bfb149" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gp3">
+		<description>Grand Prix (F. Hunold)</description>
+		<year>198?</year>
+		<publisher>F. Hunold</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="2320">
+				<rom name="grand prix (19xx)(f. hunold).p" size="2320" crc="db678bdf" sha1="07b4b480a2cf5e3556be91b30a7c7e7795cd3195" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="grafgolf">
+		<description>Graphical Golf</description>
+		<year>1981</year>
+		<publisher>Ian Turtle</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="7856">
+				<rom name="graphical golf (1981)(ian turtle).p" size="7856" crc="2450749d" sha1="7b2c898076e1415390e26be180eaaba31bc24e02" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="greedgul">
+		<description>Greedy Gulch</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="15593">
+				<rom name="greedy gulch (19xx)(-).p" size="15593" crc="595bd253" sha1="b9639bfca1e42104bb124c3a169c32195c04a162" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="greytest">
+		<description>Grey Test</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="1955">
+				<rom name="grey test (19xx)(-).p" size="1955" crc="8de6a137" sha1="f79b9a510f39563572c817d3e381bed14fc87b3b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="greyhoun">
+		<description>Greyhound</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="15038">
+				<rom name="greyhound (19xx)(-).p" size="15038" crc="8a26861f" sha1="e13997ec63699daf1b1880e10ba53938f17888bf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="greyhouna" cloneof="greyhoun">
+		<description>Greyhound (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="15072">
+				<rom name="greyhound (19xx)(-)[a].p" size="15072" crc="dcfbdb17" sha1="4956ca853df23945fffb10e23c4d34e28c6369b8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="greys">
+		<description>Greys - Shading Example</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="966">
+				<rom name="greys - shading example (19xx)(-).p" size="966" crc="8f3be7ac" sha1="a599460fe9d818de0c5118cd10bee13aad790ab9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="grieks">
+		<description>Grieks Decoder</description>
+		<year>198?</year>
+		<publisher>Compuvision</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="7716">
+				<rom name="grieks decoder (19xx)(compuvision).p" size="7716" crc="900b615e" sha1="76f48b070868f5f7c0e6e8d877da03a8019b853e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="grimm">
+		<description>Grimm's Fairy Trails</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="9340">
+				<rom name="grimm's fairy trails (19xx)(-).p" size="9340" crc="efa885b5" sha1="2f196d7195fdc3a1c6ade0241ee5fff047a64543" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="guessx">
+		<description>Guess X in 60 Secs</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="553">
+				<rom name="guess x in 60 secs (19xx)(-).p" size="553" crc="4d6a37e7" sha1="947ba1b81c57576ae9f25daa248741ccb36493f1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gulp">
+		<description>Gulp</description>
+		<year>1982</year>
+		<publisher>Campbell Systems</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="4454">
+				<rom name="gulp (1982)(campbell systems).p" size="4454" crc="f3ee207a" sha1="4578ff839ce6b3a1aafb93913897474211418b7d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gulpintr">
+		<description>Gulp - Intro</description>
+		<year>1982</year>
+		<publisher>Campbell Systems</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="4551">
+				<rom name="gulp - intro (1982)(campbell systems).p" size="4551" crc="1369ba47" sha1="8b0bad5dd166ff570496050db8cd569936a8e16b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gulp2">
+		<description>Gulp II</description>
+		<year>1982</year>
+		<publisher>Campbell Systems</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="6836">
+				<rom name="gulp ii (1982)(campbell systems).p" size="6836" crc="69d1322c" sha1="df21e69d4f54c9fd38ac669b444cbba103fa5b69" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gulp2n" cloneof="gulp2">
+		<description>Gulp II (Ned)</description>
+		<year>1982</year>
+		<publisher>Campbell Systems</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="6215">
+				<rom name="gulp ii (1982)(campbell systems)(nl).p" size="6215" crc="b5bbec48" sha1="b9fcc1e9348e7aa94dfc037461938f560281fa6f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="guncomm">
+		<description>Gun Command</description>
+		<year>1981</year>
+		<publisher>P.E. Canter</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="3050">
+				<rom name="gun command (1981)(p.e. canter).p" size="3050" crc="059c6945" sha1="cb631dffa13309a93ae0777bd9a1ad7aa28b1348" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gunfight">
+		<description>Gunfight</description>
+		<year>198?</year>
+		<publisher>JMS</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="4337">
+				<rom name="gunfight (19xx)(jms).p" size="4337" crc="dd7af8ad" sha1="54f336414e17db9c07872af15bf6db9647baff79" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gunfighta" cloneof="gunfight">
+		<description>Gunfight (Alt)</description>
+		<year>198?</year>
+		<publisher>JMS</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="4300">
+				<rom name="gunfight (19xx)(jms)[a].p" size="4300" crc="721b765a" sha1="57387f6a3f721044c71b976740a3b729583616b4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gunfightb" cloneof="gunfight">
+		<description>Gunfight (Alt 2)</description>
+		<year>198?</year>
+		<publisher>JMS</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="4295">
+				<rom name="gunfight (19xx)(jms)[a2].p" size="4295" crc="1f375ddf" sha1="59cad552b306ea8de468119a1563b647cace2d33" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="guusflat">
+		<description>Guus Flater</description>
+		<year>198?</year>
+		<publisher>Maparo-Elusoft</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="7406">
+				<rom name="guus flater (19xx)(maparo-elusoft).p" size="7406" crc="debeb048" sha1="14bdfe7c2398fb8f49e9111c7e606bc3c97d865a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="guzzlers">
+		<description>Guzzlers</description>
+		<year>198?</year>
+		<publisher>Database Software</publisher>
+
+		<part name="cass1" interface="zx81_cass">
+			<dataarea name="cass" size="6439">
+				<rom name="guzzlers (19xx)(database software).p" size="6439" crc="ade6fd7f" sha1="697bfc9255e399f6d2e1ee60514893df48e7a5a4" offset="0" />
 			</dataarea>
 		</part>
 	</software>
