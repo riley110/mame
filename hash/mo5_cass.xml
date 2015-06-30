@@ -176,8 +176,8 @@
 		</part>
 	</software>
 
-	<software name="budgetf">
-		<description>Budget Familial</description>
+	<software name="budgetf1">
+		<description>Budget Familial (Free Game Blot)</description>
 		<year>1984</year>
 		<publisher>Free Game Blot</publisher>
 
@@ -188,14 +188,26 @@
 		</part>
 	</software>
 
-	<software name="budgetfa" cloneof="budgetf">
-		<description>Budget Familial (Alt)</description>
+	<software name="budgetf1a" cloneof="budgetf1">
+		<description>Budget Familial (Free Game Blot) (Alt)</description>
 		<year>1984</year>
 		<publisher>Free Game Blot</publisher>
 
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="16821">
 				<rom name="budget familial (1984)(free game blot)(fr)[a].k7" size="16821" crc="48e6f366" sha1="73de447c747790ef57628c8be0d8f4c3f03baa5d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="budgetf2">
+		<description>Budget Familial (Loriciels)</description>
+		<year>1984</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="17035">
+				<rom name="budget-familial-loriciels_mo5.k7" size="17035" crc="4083f4d1" sha1="1ab1cf25b115e5545463fbf74a025f328985a37c" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -5934,6 +5946,18 @@
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="66841">
 				<rom name="pays du monde (1986)(infogrames)(fr).k7" size="66841" crc="8c86a5a2" sha1="bcdd23d086bbda1c60533448758e8e3396f111e1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="paysage">
+		<description>Paysage a,b,c</description>
+		<year>1985</year>
+		<publisher>Jeriko</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="30030">
+				<rom name="paysage-abc_mo5.k7" size="30030" crc="8fb12caa" sha1="4885a6e7a491a8c21bd46d728ff7d3b51fc9aba1" offset="0" />
 			</dataarea>
 		</part>
 	</software>
