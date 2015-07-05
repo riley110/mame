@@ -787,7 +787,7 @@ static MACHINE_CONFIG_DERIVED( bbcb, bbca )
 	MCFG_DEVICE_REMOVE("cass_ls_a")
 	MCFG_SOFTWARE_LIST_ADD("cass_ls_b", "bbcb_cass")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("cass_ls_a", "bbca_cass")
-	//MCFG_SOFTWARE_LIST_ADD("flop_ls_bs", "bbcb_flop_sd")
+	MCFG_SOFTWARE_LIST_ADD("flop_ls_bs", "bbcb_flop_sd")
 	MCFG_SOFTWARE_LIST_ADD("flop_ls_bd", "bbcb_flop_dd")
 MACHINE_CONFIG_END
 
