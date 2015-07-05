@@ -227,7 +227,7 @@ static const floppy_interface ti99_4_floppy_interface =
 {
 	FLOPPY_STANDARD_5_25_DSHD,              // type
 	LEGACY_FLOPPY_OPTIONS_NAME(ti99),       // image formats
-	"floppy_5_25"                           // interface
+	NULL                                    // interface
 };
 
 peribox_device::peribox_device(const machine_config &mconfig, const char *tag, device_t *owner, UINT32 clock)
