@@ -1,0 +1,625 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+Thanks to Wouter ( http://wouter.bbcmicro.net/_archive/atom/software/ ) for these dumps.
+
+Disks with a size less than 102400 bytes are incomplete and are marked as status="baddump".
+There is also a 0 byte file called "misc1.40t" in the archive that is not included here.
+
+Many of these programs require ROM expansions (see atom_cart.xml list).
+-->
+<softwarelist name="atom_flop" description="Acorn Atom floppy disks">
+
+	<software name="club611">
+		<description>acorn_club_tapes_6+11</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="acorn_club_tapes_6+11.40t" size="102400" crc="e1520cbb" sha1="212af766c5fd42cff6984f711161762e83c12d0b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="club1112">
+		<description>acorn_club_tapes_11+12</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="acorn_club_tapes_11+12.40t" size="102400" crc="c3d6ea1e" sha1="021e012d3a7bf77b65db521723cec599d14984c6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="radio1">
+		<description>amateur_radio1</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="amateur_radio1.40t" size="102400" crc="5c004460" sha1="7e9d9383907e7cc8be61d09abe80754a6f4fb18d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="radio2">
+		<description>amateur_radio2</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="amateur_radio2.40t" size="102400" crc="01c687d5" sha1="9a3d8a80637b303eb6e24c89bcd523da1513035f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atomix7">
+		<description>atomix_tape_7</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="atomix_tape_7.40t" size="102400" crc="08e8c11d" sha1="9149a2448550ef68b99649533d7a09fc900e6780" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basicomp">
+		<description>basic_compiler</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="basic_compiler.40t" size="102400" crc="60e45eab" sha1="33da8f67f31788c4ec1ad769a5dc5eecff2d0c5d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basicode">
+		<description>basicode</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="basicode.40t" size="102400" crc="b1b34051" sha1="fe438157c95b0eeccac9f5576a8aff03cbc2b006" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chess">
+		<description>chess</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="chess.40t" size="102400" crc="9607cb3b" sha1="53a077495c77a3c3410c33ab73112b90664d7b23" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="database">
+		<description>database</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="database.40t" size="102400" crc="53e4ac7e" sha1="c268f574c2af5f1710ec86e7a76592f3d00cd325" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="databak">
+		<description>database_bak</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="94720">
+				<rom name="database_bak.40t" size="94720" crc="e984d7fa" sha1="992ff17b8a94aa4b60e400494250a0f860c3f543" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="diversen">
+		<description>diversen</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="diversen.40t" size="102400" crc="c396f893" sha1="e60c13351a81863bd966652682ff968b10419204" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="editor1">
+		<description>editor-1</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="editor-1.40t" size="102400" crc="94b259ca" sha1="c3033bbd9e0bca16a0cb6b2622bcbb08a6221cb3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="epromprg">
+		<description>eprom_programmer</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="eprom_programmer.40t" size="102400" crc="9f2cb3a1" sha1="9e08cd7b91303931feeec5771510307b1da41101" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="games1">
+		<description>games1</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="games1.40t" size="102400" crc="7e8c9fa3" sha1="bd93b9bc7c29ebce7d8a74d520a6e5779269c0fc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="games2">
+		<description>games2</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="games2.40t" size="102400" crc="1f875ff0" sha1="23f4e1112abf50d895ec854524c85e287c8a1ec7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="games3">
+		<description>games3</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="games3.40t" size="102400" crc="b4262ee2" sha1="33a11e87b9b7a81093898956154c96c294a61cf0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="games4">
+		<description>games4</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="games4.40t" size="102400" crc="b7c61828" sha1="f7f95ab99e59a3e8e103630de15ce673a7960cf2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="games5">
+		<description>games5</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="games5.40t" size="102400" crc="89c56adf" sha1="eb6495fa2a68816b2e87d3fb9bd811c5a0def1ca" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="games6">
+		<description>games6</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="games6.40t" size="102400" crc="b8efe570" sha1="e532583b3dfb5e5ffc427af2ed5f44f4df203b92" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="games7">
+		<description>games7</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="games7.40t" size="102400" crc="40caf321" sha1="31f58baf84d12212420f177076423917fe84961d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="games8">
+		<description>games8</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="games8.40t" size="102400" crc="c852e9bd" sha1="feee9e79b80bdeb06ad9c4c9b786267e48dd9030" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="games9">
+		<description>games9</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="4096">
+				<rom name="games9.40t" size="4096" crc="0d1d1ba6" sha1="a507bf669d97b2df82d174b0e12043d661fa7638" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="games10">
+		<description>games10</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="games10.40t" size="102400" crc="4930b3bf" sha1="067d827165ec11e80f57334d21a1e9202cbaf9a1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gfx1">
+		<description>graphics1</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="graphics1.40t" size="102400" crc="6c207a9a" sha1="98adaf6e8f9c28429eed5e59c1219a1c8a20487b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gfx2">
+		<description>graphics2</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="graphics2.40t" size="102400" crc="5a5acc04" sha1="6c78e74b39a799e4e8815259dfe02b0fc334050b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="groteprg">
+		<description>grote_prog</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="grote_prog.40t" size="102400" crc="767050c3" sha1="7a251ef4556b025f0d4e4aa1b48143e02c3b1994" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="grotespl">
+		<description>grote_spellen</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="grote_spellen.40t" size="102400" crc="474d3bc3" sha1="982889b9b185889b698cb16b382fac710f9ecfe7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="infomstr">
+		<description>infomaster_sdraw</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="infomaster_sdraw.40t" size="102400" crc="416d95ef" sha1="ee1987efe0bfb34519dd892de25ec41a75d85871" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="inhoud">
+		<description>inhoud_atom_nieuws</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="inhoud_atom_nieuws.40t" size="102400" crc="c790493f" sha1="80157e7ea2d573ed2dcb5e468d474fe48fc89001" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="intro">
+		<description>introduction</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="introduction.40t" size="102400" crc="ce331174" sha1="ebd711b1bd8f8ec05bd40878228c0f4096f806da" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="misc2">
+		<description>misc2</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="misc2.40t" size="102400" crc="4a8a5b34" sha1="b20d6570ec7b73cc5d16328a195faedce8be3b53" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="misc3">
+		<description>misc3</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="misc3.40t" size="102400" crc="7c67750f" sha1="1689a75d03ef4c79324fa7a7f6a64bfba6e5487b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mode4gfx">
+		<description>mode4_graphics</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="mode4_graphics.40t" size="102400" crc="49145089" sha1="654a4ff717134fa855311ad419fda2cec1529b67" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="muziek1">
+		<description>muziek1_speech</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="muziek1_speech.40t" size="102400" crc="92bbe87a" sha1="487789dfe6f5bad44b0c2c0b37406d3d3d3a7005" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="muziek2">
+		<description>muziek2</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="muziek2.40t" size="102400" crc="38954b08" sha1="a6c80df394b78af91260ebddb46f37d79d5ed10c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nuttig1">
+		<description>nuttig1</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="nuttig1.40t" size="102400" crc="1183d807" sha1="fde4e01071e63730bc34eff02bba6fac78c857ac" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nuttig2">
+		<description>nuttig2</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="nuttig2.40t" size="102400" crc="32d8b622" sha1="3046438409cf3e9633df0d00b74799766dcd928e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="printer">
+		<description>printer</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="87296">
+				<rom name="printer.40t" size="87296" crc="e99ed1a7" sha1="bceef3c2e0a3a841a3ef10d7e006fc8e6f470743" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rekenen">
+		<description>rekenen</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="rekenen.40t" size="102400" crc="27769902" sha1="6ee15558b54247dbf72ee13a22fc7b8697d7e35d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rtty">
+		<description>rtty</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="rtty.40t" size="102400" crc="db597adb" sha1="1a3c08cecda17eb252ed0316a06b70d0b6406017" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rtty2">
+		<description>rtty2</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="rtty2.40t" size="102400" crc="85faa1f5" sha1="72a456483c326b5c86fbef7ac3a45051c6637590" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="schaken">
+		<description>schaken_dammen</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="schaken_dammen.40t" size="102400" crc="6b197c53" sha1="9e77a0815773babef0306a9baa35fd64a9a500b3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spellen1">
+		<description>spellen1</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="spellen1.40t" size="102400" crc="d5fdb186" sha1="28fd043a4432dbd86a252262177c791b734534ef" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spellen3">
+		<description>spellen3</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="spellen3.40t" size="102400" crc="7105cf9a" sha1="88508b5440a4990414c41cba98e1cf302936e075" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spellen4">
+		<description>spellen4</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="spellen4.40t" size="102400" crc="ff5d7538" sha1="52a62d6b48324fc9ffb10515487599472b6e9d8d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="talen1">
+		<description>talen1</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="talen1.40t" size="102400" crc="77e9653d" sha1="389386f8002a607f1add5ca1977c186c2383116e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="talen2">
+		<description>talen2</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="talen2.40t" size="102400" crc="95a832f8" sha1="cfea6a82b96d2594afd6ecc6666c6a06eb798780" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="toolbox">
+		<description>toolbox_roms</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="toolbox_roms.40t" size="102400" crc="8515ce73" sha1="a735a8ffa1cef6dd23783a4c16ae6579b4e575c2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="utils">
+		<description>utilities_disc</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="utilities_disc.40t" size="102400" crc="f4541c02" sha1="51711a7cf705bb6757ee39d5b3ed225009774d9c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="viditel">
+		<description>viditel</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="viditel.40t" size="102400" crc="f4e33ef5" sha1="8b9943ab2b15c0dbeb793e4da35deef806be142c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="workdisk">
+		<description>work_disk</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="102400">
+				<rom name="work_disk.40t" size="102400" crc="4e15de16" sha1="2f35259eb554cd6abb6f247cde7f468fc3cba31a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>
