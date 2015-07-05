@@ -150,7 +150,7 @@ inline void mips3_device::save_fast_iregs(drcuml_block *block)
 
 void mips3_device::mips3drc_set_options(UINT32 options)
 {
-	if (!machine().options().drc()) return;
+	if (!(mconfig().options().drc() && !mconfig().m_force_no_drc)) return;
 	m_drcoptions = options;
 }
 
@@ -196,7 +196,7 @@ void mips3_device::add_fastram(offs_t start, offs_t end, UINT8 readonly, void *b
 
 void mips3_device::mips3drc_add_hotspot(offs_t pc, UINT32 opcode, UINT32 cycles)
 {
-	if (!machine().options().drc()) return;
+	if (!(mconfig().options().drc() && !mconfig().m_force_no_drc)) return;
 	if (m_hotspot_select < ARRAY_LENGTH(m_hotspot))
 	{
 		m_hotspot[m_hotspot_select].pc = pc;
@@ -1095,12 +1095,12 @@ void mips3_device::generate_checksum_block(drcuml_block *block, compiler_state *
 		if (!(seqhead->flags & OPFLAG_VIRTUAL_NOOP))
 		{
 			UINT32 sum = seqhead->opptr.l[0];
-			void *base = m_direct->read_decrypted_ptr(seqhead->physpc);
+			void *base = m_direct->read_ptr(seqhead->physpc);
 			UML_LOAD(block, I0, base, 0, SIZE_DWORD, SCALE_x4);         // load    i0,base,0,dword
 
 			if (seqhead->delay.first() != NULL && seqhead->physpc != seqhead->delay.first()->physpc)
 			{
-				base = m_direct->read_decrypted_ptr(seqhead->delay.first()->physpc);
+				base = m_direct->read_ptr(seqhead->delay.first()->physpc);
 				assert(base != NULL);
 				UML_LOAD(block, I1, base, 0, SIZE_DWORD, SCALE_x4);                 // load    i1,base,dword
 				UML_ADD(block, I0, I0, I1);                     // add     i0,i0,i1
@@ -1120,20 +1120,20 @@ void mips3_device::generate_checksum_block(drcuml_block *block, compiler_state *
 		for (curdesc = seqhead->next(); curdesc != seqlast->next(); curdesc = curdesc->next())
 			if (!(curdesc->flags & OPFLAG_VIRTUAL_NOOP))
 			{
-				void *base = m_direct->read_decrypted_ptr(seqhead->physpc);
+				void *base = m_direct->read_ptr(seqhead->physpc);
 				UML_LOAD(block, I0, base, 0, SIZE_DWORD, SCALE_x4);     // load    i0,base,0,dword
 				UML_CMP(block, I0, curdesc->opptr.l[0]);                    // cmp     i0,opptr[0]
 				UML_EXHc(block, COND_NE, *m_nocode, epc(seqhead));   // exne    nocode,seqhead->pc
 			}
 #else
 		UINT32 sum = 0;
-		void *base = m_direct->read_decrypted_ptr(seqhead->physpc);
+		void *base = m_direct->read_ptr(seqhead->physpc);
 		UML_LOAD(block, I0, base, 0, SIZE_DWORD, SCALE_x4);             // load    i0,base,0,dword
 		sum += seqhead->opptr.l[0];
 		for (curdesc = seqhead->next(); curdesc != seqlast->next(); curdesc = curdesc->next())
 			if (!(curdesc->flags & OPFLAG_VIRTUAL_NOOP))
 			{
-				base = m_direct->read_decrypted_ptr(curdesc->physpc);
+				base = m_direct->read_ptr(curdesc->physpc);
 				assert(base != NULL);
 				UML_LOAD(block, I1, base, 0, SIZE_DWORD, SCALE_x4);     // load    i1,base,dword
 				UML_ADD(block, I0, I0, I1);                         // add     i0,i0,i1
@@ -1141,7 +1141,7 @@ void mips3_device::generate_checksum_block(drcuml_block *block, compiler_state *
 
 				if (curdesc->delay.first() != NULL && (curdesc == seqlast || (curdesc->next() != NULL && curdesc->next()->physpc != curdesc->delay.first()->physpc)))
 				{
-					base = m_direct->read_decrypted_ptr(curdesc->delay.first()->physpc);
+					base = m_direct->read_ptr(curdesc->delay.first()->physpc);
 					assert(base != NULL);
 					UML_LOAD(block, I1, base, 0, SIZE_DWORD, SCALE_x4); // load    i1,base,dword
 					UML_ADD(block, I0, I0, I1);                     // add     i0,i0,i1
