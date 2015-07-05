@@ -1,0 +1,494 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!-- All dumps + info available at http://www.hpmuseum.net/exhibit.php?swc=26 -->
+<softwarelist name="hp64k" description="Hewlett-Packard HP 64000 floppy disks">
+
+	<software name="64ksys">
+		<description>System Software (rev. 2325)</description>
+		<year>1980</year>
+		<publisher>Hewlett-Packard</publisher>
+		<info name="serial" value="64100-12045"/>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1 (Disc Format, Fix, Text)"/>
+			<dataarea name="flop" size="274580">
+				<rom name="64000-1.td0" size="274580" crc="6a18e390" sha1="024d2135016324f3bfc1d1a5418ae5a3ab595bd2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2 (Operating System)"/>
+			<dataarea name="flop" size="257370">
+				<rom name="64000-2.td0" size="257370" crc="3e5ee22b" sha1="de09de2365c2315808f7118c5e52fe9012929489" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 3 (Operating System)"/>
+			<dataarea name="flop" size="218481">
+				<rom name="64000-3.td0" size="218481" crc="8438027c" sha1="5d2469635094e53e70fae9851c3689b4079495ad" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="6805urem">
+		<description>6804 U-R Emulation</description>
+		<year>1980</year>
+		<publisher>Hewlett-Packard</publisher>
+		<info name="serial" value="64192A"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="203399">
+				<rom name="64192.td0" size="203399" crc="7cc88fdb" sha1="6a3a6f1c9d1e9d2eaff998f1351b41caa8ca2f15" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="6809emu">
+		<description>6809 Emulator (rev. 2316)</description>
+		<year>1980</year>
+		<publisher>Hewlett-Packard</publisher>
+		<info name="serial" value="64215A"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="201337">
+				<rom name="64215.td0" size="201337" crc="86aea5c5" sha1="2855052bbcca3dc334fde2e408a74497e08a8668" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8088dqem">
+		<description>8088-87 Dequeued Emulation (rev. 1.01)</description>
+		<year>1980</year>
+		<publisher>Hewlett-Packard</publisher>
+		<info name="serial" value="64221A"/>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="179955">
+				<rom name="64221a1.td0" size="179955" crc="b15d796e" sha1="7454e1b92cff5e97ba2dc53d6d3ceadeed9c8e17" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="167980">
+				<rom name="64221a2.td0" size="167980" crc="fdeb25f6" sha1="5148119ff8efb2b66ddd1031a2e4ea6c7c40c0e9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8086emu">
+		<description>8086 Emulation (rev. 1.07)</description>
+		<year>1980</year>
+		<publisher>Hewlett-Packard</publisher>
+		<info name="serial" value="64222A"/>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="136952">
+				<rom name="64222a1.td0" size="136952" crc="4a02aa9f" sha1="6f87aa04733615c4740721b58e363f478f484006" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="104422">
+				<rom name="64222a2.td0" size="104422" crc="e9ebeca8" sha1="60053a8ec5604ba513f878e24f310ad452457aca" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="68kemu">
+		<description>68000 Emulation (rev. 1.07)</description>
+		<year>1980</year>
+		<publisher>Hewlett-Packard</publisher>
+		<info name="serial" value="64242A"/>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="156727">
+				<rom name="64242d1.td0" size="156727" crc="095a062f" sha1="29ed31571a748d4588a5277fa2b32af878d80de1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="128561">
+				<rom name="64242d2.td0" size="128561" crc="5b6a7d8b" sha1="803c736bd7b9be434169fdaea5e840954cb3c920" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="z80emu">
+		<description>Z80 Emulation (rev. 2406)</description>
+		<year>1980</year>
+		<publisher>Hewlett-Packard</publisher>
+		<info name="serial" value="64252A"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="249476">
+				<rom name="64252.td0" size="249476" crc="b2ede0d4" sha1="2964c066528bbb2645c3ca118a2cd3cd263e7625" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8048emu">
+		<description>8048 Emulation (rev. 1.05)</description>
+		<year>1980</year>
+		<publisher>Hewlett-Packard</publisher>
+		<info name="serial" value="64262A"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="185646">
+				<rom name="64262.td0" size="185646" crc="efb3da33" sha1="06b666699c41caed16429f839de8ddee2ca1bef1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="udemu">
+		<description>User Defined Emulation (rev. 2420)</description>
+		<year>1980</year>
+		<publisher>Hewlett-Packard</publisher>
+		<info name="serial" value="64274A"/>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="192630">
+				<rom name="64274-1.td0" size="192630" crc="7f781938" sha1="875b0c3d8e6191854345caa616ae2cf0f2a00dfc" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="78979">
+				<rom name="64274-2.td0" size="78979" crc="5a32a538" sha1="305a1cb3777e4dd0e36552a885c4c9e08085c5f1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="68ksadq">
+		<description>68000 Software Analyzer DQ (rev. 1.02)</description>
+		<year>1980</year>
+		<publisher>Hewlett-Packard</publisher>
+		<info name="serial" value="64331A"/>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="66981">
+				<rom name="64331d1.td0" size="66981" crc="8408bc8a" sha1="d962b5c00e270b936642e1f2e774fe9da4f13996" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="228539">
+				<rom name="64331d2.td0" size="228539" crc="d47b5925" sha1="09b12b54f8e26b9cdeb6bde35a090cfaac289d18" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="promprog">
+		<description>PROM Programmer (rev. 1.01)</description>
+		<year>1980</year>
+		<publisher>Hewlett-Packard</publisher>
+		<info name="serial" value="64500A"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="46433">
+				<rom name="64500.td0" size="46433" crc="a212d326" sha1="1a66c3bb374a5df2bb65fd135b77ff158a03ad2d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="6809pasc">
+		<description>6809 Pascal Compiler (rev. 1.11)</description>
+		<year>1980</year>
+		<publisher>Hewlett-Packard</publisher>
+		<info name="serial" value="64813A"/>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="191147">
+				<rom name="64813-1.td0" size="191147" crc="4a89b359" sha1="7a1b0f6e65b623220342b0ebe2829e6860b2b324" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="144677">
+				<rom name="64813-2.td0" size="144677" crc="edf80402" sha1="8a2e7a844ffa70912a844b30a62a53fda2b3ea1d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="808xpasc">
+		<description>8086-88 Pascal Compiler (rev. 3.80)</description>
+		<year>1980</year>
+		<publisher>Hewlett-Packard</publisher>
+		<info name="serial" value="64814A"/>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="253647">
+				<rom name="64814d1.td0" size="253647" crc="8815297d" sha1="ba06245ceee8c92ea3a99b66ccf770b1a9b61468" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="208510">
+				<rom name="64814d2.td0" size="208510" crc="0b348fbc" sha1="de9a06f4122190551fddf6a90e3f502575f3d932" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 3"/>
+			<dataarea name="flop" size="218062">
+				<rom name="64814d3.td0" size="218062" crc="a6b7fc9c" sha1="3bca314fde6f0ef5ab2019b9082afcf03851c71d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 4"/>
+			<dataarea name="flop" size="205788">
+				<rom name="64814d4.td0" size="205788" crc="182ebf2e" sha1="043726960df242b789360cddd8edeb730317dd31" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 5"/>
+			<dataarea name="flop" size="238024">
+				<rom name="64814d5.td0" size="238024" crc="5803adab" sha1="61ee61dcf820632b8f505440bcff5bc93be5dedb" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 6"/>
+			<dataarea name="flop" size="238024">
+				<rom name="64814d6.td0" size="238024" crc="cb613713" sha1="032fcfc5ba79d5d541a2cc30f8fdbcd69c93f1ef" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 7"/>
+			<dataarea name="flop" size="119534">
+				<rom name="64814d7.td0" size="119534" crc="0a49c141" sha1="b8cb6e2fdb6ef6cdc539cfe22880834cf6776355" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="68kpasc">
+		<description>68000 Pascal Compiler (rev. 2.10)</description>
+		<year>1980</year>
+		<publisher>Hewlett-Packard</publisher>
+		<info name="serial" value="64815A"/>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="222907">
+				<rom name="64815d1.td0" size="222907" crc="9210da6f" sha1="5658905152e7f924adc872ee0346b5a04daedc01" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="148874">
+				<rom name="64815d2.td0" size="148874" crc="5152ea3f" sha1="8f529f61348153c50693c028e302545843ac35e5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 3"/>
+			<dataarea name="flop" size="148877">
+				<rom name="64815d3.td0" size="148877" crc="c90ba3d5" sha1="b93a52bc29343a40bf32d1d0c87233871042502a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 4"/>
+			<dataarea name="flop" size="120729">
+				<rom name="64815d4.td0" size="120729" crc="307678d7" sha1="b6d61da3fefdfcf8ea0a6231b4fc652ebb56d86f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hostpasc">
+		<description>Host Pascal (rev. 1.04)</description>
+		<year>1980</year>
+		<publisher>Hewlett-Packard</publisher>
+		<info name="serial" value="64817A"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="162748">
+				<rom name="64817.td0" size="162748" crc="ce563e05" sha1="96b4ba139ac95db6b1443594ca31a3add5710011" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="808xc">
+		<description>8086-8 C Compiler (rev. 3.02)</description>
+		<year>1980</year>
+		<publisher>Hewlett-Packard</publisher>
+		<info name="serial" value="64818A"/>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="222136">
+				<rom name="64818-1.td0" size="222136" crc="8374ef13" sha1="5410b62fe91ffea0e65b8f30aaf2c61521fb2fea" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="222135">
+				<rom name="64818-2.td0" size="222135" crc="e27498b8" sha1="455a1b2fb3c205729cadfea6c60d3a7f7357c1e0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 3"/>
+			<dataarea name="flop" size="213659">
+				<rom name="64818-3.td0" size="213659" crc="e2bc6b50" sha1="d6fe5aafdce2fdf503d6f15c27fa36d58152a2a9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 4"/>
+			<dataarea name="flop" size="223370">
+				<rom name="64818-4.td0" size="223370" crc="bb49cbcf" sha1="05ece542954c0400b02a26c0e7e32e53147ff748" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 5"/>
+			<dataarea name="flop" size="209356">
+				<rom name="64818-5.td0" size="209356" crc="89e085d4" sha1="68f7d7c48b9f5f6d8f7815e5a641cfae49a84931" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 6"/>
+			<dataarea name="flop" size="132946">
+				<rom name="64818-6.td0" size="132946" crc="bf9f16a0" sha1="e6ea55e00572c4a8e1619b129a5294723a65ab7d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="6809c">
+		<description>6809 C Compiler (rev. 1.08)</description>
+		<year>1980</year>
+		<publisher>Hewlett-Packard</publisher>
+		<info name="serial" value="64822A"/>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="205901">
+				<rom name="64822-1.td0" size="205901" crc="7a0f4d2f" sha1="36865fded7536206720d07586e1d9870a5c367b1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="90852">
+				<rom name="64822-2.td0" size="90852" crc="a6e6fefa" sha1="058c5a0f11f4c73b1fdd170ae8233a82019ff5ff" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="z80pasc">
+		<description>Z80-NSC800 Pascal Compiler (rev. 2.10)</description>
+		<year>1980</year>
+		<publisher>Hewlett-Packard</publisher>
+		<info name="serial" value="64823A"/>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="237952">
+				<rom name="64823d1.td0" size="237952" crc="0f4b6e11" sha1="29890dfa6d767172fa5158cbf0b9ecd647eda7a8" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="170716">
+				<rom name="64823d2.td0" size="170716" crc="5e04a9ef" sha1="f28a0e405620946e84f5bd6575d0e27bbb0fc5ec" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="z80c">
+		<description>Z80-NSC800 C Compiler (rev. 2.20)</description>
+		<year>1980</year>
+		<publisher>Hewlett-Packard</publisher>
+		<info name="serial" value="64824A"/>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="214906">
+				<rom name="64824d1.td0" size="214906" crc="5856b777" sha1="1723a6e146a826b4bebd0890bb3bc191e8381f41" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="83084">
+				<rom name="64824d2.td0" size="83084" crc="8fab90a0" sha1="4e3a72e882b8632c6cd3c399c311e92fd87da8ca" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="z80asm">
+		<description>Z80-NSC800 Assembler-Linker (rev. 2301)</description>
+		<year>1980</year>
+		<publisher>Hewlett-Packard</publisher>
+		<info name="serial" value="64842A"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="26749">
+				<rom name="64842.td0" size="26749" crc="13f2d951" sha1="d0a1cf7cca13865af8aea3a37855c8613da7e173" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="680xasm">
+		<description>6805-9 Assembler-Linker (rev. 2.00)</description>
+		<year>1980</year>
+		<publisher>Hewlett-Packard</publisher>
+		<info name="serial" value="64844A"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="48091">
+				<rom name="64844.td0" size="48091" crc="d6842a71" sha1="f149a036125866cb584b0fa6b85ae96387dfc4e0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="68kasm">
+		<description>68000 Assembler-Linker (rev. 2.2)</description>
+		<year>1980</year>
+		<publisher>Hewlett-Packard</publisher>
+		<info name="serial" value="64645A"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="47915">
+				<rom name="64845a.td0" size="47915" crc="4d06710f" sha1="8542e9933fb5afe6a3151f218370ec35fb6f17a8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8048asm">
+		<description>8048 Assembler</description>
+		<year>1980</year>
+		<publisher>Hewlett-Packard</publisher>
+		<info name="serial" value="64846A"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="94937">
+				<rom name="64846.td0" size="94937" crc="0c56cf67" sha1="201fc07c1e1995ab5c2b35539e50533663fc0290" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8086asm">
+		<description>8086 Family Assembler-Linker (rev. 3.00)</description>
+		<year>1980</year>
+		<publisher>Hewlett-Packard</publisher>
+		<info name="serial" value="64853A"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="157257">
+				<rom name="64853a.td0" size="157257" crc="13009f47" sha1="4080a7b658029658d0a59f5664531d5ae8d0e474" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8051asm">
+		<description>8051 Assembler-Linker (rev. 1.08)</description>
+		<year>1980</year>
+		<publisher>Hewlett-Packard</publisher>
+		<info name="serial" value="64855A"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="22371">
+				<rom name="64855.td0" size="22371" crc="a76cb834" sha1="16bd74f59891851aa126eee13abb7c5778d8fce5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>
