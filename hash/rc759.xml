@@ -1,0 +1,311 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!-- All dumps and info from http://rc700.dk/software.php -->
+<softwarelist name="rc759" description="Regnecentralen RC759 PICCOLINE floppy disks">
+
+<!-- Operating Systems -->
+
+	<!-- does this also include the Programpakke? -->
+	<software name="rc759sys">
+		<description>PICCOLINE Distributionssystem (v3.1)</description>
+		<year>198?</year>
+		<publisher>Regnecentralen</publisher>
+		<info name="serial" value="1034-2261-13144"/>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="1261568">
+				<rom name="piccoline_distributionssystem_v3.1_disk1.img" size="1261568" crc="21722f5f" sha1="5313c451898aa5b92c783af62e15ac4d9289ba11" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="1261568">
+				<rom name="piccoline_distributionssystem_v3.1_disk2.img" size="1261568" crc="0a12d3e7" sha1="24d1ec51559528a16412ecffc31c50b39aaf4ab3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 3"/>
+			<dataarea name="flop" size="1261568">
+				<rom name="piccoline_distributionssystem_v3.1_disk3.img" size="1261568" crc="df921d76" sha1="d762e43da3cc91f78ccae113b25ef25f9e3fd05b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 4"/>
+			<dataarea name="flop" size="1261568">
+				<rom name="piccoline_distributionssystem_v3.1_disk4.img" size="1261568" crc="fa8954dd" sha1="a249170fd11ae83262572dd7fc5b9c0e57168284" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rc759sys23" cloneof="rc759sys">
+		<description>PICCOLINE Distributionssystem + Programpakke (v2.3)</description>
+		<year>198?</year>
+		<publisher>Regnecentralen</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="1261568">
+				<rom name="piccoline_distributionssystem_v2.3_disk1.img" size="1261568" crc="780cd7a6" sha1="20d1ea07a98de345c67368f8d5ab333b4e67f576" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="1261568">
+				<rom name="piccoline_distributionssystem_v2.3_disk2.img" size="1261568" crc="dbcc0c81" sha1="b1e938ca2925396d5964bcd6d87b1d59d60a4be1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 3"/>
+			<dataarea name="flop" size="1261568">
+				<rom name="piccoline_distributionssystem_v2.3_disk3.img" size="1261568" crc="65238cb7" sha1="66f9eff2429727b8af1aa939efa46b3c87c9c034" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 4"/>
+			<dataarea name="flop" size="1261568">
+				<rom name="piccoline_programpakke_v2.3.img" size="1261568" crc="43edf70e" sha1="52945cf1eeb2f9e8dffca0d1e8a65c5abd56145e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- This is actually for the RC750 PARTNER, but it will be included here for now -->
+	<software name="rc750sys">
+		<description>Concurrent CP/M-86 for the RC750 PARTNER (v3.1)</description>
+		<year>198?</year>
+		<publisher>Regnecentralen</publisher>
+		<info name="serial" value="1034-261-8125"/>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="1261568">
+				<rom name="partner_system_v3.2_disk1.img" size="1261568" crc="ed3e8af2" sha1="89c7b172a4ae6876892d756592e8c07686ce66a3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="1261568">
+				<rom name="partner_system_v3.2_disk2.img" size="1261568" crc="ebf44c39" sha1="07d6e47c5284a1b5442b118782e74386c73ffbc5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Office & Productivity -->
+
+	<software name="layout">
+		<description>Layout</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="1261568">
+				<rom name="rc759_layout.img" size="1261568" crc="9fe91220" sha1="2bb6eea4ff012e8d3044ce132da5bcad582f8ccf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="skriv">
+		<description>Skriv (v5.5)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="1261568">
+				<rom name="rc759_skriv_v5.5.img" size="1261568" crc="4752a4d5" sha1="771aca18709d870fa17c67a7a1a5458d0ed2b41d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wperfect">
+		<description>WordPerfect (v4.2)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="1261568">
+				<rom name="rc759_wordperfect_4.2_danish.img" size="1261568" crc="c01d3553" sha1="9fe19679d32e688724702fa07e3560c42de03e23" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Programming Languages -->
+
+	<software name="ppascal">
+		<description>PolyPascal (v3.1, Release 1.2)</description>
+		<year>1983</year>
+		<publisher>Poly Data Aps</publisher>
+		<info name="serial" value="RCN2091"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="1261568">
+				<rom name="rc759_polypascal_v3.1.img" size="1261568" crc="d90df878" sha1="585f74e3de586c757d52082829ca716418a97978" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mikrlogo">
+		<description>MikroLogo (v1.1)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="serial" value="124"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="1261568">
+				<rom name="rc759_mikrologo_v1.1.img" size="1261568" crc="4bcca569" sha1="a553cd32798ad1f36afd1da94201e905bea834d0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="myresnak">
+		<description>Myresnak (v1.2)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="serial" value="212"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="1261568">
+				<rom name="rc759_myresnak_v1.2.img" size="1261568" crc="4212dc3b" sha1="bbaa60a24033cfd62a2c090d2c7911f71a540c9e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Elementary School Educational Software -->
+
+	<software name="datalare">
+		<description>Datalaere</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="1261568">
+				<rom name="rc759_datalaere.img" size="1261568" crc="df5672cb" sha1="119c99abd473dd3d830dc850d3367476816be199" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="eddie">
+		<description>Eddie</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="1261568">
+				<rom name="rc759_eddie.img" size="1261568" crc="c46f8cb8" sha1="aaa5009e8f9824ad3a30cfd70db80648f8e8a114" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="konditst">
+		<description>Konditest</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="1261568">
+				<rom name="rc759_konditest.img" size="1261568" crc="4cf5c6b3" sha1="98458c24007edb3a33f9322a4c6bd4f338e3e162" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- dumped from a bad disk -->
+	<software name="lykkehju">
+		<description>Lykkehjulet</description>
+		<year>198?</year>
+		<publisher>Alan Sorensen</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="1261568">
+				<rom name="rc759_lykkehjulet.img" size="1261568" crc="d36440b1" sha1="70f6c89d8e713afe4e5fe222f959c9a92b8f59bf" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="malevejr">
+		<description>Maalestation/Vejrstation</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="1261568">
+				<rom name="rc759_maalestation_vejrstation.img" size="1261568" crc="16f0554a" sha1="7ba792ec6d3cb536d8a84383b2025db9e4d15fd9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modeldat">
+		<description>Model af datamaskine</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="1261568">
+				<rom name="rc759_model_af_datamaskine.img" size="1261568" crc="3adadbae" sha1="8ea441b2255e7bdc389b102928a4d10561b82b31" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tabeltrn">
+		<description>Tabeltraening</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="1261568">
+				<rom name="rc759_tabeltraening.img" size="1261568" crc="c0bcfde8" sha1="b8fcd7650f82e49e9dab63a55e327beb3ff89958" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- High School, Higher Education and Science -->
+
+	<software name="astrobas">
+		<description>Astrobasen</description>
+		<year>198?</year>
+		<publisher>Henry Norgaard</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="1261568">
+				<rom name="rc759_astrobasen.img" size="1261568" crc="42439cc2" sha1="2634972849a573ef3395ced7fac2e54ffc954d88" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bilsim">
+		<description>Bil-simulation</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="1261568">
+				<rom name="rc759_bil-simulation.img" size="1261568" crc="6dea15a8" sha1="6ab79427a309eab97072a5ca7189ab504c79cd10" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Misc. -->
+
+	<software name="eliza">
+		<description>Eliza</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="1261568">
+				<rom name="rc759_eliza.img" size="1261568" crc="8778d388" sha1="9ffdbd2424c069dc23b363e6c289c9db4c62fad2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="formflop">
+		<description>Formatted Floppy</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="1261568">
+				<rom name="rc759_formatted_floppy.img" size="1261568" crc="35d2168c" sha1="f350340c3e26d52fb13e028584dab05c18603b54" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>
