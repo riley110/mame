@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<softwarelist name="pcd" description="Siemens PC-D floppy disks">
+
+	<!-- copyright is 1983, before the PC-D was released -->
+	<software name="msdos">
+		<description>MS-DOS (v2.11)</description>
+		<year>1984?</year>
+		<publisher>Microsoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="198540">
+				<rom name="msdos211.td0" size="198540" crc="59eb932e" sha1="5149fcebc1a0e9c1b0d878de3eae6cc41bea774f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!--
+These disks are in raw format and currently do not load in MESS;
+they will be properly documented once support for them is added.
+-->
+
+	<software name="bootgame" supported="no">
+		<description>BOOTGAME</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="736256">
+				<rom name="bootgame.img" size="736256" crc="ab60c061" sha1="843acf49c7e6e5b43717314c23e680ca3e78599e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="d310b540" supported="no">
+		<description>D310B540</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="736256">
+				<rom name="d310b540.img" size="736256" crc="d2cc7604" sha1="2930047289422af3f12cf31ba60240deb20ca041" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gemdrw" supported="no">
+		<description>GEMDRW</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="736256">
+				<rom name="gemdrw_1.img" size="736256" crc="40e91ab2" sha1="5919fdaa1d696a6c6548d145ca8e096cbc73cc27" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="736256">
+				<rom name="gemdrw_2.img" size="736256" crc="2edcfe95" sha1="1d19e61eaf6eb771005a8e2f3af5b752ffb429e3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gempaint" supported="no">
+		<description>GEMPAINT</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="736256">
+				<rom name="gempaint.img" size="736256" crc="6a8d4b88" sha1="eefaf2d2f2038bea36d2bcefca886a7a0c665f4b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gemsyst" supported="no">
+		<description>GEMSYST</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="736256">
+				<rom name="gemsyst.img" size="736256" crc="378bd5fd" sha1="54cecf188b57d3f0a4652b9391facd3ec5a756bb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gemsys" supported="no">
+		<description>GEMSYS</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="736256">
+				<rom name="gemsys.img" size="736256" crc="fd22174c" sha1="78459b71c865e409c943e8d78494aecd0bc215b8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gemwrite" supported="no">
+		<description>GEMWRITE</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="736256">
+				<rom name="gemwrite.img" size="736256" crc="6ce80532" sha1="82dce08db41cb6b663b5bc6b50ec5b243ace2ee7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gmapbtim" supported="no">
+		<description>GMAPBTIM</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="736256">
+				<rom name="gmapbtim.img" size="736256" crc="ae81f85c" sha1="9d737e812335cd01b808d834a9a50823eb9df6bd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gwbcomp" supported="no">
+		<description>GWBCOMP</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="736256">
+				<rom name="gwbcomp.img" size="736256" crc="235d0917" sha1="2cbb3475cd7e73572980b766b1b9f4aed0da8a8e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gwbgemds" supported="no">
+		<description>GWBGEMDS</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="736256">
+				<rom name="gwbgemds.img" size="736256" crc="f8b4b1fe" sha1="41e200ea25de6e9e16c0d2b55325af1e8ddd398e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gwbspiel" supported="no">
+		<description>GWBSPIEL</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="736256">
+				<rom name="gwbspiel.img" size="736256" crc="16df16f0" sha1="c11b46e42315ac29f3131cf113e59ff829798566" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hduti" supported="no">
+		<description>HDUTI</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="736256">
+				<rom name="hduti.img" size="736256" crc="a03aecca" sha1="4ef5e105444cf7ac05d18b4d2fd3d44d5046fc64" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nu" supported="no">
+		<description>NU</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="736256">
+				<rom name="nu.img" size="736256" crc="79c9f333" sha1="9493dc7a73af649e653fcba81f6ca4d88afc7b0b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nuspiel" supported="no">
+		<description>NUSPIEL</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="736256">
+				<rom name="nuspiel.img" size="736256" crc="8584943a" sha1="98c6bbc47e105407a851f9441d1231940e12f16b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="win" supported="no">
+		<description>WIN</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="736256">
+				<rom name="win.img" size="736256" crc="24031b14" sha1="ed4143d198ee2ae702f4717658ce5f87b713c5be" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="winkndia" supported="no">
+		<description>WINKNDIA</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="736256">
+				<rom name="winkndia.img" size="736256" crc="5f8de299" sha1="d2a7308b14c7ead0d9439e606a2efa17186bf56e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wordnu" supported="no">
+		<description>WORDNU</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="736256">
+				<rom name="wordnu.img" size="736256" crc="3c28f34e" sha1="49041bee7dd6d0dfbc02fb9f7a0b11cb6a07721e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>

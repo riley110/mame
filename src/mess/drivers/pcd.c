@@ -528,6 +528,9 @@ static MACHINE_CONFIG_START( pcd, pcd_state )
 	MCFG_SCSI_OUTPUT_LATCH_ADD("scsi_data_out", "scsi")
 	MCFG_DEVICE_ADD("scsi_data_in", INPUT_BUFFER, 0)
 	MCFG_SCSIDEV_ADD("scsi:1", "harddisk", OMTI5100, SCSI_ID_0)
+
+	// software lists
+	MCFG_SOFTWARE_LIST_ADD("flop_list", "pcd")
 MACHINE_CONFIG_END
 
 
