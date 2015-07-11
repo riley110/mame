@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<softwarelist name="peoplepc" description="Olympia People PC floppy disks">
+
+	<software name="cpm86">
+		<description>CP/M-86</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="588036">
+				<rom name="olycpm86.td0" size="588036" crc="14be3fb1" sha1="92f86f77fb2095f52bca8cf854be2c17a0a6f5a3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="msdos">
+		<description>MS-DOS (v2.11)</description>
+		<year>198?</year>
+		<publisher>Microsoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="514620">
+				<rom name="olydos.td0" size="514620" crc="85bafb7d" sha1="71f89796b0b29645fb2d4e075149d7186b0c9a67" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- are these actually in CQM format? CopyQM was included in the archive -->
+	<software name="prolog">
+		<description>Prolog</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="445873">
+				<rom name="prolog_1.cqm" size="445873" crc="e7abac5d" sha1="a9973183eeadf01e4c3fb9d1284e130010d93508" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="350146">
+				<rom name="prolog_2.cqm" size="350146" crc="95001ba8" sha1="6eb8224e3d907c6a987251a95fbcf1098ef0a5d7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>

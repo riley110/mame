@@ -50,11 +50,13 @@ they will be properly documented once support for them is added.
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="736256">
 				<rom name="gemdrw_1.img" size="736256" crc="40e91ab2" sha1="5919fdaa1d696a6c6548d145ca8e096cbc73cc27" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="736256">
 				<rom name="gemdrw_2.img" size="736256" crc="2edcfe95" sha1="1d19e61eaf6eb771005a8e2f3af5b752ffb429e3" offset="0" />
 			</dataarea>
