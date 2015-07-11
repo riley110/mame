@@ -625,6 +625,42 @@
 		</part>
 	</software>
 
+	<software name="ecbload">
+		<description>ECB Disk Loader</description>
+		<year>1984</year>
+		<publisher>Art Flexser</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="ecb disk loader (art flexser).dsk" size="161280" crc="1d4895af" sha1="9a0889fc145caa241355cc2a198d3e232621b0c8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ezbase">
+		<description>EZ Base</description>
+		<year>1984</year>
+		<publisher>Spectrum Projects</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="ez base (spectrum projects).dsk" size="161280" crc="9ce334d0" sha1="8f7d181a097938eb7e807136f0e7829ab9307b6b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ezdasm">
+		<description>EZDasm</description>
+		<year>1992</year>
+		<publisher>The Rainbow</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="ezdasm (the rainbow).dsk" size="161280" crc="0ba86757" sha1="ee419585df793542077a5dc1beb8dfd3e195992f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- Hangs after date prompt, wants disk write enabled? -->
 	<software name="colorflx" supported="no">
 		<description>FHL Color FLEX</description>
@@ -2859,6 +2895,42 @@
 
 <!-- Educational -->
 
+	<software name="bagasaur">
+		<description>Bagasaurus</description>
+		<year>1983</year>
+		<publisher>Children's Computer Workshop (CCW)</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="educational (ccw) (bagasaurus).dsk" size="161280" crc="40b98975" sha1="1172d7d263eb1d0246873f25f20c29cb652b34b7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="blackbrd">
+		<description>Blackboard</description>
+		<year>1983</year>
+		<publisher>Children's Computer Workshop (CCW)</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="educational (ccw) (blackboard, the).dsk" size="161280" crc="e90a4b3e" sha1="6d050e602e1ca4f16127b2dc8010d1f7f5ed324f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="colorit">
+		<description>Color It</description>
+		<year>1983</year>
+		<publisher>Children's Computer Workshop (CCW)</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="educational (ccw) (color it).dsk" size="161280" crc="9e0848af" sha1="5bb53a73e518029edae043892e4d4d40ff2439d5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="cmath">
 		<description>Color Math (v1.0.0)</description>
 		<year>1983</year>
@@ -2895,11 +2967,23 @@
 		</part>
 	</software>
 
+	<software name="ernie">
+		<description>Ernie's Magic Shapes</description>
+		<year>1983</year>
+		<publisher>Children's Computer Workshop (CCW)</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="ernie's magic shapes (ccw).dsk" size="161280" crc="9d6dcdbe" sha1="f4ce5a8c4f47f8ec12fb3b5696c0aecbcae0655d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 <!--
     <software name="">
         <description>Donal Duck's Playground</description>
         <year>198?</year>
-        <publisher></publisher>
+        <publisher>&lt;unknown&gt;</publisher>
 
         <part name="flop1" interface="floppy_5_25">
             <dataarea name="flop" size="161280">
@@ -2913,6 +2997,54 @@
         </part>
     </software>
 -->
+
+	<software name="pbpanic">
+		<description>Peanut Butter Panic</description>
+		<year>1983</year>
+		<publisher>Children's Computer Workshop (CCW)</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="educational (ccw) (peanut butter panic).dsk" size="161280" crc="927e47ca" sha1="3db4367da0000a17a75bcc49d04467a0a915e5b9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pictplac">
+		<description>Picture Place</description>
+		<year>1983</year>
+		<publisher>Children's Computer Workshop (CCW)</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="educational (ccw) (picture place).dsk" size="161280" crc="a7d936b1" sha1="0b2bc225e48fb8a6224d5eaebb806f0b019d5a28" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rollword">
+		<description>Roll-A-Word</description>
+		<year>1983</year>
+		<publisher>Children's Computer Workshop (CCW)</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="educational (ccw) (roll-a-word).dsk" size="161280" crc="06f7485e" sha1="d72caa25038147d4c6ee5616b632636e793f9df8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="timebnd">
+		<description>Timebound</description>
+		<year>1983</year>
+		<publisher>Children's Computer Workshop (CCW)</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="educational (ccw) (timebound).dsk" size="161280" crc="1dcac810" sha1="ef195470b0bdf531dabf08f85748c8e24185663c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
 
 <!-- Games -->
 
@@ -7229,6 +7361,211 @@
 		</part>
 	</software>
 
+	<software name="ewkarate">
+		<description>East-World Karate</description>
+		<year>198?</year>
+		<publisher>The Saint John Gallery</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="east-world karate (the saint john gallery).dsk" size="161280" crc="94e29f4d" sha1="ea49942e4fad404db1db9ee52d457af94a7a9ae0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- actual title is unknown -->
+	<software name="ewkaratef" cloneof="ewkarate">
+		<description>East-World Karate? (Fra)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="east-world karate (the saint john gallery) (french translation).dsk" size="161280" crc="12c62136" sha1="90eaf697b3300c4356137e521ebfa16ff89261e1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="eggs">
+		<description>Eggs</description>
+		<year>1984</year>
+		<publisher>T&amp;D Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="eggs (t&amp;d software).dsk" size="161280" crc="7aea537d" sha1="b049762e2e5a4367447253c620b7b5ce4521e549" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bandito">
+		<description>El Bandito</description>
+		<year>1983</year>
+		<publisher>Mark Data Products</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="el bandito (mark data products).dsk" size="161280" crc="75f73318" sha1="195282e8e87d40abccd4078cf41afbd5891bac9e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="banditoa" cloneof="bandito">
+		<description>El Bandito (Alt)</description>
+		<year>1983</year>
+		<publisher>Mark Data Products</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="el bandito (mark data products).dsk" size="161280" crc="1c70f48d" sha1="175072d3d5add76275b5938fe1d6c4ca770eb7bd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="diablero">
+		<description>El Diablero</description>
+		<year>1982</year>
+		<publisher>Computerware</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="el diablero (computerware).dsk" size="161280" crc="3a5d758a" sha1="55b63eadad8b8f786938bb60db666e4c20fae8e7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="electron">
+		<description>Electron (v1.0)</description>
+		<year>1983</year>
+		<publisher>Tom Mix Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="electron (tom mix software).dsk" size="161280" crc="55bcc315" sha1="780398f9917961f76a8acd99a544ee56b4696df6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="electrona" cloneof="electron">
+		<description>Electron (v1.0, Alt)</description>
+		<year>1983</year>
+		<publisher>Tom Mix Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="electron (tom mix) (coco1,2&amp;3).dsk" size="161280" crc="cd5c7427" sha1="d2edb995e89dd6a08d9573cb8fda5b4372c3d8f6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="eliminat">
+		<description>Eliminator</description>
+		<year>1983</year>
+		<publisher>Adventure International</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="eliminator (adventure international).dsk" size="161280" crc="85d3c6e5" sha1="d37efc58f233bd7b115e8675a5f81d1123af3d85" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="eliza">
+		<description>Eliza</description>
+		<year>198?</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="eliza (tandy).dsk" size="161280" crc="0ed6f3ea" sha1="ecc9cd6fba9b84df25a04aa770208dd2b9c63511" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="eno">
+		<description>Eno</description>
+		<year>1982</year>
+		<publisher>Jarb Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="eno (jarb software).dsk" size="161280" crc="149be734" sha1="66ce75c069a17b4c745046ae194504d1e9986435" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="erland">
+		<description>Erland</description>
+		<year>198?</year>
+		<publisher>Prickly-Pear Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="erland (prickly-pear software).dsk" size="161280" crc="751213eb" sha1="66794cdbb9e4823c6724049dd667d3915f709865" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="esca2012">
+		<description>Escape 2012 (Cracked by Mr. X)</description>
+		<year>1985</year>
+		<publisher>Computerware</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="escape 2012 (computerware).dsk" size="161280" crc="33482b53" sha1="64ccbeabbb2e6de81639cf776f80426b9eec2721" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="esca2012a" cloneof="esca2012">
+		<description>Escape 2012 (Cracked by Mr. X, Alt)</description>
+		<year>1985</year>
+		<publisher>Computerware</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="escape 2k (computer ware).dsk" size="161280" crc="db9d95c2" sha1="cd4736c22d22404bc8382e76056e0a0d89d582a0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="esca2012b" cloneof="esca2012">
+		<description>Escape 2012 (Cracked by Mr. X, Alt 2)</description>
+		<year>1985</year>
+		<publisher>Computerware</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="escape (computer ware).dsk" size="161280" crc="61c7004f" sha1="b1f4fe0cf5d63df8e6298628798931cd17aa6180" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="escalcat">
+		<description>Escape From Alcatraz (Disk Version)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="escape from alcatraz (text adventures).dsk" size="161280" crc="7fd2ab8d" sha1="1a7c54de2851bd3eb3989de11c04a7ac28d1c60d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="markessa">
+		<description>Escape From Markessa</description>
+		<year>198?</year>
+		<publisher>D&amp;M Fighting Adventures</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="escape from markessa (d&amp;m fighting adventures).dsk" size="161280" crc="cd6b1335" sha1="1bd696b6a979850500ba9ae3b85b0d1cfad25c11" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="euchre">
 		<description>Euchre (v2.1)</description>
 		<year>1983</year>
@@ -7237,6 +7574,102 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="basic euchre (chroma-group software).dsk" size="161280" crc="904f62f6" sha1="c6b9e23c33d7f824a77ea819ed74cbbcdf738b1b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="everest">
+		<description>Everest</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="everest (basic sports games).dsk" size="161280" crc="1793fbad" sha1="b1ecfcf0203d2f37d32997cf5296a5fb45210e7d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="excalibr">
+		<description>Excalibur (Bra)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="excalibur (portuguese).dsk" size="161280" crc="d9e1c3ae" sha1="da63342d3fe6a32d34dfc05f0ad7acc04fe03256" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="eyespy">
+		<description>Eye-Spy</description>
+		<year>19??</year>
+		<publisher>David Crandall</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="eye spy (david crandall).dsk" size="161280" crc="9f143ea2" sha1="80911f084d0562223db461f6bc1e2aeb14dd5e75" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="eyespya" cloneof="eyespy">
+		<description>Eye-Spy (Alt)</description>
+		<year>19??</year>
+		<publisher>David Crandall</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="eye-spy (david crandall).dsk" size="161280" crc="dc41b0eb" sha1="b43fc747848812d78cb617d6928b30af91056c1d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="eyespyb" cloneof="eyespy">
+		<description>Eye-Spy (Alt 2)</description>
+		<year>19??</year>
+		<publisher>David Crandall</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="eyespy (david crandall).dsk" size="161280" crc="4cb55d18" sha1="ddc2a240c1fd5d35e379255986b41d8eaa583aa8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="eyespyc" cloneof="eyespy">
+		<description>Eye-Spy (Alt 3)</description>
+		<year>19??</year>
+		<publisher>David Crandall</publisher>
+
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="eyespy (color) (david crandall).dsk" size="161280" crc="7d6e2c1e" sha1="061ac4207034843c6169795ebf5502dd0e15a2fe" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ezski">
+		<description>EZ Ski</description>
+		<year>198?</year>
+		<publisher>Chromasette</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="ez ski (chromassette).dsk" size="161280" crc="1999c353" sha1="ddcab86094b47b6631f7c6727cd7936605d0b8e0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ezskia" cloneof="ezski">
+		<description>EZ Ski (Alt)</description>
+		<year>198?</year>
+		<publisher>Chromasette</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="ez-ski (chromasette magazines).dsk" size="161280" crc="112bca6f" sha1="cee492cee3d8d6856ba5243b41bf66272d99de07" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -7285,6 +7718,18 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="chickens (french translation).dsk" size="161280" crc="07534493" sha1="3f2372d97990f3d85714736e72da3e09b452972f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="echecs">
+		<description>Programme d'Echecs CSS (Fra)</description>
+		<year>198?</year>
+		<publisher>CSS</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="echecs (css) (french).dsk" size="161280" crc="38c90739" sha1="3e65cb3261b52c5e8bc4fbf26546b13e128d6199" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -7479,6 +7924,42 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="dungeon-master (public domain) (text based adventures).dsk" size="161280" crc="2bada85f" sha1="0d4152ab88d7ffc6f6934c59ffb5a2f501024cf7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unkc12">
+		<description>Unknown Compilation 12</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="edt+, sptnimge, lc, ram, rgp, and others (decb) (051au_01).dsk" size="161280" crc="f0f5918d" sha1="22e405fb35b770da8ed3a3e445ebb960e6db8031" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unkc13">
+		<description>Unknown Compilation 13</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="ez-base database, voxchess (decb) (052aa_01).dsk" size="161280" crc="ace3cbea" sha1="f3b748a1c0055003abdf30a021ae2f16fcb69ad0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unkc14">
+		<description>Unknown Compilation 14</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="ernie (seasame street).dsk" size="161280" crc="89419c6b" sha1="c983b131a48e24551b5947df2a4d0d03c04debda" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -7957,6 +8438,19 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="dump2000 assembler source (decb) (200ad_02).dsk" size="161280" crc="1a61426b" sha1="5b4ec9e6c0bf5c740222080a8ab049c583f53b74" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="erina">
+		<description>Erina</description>
+		<year>198?</year>
+		<publisher>Clearbrook Software Group</publisher>
+		<info name="usage" value="Requires OS-9"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="erina (os-9) (clearbrook software group).dsk" size="161280" crc="06c6f8aa" sha1="79fb99e82f8ae605ae596cbf21e311f3dd9c865d" offset="0" />
 			</dataarea>
 		</part>
 	</software>

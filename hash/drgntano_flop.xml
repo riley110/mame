@@ -345,6 +345,32 @@ Most of these should also work on CoCo machines.
 	</software>
 
 	<!-- Works with CoCo -->
+	<software name="empire">
+		<description>Empire</description>
+		<year>198?</year>
+		<publisher>Shards Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="empire (dragon software) (shards software).dsk" size="161280" crc="bacee954" sha1="6e07905a046f05d90e92d8f54e0194d7602de66c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Works with CoCo -->
+	<software name="escape">
+		<description>Microdeal Escape (v1.0)</description>
+		<year>1982</year>
+		<publisher>Microdeal</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="escape (microdeal cornwall).dsk" size="161280" crc="b42eb36e" sha1="87839c199454e43bca54736a9650ae7153f6c7d7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Works with CoCo -->
 	<software name="rotabb">
 		<description>ROTABB</description>
 		<year>198?</year>
