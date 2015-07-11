@@ -2,6 +2,8 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="peoplepc" description="Olympia People PC floppy disks">
 
+<!-- from "Olympia People Disks.zip" posted on the Bannister forums in January 2012 -->
+
 	<software name="cpm86">
 		<description>CP/M-86</description>
 		<year>198?</year>
@@ -26,6 +28,8 @@
 		</part>
 	</software>
 
+<!-- from "Olympia People Prolog.zip" posted on the Bannister forums in January 2012 -->
+
 	<software name="prologue">
 		<description>Prologue (Ger, v2.1b, BIOS version 2.1.5.Mu)</description>
 		<year>1984?</year>
@@ -41,6 +45,236 @@
 			<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="350146">
 				<rom name="prolog_2.cqm" size="350146" crc="95001ba8" sha1="6eb8224e3d907c6a987251a95fbcf1098ef0a5d7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- from "Olympia People PC.rar" posted on the Bannister forums in July 2015 -->
+
+	<software name="people21">
+		<description>PEOPLE21</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="428247">
+				<rom name="people21.td0" size="428247" crc="1215dab3" sha1="eeff632349ed3d6d1dccd3896e0f36bce4fef9af" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpm86a">
+		<description>CPM86</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="588026">
+				<rom name="pp_cpm86.td0" size="588026" crc="65b30da0" sha1="730a3b15c65812c14718f2d2c3ecfc8824b6b162" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpma">
+		<description>CPM_A</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="440802">
+				<rom name="pp_cpm_a.td0" size="440802" crc="7a98ac1a" sha1="cc30fd0a18cc5dd7b3e54c63a102d717bc17dfc5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpmo">
+		<description>CPM_O</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="441722">
+				<rom name="pp_cpm_o.td0" size="441722" crc="f4ae315f" sha1="b9b466c5066d40a3de320ce6a98b7ec61efb45ad" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hdins">
+		<description>HDINS</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="338344">
+				<rom name="pp_hdins.td0" size="338344" crc="20ef07f9" sha1="d3fc9a216fcb5a68639741b0efd889f9d30f2e3c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hdpr1">
+		<description>HDPR1</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="416642">
+				<rom name="pp_hdpr1.td0" size="416642" crc="9a3c7c2a" sha1="70073e1eecfd77f2468e8d4f79850c6843801132" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hdpr2">
+		<description>HDPR2</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="178844">
+				<rom name="pp_hdpr2.td0" size="178844" crc="1b3bdda3" sha1="bd4ce87fa6192ce9cacacb77c2826b25a45ddbcf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hdpr3">
+		<description>HDPR3</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="627530">
+				<rom name="pp_hdpr3.td0" size="627530" crc="3cf7af90" sha1="01dbb5fa7913710e0668e789eb091ec7f5689331" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hdpr4">
+		<description>HDPR4</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="603598">
+				<rom name="pp_hdpr4.td0" size="603598" crc="687aaf43" sha1="6770d7a676d364b17e3ebfc833ebfcee4c0d1caf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hdpr5">
+		<description>HDPR5</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="520274">
+				<rom name="pp_hdpr5.td0" size="520274" crc="3bbfa49c" sha1="68b420d6e2bf0d19388d6473755fb6f2bc8e63da" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hdpr6">
+		<description>HDPR6</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="521742">
+				<rom name="pp_hdpr6.td0" size="521742" crc="b46b581e" sha1="673a12ee96e08b3590b1ab630026d1c606b5f26e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hdpr7">
+		<description>HDPR7</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="516336">
+				<rom name="pp_hdpr7.td0" size="516336" crc="42a61171" sha1="ad05aaee7e04b29834369573f19dfc2f581a0a61" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hdpr8">
+		<description>HDPR8</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="547700">
+				<rom name="pp_hdpr8.td0" size="547700" crc="8b36c51e" sha1="2aa191d669460126c23cbf5003034c3a2ed82b08" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kopie">
+		<description>KOPIE</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="428928">
+				<rom name="pp_kopie.td0" size="428928" crc="0d5e5838" sha1="6caeffb51cf8bc912bbbf35f4a335ec5c73968a2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="msdosa">
+		<description>MSDOS</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="566642">
+				<rom name="pp_msdos.td0" size="566642" crc="60b24e6f" sha1="0ed23d6e0b7e6df93d9cbe15a8975eaf0c36813d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="prol">
+		<description>PROL</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="322412">
+				<rom name="pp_prol.td0" size="322412" crc="cb25253a" sha1="fa17c19c5d6616b364a9c0729695d74f129b68ff" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="proa">
+		<description>PRO_A</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="474066">
+				<rom name="pp_pro_a.td0" size="474066" crc="e66358e3" sha1="57f4cab0607c9f4bafaa618d88ad80fdbef9f26d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="proo">
+		<description>PRO_O</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="386226">
+				<rom name="pp_pro_o.td0" size="386226" crc="e33548c2" sha1="8850b7d6d80307f26e1b2c5f9e8001211d10dd70" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thal">
+		<description>THAL</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="474066">
+				<rom name="pp_thal.td0" size="474066" crc="10b96984" sha1="e31fd67cab4dc142649e75193bdc1538483a83af" offset="0" />
 			</dataarea>
 		</part>
 	</software>
