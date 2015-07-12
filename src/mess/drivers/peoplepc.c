@@ -287,6 +287,8 @@ static MACHINE_CONFIG_START( olypeopl, peoplepc_state)
 	MCFG_DEVICE_CARD_DEVICE_INPUT_DEFAULTS("keyboard", keyboard)
 
 	MCFG_DEVICE_ADD("i8251_1", I8251, 0)
+
+	MCFG_SOFTWARE_LIST_ADD("flop_list", "peoplepc")
 MACHINE_CONFIG_END
 
 ROM_START( olypeopl )
