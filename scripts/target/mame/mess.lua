@@ -775,6 +775,7 @@ function linkProjects_mame_mess(_target, _subtarget)
 		"novag",
 		"ns",
 		"olivetti",
+		"olympia",
 		"omnibyte",
 		"orion",
 		"osborne",
@@ -837,6 +838,7 @@ function linkProjects_mame_mess(_target, _subtarget)
 		"toshiba",
 		"trainer",
 		"trs",
+		"ultimachine",
 		"ultratec",
 		"unisys",
 		"veb",
@@ -1903,6 +1905,11 @@ files {
 	MAME_DIR .. "src/mess/machine/m24_z8000.c"
 }
 
+createMESSProjects(_target, _subtarget, "olympia")
+files {          
+	MAME_DIR .. "src/mess/drivers/peoplepc.c"
+}
+
 createMESSProjects(_target, _subtarget, "ns")
 files {         
 	MAME_DIR .. "src/mess/drivers/hh_cop400.c", 
@@ -2442,6 +2449,11 @@ files {
 	MAME_DIR .. "src/mess/machine/trs80m2kb.c", 
 	MAME_DIR .. "src/mess/drivers/tandy2k.c",
 	MAME_DIR .. "src/mess/machine/tandy2kb.c", 
+}
+
+createMESSProjects(_target, _subtarget, "ultimachine")
+files {
+	MAME_DIR .. "src/mess/drivers/rambo.c",
 }
 
 createMESSProjects(_target, _subtarget, "ultratec")

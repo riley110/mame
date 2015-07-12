@@ -14,14 +14,48 @@
 
 // I/O ports setup
 
-// 4-bit K input port
+// 4-bit K input port (pull-down)
 #define MCFG_SM510_READ_K_CB(_devcb) \
 	sm510_base_device::set_read_k_callback(*device, DEVCB_##_devcb);
+// when in halt state, any K input going High can wake up the CPU,
+// driver is required to use execute_set_input(SM510_INPUT_LINE_K, state)
+#define SM510_INPUT_LINE_K 0
+
+// 1-bit BA input pin (pull-up)
+#define MCFG_SM510_READ_BA_CB(_devcb) \
+	sm510_base_device::set_read_ba_callback(*device, DEVCB_##_devcb);
+
+// 1-bit B(beta) input pin (pull-up)
+#define MCFG_SM510_READ_B_CB(_devcb) \
+	sm510_base_device::set_read_b_callback(*device, DEVCB_##_devcb);
 
 // 8-bit S strobe output port
 #define MCFG_SM510_WRITE_S_CB(_devcb) \
 	sm510_base_device::set_write_s_callback(*device, DEVCB_##_devcb);
 
+// 2-bit R melody output port
+#define MCFG_SM510_WRITE_R_CB(_devcb) \
+	sm510_base_device::set_write_r_callback(*device, DEVCB_##_devcb);
+
+// LCD segment outputs: H1-4 as offset(low), a/b/c 1-16 as data d0-d15
+#define MCFG_SM510_WRITE_SEGA_CB(_devcb) \
+	sm510_base_device::set_write_sega_callback(*device, DEVCB_##_devcb);
+#define MCFG_SM510_WRITE_SEGB_CB(_devcb) \
+	sm510_base_device::set_write_segb_callback(*device, DEVCB_##_devcb);
+#define MCFG_SM510_WRITE_SEGC_CB(_devcb) \
+	sm510_base_device::set_write_segc_callback(*device, DEVCB_##_devcb);
+
+// LCD bs output: same as above, but only data d0 used
+#define MCFG_SM510_WRITE_SEGBS_CB(_devcb) \
+	sm510_base_device::set_write_segbs_callback(*device, DEVCB_##_devcb);
+
+enum
+{
+	SM510_PORT_SEGA = 0x00,
+	SM510_PORT_SEGB = 0x04,
+	SM510_PORT_SEGBS = 0x08,
+	SM510_PORT_SEGC = 0x0c
+};
 
 
 // pinout reference
@@ -41,13 +75,25 @@ public:
 		, m_prgwidth(prgwidth)
 		, m_datawidth(datawidth)
 		, m_stack_levels(stack_levels)
+		, m_lcd_ram_a(*this, "lcd_ram_a"), m_lcd_ram_b(*this, "lcd_ram_b"), m_lcd_ram_c(*this, "lcd_ram_c")
+		, m_write_sega(*this), m_write_segb(*this), m_write_segc(*this), m_write_segbs(*this)
 		, m_read_k(*this)
+		, m_read_ba(*this), m_read_b(*this)
 		, m_write_s(*this)
+		, m_write_r(*this)
 	{ }
 
 	// static configuration helpers
 	template<class _Object> static devcb_base &set_read_k_callback(device_t &device, _Object object) { return downcast<sm510_base_device &>(device).m_read_k.set_callback(object); }
+	template<class _Object> static devcb_base &set_read_ba_callback(device_t &device, _Object object) { return downcast<sm510_base_device &>(device).m_read_ba.set_callback(object); }
+	template<class _Object> static devcb_base &set_read_b_callback(device_t &device, _Object object) { return downcast<sm510_base_device &>(device).m_read_b.set_callback(object); }
 	template<class _Object> static devcb_base &set_write_s_callback(device_t &device, _Object object) { return downcast<sm510_base_device &>(device).m_write_s.set_callback(object); }
+	template<class _Object> static devcb_base &set_write_r_callback(device_t &device, _Object object) { return downcast<sm510_base_device &>(device).m_write_r.set_callback(object); }
+
+	template<class _Object> static devcb_base &set_write_sega_callback(device_t &device, _Object object) { return downcast<sm510_base_device &>(device).m_write_sega.set_callback(object); }
+	template<class _Object> static devcb_base &set_write_segb_callback(device_t &device, _Object object) { return downcast<sm510_base_device &>(device).m_write_segb.set_callback(object); }
+	template<class _Object> static devcb_base &set_write_segc_callback(device_t &device, _Object object) { return downcast<sm510_base_device &>(device).m_write_segc.set_callback(object); }
+	template<class _Object> static devcb_base &set_write_segbs_callback(device_t &device, _Object object) { return downcast<sm510_base_device &>(device).m_write_segbs.set_callback(object); }
 
 protected:
 	// device-level overrides
@@ -60,7 +106,7 @@ protected:
 	virtual UINT32 execute_min_cycles() const { return 1; }
 	virtual UINT32 execute_max_cycles() const { return 2; }
 	virtual UINT32 execute_input_lines() const { return 1; }
-	//virtual void execute_set_input(int line, int state);
+	virtual void execute_set_input(int line, int state);
 	virtual void execute_run();
 	virtual void execute_one() { } // -> child class
 
@@ -81,10 +127,8 @@ protected:
 	int m_prgmask;
 	int m_datamask;
 
-	UINT16 m_pc;
-	UINT16 m_prev_pc;
-	UINT8 m_op;
-	UINT8 m_prev_op;
+	UINT16 m_pc, m_prev_pc;
+	UINT8 m_op, m_prev_op;
 	UINT8 m_param;
 	int m_stack_levels;
 	UINT16 m_stack[2];
@@ -96,10 +140,38 @@ protected:
 	UINT8 m_c;
 	bool m_skip;
 	UINT8 m_w;
+	bool m_k_active;
+	bool m_halt;
 
-	// i/o handlers
-	devcb_read16 m_read_k;
+	// lcd driver
+	optional_shared_ptr<UINT8> m_lcd_ram_a, m_lcd_ram_b, m_lcd_ram_c;
+	devcb_write16 m_write_sega, m_write_segb, m_write_segc, m_write_segbs;
+	emu_timer *m_lcd_timer;
+	UINT8 m_l;
+	UINT8 m_y;
+	bool m_bp;
+	bool m_bc;
+
+	UINT16 get_lcd_row(int column, UINT8* ram);
+	TIMER_CALLBACK_MEMBER(lcd_timer_cb);
+	virtual void init_lcd_driver();
+
+	// clock divider
+	emu_timer *m_div_timer;
+	UINT16 m_div;
+	bool m_1s;
+
+	TIMER_CALLBACK_MEMBER(div_timer_cb);
+	bool wake_me_up();
+	virtual void reset_divider();
+	void init_divider();
+
+	// other i/o handlers
+	devcb_read8 m_read_k;
+	devcb_read_line m_read_ba;
+	devcb_read_line m_read_b;
 	devcb_write8 m_write_s;
+	devcb_write8 m_write_r;
 
 	// misc internal helpers
 	void increment_pc();
