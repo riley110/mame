@@ -711,12 +711,14 @@
 				<rom name="apple-3-wap-gam-06a.dsk" size="143360" crc="02bf42b0" sha1="9e44143331b2593d00a94b955eb8b400dde42a74" offset="0" />
 			</dataarea>
 		</part>
+		<!-- duplicate of side A; was it actually distributed this way?
 		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Side B"/>
 			<dataarea name="flop" size="143360">
 				<rom name="apple-3-wap-gam-06b.dsk" size="143360" crc="02bf42b0" sha1="9e44143331b2593d00a94b955eb8b400dde42a74" offset="0x0000" />
 			</dataarea>
 		</part>
+		-->
 	</software>
 
 <!-- Washington Apple Pi - Graphics -->
