@@ -7172,7 +7172,7 @@
 
 	<!--
 	PDS NAME: Pascal 1.2
-	Disk ID: APPLE-3-WAP-PCL-01              
+	Disk ID: APPLE-3-WAP-PCL-01
 	BOOTABLE?: Nonbootable
 
 	DESCRIPTION: Pascal 1.2 Interp and associated files.
@@ -7208,7 +7208,7 @@
 
 	<!--
 	PDS NAME: Pascal 2.0 Compiler/Toolkit #1
-	Disk ID: APPLE-3-WAP-PCL-02                
+	Disk ID: APPLE-3-WAP-PCL-02
 	BOOTABLE?: Nonbootable
 
 	DESCRIPTION: Pascal 2.0 Compiler and first Toolkit disk. Requires APPLE-3-WAP-PCL-01 and
@@ -7245,11 +7245,11 @@
 
 	<!--
 	PDS NAME: Pascal Toolkit #2/#3
-	Disk ID: APPLE-3-WAP-PCL-03              
+	Disk ID: APPLE-3-WAP-PCL-03
 	BOOTABLE?: Nonbootable
 
 	DESCRIPTION: Pascal Toolkit disks 2 and 3.
-	Requires APPLE-3-WAP-PCL-01 and knowledge of Pascal to operate.  The /// SIG has many 
+	Requires APPLE-3-WAP-PCL-01 and knowledge of Pascal to operate.  The /// SIG has many
 	copies of the Pascal manuals. Call for your free set.
 
 	On Side One:
@@ -7279,7 +7279,7 @@
 
 	<!--
 	PDS NAME: Pascal Pronto Debugger/SANE Disk #1
-	Disk ID: APPLE-3-WAP-PCL-04               
+	Disk ID: APPLE-3-WAP-PCL-04
 	BOOTABLE?: Nonbootable
 
 	DESCRIPTION: Pascal Pronto Debugger and the first disk containing Apple's
@@ -7315,7 +7315,7 @@
 
 	<!--
 	PDS NAME: Pascal SANE Disk #2/#3
-	Disk ID: APPLE-3-WAP-PCL-05                
+	Disk ID: APPLE-3-WAP-PCL-05
 	BOOTABLE?: Nonbootable
 
 	DESCRIPTION: The second and third SANE numerics programs.
@@ -7344,7 +7344,7 @@
 
 	<!--
 	PDS NAME: Pascal SOS I/O & ExerSOS
-	Disk ID: APPLE-3-WAP-PCL-06               
+	Disk ID: APPLE-3-WAP-PCL-06
 	BOOTABLE?: Bootable
 
 	DESCRIPTION: Learn about SOS, the Apple ///'s operating system and ways
@@ -7383,7 +7383,7 @@
 
 	<!--
 	PDS NAME: Pascal Utilities: Putdemo & Putlib Demos
-	Disk ID: APPLE-3-WAP-PCL-07                
+	Disk ID: APPLE-3-WAP-PCL-07
 	BOOTABLE?: Nonbootable
 
 	DESCRIPTION:
@@ -7391,13 +7391,13 @@
 	The Apple /// Pascal Utility Library is meant to provide the knowledgeable A3
 	Pascal programmer with the tools needed to write sophisticated programs for
 
-	any application. The aim is to free the programmer from tedious coding of 
+	any application. The aim is to free the programmer from tedious coding of
 	details so that he can concentrate on program function.
 
-	To this end, the Pascal Utility Library id divided into three main groups of 
+	To this end, the Pascal Utility Library id divided into three main groups of
 	modules:
 
-	- The General Utility modules relieve the burden of writing the 
+	- The General Utility modules relieve the burden of writing the
 	general-purpose routines needed for user-program interaction, error-checking,
 	and data conversion.
 
@@ -7406,18 +7406,18 @@
 
 	- The B-tree modules combine features of sequential and binary tree access to
 	provide a means of sorting and searching through data in memory.  The
-	underlying data structure is flexible enough to accomodate any key length 
+	underlying data structure is flexible enough to accomodate any key length
 	from 1 to 16 bytes.
 
-	The TESTUNIT program provided with this package will permit you to observe 
-	the effect of calling the modules with specific parameter values. In an 
-	application program, it remains the programmer's responsibility to call the 
-	modules properly as defined in the documentation. This will encourage 
+	The TESTUNIT program provided with this package will permit you to observe
+	the effect of calling the modules with specific parameter values. In an
+	application program, it remains the programmer's responsibility to call the
+	modules properly as defined in the documentation. This will encourage
 	well-organized, readable code.
 
 	Requires knowledge of Pascal to use.  The WAP /// SIG has many copies of the
 	Pascal manuals. Call the office for details. The manual for this disk is
-	available for the cost of copying. Contact Dave Ottalini for details at 
+	available for the cost of copying. Contact Dave Ottalini for details at
 	301-681-6136.
 
 
@@ -7451,7 +7451,7 @@
 
 	<!--
 	PDS NAME: Wade's Pascal Patch/PCode Disassembler
-	Disk ID: APPLE-3-WAP-PCL-08              
+	Disk ID: APPLE-3-WAP-PCL-08
 	BOOTABLE? Nonbootable
 
 	DESCRIPTION: Side One has Dan Wade's Pascal Patch program:
@@ -7511,17 +7511,17 @@
 
 
 	This disk contains several programs for drawing some of the familiar icons of
-	chaos theory: MANDELBROT graphs, FEIGENBAUM diagrams and LORENZ attractors. 
+	chaos theory: MANDELBROT graphs, FEIGENBAUM diagrams and LORENZ attractors.
 	The material draws very heavily on the book:
 
-		 Dynamical Systems and Fractals - Computer Experiments in Pascal.
+	     Dynamical Systems and Fractals - Computer Experiments in Pascal.
 
-					  by
+	                  by
 
-		 Karl-Heinz Becker and Michael Doerfler
-		 Cambridge University Press (1989)
+	     Karl-Heinz Becker and Michael Doerfler
+	     Cambridge University Press (1989)
 
-		 ISBN 0 521 36910 X (paperback).
+	     ISBN 0 521 36910 X (paperback).
 
 	Needless to say, alas, Apple /// Pascal is NOT one of the dialects treated by
 	the authors (IBM, Macintosh and Amiga are the favoured machines), but some
@@ -7561,13 +7561,13 @@
 	the differential equations used by Lorenz in his discussion of the
 	instability of simple systems:
 
-		 x' = A*(y-x)
-		 y' = B*x-y-x*z
-		 z' = x*y-C*z
+	     x' = A*(y-x)
+	     y' = B*x-y-x*z
+	     z' = x*y-C*z
 
 	then proceeds to plot the movement of a point subject to these constraints as
 	it succeeds or fails in finding a stable locus; most often its track
-	oscillates between two separate loops in the well-known 'butterfly' figure. 
+	oscillates between two separate loops in the well-known 'butterfly' figure.
 	The plot is interrupted by any keystroke, upon which the program saves its
 	diagram under the name LORENZ.PIC in the active directory, and returns to the
 	command level after 'RETURN' is pressed.
@@ -7610,7 +7610,7 @@
 	BOOTABLE?: Bootable
 
 	This disk contains a wonderful Pascal version of the venable Basic Menu.Maker
-	program found on most WAP /// SIG PD disks.  A former /// SIGer - 
+	program found on most WAP /// SIG PD disks.  A former /// SIGer -
 	Tom Bartkiewitz - wrote this program from scratch.  The program can be
 	loaded onto a hard disk and used like any other. It can run any
 	Pascal program, read text and 3 EZP/AW files, change fonts, etc.
@@ -7652,14 +7652,14 @@
 	you'll find out how much RAM is available in your Apple ///; how much is in
 	use; how much memory SOS is taking up; how much memory the Interpreter is
 	taking up; and finally, how much is available to the user.
-			 
+
 	Open Apple and "V" displays and allows the user to select the
 	available "block" devices (like .D1; .D2; .Profile, etc.). By moving the
 	cursor and highlighting the desired device and pressing <RETURN>, you can
 	change the prefix and Menu.Maker will give you the menu on that device
 	(based, of course, on what drivers you loaded at bootup)! You can then read
 	files or run the programs from that new prefix!
-			
+
 	The Pascal Menu.Maker can load and display any font you desire
 	quickly and easily (it really "glides" from one to another). This disk
 	includes some fonts for you to test out.  The print program was added by ///
@@ -7668,7 +7668,7 @@
 	way, when these programs end, you will be returned to the Pascal command
 	line.  To rerun Menu.Maker, type "X" and then ".D2/Menu.Maker.Code" and
 	.
-			
+
 	On Side 1 of this disk, along with the boot files, you will find
 	two Sources catalogs.  These contain a number of text, ascii and a 3EZP word
 	processing file with information pertaining to the disk, and other useful
@@ -7676,7 +7676,7 @@
 	everything on the disk in much greater detail that I can do here.  Everything
 	is explained in full detail, and anyone who enjoys Pascal prgramming will
 	have no trouble following what Tom has done.
-			
+
 	By the way, this program is easily installed for use under either
 	Catalyst or Selector.  You could also use it as a "turn-key" disk for
 	specific Pascal programs you might wish to run or files you wanted to read.
@@ -7687,7 +7687,7 @@
 	 Side One: Boot Disk and source code.
 
 	 Side Two: Program Disk
-			 : Read.Me.First Information File
+	         : Read.Me.First Information File
 	-->
 	<software name="wappcl10">
 		<description>WAP /// SIG Pascal Disk 10 - Pascal Menu.Maker</description>
@@ -7710,7 +7710,7 @@
 
 	<!--
 	PDS NAME: Modified Pascal Menu Maker
-	Disk ID: APPLE-3-WAP-PCL-11               
+	Disk ID: APPLE-3-WAP-PCL-11
 	BOOTABLE?: Bootable
 
 	DESCRIPTION: C.M. Davidson's modified version of the Pascal Menu.Maker
@@ -7719,9 +7719,9 @@
 	required.
 
 	Side One: This side is bootable into our Basic Menu.Maker program
-		   to have access to the Read.Me file. Also some FOTO files.
+	       to have access to the Read.Me file. Also some FOTO files.
 	Side Two: Non-booting files associated with the modified Pascal
-		   Menu.Maker program, TYPESET.CODE and two Mandelbrot pgms.
+	       Menu.Maker program, TYPESET.CODE and two Mandelbrot pgms.
 	-->
 	<software name="wappcl11">
 		<description>WAP /// SIG Pascal Disk 11 - Modified Pascal Menu Maker</description>
@@ -7744,14 +7744,14 @@
 
 	<!--
 	PDS NAME: Macstuff
-	Disk ID: APPLE-3-WAP-PCL-12               
+	Disk ID: APPLE-3-WAP-PCL-12
 	BOOTABLE?: Bootable
 
 	DESCRIPTION:
 
-	Disk APPLE-3-WAP-PCL-12 contains the code file and information about Macstuff, a 
+	Disk APPLE-3-WAP-PCL-12 contains the code file and information about Macstuff, a
 	one-time commercial program that tried to give the Apple /// a graphical
-	interface like the Macs. Side One is self-booting and includes the files 
+	interface like the Macs. Side One is self-booting and includes the files
 	listed below.  Side two includes a demo Skeleton.Code file and the actual
 	Macstuff.Code file.  Extensive Pascal programming experience is required
 	to use this program - No manual on disk is, as of yet, available.
@@ -7791,7 +7791,7 @@
 
 	<!--
 	PDS NAME: David Craig Disk #1
-	Disk ID: APPLE-3-WAP-PCL-13               
+	Disk ID: APPLE-3-WAP-PCL-13
 	BOOTABLE?: Bootable
 
 	DESCRIPTION: Disks APPLE-3-WAP-PCL-13, 14 and 15 are some of the nuggets we got from a
@@ -7841,7 +7841,7 @@
 
 	<!--
 	PDS NAME: David Craig Disk #2
-	Disk ID: APPLE-3-WAP-PCL-14              
+	Disk ID: APPLE-3-WAP-PCL-14
 	BOOTABLE?: Nonbootable
 
 	DESCRIPTION: Disks APPLE-3-WAP-PCL-13, 14 and 15 are some of the nuggets we got from a
@@ -7881,7 +7881,7 @@
 
 	<!--
 	PDS NAME: David Craig Disk #3
-	Disk ID: APPLE-3-WAP-PCL-15              
+	Disk ID: APPLE-3-WAP-PCL-15
 	BOOTABLE?: Nonbootable
 
 	DESCRIPTION: Disks APPLE-3-WAP-PCL-13, 14 and 15 are some of the nuggets we got from a
@@ -7932,7 +7932,7 @@
 	<!--
 	PDS NAME: IEEE-488 FILES FOR THE APPLE // AND ///
 	DISK ID : APPLE-3-WAP-PCL-16
-	BOOTABLE? Bootable 
+	BOOTABLE? Bootable
 
 
 	By Jim Trezzo
@@ -7950,9 +7950,9 @@
 
 	The second part of the software takes the form of an attached driver to the
 	Pascal BIOS.  This driver (I488) is written in TLA assembler code.  The
-	Pascal unit GPIB, which supports the higher level functions, relies on low 
+	Pascal unit GPIB, which supports the higher level functions, relies on low
 	level functions provided by the attached device driver.  Low level functions
-	such as UNITCLEAR, UNITREAD, UNITWRITE and UNITSTATUS are provided by the 
+	such as UNITCLEAR, UNITREAD, UNITWRITE and UNITSTATUS are provided by the
 	driver.  All communication with the IEEE-488 card will be through the driver.
 
 
@@ -8004,7 +8004,7 @@
 
 	<!--
 	PDS NAME: FORTRAN Manual: Disk 1
-	Disk ID: APPLE-3-WAP-PCL-17                
+	Disk ID: APPLE-3-WAP-PCL-17
 	BOOTABLE?: Nonbootable
 
 	DESCRIPTION: Disk One of Two disks containing the manual for the Fortran
@@ -8034,7 +8034,7 @@
 
 	<!--
 	PDS NAME: FORTRAN Manual: Disk 2
-	Disk ID: APPLE-3-WAP-PCL-18              
+	Disk ID: APPLE-3-WAP-PCL-18
 	BOOTABLE?: Nonbootable
 
 	DESCRIPTION: Disk Two of Two disks containing the manual for the Fortran
@@ -8080,8 +8080,8 @@
 
 	On Side Two:
 
-	Fortran.EZP - Data Base file of information about Fortran. Requires 3EZ 
-				  Pieces or AppleWorks.
+	Fortran.EZP - Data Base file of information about Fortran. Requires 3EZ
+	              Pieces or AppleWorks.
 	-->
 	<software name="wappcl19">
 		<description>WAP /// SIG Pascal Disk 19 - Fortran Language</description>
@@ -8205,18 +8205,18 @@
 
 	  This is a collection of Pascal procedures used as screen utilities on the
 	  Apple ///.  Also included are a few others such as one to clear the
-	  input buffer. Submitted by Harry Baya, 72135,1667, 6/8/85 
+	  input buffer. Submitted by Harry Baya, 72135,1667, 6/8/85
 
 	PSCL.MOUSE.TEXT
 
-		This is a little graphics demo to show how the Mouse can be used in
+	    This is a little graphics demo to show how the Mouse can be used in
 	  Programming on the Apple ///.  This program requires that Applestuff,
 	  Pgraf, and Psosio be located in the system library. Psosio is an implemen-
 	  tation of SOS Commands straight from Pascal. It is part of the Pascal Tech
 	  reference manual package. I only use it to get the SOS device number of the
 	  Mouse Driver. The procedure Pnum then translates this into the Pascal Unit
 	  number needed by the Unitstatus, Unitread, and Unitwrite commands.
-		The program is setup to run the BW 280 graphics mode. It allows the user
+	    The program is setup to run the BW 280 graphics mode. It allows the user
 	  to do freehand drawing. The program will plot a point by pressing the mouse
 	  button and by holding it down it will draw lines as fast as you move it,
 	  but the faster you do the more jagged it becomes.
@@ -8231,14 +8231,14 @@
 	   Open-Apple S                                   Switch Between Screens
 	   Open-Apple Q                                   Quits the Program
 
-		 The Open-Apple X and Y commands are nice for plotting strictly horizon-
+	     The Open-Apple X and Y commands are nice for plotting strictly horizon-
 	  tal or vertical lines. One note is that these two commands stay in effect
 	  until another key is pressed (i.e. the spacebar). Since I had the program
 	  hang up every time I tried to write to the Mouse I decided to forego it at
 	  this point. The net effect is that the Mouse will jump to a new position
 	  when the Open-Apple X or Y command is terminated. Not a major problem but
 	  still annoying.
-		 Meanwhile enjoy playing Mouser for awhile. It's not quite a MAC and
+	     Meanwhile enjoy playing Mouser for awhile. It's not quite a MAC and
 	  thats a pleasing thought.
 
 	  By: David Bixby    16 Mar 85
@@ -8301,7 +8301,7 @@
 
 	This is one of many disks designed to test your /// in various ways to help
 	you trouble shoot software or hardware problems.  Instructions for using
-	this disk are on side one. 
+	this disk are on side one.
 
 	SIDE TWO
 
@@ -8336,7 +8336,7 @@
 	SIDE ONE:
 
 	Another version of the Apple /// Diagnostics disk.  Easy to use - but beware:
-	the disk check program has been reported to be unreliable.  
+	the disk check program has been reported to be unreliable.
 
 	SIDE TWO:
 
@@ -8364,29 +8364,29 @@
 
 	<!--
 	PDS NAME: Apple ///+ Diagnostics/512K Memory Test
-	DISK ID : APPLE-3-WAP-REP-03:  
+	DISK ID : APPLE-3-WAP-REP-03:
 	BOOTABLE? Side One - With a ///+
-			  Side Two - Requires 512K Memory Board
+	          Side Two - Requires 512K Memory Board
 
 	Apple ///+ Diagnostics Disk/512K Memory Test - Two programs on this disk will
 	help you determine the health of your ///+ and (if equipped) its 512K memory
-	board.  Both are written in Applesoft Basic under the old DOS 3.3 and are 
-	self-booting.  The Apple ///+ Diagnostics is similar to, but a tad different 
+	board.  Both are written in Applesoft Basic under the old DOS 3.3 and are
+	self-booting.  The Apple ///+ Diagnostics is similar to, but a tad different
 	from the Apple /// version in that the tests have been moved around a bit and
 	it will check the health of your clock chip.  The RAM test seems to be a bit
-	better at identifying what chips may, in fact, be bad.  Other than that, its 
-	the same as its earlier version.  You could, in fact, run this test on a /// 
+	better at identifying what chips may, in fact, be bad.  Other than that, its
+	the same as its earlier version.  You could, in fact, run this test on a ///
 	- just don't bother with the clock chip test.
 
-	The 512K memory test is the one supplied by On Three and is an expanded 
-	version of the older Apple /// memory test found on the Confidence disk 
+	The 512K memory test is the one supplied by On Three and is an expanded
+	version of the older Apple /// memory test found on the Confidence disk
 	(APPLE-3-WAP-REP-01).  It will, in fact, work on any Apple /// - it simply checks to see
 	what memory is available, forgets what isn't and procedes with the test.
 
 	When checking your ///'s memory, be sure to do it both from a cold boot and
-	after its warmed up a bit.  I've found that while problems occur while cold, 
-	they can go away after things have warmed up a bit.  And don't be afraid to 
-	run this test overnight - problems can turn up over time that may not with 
+	after its warmed up a bit.  I've found that while problems occur while cold,
+	they can go away after things have warmed up a bit.  And don't be afraid to
+	run this test overnight - problems can turn up over time that may not with
 	just a few minutes of chip testing.
 
 	Thanks to /// SIGer Rick Gast for contributing the ///+ Diagnostics disk.
@@ -8412,7 +8412,7 @@
 
 	<!--
 	PDS NAME: Repairing Your Apple ///
-	Disk ID: APPLE-3-WAP-REP-04                              
+	Disk ID: APPLE-3-WAP-REP-04
 	BOOTABLE? Side One Only
 
 	A double-sided disk full of information related to problems
@@ -8425,7 +8425,7 @@
 	- CLOCK.KIT      : How to install a clock chip.
 	- SET.SPEED      : How to increase the speed of your ///.
 	- TIMESET.2000   : How to deal with the fact your /// can't count past
-					1999.
+	                1999.
 	DATA.BASES (subdirectory)
 	- A3.REPAIRS : 3EZ Pieces/AppleWorks DB of Apple /// repair sources.
 	- APPLE3.CHIPS: Chip locations on the ///'s motherboard (ASCII Text File)
@@ -8519,15 +8519,15 @@
 
 	<!--
 	PDS NAME: Brain Surgeon
-	Disk ID: APPLE-3-WAP-REP-05                           
+	Disk ID: APPLE-3-WAP-REP-05
 	BOOTABLE? Side One Only
 
-	Backup/// is rather notorious for its shortcomings. One serious one: 
+	Backup/// is rather notorious for its shortcomings. One serious one:
 	when backing up a 16 meg volume from a CMC or other hard disk with some
 	directory damage. If you try to restore, you'll get some bizarre Internal Error
 	message, and a destroyed backup!
 
-	One can avoid the deadly situation two ways.  One: Get On Three's GoBack /// 
+	One can avoid the deadly situation two ways.  One: Get On Three's GoBack ///
 	- a Backup /// replacment that works much better.  Or, you can try Brain
 	Surgeon, which can help if there is any situation in which
 	your backup got cooked by virtue of the famed INTERNAL ERROR or some bad
@@ -8596,19 +8596,19 @@
 	BOOTABLE?  Both Sides
 
 
-			This disk has two programs you'll find to be very useful for
+	        This disk has two programs you'll find to be very useful for
 	protecting the health of your Profile/800K/floppy disk.  Thanks to TAU (Third
 	Apple Users Group) for these programs:
 
-	SIDE ONE: DISKCHECK  
+	SIDE ONE: DISKCHECK
 
 	It is useful for 2 primary types of situations:
 
-		 * Directory Damage
-		 * Using A Block Editor on a Disk
+	     * Directory Damage
+	     * Using A Block Editor on a Disk
 
 	For most uses, just boot the disk and give it the DEVICE NAME of the disk you
-	wish to check. (i.e. .PROFILE). 
+	wish to check. (i.e. .PROFILE).
 
 	You will be asked where to send the information.  That should probably NOT be
 	to your printer.  That's because DISKCHECK generates a lot of information
@@ -8626,12 +8626,12 @@
 	something about file formats and how to use a block editor you can save most
 	of them.
 
-	As for block editors, you might want to try the one written by TAU's Dan 
+	As for block editors, you might want to try the one written by TAU's Dan
 	Wade, which includes information about SOS directory format structure. This
 	block editor is available thru WAP as is Daryl Anderson's Disk Window+.
 
 
-	SIDE TWO: PROHEALTH 
+	SIDE TWO: PROHEALTH
 
 	This quick little program has no options. After booting, it displays one
 	screen of very useful information concerning your profile. It tells its
@@ -8676,30 +8676,30 @@
 	of home many runthroughs made.
 
 	ON SIDE TWO:
-									   
+
 	FIXER.0001
 
 	  This program is intended to be used in emergency situations that arise
 	  from catastrophic failures to your CATALYST SYSTEM.  The purpose is to
 	  allow you to use your ORIGINAL disk as a boot disk, after it has been
 	  LOCKED by the CATALYST installation procedure.
-	  
+
 	  This program UNLOCKS the ORIGINAL disk in such a manor that it can be
 	  reinstalled into CATALYST by reusing the installation procedure provided
 	  with CATALYST.
-	  
+
 	  After executing this program from Menu.Maker simply boot the floppy disk
 	  and use it as you normally would without the CATALYST SYSTEM.
-	  
-	 
+
+
 	  DISCLAIMER:
-	  
-	 
-		  THIS SOFTWARE PROVIDES NO WARRANTY AS TO ITS USEFULNESS OR PURPOSE. 
+
+
+	      THIS SOFTWARE PROVIDES NO WARRANTY AS TO ITS USEFULNESS OR PURPOSE.
 	  THE AUTHOR ACCEPTS NO RESPONSIBILITY FOR ANY DAMAGES THAT MAY RESULT FROM
 	  ITS USE.
-											
-								 USE AT YOUR OWN RISK!
+
+	                             USE AT YOUR OWN RISK!
 	-->
 	<software name="waprep08">
 		<description>WAP /// SIG Repair Disk 8 - Vindicator and Fixer</description>
@@ -8728,13 +8728,13 @@
 
 	SIDE ONE: BLOCK EDITOR
 
-		 This program allows you to change the contents of any block on a block
+	     This program allows you to change the contents of any block on a block
 	device.  Use it carefully, since making the wrong change on a diskette can
 	render it unreadable.  For demonstration purposes we suggest you use a
 	scratch diskette.
 
 	D)evice      Set the device where the next read/write will take place.
-				 Usually it will be '.D1', '.D2',  etc.
+	             Usually it will be '.D1', '.D2',  etc.
 
 	B)lock       Sets the block number for the next read/write.  Usually 0-279.
 
@@ -8743,16 +8743,16 @@
 	W)rite       Writes to the block specified by 'device' and 'block'.
 
 	L)ist        Lists out the contents of the last block read.  Press any
-				 key to stop the listing.
+	             key to stop the listing.
 
 	C)hange      Changes the contents of a block that has already been read.
-				 'Value CR' = change value,  'CR' = done changing,
-				 'Space bar' = skip to next value
+	             'Value CR' = change value,  'CR' = done changing,
+	             'Space bar' = skip to next value
 
 
 	SIDE TWO: BLOCKBYTER
 
-	The BlockByter program contains two major segments: 
+	The BlockByter program contains two major segments:
 
 	(1) The Block Editor allows you to read, edit, and print information in any
 	block of a SOS, ProDOS, or DOS 3.3 disk.
@@ -8760,37 +8760,37 @@
 	(2)  The Cat Fixer attempts to recover files whose directories are damaged or
 	overwritten
 
-	.                                
+	.
 	THE BLOCK EDITOR:  displays the information in each block as text and as
 	hexadecimal numbers.  You may edit only the hexadecimal side of the screen.
 	The program will write the changed block to the disk, read the revised block,
-	and display it for verification. 
+	and display it for verification.
 
 	Note:  You can edit ONLY the hexadecimal side of the screen.  The text side
-	will not reflect your edits until the program reads the revised data from 
+	will not reflect your edits until the program reads the revised data from
 	the disk.  Therefore, it's a good idea to P)rint the block before editing. If
 	you make an error in your hexadecimal math you'll have a hard copy of the
-	original block.}                     
+	original block.}
 
-				  
+
 	CAT FIXER:  The Cat Fixer segment of the program works only with SOS or
-	ProDOS disks.  It identifies each map on a disk, reads the blocks on that 
+	ProDOS disks.  It identifies each map on a disk, reads the blocks on that
 	map, and writes them to a new file on a new disk.  Cat Fixer can restore text
 	files on a disk whose directory was erased by a power surge, but it has also
 	restored files when the original directory entry was replaced by the entry of
 	a new file. In such cases, programs like Lazarus cannot restore the file, for
-	they read the disk directory to find and restore the file.  Cat Fixer uses 
+	they read the disk directory to find and restore the file.  Cat Fixer uses
 	only the map blocks of the disk.
 
-	Do not use Cat Fixer as anything but a last resort, however.  Because the 
+	Do not use Cat Fixer as anything but a last resort, however.  Because the
 	program doesn't consult the directory, it doesn't know what kind of file it's
 	copying.  Every file produced by Cat Fixer is an ASCII file, for that's the
 	most common file type.  If your copied file doesn't work, use Pascal's A)lter
 	command to change the file type.
 
-	Cat Fixer requires a blank formatted disk in Drive 2 and your original 
-	damaged disk in Drive 1.  (The program tells you when to switch disks.) 
-	Finally, you can specify the range of blocks which Cat Fixer should search 
+	Cat Fixer requires a blank formatted disk in Drive 2 and your original
+	damaged disk in Drive 1.  (The program tells you when to switch disks.)
+	Finally, you can specify the range of blocks which Cat Fixer should search
 	for maps.
 	-->
 	<software name="waprep09">
@@ -8820,25 +8820,25 @@
 	SIDE ONE:
 
 	Dr. Jeppson's Pascal program that will disassemble the Apple /// memory or
-	any Apple /// file to its assembly language roots.  For Advanced users only. 
+	any Apple /// file to its assembly language roots.  For Advanced users only.
 
 	To Use on a Hard Disk:
 
-		  Place all code files and data files under one sub-directory on your
-		  hard disk with the name : 'DISASSEMBLER'. Pascal text files 
-		  are not needed.
+	      Place all code files and data files under one sub-directory on your
+	      hard disk with the name : 'DISASSEMBLER'. Pascal text files
+	      are not needed.
 
-		  This program can be used with disk drives, but it is a pain!!
+	      This program can be used with disk drives, but it is a pain!!
 
-		  Additional notes 02/01/86
+	      Additional notes 02/01/86
 
-		  This version of the Jeppson Disassembler contains the CREATE.CODE
-		  program that can take a disassembled Jeppson file and turn it into a
-		  compilable source.text file for the ///'s assembler.  The program used
-		  after you have successfully disassembled a file.  The program is self
-		  documenting, so just follow the instructions.
-													- Updated from Pair Software
-													  version 2/1/94
+	      This version of the Jeppson Disassembler contains the CREATE.CODE
+	      program that can take a disassembled Jeppson file and turn it into a
+	      compilable source.text file for the ///'s assembler.  The program used
+	      after you have successfully disassembled a file.  The program is self
+	      documenting, so just follow the instructions.
+	                                                - Updated from Pair Software
+	                                                  version 2/1/94
 
 
 	SIDE TWO:
@@ -8846,9 +8846,9 @@
 	JEPPSON DISASSEMBLER DATA AND SOURCE CODE FILES
 
 	This side of disk APPLE-3-WAP-REP-10 contains the source code files for the Jeppson
-	Disassembler.  It's presented for those interested in wanting to examine or 
-	tinker with Dr. Jeppson's work.  For more information, see "Peeking at the 
-	///" in the August, 1982 "Softalk Magazine" (available in the WAP office or 
+	Disassembler.  It's presented for those interested in wanting to examine or
+	tinker with Dr. Jeppson's work.  For more information, see "Peeking at the
+	///" in the August, 1982 "Softalk Magazine" (available in the WAP office or
 	from Dave Ottalini.
 	-->
 	<software name="waprep10">
@@ -8876,56 +8876,56 @@
 	BOOTABLE? Both Sides
 
 
-			"TICKTOCK" is a small DOS 3.3 -based utility that will help you
+	        "TICKTOCK" is a small DOS 3.3 -based utility that will help you
 	properly set your Apple /// clock.  If you have a clock chip installed, it
 	will simply tell you whether it is going too fast - or too slow.  If you have
 	a problem, you can easily fix it yourself.
 
 	WHAT YOU"LL SEE
 
-			To use TICKTOCK, simply insert the disk and reboot your system.
+	        To use TICKTOCK, simply insert the disk and reboot your system.
 	The program is DOS-based and includes the software on disk to turn on
 	the Apple // emulation mode.
-			Once booted, at the top of the screen, you'll see:
+	        Once booted, at the top of the screen, you'll see:
 
-						APPLE /// CLOCK CALIBRATION TEST
+	                    APPLE /// CLOCK CALIBRATION TEST
 
-			Just below it will be:
+	        Just below it will be:
 
-						1 Second Test               (a number)
+	                    1 Second Test               (a number)
 
-			You'll hear a "clock" ticking in the background throughout.  
+	        You'll hear a "clock" ticking in the background throughout.
 
-			Actually that's it.  The "1 Second Test" will give you a number
+	        Actually that's it.  The "1 Second Test" will give you a number
 	that is either + or -.; presumably your clock is either too fast or too slow
 	based on that number, and should be adjusted accordingly.
-			
+
 	HOW TO ADJUST YOUR CLOCK
 
-		  The clock adjustment "pot" is located on the motherboard just next
+	      The clock adjustment "pot" is located on the motherboard just next
 	to the clock chip.  You can get at it by taking off the cover of your
 	keyboard and unscrewing the four screws holding the keyboard to the chassis.
 	Lift it up and away from you, resting against the Apple /// case (still
 	connected to the motherboard with the ribbon cable.) The pot is approximately
 	under the "L" key and can be adjusted with a small (thin) flat-head
-	screwdriver.  
-			I tried this on my ///+ and started with a 1 Second Test of +75.
+	screwdriver.
+	        I tried this on my ///+ and started with a 1 Second Test of +75.
 	Adjusting the pot, I was able to get it down to +21.  I would have to say
 	the best you can do is get it as close to "0" as you can.
-			
+
 	THE ALTERNATIVE WAY IS TO:
 
-			Use Business Basic to run this program:
+	        Use Business Basic to run this program:
 
 	10 VPOS=20:HPOS=10:Print TIME$;:GOTO 10
 
-		   This will give you a continuous time print-out on screen, allowing you
-	to adjust the clock potentiameter against a time source of your choosing. 
-	(Again - you'll have to have a clock chip installed and used System 
+	       This will give you a continuous time print-out on screen, allowing you
+	to adjust the clock potentiameter against a time source of your choosing.
+	(Again - you'll have to have a clock chip installed and used System
 	Utilities, Desktop Manager, Powerkeys or a Basic or Pascal program to set
 	the proper time to start with.)
 
-	In Washington DC, you can call the Naval Observatory for the atomic clock. 
+	In Washington DC, you can call the Naval Observatory for the atomic clock.
 	That number is (202)-653-1800.
 
 	The short program above is on this disk side for your convenience and can be
@@ -8935,21 +8935,21 @@
 
 	ENDING
 
-			To stop the program, press the <RESET> and <ESCAPE> keys at
+	        To stop the program, press the <RESET> and <ESCAPE> keys at
 	the same
 	time.  You'll be returned to the familier "INSERT DISK AND REBOOT" message.
 
 
 	MORE CLOCK INFORMATION:
 
-			We've included a Three EZ Pieces data base on this disk listing
+	        We've included a Three EZ Pieces data base on this disk listing
 	all our PD disks with Apple /// clock-related files (CLOCK.PD). Another Data
 	Base (CLOCK.ARTICLES) lists articles you might be interested in from past
 	years.
 
 	FINALLY
-			
-			Let the /// SIG know if you have any success with TICKTOCK and if you
+
+	        Let the /// SIG know if you have any success with TICKTOCK and if you
 	have any suggestions for using it.  A ThreeWorks Database search turned up
 	no articles or even mention of this program. Nor was there a mention even
 	in the Apple /// Technical Reference Manual. TICKTOCK was found in the PD
@@ -8986,73 +8986,73 @@
 	DISK ID : APPLE-3-WAP-REP-12
 	BOOTABLE? BOTH SIDES
 
-			  The purpose of DIRECTRAN is to protect the root directory of your
-	hard disc.  Loss or unreadability of same for any reason is a major 
-	catastrophe as it renders the entire disc useless.  DIRECTRAN transfers the 
-	root directory blocks of the hard disc to another location (on a floppy 
-	disc).  If needed, these blocks can then be transferred to the proper 
+	          The purpose of DIRECTRAN is to protect the root directory of your
+	hard disc.  Loss or unreadability of same for any reason is a major
+	catastrophe as it renders the entire disc useless.  DIRECTRAN transfers the
+	root directory blocks of the hard disc to another location (on a floppy
+	disc).  If needed, these blocks can then be transferred to the proper
 	location on the hard disc, restoring the root directory.  It might be wise to
 	make DIRECTRAN part of your shut down procedure so that the directory you
-	save is current.  DIRECTRAN requires the invoking of both REQUEST and BLOCK 
+	save is current.  DIRECTRAN requires the invoking of both REQUEST and BLOCK
 	invokables.  The program is self-explanatory.
 
 
 	SIDE TWO:  DISK /// SPEED TEST
 
-			Disk /// Speed Test will test the speed of your internal disk drive. 
-	It is one of those "special" DOS 3.3/Integer Basic disks that will boot 
+	        Disk /// Speed Test will test the speed of your internal disk drive.
+	It is one of those "special" DOS 3.3/Integer Basic disks that will boot
 	directly on your ///, but cannot be listed (except as noted below).  You can
 	make copies with System Utilities but not with Desktop Manager's Disk Manager
 	utility.
-			You can read this disk in Apple //e emulation (with the Titan ///+//e
+	        You can read this disk in Apple //e emulation (with the Titan ///+//e
 	cards) with Copy //+... which shows there are actually four Integer Basic
 	programs along with their associated  Binary files.  They are: Quick Disk
 	Test; Read Write Test; Quick Seek Test and Speed Test.
-			The Disk Motor Speed Adjust Program was written by WOZ himself for
+	        The Disk Motor Speed Adjust Program was written by WOZ himself for
 	the Apple // and adapted for the ///.
 
-			As run, the disk is actually made up of three tests:
+	        As run, the disk is actually made up of three tests:
 
-			1) Read/Write Function Test
-			2) Apple /// Quick Trak Test
-			3) Disk Motor Speed Adjust Program
+	        1) Read/Write Function Test
+	        2) Apple /// Quick Trak Test
+	        3) Disk Motor Speed Adjust Program
 
-			1)  This part of Disk /// Speed Test will write to and then read
-				from traks 28 through 34.  It will make two passes per trak.
-				IF everything is OK it moves on to...
+	        1)  This part of Disk /// Speed Test will write to and then read
+	            from traks 28 through 34.  It will make two passes per trak.
+	            IF everything is OK it moves on to...
 
-			2)  The Apple /// Quick Trak Test which lists in two rows all
-				the traks on your disk.  Row 1 is 0 to 17. Row 2 is 18 to 34.
-				It checks off each track bottom to top in Row 1 and top to 
-				bottom in Row 2.  IF everything is OK it moves on to:        
-			  
-			3)  The Disk Motor Speed Adjust Program which tells you whether
-				the internal drive is too fast, too slow or just right. It will
-				look like this:
+	        2)  The Apple /// Quick Trak Test which lists in two rows all
+	            the traks on your disk.  Row 1 is 0 to 17. Row 2 is 18 to 34.
+	            It checks off each track bottom to top in Row 1 and top to
+	            bottom in Row 2.  IF everything is OK it moves on to:
+
+	        3)  The Disk Motor Speed Adjust Program which tells you whether
+	            the internal drive is too fast, too slow or just right. It will
+	            look like this:
 
 
-				SLOW                  NORM                 FAST     
-			   (-100)                  0                  (+100)
-									   ^
-									   |
-									(YOURS)
-								   (+/-    )
-				
-				Under "YOURS" you'll see the speed of your drive being
-				registered with +'s or -"s.
+	            SLOW                  NORM                 FAST
+	           (-100)                  0                  (+100)
+	                                   ^
+	                                   |
+	                                (YOURS)
+	                               (+/-    )
 
-			You can adjust the speed by adjusting the small potentiomenter on the
+	            Under "YOURS" you'll see the speed of your drive being
+	            registered with +'s or -"s.
+
+	        You can adjust the speed by adjusting the small potentiomenter on the
 	smaller circuit board at the back of the disk drive.  It is accessable if you
 	take off your SARA's top cover and the aluminum cover on top of the disk
 	drive.  Try to get it as close to "0" as possible.
-			You can also adjust other disk drives with a little extra work -
+	        You can also adjust other disk drives with a little extra work -
 	open up your /// from the bottom, unplug the internal drive and plug in the
-	external.  
-			To exit the program, simply press "Escape", which will take you into
-	Integer Basic (NOW you can list this disk and see all the files mentioned 
+	external.
+	        To exit the program, simply press "Escape", which will take you into
+	Integer Basic (NOW you can list this disk and see all the files mentioned
 	above, load and list them.)
 
-			Many thanks to Paul Campbell for contributing this program to our
+	        Many thanks to Paul Campbell for contributing this program to our
 	PD!
 	-->
 	<software name="waprep12">
