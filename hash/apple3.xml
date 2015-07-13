@@ -711,7 +711,12 @@
 				<rom name="apple-3-wap-gam-06a.dsk" size="143360" crc="02bf42b0" sha1="9e44143331b2593d00a94b955eb8b400dde42a74" offset="0" />
 			</dataarea>
 		</part>
-		<!-- Placeholder for Side B -->
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-gam-06b.dsk" size="143360" crc="02bf42b0" sha1="9e44143331b2593d00a94b955eb8b400dde42a74" offset="0x0000" />
+			</dataarea>
+		</part>
 	</software>
 
 <!-- Washington Apple Pi - Graphics -->
@@ -7368,7 +7373,12 @@
 				<rom name="apple-3-wap-pcl-06a.dsk" size="143360" crc="ff23e4ee" sha1="695be9e12cd2297a983a46e49cb5011a163d22fc" offset="0" />
 			</dataarea>
 		</part>
-		<!-- Placeholder for Side B -->
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-pcl-06b.dsk" size="143360" crc="d338f850" sha1="8c3764521f271833b1b6d2f29b8340527ac4b89c" offset="0x0000" />
+			</dataarea>
+		</part>
 	</software>
 
 	<!--
@@ -8309,7 +8319,12 @@
 				<rom name="apple-3-wap-rep-01a.dsk" size="143360" crc="08f8b9a2" sha1="b08434934880366011374bcaa2e971efa2478f09" offset="0" />
 			</dataarea>
 		</part>
-		<!-- Placeholder for Side B -->
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-rep-01b.dsk" size="143360" crc="cbf10a5a" sha1="8be26f2ec7f0b8425dc4f0c44a48dcda105f8c9a" offset="0x0000" />
+			</dataarea>
+		</part>
 	</software>
 
 	<!--
@@ -8333,11 +8348,64 @@
 		<year>19??</year>
 		<publisher>Washington Apple Pi</publisher>
 
-		<!-- Placeholder for Side A -->
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-rep-02a.dsk" size="143360" crc="7720ebc9" sha1="5b952570914d64094acf13fdddb7aaa4f9ac028b" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Side B"/>
 			<dataarea name="flop" size="143360">
 				<rom name="apple-3-wap-rep-02b.dsk" size="143360" crc="5d3e60e0" sha1="8540ac7e7d5ca814efad1d44d0f8474317516353" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Apple ///+ Diagnostics/512K Memory Test
+	DISK ID : APPLE-3-WAP-REP-03:  
+	BOOTABLE? Side One - With a ///+
+			  Side Two - Requires 512K Memory Board
+
+	Apple ///+ Diagnostics Disk/512K Memory Test - Two programs on this disk will
+	help you determine the health of your ///+ and (if equipped) its 512K memory
+	board.  Both are written in Applesoft Basic under the old DOS 3.3 and are 
+	self-booting.  The Apple ///+ Diagnostics is similar to, but a tad different 
+	from the Apple /// version in that the tests have been moved around a bit and
+	it will check the health of your clock chip.  The RAM test seems to be a bit
+	better at identifying what chips may, in fact, be bad.  Other than that, its 
+	the same as its earlier version.  You could, in fact, run this test on a /// 
+	- just don't bother with the clock chip test.
+
+	The 512K memory test is the one supplied by On Three and is an expanded 
+	version of the older Apple /// memory test found on the Confidence disk 
+	(APPLE-3-WAP-REP-01).  It will, in fact, work on any Apple /// - it simply checks to see
+	what memory is available, forgets what isn't and procedes with the test.
+
+	When checking your ///'s memory, be sure to do it both from a cold boot and
+	after its warmed up a bit.  I've found that while problems occur while cold, 
+	they can go away after things have warmed up a bit.  And don't be afraid to 
+	run this test overnight - problems can turn up over time that may not with 
+	just a few minutes of chip testing.
+
+	Thanks to /// SIGer Rick Gast for contributing the ///+ Diagnostics disk.
+	-->
+	<software name="waprep03">
+		<description>WAP /// SIG Repair Disk 3 - Apple ///+ Diagnostics/512K Memory Test</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-rep-03a.dsk" size="143360" crc="7977e125" sha1="e0015ca4a4ae9ba4fe2a7d9bbc5957577bcfbc9f" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-rep-03b.dsk" size="143360" crc="40a69a50" sha1="e8174fd28598ba1776d03a6e358ca50b58f61865" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -10254,7 +10322,12 @@
 				<rom name="apple-3-wap-tel-02a.dsk" size="143360" crc="b9d87fb3" sha1="4bc22093c18e92749573e54df99305530a7b50ae" offset="0" />
 			</dataarea>
 		</part>
-		<!-- Placeholder for Side B -->
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-tel-02b.dsk" size="143360" crc="621ad448" sha1="6c5cf77a7518254a39ada5bb0776c7a9b9e1ba27" offset="0x0000" />
+			</dataarea>
+		</part>
 	</software>
 
 	<!--
