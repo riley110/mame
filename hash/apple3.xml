@@ -3,6 +3,2877 @@
 <!-- Most of the documentation is copy+pasted straight from http://apple3.org/ -->
 <softwarelist name="apple3" description="Apple III 5.25 disks">
 
+<!-- Washington Apple Pi - 3 EZ Pieces -->
+
+	<!--
+	APPLE-3-WAP-AWZ-01:  3EZP/APPLEWORKS BUSINESS TEMPLATES
+
+
+	DESCRIPTION: This disk contains 3 EZ Pieces/AppleWorks business templates:
+
+	On Side One:
+
+	-: Annual Expenses:         Helps in calculating rough annual expenses.
+	-: Wage Rate Table:         Converts wages to periodic equivalents.
+	-: Quick Planner  :         Product Processing Module for the Ceramics
+								Industry.
+	-: Employee Paysheet:       Calculates hours worked by Employees, etc.
+	-:
+
+	On Side Two:
+
+	-: EASY Accountant:
+
+	Easy Accountant is an EZP/ AppleWorks spreadsheet application designed to manage
+	the ledger of an individual or a small business running on a cash-basis
+	accounting system.  The basic structure of Easy Accountant can be modified or
+	expanded to handle your specific needs.
+
+	Easy Accountant will enable you to enter all receipts and expenditures for each
+	monthly period and will then compile and print a Monthly Report, a Year-To-Date
+	Report and a Detailed Journal Listing Report.
+
+	The Easy Accountant diskette has the following files:
+
+		 ea.dskCMNTATION a wordprocessing file that contains these instructions.
+
+		 ea.WORKSHEET a spreadsheet file consisting of three menu sections, the
+	Checkbook Journal, the Adjustments Journal, the Compiler and the Monthly Report.
+
+		 ea.SUMMARY a spreadsheet file used to carry forward the monthly totals and
+	to generate the Year-To-Date Report.
+
+		 ea.MACROS a wordprocessing file containing several Autoworks macros for use
+	with the worksheet file.
+
+		 ea.NOTES  a wordprocessing file containing additional information, comments
+	from users and update notes not found in other files.
+
+		 ea.RECON SCHED a spreadsheet file containing a schedule to assist you in
+	getting started with the bank account reconciliation process.
+
+	Unlike double-entry bookkeeping the Easy Accountant books are simple 'single
+	entry' journals.  This means that for any transaction, only one entry is made.
+	The advantage of a single-entry system is its simplicity. On the other hand, it
+	will not provide a complete record of your assets, equipment, inventory, loans
+	outstanding or other liabilities.  For most individuals and small businesses a
+	single-entry system of accounts will provide the basic information you will need
+	to run your business and prepare your tax return.
+	-->
+	<software name="wapawz01">
+		<description>WAP /// SIG 3 EZ Pieces Disk 1 - 3EZP/AppleWorks Business Templates</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-01a.dsk" size="143360" crc="b8e358c3" sha1="a921dcd6ea3a4443e5319c514d46f51baa4c63b5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-01b.dsk" size="143360" crc="94212471" sha1="d193a6a44ecc8bfa0f0cde2199d4d24f721b7362" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	APPLE-3-WAP-AZW-02:  3EZ Pieces Checkbook Template by John Lomartire
+
+
+		  On this disk you'll find a 3EZ Pieces template for keeping your
+	   checkbook in good shape.  It was provided by /// SIGer John
+	   Lomartire.  A complete tutorial is on side one of this disk in a
+	   text file so it can be read or printed with Menu.Maker.  The template
+	   and example are on side two.  In addition, we've added a 
+	   bibliography of all of John Lomartire's articles.  There's also a
+	   3EZP/Appleworks data base cross reference of chips on the Apple ///
+	   Motherboard as developed by John.
+
+
+	KEEPING CHECKBOOK RECORDS USING 3 E Z PIECES
+
+	by John Lomartire
+
+
+	Checkbook systems usually contain a provision for keeping a record of checks 
+	that have been issued.  Sometimes this takes the form of check stubs on which
+	the information is stored, or it might be a separate booklet for retaining
+	such data.  In any event, it is generally a chronological entry, most 
+	probably in check number and date of issuance order.  There is no question 
+	that this does indeed constitute a record of issued checks but by entering 
+	the same information into a computer base, a number of advantages are 
+	attained.
+
+
+	1.  Computer calculation of balances to verify personal ones.
+
+	2.  Easy location of past checks drawn to specific payees or specific
+		purpose.
+
+	3.  Easy grouping of checks by type of expenditure.
+
+	4.  Quick verification of monthly bank statements.
+
+	5.  Storage of individual expenditures for checks issued for a total payment,
+		e.g. credit card bills.
+
+
+	Some of the items on the list given above can only be done by laborious
+	manual examination of the conventional check record system, but it is an easy
+	matter for the computer to handle.
+
+	The approach described here utilizes a spreadsheet but since it depends for
+	some of its features on an ability to sort, Visicalc was not applicable. 
+	Instead, the 3 E Z Pieces spreadsheet was chosen although any other 
+	spreadsheet program with sorting capabilities would serve as well.  The 
+	ability to establish different column widths is not imperative in the choice 
+	of spreadsheet but it is a very convenient feature to have.  Once again, 3 E 
+	Z Pieces qualifies.
+
+	(It is assumed that the reader knows enough about 3 E Z Pieces to use its 
+	commands to FIND, ARRANGE, SORT, PRINT etc.  This will not be covered here.)
+	SETTING UP THE SPREADSHEET
+
+	The spreadsheet uses columns A through T.  It will be apparent that other 
+	columns can be added at the user's discretion.  For example, one could 
+	include a "CODE" column that would identify the type of expenditure, its tax 
+	status, the issuing department or individual, or some other aspect of data 
+
+	organization.  Amplification is simple and will be left to the individual to 
+	tailor the basic form presented here to his own particular needs.
+	-->
+	<software name="wapawz02">
+		<description>WAP /// SIG 3 EZ Pieces Disk 2 - 3EZ Pieces Checkbook Template by John Lomartire</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-02a.dsk" size="143360" crc="b411a457" sha1="deb967b7f9128016c4764b04295863baf9c52a77" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-02b.dsk" size="143360" crc="407ac736" sha1="b956a4a5bd0025eb242783f36d6cf313f7afc055" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	Accounting/Finance Templates
+	WAP /// SIG AWZ-03
+
+	  Side one is a set of accounting templates provided by /// SIG member Irving
+	  Tessel of Los Angeles.  It's simple to use and instructions are provided. 
+	  On side two we've taken a number of Advanced Visicalc templates and
+	  converted them over to 3EZP/AppleWorks spreadsheet format.  Templates
+	  included will let you keep track of your expenses, compute your net worth,
+	  keep track of your stock portfolio and much more. 
+
+
+	TESSELL ACCOUNTING SYSTEM: Side One
+
+	1.  These programs are templates.  When the program is on the screen, change
+	the file name.  This will save the template for further use.
+
+	2.  Prepare a Chart of Accounts which shows the account name and the three
+	(3) digit account number.
+
+	3.  Before entering either the Cash Receipts or Cash Disbursements, run a
+	batch control tape on the dollars. After entering the data, print the report
+	labeled CONTROL. Use the record selection "Rec. # begins with...through Rec.
+	# begins with or "Check # begins with...through Check # begins with. (See 
+	example in Test Receipts).  The report total and the adding machine tape must
+
+	agree.  This assure accuracy in entering the correct dollar amounts.
+
+	4. Use the MULTI-RECORD REVIEW/ADD/CHANGE screen to enter the data for both
+	programs.  The program is setup to automatically move to the right as data is
+	entered.  For example:  After the date is entered, the check # is entered,
+	etc.
+
+	5. From the data base program, print to the Clipboard and use the word
+	processing program PRINT.CASH.REC. or PRINT.CASH.DIS. to print reports. This
+	will allow editing that can't be done in the data base program. Change report
+	headings to reflect the report that is being printed.  After printing, delete
+	the data portion of the report.  The template can then be reused.
+
+	6. Reports are established to list data by receipt number, check number and
+	by General Ledger Account Number with totals for each account.
+
+
+	CONVERTED ADVANCED VISICALC SPREADSHEETS:  Side Two
+
+	The Templates Include:
+
+	EXPENSE.ACCT
+	NET.WORTH
+	PORTFOLIO
+	JOB.COST.EST
+	DEPRECIATION
+	PURCHASE.EVAL
+	SALARIES
+	CONS.SALES.FCST
+	INCOME.STMNT
+	CASH.FLOW
+	MANUFAC.COSTS
+	SALES.FORECAST
+
+
+	All these files were converted from Advanced Visicalc files.  You can load
+	them directly into 3EZ Pieces or AppleWorks and they should work for you
+	without any trouble.
+	-->
+	<software name="wapawz03">
+		<description>WAP /// SIG 3 EZ Pieces Disk 3 - Accountin/Finance Templates</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-03a.dsk" size="143360" crc="413b1b5f" sha1="3bab997a8f0213fb9744673741d4ca11138a4992" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-03b.dsk" size="143360" crc="a623d3f0" sha1="9325f7e9770007b0527649d477ed79fcc6c76eae" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	MORTGAGE AMORTIZATION
+
+	WAP /// SIG PD DISK 3AWZ.04
+
+	Originally developed by Pacific Technology Systems.
+
+	These templates require any Apple ][ or /// computer, any version of AppleWorks
+	and perhaps just a small amount of common sense.
+
+	The templates were built with an instructional approach during development, so
+	expect that the templates will not only meet your data management needs, but
+	also can be used to teach AppleWorks related activities to yourself as well as
+	to others, particularly computer novices.
+
+	MORTGAGE AMORTIZATION is a 3EZ Pieces/AppleWorks Template disk designed to be
+	run on any Apple // or /// computer with 128K of RAM.  Please feel free not only
+	to use this disk yourself, but also to copy it, give it to friends, add it to a
+	club library, and/or ... whatever.  This is a two sided disk, and both sides can
+	be copied with any SOS or PRODOS copy program.
+
+	There are three programs included:
+
+	Table A
+	   A table for calculating monthly mortgage payments based on loan amount,
+	interest rate, and term (in years).
+	Analysis B
+	   A thirty year analysis of a mortgage, broken into two fifteen year halves to
+	operate on an AppleWorks desktop of 55K.
+	Analysis C
+	   A thirty year analysis of a mortgage as one large AppleWorks spreadsheet.
+
+	Instructions for all three programs are included on the MORTGAGE AMORTIZATION
+	disk as 3EZP/AppleWorks word processor files.  We recommend that you print out
+	on paper the directions for whichever spreadsheet(s) you plan to use, although
+	the instruction files can also be read on-screen.
+
+	Since Analysis B is a spreadsheet that has been broken into two halves we have
+	included a step-by-meticulous-step procedure for splicing two spreadsheets as
+	part of the instructions.  Even if you are using an extended RAM card, allowing
+	you to use the full spreadsheet (Analysis C), we suggest that you try this
+	splicing procedure with Analysis B1 and Analysis B2, as it represents a tutorial
+	on combining spreadsheets.
+
+	Many features are included within the analysis spreadsheets that are not
+	described here (one spreadsheet is worth a thousand words, you know).  We
+	suggest that you use, play with, modify, experiment, and add to the
+	spreadsheets, always saving your files on your backup disk, leaving the original
+	spreadsheets intact.
+
+	Try other move, cut & paste, or rearrange techniques to get the spreadsheets
+	to meet your own unique needs.  Personal computers are supposed to be personal,
+	aren't they?  If you always follow the procedure of first calculating (Apple-K)
+	then rearranging, moving, deleting, etc., you can't go wrong.  Well ... almost!
+
+	Although this MORTGAGE AMORTIZATION disk does not contain a specific refinancing
+	spreadsheet, refinancing data can be obtained by using the Analysis spreadsheet
+	two times as if calculating on two different properties.  Or, if adventurous,
+	you could design your own by using portions of the existing spreadsheets.
+
+	Printer information is stored along with 3EZP/AppleWorks spreadsheets.  Some
+	suggestions are given in the instructions for formats appropriate to different
+	charts or tables that you might be printing out on your printer.  Do not
+	hesitate, however, to change these formats so that they fit your own needs,
+	preferences and printer requirements.  Before printing from a spreadsheet, you
+	may wish to choose print options (Apple-O) to redesign a form.
+	-->
+	<software name="wapawz04">
+		<description>WAP /// SIG 3 EZ Pieces Disk 4 - Mortgage Amortization</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-04a.dsk" size="143360" crc="1b4197f2" sha1="aaa87d63de7ad6b743b309e4d344c55a28fea7fe" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-04b.dsk" size="143360" crc="427e4e95" sha1="9012500e2ff4dfc452bb24542f1677deec8eced0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	CHECKBOOK MANAGER
+
+	WAP /// SIG PD DISK 3AWZ.05
+
+	Originally developed by Pacific Technology Systems.
+
+	These templates require any Apple // or /// computer, any version of
+	AppleWorks and perhaps just a small amount of common sense.
+
+	The templates were built with an instructional approach during development, 
+	so expect that the templates will not only meet your data management needs, 
+	but also can be used to teach AppleWorks related activities to yourself as 
+	well as to others, particularly computer novices
+
+	CHECKBOOK MANAGER is a 3EZP/AppleWorks Template disk designed to be run on 
+	any Apple // or /// computer with 128K of RAM.  Please feel free not only to 
+	use this disk yourself, but also to copy it, give it to friends, add it to a 
+	club library, and/or ... whatever.  This is a double-sided disk, and both 
+	sides can be copied with any SOS/PRODOS copy program.
+
+	There are four programs included:
+
+	A.00.1986...XXX
+	   This is the master spreadsheet that functions as a checkbook ledger.  It 
+	is used to produce monthly spreadsheets, some of which are included for 1986.
+	CHECK CODES
+	   A data base with many (too many?) suggested two letter codes for 
+	categorizing checks.  There is a detailed description of the coding system in
+	the instructions file (on disk).
+	FOR DEPOSIT ONLY
+	   A tiny word processor file to stamp your checks "FOR DEPOSIT ONLY".
+	CHECK PRINTER
+	   A data base for printing onto checks, particularly "computer-type" checks.
+
+	Directions for all four files are included on the CHECKBOOK MANAGER disk as a
+	3EZP/AppleWorks word processor file titled "INSTRUCTIONS". You can print out 
+	the directions on paper or read them on-screen; take your pick: papyrus or 
+	cathode ray.
+
+	The data base CHECK CODES uses a category structured for sorting Even if you 
+	choose not to use these codes, we suggest that you read its instructions and 
+	look at the data base, as together they form a tutorial on arranging within a
+	data base.
+
+	Categories were designed for personal checking use, but the instructions 
+	indicate a simple method for redesigning the CHECKBOOK MANAGER for small 
+	business applications.
+
+	The mathematics within the spreadsheets is very simple and straight-forward; 
+	we have kept it that way to allow ease of modification to the spreadsheets. 
+	The general system has been set up for you, yet there is still room to alter 
+	and expand.  Adding columns, perhaps one for tax deductions, should be a snap
+	for skilled users of AppleWorks.  Still, we have not forgotten the novice:
+	with the included instructions, and because of the attention that we have 
+	devoted to the format of the spreadsheets, you (yes, even you!) should be 
+	able to begin using the CHECKBOOK MANAGER immediately.
+	-->
+	<software name="wapawz05">
+		<description>WAP /// SIG 3 EZ Pieces Disk 5 - Checkbook Manager</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-05a.dsk" size="143360" crc="742bd7b8" sha1="17adcac0640e0ce94a73355f36f912a5ab32f138" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-05b.dsk" size="143360" crc="ffa65efd" sha1="7e3b25b01629a5a2724c6064943ef2cf9ec0b51d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	ON DISK APPLE-3-WAP-AWZ-06:
+
+	PDS NAME: Contributions Disk #1: Side One-A
+	Disk ID: APPLE-3-WAP-AZW-06                SUBJECT: 3EZP/AW Templates
+	BOOTABLE?: NonBootable           DISK SIZE: DS 5.25 OS: SOS
+
+	DESCRIPTION: A disk full of Appleworks/3EZ Pieces templates from a number
+	-: of contributors.  Requires either program to use.
+	-: On Side One:
+
+	-: Applied.Sci (Subdirectory)
+	-: -A series of templates to keep track of your portfolio. These are
+	-:  formerly commercial templates from a company called Applied Scientific.
+
+	-: NAUG (Subdirectory)
+	-: -Templates once offered by NAUG (National AppleWorks Users Group) to
+	-:  those renewing their membership.
+	-: -Music Library     : Keep Track of your music library.
+	-: -Video Library     : Keep track of your video library.
+	-: -HSBND.Ancestry    : Trace a husband's ancestry.
+	-: -Wife.Ancestry     : Trace a wife's ancestry.
+	-:
+	-: Documentation for all these templates provided on disk.
+
+	On Side Two:
+	-: AUGI (Subdirectory)
+	-: -Home Inv.1      :  A home inventory template
+	-: -Order w.o Wt    :  Blank order form - no weights involved
+	-: -Form Postcard   :  Postcard address template
+	-: -Form Envelope   :  Template for printing your address on an envelope
+	-: -Form Label      :  Label Template
+	-: -Order with Wt   :  Blank order form - weights involved.
+	-: -Personal Ltr Hd :  A personal letter head template
+	-: -Address Book 1  :  Address Book Template
+	-: -Area Codes      :  Area Code Template (not complete)
+	-: -Bulletin Boards :  Template to keep track of your favorite BBS's
+	-: -Credit Cards    :  Keep track of your Credit Cards with this template
+	-: -Genealogy       :  Simple genealogy template.
+
+	-: Ottalini (Subdirectory)
+	-: -Seed Addresses    : Addresses of some seed companies
+	-: -BTU Guide         : Keed track of the BTUs you are using
+	-: -Car Schedule      : How soon will you pay off your car?
+	-: -Cash on Hand      : How much cash do you have?
+	-: -Cook Conv.        : Conversion help for the cook in the family
+	-: -Credit Interest   : How much interest have you paid on your Credit Cards?
+	-: -Family Budget     : Another Budget template
+	-: -Gas Expenses      : How much are you paying for gas?
+	-: -House Pricing     : Interst and Principal on your house
+	-: -Personal Worth    : This template figures it for you
+	-: -Sales Taxes       : Keep track of how much you've paid
+	-: -Bird Sightings    : Keep track of the birds you're watching
+	-:
+
+	-: Campbell (Subdirectory)
+	-: -A3.Drivers     : List of Apple /// Drivers
+	-: -Address Book   : Paul Campbell's version
+	-: -Building.Acc.  : Keep track of expenses for a rental
+	-: -Projects       : Template to help you keep track of building projects
+	-: -Repair Log     : Template to help keep track of equipment repairs
+	-: -Time Tests     : Time results of various A3 hardware/software vs. MSDos
+	-: -Autodate       : Spreadsheet Template that figures dates for you
+	-: -Spreadcheck    : Paul Campbell's version of a checkbook spreadsheet
+	-: -Tupperware Form: Order form for Tupperware products
+	-:
+
+	-: Checkbook (Subdirectory)
+	-:-Checkbook       : Checkbook Template.  Includes Instructions
+	-:-Test.Checkbook  : Checkbook Template filled out as an example
+
+
+
+	Many Thanks to : Paul Campbell, Dave Ottalini, Joe Dobrowolski, NAUG
+					 (National Appleworks Users Group), Applied Scientific
+					 and any unnamed contributors for making this disk
+					 possible.
+	-->
+	<software name="wapawz06">
+		<description>WAP /// SIG 3 EZ Pieces Disk 6 - Contributions Disk #1</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-06a.dsk" size="143360" crc="4accf5ee" sha1="20e99edbd36a84721a2e6a206320f20f36b6fb07" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-06b.dsk" size="143360" crc="c9a96a3d" sha1="ee5a4492704634a536f88869a593109d37f2e27e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	BANKCALC #1
+
+	INFORMATION ABOUT THIS DISK :
+
+		 BANKCALC was written by Anthony Powers and published by Micro Book,
+	Inc. of Arlington Heights, Illinois in 1982.  It is a collection of 14
+	VisiCalc models written by community bankers or Banking Industry
+	Software Houses and contributed to the publication.
+
+		According to the Introduction:
+
+	The purpose of this book is to provide bank personnel with Visicalc
+	models which can be used immediately.  As the banker gains experience in
+	VC by using these models, he may wish to use them as a base for developing
+	his own customized programs.
+
+		 Note that these models can all be pulled into 3EZ Pieces or Appleworks
+	and may be of use to the home user in some form or another. We've put them
+	into the public domain as part of a continuing attempt to make all formerly
+	commercial Apple /// products (that are not still on the market in some form)
+	available to the /// community.
+
+	NOTE: WHEN LOADING INTO 3EZ PIECES OR APPLEWORKS, LOAD THE DESIRED MODEL AS
+		  A VISICALC FILE RATHER THAN DIF.
+
+		 We've included Menu.Maker on this disk so that (after you've booted into
+	Business Basic from another disk or off your hard disk) you can look at these
+	files or print them if you like. This information file is available in both
+	Text and 3EZP/Appleworks format as well.
+
+		 While these models should hold for the present, please be aware that
+	they all came out in the early 1980s and reflect the situation at that time.
+	Some of these models may require some changes based on today's realities. As
+	this is a PD offering, buyer beware takes precidence here. You should find
+	some of these useful.  But there is no implied guarantee that any of these
+	models as presented will return information accurate for the 1990s.
+
+	NOTE #2:  THE BOOKS THAT ACCOMPANIED BANKCALC (DISKS 1-2-3) ARE ALL IN THE
+			  WAP OFFICE SHOULD YOU NEED TO REFERENCE THEM.
+
+
+	On Side One of this disk (III.ZAW.07) you'll find the following Visicalc
+	models:
+
+	MANAGEMENT MODELS
+	-: Model 1:  Variance Analysis of Yields
+				 The identification of the causes of month-to-month income
+				 variance of assets.
+
+	-: Model 2:  Yield Summary
+				 The calculation of monthly yields and costs.
+
+	-: Model 3:  Rate Sensitive Statement of Condition
+				 A restatement of the Statement of Condition in terms of rate
+				 Sensitivity.
+
+
+	AMORTIZATION MODELS
+	-: Model 4:  Simple Loan Amortization Schedule
+
+	-: Model 5:  Rate of 78 Amortization Model
+				 A loan amortization schedule with interest calculated using
+				 the rule of 78s.
+
+	-: Model 6:  Effective Rate Model
+				 Produces a table of effective interest rates resulting from
+				 daily compounding of a nominal interst rate.
+
+	-: Model 7:  Compound Yield
+				 Creates a table of effective effective annual yields resulting
+				 from daily compounding at a nominal interst rate.
+
+
+	ACCOUNTING MODELS
+	-: Model 8:  Fixed Assets Model
+				 Calculates the depreciation for fixed assets using the
+				 Streight Line Method.
+
+	-: Model 9:  Accrue Expenses
+				 Accrues expenses over a variable number of months and prepares
+				 monthly journal entries for the expenses.
+
+	Side Two
+
+	ACCOUNTING MODELS (Continued)
+	-: Model 10:  Charitable Contributions
+				  Maintains a history of donations to specific charaties.
+
+	LENDING MODELS
+	-: Model 11:  IRA Calculations
+				  Calculates the value of an IRA Account at retirement.
+
+	-: Model 12:  IRA Vs. CD
+				  Compares an IRA to a CD investment over the same term, and
+				  prepares an IRA disbursement schedule.
+
+	-: Model 13:  All Saver CD Yields
+				  Develops the appropriate nominal rate for an All Saver CD,
+				  given the permitted effective rate and frequency of
+				  interest payments.
+
+	-: Model 14:  Credit Analysis
+	-:            A statement spread program for potential commercial
+				  borrowers which performs a financial analysis on the
+				  borrowers financial statements.
+	-->
+	<software name="wapawz07">
+		<description>WAP /// SIG 3 EZ Pieces Disk 7 - BankCalc #1</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-07a.dsk" size="143360" crc="071411a1" sha1="c8d1f98c6b771236a65967528a31750c68892aa0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-07b.dsk" size="143360" crc="df5b3dbf" sha1="efcdfd3dbad3a8f87ec6b31557d5b7de1ab04eb8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wapawz07a" cloneof="wapawz07">
+		<description>WAP /// SIG 3 EZ Pieces Disk 7 - BankCalc #1 (Alt Side B)</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-07a.dsk" size="143360" crc="071411a1" sha1="c8d1f98c6b771236a65967528a31750c68892aa0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-07b2.dsk" size="143360" crc="b5e7f11d" sha1="d220e0ae84baa9fcd618cb4955c20bd60f1cfa61" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	BANKCALC #2
+
+	INFORMATION ABOUT THIS DISK :
+
+		 BANKCALC was written by Anthony Powers and published by Micro Book,
+	Inc. of Arlington Heights, Illinois in 1982.  It is a collection of 14
+	VisiCalc models written by community bankers or Banking Industry
+	Software Houses and contributed to the publication.
+
+		According to the Introduction:
+
+	The purpose of this book is to provide bank personnel with Visicalc
+	models which can be used immediately.  As the banker gains experience in
+	VC by using these models, he may wish to use them as a base for developing
+	his own customized programs.
+
+		 Note that these models can all be pulled into 3EZ Pieces or Appleworks
+	and may be of use to the home user in some form or another. We've put them
+	into the public domain as part of a continuing attempt to make all formerly
+	commercial Apple /// products (that are not still on the market in some form)
+	available to the /// community.
+
+	NOTE: WHEN LOADING INTO 3EZ PIECES OR APPLEWORKS, LOAD THE DESIRED MODEL AS
+		  A VISICALC FILE RATHER THAN DIF.
+
+		 We've included Menu.Maker on this disk so that (after you've booted into
+	Business Basic from another disk or off your hard disk) you can look at these
+	files or print them if you like. This information file is available in both
+	Text and 3EZP/Appleworks format as well.
+
+		 While these models should hold for the present, please be aware that
+	they all came out in the early 1980s and reflect the situation at that time.
+	Some of these models may require some changes based on today's realities. As
+	this is a PD offering, buyer beware takes precidence here. You should find
+	some of these useful.  But there is no implied guarantee that any of these
+	models as presented will return information accurate for the 1990s.
+
+	NOTE #2:  THE BOOKS THAT ACCOMPANIED BANKCALC (DISKS 1-2-3) ARE ALL IN THE
+			  WAP OFFICE SHOULD YOU NEED TO REFERENCE THEM.
+
+
+	On Side One of this disk (III.ZAW.08) you'll find the following Visicalc
+	models:
+
+	YIELD MODELS
+	-: Model 1:  Commercial Loan Yields
+				 The calculation of monthly yields for all classes of
+				 Commercial Loans.
+
+	-: Model 2:  Installment Loan Yields
+				 The calculation of monthly yields for all classes of
+				 Installment Loans.
+
+	-: Model 3:  Real Estate Loan Yields
+				 The calculation of monthly yields for all classes of
+				 Real Estate Loans.
+
+	-: Model 4:  Money Market Yields
+				 The calculation of monthly yields for all classes of
+				 Money Market Yields.
+
+	-: Model 5:  Investment Yields
+				 The calculation of monthly yields for all classes of
+				 Investments
+
+	-: Model 6:  Deposit Costs
+				 The calculation of monthly costs for all classes of
+				 Deposits
+
+	-: Model 7:  Asset Yields
+				 A monthly management report of all assets and the
+				 monthly yields of earning assets
+
+	-: Model 8:  Liability Costs
+				 A monthly management report of all liabilities and the
+				 monthly cost of paid liabilities
+
+	-: Model 9:  Interest Margin
+				 A monthly management report of the spread between earning
+				 assets and paid liabilities
+
+	EARNINGS MODEL
+	-: Model 10:  Earnings Projections
+				  A bank earnings model which projects four years of bank
+				  earnings, based upon historical earnings, current
+				  earnings, and a series of earnings assumptions
+
+	SIDE TWO
+
+	ACCOUNTING MODELS
+	-: Model 11:  Accelerated Cost Recovery
+				  The calculation of depreciation on fixed assets for tax
+				  purposes using the new Accelerated Cost Recovery Guideline
+
+	-: Model 12:  Budget Income Expense
+				  A monthly comparison between budgeted income and expenses,
+				  and the actual monthly results
+
+	-: Model 13:  Balance Sheet Budget to Actual
+				  A monthly comparison of the asset and liability monthly
+				  budget with the actual monthly results
+
+	-: Model 14:  Monthly Rates
+				  The calculation of monthly average rates given a series of
+				  daily rates.
+
+	-: Model 15:  Income Tax
+				  The calculation of the banks monthly provisions of federal
+				  income taxes
+
+	LENDING MODEL
+	-: Model 16:  Mortgage Amortization
+				  The preparation of a mortgage amortization schedule, and the
+				  development of a price for the mortgage based upon the
+				  present value given a bank's desired rate of return
+	-->
+	<software name="wapawz08">
+		<description>WAP /// SIG 3 EZ Pieces Disk 8 - BankCalc #2</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-08a.dsk" size="143360" crc="2e19bb3e" sha1="53b56ebcf32ac6840c7401a1787d82ea114e8470" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-08b.dsk" size="143360" crc="0cf90b69" sha1="102e9667c8be7afd02da380250ee6a8490e1c29c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	BANKCALC #3
+
+	INFORMATION ABOUT THIS DISK :
+
+		 BANKCALC was written by Anthony Powers and published by Micro Book,
+	Inc. of Arlington Heights, Illinois in 1983.  It is a collection of 8
+	VisiCalc models written by community bankers or Banking Industry
+	Software Houses and contributed to the publication.
+
+		According to the Introduction:
+
+	The purpose of this book is to provide bank personnel with Visicalc
+	models which can be used immediately.  As the banker gains experience in
+	VC by using these models, he may wish to use them as a base for developing
+	his own customized programs.
+
+		 Note that these models can all be pulled into 3EZ Pieces or Appleworks
+	and may be of use to the home user in some form or another. We've put them
+	into the public domain as part of a continuing attempt to make all formerly
+	commercial Apple /// products (that are not still on the market in some form)
+	available to the /// community.
+
+	NOTE: WHEN LOADING INTO 3EZ PIECES OR APPLEWORKS, LOAD THE DESIRED MODEL AS
+		  A VISICALC FILE RATHER THAN DIF.
+
+		 We've included Menu.Maker on this disk so that (after you've booted into
+	Business Basic from another disk or off your hard disk) you can look at these
+	files or print them if you like. This information file is available in both
+	Text and 3EZP/Appleworks format as well.
+
+		 While these models should hold for the present, please be aware that
+	they all came out in the early 1980s and reflect the situation at that time.
+	Some of these models may require some changes based on today's realities. As
+	this is a PD offering, buyer beware takes precidence here. You should find
+	some of these useful.  But there is no implied guarantee that any of these
+	models as presented will return information accurate for the 1990s.
+
+	NOTE #2:  THE BOOKS THAT ACCOMPANIED BANKCALC (DISKS 1-2-3) ARE ALL IN THE
+			  WAP OFFICE SHOULD YOU NEED TO REFERENCE THEM.
+
+
+	On Side One of this disk (III.ZAW.09) you'll find the following Visicalc
+	models:
+
+	AMORTIZATION MODELS
+	-: Model 1:  Balloon Payment Loan Amortization
+				 The creation of a loan amortization schedule for a simple
+				 interest loan to be repaid monthly with a level payment
+				 plus a balloon payment in the final month
+
+	-: Model 2:  Interest Only Loan Amortization
+				 The creation of a loan amortization schedule for a simple
+				 interest loan wherein the initial payments are made
+				 to interest only.  At a predetermined point, the loan
+				 reverts to level interest and principal payments
+
+	CUSTOMER SERVICE MODELS
+	-: Model 3:  Daily Investment Rates
+				 The preparation of a daily schedule for the rates offered
+				 on CDs, IRA's, and Repurchase Agreements.  The schedule
+				 also includes effective rates resulting from daily interest
+				 compounding and interest payments over various time periods
+
+	-: Model 4:  Daily Teller Transaction Count by Hour
+				 The maintenance of teller transaction counts by hour of the
+				 day and day of the week.  The model is useful in scheduling
+				 the working hours of tellers
+
+	-: Model 5:  Account Analysis
+				 The preparation of a bill for services used by commercial
+				 customers on both a fee and excess balance basis
+
+	SIDE TWO:
+
+	MANAGEMENT MODELS
+	-: Model 6:  Director's Report
+				 The preparation of a monthly set of Director's Reports
+				 including Statement of Condition, Income Statement and a
+				 Key Ratio Report
+
+	-: Model 7:  Bankers Acceptance
+				 A convenient record maintenance system for the Bankers
+				 Acceptances owned by the bank
+
+	-: Model 8:  TEFRA
+				 The calculation of tax equivalent yields for municipal
+				 securites under TEFRA, based upon the stated municipal yield
+				 and a series of cost of funds assumptions.
+	-->
+	<software name="wapawz09">
+		<description>WAP /// SIG 3 EZ Pieces Disk 9 - BankCalc #3</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-09a.dsk" size="143360" crc="08144aa1" sha1="3275b7e9b072abce062d8f2717c46ab5e9b8a0dd" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-09b.dsk" size="143360" crc="4e381a66" sha1="545415f9a27e9c7bc1ad6edfe91a37230b316c61" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	DISK 3AWZ.10
+
+	VIDEO CATALOG: DISK 1
+
+	This disk contains a 3EZ Pieces/Appleworks Video Database of movies.  You can
+	expand as you like, add comments to current entries or delete those you have no
+	interest in.
+
+	Side One has two files covering movies from 1) A-G and 2) H-K.
+	Side Two has one file covering movies from L-P
+
+	This disk in NOT self-booting and requires 3EZ Pieces of Appleworks to use.
+	-->
+	<software name="wapawz10">
+		<description>WAP /// SIG 3 EZ Pieces Disk 10 - Video Catalog: Disk 1</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-10a.dsk" size="143360" crc="da71cca2" sha1="3a65e91ca5c73094b0f7175d3ae9d3bcf278adfa" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-10b.dsk" size="143360" crc="0cb193a2" sha1="260ab6ce4be276e83c8ed2bb97b2861331d096ad" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	DISK 3AWZ.11
+
+	VIDEO CATALOG: DISK 2
+
+	This disk continues with a 3EZ Pieces/Appleworks Video Database of movies. You
+	can expand as you like, add comments to current entries or delete those you have
+	no interest in.
+
+	Side One has one file covering movies from Q-T
+	Side Two has one file covering movies from U-Z
+
+	This disk in NOT self-booting and requires 3EZ Pieces of Appleworks to use.
+	-->
+	<software name="wapawz11">
+		<description>WAP /// SIG 3 EZ Pieces Disk 11 - Video Catalog: Disk 2</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-11a.dsk" size="143360" crc="3316f1a7" sha1="ae32ecf4390e18623d0a25b3e03063cf039a1964" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-11b.dsk" size="143360" crc="48d5e07f" sha1="b3eae9e0dc736ec7f5ea19e5533e25807284208e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	DISKS 3AWZ.12-15 : PARISHWORKS
+	REQUIRES APPLEWORKS OR 3EZ PIECES
+	DISK APPLE-3-WAP-AWZ-12 SIDE ONE IS SELF BOOTING
+
+
+	These disks have been tried with 3EZ Pieces and all have been shown to load
+	and work properly.  If you have an additional church-related templates
+	you would like to contribute, we'd love to have them!
+
+	Dave Ottalini
+	July, 1993
+
+
+
+								  ParishWorks
+					  INSTRUCTIONS FOR SPECIFIC TEMPLATES
+					  -----------------------------------
+
+
+	EXP.CHECK.REG: Expanded Check Register
+	-------------
+	The Expanded Check Register includes manual calculation. Every
+	time you want the computer to calculate, press <OPEN APPLE> K.
+	You can calculate after each check, or you can wait until you
+	have entered several or all checks before you calculate. <OPEN APPLE> K
+	can be used as often as needed.
+
+
+
+	GIVING.DATA and NAMES  (Contributions Database)
+	---------------------
+
+	1hese two database files work together for tracking church
+	contributions.  Shared with us by Sharon Rivers of Memphis,
+	Tennessee.   Here's Sharon's guidelines:
+
+
+	One file is used for the collection of weekly tithes and the
+	other for tither information.  To help keep names and amounts
+	separated there are two databases.  The pastor or church
+	treasurer should be the only ones that have access to that
+	information.  At the end of the year the pastor or treasurer
+	could issue a statement telling each person what was their tithe
+	for tax purposes.
+
+	On the NAMES database is where the envelope number and name will
+	be kept.  This would be for issuance of the envelopes and to
+	insure that each family or person in a family has the opportunity
+	to tithe.  This also provides the church officials a means to
+	track church income to specific areas.  Examples would be the
+	Building Fund, Missionary Programs, Colleges, Disaster Relief,
+	and other plans based upon the needs and desires of the church.
+
+	Also, the NAMES database could be used for mailing out church
+	letters and flyers as a labels template is included along with
+	it.
+
+	Randomly distribute your envelopes trying not to match up names
+	with numbers.  This can be sorted later by the computer for your
+	church reports and really doesn't matter.  Again the only purpose
+	it to help keep the church tither's identity a secret from other
+	church members.
+
+	Provided are spare fields for future expansion for your specific
+	needs.
+
+
+	To facilitate practice with the GIVING.DATA database, you are
+	provided dummy records.  You can sort the information by the date
+	or by the number of the person doing the tithe.  Lets do some
+	practice reports:
+
+	1.  To find the tithe for just Nov 20th.  Use Open-Apple R to
+		have Appleworks select on the date required then sort on No
+		followed by Date to put the database in correct order.
+
+	File:   Giving.Data
+	Page  1
+	Report: Weekly
+	Selection: Date equals Nov 20 89
+
+	Date      No    Fund 1    Fund 2    Fund 3    Fund 4 Total
+	--------- ---- -------   -------   -------   ------- -------
+	Nov 20 89 1001    0.00     20.00     20.00      0.00 40.00
+	Nov 20 89 1002   25.00      0.00      0.00     15.00 40.00
+	Nov 20 89 1003    5.00     20.00     20.00      0.00 45.00
+	Nov 20 89 1004    0.00     25.00     25.00      0.00 50.00
+	Nov 20 89 1005    0.00      0.00      0.00     20.00 20.00
+					 30.00*    65.00*    65.00*    35.00* 195.00*
+
+	You can see all the tithes sorted by the individual number and
+	totals down each of the funds.  You can change the names of the
+	funds to suit your needs.
+
+	2.  To have a summarized report for any month.  Use Open-Apple R
+		to have Appleworks select on the month required then sort on
+		No to put the database in correct order.
+
+	File:   Giving.Data
+	Page  1
+	Report: Monthly
+	Selection: Date is after Nov  1 89
+	  through  Date is before Nov 30 89
+
+	Date      No    Fund 1    Fund 2    Fund 3    Fund 4 Total
+	--------- ---- -------   -------   -------   ------- -------
+	Nov  6 89        30.00     65.00     65.00     35.00 195.00
+	Nov 13 89        30.00     65.00     65.00     35.00 195.00
+	Nov 20 89        30.00     65.00     65.00     35.00 195.00
+	Nov 27 89        30.00     65.00     65.00     35.00 195.00
+					120.00*   260.00*   260.00*   140.00* 780.00*
+
+	Now you have a full picture for the month of November.  At the
+	end of the year you can provide to your membership a full list of
+	their tithes to help them with their tax information by doing
+	this.
+
+	3.  To find the tithe for individuals for the year [or any
+		period] use Open-Apple S to have Appleworks sort on No
+		followed by Date to put the database in correct order. Then
+		use Open-Apple R to select on just a single tither like this:
+
+
+
+	File:   Giving.Data
+	Page  1
+	Report: Individual
+	Selection: No equals 1001
+
+	Date      No    Fund 1    Fund 2    Fund 3    Fund 4 Total
+	--------- ---- -------   -------   -------   ------- -------
+	Oct  2 89 1001    0.00     20.00     20.00      0.00 40.00
+	Oct  9 89 1001    0.00     20.00     20.00      0.00 40.00
+	Oct 16 89 1001    0.00     20.00     20.00      0.00 40.00
+	Oct 23 89 1001    0.00     20.00     20.00      0.00 40.00
+	Oct 30 89 1001    0.00     20.00     20.00      0.00 40.00
+	Nov  6 89 1001    0.00     20.00     20.00      0.00 40.00
+	Nov 13 89 1001    0.00     20.00     20.00      0.00 40.00
+	Nov 20 89 1001    0.00     20.00     20.00      0.00 40.00
+	Nov 27 89 1001    0.00     20.00     20.00      0.00 40.00
+					  0.00*   180.00*   180.00*     0.00* 360.00*
+
+	You can now see just how versatile this can be.  You can have it
+	automatically give you the yearly reports by using the Auto
+	Annual report just by sorting on Date followed by No to put the
+	database in correct order.  The report driver will do the
+	rest for you.
+
+
+
+	PAYROLL.REGISTR: Payroll Register
+	---------------
+
+	1.  Load the template file, and change the filename (for example:
+		MasterPayroll)
+
+	2.  Set up the payroll file for your company:
+
+		A. Enter the FIXED DATA (the data that will not change from
+		   payroll period to payroll period):  for example, the
+		   Employee # (in both in Payroll Register and the Cumulative
+		   Payroll Report), the Employee Name, the Rate of Pay, and
+		   the fixed deductions (the deductions that do not change
+		   from period to period; for example, the Other A, Other B,
+		   and Other C, if these are fixed).
+
+		B. Save the file.
+
+	3.  To prepare the Payroll Register for each period:
+
+		A. Load the most recent payroll file to the screen, and
+		   change the filename to reflect the current payroll
+		   period (for example, Payroll3.15.90).
+
+		B. Temporarily MOVE the Cumulative Payroll Report (Rows 58
+		   through 110 at the bottom of the file for the long form)
+		   to the Clipboard:
+
+		 (1)  Move the cell cursor to the beginning of the
+			  Cumulative Payroll Report Row 58.
+
+		 (2)  Enter the MOVE command:  <OPEN APPLE> m for move.
+
+		 (3)  From the options listed at the bottom of the
+			  screen, select "To the Clipboard (cut)" by
+			  highlighting the option and pressing <RETURN>.
+
+		 (4)  Identify the material to be moved by using the
+			  <DOWN ARROW> to highlight through Row 110 (the last
+			  line of the Cumulative Report).
+
+		 (5)  <RETURN> to indicate that all of the material to be
+			  moved has been identified.
+
+		 (6)  The computer will warn you that "You are about to clear
+			  or remove protected cells.  Do you really want to do
+			  this?"
+
+			  Select "Yes."
+
+			  (The Cumulative Payroll Report leaves your screen, but
+			  it is stored safely on the Clipboard, a temporary
+			  storage space provided by AppleWorks.  The Report will
+			  remain on the Clipboard until you move it back to the
+			  screen later to complete the Cumulative Payroll
+			  Report--or until you turn off the computer, whichever
+			  comes first.)
+
+		 C. Enter the number of hours worked for ALL EMPLOYEES.
+
+	NOTE:  Unless this is the first payroll period for which the file
+	is used, the file currently contains the number of hours from the
+	previous period. Change the number of hours worked to the current
+	period by moving the cell cursor to the cell, typing the current
+	number of hours, and pressing <RETURN>.
+
+	You will note that the computer does not AUTOMATICALLY CALCULATE
+	the wages--instead, this file has been set up to calculate only
+	when the CALCULATE command is entered in Step D, which follows.
+
+		 D. After all employee work hours have been entered, enter
+			the CALCULATE command--<OPEN APPLE> K for calculate--so
+			that the computer will automatically calculate the
+			Regular Pay, Overtime Pay, and Total Wages for all
+			employees.
+
+		 E. Using the Total Wages amount and a tax table, look up and
+			enter the Federal and State Withholding Taxes (and Other
+			deductions, as needed).
+
+		 F. Enter the CALCULATE command again, and the computer will
+			calculate the Net Pay.
+
+		 G. SAVE the current Payroll Register:  <OPEN APPLE> S.
+
+
+	4.  To prepare the Cumulative Payroll Report:
+
+		 A. Change the filename to a cumulative report name (for
+			example:  CumPay13.15.90)
+
+		 B. Move the Cumulative Payroll Report from the Clipboard:
+
+		 (1) Move the cell cursor to the beginning of Row 58.
+
+		 (2) Enter the MOVE command.
+
+		 (3) From the options listed at the bottom of the screen,
+			 select "From the Clipboard (paste)."
+
+		 (4) From the options listed, select "Formulas and Values."
+
+			 The Cumulative Payroll Report now reappears in Rows 58
+			 through 110 of your screen.
+
+		 C.  Enter the CALCULATE command:  <OPEN APPLE> K.
+
+		 The computer automatically adds the current payroll to the
+		 previous Cumulative Payroll Report.
+
+		 D.  Save the file:  <OPEN APPLE> S for save.
+
+
+
+
+	PETTY.CASH.REG: Petty Cash Register
+	--------------
+
+	1.  Each payment is recorded in two columns:  the Payments column
+		and one of the Distribution of Payments columns.
+
+	2.  After each line is entered in the register, the "Yes" at the
+		bottom of the screen should have a 1 beside it to signal
+		that the amounts in the two columns were entered alike.
+
+	3.  To print the Petty Cash Register WITHOUT the "test" at the
+		bottom of the file:
+
+		A. Move the cell cursor to the line following the double
+		   line.
+
+		B. Enter the DELETE command:  <OPEN APPLE> D for delete.
+
+		C.  Select "Rows."
+
+		D.  Highlight the rows to be deleted, and <RETURN>.
+
+
+	MERGING DATABASES by Robert Ericson
+	-----------------
+
+	"In many applications you will need to merge information from
+	several different sources. This section provides tips for merging
+	information from two similar or markedly different database
+	files.  Surprisingly few AppleWorks users even know that this can
+	be done.
+
+	TIP: When you merge records from two different files,
+	their original category orders must match.
+
+	Focus all your attention on the original category orders. From
+	the Review mode you can press Apple-N to see the original order.
+	Print a copy of the category names screen of the source file,
+	then load the destination file. Compare its category names screen
+	with the hard copy you just printed.
+
+	Suppose both files have exactly the same original category
+	order. To merge the information, follow these steps:
+
+	1. Change the name of the Desktop files, just to be safe.
+	   Name the files Source and Destination.
+
+	2. Using multiple-record layout, copy the records in the
+	   Source file to the clipboard, then from the clipboard to the
+	Destination file.
+
+	3. Check the multiple-record layout in the Destination file to
+	make certain that the category information is consistent.
+
+	Note that when the information is transferred, the categories
+	appear in the order of the Destination file's single- and
+	multiple-record layouts. In the multiple-record layout, the
+	category widths are those of the Destination file.
+
+	You can ignore the single- and multiple-record layouts of the
+	Source and Destination files until the final check. If they
+	match, the original category orders may still differ. If their
+	orders differ before-hand, the Destination file will evaluate
+	everything in its original category order. Focus all your
+	attention on the original category orders.
+
+	TIP: Two Data Base files can be merged even if they have
+	different numbers of categories.
+
+	Decide what categories you need to transfer from the Source file
+	to the Destination file. For example, the table below compares
+	the original category orders of the Everyone list (the Source
+	file) and the Members list (the Destination file). The categories
+	are identical through the eighth category, PHONE. The remaining
+	categories have no value to the Destination file, except for
+	NOTE, which has information that belongs in the NOTES category in
+	the Destination file.
+
+	 ------------------------------------------
+	|   Table: Everyone list and Members list  |
+	|          categories compared 3           |
+	|                                          |
+	|      Origin File     Destination File    |
+	|                                          |
+	|      FIRST NAME      LAST NAME           |
+	|      LAST NAME       LAST NAME           |
+	|      PLACE           PLACE               |
+	|      STREET          STREET              |
+	|      TOWN            TOWN                |
+	|      STATE           STATE               |
+	|      ZIP             ZIP                 |
+	|      PHONE           PHONE               |
+	|      NOTE            COMMITTEE           |
+	|      CODE            YEARS               |
+	|      KEYWORD         1986                |
+	|      Rl              1987                |
+	|      R2              1988                |
+	|      R3              NOTES               |
+	|      R4              RESERVED            |
+	|                                          |
+	 ------------------------------------------
+
+
+	You can proceed with the merge almost as in the last tip. Follow
+	these steps:
+
+	1. Change the name of the Desktop files if you have not already
+	done so. Name the files Source and Destination.
+
+	2. Delete all Source file categories after PHONE, except for
+	   NOTE. Don't worry about report formats, because you will
+	   never use this file again.
+
+	3. Insert five categories between PHONE and NOTE. Name
+	   them anything, and then return to the multiple-record layout.
+
+	4. Copy the records in the Source file to the clipboard, then
+	   from the clipboard to the Destination file.
+
+	5. Check the multiple-record layout in the Destination file to
+	   make certain that the category information is consistent.
+
+	Note that all the records from the Source file have gained the
+	additional categories of the Destination file. However, the
+	Source files have no information in those categories.
+	The rules for transferring are easy to remember. If the Source
+	file has more categories than the Destination file, the
+	additional categories win be lost in the merge. If the Source
+	file has fewer categories, it will gain the additional categories
+	of the Destination file, but they will contain no information.
+
+
+	TIP: When the original category orders of two files do not
+	match, print the records to an ASCII file.
+
+	Suppose the Source file categories begin with LAST NAME
+	and the Destination file categories begin with FIRST NAME.
+	This presents a problem. In this case, proceed as follows:
+
+	1. Create a labels-style report format for the Source file in the
+	   original category order of the Destination file. Count and
+	   make a note of the number of categories in the report.
+
+	2. Select the records you want to print.
+
+	3. Print the report to an ASCII file.
+
+	4. Create a new Data Base file from the ASCII file. Enter the
+	   correct number of categories for the new file.
+
+	5. Using multiple-record layout, copy the records in the
+	   Source file to the clipboard, then from the clipboard to the
+	   Destination file.
+
+
+	6. Check the multiple-record layout in the Destination file to
+	   make certain that the category information is consistent.
+
+	TIP: Merge files to find duplicate entries.
+
+	If you have ever received two copies of a form letter or mis-
+	takenly sent two copies to the same person, you will appreciate
+	this technique.  It saves postage, paper, and embarrassment.
+
+	Suppose you have two mailing lists on separate files. By merging
+	the records, you can find and delete duplicate entries. Create a
+	multiple-record layout with FIRST NAME, LAST NAME, STREET, STATE,
+	ZIP, and PLACE in that order. Arrange the records alphabetically
+	by first name, then by last name. Scan the LAST NAME column for
+	duplicate entries. The street address column is the next best
+	reference point.
+
+	If the files are too large to merge, merge sections at a time.
+	When you find obvious duplication, you may find slightly
+	different spellings. One spelling of a name may be more plausible
+	than the other, but such corrections are often matters of
+	judgment."    (Used With Permission)
+
+			Robert Ericson: APPLEWORKS TIPS AND TECHNIQUES
+			 (Second Edition) ISBN 0-89588-480-1  $19.95
+							 Symbex Inc.
+					   2021 Challenger Dr. #100
+						   Alameda CA 94501
+							800-227-2346#
+	-->
+	<software name="wapawz12">
+		<description>WAP /// SIG 3 EZ Pieces Disk 12 - ParishWorks</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-12a.dsk" size="143360" crc="3735aafa" sha1="48f08e89fe1acffe7d9bbdf9c42936b7be7fa179" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-12b.dsk" size="143360" crc="a02b85f0" sha1="c26be4afd0e990b23713842d78788e2558f93a82" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wapawz13">
+		<description>WAP /// SIG 3 EZ Pieces Disk 13 - ParishWorks</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-13a.dsk" size="143360" crc="f7899f9d" sha1="f4121787f042f315d0f63cc9c91d260e7667f0b1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-13b.dsk" size="143360" crc="d7f215bc" sha1="df933cf3bceb5729911529467e4b9783f7fa9c56" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wapawz14">
+		<description>WAP /// SIG 3 EZ Pieces Disk 14 - ParishWorks</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-14a.dsk" size="143360" crc="2716ec61" sha1="1246ff1d9544ad0f372e78be36d8ff90c030f5f0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-14b.dsk" size="143360" crc="d7488944" sha1="81128e72b9420e28230e02628623cea5b39d51a4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wapawz15">
+		<description>WAP /// SIG 3 EZ Pieces Disk 15 - ParishWorks</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-15a.dsk" size="143360" crc="36691653" sha1="662a833b1d7fccaef1670342874e0f31cdf5043c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-awz-15b.dsk" size="143360" crc="026ac62a" sha1="b39036583b46017a6435c413b0c310e5f50a6416" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Washington Apple Pi - Accounting -->
+
+	<!--
+	APPLE-3-WAP-ACT-01:  EASy Accouting System
+
+	The EASy Executive Accounting System was first released by the Denver Software
+	Company for the Apple /// in 1982.  The company managed to exist through 1986
+	before disappearing from the scene.  
+
+	The WAP /// SIG has placed this program into the Public Domain as a service
+	to our members. 
+
+	THE PROGRAMS
+
+	The EASy Executive Accounting System is on the following disks:
+
+	APPLE-3-WAP-act-01a.dsk SIDE ONE: [Catalog] EASy Information
+	APPLE-3-WAP-act-01b.dsk SIDE TWO: [Catalog] EASy Startup (self-booting)
+	APPLE-3-WAP-act-02a.dsk SIDE ONE: [Catalog] EASy System Disk
+	APPLE-3-WAP-act-02b.dsk SIDE TWO: [Catalog] EASy AR (Accounts Receivable)
+	APPLE-3-WAP-act-03a.dsk SIDE ONE: [Catalog] EASy AP (Accounts Payable)
+	APPLE-3-WAP-act-03b.dsk SIDE TWO: [Catalog] EASy GL (General Ledger)
+
+
+	OVERVIEW
+
+	EASy is a business software system designed to aid you in the bookkeeping and
+	accounting needed to make your business run as efficiently as possible. 
+	Software means a set of instructions for your computer, and this software
+	system is an easy-to-use package tht allows you to record transactions
+	without having to know anything about computer programming and with only
+	minimal knowledge of accounting.
+
+	In function, EASy is comparable to many far more elaborate systems, and you
+	can upgrade the Executive Accounting System (EAS)as the needs of your
+	business grow.  No programming skills are necessary to use the EAS since it
+	provides you with lists of selections, or menus, from which you choose, and
+	instructs you in using the system by means of screen messages.  It even
+	provides definitions of certain important accounting terms.  It also allows
+	bookkeeping functions and information to be kept for more than one company by
+	maintaining separate disks for the accounts payable ledger, the accounts
+	receivable ledger, the general ledger, and the SYSTEM disk (this last disk
+	also includes information about company name, address and finance policy).
+
+	The EAS makes bookkeeping almost enjoyable.  It should certainly help you
+	appreciate the capabilities of your computer.  
+
+	* THE EASy EXECUTIVE ACCOUNTING SYSTEM MANUAL IS IN THE WAP LIBRARY.
+	-->
+	<software name="wapact01">
+		<description>WAP /// SIG Accounting Disk 1 - EASy Accounting System</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-act-01a.dsk" size="143360" crc="f63541a6" sha1="d67a371405ba93a54da7e7a7086dd789aafc4292" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-act-01b.dsk" size="143360" crc="3c8ac1d3" sha1="c46c0f5811ae0be3f0ff88513bf070aa4e556e8d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wapact02">
+		<description>WAP /// SIG Accounting Disk 2 - EASy Accounting System</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-act-02a.dsk" size="143360" crc="0e918c72" sha1="b3699c7a80a66ecf402b8aef86872951485f0cf6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-act-02b.dsk" size="143360" crc="8ac61310" sha1="bb8d0ab47bd13fc1461e6ddca6a5e8b3caccdad1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wapact03">
+		<description>WAP /// SIG Accounting Disk 3 - EASy Accounting System</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-act-03a.dsk" size="143360" crc="5a37d29a" sha1="0ce95cb1b593695dee8704d4cf7ac0f514415dc3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-act-03b.dsk" size="143360" crc="961549b5" sha1="cc1058341ce201ac3b6f8923e72c074dfa22e8de" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Washington Apple Pi - Apple Software -->
+
+	<!--
+	PDS NAME: Three Cheers Boot and Program
+	Disk ID: APPLE-3-WAP-APL-01
+	BOOTING : Self-Booting
+
+	Three Cheers was the first and only magazine on disk for
+	the Apple ///.  Begun in 1984, its graphics are outstanding! This disk
+	includes the boot and program disks.  Requires APPLE-3-WAP-APL-02 to operate (that
+	disk has the only two issues ever produced.)
+	-->
+	<software name="wapapl01">
+		<description>WAP /// SIG Apple Software Disk 1 - Three Cheers Boot and Program</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-apl-01a.dsk" size="143360" crc="951fc74d" sha1="58b2a5c40ec33d6420f79d9d92d5420ea43aaeb4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-apl-01b.dsk" size="143360" crc="a9faeace" sha1="93811a10b39aaf90977e389a078614cbf658a593" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Three Cheers Issues One and Two
+	Disk ID: APPLE-3-WAP-APL-02
+
+	The only two issues ever produced for Three Cheers, an Apple /// magazine on
+	disk. Requires APPLE-3-WAP-APL-01 to operate.
+
+	Issue One (On Side One) includes Apple /// News, reviews of Versaform
+	and /// EZ Pieces, as well as Basic and Pascal programs (Three Cheers
+	is Pascal based and can not run Basic programs).
+
+	Issue Two (On Side Two) includes more News and information, an article
+	about using your Serial printer in emulation mode, a game (Runaround)
+	and "Magellan:  CP/M to SOS and Back Again."
+	-->
+	<software name="wapapl02">
+		<description>WAP /// SIG Apple Software Disk 2 - Three Cheers Issues One and Two</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-apl-02a.dsk" size="143360" crc="5a54590b" sha1="bdbfe1bfc20303c6e2aea5f5277f02cb848b7d84" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-apl-02b.dsk" size="143360" crc="bb115b4d" sha1="0f9b8d4d2cd515f3381a6816189f6f010b97e78e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Advanced Visicalc/Mail List Manager Hard Disk Versions
+	Disk ID: APPLE-3-WAP-APL-03
+	BOOTABLE?: Bootable (Side Two)
+
+	Hard disk versions of two venerable Apple /// programs.
+
+	Side One: Advanced Visicalc.  NOT self-booting.  See DOCUMENTATION
+		   file for information on how to use this version.
+
+	Side Two: Mail List Manager v. 1.1.  This version is self booting.
+		 : MLMNOTES  : Notes on this updated hardisk version.
+
+	(We suggest you also get Dr. Al Bloom's MLM Utilities disks which really
+	make this program useful. They are disks 3BLM.07 through 10.)
+	-->
+	<software name="wapapl03">
+		<description>WAP /// SIG Apple Software Disk 3 - Advanced Visicalc/Mail List Manager Hard Disk Versions</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-apl-03a.dsk" size="143360" crc="57d5d7d5" sha1="2d63d77f0abbf025c548399e0925235c0a2b64e3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-apl-03b.dsk" size="143360" crc="78e67a6c" sha1="e62ecd0d34ccc228a3bdaf6e6d060420c40f71a2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Quick and Easy Data Master
+	Disk ID: APPLE-3-WAP-APL-04
+	BOOTABLE? Bootable 
+
+		Quick and Easy Data Master allows the user to design programs by
+	setting information prompts, then writes the program (in Business Basic).
+	Includes a "Demo" mode that produces two programs for you. Originally
+	released by Advanced Software Technology.
+
+	Side One:  Boot Disk
+	Side Two:  Program Disk
+	-->
+	<software name="wapapl04">
+		<description>WAP /// SIG Apple Software Disk 4 - Quick and Easy Data Master</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-apl-04a.dsk" size="143360" crc="a63ceaa8" sha1="c222024c95bc8d099e61775dc378b9bd3da1b6b7" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-apl-04b.dsk" size="143360" crc="1ca1cb73" sha1="4e02c4e6c1e27cadff5acba5703690cade4ffb6c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Graph 'n Calc
+	Disk ID: APPLE-3-WAP-APL-05
+	BOOTABLE? Bootable 
+
+	Graph 'n Calc is a combination business graphic development and
+	analytical computation package that develops five different types of graphs:
+	line charts, grouped bar charts, stacked bar charts, combination line/
+	bar charts, and pie charts. Graphs may be printed on an Apple Imagewriter or
+	on Epson (or compatible) printer with Graftrax. Graphs created on video
+	display may be saved to disk for later showing by an integrated "slide show"
+	system that's included (files saved to disk may also be uploaded into On 
+	Three's Graphics Manager or Draw On Three for editing/printing). Built-in
+	analytical computations include geometric, exponential and liear curve
+	fitting; exponential smoothing; multiple linear regression; seasonality 
+	analysis; and many times series functions. Originally published by 
+	Desktop Computer Software.
+
+
+	Side One:  Boot Disk
+			Read.Me.First File
+
+	Side Two:  Program Disk
+	-->
+	<software name="wapapl05">
+		<description>WAP /// SIG Apple Software Disk 5 - Graph 'n Calc</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-apl-05a.dsk" size="143360" crc="9e30ee56" sha1="11e63d89ce043d652a2aa5bd74057a11b6589b2d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-apl-05b.dsk" size="143360" crc="77aecb22" sha1="c513edba57fc182041abd66fa4e058459b9ea1d8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: HABAMERGE
+	DISK ID : APPLE-3-WAP-APL-06
+	BOOTABLE? YES
+
+
+
+			Habamerge was a commerical program offered by HABA Systems,
+	the original distributor of 3EZ Pieces.  It has the same interface as
+	3EZPs and is designed to merge data base mailing list information
+	into letters, or as labels. In fact, Habamerge will print THREE ACROSS 
+	mailing labels -  something 3EZPs can't do! HOWEVER - it will NOT load a 3EZP
+	or AppleWorks Word Processing file! ONLY ASCII Text files. (Bummer!) However,
+	it is an Assembly Language program (the SOS.INTERP file) so it's pretty fast.
+
+			We do not have a manual for it, unfortunately. But the program itself
+	is self-explanatory and includes demos on disk. You can even print to screen
+	to make sure that everything works right.  
+			The program is not perfect, one reviewer from another club in fact
+	called it "virtually useless" because it can't seem to handle mailing lists 
+	of different lengths. However, if that isn't a problem for you, see if this 
+	program isn't worth a little of your time.  IF you have a manual, 
+	please send us a copy. Or better yet, transcribe it and send a disk!
+			By the way, this program will also work on any Apple //.  This was
+	the FIRST commercial product to be shipped so that it could run on either
+	machine (the boot code on the // and the /// are in different blocks and 
+	each machine knows what to look for).  IF you want to run the // version of
+	Habamerge, all you have to do is insert this side into your Apple II (any
+	version and turn on the machine - or at the Basic Prompt, type:
+
+	]  -Merge.System
+
+	and the program will boot automatically.
+
+	NOTE that AppleWorks 2.0 and above already has mailmerge built in - but I
+	don't  believe it can print mailing labels 3 across so it may still prove useful on the // side.
+
+	NOTE2: To use with 3EZPS - you'll have to print your data base mailing list
+	to the word processor, then print it to disk (RAM disk is great for this).
+	THEN run  HABAmerge and load in the text (ASCII) file after you've set things
+	up. Note that the records must be one line each with a Return (NOT a tab) AND
+	no space inbetween:
+
+	Joe Apple
+	/// Cupertino Lane
+	LaLa City, California 66666
+	Mary Sparkstation
+	ServerCity Road
+	Sun City, California 77777
+	(etc.)
+
+
+	SIDE ONE
+
+	Side One 
+
+	Informational side - bootable with the Menu.Maker Business Basic Program.
+	This disk side includes the Read.Me.First file, and a database of all known
+	articles about HABA - both in 3EZP (and Appleworks) format and in ASCII text
+	file format (readable by Menu.Maker).
+
+	HABA.DB           3EZPs Database of articles about HABA Systems
+	HABA.DB.ASCII     ASCII version of above file
+	Read.Me.First     Information file you're reading now.
+
+
+	Side Two contains Habamerge - it's self booting and easy to use.  Be sure to
+	replace our SOS.DRIVER file with your own to use your particular printer. Or,
+	if you have a hard disk, simply upload it there and run from BOS, Selector
+	or Catalyst.  Again, both the SOS and ProDos versions of the program are
+	available ON THIS DISK SIDE.
+	-->
+	<software name="wapapl06">
+		<description>WAP /// SIG Apple Software Disk 6 - Habamerge</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-apl-06a.dsk" size="143360" crc="0f5a2edd" sha1="4985f86c41e3ab0b8d1b23a012bc954e0cc24b04" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-apl-06b.dsk" size="143360" crc="1e58cfbf" sha1="852f21308a74ea456f6a60cb2d25fa151081e1a3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: 3EZ Pieces
+	DISK ID : APPLE-3-WAP-APL-07
+	BOOTABLE?: Bootable
+
+	The original integrated program for the Apple /// written
+	by Robert Lissner. It includes modules for word processing, spread
+	sheets and data bases. VERY easy to use. It is compatible with
+	AppleWorks files - in that ANY version of AppleWorks can read these
+	files. Check out books in the WAP library or at your local library
+	for more information about how to use this program. Also check out
+	the /// SIGs extensive Template offerings in our PD library - the
+	section is 3AWZ (AppleWorks/3EZPs Templates). For Mail Merge see
+	HabaMerge - disk APPLE-3-WAP-APL-06.
+
+
+	Side 1 - Boot
+		   - Read.Me.First            : This file
+		   - EZPS.Review              : A review of this program by Rod Whitten
+		   - Sample.Files (Directory) : Templates you can use with 3EZ Pieces
+
+					WINTER.GRADES
+					CAR.CONTACTS
+					PERSONAL.WORTH
+					QUALIFICATIONS
+					USER.GROUP
+					TOWER.OF.MAMMON
+					OUR.BUDGET
+					CAR.LETTER
+					LOAN.SCHEDULE
+					CONSOLIDATION
+					HOW.DEMO
+					MEMO
+					PROJECTS
+
+	Side 2 - Program
+	-->
+	<software name="wapapl07">
+		<description>WAP /// SIG Apple Software Disk 7 - 3EZ Pieces</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-apl-07a.dsk" size="143360" crc="e89954aa" sha1="6485f4f42703bcd8409d7e3a91052fde56c8e69e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-apl-07b.dsk" size="143360" crc="d884b49f" sha1="f18e0bdaba313dbe26599a03235461cb6fb504bf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Washington Apple Pi - Disk Catalog -->
+
+	<!--
+	SIDE ONE                        SIDE TWO
+
+	ACCOUNTING                      BLOOM.SOFTWARE
+	APPLE.SOFTWARE                  CATALOG
+	BUSINESS.BASIC                  EZP.AWP
+	GAMES
+	-->
+	<software name="wapcat01">
+		<description>WAP /// SIG Disk Catalog Disk 1</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-cat-01a.dsk" size="143360" crc="0acc09b7" sha1="5fc234a4eaf35f567cd8147bb2f497b7a0bdd254" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-cat-01b.dsk" size="143360" crc="36b93f02" sha1="e73d65e52567dd1759319bbc9cc2f5e520efb986" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	SIDE ONE                        SIDE TWO
+
+	DA.DATASYSTEMS                  EMULATION
+	GRAPHICS                        FONTS
+									GAMES
+									INFORMATION
+	-->
+	<software name="wapcat02">
+		<description>WAP /// SIG Disk Catalog Disk 2</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-cat-02a.dsk" size="143360" crc="55afa8b7" sha1="73b1fe1e21215b53aa455384b4066c5e56231df9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-cat-02b.dsk" size="143360" crc="b477e2da" sha1="260ec6fa2f97efd610b9a0c6511a86a2cc6dde16" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	SIDE ONE                        SIDE TWO
+
+	MISCELLANEOUS                   PASCAL
+	PAIR SOFTWARE                   REPAIRS
+									SHAREWARE
+	-->
+	<software name="wapcat03">
+		<description>WAP /// SIG Disk Catalog Disk 3</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-cat-03a.dsk" size="143360" crc="99c358da" sha1="050bf3281043cc8e6451cc05772fe64244fa4db8" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-cat-03b.dsk" size="143360" crc="bcc2f164" sha1="fb29dd7434127f0b7efc94ccb5247559f136e43e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	SIDE ONE                        SIDE TWO
+
+	SOURCECODE                      UTILITIES 
+	SYSTEM.SOFTWARE                 WAP.ARTICLES
+	TELECOM                         WORD.PROCESSING
+	-->
+	<software name="wapcat04">
+		<description>WAP /// SIG Disk Catalog Disk 4</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-cat-04a.dsk" size="143360" crc="03c1c091" sha1="5fd0ff759e95cc4371c34cd5a79aed9fdf2ad6cd" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-cat-04b.dsk" size="143360" crc="ec95b7de" sha1="78dbf752514d2ec27f891c9ae7c66de2efb3f4fe" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Washington Apple Pi - Emulation -->
+
+	<!--
+	PDS NAME: Original Apple // Emulation Disk
+	DISK #  : APPLE-3-WAP-EMM-01
+	Bootable: Yes (with Control+Reset)
+
+	This is the ORIGINAL Apple // emulation disk! Vintage 1980 - it will only allow
+	you to load Applesoft or Integer Basic before booting a 48k (or smaller) disk
+	(the emulation program is on both sides and is NOT readable
+	by SOS.) 
+
+	To use: Simply insert into the internal disk drive and do a cold or warm
+	boot.
+	-->
+	<software name="wapemm01">
+		<description>WAP /// SIG Emulation Disk 1 - Original Apple // Emulation Disk</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-emm-01a.dsk" size="143360" crc="41077122" sha1="336aea30782a6dbb2835cf41af2f9311dbb44453" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-emm-01b.dsk" size="143360" crc="41077122" sha1="336aea30782a6dbb2835cf41af2f9311dbb44453" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: APPLE // EMULATION MODE DISK #2
+	DISK #  : APPLE-3-WAP-EMM-02
+	BOOTABLE: Both Sides
+
+	On side one of this disk you will find information about the
+	Apple ///'s emulation mode.  We have included a 3EZ
+	Pieces/AppleWorks data base of articles about all aspects of
+	emulation mode (including the Titan cards).  This has also
+	been turned into an ASCII file, so that you may read it
+	using our Menu.Maker program.  We've also included other
+	information you might find useful when dealing with Apple //
+	Emulation Mode:
+
+	-: Side One
+	-: CURSOR.MOD      :Modify your Cursor /// Joystick to work in emulation mode
+	-: EM.MODE.ASCII   :Where to find articles on emulation mode (ASCII/Text)
+	-: EM.MODE.INFO    :A basic manual/tutorial on emulation mode
+	-: EM.MODE.QS      :Commonly asked questions/answers about emulation mode
+	-: EMULATION.MODE  :3EZ Pieces/AppleWorks data base of articles on Em Mode
+	-: MONITOR.RESET   :Modify your emulation disk to allow reset to monitor
+	-: READ.ME.FIRST   :About this disk
+
+
+	On side two, you will find the "second" 48K emulation disk.
+	It is NOT catalogable.  But it IS copyable.  Simply boot it
+	first, then place any Apple // DOS 3.3 disk that says it will work
+	with 48K of memory, and you're off.  The 48K emulation disk includes
+	a menu that allows you to either boot the Apple //
+	disk, or change Apple // parameters.  You can boot with
+	either Applesoft or Integer Basic as you desire, and make
+	other changes.
+
+	Many of the disks in the WAP Apple // library will work in
+	emulation mode provided they are DOS 3.3 disks and require a
+	maximum of 48K memory.  ProDos disks will not work.  For
+	that, you will need to find the Titan ///+//e cards - perhaps from
+	another ///er or at a garage sale or vendor (they are no longer made.)
+
+	(UPDATED 1/15/95)
+	-->
+	<software name="wapemm02">
+		<description>WAP /// SIG Emulation Disk 2 - Apple // Emulation Mode Disk #2</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-emm-02a.dsk" size="143360" crc="f5be9280" sha1="f331d493ed94f6ccec40b535067cd44bb0e10f82" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-emm-02b.dsk" size="143360" crc="ff4f68d3" sha1="7d3495d6795b85776cbc22a90dd3d41801ee58dc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: APPLE // EMULATION MODE DISK 3
+	DISK #  :  APPLE-3-WAP-EMM-03
+	Bootable:  Side One - Yes
+			   Side Two - Yes (with Control+Reset)
+
+	This is the third Apple /// Emulation disk placed into the Public
+	Domain by Washington Apple Pi's /// SIG.  As with disk APPLE-3-WAP-EMM-02, you will
+	find some additional information about the Apple ///'s Emulation Mode on 
+	side one.  Menu.Maker will let you read that information (as you are 
+	reading this) and print it if you would like.
+
+	On side two, you will find the so-called 2.0 Emulation disk.
+	It is NOT catalogable.  But it IS copyable.  This program
+	has a date of 9-8-82 on it and was designed to overcome the
+	old 48K limit. It uses both upper and lower case. It will,
+	under some circumstances, run Apple // software of up to about 64K.
+	This program consists of two configuration menus.  The first
+	resembles the first Emulation Disk (1043).  The second provides
+	several new choices such as "Boot PROMS, Monitor, Font, Reset, etc."
+	(See the file Em.Mode.Info for more details.)
+
+	To use, turn this disk over and hit the <CONTROL> and
+	<RESET> keys at the same time.  Then place your Apple //
+	disk in the internal drive, make your selections, and you're
+	off.
+
+	Many of the disks in the WAP Apple // library will work in
+	emulation mode provided they are DOS 3.2/3.3 disks and require a
+	maximum of 64K memory (remember, though that not all disks
+	that say 64K will work...you'll just have to try them.)
+	ProDos disks will not work.  For that, you will need the
+	Titan ///+//e cards, which are no longer available commercially.
+
+	(For more info on that, see the file Titan.Cards.)
+	-->
+	<software name="wapemm03">
+		<description>WAP /// SIG Emulation Disk 3 - Apple // Emulation Mode Disk 3</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-emm-03a.dsk" size="143360" crc="fc1b8e74" sha1="155f49ac9c0c6f121378091f664f4298601d402d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-emm-03b.dsk" size="143360" crc="507fcd11" sha1="a0043c557df89fa0c30835326bcbee5b9f27589f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME:  TITAN ///+// EMULATION DISK
+	DISK #  :  APPLE-3-WAP-EMM-04  
+	Bootable:  Side One: Yes
+			   Side Two: Yes (Requires Titan ///+// Card)
+
+			Owners of the Titan ///+// card may find this disk useful as a
+	backup - since it includes the original boot disk for the Titan ///+// Card.
+
+	Side One: Information about the Titan cards including: a 3EZP/AW Data base of
+			  articles published about the Titan Cards and a Data Base of
+			  material pertaining to the Titan cards in the WAP PD library.  
+			  Also: This READ.ME.FIRST file and a RAM DISK Driver you can use
+			  with this card in native mode (requires System Utilites to
+			  add to your SOS.DRIVER file.)
+
+			  The manual says that "the SOS RAM Disk functions just like any 
+			  other disk driver: Files can be saved and retrieved and certain
+			  applications will use if for mass storage (like a communications
+			  program.) Files can be transfered just as if you were using any
+			  other disk drive."  
+
+			  But you are also reminded to save any important files on a 
+			  regular floppy drive before rebooting or turning the power off!
+
+	Side Two: Contains the actual Boot Disk for the Titan ///+// Card. It is
+			  copyable using Apple /// System Utilities but (since it's DOS 3.3)
+			  it is not readable under SOS.
+
+
+	Dave Ottalini
+	/// SIG Co-Chairman
+	April, 1993
+	(Update January 14, 1995)
+	-->
+	<software name="wapemm04">
+		<description>WAP /// SIG Emulation Disk 4 - Titan ///+// Emulation Disk</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-emm-04a.dsk" size="143360" crc="b272e0c6" sha1="83c53e7cf984b02efd6363f36074476f5402a2f9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-emm-04b.dsk" size="143360" crc="5a3cab64" sha1="9b199e304ffc691569a0dd5069fd969d6990c1d6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME  : TITAN ///+// EMULATION DISK WITH PRODOS RAM DISK
+	DISK #    : APPLE-3-WAP-EMM-05
+	BOOTABLE  : Side One - With Titan ///+// Cards
+			  : Side Two - In Emulation Mode or Apple /// Native Mode
+
+			This disk continues our efforts at placing Apple /// software
+	into the public domain.  Owners of the Titan ///+// card may find this 
+	disk useful as a backup.  It offers the standard ///+// boot disk but 
+	includes with it a 64K ProDos Ram Disk on bootup. A native mode RAM 
+	disk for use with this disk is on disk APPLE-3-WAP-EMM-04.
+			The Titan manual says you can configure the RAM disk by using the
+	ProDos utilities disk (found on this side):
+
+	1) Boot ProDos
+	2) Run the ProDos Filer (Utilites) by selecting F
+	3) Select the VOLUME COMMANDS option
+	4) Select FORMAT a volume (F)
+	5) Type 5 in the slot number and type in a name of your choice for the RAM
+	   disk (A good choice: /RAM)
+	6) Type Y in the destroy option
+	7) Press ESCAPE twice - returning you to the main menu.
+	8) Select FILE COMMAND option (F)
+	9) Use Copy Files (C) to move desired Files to the RAM Disk.
+
+			You can now use the RAM Disk like any other. But when finished,
+	remember to save any files in the RAM disk to a floppy or hardisk, as 
+	you'll lose the RAM disk when shutting down or going back to native mode.
+
+
+	Side One: Contains the actual Boot Disk for the Titan ///+// Card. It is
+			  copyable using Apple /// System Utilities but (since it's DOS 3.3)
+			  it is not readable under SOS.
+
+	Side Two: Includes the ProDos 1.01 version of the Apple 2 System Utilities -
+	*PRODOS
+	*BASIC.SYSTEM
+	*FILER
+	*STARTUP
+
+	*CONVERT - DOS to ProDos AppleSoft Program
+	*MOIRE   - Graphic AppleSoft Program
+	*HYPNOSIS- Graphic AppleSoft Program
+	*ANIMALS - Fun AppleSoft Program
+
+			We've also included SOS.INTERP and Menu.Maker on this side if you 
+	wish to boot from another Apple /// Business Basic Disk or from Selector
+	or Catalyst.  Also see:
+
+	Read.Me.First - This file - which contains some basic information about this
+	disk.
+
+			We also commend to you disk APPLE-3-WAP-EMM-04 which contains two data bases of
+	information about the Titan cards - a 3EZP/AW Data base of articles published
+	about the Titan Cards and a Data Base of material pertaining to the Titan
+	cards in the WAP PD library.  
+		  
+	 
+	Dave Ottalini
+	/// SIG Co-Chairman
+	April 1993
+	Updated January 15, 1995
+	-->
+	<software name="wapemm05">
+		<description>WAP /// SIG Emulation Disk 5 - Titan ///+// Emulation Disk with ProDOS RAM Disk</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-emm-05a.dsk" size="143360" crc="4bab8f8d" sha1="c066f901d92ddd9f3b36aec044ca517addb2c3e9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-emm-05b.dsk" size="143360" crc="8b67f05a" sha1="7969634aecff6e5c6180557251dc20fcfe27a1c4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: TITAN ///+//E EMULATION DISK
+	DISK #  : APPLE-3-WAP-EMM-06
+	BOOTABLE: SIDE ONE - YES
+			  SIDE TWO - YES WITH TITAN ///+//e CARDS
+
+			This disk continues our efforts at placing all Apple /// software
+	into the public domain.  Owners of the Titan ///+//e cards may find this 
+	disk useful as a backup.  
+
+	Side One: Information about the Titan cards including: a 3EZP/AW Data base of
+			  articles published about the Titan Cards and a Data Base of
+			  material pertaining to the Titan cards in the WAP PD library.  
+			  Also: This READ.ME.FIRST file. 
+
+
+	Side Two: Contains the actual Boot Disk for the Titan ///+//e Card. It is
+			  copyable using Apple /// System Utilities but (since it's DOS 3.3)
+			  it is not readable under SOS.
+
+			  ALSO:  a RAM DISK Driver you can use with these cards in native
+			  mode (requires System Utilites to add to your SOS.DRIVER file.)
+
+			  The manual says that "the SOS RAM Disk functions just like any 
+			  other disk driver: Files can be saved and retrieved and certain
+			  applications will use if for mass storage (like a communications
+			  program.) Files can be transfered just as if you were using any
+			  other disk drive."  
+
+			  But you are also reminded to save any important files on a 
+			  regular floppy drive before rebooting or turning the power off!
+
+	Dave Ottalini
+	/// SIG Co-Chairman
+	April 1993
+	Updated a tad: January 16, 1995
+	-->
+	<software name="wapemm06">
+		<description>WAP /// SIG Emulation Disk 6 - Titan ///+//e Emulation Disk</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-emm-06a.dsk" size="143360" crc="1b689e93" sha1="7083ecae0a7dc40be511318fdf6663999710ad72" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-emm-06b.dsk" size="143360" crc="b6f3d59b" sha1="d354c4678a08a2da426271c25299255aa0699509" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Titan ///+//e - Version 1.1
+	PDS Disk: APPLE-3-WAP-EMM-07
+	BOOTABLE: SIDE ONE/TWO: YES WITH TITAN ///+//s CARDS
+	(Both sides are the same)
+
+	This version of the Titan ///+//e Emulation Disk has been updated a tad by
+	///er Matthew Thomas.  He took the boot code from Block 00 and moved it to
+	Block 01.  The Block 00 code was then replaced with the ProDos Double Boot
+	code - so that it will now boot either SOS or ProDos from this disk - you
+	can place a program ON the emulation disk - either SOS or ProDos - and 
+	run it without having to switchout disks.  Further - you can now LIST this
+	disk.  While you WON'T see the Titan file - you can see other files. Those
+	included on this disk include:
+
+
+	|File Name       Blocks  Modified   Time  File Type
+	|
+	| A3PLUS2E.DRVRS      1  9-Apr-93  14:21  Directory
+	| BASIC.SYSTEM       21 17-Jul-90  14:20  ProDos Sys
+	| MEMTEST.SYSTEM      5  8-Apr-93  19:39  ProDos Sys
+	| PRODOS.8.1.8M      32 16-Feb-92 22:51   ProDos Sys
+	| PRODOS             30 18-Sep-84  0:00   ProDos Sys
+
+	MEMTEST.SYSTEM is a ProDos-based memory test program you can try.
+
+	Many Thanks to Matthew Thomas for his help in making this program more 
+	useful!
+
+
+	Dave Ottalini
+	WAP /// SIG
+	August, 1993
+	Updated a tad: January 16, 1995
+	-->
+	<software name="wapemm07">
+		<description>WAP /// SIG Emulation Disk 7 - Titan ///+//e - Version 1.1</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-emm-07a.dsk" size="143360" crc="363afa10" sha1="d526507aeef3332b70a0ed0e4e206ba9686006a7" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-emm-07b.dsk" size="143360" crc="363afa10" sha1="d526507aeef3332b70a0ed0e4e206ba9686006a7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: A2 BOOT
+	DISK #  : APPLE-3-WAP-EMM-08
+	BOOTABLE: WITH TITAN ///+//e Cards
+
+
+	WELCOME!
+
+	A2 BOOT is designed for Apple /// users of Titan's ///+//e Cards (although it
+	can be used by anyone with an Apple //c or e or GS as well with a 5.25"
+	drive).
+
+	Basically, A2 BOOT tries to be a one-stop disk that provides many of the more
+	useful utility programs found in the WAP Apple // Public Domain (some
+	programs are shareware).
+
+
+	TO USE THIS DISK (FOR APPLE /// USERS)
+
+	You will have to boot the Titan ///+//e Boot Disk, replace that disk with A2
+	BOOT and then choose the "Apple //e" option from the Titan menu.  You will
+	find yourself being asked to run a menu program called "WINDOWS", run a
+	program selector program called "Byrd's Better Bye" or simply quitting to 
+	Basic.
+
+	WINDOWS is much like our own Menu.Maker program in that it will allow you
+	to read and print text files, look at graphics files or run Basic files.  It
+	can do more, though.  It will run any "SYSTEM" file (much like a SOS.INTERP
+	file) and it will also read AppleWorks text files (and print them).
+
+	Byrd's Better Bye gives you a selection of SYSTEM files you can run or
+	"launch" depending on what you'd like to do.
+
+	By the way, you can turn over this disk and press the <CONTROL> key and
+	"M" 
+	key at the same time to get a catalog and run any program or read any file.
+	Side Two also has the Windows menu program on it (but NOT ProDos).
+
+	Some of these programs may require an "Enhanced Apple //e" to
+	work.  That means you will need to have a 65c02 chip installed in your
+	motherboard (It replaces the original 6502A or B CPU (Central Processing
+	Unit) chip).  You can get one for less than $10.00 from:
+
+					  Jameco Electronics
+					  1355 Shoreway Road
+					  Belmont, CA. 94002
+					  (415)-592-8097 (Order Hotline)
+
+	Send $2.00 for a catalog.  They will be free after your first order.   Be
+	aware that Jameco requires a minimum order (seems to depend on ordering from
+	ad or catalog).  Need help to install this chip?  Bring your /// to a SIG
+	meeting (we meet quarterly).  We'll be happy to do it for you!
+
+
+	APPLE // USERS
+
+	As with any other Apple // disk, simply place Side One of A2 BOOT into your
+	5.25" boot drive and boot the disk. 
+
+
+	WHAT'S ON THIS DISK
+	 
+	 
+	Enough with the explanations!  Here's what is on Side One:
+
+	 BASIC             : AppleSoft Basic (ProDos version)
+	 BLU               : A popular file compression program
+	 BLU.dskC           : Documentation for BLU
+	 FREEWRITER        : A PD version of Apple Writer by Paul Lutus
+	 FREEWTR.dskC       : Documentation for Freewriter
+	 IIGIF             : A popular program to convert GIF files to HiRes/Double 
+						 HiRes formats (and then to Apple /// FOTO files)
+	 LUTUS.PRINTER     : Printer program by Paul Lutus. 
+	 PD.TERMS          : WAP's Lee Raesly explains the differences in PD 
+						 software
+	 PRODOS            : Version 1.8 of ProDos Operating System (Apple //
+						 equivalent of SOS.Kernel) 
+	 WINDOWS           : The program  you are using  now. It is  a text  file
+						 reader and Program Selector (If you select an entry
+						 - by  highlighting it - and depress return - it will
+						 show it to you on the screen  (where you can also print
+						 it to your printer with the command shown to  the
+						 right of the previous screen (CNTRL P - That is depress
+						 the key marked control, and holding it down depress the
+						 P). Go back to the  previous screen by depressing the
+						 key marked esc and check out the commands you can use or
+						 run it if it is a program. 
+
+						 WINDOWS uses DOGPAW (a ProDOS extension (that is, it 
+						 adds  itself to ProDOS to give extra commands that can 
+						 be used by various  programs - such as WINDOWS!))
+						 
+						 (Also found on Side Two)
+
+
+	And on Side Two:
+
+	 FASTCOPY          : A fastcopy disk utility
+	 GRAFE             : GRAFE is an Applesoft BASIC program that allows the
+						 editing of random-access text (TXT) files under ProDOS.
+	 GRAFE.dskC         : Documentation for Grafe     
+	 IIGIF.dskCS        : Documentation for GIF     
+	 UNSHRINK          : Free version of Shrinkit that will UNshrink many
+						 files compressed using Shrinkit or other similar
+						 Apple // archive program.
+	 UNSHRINK.README   : Documentation for Shrinkit
+	 
+	 SPLITTER          : ProDos Text File Splitter program:  Run from Basic
+	 TEX.dskC           : Documentation for Tex   
+	 TEX2.01           : TEXt File Helper:  Use it to read, append, delete
+						 text files and more.
+
+
+	The TEXt File Helper program will (among other things) allow you to "Type"
+	(read) any of the DOC files on this disk from your screen.  The Startup
+	(Printer) program will print them for you if you desire (or use AppleWriter
+	or other word processing program (including FREEWRITER)).
+
+	Note also that some of these programs use MouseText graphics, which are not
+	available from the Titan ///+//e emulation mode.  Don't worry about it.  The
+	screen may look a bit weird, but text is readable and programs run fine.
+
+	Also be aware that if you have a ProFile card installed in your ///, and it
+	has been modified to run under ///+//e emulation, this disk will not boot. In
+	fact, you will only be able to run (up to) ProDos version 1.1.1.  You will
+	have to take the Profile card out or place a 1.1.1 version of Prodos on a
+	copy of this disk (ah the little things you learn through long hours of
+	frustration!).
+
+
+	Compiled by Dave Ottalini
+				WAP /// SIG Co-Chairman
+				July 7, 1990
+				January 21, 1995
+	-->
+	<software name="wapemm08">
+		<description>WAP /// SIG Emulation Disk 8 - A2 Boot</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-emm-08a.dsk" size="143360" crc="54941d12" sha1="8082f3a2c231ff10e38b71f01b90d01b4f7cbea2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-emm-08b.dsk" size="143360" crc="9968ed37" sha1="98f58d62d34f8aaf1bb7f6b58a836beb44938e8a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: DOUBLE BOOT
+	DISK #  : APPLE-3-WAP-EMM-09
+	BOOTABLE: YES 
+
+
+			I went about constructing this disk fairly objectively.
+	I had read that putting together a "double-booting disk" should be easy:
+
+			The book "Beneath Apple ProDos" (by Don Worth and Pieter Lechner)
+	says this:
+
+	"Block 1 on a ProDos volume contains the SOS boot loader. This program is
+	loaded instead of Block 0 when booted on an Apple ///.  It searchs the
+	directory for SOS.KERNEL and loads it instead of ProDOS. This means that a
+	diskette can be constructed which will boot either ProDOS or SOS and run an
+	application on either an Apple // or Apple ///."
+
+			And the book Inside Apple's ProDOS (by John Campbell) says:
+
+	"... In Chapter nine it was mentioned that blocks 0 and 1 on a ProDOS
+	diskette store the boot code.  This code reads the operating system software
+	and executes that code.  What was not mentioned was that this boot code will
+	run on either the Apple // computers or on an Apple ///.
+
+	As you power up either an Apple // or Apple /// computer system, with a
+	ProDOS diskette installed, the boot code read into memory and executed is
+	loaded at 2048=$800.  The first item of business for this boot code is to
+	determine whether the software is running on an Apple // or an Apple ///
+	computer system.  Once this code makes that determination, then either:
+
+	-PRODOS, for the Apple // family
+	-SOS.KERNEL for the Apple /// computer
+
+	will be loaded.  If the correct file is not found for the computer being
+	used, an error message is displayed.
+
+	The implication of this is that a single application may be written and
+	placed on a single diskette that could be run on either computer.  This
+	single diskette could then be sold to owners of either Apple // computers or
+	Apple /// computers."
+
+
+			So I decided to try it.  After formating a disk, I copied ProDOS and
+	Basic.System, then the three SOS files.  It didn't work.  It would boot on
+	one machine but not the other.  I tried copying the SOS files first, but that
+	didn't work either.
+			Then I remembered that Frank Moore of Pair Software had issued
+	GoForth, a Forth language program, as a double-boot disk.  I decided to take
+	the lazy way out and copied the boot disk, replaced Forth.System with
+	Basic.System and replaced SOS.Interp for the Basic Sos.Interp.  It worked.
+			A block editor did indeed show that the SOS boot code was in Block 1.
+	I'm not quite sure why I could not do it by just formatting and copying but
+	the end result is that we DO have a properly set-up double-boot disk that you
+	might enjoy trying out.
+			On Side One is this file and all the others that go into making a
+	/// SIG boot disk.  On the ProDOS side, you'll find the 1.1.1 version for
+	///ers who have Titan ///+//e cards.  If you have a //e or GS, you can
+	replace it with a later version.  A WAP ProDOS menu program is also included.
+			On Side Two you'll find just the three SOS boot files and the two
+	ProDOS boot files.  Copy the volume and then replace the Interp or
+	System files as needed.  But in the end, you'll have a disk that can be
+	used on either machine.  Obviously there will be some space limitations due to
+	the overhead of all the files.  But we think you'll find this disk interesting
+	and useful!
+
+
+
+	Dave Ottalini
+	WAP /// SIG
+	March 26, 1990
+	JANUARY 16, 1995
+	-->
+	<software name="wapemm09">
+		<description>WAP /// SIG Emulation Disk 9 - Double Boot</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-emm-09a.dsk" size="143360" crc="aa5eb3d2" sha1="7cc25b13c15ec30fe5ef4865ab4082494b688d7f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-emm-09b.dsk" size="143360" crc="1747fd65" sha1="265978e138b7294ab827b1d396c50a1f5c2b4906" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME:  MODIFIED 48K/64K APPLE ][ EMULATION BY DALE WARNKE
+	DISK ID :  DISK APPLE-3-WAP-EMM-10
+	BOOTABLE?  Yes - Side One
+			   Yes - Side Two with Titan ///+// Card
+
+
+	Side One of this Apple ][ Emulation disk mades some changes to the old 48K
+	emulation disk (just insert into .D1 and turn on your ///). Side Two makes many
+	of the same changes (see additional note below) but can only be used with the
+	Titan ///+// card.
+
+	1. EMULATION MENUS: The Apple ][ menus indentify the enhancements on this Apple
+	][ Emulation.
+
+	2. LOWER CASE CHARACTERS: The standard disk does not provide lower case
+	characters and this version doesn't either; However, a version of the 48K
+	Emulation having lower case is available.
+
+	3. SERIAL CARD: The original 48K Emulation disk is hardcoded for 300 baud, 7
+	bit, mark parity) and can be changed via the menu on the disk version. However,
+	if put on the hard disk via Catalyst, the emulation menu routine does not update
+	the code and the hardcode (300 baud) is always in effect. Catalyst 2.1
+	implements a menu routine which actually writes to the emulated ROM code but
+	into the wrong places; Do NOT use the Catalyst 2.1 installed Emulation.
+
+	   This disk has its hardcode set to 1200 baud (still 7 bit, mark parity).
+
+	4. ESC+ cursor: In Business BASIC, the ESC cursor, screen edit mode is indicated
+	by the flashing + character.  With this patch, the Applesoft BASIC, Integer
+	BASIC and Monitor ESC cursor, screen edit mode is indicated by a flashing
+	Open-Apple character for DOS 3.3 (ProDOS intercepts this enhancement).
+
+	   (See the old Apple ][ Reference manual (bottom of Page 35) for the use of the
+	ESC cursor, editing moves using the \IJKM\ keys; Standard for the Apple ][, the
+	IJKM, under the ESC mode, work like the Apple /// cursor keys. This very handy
+	for running Apple ][ programs directly from the catalog listing).
+
+	   (This patch is has the target locations, FECE.FEDA in place of the old WRITE
+	tape code, FD11.FD14, FD2F.FD31, FBA2.FBA4, and FD39.  See CALL  A.P.P.L.E March
+	1983, p. 51).
+
+	5. RESET
+
+	   This modification allows the booting of another Apple ][ application disk
+	without rebooting the Emulation Disk. To quit one apple ][ program disk, for
+	example, one game to start another: 
+
+	   Press the  RESET  key 
+
+	   Insert the new application disk into the built-in drive and type (without the
+	spaces):
+
+	   6  CTL-P  RETURN
+
+	   and the new disk will boot.
+
+	   This same procedure will allow recovery from a lockup of an Apple ][ program
+	most of the time.
+
+	   (The RESET and NMI vectors are modified to point to the old Apple ][ monitor
+	routine. This modification is at target locations FFFA.FFFD.  See Softalk, July
+	1983, p. 219).
+
+	6. The Apple ][ + does not have UP and DOWN cursor keys.  Thus the Apple ][
+	Emulation Disk for the Apple /// only worked with the LEFT and RIGHT cursor keys
+	or with the JKLM cursor keys in ESCAPE Mode.
+
+	   This disk has been modified so the UP/DOWN cursor keys work in the ESCAPE
+	mode. The JKLM cursor keys do NOT work in ESCAPE mode on this disk.
+
+	   The code changed to enable the UP and DOWN cursor keys is at the Apple ][
+	target locations:
+
+	   a) The table, XLTBL at FB11.FB18
+	   b) The Code at FBA5.FBB2
+	   c) FBB3:EA  is and should not be changed; This location is used by some          
+	programs to identify the 48K Apple ][+ .
+	   d) The Code at FBB4.FBB7
+
+
+	   Programs which make calls to the middle of the above code ranges may not
+	function properly and may even lock up the System; However, such programs are
+	expected to be the exception, not the rule.
+
+
+	On Side Two: 64K Emulation Modifications.
+
+	All the modifications mentioned above for the 48K emulation disk have also been
+	made on the 64K emulation disk (for use with the Titan ///+//e card. Dale notes,
+	however, that ProDos intercepts his "up/down" cursor patches. There are some
+	other, undocumented, patches.  This 64K version is still DOS by the way -
+	copyable with System Utilities, but NOT readable.
+	-->
+	<software name="wapemm10">
+		<description>WAP /// SIG Emulation Disk 10 - Modified 48K/64K Apple ][ Emulation by Dale Warnke</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-emm-10a.dsk" size="143360" crc="26334b4f" sha1="fed4d1734a668267edf412347b20efd178a6adb9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-emm-10b.dsk" size="143360" crc="f7e3746c" sha1="cd4ce5baeec8389ddaea3a4053323db8dc494ac3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME:  HOT ROD III UTILITIES - COMPILED BY DALE WARNKE
+	DISK ID :  DISK APPLE-3-WAP-EMM-11
+	BOOTABLE?  Yes - In Apple II Emulation Mode
+
+
+	"Hot Rod ///" was a series of articles written by George Oetzel in the old
+	Shoptalk Magazine from July through September, 1983.  Full texts are 
+	available from the WAP Office. But basically, the articles concerned
+	themselves with the Apple /// emulation mode - and how to soup it up.
+	As Oetzel himself wrote: "With a little imagination, you can make the 
+	Apple /// emulate some versions of the Apple II that the company never
+	built. That's where the excitement begins."
+
+	This disk includes the Hot Rod /// utilities and programs described
+	by George Oetzel in his articles. There are also some programs from Call
+	A.P.P.L.E.  Many, many thanks to Dale Warnke, PhD for making this disk
+	available to us. You can contact him directly at (714)-786-8249.  
+
+	Both sides are copyable using System Utilities in native mode, or
+	Copy II Plus or other Apple II utility.
+
+	REMEMBER to set your language to "Integer" at the Emulation Menu before
+	running side one of this disk (Both sides are DOS 3.3)
+
+	THESE PROGRAMS ARE NOT FOR THE NOVICE!!! BUT - IF YOU ARE INTERESTED IN
+	LEARNING MORE ABOUT THE APPLE II EMULATION MODE ON THE /// - THIS IS
+	AN EXCELLENT PLACE TO START.
+
+	Side One:
+
+	DOS 3.3 version - Integer Basic
+
+	HELLO (says)  :  "Hot Rod II disk modification program utilities in
+					 sequential order from George Oetzel's Hot Rod /// series 
+					 in Softalk."
+
+	TRACKMOVER    :  The "centerpiece" program from the series. It is a 
+					 patch program for Apple II emulation on an Apple ///.
+					 Basically, it reads from and writes to disks in Apple 
+					 /// block order. Full disk tracks are transfered to and 
+					 from memory. See the Softalk articles for full details.
+
+	Char Edit     :  Examine and edit the character set.
+	Chset         :  Displays the character set.
+
+	PR7.Patch     :  Replaces the non-working code at target 700.7.FF
+	PR7.Patch.dskc :  This is a single serial ROM emulation to replace the non-
+	(says)           working code at target 700.7FF in the Tital ///+2 emulation
+					 disk.
+
+	RDKEY2        :  From Call A.P.P.L.E. in March of 83 (reads keypresses and
+					 returns ASCII codes).
+
+	HYB.Utl       : Hybrid emulation patch that includes color-text control,
+					1/2 MHz control and a video on/off switch. The Apple II
+					emulation has complete control of the Apple III environment.
+	KEYIN3        : Lowercase keyboard input routine for Apple II emulation.
+
+	MONFIX1.OBJ   : These four patch routines from the 2nd article are used
+	MONFIX2.OBJ     to modify the way the /// reads the joystick in emulation
+	MONFIX3.OBJ     mode. The are called "Paddle-Service" Routines.
+	MONFIX4.OBJ 
+	MONMOD        : (Believed to be) the already modifed track 9 of the emulation
+					disk. PLEASE see articles (August 83) to be safe (page 91).
+
+	PATTERN.300.OBJ: Program to locate byte patterns in Apple II memory. (August 83)
+
+	SIDE 2
+
+	DOS 3.3 disk
+
+	Programs from Side One converted to AppleSoft, plus a few others of interest.
+	-->
+	<software name="wapemm11">
+		<description>WAP /// SIG Emulation Disk 11 - Hot Rod III Utilities - Compiled by Dale Warnke</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-emm-11a.dsk" size="143360" crc="68ee4cf6" sha1="9fc0d9c6a4c109260499e7a86c55ef18943ed037" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-emm-11b.dsk" size="143360" crc="e9134d19" sha1="818eab96b263d6184a7ab0c721a497e40d8a9d0b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 <!-- Washington Apple Pi - Fonts -->
 
 	<!--
