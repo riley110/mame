@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<!-- Most of the documentation is copy+pasted straight from http://apple3.org/ -->
+<!--
+All of the WAP series documentation is copy+pasted straight from http://apple3.org/ ,
+with some formatting changes (more to come), and some fixes to fit within XML limits.
+-->
 <softwarelist name="apple3" description="Apple III 5.25 disks">
 
 <!-- Washington Apple Pi - 3 EZ Pieces -->
@@ -1905,6 +1908,3197 @@
 		<feature name="part_id" value="Side B"/>
 			<dataarea name="flop" size="143360">
 				<rom name="apple-3-wap-apl-07b.dsk" size="143360" crc="d884b49f" sha1="f18e0bdaba313dbe26599a03235461cb6fb504bf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Washington Apple Pi - Bloom -->
+
+	<!--
+	PDS NAME:  THE BEST OF BLOOM - DISK 01
+	Disk ID:  APPLE-3-WAP-BLM-01
+	BOOTABLE:  YES
+
+
+		   On  side   one  of  this  disk,  you  will  find information about the
+	articles  published  by  Dr. Bloom over the years and where to find them.  We
+	have provided them to you in two different forms.  If you have /// EZ Pieces,
+	or AppleWorks,  there is a Data Base file which you can pull into the program
+	and use  directly.   We have also provided most of the same basic information
+	in the  form  of  an ASCII text file which your Menu.Maker program is able to
+	read.  Use  the  Text.Dump  program  to  print  it  (or load it into any word
+	processing program and print from there.)
+		   Also  on side  one,  you will find a listing of disks developed by Dr.
+	Bloom and  placed  into  the  public  Domain.   As with the articles, we have
+	included both  a /// EZ Pieces Data Base file and an ASCII file with the same
+	basic information,  including  where  to  obtain  the disks and how much they
+	cost.
+		   On side  two of  this  disk you  will find  Dr. Bloom's fine series of
+	articles on  "Issues in MicroComputer File and Data  Conversion."  Basically,
+	that means  articles discussing  how to get  information from one computer to
+	another.  There  are  a  total  of  12 columns included on side two.  To read
+	them, simply  highlight  the  "Run.Issues"  selection from Menu.Maker and hit
+	.  You  will  be  asked  to turn the disk over and Basic will take it
+	from  there. MENU.MAKER will let you print any text file, or you can pull 
+	them into any Apple family word processor.  We've also included "Print.All"
+	that can print all the text files you like. 
+			
+			The "Issues" menu looks like this:
+
+
+				   Issues In Microcomputer File and Data Conversion
+
+							   Allan M. Bloom, PhD CDP
+
+									 1. Introduction
+						 2. Bridge Programs and Program Bridges
+							   3. Me and You and Baby Blue
+								 4. The Perils of ASCII
+						   5. Converting Word Processor Files
+									  6. II and Fro
+								7. Interfacing Resources
+									8. Wire Transfers
+									  9. Mail Call
+							   10. Putting It All Together
+									 11. DIF-ferences
+								  12. Christmas Bridges
+										Index
+	-->
+	<software name="wapblm01">
+		<description>WAP /// SIG Bloom Disk 1 - The Best of Bloom - Disk 01</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-01a.dsk" size="143360" crc="c8d6d7e2" sha1="de05b5c96a90ec695c5e176d0eb1b80a56497434" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-01b.dsk" size="143360" crc="6f6e3d6e" sha1="10f5a96dd03b7001b67528a293a73eaa9dad2541" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Best of Bloom: Disk 02
+	Disk ID: APPLE-3-WAP-BLM-02
+	BOOTABLE: Yes
+
+
+	It's One More Time for Dr. Bloom, as he weighs in here with
+	a PD disk full of reviews and articles of interest about the Apple ///.
+
+	-: One Side One:
+	-: BBTEXT    :Business Basic Random Text Files in Pascal.
+	-: PUFFIN    :Converting Apple II Pascal Programs (see appropriate files
+	-:            on Side Two).
+	-: UNDERLINE :Underlining in Apple Writer.
+	-:
+	-:
+
+	On Side Two:
+
+	-: AC3CMD      :Access /// Command Files (Access /// Interp version).
+	-: AC3CMD.FILE :Representative command file as discussed in AC3CMD.
+	-:
+	-: EZDIF       :3EZ Pieces and DIF Files.
+	-: MAC3        :Transfering files between the /// and the Macintosh
+	-:              (This article by Milt Johnson)
+	-: MLMUTIL     :Inside Apple /// Mail List Manager.
+	-: PUFFIN3     :Files for use with the Puffin article on Side One.
+	-->
+	<software name="wapblm02">
+		<description>WAP /// SIG Bloom Disk 2 - Best of Bloom: Disk 02</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-02a.dsk" size="143360" crc="ca38cb1d" sha1="09f86058076998d7b6e9f9a427089338cc5503ef" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-02b.dsk" size="143360" crc="9b23cd0c" sha1="a7193f17a1bc9e22b4d2210962ec7170ba79e4a7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME:  THE INPERT'S CORNER
+			   By Dr. Al Bloom
+
+	Disk ID:  APPLE-3-WAP-BLM-03
+	Bootable:  Yes
+
+	The following is a list of the subjects you'll find discussed by Dr. Bloom in
+	the columns on this disk.  Note that the dates these were written don't
+	necessarily match up with the Inpert0x numbers or when they were published by
+	TAU in the TAU Journal.
+
+	You can print any of these files using Menu.Maker 6.1 or Print.All.  Or you
+	can load them into any Apple family word processing program.
+
+
+	INPERT01:  SOS.Driver file
+	INPERT02:  Catalyst
+	INPERT03:  Selector ///
+	INPERT04:  Applewriter 2.0
+	INPERT05:  Hardware tidbits (from the "ON" lamp to disk drive speed)
+	INPERT06:  Hardware tidbits #2 (more on drive speed and A3 diagnostics)
+	INPERT07:  Basic Exec Files
+	INPERT08:  Data Communications #1: CompuServe tips
+	INPERT09:  Data Communications #2: Serial data transfers; Serial port
+	INPERT10:  Data Communications #3: Mechanics of communication transfers
+	INPERT11:  3.5" Disks; Transfering files from the /// to a MAC
+	INPERT12:  3.5" Disks #2; PC Disk 400 (MS-DOS Transfers); Backup ///
+	INPERT13:  /// EZ Pieces; Dealing with files too big for the memory
+	INPERT14:  Mail List Manager Utilities
+	INPERT15:  Data transfer between Apples; MAC II vs. Apple ///
+	INPERT16:  Bitnet and CompuServe
+	INPERT17:  Catalyst and Lazarus; .D1 Boot Disk on Hard disk
+
+
+	2/9/90 DGO-WAP /// SIG
+	Updated: 1/7/93
+			 4/95 (reorganization)
+	-->
+	<software name="wapblm03">
+		<description>WAP /// SIG Bloom Disk 3 - The Inpert's Corner By Dr. Al Bloom</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-03a.dsk" size="143360" crc="e3a70186" sha1="d841f65d74ed6405a723c3c74057dcfc0ae23fe0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-03b.dsk" size="143360" crc="a18fc363" sha1="fbaab60d1180cb50bf58cb91787c7160b1a48de1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Reviews by Bloom
+	Disk ID: APPLE-3-WAP-BLM-04
+
+	A series of reviews by the inimitable Dr. Al Bloom.
+
+	-: On Side One:
+	-: Catalyst        :  Hard Disk Switching Utility
+	-: Reformatter /// :  Text to Database or Spreadsheet Utility
+	-: Checkbook       :  Checkbook Program
+	-:
+
+	On Side Two:
+	-:
+	-: AC3.INTERP      : Access /// Interpreter Version
+	-: GRABIT          : A Quickfile /// Creation Utility
+	-: HOW.NOT.TO      : How not to share programs
+	-: PC400           : Daryl Anderson's Apple /// to PC solution
+	-: RTCATALYST      : Catalyst Run Time System
+	-: THREE.WORKS     : Dave Ottalini's Apple /// Encyclopedia
+	-: WORD.JUGGLER.V2 : Word Juggler Word Processor
+	-->
+	<software name="wapblm04">
+		<description>WAP /// SIG Bloom Disk 4 - Reviews by Bloom</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-04a.dsk" size="143360" crc="b0e202b6" sha1="4331344bd7ca8ccbb76a96dfeb17bb76828e72e3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-04b.dsk" size="143360" crc="a8172090" sha1="1d41d20947db1e4748f1c6c1d1c127f4c90c55aa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: GUCSPAR by Bloom
+	Disk ID: APPLE-3-WAP-BLM-05
+	BOOTABLE? NO
+
+	"GUCSPAR" is the Great Unified Catalyst/Selector Pascal Runtime
+	Disk.  This is a version of Pascal that is designed to run your Pascal
+	program without having to load the entire Pascal Operating System.  That
+	translates into a 30% time savings and is also a keystroke saver,
+	especially for Catalyst users.  Pascal knowledge required.
+
+	Side One:
+
+	CATALYST.NOTES  :Notes on using GUCSPAR with Catalyst.
+	SELECTOR.NOTES  :Notes on using GUCSPAR with Selector ///.
+	RUN.dskC.TEXT    :PASCAL text version of GUCSPAR introduction.
+	RUN.dskC.ASCII   :ASCII version of GUCSPAR introduction.
+	MENU.NOTE       :Note on Menu.Maker's font file.
+	INPERT02        :Dr. Bloom's Inpert article that includes info on GUCSPAR.
+	HDINTERP  (subdirectory)
+	RTPASCAL.1.1  : Run time Pascal SOS.Interp file for hard disk usage.
+	INTERPS (subdirectory)
+	- RT1.SOS.INTERP  :Full standard interpreter for Pascal 1.1
+	- RT2.SOS.INTERP  :Cut-down version of 1.1 interpreter that does not
+					  include support for TREESEARCH; IDSEARCH or floating
+					  point mathimatics.
+
+	SYSTEM (subdirectory)
+	- RT1SYS.PASCAL   :Runtime version of Sys.Pascal (no library usage).
+	- RT2SYS.PASCAL   :Runtime version of Sys.Pascal (full library support).
+
+	Side Two
+
+	START.NOTES  :Pascal startup program notes.
+	QSTART.AW3     :Catalyst Documentation in Applewriter /// format.
+	QSTART.dskC     :Catalyst Documention already formatted.
+	PSTART.AW3     :Selector Documentation in Applewriter /// format.
+	PSTART.dskC     :Selector Documentation already formatted.
+	BLOOM.STARTUP (subdirectory)
+	- PSTART.LIB
+	- PSTART.CODE
+	QUARK.STARTUP (subdirectory)
+	- PASCAL.STARTS
+	- PMENU.EDIT
+	- SYSTEM.STARTUP
+	-->
+	<software name="wapblm05">
+		<description>WAP /// SIG Bloom Disk 5 - GUCSPAR by Bloom</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-05a.dsk" size="143360" crc="3c359031" sha1="b134aabecd80e1c24ee9af5e909086aa9dfc736b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-05b.dsk" size="143360" crc="a5397c3d" sha1="261f6e081524c6d1b19fb0a165d3414c7302c3db" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: ASCIDIF by Bloom
+	Disk ID: APPLE-3-WAP-BLM-06
+	BOOTABLE?: Bootable
+
+	ASCIDIF converts an Apple /// ASCII text file to a standard DIF (Data
+	Interchange Format) file. DIF is a standard file format that can be imported
+	by a number of data base and spread sheet programs running on a variety of
+	machines under a variety of operating systems. By Dr. Al Bloom.
+
+
+	Side One:
+	ASCIDIF.AW3   :Manual formatted for use with AppleWriter ///.
+	ASCIDIF.dskC   :Manual pre-formatted.
+	ASCIDIF.TEXT  :Source code for ASCIDIF.
+
+	Side Two: ASCIDIF Program files.  Self-booting Pascal.
+	-->
+	<software name="wapblm06">
+		<description>WAP /// SIG Bloom Disk 6 - ASCIDIF by Bloom</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-06a.dsk" size="143360" crc="451dd36b" sha1="494cb3cb4f9e6d00e5f0569e936e615a4ee6afa1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-06b.dsk" size="143360" crc="74dc4409" sha1="c0ce92548289dfaa0916529d79c1a6669a318ef0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Mail List Manager Utilities Manual by Bloom
+	Disk ID: APPLE-3-WAP-BLM-07
+	BOOTABLE?: Bootable
+
+	This is an abbreviated version of the MLM Utilities Manual by
+	Dr. Al Bloom:
+
+	"Apple /// Mail  List Manager Utilities" is for  those who wish
+	to do more than enter, maintain, and print mailing label infor-
+	mation with  Apple Computer Inc's  "Mail List  Manager" program
+	product.  "MLM Utilities" provides extra  features for the man-
+	agement and use of the information in an MLM data base,  adding
+	significantly to  the power  of "Mail List  Manager" as  a list
+	processing system. 
+
+	Side One:
+	MLMUTIL.dskC1  :Introduction to MLM Utilities.
+	MANUAL.NOTS   :Information on printing the MLM Utilities Manual.
+
+	Side Two:
+	MLMUTIL.dskC2  :MLM Utilities Manual.
+	-->
+	<software name="wapblm07">
+		<description>WAP /// SIG Bloom Disk 7 - Mail List Manager Utilities Manual by Bloom</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-07a.dsk" size="143360" crc="644b1a1d" sha1="6a73e0e5a53807e763c199078e59575709add6a7" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-07b.dsk" size="143360" crc="e06f5bee" sha1="48a6974b4d486c8ad81a9ee0f2b96ac778287299" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Mail List Manager Utilities by Bloom
+	Disk ID: APPLE-3-WAP-BLM-08
+	BOOTABLE?: Bootable
+
+	MLM Utilities are a set of very useful utility
+	programs for Mail List Manager, the original mail list manager program
+	for the Apple ///.  Developed by Dr. Al Bloom.
+
+	MLM Utilities consists of seven modules:
+
+		   1. MLMINFO  consolidates all the important information about an
+			  MLM file on a single page - your file's content, structure,
+			  sort fields, and print-control specifications.
+
+		   2. MLMSORT  adds  the power of  a general-purpose sort  to your
+			  MLM system.   It resequences a file in any order you desire,
+			  using any of the up to 14 data fields in an MLM record.
+
+		   3. MLMLIST  is a  flexible and sophisticated list  facility for
+			  attractive and meaningful display of MLM data.  This utility
+			  allows you to list any MLM file data items in an informative
+			  layout of your own choosing.
+
+		   4. MLMCNVT  allows you to respond to changing needs by convert-
+			  ing an  MLM file  into another layout.   You may  rename and
+			  reorganize  the data  in  an  MLM record,   delete  obsolete
+			  fields, combine and split fields, and create new fields.
+
+		   5. MLMERGE  merges the records of a two-disk MLM file.   Dupli-
+			  cate records are not merged  into the resulting output file.
+			  The result  may be combined  or equally divided  between two
+			  output files for easy record insertion.
+
+		   6. MLMASCI  converts  MLM files to  formats that can  be loaded
+			  into other systems - AppleWriter, Keystroke, PFS,  /// Easy
+			  Pieces, etc.   MLMASCI has four output formats: Apple Writer
+			  mail/merge, ASCII text, Name:Value, and DIF.
+
+		   7. MLMUPLD  uploads (creates)  MLM files from other systems and
+			  programs.   MLMUPLD accepts four input formats:  ASCII text,
+			  Name:Value, DIF, and "comma separated value."
+
+		   The  utilities are  an integrated  system.    The programs  are
+		   invoked from,  and  return to,  a master menu for  ease of use.
+		   Full use of  "MLM Utilities" requires a 256K Apple  /// with an
+		   external disk drive,   and "Mail List Manager"  (Version 1.0 or
+		   1.1). A mass storage disk is necessary for MLMERGE.
+
+
+	This disk is a self-booting Pascal disk and requires APPLE-3-WAP-BLM-09 and 10.
+	Completely documented.  See additional information
+	on disk APPLE-3-WAP-BLM-10 (side two).
+	-->
+	<software name="wapblm08">
+		<description>WAP /// SIG Bloom Disk 8 - Mail List Manager Utilities by Bloom</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-08a.dsk" size="143360" crc="0448ee07" sha1="420d7d26889063a44d40abdf6e5e913e2cefc111" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-08b.dsk" size="143360" crc="6a738f98" sha1="bc572a8325595bb5614a85fb64c3434f8b13a8ea" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Mail List Manager Utilities - Disk 02 by Bloom
+	Disk ID: APPLE-3-WAP-BLM-09
+	BOOTABLE?: Bootable
+
+	MLM Utilities are a set of very useful utility programs for Mail List
+	Manager, the original mail list manager program for the Apple ///.
+	Developed by Dr. Al Bloom.
+
+	MLM Utilities consists of seven modules:
+
+		   1. MLMINFO  consolidates all the important information about an
+			  MLM file on a single page - your file's content, structure,
+			  sort fields, and print-control specifications.
+
+		   2. MLMSORT  adds  the power of  a general-purpose sort  to your
+			  MLM system.   It resequences a file in any order you desire,
+			  using any of the up to 14 data fields in an MLM record.
+
+		   3. MLMLIST  is a  flexible and sophisticated list  facility for
+			  attractive and meaningful display of MLM data.  This utility
+			  allows you to list any MLM file data items in an informative
+			  layout of your own choosing.
+
+		   4. MLMCNVT  allows you to respond to changing needs by convert-
+			  ing an  MLM file  into another layout.   You may  rename and
+			  reorganize  the data  in  an  MLM record,   delete  obsolete
+			  fields, combine and split fields, and create new fields.
+
+		   5. MLMERGE  merges the records of a two-disk MLM file.   Dupli-
+			  cate records are not merged  into the resulting output file.
+			  The result  may be combined  or equally divided  between two
+			  output files for easy record insertion.
+
+		   6. MLMASCI  converts  MLM files to  formats that can  be loaded
+			  into other systems - AppleWriter, Keystroke, PFS,  /// Easy
+			  Pieces, etc.   MLMASCI has four output formats: Apple Writer
+			  mail/merge, ASCII text, Name:Value, and DIF.
+
+		   7. MLMUPLD  uploads (creates)  MLM files from other systems and
+			  programs.   MLMUPLD accepts four input formats:  ASCII text,
+			  Name:Value, DIF, and "comma separated value."
+
+		   The  utilities are  an integrated  system.    The programs  are
+		   invoked from,  and  return to,  a master menu for  ease of use.
+		   Full use of  "MLM Utilities" requires a 256K Apple  /// with an
+		   external disk drive,   and "Mail List Manager"  (Version 1.0 or
+		   1.1). A mass storage disk is necessary for MLMERGE.
+
+
+	This disk requires APPLE-3-WAP-BLM-08 and 10. Completely documented on disk APPLE-3-WAP-BLM-07.
+	See additional information on disk APPLE-3-WAP-UTL-10.
+	-->
+	<software name="wapblm09">
+		<description>WAP /// SIG Bloom Disk 9 - Mail List Manager Utilities - Disk 02 by Bloom</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-09a.dsk" size="143360" crc="56b8b463" sha1="803ba64b7ccbcd49452bce41e51fded40b9e08fd" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-09b.dsk" size="143360" crc="6df931df" sha1="be50d09c6727ed44ff649666f45f9c21891b53e4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Mail List Manager Utilities Disk 03 by Bloom
+	Disk ID: APPLE-3-WAP-BLM-10 
+	BOOTABLE?: Bootable
+
+	MLM Utilities are a set of very useful utility programs for Mail List
+	Manager, the original mail list manager program for the Apple ///.
+	Developed by Dr. Al Bloom.
+
+	MLM Utilities consists of seven modules:
+
+		   1. MLMINFO  consolidates all the important information about an
+			  MLM file on a single page - your file's content, structure,
+			  sort fields, and print-control specifications.
+
+		   2. MLMSORT  adds  the power of  a general-purpose sort  to your
+			  MLM system.   It resequences a file in any order you desire,
+			  using any of the up to 14 data fields in an MLM record.
+
+		   3. MLMLIST  is a  flexible and sophisticated list  facility for
+			  attractive and meaningful display of MLM data.  This utility
+			  allows you to list any MLM file data items in an informative
+			  layout of your own choosing.
+
+		   4. MLMCNVT  allows you to respond to changing needs by convert-
+			  ing an  MLM file  into another layout.   You may  rename and
+			  reorganize  the data  in  an  MLM record,   delete  obsolete
+			  fields, combine and split fields, and create new fields.
+
+		   5. MLMERGE  merges the records of a two-disk MLM file.   Dupli-
+			  cate records are not merged  into the resulting output file.
+			  The result  may be combined  or equally divided  between two
+			  output files for easy record insertion.
+
+		   6. MLMASCI  converts  MLM files to  formats that can  be loaded
+			  into other systems - AppleWriter, Keystroke, PFS,  /// Easy
+			  Pieces, etc.   MLMASCI has four output formats: Apple Writer
+			  mail/merge, ASCII text, Name:Value, and DIF.
+
+		   7. MLMUPLD  uploads (creates)  MLM files from other systems and
+			  programs.   MLMUPLD accepts four input formats:  ASCII text,
+			  Name:Value, DIF, and "comma separated value."
+
+		   The  utilities are  an integrated  system.    The programs  are
+		   invoked from,  and  return to,  a master menu for  ease of use.
+		   Full use of  "MLM Utilities" requires a 256K Apple  /// with an
+		   external disk drive,   and "Mail List Manager"  (Version 1.0 or
+		   1.1). A mass storage disk is necessary for MLMERGE.
+
+
+	This disk requires APPLE-3-WAP-BLM-08 and 09. Completely documented on Disk APPLE-3-WAP-BLM-07.
+	-->
+	<software name="wapblm10">
+		<description>WAP /// SIG Bloom Disk 10 - Mail List Manager Utilities Disk 03 by Bloom</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-10a.dsk" size="143360" crc="6971d367" sha1="6c320fd4a2216dc4c8d4db3df28697c9e4456c74" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-10b.dsk" size="143360" crc="4c31b46e" sha1="948d28781550ee0d496b2ff2ad691ec695da773b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: AW to 3EZP by Bloom
+	Disk ID: APPLE-3-WAP-BLM-11
+	BOOTABLE?: Bootable
+
+
+	AWEZP transforms an Apple Writer source file into the format used by the ///
+	EZ Pieces (AppleWorks) word processor. The resulting file, once added to the
+	EZP desktop, may be printed by EZP/WP without change, or it may be edited
+	first to take advantage of EZP/WP's special capabilities or to address the
+	few AW/EZP differences that this program does not handle. AWEZP doesn't do
+	everything. EZP is a different program from AppleWriter, and some AW commands
+	and features can not be translated to EZP/WP, either elegantly or at all.
+	AWEZP is intended to give a good basic translation that should be sufficient
+	for most purposes.
+
+	On Side One:
+
+	AWEZP.TEXT  :Pascal Text sourcecode for AW to 3EZP.
+	AWEZP.AW    :AppleWriter formatted version of the manual.
+	AWEZP.LST   :Pre-formatted version of the manual.
+
+	On Side Two:
+	Pascal program files for this program.
+	-->
+	<software name="wapblm11">
+		<description>WAP /// SIG Bloom Disk 11 - AW to 3EZP by Bloom</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-11a.dsk" size="143360" crc="d11a8520" sha1="d072fc5c470a3eda437a83bf597e2194e16ee9ea" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-11b.dsk" size="143360" crc="db88dead" sha1="e666487f062d66828c1fdc2597174b96116ca645" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: A3IBM by Bloom
+	Disk ID: APPLE-3-WAP-BLM-12                
+	BOOTABLE?: Bootable              
+
+
+	A3IBM is a Pascal-based program by Dr. Al Bloom that will
+	automatically format any Apple /// ASCII (Text) file so that it can
+	be properly transfered to an MS-DOS machine.  It is extremely easy
+	to use, asking for pathnames of input and output files. The actual
+	program is one side one.  Source code is on side two. Unfortunately,
+	there is no manual with this program.  But it is easy to use and a
+	must for anyone planning to transfer files from the /// to an MS
+	Dos machine. Also on Side Two: ASCII.Convert - a Dr.Bloom column
+	on ASCII text files on the Apple /// and PC.
+	-->
+	<software name="wapblm12">
+		<description>WAP /// SIG Bloom Disk 12 - A3IBM by Bloom</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-12a.dsk" size="143360" crc="dc6bb5ab" sha1="78d4509df86d6acf25a794865d3c01a3325c4685" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-12b.dsk" size="143360" crc="461724cf" sha1="872391b905d199059cee519226a09584365a9911" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME:  ASCIUPLD by Bloom
+	Disk ID:  APPLE-3-WAP-BLM-13
+	BOOTABLE?: YES - Both Sides
+
+
+	ASCIUPLD converts an ASCII text file (one line per record field) from one
+	data base or spread sheet program into the upload format needed by an
+	importing program. A special command file tells ASCIUPLD (1) which fields of
+	the input ASCII file to be imported and (2) in which order to import the
+	fields. It even lets you create import fields that aren't in the original
+	file.
+
+	You control the length of the fields in the output upload file. Each may be
+	(1) as long as the corresponding input field, (2) no longer than a fixed
+	"truncation" length, or (3) truncated or space padded to a fixed length. The
+	last handles the "Aladin" data base's quirky restriction that each uploaded
+	ASCII file's data field must be exactly as long as the "width" declaration in
+	the corresponding Aladin data base record field.
+
+	Side One:  Contains the ASCIUPLD Manual and source code listings
+	Side Two:  Contains the actual ASCIUPLD program
+	-->
+	<software name="wapblm13">
+		<description>WAP /// SIG Bloom Disk 13 - ASCIUPLD by Bloom</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-13a.dsk" size="143360" crc="35c226f4" sha1="7d5bc5017a0704a5f8c7a5049d9e6f4b077cb318" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-13b.dsk" size="143360" crc="c17713a9" sha1="ca84355af3ae3860ef3ab484bfb860e9713ac5ba" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME:  CONPATH by Bloom
+	Disk ID:  APPLE-3-WAP-BLM-14
+	BOOTABLE?: YES - Both Sides
+
+	CONPATH tells about ways to convert one file format to another. The premise
+	is simple. There are a bunch of "bridges" and a bunch of file formats that
+	can be "stepping stones" between the file format you have the the one you
+	want. Most commercial data base and spread sheet programs can "import" or
+	"export" data in one or more formats. Those files are stepping stones between
+	systems. The most common such intermediate files are ASCII, NAME:VALUE, and
+	DIF.
+
+	There are also utility programs available specially designed to bridge
+	between file formats. The public domain program GRABIT converts an ASCII file
+	to QuickFile format. REFORMATTER /// (APPLE-3-WAP-UTL-02) converts a "table file"
+	(say a report printed to disk) to DIF or QuickFile format. MLMASCI converts
+	Mail List Manager to DIF, ASCII, or NAME:VALUE. NVASCI (APPLE-3-WAP-BLM-16) converts a
+	NAME:VALUE file to ASCII format and doesn't ignore null fields.
+
+	There are plenty of "bridges" around. Getting from one file format to another
+	can be easy. However, the path from "here" to "there" may not be obvious, it
+	may be downright devious, and there may be several paths. CONPATH is designed
+	to help you find those pathways.
+
+	Side One:  Manual and Source Code
+	Side Two:  Conpath Program
+	-->
+	<software name="wapblm14">
+		<description>WAP /// SIG Bloom Disk 14 - CONPATH by Bloom</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-14a.dsk" size="143360" crc="ed084884" sha1="66b6ba08f2375d9d3f6db8a09c17714ccc48afff" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-14b.dsk" size="143360" crc="3447acf1" sha1="37d187a176f74751141f134397510283615ccfc0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME:  BLOCREAD by Bloom
+	Disk ID:  APPLE-3-WAP-BLM-15
+	BOOTABLE?: YES - Both Sides
+
+	 BLOCREAD is a utility program that lets you look into the guts of a disk
+	file. It shows you a file's 512-byte data blocks, in both character and
+	hexadecimal format. You may look at any block in a file and choose to either
+	print it or copy it to another disk file. BLOCREAD is invaluable for seeing
+	what a file really looks like.
+
+	Side One:  Documentation and Source Code
+	Side Two:  BLOCREAD Program
+	-->
+	<software name="wapblm15">
+		<description>WAP /// SIG Bloom Disk 15 - BLOCREAD by Bloom</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-15a.dsk" size="143360" crc="c5e2e9e6" sha1="e7fd56f0544f45a13505ca43e6729ee274675c5b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-15b.dsk" size="143360" crc="356fcdd6" sha1="810014c6d458b27b0a12a7edab1e1bfc1c37a255" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME:  NVASCI by Bloom
+	Disk ID:  APPLE-3-WAP-BLM-16
+	BOOTABLE?: YES - Both Sides
+
+	NVASCI converts a NAME:VALUE format text file into an ASCII text file with
+	one line per record field. Many data base and spread sheet programs can
+	"import" an ASCII file - but only if the file contains one line per record
+	field. A program like PFS cannot generally produce a "one line per field"
+	ASCII file (It ignores blank entries), but it can produce a "one line per
+	field" NAME:VALUE file. NVASCI automatically converts that NAME:VALUE file to
+	the proper ASCII format for importing. NVASCI is most useful if you have a
+	large file to process, or many data names to edit out or many files to
+	process.
+
+
+	Side One: 
+
+	NVASCI.dskCS:  Tutorial on how to use NVASCI
+	NVASCI.TXT :  Source code to the program
+
+	Side Two   :  NVASCI program.
+	-->
+	<software name="wapblm16">
+		<description>WAP /// SIG Bloom Disk 16 - NVASCI by Bloom</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-16a.dsk" size="143360" crc="5e425254" sha1="86b2fd214942777e9eeff7a00a4f89f8650560d9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-16b.dsk" size="143360" crc="bd83a000" sha1="c5afd8f969ddea5d7ef3e11a98fc4babe8fab6b6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME:  LISTIT by Bloom
+	Disk ID:  APPLE-3-WAP-BLM-17
+	BOOTABLE?: YES - Both Sides
+
+
+	LISTIT prints formatted listings of Pascal programs or other text files.
+	LISTIT prints an identifying title on each page, provides margin and line
+	length control, and optionally prints line sequence numbers. The listing may
+	be printed a page at a time or continuously. Additionally, LISTIT can print
+	selected pages. 
+
+	Side One:
+
+	LISTIT Manual and Source Code Files
+
+	Side Two:
+
+	Actual LISTIT Program
+	-->
+	<software name="wapblm17">
+		<description>WAP /// SIG Bloom Disk 17 - LISTIT by Bloom</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-17a.dsk" size="143360" crc="5c4101e1" sha1="265c1653ac324a342ba07bd850eff3929c32db6c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-17b.dsk" size="143360" crc="313e8873" sha1="67d4e9779bb470cf4ccc7db6ae502b2ec5812f16" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: PLUTIL By Bloom
+	Disk ID: APPLE-3-WAP-BLM-18               
+	BOOTABLE?: Bootable-Side Two
+
+
+	PASCAL is a powerful programming language. Its ability to
+	have library units that extend the language is an example of that power.
+	Apple Computer, Inc. offers one such set of extensions under the name
+	"Apple /// Pascal Utility Library," product C3S0001. Those having that
+	program product may agree that it is at once a bit more and a bit less
+	than is needed for good software engineering in the Apple /// PASCAL
+	environment. This disk presents an additional PASCAL utility library,
+	one that extends PASCAL even more usefully.
+
+	 SIDE ONE:  Documentation and Source Code Files
+
+	The library unit, PLUTIL, consists of: (On Side Two):
+
+	  1. BASE_TEN     Integer representation of a hex string.
+	  2. BLANK1       Strip multiple, leading, and trailing blanks from a
+					  string.
+	  3. HEX4         Hexadecimal representation of an integer.
+	  4. INC          Increment an integer counter variable.
+	  5. INTSTR       Integer representation of a numeric string.
+	  6. IOERROR      The name of an input/output error, given its error
+					  code.
+	  7. LNAME        Extract a "last name" from a name ordered by first-name,
+					  middle-name or initial, last-name, and suffix.
+	  8. NEWLEN       Change the length of a string variable, padding with
+					  blanks if the new length is longer than the old.
+	  9. NIBBLEX      Two-character hexadecimal representation of a CHAR field.
+	 10. OPEN         Open a file given an English title and default pathname.
+					  Give the user a chance to correct any I/O errors.
+	 11. TRANSLIT     Transliterate specified characters in a string.
+	 12. UPPERCHR     Change a CHAR variable's alphabetic value to upper case.
+	 13. UPPERSTR     Change a string's alphabetic characters to upper case.
+	 14. UPPER1       Translate a string variable to mixed case.
+	 15. VARIANT      Eight different ways to look at a sixteen-bit word.
+	 16. X_TO_Y       Take a long integer X to its Yth (integer) power.
+	-->
+	<software name="wapblm18">
+		<description>WAP /// SIG Bloom Disk 18 - PLUTIL by Bloom</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-18a.dsk" size="143360" crc="098f7693" sha1="15ccf74ac3e613ce4095e25a7db793f4d74a7e93" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-18b.dsk" size="143360" crc="8e2d8334" sha1="0d875a6487fe067a1bdc20efce241eb4504ae176" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: DIFPRINT By Bloom
+	DISK ID : APPLE-3-WAP-BLM-19 
+	BOOTABLE? YES - Both Sides                                                                  
+			  
+	Listing Utility for Spreadsheet Files for the Apple ///
+
+
+		 DIFPRINT prints the entire breadth of a spread sheet on a single page,
+	including column titles. DIFPRINT works with any spread sheet program that
+	can create a standard DIF (Data Interchange Format) file, including
+	"VisiCalc" and "Lotus 1-2-3."
+
+	DIFPRINT handles up to 52 data columns ("A" through "AZ") in up to five print
+	groups. Each page contains fixed titles and as many data rows as can fit. 
+		 
+
+	SIDE ONE
+
+	DIFPRINT.MANUAL   : The complete manual on how to use DIFPRINT
+
+	SIDE TWO
+
+	DIFPRINT Program
+	-->
+	<software name="wapblm19">
+		<description>WAP /// SIG Bloom Disk 19 - DIFPRINT by Bloom</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-19a.dsk" size="143360" crc="6d215835" sha1="b09f66214523eb15ab5b070a971defc71c8b8b1b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-19b.dsk" size="143360" crc="0be86945" sha1="700e6148348b5c44ab326efce8c1c822b5597bf3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME : DIFUTIL By Bloom
+	DISK ID# : APPLE-3-WAP-BLM-20
+	BOOTABLE?: YES - Both Sides
+
+
+	There is no standard for text files across different operating systems. An
+	MS-DOS ASCII text file is subtly different from an Apple /// SOS format ASCII
+	text file. Depending on how the file was transferred from the other system,
+	those differences might remain in the imported file.
+
+	DIFUTIL was created to deal with those problems. When it encounters an
+	SDI/SDF file, it will create the header entries required by the DIF standard.
+	It will create an EOD trailer segment if one is missing. It will optionally
+	convert E-format numeric entries to decimal format. It is immune to whether
+	the original file is in PC/MS-DOS or SOS/ProDOS ASCII text format.
+
+	DIFUTIL allows you to handle many of the minor incompatibilities between
+	different implementations of the DIF standard. It does not handle all
+	incompatibilities or all problems.
+
+	SIDE 1
+
+	DIFUTIL MANUAL
+
+	SIDE 2
+
+	DIFUTIL PROGRAM (Pascal)
+	-->
+	<software name="wapblm20">
+		<description>WAP /// SIG Bloom Disk 20 - DIFUTIL by Bloom</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-20a.dsk" size="143360" crc="0bae0e39" sha1="f51e9287736241a026565349b55aa0166a5f1991" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-20b.dsk" size="143360" crc="0bae0e39" sha1="f51e9287736241a026565349b55aa0166a5f1991" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: CALENDAR BY BLOOM
+	DISK ID : APPLE-3-WAP-BLM-21
+	BOOTABLE? YES - SIDE ONE
+			
+	This is another in a long series of excellent PD disks from Dr. Al
+	Bloom.  Calendar is a Pascal program that will produce calendars for you with
+	"Typewriter Art" graphics, like the "old computers" used to produce.  This
+	disk has a number of typewriter art graphics on it, as do disks APPLE-3-WAP-GRX-16 and
+	17.  Documentation is on Side 1 of this disk, though there's very little to
+	know, except to run it and enjoy!  Art work on this disk includes:
+
+	Side 1
+
+	CAL.RAQUEL
+	CAL.LION
+	CAL.FLOWER
+
+	Side 2
+
+	CAL.SUSAN
+	CAL.NUDE
+	CAL.MICKEY
+	CAL.SNOOPY
+
+			See the Read.Me files on disks APPLE-3-WAP-BLM-21 and 22 for a complete listing
+	of typewriter art available.
+	-->
+	<software name="wapblm21">
+		<description>WAP /// SIG Bloom Disk 21 - Calendar by Bloom</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-21a.dsk" size="143360" crc="f36b6454" sha1="5bba7aaa7b691df488d59d4ad93e04d44f90100d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-21b.dsk" size="143360" crc="77050428" sha1="0644008f2d1d3b9b802c1fd41de679afff32527f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: CALENDAR TYPEWRITER-STYLE ARTWORK
+	DISK ID : APPLE-3-WAP-BLM-22
+	BOOTABLE? NOT 
+
+			
+	This is another in a long series of excellent PD offerings from Dr. Al Bloom.
+	This disk, along with APPLE-3-WAP-BLM-23 contains "Typewriter Art" graphics for use with
+	disk APPLE-3-WAP-BLM-21, "Calendar by Bloom."
+
+	On Side 1 you'll find:
+
+	ANDY.CAPP
+	BETTY.BOOP
+	BILL.THE.CAT
+	BUTTERFLY
+	BUTTERFLY.2
+	CAT
+	CAT1
+	CLIPPER.SHIP
+	CLOWNM
+	DAVID.STATUE
+	DOG
+	EAGLE
+	ENTERPRISE
+	GHOST.BUSTERS
+	GOOD.GRIEF
+	HANG.ON.SNOOPY
+
+	And on Side 2:
+
+	MONA.NODOT
+	MOON
+	OLIVER
+	OPUS
+	PANTHER
+	PEACE
+	PHANTOM.JET
+	PLUTO
+	PUMPKIN
+	SANTA
+	SCHROEDER
+	SHIP
+	SHUTTLE
+	SKULL
+	-->
+	<software name="wapblm22">
+		<description>WAP /// SIG Bloom Disk 22 - Calendar Typewriter-Style Artwork</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-22a.dsk" size="143360" crc="79f789a7" sha1="0669af2ca33d2560b8dbce1565b8a1c12112eca8" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-22b.dsk" size="143360" crc="7c2fd641" sha1="e1fed2b51be4277d93f9521c893f5375238872fc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: TYPEWRITER ART DISK II BY BLOOM
+	DISK ID : APPLE-3-WAP-BLM-23
+	BOOTABLE? NO
+
+	This disk, along with APPLE-3-WAP-BLM-22 contains "Typewriter Art" graphics for use with
+	disk APPLE-3-WAP-BLM-21, "Calendar by Bloom."
+
+	On Side 1 you'll find:
+
+	SNOOPY
+	SNOOPY.HUG
+	SNOOPY2
+	SPOCK.COND
+	SPOOK
+	TWEETY
+	WEST.HEMIS
+	WOODSTOCK
+	YOSEMITE
+
+	And on Side 2:
+
+	CAL.WOMAN
+	CAL.CHARLIE
+	CAL.LEEUW
+	CAL.APPEL
+	CAL.DAVID
+	CAL.SARA
+	CAL.POLLY
+	CAL.KIRK
+	-->
+	<software name="wapblm23">
+		<description>WAP /// SIG Bloom Disk 23 - Typewriter Art Disk II by Bloom</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-23a.dsk" size="143360" crc="806c3ca7" sha1="34bae04379843a568e7117473f3b14857831d307" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-23b.dsk" size="143360" crc="fba1901a" sha1="065a955baa107bbc7de62ec2a6acc46c1fddf2a4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME:   Poster by Bloom
+	DISK ID :   APPLE-3-WAP-BLM-24
+	BOOTABLE? Self-booting on Side One
+
+
+	Poster by Bloom is a great Pascal program that will make typewriter-style
+	posters in various sizes.  (Disk APPLE-3-WAP-BLM-25: Sign by Bloom is an enhanced 
+	version of this program.)
+
+	Making big-letter signs is one of the truly fun things that you can do on a 
+	computer, of any size. Every mainframe system has a "poster" utility program.
+	The Apple ][ has any number of poster utilities available to it. Should the
+	Apple /// be left out?
+
+	POSTER is a bit of fluff. You can use it for making signs to announce or 
+	celebrate any occasion. Or simply to express your favorite thought. Your sign
+	will be printed in variable-size letters that scroll longitudinally to your
+	favorite output device. In any character font that you can address.
+
+	POSTER yields a square-ish set of characters. The 7-by-8 matrix of dots is 
+	fine for console display, but it's a little sparse when printed. The 
+	height/width factors let you expand each dot to a rectangle. That's how the 
+	letters get big. You don't get really professional looking letters.
+
+	POSTER lets you have any horizontal character expansion from 1 to 8. For 
+	vertical size, the program has a fair idea of wher you are printing your 
+	sign, and sets limits to the height factor. When printing to the console, for
+	example, you may have a height factor of no more than 10 (80 columns divided
+	by 8 vertical dots per character). A destination of .PRINTER or .QUME, 
+	however, yields a maximum height factor of 12 - allowing for letter-size
+	paper at 12 cpi.
+
+	POSTER will also center your sign on the paper. A height factor of "1" will 
+	not yield small text all the way at the bottom of the sign. It will give you 
+	small text in the middle of the sign. 
+
+	Boot and Program are on Side One and Side Two (same program both sides).
+	Source code and manual included on disk.
+	-->
+	<software name="wapblm24">
+		<description>WAP /// SIG Bloom Disk 24 - Poster by Bloom</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-24a.dsk" size="143360" crc="4b2aa52a" sha1="4a948123cc6eb98d20c04ad226b5976d2565a2d3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-24b.dsk" size="143360" crc="57be714a" sha1="4a77b26b767d28151f096f55f9bdadf32aadfe39" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: SIGN BY BLOOM
+	DISK ID : APPLE-3-WAP-BLM-25
+	BOOTABLE? SELF-BOOTING: SIDE ONE
+
+	Dr. Al Bloom weighs in with another fun PD offering! On this disk
+	you will find a text-based sign program.  It's written in Pascal and
+	is on Side two of this disk.  Side one has our Menu.Maker program and
+	the documentation.  There are TWO character fonts.  The Standard font
+	is on Side two. The font for 80 column printers in on Side one.  You
+	will find the source code to the program on Side two.
+
+	SIGN prints sideways and its letters fill an 8.5 inch wide page. Each
+	SIGN character is composed of many repetitions of its typescript character.
+	If SIGN printed with the same character all the time, that position on the
+	printwheel would surely go away. If you don't have a daisy-wheel printer, you
+	may not be a serious Apple /// owner.
+
+	SIGN comes as an executable code file on the accompanying diskette.
+
+	(NOTE: YOUR /// SIG HAS REPLACED DR. BLOOM'S DRIVER WITH A STANDARD
+		SERIAL DRIVER HOOKED UP TO YOUR ///S SERIAL PORT.  YOU WILL STILL
+		NEED TO CHANGE THIS IF YOU ARE USING A DIFFERENT CONFIGURATION.)
+
+	When you boot the SIGN disk, you will be invited to "Put Pascal system
+	disk in built-in drive. Press RETURN." This is a two-step boot process. Just
+	remove the boot disk from the built-in drive, flip it over, re-insert it, and
+	press RETURN. After a bit more whirring from the drive, you will see the
+	program itself.
+
+	SIGN can be installed on the ProFile (under "Catalyst", "Selector" or
+	BOS3 for example) as a simple Pascal program. First copy the SYSTEM.STARTUP
+	file from the distribution disk to a handy sub-directory and rename it
+	SIGN.CODE. Copy the two character set files SIGN.CHARSET and SIGN.CHAR80 into
+	the same sub-directory. If you have Pascal 1.1 or Catalyst 2.0 (or later 
+	versions), SIGN is smart enough to look for the character sets in its own 
+	directory.
+
+	Whether booted from disk or run from ProFile, SIGN looks the same. It
+	presents you with a single screen and will print only one poster at a time.
+	-->
+	<software name="wapblm25">
+		<description>WAP /// SIG Bloom Disk 25 - SIGN by Bloom</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-25a.dsk" size="143360" crc="2579af45" sha1="87431ca2a682200632cf3c4a4e5010737899fec2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-25b.dsk" size="143360" crc="720461be" sha1="0419634fc821bed5a074f60d5a4741d127048dd0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: D3.Backup By Bloom
+	Disk ID: APPLE-3-WAP-BLM-26
+	BOOTABLE?: Bootable
+
+	DISK /// BACKUP is an automatic backup utility for Apple /// diskettes. The
+	program displays side-by-side directories of a master and a backup diskette.
+	By comparing file dates, it suggests master files to be backed up. You then
+	use keyboard arrows to change those suggestions, for any file on either
+	diskette: copy master-to-backup or vice versa, delete backup or master file,
+	leave things as they are. The program then executes your wishes. DISK ///
+	BACKUP requires a 256K Apple /// and an external diskette drive.
+
+	Until now, backing up files on diskettes hasn't been easy. Unless you copied
+	an entire volume. A volume copy may be inappropriate. You may want to keep a
+	backup file, delete a file on the master instead of backing it up, or copy
+	from the backup. Until now, you had to list each disk directory, compare the
+	lists manually, then use the System Filer to do the copies and deletes - one
+	at a time. DISK /// BACKUP eliminates that bother. The program handles
+	everything - comparing disk catalogs, deciding on what to do with each file,
+	and doing it.
+
+	When you boot DISK /// BACKUP, it asks you to insert your master and backup
+	volumes, then displays a side-by-side catalog of the disks. The program shows
+	you which backup files are current, which master files should be copied to
+	backup, and which files on the backup volume either (1) don't exist on the
+	master or (2) are more recent than corresponding master files.
+
+
+	Side One
+	D3BACKUP.dskC    :D3Backup Manual
+	D3BACKUP.SOURCE :Source code for this program.
+
+	Side Two
+	D3Backup Program files.  Self-Booting Pascal.
+	-->
+	<software name="wapblm26">
+		<description>WAP /// SIG Bloom Disk 26 - D3.Backup by Bloom</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-26a.dsk" size="143360" crc="a2af7c21" sha1="46654d489ed6419c4d7fa939c3cc6871a5700e9d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-26b.dsk" size="143360" crc="4ef00154" sha1="72145d7cccfd2475c64e39f5f89d1d26afc4f8ae" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME:  SURVEY 3 BY BLOOM
+	DISK ID :  APPLE-3-WAP-BLM-27
+	BOOTABLE?  SIDE ONE
+
+
+	Phase /// was an Apple Computer Conference held during October,
+	1987 in Wheaton, Illinois.  Sponsored by The Third Apple Users Group (TAU),
+	The Conference included a number of sessions about the Apple ///.  It also
+	featured a special survey of the Apple /// Community by Dr. Al Bloom.
+
+	On this disk, you'll find the results of that survey. It provides a unique
+	snapshot of what people were thinking about their ///s, and how they were
+	using it just a few short years after it was discontinued by Apple.
+
+	The results reflected 55 responses from Apple /// owners in 29 states and
+	four foreign countries. The 1,239 programs represented an average of 22.5
+	programs per person. The distribution showed that most respondents owned
+	between 11 and 20. Two owned five or less, and two real collectors had over
+	50.
+
+
+
+	SIDE ONE
+
+	SURVEY3:  ASCII Text version of the Apple /// Survey
+
+	SIDE TWO
+
+	SURVEY.3:  3EZ Pieces/Appleworks version of the Apple /// Survey.
+
+
+	June, 1995
+	Dave Ottalini
+	-->
+	<software name="wapblm27">
+		<description>WAP /// SIG Bloom Disk 27 - Survey 3 by Bloom</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-27a.dsk" size="143360" crc="48d62a32" sha1="c33b295e56776b557d35a8bcb887b2a02780ed8c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-blm-27b.dsk" size="143360" crc="2772eca2" sha1="72fd34902950f988a24dc5c27676b108295ffbf1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Washington Apple Pi - Business BASIC -->
+
+	<!--
+	PDS Name: BASIC 1.23 AND UTILITIES
+	Disk ID: APPLE-3-WAP-BSB-01
+
+
+			This is another disk for the Apple /// Business Basic
+	Programmer.  Along with the standard version 1.23 of Business Basic, we've
+	included many invokables and utility programs that you will find useful as
+	you attempt to program in Business Basic.  Manuals are in the WAP office.
+	For the best information on programming see our Business Basic series by 
+	Taylor Pohlman on disks APPLE-3-WAP-BSB-01 through 05. 
+			Here's what you'll find on this disk:
+
+	Side One:
+
+	-: CLEANER       : Will turn on a disk drive so you can use a disk cleaner.
+	-: COMPARE.PRGS  : Compares two versions of a Basic program.
+	-: DESIGN.FONT   : A Font design program.
+	-: FILEHANDLER   : A File handling utility.
+	-: QUICK SORT    : A sorting utility.
+	-: RENUMBER      : A utility that lets you renumber or merge programs.
+	-: STRING.CK     : A program to check strings in a Basic program.
+	-: FILE.CLEAR    : Clears files.
+	-: FIND.REPLACE  : Finds and replaces
+	-: Invokables include:
+	-: Request.Inv, Download.Inv., Filehandler.Inv., Readcrt.Inv., Upshift.Inv.
+	-:
+
+	On Side Two are:
+
+	-: Two excellent Basic utility programs by Robert Boston:
+	-: AUTOBASIC:  A line editor for text files of BASIC programs (< 3,000 
+	-: lines).
+	-: TREESORT: A sorting utility.
+	-->
+	<software name="wapbsb01">
+		<description>WAP /// SIG Business BASIC Disk 1 - Basic 1.23 and Utilities</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-01a.dsk" size="143360" crc="cce43ea9" sha1="b558aa08d663a283f7c846181067df625a307b6b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-01b.dsk" size="143360" crc="07db5661" sha1="a180b598118f882547f5ac5b04dc400f51b9dc60" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- No info on apple3.org, was mixed with BSB-01 -->
+	<software name="wapbsb02">
+		<description>WAP /// SIG Business BASIC Disk 2</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-02a.dsk" size="143360" crc="ad187ede" sha1="f99ee0e9cd515548fd7d0c8e025b66d6e43ddb04" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-02b.dsk" size="143360" crc="7af4d515" sha1="0138322d2d9c1f3082f290be426e59e061451032" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	The Third Basic
+	By Taylor Pohlman
+
+
+		Disks APPLE-3-WAP-BSB-03 through 07, contain all 23 articles on Business Basic as
+	written by Taylor Pohlman in the old Solftalk Magazine, as well as every
+	BUSINESS BASIC program developed for use with those articles. 
+		The Menu.Maker program will allow you to read each article and to run
+	the programs should you so desire.  BUT PLEASE NOTE:  We would recommend you
+	copy the programs to a separate disk and run them from that disk. Since many of
+	these programs are basically examples to show certain things that BUSINESS
+	BASIC can do, the original program could be damaged. 
+		Further, you may need to include other files, like BGRAF.INV or other
+	invokable module in order to properly run these programs.  Where space permits,
+	we will include these on the disk at the directory level.  But you will have to
+	use System Utilities to transfer them to the appropriate disk.
+		Finally:  in order to save space, we have only made APPLE-3-WAP-BSB-01
+	a self-booting disk. The rest of the Third Basic disks will include
+	Menu.Maker but not the SOS.Kernal, SOS.Driver and SOS.Interp files needed for
+	your Apple /// to boot up.  Since Menu.Maker will read and run programs
+	from any disk placed in any disk drive, all you have to do is boot this disk (or
+	any other Bootable /// SIG PD BUSINESS BASIC disk) and then place the proper
+	disk in any disk drive to get your menu. 
+
+		Here's what you'll find on each disk:
+
+	   
+	PDS NAME: Pohlman Disk 01
+	Disk ID: APPLE-3-WAP-BSB-03                
+	BOOTABLE?: Bootable             
+
+	Contains the first five articles from Taylor Pohlman's fine
+	series on Business Basic in Softalk Magazine. Programs included.
+	ARTICLE 1:  Introduction; Business Basic & SOS; Program to read text
+			 files.
+	ARTICLE 2:  SOS file system revisited; File-to-file transfer program;
+			 Screen print program.
+	ARTICLE 3:  Indexing techniques; Data files; Parts distribution program.
+	ARTICLE 4:  Parts program continues; Business Basic 1.1; New Invokables.
+	ARTICLE 5:  Mixed bag: Programming style and philosophy; GET statement;
+			 Hex to decimal dump program.
+
+	PDS NAME: Pohlman Disk 02
+	Disk ID: APPLE-3-WAP-BSB-04               
+	BOOTABLE?: Nonbootable           
+
+	Taylor Pohlman's SofTalk articles 6-9.
+
+	ARTICLE 6:  Random record files; Get# statement; Request Invokable and
+			 programs to illustrate.
+	ARTICLE 7:  Graphics introduction and programs to illustrate.
+	ARTICLE 8:  More on Graphics; Flashing cursor; Writing on the screen.
+	ARTICLE 9:  Hashing records (producing a random record number from an
+			 arbitrary collection of characters called a key value).
+
+
+	PDS NAME: Pohlman Disk 03
+	Disk ID: APPLE-3-WAP-BSB-05               
+	BOOTABLE?: Nonbootable          
+
+	Taylor Pohlman's SofTalk articles 10-15.
+
+	ARTICLE 10: The Apple /// Console Driver; Request.Inv Invokable.
+	ARTICLE 11: More on the Console: Four way scrolling through text files.
+	ARTICLE 12: More on the Console: Data entry screens.
+	ARTICLE 13: General purpose keyboard read program.
+	ARTICLE 14: Sorting techniques in Basic.
+	ARTICLE 15: More sorting techniques in Basic.
+
+
+	PDS NAME: Pohlman Disk 04
+	Disk ID: APPLE-3-WAP-BSB-06                
+	BOOTABLE?: Nonbootable           
+
+	Taylor Pohlman's SofTalk articles 16-19.
+
+	ARTICLE 16: Data base manager program showing how binary tree data
+			 structures can be used for data access.
+	ARTICLE 17: High-Res character set and shape/font editor.
+	ARTICLE 18: Character set animation; Bug Mania.
+	ARTICLE 19: More on character set animation.
+
+
+
+	PDS NAME: Pohlman Disk 05
+	Disk ID: APPLE-3-WAP-BSB-07                
+	BOOTABLE?: Nonbootable           
+
+	Taylor Pohlman's SofTalk articles 20-23.
+
+	ARTICLE 20: More on Apple /// graphics: Bit mapped displays (140x192
+			 color).
+	ARTICLE 21: Proportional spacing and text font appearance.
+	ARTICLE 22: Insert mode editing in Basic.
+	ARTICLE 23: More on insert mode editing: Making the underline "wink" and
+			 shifting up the five lower-case characters.
+	-->
+	<software name="wapbsb03">
+		<description>WAP /// SIG Business BASIC Disk 3 - Pohlman Disk 01</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-03a.dsk" size="143360" crc="308c414d" sha1="711ea2c1f21e0f926708a77b531d1cdcf570af8e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-03b.dsk" size="143360" crc="7b11284d" sha1="ba52e722efedfc1b80df97826dc5045a4223d2c0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wapbsb04">
+		<description>WAP /// SIG Business BASIC Disk 4 - Pohlman Disk 02</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-04a.dsk" size="143360" crc="27c9eeed" sha1="3d9f16244811cf1f2601746d9a123cbc30ec2f9c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-04b.dsk" size="143360" crc="05fa831c" sha1="206e97e4125571433c754a88ad8a1da6cbb043e9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wapbsb05">
+		<description>WAP /// SIG Business BASIC Disk 5 - Pohlman Disk 3</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-05a.dsk" size="143360" crc="fb9dad41" sha1="4c26d86253b5f8219af32efc7594bc5aa8cbc3cb" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-05b.dsk" size="143360" crc="b65bffd7" sha1="86a71aad3c725bef402ca968c71f65e0705ff22b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wapbsb06">
+		<description>WAP /// SIG Business BASIC Disk 6 - Pohlman Disk 04</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-06a.dsk" size="143360" crc="b2b29105" sha1="8950d76947c08dbed25d0b973bc38eae3b157998" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-06b.dsk" size="143360" crc="4c8208fe" sha1="714edf907cb8d1c5b5cdf049a6c6b377d89cbabf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wapbsb07">
+		<description>WAP /// SIG Business BASIC Disk 7 - Pohlman Disk 05</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-07a.dsk" size="143360" crc="31236ba7" sha1="432446f853b7541e617e256c49032833a33d9b5f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-07b.dsk" size="143360" crc="9d8c1cb4" sha1="7a960a720bd0cc08d6e3c1dfd74b1523cf8a2864" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME:  THE BEST BUSINESS BASIC PROGRAMS FROM "ON THREE" MAGAZINE
+	DISK ID :  APPLE-3-WAP-BSB-08
+	BOOTABLE?  Side One
+
+
+	Compiled by Dave Ottalini
+				WAP /// SIG
+				October, 1990
+
+	Reviewed    March, 1991
+
+	You will find a treasure chest of great programs on this disk.
+
+	Some can be used as is, others must be incorporated into other programs as
+	your needs call for.  Please be aware that your WAP /// SIG has modified
+	these programs so that, when done, they will return you to our "Menu.Maker"
+	program.  You need to change the code to make it look elsewhere or end if you
+	like.
+
+	Now, what's on this disk?  Here's the rundown:
+
+	SIDE ONE
+
+	SKETCHER.III :   A graphic sketching utility
+	PEG.LEAP     :   A fun game something like checkers
+	BLOCKS       :   Graphics demo
+	LINES        :   Graphics demo
+	NOISES       :   Lots of them!
+	FONTDEMO     :   A font demonstration program
+
+	SIDE TWO
+
+	AIRPLANE.SS          :Visicalc/3EZ Pieces Decision Support Spreadsheet
+	BAS.BOOT             :A program that allows you to reboot from Basic
+						  using MISC.INV invokable
+	BASIC.FOR.D.T        :Disk formating utility
+	BASIC.T.E.W.PRG      :A program that generates negative square roots and
+						  random numbers
+	BENS.SUPER.SLOT      :Slot Machine Game
+	BRIANS.COLORS        :Graphics Demo
+	BRIANS.THREEme       :Graphics Demo
+	BYTE.TWO.TEST        :For programmers, identifies when a "special key" is
+						  pressed
+	CIRCLING.DEMO        :Graphics Demo.  Should look familiar!
+	CNTL.C.MAYBE         :Another Spreadsheet program for use with Visical/3EZ
+						  Pieces
+	DEMO.1               :Graphics Demo
+	DEMO.2               :Graphics Demo
+	DEMO.3               :Graphics Demo
+	GRAPHING.DEMO        :Utility to make graphs on screen
+	HEADFIRST            :Program that makes "Headlines"
+	KEYPRESS.dskC         :Documentation for KEYPRESS.INV Invokable
+	KEYPRESS.TEST        :Demo for KEYPRESS.Inv
+	MISC.dskC.TEST        :Demo for MISC.INV Invokable to lock/unlock Reset Key;
+						  Reboot System; and Slow Down or Speed Up your ///
+						  (WARNING: DO NOT USE reboot or speed settings
+						   with Selector/Catalyst)
+	PATTERNS.PART1       :Graphics Demo
+
+	RONS.DEMO            :Walking Man Demo
+	SPREADSHEETING       :Demo of a Basic Spreadsheet
+	TIMESET              :A more useful version of this time-setting program
+
+
+	All these programs are well documented.  Just LOAD and then LIST them to see.
+	Each will also indicate which ON THREE magazine issue they came from. The WAP
+	office has most of these in the library. Or you can get back issues of On
+	Three by calling 1-(805)-822-8580 (On Three).  While you're at it, be sure to
+	get on their mailing list.
+	-->
+	<software name="wapbsb08">
+		<description>WAP /// SIG Business BASIC Disk 8 - The Best Business Basic Programs From "On Three" Magazine</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-08a.dsk" size="143360" crc="d29d2e1d" sha1="b403141a13c3ff154d8503910e1e5d4ab0a7b29f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-08b.dsk" size="143360" crc="22a02fdc" sha1="18a0026ddfb0d335ec8ce647b4cc3641d703317e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: AppleCon
+	Disk ID: APPLE-3-WAP-BSB-09                
+	BOOTABLE? Bootable
+
+	Basic conversion program that will take Applesoft programs and covert
+	them (to a point) into Business Basic.
+
+	On Side One:
+	APPLECON.INST  :AppleCon Manual.
+	CONVERT.NOTES  :Notes on converting from AppleSoft to Business Basic.
+	PEEK.POKE.CALL :PEEKs/POKEs/CALLs and their Business Basic equivalents.
+
+	Side Two:
+	AppleCon Boot disk (Pascal based).
+	-->
+	<software name="wapbsb09">
+		<description>WAP /// SIG Business BASIC Disk 9 - AppleCon</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-09a.dsk" size="143360" crc="6a4a2956" sha1="1e1be034738d9dedb81b5ce248e29eeaffda1810" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-09b.dsk" size="143360" crc="4f00db42" sha1="93052cef154c2e5960bc117595ce9a2582059639" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: THE APPLE /// STARTUP DISK AND PRINTER SET-UP PROGRAMS
+	DISK ID :  APPLE-3-WAP-BSB-10
+	BOOTABLE?  Side One
+
+
+	UPDATED APRIL, 1991
+			MAY, 1995
+
+				   FIRST OF ALL: Many thanks to WAP /// SIGer Jim Salerno
+					   for providing the programs for this disk. His efforts are
+					   appreciated!
+
+
+				   BELOW:  You will find basic information about the
+					   files on side one of this disk:
+
+				   BOOTING...As you have discovered, side one of this disk
+					   is self-booting.  Side two may be accessed by first
+					   running the WAP MENU.MAKER program,
+					   turning the disk over and pressing the <ESCAPE> key.
+
+					SOS.DRIVER...The "ATTACH" Driver is set to input
+					   ".PRINTER" using APPLE DMP Codes.   Use Control-1
+					   to request screen text printout. Control-2 will
+					   toggle from normal to condensed size print.
+					   Use the KEYPAD NUMBERS for this command. You
+					   will see a letter at the upper right screen position
+					   indicating your selection.   Except for programs
+					   which have redefined the use of the keypad numbers,
+					   this program will permit a screen text printout
+					   whenever a keyboard input is allowed.  It should let
+					   you dump the screen at normal size using just about
+					   any printer.  Try it and see!
+
+							....The serial printer driver,".PRINTER", is
+					   set at 1200 baud,7 bit-odd,with no delays.  This
+					   is to be used with the serial port on the back of
+					   your Apple ///.
+
+							 ....The parallel printer driver,"PPRINTER"
+					   is for the APPLE UPIC interface card (slot 1).
+
+							 ....The .Profile driver is a "Universal" driver
+					   for use with a five or ten MB ProFile.
+
+							 ....We have also included a few other printer
+					   drivers which may better fit your system. But you will
+					   have to set it up accordingly using the System Utilities
+					   "System Configuration Program" (available on WAP PD disk
+					   APPLE-3-WAP-UTL-01).
+
+					MENU ITEMS...Most items need no explanation, as they
+						will allow you to catalog a disk or read a file, etc.
+
+
+	SIDE TWO
+
+						 PRINTER CONTROL AND LABEL PROGRAMS
+									DECEMBER, 1987
+								 UPDATED APRIL, 1991
+
+			Please note that while these programs may not correspond
+	directly to your printer, you can adapt them according to your own needs.
+	By looking at your printer manual, you can exchange the control codes in
+	these programs for those of your printer.  Thus, you'll have a quick
+	and easy way to set up your printer or print disk labels from Business Basic.
+
+
+			PRINTER.SET
+					A program for selecting printer functions on the Apple
+					Dot Matrix and Imagewriter printers.   From ON THREE,
+					Feb. 1986.
+
+			PRINTER.SET.MOD
+					Modification and enlargement of above program for use
+					with the C.Itoh printer.
+
+			EPSON.CONTROL
+					A program for selecting printer functions on the Epson
+					printer.   From THREE's COMPANY.
+
+			C.ITOH.CONTROL
+					Modification of above program for use on the C.Itoh
+					printer.
+
+			PRINTER.MENU
+					An inquiry and response type menu for selecting printer
+					functions for the Apple DMP printer.
+
+			PRINT.TEXT
+					A PASCAL program for printing pascal text files, skipping
+					over page breaks and numbering each page.
+					REQUIRES PASCAL TO USE.
+
+			OKIDATA.MENU
+					A menu for the OKIDATA 182 printer is
+					contained in "OKIDATA.MENU".   This may be renamed
+					and used as the printer menu.   If you do this,
+					please save the original printer menu and restore
+					it before leaving.
+
+
+		                       LABEL PROGRAMS
+
+			LABELER.1
+
+				   This program prints the directory from an APPLE ///
+			disk on Avery 1.5 inch X 4.0 inch labels. It is set up
+			for an Epson MX-100 printer. The printer commands are
+			located in lines 730-790.
+
+			LABELER.2
+
+				   This program prints the directory from an APPLE ///
+			disk on 1 x 3.5 inch, 1-UP labels. It is set up
+			for an Imagewriter printer. The printer commands are
+			located in lines 730-790.
+
+			Original Author:  Unknown
+			Imagewriter modifications, lineup routine, error trapping routine,
+			1 x 3.5 label capability added by Ed Gooding - Sept. 30, 1986
+
+			LABELER.3
+
+				   This Label Maker program by Bob Wiker will simply allow you to
+			print up a label of up to five lines.  You can print as many copies
+			as you wish and change the copy depending on your needs.  Uses the
+			.Graphix driver and the bgraf.inv invokable module.
+	-->
+	<software name="wapbsb10">
+		<description>WAP /// SIG Business BASIC Disk 10 - The Apple /// Startup Disk and Printer Set-Up Programs</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-10a.dsk" size="143360" crc="8e973d0a" sha1="94da4484b92b83706bd2aa95b1e2cc3b50b09045" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-10b.dsk" size="143360" crc="bd7b41d4" sha1="08de40b9eee2b9fd9a096cab7958d8e3874218ee" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: BASIC UTILITIES
+	DISK ID : APPLE-3-WAP-BSB-11
+	BOOTABLE? Side One
+
+
+	This disk contains a number of useful BASIC programs that will, among
+	other things, allow you to send control codes to an Epson printer, scroll
+	your documents, work with various menu programs and more.
+
+		Side One
+
+		Utils.1
+		-Epson.Select will let you set up your Epson printer before printing.
+		 Epson.dskcument tells you how.
+		-File.Reader can read a text file from various sources and
+		 even print it.
+		-Hex.Dec.Convert will convert Hex and Decimal numbers back and forth.
+		-Mortgage will compute your mortgage payments over any time and cost.
+
+		Utils.2
+		-Contains a number of Basic menu programs including: Automenu,
+		 Basic.Bootprogram, and Manualmenu.
+		-Compare.Utility compares two versions of a Basic program (saved as
+		 ASCII files) and will show you the differences. Compare.dskcumnt tells
+		 you how to use it.
+
+		Utils.3
+		-Scroller will load an ASCII file and allows scrolling up and down, left
+		 and right.
+		-Textfile.Copy allows you to copy text files from one disk to another.
+		-Textfile.Dump is a similar program you can use to print a text file to
+		 a printer or to the screen.
+		-Textfilemanker allows you to create a textfile and save it to disk.
+		-Search.Utility will search a text file for specific lines of copy.
+		 Search.dskcument tells you how to use it.
+
+		Utils.4
+		-Mailbase is a data base you can use for keeping mailing lists.
+		-SOSbuffer.Demo uses a printer to demonstrate the ///'s typeahead
+		 feature.
+
+		Side Two
+
+		Utils.5
+		-Includes Util and Util.dskc.  Util is a program that you can add
+		 to other Basic programs, so you can do a number of disk utility
+		 functions,  including copying files, reading files, etc.  Util.dskc
+		 explains how to use this program.
+
+		Util.6
+		-Basic Renumber renumbers any Basic program easily and quickly.
+		-Diskdrv.Clean turns on the desired disk drive for use with cleaning
+		 kits.
+		-Find.Replace finds specific strings of text and lets you replace them.
+		-Compress.File is a short program that compresses a text file to save
+		 space.
+		-REM.Remover removes REM statements (they slow down programs).
+		-Renumber.dskc  documents and works with the Renumber.Inv invokable
+		 module.
+		-Demo.Three is a fun little program that you'll enjoy.
+		-Modem is a telecommunications program written in Basic. Easy to use.
+		-Rename.Direct allows you to shorten file names prior to backing up and
+		 will restore the names as well.
+
+		Util.7
+		-Line.Printer will print the first 23 lines of the screen to a printer.
+		-S.T.E.P. is a word processing program written in Basic.
+		-VC.File.Printer will print Visicalc (DIF Format) files to a printer.
+		-Newdownload allows you to change fonts in Basic easily and quickly.
+		-Cipher.Utility encrypts text files and restores them. Cipher.dskcument
+		 explains how to use it.
+
+		Util.8
+		-Graph.Pac is a Graphics Drawing program.
+		-Time.Program will display the time if you have a clock chip.
+		-Loan.Pay.Calc will compute your loan payments over any given time.
+		-Border.Program creates a nice border ala the Apple /// demo disk.
+		-Calculate.Area will do just that.
+		-Graph.Plot will plot graphs.
+		-PDL.TEST is used with an Apple /// joystick for allignment purposes.
+
+			   You will be able to run any of these programs from within
+	 Menu.Maker.  But they HAVE NOT been set up to return you to Menu.Maker after
+	 being run.  The quickest way to get back is simply type at the prompt )Run
+	 .D1/Menu.Maker and you'll be set.
+	-->
+	<software name="wapbsb11">
+		<description>WAP /// SIG Business BASIC Disk 11 - Basic Utilities</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-11a.dsk" size="143360" crc="8957677e" sha1="6f68ae4c898055f468f9aa3fe7a66e6dd33c89f4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-11b.dsk" size="143360" crc="21722804" sha1="11b00141029ce887d6f32de6c15fe14da3717bf9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: PROGRAMMERS POWER TOOLS
+	DISK ID : APPLE-3-WAP-BSB-12
+	BOOTABLE? 
+
+
+							  PROGRAMMERS POWER TOOLS ///
+								   for the Apple ///
+									By CE Software
+
+							Transcribed for the WAP /// SIG
+									by Tim Bouquet
+
+
+	(NOTE:  The following information comes from a promotional flyer provided by
+	CE Software.  It does not substitute for the manual, which is available
+	directly from CE Software for $10.00.)
+
+
+			Basic has long been a popular language for micro-computers, primarily
+	due to its simplicity and ease of learning. However, many programmers feel
+	that they eventually must abandon this language for other, more powerful ones
+	to overcome some of the limitations of BASIC.  NO MORE!  PPT///, for the
+	Apple///, extends the power of the Business Basic interpreter.  Now,
+	utilizing Programmer's Power Tools, both beginning and advanced programmers
+	have the capability to write sophisticated, advanced programs without
+	sacrificing the simplicity of BASIC.
+
+
+									 BENEFITS:
+
+	  o PPT/// will speed up your programs, cutting down such time wasters as    
+	searching and sorting.
+	  
+	  o PPT/// will cut your development time by removing the need to write long,
+	complicated subroutines for user input and upper/lower case conversion.  
+	  
+	  o PPT/// will give your programs a professional look, allowing you to      
+	easily incorporate state-of-the-art techniques of user-friendliness.         
+	  
+	  o PPT/// commands meld easily into your BASIC program. 
+
+
+	In March, 1989, CE Software placed PPT /// into the public domain.  You will
+	find it on Side B of this disk.  In return for placing the programs into the
+	PD, CE Software asks that users purchase the manual for $10.00 which
+	includes:
+
+			o  A complete tutorial manual, with reference section for quick
+			   instructions, commented listings of sample programs, 
+			   demonstration programs and more.
+
+
+	CE SOFTWARE  1854 Fuller Road  PO Box 65580  West Des Moines, IA 50265
+				 (515) 224-1995
+	-->
+	<software name="wapbsb12">
+		<description>WAP /// SIG Business BASIC Disk 12 - Programmers Power Tools ///</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-12a.dsk" size="143360" crc="d177b566" sha1="3ae216be415df74745e4ac399a9af230349d9fbd" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-12b.dsk" size="143360" crc="a0b8c753" sha1="4c35d2bff0367b34830eb04375f402b379a37c3e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME:  PPT/Basic Helps
+	DISK ID:   APPLE-3-WAP-BSB-13:  
+	Bootable? :Bootable  
+
+		  This is a disk for Business Basic Programmers!  On Side One are some examples of how Programmers Power Tools (Disk APPLE-3-WAP-BSB-12) can make your programs better. The /// SIG's own Jim Salerno put the menu together to make the demo for PPT a little clearer. 
+		  On Side Two we've provided you with a host of information about programming with Business Basic.  Information downloaded from Ed Gooding's Three's Company BBS and the /// section of MAUG on CompuServe and from Three Cheers Magazine on disk.  Files include:
+
+	INVOK.INFO     :  Information about using Invokables in Business Basic
+	Q1             :  How to free up memory under Business Basic
+	Q2             :  Using Verbs for Invokables
+	Q3             :  On GET, INPUT, ON KBD and their use
+	Q4             :  How to flush the type-ahead buffer  
+	Q5             :  Get Request.inv module to look for a Carrier Detect on a 
+				   modem.
+	Q6             :  Program to print your screen contents
+	RENAMER        :  Text of program to shorten pathnames for backup purposes
+	RENAMER.PGM    :  Renamer Program
+	BASIC.TOOLS1   :  Information on moving a statistial analysis program to the
+				   /// and Business Basic from Applesoft
+	BASIC.TOOLS2   :  Info on the 1.23Ax version of Busines Basic
+	BASIC.TOOLS3   :  Using 6502 invokables from Business Basic
+	-->
+	<software name="wapbsb13">
+		<description>WAP /// SIG Business BASIC Disk 13 - PPT/Basic Helps</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-13a.dsk" size="143360" crc="6420f486" sha1="e8a3cd90c41b4a899c68ec7a599039e32b1458d1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-13b.dsk" size="143360" crc="718d287e" sha1="0c8777f96f15dd5f42d0ef8a73ddefa26d3395d6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: DISK.MAKER/APPLESEEDS
+	DISK ID : APPLE-3-WAP-BSB-14
+	BOOTABLE? Yes
+
+	SIDE ONE:
+
+			Disk Maker is a Business Basic program for fast copying of /// and //
+	Prodos-based disks. It loads the entire disk into memory for multiple copies.
+	It will also make disk and address labels.  V1.1
+			Menu Maker will let you boot Disk Maker and when finished, return to 
+	the Menu.  You'll also find:
+
+	Appleseed.dskcs  : Information about the Appleseeds Basic programs on Side Two
+
+	SIDE TWO:
+
+		 Appleseed, is designed to help you program quickly and
+	easily in Business Basic.  Programs on this disk side can be divided into four categories:
+
+								 1. Seed programs
+								 2. Subroutines
+								 3. Program documentation
+								 4. Utilities
+
+	SEED PROGRAMS:
+
+	Six seed programs are included on this disk - one for each graphics
+	mode, one for music, and one for 40-column color text.
+
+	Seed programs are designed to be loaded and listed.  When listed,
+	you will see that directions are given in REM statements. The most
+	pertinent REM statements will appear at the end of the listing.  This
+
+	way they will stay on the screen for reference while you begin to program.
+
+	Seed programs are time-savers.  When you wish to try simple graphics
+	or when you want to add music to your programs, the seed programs are
+	ready to use.  All SOS calls have already been written into them.  All
+	you have to do is read the REM statements and follow the formula
+	described for entering data.  This way you can begin drawing your picture
+	or composing your song at once.
+	-->
+	<software name="wapbsb14">
+		<description>WAP /// SIG Business BASIC Disk 14 - Disk.Maker/Appleseeds</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-14a.dsk" size="143360" crc="b256dd37" sha1="8cf4287c30a04fbe6a4b7b2a3177aff9f2f264ab" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-14b.dsk" size="143360" crc="78c343f0" sha1="fc7e9f5a77ff1512048b9a42eb9148d4ce18c28a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: APPLE /// AND APPLE // GRAPHICS
+	DISK ID : APPLE-3-WAP-BSB-15 
+	BOOTABLE? Yes
+
+	By Dave Ottalini
+
+
+			This is a disk long in the making.  It developed from my desire to learn a little bit about graphics on the Apple ///, and how to transfer Apple // graphics programs.
+			Frankly, it ain't always easy.  On the Apple // side you have LoRes,
+	HiRes and Double HiRes (the GS adds Super HiRes).  On the Apple /// it's four
+	different graphics formats, some that approximate the Apple // formats,
+	others that don't.
+			Add to that the fact that the programming is somewhat more difficult
+	on the /// side (the tradeoff is that /// graphics are more powerful in some
+	ways) than on //.  The best example is that to get into Apple // LoRes
+	graphics, it's one simple command: GR (for HiRes it's HGR). From there you
+	can manipulate the screen as you will, but you are forced to use Peeks and
+	Pokes to do it.
+			The Apple /// requires that you OPEN the Graphics Driver, INVOKE the
+	BGRAF Invokable module, stipulate the pencolor and fillcolor along with a few
+	sundry other things.  But once that's done, you can move on to what you'd
+	like to do.  No Peeks or Pokes either.
+			The other problem is the graphics screens.  On the Apple //, the 0,0
+	coordinate is at the top left of the screen.  On the ///, it's at the bottom
+	left.  That requires some finagling as well.
+			On this disk, you will find a number of attempts at translating from one format to the other. You should find the results interesting.
+			This is a double booting disk that will work on the // or the ///.
+	All the programs are on side two.  You can run one particular version, reboot
+	and see what the other is like.  Or you can read each program as text files
+	should you desire.  Some programs require joysticks to operate properly.
+
+	Side Two:
+	-: READ.ME.FIRST : The programs and files you'll find on this disk.
+	-: EXAMPLE.1 (subdirectory)
+	-: - A3.T                BasicFile
+	-: - A2                  AplSoft Prg
+	-: - A2.H                AplSoft Prg
+	-: - A3.T2               BasicFile
+	-: - RANDOM.A2           AplSoft Prg
+	-: - RANDOM.A3           BasicFile
+	-: - RANDOM.A3.2         BasicFile
+	-: EXAMPLE.1 (subdirectory)(continued)
+	-: - RANDOM.A3.3         BasicFile
+	-: - RANDOM.A2.2         AplSoft Prg
+	-: EXAMPLE.2 (subdirectory)
+	-: - A2                  AplSoft Prg
+	-: - A3                  BasicFile
+	-: - A3.ALT              BasicFile
+	-: - A2.H                AplSoft Prg
+	-: EXAMPLE.3 (subdirectory)
+	-: - A3                  BasicFile
+	-: - A2.L                AplSoft Prg
+	-: - A2.H                AplSoft Prg
+	-: - A3.ALT              BasicFile
+	-: EXAMPLE.4 (subdirectory)
+	-: PAGE.FLIP.A2          AplSoft Prg
+	-: PAGE.FLIP.A3          BasicFile
+	-: EXAMPLE.5 (subdirectory)
+	-: - CYPRUS              AplSoft Prg
+	-: - MONTEREY.PINE       AplSoft Prg
+	-: - FERN                AplSoft Prg
+	-: - CYPRESS.BB          BasicFile
+	-: - MONT.PINE.BB        BasicFile
+	-: - FERN.BB             BasicFile
+	-: EXAMPLE.6 (subdirectory)
+	-: - JOYSTICK.A2         AplSoft Prg
+	-: - JOYSTICK.A3         BasicFile
+	-: - A3.TEXT             AsciiFile
+	-: EXAMPLE.7 (subdirectory)
+	-: - MOVE.A3             BasicFile
+	-: - MOVE.A3.2           BasicFile
+	-: EXAMPLE.8 (subdirectory)
+	-: - EGYPT.  A3          BasicFile
+	-: EXAMPLE.9 (subdirectory)
+	-: - POINTS              AplSoft Prg
+	-: - POINTS2             AplSoft Prg
+	-: - STARS               AplSoft Prg
+	-: - STARS2              AplSoft Prg
+	-: - A3.STARS            BasicFile
+	-: EXAMPLE.10 (subdirectory)
+	-: - MAND                AplSoft Prg
+	-: - MAND.GR             AplSoft Prg
+	-: - MANDELBROT.GRAF     BasicFile   (Thanks to Richard Altman)
+	-: Example.11 (subdirectory)
+	-: - LINES.TEXT          AsciiFile
+	-: - A2LINES.TEXT        AsciiFile
+	-: - A2.LINES            AplSoft Prg
+	-: - A3.LINES            BasicFile
+	-->
+	<software name="wapbsb15">
+		<description>WAP /// SIG Business BASIC Disk 15 - Apple /// and Apple // Graphics</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-15a.dsk" size="143360" crc="3a712659" sha1="0d72ffa52cab8d25cd737fd85357d8ef658104b5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-15b.dsk" size="143360" crc="d6694666" sha1="b4bf315a486bd33fc4c62dd782e468ee29ecbfc0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Music, Music, Music
+	Disk ID: APPLE-3-WAP-BSB-16              
+	BOOTABLE?: Bootable
+
+	A disk full of music (using Business Basic), all with a decidedly Apple ///
+	bent.
+
+	On Side One:
+
+	PIANO.PLINKER  : A one octive music program for the Apple ///.
+	MEDLY          : A medly of tunes you can play using PIANO.PLINKER
+	MUSIC.ARTICLES : A text file listing articles written about music on the A3.
+	VARIABLE.NOISES: Play it and that's what you'll get.
+	MIDI (subdirectory) (See side two for more on MIDI)
+	- MIDI.DRIVER    : Information about the Passport MIDI Driver.
+	MIDISTUFF.INV  : Information about the Passport MIDI Invokable module.
+
+	On Side Two:
+	PICK.THAT.TUNE : Can you Pick That Tune? Try it!
+	POP; TV; CHILDREN; COUNTRY :Categories for Pick.That.Tune.
+	MUSIC        :Basic Music program
+	LORD.AUDIO1  :Basic Music program
+	LORD.AUDIO2  :Basic Music program
+	NOISES       :More noises!
+	MIDI2 (subdirectory):
+	- CHORD.BASIC      :Basic Chord Progression Generator for MIDI interface.
+	- CHORD.PROG       :Text version of above.
+	- MIDI.DATA.BASIC  :MIDIPRINT - MIDI Data Display Basic program.
+	- PRINT.MIDI.DATA  :Text version of above.
+	-->
+	<software name="wapbsb16">
+		<description>WAP /// SIG Business BASIC Disk 16 - Music, Music, Music</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-16a.dsk" size="143360" crc="b1e2c7ac" sha1="13566c2d72121862ee23c2bae8b87302a0279588" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-16b.dsk" size="143360" crc="65071ecf" sha1="0b24175ff4d677a85c8b16ee1c9e5372459c50d0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Best of Salerno
+	Disk ID: APPLE-3-WAP-BSB-17         
+	BOOTABLE?: Bootable
+
+
+	Many thanks to Jim Salerno for this excellent disk!
+
+	On Side One (All Games):
+
+	GUESS.IT       :Try to guess a number picked at random by your computer.
+	SIMON.SAYS     :The original Simon Says game in Basic.
+
+	DOMINO.PUZZLE  :Try to match up the numbers in four blocks. Hints provided.
+	CONCENTRATION  :A card game played against the computer. Try to find the
+				 mixed pairs of cards.
+
+	On Side Two (Self-Booting)(Includes a Menu program):
+
+	DRIVER.CHECK    :A Basic program that checks the drivers you have on line.
+	PRINTER.MENU    :Prints a list of fonts for a C.Itoh printer.
+	FILE.READER     :Text file reader.
+	TIMESET         :Set your system's time and date IF you have a clock chip.
+	CALENDAR        :What day is it ... was it ... or will it be?
+	RENUMBER        :Renumber your Basic programs.
+	PRT.CODES.PROG  :Reveals the printer codes for C.Itoh/IBM/NEC Printers.
+	-->
+	<software name="wapbsb17">
+		<description>WAP /// SIG Business BASIC Disk 17 - Best of Salerno</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-17a.dsk" size="143360" crc="a627279e" sha1="6069a576156179d66e6ff0d14657fe37dc8e1d10" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-17b.dsk" size="143360" crc="4c345064" sha1="515a383e6a1d6af41551a281c6444af184a83019" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- No info on apple3.org, was mixed with BSB-17 -->
+	<software name="wapbsb18">
+		<description>WAP /// SIG Business BASIC Disk 18</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-18a.dsk" size="143360" crc="02080b0a" sha1="7fe888706894c2b6b8382e13b0e6beec972a4c57" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-18b.dsk" size="143360" crc="02080b0a" sha1="7fe888706894c2b6b8382e13b0e6beec972a4c57" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- No info on apple3.org, was mixed with BSB-17 -->
+	<software name="wapbsb19">
+		<description>WAP /// SIG Business BASIC Disk 19</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-19a.dsk" size="143360" crc="bdc293b4" sha1="3d60abc161037cd4d7993f8aae06aaf73977ab1b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-19b.dsk" size="143360" crc="3f0786d2" sha1="6c6717efefd19c0a8ef67c3b86166a98814a5272" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- No info on apple3.org, was mixed with BSB-17 -->
+	<software name="wapbsb20">
+		<description>WAP /// SIG Business BASIC Disk 20</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-20a.dsk" size="143360" crc="35b801cc" sha1="32e587df05ada511cd612363ab2512cdff59d9f0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-bsb-20b.dsk" size="143360" crc="40ff6bd7" sha1="439a9e4da8d051dda667509c213f1b816e598b9d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Washington Apple Pi - D.A. Datasystems -->
+
+	<!--
+	Disk: APPLE-3-WAP-DAD-01
+
+	DA Datasystems Catalog Disk
+
+			This disk contains the catalog of a former Apple /// vendor - D.A.
+	Datasystems
+
+			We've done this for a couple of reasons.  One is historical.  It's 
+	important to preserve the information about the products listed here.
+	Secondly, this company made an important and lasting contribution to the ///
+	community and deserves that recognition.  We also think it's interesting
+	to read the descriptions... and see what the going prices were just a few
+	years ago.
+			Please note that we have almost every D.A. Datasystem program in our
+	library. Daryl Anderson placed all his programs into the PD when he decided 
+	to make the switch to Amiga in the late 1980s. 
+
+	On Side One:
+
+	   WAP.READ.ME
+	   PRICE.LIST
+
+
+	On Side Two:
+
+	   POWER.KEYS
+	   OMNIS.DATABASE
+	   MILLION.BYTES
+	   CARTRIDGE.DISK
+	   READ.IBM.DISKS
+	   DISK.COPY.UTILS
+	   TOOLS.X3.REVIEW
+	   PWRKEYS.MODULES
+	   TOOLS.TIMES.
+	-->
+	<software name="wapdad01">
+		<description>WAP /// SIG D.A. Datasystems Disk 1 - DA Datasystems Catalog Disk</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-dad-01a.dsk" size="143360" crc="6b2885ad" sha1="b0f24197a47824babfc92f865b7cabc9d5de4bda" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-dad-01b.dsk" size="143360" crc="76f6b7e6" sha1="0ede0f883b1241396e8aadacd95317bc8c08d7af" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Basic XT and Basic Utilities
+	Disk ID: APPLE-3-WAP-DAD-02
+	BOOTABLE?: Bootable            
+
+
+	Daryl Anderson's fine Basic programs designed to extend the
+	language and provide System Utilities in Basic.  Includes User Manuals.
+
+	On Side One:
+	LEGACY           :The legacy of Daryl Anderson to the /// Community.
+	RUN.BASIC.UTILS  :Runs Basic.Utils on Side Two.
+	TAGSORT.PROGRAM  :Program demonstrating the Tagsort utility.
+
+	(All below are the Basic XT invokables:)
+	TTTSORT.INV
+	VARPTR.INV
+	CALL.INV
+	PEEKPOKE.INV
+
+	XT.INFO (subdirectory):
+	- USER.MANUAL  :BASIC XT Manual.
+
+	UTILS.INFO (subdirectory):
+	- USER.MANUAL  :BASIC UTILS Manual.
+
+	- READ.ME.FIRST:Implementation notes about BASIC UTILS (what it can and can
+				 not do.)
+
+	On Side Two:
+	HELLO: Runs the BASIC.UTILS program.
+	-->
+	<software name="wapdad02">
+		<description>WAP /// SIG D.A. Datasystems Disk 2 - Basic XT and Basic Utilities</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-dad-02a.dsk" size="143360" crc="a4c8c693" sha1="8e8fa68a05f61684f9faf02b5e36100cffefd855" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-dad-02b.dsk" size="143360" crc="3a006ddf" sha1="5ba3a6fe8da2fe1d855e3d72a7ec1b333543f81e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: The Retriever
+	Disk ID: APPLE-3-WAP-DAD-03               
+	BOOTABLE?: Bootable            
+
+
+	THE  RETRIEVER  will  recover inadvertently deleted files on your
+	Apple  ///  floppy  diskettes  or  hard drives. In most cases the
+	lost data is fully and reliably restored.
+					 
+	If you delete a file and then alter  or  save other files on that
+	disk, it is  possible that  parts of the  disk  which  previously
+	contained  data  from  your  deleted file  will  be  over-written
+	by the  new  data,  and  thus  permanently  lost.   THE RETRIEVER
+	may  not  be  able  to recover all or part of a file if it is not
+	used  immediately  after  the  file is deleted. Since this cannot
+	always  be  the  case, THE RETRIEVER has facilities to assist you
+	in recovering partial files under many circumstances.
+
+
+	Side One
+	RUN.RETRIEVER :(From Menu.Maker) runs the Retriever program.
+
+	Side Two
+	USER.MANUAL   :Complete documentation about The Retriever.
+	-->
+	<software name="wapdad03">
+		<description>WAP /// SIG D.A. Datasystems Disk 03 - The Retriever</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-dad-03a.dsk" size="143360" crc="d1f9d3e0" sha1="2afc0976d91332425c9df879153350fadb8a5834" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-dad-03b.dsk" size="143360" crc="007b1541" sha1="e3609c583e82bda3202b35f883bce8bffc68387f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Power Print ///
+	Disk ID: APPLE-3-WAP-DAD-04                
+	BOOTABLE?: Nonbootable           
+
+
+	Power  Print /// is a Ram Spooler which will allocate a large  section
+	of your system's memory as a SERIAL or PARALLEL PRINTER BUFFER. 
+	The Power Print Buffer is configured as an  installable
+	Device  Driver  which  may  replace  your  existing .PRINTER driver. This
+	facilitates  printing  of  longer  documents or printouts because the
+	printer output is very quickly 'dumped' into the buffer by your
+	application  then printed over a much longer period of time, by the
+	.PPRINT  driver software.  Your application will resume after
+	the dump stage instead of awaiting completion of printing.
+
+	On Side One:
+
+	PPRINTS02.DRIVE   :Serial Port Printer Driver with 2K Buffer
+	PPRINTS04.DRIVE   :Serial Port Printer Driver with 4K Buffer
+	PPRINTS08.DRIVE   :Serial Port Printer Driver with 8K Buffer
+	PPRINTS16.DRIVE   :Serial Port Printer Driver with 16K Buffer
+	PPRINTS24.DRIVE   :Serial Port Printer Driver with 24K Buffer
+	PPRINTS30.DRIVE   :Serial Port Printer Driver with 30K Buffer
+
+	USER.MANUAL       :The documentation for POWER PRINT ///.
+
+
+	On Side Two:
+
+	PPRINT02.DRIVER   :Parallel Printer Driver with 2K Buffer
+	PPRINT04.DRIVER   :Parallel Printer Driver with 4K Buffer
+	PPRINT08.DRIVER   :Parallel Printer Driver with 8K Buffer
+	PPRINT16.DRIVER   :Parallel Printer Driver with 16K Buffer
+	PPRINT24.DRIVER   :Parallel Printer Driver with 24K Buffer
+	PPRINT30.DRIVER   :Parallel Printer Driver with 30K Buffer
+
+	MORE.INFO         :Additional information and errata about POWER PRINT ///.
+	-->
+	<software name="wapdad04">
+		<description>WAP /// SIG D.A. Datasystems Disk 4 - Power Print ///</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-dad-04a.dsk" size="143360" crc="cfb1e8da" sha1="c9e67c4bc18e2eb416ca0e39d8f5c47882ededcc" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-dad-04b.dsk" size="143360" crc="a88d357d" sha1="abff17ce0092656dd38f3c73aebb65783e800196" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Disk Window ///
+	Disk ID: APPLE-3-WAP-DAD-05               
+	BOOTABLE?: Bootable              DISK SIZE: DS 5.25       OS: SOS
+
+	Disk Window /// is  a  collection  of  Basic  and  Assembler  language
+	programs which function together to allow  you  to directly access and
+	alter any location on any Apple /// disk storage device.
+
+	Using Disk Window /// you can access those parts of the disk which are
+	normally reserved solely for  Operating  System access.  These include
+	the 'bitmap' mapping available sectors on the disk, the file-type byte
+	in  a file directory  entry,  and  the  boot  code  in  block  0,  for
+	instance.
+
+	Although its power lies in its granting you the ability to access  and
+	change  disk  data outside of the normal file-based  structures,  Disk
+	Window  ///  can  be  quite useful in allowing  simple  debugging  and
+	patching  of  file   data  which  is  ultimately,  itself,  stored  as
+	disk-block data.
+
+
+	On Side One:
+	QUICK.NOTE       :Information about the Attach.Driver
+	QUICK.NOTE.2     :Information about WAP /// SIG changes to Disk Window.
+	RUN.DISK.WINDOW  :Run the program (on Side Two).
+	USER.MANUAL      :Disk Window user manual.
+	VERSION.2.NOTES  :Some notes on Version 2 by Robert Howe.
+	MORE.V2.NOTES    :Additional notes on Version 2.
+	READ.ME.FIRST    :What's on this disk.
+
+
+	On Side Two is the Disk Window ///+ program and associated files.
+	-->
+	<software name="wapdad05">
+		<description>WAP /// SIG D.A. Datasystems Disk 5 - Disk Window ///</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-dad-05a.dsk" size="143360" crc="6e213296" sha1="3a4b84e8a6b7ce2f9d79b3ee79c63337363950c1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-dad-05b.dsk" size="143360" crc="59aee36f" sha1="b09bed2f342368f4b2bb8b52dcf4a9ec7231b16d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Data Window and Source Window
+	Disk ID: APPLE-3-WAP-DAD-06              
+	BOOTABLE?: Bootable              DISK SIZE: DS 5.25       OS: SOS
+
+	On Side One:
+
+	Data Window is a collection of utility programs which will
+	produce for you a standard formatted "dump" of Apple /// system RAM or of
+	any FILE stored on any Apple /// device.  It features a FileDump mode which
+	can be extremely useful in debugging stray data errors or damaged file
+	structures which standard applications cannot access.  Any file can be
+	dumped to the screen for viewing or saved for later examination with
+	your word processor.  All the little extra pieces of information that
+	are imbedded in the file, but transparent to your application program
+	can be examined.  See USER.MANUAL for complete instructions.
+
+	On Side Two:
+
+	Source Window is a powerful implemented Reverse Assembler
+	or DisAssembler which will convert existing "machine language" programs
+	such as Device Drivers or even SOS itself into readable symbolic
+	listings.  Output is formatted in a manner which can be easily altered and
+	reassembled if desired.  By Daryl Anderson.
+
+	USER.MANUAL : A complete tutorial on how to use Source Window.
+	-->
+	<software name="wapdad06">
+		<description>WAP /// SIG D.A. Datasystems Disk 6 - Data Window and Source Window</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-dad-06a.dsk" size="143360" crc="f6b53cce" sha1="6a83b0b8353d485427695752d802936562a808e6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-dad-06b.dsk" size="143360" crc="495ebf99" sha1="c2e9ae29c7df7ecd33d6649cbb397ba8795968a0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Power Cat and Basic XRF
+	Disk ID: APPLE-3-WAP-DAD-07               
+	BOOTABLE?: Bootable              
+
+	On Side One:
+
+	Power Cat is a disk librarian which will sort and catalog
+	over 5000 individual files and programs scattered over up to 500 floppy
+	diskettes or on Profile or other hard disk.  The Power Cat report can
+	be used to quickly locate current or correct versions of files scattered
+	around your not always perfectly organized filing system.  
+
+	The  programs  will produce a table of contents of all directories and
+	sub-directories which  have been scanned followed by a listing, sorted
+	by file name, of all files selected.  Each file will carry a reference
+	number  indicating  the  specific  directory  in the table of contents
+	which  it  is associated with.  This format allows  more  concise  and
+	readable reporting.
+
+	Sorting is accomplished with  a high-speed assembler language quiksort
+	routine  which  effectively eliminates  sort  time  as  a  performance
+	factor.
+
+	USER.MANUAL:  Complete instructions.
+
+	On Side Two:
+
+	Basic XRF is a utility program that will produce a Sorted
+	Cross-Reference of all Variables in any Business Basic program -
+	showing all variables used in the program followed by a list of every
+	program line that variable is used in.  It is written in a combination
+	of Basic and Assembler and uses sophisticated hashing and linked-list
+	algorithms for speed and compactness.  Compiled under Basic GTO  to
+	increase speed up to 62%.  
+
+	BASIC XRF runs  automatically at the prompt,  or may be run using the
+	Menu.Maker program by highlighting "RUN.XRF" and pressing return.
+	  
+	The program will prompt you  for  the  full pathname of the program to
+	be cross-referenced, e.g.  .PROFILE/BASIC/TEST/MYPGM (This  file  should not
+	be "Locked").  XREF will  then proceed to process  through  your  program
+	displaying  the  current  line  number  being  processed and a clock-line
+	display to verify that  something is happening.  The program will finally
+	prompt you for an output  destination  for  the cross-reference listing.
+	This may be a file or listing device such as .PRINTER.
+
+
+	USER.MANUAL: Complete documentation.
+	-->
+	<software name="wapdad07">
+		<description>WAP /// SIG D.A. Datasystems Disk 7 - Power Cat and Basic XRF</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-dad-07a.dsk" size="143360" crc="1652cafe" sha1="42a0544f89100141016d8fbd61468791de530b4b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-dad-07b.dsk" size="143360" crc="4b037d67" sha1="92bdd7e959fbc7b5a5c26afafe8bf731e79d6e1f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Basic Extension
+	Disk ID: APPLE-3-WAP-DAD-08                
+	BOOTABLE?: Bootable              
+
+	Basic Extension is a series of Basic Invokables placed into the
+	Public Domain by Foxware, Inc. of Salt Lake City, UT.  Basic Extension
+	can: speed up programs; save disk space; add new functions; decrease
+	development time.  Routines include Matrix R/W, Block and Ftype;
+	Move and Searrarray; Con, Reboot, Reset, Bit and Upshift.
+
+	Side One: Boot disk and Basic Extension Invokables.
+
+	Invokables on Side One :
+
+	BIT.INV  :   Bit.inv  consists  of two routines:  'Band' and 'Bor'.  Band
+			  performs  a  Binary AND of two integer numbers. Bor provides a
+			  Binary OR.
+	BLOCK.INV:   Block.inv consists of two routines:  Wblock (write block)
+			  and Rblock (read block). Their purpose is to allow reading  and
+			  writing of 'blocks' of information from disk drives.
+
+	CON.INV  :   One  of  the  two  routines  included  in Con is 'Buff'.  It
+			  provides the ability to: 1.  Clear the type ahead buffer of all
+			  characters that have not yet been processed. 2. Set the size of
+			  the type ahead buffer to any length between 0 & 127
+	characters.
+	FYTPE.INV:   Ftype  consists  of two routines:  Gftype (get file type) and
+			  Cftype (change file type). They allow your program
+			  to inspect the type of a file and/or change it.
+
+	MATRW.INV  : Matrw.inv  is a group of procedures which provide high
+			  speed disk access, and can reduce  disk  storage  usage  by
+			  more  than  30%.    The name 'Matrw.inv' stands for 'Matrix
+			  Read Write Invokable'.
+	MOVE.INV   : Move  contains  two  routines:  Movenum  (Move numeric) and
+			  Movestr  (Move  string). They  both perform similar functions.
+			  Move works on numeric arrays while Movestr works  on  string
+			  arrays.  Their purpose is to move strings of arrays.
+	REBOOT.INV : Reboot zeros all memory, clears the screen, displays "INSERT
+			  SYSTEM  DISKETTE & REBOOT"in 40 column black and white, and
+			  hangs. Hold down the CONTROL key and press reset to reboot.
+	RESET.INV  : Reset.inv is an invokable modual that provides the ability
+			  to enable and disable the RESET and CONTROL-RESET
+			  functions. If the resets are disabled, pressing RESET or
+			  CONTROL and RESET together will have no effect.
+
+	SEARARRAY.INV :Seararray searches a string array for a specified group of
+				characters. It is similar in function to INSTR, but acts on a
+				entire array instead of only one string. Also it can
+				ignore differences between upper and lower case letters
+				during the search.
+	UPSHIFT.INV   :Upshift is a routine that  changes  all of the lower
+				letters in a string to upper case. Only letters are affected.
+				Numbers  and  symbols  are  not changed.
+
+	On Side Two:
+
+	ARRAY.dskC       :Information about Array routines in Basic Extension.
+	BIT.dskC         :Information about Bit.Inv.
+	BLOCK.DEMO      :Basic program demonstrating Block.Inv.
+	BLOCK.dskC       :Information about Block.Inv.
+	BYTE            :BYTE Font
+	CON.dskC         :Information about Con.Inv.
+	DEMOS.dskC       :Information about the demonstrations on this disk side.
+	DISK.dskC        :Information about the disk routines in Basic Extension.
+	DISKCOPY.DEMO   :Demonstration of the disk copy routine.
+	ERRORS.dskC      :Information about errors you might encounter.
+	EXTENSION.MENU  :Menu program for Basic Extension.
+	FILECOPY.DEMO   :Demonstration of the file copy routine.
+	FONT.EDIT.DEMO  :Demonstration of the font editing routine.
+	FTYPE.dskC       :Information about FTYPE.Inv.
+	GEN.dskC         :General information about the Basic Extension invokables.
+	MATRW.DEMO      :Demonstration of MATRW.inv.
+	MENDF.dskC       :Information about this routine that can shorten files
+				  after the current read/write position.
+	MMULTI.dskC      :Info on using Basic Extenion with multi-dimed Arrays.
+	MOPEN.dskC       :Information on Mat Open (opens Binary files).
+	MOVE.dskC        :Information about Move.Inv.
+	MSETPOS.dskC     :MSETPOS sets cursor at next read/write position.
+	MWNUM.dskC       :Writes a numeric array into the file with ref. # is "%NUM".
+	MWSTR.dskC       :Writes a string array into the file with ref. # "%NUM".
+	PRINTER.dskC     :Information on printing doc files.
+	RCHAR.DEMO      :Read Character Demonstration.
+	REBOOT.dskC      :Information about REBOOT.Inv.
+	RESET.dskC       :Information on RESET.Inv.
+	SEARARRAY.DEMO  :Demonstration of SEARARRAY.Inv.
+	SEARARRAY.dskC   :Information about SEARARRAY.Inv.
+	SORT.DEMO       :Sort Demonstration.
+	STANDARD        :Standard Font File.
+	TITLE.dskC       :Title page used with Basic Extension Menu program.
+	UPSHIFT.dskC     :Information about Upshift.Inv.
+	UTILITY.dskC     :Information about the five utility routines provided in
+				  Basic Extension.
+	-->
+	<software name="wapdad08">
+		<description>WAP /// SIG D.A. Datasystems Disk 8 - Basic Extension</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-dad-08a.dsk" size="143360" crc="175f1182" sha1="ad99e9b725a2ff49f7620fd055408d163e1e2581" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-dad-08b.dsk" size="143360" crc="603fca9b" sha1="7d91f65ba5d027506dae9fca22c777bc085fccfa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Power Keys DM+
+	Disk ID: APPLE-3-WAP-DAD-09
+	BOOTABLE?: Nonbootable
+
+	Power Keys DM+ is a powerful background utility (like Sidekick)
+	originally produced by D.A.Datasystems.  This disk contains not only
+	the Power Keys .Console driver, but EVERY module ever produced along
+	with comprehensive manuals.  NOT FOR THE NOVICE USER.
+
+	The Source Code for Power Keys are on Disks APPLE-3-WAP-SRC-02 and 03)
+
+
+	On Side One:
+
+	NEW.CONSOLE    :Power Keys .Console Driver
+	INTRO.MANUAL   :Introduction to Power Keys
+	INSTALL.MANUAL :Installing Power Keys
+	CONCLUDE.MANUAL: Suggestions for Use, Glossary,
+				  Error Messages and Problem Resolution.
+	READ.ME.FIRST  : What you'll find on this disk.
+	NOTICE         : Copyright Notice.
+	PKY              Power Keys Boot Directory containing :
+	MODULES        Power Keys Modules Directory containing:
+	   POWER.KEYS      - the main Power Keys program module
+	   DEFAULT.KBD    The default macro keymap loaded at boot time
+	   NULL.KBD       Empty keymap for use in erasing all definitions
+	   NOTEHLP.NTE    NotePad file w. summary of the NotePad commands
+
+	OTHER.MODULES (Subdirectory)
+	ASCI.TBL :Displays a table of the presently loaded ASCII character set.
+	SHOWTIME :Displays the system date and time (requires clock chip).
+	QUIKSCRN :Print a copy of any text screen being displayed by your program.
+	QUIK.CAT :Catalog the directory/subdirectory of files on any disk.
+	PRINTMGR :Send complex "setup codes" directly to your printer.
+	DISK.MGR :Format disks or copy any file from within any program.
+	QUIKDIAL :Modem owners can directly dial a telephone number.
+	NOTE.PAD :Maintain an instant "scratchpad" of reminders, etc.
+	FONTLOAD: Switch system display fonts with a few keystrokes.
+	QUIKCRPT: File encryption or encoding module.
+	QUIKCALC: A full-function calculator.
+	FILESCAN: Page through a document, viewing 22 lines at a time.
+	LOCK.OUT: Password protection for your Apple ///.
+	QUIK.MON: Enter the Apple /// System Monitor while in any program.
+	TYPERITE: Connect your keyboard to your printer.
+	MODULOAD: Dynamically load Power Keys modules to suit your needs.
+
+	On Side Two:
+
+	MAIN.MANUAL     :Power Keys DM+ User Manual.
+	HELLO.TEXT      :/// SIG Hello
+	ADVANCED.MANUAL :Advanced features of Power Keys.
+	LIMITS.MANUAL   :Review of what Power Keys CANNOT do.
+	OTHER MANUALS (subdirectory)
+	ASCI.TBL; SHOWTIME; QUIKSCRN; QUIK.CAT; PRINTMGR; DISK.MGR; NOTE.PAD
+	QUIKDIAL; TYPERITE; QUIKCALC; FILESCAN; QUIKCRPT; LOCK.OUT; QUIK.MON
+	FONTLOAD; MODULOAD
+
+
+	BUGS & PROBLEMS ***
+
+	(1)  Although  we  note  it in the documentation we re-iterate it here that 
+	the PWR.KEYS  file  (the  main  module)  must remain the FIRST file in the 
+	/MODULES directory.  Some  folks  regularly  use  the  Public  Domain 
+	"Directory Sorter" program  on  their  entire  (hard)  disk.  Doing this 
+	might, for instance, sort Asci.Tbl  first  and  cause  Power  Keys  to hang 
+	when entered. You may, if you wish,  rename  PWR.KEYS  to  AA.PWRKY  or
+	somesuch  which will sort first. The renaming will not affect program 
+	function.
+
+	(2)  Some  folks appear to be running into problems with QuikScrn in
+	particular when  used  in  conjunction  with  the Titan "3+2e" system and its
+	.RAM driver. This  appears  to be caused by the large size of the .RAM
+	driver. 
+
+	(3) The QuikScreen "At-Curs" function is no longer supported.
+	-->
+	<software name="wapdad09">
+		<description>WAP /// SIG D.A. Datasystems Disk 9 - Power Keys DM+</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-dad-09a.dsk" size="143360" crc="4dfbe2bd" sha1="d4bfeebc533ac88b30b194045e6fb41a9f8f66c8" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-dad-09b.dsk" size="143360" crc="33040a8d" sha1="762a5ded536717df3218032464c27ae8fddb66ad" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME: Ram+3/Two-N-Fro /// 128K
+	Disk ID: APPLE-3-WAP-DAD-10
+	BOOTABLE?: Bootable
+
+
+	This disk contains two programs from Daryl Anderson.  On side
+	one you will find Ram+3, a series of Ram disk drivers designed specifically
+	for the Titan ///+// and ///+//e cards.  They make the RAM disk on either
+	much more useful.  On side two is 2NFro, a beta-version program designed
+	to return the user from Titan 3+2E Emulation to Catalyst or Selector.
+
+	On Side One:
+
+	RAM128.DRIVER   :Compact 128K RAM Driver for the ///+//e Cards.
+	RAM128F.DRIVER  :Enhanced version of RAM128 with autoformat at bootup.
+	RAM140.DRIVER   :A full 140K RAM Disk equal to .D1, .D2 etc.
+	RAMPLUS3.MANUAL :How to use the RAM+3 Drivers.
+	OLD.3PLUS2.VRSN (Subdirectory)
+	RAM140.DRIVER :A full 140K RAM Disk equal to .D1, .D2, etc.
+	RAM128.DRIVER :Compact 128K RAM Disk Driver for the ///+// card.
+	RAM128F.DRIVER:Enhanced verions of RAM128 with autoformat at bootup.
+
+	On Side Two
+
+	(2NFro)(Listing does not include invokables, etc.)
+
+	ASCII.2NFRO     :ASCII version of INSTALL.2NFRO (includes instructions).
+	DA.BIB.ASCII    :ASCII text version of DATASYSTEMS.BIB.
+	DATASYSTEMS.BIB :3EZ Pieces Bibliography of articles about DA Datasystems.
+	INSTALL.2NFRO   :Basic program to install 2NFRO.
+	-->
+	<software name="wapdad10">
+		<description>WAP /// SIG D.A. Datasystems Disk 10 - Ram+3/Two-N-Fro /// 128K</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-dad-10a.dsk" size="143360" crc="e5d8b985" sha1="6f0b938965c9c4a6929f8b4526cf051ef64a91e6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-dad-10b.dsk" size="143360" crc="63f70bcc" sha1="ad649efa6b13c3bfc2425b418459930e21d5c2e8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	PDS NAME : PowerScreen by Tim Harrington
+	DISK ID  # APPLE-3-WAP-DAD-11
+	BOOTABLE ? Yes - Side One Only (to read manual)
+
+
+	Module Name Code     : PSCREEN
+	Memory Usage         : 3.5K
+
+	REQUIRES POWERKEYS DM+ (3SIG PD DISK APPLE-3-WAP-DAD-09)
+
+	Brief description :
+	 
+	PowerScreen is a screen dump utility for use with Darryl Anderson's 
+	Powerkeys utility for the Apple ///.  It allows you to dump either the
+	current Power Keys screen (e.g. Keymap, Notepad, Ascii Table) or the user
+	program screen (e.g. Help screens in Apple Writer, Driver setup in SCP,
+	menu in /// EZ Pieces).
+
+	Functions:
+
+	(1) You can print the entire screen or any rectangle that you define with the
+	arrow keys.
+
+	(2) You can abort the dump in case you specified the wrong file name or
+	device name.
+
+	(3) You can suppress carriage returns and/or linefeeds.  If you suppress
+	carriage returns, PowerScreen will add a space where the carriage return
+	would have been.  This is so you can dump a paragraph from one program
+	and have your favorite word processor (re)define the margins.
+
+	** NOTE - This was originally a Royaltyware offering by Tim Harrington
+		  through TAU - the Third Apple Users Group.
+
+
+	ALSO ON THIS DISK: Another Powerkeys module called "QSCR.235" - undocumented.
+	-->
+	<software name="wapdad11">
+		<description>WAP /// SIG D.A. Datasystems Disk 11 - PowerScreen by Tim Harrington</description>
+		<year>19??</year>
+		<publisher>Washington Apple Pi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-dad-11a.dsk" size="143360" crc="bcae451a" sha1="649da34936953c4864c674ed4327beddde72f808" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple-3-wap-dad-11b.dsk" size="143360" crc="bcae451a" sha1="649da34936953c4864c674ed4327beddde72f808" offset="0" />
 			</dataarea>
 		</part>
 	</software>
