@@ -8,6 +8,30 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 
 <!-- Misc. software -->
 
+	<software name="access">
+		<description>Access 3270</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="143360">
+				<rom name="access.3270.dsk" size="143360" crc="3b8d0638" sha1="e53f72709c7847120192a25db43f0cc149568539" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="a2emul">
+		<description>Apple ][ Emulation Disk</description>
+		<year>198?</year>
+		<publisher>Apple Computer</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="143360">
+				<rom name="apple3apple][emulation.dsk" size="143360" crc="fb4c4db1" sha1="5a8d5eaec72752a0dc5bafafb23cd6ef2e3d264e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="chomp">
 		<description>Apple Chomp</description>
 		<year>1984</year>
@@ -16,6 +40,19 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="143360">
 				<rom name="apple3-chomp.dsk" size="143360" crc="01dae729" sha1="6ff10343a7367e6edf974e604821e4ed06c748cc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Requires the Applicard -->
+	<software name="acardcpm">
+		<description>Applicard CP/M (v2.2)</description>
+		<year>198?</year>
+		<publisher>Personal Computer Products (PCPI)</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="143360">
+				<rom name="cpmboot.po" size="143360" crc="1c596cf9" sha1="69f0c5ae1f9db4c1490b7e3b443125a05e354d84" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -40,6 +77,18 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="143360">
 				<rom name="backup3.dsk" size="143360" crc="af8f7177" sha1="d623b41d37b5b2008308ffe6be7a7e989d760df9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="backupb" cloneof="backup">
+		<description>Backup /// (v1.0, Modified for CFFA2000)</description>
+		<year>1982</year>
+		<publisher>Apple Computer</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="143360">
+				<rom name="backup3.cffa2.dsk" size="143360" crc="604f7ffa" sha1="dae725fa0d94d12b56ae6ed51afc751d868789ac" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -83,6 +132,42 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		<feature name="part_id" value="Disk 2 Side B"/>
 			<dataarea name="flop" size="143360">
 				<rom name="apple iii bos v1.0 (1993-12-03)(on three)(disk 2 of 2)(side 2).dsk" size="143360" crc="1c669cab" sha1="121b7422fadce90cfe233be9b307c9e04fe5d4d4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="boshd" cloneof="bos">
+		<description>Apple /// BOS Hard Disk Boot</description>
+		<year>1993</year>
+		<publisher>On Three</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="143360">
+				<rom name="bosboot.dsk" size="143360" crc="6ae7cddf" sha1="333fb628e1bed7721575bf81f8783586f5a0788e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="boshdvsd" cloneof="bos">
+		<description>Apple /// BOS (v1.0, for Hard Disk, includes VSDRIVE)</description>
+		<year>1993</year>
+		<publisher>On Three</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="143360">
+				<rom name="bosbootvsd.dsk" size="143360" crc="37993da4" sha1="eb63f87375a81a7b1c003d334bb6ac6eed626cea" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="boshdvsdr" cloneof="bos">
+		<description>Apple /// BOS (v1.0, for Hard Disk, includes VSDRIVE, Root)</description>
+		<year>1993</year>
+		<publisher>On Three</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="143360">
+				<rom name="bosbootvsdroot.dsk" size="143360" crc="c539097d" sha1="ab9fc173d427bb64d3e88d452e786c0fee52314c" offset="0" />
 			</dataarea>
 		</part>
 	</software>
