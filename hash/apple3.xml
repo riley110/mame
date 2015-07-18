@@ -8,6 +8,18 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 
 <!-- Misc. software -->
 
+	<software name="chomp">
+		<description>Apple Chomp</description>
+		<year>1984</year>
+		<publisher>Dan A. Kunesh</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="143360">
+				<rom name="apple3-chomp.dsk" size="143360" crc="01dae729" sha1="6ff10343a7367e6edf974e604821e4ed06c748cc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="backup">
 		<description>Backup /// (v1.0)</description>
 		<year>1982</year>
@@ -52,25 +64,25 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1 Side A"/>
 			<dataarea name="flop" size="143360">
-				<rom name="apple iii bos v1.0 (1993-12-03)(on three)(disk 1 of 2)(side 1).dsk" size="143360" crc="2a80e66f" sha1="7246f3446c19de83cfc751cb17ead24458b8bdfe" offset="0x0000" />
+				<rom name="apple iii bos v1.0 (1993-12-03)(on three)(disk 1 of 2)(side 1).dsk" size="143360" crc="2a80e66f" sha1="7246f3446c19de83cfc751cb17ead24458b8bdfe" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1 Side B"/>
 			<dataarea name="flop" size="143360">
-				<rom name="apple iii bos v1.0 (1993-12-03)(on three)(disk 1 of 2)(side 2).dsk" size="143360" crc="1c669cab" sha1="121b7422fadce90cfe233be9b307c9e04fe5d4d4" offset="0x0000" />
+				<rom name="apple iii bos v1.0 (1993-12-03)(on three)(disk 1 of 2)(side 2).dsk" size="143360" crc="1c669cab" sha1="121b7422fadce90cfe233be9b307c9e04fe5d4d4" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 2 Side A"/>
 			<dataarea name="flop" size="143360">
-				<rom name="apple iii bos v1.0 (1993-12-03)(on three)(disk 2 of 2)(side 1).dsk" size="143360" crc="2a80e66f" sha1="7246f3446c19de83cfc751cb17ead24458b8bdfe" offset="0x0000" />
+				<rom name="apple iii bos v1.0 (1993-12-03)(on three)(disk 2 of 2)(side 1).dsk" size="143360" crc="2a80e66f" sha1="7246f3446c19de83cfc751cb17ead24458b8bdfe" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop4" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 2 Side B"/>
 			<dataarea name="flop" size="143360">
-				<rom name="apple iii bos v1.0 (1993-12-03)(on three)(disk 2 of 2)(side 2).dsk" size="143360" crc="1c669cab" sha1="121b7422fadce90cfe233be9b307c9e04fe5d4d4" offset="0x0000" />
+				<rom name="apple iii bos v1.0 (1993-12-03)(on three)(disk 2 of 2)(side 2).dsk" size="143360" crc="1c669cab" sha1="121b7422fadce90cfe233be9b307c9e04fe5d4d4" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -101,7 +113,26 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="143360">
-				<rom name="apple business basic v1.1 (1981)(apple computer).dsk" size="143360" crc="e826032e" sha1="3a88a3bf8bb1e6948010203ea7e64ce557031184" offset="0x0000" />
+				<rom name="apple business basic v1.1 (1981)(apple computer).dsk" size="143360" crc="e826032e" sha1="3a88a3bf8bb1e6948010203ea7e64ce557031184" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cardmach">
+		<description>The Apple /// Card Machine</description>
+		<year>1985</year>
+		<publisher>On Three</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="the apple iii card machine (on three)(1985)(front).dsk" size="143360" crc="615d8a77" sha1="a8d32d2d95792d4bf5fcd4ba6e71760407d9ef62" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="the apple iii card machine (on three)(1985)(back).dsk" size="143360" crc="4e7c92c8" sha1="fb9a0129f1f0c80525e5c819fccc7a254d1fdbb5" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -169,6 +200,18 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		</part>
 	</software>
 
+	<software name="dealrtst">
+		<description>Apple /// Plus Dealer Test</description>
+		<year>198?</year>
+		<publisher>Apple Computer?</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="143360">
+				<rom name="apple3plusdiagnostics.dsk" size="143360" crc="23ecd846" sha1="8b9e8ac471256dc4a5966c9f69ac75bee4e59e65" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="drawon">
 		<description>Draw On /// (v2.1)</description>
 		<year>1984</year>
@@ -228,13 +271,13 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="143360">
-				<rom name="easy pieces v1.0 (1984)(haba systems)(disk 1 of 2).dsk" size="143360" crc="ff98cb24" sha1="d7f099abf9718161cee046753ae60021f80d432f" offset="0x0000" />
+				<rom name="easy pieces v1.0 (1984)(haba systems)(disk 1 of 2).dsk" size="143360" crc="ff98cb24" sha1="d7f099abf9718161cee046753ae60021f80d432f" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="143360">
-				<rom name="easy pieces v1.0 (1984)(haba systems)(disk 2 of 2).dsk" size="143360" crc="1ff5c4be" sha1="0f3188ec2a447cf4154a76ab7a749719987b23f9" offset="0x0000" />
+				<rom name="easy pieces v1.0 (1984)(haba systems)(disk 2 of 2).dsk" size="143360" crc="1ff5c4be" sha1="0f3188ec2a447cf4154a76ab7a749719987b23f9" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -311,19 +354,19 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="143360">
-				<rom name="apple iii pascal v1.1 (1983-04)(apple computer)(disk 1 of 3).dsk" size="143360" crc="82a2a887" sha1="1d7f3bba9646c010462b18246649a029aad9b425" offset="0x0000" />
+				<rom name="apple iii pascal v1.1 (1983-04)(apple computer)(disk 1 of 3).dsk" size="143360" crc="82a2a887" sha1="1d7f3bba9646c010462b18246649a029aad9b425" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="143360">
-				<rom name="apple iii pascal v1.1 (1983-04)(apple computer)(disk 2 of 3).dsk" size="143360" crc="cda241a2" sha1="df08271d6a5086c92172db9cd1bcffd4c6690edd" offset="0x0000" />
+				<rom name="apple iii pascal v1.1 (1983-04)(apple computer)(disk 2 of 3).dsk" size="143360" crc="cda241a2" sha1="df08271d6a5086c92172db9cd1bcffd4c6690edd" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_5_25">
 		<feature name="part_id" value="Disk 3"/>
 			<dataarea name="flop" size="143360">
-				<rom name="apple iii pascal v1.1 (1983-04)(apple computer)(disk 3 of 3).dsk" size="143360" crc="2f9e2245" sha1="8714321f70cb2c34b32f475b80d175f9c6bdd5da" offset="0x0000" />
+				<rom name="apple iii pascal v1.1 (1983-04)(apple computer)(disk 3 of 3).dsk" size="143360" crc="2f9e2245" sha1="8714321f70cb2c34b32f475b80d175f9c6bdd5da" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -356,7 +399,7 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 	<software name="peekpoke">
 		<description>PeekPoke</description>
 		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<publisher>Dr. Jeppson</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="143360">
@@ -415,26 +458,14 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		</part>
 	</software>
 
-	<software name="revision">
-		<description>Apple /// Software Revision Utility (vA01, 1-FEB-83)</description>
-		<year>1983</year>
-		<publisher>Apple Computer</publisher>
+	<software name="sandman">
+		<description>Sandman (v1.3)</description>
+		<year>1986</year>
+		<publisher>On Three</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="143360">
-				<rom name="revision.a01.dsk" size="143360" crc="8c5cf6c2" sha1="e7ed2e7db7830ec7c57d502b17d191208024f0e5" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="revisiona" cloneof="revision">
-		<description>Apple /// Software Revision Utility (vA01, 1-FEB-83, Alt)</description>
-		<year>1983</year>
-		<publisher>Apple Computer</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="143360">
-				<rom name="apple iii software revision utility va01 (1983-02-01)(apple computer).dsk" size="143360" crc="aaafe293" sha1="31e617dcc0a6d6797dd955cbf65fce7fa2ef28db" offset="0x0000" />
+				<rom name="a3-sandman.dsk" size="143360" crc="1b3a81ee" sha1="9b77c28861643d8368710c316eda3a701bc5e5f1" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -464,6 +495,30 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		</part>
 	</software>
 
+	<software name="revision">
+		<description>Apple /// Software Revision Utility (vA01, 1-FEB-83)</description>
+		<year>1983</year>
+		<publisher>Apple Computer</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="143360">
+				<rom name="revision.a01.dsk" size="143360" crc="8c5cf6c2" sha1="e7ed2e7db7830ec7c57d502b17d191208024f0e5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="revisiona" cloneof="revision">
+		<description>Apple /// Software Revision Utility (vA01, 1-FEB-83, Alt)</description>
+		<year>1983</year>
+		<publisher>Apple Computer</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="143360">
+				<rom name="apple iii software revision utility va01 (1983-02-01)(apple computer).dsk" size="143360" crc="aaafe293" sha1="31e617dcc0a6d6797dd955cbf65fce7fa2ef28db" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- Softcard /// is unemulated -->
 	<software name="scardcpm" supported="no">
 		<description>Apple Softcard III CP/M 56K (v2.20)</description>
@@ -472,7 +527,110 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="143360">
-				<rom name="apple softcard iii cp-m 56k v2.20 (1982)(microsoft).dsk" size="143360" crc="18ec5490" sha1="993fe78799d4d24ad4ecfdb455c3bbf7ac527804" offset="0x0000" />
+				<rom name="apple softcard iii cp-m 56k v2.20 (1982)(microsoft).dsk" size="143360" crc="18ec5490" sha1="993fe78799d4d24ad4ecfdb455c3bbf7ac527804" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thundclk">
+		<description>ThunderClock Driver</description>
+		<year>19??</year>
+		<publisher>Mike Maginnis</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="143360">
+				<rom name="thunderclock.po" size="143360" crc="80cb159b" sha1="faeadaed60fb262044687419027c8b4d1ea68d3a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tictacto">
+		<description>Tic Tac Toe</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="143360">
+				<rom name="tic-tac-toe.dsk" size="143360" crc="593e1997" sha1="78bf743e45194883d65e45cb04e55f7e17c4ceb2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unidisk">
+		<description>Unidisk 3.5 Driver</description>
+		<year>19??</year>
+		<publisher>On Three</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="143360">
+				<rom name="unidisk_iii_5_driver.dsk" size="143360" crc="0391d942" sha1="08031109da363950d1b710300bef6b8c48add895" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="siderdrv">
+		<description>Universal Sider Driver</description>
+		<year>19??</year>
+		<publisher>On Three</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="143360">
+				<rom name="on-three-sider-driver.dsk" size="143360" crc="d1dab573" sha1="a3442f8b153bc60d667b565e92336d0140c633ad" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="uscidriv">
+		<description>uSci A73/A143 Drivers</description>
+		<year>198?</year>
+		<publisher>MicroSci - Mike Maginnis</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="143360">
+				<rom name="s1.po" size="143360" crc="01d5e9f9" sha1="cc389f3b6a5ee6a5764f6fd9f97fe05bbf7c95a1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="usciutil">
+		<description>uSci A73/A143 System Utilities</description>
+		<year>198?</year>
+		<publisher>Mike Maginnis</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="143360">
+				<rom name="s1.po" size="143360" crc="132b6e35" sha1="d0cc9cdfabab917ada0a8adeeca4ca3840fbc207" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="usciutex">
+		<description>uSci A73/A143 System Utilities Example</description>
+		<year>19??</year>
+		<publisher>Mike Maginnis</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="flop" size="143360">
+				<rom name="s1.po" size="143360" crc="5129084f" sha1="36257bd2fc9299662615c1ebeaccda9a854d1e58" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="flop" size="143360">
+				<rom name="s2.po" size="143360" crc="367dced2" sha1="c09028aa1488851dc3b00a28de9f71e6ca4c2938" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="usciwork">
+		<description>uSci A73/A143 Work Disk</description>
+		<year>19??</year>
+		<publisher>Mike Maginnis</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="143360">
+				<rom name="s1.po" size="143360" crc="4473708f" sha1="d9a2fa484f3ba04b34b9dca8b6a245b3856b9d40" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -483,8 +641,66 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		<publisher>Apple Computer</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Utilities"/>
 			<dataarea name="flop" size="143360">
 				<rom name="apple iii sos1.3sysutils.dsk" size="143360" crc="e5f25bd1" sha1="450d2cb602692fae61202914f512769f91454539" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Data"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple3systemutildata.dsk" size="143360" crc="9f3e8ad2" sha1="a5d5b29f5e1c3019bd79732edf708df381fee653" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="utils11" cloneof="utils">
+		<description>Apple /// Utilities (v1.1)</description>
+		<year>1981</year>
+		<publisher>Apple Computer</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Utilities"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple3systemutils.dsk" size="143360" crc="754dab94" sha1="b517db1c50491b893d274b718c63f66dba98fcd5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Data"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple3systemutildata.dsk" size="143360" crc="9f3e8ad2" sha1="a5d5b29f5e1c3019bd79732edf708df381fee653" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="utils11a" cloneof="utils">
+		<description>Apple /// Utilities (v1.1, Alt)</description>
+		<year>1981</year>
+		<publisher>Apple Computer</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Utilities"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple3sos1.1sysutils.dsk" size="143360" crc="754dab94" sha1="b517db1c50491b893d274b718c63f66dba98fcd5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Data"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple3systemutildata.dsk" size="143360" crc="9f3e8ad2" sha1="a5d5b29f5e1c3019bd79732edf708df381fee653" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- SYSTEM ERROR $06 -->
+	<software name="sysdemo" supported="no">
+		<description>Apple /// System Demo</description>
+		<year>198?</year>
+		<publisher></publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="143360">
+				<rom name="apple3systemdemo.dsk" size="143360" crc="5c220cfa" sha1="4198e768ea0be357675107a8a9e0fb9657e25568" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -7333,7 +7549,7 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Side B"/>
 		    <dataarea name="flop" size="143360">
-		        <rom name="apple-3-wap-gam-06b.dsk" size="143360" crc="02bf42b0" sha1="9e44143331b2593d00a94b955eb8b400dde42a74" offset="0x0000" />
+		        <rom name="apple-3-wap-gam-06b.dsk" size="143360" crc="02bf42b0" sha1="9e44143331b2593d00a94b955eb8b400dde42a74" offset="0" />
 		    </dataarea>
 		</part>
 		-->
@@ -13996,7 +14212,7 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Side B"/>
 			<dataarea name="flop" size="143360">
-				<rom name="apple-3-wap-pcl-06b.dsk" size="143360" crc="d338f850" sha1="8c3764521f271833b1b6d2f29b8340527ac4b89c" offset="0x0000" />
+				<rom name="apple-3-wap-pcl-06b.dsk" size="143360" crc="d338f850" sha1="8c3764521f271833b1b6d2f29b8340527ac4b89c" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -14942,7 +15158,7 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Side B"/>
 			<dataarea name="flop" size="143360">
-				<rom name="apple-3-wap-rep-01b.dsk" size="143360" crc="cbf10a5a" sha1="8be26f2ec7f0b8425dc4f0c44a48dcda105f8c9a" offset="0x0000" />
+				<rom name="apple-3-wap-rep-01b.dsk" size="143360" crc="cbf10a5a" sha1="8be26f2ec7f0b8425dc4f0c44a48dcda105f8c9a" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -14971,7 +15187,7 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Side A"/>
 			<dataarea name="flop" size="143360">
-				<rom name="apple-3-wap-rep-02a.dsk" size="143360" crc="7720ebc9" sha1="5b952570914d64094acf13fdddb7aaa4f9ac028b" offset="0x0000" />
+				<rom name="apple-3-wap-rep-02a.dsk" size="143360" crc="7720ebc9" sha1="5b952570914d64094acf13fdddb7aaa4f9ac028b" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
@@ -15019,13 +15235,13 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Side A"/>
 			<dataarea name="flop" size="143360">
-				<rom name="apple-3-wap-rep-03a.dsk" size="143360" crc="7977e125" sha1="e0015ca4a4ae9ba4fe2a7d9bbc5957577bcfbc9f" offset="0x0000" />
+				<rom name="apple-3-wap-rep-03a.dsk" size="143360" crc="7977e125" sha1="e0015ca4a4ae9ba4fe2a7d9bbc5957577bcfbc9f" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Side B"/>
 			<dataarea name="flop" size="143360">
-				<rom name="apple-3-wap-rep-03b.dsk" size="143360" crc="40a69a50" sha1="e8174fd28598ba1776d03a6e358ca50b58f61865" offset="0x0000" />
+				<rom name="apple-3-wap-rep-03b.dsk" size="143360" crc="40a69a50" sha1="e8174fd28598ba1776d03a6e358ca50b58f61865" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -16945,7 +17161,7 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		<part name="flop2" interface="floppy_5_25">
 		<feature name="part_id" value="Side B"/>
 			<dataarea name="flop" size="143360">
-				<rom name="apple-3-wap-tel-02b.dsk" size="143360" crc="621ad448" sha1="6c5cf77a7518254a39ada5bb0776c7a9b9e1ba27" offset="0x0000" />
+				<rom name="apple-3-wap-tel-02b.dsk" size="143360" crc="621ad448" sha1="6c5cf77a7518254a39ada5bb0776c7a9b9e1ba27" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -18147,6 +18363,18 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 
 <!-- some things that I couldn't get anything useful out of -->
 
+	<software name="a3sosio">
+		<description>A3SOSIO</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="143360">
+				<rom name="a3sosio.dsk" size="143360" crc="fe4d1823" sha1="752a3521f829a63213b4a96764a5e2c5ce14a273" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="cffadriv">
 		<description>CFFA3000 driver for Apple /// (v1.0.0?)</description>
 		<year>20??</year>
@@ -18179,6 +18407,50 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="143360">
 				<rom name="apple iii - pascal.boot.dsk" size="143360" crc="795c09cf" sha1="f2f28cebc1de2527b88b4633c32b777a7566f940" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pascupd">
+		<description>Apple /// Pascal Update (v1.2)</description>
+		<year>198?</year>
+		<publisher>Apple Computer?</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple3pascal1.2updatedisk1.dsk" size="143360" crc="f1cc8dc2" sha1="3abdc0de4329bf8c9e1772619931166f96952ac4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple3pascal1.2updatedisk2.dsk" size="143360" crc="076dabf8" sha1="c809392f957c508ad4b7a4648dda89e4c246aaae" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pascaltk">
+		<description>Apple /// Pascal Toolkit (v1.0B)</description>
+		<year>198?</year>
+		<publisher>Apple Computer?</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple3pascaltoolkit1.0b_disk1.dsk" size="143360" crc="b236407b" sha1="961d51673c88d468e8085137e269b987bba32e6b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple3pascaltoolkit1.0b_disk2.dsk" size="143360" crc="c59837f0" sha1="19b2e3ce2782d4f05025ea27d047390eadce0797" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 3"/>
+			<dataarea name="flop" size="143360">
+				<rom name="apple3pascaltoolkit1.0b_disk3.dsk" size="143360" crc="efb45aa0" sha1="64c633c9e9bdfba2f084931aa6903baaabcba77d" offset="0" />
 			</dataarea>
 		</part>
 	</software>
