@@ -21,7 +21,7 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 	</software>
 
 	<software name="a2emul">
-		<description>Apple ][ Emulation Disk</description>
+		<description>Apple ][ Emulation Mode</description>
 		<year>198?</year>
 		<publisher>Apple Computer</publisher>
 
@@ -44,11 +44,11 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		</part>
 	</software>
 
-	<!-- Requires the Applicard -->
 	<software name="acardcpm">
 		<description>Applicard CP/M (v2.2)</description>
 		<year>198?</year>
 		<publisher>Personal Computer Products (PCPI)</publisher>
+		<info name="usage" value="Requires the Applicard add-on" />
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="143360">
@@ -137,7 +137,7 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 	</software>
 
 	<software name="boshd" cloneof="bos">
-		<description>Apple /// BOS Hard Disk Boot</description>
+		<description>Apple /// BOS (v1.0, for Hard Disk)</description>
 		<year>1993</year>
 		<publisher>On Three</publisher>
 
@@ -240,6 +240,7 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		<description>CF/IDE Drive Management Utility (v1.01A)</description>
 		<year>20??</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires CFFA2000 add-on" />
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="143360">
@@ -298,7 +299,7 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 	</software>
 
 	<software name="drawon">
-		<description>Draw On /// (v2.1)</description>
+		<description>Draw ON /// (v2.1)</description>
 		<year>1984</year>
 		<publisher>On Three</publisher>
 
@@ -318,7 +319,7 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 
 	<!-- INVALID DRIVER FILE -->
 	<software name="drawona" cloneof="drawon" supported="no">
-		<description>DRAW ON /// (Alt)</description>
+		<description>Draw ON /// (Alt)</description>
 		<year>198?</year>
 		<publisher>On Three</publisher>
 
@@ -432,7 +433,7 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 	</software>
 
 	<software name="pascal">
-		<description>Apple III Pascal (v1.1, April 1983)</description>
+		<description>Apple /// Pascal (v1.1, April 1983)</description>
 		<year>1983</year>
 		<publisher>Apple Computer</publisher>
 
@@ -609,6 +610,7 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		<description>Apple Softcard III CP/M 56K (v2.20)</description>
 		<year>1982</year>
 		<publisher>Microsoft</publisher>
+		<info name="usage" value="Requires Softcard /// add-on" />
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="143360">
@@ -621,6 +623,7 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		<description>ThunderClock Driver</description>
 		<year>19??</year>
 		<publisher>Mike Maginnis</publisher>
+		<info name="usage" value="Requires ThunderClock add-on" />
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="143360">
