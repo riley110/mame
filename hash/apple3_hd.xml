@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<softwarelist name="apple3_hd" description="Apple III hard disks">
+	
+	<!-- 
+	This file is a part of the Apple /// Ready-to-Run package by Datajerk
+	available at https://github.com/datajerk/apple3rtr.
+	The necessary floppy disks are in the apple3.xml list.
+	-->
+	<software name="a3rtr">
+		<description>Apple /// Ready-to-Run (v2.0)</description>
+		<year>2014</year>
+		<publisher>Datajerk</publisher>
+
+		<part name="hdd" interface="ide_hd">
+			<diskarea name="harddriv">
+				<disk name="apple3rtr" sha1="c708956bbd572f4e3d90269c2d3ed3d708afbab7" writeable="yes"/>
+			</diskarea>
+		</part>
+	</software>
+
+</softwarelist>
