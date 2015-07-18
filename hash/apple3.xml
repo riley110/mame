@@ -619,6 +619,19 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		</part>
 	</software>
 
+	<!-- SYSTEM ERROR $06 -->
+	<software name="sysdemo" supported="no">
+		<description>Apple /// System Demo</description>
+		<year>198?</year>
+		<publisher>Apple Computer</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="143360">
+				<rom name="apple3systemdemo.dsk" size="143360" crc="5c220cfa" sha1="4198e768ea0be357675107a8a9e0fb9657e25568" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="thundclk">
 		<description>ThunderClock Driver</description>
 		<year>19??</year>
@@ -776,19 +789,6 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		<feature name="part_id" value="Data"/>
 			<dataarea name="flop" size="143360">
 				<rom name="apple3systemutildata.dsk" size="143360" crc="9f3e8ad2" sha1="a5d5b29f5e1c3019bd79732edf708df381fee653" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<!-- SYSTEM ERROR $06 -->
-	<software name="sysdemo" supported="no">
-		<description>Apple /// System Demo</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="143360">
-				<rom name="apple3systemdemo.dsk" size="143360" crc="5c220cfa" sha1="4198e768ea0be357675107a8a9e0fb9657e25568" offset="0" />
 			</dataarea>
 		</part>
 	</software>
