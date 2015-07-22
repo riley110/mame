@@ -669,7 +669,7 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		</part>
 	</software>
 
-	<software name="siderdrv">
+	<software name="siderdrv" cloneof="utils">
 		<description>Universal Sider Driver</description>
 		<year>19??</year>
 		<publisher>On Three</publisher>
@@ -693,7 +693,7 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		</part>
 	</software>
 
-	<software name="usciutil">
+	<software name="usciutil" cloneof="utils">
 		<description>uSci A73/A143 System Utilities</description>
 		<year>198?</year>
 		<publisher>Mike Maginnis</publisher>
@@ -18463,7 +18463,7 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		</part>
 	</software>
 
-	<software name="cffadriv">
+	<software name="cffadriv" cloneof="utils">
 		<description>CFFA3000 driver for Apple /// (v1.0.0?)</description>
 		<year>20??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -18639,7 +18639,7 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		</part>
 	</software>
 
-	<software name="uncopy">
+	<software name="uncopy" cloneof="utils">
 		<description>Unknown driver "UNCOPY"</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -18652,7 +18652,7 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 	</software>
 
 	<!-- Garbage screen -->
-	<software name="uncopya" cloneof="uncopy" supported="no">
+	<software name="uncopya" cloneof="utils" supported="no">
 		<description>Unknown driver "UNCOPY" (Bad?)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
