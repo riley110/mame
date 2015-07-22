@@ -355,13 +355,13 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		<publisher>Haba Systems</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		<feature name="part_id" value="Disk 1"/>
+		<feature name="part_id" value="Side A"/>
 			<dataarea name="flop" size="143360">
 				<rom name="easy pieces v1.0 (1984)(haba systems)(disk 1 of 2).dsk" size="143360" crc="ff98cb24" sha1="d7f099abf9718161cee046753ae60021f80d432f" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-		<feature name="part_id" value="Disk 2"/>
+		<feature name="part_id" value="Side B"/>
 			<dataarea name="flop" size="143360">
 				<rom name="easy pieces v1.0 (1984)(haba systems)(disk 2 of 2).dsk" size="143360" crc="1ff5c4be" sha1="0f3188ec2a447cf4154a76ab7a749719987b23f9" offset="0" />
 			</dataarea>
@@ -399,13 +399,13 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		<publisher>On Three</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		<feature name="part_id" value="Disk 1"/>
+		<feature name="part_id" value="Side A"/>
 			<dataarea name="flop" size="143360">
 				<rom name="apple iii lazarus.v2.sd.1.dsk" size="143360" crc="c4870912" sha1="8835cd011ddaac1c17080439e47d003f1382d47b" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-		<feature name="part_id" value="Disk 2"/>
+		<feature name="part_id" value="Side B"/>
 			<dataarea name="flop" size="143360">
 				<rom name="apple iii lazarus.v2.sd.2.dsk" size="143360" crc="ac3dc16d" sha1="3a8f179843ad99150a76851c5c5a513503ca5b43" offset="0" />
 			</dataarea>
@@ -419,13 +419,13 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		<publisher>On Three</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
-		<feature name="part_id" value="Disk 1"/>
+		<feature name="part_id" value="Side A"/>
 			<dataarea name="flop" size="143360">
 				<rom name="lazarus.v2.sd.1.dsk" size="143360" crc="64f045c1" sha1="9025e11b97dc16bd0d20e4a5c7203e416c399f95" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-		<feature name="part_id" value="Disk 2"/>
+		<feature name="part_id" value="Side B"/>
 			<dataarea name="flop" size="143360">
 				<rom name="lazarus.v2.sd.2.dsk" size="143360" crc="788740f0" sha1="739b7cb0ed0d608e732d37282c703a878dedc071" offset="0" />
 			</dataarea>
@@ -619,7 +619,7 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		</part>
 	</software>
 
-	<!-- SYSTEM ERROR $06 -->
+	<!-- SYSTEM FAILURE = $06 -->
 	<software name="sysdemo" supported="no">
 		<description>Apple /// System Demo</description>
 		<year>198?</year>
@@ -833,7 +833,7 @@ with some formatting changes (more to come), and some fixes to fit within XML li
 		</part>
 	</software>
 
-	<!-- ERROR $06 -->
+	<!-- SYSTEM FAILURE = $06 -->
 	<software name="applewri" supported="no">
 		<description>Apple Writer /// (v3.0)</description>
 		<year>1983?</year>
