@@ -34,12 +34,14 @@
  *MP3208   TMS1000   1977, Milton Bradley Electronic Battleship (1977, model 4750A or B)
  @MP3226   TMS1000   1978, Milton Bradley Simon (model 4850)
  *MP3232   TMS1000   1979, Fonas 2-Player Baseball (no "MP" on chip label)
+ *MP3300   TMS1000   1980, Estrela Genius (from Brazil, looks and plays identical to Simon)
  @MP3301A  TMS1000   1979, Milton Bradley Big Trak
  *MP3320A  TMS1000   1979, Coleco Head to Head Basketball
  *M32001   TMS1000   1981, Coleco Quiz Wiz Challenger (note: MP3398, MP3399, M3200x?)
   MP3403   TMS1100   1978, Marx Electronic Bowling -> elecbowl.c
  @MP3404   TMS1100   1978, Parker Brothers Merlin
  @MP3405   TMS1100   1979, Coleco Amaze-A-Tron
+ *MP3415   TMS1100   1978, Coleco Electronic Quarterback
  @MP3438A  TMS1100   1979, Kenner Star Wars Electronic Battle Command
   MP3450A  TMS1100   1979, MicroVision cartridge: Blockbuster
   MP3454   TMS1100   1979, MicroVision cartridge: Star Trek Phaser Strike
