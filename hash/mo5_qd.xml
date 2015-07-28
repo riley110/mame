@@ -4,12 +4,17 @@
 
 <!-- Applications -->
 
-	<software name="janeqd">
-		<description>Jane</description>
+	<software name="jane">
+		<description>Jane (cart set 1, floppy set 1)</description>
 		<year>1985</year>
 		<publisher>Thomson</publisher>
-		<info name="usage" value="Insert Jane cartridge first, then load Systeme disk" />
+		<info name="usage" value="Requires QD drive"/>
 
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="65536">
+				<rom name="jane.bin" size="65536" crc="18bf5e9d" sha1="60dc65955a195124f4f96408f1a831bbabdd0e7d" offset="0" />
+			</dataarea>
+		</part>
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Systeme"/>
 			<dataarea name="flop" size="51200">
@@ -30,12 +35,79 @@
 		</part>
 	</software>
 
-	<software name="janeqda" cloneof="janeqd">
-		<description>Jane (Alt Systeme Disk)</description>
+	<software name="janea" cloneof="jane">
+		<description>Jane (cart set 1, floppy set 2)</description>
 		<year>1985</year>
 		<publisher>Thomson</publisher>
-		<info name="usage" value="Insert Jane cartridge first, then load Systeme disk" />
+		<info name="usage" value="Requires QD drive"/>
 
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="65536">
+				<rom name="jane.bin" size="65536" crc="18bf5e9d" sha1="60dc65955a195124f4f96408f1a831bbabdd0e7d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Systeme"/>
+			<dataarea name="flop" size="51200">
+				<rom name="jane-systeme-mo5 [a].qd" size="51200" crc="824c506e" sha1="286fa17e7876e3316332ee022dae57e21f8e7918" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Donnees"/>
+			<dataarea name="flop" size="51200">
+				<rom name="jane (1985)(thomson)(fr)[donnees].qd" size="51200" crc="694facba" sha1="bc04601134f873a087d83eaf9abdfad9e6a4ae79" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Aide"/>
+			<dataarea name="flop" size="51200">
+				<rom name="jane (1985)(thomson)(fr)[aide].qd" size="51200" crc="0a7b4a7a" sha1="f2b225a096330dc94a776c401e11502d7b76ed07" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="janeb" cloneof="jane">
+		<description>Jane (cart set 2, floppy set 1)</description>
+		<year>1985</year>
+		<publisher>Thomson</publisher>
+		<info name="usage" value="Requires QD drive"/>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="65536">
+				<rom name="jane (alt).bin" size="65536" crc="e0e30406" sha1="78afd8d57aa35f899d725e560f29e02a2602ddc2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Systeme"/>
+			<dataarea name="flop" size="51200">
+				<rom name="jane (1985)(thomson)(fr)[systeme].qd" size="51200" crc="6d1d8993" sha1="89d7a846c995b5c0a1f369e5a2b36ba759b6a232" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Donnees"/>
+			<dataarea name="flop" size="51200">
+				<rom name="jane (1985)(thomson)(fr)[donnees].qd" size="51200" crc="694facba" sha1="bc04601134f873a087d83eaf9abdfad9e6a4ae79" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="Aide"/>
+			<dataarea name="flop" size="51200">
+				<rom name="jane (1985)(thomson)(fr)[aide].qd" size="51200" crc="0a7b4a7a" sha1="f2b225a096330dc94a776c401e11502d7b76ed07" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="janec" cloneof="jane">
+		<description>Jane (cart set 2, floppy set 2)</description>
+		<year>1985</year>
+		<publisher>Thomson</publisher>
+		<info name="usage" value="Requires QD drive"/>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="65536">
+				<rom name="jane (alt).bin" size="65536" crc="e0e30406" sha1="78afd8d57aa35f899d725e560f29e02a2602ddc2" offset="0" />
+			</dataarea>
+		</part>
 		<part name="flop1" interface="floppy_5_25">
 		<feature name="part_id" value="Systeme"/>
 			<dataarea name="flop" size="51200">

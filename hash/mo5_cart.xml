@@ -165,32 +165,6 @@
 		</part>
 	</software>
 
-	<software name="jane">
-		<description>Jane (For use with QD version)</description>
-		<year>1985</year>
-		<publisher>Thomson</publisher>
-		<sharedfeat name="requirement" value="mo5_qd:janeqd"/>
-
-		<part name="cart" interface="mo_cart">
-			<dataarea name="rom" size="65536">
-				<rom name="jane.bin" size="65536" crc="18bf5e9d" sha1="60dc65955a195124f4f96408f1a831bbabdd0e7d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="janea" cloneof="jane">
-		<description>Jane (For use with QD version, Alt)</description>
-		<year>1985</year>
-		<publisher>Thomson</publisher>
-		<sharedfeat name="requirement" value="mo5_qd:janeqd"/>
-
-		<part name="cart" interface="mo_cart">
-			<dataarea name="rom" size="65536">
-				<rom name="jane (alt).bin" size="65536" crc="e0e30406" sha1="78afd8d57aa35f899d725e560f29e02a2602ddc2" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="logo">
 		<description>LOGO (v1.0)</description>
 		<year>1984</year>
