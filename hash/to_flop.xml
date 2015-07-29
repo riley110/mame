@@ -32,7 +32,7 @@
 	<software name="6809langa" cloneof="6809lang">
 		<description>6809 Language Module (Hacked?)</description>
 		<year>1988</year>
-		<publisher>HMEL</publisher>
+		<publisher>&lt;hack? (HMEL)&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -3294,7 +3294,7 @@
 	<software name="coktel1a" cloneof="coktel1">
 		<description>Coktel Vision Compilation 1 (Hacked Menu 1)</description>
 		<year>198?</year>
-		<publisher>Coktel Vision</publisher>
+		<publisher>&lt;hack&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -3306,7 +3306,7 @@
 	<software name="coktel1b" cloneof="coktel1">
 		<description>Coktel Vision Compilation 1 (Hacked Menu 2)</description>
 		<year>198?</year>
-		<publisher>Coktel Vision</publisher>
+		<publisher>&lt;hack&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -3318,7 +3318,7 @@
 	<software name="coktel1c" cloneof="coktel1">
 		<description>Coktel Vision Compilation 1 (Hacked Menu 3)</description>
 		<year>198?</year>
-		<publisher>Coktel Vision</publisher>
+		<publisher>&lt;hack&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -4049,7 +4049,7 @@
 	<software name="kidkitb" cloneof="kidkit">
 		<description>Kidkit (Hacked Menu)</description>
 		<year>1986</year>
-		<publisher>Infogrames</publisher>
+		<publisher>&lt;hack&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -4119,9 +4119,9 @@
 	</software>
 
 	<software name="magcube">
-		<description>Magic Cube (Cracked by Zouzou)</description>
+		<description>Magic Cube (Cracked)</description>
 		<year>1987</year>
-		<publisher>Free Game Blot</publisher>
+		<publisher>&lt;bootleg (Zouzou)&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -5274,7 +5274,7 @@
 
 	<!-- teodriv3 disk 2 with a bootloader -->
 	<software name="tdrvdemo" cloneof="teodriv3">
-		<description>TEODRIVE Demos - Mots Croises + Anima 3D (From Teo-Drive no.3, Hacked)</description>
+		<description>TEODRIVE Demos - Mots Croises + Anima 3D (From Teo-Drive no.3)</description>
 		<year>1991</year>
 		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
 
@@ -8991,9 +8991,9 @@
 	</software>
 
 	<software name="astrixraa" cloneof="astrixra">
-		<description>Asterix chez Rahazade (Cracked by Thomsoft)</description>
+		<description>Asterix chez Rahazade (Cracked, Thomsoft)</description>
 		<year>1987</year>
-		<publisher>Coktel Vision</publisher>
+		<publisher>&lt;bootleg (Thomsoft)</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -9003,9 +9003,9 @@
 	</software>
 
 	<software name="astrixrab" cloneof="astrixra">
-		<description>Asterix chez Rahazade (Hacked by dcmoto)</description>
+		<description>Asterix chez Rahazade (Cracked?, dcmoto)</description>
 		<year>1987</year>
-		<publisher>Coktel Vision</publisher>
+		<publisher>&lt;bootleg? (dcmoto.free.fr)&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -9015,6 +9015,19 @@
 	</software>
 
 	<software name="astrixrac" cloneof="astrixra">
+		<description>Asterix chez Rahazade (Cracked?, dcmoto, 640K Disk)</description>
+		<year>1987</year>
+		<publisher>&lt;bootleg? (dcmoto.free.fr)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="655360">
+				<rom name="asterix chez rahazade (1987)(coktel vision)(fr)[h dcmoto.free.fr][640k].fd" size="655360" crc="e9d69766" sha1="2bf62059abf9ea21704b47403baf2e4466b7503d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!--
+	<software name="astrixrad" cloneof="astrixra">
 		<description>Asterix chez Rahazade (Extra Junk Data)</description>
 		<year>1987</year>
 		<publisher>Coktel Vision</publisher>
@@ -9025,18 +9038,7 @@
 			</dataarea>
 		</part>
 	</software>
-
-	<software name="astrixrad" cloneof="astrixra">
-		<description>Asterix chez Rahazade (Hacked by dcmoto, 640K Disk)</description>
-		<year>1987</year>
-		<publisher>Coktel Vision</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="655360">
-				<rom name="asterix chez rahazade (1987)(coktel vision)(fr)[h dcmoto.free.fr][640k].fd" size="655360" crc="e9d69766" sha1="2bf62059abf9ea21704b47403baf2e4466b7503d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
+-->
 
 	<software name="astrixpo">
 		<description>Asterix et la Potion Magique</description>
@@ -9353,9 +9355,9 @@
 	</software>
 
 	<software name="moranechb" cloneof="moranech">
-		<description>Bob Morane - Chevalerie 1 (Cracked by Shubert)</description>
+		<description>Bob Morane - Chevalerie 1 (Cracked)</description>
 		<year>1987</year>
-		<publisher>Infogrames</publisher>
+		<publisher>&lt;bootleg (Shubert)&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -9777,9 +9779,9 @@
 	</software>
 
 	<software name="cobraa" cloneof="cobra">
-		<description>Cobra (Cracked by Albert Tleri)</description>
+		<description>Cobra (Cracked)</description>
 		<year>1987</year>
-		<publisher>Loriciels</publisher>
+		<publisher>&lt;bootleg (Albert Tleri)&gt;</publisher>
 		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
 
 		<part name="flop1" interface="floppy_5_25">
@@ -9990,7 +9992,7 @@
 	<software name="deftarota" cloneof="deftarot">
 		<description>Defi au Tarot (Hacked)</description>
 		<year>1988</year>
-		<publisher>Coktel Vision</publisher>
+		<publisher>&lt;hack?&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -10002,7 +10004,7 @@
 	<software name="deftarotb" cloneof="deftarot">
 		<description>Defi au Tarot (Hacked, SAP Format)</description>
 		<year>1988</year>
-		<publisher>Coktel Vision</publisher>
+		<publisher>&lt;hack?&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -10072,9 +10074,9 @@
 	</software>
 
 	<software name="coloradoa" cloneof="colorado">
-		<description>Duel au Colorado (Cracked by The Crapaud Musulman)</description>
+		<description>Duel au Colorado (Cracked)</description>
 		<year>198?</year>
-		<publisher>Chip</publisher>
+		<publisher>&lt;bootleg (The Crapaud Musulman)&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -10181,9 +10183,9 @@
 	</software>
 
 	<software name="erebus">
-		<description>Erebus (Cracked by Shubert)</description>
+		<description>Erebus (Cracked)</description>
 		<year>1986</year>
-		<publisher>EH Services</publisher>
+		<publisher>&lt;bootleg (Shubert)&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -10353,9 +10355,9 @@
 	</software>
 
 	<software name="artillacb" cloneof="artillac">
-		<description>La Geste d'Artillac (Cracked by Shubert Enterprise)</description>
+		<description>La Geste d'Artillac (Cracked)</description>
 		<year>1985</year>
-		<publisher>Infogrames</publisher>
+		<publisher>&lt;bootleg (Shubert Enterprise)&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -10631,9 +10633,9 @@
 	</software>
 
 	<software name="kya">
-		<description>K.Y.A. - Keep Yourself Alive (Cracked by Thomsoft)</description>
+		<description>K.Y.A. - Keep Yourself Alive (Cracked)</description>
 		<year>1988</year>
-		<publisher>Loriciels</publisher>
+		<publisher>&lt;bootleg (Thomsoft)&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -11032,9 +11034,9 @@
 	</software>
 
 	<software name="mascottea" cloneof="mascotte">
-		<description>La Mascotte (Cracked by The Crapaud Musulman)</description>
+		<description>La Mascotte (Cracked)</description>
 		<year>1988</year>
-		<publisher>Coktel Vision</publisher>
+		<publisher>&lt;bootleg (The Crapaud Musulman)&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -11375,9 +11377,9 @@
 	</software>
 
 	<software name="scrabblec" cloneof="scrabble">
-		<description>Micro-Scrabble (Hacked by Pustulman)</description>
+		<description>Micro-Scrabble (Cracked?)</description>
 		<year>1985</year>
-		<publisher>France Image Logiciel (FIL)</publisher>
+		<publisher>&lt;bootleg? (Pustulman)&gt;</publisher>
 		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
 
 		<part name="flop1" interface="floppy_5_25">
@@ -11400,9 +11402,9 @@
 	</software>
 
 	<software name="missiona" cloneof="mission">
-		<description>Mission (Cracked by Adolf Hitler)</description>
+		<description>Mission (Cracked)</description>
 		<year>1987</year>
-		<publisher>Loriciels</publisher>
+		<publisher>&lt;bootleg (Adolf Hitler)&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -11680,9 +11682,9 @@
 	</software>
 
 	<software name="paniquea" cloneof="panique">
-		<description>Panique Atomique chez Novasprites (Cracked by Snark Software)</description>
+		<description>Panique Atomique chez Novasprites (Cracked)</description>
 		<year>1985</year>
-		<publisher>SoftBook</publisher>
+		<publisher>&lt;bootleg (Snark Software)&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -11692,9 +11694,9 @@
 	</software>
 
 	<software name="paniqueb" cloneof="panique">
-		<description>Panique Atomique chez Novasprites (Cracked by Snark Software, Alt)</description>
+		<description>Panique Atomique chez Novasprites (Cracked, Alt)</description>
 		<year>1985</year>
-		<publisher>SoftBook</publisher>
+		<publisher>&lt;bootleg (Snark Software)&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -11941,9 +11943,9 @@
 	</software>
 
 	<software name="renegade">
-		<description>Renegade (Cracked by TGR-Krakeur)</description>
+		<description>Renegade (Cracked)</description>
 		<year>1988</year>
-		<publisher>France Image Logiciel (FIL)</publisher>
+		<publisher>&lt;bootleg (TGR-Krakeur)&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -11953,9 +11955,9 @@
 	</software>
 
 	<software name="renegadea" cloneof="renegade">
-		<description>Renegade (Cracked by TGR-Krakeur, Alt)</description>
+		<description>Renegade (Cracked, Alt)</description>
 		<year>1988</year>
-		<publisher>France Image Logiciel (FIL)</publisher>
+		<publisher>&lt;bootleg (TGR-Krakeur)&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -12077,9 +12079,9 @@
 	</software>
 
 	<software name="roadkilla" cloneof="roadkill">
-		<description>Road Killer (Cracked by Thomsoft)</description>
+		<description>Road Killer (Cracked)</description>
 		<year>1987</year>
-		<publisher>SoftBook</publisher>
+		<publisher>&lt;bootleg (Thomsoft)&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -12197,9 +12199,9 @@
 	</software>
 
 	<software name="saphir">
-		<description>Saphir (Trained +5 by Prehis-To)</description>
+		<description>Saphir (Trained +5)</description>
 		<year>1986</year>
-		<publisher>Infogrames</publisher>
+		<publisher>&lt;bootleg (Prehis-To)&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -12694,9 +12696,9 @@
 	</software>
 
 	<software name="stonezona" cloneof="stonezon">
-		<description>Stone Zone (Cracked by Shubert)</description>
+		<description>Stone Zone</description>
 		<year>198?</year>
-		<publisher>SoftBook</publisher>
+		<publisher>&lt;bootleg (Shubert)&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -12781,9 +12783,9 @@
 	</software>
 
 	<software name="tnta" cloneof="tnt">
-		<description>T.N.T. (Cracked by G.A.D.J.O.)</description>
+		<description>T.N.T. (Cracked)</description>
 		<year>1986</year>
-		<publisher>Infogrames</publisher>
+		<publisher>&lt;bootleg (G.A.D.J.O)&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -13293,9 +13295,9 @@
 	</software>
 
 	<software name="turbocupa" cloneof="turbocup">
-		<description>Turbo Cup (Cracked by The Crapaud Musulman)</description>
+		<description>Turbo Cup (Cracked)</description>
 		<year>1988</year>
-		<publisher>Loriciels</publisher>
+		<publisher>&lt;bootleg (The Crapaud Musulman)&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
@@ -13331,9 +13333,9 @@
 -->
 
 	<software name="turlogh">
-		<description>Turlogh de Penroth (Cracked by A. Hitler)</description>
+		<description>Turlogh de Penroth (Cracked)</description>
 		<year>1988</year>
-		<publisher>Cobrasoft</publisher>
+		<publisher>&lt;bootleg (Adolf Hitler)&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
@@ -13343,9 +13345,9 @@
 	</software>
 
 	<software name="turlogha" cloneof="turlogh">
-		<description>Turlogh de Penroth (Cracked by A. Hitler) (SAP Format)</description>
+		<description>Turlogh de Penroth (Cracked) (SAP Format)</description>
 		<year>1988</year>
-		<publisher>Cobrasoft</publisher>
+		<publisher>&lt;bootleg (Adolf Hitler)&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="335426">
