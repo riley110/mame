@@ -225,6 +225,20 @@
 		</part>
 	</software>
 
+<!-- Compilations (Educational) -->
+
+	<software name="ludoedu">
+		<description>Programmes ludo-educatifs pour MO5</description>
+		<year>2015</year>
+		<publisher>dcmoto.free.fr</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="programmes-ludo-educatifs_mo5.fd" size="327680" crc="f392b8bc" sha1="a2963c378af7c93814ab4f83e7448e2110b7d993" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 <!-- Compilations (Games) -->
 
 	<!-- can also be found in to_flop.xml -->
