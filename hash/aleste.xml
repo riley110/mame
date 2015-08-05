@@ -2,7 +2,8 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="aleste" description="Patisonic Aleste 520EX floppies">
 
-	<software name="magicsnd" supported="no">
+	<!-- sound is not played -->
+	<software name="magicsnd" supported="partial">
 		<description>Magic Sound Tracker Player</description>
 		<year>1993</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -14,7 +15,7 @@
 		</part>
 	</software>
 
-	<software name="msxdos" supported="no">
+	<software name="msxdos">
 		<description>MSX-DOS + Developer Tools</description>
 		<year>1993</year>
 		<publisher>Microsoft - Patisonic</publisher>
@@ -26,7 +27,7 @@
 		</part>
 	</software>
 
-	<software name="msxgames" supported="no">
+	<software name="msxgames">
 		<description>MSX Games</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
