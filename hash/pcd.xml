@@ -2,6 +2,8 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="pcd" description="Siemens PC-D &amp; PC-X floppy disks">
 
+<!-- Known working disks -->
+
 	<!-- copyright is 1983, before the PC-D was released -->
 	<software name="msdos">
 		<description>MS-DOS (v2.11)</description>
@@ -439,7 +441,7 @@ they will be properly documented once support for them is added.
 			</dataarea>
 		</part>
 		<part name="flop8" interface="floppy_5_25">
-			<feature name="part_id" value="SSHB Seispielprogramme"/>
+			<feature name="part_id" value="SSHB Beispielprogramme"/>
 			<dataarea name="flop" size="119326">
 				<rom name="sshb_bsp.td0" size="119326" crc="146dc918" sha1="0a390d0d22f14f8d1468083b8661d29fed4eca29" offset="0" />
 			</dataarea>
