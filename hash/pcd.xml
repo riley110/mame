@@ -393,10 +393,11 @@ they will be properly documented once support for them is added.
 		</part>
 	</software>
 
-	<software name="snxaddon">
-		<description>SNXADDON</description>
+	<software name="ces">
+		<description>CES (v1.0B)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires SINIX" />
 
 		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="CES1 V1.0B"/>
@@ -410,55 +411,119 @@ they will be properly documented once support for them is added.
 				<rom name="ces2.td0" size="480458" crc="5ad40300" sha1="4df295f894171f57df18ba4cee9b97aceb8acad4" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_5_25">
+	</software>
+
+	<software name="games">
+		<description>Games</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires SINIX" />
+
+		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Games"/>
 			<dataarea name="flop" size="519751">
 				<rom name="games.td0" size="519751" crc="273a5c8c" sha1="9592fa32a60a2b8dff62b66f392cab3cb93529b5" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop4" interface="floppy_5_25">
+	</software>
+
+	<software name="goodies">
+		<description>Goodies</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires SINIX" />
+
+		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="Goodies"/>
 			<dataarea name="flop" size="593461">
 				<rom name="goodies.td0" size="593461" crc="f1006a4a" sha1="538f7d7603493376d1af229d19b4c59606724ce2" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop5" interface="floppy_5_25">
+	</software>
+
+	<software name="msword">
+		<description>MS-WORD</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires SINIX" />
+
+		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="MS-WORD"/>
 			<dataarea name="flop" size="341693">
 				<rom name="msword.td0" size="341693" crc="493a7373" sha1="af3475e9e4c287dd2ed6e3b115bb3930a43a6cc6" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop6" interface="floppy_5_25">
+	</software>
+
+	<software name="oldgood">
+		<description>Oldies but Goodies</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires SINIX" />
+
+		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="OLDIES BUT GOODIES DISK 1"/>
 			<dataarea name="flop" size="498258">
 				<rom name="oldgood1.td0" size="498258" crc="b06b78bc" sha1="a37787dfe5ba620aa16e3ee264fb4c00bef39084" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop7" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
 			<feature name="part_id" value="OLDIES BUT GOODIES DISK 2"/>
 			<dataarea name="flop" size="556378">
 				<rom name="oldgood2.td0" size="556378" crc="533840bc" sha1="fd90f1cb1af80177c92e5d2daad0dbbf26390557" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop8" interface="floppy_5_25">
+	</software>
+
+	<software name="sshb">
+		<description>SSHB Beispielprogramme</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires SINIX" />
+
+		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="SSHB Beispielprogramme"/>
 			<dataarea name="flop" size="119326">
 				<rom name="sshb_bsp.td0" size="119326" crc="146dc918" sha1="0a390d0d22f14f8d1468083b8661d29fed4eca29" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop9" interface="floppy_5_25">
+	</software>
+
+	<software name="standaln">
+		<description>SINIX Standalone Utilities</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires SINIX" />
+
+		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="SINIX Standalone Utilities"/>
 			<dataarea name="flop" size="463387">
 				<rom name="standaln.td0" size="463387" crc="c7b78248" sha1="3a08aef342a502fd351d9b5895d133682061f147" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop10" interface="floppy_5_25">
+	</software>
+
+	<software name="uucp">
+		<description>UUCP (v1.0B)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires SINIX" />
+
+		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="UUCP V1.0B"/>
 			<dataarea name="flop" size="279">
 				<rom name="uucp.td0" size="279" crc="45bb91f1" sha1="209457802a6e10cc1d126d6e996a53e3976ba7bf" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop11" interface="floppy_5_25">
+	</software>
+
+	<software name="uucpback">
+		<description>Backup UUCP</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires SINIX" />
+
+		<part name="flop1" interface="floppy_5_25">
 			<feature name="part_id" value="BACKUP UUCP"/>
 			<dataarea name="flop" size="572752">
 				<rom name="uucpback.td0" size="572752" crc="8708ea3c" sha1="d9a934bc193290b43769de2287119102922c26c7" offset="0" />
