@@ -62,7 +62,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 <softwarelist name="timex_dock" description="Timex Sinclair TS-2068 DOCK cartridges">
 
 	<!-- Cartridge Type: AROS (overhead bytes: 02 02 0C80 EF 01 0000) -->
-	<software name="android" supported="no">
+	<software name="android">
 		<description>Androids</description>
 		<year>1983</year>
 		<publisher>Timex Computer</publisher>
@@ -75,7 +75,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	<!-- Cartridge Type: LROS (overhead bytes: 00 01 0500 FC) -->
-	<software name="backgamm" supported="no">
+	<software name="backgamm">
 		<description>Backgammon</description>
 		<year>1983</year>
 		<publisher>Sinclair Research</publisher>
@@ -88,7 +88,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	<!-- Cartridge Type: AROS (overhead bytes: 01 02 0880 CF 01 0000) -->
-	<software name="budgeter" supported="no">
+	<software name="budgeter">
 		<description>Budgeter</description>
 		<year>1983</year>
 		<publisher>Timex Computer</publisher>
@@ -101,8 +101,8 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	<!-- Cartridge Type: AROS (overhead bytes: 02 02 00C0 8F 01 1500) -->
-	<software name="casino1" supported="no">
-		<description>Casino1</description>
+	<software name="casino">
+		<description>Casino</description>
 		<year>1983</year>
 		<publisher>Timex Computer</publisher>
 
@@ -114,7 +114,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	<!-- Cartridge Type: LROS (overhead bytes: 00 01 F529 FC) -->
-	<software name="chess" supported="no">
+	<software name="chess">
 		<description>Chess</description>
 		<year>1983</year>
 		<publisher>Timex Computer</publisher>
@@ -127,7 +127,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	<!-- Cartridge Type: AROS (overhead bytes: 02 02 2892 EF 01 C017) -->
-	<software name="crazybug" supported="no">
+	<software name="crazybug">
 		<description>Crazy Bugs</description>
 		<year>1983</year>
 		<publisher>Timex Computer</publisher>
@@ -140,7 +140,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	<!-- Cartridge Type: AROS (overhead bytes: 01 02 0A80 8F 01 0000) -->
-	<software name="etoolkit" supported="no">
+	<software name="etoolkit">
 		<description>eToolkit (Toolkit EPROM)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -153,7 +153,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	<!-- Cartridge Type: AROS (overhead bytes: 02 02 73EC 0F 01 BF17) -->
-	<software name="fsim" supported="no">
+	<software name="fsim">
 		<description>Flight Simulator</description>
 		<year>1983</year>
 		<publisher>Timex Computer</publisher>
@@ -166,7 +166,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	<!-- Cartridge Type: LROS (overhead bytes: 00 01 0500 FC) -->
-	<software name="gyruss" supported="no">
+	<software name="gyruss">
 		<description>Gyruss</description>
 		<year>1984</year>
 		<publisher>Parker Software</publisher>
@@ -179,10 +179,11 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 <!-- Cartridge Type: LROS (overhead bytes: 00 01 0500 FC) -->
-	<software name="horacesp" supported="no">
+	<software name="horacesp">
 		<description>Horace &amp; the Spiders</description>
 		<year>1983</year>
 		<publisher>Timex Computer</publisher>
+
 		<part name="cart" interface="timex_cart">
 			<dataarea name="rom" size="65536">
 				<rom name="horace and the spiders.bin" size="16384" crc="86e3366d" sha1="904f4e566911b242f967f7d13a16fd81ff1255cd" offset="0x0000" />
@@ -191,7 +192,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	<!-- Cartridge Type: LROS (overhead bytes: 00 01 0500 FC) -->
-	<software name="horace" supported="no">
+	<software name="horace">
 		<description>Hungry Horace</description>
 		<year>1983</year>
 		<publisher>Timex Computer</publisher>
@@ -204,7 +205,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	<!-- Cartridge Type: LROS (overhead bytes: 00 01 F73F FC) -->
-	<software name="jupitace" supported="no">
+	<software name="jupitace">
 		<description>Jupiter ACE Emulator</description>
 		<year>1985</year>
 		<publisher>Paul Farrow</publisher>
@@ -217,7 +218,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	<!-- Cartridge Type: LROS (overhead bytes: 00 01 0500 FC) -->
-	<software name="locomotn" supported="no">
+	<software name="locomotn">
 		<description>Loco Motion</description>
 		<year>1984</year>
 		<publisher>Parker Software</publisher>
@@ -230,7 +231,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	<!-- Cartridge Type: LROS (overhead bytes: 00 01 0500 FE) -->
-	<software name="montezum" supported="no">
+	<software name="montezum">
 		<description>Montezuma's Revenge</description>
 		<year>1984</year>
 		<publisher>Parker Software</publisher>
@@ -243,7 +244,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	<!-- Cartridge Type: AROS (overhead bytes: 01 02 0880 EF 01 0000) -->
-	<software name="mterm" supported="no">
+	<software name="mterm">
 		<description>MTERM - Smart Terminal Program</description>
 		<year>1983</year>
 		<publisher>Westridge Communications</publisher>
@@ -256,7 +257,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	<!-- Cartridge Type: LROS (overhead bytes: 00 01 0500 F0) -->
-	<software name="penetrat" supported="no">
+	<software name="penetrat">
 		<description>Penetrator</description>
 		<year>1983</year>
 		<publisher>Timex Computer</publisher>
@@ -282,7 +283,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	<!-- Cartridge Type: LROS (overhead bytes: 00 01 0500 FC) -->
-	<software name="planet" supported="no">
+	<software name="planet">
 		<description>Planetoids</description>
 		<year>1983</year>
 		<publisher>Sinclair Research</publisher>
@@ -295,7 +296,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	<!-- Cartridge Type: LROS (overhead bytes: 00 01 4302 FE) -->
-	<software name="popeye" supported="no">
+	<software name="popeye" supported="partial">
 		<description>Popeye</description>
 		<year>1984</year>
 		<publisher>Parker Software</publisher>
@@ -308,7 +309,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	<!-- Cartridge Type: LROS (overhead bytes: 00 01 0500 FE) -->
-	<software name="qbert" supported="no">
+	<software name="qbert">
 		<description>Q*Bert</description>
 		<year>1984</year>
 		<publisher>Parker Software</publisher>
@@ -321,7 +322,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	<!-- Cartridge Type: LROS (overhead bytes: 00 01 0500 FE) -->
-	<software name="jedi" supported="no">
+	<software name="jedi">
 		<description>Return Of The Jedi - Death Star Battle</description>
 		<year>1984</year>
 		<publisher>Parker Software</publisher>
@@ -348,7 +349,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	 <!-- Cartridge Type: LROS (overhead bytes: 00 01 0080 CC) -->
-	<software name="unicorn" supported="no">
+	<software name="unicorn" supported="partial">
 		<description>Shadow of the Unicorn</description>
 		<year>1985</year>
 		<publisher>Mikro-Gen</publisher>
@@ -361,7 +362,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	<!-- Cartridge Type: LROS (overhead bytes: 00 01 0500 FC) -->
-	<software name="spacerai" supported="no">
+	<software name="spacerai">
 		<description>Space Raiders</description>
 		<year>1983</year>
 		<publisher>Timex Computer</publisher>
@@ -374,7 +375,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	<!-- Cartridge Type: LROS (overhead bytes: 00 01 0500 FC) -->
-	<software name="starwars" supported="no">
+	<software name="starwars">
 		<description>Star Wars - The Arcade Game</description>
 		<year>1984</year>
 		<publisher>Parker Software</publisher>
@@ -387,7 +388,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	<!-- Cartridge Type: AROS (overhead bytes: 01 02 0880 0F 01 0000) -->
-	<software name="statecap" supported="no">
+	<software name="statecap">
 		<description>States and Capitals</description>
 		<year>1983</year>
 		<publisher>Timex Computer</publisher>
@@ -400,7 +401,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	<!-- Cartridge Type: AROS (overhead bytes: 02 02 0880 0F 01 1500) -->
-	<software name="superhzd" supported="no">
+	<software name="superhzd">
 		<description>Super Hot-Z Disassembler v2.51 (AROS)</description>
 		<year>19??</year>
 		<publisher>Ray Kingsley</publisher>
@@ -413,7 +414,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	<!-- Cartridge Type: LROS (overhead bytes: 00 01 F45E F8) -->
-	<software name="swordfgt" supported="no">
+	<software name="swordfgt">
 		<description>Swordfight</description>
 		<year>1983</year>
 		<publisher>Timex Computer</publisher>
@@ -426,7 +427,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	<!-- Cartridge Type: AROS (overhead bytes: 01 02 0880 CF 01 0000) -->
-	<software name="tasword2" supported="no">
+	<software name="tasword2">
 		<description>Tasword II</description>
 		<year>1983</year>
 		<publisher>Tasman Software</publisher>
@@ -452,7 +453,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	<!-- Cartridge Type: LROS (overhead bytes: 00 01 0500 FE) -->
-	<software name="vucalc" supported="no">
+	<software name="vucalc">
 		<description>VU-Calc</description>
 		<year>1983</year>
 		<publisher>Timex Computer</publisher>
@@ -465,7 +466,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	<!-- Cartridge Type: LROS (overhead bytes: 00 01 0500 FC) -->
-	<software name="vufile" supported="no">
+	<software name="vufile">
 		<description>VU-File</description>
 		<year>1983</year>
 		<publisher>Timex Computer</publisher>
@@ -478,7 +479,7 @@ NOTE: info about release and publisher are taken from http://www.worldofspectrum
 	</software>
 
 	<!-- Cartridge Type: LROS (overhead bytes: 00 01 0500 FC) -->
-	<software name="zebraos" supported="no">
+	<software name="zebraos">
 		<description>Zebra OS 64</description>
 		<year>1985</year>
 		<publisher>Zebra Systems</publisher>
