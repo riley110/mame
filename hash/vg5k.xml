@@ -1441,4 +1441,28 @@ Reversis (Philips)
 		</part>
 	</software>
 
+	<software name="vgsargon">
+		<description>VG Sargon</description>
+		<year>2014</year>
+		<publisher>Joaopa</publisher>
+
+		<part name="cass1" interface="vg5k_cass">
+			<dataarea name="cass" size="18174">
+				<rom name="vgsargon_vg5000.k7" size="18174" crc="92591add" sha1="137e39f4f7a77217aa79646761a9327a4aa41ca9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vgsargona" cloneof="vgsargon">
+		<description>VG Sargon (WAV)</description>
+		<year>2014</year>
+		<publisher>Joaopa</publisher>
+
+		<part name="cass1" interface="vg5k_cass">
+			<dataarea name="cass" size="4585880">
+				<rom name="vgsargon_vg5000.wav" size="4585880" crc="9b690e76" sha1="dd16fe4cbe491c6c08c64c501578b1da874c0ae4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 </softwarelist>
