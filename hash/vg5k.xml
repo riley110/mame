@@ -1216,18 +1216,11 @@ Reversis (Philips)
 		</part>
 	</software>
 
-	<!--
-    sokobanb and sokobanc are a bit more complicated to load; use these commands in order (from http://videopac.nl/forum/index.php?topic=1503.0 ):
-
-    CLOAD "SOKO"  (game)
-    CLOAD "ORIG"  (the six first levels)
-    CALL &"5200"
-	-->
 	<software name="sokobanb" cloneof="sokoban">
 		<description>Sokoban (Manual Load)</description>
 		<year>2011</year>
 		<publisher>Forthretro</publisher>
-		<info name="usage" value="Follow loading instructions in vg5k.xml file" />
+		<info name="usage" value="Use the following commands in order: CLOAD &quot;SOKO&quot;, CLOAD &quot;ORIG%quot;, CALL &amp;&quot;5200&quot;" />
 
 		<part name="cass1" interface="vg5k_cass">
 			<dataarea name="cass" size="12974">
@@ -1240,7 +1233,7 @@ Reversis (Philips)
 		<description>Sokoban (Manual Load, WAV)</description>
 		<year>2011</year>
 		<publisher>Forthretro</publisher>
-		<info name="usage" value="Follow loading instructions in vg5k.xml file" />
+		<info name="usage" value="Use the following commands in order: CLOAD &quot;SOKO&quot;, CLOAD &quot;ORIG%quot;, CALL &amp;&quot;5200&quot;" />
 
 		<part name="cass1" interface="vg5k_cass">
 			<dataarea name="cass" size="2262612">
