@@ -287,9 +287,6 @@ static MACHINE_CONFIG_DERIVED( tanodr64, dragon64 )
 	// cartridge
 	MCFG_DEVICE_MODIFY(CARTRIDGE_TAG)
 	MCFG_DEVICE_SLOT_INTERFACE(dragon_cart, "sdtandy_fdc", false)
-
-	MCFG_DEVICE_REMOVE("flop_list")
-	MCFG_SOFTWARE_LIST_ADD("flop_list","drgntano_flop")
 MACHINE_CONFIG_END
 
 
