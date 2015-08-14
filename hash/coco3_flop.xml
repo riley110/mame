@@ -3238,11 +3238,13 @@ They will be added later on as this software list matures.
 		<publisher>MediaLink Development</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="161280">
 				<rom name="digger 2 - return of the saint (coco 3) (side 1).dsk" size="161280" crc="fa36335b" sha1="7a2ee7480d4cb31ac91cc335ce5e245a1949d152" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="161280">
 				<rom name="digger 2 - return of the saint (coco 3) (side 2).dsk" size="161280" crc="c9d9629d" sha1="361a3fa292d76604d7cfdf02ff57f8d0c22c7f3b" offset="0" />
 			</dataarea>
