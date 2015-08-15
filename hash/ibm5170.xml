@@ -382,18 +382,6 @@ Missing files come here
 		</part>
 	</software>
 
-	<software name="motbman">
-		<description>MotionBASIC Version 1.1c - Hypertext Manual</description>
-		<year>1991</year>
-		<publisher>Ormec Systems Corp.</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="210212">
-				<rom name="motbasic.td0" size="210212" crc="a1ffe471" sha1="5aa88bda9b8a740391dce3dc441e107234c4abb2" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="os2">
 		<description>OS/2 1.0</description>
 		<year>1987</year>
@@ -3089,6 +3077,80 @@ Missing files come here
 		</part>
 	</software>
 
+	<!-- Installation guide at http://virtuallyfun.superglobalmegacorp.com/2015/08/14/venturcomm-venix86-on-messmame/ -->
+	<software name="venix">
+		<description>VENIX/86 (v2.1, backup)</description>
+		<year>1984</year>
+		<publisher>VenturCom</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+		<feature name="part_id" value="XFER"/>
+			<dataarea name="flop" size="368640">
+				<rom name="xfer.img" size="368640" crc="1318c12c" sha1="17773e8176791c1c706f146f70199f07d7dd890d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+		<feature name="part_id" value="User 1"/>
+			<dataarea name="flop" size="1228800">
+				<rom name="backup1.img" size="1228800" crc="bee5e7ed" sha1="55347ce084d15c60e09ee4dc8d7adcd4f4c61dfe" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+		<feature name="part_id" value="User 2"/>
+			<dataarea name="flop" size="1228800">
+				<rom name="backup2.img" size="1228800" crc="22d3067e" sha1="9c4754380d07f2c5837dceca445a3037c6fb2d0e" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+		<feature name="part_id" value="User 3"/>
+			<dataarea name="flop" size="1228800">
+				<rom name="backup3.img" size="1228800" crc="8bdfbd3a" sha1="28593ce65f8545eb6e6b68e59b074443b739d05f" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+		<feature name="part_id" value="User 4"/>
+			<dataarea name="flop" size="1228800">
+				<rom name="backup4.img" size="1228800" crc="8f74bd5f" sha1="c2507faf1b195d3c232b487441826dc88ed693d1" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_5_25">
+		<feature name="part_id" value="User 5"/>
+			<dataarea name="flop" size="1228800">
+				<rom name="backup5.img" size="1228800" crc="113a4bcc" sha1="08de933a9b23c9a67418649bafd28517e127a7a4" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_5_25">
+		<feature name="part_id" value="User 6"/>
+			<dataarea name="flop" size="1228800">
+				<rom name="backup6.img" size="1228800" crc="7561ef8b" sha1="4a8bbee73f76e9d5a2cde51c461b4bf8032a5e1c" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+		<part name="flop8" interface="floppy_5_25">
+		<feature name="part_id" value="User 7"/>
+			<dataarea name="flop" size="1228800">
+				<rom name="backup7.img" size="1228800" crc="538d307b" sha1="a8d5e6d95ebee61ca97ede94477f2fdfdc60c0e4" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+		<part name="flop9" interface="floppy_5_25">
+		<feature name="part_id" value="User 8"/>
+			<dataarea name="flop" size="1228800">
+				<rom name="backup8.img" size="1228800" crc="4e083cc3" sha1="a5790768e234405c0205e1e8e8e895ab2d58dbd8" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+		<part name="flop10" interface="floppy_5_25">
+		<feature name="part_id" value="User 9"/>
+			<dataarea name="flop" size="1228800">
+				<rom name="backup9.img" size="1228800" crc="b85ed94b" sha1="9490eee747d72cce30e68048de6cc11c00cf32b9" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+		<part name="flop11" interface="floppy_5_25">
+		<feature name="part_id" value="FA_DEVS"/>
+			<dataarea name="flop" size="368640">
+				<rom name="fa_devs.img" size="368640" crc="7c66e9af" sha1="5f4c985f79f3ec770b04796e16e4f16b64cbc76b" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- Driver Disks -->
 
 	<software name="scrlmous">
@@ -3484,7 +3546,7 @@ Missing files come here
 		</part>
 	</software>
 
-	<!-- Application Disks -->
+<!-- Application Disks -->
 
 	<software name="acerwin">
 		<!-- from Acer CPR 1.2 recovery CD-ROM -->
@@ -3610,6 +3672,18 @@ Missing files come here
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1474560">
 				<rom name="mb1995.img" size="1474560" crc="281e055f" sha1="398bd9dbb0f1019169fdcb9d640960dbe5352f6a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="motbman">
+		<description>MotionBASIC Version 1.1c - Hypertext Manual</description>
+		<year>1991</year>
+		<publisher>Ormec Systems Corp.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="210212">
+				<rom name="motbasic.td0" size="210212" crc="a1ffe471" sha1="5aa88bda9b8a740391dce3dc441e107234c4abb2" offset="0" />
 			</dataarea>
 		</part>
 	</software>
