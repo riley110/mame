@@ -1645,13 +1645,25 @@
 	</software>
 
 	<software name="ludoedu">
-		<description>Programmes ludo-educatifs pour MO5</description>
+		<description>Programmes ludo-educatifs pour MO5 (07-08-2015)</description>
+		<year>2015</year>
+		<publisher>dcmoto.free.fr</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="106199">
+				<rom name="programmes-ludo-educatifs_mo5.k7" size="106199" crc="51c78d31" sha1="ae44f032e226037d90652aa4b7a50878f79382c6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ludoedua" cloneof="ludoedu">
+		<description>Programmes ludo-educatifs pour MO5 (27-07-2015)</description>
 		<year>2015</year>
 		<publisher>dcmoto.free.fr</publisher>
 
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="70342">
-				<rom name="programmes-ludo-educatifs_mo5.k7" size="70342" crc="649b6870" sha1="bb2b452884598ef7684577682380d6b6edd14ca4" offset="0" />
+				<rom name="programmes-ludo-educatifs_mo5 [a].k7" size="70342" crc="649b6870" sha1="bb2b452884598ef7684577682380d6b6edd14ca4" offset="0" />
 			</dataarea>
 		</part>
 	</software>

@@ -228,13 +228,25 @@
 <!-- Compilations (Educational) -->
 
 	<software name="ludoedu">
-		<description>Programmes ludo-educatifs pour MO5</description>
+		<description>Programmes ludo-educatifs pour MO5 (07-08-2015)</description>
 		<year>2015</year>
 		<publisher>dcmoto.free.fr</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="327680">
-				<rom name="programmes-ludo-educatifs_mo5.fd" size="327680" crc="f392b8bc" sha1="a2963c378af7c93814ab4f83e7448e2110b7d993" offset="0" />
+				<rom name="programmes-ludo-educatifs_mo5.fd" size="327680" crc="c3177772" sha1="e4bc4edc945809b3bd9e2c693e6d5ee388c0d8f5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ludoedua" cloneof="ludoedu">
+		<description>Programmes ludo-educatifs pour MO5 (27-07-2015)</description>
+		<year>2015</year>
+		<publisher>dcmoto.free.fr</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="programmes-ludo-educatifs_mo5 [a].fd" size="327680" crc="f392b8bc" sha1="a2963c378af7c93814ab4f83e7448e2110b7d993" offset="0" />
 			</dataarea>
 		</part>
 	</software>
