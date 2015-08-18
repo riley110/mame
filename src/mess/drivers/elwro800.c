@@ -11,6 +11,7 @@
           is not emulated
         - 8251 is used for JUNET network (a network of Elwro 800 Junior computers, allows sharing
           floppy disc drives and printers) - network is not emulated
+		- CP/J starts to boot before giving a bad sector(?) error - regression from upd765 rewrite
 
 ****************************************************************************/
 
