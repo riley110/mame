@@ -517,7 +517,7 @@ INTERRUPT_GEN_MEMBER(elwro800_state::elwro800jr_interrupt)
 }
 
 static SLOT_INTERFACE_START( elwro800jr_floppies )
-	SLOT_INTERFACE( "525hd", FLOPPY_525_HD )
+	SLOT_INTERFACE( "35dd", FLOPPY_35_DD )
 SLOT_INTERFACE_END
 
 /* F4 Character Displayer */
@@ -595,12 +595,15 @@ static MACHINE_CONFIG_START( elwro800, elwro800_state )
 	MCFG_CASSETTE_FORMATS(tzx_cassette_formats)
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_STOPPED | CASSETTE_SPEAKER_ENABLED | CASSETTE_MOTOR_ENABLED)
 
-	MCFG_FLOPPY_DRIVE_ADD("upd765:0", elwro800jr_floppies, "525hd", floppy_image_device::default_floppy_formats)
-	MCFG_FLOPPY_DRIVE_ADD("upd765:1", elwro800jr_floppies, "525hd", floppy_image_device::default_floppy_formats)
+	MCFG_FLOPPY_DRIVE_ADD("upd765:0", elwro800jr_floppies, "35dd", floppy_image_device::default_floppy_formats)
+	MCFG_FLOPPY_DRIVE_ADD("upd765:1", elwro800jr_floppies, "35dd", floppy_image_device::default_floppy_formats)
 
 	/* internal ram */
 	MCFG_RAM_ADD(RAM_TAG)
 	MCFG_RAM_DEFAULT_SIZE("64K")
+
+	/* software lists */
+	MCFG_SOFTWARE_LIST_ADD("flop_list", "elwro800")
 MACHINE_CONFIG_END
 
 /*************************************
@@ -622,5 +625,5 @@ ROM_END
 
 /* Driver */
 
-/*    YEAR  NAME    PARENT  COMPAT   MACHINE    INPUT    INIT    COMPANY   FULLNAME       FLAGS */
-COMP( 1986, elwro800,  0,       0,  elwro800,   elwro800, driver_device,     0,  "Elwro",   "800 Junior",       0)
+/*    YEAR  NAME       PARENT  COMPAT   MACHINE    INPUT                    INIT COMPANY  FULLNAME      FLAGS */
+COMP( 1986, elwro800,  0,      0,       elwro800,  elwro800, driver_device, 0,   "Elwro", "800 Junior", GAME_NOT_WORKING ) //MACHINE_NOT_WORKING

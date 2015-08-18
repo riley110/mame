@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+To use the Spectrum Games disks, use DIR command to get a directory, and to load files use LOAD * "FILE".
+
+To boot the CP/J disks, use the following instructions:
+Press Left Shift + Left Control; you should see an "E" as the cursor.
+Press Right Shift + 6; CP/J L should appear.
+Press Enter; the CP/J system will begin to boot.
+-->
+<softwarelist name="elwro800" description="Elwro 800 Junior floppy disks">
+
+	<software name="games1" supported="no">
+		<description>Spectrum Games 1</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="778496">
+				<rom name="elwro g1 (spectrum mode).dsk" size="778496" crc="539ea918" sha1="80dc8da0ff456b426dad420c5162baf30650ae15" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="games2" supported="no">
+		<description>Spectrum Games 2</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="778496">
+				<rom name="elwro g2 (spectrum mode).dsk" size="778496" crc="c5feea27" sha1="0393bb7721c33de12c5ef1ccf27a5bfb8a62c5bf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="games3" supported="no">
+		<description>Spectrum Games 3</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="778496">
+				<rom name="elwro g3 (spectrum mode).dsk" size="778496" crc="282e9425" sha1="c4e216587d3e45471d265266f7e83a6e950c3626" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="games4" supported="no">
+		<description>Spectrum Games 4</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="778496">
+				<rom name="elwro g4 (spectrum mode).dsk" size="778496" crc="1bc06c3c" sha1="e53281874ebf081759b036c1aa215cdabf4200e9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="games5" supported="no">
+		<description>Spectrum Games 5</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="778496">
+				<rom name="elwro g5 (spectrum mode).dsk" size="778496" crc="21975193" sha1="361d8529f07177e10072e194349c17e2fbcc2a5b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="games6" supported="no">
+		<description>Spectrum Games 6</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="778496">
+				<rom name="elwro g6 (spectrum mode).dsk" size="778496" crc="51b4fda3" sha1="d011242c373108850ff0e2baf862e6950f8d7777" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpj1" supported="no">
+		<description>CP/J Programs 1</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="778496">
+				<rom name="elwro p1 (cpj mode).dsk" size="778496" crc="f39b07f0" sha1="e6fab3d8e4775a314017109bb65c1e045626fd4c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpj2" supported="no">
+		<description>CP/J Programs 2</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="778496">
+				<rom name="elwro p2 (cpj mode).dsk" size="778496" crc="c9e08a20" sha1="d7ffb6592f9a99d4e6bf44a210db08d22fbf2175" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpj3" supported="no">
+		<description>CP/J Programs 3</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="778496">
+				<rom name="elwro p3 (cpj mode).dsk" size="778496" crc="f289daf2" sha1="2906a31c9d3da1f02f5c047a9949f205204a1c2c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpj4" supported="no">
+		<description>CP/J Programs 4</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="778496">
+				<rom name="elwro p4 (cpj mode).dsk" size="778496" crc="49da9617" sha1="33b7bbcc64347efe47f998ffb949a799a5946e81" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpj5" supported="no">
+		<description>CP/J Programs 5</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="778496">
+				<rom name="elwro p5 (cpj mode).dsk" size="778496" crc="a4227c17" sha1="f7d53c4f8154719eb87c5fdf4bf2df015b1b48de" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="matemat" supported="no">
+		<description>Mathematics</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="778496">
+				<rom name="matemat (cpj mode).dsk" size="778496" crc="d3d992d9" sha1="0228952252768e6f1dc88e2f1265356e7be0004d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>
