@@ -7,16 +7,16 @@
 
 <!-- to load software in 16/48K mode you must use the following sequence at the prompt
 
-     "J" "shift+P" "shift+P" "enter"  (in non-MESS emulators this is often "ctrl+P")
+     "J" "shift+P" "shift+P" "enter"  (in non-MAME emulators this is often "ctrl+P")
 
      this will enter the command LOAD "" and execute it
 
-     You must then of course play the tape from the menu in MESS (you'll need to turn SCRLOCK off and hit TAB to get the MESS menu)
+     You must then of course play the tape from the menu in MAME (you'll need to turn SCRLOCK off and hit TAB to get the MAME menu)
 
 -->
 
 <!-- COMPATIBILITY
-     The MESS emulation at the time of writing isn't very good, the following emulators are used to determine how things should work
+     The MAME emulation at the time of writing isn't very good, the following emulators are used to determine how things should work
 
       EmuZWin (v2.7 release 2.8)         - Closed Source, runs some images (Gremlin 2 type*) which fail on the emulators below  - http://kolmck.net/apps/EmuZWin_Eng.htm
       Fuse (Free Unix Spectrum Emulator) - Free, High Compatibility can run some of the trickier images, Windows port available - http://fuse-emulator.sourceforge.net/
@@ -28,7 +28,7 @@
       Detect Loaders
       Accelerate Loaders
 
-     MESS doesn't have any accelerated loading so some games which require the tricks to be disabled in other emulators work in MESS without trickery, eg Xanthius
+     MAME doesn't have any accelerated loading so some games which require the tricks to be disabled in other emulators work in MAME without trickery, eg Xanthius
 
      http://newton.sunderland.ac.uk/~specfreak/Schemes/schemes.html is a rather outdated guide mentioning some of the custom loaders, and showing disassemblies of them.
 
