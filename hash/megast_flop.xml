@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<softwarelist name="megast_flop" description="Atari Mega ST disk images">
+
+	<software name="langmst" supported="no">
+		<description>Atari Mega ST Language Disk</description>
+		<year>19??</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="atari language disk mega st (19xx)(atari).st" size="368640" crc="a985888e" sha1="2aee73bcae8244ce83e792a7474363d0fa288fcb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>

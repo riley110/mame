@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<softwarelist name="tt_flop" description="Atari TT disk images">
+
+	<software name="ttdesk" supported="no">
+		<description>Atari Desktop for ST-TT Computer (Fra)</description>
+		<year>1990</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="atari desktop for st-tt computer (1990-06-19)(atari)(fr).st" size="368640" crc="8531c373" sha1="96826748353f53ff3757f386142c3021022ef748" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ttdeskg" cloneof="ttdesk" supported="no">
+		<description>Atari Desktop for ST-TT Computer? (Ger?)</description>
+		<year>1990?</year>
+		<publisher>Atari?</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="atari tt desktop for st (19xx)(-)[german readme].st" size="368640" crc="e38c3260" sha1="5c7987cba4e11b223ece00b8f068826548e0cab1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="langtt" supported="no">
+		<description>Atari TT Language Disk</description>
+		<year>19??</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari language disk tt (19xx)(atari).st" size="737280" crc="d0096551" sha1="238cb9569c1a963b2f13717707e21ee95ae0d05c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>

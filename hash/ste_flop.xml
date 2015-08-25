@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<softwarelist name="ste_flop" description="Atari STe disk images">
+
+	<software name="langste" supported="no">
+		<description>Atari STE Language Disk</description>
+		<year>19??</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="atari language disk ste (19xx)(atari).st" size="368640" crc="09e8afd1" sha1="8b72350e64adf3ac2fd9b2109f1e232968e4b539" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="langstef" cloneof="langste" supported="no">
+		<description>Atari STE Language Disk (Fra)</description>
+		<year>19??</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari language disk ste (19xx)(atari)(fr).st" size="737280" crc="a272a33b" sha1="645e1b211855f7df2b60fc670e12e6cfac7a31ad" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="langstefa" cloneof="langste" supported="no">
+		<description>Atari STE Language Disk (Fra, Alt)</description>
+		<year>19??</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari language disk ste (19xx)(atari)(fr)[a].st" size="737280" crc="03f95e14" sha1="e907bd49d1a70b52b03a5197c70b291e82c18081" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="avalon" supported="no">
+		<description>Avalon (Ger, v1.0, Cracked)</description>
+		<year>19??</year>
+		<publisher>&lt;bootleg (MCA)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="avalon v1.0 (19xx)(steinberg)(ste)(de)[cr mca].st" size="737280" crc="25a50874" sha1="1227f1ab54d8906e1744807d2dc9a2cfad6758cb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>
