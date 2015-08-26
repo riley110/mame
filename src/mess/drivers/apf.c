@@ -563,7 +563,9 @@ static MACHINE_CONFIG_DERIVED( apfimag, apfm1000 )
 
 	MCFG_FD1771_ADD("fdc", 1000000) // guess
 	MCFG_FLOPPY_DRIVE_ADD("fdc:0", apf_floppies, "525dd", floppy_image_device::default_floppy_formats)
+	MCFG_FLOPPY_DRIVE_SOUND(true)
 	MCFG_FLOPPY_DRIVE_ADD("fdc:1", apf_floppies, "525dd", floppy_image_device::default_floppy_formats)
+	MCFG_FLOPPY_DRIVE_SOUND(true)
 
 	MCFG_DEVICE_REMOVE("cart_list")
 	MCFG_SOFTWARE_LIST_ADD("cart_list", "apfimag_cart")
