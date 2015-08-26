@@ -1,90 +1,10 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<!-- NOTE: This list is here only to document available dumps and it's not used (yet) by MAME! -->
 <softwarelist name="pcx" description="Siemens PC-X floppy disks">
 
 <!-- SINIX disks to be looked at later -->
 
-	<software name="sinix10">
-		<description>SINIX (v1.0)</description>
-		<year>1985</year>
-		<publisher>Siemens</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="CES1 1.0c"/>
-			<dataarea name="flop" size="525775">
-				<rom name="ces1.td0" size="525775" crc="da289811" sha1="093131163138c4e91d50fede595de4bae53969e0" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="CES2 1.0c"/>
-			<dataarea name="flop" size="416700">
-				<rom name="ces2.td0" size="416700" crc="4f48fbbf" sha1="1105eef4de1d856e94379c0f77fe1c868f0d044b" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="HIT-BD-2 V1.0/PCX HIT1"/>
-			<dataarea name="flop" size="513241">
-				<rom name="hit1.td0" size="513241" crc="2aade2cd" sha1="193caac77435368ddb9cfbfc1e327e9fe2aa05b8" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_5_25">
-			<feature name="part_id" value="HIT-BD-2 V1.0/PCX HIT2"/>
-			<dataarea name="flop" size="174313">
-				<rom name="hit2.td0" size="174313" crc="73387727" sha1="b7104459d4b69127a92eaead640dedfa48172df3" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop5" interface="floppy_5_25">
-			<feature name="part_id" value="INFORMIX-D-B-2 V1.0/PC-x INFDE1"/>
-			<dataarea name="flop" size="561242">
-				<rom name="infde1.td0" size="561242" crc="065a849b" sha1="f7489c2133a5e14b82aee20bd77a403324bfcd5c" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop6" interface="floppy_5_25">
-			<feature name="part_id" value="INFORMIX-D-B-2 V1.0/PC-x INFDE2"/>
-			<dataarea name="flop" size="135114">
-				<rom name="infde2.td0" size="135114" crc="c3a206a6" sha1="6ab6c460a8eb4399528f0ffddb90f0808ded2307" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop7" interface="floppy_5_25">
-			<feature name="part_id" value="MULTIPAN-BD-2 V1.0/PC-X MP-BD"/>
-			<dataarea name="flop" size="189877">
-				<rom name="mp-bd.td0" size="189877" crc="f37a0b88" sha1="0465062b8f6a7eab6df43e6a15bf5cfca51977b1" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop8" interface="floppy_5_25">
-			<feature name="part_id" value="SINIX-B V1.0/PC-X SINIE0"/>
-			<dataarea name="flop" size="431605">
-				<rom name="sinie0.td0" size="431605" crc="0de50dcd" sha1="1a047ed67b2a7c5eb6d8cfe1af5464a60723f111" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop9" interface="floppy_5_25">
-			<feature name="part_id" value="SINIX-B V1.0/PC-X SINIX1"/>
-			<dataarea name="flop" size="549399">
-				<rom name="sinix1.td0" size="549399" crc="65e193a6" sha1="a7c90eb9f6418dc65008a5d469abf03befa3f363" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop10" interface="floppy_5_25">
-			<feature name="part_id" value="SINIX-B V1.0/PC-X SINIX2"/>
-			<dataarea name="flop" size="473847">
-				<rom name="sinix2.td0" size="473847" crc="8b4b9906" sha1="62b3937f9e6ce3ca0e865680d31fb2a842062c0f" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop11" interface="floppy_5_25">
-			<feature name="part_id" value="SINIX-B V1.0/PC-X SINIX3"/>
-			<dataarea name="flop" size="564646">
-				<rom name="sinix3.td0" size="564646" crc="4f14dd1a" sha1="96f119a81191ba9db32f0bbc95e4ff77d41ffe85" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop12" interface="floppy_5_25">
-			<feature name="part_id" value="SINIX-B V1.0/PC-X SINIX4"/>
-			<dataarea name="flop" size="229071">
-				<rom name="sinix4.td0" size="229071" crc="cf6bb2ad" sha1="e95df5a2825824afbb574a14dee3958ab83f14ff" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="sinix12">
+	<software name="sinix" supported="no">
 		<description>SINIX (v1.2)</description>
 		<year>1987</year>
 		<publisher>Siemens</publisher>
@@ -163,7 +83,86 @@
 		</part>
 	</software>
 
-	<software name="ces">
+	<software name="sinix10" cloneof="sinix" supported="no">
+		<description>SINIX (v1.0)</description>
+		<year>1985</year>
+		<publisher>Siemens</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="CES1 1.0c"/>
+			<dataarea name="flop" size="525775">
+				<rom name="ces1.td0" size="525775" crc="da289811" sha1="093131163138c4e91d50fede595de4bae53969e0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="CES2 1.0c"/>
+			<dataarea name="flop" size="416700">
+				<rom name="ces2.td0" size="416700" crc="4f48fbbf" sha1="1105eef4de1d856e94379c0f77fe1c868f0d044b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="HIT-BD-2 V1.0/PCX HIT1"/>
+			<dataarea name="flop" size="513241">
+				<rom name="hit1.td0" size="513241" crc="2aade2cd" sha1="193caac77435368ddb9cfbfc1e327e9fe2aa05b8" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="HIT-BD-2 V1.0/PCX HIT2"/>
+			<dataarea name="flop" size="174313">
+				<rom name="hit2.td0" size="174313" crc="73387727" sha1="b7104459d4b69127a92eaead640dedfa48172df3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<feature name="part_id" value="INFORMIX-D-B-2 V1.0/PC-x INFDE1"/>
+			<dataarea name="flop" size="561242">
+				<rom name="infde1.td0" size="561242" crc="065a849b" sha1="f7489c2133a5e14b82aee20bd77a403324bfcd5c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_5_25">
+			<feature name="part_id" value="INFORMIX-D-B-2 V1.0/PC-x INFDE2"/>
+			<dataarea name="flop" size="135114">
+				<rom name="infde2.td0" size="135114" crc="c3a206a6" sha1="6ab6c460a8eb4399528f0ffddb90f0808ded2307" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_5_25">
+			<feature name="part_id" value="MULTIPAN-BD-2 V1.0/PC-X MP-BD"/>
+			<dataarea name="flop" size="189877">
+				<rom name="mp-bd.td0" size="189877" crc="f37a0b88" sha1="0465062b8f6a7eab6df43e6a15bf5cfca51977b1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop8" interface="floppy_5_25">
+			<feature name="part_id" value="SINIX-B V1.0/PC-X SINIE0"/>
+			<dataarea name="flop" size="431605">
+				<rom name="sinie0.td0" size="431605" crc="0de50dcd" sha1="1a047ed67b2a7c5eb6d8cfe1af5464a60723f111" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop9" interface="floppy_5_25">
+			<feature name="part_id" value="SINIX-B V1.0/PC-X SINIX1"/>
+			<dataarea name="flop" size="549399">
+				<rom name="sinix1.td0" size="549399" crc="65e193a6" sha1="a7c90eb9f6418dc65008a5d469abf03befa3f363" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop10" interface="floppy_5_25">
+			<feature name="part_id" value="SINIX-B V1.0/PC-X SINIX2"/>
+			<dataarea name="flop" size="473847">
+				<rom name="sinix2.td0" size="473847" crc="8b4b9906" sha1="62b3937f9e6ce3ca0e865680d31fb2a842062c0f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop11" interface="floppy_5_25">
+			<feature name="part_id" value="SINIX-B V1.0/PC-X SINIX3"/>
+			<dataarea name="flop" size="564646">
+				<rom name="sinix3.td0" size="564646" crc="4f14dd1a" sha1="96f119a81191ba9db32f0bbc95e4ff77d41ffe85" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop12" interface="floppy_5_25">
+			<feature name="part_id" value="SINIX-B V1.0/PC-X SINIX4"/>
+			<dataarea name="flop" size="229071">
+				<rom name="sinix4.td0" size="229071" crc="cf6bb2ad" sha1="e95df5a2825824afbb574a14dee3958ab83f14ff" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ces" supported="no">
 		<description>CES (v1.0B)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -183,7 +182,7 @@
 		</part>
 	</software>
 
-	<software name="games">
+	<software name="games" supported="no">
 		<description>Games</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -197,7 +196,7 @@
 		</part>
 	</software>
 
-	<software name="goodies">
+	<software name="goodies" supported="no">
 		<description>Goodies</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -211,7 +210,7 @@
 		</part>
 	</software>
 
-	<software name="msword">
+	<software name="msword" supported="no">
 		<description>MS-WORD</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -225,7 +224,7 @@
 		</part>
 	</software>
 
-	<software name="oldgood">
+	<software name="oldgood" supported="no">
 		<description>Oldies but Goodies</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -245,7 +244,7 @@
 		</part>
 	</software>
 
-	<software name="sshb">
+	<software name="sshb" supported="no">
 		<description>SSHB Beispielprogramme</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -259,7 +258,7 @@
 		</part>
 	</software>
 
-	<software name="standaln">
+	<software name="standaln" supported="no">
 		<description>SINIX Standalone Utilities</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -273,7 +272,8 @@
 		</part>
 	</software>
 
-	<software name="uucp">
+	<!-- Bad dump or empty disk? -->
+	<software name="uucp" supported="no">
 		<description>UUCP (v1.0B)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -287,7 +287,7 @@
 		</part>
 	</software>
 
-	<software name="uucpback">
+	<software name="uucpback" supported="no">
 		<description>Backup UUCP</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>

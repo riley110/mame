@@ -704,6 +704,9 @@ MACHINE_CONFIG_DERIVED(pcx, pcd)
 	MCFG_GENERIC_TERMINAL_KEYBOARD_CB(WRITE8(pcd_state, term_key_w))
 
 	MCFG_DEVICE_REMOVE("graphics")
+
+	MCFG_DEVICE_REMOVE("flop_list")
+	MCFG_SOFTWARE_LIST_ADD("flop_list", "pcx")
 MACHINE_CONFIG_END
 
 //**************************************************************************

@@ -346,6 +346,8 @@ static MACHINE_CONFIG_START(hp_ipc, hp_ipc_state)
 	/* basic machine hardware */
 	MCFG_CPU_ADD("maincpu", M68000, 15920000 / 2)
 	MCFG_CPU_PROGRAM_MAP(hp_ipc_mem)
+
+	MCFG_SOFTWARE_LIST_ADD("flop_list", "hp_ipc")
 MACHINE_CONFIG_END
 
 
