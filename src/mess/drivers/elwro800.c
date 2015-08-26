@@ -627,4 +627,4 @@ ROM_END
 /* Driver */
 
 /*    YEAR  NAME       PARENT  COMPAT   MACHINE    INPUT                    INIT COMPANY  FULLNAME      FLAGS */
-COMP( 1986, elwro800,  0,      0,       elwro800,  elwro800, driver_device, 0,   "Elwro", "800 Junior", GAME_NOT_WORKING ) //MACHINE_NOT_WORKING
+COMP( 1986, elwro800,  0,      0,       elwro800,  elwro800, driver_device, 0,   "Elwro", "800 Junior", MACHINE_NOT_WORKING )
