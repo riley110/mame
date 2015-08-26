@@ -2245,7 +2245,7 @@ static MACHINE_CONFIG_START( megast, megast_state )
 
 	// software lists
 	MCFG_SOFTWARE_LIST_ADD("mst_flop_list", "megast_flop")
-	MCFG_SOFTWARE_LIST_ADD("flop_list", "st_flop")
+	MCFG_SOFTWARE_LIST_ADD("st_flop_list", "st_flop")
 MACHINE_CONFIG_END
 
 
