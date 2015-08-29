@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!-- NOTE: This list is here only to document available dumps and it's not used (yet) by MAME! -->
+<softwarelist name="amiga_cd" description="Commodore Amiga CD-ROMs">
+
+	<!-- Version 3.5 -->
+
+	<software name="amigos35">
+		<description>AmigaOS 3.5</description>
+		<year>1999</year>
+		<publisher>Haage &amp; Partner</publisher>
+		<part name="disc" interface="cdrom">
+			<diskarea name="disc">
+				<disk name="amigaos35" sha1="6dcf1e5821717128ac2e763064f1ef31dee3ce8c"/>
+			</diskarea>
+		</part>
+	</software>
+
+</softwarelist>

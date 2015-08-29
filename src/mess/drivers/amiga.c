@@ -1356,9 +1356,6 @@ static MACHINE_CONFIG_START( amiga_base, amiga_state )
 	MCFG_AMIGA_KEYBOARD_KRST_CALLBACK(WRITELINE(amiga_state, kbreset_w))
 
 	// software
-	MCFG_SOFTWARE_LIST_ADD("wb_list", "amiga_workbench")
-	MCFG_SOFTWARE_LIST_ADD("hardware_list", "amiga_hardware")
-	MCFG_SOFTWARE_LIST_ADD("apps_list", "amiga_apps")
 	MCFG_SOFTWARE_LIST_ADD("ocs_list", "amigaocs_flop")
 	MCFG_SOFTWARE_LIST_ADD("misc_list", "amiga_flop")
 MACHINE_CONFIG_END
@@ -1529,12 +1526,9 @@ static MACHINE_CONFIG_DERIVED_CLASS( cdtv, amiga_base, cdtv_state )
 	MCFG_CR511B_DRQ_HANDLER(DEVWRITELINE("u36", dmac_device, xdreq_w))
 	MCFG_CR511B_DTEN_HANDLER(DEVWRITELINE("u36", dmac_device, xdreq_w))
 
-	MCFG_DEVICE_REMOVE("wb_list")
-	MCFG_DEVICE_REMOVE("hardware_list")
-	MCFG_DEVICE_REMOVE("apps_list")
 	MCFG_DEVICE_REMOVE("ocs_list")
 	MCFG_DEVICE_REMOVE("misc_list")
-	MCFG_SOFTWARE_LIST_ADD("cd_list", "cdtv")
+	MCFG_SOFTWARE_LIST_ADD("cdtv_list", "cdtv")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED_CLASS( cdtvn, cdtv, cdtv_state )
@@ -1832,9 +1826,6 @@ static MACHINE_CONFIG_DERIVED_CLASS( cd32, amiga_base, cd32_state )
 
 	MCFG_DEVICE_REMOVE("kbd")
 
-	MCFG_DEVICE_REMOVE("wb_list")
-	MCFG_DEVICE_REMOVE("hardware_list")
-	MCFG_DEVICE_REMOVE("apps_list")
 	MCFG_DEVICE_REMOVE("ocs_list")
 	MCFG_DEVICE_REMOVE("misc_list")
 	MCFG_SOFTWARE_LIST_ADD("cd32_list", "cd32")
