@@ -4465,12 +4465,12 @@ more investigation needed...
 		<part name="cart" interface="snes_cart">
 			<feature name="slot" value="hirom" />
 			<dataarea name="rom" size="3145728">
-				<rom name="boogerman ver13 1.u1" size="524288" crc="601cbe5f" sha1="fe250a8acf5fbd366e15039cbb11be8c59883324"                 offset="0x000000" />
-				<rom name="2.u2"                 size="524288"                                                                status="nodump" offset="0x080000" />
-				<rom name="3.u3"                 size="524288"                                                                status="nodump" offset="0x100000" />
-				<rom name="4.u4"                 size="524288"                                                                status="nodump" offset="0x180000" />
-				<rom name="5.u4"                 size="524288"                                                                status="nodump" offset="0x200000" />
-				<rom name="6.u6"                 size="524288"                                                                status="nodump" offset="0x280000" />
+				<rom name="boogerman ver13 1.u1" size="524288" crc="601cbe5f" sha1="fe250a8acf5fbd366e15039cbb11be8c59883324" offset="0x000000"                 />
+				<rom name="2.u2"                 size="524288"                                                                offset="0x080000" status="nodump" />
+				<rom name="3.u3"                 size="524288"                                                                offset="0x100000" status="nodump" />
+				<rom name="4.u4"                 size="524288"                                                                offset="0x180000" status="nodump" />
+				<rom name="5.u4"                 size="524288"                                                                offset="0x200000" status="nodump" />
+				<rom name="6.u6"                 size="524288"                                                                offset="0x280000" status="nodump" />
 			</dataarea>
 		</part>
 	</software>

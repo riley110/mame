@@ -78,7 +78,7 @@
 		<part name="flop3" interface="floppy_3_5">
 			<feature name="part_id" value="Workbench 1.1" />
 			<dataarea name="flop" size="901120">
-				<rom name="327245-02_workbench.adf" size="901120" crc="0be0603c" status="nodump" offset="0"/>
+				<rom name="327245-02_workbench.adf" size="901120" crc="0be0603c" offset="0" status="nodump"/>
 			</dataarea>
 		</part>
 		<!-- Kaleidoscope (316160-01, 317489-01)? -->
@@ -97,7 +97,7 @@
 		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="Workbench 1.1" />
 			<dataarea name="flop" size="901120">
-				<rom name="317481-02_workbench.adf" size="901120" status="nodump" offset="0"/>
+				<rom name="317481-02_workbench.adf" size="901120" offset="0" status="nodump"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
@@ -118,7 +118,7 @@
 		<part name="flop1" interface="floppy_3_5">
 			<feature name="part_id" value="Workbench 1.2" />
 			<dataarea name="flop" size="901120">
-				<rom name="317481-03_workbench.adf" size="901120" status="nodump" offset="0"/>
+				<rom name="317481-03_workbench.adf" size="901120" offset="0" status="nodump"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
@@ -140,7 +140,7 @@
 		<part name="flop1" interface="floppy_3_5">
 			<feature name="part_id" value="Workbench 1.3" />
 			<dataarea name="flop" size="901120">
-				<rom name="317746-01_workbench.adf" size="901120" status="nodump" offset="0"/>
+				<rom name="317746-01_workbench.adf" size="901120" offset="0" status="nodump"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
@@ -152,7 +152,7 @@
 		<part name="flop3" interface="floppy_3_5">
 			<feature name="part_id" value="Extras 1.3" />
 			<dataarea name="flop" size="901120">
-				<rom name="317748-01_extras.adf" size="901120" status="nodump" offset="0"/>
+				<rom name="317748-01_extras.adf" size="901120" offset="0" status="nodump"/>
 			</dataarea>
 		</part>
 	</software>

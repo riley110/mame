@@ -1162,7 +1162,7 @@
 		</part>
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
-				<rom name="cie utilities.d64" size="174848" status="nodump" offset="0" />
+				<rom name="cie utilities.d64" size="174848" offset="0" status="nodump" />
 			</dataarea>
 		</part>
 	</software>
@@ -6615,7 +6615,7 @@
 			<feature name="exrom" value="1" />
 
 			<dataarea name="rom" size="0x800">
-				<rom name="turbomst.bin" size="0x8000" status="nodump" offset="0x0000" />
+				<rom name="turbomst.bin" size="0x8000" offset="0x0000" status="nodump" />
 			</dataarea>
 		</part>
 
@@ -6726,7 +6726,7 @@
 			<feature name="exrom" value="1" />
 
 			<dataarea name="roml" size="0x2000">
-				<rom name="moog song producer" size="0x2000" status="nodump" offset="0" />
+				<rom name="moog song producer" size="0x2000" offset="0" status="nodump" />
 			</dataarea>
 		</part>
 
@@ -6766,7 +6766,7 @@
 			<feature name="exrom" value="0" />
 
 			<dataarea name="roml" size="0x2000">
-				<rom name="u7" size="0x2000" status="nodump" offset="0" />
+				<rom name="u7" size="0x2000" offset="0" status="nodump" />
 			</dataarea>
 		</part>
 
@@ -6841,7 +6841,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="174848">
-				<rom name="vizastar 64 xl8.d64" status="nodump" size="174848" offset="0" />
+				<rom name="vizastar 64 xl8.d64" size="174848" offset="0" status="nodump" />
 			</dataarea>
 		</part>
 	</software>

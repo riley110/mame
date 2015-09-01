@@ -227,7 +227,7 @@
 		<part name="flop1" interface="floppy_3_5">
 			<feature name="part_id" value="A590 Setup Disk (Seagate Harddisk)" />
 			<dataarea name="flop" size="901120">
-				<rom name="317734-04_a590_seagate.adf" size="901120" status="nodump" offset="0"/>
+				<rom name="317734-04_a590_seagate.adf" size="901120" offset="0" status="nodump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -329,7 +329,7 @@
 		<part name="flop1" interface="floppy_3_5">
 			<feature name="part_id" value="Workbench 1.2" />
 			<dataarea name="flop" size="901120">
-				<rom name="317608-03_workbench.adf" size="901120" status="nodump" offset="0"/>
+				<rom name="317608-03_workbench.adf" size="901120" offset="0" status="nodump"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
@@ -348,13 +348,13 @@
 		<part name="flop1" interface="floppy_3_5">
 			<feature name="part_id" value="Workbench 1.2 (De)" />
 			<dataarea name="flop" size="901120">
-				<rom name="317610-03_workbench.adf" size="901120" status="nodump" offset="0"/>
+				<rom name="317610-03_workbench.adf" size="901120" offset="0" status="nodump"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="Extras 1.2 (De)" />
 			<dataarea name="flop" size="901120">
-				<rom name="380706-10_extras.adf" size="901120" status="nodump" offset="0"/>
+				<rom name="380706-10_extras.adf" size="901120" offset="0" status="nodump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -368,7 +368,7 @@
 		<part name="flop1" interface="floppy_3_5">
 			<feature name="part_id" value="Workbench 1.3" />
 			<dataarea name="flop" size="901120">
-				<rom name="317787-01_workbench.adf" size="901120" status="nodump" offset="0"/>
+				<rom name="317787-01_workbench.adf" size="901120" offset="0" status="nodump"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
@@ -413,7 +413,7 @@
 		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="Workbench 1.3 (De)" />
 			<dataarea name="flop" size="901120">
-				<rom name="317791-01_workbench.adf" size="901120" status="nodump" offset="0"/>
+				<rom name="317791-01_workbench.adf" size="901120" offset="0" status="nodump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -425,7 +425,7 @@
 		<part name="flop1" interface="floppy_3_5">
 			<feature name="part_id" value="Workbench 1.3.2" />
 			<dataarea name="flop" size="901120">
-				<rom name="317746-03_workbench.adf" size="901120" status="nodump" offset="0"/>
+				<rom name="317746-03_workbench.adf" size="901120" offset="0" status="nodump"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
@@ -446,7 +446,7 @@
 			<!-- Probably good dump -->
 			<feature name="part_id" value="Workbench 1.3.2 (UK)" />
 			<dataarea name="flop" size="901120">
-				<rom name="317789-03_workbench.adf" size="901120" crc="c5692f06" status="nodump" offset="0"/>
+				<rom name="317789-03_workbench.adf" size="901120" crc="c5692f06" offset="0" status="nodump"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
@@ -506,7 +506,7 @@
 		<part name="flop1" interface="floppy_3_5">
 			<feature name="part_id" value="Workbench 1.3.3 (UK)" />
 			<dataarea name="flop" size="901120">
-				<rom name="317789-04_workbench.adf" size="901120" status="nodump" offset="0"/>
+				<rom name="317789-04_workbench.adf" size="901120" offset="0" status="nodump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -518,13 +518,13 @@
 		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="Extras 1.3.3 (De)" />
 			<dataarea name="flop" size="901120">
-				<rom name="317790-02_extras.adf" size="901120" status="nodump" offset="0"/>
+				<rom name="317790-02_extras.adf" size="901120" offset="0" status="nodump"/>
 			</dataarea>
 		</part>
 		<part name="flop1" interface="floppy_3_5">
 			<feature name="part_id" value="Workbench 1.3.3 (De)" />
 			<dataarea name="flop" size="901120">
-				<rom name="317791-04_workbench.adf" size="901120" status="nodump" offset="0"/>
+				<rom name="317791-04_workbench.adf" size="901120" offset="0" status="nodump"/>
 			</dataarea>
 		</part>
 	</software>
@@ -539,7 +539,7 @@
 		<part name="flop1" interface="floppy_3_5">
 			<feature name="part_id" value="Workbench 1.3.3 (US)" />
 			<dataarea name="flop" size="901120">
-				<rom name="317746-04_workbench.adf" size="901120" crc="bf299bca" sha1="8bac53a89cd1fe5a7762de9bd61a1592f10af2df" status="baddump" offset="0"/>
+				<rom name="317746-04_workbench.adf" size="901120" crc="bf299bca" sha1="8bac53a89cd1fe5a7762de9bd61a1592f10af2df" offset="0" status="baddump"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
@@ -776,13 +776,13 @@
 		<part name="flop1" interface="floppy_3_5">
 			<feature name="part_id" value="Install 3.1" />
 			<dataarea name="flop" size="901120">
-				<rom name="370299-97_install.adf" size="901120" status="nodump" offset="0"/>
+				<rom name="370299-97_install.adf" size="901120" offset="0" status="nodump"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
 			<feature name="part_id" value="Workbench 3.1" />
 			<dataarea name="flop" size="901120">
-				<rom name="370300-97_workbench.adf" size="901120" status="nodump" offset="0"/>
+				<rom name="370300-97_workbench.adf" size="901120" offset="0" status="nodump"/>
 			</dataarea>
 		</part>
 		<part name="flop3" interface="floppy_3_5">
@@ -795,7 +795,7 @@
 		<part name="flop4" interface="floppy_3_5">
 			<feature name="part_id" value="Extras 3.1" />
 			<dataarea name="flop" size="901120">
-				<rom name="370301-97_extras.adf" size="901120" status="nodump" offset="0"/>
+				<rom name="370301-97_extras.adf" size="901120" offset="0" status="nodump"/>
 			</dataarea>
 		</part>
 		<part name="flop5" interface="floppy_3_5">

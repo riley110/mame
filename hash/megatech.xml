@@ -79,7 +79,7 @@ It is not intended to replace the primary MAME launch system!
 		<part name="cart" interface="megatech_cart">
 			<feature name="pcb_type" value="sms" />
 			<dataarea name="rom" size="0x400000">
-				<rom name="mp10747f.ic1"     size="0x020000" crc="9cf53703" sha1="c6b4d1de56bd5bf067ec7fc80449c07686d01337" status="baddump" offset="0x000000"/>
+				<rom name="mp10747f.ic1"     size="0x020000" crc="9cf53703" sha1="c6b4d1de56bd5bf067ec7fc80449c07686d01337" offset="0x000000" status="baddump"/>
 				<rom name="epr-12368-05.ic2" size="0x008000" crc="bab91fcc" sha1="a160c9d34b253e93ac54fdcef33f95f44d8fa90c" offset="0x300000" loadflag="load16_byte"/>
 			</dataarea>
 		</part>

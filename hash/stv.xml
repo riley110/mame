@@ -683,7 +683,7 @@ All titles that don't support it have a supported="no" flag.
 
 		<part name="cart" interface="stv_cart">
 			<dataarea name="rom" size="0x3000000">
-				<rom name="ic22" size="0x200000" crc="f88347aa" sha1="3e9ca105edbd6ce11ea4194eb1733785e87f92b2" status="baddump" offset="0x200000" loadflag="load16_word_swap"/>
+				<rom name="ic22" size="0x200000" crc="f88347aa" sha1="3e9ca105edbd6ce11ea4194eb1733785e87f92b2" offset="0x200000" status="baddump" loadflag="load16_word_swap"/>
 				<rom name="ic24" size="0x200000" crc="b5871198" sha1="10d187eebcca5d70c5ae10d1a144685a96491126" offset="0x400000" loadflag="load16_word_swap"/>
 				<rom name="ic26" size="0x200000" crc="d97034ed" sha1="a7a0f659eefd539b2a1fd70ef394eed30ea54c0c" offset="0x600000" loadflag="load16_word_swap"/>
 				<rom name="ic28" size="0x200000" crc="f1421506" sha1="c384b695338144e5f051134bda73b059b678a7df" offset="0x800000" loadflag="load16_word_swap"/>
