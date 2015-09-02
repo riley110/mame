@@ -199,6 +199,18 @@
 		</part>
 	</software>
 
+	<software name="sdanim7">
+		<description>SDANIM7</description>
+		<year>2015</year>
+		<publisher>DCsoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="sdanim7_mo5.fd" size="327680" crc="2076a055" sha1="171647f7a5c62ddd53332f66c78327c6c9d67d06" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- can also be found in to_flop.xml -->
 	<software name="sdtrans">
 		<description>SDTRANSFERT - Transferts PC-Thomson par carte SD</description>

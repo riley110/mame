@@ -1550,6 +1550,30 @@
 		</part>
 	</software>
 
+	<software name="sdanim7">
+		<description>SDANIM7 (TO8)</description>
+		<year>2015</year>
+		<publisher>DCsoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="sdanim7_to8.fd" size="327680" crc="05c43f8f" sha1="d5cd9bcb58e52dbbb3a57d4932b68d7bfe0f5c9c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sdanim7_to7" cloneof="sdanim7">
+		<description>SDANIM7 (TO7)</description>
+		<year>2015</year>
+		<publisher>DCsoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="sdanim7_to7.fd" size="327680" crc="6bfad73d" sha1="cfe72a59688dbc79e3598b56febf6e935a81e761" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- can also be found in mo5_flop.xml -->
 	<software name="sdtrans">
 		<description>SDTRANSFERT - Transferts PC-Thomson par carte SD</description>
