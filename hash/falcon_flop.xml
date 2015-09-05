@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<softwarelist name="falcon_flop" description="Atari Falcon disk images">
+
+<!-- TOSEC - Applications [ST] -->
+
+	<software name="backward" supported="no">
+		<description>Backward III (v1.00)</description>
+		<year>1995</year>
+		<publisher>C. Dupuydauby</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="backward iii v1.00 (1995-09-06)(c. dupuydauby)[falcon only].st" size="737280" crc="a55e4143" sha1="a730cf40e0651b2d668a581ce434dba9ac33704d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="backwarda" cloneof="backward" supported="no">
+		<description>Backward III (v1.00, Alt)</description>
+		<year>1995</year>
+		<publisher>C. Dupuydauby</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="backward iii v1.00 (1995-09-06)(c. dupuydauby)[a][falcon only].st" size="368640" crc="31c3f80a" sha1="fd1299841098b41446e256a0ad029e163fb00d72" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="blowup" supported="no">
+		<description>BlowUP 30 (Cracked)</description>
+		<year>19??</year>
+		<publisher>&lt;bootleg (Trash)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="blowup 30 (19xx)(acher, georg - eberl, michael)[cr trash][falcon only].st" size="737280" crc="974d8048" sha1="5e319a82c58fd259e3057b345dc813ce61022f65" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="clarity" supported="no">
+		<description>Clarity (Cracked)</description>
+		<year>19??</year>
+		<publisher>&lt;bootleg (Elite)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="1802240">
+				<rom name="clarity (19xx)(-)[cr elite][falcon only].st" size="1802240" crc="74f7f102" sha1="b20e0f730d574739b80aac79b92abf22d3f68276" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>

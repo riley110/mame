@@ -52,4 +52,78 @@
 		</part>
 	</software>
 
+	<software name="cab" supported="no">
+		<description>CAB (v1.0a)</description>
+		<year>1995</year>
+		<publisher>Alexander Clauss</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="cab v1.0a (1995-12)(clauss, alexander)(ste)(fw).st" size="737280" crc="efdf7af5" sha1="7ebede5f47b2a28ad3f6f4fc5c968e173c27387f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="caba" cloneof="cab" supported="no">
+		<description>CAB (v1.0a, Alt)</description>
+		<year>1995</year>
+		<publisher>Alexander Clauss</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="cab v1.0a (1995-12)(clauss, alexander)(ste)(fw)[a].st" size="737280" crc="1cd0ed5e" sha1="606884b6043733a84f52eca426df23782e49463f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Assuming these two below are STe only also, even though they aren't marked as such in TOSEC -->
+
+	<software name="cab20" cloneof="cab" supported="no">
+		<description>CAB (Ger, v2.0)</description>
+		<year>19??</year>
+		<publisher>Alexander Clauss?</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="1474560">
+				<rom name="cab v2.0 (19xx)(-)(de).st" size="1474560" crc="3bf94262" sha1="78b5fe6e5c48cd1929b3c111323b8541af616a0d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cab27" cloneof="cab" supported="no">
+		<description>CAB (Ger, v2.7)</description>
+		<year>19??</year>
+		<publisher>Alexander Clauss?</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="1474560">
+				<rom name="cab v2.7 (19xx)(-)(de).st" size="1474560" crc="34eba45b" sha1="208248cf1887a2a0244a22071b78aac6917423b4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cdplayer" supported="no">
+		<description>CD-Player STE</description>
+		<year>1990</year>
+		<publisher>Light</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="934912">
+				<rom name="cd-player ste (1990)(light).st" size="934912" crc="34fa47e4" sha1="fdd4d960d2dabb5797ddfaadd60547438967992f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="compila" supported="no">
+		<description>Compila</description>
+		<year>2002</year>
+		<publisher>MJJ-Prod</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="compila (2002-09-24)(mjj-prod)(ste).st" size="839680" crc="2904a853" sha1="92ccabbe56cfb2e78488bce305405e72c6ec2c06" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 </softwarelist>

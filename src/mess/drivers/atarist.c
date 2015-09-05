@@ -2467,7 +2467,7 @@ MACHINE_CONFIG_END
 //-------------------------------------------------
 
 static MACHINE_CONFIG_DERIVED( falcon, ste )
-	//MCFG_SOFTWARE_LIST_ADD("falc_flop_list", "falcon_flop")
+	MCFG_SOFTWARE_LIST_ADD("falc_flop_list", "falcon_flop")
 MACHINE_CONFIG_END
 
 
@@ -2476,7 +2476,7 @@ MACHINE_CONFIG_END
 //-------------------------------------------------
 
 static MACHINE_CONFIG_DERIVED( falcon40, ste )
-	//MCFG_SOFTWARE_LIST_ADD("falc_flop_list", "falcon_flop")
+	MCFG_SOFTWARE_LIST_ADD("falc_flop_list", "falcon_flop")
 MACHINE_CONFIG_END
 
 
