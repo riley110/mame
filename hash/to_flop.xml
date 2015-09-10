@@ -1574,6 +1574,30 @@
 		</part>
 	</software>
 
+	<software name="sdplay44">
+		<description>SDPLAY44 (TO8)</description>
+		<year>2015</year>
+		<publisher>DCsoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="sdplay44_to8.fd" size="327680" crc="f0cfa058" sha1="9ab9b37ed742f7a15dec1c7eb9ffa6674f878259" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sdplay44_to7" cloneof="sdplay44">
+		<description>SDPLAY44 (TO7)</description>
+		<year>2015</year>
+		<publisher>DCsoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="sdplay44_to7.fd" size="327680" crc="81c05ca2" sha1="186c0a1196eb944369de7e26085b827a71875ad7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- can also be found in mo5_flop.xml -->
 	<software name="sdtrans">
 		<description>SDTRANSFERT - Transferts PC-Thomson par carte SD</description>

@@ -211,6 +211,18 @@
 		</part>
 	</software>
 
+	<software name="sdplay44">
+		<description>SDPLAY44</description>
+		<year>2015</year>
+		<publisher>DCsoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="sdplay44_mo5.fd" size="327680" crc="fd25a97b" sha1="8b5a350ef53f759c0e4e3d20835a0ac98d82c663" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- can also be found in to_flop.xml -->
 	<software name="sdtrans">
 		<description>SDTRANSFERT - Transferts PC-Thomson par carte SD</description>
