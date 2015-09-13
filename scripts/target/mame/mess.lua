@@ -561,6 +561,7 @@ MACHINES["CORVUSHD"] = true
 MACHINES["WOZFDC"] = true
 MACHINES["DIABLO_HD"] = true
 MACHINES["TMS1024"] = true
+MACHINES["NSC810"] = true
 
 --------------------------------------------------
 -- specify available bus cores
@@ -762,6 +763,7 @@ function linkProjects_mame_mess(_target, _subtarget)
 		"mit",
 		"mits",
 		"mitsubishi",
+		"mizar",
 		"morrow",
 		"mos",
 		"motorola",
@@ -880,21 +882,16 @@ function createMESSProjects(_target, _subtarget, _name)
 	includedirs {
 		MAME_DIR .. "src/osd",
 		MAME_DIR .. "src/emu",
+		MAME_DIR .. "src/devices",
 		MAME_DIR .. "src/mess",
 		MAME_DIR .. "src/mame",
 		MAME_DIR .. "src/lib",
 		MAME_DIR .. "src/lib/util",
-	MAME_DIR .. "src/emu/netlist",
+		MAME_DIR .. "src/lib/netlist",
 		MAME_DIR .. "3rdparty",
 		GEN_DIR  .. "mess/layout",
 		GEN_DIR  .. "mame/layout",
-		MAME_DIR .. "src/emu/cpu/m68000",
 	}
-	if _OPTIONS["with-bundled-zlib"] then
-		includedirs {
-			MAME_DIR .. "3rdparty/zlib",
-		}
-	end
 end
 
 function createProjects_mame_mess(_target, _subtarget)
@@ -1232,9 +1229,10 @@ files {
 }
 
 createMESSProjects(_target, _subtarget, "canon")
-files {
-	MAME_DIR .. "src/mess/drivers/cat.c",
-	MAME_DIR .. "src/mess/drivers/x07.c",
+files {             
+	MAME_DIR .. "src/mess/drivers/cat.c",       
+	MAME_DIR .. "src/mess/drivers/x07.c",       
+	MAME_DIR .. "src/mess/drivers/canon_s80.c",
 }
 
 createMESSProjects(_target, _subtarget, "cantab")
@@ -1442,6 +1440,7 @@ files {
 	MAME_DIR .. "src/mess/drivers/bk.c",
 	MAME_DIR .. "src/mess/machine/bk.c",
 	MAME_DIR .. "src/mess/video/bk.c",
+	MAME_DIR .. "src/mess/drivers/dvk_kcgd.c",
 	MAME_DIR .. "src/mess/drivers/dvk_ksm.c",
 	MAME_DIR .. "src/mess/machine/ms7004.c",
 	MAME_DIR .. "src/mess/drivers/mk85.c",
@@ -1792,6 +1791,11 @@ files {
 	MAME_DIR .. "src/mess/drivers/hh_melps4.c",
 	MAME_DIR .. "src/mess/drivers/multi8.c",
 	MAME_DIR .. "src/mess/drivers/multi16.c",
+}
+
+createMESSProjects(_target, _subtarget, "mizar")
+files {          
+	MAME_DIR .. "src/mess/drivers/mzr8105.c",  
 }
 
 createMESSProjects(_target, _subtarget, "morrow")
@@ -2203,6 +2207,7 @@ createMESSProjects(_target, _subtarget, "siemens")
 files {
 	MAME_DIR .. "src/mess/drivers/pcd.c",
 	MAME_DIR .. "src/mess/machine/pcd_kbd.c",
+	MAME_DIR .. "src/mess/video/pcd.c",
 }
 
 createMESSProjects(_target, _subtarget, "slicer")
@@ -2644,8 +2649,6 @@ files {
 	MAME_DIR .. "src/mess/drivers/hpz80unk.c",
 	MAME_DIR .. "src/mess/drivers/ht68k.c",
 	MAME_DIR .. "src/mess/drivers/hunter2.c",
-	MAME_DIR .. "src/emu/machine/nsc810.c",
-	MAME_DIR .. "src/emu/machine/nsc810.h",
 	MAME_DIR .. "src/mess/drivers/i7000.c",
 	MAME_DIR .. "src/mess/drivers/ibm6580.c",
 	MAME_DIR .. "src/mess/drivers/icatel.c",

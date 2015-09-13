@@ -10,7 +10,7 @@ import sys
 
 files_included = ['src/emu/emu.h']
 
-include_dirs = ['src/emu/', 'src/mame/', 'src/mess/']
+include_dirs = ['src/emu/', 'src/devices/', 'src/mame/', 'src/mess/']
 
 mappings = dict()
 
@@ -151,7 +151,7 @@ def parse_file(root, srcfile, folder):
                fullname = file_exists(root, name, folder,include_dirs)
                if fullname in files_included:
                    continue
-               if "src/emu/netlist/" in fullname:
+               if "src/lib/netlist/" in fullname:
                    continue
                if fullname!='':
                    if fullname in mappings.keys():
@@ -287,6 +287,7 @@ if sys.argv[3]=='target':
     sys.stdout.write('	includedirs {\n')
     sys.stdout.write('		MAME_DIR .. "src/osd",\n')
     sys.stdout.write('		MAME_DIR .. "src/emu",\n')
+	sys.stdout.write('		MAME_DIR .. "src/devices",\n')
     sys.stdout.write('		MAME_DIR .. "src/mame",\n')
     sys.stdout.write('		MAME_DIR .. "src/mess",\n')
     sys.stdout.write('		MAME_DIR .. "src/lib",\n')
