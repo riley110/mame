@@ -380,20 +380,6 @@ void tms5110_device::process(INT16 *buffer, unsigned int size)
 				/* Parse a new frame into the new_target_energy, new_target_pitch and new_target_k[] */
 				parse_frame();
 
-				// if the new frame is unvoiced (or silenced via ZPAR), be sure to zero out the k5-k10 parameters
-				// NOTE: this is probably the bug the tms5100/tmc0280 has, pre-rev D, I think.
-				// GUESS: Pre-rev D versions start zeroing k5-k10 immediately upon new frame load regardless of interpolation inhibit
-				// I.e. ZPAR = /TALKD || (PC>5&&P=0)
-				// GUESS: D and later versions only start or stop zeroing k5-k10 at the IP7->IP0 transition AFTER the frame
-				// I.e. ZPAR = /TALKD || (PC>5&&OLDP)
-#ifdef PERFECT_INTERPOLATION_HACK
-				m_old_uv_zpar = m_uv_zpar;
-				m_old_zpar = m_zpar; // unset old zpar on new frame
-#endif
-				m_zpar = 0;
-				//m_uv_zpar = (OLD_FRAME_UNVOICED_FLAG||m_zpar); // GUESS: fixed version in tmc0280d/tms5100a/cd280x/tms5110
-				m_uv_zpar = (NEW_FRAME_UNVOICED_FLAG||m_zpar); // GUESS: buggy version in tmc0280/tms5100
-
 				/* if the new frame is a stop frame, unset both TALK and SPEN (via TCON). TALKD remains active while the energy is ramping to 0. */
 				if (NEW_FRAME_STOP_FLAG == 1)
 				{
@@ -401,21 +387,24 @@ void tms5110_device::process(INT16 *buffer, unsigned int size)
 				}
 
 				/* in all cases where interpolation would be inhibited, set the inhibit flag; otherwise clear it.
-				   Interpolation inhibit cases:
+				 * Interpolation inhibit cases:
 				 * Old frame was voiced, new is unvoiced
-				 * Old frame was silence/zero energy, new has nonzero energy
-				 * Old frame was unvoiced, new is voiced (note this is the case on the patent but may not be correct on the real final chip)
+				 * Old frame was silence/zero energy, new has non-zero energy
+				 * Old frame was unvoiced, new is voiced
+				 * Old frame was unvoiced, new frame is silence/zero energy (non-existent on tms51xx rev D and F (present and working on tms52xx, present but buggy on tms51xx rev A and B))
 				 */
 				if ( ((OLD_FRAME_UNVOICED_FLAG == 0) && (NEW_FRAME_UNVOICED_FLAG == 1))
 					|| ((OLD_FRAME_UNVOICED_FLAG == 1) && (NEW_FRAME_UNVOICED_FLAG == 0))
 					|| ((OLD_FRAME_SILENCE_FLAG == 1) && (NEW_FRAME_SILENCE_FLAG == 0)) )
+					//|| ((m_inhibit == 1) && (OLD_FRAME_UNVOICED_FLAG == 1) && (NEW_FRAME_SILENCE_FLAG == 1)) ) //TMS51xx INTERP BUG1
+					//|| ((OLD_FRAME_UNVOICED_FLAG == 1) && (NEW_FRAME_SILENCE_FLAG == 1)) )
 					m_inhibit = 1;
 				else // normal frame, normal interpolation
 					m_inhibit = 0;
 
 #ifdef DEBUG_GENERATION
 				/* Debug info for current parsed frame */
-				fprintf(stderr, "OLDE=0: %d; OLDP=0: %d; E=0: %d; P=0: %d; ", m_OLDE, m_OLDP, (m_new_frame_energy_idx==0), (m_new_frame_pitch_idx==0));
+				fprintf(stderr, "OLDE: %d; NEWE: %d; OLDP: %d; NEWP: %d ", OLD_FRAME_SILENCE_FLAG, NEW_FRAME_SILENCE_FLAG, OLD_FRAME_UNVOICED_FLAG, NEW_FRAME_UNVOICED_FLAG);
 				fprintf(stderr,"Processing new frame: ");
 				if (m_inhibit == 0)
 					fprintf(stderr, "Normal Frame\n");
@@ -462,6 +451,7 @@ void tms5110_device::process(INT16 *buffer, unsigned int size)
 				}
 				else // we're done, play this frame for 1/8 frame.
 				{
+					if (m_subcycle == 2) m_pitch_zero = 0; // this reset happens around the second subcycle during IP=0
 					m_current_energy = (m_coeff->energytable[m_new_frame_energy_idx] * (1-m_zpar));
 					m_current_pitch = (m_coeff->pitchtable[m_new_frame_pitch_idx] * (1-m_zpar));
 					for (i = 0; i < m_coeff->num_k; i++)
@@ -474,6 +464,7 @@ void tms5110_device::process(INT16 *buffer, unsigned int size)
 					switch(m_PC)
 					{
 						case 0: /* PC = 0, B cycle, write updated energy */
+						if (m_IP==0) m_pitch_zero = 0; // this reset happens around the second subcycle during IP=0
 						m_current_energy = (m_current_energy + (((m_coeff->energytable[m_new_frame_energy_idx] - m_current_energy)*(1-inhibit_state)) INTERP_SHIFT))*(1-m_zpar);
 						break;
 						case 1: /* PC = 1, B cycle, write updated pitch */
@@ -570,23 +561,24 @@ void tms5110_device::process(INT16 *buffer, unsigned int size)
 				 * The exact time this occurs is betwen IP=7, PC=12 sub=0, T=t12
 				 * and m_IP = 0, PC=0 sub=0, T=t12, a period of exactly 20 cycles,
 				 * which overlaps the time OLDE and OLDP are updated at IP=7 PC=12 T17
-				 * (and hence INHIBIT itself 2 t-cycles later). We do it here because it is
-				 * convenient and should make no difference in output.
+				 * (and hence INHIBIT itself 2 t-cycles later).
+				 * According to testing the pitch zeroing lasts approximately 2 samples.
+				 * We set the zeroing latch here, and unset it on PC=1 in the generator.
 				 */
 				if ((m_IP == 7)&&(m_inhibit==1)) m_pitch_zero = 1;
-				if ((m_IP == 0)&&(m_pitch_zero==1)) m_pitch_zero = 0;
 				if (m_IP == 7) // RESETL4
 				{
 					// Latch OLDE and OLDP
+					//if (OLD_FRAME_SILENCE_FLAG) m_uv_zpar = 0; // TMS51xx INTERP BUG2
 					OLD_FRAME_SILENCE_FLAG = NEW_FRAME_SILENCE_FLAG; // m_OLDE
 					OLD_FRAME_UNVOICED_FLAG = NEW_FRAME_UNVOICED_FLAG; // m_OLDP
 					/* if TALK was clear last frame, halt speech now, since TALKD (latched from TALK on new frame) just went inactive. */
 #ifdef DEBUG_GENERATION
-					if (m_TALK == 0)
-						fprintf(stderr,"tms5110_process: processing frame: TALKD = 0 caused by stop frame or buffer empty, halting speech.\n");
+					if ((!m_TALK) && (!m_SPEN))
+						fprintf(stderr,"tms5110_process: processing frame: TALKD = 0 caused by stop frame, halting speech.\n");
 #endif
 					m_TALKD = m_TALK; // TALKD is latched from TALK
-					m_TALK = m_SPEN; // TALK is latched from SPEN
+					if ((!m_TALK) && m_SPEN) m_TALK = 1; // TALK is only activated if it wasn't already active, if m_SPEN is active, and if we're in RESETL4 (which we are).
 				}
 				m_subcycle = m_subc_reload;
 				m_PC = 0;
@@ -610,7 +602,7 @@ void tms5110_device::process(INT16 *buffer, unsigned int size)
 				if (m_IP == 7) // RESETL4
 				{
 					m_TALKD = m_TALK; // TALKD is latched from TALK
-					m_TALK = m_SPEN; // TALK is latched from SPEN
+					if ((!m_TALK) && m_SPEN) m_TALK = 1; // TALK is only activated if it wasn't already active, if m_SPEN is active, and if we're in RESETL4 (which we are).
 				}
 				m_subcycle = m_subc_reload;
 				m_PC = 0;
@@ -951,6 +943,13 @@ void tms5110_device::PDC_set(int data)
 void tms5110_device::parse_frame()
 {
 	int i, rep_flag;
+#ifdef PERFECT_INTERPOLATION_HACK
+	m_old_uv_zpar = m_uv_zpar;
+	m_old_zpar = m_zpar;
+#endif
+	// since we're parsing a frame, we must be talking, so clear zpar here
+	// before we start parsing a frame, the P=0 and E=0 latches were both reset by RESETL4, so clear m_uv_zpar here
+	m_uv_zpar = m_zpar = 0;
 
 	// attempt to extract the energy index
 	m_new_frame_energy_idx = extract_bits(m_coeff->energy_bits);
@@ -974,6 +973,8 @@ void tms5110_device::parse_frame()
 	printbits(m_new_frame_pitch_idx,m_coeff->pitch_bits);
 	fprintf(stderr," ");
 #endif
+	// if the new frame is unvoiced, be sure to zero out the k5-k10 parameters
+	m_uv_zpar = NEW_FRAME_UNVOICED_FLAG;
 	// if this is a repeat frame, just do nothing, it will reuse the old coefficients
 	if (rep_flag)
 		return;
