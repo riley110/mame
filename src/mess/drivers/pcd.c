@@ -557,7 +557,8 @@ static MACHINE_CONFIG_START( pcd, pcd_state )
 	MCFG_SCSIDEV_ADD("scsi:1", "harddisk", OMTI5100, SCSI_ID_0)
 
 	// software lists
-	MCFG_SOFTWARE_LIST_ADD("flop_list", "pcd")
+	MCFG_SOFTWARE_LIST_ADD("flop_list", "pcd_flop")
+	MCFG_SOFTWARE_LIST_ADD("hdd_list", "pcd_hdd")
 MACHINE_CONFIG_END
 
 MACHINE_CONFIG_DERIVED(pcx, pcd)
@@ -574,7 +575,8 @@ MACHINE_CONFIG_DERIVED(pcx, pcd)
 	MCFG_MC2661_TXD_HANDLER(NULL)
 
 	MCFG_DEVICE_REMOVE("flop_list")
-	MCFG_SOFTWARE_LIST_ADD("flop_list", "pcx")
+	MCFG_DEVICE_REMOVE("hdd_list")
+	MCFG_SOFTWARE_LIST_ADD("flop_list", "pcx_flop")
 MACHINE_CONFIG_END
 
 //**************************************************************************
