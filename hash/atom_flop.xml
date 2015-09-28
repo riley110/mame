@@ -3,7 +3,7 @@
 <!--
 Thanks to Wouter ( http://wouter.bbcmicro.net/_archive/atom/software/ ) for these dumps.
 
-Disks with a size less than 102400 bytes are incomplete and are marked as status="baddump".
+Disks with a size less than 102400 bytes are incomplete and therefore are marked as baddumps and commented out.
 There is also a 0 byte file called "misc1.40t" in the archive that is not included here.
 
 Many of these programs require ROM expansions (see atom_cart.xml list).
@@ -118,6 +118,7 @@ Many of these programs require ROM expansions (see atom_cart.xml list).
 		</part>
 	</software>
 
+<!--
 	<software name="databak">
 		<description>database_bak</description>
 		<year>19??</year>
@@ -129,6 +130,7 @@ Many of these programs require ROM expansions (see atom_cart.xml list).
 			</dataarea>
 		</part>
 	</software>
+-->
 
 	<software name="diversen">
 		<description>diversen</description>
@@ -262,6 +264,7 @@ Many of these programs require ROM expansions (see atom_cart.xml list).
 		</part>
 	</software>
 
+<!--
 	<software name="games9">
 		<description>games9</description>
 		<year>19??</year>
@@ -273,6 +276,7 @@ Many of these programs require ROM expansions (see atom_cart.xml list).
 			</dataarea>
 		</part>
 	</software>
+-->
 
 	<software name="games10">
 		<description>games10</description>
@@ -454,6 +458,7 @@ Many of these programs require ROM expansions (see atom_cart.xml list).
 		</part>
 	</software>
 
+<!--
 	<software name="printer">
 		<description>printer</description>
 		<year>19??</year>
@@ -465,6 +470,7 @@ Many of these programs require ROM expansions (see atom_cart.xml list).
 			</dataarea>
 		</part>
 	</software>
+-->
 
 	<software name="rekenen">
 		<description>rekenen</description>
