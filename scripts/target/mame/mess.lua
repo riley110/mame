@@ -564,6 +564,7 @@ MACHINES["WOZFDC"] = true
 MACHINES["DIABLO_HD"] = true
 MACHINES["TMS1024"] = true
 MACHINES["NSC810"] = true
+MACHINES["VT82C496"] = true
 
 --------------------------------------------------
 -- specify available bus cores
@@ -573,7 +574,6 @@ BUSES["A1BUS"] = true
 BUSES["A2BUS"] = true
 BUSES["A7800"] = true
 BUSES["A800"] = true
-BUSES["A8SIO"] = true
 BUSES["ABCBUS"] = true
 BUSES["ABCKB"] = true
 BUSES["ADAM"] = true
@@ -693,6 +693,7 @@ function linkProjects_mame_mess(_target, _subtarget)
 		"bnpo",
 		"bondwell",
 		"booth",
+		"byte",
 		"camputers",
 		"canon",
 		"cantab",
@@ -1224,6 +1225,11 @@ files {
 createMESSProjects(_target, _subtarget, "booth")
 files {
 	MAME_DIR .. "src/mess/drivers/apexc.c",
+}
+
+createMESSProjects(_target, _subtarget, "byte")
+files {
+	MAME_DIR .. "src/mess/drivers/zapcomputer.c",
 }
 
 createMESSProjects(_target, _subtarget, "camputers")
@@ -2733,6 +2739,7 @@ files {
 	MAME_DIR .. "src/mess/drivers/xor100.c",
 	MAME_DIR .. "src/mess/drivers/xavix.c",
 	MAME_DIR .. "src/mess/drivers/zorba.c",
+	MAME_DIR .. "src/mess/drivers/squale.c",
 }
 
 end

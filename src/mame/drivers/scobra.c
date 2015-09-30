@@ -209,10 +209,9 @@ static ADDRESS_MAP_START( rescuefe_map, AS_PROGRAM, 8, scobra_state )
 	AM_RANGE(0x1460, 0x147f) AM_RAM AM_SHARE("bulletsram")
 	AM_RANGE(0x1480, 0x14ff) AM_RAM
 
-
 	AM_RANGE(0x4400, 0x5dff) AM_ROM
 	AM_RANGE(0x5e00, 0x6bff) AM_ROM // some right?
-	
+
 	AM_RANGE(0x8200, 0x93ff) AM_ROM // wrong? (maybe some correct?)
 
 	AM_RANGE(0xa600, 0xa6ff) AM_ROM // wrong (taunt string) jumps to around a600 so something must map in this area?
@@ -227,13 +226,13 @@ static ADDRESS_MAP_START( rescuefe_map, AS_PROGRAM, 8, scobra_state )
 	AM_RANGE(0xC160, 0xC163) AM_DEVREAD("ppi8255_0", i8255_device, read) // ?
 
 	AM_RANGE(0xC4Ac, 0xC4AF) AM_DEVREAD("ppi8255_1", i8255_device, read) // ?
-	
+
 	AM_RANGE(0xc180, 0xc183) AM_DEVWRITE("ppi8255_0", i8255_device, write) // correct based on main set?
-	AM_RANGE(0xc220, 0xc223) AM_DEVWRITE("ppi8255_1", i8255_device, write) // ^	
+	AM_RANGE(0xc220, 0xc223) AM_DEVWRITE("ppi8255_1", i8255_device, write) // ^
 
 	// addresses below are WRONG, just moved to keep things out the way while the rom mapping is figured out
-//	AM_RANGE(0xf802, 0xf802) AM_WRITE(galaxold_coin_counter_w)
-//	AM_RANGE(0xf000, 0xf000) AM_READ(watchdog_reset_r)
+//  AM_RANGE(0xf802, 0xf802) AM_WRITE(galaxold_coin_counter_w)
+//  AM_RANGE(0xf000, 0xf000) AM_READ(watchdog_reset_r)
 ADDRESS_MAP_END
 
 static ADDRESS_MAP_START( minefldfe_map, AS_PROGRAM, 8, scobra_state )
@@ -243,18 +242,11 @@ static ADDRESS_MAP_START( minefldfe_map, AS_PROGRAM, 8, scobra_state )
 	AM_RANGE(0x0c60, 0x0c7f) AM_RAM AM_SHARE("bulletsram") // ok
 	AM_RANGE(0x0c80, 0x17ff) AM_RAM
 
-
-	AM_RANGE(0x2200, 0x3aff) AM_ROM // ok
-	AM_RANGE(0x3B00, 0x41ff) AM_ROM // ok
-
-	AM_RANGE(0x8a00, 0x8eff) AM_ROM // 8a-8f ok?
-
-	AM_RANGE(0x5800, 0x5dff) AM_ROM
-	AM_RANGE(0x5e00, 0x5fff) AM_ROM //
-	AM_RANGE(0x6000, 0x68ff) AM_ROM // ok
+	AM_RANGE(0x2200, 0x3fff) AM_ROM // ok
+	AM_RANGE(0x5800, 0x6dff) AM_ROM
+	AM_RANGE(0x8a00, 0x91ff) AM_ROM
 
 	AM_RANGE(0x4200, 0x45ff) AM_RAM_WRITE(galaxold_videoram_w) AM_SHARE("videoram") // ok
-
 
 	AM_RANGE(0x7621, 0x7621) AM_WRITE(galaxold_nmi_enable_w) // a801
 	AM_RANGE(0x7673, 0x7673) AM_WRITE(scrambold_background_enable_w) // a083
@@ -262,11 +254,11 @@ static ADDRESS_MAP_START( minefldfe_map, AS_PROGRAM, 8, scobra_state )
 	AM_RANGE(0x7616, 0x7616) AM_WRITE(galaxold_flip_screen_x_w) // a806
 	AM_RANGE(0x7617, 0x7617) AM_WRITE(galaxold_flip_screen_y_w) // a807
 
-	AM_RANGE(0x4C00, 0x4C03) AM_MIRROR(0x00fc) AM_DEVREADWRITE("ppi8255_1", i8255_device, read, write) 
-	AM_RANGE(0x4B00, 0x4B03) AM_MIRROR(0x00fc) AM_DEVREADWRITE("ppi8255_0", i8255_device, read, write) 
+	AM_RANGE(0x4C00, 0x4C03) AM_MIRROR(0x00fc) AM_DEVREADWRITE("ppi8255_1", i8255_device, read, write)
+	AM_RANGE(0x4B00, 0x4B03) AM_MIRROR(0x00fc) AM_DEVREADWRITE("ppi8255_0", i8255_device, read, write)
 
-	
-	 
+
+
 
 	AM_RANGE(0x1D98, 0x1D98) AM_READ(watchdog_reset_r) // 0xb000
 
@@ -610,6 +602,61 @@ static INPUT_PORTS_START( minefld )
 	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
 INPUT_PORTS_END
 
+// doesn't seem to have a 'starting level' dipswitch, probably has difficult tho?
+static INPUT_PORTS_START( minefldfe )
+	PORT_START("IN0")
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_UP ) PORT_8WAY // fire up
+	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 ) // bomb
+	PORT_DIPNAME( 0x04, 0x04, DEF_STR( Unknown ) )
+	PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x08, 0x08, DEF_STR( Unknown ) )
+	PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_RIGHT ) PORT_8WAY
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_LEFT ) PORT_8WAY
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 )
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 )
+
+	PORT_START("IN1")
+	PORT_DIPNAME( 0x01, 0x01, DEF_STR( Unknown ) )
+	PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x02, 0x00, DEF_STR( Demo_Sounds ) ) // also credit sound!
+	PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x04, 0x04, DEF_STR( Unknown ) )
+	PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x08, 0x08, DEF_STR( Unknown ) )
+	PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_RIGHT ) PORT_8WAY
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_LEFT ) PORT_8WAY
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 )
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 )
+
+	PORT_START("IN2")
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICKRIGHT_DOWN ) PORT_8WAY // fire down
+	PORT_DIPNAME( 0x02, 0x00, DEF_STR( Coinage ) )
+	PORT_DIPSETTING(    0x00, "Coin A 1/1 Coin B 1/10" )
+	PORT_DIPSETTING(    0x02, "Coin A 2/1 Coin B 1/3" )
+	PORT_DIPNAME( 0x0c, 0x08, DEF_STR( Lives ) )
+	PORT_DIPSETTING(    0x0c, "2" )
+	PORT_DIPSETTING(    0x08, "3" )
+	PORT_DIPSETTING(    0x04, "4" )
+	PORT_DIPSETTING(    0x00, "5" )
+
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_UP ) PORT_8WAY // move up
+	PORT_DIPNAME( 0x20, 0x20, DEF_STR( Unknown ) )
+	PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICKLEFT_DOWN ) PORT_8WAY // move down
+	PORT_DIPNAME( 0x80, 0x80, DEF_STR( Unknown ) )
+	PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+INPUT_PORTS_END
+
 
 static INPUT_PORTS_START( hustler )
 	PORT_START("IN0")
@@ -789,10 +836,14 @@ MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( rescuefe, rescue )
 	/* basic machine hardware */
-	MCFG_CPU_MODIFY("maincpu")  
-	MCFG_CPU_PROGRAM_MAP(rescuefe_map)	
+	MCFG_CPU_MODIFY("maincpu")
+	MCFG_CPU_PROGRAM_MAP(rescuefe_map)
 MACHINE_CONFIG_END
 
+static MACHINE_CONFIG_DERIVED( rescueb, rescue )
+	MCFG_DEVICE_MODIFY("ppi8255_1")
+	MCFG_I8255_IN_PORTC_CB(READ8(scobra_state, rescueb_a002_r)) // protection? must return 0xfc or the game jumps to 0x00
+MACHINE_CONFIG_END
 
 
 static MACHINE_CONFIG_DERIVED( minefld, type1 )
@@ -809,8 +860,8 @@ static MACHINE_CONFIG_DERIVED( minefld, type1 )
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( minefldfe, minefld )
-	MCFG_CPU_MODIFY("maincpu")  
-	MCFG_CPU_PROGRAM_MAP(minefldfe_map)	
+	MCFG_CPU_MODIFY("maincpu")
+	MCFG_CPU_PROGRAM_MAP(minefldfe_map)
 MACHINE_CONFIG_END
 
 
@@ -1167,22 +1218,27 @@ Both are missing the top sound PCB.
 
 */
 
+/* the 'Minefield' shop shows a Logicshop copyright, and a phone number with a Great Yarmouth area code
+   which seems to indicate the following manufacturer / operator.
+
+    The Logicshop (Great Yarmouth)
+    Caesar's Arcade
+    Beach Rd
+    Hemsby
+    Great Yarmouth
+    Norfolk
+    NR29 4HS
+
+*/
+
 
 ROM_START( minefldfe )
-	ROM_REGION( 0x10000, "subboard", 0 )
-	ROM_LOAD( "sub-1.bin",        0x0000, 0x2000, CRC(0511df9f) SHA1(e4b93e70a070a8f42442c8329478b98cba387971) ) // all used
-	ROM_LOAD( "sub-2.bin",        0x2000, 0x2000, CRC(00205e04) SHA1(f8e8399a1aaa548ae2448ebc96fb3e68625f9260) ) // 2500 - 3b00 used
-	ROM_LOAD( "sub-3.bin",        0x4000, 0x0800, CRC(98c05d8d) SHA1(9c89504421df754bb0228ca08c7bfae5f6dc3e91) ) // all used
-
-	ROM_REGION( 0x10000, "maincpu", 0 )
-	ROM_COPY( "subboard", 0x0000, 0x0000, 0x0c00 ) // definitely OK
-	ROM_COPY( "subboard", 0x0c00, 0x2200, 0x1400 ) // definitely OK
-	ROM_COPY( "subboard", 0x2500, 0x3b00, 0x0500 ) // ok
-	ROM_COPY( "subboard", 0x2a00, 0x5800, 0x0600 ) // ok
-	ROM_COPY( "subboard", 0x3000, 0x5e00, 0x1000 ) // ok
-	ROM_COPY( "subboard", 0x4000, 0x8a00, 0x0800 ) // some of this is ok at least
-
-	// check jump to 3E33
+	ROM_REGION( 0x10000, "maincpu", ROMREGION_ERASEFF )
+	ROM_LOAD( "sub-1.bin",        0x0000, 0x0c00, CRC(0511df9f) SHA1(e4b93e70a070a8f42442c8329478b98cba387971) ) // all used
+	ROM_CONTINUE(0x2200, 0x1400)
+	ROM_LOAD( "sub-2.bin",        0x3600, 0x0a00, CRC(00205e04) SHA1(f8e8399a1aaa548ae2448ebc96fb3e68625f9260) ) //
+	ROM_CONTINUE(0x5800, 0x1600)
+	ROM_LOAD( "sub-3.bin",        0x8a00, 0x0800, CRC(98c05d8d) SHA1(9c89504421df754bb0228ca08c7bfae5f6dc3e91) ) // all used
 
 	ROM_REGION( 0x10000, "audiocpu", ROMREGION_ERASEFF )
 	ROM_LOAD( "snd.2l",        0x0000, 0x0800, CRC(8bef736b) SHA1(c5c7ce9c40e6fe60a4914b6bbd646ba6853c9043) )
@@ -1396,12 +1452,12 @@ GAME( 1982, darkplnt,  0,        darkplnt,  darkplnt,  scramble_state,  darkplnt
 GAME( 1982, tazmani2,  tazmania, type2,     tazmania,  scramble_state,  tazmani2,     ROT90,  "Stern Electronics",                  "Tazz-Mania (set 2, alt hardware)", MACHINE_SUPPORTS_SAVE )
 
 GAME( 1982, rescue,    0,        rescue,    rescue,    scramble_state,  rescue,       ROT90,  "Stern Electronics",                  "Rescue", MACHINE_SUPPORTS_SAVE )
-GAME( 1982, rescueb,   rescue,   rescue,    rescue,    scramble_state,  rescue,       ROT90,  "bootleg (Videl Games)",              "Rescue (bootleg)", MACHINE_NOT_WORKING | MACHINE_SUPPORTS_SAVE )
+GAME( 1982, rescueb,   rescue,   rescueb,   rescue,    scramble_state,  rescue,       ROT90,  "bootleg (Videl Games)",              "Tuono Blu (bootleg of Rescue)", MACHINE_SUPPORTS_SAVE )
 GAME( 1982, aponow,    rescue,   rescue,    rescue,    scramble_state,  rescue,       ROT90,  "bootleg",                            "Apocaljpse Now (bootleg of Rescue)", MACHINE_SUPPORTS_SAVE )
 GAME( 1982, rescuefe,  rescue,   rescuefe,  rescue,    driver_device,   0,            ROT90,  "bootleg (Free Enterprise Games)",    "Rescue (Free Enterprise Games, bootleg)", MACHINE_NOT_WORKING | MACHINE_SUPPORTS_SAVE )
 
 GAME( 1983, minefld,   0,        minefld,   minefld,   scramble_state,  minefld,      ROT90,  "Stern Electronics",                  "Minefield", MACHINE_SUPPORTS_SAVE )
-GAME( 1983, minefldfe, minefld,  minefldfe, minefld,   driver_device,   0,            ROT90,  "bootleg (The LogicShop)",            "Minefield (The LogicShop, bootleg)", MACHINE_SUPPORTS_SAVE | MACHINE_NOT_WORKING ) // The LogicShop aka Free Enterprise Games?
+GAME( 1983, minefldfe, minefld,  minefldfe, minefldfe, driver_device,   0,            ROT90,  "bootleg (The Logicshop)",            "Minefield (The Logicshop, bootleg)", MACHINE_SUPPORTS_SAVE ) // The Logicshop ('licensed' from Free Enterprise Games?
 
 GAME( 1981, hustler,   0,        hustler,   hustler,   scramble_state,  hustler,      ROT90,  "Konami",                             "Video Hustler", MACHINE_SUPPORTS_SAVE )
 GAME( 1981, hustlerd,  hustler,  hustler,   hustler,   scramble_state,  hustlerd,     ROT90,  "Konami (Dynamo Games license)",      "Video Hustler (Dynamo Games)", MACHINE_SUPPORTS_SAVE )

@@ -105,7 +105,7 @@ static INPUT_PORTS_START( n64 )
 	PORT_CONFSETTING(0x00, "None")
 	PORT_CONFSETTING(0x40, "Joypad")
 	PORT_CONFSETTING(0x80, "Mouse")
-	
+
 	PORT_CONFNAME(0x0100, 0x0000, "Disk Drive")
 	PORT_CONFSETTING(0x0000, "Retail")
 	PORT_CONFSETTING(0x0100, "Development")
@@ -406,15 +406,17 @@ static MACHINE_CONFIG_START( n64, n64_mess_state )
 	MCFG_RSP_SP_SET_STATUS_CB(DEVWRITE32("rcp",n64_periphs, sp_set_status))
 	MCFG_CPU_PROGRAM_MAP(rsp_map)
 
-	//MCFG_QUANTUM_TIME(attotime::from_hz(1000000))
-	MCFG_QUANTUM_TIME(attotime::from_hz(1200))
+	MCFG_QUANTUM_TIME(attotime::from_hz(500000))
+	//MCFG_QUANTUM_TIME(attotime::from_hz(1200))
 
 	/* video hardware */
 	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_REFRESH_RATE(60)
-	MCFG_SCREEN_VBLANK_TIME(ATTOSECONDS_IN_USEC(0))
-	MCFG_SCREEN_SIZE(640, 525)
-	MCFG_SCREEN_VISIBLE_AREA(0, 639, 0, 479)
+	/* Video DACRATE is for quarter pixels, so the horizontal is also given in quarter pixels.  However, the horizontal and vertical timing and sizing is adjustable by register and will be reset when the registers are written. */
+	MCFG_SCREEN_RAW_PARAMS(DACRATE_NTSC*2,3093,0,3093,525,0,525)
+	//MCFG_SCREEN_REFRESH_RATE(60)
+	//MCFG_SCREEN_VBLANK_TIME(ATTOSECONDS_IN_USEC(0))
+	//MCFG_SCREEN_SIZE(640, 525)
+	//MCFG_SCREEN_VISIBLE_AREA(0, 639, 0, 479)
 	MCFG_SCREEN_UPDATE_DRIVER(n64_state, screen_update_n64)
 	MCFG_SCREEN_VBLANK_DRIVER(n64_state, screen_eof_n64)
 
