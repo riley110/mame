@@ -1210,7 +1210,7 @@ static MACHINE_CONFIG_DERIVED( bbcmc, bbcm )
 	MCFG_SOFTWARE_LIST_REMOVE("cass_ls_a")
 	MCFG_SOFTWARE_LIST_REMOVE("cass_ls_b")
 	MCFG_SOFTWARE_LIST_REMOVE("cart_ls_m")
-	//MCFG_SOFTWARE_LIST_ADD("flop_ls_mc", "bbcmc_flop")
+	MCFG_SOFTWARE_LIST_ADD("flop_ls_mc", "bbcmc_flop")
 MACHINE_CONFIG_END
 
 
