@@ -747,6 +747,30 @@
 		</part>
 	</software>
 
+	<software name="gimeid">
+		<description>GIME Chip Identifier</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gime chip identifier (coco 3).dsk" size="161280" crc="cae0fc81" sha1="4f24c51b983191f5ee507dd1919d18c18a57b214" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="grafxprs">
+		<description>GrafExpress (v1.0)</description>
+		<year>1991</year>
+		<publisher>Sundog Systems</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="grafexpress 1.0 (sundog systems) (coco 3) (grafex1).dsk" size="161280" crc="9780c1c8" sha1="32495a1bd60f5e8951bbbbdc4d3c29ac550ea5e5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- Contains "The Defeater" by Sub Etha Software -->
 	<software name="makcbas3">
 		<description>makcbas3</description>
@@ -1174,6 +1198,43 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="digital speech demo (coco 3).dsk" size="161280" crc="e9501cf2" sha1="736d44b1338f4b1292e2dcbddfec58063418dad7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Composite mode required to show pictures correctly-->
+	<software name="gamepict">
+		<description>Game Pictures</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="game pictures (coco 3).dsk" size="161280" crc="2901ef5d" sha1="b059a2543b9214ae23eed0a25676e980061a6158" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gimmedem">
+		<description>Gimmesoft Demo Disk</description>
+		<year>19??</year>
+		<publisher>Gimmesoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="224016">
+				<rom name="gimmie soft demo disk (coco 3).dsk" size="224016" crc="2a3a8e35" sha1="8ae6757c3501784414bbb29b28673f1ace06350f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gloom">
+		<description>Gloom 3D</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gloom 3d (coco 3).dsk" size="161280" crc="80ac3aea" sha1="e8af9071cde29e1dcc0e8b3c898d510511821839" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2715,9 +2776,21 @@ They will be added later on as this software list matures.
 		</part>
 	</software>
 
-	<!-- Only composite version works, use unkc1 disk for working RGB version -->
-	<software name="armchair" supported="partial">
+	<software name="admiral">
 		<description>Armchair Admiral</description>
+		<year>1987</year>
+		<publisher>Eversoft Games</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="goodadmiralcopy (eversoft games).dsk" size="161280" crc="eb100160" sha1="68976c3148d97f503fa7f0cb39e882019ae6c5dc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Only composite version works
+	<software name="admirala" cloneof="admiral" supported="partial">
+		<description>Armchair Admiral (RGB Not Working)</description>
 		<year>1987</year>
 		<publisher>Eversoft Games</publisher>
 
@@ -2727,6 +2800,7 @@ They will be added later on as this software list matures.
 			</dataarea>
 		</part>
 	</software>
+-->
 
 	<software name="austquiz">
 		<description>Austquiz</description>
@@ -3523,6 +3597,18 @@ They will be added later on as this software list matures.
 		</part>
 	</software>
 
+	<software name="firespir">
+		<description>Firespire - Gnome Quest II</description>
+		<year>1990</year>
+		<publisher>SportsWare</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gnome's quest 1&amp;2 (sportsware) (go).dsk" size="161280" crc="9df74c69" sha1="a3b85f3b13e8cd8bf455298fdc9bc0275ecc186b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="flags">
 		<description>Flags</description>
 		<year>1989</year>
@@ -3632,6 +3718,107 @@ They will be added later on as this software list matures.
 		</part>
 	</software>
 
+	<software name="gantlet2">
+		<description>Gantelet II (v1.1)</description>
+		<year>1988</year>
+		<publisher>Diecom Products Inc.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gantelet 2 (coco 3) (side 1).dsk" size="161280" crc="89c43320" sha1="f4b6eee9e2cd4f643049a03bebf96d0a88059694" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gantelet 2 (coco 3) (side 2).dsk" size="161280" crc="4ee85a81" sha1="166f2c6e521cbb9ae0e016860ef98e0a2cf150ce" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gatecrsh">
+		<description>Gate Crasher (Demo)</description>
+		<year>1999</year>
+		<publisher>Nickolas Marentes</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gate crasher (coco 3).dsk" size="161280" crc="e0628d68" sha1="bd18924aaccec82c736f739a3907a0f379e6f91e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gems">
+		<description>Gems</description>
+		<year>1991</year>
+		<publisher>John R. Strong</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gems (coco 3).dsk" size="161280" crc="daa143f9" sha1="6bd0322c86372b9ddb2d6fcfcc56327e85313211" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gfl2">
+		<description>GFL Championship Football II (v1.0)</description>
+		<year>1988</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gfl championship football ii (tandy) (coco 3).dsk" size="161280" crc="790594c9" sha1="f1497eb41b4666e54f03b3e0c8b3f0284adb1de1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gfl2a" cloneof="gfl2">
+		<description>GFL Championship Football II (v1.0, Alt)</description>
+		<year>1988</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gfl football (tandy radio shack) (coco3 games).dsk" size="161280" crc="31c006a2" sha1="7332e145aa7a08e4f147cd983e3196daae375841" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="giligan">
+		<description>Giligan's Island</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="giligan's island (coco 3).dsk" size="161280" crc="704610b1" sha1="39f3747b642e655bd0606dd553c33c9d2c5880b4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="giligana" cloneof="giligan">
+		<description>Giligan's Island (Alt)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="giligan (coco 3).dsk" size="161280" crc="6d461592" sha1="1422ef1664db87a1c2d084bde35ccfb97a490d6e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gnomeqst">
+		<description>Gnome Quest</description>
+		<year>1989</year>
+		<publisher>SportsWare</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gnome's quest 1&amp;2 (sportsware) (boot).dsk" size="161280" crc="fdbea019" sha1="a0bbd803d55053c1783c489c32f6c633583ea8aa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="goldrunr">
 		<description>Gold Runner (CoCo 3 Patch)</description>
 		<year>198?</year>
@@ -3640,6 +3827,246 @@ They will be added later on as this software list matures.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="fyr-draca (colorquest) (coco 3 patch) (gldrunnr).dsk" size="161280" crc="5e8dbb65" sha1="385a6677903944667ca7de31449b225c95b68069" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gldrun2k">
+		<description>Gold Runner 2000</description>
+		<year>1997</year>
+		<publisher>MediaLink Development</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gold runner 2000 (coco 3) (side 1).dsk" size="161280" crc="2045fa10" sha1="cd820b2ddcd807f04d0a2bef4694cfcc83fd5c33" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gold runner 2000 (coco 3) (side 2).dsk" size="161280" crc="e6b6fb6d" sha1="0c06ced10995c41e74610ea94d0c21e5be333a48" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gldrun2ka" cloneof="gldrun2k">
+		<description>Gold Runner 2000 (Alt)</description>
+		<year>1997</year>
+		<publisher>MediaLink Development</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="g2000 (bt) (media link production).dsk" size="161280" crc="bca3c33b" sha1="c69fef60b90d1b7c258d9015ec7828cd6b091eb8" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gold runner 2000 (coco 3) (side 2).dsk" size="161280" crc="e6b6fb6d" sha1="0c06ced10995c41e74610ea94d0c21e5be333a48" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="goldrush" supported="no">
+		<description>Gold Rush! (720k)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="541184">
+				<rom name="gold rush! (coco 3) (720k) (side 1).dsk" size="541184" crc="6a080e28" sha1="1e350ebae6acc151a0b71c11248f22fbeb166b10" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="737280">
+				<rom name="gold rush! (coco 3) (720k) (side 2).dsk" size="737280" crc="19801cbd" sha1="617d06bd1ec6d27893de8027894ae9f28316e805" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<dataarea name="flop" size="737280">
+				<rom name="gold rush! (coco 3) (720k) (side 3).dsk" size="737280" crc="b49274bc" sha1="d395c6b60fd20ff3a1209d8c104ca6047b7f3652" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<dataarea name="flop" size="184320">
+				<rom name="gold rush! (coco 3) (save) (side 1).dsk" size="184320" crc="952a89ac" sha1="77a57fb3012962d3437dc1a7db533772192226ed" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<dataarea name="flop" size="184320">
+				<rom name="gold rush! (coco 3) (save) (side 2).dsk" size="184320" crc="0443efa8" sha1="4b7477b0b88668f42530c954d316f80126fda0f6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="goldrusha" cloneof="goldrush" supported="no">
+		<description>Gold Rush! (720k, Alt Disk 1)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="541184">
+				<rom name="goldrush! (sierra game ports) (major g) (720k) (disk 1).dsk" size="541184" crc="2a5a62cd" sha1="5445c8f03f48110d854b9af0cd3e2dd24696581e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="737280">
+				<rom name="gold rush! (coco 3) (720k) (side 2).dsk" size="737280" crc="19801cbd" sha1="617d06bd1ec6d27893de8027894ae9f28316e805" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<dataarea name="flop" size="737280">
+				<rom name="gold rush! (coco 3) (720k) (side 3).dsk" size="737280" crc="b49274bc" sha1="d395c6b60fd20ff3a1209d8c104ca6047b7f3652" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<dataarea name="flop" size="184320">
+				<rom name="gold rush! (coco 3) (save) (side 1).dsk" size="184320" crc="952a89ac" sha1="77a57fb3012962d3437dc1a7db533772192226ed" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<dataarea name="flop" size="184320">
+				<rom name="gold rush! (coco 3) (save) (side 2).dsk" size="184320" crc="0443efa8" sha1="4b7477b0b88668f42530c954d316f80126fda0f6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="goldrush360" cloneof="goldrush" supported="no">
+		<description>Gold Rush! (360k)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="368640">
+				<rom name="gold rush! (coco 3) (360k) (side 1).dsk" size="368640" crc="2a3265f9" sha1="5f1df7b787484af2153308a46558b0dbead5ba87" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="368640">
+				<rom name="gold rush! (coco 3) (360k) (side 2).dsk" size="368640" crc="ea93cdf6" sha1="7a519c73deec33a1fa8310d17972de5f0099a5a6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<dataarea name="flop" size="368640">
+				<rom name="gold rush! (coco 3) (360k) (side 3).dsk" size="368640" crc="ca5ca46b" sha1="9788793ec70b079f16488a51a52b2296fdee9eda" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<dataarea name="flop" size="368640">
+				<rom name="gold rush! (coco 3) (360k) (side 4).dsk" size="368640" crc="0404a90d" sha1="e3cef39db530c488583c4ce5b52985b36ea62bc2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<dataarea name="flop" size="368640">
+				<rom name="gold rush! (coco 3) (360k) (side 5).dsk" size="368640" crc="17728ced" sha1="375f77b24be15022490a0b57377c5f2438846f4d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_5_25">
+			<dataarea name="flop" size="184320">
+				<rom name="gold rush! (coco 3) (save) (side 1).dsk" size="184320" crc="952a89ac" sha1="77a57fb3012962d3437dc1a7db533772192226ed" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_5_25">
+			<dataarea name="flop" size="184320">
+				<rom name="gold rush! (coco 3) (save) (side 2).dsk" size="184320" crc="0443efa8" sha1="4b7477b0b88668f42530c954d316f80126fda0f6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="goldrush360a" cloneof="goldrush" supported="no">
+		<description>Gold Rush! (360k, Alt Disk 1)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="368640">
+				<rom name="goldrush! (sierra game ports) (major g) (360k) (disk 1).dsk" size="368640" crc="9a5ab214" sha1="7547189d640ea22b82edd945cbf4f580f351dc24" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="368640">
+				<rom name="gold rush! (coco 3) (360k) (side 2).dsk" size="368640" crc="ea93cdf6" sha1="7a519c73deec33a1fa8310d17972de5f0099a5a6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<dataarea name="flop" size="368640">
+				<rom name="gold rush! (coco 3) (360k) (side 3).dsk" size="368640" crc="ca5ca46b" sha1="9788793ec70b079f16488a51a52b2296fdee9eda" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<dataarea name="flop" size="368640">
+				<rom name="gold rush! (coco 3) (360k) (side 4).dsk" size="368640" crc="0404a90d" sha1="e3cef39db530c488583c4ce5b52985b36ea62bc2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<dataarea name="flop" size="368640">
+				<rom name="gold rush! (coco 3) (360k) (side 5).dsk" size="368640" crc="17728ced" sha1="375f77b24be15022490a0b57377c5f2438846f4d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_5_25">
+			<dataarea name="flop" size="184320">
+				<rom name="gold rush! (coco 3) (save) (side 1).dsk" size="184320" crc="952a89ac" sha1="77a57fb3012962d3437dc1a7db533772192226ed" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_5_25">
+			<dataarea name="flop" size="184320">
+				<rom name="gold rush! (coco 3) (save) (side 2).dsk" size="184320" crc="0443efa8" sha1="4b7477b0b88668f42530c954d316f80126fda0f6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="goldrushdw3" cloneof="goldrush" supported="no">
+		<description>Gold Rush! (DW3)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="1299200">
+				<rom name="gold rush! (coco 3) (dw3).dsk" size="1299200" crc="340f3d08" sha1="ad5b489b3edb48d4116c61a5610e50dea8e9ec6d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="184320">
+				<rom name="gold rush! (coco 3) (save) (side 1).dsk" size="184320" crc="952a89ac" sha1="77a57fb3012962d3437dc1a7db533772192226ed" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<dataarea name="flop" size="184320">
+				<rom name="gold rush! (coco 3) (save) (side 2).dsk" size="184320" crc="0443efa8" sha1="4b7477b0b88668f42530c954d316f80126fda0f6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gpchalng">
+		<description>Grand Prix Challenge (Cracked)</description>
+		<year>1987</year>
+		<publisher>&lt;bootleg (The Inner Circle)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="grand prix challenge (diecom products) (coco 3).dsk" size="161280" crc="f5939ac3" sha1="0584f810db54f6e33a02048d85c6e3f5cef4feaa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gpchalnga" cloneof="gpchalng">
+		<description>Grand Prix Challenge (Cracked, Alt)</description>
+		<year>1987</year>
+		<publisher>&lt;bootleg (The Inner Circle)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="granprch (diecom software inc) (coco 3 only games).dsk" size="161280" crc="2b190a90" sha1="a38bf554722231847ab5a8c8d9470d4d8cba8bef" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gridiron">
+		<description>Gridiron Strategy</description>
+		<year>1988</year>
+		<publisher>SportsWare</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gridiron strategy (coco 3).dsk" size="161280" crc="909a67da" sha1="87a809e28e7a87feea78a82370e52bd8fdfaab4d" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -4234,6 +4661,18 @@ They will be added later on as this software list matures.
 		</part>
 	</software>
 
+	<software name="unkc10">
+		<description>Unknown Compilation 10</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gems (john strong).dsk" size="161280" crc="9c0d1401" sha1="6fcb614062ecc65691826a96a20e7ce50a7e8b61" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 <!-- Misc. files -->
 
 	<software name="agitoc">
@@ -4535,6 +4974,56 @@ They will be added later on as this software list matures.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="flight simulator europe (data file needs os-9 to view) (os9) (133cg_01).dsk" size="161280" crc="73ddf9b2" sha1="9a34e7722e857e7c81eff5b3958fc3edb13cf346" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gif1">
+		<description>GIF Images 1</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gif images (decb) (078ap_01).dsk" size="161280" crc="4f801258" sha1="0aa0814c6dd23a3cf4f2a5793ba2258f735e3c9a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gif2">
+		<description>GIF Images 2</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gif images (decb) (078ap_02).dsk" size="161280" crc="20fd9a23" sha1="fae02bceab3588247da9d1ec3e9e0ae6574d5ee3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gif3">
+		<description>GIF Images 3 (adult content, 256 color)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Use The Projector to view" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gif images (adult content, 256 color) (use the projector to view) (decb) (083ap_01).dsk" size="161280" crc="d93da70d" sha1="baa30d096bba8be27d301b222e50f87fd603f790" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gif4">
+		<description>GIF Images 4 (some 256 color)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Use The Projector or CC3GIF to view" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gif images (some 256 color (use the projector to view), also cc3gif.bin) (decb) (083ap_02).dsk" size="161280" crc="f5a59fb6" sha1="31af960fc2067c6d2e123258257daf1427caab90" offset="0" />
 			</dataarea>
 		</part>
 	</software>

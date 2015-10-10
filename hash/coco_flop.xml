@@ -841,6 +841,30 @@
 		</part>
 	</software>
 
+	<software name="getrom">
+		<description>GetRom</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="getrom.dsk" size="161280" crc="9a3493c9" sha1="9a4989f0b8c1799dbb70cdd00d5c7682a0fdbb16" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="geterm">
+		<description>Greg-E-Term (v2.5)</description>
+		<year>1988</year>
+		<publisher>Greg Miller</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="greg-e-term (geterm25).dsk" size="161280" crc="4b80345b" sha1="1761e477f35ce52f523507e054436c27f99a67a3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="hdbdos">
 		<description>HDB-DOS (v1.1D)</description>
 		<year>19??</year>
@@ -995,6 +1019,25 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="format + code, quickcatalog (disk util, vers 1-8) (decb) (107au_01).dsk" size="161280" crc="5d1f829a" sha1="969e370d99714548ecc33df8f1a47206f2c17091" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Compilations (Demos) -->
+
+	<software name="gfxdemos">
+		<description>Graphics Demos</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="graphics demos (decb) (099aa_01).dsk" size="161280" crc="bedf9645" sha1="ab7568651ea694eb840948f46a014309cf8f694b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="graphics demos (decb) (099aa_02).dsk" size="161280" crc="e84525c7" sha1="9d99880526729ce440635406692b355b1bdbf815" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1359,6 +1402,54 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="card games (tandy).dsk" size="161280" crc="34468b0f" sha1="b37577c4af549cda98c87c82e6a86373c62e21eb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ccfiag1">
+		<description>CCFIA Games 1</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="games (chess, cyrus, text adventures) (decb) (097ag_01).dsk" size="161280" crc="2e510b30" sha1="11b444e8f80b983392c583b83764d15ab7d38c07" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ccfiag2">
+		<description>CCFIA Games 2</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="games (trapfall, aztec, and oracle ii disk editor) (decb) (112ag_01).dsk" size="161280" crc="0cda72af" sha1="71d6ebe26b2d7f9c380d2906b43bcf7e1ce612d7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ccfiag3">
+		<description>CCFIA Games 3</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="games (zaksund, runnerii, pyramix, bc, tapper, boulder) (decb) (113ag_02).dsk" size="161280" crc="03949cf8" sha1="3f6537c121b410e6fc2a9cc5207328d4ac1dbb0e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ccfiag4">
+		<description>CCFIA Games 4</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="games (bible5,6,7) (bugs) (chessmaster) (decb) (123ag_01).dsk" size="161280" crc="ae52542c" sha1="06ffeabd7b92a4b5b31f8ed264bac117ce4909d2" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2313,6 +2404,18 @@
 		</part>
 	</software>
 
+	<software name="cocog58a" cloneof="cocog58">
+		<description>CoCo Games Disk 58 (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gmaes disk 58.dsk" size="161280" crc="31ade0e2" sha1="fc150da3b054056cb33961a9ab8494ab7d2e591e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="cocog59">
 		<description>CoCo Games Disk 59</description>
 		<year>198?</year>
@@ -2321,6 +2424,30 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="coco games disk 59.dsk" size="161280" crc="cae50486" sha1="f605656dcf1ec1d9ab32979a3d930974623a0d41" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cocog59a" cloneof="cocog59">
+		<description>CoCo Games Disk 59 (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gmaes disk 59 (alt 1).dsk" size="161280" crc="2cc70558" sha1="86df380c8727a65c8a6a61ce518615d2012adf8f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cocog59b" cloneof="cocog59">
+		<description>CoCo Games Disk 59 (Alt 2)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gmaes disk 59 (alt 2).dsk" size="161280" crc="40ff654d" sha1="c94d36aeb333c86da9ef76e09cafc4e6f05a73f2" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2370,6 +2497,18 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="dragonfire (tandy).dsk" size="161280" crc="0b9d0373" sha1="d70a41c115c907fca4f760c06cd3f2f2b8093ff2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gamedocs">
+		<description>Games &amp; Docs</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="games (martian, mast key, buxx, cimeeon), docs (for zork, wishbringer, and caladrul) (decb) (112ag_02).dsk" size="161280" crc="5347fec4" sha1="16e095535cb61dd7c0f37a0903785f32dd5de73e" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -3189,6 +3328,30 @@
     </software>
 -->
 
+	<software name="grover">
+		<description>Grover's Number Rover</description>
+		<year>198?</year>
+		<publisher>Children's Computer Workshop (CCW)</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="grover's number rover (ccw).dsk" size="161280" crc="9bbe696c" sha1="2ee955c4fc34e0b01808eb9fae0903acdd996c3c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="grovera" cloneof="grover">
+		<description>Grover's Number Rover (Alt)</description>
+		<year>198?</year>
+		<publisher>Children's Computer Workshop (CCW)</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="grover (seasame street).dsk" size="161280" crc="7f831da8" sha1="2a917576410eb91b8aa8329fd8fdfdc6a7fe2c1d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="pbpanic">
 		<description>Peanut Butter Panic</description>
 		<year>1983</year>
@@ -3718,8 +3881,20 @@
 		</part>
 	</software>
 
+	<software name="alcatraz">
+		<description>Alcatraz</description>
+		<year>198?</year>
+		<publisher>Spectral Associates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="good alcatraz.dsk" size="161280" crc="073b4ebf" sha1="39d8803ba42d041fac852f587be8588a471cbbca" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 <!--
-    <software name="alcatraz" supported="no">
+    <software name="alcatraza" cloneof="alcatraz" supported="no">
         <description>Alcatraz (Bad)</description>
         <year>198?</year>
         <publisher>Spectral Associates</publisher>
@@ -8562,6 +8737,18 @@
 		</part>
 	</software>
 
+	<software name="grimdar">
+		<description>Flight from Grimdar (v1.3)</description>
+		<year>1983</year>
+		<publisher>CoCo Freeware</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="grimdar (free coco software).dsk" size="161280" crc="3e4391a2" sha1="4927618e305d75f4214f91309f5b673fb75e01e9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="fsimt">
 		<description>Flight Sim I (v01.00.00)</description>
 		<year>1984</year>
@@ -8970,6 +9157,799 @@
 		</part>
 	</software>
 
+	<software name="galatk">
+		<description>Galactic Attack</description>
+		<year>1982</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="galactic attack (tandy).dsk" size="161280" crc="6ced9f13" sha1="5f5a3fe706cf11b13834b5e01c53c02de950de8b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="galfight">
+		<description>Galactic Fighter</description>
+		<year>1984</year>
+		<publisher>Four Star Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="galactic fighter (four star software).dsk" size="161280" crc="25527ff2" sha1="196bbe0118885c736b7c9373907e5115788a71a7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="galfighta" cloneof="galfight">
+		<description>Galactic Fighter (Cracked)</description>
+		<year>1984</year>
+		<publisher>&lt;bootleg (Dinaz)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="galactic fighter (four star software)[a].dsk" size="161280" crc="79dadf85" sha1="9a27a77330358e7eccc65c89b6fefc41ca310494" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="galactic">
+		<description>Galacticans</description>
+		<year>198?</year>
+		<publisher>Softek</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="galacticans (softek) (dragon).dsk" size="161280" crc="5089f27d" sha1="1ef70bb1db448f75a151b487ecdda43620d267f5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- "Galaga" shown on first title screen, likely a copyright issue -->
+	<software name="galagon">
+		<description>Galagon</description>
+		<year>1983</year>
+		<publisher>Spectral Associates</publisher>
+		<info name="alt_title" value="Galaga" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="galagon (spectral associates).dsk" size="161280" crc="a7eb48ad" sha1="a4c1a9d5abb2324cbce3599f436f0ae0ec017d30" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="galagona" cloneof="galagon">
+		<description>Galagon (Alt)</description>
+		<year>1983</year>
+		<publisher>Spectral Associates</publisher>
+		<info name="alt_title" value="Galaga" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="galagon (spectral assosciates).dsk" size="161280" crc="ac986c36" sha1="13063f6baedf329e95502ea661657d38407c8554" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="galaxatx">
+		<description>Galax Attax</description>
+		<year>1982</year>
+		<publisher>Spectral Associates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="galax attax (spectral associates).dsk" size="161280" crc="fad63007" sha1="31990a366b5eb3afdc490e7a4bcff21a3ab4b871" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="galaxatxa" cloneof="galaxatx">
+		<description>Galax Attax (Alt)</description>
+		<year>1982</year>
+		<publisher>Spectral Associates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="galax attax (spectral assosciates) (space pack).dsk" size="161280" crc="3d29f4ce" sha1="f948549e4055fff349d9c06026798b3ed90b83e7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gangbust">
+		<description>Gang Buster</description>
+		<year>198?</year>
+		<publisher>Prickly-Pear Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gang buster (prickly-pear software).dsk" size="161280" crc="b02a783b" sha1="cbf462fdfb491ab9b372201b0f3bd5f078bee8a3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gangbusta" cloneof="gangbust">
+		<description>Gang Buster (Alt)</description>
+		<year>198?</year>
+		<publisher>Prickly-Pear Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gang busters (public domain) (simulations).dsk" size="161280" crc="ec52131e" sha1="a5b6162726a18b96bc7120ea468c3bd972df0b66" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gantelet">
+		<description>Gantelet (Cracked by Captain Kid)</description>
+		<year>1986</year>
+		<publisher>&lt;bootleg (Captain Kid)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gantelet (diecom products).dsk" size="161280" crc="f893f2ea" sha1="6f11de3053fe69c247bdd76fcfec041dc8528a6a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ganteleta" cloneof="gantelet">
+		<description>Gantelet (Cracked by Mr. X)</description>
+		<year>1986</year>
+		<publisher>&lt;bootleg (Mr. X)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gantelet 1 (diecom software inc).dsk" size="161280" crc="703dbdd4" sha1="bd50fbd925e873feffeb68787106ac0436ef4a48" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gatedeli">
+		<description>Gates of Delirium</description>
+		<year>1987</year>
+		<publisher>Diecom Products Inc.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="223246">
+				<rom name="gates of delirium (diecom products) (gofdgame).dsk" size="223246" crc="84d968d8" sha1="f1fb4011c87fbda0b50348897f80f43a4466715c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gates of delirium (diecom products) (gofdplyr).dsk" size="161280" crc="b9642eae" sha1="aafca515aff531c0ea266591878c41c424700a52" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gatedelia" cloneof="gatedeli">
+		<description>Gates of Delirium (Alt)</description>
+		<year>1987</year>
+		<publisher>Diecom Products Inc.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gates of delirium (disk 2) (diecom software inc) (coco 1, 2).dsk" size="161280" crc="22a1a96b" sha1="8653eec7071925785f109b1cdcafa14a57f703b4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gates of delirium (disk 1) (diecom software inc) (coco 1, 2).dsk" size="161280" crc="b868ec99" sha1="ae07cee681005fa86e4faf21d97ca31598c1168f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gatedelib" cloneof="gatedeli">
+		<description>Gates of Delirium (Cheat)</description>
+		<year>1987</year>
+		<publisher>&lt;hack&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gates of delirium (diecom products) (gatescht).dsk" size="161280" crc="309a32c1" sha1="9e994cb79b5a4bfd4e09603368a5d8269c4f8ab4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gates of delirium (diecom products) (gofdplyr).dsk" size="161280" crc="b9642eae" sha1="aafca515aff531c0ea266591878c41c424700a52" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gatedelic" cloneof="gatedeli">
+		<description>Gates of Delirium (Crack)</description>
+		<year>1987</year>
+		<publisher>&lt;bootleg&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gates of delirium (diecom products) (gatescrk).dsk" size="161280" crc="5c542c93" sha1="422363b48c7e151677816c1f4fbe533c52517184" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gates of delirium (diecom products) (gofdplyr).dsk" size="161280" crc="b9642eae" sha1="aafca515aff531c0ea266591878c41c424700a52" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gatedelid" cloneof="gatedeli">
+		<description>Gates of Delirium (Fix)</description>
+		<year>1987</year>
+		<publisher>&lt;hack&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gates of delirium (diecom products) (gatesfix).dsk" size="161280" crc="59fb8c8c" sha1="5a263c96a08f3df1aa9c5cbb42d338321edb60e5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gates of delirium (diecom products) (gofdplyr).dsk" size="161280" crc="b9642eae" sha1="aafca515aff531c0ea266591878c41c424700a52" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!--
+	<software name="gatedelie" cloneof="gatedeli" supported="no">
+		<description>Gates of Delirium (Extra Data)</description>
+		<year>1987</year>
+		<publisher>Diecom Products Inc.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161264">
+				<rom name="gates of delirium (diecom software inc) (disk 1).dsk" size="161264" crc="88b96bb9" sha1="11251782fcc114ce407db529e363451a2b3142fb" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="161309">
+				<rom name="gates of delirium (diecom software inc) (disk 2).dsk" size="161309" crc="4a9d97b0" sha1="ecf3170c9779196686519b78d3352ce50f28b69c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+-->
+
+	<software name="gazon">
+		<description>Gazon</description>
+		<year>1982</year>
+		<publisher>K &amp; K Computerware</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gazon (k&amp;k computerware).dsk" size="161280" crc="2c0161d6" sha1="f2bb49ea897277a57b7d73e2a3b7a2460cb4b015" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gazona" cloneof="gazon">
+		<description>Gazon (Alt)</description>
+		<year>1982</year>
+		<publisher>K &amp; K Computerware</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gazon (k&amp;k computerware)[a].dsk" size="161280" crc="efd9a99a" sha1="c95728092dcc8a32780cb7a22d6c3fc3f8f45dcc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gears">
+		<description>Gears</description>
+		<year>1985</year>
+		<publisher>Sunburst</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gears (sunburst).dsk" size="161280" crc="efd519b3" sha1="ea4f0114d1b1a9b71cad2d197db3a78a4e54ca25" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gemsrch">
+		<description>Gem Search</description>
+		<year>1986</year>
+		<publisher>T&amp;D Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gem hunt (t&amp;d).dsk" size="161280" crc="292b5808" sha1="4c5e5581a6aba3cc1b0caedd2526ac3dee902983" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="germwar">
+		<description>Germ Warfare</description>
+		<year>198?</year>
+		<publisher>Chromasette</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="germ warfare (chromasette).dsk" size="161280" crc="98ff7654" sha1="4f3c861cad1039277243dc434acbba845c433086" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="germwara" cloneof="germwar">
+		<description>Germ Warfare (Alt)</description>
+		<year>198?</year>
+		<publisher>Chromasette</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="germ warfare (chromasette magazines).dsk" size="161280" crc="51815600" sha1="aa15c60aecc5982894deb06e036b1d9686c0b2e7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="germwarb" cloneof="germwar">
+		<description>Germ Warfare (Alt 2)</description>
+		<year>198?</year>
+		<publisher>Chromasette</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="germ warfare (t&amp;d).dsk" size="161280" crc="39cd4a83" sha1="d7cf9bf558282b5e4134f7f45c895c2fc4e4e3ce" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ghanabwa">
+		<description>Ghana-Bwana (v01.00.00)</description>
+		<year>1984</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="224016">
+				<rom name="ghana bwana.dsk" size="224016" crc="179e7bd3" sha1="7806d4781b40f75347f9b8f2e25b6357f86e88e8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- hangs after EXEC -->
+	<software name="ghanabwaa" cloneof="ghanabwa" supported="no">
+		<description>Ghana-Bwana (v01.00.00, Alt)</description>
+		<year>1984</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="ghana-bwana (tandy) (alt).dsk" size="161280" crc="2cfe0400" sha1="bd15027ce772488fd0d867dab0f81418ad12e1c6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ghostgob">
+		<description>Ghost Gobbler (v1.4)</description>
+		<year>1982</year>
+		<publisher>Spectral Associates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="ghost gobbler (spectral associates).dsk" size="161280" crc="f9000a6a" sha1="3922db2b50b78e43bb432ebed9595c5b967e627c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ghostgoba" cloneof="ghostgob">
+		<description>Ghost Gobbler (v1.4, Alt)</description>
+		<year>1982</year>
+		<publisher>Spectral Associates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="ghost gobbler v1.4 (spectral assosciates).dsk" size="161280" crc="13767a82" sha1="6384ea8805ae2033d55f63748b40d13e3cba493d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ghostgobb" cloneof="ghostgob">
+		<description>Ghost Gobbler (v1.4, Alt 2)</description>
+		<year>1982</year>
+		<publisher>Spectral Associates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gobbler (spectral assosciates).dsk" size="161280" crc="0bb84370" sha1="93bd5e9ae0406376ecacbd320531cd04ab3ffe84" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ghostgob13" cloneof="ghostgob">
+		<description>Ghost Gobbler (v1.3)</description>
+		<year>1982</year>
+		<publisher>Spectral Associates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="ghost gobbler 1.3 (spectral associates).dsk" size="161280" crc="26e96935" sha1="9bcd7089cba627773d22752be898f50d34057aa3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ghostgob13a" cloneof="ghostgob">
+		<description>Ghost Gobbler (v1.3. Alt)</description>
+		<year>1982</year>
+		<publisher>Spectral Associates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="ghost gobbler (spectral assosciates).dsk" size="161280" crc="978e644b" sha1="a1c88bad2cca7f55958fb390abc529c39a9b15ae" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Restarts BASIC, doesn't like floppy expansion? No cassette version to test -->
+	<software name="ghostgob15" cloneof="ghostgob" supported="no">
+		<description>Ghost Gobbler (v1.5)</description>
+		<year>1982</year>
+		<publisher>Spectral Associates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="ghost gobbler v1.5 (spectral assosciates).dsk" size="161280" crc="bfcde092" sha1="3c74be395a8f74c252dae56737b5240049e30183" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ghostown">
+		<description>Ghost Town</description>
+		<year>198?</year>
+		<publisher>Peter Barella</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="ghost town (peter barella).dsk" size="161280" crc="31b7fff3" sha1="dca7c52f0b4bef21e6d61350dea6d93c6465a6ef" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ginchamp">
+		<description>Gin Champion</description>
+		<year>1982</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gin champion (tandy).dsk" size="161280" crc="c1e414b3" sha1="ff6ced70d7860daeca273ce644b4b8e3c0a44552" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="glaxxons">
+		<description>Glaxxons</description>
+		<year>1983</year>
+		<publisher>Mark Data Products</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="glaxxons (mark data products).dsk" size="161280" crc="70241322" sha1="81e333dac985bd74d49c966c3f735efc57defd21" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="glaxxonsa" cloneof="glaxxons">
+		<description>Glaxxons (Alt)</description>
+		<year>1983</year>
+		<publisher>Mark Data Products</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="glaxxons (mark data products) (glaxxons).dsk" size="161280" crc="9d9a8096" sha1="7129cf9be8f50d993546a418cc8d6849ad057e35" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gtwar">
+		<description>Global Thermonuclear War</description>
+		<year>1984</year>
+		<publisher>T&amp;D Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="global thermonuclear war (t&amp;d software).dsk" size="161280" crc="d03d53bf" sha1="9ec3565fe5cfdffabe60a5c859c870b1625b78be" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="glove">
+		<description>Glove</description>
+		<year>2006</year>
+		<publisher>James McKay</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="glove (james mckay).dsk" size="161280" crc="9507bafd" sha1="0a736222a94c7f91e7ddf7443f3e1c69136957f8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gofish">
+		<description>Go Fish</description>
+		<year>1982</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="go fish (tandy).dsk" size="161280" crc="2784301c" sha1="872029cdb2229ace842bc5351c1f28f63b7b8333" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gobbler">
+		<description>Gobbler</description>
+		<year>1982</year>
+		<publisher>David Crandall</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gobbler (david crandall).dsk" size="161280" crc="5b7df49c" sha1="a74878ac81bd763075425ddf2233223b2578124b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="goldchld">
+		<description>The Gold Child</description>
+		<year>1987</year>
+		<publisher>Luis Ricardo Blando</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gold child (luis ricardo blando).dsk" size="161280" crc="3c5839f6" sha1="702074303e616edf063535a52b5417c6068fd808" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="goldfind">
+		<description>Gold Finder</description>
+		<year>1986</year>
+		<publisher>Tom Mix Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gold finder (tom mix software).dsk" size="161280" crc="cfb562d1" sha1="3bdfc541ef703ac9f354943cfe3edd2d54fceb82" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="goldrun">
+		<description>Gold Runner</description>
+		<year>1984</year>
+		<publisher>Tom Mix Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gold runner (tom mix software).dsk" size="161280" crc="967e06c5" sha1="42ef2620c380a71c4e3527496a4c96a2919de3cf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="goldruna" cloneof="goldrun">
+		<description>Gold Runner (Alt)</description>
+		<year>1984</year>
+		<publisher>Tom Mix Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gold runner (diecom software inc).dsk" size="161280" crc="bd8e2775" sha1="b3f3e22e9db0c897024c1f5e505936bbd3abafbf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="goldrunb" cloneof="goldrun">
+		<description>Gold Runner (Alt 2)</description>
+		<year>1984</year>
+		<publisher>Tom Mix Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gold runner (tom mix) (coco1,2&amp;3).dsk" size="161280" crc="e3a90226" sha1="71285854b9d7fbdc5c46a74af6cdcca4ef0dd01f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="goldrun2">
+		<description>Gold Runner II - The Sequel</description>
+		<year>1985</year>
+		<publisher>Diecom Products Inc.</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gold runner 2.dsk" size="161280" crc="88ae5d7a" sha1="03668c7ddacc7b5e3c13ac75b061ade0075f9fdf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="goldrun2a" cloneof="goldrun2">
+		<description>Gold Runner II - The Sequel (Cracked)</description>
+		<year>1985</year>
+		<publisher>&lt;bootleg (Tewfick Chidiac)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gold runner ii (diecom products) (gold runner ii level editor).dsk" size="161280" crc="f7c0ac37" sha1="88422dfc5c39fff0af83a86b10f56e84fb41ec37" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="golf">
+		<description>Golf</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="golf (unknown authors or company).dsk" size="161280" crc="983e043b" sha1="d7a4b8822653549b53eb803be3823ed2a576a1cd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gomoku">
+		<description>Gomoku and Renju</description>
+		<year>1982</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gomoku and renju (tandy).dsk" size="161280" crc="a188e621" sha1="424a9d5c4e34e453aaca1ca871682527bb19fd3f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gomokua" cloneof="gomoku">
+		<description>Gomoku and Renju (Alt)</description>
+		<year>1982</year>
+		<publisher>Tandy</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gomoku.dsk" size="161280" crc="ae185027" sha1="eb5725162f0224fc5981c91bb99eaf9d7c9aa58d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="grabber">
+		<description>Grabber</description>
+		<year>1983</year>
+		<publisher>Tom Mix Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="grabber (tom mix software).dsk" size="161280" crc="ccb71bad" sha1="1ab5390c4e452c2e4ba8729d47a18b975e9bf7e5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="grabbera" cloneof="grabber">
+		<description>Grabber (Alt)</description>
+		<year>1983</year>
+		<publisher>Tom Mix Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="128768">
+				<rom name="grabber test (tom mix) (coco1,2&amp;3).dsk" size="128768" crc="c7aa84ef" sha1="28db6513de75c64ea05d4070a6835946726f9f37" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="grandprx">
+		<description>Grand Prix</description>
+		<year>1984</year>
+		<publisher>Intracolor</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="grand prix (intracolor).dsk" size="161280" crc="7faac15b" sha1="86df44ca52e006f4f3aefde1c89432021b6095c6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="grandprxa" cloneof="grandprx">
+		<description>Grand Prix (Alt)</description>
+		<year>1984</year>
+		<publisher>Intracolor</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="grand prix (intra color).dsk" size="161280" crc="812d67b5" sha1="9285f91b5f2625d9b4d186ba8c951724bab8e690" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="grafmars">
+		<description>Graphic Mars</description>
+		<year>1984</year>
+		<publisher>Aardvark Action Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="graphic mars (aardvark action software).dsk" size="161280" crc="45a5428a" sha1="0efe13ae5078b546fa1f850aa56cfac429af1986" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gravitor">
+		<description>Gravitor</description>
+		<year>1983</year>
+		<publisher>L. Dos Santos</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gravitor (l. dos santos).dsk" size="161280" crc="7828099c" sha1="602bbb68bd0fa5b9d4cda3ffda11dcfe3627c32b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="graylady">
+		<description>Gray Lady</description>
+		<year>198?</year>
+		<publisher>Jarb Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gray lady (jarb software).dsk" size="161280" crc="5855a68e" sha1="71444f9996df118eee8b14a2aaf8c36775b9ef61" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="grayladya" cloneof="graylady">
+		<description>Gray Lady (Alt)</description>
+		<year>198?</year>
+		<publisher>Jarb Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gray lady (jarb software)[a].dsk" size="161280" crc="068efb84" sha1="48e457129fc735736572d52287f294b8c52233e7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gremlin">
+		<description>Gremlin?</description>
+		<year>198?</year>
+		<publisher>Chromasette</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gremlin (chromasette magazines).dsk" size="161280" crc="e3dcdd1c" sha1="72c660ab23aad940104bf4b54276d5fe65a1c57d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="grid">
+		<description>Grid</description>
+		<year>1983</year>
+		<publisher>Chromasette</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="grid (chromasette).dsk" size="161280" crc="e4a2ce5b" sha1="af43eedf944ac908d47043d2dc93d9262fc195b1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="grida" cloneof="grid">
+		<description>Grid (Alt)</description>
+		<year>1983</year>
+		<publisher>Chromasette</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="grid (chromasette magazines).dsk" size="161280" crc="aa4833e0" sha1="39ade66861023b3c046c59856f0ba419811bcb42" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gridrunr">
+		<description>Grid Runner</description>
+		<year>198?</year>
+		<publisher>Salamander Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="grid runner (salamander software).dsk" size="161280" crc="23625b74" sha1="e0e4d84efcbc51df2a8e45741715c1ece65f319b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="guesanim">
 		<description>Guess The Animal</description>
 		<year>1982</year>
@@ -8981,6 +9961,80 @@
 			</dataarea>
 		</part>
 	</software>
+
+	<software name="guardian">
+		<description>Guardian</description>
+		<year>1982</year>
+		<publisher>Quasar Animations</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="guardian (quasar animations).dsk" size="161280" crc="8b49a31f" sha1="565bd4c36980a4e403ae94de6dca301cb058e1fe" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="guardiana" cloneof="guardian">
+		<description>Guardian (Alt)</description>
+		<year>1982</year>
+		<publisher>Quasar Animations</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="guardian (quaser animation) (alt 1).dsk" size="161280" crc="b31982ac" sha1="0d85a3ad388a3d8e40e624c1b8795ebdf8d9a82c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gunfigh1">
+		<description>Gun Fight</description>
+		<year>1984</year>
+		<publisher>S. Youngberry</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gun fighter (aussie basic games).dsk" size="161280" crc="372cecf2" sha1="f01d597ace77e4be454ddb00308cf93f9b2422fa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gunfigh2">
+		<description>Gun Fighter</description>
+		<year>1984</year>
+		<publisher>T&amp;D Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gun fighter (t&amp;d software).dsk" size="161280" crc="1908da70" sha1="4a71bcf8f116fb066333be2a6958ca91b0efa828" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gunfigh2a" cloneof="gunfigh2">
+		<description>Gun Fighter (Alt)</description>
+		<year>1984</year>
+		<publisher>T&amp;D Software</publisher>
+
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gun fighter (jarb software).dsk" size="161280" crc="07d3ce14" sha1="dd90cba2f1e41c391b00bf05b2c41a80e92aa20e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- definitely corrupt
+	<software name="gunfigh3" supported="no">
+		<description>Gunfight (Bad)</description>
+		<year>198?</year>
+		<publisher>Tandy Australia?</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gunfight (tandy australia).dsk" size="161280" crc="e03bd11c" sha1="fdc3d924fdb47757c6ef89b6e3cc8123bae0b2bc" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+	</software>
+-->
 
 	<software name="theking" cloneof="dking">
 		<description>The King (XXX hack of Donkey King)</description>
@@ -9356,6 +10410,42 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="four cube (tom mix) (four cube).dsk" size="161280" crc="132aeac2" sha1="d20c68c14a704befb60d5609a168b7fe406690db" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unkc21">
+		<description>Unknown Compilation 21</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="grandprix, mr dig, f-16 (decb) (144ag_02).dsk" size="161280" crc="976b0736" sha1="b5a66d77aebfc8b680dccc94c23be7b6d240f1ca" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unkc22">
+		<description>Unknown Compilation 22</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="gem of graal.dsk" size="161280" crc="ec629358" sha1="5f7357e6fa0c904dcb25dd8615c20d87d83a94f2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unkc23">
+		<description>Unknown Compilation 23</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="guadal canal (ark royal).dsk" size="161280" crc="cb269fcb" sha1="df27bf9cedd220e483c95a62842d55a66bda3f07" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -9888,6 +10978,30 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="161280">
 				<rom name="fonts (side 2).dsk" size="161280" crc="24377db1" sha1="e38128d41e2187dd32ba9e309bf288f19252ad99" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="arcfiles">
+		<description>GETERM.ARC, GEDOCS.ARC</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="geterm.arc, gedocs.arc (decb) (164aa_02).dsk" size="161280" crc="f4b59eee" sha1="3932d1333bcd03e82576ffc6eb33045248580cb4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gamesolu">
+		<description>Game Solutions and Hints</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="161280">
+				<rom name="game solutions and hints (decb) (059at_01).dsk" size="161280" crc="a9cd48e3" sha1="04f90c73cb4239451dd7b89fa0c800176f9e7a58" offset="0" />
 			</dataarea>
 		</part>
 	</software>
