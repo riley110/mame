@@ -870,6 +870,23 @@ therefore should have their own different software lists.
 		</part>
 	</software>
 
+	<software name="4soccer">
+		<description>4 Soccer Simulators</description>
+		<year>1989</year>
+		<publisher>Codemasters Gold</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="213760">
+				<rom name="4 soccer simulators (1989)(codemasters gold)(side a).dsk" size="213760" crc="db963a7f" sha1="fc3875238c36e5adb7072ae3775a396f282b942e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3">
+			<dataarea name="flop" size="213760">
+				<rom name="4 soccer simulators (1989)(codemasters gold)(side b).dsk" size="213760" crc="6591918b" sha1="fc8ac07175243156415f49b22c5e3a7c5fc127c4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="4topgame">
 		<description>4 Top Games</description>
 		<year>1987</year>
@@ -1099,6 +1116,18 @@ therefore should have their own different software lists.
 		<part name="flop2" interface="floppy_3">
 			<dataarea name="flop" size="194816">
 				<rom name="another big disk - the pendant of logryn (19xx)(zenobi software).dsk" size="194816" crc="9a1aadd3" sha1="4e442d0d7b1607351027d8e8a01622829de7c57f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="arcextra">
+		<description>Arcade Extravaganza</description>
+		<year>1988</year>
+		<publisher>Alternative Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="arcade extravaganza (1988)(alternative software).dsk" size="194816" crc="e421ac09" sha1="5d8fce028a7793d3ecf84086244a9fb77104cc94" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1427,6 +1456,19 @@ therefore should have their own different software lists.
 		<part name="flop2" interface="floppy_3">
 			<dataarea name="flop" size="194816">
 				<rom name="found yet another big disk - the end is nigh (1991)(zenobi software).dsk" size="194816" crc="0fd39d7a" sha1="2291ace6106dc57389039e58c82887f1807eac9d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hewson4">
+		<description>Four Smash Hits From Hewson</description>
+		<year>198?</year>
+		<publisher>Hewson</publisher>
+		<info name="sps_release" value="3510" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="238800">
+				<rom name="3510 - four smash hits from hewson - exolon + zynaps + rana rama + uridium plus (europe).ipf" size="238800" crc="0e708293" sha1="85d7346aff7b7d63a290a828da0445ab73aa9855" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1918,11 +1960,11 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="mknitril">
-		<!-- SPS (CAPS) release 3629 -->
 		<description>Magic Knight Trilogy</description>
 		<year>1988</year>
 		<publisher>Mastertronic</publisher>
 		<info name="game" value="Finders Keepers + Spellbound + Knight Tyme" />
+		<info name="sps_release" value="3629" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="463740">
@@ -2268,11 +2310,11 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="pirate3">
-		<!-- SPS (CAPS) release 3598 -->
 		<description>Pirate 3 +3</description>
 		<year>1987</year>
 		<publisher>Pirate Software</publisher>
 		<info name="games" value="Holiday in Sumaria + Call Me Psycho + Smash Out!" />
+		<info name="sps_release" value="3598" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="236460">
@@ -2484,7 +2526,6 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="shootdsk">
-		<!-- SPS (CAPS) release 3612 -->
 		<description>Shootacular Disk 2</description>
 		<year>1988</year>
 		<publisher>Alternative Software</publisher>
@@ -2559,11 +2600,11 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="sportacu">
-		<!-- SPS (CAPS) release 3534 -->
 		<description>Sportacular</description>
 		<year>1988</year>
 		<publisher>Alternative Software</publisher>
 		<info name="games" value="Soccer Boss, Olympic Spectacular, Indoor Soccer" />
+		<info name="sps_release" value="3534" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="234180">
@@ -3058,7 +3099,91 @@ therefore should have their own different software lists.
 
 <!-- Games -->
 
-	<software name="aforce" >
+	<software name="007ltk">
+		<description>007 - Licence to Kill</description>
+		<year>1989</year>
+		<publisher>Domark</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="62976">
+				<rom name="007 - licence to kill (1989)(domark).dsk" size="62976" crc="bffb147d" sha1="ac598ec517cdb0a87c0bffd9573b9bca794a6c24" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="007lnld">
+		<description>007 - Live and Let Die</description>
+		<year>1988</year>
+		<publisher>Domark</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="007 - live and let die (1988)(domark).dsk" size="194816" crc="9f28c23c" sha1="ca5037c6e004907de9e20e9fee9f6fe1adba8539" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="007swlm">
+		<description>007 - The Spy Who Loved Me</description>
+		<year>1990</year>
+		<publisher>Domark</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="007 - the spy who loved me (1990)(domark).dsk" size="194816" crc="2899eeb8" sha1="608d32c04d8a279e8f1fc8a4e6265a1aedfdf596" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="3dgpcham">
+		<description>3D Grand Prix Championship</description>
+		<year>1991</year>
+		<publisher>Zeppelin Games</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="3d grand prix championship (1991)(zeppelin games)[master disk].dsk" size="194816" crc="54a0ded1" sha1="10a2e3500752544bacbf654cf3744af5d2cbf6b2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="abadia">
+		<description>La Abadia del Crimen (Spa)</description>
+		<year>1988</year>
+		<publisher>Opera Soft</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="191744">
+				<rom name="abadia del crimen, la (1988)(opera soft)(es).dsk" size="191744" crc="1052ece9" sha1="d94b16011f80428d49edb0af7dec4d73e13021f2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ace2">
+		<description>ACE 2 - The Ultimate Head to Head Conflict</description>
+		<year>1987</year>
+		<publisher>Cascade Games</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="ace 2 - the ultimate head to head conflict (1987)(cascade games).dsk" size="194816" crc="40b617e6" sha1="e32a487c7367913fdd7ab89da08ce742a830e960" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="afighter">
+		<description>Action Fighter</description>
+		<year>1989</year>
+		<publisher>Firebird Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="action fighter (1989)(firebird software).dsk" size="194816" crc="2db88300" sha1="f8511df3b99924755ca52ec3f1b0ec175e18b7c4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="aforce">
 		<description>Action Force - International Heroes</description>
 		<year>1987</year>
 		<publisher>Virgin Games</publisher>
@@ -3067,6 +3192,18 @@ therefore should have their own different software lists.
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="236460">
 				<rom name="3500 - action force - international heroes (europe).ipf" size="236460" crc="1a2bb165" sha1="9b9b44e1118c40bbb9c6a32d4ffc6e61f8c5fd3b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="aforcea" cloneof="aforce">
+		<description>Action Force - International Heroes (DSK Format)</description>
+		<year>1987</year>
+		<publisher>Virgin Games</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194560">
+				<rom name="action force (1987)(virgin games).dsk" size="194560" crc="2c5f41d4" sha1="edb1ae391d64f330cabe4e50b0066c801bc54cc1" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -3084,6 +3221,18 @@ therefore should have their own different software lists.
 		</part>
 	</software>
 
+	<software name="aforce2a" cloneof="aforce2">
+		<description>Action Force II - International Heroes (DSK Format)</description>
+		<year>1988</year>
+		<publisher>Virgin Games</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="214272">
+				<rom name="action force ii (1988)(virgin mastertronic).dsk" size="214272" crc="ea3f2c0d" sha1="63eb5e445a2029e238b08a63ba17b476a27d4d23" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="tiebreak">
 		<description>Adidas Championship Tie-Break</description>
 		<year>1990</year>
@@ -3097,11 +3246,344 @@ therefore should have their own different software lists.
 		</part>
 	</software>
 
+	<software name="tiebreaka" cloneof="tiebreak">
+		<description>Adidas Championship Tie-Break (DSK Format)</description>
+		<year>1990</year>
+		<publisher>Ocean Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="196352">
+				<rom name="adidas championship tie-break (1990)(ocean).dsk" size="196352" crc="c5a7238c" sha1="815ca74726a688d0878303bfd7558b5f82c17388" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tiebreaks" cloneof="tiebreak">
+		<description>Adidas Championship Tie-Break (Spa)</description>
+		<year>1990</year>
+		<publisher>Erbe Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="73216">
+				<rom name="adidas championship tie-break (1990)(erbe software)[re-release].dsk" size="73216" crc="dd6cd54d" sha1="bd915b96fe9fa36c17c3f92f2bbc954720567867" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="afterwar">
+		<description>After the War (Spa)</description>
+		<year>1989</year>
+		<publisher>Dinamic Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="166400">
+				<rom name="after the war (1989)(dinamic software)(es).dsk" size="166400" crc="3dabca4d" sha1="202216a662531fa8c5fba654aac78d91c6db0f4c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="afterwara" cloneof="afterwar">
+		<description>After the War (Spa?, Alt)</description>
+		<year>1989</year>
+		<publisher>Dinamic Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="118016">
+				<rom name="after the war (1989)(dinamic software)[a].dsk" size="118016" crc="cb90314d" sha1="970d0ef6ec0223be59b46298e91be212bdeceda1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="aburner">
+		<description>Afterburner</description>
+		<year>1988</year>
+		<publisher>Activision</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="214784">
+				<rom name="afterburner (1988)(activision)(side a).dsk" size="214784" crc="ceaebfa1" sha1="fc65a2a8a7c7e77ddcf28554e8f8ae08057bd1e5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3">
+			<dataarea name="flop" size="214784">
+				<rom name="afterburner (1988)(activision)(side b).dsk" size="214784" crc="d3330013" sha1="8348adc6e09bc227ab85ae032d6f9d8f968e1310" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="aburnera" cloneof="aburner">
+		<description>Afterburner (Alt)</description>
+		<year>1988</year>
+		<publisher>Activision</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="214784">
+				<rom name="afterburner (1988)(activision)(side a)[a].dsk" size="214784" crc="e3388dc3" sha1="6a96ed52748275d3b8c8a6ec105b7f97733228a9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3">
+			<dataarea name="flop" size="214784">
+				<rom name="afterburner (1988)(activision)(side b).dsk" size="214784" crc="d3330013" sha1="8348adc6e09bc227ab85ae032d6f9d8f968e1310" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="aburnert" cloneof="aburner">
+		<description>Afterburner (Trained)</description>
+		<year>1988</year>
+		<publisher>&lt;hack&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="afterburner (1988)(activision)(side a)[t].dsk" size="194816" crc="af978072" sha1="24782b2e8e60aa20c0c739704cb855d2dcc041af" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3">
+			<dataarea name="flop" size="214784">
+				<rom name="afterburner (1988)(activision)(side b).dsk" size="214784" crc="d3330013" sha1="8348adc6e09bc227ab85ae032d6f9d8f968e1310" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="aburnerta" cloneof="aburner">
+		<description>Afterburner (Trained, Alt)</description>
+		<year>1988</year>
+		<publisher>&lt;hack&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="afterburner (1988)(activision)(side a)[t][a].dsk" size="194816" crc="40b75f92" sha1="ea6256207b78c9179eb373d2360069f9cca3b1dc" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3">
+			<dataarea name="flop" size="214784">
+				<rom name="afterburner (1988)(activision)(side b).dsk" size="214784" crc="d3330013" sha1="8348adc6e09bc227ab85ae032d6f9d8f968e1310" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="aburnertb" cloneof="aburner">
+		<description>Afterburner (Trained, Alt 2)</description>
+		<year>1988</year>
+		<publisher>&lt;hack&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="afterburner (1988)(activision)(side a)[t][a2].dsk" size="194816" crc="c1c7d924" sha1="f118342b12569a7e64e3212a500237303b82176c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3">
+			<dataarea name="flop" size="214784">
+				<rom name="afterburner (1988)(activision)(side b).dsk" size="214784" crc="d3330013" sha1="8348adc6e09bc227ab85ae032d6f9d8f968e1310" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="agatha">
+		<description>Agatha's Folly</description>
+		<year>1989</year>
+		<publisher>Zenobi Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="agatha's folly (1989)(zenobi software).dsk" size="194816" crc="6ac0d7e5" sha1="d8e2f4cc3c49087c14dd9b73996d17a2186f45fd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="airborne">
+		<description>Airborne Ranger</description>
+		<year>1988</year>
+		<publisher>Microprose Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="209152">
+				<rom name="airborne ranger (1988)(microprose software)(side a).dsk" size="209152" crc="caee7972" sha1="6cc64601dadb692b6c7ee1ae115345f1bca748a9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="airborne ranger (1988)(microprose software)(side b).dsk" size="194816" crc="17331dce" sha1="ece46c1567a8e37bc46bd61f8c772effa00243bb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="arc">
+		<description>Alien Research Centre (1989)(Zenobi Software)</description>
+		<year>1989</year>
+		<publisher>Zenobi Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="alien research centre (1989)(zenobi software).dsk" size="194816" crc="db2bc7a4" sha1="4c9aade94605af27eb7d50a82a00bc1053ce87b8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="astorm">
+		<description>Alien Storm</description>
+		<year>1991</year>
+		<publisher>U.S. Gold</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="389376">
+				<rom name="alien storm (1991)(u.s. gold).dsk" size="389376" crc="7bbc42ae" sha1="13c74820255ea1e7797d90208d1e4db8e610c303" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="asyndrom">
+		<description>Alien Syndrome</description>
+		<year>1987</year>
+		<publisher>ACE Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="alien syndrome (1987)(ace software).dsk" size="194816" crc="f7cb4c52" sha1="6aa692ebce02b84c803debeb610f4eb0d313707d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="asyndroms" cloneof="asyndrom">
+		<description>Alien Syndrome (Spa)</description>
+		<year>1988</year>
+		<publisher>Dro Soft</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="alien syndrome (1988)(dro soft)[re-release].dsk" size="194816" crc="e2c722af" sha1="c76e486de716cabe52a968df6913001df479511a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="aabasket">
+		<description>All American Basketball</description>
+		<year>1992</year>
+		<publisher>Zeppelin Games</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="all american basketball (1992)(zeppelin games)(side a)[master disk].dsk" size="194816" crc="1b9bd910" sha1="7502f8042d64ca8a045c2bdbb7ddbed976839b9e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="all american basketball (1992)(zeppelin games)(side b)[master disk].dsk" size="194816" crc="a5c993ed" sha1="5b2d23073972b992cecd65b0044d954b6e905426" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dayswork">
+		<description>All in a Day's Work</description>
+		<year>1996</year>
+		<publisher>Zenobi Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="all in a day's work (1996)(zenobi software)(side a).dsk" size="194816" crc="fc9fdcc7" sha1="9b616bb325491c4466125b85c328bba856c30481" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="all in a day's work (1996)(zenobi software)(side b).dsk" size="194816" crc="de25e5f7" sha1="fd993d7f673d797b0a6fe1b7d0d08f18dc29f6c4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="am3dpool">
+		<description>American 3D Pool</description>
+		<year>1992</year>
+		<publisher>Zeppelin Games</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="american 3d pool (1992)(zeppelin games)(side a)[master disk].dsk" size="194816" crc="3133c3a7" sha1="88d7dc1629b19213ad5013cece5d7914da260399" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="american 3d pool (1992)(zeppelin games)(side b)[master disk].dsk" size="194816" crc="9e62a21c" sha1="2d6d741dfcf6c914fa153f49a0febf824d7cabd0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amuldara">
+		<description>The Amulet of Darath</description>
+		<year>1991</year>
+		<publisher>Zenobi Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="amulet of darath, the (1991)(zenobi software).dsk" size="194816" crc="6c2d3b50" sha1="6fe5169df72e34a41e0ea557ae1c85540a4b8600" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="apb">
+		<description>APB - All Points Bulletin</description>
+		<year>1989</year>
+		<publisher>Domark</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="190208">
+				<rom name="apb - all points bulletin (1989)(domark).dsk" size="190208" crc="595363f9" sha1="58df342adf1e4a67304cfc5c0194b194c17dad5f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="aprentic">
+		<description>The Apprentice</description>
+		<year>1993</year>
+		<publisher>Zenobi Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="apprentice, the (1993)(zenobi software).dsk" size="194816" crc="86e40adc" sha1="f8b6f9a8fb83c9e004aeb9e84dd7989323adb2cb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="april7">
+		<description>April 7th</description>
+		<year>1992</year>
+		<publisher>Zenobi Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="april 7th (1992)(zenobi software).dsk" size="194816" crc="f2ee2bd1" sha1="501de56a06afc02e13623eab143664754acd9248" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="arkanoi2">
+		<description>Arkanoid II - Revenge of Doh</description>
+		<year>1988</year>
+		<publisher>Imagine Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="214784">
+				<rom name="arkanoid ii - revenge of doh (1988)(imagine software).dsk" size="214784" crc="e5dafb18" sha1="9e3d9552dd438d3a224ea19fc5e19730e1738bef" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="arnold3">
+		<description>Arnold the Adventurer III</description>
+		<year>1992</year>
+		<publisher>Zenobi Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="arnold the adventurer iii (1992)(zenobi software).dsk" size="194816" crc="c5159e2b" sha1="f1916459527b2f153849d05624cad97c3dd650f4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="artura">
-		<!-- SPS (CAPS) release 3552 -->
 		<description>Artura</description>
 		<year>1989</year>
 		<publisher>Gremlin Graphics Software</publisher>
+		<info name="sps_release" value="3552" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="237460">
@@ -3110,11 +3592,163 @@ therefore should have their own different software lists.
 		</part>
 	</software>
 
+	<software name="arturaa" cloneof="artura">
+		<description>Artura (DSK Format)</description>
+		<year>1989</year>
+		<publisher>Gremlin Graphics Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="artura (1989)(gremlin graphics software)(side a).dsk" size="194816" crc="a60019cb" sha1="3303b24cc705b4b6051223d653288ef115d90b2d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="artura (1989)(gremlin graphics software)(side b).dsk" size="194816" crc="9e8f9c27" sha1="4e2b395bbaf8e08341f515cdfc5744931d72872b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="aspargp">
+		<description>Aspar GP Master (Spa)</description>
+		<year>1988</year>
+		<publisher>Dinamic Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="58880">
+				<rom name="aspar gp master (1988)(dinamic software)(es).dsk" size="58880" crc="8c452eea" sha1="1618afa3986147ee842af394198ea662de76f6a9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="aspargpa" cloneof="aspargp">
+		<description>Aspar GP Master (Spa, Alt)</description>
+		<year>1988</year>
+		<publisher>Dinamic Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="58880">
+				<rom name="aspar gp master (1988)(dinamic software)(es)[a].dsk" size="58880" crc="c583f871" sha1="1b94e7d003a6b243eaf0ddaa05fb7189025ddce3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atf">
+		<description>ATF - Advanced Tactical Fighter</description>
+		<year>1988</year>
+		<publisher>Digital Integration</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="102400">
+				<rom name="atf - advanced tactical fighter (1988)(digital integration).dsk" size="102400" crc="ee8aad31" sha1="05f77ee7281f667ec1f92ecb7a1af6552c9431ae" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="aurascop">
+		<description>Aurascope</description>
+		<year>1992</year>
+		<publisher>Zenobi Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="aurascope (1992)(zenobi software).dsk" size="194816" crc="06e2ce3b" sha1="4da4ad217593a8e6301bc2800a2a836bd7417ea1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="avenorig">
+		<description>La Aventura Original (Spa)</description>
+		<year>1989</year>
+		<publisher>Aventuras AD</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="206080">
+				<rom name="aventura original, la (1989)(aventuras ad)(es).dsk" size="206080" crc="4c67d329" sha1="b76701e9a6d99195e866e3dd902be37f0aca45b0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="axekolt">
+		<description>The Axe of Kolt</description>
+		<year>1990</year>
+		<publisher>FSF Adventures</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="axe of kolt, the (1990)(fsf adventures)(side a).dsk" size="194816" crc="cb7846ad" sha1="df43b9c0d8461f3e44c04a716b222e72db2a6d35" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="axe of kolt, the (1990)(fsf adventures)(side b).dsk" size="194816" crc="52a2a8e1" sha1="72ee7458dd51806f3f8737f28f75c1163c6d8963" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="aztecas">
+		<description>Aztec Assault</description>
+		<year>1992</year>
+		<publisher>Zenobi Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="aztec assault (1992)(zenobi software).dsk" size="194816" crc="9c23191d" sha1="d6ae6a418a37a5467e2c3ff969f5e1aeeb2e6a61" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bttf2">
+		<description>Back to the Future II</description>
+		<year>1990</year>
+		<publisher>Image Works</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="216320">
+				<rom name="back to the future ii (1990)(image works)(side a).dsk" size="216320" crc="30c20cf0" sha1="ae22c8cd1fc94577bd45cf3a5d6075dce517ab03" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="back to the future ii (1990)(image works)(side b).dsk" size="194816" crc="ae0bffe4" sha1="05b70832fc272183a6ffac24a3bb9307b85a2b5d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bttf3">
+		<description>Back to the Future III</description>
+		<year>1991</year>
+		<publisher>Image Works</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="196352">
+				<rom name="back to the future iii (1991)(image works)(side a).dsk" size="196352" crc="3913c988" sha1="919d098cf7be3d0513baf53231b39b9d4867eaa2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="back to the future iii (1991)(image works)(side b).dsk" size="194816" crc="1dd2ad6a" sha1="8e707432b2a6e7d0b10a7ef73f5bc5fd9da62857" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bttf3a" cloneof="bttf3">
+		<description>Back to the Future III (Alt)</description>
+		<year>1991</year>
+		<publisher>Image Works</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="389376">
+				<rom name="back to the future iii (1991)(image works).dsk" size="389376" crc="9fe3c153" sha1="fed66130a1b7d6a9abf808e2d50610f2006de42d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="badlands">
-		<!-- SPS (CAPS) release 3553 -->
 		<description>Badlands</description>
 		<year>1990</year>
 		<publisher>Domark</publisher>
+		<info name="sps_release" value="3553" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="234180">
@@ -3123,11 +3757,268 @@ therefore should have their own different software lists.
 		</part>
 	</software>
 
+	<software name="badlandsa" cloneof="badlands">
+		<description>Badlands (DSK Format)</description>
+		<year>1990</year>
+		<publisher>Domark</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="badlands (1990)(domark).dsk" size="194816" crc="51be78e0" sha1="64dcfb8260630b878ae0778a29d4008d107e806d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="balcat">
+		<description>The Balrog and the Cat</description>
+		<year>1988</year>
+		<publisher>Zenobi Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="balrog and the cat, the (1988)(zenobi software).dsk" size="194816" crc="646814a2" sha1="3548ee10ccc4a77ebc96b5b79c037aac85d475ce" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="barbar2">
+		<description>Barbarian II - The Dungeon of Drax</description>
+		<year>1988</year>
+		<publisher>Palace Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="254720">
+				<rom name="barbarian ii - the dungeon of drax (1988)(palace software).dsk" size="254720" crc="c34122e2" sha1="85aaa95586f4c72940dcbb4c172344a5cf65347c" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="barbar2a" cloneof="barbar2">
+		<description>Barbarian II - The Dungeon of Drax (Alt)</description>
+		<year>1988</year>
+		<publisher>Palace Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="144384">
+				<rom name="barbarian ii - the dungeon of drax (1988)(palace software)[a].dsk" size="144384" crc="7f0aecdc" sha1="960844cba76d42f6ff1a37ecbb1a2cce8568368f" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="barbar2s" cloneof="barbar2">
+		<description>Barbarian II - The Dungeon of Drax (Spa)</description>
+		<year>1988</year>
+		<publisher>Erbe Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="144384">
+				<rom name="barbarian ii - the dungeon of drax (1988)(erbe software)[re-release].dsk" size="144384" crc="8ba96bd6" sha1="aed9c7159d67af12e649f6a4b7f69c767ed38f94" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bardtale">
+		<description>The Bard's Tale</description>
+		<year>1988</year>
+		<publisher>Electronic Arts</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="bard's tale, the (1988)(electronic arts)(side a).dsk" size="194816" crc="378a5215" sha1="8e3bd21491ca201fdcb71fcadd561ce3aa529a53" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="bard's tale, the (1988)(electronic arts)(side b).dsk" size="194816" crc="c2ae64e9" sha1="b031822fd972de13a72cdea0fe77a327d388ed44" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bardic">
+		<description>The Bardic Rites</description>
+		<year>1994</year>
+		<publisher>Zenobi Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="bardic rites, the (1994)(zenobi software).dsk" size="194816" crc="99c8df43" sha1="627fd79979146655854164c8b20165ef9f2045aa" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="batman">
+		<description>Batman - The Caped Crusader</description>
+		<year>1988</year>
+		<publisher>Ocean Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="123392">
+				<rom name="batman - the caped crusader (1988)(ocean).dsk" size="123392" crc="91bfb255" sha1="004538f2c6b9258c301a5c232075d7d762f444a9" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="batmanm">
+		<description>Batman - The Movie</description>
+		<year>1989</year>
+		<publisher>Ocean Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="batman - the movie (1989)(ocean).dsk" size="194816" crc="31da53d6" sha1="50a94f8a0261fc4661af6fc791f684ed1737c9ba" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="batmanma" cloneof="batmanm">
+		<description>Batman - The Movie (Alt)</description>
+		<year>1989</year>
+		<publisher>Ocean Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="152576">
+				<rom name="batman - the movie (1989)(ocean)[a].dsk" size="152576" crc="a4db4011" sha1="e56a88a1837d8ad02c64ddd786ff8ece1d064087" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="batmanmb" cloneof="batmanm">
+		<description>Batman - The Movie (Alt 2)</description>
+		<year>1989</year>
+		<publisher>Ocean Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="batman - the movie (1989)(ocean)[a2].dsk" size="194816" crc="111bd6db" sha1="2920d5ea39b487bd1c8713cf8117752ecc7a12a3" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="batmanmt" cloneof="batmanm">
+		<description>Batman - The Movie (Trained)</description>
+		<year>1989</year>
+		<publisher>&lt;hack&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="batman - the movie (1989)(ocean)[t].dsk" size="194816" crc="f3c86d32" sha1="a7bb3cd443692baa73aeb3ec705e749d95fb676a" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="batmanms" cloneof="batmanm">
+		<description>Batman - The Movie (Spa)</description>
+		<year>1989</year>
+		<publisher>Erbe Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="185088">
+				<rom name="batman - the movie (1989)(erbe software)[re-release].dsk" size="185088" crc="d07587bc" sha1="94918c10f53710577cc86c3e3b89b37fec6577f9" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="beachvol">
+		<description>Beach Volley (Spa)</description>
+		<year>1990</year>
+		<publisher>Erbe Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="97536">
+				<rom name="beach volley (1990)(erbe software)[re-release].dsk" size="97536" crc="f8c13542" sha1="93673eaec3f66e8e14461e94d55cbb69b944f171" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="torrack">
+		<description>The Beast of Torrack Moor</description>
+		<year>1988</year>
+		<publisher>Zenobi Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="beast of torrack moor, the (1988)(zenobi software)[re-release].dsk" size="194816" crc="33cc73f0" sha1="747f285b901f388aed5dd547cf5cc2740833d50b" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bedlam">
+		<description>Bedlam (Spa)</description>
+		<year>1988</year>
+		<publisher>Erbe Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="bedlam (1988)(erbe software)[re-release].dsk" size="194816" crc="4f8f724b" sha1="c93e9de8363fbd4b48c9aa23095af34b4e42a940" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="begend">
+		<description>The Beginning of the End</description>
+		<year>1992</year>
+		<publisher>Zenobi Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="beginning of the end, the (1992)(zenobi software).dsk" size="194816" crc="d7513346" sha1="61c9b420a52fa920374b9f2ac7b326ed6bc1c8ed" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bcd4">
+		<description>Behind Closed Doors IV - Balrog's Day Out</description>
+		<year>1989</year>
+		<publisher>Zenobi Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="behind closed doors iv - balrog's day out (1989)(zenobi software).dsk" size="194816" crc="dc5066f6" sha1="500d838a4327e72ef829c31b31fedb755cba4a5c" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atlantis">
+		<description>Behold Atlantis</description>
+		<year>1991</year>
+		<publisher>Zenobi Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="behold atlantis (1991)(zenobi software).dsk" size="194816" crc="04408dce" sha1="83e0bc202f3beaf6361c03cf8f8757f721e8b7d6" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bermuda">
+		<description>The Bermuda Triangle</description>
+		<year>1991</year>
+		<publisher>Zenobi Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="bermuda triangle, the (1991)(zenobi software).dsk" size="194816" crc="1f56095c" sha1="8515f73018bccab506daaae8274ca394eda9c8b5" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bestial">
+		<description>Bestial Warrior (Spa)</description>
+		<year>1989</year>
+		<publisher>Dinamic Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="80384">
+				<rom name="bestial warrior (1989)(dinamic software)(es).dsk" size="80384" crc="208235f6" sha1="50d9a3bb79b82deb6c08253cfbffa460bb8abaa2" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="bhcop">
-		<!-- SPS (CAPS) release 3502 -->
 		<description>Beverly Hills Cop</description>
 		<year>1990</year>
 		<publisher>Tynesoft</publisher>
+		<info name="sps_release" value="3502" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="236460">
@@ -3136,11 +4027,131 @@ therefore should have their own different software lists.
 		</part>
 	</software>
 
+	<software name="bhcopa" cloneof="bhcop">
+		<description>Beverly Hills Cop (DSK Format)</description>
+		<year>1990</year>
+		<publisher>Tynesoft</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="beverly hills cop (1990)(tynesoft).dsk" size="194816" crc="ad7c72d1" sha1="186496c66a7a9e9cabdf7e5bc76b3183d4a06941" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="icepalac">
+		<description>Beyond the Ice Palace</description>
+		<year>1988</year>
+		<publisher>Elite Systems</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="214784">
+				<rom name="beyond the ice palace (1988)(elite systems).dsk" size="214784" crc="364b9753" sha1="e8aff84d40510100028fb15de89ab3071036c6f2" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="icepalacs" cloneof="icepalac">
+		<description>Beyond the Ice Palace (Spa)</description>
+		<year>1988</year>
+		<publisher>MCM Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="beyond the ice palace (1988)(mcm software)[re-release].dsk" size="194816" crc="a547670b" sha1="cde06121712e3beeeb1faca842a1731f2dab850b" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bigsleaz">
+		<description>The Big Sleaze</description>
+		<year>1992</year>
+		<publisher>Zenobi Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="big sleaze, the (1992)(zenobi software)[re-release].dsk" size="194816" crc="621a14ab" sha1="f08c273685367a590261b850f5ec8ec716bd3aaf" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bioninja">
+		<description>Bionic Ninja</description>
+		<year>1989</year>
+		<publisher>Zeppelin Games</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="bionic ninja (1989)(zeppelin games)[master disk].dsk" size="194816" crc="99c63497" sha1="b4517e6a2124eb1fc6e5f658c9591ef0b867840f" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="blacklmp">
+		<description>Black Lamp</description>
+		<year>1988</year>
+		<publisher>Firebird Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="78080">
+				<rom name="black lamp (1988)(firebird software).dsk" size="78080" crc="e90869b8" sha1="c98bc347c956d2b0ee2542fc07b171237a324ad5" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="blacktwr">
+		<description>Black Tower</description>
+		<year>1993</year>
+		<publisher>Zenobi Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="black tower (1993)(zenobi software).dsk" size="194816" crc="d3b64e66" sha1="80f9a5b6eeafcc185019b818ac40e6786f57bef5" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="blacktw2">
+		<description>Black Tower II - A Serpentine Tale</description>
+		<year>1993</year>
+		<publisher>Zenobi Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="black tower ii - a serpentine tale (1993)(zenobi software).dsk" size="194816" crc="bd0e89f2" sha1="7af072b5755b119ec22141ed4ab10ac0c54cc52e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="blstroid">
+		<description>Blasteroids</description>
+		<year>1987</year>
+		<publisher>Image Works</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="174848">
+				<rom name="blasteroids (1987)(image works).dsk" size="174848" crc="47c49e33" sha1="71ed33708c9bd8481da358e5ee5c62d9f4e901d2" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="blinky">
+		<description>Blinky's Scary School</description>
+		<year>1990</year>
+		<publisher>Zeppelin Games</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="199680">
+				<rom name="blinky's scary school (1990)(zeppelin games)[master disk].dsk" size="199680" crc="6c13f156" sha1="b58ea972c196119403801ea66b50da8fe2e9be3e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="bloodwyc">
-		<!-- SPS (CAPS) release 3554 -->
 		<description>Bloodwych</description>
 		<year>1990</year>
 		<publisher>Image Works</publisher>
+		<info name="sps_release" value="3554" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="236460">
@@ -3149,11 +4160,23 @@ therefore should have their own different software lists.
 		</part>
 	</software>
 
+	<software name="bloodwyca" cloneof="bloodwyc">
+		<description>Bloodwych (DSK Format)</description>
+		<year>1990</year>
+		<publisher>Image Works</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="bloodwych (1990)(image works).dsk" size="194816" crc="d650514e" sha1="0132b678fd1a1003b90aa613a1d70ac9f87134ce" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="boggit">
-		<!-- SPS (CAPS) release 3555 -->
 		<description>The Boggit - Bored Too</description>
 		<year>1986</year>
 		<publisher>CRL Group</publisher>
+		<info name="sps_release" value="3555" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="236460">
@@ -3162,11 +4185,23 @@ therefore should have their own different software lists.
 		</part>
 	</software>
 
+	<software name="bnzabros">
+		<description>Bonanza Bros</description>
+		<year>1991</year>
+		<publisher>U.S. Gold</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="255232">
+				<rom name="bonanza bros (1991)(u.s. gold).dsk" size="255232" crc="bc619eef" sha1="8596ee563127f2ef5dd047feb482e5b1a5834e97" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="bookdead">
-		<!-- SPS (CAPS) release 3556 -->
 		<description>Book of the Dead</description>
 		<year>1987</year>
 		<publisher>CRL Group</publisher>
+		<info name="sps_release" value="3556" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="236460">
@@ -3175,12 +4210,96 @@ therefore should have their own different software lists.
 		</part>
 	</software>
 
+	<software name="bookdeada" cloneof="bookdead">
+		<description>Book of the Dead (DSK Format)</description>
+		<year>1987</year>
+		<publisher>CRL Group</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="book of the dead (1987)(crl group)[re-release].dsk" size="194816" crc="bc6b999a" sha1="3a1b2cc0692a7767c0db3d4affaa29025e723898" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bordring">
+		<description>Bored of the Rings</description>
+		<year>1992</year>
+		<publisher>Zenobi Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="bored of the rings (1992)(zenobi software)[re-release].dsk" size="194816" crc="6a0bacb5" sha1="c0321b609e53b5ef1f66fa20e66b2f7d345d09c8" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="boydfile">
+		<description>The Boyd File</description>
+		<year>1990</year>
+		<publisher>Zenobi Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="boyd file, the (1990)(zenobi software).dsk" size="194816" crc="a10f7dcb" sha1="338836359459d8adfb54bd2c9e99bc683dad71db" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="brian">
+		<description>Brian - The Novice Barbarian (1994)(Zenobi Software)</description>
+		<year>1994</year>
+		<publisher>Zenobi Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="brian - the novice barbarian (1994)(zenobi software).dsk" size="194816" crc="5118b277" sha1="71138e6dd21e30728c1a388b1eaa25efbd93f8ff" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bclough">
+		<description>Brian Clough's Football Fortunes</description>
+		<year>1987</year>
+		<publisher>CDS Microsystems</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="brian clough's football fortunes (1987)(cds microsystems).dsk" size="194816" crc="6cbefb15" sha1="4ea4df092ad0059a9e7e5a0e0e136d675a12ad3e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bublbobl">
+		<description>Bubble Bobble</description>
+		<year>1987</year>
+		<publisher>Firebird Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="78080">
+				<rom name="bubble bobble (1987)(firebird software).dsk" size="78080" crc="ad820cf2" sha1="dc43630be33bdf4279d6cf51d2539b8a3e4ac768" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bublbust">
+		<description>Bubble Buster</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="bubble buster (1983)(bubble buster).dsk" size="194816" crc="bd8be2d5" sha1="e0acc64b08cdca0fb17fb1567aee8328f039423a" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="bbrg">
-		<!-- SPS (CAPS) release 3503 -->
 		<description>Buffalo Bill's Rodeo Games</description>
 		<year>1989</year>
 		<publisher>Tynesoft</publisher>
 		<info name="alt_title" value="Buffalo Bill's Wild West Rodeo Show" />
+		<info name="sps_release" value="3503" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="234180">
@@ -3189,11 +4308,97 @@ therefore should have their own different software lists.
 		</part>
 	</software>
 
+	<software name="bbrga" cloneof="bbrg">
+		<description>Buffalo Bill's Rodeo Games (DSK Format)</description>
+		<year>1989</year>
+		<publisher>Tynesoft</publisher>
+		<info name="alt_title" value="Buffalo Bill's Wild West Rodeo Show" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="buffalo bill's wild west show (1989)(tynesoft).dsk" size="194816" crc="35a8bbb9" sha1="d0c7112c0cb98ce3476383cf46fa9d3b1ef7d4c2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bbrgb" cloneof="bbrg">
+		<description>Buffalo Bill's Rodeo Games (System 4)</description>
+		<year>1989</year>
+		<publisher>System 4</publisher>
+		<info name="alt_title" value="Buffalo Bill's Wild West Rodeo Show" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="buffalo bill's wild west show (1989)(system 4)[re-release].dsk" size="194816" crc="98087bfb" sha1="6bb33ab8dfdc7b7c0081e6eb49abd68df760358a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="buggyboy">
+		<description>Buggy Boy</description>
+		<year>1988</year>
+		<publisher>Elite Systems</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="214784">
+				<rom name="buggy boy (1988)(elite systems).dsk" size="214784" crc="c567c3ab" sha1="752f46a60fe96049315e2a9afd3cf0103e254cf1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="buggyboya" cloneof="buggyboy">
+		<description>Buggy Boy (Alt)</description>
+		<year>1988</year>
+		<publisher>Elite Systems</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="214784">
+				<rom name="buggy boy (1988)(elite systems)[a].dsk" size="214784" crc="57649b27" sha1="d546ec0b36a4d469f0b1663f39105b088653a272" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="buggyrng">
+		<description>Buggy Ranger (Spa)</description>
+		<year>1990</year>
+		<publisher>Dinamic Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="64256">
+				<rom name="buggy ranger (1990)(dinamic software)(es).dsk" size="64256" crc="8b7ece82" sha1="fba219989f6d81a249a92deee818762d017c9b37" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bugsy">
+		<description>Bugsy</description>
+		<year>1992</year>
+		<publisher>Zenobi Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="bugsy (1992)(zenobi software)[re-release].dsk" size="194816" crc="60b11040" sha1="6d3744cec7aa20dda6d7edf7ad4420fed318b66e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bulbo">
+		<description>Bulbo and the Lizard-King</description>
+		<year>1987</year>
+		<publisher>Zenobi Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="bulbo and the lizard-king (1987)(zenobi software).dsk" size="194816" crc="ca9781f5" sha1="9509fafb718bff4a79d4263fafd32bd652280a60" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="butchill">
-		<!-- SPS (CAPS) release 3557 -->
 		<description>Butcher Hill</description>
 		<year>1989</year>
 		<publisher>Gremlin Graphics Software </publisher>
+		<info name="sps_release" value="3557" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="237460">
@@ -3202,11 +4407,35 @@ therefore should have their own different software lists.
 		</part>
 	</software>
 
+	<software name="butchilla" cloneof="butchill">
+		<description>Butcher Hill (DSK Format)</description>
+		<year>1989</year>
+		<publisher>Gremlin Graphics Software </publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="butcher hill (1988)(gremlin graphics software).dsk" size="194816" crc="43d9764d" sha1="cdc2d744c058bb8f788ecf7c46a127db486dc915" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="byfair">
+		<description>By Fair Means or Foul</description>
+		<year>1989</year>
+		<publisher>Superior Software</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="214784">
+				<rom name="by fair means or foul (1989)(superior software).dsk" size="214784" crc="6d191978" sha1="9bc03db30b5825be2b65c8e3b2be112f6b5c5ffb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="carrierc">
-		<!-- SPS (CAPS) release 3504 -->
 		<description>Carrier Command</description>
 		<year>1989</year>
 		<publisher>Rainbird Software</publisher>
+		<info name="sps_release" value="3504" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="236140">
@@ -3216,10 +4445,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="chicag30">
-		<!-- SPS (CAPS) release 3558 -->
 		<description>Chicago 30's</description>
 		<year>1988</year>
 		<publisher>U.S. Gold</publisher>
+		<info name="sps_release" value="3558" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="266892">
@@ -3229,10 +4458,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="combatsc">
-		<!-- SPS (CAPS) release 3559 -->
 		<description>Combat School (with Gryzor Preview)</description>
 		<year>1987</year>
 		<publisher>Ocean Software</publisher>
+		<info name="sps_release" value="3559" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="238800">
@@ -3254,10 +4483,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="corruptn">
-		<!-- SPS (CAPS) release 3560 -->
 		<description>Corruption</description>
 		<year>1988</year>
 		<publisher>Rainbird Software</publisher>
+		<info name="sps_release" value="3560" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="236460">
@@ -3267,10 +4496,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="cybernod">
-		<!-- SPS (CAPS) release 3561 -->
 		<description>Cybernoid - The Fighting Machine</description>
 		<year>1988</year>
 		<publisher>Hewson Consultants</publisher>
+		<info name="sps_release" value="3561" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="212085">
@@ -3280,10 +4509,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="cyberno2">
-		<!-- SPS (CAPS) release 3562 -->
 		<description>Cybernoid II - The Revenge</description>
 		<year>1988</year>
 		<publisher>Hewson Consultants</publisher>
+		<info name="sps_release" value="3562" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="236460">
@@ -3293,10 +4522,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="dandare3">
-		<!-- SPS (CAPS) release 3505 -->
 		<description>Dan Dare III - The Escape</description>
 		<year>1990</year>
 		<publisher>Virgin Games</publisher>
+		<info name="sps_release" value="3505" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="71100">
@@ -3306,10 +4535,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="darkfusn">
-		<!-- SPS (CAPS) release 3563 -->
 		<description>Dark Fusion</description>
 		<year>1988</year>
 		<publisher>Gremlin Graphics Software</publisher>
+		<info name="sps_release" value="3563" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="260585">
@@ -3319,10 +4548,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="deep">
-		<!-- SPS (CAPS) release 3506 -->
 		<description>The Deep</description>
 		<year>1988</year>
 		<publisher>U.S. Gold</publisher>
+		<info name="sps_release" value="3506" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="266891">
@@ -3332,10 +4561,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="deflektr">
-		<!-- SPS (CAPS) release 3564 -->
 		<description>Deflektor</description>
 		<year>1987</year>
 		<publisher>Gremlin Graphics Software</publisher>
+		<info name="sps_release" value="3564" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="212085">
@@ -3345,10 +4574,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="dominatr">
-		<!-- SPS (CAPS) release 3507 -->
 		<description>Dominator</description>
 		<year>1989</year>
 		<publisher>System 3 Software</publisher>
+		<info name="sps_release" value="3507" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="250612">
@@ -3358,10 +4587,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="echelon">
-		<!-- SPS (CAPS) release 3565 -->
 		<description>Echelon</description>
 		<year>1988</year>
 		<publisher>U.S. Gold</publisher>
+		<info name="sps_release" value="3565" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="237460">
@@ -3371,10 +4600,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="erik">
-		<!-- SPS (CAPS) release 3566 -->
 		<description>Erik - The Phantom of the Opera</description>
 		<year>1987</year>
 		<publisher>Crysys</publisher>
+		<info name="sps_release" value="3566" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="236460">
@@ -3384,10 +4613,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="eprom">
-		<!-- SPS (CAPS) release 3567 -->
 		<description>Escape from the Planet of the Robot Monsters</description>
 		<year>1990</year>
 		<publisher>Domark</publisher>
+		<info name="sps_release" value="3567" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="234180">
@@ -3397,11 +4626,11 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="espionag">
-		<!-- SPS (CAPS) release 3568 -->
 		<description>Espionage</description>
 		<year>1988</year>
 		<publisher>Grandslam Entertainments </publisher>
 		<info name="alt_title" value="Espionage - The Computer Game (Box)" />
+		<info name="sps_release" value="3568" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="99180">
@@ -3411,10 +4640,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="f16comb">
-		<!-- SPS (CAPS) release 3508 -->
 		<description>F-16 Combat Pilot</description>
 		<year>1991</year>
 		<publisher>Digital Integration</publisher>
+		<info name="sps_release" value="3508" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="161607">
@@ -3424,10 +4653,11 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="federatn">
-		<!-- SPS (CAPS) release 3569 -->
 		<description>Federation</description>
 		<year>1988</year>
 		<publisher>CRL Group</publisher>
+		<info name="sps_release" value="3569" />
+
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="236460">
 				<rom name="3569 - federation (europe).ipf" size="236460" crc="091f3f4f" sha1="fb0f360417ef35fcf5bb59b2c9822ffb7d834015" offset="0" />
@@ -3436,10 +4666,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="firefly">
-		<!-- SPS (CAPS) release 3570 -->
 		<description>Firefly</description>
 		<year>1988</year>
 		<publisher>Ocean Software</publisher>
+		<info name="sps_release" value="3570" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="238800">
@@ -3449,10 +4679,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="fish">
-		<!-- SPS (CAPS) release 3571 -->
 		<description>Fish!</description>
 		<year>1989</year>
 		<publisher>Rainbird Software</publisher>
+		<info name="sps_release" value="3571" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="236460">
@@ -3462,10 +4692,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="footdir2">
-		<!-- SPS (CAPS) release 3509 -->
 		<description>Football Director II</description>
 		<year>1987</year>
 		<publisher>D&amp;H Games</publisher>
+		<info name="sps_release" value="3509" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="234180">
@@ -3475,10 +4705,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="foty2">
-		<!-- SPS (CAPS) release 3572 -->
 		<description>Footballer of the Year 2</description>
 		<year>1989</year>
 		<publisher>Gremlin Graphics Software </publisher>
+		<info name="sps_release" value="3572" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="259471">
@@ -3487,24 +4717,11 @@ therefore should have their own different software lists.
 		</part>
 	</software>
 
-	<software name="hewson4">
-		<!-- SPS (CAPS) release 3510 -->
-		<description>Four Smash Hits From Hewson</description>
-		<year>198?</year>
-		<publisher>Hewson</publisher>
-
-		<part name="flop1" interface="floppy_3">
-			<dataarea name="flop" size="238800">
-				<rom name="3510 - four smash hits from hewson - exolon + zynaps + rana rama + uridium plus (europe).ipf" size="238800" crc="0e708293" sha1="85d7346aff7b7d63a290a828da0445ab73aa9855" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="garfield">
-		<!-- SPS (CAPS) release 3511 -->
 		<description>Garfield - "Big, Fat, Hairy Deal."</description>
 		<year>1988</year>
 		<publisher>The Edge</publisher>
+		<info name="sps_release" value="3511" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="236460">
@@ -3514,10 +4731,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="lineker">
-		<!-- SPS (CAPS) release 3573 -->
 		<description>Gary Lineker's Hot-Shot!</description>
 		<year>1988</year>
 		<publisher>Gremlin Graphics Software</publisher>
+		<info name="sps_release" value="3573" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="266892">
@@ -3527,10 +4744,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="linekskl">
-		<!-- SPS (CAPS) release 3574 -->
 		<description>Gary Lineker's Super Skills</description>
 		<year>1988</year>
 		<publisher>Gremlin Graphics Software</publisher>
+		<info name="sps_release" value="3574" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="237460">
@@ -3540,10 +4757,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="lineksss">
-		<!-- SPS (CAPS) release 3575 -->
 		<description>Gary Lineker's Super Star Soccer</description>
 		<year>1988</year>
 		<publisher>Gremlin Graphics Software</publisher>
+		<info name="sps_release" value="3575" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="212085">
@@ -3553,10 +4770,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="gauntlet">
-		<!-- SPS (CAPS) release 3576 -->
 		<description>Gauntlet</description>
 		<year>1987</year>
 		<publisher>U.S. Gold</publisher>
+		<info name="sps_release" value="3576" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="212085">
@@ -3566,10 +4783,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="gauntlt2">
-		<!-- SPS (CAPS) release 3577 -->
 		<description>Gauntlet II</description>
 		<year>1988</year>
 		<publisher>U.S. Gold</publisher>
+		<info name="sps_release" value="3577" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="212085">
@@ -3579,10 +4796,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="gazza">
-		<!-- SPS (CAPS) release 3579 -->
 		<description>Gazza's Super Soccer</description>
 		<year>1990</year>
 		<publisher>Empire Software</publisher>
+		<info name="sps_release" value="3579" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="236460">
@@ -3592,10 +4809,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="gazza2">
-		<!-- SPS (CAPS) release 3578 -->
 		<description>Gazza II</description>
 		<year>1990</year>
 		<publisher>Empire Software</publisher>
+		<info name="sps_release" value="3578" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="225096">
@@ -3605,10 +4822,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="ghouls">
-		<!-- SPS (CAPS) release 3512 -->
 		<description>Ghouls 'n' Ghosts</description>
 		<year>1989</year>
 		<publisher>U.S. Gold</publisher>
+		<info name="sps_release" value="3512" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="259471">
@@ -3618,10 +4835,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="hate">
-		<!-- SPS (CAPS) release 3580 -->
 		<description>H.A.T.E. - Hostile All Terrain Encounter</description>
 		<year>1989</year>
 		<publisher>Gremlin Graphics Software</publisher>
+		<info name="sps_release" value="3580" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="266892">
@@ -3631,10 +4848,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="hkm">
-		<!-- SPS (CAPS) release 3581 -->
 		<description>H.K.M. - Human Killing Machine</description>
 		<year>1988</year>
 		<publisher>U.S. Gold</publisher>
+		<info name="sps_release" value="3581" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="266892">
@@ -3644,10 +4861,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="herolanc">
-		<!-- SPS (CAPS) release 3513 -->
 		<description>Heroes of the Lance</description>
 		<year>1988</year>
 		<publisher>U.S. Gold</publisher>
+		<info name="sps_release" value="3513" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="237465">
@@ -3657,10 +4874,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="heroqst">
-		<!-- SPS (CAPS) release 3514 -->
 		<description>Hero Quest</description>
 		<year>1991</year>
 		<publisher>Gremlin Graphics Software</publisher>
+		<info name="sps_release" value="3514" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="239805">
@@ -3670,10 +4887,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="ironlord">
-		<!-- SPS (CAPS) release 3582 -->
 		<description>Iron Lord</description>
 		<year>1989</year>
 		<publisher>Ubi Soft</publisher>
+		<info name="sps_release" value="3582" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="259180">
@@ -3683,10 +4900,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="italia90">
-		<!-- SPS (CAPS) release 3548 -->
 		<description>Italia '90 - World Cup Soccer</description>
 		<year>1989</year>
 		<publisher>Virgin Games</publisher>
+		<info name="sps_release" value="3548" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="71100">
@@ -3696,10 +4913,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="offroad">
-		<!-- SPS (CAPS) release 3538 -->
 		<description>Ivan 'Ironman' Stewart's Super Off Road</description>
 		<year>1990</year>
 		<publisher>Virgin Games</publisher>
+		<info name="sps_release" value="3538" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="64845">
@@ -3709,10 +4926,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="jackrip">
-		<!-- SPS (CAPS) release 3583 -->
 		<description>Jack the Ripper</description>
 		<year>1987</year>
 		<publisher>CRL Group</publisher>
+		<info name="sps_release" value="3583" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="236460">
@@ -3722,10 +4939,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="dalglish">
-		<!-- SPS (CAPS) release 3515 -->
 		<description>Kenny Dalglish Soccer Match</description>
 		<year>1990</year>
 		<publisher>Impressions</publisher>
+		<info name="sps_release" value="3515" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="234180">
@@ -3735,10 +4952,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="kickoff">
-		<!-- SPS (CAPS) release 3516 -->
 		<description>Kick Off</description>
 		<year>1989</year>
 		<publisher>Anco Software</publisher>
+		<info name="sps_release" value="3516" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="234180">
@@ -3748,10 +4965,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="lmohican">
-		<!-- SPS (CAPS) release 3584 -->
 		<description>The Last Mohican</description>
 		<year>1987</year>
 		<publisher>CRL Group</publisher>
+		<info name="sps_release" value="3584" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="236460">
@@ -3761,10 +4978,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="lightcor">
-		<!-- SPS (CAPS) release 3517 -->
 		<description>The Light Corridor</description>
 		<year>1991</year>
 		<publisher>Infogrames</publisher>
+		<info name="sps_release" value="3517" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="125316">
@@ -3774,10 +4991,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="lmidnght">
-		<!-- SPS (CAPS) release 3518 -->
 		<description>Loads of Midnight</description>
 		<year>1987</year>
 		<publisher>CRL Group</publisher>
+		<info name="sps_release" value="3518" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="236460">
@@ -3787,10 +5004,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="lonewolf">
-		<!-- SPS (CAPS) release 3586 -->
 		<description>Lone Wolf - The Mirror of Death</description>
 		<year>1991</year>
 		<publisher>Aufiogenic Software</publisher>
+		<info name="sps_release" value="3586" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="236460">
@@ -3800,10 +5017,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="lotus">
-		<!-- SPS (CAPS) release 3587 -->
 		<description>Lotus Esprit Turbo Challenge</description>
 		<year>1990</year>
 		<publisher>Gremlin Graphics Software</publisher>
+		<info name="sps_release" value="3587" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="239805">
@@ -3813,10 +5030,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="marauder">
-		<!-- SPS (CAPS) release 3519 -->
 		<description>Marauder</description>
 		<year>1988</year>
 		<publisher>Hewson Consultants</publisher>
+		<info name="sps_release" value="3519" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="237460">
@@ -3826,10 +5043,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="mask3">
-		<!-- SPS (CAPS) release 3588 -->
 		<description>Mask III - Venom Strikes Back</description>
 		<year>1988</year>
 		<publisher>Gremlin Graphics Software</publisher>
+		<info name="sps_release" value="3588" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="212085">
@@ -3839,10 +5056,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="masters">
-		<!-- SPS (CAPS) release 3589 -->
 		<description>Masters of the Universe - The Movie</description>
 		<year>1987</year>
 		<publisher>U.S. Gold</publisher>
+		<info name="sps_release" value="3589" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="212085">
@@ -3852,10 +5069,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="megapocl">
-		<!-- SPS (CAPS) release 3590 -->
 		<description>MegaApocalypse</description>
 		<year>1988</year>
 		<publisher>Martech Games</publisher>
+		<info name="sps_release" value="3590" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="236460">
@@ -3865,10 +5082,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="mickey">
-		<!-- SPS (CAPS) release 3591 -->
 		<description>Mickey Mouse</description>
 		<year>1988</year>
 		<publisher>Gremlin Graphics Software</publisher>
+		<info name="sps_release" value="3591" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="212085">
@@ -3878,10 +5095,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="midres">
-		<!-- SPS (CAPS) release 3520 -->
 		<description>Midnight Resistance</description>
 		<year>1990</year>
 		<publisher>U.S. Gold</publisher>
+		<info name="sps_release" value="3520" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="146161">
@@ -3891,10 +5108,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="montypyt">
-		<!-- SPS (CAPS) release 3521 -->
 		<description>Monty Python's Flying Circus</description>
 		<year>1990</year>
 		<publisher>Virgin Games</publisher>
+		<info name="sps_release" value="3521" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="262692">
@@ -3904,10 +5121,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="ninjawar">
-		<!-- SPS (CAPS) release 3522 -->
 		<description>The Ninja Warriors</description>
 		<year>1990</year>
 		<publisher>Virgin Games</publisher>
+		<info name="sps_release" value="3522" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="241110">
@@ -3917,10 +5134,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="northstr">
-		<!-- SPS (CAPS) release 3592 -->
 		<description>North Star</description>
 		<year>1988</year>
 		<publisher>Gremlin Graphics Software</publisher>
+		<info name="sps_release" value="3592" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="212085">
@@ -3930,10 +5147,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="obliter">
-		<!-- SPS (CAPS) release 3593 -->
 		<description>Obliterator</description>
 		<year>1989</year>
 		<publisher>Melbourne House</publisher>
+		<info name="sps_release" value="3593" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="234180">
@@ -3943,10 +5160,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="p47thun">
-		<!-- SPS (CAPS) release 3594 -->
 		<description>P-47 Thunderbolt</description>
 		<year>1990</year>
 		<publisher>Firebird Software</publisher>
+		<info name="sps_release" value="3594" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="236460">
@@ -3956,11 +5173,11 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="phmpegas">
-		<!-- SPS (CAPS) release 3596 -->
 		<description>P.H.M. Pegasus</description>
 		<year>1988</year>
 		<publisher>Electronic Arts</publisher>
 		<info name="alt_title" value="P.H.M. Pegasus - Patrol Hydrofoil Missile Craft Simulation (Box)" />
+		<info name="sps_release" value="3596" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="238800">
@@ -3970,10 +5187,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="pacland">
-		<!-- SPS (CAPS) release 3595 -->
 		<description>Pac-Land</description>
 		<year>1989</year>
 		<publisher>Grandslam Entertainments </publisher>
+		<info name="sps_release" value="3595" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="114805">
@@ -3995,10 +5212,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="pang">
-		<!-- SPS (CAPS) release 3523 -->
 		<description>Pang</description>
 		<year>1990</year>
 		<publisher>Ocean Software</publisher>
+		<info name="sps_release" value="3523" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="196735">
@@ -4008,10 +5225,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="passsht">
-		<!-- SPS (CAPS) release 3524 -->
 		<description>Passing Shot</description>
 		<year>1989</year>
 		<publisher>Image Works</publisher>
+		<info name="sps_release" value="3524" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="77364">
@@ -4021,10 +5238,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="pawn">
-		<!-- SPS (CAPS) release 3525 -->
 		<description>The Pawn</description>
 		<year>1987</year>
 		<publisher>Rainbird Software</publisher>
+		<info name="sps_release" value="3525" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="236460">
@@ -4034,10 +5251,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="pipmania">
-		<!-- SPS (CAPS) release 3597 -->
 		<description>Pipe Mania</description>
 		<year>1990</year>
 		<publisher>Empire Software</publisher>
+		<info name="sps_release" value="3597" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="234180">
@@ -4047,10 +5264,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="platoon">
-		<!-- SPS (CAPS) release 3526 -->
 		<description>Platoon</description>
 		<year>1988</year>
 		<publisher>U.S. Gold</publisher>
+		<info name="sps_release" value="3526" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="159198">
@@ -4060,10 +5277,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="predatr2">
-		<!-- SPS (CAPS) release 3527 -->
 		<description>Predator 2</description>
 		<year>1991</year>
 		<publisher>Image Works</publisher>
+		<info name="sps_release" value="3527" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="234180">
@@ -4073,10 +5290,10 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="protennt">
-		<!-- SPS (CAPS) release 3599 -->
 		<description>Pro Tennis Tour</description>
 		<year>1990</year>
 		<publisher>Ubi Soft</publisher>
+		<info name="sps_release" value="3599" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="236460">
@@ -4086,14 +5303,26 @@ therefore should have their own different software lists.
 	</software>
 
 	<software name="qoscrup">
-		<!-- SPS (CAPS) release 3529 -->
 		<description>A Question of Scruples - The Computer Edition</description>
 		<year>1987</year>
 		<publisher>Leisure Genius</publisher>
+		<info name="sps_release" value="3529" />
 
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="236460">
 				<rom name="3529 - question of scruples, a - the computer edition (europe).ipf" size="236460" crc="34d8887c" sha1="2e402eb208ce6695930a8d7e042c4b1f0f7e6944" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="qoscrupa" cloneof="qoscrup">
+		<description>A Question of Scruples (DSK Format)</description>
+		<year>1987</year>
+		<publisher>Leisure Genius</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194560">
+				<rom name="a question of scruples (1987)(leisure genius).dsk" size="194560" crc="32d4e533" sha1="8b36ccbf3a87bca7aee778d4e17a32e519888cea" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -4107,6 +5336,18 @@ therefore should have their own different software lists.
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="236460">
 				<rom name="3601 - question of sport, a (europe).ipf" size="236460" crc="8402bbeb" sha1="0f47e7c7326ad484f2222579c6395e29031a0115" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="qosa" cloneof="qos">
+		<description>A Question of Sport (DSK Format)</description>
+		<year>1989</year>
+		<publisher>Elite Systems</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="a question of sport (1989)(elite systems).dsk" size="194816" crc="87726a94" sha1="d9998e11c5a578d9994447ca3251731e69b88966" offset="0" />
 			</dataarea>
 		</part>
 	</software>
