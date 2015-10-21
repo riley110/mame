@@ -12,24 +12,31 @@ Undumped and most wanted:
 		<year>1983</year>
 		<publisher>Lotus</publisher>
 
+		<!-- repaired copy protected by hand -->
 		<part name="flop1" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 1"/>
+			<feature name="part_id" value="System"/>
+			<dataarea name="flop" size="331572">
+				<rom name="123_sys.mfm" size="2002793" crc="89e185f8" sha1="316ae07e5cbf02a4dcdbe322f9f0dced75b5f387" offset="0" status="baddump"/>
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Tutorial"/>
+			<dataarea name="flop" size="339830">
+				<rom name="123_tut.td0" size="339830" crc="afee1cf2" sha1="239734ff103219517630aef40a79bbfb7ae524b7" offset="0"/>
+			</dataarea>
+		</part>
+		<!--
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="331572">
 				<rom name="123-sys.td0" size="331572" crc="a7cacc1e" sha1="8720bb7614821403c269012adea81f6cb6d84f7d" offset="0"/>
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="533442">
 				<rom name="123_sys.td0" size="533442" crc="cc6845f9" sha1="a819783b18c35f7ad2531c108acfa0acdf3225bf" offset="0"/>
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_5_25">
-			<feature name="part_id" value="Disk 3"/>
-			<dataarea name="flop" size="339830">
-				<rom name="123_tut.td0" size="339830" crc="afee1cf2" sha1="239734ff103219517630aef40a79bbfb7ae524b7" offset="0"/>
-			</dataarea>
-		</part>
+		-->
 	</software>
 
 	<software name="7002701">
