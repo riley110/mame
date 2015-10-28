@@ -24,7 +24,7 @@ be written to RAM if RAM was switched in.
 WRITE8_MEMBER( osborne1_state::osborne1_0000_w )
 {
 	/* Check whether regular RAM is enabled */
-	if ( ! m_bank2_enabled || ( m_in_irq_handler && m_bankswitch == RAMMODE ) )
+	if ( !m_bank2_enabled || ( m_in_irq_handler && m_bankswitch == RAMMODE) )
 	{
 		m_ram->pointer()[ offset ] = data;
 	}
@@ -34,7 +34,7 @@ WRITE8_MEMBER( osborne1_state::osborne1_0000_w )
 WRITE8_MEMBER( osborne1_state::osborne1_1000_w )
 {
 	/* Check whether regular RAM is enabled */
-	if ( ! m_bank2_enabled || ( m_in_irq_handler && m_bankswitch == RAMMODE ) )
+	if ( !m_bank2_enabled || ( m_in_irq_handler && m_bankswitch == RAMMODE) )
 	{
 		m_ram->pointer()[ 0x1000 + offset ] = data;
 	}
@@ -46,13 +46,16 @@ READ8_MEMBER( osborne1_state::osborne1_2000_r )
 	UINT8   data = 0xFF;
 
 	/* Check whether regular RAM is enabled */
-	if ( ! m_bank2_enabled )
+	if ( !m_bank2_enabled )
 	{
 		data = m_ram->pointer()[ 0x2000 + offset ];
 	}
 	else
 	{
-		switch( offset & 0x0F00 )
+		// This isn't really accurate - bus fighting will occur for many values
+		// since each peripheral only checks two bits.  We just return 0xFF for
+		// any undocumented address.
+		switch ( offset & 0x0F00 )
 		{
 		case 0x100: /* Floppy */
 			data = m_fdc->read( space, offset & 0x03 );
@@ -75,13 +78,16 @@ READ8_MEMBER( osborne1_state::osborne1_2000_r )
 			/* Row 7 */
 			if ( offset & 0x80 )    data &= m_row7->read();
 			break;
+		case 0x400: /* SCREEN-PAC */
+			if (m_screen_pac) data &= 0xFB;
+			break;
 		case 0x900: /* IEEE488 PIA */
-			data = m_pia0->read(space, offset & 0x03 );
+			data = m_pia0->read(space, offset & 0x03);
 			break;
 		case 0xA00: /* Serial */
 			break;
 		case 0xC00: /* Video PIA */
-			data = m_pia1->read(space, offset & 0x03 );
+			data = m_pia1->read(space, offset & 0x03);
 			break;
 		}
 	}
@@ -91,7 +97,32 @@ READ8_MEMBER( osborne1_state::osborne1_2000_r )
 
 WRITE8_MEMBER( osborne1_state::osborne1_2000_w )
 {
+#if 0
 	/* Check whether regular RAM is enabled */
+	if ( !m_bank2_enabled ||  (m_in_irq_handler && m_bankswitch == RAMMODE) )
+	{
+		m_ram->pointer()[ 0x2000 + offset ] = data;
+	}
+	else
+	{
+		/* Handle writes to the I/O area */
+		if ( 0x100 == (offset & 0x900) ) /* Floppy */
+			m_fdc->write(space, offset & 0x03, data);
+		if ( 0x400 == (offset & 0xC00) ) /* SCREEN-PAC */
+		{
+			m_resolution = data & 0x01;
+			m_hc_left = (data >> 1) & 0x01;
+		}
+		if ( 0x900 == (offset & 0x900) ) /* IEEE488 PIA */
+			m_pia0->write(space, offset & 0x03, data);
+		if ( 0xA00 == (offset & 0xA00) ) /* Serial */
+			/* not implemented */;
+		if ( 0xC00 == (offset & 0xC00) ) /* Video PIA */
+			m_pia1->write(space, offset & 0x03, data);
+	}
+#else
+	// This code is a nasty hack that doesn't reflect hardware operation,
+	// but it gets us by while the bank selection implementation is inadequate
 	if ( ! m_bank2_enabled )
 	{
 		m_ram->pointer()[ 0x2000 + offset ] = data;
@@ -103,10 +134,14 @@ WRITE8_MEMBER( osborne1_state::osborne1_2000_w )
 			m_ram->pointer()[ 0x2000 + offset ] = data;
 		}
 		/* Handle writes to the I/O area */
-		switch( offset & 0x0F00 )
+		switch( offset & 0x1F00 )
 		{
 		case 0x100: /* Floppy */
-			m_fdc->write(space, offset & 0x03, data );
+			m_fdc->write(space, offset & 0x03, data);
+			break;
+		case 0x400: /* SCREEN-PAC */
+			m_resolution = data & 0x01;
+			m_hc_left = (data >> 1) & 0x01;
 			break;
 		case 0x900: /* IEEE488 PIA */
 			m_pia0->write(space, offset & 0x03, data );
@@ -118,65 +153,50 @@ WRITE8_MEMBER( osborne1_state::osborne1_2000_w )
 			break;
 		}
 	}
-}
-
-
-WRITE8_MEMBER( osborne1_state::osborne1_3000_w )
-{
-	/* Check whether regular RAM is enabled */
-	if ( ! m_bank2_enabled || ( m_in_irq_handler && m_bankswitch == RAMMODE ) )
-	{
-		m_ram->pointer()[ 0x3000 + offset ] = data;
-	}
+#endif
 }
 
 
 WRITE8_MEMBER( osborne1_state::osborne1_videoram_w )
 {
 	/* Check whether the video attribute section is enabled */
-	if ( m_bank3_enabled )
+	if ( m_bit_9 )
 		data |= 0x7F;
 
-	m_bank4_ptr[offset] = data;
+	reinterpret_cast<UINT8 *>(m_bank3->base())[offset] = data;
 }
 
 
 WRITE8_MEMBER( osborne1_state::osborne1_bankswitch_w )
 {
-	switch( offset )
+	switch ( offset & 0x03 )
 	{
 	case 0x00:
 		m_bank2_enabled = 1;
-		m_bank3_enabled = 0;
+		m_bankswitch = 0x00;
 		break;
 	case 0x01:
 		m_bank2_enabled = 0;
-		m_bank3_enabled = 0;
+		m_bankswitch = 0x01;
 		break;
 	case 0x02:
-		m_bank2_enabled = 1;
-		m_bank3_enabled = 1;
+		m_bit_9 = 1;
 		break;
 	case 0x03:
-		m_bank2_enabled = 1;
-		m_bank3_enabled = 0;
+		m_bit_9 = 0;
 		break;
 	}
 	if ( m_bank2_enabled )
 	{
-		m_bank1->set_base(m_region_maincpu->base() );
-		m_bank2->set_base(m_empty_4K );
-		m_bank3->set_base(m_empty_4K );
+		m_bank1->set_base(m_region_maincpu->base());
+		m_bank2->set_base(m_region_maincpu->base());
 	}
 	else
 	{
-		m_bank1->set_base(m_ram->pointer() );
-		m_bank2->set_base(m_ram->pointer() + 0x1000 );
-		m_bank3->set_base(m_ram->pointer() + 0x3000 );
+		m_bank1->set_base(m_ram->pointer());
+		m_bank2->set_base(m_ram->pointer() + 0x1000);
 	}
-	m_bank4_ptr = m_ram->pointer() + ( ( m_bank3_enabled ) ? 0x10000 : 0xF000 );
-	m_bank4->set_base(m_bank4_ptr );
-	m_bankswitch = offset;
+	m_bank3->set_base(m_ram->pointer() + (m_bit_9 ? 0x10000 : 0xF000));
 	m_in_irq_handler = 0;
 }
 
@@ -336,9 +356,8 @@ void osborne1_state::device_timer(emu_timer &timer, device_timer_id id, int para
 
 TIMER_CALLBACK_MEMBER(osborne1_state::osborne1_video_callback)
 {
-	int y = machine().first_screen()->vpos();
-	UINT8 ra=0,chr,gfx,dim;
-	UINT16 x,ma;
+	int const y = machine().first_screen()->vpos();
+	UINT8 ra=0;
 
 	/* Check for start of frame */
 	if ( y == 0 )
@@ -355,32 +374,40 @@ TIMER_CALLBACK_MEMBER(osborne1_state::osborne1_video_callback)
 	{
 		ra = y % 10;
 		/* Draw a line of the display */
-		ma = (m_new_start_y + (y/10)) * 128 + m_new_start_x;
+		bool const hires = m_screen_pac & m_resolution;
+		UINT16 const row = (m_new_start_y + (y/10)) * 128 & 0xF80;
+		UINT16 const col = (m_new_start_x & (hires ? 0x60 : 0x7F)) - ((hires && m_hc_left) ? 8 : 0);
 		UINT16 *p = &m_bitmap.pix16(y);
 
-		for ( x = 0; x < 52; x++ )
+		for ( UINT16 x = 0; x < (hires ? 104 : 52); x++ )
 		{
-			chr = m_ram->pointer()[ 0xF000 + ( (ma+x) & 0xFFF ) ];
-			dim = m_ram->pointer()[ 0x10000 + ( (ma+x) & 0xFFF ) ] & 0x80;
+			UINT16 offs = row | ((col + x) & 0x7F);
+			UINT8 const chr = m_ram->pointer()[ 0xF000 + offs ];
+			UINT8 const dim = m_ram->pointer()[ 0x10000 + offs ] & 0x80;
 
-			if ( (chr & 0x80) && (ra == 9) )
-				gfx = 0xFF;
-			else
-				gfx = m_p_chargen[ (ra << 7) | ( chr & 0x7F ) ];
+			UINT8 const gfx = ((chr & 0x80) && (ra == 9)) ? 0xFF : m_p_chargen[ (ra << 7) | (chr & 0x7F) ];
 
 			/* Display a scanline of a character */
 			*p++ = BIT(gfx, 7) ? ( dim ? 2 : 1 ) : 0;
+			if (!hires) { p[0] = p[-1]; p++; }
 			*p++ = BIT(gfx, 6) ? ( dim ? 2 : 1 ) : 0;
+			if (!hires) { p[0] = p[-1]; p++; }
 			*p++ = BIT(gfx, 5) ? ( dim ? 2 : 1 ) : 0;
+			if (!hires) { p[0] = p[-1]; p++; }
 			*p++ = BIT(gfx, 4) ? ( dim ? 2 : 1 ) : 0;
+			if (!hires) { p[0] = p[-1]; p++; }
 			*p++ = BIT(gfx, 3) ? ( dim ? 2 : 1 ) : 0;
+			if (!hires) { p[0] = p[-1]; p++; }
 			*p++ = BIT(gfx, 2) ? ( dim ? 2 : 1 ) : 0;
+			if (!hires) { p[0] = p[-1]; p++; }
 			*p++ = BIT(gfx, 1) ? ( dim ? 2 : 1 ) : 0;
+			if (!hires) { p[0] = p[-1]; p++; }
 			*p++ = BIT(gfx, 0) ? ( dim ? 2 : 1 ) : 0;
+			if (!hires) { p[0] = p[-1]; p++; }
 		}
 	}
 
-	if ( (ra==2) || (ra== 6) )
+	if ( (ra==2) || (ra==6) )
 	{
 		m_beep->set_state( m_beep_state );
 	}
@@ -401,27 +428,27 @@ TIMER_CALLBACK_MEMBER(osborne1_state::setup_osborne1)
 
 void osborne1_state::machine_reset()
 {
-	address_space& space = m_maincpu->space(AS_PROGRAM);
 	/* Initialize memory configuration */
-	osborne1_bankswitch_w( space, 0x00, 0 );
+	osborne1_bankswitch_w( m_maincpu->space(AS_IO), 0x00, 0 );
 
 	m_pia_0_irq_state = FALSE;
 	m_pia_1_irq_state = FALSE;
 	m_in_irq_handler = 0;
 
+	m_screen_pac = 0 != (m_cnf->read() & 0x01);
+	m_resolution = 0;
+	m_hc_left = 0;
 	m_p_chargen = memregion( "chargen" )->base();
 
 	memset( m_ram->pointer() + 0x10000, 0xFF, 0x1000 );
 
+	address_space& space = m_maincpu->space(AS_PROGRAM);
 	space.set_direct_update_handler(direct_update_delegate(FUNC(osborne1_state::osborne1_opbase), this));
 }
 
 
 DRIVER_INIT_MEMBER(osborne1_state,osborne1)
 {
-	m_empty_4K = auto_alloc_array(machine(), UINT8, 0x1000 );
-	memset( m_empty_4K, 0xFF, 0x1000 );
-
 	/* Configure the 6850 ACIA */
 //  acia6850_config( 0, &osborne1_6850_config );
 	m_video_timer = timer_alloc(TIMER_VIDEO);
@@ -495,9 +522,8 @@ int osborne1_daisy_device::z80daisy_irq_ack()
 	osborne1_state *state = machine().driver_data<osborne1_state>();
 	/* Enable ROM and I/O when IRQ is acknowledged */
 	UINT8 old_bankswitch = state->m_bankswitch;
-	address_space& space = state->m_maincpu->space(AS_PROGRAM);
 
-	state->osborne1_bankswitch_w( space, 0, 0 );
+	state->osborne1_bankswitch_w( state->m_maincpu->space(AS_IO), 0, 0 );
 	state->m_bankswitch = old_bankswitch;
 	state->m_in_irq_handler = 1;
 	return 0xF8;

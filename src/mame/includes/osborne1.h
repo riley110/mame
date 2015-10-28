@@ -47,10 +47,10 @@ public:
 		m_row5(*this, "ROW5"),
 		m_row6(*this, "ROW6"),
 		m_row7(*this, "ROW7"),
+		m_cnf(*this, "CNF"),
 		m_bank1(*this, "bank1"),
 		m_bank2(*this, "bank2"),
 		m_bank3(*this, "bank3"),
-		m_bank4(*this, "bank4"),
 		m_region_maincpu(*this, "maincpu") { }
 
 	virtual void video_start();
@@ -73,7 +73,6 @@ public:
 	DECLARE_WRITE8_MEMBER(osborne1_1000_w);
 	DECLARE_READ8_MEMBER(osborne1_2000_r);
 	DECLARE_WRITE8_MEMBER(osborne1_2000_w);
-	DECLARE_WRITE8_MEMBER(osborne1_3000_w);
 	DECLARE_WRITE8_MEMBER(osborne1_videoram_w);
 	DECLARE_WRITE8_MEMBER(osborne1_bankswitch_w);
 	DECLARE_WRITE_LINE_MEMBER(ieee_pia_irq_a_func);
@@ -86,13 +85,14 @@ public:
 	DECLARE_DIRECT_UPDATE_MEMBER(osborne1_opbase);
 
 	bool m_bank2_enabled;
-	bool m_bank3_enabled;
-	UINT8   *m_bank4_ptr;
-	UINT8   *m_empty_4K;
+	UINT8   m_bit_9;
 	/* IRQ states */
 	bool m_pia_0_irq_state;
 	bool m_pia_1_irq_state;
 	/* video related */
+	UINT8   m_screen_pac;
+	UINT8   m_resolution;
+	UINT8   m_hc_left;
 	UINT8   m_new_start_x;
 	UINT8   m_new_start_y;
 	emu_timer *m_video_timer;
@@ -115,10 +115,10 @@ protected:
 	required_ioport m_row5;
 	required_ioport m_row6;
 	required_ioport m_row7;
+	required_ioport m_cnf;
 	required_memory_bank m_bank1;
 	required_memory_bank m_bank2;
 	required_memory_bank m_bank3;
-	required_memory_bank m_bank4;
 	required_memory_region m_region_maincpu;
 
 	virtual void device_timer(emu_timer &timer, device_timer_id id, int param, void *ptr);
