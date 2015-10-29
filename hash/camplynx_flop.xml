@@ -1,49 +1,15 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<!-- NOTE: This list is here only to document available dumps and it's not used (yet) by MAME! -->
 <softwarelist name="camplynx_flop" description="Camputers Lynx floppies">
 
-	<software name="cpm">
-		<description>CP/M (v2.2, 128K)</description>
-		<year>198?</year>
-		<publisher>Digital Research</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop1" size="204800">
-				<rom name="cpm v2.2.ldf" size="204800" crc="3d51fb62" sha1="ac75b3f0dbd3ea942eb22c4b8a25a180127e2d99" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="jmutils">
-		<description>Lynx JM Utilities Disk (v1.0, 96K-128K)</description>
-		<year>1989</year>
-		<publisher>John Koushappas</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop1" size="204800">
-				<rom name="lynx jm utilities disk v1.0.ldf" size="204800" crc="5d0e836f" sha1="4f2504228685c51970be9e41f5884e28c1c84935" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="revival1">
-		<description>Lynx Revival Group - Volume 1</description>
-		<year>1988</year>
-		<publisher>John Koushappas</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop1" size="819200">
-				<rom name="lynx revival group - volume 1.ldf" size="819200" crc="afa4e118" sha1="ca5e74ddd7a66c1812ce946b6376dfa95f424f4c" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
+<!-- Lynx DOS disks -->
 
 	<software name="bttlship">
-		<description>Battleships (128K)</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Battleships</description>
+		<year>1983</year>
+		<publisher>B. Coupe</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT LOAD&quot;BATTLESHIPS&quot;" />
+		<sharedfeat name="compatibility" value="128"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="204800">
@@ -52,10 +18,254 @@
 		</part>
 	</software>
 
-	<software name="compiler">
-		<description>C - Compiler</description>
+	<software name="dltawing">
+		<description>Delta Wing</description>
+		<year>1984</year>
+		<publisher>Thorn EMI Computer Software</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT LOAD&quot;DW.L&quot;" />
+		<sharedfeat name="compatibility" value="96"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="dw_96.ldf" size="204800" crc="e05b6fb2" sha1="251938a76385b1bcd650dd36bc8deff4f48483a2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="disassem">
+		<description>Dis-Assembler</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT LOAD&quot;DISASSEMBLER&quot;, RUN" />
+		<sharedfeat name="compatibility" value="96,128"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="disassem.ldf" size="204800" crc="7241cb1e" sha1="e6f8a98a1e2f7b8c0271c3393902abc7df16ffc9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="figforth">
+		<description>Fig-FORTH (v1.1A)</description>
+		<year>1983</year>
+		<publisher>Camsoft</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT MLOAD&quot;FORTH&quot;" />
+		<sharedfeat name="compatibility" value="96,128"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="forth.ldf" size="204800" crc="82188b28" sha1="94888b4309c1c68ce8a35bfa192ac27e5cc57a7d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gomoku">
+		<description>Gomoku</description>
+		<year>1983</year>
+		<publisher>B. Coupe</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT LOAD&quot;GOMOKU&quot;" />
+		<sharedfeat name="compatibility" value="96"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="gomoku_96k.ldf" size="204800" crc="0f12b5a6" sha1="d9527a4993af39184fcfe030508e254f770e6105" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hangman">
+		<description>Hangman</description>
+		<year>1983</year>
+		<publisher>Steven B. French</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT LOAD&quot;HANGMAN&quot;, RUN" />
+		<sharedfeat name="compatibility" value="96"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="hangman_96.ldf" size="204800" crc="5173734e" sha1="3d9933dfa2f49b7405d9277d3b2ee8ac23c3b302" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="jmutils">
+		<description>JM Utilities (v6.5)</description>
+		<year>1989</year>
+		<publisher>John Koushappas</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT MLOAD&quot;JM.UTILITIES&quot;" />
+		<sharedfeat name="compatibility" value="96,128"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop1" size="204800">
+				<rom name="lynx jm utilities disk v1.0.ldf" size="204800" crc="5d0e836f" sha1="4f2504228685c51970be9e41f5884e28c1c84935" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="logiches">
+		<description>LogiChess (v2.2)</description>
+		<year>1983</year>
+		<publisher>Kaare Danielsen - Hartvig Ekner</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT MLOAD&quot;LC2.2&quot;" />
+		<sharedfeat name="compatibility" value="96"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="logichess.ldf" size="204800" crc="5aa9eba3" sha1="a40b96b05184a8af1d50228cdb6982ed56cf0751" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="logichesa" cloneof="logiches">
+		<description>LogiChess (v2.2, Alt)</description>
+		<year>1983</year>
+		<publisher>Kaare Danielsen - Hartvig Ekner</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT MLOAD&quot;SUPERCHESS&quot;" />
+		<sharedfeat name="compatibility" value="96"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="superchess_96.ldf" size="204800" crc="e548a5d1" sha1="1bd13ae155729d056652611a2af0c1fee7283159" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="intro128">
+		<description>Lynx 128k Intro Tape</description>
+		<year>198?</year>
+		<publisher>Camputers</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT LOAD&quot;INTRO128&quot;, RUN" />
+		<sharedfeat name="compatibility" value="128"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="intro128.ldf" size="204800" crc="5ea7b40c" sha1="d5254105b48eccb7e1b4246abdd02ff02e8a28bf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="revival1">
+		<description>Lynx Revival Group - Volume 1</description>
+		<year>1988</year>
+		<publisher>John Koushappas</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT LOAD&quot;MENU&quot;" />
+		<sharedfeat name="compatibility" value="96,128"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop1" size="819200">
+				<rom name="lynx revival group - volume 1.ldf" size="819200" crc="afa4e118" sha1="ca5e74ddd7a66c1812ce946b6376dfa95f424f4c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mnstmine">
+		<description>Monster Mine</description>
+		<year>198?</year>
+		<publisher>Gem Software</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT MLOAD&quot;MONSTERMINE&quot;" />
+		<sharedfeat name="compatibility" value="96"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="monstermine_96.ldf" size="204800" crc="8087bd7e" sha1="a13569e2311e08d85f84f49ffd8024e61beec170" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Various graphical bugs, see https://jynxemulator.wordpress.com/2014/09/17/roader-for-the-camputers-lynx-96/ for details -->
+	<software name="roader" supported="partial">
+		<description>Roader</description>
+		<year>1984</year>
+		<publisher>FL Software</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT MLOAD&quot;ROADER&quot;" />
+		<sharedfeat name="compatibility" value="96"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="roader_96.ldf" size="204800" crc="bfb99f3f" sha1="74fea2157ce6689b6385f77b78496fdf37797d76" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Missing files BLOCK1 and BLOCK2 -->
+	<software name="slotmach" supported="no">
+		<description>Slot Machine</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT LOAD&quot;SLOT&quot;" />
+		<sharedfeat name="compatibility" value="96"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="slotmachine_96.ldf" size="204800" crc="cece4d3b" sha1="1aac120dece466ac1ff1709030ad55dbbd6d890f" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tisland">
+		<description>Treasure-Island</description>
+		<year>1983</year>
+		<publisher>Neil Higgins</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT LOAD&quot;TREASUREISLAND&quot;" />
+		<sharedfeat name="compatibility" value="96"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="treasure-island_96.ldf" size="204800" crc="a9a13b77" sha1="273aa31b244bec18104bd23c92e94d9b3a3a2f99" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- CP/M disks (all require 128K) -->
+
+	<software name="basic85">
+		<description>BASIC-85 (Rev. 5.29)</description>
+		<year>1986</year>
+		<publisher>Microsoft</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT BOOT, MBASIC" />
+		<sharedfeat name="compatibility" value="128"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="basic1.ldf" size="204800" crc="c24bc250" sha1="185c3615994654f5d295d3f6e7789288a209e625" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basic80" cloneof="basic85">
+		<description>BASIC-80 (Rev. 5.2)</description>
+		<year>1980</year>
+		<publisher>Microsoft</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT BOOT, MBASIC" />
+		<sharedfeat name="compatibility" value="128"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="m-basic.ldf" size="204800" crc="4f828c7e" sha1="2b14686bd1b289d1286718a1c3509d477ab81ab5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ebasic">
+		<description>BASIC-E (v2.0)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT BOOT" />
+		<sharedfeat name="compatibility" value="128"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="e-basic.ldf" size="204800" crc="c7967923" sha1="ca6cd9761a317f0257dcd30e883029e10d3d8038" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="c80">
+		<description>C/80 Compiler (v3.1)</description>
+		<year>1984</year>
+		<publisher>The Software Toolworks</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT BOOT, CC" />
+		<sharedfeat name="compatibility" value="128"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="204800">
@@ -64,10 +274,13 @@
 		</part>
 	</software>
 
-	<software name="calcstar">
-		<description>Calc Star</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
+	<!-- Wants terminal to be configured, but INSTCS cannot find INSTCS.DAT -->
+	<software name="calcstar" supported="no">
+		<description>CalcStar (v1.0)</description>
+		<year>1981</year>
+		<publisher>MicroPro International</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT BOOT, CS" />
+		<sharedfeat name="compatibility" value="128"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="204800">
@@ -76,22 +289,12 @@
 		</part>
 	</software>
 
-	<software name="cobol">
-		<description>COBOL (BIOS 1.15)</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="204800">
-				<rom name="cobol.ldf" size="204800" crc="ae52373b" sha1="517ad01752ebbf5daff336e983c8655974c00889" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="commterm">
 		<description>Comm. &amp; Term.</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT BOOT" />
+		<sharedfeat name="compatibility" value="128"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="204800">
@@ -100,34 +303,12 @@
 		</part>
 	</software>
 
-	<software name="cpmdoc">
-		<description>CP/M Doc</description>
+	<software name="cpm">
+		<description>CP/M (v2.2, BIOS v1.02)</description>
 		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="204800">
-				<rom name="cpm_doc.ldf" size="204800" crc="1d1daef6" sha1="2b1e2ee37d9d2b54718b0a2c5642a1c2ea043b3a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="cpmprobe">
-		<description>CPMProbe</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="204800">
-				<rom name="cpmprobe.ldf" size="204800" crc="ef609f7d" sha1="8c80d0757ee4753db75bf8d9b12ffb574afbff8b" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="cpm102">
-		<description>CP/M Systemdisk (BIOS 1.02)</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<publisher>Camputers</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT BOOT" />
+		<sharedfeat name="compatibility" value="128"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="204800">
@@ -136,10 +317,40 @@
 		</part>
 	</software>
 
+	<software name="cpm1" cloneof="cpm">
+		<description>CP/M (v2.2, BIOS v1.00)</description>
+		<year>198?</year>
+		<publisher>Camputers</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT BOOT" />
+		<sharedfeat name="compatibility" value="128"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop1" size="204800">
+				<rom name="cpm v2.2.ldf" size="204800" crc="3d51fb62" sha1="ac75b3f0dbd3ea942eb22c4b8a25a180127e2d99" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpmdoc">
+		<description>CP/M Doc</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT BOOT" />
+		<sharedfeat name="compatibility" value="128"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="cpm_doc.ldf" size="204800" crc="1d1daef6" sha1="2b1e2ee37d9d2b54718b0a2c5642a1c2ea043b3a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="cpmmisc">
 		<description>CP/M Misc. Programs</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Non-boot, requires CP/M" />
+		<sharedfeat name="compatibility" value="128"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="204800">
@@ -149,9 +360,11 @@
 	</software>
 
 	<software name="datastar">
-		<description>Data Star</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>DataStar (Release 1.4)</description>
+		<year>1982</year>
+		<publisher>MicroPro International</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT BOOT, DATASTAR" />
+		<sharedfeat name="compatibility" value="128"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="204800">
@@ -161,9 +374,11 @@
 	</software>
 
 	<software name="dbase2">
-		<description>DBase II</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>dBase II (v2.4, Demo)</description>
+		<year>1983</year>
+		<publisher>RSP Inc.</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT BOOT, DBASE" />
+		<sharedfeat name="compatibility" value="128"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="204800">
@@ -172,58 +387,12 @@
 		</part>
 	</software>
 
-	<software name="disassem">
-		<description>Disassembler</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="204800">
-				<rom name="disassem.ldf" size="204800" crc="7241cb1e" sha1="e6f8a98a1e2f7b8c0271c3393902abc7df16ffc9" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="dltawing">
-		<description>DeltaWing (96K)</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="204800">
-				<rom name="dw_96.ldf" size="204800" crc="e05b6fb2" sha1="251938a76385b1bcd650dd36bc8deff4f48483a2" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="ebasic">
-		<description>E-BASIC (BIOS 1.15)</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="204800">
-				<rom name="e-basic.ldf" size="204800" crc="c7967923" sha1="ca6cd9761a317f0257dcd30e883029e10d3d8038" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="forth">
-		<description>FORTH</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="204800">
-				<rom name="forth.ldf" size="204800" crc="82188b28" sha1="94888b4309c1c68ce8a35bfa192ac27e5cc57a7d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="fortran">
 		<description>Fortran</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT BOOT" />
+		<sharedfeat name="compatibility" value="128"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="204800">
@@ -236,6 +405,8 @@
 		<description>Fortran (Alt)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT BOOT" />
+		<sharedfeat name="compatibility" value="128"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="204800">
@@ -244,94 +415,26 @@
 		</part>
 	</software>
 
-	<software name="gomoku">
-		<description>Gomoku (96K)</description>
+	<software name="cobol">
+		<description>NPS Micro-COBOL (v2.1)</description>
 		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<publisher>NPS</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT BOOT" />
+		<sharedfeat name="compatibility" value="128"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="204800">
-				<rom name="gomoku_96k.ldf" size="204800" crc="0f12b5a6" sha1="d9527a4993af39184fcfe030508e254f770e6105" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="hangman">
-		<description>Hangman (96K)</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="204800">
-				<rom name="hangman_96.ldf" size="204800" crc="5173734e" sha1="3d9933dfa2f49b7405d9277d3b2ee8ac23c3b302" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="intro128">
-		<description>Intro 128</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="204800">
-				<rom name="intro128.ldf" size="204800" crc="5ea7b40c" sha1="d5254105b48eccb7e1b4246abdd02ff02e8a28bf" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="logiches">
-		<description>LogiChess (v2.2, 96K)</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="204800">
-				<rom name="logichess.ldf" size="204800" crc="5aa9eba3" sha1="a40b96b05184a8af1d50228cdb6982ed56cf0751" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="mbasic">
-		<description>M-BASIC</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="204800">
-				<rom name="basic1.ldf" size="204800" crc="c24bc250" sha1="185c3615994654f5d295d3f6e7789288a209e625" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="mbasica" cloneof="mbasic">
-		<description>M-BASIC (Alt)</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="204800">
-				<rom name="m-basic.ldf" size="204800" crc="4f828c7e" sha1="2b14686bd1b289d1286718a1c3509d477ab81ab5" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="mnstmine">
-		<description>MonsterMine (96K)</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="204800">
-				<rom name="monstermine_96.ldf" size="204800" crc="8087bd7e" sha1="a13569e2311e08d85f84f49ffd8024e61beec170" offset="0" />
+				<rom name="cobol.ldf" size="204800" crc="ae52373b" sha1="517ad01752ebbf5daff336e983c8655974c00889" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="peachclc">
-		<description>Peach Calc</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>PeachCalc - Electronic Spread Sheet (v1.01)</description>
+		<year>1982</year>
+		<publisher>Peachtree Software Inc.</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT BOOT" />
+		<sharedfeat name="compatibility" value="128"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="204800">
@@ -340,10 +443,26 @@
 		</part>
 	</software>
 
-	<software name="rprtstar">
-		<description>Report Star</description>
-		<year>198?</year>
+	<software name="probe">
+		<description>Probe (v1.01)</description>
+		<year>1984</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT BOOT, PROBE" />
+		<sharedfeat name="compatibility" value="128"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="cpmprobe.ldf" size="204800" crc="ef609f7d" sha1="8c80d0757ee4753db75bf8d9b12ffb574afbff8b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="report">
+		<description>Report (Release 1.00)</description>
+		<year>1982</year>
+		<publisher>MicroPro International</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT BOOT, REPORT" />
+		<sharedfeat name="compatibility" value="128"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="204800">
@@ -352,58 +471,12 @@
 		</part>
 	</software>
 
-	<software name="roader">
-		<description>Roader (96K)</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="204800">
-				<rom name="roader_96.ldf" size="204800" crc="bfb99f3f" sha1="74fea2157ce6689b6385f77b78496fdf37797d76" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="slotmach">
-		<description>SlotMachine (96K)</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="204800">
-				<rom name="slotmachine_96.ldf" size="204800" crc="cece4d3b" sha1="1aac120dece466ac1ff1709030ad55dbbd6d890f" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="suprches">
-		<description>SuperChess (96K)</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="204800">
-				<rom name="superchess_96.ldf" size="204800" crc="e548a5d1" sha1="1bd13ae155729d056652611a2af0c1fee7283159" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="tisland">
-		<description>Treasure-Island (96K)</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="204800">
-				<rom name="treasure-island_96.ldf" size="204800" crc="a9a13b77" sha1="273aa31b244bec18104bd23c92e94d9b3a3a2f99" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="tpascal">
-		<description>Turbo Pascal</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Turbo Pascal System (v2.00A)</description>
+		<year>1984</year>
+		<publisher>Borland</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT BOOT" />
+		<sharedfeat name="compatibility" value="128"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="204800">
@@ -413,9 +486,11 @@
 	</software>
 
 	<software name="wordmstr">
-		<description>Word Master</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>WordMaster (v1.20, Prerelease)</description>
+		<year>1982</year>
+		<publisher>MicroPro International</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT BOOT, WM" />
+		<sharedfeat name="compatibility" value="128"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="204800">
@@ -425,9 +500,11 @@
 	</software>
 
 	<software name="wordstar">
-		<description>Word Star</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>WordStar (release 3.00)</description>
+		<year>1981</year>
+		<publisher>MicroPro International</publisher>
+		<info name="usage" value="Enter the following commands: XROM, EXT BOOT" />
+		<sharedfeat name="compatibility" value="128"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="204800">

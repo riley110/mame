@@ -842,6 +842,7 @@ static MACHINE_CONFIG_DERIVED( lynx96k, lynx48k )
 	MCFG_CPU_IO_MAP(lynx96k_io)
 
 	MCFG_FRAGMENT_ADD(lynx_disk)
+	MCFG_SOFTWARE_LIST_FILTER("flop_list", "96")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_START( lynx128k, camplynx_state )
@@ -877,6 +878,7 @@ static MACHINE_CONFIG_START( lynx128k, camplynx_state )
 	MCFG_MC6845_OUT_VSYNC_CB(DEVWRITELINE("maincpu", z80_device, irq_line))
 
 	MCFG_FRAGMENT_ADD(lynx_disk)
+	MCFG_SOFTWARE_LIST_FILTER("flop_list", "128")
 MACHINE_CONFIG_END
 
 DRIVER_INIT_MEMBER(camplynx_state, lynx48k)
