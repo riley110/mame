@@ -2947,78 +2947,6 @@ therefore should have their own different software lists.
 		</part>
 	</software>
 
-	<software name="zxzvmma1">
-		<description>ZxZvm - Mysterious Adventures 1</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_3">
-			<dataarea name="flop" size="194816">
-				<rom name="zxzvm - mysterious adventures 1 (19xx)(adventure international).dsk" size="194816" crc="d1b43a63" sha1="7e927614b18b9a02bceff362bb580d253c5d9cee" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="zxzvmma2">
-		<description>ZxZvm - Mysterious Adventures 2</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_3">
-			<dataarea name="flop" size="194816">
-				<rom name="zxzvm - mysterious adventures 2 (19xx)(adventure international).dsk" size="194816" crc="2c3d633e" sha1="bc54d6ef415ff4aada5afcba19f1c5183a031a93" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="zxzvmsa1">
-		<description>ZxZvm - Scott Adams Adventures 1</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_3">
-			<dataarea name="flop" size="194816">
-				<rom name="zxzvm - scott adams adventures 1 (19xx)(adventure international).dsk" size="194816" crc="c8d595f7" sha1="ac4d9a7371417cc42e1c56deb626238631fe494a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="zxzvmsa2">
-		<description>ZxZvm - Scott Adams Adventures 2</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_3">
-			<dataarea name="flop" size="194816">
-				<rom name="zxzvm - scott adams adventures 2 (19xx)(adventure international).dsk" size="194816" crc="642c25d3" sha1="727e5d72cc442ecda865b06f8f23cf5ebe669c67" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="zxzvmsa3">
-		<description>ZxZvm - Scott Adams Adventures 3</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_3">
-			<dataarea name="flop" size="194816">
-				<rom name="zxzvm - scott adams adventures 3 (19xx)(adventure international).dsk" size="194816" crc="ca649863" sha1="8eae36886f787e17996cc43384ba0e643a4c45a3" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="zxzvmsa4">
-		<description>ZxZvm - Scott Adams Adventures 4</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_3">
-			<dataarea name="flop" size="194816">
-				<rom name="zxzvm - scott adams adventures 4 (19xx)(adventure international).dsk" size="194816" crc="b3be6909" sha1="180d08eaabad999f6f79aaf2be20198799e117e8" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 <!-- Educational -->
 
 	<software name="fs2_68">
@@ -9019,6 +8947,2073 @@ therefore should have their own different software lists.
 		<part name="flop1" interface="floppy_3">
 			<dataarea name="flop" size="209805">
 				<rom name="3628 - xybots (europe).ipf" size="209805" crc="51a0d849" sha1="86461e526a4cf5c7731f1e1067433ca9c8d57dec" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- ZxZvm stuff -->
+
+	<software name="zxzvm">
+		<description>ZxZvm +3 (v1.03)</description>
+		<year>1999</year>
+		<publisher>John Elliot</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm v1.03 +3 (1999)(john elliot).dsk" size="194816" crc="fb594d52" sha1="37491b545bc311f793998a6a1a8c1bc4477b4896" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvma" cloneof="zxzvm">
+		<description>ZxZvm +3 (v1.02)</description>
+		<year>1999</year>
+		<publisher>John Elliot</publisher>
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm v1.02 +3 (1999)(john elliot).dsk" size="194816" crc="da420e1c" sha1="13e59ea2c73624c81fd2411a384ab0585cedbb8f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm1">
+		<description>A Bear's Night Out - An Interactive Children's Story</description>
+		<year>1999</year>
+		<publisher>David Dyte</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - a bear's night out - an interactive children's story (1999)(david dyte).dsk" size="194816" crc="d9223661" sha1="1363f86249226d007b176c4884b863571ef19818" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm2">
+		<description>A Change in the Weather - An Interactive Short Story</description>
+		<year>1996</year>
+		<publisher>Andrew Plotkin</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - a change in the weather - an interactive short story (1996)(andrew plotkin).dsk" size="194816" crc="f51eff97" sha1="fc3dcb1211614c7e623252eade7545d65d7a77b8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm3">
+		<description>A Good Breakfast - An Interactive Feeding</description>
+		<year>1997</year>
+		<publisher>Stuart Adair</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - a good breakfast - an interactive feeding (1997)(stuart adair).dsk" size="194816" crc="36a75194" sha1="4a7f915357bdfe394f1ecd589b39e07aaa61adef" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm4">
+		<description>A New Day</description>
+		<year>19??</year>
+		<publisher>Jonathan Fry</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - a new day (19xx)(jonathan fry).dsk" size="194816" crc="42ce1e54" sha1="b5c3a6832389aa20a3b1a2a99152319f4f556e96" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm5">
+		<description>A Week in the Life - An Interactive Self</description>
+		<year>1998</year>
+		<publisher>Neil James Brown</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - a week in the life - an interactive self (1998)(neil james brown).dsk" size="194816" crc="61268ad7" sha1="83fe7ada58e49bc1b72ee68209603bbe3599d327" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm6">
+		<description>Abenteur - Das Interaktive Original (Ger)</description>
+		<year>1998</year>
+		<publisher>Toni Arnold</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - abenteur - das interaktive original (1998)(toni arnold)(de)[aka adventure - the interactive original].dsk" size="194816" crc="8845cf22" sha1="043e384bf3f513a99a3260deafc5cdf63e44c0ce" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm7">
+		<description>Acid Whiplash</description>
+		<year>1998</year>
+		<publisher>Rybread Celsius - Cody Sendifer</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - acid whiplash (1998)(rybread celsius - cody sandifer).dsk" size="194816" crc="dc6c1531" sha1="4c9f8957cc438e9507859d45b896086f4f555935" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm8">
+		<description>Acorn Court - An Interactive Text Adventure</description>
+		<year>1997</year>
+		<publisher>Todd S. Murchison</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - acorn court - an interactive text adventure (1997)(todd s. murchison).dsk" size="194816" crc="bbfbc3f6" sha1="e20c5d957acd999964c8b24aef0d9f4a490a9239" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm9">
+		<description>Adventure - The Interactive Original</description>
+		<year>1994</year>
+		<publisher>Graham Nelson</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - adventure - the interactive original (1994)(graham nelson).dsk" size="194816" crc="a4661fc7" sha1="ce545a6ab2e7d6e3b0aceead2e6e7a5116f9788a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm10">
+		<description>All Quiet on the Library Front - An Interactive Vignette</description>
+		<year>1995</year>
+		<publisher>Michael S. Phillips</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - all quiet on the library front - an interactive vignette (1995)(michael s.phillips).dsk" size="194816" crc="07f4b520" sha1="cbcaf0ca7d42d638d6fd09884d5fe02a5f812666" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm11">
+		<description>Anchorhead - An Interactive Tale of Lovecraftian Horror</description>
+		<year>1998</year>
+		<publisher>Michael S. Gentry</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="778496">
+				<rom name="zxzvm - anchorhead - an interactive tale of lovecraftian horror (1998)(michael s. gentry).dsk" size="778496" crc="04a777ac" sha1="96fbf649370489942ec0de071638bbd70b1c4d2a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm12">
+		<description>Annoyed Undead - An Inventoryless Adventure</description>
+		<year>1999</year>
+		<publisher>Roger Ostrander</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - annoyed undead - an inventoryless adventure (1999)(roger ostrander).dsk" size="194816" crc="b3def233" sha1="427cfeda32fa1a5ce096e5f0447a2f8eaafcbb14" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm13">
+		<description>Apartment 209 - An Interactive Pigsty</description>
+		<year>1997</year>
+		<publisher>Ben Parrish</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - apartment 209 - an interactive pigsty (1997)(ben parrish).dsk" size="194816" crc="500479ae" sha1="0e506cb302e6f08a01e604635cb0a1fd5149b8ef" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm14">
+		<description>Aunt Nancy's House - An Interactive Simulation</description>
+		<year>1997</year>
+		<publisher>Nate Schwartzman</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - aunt nancy's house - an interactive simulation (1997)(nate schwartzman).dsk" size="194816" crc="826ca49c" sha1="9f295eb14fcc948c2af4055bbd37b4d74b6212cd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm15">
+		<description>BSE - An Interactive Epidemic</description>
+		<year>1996</year>
+		<publisher>Chris Smith</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - bse - an interactive epidemic (1996)(chris smith).dsk" size="194816" crc="d0d8ecd1" sha1="07c1cd4157924d28f1107bc9b93e64424f279f31" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm16">
+		<description>Baer Geht aus Ein - Eine Interaktive Kindergeschichte (Ger)</description>
+		<year>1998</year>
+		<publisher>Gunther Schmidl</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - baer geht aus ein - eine interaktive kindergeschichte (1998)(gunther schmidl)(de)[aka a bear's night out].dsk" size="194816" crc="5e235bdd" sha1="34bfcf1fe03f192e755299e648bbf8f67c9c6da9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm17">
+		<description>Balances - An Interactive Short Story</description>
+		<year>1996</year>
+		<publisher>Graham Nelson</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - balances - an interactive short story (1996)(graham nelson).dsk" size="194816" crc="d5069a98" sha1="91a964e204a427979db54ddbd23d71acf173c02a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm18">
+		<description>Ballyhoo</description>
+		<year>1986</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="195072">
+				<rom name="zxzvm - ballyhoo (1986)(infocom).dsk" size="195072" crc="f9887e64" sha1="d221ae9f54dff9069e23f88e2071815ffd44a189" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm19">
+		<description>Baltimore 24 - An Exercise in Interactive Fiction</description>
+		<year>1997</year>
+		<publisher>Howard A. Sherman</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - baltimore 24 - an exercise in interactive fiction (1997)(howard a. sherman).dsk" size="194816" crc="25d8dd2a" sha1="564538caa0fff49438b3182853fb790d07efbc0a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm20">
+		<description>Bedlam - An Interactive Preview</description>
+		<year>1997</year>
+		<publisher>Michael Zey</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - bedlam - an interactive preview (1997)(michael zey).dsk" size="194816" crc="44b9d19e" sha1="6f858ca154948ba9f86a674be4424b5e39a46a90" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm21">
+		<description>Bloodline - An Interactive Coming-of-Age</description>
+		<year>1998</year>
+		<publisher>Liza Daly</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - bloodline - an interactive coming-of-age (1998)(liza daly).dsk" size="194816" crc="169a027c" sha1="1b630dec23c9b5ffde9109ff43fb10f5cf752fa9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm22">
+		<description>Blow Job Drifter - An Interactive You Know What</description>
+		<year>1998</year>
+		<publisher>Big Al</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - blow job drifter - an interactive you know what (1998)(big al).dsk" size="194816" crc="48f74323" sha1="18fbcd62458b0aad4640095db2f8e317ba144e73" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm23">
+		<description>Border Zone - A Game of Intrigue</description>
+		<year>1987</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="389376">
+				<rom name="zxzvm - border zone - a game of intrigue (1987)(infocom).dsk" size="389376" crc="261b1a67" sha1="d8bcf75f7d4a1aa55ec0545f1999e292e235dec4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm24">
+		<description>Busted! - Psychedelic Interactive Fiction</description>
+		<year>1994</year>
+		<publisher>Jon Drukman</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - busted! - psychedelic interactive fiction (1994)(jon drukman).dsk" size="194816" crc="c28a8636" sha1="f21b23490e347f39183192dc07b20466e6e7e0b0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm25">
+		<description>C.I.A. Adventure</description>
+		<year>1996</year>
+		<publisher>Kevin Thomas</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - c.i.a. adventure (1996)(kevin thomas).dsk" size="194816" crc="ebca3cb5" sha1="de238164d1f1973b9ede119e142e38ea50c59f82" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm26">
+		<description>Candy - An Attempt at Reliving Childhood</description>
+		<year>1997</year>
+		<publisher>Rybread Celsius</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - candy - an attempt at reliving childhood (1997)(rybread celsius).dsk" size="194816" crc="ea749c07" sha1="10c519a795048f167393bd520fdad8d3c1251918" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm27">
+		<description>Cask - My First Stab at Interactive Fiction</description>
+		<year>1997</year>
+		<publisher>Herry M. Hardjono</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - cask - my first stab at interactive fiction (1997)(harry m. hardjono).dsk" size="194816" crc="a7218d40" sha1="452dde98323e0383eef70a8fcb69915079a2509e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm28">
+		<description>Cattus Atrox - An Interactive Fiction Story</description>
+		<year>1998</year>
+		<publisher>David A. Cornelson</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - cattus atrox - an interactive fiction story (1998)(david a. cornelson).dsk" size="194816" crc="f924dfed" sha1="c5f2d7dcdd966a769b5abfdab1eb359f5c663216" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm29">
+		<description>Chicken Under the Window - An Interactive Farce</description>
+		<year>1998</year>
+		<publisher>Lucian Smith</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - chicken under the window - an interactive farce (1998)(lucian smith).dsk" size="194816" crc="a1cf1dac" sha1="5735e6e190b0181c5132024a27189992b8a2c485" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm30">
+		<description>Christminster - An Interactive Conspiracy</description>
+		<year>1995</year>
+		<publisher>Garteh Rees</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="389376">
+				<rom name="zxzvm - christminster - an interactive conspiracy (1995)(gareth rees).dsk" size="389376" crc="f58ca754" sha1="c3859ed48c3d1cc58d8d175533b000dc4507cee3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm31">
+		<description>Coke is It! - An Interactive Commercial</description>
+		<year>1999</year>
+		<publisher>Soda Pop Productions</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - coke is it! - an interactive commercial (1999)(soda pop productions).dsk" size="194816" crc="f6c9fb2d" sha1="77fd46f9ddcdca27bbbe4aa8946fa3489aa79d9b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm32">
+		<description>Coming Home - A Simple Home Adventure</description>
+		<year>1997</year>
+		<publisher>Andrew Katz</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - coming home - a simple home adventure (1997)(andrew katz).dsk" size="194816" crc="9b7f1002" sha1="0d94e3c9a9c3a5a4563ddda43e733e38ac8571bb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm33">
+		<description>Competition 96 - An Interactive Guide</description>
+		<year>1997</year>
+		<publisher>Lucian Smith</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - competition 96 - an interactive guide (1997)(lucian smith).dsk" size="194816" crc="11d089cf" sha1="92f3879a08155d80d6d38f2483c3e036630e697d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm34">
+		<description>Congratulations!</description>
+		<year>1997</year>
+		<publisher>Frederick J. Hirsch</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - congratulations! (1997)(frederick j. hirsch).dsk" size="194816" crc="65153aee" sha1="2fc29c82718a6448dbf4f166fe9afd3a15e433d2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm35">
+		<description>Cutthroats</description>
+		<year>1984</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - cutthroats (1984)(infocom).dsk" size="194816" crc="8fbb4d04" sha1="faa5462afc96ef50314b24611a1245d822edee61" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm36">
+		<description>Deadline - An Interlogic Mystery</description>
+		<year>1982</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - deadline - an interlogic mystery (1982)(infocom).dsk" size="194816" crc="f6bbb336" sha1="a5d690c608cd73fc7c5717cf67edf12d681de5d8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm37">
+		<description>Deja Vu - An Interactive Demonstration</description>
+		<year>1993</year>
+		<publisher>Graham Nelson</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - deja vu - an interactive demonstration (1993)(graham nelson).dsk" size="194816" crc="7dc68858" sha1="096cbdfd2c463a139583009035bf2c5be5c998f6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm38">
+		<description>Delusions - An Interactive Self Discovery</description>
+		<year>1996</year>
+		<publisher>Christopher E. Forman</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="389376">
+				<rom name="zxzvm - delusions - an interactive self discovery (1996)(christopher e. forman).dsk" size="389376" crc="0171685e" sha1="266a5d006f6cd09911fd6e716c1f517bf966226f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm39">
+		<description>Detective</description>
+		<year>1998</year>
+		<publisher>Stuart Moore</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - detective (1998)(stuart moore).dsk" size="194816" crc="2b9b5112" sha1="1f47dbb17896927cba92d7ec46664c8cf38ad98c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm40">
+		<description>Downtown Tokyo Present Day</description>
+		<year>1998</year>
+		<publisher>Digby McWiggle</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - downtown tokyo present day (1998)(digby mcwiggle).dsk" size="194816" crc="2c66fb18" sha1="115e5ed69fb5df99d1c704217c8b7098c24055b3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm41">
+		<description>Enchanter - Interlogic Fantasy</description>
+		<year>1983</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - enchanter - interlogic fantasy (1983)(infocom).dsk" size="194816" crc="040ed91b" sha1="82c88ffc6dbe8acfcfeb696ec1420d48c6bc6d2c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm42">
+		<description>Encyclopedia Frobozzica</description>
+		<year>19??</year>
+		<publisher>Digby McWiggle</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="389376">
+				<rom name="zxzvm - encyclopedia frobozzica (19xx)(digby mcwiggle).dsk" size="389376" crc="d49aca85" sha1="709986aaa84db29413d9e35c7dfd851b1c1afcc1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm43">
+		<description>Enemies - An Interactive Psychothriller</description>
+		<year>1999</year>
+		<publisher>Andy Phillips</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="389376">
+				<rom name="zxzvm - enemies - an interactive psychothriller (1999)(andy phillips).dsk" size="389376" crc="97ddbd1a" sha1="27b149ef8070ae2d7e3f52f365b6bd92bc9e85cc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm44">
+		<description>Fear - An Interactive Nightmare</description>
+		<year>1996</year>
+		<publisher>Chuan-Tze Teo</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - fear - an interactive nightmare (1996)(chuan-tze teo).dsk" size="194816" crc="53e10559" sha1="31f512ac93d3c750a70703689c811dd2718d46fd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm45">
+		<description>Fifteen</description>
+		<year>1998</year>
+		<publisher>Ricardo Dague</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - fifteen (1998)(ricardo dague).dsk" size="194816" crc="c058527b" sha1="a9f7dad003b233d31ce795fb52822bde04a00c57" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm46">
+		<description>Friday Afternoon or Escape from MicroSun</description>
+		<year>1997</year>
+		<publisher>Mischa Schweitzer</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - friday afternoon or escape from microsun (1997)(mischa schweitzer).dsk" size="194816" crc="066a3ccf" sha1="c8c48369720e94a68592ba1014fb2e4cf98fa2a4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm47">
+		<description>Frozen - A Night at the Lab</description>
+		<year>1996</year>
+		<publisher>Jeremy Farnham</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - frozen - a night at the lab (1996)(jeremy farnham).dsk" size="194816" crc="e380afd5" sha1="875406064224db75e1627da634abccde2f17e71a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm48">
+		<description>Gumshoe - An Interactive Investigation</description>
+		<year>1996</year>
+		<publisher>Mike Oliphant</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - gumshoe - an interactive investigation (1996)(mike oliphant).dsk" size="194816" crc="03dcb535" sha1="01f0eab410de4df730021bdd96992de751ffe98c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm49">
+		<description>Heist - The Crime of the Century</description>
+		<year>1997</year>
+		<publisher>Andy Phillips</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="778496">
+				<rom name="zxzvm - heist - the crime of the century (1997)(andy phillips).dsk" size="778496" crc="5b066fa8" sha1="4589f93b3b3c434d1b47e00ace0766edab39fb4a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm50">
+		<description>Hitchhiker's Guide to the Galaxy - A Science Fiction Story</description>
+		<year>1984</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - hitchhiker's guide to the galaxy - a science fiction story (1984)(infocom).dsk" size="194816" crc="7c1f5866" sha1="7884334f9553b171da969d6a9388408a8e82467f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm51">
+		<description>Hitchhiker's Guide to the Galaxy - A Science Fiction Story (Solid Gold Edition)</description>
+		<year>1987</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - hitchhiker's guide to the galaxy - solid gold edition - a science fiction story (1987)(infocom).dsk" size="194816" crc="f4ec3874" sha1="3813362b92b2dd3bc80bdf5d2a015aa7221e666b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm52">
+		<description>Hollywood Hijinx - A Zany Treasure Hunt</description>
+		<year>1986</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - hollywood hijinx - a zany treasure hunt (1986)(infocom).dsk" size="194816" crc="a4f27e7c" sha1="8167e6125bf2884e3eccd32a8a5922568c020a9f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm53">
+		<description>Human Resources Stories - In Search of Employment</description>
+		<year>1998</year>
+		<publisher>Harry M. Hardjono</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - human resources stories - in search of employment (1998)(harry m. hardjono).dsk" size="194816" crc="05a0be1a" sha1="461e820a5b08f942b48023b33bafb8915b1ed936" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm54">
+		<description>I-0 - Jailbait on Interstate Zero (v1.21)</description>
+		<year>1997</year>
+		<publisher>Adam Cadre</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="389376">
+				<rom name="zxzvm - i-0 - jailbait on interstate zero v1.21 (1997)(adam cadre).dsk" size="389376" crc="eb8cc0f5" sha1="5d56a1c8e855d5b42eb56a19121409c7234d896c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm55">
+		<description>In the End</description>
+		<year>1996</year>
+		<publisher>Joe Mason</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - in the end (1996)(joe mason).dsk" size="194816" crc="52dbd216" sha1="259fe0c38ea72ed15d8294ec8a88a338dfdd1693" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm56">
+		<description>In the SpotLight - An Unexpected Intelligence Test</description>
+		<year>1998</year>
+		<publisher>John Byrd</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - in the spotlight - an unexpected intelligence test (1998)(john byrd).dsk" size="194816" crc="9aebca23" sha1="e27820f4a0cf1e1e1d35b8d4403ac4e5543d770c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm57">
+		<description>Infidel</description>
+		<year>1983</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - infidel (1983)(infocom).dsk" size="194816" crc="5202d189" sha1="f086d31723483604164deea12c2642128ed0c761" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm58">
+		<description>Infocom Sampler 1</description>
+		<year>1984</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - infocom sampler 1 (1984)(infocom).dsk" size="194816" crc="d9529f02" sha1="e344f2788ae42b1071bf7510d2707d1019b1306d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm59">
+		<description>Infocom Sampler 1 (Newer)</description>
+		<year>1987</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - infocom sampler 1 - newer (1987)(infocom).dsk" size="194816" crc="2999e3f1" sha1="7a9eb8037e601805593f822a14c963efdf00ee0c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm60">
+		<description>Infocom Sampler 2</description>
+		<year>1987</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - infocom sampler 2 (1987)(infocom).dsk" size="194816" crc="eac6c888" sha1="6cf07ef89c81a01ea6720bc1df84b0ffafc5f85b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm61">
+		<description>Informatory - A Not Very Interactive Pastiche with Tutorial Pretensions</description>
+		<year>1998</year>
+		<publisher>William J. Shlaer</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - informatory - a not very interactive pastiche with tutorial pretensions (1998)(william j. shlaer).dsk" size="194816" crc="627fa5d3" sha1="fb6864e137624c6edf05dec3b768a8ad5415cc0e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm62">
+		<description>Inhumane - An Infralogic Massacre</description>
+		<year>19??</year>
+		<publisher>Andrew Plotkin</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - inhumane - an infralogic massacre (19xx)(andrew plotkin).dsk" size="194816" crc="735221d4" sha1="ad2fc46ef8258d76f48e17ef2f9c9fe55d46d80b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm63">
+		<description>Intruder - Interactive Fiction - A Burglary</description>
+		<year>1999</year>
+		<publisher>Volker Lanz</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="389376">
+				<rom name="zxzvm - intruder - interactive fiction - a burglary (1999)(volker lanz).dsk" size="389376" crc="e54f2f6b" sha1="cc296b060dc37e8a0dd9cc841b5496164a3db63c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm64">
+		<description>It's a Dog's Life - An Interactive Heeling</description>
+		<year>1999</year>
+		<publisher>Mr. Wigglebutt</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - it's a dog's life - an interactive heeling (1999)(mr. wigglebutt).dsk" size="194816" crc="70a0c4ed" sha1="a8e912ca4085cd235317a6740f85a6b680c71d7e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm65">
+		<description>Jigsaw - An Interactive History</description>
+		<year>1995</year>
+		<publisher>Graham Nelson</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="389376">
+				<rom name="zxzvm - jigsaw - an interactive history (1995)(graham nelson).dsk" size="389376" crc="d325df88" sha1="3fdceedc8738ee4a3b253376bb4a155384badfd5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm66">
+		<description>Journey to Alpha Centauri in Real Time - An Interactive Waste of Time</description>
+		<year>1998</year>
+		<publisher>Julian Fleetwood</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - journey to alpha centauri in real time - an interactive waste of time (1998)(julian fleetwood).dsk" size="194816" crc="83d13dc3" sha1="c3b4571d5d15f28ec36d4518b51801f928201a87" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm67">
+		<description>Kook U - An Interactive Kook Adventure</description>
+		<year>1997</year>
+		<publisher>SBFAQ</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - kook u - an interactive kook adventure (1997)(sbfaq).dsk" size="194816" crc="85a07c8a" sha1="0df7be0b6be279c9b4ef35bde3c1bd9dce2c4e81" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm68">
+		<description>Lack of Vision - An Eye Opening Demo</description>
+		<year>1998</year>
+		<publisher>Rybread Celsius</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - lack of vision - an eye opening demo (1998)(rybread celsius).dsk" size="194816" crc="55e6cc8e" sha1="b3bdd1aa7edefa7fe43337447e8634f70a4b1028" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm69">
+		<description>Leather Godesses of Phobos - A Racy Space-Age Spoof</description>
+		<year>1986</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="195072">
+				<rom name="zxzvm - leather godesses of phobos - a racy space-age spoof (1986)(infocom).dsk" size="195072" crc="c907efa0" sha1="0d08def149f0dbb99f00567b1fa49975f63097bf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm70">
+		<description>Limp - An Interactive Thingy</description>
+		<year>1998</year>
+		<publisher>Rybread Celsius</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - limp - an interactive thingy (1998)(rybread celsius).dsk" size="194816" crc="780e7ecd" sha1="a0df32c83616d22de2f0a787a6aae01d34327902" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm71">
+		<description>Lists and Lists - An Interactive Tutorial</description>
+		<year>1996</year>
+		<publisher>Andrew Plotkin</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - lists and lists - an interactive tutorial (1996)(andrew plotkin).dsk" size="194816" crc="91eecb1a" sha1="60a9c2032171e7df4c0075bfef8b7a75534613ed" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm72">
+		<description>Little Blue Men - An Interactive Object Lesson</description>
+		<year>1998</year>
+		<publisher>Michael S. Gentry</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="389376">
+				<rom name="zxzvm - little blue men - an interactive object lesson (1998)(michael s. gentry).dsk" size="389376" crc="162fd07b" sha1="da99431737a88dd75a3f26e724b5f8df9977eb38" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm73">
+		<description>Looking for Godot - An Interactive Looking-Around-for-a-Lost-English-Book</description>
+		<year>1996</year>
+		<publisher>Patrick Shaughnessy</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - looking for godot - an interactive looking-around-for-a-lost-english-book (1996)(patrick shaughnessy).dsk" size="194816" crc="9d29c0dd" sha1="2b9e9bb25877fba86af53113de3d5fd4c56f4894" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm74">
+		<description>Mercy - A Short Story</description>
+		<year>1998</year>
+		<publisher>Christopher Klimas</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - mercy - a short story (1998)(christopher klimas).dsk" size="194816" crc="ee9f7414" sha1="ed51ccf85098603310df4ba4be9ca39f2f64c1c9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm75">
+		<description>Moonmist - A Mystery Story</description>
+		<year>1986</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - moonmist - a mystery story (1986)(infocom).dsk" size="194816" crc="26101e26" sha1="4408ecb80bcabb1b06999153e6de96a83bc3193a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm76">
+		<description>Mother Loose - An Interactive Nursery Rhyme</description>
+		<year>1998</year>
+		<publisher>Irene Callaci</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="389376">
+				<rom name="zxzvm - mother loose - an interactive nursery rhyme (1998)(irene callaci).dsk" size="389376" crc="2bbd55ff" sha1="4970940a523e1f97d7c6dbdd31656062a6538a5b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm77">
+		<description>Muse - An Autumn Romance</description>
+		<year>1998</year>
+		<publisher>Christopher Huang</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="389376">
+				<rom name="zxzvm - muse - an autumn romance (1998)(christopher huang).dsk" size="389376" crc="7df2df6e" sha1="d91e02a5189a8007249629c575723397ca8999ab" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvmma1">
+		<description>Mysterious Adventures 1</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - mysterious adventures 1 (19xx)(adventure international).dsk" size="194816" crc="d1b43a63" sha1="7e927614b18b9a02bceff362bb580d253c5d9cee" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvmma2">
+		<description>Mysterious Adventures 2</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - mysterious adventures 2 (19xx)(adventure international).dsk" size="194816" crc="2c3d633e" sha1="bc54d6ef415ff4aada5afcba19f1c5183a031a93" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm78">
+		<description>Night at the Computer Center - An Interactive Nocturnal Chase</description>
+		<year>1996</year>
+		<publisher>Bonni Mierzejewska</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - night at the computer center - an interactive nocturnal chase (1996)(bonni mierzejewska).dsk" size="194816" crc="669d29f7" sha1="01b2d1169afff45c30aa4ab1a9b529e142f51bdf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm79">
+		<description>Nine Points - A Demonstration of an Interactive Fiction</description>
+		<year>1996</year>
+		<publisher>Robert Janelle - Brad O'Donnell</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - nine points - a demonstration of an interactive fiction (1996)(robert janelle - brad o'donnell).dsk" size="194816" crc="23224ca9" sha1="87a1601c1f59239f93a0e1b8b577a0312b951bf5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm80">
+		<description>Odieu's Quest for the Magic Flingshot (Beta)</description>
+		<year>1994</year>
+		<publisher>Teo Kwang Liak</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - odieu's quest for the magic flingshot (1994)(teo kwang liak)(beta).dsk" size="194816" crc="a433820b" sha1="514ac67090ae664161baf56bf57b1dd5891dcaec" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm81">
+		<description>Of Forms Unknown - An Interactive Excursion</description>
+		<year>1996</year>
+		<publisher>Chris Markwyn</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - of forms unknown - an interactive excursion (1996)(chris markwyn).dsk" size="194816" crc="927dec8a" sha1="1847f31efed645950bf2b7beaabbf0bd37bfced0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm82">
+		<description>Paper Chase - An Interactive Education</description>
+		<year>1995</year>
+		<publisher>Chris Skapura</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - paper chase - an interactive education (1995)(chris skapura).dsk" size="194816" crc="d8b07db8" sha1="bfb61b01d328fbd1d3ca5808abaad7d9f3d0ae3b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm83">
+		<description>Pentari - An Interactive Prequel to The Mission</description>
+		<year>1998</year>
+		<publisher>Howard Sherman</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - pentari - an interactive prequel to the mission (1998)(howard sherman).dsk" size="194816" crc="bf3ecb0a" sha1="abff508bc6edf5f3469446d24ca4fe2a1523a0eb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm84">
+		<description>Phlegm - An Interactive Interactive</description>
+		<year>1997</year>
+		<publisher>Jason Dyer</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - phlegm - an interactive interactive (1997)(jason dyer).dsk" size="194816" crc="0da6b528" sha1="16ee85b9ba93a0cebe01659645b93e0c8f061f59" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm85">
+		<description>Photopia</description>
+		<year>19??</year>
+		<publisher>Adam Cadre</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="389376">
+				<rom name="zxzvm - photopia (19xx)(adam cadre).dsk" size="389376" crc="25de377c" sha1="5e5d6cd8f326783fe2b973c1f4bac60b3f0a5909" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm86">
+		<description>Phred Phontious and the Quest for Pizza - An Interactive Errand</description>
+		<year>1997</year>
+		<publisher>Michael Zey</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - phred phontious and the quest for pizza - an interactive errand (1997)(michael zey).dsk" size="194816" crc="88d49d5a" sha1="5a2d345f13352ed935bb08c64450a3da1996f794" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm87">
+		<description>Pick Up the Phone Booth and Die - A NyQuil Nightmare</description>
+		<year>1996</year>
+		<publisher>R. Noyes</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - pick up the phone booth and die - a nyquil nightmare (1996)(r. noyes).dsk" size="194816" crc="4a49a92d" sha1="62e03ce0fee33edab5f8f231418493ce7510e655" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm88">
+		<description>Pick Up the Phone Booth and Die 2 - An Interactive Demo</description>
+		<year>1996</year>
+		<publisher>R. Noyes</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - pick up the phone booth and die 2 - an interactive demo (1996)(r. noyes).dsk" size="194816" crc="19eae77d" sha1="24cc34a524ea2697fc096c438cbecf1328203da2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm89">
+		<description>Piece of Mind - An Interactive Short Story</description>
+		<year>1995</year>
+		<publisher>Giles Boutel</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - piece of mind - an interactive short story (1995)(giles boutel).dsk" size="194816" crc="92042541" sha1="6feb3f0099b4e456149671541c18831a007820f6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm90">
+		<description>Pintown</description>
+		<year>19??</year>
+		<publisher>Stefan Blixt</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - pintown (19xx)(stefan blixt).dsk" size="194816" crc="e98c3fcb" sha1="e4a83ce88b62af999ce058052c5f32a36bff07a3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm91">
+		<description>Planetfall - Interlogic Science Fiction</description>
+		<year>1983</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - planetfall - interlogic science fiction (1983)(infocom).dsk" size="194816" crc="2244e76c" sha1="f70f624169606ac369a476fc1b23217cb74f0c38" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm92">
+		<description>Plundered Hearts</description>
+		<year>1987</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - plundered hearts (1987)(infocom).dsk" size="194816" crc="aaf16112" sha1="8072c2b4ac7679b52d56423fa5a6f87237169449" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm93">
+		<description>Quest for the Magic Healing Plant</description>
+		<year>1996</year>
+		<publisher>Adam G. Crutchlow</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - quest for the magic healing plant (1996)(adam g. crutchlow).dsk" size="194816" crc="59becc43" sha1="8cac49371074daec5cca3a1073bf5312ffc78a65" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm94">
+		<description>Ralph - An Interactive Sniffing</description>
+		<year>1998</year>
+		<publisher>Miron Schmidt</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - ralph - an interactive sniffing (1998)(miron schmidt).dsk" size="194816" crc="cb94a1bb" sha1="53315bf2af3d4f6b6de96da65f5c710a18d9eb9e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm95">
+		<description>Research Dig</description>
+		<year>1998</year>
+		<publisher>Chris Armitage</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - research dig (1998)(chris armitage).dsk" size="194816" crc="9d256bca" sha1="8e8ec60f3f555a9fd6c1edfc1e95ce8048bba494" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm96">
+		<description>Return to Karn</description>
+		<year>1996</year>
+		<publisher>Patrick Wigfull</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="389376">
+				<rom name="zxzvm - return to karn (1996)(patrick wigfull).dsk" size="389376" crc="7d3bde2b" sha1="afc850d1cfea023751d68a075fdc5c9766ac1d24" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm97">
+		<description>Reverberations - A Hectic Voltairian Adventure</description>
+		<year>1996</year>
+		<publisher>Russell Glasser</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - reverberations - a hectic voltairian adventure (1996)(russell glasser).dsk" size="194816" crc="3d46adc1" sha1="dbe00ae732d70404afc4081ed0513ae5a6d684ab" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm98">
+		<description>Rippled Flesh - An Interactive Goosing</description>
+		<year>1996</year>
+		<publisher>Rybread Celsius</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - rippled flesh - an interactive goosing (1996)(rybread celsius).dsk" size="194816" crc="876692d5" sha1="ae7323baea77c985101a5ae63e3fdfaced7bf630" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm99">
+		<description>Ritual of Purification - An Interactive Cleansing</description>
+		<year>1998</year>
+		<publisher>Sable</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - ritual of purification - an interactive cleansing (1998)(sable).dsk" size="194816" crc="482eafb7" sha1="2e9c7f17404479b58737b3b45db859446fec70f1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvmsa1">
+		<description>Scott Adams Adventures 1</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - scott adams adventures 1 (19xx)(adventure international).dsk" size="194816" crc="c8d595f7" sha1="ac4d9a7371417cc42e1c56deb626238631fe494a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvmsa2">
+		<description>Scott Adams Adventures 2</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - scott adams adventures 2 (19xx)(adventure international).dsk" size="194816" crc="642c25d3" sha1="727e5d72cc442ecda865b06f8f23cf5ebe669c67" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvmsa3">
+		<description>Scott Adams Adventures 3</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - scott adams adventures 3 (19xx)(adventure international).dsk" size="194816" crc="ca649863" sha1="8eae36886f787e17996cc43384ba0e643a4c45a3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvmsa4">
+		<description>Scott Adams Adventures 4</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - scott adams adventures 4 (19xx)(adventure international).dsk" size="194816" crc="b3be6909" sha1="180d08eaabad999f6f79aaf2be20198799e117e8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm100">
+		<description>Seastalker - A Junior Adventure</description>
+		<year>1984</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - seastalker - a junior adventure (1984)(infocom).dsk" size="194816" crc="5bfe6eaa" sha1="04acd84319b2299c378b0167f01dd814b298d6e0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm101">
+		<description>Sherlock - The Riddle of the Crown Jewels</description>
+		<year>1987</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="389376">
+				<rom name="zxzvm - sherlock - the riddle of the crown jewels (1987)(infocom).dsk" size="389376" crc="75cc5916" sha1="5a5d4d4b4493c6eef160e51b2a26998423c8604f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm102">
+		<description>Silence of the Lambs - An Interactive Horror</description>
+		<year>1997</year>
+		<publisher>Gunther Schmidl</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - silence of the lambs - an interactive horror (1997)(gunther schmidl).dsk" size="194816" crc="92c250e9" sha1="04048aa918e26ce6e40ab8fff4907bd9322235cb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm103">
+		<description>Sins Against Mimesis - An Interactive Theosophy</description>
+		<year>1997</year>
+		<publisher>Adam Thornton</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - sins against mimesis - an interactive theosophy (1997)(adam thornton).dsk" size="194816" crc="1c063a25" sha1="1d8d2fc2bab754a304146913807de797f027cdfa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm104">
+		<description>Slacker X - A Scatological Breakthrough in Adventure Gaming</description>
+		<year>1997</year>
+		<publisher>Satin Shiva Productions</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - slacker x - a scatological breakthrough in adventure gaming (1997)(satin shiva productions).dsk" size="194816" crc="63a59532" sha1="f7dabfa71824a690668a0aa34b4953ff322ac246" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm105">
+		<description>So Far - An Interactive Catharsis</description>
+		<year>1996</year>
+		<publisher>Andrew Plotkin</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="389376">
+				<rom name="zxzvm - so far - an interactive catharsis (1996)(andrew plotkin).dsk" size="389376" crc="988bbb34" sha1="428e10f7d9ec3334f2e2973198866d6e66c731cd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm106">
+		<description>SoftPorn Adventure - An Interactive Classic</description>
+		<year>1997</year>
+		<publisher>Chuck Benton</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - softporn adventure - an interactive classic (1997)(chuck benton).dsk" size="194816" crc="21bbddf3" sha1="5d96cfe26d68bc818a76c5423d438de1902c6470" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm107">
+		<description>Sorcerer - Interlogic Fantasy</description>
+		<year>19??</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - sorcerer - interlogic fantasy (19xx)(infocom).dsk" size="194816" crc="4f657191" sha1="fa92687ad71aadbe35d63210db3c0a5df8892826" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm108">
+		<description>Space Station - A Science Fiction Story</description>
+		<year>1999</year>
+		<publisher>David Ledgard</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - space station - a science fiction story (1999)(david ledgard).dsk" size="194816" crc="6ec6a047" sha1="3396d6fd5df5f2e00c677aa84e5da96aa21e4252" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm109">
+		<description>Space Under the Window</description>
+		<year>1997</year>
+		<publisher>Andrew Plotkin</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - space under the window (1997)(andrew plotkin).dsk" size="194816" crc="0c98bb95" sha1="ab792aa8470c925041e8bf14070408693864f9ca" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm110">
+		<description>Spellbreaker - An Interactive Fantasy</description>
+		<year>1985</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - spellbreaker - an interactive fantasy (1985)(infocom).dsk" size="194816" crc="4bd2453a" sha1="93dccf0ef28c4053b0c6a4998c3af1125a55b1fb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm111">
+		<description>SpiritWrak - An Interactive Fantasy Adventure</description>
+		<year>1996</year>
+		<publisher>Daniel S. Yu</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="389376">
+				<rom name="zxzvm - spiritwrak - an interactive fantasy adventure (1996)(daniel s. yu).dsk" size="389376" crc="eab114be" sha1="8382c031bf6e7d1454ad5af52686c62dad54b4a0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm112">
+		<description>Starcross - Interlogic Science Fiction</description>
+		<year>1982</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - starcross - interlogic science fiction (1982)(infocom).dsk" size="194816" crc="a67704e0" sha1="81708d2a015c7c27a676ade174bb23aba09d3f09" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm113">
+		<description>Stargazer - Prologue - An Adventure in Outfitting</description>
+		<year>1996</year>
+		<publisher>Jonathan Fry</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - stargazer - prologue - an adventure in outfitting (1996)(jonathan fry).dsk" size="194816" crc="035ec912" sha1="d01f1b3dc6ea374bf58f018268fb2fb16340d7a7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm114">
+		<description>Stationfall - A Science Fiction Story</description>
+		<year>1987</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - stationfall - a science fiction story (1987)(infocom).dsk" size="194816" crc="e6f49dbb" sha1="95defc10f2575402aebf689cf555dc18c8243a74" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm115">
+		<description>Suspect - An Interactive Mystery</description>
+		<year>1984</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - suspect - an interactive mystery (1984)(infocom).dsk" size="194816" crc="b9f322a8" sha1="6a78f87f4de8acbf7635e1831cdf00fe54f26ce9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm116">
+		<description>Suspended - Interlogic Science Fiction</description>
+		<year>1983</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - suspended - interlogic science fiction (1983)(infocom).dsk" size="194816" crc="0898450c" sha1="fde87903e25ea066ac3cbd6955cb004cb907a722" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm117">
+		<description>Symetry - A Matter of Self Trust</description>
+		<year>1997</year>
+		<publisher>Rybread Celsius</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - symetry - a matter of self trust (1997)(rybread celsius).dsk" size="194816" crc="ac155a45" sha1="e1b18c18e610f1f5d82342432a16038d98786179" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm118">
+		<description>Tangle - Spider and Web - Interactive Fiction</description>
+		<year>1998</year>
+		<publisher>Andrew Plotkin</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="389376">
+				<rom name="zxzvm - tangle - spider and web - interactive fiction (1998)(andrew plotkin).dsk" size="389376" crc="c3eaf082" sha1="12e3c4e85e81fc9327e18af753943ef6430c69bf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm119">
+		<description>The City - An Interactive Short Experience (v2)</description>
+		<year>19??</year>
+		<publisher>Sam Barlow</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - the city v2 - an interactive short experience (19xx)(sam barlow).dsk" size="194816" crc="830442a8" sha1="96cdd4fd1a145d4427a267ee22dac6114e27387a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm120">
+		<description>The Edifice - An Interactive Allegory</description>
+		<year>1997</year>
+		<publisher>Lucian Smith</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="389376">
+				<rom name="zxzvm - the edifice - an interactive allegory (1997)(lucian smith).dsk" size="389376" crc="15a3314b" sha1="efe8b30c40f29b70a094b841e034661b31643406" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm121">
+		<description>The Family Legacy - An Interactive Ghost Story (v1.1)</description>
+		<year>1997</year>
+		<publisher>Marnie Parker</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="389376">
+				<rom name="zxzvm - the family legacy - an interactive ghost story v1.1 (1997)(marnie parker).dsk" size="389376" crc="475aaf76" sha1="975b4116966112566cbd5ccfcffe712b826ef44f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm122">
+		<description>The Ice Princess - An Interactive Fairy-Tale</description>
+		<year>1996</year>
+		<publisher>Ruediger Hanke</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - the ice princess - an interactive fairy-tale (1996)(ruediger hanke).dsk" size="194816" crc="f9e17f5d" sha1="ecf6a495999f1bee505d6e3c84b40b78dacc0950" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm123">
+		<description>The Lost Spellmaker - An Interactive Mission</description>
+		<year>1998</year>
+		<publisher>Neil James Brown</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - the lost spellmaker - an interactive mission (1998)(neil james brown).dsk" size="194816" crc="41a18ca5" sha1="262a3ea6ad86ceaaf47f6fd999dfbaed8fa48902" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm124">
+		<description>The Lurking Horror - An Interactive Horror</description>
+		<year>1987</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - the lurking horror - an interactive horror (1987)(infocom).dsk" size="194816" crc="32f8ff4f" sha1="6dbee60b79636539d99a185663fdbb4c7a7803c9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm125">
+		<description>The Magic Toyshop - A Fun Game for all the Family</description>
+		<year>1985</year>
+		<publisher>Gareth Rees</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - the magic toyshop - a fun game for all the family (1995)(gareth rees).dsk" size="194816" crc="40b02d06" sha1="4da82d91d720384c4aeff9f16797c1d251ab8e13" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm126">
+		<description>The Meteor, the Stone and a Long Glass of Sherbet</description>
+		<year>1996</year>
+		<publisher>Graham Nelson</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="389376">
+				<rom name="zxzvm - the meteor, the stone and a long glass of sherbet (1996)(graham nelson).dsk" size="389376" crc="ef3bedc0" sha1="639d7bbf16b8f030321f56d505bd902b214b3091" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm127">
+		<description>The Mind Electric - An Interactive Vision</description>
+		<year>1995</year>
+		<publisher>Jason Dyer</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - the mind electric - an interactive vision (1995)(jason dyer).dsk" size="194816" crc="4c776c46" sha1="c176f9b384f8f2655f2c769ad0ab137e34468705" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm128">
+		<description>The Night of the Vampire Bunnies</description>
+		<year>1997</year>
+		<publisher>Jason Dyer</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - the night of the vampire bunnies (1997)(jason dyer).dsk" size="194816" crc="dffc7f1d" sha1="b6836ee97b1f7d1702b046ef3dd1a16e70a43508" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm129">
+		<description>The Six-Foot-Tall Man-Eating Chicken</description>
+		<year>1999</year>
+		<publisher>Ryan N. Freebern</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - the six-foot-tall man-eating chicken (1999)(ryan n. freebern).dsk" size="194816" crc="045c15e5" sha1="5a7f68feefba25203cb477d3e6a51ab0a2a863bd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm130">
+		<description>The Town Dragon - Interactive Fiction</description>
+		<year>1997</year>
+		<publisher>David A. Cornelson</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - the town dragon - interactive fiction (1997)(david a. cornelson).dsk" size="194816" crc="74b55d9b" sha1="58470003eb6c5b8e1abd28cd4bfc5d44f79f45f4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm131">
+		<description>The Underoos That Ate New York! - An Interactive Quickie</description>
+		<year>1994</year>
+		<publisher>Gerry Kevin Wilson</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - the underoos that ate new york! - an interactive quickie (1994)(gerry kevin wilson).dsk" size="194816" crc="7df54235" sha1="dd7786e2e1dff85a935de3e0b451182f7d66f2fc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm132">
+		<description>The Wedding - An Interactive Family Headache</description>
+		<year>1997</year>
+		<publisher>Neil James Brown</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="195072">
+				<rom name="zxzvm - the wedding - an interactive family headache (1997)(neil james brown).dsk" size="195072" crc="34165e7d" sha1="1bf166c30f728043ba3cc04fba1b6e9365fa8009" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm133">
+		<description>Time Killer 1 - Claustrophobia</description>
+		<year>1995</year>
+		<publisher>Sam Hulick</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - time killer 1 - claustrophobia (1995)(sam hulick).dsk" size="194816" crc="9bb9a72a" sha1="c359c90c50ec68484e2c2653c1dea8f0dd665b47" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm134">
+		<description>Total Padding Mania - An Interactive Punishment Jag</description>
+		<year>19??</year>
+		<publisher>Aloysius Beltway</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - total padding mania - an interactive punishment jag (19xx)(aloysius beltway).dsk" size="194816" crc="86a75c9d" sha1="251bbfaad0dbb5603f9ff32bd15da8ef7b1c2032" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm135">
+		<description>Trapped in a One-Room Dilly</description>
+		<year>1998</year>
+		<publisher>Laura A. Knauth</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - trapped in a one-room dilly (1998)(laura a. knauth).dsk" size="194816" crc="9405c540" sha1="366464013d4b9445f5b42c3de05ee424a84ed4cd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm136">
+		<description>Tryst of Fate - An Interactive Horse Opera</description>
+		<year>1997</year>
+		<publisher>Gregory M. Zagurski</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="389376">
+				<rom name="zxzvm - tryst of fate - an interactive horse opera (1997)(gregory m. zagurski).dsk" size="389376" crc="7e94f956" sha1="ee033e53674d696473a3bb1d2c625989bc5a9f1c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm137">
+		<description>Tube Trouble - A Mini Adventure</description>
+		<year>1995</year>
+		<publisher>Richard Tucker</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - tube trouble - a mini adventure (1995)(richard tucker).dsk" size="194816" crc="2e1c397b" sha1="c9ee4b1b906ce927d46957a4af16853aa9771ebd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm138">
+		<description>Vindaloo - An Interactive Recipe</description>
+		<year>1996</year>
+		<publisher>Adam G. Crutchlow</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - vindaloo - an interactive recipe (1996)(adam g. crutchlow).dsk" size="194816" crc="5313648f" sha1="63908a85c4c467ee3b9b73d8791066df10aa2944" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm139">
+		<description>Wearing the Claw</description>
+		<year>1997</year>
+		<publisher>Paul O'Brian</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - wearing the claw (1997)(paul o'brian).dsk" size="194816" crc="f728d4d8" sha1="5c6497c14a71bc6bae5e2ce0307c08ed755056d1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm140">
+		<description>Welcome to Hell</description>
+		<year>1998</year>
+		<publisher>Kevin Norton - Brandon Myers</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - welcome to hell (1998)(kevin norton - brandon myers).dsk" size="194816" crc="481303a6" sha1="71574247a716c90bf77cccb879a8a262075dacbf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm141">
+		<description>Where Evil Dwells</description>
+		<year>1998</year>
+		<publisher>Paul Johnson - Steve Owens</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - where evil dwells (1998)(paul johnson - steve owens).dsk" size="194816" crc="5d1c7425" sha1="5055e8660fa33d15fc58cc66a6d78ae10682bec1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm142">
+		<description>Windhall Chronicles Volume One - The Path to Fortune</description>
+		<year>1996</year>
+		<publisher>Jeff Cassidy - Christopher E. Forman</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="778496">
+				<rom name="zxzvm - windhall chronicles volume one - the path to fortune (1996)(jeff cassidy - christopher e. forman).dsk" size="778496" crc="90ccbae4" sha1="6d3689a95726155b5f140c350de4ec55b6a539e2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm143">
+		<description>Wishbringer - Interactive Fantasy for Beginners</description>
+		<year>1985</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - wishbringer - interactive fantasy for beginners (1985)(infocom).dsk" size="194816" crc="400ebcab" sha1="6c85375410c8fcd2148657d27c8adad6766c4d11" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm144">
+		<description>Witness - An Interlogic Mystery</description>
+		<year>1983</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - witness - an interlogic mystery (1983)(infocom).dsk" size="194816" crc="c41bb8a3" sha1="2368f675cc143c5d2974b720bb29a1da7edb14f7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm145">
+		<description>Zork - A Troll's Eye View - An Interactive Tedium</description>
+		<year>1998</year>
+		<publisher>Dylan O'Donnell</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - zork - a troll's eye view - an interactive tedium (1998)(dylan o'donnell).dsk" size="194816" crc="f69b0b3e" sha1="354bb89c4888866ebb1a5b25568b9f107bb4ff3c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm146">
+		<description>Zork - The Undiscovered Underground</description>
+		<year>1997</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - zork - the undiscovered underground (1997)(activision).dsk" size="194816" crc="4523bdf3" sha1="f10acb89f2551184ae42a8b7a39343f4ffb4983e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm147">
+		<description>Zork I - The Great Underground Empire</description>
+		<year>1984</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - zork i - the great underground empire (1984)(infocom).dsk" size="194816" crc="02a41d82" sha1="6c2f6256b5880a95c431b517b3e90f86e9f46c1c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm148">
+		<description>Zork I - The Great Underground Empire (Solid Gold Edition)</description>
+		<year>1987</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - zork i - the great underground empire - solid gold edition (1987)(infocom).dsk" size="194816" crc="8cfac13b" sha1="ff764c2d7ad2f4dc4658921f1c6c701b193d2d5e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm149">
+		<description>Zork II - The Wizard of Frobozz</description>
+		<year>1984</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - zork ii - the wizard of frobozz (1984)(infocom).dsk" size="194816" crc="e3c8b1e1" sha1="df7ccd266e61cfdfa7a9829a03452fd1ad99c0c1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm150">
+		<description>Zork III - The Dungeon Master</description>
+		<year>1984</year>
+		<publisher>Infocom</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - zork iii - the dungeon master (1984)(infocom).dsk" size="194816" crc="791d6be1" sha1="125812b241d6f1b2c1204d132cde7519eb92497b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zxzvm151">
+		<description>Zuni Doll - An Interactive Horror Story</description>
+		<year>1997</year>
+		<publisher>Jesse Burneko</publisher>
+		<info name="usage" value="Requires ZxZvm" />
+
+		<part name="flop1" interface="floppy_3">
+			<dataarea name="flop" size="194816">
+				<rom name="zxzvm - zuni doll - an interactive horror story (1997)(jesse burneko).dsk" size="194816" crc="5f537c4c" sha1="c89c4ca39c493cc99f6cbf63fe3234d9641acd84" offset="0" />
 			</dataarea>
 		</part>
 	</software>
