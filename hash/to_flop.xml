@@ -7617,8 +7617,10 @@
 		</part>
 	</software>
 
-	<software name="allemand">
-		<description>Allemand - Volume 2</description>
+	<!-- Allemand Volume 1 - Les nombres et l'heure (Cedic/Nathan)-->
+
+	<software name="allemnd2">
+		<description>Allemand Volume 2 - Pratique de la langue (1)</description>
 		<year>1987</year>
 		<publisher>Cedic/Nathan</publisher>
 
@@ -7629,8 +7631,10 @@
 		</part>
 	</software>
 
-	<software name="anglais">
-		<description>Anglais - Volume 1</description>
+	<!-- Allemand Volume 3 - Pratique de la langue (2) (Cedic/Nathan)-->
+
+	<software name="anglais1">
+		<description>Anglais Volume 1 - Lecture et traduction</description>
 		<year>1986</year>
 		<publisher>Cedic/Nathan</publisher>
 
@@ -7640,6 +7644,26 @@
 			</dataarea>
 		</part>
 	</software>
+
+	<!-- Anglais Volume 2 - Pratique de la langue (Cedic/Nathan) -->
+	
+	<!-- Anglais Volume 3 - Vocabularie intensif (Cedic/Nathan) -->
+
+	<software name="anglais4">
+		<description>Anglais Volume 4 - Theme grammatical</description>
+		<year>1987</year>
+		<publisher>Cedic/Nathan</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327680">
+				<rom name="anglais-colleges-4_to8.fd" size="327680" crc="173339a9" sha1="f8c93536161cad563cb81c4a3ab475e829094f4d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Anglais Volume 5 - Theme grammatical (Cedic/Nathan) -->
+	
+	<!-- Anglais Volume 6 - Points cles de la langue (Cedic/Nathan) -->
 
 	<software name="angtop">
 		<description>Anglais Top Niveau</description>
@@ -8080,6 +8104,10 @@
 			</dataarea>
 		</part>
 	</software>
+
+	<!-- Espagnol Volume 1 - Vocabulaire (Cedic/Nathan) -->
+
+	<!-- Espagnol Volume 2 - Traduction (Cedic/Nathan) -->
 
 	<software name="europe">
 		<description>Europe</description>
