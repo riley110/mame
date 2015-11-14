@@ -125,6 +125,7 @@
 #include "formats/camplynx_cas.h"
 #include "machine/wd_fdc.h"
 #include "formats/camplynx_dsk.h"
+#include "softlist.h"
 
 class camplynx_state : public driver_device
 {

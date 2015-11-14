@@ -31,6 +31,7 @@
 #include "imagedev/cassette.h"
 #include "formats/tzx_cas.h"
 #include "machine/ram.h"
+#include "softlist.h"
 
 
 class elwro800_state : public spectrum_state

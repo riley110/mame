@@ -21,6 +21,7 @@
 #include "formats/vdk_dsk.h"
 #include "formats/dmk_dsk.h"
 #include "imagedev/flopdrv.h"
+#include "softlist.h"
 
 
 //**************************************************************************

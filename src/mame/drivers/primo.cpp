@@ -115,6 +115,7 @@ Interrupts:
 #include "imagedev/snapquik.h"
 #include "formats/primoptp.h"
 #include "bus/cbmiec/cbmiec.h"
+#include "softlist.h"
 
 static ADDRESS_MAP_START( primoa_port, AS_IO, 8, primo_state )
 	ADDRESS_MAP_GLOBAL_MASK(0xff)

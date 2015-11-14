@@ -40,6 +40,7 @@ MB7051 - fuse programmed prom.
 #include "audio/mea8000.h"
 #include "sound/dac.h"
 #include "imagedev/snapquik.h"
+#include "softlist.h"
 
 
 

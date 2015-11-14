@@ -39,6 +39,7 @@
 #include "video/mc6845.h"
 #include "machine/keyboard.h"
 #include "machine/upd765.h"
+#include "softlist.h"
 
 
 class dim68k_state : public driver_device

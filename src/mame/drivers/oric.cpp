@@ -32,6 +32,7 @@
 #include "machine/wd_fdc.h"
 #include "formats/oric_dsk.h"
 #include "formats/oric_tap.h"
+#include "softlist.h"
 
 class oric_state : public driver_device
 {

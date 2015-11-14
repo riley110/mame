@@ -23,6 +23,7 @@
 #include "machine/wd_fdc.h"
 #include "imagedev/cassette.h"
 #include "bus/isbx/isbx.h"
+#include "softlist.h"
 
 
 //**************************************************************************

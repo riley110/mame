@@ -17,6 +17,7 @@ BUGS:
 #include "emu.h"
 #include "formats/trd_dsk.h"
 #include "machine/beta.h"
+#include "softlist.h"
 
 
 /***************************************************************************

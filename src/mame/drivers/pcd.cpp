@@ -22,6 +22,7 @@
 #include "formats/pc_dsk.h"
 #include "bus/scsi/omti5100.h"
 #include "bus/rs232/rs232.h"
+#include "softlist.h"
 
 //**************************************************************************
 //  TYPE DEFINITIONS

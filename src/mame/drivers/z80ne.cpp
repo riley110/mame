@@ -97,6 +97,7 @@
 #include "imagedev/flopdrv.h"
 #include "formats/dmk_dsk.h"
 #include "machine/ram.h"
+#include "softlist.h"
 
 /* Layout */
 #include "z80ne.lh"

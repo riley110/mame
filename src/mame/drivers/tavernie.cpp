@@ -60,6 +60,7 @@ Z - more scan lines per row (cursor is bigger)
 #include "machine/wd_fdc.h"
 #include "sound/wave.h"
 #include "sound/beep.h"
+#include "softlist.h"
 #include "tavernie.lh"
 
 #define KEYBOARD_TAG "keyboard"

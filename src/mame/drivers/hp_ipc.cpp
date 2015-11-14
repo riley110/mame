@@ -263,6 +263,7 @@ Note external interrupt lines NBIR0 to NBIR3 can be asserted by an interface con
 
 #include "emu.h"
 #include "cpu/m68000/m68000.h"
+#include "softlist.h"
 
 
 class hp_ipc_state : public driver_device

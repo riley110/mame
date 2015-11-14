@@ -118,6 +118,7 @@ from Brett Selwood and Andrew Davies.
 
 #include "includes/mbee.h"
 #include "formats/mbee_cas.h"
+#include "softlist.h"
 
 #define XTAL_13_5MHz 13500000
 

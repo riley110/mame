@@ -159,6 +159,7 @@
 #include "machine/com8116.h"
 #include "machine/i8251.h"
 #include "bus/rs232/rs232.h"
+#include "softlist.h"
 
 #define BIT_MASK(n) (1U << (n))
 

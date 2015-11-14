@@ -12,6 +12,7 @@
 #include "bus/rs232/rs232.h"
 #include "bus/isa/isa.h"
 #include "bus/scsi/scsi.h"
+#include "softlist.h"
 
 class slicer_state : public driver_device
 {
