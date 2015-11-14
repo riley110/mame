@@ -1,11 +1,16 @@
 -- license:BSD-3-Clause
 -- copyright-holders:MAMEdev Team
 
+newoption {
+    trigger = 'build-dir',
+    description = 'Build directory name',
+}
+
 premake.check_paths = true
 premake.make.override = { "TARGET" }
 MAME_DIR = (path.getabsolute("..") .. "/")
 MAME_DIR = string.gsub(MAME_DIR, "(%s)", "\\%1")
-local MAME_BUILD_DIR = (MAME_DIR .. "build/")
+local MAME_BUILD_DIR = (MAME_DIR .. _OPTIONS["build-dir"] .. "/")
 local naclToolchain = ""
 
 
@@ -524,7 +529,7 @@ if (_OPTIONS["SOURCES"] == nil) then
 else
 	OUT_STR = os.outputof( PYTHON .. " " .. MAME_DIR .. "scripts/build/makedep.py " .. MAME_DIR .. " " .. _OPTIONS["SOURCES"] .. " target " .. _OPTIONS["subtarget"])
 	load(OUT_STR)()
-	os.outputof( PYTHON .. " " .. MAME_DIR .. "scripts/build/makedep.py " .. MAME_DIR .. " " .. _OPTIONS["SOURCES"] .. " drivers " .. _OPTIONS["subtarget"] .. " > ".. GEN_DIR  .. _OPTIONS["target"] .. "/" .. _OPTIONS["subtarget"].."/drivlist.c")
+	os.outputof( PYTHON .. " " .. MAME_DIR .. "scripts/build/makedep.py " .. MAME_DIR .. " " .. _OPTIONS["SOURCES"] .. " drivers " .. _OPTIONS["subtarget"] .. " > ".. GEN_DIR  .. _OPTIONS["target"] .. "/" .. _OPTIONS["subtarget"].."/drivlist.cpp")
 end
 configuration { "gmake" }
 	flags {
@@ -1249,9 +1254,9 @@ if _OPTIONS["vs"]=="intel-15" then
 			"/Qwd1478", 			-- warning #1478: function "xxx" (declared at line yyy of "zzz") was declared deprecated
 			"/Qwd1879", 			-- warning #1879: unimplemented pragma ignored
 			"/Qwd3291", 			-- warning #3291: invalid narrowing conversion from "double" to "int"
-			"/Qwd1195",
-			"/Qwd1786",
-			"/Qwd592", -- For lua, false positive?
+			"/Qwd1195", 			-- error #1195: conversion from integer to smaller pointer
+			"/Qwd47",				-- error #47: incompatible redefinition of macro "xxx"
+			"/Qwd265",				-- error #265: floating-point operation result is out of range
 		}
 end
 
