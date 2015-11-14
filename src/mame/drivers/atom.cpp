@@ -740,7 +740,8 @@ static MACHINE_CONFIG_START( atom, atom_state )
 	MCFG_RAM_EXTRA_OPTIONS("4K,6K,8K,10K,12K,32K")
 
 	/* Software lists */
-	MCFG_SOFTWARE_LIST_ADD("cart_list","atom")
+	MCFG_SOFTWARE_LIST_ADD("cart_list","atom_cart")
+	MCFG_SOFTWARE_LIST_ADD("flop_list","atom_flop")
 MACHINE_CONFIG_END
 
 /*-------------------------------------------------

@@ -860,6 +860,7 @@ static MACHINE_CONFIG_DERIVED( ngp, ngp_common )
 	/* software lists */
 	MCFG_SOFTWARE_LIST_ADD("cart_list","ngp")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("ngpc_list","ngpc")
+	MCFG_SOFTWARE_LIST_FILTER("ngpc_list", "NGP")
 MACHINE_CONFIG_END
 
 
@@ -877,6 +878,7 @@ static MACHINE_CONFIG_DERIVED( ngpc, ngp_common )
 	/* software lists */
 	MCFG_SOFTWARE_LIST_ADD("cart_list","ngpc")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("ngp_list","ngp")
+	MCFG_SOFTWARE_LIST_FILTER("cart_list", "NGPC")
 MACHINE_CONFIG_END
 
 

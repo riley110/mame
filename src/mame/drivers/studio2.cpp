@@ -705,6 +705,10 @@ static MACHINE_CONFIG_START( mpt02, mpt02_state )
 	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.25)
 
 	MCFG_FRAGMENT_ADD( studio2_cartslot )
+
+	/* software lists */
+	MCFG_DEVICE_REMOVE("cart_list")
+	MCFG_SOFTWARE_LIST_ADD("cart_list", "mpt02")
 MACHINE_CONFIG_END
 
 /* ROMs */

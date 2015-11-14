@@ -43,6 +43,7 @@
 ****************************************************************************/
 
 #include "includes/zx.h"
+#include "softlist.h"
 
 /* Memory Maps */
 
@@ -353,6 +354,9 @@ static MACHINE_CONFIG_DERIVED( zx81, zx80 )
 
 	MCFG_CASSETTE_MODIFY( "cassette" )
 	MCFG_CASSETTE_FORMATS(zx81_p_format)
+	MCFG_CASSETTE_INTERFACE("zx81_cass")
+	
+	MCFG_SOFTWARE_LIST_ADD("cass_list", "zx81_cass")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( zx81_spk, zx81 )

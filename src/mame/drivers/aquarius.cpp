@@ -388,7 +388,8 @@ static MACHINE_CONFIG_START( aquarius, aquarius_state )
 	MCFG_RAM_EXTRA_OPTIONS("8K,20K,36K")
 
 	/* software lists */
-	MCFG_SOFTWARE_LIST_ADD("cart_list","aquarius")
+	MCFG_SOFTWARE_LIST_ADD("cart_list","aquarius_cart")
+	MCFG_SOFTWARE_LIST_ADD("cass_list","aquarius_cass")
 MACHINE_CONFIG_END
 
 

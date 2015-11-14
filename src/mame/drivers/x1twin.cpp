@@ -464,8 +464,6 @@ static MACHINE_CONFIG_START( x1twin, x1twin_state )
 	MCFG_FLOPPY_DRIVE_ADD("fdc:2", x1_floppies, "dd", x1_state::floppy_formats)
 	MCFG_FLOPPY_DRIVE_ADD("fdc:3", x1_floppies, "dd", x1_state::floppy_formats)
 
-	MCFG_SOFTWARE_LIST_ADD("flop_list","x1_flop")
-
 	MCFG_GENERIC_CARTSLOT_ADD("cartslot", generic_plain_slot, "x1_cart")
 	MCFG_GENERIC_EXTENSIONS("bin,rom")
 
@@ -493,8 +491,6 @@ static MACHINE_CONFIG_START( x1twin, x1twin_state )
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_STOPPED | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED)
 	MCFG_CASSETTE_INTERFACE("x1_cass")
 
-	MCFG_SOFTWARE_LIST_ADD("cass_list","x1_cass")
-
 #if 0
 	MCFG_SOUND_ADD("c6280", C6280, PCE_MAIN_CLOCK/6)
 	MCFG_C6280_CPU("pce_cpu")
@@ -504,6 +500,10 @@ static MACHINE_CONFIG_START( x1twin, x1twin_state )
 
 	MCFG_TIMER_DRIVER_ADD_PERIODIC("keyboard_timer", x1twin_state, x1_keyboard_callback, attotime::from_hz(250))
 	MCFG_TIMER_DRIVER_ADD_PERIODIC("cmt_wind_timer", x1twin_state, x1_cmt_wind_timer, attotime::from_hz(16))
+
+	MCFG_SOFTWARE_LIST_ADD("cart_list","x1_cart")
+	MCFG_SOFTWARE_LIST_ADD("cass_list","x1_cass")
+	MCFG_SOFTWARE_LIST_ADD("flop_list","x1_flop")
 MACHINE_CONFIG_END
 
 ROM_START( x1twin )

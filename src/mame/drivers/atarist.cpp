@@ -2245,7 +2245,8 @@ static MACHINE_CONFIG_START( megast, megast_state )
 	MCFG_RAM_EXTRA_OPTIONS("2M,1M") //  Mega ST 2 ,Mega ST 1
 
 	// software lists
-	MCFG_SOFTWARE_LIST_ADD("flop_list", "st_flop")
+	MCFG_SOFTWARE_LIST_ADD("mst_flop_list", "megast_flop")
+	MCFG_SOFTWARE_LIST_ADD("st_flop_list", "st_flop")
 MACHINE_CONFIG_END
 
 
@@ -2343,7 +2344,8 @@ static MACHINE_CONFIG_START( ste, ste_state )
 	MCFG_RAM_EXTRA_OPTIONS("512K") //  520STe
 
 	// software lists
-	MCFG_SOFTWARE_LIST_ADD("flop_list", "st_flop")
+	MCFG_SOFTWARE_LIST_ADD("ste_flop_list", "ste_flop")
+	MCFG_SOFTWARE_LIST_ADD("st_flop_list", "st_flop")
 MACHINE_CONFIG_END
 
 
@@ -2361,6 +2363,8 @@ static MACHINE_CONFIG_DERIVED( megaste, ste )
 	MCFG_RAM_MODIFY(RAM_TAG)
 	MCFG_RAM_DEFAULT_SIZE("4M")  //  Mega STe 4
 	MCFG_RAM_EXTRA_OPTIONS("2M,1M") //  Mega STe 2 ,Mega STe 1
+
+	MCFG_SOFTWARE_LIST_ADD("mste_flop_list", "megaste_flop")
 MACHINE_CONFIG_END
 
 
@@ -2455,6 +2459,7 @@ MACHINE_CONFIG_END
 //-------------------------------------------------
 
 static MACHINE_CONFIG_DERIVED( tt030, ste )
+	MCFG_SOFTWARE_LIST_ADD("tt_flop_list", "tt_flop")
 MACHINE_CONFIG_END
 
 
@@ -2463,6 +2468,7 @@ MACHINE_CONFIG_END
 //-------------------------------------------------
 
 static MACHINE_CONFIG_DERIVED( falcon, ste )
+	MCFG_SOFTWARE_LIST_ADD("falc_flop_list", "falcon_flop")
 MACHINE_CONFIG_END
 
 
@@ -2471,6 +2477,7 @@ MACHINE_CONFIG_END
 //-------------------------------------------------
 
 static MACHINE_CONFIG_DERIVED( falcon40, ste )
+	MCFG_SOFTWARE_LIST_ADD("falc_flop_list", "falcon_flop")
 MACHINE_CONFIG_END
 
 

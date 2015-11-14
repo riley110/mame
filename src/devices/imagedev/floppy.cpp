@@ -298,7 +298,7 @@ void floppy_image_device::commit_image()
 
 	file_error err = core_truncate(image_core_file(), 0);
 	if (err != 0)
-		popmessage("Error, unable to truncate image: %d", err);
+		logerror("Error, unable to truncate image: %d", err);
 
 	output_format->save(&io, image);
 }

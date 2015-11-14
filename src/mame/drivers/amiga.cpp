@@ -25,6 +25,7 @@
 #include "machine/rp5c01.h"
 #include "softlist.h"
 
+
 //**************************************************************************
 //  TYPE DEFINITIONS
 //**************************************************************************
@@ -1356,9 +1357,9 @@ static MACHINE_CONFIG_START( amiga_base, amiga_state )
 	MCFG_AMIGA_KEYBOARD_KRST_CALLBACK(WRITELINE(amiga_state, kbreset_w))
 
 	// software
-	MCFG_SOFTWARE_LIST_ADD("wb_list", "amiga_workbench")
-	MCFG_SOFTWARE_LIST_ADD("hardware_list", "amiga_hardware")
-	MCFG_SOFTWARE_LIST_ADD("apps_list", "amiga_apps")
+	MCFG_SOFTWARE_LIST_ADD("ocs_flop_list", "amigaocs_flop")
+	MCFG_SOFTWARE_LIST_ADD("misc_flop_list", "amiga_flop")
+	MCFG_SOFTWARE_LIST_ADD("misc_cd_list", "amiga_cd") //some of these also work on cdtv/cd32
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED_CLASS( a1000, amiga_base, a1000_state )
@@ -1527,7 +1528,9 @@ static MACHINE_CONFIG_DERIVED_CLASS( cdtv, amiga_base, cdtv_state )
 	MCFG_CR511B_DRQ_HANDLER(DEVWRITELINE("u36", dmac_device, xdreq_w))
 	MCFG_CR511B_DTEN_HANDLER(DEVWRITELINE("u36", dmac_device, xdreq_w))
 
-	MCFG_SOFTWARE_LIST_ADD("cd_list", "cdtv")
+	MCFG_DEVICE_REMOVE("ocs_flop_list")
+	MCFG_DEVICE_REMOVE("misc_flop_list")
+	MCFG_SOFTWARE_LIST_ADD("cdtv_list", "cdtv")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED_CLASS( cdtvn, cdtv, cdtv_state )
@@ -1564,6 +1567,7 @@ static MACHINE_CONFIG_DERIVED_CLASS( a3000, amiga_base, a3000_state )
 
 	// todo: zorro3 slots, super dmac, scsi
 
+	MCFG_SOFTWARE_LIST_ADD("ecs_flop_list", "amigaecs_flop")
 	MCFG_SOFTWARE_LIST_ADD("a3000_list", "amiga_a3000")
 MACHINE_CONFIG_END
 
@@ -1595,6 +1599,8 @@ static MACHINE_CONFIG_DERIVED_CLASS( a500p, amiga_base, a500p_state )
 
 	// cpu slot
 	MCFG_EXPANSION_SLOT_ADD("maincpu", a500_expansion_cards, NULL)
+
+	MCFG_SOFTWARE_LIST_ADD("ecs_flop_list", "amigaecs_flop")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED_CLASS( a500pn, a500p, a500p_state )
@@ -1635,6 +1641,8 @@ static MACHINE_CONFIG_DERIVED_CLASS( a600, amiga_base, a600_state )
 	MCFG_ATA_INTERFACE_IRQ_HANDLER(DEVWRITELINE("gayle", gayle_device, ide_interrupt_w))
 
 	// todo: pcmcia
+
+	MCFG_SOFTWARE_LIST_ADD("ecs_flop_list", "amigaecs_flop")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED_CLASS( a600n, a600, a600_state )
@@ -1684,6 +1692,9 @@ static MACHINE_CONFIG_DERIVED_CLASS( a1200, amiga_base, a1200_state )
 	MCFG_ATA_INTERFACE_IRQ_HANDLER(DEVWRITELINE("gayle", gayle_device, ide_interrupt_w))
 
 	// todo: pcmcia
+
+	MCFG_SOFTWARE_LIST_ADD("ecs_flop_list", "amigaecs_flop")
+	MCFG_SOFTWARE_LIST_ADD("aga_flop_list", "amigaaga_flop")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED_CLASS( a1200n, a1200, a1200_state )
@@ -1732,6 +1743,9 @@ static MACHINE_CONFIG_DERIVED_CLASS( a4000, amiga_base, a4000_state )
 	MCFG_ATA_INTERFACE_IRQ_HANDLER(WRITELINE(a4000_state, ide_interrupt_w))
 
 	// todo: zorro3
+
+	MCFG_SOFTWARE_LIST_ADD("ecs_flop_list", "amigaecs_flop")
+	MCFG_SOFTWARE_LIST_ADD("aga_flop_list", "amigaaga_flop")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED_CLASS( a4000n, a4000, a4000_state )
@@ -1811,8 +1825,12 @@ static MACHINE_CONFIG_DERIVED_CLASS( cd32, amiga_base, cd32_state )
 
 	MCFG_CDROM_ADD("cdrom")
 	MCFG_CDROM_INTERFACE("cd32_cdrom")
-	MCFG_SOFTWARE_LIST_ADD("cd_list", "cd32")
+
 	MCFG_DEVICE_REMOVE("kbd")
+
+	MCFG_DEVICE_REMOVE("ocs_flop_list")
+	MCFG_DEVICE_REMOVE("misc_flop_list")
+	MCFG_SOFTWARE_LIST_ADD("cd32_list", "cd32")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED_CLASS( cd32n, cd32, cd32_state )
