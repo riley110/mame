@@ -20,12 +20,16 @@ contents make no sense at all (mostly FF), so the vectors for IRQ0 and IRQ2 are 
 vectors are not used as yet.
 
 Three companies are known to have sold the Zorba over its lifetime: Telcon Industries, Modular Micros 
-(a subsidiary of Modular Computers (ModComp)), and Gemini Electronics. Only the Modular Micros version
+(a subsidiary of Modular Computers (ModComp)), and Gemini Electronics. Only the Modular Micros 7" version
 has been dumped. Both of the undumped Telcon and Gemini versions have a distinct startup screen.
  
 A notable difference between the Telcon and Modular Micros versions, and the Gemini version, is that the
 first two have a green monochrome screen on the left and floppy drives on the right, while the latter 
 one has either a green or an amber monochrome screen on the right and floppy drives on the left.
+
+Two versions of the Zorba were sold by Modular Micros:
+Zorba 7: 7" CRT, 2 410K floppies, 22 lbs, $1595
+Zorba 2000: 9" CRT, 2 820K floppies, 10M HD optional, 25 lbs, ~$2000
 
 Status:
 - Boots up, and the keyboard works
@@ -38,6 +42,7 @@ ToDo:
 - Connect the PIT to the UARTs
 - Replace the ascii keyboard with the real one, if possible
 - Probably lots of other things
+- Emulate the Co-Power-88 expansion (allows PC-DOS, CP/M-86, etc. to be used)
 
 
 *************************************************************************************************************/
@@ -426,7 +431,7 @@ static MACHINE_CONFIG_START( zorba, zorba_state )
 	MCFG_SOFTWARE_LIST_ADD("flop_list", "zorba")
 MACHINE_CONFIG_END
 
-ROM_START( zorba )
+ROM_START( zorba7 )
 	ROM_REGION( 0x14000, "maincpu", ROMREGION_ERASEFF )
 	ROM_LOAD( "780000.u47", 0x10000, 0x1000, CRC(6d58f2c5) SHA1(7763f08c801cd36e5a761c6dc9f30a50b3bc482d) )
 
@@ -442,4 +447,4 @@ ROM_START( zorba )
 	ROM_LOAD( "74ls288.u77", 0x0040, 0x0020, CRC(946e03b0) SHA1(24240bdd7bdf507a5b51628fb36ad1266fc53a28) ) // suspected bad dump
 ROM_END
 
-COMP( 1982, zorba, 0, 0, zorba, zorba, zorba_state, zorba, "Modular Micros", "Zorba (Modular Micros)", MACHINE_NOT_WORKING )
+COMP( 1984, zorba7, 0, 0, zorba, zorba, zorba_state, zorba, "Modular Micros", "Zorba 7", MACHINE_NOT_WORKING )
