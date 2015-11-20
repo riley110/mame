@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<softwarelist name="zorba" description="Telcon Zorba floppy disks">
+
+	<software name="cpm">
+		<description>58K CP/M (v2.2, Bios v1.7A)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174565">
+				<rom name="zorba1.imd" size="174565" crc="b7c4e257" sha1="be10a48c8e512476cd39c2ca0faa261bda280260" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpmsrc">
+		<description>CP/M Source</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="332397">
+				<rom name="zorba2.imd" size="332397" crc="9f4832b9" sha1="41b6ff86ac11077f3a16bd9ed7be991448b16968" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="datastar">
+		<description>DataStar (Release 1.4)</description>
+		<year>1982</year>
+		<publisher>MicroPro International</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="290987">
+				<rom name="zorba3.imd" size="290987" crc="d5cf92cb" sha1="d123e3763ac8da14ef7443361f77df34dcc5cd0f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wscs">
+		<description>WordStar (Release 3.0) and CalcStar (Release 1.2)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="259832">
+				<rom name="zorba4.imd" size="259832" crc="3c89eb7a" sha1="c54c579e9a24410870eed5f7a6c3a73f0f5f2633" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="various">
+		<description>Various files</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="351758">
+				<rom name="zorba5.imd" size="351758" crc="d3a2362a" sha1="4d291814b23144a7f122b565348fd5021af8c43e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>
