@@ -21,7 +21,7 @@ vectors are not used as yet.
 
 Three companies are known to have sold the Zorba over its lifetime: Telcon Industries, Modular Micros 
 (a subsidiary of Modular Computers (ModComp)), and Gemini Electronics. Only the Modular Micros 7" version
-has been dumped. Both of the undumped Telcon and Gemini versions have a distinct startup screen.
+has been dumped. The Telcon and Gemini versions each have distinct startup screens.
  
 A notable difference between the Telcon and Modular Micros versions, and the Gemini version, is that the
 first two have a green monochrome screen on the left and floppy drives on the right, while the latter 
