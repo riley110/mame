@@ -1,6 +1,14 @@
 -- license:BSD-3-Clause
 -- copyright-holders:MAMEdev Team
 
+---------------------------------------------------------------------------
+--
+--   lib.lua
+--
+--   Rules for building lib cores
+--
+---------------------------------------------------------------------------
+
 project "utils"
 	uuid "22489ad0-4cb2-4d91-ad81-24b0d80ca30a"
 	kind (LIBTYPE)
@@ -253,6 +261,8 @@ project "formats"
 		MAME_DIR .. "src/lib/formats/fmsx_cas.h",
 		MAME_DIR .. "src/lib/formats/fmtowns_dsk.cpp",
 		MAME_DIR .. "src/lib/formats/fmtowns_dsk.h",
+		MAME_DIR .. "src/lib/formats/fsd_dsk.cpp",
+		MAME_DIR .. "src/lib/formats/fsd_dsk.h",
 		MAME_DIR .. "src/lib/formats/g64_dsk.cpp",
 		MAME_DIR .. "src/lib/formats/g64_dsk.h",
 		MAME_DIR .. "src/lib/formats/gtp_cas.cpp",

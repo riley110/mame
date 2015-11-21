@@ -924,7 +924,8 @@ render_target::render_target(render_manager &manager, const char *layoutfile, UI
 		m_base_view(NULL),
 		m_base_orientation(ROT0),
 		m_maxtexwidth(65536),
-		m_maxtexheight(65536)
+		m_maxtexheight(65536),
+		m_transform_primitives(true)
 {
 	// determine the base layer configuration based on options
 	m_base_layerconfig.set_backdrops_enabled(manager.machine().options().use_backdrops());
@@ -1204,7 +1205,7 @@ void render_target::compute_minimum_size(INT32 &minwidth, INT32 &minheight)
 		throw emu_fatalerror("Mandatory artwork is missing");
 
 	// scan the current view for all screens
-	for (item_layer layer = ITEM_LAYER_FIRST; layer < ITEM_LAYER_MAX; layer++)
+	for (item_layer layer = ITEM_LAYER_FIRST; layer < ITEM_LAYER_MAX; ++layer)
 
 		// iterate over items in the layer
 		for (layout_view::item *curitem = m_curview->first_item(layer); curitem != NULL; curitem = curitem->next())
@@ -1287,7 +1288,7 @@ render_primitive_list &render_target::get_primitives()
 
 	// iterate over layers back-to-front, but only if we're running
 	if (m_manager.machine().phase() >= MACHINE_PHASE_RESET)
-		for (item_layer layernum = ITEM_LAYER_FIRST; layernum < ITEM_LAYER_MAX; layernum++)
+		for (item_layer layernum = ITEM_LAYER_FIRST; layernum < ITEM_LAYER_MAX; ++layernum)
 		{
 			int blendmode;
 			item_layer layer = get_layer_and_blendmode(*m_curview, layernum, blendmode);
@@ -1659,6 +1660,13 @@ void render_target::add_container_primitives(render_primitive_list &list, const 
 		float yoffs = (container_xform.orientation & ORIENTATION_SWAP_XY) ? container.xoffset() : container.yoffset();
 		if (container_xform.orientation & ORIENTATION_FLIP_X) xoffs = -xoffs;
 		if (container_xform.orientation & ORIENTATION_FLIP_Y) yoffs = -yoffs;
+		if (!m_transform_primitives)
+		{
+			xscale = 1.0f;
+			yscale = 1.0f;
+			xoffs = 0.0f;
+			yoffs = 0.0f;
+		}
 		container_xform.xscale = xform.xscale * xscale;
 		container_xform.yscale = xform.yscale * yscale;
 		if (xform.no_center)
@@ -1916,7 +1924,7 @@ bool render_target::map_point_internal(INT32 target_x, INT32 target_y, render_co
 	}
 
 	// loop through each layer
-	for (item_layer layernum = ITEM_LAYER_FIRST; layernum < ITEM_LAYER_MAX; layernum++)
+	for (item_layer layernum = ITEM_LAYER_FIRST; layernum < ITEM_LAYER_MAX; ++layernum)
 	{
 		int blendmode;
 		item_layer layer = get_layer_and_blendmode(*m_curview, layernum, blendmode);

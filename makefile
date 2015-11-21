@@ -91,7 +91,7 @@
 
 # QT_HOME = /usr/lib64/qt48/
 
-# SOURCES = src/mame/drivers/asteroid.c,src/mame/audio/llander.c
+# SOURCES = src/mame/drivers/asteroid.cpp,src/mame/audio/llander.cpp
 
 # FORCE_VERSION_COMPILE = 1
 
@@ -325,6 +325,10 @@ OSD := sdl
 endif
 
 ifeq ($(TARGETOS),os2)
+OSD := sdl
+endif
+
+ifeq ($(TARGETOS),asmjs)
 OSD := sdl
 endif
 endif
@@ -1190,7 +1194,7 @@ endif
 
 doxygen:
 	@echo Generate Doxygen documentation
-	doxygen mame.doxygen
+	doxygen doxygen/doxygen.config
 
 #-------------------------------------------------
 # CppCheck analysis
