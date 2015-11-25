@@ -52,7 +52,6 @@ static file_error open_next(d3d::renderer *d3d, emu_file &file, const char *temp
 
 namespace d3d
 {
-
 //============================================================
 //  PROTOTYPES
 //============================================================
@@ -72,12 +71,12 @@ static direct3dx9_loadeffect_ptr g_load_effect = NULL;
 //  shader manager constructor
 //============================================================
 
-shaders::shaders() : 
-	d3dintf(NULL), machine(NULL), d3d(NULL), num_screens(0), curr_screen(0), curr_frame(0), write_ini(false), read_ini(false), hlsl_prescale_x(0), hlsl_prescale_y(0), bloom_count(0), 
+shaders::shaders() :
+	d3dintf(NULL), machine(NULL), d3d(NULL), num_screens(0), curr_screen(0), curr_frame(0), write_ini(false), read_ini(false), hlsl_prescale_x(0), hlsl_prescale_y(0), bloom_count(0),
 	vecbuf_type(), vecbuf_index(0), vecbuf_count(0), avi_output_file(NULL), avi_frame(0), avi_copy_surface(NULL), avi_copy_texture(NULL), avi_final_target(NULL), avi_final_texture(NULL),
-	black_surface(NULL), black_texture(NULL), render_snap(false), snap_rendered(false), snap_copy_target(NULL), snap_copy_texture(NULL), snap_target(NULL), snap_texture(NULL), 
+	black_surface(NULL), black_texture(NULL), render_snap(false), snap_rendered(false), snap_copy_target(NULL), snap_copy_texture(NULL), snap_target(NULL), snap_texture(NULL),
 	snap_width(0), snap_height(0), lines_pending(false), backbuffer(NULL), curr_effect(NULL), default_effect(NULL), prescale_effect(NULL), post_effect(NULL), distortion_effect(NULL),
-	focus_effect(NULL), phosphor_effect(NULL), deconverge_effect(NULL), color_effect(NULL), yiq_encode_effect(NULL), yiq_decode_effect(NULL), bloom_effect(NULL), 
+	focus_effect(NULL), phosphor_effect(NULL), deconverge_effect(NULL), color_effect(NULL), yiq_encode_effect(NULL), yiq_decode_effect(NULL), bloom_effect(NULL),
 	downsample_effect(NULL), vector_effect(NULL), fsfx_vertices(NULL), curr_texture(NULL), curr_render_target(NULL), curr_poly(NULL)
 {
 	master_enable = false;
@@ -101,12 +100,6 @@ shaders::shaders() :
 
 shaders::~shaders()
 {
-	if (options != NULL)
-	{
-		last_options = *options;
-	}
-	options = NULL;
-
 	cache_target *currcache = cachehead;
 	while(cachehead != NULL)
 	{
@@ -654,11 +647,6 @@ void shaders::set_texture(texture_info *texture)
 
 void shaders::init(base *d3dintf, running_machine *machine, d3d::renderer *renderer)
 {
-	if (&machine->system() == &GAME_NAME(___empty))
-	{
-		return;
-	}
-
 	if (!d3dintf->post_fx_available)
 	{
 		return;
@@ -669,6 +657,7 @@ void shaders::init(base *d3dintf, running_machine *machine, d3d::renderer *rende
 	{
 		printf("Direct3D: Unable to find D3DXCreateEffectFromFileW\n");
 		d3dintf->post_fx_available = false;
+
 		return;
 	}
 
@@ -676,6 +665,12 @@ void shaders::init(base *d3dintf, running_machine *machine, d3d::renderer *rende
 	this->machine = machine;
 	this->d3d = renderer;
 	this->options = renderer->get_shaders_options();
+
+	// check if no driver loaded (not all settings might be loaded yet)
+	if (&machine->system() == &GAME_NAME(___empty))
+	{
+		return;
+	}
 
 	windows_options &winoptions = downcast<windows_options &>(machine->options());
 
@@ -847,6 +842,11 @@ int shaders::create_resources(bool reset)
 	if (!master_enable || !d3dintf->post_fx_available)
 	{
 		return 0;
+	}
+
+	if (last_options.params_init)
+	{
+		options = &last_options;
 	}
 
 	HRESULT result = (*d3dintf->device.get_render_target)(d3d->get_device(), 0, &backbuffer);
@@ -2038,6 +2038,12 @@ void shaders::delete_resources(bool reset)
 	if (!master_enable || !d3dintf->post_fx_available)
 	{
 		return;
+	}
+
+	if (options != NULL)
+	{
+		last_options = *options;
+		options = NULL;
 	}
 
 	initialized = false;
