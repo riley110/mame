@@ -84,6 +84,7 @@
 #include "formats/hect_dsk.h"
 #include "formats/hector_minidisc.h"
 #include "includes/hec2hrp.h"
+#include "softlist.h"
 
 /*****************************************************************************/
 static ADDRESS_MAP_START(hecdisc2_mem, AS_PROGRAM, 8, hec2hrp_state )

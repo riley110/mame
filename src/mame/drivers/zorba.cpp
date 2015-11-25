@@ -431,7 +431,7 @@ static MACHINE_CONFIG_START( zorba, zorba_state )
 	MCFG_SOFTWARE_LIST_ADD("flop_list", "zorba")
 MACHINE_CONFIG_END
 
-ROM_START( zorba7 )
+ROM_START( zorba )
 	ROM_REGION( 0x14000, "maincpu", ROMREGION_ERASEFF )
 	ROM_LOAD( "780000.u47", 0x10000, 0x1000, CRC(6d58f2c5) SHA1(7763f08c801cd36e5a761c6dc9f30a50b3bc482d) )
 
@@ -447,4 +447,4 @@ ROM_START( zorba7 )
 	ROM_LOAD( "74ls288.u77", 0x0040, 0x0020, CRC(946e03b0) SHA1(24240bdd7bdf507a5b51628fb36ad1266fc53a28) ) // suspected bad dump
 ROM_END
 
-COMP( 1984, zorba7, 0, 0, zorba, zorba, zorba_state, zorba, "Modular Micros", "Zorba 7", MACHINE_NOT_WORKING )
+COMP( 1984, zorba, 0, 0, zorba, zorba, zorba_state, zorba, "Modular Micros", "Zorba 7", MACHINE_NOT_WORKING )
