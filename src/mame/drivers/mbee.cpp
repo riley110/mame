@@ -586,7 +586,7 @@ INPUT_PORTS_END
 static const z80_daisy_config mbee_daisy_chain[] =
 {
 	{ "z80pio" },
-	{ NULL }
+	{ nullptr }
 };
 
 /**************************** F4 CHARACTER DISPLAYER */

@@ -2132,7 +2132,7 @@ DRIVER_INIT_MEMBER(mitchell_state,pangb)
 {
 	m_input_type = 0;
 	bootleg_decode();
-	if (m_nvram != NULL)
+	if (m_nvram != nullptr)
 		m_nvram->set_base(&m_dummy_nvram, sizeof(m_dummy_nvram));   /* for pangba */
 }
 DRIVER_INIT_MEMBER(mitchell_state,cworld)

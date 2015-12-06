@@ -3730,7 +3730,7 @@ static const GXGameInfoT gameDefs[] =
 	{ "rungun2",   7, 0, BPP4 },
 	{ "slamdnk2",  7, 0, BPP4 },
 	{ "rushhero",  7, 0, BPP4 },
-	{ "",         -1, -1, -1 },
+	{ "",        0xff,0xff,0xff },
 };
 
 READ32_MEMBER( konamigx_state::k_6bpp_rom_long_r )
@@ -3747,14 +3747,14 @@ DRIVER_INIT_MEMBER(konamigx_state,konamigx)
 	m_last_prot_op = -1;
 	m_last_prot_clk = 0;
 
-	m_esc_cb = NULL;
+	m_esc_cb = nullptr;
 	m_resume_trigger = 0;
 
 	m_dmadelay_timer = machine().scheduler().timer_alloc(timer_expired_delegate(FUNC(konamigx_state::dmaend_callback),this));
 	m_boothack_timer = machine().scheduler().timer_alloc(timer_expired_delegate(FUNC(konamigx_state::boothack_callback),this));
 
 	i = match = 0;
-	while ((gameDefs[i].cfgport != -1) && (!match))
+	while ((gameDefs[i].cfgport != 0xff) && (!match))
 	{
 		if (!strcmp(machine().system().name, gameDefs[i].romname))
 		{
