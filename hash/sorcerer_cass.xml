@@ -1,12 +1,5 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<!--
-TODO (Jan 10, 2015):
-
-Finish loading instructions for latest additions
-Figure out how to load data tapes in Music Editor
-Remove the MP3 to WAV converted tapes?
--->
 <softwarelist name="sorcerer_cass" description="Exidy Sorcerer cassettes">
 
 <!-- These come from real(?) tapes -->
@@ -15,7 +8,7 @@ Remove the MP3 to WAV converted tapes?
 		<description>Interactive Budget Program</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass" interface="sorcerer_cass">
 			<dataarea name="cass" size="8202538">
@@ -28,7 +21,7 @@ Remove the MP3 to WAV converted tapes?
 		<description>Cross-Up</description>
 		<year>19??</year>
 		<publisher>Ted Crowley</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass" interface="sorcerer_cass">
 			<dataarea name="cass" size="5980780">
@@ -41,7 +34,7 @@ Remove the MP3 to WAV converted tapes?
 		<description>Eliza</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass" interface="sorcerer_cass">
 			<dataarea name="cass" size="11908260">
@@ -54,7 +47,7 @@ Remove the MP3 to WAV converted tapes?
 		<description>Math</description>
 		<year>1979</year>
 		<publisher>J.R. Lucas</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass" interface="sorcerer_cass">
 			<dataarea name="cass" size="7556546">
@@ -80,7 +73,7 @@ Remove the MP3 to WAV converted tapes?
 		<description>Presidents Quiz</description>
 		<year>19??</year>
 		<publisher>Jim &amp; Linda Staley</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass" interface="sorcerer_cass">
 			<dataarea name="cass" size="11678280">
@@ -93,7 +86,7 @@ Remove the MP3 to WAV converted tapes?
 		<description>Reversi (Terry &amp; Kathleen Beyer)</description>
 		<year>1979</year>
 		<publisher>Terry &amp; Kathleen Beyer</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass" interface="sorcerer_cass">
 			<dataarea name="cass" size="11295052">
@@ -119,7 +112,7 @@ Remove the MP3 to WAV converted tapes?
 		<description>Sightspell Program</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass" interface="sorcerer_cass">
 			<dataarea name="cass" size="3896482">
@@ -132,7 +125,7 @@ Remove the MP3 to WAV converted tapes?
 		<description>TEDIT - Text Editor Program</description>
 		<year>1979</year>
 		<publisher>Peter J. Elston</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass" interface="sorcerer_cass">
 			<dataarea name="cass" size="7263870">
@@ -150,7 +143,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Adventure No. 1 - Adventureland</description>
 		<year>1979</year>
 		<publisher>Adams</publisher>
-		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+		<info name="usage" value="Load in Monitor with &quot;LO&quot;, then execute with &quot;GO 0150&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="13414936">
@@ -163,7 +156,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Adventure No. 3 - Mission Impossible</description>
 		<year>1979</year>
 		<publisher>Adams</publisher>
-		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+		<info name="usage" value="Load in Monitor with &quot;LO&quot;, then execute with &quot;GO 0150&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="12999368">
@@ -176,7 +169,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Arrows and Alleys</description>
 		<year>1980</year>
 		<publisher>Quality Software</publisher>
-		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+		<info name="usage" value="Load in Monitor with &quot;LO&quot;, then execute with &quot;GO 0100&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="5519124">
@@ -189,7 +182,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Astro Attacker</description>
 		<year>1982</year>
 		<publisher>Global Software Network</publisher>
-		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+		<info name="usage" value="Load in Monitor with &quot;LO&quot;, then execute with &quot;GO 0100&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="12298398">
@@ -202,7 +195,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Astro Attacker (Hacked?)</description>
 		<year>1982</year>
 		<publisher>Global Software Network</publisher>
-		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+		<info name="usage" value="Load in Monitor with &quot;LO&quot;, then execute with &quot;GO 0100&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="12298398">
@@ -215,7 +208,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>ATC</description>
 		<year>1979</year>
 		<publisher>David Mannering</publisher>
-		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+		<info name="usage" value="Load in Monitor with &quot;LO&quot;, then execute with &quot;GO 0000&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="2817926">
@@ -228,7 +221,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Blackjack</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="12261206">
@@ -241,7 +234,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Breakout</description>
 		<year>1980</year>
 		<publisher>Ray Bannon</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="5719634">
@@ -254,7 +247,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Character Designer</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+		<info name="usage" value="Load in Monitor with &quot;LO&quot;, then execute with &quot;GO 0100&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="3027328">
@@ -267,7 +260,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Character Maker Demo</description>
 		<year>1980</year>
 		<publisher>Quality Software</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="5080110">
@@ -280,7 +273,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Chess (Sorcerer Computer Users of Australia)</description>
 		<year>198?</year>
 		<publisher>Sorcerer Computer Users of Australia</publisher>
-		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+		<info name="usage" value="Load in Monitor with &quot;LO&quot;, then execute with &quot;GO 4040&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="5936312">
@@ -293,7 +286,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Chess (Unknown)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+		<info name="usage" value="Load in Monitor with &quot;LO&quot;, then execute with &quot;GO 4CFD&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="6350262">
@@ -306,7 +299,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Chomp</description>
 		<year>1981</year>
 		<publisher>Global Software Network</publisher>
-		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+		<info name="usage" value="Load in Monitor with &quot;LO&quot;, then execute with &quot;GO 0100&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="10921522">
@@ -319,7 +312,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Chomp (Hacked?)</description>
 		<year>1981</year>
 		<publisher>Global Software Network</publisher>
-		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+		<info name="usage" value="Load in Monitor with &quot;LO&quot;, then execute with &quot;GO 0100&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="10921522">
@@ -332,7 +325,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Cybernetic Pool</description>
 		<year>198?</year>
 		<publisher>P.J.B. Systems</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="5616954">
@@ -345,7 +338,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Defender</description>
 		<year>1982</year>
 		<publisher>System Software</publisher>
-		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+		<info name="usage" value="Load in Monitor with &quot;LO&quot;, then execute with &quot;GO 0100&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="13830504">
@@ -358,7 +351,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Dodgem</description>
 		<year>198?</year>
 		<publisher>Creative Computing</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="4264332">
@@ -371,7 +364,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Eastern Australia Truck Driving</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="6481240">
@@ -384,7 +377,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Ezyfile</description>
 		<year>1981</year>
 		<publisher>Bob Stafford</publisher>
-		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+		<info name="usage" value="Load in Monitor with &quot;LO&quot;, then execute with &quot;GO 0100&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="6038992">
@@ -397,7 +390,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Fastgammon</description>
 		<year>1979</year>
 		<publisher>Quality Software</publisher>
-		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+		<info name="usage" value="Load in Monitor with &quot;LO&quot;, then execute with &quot;GO 01F0&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="5949248">
@@ -410,7 +403,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Galaxians</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+		<info name="usage" value="Load in Monitor with &quot;LO&quot;, then execute with &quot;GO 0100&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="6959872">
@@ -423,7 +416,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Galaxians (No Sound)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+		<info name="usage" value="Load in Monitor with &quot;LO&quot;, then execute with &quot;GO 0100&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="6973618">
@@ -437,7 +430,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Graphics Animation System (Bad?)</description>
 		<year>1980</year>
 		<publisher>Quality Software</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="3408940">
@@ -450,7 +443,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Horse Race</description>
 		<year>198?</year>
 		<publisher>Neil Gerard</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="6468304">
@@ -463,7 +456,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Instructions for Chess</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="11384792">
@@ -489,7 +482,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Kadath</description>
 		<year>1985</year>
 		<publisher>Reni Barnes</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="37373216">
@@ -502,7 +495,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Labyrinth</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="5029982">
@@ -515,7 +508,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>LEM</description>
 		<year>198?</year>
 		<publisher>Creative Computing</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="5055046">
@@ -528,7 +521,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Memory Change</description>
 		<year>198?</year>
 		<publisher>Paul Grimshaw</publisher>
-		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+		<info name="usage" value="Load in Monitor with &quot;LO&quot;, then execute with &quot;GO 6E00&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="1441860">
@@ -541,7 +534,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>MIDAS - Microcomputer Database System</description>
 		<year>1980</year>
 		<publisher>R.J.V. Stafford</publisher>
-		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+		<info name="usage" value="Load in Monitor with &quot;LO&quot;, then execute with &quot;GO 0200&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="4755902">
@@ -554,7 +547,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Music Editor</description>
 		<year>1980</year>
 		<publisher>Arrington Software</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="10125958">
@@ -567,7 +560,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>The Orb of Halucidon</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="15424058">
@@ -593,7 +586,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Plane</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="5420488">
@@ -606,7 +599,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Qubic - 3D Noughts and Crosses</description>
 		<year>1985</year>
 		<publisher>Toowoomba Sorcerer Group</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="8572020">
@@ -619,7 +612,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Reversi (Unknown)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="10450976">
@@ -632,7 +625,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Snake (Steve and Pete Enterprises)</description>
 		<year>198?</year>
 		<publisher>Steve and Pete Enterprises</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="3957104">
@@ -645,7 +638,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Snake (Unknown)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="4156804">
@@ -658,7 +651,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Sorcerer Level II BASIC</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+		<info name="usage" value="Load in Monitor with &quot;LO&quot;, then execute with &quot;GO 0000&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="11337092">
@@ -672,7 +665,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Space Invaders (Unfinished?)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="3603790">
@@ -685,7 +678,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Super Asteroids</description>
 		<year>1981</year>
 		<publisher>System Software</publisher>
-		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+		<info name="usage" value="Load in Monitor with &quot;LO&quot;, then execute with &quot;GO 0100&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="7639820">
@@ -698,7 +691,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Super Star Trek (v2.0)</description>
 		<year>1979</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="19956510">
@@ -711,7 +704,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Tank Trap IV</description>
 		<year>1979</year>
 		<publisher>Quality Software</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="5970268">
@@ -737,7 +730,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Word Processing System</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load in Monitor with &quot;LO&quot; command" />
+		<info name="usage" value="Load in Monitor with &quot;LO&quot;, then execute with &quot;GO 0100&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="17570626">
@@ -763,7 +756,7 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Z-80 Disassembler (Hacked by B.T.F. Tan)</description>
 		<year>1979</year>
 		<publisher>Ivan Reid</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass1" interface="sorcerer_cass">
 			<dataarea name="cass" size="5094662">
@@ -772,17 +765,17 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		</part>
 	</software>
 
-<!-- These were converted from mp3s in the TOSEC set, so they're marked as bad dumps (and should be removed later?) -->
+<!-- These were converted from mp3s in the TOSEC set, but they work fine, so I'm keeping them in -->
 
 	<software name="chompb" cloneof="chomp">
 		<description>Chomp (Converted from MP3)</description>
 		<year>1981</year>
 		<publisher>Global Software Network</publisher>
-		<info name="usage" value="Load in Monitor with &quot;LO&quot; command, then type &quot;GO 0100&quot;" />
+		<info name="usage" value="Load in Monitor with &quot;LO&quot;, then type &quot;GO 0100&quot;" />
 
 		<part name="cass" interface="sorcerer_cass">
 			<dataarea name="cass" size="23392316">
-				<rom name="chomp (1981)(w.s.king)[mp3 source].wav" size="23392316" crc="95971024" sha1="62672de80e5139af35424184c76f1c9c18493c3a" offset="0" status="baddump" />
+				<rom name="chomp (1981)(w.s.king)[mp3 source].wav" size="23392316" crc="95971024" sha1="62672de80e5139af35424184c76f1c9c18493c3a" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -791,11 +784,11 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Eliza (Converted from MP3)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot; command, then type &quot;RUN&quot;" />
+		<info name="usage" value="Load in BASIC with &quot;CLOAD&quot;, then execute with &quot;RUN&quot;" />
 
 		<part name="cass" interface="sorcerer_cass">
 			<dataarea name="cass" size="12578876">
-				<rom name="eliza (19xx)(-)[mp3 source].wav" size="12578876" crc="9173759e" sha1="23d35784fd1ab492cb0371552bd1a981214c0192" offset="0" status="baddump" />
+				<rom name="eliza (19xx)(-)[mp3 source].wav" size="12578876" crc="9173759e" sha1="23d35784fd1ab492cb0371552bd1a981214c0192" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -804,11 +797,11 @@ I tested most of them and they work (except for the two that didn't work as a qu
 		<description>Galaxians (Converted from MP3)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load in Monitor with &quot;LO&quot; command, then type &quot;GO 0100&quot;" />
+		<info name="usage" value="Load in Monitor with &quot;LO&quot;, then execute with &quot;GO 0100&quot;" />
 
 		<part name="cass" interface="sorcerer_cass">
 			<dataarea name="cass" size="16506020">
-				<rom name="galaxians (19xx)(-)[mp3 source].wav" size="16506020" crc="c6f686b2" sha1="41928aa796e6609de37301b3594d3a9a9eb975ac" offset="0" status="baddump" />
+				<rom name="galaxians (19xx)(-)[mp3 source].wav" size="16506020" crc="c6f686b2" sha1="41928aa796e6609de37301b3594d3a9a9eb975ac" offset="0" />
 			</dataarea>
 		</part>
 	</software>
