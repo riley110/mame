@@ -378,6 +378,7 @@ static MACHINE_CONFIG_START( aquarius, aquarius_state )
 	/* cassette */
 	MCFG_CASSETTE_ADD( "cassette" )
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_STOPPED | CASSETTE_MOTOR_ENABLED | CASSETTE_SPEAKER_MUTED)
+	MCFG_CASSETTE_INTERFACE("aquarius_cass")
 
 	/* cartridge */
 	MCFG_GENERIC_CARTSLOT_ADD("cartslot", generic_linear_slot, "aquarius_cart")
