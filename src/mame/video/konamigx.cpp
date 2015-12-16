@@ -14,7 +14,7 @@
 #define VERBOSE 0
 
 
-INLINE void set_color_555(palette_device &palette, pen_t color, int rshift, int gshift, int bshift, UINT16 data);
+static inline void set_color_555(palette_device &palette, pen_t color, int rshift, int gshift, int bshift, UINT16 data);
 
 
 void konamigx_state::konamigx_precache_registers(void)
@@ -1049,8 +1049,10 @@ K056832_CB_MEMBER(konamigx_state::alpha_tile_callback)
 	else
 	{
 		/* save mixcode and mark tile alpha (unimplemented) */
-		*code = 0;
-
+		// Daisu-Kiss stage presentation
+		// Sexy Parodius level 3b
+		*code =  (m_gx_tilebanks[(d & 0xe000)>>13]<<13) + (d & 0x1fff);
+		
 		if (VERBOSE)
 			popmessage("skipped alpha tile(layer=%d mix=%d)", layer, mixcode);
 	}
@@ -1557,7 +1559,7 @@ UINT32 konamigx_state::screen_update_konamigx_right(screen_device &screen, bitma
 	return 0;
 }
 
-INLINE void set_color_555(palette_device &palette, pen_t color, int rshift, int gshift, int bshift, UINT16 data)
+static inline void set_color_555(palette_device &palette, pen_t color, int rshift, int gshift, int bshift, UINT16 data)
 {
 	palette.set_pen_color(color, pal5bit(data >> rshift), pal5bit(data >> gshift), pal5bit(data >> bshift));
 }

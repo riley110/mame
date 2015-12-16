@@ -1655,7 +1655,7 @@ float namcos23_state::f24_to_f32(UINT32 v)
 	return *(float *)&r;
 }
 
-INLINE UINT8 light(UINT8 c, float l)
+static inline UINT8 light(UINT8 c, float l)
 {
 	if(l < 1)
 		l = l*c;
@@ -3523,7 +3523,7 @@ static const gfx_layout namcos23_cg_layout =
 }; /* cg_layout */
 
 static GFXDECODE_START( namcos23 )
-	GFXDECODE_ENTRY( 0x0000, 0, namcos23_cg_layout, 0, 0x800 )
+	GFXDECODE_ENTRY( nullptr, 0, namcos23_cg_layout, 0, 0x800 )
 GFXDECODE_END
 
 

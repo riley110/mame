@@ -1,5 +1,6 @@
 // license:BSD-3-Clause
 // copyright-holders:Quench, Yochizo, David Haywood
+// thanks-to:Richard Bush
 /*****************************************************************************
 
         ToaPlan      game hardware from 1991 - 1994
@@ -3057,7 +3058,7 @@ static const gfx_layout fixeightblayout =
 };
 
 static GFXDECODE_START( truxton2 )
-	GFXDECODE_ENTRY( 0x0000,   0, truxton2_tx_tilelayout, 64*16, 64 )
+	GFXDECODE_ENTRY( nullptr,   0, truxton2_tx_tilelayout, 64*16, 64 )
 GFXDECODE_END
 
 static GFXDECODE_START( raizing )
@@ -3065,7 +3066,7 @@ static GFXDECODE_START( raizing )
 GFXDECODE_END
 
 static GFXDECODE_START( batrider )
-	GFXDECODE_ENTRY( 0x0000,   0, batrider_tx_tilelayout, 64*16, 64 )
+	GFXDECODE_ENTRY( nullptr,   0, batrider_tx_tilelayout, 64*16, 64 )
 GFXDECODE_END
 
 static GFXDECODE_START( fixeightbl )

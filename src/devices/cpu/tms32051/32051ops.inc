@@ -1150,9 +1150,9 @@ void tms32051_device::op_rete()
 	UINT16 pc = POP_STACK();
 	CHANGE_PC(pc);
 
-	m_st0.intm = 0;
-
 	restore_interrupt_context();
+
+	m_st0.intm = 0;
 
 	CYCLES(4);
 }
@@ -1314,7 +1314,14 @@ void tms32051_device::op_lmmr()
 
 void tms32051_device::op_out()
 {
-	fatalerror("32051: unimplemented op out at %08X\n", m_pc-1);
+	UINT16 port = ROPCODE();
+	UINT16 ea = GET_ADDRESS();
+	
+	UINT16 data = DM_READ16(ea);
+	m_io->write_word(port << 1, data);
+
+	// TODO: handle repeat
+	CYCLES(3);
 }
 
 void tms32051_device::op_smmr()
@@ -1670,12 +1677,14 @@ void tms32051_device::op_clrc_intm()
 
 void tms32051_device::op_clrc_xf()
 {
-	fatalerror("32051: unimplemented op clrc xf at %08X\n", m_pc-1);
+	m_st1.xf = 0;
+
+	CYCLES(1);
 }
 
 void tms32051_device::op_idle()
 {
-	fatalerror("32051: unimplemented op idle at %08X\n", m_pc-1);
+	m_idle = true;
 }
 
 void tms32051_device::op_idle2()
@@ -1790,7 +1799,9 @@ void tms32051_device::op_setc_carry()
 
 void tms32051_device::op_setc_xf()
 {
-	fatalerror("32051: unimplemented op setc xf at %08X\n", m_pc-1);
+	m_st1.xf = 1;
+
+	CYCLES(1);
 }
 
 void tms32051_device::op_setc_cnf()

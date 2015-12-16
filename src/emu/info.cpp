@@ -383,12 +383,10 @@ void info_xml_creator::output_one_device(device_t &device, const char *devtag)
 //  directly to a driver as device or sub-device)
 //-------------------------------------------------
 
-typedef tagmap_t<FPTR> slot_map;
-
 void info_xml_creator::output_devices()
 {
 	m_drivlist.reset();
-	slot_map shortnames;
+	std::unordered_set<std::string> shortnames;
 
 	while (m_drivlist.next())
 	{
@@ -396,9 +394,9 @@ void info_xml_creator::output_devices()
 		device_iterator deviter(m_drivlist.config().root_device());
 		for (device_t *device = deviter.first(); device != nullptr; device = deviter.next())
 		{
-			if (device->owner() != nullptr && device->shortname()!= nullptr && strlen(device->shortname())!=0)
+			if (device->owner() != nullptr && device->shortname()!= nullptr && device->shortname()[0]!='\0')
 			{
-				if (shortnames.add(device->shortname(), 0, FALSE) != TMERR_DUPLICATE)
+				if (shortnames.insert(device->shortname()).second)
 					output_one_device(*device, device->tag());
 			}
 		}
@@ -419,16 +417,16 @@ void info_xml_creator::output_devices()
 					if (!device->configured())
 						device->config_complete();
 
-				if (shortnames.add(dev->shortname(), 0, FALSE) != TMERR_DUPLICATE)
+				if (shortnames.insert(dev->shortname()).second)
 					output_one_device(*dev, temptag.c_str());
 
 				// also, check for subdevices with ROMs (a few devices are missed otherwise, e.g. MPU401)
 				device_iterator deviter2(*dev);
 				for (device_t *device = deviter2.first(); device != nullptr; device = deviter2.next())
 				{
-					if (device->owner() == dev && device->shortname()!= nullptr && strlen(device->shortname())!=0)
+					if (device->owner() == dev && device->shortname()!= nullptr && device->shortname()[0]!='\0')
 					{
-						if (shortnames.add(device->shortname(), 0, FALSE) != TMERR_DUPLICATE)
+						if (shortnames.insert(device->shortname()).second)
 							output_one_device(*device, device->tag());
 					}
 				}
@@ -449,7 +447,7 @@ void info_xml_creator::output_device_roms()
 {
 	device_iterator deviter(m_drivlist.config().root_device());
 	for (device_t *device = deviter.first(); device != nullptr; device = deviter.next())
-		if (device->owner() != nullptr && device->shortname()!= nullptr && strlen(device->shortname())!=0)
+		if (device->owner() != nullptr && device->shortname()!= nullptr && device->shortname()[0]!='\0')
 			fprintf(m_output, "\t\t<device_ref name=\"%s\"/>\n", xml_normalize_string(device->shortname()));
 }
 
@@ -618,11 +616,11 @@ void info_xml_creator::output_sample(device_t &device)
 	for (samples_device *samples = sampiter.first(); samples != nullptr; samples = sampiter.next())
 	{
 		samples_iterator iter(*samples);
-		tagmap_t<int> already_printed;
+		std::unordered_set<std::string> already_printed;
 		for (const char *samplename = iter.first(); samplename != nullptr; samplename = iter.next())
 		{
 			// filter out duplicates
-			if (already_printed.add(samplename, 1) == TMERR_DUPLICATE)
+			if (!already_printed.insert(samplename).second)
 				continue;
 
 			// output the sample name

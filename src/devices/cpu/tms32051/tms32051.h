@@ -58,6 +58,7 @@ class tms32051_device : public cpu_device
 public:
 	// construction/destruction
 	tms32051_device(const machine_config &mconfig, const char *tag, device_t *owner, UINT32 clock);
+	tms32051_device(const machine_config &mconfig, device_type type, const char *name, const char *tag, device_t *owner, UINT32 clock, const char *shortname, const char *source);
 
 	DECLARE_READ16_MEMBER( cpuregs_r );
 	DECLARE_WRITE16_MEMBER( cpuregs_w );
@@ -75,7 +76,7 @@ protected:
 	virtual void execute_set_input(int inputnum, int state) override;
 
 	// device_memory_interface overrides
-	virtual const address_space_config *memory_space_config(address_spacenum spacenum = AS_0) const override { return (spacenum == AS_PROGRAM) ? &m_program_config : ( (spacenum == AS_DATA) ? &m_data_config : nullptr ); }
+	virtual const address_space_config *memory_space_config(address_spacenum spacenum = AS_0) const override { return (spacenum == AS_PROGRAM) ? &m_program_config : ( (spacenum == AS_IO) ? &m_io_config : ( (spacenum == AS_DATA) ? &m_data_config : nullptr ) ); }
 	virtual bool memory_read(address_spacenum spacenum, offs_t offset, int size, UINT64 &value) override;
 
 	// device_disasm_interface overrides
@@ -83,9 +84,9 @@ protected:
 	virtual UINT32 disasm_max_opcode_bytes() const override { return 4; }
 	virtual offs_t disasm_disassemble(char *buffer, offs_t pc, const UINT8 *oprom, const UINT8 *opram, UINT32 options) override;
 
-private:
 	address_space_config m_program_config;
 	address_space_config m_data_config;
+	address_space_config m_io_config;
 
 	typedef void ( tms32051_device::*opcode_func )();
 	static const opcode_func s_opcode_table[256];
@@ -162,7 +163,10 @@ private:
 	address_space *m_program;
 	direct_read_data *m_direct;
 	address_space *m_data;
+	address_space *m_io;
 	int m_icount;
+
+	bool m_idle;
 
 	inline void CHANGE_PC(UINT16 new_pc);
 	inline UINT16 PM_READ16(UINT16 address);
@@ -365,7 +369,20 @@ private:
 };
 
 
+class tms32053_device : public tms32051_device
+{
+public:
+	// construction/destruction
+	tms32053_device(const machine_config &mconfig, const char *tag, device_t *owner, UINT32 clock);
+
+protected:
+	virtual void device_config_complete() override;
+	virtual void device_reset() override;
+};
+
+
 extern const device_type TMS32051;
+extern const device_type TMS32053;
 
 
 #endif /* __TMS32051_H__ */
