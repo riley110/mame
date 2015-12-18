@@ -351,7 +351,7 @@ WRITE16_MEMBER(gambl186_state::upd_w)
 //  if (mem_mask&0x00ff) m_upd7759->port_w(space, 0, data & 0xff);
 //  if (mem_mask&0xff00) m_upd7759->port_w(space, 0, (data >> 8) & 0xff);
 	data = (data >> 8);
-	popmessage("sample index: %02x", data);
+//  popmessage("sample index: %02x", data);
 
 //  m_upd7759->start_w(0);
 //  m_upd7759->start_w(1);
