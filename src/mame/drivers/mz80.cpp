@@ -315,6 +315,10 @@ static MACHINE_CONFIG_START( mz80k, mz80_state )
 	MCFG_CASSETTE_ADD( "cassette" )
 	MCFG_CASSETTE_FORMATS(mz700_cassette_formats)
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_STOPPED | CASSETTE_MOTOR_ENABLED | CASSETTE_SPEAKER_ENABLED)
+	MCFG_CASSETTE_INTERFACE("mz_cass")
+
+	MCFG_SOFTWARE_LIST_ADD("cass_list", "mz80k_cass")
+	MCFG_SOFTWARE_LIST_ADD("flop_list", "mz80k_flop")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( mz80kj, mz80k )
@@ -326,8 +330,17 @@ MACHINE_CONFIG_END
 static MACHINE_CONFIG_DERIVED( mz80a, mz80k )
 	MCFG_SCREEN_MODIFY("screen")
 	MCFG_SCREEN_UPDATE_DRIVER(mz80_state, screen_update_mz80a)
+
+	MCFG_DEVICE_REMOVE("cass_list")
+	MCFG_DEVICE_REMOVE("flop_list")
+	MCFG_SOFTWARE_LIST_ADD("cass_list", "mz80a_cass")
 MACHINE_CONFIG_END
 
+static MACHINE_CONFIG_DERIVED( mz80b, mz80k )
+	MCFG_DEVICE_REMOVE("cass_list")
+	MCFG_DEVICE_REMOVE("flop_list")
+	MCFG_SOFTWARE_LIST_ADD("flop_list", "mz80b_flop")
+MACHINE_CONFIG_END
 
 ROM_START( mz80k )
 	ROM_REGION( 0x10000, "maincpu", 0)
@@ -374,10 +387,10 @@ ROM_START( mz80b )
 	ROM_LOAD( "mzfont.rom", 0x0000, 0x0800, CRC(0631efc3) SHA1(99b206af5c9845995733d877e9e93e9681b982a8) )
 ROM_END
 
-/*    YEAR  NAME      PARENT    COMPAT  MACHINE  INPUT   INIT   COMPANY    FULLNAME */
+/*    YEAR  NAME      PARENT    COMPAT  MACHINE  INPUT               INIT   COMPANY    FULLNAME */
 COMP( 1979, mz80kj,   0,        0,      mz80kj,  mz80k, mz80_state,  mz80k, "Sharp",   "MZ-80K (Japanese)", 0 )
 COMP( 1979, mz80k,    mz80kj,   0,      mz80k,   mz80k, mz80_state,  mz80k, "Sharp",   "MZ-80K", 0 )
 
 // These may need a separate driver!
 COMP( 1982, mz80a,    0,        0,      mz80a,   mz80a, mz80_state,  mz80k, "Sharp",   "MZ-80A", 0 )
-COMP( 1981, mz80b,    0,        0,      mz80k,   mz80k, mz80_state,  mz80k, "Sharp",   "MZ-80B", MACHINE_NOT_WORKING )
+COMP( 1981, mz80b,    0,        0,      mz80b,   mz80k, mz80_state,  mz80k, "Sharp",   "MZ-80B", MACHINE_NOT_WORKING )

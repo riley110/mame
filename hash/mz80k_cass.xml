@@ -1,0 +1,725 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!-- Thanks to sharpmz.org for info! -->
+<softwarelist name="mz80k_cass" description="Sharp MZ-80K cassettes">
+
+	<software name="80k_06">
+		<description>80k_06</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mz_cass">
+			<dataarea name="cass" size="20095">
+				<rom name="basic6016.mzf" size="20095" crc="28873965" sha1="bfb48bbbb6de9c2d31811a743300b70a206cd33f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mz_cass">
+			<dataarea name="cass" size="13028">
+				<rom name="basicsp5025ff.mzf" size="13028" crc="b63a318a" sha1="306163e9d541c2996bdcb6064fc624f9cf85c737" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="mz_cass">
+			<dataarea name="cass" size="20095">
+				<rom name="basicsp6017e.mzf" size="20095" crc="c57cc4c8" sha1="fbcc5cb1f4275fac51aa9b734d153a84a08c1da1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="mz_cass">
+			<dataarea name="cass" size="17688">
+				<rom name="basicsp-0815.mzf" size="17688" crc="6eead201" sha1="8e9f707526b0b76a7d8ec806c51509c1ee41bd03" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="mz_cass">
+			<dataarea name="cass" size="1152">
+				<rom name="centonicobj.mzf" size="1152" crc="17015af5" sha1="e3c1f264e877bc1838600d34757808816e527b51" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="mz_cass">
+			<dataarea name="cass" size="800">
+				<rom name="checklog1.6.obj.mzf" size="800" crc="45e5cb0f" sha1="1bbff3ccf6d4976f45f11be37fd8a7987172b747" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass7" interface="mz_cass">
+			<dataarea name="cass" size="3192">
+				<rom name="code hu convert.mzf" size="3192" crc="fa1acc8e" sha1="91d738aa281e1964bd6b1845b3885565545ec2aa" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass8" interface="mz_cass">
+			<dataarea name="cass" size="4327">
+				<rom name="devils dungeon.mzf" size="4327" crc="55241f6d" sha1="11f7b21ac796b2d9d3c4b580986e63c91c8d950f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass9" interface="mz_cass">
+			<dataarea name="cass" size="24448">
+				<rom name="hu-basic v1.3_k.mzf" size="24448" crc="ec200014" sha1="767a35604d1ead0bd719489a18975d8df40d54ef" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass10" interface="mz_cass">
+			<dataarea name="cass" size="28288">
+				<rom name="hucompiler.mzf" size="28288" crc="2166cbec" sha1="6d427b6b2e10874d6dd2b0f25d2078aef7267f82" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass11" interface="mz_cass">
+			<dataarea name="cass" size="24449">
+				<rom name="hudson-basic.mzf" size="24449" crc="66e10e18" sha1="522a92de1b842350f2dff78949e2c6202647d4cf" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass12" interface="mz_cass">
+			<dataarea name="cass" size="1815">
+				<rom name="kalender-print.mzf" size="1815" crc="cd52c400" sha1="9ca319ee8d752db1c8ec4d090f2600bbe98561aa" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass13" interface="mz_cass">
+			<dataarea name="cass" size="11735">
+				<rom name="konstruktionen_k.mzf" size="11735" crc="228eebc4" sha1="36af85e96a608e77621b496496bb3169fd3b5e79" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass14" interface="mz_cass">
+			<dataarea name="cass" size="2948">
+				<rom name="kurvendisk. 1_k.mzf" size="2948" crc="f3f19784" sha1="9013c618cd485474ffd9bbfd369b8feb1e56d0a2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass15" interface="mz_cass">
+			<dataarea name="cass" size="12928">
+				<rom name="mx-basic_k.mzf" size="12928" crc="76e27377" sha1="3e612cfac965e0a2f58f3b6901e647c59ee3e167" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass16" interface="mz_cass">
+			<dataarea name="cass" size="384">
+				<rom name="pac--man i.mzf" size="384" crc="14d5643d" sha1="059cba6e2f2a82084665f8c00a5e1485f6d50726" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass17" interface="mz_cass">
+			<dataarea name="cass" size="20096">
+				<rom name="repl. basic_sp-6016.mzf" size="20096" crc="aeab68c6" sha1="2622803e852ffd0b696f28856725172482d98df3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass18" interface="mz_cass">
+			<dataarea name="cass" size="897">
+				<rom name="rtty aus_k.mzf" size="897" crc="be563d3e" sha1="70ac95b8799bcf8f5fcd9056337d6aaa47f66d17" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass19" interface="mz_cass">
+			<dataarea name="cass" size="897">
+				<rom name="rtty ein_k.mzf" size="897" crc="57172be4" sha1="988eceb28076ffd9cb274ec0efefd2da7e8bd96d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass20" interface="mz_cass">
+			<dataarea name="cass" size="369">
+				<rom name="short basic 6015.mzf" size="369" crc="2b2c3f7d" sha1="bcf59c32fecc9a0809f1d45c5d3722a4bbcf4a94" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass21" interface="mz_cass">
+			<dataarea name="cass" size="4223">
+				<rom name="sub-monitor 48k.mzf" size="4223" crc="18b13506" sha1="3ca45b47244dc9807ff428517cce086cb1a4e70e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass22" interface="mz_cass">
+			<dataarea name="cass" size="20242">
+				<rom name="supergolf.mzf" size="20242" crc="cf44a998" sha1="d55dfa7698dde8fefa8c76708206f1a275f219e2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass23" interface="mz_cass">
+			<dataarea name="cass" size="1335">
+				<rom name="tapecopy22.mzf" size="1335" crc="d47945aa" sha1="9cc4eaa93bf6b5f8538b2f12a3d32a0e2fb6b1bb" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass24" interface="mz_cass">
+			<dataarea name="cass" size="26324">
+				<rom name="vektorrechnung.mzf" size="26324" crc="8dbdfa12" sha1="1cfca3ef4c3dcfe22ddfe40c81015e4cec726d30" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass25" interface="mz_cass">
+			<dataarea name="cass" size="14723">
+				<rom name="vereinsverw._k.mzf" size="14723" crc="35907e4b" sha1="37633ee5ef83c40f373f887f82746833fea76bb2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass26" interface="mz_cass">
+			<dataarea name="cass" size="11904">
+				<rom name="z80assembler2.mzf" size="11904" crc="285a2b7c" sha1="01fb83cd182aa8220ec6d94d497a237aa2f1dbdc" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass27" interface="mz_cass">
+			<dataarea name="cass" size="4937">
+				<rom name="8048 cpu disas..mzf" size="4937" crc="d26e3b53" sha1="9ef7274458c830a5e80d61759c17f89e43e832a6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass28" interface="mz_cass">
+			<dataarea name="cass" size="431">
+				<rom name="av__pac-man.mzf" size="431" crc="a702aa9b" sha1="de58c0a428d059f6a1056c2e596e5719ed2cba50" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass29" interface="mz_cass">
+			<dataarea name="cass" size="16019">
+				<rom name="bas+bascode2.mzf" size="16019" crc="c7d0ee98" sha1="74f9ca8717db925d62a3aba46eb957cfb7e74f06" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass30" interface="mz_cass">
+			<dataarea name="cass" size="13019">
+				<rom name="basic5026.mzf" size="13019" crc="6eac48a4" sha1="df81765b27c9863f437078bff226ad1bd2810c3c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass32" interface="mz_cass">
+			<dataarea name="cass" size="32396">
+				<rom name="stonewor.m12" size="32396" crc="2ca0bd16" sha1="e555d145f0227f4e5bff508925a77bc05490e86a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass33" interface="mz_cass">
+			<dataarea name="cass" size="6282">
+				<rom name="3dspacec.m12" size="6282" crc="fb8e5db3" sha1="97a05271046bf5cc8569e80c649fc05c17ed0203" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass34" interface="mz_cass">
+			<dataarea name="cass" size="32046">
+				<rom name="nauticcr.m12" size="32046" crc="fb6b9f09" sha1="815a736f2edb924df1b2a4df458da4800f9b7018" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="80k_10">
+		<description>80k_10</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mz_cass">
+			<dataarea name="cass" size="4737">
+				<rom name="monitor.m12" size="4737" crc="e2215907" sha1="b7ddbbc0525add5688301563a5cf32617ec81593" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="mz_cass">
+			<dataarea name="cass" size="17916">
+				<rom name="puckman1.m12" size="17916" crc="cbdaf7a5" sha1="33d6440d55130219b5ebeff0f9004bdb4b0bc70f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="mz_cass">
+			<dataarea name="cass" size="5568">
+				<rom name="6502betr.m12" size="5568" crc="8ffdba94" sha1="df192b3f578fc6d19cc38d378535928fb55b6116" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass7" interface="mz_cass">
+			<dataarea name="cass" size="145">
+				<rom name="6502demo2.m12" size="145" crc="24401654" sha1="f417510c2c7119bad12e9fbae0d4d52c573a0f26" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass8" interface="mz_cass">
+			<dataarea name="cass" size="640">
+				<rom name="6502demo.m12" size="640" crc="32e4d0c0" sha1="a7bebda3370cadd278c8ae960e446be789bd92d1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass9" interface="mz_cass">
+			<dataarea name="cass" size="11963">
+				<rom name="filecard.m12" size="11963" crc="2c38eccb" sha1="1c1a50d9a75cc1faae699c72cd156e8083085fa3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass10" interface="mz_cass">
+			<dataarea name="cass" size="24448">
+				<rom name="gigantba.m12" size="24448" crc="ec77ac8e" sha1="6eac78e7e45b077ae2301761d097780e6ced44cf" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass11" interface="mz_cass">
+			<dataarea name="cass" size="12415">
+				<rom name="graphics.m12" size="12415" crc="1ceb6542" sha1="82ee84a4862cc859f93ae13d996232a49953dbdc" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass12" interface="mz_cass">
+			<dataarea name="cass" size="28288">
+				<rom name="hucompil.m12" size="28288" crc="42055a5f" sha1="dc5dea2cb61ec8f04dd45840e949698068d4342a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass13" interface="mz_cass">
+			<dataarea name="cass" size="13260">
+				<rom name="lasercom.m12" size="13260" crc="0477856f" sha1="3bacbae33c3d41646eaa5a7dfd72af2a7c430aaf" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass14" interface="mz_cass">
+			<dataarea name="cass" size="305">
+				<rom name="oscillos.m12" size="305" crc="426a5cef" sha1="272d0a7abc53acc4e5d2b62ff30a33cce96c93d3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass15" interface="mz_cass">
+			<dataarea name="cass" size="12656">
+				<rom name="pacmango.m12" size="12656" crc="93a052d1" sha1="6c43e312c2290756829991ca36f7fa88789a50e4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass16" interface="mz_cass">
+			<dataarea name="cass" size="15844">
+				<rom name="phoenix2.m12" size="15844" crc="1db60eb1" sha1="2303cb216378fe5268c24da0323328ce4ada80d4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass17" interface="mz_cass">
+			<dataarea name="cass" size="4389">
+				<rom name="forthsim.m12" size="4389" crc="398a589a" sha1="cd8bbcd655247e8dd7cc9d2a2bc2d935ade461aa" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass18" interface="mz_cass">
+			<dataarea name="cass" size="6047">
+				<rom name="zeicheng.m12" size="6047" crc="f75451d2" sha1="0167f85dc6f32fa38c1de44f0a314debe7334392" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass19" interface="mz_cass">
+			<dataarea name="cass" size="8464">
+				<rom name="bgespens.m12" size="8464" crc="641a524e" sha1="cf1878cb6a52d03977dac2f5fc16fea577e32352" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass20" interface="mz_cass">
+			<dataarea name="cass" size="2176">
+				<rom name="cgrom.m12" size="2176" crc="a897fa9d" sha1="ae1cd32e4b4f23ef0923445686980cfdb2597800" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass21" interface="mz_cass">
+			<dataarea name="cass" size="16865">
+				<rom name="minotaur.m12" size="16865" crc="67472c34" sha1="384d0fe8e6ef6c30eb7f9b4afc82019fdb11680e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass22" interface="mz_cass">
+			<dataarea name="cass" size="2432">
+				<rom name="nspacein.m12" size="2432" crc="de3bf492" sha1="cb01a9167445ec84f47a291fd19549463fdb57b6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass23" interface="mz_cass">
+			<dataarea name="cass" size="13183">
+				<rom name="outlaw.m12" size="13183" crc="6b79f733" sha1="032c1f5da633eaf5c4bbdc27feb602dbe8f2c713" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass24" interface="mz_cass">
+			<dataarea name="cass" size="672">
+				<rom name="print.m12" size="672" crc="9b700905" sha1="b5fc94641166f2adb70b5902d6ca577f28a26357" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass25" interface="mz_cass">
+			<dataarea name="cass" size="18431">
+				<rom name="schloges.m12" size="18431" crc="319fcc4b" sha1="57b384e27f2e643c9a1d33be48b6d6b55646fe96" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass26" interface="mz_cass">
+			<dataarea name="cass" size="6030">
+				<rom name="warofcon.m12" size="6030" crc="b772491b" sha1="3151cbfd3c08e7e8810b88bc5fe90733eebf262b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass27" interface="mz_cass">
+			<dataarea name="cass" size="6648">
+				<rom name="abenteue.m12" size="6648" crc="beb66fd2" sha1="3ab00f3e4f3409adabc8c154642f54cc425293cf" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass28" interface="mz_cass">
+			<dataarea name="cass" size="3195">
+				<rom name="barcode teil 1.m12" size="3195" crc="60ac273b" sha1="c852a58a7fa10c48c45d124fa2b5c1ab6226d941" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass29" interface="mz_cass">
+			<dataarea name="cass" size="2145">
+				<rom name="barcode teil 2.m12" size="2145" crc="dddb4c4c" sha1="81b333edf9666635f10ed93a7d98a29afc076b3f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass30" interface="mz_cass">
+			<dataarea name="cass" size="483">
+				<rom name="barcode teil 3.m12" size="483" crc="81a9efe3" sha1="f54c114894c0ec5f8bb5039236f0f31ebd8aa295" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass31" interface="mz_cass">
+			<dataarea name="cass" size="1664">
+				<rom name="barcode teil 4.m12" size="1664" crc="523a2157" sha1="ad38fb5459538e816dfbe382b39a0896ae15ae2e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass32" interface="mz_cass">
+			<dataarea name="cass" size="18825">
+				<rom name="battlest.m12" size="18825" crc="bde98e59" sha1="0970cec552042c67ac08ab7804ce5f6d81934d27" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass33" interface="mz_cass">
+			<dataarea name="cass" size="18704">
+				<rom name="elektron.m12" size="18704" crc="d0a10438" sha1="eb8beee666ebfe3a6211d76f34004a2bb0145714" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass34" interface="mz_cass">
+			<dataarea name="cass" size="1052">
+				<rom name="turtlegdemo1.m12" size="1052" crc="06d0393a" sha1="6f5bb64928a2401b801bb568ad15f3d9c2797f7e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass35" interface="mz_cass">
+			<dataarea name="cass" size="779">
+				<rom name="turtlegdemo2.m12" size="779" crc="e740f9e2" sha1="d00451b3e2c371614c7525caa1c7bf39487d96b9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass36" interface="mz_cass">
+			<dataarea name="cass" size="442">
+				<rom name="turtle-grafik.m12" size="442" crc="90eeacd3" sha1="57ec56cc829a3960dfd126cd506d81e120b4a963" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass37" interface="mz_cass">
+			<dataarea name="cass" size="4492">
+				<rom name="ubootjag.m12" size="4492" crc="933ec4b9" sha1="143ca1ecdef34b3ffba26b3f6d6e1d69856e5fe0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass38" interface="mz_cass">
+			<dataarea name="cass" size="29312">
+				<rom name="ufocaves.m12" size="29312" crc="8831dd03" sha1="f2f8759f21f5b7d9b1148e74c8849d91fd162a4b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass39" interface="mz_cass">
+			<dataarea name="cass" size="10572">
+				<rom name="defender.m12" size="10572" crc="266af0a1" sha1="791c8637b014f8e033d1fb5bf08a62ba4e28f1d8" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass40" interface="mz_cass">
+			<dataarea name="cass" size="2656">
+				<rom name="jintorig.m12" size="2656" crc="b83abc90" sha1="d1c18eff65be51d85d4e7b87d0a8aca6dd4d408b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass41" interface="mz_cass">
+			<dataarea name="cass" size="1147">
+				<rom name="ladeanf.m12" size="1147" crc="63a3ed34" sha1="6062d70fa4153addfa8b2b17a9a92709594538da" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass42" interface="mz_cass">
+			<dataarea name="cass" size="18874">
+				<rom name="laderun.m12" size="18874" crc="c63ceb0d" sha1="5bf0fc563ed506c6593a137c0a929ed62b1a96b1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass43" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m12" size="588" crc="09479571" sha1="0182c1607ab34dda84df48e9c49bc61fea96e1ac" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass44" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m13" size="588" crc="984180c0" sha1="508c45912c2189b0a77e30aef21bd7ef6237a651" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass45" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m14" size="588" crc="75d5b5ed" sha1="ba36566dbffa9022013472fd1d936b42e0d4d412" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass46" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m15" size="588" crc="8be52b18" sha1="19955ce86a83aae3e63e21d473483fbc0124ddd9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass47" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m16" size="588" crc="45831c08" sha1="c33e06d073cf0fbbe6d3dd71afa56888ec230eba" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass48" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m17" size="588" crc="02dbcae2" sha1="8dfb60039b1a99ec4e48e4395f2344b5eceb8311" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass49" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m18" size="588" crc="d9b53a7f" sha1="d6878a9b4367fdc00854a1e1b0b16d8b83a777ae" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass50" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m19" size="588" crc="834ef298" sha1="5139fb85c8be54a8963e645b32f4ebe0439787f2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass51" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m20" size="588" crc="09ad2016" sha1="9b78cb6f9664d4d76b35aadd4b8d17fac680d9b0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass52" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m21" size="588" crc="45be35c0" sha1="9295fd9afd9c8cdf4e356dc791b52031acdd9549" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass53" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m22" size="588" crc="dc8cb77f" sha1="017ef04e3072c0ec56e77739b2f042220e7b586f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass54" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m23" size="588" crc="d4f962a6" sha1="668071e37b2df1ad91566d9addbe12587dd28f92" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass55" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m24" size="588" crc="ab110858" sha1="2c61000d1981e0f03c41dfc0e6ec7d87d5738f81" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass56" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m25" size="588" crc="3fbcc8dd" sha1="3478451951b976cc8f213df90c13c7f4bf28cd74" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass57" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m26" size="588" crc="c129c38b" sha1="b2c257d173342f4672a89e5835b1514419ac2295" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass58" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m27" size="588" crc="c70fe456" sha1="11f870b5e753bb2cdf6166b4a7b5fa23818e1431" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass59" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m28" size="588" crc="dfe00d82" sha1="2cf38dc8f2c91fc795fa22cfef969f25fdf5e54c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass60" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m29" size="588" crc="6e0dd97b" sha1="7960b399cb80f64d37708b48bedfae627ee02435" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass61" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m30" size="588" crc="4ceffef6" sha1="f2069daeaff1901a97be6e7976f0359cb41c9d87" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass62" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m31" size="588" crc="905908fd" sha1="a2c80905cdf531f565e0d87a063c52971b70c429" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass63" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m32" size="588" crc="66ce9bee" sha1="6c299fc22c8135f0e3b03281aa4fe04cd988fe0a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass64" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m33" size="588" crc="19ec46cb" sha1="cb88ffadd6850f635b2bb7be30e5f1e67bf0bbf0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass65" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m34" size="588" crc="fc0aa443" sha1="d82ae3632f2634182c5c9c2f72ed8aac887028af" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass66" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m35" size="588" crc="e6b0eff5" sha1="d122ca0b59fc4d35e694221d94e66a464df68dd1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass67" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m36" size="588" crc="c2fcca65" sha1="b99f63017966a5e16c9e29925fc88c628f55d36f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass68" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m37" size="588" crc="38447ab4" sha1="383b5dd60c2390f41970aa918d48bb50cf9ba745" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass69" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m38" size="588" crc="4ca43715" sha1="67677609128f30a8ac1b25cd449a86fc05de8cf6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass70" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m39" size="588" crc="af00f036" sha1="f8dab9e8fc264efb702d2b4a73c5657dc201aa9e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass71" interface="mz_cass">
+			<dataarea name="cass" size="588">
+				<rom name="lrbild.m40" size="588" crc="f3421bb5" sha1="6beb56517644546d01026b7cb6e9272ed64d4083" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass72" interface="mz_cass">
+			<dataarea name="cass" size="2944">
+				<rom name="lunartra.m12" size="2944" crc="6da1f924" sha1="e02fc47aa5bded03bc58b98993a7b1fe123b23a8" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass73" interface="mz_cass">
+			<dataarea name="cass" size="6144">
+				<rom name="mldemons.m12" size="6144" crc="26405c32" sha1="1ac3ed3b5279953b45ee266882baf2ef3c893608" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass74" interface="mz_cass">
+			<dataarea name="cass" size="20387">
+				<rom name="spacepan.m12" size="20387" crc="69d41114" sha1="49681a8e2951a68f7db53d1f7e690d4886ab924a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass75" interface="mz_cass">
+			<dataarea name="cass" size="640">
+				<rom name="stringso.m12" size="640" crc="c69cf687" sha1="19fdd3bde040c1f8ffe4bf5b0dc998e24c245a95" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass76" interface="mz_cass">
+			<dataarea name="cass" size="7176">
+				<rom name="stringso.m13" size="7176" crc="d59ffce6" sha1="c0c4b4d7066cbb6c6a2b488242ffe432cc88d741" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass77" interface="mz_cass">
+			<dataarea name="cass" size="11827">
+				<rom name="towering.m12" size="11827" crc="7c9d8230" sha1="708545826568a1721049e3a0d529b84e7bec23c1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass78" interface="mz_cass">
+			<dataarea name="cass" size="3857">
+				<rom name="trapabel.m12" size="3857" crc="a1e5b8ad" sha1="08e4e3e651f6e98adddd3b47bd46a353b7f485a0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass79" interface="mz_cass">
+			<dataarea name="cass" size="18458">
+				<rom name="national.m12" size="18458" crc="106a5279" sha1="25c0bcfdac8c5fcd4e09c14cf50ea2256bd35d63" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass80" interface="mz_cass">
+			<dataarea name="cass" size="5797">
+				<rom name="goldmine.m12" size="5797" crc="aa8f0a08" sha1="83fa908425384c4e1122c389130e9aabb253fa27" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass81" interface="mz_cass">
+			<dataarea name="cass" size="3840">
+				<rom name="wilhelmt.m12" size="3840" crc="e8b87fd0" sha1="db5db72f8c77b767f6052fbb1fe7af1b1cb45d80" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass82" interface="mz_cass">
+			<dataarea name="cass" size="3916">
+				<rom name="blockkuz.m12" size="3916" crc="8d4730c7" sha1="174c89e649cf11d1074ec438ab5df4b1516e0f5a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass83" interface="mz_cass">
+			<dataarea name="cass" size="5248">
+				<rom name="boxingmz.m12" size="5248" crc="a42a63a6" sha1="a4376ac545da8dfb16d86891a55cde3193f2ee8e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass84" interface="mz_cass">
+			<dataarea name="cass" size="17043">
+				<rom name="intruder.m12" size="17043" crc="673c1e9a" sha1="1bc837913b641b8e0ccd0316f9c091666f27a9a4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass85" interface="mz_cass">
+			<dataarea name="cass" size="20336">
+				<rom name="jampac.m12" size="20336" crc="45fb585e" sha1="80edb732b6dde2b6118bac0ffeba2462ae91f98d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass86" interface="mz_cass">
+			<dataarea name="cass" size="10369">
+				<rom name="mazeman.m12" size="10369" crc="2e7ad188" sha1="99192cdaee59538c9eddeb11053f89f89d105e91" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass87" interface="mz_cass">
+			<dataarea name="cass" size="8319">
+				<rom name="microped.m12" size="8319" crc="90215cbb" sha1="b6a45dfbc7c6b0f0727f03f2ffd1d914a0f2f0ec" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass88" interface="mz_cass">
+			<dataarea name="cass" size="7041">
+				<rom name="munchies.m12" size="7041" crc="4ab363d9" sha1="81f29b509f93c0dcca70bf4de92f1002bd9c2c65" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass89" interface="mz_cass">
+			<dataarea name="cass" size="12051">
+				<rom name="neptun.m12" size="12051" crc="a099f90f" sha1="5de4f7218e7d8db975918d993678bb543733f7e1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass90" interface="mz_cass">
+			<dataarea name="cass" size="12031">
+				<rom name="otoriatt.m12" size="12031" crc="4ea6fbd4" sha1="eb7bfc116653acafbdeefc70b7d00d9a0904fcf3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass91" interface="mz_cass">
+			<dataarea name="cass" size="7604">
+				<rom name="ralleyfo.m12" size="7604" crc="045e7af8" sha1="7c618e7c37397d607590c4a137020d0686e7509a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass92" interface="mz_cass">
+			<dataarea name="cass" size="6017">
+				<rom name="scramble.m12" size="6017" crc="d7634efd" sha1="1ea260e073a3497ee9baa31fdff2192cea9f488c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass93" interface="mz_cass">
+			<dataarea name="cass" size="7914">
+				<rom name="spacedef.m12" size="7914" crc="249c77d1" sha1="19cd93045323a821558454cec7cf30023b559e5c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass94" interface="mz_cass">
+			<dataarea name="cass" size="11392">
+				<rom name="spaceinv.m12" size="11392" crc="119c366a" sha1="1dcba6b10b820c33df8149c0cea26f4d14915236" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass95" interface="mz_cass">
+			<dataarea name="cass" size="13855">
+				<rom name="supertar.m12" size="13855" crc="3b43a444" sha1="dcb1b4a8873db970bd5796393d319c1132396104" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass96" interface="mz_cass">
+			<dataarea name="cass" size="15105">
+				<rom name="survive.m12" size="15105" crc="d7031e69" sha1="0ce4fee007afb84b0d472aeccf7c52210c232cef" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass97" interface="mz_cass">
+			<dataarea name="cass" size="12799">
+				<rom name="tankwar.m12" size="12799" crc="43074948" sha1="5645ad9f94a75e8cbfc0ccefd5a453a86099a0a4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass98" interface="mz_cass">
+			<dataarea name="cass" size="4224">
+				<rom name="ufocarra.m12" size="4224" crc="45f3cb06" sha1="ab5182224d8fb9c67d13008ba4c1ec75fc02b402" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass100" interface="mz_cass">
+			<dataarea name="cass" size="46240">
+				<rom name="crazy kong2.m12" size="46240" crc="75603da3" sha1="ad2d586f03cd0f48eec037c563d8defe8364964d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass101" interface="mz_cass">
+			<dataarea name="cass" size="46208">
+				<rom name="crazy kong3.m12" size="46208" crc="6f38fa08" sha1="837b1128bb18ce36895b267238e952cff761e44e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass102" interface="mz_cass">
+			<dataarea name="cass" size="159">
+				<rom name="crazy kong.m12" size="159" crc="71db4031" sha1="d9f0b4d765567e0574e879ce0d9752b5276a02f0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass103" interface="mz_cass">
+			<dataarea name="cass" size="4225">
+				<rom name="fdcontro.m12" size="4225" crc="9994d415" sha1="11193c9f4bb4b6efa8dde9c397ddb1c8b085f0c5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass104" interface="mz_cass">
+			<dataarea name="cass" size="4225">
+				<rom name="fdcontro.m13" size="4225" crc="9994d415" sha1="11193c9f4bb4b6efa8dde9c397ddb1c8b085f0c5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass105" interface="mz_cass">
+			<dataarea name="cass" size="192">
+				<rom name="loaderck.mzf" size="192" crc="247e5ff7" sha1="f55bc087526aad5ef454e6ee035d1abf4c29eeff" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass106" interface="mz_cass">
+			<dataarea name="cass" size="2430">
+				<rom name="loaderck.p" size="2430" crc="1efeee76" sha1="e2fc4fec51ce5aed4f0ff5bafed7e6c80717b0e2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass107" interface="mz_cass">
+			<dataarea name="cass" size="4481">
+				<rom name="monitorr.m12" size="4481" crc="b5851d16" sha1="4cb38c1728780fe74b83c062c0bb103ae3c6d9ac" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass108" interface="mz_cass">
+			<dataarea name="cass" size="4481">
+				<rom name="monitorr.m13" size="4481" crc="b5851d16" sha1="4cb38c1728780fe74b83c062c0bb103ae3c6d9ac" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass109" interface="mz_cass">
+			<dataarea name="cass" size="23060">
+				<rom name="part1.m12" size="23060" crc="762d89c8" sha1="d6973290e6e8f7817933faba407720378682d096" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass110" interface="mz_cass">
+			<dataarea name="cass" size="23308">
+				<rom name="part2.m12" size="23308" crc="c931aa24" sha1="53713493d28562624acd57ed878e80f9ccd6453f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass111" interface="mz_cass">
+			<dataarea name="cass" size="23060">
+				<rom name="teil1.m12" size="23060" crc="9df965eb" sha1="a6149eed4124c92020ec1e43fa0d431fc524bc84" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass112" interface="mz_cass">
+			<dataarea name="cass" size="23276">
+				<rom name="teil2.m12" size="23276" crc="991e66f3" sha1="b2ce3ec7fa8f55651f7d9678043f0de9f08db982" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>
