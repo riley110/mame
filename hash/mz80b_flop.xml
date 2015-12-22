@@ -1,535 +1,22 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<!--
-Thanks to sharpmz.org for info!
-
-DISKS CONTENT
-=============
-
-DISK 01:	Written label: CP/M / dBase
-		Disk Type: CP/M		
-		Bootable: YES - 64k CP/M vers 2.2.2.08
-
-ZIPIN.COM	MENUE.CMD	DBASE.COM	DBASEOVR.COM
-ZSCRN.OVL	BACKUP.COM	STARTUP.CMD	DATESYS.CMD
-WS.COM		FILES.COM	PIP.COM		ZIP.COM
-DGEN.OVL	WSOVLY1.OVR	DEL.COM		DBASEMSG.TXT
-WSMSGS.OVR	LABELS.CMD	INSTALL.COM	EDITCARD.FMT
-CREATE.CMD	ESETUP.CMD	DATETEST.HEX	SETS.CMD
-
-=============================================================
-
-DISK 02:	Written label: ZIP
-		Disk Type: CP/M
-		Bootable: NO
-		
-ZIPIN.COM	ZIP.COM		ZSCRN.OVL	DGEN.OVL
-
-=============================================================
-
-DISK 03:	Written label: DEMO
-		Disk Type: CP/M
-		Bootable: NO
-		
-ISETUP.CMD	DBASE.COM	DBASEOVR.COM	EMAIN.CMD
-EMP-TERM.CMD	STARTUP.CMD	TICKLE.FRM	TICKLE.NDX
-TEXT.DBF	APPECARD.FMT	CPRINT.CMD	KEYWORD.NDX
-CHXINPUT.FMT	CHXDEPOS.FMT	CHXBOOK.MEM	CHECKS.DBF
-DEPOSITS.DBF	EMP-UPD.FMT	DBASEMSG.TXT	EMPLOYEE.MEM
-EMP-RPRT.CMD	EMPLOYEE.DBF	EMPSCRN.FMT	EMP-CONS.FRM
-LABELS.CMD	EMP-ENTR.CMD	EMP-UPD.CMD	CHXMENU.CMD
-EMP-PTR.FRM	INSTALL.COM	E'BYNMBR.NDX	E'BYNAME.NDX
-INVMAINT.CMD	INVREAD.CMD	INVRPRT.CMD	INV'CONS.FRM
-INV'PRTR.FRM	I'BYNMBR.NDX	I'BYDESC.NDX	INVENT.DBF
-EDITCARD.FMT	IMAIN.CMD	INVQUAN.CMD	NAMES.DBF
-CREATE.CMD	ESETUP.CMD	DATETEST.HEX	DATER.CMD
-DATESYS.CMD	SETS.CMD	CMAIN.CMD	DEMO.DSK
-
-=============================================================
-
-DISK 04:	Written label: CP/M 80 2.25
-		Disk Type: CP/M
-		Bootable: YES - CP/M vers 2.2.2.08
-		
-FILES.COM	XSUB.COM	ED.COM		ASM.COM
-DDT.COM		LOAD.COM	STAT.COM	DUMP.COM
-DUMP.ASM	SYSGEN.COM	BACKUP.COM	BOOT.COM
-CMT.COM		CONSOLE.COM	CONFIG.COM	COPY.COM
-DEL.COM		EJECT.COM	BASCOM.COM	SUBMIT.COM
-INIT.COM	IODEFS.ASM	TIME.COM	BASIC80.COM
-FORMAT.COM	LBO.COM		CRUN2.COM	CBAS2.COM
-XREF.COM	BASLIB.REL	FORLIB.REL	MOVCPM.COM
-PIP.COM
-
-=============================================================
-
-DISK 05:	Written label: none
-		Disk Type: CP/M
-		Bootable: YES - CP/M vers 2.2.2.08
-		
-FILES.COM	XSUB.COM	ED.COM		ASM.COM
-DDT.COM		LOAD.COM	STAT.COM	DUMP.COM
-DUMP.ASM	SYSGEN.COM	BACKUP.COM	BOOT.COM
-CMT.COM		CONSOLE.COM	CONFIG.COM	COPY.COM
-DEL.COM		EJECT.COM	BASCOM.COM	SUBMIT.COM
-INIT.COM	IODEFS.ASM	TIME.COM	BASIC80.COM
-FORMAT.COM	LBO.COM		CRUN2.COM	CBAS2.COM
-XREF.COM	BASLIB.REL	FORLIB.REL	MOVCPM.COM
-PIP.COM
-
-=============================================================
-
-DISK 06:	Written label: none
-		Disk Type: CP/M
-		Bootable: YES - 64k CP/M vers 2.2.2.08
-		
-MOVCPM.BAK	PIP.COM		XSUB.COM	ED.COM
-ASM.COM		DDT.COM		LOAD.COM	STAT.COM
-DUMP.COM	DUMP.ASM	SYSGEN.COM	BACKUP.COM
-BOOT.COM	CMT.COM		CONSOLE.COM	CONFIG.COM
-COPY.COM	DEL.COM		EJECT.COM	FILES.COM
-FORMAT.COM	INIT.COM	IODEFS.ASM	TIME.COM
-SIO.COM		.PRN		.HEX		FACIT
-TX.COM		FACIT1		FACIT2		FACIT3
-FACIT4		FACIT5		w.BAS		quagl.BAS
-MX.COM		f.BAS		F.PRN		F.HEX
-test.BAS	F.COM		CURSOR		KURSOR.COM
-M1.COM		TX1.COM		TX2.COM		MBASIC.COM
-CURSOR.PRN	SIO.PRN		SIO.HEX		SIO
-CURSOR.HEX	CURSOR.BAK	SUBMIT.COM	CURSOR.COM
-MOVCPM.COM	FACIT4		F.BAK		F
-
-=============================================================
-
-DISK07:		Written label: BACKUP AK
-		Disk Type: CP/M
-		Bootable: YES - 64k CP/M vers 2.2.2.08
-		
-ULHPRAT4.LST	CSAHPRAT.LST	CSANOV84.LST	UL-DAT.LST
-ULHPRAT2.LST	ULHPRAT3.LST	ULNOV84.LST	ULHPRAT1.LST
-CSAHPRA2.LST	CSAHPRA1.LST	CSAHPRA3.LST
-
-=============================================================
-
-DISK08:		Written label: PR25 U
-		Disk Type: CP/M
-		Bootable: NO
-		
-PR85.U3		1		PR85.DS1	PR85.U1
-100.BAK		PR85.HI2	MUSTER		PR85.DK1
-PR85.U2		10		PR85.UK2	D256
-PR85.UK3	PR85.UK1	D189.BAK	D189
-MUSTER.BAK	PR85.HI1	PR85.KG1	D256-E
-PR85.BAK	100
-
-=============================================================
-
-DISK09:		Written label: WS
-		Disk Type: CP/M
-		Bootable: YES - 64k CP/M vers 2.2.2.08
-		
-MOVCPM.COM	PIP.COM		SUBMIT.COM	XSUB.COM
-ED.COM		ASM.COM		DDT.COM		LOAD.COM
-STAT.COM	DUMP.COM	DUMP.ASM	SYSGEN.COM
-BACKUP.COM	BOOT.COM	CMT.COM		CONSOLE.COM
-CONFIG.COM	COPY.COM	DEL.COM		EJECT.COM
-FILES.COM	FORMAT.COM	INIT.COM	IODEFS.ASM
-TIME.COM	WS.COM		.PRN		.HEX
-WSMSGS.OVR	WSOVLY1.OVR
-
-=============================================================
-
-DISK10:		Written label: YD (IMO, WEDA) - PHILIPS
-		Disk Type: CP/M
-		Bootable: NO
-		
-YD.ENG		YD		BRIEF.PH	YD.IMO
-YD4.E		WEDA.YD		IMO1.LST	PHILIPS.2
-YD2		GEHAEUSE.YD	T3SEIT2.LST	T3SEIT3.LST
-0		YD3		YD.INT		YD2.E
-YD1		WERTE.660	YD3.E		YD1.E
-YD4		1		PHILIPS.BAK	PHILIPS.1
-IMO2.LST	BRIEF.BAK
-
-=============================================================
-
-DISK11:		Written label: PR85
-		Disk Type: CP/M
-		Bootable: NO
-		
-PREISE2.VEG	PREISE6.VEG	GLEICHSP.E	PREISE7.VEG
-K.7A		PREISE5.VEG	K.4		PREISE8.VEG
-PREISE1.VEG	K.11		PREISE4.VEG	4
-K.2		K.5		PREISE3.VEG	A
-ZUBEHIR		K.3		K.6		LEIST.SP
-K.10		K.9		K.7		GLEICHSP.LST
-K.8		8		10		9
-2
-
-=============================================================
-
-DISK12:		Written label: VEG
-		Disk Type: CP/M
-		Bootable: NO
-		
-ERG-PRE,K2	PREISE2.VEG	K.4A		PREISE1.VEG
-K2.3C		K.2F		PREISE5.VEG	K.3A
-PREISE4.VEG	PREISE6.VEG	K2.BAK		PREISE8.VEG
-PR85.BAK	PR85.T1		PREISE3.VEG	PREISE7.VEG
-K2.2A		K2.2D		K2.3A		K2.3B
-K2.21		K2.2C		K2.2B		K2.2F
-K.3C		K.5B		K.6A		K.2A
-K.7A		K.3B		K.7C		K.5D
-K.3F		K.3D		K.BAK		K.7B
-K.2B		K.4C		K.6B		K.5A
-K.2D		K.5C		K.4D		K.2E
-K.4B		K.2C
-
-=============================================================
-
-DISK13:		Written label: WORKDISK AK
-		Disk Type: CP/M
-		Bootable: NO
-		
-ULHPRAT4.LST	CSAHPRAT.LST	CSANOV84.LST	UL-DAT.LST
-ULHPRAT3.LST	ULNOV84.LST	USSRTDAT.LST	CSAHPRA2.LST
-CSAHPRA1.LST	CSAHPRA3.LST	ULHPRAT1.LST	ULHPRAT2.LST
-
-=============================================================
-
-DISK14:		Written label: CP/M
-		Disk Type: CP/M
-		Bootable: YES - 64k CP/M vers 2.2.2.08
-		
-MOVCPM.COM	PIP.COM		SUBMIT.COM	XSUB.COM
-ED.COM		ASM.COM		DDT.COM		LOAD.COM
-STAT.COM	DUMP.COM	DUMP.ASM	SYSGEN.COM
-BACKUP.COM	BOOT.COM	CMT.COM		CONSOLE.COM
-CONFIG.COM	COPY.COM	DEL.COM		EJECT.COM
-FILES.COM	FORMAT.COM	INIT.COM	IODEFS.ASM
-TIME.COM	.PRN		.HEX
-
-=============================================================
-
-DISK15:		Written label: B4
-		Disk Type: CP/M
-		Bootable: YES - 64k CP/M vers 2.2.2.08
-		
-100		B4E.07		B4E.01		B4E.03
-LISTE.B4	B4E.04		B4E.BAK		B4E.05
-B4E.02		B4E.06		B4.GEN		SEV-B4.GEN
-
-=============================================================
-
-DISK16:		Written label: unreadable
-		Disk Type: CP/M
-		Bootable: NO
-
-B4.GEN		SEV-B4.GEN	LISTE.B4	ENDSCHAL.BAK
-ENDSCHAL.BUJ
-
-=============================================================
-
-DISK17:		Written label: WORDSTAR TEXT
-		Disk Type: CP/M
-		Bootable: NO
-		
-PIP.COM		VODKA		TEST.1		S2441
-CONNECFS.1	PROBE.BAK	URLAUB.85	VODKA.BAK
-CONNECFS.BAK	TEST.BAK	DS1		SCHEMATA
-STK.LA4		ARGUM.1		URLAUB.84	STK.LA5
-PLO1		SCHILDER.PLO	SPK6.DC		SPK20.DC
-SPK32.DC	SPK23.DC	SPK85.DC	SPK110.DC
-
-=============================================================
-
-DISK18:		Written label: LISTE
-		Disk Type: CP/M
-		Bootable: NO
-
-T3SEIT5.LST	T3SEIT2.LST	EINTEI.LST	T3SETI4.LST
-TEIL2.LST	TEIL3.LST	TEIL1.LST	T2SEIT9.LST
-T2SEIT6.LST	T3SEIT3.LST	T1SEIT4.LST	TEXT
-T1SEIT2.LST	T2SEIT8.LST	T2SEIT10.LST	T2SEIT7.LST
-T2SEIT5.LST	T1SEIT3.LST	T2SEIT2.LST	T2SEIT3.LST
-T2SEIT4.LST	U1.LST		U2.LST		T2SEIT11.LST
-
-=============================================================
-
-DISK19:		Written label: DATEN IEC,CSA,UL
-		Disk Type: CP/M
-		Bootable: NO
-		
-CSAJAN84.LST	ULJAN84.LST	CSAJUL84.LST	IECFEB84.LST
-CSAHPRAT.LST	ULJUL84.LST	ULHPRAT.LST
-
-=============================================================
-
-DISK20:		Written label: CPM/WORDSTAR/MBASIC
-		Disk Type: CP/M
-		Bootable: YES - 64k CP/M vers 2.2.2.08
-		
-MOVCPM.COM	PIP.COM		SUBMIT.COM	XSUB.COM
-ED.COM		ASM.COM		DDT.COM		LOAD.COM
-STAT.COM	DUMP.COM	DUMP.ASM	SYSGEN.COM
-BACKUP.COM	BOOT.COM	CMT.COM		CONSOLE.COM
-CONFIG.COM	COPY.COM	DEL.COM		EJECT.COM
-FILES.COM	FORMAT.COM	INIT.COM	IODEFS.ASM
-TIME.COM	WS.COM		.PRN		.HEX
-WSMSGS.OVR	WSOVLY1.OVR	MBASIC.COM	.COM
-
-=============================================================
-
-DISK21:		Written label: dBase II Version 2.4 - S/N 335007
-		Disk Type: CP/M
-		Bootable: NO
-
-ISETUP.CMD	DBASE.COM	DBASEOVR.COM	EMAIN.CMD
-EMP-TERM.CMD	STARTUP.CMD	TICKLE.FRM	TICKLE.NDX
-TEXT.DBF	APPECARD.FMT	CPRINT.CMD	KEYWORD.NDX
-CHXINPUT.FMT	CHXDEPOS.FMT	CHXBOOK.MEM	CHECKS.DBF
-DEPOSITS.DBF	EMP-UPD.FMT	DBASEMSG.TXT	EMPLOYEE.MEM
-EMP-RPRT.CMD	EMPLOYEE.DBF	EMPSCRN.FMT	EMP-CONS.FRM
-LABELS.CMD	EMP-ENTR.CMD	EMP-UPD.CMD	CHXMENU.CMD
-EMP-PTR.FRM	INSTALL.COM	E'BYNMBR.NDX	E'BYNAME.NDX
-INVMAINT.CMD	INVREAD.CMD	INVRPRT.CMD	INV'CONS.FRM
-INV'PRTR.FRM	I'BYNMBR.NDX	I'BYDESC.NDX	INVENT.DBF
-EDITCARD.FMT	IMAIN.CMD	INVQUAN.CMD	NAMES.DBF
-CREATE.CMD	ESETUP.CMD	DATETEST.HEX	DATER.CMD
-DATESYS.CMD	SETS.CMD	CMAIN.CMD
-
-=============================================================
-
-DISK22:		Written label: LISTE K2
-		Disk Type: CP/M
-		Bootable: NO
-		
-T1SEIT3.LST	T2SEIT5.LST	T8SEIT2.BAK	U2.LST
-SCH.1		T2SEIT1.LST	T2SEIT6.LST	SCH.2
-T2SEIT7.LST	T2SEIT10.LST	T2SEIT8.LST	T2SEIT9.LST
-T4SEIT1.BAK	T2SEIT11.LST	T3SEIT1.LST	BEF
-T1SEIT1.LST	T3SEIT2.LST	T4SEIT1.LST	T1SEIT2.LST
-T3SEIT3.LST	T1SEIT4.LST	T3SEIT4.LST	T3SEIT5.LST
-T2SEIT2.LST	T2SEIT3.LST	T2SEIT4.LST	T8SEIT2.LST
-INHALT.LST	T0SEIT1.LST	U1.LST
-
-=============================================================
-
-DISK23:		Written label: DISK BASIC - SB-6511- SUB MASTER
-		Disk Type: DISK BASIC
-		Bootable: YES - MONITOR SB-1510 - BASIC SB-6511
-
-OBJ*.Utility		OBJ*.Filing CMT		BTX*.AUTO RUN		BTX.MUSIC
-BTX.Biorhythm		BTX.8 Queen		BTX.Tri Function	BTX.Graphic pattern
-BTX.Die Fraktur		BTX.3D-PLOT		BTX.Data Processing	BTX.Explanation-D.P
-BTX.**String-Machine	BSD.Variable Data	BSD.DATA-DEC2		BTX.Fancy clock
-
-=============================================================
-
-DISK24:		Written label: none
-		Disk Type: DISK BASIC
-		Bootable: NO
-
-BTX.GKSU		BTX.SW-B		BTX.BRFT		BTX.OMFT
-BTX.OMMA		BTX.RAM1		BTX.RAM3		BTX.RAM2
-BTX.RW-A		BTX.BIOD		BTX.RW-S		BTX.DW-S
-BTX.IN-T		BTX.INT10		BTX.S5			BTX.S6
-BTX.GKSU1		BTX.INT9		BTX.INTX		BTX.INTY
-BTX.INTZ		BTX.INTS		BTX.INTO		BTX.E1
-BTX.E2			BTX.RELAIS		BTX.SCHUETZ		BTX.R1
-BTX.R2			BTX.R3			BTX.PREIS		BTX.SW12
-BTX.GKSU2		BTX.ETRAFO		BTX.RUNDDRAHT		BTX.FLACHDRAHT
-BTX.MENUE		BTX.KLEMMENPROGRAMM	BTX.M1			BTX.M2
-BTX.ETRAFO1		BTX.WURZEL		BTX.SW2			BTX.SW20
-BTX.SW11		BTX.SPULEN DC		BTX.TOTO		BTX.TOTO1
-BTX.TOTO2		BTX.TOTO3		BTX.DOSPULEN
-
-=============================================================
-
-DISK25:		Written label: none
-		Disk Type: DISK BASIC
-		Bootable: NO
-
-BTX.KARTEI		BTX.ANLEGEPROGRAMM	BTX.TELNR		BTX.13DATEN
-BTX.12DATEN		BTX.11DATEN		BTX.10DATEN
-
-=============================================================
-
-DISK26:		Written label: SUB MASTER SB-6610
-		Disk Type: DISK BASIC
-		Bootable: YES - MONITOR SB-1510 - DOUBLE PRECISION BASIC SB-6610
-
-OBJ*.Filing CMT		OBJ*.Utility		BTX*.AUTO RUN		BTX.8 Queen
-BTX.Biorhythm		BTX.Graphic pattern	BTX.Die Fraktur		BTX.3D-PLOT
-BTX.Data Processing	BTX.Explanation-D.P	BTX.**String-Machine	BSD.Variable Data
-BSD.DATA-DEC2		BTX.FUNCTION
-
-=============================================================
-
-DISK27:		Written label: none
-		Disk Type: DISK BASIC
-		Bootable: NO
-
-BTX.GKSU		BTX.SW-B		BTX.BRFT		BTX.OMFT
-BTX.OMMA		BTX.RAM1		BTX.RAM3		BTX.RAM2
-BTX.RW-A		BTX.BIOD		BTX.RW-S		BTX.DW-S
-BTX.IN-T		BTX.KARTEI		BTX.ANLEGEPROGRAMM	BTX.TELNR
-BTX.GKSU1		BTX.SW12		BTX.GKSU2		BTX.ETRAFO
-BTX.RUNDDRAHT		BTX.FLACHDRAHT		BTX.MENUE		BTX.KLEMMENPROGRAMM
-BTX.M1			BTX.M2			BTX.ETRAFO1		BTX.WURZEL
-BTX.SW2			BTX.SW20		BTX.SW11		BTX.TOTO HGE
-BTX.TOTO GERHARD	BTX.TOTO ZEMAN
-
-=============================================================
-
-DISK28:		Written label: BASIC PROGRAMME
-		Disk Type: DISK BASIC
-		Bootable: NO
-
-BTX.DOSP1		BTX.DOSPULEN		BTX.DOSP2
-
-=============================================================
-
-DISK29:		Written label: Z80 MASTER
-		Disk Type: FDOS
-		Bootable: YES - MONITOR SB-1511 - FLOPPY DISK OPERATING SYSTEM SB-7010
-
-EDIT.SYS	ASM.SYS		LINK.SYS	&DEB&.SYS
-HCOPY.SYS	PROM.SYS	VERIFY.SYS	CONVERT.SYS
-LIMIT.SYS	LOAD.SYS	ASSIGN.SYS	STATUS.SYS
-FORMAT.SYS	COPY.SYS	SIGN.SYS	MLINK.SYS
-LIBRARY.SYS	RELO.LIB	MONEQU.ASC	MONEQU.LIB
-FDOSEQU.ASC	FDOSEQU.LIB	START-UP.ASC	LOADAUX.ASC
-CMT1.ASC	CMT1.OBJ	SIO.OBJ		SIO.ASC
-PTRP.ASC	PTRP.OBJ	1510EQU.ASC	1510EQU.LIB
-SB-1511.RB	KEYLABEL.ASC	PLOTTER.ASC	X-YDEMO.ASC
-BASIC.SYS
-
-=============================================================
-
-DISK30:		Written label: Z80
-		Disk Type: FDOS
-		Bootable: NO
-
-EDIT.SYS	ASM.SYS		LINK.SYS	&DEB&.SYS
-HCOPY.SYS	PROM.SYS	VERIFY.SYS	CONVERT.SYS
-LIMIT.SYS	LOAD.SYS	ASSIGN.SYS	STATUS.SYS
-FORMAT.SYS	COPY.SYS	SIGN.SYS	MLINK.SYS
-LIBRARY.SYS	RELO.LIB	MONEQU.ASC	MONEQU.LIB
-FDOSEQU.ASC	FDOSEQU.LIB	START-UP.ASC	LOADAUX.ASC
-CMT1.ASC	CMT1.OBJ	SIO.OBJ		SIO.ASC
-PTRP.ASC	PTRP.OBJ	1510EQU.ASC	1510EQU.LIB
-SB-1511.RB	KEYLABEL.ASC	PLOTTER.ASC	X-YDEMO.ASC
-BASIC.SYS
-
-=============================================================
-
-DISK31:		Written label: Z80
-		Disk Type: FDOS
-		Bootable: NO
-
-SIO.ASC		SIO.RB		SIO.OBJ		DR4.ASC
-DR4.OBJ		DR4.SYS
-
-=============================================================
-
-DISK32:		Written label: dBase II Version 2.4 - Demo Disk - S/N 335007
-		Disk Type: CP/M
-		Bootable: NO
-
-ISETUP.CMD	DBASE.COM	DBASEOVR.COM	EMAIN.CMD
-EMP-TERM.CMD	STARTUP.CMD	TICKLE.FRM	TICKLE.NDX
-TEXT.DBF	APPECARD.FMT	CPRINT.CMD	KEYWORD.NDX
-CHXINPUT.FMT	CHXDEPOS.FMT	CHXBOOK.MEM	CHECKS.DBF
-DEPOSITS.DBF	EMP-UPD.FMT	DBASEMSG.TXT	EMPLOYEE.MEM
-EMP-RPRT.CMD	EMPLOYEE.DBF	EMPSCRN.FMT	EMP-CONS.FRM
-LABELS.CMD	EMP-ENTR.CMD	EMP-UPD.CMD	CHXMENU.CMD
-EMP-PTR.FRM	INSTALL.COM	E'BYNMBR.NDX	E'BYNAME.NDX
-INVMAINT.CMD	INVREAD.CMD	INVRPRT.CMD	INV'CONS.FRM
-INV'PRTR.FRM	I'BYNMBR.NDX	I'BYDESC.NDX	INVENT.DBF
-EDITCARD.FMT	IMAIN.CMD	INVQUAN.CMD	NAMES.DBF
-CREATE.CMD	ESETUP.CMD	DATETEST.HEX	DATER.CMD
-DATESYS.CMD	SETS.CMD	CMAIN.CMD	DEMO.DSK
-
-=============================================================
-
-DISK33:		Written label: none
-		Disk Type: CP/M
-		Bootable: NO
-		
-KERTEI.DBF	NAME.NDX	WERBHELF.DBF	JOURNAL.DBF
-STRASSE.NDX	KUNDEN.DBF	TELEFON.NDX	BSNR.NDX
-GEB:DAT.NDX	ABSCHL.NDX
-
-=============================================================
-
-DISK34:		Written label: WORDSTAR
-		Dist Type: CP/M
-		Bootable: NO
-
-WS.COM		WSMSGS.OVR	WSOVLY1.OVR
-
-=============================================================
-
-DISK35:		Written label: dBase II Version 2.4 - Zip - S/N 335007
-		Disk Type: CP/M
-		Bootable: NO
-
-ZIPIN.COM	ZIP.COM		ZSCRN.OVL	DGEN.OVL
-
-=============================================================
-
-DISK36:		Written label: none
-		Disk Type: CP/M
-		Bootable: YES - 64k CP/M vers 2.2.2.08
-
-ZIPIN.COM	PRODERG.BAK	DATESYS.CMD	DBASEOVR.COM
-ZSCRN.OVL	JOURNAL.FRM	AUSDRUCK.ZIP	AUSDRUCK.CMD
-WHPROVIS.FRM	AUSDRUCK.ZPR	FILES.COM	WHPROVIS.CMD
-NEU.CMD		PIP.COM		ZIP.COM		ANREDE.CMD
-PRODERG.CMD	EINGABE.ZPR	DEL.COM		DBASEMSG.TXT
-EINGABE.FMT	ADRZETT.CMD	AUSLAUF.CMD	DATUM.MEM
-INIT.COM	AUSGABE.ZIP	EINGABE.ZIP	AUSGABE.FMT
-SYS2.CMD	AUSGABE.ZPR	LOESCHEN.CMD	NEUKART.DBF
-LAUFETIK.CMD	WHSUM.FRM	LAUFETIK.BAK	AUSGABE.CMD
-TAGJOURN.FRM	SYS.CMD		MENUE7.CMD	ETIKETTE.CMD
-LOETEST.CMD	WERBHELF.CMD	DGEN.OVL	DATETEST.HEX
-ABRUF.CMD	PFLEGE.CMD	HANDDRUC.CMD	EINAENDE.CMD
-KUENDIGU.CMD	EINGABE.CMD	AENDERN.CMD
-
-=============================================================
-
-DISK37:		Written label: none
-		Disk Type: DISK BASIC
-		Bootable: ???
-		NOTE: Various errors on disk
-
-OBJ*.Utility		OBJ*.Filing CMT		BTX*.AUTO RUN		BTX.MUSIC
-BTX.Biorhythm		BTX.8 Queen		BTX.Tri Function	BTX.Graphic pattern
-BTX.Die Fraktur		BTX.3D-PLOT		BTX.DATENPROZESS	BTX.Explanation-D.P
-BTX.**String-Machine	BSD.Variable Data	BSD.DATA-DEC2		BTX.Fancy clock
-BSD.SPEKTRUM		BRD. Gesp. File		BSD.ELEKTOR		BSD.SPIELE G7000
-BTX.INTERFACE-TEST	BSD.PRAKTIKER		BTX.X-NUMMERN		BSD.ASTERIX
-BTX.FILEREPARATUR	BSD.KARTEN		BSD.CHIP		BSD.MODELLEISENBAHN
-
-=============================================================
-
-DISK38:		Written label: none
-		Disk Type: DISK BASIC
-		Bootable: YES - MONITOR SB-1510 - BASIC SB-6510
-		
-OBJ*.Filing CMT		OBJ*.Utility		BTX*.AUTO RUN		BTX.MUSIC
-BTX.Biorhythm		BTX.8 Queen		BTX.Tri Function	BTX.Graphic pattern
-BTX.Die Fraktur		BTX.3D-PLOT		BTX.Data Processing	BTX.Explanation-D.P
-BTX.**String-Machine	BSD.Variable Data	BSD.DATA-DEC2		BTX.Fancy clock
-BRD.Storage File	BTX.STILLE NACHT
-
-=============================================================
--->
+<!-- Thanks to sharpmz.org for info! -->
 <softwarelist name="mz80b_flop" description="Sharp MZ-80B floppy disks">
 
-	<software name="rb_dsk">
-		<description>rb_DSK</description>
+	<!--
+	DISK 01:	Written label: CP/M / dBase
+				Disk Type: CP/M
+				Bootable: YES - 64k CP/M vers 2.2.2.08
+
+	ZIPIN.COM	MENUE.CMD	DBASE.COM		DBASEOVR.COM
+	ZSCRN.OVL	BACKUP.COM	STARTUP.CMD		DATESYS.CMD
+	WS.COM		FILES.COM	PIP.COM			ZIP.COM
+	DGEN.OVL	WSOVLY1.OVR	DEL.COM			DBASEMSG.TXT
+	WSMSGS.OVR	LABELS.CMD	INSTALL.COM		EDITCARD.FMT
+	CREATE.CMD	ESETUP.CMD	DATETEST.HEX	SETS.CMD
+	-->
+	<software name="disk01">
+		<description>disk01</description>
 		<year>????</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -538,187 +25,916 @@ BRD.Storage File	BTX.STILLE NACHT
 				<rom name="disk01.dsk" size="376832" crc="b0995fdb" sha1="d0870ab6743c58c0926cb6727ce464e13fcc0ecd" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop2" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK 02:	Written label: ZIP
+				Disk Type: CP/M
+				Bootable: NO
+		
+	ZIPIN.COM	ZIP.COM		ZSCRN.OVL	DGEN.OVL
+	-->
+	<software name="disk02">
+		<description>disk02</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="376320">
 				<rom name="disk02.dsk" size="376320" crc="cb877d33" sha1="491478c427e53f77ce88872b8a76bd78f41b895a" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK 03:	Written label: DEMO
+				Disk Type: CP/M
+				Bootable: NO
+			
+	ISETUP.CMD		DBASE.COM		DBASEOVR.COM	EMAIN.CMD
+	EMP-TERM.CMD	STARTUP.CMD		TICKLE.FRM		TICKLE.NDX
+	TEXT.DBF		APPECARD.FMT	CPRINT.CMD		KEYWORD.NDX
+	CHXINPUT.FMT	CHXDEPOS.FMT	CHXBOOK.MEM		CHECKS.DBF
+	DEPOSITS.DBF	EMP-UPD.FMT		DBASEMSG.TXT	EMPLOYEE.MEM
+	EMP-RPRT.CMD	EMPLOYEE.DBF	EMPSCRN.FMT		EMP-CONS.FRM
+	LABELS.CMD		EMP-ENTR.CMD	EMP-UPD.CMD		CHXMENU.CMD
+	EMP-PTR.FRM		INSTALL.COM		E'BYNMBR.NDX	E'BYNAME.NDX
+	INVMAINT.CMD	INVREAD.CMD		INVRPRT.CMD		INV'CONS.FRM
+	INV'PRTR.FRM	I'BYNMBR.NDX	I'BYDESC.NDX	INVENT.DBF
+	EDITCARD.FMT	IMAIN.CMD		INVQUAN.CMD		NAMES.DBF
+	CREATE.CMD		ESETUP.CMD		DATETEST.HEX	DATER.CMD
+	DATESYS.CMD		SETS.CMD		CMAIN.CMD		DEMO.DSK
+	-->
+	<software name="disk03">
+		<description>disk03</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="377344">
 				<rom name="disk03.dsk" size="377344" crc="c31a52a2" sha1="eab9c60a4dcf9fb7db85ca8d2a487d6c632b58d0" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop4" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK 04:	Written label: CP/M 80 2.25
+				Disk Type: CP/M
+				Bootable: YES - CP/M vers 2.2.2.08
+			
+	FILES.COM	XSUB.COM	ED.COM		ASM.COM
+	DDT.COM		LOAD.COM	STAT.COM	DUMP.COM
+	DUMP.ASM	SYSGEN.COM	BACKUP.COM	BOOT.COM
+	CMT.COM		CONSOLE.COM	CONFIG.COM	COPY.COM
+	DEL.COM		EJECT.COM	BASCOM.COM	SUBMIT.COM
+	INIT.COM	IODEFS.ASM	TIME.COM	BASIC80.COM
+	FORMAT.COM	LBO.COM		CRUN2.COM	CBAS2.COM
+	XREF.COM	BASLIB.REL	FORLIB.REL	MOVCPM.COM
+	PIP.COM
+	-->
+	<software name="disk04">
+		<description>disk04</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="376320">
 				<rom name="disk04.dsk" size="376320" crc="5a1df37d" sha1="406340d562a00b72e598a41f37411d994d17dfe7" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop5" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK 05:	Written label: none
+				Disk Type: CP/M
+				Bootable: YES - CP/M vers 2.2.2.08
+			
+	FILES.COM	XSUB.COM	ED.COM		ASM.COM
+	DDT.COM		LOAD.COM	STAT.COM	DUMP.COM
+	DUMP.ASM	SYSGEN.COM	BACKUP.COM	BOOT.COM
+	CMT.COM		CONSOLE.COM	CONFIG.COM	COPY.COM
+	DEL.COM		EJECT.COM	BASCOM.COM	SUBMIT.COM
+	INIT.COM	IODEFS.ASM	TIME.COM	BASIC80.COM
+	FORMAT.COM	LBO.COM		CRUN2.COM	CBAS2.COM
+	XREF.COM	BASLIB.REL	FORLIB.REL	MOVCPM.COM
+	PIP.COM
+	-->
+	<software name="disk05">
+		<description>disk05</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="376320">
 				<rom name="disk05.dsk" size="376320" crc="0ebd90c1" sha1="e3b2852f27f428ecaa93f676d921f8541cfe1209" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop6" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK 06:	Written label: none
+				Disk Type: CP/M
+				Bootable: YES - 64k CP/M vers 2.2.2.08
+			
+	MOVCPM.BAK	PIP.COM		XSUB.COM	ED.COM
+	ASM.COM		DDT.COM		LOAD.COM	STAT.COM
+	DUMP.COM	DUMP.ASM	SYSGEN.COM	BACKUP.COM
+	BOOT.COM	CMT.COM		CONSOLE.COM	CONFIG.COM
+	COPY.COM	DEL.COM		EJECT.COM	FILES.COM
+	FORMAT.COM	INIT.COM	IODEFS.ASM	TIME.COM
+	SIO.COM		.PRN		.HEX		FACIT
+	TX.COM		FACIT1		FACIT2		FACIT3
+	FACIT4		FACIT5		w.BAS		quagl.BAS
+	MX.COM		f.BAS		F.PRN		F.HEX
+	test.BAS	F.COM		CURSOR		KURSOR.COM
+	M1.COM		TX1.COM		TX2.COM		MBASIC.COM
+	CURSOR.PRN	SIO.PRN		SIO.HEX		SIO
+	CURSOR.HEX	CURSOR.BAK	SUBMIT.COM	CURSOR.COM
+	MOVCPM.COM	FACIT4		F.BAK		F
+	-->
+	<software name="disk06">
+		<description>disk06</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="376320">
 				<rom name="disk06.dsk" size="376320" crc="0c801c95" sha1="ab9b892f8d5625c9239fbffb23522fe9354a31e6" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop7" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK07:		Written label: BACKUP AK
+				Disk Type: CP/M
+				Bootable: YES - 64k CP/M vers 2.2.2.08
+			
+	ULHPRAT4.LST	CSAHPRAT.LST	CSANOV84.LST	UL-DAT.LST
+	ULHPRAT2.LST	ULHPRAT3.LST	ULNOV84.LST		ULHPRAT1.LST
+	CSAHPRA2.LST	CSAHPRA1.LST	CSAHPRA3.LST
+	-->
+	<software name="disk07">
+		<description>disk07</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="377344">
 				<rom name="disk07.dsk" size="377344" crc="732ee8ce" sha1="13a2d940ea145eb4491a5d35302b0128d10f0d09" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop8" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK08:		Written label: PR25 U
+				Disk Type: CP/M
+				Bootable: NO
+			
+	PR85.U3		1			PR85.DS1	PR85.U1
+	100.BAK		PR85.HI2	MUSTER		PR85.DK1
+	PR85.U2		10			PR85.UK2	D256
+	PR85.UK3	PR85.UK1	D189.BAK	D189
+	MUSTER.BAK	PR85.HI1	PR85.KG1	D256-E
+	PR85.BAK	100
+	-->
+	<software name="disk08">
+		<description>disk08</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="376320">
 				<rom name="disk08.dsk" size="376320" crc="8181cac8" sha1="bdf73fdaaa9b92eaed24a00831e773c413fd9670" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop9" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK09:		Written label: WS
+				Disk Type: CP/M
+				Bootable: YES - 64k CP/M vers 2.2.2.08
+			
+	MOVCPM.COM	PIP.COM		SUBMIT.COM	XSUB.COM
+	ED.COM		ASM.COM		DDT.COM		LOAD.COM
+	STAT.COM	DUMP.COM	DUMP.ASM	SYSGEN.COM
+	BACKUP.COM	BOOT.COM	CMT.COM		CONSOLE.COM
+	CONFIG.COM	COPY.COM	DEL.COM		EJECT.COM
+	FILES.COM	FORMAT.COM	INIT.COM	IODEFS.ASM
+	TIME.COM	WS.COM		.PRN		.HEX
+	WSMSGS.OVR	WSOVLY1.OVR
+	-->
+	<software name="disk09">
+		<description>disk09</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="377344">
 				<rom name="disk09.dsk" size="377344" crc="d66eaad2" sha1="fa5d24dfe261e7710a55333e8ad8fe24cb83a214" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop10" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK10:		Written label: YD (IMO, WEDA) - PHILIPS
+				Disk Type: CP/M
+				Bootable: NO
+			
+	YD.ENG		YD			BRIEF.PH	YD.IMO
+	YD4.E		WEDA.YD		IMO1.LST	PHILIPS.2
+	YD2			GEHAEUSE.YD	T3SEIT2.LST	T3SEIT3.LST
+	0			YD3			YD.INT		YD2.E
+	YD1			WERTE.660	YD3.E		YD1.E
+	YD4			1			PHILIPS.BAK	PHILIPS.1
+	IMO2.LST	BRIEF.BAK
+	-->
+	<software name="disk10">
+		<description>disk10</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="375808">
 				<rom name="disk10.dsk" size="375808" crc="182adcbb" sha1="c29efe4548c32888513e2403592f5b4e7969ad27" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop11" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK11:		Written label: PR85
+				Disk Type: CP/M
+				Bootable: NO
+			
+	PREISE2.VEG	PREISE6.VEG	GLEICHSP.E	PREISE7.VEG
+	K.7A		PREISE5.VEG	K.4			PREISE8.VEG
+	PREISE1.VEG	K.11		PREISE4.VEG	4
+	K.2			K.5			PREISE3.VEG	A
+	ZUBEHIR		K.3			K.6			LEIST.SP
+	K.10		K.9			K.7			GLEICHSP.LST
+	K.8			8			10			9
+	2
+	-->
+	<software name="disk11">
+		<description>disk11</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="376832">
 				<rom name="disk11.dsk" size="376832" crc="78dabe43" sha1="3adfb15311948689739a05b414dad914ddd9ecd6" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop12" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK12:		Written label: VEG
+				Disk Type: CP/M
+				Bootable: NO
+			
+	ERG-PRE,K2	PREISE2.VEG	K.4A		PREISE1.VEG
+	K2.3C		K.2F		PREISE5.VEG	K.3A
+	PREISE4.VEG	PREISE6.VEG	K2.BAK		PREISE8.VEG
+	PR85.BAK	PR85.T1		PREISE3.VEG	PREISE7.VEG
+	K2.2A		K2.2D		K2.3A		K2.3B
+	K2.21		K2.2C		K2.2B		K2.2F
+	K.3C		K.5B		K.6A		K.2A
+	K.7A		K.3B		K.7C		K.5D
+	K.3F		K.3D		K.BAK		K.7B
+	K.2B		K.4C		K.6B		K.5A
+	K.2D		K.5C		K.4D		K.2E
+	K.4B		K.2C
+	-->
+	<software name="disk12">
+		<description>disk12</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="376320">
 				<rom name="disk12.dsk" size="376320" crc="3d9ed232" sha1="9f26eee326b37b3a5cc879dbae8b8adb1dbab016" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop13" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK13:		Written label: WORKDISK AK
+				Disk Type: CP/M
+				Bootable: NO
+			
+	ULHPRAT4.LST	CSAHPRAT.LST	CSANOV84.LST	UL-DAT.LST
+	ULHPRAT3.LST	ULNOV84.LST		USSRTDAT.LST	CSAHPRA2.LST
+	CSAHPRA1.LST	CSAHPRA3.LST	ULHPRAT1.LST	ULHPRAT2.LST
+	-->
+	<software name="disk13">
+		<description>disk13</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="376320">
 				<rom name="disk13.dsk" size="376320" crc="8c006bd3" sha1="07719319bd5b4b8a00d45f9791a884d0b0405e9c" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop14" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK14:		Written label: CP/M
+				Disk Type: CP/M
+				Bootable: YES - 64k CP/M vers 2.2.2.08
+			
+	MOVCPM.COM	PIP.COM		SUBMIT.COM	XSUB.COM
+	ED.COM		ASM.COM		DDT.COM		LOAD.COM
+	STAT.COM	DUMP.COM	DUMP.ASM	SYSGEN.COM
+	BACKUP.COM	BOOT.COM	CMT.COM		CONSOLE.COM
+	CONFIG.COM	COPY.COM	DEL.COM		EJECT.COM
+	FILES.COM	FORMAT.COM	INIT.COM	IODEFS.ASM
+	TIME.COM	.PRN		.HEX
+	-->
+	<software name="disk14">
+		<description>disk14</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="376320">
 				<rom name="disk14.dsk" size="376320" crc="26161039" sha1="4a0dc8a8658a57ed3c195d69cf92a13a6a45638b" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop15" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK15:		Written label: B4
+				Disk Type: CP/M
+				Bootable: YES - 64k CP/M vers 2.2.2.08
+			
+	100			B4E.07		B4E.01		B4E.03
+	LISTE.B4	B4E.04		B4E.BAK		B4E.05
+	B4E.02		B4E.06		B4.GEN		SEV-B4.GEN
+	-->
+	<software name="disk15">
+		<description>disk15</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="376832">
 				<rom name="disk15.dsk" size="376832" crc="f2a6a3a0" sha1="e372752081c9ea840e22df064c6e4db87677c16d" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop16" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK16:		Written label: unreadable
+				Disk Type: CP/M
+				Bootable: NO
+
+	B4.GEN			SEV-B4.GEN	LISTE.B4	ENDSCHAL.BAK
+	ENDSCHAL.BUJ
+	-->
+	<software name="disk16">
+		<description>disk16</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="376320">
 				<rom name="disk16.dsk" size="376320" crc="40150756" sha1="d83e0356267fbfeeab3f4052aa98c1fd4818cff3" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop17" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK17:		Written label: WORDSTAR TEXT
+				Disk Type: CP/M
+				Bootable: NO
+			
+	PIP.COM			VODKA			TEST.1		S2441
+	CONNECFS.1		PROBE.BAK		URLAUB.85	VODKA.BAK
+	CONNECFS.BAK	TEST.BAK		DS1			SCHEMATA
+	STK.LA4			ARGUM.1			URLAUB.84	STK.LA5
+	PLO1			SCHILDER.PLO	SPK6.DC		SPK20.DC
+	SPK32.DC		SPK23.DC		SPK85.DC	SPK110.DC
+	-->
+	<software name="disk17">
+		<description>disk17</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="376320">
 				<rom name="disk17.dsk" size="376320" crc="1b7fb8a6" sha1="2d080ac500e52cb74858bc4109ebf83b921912db" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop18" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK18:		Written label: LISTE
+				Disk Type: CP/M
+				Bootable: NO
+
+	T3SEIT5.LST	T3SEIT2.LST	EINTEI.LST		T3SETI4.LST
+	TEIL2.LST	TEIL3.LST	TEIL1.LST		T2SEIT9.LST
+	T2SEIT6.LST	T3SEIT3.LST	T1SEIT4.LST		TEXT
+	T1SEIT2.LST	T2SEIT8.LST	T2SEIT10.LST	T2SEIT7.LST
+	T2SEIT5.LST	T1SEIT3.LST	T2SEIT2.LST		T2SEIT3.LST
+	T2SEIT4.LST	U1.LST		U2.LST			T2SEIT11.LST
+	-->
+	<software name="disk18">
+		<description>disk18</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="376320">
 				<rom name="disk18.dsk" size="376320" crc="00387019" sha1="f6d7c81d03d89bfb44bb36ec5f07be31ca8a1f01" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop19" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK19:		Written label: DATEN IEC,CSA,UL
+				Disk Type: CP/M
+				Bootable: NO
+			
+	CSAJAN84.LST	ULJAN84.LST	CSAJUL84.LST	IECFEB84.LST
+	CSAHPRAT.LST	ULJUL84.LST	ULHPRAT.LST
+	-->
+	<software name="disk19">
+		<description>disk19</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="376832">
 				<rom name="disk19.dsk" size="376832" crc="e1a27b00" sha1="a3916de7eeadf825d8a8dbbea66191a93a9d1a9a" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop20" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK20:		Written label: CPM/WORDSTAR/MBASIC
+				Disk Type: CP/M
+				Bootable: YES - 64k CP/M vers 2.2.2.08
+			
+	MOVCPM.COM	PIP.COM		SUBMIT.COM	XSUB.COM
+	ED.COM		ASM.COM		DDT.COM		LOAD.COM
+	STAT.COM	DUMP.COM	DUMP.ASM	SYSGEN.COM
+	BACKUP.COM	BOOT.COM	CMT.COM		CONSOLE.COM
+	CONFIG.COM	COPY.COM	DEL.COM		EJECT.COM
+	FILES.COM	FORMAT.COM	INIT.COM	IODEFS.ASM
+	TIME.COM	WS.COM		.PRN		.HEX
+	WSMSGS.OVR	WSOVLY1.OVR	MBASIC.COM	.COM
+	-->
+	<software name="disk20">
+		<description>disk20</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="375808">
 				<rom name="disk20.dsk" size="375808" crc="fcef8d27" sha1="c9789eb58286b58ffbdea4de935fd59c700f2447" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop21" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK21:		Written label: dBase II Version 2.4 - S/N 335007
+				Disk Type: CP/M
+				Bootable: NO
+
+	ISETUP.CMD		DBASE.COM		DBASEOVR.COM	EMAIN.CMD
+	EMP-TERM.CMD	STARTUP.CMD		TICKLE.FRM		TICKLE.NDX
+	TEXT.DBF		APPECARD.FMT	CPRINT.CMD		KEYWORD.NDX
+	CHXINPUT.FMT	CHXDEPOS.FMT	CHXBOOK.MEM		CHECKS.DBF
+	DEPOSITS.DBF	EMP-UPD.FMT		DBASEMSG.TXT	EMPLOYEE.MEM
+	EMP-RPRT.CMD	EMPLOYEE.DBF	EMPSCRN.FMT		EMP-CONS.FRM
+	LABELS.CMD		EMP-ENTR.CMD	EMP-UPD.CMD		CHXMENU.CMD
+	EMP-PTR.FRM		INSTALL.COM		E'BYNMBR.NDX	E'BYNAME.NDX
+	INVMAINT.CMD	INVREAD.CMD		INVRPRT.CMD		INV'CONS.FRM
+	INV'PRTR.FRM	I'BYNMBR.NDX	I'BYDESC.NDX	INVENT.DBF
+	EDITCARD.FMT	IMAIN.CMD		INVQUAN.CMD		NAMES.DBF
+	CREATE.CMD		ESETUP.CMD		DATETEST.HEX	DATER.CMD
+	DATESYS.CMD		SETS.CMD		CMAIN.CMD
+	-->
+	<software name="disk21">
+		<description>disk21</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="376320">
 				<rom name="disk21.dsk" size="376320" crc="75bdf89b" sha1="c3cd3af775433eea438a0da1c4c4624c73bd2524" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop22" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK22:		Written label: LISTE K2
+				Disk Type: CP/M
+				Bootable: NO
+			
+	T1SEIT3.LST	T2SEIT5.LST		T8SEIT2.BAK	U2.LST
+	SCH.1		T2SEIT1.LST		T2SEIT6.LST	SCH.2
+	T2SEIT7.LST	T2SEIT10.LST	T2SEIT8.LST	T2SEIT9.LST
+	T4SEIT1.BAK	T2SEIT11.LST	T3SEIT1.LST	BEF
+	T1SEIT1.LST	T3SEIT2.LST		T4SEIT1.LST	T1SEIT2.LST
+	T3SEIT3.LST	T1SEIT4.LST		T3SEIT4.LST	T3SEIT5.LST
+	T2SEIT2.LST	T2SEIT3.LST		T2SEIT4.LST	T8SEIT2.LST
+	INHALT.LST	T0SEIT1.LST		U1.LST
+	-->
+	<software name="disk22">
+		<description>disk22</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="376320">
 				<rom name="disk22.dsk" size="376320" crc="00d6cfac" sha1="fc7599071c210aae1536a01983a6f936b8a56b3b" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop23" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK23:		Written label: DISK BASIC - SB-6511- SUB MASTER
+				Disk Type: DISK BASIC
+				Bootable: YES - MONITOR SB-1510 - BASIC SB-6511
+
+	OBJ*.Utility			OBJ*.Filing CMT		BTX*.AUTO RUN		BTX.MUSIC
+	BTX.Biorhythm			BTX.8 Queen			BTX.Tri Function	BTX.Graphic pattern
+	BTX.Die Fraktur			BTX.3D-PLOT			BTX.Data Processing	BTX.Explanation-D.P
+	BTX.**String-Machine	BSD.Variable Data	BSD.DATA-DEC2		BTX.Fancy clock
+	-->
+	<software name="disk23">
+		<description>disk23</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="323072">
 				<rom name="disk23.dsk" size="323072" crc="48095b50" sha1="af4957feb543d2a6bdf3cd405dbbb1f39f96714c" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop24" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK24:		Written label: none
+				Disk Type: DISK BASIC
+				Bootable: NO
+
+	BTX.GKSU		BTX.SW-B			BTX.BRFT		BTX.OMFT
+	BTX.OMMA		BTX.RAM1			BTX.RAM3		BTX.RAM2
+	BTX.RW-A		BTX.BIOD			BTX.RW-S		BTX.DW-S
+	BTX.IN-T		BTX.INT10			BTX.S5			BTX.S6
+	BTX.GKSU1		BTX.INT9			BTX.INTX		BTX.INTY
+	BTX.INTZ		BTX.INTS			BTX.INTO		BTX.E1
+	BTX.E2			BTX.RELAIS			BTX.SCHUETZ		BTX.R1
+	BTX.R2			BTX.R3				BTX.PREIS		BTX.SW12
+	BTX.GKSU2		BTX.ETRAFO			BTX.RUNDDRAHT	BTX.FLACHDRAHT
+	BTX.MENUE		BTX.KLEMMENPROGRAMM	BTX.M1			BTX.M2
+	BTX.ETRAFO1		BTX.WURZEL			BTX.SW2			BTX.SW20
+	BTX.SW11		BTX.SPULEN DC		BTX.TOTO		BTX.TOTO1
+	BTX.TOTO2		BTX.TOTO3			BTX.DOSPULEN
+	-->
+	<software name="disk24">
+		<description>disk24</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="323840">
 				<rom name="disk24.dsk" size="323840" crc="e6b5ed6d" sha1="a2f799a19a64abab4cd02f8f4f22ceaffc6e3d13" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop25" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK25:		Written label: none
+				Disk Type: DISK BASIC
+				Bootable: NO
+
+	BTX.KARTEI		BTX.ANLEGEPROGRAMM	BTX.TELNR		BTX.13DATEN
+	BTX.12DATEN		BTX.11DATEN			BTX.10DATEN
+	-->
+	<software name="disk25">
+		<description>disk25</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="323840">
 				<rom name="disk25.dsk" size="323840" crc="a931172a" sha1="d011c1da745ee94e36be158e888dcd29f8f85ee7" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop26" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK26:		Written label: SUB MASTER SB-6610
+				Disk Type: DISK BASIC
+				Bootable: YES - MONITOR SB-1510 - DOUBLE PRECISION BASIC SB-6610
+
+	OBJ*.Filing CMT		OBJ*.Utility		BTX*.AUTO RUN			BTX.8 Queen
+	BTX.Biorhythm		BTX.Graphic pattern	BTX.Die Fraktur			BTX.3D-PLOT
+	BTX.Data Processing	BTX.Explanation-D.P	BTX.**String-Machine	BSD.Variable Data
+	BSD.DATA-DEC2		BTX.FUNCTION
+	-->
+	<software name="disk26">
+		<description>disk26</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="322816">
 				<rom name="disk26.dsk" size="322816" crc="024ca16c" sha1="6aca96c582a23a05c86c8cc09c4b0a86dcd7baa2" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop27" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK27:		Written label: none
+				Disk Type: DISK BASIC
+				Bootable: NO
+
+	BTX.GKSU			BTX.SW-B		BTX.BRFT			BTX.OMFT
+	BTX.OMMA			BTX.RAM1		BTX.RAM3			BTX.RAM2
+	BTX.RW-A			BTX.BIOD		BTX.RW-S			BTX.DW-S
+	BTX.IN-T			BTX.KARTEI		BTX.ANLEGEPROGRAMM	BTX.TELNR
+	BTX.GKSU1			BTX.SW12		BTX.GKSU2			BTX.ETRAFO
+	BTX.RUNDDRAHT		BTX.FLACHDRAHT	BTX.MENUE			BTX.KLEMMENPROGRAMM
+	BTX.M1				BTX.M2			BTX.ETRAFO1			BTX.WURZEL
+	BTX.SW2				BTX.SW20		BTX.SW11			BTX.TOTO HGE
+	BTX.TOTO GERHARD	BTX.TOTO ZEMAN
+	-->
+	<software name="disk27">
+		<description>disk27</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="323072">
 				<rom name="disk27.dsk" size="323072" crc="10ebdb32" sha1="b7b8a910721fc9a84308c86eec7a87b9a21a7e40" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop28" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK28:		Written label: BASIC PROGRAMME
+				Disk Type: DISK BASIC
+				Bootable: NO
+
+	BTX.DOSP1		BTX.DOSPULEN		BTX.DOSP2
+	-->
+	<software name="disk28">
+		<description>disk28</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="323840">
 				<rom name="disk28.dsk" size="323840" crc="367aed09" sha1="3474c2ab69378e794c8d00c572d8b2b76f7564b1" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop29" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK29:		Written label: Z80 MASTER
+				Disk Type: FDOS
+				Bootable: YES - MONITOR SB-1511 - FLOPPY DISK OPERATING SYSTEM SB-7010
+
+	EDIT.SYS	ASM.SYS			LINK.SYS		&DEB&.SYS
+	HCOPY.SYS	PROM.SYS		VERIFY.SYS		CONVERT.SYS
+	LIMIT.SYS	LOAD.SYS		ASSIGN.SYS		STATUS.SYS
+	FORMAT.SYS	COPY.SYS		SIGN.SYS		MLINK.SYS
+	LIBRARY.SYS	RELO.LIB		MONEQU.ASC		MONEQU.LIB
+	FDOSEQU.ASC	FDOSEQU.LIB		START-UP.ASC	LOADAUX.ASC
+	CMT1.ASC	CMT1.OBJ		SIO.OBJ			SIO.ASC
+	PTRP.ASC	PTRP.OBJ		1510EQU.ASC		1510EQU.LIB
+	SB-1511.RB	KEYLABEL.ASC	PLOTTER.ASC		X-YDEMO.ASC
+	BASIC.SYS
+	-->
+	<software name="disk29">
+		<description>disk29</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="323328">
 				<rom name="disk29.dsk" size="323328" crc="7eb82262" sha1="a83dc2ebd0f825fa1dddf987ce53f6c43ac6b95d" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop30" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK30:		Written label: Z80
+				Disk Type: FDOS
+				Bootable: NO
+
+	EDIT.SYS	ASM.SYS			LINK.SYS		&DEB&.SYS
+	HCOPY.SYS	PROM.SYS		VERIFY.SYS		CONVERT.SYS
+	LIMIT.SYS	LOAD.SYS		ASSIGN.SYS		STATUS.SYS
+	FORMAT.SYS	COPY.SYS		SIGN.SYS		MLINK.SYS
+	LIBRARY.SYS	RELO.LIB		MONEQU.ASC		MONEQU.LIB
+	FDOSEQU.ASC	FDOSEQU.LIB		START-UP.ASC	LOADAUX.ASC
+	CMT1.ASC	CMT1.OBJ		SIO.OBJ			SIO.ASC
+	PTRP.ASC	PTRP.OBJ		1510EQU.ASC		1510EQU.LIB
+	SB-1511.RB	KEYLABEL.ASC	PLOTTER.ASC		X-YDEMO.ASC
+	BASIC.SYS
+	-->
+	<software name="disk30">
+		<description>disk30</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="305920">
 				<rom name="disk30.dsk" size="305920" crc="35f26a95" sha1="4d5ddb190aeace9a8292114591ac8559044121aa" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop31" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK31:		Written label: Z80
+				Disk Type: FDOS
+				Bootable: NO
+
+	SIO.ASC		SIO.RB		SIO.OBJ		DR4.ASC
+	DR4.OBJ		DR4.SYS
+	-->
+	<software name="disk31">
+		<description>disk31</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="305152">
 				<rom name="disk31.dsk" size="305152" crc="7d3ccec0" sha1="e102adb577bdf15a63be6cb3db51785fc8b0c4a3" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop32" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK32:		Written label: dBase II Version 2.4 - Demo Disk - S/N 335007
+				Disk Type: CP/M
+				Bootable: NO
+
+	ISETUP.CMD		DBASE.COM		DBASEOVR.COM	EMAIN.CMD
+	EMP-TERM.CMD	STARTUP.CMD		TICKLE.FRM		TICKLE.NDX
+	TEXT.DBF		APPECARD.FMT	CPRINT.CMD		KEYWORD.NDX
+	CHXINPUT.FMT	CHXDEPOS.FMT	CHXBOOK.MEM		CHECKS.DBF
+	DEPOSITS.DBF	EMP-UPD.FMT		DBASEMSG.TXT	EMPLOYEE.MEM
+	EMP-RPRT.CMD	EMPLOYEE.DBF	EMPSCRN.FMT		EMP-CONS.FRM
+	LABELS.CMD		EMP-ENTR.CMD	EMP-UPD.CMD		CHXMENU.CMD
+	EMP-PTR.FRM		INSTALL.COM		E'BYNMBR.NDX	E'BYNAME.NDX
+	INVMAINT.CMD	INVREAD.CMD		INVRPRT.CMD		INV'CONS.FRM
+	INV'PRTR.FRM	I'BYNMBR.NDX	I'BYDESC.NDX	INVENT.DBF
+	EDITCARD.FMT	IMAIN.CMD		INVQUAN.CMD		NAMES.DBF
+	CREATE.CMD		ESETUP.CMD		DATETEST.HEX	DATER.CMD
+	DATESYS.CMD		SETS.CMD		CMAIN.CMD		DEMO.DSK
+	-->
+	<software name="disk32">
+		<description>disk32</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="376832">
 				<rom name="disk32.dsk" size="376832" crc="2c556489" sha1="1893688e0d4583a827a390336627f5142a8b38d7" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop33" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK33:		Written label: none
+				Disk Type: CP/M
+				Bootable: NO
+			
+	KERTEI.DBF	NAME.NDX	WERBHELF.DBF	JOURNAL.DBF
+	STRASSE.NDX	KUNDEN.DBF	TELEFON.NDX		BSNR.NDX
+	GEB:DAT.NDX	ABSCHL.NDX
+	-->
+	<software name="disk33">
+		<description>disk33</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="376832">
 				<rom name="disk33.dsk" size="376832" crc="5b4bfa30" sha1="5278736efe0f8a58b81790d0cfafdf5405c70737" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop34" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK34:		Written label: WORDSTAR
+				Dist Type: CP/M
+				Bootable: NO
+
+	WS.COM		WSMSGS.OVR	WSOVLY1.OVR
+	-->
+	<software name="disk34">
+		<description>disk34</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="376832">
 				<rom name="disk34.dsk" size="376832" crc="57abc9d4" sha1="b54457ce72578ee34761bdc01cdd53afa65d4abd" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop35" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK35:		Written label: dBase II Version 2.4 - Zip - S/N 335007
+				Disk Type: CP/M
+				Bootable: NO
+
+	ZIPIN.COM	ZIP.COM		ZSCRN.OVL	DGEN.OVL
+	-->
+	<software name="disk35">
+		<description>disk35</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="376320">
 				<rom name="disk35.dsk" size="376320" crc="dca59d15" sha1="cf55a433191ec729dc9254afec803dbeeb735c3e" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop36" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK36:		Written label: none
+				Disk Type: CP/M
+				Bootable: YES - 64k CP/M vers 2.2.2.08
+
+	ZIPIN.COM		PRODERG.BAK		DATESYS.CMD		DBASEOVR.COM
+	ZSCRN.OVL		JOURNAL.FRM		AUSDRUCK.ZIP	AUSDRUCK.CMD
+	WHPROVIS.FRM	AUSDRUCK.ZPR	FILES.COM		WHPROVIS.CMD
+	NEU.CMD			PIP.COM			ZIP.COM			ANREDE.CMD
+	PRODERG.CMD		EINGABE.ZPR		DEL.COM			DBASEMSG.TXT
+	EINGABE.FMT		ADRZETT.CMD		AUSLAUF.CMD		DATUM.MEM
+	INIT.COM		AUSGABE.ZIP		EINGABE.ZIP		AUSGABE.FMT
+	SYS2.CMD		AUSGABE.ZPR		LOESCHEN.CMD	NEUKART.DBF
+	LAUFETIK.CMD	WHSUM.FRM		LAUFETIK.BAK	AUSGABE.CMD
+	TAGJOURN.FRM	SYS.CMD			MENUE7.CMD		ETIKETTE.CMD
+	LOETEST.CMD		WERBHELF.CMD	DGEN.OVL		DATETEST.HEX
+	ABRUF.CMD		PFLEGE.CMD		HANDDRUC.CMD	EINAENDE.CMD
+	KUENDIGU.CMD	EINGABE.CMD		AENDERN.CMD
+	-->
+	<software name="disk36">
+		<description>disk36</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="376832">
 				<rom name="disk36.dsk" size="376832" crc="4405d624" sha1="390118fb4f4916cf1d51bf1c82f6043c30544739" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop37" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK37:		Written label: none
+				Disk Type: DISK BASIC
+				Bootable: ???
+				NOTE: Various errors on disk
+
+	OBJ*.Utility			OBJ*.Filing CMT		BTX*.AUTO RUN		BTX.MUSIC
+	BTX.Biorhythm			BTX.8 Queen			BTX.Tri Function	BTX.Graphic pattern
+	BTX.Die Fraktur			BTX.3D-PLOT			BTX.DATENPROZESS	BTX.Explanation-D.P
+	BTX.**String-Machine	BSD.Variable Data	BSD.DATA-DEC2		BTX.Fancy clock
+	BSD.SPEKTRUM			BRD. Gesp. File		BSD.ELEKTOR			BSD.SPIELE G7000
+	BTX.INTERFACE-TEST		BSD.PRAKTIKER		BTX.X-NUMMERN		BSD.ASTERIX
+	BTX.FILEREPARATUR		BSD.KARTEN			BSD.CHIP			BSD.MODELLEISENBAHN
+	-->
+	<software name="disk37">
+		<description>disk37</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="324608">
-				<rom name="disk37.dsk" size="324608" crc="5cc54fb5" sha1="705b3216b12cacbe437dfa5c8a41610b0117a7ac" offset="0" />
+				<rom name="disk37.dsk" size="324608" crc="5cc54fb5" sha1="705b3216b12cacbe437dfa5c8a41610b0117a7ac" offset="0" status="baddump" />
 			</dataarea>
 		</part>
-		<part name="flop38" interface="floppy_5_25">
+	</software>
+
+	<!--
+	DISK38:		Written label: none
+				Disk Type: DISK BASIC
+				Bootable: YES - MONITOR SB-1510 - BASIC SB-6510
+			
+	OBJ*.Filing CMT			OBJ*.Utility		BTX*.AUTO RUN		BTX.MUSIC
+	BTX.Biorhythm			BTX.8 Queen			BTX.Tri Function	BTX.Graphic pattern
+	BTX.Die Fraktur			BTX.3D-PLOT			BTX.Data Processing	BTX.Explanation-D.P
+	BTX.**String-Machine	BSD.Variable Data	BSD.DATA-DEC2		BTX.Fancy clock
+	BRD.Storage File		BTX.STILLE NACHT
+	-->
+	<software name="disk38">
+		<description>disk38</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="322816">
 				<rom name="disk38.dsk" size="322816" crc="81635120" sha1="3236e51face6a5fff6b76c44da4554db5d6324fe" offset="0" />
 			</dataarea>
