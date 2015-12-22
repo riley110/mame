@@ -4,16 +4,16 @@
 <softwarelist name="mz80b_flop" description="Sharp MZ-80B floppy disks">
 
 	<!--
-	DISK 01:	Written label: CP/M / dBase
-				Disk Type: CP/M
-				Bootable: YES - 64k CP/M vers 2.2.2.08
+	DISK 01:    Written label: CP/M / dBase
+	            Disk Type: CP/M
+	            Bootable: YES - 64k CP/M vers 2.2.2.08
 
-	ZIPIN.COM	MENUE.CMD	DBASE.COM		DBASEOVR.COM
-	ZSCRN.OVL	BACKUP.COM	STARTUP.CMD		DATESYS.CMD
-	WS.COM		FILES.COM	PIP.COM			ZIP.COM
-	DGEN.OVL	WSOVLY1.OVR	DEL.COM			DBASEMSG.TXT
-	WSMSGS.OVR	LABELS.CMD	INSTALL.COM		EDITCARD.FMT
-	CREATE.CMD	ESETUP.CMD	DATETEST.HEX	SETS.CMD
+	ZIPIN.COM   MENUE.CMD   DBASE.COM       DBASEOVR.COM
+	ZSCRN.OVL   BACKUP.COM  STARTUP.CMD     DATESYS.CMD
+	WS.COM      FILES.COM   PIP.COM         ZIP.COM
+	DGEN.OVL    WSOVLY1.OVR DEL.COM         DBASEMSG.TXT
+	WSMSGS.OVR  LABELS.CMD  INSTALL.COM     EDITCARD.FMT
+	CREATE.CMD  ESETUP.CMD  DATETEST.HEX    SETS.CMD
 	-->
 	<software name="disk01">
 		<description>disk01</description>
@@ -28,11 +28,11 @@
 	</software>
 
 	<!--
-	DISK 02:	Written label: ZIP
-				Disk Type: CP/M
-				Bootable: NO
-		
-	ZIPIN.COM	ZIP.COM		ZSCRN.OVL	DGEN.OVL
+	DISK 02:    Written label: ZIP
+	            Disk Type: CP/M
+	            Bootable: NO
+
+	ZIPIN.COM   ZIP.COM     ZSCRN.OVL   DGEN.OVL
 	-->
 	<software name="disk02">
 		<description>disk02</description>
@@ -47,23 +47,23 @@
 	</software>
 
 	<!--
-	DISK 03:	Written label: DEMO
-				Disk Type: CP/M
-				Bootable: NO
-			
-	ISETUP.CMD		DBASE.COM		DBASEOVR.COM	EMAIN.CMD
-	EMP-TERM.CMD	STARTUP.CMD		TICKLE.FRM		TICKLE.NDX
-	TEXT.DBF		APPECARD.FMT	CPRINT.CMD		KEYWORD.NDX
-	CHXINPUT.FMT	CHXDEPOS.FMT	CHXBOOK.MEM		CHECKS.DBF
-	DEPOSITS.DBF	EMP-UPD.FMT		DBASEMSG.TXT	EMPLOYEE.MEM
-	EMP-RPRT.CMD	EMPLOYEE.DBF	EMPSCRN.FMT		EMP-CONS.FRM
-	LABELS.CMD		EMP-ENTR.CMD	EMP-UPD.CMD		CHXMENU.CMD
-	EMP-PTR.FRM		INSTALL.COM		E'BYNMBR.NDX	E'BYNAME.NDX
-	INVMAINT.CMD	INVREAD.CMD		INVRPRT.CMD		INV'CONS.FRM
-	INV'PRTR.FRM	I'BYNMBR.NDX	I'BYDESC.NDX	INVENT.DBF
-	EDITCARD.FMT	IMAIN.CMD		INVQUAN.CMD		NAMES.DBF
-	CREATE.CMD		ESETUP.CMD		DATETEST.HEX	DATER.CMD
-	DATESYS.CMD		SETS.CMD		CMAIN.CMD		DEMO.DSK
+	DISK 03:    Written label: DEMO
+	            Disk Type: CP/M
+	            Bootable: NO
+
+	ISETUP.CMD      DBASE.COM       DBASEOVR.COM    EMAIN.CMD
+	EMP-TERM.CMD    STARTUP.CMD     TICKLE.FRM      TICKLE.NDX
+	TEXT.DBF        APPECARD.FMT    CPRINT.CMD      KEYWORD.NDX
+	CHXINPUT.FMT    CHXDEPOS.FMT    CHXBOOK.MEM     CHECKS.DBF
+	DEPOSITS.DBF    EMP-UPD.FMT     DBASEMSG.TXT    EMPLOYEE.MEM
+	EMP-RPRT.CMD    EMPLOYEE.DBF    EMPSCRN.FMT     EMP-CONS.FRM
+	LABELS.CMD      EMP-ENTR.CMD    EMP-UPD.CMD     CHXMENU.CMD
+	EMP-PTR.FRM     INSTALL.COM     E'BYNMBR.NDX    E'BYNAME.NDX
+	INVMAINT.CMD    INVREAD.CMD     INVRPRT.CMD     INV'CONS.FRM
+	INV'PRTR.FRM    I'BYNMBR.NDX    I'BYDESC.NDX    INVENT.DBF
+	EDITCARD.FMT    IMAIN.CMD       INVQUAN.CMD     NAMES.DBF
+	CREATE.CMD      ESETUP.CMD      DATETEST.HEX    DATER.CMD
+	DATESYS.CMD     SETS.CMD        CMAIN.CMD       DEMO.DSK
 	-->
 	<software name="disk03">
 		<description>disk03</description>
@@ -78,18 +78,18 @@
 	</software>
 
 	<!--
-	DISK 04:	Written label: CP/M 80 2.25
-				Disk Type: CP/M
-				Bootable: YES - CP/M vers 2.2.2.08
-			
-	FILES.COM	XSUB.COM	ED.COM		ASM.COM
-	DDT.COM		LOAD.COM	STAT.COM	DUMP.COM
-	DUMP.ASM	SYSGEN.COM	BACKUP.COM	BOOT.COM
-	CMT.COM		CONSOLE.COM	CONFIG.COM	COPY.COM
-	DEL.COM		EJECT.COM	BASCOM.COM	SUBMIT.COM
-	INIT.COM	IODEFS.ASM	TIME.COM	BASIC80.COM
-	FORMAT.COM	LBO.COM		CRUN2.COM	CBAS2.COM
-	XREF.COM	BASLIB.REL	FORLIB.REL	MOVCPM.COM
+	DISK 04:    Written label: CP/M 80 2.25
+	            Disk Type: CP/M
+	            Bootable: YES - CP/M vers 2.2.2.08
+
+	FILES.COM   XSUB.COM    ED.COM      ASM.COM
+	DDT.COM     LOAD.COM    STAT.COM    DUMP.COM
+	DUMP.ASM    SYSGEN.COM  BACKUP.COM  BOOT.COM
+	CMT.COM     CONSOLE.COM CONFIG.COM  COPY.COM
+	DEL.COM     EJECT.COM   BASCOM.COM  SUBMIT.COM
+	INIT.COM    IODEFS.ASM  TIME.COM    BASIC80.COM
+	FORMAT.COM  LBO.COM     CRUN2.COM   CBAS2.COM
+	XREF.COM    BASLIB.REL  FORLIB.REL  MOVCPM.COM
 	PIP.COM
 	-->
 	<software name="disk04">
@@ -105,18 +105,18 @@
 	</software>
 
 	<!--
-	DISK 05:	Written label: none
-				Disk Type: CP/M
-				Bootable: YES - CP/M vers 2.2.2.08
-			
-	FILES.COM	XSUB.COM	ED.COM		ASM.COM
-	DDT.COM		LOAD.COM	STAT.COM	DUMP.COM
-	DUMP.ASM	SYSGEN.COM	BACKUP.COM	BOOT.COM
-	CMT.COM		CONSOLE.COM	CONFIG.COM	COPY.COM
-	DEL.COM		EJECT.COM	BASCOM.COM	SUBMIT.COM
-	INIT.COM	IODEFS.ASM	TIME.COM	BASIC80.COM
-	FORMAT.COM	LBO.COM		CRUN2.COM	CBAS2.COM
-	XREF.COM	BASLIB.REL	FORLIB.REL	MOVCPM.COM
+	DISK 05:    Written label: none
+	            Disk Type: CP/M
+	            Bootable: YES - CP/M vers 2.2.2.08
+
+	FILES.COM   XSUB.COM    ED.COM      ASM.COM
+	DDT.COM     LOAD.COM    STAT.COM    DUMP.COM
+	DUMP.ASM    SYSGEN.COM  BACKUP.COM  BOOT.COM
+	CMT.COM     CONSOLE.COM CONFIG.COM  COPY.COM
+	DEL.COM     EJECT.COM   BASCOM.COM  SUBMIT.COM
+	INIT.COM    IODEFS.ASM  TIME.COM    BASIC80.COM
+	FORMAT.COM  LBO.COM     CRUN2.COM   CBAS2.COM
+	XREF.COM    BASLIB.REL  FORLIB.REL  MOVCPM.COM
 	PIP.COM
 	-->
 	<software name="disk05">
@@ -132,25 +132,25 @@
 	</software>
 
 	<!--
-	DISK 06:	Written label: none
-				Disk Type: CP/M
-				Bootable: YES - 64k CP/M vers 2.2.2.08
-			
-	MOVCPM.BAK	PIP.COM		XSUB.COM	ED.COM
-	ASM.COM		DDT.COM		LOAD.COM	STAT.COM
-	DUMP.COM	DUMP.ASM	SYSGEN.COM	BACKUP.COM
-	BOOT.COM	CMT.COM		CONSOLE.COM	CONFIG.COM
-	COPY.COM	DEL.COM		EJECT.COM	FILES.COM
-	FORMAT.COM	INIT.COM	IODEFS.ASM	TIME.COM
-	SIO.COM		.PRN		.HEX		FACIT
-	TX.COM		FACIT1		FACIT2		FACIT3
-	FACIT4		FACIT5		w.BAS		quagl.BAS
-	MX.COM		f.BAS		F.PRN		F.HEX
-	test.BAS	F.COM		CURSOR		KURSOR.COM
-	M1.COM		TX1.COM		TX2.COM		MBASIC.COM
-	CURSOR.PRN	SIO.PRN		SIO.HEX		SIO
-	CURSOR.HEX	CURSOR.BAK	SUBMIT.COM	CURSOR.COM
-	MOVCPM.COM	FACIT4		F.BAK		F
+	DISK 06:    Written label: none
+	            Disk Type: CP/M
+	            Bootable: YES - 64k CP/M vers 2.2.2.08
+
+	MOVCPM.BAK  PIP.COM     XSUB.COM    ED.COM
+	ASM.COM     DDT.COM     LOAD.COM    STAT.COM
+	DUMP.COM    DUMP.ASM    SYSGEN.COM  BACKUP.COM
+	BOOT.COM    CMT.COM     CONSOLE.COM CONFIG.COM
+	COPY.COM    DEL.COM     EJECT.COM   FILES.COM
+	FORMAT.COM  INIT.COM    IODEFS.ASM  TIME.COM
+	SIO.COM     .PRN        .HEX        FACIT
+	TX.COM      FACIT1      FACIT2      FACIT3
+	FACIT4      FACIT5      w.BAS       quagl.BAS
+	MX.COM      f.BAS       F.PRN       F.HEX
+	test.BAS    F.COM       CURSOR      KURSOR.COM
+	M1.COM      TX1.COM     TX2.COM     MBASIC.COM
+	CURSOR.PRN  SIO.PRN     SIO.HEX     SIO
+	CURSOR.HEX  CURSOR.BAK  SUBMIT.COM  CURSOR.COM
+	MOVCPM.COM  FACIT4      F.BAK       F
 	-->
 	<software name="disk06">
 		<description>disk06</description>
@@ -165,13 +165,13 @@
 	</software>
 
 	<!--
-	DISK07:		Written label: BACKUP AK
-				Disk Type: CP/M
-				Bootable: YES - 64k CP/M vers 2.2.2.08
-			
-	ULHPRAT4.LST	CSAHPRAT.LST	CSANOV84.LST	UL-DAT.LST
-	ULHPRAT2.LST	ULHPRAT3.LST	ULNOV84.LST		ULHPRAT1.LST
-	CSAHPRA2.LST	CSAHPRA1.LST	CSAHPRA3.LST
+	DISK07:     Written label: BACKUP AK
+	            Disk Type: CP/M
+	            Bootable: YES - 64k CP/M vers 2.2.2.08
+
+	ULHPRAT4.LST    CSAHPRAT.LST    CSANOV84.LST    UL-DAT.LST
+	ULHPRAT2.LST    ULHPRAT3.LST    ULNOV84.LST     ULHPRAT1.LST
+	CSAHPRA2.LST    CSAHPRA1.LST    CSAHPRA3.LST
 	-->
 	<software name="disk07">
 		<description>disk07</description>
@@ -186,16 +186,16 @@
 	</software>
 
 	<!--
-	DISK08:		Written label: PR25 U
-				Disk Type: CP/M
-				Bootable: NO
-			
-	PR85.U3		1			PR85.DS1	PR85.U1
-	100.BAK		PR85.HI2	MUSTER		PR85.DK1
-	PR85.U2		10			PR85.UK2	D256
-	PR85.UK3	PR85.UK1	D189.BAK	D189
-	MUSTER.BAK	PR85.HI1	PR85.KG1	D256-E
-	PR85.BAK	100
+	DISK08:     Written label: PR25 U
+	            Disk Type: CP/M
+	            Bootable: NO
+
+	PR85.U3     1           PR85.DS1    PR85.U1
+	100.BAK     PR85.HI2    MUSTER      PR85.DK1
+	PR85.U2     10          PR85.UK2    D256
+	PR85.UK3    PR85.UK1    D189.BAK    D189
+	MUSTER.BAK  PR85.HI1    PR85.KG1    D256-E
+	PR85.BAK    100
 	-->
 	<software name="disk08">
 		<description>disk08</description>
@@ -210,18 +210,18 @@
 	</software>
 
 	<!--
-	DISK09:		Written label: WS
-				Disk Type: CP/M
-				Bootable: YES - 64k CP/M vers 2.2.2.08
-			
-	MOVCPM.COM	PIP.COM		SUBMIT.COM	XSUB.COM
-	ED.COM		ASM.COM		DDT.COM		LOAD.COM
-	STAT.COM	DUMP.COM	DUMP.ASM	SYSGEN.COM
-	BACKUP.COM	BOOT.COM	CMT.COM		CONSOLE.COM
-	CONFIG.COM	COPY.COM	DEL.COM		EJECT.COM
-	FILES.COM	FORMAT.COM	INIT.COM	IODEFS.ASM
-	TIME.COM	WS.COM		.PRN		.HEX
-	WSMSGS.OVR	WSOVLY1.OVR
+	DISK09:     Written label: WS
+	            Disk Type: CP/M
+	            Bootable: YES - 64k CP/M vers 2.2.2.08
+
+	MOVCPM.COM  PIP.COM     SUBMIT.COM  XSUB.COM
+	ED.COM      ASM.COM     DDT.COM     LOAD.COM
+	STAT.COM    DUMP.COM    DUMP.ASM    SYSGEN.COM
+	BACKUP.COM  BOOT.COM    CMT.COM     CONSOLE.COM
+	CONFIG.COM  COPY.COM    DEL.COM     EJECT.COM
+	FILES.COM   FORMAT.COM  INIT.COM    IODEFS.ASM
+	TIME.COM    WS.COM      .PRN        .HEX
+	WSMSGS.OVR  WSOVLY1.OVR
 	-->
 	<software name="disk09">
 		<description>disk09</description>
@@ -236,17 +236,17 @@
 	</software>
 
 	<!--
-	DISK10:		Written label: YD (IMO, WEDA) - PHILIPS
-				Disk Type: CP/M
-				Bootable: NO
-			
-	YD.ENG		YD			BRIEF.PH	YD.IMO
-	YD4.E		WEDA.YD		IMO1.LST	PHILIPS.2
-	YD2			GEHAEUSE.YD	T3SEIT2.LST	T3SEIT3.LST
-	0			YD3			YD.INT		YD2.E
-	YD1			WERTE.660	YD3.E		YD1.E
-	YD4			1			PHILIPS.BAK	PHILIPS.1
-	IMO2.LST	BRIEF.BAK
+	DISK10:     Written label: YD (IMO, WEDA) - PHILIPS
+	            Disk Type: CP/M
+	            Bootable: NO
+
+	YD.ENG      YD          BRIEF.PH    YD.IMO
+	YD4.E       WEDA.YD     IMO1.LST    PHILIPS.2
+	YD2         GEHAEUSE.YD T3SEIT2.LST T3SEIT3.LST
+	0           YD3         YD.INT      YD2.E
+	YD1         WERTE.660   YD3.E       YD1.E
+	YD4         1           PHILIPS.BAK PHILIPS.1
+	IMO2.LST    BRIEF.BAK
 	-->
 	<software name="disk10">
 		<description>disk10</description>
@@ -261,17 +261,17 @@
 	</software>
 
 	<!--
-	DISK11:		Written label: PR85
-				Disk Type: CP/M
-				Bootable: NO
-			
-	PREISE2.VEG	PREISE6.VEG	GLEICHSP.E	PREISE7.VEG
-	K.7A		PREISE5.VEG	K.4			PREISE8.VEG
-	PREISE1.VEG	K.11		PREISE4.VEG	4
-	K.2			K.5			PREISE3.VEG	A
-	ZUBEHIR		K.3			K.6			LEIST.SP
-	K.10		K.9			K.7			GLEICHSP.LST
-	K.8			8			10			9
+	DISK11:     Written label: PR85
+	            Disk Type: CP/M
+	            Bootable: NO
+
+	PREISE2.VEG PREISE6.VEG GLEICHSP.E  PREISE7.VEG
+	K.7A        PREISE5.VEG K.4         PREISE8.VEG
+	PREISE1.VEG K.11        PREISE4.VEG 4
+	K.2         K.5         PREISE3.VEG A
+	ZUBEHIR     K.3         K.6         LEIST.SP
+	K.10        K.9         K.7         GLEICHSP.LST
+	K.8         8           10          9
 	2
 	-->
 	<software name="disk11">
@@ -287,22 +287,22 @@
 	</software>
 
 	<!--
-	DISK12:		Written label: VEG
-				Disk Type: CP/M
-				Bootable: NO
-			
-	ERG-PRE,K2	PREISE2.VEG	K.4A		PREISE1.VEG
-	K2.3C		K.2F		PREISE5.VEG	K.3A
-	PREISE4.VEG	PREISE6.VEG	K2.BAK		PREISE8.VEG
-	PR85.BAK	PR85.T1		PREISE3.VEG	PREISE7.VEG
-	K2.2A		K2.2D		K2.3A		K2.3B
-	K2.21		K2.2C		K2.2B		K2.2F
-	K.3C		K.5B		K.6A		K.2A
-	K.7A		K.3B		K.7C		K.5D
-	K.3F		K.3D		K.BAK		K.7B
-	K.2B		K.4C		K.6B		K.5A
-	K.2D		K.5C		K.4D		K.2E
-	K.4B		K.2C
+	DISK12:     Written label: VEG
+	            Disk Type: CP/M
+	            Bootable: NO
+
+	ERG-PRE,K2  PREISE2.VEG K.4A        PREISE1.VEG
+	K2.3C       K.2F        PREISE5.VEG K.3A
+	PREISE4.VEG PREISE6.VEG K2.BAK      PREISE8.VEG
+	PR85.BAK    PR85.T1     PREISE3.VEG PREISE7.VEG
+	K2.2A       K2.2D       K2.3A       K2.3B
+	K2.21       K2.2C       K2.2B       K2.2F
+	K.3C        K.5B        K.6A        K.2A
+	K.7A        K.3B        K.7C        K.5D
+	K.3F        K.3D        K.BAK       K.7B
+	K.2B        K.4C        K.6B        K.5A
+	K.2D        K.5C        K.4D        K.2E
+	K.4B        K.2C
 	-->
 	<software name="disk12">
 		<description>disk12</description>
@@ -317,13 +317,13 @@
 	</software>
 
 	<!--
-	DISK13:		Written label: WORKDISK AK
-				Disk Type: CP/M
-				Bootable: NO
-			
-	ULHPRAT4.LST	CSAHPRAT.LST	CSANOV84.LST	UL-DAT.LST
-	ULHPRAT3.LST	ULNOV84.LST		USSRTDAT.LST	CSAHPRA2.LST
-	CSAHPRA1.LST	CSAHPRA3.LST	ULHPRAT1.LST	ULHPRAT2.LST
+	DISK13:     Written label: WORKDISK AK
+	            Disk Type: CP/M
+	            Bootable: NO
+
+	ULHPRAT4.LST    CSAHPRAT.LST    CSANOV84.LST    UL-DAT.LST
+	ULHPRAT3.LST    ULNOV84.LST     USSRTDAT.LST    CSAHPRA2.LST
+	CSAHPRA1.LST    CSAHPRA3.LST    ULHPRAT1.LST    ULHPRAT2.LST
 	-->
 	<software name="disk13">
 		<description>disk13</description>
@@ -338,17 +338,17 @@
 	</software>
 
 	<!--
-	DISK14:		Written label: CP/M
-				Disk Type: CP/M
-				Bootable: YES - 64k CP/M vers 2.2.2.08
-			
-	MOVCPM.COM	PIP.COM		SUBMIT.COM	XSUB.COM
-	ED.COM		ASM.COM		DDT.COM		LOAD.COM
-	STAT.COM	DUMP.COM	DUMP.ASM	SYSGEN.COM
-	BACKUP.COM	BOOT.COM	CMT.COM		CONSOLE.COM
-	CONFIG.COM	COPY.COM	DEL.COM		EJECT.COM
-	FILES.COM	FORMAT.COM	INIT.COM	IODEFS.ASM
-	TIME.COM	.PRN		.HEX
+	DISK14:     Written label: CP/M
+	            Disk Type: CP/M
+	            Bootable: YES - 64k CP/M vers 2.2.2.08
+
+	MOVCPM.COM  PIP.COM     SUBMIT.COM  XSUB.COM
+	ED.COM      ASM.COM     DDT.COM     LOAD.COM
+	STAT.COM    DUMP.COM    DUMP.ASM    SYSGEN.COM
+	BACKUP.COM  BOOT.COM    CMT.COM     CONSOLE.COM
+	CONFIG.COM  COPY.COM    DEL.COM     EJECT.COM
+	FILES.COM   FORMAT.COM  INIT.COM    IODEFS.ASM
+	TIME.COM    .PRN        .HEX
 	-->
 	<software name="disk14">
 		<description>disk14</description>
@@ -363,13 +363,13 @@
 	</software>
 
 	<!--
-	DISK15:		Written label: B4
-				Disk Type: CP/M
-				Bootable: YES - 64k CP/M vers 2.2.2.08
-			
-	100			B4E.07		B4E.01		B4E.03
-	LISTE.B4	B4E.04		B4E.BAK		B4E.05
-	B4E.02		B4E.06		B4.GEN		SEV-B4.GEN
+	DISK15:     Written label: B4
+	            Disk Type: CP/M
+	            Bootable: YES - 64k CP/M vers 2.2.2.08
+
+	100         B4E.07      B4E.01      B4E.03
+	LISTE.B4    B4E.04      B4E.BAK     B4E.05
+	B4E.02      B4E.06      B4.GEN      SEV-B4.GEN
 	-->
 	<software name="disk15">
 		<description>disk15</description>
@@ -384,11 +384,11 @@
 	</software>
 
 	<!--
-	DISK16:		Written label: unreadable
-				Disk Type: CP/M
-				Bootable: NO
+	DISK16:     Written label: unreadable
+	            Disk Type: CP/M
+	            Bootable: NO
 
-	B4.GEN			SEV-B4.GEN	LISTE.B4	ENDSCHAL.BAK
+	B4.GEN          SEV-B4.GEN  LISTE.B4    ENDSCHAL.BAK
 	ENDSCHAL.BUJ
 	-->
 	<software name="disk16">
@@ -404,16 +404,16 @@
 	</software>
 
 	<!--
-	DISK17:		Written label: WORDSTAR TEXT
-				Disk Type: CP/M
-				Bootable: NO
-			
-	PIP.COM			VODKA			TEST.1		S2441
-	CONNECFS.1		PROBE.BAK		URLAUB.85	VODKA.BAK
-	CONNECFS.BAK	TEST.BAK		DS1			SCHEMATA
-	STK.LA4			ARGUM.1			URLAUB.84	STK.LA5
-	PLO1			SCHILDER.PLO	SPK6.DC		SPK20.DC
-	SPK32.DC		SPK23.DC		SPK85.DC	SPK110.DC
+	DISK17:     Written label: WORDSTAR TEXT
+	            Disk Type: CP/M
+	            Bootable: NO
+
+	PIP.COM         VODKA           TEST.1      S2441
+	CONNECFS.1      PROBE.BAK       URLAUB.85   VODKA.BAK
+	CONNECFS.BAK    TEST.BAK        DS1         SCHEMATA
+	STK.LA4         ARGUM.1         URLAUB.84   STK.LA5
+	PLO1            SCHILDER.PLO    SPK6.DC     SPK20.DC
+	SPK32.DC        SPK23.DC        SPK85.DC    SPK110.DC
 	-->
 	<software name="disk17">
 		<description>disk17</description>
@@ -428,16 +428,16 @@
 	</software>
 
 	<!--
-	DISK18:		Written label: LISTE
-				Disk Type: CP/M
-				Bootable: NO
+	DISK18:     Written label: LISTE
+	            Disk Type: CP/M
+	            Bootable: NO
 
-	T3SEIT5.LST	T3SEIT2.LST	EINTEI.LST		T3SETI4.LST
-	TEIL2.LST	TEIL3.LST	TEIL1.LST		T2SEIT9.LST
-	T2SEIT6.LST	T3SEIT3.LST	T1SEIT4.LST		TEXT
-	T1SEIT2.LST	T2SEIT8.LST	T2SEIT10.LST	T2SEIT7.LST
-	T2SEIT5.LST	T1SEIT3.LST	T2SEIT2.LST		T2SEIT3.LST
-	T2SEIT4.LST	U1.LST		U2.LST			T2SEIT11.LST
+	T3SEIT5.LST T3SEIT2.LST EINTEI.LST      T3SETI4.LST
+	TEIL2.LST   TEIL3.LST   TEIL1.LST       T2SEIT9.LST
+	T2SEIT6.LST T3SEIT3.LST T1SEIT4.LST     TEXT
+	T1SEIT2.LST T2SEIT8.LST T2SEIT10.LST    T2SEIT7.LST
+	T2SEIT5.LST T1SEIT3.LST T2SEIT2.LST     T2SEIT3.LST
+	T2SEIT4.LST U1.LST      U2.LST          T2SEIT11.LST
 	-->
 	<software name="disk18">
 		<description>disk18</description>
@@ -452,12 +452,12 @@
 	</software>
 
 	<!--
-	DISK19:		Written label: DATEN IEC,CSA,UL
-				Disk Type: CP/M
-				Bootable: NO
-			
-	CSAJAN84.LST	ULJAN84.LST	CSAJUL84.LST	IECFEB84.LST
-	CSAHPRAT.LST	ULJUL84.LST	ULHPRAT.LST
+	DISK19:     Written label: DATEN IEC,CSA,UL
+	            Disk Type: CP/M
+	            Bootable: NO
+
+	CSAJAN84.LST    ULJAN84.LST CSAJUL84.LST    IECFEB84.LST
+	CSAHPRAT.LST    ULJUL84.LST ULHPRAT.LST
 	-->
 	<software name="disk19">
 		<description>disk19</description>
@@ -472,18 +472,18 @@
 	</software>
 
 	<!--
-	DISK20:		Written label: CPM/WORDSTAR/MBASIC
-				Disk Type: CP/M
-				Bootable: YES - 64k CP/M vers 2.2.2.08
-			
-	MOVCPM.COM	PIP.COM		SUBMIT.COM	XSUB.COM
-	ED.COM		ASM.COM		DDT.COM		LOAD.COM
-	STAT.COM	DUMP.COM	DUMP.ASM	SYSGEN.COM
-	BACKUP.COM	BOOT.COM	CMT.COM		CONSOLE.COM
-	CONFIG.COM	COPY.COM	DEL.COM		EJECT.COM
-	FILES.COM	FORMAT.COM	INIT.COM	IODEFS.ASM
-	TIME.COM	WS.COM		.PRN		.HEX
-	WSMSGS.OVR	WSOVLY1.OVR	MBASIC.COM	.COM
+	DISK20:     Written label: CPM/WORDSTAR/MBASIC
+	            Disk Type: CP/M
+	            Bootable: YES - 64k CP/M vers 2.2.2.08
+
+	MOVCPM.COM  PIP.COM     SUBMIT.COM  XSUB.COM
+	ED.COM      ASM.COM     DDT.COM     LOAD.COM
+	STAT.COM    DUMP.COM    DUMP.ASM    SYSGEN.COM
+	BACKUP.COM  BOOT.COM    CMT.COM     CONSOLE.COM
+	CONFIG.COM  COPY.COM    DEL.COM     EJECT.COM
+	FILES.COM   FORMAT.COM  INIT.COM    IODEFS.ASM
+	TIME.COM    WS.COM      .PRN        .HEX
+	WSMSGS.OVR  WSOVLY1.OVR MBASIC.COM  .COM
 	-->
 	<software name="disk20">
 		<description>disk20</description>
@@ -498,23 +498,23 @@
 	</software>
 
 	<!--
-	DISK21:		Written label: dBase II Version 2.4 - S/N 335007
-				Disk Type: CP/M
-				Bootable: NO
+	DISK21:     Written label: dBase II Version 2.4 - S/N 335007
+	            Disk Type: CP/M
+	            Bootable: NO
 
-	ISETUP.CMD		DBASE.COM		DBASEOVR.COM	EMAIN.CMD
-	EMP-TERM.CMD	STARTUP.CMD		TICKLE.FRM		TICKLE.NDX
-	TEXT.DBF		APPECARD.FMT	CPRINT.CMD		KEYWORD.NDX
-	CHXINPUT.FMT	CHXDEPOS.FMT	CHXBOOK.MEM		CHECKS.DBF
-	DEPOSITS.DBF	EMP-UPD.FMT		DBASEMSG.TXT	EMPLOYEE.MEM
-	EMP-RPRT.CMD	EMPLOYEE.DBF	EMPSCRN.FMT		EMP-CONS.FRM
-	LABELS.CMD		EMP-ENTR.CMD	EMP-UPD.CMD		CHXMENU.CMD
-	EMP-PTR.FRM		INSTALL.COM		E'BYNMBR.NDX	E'BYNAME.NDX
-	INVMAINT.CMD	INVREAD.CMD		INVRPRT.CMD		INV'CONS.FRM
-	INV'PRTR.FRM	I'BYNMBR.NDX	I'BYDESC.NDX	INVENT.DBF
-	EDITCARD.FMT	IMAIN.CMD		INVQUAN.CMD		NAMES.DBF
-	CREATE.CMD		ESETUP.CMD		DATETEST.HEX	DATER.CMD
-	DATESYS.CMD		SETS.CMD		CMAIN.CMD
+	ISETUP.CMD      DBASE.COM       DBASEOVR.COM    EMAIN.CMD
+	EMP-TERM.CMD    STARTUP.CMD     TICKLE.FRM      TICKLE.NDX
+	TEXT.DBF        APPECARD.FMT    CPRINT.CMD      KEYWORD.NDX
+	CHXINPUT.FMT    CHXDEPOS.FMT    CHXBOOK.MEM     CHECKS.DBF
+	DEPOSITS.DBF    EMP-UPD.FMT     DBASEMSG.TXT    EMPLOYEE.MEM
+	EMP-RPRT.CMD    EMPLOYEE.DBF    EMPSCRN.FMT     EMP-CONS.FRM
+	LABELS.CMD      EMP-ENTR.CMD    EMP-UPD.CMD     CHXMENU.CMD
+	EMP-PTR.FRM     INSTALL.COM     E'BYNMBR.NDX    E'BYNAME.NDX
+	INVMAINT.CMD    INVREAD.CMD     INVRPRT.CMD     INV'CONS.FRM
+	INV'PRTR.FRM    I'BYNMBR.NDX    I'BYDESC.NDX    INVENT.DBF
+	EDITCARD.FMT    IMAIN.CMD       INVQUAN.CMD     NAMES.DBF
+	CREATE.CMD      ESETUP.CMD      DATETEST.HEX    DATER.CMD
+	DATESYS.CMD     SETS.CMD        CMAIN.CMD
 	-->
 	<software name="disk21">
 		<description>disk21</description>
@@ -529,18 +529,18 @@
 	</software>
 
 	<!--
-	DISK22:		Written label: LISTE K2
-				Disk Type: CP/M
-				Bootable: NO
-			
-	T1SEIT3.LST	T2SEIT5.LST		T8SEIT2.BAK	U2.LST
-	SCH.1		T2SEIT1.LST		T2SEIT6.LST	SCH.2
-	T2SEIT7.LST	T2SEIT10.LST	T2SEIT8.LST	T2SEIT9.LST
-	T4SEIT1.BAK	T2SEIT11.LST	T3SEIT1.LST	BEF
-	T1SEIT1.LST	T3SEIT2.LST		T4SEIT1.LST	T1SEIT2.LST
-	T3SEIT3.LST	T1SEIT4.LST		T3SEIT4.LST	T3SEIT5.LST
-	T2SEIT2.LST	T2SEIT3.LST		T2SEIT4.LST	T8SEIT2.LST
-	INHALT.LST	T0SEIT1.LST		U1.LST
+	DISK22:     Written label: LISTE K2
+	            Disk Type: CP/M
+	            Bootable: NO
+
+	T1SEIT3.LST T2SEIT5.LST     T8SEIT2.BAK U2.LST
+	SCH.1       T2SEIT1.LST     T2SEIT6.LST SCH.2
+	T2SEIT7.LST T2SEIT10.LST    T2SEIT8.LST T2SEIT9.LST
+	T4SEIT1.BAK T2SEIT11.LST    T3SEIT1.LST BEF
+	T1SEIT1.LST T3SEIT2.LST     T4SEIT1.LST T1SEIT2.LST
+	T3SEIT3.LST T1SEIT4.LST     T3SEIT4.LST T3SEIT5.LST
+	T2SEIT2.LST T2SEIT3.LST     T2SEIT4.LST T8SEIT2.LST
+	INHALT.LST  T0SEIT1.LST     U1.LST
 	-->
 	<software name="disk22">
 		<description>disk22</description>
@@ -555,14 +555,14 @@
 	</software>
 
 	<!--
-	DISK23:		Written label: DISK BASIC - SB-6511- SUB MASTER
-				Disk Type: DISK BASIC
-				Bootable: YES - MONITOR SB-1510 - BASIC SB-6511
+	DISK23:     Written label: DISK BASIC - SB-6511- SUB MASTER
+	            Disk Type: DISK BASIC
+	            Bootable: YES - MONITOR SB-1510 - BASIC SB-6511
 
-	OBJ*.Utility			OBJ*.Filing CMT		BTX*.AUTO RUN		BTX.MUSIC
-	BTX.Biorhythm			BTX.8 Queen			BTX.Tri Function	BTX.Graphic pattern
-	BTX.Die Fraktur			BTX.3D-PLOT			BTX.Data Processing	BTX.Explanation-D.P
-	BTX.**String-Machine	BSD.Variable Data	BSD.DATA-DEC2		BTX.Fancy clock
+	OBJ*.Utility            OBJ*.Filing CMT     BTX*.AUTO RUN       BTX.MUSIC
+	BTX.Biorhythm           BTX.8 Queen         BTX.Tri Function    BTX.Graphic pattern
+	BTX.Die Fraktur         BTX.3D-PLOT         BTX.Data Processing BTX.Explanation-D.P
+	BTX.**String-Machine    BSD.Variable Data   BSD.DATA-DEC2       BTX.Fancy clock
 	-->
 	<software name="disk23">
 		<description>disk23</description>
@@ -577,23 +577,23 @@
 	</software>
 
 	<!--
-	DISK24:		Written label: none
-				Disk Type: DISK BASIC
-				Bootable: NO
+	DISK24:     Written label: none
+	            Disk Type: DISK BASIC
+	            Bootable: NO
 
-	BTX.GKSU		BTX.SW-B			BTX.BRFT		BTX.OMFT
-	BTX.OMMA		BTX.RAM1			BTX.RAM3		BTX.RAM2
-	BTX.RW-A		BTX.BIOD			BTX.RW-S		BTX.DW-S
-	BTX.IN-T		BTX.INT10			BTX.S5			BTX.S6
-	BTX.GKSU1		BTX.INT9			BTX.INTX		BTX.INTY
-	BTX.INTZ		BTX.INTS			BTX.INTO		BTX.E1
-	BTX.E2			BTX.RELAIS			BTX.SCHUETZ		BTX.R1
-	BTX.R2			BTX.R3				BTX.PREIS		BTX.SW12
-	BTX.GKSU2		BTX.ETRAFO			BTX.RUNDDRAHT	BTX.FLACHDRAHT
-	BTX.MENUE		BTX.KLEMMENPROGRAMM	BTX.M1			BTX.M2
-	BTX.ETRAFO1		BTX.WURZEL			BTX.SW2			BTX.SW20
-	BTX.SW11		BTX.SPULEN DC		BTX.TOTO		BTX.TOTO1
-	BTX.TOTO2		BTX.TOTO3			BTX.DOSPULEN
+	BTX.GKSU        BTX.SW-B            BTX.BRFT        BTX.OMFT
+	BTX.OMMA        BTX.RAM1            BTX.RAM3        BTX.RAM2
+	BTX.RW-A        BTX.BIOD            BTX.RW-S        BTX.DW-S
+	BTX.IN-T        BTX.INT10           BTX.S5          BTX.S6
+	BTX.GKSU1       BTX.INT9            BTX.INTX        BTX.INTY
+	BTX.INTZ        BTX.INTS            BTX.INTO        BTX.E1
+	BTX.E2          BTX.RELAIS          BTX.SCHUETZ     BTX.R1
+	BTX.R2          BTX.R3              BTX.PREIS       BTX.SW12
+	BTX.GKSU2       BTX.ETRAFO          BTX.RUNDDRAHT   BTX.FLACHDRAHT
+	BTX.MENUE       BTX.KLEMMENPROGRAMM BTX.M1          BTX.M2
+	BTX.ETRAFO1     BTX.WURZEL          BTX.SW2         BTX.SW20
+	BTX.SW11        BTX.SPULEN DC       BTX.TOTO        BTX.TOTO1
+	BTX.TOTO2       BTX.TOTO3           BTX.DOSPULEN
 	-->
 	<software name="disk24">
 		<description>disk24</description>
@@ -608,12 +608,12 @@
 	</software>
 
 	<!--
-	DISK25:		Written label: none
-				Disk Type: DISK BASIC
-				Bootable: NO
+	DISK25:     Written label: none
+	            Disk Type: DISK BASIC
+	            Bootable: NO
 
-	BTX.KARTEI		BTX.ANLEGEPROGRAMM	BTX.TELNR		BTX.13DATEN
-	BTX.12DATEN		BTX.11DATEN			BTX.10DATEN
+	BTX.KARTEI      BTX.ANLEGEPROGRAMM  BTX.TELNR       BTX.13DATEN
+	BTX.12DATEN     BTX.11DATEN         BTX.10DATEN
 	-->
 	<software name="disk25">
 		<description>disk25</description>
@@ -628,14 +628,14 @@
 	</software>
 
 	<!--
-	DISK26:		Written label: SUB MASTER SB-6610
-				Disk Type: DISK BASIC
-				Bootable: YES - MONITOR SB-1510 - DOUBLE PRECISION BASIC SB-6610
+	DISK26:     Written label: SUB MASTER SB-6610
+	            Disk Type: DISK BASIC
+	            Bootable: YES - MONITOR SB-1510 - DOUBLE PRECISION BASIC SB-6610
 
-	OBJ*.Filing CMT		OBJ*.Utility		BTX*.AUTO RUN			BTX.8 Queen
-	BTX.Biorhythm		BTX.Graphic pattern	BTX.Die Fraktur			BTX.3D-PLOT
-	BTX.Data Processing	BTX.Explanation-D.P	BTX.**String-Machine	BSD.Variable Data
-	BSD.DATA-DEC2		BTX.FUNCTION
+	OBJ*.Filing CMT     OBJ*.Utility        BTX*.AUTO RUN           BTX.8 Queen
+	BTX.Biorhythm       BTX.Graphic pattern BTX.Die Fraktur         BTX.3D-PLOT
+	BTX.Data Processing BTX.Explanation-D.P BTX.**String-Machine    BSD.Variable Data
+	BSD.DATA-DEC2       BTX.FUNCTION
 	-->
 	<software name="disk26">
 		<description>disk26</description>
@@ -650,19 +650,19 @@
 	</software>
 
 	<!--
-	DISK27:		Written label: none
-				Disk Type: DISK BASIC
-				Bootable: NO
+	DISK27:     Written label: none
+	            Disk Type: DISK BASIC
+	            Bootable: NO
 
-	BTX.GKSU			BTX.SW-B		BTX.BRFT			BTX.OMFT
-	BTX.OMMA			BTX.RAM1		BTX.RAM3			BTX.RAM2
-	BTX.RW-A			BTX.BIOD		BTX.RW-S			BTX.DW-S
-	BTX.IN-T			BTX.KARTEI		BTX.ANLEGEPROGRAMM	BTX.TELNR
-	BTX.GKSU1			BTX.SW12		BTX.GKSU2			BTX.ETRAFO
-	BTX.RUNDDRAHT		BTX.FLACHDRAHT	BTX.MENUE			BTX.KLEMMENPROGRAMM
-	BTX.M1				BTX.M2			BTX.ETRAFO1			BTX.WURZEL
-	BTX.SW2				BTX.SW20		BTX.SW11			BTX.TOTO HGE
-	BTX.TOTO GERHARD	BTX.TOTO ZEMAN
+	BTX.GKSU            BTX.SW-B        BTX.BRFT            BTX.OMFT
+	BTX.OMMA            BTX.RAM1        BTX.RAM3            BTX.RAM2
+	BTX.RW-A            BTX.BIOD        BTX.RW-S            BTX.DW-S
+	BTX.IN-T            BTX.KARTEI      BTX.ANLEGEPROGRAMM  BTX.TELNR
+	BTX.GKSU1           BTX.SW12        BTX.GKSU2           BTX.ETRAFO
+	BTX.RUNDDRAHT       BTX.FLACHDRAHT  BTX.MENUE           BTX.KLEMMENPROGRAMM
+	BTX.M1              BTX.M2          BTX.ETRAFO1         BTX.WURZEL
+	BTX.SW2             BTX.SW20        BTX.SW11            BTX.TOTO HGE
+	BTX.TOTO GERHARD    BTX.TOTO ZEMAN
 	-->
 	<software name="disk27">
 		<description>disk27</description>
@@ -677,11 +677,11 @@
 	</software>
 
 	<!--
-	DISK28:		Written label: BASIC PROGRAMME
-				Disk Type: DISK BASIC
-				Bootable: NO
+	DISK28:     Written label: BASIC PROGRAMME
+	            Disk Type: DISK BASIC
+	            Bootable: NO
 
-	BTX.DOSP1		BTX.DOSPULEN		BTX.DOSP2
+	BTX.DOSP1       BTX.DOSPULEN        BTX.DOSP2
 	-->
 	<software name="disk28">
 		<description>disk28</description>
@@ -696,19 +696,19 @@
 	</software>
 
 	<!--
-	DISK29:		Written label: Z80 MASTER
-				Disk Type: FDOS
-				Bootable: YES - MONITOR SB-1511 - FLOPPY DISK OPERATING SYSTEM SB-7010
+	DISK29:     Written label: Z80 MASTER
+	            Disk Type: FDOS
+	            Bootable: YES - MONITOR SB-1511 - FLOPPY DISK OPERATING SYSTEM SB-7010
 
-	EDIT.SYS	ASM.SYS			LINK.SYS		&DEB&.SYS
-	HCOPY.SYS	PROM.SYS		VERIFY.SYS		CONVERT.SYS
-	LIMIT.SYS	LOAD.SYS		ASSIGN.SYS		STATUS.SYS
-	FORMAT.SYS	COPY.SYS		SIGN.SYS		MLINK.SYS
-	LIBRARY.SYS	RELO.LIB		MONEQU.ASC		MONEQU.LIB
-	FDOSEQU.ASC	FDOSEQU.LIB		START-UP.ASC	LOADAUX.ASC
-	CMT1.ASC	CMT1.OBJ		SIO.OBJ			SIO.ASC
-	PTRP.ASC	PTRP.OBJ		1510EQU.ASC		1510EQU.LIB
-	SB-1511.RB	KEYLABEL.ASC	PLOTTER.ASC		X-YDEMO.ASC
+	EDIT.SYS    ASM.SYS         LINK.SYS        &DEB&.SYS
+	HCOPY.SYS   PROM.SYS        VERIFY.SYS      CONVERT.SYS
+	LIMIT.SYS   LOAD.SYS        ASSIGN.SYS      STATUS.SYS
+	FORMAT.SYS  COPY.SYS        SIGN.SYS        MLINK.SYS
+	LIBRARY.SYS RELO.LIB        MONEQU.ASC      MONEQU.LIB
+	FDOSEQU.ASC FDOSEQU.LIB     START-UP.ASC    LOADAUX.ASC
+	CMT1.ASC    CMT1.OBJ        SIO.OBJ         SIO.ASC
+	PTRP.ASC    PTRP.OBJ        1510EQU.ASC     1510EQU.LIB
+	SB-1511.RB  KEYLABEL.ASC    PLOTTER.ASC     X-YDEMO.ASC
 	BASIC.SYS
 	-->
 	<software name="disk29">
@@ -724,19 +724,19 @@
 	</software>
 
 	<!--
-	DISK30:		Written label: Z80
-				Disk Type: FDOS
-				Bootable: NO
+	DISK30:     Written label: Z80
+	            Disk Type: FDOS
+	            Bootable: NO
 
-	EDIT.SYS	ASM.SYS			LINK.SYS		&DEB&.SYS
-	HCOPY.SYS	PROM.SYS		VERIFY.SYS		CONVERT.SYS
-	LIMIT.SYS	LOAD.SYS		ASSIGN.SYS		STATUS.SYS
-	FORMAT.SYS	COPY.SYS		SIGN.SYS		MLINK.SYS
-	LIBRARY.SYS	RELO.LIB		MONEQU.ASC		MONEQU.LIB
-	FDOSEQU.ASC	FDOSEQU.LIB		START-UP.ASC	LOADAUX.ASC
-	CMT1.ASC	CMT1.OBJ		SIO.OBJ			SIO.ASC
-	PTRP.ASC	PTRP.OBJ		1510EQU.ASC		1510EQU.LIB
-	SB-1511.RB	KEYLABEL.ASC	PLOTTER.ASC		X-YDEMO.ASC
+	EDIT.SYS    ASM.SYS         LINK.SYS        &DEB&.SYS
+	HCOPY.SYS   PROM.SYS        VERIFY.SYS      CONVERT.SYS
+	LIMIT.SYS   LOAD.SYS        ASSIGN.SYS      STATUS.SYS
+	FORMAT.SYS  COPY.SYS        SIGN.SYS        MLINK.SYS
+	LIBRARY.SYS RELO.LIB        MONEQU.ASC      MONEQU.LIB
+	FDOSEQU.ASC FDOSEQU.LIB     START-UP.ASC    LOADAUX.ASC
+	CMT1.ASC    CMT1.OBJ        SIO.OBJ         SIO.ASC
+	PTRP.ASC    PTRP.OBJ        1510EQU.ASC     1510EQU.LIB
+	SB-1511.RB  KEYLABEL.ASC    PLOTTER.ASC     X-YDEMO.ASC
 	BASIC.SYS
 	-->
 	<software name="disk30">
@@ -752,12 +752,12 @@
 	</software>
 
 	<!--
-	DISK31:		Written label: Z80
-				Disk Type: FDOS
-				Bootable: NO
+	DISK31:     Written label: Z80
+	            Disk Type: FDOS
+	            Bootable: NO
 
-	SIO.ASC		SIO.RB		SIO.OBJ		DR4.ASC
-	DR4.OBJ		DR4.SYS
+	SIO.ASC     SIO.RB      SIO.OBJ     DR4.ASC
+	DR4.OBJ     DR4.SYS
 	-->
 	<software name="disk31">
 		<description>disk31</description>
@@ -772,23 +772,23 @@
 	</software>
 
 	<!--
-	DISK32:		Written label: dBase II Version 2.4 - Demo Disk - S/N 335007
-				Disk Type: CP/M
-				Bootable: NO
+	DISK32:     Written label: dBase II Version 2.4 - Demo Disk - S/N 335007
+	            Disk Type: CP/M
+	            Bootable: NO
 
-	ISETUP.CMD		DBASE.COM		DBASEOVR.COM	EMAIN.CMD
-	EMP-TERM.CMD	STARTUP.CMD		TICKLE.FRM		TICKLE.NDX
-	TEXT.DBF		APPECARD.FMT	CPRINT.CMD		KEYWORD.NDX
-	CHXINPUT.FMT	CHXDEPOS.FMT	CHXBOOK.MEM		CHECKS.DBF
-	DEPOSITS.DBF	EMP-UPD.FMT		DBASEMSG.TXT	EMPLOYEE.MEM
-	EMP-RPRT.CMD	EMPLOYEE.DBF	EMPSCRN.FMT		EMP-CONS.FRM
-	LABELS.CMD		EMP-ENTR.CMD	EMP-UPD.CMD		CHXMENU.CMD
-	EMP-PTR.FRM		INSTALL.COM		E'BYNMBR.NDX	E'BYNAME.NDX
-	INVMAINT.CMD	INVREAD.CMD		INVRPRT.CMD		INV'CONS.FRM
-	INV'PRTR.FRM	I'BYNMBR.NDX	I'BYDESC.NDX	INVENT.DBF
-	EDITCARD.FMT	IMAIN.CMD		INVQUAN.CMD		NAMES.DBF
-	CREATE.CMD		ESETUP.CMD		DATETEST.HEX	DATER.CMD
-	DATESYS.CMD		SETS.CMD		CMAIN.CMD		DEMO.DSK
+	ISETUP.CMD      DBASE.COM       DBASEOVR.COM    EMAIN.CMD
+	EMP-TERM.CMD    STARTUP.CMD     TICKLE.FRM      TICKLE.NDX
+	TEXT.DBF        APPECARD.FMT    CPRINT.CMD      KEYWORD.NDX
+	CHXINPUT.FMT    CHXDEPOS.FMT    CHXBOOK.MEM     CHECKS.DBF
+	DEPOSITS.DBF    EMP-UPD.FMT     DBASEMSG.TXT    EMPLOYEE.MEM
+	EMP-RPRT.CMD    EMPLOYEE.DBF    EMPSCRN.FMT     EMP-CONS.FRM
+	LABELS.CMD      EMP-ENTR.CMD    EMP-UPD.CMD     CHXMENU.CMD
+	EMP-PTR.FRM     INSTALL.COM     E'BYNMBR.NDX    E'BYNAME.NDX
+	INVMAINT.CMD    INVREAD.CMD     INVRPRT.CMD     INV'CONS.FRM
+	INV'PRTR.FRM    I'BYNMBR.NDX    I'BYDESC.NDX    INVENT.DBF
+	EDITCARD.FMT    IMAIN.CMD       INVQUAN.CMD     NAMES.DBF
+	CREATE.CMD      ESETUP.CMD      DATETEST.HEX    DATER.CMD
+	DATESYS.CMD     SETS.CMD        CMAIN.CMD       DEMO.DSK
 	-->
 	<software name="disk32">
 		<description>disk32</description>
@@ -803,13 +803,13 @@
 	</software>
 
 	<!--
-	DISK33:		Written label: none
-				Disk Type: CP/M
-				Bootable: NO
-			
-	KERTEI.DBF	NAME.NDX	WERBHELF.DBF	JOURNAL.DBF
-	STRASSE.NDX	KUNDEN.DBF	TELEFON.NDX		BSNR.NDX
-	GEB:DAT.NDX	ABSCHL.NDX
+	DISK33:     Written label: none
+	            Disk Type: CP/M
+	            Bootable: NO
+
+	KERTEI.DBF  NAME.NDX    WERBHELF.DBF    JOURNAL.DBF
+	STRASSE.NDX KUNDEN.DBF  TELEFON.NDX     BSNR.NDX
+	GEB:DAT.NDX ABSCHL.NDX
 	-->
 	<software name="disk33">
 		<description>disk33</description>
@@ -824,11 +824,11 @@
 	</software>
 
 	<!--
-	DISK34:		Written label: WORDSTAR
-				Dist Type: CP/M
-				Bootable: NO
+	DISK34:     Written label: WORDSTAR
+	            Dist Type: CP/M
+	            Bootable: NO
 
-	WS.COM		WSMSGS.OVR	WSOVLY1.OVR
+	WS.COM      WSMSGS.OVR  WSOVLY1.OVR
 	-->
 	<software name="disk34">
 		<description>disk34</description>
@@ -843,11 +843,11 @@
 	</software>
 
 	<!--
-	DISK35:		Written label: dBase II Version 2.4 - Zip - S/N 335007
-				Disk Type: CP/M
-				Bootable: NO
+	DISK35:     Written label: dBase II Version 2.4 - Zip - S/N 335007
+	            Disk Type: CP/M
+	            Bootable: NO
 
-	ZIPIN.COM	ZIP.COM		ZSCRN.OVL	DGEN.OVL
+	ZIPIN.COM   ZIP.COM     ZSCRN.OVL   DGEN.OVL
 	-->
 	<software name="disk35">
 		<description>disk35</description>
@@ -862,23 +862,23 @@
 	</software>
 
 	<!--
-	DISK36:		Written label: none
-				Disk Type: CP/M
-				Bootable: YES - 64k CP/M vers 2.2.2.08
+	DISK36:     Written label: none
+	            Disk Type: CP/M
+	            Bootable: YES - 64k CP/M vers 2.2.2.08
 
-	ZIPIN.COM		PRODERG.BAK		DATESYS.CMD		DBASEOVR.COM
-	ZSCRN.OVL		JOURNAL.FRM		AUSDRUCK.ZIP	AUSDRUCK.CMD
-	WHPROVIS.FRM	AUSDRUCK.ZPR	FILES.COM		WHPROVIS.CMD
-	NEU.CMD			PIP.COM			ZIP.COM			ANREDE.CMD
-	PRODERG.CMD		EINGABE.ZPR		DEL.COM			DBASEMSG.TXT
-	EINGABE.FMT		ADRZETT.CMD		AUSLAUF.CMD		DATUM.MEM
-	INIT.COM		AUSGABE.ZIP		EINGABE.ZIP		AUSGABE.FMT
-	SYS2.CMD		AUSGABE.ZPR		LOESCHEN.CMD	NEUKART.DBF
-	LAUFETIK.CMD	WHSUM.FRM		LAUFETIK.BAK	AUSGABE.CMD
-	TAGJOURN.FRM	SYS.CMD			MENUE7.CMD		ETIKETTE.CMD
-	LOETEST.CMD		WERBHELF.CMD	DGEN.OVL		DATETEST.HEX
-	ABRUF.CMD		PFLEGE.CMD		HANDDRUC.CMD	EINAENDE.CMD
-	KUENDIGU.CMD	EINGABE.CMD		AENDERN.CMD
+	ZIPIN.COM       PRODERG.BAK     DATESYS.CMD     DBASEOVR.COM
+	ZSCRN.OVL       JOURNAL.FRM     AUSDRUCK.ZIP    AUSDRUCK.CMD
+	WHPROVIS.FRM    AUSDRUCK.ZPR    FILES.COM       WHPROVIS.CMD
+	NEU.CMD         PIP.COM         ZIP.COM         ANREDE.CMD
+	PRODERG.CMD     EINGABE.ZPR     DEL.COM         DBASEMSG.TXT
+	EINGABE.FMT     ADRZETT.CMD     AUSLAUF.CMD     DATUM.MEM
+	INIT.COM        AUSGABE.ZIP     EINGABE.ZIP     AUSGABE.FMT
+	SYS2.CMD        AUSGABE.ZPR     LOESCHEN.CMD    NEUKART.DBF
+	LAUFETIK.CMD    WHSUM.FRM       LAUFETIK.BAK    AUSGABE.CMD
+	TAGJOURN.FRM    SYS.CMD         MENUE7.CMD      ETIKETTE.CMD
+	LOETEST.CMD     WERBHELF.CMD    DGEN.OVL        DATETEST.HEX
+	ABRUF.CMD       PFLEGE.CMD      HANDDRUC.CMD    EINAENDE.CMD
+	KUENDIGU.CMD    EINGABE.CMD     AENDERN.CMD
 	-->
 	<software name="disk36">
 		<description>disk36</description>
@@ -893,18 +893,18 @@
 	</software>
 
 	<!--
-	DISK37:		Written label: none
-				Disk Type: DISK BASIC
-				Bootable: ???
-				NOTE: Various errors on disk
+	DISK37:     Written label: none
+	            Disk Type: DISK BASIC
+	            Bootable: ???
+	            NOTE: Various errors on disk
 
-	OBJ*.Utility			OBJ*.Filing CMT		BTX*.AUTO RUN		BTX.MUSIC
-	BTX.Biorhythm			BTX.8 Queen			BTX.Tri Function	BTX.Graphic pattern
-	BTX.Die Fraktur			BTX.3D-PLOT			BTX.DATENPROZESS	BTX.Explanation-D.P
-	BTX.**String-Machine	BSD.Variable Data	BSD.DATA-DEC2		BTX.Fancy clock
-	BSD.SPEKTRUM			BRD. Gesp. File		BSD.ELEKTOR			BSD.SPIELE G7000
-	BTX.INTERFACE-TEST		BSD.PRAKTIKER		BTX.X-NUMMERN		BSD.ASTERIX
-	BTX.FILEREPARATUR		BSD.KARTEN			BSD.CHIP			BSD.MODELLEISENBAHN
+	OBJ*.Utility            OBJ*.Filing CMT     BTX*.AUTO RUN       BTX.MUSIC
+	BTX.Biorhythm           BTX.8 Queen         BTX.Tri Function    BTX.Graphic pattern
+	BTX.Die Fraktur         BTX.3D-PLOT         BTX.DATENPROZESS    BTX.Explanation-D.P
+	BTX.**String-Machine    BSD.Variable Data   BSD.DATA-DEC2       BTX.Fancy clock
+	BSD.SPEKTRUM            BRD. Gesp. File     BSD.ELEKTOR         BSD.SPIELE G7000
+	BTX.INTERFACE-TEST      BSD.PRAKTIKER       BTX.X-NUMMERN       BSD.ASTERIX
+	BTX.FILEREPARATUR       BSD.KARTEN          BSD.CHIP            BSD.MODELLEISENBAHN
 	-->
 	<software name="disk37">
 		<description>disk37</description>
@@ -919,15 +919,15 @@
 	</software>
 
 	<!--
-	DISK38:		Written label: none
-				Disk Type: DISK BASIC
-				Bootable: YES - MONITOR SB-1510 - BASIC SB-6510
-			
-	OBJ*.Filing CMT			OBJ*.Utility		BTX*.AUTO RUN		BTX.MUSIC
-	BTX.Biorhythm			BTX.8 Queen			BTX.Tri Function	BTX.Graphic pattern
-	BTX.Die Fraktur			BTX.3D-PLOT			BTX.Data Processing	BTX.Explanation-D.P
-	BTX.**String-Machine	BSD.Variable Data	BSD.DATA-DEC2		BTX.Fancy clock
-	BRD.Storage File		BTX.STILLE NACHT
+	DISK38:     Written label: none
+	            Disk Type: DISK BASIC
+	            Bootable: YES - MONITOR SB-1510 - BASIC SB-6510
+
+	OBJ*.Filing CMT         OBJ*.Utility        BTX*.AUTO RUN       BTX.MUSIC
+	BTX.Biorhythm           BTX.8 Queen         BTX.Tri Function    BTX.Graphic pattern
+	BTX.Die Fraktur         BTX.3D-PLOT         BTX.Data Processing BTX.Explanation-D.P
+	BTX.**String-Machine    BSD.Variable Data   BSD.DATA-DEC2       BTX.Fancy clock
+	BRD.Storage File        BTX.STILLE NACHT
 	-->
 	<software name="disk38">
 		<description>disk38</description>
