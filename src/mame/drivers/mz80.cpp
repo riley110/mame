@@ -30,6 +30,7 @@ MZ80B
 
 #include "includes/mz80.h"
 #include "formats/mz_cas.h"
+#include "softlist.h"
 
 
 /* Note about natural keyboard support:
