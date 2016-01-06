@@ -147,7 +147,7 @@ public:
 	required_device<screen_device> m_screen;
 	required_device<palette_device> m_palette;
 
-	bitmap_ind16 *m_sprite_bitmap;
+	std::unique_ptr<bitmap_ind16> m_sprite_bitmap;
 
 	UINT8 m_reg;
 	UINT8 m_rombank;
@@ -174,8 +174,6 @@ public:
 	DECLARE_WRITE8_MEMBER(dodghero_regs2_w);
 	DECLARE_READ8_MEMBER(dodghero_regs2_r);
 
-	DECLARE_WRITE8_MEMBER(dashhero_regs_w);
-	DECLARE_READ8_MEMBER(dashhero_regs_r);
 	DECLARE_WRITE8_MEMBER(dashhero_regs2_w);
 	DECLARE_READ8_MEMBER(dashhero_regs2_r);
 
@@ -263,7 +261,7 @@ public:
 
 void sigmab98_state::video_start()
 {
-	m_sprite_bitmap = auto_bitmap_ind16_alloc(machine(), 512, 512);
+	m_sprite_bitmap = std::make_unique<bitmap_ind16>(512, 512);
 }
 
 /***************************************************************************

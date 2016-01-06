@@ -31,14 +31,14 @@ public:
 	optional_shared_ptr<UINT8> m_mcu_ram;
 
 	/* video-related */
-	bitmap_ind16    *m_tmp_bitmap1;
-	bitmap_ind16    *m_tmp_bitmap2;
+	std::unique_ptr<bitmap_ind16>    m_tmp_bitmap1;
+	std::unique_ptr<bitmap_ind16>    m_tmp_bitmap2;
 	tilemap_t     *m_bg_tilemap;
 	UINT8       m_flipscreen;
 	UINT8       m_pix_redraw;
 	UINT8       m_xoffset;
-	UINT8       *m_pixram1;
-	UINT8       *m_pixram2;
+	std::unique_ptr<UINT8[]>       m_pixram1;
+	std::unique_ptr<UINT8[]>       m_pixram2;
 	bitmap_ind16    *m_pixel_bitmap1;
 	bitmap_ind16    *m_pixel_bitmap2;
 	int         m_pixram_sel;
@@ -79,11 +79,9 @@ public:
 	DECLARE_WRITE8_MEMBER(sound_command_w);
 	DECLARE_WRITE8_MEMBER(nmi_disable_w);
 	DECLARE_WRITE8_MEMBER(nmi_enable_w);
-	DECLARE_WRITE8_MEMBER(fortyl_coin_counter_w);
 	DECLARE_WRITE8_MEMBER(bank_select_w);
 	DECLARE_WRITE8_MEMBER(pix1_w);
 	DECLARE_WRITE8_MEMBER(pix2_w);
-	DECLARE_READ8_MEMBER(pix1_r);
 	DECLARE_READ8_MEMBER(pix2_r);
 	DECLARE_WRITE8_MEMBER(undoukai_mcu_w);
 	DECLARE_READ8_MEMBER(undoukai_mcu_r);

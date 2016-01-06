@@ -101,7 +101,7 @@ void n64_state::video_start()
 
 	m_rdp->m_tex_pipe.set_machine(machine());
 
-	m_rdp->m_aux_buf = auto_alloc_array_clear(machine(), UINT8, EXTENT_AUX_COUNT);
+	m_rdp->m_aux_buf = make_unique_clear<UINT8[]>(EXTENT_AUX_COUNT);
 
 	if (LOG_RDP_EXECUTION)
 	{
@@ -2106,11 +2106,11 @@ void n64_rdp::draw_triangle(bool shade, bool texture, bool zbuffer, bool rect)
 				if(new_object)
 				{
 					object = &object_data_alloc();
-					memcpy(object->m_tmem, m_tmem, 0x1000);
+					memcpy(object->m_tmem, m_tmem.get(), 0x1000);
 					new_object = false;
 				}
 
-				spans[spanidx].userdata = (void*)((UINT8*)m_aux_buf + m_aux_buf_ptr);
+				spans[spanidx].userdata = (void*)((UINT8*)m_aux_buf.get() + m_aux_buf_ptr);
 				valid = true;
 				m_aux_buf_ptr += sizeof(rdp_span_aux);
 
@@ -3806,8 +3806,6 @@ void n64_rdp::span_draw_2cycle(INT32 scanline, const extent_t &extent, const rdp
 		INT32 sb = b.w >> 14;
 		INT32 sa = a.w >> 14;
 		INT32 sz = (z.w >> 10) & 0x3fffff;
-		color_t c1;
-		color_t c2;
 
 		const bool valid_x = (flip) ? (x >= xend_scissored) : (x <= xend_scissored);
 

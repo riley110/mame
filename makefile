@@ -115,9 +115,28 @@ MAKEPARAMS := -R
 ifeq ($(OS),Windows_NT)
 OS := windows
 GENIEOS := windows
+PLATFORM := x86
 else
 UNAME := $(shell uname -mps)
+UNAME_M := $(shell uname -m)
+UNAME_P := $(shell uname -p)
 GENIEOS := linux
+PLATFORM := unknown
+ifneq ($(filter x86_64,$(UNAME_P)),)
+PLATFORM := x86
+endif 
+ifneq ($(filter %86,$(UNAME_P)),)
+PLATFORM := x86
+endif 
+ifneq ($(filter arm%,$(UNAME_M)),)
+PLATFORM := arm
+endif 
+ifneq ($(filter arm%,$(UNAME_P)),)
+PLATFORM := arm
+endif 
+ifneq ($(filter powerpc,$(UNAME_P)),)
+PLATFORM := powerpc
+endif 
 ifeq ($(firstword $(filter Linux,$(UNAME))),Linux)
 OS := linux
 endif
@@ -162,10 +181,10 @@ endif
 endif
 
 #-------------------------------------------------
-# specify core target: mame, mess, etc.
-# specify subtarget: mame, mess, tiny, etc.
-# build rules will be included from
-# src/$(TARGET)/$(SUBTARGET).mak
+# specify core target: mame, ldplayer
+# specify subtarget: mame, arcade, mess, tiny, etc.
+# build scripts will be run from
+# scripts/target/$(TARGET)/$(SUBTARGET).lua
 #-------------------------------------------------
 
 ifndef TARGET
@@ -293,8 +312,8 @@ LD := $(SILENT)g++
 
 #-------------------------------------------------
 # specify OSD layer: windows, sdl, etc.
-# build rules will be included from
-# src/osd/$(OSD)/$(OSD).mak
+# build scripts will be run from
+# scripts/src/osd/$(OSD).lua
 #-------------------------------------------------
 
 ifndef OSD
@@ -650,6 +669,10 @@ ifdef FORCE_VERSION_COMPILE
 PARAMS += --FORCE_VERSION_COMPILE='$(FORCE_VERSION_COMPILE)'
 endif
 
+ifdef PLATFORM
+PARAMS += --PLATFORM='$(PLATFORM)'
+endif
+
 #-------------------------------------------------
 # All scripts
 #-------------------------------------------------
@@ -925,7 +948,7 @@ ifndef EMSCRIPTEN
 	$(error EMSCRIPTEN is not set)
 endif
 ifndef COMPILE
-	$(SILENT) $(GENIE) $(PARAMS) --gcc=asmjs --gcc_version=4.8 gmake
+	$(SILENT) $(GENIE) $(PARAMS) --gcc=asmjs --gcc_version=4.9 gmake
 endif
 	$(SILENT) $(MAKE) $(MAKEPARAMS) -C $(PROJECTDIR)/gmake-asmjs config=$(CONFIG)
 

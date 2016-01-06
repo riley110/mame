@@ -387,7 +387,7 @@ void tms32051_device::execute_run()
 					{
 						CHANGE_PC(m_pasr);
 					}
-						
+
 					m_brcr--;
 					if (m_brcr <= 0)
 					{
@@ -492,7 +492,10 @@ READ16_MEMBER( tms32051_device::cpuregs_r )
 		case 0x28: // PDWSR
 			return 0;
 
-		case 0x50:	// Memory-mapped I/O ports
+		case 0x37:  // ABU BKR
+			return 0;
+
+		case 0x50:  // Memory-mapped I/O ports
 		case 0x51:
 		case 0x52:
 		case 0x53:
@@ -554,6 +557,7 @@ WRITE16_MEMBER( tms32051_device::cpuregs_w )
 		}
 
 		case 0x09: m_brcr = data; break;
+		case 0x0d: m_treg1 = data; break;
 		case 0x0e: m_treg2 = data; break;
 		case 0x0f: m_dbmr = data; break;
 		case 0x10: m_ar[0] = data; break;
@@ -602,7 +606,7 @@ WRITE16_MEMBER( tms32051_device::cpuregs_w )
 		case 0x2a: // CWSR
 			break;
 
-		case 0x50:	// Memory-mapped I/O ports
+		case 0x50:  // Memory-mapped I/O ports
 		case 0x51:
 		case 0x52:
 		case 0x53:

@@ -9,7 +9,7 @@ newoption {
 premake.check_paths = true
 premake.make.override = { "TARGET" }
 MAME_DIR = (path.getabsolute("..") .. "/")
-MAME_DIR = string.gsub(MAME_DIR, "(%s)", "\\%1")
+--MAME_DIR = string.gsub(MAME_DIR, "(%s)", "\\%1")
 local MAME_BUILD_DIR = (MAME_DIR .. _OPTIONS["build-dir"] .. "/")
 local naclToolchain = ""
 
@@ -386,6 +386,11 @@ newoption {
 		{ "0",   "Disabled" 	},
 		{ "1",   "Enabled"      },
 	}
+}
+
+newoption {
+	trigger = "PLATFORM",
+	description = "Target machine platform (x86,arm,...)",
 }
 
 if _OPTIONS["SHLIB"]=="1" then
@@ -1012,9 +1017,12 @@ end
 				}
 		end
 	end
---ifeq ($(findstring arm,$(UNAME)),arm)
---	CCOMFLAGS += -Wno-cast-align
---endif
+	
+if (_OPTIONS["PLATFORM"]=="arm") then
+	buildoptions {
+		"-Wno-cast-align",
+	}
+end
 
 local subdir
 if (_OPTIONS["target"] == _OPTIONS["subtarget"]) then

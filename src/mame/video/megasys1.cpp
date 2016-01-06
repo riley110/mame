@@ -225,10 +225,10 @@ VIDEO_START_MEMBER(megasys1_state,megasys1)
 
 	m_spriteram = &m_ram[0x8000/2];
 
-	m_buffer_objectram = auto_alloc_array(machine(), UINT16, 0x2000);
-	m_buffer_spriteram16 = auto_alloc_array(machine(), UINT16, 0x2000);
-	m_buffer2_objectram = auto_alloc_array(machine(), UINT16, 0x2000);
-	m_buffer2_spriteram16 = auto_alloc_array(machine(), UINT16, 0x2000);
+	m_buffer_objectram = std::make_unique<UINT16[]>(0x2000);
+	m_buffer_spriteram16 = std::make_unique<UINT16[]>(0x2000);
+	m_buffer2_objectram = std::make_unique<UINT16[]>(0x2000);
+	m_buffer2_spriteram16 = std::make_unique<UINT16[]>(0x2000);
 
 	create_tilemaps();
 	m_tmap[0] = m_tilemap[0][0][0];
@@ -266,7 +266,7 @@ VIDEO_START_MEMBER(megasys1_state,megasys1)
 	m_8x8_scroll_factor[2] = 1; m_16x16_scroll_factor[2] = 4;
 
 	if (strcmp(machine().system().name, "soldam") == 0 ||
-	    strcmp(machine().system().name, "soldamj") == 0)
+		strcmp(machine().system().name, "soldamj") == 0)
 	{
 		m_8x8_scroll_factor[1] = 4; m_16x16_scroll_factor[1] = 4;
 	}
@@ -414,6 +414,9 @@ void megasys1_state::megasys1_set_vreg_flag(int which, int data)
 WRITE16_MEMBER(megasys1_state::megasys1_vregs_A_w)
 {
 	UINT16 new_data = COMBINE_DATA(&m_vregs[offset]);
+
+	if(((offset*2) & 0x300) == 0)
+		m_screen->update_partial(m_screen->vpos());
 
 	switch (offset)
 	{
@@ -593,7 +596,7 @@ WRITE16_MEMBER(megasys1_state::megasys1_vregs_D_w)
     00-07                       ?
     08      fed- ---- ---- ---- ?
             ---c ---- ---- ---- mosaic sol.
-            ---- ba98 ---- ---- mosaic      
+            ---- ba98 ---- ---- mosaic
             ---- ---- 7--- ---- y flip
             ---- ---- -6-- ---- x flip
             ---- ---- --45 ---- ?
@@ -655,10 +658,9 @@ void megasys1_state::partial_clear_sprite_bitmap(screen_device &screen, bitmap_i
 
 inline void megasys1_state::draw_16x16_priority_sprite(screen_device &screen, bitmap_ind16 &bitmap,const rectangle &cliprect, INT32 code, INT32 color, INT32 sx, INT32 sy, INT32 flipx, INT32 flipy, UINT8 mosaic, UINT8 mosaicsol, INT32 priority)
 {
-
-//	if (sy >= nScreenHeight || sy < -15 || sx >= nScreenWidth || sx < -15) return;
+//  if (sy >= nScreenHeight || sy < -15 || sx >= nScreenWidth || sx < -15) return;
 	gfx_element *decodegfx = m_gfxdecode->gfx(3);
-	sy = sy + cliprect.min_y;
+	sy = sy + 16;
 
 	const UINT8* gfx = decodegfx->get_data(code);
 
@@ -670,13 +672,13 @@ inline void megasys1_state::draw_16x16_priority_sprite(screen_device &screen, bi
 
 	for (INT32 y = 0; y < 16; y++, sy++, sx-=16)
 	{
-	//	UINT16 *dest = &bitmap.pix16(sy)+ sx;
-	//	UINT8 *prio = &screen.priority().pix8(sy) + sx;
+	//  UINT16 *dest = &bitmap.pix16(sy)+ sx;
+	//  UINT8 *prio = &screen.priority().pix8(sy) + sx;
 		UINT16* dest = &m_sprite_buffer_bitmap.pix16(sy)+ sx;
 
 		for (INT32 x = 0; x < 16; x++, sx++)
 		{
-			if (sx < cliprect.min_x || sy < cliprect.min_y || sx > cliprect.max_x || sy > cliprect.max_y) continue;	
+			if (sx < cliprect.min_x || sy < cliprect.min_y || sx > cliprect.max_x || sy > cliprect.max_y) continue;
 
 			INT32 pxl;
 
@@ -687,7 +689,6 @@ inline void megasys1_state::draw_16x16_priority_sprite(screen_device &screen, bi
 			}
 
 			if (pxl != 0x0f) {
-				
 				if (!(dest[x] & 0x8000)) {
 					dest[x] = (pxl+color) | (priority << 14);
 
@@ -703,7 +704,7 @@ void megasys1_state::draw_sprites(screen_device &screen, bitmap_ind16 &bitmap,co
 {
 	int color,code,sx,sy,flipx,flipy,attr,sprite;
 
-	
+
 
 /* objram: 0x100*4 entries      spritedata: 0x80 entries */
 
@@ -725,8 +726,8 @@ void megasys1_state::draw_sprites(screen_device &screen, bitmap_ind16 &bitmap,co
 
 		INT32 color_mask = (m_sprite_flag & 0x100) ? 0x07 : 0x0f;
 
-		UINT16 *objectram = (UINT16*)m_buffer2_objectram;
-		UINT16 *spriteram = (UINT16*)m_buffer2_spriteram16;
+		UINT16 *objectram = (UINT16*)m_buffer2_objectram.get();
+		UINT16 *spriteram = (UINT16*)m_buffer2_spriteram16.get();
 
 		for (INT32 offs = (0x800-8)/2; offs >= 0; offs -= 4)
 		{
@@ -1179,11 +1180,11 @@ void megasys1_state::screen_eof_megasys1(screen_device &screen, bool state)
 	{
 		/* Sprite are TWO frames ahead, like NMK16 HW. */
 	//m_objectram
-		memcpy(m_buffer2_objectram,m_buffer_objectram, 0x2000);
-		memcpy(m_buffer_objectram, m_objectram, 0x2000);
+		memcpy(m_buffer2_objectram.get(),m_buffer_objectram.get(), 0x2000);
+		memcpy(m_buffer_objectram.get(), m_objectram, 0x2000);
 	//spriteram16
-		memcpy(m_buffer2_spriteram16, m_buffer_spriteram16, 0x2000);
-		memcpy(m_buffer_spriteram16, m_spriteram, 0x2000);
+		memcpy(m_buffer2_spriteram16.get(), m_buffer_spriteram16.get(), 0x2000);
+		memcpy(m_buffer_spriteram16.get(), m_spriteram, 0x2000);
 	}
 
 }

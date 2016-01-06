@@ -1423,8 +1423,6 @@ void render_target::invalidate_all(void *refptr)
 	// iterate through all our primitive lists
 	for (auto & list : m_primlist)
 	{
-		
-
 		// if we have a reference to this object, release our list
 		list.acquire_lock();
 		if (list.has_reference(refptr))
@@ -1456,13 +1454,13 @@ void render_target::debug_free(render_container &container)
 
 
 //-------------------------------------------------
-//  debug_top - move a debug view container to
-//  the top of the list
+//  debug_append - move a debug view container to
+//  the end of the list
 //-------------------------------------------------
 
-void render_target::debug_top(render_container &container)
+void render_target::debug_append(render_container &container)
 {
-	m_debug_containers.prepend(m_debug_containers.detach(container));
+	m_debug_containers.append(m_debug_containers.detach(container));
 }
 
 

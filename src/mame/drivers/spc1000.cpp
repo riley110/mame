@@ -183,7 +183,7 @@ private:
 	UINT8 m_IPLK;
 	UINT8 m_GMODE;
 	UINT16 m_page;
-	UINT8 *m_work_ram;
+	std::unique_ptr<UINT8[]> m_work_ram;
 	attotime m_time;
 	bool m_centronics_busy;
 	virtual void machine_start() override;
@@ -403,13 +403,13 @@ void spc1000_state::machine_start()
 	// intialize banks 2 & 4 (write banks)
 	membank("bank2")->set_base(ram);
 	membank("bank4")->set_base(ram + 0x8000);
-	
-    	m_time = machine().scheduler().time();	
+
+		m_time = machine().scheduler().time();
 }
 
 void spc1000_state::machine_reset()
 {
-	m_work_ram = auto_alloc_array_clear(machine(), UINT8, 0x10000);
+	m_work_ram = make_unique_clear<UINT8[]>(0x10000);
 	m_IPLK = 1;
 }
 
