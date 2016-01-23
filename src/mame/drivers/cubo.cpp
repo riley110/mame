@@ -399,7 +399,7 @@ WRITE8_MEMBER( cubo_state::akiko_cia_0_port_a_write )
 	m_cdda->set_output_gain( 0, ( data & 1 ) ? 0.0 : 1.0 );
 
 	/* bit 2 = Power Led on Amiga */
-	set_led_status(machine(), 0, (data & 2) ? 0 : 1);
+	output().set_led_value(0, (data & 2) ? 0 : 1);
 
 	handle_cd32_joystick_cia(machine(), data, m_cia_0->read(space, 2));
 }
@@ -1051,6 +1051,7 @@ static MACHINE_CONFIG_START( cubo, cubo_state )
 	MCFG_FRAGMENT_ADD(pal_video)
 	MCFG_DEVICE_MODIFY("screen")
 	MCFG_SCREEN_UPDATE_DRIVER(amiga_state, screen_update_amiga_aga)
+	MCFG_SCREEN_NO_PALETTE
 
 	MCFG_VIDEO_START_OVERRIDE(amiga_state, amiga_aga)
 

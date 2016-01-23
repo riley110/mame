@@ -910,7 +910,7 @@ WRITE8_MEMBER( cd32_state::akiko_cia_0_port_a_write )
 	m_cdda->set_output_gain(0, BIT(data, 0) ? 0.0 : 1.0);
 
 	// bit 1, power led
-	set_led_status(machine(), 0, BIT(data, 1) ? 0 : 1);
+	output().set_led_value(0, BIT(data, 1) ? 0 : 1);
 
 	handle_cd32_joystick_cia(machine(), data, m_cia_0->read(space, 2));
 }
@@ -1676,6 +1676,7 @@ static MACHINE_CONFIG_DERIVED_CLASS( a1200, amiga_base, a1200_state )
 
 	MCFG_DEVICE_MODIFY("screen")
 	MCFG_SCREEN_UPDATE_DRIVER(amiga_state, screen_update_amiga_aga)
+	MCFG_SCREEN_NO_PALETTE
 
 	MCFG_DEVICE_REMOVE("palette")
 
@@ -1706,6 +1707,7 @@ static MACHINE_CONFIG_DERIVED_CLASS( a1200n, a1200, a1200_state )
 	MCFG_FRAGMENT_ADD(ntsc_video)
 	MCFG_DEVICE_MODIFY("screen")
 	MCFG_SCREEN_UPDATE_DRIVER(amiga_state, screen_update_amiga_aga)
+	MCFG_SCREEN_NO_PALETTE
 	MCFG_DEVICE_MODIFY("amiga")
 	MCFG_DEVICE_CLOCK(amiga_state::CLK_C1_NTSC)
 	MCFG_DEVICE_MODIFY("cia_0")
@@ -1730,6 +1732,7 @@ static MACHINE_CONFIG_DERIVED_CLASS( a4000, amiga_base, a4000_state )
 
 	MCFG_DEVICE_MODIFY("screen")
 	MCFG_SCREEN_UPDATE_DRIVER(amiga_state, screen_update_amiga_aga)
+	MCFG_SCREEN_NO_PALETTE
 
 	MCFG_DEVICE_REMOVE("palette")
 
@@ -1753,6 +1756,7 @@ static MACHINE_CONFIG_DERIVED_CLASS( a4000n, a4000, a4000_state )
 	MCFG_FRAGMENT_ADD(ntsc_video)
 	MCFG_DEVICE_MODIFY("screen")
 	MCFG_SCREEN_UPDATE_DRIVER(amiga_state, screen_update_amiga_aga)
+	MCFG_SCREEN_NO_PALETTE
 	MCFG_DEVICE_MODIFY("amiga")
 	MCFG_DEVICE_CLOCK(amiga_state::CLK_C1_NTSC)
 	MCFG_DEVICE_MODIFY("cia_0")
@@ -1777,6 +1781,7 @@ static MACHINE_CONFIG_DERIVED_CLASS( a400030n, a400030, a4000_state )
 	MCFG_FRAGMENT_ADD(ntsc_video)
 	MCFG_DEVICE_MODIFY("screen")
 	MCFG_SCREEN_UPDATE_DRIVER(amiga_state, screen_update_amiga_aga)
+	MCFG_SCREEN_NO_PALETTE
 	MCFG_DEVICE_MODIFY("amiga")
 	MCFG_DEVICE_CLOCK(amiga_state::CLK_C1_NTSC)
 	MCFG_DEVICE_MODIFY("cia_0")
@@ -1810,6 +1815,7 @@ static MACHINE_CONFIG_DERIVED_CLASS( cd32, amiga_base, cd32_state )
 
 	MCFG_DEVICE_MODIFY("screen")
 	MCFG_SCREEN_UPDATE_DRIVER(amiga_state, screen_update_amiga_aga)
+	MCFG_SCREEN_NO_PALETTE
 
 	MCFG_DEVICE_REMOVE("palette")
 
@@ -1840,6 +1846,7 @@ static MACHINE_CONFIG_DERIVED_CLASS( cd32n, cd32, cd32_state )
 	MCFG_FRAGMENT_ADD(ntsc_video)
 	MCFG_DEVICE_MODIFY("screen")
 	MCFG_SCREEN_UPDATE_DRIVER(amiga_state, screen_update_amiga_aga)
+	MCFG_SCREEN_NO_PALETTE
 	MCFG_DEVICE_MODIFY("amiga")
 	MCFG_DEVICE_CLOCK(amiga_state::CLK_C1_NTSC)
 	MCFG_DEVICE_MODIFY("cia_0")
@@ -1864,6 +1871,7 @@ static MACHINE_CONFIG_DERIVED_CLASS( a4000tn, a4000, a4000_state )
 	MCFG_FRAGMENT_ADD(ntsc_video)
 	MCFG_DEVICE_MODIFY("screen")
 	MCFG_SCREEN_UPDATE_DRIVER(amiga_state, screen_update_amiga_aga)
+	MCFG_SCREEN_NO_PALETTE
 	MCFG_DEVICE_MODIFY("amiga")
 	MCFG_DEVICE_CLOCK(amiga_state::CLK_C1_NTSC)
 	MCFG_DEVICE_MODIFY("cia_0")

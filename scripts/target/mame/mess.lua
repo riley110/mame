@@ -228,6 +228,7 @@ SOUNDS["VOTRAX"] = true
 --SOUNDS["ES8712"] = true
 SOUNDS["CDP1869"] = true
 SOUNDS["S14001A"] = true
+SOUNDS["S14001A_NEW"] = true
 SOUNDS["WAVE"] = true
 SOUNDS["SID6581"] = true
 SOUNDS["SID8580"] = true
@@ -301,6 +302,7 @@ VIDEOS["MSM6222B"] = true
 VIDEOS["MSM6255"] = true
 VIDEOS["MOS6566"] = true
 VIDEOS["PC_VGA"] = true
+VIDEOS["PCD8544"] = true
 --VIDEOS+= POLY"] = true
 VIDEOS["PSX"] = true
 VIDEOS["RAMDAC"] = true
@@ -816,6 +818,7 @@ function linkProjects_mame_mess(_target, _subtarget)
 		"sanyo",
 		"saturn",
 		"sega",
+		"sequential",
 		"sgi",
 		"sharp",
 		"siemens",
@@ -886,6 +889,7 @@ function createMESSProjects(_target, _subtarget, _name)
 	kind (LIBTYPE)
 	uuid (os.uuid("drv-" .. _target .."_" .. _subtarget .. "_" .._name))
 	addprojectflags()
+	precompiledheaders()
 
 	includedirs {
 		MAME_DIR .. "src/osd",
@@ -1695,9 +1699,9 @@ files {
 
 createMESSProjects(_target, _subtarget, "fidelity")
 files {
-	MAME_DIR .. "src/mame/drivers/csc.cpp",
 	MAME_DIR .. "src/mame/drivers/fidelz80.cpp",
 	MAME_DIR .. "src/mame/includes/fidelz80.h",
+	MAME_DIR .. "src/mame/drivers/fidel6502.cpp",
 }
 
 createMESSProjects(_target, _subtarget, "force")
@@ -2398,6 +2402,7 @@ files {
 createMESSProjects(_target, _subtarget, "samsung")
 files {
 	MAME_DIR .. "src/mame/drivers/spc1000.cpp",
+	MAME_DIR .. "src/mame/drivers/spc1500.cpp",
 }
 
 createMESSProjects(_target, _subtarget, "sanyo")
@@ -2435,6 +2440,11 @@ files {
 	MAME_DIR .. "src/mame/machine/megacd.h",
 	MAME_DIR .. "src/mame/machine/megacdcd.cpp",
 	MAME_DIR .. "src/mame/machine/megacdcd.h",
+}
+
+createMESSProjects(_target, _subtarget, "sequential")
+files {
+	MAME_DIR .. "src/mame/drivers/prophet600.cpp",
 }
 
 createMESSProjects(_target, _subtarget, "sgi")
@@ -3046,6 +3056,7 @@ files {
 	MAME_DIR .. "src/mame/drivers/d6800.cpp",
 	MAME_DIR .. "src/mame/drivers/d6809.cpp",
 	MAME_DIR .. "src/mame/drivers/daruma.cpp",
+	MAME_DIR .. "src/mame/drivers/didact.cpp",
 	MAME_DIR .. "src/mame/drivers/digel804.cpp",
 	MAME_DIR .. "src/mame/drivers/dim68k.cpp",
 	MAME_DIR .. "src/mame/drivers/dm7000.cpp",
@@ -3094,7 +3105,8 @@ files {
 	MAME_DIR .. "src/mame/drivers/lft.cpp",
 	MAME_DIR .. "src/mame/drivers/lg-dvd.cpp",
 	MAME_DIR .. "src/mame/drivers/lola8a.cpp",
-	MAME_DIR .. "src/mame/drivers/m79152pc.cpp",
+    MAME_DIR .. "src/mame/drivers/m79152pc.cpp",
+    MAME_DIR .. "src/mame/drivers/marywu.cpp",
 	MAME_DIR .. "src/mame/drivers/mccpm.cpp",
 	MAME_DIR .. "src/mame/drivers/mes.cpp",
 	MAME_DIR .. "src/mame/drivers/mice.cpp",
