@@ -379,7 +379,8 @@ UINT8 *device_image_interface::get_software_region(const char *tag)
 		return nullptr;
 
 	sprintf( full_tag, "%s:%s", device().tag(), tag );
-	return device().machine().root_device().memregion( full_tag )->base();
+	memory_region *region = device().machine().root_device().memregion(full_tag);
+	return region != NULL ? region->base() : NULL;
 }
 
 
@@ -392,7 +393,9 @@ UINT32 device_image_interface::get_software_region_length(const char *tag)
 	char full_tag[256];
 
 	sprintf( full_tag, "%s:%s", device().tag(), tag );
-	return device().machine().root_device().memregion( full_tag )->bytes();
+
+	memory_region *region = device().machine().root_device().memregion(full_tag);
+	return region != NULL ? region->bytes() : 0;
 }
 
 
@@ -1417,4 +1420,3 @@ struct io_procs image_ioprocs =
 	image_fwrite_thunk,
 	image_fsize_thunk
 };
-

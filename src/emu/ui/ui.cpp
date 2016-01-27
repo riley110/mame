@@ -1019,7 +1019,9 @@ std::string &ui_manager::warnings_string(std::string &str)
 						MACHINE_IMPERFECT_SOUND |  \
 						MACHINE_IMPERFECT_GRAPHICS | \
 						MACHINE_IMPERFECT_KEYBOARD | \
-						MACHINE_NO_COCKTAIL)
+						MACHINE_NO_COCKTAIL| \
+						MACHINE_IS_INCOMPLETE| \
+						MACHINE_NO_SOUND_HW )
 
 	str.clear();
 
@@ -1081,6 +1083,20 @@ std::string &ui_manager::warnings_string(std::string &str)
 			str.append("The ");
 			str.append(emulator_info::get_gamenoun());
 			str.append(" requires external artwork files\n");
+		}
+
+		if (machine().system().flags & MACHINE_IS_INCOMPLETE )
+		{
+			str.append("This ");
+			str.append(emulator_info::get_gamenoun());
+			str.append(" was never completed. It may exhibit strange behavior or missing elements that are not bugs in the emulation.\n");
+		}
+
+		if (machine().system().flags & MACHINE_NO_SOUND_HW )
+		{
+			str.append("This ");
+			str.append(emulator_info::get_gamenoun());
+			str.append(" has no sound hardware, MAME will produce no sounds, this is expected behaviour.\n");
 		}
 
 		// if there's a NOT WORKING, UNEMULATED PROTECTION or GAME MECHANICAL warning, make it stronger
@@ -1856,7 +1872,7 @@ static slider_state *slider_init(running_machine &machine)
 		INT32 maxval = 2000;
 		INT32 defval = 1000;
 
-		info.stream->input_name(info.inputnum, str);
+		str.assign(info.stream->input_name(info.inputnum));
 		str.append(" Volume");
 		*tailptr = slider_alloc(machine, str.c_str(), 0, defval, maxval, 20, slider_mixervol, (void *)(FPTR)item);
 		tailptr = &(*tailptr)->next;

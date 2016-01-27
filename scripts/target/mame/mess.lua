@@ -228,7 +228,6 @@ SOUNDS["VOTRAX"] = true
 --SOUNDS["ES8712"] = true
 SOUNDS["CDP1869"] = true
 SOUNDS["S14001A"] = true
-SOUNDS["S14001A_NEW"] = true
 SOUNDS["WAVE"] = true
 SOUNDS["SID6581"] = true
 SOUNDS["SID8580"] = true
@@ -2365,6 +2364,7 @@ files {
 	MAME_DIR .. "src/mame/drivers/rd110.cpp",
 	MAME_DIR .. "src/mame/drivers/rsc55.cpp",
 	MAME_DIR .. "src/mame/drivers/tb303.cpp",
+	MAME_DIR .. "src/mame/drivers/tr606.cpp",
 }
 
 createMESSProjects(_target, _subtarget, "rolm")

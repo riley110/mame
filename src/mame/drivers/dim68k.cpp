@@ -41,7 +41,6 @@
 #include "machine/upd765.h"
 #include "softlist.h"
 
-
 class dim68k_state : public driver_device
 {
 public:
@@ -336,8 +335,9 @@ static MACHINE_CONFIG_START( dim68k, dim68k_state )
 
 	MCFG_DEVICE_ADD("keyboard", GENERIC_KEYBOARD, 0)
 	MCFG_GENERIC_KEYBOARD_CB(WRITE8(dim68k_state, kbd_put))
-	
-	MCFG_SOFTWARE_LIST_ADD("flop_list","dim68k")
+
+	// software lists
+	MCFG_SOFTWARE_LIST_ADD("flop_list", "dim68k")
 MACHINE_CONFIG_END
 
 /*

@@ -6,12 +6,12 @@ Missing:
 - axr2 (APP Laboratories)
 - econet
 -->
-<softwarelist name="atom_cart" description="Acorn Atom expansion ROMs">
+<softwarelist name="atom_rom" description="Acorn Atom expansion ROMs">
 
 	<software name="afuk">
 		<description>A&amp;F Utility Kit</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<year>1982</year>
+		<publisher>A&amp;F Software</publisher>
 
 		<part name="cart" interface="atom_cart">
 			<dataarea name="rom" size="4096">
@@ -20,26 +20,26 @@ Missing:
 		</part>
 	</software>
 
+	<software name="windows">
+		<description>Atomic Windows (v1.0)</description>
+		<year>198?</year>
+		<publisher>Kees van Oss</publisher>
+
+		<part name="cart" interface="atom_cart">
+			<dataarea name="rom" size="4096">
+				<rom name="atomicw.bin" size="4096" crc="a3fd737d" sha1="d418d9322c69c49106ed2c268ad0864c0f2c4c1b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="josbox">
-		<description>Atom Extension ROM AXR1</description>
+		<description>AXR1</description>
 		<year>198?</year>
 		<publisher>ECD Computer Workshop</publisher>
 
 		<part name="cart" interface="atom_cart">
 			<dataarea name="rom" size="4096">
 				<rom name="axr1.bin" size="4096" crc="868fda8b" sha1="f8417787c28818a7646b9b59d706ef890255049f" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="windows">
-		<description>Atomic Windows (v1.0)</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="cart" interface="atom_cart">
-			<dataarea name="rom" size="4096">
-				<rom name="atomicw.bin" size="4096" crc="a3fd737d" sha1="d418d9322c69c49106ed2c268ad0864c0f2c4c1b" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -81,7 +81,7 @@ Missing:
 	</software>
 
 	<software name="pcharme">
-		<description>P-Charme</description>
+		<description>P-Charme Interpreter</description>
 		<year>1984</year>
 		<publisher>Frans van Hoesel</publisher>
 
