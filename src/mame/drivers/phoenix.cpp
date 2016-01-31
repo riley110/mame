@@ -1401,3 +1401,5 @@ GAME( 1981, capitol,  pleiads,  phoenix,  capitol, driver_device,  0,        ROT
 
 /*** Others ***/
 GAME( 1982, survival, 0,        survival, survival, driver_device, 0,        ROT90, "Rock-Ola",                          "Survival", MACHINE_IMPERFECT_COLORS )
+
+#include "phoenix_hb.cpp"

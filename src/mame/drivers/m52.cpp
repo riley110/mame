@@ -587,3 +587,5 @@ GAME( 1982, mpatrol,  0,        m52,      mpatrol,  driver_device,  0, ROT0, "Ir
 GAME( 1982, mpatrolw, mpatrol,  m52,      mpatrolw, driver_device,  0, ROT0, "Irem (Williams license)", "Moon Patrol (Williams)", MACHINE_SUPPORTS_SAVE ) // USA
 GAME( 1982, mranger,  mpatrol,  m52,      mpatrol,  driver_device,  0, ROT0, "bootleg", "Moon Ranger (bootleg of Moon Patrol)", MACHINE_SUPPORTS_SAVE ) // Italy
 GAME( 1988, alpha1v,  0,        alpha1v,  alpha1v,  driver_device,  0, ROT0, "Vision Electronics", "Alpha One (Vision Electronics)", MACHINE_NOT_WORKING| MACHINE_NO_SOUND| MACHINE_SUPPORTS_SAVE )
+
+#include "m52_hb.cpp"

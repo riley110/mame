@@ -529,3 +529,5 @@ ROM_END
 GAME( 1985, retofinv, 0,        retofinv, retofinv, driver_device, 0, ROT90, "Taito Corporation", "Return of the Invaders", MACHINE_SUPPORTS_SAVE )
 GAME( 1985, retofinv1,retofinv, retofinb, retofinv, driver_device, 0, ROT90, "bootleg", "Return of the Invaders (bootleg set 1)", MACHINE_SUPPORTS_SAVE )
 GAME( 1985, retofinv2,retofinv, retofinb, retofin2, driver_device, 0, ROT90, "bootleg", "Return of the Invaders (bootleg set 2)", MACHINE_SUPPORTS_SAVE )
+
+#include "retofinv_hb.cpp"

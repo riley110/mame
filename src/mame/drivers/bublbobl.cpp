@@ -1874,3 +1874,5 @@ GAME( 2013, boblcave,   bublbobl, boblbobl, boblcave, bublbobl_state, bublbobl, 
 
 GAME( 2012, bublcave11, bublbobl, bublbobl, bublbobl, bublbobl_state, bublbobl, ROT0, "hack (Bisboch and Aladar)", "Bubble Bobble: Lost Cave V1.1", MACHINE_SUPPORTS_SAVE )
 GAME( 2012, bublcave10, bublbobl, bublbobl, bublbobl, bublbobl_state, bublbobl, ROT0, "hack (Bisboch and Aladar)", "Bubble Bobble: Lost Cave V1.0", MACHINE_SUPPORTS_SAVE )
+
+#include "bublbobl_hb.cpp"

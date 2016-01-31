@@ -2207,3 +2207,5 @@ GAME( 1981, mazeinv,   0,        mazeinv,  mazeinv,  driver_device,  0,        R
 
 // other manufacturers
 GAME( 1985, bullsdrt,  0,        bullsdrt, bullsdrt, centiped_state, bullsdrt, ROT270, "Shinkai Inc. (Magic Electronics Inc. license)", "Bulls Eye Darts", MACHINE_WRONG_COLORS | MACHINE_SUPPORTS_SAVE )
+
+#include "centiped_hb.cpp"

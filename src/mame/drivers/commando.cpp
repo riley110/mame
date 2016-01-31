@@ -656,3 +656,5 @@ GAME( 1985, commandob, commando, commando, commando, commando_state, spaceinv, R
 GAME( 1985, commandob2,commando, commando, commando, commando_state, commando, ROT270, "bootleg", "Commando (bootleg set 2)", MACHINE_SUPPORTS_SAVE )
 GAME( 1985, sinvasn,   commando, commando, commando, commando_state, commando, ROT270, "Capcom", "Space Invasion (Europe)", MACHINE_SUPPORTS_SAVE )
 GAME( 1985, sinvasnb,  commando, commando, commando, commando_state, spaceinv, ROT270, "bootleg", "Space Invasion (bootleg)", MACHINE_SUPPORTS_SAVE )
+
+#include "commando_hb.cpp"

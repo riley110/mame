@@ -2969,3 +2969,5 @@ GAME( 1983, nflfoot,  0,        mcr_91490_ipu, nflfoot, mcr_state,  nflfoot,   R
 /* 91490 CPU board + 91464 video gen + 90913 sound I/O + Turbo Chip Squeak */
 GAME( 1984, demoderb, 0,        mcr_91490_tcs, demoderb, mcr_state, demoderb,  ROT0,  "Bally Midway", "Demolition Derby", MACHINE_SUPPORTS_SAVE )
 GAME( 1984, demoderbc,demoderb, mcr_91490_tcs, demoderbc,mcr_state, demoderb,  ROT0,  "Bally Midway", "Demolition Derby (cocktail)", MACHINE_SUPPORTS_SAVE )
+
+#include "mcr_hb.cpp"

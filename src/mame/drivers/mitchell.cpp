@@ -2352,3 +2352,5 @@ GAME( 1991, block,     0,        pangnv,  block, mitchell_state,    block,    RO
 GAME( 1991, blockj,    block,    pangnv,  block, mitchell_state,    block,    ROT270, "Capcom", "Block Block (Japan 910910)", MACHINE_SUPPORTS_SAVE )
 GAME( 1991, blockjoy,  block,    pangnv,  blockjoy, mitchell_state, block,    ROT270, "Capcom", "Block Block (World 911106 Joystick)", MACHINE_SUPPORTS_SAVE )
 GAME( 1991, blockbl,   block,    pangnv,  block, mitchell_state,    blockbl,  ROT270, "bootleg", "Block Block (bootleg)", MACHINE_SUPPORTS_SAVE )
+
+#include "mitchell_hb.cpp"

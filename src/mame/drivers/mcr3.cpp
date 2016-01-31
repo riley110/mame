@@ -2039,3 +2039,5 @@ GAMEL(1985, turbotag, 0,        mcrsc_csd, turbotag, mcr3_state, turbotag, ROT90
 // very different hardware, probably bootleg despite the license text printed on the PCB, similar to '1942p' in 1942.c.  Probably should be put in separate driver.
 // PCB made by Tecfri for Recreativos Franco S.A. in Spain, has Bally Midway logo, and licensing text on the PCB.  Board is dated '85' so seems to be a low-cost rebuild? it is unclear if it made it to market.
 GAME (1983, spyhuntpr,spyhunt,  spyhuntpr, spyhuntpr,mcr3_state,  spyhuntpr,ROT90, "Bally Midway (Recreativos Franco S.A. license)", "Spy Hunter (Spain, Tecfri / Recreativos Franco S.A. PCB)", MACHINE_NOT_WORKING | MACHINE_SUPPORTS_SAVE )
+
+#include "mcr3_hb.cpp"

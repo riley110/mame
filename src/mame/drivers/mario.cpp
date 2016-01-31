@@ -840,3 +840,5 @@ GAME( 1983, masao,    mario,   masao,   masao, driver_device,   0, ROT0, "bootle
 // todo, these might have a better home than in here
 GAME( 1983, mariobl,  mario,   mariobl, mariobl,driver_device,  0, ROT180, "bootleg", "Mario Bros. (Japan, bootleg)", MACHINE_SUPPORTS_SAVE ) // was listed as 'on extended Ambush hardware' but doesn't seem similar apart from the sound system?
 GAME( 1983, dkong3abl,dkong3,  dkong3abl,dkong3abl,driver_device,0, ROT90,  "bootleg", "Donkey Kong 3 (bootleg with 2xAY8910)", MACHINE_NOT_WORKING ) //  likewise, put here because it's similar to mariobl
+
+#include "mario_hb.cpp"

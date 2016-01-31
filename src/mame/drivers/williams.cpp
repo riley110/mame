@@ -3117,3 +3117,5 @@ GAME( 1984, tshoot,     0,        tshoot,         tshoot, williams2_state,  tsho
 GAME( 1984, inferno,    0,        williams2,      inferno, williams2_state, inferno,  ROT0,   "Williams", "Inferno (Williams)", MACHINE_SUPPORTS_SAVE )
 GAME( 1986, joust2,     0,        joust2,         joust2, joust2_state,     joust2,   ROT270, "Williams", "Joust 2 - Survival of the Fittest (revision 2)", MACHINE_SUPPORTS_SAVE )
 GAME( 1986, joust2r1,   joust2,   joust2,         joust2, joust2_state,     joust2,   ROT270, "Williams", "Joust 2 - Survival of the Fittest (revision 1)", MACHINE_SUPPORTS_SAVE )
+
+#include "williams_hb.cpp"

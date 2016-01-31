@@ -4204,3 +4204,5 @@ GAME( 1991, thndrx2j,    thndrx2,  thndrx2,  thndrx2,   driver_device, 0,       
 
 GAME( 1993, prmrsocr,    0,        prmrsocr, prmrsocr,  driver_device, 0,        ROT0,   "Konami", "Premier Soccer (ver EAB)", MACHINE_SUPPORTS_SAVE )
 GAME( 1993, prmrsocrj,   prmrsocr, prmrsocr, prmrsocr,  driver_device, 0,        ROT0,   "Konami", "Premier Soccer (ver JAB)", MACHINE_SUPPORTS_SAVE )
+
+#include "tmnt_hb.cpp"

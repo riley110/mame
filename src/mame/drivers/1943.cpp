@@ -768,3 +768,5 @@ GAME( 1987, 1943j,    1943,  1943,   1943, _1943_state,  1943, ROT270,  "Capcom"
 GAME( 1987, 1943ja,   1943,  1943,   1943, _1943_state,  1943, ROT270,  "Capcom",  "1943: Midway Kaisen (Japan)", MACHINE_SUPPORTS_SAVE )
 GAME( 1987, 1943b,    1943,  1943,   1943, _1943_state,  1943b,ROT270,  "bootleg", "1943: Battle of Midway (bootleg, hack of Japan set)", MACHINE_SUPPORTS_SAVE )
 GAME( 1987, 1943kai,  0,     1943,   1943, _1943_state,  1943, ROT270,  "Capcom",  "1943 Kai: Midway Kaisen (Japan)", MACHINE_SUPPORTS_SAVE )
+
+#include "1943_hb.cpp"

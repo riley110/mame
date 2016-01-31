@@ -1341,3 +1341,5 @@ GAME( 1979, spfghmk22,spfghmk2, spfghmk2, spfghmk22,driver_device,0,       ROT90
 
 GAME( 1980, tomahawk, 0,        tomahawk, tomahawk, driver_device,0,       ROT90, "Data East",            "Tomahawk 777 (rev 5)", MACHINE_IMPERFECT_SOUND | MACHINE_SUPPORTS_SAVE )
 GAME( 1980, tomahawk1,tomahawk, tomahawk, tomahawk1,driver_device,0,       ROT90, "Data East",            "Tomahawk 777 (rev 1)", MACHINE_IMPERFECT_SOUND | MACHINE_SUPPORTS_SAVE )
+
+#include "astrof_hb.cpp"

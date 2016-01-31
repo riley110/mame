@@ -3353,3 +3353,5 @@ GAME( 1985, spcfrcii,  0,        spclforc,  spclforc, driver_device, 0,        R
 GAME( 1984, drakton,   0,        drakton,   drakton,  dkong_state,   drakton,  ROT90,  "Epos Corporation", "Drakton (DK conversion)", MACHINE_SUPPORTS_SAVE )
 GAME( 1984, drktnjr,   drakton,  drktnjr,   drakton,  dkong_state,   drakton,  ROT90,  "Epos Corporation", "Drakton (DKJr conversion)", MACHINE_SUPPORTS_SAVE )
 GAME( 1985, strtheat,  0,        strtheat,  strtheat, dkong_state,   strtheat, ROT90,  "Epos Corporation", "Street Heat", MACHINE_SUPPORTS_SAVE ) // distributed by Cardinal Amusements Products (a division of Epos Corporation)
+
+#include "dkong_hb.cpp"

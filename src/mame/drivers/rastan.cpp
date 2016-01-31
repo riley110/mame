@@ -647,3 +647,5 @@ GAME( 1987, rastanua,  rastan, rastan, rastsaga, driver_device, 0, ROT0, "Taito 
 GAME( 1987, rastanub,  rastan, rastan, rastsaga, driver_device, 0, ROT0, "Taito America Corporation", "Rastan (US, Earlier code base)", MACHINE_SUPPORTS_SAVE )
 GAME( 1987, rastsaga,  rastan, rastan, rastsaga, driver_device, 0, ROT0, "Taito Corporation",         "Rastan Saga (Japan Rev 1)", MACHINE_SUPPORTS_SAVE )
 GAME( 1987, rastsagaa, rastan, rastan, rastsaga, driver_device, 0, ROT0, "Taito Corporation",         "Rastan Saga (Japan)", MACHINE_SUPPORTS_SAVE )
+
+#include "rastan_hb.cpp"

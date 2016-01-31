@@ -393,3 +393,5 @@ GAME( 1982, mrdofix,  mrdo, mrdo, mrdo, driver_device, 0, ROT270, "Universal (Ta
 GAME( 1982, mrlo,     mrdo, mrdo, mrdo, driver_device, 0, ROT270, "bootleg", "Mr. Lo!", MACHINE_SUPPORTS_SAVE )
 GAME( 1982, mrdu,     mrdo, mrdo, mrdo, driver_device, 0, ROT270, "bootleg", "Mr. Du!", MACHINE_SUPPORTS_SAVE )
 GAME( 1982, yankeedo, mrdo, mrdo, mrdo, driver_device, 0, ROT270, "hack", "Yankee DO!", MACHINE_SUPPORTS_SAVE )
+
+#include "mrdo_hb.cpp"

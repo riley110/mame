@@ -2626,3 +2626,5 @@ GAME( 1993, plgirls2,  0,        cachat,    plgirls2,  driver_device, 0,        
 GAME( 1993, plgirls2b, plgirls2, cachat,    plgirls2,  driver_device, 0,         ROT270, "bootleg", "Play Girls 2 (bootleg)", MACHINE_IMPERFECT_GRAPHICS ) // bootleg hardware (regular Z80 etc. instead of TC0090LVC, but acts almost the same - scroll offset problems)
 
 GAME( 1990, evilston,  0,        evilston,  evilston,  driver_device, 0,         ROT270, "Spacy Industrial, Ltd.", "Evil Stone", MACHINE_IMPERFECT_SOUND ) // not Taito PCB, just uses TC0090LVC
+
+#include "taito_l_hb.cpp"
