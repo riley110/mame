@@ -3,177 +3,418 @@
 <!-- Thanks to sharpmz.org for info! -->
 <softwarelist name="mz80k_cass" description="Sharp MZ-80K cassettes">
 
-	<software name="80k_06">
-		<description>80k_06</description>
-		<year>????</year>
+	<software name="bas6016">
+		<description>Replenished BASIC R.C (SP-6016)</description>
+		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="LOAD in Monitor" />
 
 		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="20095">
 				<rom name="basic6016.mzf" size="20095" crc="28873965" sha1="bfb48bbbb6de9c2d31811a743300b70a206cd33f" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass2" interface="mz_cass">
+	</software>
+
+	<software name="bas5025">
+		<description>Sharp BASIC SP-5025-FF</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="LOAD in Monitor" />
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="13028">
 				<rom name="basicsp5025ff.mzf" size="13028" crc="b63a318a" sha1="306163e9d541c2996bdcb6064fc624f9cf85c737" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass3" interface="mz_cass">
+	</software>
+
+	<software name="bas6017e">
+		<description>Replenished BASIC R.C (SP-6017E)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="LOAD in Monitor" />
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="20095">
 				<rom name="basicsp6017e.mzf" size="20095" crc="c57cc4c8" sha1="fbcc5cb1f4275fac51aa9b734d153a84a08c1da1" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass4" interface="mz_cass">
+	</software>
+
+	<software name="bas0815">
+		<description>Sharp BASIC SP-0815</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="LOAD in Monitor" />
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="17688">
 				<rom name="basicsp-0815.mzf" size="17688" crc="6eead201" sha1="8e9f707526b0b76a7d8ec806c51509c1ee41bd03" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass5" interface="mz_cass">
+	</software>
+
+	<software name="centonic" supported="no">
+		<description>Centonic</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Unknown loading instructions" />
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="1152">
 				<rom name="centonicobj.mzf" size="1152" crc="17015af5" sha1="e3c1f264e877bc1838600d34757808816e527b51" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass6" interface="mz_cass">
+	</software>
+
+<!--
+	<software name="">
+		<description></description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="800">
 				<rom name="checklog1.6.obj.mzf" size="800" crc="45e5cb0f" sha1="1bbff3ccf6d4976f45f11be37fd8a7987172b747" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass7" interface="mz_cass">
+	</software>
+-->
+
+	<software name="basascii">
+		<description>BASIC Code to ASCII Code Convert</description>
+		<year>????</year>
+		<publisher>MZ-80 User-Club</publisher>
+		<info name="usage" value="LOAD in Monitor" />
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="3192">
 				<rom name="code hu convert.mzf" size="3192" crc="fa1acc8e" sha1="91d738aa281e1964bd6b1845b3885565545ec2aa" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass8" interface="mz_cass">
+	</software>
+
+	<software name="devldung">
+		<description>The Devil's Dungeon'</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="LOAD in BASIC" />
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="4327">
 				<rom name="devils dungeon.mzf" size="4327" crc="55241f6d" sha1="11f7b21ac796b2d9d3c4b580986e63c91c8d950f" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass9" interface="mz_cass">
+	</software>
+
+	<software name="hubasic">
+		<description>HU-BASIC (v1.3)</description>
+		<year>1981</year>
+		<publisher>Hudson Soft</publisher>
+		<info name="usage" value="LOAD in Monitor" />
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="24448">
 				<rom name="hu-basic v1.3_k.mzf" size="24448" crc="ec200014" sha1="767a35604d1ead0bd719489a18975d8df40d54ef" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass10" interface="mz_cass">
+	</software>
+
+	<software name="hubasc">
+		<description>HU-BASIC Compiler (v1.3)</description>
+		<year>1981</year>
+		<publisher>Hudson Soft</publisher>
+		<info name="usage" value="LOAD in Monitor" />
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="28288">
 				<rom name="hucompiler.mzf" size="28288" crc="2166cbec" sha1="6d427b6b2e10874d6dd2b0f25d2078aef7267f82" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass11" interface="mz_cass">
+	</software>
+
+	<software name="hubasich" cloneof="hubasic">
+		<description>HU-BASIC (unknown version, hack?)</description>
+		<year>198?</year>
+		<publisher>&lt;hack?&gt;</publisher>
+		<info name="usage" value="LOAD in Monitor" />
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="24449">
 				<rom name="hudson-basic.mzf" size="24449" crc="66e10e18" sha1="522a92de1b842350f2dff78949e2c6202647d4cf" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass12" interface="mz_cass">
+	</software>
+
+<!--
+	<software name="">
+		<description></description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="1815">
 				<rom name="kalender-print.mzf" size="1815" crc="cd52c400" sha1="9ca319ee8d752db1c8ec4d090f2600bbe98561aa" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass13" interface="mz_cass">
+	</software>
+-->
+
+	<software name="3dkonst">
+		<description>3-Dimensionale Konstruktionen (Ger)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="LOAD in BASIC" />
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="11735">
 				<rom name="konstruktionen_k.mzf" size="11735" crc="228eebc4" sha1="36af85e96a608e77621b496496bb3169fd3b5e79" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass14" interface="mz_cass">
+	</software>
+
+<!--
+	<software name="">
+		<description></description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="2948">
 				<rom name="kurvendisk. 1_k.mzf" size="2948" crc="f3f19784" sha1="9013c618cd485474ffd9bbfd369b8feb1e56d0a2" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass15" interface="mz_cass">
+	</software>
+
+	<software name="">
+		<description></description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="12928">
 				<rom name="mx-basic_k.mzf" size="12928" crc="76e27377" sha1="3e612cfac965e0a2f58f3b6901e647c59ee3e167" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass16" interface="mz_cass">
+	</software>
+
+	<software name="">
+		<description></description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="384">
 				<rom name="pac--man i.mzf" size="384" crc="14d5643d" sha1="059cba6e2f2a82084665f8c00a5e1485f6d50726" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass17" interface="mz_cass">
+	</software>
+
+	<software name="">
+		<description></description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="20096">
 				<rom name="repl. basic_sp-6016.mzf" size="20096" crc="aeab68c6" sha1="2622803e852ffd0b696f28856725172482d98df3" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass18" interface="mz_cass">
+	</software>
+
+	<software name="">
+		<description></description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="897">
 				<rom name="rtty aus_k.mzf" size="897" crc="be563d3e" sha1="70ac95b8799bcf8f5fcd9056337d6aaa47f66d17" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass19" interface="mz_cass">
+	</software>
+
+	<software name="">
+		<description></description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="897">
 				<rom name="rtty ein_k.mzf" size="897" crc="57172be4" sha1="988eceb28076ffd9cb274ec0efefd2da7e8bd96d" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass20" interface="mz_cass">
+	</software>
+
+	<software name="">
+		<description></description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="369">
 				<rom name="short basic 6015.mzf" size="369" crc="2b2c3f7d" sha1="bcf59c32fecc9a0809f1d45c5d3722a4bbcf4a94" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass21" interface="mz_cass">
+	</software>
+
+	<software name="">
+		<description></description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="4223">
 				<rom name="sub-monitor 48k.mzf" size="4223" crc="18b13506" sha1="3ca45b47244dc9807ff428517cce086cb1a4e70e" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass22" interface="mz_cass">
+	</software>
+
+	<software name="">
+		<description></description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="20242">
 				<rom name="supergolf.mzf" size="20242" crc="cf44a998" sha1="d55dfa7698dde8fefa8c76708206f1a275f219e2" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass23" interface="mz_cass">
+	</software>
+
+	<software name="">
+		<description></description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="1335">
 				<rom name="tapecopy22.mzf" size="1335" crc="d47945aa" sha1="9cc4eaa93bf6b5f8538b2f12a3d32a0e2fb6b1bb" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass24" interface="mz_cass">
+	</software>
+
+	<software name="">
+		<description></description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="26324">
 				<rom name="vektorrechnung.mzf" size="26324" crc="8dbdfa12" sha1="1cfca3ef4c3dcfe22ddfe40c81015e4cec726d30" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass25" interface="mz_cass">
+	</software>
+
+	<software name="">
+		<description></description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="14723">
 				<rom name="vereinsverw._k.mzf" size="14723" crc="35907e4b" sha1="37633ee5ef83c40f373f887f82746833fea76bb2" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass26" interface="mz_cass">
+	</software>
+
+	<software name="">
+		<description></description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="11904">
 				<rom name="z80assembler2.mzf" size="11904" crc="285a2b7c" sha1="01fb83cd182aa8220ec6d94d497a237aa2f1dbdc" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass27" interface="mz_cass">
+	</software>
+
+	<software name="">
+		<description></description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="4937">
 				<rom name="8048 cpu disas..mzf" size="4937" crc="d26e3b53" sha1="9ef7274458c830a5e80d61759c17f89e43e832a6" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass28" interface="mz_cass">
+	</software>
+
+	<software name="">
+		<description></description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="431">
 				<rom name="av__pac-man.mzf" size="431" crc="a702aa9b" sha1="de58c0a428d059f6a1056c2e596e5719ed2cba50" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass29" interface="mz_cass">
+	</software>
+
+	<software name="">
+		<description></description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="16019">
 				<rom name="bas+bascode2.mzf" size="16019" crc="c7d0ee98" sha1="74f9ca8717db925d62a3aba46eb957cfb7e74f06" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass30" interface="mz_cass">
+	</software>
+
+	<software name="">
+		<description></description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="13019">
 				<rom name="basic5026.mzf" size="13019" crc="6eac48a4" sha1="df81765b27c9863f437078bff226ad1bd2810c3c" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass32" interface="mz_cass">
+	</software>
+
+	<software name="">
+		<description></description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="32396">
 				<rom name="stonewor.m12" size="32396" crc="2ca0bd16" sha1="e555d145f0227f4e5bff508925a77bc05490e86a" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass33" interface="mz_cass">
+	</software>
+
+	<software name="">
+		<description></description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="6282">
 				<rom name="3dspacec.m12" size="6282" crc="fb8e5db3" sha1="97a05271046bf5cc8569e80c649fc05c17ed0203" offset="0" />
 			</dataarea>
 		</part>
-		<part name="cass34" interface="mz_cass">
+	</software>
+
+	<software name="">
+		<description></description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mz_cass">
 			<dataarea name="cass" size="32046">
 				<rom name="nauticcr.m12" size="32046" crc="fb6b9f09" sha1="815a736f2edb924df1b2a4df458da4800f9b7018" offset="0" />
 			</dataarea>
 		</part>
 	</software>
+-->
 
 	<software name="80k_10">
 		<description>80k_10</description>
