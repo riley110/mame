@@ -2156,4 +2156,4 @@ GAME( 199?, hexaa,      hexa,     hexaa,    hexa, arkanoid_state,     hexaa,    
 
 GAME( 1993, brixian,    0,        brixian,  brixian, arkanoid_state,  brixian,        ROT0,  "Cheil Computer System", "Brixian", MACHINE_SUPPORTS_SAVE )
 
-//#include "arkanoid_hb.cpp"
+#include "arkanoid_hb.cpp"
