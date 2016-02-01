@@ -481,6 +481,16 @@ The games seem to use them to mark platforms, kill zones and no-go areas.
 #define HACK_B_1      -1,   -1,    -1,  -1,  -1,  -1,   -1,  -1,  -1,   0x14,{0x12,0x10,0x0e,0x0c},0x0a, {0x0e,0x0e,0x0e,0x30,0x30}
 #define HACK_B_2      -1,   -1,   0x0e,0x0c,0x0a,0x08, 0x06,0x04,0x02,  0x28,{0x26,0x24,0x22,0x20},0x22, {0x20,0x04,0x08,0x12,0x12}
 
+// HBMAME extras
+
+#define HACK_H_2      -1,   -1,    -1,  -1,  -1,  -1,   -1,  -1,  -1,   0x20,{ -1,  -1,  -1,  -1 },0x2a, {0x02,0x02,0x02,0x00,0x00} // wofh etc
+#define HACK_H_3      -1,   -1,    -1,  -1,  -1,  -1,   -1,  -1,  -1,   0x04,{0x12,0x10,0x0e,0x0c},0x0a, {0x02,0x02,0x02,0x00,0x00} // not used
+#define HACK_H_4      -1,   -1,    -1,  -1,  -1,  -1,   -1,  -1,  -1,   0x30,{0x2e,0x2c,0x2a,0x28},0x26, {0x02,0x04,0x08,0x00,0x00} // not used
+#define HACK_H_5      -1, 0x0000,          __not_applicable__,          0x26,{0x28,0x2a,0x2c,0x2e},0x30, {0x40,0x40,0x40,0x00,0x00} // daimakb
+#define HACK_H_6      -1,   -1,   0x06,0x04,0x02,0x00, 0x1e,0x1c,0x1a,  0x28,{0x26,0x24,0x22,0x20},0x30, {0x40,0x10,0x02,0x00,0x00} // knightsb2
+#define HACK_H_7      -1,   -1,   0x06,0x04,0x02,0x00, 0x1e,0x1c,0x1a,  0x26,{0x28,0x2a,0x2c,0x2e},0x30, {0x20,0x10,0x02,0x00,0x00} // knightsha
+#define HACK_H_8      -1,   -1,    -1,  -1,  -1,  -1,   -1,  -1,  -1,   0x20,{0x00,0x00,0x00,0x00},0x00, {0x80,0x80,0x80,0x00,0x00}
+
 /*
 CPS_B_21_DEF is CPS-B-21 at default settings (no battery)
 CPS_B_21_BTx are various battery configurations
@@ -1262,6 +1272,30 @@ static const struct gfx_range mapper_sfzch_table[] =
 	{ 0 }
 };
 
+//HBMAME start
+#define mapper_frog     { 0x8000, 0, 0, 0 }, mapper_frog_table
+static const struct gfx_range mapper_frog_table[] =
+{
+	/* type            start   end    bank */
+	{ GFXTYPE_SPRITES, 0x04e0, 0x050f, 0 }, // frogs and bugs
+	{ GFXTYPE_SCROLL1, 0x0000, 0x003f, 0 }, // text
+	{ GFXTYPE_SCROLL2, 0x0140, 0x025f, 0 }, // frog feast title
+	{ GFXTYPE_SCROLL3, 0x0040, 0x04df, 0 }, // logo and background
+	{ 0 }
+};
+
+#define mapper_demo    { 0x8000, 0, 0, 0 }, mapper_demo_table
+static const struct gfx_range mapper_demo_table[] =
+{
+	/* type            start  end      bank */
+	{ GFXTYPE_SPRITES, 0x0000, 0x003f, 0 }, // moveable chaos
+	{ GFXTYPE_SCROLL1, 0x4400, 0x445f, 0 }, // text
+	{ GFXTYPE_SCROLL2, 0x0040, 0x00ff, 0 }, // logo, blue box, 10th
+	{ GFXTYPE_SCROLL3, 0x0100, 0x011f, 0 }, // must not allow access to 0000, otherwise not used
+	{ 0 }
+};
+//HBMAME end
+
 
 /*
   I don't know if CPS2 ROM boards use PALs as well; since all games seem to be
@@ -1606,6 +1640,98 @@ static const struct CPS1config cps1_config_table[]=
 
 	{"kenseim",     CPS_B_21_DEF, mapper_KNM10B },  // wrong, need to convert equations from PAL
 
+// HBMAME
+	{"captcomc",    CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },	//works
+	{"captcomh",    CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },	//works
+	{"captcommb2",  CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },	//works
+	//{"cawingb",     CPS_B_16,     mapper_CA24B, 0, 0, 0, 0x8F },// no sprites here, ok in fcrash.c
+	{"cps1demo",    CPS_B_04,     mapper_demo,  0, 0, 0, 0x80 },		//works
+	{"cps1frog",    CPS_B_04,     mapper_frog,  0, 0, 0, 0x80 },		//works
+	{"cps1test",    CPS_B_21_DEF, mapper_S9263B, 0x36 },			//works
+	{"cps1testa",   CPS_B_21_DEF, mapper_RCM63B },				//works
+	{"daimakb",     HACK_H_5,     mapper_DM22A },				//works
+	{"dinob",       CPS_B_21_QS2, mapper_CD63B, 0, 0, 0, 0x0F },		//works
+	{"dinoeh",      CPS_B_21_QS2, mapper_CD63B },				//works
+	{"dinoex",      CPS_B_21_DEF, mapper_CD63B },				//works
+	{"dinoh",       CPS_B_21_DEF, mapper_CD63B, 0x36 },			//works
+	{"dinoha",      CPS_B_21_DEF, mapper_CD63B, 0x36 },			//works
+	{"dinohb",      CPS_B_21_QS2, mapper_CD63B, 0, 0, 0, 0x0F },		//works
+	{"dinojp",      CPS_B_21_QS2, mapper_CD63B },				//works
+	{"dinoslice",   CPS_B_21_QS2, mapper_CD63B },				//works
+	{"dinoz",       CPS_B_21_QS2, mapper_CD63B },				//works
+	{"knight21",    CPS_B_21_BT4, mapper_KR63B, 0x36, 0, 0x34 },		//works
+	//{"knightsa",    CPS_B_21_BT4, mapper_KR63B, 0x36, 0, 0x34 },		// a rom is unobtainable
+	{"knightsb2",   HACK_H_6,     mapper_KR63B, 0x36, 0, 0x34, 0x44 }, 	//works
+	{"knightsh",    CPS_B_21_DEF, mapper_KR63B, 0x36, 0, 0x34 },		//works (intro screen is crap)
+	{"knightsha",   HACK_H_7,     mapper_KR63B, 0x36, 0, 0x34 },		//works
+	{"knightsjb",   CPS_B_21_DEF, mapper_KR63B, 0x36, 0, 0x34 },		//works
+	{"knightsro",   CPS_B_21_BT4, mapper_KR63B, 0x36, 0, 0x34 },		//works
+	{"kodh",        CPS_B_21_DEF, mapper_KD29B, 0x36, 0, 0x34 },		//works
+	{"pnicku",      CPS_B_21_DEF, mapper_PKB10B },				//works
+	{"punisherb",   CPS_B_21_QS3, mapper_PS63B, 0, 0, 0, 0x0E },		//works
+	{"punisherf",   CPS_B_21_QS3, mapper_PS63B },				//works
+	{"punisherjh",  CPS_B_21_QS3, mapper_PS63B },				//works
+	{"punisherjha", CPS_B_21_QS3, mapper_PS63B },				//works
+	{"sf2c",        CPS_B_13,     mapper_STF29,  0x36 },			//works
+	{"sf2cebr",     CPS_B_21_DEF, mapper_S9263B, 0x36 },			//works
+	{"sf2ced",      CPS_B_21_DEF, mapper_S9263B, 0x36 },			//works
+	{"sf2ceda",     CPS_B_21_DEF, mapper_S9263B, 0x36 },			//works
+	{"sf2ceh",      CPS_B_21_DEF, mapper_S9263B, 0x36 },			//works
+	{"sf2koryuh",   CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },	//works
+	{"sf2h9",       CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },	//works
+	{"sf2h10",      CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },	//works
+	{"sf2h11",      HACK_B_1,     mapper_S9263B, 0x36, 0, 0, 0x41 },	//works
+	{"sf2h12",      HACK_B_1,     mapper_S9263B, 0x36, 0, 0, 0x41 },	//works
+	{"sf2h13",      CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },	//works
+	{"sf2pun",      CPS_B_21_DEF, mapper_S9263B, 0x36 },			//works
+	{"sf2sl73a",    CPS_B_21_DEF, mapper_S9263B, 0x36 },			//works
+	{"sf2th",       CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },	//works
+	{"sf2tha",      CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },	//works
+	{"sf2tlona",    CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },	//works
+	{"sf2tlonb",    CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },	//works
+	{"sf2tlonc",    CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },	//works
+	{"sf2turyu",    CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },	//works
+	{"sf2yyc3d5",   CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },	//works
+	{"sf2yyc3g",    CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },	//works
+	{"sf2yyc6",     CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },	//works
+	{"stridergf",   CPS_B_01,     mapper_ST24M1 },				//works
+	{"stridergh",   CPS_B_01,     mapper_ST24M1 },				//works
+	{"sk2h1",       HACK_H_2,     mapper_TK263B, 0, 0, 0, 0x8F },		//works, priorities
+	{"sk2h1q",      HACK_H_2,     mapper_TK263B, 0, 0, 0, 0x8F },		//works, priorities
+	{"sk2h2",       HACK_H_2,     mapper_TK263B, 0, 0, 0, 0x8F },		//works, priorities
+	{"sk2h2q",      HACK_H_2,     mapper_TK263B, 0, 0, 0, 0x8F },		//works, priorities
+	{"sk2h3",       HACK_H_2,     mapper_TK263B, 0, 0, 0, 0x8F },		//works, priorities
+	{"sk2h11",      CPS_B_21_DEF, mapper_TK263B },				//works
+	{"sk2h12",      CPS_B_21_DEF, mapper_TK263B },				//works
+	{"sk2h13",      CPS_B_21_DEF, mapper_TK263B },				//works
+	{"sk2h14",      CPS_B_21_DEF, mapper_TK263B },				//works
+	{"sk2h21",      CPS_B_21_DEF, mapper_TK263B, 0x36 },			//works
+	{"sk2h22",      HACK_H_2,     mapper_TK263B, 0x36, 0, 0, 0x8F },	//works, priorities
+	{"sk2h31",      HACK_H_2,     mapper_TK263B, 0x36, 0, 0, 0x8F },	//works, priorities
+	{"sk2h31q",     HACK_H_2,     mapper_TK263B, 0x36, 0, 0, 0x8F },	//works, priorities
+	{"sk2h32",      HACK_H_2,     mapper_TK263B, 0x36, 0, 0, 0x8F },	//works, priorities
+	{"sk2h32q",     HACK_H_2,     mapper_TK263B, 0x36, 0, 0, 0x8F },	//works, priorities
+	{"sk2h33",      HACK_H_2,     mapper_TK263B, 0x36, 0, 0, 0x8F },	//works, priorities
+	{"sk2h33q",     HACK_H_2,     mapper_TK263B, 0x36, 0, 0, 0x8F },	//works, priorities
+	{"sk2h34",      HACK_H_2,     mapper_TK263B, 0x36, 0, 0, 0x8F },	//works, priorities
+	{"sk2h34q",     HACK_H_2,     mapper_TK263B, 0x36, 0, 0, 0x8F },	//works, priorities
+	{"sk2h35",      CPS_B_21_DEF, mapper_TK263B, 0x36 },			//works
+	{"varthb",      CPS_B_04,     mapper_VA63B, 0, 0, 0, 0x0F },		//works
+	{"wofb",        CPS_B_21_DEF, mapper_TK263B },				//works
+	{"wofch_v3",    CPS_B_21_DEF, mapper_sfzch },				//works
+	{"wofchdx",     CPS_B_21_DEF, mapper_sfzch },				//works
+	{"wofchdx1",    CPS_B_21_DEF, mapper_TK263B },				//works
+	{"wofjcn",      CPS_B_21_QS1, mapper_TK263B },				// problem with chinese language roms
+	{"woffr",       CPS_B_21_DEF, mapper_sfzch },				//works
+	{"wofjh",       CPS_B_21_QS1, mapper_TK263B },				//works
+	//{"wofjhb",      CPS_B_21_QS1, mapper_TK263B }, // unknown rom is missing
+	//{"wofjhc",      CPS_B_21_QS1, mapper_TK263B }, // unknown rom is missing
+	{"wofjm",       CPS_B_21_QS1, mapper_TK263B },				//works
+	{"wofjzero",    CPS_B_21_QS1, mapper_TK263B },				//works
+	{"wofr1h",      CPS_B_21_DEF, mapper_TK263B },				//works
+	{"wofsf2",      CPS_B_21_QS1, mapper_TK263B, 0x36 },			//works
+
+	// HBMAME end
 	{nullptr}     /* End of table */
 };
 
@@ -1766,10 +1892,10 @@ READ16_MEMBER(cps_state::cps1_cps_b_r)
 				m_cps_b_regs[m_game_config->mult_factor2 / 2]) >> 16;
 
 	if (offset == m_game_config->in2_addr / 2)  /* Extra input ports (on C-board) */
-		return ioport("IN2")->read();
+		return cps1_in2_r(space, 0, 0); // HBMAME ioport("IN2")->read();
 
 	if (offset == m_game_config->in3_addr / 2)  /* Player 4 controls (on C-board) ("Captain Commando") */
-		return ioport("IN3")->read();
+		return cps1_in3_r(space, 0, 0); // HBMAME ioport("IN3")->read();
 
 	if (m_cps_version == 2)
 	{
@@ -1918,6 +2044,9 @@ void cps_state::cps1_get_video_base()
 {
 	int layercontrol=0, videocontrol=0, scroll1xoff=0, scroll2xoff=0, scroll3xoff=0;
 
+	//HBMAME
+	UINT8 kludge = m_game_config->bootleg_kludge & 15;
+
 	/* Re-calculate the VIDEO RAM base */
 	if (m_scroll1 != cps1_base(CPS1_SCROLL1_BASE, m_scroll_size))
 	{
@@ -1936,13 +2065,29 @@ void cps_state::cps1_get_video_base()
 	}
 
 	/* Some of the sf2 hacks use only sprite port 0x9100 and the scroll layers are offset */
-	if (m_game_config->bootleg_kludge == 1)
+	if (kludge == 0x01) // HBMAME
 	{
 		m_cps_a_regs[CPS1_OBJ_BASE] = 0x9100;
 		scroll1xoff = -0x0c;
 		scroll2xoff = -0x0e;
 		scroll3xoff = -0x10;
 	}
+// HBMAME start
+	else
+	if (kludge == 0x0E)
+	{
+		scroll1xoff = 0xffba;
+		scroll2xoff = 0xffc0;
+		scroll3xoff = 0xffba;
+	}
+	else
+	if (kludge == 0x0F)
+	{
+		scroll1xoff = 0xffc0;
+		scroll2xoff = 0xffc0;
+		scroll3xoff = 0xffc0;
+	}
+// HBMAME end
 	else
 	if (m_game_config->bootleg_kludge == 2)
 	{
@@ -2234,6 +2379,8 @@ VIDEO_START_MEMBER(cps_state,cps)
 	memset(m_cps_a_regs, 0, 0x40);   /* Clear CPS-A registers */
 	memset(m_cps_b_regs, 0, 0x40);   /* Clear CPS-B registers */
 
+	m_cps_b_regs[m_game_config->palette_control/2] = 0x3F; // HBMAME
+
 	if (m_cps_version == 2)
 	{
 		memset(m_objram1, 0, m_cps2_obj_size);
@@ -2448,7 +2595,7 @@ void cps_state::cps1_render_sprites( screen_device &screen, bitmap_ind16 &bitmap
 	UINT16 *base = m_buffered_obj.get();
 
 	/* some sf2 hacks draw the sprites in reverse order */
-	if ((m_game_config->bootleg_kludge == 1) || (m_game_config->bootleg_kludge == 2) || (m_game_config->bootleg_kludge == 3))
+	if BIT(m_game_config->bootleg_kludge, 6) // HBMAME
 	{
 		base += m_last_sprite_offset;
 		baseadd = -4;
