@@ -592,3 +592,5 @@ WRITE8_MEMBER(pacman_state::jrpacman_bgpriority_w)
 {
 	m_bgpriority = (data & 1);
 }
+
+#include "pacman_hb.cpp"
