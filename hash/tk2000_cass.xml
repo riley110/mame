@@ -1,0 +1,574 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+None of these files can actually be mounted in emulation;
+this list exists just for documentation purposes for now.
+
+The CT2 files come from the TK2000 II emulator Github repo; the source of the MP3 files is unknown.
+-->
+<softwarelist name="tk2000_cass" description="Microdigital TK2000 cassettes">
+
+	<software name="aestrada" supported="no">
+		<description>Auto Estrada</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="22404">
+				<rom name="autoestrada.ct2" size="22404" crc="99db803e" sha1="a8f989386a6a34327610f3e7b87be7e41444901c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="aestradaa" cloneof="aestrada" supported="no">
+		<description>Auto Estrada (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="1293584">
+				<rom name="auto_estrada_tk2000.mp3" size="1293584" crc="3ba7c09f" sha1="271fc71a4dea0cc333bf610a42dac3281142bcd9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="aestradab" cloneof="aestrada" supported="no">
+		<description>Auto Estrada (Alt 2)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="1228800">
+				<rom name="auto_estrada_tk2000 [a].mp3" size="1228800" crc="23b3dc7f" sha1="dcd881cccf87c8f4a36837e1f1c6b282fc676629" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="batnaval" supported="no">
+		<description>Batalha Naval</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="7476">
+				<rom name="batalhanaval.ct2" size="7476" crc="ff4a5b2e" sha1="35874ce4bd7ec2364eccf0684c8b8798b308358f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="batnavala" cloneof="batnaval" supported="no">
+		<description>Batalha Naval (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="838844">
+				<rom name="batalha_naval_tk2000.mp3" size="838844" crc="47d2163c" sha1="6f8c1526563d69e883ad3ef1af68526a29268b9d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bombarde" supported="no">
+		<description>Bombardeiro</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="31445">
+				<rom name="bombardeio.ct2" size="31445" crc="447acc65" sha1="9e7a7f5bd8ac8bd66fe177bfa29a6e2a794adf7b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bombardea" cloneof="bombarde" supported="no">
+		<description>Bombardeiro (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="1873241">
+				<rom name="bombardeiro_tk2000.mp3" size="1873241" crc="9f398dd8" sha1="99059243336554520fa5f4c4576a819d21901bae" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bugatk" supported="no">
+		<description>Bug Attack</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="34838">
+				<rom name="bugattack.ct2" size="34838" crc="d3ccc021" sha1="b487fb548e1feaf9e6b0d6a6521537651f2e6675" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bugatka" cloneof="bugatk" supported="no">
+		<description>Bug Attack (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="2853825">
+				<rom name="bug_attack_tk2000.mp3" size="2853825" crc="960b0075" sha1="1588abef3c8e371fffc03921a17d9d9e320620ff" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ceiling" supported="no">
+		<description>Ceiling Zero</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="39185">
+				<rom name="ceilingzero.ct2" size="39185" crc="9ec88048" sha1="32e0d26ac1d8269a31d3e892fdb2cea3cf438069" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ceilinga" cloneof="ceiling" supported="no">
+		<description>Ceiling Zero (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="3079941">
+				<rom name="ceiling_zero_tk2000.mp3" size="3079941" crc="b71dbb16" sha1="18508936f372e121b4a0d6dc6ca0895a5a50900f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="defender" supported="no">
+		<description>Defender</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="40839">
+				<rom name="defender.ct2" size="40839" crc="0a3da954" sha1="97a6a004507538cd720fed6777cf67567099063f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="defendera" cloneof="defender" supported="no">
+		<description>Defender (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="3578984">
+				<rom name="defender_tk2000.mp3" size="3578984" crc="b0375742" sha1="b65e725b94f12fc993eafe4cbbef4ac12b922080" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="desafio" supported="no">
+		<description>Desafio Fatal</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="15317">
+				<rom name="desafiofatal.ct2" size="15317" crc="bef73f61" sha1="4f8d949b42941c150024b44967f7327c9aa64c3d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="desafioa" cloneof="desafio" supported="no">
+		<description>Desafio Fatal (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="1362129">
+				<rom name="desafio_fatal_tk2000.mp3" size="1362129" crc="e1b52012" sha1="3e6dbac4c01c5ef1579e3a4d979098d88d99c08d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dbeetles" supported="no">
+		<description>Dung Beetles</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="16799">
+				<rom name="dungbeetles.ct2" size="16799" crc="06dfd1de" sha1="433f2c3b509679b016464d2208aa1f9676d94c3f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dbeetlesa" cloneof="dbeetles" supported="no">
+		<description>Dung Beetles (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="1659298">
+				<rom name="dung_beetles_tk2000.mp3" size="1659298" crc="71b7c533" sha1="2dd220c5d1a21238415eb36292c2d61bf2c7b028" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="editor" supported="no">
+		<description>Editor</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="898194">
+				<rom name="editor_tk2000.mp3" size="898194" crc="530219b9" sha1="cf94f839d8400d309c494fb8bf81652617c378ae" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="eliminat" supported="no">
+		<description>Eliminator</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="36202">
+				<rom name="eliminator.ct2" size="36202" crc="99834480" sha1="22866ef8a0d5d0e8ed54f6cb8a89cafabfcecdba" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="eliminata" cloneof="eliminat" supported="no">
+		<description>Eliminator (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="3097496">
+				<rom name="eliminator_tk2000.mp3" size="3097496" crc="b9dd06ce" sha1="6a52f675f7f733d787a4202d4545e3bb0ae331bc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="estacao" supported="no">
+		<description>Estacao Orbital</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="36921">
+				<rom name="estacaoorbital.ct2" size="36921" crc="24f8681f" sha1="223cc53d84d7cb8b611b225fa264506416e5b231" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="estacaoa" cloneof="estacao" supported="no">
+		<description>Estacao Orbital (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="3840627">
+				<rom name="estacao_orbital_tk2000.mp3" size="3840627" crc="17a21a8f" sha1="3b6f41e02cdb4a930c45c066b07866c353d048f7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- not found on the tk2000 github -->
+	<software name="fitatest" supported="no">
+		<description>Fita Teste</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="5313">
+				<rom name="fita_teste.ct2" size="5313" crc="a7c5db4c" sha1="a98f4b92f1123b7e16099c1117e65d575db5a7d1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fitatesta" cloneof="fitatest" supported="no">
+		<description>Fita Teste (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="370678">
+				<rom name="fita_teste_tk2000.mp3" size="370678" crc="cb7fd9e2" sha1="00f242bfbc1e5023f185308693d5c256a2c4d234" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fliperam" supported="no">
+		<description>Fliperama</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="1869322">
+				<rom name="fliperama_tk2000.mp3" size="1869322" crc="9ccba29e" sha1="8c83d70c60996db46328356f8cbf6e7c7a8782a3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fliperama" cloneof="fliperam" supported="no">
+		<description>Fliperama (Alt)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="1948212">
+				<rom name="fliperama_tk2000 [a].mp3" size="1948212" crc="5c7020e2" sha1="4629a86e224b8364c14436f90698ec1952692db1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gammagob" supported="no">
+		<description>Gamma Goblins</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="35925">
+				<rom name="gammagoblins.ct2" size="35925" crc="13711f91" sha1="15805e6f7a2ebe723794fc1570cc7ac133d0ea14" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gomoku" supported="no">
+		<description>Go-Moku</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="15980">
+				<rom name="go-moku.ct2" size="15980" crc="29e2c8e9" sha1="436af6951b968aff879ef41bfa79cda0240eecb8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gobber" supported="no">
+		<description>Gobber</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="21869">
+				<rom name="gobber.ct2" size="21869" crc="fe2b0b47" sha1="005517ddfe423c3c22d8ac3289a4e736cdc83a6d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="granprix" supported="no">
+		<description>Gran Prix</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="33493">
+				<rom name="granprix.ct2" size="33493" crc="1c7d279b" sha1="760b1ae9c9662ba5c5ed1bda5ad569c45b49a06a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hero" supported="no">
+		<description>Hero</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="25457">
+				<rom name="hero.ct2" size="25457" crc="34d4298a" sha1="c84d63c7a45c6a501a0024f40cc25e89993a8d33" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="karateka" supported="no">
+		<description>Karateka</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="44432">
+				<rom name="karateka1.ct2" size="44432" crc="2549b835" sha1="f7d309d42829119ffd125a2d0c2b2270712ce735" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="tk2000_cass">
+			<dataarea name="cass" size="39168">
+				<rom name="karateka2.ct2" size="39168" crc="47e3a97f" sha1="022a5051ec7e5c6ce4ad0060e7f0817d25cf25fe" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="minotaur" supported="no">
+		<description>Minotauro</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="5527">
+				<rom name="minotauro1.ct2" size="5527" crc="f6405a9f" sha1="76015a32e6b235d531bcc5a5fdd37e2ba7caff1e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="tk2000_cass">
+			<dataarea name="cass" size="44828">
+				<rom name="minotauro2.ct2" size="44828" crc="8f9a5d01" sha1="ffb8c3338d89b49bc57b588fe497d53a738a292e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mflipper" supported="no">
+		<description>Multiflipper</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="33051">
+				<rom name="multiflipper.ct2" size="33051" crc="f96657f1" sha1="6ce04066a2a91249f15d25cf0785a24164d97555" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ncrawler" supported="no">
+		<description>Night Crawler</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="22437">
+				<rom name="nightcrawler.ct2" size="22437" crc="d34ee44b" sha1="1b81cffdd05c2d7b5edbf47a19b18799756c42c1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="norad" supported="no">
+		<description>Norad</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="41769">
+				<rom name="norad.ct2" size="41769" crc="b61f1f39" sha1="cc2066ab069ad6032a69c5a8663a317a816c2b17" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="operacao" supported="no">
+		<description>Operacao Perigo</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="25145">
+				<rom name="operacaoperigo.ct2" size="25145" crc="b45597ea" sha1="c0970fcb91d4ece57de076bf4932e8867eda3c4c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="papatudo" supported="no">
+		<description>Papa Tudo</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="22106">
+				<rom name="papatudo.ct2" size="22106" crc="522fbc55" sha1="ee4af15f7d64865ce7a68f91379088076bb03eb3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="poker" supported="no">
+		<description>Poker</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="12238">
+				<rom name="poker.ct2" size="12238" crc="6c096b04" sha1="b00584c923797fcb2802fa0f5373f1e9b5605973" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pulosapo" supported="no">
+		<description>Pulo do Sapo</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="20769">
+				<rom name="pulodosapo.ct2" size="20769" crc="c06a338d" sha1="f3622a2e13ff4186b991733fbc4c4d6c140a21fd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="resgate" supported="no">
+		<description>Resgate</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="37423">
+				<rom name="resgate.ct2" size="37423" crc="8b740e46" sha1="e5def437b991d314118600954747f1b5c1fa5344" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sabotage" supported="no">
+		<description>Sabotagem</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="17745">
+				<rom name="sabotagem.ct2" size="17745" crc="7bd9e2ef" sha1="01c76c03fd0669f3ab2218679d1e6026aebd16ab" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spaceatk" supported="no">
+		<description>Space Attack</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="17501">
+				<rom name="spaceattack.ct2" size="17501" crc="63e1e341" sha1="5a8e95c2490e6bdef7067be10ddaae539d98b02d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="suicida" supported="no">
+		<description>Suicida</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="28811">
+				<rom name="suicida.ct2" size="28811" crc="f1821130" sha1="b2b1a4ec1aca15fba9c784a695ce528f3ef7d91b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="swashbuc" supported="no">
+		<description>Swashbuckler</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="39201">
+				<rom name="swashbuckler.ct2" size="39201" crc="40fd4335" sha1="a470a213d6372eedc5ca977dd9806218662f4930" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="xadrez" supported="no">
+		<description>Xadrez</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="tk2000_cass">
+			<dataarea name="cass" size="9300">
+				<rom name="xadrez.ct2" size="9300" crc="24e7a1be" sha1="079ca36a1cd940b7e1178347d0ba0c766f26f88c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>

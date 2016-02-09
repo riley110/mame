@@ -56,6 +56,7 @@ PAGE SEL bit in PORT0 set to 1:
 #include "machine/wd_fdc.h"
 #include "machine/z80sti.h"
 #include "video/mc6845.h"
+#include "softlist.h"
 
 
 class ts803_state : public driver_device
@@ -529,6 +530,7 @@ static MACHINE_CONFIG_START( ts803, ts803_state )
 	MCFG_FLOPPY_DRIVE_ADD("fdc:0", ts803_floppies, "drive0", floppy_image_device::default_floppy_formats)
 	MCFG_FLOPPY_DRIVE_ADD("fdc:1", ts803_floppies, "drive1", floppy_image_device::default_floppy_formats)
 	MCFG_FLOPPY_DRIVE_SOUND(true)
+	MCFG_SOFTWARE_LIST_ADD("flop_list", "ts803_flop")
 
 	/* keyboard */
 	//MCFG_DEVICE_ADD("keyboard", GENERIC_KEYBOARD, 0)
