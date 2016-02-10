@@ -185,9 +185,13 @@ SLOT_INTERFACE_END
 static MACHINE_CONFIG_FRAGMENT( beta_disk )
 	MCFG_KR1818VG93_ADD("wd179x", XTAL_8MHz / 8)
 	MCFG_FLOPPY_DRIVE_ADD("wd179x:0", beta_disk_floppies, "drive0", beta_disk_device::floppy_formats)
+	MCFG_FLOPPY_DRIVE_SOUND(true)
 	MCFG_FLOPPY_DRIVE_ADD("wd179x:1", beta_disk_floppies, "drive1", beta_disk_device::floppy_formats)
+	MCFG_FLOPPY_DRIVE_SOUND(true)
 	MCFG_FLOPPY_DRIVE_ADD("wd179x:2", beta_disk_floppies, "drive2", beta_disk_device::floppy_formats)
+	MCFG_FLOPPY_DRIVE_SOUND(true)
 	MCFG_FLOPPY_DRIVE_ADD("wd179x:3", beta_disk_floppies, "drive3", beta_disk_device::floppy_formats)
+	MCFG_FLOPPY_DRIVE_SOUND(true)
 
     MCFG_SOFTWARE_LIST_ADD("beta_flop_list", "specbeta_flop")
 MACHINE_CONFIG_END
