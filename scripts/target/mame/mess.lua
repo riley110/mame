@@ -398,6 +398,7 @@ MACHINES["ER2055"] = true
 MACHINES["F3853"] = true
 MACHINES["HD63450"] = true
 MACHINES["HD64610"] = true
+MACHINES["HP_TACO"] = true
 MACHINES["I2CMEM"] = true
 MACHINES["I80130"] = true
 MACHINES["I8089"] = true
@@ -1635,6 +1636,8 @@ files {
 	MAME_DIR .. "src/mame/machine/esqpanel.h",
 	MAME_DIR .. "src/mame/machine/esqvfd.cpp",
 	MAME_DIR .. "src/mame/machine/esqvfd.h",
+	MAME_DIR .. "src/mame/machine/esqlcd.cpp",
+	MAME_DIR .. "src/mame/machine/esqlcd.h",
 }
 
 createMESSProjects(_target, _subtarget, "enterprise")
@@ -1700,6 +1703,7 @@ files {
 	MAME_DIR .. "src/mame/drivers/fidelz80.cpp",
 	MAME_DIR .. "src/mame/includes/fidelz80.h",
 	MAME_DIR .. "src/mame/drivers/fidel6502.cpp",
+	MAME_DIR .. "src/mame/drivers/fidel68k.cpp",
 }
 
 createMESSProjects(_target, _subtarget, "force")

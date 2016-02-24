@@ -52,8 +52,8 @@ void ui_menu_game_options::handle()
 	bool changed = false;
 
 	// process the menu
-//	ui_menu::menu_stack->parent->process(UI_MENU_PROCESS_NOINPUT);
-//	const ui_menu_event *m_event = process(UI_MENU_PROCESS_LR_REPEAT | UI_MENU_PROCESS_NOIMAGE);
+//  ui_menu::menu_stack->parent->process(UI_MENU_PROCESS_NOINPUT);
+//  const ui_menu_event *m_event = process(UI_MENU_PROCESS_LR_REPEAT | UI_MENU_PROCESS_NOIMAGE);
 	const ui_menu_event *m_event = process(UI_MENU_PROCESS_LR_REPEAT);
 
 	if (m_event != nullptr && m_event->itemref != nullptr)
@@ -77,7 +77,6 @@ void ui_menu_game_options::handle()
 				}
 				break;
 			}
-
 			case FILE_CATEGORY_FILTER:
 			{
 				if (m_event->iptkey == IPT_UI_LEFT)
@@ -105,7 +104,6 @@ void ui_menu_game_options::handle()
 				}
 				break;
 			}
-
 			case CATEGORY_FILTER:
 			{
 				if (m_event->iptkey == IPT_UI_LEFT)
@@ -131,7 +129,6 @@ void ui_menu_game_options::handle()
 				}
 				break;
 			}
-
 			case MANUFACT_CAT_FILTER:
 				if (m_event->iptkey == IPT_UI_LEFT || m_event->iptkey == IPT_UI_RIGHT)
 				{
@@ -142,7 +139,6 @@ void ui_menu_game_options::handle()
 					ui_menu::stack_push(global_alloc_clear<ui_menu_selector>(machine(), container, c_mnfct::ui, c_mnfct::actual));
 
 				break;
-
 			case YEAR_CAT_FILTER:
 				if (m_event->iptkey == IPT_UI_LEFT || m_event->iptkey == IPT_UI_RIGHT)
 				{
@@ -153,44 +149,22 @@ void ui_menu_game_options::handle()
 					ui_menu::stack_push(global_alloc_clear<ui_menu_selector>(machine(), container, c_year::ui, c_year::actual));
 
 				break;
-
-			case SCREEN_CAT_FILTER:
-				if (m_event->iptkey == IPT_UI_LEFT || m_event->iptkey == IPT_UI_RIGHT)
-				{
-					(m_event->iptkey == IPT_UI_RIGHT) ? screen_filters::actual++ : screen_filters::actual--;
-					changed = true;
-				}
-				else if (m_event->iptkey == IPT_UI_SELECT)
-				{
-					std::vector<std::string> text(screen_filters::length);
-					for (int x = 0; x < screen_filters::length; ++x)
-						text[x] = screen_filters::text[x];
-
-					ui_menu::stack_push(global_alloc_clear<ui_menu_selector>(machine(), container, text, screen_filters::actual));
-				}
-
-				break;
-
 			case MISC_MENU:
 				if (m_event->iptkey == IPT_UI_SELECT)
 					ui_menu::stack_push(global_alloc_clear<ui_menu_misc_options>(machine(), container));
 				break;
-
 			case SOUND_MENU:
 				if (m_event->iptkey == IPT_UI_SELECT)
 					ui_menu::stack_push(global_alloc_clear<ui_menu_sound_options>(machine(), container));
 				break;
-
 			case DISPLAY_MENU:
 				if (m_event->iptkey == IPT_UI_SELECT)
 					ui_menu::stack_push(global_alloc_clear<ui_menu_display_options>(machine(), container));
 				break;
-
 			case CUSTOM_MENU:
 				if (m_event->iptkey == IPT_UI_SELECT)
 					ui_menu::stack_push(global_alloc_clear<ui_menu_custom_ui>(machine(), container));
 				break;
-
 			case CONTROLLER_MENU:
 				if (m_event->iptkey == IPT_UI_SELECT)
 					ui_menu::stack_push(global_alloc_clear<ui_menu_controller_mapping>(machine(), container));
@@ -217,14 +191,14 @@ void ui_menu_game_options::handle()
 
 void ui_menu_game_options::populate()
 {
-	if (strcmp(machine().options().ui(),"simple")!=0) 
-	{	
+	if (strcmp(machine().options().ui(),"simple")!=0)
+	{
 		// set filter arrow
 		std::string fbuff;
 
 		// add filter item
 		UINT32 arrow_flags = get_arrow_flags((int)FILTER_FIRST, (int)FILTER_LAST, main_filters::actual);
-		item_append("Filter", main_filters::text[main_filters::actual], arrow_flags, (void *)(FPTR)FILTER_MENU);
+		item_append(_("Filter"), main_filters::text[main_filters::actual], arrow_flags, (void *)(FPTR)FILTER_MENU);
 
 		// add category subitem
 		if (main_filters::actual == FILTER_CATEGORY && !machine().inifile().ini_index.empty())
@@ -258,14 +232,6 @@ void ui_menu_game_options::populate()
 			convert_command_glyph(fbuff);
 			item_append(fbuff.c_str(), c_year::ui[c_year::actual].c_str(), arrow_flags, (void *)(FPTR)YEAR_CAT_FILTER);
 		}
-		// add screen subitem
-		else if (main_filters::actual == FILTER_SCREEN)
-		{
-			arrow_flags = get_arrow_flags(0, screen_filters::length - 1, screen_filters::actual);
-			fbuff = "^!Screen type";
-			convert_command_glyph(fbuff);
-			item_append(fbuff.c_str(), screen_filters::text[screen_filters::actual], arrow_flags, (void *)(FPTR)SCREEN_CAT_FILTER);
-		}
 		// add custom subitem
 		else if (main_filters::actual == FILTER_CUSTOM)
 		{
@@ -277,13 +243,13 @@ void ui_menu_game_options::populate()
 		item_append(MENU_SEPARATOR_ITEM, nullptr, 0, nullptr);
 
 		// add options items
-		item_append("Customize UI", nullptr, 0, (void *)(FPTR)CUSTOM_MENU);
+		item_append(_("Customize UI"), nullptr, 0, (void *)(FPTR)CUSTOM_MENU);
 	}
-	item_append("Display Options", nullptr, 0, (void *)(FPTR)DISPLAY_MENU);
-	item_append("Sound Options", nullptr, 0, (void *)(FPTR)SOUND_MENU);
-	item_append("Miscellaneous Options", nullptr, 0, (void *)(FPTR)MISC_MENU);
-	item_append("Device Mapping", nullptr, 0, (void *)(FPTR)CONTROLLER_MENU);
-	item_append("General Inputs", nullptr, 0, (void *)(FPTR)CGI_MENU);
+	item_append(_("Display Options"), nullptr, 0, (void *)(FPTR)DISPLAY_MENU);
+	item_append(_("Sound Options"), nullptr, 0, (void *)(FPTR)SOUND_MENU);
+	item_append(_("Miscellaneous Options"), nullptr, 0, (void *)(FPTR)MISC_MENU);
+	item_append(_("Device Mapping"), nullptr, 0, (void *)(FPTR)CONTROLLER_MENU);
+	item_append(_("General Inputs"), nullptr, 0, (void *)(FPTR)CGI_MENU);
 	item_append(MENU_SEPARATOR_ITEM, nullptr, 0, nullptr);
 
 	custombottom = 2.0f * machine().ui().get_line_height() + 3.0f * UI_BOX_TB_BORDER;
@@ -298,8 +264,8 @@ void ui_menu_game_options::custom_render(void *selectedref, float top, float bot
 {
 	float width;
 	ui_manager &mui = machine().ui();
-	mui.draw_text_full(container, "Settings", 0.0f, 0.0f, 1.0f, JUSTIFY_CENTER, WRAP_TRUNCATE,
-	                              DRAW_NONE, ARGB_WHITE, ARGB_BLACK, &width, nullptr);
+	mui.draw_text_full(container, _("Settings"), 0.0f, 0.0f, 1.0f, JUSTIFY_CENTER, WRAP_TRUNCATE,
+									DRAW_NONE, ARGB_WHITE, ARGB_BLACK, &width, nullptr);
 	width += 2 * UI_BOX_LR_BORDER;
 	float maxwidth = MAX(origx2 - origx1, width);
 
@@ -318,8 +284,8 @@ void ui_menu_game_options::custom_render(void *selectedref, float top, float bot
 	y1 += UI_BOX_TB_BORDER;
 
 	// draw the text within it
-	mui.draw_text_full(container, "Settings", x1, y1, x2 - x1, JUSTIFY_CENTER, WRAP_TRUNCATE,
-	                              DRAW_NORMAL, UI_TEXT_COLOR, UI_TEXT_BG_COLOR, nullptr, nullptr);
+	mui.draw_text_full(container, _("Settings"), x1, y1, x2 - x1, JUSTIFY_CENTER, WRAP_TRUNCATE,
+									DRAW_NORMAL, UI_TEXT_COLOR, UI_TEXT_BG_COLOR, nullptr, nullptr);
 }
 
 //-------------------------------------------------
@@ -338,5 +304,5 @@ void save_ui_options(running_machine &machine)
 		file.close();
 	}
 	else
-		machine.popmessage("**Error to save ui.ini**", emulator_info::get_configname());
+		machine.popmessage(_("**Error to save ui.ini**"));
 }

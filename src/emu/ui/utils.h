@@ -28,26 +28,22 @@ enum
 	FILTER_AVAILABLE,
 	FILTER_UNAVAILABLE,
 	FILTER_WORKING,
+	FILTER_NOT_WORKING,
+	FILTER_MECHANICAL,
 	FILTER_NOT_MECHANICAL,
 	FILTER_CATEGORY,
-	FILTER_FAVORITE_GAME,
+	FILTER_FAVORITE,
 	FILTER_BIOS,
 	FILTER_PARENT,
 	FILTER_CLONES,
-	FILTER_NOT_WORKING,
-	FILTER_MECHANICAL,
 	FILTER_MANUFACTURER,
 	FILTER_YEAR,
 	FILTER_SAVE,
 	FILTER_NOSAVE,
 	FILTER_CHD,
 	FILTER_NOCHD,
-	FILTER_SAMPLES,
-	FILTER_NOSAMPLES,
-	FILTER_STEREO,
 	FILTER_VERTICAL,
 	FILTER_HORIZONTAL,
-	FILTER_SCREEN,
 	FILTER_CUSTOM,
 	FILTER_LAST = FILTER_CUSTOM
 };
@@ -133,9 +129,7 @@ enum
 	HOVER_ARROW_DOWN,
 	HOVER_B_FAV,
 	HOVER_B_EXPORT,
-	HOVER_B_HISTORY,
-	HOVER_B_MAMEINFO,
-	HOVER_B_COMMAND,
+	HOVER_B_DATS,
 	HOVER_B_FOLDERS,
 	HOVER_B_SETTINGS,
 	HOVER_RPANEL_ARROW,
@@ -214,6 +208,7 @@ struct ui_globals
 	static bool         switch_image, redraw_icon, default_image, reset;
 	static int          visible_main_lines, visible_sw_lines;
 	static UINT16       panels_status;
+	static bool         has_icons;
 };
 
 #define main_struct(name) \
@@ -226,8 +221,6 @@ struct name##_filters \
 
 main_struct(main);
 main_struct(sw);
-main_struct(ume);
-main_struct(screen);
 
 // Custom filter
 struct custfltr

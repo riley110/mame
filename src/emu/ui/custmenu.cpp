@@ -1,4 +1,4 @@
-﻿// license:BSD-3-Clause
+// license:BSD-3-Clause
 // copyright-holders:Dankan1890
 /*********************************************************************
 
@@ -83,14 +83,14 @@ void ui_menu_custom_filter::handle()
 			{
 				custfltr::other[pos]--;
 				for ( ; custfltr::other[pos] > FILTER_UNAVAILABLE && (custfltr::other[pos] == FILTER_CATEGORY
-						|| custfltr::other[pos] == FILTER_FAVORITE_GAME); custfltr::other[pos]--) ;
+						|| custfltr::other[pos] == FILTER_FAVORITE); custfltr::other[pos]--) ;
 				changed = true;
 			}
 			else if (m_event->iptkey == IPT_UI_RIGHT && custfltr::other[pos] < FILTER_LAST - 1)
 			{
 				custfltr::other[pos]++;
 				for ( ; custfltr::other[pos] < FILTER_LAST && (custfltr::other[pos] == FILTER_CATEGORY
-						|| custfltr::other[pos] == FILTER_FAVORITE_GAME); custfltr::other[pos]++) ;
+						|| custfltr::other[pos] == FILTER_FAVORITE); custfltr::other[pos]++) ;
 				changed = true;
 			}
 			else if (m_event->iptkey == IPT_UI_SELECT)
@@ -98,35 +98,12 @@ void ui_menu_custom_filter::handle()
 				size_t total = main_filters::length;
 				std::vector<std::string> s_sel(total);
 				for (size_t index = 0; index < total; ++index)
-					if (index <= FILTER_UNAVAILABLE || index == FILTER_CATEGORY || index == FILTER_FAVORITE_GAME || index == FILTER_CUSTOM)
+					if (index <= FILTER_UNAVAILABLE || index == FILTER_CATEGORY || index == FILTER_FAVORITE || index == FILTER_CUSTOM)
 						s_sel[index] = "_skip_";
 					else
 						s_sel[index] = main_filters::text[index];
 
 				ui_menu::stack_push(global_alloc_clear<ui_menu_selector>(machine(), container, s_sel, custfltr::other[pos]));
-			}
-		}
-		else if ((FPTR)m_event->itemref >= SCREEN_FILTER && (FPTR)m_event->itemref < SCREEN_FILTER + MAX_CUST_FILTER)
-		{
-			int pos = (int)((FPTR)m_event->itemref - SCREEN_FILTER);
-			if (m_event->iptkey == IPT_UI_LEFT && custfltr::screen[pos] > 0)
-			{
-				custfltr::screen[pos]--;
-				changed = true;
-			}
-			else if (m_event->iptkey == IPT_UI_RIGHT && custfltr::screen[pos] < screen_filters::length - 1)
-			{
-				custfltr::screen[pos]++;
-				changed = true;
-			}
-			else if (m_event->iptkey == IPT_UI_SELECT)
-			{
-				size_t total = screen_filters::length;
-				std::vector<std::string> s_sel(total);
-				for (size_t index = 0; index < total; ++index)
-					s_sel[index] = screen_filters::text[index];
-
-				ui_menu::stack_push(global_alloc_clear<ui_menu_selector>(machine(), container, s_sel, custfltr::screen[pos]));
 			}
 		}
 		else if ((FPTR)m_event->itemref >= YEAR_FILTER && (FPTR)m_event->itemref < YEAR_FILTER + MAX_CUST_FILTER)
@@ -176,7 +153,7 @@ void ui_menu_custom_filter::populate()
 {
 	// add main filter
 	UINT32 arrow_flags = get_arrow_flags((int)FILTER_ALL, (int)FILTER_UNAVAILABLE, custfltr::main);
-	item_append("Main filter", main_filters::text[custfltr::main], arrow_flags, (void *)(FPTR)MAIN_FILTER);
+	item_append(_("Main filter"), main_filters::text[custfltr::main], arrow_flags, (void *)(FPTR)MAIN_FILTER);
 
 	// add other filters
 	for (int x = 1; x <= custfltr::numother; x++)
@@ -185,7 +162,7 @@ void ui_menu_custom_filter::populate()
 
 		// add filter items
 		arrow_flags = get_arrow_flags((int)FILTER_UNAVAILABLE + 1, (int)FILTER_LAST - 1, custfltr::other[x]);
-		item_append("Other filter", main_filters::text[custfltr::other[x]], arrow_flags, (void *)(FPTR)(OTHER_FILTER + x));
+		item_append(_("Other filter"), main_filters::text[custfltr::other[x]], arrow_flags, (void *)(FPTR)(OTHER_FILTER + x));
 
 		if (m_added)
 			selected = item.size() - 2;
@@ -207,28 +184,17 @@ void ui_menu_custom_filter::populate()
 			convert_command_glyph(fbuff);
 			item_append(fbuff.c_str(), c_year::ui[custfltr::year[x]].c_str(), arrow_flags, (void *)(FPTR)(YEAR_FILTER + x));
 		}
-
-		// add screen subitem
-		else if (custfltr::other[x] == FILTER_SCREEN)
-		{
-			arrow_flags = get_arrow_flags(0, screen_filters::length - 1, custfltr::screen[x]);
-			std::string fbuff("^!Screen type");
-			convert_command_glyph(fbuff);
-			item_append(fbuff.c_str(), screen_filters::text[custfltr::screen[x]], arrow_flags, (void *)(FPTR)(SCREEN_FILTER + x));
-		}
-
 	}
 
 	item_append(MENU_SEPARATOR_ITEM, nullptr, 0, nullptr);
 
 	if (custfltr::numother > 0)
-		item_append("Remove last filter", nullptr, 0, (void *)(FPTR)REMOVE_FILTER);
+		item_append(_("Remove last filter"), nullptr, 0, (void *)(FPTR)REMOVE_FILTER);
 
 	if (custfltr::numother < MAX_CUST_FILTER - 2)
-		item_append("Add filter", nullptr, 0, (void *)(FPTR)ADD_FILTER);
+		item_append(_("Add filter"), nullptr, 0, (void *)(FPTR)ADD_FILTER);
 
 	item_append(MENU_SEPARATOR_ITEM, nullptr, 0, nullptr);
-
 	customtop = machine().ui().get_line_height() + 3.0f * UI_BOX_TB_BORDER;
 }
 
@@ -241,8 +207,8 @@ void ui_menu_custom_filter::custom_render(void *selectedref, float top, float bo
 	ui_manager &mui = machine().ui();
 
 	// get the size of the text
-	mui.draw_text_full(container, "Select custom filters:", 0.0f, 0.0f, 1.0f, JUSTIFY_CENTER, WRAP_NEVER,
-	                              DRAW_NONE, ARGB_WHITE, ARGB_BLACK, &width, nullptr);
+	mui.draw_text_full(container, _("Select custom filters:"), 0.0f, 0.0f, 1.0f, JUSTIFY_CENTER, WRAP_NEVER,
+									DRAW_NONE, ARGB_WHITE, ARGB_BLACK, &width, nullptr);
 	width += (2.0f * UI_BOX_LR_BORDER) + 0.01f;
 	float maxwidth = MAX(width, origx2 - origx1);
 
@@ -261,8 +227,8 @@ void ui_menu_custom_filter::custom_render(void *selectedref, float top, float bo
 	y1 += UI_BOX_TB_BORDER;
 
 	// draw the text within it
-	mui.draw_text_full(container, "Select custom filters:", x1, y1, x2 - x1, JUSTIFY_CENTER, WRAP_NEVER,
-	                              DRAW_NORMAL, UI_TEXT_COLOR, UI_TEXT_BG_COLOR, nullptr, nullptr);
+	mui.draw_text_full(container, _("Select custom filters:"), x1, y1, x2 - x1, JUSTIFY_CENTER, WRAP_NEVER,
+									DRAW_NORMAL, UI_TEXT_COLOR, UI_TEXT_BG_COLOR, nullptr, nullptr);
 }
 
 //-------------------------------------------------
@@ -287,8 +253,6 @@ void ui_menu_custom_filter::save_custom_filters()
 				cinfo.append("  Manufacturer filter = ").append(c_mnfct::ui[custfltr::mnfct[x]]).append("\n");
 			else if (custfltr::other[x] == FILTER_YEAR)
 				cinfo.append("  Year filter = ").append(c_year::ui[custfltr::year[x]]).append("\n");
-			else if (custfltr::other[x] == FILTER_SCREEN)
-				cinfo.append("  Screen filter = ").append(screen_filters::text[custfltr::screen[x]]).append("\n");
 		}
 		file.puts(cinfo.c_str());
 		file.close();
@@ -474,7 +438,7 @@ void ui_menu_swcustom_filter::populate()
 {
 	// add main filter
 	UINT32 arrow_flags = get_arrow_flags((int)UI_SW_ALL, (int)UI_SW_UNAVAILABLE, sw_custfltr::main);
-	item_append("Main filter", sw_filters::text[sw_custfltr::main], arrow_flags, (void *)(FPTR)MAIN_FILTER);
+	item_append(_("Main filter"), sw_filters::text[sw_custfltr::main], arrow_flags, (void *)(FPTR)MAIN_FILTER);
 
 	// add other filters
 	for (int x = 1; x <= sw_custfltr::numother; x++)
@@ -483,7 +447,7 @@ void ui_menu_swcustom_filter::populate()
 
 		// add filter items
 		arrow_flags = get_arrow_flags((int)UI_SW_UNAVAILABLE + 1, (int)UI_SW_LAST - 1, sw_custfltr::other[x]);
-		item_append("Other filter", sw_filters::text[sw_custfltr::other[x]], arrow_flags, (void *)(FPTR)(OTHER_FILTER + x));
+		item_append(_("Other filter"), sw_filters::text[sw_custfltr::other[x]], arrow_flags, (void *)(FPTR)(OTHER_FILTER + x));
 
 		if (m_added)
 			selected = item.size() - 2;
@@ -537,10 +501,10 @@ void ui_menu_swcustom_filter::populate()
 	item_append(MENU_SEPARATOR_ITEM, nullptr, 0, nullptr);
 
 	if (sw_custfltr::numother > 0)
-		item_append("Remove last filter", nullptr, 0, (void *)(FPTR)REMOVE_FILTER);
+		item_append(_("Remove last filter"), nullptr, 0, (void *)(FPTR)REMOVE_FILTER);
 
 	if (sw_custfltr::numother < MAX_CUST_FILTER - 2)
-		item_append("Add filter", nullptr, 0, (void *)(FPTR)ADD_FILTER);
+		item_append(_("Add filter"), nullptr, 0, (void *)(FPTR)ADD_FILTER);
 
 	item_append(MENU_SEPARATOR_ITEM, nullptr, 0, nullptr);
 
@@ -556,8 +520,8 @@ void ui_menu_swcustom_filter::custom_render(void *selectedref, float top, float 
 	ui_manager &mui = machine().ui();
 
 	// get the size of the text
-	mui.draw_text_full(container, "Select custom filters:", 0.0f, 0.0f, 1.0f, JUSTIFY_CENTER, WRAP_NEVER,
-	                              DRAW_NONE, ARGB_WHITE, ARGB_BLACK, &width, nullptr);
+	mui.draw_text_full(container, _("Select custom filters:"), 0.0f, 0.0f, 1.0f, JUSTIFY_CENTER, WRAP_NEVER,
+									DRAW_NONE, ARGB_WHITE, ARGB_BLACK, &width, nullptr);
 	width += (2.0f * UI_BOX_LR_BORDER) + 0.01f;
 	float maxwidth = MAX(width, origx2 - origx1);
 
@@ -576,8 +540,8 @@ void ui_menu_swcustom_filter::custom_render(void *selectedref, float top, float 
 	y1 += UI_BOX_TB_BORDER;
 
 	// draw the text within it
-	mui.draw_text_full(container, "Select custom filters:", x1, y1, x2 - x1, JUSTIFY_CENTER, WRAP_NEVER,
-	                              DRAW_NORMAL, UI_TEXT_COLOR, UI_TEXT_BG_COLOR, nullptr, nullptr);
+	mui.draw_text_full(container, _("Select custom filters:"), x1, y1, x2 - x1, JUSTIFY_CENTER, WRAP_NEVER,
+									DRAW_NORMAL, UI_TEXT_COLOR, UI_TEXT_BG_COLOR, nullptr, nullptr);
 }
 
 //-------------------------------------------------
@@ -613,4 +577,3 @@ void ui_menu_swcustom_filter::save_sw_custom_filters()
 		file.close();
 	}
 }
-
