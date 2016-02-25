@@ -1,0 +1,1247 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!-- Software list for homebrew/hacks. -->
+<softwarelist name="snes_misc" description="Nintendo SNES cartridges (misc)">
+
+	<software name="atx_3d">
+		<description>3D Demo</description>
+		<year>199?</year>
+		<publisher>Anthrox</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="anthrox - 3d demo (pd).sfc" size="32768" crc="5482d68a" sha1="f07a27ff853ef73dff0975410c66a26cf983e79d" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atx_ball">
+		<description>Bouncing Ball Trainer</description>
+		<year>199?</year>
+		<publisher>Anthrox</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="98304">
+				<rom name="anthrox - bouncing ball trainer (pd) (c8a4a0d3).sfc" size="98304" crc="c8a4a0d3" sha1="68d3c39df2ebff2b1ed69a14cf2d9cfb4d635c19" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atx_balla" cloneof="atx_ball">
+		<description>Bouncing Ball Trainer (Alt Music)</description>
+		<year>199?</year>
+		<publisher>Anthrox</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="anthrox - bouncing ball trainer (alt music) (pd).sfc" size="32768" crc="f9d150f2" sha1="e1143878570837cafdf6b2c750b2467563606ae3" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atx_c64">
+		<description>C64 Intro</description>
+		<year>199?</year>
+		<publisher>Anthrox</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="anthrox - c64 intro (pd).sfc" size="32768" crc="269ba846" sha1="25d26cd4d51d903a8c670f986ec7a626ab0ed09b" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atx_xmas">
+		<description>Christmas Demo</description>
+		<year>199?</year>
+		<publisher>Anthrox</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="327680">
+				<rom name="anthrox - christmas demo (pd) (ee90a63e).sfc" size="327680" crc="ee90a63e" sha1="1d69a6a17aac8d4aabcb3e0e221c19581c1c2650" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atx_dos1">
+		<description>Gameboy Smart Card DOS for SWC DX</description>
+		<year>199?</year>
+		<publisher>Anthrox</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="65536">
+				<rom name="anthrox - gameboy smart card dos for swc dx (pd).sfc" size="65536" crc="17101408" sha1="eed1f35fd6297df6546793fc3594482d71562916" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atx_dos2">
+		<description>Hand Held Smart Card Multi-DOS</description>
+		<year>199?</year>
+		<publisher>Anthrox</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="anthrox - hand held smart card multi-dos (pd).sfc" size="32768" crc="882f3cb6" sha1="59091eaeaf46f635d4a83f5bd2f0a8592c8cab4f" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atx_m7id">
+		<description>Mode 7 Interactive Demo</description>
+		<year>199?</year>
+		<publisher>Anthrox</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="anthrox - mode 7 interactive demo (pd).sfc" size="32768" crc="3ada1d10" sha1="e195fd53cc57aa31e2fde29dcef86216ff52018c" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atx_m7i">
+		<description>Mode 7 Intro</description>
+		<year>199?</year>
+		<publisher>Anthrox</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="anthrox - mode 7 intro (pd).sfc" size="32768" crc="3132cdc5" sha1="471313d311ae986bdf43c6c33d0d9cb39e1a1c6a" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atx_m7t">
+		<description>Mode 7 Trainer</description>
+		<year>199?</year>
+		<publisher>Anthrox</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="anthrox - mode 7 trainer (pd).sfc" size="32768" crc="21e5a340" sha1="47ccae64ac0deeca720fc0b203eb85711fd2cd00" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atx_plas">
+		<description>Plasma Intro</description>
+		<year>199?</year>
+		<publisher>Anthrox</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="anthrox - plasma intro (pd) (8d1742c6).sfc" size="32768" crc="8d1742c6" sha1="ab0c1d02a8fe662cd930aacb4679ef7dde39f66b" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atx_rm7">
+		<description>Rotating Mode 7 Intro</description>
+		<year>199?</year>
+		<publisher>Anthrox</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="anthrox - rotating mode 7 intro (pd).sfc" size="32768" crc="ed8840bb" sha1="aba0a98d5cf37188fe2e102047ca612c6452c71b" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atx_sine">
+		<description>Sine-dot Demo</description>
+		<year>199?</year>
+		<publisher>Anthrox</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="anthrox - sine-dot demo (pd) (f843b90f).sfc" size="32768" crc="f843b90f" sha1="bf28a5edf147426d2ea00de798f19d3d8d688c70" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atx_slit">
+		<description>Slither Scroller Intro</description>
+		<year>199?</year>
+		<publisher>Anthrox</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="anthrox - slither scroller intro (pd).sfc" size="32768" crc="5bd7c3f9" sha1="32689152ffd542d78f4fd9033ea35323f30b7d6f" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atx_star">
+		<description>Starfield Trainer</description>
+		<year>199?</year>
+		<publisher>Anthrox</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="anthrox - starfield trainer (pd) (f7896d82).sfc" size="32768" crc="f7896d82" sha1="84824062068491f12937798fcc53f07618c3d97c" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atx_text">
+		<description>Text Scroller</description>
+		<year>199?</year>
+		<publisher>Anthrox</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="anthrox - text scroller (pd).sfc" size="32768" crc="5cd4a79e" sha1="04d834d8e14950bf37c661f50f4431afdc71a153" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atx_trb">
+		<description>The Raider Bros. Demo</description>
+		<year>199?</year>
+		<publisher>Anthrox</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="294912">
+				<rom name="anthrox - the raider bros. demo (pd) (d90a283d).sfc" size="286720" crc="d90a283d" sha1="c404ad9b7a71796e27b45b376d4db18ca15fc0a7" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atx_trbp" cloneof="atx_trb">
+		<description>The Raider Bros. Parallax Demo</description>
+		<year>199?</year>
+		<publisher>Anthrox</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="anthrox - the raider bros. parallax demo (pd).sfc" size="32768" crc="71c64fad" sha1="2b3b9551728153600b1739c64718bc5ac38f1f86" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atx_trbr" cloneof="atx_trb">
+		<description>The Raider Bros. Rotator Demo</description>
+		<year>199?</year>
+		<publisher>Anthrox</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="anthrox - the raider bros. rotator demo (pd) (d2449790).sfc" size="32768" crc="d2449790" sha1="cf40b8b7a454847c8c1b0ff6ad58fbdc9e6ef535" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atx_trbz" cloneof="atx_trb">
+		<description>The Raider Bros. Zoomer Demo</description>
+		<year>199?</year>
+		<publisher>Anthrox</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="anthrox - the raider bros. zoomer demo (pd) (eaef90ca).sfc" size="32768" crc="eaef90ca" sha1="60911fc3606eae0d3d0b1971b9028e17b90d860d" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atx_wavy">
+		<description>Wavy Scroller Intro</description>
+		<year>199?</year>
+		<publisher>Anthrox</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="anthrox - wavy scroller intro (pd).sfc" size="32768" crc="9745db3f" sha1="e7e7e16f50eeb69bbc10aeac0f41ef09a0a78289" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atx_1">
+		<description>Anthrox 1</description>
+		<year>199?</year>
+		<publisher>Anthrox</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="anthrox 1 (pd) (78ff31ea).sfc" size="32768" crc="78ff31ea" sha1="e2070335ef6e571237f279caefc6c1216d231c8a" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atxcoll">
+		<description>Anthrox Intro Collection</description>
+		<year>199?</year>
+		<publisher>Anthrox</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="1048576">
+				<rom name="anthrox intro collection (pd).sfc" size="1048576" crc="3836f6d8" sha1="7aa2b4a18d063f921312aba55269ecd8960a1430" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atx_m96">
+		<description>Madden 96 Intro</description>
+		<year>199?</year>
+		<publisher>Anthrox</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="anthrox madden 96 intro (pd).sfc" size="32768" crc="35dd7d42" sha1="a63b4551bc7a517e53bfd03ff6653c19f5afb60d" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atx_wg">
+		<description>Wayne Gretzky Intro</description>
+		<year>199?</year>
+		<publisher>Anthrox</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="anthrox wayne gretzky intro (pd).sfc" size="32768" crc="8acf0d5f" sha1="e1e49af686bbdd396ae5090c402fdf8f70513870" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="1997nyfd">
+		<description>1997 New Year FD (Jpn)</description>
+		<year>199?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="1245184">
+				<rom name="1997 new year fd (pd).sfc" size="1245184" crc="48140fae" sha1="b28f26e1ad661a564f34a6f236202e749ff086b0" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- VERY abusive demo! Gfx bugs everywhire-->
+	<software name="268mhz" supported="partial">
+		<description>2.68 MHz Demo</description>
+		<year>199?</year>
+		<publisher>Abandon</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="753664">
+				<rom name="2.68 mhz demo (pd) (9aa1e69f).sfc" size="745472" crc="9aa1e69f" sha1="abafb5a47ef574ba81ee19333357c16b6c183416" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="268mhza" cloneof="268mhz" supported="partial">
+		<description>2.68 MHz Demo (Alt)</description>
+		<year>199?</year>
+		<publisher>Abandon</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="786432">
+				<rom name="2.68 mhz demo (pd) [o1] (3e91a785).sfc" size="786432" crc="3e91a785" sha1="e194bbfae47524664c9a893c18470f5ffba78dac" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="32768col">
+		<description>32768 Color Demo</description>
+		<year>199?</year>
+		<publisher>Joshua Cain</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="32768 color demo by joshua cain (pd).sfc" size="32768" crc="73d4a666" sha1="87a3562dc303e63471a32bcc37ba4de4f8279c0d" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="3dstereo">
+		<description>3D Stereo World - Find the Hidden Images</description>
+		<year>199?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="917504">
+				<rom name="3d stereo world - find the hidden images (pd) (c8678075).sfc" size="917504" crc="c8678075" sha1="c6fbf3e025019763f123b266983a2ee15eb0841b" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="4puzzle">
+		<description>4 Puzzle</description>
+		<year>199?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="65536">
+				<rom name="4 puzzle (pd).sfc" size="65536" crc="4e6873ea" sha1="90f6bb36bdbc8068776075c07c63f39d759c7ccc" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="64bfhc">
+		<description>64 Bit First Heart Club</description>
+		<year>1995</year>
+		<publisher>Szuzy</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="1048576">
+				<rom name="64 bit first heart club by szuzy (pd).sfc" size="1048576" crc="192c6057" sha1="46eba8593ebf2497f11528b809cd101a0bcfd858" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="64memexp">
+		<description>64MBIT SWCDX2 Memory Explorer</description>
+		<year>199?</year>
+		<publisher>neviksti</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="hirom" />
+			<dataarea name="rom" size="8388608">
+				<rom name="64mbit swcdx2 memory explorer by neviksti (pd).sfc" size="8388608" crc="91a824d6" sha1="5347f795475cc37122bc28fc63696b74a8d4d2ee" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="700club">
+		<description>The 700 Club</description>
+		<year>2010</year>
+		<publisher>Mic</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="1048576">
+				<rom name="700 club music demo, the (2010) by mic (pd).sfc" size="1048576" crc="0d25a5db" sha1="25202992d7b7add276d95a311dbac0db797de8f5" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ayt_bbs">
+		<description>AYT BBS Intro</description>
+		<year>199?</year>
+		<publisher>Ayatollah</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="ayt bbs intro (pd).sfc" size="32768" crc="1364ffb2" sha1="71e66f7918ba49fd943897c668827da43a2e1cbf" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Probably useless
+	<software name="ayt_bbtr">
+		<description>AYT BBTR</description>
+		<year>199?</year>
+		<publisher>Ayatollah?</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="98304">
+				<rom name="ayt bbtr (pd).sfc" size="69685" crc="929c8332" sha1="0e3433565d2f38c2bcea6ea9153909e55557d75a" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+-->
+
+	<software name="ayt_src">
+		<description>A Small BBS-Tro for The Source and Darkness</description>
+		<year>199?</year>
+		<publisher>Ayatollah</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="65536">
+				<rom name="ayt demo (pd) (edfd3cda).sfc" size="65536" crc="edfd3cda" sha1="064c79a6893d74cc0726dcaa3ffeab108299086f" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 18+ warning -->
+	<software name="am1">
+		<description>Adult Manga Part One</description>
+		<year>199?</year>
+		<publisher>ExMachina Design</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="786432">
+				<rom name="adult manga 1 (pd) (8a31f646).sfc" size="786432" crc="8a31f646" sha1="c2a1f821a00b43594d5fdeb3becfb29ec4c9a15e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="am1r" cloneof="am1">
+		<description>Adult Manga Part One (Russian Translation)</description>
+		<year>199?</year>
+		<publisher>&lt;hack (2R Team)&gt;</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="786432">
+				<rom name="adult manga 1 (pd) [t+rus100_2r team,dennis].sfc" size="786432" crc="8ecc0d2d" sha1="e8c167c0dfcf25cc89ecbb2cb38d26cda31e8902" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 18+ warning -->
+	<software name="am2">
+		<description>Adult Manga Part Two</description>
+		<year>199?</year>
+		<publisher>ExMachina Design</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="688128">
+				<rom name="adult manga 2 (pd) (d49090ee).sfc" size="688128" crc="d49090ee" sha1="882b489c67c844612269f4b23d9ea888ae2e3fb1" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="am2r" cloneof="am2">
+		<description>Adult Manga Part Two (Russian Translation)</description>
+		<year>199?</year>
+		<publisher>&lt;hack (2R Team)&gt;</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="688128">
+				<rom name="adult manga 2 (pd) [t+rus_2r team].sfc" size="688128" crc="3b073e83" sha1="1df7f4127f09484791f6ce4b1c41d5e367b2ef4c" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- NOTE: Soft reset causes gfx corruption -->
+	<software name="airwolf">
+		<description>Airwolf</description>
+		<year>1992?</year>
+		<publisher>Pure-Byte</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="524288">
+				<rom name="airwolf 92 (pd).sfc" size="524288" crc="01ffe0ae" sha1="c52654cde8f818a487eb11175b4f8b24b0223685" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="airwolfa" cloneof="airwolf">
+		<description>Airwolf (Copier Hack)</description>
+		<year>1992?</year>
+		<publisher>Pure-Byte</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="524288">
+				<rom name="airwolf 92 (pd) [h1c].sfc" size="524288" crc="b3e1ce49" sha1="0ee3429374ba5e78655cd0a79e2b95421154aefa" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="airwolfcf" cloneof="airwolf">
+		<description>Airwolf (Intro Hack)</description>
+		<year>1992?</year>
+		<publisher>&lt;hack (Cyber Force)&gt;</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="557056">
+				<rom name="airwolf 92 (pd) [hi].sfc" size="557056" crc="26972b55" sha1="be7ad6803b5127fdbbd95c3962ec0cddb4586f59" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- corrupt gfx in Cyber Force intro unrelated to reset bug -->
+	<software name="airwolfcfb" cloneof="airwolf">
+		<description>Airwolf (Intro Hack, Bad Intro)</description>
+		<year>1992?</year>
+		<publisher>&lt;hack (Cyber Force)&gt;</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="557056">
+				<rom name="airwolf 92 (pd) [b1] (6c693f95).sfc" size="557056" crc="6c693f95" sha1="d23fbd02184f42f41cf284609b5ea1740e996685" offset="0x0000" status="baddump" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="afl_xmas">
+		<description>Merry Christmas and Happy New Years</description>
+		<year>199?</year>
+		<publisher>Alpha Flight</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="alkaid alpha flight - merry christmas (pd).sfc" size="32768" crc="5fb94fd0" sha1="355c22306415e7f82145bfb509864d35e7d8cbad" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 18+ warning -->
+	<software name="amigaiff">
+		<description>Amiga IFF Slide Show</description>
+		<year>199?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="1671168">
+				<rom name="amiga iff japanese slide show (pd) (d91f55b3).sfc" size="1671168" crc="d91f55b3" sha1="f66452d31499d3bc3e11d406879f23c21f752e64" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Marked as bad in GoodSNES -->
+	<software name="amigaiffa" cloneof="amigaiff">
+		<description>Amiga IFF Slide Show (Alt)</description>
+		<year>199?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="1703936">
+				<rom name="amiga iff japanese slide show (pd) [b1] (b0b97c8d).sfc" size="1703936" crc="b0b97c8d" sha1="bdb29bb3161ed3108e3d73c941bc8d0f47a55a4a" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="anarchy">
+		<description>Anarchy Logo Scroller (Slow)</description>
+		<year>199?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="anarchy logo scroller (pd) (a9ddcab1).sfc" size="32768" crc="a9ddcab1" sha1="c3eb48cae04eebea48a4305021f9d11b5ff96d23" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="anarchya" cloneof="anarchy">
+		<description>Anarchy Logo Scroller (Fast)</description>
+		<year>199?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="anarchy logo scroller (pd) [a1].sfc" size="32768" crc="77ba3375" sha1="3b14da91ed0c60ef9d7f04ede049bcdcfd4c0526" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="anarchyb" cloneof="anarchy">
+		<description>Anarchy Logo Scroller (Still)</description>
+		<year>199?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="anarchy logo scroller (pd) [a2] (c7917e60).sfc" size="32768" crc="c7917e60" sha1="e573395af5cf12952cffa0d69b9a96bb09b42651" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="angeleye">
+		<description>Angel Eyes (Jpn)</description>
+		<year>199?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="1048576">
+				<rom name="angel eyes (pd) (a969407f).sfc" size="1048576" crc="a969407f" sha1="e0ad4536fd45cc378c3ed74160abe279a95dfb91" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Bugged all around -->
+	<software name="arcadia1" supported="partial">
+		<description>Another Major Ware</description>
+		<year>199?</year>
+		<publisher>Arcadia</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="arcadia intro 1 (pd) (e62c3a5f).sfc" size="32768" crc="e62c3a5f" sha1="ebae6a89f2dac615a5b2ef8fafb497c3e4bc8d79" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="arcadia2">
+		<description>I Love You Jango</description>
+		<year>199?</year>
+		<publisher>Arcadia</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="arcadia intro 2 (pd) (e03ee8ce).sfc" size="32768" crc="e03ee8ce" sha1="eaf0fd16565b6b0ec0bafaf76b7ac897056a5393" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="arcadia3">
+		<description>Ms. Pac-Man Intro</description>
+		<year>1996</year>
+		<publisher>Arcadia</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="327680">
+				<rom name="arcadia ms. pac-man intro (pd).sfc" size="327680" crc="d8ac568e" sha1="5bcf8b8aba0d7aaa3f09884b9f657492d2cc25f6" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="arkanoid">
+		<description>Arkanoid</description>
+		<year>199?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="262144">
+				<rom name="arkanoid (pd).sfc" size="262144" crc="e235aa54" sha1="2b7e37f09474dd54b3447e092c015ef8b18708cc" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Useless? The May 2003 version works fine
+	<software name="">
+		<description>Astrohawk</description>
+		<year>199?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="720896">
+				<rom name="astrohawk (pd).sfc" size="720896" crc="41d59381" sha1="7e205edc8a45198f0403033fa6a30c3c3c28bc70" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+-->
+
+	<software name="astrohwk">
+		<description>Astrohawk May 2003 Version</description>
+		<year>2003</year>
+		<publisher>Paul Lay - Harvey Kong Tin</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="786432">
+				<rom name="astrohawk may 2003 version (pd).sfc" size="786432" crc="183e3bbf" sha1="09fd2d689305e93355c660f09e352d32f1246141" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="1stswiss">
+		<description>The First Swiss Intro</description>
+		<year>199?</year>
+		<publisher>Axelay</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="65536">
+				<rom name="axelay - the first swiss intro (pd) (af5e1cfc).sfc" size="65536" crc="af5e1cfc" sha1="b016e4315234c801e9db66f4da164f407a52a54d" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Is it correct? I can't find a screenshot via google -->
+	<software name="bgviewer">
+		<description>BG Viewer Program (v1.0)</description>
+		<year>199?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="524288">
+				<rom name="bg viewer program 1.0 (pd).sfc" size="524288" crc="754ef0bf" sha1="67cee3fe9bb35b37e0134c608a3d9111f774805b" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bgviewera" cloneof="bgviewer">
+		<description>BG Viewer Program (v1.0, Alt)</description>
+		<year>199?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="294912">
+				<rom name="bg viewer program 1.0 (pd) [a1].sfc" size="294912" crc="64a3ea31" sha1="4df9e74304448bfd63d0cb4b9a224642b8ec2c23" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mmmbacon">
+		<description>Mmmmmmm Bacon! (Ludum Dare Jam Version)</description>
+		<year>20??</year>
+		<publisher>Raster Software</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="262144">
+				<rom name="blt-31 (ludum dare jam version) (pd).sfc" size="262144" crc="8c7faee4" sha1="03fa6293f83d3af717a9ec8a29b10501460a0a5f" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mmmbacond1" cloneof="mmmbacon">
+		<description>Mmmmmmm Bacon! (Demo 1)</description>
+		<year>20??</year>
+		<publisher>Raster Software</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="262144">
+				<rom name="blt-1 (demo 1) (pd).sfc" size="262144" crc="75f193f0" sha1="35420235eee48c138ee823ac42d1ed8df7f45d38" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mmmbacond2" cloneof="mmmbacon">
+		<description>Mmmmmmm Bacon! (2nd Playable Demo)</description>
+		<year>20??</year>
+		<publisher>Raster Software</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="262144">
+				<rom name="blt-2 (2nd playable demo) (pd).sfc" size="262144" crc="da63d27f" sha1="189ac6c9130ce55d59449d7260c8eb1291c7a3d0" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bslsimpl">
+		<description>Baseline - Simple Text Intro</description>
+		<year>199?</year>
+		<publisher>Baseline 2091</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="baseline - simple text demo (pd) (e7e9a389).sfc" size="32768" crc="e7e9a389" sha1="ae81f1d02f3848a228d628aea96000263f1fdbd0" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bsltrain">
+		<description>Baseline Trainer</description>
+		<year>1993</year>
+		<publisher>Baseline 2091</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="baseline trainer (pd).sfc" size="32768" crc="2ddc755d" sha1="9500e72bb638bca8dd1398a51759a69669418cdb" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bioworm">
+		<description>Bio Worm</description>
+		<year>1996</year>
+		<publisher>Wani</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="131072">
+				<rom name="bio worm (pd) (765c731e).sfc" size="131072" crc="765c731e" sha1="dad77fdb5ecf7ceed1ac43c60345c619b849fda9" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bioworma" cloneof="bioworm">
+		<description>Bio Worm (Alt)</description>
+		<year>1996</year>
+		<publisher>Wani</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="524288">
+				<rom name="bio worm (pd) [o1].sfc" size="524288" crc="324ea0f2" sha1="f48684f516c8e67b7bf0a87e46e7bc75cb5bfda8" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="biowormg" cloneof="bioworm">
+		<description>Bio Worm (Greek Translation)</description>
+		<year>2003</year>
+		<publisher>&lt;hack (GreekRoms)&gt;</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="131072">
+				<rom name="bio worm (pd) [t+gre100_vag].sfc" size="131072" crc="16c9b3e0" sha1="8576d5befa436985b20137f990f4f4532e60482a" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="colormix">
+		<description>Color Mixer</description>
+		<year>199?</year>
+		<publisher>Black Widow</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="black widow's color mixer (pd) (b52eb785).sfc" size="32768" crc="b52eb785" sha1="20454be85c0c16cd297e0a8c2d54b2f85de1a22e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="blingbla">
+		<description>Bling Blang Blong</description>
+		<year>199?</year>
+		<publisher>F4CG</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="bling blang blong (pd).sfc" size="32768" crc="1cef9164" sha1="3ab3b3b455c61f88841b3b87bb3cc2a21a4b6fd4" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bluesky">
+		<description>Blue Sky</description>
+		<year>199?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="blue sky (pd) (ef322b3e).sfc" size="32768" crc="ef322b3e" sha1="8064b6bf4743cd4b2b6637a5bd4568174d735585" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unkgerm">
+		<description>Unknown German Intro</description>
+		<year>199?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="bubbles german intro (pd) (c3754106).sfc" size="32768" crc="c3754106" sha1="557eb50b7a2b49c559d45b7abb779428b9c03b90" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- supposed to show a simple scroller, MAME shows a square pattern instead -->
+	<software name="cdi" supported="no">
+		<description>CDI Goes Console</description>
+		<year>199?</year>
+		<publisher>CDI</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="cd - i (pd) (ec9fc831).sfc" size="32768" crc="ec9fc831" sha1="0940dfb665e7a00122d4197995733afe4297b05c" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- A couple minor bugs? -->
+	<software name="cadence">
+		<description>Cadence BBS Demo</description>
+		<year>199?</year>
+		<publisher>Wonderboy</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="cadence bbs demo (pd) (b1bf41e4).sfc" size="32768" crc="b1bf41e4" sha1="31578a61ecc3775378253e6229dc0cc73f810975" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="capcpics">
+		<description>Capcom Pics</description>
+		<year>199?</year>
+		<publisher>Brian J. Flanagan</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="1048576">
+				<rom name="capcom pics v3.0 by brian flanagan (pd) (e58c84f3).sfc" size="1048576" crc="e58c84f3" sha1="fe1bad934ed92fb7ebc7771c751b1de8e695280a" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cns_ftl">
+		<description>Follow the Leader</description>
+		<year>199?</year>
+		<publisher>Censor</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="censor - follow the leader (pd).sfc" size="32768" crc="96cfd37a" sha1="d10e5bb469fceb94cc403152413391dd18390bbe" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cns_sid">
+		<description>SIDPlayer Intro</description>
+		<year>199?</year>
+		<publisher>Censor</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="censor - sid player demo (pd) (f2cf8b6d).sfc" size="32768" crc="f2cf8b6d" sha1="5b1e61514f864af0048eb2963132d46dd055afcd" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cns_hub">
+		<description>Hyper U-Ball Intro</description>
+		<year>199?</year>
+		<publisher>Censor</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="censor - wireframe intro (pd).sfc" size="32768" crc="842985fd" sha1="4788a45aca6bab78d4260e236c048dd8c82fd5b4" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Doesn't show all the gfx -->
+	<software name="censor1" supported="partial">
+		<description>Censor 1</description>
+		<year>199?</year>
+		<publisher>Censor</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="censor 1 (pd) (fb76de2b).sfc" size="32768" crc="fb76de2b" sha1="132f46aa57b35f58e2f2c275aa5adb7e7f3f04cd" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chowwai">
+		<description>Chow Wai Man</description>
+		<year>199?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="2097152">
+				<rom name="chow wai man (pd).sfc" size="2097152" crc="3e3c25a9" sha1="4d1bc45ec92f9a1ebc0baf8b11b3b189952d6302" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="xmascraz">
+		<description>Christmas Craze</description>
+		<year>2011</year>
+		<publisher>retrousb.com</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="524288">
+				<rom name="christmas craze by shiru (2011-11) (pd).sfc" size="524288" crc="5f7b6627" sha1="7752caa676d15d4d0c42f25548c3e86128a416db" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="xmascrazd" cloneof="xmascraz">
+		<description>Christmas Craze (Demo?)</description>
+		<year>2011</year>
+		<publisher>retrousb.com</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="524288">
+				<rom name="16 bbit xmas 2011 demo (pd).sfc" size="524288" crc="d23ca2d7" sha1="7b3fcb6f3cc80ae6a8ba496669944b2d9dccb6be" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cw_294">
+		<description>Console-World - February 1994</description>
+		<year>1994</year>
+		<publisher>Console-World</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="131072">
+				<rom name="console world - feb. '94 charts (pd).sfc" size="131072" crc="d740c92f" sha1="617c57767d50db596ca46ba2c6d3627ae4a553f6" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cw_294a" cloneof="cw_294">
+		<description>Console-World - February 1994 (Alt)</description>
+		<year>1994</year>
+		<publisher>Console-World</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="131072">
+				<rom name="console world - feb. '94 charts (pd) [a1].sfc" size="114688" crc="445cc392" sha1="f27e4c5bfced68cb5c5747a4b8aab64a3ea7fdb6" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cw_394">
+		<description>Console-World - March 1994</description>
+		<year>1994</year>
+		<publisher>Console-World</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="131072">
+				<rom name="console world - mar. '94 charts (pd) (4c6829a4).sfc" size="131072" crc="4c6829a4" sha1="6d00bf232a2471cd5516b00bbcab896121ef3803" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Supposed to show a scroller text -->
+	<software name="copier" supported="partial">
+		<description>Copier - Backup Ad.</description>
+		<year>199?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="360448">
+				<rom name="copier - backup ad. (pd) (68b18c8b).sfc" size="360448" crc="68b18c8b" sha1="74fd96aa91ba4bc8fae9a392bc667e9089ce4f75" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="copper">
+		<description>Copper Demo</description>
+		<year>199?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="copper demo (pd) (98d3f069).sfc" size="32768" crc="98d3f069" sha1="11bc441a77d675e050252b7d3f70983ecd18eec3" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- Useless
+	<software name="">
+		<description>Crash-SNES9x by Kernigh</description>
+		<year>199?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="262144">
+				<rom name="crash-snes9x by kernigh (pd).sfc" size="262144" crc="9fc16cc1" sha1="73d5f9c9f7327807b7461ecb8503fbcfdc191f8c" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+-->
+
+	<software name="bofmus">
+		<description>Music from Breath of Fire</description>
+		<year>199?</year>
+		<publisher>Cream</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="163840">
+				<rom name="cream (pd).sfc" size="163840" crc="2afd0d32" sha1="28283d72bc729ede2651710ca8ccb3bc156db128" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crying">
+		<description>Crying Face Test</description>
+		<year>199?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="196608">
+				<rom name="crying face test (pd).sfc" size="196608" crc="66cb06df" sha1="11ca4338173d256eab2eb56c54ca539204706b18" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crystal">
+		<description>Crystal Logo</description>
+		<year>199?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="32768">
+				<rom name="crystal anthraxus demo (pd).sfc" size="32768" crc="0a016b11" sha1="2d4dfc6c9963d1624073ccd389af3ff003b05864" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cynix1">
+		<description>The Learning Curve</description>
+		<year>1992</year>
+		<publisher>Cynix</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="98304">
+				<rom name="cynix 1st demo (pd) (94e99829).sfc" size="98304" crc="94e99829" sha1="e747868bcc42d82456e9199c42f9b5a1d370ed10" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cynix2">
+		<description>Cynix 2nd Demo</description>
+		<year>1992</year>
+		<publisher>Cynix</publisher>
+
+		<part name="cart" interface="snes_cart">
+			<feature name="slot" value="lorom" />
+			<dataarea name="rom" size="196608">
+				<rom name="cynix 2nd demo (pd).sfc" size="196608" crc="27d8430e" sha1="c6aa1d8e7cc53fc2a889736d5b434a9127b855e5" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>

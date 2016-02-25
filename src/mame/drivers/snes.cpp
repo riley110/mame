@@ -1358,6 +1358,7 @@ static MACHINE_CONFIG_START( snes, snes_console_state )
 	MCFG_SOFTWARE_LIST_ADD("cart_list","snes")
 	MCFG_SOFTWARE_LIST_ADD("bsx_list","snes_bspack")
 	MCFG_SOFTWARE_LIST_ADD("st_list","snes_strom")
+	MCFG_SOFTWARE_LIST_ADD("misc_list","snes_misc")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( snespal, snes )
