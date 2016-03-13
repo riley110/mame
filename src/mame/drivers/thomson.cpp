@@ -591,7 +591,7 @@ static const floppy_interface thomson_floppy_interface =
 {
 	FLOPPY_STANDARD_5_25_DSHD,
 	LEGACY_FLOPPY_OPTIONS_NAME(thomson),
-	"floppy_5_25"
+	"thom_flop"
 };
 
 FLOPPY_FORMATS_MEMBER( thomson_state::cd90_640_formats )
