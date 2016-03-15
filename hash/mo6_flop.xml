@@ -20,6 +20,34 @@
 <!-- Compilations (Games) -->
 
 	<!-- can also be found in to_flop.xml -->
+	<software name="action1">
+		<description>Action Volume 1</description>
+		<year>1989</year>
+		<publisher>Microids</publisher>
+		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="x-ray (microids) (m beziat) (1986) (to8).fd" size="327680" crc="c1b69b17" sha1="cbb1a5e92ece49710e9ef7e9d530f3b3ea2f24ec" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- can also be found in to_flop.xml -->
+	<software name="action1a" cloneof="action1">
+		<description>Action Volume 1 (SAP Format)</description>
+		<year>1989</year>
+		<publisher>Microids</publisher>
+		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="335426">
+				<rom name="unknown microids pack (198x)(microids)(fr)[boot with microsoft basic 1.0].sap" size="335426" crc="1434de44" sha1="60147e3781eefd377ea1b9bbee65ab9454f5ad46" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- can also be found in to_flop.xml -->
 	<software name="bactmgt">
 		<description>Bactron &amp; MGT</description>
 		<year>198?</year>
@@ -57,6 +85,19 @@
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
 				<rom name="bactron &amp; mgt (198x)(-)[boot with microsoft basic 1.0].sap" size="335426" crc="16284fa1" sha1="fba2bf0ca6a87da01cc8abfced9992e440709a3d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- can also be found in to_flop.xml -->
+	<software name="lori1988">
+		<description>MGT - Sapiens - Mach 3</description>
+		<year>1988</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="mgt-sapiens-mach3_moto.fd" size="655360" crc="bee93a61" sha1="1fbe231cb8e5d9c590b6dcb1d564c620b6d76871" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>

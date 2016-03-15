@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <!-- Thanks to DCMOTO (http://dcmoto.free.fr) for info! -->
-<softwarelist name="to_flop" description="Thomson TO-series floppies">
+<softwarelist name="to_flop" description="Thomson TO-series floppy disks">
 
 <!-- Applications -->
 
@@ -99,6 +99,18 @@
         </part>
     </software>
 -->
+
+	<software name="analpist">
+		<description>ANALPIST</description>
+		<year>1990</year>
+		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="analpist_to8.fd" size="327680" crc="c97d4bc4" sha1="f2090c80e1cc5ceb0510570d28dccbb528932b22" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
 
 	<software name="anima3d">
 		<description>Anima 3D</description>
@@ -205,6 +217,45 @@
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
 				<rom name="assdesass to9 (infogrames) (william hennebois) (1986) (to9 fd).fd" size="327680" crc="836d9d27" sha1="ebe87a20c93ba490810fcef6957e763469e8b426" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="initb128">
+		<description>Auto-Initiation BASIC 128 + D.O.S. BASIC 1.0</description>
+		<year>1985</year>
+		<publisher>Thomson</publisher>
+		<info name="alt_title" value="Initiation au BASIC 128"/>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="auto-initiation-basic128_to9.fd" size="327680" crc="f8830ec5" sha1="27d1d2fa7581a77ab147c1acf9987778add675b8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="initb128a" cloneof="initb128">
+		<description>Auto-Initiation BASIC 128 + D.O.S. BASIC 1.0 (SAP Format)</description>
+		<year>1985</year>
+		<publisher>Thomson</publisher>
+		<info name="alt_title" value="Initiation au BASIC 128"/>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="335426">
+				<rom name="init-128.sap" size="335426" crc="027a2f4f" sha1="7f935d4f9e50cc0b33d53b3acdca8d058e414310" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="initb128b" cloneof="initb128">
+		<description>Auto-Initiation BASIC 128 + D.O.S. BASIC 1.0 (SAP Format, Alt)</description>
+		<year>1985</year>
+		<publisher>Thomson</publisher>
+		<info name="alt_title" value="Initiation au BASIC 128"/>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="335426">
+				<rom name="init_128.sap" size="335426" crc="aa773a31" sha1="40139cedc43bd5a6d76776e98857b356fe90cbf5" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -427,10 +478,24 @@
 		</part>
 	</software>
 
-	<software name="contto9p">
-		<description>Controle TO9+</description>
-		<year>198?</year>
+	<software name="controlp">
+		<description>Control Plus</description>
+		<year>1987</year>
 		<publisher>Cofadel Service</publisher>
+		<info name="alt_title" value="Control TO9+" />
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="925 TX 0713.fd" size="327680" crc="a12e633c" sha1="ef6c011a2e1471511ed3f2ce0001bd44fd316bb9" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="controlpa" cloneof="controlp">
+		<description>Control Plus (SAP Format)</description>
+		<year>1987</year>
+		<publisher>Cofadel Service</publisher>
+		<info name="alt_title" value="Control TO9+" />
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
@@ -459,6 +524,30 @@
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
 				<rom name="copie conforme 2 (asci) (1993) (michel saint-briant) (to8).fd" size="327680" crc="25146d67" sha1="eb590de60d4e0747fc07ac40109af76d343260fb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cuisinfr">
+		<description>La Cuisine Francaise</description>
+		<year>1985</year>
+		<publisher>Free Game Blot</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="idees recettes (1985)(free game blot)(fr).fd" size="327680" crc="8659cc9d" sha1="51e508c0a6f13983261e9d8c7f044900a483a8bc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cuisinfra" cloneof="cuisinfr">
+		<description>La Cuisine Francaise (SAP Format)</description>
+		<year>1985</year>
+		<publisher>Free Game Blot</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="335426">
+				<rom name="idees recettes (1985)(free game blot)(fr).sap" size="335426" crc="4bb06217" sha1="14c7f6cbd94f3eb8e47ac6b9b0ea2dfe746638ab" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -764,69 +853,6 @@
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
 				<rom name="hpdriver.sap" size="335426" crc="1fb8f1b0" sha1="27f7af152fd25d357e8b8ac048840633f199516e" offset="0" status="baddump"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="cuisinfr">
-		<description>La Cuisine Francaise</description>
-		<year>1985</year>
-		<publisher>Free Game Blot</publisher>
-
-		<part name="flop1" interface="thom_flop">
-			<dataarea name="flop" size="327680">
-				<rom name="idees recettes (1985)(free game blot)(fr).fd" size="327680" crc="8659cc9d" sha1="51e508c0a6f13983261e9d8c7f044900a483a8bc" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="cuisinfra" cloneof="cuisinfr">
-		<description>La Cuisine Francaise (SAP Format)</description>
-		<year>1985</year>
-		<publisher>Free Game Blot</publisher>
-
-		<part name="flop1" interface="thom_flop">
-			<dataarea name="flop" size="335426">
-				<rom name="idees recettes (1985)(free game blot)(fr).sap" size="335426" crc="4bb06217" sha1="14c7f6cbd94f3eb8e47ac6b9b0ea2dfe746638ab" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="initb128">
-		<description>Auto-Initiation BASIC 128 + D.O.S. BASIC 1.0</description>
-		<year>1985</year>
-		<publisher>Thomson</publisher>
-		<info name="alt_title" value="Initiation au BASIC 128"/>
-
-		<part name="flop1" interface="thom_flop">
-			<dataarea name="flop" size="327680">
-				<rom name="auto-initiation-basic128_to9.fd" size="327680" crc="f8830ec5" sha1="27d1d2fa7581a77ab147c1acf9987778add675b8" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="initb128a" cloneof="initb128">
-		<description>Auto-Initiation BASIC 128 + D.O.S. BASIC 1.0 (SAP Format)</description>
-		<year>1985</year>
-		<publisher>Thomson</publisher>
-		<info name="alt_title" value="Initiation au BASIC 128"/>
-
-		<part name="flop1" interface="thom_flop">
-			<dataarea name="flop" size="335426">
-				<rom name="init-128.sap" size="335426" crc="027a2f4f" sha1="7f935d4f9e50cc0b33d53b3acdca8d058e414310" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="initb128b" cloneof="initb128">
-		<description>Auto-Initiation BASIC 128 + D.O.S. BASIC 1.0 (SAP Format, Alt)</description>
-		<year>1985</year>
-		<publisher>Thomson</publisher>
-		<info name="alt_title" value="Initiation au BASIC 128"/>
-
-		<part name="flop1" interface="thom_flop">
-			<dataarea name="flop" size="335426">
-				<rom name="init_128.sap" size="335426" crc="aa773a31" sha1="40139cedc43bd5a6d76776e98857b356fe90cbf5" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1532,6 +1558,18 @@
 		</part>
 	</software>
 
+	<software name="scanner">
+		<description>Scanner</description>
+		<year>198?</year>
+		<publisher>Compagnie d'Informatique Ludique (CIL)</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="scanner_to9.fd" size="327680" crc="0a790527" sha1="ff87d3cce649010e4914854890f5a0788fc89e43" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="scribroy">
 		<description>Scribe Royal</description>
 		<year>1996</year>
@@ -1576,19 +1614,31 @@
 	</software>
 
 	<software name="sdplay44">
-		<description>SDPLAY44 (TO8)</description>
+		<description>SDPLAY (TO8, 2015.09.24)</description>
 		<year>2015</year>
 		<publisher>DCsoft</publisher>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="sdplay44_to8.fd" size="327680" crc="f0cfa058" sha1="9ab9b37ed742f7a15dec1c7eb9ffa6674f878259" offset="0" />
+				<rom name="sdplay44_to8.fd" size="327680" crc="23a4f586" sha1="3c68661f11d0a7c768a1c069fff992c38f76ebdc" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sdplay44a" cloneof="sdplay44">
+		<description>SDPLAY44 (TO8, 2015.09.07)</description>
+		<year>2015</year>
+		<publisher>DCsoft</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="sdplay44_to8 [a].fd" size="327680" crc="f0cfa058" sha1="9ab9b37ed742f7a15dec1c7eb9ffa6674f878259" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="sdplay44_to7" cloneof="sdplay44">
-		<description>SDPLAY44 (TO7)</description>
+		<description>SDPLAY44 (TO7, 2015.09.07)</description>
 		<year>2015</year>
 		<publisher>DCsoft</publisher>
 
@@ -1711,8 +1761,20 @@
 		<publisher>France Image Logiciel (FIL)</publisher>
 
 		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="ST 9051.fd" size="327680" crc="04a27cd6" sha1="bd1383aed49c3f4590cec6d0dd256886c95510dd" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="statistqa" cloneof="statistq">
+		<description>Statistiques (SAP Format)</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
-				<rom name="stat-to9.sap" size="335426" crc="3ce7ca38" sha1="58fca3db1c6ee2a85fa3edd179e5d6cd5854d2e2" offset="0" />
+				<rom name="ST 9051.sap" size="335426" crc="3ce7ca38" sha1="58fca3db1c6ee2a85fa3edd179e5d6cd5854d2e2" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2657,6 +2719,18 @@
 		</part>
 	</software>
 
+	<software name="ludoedu">
+		<description>Programmes ludo-educatifs pour MO5 (29-10-2015)</description>
+		<year>2015</year>
+		<publisher>dcmoto.free.fr</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="programmes ludo-educatifs to7_to7 fd.fd" size="327680" crc="21ea200c" sha1="a63e541b37f30421300e48b0f978a80a83984246" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 <!-- Compilations (Games) -->
 
 	<software name="3as">
@@ -2681,6 +2755,34 @@
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="323584">
 				<rom name="4stars-compilation_to8.fd" size="323584" crc="16d2bf06" sha1="f8d294f3beb69a22bc6d791a4ca30b3617f33bc4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- can also be found in mo6_flop.xml -->
+	<software name="action1">
+		<description>Action Volume 1</description>
+		<year>1989</year>
+		<publisher>Microids</publisher>
+		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="x-ray (microids) (m beziat) (1986) (to8).fd" size="327680" crc="c1b69b17" sha1="cbb1a5e92ece49710e9ef7e9d530f3b3ea2f24ec" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- can also be found in mo6_flop.xml -->
+	<software name="action1a" cloneof="action1">
+		<description>Action Volume 1 (SAP Format)</description>
+		<year>1989</year>
+		<publisher>Microids</publisher>
+		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="335426">
+				<rom name="unknown microids pack (198x)(microids)(fr)[boot with microsoft basic 1.0].sap" size="335426" crc="1434de44" sha1="60147e3781eefd377ea1b9bbee65ab9454f5ad46" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2734,6 +2836,18 @@
 	</software>
 
 	<software name="athletesb" cloneof="athletes">
+		<description>Les Athletes (Alt 2)</description>
+		<year>198?</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="les-athletes_to8.fd" size="327680" crc="d06f4d9c" sha1="acf131edd8194040c7ea5b486e7af3c9908ea8a6" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="athletesc" cloneof="athletes">
 		<description>Les Athletes (SAP Format)</description>
 		<year>198?</year>
 		<publisher>Infogrames</publisher>
@@ -2745,7 +2859,7 @@
 		</part>
 	</software>
 
-	<software name="athletesc" cloneof="athletes">
+	<software name="athletesd" cloneof="athletes">
 		<description>Les Athletes (SAP Format, Alt)</description>
 		<year>198?</year>
 		<publisher>Infogrames</publisher>
@@ -2757,7 +2871,7 @@
 		</part>
 	</software>
 
-	<software name="athletesd" cloneof="athletes">
+	<software name="athletese" cloneof="athletes">
 		<description>Les Athletes (SAP Format, Alt 2)</description>
 		<year>198?</year>
 		<publisher>Infogrames</publisher>
@@ -2769,7 +2883,7 @@
 		</part>
 	</software>
 
-	<software name="athletese" cloneof="athletes">
+	<software name="athletesf" cloneof="athletes">
 		<description>Les Athletes (SAP Format, Alt 3)</description>
 		<year>198?</year>
 		<publisher>Infogrames</publisher>
@@ -3767,50 +3881,6 @@
     </software>
 -->
 
-	<software name="hitocean">
-		<description>Les Hits d'Ocean</description>
-		<year>1986</year>
-		<publisher>SFMI Micromania</publisher>
-
-		<part name="flop1" interface="thom_flop">
-		<feature name="part_id" value="Disk 1"/>
-			<dataarea name="flop" size="327680">
-				<rom name="les _hits_ d'ocean (micromania) (divers) (1986) (to8 fd) (les-hits-d-ocean-1_to8).fd" size="327680" crc="cfad0c37" sha1="e6229143465c4d12393e051148eeaff0cfa0494b" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="thom_flop">
-		<feature name="part_id" value="Disk 2 Side A"/>
-			<dataarea name="flop" size="327680">
-				<rom name="les _hits_ d'ocean (micromania) (divers) (1986) (to8 fd) (les-hits-d-ocean-2_to8) disk 1.fd" size="327680" crc="8a1e2f30" sha1="09a8ca2533c7c36c68a4ab42c315afe8f162428f" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="thom_flop">
-		<feature name="part_id" value="Disk 2 Side B"/>
-			<dataarea name="flop" size="327680">
-				<rom name="les _hits_ d'ocean (micromania) (divers) (1986) (to8 fd) (les-hits-d-ocean-2_to8) disk 2.fd" size="327680" crc="a0ef266e" sha1="cb757eb13b92427ec30a8947fc2384f4aa230ba5" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="hitoceana" cloneof="hitocean" supported="partial">
-		<description>Les Hits d'Ocean (Disk 2 640K)</description>
-		<year>1986</year>
-		<publisher>SFMI Micromania</publisher>
-
-		<part name="flop1" interface="thom_flop">
-		<feature name="part_id" value="Disk 1"/>
-			<dataarea name="flop" size="327680">
-				<rom name="les _hits_ d'ocean (micromania) (divers) (1986) (to8 fd) (les-hits-d-ocean-1_to8).fd" size="327680" crc="cfad0c37" sha1="e6229143465c4d12393e051148eeaff0cfa0494b" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="thom_flop">
-		<feature name="part_id" value="Disk 2"/>
-			<dataarea name="flop" size="655360">
-				<rom name="les _hits_ d'ocean (micromania) (divers) (1986) (to8 fd) (les-hits-d-ocean-2_to8).fd" size="655360" crc="0d21086c" sha1="9e74ea000a7526d3ae359f81a88aa6771f66e48b" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="hitsgrem">
 		<description>Les Hits de Gremlin</description>
 		<year>1986</year>
@@ -3857,6 +3927,62 @@
 		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="655360">
 				<rom name="les _hits_ de gremlin (micromania) (divers) (1986) (to8 fd) (les-hits-de-gremlin-2_to8).fd" size="655360" crc="bc9b8f1e" sha1="2b04ade360fc34653f3aa2f774c7d8ff5c266f78" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hitslori">
+		<description>Les Hits de Loriciels 1</description>
+		<year>198?</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="les-hits-de-loriciels-1_to8.fd" size="655360" crc="9ff8789e" sha1="99cfb75a8fc8d9bcc059007134b8d71554e914d5" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hitocean">
+		<description>Les Hits d'Ocean</description>
+		<year>1986</year>
+		<publisher>SFMI Micromania</publisher>
+
+		<part name="flop1" interface="thom_flop">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="327680">
+				<rom name="les _hits_ d'ocean (micromania) (divers) (1986) (to8 fd) (les-hits-d-ocean-1_to8).fd" size="327680" crc="cfad0c37" sha1="e6229143465c4d12393e051148eeaff0cfa0494b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+		<feature name="part_id" value="Disk 2 Side A"/>
+			<dataarea name="flop" size="327680">
+				<rom name="les _hits_ d'ocean (micromania) (divers) (1986) (to8 fd) (les-hits-d-ocean-2_to8) disk 1.fd" size="327680" crc="8a1e2f30" sha1="09a8ca2533c7c36c68a4ab42c315afe8f162428f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="thom_flop">
+		<feature name="part_id" value="Disk 2 Side B"/>
+			<dataarea name="flop" size="327680">
+				<rom name="les _hits_ d'ocean (micromania) (divers) (1986) (to8 fd) (les-hits-d-ocean-2_to8) disk 2.fd" size="327680" crc="a0ef266e" sha1="cb757eb13b92427ec30a8947fc2384f4aa230ba5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hitoceana" cloneof="hitocean" supported="partial">
+		<description>Les Hits d'Ocean (Disk 2 640K)</description>
+		<year>1986</year>
+		<publisher>SFMI Micromania</publisher>
+
+		<part name="flop1" interface="thom_flop">
+		<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="327680">
+				<rom name="les _hits_ d'ocean (micromania) (divers) (1986) (to8 fd) (les-hits-d-ocean-1_to8).fd" size="327680" crc="cfad0c37" sha1="e6229143465c4d12393e051148eeaff0cfa0494b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+		<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="655360">
+				<rom name="les _hits_ d'ocean (micromania) (divers) (1986) (to8 fd) (les-hits-d-ocean-2_to8).fd" size="655360" crc="0d21086c" sha1="9e74ea000a7526d3ae359f81a88aa6771f66e48b" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -4280,6 +4406,19 @@
 		<feature name="part_id" value="Disk 10"/>
 			<dataarea name="flop" size="655360">
 				<rom name="megasofts10.fd" size="655360" crc="57e0f3ea" sha1="965efceedf477a7861624f5e03322fc19c30b9fa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- can also be found in mo6_flop.xml -->
+	<software name="lori1988">
+		<description>MGT - Sapiens - Mach 3</description>
+		<year>1988</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="mgt-sapiens-mach3_moto.fd" size="655360" crc="bee93a61" sha1="1fbe231cb8e5d9c590b6dcb1d564c620b6d76871" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -4765,32 +4904,6 @@
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
 				<rom name="unknown infogrames compilation (198x)(infogrames)(fr).sap" size="335426" crc="0cb86811" sha1="0f0ab715d86a606fc267a3e2aa5961ba1a25ad9d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="unkmicro">
-		<description>Unknown Microids Pack</description>
-		<year>198?</year>
-		<publisher>Microids</publisher>
-		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
-
-		<part name="flop1" interface="thom_flop">
-			<dataarea name="flop" size="327680">
-				<rom name="x-ray (microids) (m beziat) (1986) (to8).fd" size="327680" crc="c1b69b17" sha1="cbb1a5e92ece49710e9ef7e9d530f3b3ea2f24ec" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="unkmicroa" cloneof="unkmicro">
-		<description>Unknown Microids Pack (SAP Format)</description>
-		<year>198?</year>
-		<publisher>Microids</publisher>
-		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
-
-		<part name="flop1" interface="thom_flop">
-			<dataarea name="flop" size="335426">
-				<rom name="unknown microids pack (198x)(microids)(fr)[boot with microsoft basic 1.0].sap" size="335426" crc="1434de44" sha1="60147e3781eefd377ea1b9bbee65ab9454f5ad46" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -7618,6 +7731,18 @@
 		</part>
 	</software>
 
+	<software name="algebre">
+		<description>Algebre</description>
+		<year>1987</year>
+		<publisher>Cedic/Nathan</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="7116142.fd" size="327680" crc="47cfee1f" sha1="fe55cbe290ed01c8a2f7fa38c073231d1d5f5777" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- Allemand Volume 1 - Les nombres et l'heure (Cedic/Nathan)-->
 
 	<software name="allemnd2">
@@ -7751,8 +7876,8 @@
 		</part>
 	</software>
 
-	<software name="math3eme">
-		<description>La Bosse des Maths 3eme</description>
+	<software name="bossem3">
+		<description>La Bosse des Maths 3e</description>
 		<year>1987</year>
 		<publisher>Coktel Vision</publisher>
 
@@ -7764,14 +7889,26 @@
 		</part>
 	</software>
 
-	<software name="math3emea" cloneof="math3eme">
-		<description>La Bosse des Maths 3eme (SAP Format)</description>
+	<software name="bossem3a" cloneof="bossem3">
+		<description>La Bosse des Maths 3e (SAP Format)</description>
 		<year>1987</year>
 		<publisher>Coktel Vision</publisher>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
 				<rom name="bosse des maths 3eme, la (1987)(coktel vision)(fr).sap" size="335426" crc="1cbffb66" sha1="c00578d6cea996bc56ec318b2d698a1a6683741e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bossem6">
+		<description>La Bosse des Maths 6e</description>
+		<year>1988</year>
+		<publisher>Coktel Vision</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="la-bosse-des-maths-6e_to8.fd" size="327680" crc="b6574165" sha1="a5d6279a858f513e84a038b0c74304ded54fe63f" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -7803,6 +7940,18 @@
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
 				<rom name="calmenta (1987)(chrysis)(fr).sap" size="335426" crc="62275d1e" sha1="33dc3e80fd3ea5dc8bd894d2d9203ef2756b3ba8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="clesmicr">
+		<description>Cles pour la micro</description>
+		<year>1987</year>
+		<publisher>Cedic/Nathan?</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="cles-pour-la-micro_to8.fd" size="327680" crc="6e97b24c" sha1="913e406d6f25c9d6383bfb4a43e9a85cebafcb4f" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -7888,6 +8037,18 @@
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
 				<rom name="diloco_2.sap" size="335426" crc="95181b55" sha1="31af49d598b474d27d9b8d2b6694f83639af8978" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="educat2">
+		<description>Educatif 2</description>
+		<year>1985</year>
+		<publisher>Cobrasoft</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="educatif-2_to8.fd" size="327680" crc="c82af17e" sha1="07bc0886e6136be9207db32ed7d04cb077c2eb60" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -8304,6 +8465,30 @@
 		</part>
 	</software>
 
+	<software name="gr4e3ev1">
+		<description>Logiciels Nathan Colleges - Grammaire langue francaise 4e/3e volume 1</description>
+		<year>1987</year>
+		<publisher>Cedic/Nathan</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="grammaire-colleges-4e-3e-vol1_to8.fd" size="327680" crc="85277954" sha1="f51a0fede030dca8ff7274c705614cdb97384a56" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gr6e">
+		<description>Logiciels Nathan Colleges - Grammaire langue francaise 6e</description>
+		<year>1988</year>
+		<publisher>Cedic/Nathan</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="grammaire-6e_to8.fd" size="327680" crc="decc5539" sha1="f6a5659d54258b5561b2e2300ae68fdd88bac592" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="calculce">
 		<description>Logiciels Nathan Ecole - Calculs et Rangements CE</description>
 		<year>1986</year>
@@ -8408,8 +8593,20 @@
 		</part>
 	</software>
 
-	<software name="mathe5e">
-		<description>Mathematiques 5E</description>
+	<software name="math5e1">
+		<description>Mathematiques 5e (Cedic/Nathan)</description>
+		<year>1987</year>
+		<publisher>Cedic/Nathan</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="6604291.fd" size="327680" crc="67a7e3b3" sha1="1708cc079e2a90286cd129dc2cac94cac4fe4099" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="math5e2">
+		<description>Mathematiques 5e (See-Maths)</description>
 		<year>1989</year>
 		<publisher>See-Maths</publisher>
 
@@ -8468,9 +8665,21 @@
 		</part>
 	</software>
 
+	<software name="mbacmatb">
+		<description>MicroBac Mathematiques B</description>
+		<year>1988</year>
+		<publisher>Coktel Vision</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="microbac-mathematiques-b_to8.fd" size="327680" crc="049eae08" sha1="7a1a6665990564a6692d99329ca021cd9ca28042" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- works in dcmoto, copy protection? -->
 	<software name="mbacmath" supported="no">
-		<description>Microbac Maths</description>
+		<description>MicroBac Maths</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -8496,8 +8705,8 @@
 -->
 
 	<!-- works in dcmoto, copy protection? -->
-	<software name="mbacphys" supported="no">
-		<description>Microbac Physique - Chimie</description>
+	<software name="mbacsci" supported="no">
+		<description>MicroBac Physique - Chimie</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -8588,6 +8797,18 @@
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
 				<rom name="ortho graphie - ecrire sans fautes vol.3 (1987)(cedic - nathan)(fr).fd" size="327680" crc="4a8344e5" sha1="ee02d78430771635caf0e1a24690d5c414835ba1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="parents">
+		<description>Les Parents de mes Enfants sont-ils les Enfants de mes Parents?</description>
+		<year>1988</year>
+		<publisher>Carraz Editions</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="les-parents-de-mes-enfants_to8.fd" size="327680" crc="8491d214" sha1="b9f89eeb748fefdb70768f93157c444a580d3bd1" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -9844,6 +10065,18 @@
 		</part>
 	</software>
 
+	<software name="spounz">
+		<description>La Clinique du Docteur Spounz</description>
+		<year>198?</year>
+		<publisher>Jean-Yves Le Friec - Hebdogiciel</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="dr_spounz1[to7].fd" size="327680" crc="c4d1b671" sha1="fdf7c1317ec47f58ed980b4a0e4d878b6fe1e36d" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="cobra">
 		<description>Cobra</description>
 		<year>1987</year>
@@ -9885,6 +10118,7 @@
     </software>
 -->
 
+	<!-- You MUST use TO9 to run this! -->
 	<software name="coliseum">
 		<description>Coliseum</description>
 		<year>1985</year>
@@ -9893,6 +10127,18 @@
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
 				<rom name="coliseum (loriciels) (louis-marie rocques) (1985) (to9 fd).fd" size="327680" crc="a5482b19" sha1="165abc3339730c8a75c79ae38720501073bc2fa8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="coliseuma" cloneof="coliseum">
+		<description>Coliseum (Alt)</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="coliseum_to9.fd" size="327680" crc="87dfd7d2" sha1="1f49f2c13fc5ae699a3b1376eea2424e68f7dab7" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -10032,6 +10278,18 @@
 		</part>
 	</software>
 
+	<software name="crystann">
+		<description>Crystann</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="crystann_to8.fd" size="327680" crc="a9dc0ab7" sha1="e21688ce38dff76262b56ce6ea0baf3bf8225d61" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="cyrusech">
 		<description>Cyrus Echecs</description>
 		<year>1984</year>
@@ -10092,6 +10350,18 @@
 		</part>
 	</software>
 
+	<software name="dieuxmer">
+		<description>Les Dieux de la Mer</description>
+		<year>1987</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="les-dieux-de-la-mer_to8.fd" size="327680" crc="0c431715" sha1="769b8b5a51a1f065534a3675cd1c803ba2c7fc00" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="dieuxst2">
 		<description>Les Dieux du Stade II</description>
 		<year>1986</year>
@@ -10142,7 +10412,19 @@
 
 	<software name="colorado">
 		<description>Duel au Colorado</description>
-		<year>198?</year>
+		<year>1986</year>
+		<publisher>Chip</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="duel-au-colorado_to8.fd" size="655360" crc="7a8f0e2c" sha1="0adafb6a9fb76f8554861edd8c20f728a925e9f1" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="coloradoa" cloneof="colorado">
+		<description>Duel au Colorado (SAP Format)</description>
+		<year>1986</year>
 		<publisher>Chip</publisher>
 
 		<part name="flop1" interface="thom_flop">
@@ -10152,9 +10434,9 @@
 		</part>
 	</software>
 
-	<software name="coloradoa" cloneof="colorado">
+	<software name="coloradob" cloneof="colorado">
 		<description>Duel au Colorado (Cracked)</description>
-		<year>198?</year>
+		<year>1986</year>
 		<publisher>&lt;bootleg (The Crapaud Musulman)&gt;</publisher>
 
 		<part name="flop1" interface="thom_flop">
@@ -10519,6 +10801,18 @@
 		</part>
 	</software>
 
+	<software name="spounz2">
+		<description>L'ile du Dr. Spounz</description>
+		<year>198?</year>
+		<publisher>Jean-Yves Le Friec - Hebdogiciel</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="ile_dr_spounz[to7_to7-70].fd" size="327680" crc="b78f6635" sha1="370e7f8dfba41f46d4ef3a7f92ac5c5edc34cbd0" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="iznogoud">
 		<description>Iznogoud</description>
 		<year>1987</year>
@@ -10878,18 +11172,6 @@
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="655360">
 				<rom name="lemmings (2006)(yrprod)(fr)[640k].fd" size="655360" crc="de483de0" sha1="54479f0158cd17dcee21dbe824f29fc9c87ae228" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="passvent">
-		<description>Les Passagers du Vent</description>
-		<year>1986</year>
-		<publisher>Infogrames</publisher>
-
-		<part name="flop1" interface="thom_flop">
-			<dataarea name="flop" size="327680">
-				<rom name="les passagers du vent (1986)(infogrames)(fr).fd" size="327680" crc="1eb01f1b" sha1="9f26e2f3708e82920d436bbea659cf4bde9c18b8" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -11492,6 +11774,18 @@
 		</part>
 	</software>
 
+	<software name="misninja">
+		<description>Mission Ninja</description>
+		<year>198?</year>
+		<publisher>Frederic Nguyen - Hebdogiciel</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="missionninja[mo5-to9].fd" size="327680" crc="01abfa35" sha1="4147f7b2dead961aa45d4278ebd0fd35e2b394b0" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="misstres">
 		<description>Mission Tres Speciale</description>
 		<year>1985</year>
@@ -11784,6 +12078,18 @@
 		</part>
 	</software>
 
+	<software name="passvent">
+		<description>Les Passagers du Vent</description>
+		<year>1986</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="les passagers du vent (1986)(infogrames)(fr).fd" size="327680" crc="1eb01f1b" sha1="9f26e2f3708e82920d436bbea659cf4bde9c18b8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="passvnt2">
 		<description>Les Passagers du Vent - Partie 2</description>
 		<year>1987</year>
@@ -11853,6 +12159,18 @@
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
 				<rom name="poker solitaire (19xx)(jmljml)(fr).sap" size="335426" crc="4c192188" sha1="58b5a8253562af9e49ef09eaada9d1df7c7e8064" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="polepos">
+		<description>Pole Position</description>
+		<year>198?</year>
+		<publisher>T. Dugnolle - Hebdogiciel</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="pole_position[to7].fd" size="327680" crc="7d67a3f1" sha1="b6cdd7a871d87f95bbbfa25883b0b24ffd2d4c6b" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -12810,6 +13128,18 @@
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
 				<rom name="super androides (infogrames) (william hennebois) (1986).fd" size="327680" crc="29188291" sha1="2ed323a1ed88dca9bd0e7ee113ee61a235edfc5d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sbusines">
+		<description>Super Business</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="super-business_to9.fd" size="327680" crc="456c05d7" sha1="a2ed173c52d758ae231c6403ccde93e3933415f9" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>

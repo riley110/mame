@@ -213,13 +213,25 @@
 	</software>
 
 	<software name="sdplay44">
-		<description>SDPLAY44</description>
+		<description>SDPLAY (2015.09.24)</description>
 		<year>2015</year>
 		<publisher>DCsoft</publisher>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="sdplay44_mo5.fd" size="327680" crc="fd25a97b" sha1="8b5a350ef53f759c0e4e3d20835a0ac98d82c663" offset="0" />
+				<rom name="sdplay44_mo5.fd" size="327680" crc="a045af4b" sha1="7b5ac37223c839ccc3416069b15d7da8de7b3fab" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sdplay44a" cloneof="sdplay44">
+		<description>SDPLAY44 (2015.09.07)</description>
+		<year>2015</year>
+		<publisher>DCsoft</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="sdplay44_mo5 [a].fd" size="327680" crc="fd25a97b" sha1="8b5a350ef53f759c0e4e3d20835a0ac98d82c663" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -253,6 +265,18 @@
 <!-- Compilations (Educational) -->
 
 	<software name="ludoedu">
+		<description>Programmes ludo-educatifs pour MO5 (16-11-2015)</description>
+		<year>2015</year>
+		<publisher>dcmoto.free.fr</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="programmes-ludo-educatifs_a_mo5.fd" size="327680" crc="d1c6584c" sha1="837643e4433bb7076084be9b53e93034415032c6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ludoedua" cloneof="ludoedu">
 		<description>Programmes ludo-educatifs pour MO5 (07-08-2015)</description>
 		<year>2015</year>
 		<publisher>dcmoto.free.fr</publisher>
@@ -264,7 +288,7 @@
 		</part>
 	</software>
 
-	<software name="ludoedua" cloneof="ludoedu">
+	<software name="ludoedub" cloneof="ludoedu">
 		<description>Programmes ludo-educatifs pour MO5 (27-07-2015)</description>
 		<year>2015</year>
 		<publisher>dcmoto.free.fr</publisher>
@@ -328,6 +352,18 @@
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
 				<rom name="les-hits-de-loriciels-1_mo5.fd" size="327680" crc="e8420f53" sha1="063278385dc58ac1eebc8e936b6a0fcf81d358e8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hitsloria" cloneof="hitslori">
+		<description>Les Hits de Loriciels 1 (Alt)</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="les-hits-de-loriciels-1_a_mo5.fd" size="327680" crc="c82070a8" sha1="0dae5973c91cca0adab43ac4dad534a8f61d68aa" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -491,6 +527,30 @@
 
 <!-- Games -->
 
+	<software name="5emeaxe">
+		<description>Le 5eme Axe</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="le-5eme-axe_mo5.fd" size="327680" crc="9f8945a2" sha1="f0764de7147c3e0715916bf4fe31fd14f3ca7184" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="aigleor">
+		<description>L'Aigle d'Or</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="l-aigle-d-or_mo5.fd" size="327680" crc="ebdd24c9" sha1="29ba415e07e1e35ceb108aaad5ff8487f8ce8a71" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="android">
 		<description>Androides</description>
 		<year>1985</year>
@@ -499,6 +559,54 @@
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
 				<rom name="androides_mo5.fd" size="327680" crc="99a9f499" sha1="4ac58a32ce73d14ac0896c2af85f6ab4c6c371d6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="arkanoid">
+		<description>Arkanoid</description>
+		<year>1987</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="arkanoid_mo5.fd" size="327680" crc="6f3b4312" sha1="3bc946cddc984c0ae4c03e0e077318c80fa039fb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atlantis">
+		<description>Atlantis</description>
+		<year>1985</year>
+		<publisher>Cobrasoft</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="atlantis_mo5.fd" size="327680" crc="a6d36e27" sha1="958eaa25777ea9d91e3c49b59f8b3cbaa3186ba3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atomik">
+		<description>Atomik</description>
+		<year>1987</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="atomik_mo5.fd" size="327680" crc="e298ac1b" sha1="174bead99db6e53b7fe72c50d58a43fc566e66c6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="balthaza">
+		<description>Balthazar</description>
+		<year>1987</year>
+		<publisher>Titus Software</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="balthazar_mo5.fd" size="327680" crc="420b6c3f" sha1="89fdfa8fd9f0b335dba73c49fe5381f75eca648b" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -539,6 +647,18 @@
 		</part>
 	</software>
 
+	<software name="crocky2">
+		<description>Crocky II</description>
+		<year>1984</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="163840">
+				<rom name="crocky2_mo5.fd" size="163840" crc="1bdd7fd0" sha1="907828023a2f20b8e723ec3a70da7226c4e29aed" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="crystann">
 		<description>Crystann</description>
 		<year>1985</year>
@@ -547,6 +667,42 @@
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
 				<rom name="crystann_mo5.fd" size="327680" crc="ebd38671" sha1="2b5891a1b5687ef56db4708e434940d1b8d22126" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dakar4x4">
+		<description>Dakar 4x4</description>
+		<year>1987</year>
+		<publisher>Coktel Vision</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="163840">
+				<rom name="dakar-4x4_mo5.fd" size="163840" crc="f36081c3" sha1="77d433753ae3076ba9704018e3e9c6532f36cd20" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="f15strik">
+		<description>F15 Strike Eagle</description>
+		<year>1987</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="f15-strike-eagle_mo5.fd" size="327680" crc="6a5fb530" sha1="e796f33f34f256b5a2f4e4708a4d1bca577dfcd1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fbi">
+		<description>FBI</description>
+		<year>1984</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="163840">
+				<rom name="fbi_mo5.fd" size="163840" crc="90dd81f6" sha1="51bcbb436441fd4ced04d7c24cd58baf93dd1207" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -563,26 +719,98 @@
 		</part>
 	</software>
 
-	<software name="aigleor">
-		<description>L'Aigle d'Or</description>
-		<year>1985</year>
-		<publisher>Loriciels</publisher>
+	<software name="formule1">
+		<description>Formule 1</description>
+		<year>1987</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
 
 		<part name="flop1" interface="thom_flop">
-			<dataarea name="flop" size="327680">
-				<rom name="l-aigle-d-or_mo5.fd" size="327680" crc="ebdd24c9" sha1="29ba415e07e1e35ceb108aaad5ff8487f8ce8a71" offset="0" />
+			<dataarea name="flop" size="167424">
+				<rom name="formule-1_mo5.fd" size="167424" crc="d5233141" sha1="5774bf9767e79bf2fa1595e444dc9e0bb1fa3dfc" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="5emeaxe">
-		<description>Le 5eme Axe</description>
+	<software name="fox">
+		<description>Fox</description>
 		<year>1985</year>
+		<publisher>Shift-Edition</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="fox_mo5.fd" size="327680" crc="7a3eef3b" sha1="aa2801a4be6a5fd5c55a49bbb90ac4a3d1caf110" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gameover">
+		<description>Game Over</description>
+		<year>1987</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="game-over_mo5.fd" size="327680" crc="6c1c27b7" sha1="d66a3c7c9b078f8b02307901255f4f44e67189eb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hacker">
+		<description>Hacker</description>
+		<year>1986</year>
 		<publisher>Loriciels</publisher>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="le-5eme-axe_mo5.fd" size="327680" crc="9f8945a2" sha1="f0764de7147c3e0715916bf4fe31fd14f3ca7184" offset="0" />
+				<rom name="hacker_mo5.fd" size="327680" crc="7679e9cf" sha1="8bb74c0184e7f2150869565db4b7cb488d3451f2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="heritage">
+		<description>L'Heritage</description>
+		<year>1986</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="l-heritage_mo5.fd" size="327680" crc="87182094" sha1="7cbec1df6847c5e3fe17991c9060ac3c5935dff0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="jamesdeb">
+		<description>James Debug - Le Grand Saut</description>
+		<year>1987</year>
+		<publisher>Coktel Vision</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="163840">
+				<rom name="le-grand-saut_mo5.fd" size="163840" crc="0c8021ff" sha1="c7201ab6e710c4260a355ac9c1519f4bb5927a29" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="labyrint">
+		<description>Labyrinthe (Blanc)</description>
+		<year>1986</year>
+		<publisher>DCsoft</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="1310720">
+				<rom name="labyrinthe-blanc_mo5.fd" size="1310720" crc="e8adbdc1" sha1="5dbeaaaa24c357f7380b6075fae6b989abd78383" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="labyrinta" cloneof="labyrint">
+		<description>Labyrinthe (Noir)</description>
+		<year>1986</year>
+		<publisher>DCsoft</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="1310720">
+				<rom name="labyrinthe-noir_mo5.fd" size="1310720" crc="c16fa5d1" sha1="fdc94e7bffe8924c5c160dcd87ea5ee629203672" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -611,6 +839,18 @@
 		</part>
 	</software>
 
+	<software name="minediam">
+		<description>La Mine aux Diamants</description>
+		<year>1986</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="la-mine-aux-diamants_mo5.fd" size="327680" crc="eee36286" sha1="ae8c3355719f475ccf80069c24a6e3028d80784e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="poseidon">
 		<description>Poseidon</description>
 		<year>1984</year>
@@ -635,6 +875,18 @@
 		</part>
 	</software>
 
+	<software name="sapiensa" cloneof="sapiens">
+		<description>Sapiens (Alt)</description>
+		<year>1986</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="sapiens_a_mo5.fd" size="327680" crc="d4c362a6" sha1="ac0ef7a6c5c28ee462e0da83ce00b4186d2ca463" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="sorcery">
 		<description>Sorcery</description>
 		<year>1986</year>
@@ -643,6 +895,18 @@
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
 				<rom name="sorcery_mo5.fd" size="327680" crc="88802384" sha1="b2e12c15aca2ecff6dc327a3941ec13d4a831aeb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sortileg">
+		<description>Sortileges</description>
+		<year>1986</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="sortileges_mo5.fd" size="327680" crc="6a19d070" sha1="438274cbd81166028b513b6a267e7210990aec62" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -659,6 +923,18 @@
 		</part>
 	</software>
 
+	<software name="vampire">
+		<description>Vampire</description>
+		<year>1986</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="vampire_mo5.fd" size="327680" crc="2e32aefb" sha1="8d58506898fb60e2130a9b4a04887becd74d7b36" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="volsolo">
 		<description>Vol Solo</description>
 		<year>1985</year>
@@ -667,6 +943,18 @@
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
 				<rom name="vol-solo_mo5.fd" size="327680" crc="b803a305" sha1="c8ce9c572499c0cdb47ac513c9356a0b5e8bd883" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wizball">
+		<description>Wizball</description>
+		<year>1988</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="wizball_mo5.fd" size="327680" crc="7003e0de" sha1="a15eaa1d4b8039efdd73b39a6be86efe38e6d205" offset="0" />
 			</dataarea>
 		</part>
 	</software>
