@@ -107,7 +107,7 @@
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="analpist_to8.fd" size="327680" crc="c97d4bc4" sha1="f2090c80e1cc5ceb0510570d28dccbb528932b22" offset="0x0000" />
+				<rom name="analpist_to8.fd" size="327680" crc="c97d4bc4" sha1="f2090c80e1cc5ceb0510570d28dccbb528932b22" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -486,7 +486,7 @@
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="925 TX 0713.fd" size="327680" crc="a12e633c" sha1="ef6c011a2e1471511ed3f2ce0001bd44fd316bb9" offset="0x0000" />
+				<rom name="925 TX 0713.fd" size="327680" crc="a12e633c" sha1="ef6c011a2e1471511ed3f2ce0001bd44fd316bb9" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1565,7 +1565,7 @@
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="scanner_to9.fd" size="327680" crc="0a790527" sha1="ff87d3cce649010e4914854890f5a0788fc89e43" offset="0x0000" />
+				<rom name="scanner_to9.fd" size="327680" crc="0a790527" sha1="ff87d3cce649010e4914854890f5a0788fc89e43" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1620,7 +1620,7 @@
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="sdplay44_to8.fd" size="327680" crc="23a4f586" sha1="3c68661f11d0a7c768a1c069fff992c38f76ebdc" offset="0x0000" />
+				<rom name="sdplay44_to8.fd" size="327680" crc="23a4f586" sha1="3c68661f11d0a7c768a1c069fff992c38f76ebdc" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1762,7 +1762,7 @@
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="ST 9051.fd" size="327680" crc="04a27cd6" sha1="bd1383aed49c3f4590cec6d0dd256886c95510dd" offset="0x0000" />
+				<rom name="ST 9051.fd" size="327680" crc="04a27cd6" sha1="bd1383aed49c3f4590cec6d0dd256886c95510dd" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2726,7 +2726,7 @@
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="programmes ludo-educatifs to7_to7 fd.fd" size="327680" crc="21ea200c" sha1="a63e541b37f30421300e48b0f978a80a83984246" offset="0x0000" />
+				<rom name="programmes ludo-educatifs to7_to7 fd.fd" size="327680" crc="21ea200c" sha1="a63e541b37f30421300e48b0f978a80a83984246" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2842,7 +2842,7 @@
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="les-athletes_to8.fd" size="327680" crc="d06f4d9c" sha1="acf131edd8194040c7ea5b486e7af3c9908ea8a6" offset="0x0000" />
+				<rom name="les-athletes_to8.fd" size="327680" crc="d06f4d9c" sha1="acf131edd8194040c7ea5b486e7af3c9908ea8a6" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -3880,6 +3880,28 @@
         </part>
     </software>
 -->
+	
+	<software name="greates2">
+		<description>The Greatest Collection II</description>
+		<year>1990</year>
+		<publisher>Novtech</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="the-greatest-collection-2-d1_to8.fd" size="655360" crc="37e8c510" sha1="0ae8df4a87040b0642a3b191d862ee6b7a6a6bba" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="the-greatest-collection-2-d2_to8.fd" size="655360" crc="28e5e0c7" sha1="510c696b6e9827e52f0037c987a3a334ae4e293c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="the-greatest-collection-2-d3_to8.fd" size="655360" crc="c236ee0d" sha1="34f4a158a635d0073358a246335c992c0b125409" offset="0" />
+			</dataarea>
+		</part>
+	</software>
 
 	<software name="hitsgrem">
 		<description>Les Hits de Gremlin</description>
@@ -3938,7 +3960,7 @@
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="655360">
-				<rom name="les-hits-de-loriciels-1_to8.fd" size="655360" crc="9ff8789e" sha1="99cfb75a8fc8d9bcc059007134b8d71554e914d5" offset="0x0000" />
+				<rom name="les-hits-de-loriciels-1_to8.fd" size="655360" crc="9ff8789e" sha1="99cfb75a8fc8d9bcc059007134b8d71554e914d5" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -4418,7 +4440,7 @@
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="655360">
-				<rom name="mgt-sapiens-mach3_moto.fd" size="655360" crc="bee93a61" sha1="1fbe231cb8e5d9c590b6dcb1d564c620b6d76871" offset="0x0000" />
+				<rom name="mgt-sapiens-mach3_moto.fd" size="655360" crc="bee93a61" sha1="1fbe231cb8e5d9c590b6dcb1d564c620b6d76871" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -7738,7 +7760,7 @@
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="7116142.fd" size="327680" crc="47cfee1f" sha1="fe55cbe290ed01c8a2f7fa38c073231d1d5f5777" offset="0x0000" />
+				<rom name="7116142.fd" size="327680" crc="47cfee1f" sha1="fe55cbe290ed01c8a2f7fa38c073231d1d5f5777" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -7908,7 +7930,7 @@
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="la-bosse-des-maths-6e_to8.fd" size="327680" crc="b6574165" sha1="a5d6279a858f513e84a038b0c74304ded54fe63f" offset="0x0000" />
+				<rom name="la-bosse-des-maths-6e_to8.fd" size="327680" crc="b6574165" sha1="a5d6279a858f513e84a038b0c74304ded54fe63f" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -7951,7 +7973,7 @@
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="cles-pour-la-micro_to8.fd" size="327680" crc="6e97b24c" sha1="913e406d6f25c9d6383bfb4a43e9a85cebafcb4f" offset="0x0000" />
+				<rom name="cles-pour-la-micro_to8.fd" size="327680" crc="6e97b24c" sha1="913e406d6f25c9d6383bfb4a43e9a85cebafcb4f" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -8048,7 +8070,7 @@
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="educatif-2_to8.fd" size="327680" crc="c82af17e" sha1="07bc0886e6136be9207db32ed7d04cb077c2eb60" offset="0x0000" />
+				<rom name="educatif-2_to8.fd" size="327680" crc="c82af17e" sha1="07bc0886e6136be9207db32ed7d04cb077c2eb60" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -8472,7 +8494,7 @@
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="grammaire-colleges-4e-3e-vol1_to8.fd" size="327680" crc="85277954" sha1="f51a0fede030dca8ff7274c705614cdb97384a56" offset="0x0000" />
+				<rom name="grammaire-colleges-4e-3e-vol1_to8.fd" size="327680" crc="85277954" sha1="f51a0fede030dca8ff7274c705614cdb97384a56" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -8484,7 +8506,7 @@
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="grammaire-6e_to8.fd" size="327680" crc="decc5539" sha1="f6a5659d54258b5561b2e2300ae68fdd88bac592" offset="0x0000" />
+				<rom name="grammaire-6e_to8.fd" size="327680" crc="decc5539" sha1="f6a5659d54258b5561b2e2300ae68fdd88bac592" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -8600,7 +8622,7 @@
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="6604291.fd" size="327680" crc="67a7e3b3" sha1="1708cc079e2a90286cd129dc2cac94cac4fe4099" offset="0x0000" />
+				<rom name="6604291.fd" size="327680" crc="67a7e3b3" sha1="1708cc079e2a90286cd129dc2cac94cac4fe4099" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -8672,7 +8694,7 @@
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="microbac-mathematiques-b_to8.fd" size="327680" crc="049eae08" sha1="7a1a6665990564a6692d99329ca021cd9ca28042" offset="0x0000" />
+				<rom name="microbac-mathematiques-b_to8.fd" size="327680" crc="049eae08" sha1="7a1a6665990564a6692d99329ca021cd9ca28042" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -8808,7 +8830,7 @@
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="les-parents-de-mes-enfants_to8.fd" size="327680" crc="8491d214" sha1="b9f89eeb748fefdb70768f93157c444a580d3bd1" offset="0x0000" />
+				<rom name="les-parents-de-mes-enfants_to8.fd" size="327680" crc="8491d214" sha1="b9f89eeb748fefdb70768f93157c444a580d3bd1" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -10072,7 +10094,7 @@
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="dr_spounz1[to7].fd" size="327680" crc="c4d1b671" sha1="fdf7c1317ec47f58ed980b4a0e4d878b6fe1e36d" offset="0x0000" />
+				<rom name="dr_spounz1[to7].fd" size="327680" crc="c4d1b671" sha1="fdf7c1317ec47f58ed980b4a0e4d878b6fe1e36d" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -10138,7 +10160,7 @@
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="coliseum_to9.fd" size="327680" crc="87dfd7d2" sha1="1f49f2c13fc5ae699a3b1376eea2424e68f7dab7" offset="0x0000" />
+				<rom name="coliseum_to9.fd" size="327680" crc="87dfd7d2" sha1="1f49f2c13fc5ae699a3b1376eea2424e68f7dab7" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -10285,7 +10307,7 @@
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="crystann_to8.fd" size="327680" crc="a9dc0ab7" sha1="e21688ce38dff76262b56ce6ea0baf3bf8225d61" offset="0x0000" />
+				<rom name="crystann_to8.fd" size="327680" crc="a9dc0ab7" sha1="e21688ce38dff76262b56ce6ea0baf3bf8225d61" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -10357,7 +10379,7 @@
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="les-dieux-de-la-mer_to8.fd" size="327680" crc="0c431715" sha1="769b8b5a51a1f065534a3675cd1c803ba2c7fc00" offset="0x0000" />
+				<rom name="les-dieux-de-la-mer_to8.fd" size="327680" crc="0c431715" sha1="769b8b5a51a1f065534a3675cd1c803ba2c7fc00" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -10417,7 +10439,7 @@
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="655360">
-				<rom name="duel-au-colorado_to8.fd" size="655360" crc="7a8f0e2c" sha1="0adafb6a9fb76f8554861edd8c20f728a925e9f1" offset="0x0000" />
+				<rom name="duel-au-colorado_to8.fd" size="655360" crc="7a8f0e2c" sha1="0adafb6a9fb76f8554861edd8c20f728a925e9f1" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -10808,7 +10830,7 @@
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="ile_dr_spounz[to7_to7-70].fd" size="327680" crc="b78f6635" sha1="370e7f8dfba41f46d4ef3a7f92ac5c5edc34cbd0" offset="0x0000" />
+				<rom name="ile_dr_spounz[to7_to7-70].fd" size="327680" crc="b78f6635" sha1="370e7f8dfba41f46d4ef3a7f92ac5c5edc34cbd0" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -11781,7 +11803,7 @@
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="missionninja[mo5-to9].fd" size="327680" crc="01abfa35" sha1="4147f7b2dead961aa45d4278ebd0fd35e2b394b0" offset="0x0000" />
+				<rom name="missionninja[mo5-to9].fd" size="327680" crc="01abfa35" sha1="4147f7b2dead961aa45d4278ebd0fd35e2b394b0" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -12170,7 +12192,7 @@
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="pole_position[to7].fd" size="327680" crc="7d67a3f1" sha1="b6cdd7a871d87f95bbbfa25883b0b24ffd2d4c6b" offset="0x0000" />
+				<rom name="pole_position[to7].fd" size="327680" crc="7d67a3f1" sha1="b6cdd7a871d87f95bbbfa25883b0b24ffd2d4c6b" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -13139,7 +13161,7 @@
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="super-business_to9.fd" size="327680" crc="456c05d7" sha1="a2ed173c52d758ae231c6403ccde93e3933415f9" offset="0x0000" />
+				<rom name="super-business_to9.fd" size="327680" crc="456c05d7" sha1="a2ed173c52d758ae231c6403ccde93e3933415f9" offset="0" />
 			</dataarea>
 		</part>
 	</software>

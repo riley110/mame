@@ -56,8 +56,14 @@
 /* TODO (roughly in decreasing priority order):
    ----
 
+   - many copy-protected cassettes that work in DCMOTO fail to load correctly
+     (mostly by Infogrames and Loriciels)
+   - floppy issues still remain (such as many recent TO8 slideshows giving I/O errors)
+   - MO6/MO5NR cartridge is completely broken (garbage screen/hangs)
+   - TO8/TO9+ cassette is completely broken (I/O error)
+   - add several clones that are emulated in DCMOTO
    - internal, keyboard-attached TO9 mouse port (untested)
-   - floppy: 2-sided or 4-sided .fd images
+   - floppy: 2-sided or 4-sided .fd images, modernization
    - printer post-processing => postscript
    - RS232 serial port extensions: CC 90-232, RF 57-932
    - modem, teltel extension: MD 90-120 / MD 90-333 (need controller ROM?)

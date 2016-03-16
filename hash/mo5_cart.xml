@@ -154,6 +154,18 @@
     </software>
 -->
 
+	<software name="colorpnt">
+		<description>Colorpaint</description>
+		<year>1985</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="cart" interface="mo_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="CP 5068.bin" size="32768" crc="e9cf6b4a" sha1="7ad863525bd99f50abb3686ff8ad31eb2b3f2abc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="desass">
 		<description>Desassembleur - Dump et Patch (v4.0)</description>
 		<year>1986</year>
