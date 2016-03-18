@@ -65,6 +65,18 @@
 		</part>
 	</software>
 
+	<software name="mo6boot">
+		<description>MO6BOOT - MO6SD Bootstrap Loader</description>
+		<year>2012</year>
+		<publisher>Daniel Coulom</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="4587974">
+				<rom name="mo6boot.wav" size="4587974" crc="e3e71f06" sha1="e8b75ee2ce00b3df64aa076dac656c5d6f7b1366" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="music3v">
 		<description>Music 3 Voix</description>
 		<year>1987</year>
@@ -295,6 +307,18 @@
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="166169">
 				<rom name="bivouac_mo6.k7" size="166169" crc="b01b62bd" sha1="c2fb7d814ee20ea35dde9dbce81dfd13cd4dc1ae" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bivouacc" cloneof="bivouac">
+		<description>Bivouac (WAV)</description>
+		<year>1987</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="43034830">
+				<rom name="bivouac_mo6.wav" size="43034830" crc="54229153" sha1="42949eb47c30ee2b30ef379df6a7492964a3dcac" offset="0" />
 			</dataarea>
 		</part>
 	</software>

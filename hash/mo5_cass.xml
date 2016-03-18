@@ -694,6 +694,18 @@
 		</part>
 	</software>
 
+	<software name="extbas">
+		<description>Extension Basic (Hebdogiciel no. 118)</description>
+		<year>1986</year>
+		<publisher>Francis Malard - Hebdogiciel</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="15757">
+				<rom name="extbas[mo5].k7" size="15757" crc="eaa71694" sha1="b746a21e6bf4acdfe03bc780a4d7e377251440d0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="xbasmo5">
 		<description>Extension Basic MO5</description>
 		<year>1986</year>
@@ -718,8 +730,27 @@
 		</part>
 	</software>
 
-	<software name="forthmo5">
-		<description>Forth MO5</description>
+	<software name="forth">
+		<description>Forth</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Side A"/>
+			<dataarea name="cass" size="11674312">
+				<rom name="forth-face-a.wav" size="11674312" crc="c358fb29" sha1="510959a1115ce882befb712f5f3bedf9e6fd6153" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="cass" size="11116948">
+				<rom name="forth-face-b.wav" size="11116948" crc="f2800ace" sha1="27930ae6f559ffe725f3b00e6c4f05f3bf0a71d2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fortha" cloneof="forth">
+		<description>Forth (Single Tape)</description>
 		<year>1985</year>
 		<publisher>Loriciels</publisher>
 
@@ -730,8 +761,8 @@
 		</part>
 	</software>
 
-	<software name="forthmo5a" cloneof="forthmo5">
-		<description>Forth MO5 (Alt)</description>
+	<software name="forthb" cloneof="forth">
+		<description>Forth (Single Tape, Alt)</description>
 		<year>1985</year>
 		<publisher>Loriciels</publisher>
 
@@ -742,14 +773,26 @@
 		</part>
 	</software>
 
-	<software name="forthmo5b" cloneof="forthmo5">
-		<description>Forth MO5 (WAV Format)</description>
+	<software name="forthc" cloneof="forth">
+		<description>Forth (Single Tape, Alt 2)</description>
 		<year>1985</year>
 		<publisher>Loriciels</publisher>
 
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="12688478">
 				<rom name="forth mo5 (1985-04)(loriciels)(fr).wav" size="12688478" crc="a8cfbb98" sha1="ce713a7412e8d8fb4278e461236304ccdec6de4c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="forthd" cloneof="forth">
+		<description>Forth (Single Tape, Alt 3)</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="14228450">
+				<rom name="forth-mo5_mo5.wav" size="14228450" crc="4e4df37b" sha1="b543267b987c09382ff03be4191135bab6cbed1e" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1352,6 +1395,18 @@
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="13678">
 				<rom name="story-board_mo5.k7" size="13678" crc="6cd28e8f" sha1="91ca6384bfb1bc00fc9f9cd0c1047d2e30de8d8a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="supbas">
+		<description>SUPBAS</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="5575">
+				<rom name="supbas.k7" size="5575" crc="9c3b4895" sha1="404a5da42b310874e808b38dd2ef2fa36a89de89" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -3271,6 +3326,18 @@
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="144783">
 				<rom name="la cuisine francaise (free game blot) (alain guiri) (1985) (mo5).k7" size="144783" crc="bf0430a9" sha1="62e639b1b43bb0e44121c84a4f02862a047b85ca" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cuisinfrb" cloneof="cuisinfr">
+		<description>La Cuisine Francaise (Alt 2)</description>
+		<year>1985</year>
+		<publisher>Free Game Blot</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="64037042">
+				<rom name="la-cuisine-francaise_mo5.wav" size="64037042" crc="807b0793" sha1="db48e1bb97c55c0fc0da6090d2ec2656afdf49d0" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -6442,6 +6509,18 @@
 		</part>
 	</software>
 
+	<software name="mo5boot">
+		<description>MO5BOOT - MO5SD Bootstrap Loader</description>
+		<year>2012</year>
+		<publisher>Daniel Coulom</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="4587974">
+				<rom name="mo5boot.wav" size="4587974" crc="8c442ed2" sha1="b5d7a24d7c9e4f0dccfcd7220e970d9c01a1fd36" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="mongolfi">
 		<description>Mongolfiere</description>
 		<year>1985</year>
@@ -7329,6 +7408,25 @@
 
 		<part name="cass1" interface="mo_cass">
 		<feature name="part_id" value="Side A"/>
+			<dataarea name="cass" size="18417128">
+				<rom name="sujet-complement-1a_mo5.wav" size="18417128" crc="41103edc" sha1="314c846e02f08a6ee15529535a1f352adb619518" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+		<feature name="part_id" value="Side B"/>
+			<dataarea name="cass" size="19265104">
+				<rom name="sujet-complement-1b_mo5.wav" size="19265104" crc="6d2d9293" sha1="3792a986144aad25b634b7cc4687f45e06b8269e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sujetb" cloneof="sujet">
+		<description>Sujet/Complement (Alt 2)</description>
+		<year>1987</year>
+		<publisher>Carraz Editions</publisher>
+
+		<part name="cass1" interface="mo_cass">
+		<feature name="part_id" value="Side A"/>
 			<dataarea name="cass" size="48084">
 				<rom name="sujet complement (carraz) (francois borderie, emmanuel forsans) (1987) (mo5) (side 1a).k7" size="48084" crc="54bfed71" sha1="1242c69efcb98a4d3d45f1ade52a576e4dc0c129" offset="0" />
 			</dataarea>
@@ -7767,6 +7865,18 @@
 		</part>
 	</software>
 
+	<software name="3dsubc" cloneof="3dsub">
+		<description>3D Sub (Alt 3)</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="48209">
+				<rom name="3dsub_mo5.k7" size="48209" crc="5d9ecc70" sha1="a48f0cbb4e15755db0a8af988d2b5fca1d3eff52" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="5emeaxe">
 		<description>Le 5eme Axe</description>
 		<year>1985</year>
@@ -7779,15 +7889,14 @@
 		</part>
 	</software>
 
-	<!-- protection, works in dcmoto -->
-	<software name="5emeaxea" cloneof="5emeaxe" supported="no">
+	<software name="5emeaxea" cloneof="5emeaxe">
 		<description>Le 5eme Axe (Alt)</description>
 		<year>1985</year>
 		<publisher>Loriciels</publisher>
 
 		<part name="cass1" interface="mo_cass">
-			<dataarea name="cass" size="52998">
-				<rom name="5eme axe, le (1985)(loriciels)(fr)[b].k7" size="52998" crc="c33e0138" sha1="f9dfd3b737a010cc1d4ee5cb61ee035e7312fc37" offset="0" />
+			<dataarea name="cass" size="18873460">
+				<rom name="le-5eme-axe_mo5.wav" size="18873460" crc="d2eaa0e0" sha1="3e2defbe430895598d8140ccae4beb5c1b682a44" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -7800,7 +7909,7 @@
 
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="52998">
-				<rom name="5eme axe, le (1985)(loriciels)(fr)[b2].k7" size="52998" crc="7de608b7" sha1="ca43ab608a18e88463925ddb8005543149381e76" offset="0" />
+				<rom name="5eme axe, le (1985)(loriciels)(fr)[b].k7" size="52998" crc="c33e0138" sha1="f9dfd3b737a010cc1d4ee5cb61ee035e7312fc37" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -7813,7 +7922,7 @@
 
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="52998">
-				<rom name="5eme axe (1985)(loriciels)[b].k7" size="52998" crc="844284dc" sha1="608fd89dc7609a212a3694467dff92deee90f1b4" offset="0" />
+				<rom name="5eme axe, le (1985)(loriciels)(fr)[b2].k7" size="52998" crc="7de608b7" sha1="ca43ab608a18e88463925ddb8005543149381e76" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -7821,6 +7930,19 @@
 	<!-- protection, works in dcmoto -->
 	<software name="5emeaxed" cloneof="5emeaxe" supported="no">
 		<description>Le 5eme Axe (Alt 4)</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="52998">
+				<rom name="5eme axe (1985)(loriciels)[b].k7" size="52998" crc="844284dc" sha1="608fd89dc7609a212a3694467dff92deee90f1b4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- protection, works in dcmoto -->
+	<software name="5emeaxee" cloneof="5emeaxe" supported="no">
+		<description>Le 5eme Axe (Alt 5)</description>
 		<year>1985</year>
 		<publisher>Loriciels</publisher>
 
@@ -8922,6 +9044,18 @@
 		</part>
 	</software>
 
+	<software name="billard">
+		<description>Billard Americain (Hebdogiciel no. 84)</description>
+		<year>1985</year>
+		<publisher>Jean-Pierre Quelo - Hebdogiciel</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="7562">
+				<rom name="billardamericain.k7" size="7562" crc="fa85bb96" sha1="5b53f1fedc7fe0fc6b6447968ac7ddd0b33bc83f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="blitzkrg">
 		<description>Blitz Krieg</description>
 		<year>198?</year>
@@ -9691,6 +9825,18 @@
 		</part>
 	</software>
 
+	<software name="spounz">
+		<description>La Clinique du Docteur Spounz (Hebdogiciel no. 77-78)</description>
+		<year>1985</year>
+		<publisher>Jean-Yves Le Friec - Hebdogiciel</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="28417">
+				<rom name="spounz1_mo5.k7" size="28417" crc="8e24d10a" sha1="c8933480e885e9f344e0c99dc5e0ffa406e78890" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="cocotte">
 		<description>Cocotte</description>
 		<year>1985</year>
@@ -9795,6 +9941,18 @@
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="48697">
 				<rom name="les-contes-de-monte-crypto_mo5.k7" size="48697" crc="2745fdc3" sha1="f546f545b69154d56e5b3c1bcf3330fc8202c0ac" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="montecrya" cloneof="montecry">
+		<description>Les Contes de Monte-Crypto (WAV Format)</description>
+		<year>1988</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="26906246">
+				<rom name="les-contes-de-monte-crypto_mo5.wav" size="26906246" crc="00b2162b" sha1="0369c7662e116ba89aa3970291e9b62720ccc757" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -9967,6 +10125,18 @@
 		</part>
 	</software>
 
+	<software name="crystanne" cloneof="crystann">
+		<description>Crystann (WAV Format, Alt)</description>
+		<year>1985</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="11812490">
+				<rom name="crystann_mo5.wav" size="11812490" crc="aa4a6579" sha1="c30252d9badf126b9a2fbcf5c856f1a5ec41b7bb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="cyberlab">
 		<description>Cyberlab</description>
 		<year>1984</year>
@@ -10011,6 +10181,18 @@
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="6199752">
 				<rom name="cyberlab (1984)(to tek)(fr).wav" size="6199752" crc="06f90469" sha1="77522e995394097ffe6547890ab8229d358cce0e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cyberlabd" cloneof="cyberlab">
+		<description>Cyberlab (WAV Format, Alt)</description>
+		<year>1984</year>
+		<publisher>TO TEK International</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="7113392">
+				<rom name="cyberlab_mo5.wav" size="7113392" crc="59da3141" sha1="6680b31c83f6fd7dd494108dfbb8786df1ae1153" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -11275,6 +11457,18 @@
 		</part>
 	</software>
 
+	<software name="foxhebdo">
+		<description>Fox (Hebdogiciel no. 146)</description>
+		<year>1986</year>
+		<publisher>Pascal Gabriel - Hebdogiciel</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="14946">
+				<rom name="fox[mo5].k7" size="14946" crc="8c198443" sha1="26918a0723225e68a6a328ff0eb001c2146924ed" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="galaxper">
 		<description>Galaxie Perdue</description>
 		<year>1985</year>
@@ -11596,6 +11790,18 @@
 		</part>
 	</software>
 
+	<software name="granulus">
+		<description>Granulus (Hebdogiciel no. 152)</description>
+		<year>1986</year>
+		<publisher>Emerich Fernandes - Hebdogiciel</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="12667">
+				<rom name="granulus[mo5].k7" size="12667" crc="2d036233" sha1="52adad91e120339be7f4e91e8a500780b7e18b95" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="gravitro">
 		<description>Gravitron</description>
 		<year>1985</year>
@@ -11748,6 +11954,23 @@
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="3030">
 				<rom name="la-grignote-2_mo5.k7" size="3030" crc="f8523444" sha1="2ef2523d7c3407ec4fc03a5b4a3a726918e4a78c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="guerspac">
+		<description>Guerres Spaciales (Hebdogiciel no. 132/134)</description>
+		<year>1986</year>
+		<publisher>Michael Escoffier - Hebdogiciel</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="52932">
+				<rom name="guerresspatiales_jeu_[mo5].k7" size="52932" crc="0482b67b" sha1="be18a883a341e3c84d8c3e23c241e1b98d6b3b18" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+			<dataarea name="cass" size="19460">
+				<rom name="guerresspatiales_qcm_[mo5].k7" size="19460" crc="a3aef719" sha1="15a85e8da5f765e19b1dc82d570189eda4b9e873" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -13093,6 +13316,23 @@
 		</part>
 	</software>
 
+	<software name="lasvegasg" cloneof="lasvegas" supported="no">
+		<description>Las Vegas (WAV Format)</description>
+		<year>1985</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="21625964">
+				<rom name="las-vegas-a_mo5.wav" size="21625964" crc="f3756a41" sha1="3d2c1152b75d493d8b364198383db776ab2ebbaf" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+			<dataarea name="cass" size="11382254">
+				<rom name="las-vegas-b_mo5.wav" size="11382254" crc="39b88599" sha1="18715760e5104ea889713be8ec785fa65f73420a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="lorann">
 		<description>Lorann</description>
 		<year>1985</year>
@@ -13971,6 +14211,18 @@
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="39540">
 				<rom name="mission delta (1984)(ere informatique)(fr).k7" size="39540" crc="33b19f83" sha1="af35538639ecc8f1c9715da41de8e626555fde83" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="misninja">
+		<description>Mission Ninja (Hebdogiciel no. 150-151)</description>
+		<year>1986</year>
+		<publisher>Frederic Nguyen - Hebdogiciel</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="21909">
+				<rom name="missionninja[mo5].k7" size="21909" crc="48564151" sha1="8ed3d2d1a04926aba22f88ecf56dce6d528fdc51" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -14997,6 +15249,18 @@
 		</part>
 	</software>
 
+	<software name="polepos">
+		<description>Pole Position (Hebdogiciel no. 119-120)</description>
+		<year>1986</year>
+		<publisher>Thierry Dugnolle - Hebdogiciel</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="22508">
+				<rom name="pole_position[mo5].k7" size="22508" crc="9db7e095" sha1="3fa87f3703691b2e473afa92d6d954de0175be92" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="politik">
 		<description>Politik Poker</description>
 		<year>1986</year>
@@ -15077,6 +15341,18 @@
 		<part name="cass1" interface="mo_cass">
 			<dataarea name="cass" size="4219">
 				<rom name="popeye (1986-09)(lesur, christophe)(fr)(pd).k7" size="4219" crc="08032eff" sha1="67e184db55a55108cbd1e93d4a1733ac71ec21ad" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="portrait">
+		<description>Portrait (Hebdogiciel no. 53)</description>
+		<year>1984</year>
+		<publisher>Alain van Puymbroeck - Hebdogiciel</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="10813">
+				<rom name="portrait[mo5].k7" size="10813" crc="d21907d1" sha1="314c5bc4909f522cc0a6078189f603e3e8446e19" offset="0" />
 			</dataarea>
 		</part>
 	</software>

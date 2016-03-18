@@ -1638,13 +1638,25 @@
 	</software>
 
 	<software name="sdplay44_to7" cloneof="sdplay44">
+		<description>SDPLAY44 (TO7, 2015.09.24)</description>
+		<year>2015</year>
+		<publisher>DCsoft</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="327680">
+				<rom name="sdplay44_to7.fd" size="327680" crc="5ad073d7" sha1="00a733984360426243cabd199907c1edb0bf51c6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sdplay44_to7a" cloneof="sdplay44">
 		<description>SDPLAY44 (TO7, 2015.09.07)</description>
 		<year>2015</year>
 		<publisher>DCsoft</publisher>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
-				<rom name="sdplay44_to7.fd" size="327680" crc="81c05ca2" sha1="186c0a1196eb944369de7e26085b827a71875ad7" offset="0" />
+				<rom name="sdplay44_to7 [a].fd" size="327680" crc="81c05ca2" sha1="186c0a1196eb944369de7e26085b827a71875ad7" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2720,7 +2732,19 @@
 	</software>
 
 	<software name="ludoedu">
-		<description>Programmes ludo-educatifs pour MO5 (29-10-2015)</description>
+		<description>Programmes ludo-educatifs pour TO7 (16-11-2015)</description>
+		<year>2015</year>
+		<publisher>dcmoto.free.fr</publisher>
+
+		<part name="cass1" interface="to_cass">
+			<dataarea name="cass" size="327680">
+				<rom name="programmes-ludo-educatifs_to7.fd" size="327680" crc="4bc03968" sha1="ad041af0a57663a742b196e765674879f7d405ec" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ludoedua" cloneof="ludoedu">
+		<description>Programmes ludo-educatifs pour TO7 (29-10-2015)</description>
 		<year>2015</year>
 		<publisher>dcmoto.free.fr</publisher>
 
@@ -4691,6 +4715,18 @@
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="655360">
 				<rom name="simulation pack (microids) (c. bertrand, elliot grassiano, b. masson, a. bonsignore) (1988) (moto).fd" size="655360" crc="1384e4f9" sha1="928ef175b3ea88282f62b87310321543914b9dcc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stars1">
+		<description>Stars Volume 1</description>
+		<year>1989</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="stars-v1_to8.fd" size="655360" crc="d87b1d2d" sha1="d234978528dcaa60f86b00aa594ec852996a3235" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -9406,6 +9442,18 @@
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
 				<rom name="atomik (1988)(fil)(fr).sap" size="335426" crc="0d7de938" sha1="c911f34c865036f80de60be2e15533b8403216d5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hermine">
+		<description>Au Nom de l'Hermine</description>
+		<year>1987</year>
+		<publisher>Coktel Vision</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="au-nom-de-l-hermine_to8.fd" size="327680" crc="6e12ac9a" sha1="dba0af23d9b5affe95fad18046be816aeaaaf665" offset="0" />
 			</dataarea>
 		</part>
 	</software>
