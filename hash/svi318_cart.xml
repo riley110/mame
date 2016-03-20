@@ -73,5 +73,17 @@ Amoured Assault SD233C // Was availible on Cartridge and/or Tape
 			</dataarea>
 		</part>
 	</software>
+	
+	<!-- http://www.pouet.net/prod.php?which=65911 -->
+	<software name="prerelea">
+		<description>Pre-Release</description>
+		<year>2015</year>
+		<publisher>Five Finger Punch</publisher>
+		<part name="cart" interface="svi318_cart">
+			<dataarea name="rom" size="65536">
+				<rom name="pre-release.rom" size="65536" crc="fa90692e" sha1="5b5fbc309ffe2608b2fed2a4fba8ef73ad68733d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
 
 </softwarelist>

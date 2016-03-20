@@ -56,6 +56,7 @@ function osdmodulesbuild()
 		MAME_DIR .. "src/osd/modules/debugger/debugwin.cpp",
 		MAME_DIR .. "src/osd/modules/font/font_sdl.cpp",
 		MAME_DIR .. "src/osd/modules/font/font_windows.cpp",
+		MAME_DIR .. "src/osd/modules/font/font_dwrite.cpp",
 		MAME_DIR .. "src/osd/modules/font/font_osx.cpp",
 		MAME_DIR .. "src/osd/modules/font/font_none.cpp",
 		MAME_DIR .. "src/osd/modules/netdev/taptun.cpp",
@@ -69,12 +70,33 @@ function osdmodulesbuild()
 		MAME_DIR .. "src/osd/modules/sound/sdl_sound.cpp",
 		MAME_DIR .. "src/osd/modules/sound/xaudio2_sound.cpp",
 		MAME_DIR .. "src/osd/modules/sound/none.cpp",
+		MAME_DIR .. "src/osd/modules/input/input_module.h",
+		MAME_DIR .. "src/osd/modules/input/input_common.cpp",
+		MAME_DIR .. "src/osd/modules/input/input_common.h",
+		MAME_DIR .. "src/osd/modules/input/input_dinput.cpp",
+		MAME_DIR .. "src/osd/modules/input/input_none.cpp",
+		MAME_DIR .. "src/osd/modules/input/input_rawinput.cpp",
+		MAME_DIR .. "src/osd/modules/input/input_win32.cpp",
+		MAME_DIR .. "src/osd/modules/input/input_sdl.cpp",
+		MAME_DIR .. "src/osd/modules/input/input_sdlcommon.cpp",
+		MAME_DIR .. "src/osd/modules/input/input_sdlcommon.h",
+		MAME_DIR .. "src/osd/modules/input/input_x11.cpp",
+		MAME_DIR .. "src/osd/modules/input/input_windows.cpp",
+		MAME_DIR .. "src/osd/modules/input/input_windows.h",
+		MAME_DIR .. "src/osd/modules/input/input_xinput.cpp",
 	}
 
 	if _OPTIONS["targetos"]=="windows" then
 		includedirs {
 			MAME_DIR .. "3rdparty/winpcap/Include",
+			MAME_DIR .. "3rdparty/compat/mingw",
 		}
+
+		if _OPTIONS["MODERN_WIN_API"]~="1" then
+			includedirs {
+				MAME_DIR .. "3rdparty/compat/winsdk-override",
+			}
+		end
 	end
 
 	if _OPTIONS["NO_OPENGL"]=="1" then
@@ -110,6 +132,7 @@ function osdmodulesbuild()
 		MAME_DIR .. "src/osd/modules/render/bgfx/effectmanager.cpp",
 		MAME_DIR .. "src/osd/modules/render/bgfx/effectreader.cpp",
 		MAME_DIR .. "src/osd/modules/render/bgfx/chain.cpp",
+		MAME_DIR .. "src/osd/modules/render/bgfx/chainmanager.cpp",
 		MAME_DIR .. "src/osd/modules/render/bgfx/chainreader.cpp",
 		MAME_DIR .. "src/osd/modules/render/bgfx/chainentry.cpp",
 		MAME_DIR .. "src/osd/modules/render/bgfx/chainentryreader.cpp",
@@ -399,7 +422,7 @@ newoption {
 }
 
 if not _OPTIONS["NO_USE_MIDI"] then
-	if _OPTIONS["targetos"]=="freebsd" or _OPTIONS["targetos"]=="openbsd" or _OPTIONS["targetos"]=="netbsd" or _OPTIONS["targetos"]=="solaris" or _OPTIONS["targetos"]=="haiku" or _OPTIONS["targetos"] == "asmjs" or _OPTIONS["targetos"] == "os2" then
+	if _OPTIONS["targetos"]=="freebsd" or _OPTIONS["targetos"]=="openbsd" or _OPTIONS["targetos"]=="netbsd" or _OPTIONS["targetos"]=="solaris" or _OPTIONS["targetos"]=="haiku" or _OPTIONS["targetos"] == "asmjs" then
 		_OPTIONS["NO_USE_MIDI"] = "1"
 	else
 		_OPTIONS["NO_USE_MIDI"] = "0"
@@ -414,29 +437,6 @@ newoption {
 		{ "1",  "Use Modern Windows APIs - support for Windows 8.1 and later"  },
 	},
 }
-
-newoption {
-	trigger = "USE_XAUDIO2",
-	description = "Use XAudio2 API for audio",
-	allowed = {
-		{ "0",  "Disable XAudio2"  },
-		{ "1",  "Enable XAudio2" },
-	},
-}
-
-if _OPTIONS["USE_XAUDIO2"]=="1" then
-	_OPTIONS["MODERN_WIN_API"] = "1",
-	defines {
-		"USE_XAUDIO2=1",
-	},
-	includedirs {
-		MAME_DIR .. "3rdparty/win81sdk/Include/um",
-	}
-else
-	defines {
-		"USE_XAUDIO2=0",
-	}
-end
 
 newoption {
 	trigger = "USE_QTDEBUG",
@@ -454,7 +454,7 @@ newoption {
 
 
 if not _OPTIONS["USE_QTDEBUG"] then
-	if _OPTIONS["targetos"]=="windows" or _OPTIONS["targetos"]=="macosx" or _OPTIONS["targetos"]=="solaris" or _OPTIONS["targetos"]=="haiku" or _OPTIONS["targetos"] == "asmjs" or _OPTIONS["targetos"] == "os2" then
+	if _OPTIONS["targetos"]=="windows" or _OPTIONS["targetos"]=="macosx" or _OPTIONS["targetos"]=="solaris" or _OPTIONS["targetos"]=="haiku" or _OPTIONS["targetos"] == "asmjs" then
 		_OPTIONS["USE_QTDEBUG"] = "0"
 	else
 		_OPTIONS["USE_QTDEBUG"] = "1"

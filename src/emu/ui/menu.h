@@ -192,6 +192,18 @@ private:
 	static void render_triangle(bitmap_argb32 &dest, bitmap_argb32 &source, const rectangle &sbounds, void *param);
 
 public:
+	// tab navigation
+	enum class focused_menu
+	{
+		main,
+		left,
+		righttop,
+		rightbottom
+	};
+
+	focused_menu m_focus;
+	void *m_prev_selected;
+
 	int  visible_items;
 	bool ui_error;
 
@@ -254,8 +266,15 @@ protected:
 	static std::unique_ptr<bitmap_rgb32> hilight_main_bitmap;
 	static render_texture *hilight_main_texture;
 private:
+
+	// mouse button held down
+	bool m_pressed = false;
+	osd_ticks_t m_repeat = 0;
+	void reset_pressed() { m_pressed = false; m_repeat = 0; }
+	bool mouse_pressed() { return (osd_ticks() >= m_repeat); }
+	void set_pressed();
+
 	static std::unique_ptr<bitmap_argb32> no_avail_bitmap, bgrnd_bitmap, star_bitmap;
-//  static std::unique_ptr<bitmap_rgb32> hilight_main_bitmap;
 	static render_texture *bgrnd_texture, *star_texture;
 	static bitmap_argb32 *icons_bitmap[];
 	static render_texture *icons_texture[];

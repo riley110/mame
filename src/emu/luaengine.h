@@ -51,6 +51,7 @@ public:
 
 	void resume(lua_State *L, int nparam = 0, lua_State *root = nullptr);
 	void set_machine(running_machine *machine) { m_machine = machine; update_machine(); }
+	void attach_notifiers();
 private:
 	struct hook {
 		lua_State *L;
@@ -137,6 +138,7 @@ private:
 	struct lua_screen {
 		int l_height(lua_State *L);
 		int l_width(lua_State *L);
+		int l_orientation(lua_State *L);
 		int l_refresh(lua_State *L);
 		int l_type(lua_State *L);
 		int l_snapshot(lua_State *L);

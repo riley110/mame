@@ -19,7 +19,6 @@
 #include "ui/ui.h"
 #include "luaengine.h"
 #include <mutex>
-#include "libuv/include/uv.h"
 
 //**************************************************************************
 //  LUA ENGINE
@@ -49,9 +48,7 @@ lua_engine* lua_engine::luaThis = nullptr;
 extern "C" {
 	int luaopen_lsqlite3(lua_State *L);
 	int luaopen_zlib(lua_State *L);
-	int luaopen_luv(lua_State *L);
 	int luaopen_lfs(lua_State *L);
-	uv_loop_t* luv_loop(lua_State* L);
 }
 
 static void lstop(lua_State *L, lua_Debug *ar)
@@ -136,23 +133,19 @@ lua_engine::hook::hook()
 	cb = -1;
 }
 
-#if (defined(__sun__) && defined(__svr4__)) || defined(__ANDROID__) || defined(__OpenBSD__)
-#undef _L
-#endif
-
-void lua_engine::hook::set(lua_State *_L, int idx)
+void lua_engine::hook::set(lua_State *lua, int idx)
 {
 	if (L)
 		luaL_unref(L, LUA_REGISTRYINDEX, cb);
 
-	if (lua_isnil(_L, idx)) {
+	if (lua_isnil(lua, idx)) {
 		L = nullptr;
 		cb = -1;
 
 	} else {
-		L = _L;
-		lua_pushvalue(_L, idx);
-		cb = luaL_ref(_L, LUA_REGISTRYINDEX);
+		L = lua;
+		lua_pushvalue(lua, idx);
+		cb = luaL_ref(lua, LUA_REGISTRYINDEX);
 	}
 }
 
@@ -197,9 +190,9 @@ void lua_engine::resume(lua_State *L, int nparam, lua_State *root)
 	}
 }
 
-void lua_engine::resume(void *_L, INT32 param)
+void lua_engine::resume(void *lua, INT32 param)
 {
-	resume(static_cast<lua_State *>(_L));
+	resume(static_cast<lua_State *>(lua));
 }
 
 int lua_engine::l_ioport_write(lua_State *L)
@@ -845,6 +838,54 @@ int lua_engine::lua_screen::l_width(lua_State *L)
 	return 1;
 }
 
+
+//-------------------------------------------------
+//  screen_orientation - return screen orientation
+//  -> manager:machine().screens[":screen"]:orientation()
+//     -> rotation_angle (0, 90, 180, 270)
+//     -> flipx (true, false)
+//     -> flipy (true, false)
+//-------------------------------------------------
+
+int lua_engine::lua_screen::l_orientation(lua_State *L)
+{
+	UINT32 flags = (luaThis->machine().system().flags & ORIENTATION_MASK);
+
+	int rotation_angle = 0;
+	switch (flags)
+	{
+		case ORIENTATION_FLIP_X:
+			rotation_angle = 0;
+			break;
+		case ORIENTATION_SWAP_XY:
+		case ORIENTATION_SWAP_XY|ORIENTATION_FLIP_X:
+			rotation_angle = 90;
+			break;
+		case ORIENTATION_FLIP_Y:
+		case ORIENTATION_FLIP_X|ORIENTATION_FLIP_Y:
+			rotation_angle = 180;
+			break;
+		case ORIENTATION_SWAP_XY|ORIENTATION_FLIP_Y:
+		case ORIENTATION_SWAP_XY|ORIENTATION_FLIP_X|ORIENTATION_FLIP_Y:
+			rotation_angle = 270;
+			break;
+	}
+
+	lua_createtable(L, 2, 2);
+	lua_pushliteral(L, "rotation_angle");
+	lua_pushinteger(L, rotation_angle);
+
+	lua_settable(L, -3);
+	lua_pushliteral(L, "flipx");
+	lua_pushboolean(L, (flags & ORIENTATION_FLIP_X));
+
+	lua_settable(L, -3);
+	lua_pushliteral(L, "flipy");
+	lua_pushboolean(L, (flags & ORIENTATION_FLIP_Y));
+	lua_settable(L, -3);
+	return 1;
+}
+
 //-------------------------------------------------
 //  screen_refresh - return screen refresh rate
 //  -> manager:machine().screens[":screen"]:refresh()
@@ -877,7 +918,7 @@ int lua_engine::lua_screen::l_snapshot(lua_State *L)
 	luaL_argcheck(L, lua_isstring(L, 2) || lua_isnone(L, 2), 2, "optional argument: filename, string expected");
 
 	emu_file file(sc->machine().options().snapshot_directory(), OPEN_FLAG_WRITE | OPEN_FLAG_CREATE | OPEN_FLAG_CREATE_PATHS);
-	file_error filerr;
+	osd_file::error filerr;
 
 	if (!lua_isnone(L, 2)) {
 		const char *filename = lua_tostring(L, 2);
@@ -891,9 +932,9 @@ int lua_engine::lua_screen::l_snapshot(lua_State *L)
 		filerr = sc->machine().video().open_next(file, "png");
 	}
 
-	if (filerr != FILERR_NONE)
+	if (filerr != osd_file::error::NONE)
 	{
-		luaL_error(L, "file_error=%d", filerr);
+		luaL_error(L, "osd_file::error=%d", filerr);
 		return 0;
 	}
 
@@ -1199,10 +1240,6 @@ lua_engine::lua_engine()
 	lua_getfield(m_lua_state, -1, "preload");
 	lua_remove(m_lua_state, -2); // Remove package
 
-	// Store uv module definition at preload.uv
-	lua_pushcfunction(m_lua_state, luaopen_luv);
-	lua_setfield(m_lua_state, -2, "luv");
-
 	lua_pushcfunction(m_lua_state, luaopen_zlib);
 	lua_setfield(m_lua_state, -2, "zlib");
 
@@ -1340,15 +1377,18 @@ void lua_engine::update_machine()
 			}
 			port = port->next();
 		}
-		machine().add_notifier(MACHINE_NOTIFY_RESET, machine_notify_delegate(FUNC(lua_engine::on_machine_start), this));
-		machine().add_notifier(MACHINE_NOTIFY_EXIT, machine_notify_delegate(FUNC(lua_engine::on_machine_stop), this));
-		machine().add_notifier(MACHINE_NOTIFY_PAUSE, machine_notify_delegate(FUNC(lua_engine::on_machine_pause), this));
-		machine().add_notifier(MACHINE_NOTIFY_RESUME, machine_notify_delegate(FUNC(lua_engine::on_machine_resume), this));
-		machine().add_notifier(MACHINE_NOTIFY_FRAME, machine_notify_delegate(FUNC(lua_engine::on_machine_frame), this));
 	}
 	lua_setglobal(m_lua_state, "ioport");
 }
 
+void lua_engine::attach_notifiers()
+{
+	machine().add_notifier(MACHINE_NOTIFY_RESET, machine_notify_delegate(FUNC(lua_engine::on_machine_start), this));
+	machine().add_notifier(MACHINE_NOTIFY_EXIT, machine_notify_delegate(FUNC(lua_engine::on_machine_stop), this));
+	machine().add_notifier(MACHINE_NOTIFY_PAUSE, machine_notify_delegate(FUNC(lua_engine::on_machine_pause), this));
+	machine().add_notifier(MACHINE_NOTIFY_RESUME, machine_notify_delegate(FUNC(lua_engine::on_machine_resume), this));
+	machine().add_notifier(MACHINE_NOTIFY_FRAME, machine_notify_delegate(FUNC(lua_engine::on_machine_frame), this));
+}
 
 //-------------------------------------------------
 //  initialize - initialize lua hookup to emu engine
@@ -1587,6 +1627,7 @@ void lua_engine::initialize()
 				.addCFunction ("draw_text", &lua_screen::l_draw_text)
 				.addCFunction ("height", &lua_screen::l_height)
 				.addCFunction ("width", &lua_screen::l_width)
+				.addCFunction ("orientation", &lua_screen::l_orientation)
 				.addCFunction ("refresh", &lua_screen::l_refresh)
 				.addCFunction ("snapshot", &lua_screen::l_snapshot)
 				.addCFunction ("type", &lua_screen::l_type)
@@ -1665,10 +1706,6 @@ void lua_engine::periodic_check()
 		msg.ready = 0;
 		msg.done = 1;
 	}
-	auto loop = luv_loop(m_lua_state);
-	if (loop!=nullptr)
-		uv_run(loop, UV_RUN_NOWAIT);
-
 }
 
 //-------------------------------------------------
@@ -1721,13 +1758,13 @@ void lua_engine::start()
 
 namespace luabridge {
 	template <>
-	struct Stack <UINT64> {
-		static inline void push (lua_State* L, UINT64 value) {
+	struct Stack <unsigned long long> {
+		static inline void push (lua_State* L, unsigned long long value) {
 			lua_pushunsigned(L, static_cast <lua_Unsigned> (value));
 		}
 
-		static inline UINT64 get (lua_State* L, int index) {
-			return static_cast <UINT64> (luaL_checkunsigned (L, index));
+		static inline unsigned long long get (lua_State* L, int index) {
+			return static_cast <unsigned long long> (luaL_checkunsigned (L, index));
 		}
 	};
 }

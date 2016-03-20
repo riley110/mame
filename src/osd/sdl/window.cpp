@@ -34,7 +34,6 @@
 // OSD headers
 
 #include "window.h"
-#include "input.h"
 #include "osdsdl.h"
 #include "modules/render/drawbgfx.h"
 #include "modules/render/drawsdl.h"
@@ -185,7 +184,7 @@ static OSDWORK_CALLBACK(sdlwindow_thread_id)
 
 	if (SDLMAME_INIT_IN_WORKER_THREAD)
 	{
-		if (SDL_InitSubSystem(SDL_INIT_TIMER|SDL_INIT_AUDIO| SDL_INIT_VIDEO| SDL_INIT_JOYSTICK|SDL_INIT_NOPARACHUTE))
+		if (SDL_InitSubSystem(SDL_INIT_TIMER|SDL_INIT_AUDIO| SDL_INIT_VIDEO| SDL_INIT_GAMECONTROLLER|SDL_INIT_NOPARACHUTE))
 		{
 			osd_printf_error("Could not initialize SDL: %s.\n", SDL_GetError());
 			exit(-1);
@@ -204,7 +203,7 @@ bool sdl_osd_interface::window_init()
 {
 	osd_printf_verbose("Enter sdlwindow_init\n");
 	// determine if we are using multithreading or not
-	multithreading_enabled = options().multithreading();
+	multithreading_enabled = false;//options().multithreading();
 
 	// get the main thread ID before anything else
 	main_threadid = SDL_ThreadID();
@@ -250,14 +249,14 @@ bool sdl_osd_interface::window_init()
 		if (renderer_sdl2::init(machine()))
 		{
 			video_config.mode = VIDEO_MODE_SOFT;
-		}
+	}
 	}
 	if (video_config.mode == VIDEO_MODE_SOFT)
 	{
 		if (renderer_sdl1::init(machine()))
 		{
 			return false;
-		}
+	}
 	}
 
 	/* We may want to set a number of the hints SDL2 provides.
@@ -311,7 +310,7 @@ static void sdlwindow_sync(void)
 		while (!osd_work_queue_wait(work_queue, osd_ticks_per_second()*10))
 		{
 			osd_printf_warning("sdlwindow_sync: Sleeping...\n");
-			osd_sleep(100000);
+			osd_sleep(osd_ticks_per_second() / 1000 * 100);
 		}
 	}
 }
@@ -579,7 +578,8 @@ OSDWORK_CALLBACK( sdl_window_info::sdlwindow_toggle_full_screen_wt )
 		SDL_SetWindowFullscreen(window->sdl_window(), SDL_WINDOW_FULLSCREEN);    // Try to set mode
 	}
 	SDL_DestroyWindow(window->sdl_window());
-	sdlinput_release_keys();
+
+	downcast<sdl_osd_interface &>(window->machine().osd()).release_keys();
 
 	window->set_renderer(osd_renderer::make_for_type(video_config.mode, reinterpret_cast<osd_window *>(window)));
 
@@ -649,9 +649,9 @@ void sdl_window_info::update_cursor_state()
 	// the possibility of losing control
 	if (!(machine().debug_flags & DEBUG_FLAG_OSD_ENABLED))
 	{
-		//FIXME: SDL1.3: really broken: the whole SDL code
-		//       will only work correct with relative mouse movements ...
-		if (!fullscreen() && !sdlinput_should_hide_mouse())
+		bool should_hide_mouse = downcast<sdl_osd_interface&>(machine().osd()).should_hide_mouse();
+
+		if (!fullscreen() && !should_hide_mouse)
 		{
 			SDL_ShowCursor(SDL_ENABLE);
 			if (SDL_GetWindowGrab(sdl_window() ))
@@ -666,7 +666,7 @@ void sdl_window_info::update_cursor_state()
 			SDL_SetRelativeMouseMode(SDL_TRUE);
 		}
 		SDL_SetCursor(nullptr); // Force an update in case the underlying driver has changed visibility
-	}
+			}
 #endif
 }
 
@@ -775,8 +775,7 @@ OSDWORK_CALLBACK( sdl_window_info::sdlwindow_video_window_destroy_wt )
 	}
 	SDL_DestroyWindow(window->sdl_window());
 	// release all keys ...
-	sdlinput_release_keys();
-
+	downcast<sdl_osd_interface &>(window->machine().osd()).release_keys();
 
 	osd_free(wp);
 	return nullptr;
@@ -1119,11 +1118,11 @@ OSDWORK_CALLBACK( sdl_window_info::complete_create_wt )
 		for (auto w = sdl_window_list; w != nullptr; w = w->m_next)
 		{
 			if (w->m_index == 0)
-			{
+	{
 				window->m_main = w;
 				break;
-			}
-		}
+	}
+	}
 	}
 	window->monitor()->refresh();
 	// initialize the drawing backend
@@ -1194,7 +1193,7 @@ OSDWORK_CALLBACK( sdl_window_info::draw_video_contents_wt )
 	ASSERT_REDRAW_THREAD();
 
 	// Some configurations require events to be polled in the worker thread
-	sdlinput_process_events_buf();
+	downcast< sdl_osd_interface& >(window->machine().osd()).process_events_buf();
 
 	// Check whether window has vector screens
 

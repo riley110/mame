@@ -1,4 +1,9 @@
 *~
+.*.sw?
+*.pyc
+*.pyo
+.DS_Store
+
 /*
 /*/
 !/3rdparty/
@@ -26,10 +31,11 @@
 !/makefile
 !/mame.doxygen
 !/*.md
+!/*.bdc
+!/LICENSE
 /.idea
 regtests/chdman/temp
 regtests/jedutil/output
-*.pyc
 *.mo
 /CMakeLists.txt
 /src/devices/cpu/m68000/m68kops.cpp
@@ -37,9 +43,3 @@ regtests/jedutil/output
 /src/devices/cpu/m68000/m68kmake.*
 /src/devices/cpu/m68000/m68kmake
 !/src/devices/cpu/m68000/m68kmake.cpp
-mame-dev.xcodeproj/project.pbxproj
-mame-dev.xcodeproj/project.xcworkspace/contents.xcworkspacedata
-mame-dev.xcodeproj/project.xcworkspace/xcshareddata/mame-dev.xccheckout
-mame-dev.xcodeproj/project.xcworkspace/xcuserdata/reaganroush.xcuserdatad/UserInterfaceState.xcuserstate
-mame-dev.xcodeproj/xcuserdata/reaganroush.xcuserdatad/xcschemes/mame-dev.xcscheme
-mame-dev.xcodeproj/xcuserdata/reaganroush.xcuserdatad/xcschemes/xcschememanagement.plist
