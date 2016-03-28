@@ -27,13 +27,18 @@ end
 	kind "ConsoleApp"
 	
 	configuration { "android*" }
+		targetprefix "lib"
+		targetname "main"
 		targetextension ".so"
 		linkoptions {
 			"-shared",
+			"-Wl,-soname,libmain.so"
 		}
 		links {
 			"EGL",
+			"GLESv1_CM",
 			"GLESv2",
+			"SDL2",
 		} 	
 	configuration { "pnacl" }
 		kind "ConsoleApp"
@@ -117,12 +122,14 @@ end
 			emccopts = emccopts .. " -s ALLOW_MEMORY_GROWTH=0"
 			emccopts = emccopts .. " -s TOTAL_MEMORY=268435456"
 			emccopts = emccopts .. " -s DISABLE_EXCEPTION_CATCHING=2"
-			emccopts = emccopts .. " -s EXCEPTION_CATCHING_WHITELIST='[\"__ZN15running_machine17start_all_devicesEv\"]'"
+			emccopts = emccopts .. " -s EXCEPTION_CATCHING_WHITELIST='[\"__ZN15running_machine17start_all_devicesEv\",\"__ZN12cli_frontend7executeEiPPc\"]'"
 			emccopts = emccopts .. " -s EXPORTED_FUNCTIONS=\"['_main', '_malloc', '__Z14js_get_machinev', '__Z9js_get_uiv', '__Z12js_get_soundv', '__ZN10ui_manager12set_show_fpsEb', '__ZNK10ui_manager8show_fpsEv', '__ZN13sound_manager4muteEbh', '_SDL_PauseAudio']\""
 			emccopts = emccopts .. " --pre-js " .. _MAKE.esc(MAME_DIR) .. "src/osd/modules/sound/js_sound.js"
 			emccopts = emccopts .. " --post-js " .. _MAKE.esc(MAME_DIR) .. "src/osd/sdl/emscripten_post.js"
-			emccopts = emccopts .. " --embed-file " .. _MAKE.esc(MAME_DIR) .. "bgfx@bgfx"
-			emccopts = emccopts .. " --embed-file " .. _MAKE.esc(MAME_DIR) .. "shaders/gles@shaders/gles"
+			emccopts = emccopts .. " --embed-file " .. _MAKE.esc(MAME_DIR) .. "bgfx/chains@bgfx/chains"
+			emccopts = emccopts .. " --embed-file " .. _MAKE.esc(MAME_DIR) .. "bgfx/effects@bgfx/effects"
+			emccopts = emccopts .. " --embed-file " .. _MAKE.esc(MAME_DIR) .. "bgfx/shaders/gles@bgfx/shaders/gles"
+			emccopts = emccopts .. " --embed-file " .. _MAKE.esc(MAME_DIR) .. "artwork/shadow-mask.png@artwork/shadow-mask.png"
 			postbuildcommands {
 				os.getenv("EMSCRIPTEN") .. "/emcc " .. emccopts .. " $(TARGET) -o " .. _MAKE.esc(MAME_DIR) .. _OPTIONS["target"] .. _OPTIONS["subtarget"] .. ".js",
 			}
@@ -130,8 +137,39 @@ end
 
 	configuration { }
 
-	if _OPTIONS["SEPARATE_BIN"]~="1" then 
-		targetdir(MAME_DIR)
+	if _OPTIONS["targetos"]=="android" then
+		includedirs {
+			MAME_DIR .. "3rdparty/SDL2/include",
+		}
+	
+		files {
+			MAME_DIR .. "3rdparty/SDL2/src/main/android/SDL_android_main.c",
+		}
+		targetsuffix ""
+		if _OPTIONS["SEPARATE_BIN"]~="1" then 
+			if _OPTIONS["PLATFORM"]=="arm" then
+				targetdir(MAME_DIR .. "android-project/app/src/main/libs/armeabi-v7a")
+			end
+			if _OPTIONS["PLATFORM"]=="arm64" then
+				targetdir(MAME_DIR .. "android-project/app/src/main/libs/arm64-v8a")
+			end
+			if _OPTIONS["PLATFORM"]=="mips" then
+				targetdir(MAME_DIR .. "android-project/app/src/main/libs/mips")
+			end
+			if _OPTIONS["PLATFORM"]=="mips64" then
+				targetdir(MAME_DIR .. "android-project/app/src/main/libs/mips64")
+			end
+			if _OPTIONS["PLATFORM"]=="x86" then
+				targetdir(MAME_DIR .. "android-project/app/src/main/libs/x86")
+			end
+			if _OPTIONS["PLATFORM"]=="x64" then
+				targetdir(MAME_DIR .. "android-project/app/src/main/libs/x86_64")
+			end
+		end
+	else
+		if _OPTIONS["SEPARATE_BIN"]~="1" then 
+			targetdir(MAME_DIR)
+		end
 	end
 	
 	findfunction("linkProjects_" .. _OPTIONS["target"] .. "_" .. _OPTIONS["subtarget"])(_OPTIONS["target"], _OPTIONS["subtarget"])

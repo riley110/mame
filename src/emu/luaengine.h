@@ -106,6 +106,7 @@ private:
 	static int l_emu_time(lua_State *L);
 	static int l_emu_gamename(lua_State *L);
 	static int l_emu_romname(lua_State *L);
+	static int l_emu_softname(lua_State *L);
 	static int l_emu_keypost(lua_State *L);
 	static int l_emu_hook_output(lua_State *L);
 	static int l_emu_exit(lua_State *L);
@@ -130,6 +131,10 @@ private:
 	static UINT64 l_state_get_value(const device_state_entry *d);
 	static void l_state_set_value(device_state_entry *d, UINT64 v);
 	static luabridge::LuaRef l_dev_get_memspaces(const device_t *d);
+	struct lua_machine {
+		int l_popmessage(lua_State *L);
+		int l_logerror(lua_State *L);
+	};
 	struct lua_addr_space {
 		template<typename T> int l_mem_read(lua_State *L);
 		template<typename T> int l_mem_write(lua_State *L);

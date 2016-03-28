@@ -144,6 +144,8 @@ static MACHINE_CONFIG_START( wswan, wswan_state )
 	/* software lists */
 	MCFG_SOFTWARE_LIST_ADD("cart_list","wswan")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("wsc_list","wscolor")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("pc1_list","pockchalv1")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("pc2_list","pockchalv2")
 	MCFG_SOFTWARE_LIST_FILTER("wsc_list", "WS")
 MACHINE_CONFIG_END
 

@@ -245,6 +245,16 @@ int lua_engine::l_emu_romname(lua_State *L)
 }
 
 //-------------------------------------------------
+//  emu_softname - returns softlist name
+//-------------------------------------------------
+
+int lua_engine::l_emu_softname(lua_State *L)
+{
+	lua_pushstring(L, luaThis->machine().options().software_name());
+	return 1;
+}
+
+//-------------------------------------------------
 //  emu_pause/emu_unpause - pause/unpause game
 //-------------------------------------------------
 
@@ -1390,6 +1400,22 @@ void lua_engine::attach_notifiers()
 	machine().add_notifier(MACHINE_NOTIFY_FRAME, machine_notify_delegate(FUNC(lua_engine::on_machine_frame), this));
 }
 
+int lua_engine::lua_machine::l_popmessage(lua_State *L)
+{
+	running_machine *m = luabridge::Stack<running_machine *>::get(L, 1);
+	luaL_argcheck(L, lua_isstring(L, 2), 2, "message (string) expected");
+	m->popmessage("%s", luaL_checkstring(L, 2));
+	return 0;
+}
+
+int lua_engine::lua_machine::l_logerror(lua_State *L)
+{
+	running_machine *m = luabridge::Stack<running_machine *>::get(L, 1);
+	luaL_argcheck(L, lua_isstring(L, 2), 2, "message (string) expected");
+	m->logerror("[luaengine] %s\n", luaL_checkstring(L, 2));
+	return 0;
+}
+
 //-------------------------------------------------
 //  initialize - initialize lua hookup to emu engine
 //-------------------------------------------------
@@ -1402,6 +1428,7 @@ void lua_engine::initialize()
 			.addCFunction ("app_version", l_emu_app_version )
 			.addCFunction ("gamename",    l_emu_gamename )
 			.addCFunction ("romname",     l_emu_romname )
+			.addCFunction ("softname",    l_emu_softname )
 			.addCFunction ("keypost",     l_emu_keypost )
 			.addCFunction ("hook_output", l_emu_hook_output )
 			.addCFunction ("sethook",     l_emu_set_hook )
@@ -1420,8 +1447,13 @@ void lua_engine::initialize()
 			.beginClass <machine_manager> ("manager")
 				.addFunction ("machine", &machine_manager::machine)
 				.addFunction ("options", &machine_manager::options)
+				.addFunction ("plugins", &machine_manager::plugins)
 			.endClass ()
-			.beginClass <running_machine> ("machine")
+			.beginClass <lua_machine> ("lua_machine")
+				.addCFunction ("popmessage", &lua_machine::l_popmessage)
+				.addCFunction ("logerror", &lua_machine::l_logerror)
+			.endClass ()
+			.deriveClass <running_machine, lua_machine> ("machine")
 				.addFunction ("exit", &running_machine::schedule_exit)
 				.addFunction ("hard_reset", &running_machine::schedule_hard_reset)
 				.addFunction ("soft_reset", &running_machine::schedule_soft_reset)
@@ -1543,6 +1575,8 @@ void lua_engine::initialize()
 			.deriveClass <emu_options, core_options> ("emu_options")
 			.endClass()
 			.deriveClass <ui_options, core_options> ("ui_options")
+			.endClass()
+			.deriveClass <plugin_options, core_options> ("plugin_options")
 			.endClass()
 			.beginClass <parameters_manager> ("parameters")
 				.addFunction ("add", &parameters_manager::add)

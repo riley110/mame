@@ -10,7 +10,7 @@
 
 
 #ifdef SDLMAME_UNIX
-#if (!defined(SDLMAME_MACOSX)) && (!defined(SDLMAME_EMSCRIPTEN))
+#if (!defined(SDLMAME_MACOSX)) && (!defined(SDLMAME_EMSCRIPTEN)) && (!defined(SDLMAME_ANDROID))
 #ifndef SDLMAME_HAIKU
 #include <fontconfig/fontconfig.h>
 #endif
@@ -202,7 +202,7 @@ int main(int argc, char *argv[])
 
 #ifdef SDLMAME_UNIX
 	sdl_entered_debugger = 0;
-#if (!defined(SDLMAME_MACOSX)) && (!defined(SDLMAME_HAIKU)) && (!defined(SDLMAME_EMSCRIPTEN))
+#if (!defined(SDLMAME_MACOSX)) && (!defined(SDLMAME_HAIKU)) && (!defined(SDLMAME_EMSCRIPTEN)) && (!defined(SDLMAME_ANDROID))
 	FcInit();
 #endif
 #endif
@@ -216,7 +216,7 @@ int main(int argc, char *argv[])
 	}
 
 #ifdef SDLMAME_UNIX
-#if (!defined(SDLMAME_MACOSX)) && (!defined(SDLMAME_HAIKU)) && (!defined(SDLMAME_EMSCRIPTEN))
+#if (!defined(SDLMAME_MACOSX)) && (!defined(SDLMAME_HAIKU)) && (!defined(SDLMAME_EMSCRIPTEN)) && (!defined(SDLMAME_ANDROID))
 	if (!sdl_entered_debugger)
 	{
 		FcFini();
@@ -245,9 +245,8 @@ static void output_oslog(const running_machine &machine, const char *buffer)
 //============================================================
 
 sdl_osd_interface::sdl_osd_interface(sdl_options &options)
-: osd_common_t(options), m_options(options)
+: osd_common_t(options), m_options(options), m_watchdog(nullptr), m_sliders(nullptr)
 {
-	m_watchdog = NULL;
 }
 
 

@@ -25,12 +25,10 @@
 // video options
 #define WINOPTION_MENU                  "menu"
 
-// DirectDraw-specific options
-#define WINOPTION_HWSTRETCH             "hwstretch"
-
 // core post-processing options
-#define WINOPTION_HLSL_ENABLE               "hlsl_enable"
 #define WINOPTION_HLSLPATH                  "hlslpath"
+#define WINOPTION_HLSL_ENABLE               "hlsl_enable"
+#define WINOPTION_HLSL_OVERSAMPLING         "hlsl_oversampling"
 #define WINOPTION_HLSL_WRITE                "hlsl_write"
 #define WINOPTION_HLSL_SNAP_WIDTH           "hlsl_snap_width"
 #define WINOPTION_HLSL_SNAP_HEIGHT          "hlsl_snap_height"
@@ -128,12 +126,10 @@ public:
 	// video options
 	bool menu() const { return bool_value(WINOPTION_MENU); }
 
-	// DirectDraw-specific options
-	bool hwstretch() const { return bool_value(WINOPTION_HWSTRETCH); }
-
 	// core post-processing options
 	const char *screen_post_fx_dir() const { return value(WINOPTION_HLSLPATH); }
 	bool d3d_hlsl_enable() const { return bool_value(WINOPTION_HLSL_ENABLE); }
+	bool d3d_hlsl_oversampling() const { return bool_value(WINOPTION_HLSL_OVERSAMPLING); }
 	const char *d3d_hlsl_write() const { return value(WINOPTION_HLSL_WRITE); }
 	int d3d_snap_width() const { return int_value(WINOPTION_HLSL_SNAP_WIDTH); }
 	int d3d_snap_height() const { return int_value(WINOPTION_HLSL_SNAP_HEIGHT); }
@@ -294,10 +290,14 @@ public:
 
 	windows_options &options() { return m_options; }
 
+    int window_count();
+
+protected:
+	virtual void build_slider_list() override;
+	virtual void update_slider_list() override;
+
 private:
 	virtual void osd_exit() override;
-	void build_slider_list();
-	void update_slider_list();
 
 	windows_options &   m_options;
 	slider_state *      m_sliders;
