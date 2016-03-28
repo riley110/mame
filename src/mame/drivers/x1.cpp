@@ -1005,16 +1005,16 @@ READ8_MEMBER( x1_state::x1_fdc_r )
 		case 0x0ffb:
 			return m_fdc->data_r(space, offset);
 		case 0x0ffc:
-			printf("FDC: read FM type\n");
+			logerror("FDC: read FM type\n");
 			return 0xff;
 		case 0x0ffd:
-			printf("FDC: read MFM type\n");
+			logerror("FDC: read MFM type\n");
 			return 0xff;
 		case 0x0ffe:
-			printf("FDC: read 1.6M type\n");
+			logerror("FDC: read 1.6M type\n");
 			return 0xff;
 		case 0x0fff:
-			printf("FDC: switching between 500k/1M\n");
+			logerror("FDC: switching between 500k/1M\n");
 			return 0xff;
 	}
 

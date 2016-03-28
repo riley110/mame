@@ -3875,8 +3875,3 @@ GAME( 2000, vpacshuf, puckman,  pacman,   pacman,   driver_device, 0,        ROT
 GAME( 2000, vpspeed,  puckman,  pacman,   pacman,   driver_device, 0,        ROT90, "Snake Eyes", "Vector Pacman (Speedy)", MACHINE_SUPPORTS_SAVE )
 GAME( 2000, xensad,   puckman,  pacman,   pacman,   driver_device, 0,        ROT90, "Jeff Morris", "Xens Revenge After Dark", MACHINE_SUPPORTS_SAVE )
 GAME( 2000, xensrev,  puckman,  pacman,   pacman,   driver_device, 0,        ROT90, "Jeff Morris", "Xens Revenge", MACHINE_SUPPORTS_SAVE )
-
-
-#include "mspacman_hb.cpp"
-#include "multipac_hb.cpp"
-#include "maketrax_hb.cpp"

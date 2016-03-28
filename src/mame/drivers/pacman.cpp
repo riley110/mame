@@ -7030,3 +7030,6 @@ GAME( 1981, pengojpm, pengo,    pengojpm, pengojpm, driver_device, 0,        ROT
 GAME( 1981, pengopac, pengo,    pengojpm, pengojpm, driver_device, 0,        ROT90,  "bootleg", "Pengo (bootleg on Pac-Man hardware, set 2)", MACHINE_SUPPORTS_SAVE ) // different conversion?
 
 #include "pacman_hb.cpp"
+#include "mspacman_hb.cpp"
+#include "multipac_hb.cpp"
+#include "maketrax_hb.cpp"
