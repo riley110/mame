@@ -260,23 +260,21 @@ struct hlsl_options
 	float                   bloom_level6_weight;
 	float                   bloom_level7_weight;
 	float                   bloom_level8_weight;
-	float                   bloom_level9_weight;
-	float                   bloom_level10_weight;
 };
 
 struct slider_desc
 {
-	const char *        		name;
-	int                 		minval;
-	int                 		defval;
-	int                 		maxval;
-	int                 		step;
-	int							slider_type;
-	int                 		screen_type;
-	int							id;
-	float						scale;
-	const char *				format;
-	std::vector<const char *>	strings;
+	const char *                name;
+	int                         minval;
+	int                         defval;
+	int                         maxval;
+	int                         step;
+	int                         slider_type;
+	int                         screen_type;
+	int                         id;
+	float                       scale;
+	const char *                format;
+	std::vector<const char *>   strings;
 };
 
 class slider
