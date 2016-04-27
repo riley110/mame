@@ -12,7 +12,7 @@ ROM_START( pc_ark )	/* Arkanoid (1942) */
 	ROM_REGION( 0x02000, "gfx2", 0 )	/* cart gfx */
 	ROM_LOAD( "arkanoid-u2", 0x00000, 0x2000, CRC(bb8dae70) SHA1(91bdab01839e2ad3d9aaa9041e0855ba26583a9f) )
 
-	ROM_REGION( 0x0100,  "rp5h01", 0 )	/* rp5h01 data */
+	ROM_REGION( 0x0010, "rp5h01", 0 )	/* rp5h01 data */
 	ROM_LOAD( "29893c7f.prm", 0x00000, 0x10, CRC(29893c7f) SHA1(58478b7de2177c8dc1d6885bd34eeeeb5e46d7a3) )
 ROM_END
 
@@ -28,7 +28,7 @@ ROM_START( pc_bb2 ) /* Bubble Bobble Part 2 (Power Blade) */
 	ROM_REGION( 0x020000, "gfx2", 0 ) /* cart gfx */
 	ROM_LOAD( "bb2-u1", 0x00000, 0x20000, CRC(5e59afae) SHA1(5ed7d7c1ed50dbdc01e0a80e6ed5a246349726aa) )
 	
-	ROM_REGION( 0x0100, "rp5h01", 0 ) /* rp5h01 data */
+	ROM_REGION( 0x0010, "rp5h01", 0 ) /* rp5h01 data */
 	ROM_LOAD( "31a05a48.prm", 0x00000, 0x10, CRC(31a05a48) SHA1(8b340600feae03bb5cdab852a9879ecffcc8a2b9) )
 ROM_END
 
@@ -43,7 +43,7 @@ ROM_START( pc_cch )	/* Circus Charlie (Golf) */
 	ROM_REGION( 0x02000, "gfx2", 0 )	/* cart gfx */
 	ROM_LOAD( "circusch.u2", 0x00000, 0x2000, CRC(f76c592a) SHA1(c8bc574c43d26d5072869922573edaaab7a37050) )
 
-	ROM_REGION( 0x0100,  "rp5h01", 0 )	/* rp5h01 data */
+	ROM_REGION( 0x0010, "rp5h01", 0 )	/* rp5h01 data */
 	ROM_LOAD( "2cd98ef6.prm", 0x00000, 0x10, CRC(2cd98ef6) SHA1(bd5142c6a29df674ab835c8beafff7e93712d88f) )
 ROM_END
 
@@ -59,7 +59,7 @@ ROM_START( pc_ctfrc ) /* Contra Force (Power Blade) */
 	ROM_REGION( 0x020000, "gfx2", 0 ) /* cart gfx */
 	ROM_LOAD( "ctfrc-u1", 0x00000, 0x20000, CRC(7ff2a7f8) SHA1(234041d4c880ccd4acd295c9b2a3d6e37089beda) )
 
-	ROM_REGION( 0x0100, "rp5h01", 0 ) /* rp5h01 data */
+	ROM_REGION( 0x0010, "rp5h01", 0 ) /* rp5h01 data */
 	ROM_LOAD( "31a05a48.prm", 0x00000, 0x10, CRC(31a05a48) SHA1(8b340600feae03bb5cdab852a9879ecffcc8a2b9) )
 ROM_END
 
@@ -74,7 +74,7 @@ ROM_START( pc_digdg )	/* Dig Dug (1942) */
 	ROM_REGION( 0x02000, "gfx2", 0 )	/* cart gfx */
 	ROM_LOAD( "digdug.u2",		 0x00000, 0x2000, CRC(2dabc198) SHA1(79f1e65eea2a2841dc47916cb86fbf992b936bd5) )
 
-	ROM_REGION( 0x0100,  "rp5h01", 0 )	/* rp5h01 data */
+	ROM_REGION( 0x0010, "rp5h01", 0 )	/* rp5h01 data */
 	ROM_LOAD( "29893c7f.prm", 0x00000, 0x10, CRC(29893c7f) SHA1(58478b7de2177c8dc1d6885bd34eeeeb5e46d7a3) )
 ROM_END
 
@@ -89,7 +89,7 @@ ROM_START( pc_dk )	/* Donkey Kong (Golf) */
 	ROM_REGION( 0x02000, "gfx2", 0 )	/* cart gfx */
 	ROM_LOAD( "dk.u2",   0x00000, 0x2000, CRC(e472a17c) SHA1(3e3d5a2213c132fcb86a97089f03a7ebf8384d36) )
 
-	ROM_REGION( 0x0100,  "rp5h01", 0 )	/* rp5h01 data */
+	ROM_REGION( 0x0010, "rp5h01", 0 )	/* rp5h01 data */
 	ROM_LOAD( "2cd98ef6.prm", 0x00000, 0x10, CRC(2cd98ef6) SHA1(bd5142c6a29df674ab835c8beafff7e93712d88f) )
 ROM_END
 
@@ -104,7 +104,7 @@ ROM_START( pc_dk3 )	/* Donkey Kong 3 (1942) */
 	ROM_REGION( 0x02000, "gfx2", 0 )	/* cart gfx */
 	ROM_LOAD( "dk3.u2", 0x00000, 0x2000, CRC(85d06c57) SHA1(803adef82721452704607fbf70027ff792636325) )
 
-	ROM_REGION( 0x0100,  "rp5h01", 0 )	/* rp5h01 data */
+	ROM_REGION( 0x0010, "rp5h01", 0 )	/* rp5h01 data */
 	ROM_LOAD( "29893c7f.prm", 0x00000, 0x10, CRC(29893c7f) SHA1(58478b7de2177c8dc1d6885bd34eeeeb5e46d7a3) )
 ROM_END
 
@@ -119,7 +119,7 @@ ROM_START( pc_galag )	/* Galaga (1942) */
 	ROM_REGION( 0x02000, "gfx2", 0 )	/* cart gfx */
 	ROM_LOAD( "galaga.u2", 0x00000, 0x2000, CRC(e2d5964e) SHA1(62b2cd49a6a4c6f1e2b0742db3b7493e167e9a23) )
 
-	ROM_REGION( 0x0100,  "rp5h01", 0 )	/* rp5h01 data */
+	ROM_REGION( 0x0010, "rp5h01", 0 )	/* rp5h01 data */
 	ROM_LOAD( "29893c7f.prm", 0x00000, 0x10, CRC(29893c7f) SHA1(58478b7de2177c8dc1d6885bd34eeeeb5e46d7a3) )
 ROM_END
 
@@ -140,7 +140,7 @@ ROM_START( pc_gyrus )	/* Gyruss (Dr Mario) */
 	ROM_RELOAD(			0x10000, 0x08000 )
 	ROM_RELOAD(			0x18000, 0x08000 )
 
-	ROM_REGION( 0x0100,  "rp5h01", 0 )	/* rp5h01 data */
+	ROM_REGION( 0x0010, "rp5h01", 0 )	/* rp5h01 data */
 	ROM_LOAD( "1b26e58c.prm", 0x00000, 0x10, CRC(1b26e58c) SHA1(bd2d81d3cc54966ef154b3487d43ecbc316d6d22) )
 ROM_END
 
@@ -156,7 +156,7 @@ ROM_START( pc_krsty )	/* Krusty's Funhouse (Power Blade) */
 	ROM_REGION( 0x020000, "gfx2", 0 )	/* cart gfx */
 	ROM_LOAD( "xu-u1",    0x00000, 0x20000, CRC(fce8e0ea) SHA1(808f74e9124f273aab7adf5f31c2d5893b06323e) )
 
-	ROM_REGION( 0x0100,  "rp5h01", 0 )	/* rp5h01 data */
+	ROM_REGION( 0x0010, "rp5h01", 0 )	/* rp5h01 data */
 	ROM_LOAD( "0fe6e900.prm", 0x00000, 0x10, CRC(0fe6e900) SHA1(544d8af1aa9186bf76d0a35e78b20e94d3afbcb5) )
 ROM_END
 
@@ -171,7 +171,7 @@ ROM_START( pc_mman5 )	/* Megaman 5 (TMNT2) */
 	ROM_REGION( 0x040000, "gfx2", 0 )	/* cart gfx */
 	ROM_LOAD( "2n-u1",    0x00000, 0x40000, CRC(25e0ae72) SHA1(45d3ffbb5e399c891df6fcbd78b94b866be9b663) )
 	
-	ROM_REGION( 0x0100,  "rp5h01", 0 )	/* rp5h01 data */
+	ROM_REGION( 0x0010, "rp5h01", 0 )	/* rp5h01 data */
 	ROM_LOAD( "237e8519.prm", 0x00000, 0x10, CRC(237e8519) SHA1(81b368d0784e4172c5cf9f4f4b92e29e05d34ae7) )
 ROM_END
 
@@ -186,7 +186,7 @@ ROM_START( pc_pacm )	/* Pacman (Golf) */
 	ROM_REGION( 0x02000, "gfx2", 0 )	/* cart gfx */
 	ROM_LOAD( "pacman.u2",	 0x00000, 0x2000, CRC(db6c9324) SHA1(f0d0fa49fbccc3b005742fc72a8dd3dce63909d1) )
 
-	ROM_REGION( 0x0100,  "rp5h01", 0 )	/* rp5h01 data */
+	ROM_REGION( 0x0010, "rp5h01", 0 )	/* rp5h01 data */
 	ROM_LOAD( "2cd98ef6.prm", 0x00000, 0x10, CRC(2cd98ef6) SHA1(bd5142c6a29df674ab835c8beafff7e93712d88f) )
 ROM_END
 
@@ -201,7 +201,7 @@ ROM_START( pc_parsl ) /* Parasol Stars - The Story of Bubble Bobble 3 (Ninja Gai
 	ROM_REGION( 0x020000, "gfx2", 0 ) /* cart gfx */
 	ROM_LOAD( "parsl-u1", 0x00000, 0x20000, CRC(af5400dc) SHA1(68258fedf7e2ba3afcf20e8261ad93d282c10bd9) ) /* banked */
 
-	ROM_REGION( 0x0100, "rp5h01", 0 ) /* rp5h01 data */
+	ROM_REGION( 0x0010, "rp5h01", 0 ) /* rp5h01 data */
 	ROM_LOAD( "ec5641d6.prm", 0x00000, 0x10, CRC(ec5641d6) SHA1(05f546aec5a9db167688a9abbac922f5ced7f7c5) )
 ROM_END
 
@@ -216,7 +216,7 @@ ROM_START( pc_skykd )	/* Sky Kid (Ninja Gaiden) */
 	ROM_REGION( 0x020000, "gfx2", 0 )	/* cart gfx */
 	ROM_LOAD( "skykid.u1",    0x00000, 0x20000, CRC(0f58923f) SHA1(805cc304ab0e20337c0b0dcd5ca7f2b7bf8e4656) )	/* banked */
 
-	ROM_REGION( 0x0100,  "rp5h01", 0 )	/* rp5h01 data */
+	ROM_REGION( 0x0010, "rp5h01", 0 )	/* rp5h01 data */
 	ROM_LOAD( "ec5641d6.prm", 0x00000, 0x10, CRC(ec5641d6) SHA1(05f546aec5a9db167688a9abbac922f5ced7f7c5) )
 ROM_END
 
