@@ -3363,6 +3363,19 @@ They will be added later on as this software list matures.
 		</part>
 	</software>
 
+	<!-- coco3 only requires 512Kb, run best with a 6309? - coco3h driver) -->
+	<software name="dkremix" supported ="partial">
+		<description>Donkey Kong Remix (Sock Master's Donkey Kong Remix Emulator for CoCo 3) (512Kb)</description>
+		<year>2015</year>
+		<publisher>Sock Master</publisher>
+		<info name="usage" value="Run with LOADM&quot;DKREMIX&quot; + EXEC" />
+		
+			<dataarea name="flop" size="161280">
+				<rom name="dkremix.dsk" size="161280" crc="639d71af" sha1="ee1584807eb8f28744e1f1c5fc1031abd80a0548" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="donutdil">
 		<description>Donut Dilemma (Aus)</description>
 		<year>1986</year>

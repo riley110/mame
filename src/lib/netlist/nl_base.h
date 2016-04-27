@@ -162,6 +162,7 @@
 #include "nl_util.h"
 #include "plib/pstate.h"
 #include "plib/pfmtlog.h"
+#include "plib/pdynlib.h"
 
 // ----------------------------------------------------------------------------------------
 // Type definitions
@@ -341,7 +342,7 @@ namespace netlist
 	{
 	public:
 
-		logic_family_t() : m_logic_family(NULL) {}
+		logic_family_t() : m_logic_family(nullptr) {}
 		~logic_family_t() { }
 
 		ATTR_HOT  logic_family_desc_t *logic_family() const { return m_logic_family; }
@@ -367,7 +368,7 @@ namespace netlist
 	// object_t
 	// -----------------------------------------------------------------------------
 
-	class object_t
+	class object_t : public pstate_interface_t<object_t>
 	{
 		P_PREVENT_COPYING(object_t)
 	public:
@@ -378,8 +379,7 @@ namespace netlist
 			PARAM    = 3,
 			NET      = 4,
 			DEVICE   = 5,
-			NETLIST   = 6,
-			QUEUE   = 7
+			QUEUE    = 6
 		};
 		enum family_t {
 			// Terminal families
@@ -405,15 +405,18 @@ namespace netlist
 		};
 
 		ATTR_COLD object_t(const type_t atype, const family_t afamily);
+		ATTR_COLD object_t(netlist_t &nl, const type_t atype, const family_t afamily);
+		ATTR_COLD object_t(netlist_t &nl, const pstring &aname, const type_t atype, const family_t afamily);
 
 		virtual ~object_t();
 
+		ATTR_COLD void init_object(const pstring &aname);
 		ATTR_COLD void init_object(netlist_t &nl, const pstring &aname);
-		ATTR_COLD bool isInitialized() { return (m_netlist != NULL); }
+		ATTR_COLD bool isInitialized() { return (m_netlist != nullptr); }
 
 		ATTR_COLD const pstring &name() const;
 
-		PSTATE_INTERFACE_DECL()
+		ATTR_COLD inline pstate_manager_t *state_manager();
 
 		ATTR_HOT  type_t type() const { return m_objtype; }
 		ATTR_HOT  family_t family() const { return m_family; }
@@ -486,8 +489,8 @@ namespace netlist
 		ATTR_COLD core_terminal_t(const type_t atype, const family_t afamily);
 
 		ATTR_COLD void set_net(net_t &anet);
-		ATTR_COLD  void clear_net() { m_net = NULL; }
-		ATTR_HOT  bool has_net() const { return (m_net != NULL); }
+		ATTR_COLD  void clear_net() { m_net = nullptr; }
+		ATTR_HOT  bool has_net() const { return (m_net != nullptr); }
 
 		ATTR_HOT  const net_t & net() const { return *m_net;}
 		ATTR_HOT  net_t & net() { return *m_net;}
@@ -591,7 +594,7 @@ namespace netlist
 	private:
 		ATTR_HOT void set_ptr(nl_double *ptr, const nl_double val)
 		{
-			if (ptr != NULL && *ptr != val)
+			if (ptr != nullptr && *ptr != val)
 			{
 				*ptr = val;
 			}
@@ -615,7 +618,7 @@ namespace netlist
 
 		ATTR_COLD logic_t(const type_t atype)
 			: core_terminal_t(atype, LOGIC), logic_family_t(),
-				m_proxy(NULL)
+				m_proxy(nullptr)
 		{
 		}
 
@@ -623,7 +626,7 @@ namespace netlist
 		{
 		}
 
-		ATTR_COLD bool has_proxy() const { return (m_proxy != NULL); }
+		ATTR_COLD bool has_proxy() const { return (m_proxy != nullptr); }
 		ATTR_COLD devices::nld_base_proxy *get_proxy() const  { return m_proxy; }
 		ATTR_COLD void set_proxy(devices::nld_base_proxy *proxy) { m_proxy = proxy; }
 
@@ -717,7 +720,7 @@ namespace netlist
 		ATTR_HOT  const netlist_time &time() const { return m_time; }
 		ATTR_HOT  void set_time(const netlist_time &ntime) { m_time = ntime; }
 
-		ATTR_HOT  bool isRailNet() const { return !(m_railterminal == NULL); }
+		ATTR_HOT  bool isRailNet() const { return !(m_railterminal == nullptr); }
 		ATTR_HOT  core_terminal_t & railterminal() const { return *m_railterminal; }
 
 		ATTR_HOT  void push_to_queue(const netlist_time &delay);
@@ -864,8 +867,6 @@ namespace netlist
 	private:
 
 	public:
-		nl_double m_DD_n_m_1;
-		nl_double m_h_n_m_1;
 
 		//FIXME: needed by current solver code
 		devices::matrix_solver_t *m_solver;
@@ -904,6 +905,7 @@ namespace netlist
 		P_PREVENT_COPYING(analog_output_t)
 	public:
 
+		ATTR_COLD analog_output_t(core_device_t &dev, const pstring &aname);
 		ATTR_COLD analog_output_t();
 
 		ATTR_COLD void init_object(core_device_t &dev, const pstring &aname);
@@ -1183,13 +1185,15 @@ namespace netlist
 	// -----------------------------------------------------------------------------
 
 
-	class netlist_t : public object_t, public pstate_manager_t, public plog_dispatch_intf
+	class netlist_t : public pstate_manager_t, public plog_dispatch_intf
 	{
 		P_PREVENT_COPYING(netlist_t)
 	public:
 
-		netlist_t();
+		netlist_t(const pstring &aname);
 		virtual ~netlist_t();
+
+		pstring name() const { return m_name; }
 
 		ATTR_COLD void start();
 		ATTR_COLD void stop();
@@ -1223,7 +1227,7 @@ namespace netlist
 			for (std::size_t i = 0; i < m_devices.size(); i++)
 			{
 				_device_class *dev = dynamic_cast<_device_class *>(m_devices[i]);
-				if (dev != NULL)
+				if (dev != nullptr)
 					tmp.push_back(dev);
 			}
 			return tmp;
@@ -1235,22 +1239,22 @@ namespace netlist
 			for (std::size_t i = 0; i < m_devices.size(); i++)
 			{
 				_device_class *dev = dynamic_cast<_device_class *>(m_devices[i]);
-				if (dev != NULL)
+				if (dev != nullptr)
 					return dev;
 			}
-			return NULL;
+			return nullptr;
 		}
 
 		template<class _device_class>
 		ATTR_COLD _device_class *get_single_device(const char *classname)
 		{
-			_device_class *ret = NULL;
+			_device_class *ret = nullptr;
 			for (std::size_t i = 0; i < m_devices.size(); i++)
 			{
 				_device_class *dev = dynamic_cast<_device_class *>(m_devices[i]);
-				if (dev != NULL)
+				if (dev != nullptr)
 				{
-					if (ret != NULL)
+					if (ret != nullptr)
 						this->log().fatal("more than one {1} device found", classname);
 					else
 						ret = dev;
@@ -1265,14 +1269,14 @@ namespace netlist
 		pnamedlist_t<core_device_t *> m_started_devices;
 	#endif
 
-	ATTR_COLD plog_base<NL_DEBUG> &log() { return m_log; }
-	ATTR_COLD const plog_base<NL_DEBUG> &log() const { return m_log; }
+		ATTR_COLD plog_base<NL_DEBUG> &log() { return m_log; }
+		ATTR_COLD const plog_base<NL_DEBUG> &log() const { return m_log; }
 
-	protected:
+		virtual void reset();
 
-		/* from object */
-		virtual void reset() override;
-		virtual void save_register() override;
+		ATTR_COLD pdynlib &lib() { return *m_lib; }
+
+protected:
 
 	#if (NL_KEEP_STATISTICS)
 		// performance
@@ -1288,22 +1292,26 @@ namespace netlist
 		bool                        m_use_deactivate;
 		queue_t                     m_queue;
 
-
 		devices::NETLIB_NAME(mainclock) *    m_mainclock;
 		devices::NETLIB_NAME(solver) *       m_solver;
 		devices::NETLIB_NAME(gnd) *          m_gnd;
 
-
 		devices::NETLIB_NAME(netlistparams) *m_params;
+
+		pstring m_name;
 		setup_t *m_setup;
 		plog_base<NL_DEBUG> m_log;
+		pdynlib *m_lib;                 // external lib needs to be loaded as long as netlist exists
 	};
 
 	// -----------------------------------------------------------------------------
 	// inline implementations
 	// -----------------------------------------------------------------------------
 
-	PSTATE_INTERFACE(object_t, m_netlist, name())
+	ATTR_COLD inline pstate_manager_t *object_t::state_manager()
+	{
+		return m_netlist;
+	}
 
 	template <class C, param_t::param_type_t T>
 	ATTR_HOT inline void param_template_t<C, T>::setTo(const C &param)

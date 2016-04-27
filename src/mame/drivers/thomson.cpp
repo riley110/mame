@@ -91,9 +91,6 @@
 
 /**************************** common *******************************/
 
-/* layout */
-static const char layout_thomson[] = "thomson";
-
 #define KEY(pos,name,key)                   \
 	PORT_BIT  ( 1<<(pos), IP_ACTIVE_LOW, IPT_KEYBOARD ) \
 	PORT_NAME ( name )                  \
@@ -636,7 +633,6 @@ static MACHINE_CONFIG_START( to7, thomson_state )
 	MCFG_PALETTE_ADD ( "palette", 4097 ) /* 12-bit color + transparency */
 	MCFG_PALETTE_INIT_OWNER(thomson_state, thom)
 	MCFG_VIDEO_START_OVERRIDE( thomson_state, thom )
-	MCFG_DEFAULT_LAYOUT( layout_thomson )
 
 /* sound */
 	MCFG_SPEAKER_STANDARD_MONO("mono")
@@ -674,16 +670,16 @@ static MACHINE_CONFIG_START( to7, thomson_state )
 	MCFG_FLOPPY_DRIVE_ADD("wd2793:1", cd90_640_floppies, "dd", thomson_state::cd90_640_formats)
 
 	MCFG_DEVICE_ADD(FLOPPY_0, LEGACY_FLOPPY, 0)
-	MCFG_DEVICE_CONFIG(thomson_floppy_interface)
+	MCFG_LEGACY_FLOPPY_CONFIG(thomson_floppy_interface)
 	MCFG_LEGACY_FLOPPY_IDX_CB(WRITELINE(thomson_state, fdc_index_0_w))
 	MCFG_DEVICE_ADD(FLOPPY_1, LEGACY_FLOPPY, 0)
-	MCFG_DEVICE_CONFIG(thomson_floppy_interface)
+	MCFG_LEGACY_FLOPPY_CONFIG(thomson_floppy_interface)
 	MCFG_LEGACY_FLOPPY_IDX_CB(WRITELINE(thomson_state, fdc_index_1_w))
 	MCFG_DEVICE_ADD(FLOPPY_2, LEGACY_FLOPPY, 0)
-	MCFG_DEVICE_CONFIG(thomson_floppy_interface)
+	MCFG_LEGACY_FLOPPY_CONFIG(thomson_floppy_interface)
 	MCFG_LEGACY_FLOPPY_IDX_CB(WRITELINE(thomson_state, fdc_index_2_w))
 	MCFG_DEVICE_ADD(FLOPPY_3, LEGACY_FLOPPY, 0)
-	MCFG_DEVICE_CONFIG(thomson_floppy_interface)
+	MCFG_LEGACY_FLOPPY_CONFIG(thomson_floppy_interface)
 	MCFG_LEGACY_FLOPPY_IDX_CB(WRITELINE(thomson_state, fdc_index_3_w))
 
 /* network */
@@ -925,7 +921,7 @@ static MACHINE_CONFIG_DERIVED( to770, to7 )
 
 	MCFG_DEVICE_MODIFY(THOM_PIA_SYS)
 	MCFG_PIA_READPA_HANDLER(READ8(thomson_state, to770_sys_porta_in))
-	MCFG_PIA_READPB_HANDLER(NULL)
+	MCFG_PIA_READPB_HANDLER(NOOP)
 	MCFG_PIA_WRITEPB_HANDLER(WRITE8(thomson_state, to770_sys_portb_out))
 	MCFG_PIA_CB2_HANDLER(WRITELINE(thomson_state, to770_sys_cb2_out))
 
@@ -1128,7 +1124,7 @@ static MACHINE_CONFIG_DERIVED( mo5, to7 )
 	MCFG_PIA_WRITEPA_HANDLER(WRITE8(thomson_state, mo5_sys_porta_out))
 	MCFG_PIA_WRITEPB_HANDLER(WRITE8(thomson_state, mo5_sys_portb_out))
 	MCFG_PIA_CA2_HANDLER(WRITELINE(thomson_state, mo5_set_cassette_motor))
-	MCFG_PIA_CB2_HANDLER(NULL)
+	MCFG_PIA_CB2_HANDLER(NOOP)
 	MCFG_PIA_IRQB_HANDLER(WRITELINE(thomson_state, thom_irq_1)) /* WARNING: differs from TO7 ! */
 
 	MCFG_DEVICE_REMOVE("cartslot")
@@ -1475,11 +1471,11 @@ static MACHINE_CONFIG_DERIVED( to9, to7 )
 
 	MCFG_DEVICE_MODIFY(THOM_PIA_SYS)
 	MCFG_PIA_READPA_HANDLER(READ8(thomson_state, to9_sys_porta_in))
-	MCFG_PIA_READPB_HANDLER(NULL)
+	MCFG_PIA_READPB_HANDLER(NOOP)
 	MCFG_PIA_WRITEPA_HANDLER(WRITE8(thomson_state, to9_sys_porta_out))
 	MCFG_PIA_WRITEPB_HANDLER(WRITE8(thomson_state, to9_sys_portb_out))
-	MCFG_PIA_CB2_HANDLER(NULL)
-	MCFG_PIA_IRQA_HANDLER(NULL)
+	MCFG_PIA_CB2_HANDLER(NOOP)
+	MCFG_PIA_IRQA_HANDLER(NOOP)
 
 	MCFG_DEVICE_MODIFY("mc6846")
 	MCFG_MC6846_OUT_PORT_CB(WRITE8(thomson_state, to9_timer_port_out))
@@ -1697,11 +1693,11 @@ static MACHINE_CONFIG_DERIVED( to8, to7 )
 
 	MCFG_DEVICE_MODIFY(THOM_PIA_SYS)
 	MCFG_PIA_READPA_HANDLER(READ8(thomson_state, to8_sys_porta_in))
-	MCFG_PIA_READPB_HANDLER(NULL)
+	MCFG_PIA_READPB_HANDLER(NOOP)
 	MCFG_PIA_WRITEPA_HANDLER(WRITE8(thomson_state, to9_sys_porta_out))
 	MCFG_PIA_WRITEPB_HANDLER(WRITE8(thomson_state, to8_sys_portb_out))
-	MCFG_PIA_CB2_HANDLER(NULL)
-	MCFG_PIA_IRQA_HANDLER(NULL)
+	MCFG_PIA_CB2_HANDLER(NOOP)
+	MCFG_PIA_IRQA_HANDLER(NOOP)
 
 	MCFG_CENTRONICS_ADD("centronics", centronics_devices, "printer")
 	MCFG_CENTRONICS_BUSY_HANDLER(WRITELINE(thomson_state, write_centronics_busy))
@@ -1860,11 +1856,11 @@ static MACHINE_CONFIG_DERIVED( to9p, to7 )
 
 	MCFG_DEVICE_MODIFY(THOM_PIA_SYS)
 	MCFG_PIA_READPA_HANDLER(READ8(thomson_state, to9_sys_porta_in))
-	MCFG_PIA_READPB_HANDLER(NULL)
+	MCFG_PIA_READPB_HANDLER(NOOP)
 	MCFG_PIA_WRITEPA_HANDLER(WRITE8(thomson_state, to9_sys_porta_out))
 	MCFG_PIA_WRITEPB_HANDLER(WRITE8(thomson_state, to8_sys_portb_out))
-	MCFG_PIA_CB2_HANDLER(NULL)
-	MCFG_PIA_IRQA_HANDLER(NULL)
+	MCFG_PIA_CB2_HANDLER(NOOP)
+	MCFG_PIA_IRQA_HANDLER(NOOP)
 	MCFG_PIA_IRQB_HANDLER(WRITELINE(thomson_state, thom_firq_1))
 
 	MCFG_CENTRONICS_ADD("centronics", centronics_devices, "printer")

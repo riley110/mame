@@ -27,13 +27,14 @@ gt64xxx_device::gt64xxx_device(const machine_config &mconfig, const char *tag, d
 	: pci_host_device(mconfig, GT64XXX, "Galileo GT-64XXX System Controller", tag, owner, clock, "gt64xxx", __FILE__),
 		m_be(0), m_autoconfig(0), m_irq_num(-1),
 		m_mem_config("memory_space", ENDIANNESS_LITTLE, 32, 32),
-		m_io_config("io_space", ENDIANNESS_LITTLE, 32, 32)
+		m_io_config("io_space", ENDIANNESS_LITTLE, 32, 32),
+		m_region(*this, DEVICE_SELF)
 {
 }
 
 const address_space_config *gt64xxx_device::memory_space_config(address_spacenum spacenum) const
 {
-	return (spacenum == AS_PROGRAM) ? pci_bridge_device::memory_space_config(spacenum) : (spacenum == AS_DATA) ? &m_mem_config : (spacenum == AS_IO) ? &m_io_config : NULL;
+	return (spacenum == AS_PROGRAM) ? pci_bridge_device::memory_space_config(spacenum) : (spacenum == AS_DATA) ? &m_mem_config : (spacenum == AS_IO) ? &m_io_config : nullptr;
 }
 
 void gt64xxx_device::device_start()

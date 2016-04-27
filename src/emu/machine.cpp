@@ -74,15 +74,11 @@
 #include "config.h"
 #include "debugger.h"
 #include "render.h"
-#include "cheat.h"
 #include "uiinput.h"
 #include "crsshair.h"
 #include "unzip.h"
-#include "ui/datfile.h"
-#include "ui/inifile.h"
 #include "debug/debugvw.h"
 #include "image.h"
-#include "luaengine.h"
 #include "network.h"
 #include <time.h>
 
@@ -138,18 +134,17 @@ running_machine::running_machine(const machine_config &_config, machine_manager 
 
 	// set the machine on all devices
 	device_iterator iter(root_device());
-	for (device_t *device = iter.first(); device != nullptr; device = iter.next())
-		device->set_machine(*this);
+	for (device_t &device : iter)
+		device.set_machine(*this);
 
 	// find devices
-	for (device_t *device = iter.first(); device != nullptr; device = iter.next())
-		if (dynamic_cast<cpu_device *>(device) != nullptr)
+	for (device_t &device : iter)
+		if (dynamic_cast<cpu_device *>(&device) != nullptr)
 		{
-			firstcpu = downcast<cpu_device *>(device);
+			firstcpu = downcast<cpu_device *>(&device);
 			break;
 		}
-	screen_device_iterator screeniter(root_device());
-	primary_screen = screeniter.first();
+	primary_screen = screen_device_iterator(root_device()).first();
 
 	// fetch core options
 	if (options().debug())
@@ -190,18 +185,6 @@ const char *running_machine::describe_context()
 	return m_context.c_str();
 }
 
-TIMER_CALLBACK_MEMBER(running_machine::autoboot_callback)
-{
-	if (strlen(options().autoboot_script())!=0) {
-		manager().lua()->load_script(options().autoboot_script());
-	}
-	else if (strlen(options().autoboot_command())!=0) {
-		std::string cmd = std::string(options().autoboot_command());
-		strreplace(cmd, "'", "\\'");
-		std::string val = std::string("emu.keypost('").append(cmd).append("')");
-		manager().lua()->load_string(val.c_str());
-	}
-}
 
 //-------------------------------------------------
 //  start - initialize the emulated machine
@@ -227,11 +210,7 @@ void running_machine::start()
 
 	// create the video manager
 	m_video = std::make_unique<video_manager>(*this);
-	m_ui = std::make_unique<ui_manager>(*this);
-	m_ui->init();
-
-	// start the inifile manager
-	m_inifile = std::make_unique<inifile_manager>(*this);
+	m_ui = manager().create_ui(*this);
 
 	// initialize the base time (needed for doing record/playback)
 	::time(&m_base_time);
@@ -278,10 +257,7 @@ void running_machine::start()
 
 	m_render->resolve_tags();
 
-	// call the game driver's init function
-	// this is where decryption is done and memory maps are altered
-	// so this location in the init order is important
-	ui().set_startup_text("Initializing...", true);
+	manager().create_custom(*this);
 
 	// register callbacks for the devices, then start them
 	add_notifier(MACHINE_NOTIFY_RESET, machine_notify_delegate(FUNC(running_machine::reset_all_devices), this));
@@ -299,17 +275,6 @@ void running_machine::start()
 	else if (options().autosave() && (m_system.flags & MACHINE_SUPPORTS_SAVE) != 0)
 		schedule_load("auto");
 
-	// set up the cheat engine
-	m_cheat = std::make_unique<cheat_manager>(*this);
-
-	// allocate autoboot timer
-	m_autoboot_timer = scheduler().timer_alloc(timer_expired_delegate(FUNC(running_machine::autoboot_callback), this));
-
-	// start datfile manager
-	m_datfile = std::make_unique<datfile_manager>(*this);
-
-	// start favorite manager
-	m_favorite = std::make_unique<favorite_manager>(*this);
 
 	manager().update_machine();
 }
@@ -319,9 +284,9 @@ void running_machine::start()
 //  run - execute the machine
 //-------------------------------------------------
 
-int running_machine::run(bool firstrun)
+int running_machine::run(bool quiet)
 {
-	int error = MAMERR_NONE;
+	int error = EMU_ERR_NONE;
 
 	// use try/catch for deep error recovery
 	try
@@ -330,7 +295,7 @@ int running_machine::run(bool firstrun)
 		m_current_phase = MACHINE_PHASE_INIT;
 
 		// if we have a logfile, set up the callback
-		if (options().log() && &system() != &GAME_NAME(___empty))
+		if (options().log() && !quiet)
 		{
 			m_logfile = std::make_unique<emu_file>(OPEN_FLAG_WRITE | OPEN_FLAG_CREATE | OPEN_FLAG_CREATE_PATHS);
 			osd_file::error filerr = m_logfile->open("error.log");
@@ -351,12 +316,12 @@ int running_machine::run(bool firstrun)
 
 		nvram_load();
 		sound().ui_mute(false);
+		if (!quiet)
+			sound().start_recording();
 
 		// initialize ui lists
-		ui().initialize(*this);
-
 		// display the startup screens
-		ui().display_startup_screens(firstrun);
+		manager().ui_initialize(*this);
 
 		// perform a soft reset -- this takes us to the running phase
 		soft_reset();
@@ -380,7 +345,7 @@ int running_machine::run(bool firstrun)
 			if (!m_paused)
 			{
 				m_scheduler.timeslice();
-				manager().lua()->periodic_check();
+				emulator_info::periodic_check();
 			}
 			// otherwise, just pump video updates through
 			else
@@ -404,34 +369,34 @@ int running_machine::run(bool firstrun)
 	catch (emu_fatalerror &fatal)
 	{
 		osd_printf_error("Fatal error: %s\n", fatal.string());
-		error = MAMERR_FATALERROR;
+		error = EMU_ERR_FATALERROR;
 		if (fatal.exitcode() != 0)
 			error = fatal.exitcode();
 	}
 	catch (emu_exception &)
 	{
 		osd_printf_error("Caught unhandled emulator exception\n");
-		error = MAMERR_FATALERROR;
+		error = EMU_ERR_FATALERROR;
 	}
 	catch (binding_type_exception &btex)
 	{
 		osd_printf_error("Error performing a late bind of type %s to %s\n", btex.m_actual_type.name(), btex.m_target_type.name());
-		error = MAMERR_FATALERROR;
+		error = EMU_ERR_FATALERROR;
 	}
 	catch (add_exception &aex)
 	{
 		osd_printf_error("Tag '%s' already exists in tagged_list\n", aex.tag());
-		error = MAMERR_FATALERROR;
+		error = EMU_ERR_FATALERROR;
 	}
 	catch (std::exception &ex)
 	{
 		osd_printf_error("Caught unhandled %s exception: %s\n", typeid(ex).name(), ex.what());
-		error = MAMERR_FATALERROR;
+		error = EMU_ERR_FATALERROR;
 	}
 	catch (...)
 	{
 		osd_printf_error("Caught unhandled exception\n");
-		error = MAMERR_FATALERROR;
+		error = EMU_ERR_FATALERROR;
 	}
 
 	// make sure our phase is set properly before cleaning up,
@@ -554,19 +519,18 @@ std::string running_machine::get_statename(const char *option) const
 			//printf("check template: %s\n", devname_str.c_str());
 
 			// verify that there is such a device for this system
-			image_interface_iterator iter(root_device());
-			for (device_image_interface *image = iter.first(); image != nullptr; image = iter.next())
+			for (device_image_interface &image : image_interface_iterator(root_device()))
 			{
 				// get the device name
-				std::string tempdevname(image->brief_instance_name());
+				std::string tempdevname(image.brief_instance_name());
 				//printf("check device: %s\n", tempdevname.c_str());
 
 				if (devname_str.compare(tempdevname) == 0)
 				{
 					// verify that such a device has an image mounted
-					if (image->basename_noext() != nullptr)
+					if (image.basename_noext() != nullptr)
 					{
-						std::string filename(image->basename_noext());
+						std::string filename(image.basename_noext());
 
 						// setup snapname and remove the %d_
 						strreplace(statename_str, devname_str.c_str(), filename.c_str());
@@ -921,9 +885,6 @@ void running_machine::soft_reset(void *ptr, INT32 param)
 	// call all registered reset callbacks
 	call_notifiers(MACHINE_NOTIFY_RESET);
 
-	// setup autoboot if needed
-	m_autoboot_timer->adjust(attotime(options().autoboot_delay(),0),0);
-
 	// now we're running
 	m_current_phase = MACHINE_PHASE_RUNNING;
 }
@@ -1032,20 +993,19 @@ void running_machine::start_all_devices()
 	{
 		// iterate over all devices
 		int failed_starts = 0;
-		device_iterator iter(root_device());
-		for (device_t *device = iter.first(); device != nullptr; device = iter.next())
-			if (!device->started())
+		for (device_t &device : device_iterator(root_device()))
+			if (!device.started())
 			{
 				// attempt to start the device, catching any expected exceptions
 				try
 				{
 					// if the device doesn't have a machine yet, set it first
-					if (device->m_machine == nullptr)
-						device->set_machine(*this);
+					if (device.m_machine == nullptr)
+						device.set_machine(*this);
 
 					// now start the device
-					osd_printf_verbose("Starting %s '%s'\n", device->name(), device->tag());
-					device->start();
+					osd_printf_verbose("Starting %s '%s'\n", device.name(), device.tag());
+					device.start();
 				}
 
 				// handle missing dependencies by moving the device to the end
@@ -1090,9 +1050,8 @@ void running_machine::stop_all_devices()
 		debug_comment_save(*this);
 
 	// iterate over devices and stop them
-	device_iterator iter(root_device());
-	for (device_t *device = iter.first(); device != nullptr; device = iter.next())
-		device->stop();
+	for (device_t &device : device_iterator(root_device()))
+		device.stop();
 }
 
 
@@ -1103,9 +1062,8 @@ void running_machine::stop_all_devices()
 
 void running_machine::presave_all_devices()
 {
-	device_iterator iter(root_device());
-	for (device_t *device = iter.first(); device != nullptr; device = iter.next())
-		device->pre_save();
+	for (device_t &device : device_iterator(root_device()))
+		device.pre_save();
 }
 
 
@@ -1116,9 +1074,8 @@ void running_machine::presave_all_devices()
 
 void running_machine::postload_all_devices()
 {
-	device_iterator iter(root_device());
-	for (device_t *device = iter.first(); device != nullptr; device = iter.next())
-		device->post_load();
+	for (device_t &device : device_iterator(root_device()))
+		device.post_load();
 }
 
 
@@ -1170,17 +1127,16 @@ std::string running_machine::nvram_filename(device_t &device) const
 
 void running_machine::nvram_load()
 {
-	nvram_interface_iterator iter(root_device());
-	for (device_nvram_interface *nvram = iter.first(); nvram != nullptr; nvram = iter.next())
+	for (device_nvram_interface &nvram : nvram_interface_iterator(root_device()))
 	{
 		emu_file file(options().nvram_directory(), OPEN_FLAG_READ);
-		if (file.open(nvram_filename(nvram->device()).c_str()) == osd_file::error::NONE)
+		if (file.open(nvram_filename(nvram.device()).c_str()) == osd_file::error::NONE)
 		{
-			nvram->nvram_load(file);
+			nvram.nvram_load(file);
 			file.close();
 		}
 		else
-			nvram->nvram_reset();
+			nvram.nvram_reset();
 	}
 }
 
@@ -1191,17 +1147,34 @@ void running_machine::nvram_load()
 
 void running_machine::nvram_save()
 {
-	nvram_interface_iterator iter(root_device());
-	for (device_nvram_interface *nvram = iter.first(); nvram != nullptr; nvram = iter.next())
+	for (device_nvram_interface &nvram : nvram_interface_iterator(root_device()))
 	{
 		emu_file file(options().nvram_directory(), OPEN_FLAG_WRITE | OPEN_FLAG_CREATE | OPEN_FLAG_CREATE_PATHS);
-		if (file.open(nvram_filename(nvram->device()).c_str()) == osd_file::error::NONE)
+		if (file.open(nvram_filename(nvram.device()).c_str()) == osd_file::error::NONE)
 		{
-			nvram->nvram_save(file);
+			nvram.nvram_save(file);
 			file.close();
 		}
 	}
 }
+
+
+//**************************************************************************
+//  OUTPUT
+//**************************************************************************
+
+void running_machine::popup_clear() const
+{
+	ui().popup_time(0, " ");
+}
+
+void running_machine::popup_message(util::format_argument_pack<std::ostream> const &args) const
+{
+	std::string const temp(string_format(args));
+	ui().popup_time(temp.length() / 40 + 2, "%s", temp);
+}
+
+
 //**************************************************************************
 //  CALLBACK ITEMS
 //**************************************************************************

@@ -218,7 +218,7 @@ UINT32 voodoo_reciplog[(2 << RECIPLOG_LOOKUP_BITS) + 2];
  *************************************/
 
 #define RASTERIZER_ENTRY(fbzcp, alpha, fog, fbz, tex0, tex1) \
-	{ NULL, voodoo_device::raster_##fbzcp##_##alpha##_##fog##_##fbz##_##tex0##_##tex1, FALSE, 0, 0, 0, fbzcp, alpha, fog, fbz, tex0, tex1 },
+	{ nullptr, voodoo_device::raster_##fbzcp##_##alpha##_##fog##_##fbz##_##tex0##_##tex1, FALSE, 0, 0, 0, fbzcp, alpha, fog, fbz, tex0, tex1 },
 
 static const raster_info predef_raster_table[] =
 {
@@ -5010,12 +5010,11 @@ void voodoo_device::common_start_voodoo(UINT8 type)
 	}
 
 	/* set the type, and initialize the chip mask */
-	device_iterator iter(machine().root_device());
 	index = 0;
-	for (device_t *scan = iter.first(); scan != nullptr; scan = iter.next())
-		if (scan->type() == this->type())
+	for (device_t &scan : device_iterator(machine().root_device()))
+		if (scan.type() == this->type())
 		{
-			if (scan == this)
+			if (&scan == this)
 				break;
 			index++;
 		}

@@ -8,6 +8,8 @@
 #include "cpu/scudsp/scudsp.h"
 #include "cpu/sh2/sh2.h"
 
+#include "bus/sat_ctrl/ctrl.h"
+
 #include "bus/generic/slot.h"
 #include "bus/generic/carts.h"
 
@@ -38,7 +40,9 @@ public:
 			m_cart3(*this, "stv_slot3"),
 			m_cart4(*this, "stv_slot4"),
 			m_gfxdecode(*this, "gfxdecode"),
-			m_palette(*this, "palette")
+			m_palette(*this, "palette"),
+			m_ctrl1(*this, "ctrl1"),
+			m_ctrl2(*this, "ctrl2")
 	{
 	}
 
@@ -142,13 +146,6 @@ public:
 		UINT8 slave_on;
 	}m_smpc;
 
-	struct {
-		UINT8 status;
-		UINT8 data;
-		UINT8 prev_data;
-		UINT16 repeat_count;
-	}m_keyb;
-
 	/* Saturn specific*/
 	int m_saturn_region;
 	UINT8 m_cart_type;
@@ -173,8 +170,8 @@ public:
 	optional_device<generic_slot_device> m_cart4;
 	required_device<gfxdecode_device> m_gfxdecode;
 	required_device<palette_device> m_palette;
-
-
+	optional_device<saturn_control_port_device> m_ctrl1;
+	optional_device<saturn_control_port_device> m_ctrl2;
 
 	bitmap_rgb32 m_tmpbitmap;
 	DECLARE_VIDEO_START(stv_vdp2);
@@ -608,7 +605,7 @@ public:
 	partitionT *cd_filterdata(filterT *flt, int trktype, UINT8 *p_ok);
 	partitionT *cd_read_filtered_sector(INT32 fad, UINT8 *p_ok);
 
-	cdrom_file *cdrom;// = (cdrom_file *)NULL;
+	cdrom_file *cdrom;// = (cdrom_file *)nullptr;
 
 	// local variables
 	timer_device *sector_timer;
@@ -678,12 +675,6 @@ public:
 	TIMER_CALLBACK_MEMBER( smpc_change_clock );
 	TIMER_CALLBACK_MEMBER( stv_intback_peripheral );
 	TIMER_CALLBACK_MEMBER( stv_smpc_intback );
-	void smpc_digital_pad(UINT8 pad_num, UINT8 offset);
-	void smpc_analog_pad(UINT8 pad_num, UINT8 offset, UINT8 id);
-	void smpc_keyboard(UINT8 pad_num, UINT8 offset);
-	void smpc_mouse(UINT8 pad_num, UINT8 offset, UINT8 id);
-	void smpc_md_pad(UINT8 pad_num, UINT8 offset, UINT8 id);
-	void smpc_unconnected(UINT8 pad_num, UINT8 offset);
 	TIMER_CALLBACK_MEMBER( intback_peripheral );
 	TIMER_CALLBACK_MEMBER( saturn_smpc_intback );
 	void smpc_rtc_write();
