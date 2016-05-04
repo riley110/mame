@@ -175,6 +175,19 @@
 		</part>
 	</software>
 
+	<!-- originally released in 1983 by TO TEK Editions, original version is undumped -->
+	<software name="compactr">
+		<description>Compactor (title screen hack)</description>
+		<year>1989</year>
+		<publisher>&lt;hack (J.L. Pronost)&gt;</publisher>
+
+		<part name="cart" interface="to_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="compactor_memo7.bin" size="16384" crc="23f9b8de" sha1="0b09ea22b5e08234f41745d5b28aaa76a7757dc5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="forthto7">
 		<description>FORTH-TO7 (v1.0)</description>
 		<year>1983</year>

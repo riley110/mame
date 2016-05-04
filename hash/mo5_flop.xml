@@ -90,6 +90,23 @@
 		</part>
 	</software>
 
+	<software name="dosredu">
+		<description>DOS Reduit BASIC</description>
+		<year>198?</year>
+		<publisher>&lt;hack&gt;</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="dos-reduit-simple-densite_mo5.fd" size="327680" crc="fd1d9352" sha1="e30b0b82aaa21f421177bc5c995a00c981fd88f2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="creation-dos-reduit_mo5.fd" size="327680" crc="f90ccc6f" sha1="0d5ffd87baeccee4fd5d0ad46d67c17c3ede96bb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- can also be found in to_flop.xml -->
 	<software name="dumprom">
 		<description>Dump rom UC, controleur, cartouche</description>
@@ -196,6 +213,19 @@
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
 				<rom name="multidos v1.0 (1986)(thomson)(fr).sap" size="335426" crc="1d417334" sha1="e7fe253983b130ca80155a70bb334e874051e367" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- can also be found in to_flop.xml -->
+	<software name="picorese">
+		<description>Pico-Reseau CLD75</description>
+		<year>1985</year>
+		<publisher>CNDP</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="pico-reseau_moto.fd" size="327680" crc="d2482574" sha1="40e7745fc9459429f0d0c0332c39c5ecc669f11a" offset="0" />
 			</dataarea>
 		</part>
 	</software>
