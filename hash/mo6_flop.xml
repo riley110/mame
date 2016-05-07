@@ -96,6 +96,24 @@
 		<publisher>Loriciels</publisher>
 
 		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="mgt-sapiens-mach3_1_moto.fd" size="327680" crc="c439b1f1" sha1="345833df1b0bc68781e03b87654f7849eacee111" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="mgt-sapiens-mach3_2_moto.fd" size="327680" crc="3036977f" sha1="883a7e9e435b701833e49eb81f3c80fc8c8d6860" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- can also be found in to_flop.xml -->
+	<software name="lori1988a" cloneof="lori1988" supported="no">
+		<description>MGT - Sapiens - Mach 3 (640K Disk)</description>
+		<year>1988</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="655360">
 				<rom name="mgt-sapiens-mach3_moto.fd" size="655360" crc="bee93a61" sha1="1fbe231cb8e5d9c590b6dcb1d564c620b6d76871" offset="0" />
 			</dataarea>

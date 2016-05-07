@@ -844,6 +844,23 @@
 		<publisher>France Image Logiciel (FIL)</publisher>
 
 		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="gestion-fil_1_to9.fd" size="327680" crc="bcf0ad0a" sha1="1f0b9cbe01f096059f11b3755a436da6b3c3b83f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="gestion-fil_2_to9.fd" size="327680" crc="23b9a639" sha1="ab51e5983ad490c02e8a9e56ec066d3b72aefc1d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gestiona" cloneof="gestion" supported="no">
+		<description>Gestion FIL (640K Disk)</description>
+		<year>1986</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+
+		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="655360">
 				<rom name="gestion-fil_to9.fd" size="655360" crc="6262da07" sha1="aa2c22b89bba60373fd4ad67b2e6e62af8a39e6e" offset="0" />
 			</dataarea>
@@ -2327,7 +2344,7 @@
 	</software>
 
 	<software name="to9pappsc" cloneof="to9papps" supported="no">
-		<description>TO9+ Applications (640K)</description>
+		<description>TO9+ Applications (640K Disk)</description>
 		<year>1986</year>
 		<publisher>Thomson</publisher>
 
@@ -2377,7 +2394,7 @@
 	</software>
 
 	<software name="to9pinitb" cloneof="to9pinit" supported="no">
-		<description>TO9+ Initiations (640K)</description>
+		<description>TO9+ Initiations (640K Disk)</description>
 		<year>1986</year>
 		<publisher>Thomson</publisher>
 
@@ -3922,7 +3939,7 @@
 	</software>
 
 	<software name="futuristc" cloneof="futurist" supported="no">
-		<description>Les Futuristes (640K)</description>
+		<description>Les Futuristes (640K Disk)</description>
 		<year>1988</year>
 		<publisher>Infogrames</publisher>
 		<info name="alt_title" value="Science Fiction"/>
@@ -4030,9 +4047,32 @@
         </part>
     </software>
 -->
-	
+
 	<software name="greates2">
 		<description>The Greatest Collection II</description>
+		<year>1990</year>
+		<publisher>Novtech</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="the-greatest-collection-2-d1_1_to8.fd" size="327680" crc="81874a52" sha1="622cab3c9fce548cdeff4aa65f19e60ad437b514" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="the-greatest-collection-2-d2_1_to8.fd" size="327680" crc="a593f0a9" sha1="db46a4e872d2f239039d6bc160a7e064d5065173" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="the-greatest-collection-2-d3_1_to8.fd" size="327680" crc="d6efd733" sha1="ead13e4814e9bf8e30cf17231bc820fe2401ca9c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- all disks have blank second halves -->
+	<software name="greates2a" cloneof="greates2">
+		<description>The Greatest Collection II (640K Disks)</description>
 		<year>1990</year>
 		<publisher>Novtech</publisher>
 
@@ -4105,6 +4145,19 @@
 
 	<software name="hitslori">
 		<description>Les Hits de Loriciels 1</description>
+		<year>198?</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="les-hits-de-loriciels-1_1_to8.fd" size="327680" crc="3f934a73" sha1="3093bd4a0f0541f627158ce5d320c2a69cd08a09" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- second half blank -->
+	<software name="hitsloria" cloneof="hitslori">
+		<description>Les Hits de Loriciels 1 (640K Disk)</description>
 		<year>198?</year>
 		<publisher>Loriciels</publisher>
 
@@ -4215,7 +4268,7 @@
 	</software>
 
 	<software name="jeuxbasa" cloneof="jeuxbas">
-		<description>Jeux BASIC TO (640K)</description>
+		<description>Jeux BASIC TO (640K Disk)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -4589,6 +4642,24 @@
 		<publisher>Loriciels</publisher>
 
 		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="mgt-sapiens-mach3_1_moto.fd" size="327680" crc="c439b1f1" sha1="345833df1b0bc68781e03b87654f7849eacee111" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="mgt-sapiens-mach3_2_moto.fd" size="327680" crc="3036977f" sha1="883a7e9e435b701833e49eb81f3c80fc8c8d6860" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- can also be found in mo6_flop.xml -->
+	<software name="lori1988a" cloneof="lori1988" supported="no">
+		<description>MGT - Sapiens - Mach 3 (640K Disk)</description>
+		<year>1988</year>
+		<publisher>Loriciels</publisher>
+
+		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="655360">
 				<rom name="mgt-sapiens-mach3_moto.fd" size="655360" crc="bee93a61" sha1="1fbe231cb8e5d9c590b6dcb1d564c620b6d76871" offset="0" />
 			</dataarea>
@@ -4713,7 +4784,7 @@
 	</software>
 
 	<software name="privesc" cloneof="prives" supported="no">
-		<description>Les Prives (640K)</description>
+		<description>Les Prives (640K Disk)</description>
 		<year>1988</year>
 		<publisher>Infogrames</publisher>
 
@@ -4787,7 +4858,7 @@
 	</software>
 
 	<software name="simhitsa" cloneof="simhits" supported="no">
-		<description>Simulation Hits (640K)</description>
+		<description>Simulation Hits (640K Disk)</description>
 		<year>1989</year>
 		<publisher>Loriciels</publisher>
 
@@ -4851,6 +4922,23 @@
 		<publisher>Infogrames</publisher>
 
 		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="stars-v1_1_to8.fd" size="327680" crc="a3f16504" sha1="2e76c34ef51528c84d8d6ec37ddad5264b11dc17" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="stars-v1_2_to8.fd" size="327680" crc="b4a4c3a0" sha1="dfcfd72fa0fca104449c43a1a8ba5bc7524801e8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stars1a" cloneof="stars1" supported="no">
+		<description>Stars Volume 1 (640K Disk)</description>
+		<year>1989</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="655360">
 				<rom name="stars-v1_to8.fd" size="655360" crc="d87b1d2d" sha1="d234978528dcaa60f86b00aa594ec852996a3235" offset="0" />
 			</dataarea>
@@ -4877,7 +4965,7 @@
 	</software>
 
 	<software name="superhita" cloneof="superhit" supported="partial">
-		<description>Les Super Hits de Thomson (640K)</description>
+		<description>Les Super Hits de Thomson (640K Disk)</description>
 		<year>1986</year>
 		<publisher>SFMI Micromania</publisher>
 
@@ -4910,7 +4998,7 @@
 
 	<!-- selection menu only says "Tetris", but title screen says "Tetris II"  -->
 	<software name="tet2sokoa" cloneof="tet2soko" supported="no">
-		<description>Tetris II &amp; Sokoban (640K)</description>
+		<description>Tetris II &amp; Sokoban (640K Disk)</description>
 		<year>19??</year>
 		<publisher>John Breaker?</publisher>
 
@@ -5411,7 +5499,7 @@
 	</software>
 
 	<software name="teogame2b" cloneof="teogame2" supported="no">
-		<description>Teo-Games no.2 (640K)</description>
+		<description>Teo-Games no.2 (640K Disk)</description>
 		<year>1991</year>
 		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
 
@@ -5461,7 +5549,7 @@
 	</software>
 
 	<software name="teogame3b" cloneof="teogame3">
-		<description>Teo-Games no.3 (640K)</description>
+		<description>Teo-Games no.3 (640K Disk)</description>
 		<year>1991</year>
 		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
 
@@ -5805,7 +5893,7 @@
 
 	<!-- second half blank -->
 	<software name="aquaa" cloneof="aqua">
-		<description>Aqua (640K)</description>
+		<description>Aqua (640K Disk)</description>
 		<year>2014</year>
 		<publisher>Defcard</publisher>
 
@@ -5975,7 +6063,7 @@
 	</software>
 
 	<software name="chineseb" cloneof="chinese" supported="no">
-		<description>Chinese Stack (640K)</description>
+		<description>Chinese Stack (640K Disk)</description>
 		<year>2004</year>
 		<publisher>Puls</publisher>
 
@@ -6236,7 +6324,7 @@
 	</software>
 
 	<software name="lotusa" cloneof="lotus" supported="no">
-		<description>Lotus Esprit Turbo Challenge (640K)</description>
+		<description>Lotus Esprit Turbo Challenge (640K Disk)</description>
 		<year>19??</year>
 		<publisher>BC 109 Soft</publisher>
 
@@ -6291,7 +6379,7 @@
 	</software>
 
 	<software name="megara" cloneof="megar" supported="no">
-		<description>Megar Demo #1 - Ruiz (640K)</description>
+		<description>Megar Demo #1 - Ruiz (640K Disk)</description>
 		<year>2007</year>
 		<publisher>Megar</publisher>
 
@@ -6468,7 +6556,7 @@
 
 	<!-- second half blank -->
 	<software name="smiteaoka" cloneof="smiteaok">
-		<description>Smite - Ao Kuang (640K)</description>
+		<description>Smite - Ao Kuang (640K Disk)</description>
 		<year>2015</year>
 		<publisher>Defcard</publisher>
 
@@ -6493,7 +6581,7 @@
 
 	<!-- second half blank -->
 	<software name="smitefena" cloneof="smitefen">
-		<description>Smite - Fenrir (640K)</description>
+		<description>Smite - Fenrir (640K Disk)</description>
 		<year>2014</year>
 		<publisher>Defcard</publisher>
 
@@ -6684,7 +6772,7 @@
 	</software>
 
 	<software name="sorceryda" cloneof="sorceryd" supported="no">
-		<description>Sorcery Demo (640K)</description>
+		<description>Sorcery Demo (640K Disk)</description>
 		<year>19??</year>
 		<publisher>Thomtest</publisher>
 
@@ -6865,7 +6953,7 @@
 	</software>
 
 	<software name="truc216ib" cloneof="truc216i" supported="no">
-		<description>TruC216i (tele) (640K)</description>
+		<description>TruC216i (tele) (640K Disk)</description>
 		<year>2010</year>
 		<publisher>Puls</publisher>
 
@@ -6915,7 +7003,7 @@
 	</software>
 
 	<software name="truc216ieb" cloneof="truc216i" supported="no">
-		<description>TruC216i (emul) (640K)</description>
+		<description>TruC216i (emul) (640K Disk)</description>
 		<year>2010</year>
 		<publisher>Puls</publisher>
 
@@ -6965,7 +7053,7 @@
 	</software>
 
 	<software name="truc40b" cloneof="truc40" supported="no">
-		<description>TruC40 (tele) (640K)</description>
+		<description>TruC40 (tele) (640K Disk)</description>
 		<year>2010</year>
 		<publisher>Puls</publisher>
 
@@ -7015,7 +7103,7 @@
 	</software>
 
 	<software name="truc40eb" cloneof="truc40" supported="no">
-		<description>TruC40 (emul) (640K)</description>
+		<description>TruC40 (emul) (640K Disk)</description>
 		<year>2010</year>
 		<publisher>Puls</publisher>
 
@@ -7065,7 +7153,7 @@
 	</software>
 
 	<software name="truc70b" cloneof="truc70" supported="no">
-		<description>TruC70 (640K)</description>
+		<description>TruC70 (640K Disk)</description>
 		<year>2010</year>
 		<publisher>Puls</publisher>
 
@@ -7115,7 +7203,7 @@
 	</software>
 
 	<software name="truc80ib" cloneof="truc80i" supported="no">
-		<description>TruC80i (640K)</description>
+		<description>TruC80i (640K Disk)</description>
 		<year>2010</year>
 		<publisher>Puls</publisher>
 
@@ -7182,8 +7270,13 @@
 		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
 
 		<part name="flop1" interface="thom_flop">
-			<dataarea name="flop" size="655360">
-				<rom name="ascinews-01_to8.fd" size="655360" crc="71bea332" sha1="0683dea2b583ddc44ac4495a68ea49239e6536c3" offset="0" />
+			<dataarea name="flop" size="327680">
+				<rom name="ascinews-01_1_to8.fd" size="327680" crc="86ff1445" sha1="114eb80bcd76b9ecf1cb0f3daec31684a50496f9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="ascinews-01_2_to8.fd" size="327680" crc="9ee0509b" sha1="a702900c5f354b5d192d62cd3ee58b69c4b07c4f" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -7203,6 +7296,18 @@
 		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="335426">
 				<rom name="ascinews no.1 (1992)(a.s.c.i.)(fr)(disk 2 of 2).sap" size="335426" crc="2f3e4920" sha1="f6765ba10f3ad3c91a75df8af67402e931a23f90" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ascinew1b" cloneof="ascinew1" supported="no">
+		<description>ASCINEWS no.1 (640K Disk)</description>
+		<year>1992</year>
+		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="ascinews-01_to8.fd" size="655360" crc="71bea332" sha1="0683dea2b583ddc44ac4495a68ea49239e6536c3" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -7237,8 +7342,13 @@
 		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
 
 		<part name="flop1" interface="thom_flop">
-			<dataarea name="flop" size="655360">
-				<rom name="ascinews-03_to8.fd" size="655360" crc="eeb67acf" sha1="534d3d3d24cf9b4982e151ec516fabc888488d21" offset="0" />
+			<dataarea name="flop" size="327680">
+				<rom name="ascinews-03_1_to8.fd" size="327680" crc="b10d4ad2" sha1="faeae38e66c5d802365f19a17e959354fca2d9d6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="ascinews-03_2_to8.fd" size="327680" crc="79e80ad8" sha1="c666c180a309282e0d20cf8dbe0f6b5e71f7d644" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -7262,14 +7372,31 @@
 		</part>
 	</software>
 
+	<software name="ascinew3b" cloneof="ascinew3" supported="no">
+		<description>ASCINEWS no.3 (640K Disk)</description>
+		<year>1993</year>
+		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="ascinews-03_to8.fd" size="655360" crc="eeb67acf" sha1="534d3d3d24cf9b4982e151ec516fabc888488d21" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="ascinew4">
 		<description>ASCINEWS no.4</description>
 		<year>1993</year>
 		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
 
 		<part name="flop1" interface="thom_flop">
-			<dataarea name="flop" size="655360">
-				<rom name="ascinews-04_to8.fd" size="655360" crc="6a251eed" sha1="228b311a079aebb416fabab67be445b14f3faed0" offset="0" />
+			<dataarea name="flop" size="327680">
+				<rom name="ascinews-04_1_to8.fd" size="327680" crc="d9482b5b" sha1="5d6037232195857acf300e8ba05ad678548396ee" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="ascinews-04_2_to8.fd" size="327680" crc="4edf178e" sha1="fbdd7555d2baa4b3c145d05654ea13fdccab126f" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -7293,14 +7420,31 @@
 		</part>
 	</software>
 
+	<software name="ascinew4b" cloneof="ascinew4" supported="no">
+		<description>ASCINEWS no.4 (640K Disk)</description>
+		<year>1993</year>
+		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="ascinews-04_to8.fd" size="655360" crc="6a251eed" sha1="228b311a079aebb416fabab67be445b14f3faed0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="ascinew5">
 		<description>ASCINEWS no.5</description>
 		<year>1993</year>
 		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
 
 		<part name="flop1" interface="thom_flop">
-			<dataarea name="flop" size="655360">
-				<rom name="ascinews-05_to8.fd" size="655360" crc="8c95da90" sha1="5a507d437d270de2a6422d57151eac59f6d9265e" offset="0" />
+			<dataarea name="flop" size="327680">
+				<rom name="ascinews-05_1_to8.fd" size="327680" crc="4ec515a3" sha1="cac0fa6b9bd284e142c06ec4a40df9e69289f2da" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="ascinews-05_2_to8.fd" size="327680" crc="f9aed088" sha1="08793682b280f341f97491e0e3df6dce697e3bc2" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -7324,14 +7468,31 @@
 		</part>
 	</software>
 
+	<software name="ascinew5b" cloneof="ascinew5" supported="no">
+		<description>ASCINEWS no.5 (640K Disk)</description>
+		<year>1993</year>
+		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="ascinews-05_to8.fd" size="655360" crc="8c95da90" sha1="5a507d437d270de2a6422d57151eac59f6d9265e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="ascinew6">
 		<description>ASCINEWS no.6</description>
 		<year>1993</year>
 		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
 
 		<part name="flop1" interface="thom_flop">
-			<dataarea name="flop" size="655360">
-				<rom name="ascinews-06_to8.fd" size="655360" crc="c27304d3" sha1="fb785d7500eb171bfdf64f473aa93578ef8b4897" offset="0" />
+			<dataarea name="flop" size="327680">
+				<rom name="ascinews-06_1_to8.fd" size="327680" crc="110320b2" sha1="86a9b3412c208620320be23c6786dee2087dcc1f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="ascinews-06_2_to8.fd" size="327680" crc="e8a5bd8c" sha1="158fb7e470e5be58c8e1248d518c028c023cba3c" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -7355,14 +7516,31 @@
 		</part>
 	</software>
 
+	<software name="ascinew6b" cloneof="ascinew6" supported="no">
+		<description>ASCINEWS no.6 (640K Disk)</description>
+		<year>1993</year>
+		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="ascinews-06_to8.fd" size="655360" crc="c27304d3" sha1="fb785d7500eb171bfdf64f473aa93578ef8b4897" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="ascinew7">
 		<description>ASCINEWS no.7</description>
 		<year>1994</year>
 		<publisher>Association des Correspondants Thomsonistes (A.C.T.)</publisher>
 
 		<part name="flop1" interface="thom_flop">
-			<dataarea name="flop" size="655360">
-				<rom name="ascinews-07_to8.fd" size="655360" crc="791d4386" sha1="eda8ae091c7b76f1ba148772df95c4043b35d525" offset="0" />
+			<dataarea name="flop" size="327680">
+				<rom name="ascinews-07_1_to8.fd" size="327680" crc="2e854128" sha1="852810e0afba3fcd0c586a2b6f7cb8f26b03467d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="ascinews-07_2_to8.fd" size="327680" crc="26b073e7" sha1="49aed290d4318a0d59e63995ed29b1e67d607a58" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -7386,14 +7564,31 @@
 		</part>
 	</software>
 
+	<software name="ascinew7b" cloneof="ascinew7" supported="no">
+		<description>ASCINEWS no.7 (640K Disk)</description>
+		<year>1994</year>
+		<publisher>Association des Correspondants Thomsonistes (A.C.T.)</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="ascinews-07_to8.fd" size="655360" crc="791d4386" sha1="eda8ae091c7b76f1ba148772df95c4043b35d525" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="ascinew8">
 		<description>ASCINEWS no.8</description>
 		<year>1994</year>
 		<publisher>Association des Correspondants Thomsonistes (A.C.T.)</publisher>
 
 		<part name="flop1" interface="thom_flop">
-			<dataarea name="flop" size="655360">
-				<rom name="ascinews-08_to8.fd" size="655360" crc="be8afeda" sha1="d33b735b7d0743ffcb84b947a66a40a7052b2c40" offset="0" />
+			<dataarea name="flop" size="327680">
+				<rom name="ascinews-08_1_to8.fd" size="327680" crc="a60619da" sha1="0911ce7b4ecc08c413d47ba1dcbb1b5a9a224b20" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="ascinews-08_2_to8.fd" size="327680" crc="cf2655d2" sha1="149681bafab1579aec864e48f9133deba17d6d23" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -7417,14 +7612,31 @@
 		</part>
 	</software>
 
+	<software name="ascinew8b" cloneof="ascinew8" supported="no">
+		<description>ASCINEWS no.8 (640K Disk)</description>
+		<year>1994</year>
+		<publisher>Association des Correspondants Thomsonistes (A.C.T.)</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="ascinews-08_to8.fd" size="655360" crc="be8afeda" sha1="d33b735b7d0743ffcb84b947a66a40a7052b2c40" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="ascinew9">
 		<description>ASCINEWS no.9</description>
 		<year>1995</year>
 		<publisher>Association des Correspondants Thomsonistes (A.C.T.)</publisher>
 
 		<part name="flop1" interface="thom_flop">
-			<dataarea name="flop" size="655360">
-				<rom name="ascinews-09_to8.fd" size="655360" crc="65ba50b2" sha1="4e55606239d3870b797f2e057264cb48a9e352b3" offset="0" />
+			<dataarea name="flop" size="327680">
+				<rom name="ascinews-09_1_to8.fd" size="327680" crc="f9ded678" sha1="ffdc0a582811f34f260484e25be4fcbd4bf57269" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="ascinews-09_2_to8.fd" size="327680" crc="0b41263c" sha1="7037b3fb2398d2c37040eb0ae1b2fbf01a59e7ac" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -7448,14 +7660,31 @@
 		</part>
 	</software>
 
+	<software name="ascinew9b" cloneof="ascinew9" supported="no">
+		<description>ASCINEWS no.9 (640K Disk)</description>
+		<year>1995</year>
+		<publisher>Association des Correspondants Thomsonistes (A.C.T.)</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="ascinews-09_to8.fd" size="655360" crc="65ba50b2" sha1="4e55606239d3870b797f2e057264cb48a9e352b3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="ascinw10">
 		<description>ASCINEWS no.10</description>
 		<year>1995</year>
 		<publisher>Association des Correspondants Thomsonistes (A.C.T.)</publisher>
 
 		<part name="flop1" interface="thom_flop">
-			<dataarea name="flop" size="655360">
-				<rom name="ascinews-10_to8.fd" size="655360" crc="9a773986" sha1="d74c0a216b93265264208fac677cf8c75a94991a" offset="0" />
+			<dataarea name="flop" size="327680">
+				<rom name="ascinews-10_1_to8.fd" size="327680" crc="293142ef" sha1="5c3f74f8d5ea3dcf6db5f002e1240019042f1703" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="ascinews-10_2_to8.fd" size="327680" crc="9146328d" sha1="61bb06e03808a5f5a656e84146d75463e49c9630" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -7475,6 +7704,18 @@
 		<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="335426">
 				<rom name="ascinews no.10 (199x)(a.s.c.i.)(fr)(disk 2 of 2).sap" size="335426" crc="3d026671" sha1="7f1a5ba44ede017341a3c0b77d5ca648074bc2eb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ascinw10b" cloneof="ascinw10" supported="no">
+		<description>ASCINEWS no.10 (640K Disk)</description>
+		<year>1995</year>
+		<publisher>Association des Correspondants Thomsonistes (A.C.T.)</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="ascinews-10_to8.fd" size="655360" crc="9a773986" sha1="d74c0a216b93265264208fac677cf8c75a94991a" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -7714,7 +7955,7 @@
 	</software>
 
 	<software name="teodriv2b" cloneof="teodriv2" supported="no">
-		<description>Teo-Drive no.2 (640K)</description>
+		<description>Teo-Drive no.2 (640K Disk)</description>
 		<year>1991</year>
 		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
 
@@ -7764,7 +8005,7 @@
 	</software>
 
 	<software name="teodriv3b" cloneof="teodriv3" supported="no">
-		<description>Teo-Drive no.3 (640K)</description>
+		<description>Teo-Drive no.3 (640K Disk)</description>
 		<year>1991</year>
 		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
 
@@ -7814,7 +8055,7 @@
 	</software>
 
 	<software name="teodriv4b" cloneof="teodriv4" supported="no">
-		<description>Teo-Drive no.4 (640K)</description>
+		<description>Teo-Drive no.4 (640K Disk)</description>
 		<year>1991</year>
 		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
 
@@ -7864,7 +8105,7 @@
 	</software>
 
 	<software name="teodriv5b" cloneof="teodriv5" supported="no">
-		<description>Teo-Drive no.5 (640K)</description>
+		<description>Teo-Drive no.5 (640K Disk)</description>
 		<year>1991</year>
 		<publisher>L'Association pour les Services Connexes a l'Informatique (A.S.C.I.)</publisher>
 
@@ -8013,6 +8254,23 @@
 
 	<software name="actimat5">
 		<description>Acti-Math 5e</description>
+		<year>1987</year>
+		<publisher>Armand Colin</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="acti-math-5e_to8_1.fd" size="327680" crc="69e45830" sha1="cfd60d66fbfa28c4dcdbf8440384e4967acddedd" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="acti-math-5e_to8_2.fd" size="327680" crc="3cb4a766" sha1="e53f29b68382664504ead60fb55cc58502f79ede" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="actimat5a" cloneof="actimat5">
+		<description>Acti-Math 5e (640K Disk)</description>
 		<year>1987</year>
 		<publisher>Armand Colin</publisher>
 
@@ -10149,7 +10407,7 @@
 	</software>
 
 	<software name="bobwinnrb" cloneof="bobwinnr" supported="no">
-		<description>Bob Winner (640K)</description>
+		<description>Bob Winner (640K Disk)</description>
 		<year>1987</year>
 		<publisher>Loriciels</publisher>
 		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
@@ -10392,7 +10650,7 @@
 	</software>
 
 	<software name="chevalib" cloneof="chevali" supported="no">
-		<description>Les Chevaliers de l'An Mil (640K)</description>
+		<description>Les Chevaliers de l'An Mil (640K Disk)</description>
 		<year>1989</year>
 		<publisher>Ubisoft</publisher>
 
@@ -10768,8 +11026,8 @@
 		<publisher>Chip</publisher>
 
 		<part name="flop1" interface="thom_flop">
-			<dataarea name="flop" size="655360">
-				<rom name="duel-au-colorado_to8.fd" size="655360" crc="7a8f0e2c" sha1="0adafb6a9fb76f8554861edd8c20f728a925e9f1" offset="0" />
+			<dataarea name="flop" size="327680">
+				<rom name="duel-au-colorado_1_to8.fd" size="327680" crc="6c342be5" sha1="51bd900212ca4799a726ef1861daa861d4284493" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -10794,6 +11052,19 @@
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
 				<rom name="duel au colorado (198x)(chip)(fr)[cr the crapaud musulman].sap" size="335426" crc="439d88da" sha1="c562b4d1e250307d460cb789029b4973e8071c8e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- second half blank -->
+	<software name="coloradoc" cloneof="colorado">
+		<description>Duel au Colorado (640K Disk)</description>
+		<year>1986</year>
+		<publisher>Chip</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="duel-au-colorado_to8.fd" size="655360" crc="7a8f0e2c" sha1="0adafb6a9fb76f8554861edd8c20f728a925e9f1" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -11407,7 +11678,7 @@
 
 	<!-- second half blank -->
 	<software name="torkaha" cloneof="torkah">
-		<description>Le Labyrinthe de Torkah (640K)</description>
+		<description>Le Labyrinthe de Torkah (640K Disk)</description>
 		<year>2015</year>
 		<publisher>Defcard</publisher>
 
@@ -11517,7 +11788,7 @@
 	</software>
 
 	<software name="lemmingsb" cloneof="lemmings" supported="no">
-		<description>Lemmings (640K)</description>
+		<description>Lemmings (640K Disk)</description>
 		<year>2006</year>
 		<publisher>YRprod</publisher>
 
@@ -13053,7 +13324,7 @@
 	</software>
 
 	<software name="sectnoira" cloneof="sectnoir">
-		<description>La Secte Noire (640K)</description>
+		<description>La Secte Noire (640K Disk)</description>
 		<year>2014</year>
 		<publisher>Retrocoding Production</publisher>
 
@@ -14072,7 +14343,7 @@
 	</software>
 
 	<software name="turbocupb" cloneof="turbocup" supported="no">
-		<description>Turbo Cup (640K)</description>
+		<description>Turbo Cup (640K Disk)</description>
 		<year>1988</year>
 		<publisher>Loriciels</publisher>
 
