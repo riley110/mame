@@ -2,6 +2,8 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="mbee_flop" description="Applied Technology MicroBee floppy disks">
 
+<!-- TOSEC -->
+
 	<software name="advgames">
 		<description>Adventure Games 1</description>
 		<year>198?</year>
@@ -171,6 +173,8 @@
         </part>
     </software>
 -->
+
+<!-- UnRenamed -->
 
 	<software name="10mbhd" supported="no">
 		<description>10mbhd_lbios</description>
@@ -654,7 +658,7 @@
 		</part>
 	</software>
 
-<!--
+<!-- obviously not for Microbee
 	<software name="">
 		<description>beeboard_1_system_disk_ds8b</description>
 		<year>198?</year>
@@ -666,11 +670,12 @@
 			</dataarea>
 		</part>
 	</software>
+-->
 
-	<software name="">
-		<description>beenet_51_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="beenet">
+		<description>Beenet</description>
+		<year>1985</year>
+		<publisher>Applied Technology</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -679,10 +684,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>beesware_word_study_ss80</description>
+	<software name="wordstud">
+		<description>Word Study</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>J. &amp; H. Beesware</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -691,10 +696,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>beethovan_composer_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="beecompo">
+		<description>Disk Bee-Composer</description>
+		<year>1986</year>
+		<publisher>Honeysoft - Robotron</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -703,10 +708,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>beethoven_beetalker_demo_ds40</description>
+	<software name="btlkdemo">
+		<description>BeeTalker and BeeThoven</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -715,10 +720,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>bernie_nichols_graphics_ds40</description>
+	<software name="edugfx">
+		<description>Educational Graphics</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Bernie Nichols</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -727,10 +732,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>bernie_nichols_language_arts_ds40</description>
+	<software name="langarts">
+		<description>Language Arts</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Bernie Nichols</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -739,10 +744,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>bernie_nichols_reading_ds40</description>
+	<software name="reading">
+		<description>Reading Programs</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Bernie Nichols</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -751,10 +756,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>bernie_nichols_science_ds40</description>
+	<software name="scimisc">
+		<description>Science &amp; Miscellaneous</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Bernie Nichols</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -763,10 +768,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>bernie_nichols_spelling_ds40</description>
+	<software name="spelling">
+		<description>Spelling Programs</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Bernie Nichols</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -775,10 +780,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>biology_ds40</description>
+	<software name="biology">
+		<description>Computer Assisted Learning - Biological Science</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Education Department of Western Australia</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -787,10 +792,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>birds_of_antarctica_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="birdsant">
+		<description>Antarctic Science Data Base - Birds of Antarctica</description>
+		<year>1984</year>
+		<publisher>Education Department of Western Australia</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -799,10 +804,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>brian_howarth_adventures_ss80</description>
+	<software name="howarth">
+		<description>The Brian Howarth's Mysterious Adventures</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -811,10 +816,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>bushwaking_adventure_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="bushwalk">
+		<description>Bushwalking Adventure</description>
+		<year>1984</year>
+		<publisher>Dreamcards</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -823,10 +828,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>carefile_1.3_ds80</description>
+	<software name="carefile">
+		<description>Care File (v1.3)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Care</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -835,10 +840,11 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>chalkboard_programmers_kit_ss80</description>
+	<!-- Requires CP/M -->
+	<software name="progkit">
+		<description>Chalkboard Programmer's Kit</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Chalkboard?</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -847,10 +853,11 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>chopper_pilot_ds40</description>
+	<!-- Graphics problems -->
+	<software name="chopilot" supported="no">
+		<description>Chopper Pilot</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -859,34 +866,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>ciab_double_sided_master_ds80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="860416">
-				<rom name="ciab_double_sided_master_ds80.dsk" size="860416" crc="0d41825c" sha1="6c377d7c308a3c966de015c2b366bb19f8d71f05" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>ciab_system_master_85_03_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="ciab_system_master_85_03_ss80.dsk" size="430336" crc="a4552963" sha1="c77909c1cefdb8f182f4e1729fceb48c14f4bece" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>ciab_system_master_86_02_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="ciab">
+		<description>Computer-In-A-Book Master (1986-02)</description>
+		<year>1986</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -895,10 +878,34 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>citadel_of_chaos_ss80</description>
+	<software name="ciaba" cloneof="ciab">
+		<description>Computer-In-A-Book Master (1985-03)</description>
+		<year>1985</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="ciab_system_master_85_03_ss80.dsk" size="430336" crc="a4552963" sha1="c77909c1cefdb8f182f4e1729fceb48c14f4bece" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ciabd" cloneof="ciab">
+		<description>Computer-In-A-Book Master (Double Sided)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="860416">
+				<rom name="ciab_double_sided_master_ds80.dsk" size="860416" crc="0d41825c" sha1="6c377d7c308a3c966de015c2b366bb19f8d71f05" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="citadel">
+		<description>Citadel of Chaos (v2.01)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -907,10 +914,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>composer_bee+_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="composer">
+		<description>Composer Bee Plus</description>
+		<year>1985</year>
+		<publisher>Honeysoft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -919,10 +926,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>databuzz_beenet_version_ds40</description>
+	<software name="databuzz">
+		<description>Databuzz (Beenet version)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -931,10 +938,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>defender_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="defender">
+		<description>Micro Defender</description>
+		<year>1983</year>
+		<publisher>J. David Morrison</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -943,10 +950,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>denham_01_ds80</description>
+	<software name="denham1">
+		<description>Denham Disk 1</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Denham</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -955,10 +962,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>denham_02_ds80</description>
+	<software name="denham2">
+		<description>Denham Disk 2</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Denham</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -967,10 +974,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>denham_03_ds80</description>
+	<software name="denham3">
+		<description>Denham Disk 3</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Denham</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -979,10 +986,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>denham_04_ds80</description>
+	<software name="denham4">
+		<description>Denham Disk 4</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Denham</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -991,10 +998,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>denham_cards_ss80</description>
+	<software name="probcard">
+		<description>Probability - Cards</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Denham</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1003,10 +1010,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>denham_easy_stats_ss80</description>
+	<software name="stats">
+		<description>Statistics</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Denham</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1015,10 +1022,11 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>denham_kings_trees_aces_ss80</description>
+	<!-- Requires CP/M - load and run with included BASIC -->
+	<software name="kingsace">
+		<description>Probability - Kings and Aces</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Denham</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1027,22 +1035,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>digiscan_p100_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="digiscan_p100_ss80.dsk" size="430336" crc="55af7d0e" sha1="242b506c1ab547e24971e478d14f0222f4d68ad7" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>digiscan_v20_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="digiscan">
+		<description>DigiScan (v2.00)</description>
+		<year>1989</year>
+		<publisher>Microcorp</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1051,10 +1047,23 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>disk_library_manager_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="digiscand" cloneof="digiscan">
+		<description>DigiScan System (vP1.00, Demonstration)</description>
+		<year>1988</year>
+		<publisher>Microbee Systems</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="digiscan_p100_ss80.dsk" size="430336" crc="55af7d0e" sha1="242b506c1ab547e24971e478d14f0222f4d68ad7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Requires CP/M -->
+	<software name="diskcat">
+		<description>Disk Cataloging System (v2.1)</description>
+		<year>1984</year>
+		<publisher>MicroWorld</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1063,10 +1072,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>doodle_draw_1.1_ds80</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="doodle">
+		<description>Doodle Draw (v1.1)</description>
+		<year>1986</year>
+		<publisher>Goodison Software</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -1075,10 +1084,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>dragon_spells_ss80</description>
+	<software name="dragon">
+		<description>Dragon Spells</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>MicroWorld</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1087,10 +1096,11 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>draughts_ds40</description>
+	<!-- Requires CP/M -->
+	<software name="othcheck">
+		<description>Othello/Checkers</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1099,10 +1109,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>dreamcards_battleship_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="batlship">
+		<description>Battleship</description>
+		<year>1983</year>
+		<publisher>Dreamcards</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1111,10 +1121,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>dreamcards_hangman_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="hangman">
+		<description>Hangman</description>
+		<year>1983</year>
+		<publisher>Dreamcards</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1123,10 +1133,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>dtest_ss80</description>
+	<software name="testdisk">
+		<description>Test Disk</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1135,10 +1145,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>dungeon_of_khan_ds40</description>
+	<software name="dungkhan">
+		<description>Dungeon Masters 1 - The Dungeons of Khan</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>M.G. Watts</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1147,6 +1157,7 @@
 		</part>
 	</software>
 
+<!--
 	<software name="">
 		<description>edasm_v42_ds40</description>
 		<year>198?</year>
