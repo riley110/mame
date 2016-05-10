@@ -177,6 +177,32 @@
 		</part>
 	</software>
 
+<!-- Demos -->
+
+	<software name="nyancat">
+		<description>Nyan Cat</description>
+		<year>2016</year>
+		<publisher>OliverP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="106863">
+				<rom name="nyancatmo6.k7" size="106863" crc="96deb4f8" sha1="62819d5a44552f54a2085ed6a19c453a7eb67340" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nyancata" cloneof="nyancat">
+		<description>Nyan Cat (WAV Format)</description>
+		<year>2016</year>
+		<publisher>OliverP</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<dataarea name="cass" size="33969482">
+				<rom name="nyancatmo6.wav" size="33969482" crc="1b7e96c7" sha1="d4b98123b7b140e2f2178d33f5b90329fe54e127" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 <!-- Games -->
 
 	<software name="aigleor">

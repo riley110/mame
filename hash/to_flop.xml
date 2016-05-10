@@ -6402,6 +6402,19 @@
 		</part>
 	</software>
 
+	<!-- this image released in 2016, unsure of any differences -->
+	<software name="nyancata" cloneof="nyancat">
+		<description>Nyan Cat (SAP Format, Newer?)</description>
+		<year>2011</year>
+		<publisher>OliverP</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="335426">
+				<rom name="nyancatto8.sap" size="335426" crc="2345c8bf" sha1="44b8e92d455a14b9e0a56376767717f08931b567" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="olbb">
 		<description>Oh la belle bleue!</description>
 		<year>2011</year>
