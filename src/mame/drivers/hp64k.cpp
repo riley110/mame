@@ -159,7 +159,6 @@
 #include "machine/com8116.h"
 #include "machine/i8251.h"
 #include "bus/rs232/rs232.h"
-#include "softlist.h"
 
 #define BIT_MASK(n) (1U << (n))
 
@@ -1404,7 +1403,6 @@ static MACHINE_CONFIG_START(hp64k , hp64k_state)
 				MCFG_RS232_DCD_HANDLER(WRITELINE(hp64k_state , hp64k_rs232_dcd_w))
 				MCFG_RS232_CTS_HANDLER(WRITELINE(hp64k_state , hp64k_rs232_cts_w))
 
-				MCFG_SOFTWARE_LIST_ADD("flop_list", "hp64k")
 MACHINE_CONFIG_END
 
 ROM_START(hp64k)

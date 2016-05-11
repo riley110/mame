@@ -1,41 +1,39 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+
 <softwarelist name="nimbus" description="RM Nimbus disk images">
 
-	<!-- Based on MS-DOS 3.10 Release 3.10C -->
 	<software name="welcome">
-		<description>Welcome (v3.00C)</description>
-		<year>1989?</year> <!-- Parallel Printer Driver is copyright 1990 -->
+		<description>Welcome V3.00C</description>
+		<year>19??</year>
 		<publisher>Research Machines?</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
+			<dataarea name="flop" size="348848">
 				<rom name="welcome 3.00c.dsk" size="737280" crc="87bfe2a3" sha1="99574d1fb0248b2ce5bf67ff738909dbe7a048f8" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<!-- Based on MS-DOS 3.10 Release 3.10C -->
 	<software name="welcomerd" cloneof="welcome">
-		<description>Welcome (v3.00C, with 511K RAM Disk v1.0G)</description>
-		<year>1989?</year>
+		<description>Welcome V3.00C + RAM Disk</description>
+		<year>19??</year>
 		<publisher>Research Machines?</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
+			<dataarea name="flop" size="348848">
 				<rom name="welcome 3.00c ram disk version.dsk" size="737280" crc="12e1d204" sha1="f4eb911dd2a3e659048355b6cda6bfc672d82700" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
-	<!-- Based on MS-DOS 3.10 Release 3.02A -->
 	<software name="welcome2" cloneof="welcome">
-		<description>Welcome (v2.00B)</description>
-		<year>198?</year>
+		<description>Welcome V2.00B</description>
+		<year>19??</year>
 		<publisher>Research Machines?</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
+			<dataarea name="flop" size="348848">
 				<rom name="ms-dos3.10.dsk" size="737280" crc="f15a6cea" sha1="bfdd6b451f6bd99fef762fd9cb92e60078a71480" offset="0" />
 			</dataarea>
 		</part>

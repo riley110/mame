@@ -1,11 +1,15 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+
 <!--
+
 Most of these can be run in BASIC by using LOAD"*"
 If the program doesn't automatically start, start it with RUN
--->
-<softwarelist name="tvc_flop" description="Videoton TVC floppies">
 
+-->
+
+
+<softwarelist name="tvc_flop" description="Videoton TVC floppies">
 	<software name="21">
 		<description>21</description>
 		<year>198?</year>
@@ -10063,8 +10067,9 @@ If the program doesn't automatically start, start it with RUN
 		</part>
 	</software>
 
-<!-- Sort these out! -->
 
+
+<!--
     <software name="blankdsk">
         <description>Blank Disk (TV-DOS v1.2)</description>
         <year>198?</year>
@@ -10076,6 +10081,7 @@ If the program doesn't automatically start, start it with RUN
             </dataarea>
         </part>
     </software>
+
 
     <software name="astrobla" cloneof="astrobl">
         <description>Astro Blaster (Alt)</description>
@@ -10569,4 +10575,5 @@ If the program doesn't automatically start, start it with RUN
         </part>
     </software>
 
+-->
 </softwarelist>

@@ -21,7 +21,6 @@
 #include "formats/vdk_dsk.h"
 #include "formats/dmk_dsk.h"
 #include "imagedev/flopdrv.h"
-#include "softlist.h"
 
 
 //**************************************************************************
@@ -167,11 +166,9 @@ static MACHINE_CONFIG_START( dragon_base, dragon_state )
 
 	MCFG_SAM6883_ADD(SAM_TAG, XTAL_4_433619MHz, MAINCPU_TAG, AS_PROGRAM)
 	MCFG_SAM6883_RES_CALLBACK(READ8(dragon_state, sam_read))
-
 	MCFG_CASSETTE_ADD("cassette")
 	MCFG_CASSETTE_FORMATS(coco_cassette_formats)
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_MUTED)
-	MCFG_CASSETTE_INTERFACE("coco_cass")
 
 	MCFG_DEVICE_ADD(PRINTER_TAG, PRINTER, 0)
 
@@ -185,11 +182,6 @@ static MACHINE_CONFIG_START( dragon_base, dragon_state )
 
 	// sound hardware
 	MCFG_FRAGMENT_ADD( coco_sound )
-
-	// software lists
-	MCFG_SOFTWARE_LIST_ADD("cart_list","dragon_cart")
-	MCFG_SOFTWARE_LIST_ADD("cass_list","dragon_cass")
-	MCFG_SOFTWARE_LIST_ADD("flop_list","dragon_flop")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( dragon32, dragon_base )
@@ -235,11 +227,6 @@ static MACHINE_CONFIG_DERIVED_CLASS( d64plus, dragon_base, dragon64_state )
 	// acia
 	MCFG_DEVICE_ADD("acia", MOS6551, 0)
 	MCFG_MOS6551_XTAL(XTAL_1_8432MHz)
-
-	//software lists
-	MCFG_DEVICE_REMOVE("flop_list")
-	MCFG_SOFTWARE_LIST_ADD("flop_list","dgnplus_flop")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("drgn_flop_list","dragon_flop")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED_CLASS( dgnalpha, dragon_base, dragon_alpha_state )
@@ -278,12 +265,6 @@ static MACHINE_CONFIG_DERIVED_CLASS( dgnalpha, dragon_base, dragon_alpha_state )
 	MCFG_PIA_WRITEPA_HANDLER(WRITE8(dragon_alpha_state, pia2_pa_w))
 	MCFG_PIA_IRQA_HANDLER(WRITELINE(dragon_alpha_state, pia2_firq_a))
 	MCFG_PIA_IRQB_HANDLER(WRITELINE(dragon_alpha_state, pia2_firq_b))
-
-	//software lists
-	MCFG_DEVICE_REMOVE("flop_list")
-	MCFG_SOFTWARE_LIST_ADD("flop_list","dgnalpha_flop")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("drgn_flop_list","dragon_flop")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("dpls_flop_list","dgnplus_flop")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( tanodr64, dragon64 )
@@ -331,7 +312,7 @@ ROM_START(d64plus)
 	ROM_LOAD("d64_2.rom",    0x8000,  0x4000, CRC(17893a42) SHA1(e3c8986bb1d44269c4587b04f1ca27a70b0aaa2e))
 ROM_END
 
-ROM_START(drgntano)
+ROM_START(tanodr64)
 	ROM_REGION(0x10000,"maincpu",0)
 	ROM_LOAD("d64_1.rom",    0x0000,  0x4000, CRC(60a4634c) SHA1(f119506eaa3b4b70b9aa0dd83761e8cbe043d042))
 	ROM_LOAD("d64_2.rom",    0x8000,  0x4000, CRC(17893a42) SHA1(e3c8986bb1d44269c4587b04f1ca27a70b0aaa2e))
@@ -343,15 +324,11 @@ ROM_START(dgnalpha)
 	ROM_LOAD("alpha_ba.rom",    0x8000,  0x4000, CRC(84f68bf9) SHA1(1983b4fb398e3dd9668d424c666c5a0b3f1e2b69))
 ROM_END
 
-//Dragon Data Ltd. (UK)
-COMP(  1982,    dragon32,   coco,   0,      dragon32,  dragon32, driver_device,  0,      "Dragon Data Ltd.",                           "Dragon 32", 0)
-COMP(  1983,    dragon64,   coco,   0,      dragon64,  dragon32, driver_device,  0,      "Dragon Data Ltd.",                           "Dragon 64", 0)
-COMP(  1983,    d64plus,    coco,   0,      d64plus,   dragon32, driver_device,  0,      "Dragon Data Ltd./Compusense",                "Dragon 64 (with Dragon Plus addon board)", 0)
-COMP(  1984,    dgnalpha,   coco,   0,      dgnalpha,  dragon32, driver_device,  0,      "Dragon Data Ltd.",                           "Dragon Professional/Project Alpha (Prototype)", 0)
 
-//Eurohard S.A. (Spain)
-COMP(  1983,    dragon200,  coco,   0,      dragon64,  dragon32, driver_device,  0,      "Eurohard S.A.",                              "Dragon 200 (Spain)", 0)
-COMP(  1983,    dragon200e, coco,   0,      dragon64,  dragon32, driver_device,  0,      "Eurohard S.A.",                              "Dragon 200-E (Spain)", 0)
-
-//TANO Corporation (USA)
-COMP(  1983,    drgntano,   coco,   0,      tanodr64,  dragon32, driver_device,  0,      "TANO Corporation (Dragon Data Ltd. license)","Dragon by TANO (USA, NTSC)", 0)
+COMP(  1982,    dragon32,   coco,   0,      dragon32,  dragon32, driver_device,  0,      "Dragon Data Ltd",            "Dragon 32", 0)
+COMP(  1983,    dragon64,   coco,   0,      dragon64,  dragon32, driver_device,  0,      "Dragon Data Ltd",            "Dragon 64", 0)
+COMP(  1983,    dragon200,  coco,   0,      dragon64,  dragon32, driver_device,  0,      "Dragon Data Ltd",            "Dragon 200", 0)
+COMP(  1983,    dragon200e, coco,   0,      dragon64,  dragon32, driver_device,  0,      "Dragon Data Ltd",            "Dragon 200-E", 0)
+COMP(  1983,    d64plus,    coco,   0,      d64plus,   dragon32, driver_device,  0,      "Dragon Data Ltd",            "Dragon 64 Plus", 0)
+COMP(  1983,    tanodr64,   coco,   0,      tanodr64,  dragon32, driver_device,  0,      "Dragon Data Ltd / Tano Ltd", "Tano Dragon 64 (NTSC)", 0)
+COMP(  1984,    dgnalpha,   coco,   0,      dgnalpha,  dragon32, driver_device,  0,      "Dragon Data Ltd",            "Dragon Alpha Prototype", 0)

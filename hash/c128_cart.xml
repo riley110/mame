@@ -1,15 +1,16 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<softwarelist name="c128_cart" description="Commodore 128 cartridges">
 <!--
+
 Missing dumps:
 
 - Dead Test (Rev 781220)
 - QuickSilver 128
 - Partner 128 (Timeworks, 1985)
 - Super Snapshot
--->
-<softwarelist name="c128_cart" description="Commodore 128 cartridges">
 
+-->
 	<software name="c128diag">
 		<description>C-128 Diagnostic (v1.1)</description>
 		<year>1987</year>
@@ -175,7 +176,7 @@ Missing dumps:
 			<feature name="exrom" value="1" />
 
 			<dataarea name="romh" size="0x2000">
-				<rom name="vizastar 128" size="0x2000" offset="0" status="nodump" />
+				<rom name="vizastar 128" size="0x2000" status="nodump" offset="0" />
 			</dataarea>
 		</part>
 

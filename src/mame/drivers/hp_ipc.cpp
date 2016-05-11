@@ -263,7 +263,6 @@ Note external interrupt lines NBIR0 to NBIR3 can be asserted by an interface con
 
 #include "emu.h"
 #include "cpu/m68000/m68000.h"
-#include "softlist.h"
 
 
 class hp_ipc_state : public driver_device
@@ -347,8 +346,6 @@ static MACHINE_CONFIG_START(hp_ipc, hp_ipc_state)
 	/* basic machine hardware */
 	MCFG_CPU_ADD("maincpu", M68000, 15920000 / 2)
 	MCFG_CPU_PROGRAM_MAP(hp_ipc_mem)
-
-	MCFG_SOFTWARE_LIST_ADD("flop_list", "hp_ipc")
 MACHINE_CONFIG_END
 
 

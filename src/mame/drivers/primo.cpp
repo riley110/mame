@@ -115,7 +115,6 @@ Interrupts:
 #include "imagedev/snapquik.h"
 #include "formats/primoptp.h"
 #include "bus/cbmiec/cbmiec.h"
-#include "softlist.h"
 
 static ADDRESS_MAP_START( primoa_port, AS_IO, 8, primo_state )
 	ADDRESS_MAP_GLOBAL_MASK(0xff)
@@ -273,7 +272,6 @@ static MACHINE_CONFIG_START( primoa32, primo_state )
 	MCFG_CASSETTE_FORMATS(primo_ptp_format)
 	MCFG_CASSETTE_CREATE_OPTS(&primo_cassette_options)
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_STOPPED | CASSETTE_SPEAKER_ENABLED)
-	MCFG_CASSETTE_INTERFACE("primo_cass")
 
 	/* floppy from serial bus */
 	MCFG_CBM_IEC_ADD(nullptr)
@@ -283,10 +281,6 @@ static MACHINE_CONFIG_START( primoa32, primo_state )
 	MCFG_GENERIC_EXTENSIONS("bin,rom")
 	MCFG_GENERIC_CARTSLOT_ADD("cartslot2", generic_plain_slot, nullptr)
 	MCFG_GENERIC_EXTENSIONS("bin,rom")
-	
-	/* software lists */
-	MCFG_SOFTWARE_LIST_ADD("cass_list","primo_cass")
-	MCFG_SOFTWARE_LIST_ADD("flop_list","primo_flop")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( primoa48, primoa32 )

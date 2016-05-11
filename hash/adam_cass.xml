@@ -1,13 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<!--
-Thanks to SacNews.net for their very comprehensive software database!
+<softwarelist name="adam_cass" description="Coleco Adam Digital Data Packs">
 
-TODO:
-Add rest of images outside of TOSEC/SacNews databases
-Proper testing for correct info? (current info is just copy-pasted from filenames)
--->
-<softwarelist name="adam_cass" description="Coleco ADAM Digital Data Packs">
 
 	<software name="2010adv">
 		<description>2010 - The Text Adventure Game</description>
@@ -447,18 +441,6 @@ Proper testing for correct info? (current info is just copy-pasted from filename
 			</dataarea>
 		</part>
 	</software>
-	
-	<software name="fftriviaa" cloneof="fftrivia">
-		<description>Flash Facts - Trivia (Alt)</description>
-		<year>1984</year>
-		<publisher>Coleco</publisher>
-
-	    <part name="cass1" interface="adam_cass">
-	        <dataarea name="cass" size="262144">
-	            <rom name="flash facts - trivia (1984) (coleco) [a1].ddp" size="262144" crc="f3eede56" sha1="960ee7a48be17d9758978abc2610a3281870425e" offset="0" />
-	        </dataarea>
-	    </part>
-	</software>
 
 	<software name="ffvocab">
 		<description>Flash Facts - Vocabulator</description>
@@ -470,18 +452,6 @@ Proper testing for correct info? (current info is just copy-pasted from filename
 				<rom name="flash facts - vocabulator (1984)(coleco).ddp" size="262144" crc="3b82819e" sha1="84b3337cbb4f63f8ac13a8acb716f224140391d3" offset="0" />
 			</dataarea>
 		</part>
-	</software>
-	
-	<software name="ffvocaba" cloneof="ffvocab">
-		<description>Flash Facts - Vocabulator (Alt)</description>
-		<year>1984</year>
-		<publisher>Coleco</publisher>
-
-	    <part name="cass1" interface="adam_cass">
-	        <dataarea name="cass" size="262144">
-	            <rom name="flash facts - vocabulator (1984) (coleco).ddp" size="262144" crc="8a3aa11d" sha1="37f6a4895b7ab02e14d2a9825fe03fda64605a22" offset="0" />
-	        </dataarea>
-	    </part>
 	</software>
 
 	<software name="godosd">
@@ -687,18 +657,6 @@ Proper testing for correct info? (current info is just copy-pasted from filename
 			</dataarea>
 		</part>
 	</software>
-	
-	<software name="smartfila" cloneof="smartfil">
-		<description>SmartFILER (Alt)</description>
-		<year>1984</year>
-		<publisher>Coleco</publisher>
-
-	    <part name="cass1" interface="adam_cass">
-	        <dataarea name="cass" size="262144">
-	            <rom name="smartfiler (1984) (coleco) [a1].ddp" size="262144" crc="8c42d4f7" sha1="ab00c9a084f522905ca70b4706c830d3a8f98497" offset="0" />
-	        </dataarea>
-	    </part>
-	</software>
 
 	<software name="smartlet">
 		<description>Smart Letters &amp; Forms</description>
@@ -710,18 +668,6 @@ Proper testing for correct info? (current info is just copy-pasted from filename
 				<rom name="smart letters and forms (1984)(coleco).ddp" size="262144" crc="8271b8d4" sha1="4b982126a4f27c6350f91b680c1d48d0c2f627f8" offset="0" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="smartleta" cloneof="smartlet">
-		<description>SmartLetters &amp; Forms (Alt)</description>
-		<year>1984</year>
-		<publisher>Coleco</publisher>
-		
-	    <part name="cass1" interface="adam_cass">
-	        <dataarea name="cass" size="262144">
-	            <rom name="smartletters &amp; forms (1984) (coleco).ddp" size="262144" crc="ad4f5532" sha1="19ff45e8975b77a80ea5da09bbc1d8e564903ad8" offset="0" />
-	        </dataarea>
-	    </part>
 	</software>
 
 	<software name="smarttyp">
@@ -774,26 +720,14 @@ Proper testing for correct info? (current info is just copy-pasted from filename
 
 	<software name="smartlog">
 		<description>SmartLOGO</description>
-		<year>1984</year>
-		<publisher>Coleco</publisher>
+		<year>198?</year>
+		<publisher>Logo Computer Systems</publisher>
 
 		<part name="cass1" interface="adam_cass">
 			<dataarea name="cass" size="262144">
 				<rom name="smartlogo (1984)(logo computer systems).ddp" size="262144" crc="15377f7e" sha1="6cdd5489c560afa0024a4489e23332ea70e21f05" offset="0" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="smartloga" cloneof="smartlog">
-		<description>SmartLOGO (Alt)</description>
-		<year>1984</year>
-		<publisher>Coleco</publisher>
-
-	    <part name="cass1" interface="adam_cass">
-	        <dataarea name="cass" size="262144">
-	            <rom name="smartlogo (1984) (coleco).ddp" size="262144" crc="5628db95" sha1="d04a847f1e3706b7fb4bb4ab6ed608ebbca4f00f" offset="0" />
-	        </dataarea>
-	    </part>
 	</software>
 
 	<software name="smartspl">
@@ -916,6 +850,9 @@ Proper testing for correct info? (current info is just copy-pasted from filename
 		</part>
 	</software>
 
+
+
+
 <!-- Are these covertapes? -->
 
 	<software name="adamani1">
@@ -978,6 +915,8 @@ Proper testing for correct info? (current info is just copy-pasted from filename
 		</part>
 	</software>
 
+
+
 	<!-- Related to NIAD and SmartBASIC: investigate! -->
 	<software name="basicpgm">
 		<description>basicpgm</description>
@@ -1028,6 +967,7 @@ Proper testing for correct info? (current info is just copy-pasted from filename
 		</part>
 	</software>
 
+<!--
     <software name="macadam">
         <description>MacADAM (Fra)</description>
         <year>1984</year>
@@ -1051,5 +991,7 @@ Proper testing for correct info? (current info is just copy-pasted from filename
             </dataarea>
         </part>
     </software>
+-->
+
 
 </softwarelist>

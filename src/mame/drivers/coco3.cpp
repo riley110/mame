@@ -271,7 +271,6 @@ static MACHINE_CONFIG_START( coco3, coco3_state )
 	MCFG_CASSETTE_ADD("cassette")
 	MCFG_CASSETTE_FORMATS(coco_cassette_formats)
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_MUTED)
-	MCFG_CASSETTE_INTERFACE("coco_cass")
 
 	MCFG_RS232_PORT_ADD(RS232_TAG, default_rs232_devices, "printer")
 	MCFG_RS232_DCD_HANDLER(DEVWRITELINE(PIA1_TAG, pia6821_device, ca1_w))
@@ -323,13 +322,9 @@ static MACHINE_CONFIG_START( coco3, coco3_state )
 	MCFG_RAM_EXTRA_OPTIONS("128K,2M,8M")
 
 	// software lists
-	MCFG_SOFTWARE_LIST_ADD("cart_list","coco3_cart")
-	MCFG_SOFTWARE_LIST_ADD("cass_list","coco3_cass")
-	MCFG_SOFTWARE_LIST_ADD("flop_list","coco3_flop")
+	MCFG_SOFTWARE_LIST_ADD("cart_list","coco_cart")
 
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("coco_cart_list","coco_cart")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("coco_cass_list","coco_cass")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("coco_flop_list","coco_flop")
+	MCFG_SOFTWARE_LIST_ADD("flop_list","coco_flop")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( coco3p, coco3 )

@@ -60,7 +60,6 @@ Z - more scan lines per row (cursor is bigger)
 #include "machine/wd_fdc.h"
 #include "sound/wave.h"
 #include "sound/beep.h"
-#include "softlist.h"
 #include "tavernie.lh"
 
 #define KEYBOARD_TAG "keyboard"
@@ -374,8 +373,6 @@ static MACHINE_CONFIG_DERIVED( ivg09, cpu09 )
 	MCFG_FD1795_ADD("fdc", XTAL_8MHz / 8)
 	MCFG_FLOPPY_DRIVE_ADD("fdc:0", ifd09_floppies, "525dd", floppy_image_device::default_floppy_formats)
 	MCFG_FLOPPY_DRIVE_SOUND(true)
-
-	MCFG_SOFTWARE_LIST_ADD("flop_list","tavernie")
 MACHINE_CONFIG_END
 
 /* ROM definition */

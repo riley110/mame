@@ -23,7 +23,6 @@
 #include "machine/wd_fdc.h"
 #include "imagedev/cassette.h"
 #include "bus/isbx/isbx.h"
-#include "softlist.h"
 
 
 //**************************************************************************
@@ -591,9 +590,6 @@ static MACHINE_CONFIG_START( rc759, rc759_state )
 	// floppy drives
 	MCFG_FLOPPY_DRIVE_ADD("fdc:0", rc759_floppies, "hd", floppy_image_device::default_floppy_formats)
 	MCFG_FLOPPY_DRIVE_ADD("fdc:1", rc759_floppies, "hd", floppy_image_device::default_floppy_formats)
-
-	// software lists
-	MCFG_SOFTWARE_LIST_ADD("flop_list", "rc759")
 MACHINE_CONFIG_END
 
 

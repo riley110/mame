@@ -17,7 +17,6 @@ BUGS:
 #include "emu.h"
 #include "formats/trd_dsk.h"
 #include "machine/beta.h"
-#include "softlist.h"
 
 
 /***************************************************************************
@@ -192,8 +191,6 @@ static MACHINE_CONFIG_FRAGMENT( beta_disk )
 	MCFG_FLOPPY_DRIVE_SOUND(true)
 	MCFG_FLOPPY_DRIVE_ADD("wd179x:3", beta_disk_floppies, "drive3", beta_disk_device::floppy_formats)
 	MCFG_FLOPPY_DRIVE_SOUND(true)
-
-    MCFG_SOFTWARE_LIST_ADD("beta_flop_list", "specbeta_flop")
 MACHINE_CONFIG_END
 
 ROM_START( beta_disk )

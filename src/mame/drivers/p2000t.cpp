@@ -29,7 +29,6 @@ Philips P2000 1 Memory map
 ************************************************************************/
 
 #include "includes/p2000t.h"
-#include "softlist.h"
 
 
 /* port i/o functions */
@@ -239,8 +238,6 @@ static MACHINE_CONFIG_START( p2000t, p2000t_state )
 	MCFG_SPEAKER_STANDARD_MONO("mono")
 	MCFG_SOUND_ADD("speaker", SPEAKER_SOUND, 0)
 	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.25)
-	
-	MCFG_SOFTWARE_LIST_ADD("cass_list","p2k_cass")
 MACHINE_CONFIG_END
 
 
@@ -271,8 +268,6 @@ static MACHINE_CONFIG_START( p2000m, p2000t_state )
 	MCFG_SPEAKER_STANDARD_MONO("mono")
 	MCFG_SOUND_ADD("speaker", SPEAKER_SOUND, 0)
 	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.25)
-	
-	MCFG_SOFTWARE_LIST_ADD("cass_list","p2k_cass")
 MACHINE_CONFIG_END
 
 

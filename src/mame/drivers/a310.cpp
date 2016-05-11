@@ -70,7 +70,6 @@
 #include "formats/applix_dsk.h"
 #include "softlist.h"
 
-
 class a310_state : public archimedes_state
 {
 public:
@@ -384,6 +383,8 @@ static MACHINE_CONFIG_START( a310, a310_state )
 	MCFG_FLOPPY_DRIVE_ADD("fdc:0", a310_floppies, "35dd", a310_state::floppy_formats)
 	MCFG_FLOPPY_DRIVE_ADD("fdc:1", a310_floppies, "35dd", a310_state::floppy_formats)
 
+	MCFG_SOFTWARE_LIST_ADD("flop_list", "archimedes")
+
 	MCFG_SPEAKER_STANDARD_MONO("mono")
 	MCFG_SOUND_ADD("dac0", DAC, 0)
 	MCFG_SOUND_ROUTE(0, "mono", 0.10)
@@ -408,10 +409,6 @@ static MACHINE_CONFIG_START( a310, a310_state )
 
 	MCFG_SOUND_ADD("dac7", DAC, 0)
 	MCFG_SOUND_ROUTE(0, "mono", 0.10)
-		
-	/* Software lists */
-	MCFG_SOFTWARE_LIST_ADD("flop_list", "archimedes")
-
 MACHINE_CONFIG_END
 
 ROM_START(a310)

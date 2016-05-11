@@ -22,7 +22,6 @@
 #include "formats/pc_dsk.h"
 #include "bus/scsi/omti5100.h"
 #include "bus/rs232/rs232.h"
-#include "softlist.h"
 
 //**************************************************************************
 //  TYPE DEFINITIONS
@@ -557,10 +556,6 @@ static MACHINE_CONFIG_START( pcd, pcd_state )
 	MCFG_SCSI_OUTPUT_LATCH_ADD("scsi_data_out", "scsi")
 	MCFG_DEVICE_ADD("scsi_data_in", INPUT_BUFFER, 0)
 	MCFG_SCSIDEV_ADD("scsi:1", "harddisk", OMTI5100, SCSI_ID_0)
-
-	// software lists
-	MCFG_SOFTWARE_LIST_ADD("flop_list", "pcd_flop")
-	MCFG_SOFTWARE_LIST_ADD("hdd_list", "pcd_hdd")
 MACHINE_CONFIG_END
 
 MACHINE_CONFIG_DERIVED(pcx, pcd)
@@ -575,10 +570,6 @@ MACHINE_CONFIG_DERIVED(pcx, pcd)
 
 	MCFG_DEVICE_MODIFY("usart2")
 	MCFG_MC2661_TXD_HANDLER(NOOP)
-
-	MCFG_DEVICE_REMOVE("flop_list")
-	MCFG_DEVICE_REMOVE("hdd_list")
-	MCFG_SOFTWARE_LIST_ADD("flop_list", "pcx_flop")
 MACHINE_CONFIG_END
 
 //**************************************************************************

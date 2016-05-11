@@ -1345,5 +1345,3 @@ void galaxian_state::jumpbug_extend_sprite_info(const UINT8 *base, UINT8 *sx, UI
 						((~m_gfxbank[4] & 0x01) << 6);
 	}
 }
-
-#include "galaxian_hb.cpp"

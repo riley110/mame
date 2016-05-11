@@ -3768,5 +3768,3 @@ GAME( 1989, shdancbl,    shdancer,  shdancbl,    shdancbl, segas1x_bootleg_state
 GAME( 1989, shdancbla,   shdancer,  shdancbla,   shdancbl, segas1x_bootleg_state,  shdancbl,   ROT0,   "bootleg", "Shadow Dancer (bootleg, set 2)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_IMPERFECT_SOUND | MACHINE_NOT_WORKING )
 
 GAME( 1990, ddcrewbl,    ddcrew,    ddcrewbl,    astormbl, segas1x_bootleg_state,  ddcrewbl,   ROT0,   "bootleg", "D. D. Crew (bootleg)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_NO_SOUND )
-
-#include "system16_hb.cpp"

@@ -1,9 +1,10 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+
 <softwarelist name="mbc55x" description="Sanyo MBC-550 and MBC-555 disk images">
 
-	<software name="msdos">
-		<description>MS-DOS (v2.11)</description>
+	<software name="msdos211">
+		<description>MS-DOS v2.11</description>
 		<year>198?</year>
 		<publisher>Sanyo / Microsoft</publisher>
 
@@ -14,8 +15,8 @@
 		</part>
 	</software>
 
-	<software name="msdosa" cloneof="msdos">
-		<description>MS-DOS (v2.11, Alt?)</description>
+	<software name="msdos211a" cloneof="msdos211">
+		<description>MS-DOS v2.11 (Alt?)</description>
 		<year>198?</year>
 		<publisher>Sanyo / Microsoft</publisher>
 
@@ -26,20 +27,20 @@
 		</part>
 	</software>
 
-	<software name="msdos125" cloneof="msdos">
-		<description>MS-DOS (v1.25)</description>
+	<software name="msdos125">
+		<description>MS-DOS v1.25</description>
 		<year>198?</year>
 		<publisher>Sanyo / Microsoft</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="163840">
-				<rom name="msdos125.img" size="163840" crc="1ea744cc" sha1="dd8b41bb67d0b888cd70ded4b61701708caa5dac" offset="0" />
+				<rom name="msdos125" size="163840" crc="1ea744cc" sha1="dd8b41bb67d0b888cd70ded4b61701708caa5dac" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="calcstar">
-		<description>CalcStar</description>
+		<description>Calcstar</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -51,7 +52,7 @@
 	</software>
 
 	<software name="datastar">
-		<description>DataStar</description>
+		<description>Datastar</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -99,7 +100,7 @@
 	</software>
 
 	<software name="spelstar">
-		<description>MailMerge &amp; SpellStar</description>
+		<description>Mailmerge Spelstar</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -111,7 +112,7 @@
 	</software>
 
 	<software name="rprtstar">
-		<description>ReportStar</description>
+		<description>Reportstar</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -135,7 +136,7 @@
 	</software>
 
 	<software name="wordstar">
-		<description>WordStar</description>
+		<description>Wordstar</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -145,6 +146,8 @@
 			</dataarea>
 		</part>
 	</software>
+
+
 
 	<software name="basgames">
 		<description>Basic Games</description>
@@ -185,7 +188,7 @@
 		</part>
 	</software>
 
-	<!-- contains Zork 1, 2 and 3 -->
+<!-- contains Zork 1, 2 and 3 -->
 	<software name="zork">
 		<description>Zork Compilation</description>
 		<year>198?</year>
@@ -197,5 +200,4 @@
 			</dataarea>
 		</part>
 	</software>
-
 </softwarelist>

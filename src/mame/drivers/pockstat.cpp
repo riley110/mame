@@ -48,8 +48,6 @@ If you do nothing for about 20 secs, it turns itself off (screen goes white).
 #include "bus/generic/slot.h"
 #include "bus/generic/carts.h"
 
-#include "softlist.h"
-
 #define MAX_PS_TIMERS   3
 
 struct ps_ftlb_regs_t
@@ -1005,8 +1003,6 @@ static MACHINE_CONFIG_START( pockstat, pockstat_state )
 	MCFG_GENERIC_WIDTH(GENERIC_ROM32_WIDTH)
 	MCFG_GENERIC_ENDIAN(ENDIANNESS_LITTLE)
 	MCFG_GENERIC_LOAD(pockstat_state, pockstat_flash)
-
-	MCFG_SOFTWARE_LIST_ADD("cart_list","pockstat")
 MACHINE_CONFIG_END
 
 /* ROM definition */
