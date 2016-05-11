@@ -2,13 +2,15 @@
 // copyright-holders:Robbbert
 /************************************************************************************************************
 
-Telcon Zorba
+Telcon Industries/Modular Micros/Gemini Electronics Zorba
+http://www.zorba.z80.de
 
 2013-08-25 Skeleton
+2015-02-20 Boots from floppy, is now usable.
 
 This was one of the last CP/M-based systems, already out of date when it was released.
 Because it doesn't use the standard Z80 peripherals, it uses a homebrew interrupt controller to make use
- of the Z80's IM2.
+of the Z80's IM2.
 
 The keyboard is an intelligent serial device like the Kaypro's keyboard. They even have the same plug,
 and might be swappable. Need a schematic.
@@ -16,6 +18,18 @@ and might be swappable. Need a schematic.
 Instead of using a daisy chain, the IM2 vectors are calculated by a prom (u77). Unfortunately, the prom
 contents make no sense at all (mostly FF), so the vectors for IRQ0 and IRQ2 are hard-coded. Other IRQ
 vectors are not used as yet.
+
+Three companies are known to have sold the Zorba over its lifetime: Telcon Industries, Modular Micros 
+(a subsidiary of Modular Computers (ModComp)), and Gemini Electronics. Only the Modular Micros 7" version
+has been dumped. The Telcon and Gemini versions each have distinct startup screens.
+ 
+A notable difference between the Telcon and Modular Micros versions, and the Gemini version, is that the
+first two have a green monochrome screen on the left and floppy drives on the right, while the latter 
+one has either a green or an amber monochrome screen on the right and floppy drives on the left.
+
+Two versions of the Zorba were sold by Modular Micros:
+Zorba 7: 7" CRT, 2 410K floppies, 22 lbs, $1595
+Zorba 2000: 9" CRT, 2 820K floppies, 10M HD optional, 25 lbs, ~$2000
 
 Status:
 - Boots up, and the keyboard works
@@ -28,6 +42,7 @@ ToDo:
 - Connect the PIT to the UARTs
 - Replace the ascii keyboard with the real one, if possible
 - Probably lots of other things
+- Emulate the Co-Power-88 expansion (allows PC-DOS, CP/M-86, etc. to be used)
 
 
 *************************************************************************************************************/
@@ -44,6 +59,7 @@ ToDo:
 #include "sound/beep.h"
 #include "machine/keyboard.h"
 #include "machine/wd_fdc.h"
+#include "softlist.h"
 
 
 class zorba_state : public driver_device
@@ -410,6 +426,8 @@ static MACHINE_CONFIG_START( zorba, zorba_state )
 	/* Keyboard */
 	MCFG_DEVICE_ADD("keyboard", GENERIC_KEYBOARD, 0)
 	MCFG_GENERIC_KEYBOARD_CB(WRITE8(zorba_state, kbd_put))
+
+	MCFG_SOFTWARE_LIST_ADD("flop_list", "zorba")
 MACHINE_CONFIG_END
 
 ROM_START( zorba )
@@ -428,4 +446,4 @@ ROM_START( zorba )
 	ROM_LOAD( "74ls288.u77", 0x0040, 0x0020, CRC(946e03b0) SHA1(24240bdd7bdf507a5b51628fb36ad1266fc53a28) ) // suspected bad dump
 ROM_END
 
-COMP( 1982, zorba, 0, 0, zorba, zorba, zorba_state, zorba, "Telcon Industries", "Zorba", MACHINE_NOT_WORKING )
+COMP( 1984, zorba, 0, 0, zorba, zorba, zorba_state, zorba, "Modular Micros", "Zorba 7", MACHINE_NOT_WORKING )
