@@ -106,9 +106,6 @@ static MACHINE_CONFIG_START( apple3, apple3_state )
 	MCFG_FLOPPY_DRIVE_ADD("2", a3_floppies, "525", apple3_state::floppy_formats)
 	MCFG_FLOPPY_DRIVE_ADD("3", a3_floppies, "525", apple3_state::floppy_formats)
 
-	/* softlist for fdc */
-	MCFG_SOFTWARE_LIST_ADD("flop525_list","apple3")
-
 	/* acia */
 	MCFG_DEVICE_ADD("acia", MOS6551, 0)
 	MCFG_MOS6551_XTAL(XTAL_1_8432MHz) // HACK: The schematic shows an external clock generator but using a XTAL is faster to emulate.
@@ -152,6 +149,10 @@ static MACHINE_CONFIG_START( apple3, apple3_state )
 	MCFG_RAM_ADD(RAM_TAG)
 	MCFG_RAM_DEFAULT_SIZE("256K")
 	MCFG_RAM_EXTRA_OPTIONS("128K, 512K")
+
+	/* software lists */
+	MCFG_SOFTWARE_LIST_ADD("flop_list", "apple3_flop")
+	MCFG_SOFTWARE_LIST_ADD("hd_list", "apple3_hd") // Doesn't actually work, but hook up for validation
 MACHINE_CONFIG_END
 
 
