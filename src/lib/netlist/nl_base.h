@@ -156,6 +156,7 @@
 #define NLBASE_H_
 
 #include <vector>
+#include <memory>
 
 #include "nl_lists.h"
 #include "nl_time.h"
@@ -168,14 +169,12 @@
 // Type definitions
 // ----------------------------------------------------------------------------------------
 
-//typedef UINT8 netlist_sig_t;
-
 /*
  *  unsigned int would be a 20% speed increase over UINT8 for pong.
  *  For breakout it causes a slight decrease.
  *
  */
-typedef unsigned int netlist_sig_t;
+using netlist_sig_t = std::uint32_t;
 
 //============================================================
 //  MACROS / netlist devices
@@ -185,6 +184,7 @@ typedef unsigned int netlist_sig_t;
 #define NETLIB_NAMESPACE_DEVICES_END()  }}
 
 #define NETLIB_NAME(_chip) nld_ ## _chip
+#define NETLIB_SUB(_chip) std::unique_ptr< nld_ ## _chip >
 
 #define NETLIB_NAME_STR_S(_s) # _s
 #define NETLIB_NAME_STR(_chip) NETLIB_NAME_STR_S(nld_ ## _chip)
@@ -207,8 +207,8 @@ typedef unsigned int netlist_sig_t;
 	class _name : public _pclass                                                \
 	{                                                                           \
 	public:                                                                     \
-		_name()                                                                 \
-		: _pclass()    { }                                                      \
+		_name(netlist_t &anetlist, const pstring &name)                         \
+		: _pclass(anetlist, name)    { }                                        \
 	protected:                                                                  \
 		_extra                                                                  \
 		ATTR_HOT void update() override;                                        \
@@ -230,8 +230,8 @@ typedef unsigned int netlist_sig_t;
 	class NETLIB_NAME(_name) : public device_t                                  \
 	{                                                                           \
 	public:                                                                     \
-		NETLIB_NAME(_name) ()                                                   \
-		: device_t()                                                            \
+		NETLIB_NAME(_name) (netlist_t &anetlist, const pstring &name)           \
+		: device_t(anetlist, name)                                              \
 			{ }                                                                 \
 	/*protected:*/                                                              \
 		ATTR_HOT void update() override;                                        \
@@ -250,13 +250,6 @@ typedef unsigned int netlist_sig_t;
 		NETLIB_DEVICE_BASE(NETLIB_NAME(_name), NETLIB_NAME(_pclass),            \
 			ATTR_HOT void update_param() override;                              \
 		, _priv)
-
-#define NETLIB_LOGIC_FAMILY(_fam)                                               \
-virtual logic_family_desc_t *default_logic_family() override                    \
-{                                                                               \
-	return family_ ## _fam;                                                     \
-}
-
 
 //============================================================
 //  Asserts
@@ -315,7 +308,7 @@ namespace netlist
 	// model_map_t
 	// -----------------------------------------------------------------------------
 
-	typedef phashmap_t<pstring, pstring> model_map_t;
+	using model_map_t = phashmap_t<pstring, pstring>;
 
 	// -----------------------------------------------------------------------------
 	// logic_family_t
@@ -326,7 +319,8 @@ namespace netlist
 	public:
 		logic_family_desc_t() : m_is_static(false) {}
 		virtual ~logic_family_desc_t() {}
-		virtual devices::nld_base_d_to_a_proxy *create_d_a_proxy(logic_output_t *proxied) const = 0;
+		virtual devices::nld_base_d_to_a_proxy *create_d_a_proxy(netlist_t &anetlist, const pstring &name,
+				logic_output_t *proxied) const = 0;
 
 		nl_double m_low_thresh_V;
 		nl_double m_high_thresh_V;
@@ -472,7 +466,7 @@ namespace netlist
 		P_PREVENT_COPYING(core_terminal_t)
 	public:
 
-		typedef pvector_t<core_terminal_t *> list_t;
+		using list_t = pvector_t<core_terminal_t *>;
 
 		/* needed here ... */
 
@@ -550,7 +544,7 @@ namespace netlist
 		P_PREVENT_COPYING(terminal_t)
 	public:
 
-		typedef pvector_t<terminal_t *> list_t;
+		using list_t = pvector_t<terminal_t *>;
 
 		ATTR_COLD terminal_t();
 
@@ -698,7 +692,7 @@ namespace netlist
 		P_PREVENT_COPYING(net_t)
 	public:
 
-		typedef pvector_t<net_t *> list_t;
+		using list_t = pvector_t<net_t *>;
 
 		ATTR_COLD net_t(const family_t afamily);
 		virtual ~net_t();
@@ -778,7 +772,7 @@ namespace netlist
 		P_PREVENT_COPYING(logic_net_t)
 	public:
 
-		typedef pvector_t<logic_net_t *> list_t;
+		using list_t = pvector_t<logic_net_t *>;
 
 		ATTR_COLD logic_net_t();
 		virtual ~logic_net_t() { };
@@ -838,7 +832,7 @@ namespace netlist
 		P_PREVENT_COPYING(analog_net_t)
 	public:
 
-		typedef pvector_t<analog_net_t *> list_t;
+		using list_t =  pvector_t<analog_net_t *>;
 
 		ATTR_COLD analog_net_t();
 		virtual ~analog_net_t() { };
@@ -984,9 +978,9 @@ namespace netlist
 	private:
 	};
 
-	typedef param_template_t<nl_double, param_t::DOUBLE> param_double_t;
-	typedef param_template_t<int, param_t::INTEGER> param_int_t;
-	typedef param_template_t<pstring, param_t::STRING> param_str_t;
+	using param_double_t = param_template_t<nl_double, param_t::DOUBLE>;
+	using param_int_t = param_template_t<int, param_t::INTEGER>;
+	using param_str_t = param_template_t<pstring, param_t::STRING>;
 
 	class param_logic_t : public param_int_t
 	{
@@ -1023,13 +1017,12 @@ namespace netlist
 		P_PREVENT_COPYING(core_device_t)
 	public:
 
-		typedef pvector_t<core_device_t *> list_t;
+		using list_t = pvector_t<core_device_t *>;
 
-		ATTR_COLD core_device_t(const family_t afamily);
+		ATTR_COLD core_device_t(const family_t afamily, netlist_t &anetlist, const pstring &name);
 
 		virtual ~core_device_t();
 
-		virtual void init(netlist_t &anetlist, const pstring &name);
 		ATTR_HOT virtual void update_param() {}
 
 		ATTR_HOT  void update_dev()
@@ -1089,18 +1082,14 @@ namespace netlist
 
 		ATTR_HOT virtual void update() { }
 		virtual void start() { }
-		virtual void stop() { }                                                  \
-		virtual logic_family_desc_t *default_logic_family()
-		{
-			return family_TTL;
-		}
+		virtual void stop() { }
 
 	private:
 
 		#if (NL_PMF_TYPE == NL_PMF_TYPE_GNUC_PMF)
 		typedef void (core_device_t::*net_update_delegate)();
 		#elif ((NL_PMF_TYPE == NL_PMF_TYPE_GNUC_PMF_CONV) || (NL_PMF_TYPE == NL_PMF_TYPE_INTERNAL))
-		typedef MEMBER_ABI void (*net_update_delegate)(core_device_t *);
+		using net_update_delegate = MEMBER_ABI void (*)(core_device_t *);
 		#endif
 
 	#if (NL_PMF_TYPE > NL_PMF_TYPE_VIRTUAL)
@@ -1117,27 +1106,39 @@ namespace netlist
 		P_PREVENT_COPYING(device_t)
 	public:
 
-		ATTR_COLD device_t();
-		ATTR_COLD device_t(const family_t afamily);
+		ATTR_COLD device_t(netlist_t &anetlist, const pstring &name);
+		ATTR_COLD device_t(const family_t afamily, netlist_t &anetlist, const pstring &name);
 
 		virtual ~device_t();
 
-		virtual void init(netlist_t &anetlist, const pstring &name) override;
-
 		ATTR_COLD setup_t &setup();
 
-		ATTR_COLD void register_sub(const pstring &name, device_t &dev);
+		template<class C>
+		void register_sub(const pstring &name, std::unique_ptr<C> &dev)
+		{
+			dev.reset(new C(this->netlist(), this->name() + "." + name));
+
+			register_sub_p(*dev);
+		}
+
+#if 1
+		void register_sub(device_t &dev)
+		{
+			register_sub_p(dev);
+		}
+#endif
+
 		ATTR_COLD void register_subalias(const pstring &name, core_terminal_t &term);
 		ATTR_COLD void register_subalias(const pstring &name, const pstring &aliased);
-		ATTR_COLD void register_terminal(const pstring &name, terminal_t &port);
-		ATTR_COLD void register_output(const pstring &name, analog_output_t &out);
-		ATTR_COLD void register_output(const pstring &name, logic_output_t &out);
-		ATTR_COLD void register_input(const pstring &name, analog_input_t &in);
-		ATTR_COLD void register_input(const pstring &name, logic_input_t &in);
+		ATTR_COLD void enregister(const pstring &name, terminal_t &port) { register_p(name, port); }
+		ATTR_COLD void enregister(const pstring &name, analog_output_t &out) { register_p(name, out); };
+		ATTR_COLD void enregister(const pstring &name, logic_output_t &out) { register_p(name, out); };
+		ATTR_COLD void enregister(const pstring &name, analog_input_t &in) { register_p(name, in); };
+		ATTR_COLD void enregister(const pstring &name, logic_input_t &in) { register_p(name, in); };
 
 		ATTR_COLD void connect_late(const pstring &t1, const pstring &t2);
 		ATTR_COLD void connect_late(core_terminal_t &t1, core_terminal_t &t2);
-		ATTR_COLD void connect_direct(core_terminal_t &t1, core_terminal_t &t2);
+		ATTR_COLD void connect_post_start(core_terminal_t &t1, core_terminal_t &t2);
 
 		pvector_t<pstring> m_terminals;
 
@@ -1151,6 +1152,8 @@ namespace netlist
 		ATTR_COLD void register_param(const pstring &sname, C &param, const T initialVal);
 
 	private:
+		ATTR_COLD void register_p(const pstring &name, object_t &obj);
+		ATTR_COLD void register_sub_p(device_t &dev);
 	};
 
 

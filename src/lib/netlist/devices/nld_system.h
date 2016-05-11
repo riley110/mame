@@ -156,8 +156,8 @@ NETLIB_DEVICE_WITH_PARAMS(analog_input,
 class NETLIB_NAME(gnd) : public device_t
 {
 public:
-	NETLIB_NAME(gnd)()
-			: device_t(GND) { }
+	NETLIB_NAME(gnd)(netlist_t &anetlist, const pstring &name)
+			: device_t(GND, anetlist, name) { }
 
 	virtual ~NETLIB_NAME(gnd)() {}
 
@@ -165,7 +165,7 @@ protected:
 
 	void start() override
 	{
-		register_output("Q", m_Q);
+		enregister("Q", m_Q);
 	}
 
 	void reset() override
@@ -189,8 +189,8 @@ private:
 class NETLIB_NAME(dummy_input) : public device_t
 {
 public:
-	NETLIB_NAME(dummy_input)()
-			: device_t(DUMMY) { }
+	NETLIB_NAME(dummy_input)(netlist_t &anetlist, const pstring &name)
+			: device_t(DUMMY, anetlist, name) { }
 
 	virtual ~NETLIB_NAME(dummy_input)() {}
 
@@ -198,7 +198,7 @@ protected:
 
 	void start() override
 	{
-		register_input("I", m_I);
+		enregister("I", m_I);
 	}
 
 	void reset() override
@@ -221,8 +221,11 @@ private:
 class NETLIB_NAME(frontier) : public device_t
 {
 public:
-	NETLIB_NAME(frontier)()
-			: device_t(DUMMY) { }
+	NETLIB_NAME(frontier)(netlist_t &anetlist, const pstring &name)
+	: device_t(DUMMY, anetlist, name),
+	  m_RIN(netlist(), "m_RIN"),
+	  m_ROUT(netlist(), "m_ROUT")
+	  { }
 
 	virtual ~NETLIB_NAME(frontier)() {}
 
@@ -233,14 +236,14 @@ protected:
 		register_param("RIN", m_p_RIN, 1.0e6);
 		register_param("ROUT", m_p_ROUT, 50.0);
 
-		register_input("_I", m_I);
-		register_terminal("I",m_RIN.m_P);
-		register_terminal("G",m_RIN.m_N);
+		enregister("_I", m_I);
+		enregister("I",m_RIN.m_P);
+		enregister("G",m_RIN.m_N);
 		connect_late(m_I, m_RIN.m_P);
 
-		register_output("_Q", m_Q);
-		register_terminal("_OP",m_ROUT.m_P);
-		register_terminal("Q",m_ROUT.m_N);
+		enregister("_Q", m_Q);
+		enregister("_OP",m_ROUT.m_P);
+		enregister("Q",m_ROUT.m_N);
 		connect_late(m_Q, m_ROUT.m_P);
 	}
 
@@ -274,8 +277,8 @@ private:
 class NETLIB_NAME(function) : public device_t
 {
 public:
-	NETLIB_NAME(function)()
-			: device_t() { }
+	NETLIB_NAME(function)(netlist_t &anetlist, const pstring &name)
+			: device_t(anetlist, name) { }
 
 	virtual ~NETLIB_NAME(function)() {}
 
@@ -319,15 +322,15 @@ private:
 class NETLIB_NAME(res_sw) : public device_t
 {
 public:
-	NETLIB_NAME(res_sw)()
-			: device_t() { }
+	NETLIB_NAME(res_sw)(netlist_t &anetlist, const pstring &name)
+			: device_t(anetlist, name) { }
 
 	virtual ~NETLIB_NAME(res_sw)() {}
 
 	param_double_t m_RON;
 	param_double_t m_ROFF;
 	logic_input_t m_I;
-	NETLIB_NAME(R) m_R;
+	NETLIB_SUB(R) m_R;
 
 protected:
 
@@ -347,8 +350,8 @@ private:
 class nld_base_proxy : public device_t
 {
 public:
-	nld_base_proxy(logic_t *inout_proxied, core_terminal_t *proxy_inout)
-			: device_t()
+	nld_base_proxy(netlist_t &anetlist, const pstring &name, logic_t *inout_proxied, core_terminal_t *proxy_inout)
+			: device_t(anetlist, name)
 	{
 		m_logic_family = inout_proxied->logic_family();
 		m_term_proxied = inout_proxied;
@@ -380,8 +383,8 @@ private:
 class nld_a_to_d_proxy : public nld_base_proxy
 {
 public:
-	nld_a_to_d_proxy(logic_input_t *in_proxied)
-			: nld_base_proxy(in_proxied, &m_I)
+	nld_a_to_d_proxy(netlist_t &anetlist, const pstring &name, logic_input_t *in_proxied)
+			: nld_base_proxy(anetlist, name, in_proxied, &m_I)
 	{
 	}
 
@@ -393,8 +396,8 @@ public:
 protected:
 	void start() override
 	{
-		register_input("I", m_I);
-		register_output("Q", m_Q);
+		enregister("I", m_I);
+		enregister("Q", m_Q);
 	}
 
 	void reset() override
@@ -427,14 +430,14 @@ public:
 	virtual logic_input_t &in() { return m_I; }
 
 protected:
-	nld_base_d_to_a_proxy(logic_output_t *out_proxied, core_terminal_t &proxy_out)
-			: nld_base_proxy(out_proxied, &proxy_out)
+	nld_base_d_to_a_proxy(netlist_t &anetlist, const pstring &name, logic_output_t *out_proxied, core_terminal_t &proxy_out)
+			: nld_base_proxy(anetlist, name, out_proxied, &proxy_out)
 	{
 	}
 
 	virtual void start() override
 	{
-		register_input("I", m_I);
+		enregister("I", m_I);
 	}
 
 	logic_input_t m_I;
@@ -445,9 +448,9 @@ private:
 class nld_d_to_a_proxy : public nld_base_d_to_a_proxy
 {
 public:
-	nld_d_to_a_proxy(logic_output_t *out_proxied)
-	: nld_base_d_to_a_proxy(out_proxied, m_RV.m_P)
-	, m_RV(TWOTERM)
+	nld_d_to_a_proxy(netlist_t &anetlist, const pstring &name, logic_output_t *out_proxied)
+	: nld_base_d_to_a_proxy(anetlist, name, out_proxied, m_RV.m_P)
+	, m_RV(TWOTERM, anetlist,"RV")
 	, m_last_state(-1)
 	, m_is_timestep(false)
 	{
@@ -482,14 +485,14 @@ public:
 	class wrapper : public device_t
 	{
 	public:
-		wrapper(const pstring &dev_name) : device_t(), m_dev_name(dev_name) { }
-	protected:
-		virtual void init(netlist_t &anetlist, const pstring &aname) override
+		wrapper(const pstring &dev_name, netlist_t &anetlist, const pstring &name)
+		: device_t(anetlist, name), m_dev_name(dev_name)
 		{
-			anetlist.setup().namespace_push(aname);
+			anetlist.setup().namespace_push(name);
 			anetlist.setup().include(m_dev_name);
 			anetlist.setup().namespace_pop();
 		}
+	protected:
 		void start() override { }
 		void reset() override { }
 		void update() override { }
@@ -497,10 +500,9 @@ public:
 		pstring m_dev_name;
 	};
 
-	ATTR_COLD device_t *Create() override
+	device_t *Create(netlist_t &anetlist, const pstring &name) override
 	{
-		device_t *r = palloc(wrapper(this->name()));
-		return r;
+		return palloc(wrapper(this->name(), anetlist, name));
 	}
 
 private:

@@ -91,7 +91,7 @@ namespace netlist
 		class source_t
 		{
 		public:
-			typedef pvector_t<source_t *> list_t;
+			using list_t = pvector_t<source_t *>;
 
 			source_t()
 			{}
@@ -137,8 +137,8 @@ namespace netlist
 
 		pstring build_fqn(const pstring &obj_name) const;
 
-		device_t *register_dev(device_t *dev, const pstring &name);
-		device_t *register_dev(const pstring &classname, const pstring &name);
+		void register_dev(device_t *dev);
+		void register_dev(const pstring &classname, const pstring &name);
 		void remove_dev(const pstring &name);
 
 		void register_lib_entry(const pstring &name);

@@ -103,18 +103,13 @@ void setup_t::namespace_pop()
 }
 
 
-device_t *setup_t::register_dev(device_t *dev, const pstring &name)
+void setup_t::register_dev(device_t *dev)
 {
-	pstring fqn = build_fqn(name);
-
-	dev->init(netlist(), fqn);
-
 	for (auto & d : netlist().m_devices)
 		if (d->name() == dev->name())
-			log().fatal("Error adding {1} to device list. Duplicate name \n", name);
+			log().fatal("Error adding {1} to device list. Duplicate name \n", d->name());
 
 	netlist().m_devices.push_back(dev);
-	return dev;
 }
 
 void setup_t::register_lib_entry(const pstring &name)
@@ -125,22 +120,21 @@ void setup_t::register_lib_entry(const pstring &name)
 		m_lib.push_back(name);
 }
 
-device_t *setup_t::register_dev(const pstring &classname, const pstring &name)
+void setup_t::register_dev(const pstring &classname, const pstring &name)
 {
 	if (m_lib.contains(classname))
 	{
 		namespace_push(name);
 		include(classname);
 		namespace_pop();
-		return nullptr;
 	}
 	else
 	{
-		device_t *dev = factory().new_device_by_name(classname);
+		device_t *dev = factory().new_device_by_name(classname, netlist(), build_fqn(name));
 		//device_t *dev = factory().new_device_by_classname(classname);
 		if (dev == nullptr)
 			log().fatal("Class {1} not found!\n", classname);
-		return register_dev(dev, name);
+		register_dev(dev);
 	}
 }
 
@@ -218,14 +212,31 @@ void setup_t::register_object(device_t &dev, const pstring &name, object_t &obj)
 				if (obj.isType(terminal_t::OUTPUT))
 				{
 					if (obj.isFamily(terminal_t::LOGIC))
+					{
+						logic_output_t &port = dynamic_cast<logic_output_t &>(term);
+						port.set_logic_family(dev.logic_family());
 						dynamic_cast<logic_output_t &>(term).init_object(dev, dev.name() + "." + name);
+					}
 					else if (obj.isFamily(terminal_t::ANALOG))
 						dynamic_cast<analog_output_t &>(term).init_object(dev, dev.name() + "." + name);
 					else
 						log().fatal("Error adding {1} {2} to terminal list, neither LOGIC nor ANALOG\n", objtype_as_astr(term), term.name());
 				}
-				else
+				else if (obj.isType(terminal_t::INPUT))
+				{
+					if (obj.isFamily(terminal_t::LOGIC))
+					{
+						logic_input_t &port = dynamic_cast<logic_input_t &>(term);
+						port.set_logic_family(dev.logic_family());
+					}
 					term.init_object(dev, dev.name() + "." + name);
+					dev.m_terminals.push_back(obj.name());
+				}
+				else
+				{
+					term.init_object(dev, dev.name() + "." + name);
+					dev.m_terminals.push_back(obj.name());
+				}
 
 				if (!m_terminals.add(term.name(), &term))
 					log().fatal("Error adding {1} {2} to terminal list\n", objtype_as_astr(term), term.name());
@@ -335,22 +346,23 @@ void setup_t::register_frontier(const pstring attach, const double r_IN, const d
 {
 	pstring frontier_name = pfmt("frontier_{1}")(m_frontier_cnt);
 	m_frontier_cnt++;
-	device_t *front = register_dev("FRONTIER_DEV", frontier_name);
+	register_dev("FRONTIER_DEV", frontier_name);
 	register_param(frontier_name + ".RIN", r_IN);
 	register_param(frontier_name + ".ROUT", r_OUT);
 	register_link(frontier_name + ".G", "GND");
 	pstring attfn = build_fqn(attach);
+	pstring front_fqn = build_fqn(frontier_name);
 	bool found = false;
 	for (auto & link  : m_links)
 	{
 		if (link.e1 == attfn)
 		{
-			link.e1 = front->name() + ".I";
+			link.e1 = front_fqn + ".I";
 			found = true;
 		}
 		else if (link.e2 == attfn)
 		{
-			link.e2 = front->name() + ".I";
+			link.e2 = front_fqn + ".I";
 			found = true;
 		}
 	}
@@ -477,11 +489,12 @@ devices::nld_base_proxy *setup_t::get_d_a_proxy(core_terminal_t &out)
 	if (proxy == nullptr)
 	{
 		// create a new one ...
-		devices::nld_base_d_to_a_proxy *new_proxy = out_cast.logic_family()->create_d_a_proxy(&out_cast);
 		pstring x = pfmt("proxy_da_{1}_{2}")(out.name())(m_proxy_cnt);
+		devices::nld_base_d_to_a_proxy *new_proxy =
+				out_cast.logic_family()->create_d_a_proxy(netlist(), x, &out_cast);
 		m_proxy_cnt++;
 
-		register_dev(new_proxy, x);
+		register_dev(new_proxy);
 		new_proxy->start_dev();
 
 		/* connect all existing terminals to new net */
@@ -506,12 +519,12 @@ void setup_t::connect_input_output(core_terminal_t &in, core_terminal_t &out)
 	if (out.isFamily(terminal_t::ANALOG) && in.isFamily(terminal_t::LOGIC))
 	{
 		logic_input_t &incast = dynamic_cast<logic_input_t &>(in);
-		devices::nld_a_to_d_proxy *proxy = palloc(devices::nld_a_to_d_proxy(&incast));
-		incast.set_proxy(proxy);
 		pstring x = pfmt("proxy_ad_{1}_{2}")(in.name())( m_proxy_cnt);
+		devices::nld_a_to_d_proxy *proxy = palloc(devices::nld_a_to_d_proxy(netlist(), x, &incast));
+		incast.set_proxy(proxy);
 		m_proxy_cnt++;
 
-		register_dev(proxy, x);
+		register_dev(proxy);
 		proxy->start_dev();
 
 		proxy->m_Q.net().register_con(in);
@@ -545,12 +558,12 @@ void setup_t::connect_terminal_input(terminal_t &term, core_terminal_t &inp)
 	{
 		logic_input_t &incast = dynamic_cast<logic_input_t &>(inp);
 		log().debug("connect_terminal_input: connecting proxy\n");
-		devices::nld_a_to_d_proxy *proxy = palloc(devices::nld_a_to_d_proxy(&incast));
-		incast.set_proxy(proxy);
 		pstring x = pfmt("proxy_ad_{1}_{2}")(inp.name())(m_proxy_cnt);
+		devices::nld_a_to_d_proxy *proxy = palloc(devices::nld_a_to_d_proxy(netlist(), x, &incast));
+		incast.set_proxy(proxy);
 		m_proxy_cnt++;
 
-		register_dev(proxy, x);
+		register_dev(proxy);
 		proxy->start_dev();
 
 		connect_terminals(term, proxy->m_I);
@@ -829,9 +842,9 @@ void setup_t::start_devices()
 		pstring_vector_t loglist(env, ":");
 		for (pstring ll : loglist)
 		{
-			device_t *nc = factory().new_device_by_name("LOG");
 			pstring name = "log_" + ll;
-			register_dev(nc, name);
+			device_t *nc = factory().new_device_by_name("LOG", netlist(), name);
+			register_dev(nc);
 			register_link(name + ".I", ll);
 			log().debug("    dynamic link {1}: <{2}>\n",ll, name);
 		}
@@ -863,9 +876,10 @@ class logic_family_std_proxy_t : public logic_family_desc_t
 {
 public:
 	logic_family_std_proxy_t() { }
-	virtual devices::nld_base_d_to_a_proxy *create_d_a_proxy(logic_output_t *proxied) const override
+	virtual devices::nld_base_d_to_a_proxy *create_d_a_proxy(netlist_t &anetlist,
+			const pstring &name, logic_output_t *proxied) const override
 	{
-		return palloc(devices::nld_d_to_a_proxy(proxied));
+		return palloc(devices::nld_d_to_a_proxy(anetlist, name, proxied));
 	}
 };
 

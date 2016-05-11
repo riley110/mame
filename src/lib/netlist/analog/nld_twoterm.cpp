@@ -48,15 +48,15 @@ ATTR_COLD void generic_diode::save(pstring name, object_t &parent)
 // nld_twoterm
 // ----------------------------------------------------------------------------------------
 
-ATTR_COLD NETLIB_NAME(twoterm)::NETLIB_NAME(twoterm)(const family_t afamily)
-		: device_t(afamily)
+ATTR_COLD NETLIB_NAME(twoterm)::NETLIB_NAME(twoterm)(const family_t afamily, netlist_t &anetlist, const pstring &name)
+		: device_t(afamily, anetlist, name)
 {
 	m_P.m_otherterm = &m_N;
 	m_N.m_otherterm = &m_P;
 }
 
-ATTR_COLD NETLIB_NAME(twoterm)::NETLIB_NAME(twoterm)()
-		: device_t(TWOTERM)
+ATTR_COLD NETLIB_NAME(twoterm)::NETLIB_NAME(twoterm)(netlist_t &anetlist, const pstring &name)
+		: device_t(TWOTERM, anetlist, name)
 {
 	m_P.m_otherterm = &m_N;
 	m_N.m_otherterm = &m_P;
@@ -88,8 +88,8 @@ NETLIB_UPDATE(twoterm)
 NETLIB_START(R_base)
 {
 	NETLIB_NAME(twoterm)::start();
-	register_terminal("1", m_P);
-	register_terminal("2", m_N);
+	enregister("1", m_P);
+	enregister("2", m_N);
 }
 
 NETLIB_RESET(R_base)
@@ -137,11 +137,11 @@ NETLIB_START(POT)
 	register_sub("R1", m_R1);
 	register_sub("R2", m_R2);
 
-	register_subalias("1", m_R1.m_P);
-	register_subalias("2", m_R1.m_N);
-	register_subalias("3", m_R2.m_N);
+	register_subalias("1", m_R1->m_P);
+	register_subalias("2", m_R1->m_N);
+	register_subalias("3", m_R2->m_N);
 
-	connect_late(m_R2.m_P, m_R1.m_N);
+	connect_late(m_R2->m_P, m_R1->m_N);
 
 	register_param("R", m_R, 1.0 / netlist().gmin());
 	register_param("DIAL", m_Dial, 0.5);
@@ -151,14 +151,14 @@ NETLIB_START(POT)
 
 NETLIB_RESET(POT)
 {
-	m_R1.do_reset();
-	m_R2.do_reset();
+	m_R1->do_reset();
+	m_R2->do_reset();
 }
 
 NETLIB_UPDATE(POT)
 {
-	m_R1.update_dev();
-	m_R2.update_dev();
+	m_R1->update_dev();
+	m_R2->update_dev();
 }
 
 NETLIB_UPDATE_PARAM(POT)
@@ -167,11 +167,11 @@ NETLIB_UPDATE_PARAM(POT)
 	if (m_DialIsLog.Value())
 		v = (nl_math::exp(v) - 1.0) / (nl_math::exp(1.0) - 1.0);
 
-	m_R1.update_dev();
-	m_R2.update_dev();
+	m_R1->update_dev();
+	m_R2->update_dev();
 
-	m_R1.set_R(std::max(m_R.Value() * v, netlist().gmin()));
-	m_R2.set_R(std::max(m_R.Value() * (NL_FCONST(1.0) - v), netlist().gmin()));
+	m_R1->set_R(std::max(m_R.Value() * v, netlist().gmin()));
+	m_R2->set_R(std::max(m_R.Value() * (NL_FCONST(1.0) - v), netlist().gmin()));
 
 }
 
@@ -183,8 +183,8 @@ NETLIB_START(POT2)
 {
 	register_sub("R1", m_R1);
 
-	register_subalias("1", m_R1.m_P);
-	register_subalias("2", m_R1.m_N);
+	register_subalias("1", m_R1->m_P);
+	register_subalias("2", m_R1->m_N);
 
 	register_param("R", m_R, 1.0 / netlist().gmin());
 	register_param("DIAL", m_Dial, 0.5);
@@ -195,12 +195,12 @@ NETLIB_START(POT2)
 
 NETLIB_RESET(POT2)
 {
-	m_R1.do_reset();
+	m_R1->do_reset();
 }
 
 NETLIB_UPDATE(POT2)
 {
-	m_R1.update_dev();
+	m_R1->update_dev();
 }
 
 NETLIB_UPDATE_PARAM(POT2)
@@ -212,9 +212,9 @@ NETLIB_UPDATE_PARAM(POT2)
 	if (m_Reverse.Value())
 		v = 1.0 - v;
 
-	m_R1.update_dev();
+	m_R1->update_dev();
 
-	m_R1.set_R(std::max(m_R.Value() * v, netlist().gmin()));
+	m_R1->set_R(std::max(m_R.Value() * v, netlist().gmin()));
 }
 
 // ----------------------------------------------------------------------------------------
@@ -223,8 +223,8 @@ NETLIB_UPDATE_PARAM(POT2)
 
 NETLIB_START(C)
 {
-	register_terminal("1", m_P);
-	register_terminal("2", m_N);
+	enregister("1", m_P);
+	enregister("2", m_N);
 
 	register_param("C", m_C, 1e-6);
 
@@ -264,8 +264,8 @@ ATTR_HOT void NETLIB_NAME(C)::step_time(const nl_double st)
 
 NETLIB_START(D)
 {
-	register_terminal("A", m_P);
-	register_terminal("K", m_N);
+	enregister("A", m_P);
+	enregister("K", m_N);
 	register_param("MODEL", m_model, "");
 
 	m_D.save("m_D", *this);
@@ -303,8 +303,8 @@ NETLIB_START(VS)
 	register_param("R", m_R, 0.1);
 	register_param("V", m_V, 0.0);
 
-	register_terminal("P", m_P);
-	register_terminal("N", m_N);
+	enregister("P", m_P);
+	enregister("N", m_N);
 }
 
 NETLIB_RESET(VS)
@@ -328,8 +328,8 @@ NETLIB_START(CS)
 
 	register_param("I", m_I, 1.0);
 
-	register_terminal("P", m_P);
-	register_terminal("N", m_N);
+	enregister("P", m_P);
+	enregister("N", m_N);
 }
 
 NETLIB_RESET(CS)

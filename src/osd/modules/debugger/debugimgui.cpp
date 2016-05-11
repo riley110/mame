@@ -120,6 +120,7 @@ private:
 	void draw_bpoints(debug_area* view_ptr, bool* opened);
 	void draw_log(debug_area* view_ptr, bool* opened);
 	void update_cpu_view(device_t* device);
+	static bool get_view_source(void* data, int idx, const char** out_text);
 
 	running_machine* m_machine;
 	INT32            m_mouse_x;
@@ -193,6 +194,13 @@ static inline void map_attr_to_fg_bg(unsigned char attr, rgb_t *fg, rgb_t *bg)
 	}
 }
 
+bool debug_imgui::get_view_source(void* data, int idx, const char** out_text)
+{
+	debug_view* vw = static_cast<debug_view*>(data);
+	*out_text = vw->source_list().find(idx)->name();
+	return true;
+}
+
 void debug_imgui::handle_mouse()
 {
 	m_prev_mouse_button = m_mouse_button;
@@ -245,7 +253,7 @@ void debug_imgui::handle_mouse_views()
 
 void debug_imgui::handle_keys()
 {
-		ImGuiIO& io = ImGui::GetIO();
+	ImGuiIO& io = ImGui::GetIO();
 	ui_event event;
 
 	// global keys
@@ -641,17 +649,7 @@ void debug_imgui::add_log(int id)
 
 void debug_imgui::draw_disasm(debug_area* view_ptr, bool* opened)
 {
-	std::string cpu_list = "";
-	const debug_view_source* src = view_ptr->view->first_source();
-
-	// build source CPU list
-	while(src != nullptr)
-	{
-		cpu_list += src->name();
-		cpu_list += '\0';
-		src = src->next();
-	}
-	cpu_list += '\0'; // end of list
+	const debug_view_source* src;
 
 	ImGui::SetNextWindowSize(ImVec2(view_ptr->width,view_ptr->height + ImGui::GetTextLineHeight()),ImGuiSetCond_Once);
 	if(ImGui::Begin(view_ptr->title.c_str(),opened,ImGuiWindowFlags_MenuBar))
@@ -691,7 +689,7 @@ void debug_imgui::draw_disasm(debug_area* view_ptr, bool* opened)
 		ImGuiInputTextFlags flags = ImGuiInputTextFlags_EnterReturnsTrue;
 		if(m_running)
 			flags |= ImGuiInputTextFlags_ReadOnly;
-		ImGui::Combo("##cpu",&view_ptr->src_sel,cpu_list.c_str());
+		ImGui::Combo("##cpu",&view_ptr->src_sel,get_view_source,view_ptr->view,view_ptr->view->source_list().count());
 		ImGui::SameLine();
 		ImGui::PushItemWidth(-1.0f);
 		if(ImGui::InputText("##addr",view_ptr->console_input,512,flags))
@@ -785,8 +783,7 @@ void debug_imgui::add_disasm(int id)
 
 void debug_imgui::draw_memory(debug_area* view_ptr, bool* opened)
 {
-	std::string region_list = "";
-	const debug_view_source* src = view_ptr->view->first_source();
+	const debug_view_source* src;
 
 	ImGui::SetNextWindowSize(ImVec2(view_ptr->width,view_ptr->height + ImGui::GetTextLineHeight()),ImGuiSetCond_Once);
 	if(ImGui::Begin(view_ptr->title.c_str(),opened,ImGuiWindowFlags_MenuBar))
@@ -849,20 +846,12 @@ void debug_imgui::draw_memory(debug_area* view_ptr, bool* opened)
 		ImGui::PushItemWidth(100.0f);
 		if(m_running)
 			flags |= ImGuiInputTextFlags_ReadOnly;
-		// build source CPU list
-		while(src != nullptr)
-		{
-			region_list += src->name();
-			region_list += '\0';
-			src = src->next();
-		}
-		region_list += '\0'; // end of list
 		if(ImGui::InputText("##addr",view_ptr->console_input,512,flags))
 			downcast<debug_view_memory *>(view_ptr->view)->set_expression(view_ptr->console_input);
 		ImGui::PopItemWidth();
 		ImGui::SameLine();
 		ImGui::PushItemWidth(-1.0f);
-		ImGui::Combo("##region",&view_ptr->src_sel,region_list.c_str());
+		ImGui::Combo("##region",&view_ptr->src_sel,get_view_source,view_ptr->view,view_ptr->view->source_list().count());
 		ImGui::PopItemWidth();
 		ImGui::Separator();
 

@@ -16,8 +16,8 @@ NETLIB_NAMESPACE_DEVICES_START()
 class nld_vdd_vss : public device_t
 {
 	public:
-		nld_vdd_vss ()
-		: device_t()
+		nld_vdd_vss (netlist_t &anetlist, const pstring &name)
+		: device_t(anetlist, name)
 			{ }
 
 		analog_input_t m_vdd;
@@ -27,8 +27,8 @@ class nld_vdd_vss : public device_t
 		ATTR_HOT void update() override {};
 		ATTR_HOT void start() override
 		{
-			register_input("VDD", m_vdd);
-			register_input("VSS", m_vss);
+			enregister("VDD", m_vdd);
+			enregister("VSS", m_vss);
 		};
 		ATTR_HOT void reset() override  {};
 
