@@ -880,6 +880,42 @@ static ADDRESS_MAP_START( lucky8_map, AS_PROGRAM, 8, goldstar_state )
 	AM_RANGE(0xf800, 0xffff) AM_RAM
 ADDRESS_MAP_END
 
+static ADDRESS_MAP_START( flaming7_map, AS_PROGRAM, 8, goldstar_state )
+	AM_RANGE(0x0000, 0x7fff) AM_ROM
+	AM_RANGE(0x8000, 0x87ff) AM_RAM AM_SHARE("nvram")
+	AM_RANGE(0x8800, 0x8fff) AM_RAM_WRITE(goldstar_fg_vidram_w) AM_SHARE("fg_vidram")
+	AM_RANGE(0x9000, 0x97ff) AM_RAM_WRITE(goldstar_fg_atrram_w) AM_SHARE("fg_atrram")
+
+	AM_RANGE(0x9800, 0x99ff) AM_RAM_WRITE(goldstar_reel1_ram_w) AM_SHARE("reel1_ram")
+	AM_RANGE(0x9a00, 0x9fff) AM_RAM
+	AM_RANGE(0xa000, 0xa1ff) AM_RAM_WRITE(goldstar_reel2_ram_w) AM_SHARE("reel2_ram")
+	AM_RANGE(0xa200, 0xa7ff) AM_RAM
+	AM_RANGE(0xa800, 0xa9ff) AM_RAM_WRITE(goldstar_reel3_ram_w) AM_SHARE("reel3_ram")
+	AM_RANGE(0xaa00, 0xafff) AM_RAM
+	
+	AM_RANGE(0xb000, 0xb03f) AM_RAM
+	AM_RANGE(0xb040, 0xb07f) AM_RAM AM_SHARE("reel1_scroll")
+	AM_RANGE(0xb080, 0xb0bf) AM_RAM AM_SHARE("reel2_scroll")
+	AM_RANGE(0xb0c0, 0xb0ff) AM_RAM
+	AM_RANGE(0xb100, 0xb17f) AM_RAM AM_SHARE("reel3_scroll")
+	AM_RANGE(0xb180, 0xb7ff) AM_RAM
+
+	AM_RANGE(0xb800, 0xb803) AM_DEVREADWRITE("ppi8255_0", i8255_device, read, write)    /* Input Ports (92) */
+	AM_RANGE(0xb810, 0xb813) AM_DEVREADWRITE("ppi8255_1", i8255_device, read, write)    /* Input Ports (9B) */
+	AM_RANGE(0xb820, 0xb823) AM_DEVREADWRITE("ppi8255_2", i8255_device, read, write)    /* Input/Output Ports (90) */
+	AM_RANGE(0xb830, 0xb830) AM_DEVREADWRITE("aysnd", ay8910_device, data_r, data_w)
+	AM_RANGE(0xb840, 0xb840) AM_DEVWRITE("aysnd", ay8910_device, address_w)  /* no sound... only use both ports for DSWs */
+	AM_RANGE(0xb850, 0xb850) AM_WRITE(p1_lamps_w)
+	AM_RANGE(0xb860, 0xb860) AM_WRITE(p2_lamps_w)
+	AM_RANGE(0xb870, 0xb870) AM_DEVWRITE("snsnd", sn76489_device, write)    /* sound */
+	AM_RANGE(0xf800, 0xffff) AM_RAM
+ADDRESS_MAP_END
+/*
+  W 9A00-B7FF FF
+ RW B000-B7FF 00 
+
+*/
+
 WRITE8_MEMBER(wingco_state::magodds_outb850_w)
 {
 	// guess, could be wrong, this might just be lights
@@ -6871,6 +6907,166 @@ static INPUT_PORTS_START( cmtetris )
 INPUT_PORTS_END
 
 
+static INPUT_PORTS_START( flaming7 )
+	PORT_START("IN0")   /* d800 */
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_1) PORT_NAME("IN0-1")
+	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_2) PORT_NAME("IN0-2")
+	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_3) PORT_NAME("IN0-3")
+	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_4) PORT_NAME("Double-Up")
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_5) PORT_NAME("Take")
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_6) PORT_NAME("Bet / Boot bypass")
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_7) PORT_NAME("IN0-7")
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_8) PORT_NAME("Start")
+
+	PORT_START("IN1")   /* d801 */
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_Q) PORT_NAME("IN1-1")
+	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_W) PORT_NAME("IN1-2")
+	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_E) PORT_NAME("IN1-3")
+	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_R) PORT_NAME("IN1-4")
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_T) PORT_NAME("IN1-5")
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_Y) PORT_NAME("IN1-6")
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_U) PORT_NAME("IN1-7")
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_I) PORT_NAME("IN1-8")
+
+	PORT_START("IN2")   /* d802 */
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_A) PORT_NAME("IN2-1")
+	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_S) PORT_NAME("IN2-2")
+	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_D) PORT_NAME("IN2-3")
+	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_F) PORT_NAME("IN2-4")
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_G) PORT_NAME("IN2-5")
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_H) PORT_NAME("IN2-6")
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_J) PORT_NAME("IN2-7")
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_K) PORT_NAME("IN2-8")
+
+	PORT_START("IN3")   /* d810 */
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_Z) PORT_NAME("Main Door SW")
+	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_X) PORT_NAME("IN3-2")
+	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_C) PORT_NAME("Logic Door SW")
+	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_V) PORT_NAME("Cash Door SW")
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_B) PORT_NAME("IN3-5")
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_N) PORT_NAME("Coin A")  // COIN A?
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_M) PORT_NAME("Coin B")  // COIN B?
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_L) PORT_NAME("Key In")
+
+	PORT_START("IN4")   /* d811 */
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_1_PAD) PORT_NAME("IN4-1")
+	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_2_PAD) PORT_NAME("IN4-2")  // related to hopper...
+	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_3_PAD) PORT_NAME("IN4-3")
+	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_4_PAD) PORT_NAME("IN4-4")
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_5_PAD) PORT_NAME("IN4-5")
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_6_PAD) PORT_NAME("Collect")
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_7_PAD) PORT_NAME("Reset")
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_OTHER ) PORT_CODE(KEYCODE_8_PAD) PORT_NAME("Stats / Setup") PORT_TOGGLE
+
+	PORT_START("DSW1")
+	PORT_DIPNAME( 0x03, 0x03, "Payout" )
+	PORT_DIPSETTING(    0x03, "Amusement (no credits out)" )
+	PORT_DIPSETTING(    0x02, "Ticket Printer" )
+	PORT_DIPSETTING(    0x01, "Hopper Payout" )
+	PORT_DIPSETTING(    0x00, "Remote Clear" )
+	PORT_DIPNAME( 0x04, 0x04, "Reels Speed" )
+	PORT_DIPSETTING(    0x04, "Fast" )
+	PORT_DIPSETTING(    0x00, "Slow" )
+	PORT_DIPNAME( 0x08, 0x08, "DSW1_08" )
+	PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x30, 0x30, "Reels Graphics" )
+	PORT_DIPSETTING(    0x30, "Regular Fruits" )
+	PORT_DIPSETTING(    0x20, "Numbers" )
+	PORT_DIPSETTING(    0x10, "Custom 1: Red, White & Blue 7's" )
+	PORT_DIPSETTING(    0x00, "Custom 2: Hollywood Nights" )
+	PORT_DIPNAME( 0x40, 0x40, "DSW1_40" )
+	PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x80, 0x80, "DSW1_80" )
+	PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+
+	PORT_START("DSW2")
+	PORT_DIPNAME( 0x01, 0x01, "DSW2_01" )
+	PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x02, 0x02, "DSW2_02" )
+	PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x04, 0x04, "DSW2_04" )
+	PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x08, 0x08, "DSW2_08" )
+	PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x10, 0x10, "DSW2_10" )
+	PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x20, 0x20, "DSW2_20" )
+	PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x40, 0x40, "DSW2_40" )
+	PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x80, 0x80, "DSW2_80" )
+	PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+
+	PORT_START("DSW3")
+	PORT_DIPNAME( 0x03, 0x03, "Maximum Bet" )
+	PORT_DIPSETTING(    0x03, "8" )
+	PORT_DIPSETTING(    0x02, "16" )
+	PORT_DIPSETTING(    0x01, "32" )
+	PORT_DIPSETTING(    0x00, "32" )  // should be 64?
+	PORT_DIPNAME( 0x04, 0x04, "Coin-In Timeout" )
+	PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x08, 0x08, "DSW3_08" )
+	PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x10, 0x10, "DSW3_10" )
+	PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x20, 0x20, "DSW3_20" )
+	PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x40, 0x40, "DSW3_40" )
+	PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x80, 0x80, "DSW3_80" )
+	PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+
+	PORT_START("DSW4")
+	PORT_DIPNAME( 0x01, 0x01, "DSW4_01" )
+	PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x02, 0x02, "DSW4_02" )
+	PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x04, 0x04, "DSW4_04" )
+	PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x08, 0x08, "DSW4_08" )
+	PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x10, 0x10, "DSW4_10" )
+	PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x20, 0x20, "DSW4_20" )
+	PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x40, 0x40, "DSW4_40" )
+	PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x80, 0x80, "DSW4_80" )
+	PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+
+INPUT_PORTS_END
+
+
+
+/*****************************************************
+*            Graphics Layouts & Decode               *
+*****************************************************/
+
 static const gfx_layout charlayout =
 {
 	8,8,    /* 8*8 characters */
@@ -7981,6 +8177,15 @@ MACHINE_CONFIG_END
 static MACHINE_CONFIG_DERIVED( bingownga, bingowng )
 	MCFG_GFXDECODE_MODIFY("gfxdecode", bingownga)
 MACHINE_CONFIG_END
+
+
+static MACHINE_CONFIG_DERIVED( flaming7, lucky8 )
+	/* basic machine hardware */
+	MCFG_CPU_MODIFY("maincpu")
+	MCFG_CPU_PROGRAM_MAP(flaming7_map)
+//	MCFG_CPU_IO_MAP(flaming7_readport)
+MACHINE_CONFIG_END
+
 
 PALETTE_INIT_MEMBER(wingco_state, magodds)
 {
@@ -13795,6 +14000,144 @@ ROM_START( cmtetrsb )
 ROM_END
 
 
+/********************** Flaming 7, from Cyberdyne Systems, Inc. ***********************
+
+  Flaming 7.
+  Cyberdyne Systems, Inc.
+  Looks a W-4 derivative...
+
+  Graphics: CGA
+  Reels: 3 spinning reels.
+  Lines: 8.
+  Bonus Games: Yes.
+  Harness Type: Standard 36/10 Pin Cherry Master Harness.
+
+  Graphics: 4 different types, selectable through DIP switches.
+
+  1) Regular Fruits.
+  2) Numbers.
+  3) Custom Set 1
+  4) Custom Set 2
+
+  Titles / GFX upgrades:
+
+  +----+------------------------------+---------+----------+
+  | N# |      Title:                  | Dumped  | Emulated |
+  +----+------------------------------+---------+----------+
+  | 01 | Big Bull Frog.               | NO      | NO       |
+  | 02 | Buffalo Bills.               | NO      | NO       |
+  | 03 | Cash Cabaret.                | NO      | NO       |
+  | 04 | Cash Cow.                    | NO      | NO       |
+  | 05 | Cherry 50 Bonus.             | NO      | NO       |
+  | 06 | Cherry 500 Bonus.            | NO      | NO       |
+  | 07 | Cherry 1000 Bonus.           | NO      | NO       |
+  | 08 | Christmas.                   | NO      | NO       |
+  | 09 | Deuces Wild.                 | NO      | NO       |
+  | 10 | Diamond Delight.             | NO      | NO       |
+  | 11 | Diamond Doubles.             | NO      | NO       |
+  | 12 | Diamond Treasure.            | NO      | NO       |
+  | 13 | Dream Catcher.               | NO      | NO       |
+  | 14 | Dynamite Diamonds 1.         | NO      | NO       |
+  | 15 | Dynamite Diamonds 2.         | NO      | NO       |
+  | 16 | Egyptian Gold.               | NO      | NO       |
+  | 17 | Gold Country.                | NO      | NO       |
+  | 18 | Golden Treasure.             | NO      | NO       |
+  | 19 | Greenbacks.                  | NO      | NO       |
+  | 20 | Harley Davidson.             | NO      | NO       |
+  | 21 | Hollywood Nights.            | YES     | YES      |
+  | 22 | Independence Day.            | NO      | NO       |
+  | 23 | Jokers Wild.                 | NO      | NO       |
+  | 24 | Midnight Sevens.             | NO      | NO       |
+  | 25 | Mighty Buffalo.              | NO      | NO       |
+  | 26 | Money.                       | NO      | NO       |
+  | 27 | Moola.                       | NO      | NO       |
+  | 28 | New Year's.                  | NO      | NO       |
+  | 29 | Prospector's Gold.           | NO      | NO       |
+  | 30 | Red Hot Ice.                 | NO      | NO       |
+  | 31 | Red, White & Blue 7's.       | YES     | YES      |
+  | 32 | Rising Star.                 | NO      | NO       |
+  | 33 | Rockin' Reels.               | NO      | NO       |
+  | 34 | Rolling Thunder.             | NO      | NO       |
+  | 35 | Soboba Gold.                 | NO      | NO       |
+  | 36 | Star Sevens / American Gold. | NO      | NO       |
+  | 37 | Sun God.                     | NO      | NO       |
+  | 38 | Super Stars & Stripes.       | NO      | NO       |
+  | 39 | Sweet Dreams.                | NO      | NO       |
+  | 40 | Sweethearts & Sevens.        | NO      | NO       |
+  | 41 | Tropical Treasure.           | NO      | NO       |
+  | 42 | Vegas Classic.               | NO      | NO       |
+  | 43 | White Buffalo.               | NO      | NO       |
+  | 44 | Wild Thing.                  | NO      | NO       |
+  | 45 | Wild Watermelons.            | NO      | NO       |
+  | 46 | Wild West.                   | NO      | NO       |
+  +----+------------------------------+---------+----------+
+
+  Will name the sets using the internal code of both custom
+  graphics sets in their respective order...
+
+  -------------------------------------------------------------------
+  
+  Tech Notes:
+
+  PCB has some hacks...
+
+  1) PPI 8255 pin 10 (PC7) is wired to pin 22 (PB4)...
+     Maybe the boot protection?
+
+  2) Pin 39 from solder side (speaker GND) and pin 04 from components side (PPI 8255 pin 11, PC6)
+     are wired with a DS2401 (sillicon serial number) device, to pins 1 & 2 (GND & DATA).
+
+  3) Z80 /INT line (pin 16) is out of socket and wired to a 74161.
+
+
+*/
+
+/*
+  Flaming 7
+  Cyberdyne Systems, Inc.
+
+  GFX sets:
+  1) Red, White & Blue 7's
+  2) Hollywood Nights.
+
+  Issues: At boot, writes "E6" on screen (5th row, 7th column).
+          Looks like an error code.
+
+  To boot the first time, press the BET button, and then STATS/SETUP twice.
+  For further boots, just press BET button. (the real hardware boots straight)
+
+*/
+ROM_START( fl7_3121 )  // Red, White & Blue 7's + Hollywood Nights.
+	ROM_REGION( 0x8000, "maincpu", 0 )
+	ROM_LOAD( "main.14b",  0x0000, 0x8000, CRC(cab76770) SHA1(4f2c17a0e077f3d9017e44977a3cb7a4aa9e4009) )
+
+	ROM_REGION( 0x18000, "gfx1", 0 )
+	ROM_LOAD( "5.7h",  0x00000, 0x8000, CRC(e2a2bf3e) SHA1(545ccd46f1fb65573778c3d14e73abb7d5f0ceda) )
+	ROM_LOAD( "6.8h",  0x08000, 0x8000, CRC(46038515) SHA1(630b8fe920b9eded66705c39fbb8f2a49cae05a7) )
+	ROM_LOAD( "7.10h", 0x10000, 0x8000, CRC(56c5c6e0) SHA1(9b64466899df17b5198249c12a2bdcd08383bb07) )
+
+	ROM_REGION( 0x8000, "gfx2", 0 )
+	ROM_LOAD( "1.1h",  0x00000, 0x2000, CRC(22e23ce1) SHA1(5d1314cb259f6ab6d25abc8c019a74696d5ebc44) )
+	ROM_LOAD( "2.3h",  0x02000, 0x2000, CRC(d3a097a5) SHA1(7100fb3570fc30aa7df4558a61cd165a67ae916d) )
+	ROM_LOAD( "3.4h",  0x04000, 0x2000, CRC(c3207316) SHA1(3caeb0342aa23e6f3b5f1bf72957dce890ac6bc6) )
+	ROM_LOAD( "4.5h",  0x06000, 0x2000, CRC(8d4a9198) SHA1(44fad32da4b018c1293320dc584e93d17ca71b2b) )
+
+	/* borrowed from ns8lines */
+	ROM_REGION( 0x200, "proms", 0 )
+	ROM_LOAD( "u4.bin", 0x0000, 0x0100, BAD_DUMP CRC(23e81049) SHA1(78071dae70fad870e972d944642fb3a2374be5e4) )
+	ROM_LOAD( "u5.bin", 0x0100, 0x0100, BAD_DUMP CRC(526cf9d3) SHA1(eb779d70f2507d0f26d225ac8f5de8f2243599ca) )
+
+	ROM_REGION( 0x40, "proms2", 0 )
+	ROM_LOAD( "u2.bin", 0x0000, 0x0020, BAD_DUMP CRC(c6b41352) SHA1(d7c3b5aa32e4e456c9432a13bede1db6d62eb270) )
+
+	ROM_REGION( 0x100, "unkprom", 0 )
+	ROM_LOAD( "u3.bin", 0x0000, 0x0100, BAD_DUMP CRC(1d668d4a) SHA1(459117f78323ea264d3a29f1da2889bbabe9e4be) )
+
+	ROM_REGION( 0x20, "unkprom2", 0 )
+	ROM_LOAD( "u1.bin", 0x0000, 0x0020, BAD_DUMP CRC(6df3f972) SHA1(0096a7f7452b70cac6c0752cb62e24b643015b5c) )
+ROM_END
+
+
 /*********************************************************************************************************************/
 
 DRIVER_INIT_MEMBER(goldstar_state,goldstar)
@@ -13802,7 +14145,7 @@ DRIVER_INIT_MEMBER(goldstar_state,goldstar)
 	int A;
 	UINT8 *ROM = memregion("maincpu")->base();
 
-	for (A = 0;A < 0x10000;A++)
+	for (A = 0; A < 0x10000; A++)
 	{
 		if ((A & 0x30) == 0)
 			ROM[A] ^= 0x82;
@@ -13832,12 +14175,12 @@ void cb3_state::do_blockswaps(UINT8* ROM)
 	};
 
 	dynamic_buffer buffer(0x10000);
-	memcpy(&buffer[0],ROM,0x10000);
+	memcpy(&buffer[0], ROM, 0x10000);
 
 	// swap some 0x800 blocks around..
 	for (A =0;A<32; A++)
 	{
-		memcpy(ROM+A*0x800,&buffer[cherry_swaptables[A]],0x800);
+		memcpy(ROM + A * 0x800, &buffer[cherry_swaptables[A]], 0x800);
 	}
 }
 
@@ -13929,10 +14272,10 @@ DRIVER_INIT_MEMBER(cb3_state, chrygld)
 	do_blockswaps(ROM);
 
 	// a data bitswap
-	for (A = 0;A < 0x10000;A++)
+	for (A = 0; A < 0x10000; A++)
 	{
 		UINT8 dat = ROM[A];
-		dat =  BITSWAP8(dat,5,6,3,4,7,2,1,0);
+		dat =  BITSWAP8(dat, 5, 6, 3, 4, 7, 2, 1, 0);
 		ROM[A] = dat;
 	}
 
@@ -13984,19 +14327,19 @@ DRIVER_INIT_MEMBER(cmaster_state, nfb96sea)
 	int i;
 	UINT8 *ROM = memregion("maincpu")->base();
 
-	for (i = 0;i < 0x10000;i++)
+	for (i = 0; i < 0x10000; i++)
 	{
 		UINT8 x = ROM[i];
 		switch(i & 7)
 		{
-			case 0: x = BITSWAP8(x^0x80, 1,6,7,4,5,2,3,0); break;
-			case 1: x = BITSWAP8(x^0xa0, 5,6,3,4,1,2,7,0); break;
-			case 2: x = BITSWAP8(x^0x02, 5,6,3,4,1,2,7,0); break;
-			case 3: x = BITSWAP8(x^0xa0, 3,6,1,4,7,2,5,0); break;
-			case 4: x = BITSWAP8(x^0x82, 3,6,1,4,7,2,5,0); break;
-			case 5: x = BITSWAP8(x^0x02, 1,6,7,4,5,2,3,0); break;
-			case 6: x = BITSWAP8(x^0x08, 3,6,1,4,7,2,5,0); break;
-			case 7: x = BITSWAP8(x^0x80, 5,6,3,4,1,2,7,0); break;
+			case 0: x = BITSWAP8(x ^ 0x80, 1, 6, 7, 4, 5, 2, 3, 0); break;
+			case 1: x = BITSWAP8(x ^ 0xa0, 5, 6, 3, 4, 1, 2, 7, 0); break;
+			case 2: x = BITSWAP8(x ^ 0x02, 5, 6, 3, 4, 1, 2, 7, 0); break;
+			case 3: x = BITSWAP8(x ^ 0xa0, 3, 6, 1, 4, 7, 2, 5, 0); break;
+			case 4: x = BITSWAP8(x ^ 0x82, 3, 6, 1, 4, 7, 2, 5, 0); break;
+			case 5: x = BITSWAP8(x ^ 0x02, 1, 6, 7, 4, 5, 2, 3, 0); break;
+			case 6: x = BITSWAP8(x ^ 0x08, 3, 6, 1, 4, 7, 2, 5, 0); break;
+			case 7: x = BITSWAP8(x ^ 0x80, 5, 6, 3, 4, 1, 2, 7, 0); break;
 		}
 
 		ROM[i] = x;
@@ -14008,21 +14351,21 @@ DRIVER_INIT_MEMBER(cmaster_state, schery97)
 {
 	int i;
 	UINT8 *ROM = memregion("maincpu")->base();
-	for (i = 0;i < 0x10000;i++)
+	for (i = 0; i < 0x10000; i++)
 	{
 		UINT8 x = ROM[i];
 		switch(i & 0x12)
 		{
-			case 0x00: x = BITSWAP8(x^0x3e, 1,0,7,6,5,4,3,2); break;
-			case 0x02: x = BITSWAP8(x^0x4d, 0,7,6,5,4,3,2,1); break;
-			case 0x10: x = BITSWAP8(x^0x24, 2,1,0,7,6,5,4,3); break;
-			case 0x12: x = BITSWAP8(x^0xbb, 4,3,2,1,0,7,6,5); break;
+			case 0x00: x = BITSWAP8(x ^ 0x3e, 1, 0, 7, 6, 5, 4, 3, 2); break;
+			case 0x02: x = BITSWAP8(x ^ 0x4d, 0, 7, 6, 5, 4, 3, 2, 1); break;
+			case 0x10: x = BITSWAP8(x ^ 0x24, 2, 1, 0, 7, 6, 5, 4, 3); break;
+			case 0x12: x = BITSWAP8(x ^ 0xbb, 4, 3, 2, 1, 0, 7, 6, 5); break;
 		}
 
 		ROM[i] = x;
 	}
-	m_maincpu->space(AS_IO).install_read_handler(0x1d, 0x1d, read8_delegate(FUNC(cmaster_state::fixedvala8_r),this));
-	m_maincpu->space(AS_IO).install_read_handler(0x2a, 0x2a, read8_delegate(FUNC(cmaster_state::fixedvalb4_r),this));
+	m_maincpu->space(AS_IO).install_read_handler(0x1d, 0x1d, read8_delegate(FUNC(cmaster_state::fixedvala8_r), this));
+	m_maincpu->space(AS_IO).install_read_handler(0x2a, 0x2a, read8_delegate(FUNC(cmaster_state::fixedvalb4_r), this));
 	/* Oki 6295 at 0x20 */
 }
 
@@ -14030,22 +14373,22 @@ DRIVER_INIT_MEMBER(cmaster_state, schery97a)
 {
 	int i;
 	UINT8 *ROM = memregion("maincpu")->base();
-	for (i = 0;i < 0x10000;i++)
+	for (i = 0; i < 0x10000; i++)
 	{
 		UINT8 x = ROM[i];
 		switch(i & 6)
 		{
-			case 0: x = BITSWAP8(x^0xb9, 4,0,6,7,3,1,5,2); break;
-			case 2: x = BITSWAP8(x^0x8f, 6,7,4,0,3,2,1,5); break;
-			case 4: x = BITSWAP8(x^0xd2, 3,4,0,2,5,6,1,7); break;
-			case 6: x = BITSWAP8(x^0xd1, 6,0,2,1,4,5,3,7); break;
+			case 0: x = BITSWAP8(x ^ 0xb9, 4, 0, 6, 7, 3, 1, 5, 2); break;
+			case 2: x = BITSWAP8(x ^ 0x8f, 6, 7, 4, 0, 3, 2, 1, 5); break;
+			case 4: x = BITSWAP8(x ^ 0xd2, 3, 4, 0, 2, 5, 6, 1, 7); break;
+			case 6: x = BITSWAP8(x ^ 0xd1, 6, 0, 2, 1, 4, 5, 3, 7); break;
 		}
 
 		ROM[i] = x;
 	}
 
 
-	m_maincpu->space(AS_IO).install_read_handler(0x16, 0x16, read8_delegate(FUNC(cmaster_state::fixedval38_r),this));
+	m_maincpu->space(AS_IO).install_read_handler(0x16, 0x16, read8_delegate(FUNC(cmaster_state::fixedval38_r), this));
 	/* Oki 6295 at 0x20 */
 }
 
@@ -14053,20 +14396,20 @@ DRIVER_INIT_MEMBER(cmaster_state, skill98)
 {
 	int i;
 	UINT8 *ROM = memregion("maincpu")->base();
-	for (i = 0;i < 0x10000;i++)
+	for (i = 0; i < 0x10000; i++)
 	{
 		UINT8 x = ROM[i];
 		switch(i & 0x12)
 		{
-			case 0x00: x = BITSWAP8(x^0x21, 2,1,0,7,6,5,4,3); break;
-			case 0x02: x = BITSWAP8(x^0x45, 2,1,0,7,6,5,4,3); break;
-			case 0x10: x = BITSWAP8(x^0x23, 4,3,2,1,0,7,6,5); break;
-			case 0x12: x = BITSWAP8(x^0x5b, 4,3,2,1,0,7,6,5); break;
+			case 0x00: x = BITSWAP8(x ^ 0x21, 2, 1, 0, 7, 6, 5, 4, 3); break;
+			case 0x02: x = BITSWAP8(x ^ 0x45, 2, 1, 0, 7, 6, 5, 4, 3); break;
+			case 0x10: x = BITSWAP8(x ^ 0x23, 4, 3, 2, 1, 0, 7, 6, 5); break;
+			case 0x12: x = BITSWAP8(x ^ 0x5b, 4, 3, 2, 1, 0, 7, 6, 5); break;
 		}
 
 		ROM[i] = x;
 	}
-	m_maincpu->space(AS_IO).install_read_handler(0x1e, 0x1e, read8_delegate(FUNC(cmaster_state::fixedvalea_r),this));
+	m_maincpu->space(AS_IO).install_read_handler(0x1e, 0x1e, read8_delegate(FUNC(cmaster_state::fixedvalea_r), this));
 	/* Oki 6295 at 0x20 */
 }
 
@@ -14074,20 +14417,20 @@ DRIVER_INIT_MEMBER(cmaster_state, nfb96_c1)
 {
 	int i;
 	UINT8 *ROM = memregion("maincpu")->base();
-	for (i = 0;i < 0x10000;i++)
+	for (i = 0; i < 0x10000; i++)
 	{
 		UINT8 x = ROM[i];
 
 		switch(i & 0x12)
 		{
-			case 0x00: x = BITSWAP8(x^0xf5, 6,4,3,7,0,1,5,2); break;
-			case 0x02: x = BITSWAP8(x^0xe6, 4,6,3,0,7,2,1,5); break;
-			case 0x10: x = BITSWAP8(x^0x34, 0,3,5,2,4,6,1,7); break;
-			case 0x12: x = BITSWAP8(x^0xc6, 2,0,4,1,6,5,3,7); break;
+			case 0x00: x = BITSWAP8(x ^ 0xf5, 6, 4, 3, 7, 0, 1, 5, 2); break;
+			case 0x02: x = BITSWAP8(x ^ 0xe6, 4, 6, 3, 0, 7, 2, 1, 5); break;
+			case 0x10: x = BITSWAP8(x ^ 0x34, 0, 3, 5, 2, 4, 6, 1, 7); break;
+			case 0x12: x = BITSWAP8(x ^ 0xc6, 2, 0, 4, 1, 6, 5, 3, 7); break;
 		}
 		ROM[i] = x;
 	}
-	m_maincpu->space(AS_IO).install_read_handler(0x31, 0x31, read8_delegate(FUNC(cmaster_state::fixedval68_r),this));
+	m_maincpu->space(AS_IO).install_read_handler(0x31, 0x31, read8_delegate(FUNC(cmaster_state::fixedval68_r), this));
 
 }
 
@@ -14095,46 +14438,46 @@ DRIVER_INIT_MEMBER(cmaster_state, nfb96_c2)
 {
 	int i;
 	UINT8 *ROM = memregion("maincpu")->base();
-	for (i = 0;i < 0x10000;i++)
+	for (i = 0; i < 0x10000; i++)
 	{
 		UINT8 x = ROM[i];
 
 		switch(i & 0x22)
 		{
-			case 0x00: x = BITSWAP8(x^0x5f, 6,4,3,7,0,5,2,1); break;
-			case 0x02: x = BITSWAP8(x^0xe7, 4,6,3,0,7,5,1,2); break;
-			case 0x20: x = BITSWAP8(x^0x18, 0,3,5,2,4,7,1,6); break;
-			case 0x22: x = BITSWAP8(x^0x74, 2,0,4,1,6,7,3,5); break;
+			case 0x00: x = BITSWAP8(x ^ 0x5f, 6, 4, 3, 7, 0, 5, 2, 1); break;
+			case 0x02: x = BITSWAP8(x ^ 0xe7, 4, 6, 3, 0, 7, 5, 1, 2); break;
+			case 0x20: x = BITSWAP8(x ^ 0x18, 0, 3, 5, 2, 4, 7, 1, 6); break;
+			case 0x22: x = BITSWAP8(x ^ 0x74, 2, 0, 4, 1, 6, 7, 3, 5); break;
 		}
 
 		ROM[i] = x;
 	}
-	m_maincpu->space(AS_IO).install_read_handler(0x21, 0x21, read8_delegate(FUNC(cmaster_state::fixedval58_r),this));
+	m_maincpu->space(AS_IO).install_read_handler(0x21, 0x21, read8_delegate(FUNC(cmaster_state::fixedval58_r), this));
 }
 
 DRIVER_INIT_MEMBER(cmaster_state, nfb96_d)
 {
 	int i;
 	UINT8 *ROM = memregion("maincpu")->base();
-	for (i = 0;i < 0x10000;i++)
+	for (i = 0; i < 0x10000; i++)
 	{
 		UINT8 x = ROM[i];
 
 		switch(i & 5)
 		{
-			case 0: x = BITSWAP8(x^0x6a, 2,1,0,7,6,5,4,3); break;
-			case 1: x = BITSWAP8(x^0xcc, 0,7,6,5,4,3,2,1); break;
-			case 4: x = BITSWAP8(x^0x8f, 3,2,1,0,7,6,5,4); break;
-			case 5: x = BITSWAP8(x^0x93, 4,3,2,1,0,7,6,5); break;
+			case 0: x = BITSWAP8(x ^ 0x6a, 2, 1, 0, 7, 6, 5, 4, 3); break;
+			case 1: x = BITSWAP8(x ^ 0xcc, 0, 7, 6, 5, 4, 3, 2, 1); break;
+			case 4: x = BITSWAP8(x ^ 0x8f, 3, 2, 1, 0, 7, 6, 5, 4); break;
+			case 5: x = BITSWAP8(x ^ 0x93, 4, 3, 2, 1, 0, 7, 6, 5); break;
 		}
 		ROM[i] = x;
 	}
 	// nfb96b needs both of these
-	m_maincpu->space(AS_IO).install_read_handler(0x23, 0x23, read8_delegate(FUNC(cmaster_state::fixedval80_r),this));
-	m_maincpu->space(AS_IO).install_read_handler(0x5a, 0x5a, read8_delegate(FUNC(cmaster_state::fixedvalaa_r),this));
+	m_maincpu->space(AS_IO).install_read_handler(0x23, 0x23, read8_delegate(FUNC(cmaster_state::fixedval80_r), this));
+	m_maincpu->space(AS_IO).install_read_handler(0x5a, 0x5a, read8_delegate(FUNC(cmaster_state::fixedvalaa_r), this));
 
 	// csel96b
-	m_maincpu->space(AS_IO).install_read_handler(0x6e, 0x6e, read8_delegate(FUNC(cmaster_state::fixedval96_r),this));
+	m_maincpu->space(AS_IO).install_read_handler(0x6e, 0x6e, read8_delegate(FUNC(cmaster_state::fixedval96_r), this));
 
 }
 
@@ -14143,20 +14486,20 @@ DRIVER_INIT_MEMBER(cmaster_state, nfb96_dk)
 {
 	int i;
 	UINT8 *ROM = memregion("maincpu")->base();
-	for (i = 0;i < 0x10000;i++)
+	for (i = 0; i < 0x10000; i++)
 	{
 		UINT8 x = ROM[i];
 
 		switch(i & 5)
 		{
-			case 0: x = BITSWAP8(x^0xce, 1,0,7,6,5,4,3,2); break;
-			case 1: x = BITSWAP8(x^0x9e, 3,2,1,0,7,6,5,4); break;
-			case 4: x = BITSWAP8(x^0xc3, 0,7,6,5,4,3,2,1); break;
-			case 5: x = BITSWAP8(x^0xdb, 4,3,2,1,0,7,6,5); break;
+			case 0: x = BITSWAP8(x ^ 0xce, 1, 0, 7, 6, 5, 4, 3, 2); break;
+			case 1: x = BITSWAP8(x ^ 0x9e, 3, 2, 1, 0, 7, 6, 5, 4); break;
+			case 4: x = BITSWAP8(x ^ 0xc3, 0, 7, 6, 5, 4, 3, 2, 1); break;
+			case 5: x = BITSWAP8(x ^ 0xdb, 4, 3, 2, 1, 0, 7, 6, 5); break;
 		}
 		ROM[i] = x;
 	}
-	m_maincpu->space(AS_IO).install_read_handler(0x2e, 0x2e, read8_delegate(FUNC(cmaster_state::fixedvalbe_r),this));
+	m_maincpu->space(AS_IO).install_read_handler(0x2e, 0x2e, read8_delegate(FUNC(cmaster_state::fixedvalbe_r), this));
 
 }
 
@@ -14164,82 +14507,82 @@ DRIVER_INIT_MEMBER(cmaster_state, rp35)
 {
 	int i;
 	UINT8 *ROM = memregion("maincpu")->base();
-	for (i = 0;i < 0x10000;i++)
+	for (i = 0; i < 0x10000; i++)
 	{
 		UINT8 x = ROM[i];
 
 		switch(i & 3)
 		{
-			case 0: x = BITSWAP8(x^0x2a, 0,7,6,5,4,3,2,1); break;
-			case 1: x = BITSWAP8(x^0x1c, 4,3,2,1,0,7,6,5); break;
-			case 2: x = BITSWAP8(x^0x4f, 3,2,1,0,7,6,5,4); break;
-			case 3: x = BITSWAP8(x^0x23, 1,0,7,6,5,4,3,2); break;
+			case 0: x = BITSWAP8(x ^ 0x2a, 0, 7, 6, 5, 4, 3, 2, 1); break;
+			case 1: x = BITSWAP8(x ^ 0x1c, 4, 3, 2, 1, 0, 7, 6, 5); break;
+			case 2: x = BITSWAP8(x ^ 0x4f, 3, 2, 1, 0, 7, 6, 5, 4); break;
+			case 3: x = BITSWAP8(x ^ 0x23, 1, 0, 7, 6, 5, 4, 3, 2); break;
 		}
 		ROM[i] = x;
 	}
 
-	m_maincpu->space(AS_IO).install_read_handler(0x5e, 0x5e, read8_delegate(FUNC(cmaster_state::fixedval84_r),this));
-	m_maincpu->space(AS_IO).install_read_handler(0x36, 0x36, read8_delegate(FUNC(cmaster_state::fixedval90_r),this));
+	m_maincpu->space(AS_IO).install_read_handler(0x5e, 0x5e, read8_delegate(FUNC(cmaster_state::fixedval84_r), this));
+	m_maincpu->space(AS_IO).install_read_handler(0x36, 0x36, read8_delegate(FUNC(cmaster_state::fixedval90_r), this));
 }
 
 DRIVER_INIT_MEMBER(cmaster_state, rp36)
 {
 	int i;
 	UINT8 *ROM = memregion("maincpu")->base();
-	for (i = 0;i < 0x10000;i++)
+	for (i = 0; i < 0x10000; i++)
 	{
 		UINT8 x = ROM[i];
 
 		switch(i & 5)
 		{
-			case 0: x = BITSWAP8(x^0xee, 2,1,0,7,6,5,4,3); break;
-			case 1: x = BITSWAP8(x^0x9f, 3,2,1,0,7,6,5,4); break;
-			case 4: x = BITSWAP8(x^0xc7, 3,2,1,0,7,6,5,4); break;
-			case 5: x = BITSWAP8(x^0xc3, 3,2,1,0,7,6,5,4); break;
+			case 0: x = BITSWAP8(x ^ 0xee, 2, 1, 0, 7, 6, 5, 4, 3); break;
+			case 1: x = BITSWAP8(x ^ 0x9f, 3, 2, 1, 0, 7, 6, 5, 4); break;
+			case 4: x = BITSWAP8(x ^ 0xc7, 3, 2, 1, 0, 7, 6, 5, 4); break;
+			case 5: x = BITSWAP8(x ^ 0xc3, 3, 2, 1, 0, 7, 6, 5, 4); break;
 		}
 
 		ROM[i] = x;
 	}
 
-	m_maincpu->space(AS_IO).install_read_handler(0x34, 0x34, read8_delegate(FUNC(cmaster_state::fixedvalb2_r),this));
+	m_maincpu->space(AS_IO).install_read_handler(0x34, 0x34, read8_delegate(FUNC(cmaster_state::fixedvalb2_r), this));
 }
 
 DRIVER_INIT_MEMBER(cmaster_state, rp36c3)
 {
 	int i;
 	UINT8 *ROM = memregion("maincpu")->base();
-	for (i = 0;i < 0x10000;i++)
+	for (i = 0; i < 0x10000; i++)
 	{
 		UINT8 x = ROM[i];
 
 		switch(i & 0xa)
 		{
-			case 0x0: x = BITSWAP8(x^0xfd, 6,4,0,7,3,1,5,2); break;
-			case 0x2: x = BITSWAP8(x^0xee, 4,6,7,0,3,2,1,5); break;
-			case 0x8: x = BITSWAP8(x^0x2c, 0,3,4,2,5,6,1,7); break;
-			case 0xa: x = BITSWAP8(x^0xd6, 2,0,6,1,4,5,3,7); break;
+			case 0x0: x = BITSWAP8(x ^ 0xfd, 6, 4, 0, 7, 3, 1, 5, 2); break;
+			case 0x2: x = BITSWAP8(x ^ 0xee, 4, 6, 7, 0, 3, 2, 1, 5); break;
+			case 0x8: x = BITSWAP8(x ^ 0x2c, 0, 3, 4, 2, 5, 6, 1, 7); break;
+			case 0xa: x = BITSWAP8(x ^ 0xd6, 2, 0, 6, 1, 4, 5, 3, 7); break;
 		}
 
 		ROM[i] = x;
 	}
 
-	m_maincpu->space(AS_IO).install_read_handler(0x17, 0x17, read8_delegate(FUNC(cmaster_state::fixedval48_r),this));
+	m_maincpu->space(AS_IO).install_read_handler(0x17, 0x17, read8_delegate(FUNC(cmaster_state::fixedval48_r), this));
 }
 
 DRIVER_INIT_MEMBER(cmaster_state, rp96sub)  // 95 33 95 33 70 6C 70 6C... XORs seem ok. need bitswap and handler.
 {
 	int i;
 	UINT8 *ROM = memregion("maincpu")->base();
-	for (i = 0;i < 0x10000;i++)
+	for (i = 0; i < 0x10000; i++)
 	{
 		UINT8 x = ROM[i];
 
 		switch(i & 5)
 		{
-			case 0: x = BITSWAP8(x^0x6a, 7,6,5,4,3,2,1,0); break;
-			case 1: x = BITSWAP8(x^0xcc, 7,6,5,4,3,2,1,0); break;
-			case 4: x = BITSWAP8(x^0x8f, 7,6,5,4,3,2,1,0); break;
-			case 5: x = BITSWAP8(x^0x93, 7,6,5,4,3,2,1,0); break;
+			case 0: x = BITSWAP8(x ^ 0x6a, 7, 6, 5, 4, 3, 2, 1, 0); break;
+			case 1: x = BITSWAP8(x ^ 0xcc, 7, 6, 5, 4, 3, 2, 1, 0); break;
+			case 4: x = BITSWAP8(x ^ 0x8f, 7, 6, 5, 4, 3, 2, 1, 0); break;
+			case 5: x = BITSWAP8(x ^ 0x93, 7, 6, 5, 4, 3, 2, 1, 0); break;
 		}
 
 		ROM[i] = x;
@@ -14253,22 +14596,22 @@ DRIVER_INIT_MEMBER(cmaster_state, po33)
 {
 	int i;
 	UINT8 *ROM = memregion("maincpu")->base();
-	for (i = 0;i < 0x10000;i++)
+	for (i = 0; i < 0x10000; i++)
 	{
 		UINT8 x = ROM[i];
 
 		switch(i & 0x14)
 		{
-			case 0x00: x = BITSWAP8(x^0xde, 2,1,0,7,6,5,4,3); break;
-			case 0x04: x = BITSWAP8(x^0x3c, 0,7,6,5,4,3,2,1); break;
-			case 0x10: x = BITSWAP8(x^0x2f, 3,2,1,0,7,6,5,4); break;
-			case 0x14: x = BITSWAP8(x^0x5b, 4,3,2,1,0,7,6,5); break;
+			case 0x00: x = BITSWAP8(x ^ 0xde, 2, 1, 0, 7, 6, 5, 4, 3); break;
+			case 0x04: x = BITSWAP8(x ^ 0x3c, 0, 7, 6, 5, 4, 3, 2, 1); break;
+			case 0x10: x = BITSWAP8(x ^ 0x2f, 3, 2, 1, 0, 7, 6, 5, 4); break;
+			case 0x14: x = BITSWAP8(x ^ 0x5b, 4, 3, 2, 1, 0, 7, 6, 5); break;
 		}
 
 		ROM[i] = x;
 	}
-	m_maincpu->space(AS_IO).install_read_handler(0x32, 0x32, read8_delegate(FUNC(cmaster_state::fixedval74_r),this));
-	m_maincpu->space(AS_IO).install_read_handler(0x12, 0x12, read8_delegate(FUNC(cmaster_state::fixedval09_r),this));
+	m_maincpu->space(AS_IO).install_read_handler(0x32, 0x32, read8_delegate(FUNC(cmaster_state::fixedval74_r), this));
+	m_maincpu->space(AS_IO).install_read_handler(0x12, 0x12, read8_delegate(FUNC(cmaster_state::fixedval09_r), this));
 	/* oki6295 at 0x20 */
 }
 
@@ -14276,23 +14619,23 @@ DRIVER_INIT_MEMBER(cmaster_state, match133)
 {
 	int i;
 	UINT8 *ROM = memregion("maincpu")->base();
-	for (i = 0;i < 0x10000;i++)
+	for (i = 0; i < 0x10000; i++)
 	{
 		UINT8 x = ROM[i];
 
 		switch(i & 0x12)
 		{
-			case 0x00: x = BITSWAP8(x^0xde, 3,2,1,0,7,6,5,4); break;
-			case 0x02: x = BITSWAP8(x^0x3d, 1,0,7,6,5,4,3,2); break;
-			case 0x10: x = BITSWAP8(x^0x2f, 4,3,2,1,0,7,6,5); break;
-			case 0x12: x = BITSWAP8(x^0x5c, 4,3,2,1,0,7,6,5); break;
+			case 0x00: x = BITSWAP8(x ^ 0xde, 3, 2, 1, 0, 7, 6, 5, 4); break;
+			case 0x02: x = BITSWAP8(x ^ 0x3d, 1, 0, 7, 6, 5, 4, 3, 2); break;
+			case 0x10: x = BITSWAP8(x ^ 0x2f, 4, 3, 2, 1, 0, 7, 6, 5); break;
+			case 0x12: x = BITSWAP8(x ^ 0x5c, 4, 3, 2, 1, 0, 7, 6, 5); break;
 		}
 
 		ROM[i] = x;
 	}
 
-	m_maincpu->space(AS_IO).install_read_handler(0x16, 0x16, read8_delegate(FUNC(cmaster_state::fixedvalc7_r),this));
-	m_maincpu->space(AS_IO).install_read_handler(0x1a, 0x1a, read8_delegate(FUNC(cmaster_state::fixedvale4_r),this));
+	m_maincpu->space(AS_IO).install_read_handler(0x16, 0x16, read8_delegate(FUNC(cmaster_state::fixedvalc7_r), this));
+	m_maincpu->space(AS_IO).install_read_handler(0x1a, 0x1a, read8_delegate(FUNC(cmaster_state::fixedvale4_r), this));
 }
 
 DRIVER_INIT_MEMBER(cb3_state, cherrys)
@@ -14325,9 +14668,9 @@ DRIVER_INIT_MEMBER(cb3_state, cherrys)
 		0x30, 0x31, 0x32, 0x33
 	};
 
-	for (i = 0;i < 0x10000;i++)
+	for (i = 0; i < 0x10000; i++)
 	{
-		ROM[i] = ROM[i] ^ rawData[i&0xff];
+		ROM[i] = ROM[i] ^ rawData[i & 0xff];
 	}
 
 }
@@ -14377,19 +14720,19 @@ DRIVER_INIT_MEMBER(goldstar_state, super9)
 {
 	int i;
 	UINT8 *src = memregion("gfx1")->base();
-	for (i = 0;i < 0x20000;i++)
+	for (i = 0; i < 0x20000; i++)
 	{
-//      src[i] = BITSWAP8(src[i], 7,4,2,1,6,5,3,0);
-//      src[i] = BITSWAP8(src[i], 7,3,2,6,1,5,4,0);
-		src[i] = BITSWAP8(src[i], 7,3,2,6,5,1,4,0);
+//      src[i] = BITSWAP8(src[i], 7, 4, 2, 1, 6, 5, 3, 0);
+//      src[i] = BITSWAP8(src[i], 7, 3, 2, 6, 1, 5, 4, 0);
+		src[i] = BITSWAP8(src[i], 7, 3, 2, 6, 5, 1, 4, 0);
 	}
 
 	UINT8 *src2 = memregion("gfx2")->base();
-	for (i = 0;i < 0x8000;i++)
+	for (i = 0; i < 0x8000; i++)
 	{
-//      src2[i] = BITSWAP8(src2[i], 7,4,2,1,6,5,3,0);
-//      src2[i] = BITSWAP8(src2[i], 7,3,2,6,1,5,4,0);
-		src2[i] = BITSWAP8(src2[i], 3,7,6,2,5,1,0,4);   // endianess
+//      src2[i] = BITSWAP8(src2[i], 7, 4, 2, 1, 6, 5, 3, 0);
+//      src2[i] = BITSWAP8(src2[i], 7, 3, 2, 6, 1, 5, 4, 0);
+		src2[i] = BITSWAP8(src2[i], 3, 7, 6, 2, 5, 1, 0, 4);   // endianess
 	}
 
 }
@@ -14525,7 +14868,6 @@ GAMEL( 198?, ns8lines,  0,        lucky8,   lucky8b,  driver_device,  0,        
 GAMEL( 1985, ns8linesa, ns8lines, lucky8,   lucky8b,  driver_device,  0,         ROT0, "Yamate (bootleg)",  "New Lucky 8 Lines / New Super 8 Lines (W-4, Lucky97 HW)",  0,                     layout_lucky8p1 )  // only 1 control set...
 GAMEL( 198?, ns8linew,  ns8lines, lucky8,   ns8linew, driver_device,  0,         ROT0, "<unknown>",         "New Lucky 8 Lines / New Super 8 Lines (F-5, Witch Bonus)", 0,                     layout_lucky8 )    // 2 control sets...
 GAMEL( 198?, ns8linewa, ns8lines, lucky8,   ns8linwa, driver_device,  0,         ROT0, "<unknown>",         "New Lucky 8 Lines / New Super 8 Lines (W-4, Witch Bonus)", 0,                     layout_lucky8p1 )  // only 1 control set...
-
 GAME(  198?, luckybar,  0,        lucky8,   ns8linew, driver_device,  0,         ROT0, "<unknown>",         "Lucky Bar (W-4 with mc68705 MCU)",                         MACHINE_NOT_WORKING )  // MC68705 MCU
 GAME(  198?, chryangla, ncb3,     lucky8,   ns8linew, driver_device,  0,         ROT0, "<unknown>",         "Cherry Angel (encrypted, W-4 hardware)",                   MACHINE_NOT_WORKING )
 GAMEL( 198?, kkotnoli,  0,        kkotnoli, kkotnoli, driver_device,  0,         ROT0, "hack",              "Kkot No Li (Kill the Bees)",                               MACHINE_IMPERFECT_COLORS, layout_lucky8 )
@@ -14537,6 +14879,10 @@ GAME(  1991, megaline,  0,        megaline, megaline, driver_device,  0,        
 
 GAMEL( 1993, bingowng,  0,        bingowng, bingowng, driver_device,  0,         ROT0, "Wing Co., Ltd.",    "Bingo (set 1)",                                            0,                     layout_bingowng )
 GAMEL( 1993, bingownga, bingowng, bingownga,bingownga,driver_device,  0,         ROT0, "Wing Co., Ltd.",    "Bingo (set 2)",                                            0,                     layout_bingowng )
+
+
+// --- Flaming 7's hardware (W-4 derivative) ---
+GAME(  199?, fl7_3121,  0,        flaming7, flaming7, driver_device,  0,         ROT0, "Cyberdyne Systems", "Flaming 7 (Red, White & Blue 7's + Hollywood Nights)",     MACHINE_IMPERFECT_COLORS | MACHINE_NOT_WORKING )
 
 
 // --- Wing W-8 hardware ---
