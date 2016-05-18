@@ -24,11 +24,13 @@
 		<publisher>Commodore</publisher>
 
 		<part name="cass1" interface="cbm_cass">
+			<feature name="part_id" value="Side A"/>
 			<dataarea name="cass" size="1293758">
 				<rom name="an introduction to basic part 1 (1982)(commodore)(us)(side a).tap" size="1293758" crc="47587d97" sha1="d2a10fd1b763191f778b224a49dca9b76baf2e9c" offset="0" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="cbm_cass">
+			<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="967662">
 				<rom name="an introduction to basic part 1 (1982)(commodore)(us)(side b).tap" size="967662" crc="19229ef6" sha1="4f7aa7f6575dac8f21e1ef9725829f96bfcf3a2d" offset="0" />
 			</dataarea>
@@ -41,11 +43,13 @@
 		<publisher>Commodore</publisher>
 
 		<part name="cass1" interface="cbm_cass">
+			<feature name="part_id" value="Side A"/>
 			<dataarea name="cass" size="1098322">
 				<rom name="an introduction to basic part 2 (1982)(commodore)(us)(side a).tap" size="1098322" crc="9f2520b5" sha1="0c983791cbba8095ef6fc75ae5cfb3385a0ef9d1" offset="0" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="cbm_cass">
+			<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="967555">
 				<rom name="an introduction to basic part 2 (1982)(commodore)(us)(side b).tap" size="967555" crc="e27949d5" sha1="bc91a650881ab324d39dad5b5b2de5293115228d" offset="0" />
 			</dataarea>
@@ -84,11 +88,13 @@
 		<publisher>Cascade</publisher>
 
 		<part name="cass1" interface="cbm_cass">
+			<feature name="part_id" value="Side A"/>
 			<dataarea name="cass" size="4582501">
 				<rom name="cassette 50 (1983)(cascade)(side a).tap" size="4582501" crc="a22ede40" sha1="f507fb963e07110ff7c8f9e8eab501b8d9e928f6" offset="0" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="cbm_cass">
+			<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="4115066">
 				<rom name="cassette 50 (1983)(cascade)(side b).tap" size="4115066" crc="b3141ee1" sha1="8a2924caafe7570ea42a280a2d5c22fea6095ddd" offset="0" />
 			</dataarea>
@@ -291,11 +297,13 @@
 		<info name="ram" value="8K" />
 
 		<part name="cass1" interface="cbm_cass">
+			<feature name="part_id" value="Side A"/>
 			<dataarea name="cass" size="531662">
 				<rom name="alien (1983)(mikro-gen)[side a][8k].tap" size="531662" crc="d0e729f5" sha1="741d8f037d54aa2047086d15475593a5277dad77" offset="0" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="cbm_cass">
+			<feature name="part_id" value="Side B (Instructions)"/>
 			<dataarea name="cass" size="520024">
 				<rom name="alien (1983)(mikro-gen)[side b][8k][instructions].tap" size="520024" crc="dc3f78de" sha1="7dda5d586911514eb48deb0d86ba238225d04abb" offset="0" />
 			</dataarea>
@@ -1657,6 +1665,367 @@
 		</part>
 	</software>
 
+	<software name="chase1">
+		<description>Chase (Computermat)</description>
+		<year>1981</year>
+		<publisher>Computermat</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="433270">
+				<rom name="chase (1981)(computermat).tap" size="433270" crc="1106bf1e" sha1="aab1423814d09d33ebdb0dab17592f68d4a8c564" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chase2">
+		<description>Chase (Cymbal)</description>
+		<year>1983</year>
+		<publisher>Cymbal</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="169433">
+				<rom name="chase (1983)(cymbal).tap" size="169433" crc="4d187103" sha1="33f48f88bc8df65441c0062297947b90244a08d6" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chase2a" cloneof="chase2">
+		<description>Chase (Cymbal) (Alt)</description>
+		<year>1983</year>
+		<publisher>Cymbal</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="184662">
+				<rom name="chase (1983)(cymbal)[a].tap" size="184662" crc="5f96b378" sha1="eb94787eb276003386429d84b2e5f2dafcc156e6" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chess">
+		<description>Chess</description>
+		<year>1982</year>
+		<publisher>Bug-Byte</publisher>
+		<info name="ram" value="16K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="494320">
+				<rom name="chess (1982)(bug-byte)[16k].tap" size="494320" crc="0ff71448" sha1="7ca59cf658445a44b6ab25d15d4d87b1968847b1" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chessa" cloneof="chess">
+		<description>Chess (Alt)</description>
+		<year>1982</year>
+		<publisher>Bug-Byte</publisher>
+		<info name="ram" value="16K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="494234">
+				<rom name="chess (1982)(bug-byte)[a][16k].tap" size="494234" crc="debdcfd2" sha1="906219876de3c9c183ca1887da0e9c6f5197a6de" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chinamen">
+		<description>Chinamen</description>
+		<year>1982</year>
+		<publisher>Commodore</publisher>
+		<info name="ram" value="8K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="762813">
+				<rom name="chinamen (1982)(commodore)[8k].tap" size="762813" crc="597c48ec" sha1="83b3b9409a483094528dab134c504a141e0b689a" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chocbloc">
+		<description>Chocabloc</description>
+		<year>1983</year>
+		<publisher>Paramount</publisher>
+		<info name="ram" value="8K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="680238">
+				<rom name="chocabloc (1983)(paramount)[8k].tap" size="680238" crc="ded3defd" sha1="51967be40df7114e3957fffeb69ac20cb97507a8" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chomper">
+		<description>Chomper Man</description>
+		<year>1983</year>
+		<publisher>Mogul</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="184687">
+				<rom name="chomper man (1983)(mogul).tap" size="184687" crc="f39bc169" sha1="fbd2e197ffe8061edc7b78a2d5c7140a48984ed2" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chopper">
+		<description>Chopper</description>
+		<year>1982</year>
+		<publisher>Sumlock</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="183032">
+				<rom name="chopper (1982)(sumlock).tap" size="183032" crc="9d795885" sha1="dfd399c01539ac493853d21bb07482e9cbaca8a3" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chopraid">
+		<description>Chopper Raid</description>
+		<year>1982</year>
+		<publisher>Bubble Bus</publisher>
+		<info name="ram" value="3K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="280924">
+				<rom name="chopper raid (1982)(bubble bus)[3k].tap" size="280924" crc="a7338e1c" sha1="97e3669836939e185d449a15c084751a9e884821" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="choprun">
+		<description>Chopper Run (from VICTape Computing #11)</description>
+		<year>1985</year>
+		<publisher>Argus Press</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="266770">
+				<rom name="chopper run (1985)(argus press)[victape computing #11].tap" size="266770" crc="61e9c44a" sha1="53b780d49d556d84c4bdbe116403b32ad45fb435" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="citybomb">
+		<description>City Bomber</description>
+		<year>1982</year>
+		<publisher>Creative</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="307153">
+				<rom name="city bomber (1982)(creative).tap" size="307153" crc="689cf5f6" sha1="0c8ee646f82f326c89ce61a73b1ee252a2455ce6" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="clearrnd">
+		<description>Clear Round (from VICTape Computing #2)</description>
+		<year>1984</year>
+		<publisher>Argus Press</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="391320">
+				<rom name="clear round (1984)(argus press)[victape computing #2].tap" size="391320" crc="999b7db2" sha1="84f5865337ea9cfa9f3fd4a2a78c74e032ac51fa" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="clearrnda" cloneof="clearrnd">
+		<description>Clear Round (from VICTape Computing #2) (16K Version)</description>
+		<year>1984</year>
+		<publisher>Argus Press</publisher>
+		<info name="ram" value="16K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="566476">
+				<rom name="clear round (1984)(argus press)[victape computing #2][16k].tap" size="566476" crc="4b2e5bc2" sha1="003bfd3c02ebddf3abf036153584bdc40ecd2d2f" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="clifhang">
+		<description>Cliffhanger - Numbers</description>
+		<year>1983</year>
+		<publisher>Polar Computer Specialties</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="545483">
+				<rom name="cliffhanger - numbers (1983)(polar computer specialties).tap" size="545483" crc="a5298a44" sha1="8ede73f3e1c4bf93946fde16841ce3983d95e385" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cloudbst">
+		<description>Cloudburst</description>
+		<year>1982</year>
+		<publisher>Audiogenic</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="234303">
+				<rom name="cloudburst (1982)(audiogenic).tap" size="234303" crc="d05d7b3f" sha1="d172d1506dd2978747122501df7d5d52d31e3767" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cobra">
+		<description>Cobra</description>
+		<year>198?</year>
+		<publisher>Video Showcase</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="155429">
+				<rom name="cobra (198x)(video showcase).tap" size="155429" crc="9ce1d2f8" sha1="32dee59b329d4d251461f80563926a956aac14a0" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="codemakr">
+		<description>Code Maker</description>
+		<year>1981</year>
+		<publisher>Creative</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="494500">
+				<rom name="code maker (1981)(creative).tap" size="494500" crc="27fb9a11" sha1="a9898b26a5aeecb57b1cc7c4455884fd3d7ba4dc" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="colonel">
+		<description>Colonel's House</description>
+		<year>1983</year>
+		<publisher>Rabbit</publisher>
+		<info name="ram" value="16K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="798726">
+				<rom name="colonel's house (1983)(rabbit)[16k].tap" size="798726" crc="8b42b570" sha1="620153768cec06e5d5a9eef5d2d5653ce2c63c93" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cs_base">
+		<description>Compusport Baseball</description>
+		<year>1983</year>
+		<publisher>K-Tel</publisher>
+		<info name="ram" value="8K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="386262">
+				<rom name="compusport baseball (1983)(k-tel)[8k].tap" size="386262" crc="59b01445" sha1="354f8cf2010d5eba8220b702e4f75b95d0959bf1" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cs_gp">
+		<description>Compusport Grand Prix</description>
+		<year>1983</year>
+		<publisher>K-Tel</publisher>
+		<info name="ram" value="8K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="388796">
+				<rom name="compusport grand prix (1983)(k-tel)[8k].tap" size="388796" crc="cd06c8a0" sha1="84f5fd5135ecb2a7a62346475662faa39e2f40f1" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="compuwar">
+		<description>Computer War</description>
+		<year>1983</year>
+		<publisher>Thorn EMI</publisher>
+		<info name="ram" value="8K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="416107">
+				<rom name="computer war (1983)(thorn emi)[8k].tap" size="416107" crc="13c3259e" sha1="21e6cf844a2ddc9b9535557dd3314354ff762629" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="connect4">
+		<description>Connect 4</description>
+		<year>198?</year>
+		<publisher>Artic</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="183641">
+				<rom name="connect 4 (19xx)(artic).tap" size="183641" crc="1af6727c" sha1="bfd758c52aff92cefbd0a1fea678ebae2b23d3a6" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="conquer">
+		<description>Conqueror</description>
+		<year>1982</year>
+		<publisher>Computer Software Associates</publisher>
+		<info name="ram" value="16K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="574572">
+				<rom name="conqueror (1982)(computer software associates)[16k].tap" size="574572" crc="de6d2543" sha1="94f8cac78aa7884e508ebcec3681d56e24aee757" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="convent">
+		<description>Convention</description>
+		<year>1983</year>
+		<publisher>Cymbal</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="169029">
+				<rom name="convention (1983)(cymbal).tap" size="169029" crc="2434cb90" sha1="5da4aba3f366c4ffdd5dcba270eca87604a8d296" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="conventa" cloneof="convent">
+		<description>Convention (Alt)</description>
+		<year>1983</year>
+		<publisher>Cymbal</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="178285">
+				<rom name="convention (1983)(cymbal)[a].tap" size="178285" crc="c4c376db" sha1="de8b7608c71d4c3e470dbe2f24b318a41eca8ae8" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+<!--
+	<software name="conventb" cloneof="convent">
+		<description>Convention (Bad)</description>
+		<year>1983</year>
+		<publisher>Cymbal</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="168985">
+				<rom name="convention (1983)(cymbal)[b][not working].tap" size="168985" crc="512a5cb8" sha1="e767cae3f88fa9c6b6712143b25f7912e03a0f54" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+-->
+
+	<software name="copsrob1">
+		<description>Cops 'n Robbers (Abrasco)</description>
+		<year>1983</year>
+		<publisher>Abrasco</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="315263">
+				<rom name="cops 'n robbers (1983)(abrasco).tap" size="315263" crc="6a1eebc9" sha1="1ea5f6ba0fc4a6b7fbe91f4ee00363a42fbd2503" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="copsrob2">
+		<description>Cops 'n Robbers (Atlantis)</description>
+		<year>1985</year>
+		<publisher>Atlantis</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="417727">
+				<rom name="cops 'n robbers (1985)(atlantis).tap" size="417727" crc="35e964a9" sha1="0849b30749a1fae45257cf57ee365b2e810ee226" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="cosmiads">
 		<description>Cosmiads</description>
 		<year>1983</year>
@@ -1994,6 +2363,1111 @@
 		</part>
 	</software>
 
+	<software name="dambombr">
+		<description>Dam Bomber</description>
+		<year>1982</year>
+		<publisher>HES</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="279970">
+				<rom name="dam bomber (1982)(hes).tap" size="279970" crc="31a687ae" sha1="5fa5668798316850e6758317aa4d7fde5a77dd72" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dambusta">
+		<description>Dam Busta</description>
+		<year>1983</year>
+		<publisher>Rabbit</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="184630">
+				<rom name="dam busta (1983)(rabbit).tap" size="184630" crc="7c50ab66" sha1="a17708f1ccd11dc2a69db4bc53a5d77b6dd26406" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="damsel">
+		<description>Damsel</description>
+		<year>1982</year>
+		<publisher>CommData</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="138638">
+				<rom name="damsel (1982)(commdata).tap" size="138638" crc="07a65ed7" sha1="1fb5cbd11fbd6cd490f9efe166756bc46eb11a80" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="daredevl">
+		<description>Dare Devil Diver</description>
+		<year>1983</year>
+		<publisher>ALA</publisher>
+		<info name="ram" value="8K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="339082">
+				<rom name="dare devil diver (1983)(ala)[8k].tap" size="339082" crc="5febc3e3" sha1="797d8cdfa01950e187dc16f22ee4a258c398191d" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="darkdgns">
+		<description>The Dark Dungeons</description>
+		<year>1983</year>
+		<publisher>Anirog</publisher>
+		<info name="ram" value="16K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="854099">
+				<rom name="dark dungeons, the (1983)(anirog)[16k].tap" size="854099" crc="0c0619c0" sha1="a6415ca0c42e867cd6f9834970fcfa6613c88213" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dayraces">
+		<description>A Day At The Races (from Compute!'s Gazette 1983-02)</description>
+		<year>1983</year>
+		<publisher>Compute!</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="209308">
+				<rom name="day at the races, a (1983-02)(compute!)[type-in].tap" size="209308" crc="0ae97556" sha1="2e3b00445957dfd5d306068271a66d9efd097a13" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="deathrac">
+		<description>Death Race</description>
+		<year>1984</year>
+		<publisher>Atlantis</publisher>
+		<info name="ram" value="8K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="470732">
+				<rom name="death race (1984)(atlantis)[8k].tap" size="470732" crc="be5826ca" sha1="815be2aac584124a3fb4e11447dab733e5c7455d" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="deathraca" cloneof="deathrac">
+		<description>Death Race (Alt)</description>
+		<year>1984</year>
+		<publisher>Atlantis</publisher>
+		<info name="ram" value="8K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="470566">
+				<rom name="death race (1984)(atlantis)[a][8k].tap" size="470566" crc="8e63ed43" sha1="b794623b65ce4bbd253f4d589d7cf27ff2fd3bfc" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dstar1">
+		<description>Death Star (Gameworx)</description>
+		<year>198?</year>
+		<publisher>Gameworx</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="989349">
+				<rom name="death star (19xx)(gameworx).tap" size="989349" crc="efda4512" sha1="f1c9b2cafc20c70e18c30c03ffbb8c0978ab8a0f" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dstar2">
+		<description>Deathstar (from VICTape Computing #8)</description>
+		<year>1985</year>
+		<publisher>Argus Press</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="227772">
+				<rom name="deathstar (1985)(argus press)[victape computing #8].tap" size="227772" crc="8f66fe60" sha1="880917254a669f879d2f4eab07df42a32c82866e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="defend">
+		<description>Defend</description>
+		<year>1983</year>
+		<publisher>Commodore</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="368928">
+				<rom name="defend (1983)(commodore).tap" size="368928" crc="fe86d105" sha1="b4643406956dce3d8fe0f7737b7827a9a086dc69" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="defenda">
+		<description>Defenda</description>
+		<year>1982</year>
+		<publisher>Llamasoft</publisher>
+		<info name="ram" value="8K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="551338">
+				<rom name="defenda (1982)(llamasoft)[8k].tap" size="551338" crc="d68a4e6f" sha1="a5fe72c25165918a0fa34ea5ef72af0b0f9f2719" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="defentri">
+		<description>Defender On Tri</description>
+		<year>1982</year>
+		<publisher>Nufekop</publisher>
+		<info name="ram" value="3K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="369812">
+				<rom name="defender on tri (1982)(nufekop)[3k].tap" size="369812" crc="ec35d161" sha1="3d332921dc39fb38bd43d49fc290d48e8408420b" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="deflect">
+		<description>Deflect</description>
+		<year>1982</year>
+		<publisher>VIC-Soft</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="172415">
+				<rom name="deflect (1982)(vic-soft).tap" size="172415" crc="23839195" sha1="930ffe67d07b46b3ef1dd0dde01fb0fa76737516" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="defuze">
+		<description>Defuze (from VICTape Computing #1)</description>
+		<year>1983</year>
+		<publisher>Argus Press</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="243276">
+				<rom name="defuze (1983)(argus press)[victape computing #1].tap" size="243276" crc="c9ca1146" sha1="5e319b2df6d74f1f0c22bef5aa6b3c954db322e1" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="delivery">
+		<description>Delivery Alert</description>
+		<year>1983</year>
+		<publisher>ALA</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="274099">
+				<rom name="delivery alert (1983)(ala).tap" size="274099" crc="bd5810d2" sha1="94f277d94344746a4e8ee022bd646767916b09c1" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="demondrv">
+		<description>Demon Driver</description>
+		<year>1983</year>
+		<publisher>Lyversoft</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="304905">
+				<rom name="demon driver (1983)(lyversoft).tap" size="304905" crc="6a9a65ca" sha1="cbb64af8df96f1f22e99d99d40210d091c1d24a4" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="demonhnt">
+		<description>Demon Hunt</description>
+		<year>1983</year>
+		<publisher>Cymbal</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="170309">
+				<rom name="demon hunt (1983)(cymbal).tap" size="170309" crc="06768054" sha1="4954c3fbec508deb1a33509afd7139effd20297b" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="demonhnta" cloneof="demonhnt">
+		<description>Demon Hunt (Alt)</description>
+		<year>1983</year>
+		<publisher>Cymbal</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="184639">
+				<rom name="demon hunt (1983)(cymbal)[a].tap" size="184639" crc="352f74ae" sha1="6f5f343bb1bc9d12481ce2a40b12e90790f09250" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="demonkni">
+		<description>Demon Knight</description>
+		<year>1983</year>
+		<publisher>ASP</publisher>
+		<info name="ram" value="16K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="607130">
+				<rom name="demon knight (1983)(asp)[16k].tap" size="607130" crc="8b65c0e7" sha1="c85d2be9b438d620baa3cdf338a4a5bca9b0b91d" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="destroyr">
+		<description>Destroyer</description>
+		<year>1982</year>
+		<publisher>Sumlock</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="169692">
+				<rom name="destroyer (1982)(sumlock).tap" size="169692" crc="1de01529" sha1="0dc835fb4b66674669c4d0714c0dfae670d834c8" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="digger">
+		<description>Digger</description>
+		<year>1983</year>
+		<publisher>Mr. Micro</publisher>
+		<info name="ram" value="8K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="526750">
+				<rom name="digger (1983)(mr. micro)[8k].tap" size="526750" crc="a99b291e" sha1="13959eab804ac107f1648d526951131ba7d9aaa6" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="diver">
+		<description>Diver</description>
+		<year>198?</year>
+		<publisher>Video Showcase</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="371054">
+				<rom name="diver (198x)(video showcase).tap" size="371054" crc="70f254fc" sha1="49de72093c030bf25f99f7fd0d3db423d4d21253" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dodgcars">
+		<description>Dodge Cars</description>
+		<year>1982</year>
+		<publisher>The Wizard's Magic Toy Box</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="139724">
+				<rom name="dodge cars (1982)(the wizard's magic toy box).tap" size="139724" crc="0093e1ef" sha1="26c64c072ecf8ea7abf9c6ba5433ef15d73c59af" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dodger">
+		<description>Dodger</description>
+		<year>198?</year>
+		<publisher>IMS</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="615782">
+				<rom name="dodger (19xx)(ims).tap" size="615782" crc="6c358d18" sha1="beae1d1f062b6b8efeb1bcbe7f1bc02465e83da4" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dodolair">
+		<description>Dodo Lair</description>
+		<year>1984</year>
+		<publisher>Software Projects</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="488042">
+				<rom name="dodo lair (1984)(software projects).tap" size="488042" crc="1360a263" sha1="c102b1c250384e734804bb3e2a31e0dc88fe9f9b" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="doodlbug">
+		<description>Doodle Bug</description>
+		<year>1985</year>
+		<publisher>Mastertronic</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="202270">
+				<rom name="doodle bug (1985)(mastertronic).tap" size="202270" crc="14fce6e1" sha1="246dc409ccd41163b764d69c9cfd08d40c535aa9" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dotman">
+		<description>Dot Man</description>
+		<year>1983</year>
+		<publisher>Anirog</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="617736">
+				<rom name="dot man (1983)(anirog).tap" size="617736" crc="7f15c0b8" sha1="b586523890d47e4256572b1c55196a7382c0ef1e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dotmana" cloneof="dotman">
+		<description>Dot Man (Alt)</description>
+		<year>1983</year>
+		<publisher>Anirog</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="617655">
+				<rom name="dot man (1983)(anirog)[a].tap" size="617655" crc="bb19327a" sha1="d4e0fe85fe900cefd01bab2dda84d24d21800f77" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dtrouble">
+		<description>Double Trouble</description>
+		<year>1983</year>
+		<publisher>Abrasco</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="718033">
+				<rom name="double trouble (1983)(abrasco).tap" size="718033" crc="1313267d" sha1="8014b304579dcbf61075a38a12dbc4b670eb8701" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dracula">
+		<description>Dracula</description>
+		<year>1983</year>
+		<publisher>Anirog</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="325009">
+				<rom name="dracula (1983)(anirog).tap" size="325009" crc="0299d890" sha1="77fff4fac823e46eeec13aa27a4aa86982a2990a" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- NTSC -->
+	<software name="dragnqst">
+		<description>Dragon Quest (from RUN Magazine 1984-05)</description>
+		<year>1984</year>
+		<publisher>Wayne Green</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="280288">
+				<rom name="dragon quest (1984-05)(wayne green)(ntsc)[run magazine][type-in].tap" size="280288" crc="9d3245f8" sha1="c155cc0fb5547a6c5ce7177bbd52b23a9d9f2f00" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dgntreas">
+		<description>Dragons and Treasure</description>
+		<year>1982</year>
+		<publisher>CommData</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="204574">
+				<rom name="dragons and treasure (1982)(commdata).tap" size="204574" crc="6165cb0a" sha1="9b68960b7eabdf3faa4c3b82b5255eebb7e4ea77" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="duckshot">
+		<description>Duck Shoot</description>
+		<year>1983</year>
+		<publisher>Mastertronic</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="345709">
+				<rom name="duck shoot (1983)(mastertronic).tap" size="345709" crc="b676da7a" sha1="66829b69964f099adc508829ed85116249609702" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="duckshota" cloneof="duckshot">
+		<description>Duck Shoot (Alt)</description>
+		<year>1983</year>
+		<publisher>Mastertronic</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="345725">
+				<rom name="duck shoot (1983)(mastertronic)[a].tap" size="345725" crc="8dbb7cf8" sha1="0d8e6e3dd148a5a2dfa4062bf221fb6c0dcea187" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dundeath">
+		<description>Dungeons of Death</description>
+		<year>1983</year>
+		<publisher>Aardvark Software</publisher>
+		<info name="ram" value="8K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="1367854">
+				<rom name="dungeons of death (1983)(aardvark software)[8k].tap" size="1367854" crc="1df9bb34" sha1="4210c5f6080ddcbea058534dad5c049c7a7378d1" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dungeons">
+		<description>The Dungeons</description>
+		<year>1983</year>
+		<publisher>Anirog</publisher>
+		<info name="ram" value="16K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="855465">
+				<rom name="dungeons, the (1983)(anirog)[16k].tap" size="855465" crc="df4a6f07" sha1="929583110eac9b3de3031da696a42c7f0ec203a8" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dustman">
+		<description>Dustman Dan</description>
+		<year>1983</year>
+		<publisher>Cascade</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="282380">
+				<rom name="dustman dan (1983)(cascade).tap" size="282380" crc="99f0f3ab" sha1="7d4dcc1c9b81778c9c05e7c24ee0eab11352751c" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="earthqke">
+		<description>Earthquake</description>
+		<year>1983</year>
+		<publisher>Mogul</publisher>
+		<info name="ram" value="8K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="455929">
+				<rom name="earthquake (1983)(mogul)[8k].tap" size="455929" crc="5f717b0f" sha1="3761bb1d3292f8c57b0da597ec8861da347025a2" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="electra">
+		<description>Electra Sport Soccer</description>
+		<year>1983</year>
+		<publisher>K-Tel</publisher>
+		<info name="ram" value="8K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="351662">
+				<rom name="electra sport soccer (1983)(k-tel)[8k].tap" size="351662" crc="d7317d08" sha1="bc90a30181e95b55c24422543575e32450931c54" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="elecsnap">
+		<description>Electric Snapper</description>
+		<year>1983</year>
+		<publisher>ALA</publisher>
+		<info name="ram" value="8K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="424620">
+				<rom name="electric snapper (1983)(ala)[8k].tap" size="424620" crc="0fb09034" sha1="5c9aa8dacbe0d278d3d0e4391e046c7f81cee153" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="emmet">
+		<description>Emmet Attack (Joystick)</description>
+		<year>1983</year>
+		<publisher>Commodore</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="442197">
+				<rom name="emmet attack (1983)(commodore)[joystick].tap" size="442197" crc="1bf40d81" sha1="783f4cebad6a83b53dc805af8499c2f109b46581" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="emmetkey" cloneof="emmet">
+		<description>Emmet Attack (Keyboard)</description>
+		<year>1983</year>
+		<publisher>Commodore</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="449663">
+				<rom name="emmet attack (1983)(commodore)[keyboard].tap" size="449663" crc="fec00223" sha1="b7dfa57bae9292a04fab1e14aad3d6b53d645bf1" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="encountr">
+		<description>Encounter</description>
+		<year>1982</year>
+		<publisher>Pixel</publisher>
+		<info name="ram" value="16K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="787080">
+				<rom name="encounter (1982)(pixel)[16k].tap" size="787080" crc="aadc8990" sha1="94679a32bd336c3faa4ab6a22df12291095a74a4" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="engine">
+		<description>Engineshed</description>
+		<year>1981</year>
+		<publisher>Commodore</publisher>
+		<info name="ram" value="3K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="352741">
+				<rom name="engineshed (1981)(commodore)[3k].tap" size="352741" crc="321c26e4" sha1="a99d6c45caab75fa75a80abb69e0ad57bc04273f" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="enginvad">
+		<description>English Invaders (USA)</description>
+		<year>1982</year>
+		<publisher>CommData</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="204514">
+				<rom name="english invaders (1982)(commdata).tap" size="204514" crc="fedabc33" sha1="9ceef6045df3b65fdf6a0dff637714b39bb77444" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="enginvada" cloneof="enginvad">
+		<description>English Invaders (Euro)</description>
+		<year>1982</year>
+		<publisher>Rabbit</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="204509">
+				<rom name="english invaders (1982)(rabbit).tap" size="204509" crc="65dbcc34" sha1="380383815325ef3bd2e2a326fc4c51677e89e558" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="envahi">
+		<description>Envahi</description>
+		<year>1983</year>
+		<publisher>Virgin</publisher>
+		<info name="ram" value="8K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="511528">
+				<rom name="envahi (1983)(virgin)[8k].tap" size="511528" crc="e84e2279" sha1="19b4a399d6ddfdb861ff7ff8b350c0abc593a1f5" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="escape">
+		<description>Escape MCP (USA)</description>
+		<year>1982</year>
+		<publisher>CommData</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="282559">
+				<rom name="escape mcp (1982)(commdata)(us).tap" size="282559" crc="129f463d" sha1="4028d97586b8e1458ba85cfb95795ba0fdd4cc6e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="escapea" cloneof="escape">
+		<description>Escape MCP (Euro)</description>
+		<year>1982</year>
+		<publisher>Rabbit</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="204560">
+				<rom name="escape mcp (1982)(rabbit)(eu).tap" size="204560" crc="ff9c176f" sha1="d49982e502e950e63f2974ce0506c27414b82eb7" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="evasion">
+		<description>Evasion</description>
+		<year>1983</year>
+		<publisher>Logidisque</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="278879">
+				<rom name="evasion (1983)(logidisque).tap" size="278879" crc="307e3d96" sha1="eeb300c382250305dfa5fb07b33e1b7d877235bc" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="evilcast">
+		<description>The Evil Castle</description>
+		<year>2008</year>
+		<publisher>Alessandro Ubiali</publisher>
+		<info name="ram" value="16K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="688104">
+				<rom name="evil castle, the (2008)(ubiali, alessandro)[16k].tap" size="688104" crc="82e79bac" sha1="32b44ff621baa2bf9387fc0f9c94edc52b7f03c2" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="extermin">
+		<description>Exterminator</description>
+		<year>1982</year>
+		<publisher>Nufekop</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="158627">
+				<rom name="exterminator (1982)(nufekop).tap" size="158627" crc="550500f7" sha1="55aa3d89a4dbf8c3bf303f0df66398e3ea04e865" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="facemakr">
+		<description>Facemaker</description>
+		<year>1982</year>
+		<publisher>ASK</publisher>
+		<info name="ram" value="16K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="1383463">
+				<rom name="facemaker (1982)(ask)[16k].tap" size="1383463" crc="ff4844aa" sha1="7bf0b46fd649937056bcacf6f67e588922cb7ce9" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="falcon">
+		<description>Falcon Fighter</description>
+		<year>1983</year>
+		<publisher>Interceptor</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="267440">
+				<rom name="falcon fighter (1983)(interceptor).tap" size="267440" crc="e57f145a" sha1="69d20c5e0fd615a6817728a5b23d8d0b5d036760" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="falcona" cloneof="falcon">
+		<description>Falcon Fighter (Alt)</description>
+		<year>1983</year>
+		<publisher>Interceptor</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="266972">
+				<rom name="falcon fighter (1983)(interceptor)[a].tap" size="266972" crc="1f123be4" sha1="f1e82aad3c6897892c25733a2980668c90c24f7d" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fantazia">
+		<description>Fantazia</description>
+		<year>1983</year>
+		<publisher>Interceptor</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="237509">
+				<rom name="fantazia (1983)(interceptor).tap" size="237509" crc="9dacd8cf" sha1="6508431132d26416bf33f161ec672c4fd9e973f3" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fantaziaa" cloneof="fantazia">
+		<description>Fantazia (Alt)</description>
+		<year>1983</year>
+		<publisher>Interceptor</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="237520">
+				<rom name="fantazia (1983)(interceptor)[a].tap" size="237520" crc="1339092b" sha1="1fc53b8243f50faab854822384e0fa33305c5d47" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fastfuri">
+		<description>Fast and Furious (from Home Computing Weekly)</description>
+		<year>1985</year>
+		<publisher>Argus Press</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="258664">
+				<rom name="fast and furious (1985)(argus press)[home computing weekly][type-in].tap" size="258664" crc="256269dc" sha1="a4979da645d8e76a810ed7801688282ce5db8c6b" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fathenry">
+		<description>Fatty Henry</description>
+		<year>1984</year>
+		<publisher>Software Projects</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="427228">
+				<rom name="fatty henry (1984)(software projects).tap" size="427228" crc="94140c8f" sha1="85ab81fa542265576aba65f5ddc15138716a162e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="feedtime">
+		<description>Feeding Time</description>
+		<year>1983</year>
+		<publisher>Aim Software</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="143692">
+				<rom name="feeding time (1983)(aim software).tap" size="143692" crc="e5233803" sha1="bf06c90ca37fef7dcafa8e9f20553f97600265ea" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fnight">
+		<description>Fight Night (from Compute Mit 1986-12) (Ger)</description>
+		<year>1986</year>
+		<publisher>Tronic Verlag</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="267904">
+				<rom name="fight night (1986-12)(tronic verlag)(de)[compute mit][type-in].tap" size="267904" crc="a2d11b1d" sha1="76a9ff015588a6ca4c2acb7cb155633851dcf7be" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fireglxy">
+		<description>Fire Galaxy</description>
+		<year>1983</year>
+		<publisher>Anirog</publisher>
+		<info name="ram" value="16K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="916263">
+				<rom name="fire galaxy (1983)(anirog)[16k].tap" size="916263" crc="800462a7" sha1="d0644b8781ca5d37a0fecdd8af5d38ec1e398b05" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="firetrek">
+		<description>Fire Trek</description>
+		<year>1981</year>
+		<publisher>VIC-Soft</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="149658">
+				<rom name="fire trek (1981)(vic-soft)[b].tap" size="149658" crc="a5873b2c" sha1="028e218b6f31869b1cc228a290ea3f55d7d0c231" offset="0x0000" status="baddump" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fishtank">
+		<description>Fish Tank</description>
+		<year>198?</year>
+		<publisher>Commodore</publisher>
+		<info name="ram" value="3K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="812566">
+				<rom name="fish tank (198x)(commodore)[3k].tap" size="812566" crc="b25540ae" sha1="94c35d16f3760722fc7afa9891e653c0e3994995" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="flshmath">
+		<description>Flash 'n Math - Subtraction</description>
+		<year>1982</year>
+		<publisher>Qumax</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="189970">
+				<rom name="flash 'n math - subtraction (1982)(qumax).tap" size="189970" crc="246681e7" sha1="504371fb8cdc5e9ac78327e09d94065678d59819" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="flshspel">
+		<description>Flash 'n Spell</description>
+		<year>1982</year>
+		<publisher>Qumax</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="189389">
+				<rom name="flash 'n spell (1982)(qumax).tap" size="189389" crc="308be2eb" sha1="1f81378a93bfc9eaa9945ae3be10d6b39946da4d" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="path737">
+		<description>Flight Path 737</description>
+		<year>1984</year>
+		<publisher>Anirog</publisher>
+		<info name="ram" value="16K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="207100">
+				<rom name="flight path 737 (1984)(anirog)[16k].tap" size="207100" crc="652de9d5" sha1="81ce254086f54b0982ced71c99dde4409b46d425" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="flight0">
+		<description>Flight Zero - One Five</description>
+		<year>1983</year>
+		<publisher>AVS</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="250426">
+				<rom name="flight zero - one five (1983)(avs).tap" size="250426" crc="0c5f8c59" sha1="4f2bbfca8323b21e182008e10a58ca30078302e5" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="flight0a" cloneof="flight0">
+		<description>Flight Zero - One Five (Alt)</description>
+		<year>1983</year>
+		<publisher>AVS</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="245736">
+				<rom name="flight zero - one five (1983)(avs)[a].tap" size="245736" crc="7bb87992" sha1="848b5b33ff6a2d4553bcf1e20f48f5766b96777c" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="flysnatc">
+		<description>Fly Snatcher</description>
+		<year>1982</year>
+		<publisher>P.R. Software</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="158905">
+				<rom name="fly snatcher (1982)(p.r. software).tap" size="158905" crc="dd3a93bb" sha1="6cee3545f68af62b0878cc2d1aac5bbbc8d498e3" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fbmanagr">
+		<description>Football Manager</description>
+		<year>1984</year>
+		<publisher>Addictive</publisher>
+		<info name="ram" value="16K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="433318">
+				<rom name="football manager (1984)(addictive)[16k].tap" size="433318" crc="fe7f7441" sha1="628cced2714dedd6bcc7d20e43e71d00faa1e81d" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="forbiddn">
+		<description>Forbidden Tower</description>
+		<year>1985</year>
+		<publisher>Atlantis</publisher>
+		<info name="ram" value="8K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="547509">
+				<rom name="forbidden tower (1985)(atlantis)[8k].tap" size="547509" crc="d09f203c" sha1="bc10dfc9690cb47368dd8c019b7eb940fee96ba4" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="forbiddna" cloneof="forbiddn">
+		<description>Forbidden Tower (Alt)</description>
+		<year>1985</year>
+		<publisher>Atlantis</publisher>
+		<info name="ram" value="8K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="547460">
+				<rom name="forbidden tower (1985)(atlantis)[a][8k].tap" size="547460" crc="5274dbef" sha1="be9b865b2e1beea998aa34814868650056929cfb" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="4gates">
+		<description>Four Gates to Freedom</description>
+		<year>1983</year>
+		<publisher>Phoenix</publisher>
+		<info name="ram" value="16K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<feature name="part_id" value="Adventure"/>
+			<dataarea name="cass" size="706574">
+				<rom name="four gates to freedom (1983)(phoenix)[tape - adventure][16k].tap" size="706574" crc="28d1199f" sha1="e3dae0facfe548ece9121ac9b5072595cf87bac6" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="cbm_cass">
+			<feature name="part_id" value="Arcade"/>
+			<dataarea name="cass" size="362209">
+				<rom name="four gates to freedom (1983)(phoenix)[tape - arcade][16k].tap" size="362209" crc="f8a2ebc3" sha1="7cebae754820b6ff35473bd1f8685e6706067816" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="4thenctr">
+		<description>The Fourth Encounter</description>
+		<year>1983</year>
+		<publisher>Thorn EMI</publisher>
+		<info name="ram" value="8K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="417858">
+				<rom name="fourth encounter, the (1983)(thorn emi)[8k].tap" size="417858" crc="3178e6ac" sha1="a6a8e14df9d2358b867c34f5ad0cfb50c01a3730" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="frantic">
+		<description>Frantic</description>
+		<year>1983</year>
+		<publisher>Imagine</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="298899">
+				<rom name="frantic (1983)(imagine).tap" size="298899" crc="00e06481" sha1="7693a9e0a17aa8edeb00819c3913ad3afae94985" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="frantica" cloneof="frantic">
+		<description>Frantic (Alt)</description>
+		<year>1983</year>
+		<publisher>Imagine</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="298635">
+				<rom name="frantic (1983)(imagine)[a].tap" size="298635" crc="508c49b8" sha1="f1df086e13d0c4c1c970c68f4cd7903000e243aa" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="freeprog">
+		<description>Free Vic 20 Programs</description>
+		<year>1983</year>
+		<publisher>Commodore</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="1150683">
+				<rom name="free vic 20 programs (1983)(commodore).tap" size="1150683" crc="9b358acb" sha1="56b5ba046546576549094e7acad3fb4afa55e0b4" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="frog">
+		<description>Frog</description>
+		<year>1982</year>
+		<publisher>Interceptor</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="301876">
+				<rom name="frog (1982)(interceptor).tap" size="301876" crc="b4c96a1f" sha1="9c99aa944cc28bc1852d57441e550719887374d4" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="frogchas">
+		<description>Frog Chase</description>
+		<year>198?</year>
+		<publisher>Artic</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="184261">
+				<rom name="frog chase (198x)(artic).tap" size="184261" crc="2b272ed3" sha1="892c963537e4798a958288d3206d37654b53521e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="frogchasa" cloneof="frogchas">
+		<description>Frog Chase (Alt)</description>
+		<year>198?</year>
+		<publisher>Artic</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="182277">
+				<rom name="frog chase (198x)(artic)[a].tap" size="182277" crc="b867d948" sha1="87b4fe8b9d8e5dc9d317e397baa3b0829d97e7f1" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="frogger">
+		<description>Frogger</description>
+		<year>1982</year>
+		<publisher>Rabbit</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="164326">
+				<rom name="frogger (1982)(rabbit).tap" size="164326" crc="4feda8f3" sha1="e0563c4869d04136d60245bd41f58be7dc07891f" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="frogger3" cloneof="frogger">
+		<description>Frogger (3K)</description>
+		<year>1982</year>
+		<publisher>Rabbit</publisher>
+		<info name="ram" value="3K" />
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="303270">
+				<rom name="frogger (1982)(rabbit)[3k].tap" size="303270" crc="fb14f17d" sha1="6d8ffca1368a0ca49dcfa1005cf43adc0a8b45d0" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="froggies">
+		<description>Froggies Nightmare (from Compute Mit 1985-02) (Ger)</description>
+		<year>1985</year>
+		<publisher>Tronic Verlag</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="304788">
+				<rom name="froggies nightmare (1985-12)(tronic verlag)(de)[compute mit][type-in].tap" size="304788" crc="342bcca7" sha1="5696a990e3438c6b31d76d486bfc68d9723ac471" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="froggy">
+		<description>Froggy</description>
+		<year>1983</year>
+		<publisher>Galactic</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="357251">
+				<rom name="froggy (1983)(galactic).tap" size="357251" crc="94b6c6f1" sha1="1d676d0597a6639160e38ce94a74943f933e4804" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="frogrun">
+		<description>Frogrun</description>
+		<year>1983</year>
+		<publisher>Anirog</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="341986">
+				<rom name="frogrun (1983)(anirog).tap" size="341986" crc="5ae0a38b" sha1="56a10b2366a2700e17ee5be3c1a07d2396ff1f8c" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="frogs">
+		<description>Frogs</description>
+		<year>1983</year>
+		<publisher>Cymbal</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="170479">
+				<rom name="frogs (1983)(cymbal).tap" size="170479" crc="463533fa" sha1="0dcc7e7d7bae895feb9c8a05f5dd38a34275fcd9" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+<!--
+	<software name="frogsa" cloneof="frogs">
+		<description>Frogs (Bad)</description>
+		<year>1983</year>
+		<publisher>Cymbal</publisher>
+
+		<part name="cass1" interface="cbm_cass">
+			<dataarea name="cass" size="170471">
+				<rom name="frogs (1983)(cymbal)[b][not working].tap" size="170471" crc="670ece17" sha1="c71f3c87c31092b19e10b0309cdd50aa59babd62" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+-->
+
 <!-- TOSEC - Magazines -->
 
 	<software name="victap01">
@@ -2026,11 +3500,13 @@
 		<publisher>Argus Press Software</publisher>
 
 		<part name="cass1" interface="cbm_cass">
+			<feature name="part_id" value="Side A"/>
 			<dataarea name="cass" size="2377890">
 				<rom name="victape computing - issue 02 (1984)(argus press software)(side a)[not 100%].tap" size="2377890" crc="8028eb15" sha1="778cd9b5de4578f9db12d687e47d54e81a9519a0" offset="0" status="baddump" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="cbm_cass">
+			<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="1671237">
 				<rom name="victape computing - issue 02 (1984)(argus press software)(side b)[not 100%].tap" size="1671237" crc="457475e8" sha1="67d237eec61ad6c633e3533c866fea5fb9786505" offset="0" status="baddump" />
 			</dataarea>
@@ -2043,11 +3519,13 @@
 		<publisher>Argus Press Software</publisher>
 
 		<part name="cass1" interface="cbm_cass">
+			<feature name="part_id" value="Side A"/>
 			<dataarea name="cass" size="3026813">
 				<rom name="victape computing - issue 03 (1984)(argus press software)(side a).tap" size="3026813" crc="7b2e0a22" sha1="06bf1f3176b48c5be7d90361a0a91522d033a3d9" offset="0" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="cbm_cass">
+			<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="1752546">
 				<rom name="victape computing - issue 03 (1984)(argus press software)(side b).tap" size="1752546" crc="92d3f63b" sha1="adad531484492db4ef89d243690cdf1046d7b406" offset="0" />
 			</dataarea>
@@ -2060,11 +3538,13 @@
 		<publisher>Argus Press Software</publisher>
 
 		<part name="cass1" interface="cbm_cass">
+			<feature name="part_id" value="Side A"/>
 			<dataarea name="cass" size="2156575">
 				<rom name="victape computing - issue 04 (1984)(argus press software)(side a)[not 100%].tap" size="2156575" crc="c9d16b1a" sha1="c7bd7771c2562eb48f991090b264bbac106ce817" offset="0" status="baddump" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="cbm_cass">
+			<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="2141224">
 				<rom name="victape computing - issue 04 (1984)(argus press software)(side b).tap" size="2141224" crc="841ba122" sha1="079236565bf32b1fedaeb5deb79aac3ef8d9fa2f" offset="0" />
 			</dataarea>
@@ -2077,11 +3557,13 @@
 		<publisher>Argus Press Software</publisher>
 
 		<part name="cass1" interface="cbm_cass">
+			<feature name="part_id" value="Side A"/>
 			<dataarea name="cass" size="3522396">
 				<rom name="victape computing - issue 05 (1984)(argus press software)(side a)[not 100%].tap" size="3522396" crc="c9109aec" sha1="d7e04536605b466790f347232cf11de38f481062" offset="0" status="baddump" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="cbm_cass">
+			<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="1633048">
 				<rom name="victape computing - issue 05 (1984)(argus press software)(side b).tap" size="1633048" crc="f0796673" sha1="ba3a879517cc45045142f7c7387fb2a031594902" offset="0" />
 			</dataarea>
@@ -2094,11 +3576,13 @@
 		<publisher>Argus Press Software</publisher>
 
 		<part name="cass1" interface="cbm_cass">
+			<feature name="part_id" value="Side A"/>
 			<dataarea name="cass" size="2680693">
 				<rom name="victape computing - issue 07 (1984)(argus press software)(side a).tap" size="2680693" crc="b203b3e3" sha1="8fd481bc811d5912f54b2b49b8c2335a1d510466" offset="0" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="cbm_cass">
+			<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="1463046">
 				<rom name="victape computing - issue 07 (1984)(argus press software)(side b).tap" size="1463046" crc="9dbaae16" sha1="beb82237de03a781ad2b231f6017ad45f957df1c" offset="0" />
 			</dataarea>
@@ -2111,11 +3595,13 @@
 		<publisher>Argus Press Software</publisher>
 
 		<part name="cass1" interface="cbm_cass">
+			<feature name="part_id" value="Side A"/>
 			<dataarea name="cass" size="2325174">
 				<rom name="victape computing - issue 08 (1985)(argus press software)(side a).tap" size="2325174" crc="7e6c42c9" sha1="a50b3bab99e0a68a92123c3077c8555466c2601f" offset="0" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="cbm_cass">
+			<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="1378936">
 				<rom name="victape computing - issue 08 (1985)(argus press software)(side b).tap" size="1378936" crc="e0ad0863" sha1="db078896aad7f699a71a5b67491d656fb7b7db67" offset="0" />
 			</dataarea>
@@ -2128,11 +3614,13 @@
 		<publisher>Argus Press Software</publisher>
 
 		<part name="cass1" interface="cbm_cass">
+			<feature name="part_id" value="Side A"/>
 			<dataarea name="cass" size="2438503">
 				<rom name="victape computing - issue 09 (1985)(argus press software)(side a).tap" size="2438503" crc="5c17145b" sha1="242d7737801bde1ab09ac4ffabba49721fbf245d" offset="0" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="cbm_cass">
+			<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="1418369">
 				<rom name="victape computing - issue 09 (1985)(argus press software)(side b).tap" size="1418369" crc="78d9383f" sha1="9262c247fd6e7a6967e92b04101ebefd93efa932" offset="0" />
 			</dataarea>
@@ -2145,11 +3633,13 @@
 		<publisher>Argus Press Software</publisher>
 
 		<part name="cass1" interface="cbm_cass">
+			<feature name="part_id" value="Side A"/>
 			<dataarea name="cass" size="1976629">
 				<rom name="victape computing - issue 10 (1985)(argus press software)(side a).tap" size="1976629" crc="ad05c62f" sha1="dcf2ffb5f9f07e4a1599acab044bc5987904d783" offset="0" />
 			</dataarea>
 		</part>
 		<part name="cass2" interface="cbm_cass">
+			<feature name="part_id" value="Side B"/>
 			<dataarea name="cass" size="1421819">
 				<rom name="victape computing - issue 10 (1985)(argus press software)(side b).tap" size="1421819" crc="0632ec61" sha1="b2639e2fcc15b5b63655db212f7eb0c9a20fc5cb" offset="0" />
 			</dataarea>
