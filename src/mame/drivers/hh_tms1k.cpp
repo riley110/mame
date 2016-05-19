@@ -150,6 +150,7 @@
 #include "mdndclab.lh" // clickable
 #include "merlin.lh" // clickable
 #include "mmerlin.lh" // clickable
+#include "raisedvl.lh"
 #include "simon.lh" // clickable
 #include "ssimon.lh" // clickable
 #include "splitsec.lh"
@@ -2438,8 +2439,6 @@ MACHINE_CONFIG_END
     8 = lamp42     18 = lamp73     28 = lamp84     38 = lamp82
     9 = lamp43     19 = -          29 = lamp94     39 = lamp83
 
-  NOTE!: MAME external artwork is required
-
 ***************************************************************************/
 
 class raisedvl_state : public hh_tms1k_state
@@ -2549,7 +2548,7 @@ static MACHINE_CONFIG_START( raisedvl, raisedvl_state )
 	MCFG_TMS1XXX_WRITE_O_CB(WRITE16(raisedvl_state, write_o))
 
 	MCFG_TIMER_DRIVER_ADD_PERIODIC("display_decay", hh_tms1k_state, display_decay_tick, attotime::from_msec(1))
-	MCFG_DEFAULT_LAYOUT(layout_hh_tms1k_test)
+	MCFG_DEFAULT_LAYOUT(layout_raisedvl)
 
 	/* sound hardware */
 	MCFG_SPEAKER_STANDARD_MONO("mono")
@@ -3791,6 +3790,19 @@ static MACHINE_CONFIG_START( bship, bship_state )
 	/* sound hardware */
 	MCFG_SPEAKER_STANDARD_MONO("mono")
 	MCFG_SOUND_ADD("sn76477", SN76477, 0)
+	MCFG_SN76477_NOISE_PARAMS(RES_K(47), RES_K(100), CAP_P(47)) // R18, R17, C8
+	MCFG_SN76477_DECAY_RES(RES_M(3.3))                          // R16
+	MCFG_SN76477_ATTACK_PARAMS(CAP_U(0.47), RES_K(15))          // C7, R20
+	MCFG_SN76477_AMP_RES(RES_K(100))                            // R19
+	MCFG_SN76477_FEEDBACK_RES(RES_K(39))                        // R7
+	MCFG_SN76477_VCO_PARAMS(5.0 * RES_VOLTAGE_DIVIDER(RES_K(47), RES_K(33)), CAP_U(0.01), RES_K(270)) // R15/R14, C5, switchable R5/R3/R4
+	MCFG_SN76477_PITCH_VOLTAGE(5.0)
+	MCFG_SN76477_SLF_PARAMS(CAP_U(22), RES_K(750))  // switchable C4, switchable R13/R12
+	MCFG_SN76477_ONESHOT_PARAMS(0, RES_INF)         // NC, switchable R11
+	MCFG_SN76477_VCO_MODE(0)                        // switchable
+	MCFG_SN76477_MIXER_PARAMS(0, 0, 0)              // switchable, GND, GND
+	MCFG_SN76477_ENVELOPE_PARAMS(1, 0)              // Vreg, GND
+	MCFG_SN76477_ENABLE(0)                          // switchable
 	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.35)
 MACHINE_CONFIG_END
 
@@ -6148,7 +6160,7 @@ CONS( 1980, ebball3,   0,        0, ebball3,   ebball3,   driver_device, 0, "Ent
 CONS( 1980, einvader,  0,        0, einvader,  einvader,  driver_device, 0, "Entex", "Space Invader (Entex, TMS1100 version)", MACHINE_SUPPORTS_SAVE | MACHINE_REQUIRES_ARTWORK )
 CONS( 1980, efootb4 ,  0,        0, efootb4,   efootb4,   driver_device, 0, "Entex", "Color Football 4 (Entex)", MACHINE_SUPPORTS_SAVE )
 CONS( 1980, ebaskb2 ,  0,        0, ebaskb2,   ebaskb2,   driver_device, 0, "Entex", "Electronic Basketball 2 (Entex)", MACHINE_SUPPORTS_SAVE )
-CONS( 1980, raisedvl,  0,        0, raisedvl,  raisedvl,  driver_device, 0, "Entex", "Raise The Devil", MACHINE_SUPPORTS_SAVE | MACHINE_REQUIRES_ARTWORK )
+CONS( 1980, raisedvl,  0,        0, raisedvl,  raisedvl,  driver_device, 0, "Entex", "Raise The Devil", MACHINE_SUPPORTS_SAVE )
 
 CONS( 1979, gpoker,    0,        0, gpoker,    gpoker,    driver_device, 0, "Gakken", "Poker (Gakken, 1979 version)", MACHINE_SUPPORTS_SAVE )
 CONS( 1980, gjackpot,  0,        0, gjackpot,  gjackpot,  driver_device, 0, "Gakken", "Jackpot: Gin Rummy & Black Jack", MACHINE_SUPPORTS_SAVE )
