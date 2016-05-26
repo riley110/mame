@@ -3115,6 +3115,9 @@ static MACHINE_CONFIG_START( varthb, cps_state )
 	/* sound hardware */
 	MCFG_SPEAKER_STANDARD_MONO("mono")
 
+	MCFG_GENERIC_LATCH_8_ADD("soundlatch")
+	MCFG_GENERIC_LATCH_8_ADD("soundlatch2")
+
 	MCFG_YM2151_ADD("2151", XTAL_3_579545MHz)  /* verified on pcb */
 	MCFG_YM2151_IRQ_HANDLER(INPUTLINE("audiocpu", 0))
 	MCFG_SOUND_ROUTE(0, "mono", 0.35)
@@ -3204,6 +3207,8 @@ static MACHINE_CONFIG_START( captcommb2, cps_state )
 
 	/* sound hardware */
 	MCFG_SPEAKER_STANDARD_MONO("mono")
+
+	MCFG_GENERIC_LATCH_8_ADD("soundlatch")
 
 	MCFG_YM2151_ADD("2151", 3579545)
 	MCFG_SOUND_ROUTE(0, "mono", 0.35)
