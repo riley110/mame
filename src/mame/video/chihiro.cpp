@@ -6,7 +6,7 @@
 #include "machine/pic8259.h"
 #include "includes/chihiro.h"
 
-// #define LOG_NV2A
+//#define LOG_NV2A
 
 const char *vertex_program_disassembler::srctypes[] = { "??", "Rn", "Vn", "Cn" };
 const char *vertex_program_disassembler::scaops[] = { "NOP", "IMV", "RCP", "RCC", "RSQ", "EXP", "LOG", "LIT", "???", "???", "???", "???", "???", "???", "???", "???", "???" };
@@ -2379,10 +2379,10 @@ void nv2a_renderer::convert_vertices_poly(vertex_nv *source, nv2avertex_t *desti
 					v[i] += matrix.projection[i][j] * t[j];
 			};
 			/*for (int i = 0; i < 3; i++) {
-				v[i] *= matrix.scale[i];
+			    v[i] *= matrix.scale[i];
 			}
 			for (int i = 0; i < 3; i++) {
-				v[i] += matrix.translate[i];
+			    v[i] += matrix.translate[i];
 			}*/
 			destination[m].w = v[3];
 			destination[m].x = (v[0] / v[3])*supersample_factor_x; // source[m].attribute[0].fv[0];
@@ -2843,7 +2843,7 @@ int nv2a_renderer::geforce_exec_method(address_space & space, UINT32 chanel, UIN
 		offset = data & 0xffffff;
 		count = (data >> 24) & 0xff;
 #ifdef LOG_NV2A
-		printf("vertex %d %d %d\n\r", type, offset, count);
+		printf("vertex %d %d\n\r", offset, count);
 #endif
 		for (n = 0; n <= count; n++) {
 			read_vertices_0x1810(space, vertex_software + vertex_first, n + offset, 1);
@@ -2864,7 +2864,7 @@ int nv2a_renderer::geforce_exec_method(address_space & space, UINT32 chanel, UIN
 		// each dword after 1808 contains a 32 bit index value to select the vartices
 		while (1) {
 			int c;
-			
+
 			if ((countlen * mult + indexesleft_count) < 4)
 				break;
 			if (mult == 1)
@@ -3373,13 +3373,13 @@ int nv2a_renderer::geforce_exec_method(address_space & space, UINT32 chanel, UIN
 			}
 		}
 		/*if (maddress == 0x1b08) {
-			(data >> 0) & 15;
-			(data >> 4) & 15;
-			(data >> 8) & 15;
-			(data >> 12) & 15;
-			(data >> 16) & 15;
-			(data >> 20) & 15;
-			(data >> 24) & 255;
+		    (data >> 0) & 15;
+		    (data >> 4) & 15;
+		    (data >> 8) & 15;
+		    (data >> 12) & 15;
+		    (data >> 16) & 15;
+		    (data >> 20) & 15;
+		    (data >> 24) & 255;
 		}*/
 		if (maddress == 0x1b0c) {
 			texture[unit].colorkey = (data >> 0) & 3;
@@ -4281,7 +4281,7 @@ void nv2a_renderer::geforce_assign_object(address_space & space, UINT32 chanel, 
 	handle = space.read_dword(address);
 	handle = geforce_object_offset(handle);
 #ifdef LOG_NV2A
-	machine().logerror("  assign to subchannel %d object at %d", subch, handle);
+	machine().logerror("  assign to subchannel %d object at %d", subchannel, handle);
 #endif
 	channel[chanel][subchannel].object.objhandle = handle;
 	handle = ramin[handle / 4];

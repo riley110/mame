@@ -72,6 +72,7 @@ NETLIB_OBJECT(7474sub)
 	NETLIB_RESETI();
 	NETLIB_UPDATEI();
 
+public:
 	logic_input_t m_CLK;
 	logic_output_t m_Q;
 	logic_output_t m_QQ;
@@ -114,7 +115,6 @@ NETLIB_OBJECT(7474_dip)
 	, m_1(*this, "1")
 	, m_2(*this, "2")
 	{
-
 		register_subalias("1", m_1.m_CLRQ);
 		register_subalias("2", m_1.m_D);
 		register_subalias("3", m_1.sub.m_CLK);
