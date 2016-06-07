@@ -1,6 +1,11 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<!-- All info on non-TOSEC disks comes from my own testing. -->
+<!-- 
+Most of these disks were tested on the 128k Premium set (mbee128p),
+except those strictly for the 256TC set (mbee256).
+
+All info on non-TOSEC disks comes from this testing.
+-->
 <softwarelist name="mbee_flop" description="Applied Technology MicroBee floppy disks">
 
 <!-- System/Master Disks -->
@@ -20,7 +25,7 @@
 	<software name="56master">
 		<description>56k System Master (1984-01)</description>
 		<year>1984</year>
-		<publisher>MicroBee?</publisher>
+		<publisher>Microbee Systems?</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -32,7 +37,7 @@
 	<software name="56mastera" cloneof="56master">
 		<description>56k System Master (Alt)</description>
 		<year>1984?</year>
-		<publisher>MicroBee?</publisher>
+		<publisher>Microbee Systems?</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -44,7 +49,7 @@
 	<software name="56masterb" cloneof="56master">
 		<description>56k System Master (Alt 2, with CP/M Serial Number 2-504-3295)</description>
 		<year>1984?</year>
-		<publisher>MicroBee?</publisher>
+		<publisher>Microbee Systems?</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -56,7 +61,7 @@
 	<software name="64system">
 		<description>64K Premium System Disk</description>
 		<year>198?</year>
-		<publisher>MicroBee?</publisher>
+		<publisher>Microbee Systems?</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -68,7 +73,7 @@
 	<software name="128pmast">
 		<description>128K Premium Master (early)</description>
 		<year>198?</year>
-		<publisher>MicroBee?</publisher>
+		<publisher>Microbee Systems?</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -80,7 +85,7 @@
 	<software name="128psys">
 		<description>128K Premium System (1988-03)</description>
 		<year>1988</year>
-		<publisher>MicroBee?</publisher>
+		<publisher>Microbee Systems?</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -92,7 +97,7 @@
 	<software name="128start">
 		<description>128K Standard Update &amp; Starter</description>
 		<year>198?</year>
-		<publisher>MicroBee?</publisher>
+		<publisher>Microbee Systems?</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -104,7 +109,7 @@
 	<software name="128swed">
 		<description>128K Boot Disk (Swe)</description>
 		<year>198?</year>
-		<publisher>MicroBee?</publisher>
+		<publisher>Microbee Systems?</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -114,9 +119,9 @@
 	</software>
 
 	<software name="256tcsys">
-		<description>256 TC System Disk (Release 4, 1988-09)</description>
+		<description>256TC System Disk (Release 4, 1988-09)</description>
 		<year>1988</year>
-		<publisher>MicroBee?</publisher>
+		<publisher>Microbee Systems?</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -126,9 +131,9 @@
 	</software>
 
 	<software name="256tcsys3" cloneof="256tcsys">
-		<description>256 TC System Disk (Release 3, 1988-06)</description>
+		<description>256TC System Disk (Release 3, 1988-06)</description>
 		<year>1988</year>
-		<publisher>MicroBee?</publisher>
+		<publisher>Microbee Systems?</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -138,9 +143,9 @@
 	</software>
 
 	<software name="256tcsys2" cloneof="256tcsys">
-		<description>256 TC System Disk (Release 2)</description>
+		<description>256TC System Disk (Release 2)</description>
 		<year>1987</year>
-		<publisher>MicroBee?</publisher>
+		<publisher>Microbee Systems?</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -150,9 +155,9 @@
 	</software>
 
 	<software name="256tcsys1" cloneof="256tcsys">
-		<description>256 TC System Disk (Release 1)</description>
+		<description>256TC System Disk (Release 1)</description>
 		<year>1987</year>
-		<publisher>MicroBee?</publisher>
+		<publisher>Microbee Systems?</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -162,9 +167,9 @@
 	</software>
 
 	<software name="256tcsysm" cloneof="256tcsys">
-		<description>256 TC System Master</description>
+		<description>256TC System Master</description>
 		<year>198?</year>
-		<publisher>MicroBee?</publisher>
+		<publisher>Microbee Systems?</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -206,8 +211,8 @@
 
 	<software name="mbeecpm" supported="no">
 		<description>MicroBee 128 CP/M (v2.20)</description>
-		<year>1982</year>
-		<publisher>MicroBee</publisher>
+		<year>198?</year>
+		<publisher>Microbee Systems?</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="409600">
@@ -218,8 +223,8 @@
 
 	<software name="mbeecpma" cloneof="mbeecpm" supported="no">
 		<description>MicroBee 128 CP/M (v2.20, Alt)</description>
-		<year>1982</year>
-		<publisher>MicroBee</publisher>
+		<year>198?</year>
+		<publisher>Microbee Systems?</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="409600">
@@ -326,11 +331,11 @@
 		</part>
 	</software>
 
-	<!-- Requires CP/M -->
 	<software name="progkit">
 		<description>Chalkboard Programmer's Kit</description>
 		<year>198?</year>
 		<publisher>Chalkboard?</publisher>
+		<info name="usage" value="Requires CP/M" />
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -387,11 +392,11 @@
 		</part>
 	</software>
 
-	<!-- Requires CP/M -->
 	<software name="diskcat">
 		<description>Disk Cataloging System (v2.1)</description>
 		<year>1984</year>
 		<publisher>MicroWorld</publisher>
+		<info name="usage" value="Requires CP/M" />
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -473,6 +478,18 @@
 		</part>
 	</software>
 
+	<software name="gwordbee">
+		<description>Graphic Wordbee (v41.06.85)</description>
+		<year>1985?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="microbee_graphic_wordbee_ds40.dsk" size="430336" crc="a8a6d269" sha1="4ce800967df2f833d8129eec3111f4bf0ef6336d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="hiplot">
 		<description>Hi-Plot</description>
 		<year>1985</year>
@@ -481,6 +498,79 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
 				<rom name="hiplot_ds40.dsk" size="430336" crc="da4cc6e7" sha1="79e370b19add1ac3eccd3728827130a8ecde076e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="infoexpr">
+		<description>Information Express (v1.2)</description>
+		<year>1986</year>
+		<publisher>Microbee Systems</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="information_express_v1.2_ss80.dsk" size="430336" crc="a4570711" sha1="603af2df79de9df3fc682a261cce1dbc6a5b87e5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lines">
+		<description>Microbee Lines (v1.0)</description>
+		<year>1988</year>
+		<publisher>Microbee Systems</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="lego_lines_1.0_ss80.dsk" size="430336" crc="1eb9795c" sha1="97f310c4fa2271c2f6a3999349edd5d442cde6d8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mbeeutil">
+		<description>Microbee Utilities</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="microbee_utilities_ss80.dsk" size="430336" crc="8fac6f7f" sha1="52541e8dea59bd879df519469f221156c7c1cd8b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mileston">
+		<description>Milestone (Release 1.09)</description>
+		<year>1981</year>
+		<publisher>Organic Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="milestone_ss80.dsk" size="430336" crc="28236aa2" sha1="a6acabf36066153a3755f79de2cc6e383b0a8a41" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- MUGWA = Microbee User(s) Group of Western Australia?-->
+	<software name="mugwa">
+		<description>MUGWA ROM Pak</description>
+		<year>198?</year>
+		<publisher>MUGWA</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="mugwa_rom_pak_ss80.dsk" size="430336" crc="e7e5a9bd" sha1="7f00eebb25d5f08b10c3dbf243b7f5c05b31f041" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pilot">
+		<description>Pilot</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="microbee_pilot_ss80.dsk" size="430336" crc="f9c6ce60" sha1="e5c26c13317d6a76999e873d465df6343a1334e2" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -497,7 +587,31 @@
 		</part>
 	</software>
 
+	<software name="wordstar">
+		<description>WordStar (Release 4.00)</description>
+		<year>1987</year>
+		<publisher>MicroPro International</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="860416">
+				<rom name="microbee_wordstar_4.0_ds80.dsk" size="860416" crc="06bf86f1" sha1="d83b78335dd0808aa90deb24fef162e512bf0cdb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 <!-- Compilations (Educational) -->
+
+	<software name="tutorial">
+		<description>BASIC and Machine Code Tutorials</description>
+		<year>1983?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="mc_and_basic_tutor_ds40.dsk" size="430336" crc="6a913678" sha1="38458ff703c47ab1c60bd49b63f393d08335d504" offset="0" />
+			</dataarea>
+		</part>
+	</software>
 
 	<software name="beesci">
 		<description>Bee Scientist Volume One (Color)</description>
@@ -739,7 +853,343 @@
 		</part>
 	</software>
 
+	<software name="humbgeo1">
+		<description>Humblebee Geography Programs Disk 1 - New Zealand and Australia</description>
+		<year>1987</year>
+		<publisher>Humblebee</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="humblebee_geography_01_ss80.dsk" size="430336" crc="5fc9cca5" sha1="379323f122ddca8d4cab7130a4f68785475eea63" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="humbgeo2">
+		<description>Humblebee Geography Programs Disk 2 - Japan and Antarctica</description>
+		<year>1987</year>
+		<publisher>Humblebee</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="humblebee_geography_02_ss80.dsk" size="430336" crc="b3b66922" sha1="95c5270f5d43f6c2bc03a019d04f729cb4c43abc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="humbgeo3">
+		<description>Humblebee Geography Programs Disk 3 - British Isles, China, India</description>
+		<year>1987</year>
+		<publisher>Humblebee</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="humblebee_geography_03_ss80.dsk" size="430336" crc="e80b0914" sha1="171176a0a69e38946e6cb189b9bbf9cfc5daa5f8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lrnfunn">
+		<description>Learning Can Be Fun With Numbers (Color Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_learning_can_be_fun_numbers_t04.dsk" size="215296" crc="2d08901f" sha1="b6db3b7ab2bd77ed6c3dfd7c0c8483d12d37a36e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lrnfunnm" cloneof="lrnfunn">
+		<description>Learning Can Be Fun With Numbers (Monochrome Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_learning_can_be_fun_numbers_t01.dsk" size="215296" crc="c4c7de61" sha1="2e4c8f9c33dd9f4ba4e76d05e07bc1f122a21dfc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lrnfunw">
+		<description>Learning Can Be Fun With Words</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_learning_can_be_fun_words_t01.dsk" size="215296" crc="187d5a49" sha1="f1eab670b379cf1cd52496626418155f4afd0506" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="micrbear">
+		<description>The Microbear Public Domain Disk</description>
+		<year>198?</year>
+		<publisher>Microbear</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="microbear_public_domain_ss80.dsk" size="430336" crc="421962bb" sha1="1177c0590dc22f307106cf4d87c416615259842d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lrnfunm">
+		<description>More Learning Can Be Fun (Color Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_learning_can_be_fun_more_t04.dsk" size="215296" crc="5c56c7b2" sha1="392c5119304a52c2e1f80c85a6ca20fb4c954328" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lrnfunma" cloneof="lrnfunm">
+		<description>More Learning Can Be Fun (Gray/Blue Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_learning_can_be_fun_more_t03.dsk" size="215296" crc="00b03293" sha1="9355c5f69ccab0473c26c3274e89d4d10ec5b62a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lrnfunmm" cloneof="lrnfunm">
+		<description>More Learning Can Be Fun (Monochrome Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_learning_can_be_fun_more_t01.dsk" size="215296" crc="475eff6e" sha1="c0085a8b440982a8f9a749d425443bfbc36d473b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="airtrack">
+		<description>The Microbee Air Track (Color Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_microbee_air_track_t04.dsk" size="215296" crc="4233d42d" sha1="ef996977c05c6ee4c14d4bf483188eae1f01ddc4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="airtrackm" cloneof="airtrack">
+		<description>The Microbee Air Track (Monochrome Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_microbee_air_track_t01.dsk" size="215296" crc="fd7cda11" sha1="131c230d7186eea1e4be14cad06199cadee61b0b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="msppedu">
+		<description>MSPP Educational Pack</description>
+		<year>20??</year>
+		<publisher>Microbee Software Preservation Project</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="mmd_educational_ss80.dsk" size="430336" crc="1042a3c8" sha1="7bc9896021a34f91301419f1962eb14a4b852989" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ourworld">
+		<description>Our World (Color Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_our_world_t04.dsk" size="215296" crc="86d222ef" sha1="d436018b3cdda18a85984c6196dd9afddbf128b5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ourworldm" cloneof="ourworld">
+		<description>Our World (Monochrome Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_our_world_t02.dsk" size="215296" crc="84525c60" sha1="aaa5084c42272c42de7a55d0226aa13393872d5f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scitut1">
+		<description>Science Tutorial 1 - Geology, Biology and Chemistry (Color Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_science_tutorial_vol_1_t04.dsk" size="215296" crc="d6131e6a" sha1="ede16880d904aa24deabeaba767668a678f1d509" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scitut1m" cloneof="scitut1">
+		<description>Science Tutorial 1 - Geology, Biology and Chemistry (Monochrome Yellow Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_science_tutorial_vol_1_t02.dsk" size="215296" crc="28c0f296" sha1="2554d7a09da5a664b1e34818d31fa4840246f2a9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scitut1ma" cloneof="scitut1">
+		<description>Science Tutorial 1 - Geology, Biology and Chemistry (Monochrome Green Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_science_tutorial_vol_1_t01.dsk" size="215296" crc="90cf3e49" sha1="115109a7f03b006f0454a30967be3323954611ff" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scitut2">
+		<description>Science Tutorial 2 - Physics and Maths (Color Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_science_tutorial_vol_2_t04.dsk" size="215296" crc="3b35f77b" sha1="d650ffabdcf53014ff2926039620f52a4f13bf3f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scitut2m" cloneof="scitut2">
+		<description>Science Tutorial 2 - Physics and Maths (Monochrome Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_science_tutorial_vol_2_t01.dsk" size="215296" crc="117c1ab0" sha1="a25d9684430524787b31663317cc2954edc46b32" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="socstud">
+		<description>Social Studies (Color Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_social_studies_t04.dsk" size="215296" crc="2d26bcc4" sha1="718c9b0f0f999605b71103351ce1fb0e3c2710a5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="socstudm" cloneof="socstud">
+		<description>Social Studies (Monochrome Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_social_studies_t01.dsk" size="215296" crc="073950a6" sha1="72c9eeec1b426f1471f483887f83a35d328b2d30" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="socstudo">
+		<description>Social Studies Oracle (Color Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_social_studies_oracle_t04.dsk" size="215296" crc="98535a6d" sha1="a42f6d1f708f8a2dd41a5ecc5f23fb122ca5ffcb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="socstudoa" cloneof="socstudo">
+		<description>Social Studies Oracle (Green/Cyan Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_social_studies_oracle_t03.dsk" size="215296" crc="1e2b0003" sha1="7fefdabe55d3f4642d4ff888cd915bfe64819d18" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="techdraw">
+		<description>Technical Drawing (Color Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_technical_drawing_t04.dsk" size="215296" crc="598bf32f" sha1="9a6bbdcab91f553dea951736039e15aa3814a6cb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="techdrawm" cloneof="techdraw">
+		<description>Technical Drawing (Monochrome Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_technical_drawing_t01.dsk" size="215296" crc="1e6f0cc6" sha1="5ea63679fbee0803883603115a10189994dce922" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="visuprog">
+		<description>Visual Programming</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_visual_programming_t03.dsk" size="215296" crc="e67b2f61" sha1="b46b0ad06ec217df528877b5fdfda39ba1911292" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 <!-- Compilations (Games) -->
+
+	<software name="256demo">
+		<description>256TC Demo Disk</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_256tc_demo_disk_t04.dsk" size="215296" crc="8cbc276e" sha1="c97583b8cdb435daf16d12db8a275109709d4620" offset="0" />
+			</dataarea>
+		</part>
+	</software>
 
 	<software name="advgames">
 		<description>Adventure Games 1</description>
@@ -1305,6 +1755,90 @@
 		</part>
 	</software>
 
+	<software name="graphadv">
+		<description>Graphic Adventures Volume 1 (Color Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_graphic_adventures_vol_1_t04.dsk" size="215296" crc="9c18830a" sha1="b95079bf5620e2b2d79d6c64dfdf1e45c6437e8a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="graphadvm" cloneof="graphadv">
+		<description>Graphic Adventures Volume 1 (Monochrome Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_graphic_adventures_vol_1_t01.dsk" size="215296" crc="119eb5b4" sha1="854e4c91c751e6d7d86619c85163677a76356fa5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="joygames">
+		<description>Joystick Games Disk One (Color Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_joystick_games_vol_1_t04.dsk" size="215296" crc="5f0a8efa" sha1="59d3ee5f38609caace8f558bd380beb25e4e8044" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="joygamesa" cloneof="joygames">
+		<description>Joystick Games Disk One (Green/Blue Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_joystick_games_vol_1_t03.dsk" size="215296" crc="58f360ab" sha1="c3c43d6936170504ada3b5c76c444a2041ad916f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kidpack1">
+		<description>Kids Pack Volume One (Color Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_kids_pack_vol_1_t04.dsk" size="215296" crc="8a96a04e" sha1="75178f877df218ae8c17320fda992304d046962b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kidpack1a" cloneof="kidpack1">
+		<description>Kids Pack Volume One (Blue Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_kids_pack_vol_1_t03.dsk" size="215296" crc="edc7bbe6" sha1="1d9af5962167b8cf539e176f268de150dd3478ed" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kidpack2">
+		<description>Kids Pack Volume Two</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_kids_pack_vol_2_t03.dsk" size="215296" crc="b694a3fc" sha1="dc17f08067e8c1d88cc4453b00980dbf2892e5aa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="arcmenu1">
 		<description>Menu No. 1 of Arcade Games</description>
 		<year>198?</year>
@@ -1313,6 +1847,42 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
 				<rom name="arcade_1_ds80.dsk" size="860416" crc="7c89f161" sha1="2f75ed79c392a9532b3142fa673882957f953cd3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cricket">
+		<description>Microbee Cricket (Color Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_microbee_cricket_t04.dsk" size="215296" crc="a47762a9" sha1="e816752568f7805ba0014b4359b8b715d8f050e3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cricketm" cloneof="cricket">
+		<description>Microbee Cricket (Monochrome Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_microbee_cricket_t01.dsk" size="215296" crc="f6770d6f" sha1="584a267c7651ac544f90a9b383460ae32f23c475" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="golf">
+		<description>Microbee Golf</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_microbee_golf_t01.dsk" size="215296" crc="d7646791" sha1="3f2bbdf54197f5bb6fac8283c7629848a2b7c2d2" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1389,7 +1959,7 @@
 		</part>
 	</software>
 
-	<software name="golf">
+	<software name="micrgolf">
 		<description>Micro-Golf and Micro-Golf Match Play</description>
 		<year>1984</year>
 		<publisher>George Gardoz</publisher>
@@ -1401,15 +1971,75 @@
 		</part>
 	</software>
 
-	<!-- Requires CP/M -->
 	<software name="othcheck">
 		<description>Othello/Checkers</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires CP/M" />
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
 				<rom name="draughts_ds40.dsk" size="430336" crc="6669295e" sha1="fb49c0cbe5cfbe600beaaf585054cfb66ce615ae" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pennyarc">
+		<description>Penny Arcade (Color Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_penny_arcade_t04.dsk" size="215296" crc="c92b2fcb" sha1="20128c3b9ada62bec0896cbcd39d01b51e159150" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pennyarca" cloneof="pennyarc">
+		<description>Penny Arcade (Blue/White Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_penny_arcade_t03.dsk" size="215296" crc="e4523512" sha1="77c3e2f827f284441762ec8a316f7ef7b1b9af58" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stratgam">
+		<description>Strategic Games Volume 1 (Color Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_strategic_games_vol_1_t04.dsk" size="215296" crc="3e1d89b2" sha1="6c4dc51a7f8b26d532b94a4653854bda958108c0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stratgama" cloneof="stratgam">
+		<description>Strategic Games Volume 1 (Gray/Blue Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_strategic_games_vol_1_t03.dsk" size="215296" crc="efdacfe8" sha1="08ed28b0163e4e360f563ef47fa4f49fe60afc2f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stratgamm" cloneof="stratgam">
+		<description>Strategic Games Volume 1 (Monochrome Menu)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="215296">
+				<rom name="honeysoft_strategic_games_vol_1_t01.dsk" size="215296" crc="978150b0" sha1="0dc35114b47cd3cf73b80e72661be89ceeec1f5a" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1490,6 +2120,18 @@
 		</part>
 	</software>
 
+	<software name="manuarts">
+		<description>Computer Aided Learning - Manual Arts</description>
+		<year>198?</year>
+		<publisher>Education Department of Western Australia</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="manual_arts_ds40.dsk" size="430336" crc="89eea73c" sha1="d6787460d9e33e11c519f6654524550f88cf27c4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="biology">
 		<description>Computer Assisted Learning - Biological Science</description>
 		<year>198?</year>
@@ -1510,6 +2152,30 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
 				<rom name="home_economics_ds40.dsk" size="430336" crc="b6f604af" sha1="42b8acdf07ce112e67b0ee169de41212869b700a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mathema1">
+		<description>Computer Assisted Learning - Mathematics #1</description>
+		<year>198?</year>
+		<publisher>Education Department of Western Australia</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="mathmatics_1_ds40.dsk" size="430336" crc="779edc40" sha1="7c82fee506b7e8f424c72e7d0c500bbc17c541ac" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mathema2">
+		<description>Computer Assisted Learning - Mathematics #2</description>
+		<year>198?</year>
+		<publisher>Education Department of Western Australia</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="mathmatics_2_ds40.dsk" size="430336" crc="74c05cce" sha1="f6658fd3f1150b943d698bee7c94873fe91d4b33" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1574,11 +2240,11 @@
 		</part>
 	</software>
 
-	<!-- Requires CP/M, run programs from included BASIC.COM -->
 	<software name="explorai">
 		<description>Exploring Artifial Inteligence</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires CP/M, run programs with included BASIC" />
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1660,11 +2326,11 @@
 		</part>
 	</software>
 
-	<!-- Requires CP/M - load and run with included BASIC -->
 	<software name="kingsace">
 		<description>Probability - Kings and Aces</description>
 		<year>198?</year>
 		<publisher>Denham</publisher>
+		<info name="usage" value="Requires CP/M, run with included BASIC" />
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1771,11 +2437,11 @@
 		</part>
 	</software>
 
-	<!-- Requires CP/M -->
 	<software name="beealien">
 		<description>Bee-Alien (v1.0f)</description>
 		<year>1986</year>
 		<publisher>FBN Software</publisher>
+		<info name="usage" value="Requires CP/M" />
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1857,11 +2523,25 @@
 		</part>
 	</software>
 
-	<!-- Requires CP/M -->
+	<!-- Graphics problems -->
+	<software name="froghop" supported="no">
+		<description>Frog Hop</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires CP/M" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="froghop(1).dsk" size="430336" crc="7a4b5655" sha1="59e0900a1d0a13c5db228561b2a7dd19cc1d7122" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="grotnik">
 		<description>Grotnik Wars</description>
 		<year>1984</year>
 		<publisher>Grotnik Software</publisher>
+		<info name="usage" value="Requires CP/M" />
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1954,15 +2634,76 @@
 		</part>
 	</software>
 
-	<!-- Requires CP/M -->
+	<software name="sancara">
+		<description>Jewels of Sancara Island</description>
+		<year>198?</year>
+		<publisher>Psychic Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="jewels_of_sancara_island_ss80.dsk" size="430336" crc="7ba1f832" sha1="2ca0fb99b6a90aa48e3fcdfa793a6af08b3512ac" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="eatworms">
+		<description>Let's Eat Worms</description>
+		<year>1985</year>
+		<publisher>Nectar Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="lets_eat_worms_ds40.dsk" size="430336" crc="e27466a1" sha1="eb7da544644e97226383de51a7dad4d18f238619" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="punting">
+		<description>Let's Go Punting!</description>
+		<year>1986</year>
+		<publisher>Goodison Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="860416">
+				<rom name="lets_go_punting_ds80.dsk" size="860416" crc="701c242a" sha1="c368f138c25ddf92907f7f99c93616d3ac6ffefe" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="luckybar">
 		<description>The Lucky Bar Poker Machine</description>
 		<year>1983</year>
 		<publisher>MicroWorld</publisher>
+		<info name="usage" value="Requires CP/M" />
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
 				<rom name="bee_casino_reels.dsk" size="430336" crc="16290a26" sha1="1288a7de5ddfcbe2b2fccb65d90dea9b1f31299e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="market">
+		<description>Market Simulation Game</description>
+		<year>1984</year>
+		<publisher>P. O'Neill</publisher>
+		<info name="usage" value="Requires CP/M" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="market_simulation_ds40.dsk" size="430336" crc="c6addd31" sha1="4199ffadd6df0350a0597053fc70df0319720751" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="yachtrac">
+		<description>Melbourne to Hobart Yacht Race (v1.0)</description>
+		<year>198?</year>
+		<publisher>Goodison Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="860416">
+				<rom name="melbourne_to_hobart_yacht_race_ds80.dsk" size="860416" crc="9284948a" sha1="9882d2a88cb2f4dd2f25159e2488a6b492632fbd" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1975,6 +2716,43 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
 				<rom name="defender_ds40.dsk" size="430336" crc="0a575afc" sha1="5e808f7a2826a52027b06565bc7c0807f63734fa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="msinvad2">
+		<description>Microspace Invaders II</description>
+		<year>198?</year>
+		<publisher>Tim Morris-Yates</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="microspace_invaders_ds40.dsk" size="430336" crc="3ba81e40" sha1="d1ec21220dd7084d402c38944e24107615339aae" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="million">
+		<description>Millionwaire</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="860416">
+				<rom name="millionware_3.0_ds80.dsk" size="860416" crc="02945571" sha1="56f16172df9bd1eb86229f5ad99bea74d975ea38" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="miners">
+		<description>Miners (Color and Monochrome versions)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires CP/M" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="miner_ds40.dsk" size="430336" crc="d789e530" sha1="2b4afbf7a6ee7ae5c5d3b9d64264d26f018ef89b" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2024,774 +2802,6 @@
 <!-- UnRenamed -->
 
 <!--
-	<software name="">
-		<description>froghop(1)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="froghop(1).dsk" size="430336" crc="7a4b5655" sha1="59e0900a1d0a13c5db228561b2a7dd19cc1d7122" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_256tc_demo_disk_t04</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_256tc_demo_disk_t04.dsk" size="215296" crc="8cbc276e" sha1="c97583b8cdb435daf16d12db8a275109709d4620" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_graphic_adventures_vol_1_t01</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_graphic_adventures_vol_1_t01.dsk" size="215296" crc="119eb5b4" sha1="854e4c91c751e6d7d86619c85163677a76356fa5" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_graphic_adventures_vol_1_t04</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_graphic_adventures_vol_1_t04.dsk" size="215296" crc="9c18830a" sha1="b95079bf5620e2b2d79d6c64dfdf1e45c6437e8a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_joystick_games_vol_1_t03</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_joystick_games_vol_1_t03.dsk" size="215296" crc="58f360ab" sha1="c3c43d6936170504ada3b5c76c444a2041ad916f" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_joystick_games_vol_1_t04</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_joystick_games_vol_1_t04.dsk" size="215296" crc="5f0a8efa" sha1="59d3ee5f38609caace8f558bd380beb25e4e8044" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_kids_pack_vol_1_t03</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_kids_pack_vol_1_t03.dsk" size="215296" crc="edc7bbe6" sha1="1d9af5962167b8cf539e176f268de150dd3478ed" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_kids_pack_vol_1_t04</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_kids_pack_vol_1_t04.dsk" size="215296" crc="8a96a04e" sha1="75178f877df218ae8c17320fda992304d046962b" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_kids_pack_vol_2_t03</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_kids_pack_vol_2_t03.dsk" size="215296" crc="b694a3fc" sha1="dc17f08067e8c1d88cc4453b00980dbf2892e5aa" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_learning_can_be_fun_more_t01</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_learning_can_be_fun_more_t01.dsk" size="215296" crc="475eff6e" sha1="c0085a8b440982a8f9a749d425443bfbc36d473b" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_learning_can_be_fun_more_t03</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_learning_can_be_fun_more_t03.dsk" size="215296" crc="00b03293" sha1="9355c5f69ccab0473c26c3274e89d4d10ec5b62a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_learning_can_be_fun_more_t04</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_learning_can_be_fun_more_t04.dsk" size="215296" crc="5c56c7b2" sha1="392c5119304a52c2e1f80c85a6ca20fb4c954328" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_learning_can_be_fun_numbers_t01</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_learning_can_be_fun_numbers_t01.dsk" size="215296" crc="c4c7de61" sha1="2e4c8f9c33dd9f4ba4e76d05e07bc1f122a21dfc" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_learning_can_be_fun_numbers_t04</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_learning_can_be_fun_numbers_t04.dsk" size="215296" crc="2d08901f" sha1="b6db3b7ab2bd77ed6c3dfd7c0c8483d12d37a36e" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_learning_can_be_fun_words_t01</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_learning_can_be_fun_words_t01.dsk" size="215296" crc="187d5a49" sha1="f1eab670b379cf1cd52496626418155f4afd0506" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_microbee_air_track_t01</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_microbee_air_track_t01.dsk" size="215296" crc="fd7cda11" sha1="131c230d7186eea1e4be14cad06199cadee61b0b" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_microbee_air_track_t04</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_microbee_air_track_t04.dsk" size="215296" crc="4233d42d" sha1="ef996977c05c6ee4c14d4bf483188eae1f01ddc4" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_microbee_cricket_t01</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_microbee_cricket_t01.dsk" size="215296" crc="f6770d6f" sha1="584a267c7651ac544f90a9b383460ae32f23c475" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_microbee_cricket_t04</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_microbee_cricket_t04.dsk" size="215296" crc="a47762a9" sha1="e816752568f7805ba0014b4359b8b715d8f050e3" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_microbee_golf_t01</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_microbee_golf_t01.dsk" size="215296" crc="d7646791" sha1="3f2bbdf54197f5bb6fac8283c7629848a2b7c2d2" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_our_world_t02</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_our_world_t02.dsk" size="215296" crc="84525c60" sha1="aaa5084c42272c42de7a55d0226aa13393872d5f" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_our_world_t04</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_our_world_t04.dsk" size="215296" crc="86d222ef" sha1="d436018b3cdda18a85984c6196dd9afddbf128b5" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_penny_arcade_t03</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_penny_arcade_t03.dsk" size="215296" crc="e4523512" sha1="77c3e2f827f284441762ec8a316f7ef7b1b9af58" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_penny_arcade_t04</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_penny_arcade_t04.dsk" size="215296" crc="c92b2fcb" sha1="20128c3b9ada62bec0896cbcd39d01b51e159150" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_science_tutorial_vol_1_t01</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_science_tutorial_vol_1_t01.dsk" size="215296" crc="90cf3e49" sha1="115109a7f03b006f0454a30967be3323954611ff" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_science_tutorial_vol_1_t02</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_science_tutorial_vol_1_t02.dsk" size="215296" crc="28c0f296" sha1="2554d7a09da5a664b1e34818d31fa4840246f2a9" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_science_tutorial_vol_1_t04</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_science_tutorial_vol_1_t04.dsk" size="215296" crc="d6131e6a" sha1="ede16880d904aa24deabeaba767668a678f1d509" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_science_tutorial_vol_2_t01</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_science_tutorial_vol_2_t01.dsk" size="215296" crc="117c1ab0" sha1="a25d9684430524787b31663317cc2954edc46b32" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_science_tutorial_vol_2_t04</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_science_tutorial_vol_2_t04.dsk" size="215296" crc="3b35f77b" sha1="d650ffabdcf53014ff2926039620f52a4f13bf3f" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_social_studies_oracle_t03</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_social_studies_oracle_t03.dsk" size="215296" crc="1e2b0003" sha1="7fefdabe55d3f4642d4ff888cd915bfe64819d18" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_social_studies_oracle_t04</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_social_studies_oracle_t04.dsk" size="215296" crc="98535a6d" sha1="a42f6d1f708f8a2dd41a5ecc5f23fb122ca5ffcb" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_social_studies_t01</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_social_studies_t01.dsk" size="215296" crc="073950a6" sha1="72c9eeec1b426f1471f483887f83a35d328b2d30" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_social_studies_t04</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_social_studies_t04.dsk" size="215296" crc="2d26bcc4" sha1="718c9b0f0f999605b71103351ce1fb0e3c2710a5" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_strategic_games_vol_1_t01</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_strategic_games_vol_1_t01.dsk" size="215296" crc="978150b0" sha1="0dc35114b47cd3cf73b80e72661be89ceeec1f5a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_strategic_games_vol_1_t03</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_strategic_games_vol_1_t03.dsk" size="215296" crc="efdacfe8" sha1="08ed28b0163e4e360f563ef47fa4f49fe60afc2f" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_strategic_games_vol_1_t04</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_strategic_games_vol_1_t04.dsk" size="215296" crc="3e1d89b2" sha1="6c4dc51a7f8b26d532b94a4653854bda958108c0" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_technical_drawing_t01</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_technical_drawing_t01.dsk" size="215296" crc="1e6f0cc6" sha1="5ea63679fbee0803883603115a10189994dce922" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_technical_drawing_t04</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_technical_drawing_t04.dsk" size="215296" crc="598bf32f" sha1="9a6bbdcab91f553dea951736039e15aa3814a6cb" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>honeysoft_visual_programming_t03</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="215296">
-				<rom name="honeysoft_visual_programming_t03.dsk" size="215296" crc="e67b2f61" sha1="b46b0ad06ec217df528877b5fdfda39ba1911292" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>humblebee_geography_01_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="humblebee_geography_01_ss80.dsk" size="430336" crc="5fc9cca5" sha1="379323f122ddca8d4cab7130a4f68785475eea63" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>humblebee_geography_02_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="humblebee_geography_02_ss80.dsk" size="430336" crc="b3b66922" sha1="95c5270f5d43f6c2bc03a019d04f729cb4c43abc" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>humblebee_geography_03_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="humblebee_geography_03_ss80.dsk" size="430336" crc="e80b0914" sha1="171176a0a69e38946e6cb189b9bbf9cfc5daa5f8" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>information_express_v1.2_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="information_express_v1.2_ss80.dsk" size="430336" crc="a4570711" sha1="603af2df79de9df3fc682a261cce1dbc6a5b87e5" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>jewels_of_sancara_island_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="jewels_of_sancara_island_ss80.dsk" size="430336" crc="7ba1f832" sha1="2ca0fb99b6a90aa48e3fcdfa793a6af08b3512ac" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>lego_lines_1.0_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="lego_lines_1.0_ss80.dsk" size="430336" crc="1eb9795c" sha1="97f310c4fa2271c2f6a3999349edd5d442cde6d8" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>lets_eat_worms_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="lets_eat_worms_ds40.dsk" size="430336" crc="e27466a1" sha1="eb7da544644e97226383de51a7dad4d18f238619" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>lets_go_punting_ds80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="860416">
-				<rom name="lets_go_punting_ds80.dsk" size="860416" crc="701c242a" sha1="c368f138c25ddf92907f7f99c93616d3ac6ffefe" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>manual_arts_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="manual_arts_ds40.dsk" size="430336" crc="89eea73c" sha1="d6787460d9e33e11c519f6654524550f88cf27c4" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>market_simulation_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="market_simulation_ds40.dsk" size="430336" crc="c6addd31" sha1="4199ffadd6df0350a0597053fc70df0319720751" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>mathmatics_1_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="mathmatics_1_ds40.dsk" size="430336" crc="779edc40" sha1="7c82fee506b7e8f424c72e7d0c500bbc17c541ac" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>mathmatics_2_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="mathmatics_2_ds40.dsk" size="430336" crc="74c05cce" sha1="f6658fd3f1150b943d698bee7c94873fe91d4b33" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>mc_and_basic_tutor_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="mc_and_basic_tutor_ds40.dsk" size="430336" crc="6a913678" sha1="38458ff703c47ab1c60bd49b63f393d08335d504" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>melbourne_to_hobart_yacht_race_ds80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="860416">
-				<rom name="melbourne_to_hobart_yacht_race_ds80.dsk" size="860416" crc="9284948a" sha1="9882d2a88cb2f4dd2f25159e2488a6b492632fbd" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>microbear_public_domain_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="microbear_public_domain_ss80.dsk" size="430336" crc="421962bb" sha1="1177c0590dc22f307106cf4d87c416615259842d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>microbee_graphic_wordbee_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="microbee_graphic_wordbee_ds40.dsk" size="430336" crc="a8a6d269" sha1="4ce800967df2f833d8129eec3111f4bf0ef6336d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>microbee_pilot_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="microbee_pilot_ss80.dsk" size="430336" crc="f9c6ce60" sha1="e5c26c13317d6a76999e873d465df6343a1334e2" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>microbee_utilities_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="microbee_utilities_ss80.dsk" size="430336" crc="8fac6f7f" sha1="52541e8dea59bd879df519469f221156c7c1cd8b" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>microbee_wordstar_4.0_ds80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="860416">
-				<rom name="microbee_wordstar_4.0_ds80.dsk" size="860416" crc="06bf86f1" sha1="d83b78335dd0808aa90deb24fef162e512bf0cdb" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>microspace_invaders_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="microspace_invaders_ds40.dsk" size="430336" crc="3ba81e40" sha1="d1ec21220dd7084d402c38944e24107615339aae" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>milestone_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="milestone_ss80.dsk" size="430336" crc="28236aa2" sha1="a6acabf36066153a3755f79de2cc6e383b0a8a41" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>millionware_3.0_ds80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="860416">
-				<rom name="millionware_3.0_ds80.dsk" size="860416" crc="02945571" sha1="56f16172df9bd1eb86229f5ad99bea74d975ea38" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>miner_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="miner_ds40.dsk" size="430336" crc="d789e530" sha1="2b4afbf7a6ee7ae5c5d3b9d64264d26f018ef89b" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>mmd_educational_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="mmd_educational_ss80.dsk" size="430336" crc="1042a3c8" sha1="7bc9896021a34f91301419f1962eb14a4b852989" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>mugwa_rom_pak_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="mugwa_rom_pak_ss80.dsk" size="430336" crc="e7e5a9bd" sha1="7f00eebb25d5f08b10c3dbf243b7f5c05b31f041" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="">
 		<description>nemesis_1.2_ss80</description>
 		<year>198?</year>
