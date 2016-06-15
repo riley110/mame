@@ -3027,43 +3027,7 @@ ROM_START( slampic )
 	ROM_LOAD( "mb_qa.5k",   0x00000, 0x20000, CRC(e21a03c4) SHA1(98c03fd2c9b6bf8a4fc25a4edca87fff7c3c3819) )
 ROM_END
 
-
-// ************************************************************************* DRIVER MACROS
-
-GAME( 1990, cawingbl,  cawing,   cawingbl,  cawingbl, cps_state, cawingbl, ROT0,   "bootleg", "Carrier Air Wing (bootleg with 2xYM2203 + 2xMSM205 set 1)", MACHINE_SUPPORTS_SAVE ) // 901012 ETC
-GAME( 1990, cawingb2,  cawing,   cawingbl,  cawingbl, cps_state, cawingbl, ROT0,   "bootleg", "Carrier Air Wing (bootleg with 2xYM2203 + 2xMSM205 set 2)", MACHINE_SUPPORTS_SAVE ) // 901012 ETC
-
-GAME( 1993, dinopic,   dino,     dinopic,   dino,     cps_state, dinopic,  ROT0,   "bootleg", "Cadillacs and Dinosaurs (bootleg with PIC16c57, set 1)", MACHINE_NO_SOUND | MACHINE_SUPPORTS_SAVE ) // 930201 ETC
-GAME( 1993, dinopic2,  dino,     dinopic,   dino,     cps_state, dinopic,  ROT0,   "bootleg", "Cadillacs and Dinosaurs (bootleg with PIC16c57, set 2)", MACHINE_NOT_WORKING | MACHINE_SUPPORTS_SAVE ) // 930201 ETC
-
-GAME( 1990, fcrash,    ffight,   fcrash,    fcrash,   cps_state, cps1,     ROT0,   "bootleg (Playmark)", "Final Crash (bootleg of Final Fight)", MACHINE_SUPPORTS_SAVE )
-GAME( 1990, ffightbl,  ffight,   fcrash,    fcrash,   cps_state, cps1,     ROT0,   "bootleg", "Final Fight (bootleg)", MACHINE_SUPPORTS_SAVE )
-GAME( 1990, ffightbla, ffight,   fcrash,    fcrash,   cps_state, cps1,     ROT0,   "bootleg", "Final Fight (bootleg on Final Crash PCB)", MACHINE_SUPPORTS_SAVE ) // same as Final Crash without the modified gfx
-
-GAME( 1991, kodb,      kod,      kodb,      kodb,     cps_state, kodb,     ROT0,   "bootleg (Playmark)", "The King of Dragons (bootleg)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE ) // 910731  "ETC"
-GAME( 1991, knightsb,  knights,  knightsb,  knights,  cps_state, dinopic,  ROT0,   "bootleg", "Knights of the Round (bootleg, alt)", MACHINE_NOT_WORKING | MACHINE_SUPPORTS_SAVE )    // 911127 - based on World version
-
-GAME( 1993, punipic,   punisher, punipic,   punisher, cps_state, punipic,  ROT0,   "bootleg", "The Punisher (bootleg with PIC16c57, set 1)", MACHINE_NO_SOUND | MACHINE_SUPPORTS_SAVE ) // 930422 ETC
-GAME( 1993, punipic2,  punisher, punipic,   punisher, cps_state, punipic,  ROT0,   "bootleg", "The Punisher (bootleg with PIC16c57, set 2)", MACHINE_NO_SOUND | MACHINE_SUPPORTS_SAVE ) // 930422 ETC
-GAME( 1993, punipic3,  punisher, punipic,   punisher, cps_state, punipic3, ROT0,   "bootleg", "The Punisher (bootleg with PIC16c57, set 3)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_NO_SOUND | MACHINE_SUPPORTS_SAVE ) // 930422 ETC
-
-GAME( 1992, sf2m1,     sf2ce,    sf2m1,     sf2,      cps_state, sf2m1,    ROT0,   "bootleg", "Street Fighter II': Champion Edition (M1, bootleg)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE ) // 920313 ETC
-GAME( 1992, sf2mdt,    sf2ce,    sf2mdt,    sf2mdt,   cps_state, sf2mdt,   ROT0,   "bootleg", "Street Fighter II': Magic Delta Turbo (bootleg, set 1)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE )   // 920313 - based on (heavily modified) World version
-GAME( 1992, sf2mdta,   sf2ce,    sf2mdt,    sf2mdt,   cps_state, sf2mdta,  ROT0,   "bootleg", "Street Fighter II': Magic Delta Turbo (bootleg, set 2)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE )   // 920313 - based on World version
-GAME( 1992, sf2mdtb,   sf2ce,    sf2mdt,    sf2mdtb,  cps_state, sf2mdtb,  ROT0,   "bootleg", "Street Fighter II': Magic Delta Turbo (bootleg, set 3)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE )   // 920313 - based on World version
-
-GAME( 1992, sf2b,      sf2,      sf2b,      sf2mdt,   cps_state, sf2b,     ROT0,   "bootleg", "Street Fighter II: The World Warrior (bootleg)",  MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE ) //910204 - based on World version
-
-GAME( 1992, sf2m9,     sf2ce,    sf2m1,     sf2,      cps_state, dinopic,  ROT0,   "bootleg", "Street Fighter II': Champion Edition (M9, bootleg)",  MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE ) // 920313 ETC
-
-GAME( 1993, slampic,   slammast, slampic,   slammast, cps_state, dinopic,  ROT0,   "bootleg", "Saturday Night Slam Masters (bootleg with PIC16c57)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_NO_SOUND | MACHINE_SUPPORTS_SAVE ) // 930713 ETC
-
-GAME( 1999, sgyxz,     wof,      sgyxz,     sgyxz,    cps_state, cps1,     ROT0,   "bootleg (All-In Electronic)", "Warriors of Fate ('sgyxz' bootleg)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE )   // 921005 - Sangokushi 2
-
-// HBMAME **********************************************/
-
-
-GAME( 1990, cawingb,   cawing,   cawingb, cawingbl,   cps_state, cawingbl,  ROT0,   "bootleg", "Carrier Air Wing (bootleg)", MACHINE_SUPPORTS_SAVE )
+// ************************************************************************* VARTHB
 
 WRITE16_MEMBER(cps_state::varthb_layer_w)
 {
@@ -3073,15 +3037,15 @@ WRITE16_MEMBER(cps_state::varthb_layer_w)
 
 static ADDRESS_MAP_START( varthb_map, AS_PROGRAM, 16, cps_state )
 	AM_RANGE(0x000000, 0x1fffff) AM_ROM
-	AM_RANGE(0x800000, 0x800001) AM_READ_PORT("IN1")            /* Player input ports */
-	AM_RANGE(0x800006, 0x800007) AM_WRITE(cps1_soundlatch_w)    /* Sound command */
-	AM_RANGE(0x800018, 0x80001f) AM_READ(cps1_dsw_r)            /* System input ports / Dip Switches */
+	AM_RANGE(0x800000, 0x800001) AM_READ_PORT("IN1")
+	AM_RANGE(0x800006, 0x800007) AM_WRITE(cps1_soundlatch_w)
+	AM_RANGE(0x800018, 0x80001f) AM_READ(cps1_dsw_r)
 	AM_RANGE(0x800030, 0x800037) AM_WRITE(cps1_coinctrl_w)
-	AM_RANGE(0x800100, 0x80013f) AM_WRITE(cps1_cps_a_w) AM_SHARE("cps_a_regs")  /* CPS-A custom */
-	AM_RANGE(0x800140, 0x80017f) AM_READWRITE(cps1_cps_b_r, cps1_cps_b_w) AM_SHARE("cps_b_regs")    /* CPS-B custom (mapped by LWIO/IOB1 PAL on B-board) */
+	AM_RANGE(0x800100, 0x80013f) AM_WRITE(cps1_cps_a_w) AM_SHARE("cps_a_regs")
+	AM_RANGE(0x800140, 0x80017f) AM_READWRITE(cps1_cps_b_r, cps1_cps_b_w) AM_SHARE("cps_b_regs")
 	AM_RANGE(0x800188, 0x800189) AM_WRITE(varthb_layer_w)
 	AM_RANGE(0x980000, 0x98000b) AM_WRITE(dinopic_layer_w)
-	AM_RANGE(0x900000, 0x92ffff) AM_RAM_WRITE(cps1_gfxram_w) AM_SHARE("gfxram") /* SF2CE executes code from here */
+	AM_RANGE(0x900000, 0x92ffff) AM_RAM_WRITE(cps1_gfxram_w) AM_SHARE("gfxram")
 	AM_RANGE(0xff0000, 0xffffff) AM_RAM AM_SHARE("mainram")
 ADDRESS_MAP_END
 
@@ -3118,7 +3082,7 @@ static MACHINE_CONFIG_START( varthb, cps_state )
 	MCFG_GENERIC_LATCH_8_ADD("soundlatch")
 	MCFG_GENERIC_LATCH_8_ADD("soundlatch2")
 
-	MCFG_YM2151_ADD("2151", XTAL_3_579545MHz)  /* verified on pcb */
+	MCFG_YM2151_ADD("2151", XTAL_3_579545MHz)
 	MCFG_YM2151_IRQ_HANDLER(INPUTLINE("audiocpu", 0))
 	MCFG_SOUND_ROUTE(0, "mono", 0.35)
 	MCFG_SOUND_ROUTE(1, "mono", 0.35)
@@ -3145,12 +3109,60 @@ ROM_START( varthb )
 	ROMX_LOAD( "7",   0x000007, 0x40000, CRC(8941ca12) SHA1(5ad5d47b8614c2899d05c65dc3b74947d4bac561) , ROM_SKIP(7) )
 
 	ROM_REGION( 0x18000, "audiocpu", 0 ) /* 64k for the audio CPU (+banks) */
-	ROM_LOAD( "6",    0x00000, 0x08000, CRC(7a99446e) SHA1(ca027f41e3e58be5abc33ad7380746658cb5380a) )    // == va_09.12b
+	ROM_LOAD( "6",    0x00000, 0x08000, CRC(7a99446e) SHA1(ca027f41e3e58be5abc33ad7380746658cb5380a) )
 	ROM_CONTINUE(           0x10000, 0x08000 )
 
 	ROM_REGION( 0x40000, "oki", 0 ) /* Samples */
 	ROM_LOAD( "5",    0x00000, 0x40000, CRC(1547e595) SHA1(27f47b1afd9700afd9e8167d7e4e2888be34a9e5) )
+
+	ROM_REGION( 0x1000, "pals", 0 )
+	ROM_LOAD_OPTIONAL( "varth1.bin",    0x00000, 0x157, CRC(4c6a0d99) SHA1(081a307ef38675de178dd6221e6c4e55a5bfbd87) )
+	ROM_LOAD_OPTIONAL( "varth2.bin",    0x00200, 0x157, NO_DUMP ) // Registered
+	ROM_LOAD_OPTIONAL( "varth3.bin",    0x00400, 0x157, NO_DUMP ) // Registered
+	ROM_LOAD_OPTIONAL( "varth4.bin",    0x00600, 0x117, CRC(53317bf6) SHA1(f7b8f8b2c40429a517e3be63e5aed9573972ddfb) )
+	ROM_LOAD_OPTIONAL( "varth5.bin",    0x00800, 0x157, NO_DUMP ) // Registered
+	ROM_LOAD_OPTIONAL( "varth6.bin",    0x00a00, 0x157, NO_DUMP ) // Registered
 ROM_END
+
+
+// ************************************************************************* DRIVER MACROS
+
+GAME( 1990, cawingbl,  cawing,   cawingbl,  cawingbl, cps_state, cawingbl, ROT0,   "bootleg", "Carrier Air Wing (bootleg with 2xYM2203 + 2xMSM205 set 1)", MACHINE_SUPPORTS_SAVE ) // 901012 ETC
+GAME( 1990, cawingb2,  cawing,   cawingbl,  cawingbl, cps_state, cawingbl, ROT0,   "bootleg", "Carrier Air Wing (bootleg with 2xYM2203 + 2xMSM205 set 2)", MACHINE_SUPPORTS_SAVE ) // 901012 ETC
+
+GAME( 1993, dinopic,   dino,     dinopic,   dino,     cps_state, dinopic,  ROT0,   "bootleg", "Cadillacs and Dinosaurs (bootleg with PIC16c57, set 1)", MACHINE_NO_SOUND | MACHINE_SUPPORTS_SAVE ) // 930201 ETC
+GAME( 1993, dinopic2,  dino,     dinopic,   dino,     cps_state, dinopic,  ROT0,   "bootleg", "Cadillacs and Dinosaurs (bootleg with PIC16c57, set 2)", MACHINE_NOT_WORKING | MACHINE_SUPPORTS_SAVE ) // 930201 ETC
+
+GAME( 1990, fcrash,    ffight,   fcrash,    fcrash,   cps_state, cps1,     ROT0,   "bootleg (Playmark)", "Final Crash (bootleg of Final Fight)", MACHINE_SUPPORTS_SAVE )
+GAME( 1990, ffightbl,  ffight,   fcrash,    fcrash,   cps_state, cps1,     ROT0,   "bootleg", "Final Fight (bootleg)", MACHINE_SUPPORTS_SAVE )
+GAME( 1990, ffightbla, ffight,   fcrash,    fcrash,   cps_state, cps1,     ROT0,   "bootleg", "Final Fight (bootleg on Final Crash PCB)", MACHINE_SUPPORTS_SAVE ) // same as Final Crash without the modified gfx
+
+GAME( 1991, kodb,      kod,      kodb,      kodb,     cps_state, kodb,     ROT0,   "bootleg (Playmark)", "The King of Dragons (bootleg)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE ) // 910731  "ETC"
+GAME( 1991, knightsb,  knights,  knightsb,  knights,  cps_state, dinopic,  ROT0,   "bootleg", "Knights of the Round (bootleg, alt)", MACHINE_NOT_WORKING | MACHINE_SUPPORTS_SAVE )    // 911127 - based on World version
+
+GAME( 1993, punipic,   punisher, punipic,   punisher, cps_state, punipic,  ROT0,   "bootleg", "The Punisher (bootleg with PIC16c57, set 1)", MACHINE_NO_SOUND | MACHINE_SUPPORTS_SAVE ) // 930422 ETC
+GAME( 1993, punipic2,  punisher, punipic,   punisher, cps_state, punipic,  ROT0,   "bootleg", "The Punisher (bootleg with PIC16c57, set 2)", MACHINE_NO_SOUND | MACHINE_SUPPORTS_SAVE ) // 930422 ETC
+GAME( 1993, punipic3,  punisher, punipic,   punisher, cps_state, punipic3, ROT0,   "bootleg", "The Punisher (bootleg with PIC16c57, set 3)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_NO_SOUND | MACHINE_SUPPORTS_SAVE ) // 930422 ETC
+
+GAME( 1992, sf2m1,     sf2ce,    sf2m1,     sf2,      cps_state, sf2m1,    ROT0,   "bootleg", "Street Fighter II': Champion Edition (M1, bootleg)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE ) // 920313 ETC
+GAME( 1992, sf2mdt,    sf2ce,    sf2mdt,    sf2mdt,   cps_state, sf2mdt,   ROT0,   "bootleg", "Street Fighter II': Magic Delta Turbo (bootleg, set 1)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE )   // 920313 - based on (heavily modified) World version
+GAME( 1992, sf2mdta,   sf2ce,    sf2mdt,    sf2mdt,   cps_state, sf2mdta,  ROT0,   "bootleg", "Street Fighter II': Magic Delta Turbo (bootleg, set 2)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE )   // 920313 - based on World version
+GAME( 1992, sf2mdtb,   sf2ce,    sf2mdt,    sf2mdtb,  cps_state, sf2mdtb,  ROT0,   "bootleg", "Street Fighter II': Magic Delta Turbo (bootleg, set 3)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE )   // 920313 - based on World version
+
+GAME( 1992, sf2b,      sf2,      sf2b,      sf2mdt,   cps_state, sf2b,     ROT0,   "bootleg", "Street Fighter II: The World Warrior (bootleg)",  MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE ) //910204 - based on World version
+
+GAME( 1992, sf2m9,     sf2ce,    sf2m1,     sf2,      cps_state, dinopic,  ROT0,   "bootleg", "Street Fighter II': Champion Edition (M9, bootleg)",  MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE ) // 920313 ETC
+
+GAME( 1993, slampic,   slammast, slampic,   slammast, cps_state, dinopic,  ROT0,   "bootleg", "Saturday Night Slam Masters (bootleg with PIC16c57)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_NO_SOUND | MACHINE_SUPPORTS_SAVE ) // 930713 ETC
+
+GAME( 1999, sgyxz,     wof,      sgyxz,     sgyxz,    cps_state, cps1,     ROT0,   "bootleg (All-In Electronic)", "Warriors of Fate ('sgyxz' bootleg)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE )   // 921005 - Sangokushi 2
+
+GAME( 1992, varthb,    varth,    varthb,    varth,    cps_state, dinopic,  ROT270, "bootleg", "Varth: Operation Thunderstorm (bootleg)", MACHINE_SUPPORTS_SAVE )
+
+// HBMAME **********************************************/
+
+
+GAME( 1990, cawingb,   cawing,   cawingb, cawingbl,   cps_state, cawingbl,  ROT0,   "bootleg", "Carrier Air Wing (bootleg)", MACHINE_SUPPORTS_SAVE )
 
 static ADDRESS_MAP_START( captcommb2_map, AS_PROGRAM, 16, cps_state )
 	AM_RANGE(0x000000, 0x1fffff) AM_ROM
@@ -3250,5 +3262,4 @@ ROM_START( captcommb2 )
 ROM_END
 
 
-GAME( 1992, varthb,    varth,    varthb,    varth,    cps_state, dinopic,  ROT270, "bootleg", "Varth: Operation Thunderstorm (bootleg)", MACHINE_SUPPORTS_SAVE )
 GAME( 1991, captcommb2,captcomm, captcommb2,captcomm, cps_state, cps1,     ROT0,   "bootleg", "Captain Commando (bootleg with YM2151 + 2xMSM5205)", MACHINE_SUPPORTS_SAVE )

@@ -284,6 +284,11 @@ protected:
 
 	// draw header and footer text
 	void extra_text_render(float top, float bottom, float origx1, float origy1, float origx2, float origy2, const char *header, const char *footer);
+	void extra_text_position(float origx1, float origx2, float origy, float yspan, text_layout &layout,
+		int direction, float &x1, float &y1, float &x2, float &y2);
+
+	// custom events
+	virtual bool custom_mouse_down() { return false; }
 
 	template <typename T>
 	static T *topmost_menu() { return dynamic_cast<T *>(menu_stack.get()); }
@@ -312,7 +317,7 @@ private:
 
 	static std::unique_ptr<bitmap_argb32> no_avail_bitmap, bgrnd_bitmap, star_bitmap;
 	static render_texture *bgrnd_texture, *star_texture;
-	static bitmap_argb32 *icons_bitmap[];
+	static std::vector<std::unique_ptr<bitmap_argb32>> icons_bitmap;
 	static render_texture *icons_texture[];
 
 	// request the specific handling of the game selection main menu
@@ -322,7 +327,7 @@ private:
 	static void stack_push(std::unique_ptr<menu> &&menu);
 
 	// toolbar
-	static bitmap_argb32 *toolbar_bitmap[], *sw_toolbar_bitmap[];
+	static std::vector<std::shared_ptr<bitmap_argb32>> toolbar_bitmap, sw_toolbar_bitmap;
 	static render_texture *toolbar_texture[], *sw_toolbar_texture[];
 
 	// draw game list

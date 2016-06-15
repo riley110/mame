@@ -191,6 +191,7 @@ searthina                       // bootleg
 sflush                          // (c)1979 Taito
 shuttlei                        // (c) 1979 Omori (Arcade Tv Game List - P.79, Left, 6 from bottom)
 sicv                            // (c) 1979 Taito
+sicv1                           // (c) 1979 Taito
 sinvemag                        // Zenitone-Microsec Ltd.
 sinvzen                         // Zenitone-Microsec Ltd
 sisv                            // (c) 1978 Taito
@@ -12307,6 +12308,9 @@ fb01                            // 1986 FB-01
 @source:fc100.cpp
 fc100                           //
 
+@source:fccpu30.cpp
+fccpu30                         //
+
 @source:fcscsi.cpp
 fcscsi1                         //
 
@@ -12334,9 +12338,9 @@ sf2mdta                         // bootleg
 sf2mdtb                         // bootleg
 sgyxz                           // bootleg (All-In Electronics)
 slampic                         // bootleg
+varthb                          // bootleg
 //@source:fcrash_hb.cpp
 cawingb
-varthb      // from mame+
 captcommb2  // from mame+ to be checked
 
 @source:feversoc.cpp
@@ -12356,12 +12360,17 @@ fexcelv                         //
 fscc9                           //
 fscc12                          //
 reversic                        //
+super9cc                        // SU9: Super 9 Sensory Chess Challenger (English)
+super9ccfr                      // * French
+super9ccg                       // * German
+super9ccsp                      // * Spanish
 
 @source:fidel68k.cpp
 feagv10                         //
 feagv11                         //
 feagv2                          //
 feagv7                          //
+feagv9                          //
 
 @source:fidelz80.cpp
 bridgec3                        //
@@ -12632,6 +12641,7 @@ royalcrdd                       // (c) 1991 TAB-Austria
 royalcrde                       // (c) 1991 TAB-Austria
 royalcrdf                       // (c) 1991 Evona Electronic
 royalcrdg                       // (c) 1991 TAB-Austria
+royalcrdh                       // (c) 1991 TAB-Austria
 royalcrdp                       // (c) 1993 Digital Dreams
 royalcrdt                       // (c) 1991 TAB-Austria orig
 saloon                          // 199? unknown
@@ -12845,6 +12855,7 @@ galaxbsf2                       // bootleg
 galaxian                        // (c) Namco
 galaxiana                       // (c) Namco
 galaxianbl                      // bootleg
+galaxianbl2                     // bootleg
 galaxiani                       // (c) Irem
 galaxianm                       // (c) Midway
 galaxianmo                      // (c) Midway
@@ -12927,6 +12938,7 @@ scrambp                         // bootleg (Billport S.A.)
 scramce                         // bootleg (Centromatic S.A.)
 scrampt                         // bootleg (Petaco S.A.)
 scramrf                         // bootleg (Recreativos Franco)
+scrammr                         // bootleg (Model Racing)
 sfx                             // (c) 1983 Nichibutsu
 skelagon                        // (c) 1983 Nichibutsu USA
 skybase                         // (c) 1982 Omori Electric Co., Ltd.
@@ -13731,6 +13743,7 @@ cmasterh                        // (c) 1991 Dyna Electronics
 cmezspin                        // (c) 1991 Dyna Electronics
 cmfun                           // (c) 1995 Dyna Electronics
 cmpacman                        //
+cmpacmana                       //
 cmtetris                        //
 cmtetrsa                        //
 cmtetrsb                        //
@@ -13741,6 +13754,9 @@ cmwm                            // (c) 199? Dyna Electronics
 crazybon                        // (c) 199? Sang Ho
 fb2010                          // (c) 2009 Amcoe
 fl7_3121                        // (c) 199? Cyberdyne Systems, Inc.
+fl7_50                          // (c) 199? Cyberdyne Systems, Inc.
+fl7_500                         // (c) 199? Cyberdyne Systems, Inc.
+fl7_2000                        // (c) 199? Cyberdyne Systems, Inc.
 goldfrui                        // bootleg
 goldstar                        // (c) 198? IGS
 goldstbl                        // (c) 198? IGS
@@ -17706,6 +17722,10 @@ mainsnk                         // (c) 1984
 
 @source:majorpkr.cpp
 majorpkr                        // (c) 1994 PAL System.
+majorpkra                       // (c) 1994 PAL System.
+majorpkrb                       // (c) 1994 PAL System.
+majorpkrc                       // (c) 1994 PAL System.
+luckypkr                        // bootleg/hack.
 
 @source:malzak.cpp
 malzak                          // (c) 1980? Kitronix
@@ -27813,6 +27833,7 @@ gaiapols                        // GX123 (c) 1993 (Europe)
 gaiapolsj                       // GX123 (c) 1993 (Japan)
 gaiapolsu                       // GX123 (c) 1993 (US)
 metamrph                        // GX224 (c) 1993 (Europe)
+metamrpha                       // GX224 (c) 1993 (Europe) - Alternate
 metamrphj                       // GX224 (c) 1993 (Japan)
 metamrphu                       // GX224 (c) 1993 (US)
 mmaulers                        // GX170 (c) 1993 (Europe)
