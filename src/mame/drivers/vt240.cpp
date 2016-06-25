@@ -31,6 +31,7 @@
 #include "machine/mc68681.h"
 #include "machine/ms7004.h"
 #include "machine/bankdev.h"
+#include "machine/x2212.h"
 #include "video/upd7220.h"
 
 #define VERBOSE_DBG 1       /* general debug messages */
@@ -55,7 +56,8 @@ public:
 		m_duart(*this, "duart"),
 		m_hgdc(*this, "upd7220"),
 		m_bank(*this, "bank"),
-		m_video_ram(*this, "video_ram"),
+		m_nvram(*this, "x2212"),
+		m_palette(*this, "palette"),
 		m_rom(*this, "maincpu"){ }
 
 	required_device<cpu_device> m_maincpu;
@@ -64,11 +66,15 @@ public:
 	required_device<mc68681_device> m_duart;
 	required_device<upd7220_device> m_hgdc;
 	required_device<address_map_bank_device> m_bank;
-	required_shared_ptr<UINT16> m_video_ram;
+	required_device<x2212_device> m_nvram;
+	required_device<palette_device> m_palette;
 	required_region_ptr<UINT16> m_rom;
+
+	UINT8 m_video_ram[65536];
 
 	DECLARE_WRITE_LINE_MEMBER(write_keyboard_clock);
 	DECLARE_WRITE_LINE_MEMBER(i8085_rdy_w);
+	DECLARE_READ_LINE_MEMBER(i8085_sid_r);
 	DECLARE_READ8_MEMBER( test_r );
 	DECLARE_READ8_MEMBER(i8085_comm_r);
 	DECLARE_WRITE8_MEMBER(i8085_comm_w);
@@ -78,20 +84,32 @@ public:
 	DECLARE_WRITE8_MEMBER(mem_map_cs_w);
 	DECLARE_READ8_MEMBER(ctrl_r);
 	DECLARE_WRITE8_MEMBER(mem_map_sel_w);
+	DECLARE_READ8_MEMBER(char_buf_r);
+	DECLARE_WRITE8_MEMBER(char_buf_w);
+	DECLARE_WRITE8_MEMBER(patmult_w);
+	DECLARE_WRITE8_MEMBER(vpat_w);
+	DECLARE_READ8_MEMBER(vram_r);
+	DECLARE_WRITE8_MEMBER(vram_w);
+	DECLARE_READ8_MEMBER(vom_r);
+	DECLARE_WRITE8_MEMBER(vom_w);
+	DECLARE_WRITE8_MEMBER(nvr_store_w);
+	DECLARE_WRITE8_MEMBER(mask_w);
+	DECLARE_WRITE8_MEMBER(reg0_w);
+	DECLARE_WRITE8_MEMBER(reg1_w);
 	DECLARE_READ16_MEMBER(mem_r);
 	DECLARE_WRITE16_MEMBER(mem_w);
 
-	//UINT16 m_pcg_addr;
-	//UINT8 m_pcg_internal_addr;
-	//UINT8 *m_char_rom;
-
 	DECLARE_DRIVER_INIT(vt240);
 	virtual void machine_reset() override;
-	UPD7220_DRAW_TEXT_LINE_MEMBER( hgdc_draw_text );
+	UPD7220_DISPLAY_PIXELS_MEMBER(hgdc_draw);
 
-	UINT8 m_i8085_out, m_t11_out;
+	UINT8 m_i8085_out, m_t11_out, m_i8085_rdy, m_t11;
 	UINT8 m_mem_map[16];
 	UINT8 m_mem_map_sel;
+	UINT8 m_char_buf[16];
+	UINT8 m_char_idx, m_mask, m_reg0, m_reg1;
+	UINT8 m_vom[16];
+	UINT8 m_vpat, m_patmult, m_patcnt, m_patidx;
 };
 
 WRITE_LINE_MEMBER(vt240_state::write_keyboard_clock)
@@ -102,54 +120,35 @@ WRITE_LINE_MEMBER(vt240_state::write_keyboard_clock)
 
 WRITE_LINE_MEMBER(vt240_state::i8085_rdy_w)
 {
-	//m_maincpu->set_input_line(T11_IRQ1, state ? ASSERT_LINE : CLEAR_LINE);
+	m_maincpu->set_input_line(3, state ? CLEAR_LINE : ASSERT_LINE);
+	m_i8085_rdy = state;
 }
 
-/* TODO */
-UPD7220_DRAW_TEXT_LINE_MEMBER( vt240_state::hgdc_draw_text )
+READ_LINE_MEMBER(vt240_state::i8085_sid_r)
 {
-	//int x;
-	//int xi,yi;
-	//int tile,color;
-	//UINT8 tile_data;
-
-	#if 0
-	for( x = 0; x < pitch; x++ )
-	{
-		tile = (vram[(addr+x)*2] & 0xff);
-		color = (vram[(addr+x)*2+1] & 0x0f);
-
-		for( yi = 0; yi < lr; yi++)
-		{
-			tile_data = m_char_rom[(tile*8+yi) & 0x7ff];
-
-			if(cursor_on && cursor_addr == addr+x) //TODO
-				tile_data^=0xff;
-
-			for( xi = 0; xi < 8; xi++)
-			{
-				int res_x,res_y;
-				int pen = (tile_data >> xi) & 1 ? color : 0;
-
-				if(yi >= 8) { pen = 0; }
-
-				res_x = x * 8 + xi;
-				res_y = y + yi;
-
-				if(res_x > screen_max_x || res_y > screen_max_y)
-					continue;
-
-				bitmap.pix16(res_y, res_x) = pen;
-			}
-		}
-	}
-	#endif
+	return !m_t11;
 }
 
+UPD7220_DISPLAY_PIXELS_MEMBER( vt240_state::hgdc_draw )
+{
+	const rgb_t *palette = m_palette->palette()->entry_list_raw();
 
+	int xi,gfx;
+	UINT8 pen;
+
+	gfx = ((UINT16 *)m_video_ram)[(address & 0xffff) >> 1];
+
+	for(xi=0;xi<16;xi++)
+	{
+		pen = ((gfx >> xi) & 1) ? 1 : 0;
+		bitmap.pix32(y, x + xi) = palette[pen];
+	}
+}
 
 READ8_MEMBER(vt240_state::t11_comm_r)
 {
+	m_t11 = 1;
+	m_i8085->set_input_line(I8085_RST65_LINE, CLEAR_LINE);
 	return m_t11_out;
 }
 
@@ -163,7 +162,6 @@ READ8_MEMBER(vt240_state::i8085_comm_r)
 	switch(offset)
 	{
 		case 0:
-			m_i8085->set_input_line(I8085_RST65_LINE, CLEAR_LINE);
 			return m_i8085_out;
 	}
 	return 0xff;
@@ -175,10 +173,13 @@ WRITE8_MEMBER(vt240_state::i8085_comm_w)
 	{
 		case 1:
 			m_t11_out = data;
+			m_t11 = 0;
 			m_i8085->set_input_line(I8085_RST65_LINE, ASSERT_LINE);
 			break;
 		case 2:
 			m_i8085->set_input_line(INPUT_LINE_RESET, PULSE_LINE);
+			m_t11 = 1;
+			m_i8085->set_input_line(I8085_RST65_LINE, CLEAR_LINE);
 			break;
 	}
 }
@@ -194,7 +195,7 @@ WRITE8_MEMBER(vt240_state::mem_map_cs_w)
 
 READ8_MEMBER(vt240_state::ctrl_r)
 {
-	return m_mem_map_sel;
+	return m_mem_map_sel | (m_i8085_rdy << 6) | (m_t11 << 7);
 }
 
 WRITE8_MEMBER(vt240_state::mem_map_sel_w)
@@ -222,9 +223,104 @@ WRITE16_MEMBER(vt240_state::mem_w)
 	}
 }
 
+READ8_MEMBER(vt240_state::char_buf_r)
+{
+	m_char_idx = 0;
+	return 0xff;
+}
+
+WRITE8_MEMBER(vt240_state::char_buf_w)
+{
+	m_char_buf[m_char_idx++] = BITSWAP8(data, 0, 1, 2, 3, 4, 5, 6, 7);
+	m_char_idx &= 0xf;
+}
+
+WRITE8_MEMBER(vt240_state::patmult_w)
+{
+	m_patmult = data & 0xf;
+}
+
+WRITE8_MEMBER(vt240_state::vpat_w)
+{
+	m_vpat = ~data;
+	m_patcnt = m_patmult;
+	m_patidx = 0;
+}
+
+READ8_MEMBER(vt240_state::vom_r)
+{
+	return m_vom[offset];
+}
+
+WRITE8_MEMBER(vt240_state::vom_w)
+{
+	m_vom[offset] = data;
+}
+
+READ8_MEMBER(vt240_state::vram_r)
+{
+	offset = ((offset & 0x30000) >> 1) | (offset & 0x7fff);
+	return m_video_ram[offset & 0xffff];
+}
+
+WRITE8_MEMBER(vt240_state::vram_w)
+{
+	offset = ((offset & 0x30000) >> 1) | (offset & 0x7fff);
+	if(BIT(m_reg1, 2))
+		data = m_video_ram[offset & 0xffff];
+	else if(BIT(m_reg0, 4))
+	{
+		UINT8 chr;
+		if(BIT(m_reg0, 6))
+		{
+			chr = BITSWAP8(m_vpat, m_patidx, m_patidx, m_patidx, m_patidx, m_patidx, m_patidx, m_patidx, m_patidx);
+			if(m_patcnt-- == 0)
+			{
+				m_patcnt = m_patmult;
+				if(++m_patidx > 7)
+					m_patidx = 0;
+			}
+		}
+		else
+		{
+			chr = m_char_buf[m_char_idx++];
+			m_char_idx &= 0xf;
+			offset = BIT(offset, 16) | (offset & 0xfffe);
+		}
+		if(!BIT(m_reg0, 3))
+			data = (chr & ~m_mask) | (m_video_ram[offset & 0xffff] & m_mask);
+		else
+			data = (chr & ~data);
+		logerror("%x %x %x %x %x\n", offset, m_vpat, data, m_mask, chr);
+	}
+
+	m_video_ram[offset & 0xffff] = data;
+}
+
+WRITE8_MEMBER(vt240_state::mask_w)
+{
+	m_mask = BITSWAP8(data, 0, 1, 2, 3, 4, 5, 6, 7);
+}
+
+WRITE8_MEMBER(vt240_state::nvr_store_w)
+{
+	m_nvram->store(ASSERT_LINE);
+	m_nvram->store(CLEAR_LINE);
+}
+
+WRITE8_MEMBER(vt240_state::reg0_w)
+{
+	m_reg0 = data;
+}
+
+WRITE8_MEMBER(vt240_state::reg1_w)
+{
+	m_reg1 = data;
+}
+
 static ADDRESS_MAP_START(bank_map, AS_PROGRAM, 16, vt240_state)
 	ADDRESS_MAP_UNMAP_HIGH
-	AM_RANGE(0x00000, 0x0ffff) AM_ROM AM_REGION("maincpu", 0)
+	AM_RANGE(0x00000, 0x1ffff) AM_ROM AM_REGION("maincpu", 0)
 	AM_RANGE(0x80000, 0x87fff) AM_RAM
 ADDRESS_MAP_END
 
@@ -235,13 +331,23 @@ static ADDRESS_MAP_START( vt240_mem, AS_PROGRAM, 16, vt240_state )
 	AM_RANGE (0170000, 0170037) AM_READWRITE8(mem_map_cs_r, mem_map_cs_w, 0x00ff)
 	AM_RANGE (0170040, 0170041) AM_WRITE8(mem_map_sel_w, 0x00ff)
 	AM_RANGE (0170100, 0170101) AM_READ8(ctrl_r, 0x00ff)
+	AM_RANGE (0170140, 0170141) AM_WRITE8(nvr_store_w, 0x00ff)
 	AM_RANGE (0171000, 0171003) AM_DEVREADWRITE8("i8251", i8251_device, data_r, data_w, 0x00ff)
 	AM_RANGE (0171004, 0171007) AM_DEVREADWRITE8("i8251", i8251_device, status_r, control_w, 0x00ff)
-	AM_RANGE (0172000, 0172077) AM_DEVREADWRITE8("duart", mc68681_device, read, write, 0xff)
-	// 0173000 Video logic
-	// 0174000 Video logic
+	AM_RANGE (0172000, 0172077) AM_DEVREADWRITE8("duart", mc68681_device, read, write, 0x00ff)
+	AM_RANGE (0173000, 0173003) AM_DEVREAD8("upd7220", upd7220_device, read, 0x00ff)
+	AM_RANGE (0173040, 0173077) AM_READ8(vom_r, 0x00ff)
+	AM_RANGE (0173140, 0173141) AM_READ8(char_buf_r, 0x00ff)
+	AM_RANGE (0174000, 0174003) AM_DEVWRITE8("upd7220", upd7220_device, write, 0x00ff)
+	AM_RANGE (0174040, 0174077) AM_WRITE8(vom_w, 0x00ff)
+	AM_RANGE (0174140, 0174141) AM_WRITE8(char_buf_w, 0x00ff)
+	AM_RANGE (0174400, 0174401) AM_WRITE8(patmult_w, 0x00ff)
+	AM_RANGE (0174440, 0174441) AM_WRITE8(mask_w, 0x00ff)
+	AM_RANGE (0174500, 0174501) AM_WRITE8(vpat_w, 0x00ff)
+	AM_RANGE (0174600, 0174601) AM_WRITE8(reg0_w, 0x00ff)
+	AM_RANGE (0174640, 0174641) AM_WRITE8(reg1_w, 0x00ff)
 	AM_RANGE (0175000, 0175005) AM_READWRITE8(i8085_comm_r, i8085_comm_w, 0x00ff)
-	// 0176xxx NVR
+	AM_RANGE (0176000, 0176777) AM_DEVREADWRITE8("x2212", x2212_device, read, write, 0x00ff)
 	// 017700x System comm logic
 ADDRESS_MAP_END
 
@@ -257,25 +363,38 @@ static ADDRESS_MAP_START(vt240_char_io, AS_IO, 8, vt240_state)
 	ADDRESS_MAP_UNMAP_HIGH
 	ADDRESS_MAP_GLOBAL_MASK(0xff)
 	AM_RANGE(0x00, 0x01) AM_DEVREADWRITE("upd7220", upd7220_device, read, write)
+	AM_RANGE(0x10, 0x1f) AM_READWRITE(vom_r, vom_w)
 	AM_RANGE(0x20, 0x20) AM_READWRITE(t11_comm_r, t11_comm_w)
-	//AM_RANGE(0x30, 0x30) AM_READWRITE(pcg_r,pcg_w) // 0x30 PCG
+	AM_RANGE(0x30, 0x30) AM_READWRITE(char_buf_r, char_buf_w)
+	AM_RANGE(0x80, 0x80) AM_WRITE(patmult_w)
+	AM_RANGE(0x90, 0x90) AM_WRITE(mask_w)
+	AM_RANGE(0xa0, 0xa0) AM_WRITE(vpat_w)
+	AM_RANGE(0xc0, 0xc0) AM_WRITE(reg0_w)
+	AM_RANGE(0xd0, 0xd0) AM_WRITE(reg1_w)
 ADDRESS_MAP_END
 
 static ADDRESS_MAP_START( upd7220_map, AS_0, 16, vt240_state)
-	AM_RANGE(0x00000, 0x0ffff) AM_RAM AM_SHARE("video_ram")
+	AM_RANGE(0x00000, 0x3ffff) AM_READWRITE8(vram_r, vram_w, 0xffff)
 ADDRESS_MAP_END
 
 
 void vt240_state::machine_reset()
 {
 	m_i8251->write_cts(0);
+	m_nvram->recall(ASSERT_LINE);
+	m_nvram->recall(CLEAR_LINE);
 	m_mem_map_sel = 0;
+	m_t11 = 1;
+	m_i8085_rdy = 1;
+	m_char_idx = 0;
+	m_patcnt = 0;
+	m_patidx = 0;
 }
 
 static const gfx_layout vt240_chars_8x10 =
 {
 	8,10,
-	RGN_FRAC(1,1),
+	0x240,
 	1,
 	{ 0 },
 	{ STEP8(0,1) },
@@ -284,7 +403,7 @@ static const gfx_layout vt240_chars_8x10 =
 };
 
 static GFXDECODE_START( vt240 )
-	GFXDECODE_ENTRY( "charcpu", 0x338*10-2, vt240_chars_8x10, 0, 8 )
+	GFXDECODE_ENTRY( "charcpu", 0x338*10-3, vt240_chars_8x10, 0, 8 )
 GFXDECODE_END
 
 static MACHINE_CONFIG_START( vt240, vt240_state )
@@ -296,6 +415,7 @@ static MACHINE_CONFIG_START( vt240, vt240_state )
 	MCFG_CPU_PROGRAM_MAP(vt240_char_mem)
 	MCFG_CPU_IO_MAP(vt240_char_io)
 	MCFG_I8085A_SOD(WRITELINE(vt240_state, i8085_rdy_w))
+	MCFG_I8085A_SID(READLINE(vt240_state, i8085_sid_r))
 
 	MCFG_DEVICE_ADD("bank", ADDRESS_MAP_BANK, 0)
 	MCFG_DEVICE_PROGRAM_MAP(bank_map)
@@ -308,14 +428,15 @@ static MACHINE_CONFIG_START( vt240, vt240_state )
 	MCFG_SCREEN_REFRESH_RATE(50)
 	MCFG_SCREEN_SIZE(640, 480)
 	MCFG_SCREEN_VISIBLE_AREA(0, 640-1, 0, 480-1)
-//  MCFG_VIDEO_START_OVERRIDE(vt240_state,vt240)
 	MCFG_SCREEN_UPDATE_DEVICE("upd7220", upd7220_device, screen_update)
 	MCFG_PALETTE_ADD_MONOCHROME("palette")
 	MCFG_GFXDECODE_ADD("gfxdecode", "palette", vt240)
 
 	MCFG_DEVICE_ADD("upd7220", UPD7220, XTAL_4MHz / 4)
 	MCFG_DEVICE_ADDRESS_MAP(AS_0, upd7220_map)
-	MCFG_UPD7220_DRAW_TEXT_CALLBACK_OWNER(vt240_state, hgdc_draw_text)
+	MCFG_UPD7220_DISPLAY_PIXELS_CALLBACK_OWNER(vt240_state, hgdc_draw)
+	MCFG_UPD7220_VSYNC_CALLBACK(INPUTLINE("charcpu", I8085_RST75_LINE))
+	MCFG_UPD7220_BLANK_CALLBACK(INPUTLINE("charcpu", I8085_RST55_LINE))
 
 	MCFG_MC68681_ADD("duart", XTAL_3_6864MHz) /* 2681 duart (not 68681!) */
 //  MCFG_MC68681_IRQ_CALLBACK(WRITELINE(dectalk_state, dectalk_duart_irq_handler))
@@ -341,6 +462,8 @@ static MACHINE_CONFIG_START( vt240, vt240_state )
 	MCFG_RS232_PORT_ADD("rs232", default_rs232_devices, "null_modem")
 	MCFG_RS232_RXD_HANDLER(DEVWRITELINE("duart", mc68681_device, rx_a_w))
 //  MCFG_RS232_DSR_HANDLER(DEVWRITELINE("duart", mc68681_device, ipX_w))
+
+	MCFG_X2212_ADD("x2212")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( mc7105, vt240 )
@@ -365,7 +488,7 @@ ROM_START( mc7105 )
 	ROM_LOAD( "027.bin", 0x8000, 0x8000, CRC(a159b412) SHA1(956097ccc2652d494258b3682498cfd3096d7d4f))
 	ROM_LOAD( "028.bin", 0x0000, 0x8000, CRC(b253151f) SHA1(22ffeef8eb5df3c38bfe91266f26d1e7822cdb53))
 
-	ROM_REGION( 0x40000, "maincpu", ROMREGION_ERASEFF )
+	ROM_REGION( 0x20000, "maincpu", ROMREGION_ERASEFF )
 	ROM_LOAD16_BYTE( "029.bin", 0x00000, 0x8000, CRC(4a6db217) SHA1(47637325609ea19ffab61fe31e2700d72fa50729))
 	ROM_LOAD16_BYTE( "031.bin", 0x00001, 0x8000, CRC(47129579) SHA1(39de9e2e26f90c5da5e72a09ff361c1a94b9008a))
 	ROM_LOAD16_BYTE( "030.bin", 0x10000, 0x8000, CRC(05fd7b75) SHA1(2ad8c14e76accfa1b9b8748c58e9ebbc28844a47))
@@ -375,9 +498,10 @@ ROM_END
 /* ROM definition */
 ROM_START( vt240 )
 	ROM_REGION( 0x10000, "charcpu", ROMREGION_ERASEFF )
-	ROM_LOAD( "23-008e6-00.e100", 0x0000, 0x8000, CRC(ebc8a2fe) SHA1(70838175f8302fdc0dee79b2403fa95e6d989206))
+	ROM_LOAD( "23-008e6-00.e100", 0x0000, 0x4000, CRC(ebc8a2fe) SHA1(70838175f8302fdc0dee79b2403fa95e6d989206))
+	ROM_CONTINUE(0x8000, 0x4000)
 
-	ROM_REGION( 0x40000, "maincpu", ROMREGION_ERASEFF )
+	ROM_REGION( 0x20000, "maincpu", ROMREGION_ERASEFF )
 	ROM_DEFAULT_BIOS( "vt240" )
 	// according to the schematics an even older set exists, variation 'E1' with roms:
 	// e100/8085: 23-003e6
@@ -410,24 +534,8 @@ ROM_START( vt240 )
 	ROM_LOAD( "23-087j5.e182.e183.jed", 0x0000, 0x1000, NO_DUMP ) // PAL16L8ACN; "Logic Unit" Character Pattern Related
 ROM_END
 
-/* Driver */
-DRIVER_INIT_MEMBER(vt240_state,vt240)
-{
-	UINT8 *ROM = memregion("charcpu")->base();
-
-	/* patch T11 check */
-	ROM[0x09d] = 0x00;
-	ROM[0x09e] = 0x00;
-	ROM[0x09f] = 0x00;
-
-	/* ROM checksum */
-	ROM[0x15c] = 0x00;
-	ROM[0x15d] = 0x00;
-	ROM[0x15e] = 0x00;
-}
-
 /*    YEAR  NAME    PARENT  COMPAT   MACHINE    INPUT          CLASS   INIT    COMPANY                      FULLNAME       FLAGS */
-COMP( 1983, vt240,  0,      0,       vt240,    0, vt240_state,   vt240,  "Digital Equipment Corporation", "VT240", MACHINE_NOT_WORKING | MACHINE_NO_SOUND)
+COMP( 1983, vt240,  0,      0,       vt240,    0, driver_device,   0,  "Digital Equipment Corporation", "VT240", MACHINE_NOT_WORKING | MACHINE_NO_SOUND)
 //COMP( 1983, vt241,  0,      0,       vt220,     vt220, driver_device,   0,  "Digital Equipment Corporation", "VT241", MACHINE_NOT_WORKING | MACHINE_NO_SOUND)
 // NOTE: the only difference between VT240 and VT241 is the latter comes with a VR241 Color monitor, while the former comes with a mono display; the ROMs and operation are identical.
-COMP( 1983, mc7105, 0,      0,       mc7105,    0, vt240_state,   vt240,  "Elektronika",                  "MC7105", MACHINE_NOT_WORKING | MACHINE_NO_SOUND)
+COMP( 1983, mc7105, 0,      0,       mc7105,    0, driver_device,   0,  "Elektronika",                  "MC7105", MACHINE_NOT_WORKING | MACHINE_NO_SOUND)

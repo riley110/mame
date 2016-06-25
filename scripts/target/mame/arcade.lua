@@ -332,6 +332,7 @@ VIDEOS["V9938"] = true
 --VIDEOS["VIC4567"] = true
 VIDEOS["VOODOO"] = true
 VIDEOS["VOODOO_PCI"] = true
+VIDEOS["ZEUS2"] = true
 
 --------------------------------------------------
 -- specify available machine cores
@@ -641,6 +642,7 @@ BUSES["SAT_CTRL"] = true
 BUSES["SCSI"] = true
 --BUSES["SCV"] = true
 BUSES["SEGA8"] = true
+BUSES["SG1000_EXP"] = true
 BUSES["SMS_CTRL"] = true
 BUSES["SMS_EXP"] = true
 --BUSES["SNES"] = true
@@ -2117,6 +2119,9 @@ files {
 	MAME_DIR .. "src/mame/drivers/ddribble.cpp",
 	MAME_DIR .. "src/mame/includes/ddribble.h",
 	MAME_DIR .. "src/mame/video/ddribble.cpp",
+    MAME_DIR .. "src/mame/drivers/divebomb.cpp",
+    MAME_DIR .. "src/mame/includes/divebomb.h",
+    MAME_DIR .. "src/mame/video/divebomb.cpp",
 	MAME_DIR .. "src/mame/drivers/djmain.cpp",
 	MAME_DIR .. "src/mame/includes/djmain.h",
 	MAME_DIR .. "src/mame/video/djmain.cpp",
@@ -3046,6 +3051,8 @@ files {
 	MAME_DIR .. "src/mame/machine/s32comm.h",
 	MAME_DIR .. "src/mame/machine/m1comm.cpp",
 	MAME_DIR .. "src/mame/machine/m1comm.h",
+	MAME_DIR .. "src/mame/machine/m2comm.cpp",
+	MAME_DIR .. "src/mame/machine/m2comm.h",
 	MAME_DIR .. "src/mame/audio/dsbz80.cpp",
 	MAME_DIR .. "src/mame/audio/dsbz80.h",
 	MAME_DIR .. "src/mame/drivers/model2.cpp",
@@ -3263,8 +3270,10 @@ files {
 	MAME_DIR .. "src/mame/includes/raiden2.h",
 	MAME_DIR .. "src/mame/machine/r2crypt.cpp",
 	MAME_DIR .. "src/mame/machine/r2crypt.h",
-	MAME_DIR .. "src/mame/machine/raiden2cop.cpp",
-	MAME_DIR .. "src/mame/machine/raiden2cop.h",
+	MAME_DIR .. "src/mame/machine/seibucop/seibucop.cpp",
+	MAME_DIR .. "src/mame/machine/seibucop/seibucop_dma.hxx",
+	MAME_DIR .. "src/mame/machine/seibucop/seibucop_cmd.hxx",
+	MAME_DIR .. "src/mame/machine/seibucop/seibucop.h",
 	MAME_DIR .. "src/mame/drivers/r2dx_v33.cpp",
 	MAME_DIR .. "src/mame/drivers/seibuspi.cpp",
 	MAME_DIR .. "src/mame/includes/seibuspi.h",
@@ -4223,6 +4232,11 @@ files {
 --------------------------------------------------
 
 createMAMEProjects(_target, _subtarget, "misc")
+
+includedirs {
+	ext_includedir("jpeg"),
+}
+
 files {
 	MAME_DIR .. "src/mame/drivers/1945kiii.cpp",
 	MAME_DIR .. "src/mame/drivers/39in1.cpp",
