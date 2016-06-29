@@ -197,7 +197,7 @@ ROM_START( brakman )
 	ROM_LOAD( "82s126.3m",    0x0100, 0x0100, CRC(77245b66) SHA1(0c4d0bee858b97632411c440bea6948a74759746) )
 ROM_END
 
-ROM_START( bucaneer )
+ROM_START( bucaneep )
 	ROM_REGION( 0x10000, "maincpu", 0 )	
 	ROM_LOAD( "puckmanb.6e",  0x0000, 0x1000, CRC(fee263b3) SHA1(87117ba5082cd7a615b4ec7c02dd819003fbd669) )
 	ROM_LOAD( "puckmanb.6f",  0x1000, 0x1000, CRC(39d1fc83) SHA1(326dbbf94c6fa2e96613dedb53702f8832b47d59) )
@@ -1610,7 +1610,6 @@ ROM_START( pacminer )
 	ROM_LOAD( "pacminer.6e",  0x0000, 0x1000, CRC(11dee14e) SHA1(1aeb94299a33daa9b51fdab3c0abea98858cc7dd) )
 	ROM_LOAD( "pacminer.6f",  0x1000, 0x1000, CRC(8c449bd7) SHA1(84233296683321f71fdef604ca19bfffd97e993c) )
 	ROM_LOAD( "pacminer.6h",  0x2000, 0x1000, CRC(a0e62570) SHA1(654a71144eae3c78d7baaeb9119aad0ece500e60) )
-	ROM_LOAD( "pacminer.6j",  0x3000, 0x1000, CRC(c71c0011) SHA1(1ceaf73df40e531df3bfb26b4fb7cd95fb7bff1d) )
 
 	ROM_REGION( 0x2000, "gfx1", 0 )
 	ROM_LOAD( "pacminer.5e",  0x0000, 0x1000, CRC(9b3cc7cd) SHA1(9bfb71e71f7f61e26d23e6370d684cdc6c910899) )
@@ -3780,7 +3779,7 @@ GAME( 1981, puckmodx, puckmanx, pacmanx,  pacman,   driver_device, 0,        ROT
 /* Misc Pacman Hacks */
 
 GAME( 2001, abortman, puckman,  pacman,   pacman,   driver_device, 0,        ROT90, "Paul Copeland",  "Abortman", MACHINE_SUPPORTS_SAVE )
-GAME( 1981, bucaneer, puckman,  pacman,   pacman,   driver_device, 0,        ROT90, "Bucco", "Bucaneer (Pac-Man hack)", MACHINE_SUPPORTS_SAVE )
+GAME( 1981, bucaneep, puckman,  pacman,   pacman,   driver_device, 0,        ROT90, "Bucco", "Bucaneer (Pac-Man hack)", MACHINE_SUPPORTS_SAVE )
 GAME( 2000, caterpil, puckman,  pacman,   mspacman, driver_device, 0,        ROT90, "Phi", "Caterpillar", MACHINE_SUPPORTS_SAVE )
 GAME( 2000, chtpac,   puckman,  pacman,   pacman,  driver_device, 0,        ROT90, "[Midway]", "Pacman [c]", MACHINE_SUPPORTS_SAVE )
 GAME( 2000, chtpman2, puckman,  pacman,   pacman,  driver_device, 0,        ROT90, "[Namco]", "New Puck2 [c]", MACHINE_SUPPORTS_SAVE )

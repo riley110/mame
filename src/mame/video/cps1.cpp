@@ -2085,9 +2085,6 @@ void cps_state::cps1_get_video_base()
 {
 	int layercontrol=0, videocontrol=0, scroll1xoff=0, scroll2xoff=0, scroll3xoff=0;
 
-	//HBMAME
-	UINT8 kludge = m_game_config->bootleg_kludge & 15;
-
 	/* Re-calculate the VIDEO RAM base */
 	if (m_scroll1 != cps1_base(CPS1_SCROLL1_BASE, m_scroll_size))
 	{

@@ -160,6 +160,24 @@ ROM_START( eyesbu )	/* E204 */
 	ROM_LOAD( "82s126.3m",    0x0100, 0x0100, CRC(77245b66) SHA1(0c4d0bee858b97632411c440bea6948a74759746) )
 ROM_END
 
+ROM_START( ghohunt )
+	ROM_REGION( 0x10000, "maincpu", 0 )
+	ROM_LOAD( "ghohunt.6e",   0x0000, 0x1000, CRC(b9e9965c) SHA1(8026e792fd474c2cc8ad8917da4d57a7930d30b4) )
+	ROM_LOAD( "ghohunt.6f",   0x1000, 0x1000, CRC(9da32395) SHA1(8b4d7309de9dab4f58fcdbb29d98ca6c03a2b6fe) )
+
+	ROM_REGION( 0x2000, "gfx1", 0 )
+	ROM_LOAD( "ghohunt.5e",   0x0000, 0x1000, CRC(c69b5669) SHA1(c4f641ff218aee92dd784968b3e1a030c85d61f6) )
+	ROM_LOAD( "ghohunt.5f",   0x1000, 0x1000, CRC(3ad83b13) SHA1(d2ce7ab45cb540f35cb23264e7628ac0ee6b8559) )
+
+	ROM_REGION( 0x0120, "proms", 0 )
+	ROM_LOAD( "82s123.7f",    0x0000, 0x0020, CRC(2fc650bd) SHA1(8d0268dee78e47c712202b0ec4f1f51109b1f2a5) )
+	ROM_LOAD( "82s126.4a",    0x0020, 0x0100, CRC(3eb3a8e4) SHA1(19097b5f60d1030f8b82d9f1d3a241f93e5c75d6) )
+
+	ROM_REGION( 0x0200, "namco", 0 )
+	ROM_LOAD( "82s126.1m",    0x0000, 0x0100, CRC(a9cc86bf) SHA1(bbcec0570aeceb582ff8238a4bc8546a23430081) )
+	ROM_LOAD( "82s126.3m",    0x0100, 0x0100, CRC(77245b66) SHA1(0c4d0bee858b97632411c440bea6948a74759746) )
+ROM_END
+
 ROM_START( kangaroh )
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "kangaroh.1",   0x0000, 0x1000, CRC(bcdd9dff) SHA1(0243d9aaeaa82afb04d40eee192fdd65197fb87e) )
@@ -451,11 +469,10 @@ ROM_START( wavybug )
 	ROM_LOAD( "82s126.3m",    0x0100, 0x0100, CRC(77245b66) SHA1(0c4d0bee858b97632411c440bea6948a74759746) )
 ROM_END
 
-ROM_START( zap )
+ROM_START( zap ) //no sound
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "zap.1",        0x0000, 0x1000, CRC(74e6e3a0) SHA1(3d953bfd57aa56f8fe61d1abd01db84d027df3bb) )
 	ROM_LOAD( "zap.2",        0x1000, 0x1000, CRC(40e1884b) SHA1(ce303b6a6c9e765c256997c19f64e9ebfd8f435e) )
-	ROM_LOAD( "blank004k.3",  0x2000, 0x1000, CRC(c71c0011) SHA1(1ceaf73df40e531df3bfb26b4fb7cd95fb7bff1d) )
 	ROM_LOAD( "zap.4",        0x3000, 0x1000, CRC(17c357e6) SHA1(6486f58592b784d53a5c14f59b25c8cd513b2a0d) )
 
 	ROM_REGION( 0x2000, "gfx1", 0 )
@@ -512,3 +529,4 @@ GAME( 1999, tst_pacm, 0,        pacman,   mspacpls, driver_device, 0,        ROT
 /* Other misc unemulated dumps */
 
 GAME( 1982, eyesbu,    eyes,     pacman,   eyes,     pacman_state,  eyes,     ROT90,  "bootleg", "Eyes (unknown bootleg)", MACHINE_SUPPORTS_SAVE )
+GAME( 2016, ghohunt,   puckman,  pacman,   pacman,   driver_device, 0,        ROT90,  "Hurray Banana", "Ghost Hunt", MACHINE_SUPPORTS_SAVE )

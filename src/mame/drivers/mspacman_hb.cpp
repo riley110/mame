@@ -2373,7 +2373,7 @@ ROM_START( pacgent )
 	ROM_LOAD( "82s126.3m",    0x0100, 0x0100, CRC(77245b66) SHA1(0c4d0bee858b97632411c440bea6948a74759746) )
 ROM_END
 
-ROM_START( petshop )
+ROM_START( psfrkout )
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "boot1",        0x0000, 0x1000, CRC(d16b31b7) SHA1(bc2247ec946b639dd1f00bfc603fa157d0baaa97) )
 	ROM_LOAD( "boot2",        0x1000, 0x1000, CRC(0d32de5e) SHA1(13ea0c343de072508908be885e6a2a217bbb3047) )
@@ -2872,7 +2872,7 @@ GAME( 2000, msultra,  mspacman, woodpek,  mspacman, driver_device, 0,        ROT
 GAME( 2000, msvectr,  mspacman, woodpek,  mspacman, driver_device, 0,        ROT90, "[Midway]", "Vector Ms. Pacman", MACHINE_SUPPORTS_SAVE )
 GAME( 2000, msyakman, mspacman, woodpek,  mspacman, driver_device, 0,        ROT90, "Jeff Minter", "Ms. Yak Man", MACHINE_SUPPORTS_SAVE )
 GAME( 1982, pacgalu,  mspacman, woodpek,  mspacman, driver_device, 0,        ROT90, "Uchida", "Pac-Gal (Hearts)", MACHINE_SUPPORTS_SAVE )
-GAME( 2001, petshop,  mspacman, woodpek,  mspacman, driver_device, 0,        ROT90, "Weirdness Inc", "Pet Shop Freak-Out!", MACHINE_SUPPORTS_SAVE )
+GAME( 2001, psfrkout, mspacman, woodpek,  mspacman, driver_device, 0,        ROT90, "Weirdness Inc", "Pet Shop Freak-Out!", MACHINE_SUPPORTS_SAVE )
 GAME( 2002, piranha2, mspacman, woodpek,  mspacman, driver_device, 0,        ROT90, "US Billiards", "Piranha 2 Revenge!", MACHINE_SUPPORTS_SAVE )
 GAME( 2000, sueworld, mspacman, woodpek,  mspacman, driver_device, 0,        ROT90, "PacFay", "Sue's World", MACHINE_SUPPORTS_SAVE )
 GAME( 2000, sueworlb, mspacman, woodpek,  mspacman, driver_device, 0,        ROT90, "PacFay", "Sue's World (Old)", MACHINE_SUPPORTS_SAVE )
