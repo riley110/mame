@@ -70,8 +70,20 @@ All info on non-TOSEC disks comes from this testing.
 		</part>
 	</software>
 
-	<software name="128pmast">
-		<description>128K Premium Master (early)</description>
+	<software name="8040trk">
+		<description>80/40 Track System (v4.2b)</description>
+		<year>1987</year>
+		<publisher>Simon Gerraty</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="simon_gerraty_80_40tr_system_ds40.dsk" size="430336" crc="b56f0de4" sha1="89965d7827cd88cde591c9ee938037e660caf9ba" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="128pmasta" cloneof="128pmast">
+		<description>128K Premium Master (DS40, early)</description>
 		<year>198?</year>
 		<publisher>Microbee Systems?</publisher>
 
@@ -178,6 +190,59 @@ All info on non-TOSEC disks comes from this testing.
 		</part>
 	</software>
 
+	<software name="ebios">
+		<description>Enhanced BIOS (v2.2p)</description>
+		<year>1988</year>
+		<publisher>Peter Boughton</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="860416">
+				<rom name="peter_broughton_v2.2p_1of2_ds84.dsk" size="860416" crc="c4349908" sha1="59a97559823f91f4106bb97b99d05828988c25bd" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="860416">
+				<rom name="peter_broughton_v2.2p_2of2_ds84.dsk" size="860416" crc="f2b45df6" sha1="c0f06775b66a309a23301b98f1805de30e7dbdd8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ebios2" cloneof="ebios">
+		<description>Enhanced BIOS (v2.0 Prerelease)</description>
+		<year>1986</year>
+		<publisher>Peter Boughton</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="peter_broughton_v2.0pre_deepdene_ds40.dsk" size="430336" crc="5e8b3736" sha1="7c91b98c77a30c1bfd3555a59a20c2a2b5be6cb8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ebios12" cloneof="ebios">
+		<description>Enhanced BIOS (v1.2)</description>
+		<year>1986</year>
+		<publisher>Peter Boughton</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="860416">
+				<rom name="peter_broughton_v1.2_ds80.dsk" size="860416" crc="33f432c7" sha1="b0469d4b756a87545a8241f16670f6fb42888575" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ebios11" cloneof="ebios">
+		<description>Enhanced BIOS (v1.1)</description>
+		<year>1986</year>
+		<publisher>Peter Boughton</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="peter_broughton_v1.1_ds40.dsk" size="430336" crc="a033b043" sha1="59176b180b9dec58717ad8ca778663d2854b5673" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- not bootable from floppy -->
 	<software name="hdd">
 		<description>HDD 128K Standard (v1.1)</description>
@@ -229,6 +294,90 @@ All info on non-TOSEC disks comes from this testing.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="409600">
 				<rom name="microbee 128 cpm v2.20 (1982)(microbee)[a].img" size="409600" crc="686524f2" sha1="f8d057d166cb16bd7c2a0300e125b62ca2c7523a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="p128know">
+		<description>Premium 128 - Getting To Know Your Microbee</description>
+		<year>198?</year>
+		<publisher>Microbee Systems?</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="premium_128_getting_to_know_your_microbee_ds40.dsk" size="430336" crc="cc9ed658" sha1="1b248e3e22c940170d7ea1fad559ded45fcf7411" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="128pmast">
+		<description>Premium 128 Master (DS40)</description>
+		<year>198?</year>
+		<publisher>Microbee Systems?</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="premium_128_master_ds40.dsk" size="430336" crc="61807186" sha1="d892108bdaf317037d359ad6e19ed8213df4f06c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="128pmastss" cloneof="128pmast">
+		<description>Premium 128 Master (SS80)</description>
+		<year>198?</year>
+		<publisher>Microbee Systems?</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="premium_128_master_ss80.dsk" size="430336" crc="26121c2d" sha1="29d2ef82b81253a7e8980c9fcf190f38e9ce714e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="p128strt">
+		<description>Premium 128 Starter</description>
+		<year>198?</year>
+		<publisher>Microbee Systems?</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="premium_128_starter_ss80.dsk" size="430336" crc="544fdefc" sha1="25ed49c6d24ed0634304de680e6a8681584f6f52" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="128mastr">
+		<description>Standard 128 Master</description>
+		<year>198?</year>
+		<publisher>Microbee Systems?</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="standard_128_master_ds40.dsk" size="430336" crc="d7f02a01" sha1="e0fa70cdf2115fa98dbb12cb0a369a22e1e77de4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="snmaster" supported="no">
+		<description>Starnet Master (1985-10)</description>
+		<year>1985</year>
+		<publisher>Microbee Systems?</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="starnet_master_85_10_ds40.dsk" size="430336" crc="db1c8fa3" sha1="b064248235842acc37318a8892dc9bed6c71baae" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="snmastera" cloneof="snmaster" supported="no">
+		<description>Starnet Master (1984-03)</description>
+		<year>1985</year>
+		<publisher>Microbee Systems?</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="starnet_master_84_03_ds40.dsk" size="430336" crc="90919ab5" sha1="7b7a12a3419f8b4f4697b82abdbb5e48582589f0" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -526,6 +675,18 @@ All info on non-TOSEC disks comes from this testing.
 		</part>
 	</software>
 
+	<software name="smartmod">
+		<description>Microbee Smart Model Controller (v1.12m)</description>
+		<year>1989</year>
+		<publisher>M.S. Maughan</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="smart_model_controller_ver1.12m_ss80.dsk" size="430336" crc="9ba5618e" sha1="26fbfaab16de066086a9b1e6da207633685a6fce" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="mbeeutil">
 		<description>Microbee Utilities</description>
 		<year>198?</year>
@@ -534,6 +695,18 @@ All info on non-TOSEC disks comes from this testing.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
 				<rom name="microbee_utilities_ss80.dsk" size="430336" crc="8fac6f7f" sha1="52541e8dea59bd879df519469f221156c7c1cd8b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="viatel">
+		<description>Microbee VIATEL Terminal Emulator (v1.3a)</description>
+		<year>1985</year>
+		<publisher>MicroWorld Australia</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="viatel_upgrade_v13a_ss80.dsk" size="430336" crc="e7b7d47b" sha1="73a724d57f3e123a183ab16a2d2322a5fb6c53eb" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -575,6 +748,305 @@ All info on non-TOSEC disks comes from this testing.
 		</part>
 	</software>
 
+	<!-- Various disk issues -->
+	<software name="prsroom3" supported="no">
+		<description>Press Room 3 - The Final Edition</description>
+		<year>1988</year>
+		<publisher>Kerwin Software</publisher>
+		<info name="usage" value="Requires CP/M" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="press_room_3_ss80.dsk" size="430336" crc="cd9dab76" sha1="488cd72a53f9a13cf4a3515fb3eb9b4fbaec4afc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Running the PM command on both versions drops back into CP/M, why is that? -->
+	<software name="pmaster" supported="no">
+		<description>Printmaster (v1.45)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires CP/M" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="printmaster_1.45_ds40.dsk" size="430336" crc="65378aac" sha1="81bfda28287814ef96f7a9be0e9f0541cd707936" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pmaster1" cloneof="pmaster" supported="no">
+		<description>Printmaster (v1.0)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="printmaster_1.0_ss80.dsk" size="430336" crc="c7faec7a" sha1="111b6e28ad5790a0105ca501061d9a414daf9370" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rslogo">
+		<description>Research LOGO (v1.0a+)</description>
+		<year>1985</year>
+		<publisher>The Logo Research Syndicate</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="860416">
+				<rom name="research_logo_1.0a+_ds80.dsk" size="860416" crc="825445f9" sha1="2a5f820791670fa13010336c4b647d2f7b30b806" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rslogoa" cloneof="rslogo">
+		<description>Research LOGO (v1.0a, DS40)</description>
+		<year>1985</year>
+		<publisher>The Logo Research Syndicate</publisher>
+		<info name="usage" value="Requires CP/M" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="research_logo_1.0a_ds40.dsk" size="430336" crc="b827eaee" sha1="e6ea2e6b8ee2eaf37aa4b5d8690aa827e90c0445" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rslogob" cloneof="rslogo">
+		<description>Research LOGO (v1.0a, SS80)</description>
+		<year>1985</year>
+		<publisher>The Logo Research Syndicate</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="research_logo_10a_ss80.dsk" size="430336" crc="3983a7d4" sha1="7c0d78fc49eac199c40b8442159f218b091587bc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rslogo1" cloneof="rslogo">
+		<description>Research LOGO (v1.0)</description>
+		<year>1985</year>
+		<publisher>The Logo Research Syndicate</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="research_logo_v1.0_ds40.dsk" size="430336" crc="e0547854" sha1="94d87f2f038adda985769273cf8e7365af8ba816" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sbg">
+		<description>Simple Business Graphics</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="simple_business_graphics_ss80.dsk" size="430336" crc="72dc2066" sha1="6dacff4b3516693d8e94ce76bb568f3cb34e6b75" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="simplydb">
+		<description>Simply DB (v1.20c)</description>
+		<year>1984</year>
+		<publisher>Reid Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="simply_db_1.20c_ss80.dsk" size="430336" crc="a9ac2ee8" sha1="08523d0ac80942d8d99d7dab6249b373d58d336d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="simplydb640" cloneof="simplydb">
+		<description>Simply DB (v1.20c, 640TC)</description>
+		<year>1991</year>
+		<publisher>Reid Software?</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="simply_db_1.20c_640tc_90_03_ss80.dsk" size="430336" crc="42850325" sha1="126ae53b613fa1ed9258762162c0df718958670c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="simplydb110c" cloneof="simplydb">
+		<description>Simply DB (v1.10c)</description>
+		<year>1984</year>
+		<publisher>Reid Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="simply_db_1.10c_ds40.dsk" size="430336" crc="ba3908ad" sha1="a73a272e39b3a8a2236d2a1fec0b3d4c5e4d1ae4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="simpwrit">
+		<description>Simply Write (v3.03)</description>
+		<year>1987</year>
+		<publisher>Microbee Systems</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="simply_write_3.03_ss80.dsk" size="430336" crc="e072ce17" sha1="3088779b2cc3aeb0753578b43a4637c389246a38" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="simpwrit302" cloneof="simpwrit">
+		<description>Simply Write (v3.02)</description>
+		<year>1987</year>
+		<publisher>Microbee Systems</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="simply_write_3.02_ss80.dsk" size="430336" crc="2845a4bb" sha1="3ae1500d5702e3ce2eefa2b88c24757a6367f2ef" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="simpwrit205" cloneof="simpwrit">
+		<description>Simply Write (v2.05)</description>
+		<year>1986</year>
+		<publisher>Microbee Systems</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="simply_write_2.05_ss80.dsk" size="430336" crc="24a5adfb" sha1="f9c6266f6730e057c224ffee30e3744b2a30d0df" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="simpwrit204" cloneof="simpwrit">
+		<description>Simply Write (v2.04, DS40)</description>
+		<year>1986</year>
+		<publisher>Microbee Systems</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="simply_write_2.04_ds40.dsk" size="430336" crc="5eee4017" sha1="1824b0be12e74a2a69e94c4abe5b86d134cd701b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="simpwrit204a" cloneof="simpwrit">
+		<description>Simply Write (v2.04, SS80)</description>
+		<year>1986</year>
+		<publisher>Microbee Systems</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="simply_write_2.04_ss80.dsk" size="430336" crc="2ac3b646" sha1="f6ce8e9070903296a49501712d0de8578af10fb2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="swfonted">
+		<description>Simply Write Font Editor (v2.04)</description>
+		<year>1986</year>
+		<publisher>Microbee Systems</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="simply_write_font_editor_2.04_ss80.dsk" size="430336" crc="5bce6abc" sha1="a9b28d6cb45343e86f85c0f8f22ed7fe438302c5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sketch">
+		<description>Sketchpad</description>
+		<year>1984</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="sketch_pad_ds40.dsk" size="430336" crc="e66fd15d" sha1="9b3ff4ac8aad3c7f18603d9cbe1db35ec2141a76" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="smartkey">
+		<description>Smartkey II (v1.1a)</description>
+		<year>1984</year>
+		<publisher>FBN Software</publisher>
+		<info name="serial" value="A00-0928"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="smartkey_1.1a_ds40.dsk" size="430336" crc="a5b9d05f" sha1="6bcf72ac6d4d37582898da029f97e5e3f0e4749c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="starnet" supported="no">
+		<description>Starnet (v3.10g)</description>
+		<year>198?</year>
+		<publisher>Microbee Systems?</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="starnet_v310g_ds40.dsk" size="430336" crc="50ec7e41" sha1="1be58d5ef2c0b60fcb589d4de11a567a0b6f7ad5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="snupgrad">
+		<description>Starnet Premium Upgrade</description>
+		<year>198?</year>
+		<publisher>Microbee Systems?</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="starnet_premium_upgrade_ds40.dsk" size="430336" crc="c9b7efcb" sha1="e83b03ec6dfd756bb529962fab3f826690a485f6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tmaker">
+		<description>T/Maker Integrated Software</description>
+		<year>1984</year>
+		<publisher>T/Maker Company</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="t_maker_v4.03_d1_ss80.dsk" size="430336" crc="b63bec04" sha1="3e4fba1d8e95a02f7ae191236c55e3c0d4757923" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="t_maker_v4.03_d2_ss80.dsk" size="430336" crc="878c0280" sha1="c3ad064ce2decb064221d0296d0c0db85af4b545" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="telcom">
+		<description>TELCOM 128k/256 TC (v3.00)</description>
+		<year>1987</year>
+		<publisher>Microbee Systems</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="telcom3_upgrade_ss80.dsk" size="430336" crc="72751fd0" sha1="a4cc6d285bea372ce01634a77bd7100a8dbc4e8f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="telcom2" cloneof="telcom">
+		<description>TELCOM (v2.0)</description>
+		<year>198?</year>
+		<publisher>MicroWorld Australia</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="telcom_v2_for_56k_ds40.dsk" size="430336" crc="7b38b57f" sha1="6519edc8241793108b930294d470e9a60e9bef84" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="testdisk">
 		<description>Test Disk</description>
 		<year>198?</year>
@@ -583,6 +1055,66 @@ All info on non-TOSEC disks comes from this testing.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
 				<rom name="dtest_ss80.dsk" size="430336" crc="82b0640e" sha1="151e9abc912c2e094ea0d1824f41da71c601d668" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="timetabl">
+		<description>Timetable Manager (v4.3)</description>
+		<year>1986</year>
+		<publisher>Vanden Boom Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="860416">
+				<rom name="time_table_manager_4.3_ds80.dsk" size="860416" crc="26a05b70" sha1="6961745062c7ba9b011430a7ea4fcb7bbd03ca1f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="venture">
+		<description>Venture Writer (v2.1)</description>
+		<year>198?</year>
+		<publisher>NSW Department of Education Computer Education Unit</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="venture_writer_2.1_ds40.dsk" size="430336" crc="adcbd9f2" sha1="44343411eb8d5b302f06319ad085e04260755f13" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wdproc">
+		<description>WDPROC - Word Processing Package (v1.1)</description>
+		<year>198?</year>
+		<publisher>Education Department of Western Australia</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="wordprocessor_ds40.dsk" size="430336" crc="1cbb0e61" sha1="3d9dfd0d459c13bd0c43f637fffae940fb8708a9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wga">
+		<description>WordGraph A (Premium, v0.4)</description>
+		<year>1986</year>
+		<publisher>Research Technology Canberra</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="wordgraph_a_v04_ss80.dsk" size="430336" crc="7d7bc39b" sha1="6168066d71ac0be2c183da5be3ca3ce93629f066" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wga2" cloneof="wga">
+		<description>WordGraph A (v02)</description>
+		<year>1985</year>
+		<publisher>Research Technology Canberra</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="wordgraph_a_v02_ss80.dsk" size="430336" crc="da63cc5e" sha1="f790b79b75f42e937790876106d03ea5155040aa" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -997,6 +1529,18 @@ All info on non-TOSEC disks comes from this testing.
 		</part>
 	</software>
 
+	<software name="airtracksn" cloneof="airtrack" supported="no">
+		<description>The Microbee Air Track (Starnet)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="starnet_airtrack_ds40.dsk" size="430336" crc="dcfdd690" sha1="e832526a241825a2a43aca44219d6f243ec233fa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="msppedu">
 		<description>MSPP Educational Pack</description>
 		<year>20??</year>
@@ -1005,6 +1549,55 @@ All info on non-TOSEC disks comes from this testing.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
 				<rom name="mmd_educational_ss80.dsk" size="430336" crc="1042a3c8" sha1="7bc9896021a34f91301419f1962eb14a4b852989" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="netpack1">
+		<description>Netpack 1</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="netpack_1_ss80.dsk" size="430336" crc="078160cf" sha1="ac027689ca4b678a78cfa1468ac51afd4b389405" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="netpack2">
+		<description>Netpack 2</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="netpack_2_ss80.dsk" size="430336" crc="11b004dd" sha1="d0cea5c814a3021be5fdcedcd83a4664d0fca148" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Requires CP/M -->
+	<software name="netpack2a" cloneof="netpack2">
+		<description>Netpack 2 (Non-Bootable)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="netpak_2_rel2_ds40.dsk" size="430336" crc="ba2a6b37" sha1="60e49f7daafbbbdd7200794ab97e2525eccdd5b2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="netpack3">
+		<description>Netpack 3</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="netpack_3_ss80.dsk" size="430336" crc="fa99b857" sha1="83baba089303f75c337b42663de1ec8d4287d05f" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1659,6 +2252,18 @@ All info on non-TOSEC disks comes from this testing.
 		</part>
 	</software>
 
+	<software name="adamsadv">
+		<description>The Complete Scott Adams Original Adventures</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="860416">
+				<rom name="scott_adams_adventures_ds80.dsk" size="860416" crc="f9cd77f5" sha1="771748a0d93f17cb7e0de6636a050718ab5d743b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="demodisk">
 		<description>Demo Disk</description>
 		<year>198?</year>
@@ -1679,6 +2284,18 @@ All info on non-TOSEC disks comes from this testing.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
 				<rom name="honeysoft_demonstration_disk_t01.dsk" size="215296" crc="70ce3786" sha1="f14bf0d11a7b649074f96a33d56e604cfbf6e30b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="demodisksn" cloneof="demodisk" supported="no">
+		<description>Demonstration Disk No. 1 (Starnet)</description>
+		<year>198?</year>
+		<publisher>Honeysoft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="starnet_demonstration_ds40.dsk" size="430336" crc="ea2de37d" sha1="dcd9d073f6cacb582f91423b47550a011015f239" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2008,6 +2625,104 @@ All info on non-TOSEC disks comes from this testing.
 		</part>
 	</software>
 
+	<software name="replicat">
+		<description>Replicating Reality</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires CP/M" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="replicating_reality_ds40.dsk" size="430336" crc="4ca89066" sha1="f21027a75986734f411955e950cb55c4594cfa09" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rlarkins">
+		<description>Richard Larkin's Disk</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="richard_larkins_games_ss80.dsk" size="430336" crc="f17d958c" sha1="c937d7321ee2f4caecb74dd74efedbc278da14f9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="smugtape">
+		<description>SMUG Tape Library</description>
+		<year>198?</year>
+		<publisher>SMUG</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="smug_tape_library_ds40.dsk" size="430336" crc="0999ca0f" sha1="8d8146ef1ee53c0410509bf35a4281043043954d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scs1">
+		<description>Games Disk I - NANOC the Destroyer &amp; Jumpman!</description>
+		<year>198?</year>
+		<publisher>Superior Computer Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="scs_disk_1_nanoc_ss80.dsk" size="430336" crc="918dd463" sha1="cfbc5ba5d57379dd1e384bdc18acdc213e54d5a8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scs2">
+		<description>Games Disk II - NANOC the Destroyer II, Freedom Fighter, Missile Dodger</description>
+		<year>198?</year>
+		<publisher>Superior Computer Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="scs_disk_2_nanoc_2_ss80.dsk" size="430336" crc="75ee2812" sha1="889417ab1e792b4da96367e6db6eb68288c3c478" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scs3">
+		<description>Games Disk III - NANOC's Revenge</description>
+		<year>198?</year>
+		<publisher>Superior Computer Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="scs_disk_3_nanoc_revenge_ss80.dsk" size="430336" crc="ca0e3716" sha1="2c659114f7b737530e7bb1a5afb9dcafcff0bf35" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scs4">
+		<description>Games Disk IV - Fortris, Catalog, Slideshow</description>
+		<year>1990</year>
+		<publisher>Superior Computer Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="scs_disk_4_fortris_ss80.dsk" size="430336" crc="477656cd" sha1="24c98325834fdc6e0d286690f95de6285cc55a3a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- PIN Protection -->
+	<software name="scs5">
+		<description>Games Disk V - Timegap-X</description>
+		<year>1991</year>
+		<publisher>Superior Computer Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="scs_disk_5_timegapx_ss80.dsk" size="430336" crc="90a140f9" sha1="c870665540546cc13ebfdff91c44c86321c63c92" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="stratgam">
 		<description>Strategic Games Volume 1 (Color Menu)</description>
 		<year>198?</year>
@@ -2044,6 +2759,31 @@ All info on non-TOSEC disks comes from this testing.
 		</part>
 	</software>
 
+	<software name="swordqst">
+		<description>Sword Quest + Plus +</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Valley and Caves require BASIC"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="sword_quest_plus_ds40.dsk" size="430336" crc="c138a4c5" sha1="ce25effff0025677a5f0586569423d4bffe1d061" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="winners">
+		<description>The Winners</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="the_winners_ss80.dsk" size="430336" crc="2cbc3067" sha1="8548732b3c3d7e12cf1a1befecf94dc0bbf57c8b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 <!-- Demos -->
 
 	<software name="xmascaro">
@@ -2066,6 +2806,18 @@ All info on non-TOSEC disks comes from this testing.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
 				<rom name="256tc_intro_ss80.dsk" size="430336" crc="52e267e2" sha1="147e290e0a32b8b23a3bb0c091fee062e353551f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="slideshw">
+		<description>Slide Show (v2.0)</description>
+		<year>1986</year>
+		<publisher>Microbee Systems</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="slide_show_ss80.dsk" size="430336" crc="ed03533e" sha1="65584ddbd9623b70a9544ed4f8e2f45538bed6c5" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2132,6 +2884,18 @@ All info on non-TOSEC disks comes from this testing.
 		</part>
 	</software>
 
+	<software name="physci">
+		<description>Computer Aided Learning - Physical Science</description>
+		<year>198?</year>
+		<publisher>Education Department of Western Australia</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="physical_science_ds40.dsk" size="430336" crc="028ebb9e" sha1="c3a899d15553390d2f7d927ca63e713dd6def9f3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="biology">
 		<description>Computer Assisted Learning - Biological Science</description>
 		<year>198?</year>
@@ -2176,6 +2940,18 @@ All info on non-TOSEC disks comes from this testing.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
 				<rom name="mathmatics_2_ds40.dsk" size="430336" crc="74c05cce" sha1="f6658fd3f1150b943d698bee7c94873fe91d4b33" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="socsci">
+		<description>Computer Assisted Learning - Social Science</description>
+		<year>198?</year>
+		<publisher>Education Department of Western Australia</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="social_science_ds40.dsk" size="430336" crc="3d5ae432" sha1="dddd0aaf4a0ce4f02d92e0c4900e32961cd993e5" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2314,6 +3090,30 @@ All info on non-TOSEC disks comes from this testing.
 		</part>
 	</software>
 
+	<software name="oneworld">
+		<description>One World - Countries Database (v1.01)</description>
+		<year>1985</year>
+		<publisher>Active Learning Systems</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="one_world_ss80.dsk" size="430336" crc="313ca7c5" sha1="7b7e7c9007477cfb8346e54732b13ae4a2e9db16" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="primrime">
+		<description>Primary RIME Lessons</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="860416">
+				<rom name="rime_maths_ds80.dsk" size="860416" crc="e9906a2e" sha1="b7e2117c52cb738300a89688b5a9169af543a13e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="probcard">
 		<description>Probability - Cards</description>
 		<year>198?</year>
@@ -2363,6 +3163,31 @@ All info on non-TOSEC disks comes from this testing.
 		</part>
 	</software>
 
+	<software name="interest">
+		<description>Simple and Compound Interest</description>
+		<year>1985</year>
+		<publisher>Denham Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="simple_and_compound_interest_ds40.dsk" size="430336" crc="a71c7dc5" sha1="30c1bb8e6498504b403568126f6fefe9676035bd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sfpp">
+		<description>Solutions for Programming Problems</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="Requires CP/M"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="solutions_for_programming_problems_ds40.dsk" size="430336" crc="3ada7865" sha1="c9cca82105a3cf1fb9e47b2ac2e1e8b291abd11f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="spelling">
 		<description>Spelling Programs</description>
 		<year>198?</year>
@@ -2383,6 +3208,30 @@ All info on non-TOSEC disks comes from this testing.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
 				<rom name="denham_easy_stats_ss80.dsk" size="430336" crc="db268e4e" sha1="cd85bbb01948fa1cba571b234b2a4a8683283547" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="storymkr">
+		<description>Story Maker (128K)</description>
+		<year>198?</year>
+		<publisher>Scholastic</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="860416">
+				<rom name="storymaker_128k_ds80.dsk" size="860416" crc="752026c9" sha1="5cca54dfcaf754d1c9a5432226724aa717666845" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="storymkr256" cloneof="storymkr">
+		<description>Story Maker (256 TC)</description>
+		<year>198?</year>
+		<publisher>Scholastic</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="860416">
+				<rom name="storymaker_256tc_ds80.dsk" size="860416" crc="59baee9d" sha1="99ad32b1cb7b3f36690d1b05c9f421794e4b7e45" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2757,6 +3606,127 @@ All info on non-TOSEC disks comes from this testing.
 		</part>
 	</software>
 
+	<software name="nemesis">
+		<description>Nemesis and Dungeon Master (v1.2)</description>
+		<year>1981</year>
+		<publisher>Michael Q. Hiller - Michael A. Pagels</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="nemesis_1.2_ss80.dsk" size="430336" crc="17e7697a" sha1="e99c1be173e370facfc48971bf5902ff08cb01fb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nemesisa" cloneof="nemesis">
+		<description>Nemesis and Dungeon Master (Unknown Version)</description>
+		<year>1981</year>
+		<publisher>Michael Q. Hiller - Michael A. Pagels</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="nemesis_dungeon_master_ss80.dsk" size="430336" crc="5787da29" sha1="e571b43e3d6ca47ca703afd1ab8985da3e134216" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="eldritch">
+		<description>Quest for Castle Eldritch</description>
+		<year>198?</year>
+		<publisher>Peter de Vries</publisher>
+		<info name="usage" value="Requires CP/M" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="quest_for_castle_eldritch_ds40.dsk" size="430336" crc="eb90838a" sha1="83c0b99244455ab68462c2edb8a70ed13e979017" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scramble">
+		<description>Scrambler</description>
+		<year>1982</year>
+		<publisher>Matthew Hickey</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="scrambler_ds40.dsk" size="430336" crc="6fd98516" sha1="2d5dc0ddcbd90c74bbbac3f9ff39917693f1b599" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="survivor">
+		<description>Survivor</description>
+		<year>198?</year>
+		<publisher>W. Parker</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="survivor_ds40.dsk" size="430336" crc="b9661d0d" sha1="612cc774b2a79e562c40eb8ec0b011fc0590c5ba" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sydneyap">
+		<description>Sydney Approach</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="sydney_approach_ds40.dsk" size="430336" crc="bae54748" sha1="ae046544f13ff8ef2fbd95854b5888f37195ae02" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="takeover">
+		<description>Takeover - Warriors Against The World</description>
+		<year>1990</year>
+		<publisher>Adrenalin Soft</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="takeover_ss80.dsk" size="430336" crc="f93c6482" sha1="da8104dadfa1c6b25847bb44990ce845e86f09e0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thunder">
+		<description>Thunder Road Adventure</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="860416">
+				<rom name="thunder_road_ds80.dsk" size="860416" crc="828c838e" sha1="a43baf9fd1ee2bcdc87699ddbdeb46bc70c69c89" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="viper">
+		<description>Viper</description>
+		<year>1983</year>
+		<publisher>Subatomic Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="viper_ds40.dsk" size="430336" crc="bd0519c2" sha1="ca07111a4ab30c87cd37ef38a6b4385bbc1cb20d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zeephon">
+		<description>Zeephon</description>
+		<year>1986</year>
+		<publisher>Grey Matter Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="zeephon_ds40.dsk" size="430336" crc="a7d40487" sha1="64401dc982e2b1a5358f661c03aad1285a55cd6e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 <!-- Misc -->
 
 	<software name="greybrd">
@@ -2767,6 +3737,42 @@ All info on non-TOSEC disks comes from this testing.
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
 				<rom name="greybeard_tape_files_ds84.dsk" size="860416" crc="3f6d0ed5" sha1="f8900f194372de526eca743d46dde7aa31eb50eb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="poster">
+		<description>Poster Disk 1987</description>
+		<year>1987?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="860416">
+				<rom name="poster_disk_1987_ds80.dsk" size="860416" crc="6852bb40" sha1="958003211b34389962f09153bbbe00cd849b7365" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="clipart">
+		<description>Springboard Clipart</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="860416">
+				<rom name="springboard_clipart_ds80.dsk" size="860416" crc="b80941f0" sha1="9f0eb0e769e8198d4de210b0c9b9413af86c96f0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tpsg">
+		<description>Turbo Pascal Sound and Graphics Routines (July 1, 1986)</description>
+		<year>1986</year>
+		<publisher>Gordon Rowell</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="430336">
+				<rom name="tp_graphics_sound_ss80.dsk" size="430336" crc="d7093840" sha1="e8cf533c92d3d7d93515e9c82c4afd4a76592e28" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2785,1027 +3791,15 @@ All info on non-TOSEC disks comes from this testing.
     </software>
 -->
 
-<!-- obviously not for Microbee
-	<software name="">
-		<description>beeboard_1_system_disk_ds8b</description>
+<!-- obviously not for any emulated Microbee
+	<software name="beeboard" supported="no">
+		<description>Beeboard 1 System Disk</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
 				<rom name="beeboard_1_system_disk_ds8b.dsk" size="860416" crc="929904df" sha1="cfe5f6c4e3df8133da10c10f7b9cf28629b4816e" offset="0" />
-			</dataarea>
-		</part>
-	</software>
--->
-
-<!-- UnRenamed -->
-
-<!--
-	<software name="">
-		<description>nemesis_1.2_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="nemesis_1.2_ss80.dsk" size="430336" crc="17e7697a" sha1="e99c1be173e370facfc48971bf5902ff08cb01fb" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>nemesis_dungeon_master_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="nemesis_dungeon_master_ss80.dsk" size="430336" crc="5787da29" sha1="e571b43e3d6ca47ca703afd1ab8985da3e134216" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>netpack_1_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="netpack_1_ss80.dsk" size="430336" crc="078160cf" sha1="ac027689ca4b678a78cfa1468ac51afd4b389405" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>netpack_2_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="netpack_2_ss80.dsk" size="430336" crc="11b004dd" sha1="d0cea5c814a3021be5fdcedcd83a4664d0fca148" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>netpack_3_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="netpack_3_ss80.dsk" size="430336" crc="fa99b857" sha1="83baba089303f75c337b42663de1ec8d4287d05f" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>netpak_2_rel2_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="netpak_2_rel2_ds40.dsk" size="430336" crc="ba2a6b37" sha1="60e49f7daafbbbdd7200794ab97e2525eccdd5b2" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>one_world_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="one_world_ss80.dsk" size="430336" crc="313ca7c5" sha1="7b7e7c9007477cfb8346e54732b13ae4a2e9db16" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>peter_broughton_v1.1_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="peter_broughton_v1.1_ds40.dsk" size="430336" crc="a033b043" sha1="59176b180b9dec58717ad8ca778663d2854b5673" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>peter_broughton_v1.2_ds80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="860416">
-				<rom name="peter_broughton_v1.2_ds80.dsk" size="860416" crc="33f432c7" sha1="b0469d4b756a87545a8241f16670f6fb42888575" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>peter_broughton_v2.0pre_deepdene_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="peter_broughton_v2.0pre_deepdene_ds40.dsk" size="430336" crc="5e8b3736" sha1="7c91b98c77a30c1bfd3555a59a20c2a2b5be6cb8" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>peter_broughton_v2.2p_1of2_ds84</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="860416">
-				<rom name="peter_broughton_v2.2p_1of2_ds84.dsk" size="860416" crc="c4349908" sha1="59a97559823f91f4106bb97b99d05828988c25bd" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>peter_broughton_v2.2p_2of2_ds84</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="860416">
-				<rom name="peter_broughton_v2.2p_2of2_ds84.dsk" size="860416" crc="f2b45df6" sha1="c0f06775b66a309a23301b98f1805de30e7dbdd8" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>physical_science_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="physical_science_ds40.dsk" size="430336" crc="028ebb9e" sha1="c3a899d15553390d2f7d927ca63e713dd6def9f3" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>poster_disk_1987_ds80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="860416">
-				<rom name="poster_disk_1987_ds80.dsk" size="860416" crc="6852bb40" sha1="958003211b34389962f09153bbbe00cd849b7365" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>premium_128_getting_to_know_your_microbee_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="premium_128_getting_to_know_your_microbee_ds40.dsk" size="430336" crc="cc9ed658" sha1="1b248e3e22c940170d7ea1fad559ded45fcf7411" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>premium_128_master_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="premium_128_master_ds40.dsk" size="430336" crc="61807186" sha1="d892108bdaf317037d359ad6e19ed8213df4f06c" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>premium_128_master_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="premium_128_master_ss80.dsk" size="430336" crc="26121c2d" sha1="29d2ef82b81253a7e8980c9fcf190f38e9ce714e" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>premium_128_starter_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="premium_128_starter_ss80.dsk" size="430336" crc="544fdefc" sha1="25ed49c6d24ed0634304de680e6a8681584f6f52" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>press_room_3_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="press_room_3_ss80.dsk" size="430336" crc="cd9dab76" sha1="488cd72a53f9a13cf4a3515fb3eb9b4fbaec4afc" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>printmaster_1.0_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="printmaster_1.0_ss80.dsk" size="430336" crc="c7faec7a" sha1="111b6e28ad5790a0105ca501061d9a414daf9370" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>printmaster_1.45_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="printmaster_1.45_ds40.dsk" size="430336" crc="65378aac" sha1="81bfda28287814ef96f7a9be0e9f0541cd707936" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>quest_for_castle_eldritch_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="quest_for_castle_eldritch_ds40.dsk" size="430336" crc="eb90838a" sha1="83c0b99244455ab68462c2edb8a70ed13e979017" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>replicating_reality_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="replicating_reality_ds40.dsk" size="430336" crc="4ca89066" sha1="f21027a75986734f411955e950cb55c4594cfa09" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>research_logo_1.0a+_ds80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="860416">
-				<rom name="research_logo_1.0a+_ds80.dsk" size="860416" crc="825445f9" sha1="2a5f820791670fa13010336c4b647d2f7b30b806" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>research_logo_1.0a_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="research_logo_1.0a_ds40.dsk" size="430336" crc="b827eaee" sha1="e6ea2e6b8ee2eaf37aa4b5d8690aa827e90c0445" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>research_logo_10a_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="research_logo_10a_ss80.dsk" size="430336" crc="3983a7d4" sha1="7c0d78fc49eac199c40b8442159f218b091587bc" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>research_logo_v1.0_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="research_logo_v1.0_ds40.dsk" size="430336" crc="e0547854" sha1="94d87f2f038adda985769273cf8e7365af8ba816" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>richard_larkins_games_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="richard_larkins_games_ss80.dsk" size="430336" crc="f17d958c" sha1="c937d7321ee2f4caecb74dd74efedbc278da14f9" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>rime_maths_ds80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="860416">
-				<rom name="rime_maths_ds80.dsk" size="860416" crc="e9906a2e" sha1="b7e2117c52cb738300a89688b5a9169af543a13e" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>scott_adams_adventures_ds80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="860416">
-				<rom name="scott_adams_adventures_ds80.dsk" size="860416" crc="f9cd77f5" sha1="771748a0d93f17cb7e0de6636a050718ab5d743b" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>scrambler_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="scrambler_ds40.dsk" size="430336" crc="6fd98516" sha1="2d5dc0ddcbd90c74bbbac3f9ff39917693f1b599" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>scs_disk_1_nanoc_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="scs_disk_1_nanoc_ss80.dsk" size="430336" crc="918dd463" sha1="cfbc5ba5d57379dd1e384bdc18acdc213e54d5a8" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>scs_disk_2_nanoc_2_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="scs_disk_2_nanoc_2_ss80.dsk" size="430336" crc="75ee2812" sha1="889417ab1e792b4da96367e6db6eb68288c3c478" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>scs_disk_3_nanoc_revenge_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="scs_disk_3_nanoc_revenge_ss80.dsk" size="430336" crc="ca0e3716" sha1="2c659114f7b737530e7bb1a5afb9dcafcff0bf35" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>scs_disk_4_fortris_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="scs_disk_4_fortris_ss80.dsk" size="430336" crc="477656cd" sha1="24c98325834fdc6e0d286690f95de6285cc55a3a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>scs_disk_5_timegapx_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="scs_disk_5_timegapx_ss80.dsk" size="430336" crc="90a140f9" sha1="c870665540546cc13ebfdff91c44c86321c63c92" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>simon_gerraty_80_40tr_system_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="simon_gerraty_80_40tr_system_ds40.dsk" size="430336" crc="b56f0de4" sha1="89965d7827cd88cde591c9ee938037e660caf9ba" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>simple_and_compound_interest_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="simple_and_compound_interest_ds40.dsk" size="430336" crc="a71c7dc5" sha1="30c1bb8e6498504b403568126f6fefe9676035bd" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>simple_business_graphics_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="simple_business_graphics_ss80.dsk" size="430336" crc="72dc2066" sha1="6dacff4b3516693d8e94ce76bb568f3cb34e6b75" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>simply_db_1.10c_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="simply_db_1.10c_ds40.dsk" size="430336" crc="ba3908ad" sha1="a73a272e39b3a8a2236d2a1fec0b3d4c5e4d1ae4" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>simply_db_1.20c_640tc_90_03_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="simply_db_1.20c_640tc_90_03_ss80.dsk" size="430336" crc="42850325" sha1="126ae53b613fa1ed9258762162c0df718958670c" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>simply_db_1.20c_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="simply_db_1.20c_ss80.dsk" size="430336" crc="a9ac2ee8" sha1="08523d0ac80942d8d99d7dab6249b373d58d336d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>simply_write_2.04_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="simply_write_2.04_ds40.dsk" size="430336" crc="5eee4017" sha1="1824b0be12e74a2a69e94c4abe5b86d134cd701b" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>simply_write_2.04_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="simply_write_2.04_ss80.dsk" size="430336" crc="2ac3b646" sha1="f6ce8e9070903296a49501712d0de8578af10fb2" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>simply_write_2.05_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="simply_write_2.05_ss80.dsk" size="430336" crc="24a5adfb" sha1="f9c6266f6730e057c224ffee30e3744b2a30d0df" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>simply_write_3.02_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="simply_write_3.02_ss80.dsk" size="430336" crc="2845a4bb" sha1="3ae1500d5702e3ce2eefa2b88c24757a6367f2ef" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>simply_write_3.03_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="simply_write_3.03_ss80.dsk" size="430336" crc="e072ce17" sha1="3088779b2cc3aeb0753578b43a4637c389246a38" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>simply_write_font_editor_2.04_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="simply_write_font_editor_2.04_ss80.dsk" size="430336" crc="5bce6abc" sha1="a9b28d6cb45343e86f85c0f8f22ed7fe438302c5" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>sketch_pad_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="sketch_pad_ds40.dsk" size="430336" crc="e66fd15d" sha1="9b3ff4ac8aad3c7f18603d9cbe1db35ec2141a76" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>slide_show_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="slide_show_ss80.dsk" size="430336" crc="ed03533e" sha1="65584ddbd9623b70a9544ed4f8e2f45538bed6c5" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>smart_model_controller_ver1.12m_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="smart_model_controller_ver1.12m_ss80.dsk" size="430336" crc="9ba5618e" sha1="26fbfaab16de066086a9b1e6da207633685a6fce" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>smartkey_1.1a_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="smartkey_1.1a_ds40.dsk" size="430336" crc="a5b9d05f" sha1="6bcf72ac6d4d37582898da029f97e5e3f0e4749c" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>smug_tape_library_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="smug_tape_library_ds40.dsk" size="430336" crc="0999ca0f" sha1="8d8146ef1ee53c0410509bf35a4281043043954d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>social_science_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="social_science_ds40.dsk" size="430336" crc="3d5ae432" sha1="dddd0aaf4a0ce4f02d92e0c4900e32961cd993e5" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>solutions_for_programming_problems_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="solutions_for_programming_problems_ds40.dsk" size="430336" crc="3ada7865" sha1="c9cca82105a3cf1fb9e47b2ac2e1e8b291abd11f" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>springboard_clipart_ds80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="860416">
-				<rom name="springboard_clipart_ds80.dsk" size="860416" crc="b80941f0" sha1="9f0eb0e769e8198d4de210b0c9b9413af86c96f0" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>standard_128_master_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="standard_128_master_ds40.dsk" size="430336" crc="d7f02a01" sha1="e0fa70cdf2115fa98dbb12cb0a369a22e1e77de4" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>starnet_airtrack_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="starnet_airtrack_ds40.dsk" size="430336" crc="dcfdd690" sha1="e832526a241825a2a43aca44219d6f243ec233fa" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>starnet_demonstration_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="starnet_demonstration_ds40.dsk" size="430336" crc="ea2de37d" sha1="dcd9d073f6cacb582f91423b47550a011015f239" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>starnet_master_84_03_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="starnet_master_84_03_ds40.dsk" size="430336" crc="90919ab5" sha1="7b7a12a3419f8b4f4697b82abdbb5e48582589f0" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>starnet_master_85_10_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="starnet_master_85_10_ds40.dsk" size="430336" crc="db1c8fa3" sha1="b064248235842acc37318a8892dc9bed6c71baae" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>starnet_premium_upgrade_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="starnet_premium_upgrade_ds40.dsk" size="430336" crc="c9b7efcb" sha1="e83b03ec6dfd756bb529962fab3f826690a485f6" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>starnet_v310g_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="starnet_v310g_ds40.dsk" size="430336" crc="50ec7e41" sha1="1be58d5ef2c0b60fcb589d4de11a567a0b6f7ad5" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>storymaker_128k_ds80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="860416">
-				<rom name="storymaker_128k_ds80.dsk" size="860416" crc="752026c9" sha1="5cca54dfcaf754d1c9a5432226724aa717666845" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>storymaker_256tc_ds80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="860416">
-				<rom name="storymaker_256tc_ds80.dsk" size="860416" crc="59baee9d" sha1="99ad32b1cb7b3f36690d1b05c9f421794e4b7e45" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>survivor_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="survivor_ds40.dsk" size="430336" crc="b9661d0d" sha1="612cc774b2a79e562c40eb8ec0b011fc0590c5ba" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>sword_quest_plus_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="sword_quest_plus_ds40.dsk" size="430336" crc="c138a4c5" sha1="ce25effff0025677a5f0586569423d4bffe1d061" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>sydney_approach_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="sydney_approach_ds40.dsk" size="430336" crc="bae54748" sha1="ae046544f13ff8ef2fbd95854b5888f37195ae02" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>t_maker_v4.03_d1_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="t_maker_v4.03_d1_ss80.dsk" size="430336" crc="b63bec04" sha1="3e4fba1d8e95a02f7ae191236c55e3c0d4757923" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>t_maker_v4.03_d2_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="t_maker_v4.03_d2_ss80.dsk" size="430336" crc="878c0280" sha1="c3ad064ce2decb064221d0296d0c0db85af4b545" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>takeover_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="takeover_ss80.dsk" size="430336" crc="f93c6482" sha1="da8104dadfa1c6b25847bb44990ce845e86f09e0" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>telcom3_upgrade_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="telcom3_upgrade_ss80.dsk" size="430336" crc="72751fd0" sha1="a4cc6d285bea372ce01634a77bd7100a8dbc4e8f" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>telcom_v2_for_56k_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="telcom_v2_for_56k_ds40.dsk" size="430336" crc="7b38b57f" sha1="6519edc8241793108b930294d470e9a60e9bef84" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>the_winners_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="the_winners_ss80.dsk" size="430336" crc="2cbc3067" sha1="8548732b3c3d7e12cf1a1befecf94dc0bbf57c8b" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>thunder_road_ds80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="860416">
-				<rom name="thunder_road_ds80.dsk" size="860416" crc="828c838e" sha1="a43baf9fd1ee2bcdc87699ddbdeb46bc70c69c89" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>time_table_manager_4.3_ds80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="860416">
-				<rom name="time_table_manager_4.3_ds80.dsk" size="860416" crc="26a05b70" sha1="6961745062c7ba9b011430a7ea4fcb7bbd03ca1f" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>tp_graphics_sound_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="tp_graphics_sound_ss80.dsk" size="430336" crc="d7093840" sha1="e8cf533c92d3d7d93515e9c82c4afd4a76592e28" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>venture_writer_2.1_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="venture_writer_2.1_ds40.dsk" size="430336" crc="adcbd9f2" sha1="44343411eb8d5b302f06319ad085e04260755f13" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>viatel_upgrade_v13a_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="viatel_upgrade_v13a_ss80.dsk" size="430336" crc="e7b7d47b" sha1="73a724d57f3e123a183ab16a2d2322a5fb6c53eb" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>viper_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="viper_ds40.dsk" size="430336" crc="bd0519c2" sha1="ca07111a4ab30c87cd37ef38a6b4385bbc1cb20d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>wordgraph_a_v02_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="wordgraph_a_v02_ss80.dsk" size="430336" crc="da63cc5e" sha1="f790b79b75f42e937790876106d03ea5155040aa" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>wordgraph_a_v04_ss80</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="wordgraph_a_v04_ss80.dsk" size="430336" crc="7d7bc39b" sha1="6168066d71ac0be2c183da5be3ca3ce93629f066" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>wordprocessor_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="wordprocessor_ds40.dsk" size="430336" crc="1cbb0e61" sha1="3d9dfd0d459c13bd0c43f637fffae940fb8708a9" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>zeephon_ds40</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="430336">
-				<rom name="zeephon_ds40.dsk" size="430336" crc="a7d40487" sha1="64401dc982e2b1a5358f661c03aad1285a55cd6e" offset="0" />
 			</dataarea>
 		</part>
 	</software>
