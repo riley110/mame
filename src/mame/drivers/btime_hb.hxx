@@ -99,7 +99,7 @@ ROM_START( vecbtime )
 ROM_END
 
 
-GAME( 2002, bnjr,     0,       bnj,      bnj,   btime_state,   lnc,     ROT270, "DaveC", "Bump 'n' Jump Reverse Mod", MACHINE_SUPPORTS_SAVE )
-GAME( 1981, pnc,      0,       lnc,      lnc,   btime_state,   lnc,     ROT270, "Data East Corporation", "Pac'n'Chase", MACHINE_SUPPORTS_SAVE )
+GAME( 2002, bnjr,     brubber, bnj,      bnj,   btime_state,   lnc,     ROT270, "DaveC", "Bump 'n' Jump Reverse Mod", MACHINE_SUPPORTS_SAVE )
+GAME( 1981, pnc,      lnc,     lnc,      lnc,   btime_state,   lnc,     ROT270, "Data East Corporation", "Pac'n'Chase", MACHINE_SUPPORTS_SAVE )
 GAME( 2002, stictime, btime,   btime,    btime, btime_state,   btime,   ROT270, "Marks", "Burger Time (Mr Sticky)", MACHINE_SUPPORTS_SAVE )
 GAME( 2000, vecbtime, btime,   btime,    btime, btime_state,   btime,   ROT270, "T-Bone", "Burgertime (Vector sim)", MACHINE_SUPPORTS_SAVE )

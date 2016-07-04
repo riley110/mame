@@ -1489,4 +1489,4 @@ GAME( 1981, wotwc,    wotw,    wotwc,    wotw,     driver_device, 0,        ORIE
 GAMEL(1982, demon,    0,       demon,    demon,    driver_device, 0,        ORIENTATION_FLIP_Y,   "Rock-Ola", "Demon", MACHINE_SUPPORTS_SAVE, layout_demon )
 GAME( 1982, qb3,      0,       qb3,      qb3,      cinemat_state, qb3,      ORIENTATION_FLIP_Y,   "Rock-Ola", "QB-3 (prototype)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE )
 
-#include "cinemat_hb.cpp"
+#include "cinemat_hb.hxx"

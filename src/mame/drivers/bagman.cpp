@@ -1010,4 +1010,4 @@ GAME( 1984, botanicf, botanic, botanic, botanicf,driver_device, 0,       ROT270,
 
 GAME( 1984, squaitsa, 0,       squaitsa,squaitsa, driver_device,0,       ROT0,   "Itisa", "Squash (Itisa)", MACHINE_SUPPORTS_SAVE )
 
-#include "bagman_hb.cpp"
+#include "bagman_hb.hxx"

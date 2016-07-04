@@ -8910,5 +8910,3 @@ GAME( 2005, lasthope,   neogeo,   neobase,   neogeo, neogeo_state,   neogeo,   R
 
 /* NEOBITZ */
 // Knight's Chance (c)2014 - MVS/AES
-
-//#include "neogeo0.cpp"

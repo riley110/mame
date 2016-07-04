@@ -1608,4 +1608,4 @@ GAME( 1983, pignewt,   0,        pignewt,  pignewt, segag80r_state,  pignewt,  R
 GAME( 1983, pignewta,  pignewt,  pignewt,  pignewta, segag80r_state, pignewt,  ROT270, "Sega", "Pig Newton (version A)", MACHINE_IMPERFECT_SOUND )
 GAME( 1983, sindbadm,  0,        sindbadm, sindbadm, segag80r_state, sindbadm, ROT270, "Sega", "Sindbad Mystery", 0 )
 
-#include "segag80r_hb.cpp"
+#include "segag80r_hb.hxx"

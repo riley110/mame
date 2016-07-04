@@ -508,4 +508,4 @@ GAME( 1984, bombjack,  0,        bombjack, bombjack, driver_device, 0, ROT90, "T
 GAME( 1984, bombjack2, bombjack, bombjack, bombjack, driver_device, 0, ROT90, "Tehkan", "Bomb Jack (set 2)", MACHINE_SUPPORTS_SAVE )
 GAME( 1984, bombjackt, bombjack, bombjack, bombjack, driver_device, 0, ROT90, "Tehkan (Tecfri licence)", "Bomb Jack (Tecfri, Spain)", MACHINE_SUPPORTS_SAVE ) // official licence
 
-#include "bombjack_hb.cpp"
+#include "bombjack_hb.hxx"

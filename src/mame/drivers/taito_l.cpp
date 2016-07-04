@@ -2621,4 +2621,4 @@ GAME( 1993, plgirls2b, plgirls2, cachat,    plgirls2,  driver_device, 0,        
 
 GAME( 1990, evilston,  0,        evilston,  evilston,  driver_device, 0,         ROT270, "Spacy Industrial, Ltd.", "Evil Stone", MACHINE_IMPERFECT_SOUND ) // not Taito PCB, just uses TC0090LVC
 
-#include "taito_l_hb.cpp"
+#include "taito_l_hb.hxx"

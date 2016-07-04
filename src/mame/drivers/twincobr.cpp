@@ -1296,4 +1296,4 @@ GAME( 1987, ktiger,    twincobr, twincobr, ktiger,    twincobr_state,  twincobr,
 GAME( 1991, gulfwar2,  0,        twincobr, gulfwar2,  twincobr_state,  twincobr, ROT270, "Comad", "Gulf War II (set 1)", 0 )
 GAME( 1991, gulfwar2a, gulfwar2, twincobr, gulfwar2,  twincobr_state,  twincobr, ROT270, "Comad", "Gulf War II (set 2)", 0 )
 
-#include "twincobr_hb.cpp"
+#include "twincobr_hb.hxx"

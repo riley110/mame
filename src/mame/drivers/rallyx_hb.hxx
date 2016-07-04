@@ -94,5 +94,5 @@ ROM_START( nrallyv )
 	ROM_LOAD( "im5623.2m",    0x0100, 0x0100, CRC(77245b66) SHA1(0c4d0bee858b97632411c440bea6948a74759746) )  /* timing - not used */
 ROM_END
 
-GAME( 1998, rxtron,  0, rallyx, rallyx,  driver_device, 0, ROT0,  "Jerky and Sil", "Rally-X Tron", 0 )
-GAME( 1981, nrallyv, 0, rallyx, nrallyv, driver_device, 0, ROT90, "hack", "New Rally X (Vertical Screen)", 0 )
+GAME( 1998, rxtron,  rallyx,  rallyx, rallyx,  driver_device, 0, ROT0,  "Jerky and Sil", "Rally-X Tron", 0 )
+GAME( 1981, nrallyv, nrallyx, rallyx, nrallyv, driver_device, 0, ROT90, "hack", "New Rally X (Vertical Screen)", 0 )

@@ -904,4 +904,4 @@ GAME( 1985, tehkanwcc, tehkanwc, tehkanwc, tehkanwc, driver_device, 0,        RO
 GAMEL(1985, gridiron,  0,        tehkanwc, gridiron, driver_device, 0,        ROT0,  "Tehkan", "Gridiron Fight", MACHINE_SUPPORTS_SAVE, layout_gridiron )
 GAME( 1986, teedoff,   0,        tehkanwc, teedoff, tehkanwc_state,  teedoff,  ROT90, "Tecmo", "Tee'd Off (Japan)", MACHINE_SUPPORTS_SAVE )
 
-#include "tehkanwc_hb.cpp"
+#include "tehkanwc_hb.hxx"

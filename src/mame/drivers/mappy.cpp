@@ -2481,4 +2481,4 @@ GAME( 1985, digdug2,  0,        digdug2,  digdug2, mappy_state,  digdug2,  ROT90
 GAME( 1985, digdug2o, digdug2,  digdug2,  digdug2, mappy_state,  digdug2,  ROT90, "Namco", "Dig Dug II (Old Ver.)", MACHINE_SUPPORTS_SAVE )
 GAME( 1985, motos,    0,        motos,    motos, mappy_state,   motos,        ROT90, "Namco", "Motos", MACHINE_SUPPORTS_SAVE )
 
-#include "mappy_hb.cpp"
+#include "mappy_hb.hxx"

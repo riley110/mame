@@ -7920,4 +7920,4 @@ GAME( 2001, firehawkv,spec2k,  firehawk, firehawkv,driver_device, 0,        ORIE
 // bee-oh board - different display / interrupt timing to others?
 GAME( 1991, manybloc, 0,        manybloc, manybloc, nmk16_state, tharrier,  ROT270,             "Bee-Oh",                "Many Block", MACHINE_NO_COCKTAIL | MACHINE_IMPERFECT_SOUND )
 
-#include "nmk16_hb.cpp"
+#include "nmk16_hb.hxx"

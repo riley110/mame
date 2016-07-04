@@ -1819,4 +1819,4 @@ GAME( 1983, profpac,  0,    profpac,  profpac, astrocde_state,  profpac,  ROT0, 
 GAME( 1982, demndrgn, 0,    demndrgn, demndrgn, astrocde_state, demndrgn, ROT0,   "Dave Nutting Associates / Bally Midway", "Demons & Dragons (prototype)", MACHINE_NO_SOUND | MACHINE_SUPPORTS_SAVE )
 GAMEL(1983, tenpindx, 0,    tenpindx, tenpindx, astrocde_state, tenpindx, ROT0,   "Dave Nutting Associates / Bally Midway", "Ten Pin Deluxe", MACHINE_NOT_WORKING | MACHINE_SUPPORTS_SAVE | MACHINE_MECHANICAL, layout_tenpindx )
 
-#include "astrocde_hb.cpp"
+#include "astrocde_hb.hxx"

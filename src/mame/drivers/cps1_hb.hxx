@@ -4719,7 +4719,7 @@ GAME( 2002, kodd,        kod,      cps1_10MHz, kod,      cps_state, cps1,     RO
 GAME( 2002, kodh,        kod,      cps1_10MHz, kodh,     cps_state, cps1,     ROT0,   "Wangy2", "The King of Dragons (ETC 910711 hack)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE )
 GAME( 2002, kodsp,       kod,      cps1_10MHz, kod,      cps_state, cps1,     ROT0,   "Bonusjz", "The King of Dragons (Remix Special hack by Bonusjz)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE )
 GAME( 2002, kodud,       kod,      cps1_10MHz, kod,      cps_state, cps1,     ROT0,   "hack", "The King of Dragons (US 910910 Phoenix Edition (16b/40p))", MACHINE_NOT_WORKING | MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE )
-GAME( 1994, pnicku,      0,        cps1_10MHz, pnicku,   cps_state, cps1,     ROT0,   "Compile (Capcom licence)", "Pnickies (USA 940608)", MACHINE_SUPPORTS_SAVE )
+GAME( 1994, pnicku,      pnickj,   cps1_10MHz, pnicku,   cps_state, cps1,     ROT0,   "Compile (Capcom licence)", "Pnickies (USA 940608)", MACHINE_SUPPORTS_SAVE )
 GAME( 1993, punisherb,   punisher, qsound,     punisher, cps_state, punisherb,ROT0,   "hack", "The Punisher (Bootleg)", MACHINE_SUPPORTS_SAVE)
 GAME( 2007, punisherf,   punisher, qsound,     punisher, cps_state, punisherb,ROT0,   "Zhyxxxx", "The Punisher (Flash version) 2007-09-24", MACHINE_SUPPORTS_SAVE)
 GAME( 2009, punisherje1, punisher, qsound,     punisher, cps_state, punisher, ROT0,   "Zhyxxxx", "The Punisher (SM Experience Edition hack by Zhyxxxx set 1 2009-06-12)", MACHINE_SUPPORTS_SAVE )

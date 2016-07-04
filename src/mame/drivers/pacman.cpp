@@ -7309,7 +7309,7 @@ GAME( 1999, superabco,superabc, superabc, superabc, pacman_state,  superabc, ROT
 GAME( 1981, pengojpm, pengo,    pengojpm, pengojpm, driver_device, 0,        ROT90,  "bootleg", "Pengo (bootleg on Pac-Man hardware, set 1)", MACHINE_SUPPORTS_SAVE ) // conversion of pacmanjpm board with wire mods
 GAME( 1981, pengopac, pengo,    pengojpm, pengojpm, driver_device, 0,        ROT90,  "bootleg", "Pengo (bootleg on Pac-Man hardware, set 2)", MACHINE_SUPPORTS_SAVE ) // different conversion?
 
-#include "pacman_hb.cpp"
-#include "mspacman_hb.cpp"
-#include "multipac_hb.cpp"
-#include "maketrax_hb.cpp"
+#include "pachb_pacman.hxx"
+#include "pachb_mspac.hxx"
+#include "pachb_multi.hxx"
+#include "pachb_misc.hxx"

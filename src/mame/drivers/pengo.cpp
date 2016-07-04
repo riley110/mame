@@ -739,4 +739,4 @@ GAME( 1982, pengob,   pengo, pengo,  pengo, pengo_state, penta,    ROT90, "bootl
 GAME( 1982, penta,    pengo, pengo,  pengo, pengo_state, penta,    ROT90, "bootleg (Grinbee Shouji)", "Penta", MACHINE_SUPPORTS_SAVE ) // Grinbee Shouji was a subsidiary of Orca
 GAME( 1983, jrpacmbl, jrpacman, jrpacmbl, jrpacmbl, driver_device, 0, ROT90, "bootleg", "Jr. Pac-Man (Pengo hardware)", MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
 
-#include "pengo_hb.cpp"
+#include "pengo_hb.hxx"

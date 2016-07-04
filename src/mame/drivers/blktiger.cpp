@@ -621,4 +621,4 @@ GAME( 1987, blkdrgonb,  blktiger, blktigerbl, blktiger, driver_device, 0, ROT0, 
 // this board has Capcom markings (boards 87118-A-X1 / 87118-B-X1, but no MCU, a mix of bootleg Black Tiger and Black Dragon roms, and an address swapped sound rom? is the latter an alternative security measure?
 GAME( 1987, blktigerb3, blktiger, blktigerbl, blktiger, blktiger_state, blktigerb3, ROT0, "bootleg", "Black Tiger / Black Dragon (mixed bootleg?)", MACHINE_SUPPORTS_SAVE )
 
-#include "blktiger_hb.cpp"
+#include "blktiger_hb.hxx"

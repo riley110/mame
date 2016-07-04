@@ -682,4 +682,4 @@ GAME( 1993, powerinsj, powerins, powerins,  powerinj, driver_device, 0, ROT0, "A
 GAME( 1993, powerinsa, powerins, powerinsa, powerins, driver_device, 0, ROT0, "bootleg", "Power Instinct (USA, bootleg set 1)", MACHINE_SUPPORTS_SAVE )
 GAME( 1993, powerinsb, powerins, powerinsb, powerins, driver_device, 0, ROT0, "bootleg", "Power Instinct (USA, bootleg set 2)", MACHINE_SUPPORTS_SAVE )
 
-#include "powerins_hb.cpp"
+#include "powerins_hb.hxx"

@@ -523,7 +523,7 @@ GAME( 2003, seq2,     seq1,     pachack,  pacman,  driver_device, 0,        ROT9
 /* Other Misc Hacks */
 
 GAME( 2002, crashh,   0,        woodpek,  mspacpls, driver_device, 0,        ROT90, "hack", "Crash (from HBMAME)", MACHINE_SUPPORTS_SAVE )
-GAME( 1981, mtturbo,  0,        pacmanp,  maketrax, pacman_state,  maketrax, ROT270,"Tim Arcadecollecting", "Make Trax (Turbo Hack)", MACHINE_SUPPORTS_SAVE ) // http://www.arcadecollecting.com/hacks/maketrax
+GAME( 1981, mtturbo,  crush,    pacmanp,  maketrax, pacman_state,  maketrax, ROT270,"Tim Arcadecollecting", "Make Trax (Turbo Hack)", MACHINE_SUPPORTS_SAVE ) // http://www.arcadecollecting.com/hacks/maketrax
 GAME( 1999, tst_pacm, 0,        pacman,   mspacpls, driver_device, 0,        ROT90, "David Caldwell", "Test - Pacman Hardware", MACHINE_SUPPORTS_SAVE ) // http://www.porkrind.org/arcade/
 
 /* Other misc unemulated dumps */

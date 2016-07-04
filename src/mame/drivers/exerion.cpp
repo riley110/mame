@@ -579,4 +579,4 @@ GAME( 1983, exerion,  0,       exerion, exerion, exerion_state, exerion,  ROT90,
 GAME( 1983, exeriont, exerion, exerion, exerion, exerion_state, exerion,  ROT90, "Jaleco (Taito America license)", "Exerion (Taito)", MACHINE_SUPPORTS_SAVE )
 GAME( 1983, exerionb, exerion, exerion, exerion, exerion_state, exerionb, ROT90, "bootleg", "Exerion (bootleg)", MACHINE_SUPPORTS_SAVE )
 
-#include "exerion_hb.cpp"
+#include "exerion_hb.hxx"

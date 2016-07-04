@@ -34,4 +34,4 @@ ROM_START( cenmario )
 	ROM_LOAD( "mario.4p",     0x0000, 0x0200, CRC(afc9bd41) SHA1(90b739c4c7f24a88b6ac5ca29b06c032906a2801) )
 ROM_END
 
-GAME( 2002, cenmario, 0, mario, marioj, driver_device, 0, ROT0, "Hack", "Censored Mario Bros.", MACHINE_SUPPORTS_SAVE )
+GAME( 2002, cenmario, mario, mario, marioj, driver_device, 0, ROT0, "Hack", "Censored Mario Bros.", MACHINE_SUPPORTS_SAVE )

@@ -2829,12 +2829,12 @@ GAME( 2000, msberzk,  mspacman, woodpek,  mspacman, driver_device, 0,        ROT
 
 /* Hires hacks */
 
-GAME( 1981, mspacatx, mspacmnx, mspacmnx, mspacpls, pacman_state, mspacman,  ROT90, "hack", "Ms. Pac Attack (hires hack)", MACHINE_SUPPORTS_SAVE )
-GAME( 1981, mspacmbx, mspacmnx, woodpekx, mspacman, driver_device, 0,        ROT90, "bootleg", "Ms. Pac-Man (bootleg) (hires hack)", MACHINE_SUPPORTS_SAVE )
-GAME( 1981, mspacmfx, mspacmnx, mspacmnx, mspacpls, pacman_state, mspacman,  ROT90, "Midway", "Ms. Pac-Man (hires hack) [f]", MACHINE_SUPPORTS_SAVE )
-GAME( 1981, mspacmnx, 0,        mspacmnx, mspacpls, pacman_state, mspacman,  ROT90, "Midway", "Ms. Pac-Man (hires hack)", MACHINE_SUPPORTS_SAVE )
-GAME( 1981, mspacplx, mspacmnx, woodpekx, mspacpls, driver_device, 0,        ROT90, "hack", "Ms. Pac-Man Plus (hires hack) [c]", MACHINE_SUPPORTS_SAVE )
-GAME( 1981, pacgalx,  mspacmnx, woodpekx, mspacman, driver_device, 0,        ROT90, "hack", "Pac-Gal (hires hack)", MACHINE_SUPPORTS_SAVE )
+GAME( 1981, mspacatx, mspacman, mspacmnx, mspacpls, pacman_state, mspacman,  ROT90, "hack", "Ms. Pac Attack (hires hack)", MACHINE_SUPPORTS_SAVE )
+GAME( 1981, mspacmbx, mspacman, woodpekx, mspacman, driver_device, 0,        ROT90, "bootleg", "Ms. Pac-Man (bootleg) (hires hack)", MACHINE_SUPPORTS_SAVE )
+GAME( 1981, mspacmfx, mspacman, mspacmnx, mspacpls, pacman_state, mspacman,  ROT90, "Midway", "Ms. Pac-Man (hires hack) [f]", MACHINE_SUPPORTS_SAVE )
+GAME( 1981, mspacmnx, mspacman, mspacmnx, mspacpls, pacman_state, mspacman,  ROT90, "Midway", "Ms. Pac-Man (hires hack)", MACHINE_SUPPORTS_SAVE )
+GAME( 1981, mspacplx, mspacman, woodpekx, mspacpls, driver_device, 0,        ROT90, "hack", "Ms. Pac-Man Plus (hires hack) [c]", MACHINE_SUPPORTS_SAVE )
+GAME( 1981, pacgalx,  mspacman, woodpekx, mspacman, driver_device, 0,        ROT90, "hack", "Pac-Gal (hires hack)", MACHINE_SUPPORTS_SAVE )
 
 /* Misc MsPacman Hacks */
 

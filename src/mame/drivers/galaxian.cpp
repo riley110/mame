@@ -11747,4 +11747,4 @@ GAME( 1984, spdcoin,     0,        scobra,     spdcoin,    galaxian_state, scobr
 
 GAME( 1985, superbon,    0,        scobra,     superbon,   galaxian_state, superbon,   ROT90,  "Signatron USA", "Agent Super Bond (Super Cobra conversion)", MACHINE_WRONG_COLORS | MACHINE_SUPPORTS_SAVE )
 
-#include "galaxian_hb.cpp"
+#include "galaxian_hb.hxx"

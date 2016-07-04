@@ -12349,4 +12349,4 @@ CONS( 1995, sfzbch, sfzch, 0, cps1_12MHz, sfzch,      cps_state, cps1,     "Capc
 
 // Ken Sei Mogura: Street Fighter II - see kenseim.c
 
-#include "cps1_hb.cpp"
+#include "cps1_hb.hxx"

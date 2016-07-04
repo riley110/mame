@@ -3013,4 +3013,4 @@ GAME( 1991, vimana,     0,        vimana,   vimana,    toaplan1_state, vimana,  
 GAME( 1991, vimanan,    vimana,   vimana,   vimanan,   toaplan1_state, vimana,   ROT270, "Toaplan", "Vimana (World, set 2)", MACHINE_NO_SOUND )
 GAME( 1991, vimanaj,    vimana,   vimana,   vimanaj,   toaplan1_state, vimana,   ROT270, "Toaplan", "Vimana (Japan)", MACHINE_NO_SOUND )
 
-#include "toaplan1_hb.cpp"
+#include "toaplan1_hb.hxx"

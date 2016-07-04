@@ -1624,4 +1624,4 @@ GAME( 1987, reaktor,   0,        reaktor,  reaktor, driver_device,  0,        RO
 
 GAME( 1985, yieartf,   yiear,    yieartf,  yieartf, driver_device,  0,        ROT0,  "Konami",                                "Yie Ar Kung-Fu (GX361 conversion)", MACHINE_SUPPORTS_SAVE ) // the conversion looks of bootleg quality, but the code is clearly a very different revision to either original hardware set...
 
-#include "trackfld_hb.cpp"
+#include "trackfld_hb.hxx"

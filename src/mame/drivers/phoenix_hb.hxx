@@ -130,4 +130,4 @@ GAME( 2000, phoenixr, phoenix, phoenix,  phoenix , driver_device, 0, ROT90, "CYB
 GAME( 1980, phoenixg, phoenix, phoenix,  phoenixt, driver_device, 0, ROT90, "GreekRoms", "Phoenix (Greek)", MACHINE_SUPPORTS_SAVE )
 GAME( 1981, phoenixd, phoenix, phoenix,  phoenix , driver_device, 0, ROT90, "G.G.I. Corporation", "Phoenix (GGI)", MACHINE_SUPPORTS_SAVE )
 GAME( 1981, phoenix4, phoenix, phoenix,  phoenix , driver_device, 0, ROT90, "unknown", "Phoenix", MACHINE_SUPPORTS_SAVE )
-GAME( 1981, pleiads2, 0,       pleiads,  pleiads,  driver_device, 0, ROT90, "ESG", "Pleiads", MACHINE_SUPPORTS_SAVE )
+GAME( 1981, pleiads2, pleiads, pleiads,  pleiads,  driver_device, 0, ROT90, "ESG", "Pleiads", MACHINE_SUPPORTS_SAVE )

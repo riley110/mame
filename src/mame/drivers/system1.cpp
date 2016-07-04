@@ -5438,4 +5438,4 @@ GAME( 1987, blockgalb,  blockgal, sys2x,             blockgal,  system1_state, b
 GAME( 1988, ufosensi,   0,        sys2rowxb,         ufosensi,  system1_state, ufosensi,        ROT0,   "Sega", "Ufo Senshi Yohko Chan (MC-8123, 317-0064)", MACHINE_SUPPORTS_SAVE )
 GAME( 1988, ufosensib,  ufosensi, sys2rowxb,         ufosensi,  system1_state, bootsys2,        ROT0,   "bootleg", "Ufo Senshi Yohko Chan (bootleg, not encrypted)", MACHINE_SUPPORTS_SAVE )
 
-#include "system1_hb.cpp"
+#include "system1_hb.hxx"

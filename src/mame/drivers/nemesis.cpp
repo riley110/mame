@@ -2740,4 +2740,4 @@ ROM_END
 
 GAME( 1985, bubsys,   0,         bubsys,    nemesis, driver_device,   0,    ROT0,   "Konami", "Bubble System BIOS", MACHINE_IS_BIOS_ROOT | MACHINE_NOT_WORKING )
 
-#include "nemesis_hb.cpp"
+#include "nemesis_hb.hxx"

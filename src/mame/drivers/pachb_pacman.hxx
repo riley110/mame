@@ -3759,22 +3759,22 @@ GAME( 2000, pacmini2, puckman,  pacman,   pacman,   driver_device, 0,        ROT
 
 /* Hires hacks */
 
-GAME( 1981, hanglyx,  puckmanx, pacmanx,  pacman,   driver_device, 0,        ROT90, "hack", "Hangly-Man (set 1) (hires hack)", MACHINE_SUPPORTS_SAVE )
-GAME( 1981, hangly2x, puckmanx, pacmanx,  pacman,   driver_device, 0,        ROT90, "hack", "Hangly-Man (set 2) (hires hack)", MACHINE_SUPPORTS_SAVE )
-GAME( 1981, hangly3x, puckmanx, pacmanx,  pacman,   driver_device, 0,        ROT90, "hack", "Hangly-Man (set 3) (hires hack)", MACHINE_SUPPORTS_SAVE )
-GAME( 1980, newpuc2x, puckmanx, pacmanx,  pacman,   driver_device, 0,        ROT90, "hack", "Newpuc2 (hires hack)", MACHINE_SUPPORTS_SAVE )
-GAME( 1980, nwpuc2bx, puckmanx, pacmanx,  pacman,   driver_device, 0,        ROT90, "hack", "Newpuc2 (set 2) (hires hack)", MACHINE_SUPPORTS_SAVE )
-GAME( 1980, nwpuckxx, puckmanx, pacmanx,  pacman,   driver_device, 0,        ROT90, "hack", "New Puck-X (hires hack)", MACHINE_SUPPORTS_SAVE )
-GAME( 1980, pacmanx,  puckmanx, pacmanx,  pacman,   driver_device, 0,        ROT90, "[Namco] (Midway license)", "Pac-Man (Midway) (hires hack)", MACHINE_SUPPORTS_SAVE )
-GAME( 1980, pacmanfx, puckmanx, pacmanx,  pacman,  driver_device, 0,        ROT90, "[Namco] (Midway license)", "Pac-Man (Midway) (hires hack) [f]", MACHINE_SUPPORTS_SAVE )
-GAME( 1981, pacmodx,  puckmanx, pacmanx,  pacman,   driver_device, 0,        ROT90, "[Namco] (Midway license)", "Pac-Man (Midway, harder) (hires hack)", MACHINE_SUPPORTS_SAVE )
-GAME( 1982, pacplusx, puckmanx, pacmanx,  pacman,   pacman_state,  pacplus,  ROT90, "[Namco] (Midway license)", "Pac-Man Plus (hires hack)", MACHINE_SUPPORTS_SAVE )
-GAME( 1981, pheartx,  puckmanx, pacmanx,  pacman,   driver_device, 0,        ROT90, "hack", "Pac-Man (Hearts) (hires hack)", MACHINE_SUPPORTS_SAVE )
-GAME( 1980, puckmanx, 0,        pacmanx,  pacman,   driver_device, 0,        ROT90, "Namco", "PuckMan (Japan set 1, Probably Bootleg) (hires hack)", MACHINE_SUPPORTS_SAVE )
-GAME( 1980, puckmnax, puckmanx, pacmanx,  pacman,   driver_device, 0,        ROT90, "Namco", "PuckMan (Japan set 2) (hires hack)", MACHINE_SUPPORTS_SAVE )
-GAME( 1980, puckmnfx, puckmanx, pacmanx,  pacman,  driver_device, 0,        ROT90, "Namco", "PuckMan (Japan set 1) (hires hack) [f]", MACHINE_SUPPORTS_SAVE )
-GAME( 1980, puckmnhx, puckmanx, pacmanx,  pacman,   driver_device, 0,        ROT90, "hack", "Puckman (Falcom?) (hires hack)", MACHINE_SUPPORTS_SAVE )
-GAME( 1981, puckmodx, puckmanx, pacmanx,  pacman,   driver_device, 0,        ROT90, "Namco", "PuckMan (Japan set 3) (hires hack)", MACHINE_SUPPORTS_SAVE )
+GAME( 1981, hanglyx,  puckman, pacmanx,  pacman,   driver_device, 0,        ROT90, "hack", "Hangly-Man (set 1) (hires hack)", MACHINE_SUPPORTS_SAVE )
+GAME( 1981, hangly2x, puckman, pacmanx,  pacman,   driver_device, 0,        ROT90, "hack", "Hangly-Man (set 2) (hires hack)", MACHINE_SUPPORTS_SAVE )
+GAME( 1981, hangly3x, puckman, pacmanx,  pacman,   driver_device, 0,        ROT90, "hack", "Hangly-Man (set 3) (hires hack)", MACHINE_SUPPORTS_SAVE )
+GAME( 1980, newpuc2x, puckman, pacmanx,  pacman,   driver_device, 0,        ROT90, "hack", "Newpuc2 (hires hack)", MACHINE_SUPPORTS_SAVE )
+GAME( 1980, nwpuc2bx, puckman, pacmanx,  pacman,   driver_device, 0,        ROT90, "hack", "Newpuc2 (set 2) (hires hack)", MACHINE_SUPPORTS_SAVE )
+GAME( 1980, nwpuckxx, puckman, pacmanx,  pacman,   driver_device, 0,        ROT90, "hack", "New Puck-X (hires hack)", MACHINE_SUPPORTS_SAVE )
+GAME( 1980, pacmanx,  puckman, pacmanx,  pacman,   driver_device, 0,        ROT90, "[Namco] (Midway license)", "Pac-Man (Midway) (hires hack)", MACHINE_SUPPORTS_SAVE )
+GAME( 1980, pacmanfx, puckman, pacmanx,  pacman,  driver_device, 0,        ROT90, "[Namco] (Midway license)", "Pac-Man (Midway) (hires hack) [f]", MACHINE_SUPPORTS_SAVE )
+GAME( 1981, pacmodx,  puckman, pacmanx,  pacman,   driver_device, 0,        ROT90, "[Namco] (Midway license)", "Pac-Man (Midway, harder) (hires hack)", MACHINE_SUPPORTS_SAVE )
+GAME( 1982, pacplusx, puckman, pacmanx,  pacman,   pacman_state,  pacplus,  ROT90, "[Namco] (Midway license)", "Pac-Man Plus (hires hack)", MACHINE_SUPPORTS_SAVE )
+GAME( 1981, pheartx,  puckman, pacmanx,  pacman,   driver_device, 0,        ROT90, "hack", "Pac-Man (Hearts) (hires hack)", MACHINE_SUPPORTS_SAVE )
+GAME( 1980, puckmanx, puckman, pacmanx,  pacman,   driver_device, 0,        ROT90, "Namco", "PuckMan (Japan set 1, Probably Bootleg) (hires hack)", MACHINE_SUPPORTS_SAVE )
+GAME( 1980, puckmnax, puckman, pacmanx,  pacman,   driver_device, 0,        ROT90, "Namco", "PuckMan (Japan set 2) (hires hack)", MACHINE_SUPPORTS_SAVE )
+GAME( 1980, puckmnfx, puckman, pacmanx,  pacman,  driver_device, 0,        ROT90, "Namco", "PuckMan (Japan set 1) (hires hack) [f]", MACHINE_SUPPORTS_SAVE )
+GAME( 1980, puckmnhx, puckman, pacmanx,  pacman,   driver_device, 0,        ROT90, "hack", "Puckman (Falcom?) (hires hack)", MACHINE_SUPPORTS_SAVE )
+GAME( 1981, puckmodx, puckman, pacmanx,  pacman,   driver_device, 0,        ROT90, "Namco", "PuckMan (Japan set 3) (hires hack)", MACHINE_SUPPORTS_SAVE )
 
 /* Misc Pacman Hacks */
 

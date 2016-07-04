@@ -37,4 +37,4 @@ ROM_END
 HACK by The Gameland Crew (http://www.gameland.gr)
 Maddog, Whacker, Badge, Geoanas */
 
-GAME( 2004, athens04, 0, trackfld, trackfld, trackfld_state, trackfld, ROT0, "Gameland.gr", "Athens 2004", MACHINE_SUPPORTS_SAVE )
+GAME( 2004, athens04, trackfld, trackfld, trackfld, trackfld_state, trackfld, ROT0, "Gameland.gr", "Athens 2004", MACHINE_SUPPORTS_SAVE )

@@ -1729,4 +1729,4 @@ GAME( 1988, vindctr2,   0,        vindctr2, vindctr2, gauntlet_state, vindctr2, 
 GAME( 1988, vindctr2r2, vindctr2, vindctr2, vindctr2, gauntlet_state, vindctr2,  ROT0, "Atari Games", "Vindicators Part II (rev 2)", 0 )
 GAME( 1988, vindctr2r1, vindctr2, vindctr2, vindctr2, gauntlet_state, vindctr2,  ROT0, "Atari Games", "Vindicators Part II (rev 1)", 0 )
 
-#include "gauntlet_hb.cpp"
+#include "gauntlet_hb.hxx"
