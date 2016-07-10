@@ -214,6 +214,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<info name="usage" value="Run with G100"/>
+
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="3194">
 				<rom name="football.rka" size="3194" crc="4f77e321" sha1="dd4cc6d515b441537a52111b74ba04ec4470bbef" offset="0" />
@@ -245,11 +246,11 @@
 		</part>
 	</software>
 
-	<software name="gonki1">
+	<!-- Uses graphics mode 2, playable with garbage screen -->
+	<software name="gonki1" supported="no">
 		<description>Gonki-1</description>
 		<year>1988</year>
 		<publisher>WWW Software</publisher>
-		<info name="usage" value="Requires graphics expansion"/>
 
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="29355">
@@ -570,11 +571,11 @@
 		</part>
 	</software>
 
-	<software name="ptichij">
+	<!-- Uses graphics mode 2, shows nothing after info screen -->
+	<software name="ptichij" supported="no">
 		<description>Ptichij Dvor</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Requires graphics expansion"/>
 
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="4169">
@@ -667,11 +668,11 @@
 		</part>
 	</software>
 
-	<software name="planeta">
+	<!-- Uses graphics mode 2, shows nothing after info screen -->
+	<software name="planeta" supported="no">
 		<description>Planeta</description>
 		<year>1991</year>
 		<publisher>PS</publisher>
-		<info name="usage" value="Requires graphics expansion"/>
 
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="17401">
@@ -824,11 +825,11 @@
 		</part>
 	</software>
 
-	<software name="shmel">
+	<!-- Uses graphics mode 2, shows nothing after info screen -->
+	<software name="shmel" supported="no">
 		<description>Zvezdolyot Shmel</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Requires graphics expansion"/>
 
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="9257">
@@ -1041,11 +1042,11 @@
 		</part>
 	</software>
 
-	<software name="tryasina">
+	<!-- Uses graphics mode 2, shows nothing after info screen -->
+	<software name="tryasina" supported="no">
 		<description>Tryasina</description>
 		<year>1991</year>
 		<publisher>PS</publisher>
-		<info name="usage" value="Requires graphics expansion"/>
 
 		<part name="cass" interface="apogee_cass">
 			<dataarea name="cass" size="8828">
@@ -1128,7 +1129,8 @@
 
 <!-- System -->
 
-	<software name="basgraph">
+	<!-- Uses graphics mode 2, shows nothing -->
+	<software name="basgraph" supported="no">
 		<description>BASIC for graphic mode</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
