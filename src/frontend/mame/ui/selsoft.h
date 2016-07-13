@@ -13,28 +13,22 @@
 #define MAME_FRONTEND_UI_SELSOFT_H
 
 #include "ui/custmenu.h"
+#include "ui/selmenu.h"
 
 namespace ui {
 using s_bios = std::vector<std::pair<std::string, int>>;
 using s_parts = std::unordered_map<std::string, std::string>;
 
 // Menu Class
-class menu_select_software : public menu
+class menu_select_software : public menu_select_launch
 {
 public:
-	menu_select_software(mame_ui_manager &mui, render_container *container, const game_driver *driver);
+	menu_select_software(mame_ui_manager &mui, render_container &container, const game_driver *driver);
 	virtual ~menu_select_software() override;
-	virtual void populate() override;
-	virtual void handle() override;
+
+protected:
 	virtual void custom_render(void *selectedref, float top, float bottom, float x, float y, float x2, float y2) override;
-
 	virtual bool menu_has_search_active() override { return (m_search[0] != 0); }
-
-	// draw left panel
-	virtual float draw_left_panel(float x1, float y1, float x2, float y2) override;
-
-	// draw right panel
-	virtual void draw_right_panel(void *selectedref, float origx1, float origy1, float origx2, float origy2) override;
 
 private:
 	enum { VISIBLE_GAMES_IN_SEARCH = 200 };
@@ -43,6 +37,15 @@ private:
 	bool                m_has_empty_start;
 	s_filter            m_filter;
 	int                 highlight;
+
+	virtual void populate() override;
+	virtual void handle() override;
+
+	// draw left panel
+	virtual float draw_left_panel(float x1, float y1, float x2, float y2) override;
+
+	// draw right panel
+	virtual void draw_right_panel(void *selectedref, float origx1, float origy1, float origx2, float origy2) override;
 
 	ui_software_info                  *m_searchlist[VISIBLE_GAMES_IN_SEARCH + 1];
 	std::vector<ui_software_info *>   m_displaylist, m_tmp, m_sortedlist;
@@ -66,13 +69,16 @@ private:
 class software_parts : public menu
 {
 public:
-	software_parts(mame_ui_manager &mui, render_container *container, s_parts parts, ui_software_info *ui_info);
+	software_parts(mame_ui_manager &mui, render_container &container, s_parts parts, ui_software_info *ui_info);
 	virtual ~software_parts() override;
-	virtual void populate() override;
-	virtual void handle() override;
+
+protected:
 	virtual void custom_render(void *selectedref, float top, float bottom, float x, float y, float x2, float y2) override;
 
 private:
+	virtual void populate() override;
+	virtual void handle() override;
+
 	ui_software_info *m_uiinfo;
 	s_parts m_parts;
 };
@@ -80,13 +86,15 @@ private:
 class bios_selection : public menu
 {
 public:
-	bios_selection(mame_ui_manager &mui, render_container *container, s_bios biosname, void *driver, bool software, bool inlist);
+	bios_selection(mame_ui_manager &mui, render_container &container, s_bios biosname, void *driver, bool software, bool inlist);
 	virtual ~bios_selection() override;
-	virtual void populate() override;
-	virtual void handle() override;
+
+protected:
 	virtual void custom_render(void *selectedref, float top, float bottom, float x, float y, float x2, float y2) override;
 
 private:
+	virtual void populate() override;
+	virtual void handle() override;
 
 	void    *m_driver;
 	bool    m_software, m_inlist;

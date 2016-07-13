@@ -147,7 +147,7 @@ void menu_slot_devices::set_slot_device(device_slot_interface &slot, const char 
     slot device menu
 -------------------------------------------------*/
 
-menu_slot_devices::menu_slot_devices(mame_ui_manager &mui, render_container *container) : menu(mui, container)
+menu_slot_devices::menu_slot_devices(mame_ui_manager &mui, render_container &container) : menu(mui, container)
 {
 }
 
@@ -168,10 +168,10 @@ void menu_slot_devices::populate()
 				opt_name.append(_(" [internal]"));
 		}
 
-		item_append(slot.device().tag() + 1, opt_name.c_str(), (slot.fixed() || slot_get_length(slot) == 0) ? 0 : (FLAG_LEFT_ARROW | FLAG_RIGHT_ARROW), (void *)&slot);
+		item_append(slot.device().tag() + 1, opt_name, (slot.fixed() || slot_get_length(slot) == 0) ? 0 : (FLAG_LEFT_ARROW | FLAG_RIGHT_ARROW), (void *)&slot);
 	}
 	item_append(menu_item_type::SEPARATOR);
-	item_append(_("Reset"),  nullptr, 0, (void *)1);
+	item_append(_("Reset"), "", 0, (void *)1);
 }
 
 menu_slot_devices::~menu_slot_devices()
@@ -206,7 +206,7 @@ void menu_slot_devices::handle()
 			device_slot_interface *slot = (device_slot_interface *)menu_event->itemref;
 			device_slot_option *option = slot_get_current_option(*slot);
 			if (option)
-				menu::stack_push<menu_device_config>(ui(), container, slot, option);
+				menu::stack_push<menu_device_config>(ui(), container(), slot, option);
 		}
 	}
 }

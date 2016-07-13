@@ -14,6 +14,8 @@
 #define MAME_FRONTEND_UI_IMAGECNTRL_H
 
 #include "ui/menu.h"
+#include "ui/filesel.h"
+#include "ui/swlist.h"
 
 namespace ui {
 // ======================> menu_control_device_image
@@ -21,10 +23,8 @@ namespace ui {
 class menu_control_device_image : public menu
 {
 public:
-	menu_control_device_image(mame_ui_manager &mui, render_container *container, device_image_interface *image);
+	menu_control_device_image(mame_ui_manager &mui, render_container &container, device_image_interface *image);
 	virtual ~menu_control_device_image() override;
-	virtual void populate() override;
-	virtual void handle() override;
 
 protected:
 	enum {
@@ -37,16 +37,29 @@ protected:
 	// protected instance variables
 	int state;
 	device_image_interface *image;
-	int submenu_result;
-	std::string current_directory;
-	std::string current_file;
+
+	// this is a single union that contains all of the different types of
+	// results we could get from child menus
+	union
+	{
+		menu_file_selector::result filesel;
+		menu_software_parts::result swparts;
+		menu_select_rw::result rw;
+		int i;
+	} submenu_result;
+
+	std::string m_current_directory;
+	std::string m_current_file;
 
 	// methods
 	virtual void hook_load(std::string filename, bool softlist);
+	virtual void handle() override;
 
 	bool create_ok;
 
 private:
+	virtual void populate() override;
+
 	// instance variables
 	bool create_confirmed;
 	//bool softlist_done;

@@ -19,7 +19,7 @@ namespace ui {
  menu
  -------------------------------------------------*/
 
-menu_device_config::menu_device_config(mame_ui_manager &mui, render_container *container, device_slot_interface *slot, device_slot_option *option) : menu(mui, container)
+menu_device_config::menu_device_config(mame_ui_manager &mui, render_container &container, device_slot_interface *slot, device_slot_option *option) : menu(mui, container)
 {
 	m_option = option;
 	m_owner = slot;
@@ -266,7 +266,7 @@ void menu_device_config::populate()
 			str << "[None]\n";
 
 	const_cast<machine_config &>(machine().config()).device_remove(&machine().config().root_device(), m_option->name());
-	item_append(str.str().c_str(), nullptr, FLAG_MULTILINE, nullptr);
+	item_append(str.str(), "", FLAG_MULTILINE, nullptr);
 }
 
 void menu_device_config::handle()

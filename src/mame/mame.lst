@@ -12322,6 +12322,9 @@ fccpu30                         //
 @source:fcscsi.cpp
 fcscsi1                         //
 
+@source:fcisio.cpp
+fcisio1                         //
+
 @source:fcombat.cpp
 fcombat                         // (c) 1985 Jaleco
 
@@ -12511,8 +12514,8 @@ fccpu1                          //
 pesadelo                        // (c) 1989 Forte II Games
 
 @source:fortecar.cpp
-fortecar                        //
-fortecrd                        //
+fortecrd                        // (c) 1994, Fortex Ltd.
+fortecar                        // (c) 1994, Fortex Ltd.
 
 @source:fp1100.cpp
 fp1100                          //
@@ -13961,8 +13964,8 @@ gstrikera                       // (c) [1993] Human
 gstrikerj                       // (c) [1993] Human
 twrldc94                        // (c) 1994 Tecmo
 twrldc94a                       // (c) 1994 Tecmo
-vgoalsca                        // (c) 199? Temco
-vgoalsoc                        // (c) 199? Temco
+vgoalsca                        // (c) 199? Tecmo
+vgoalsoc                        // (c) 199? Tecmo
 
 @source:gsword.cpp
 gsword                          // AC  (c) 1984 Taito Corporation
@@ -20071,6 +20074,7 @@ dodgectyc                       // (c) 1986 Merit
 dtrvwz5                         // (c) 1987 Merit
 iowapp                          // (c) 1990 Merit
 misdraw                         // (c) 1986 Merit / Big Apple Games
+mpchoice                        // (c) 1986 Merit
 mroundup                        // (c) 1984 Merit
 phrcraze                        // (c) 1986 Merit
 phrcrazea                       // (c) 1986 Merit
@@ -27783,11 +27787,11 @@ murogmbl                        // ???
 @source:mustache.cpp
 mustache                        // (c) 1987 March
 
-@source:mvme350.cpp
-mvme350                         //
-
 @source:mvme147.cpp
 mvme147                         // (c) 1989 Motorola
+
+@source:mvme350.cpp
+mvme350                         //
 
 @source:mw18w.cpp
 18w                             // 653 (c) 1979 Midway
@@ -32572,6 +32576,9 @@ pockchal
 @source:pockstat.cpp
 pockstat                        // 1999 Sony PocketStation
 
+@source:pofo.cpp
+pofo                            //
+
 @source:poisk1.cpp
 poisk1                          //
 
@@ -32651,9 +32658,6 @@ popobear                        // (c) 2000 BMC
 @source:popper.cpp
 popper                          // (c) 1983 Omori Electric Co., Ltd.
 
-@source:portfoli.cpp
-pofo                            //
-
 @source:portrait.cpp
 portrait                        // (c) 1983 Olympia
 portraita                       // (c) 1983 Olympia
@@ -32705,6 +32709,7 @@ gwnf                            // Genius Winner Notebook Fun (Germany)
 prestige                        // PreComputer Prestige Elite
 snotec                          // Bandai Super Note Club (Japan)
 snotecex                        // Bandai Super Note Club EX (Japan)
+princ                           // Tomy Prin-C (Japan)
 
 @source:primo.cpp
 primoa32                        // Primo A-32
@@ -36086,10 +36091,13 @@ sun3_460                        //
 sun_s10                         //
 sun_s20                         //
 sun4_20                         //
+sun4_110						//
 sun4_300                        //
+sun4_400						//
 sun4_40                         //
 sun4_50                         //
 sun4_60                         //
+sun4_65							//
 sun4_75                         //
 
 @source:suna16.cpp
