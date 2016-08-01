@@ -48,12 +48,12 @@ public:
 	{
 		HRESULT result;
 
-		m_avi_writer = std::make_unique<avi_write>(machine, width, height);				
+		m_avi_writer = std::make_unique<avi_write>(machine, width, height);
 
 		m_frame.allocate(width, height);
 		if (!m_frame.valid())
 			return;
-	
+
 		result = d3d->get_device()->CreateTexture(width, height, 1, D3DUSAGE_DYNAMIC, D3DFMT_A8R8G8B8, D3DPOOL_SYSTEMMEM, &m_sys_texture, nullptr);
 		if (FAILED(result))
 		{
@@ -69,7 +69,7 @@ public:
 			return;
 		}
 		m_vid_texture->GetSurfaceLevel(0, &m_vid_surface);
-		
+
 		m_initialized = true;
 	}
 
@@ -127,6 +127,14 @@ public:
 			osd_printf_verbose("Direct3D: Error %08lX during texture UnlockRect call\n", result);
 
 		m_avi_writer->video_frame(m_frame);
+	}
+
+	void add_audio(const INT16 *buffer, int samples_this_frame)
+	{
+		if (!m_initialized)
+			return;
+
+		m_avi_writer->audio_frame(buffer, samples_this_frame);
 	}
 
 	IDirect3DSurface9 * target_surface() { return m_vid_surface; }
@@ -194,7 +202,16 @@ void shaders::save_snapshot()
 	if (!enabled())
 		return;
 
-	HRESULT result = d3d->get_device()->CreateTexture(snap_width, snap_height, 1, D3DUSAGE_DYNAMIC, D3DFMT_A8R8G8B8, D3DPOOL_SYSTEMMEM, &snap_copy_texture, nullptr);
+	auto win = d3d->assert_window();
+
+	int width = snap_width;
+	int height = snap_height;
+	if (win->swap_xy())
+	{
+		std::swap(width, height);
+	}
+
+	HRESULT result = d3d->get_device()->CreateTexture(width, height, 1, D3DUSAGE_DYNAMIC, D3DFMT_A8R8G8B8, D3DPOOL_SYSTEMMEM, &snap_copy_texture, nullptr);
 	if (FAILED(result))
 	{
 		osd_printf_verbose("Direct3D: Unable to init system-memory target for HLSL snapshot (%08lX), bailing\n", result);
@@ -202,7 +219,7 @@ void shaders::save_snapshot()
 	}
 	snap_copy_texture->GetSurfaceLevel(0, &snap_copy_target);
 
-	result = d3d->get_device()->CreateTexture(snap_width, snap_height, 1, D3DUSAGE_RENDERTARGET, D3DFMT_A8R8G8B8, D3DPOOL_DEFAULT, &snap_texture, nullptr);
+	result = d3d->get_device()->CreateTexture(width, height, 1, D3DUSAGE_RENDERTARGET, D3DFMT_A8R8G8B8, D3DPOOL_DEFAULT, &snap_texture, nullptr);
 	if (FAILED(result))
 	{
 		osd_printf_verbose("Direct3D: Unable to init video-memory target for HLSL snapshot (%08lX), bailing\n", result);
@@ -230,9 +247,28 @@ void shaders::record_movie()
 		return;
 	}
 
-	recorder = std::make_unique<movie_recorder>(*machine, d3d, snap_width, snap_height);
+	auto win = d3d->assert_window();
+	osd_dim wdim = win->get_size();
+
+	recorder = std::make_unique<movie_recorder>(*machine, d3d, wdim.width(), wdim.height());
 	recorder->record(downcast<windows_options &>(machine->options()).d3d_hlsl_write());
 	recording_movie = true;
+}
+
+
+//============================================================
+//  shaders::record_audio
+//============================================================
+
+void shaders::record_audio(const INT16 *buffer, int samples_this_frame)
+{
+	if (!enabled())
+		return;
+
+	if (recording_movie)
+	{
+		recorder->add_audio(buffer, samples_this_frame);
+	}
 }
 
 
@@ -245,7 +281,16 @@ void shaders::render_snapshot(IDirect3DSurface9 *surface)
 	if (!enabled())
 		return;
 
-	bitmap_rgb32 snapshot(snap_width, snap_height);
+	auto win = d3d->assert_window();
+
+	int width = snap_width;
+	int height = snap_height;
+	if (win->swap_xy())
+	{
+		std::swap(width, height);
+	}
+
+	bitmap_rgb32 snapshot(width, height);
 	if (!snapshot.valid())
 		return;
 
@@ -259,12 +304,12 @@ void shaders::render_snapshot(IDirect3DSurface9 *surface)
 	if (FAILED(result))
 		return;
 
-	for (int y = 0; y < snap_height; y++)
+	for (int y = 0; y < height; y++)
 	{
 		DWORD *src = (DWORD *)((BYTE *)rect.pBits + y * rect.Pitch);
 		UINT32 *dst = &snapshot.pix32(y);
 
-		for (int x = 0; x < snap_width; x++)
+		for (int x = 0; x < width; x++)
 		{
 			*dst++ = *src++;
 		}
@@ -2524,9 +2569,9 @@ effect::effect(shaders *shadersys, IDirect3DDevice9 *dev, const char *name, cons
 
 	char name_cstr[1024];
 	sprintf(name_cstr, "%s\\%s", path, name);
-	TCHAR *effect_name = tstring_from_utf8(name_cstr);
+	auto effect_name = tstring_from_utf8(name_cstr);
 
-	HRESULT hr = (*shadersys->d3dx_create_effect_from_file_ptr)(dev, effect_name, nullptr, nullptr, 0, nullptr, &m_effect, &buffer_errors);
+	HRESULT hr = (*shadersys->d3dx_create_effect_from_file_ptr)(dev, effect_name.c_str(), nullptr, nullptr, 0, nullptr, &m_effect, &buffer_errors);
 	if (FAILED(hr))
 	{
 		if (buffer_errors != nullptr)
@@ -2543,8 +2588,6 @@ effect::effect(shaders *shadersys, IDirect3DDevice9 *dev, const char *name, cons
 	{
 		m_valid = true;
 	}
-
-	osd_free(effect_name);
 }
 
 effect::~effect()

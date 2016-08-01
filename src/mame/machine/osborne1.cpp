@@ -116,7 +116,12 @@ READ8_MEMBER( osborne1_state::opcode_r )
 	}
 
 	// Now that's sorted out we can call the normal read handler
-	return m_maincpu->space(AS_PROGRAM).read_byte(offset);
+	address_space &program_space(m_maincpu->space(AS_PROGRAM));
+	bool const prev_debugger_access(program_space.debugger_access());
+	program_space.set_debugger_access(space.debugger_access());
+	UINT8 const data(program_space.read_byte(offset));
+	program_space.set_debugger_access(prev_debugger_access);
+	return data;
 }
 
 WRITE8_MEMBER( osborne1_state::bankswitch_w )
@@ -216,13 +221,13 @@ WRITE8_MEMBER( osborne1_state::video_pia_port_b_w )
 
 	if (BIT(data, 6))
 	{
-		m_fdc->set_floppy(m_floppy0);
-		m_floppy0->mon_w(0);
+		m_fdc->set_floppy(m_floppy0->get_device());
+		m_floppy0->get_device()->mon_w(0);
 	}
 	else if (BIT(data, 7))
 	{
-		m_fdc->set_floppy(m_floppy1);
-		m_floppy1->mon_w(0);
+		m_fdc->set_floppy(m_floppy1->get_device());
+		m_floppy1->get_device()->mon_w(0);
 	}
 	else
 	{

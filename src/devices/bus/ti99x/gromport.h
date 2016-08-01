@@ -108,7 +108,7 @@ protected:
 	// Image handling: implementation of methods which are abstract in the parent
 	bool call_load() override;
 	void call_unload() override;
-	bool call_softlist_load(software_list_device &swlist, const char *swname, const rom_entry *start_entry) override;
+	virtual const software_list_loader &get_software_list_loader() const override { return rom_software_list_loader::instance(); }
 
 	void prepare_cartridge();
 
@@ -121,11 +121,9 @@ protected:
 	bool is_reset_on_load() const override       { return false; }
 	const char *image_interface() const override { return "ti99_cart"; }
 	const char *file_extensions() const override { return "rpk"; }
-	const option_guide *create_option_guide() const override { return nullptr; }
 
 private:
 	bool    m_readrom;
-	bool    m_softlist;
 	int     m_pcbtype;
 	int     m_slot;
 	int     get_index_from_tagname();
