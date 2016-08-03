@@ -3,11 +3,14 @@
 <!--
 Thanks to http://www.zorba.z80.de for info!
 
+Attempting to load any td0 dump in this list throws a fatalerror,
+and they are all marked as unsupported.
+
 The following "Oracle of Zeus" newsletter disks are known to be dumped,
 but require special permission for the dumps to be obtained:
 
-oracle12.td0    1983-11-01          Oracle of Zeus Vol.1 No.1
-                1984-01-01  113K    Oracle of Zeus Vol.1 No.2
+                1983-11-01          Oracle of Zeus Vol.1 No.1
+oracle12.td0    1984-01-01  113K    Oracle of Zeus Vol.1 No.2
 oracle13.td0    1984-03-01  182K    Oracle of Zeus Vol.1 No.3
 oracle14.td0    1984-06-01  191K    Oracle of Zeus Vol.1 No.4
 oracle15.td0    1984-09-01  195K    Oracle of Zeus Vol.1 No.5
@@ -21,7 +24,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 
 <!-- CP/M disks -->
 
-	<software name="compat">
+	<software name="compat" supported="no">
 		<description>Compat (v3.2)</description>
 		<year>1985</year>
 		<publisher>Mycroft Labs</publisher>
@@ -56,7 +59,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 	</software>
 
 	<!-- System disk was missing, using one from the parent set -->
-	<software name="cpm17" cloneof="cpm">
+	<software name="cpm17" cloneof="cpm" supported="partial">
 		<description>58K CP/M (v2.2, BIOS v1.7)</description>
 		<year>1984</year>
 		<publisher>Telcon</publisher>
@@ -78,7 +81,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 		</part>
 	</software>
 
-	<software name="cpm16" cloneof="cpm">
+	<software name="cpm16" cloneof="cpm" supported="no">
 		<description>58K CP/M (v2.2, BIOS v1.6)</description>
 		<year>1984</year>
 		<publisher>Telcon</publisher>
@@ -95,7 +98,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 		</part>
 	</software>
 
-	<software name="cpm16a" cloneof="cpm">
+	<software name="cpm16a" cloneof="cpm" supported="no">
 		<description>58K CP/M (v2.2, BIOS v1.6, Alt)</description>
 		<year>1984</year>
 		<publisher>Telcon</publisher>
@@ -117,7 +120,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 		</part>
 	</software>
 
-	<software name="datastar">
+	<software name="datastar" supported="no">
 		<description>DataStar (Release 1.41)</description>
 		<year>1982</year>
 		<publisher>MicroPro International</publisher>
@@ -141,7 +144,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 		</part>
 	</software>
 
-	<software name="dbase2">
+	<software name="dbase2" supported="no">
 		<description>dBase II (v2.41)</description>
 		<year>1982</year>
 		<publisher>Ashton-Tate</publisher>
@@ -173,7 +176,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 		</part>
 	</software>
 
-	<software name="mite">
+	<software name="mite" supported="no">
 		<description>Mite (v3.0)</description>
 		<year>1985</year>
 		<publisher>Mycroft Labs</publisher>
@@ -185,7 +188,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 		</part>
 	</software>
 
-	<software name="wscs">
+	<software name="wscs" supported="no">
 		<description>WordStar (Release 3.0) and CalcStar (Release 1.45)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -231,7 +234,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 	LOOK.COM - Memory search program
 	CRCK.COM - Cyclic redundancy check program
 	-->
-	<software name="zeus1">
+	<software name="zeus1" supported="no">
 		<description>Zeus Public Domain Software Disk 1</description>
 		<year>1983</year>
 		<publisher>Zorba Equipment Users' Society (Zeus)</publisher>
@@ -262,7 +265,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 	RUBIK.CQB - Rubik cube program
 	CRCK.COM - Cyclic redundancy check program
 	-->
-	<software name="zeus2">
+	<software name="zeus2" supported="no">
 		<description>Zeus Public Domain Software Disk 2</description>
 		<year>1984</year>
 		<publisher>Zorba Equipment Users' Society (Zeus)</publisher>
@@ -298,7 +301,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 	NSWP199.COM - Newsweep version 1.99
 	CRCK.COM - Cyclic redundancy check program
 	-->
-	<software name="zeus3">
+	<software name="zeus3" supported="no">
 		<description>Zeus Public Domain Software Disk 3</description>
 		<year>1984</year>
 		<publisher>Zorba Equipment Users' Society (Zeus)</publisher>
@@ -316,7 +319,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 	(disassemblers, macro libraries, tracer, compiler, loader, etc)
 	CRCK.COM - Cyclic redundancy check program
 	-->
-	<software name="zeus4">
+	<software name="zeus4" supported="no">
 		<description>Zeus Public Domain Software Disk 4</description>
 		<year>1984</year>
 		<publisher>Zorba Equipment Users' Society (Zeus)</publisher>
@@ -359,7 +362,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 	DISKCOPY.COM - Zorba track to track disk copy program
 	CRCK8.COM - Cyclic redundancy check program
 	-->
-	<software name="zeus5">
+	<software name="zeus5" supported="no">
 		<description>Zeus Public Domain Software Disk 5</description>
 		<year>1984</year>
 		<publisher>Zorba Equipment Users' Society (Zeus)</publisher>
@@ -381,7 +384,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 	SPELL20.* - Spelling checker version 2.0
 	SPINDOWN.LBR - How to get the Zorba drives to spindown quicker
 	-->
-	<software name="zeus6">
+	<software name="zeus6" supported="no">
 		<description>Zeus Public Domain Software Disk 6</description>
 		<year>1984</year>
 		<publisher>Zorba Equipment Users' Society (Zeus)</publisher>
@@ -399,7 +402,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 	(requires either MBASIC or CBASIC)
 	CRCK8.COM - Cyclic redundancy check program
 	-->
-	<software name="zeus7">
+	<software name="zeus7" supported="no">
 		<description>Zeus Public Domain Software Disk 7</description>
 		<year>1984</year>
 		<publisher>Zorba Equipment Users' Society (Zeus)</publisher>
@@ -423,7 +426,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 	PILOT.LBR - Pilot Game with source
 	TTY.ASM - TTY program
 	-->
-	<software name="zeus8">
+	<software name="zeus8" supported="no">
 		<description>Zeus Public Domain Software Disk 8</description>
 		<year>1984</year>
 		<publisher>Zorba Equipment Users' Society (Zeus)</publisher>
@@ -442,7 +445,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 	ZCPR22.LBR - ZCPR is a replacement for CP/M's CCP
 	CRC.COM - Cyclic redundancy check program
 	-->
-	<software name="zeus9">
+	<software name="zeus9" supported="no">
 		<description>Zeus Public Domain Software Disk 9</description>
 		<year>1984</year>
 		<publisher>Zorba Equipment Users' Society (Zeus)</publisher>
@@ -463,7 +466,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 	SWAP.LBR - Swaps CP/M's CONSOLE and LIST outputs
 	CRC.COM - Cyclic redundancy check program
 	-->
-	<software name="zeus10">
+	<software name="zeus10" supported="no">
 		<description>Zeus Public Domain Software Disk 10</description>
 		<year>1984</year>
 		<publisher>Zorba Equipment Users' Society (Zeus)</publisher>
@@ -487,7 +490,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 	MEX.COM - Modem terminal program
 	CRCK8.COM - Cyclic redundancy check program
 	-->
-	<software name="zeus11">
+	<software name="zeus11" supported="no">
 		<description>Zeus Public Domain Software Disk 11</description>
 		<year>1984</year>
 		<publisher>Zorba Equipment Users' Society (Zeus)</publisher>
@@ -512,7 +515,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 	FROG.BAS - dichotomous key demonstration program
 	CRC.COM - Cyclic redundancy check program
 	-->
-	<software name="zeus12">
+	<software name="zeus12" supported="no">
 		<description>Zeus Public Domain Software Disk 12</description>
 		<year>1984</year>
 		<publisher>Zorba Equipment Users' Society (Zeus)</publisher>
@@ -560,7 +563,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 	ESSAY.RQS - A true story by Richard Stillman
 	CRC.COM - Cyclic redundancy check program
 	-->
-	<software name="zeus13">
+	<software name="zeus13" supported="no">
 		<description>Zeus Public Domain Software Disk 13</description>
 		<year>1984</year>
 		<publisher>Zorba Equipment Users' Society (Zeus)</publisher>
@@ -595,7 +598,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 	FRUN.COM - Odd game
 	CRC.COM - Cyclic redundancy check program
 	-->
-	<software name="zeus14">
+	<software name="zeus14" supported="no">
 		<description>Zeus Public Domain Software Disk 14</description>
 		<year>1985</year>
 		<publisher>Zorba Equipment Users' Society (Zeus)</publisher>
@@ -627,7 +630,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 	UNSPOOL.HLP - Help file for UNSPOOL program
 	CRC.COM - Cyclic redundancy check program
 	-->
-	<software name="zeus15">
+	<software name="zeus15" supported="no">
 		<description>Zeus Public Domain Software Disk 15</description>
 		<year>1985</year>
 		<publisher>Zorba Equipment Users' Society (Zeus)</publisher>
@@ -645,7 +648,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 	FORTH.COM - A true Fig-Forth
 	XLISP.COM - This is LISP from SIG/M
 	-->
-	<software name="zeus16">
+	<software name="zeus16" supported="no">
 		<description>Zeus Public Domain Software Disk 16</description>
 		<year>1985</year>
 		<publisher>Zorba Equipment Users' Society (Zeus)</publisher>
@@ -677,7 +680,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 	WS-USER.AQM - Assembly patch for changing default drives
 	GRXR.LBR - Turns a text file into a 'runnable' .com file
 	-->
-	<software name="zeus17">
+	<software name="zeus17" supported="no">
 		<description>Zeus Public Domain Software Disk 17</description>
 		<year>1985</year>
 		<publisher>Zorba Equipment Users' Society (Zeus)</publisher>
@@ -699,7 +702,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 	MEX command/key/library files
 	MEX overlay/patch files
 	-->
-	<software name="zeus18">
+	<software name="zeus18" supported="no">
 		<description>Zeus Public Domain Software Disk 18</description>
 		<year>1985</year>
 		<publisher>Zorba Equipment Users' Society (Zeus)</publisher>
@@ -721,7 +724,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 	Screenwright - Screenplay formatter
 	Wordstar patches - how to get started
 	-->
-	<software name="zeus19">
+	<software name="zeus19" supported="no">
 		<description>Zeus Public Domain Software Disk 19</description>
 		<year>1985</year>
 		<publisher>Zorba Equipment Users' Society (Zeus)</publisher>
@@ -743,7 +746,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 	M7ZB-4 - latest Zorba modem overlay
 	RECIPE.COM - file your kitchen favorites
 	-->
-	<software name="zeus20">
+	<software name="zeus20" supported="no">
 		<description>Zeus Public Domain Software Disk 20</description>
 		<year>1985</year>
 		<publisher>Zorba Equipment Users' Society (Zeus)</publisher>
@@ -760,7 +763,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 	Entertaining and Educational Games
 	(With MBASIC, CBASIC, and Pascal source included)
 	-->
-	<software name="zeus21">
+	<software name="zeus21" supported="no">
 		<description>Zeus Public Domain Software Disk 21</description>
 		<year>1985</year>
 		<publisher>Zorba Equipment Users' Society (Zeus)</publisher>
@@ -780,7 +783,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 	Documentation/instruction files
 	TUTORIAL.COM - simple help for begginers
 	-->
-	<software name="zeus22">
+	<software name="zeus22" supported="no">
 		<description>Zeus Public Domain Software Disk 22</description>
 		<year>1985</year>
 		<publisher>Zorba Equipment Users' Society (Zeus)</publisher>
@@ -792,7 +795,7 @@ oracle24.td0    1986-05-01  192K    Oracle of Zeus Vol.2 No.4
 		</part>
 	</software>
 
-	<software name="zeusbios">
+	<software name="zeusbios" supported="no">
 		<description>Zorba BIOS (v1.8Z)</description>
 		<year>1986</year>
 		<publisher>Zorba Equipment Users' Society (Zeus)</publisher>

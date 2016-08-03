@@ -20,16 +20,21 @@ contents make no sense at all (mostly FF), so the vectors for IRQ0 and IRQ2 are 
 vectors are not used as yet.
 
 Three companies are known to have sold the Zorba over its lifetime: Telcon Industries, Modular Micros 
-(a subsidiary of Modular Computers (ModComp)), and Gemini Electronics. Only the Modular Micros 7" version
-has been dumped. The Telcon and Gemini versions each have distinct startup screens.
- 
-A notable difference between the Telcon and Modular Micros versions, and the Gemini version, is that the
-first two have a green monochrome screen on the left and floppy drives on the right, while the latter 
-one has either a green or an amber monochrome screen on the right and floppy drives on the left.
+(a subsidiary of Modular Computers (ModComp)), and Gemini Electronics. 7-inch and 9-inch models were
+available from Telcon and Modular Micros, while Gemini exclusively sold the 9-inch version. The BIOS
+that is currently emulated in MAME comes from a Modular Micros Zorba.
 
-Two versions of the Zorba were sold by Modular Micros:
-Zorba 7: 7" CRT, 2 410K floppies, 22 lbs, $1595
-Zorba 2000: 9" CRT, 2 820K floppies, 10M HD optional, 25 lbs, ~$2000
+The two versions of the Zorba were sold by Modular Micros were:
+- Zorba 7: 7" CRT, 2 410K floppies, 22 lbs, $1595
+- Zorba 2000: 9" CRT, 2 820K floppies, 10M HD optional, 25 lbs, ~$2000
+
+The 7-inch version has the screen on the left, the floppy drives on the right, and a Zorba logo on the
+far right; on the 9-inch version this arrangement is reversed and the logo is removed.
+
+The startup screen varies across each company:
+- Telcon: "TELCON ZORBA" graphical logo
+- Gemini: "GEMINI ZORBA" graphical logo
+- Modular Micros: "ZORBA" graphical logo with "MODULAR MICROS, INC." below in normal text
 
 Status:
 - Boots up, and the keyboard works
@@ -41,8 +46,9 @@ ToDo:
 - Fix the display
 - Connect the PIT to the UARTs
 - Replace the ascii keyboard with the real one, if possible
-- Probably lots of other things
+- Dump Telcon and Gemini BIOSes
 - Emulate the Co-Power-88 expansion (allows PC-DOS, CP/M-86, etc. to be used)
+- Probably lots of other things
 
 
 *************************************************************************************************************/
