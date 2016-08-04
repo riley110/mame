@@ -1124,6 +1124,44 @@
 		</part>
 	</software>
 
+	<software name="glimare">
+		<description>Gli dei del Mare</description>
+		<year>1988</year>
+		<publisher>Olivetti Prodest</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<feature name="part_id" value="Side A"/>
+			<dataarea name="cass" size="25163868">
+				<rom name="gli-dei-del-mare_a_pc128.wav" size="25163868" crc="e7fdb4f1" sha1="4afe194837500eebab0aff7f11da12340244a8a5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+			<feature name="part_id" value="Side B"/>
+			<dataarea name="cass" size="31713272">
+				<rom name="gli-dei-del-mare_b_pc128.wav" size="31713272" crc="da0461dd" sha1="5637f9bfa3ada64e0609b0334103a6320120fc24" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="glimarea" cloneof="glimare">
+		<description>Gli dei del Mare (Alt)</description>
+		<year>1988</year>
+		<publisher>Olivetti Prodest</publisher>
+
+		<part name="cass1" interface="mo_cass">
+			<feature name="part_id" value="Side A"/>
+			<dataarea name="cass" size="76971">
+				<rom name="gli-dei-del-mare-a_pc128.k7" size="76971" crc="fded6675" sha1="9cae363b4b0406d00dc6f56dbff881a186232a72" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="mo_cass">
+			<feature name="part_id" value="Side B"/>
+			<dataarea name="cass" size="90159">
+				<rom name="gli-dei-del-mare-b_pc128.k7" size="90159" crc="16ede94e" sha1="ea36a3484c8fe9ab115d7d02faba11a0c22cb9d7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="greenber">
 		<description>Green Beret</description>
 		<year>1986</year>

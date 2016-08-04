@@ -1422,7 +1422,20 @@
 
 	<software name="paragrph">
 		<description>Paragraphe (v2.0)</description>
-		<year>1985</year>
+		<year>1986</year>
+		<publisher>France Image Logiciel (FIL)</publisher>
+		<info name="usage" value="Press 4 key and load file &quot;PARAGRAP&quot;"/>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="paragraphe_to8.fd" size="327680" crc="e4e9a1af" sha1="324c5d7c64bdf0a0c58e64b7b1114fe1a78ef75c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="paragrpha" cloneof="paragrph">
+		<description>Paragraphe (v2.0, SAP Format)</description>
+		<year>1986</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
 		<info name="usage" value="Press 4 key and load file &quot;PARAGRAP&quot;"/>
 
@@ -1433,9 +1446,9 @@
 		</part>
 	</software>
 
-	<software name="paragrpha" cloneof="paragrph">
-		<description>Paragraphe (v2.0, Alt)</description>
-		<year>1985?</year>
+	<software name="paragrphb" cloneof="paragrph">
+		<description>Paragraphe (v2.0, SAP Format, Alt)</description>
+		<year>1986</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
 		<info name="usage" value="Press 4 key and load file &quot;PARAGRAP&quot;"/>
 
@@ -1637,6 +1650,26 @@
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
 				<rom name="regeneration source assembler (19xx)(-)(fr).sap" size="335426" crc="c4750fbf" sha1="66651a1fb29aad05abea65c11807783b7f137240" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="relance">
+		<description>Relance</description>
+		<year>1985</year>
+		<publisher>Infogrames</publisher>
+		<info name="drive_requirement" value="5.25 SD floppy drive"/>
+
+		<part name="flop1" interface="thom_flop">
+			<feature name="part_id" value="Demarrage (Startup)"/>
+			<dataarea name="flop" size="81920">
+				<rom name="relance-demarrage_to7.fd" size="81920" crc="05b80e48" sha1="2f9db9c4012179bceac3611454b74b470fb29543" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<feature name="part_id" value="Programme"/>
+			<dataarea name="flop" size="81920">
+				<rom name="relance-programme_to7.fd" size="81920" crc="a63cf3e0" sha1="7e3ae0333c4e557def7a70a47bf579511766ff37" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -9480,6 +9513,18 @@
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
 				<rom name="redagram (1987)(chrysis)(fr).sap" size="335426" crc="bdb2dc00" sha1="db0b3c423a7c3ffa303d6d162041443aa26c8b28" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rdaction">
+		<description>Redaction</description>
+		<year>1986</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="redaction_to8.fd" size="327680" crc="d580f420" sha1="60b943d97b31bf271fe6ba682de7844e6c4efba8" offset="0" />
 			</dataarea>
 		</part>
 	</software>
