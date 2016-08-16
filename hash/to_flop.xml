@@ -1459,8 +1459,8 @@
 		</part>
 	</software>
 
-	<software name="paragrphb" cloneof="paragrph">
-		<description>Paragraphe (v2.0, Alt 2)</description>
+	<software name="paragrphc" cloneof="paragrph">
+		<description>Paragraphe (v2.0, SAP Format, Alt 2)</description>
 		<year>1985?</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
 		<info name="usage" value="Press 4 key and load file &quot;PARAGRAP&quot;"/>
@@ -4126,6 +4126,161 @@
 		</part>
 	</software>
 
+	<software name="hclcomp1">
+		<description>HCL Compilation 1</description>
+		<year>1990</year>
+		<publisher>HCL</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="327680">
+				<rom name="hcl-compil1_to8_1.fd" size="327680" crc="917c5bfa" sha1="9fca6c7883d1274b35b235f9a705180f32332b00" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="327680">
+				<rom name="hcl-compil1_to8_2.fd" size="327680" crc="dbbf7e52" sha1="aa619f287865a2b4948256eb535aeaebb14cdc38" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hclcomp1a" cloneof="hclcomp1" supported="no">
+		<description>HCL Compilation 1 (640K Disk)</description>
+		<year>1990</year>
+		<publisher>HCL</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="hcl-compil1_to8.fd" size="655360" crc="81438b9e" sha1="6d94f69708690ec82492d2006b3c511e1c5b6ce7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hclcomp2">
+		<description>HCL Compilation 2</description>
+		<year>1990</year>
+		<publisher>HCL</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="327680">
+				<rom name="hcl-compil2_to8_1.fd" size="327680" crc="9d4407f1" sha1="7c5baa3df42c26a03949db9fc782edd29e429691" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="327680">
+				<rom name="hcl-compil2_to8_2.fd" size="327680" crc="0c333099" sha1="27a79a7147c75716f82a94520be2d97d5d994fe2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hclcomp2a" cloneof="hclcomp2" supported="no">
+		<description>HCL Compilation 2 (640K Disk)</description>
+		<year>1990</year>
+		<publisher>HCL</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="hcl-compil2_to8.fd" size="655360" crc="d42e7bac" sha1="9a4aee3cbd12ed42aeb7cc7f85dc0470c65d7373" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hclcomp3">
+		<description>HCL Compilation 3</description>
+		<year>1990</year>
+		<publisher>HCL</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="327680">
+				<rom name="hcl-compil3_to8_1.fd" size="327680" crc="386f96ba" sha1="26220ea8a5acfd0f6c2279374da38ef2f8dd191f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="327680">
+				<rom name="hcl-compil3_to8_2.fd" size="327680" crc="30ea31ae" sha1="0330cbbe0792244b1a65e9f447cbad8df8e2d5cd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hclcomp3a" cloneof="hclcomp3" supported="no">
+		<description>HCL Compilation 3 (640K Disk)</description>
+		<year>1990</year>
+		<publisher>HCL</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="hcl-compil3_to8.fd" size="655360" crc="8ab2ab6e" sha1="a955e083e8fc9bafd9f50eda91914ee8e8bef0a1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hclcomp4">
+		<description>HCL Compilation 4</description>
+		<year>1990</year>
+		<publisher>HCL</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="327680">
+				<rom name="hcl-compil4_to8_1.fd" size="327680" crc="69742626" sha1="fafca1d8da7555b3bf42e244fb31c333685e6c94" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="327680">
+				<rom name="hcl-compil4_to8_2.fd" size="327680" crc="0c841802" sha1="587c731d81738d54053d842b78aa058cd26518a9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hclcomp4a" cloneof="hclcomp4" supported="no">
+		<description>HCL Compilation 4 (640K Disk)</description>
+		<year>1990</year>
+		<publisher>HCL</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="hcl-compil4_to8.fd" size="655360" crc="0897b310" sha1="022e097124765553c081e04837c835be99f0059d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hclcomp5">
+		<description>HCL Compilation 5</description>
+		<year>1990</year>
+		<publisher>HCL</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="327680">
+				<rom name="hcl-compil5_to8_1.fd" size="327680" crc="dfffef66" sha1="272243f74965b5609cd5ba860508ef3ee48d74ab" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="327680">
+				<rom name="hcl-compil5_to8_2.fd" size="327680" crc="ec464dbe" sha1="3c64473c2484add61e9a85690828b1998ee0cb69" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hclcomp5a" cloneof="hclcomp5" supported="no">
+		<description>HCL Compilation 5 (640K Disk)</description>
+		<year>1990</year>
+		<publisher>HCL</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="hcl-compil5_to8.fd" size="655360" crc="b8f2cf56" sha1="a1ac59854d5a56e497e5e3d7aa519af2425b81b5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="hitsgrem">
 		<description>Les Hits de Gremlin</description>
 		<year>1986</year>
@@ -6258,7 +6413,7 @@
 		</part>
 	</software>
 
-	<software name="hcldemo">
+	<software name="hclmega">
 		<description>HCL Megademo</description>
 		<year>1990</year>
 		<publisher>HCL</publisher>
@@ -6270,7 +6425,7 @@
 		</part>
 	</software>
 
-	<software name="hcldemoa" cloneof="hcldemo">
+	<software name="hclmegaa" cloneof="hclmega">
 		<description>HCL Megademo (SAP Format)</description>
 		<year>1990</year>
 		<publisher>HCL</publisher>
@@ -6282,7 +6437,7 @@
 		</part>
 	</software>
 
-	<software name="hcldemob" cloneof="hcldemo" supported="partial"> <!-- black screen after a few parts -->
+	<software name="hclmegab" cloneof="hclmega" supported="partial"> <!-- black screen after a few parts -->
 		<description>HCL Megademo (2 Disks, Bad?)</description>
 		<year>1990</year>
 		<publisher>HCL</publisher>
@@ -6297,6 +6452,18 @@
 			<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="335426">
 				<rom name="megademo_f1.sap" size="335426" crc="0e12ea8c" sha1="5813e88edf6ae28d3da614982cde64e46a0d16a2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hcldemo1">
+		<description>HCL Reigns Supreme</description>
+		<year>1990</year>
+		<publisher>HCL</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="hcl-demo1_to8.fd" size="327680" crc="6eacd6fd" sha1="0253e9b72e4ca83e28a7461cffa2eaad9ee3fe99" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -6364,6 +6531,99 @@
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="655360">
 				<rom name="lotus esprit turbo challenge (19xx)(bc 109)(fr)[640k].fd" size="655360" crc="a3367d3f" sha1="8da4a1da7e2096c9f8b62a236ec318fbd5773f80" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megashw1">
+		<description>MAD Megashow 1</description>
+		<year>1990</year>
+		<publisher>HCL</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="327680">
+				<rom name="mad-megashow1_to8_1.fd" size="327680" crc="09953b9c" sha1="5f738a62a7ce7ba5f308d328ac550cab5ea0d43e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="327680">
+				<rom name="mad-megashow1_to8_2.fd" size="327680" crc="fa73ef8b" sha1="e5129dceff6a7c440d010f32973075c07390c4e1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megashw1a" cloneof="megashw1" supported="no">
+		<description>MAD Megashow 1 (640K Disk)</description>
+		<year>1990</year>
+		<publisher>HCL</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="mad-megashow1_to8.fd" size="655360" crc="a85a40aa" sha1="05a89f91f916cce43142c95a6e239bb11e846e59" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megashw2">
+		<description>MAD Megashow 2</description>
+		<year>1990</year>
+		<publisher>HCL</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="327680">
+				<rom name="mad-megashow2_to8_1.fd" size="327680" crc="5bfdf7dc" sha1="b515f8eb70216cc4bede7e012146429f12b7978b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="327680">
+				<rom name="mad-megashow2_to8_2.fd" size="327680" crc="779dee65" sha1="4983dbe30cc55ac3130c5f2f231032aa3c3f8a7b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megashw2a" cloneof="megashw2" supported="no">
+		<description>MAD Megashow 2 (640K Disk)</description>
+		<year>1990</year>
+		<publisher>HCL</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="mad-megashow2_to8.fd" size="655360" crc="f9a23d93" sha1="e1e86960711e28847d96cbbd70589b8d1762814b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megashw3">
+		<description>MAD Megashow 3</description>
+		<year>1990</year>
+		<publisher>HCL</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="327680">
+				<rom name="mad-megashow3_to8_1.fd" size="327680" crc="d28eb7a8" sha1="ecd65f6dc06d1cf8cd14e5a870e9fe88c86b7760" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="327680">
+				<rom name="mad-megashow3_to8_2.fd" size="327680" crc="5ad04f5e" sha1="0b888e11052ab4d8cbc46adaf1da243504a6ecbf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="megashw3a" cloneof="megashw3" supported="no">
+		<description>MAD Megashow 3 (640K Disk)</description>
+		<year>1990</year>
+		<publisher>HCL</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="mad-megashow3_to8.fd" size="655360" crc="7f7a836e" sha1="799ceee24d04c95017db804db4a07e41814410a0" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -14225,7 +14485,19 @@
 
 	<software name="tresbask">
 		<description>Le Tresor des Baskerville</description>
-		<year>198?</year>
+		<year>1987</year>
+		<publisher>Chip</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="le-tresor-des-baskerville_to8.fd" size="327680" crc="cf4b88ae" sha1="dcf8793625521dc727eebf841546b9fa390e48db" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tresbaska" cloneof="tresbask">
+		<description>Le Tresor des Baskerville (SAP Format)</description>
+		<year>1987</year>
 		<publisher>Chip</publisher>
 
 		<part name="flop1" interface="thom_flop">
@@ -14235,9 +14507,9 @@
 		</part>
 	</software>
 
-	<software name="tresbaska" cloneof="tresbask">
-		<description>Le Tresor des Baskerville (Alt)</description>
-		<year>198?</year>
+	<software name="tresbaskb" cloneof="tresbask">
+		<description>Le Tresor des Baskerville (SAP Format, Alt)</description>
+		<year>1987</year>
 		<publisher>Chip</publisher>
 
 		<part name="flop1" interface="thom_flop">
@@ -14369,6 +14641,37 @@
 		</part>
 	</software>
 
+	<software name="trbdours">
+		<description>Troubadours</description>
+		<year>1989</year>
+		<publisher>Lankhor</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="327680">
+				<rom name="troubadours_to8_1.fd" size="327680" crc="74a2f7f5" sha1="59996910c089d3f73043934d51bbcf47e1fe875d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="327680">
+				<rom name="troubadours_to8_2.fd" size="327680" crc="597346c4" sha1="e4ab1077a3973ea400087b174c7e094689a56d2c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="trbdoursa" cloneof="trbdours" supported="no">
+		<description>Troubadours (640K Disk)</description>
+		<year>1989</year>
+		<publisher>Lankhor</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="troubadours_to8.fd" size="655360" crc="1d05fa5f" sha1="deb157c29f30ecee6c8fcb32821299d0ca2279fe" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="turbocup">
 		<description>Turbo Cup</description>
 		<year>1988</year>
@@ -14427,8 +14730,20 @@
 -->
 
 	<software name="turlogh">
+		<description>Turlogh de Penroth</description>
+		<year>1988?</year>
+		<publisher>Cobrasoft</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="turlogh_to8.fd" size="327680" crc="e00263e4" sha1="e62f04b1aceb55d4a5a62ebc4ba553e00d15957c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="turlogha" cloneof="turlogh">
 		<description>Turlogh de Penroth (Cracked)</description>
-		<year>1988</year>
+		<year>1988?</year>
 		<publisher>&lt;bootleg (Adolf Hitler)&gt;</publisher>
 
 		<part name="flop1" interface="thom_flop">
@@ -14438,7 +14753,7 @@
 		</part>
 	</software>
 
-	<software name="turlogha" cloneof="turlogh">
+	<software name="turloghb" cloneof="turlogh">
 		<description>Turlogh de Penroth (Cracked) (SAP Format)</description>
 		<year>1988</year>
 		<publisher>&lt;bootleg (Adolf Hitler)&gt;</publisher>
