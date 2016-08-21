@@ -3096,8 +3096,8 @@
 	</software>
 
 	<software name="athlete2">
-		<description>Les Athletes no.2 - 1ere Partie</description>
-		<year>198?</year>
+		<description>Les Athletes II</description>
+		<year>1988</year>
 		<publisher>Infogrames</publisher>
 
 		<part name="flop1" interface="thom_flop">
@@ -3112,11 +3112,43 @@
 				<rom name="athletes no.2 - 1ere partie, les (198x)(infogrames)(fr)(disk 2 of 2).fd" size="327680" crc="4437c737" sha1="fb906c80a36c84adbdd67bd09c46b362076d16d0" offset="0" />
 			</dataarea>
 		</part>
+		<part name="flop3" interface="thom_flop">
+			<feature name="part_id" value="Bivouac"/>
+			<dataarea name="flop" size="327680">
+				<rom name="bivouac (1987)(infogrames)(fr)[compilation les atheletes no.2].fd" size="327680" crc="6310bc96" sha1="eeafeff7b16126275fade2773adbb8d4c2e4d9bc" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
 	<software name="athlete2a" cloneof="athlete2">
-		<description>Les Athletes no.2 - 1ere Partie (SAP Format)</description>
-		<year>198?</year>
+		<description>Les Athletes II (Alt Bivouac)</description>
+		<year>1988</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<feature name="part_id" value="Disk 1"/>
+			<dataarea name="flop" size="327680">
+				<rom name="athletes no.2 - 1ere partie, les (198x)(infogrames)(fr)(disk 1 of 2).fd" size="327680" crc="6284931e" sha1="d47a70c463c3e3eb7b6ea190b5812c8a058be51f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<feature name="part_id" value="Disk 2"/>
+			<dataarea name="flop" size="327680">
+				<rom name="athletes no.2 - 1ere partie, les (198x)(infogrames)(fr)(disk 2 of 2).fd" size="327680" crc="4437c737" sha1="fb906c80a36c84adbdd67bd09c46b362076d16d0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="thom_flop">
+			<feature name="part_id" value="Bivouac"/>
+			<dataarea name="flop" size="327680">
+				<rom name="les-athletes2-d2_to8_1.fd" size="327680" crc="2ca51bc5" sha1="001eb87473f887a4235db53239f48ece3e0dc1e4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- All SAP sets use an identical Bivouac disk -->
+	<software name="athlete2b" cloneof="athlete2">
+		<description>Les Athletes II (SAP Format)</description>
+		<year>1988</year>
 		<publisher>Infogrames</publisher>
 
 		<part name="flop1" interface="thom_flop">
@@ -3131,11 +3163,17 @@
 				<rom name="athletes no.2 - 1ere partie, les (198x)(infogrames)(fr)(disk 2 of 2).sap" size="335426" crc="5af9b1bb" sha1="76af29c58c7c165fa06e6e9f858709c6241df8d4" offset="0" />
 			</dataarea>
 		</part>
+		<part name="flop3" interface="thom_flop">
+			<feature name="part_id" value="Bivouac"/>
+			<dataarea name="flop" size="335426">
+				<rom name="bivouac (1987)(infogrames)(fr)[compilation les atheletes no.2].sap" size="335426" crc="4dfdaf28" sha1="0a16f15a61fc3e9618f8efdc0d528c26b8e7bd1a" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
-	<software name="athlete2b" cloneof="athlete2">
-		<description>Les Athletes no.2 - 1ere Partie (SAP Format, Alt)</description>
-		<year>198?</year>
+	<software name="athlete2c" cloneof="athlete2">
+		<description>Les Athletes II (SAP Format, Alt)</description>
+		<year>1988</year>
 		<publisher>Infogrames</publisher>
 
 		<part name="flop1" interface="thom_flop">
@@ -3150,11 +3188,17 @@
 				<rom name="athletes no.2 - 1ere partie, les (198x)(infogrames)(fr)(disk 2 of 2)[a].sap" size="335426" crc="48d7e88d" sha1="062ada9bdd9d3be4b0eac86a618b7f506df62c98" offset="0" />
 			</dataarea>
 		</part>
+		<part name="flop3" interface="thom_flop">
+			<feature name="part_id" value="Bivouac"/>
+			<dataarea name="flop" size="335426">
+				<rom name="bivouac (1987)(infogrames)(fr)[compilation les atheletes no.2].sap" size="335426" crc="4dfdaf28" sha1="0a16f15a61fc3e9618f8efdc0d528c26b8e7bd1a" offset="0" />
+			</dataarea>
+		</part>
 	</software>
 
-	<software name="athlete2c" cloneof="athlete2">
-		<description>Les Athletes no.2 - 1ere Partie (SAP Format, Alt 2)</description>
-		<year>198?</year>
+	<software name="athlete2d" cloneof="athlete2">
+		<description>Les Athletes II (SAP Format, Alt 2)</description>
+		<year>1988</year>
 		<publisher>Infogrames</publisher>
 
 		<part name="flop1" interface="thom_flop">
@@ -3167,6 +3211,30 @@
 			<feature name="part_id" value="Disk 2"/>
 			<dataarea name="flop" size="335426">
 				<rom name="athletes no.2 - 1ere partie, les (198x)(infogrames)(fr)(disk 2 of 2)[a2].sap" size="335426" crc="d97db069" sha1="21d191246d9034db2bfdfd6dc520260f16c9fee4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="thom_flop">
+			<feature name="part_id" value="Bivouac"/>
+			<dataarea name="flop" size="335426">
+				<rom name="bivouac (1987)(infogrames)(fr)[compilation les atheletes no.2].sap" size="335426" crc="4dfdaf28" sha1="0a16f15a61fc3e9618f8efdc0d528c26b8e7bd1a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Disk 2 has empty second half -->
+	<software name="athlete2e" cloneof="athlete2" supported="no">
+		<description>Les Athletes II (640K Disks)</description>
+		<year>1988</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="les-athletes2-d1_to8.fd" size="655360" crc="fc90cd09" sha1="0dee02dfeb8713e68b353ceb5654ff0a9dafc255" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="les-athletes2-d2_to8.fd" size="655360" crc="6af9dfb2" sha1="7b964dc7f108d4f4071aaf7df234a4016a8df5da" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -4281,6 +4349,35 @@
 		</part>
 	</software>
 
+	<software name="hclcomp6">
+		<description>HCL Compilation 6</description>
+		<year>1990</year>
+		<publisher>HCL</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="hcl-compil6_to8_1.fd" size="327680" crc="2dbf7f7d" sha1="5aaa66a7c7fc188705166005ffc607dec088886c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="hcl-compil6_to8_2.fd" size="327680" crc="dc2b3939" sha1="3141bd25ac781bdb5ecd6900619b79e77784bd04" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hclcomp6a" cloneof="hclcomp6" supported="no">
+		<description>HCL Compilation 6 (640K Disk)</description>
+		<year>1990</year>
+		<publisher>HCL</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="655360">
+				<rom name="hcl-compil6_to8.fd" size="655360" crc="6b66eb38" sha1="2bad19c90c0d72be629b3eca0b26236ea837a205" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="hitsgrem">
 		<description>Les Hits de Gremlin</description>
 		<year>1986</year>
@@ -4612,6 +4709,81 @@
 		</part>
 	</software>
 
+	<software name="joueurs">
+		<description>Les Joueurs</description>
+		<year>1989</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<feature name="part_id" value="Politik Poker/Macadam Bumper"/>
+			<dataarea name="flop" size="327680">
+				<rom name="les-joueurs-1_to8.fd" size="327680" crc="8c155cab" sha1="36683635878f5fb6d2784274aa79e69d042b194c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<feature name="part_id" value="Maxibourse"/>
+			<dataarea name="flop" size="327680">
+				<rom name="les-joueurs-2_to8.fd" size="327680" crc="5bfe01ae" sha1="2713019a368fea1b490b251a9cc6f7cb3b3836fc" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="thom_flop">
+			<feature name="part_id" value="Brain Power"/>
+			<dataarea name="flop" size="327680">
+				<rom name="les-joueurs-3_to8.fd" size="327680" crc="6ed933c3" sha1="c79409ad32db6593ff8d940cd2fb8d55e293778a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="joueursa" cloneof="joueurs">
+		<description>Les Joueurs (Alt Disk 1)</description>
+		<year>1989</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<feature name="part_id" value="Politik Poker/Macadam Bumper"/>
+			<dataarea name="flop" size="327680">
+				<rom name="macadam bumper &amp; politik poker (198x)(infogrames).fd" size="327680" crc="d67cfbd5" sha1="7614965cac28f4163062b6a654f53d2cc46e75af" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<feature name="part_id" value="Maxibourse"/>
+			<dataarea name="flop" size="327680">
+				<rom name="les-joueurs-2_to8.fd" size="327680" crc="5bfe01ae" sha1="2713019a368fea1b490b251a9cc6f7cb3b3836fc" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="thom_flop">
+			<feature name="part_id" value="Brain Power"/>
+			<dataarea name="flop" size="327680">
+				<rom name="les-joueurs-3_to8.fd" size="327680" crc="6ed933c3" sha1="c79409ad32db6593ff8d940cd2fb8d55e293778a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="joueursb" cloneof="joueurs">
+		<description>Les Joueurs (Disk 1 SAP Format)</description>
+		<year>1989</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<feature name="part_id" value="Politik Poker/Macadam Bumper"/>
+			<dataarea name="flop" size="335426">
+				<rom name="macadam bumper &amp; politik poker (198x)(infogrames).sap" size="335426" crc="84cf8b7e" sha1="c0a26fef17bab6ff2deb1f6c6ff1673bfd7f0bb6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<feature name="part_id" value="Maxibourse"/>
+			<dataarea name="flop" size="327680">
+				<rom name="les-joueurs-2_to8.fd" size="327680" crc="5bfe01ae" sha1="2713019a368fea1b490b251a9cc6f7cb3b3836fc" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="thom_flop">
+			<feature name="part_id" value="Brain Power"/>
+			<dataarea name="flop" size="327680">
+				<rom name="les-joueurs-3_to8.fd" size="327680" crc="6ed933c3" sha1="c79409ad32db6593ff8d940cd2fb8d55e293778a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="kidkit">
 		<description>Kidkit</description>
 		<year>1986</year>
@@ -4680,30 +4852,6 @@
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
 				<rom name="lanceur disk games compilation (19xx)(-)(fr)[a no menu].sap" size="335426" crc="98841304" sha1="24a5a40b5af95ad692ff2d09e747c95eaa006d2a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="macapoli">
-		<description>Macadam Bumper &amp; Politik Poker</description>
-		<year>198?</year>
-		<publisher>Infogrames</publisher>
-
-		<part name="flop1" interface="thom_flop">
-			<dataarea name="flop" size="327680">
-				<rom name="macadam bumper &amp; politik poker (198x)(infogrames).fd" size="327680" crc="d67cfbd5" sha1="7614965cac28f4163062b6a654f53d2cc46e75af" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="macapolia" cloneof="macapoli">
-		<description>Macadam Bumper &amp; Politik Poker (SAP Format)</description>
-		<year>198?</year>
-		<publisher>Infogrames</publisher>
-
-		<part name="flop1" interface="thom_flop">
-			<dataarea name="flop" size="335426">
-				<rom name="macadam bumper &amp; politik poker (198x)(infogrames).sap" size="335426" crc="84cf8b7e" sha1="c0a26fef17bab6ff2deb1f6c6ff1673bfd7f0bb6" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -9381,6 +9529,18 @@
 		</part>
 	</software>
 
+	<software name="geohis65">
+		<description>Logiciels Nathan Colleges - Je Revise - Geographie Histoire, Education civique - 6e/5e</description>
+		<year>1987</year>
+		<publisher>Cedic/Nathan</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="geographie-histoire-6e-5e_to8.fd" size="327680" crc="c3df1690" sha1="3d711fba0ca484b7ab915df2e1fad76f164ffbb2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="calculce">
 		<description>Logiciels Nathan Ecole - Calculs et Rangements CE</description>
 		<year>1986</year>
@@ -10436,30 +10596,6 @@
 		</part>
 	</software>
 
-	<software name="bivouacb" cloneof="bivouac">
-		<description>Bivouac (Compilation Les Athletes no. 2)</description>
-		<year>1987</year>
-		<publisher>Infogrames</publisher>
-
-		<part name="flop1" interface="thom_flop">
-			<dataarea name="flop" size="327680">
-				<rom name="bivouac (1987)(infogrames)(fr)[compilation les atheletes no.2].fd" size="327680" crc="6310bc96" sha1="eeafeff7b16126275fade2773adbb8d4c2e4d9bc" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="bivouacc" cloneof="bivouac">
-		<description>Bivouac (Compilation Les Athletes no.2) (SAP Format)</description>
-		<year>1987</year>
-		<publisher>Infogrames</publisher>
-
-		<part name="flop1" interface="thom_flop">
-			<dataarea name="flop" size="335426">
-				<rom name="bivouac (1987)(infogrames)(fr)[compilation les atheletes no.2].sap" size="335426" crc="4dfdaf28" sha1="0a16f15a61fc3e9618f8efdc0d528c26b8e7bd1a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="blitz">
 		<description>Blitz!</description>
 		<year>1986</year>
@@ -10773,6 +10909,7 @@
 		</part>
 	</software>
 
+	<!-- Is this from the original release or from the Les Joueurs compilation? DCMOTO shows label scans for both -->
 	<software name="brainpow">
 		<description>Brain Power</description>
 		<year>198?</year>
@@ -11690,6 +11827,18 @@
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
 				<rom name="grand prix 500cc (1986)(microids)(fr)[boot with microsoft basic 1.0].fd" size="327680" crc="feb6f3be" sha1="1212a71207e8daabdb19efaf839f1130f18a23f6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="grsiecle">
+		<description>Grand Siecle</description>
+		<year>1986</year>
+		<publisher>Free Game Blot</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="327680">
+				<rom name="grand-siecle_to8.fd" size="327680" crc="3d02054c" sha1="bd7397d9980d8f74660e7f6a5aafbc8f2137cda0" offset="0" />
 			</dataarea>
 		</part>
 	</software>
