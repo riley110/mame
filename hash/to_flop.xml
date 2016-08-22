@@ -4052,28 +4052,90 @@
 		</part>
 	</software>
 
-	<!-- Is this an official release? -->
 	<software name="futuris2">
-		<description>futuristes2</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<description>Les Futuristes 2</description>
+		<year>1990</year>
+		<publisher>Infogrames</publisher>
 
 		<part name="flop1" interface="thom_flop">
-			<feature name="part_id" value="Disk 1"/>
-			<dataarea name="flop" size="335426">
-				<rom name="futuristes2_f1.sap" size="335426" crc="7ae2ef1d" sha1="0554f71d0c61f5a4fc1ebaf5fbebcc06e160f7b2" offset="0" />
+			<feature name="part_id" value="Captain Blood/Les Mutants (Disk 1)"/>
+			<dataarea name="flop" size="327680">
+				<rom name="les-futuristes2-captain-blood-les-mutants_to8-1.fd" size="327680" crc="c10da840" sha1="e4e5fb0bbaa1ed50475e8885bc380221e5557653" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="thom_flop">
-			<feature name="part_id" value="Disk 2"/>
+			<feature name="part_id" value="Captain Blood/Les Mutants (Disk 2)"/>
+			<dataarea name="flop" size="327680">
+				<rom name="les-futuristes2-captain-blood-les-mutants_to8-2.fd" size="327680" crc="f1fd9444" sha1="b5009842a43baad1afcb6c7ba4c7765caf322771" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="thom_flop">
+			<feature name="part_id" value="Raid sur la Manche"/>
+			<dataarea name="flop" size="327680">
+				<rom name="les-futuristes2-raid-sur-la-manche_to8.fd" size="327680" crc="0236f43c" sha1="dcd39c44d00bfae9ba68d950105f4425dee0f4fd" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="thom_flop">
+			<feature name="part_id" value="Les Cavernes de Thenebe"/>
+			<dataarea name="flop" size="327680">
+				<rom name="les-futuristes2-les-cavernes-de-thenebe_to8.fd" size="327680" crc="64c81dfd" sha1="e3243491a6bf573de131d6fc5394c7e30bac1b81" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Captain Blood/Les Mutants disk 2 is missing -->
+	<software name="futuris2a" cloneof="futuris2" supported="partial">
+		<description>Les Futuristes 2 (SAP Format)</description>
+		<year>1990</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<feature name="part_id" value="Captain Blood/Les Mutants (Disk 1)"/>
+			<dataarea name="flop" size="335426">
+				<rom name="futuristes2_f1_1.sap" size="335426" crc="7ae2ef1d" sha1="0554f71d0c61f5a4fc1ebaf5fbebcc06e160f7b2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<feature name="part_id" value="Captain Blood/Les Mutants (Disk 2)"/>
+			<dataarea name="flop" size="335426">
+				<rom name="futuristes2_f1_2.sap" size="335426" offset="0" status="nodump" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="thom_flop">
+			<feature name="part_id" value="Raid sur la Manche"/>
 			<dataarea name="flop" size="335426">
 				<rom name="futuristes2_f2_raid_manche.sap" size="335426" crc="7c121d56" sha1="a923251b8bf0dccef6c91a7648404410495483cc" offset="0" />
 			</dataarea>
 		</part>
-		<part name="flop3" interface="thom_flop">
-			<feature name="part_id" value="Disk 3"/>
+		<part name="flop4" interface="thom_flop">
+			<feature name="part_id" value="Les Cavernes de Thenebe"/>
 			<dataarea name="flop" size="335426">
 				<rom name="futuristes2_f3_thenebe.sap" size="335426" crc="41ae1985" sha1="61570a73b9034beddcdbbfd654c814ce1d0d8d14" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="futuris2b" cloneof="futuris2" supported="partial">
+		<description>Les Futuristes 2 (640K Disk 1)</description>
+		<year>1990</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="flop1" interface="thom_flop">
+			<feature name="part_id" value="Captain Blood/Les Mutants"/>
+			<dataarea name="flop" size="655360">
+				<rom name="les-futuristes2-captain-blood-les-mutants_to8.fd" size="655360" crc="a2bb57c8" sha1="6c28557823b4e720cac3a1ee7cef1c7ce81d87b5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="thom_flop">
+			<feature name="part_id" value="Raid sur la Manche"/>
+			<dataarea name="flop" size="327680">
+				<rom name="les-futuristes2-raid-sur-la-manche_to8.fd" size="327680" crc="0236f43c" sha1="dcd39c44d00bfae9ba68d950105f4425dee0f4fd" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="thom_flop">
+			<feature name="part_id" value="Les Cavernes de Thenebe"/>
+			<dataarea name="flop" size="327680">
+				<rom name="les-futuristes2-les-cavernes-de-thenebe_to8.fd" size="327680" crc="64c81dfd" sha1="e3243491a6bf573de131d6fc5394c7e30bac1b81" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -10912,7 +10974,7 @@
 	<!-- Is this from the original release or from the Les Joueurs compilation? DCMOTO shows label scans for both -->
 	<software name="brainpow">
 		<description>Brain Power</description>
-		<year>198?</year>
+		<year>1987</year>
 		<publisher>SoftBook</publisher>
 
 		<part name="flop1" interface="thom_flop">
