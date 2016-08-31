@@ -4497,7 +4497,6 @@ files {
 	MAME_DIR .. "src/mame/video/micro3d.cpp",
 	MAME_DIR .. "src/mame/audio/micro3d.cpp",
 	MAME_DIR .. "src/mame/drivers/midas.cpp",
-	MAME_DIR .. "src/mame/drivers/mineswp.cpp",
 	MAME_DIR .. "src/mame/drivers/miniboy7.cpp",
 	MAME_DIR .. "src/mame/drivers/mirax.cpp",
 	MAME_DIR .. "src/mame/drivers/mole.cpp",

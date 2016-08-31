@@ -225,3 +225,5 @@ ROM_END
 
 GAMEL(1990, dotrikun,  0,        dotrikun, dotrikun, driver_device, 0, ROT0, "Sega", "Dottori Kun (new version)", MACHINE_SUPPORTS_SAVE | MACHINE_NO_SOUND_HW, layout_dotrikun )
 GAMEL(1990, dotrikun2, dotrikun, dotrikun, dotrikun, driver_device, 0, ROT0, "Sega", "Dottori Kun (old version)", MACHINE_SUPPORTS_SAVE | MACHINE_NO_SOUND_HW, layout_dotrikun )
+
+#include "dotrikun_hb.hxx"

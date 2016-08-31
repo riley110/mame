@@ -29,7 +29,7 @@ Philips P2000 1 Memory map
 ************************************************************************/
 
 #include "includes/p2000t.h"
-#include "softlist.h"
+#include "softlist_dev.h"
 
 
 /* port i/o functions */
