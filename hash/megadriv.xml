@@ -19603,7 +19603,7 @@ Notice that these are not working on real hardware due to bugged code with VDP i
 		</part>
 	</software>
 
-	<software name="f1heromd">
+	<software name="f1heromd" cloneof="ferrari">
 		<description>Nakajima Satoru Kanshuu F1 Hero MD (Jpn)</description>
 		<year>1992</year>
 		<publisher>Varie</publisher>
@@ -21536,7 +21536,7 @@ Notice that these are not working on real hardware due to bugged code with VDP i
 		<publisher>Sega</publisher>
 		<info name="serial" value="G-5525"/>
 		<info name="release" value="19931029"/>
-		<info name="alt_title" value="ペブルビーチの波濤"/>
+		<info name="alt_title" value="ペブルビーチの波涛"/>
 		<part name="cart" interface="megadriv_cart">
 			<feature name="slot" value="rom_sram"/>
 			<dataarea name="rom" width="16" endianness="big" size="1572864">
@@ -28924,7 +28924,7 @@ Notice that these are not working on real hardware due to bugged code with VDP i
 		<publisher>Sega</publisher>
 		<part name="cart" interface="megadriv_cart">
 			<feature name="slot" value="rom_eeprom"/>
-			<dataarea name="rom" width="16" endianness="big" size="655360">
+			<dataarea name="rom" width="16" endianness="big" size="786432">
 				<rom name="wonder boy v - monster world iii (jul 25, 1991 prototype).bin" size="786432" crc="334035f8" sha1="1677039ede9a4cf51ac182cfe27d797c864290c8" offset="0x000000" />
 			</dataarea>
 		</part>

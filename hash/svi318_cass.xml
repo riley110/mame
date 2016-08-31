@@ -808,7 +808,7 @@ Ballonies (198x)
 		</part>
 	</software>
 
-	<!-- Released as a cartridge but exist as a tape image too-->
+	<!-- Released as a cartridge but exist as a tape image too -->
 	<software name="flipper">
 		<description>Flipper Slipper</description>
 		<year>1984</year>
@@ -1281,7 +1281,7 @@ Ballonies (198x)
 		<publisher>Konami</publisher>
 		<info name="serial" value="RC 712" />
 
-		<part name="cass1" interface="svi318_cass">
+		<part name="cass" interface="svi318_cass">
 			<dataarea name="cass" size="33156">
 				<rom name="circus charlie.cas" size="33156" crc="8a0baf6f" sha1="37bdd31d3b6d1673a3f289930107f5c45f48f39c" offset="0" />
 			</dataarea>

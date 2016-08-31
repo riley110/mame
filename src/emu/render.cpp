@@ -75,15 +75,6 @@ enum
 
 
 //**************************************************************************
-//  MACROS
-//**************************************************************************
-
-#define ISWAP(var1, var2) do { int temp = var1; var1 = var2; var2 = temp; } while (0)
-#define FSWAP(var1, var2) do { float temp = var1; var1 = var2; var2 = temp; } while (0)
-
-
-
-//**************************************************************************
 //  TYPE DEFINITIONS
 //**************************************************************************
 
@@ -136,8 +127,8 @@ inline void apply_orientation(render_bounds &bounds, int orientation)
 	// swap first
 	if (orientation & ORIENTATION_SWAP_XY)
 	{
-		FSWAP(bounds.x0, bounds.y0);
-		FSWAP(bounds.x1, bounds.y1);
+		std::swap(bounds.x0, bounds.y0);
+		std::swap(bounds.x1, bounds.y1);
 	}
 
 	// apply X flip
@@ -164,9 +155,9 @@ inline void apply_orientation(render_bounds &bounds, int orientation)
 inline void normalize_bounds(render_bounds &bounds)
 {
 	if (bounds.x0 > bounds.x1)
-		FSWAP(bounds.x0, bounds.x1);
+		std::swap(bounds.x0, bounds.x1);
 	if (bounds.y0 > bounds.y1)
-		FSWAP(bounds.y0, bounds.y1);
+		std::swap(bounds.y0, bounds.y1);
 }
 
 
@@ -944,10 +935,16 @@ render_target::render_target(render_manager &manager, const internal_layout *lay
 	m_int_overscan = manager.machine().options().int_overscan();
 	m_int_scale_x = manager.machine().options().int_scale_x();
 	m_int_scale_y = manager.machine().options().int_scale_y();
-	if (manager.machine().options().uneven_stretch() && !manager.machine().options().uneven_stretch_x())
+	if (m_manager.machine().options().auto_stretch_xy())
+		m_scale_mode = SCALE_FRACTIONAL_AUTO;
+	else if (manager.machine().options().uneven_stretch_x())
+		m_scale_mode = SCALE_FRACTIONAL_X;
+	else if (manager.machine().options().uneven_stretch_y())
+		m_scale_mode = SCALE_FRACTIONAL_Y;
+	else if (manager.machine().options().uneven_stretch())
 		m_scale_mode = SCALE_FRACTIONAL;
 	else
-		m_scale_mode = manager.machine().options().uneven_stretch_x()? SCALE_FRACTIONAL_X : SCALE_INTEGER;
+		m_scale_mode = SCALE_INTEGER;
 
 	// determine the base orientation based on options
 	if (!manager.machine().options().rotate())
@@ -1177,7 +1174,7 @@ void render_target::compute_visible_area(INT32 target_width, INT32 target_height
 
 				// first apply target orientation
 				if (target_orientation & ORIENTATION_SWAP_XY)
-					FSWAP(width, height);
+					std::swap(width, height);
 
 				// apply the target pixel aspect ratio
 				height *= target_pixel_aspect;
@@ -1203,8 +1200,7 @@ void render_target::compute_visible_area(INT32 target_width, INT32 target_height
 			break;
 		}
 
-		case SCALE_FRACTIONAL_X:
-		case SCALE_INTEGER:
+		default:
 		{
 			// get source size and aspect
 			INT32 src_width, src_height;
@@ -1217,26 +1213,37 @@ void render_target::compute_visible_area(INT32 target_width, INT32 target_height
 
 			// get target aspect
 			float target_aspect = (float)target_width / (float)target_height * target_pixel_aspect;
+			bool target_is_portrait = (target_aspect < 1.0f);
+
+			// apply automatic axial stretching if required
+			int scale_mode = m_scale_mode;
+			if (m_scale_mode == SCALE_FRACTIONAL_AUTO)
+			{
+				bool is_rotated = (m_manager.machine().system().flags & ORIENTATION_SWAP_XY) ^ (target_orientation & ORIENTATION_SWAP_XY);
+				scale_mode = is_rotated ^ target_is_portrait ? SCALE_FRACTIONAL_Y : SCALE_FRACTIONAL_X;
+			}
 
 			// determine the scale mode for each axis
-			bool x_is_integer = !(target_aspect >= 1.0f && m_scale_mode == SCALE_FRACTIONAL_X);
-			bool y_is_integer = !(target_aspect < 1.0f && m_scale_mode == SCALE_FRACTIONAL_X);
+			bool x_is_integer = !((!target_is_portrait && scale_mode == SCALE_FRACTIONAL_X) || (target_is_portrait && scale_mode == SCALE_FRACTIONAL_Y));
+			bool y_is_integer = !((target_is_portrait && scale_mode == SCALE_FRACTIONAL_X) || (!target_is_portrait && scale_mode == SCALE_FRACTIONAL_Y));
 
 			// first compute scale factors to fit the screen
 			float xscale = (float)target_width / src_width;
 			float yscale = (float)target_height / src_height;
-			float maxxscale = MAX(1, m_int_overscan? render_round_nearest(xscale) : floor(xscale));
-			float maxyscale = MAX(1, m_int_overscan? render_round_nearest(yscale) : floor(yscale));
+			float maxxscale = std::max(1.0f, float(m_int_overscan ? render_round_nearest(xscale) : floor(xscale)));
+			float maxyscale = std::max(1.0f, float(m_int_overscan ? render_round_nearest(yscale) : floor(yscale)));
 
 			// now apply desired scale mode and aspect correction
 			if (m_keepaspect && target_aspect > src_aspect) xscale *= src_aspect / target_aspect * (maxyscale / yscale);
 			if (m_keepaspect && target_aspect < src_aspect) yscale *= target_aspect / src_aspect * (maxxscale / xscale);
-			if (x_is_integer) xscale = MIN(maxxscale, MAX(1, render_round_nearest(xscale)));
-			if (y_is_integer) yscale = MIN(maxyscale, MAX(1, render_round_nearest(yscale)));
+			if (x_is_integer) xscale = std::min(maxxscale, std::max(1.0f, render_round_nearest(xscale)));
+			if (y_is_integer) yscale = std::min(maxyscale, std::max(1.0f, render_round_nearest(yscale)));
 
 			// check if we have user defined scale factors, if so use them instead
-			xscale = m_int_scale_x? m_int_scale_x : xscale;
-			yscale = m_int_scale_y? m_int_scale_y : yscale;
+			int user_scale_x = target_is_portrait? m_int_scale_y : m_int_scale_x;
+			int user_scale_y = target_is_portrait? m_int_scale_x : m_int_scale_y;
+			xscale = user_scale_x > 0 ? user_scale_x : xscale;
+			yscale = user_scale_y > 0 ? user_scale_y : yscale;
 
 			// set the final width/height
 			visible_width = render_round_nearest(src_width * xscale);
@@ -1301,8 +1308,8 @@ void render_target::compute_minimum_size(INT32 &minwidth, INT32 &minheight)
 				}
 
 				// pick the greater
-				maxxscale = MAX(xscale, maxxscale);
-				maxyscale = MAX(yscale, maxyscale);
+				maxxscale = std::max(xscale, maxxscale);
+				maxyscale = std::max(yscale, maxyscale);
 				screens_considered++;
 			}
 
@@ -1765,8 +1772,8 @@ void render_target::add_container_primitives(render_primitive_list &list, const 
 	cliprect.y1 = xform.yoffs + xform.yscale;
 	sect_render_bounds(&cliprect, &m_bounds);
 
-	float root_xoffs = root_xform.xoffs + abs(root_xform.xscale - xform.xscale) * 0.5f;
-	float root_yoffs = root_xform.yoffs + abs(root_xform.yscale - xform.yscale) * 0.5f;
+	float root_xoffs = root_xform.xoffs + fabsf(root_xform.xscale - xform.xscale) * 0.5f;
+	float root_yoffs = root_xform.yoffs + fabsf(root_xform.yscale - xform.yscale) * 0.5f;
 
 	render_bounds root_cliprect;
 	root_cliprect.x0 = root_xoffs;
@@ -1864,7 +1871,7 @@ void render_target::add_container_primitives(render_primitive_list &list, const 
 				prim->flags |= PRIMFLAG_TYPE_LINE;
 
 				// scale the width by the minimum of X/Y scale factors
-				prim->width = curitem.width() * MIN(container_xform.xscale, container_xform.yscale);
+				prim->width = curitem.width() * std::min(container_xform.xscale, container_xform.yscale);
 				prim->flags |= curitem.flags();
 
 				// clip the primitive
@@ -1895,8 +1902,8 @@ void render_target::add_container_primitives(render_primitive_list &list, const 
 					// based on the swap values, get the scaled final texture
 					int width = (finalorient & ORIENTATION_SWAP_XY) ? (prim->bounds.y1 - prim->bounds.y0) : (prim->bounds.x1 - prim->bounds.x0);
 					int height = (finalorient & ORIENTATION_SWAP_XY) ? (prim->bounds.x1 - prim->bounds.x0) : (prim->bounds.y1 - prim->bounds.y0);
-					width = MIN(width, m_maxtexwidth);
-					height = MIN(height, m_maxtexheight);
+					width = std::min(width, m_maxtexwidth);
+					height = std::min(height, m_maxtexheight);
 
 					curitem.texture()->get_scaled(width, height, prim->texture, list, curitem.flags());
 
@@ -2051,9 +2058,9 @@ void render_target::add_element_primitives(render_primitive_list &list, const ob
 		INT32 height = render_round_nearest(xform.yscale);
 		set_render_bounds_wh(&prim->bounds, render_round_nearest(xform.xoffs), render_round_nearest(xform.yoffs), (float) width, (float) height);
 		if (xform.orientation & ORIENTATION_SWAP_XY)
-			ISWAP(width, height);
-		width = MIN(width, m_maxtexwidth);
-		height = MIN(height, m_maxtexheight);
+			std::swap(width, height);
+		width = std::min(width, m_maxtexwidth);
+		height = std::min(height, m_maxtexheight);
 
 		// get the scaled texture and append it
 
@@ -2655,7 +2662,7 @@ float render_manager::max_update_rate() const
 			if (minimum == 0)
 				minimum = target.max_update_rate();
 			else
-				minimum = MIN(target.max_update_rate(), minimum);
+				minimum = std::min(target.max_update_rate(), minimum);
 		}
 
 	return minimum;

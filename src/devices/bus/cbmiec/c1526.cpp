@@ -48,7 +48,7 @@ ROM_END
 //  rom_region - device-specific ROM region
 //-------------------------------------------------
 
-const rom_entry *c1526_t::device_rom_region() const
+const tiny_rom_entry *c1526_t::device_rom_region() const
 {
 	return ROM_NAME( c1526 );
 }
@@ -68,7 +68,7 @@ ROM_END
 //  rom_region - device-specific ROM region
 //-------------------------------------------------
 
-const rom_entry *c4023_t::device_rom_region() const
+const tiny_rom_entry *c4023_t::device_rom_region() const
 {
 	return ROM_NAME( c4023 );
 }
@@ -79,7 +79,7 @@ const rom_entry *c4023_t::device_rom_region() const
 //-------------------------------------------------
 
 static ADDRESS_MAP_START( c1526_mem, AS_PROGRAM, 8, c1526_base_t )
-	AM_RANGE(0xe000, 0xffff) AM_ROM AM_REGION(M6504_TAG, 0)
+	AM_RANGE(0x0000, 0x1fff) AM_ROM AM_REGION(M6504_TAG, 0)
 ADDRESS_MAP_END
 
 

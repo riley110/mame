@@ -64,6 +64,8 @@
 #define WMSZ_RIGHT          (7)
 #endif
 
+#define SDL_VERSION_EQUALS(v1, vnum2) (SDL_VERSIONNUM(v1.major, v1.minor, v1.patch) == vnum2)
+
 class SDL_DM_Wrapper
 {
 public:
@@ -490,8 +492,8 @@ osd_dim sdl_window_info::pick_best_mode()
 	m_target->compute_minimum_size(minimum_width, minimum_height);
 
 	// use those as the target for now
-	target_width = minimum_width * MAX(1, prescale());
-	target_height = minimum_height * MAX(1, prescale());
+	target_width = minimum_width * std::max(1, prescale());
+	target_height = minimum_height * std::max(1, prescale());
 
 	// if we're not stretching, allow some slop on the minimum since we can handle it
 	{
@@ -714,6 +716,24 @@ int sdl_window_info::complete_create()
 	 */
 #endif
 
+	// We need to workaround an issue in SDL 2.0.4 for OS X where setting the
+	// relative mode on the mouse in fullscreen mode makes mouse events stop
+	// It is fixed in the latest revisions so we'll assume it'll be fixed
+	// in the next public SDL release as well
+#if defined(SDLMAME_MACOSX) && SDL_VERSION_ATLEAST(2, 0, 2) // SDL_HINT_MOUSE_RELATIVE_MODE_WARP is introduced in 2.0.2
+	SDL_version linked;
+	SDL_GetVersion(&linked);
+	int revision = SDL_GetRevisionNumber();
+
+	// If we're running the exact version of SDL 2.0.4 (revision 10001) from the
+	// SDL web site, we need to work around this issue and send the warp mode hint
+	if (SDL_VERSION_EQUALS(linked, SDL_VERSIONNUM(2, 0, 4)) && revision == 10001)
+	{
+		osd_printf_verbose("Using warp mode for relative mouse in OS X SDL 2.0.4\n");
+		SDL_SetHint(SDL_HINT_MOUSE_RELATIVE_MODE_WARP, "1");
+	}
+#endif
+
 	// create the SDL window
 	// soft driver also used | SDL_WINDOW_INPUT_GRABBED | SDL_WINDOW_MOUSE_FOCUS
 	m_extra_flags |= (fullscreen() ?
@@ -926,12 +946,12 @@ osd_rect sdl_window_info::constrain_to_aspect_ratio(const osd_rect &rect, int ad
 	m_target->compute_minimum_size(minwidth, minheight);
 
 	// clamp against the absolute minimum
-	propwidth = MAX(propwidth, MIN_WINDOW_DIM);
-	propheight = MAX(propheight, MIN_WINDOW_DIM);
+	propwidth = std::max(propwidth, MIN_WINDOW_DIM);
+	propheight = std::max(propheight, MIN_WINDOW_DIM);
 
 	// clamp against the minimum width and height
-	propwidth = MAX(propwidth, minwidth);
-	propheight = MAX(propheight, minheight);
+	propwidth = std::max(propwidth, minwidth);
+	propheight = std::max(propheight, minheight);
 
 	// clamp against the maximum (fit on one screen for full screen mode)
 	if (m_fullscreen)
@@ -946,14 +966,14 @@ osd_rect sdl_window_info::constrain_to_aspect_ratio(const osd_rect &rect, int ad
 
 		// further clamp to the maximum width/height in the window
 		if (m_win_config.width != 0)
-			maxwidth = MIN(maxwidth, m_win_config.width + extrawidth);
+			maxwidth = std::min(maxwidth, m_win_config.width + extrawidth);
 		if (m_win_config.height != 0)
-			maxheight = MIN(maxheight, m_win_config.height + extraheight);
+			maxheight = std::min(maxheight, m_win_config.height + extraheight);
 	}
 
 	// clamp to the maximum
-	propwidth = MIN(propwidth, maxwidth);
-	propheight = MIN(propheight, maxheight);
+	propwidth = std::min(propwidth, maxwidth);
+	propheight = std::min(propheight, maxheight);
 
 	// compute the visible area based on the proposed rectangle
 	m_target->compute_visible_area(propwidth, propheight, pixel_aspect, m_target->orientation(), viswidth, visheight);
@@ -1104,14 +1124,25 @@ osd_dim sdl_window_info::get_max_bounds(int constrain)
 //  construction and destruction
 //============================================================
 
-sdl_window_info::sdl_window_info(running_machine &a_machine, int index, std::shared_ptr<osd_monitor_info> a_monitor,
+sdl_window_info::sdl_window_info(
+		running_machine &a_machine,
+		int index,
+		std::shared_ptr<osd_monitor_info> a_monitor,
 		const osd_window_config *config)
-: osd_window(*config), m_next(nullptr), m_startmaximized(0),
+	: osd_window(*config)
+	, m_next(nullptr)
+	, m_startmaximized(0)
 	// Following three are used by input code to defer resizes
-	m_minimum_dim(0,0),
-	m_windowed_dim(0,0),
-	m_rendered_event(0, 1), m_target(nullptr), m_extra_flags(0),
-	m_machine(a_machine), m_monitor(a_monitor), m_fullscreen(0)
+	, m_minimum_dim(0, 0)
+	, m_windowed_dim(0, 0)
+	, m_rendered_event(0, 1)
+	, m_target(nullptr)
+	, m_extra_flags(0)
+	, m_machine(a_machine)
+	, m_monitor(a_monitor)
+	, m_fullscreen(0)
+	, m_mouse_captured(false)
+	, m_mouse_hidden(false)
 {
 	m_index = index;
 
