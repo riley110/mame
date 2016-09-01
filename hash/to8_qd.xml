@@ -3,13 +3,12 @@
 <!-- Thanks to DCMOTO (http://dcmoto.free.fr) for info! -->
 <softwarelist name="to8_qd" description="Thomson TO8 QD disks">
 
-<!-- Applications -->
-
 	<!-- Not working, but this same dump is available on dcmoto, so it is most likely not bad-->
 	<software name="initb512" supported="no">
 		<description>Initiation au BASIC 512</description>
 		<year>1986</year>
 		<publisher>Thomson</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="thom_flop">
 			<feature name="part_id" value="Disk 1 Side A"/>
@@ -37,12 +36,11 @@
 		</part>
 	</software>
 
-<!-- Games -->
-
 	<software name="vampire">
 		<description>Vampire</description>
 		<year>1986</year>
 		<publisher>Infogrames</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="51200">
@@ -56,6 +54,7 @@
         <description>Vampire (Bad)</description>
         <year>1986</year>
         <publisher>Infogrames</publisher>
+		<info name="category" value="Games"/>
 
         <part name="flop1" interface="thom_flop">
             <dataarea name="flop" size="51200">
@@ -69,6 +68,7 @@
 		<description>Vol Solo</description>
 		<year>1986</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="51200">
@@ -82,6 +82,7 @@
         <description>Vol Solo (Bad)</description>
         <year>1986</year>
         <publisher>France Image Logiciel (FIL)</publisher>
+		<info name="category" value="Games"/>
 
         <part name="flop1" interface="thom_flop">
             <dataarea name="flop" size="51200">
