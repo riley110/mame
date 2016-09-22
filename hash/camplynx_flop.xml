@@ -3,12 +3,11 @@
 <!-- Thanks to http://elborg.dk and TOSEC for info! -->
 <softwarelist name="camplynx_flop" description="Camputers Lynx floppies">
 
-<!-- Lynx DOS disks -->
-
 	<software name="bttlship">
 		<description>Battleships</description>
 		<year>1983</year>
 		<publisher>B. Coupe</publisher>
+		<info name="format" value="Lynx DOS"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT LOAD&quot;BATTLESHIPS&quot;" />
 		<sharedfeat name="compatibility" value="128"/>
 
@@ -23,6 +22,7 @@
 		<description>Delta Wing</description>
 		<year>1984</year>
 		<publisher>Thorn EMI Computer Software</publisher>
+		<info name="format" value="Lynx DOS"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT LOAD&quot;DW.L&quot;" />
 		<sharedfeat name="compatibility" value="96"/>
 
@@ -37,6 +37,7 @@
 		<description>Dis-Assembler</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="format" value="Lynx DOS"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT LOAD&quot;DISASSEMBLER&quot;, RUN" />
 		<sharedfeat name="compatibility" value="96,128"/>
 
@@ -51,6 +52,7 @@
 		<description>Fig-FORTH (v1.1A)</description>
 		<year>1983</year>
 		<publisher>Camsoft</publisher>
+		<info name="format" value="Lynx DOS"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT MLOAD&quot;FORTH&quot;" />
 		<sharedfeat name="compatibility" value="96,128"/>
 
@@ -65,6 +67,7 @@
 		<description>Gomoku</description>
 		<year>1983</year>
 		<publisher>B. Coupe</publisher>
+		<info name="format" value="Lynx DOS"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT LOAD&quot;GOMOKU&quot;" />
 		<sharedfeat name="compatibility" value="96"/>
 
@@ -79,6 +82,7 @@
 		<description>Hangman</description>
 		<year>1983</year>
 		<publisher>Steven B. French</publisher>
+		<info name="format" value="Lynx DOS"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT LOAD&quot;HANGMAN&quot;, RUN" />
 		<sharedfeat name="compatibility" value="96"/>
 
@@ -93,6 +97,7 @@
 		<description>JM Utilities (v6.5)</description>
 		<year>1989</year>
 		<publisher>John Koushappas</publisher>
+		<info name="format" value="Lynx DOS"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT MLOAD&quot;JM.UTILITIES&quot;" />
 		<sharedfeat name="compatibility" value="96,128"/>
 
@@ -107,6 +112,7 @@
 		<description>LogiChess (v2.2)</description>
 		<year>1983</year>
 		<publisher>Kaare Danielsen - Hartvig Ekner</publisher>
+		<info name="format" value="Lynx DOS"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT MLOAD&quot;LC2.2&quot;" />
 		<sharedfeat name="compatibility" value="96"/>
 
@@ -121,6 +127,7 @@
 		<description>LogiChess (v2.2, Alt)</description>
 		<year>1983</year>
 		<publisher>Kaare Danielsen - Hartvig Ekner</publisher>
+		<info name="format" value="Lynx DOS"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT MLOAD&quot;SUPERCHESS&quot;" />
 		<sharedfeat name="compatibility" value="96"/>
 
@@ -135,6 +142,7 @@
 		<description>Lynx 128k Intro Tape</description>
 		<year>198?</year>
 		<publisher>Camputers</publisher>
+		<info name="format" value="Lynx DOS"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT LOAD&quot;INTRO128&quot;, RUN" />
 		<sharedfeat name="compatibility" value="128"/>
 
@@ -149,6 +157,7 @@
 		<description>Lynx Revival Group - Volume 1</description>
 		<year>1988</year>
 		<publisher>John Koushappas</publisher>
+		<info name="format" value="Lynx DOS"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT LOAD&quot;MENU&quot;" />
 		<sharedfeat name="compatibility" value="96,128"/>
 
@@ -163,6 +172,7 @@
 		<description>Monster Mine</description>
 		<year>198?</year>
 		<publisher>Gem Software</publisher>
+		<info name="format" value="Lynx DOS"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT MLOAD&quot;MONSTERMINE&quot;" />
 		<sharedfeat name="compatibility" value="96"/>
 
@@ -178,6 +188,7 @@
 		<description>Roader</description>
 		<year>1984</year>
 		<publisher>FL Software</publisher>
+		<info name="format" value="Lynx DOS"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT MLOAD&quot;ROADER&quot;" />
 		<sharedfeat name="compatibility" value="96"/>
 
@@ -193,6 +204,7 @@
 		<description>Slot Machine</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="format" value="Lynx DOS"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT LOAD&quot;SLOT&quot;" />
 		<sharedfeat name="compatibility" value="96"/>
 
@@ -207,6 +219,7 @@
 		<description>Treasure-Island</description>
 		<year>1983</year>
 		<publisher>Neil Higgins</publisher>
+		<info name="format" value="Lynx DOS"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT LOAD&quot;TREASUREISLAND&quot;" />
 		<sharedfeat name="compatibility" value="96"/>
 
@@ -217,12 +230,11 @@
 		</part>
 	</software>
 
-<!-- CP/M disks (all require 128K) -->
-
 	<software name="basic85">
 		<description>BASIC-85 (Rev. 5.29)</description>
 		<year>1986</year>
 		<publisher>Microsoft</publisher>
+		<info name="format" value="CP/M"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT BOOT, MBASIC" />
 		<sharedfeat name="compatibility" value="128"/>
 
@@ -237,6 +249,7 @@
 		<description>BASIC-80 (Rev. 5.2)</description>
 		<year>1980</year>
 		<publisher>Microsoft</publisher>
+		<info name="format" value="CP/M"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT BOOT, MBASIC" />
 		<sharedfeat name="compatibility" value="128"/>
 
@@ -251,6 +264,7 @@
 		<description>BASIC-E (v2.0)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="format" value="CP/M"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT BOOT" />
 		<sharedfeat name="compatibility" value="128"/>
 
@@ -265,6 +279,7 @@
 		<description>C/80 Compiler (v3.1)</description>
 		<year>1984</year>
 		<publisher>The Software Toolworks</publisher>
+		<info name="format" value="CP/M"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT BOOT, CC" />
 		<sharedfeat name="compatibility" value="128"/>
 
@@ -280,6 +295,7 @@
 		<description>CalcStar (v1.0)</description>
 		<year>1981</year>
 		<publisher>MicroPro International</publisher>
+		<info name="format" value="CP/M"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT BOOT, CS" />
 		<sharedfeat name="compatibility" value="128"/>
 
@@ -294,6 +310,7 @@
 		<description>Comm. &amp; Term.</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="format" value="CP/M"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT BOOT" />
 		<sharedfeat name="compatibility" value="128"/>
 
@@ -308,6 +325,7 @@
 		<description>CP/M (v2.2, BIOS v1.02)</description>
 		<year>198?</year>
 		<publisher>Camputers</publisher>
+		<info name="format" value="CP/M"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT BOOT" />
 		<sharedfeat name="compatibility" value="128"/>
 
@@ -322,6 +340,7 @@
 		<description>CP/M (v2.2, BIOS v1.00)</description>
 		<year>198?</year>
 		<publisher>Camputers</publisher>
+		<info name="format" value="CP/M"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT BOOT" />
 		<sharedfeat name="compatibility" value="128"/>
 
@@ -336,6 +355,7 @@
 		<description>CP/M Doc</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="format" value="CP/M"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT BOOT" />
 		<sharedfeat name="compatibility" value="128"/>
 
@@ -350,6 +370,7 @@
 		<description>CP/M Misc. Programs</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="format" value="CP/M"/>
 		<info name="usage" value="Non-boot, requires CP/M" />
 		<sharedfeat name="compatibility" value="128"/>
 
@@ -364,6 +385,7 @@
 		<description>DataStar (Release 1.4)</description>
 		<year>1982</year>
 		<publisher>MicroPro International</publisher>
+		<info name="format" value="CP/M"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT BOOT, DATASTAR" />
 		<sharedfeat name="compatibility" value="128"/>
 
@@ -378,6 +400,7 @@
 		<description>dBase II (v2.4, Demo)</description>
 		<year>1983</year>
 		<publisher>RSP Inc.</publisher>
+		<info name="format" value="CP/M"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT BOOT, DBASE" />
 		<sharedfeat name="compatibility" value="128"/>
 
@@ -392,6 +415,7 @@
 		<description>Fortran</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="format" value="CP/M"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT BOOT" />
 		<sharedfeat name="compatibility" value="128"/>
 
@@ -406,6 +430,7 @@
 		<description>Fortran (Alt)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="format" value="CP/M"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT BOOT" />
 		<sharedfeat name="compatibility" value="128"/>
 
@@ -420,6 +445,7 @@
 		<description>NPS Micro-COBOL (v2.1)</description>
 		<year>198?</year>
 		<publisher>NPS</publisher>
+		<info name="format" value="CP/M"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT BOOT" />
 		<sharedfeat name="compatibility" value="128"/>
 
@@ -434,6 +460,7 @@
 		<description>PeachCalc - Electronic Spread Sheet (v1.01)</description>
 		<year>1982</year>
 		<publisher>Peachtree Software Inc.</publisher>
+		<info name="format" value="CP/M"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT BOOT" />
 		<sharedfeat name="compatibility" value="128"/>
 
@@ -448,6 +475,7 @@
 		<description>Probe (v1.01)</description>
 		<year>1984</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="format" value="CP/M"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT BOOT, PROBE" />
 		<sharedfeat name="compatibility" value="128"/>
 
@@ -462,6 +490,7 @@
 		<description>Report (Release 1.00)</description>
 		<year>1982</year>
 		<publisher>MicroPro International</publisher>
+		<info name="format" value="CP/M"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT BOOT, REPORT" />
 		<sharedfeat name="compatibility" value="128"/>
 
@@ -476,6 +505,7 @@
 		<description>Turbo Pascal System (v2.00A)</description>
 		<year>1984</year>
 		<publisher>Borland</publisher>
+		<info name="format" value="CP/M"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT BOOT" />
 		<sharedfeat name="compatibility" value="128"/>
 
@@ -490,6 +520,7 @@
 		<description>WordMaster (v1.20, Prerelease)</description>
 		<year>1982</year>
 		<publisher>MicroPro International</publisher>
+		<info name="format" value="CP/M"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT BOOT, WM" />
 		<sharedfeat name="compatibility" value="128"/>
 
@@ -504,6 +535,7 @@
 		<description>WordStar (release 3.00)</description>
 		<year>1981</year>
 		<publisher>MicroPro International</publisher>
+		<info name="format" value="CP/M"/>
 		<info name="usage" value="Enter the following commands: XROM, EXT BOOT" />
 		<sharedfeat name="compatibility" value="128"/>
 
