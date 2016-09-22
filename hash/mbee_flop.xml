@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<!-- 
+<!--
 Most of these disks were tested on the 128k Premium set (mbee128p),
 except those strictly for the 256TC set (mbee256).
 
@@ -8,12 +8,11 @@ All info on non-TOSEC disks comes from this testing.
 -->
 <softwarelist name="mbee_flop" description="Applied Technology MicroBee floppy disks">
 
-<!-- System/Master Disks -->
-
 	<software name="10mbhd" supported="no">
 		<description>10mbhd_lbios</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -26,6 +25,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>56k System Master (1984-01)</description>
 		<year>1984</year>
 		<publisher>Microbee Systems?</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -38,6 +38,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>56k System Master (Alt)</description>
 		<year>1984?</year>
 		<publisher>Microbee Systems?</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -50,6 +51,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>56k System Master (Alt 2, with CP/M Serial Number 2-504-3295)</description>
 		<year>1984?</year>
 		<publisher>Microbee Systems?</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -62,6 +64,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>64K Premium System Disk</description>
 		<year>198?</year>
 		<publisher>Microbee Systems?</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -74,6 +77,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>80/40 Track System (v4.2b)</description>
 		<year>1987</year>
 		<publisher>Simon Gerraty</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -86,6 +90,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>128K Premium Master (DS40, early)</description>
 		<year>198?</year>
 		<publisher>Microbee Systems?</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -98,6 +103,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>128K Premium System (1988-03)</description>
 		<year>1988</year>
 		<publisher>Microbee Systems?</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -110,6 +116,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>128K Standard Update &amp; Starter</description>
 		<year>198?</year>
 		<publisher>Microbee Systems?</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -122,6 +129,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>128K Boot Disk (Swe)</description>
 		<year>198?</year>
 		<publisher>Microbee Systems?</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -134,6 +142,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>256TC System Disk (Release 4, 1988-09)</description>
 		<year>1988</year>
 		<publisher>Microbee Systems?</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -146,6 +155,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>256TC System Disk (Release 3, 1988-06)</description>
 		<year>1988</year>
 		<publisher>Microbee Systems?</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -158,6 +168,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>256TC System Disk (Release 2)</description>
 		<year>1987</year>
 		<publisher>Microbee Systems?</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -170,6 +181,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>256TC System Disk (Release 1)</description>
 		<year>1987</year>
 		<publisher>Microbee Systems?</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -182,6 +194,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>256TC System Master</description>
 		<year>198?</year>
 		<publisher>Microbee Systems?</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -194,6 +207,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Enhanced BIOS (v2.2p)</description>
 		<year>1988</year>
 		<publisher>Peter Boughton</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -211,6 +225,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Enhanced BIOS (v2.0 Prerelease)</description>
 		<year>1986</year>
 		<publisher>Peter Boughton</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -223,6 +238,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Enhanced BIOS (v1.2)</description>
 		<year>1986</year>
 		<publisher>Peter Boughton</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -235,6 +251,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Enhanced BIOS (v1.1)</description>
 		<year>1986</year>
 		<publisher>Peter Boughton</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -248,6 +265,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>HDD 128K Standard (v1.1)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -261,6 +279,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>HDD 128k Premium System (v2.2t)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -278,6 +297,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>MicroBee 128 CP/M (v2.20)</description>
 		<year>198?</year>
 		<publisher>Microbee Systems?</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="409600">
@@ -290,6 +310,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>MicroBee 128 CP/M (v2.20, Alt)</description>
 		<year>198?</year>
 		<publisher>Microbee Systems?</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="409600">
@@ -302,6 +323,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Premium 128 - Getting To Know Your Microbee</description>
 		<year>198?</year>
 		<publisher>Microbee Systems?</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -314,6 +336,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Premium 128 Master (DS40)</description>
 		<year>198?</year>
 		<publisher>Microbee Systems?</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -326,6 +349,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Premium 128 Master (SS80)</description>
 		<year>198?</year>
 		<publisher>Microbee Systems?</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -338,6 +362,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Premium 128 Starter</description>
 		<year>198?</year>
 		<publisher>Microbee Systems?</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -350,6 +375,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Standard 128 Master</description>
 		<year>198?</year>
 		<publisher>Microbee Systems?</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -362,6 +388,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Starnet Master (1985-10)</description>
 		<year>1985</year>
 		<publisher>Microbee Systems?</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -374,6 +401,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Starnet Master (1984-03)</description>
 		<year>1985</year>
 		<publisher>Microbee Systems?</publisher>
+		<info name="category" value="Operating Systems & Boot Disks"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -382,12 +410,11 @@ All info on non-TOSEC disks comes from this testing.
 		</part>
 	</software>
 
-<!-- Applications/Utilities -->
-
 	<software name="128utils">
 		<description>128K Standard Utility</description>
 		<year>198?</year>
 		<publisher>MicroBee?</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -400,6 +427,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>256 TC Utility Disk (Release 2)</description>
 		<year>198?</year>
 		<publisher>MicroBee?</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -412,6 +440,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Accounting</description>
 		<year>198?</year>
 		<publisher>Max Care</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -424,6 +453,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Beenet</description>
 		<year>1985</year>
 		<publisher>Applied Technology</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -436,6 +466,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Disk Bee-Composer</description>
 		<year>1986</year>
 		<publisher>Honeysoft - Robotron</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -448,6 +479,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Bee Draw (v1.0)</description>
 		<year>1986</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -460,6 +492,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>BeeTalker and BeeThoven</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -472,6 +505,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Care File (v1.3)</description>
 		<year>198?</year>
 		<publisher>Care</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -484,6 +518,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Chalkboard Programmer's Kit</description>
 		<year>198?</year>
 		<publisher>Chalkboard?</publisher>
+		<info name="category" value="Applications"/>
 		<info name="usage" value="Requires CP/M" />
 
 		<part name="flop1" interface="floppy_5_25">
@@ -497,6 +532,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Composer Bee Plus</description>
 		<year>1985</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -509,6 +545,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Databuzz (Beenet version)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -521,6 +558,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>DigiScan (v2.00)</description>
 		<year>1989</year>
 		<publisher>Microcorp</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -533,6 +571,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>DigiScan System (vP1.00, Demonstration)</description>
 		<year>1988</year>
 		<publisher>Microbee Systems</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -545,6 +584,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Disk Cataloging System (v2.1)</description>
 		<year>1984</year>
 		<publisher>MicroWorld</publisher>
+		<info name="category" value="Applications"/>
 		<info name="usage" value="Requires CP/M" />
 
 		<part name="flop1" interface="floppy_5_25">
@@ -558,6 +598,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Disk Test for Single/Dual Drive MicroBee 256 TC (v3.9)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -570,6 +611,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Doodle Draw (v1.1)</description>
 		<year>1986</year>
 		<publisher>Goodison Software</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -582,6 +624,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Editor-Assembler (v4.2)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -595,6 +638,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Electric Paintbrush (v1.22?)</description>
 		<year>1987</year>
 		<publisher>Microbee Systems</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -607,10 +651,11 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Electric Paintbrush (v1.01?)</description>
 		<year>1987</year>
 		<publisher>Microbee Systems</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
-				<rom name="electric_paintbrush_mouse_1.22_ss80.dsk" size="430336" crc="8aba30b2" sha1="cf56f8a91ca81367507f185d57cf3f67d2009b40" offset="0" />
+				<rom name="electric_paintbrush_chalkboard_1.01_ss80.dsk" size="430336" crc="0f46e9fa" sha1="60eefa15c04f0c3a9917108694a516ac25cb601e" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -619,6 +664,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Electric Paintbrush Fonts</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -631,6 +677,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Graphic Wordbee (v41.06.85)</description>
 		<year>1985?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -643,6 +690,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Hi-Plot</description>
 		<year>1985</year>
 		<publisher>David S. Rapson</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -655,6 +703,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Information Express (v1.2)</description>
 		<year>1986</year>
 		<publisher>Microbee Systems</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -667,6 +716,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Microbee Lines (v1.0)</description>
 		<year>1988</year>
 		<publisher>Microbee Systems</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -679,6 +729,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Microbee Smart Model Controller (v1.12m)</description>
 		<year>1989</year>
 		<publisher>M.S. Maughan</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -691,6 +742,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Microbee Utilities</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -703,6 +755,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Microbee VIATEL Terminal Emulator (v1.3a)</description>
 		<year>1985</year>
 		<publisher>MicroWorld Australia</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -715,6 +768,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Milestone (Release 1.09)</description>
 		<year>1981</year>
 		<publisher>Organic Software</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -728,6 +782,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>MUGWA ROM Pak</description>
 		<year>198?</year>
 		<publisher>MUGWA</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -740,6 +795,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Pilot</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -753,6 +809,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Press Room 3 - The Final Edition</description>
 		<year>1988</year>
 		<publisher>Kerwin Software</publisher>
+		<info name="category" value="Applications"/>
 		<info name="usage" value="Requires CP/M" />
 
 		<part name="flop1" interface="floppy_5_25">
@@ -767,6 +824,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Printmaster (v1.45)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Applications"/>
 		<info name="usage" value="Requires CP/M" />
 
 		<part name="flop1" interface="floppy_5_25">
@@ -780,6 +838,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Printmaster (v1.0)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -792,6 +851,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Research LOGO (v1.0a+)</description>
 		<year>1985</year>
 		<publisher>The Logo Research Syndicate</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -804,6 +864,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Research LOGO (v1.0a, DS40)</description>
 		<year>1985</year>
 		<publisher>The Logo Research Syndicate</publisher>
+		<info name="category" value="Applications"/>
 		<info name="usage" value="Requires CP/M" />
 
 		<part name="flop1" interface="floppy_5_25">
@@ -817,6 +878,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Research LOGO (v1.0a, SS80)</description>
 		<year>1985</year>
 		<publisher>The Logo Research Syndicate</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -829,6 +891,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Research LOGO (v1.0)</description>
 		<year>1985</year>
 		<publisher>The Logo Research Syndicate</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -841,6 +904,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Simple Business Graphics</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -853,6 +917,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Simply DB (v1.20c)</description>
 		<year>1984</year>
 		<publisher>Reid Software</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -865,6 +930,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Simply DB (v1.20c, 640TC)</description>
 		<year>1991</year>
 		<publisher>Reid Software?</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -877,6 +943,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Simply DB (v1.10c)</description>
 		<year>1984</year>
 		<publisher>Reid Software</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -889,6 +956,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Simply Write (v3.03)</description>
 		<year>1987</year>
 		<publisher>Microbee Systems</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -901,6 +969,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Simply Write (v3.02)</description>
 		<year>1987</year>
 		<publisher>Microbee Systems</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -913,6 +982,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Simply Write (v2.05)</description>
 		<year>1986</year>
 		<publisher>Microbee Systems</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -925,6 +995,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Simply Write (v2.04, DS40)</description>
 		<year>1986</year>
 		<publisher>Microbee Systems</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -937,6 +1008,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Simply Write (v2.04, SS80)</description>
 		<year>1986</year>
 		<publisher>Microbee Systems</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -949,6 +1021,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Simply Write Font Editor (v2.04)</description>
 		<year>1986</year>
 		<publisher>Microbee Systems</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -961,6 +1034,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Sketchpad</description>
 		<year>1984</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -973,6 +1047,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Smartkey II (v1.1a)</description>
 		<year>1984</year>
 		<publisher>FBN Software</publisher>
+		<info name="category" value="Applications"/>
 		<info name="serial" value="A00-0928"/>
 
 		<part name="flop1" interface="floppy_5_25">
@@ -986,6 +1061,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Starnet (v3.10g)</description>
 		<year>198?</year>
 		<publisher>Microbee Systems?</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -998,6 +1074,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Starnet Premium Upgrade</description>
 		<year>198?</year>
 		<publisher>Microbee Systems?</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1010,6 +1087,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>T/Maker Integrated Software</description>
 		<year>1984</year>
 		<publisher>T/Maker Company</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1027,6 +1105,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>TELCOM 128k/256 TC (v3.00)</description>
 		<year>1987</year>
 		<publisher>Microbee Systems</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1039,6 +1118,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>TELCOM (v2.0)</description>
 		<year>198?</year>
 		<publisher>MicroWorld Australia</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1051,6 +1131,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Test Disk</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1063,6 +1144,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Timetable Manager (v4.3)</description>
 		<year>1986</year>
 		<publisher>Vanden Boom Software</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -1075,6 +1157,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Venture Writer (v2.1)</description>
 		<year>198?</year>
 		<publisher>NSW Department of Education Computer Education Unit</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1087,6 +1170,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>WDPROC - Word Processing Package (v1.1)</description>
 		<year>198?</year>
 		<publisher>Education Department of Western Australia</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1099,6 +1183,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>WordGraph A (Premium, v0.4)</description>
 		<year>1986</year>
 		<publisher>Research Technology Canberra</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1111,6 +1196,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>WordGraph A (v02)</description>
 		<year>1985</year>
 		<publisher>Research Technology Canberra</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1123,6 +1209,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>WordStar (Release 4.00)</description>
 		<year>1987</year>
 		<publisher>MicroPro International</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -1131,12 +1218,11 @@ All info on non-TOSEC disks comes from this testing.
 		</part>
 	</software>
 
-<!-- Compilations (Educational) -->
-
 	<software name="tutorial">
 		<description>BASIC and Machine Code Tutorials</description>
 		<year>1983?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1149,6 +1235,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Bee Scientist Volume One (Color)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1161,6 +1248,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Bee Scientist Volume One (Monochrome)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1173,6 +1261,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Denham Disk 1</description>
 		<year>198?</year>
 		<publisher>Denham</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -1185,6 +1274,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Denham Disk 2</description>
 		<year>198?</year>
 		<publisher>Denham</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -1197,6 +1287,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Denham Disk 3</description>
 		<year>198?</year>
 		<publisher>Denham</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -1209,6 +1300,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Denham Disk 4</description>
 		<year>198?</year>
 		<publisher>Denham</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -1221,6 +1313,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Education Disk 1</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1233,6 +1326,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Education Disk 2</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -1245,6 +1339,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Education Disk 3</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -1257,6 +1352,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Education Disk 4</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -1269,6 +1365,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Education Disk 5</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -1281,6 +1378,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Education Disk 6</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -1293,6 +1391,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Education Disk 7</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -1305,6 +1404,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Education Disk 8</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -1317,6 +1417,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Education Disk 9</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -1329,6 +1430,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Education Disk 10</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -1341,6 +1443,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Goodison Education Disk 1</description>
 		<year>1985?</year>
 		<publisher>Goodison Software</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -1353,6 +1456,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Goodison Education Disk 2</description>
 		<year>1985?</year>
 		<publisher>Goodison Software</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -1365,6 +1469,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Goodison Education Disk 3</description>
 		<year>1985?</year>
 		<publisher>Goodison Software</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -1377,6 +1482,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Goodison's Mathematics</description>
 		<year>198?</year>
 		<publisher>Goodison Software</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1389,6 +1495,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Humblebee Geography Programs Disk 1 - New Zealand and Australia</description>
 		<year>1987</year>
 		<publisher>Humblebee</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1401,6 +1508,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Humblebee Geography Programs Disk 2 - Japan and Antarctica</description>
 		<year>1987</year>
 		<publisher>Humblebee</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1413,6 +1521,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Humblebee Geography Programs Disk 3 - British Isles, China, India</description>
 		<year>1987</year>
 		<publisher>Humblebee</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1425,6 +1534,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Learning Can Be Fun With Numbers (Color Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1437,6 +1547,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Learning Can Be Fun With Numbers (Monochrome Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1449,6 +1560,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Learning Can Be Fun With Words</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1461,6 +1573,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>The Microbear Public Domain Disk</description>
 		<year>198?</year>
 		<publisher>Microbear</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1473,6 +1586,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>More Learning Can Be Fun (Color Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1485,6 +1599,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>More Learning Can Be Fun (Gray/Blue Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1497,6 +1612,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>More Learning Can Be Fun (Monochrome Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1509,6 +1625,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>The Microbee Air Track (Color Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1521,6 +1638,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>The Microbee Air Track (Monochrome Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1533,6 +1651,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>The Microbee Air Track (Starnet)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1545,6 +1664,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>MSPP Educational Pack</description>
 		<year>20??</year>
 		<publisher>Microbee Software Preservation Project</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1557,6 +1677,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Netpack 1</description>
 		<year>????</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1569,6 +1690,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Netpack 2</description>
 		<year>????</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1582,6 +1704,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Netpack 2 (Non-Bootable)</description>
 		<year>????</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1594,6 +1717,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Netpack 3</description>
 		<year>????</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1606,6 +1730,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Our World (Color Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1618,6 +1743,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Our World (Monochrome Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1630,6 +1756,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Science Tutorial 1 - Geology, Biology and Chemistry (Color Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1642,6 +1769,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Science Tutorial 1 - Geology, Biology and Chemistry (Monochrome Yellow Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1654,6 +1782,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Science Tutorial 1 - Geology, Biology and Chemistry (Monochrome Green Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1666,6 +1795,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Science Tutorial 2 - Physics and Maths (Color Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1678,6 +1808,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Science Tutorial 2 - Physics and Maths (Monochrome Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1690,6 +1821,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Social Studies (Color Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1702,6 +1834,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Social Studies (Monochrome Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1714,6 +1847,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Social Studies Oracle (Color Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1726,6 +1860,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Social Studies Oracle (Green/Cyan Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1738,6 +1873,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Technical Drawing (Color Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1750,6 +1886,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Technical Drawing (Monochrome Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1762,6 +1899,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Visual Programming</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1776,6 +1914,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>256TC Demo Disk</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1788,6 +1927,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Adventure Games 1</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -1800,6 +1940,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Alan's Adventures Disk 3</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -1812,6 +1953,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Alan's Adventures Disk 4</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -1824,6 +1966,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Alan's Adventures Disk 2</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -1836,6 +1979,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Arcade Games 1</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -1848,6 +1992,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Arcade Games Vol. I (Color Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1860,6 +2005,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Arcade Games Vol. I (Monochrome Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1872,6 +2018,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Arcade Games Vol. I (Monochrome Menu, Alt)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1884,6 +2031,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Arcade Games Vol. II (Color Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1896,6 +2044,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Arcade Games Vol. II (Monochrome Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1908,6 +2057,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Arcade Games Vol. II (Monochrome Menu, Alt)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1920,6 +2070,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Arcade Games Vol. III</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1932,6 +2083,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Arcade Games Vol. IV</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1944,6 +2096,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Bee Casino</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -1956,6 +2109,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>The Brian Howarth's Mysterious Adventures</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -1965,9 +2119,10 @@ All info on non-TOSEC disks comes from this testing.
 	</software>
 
 	<software name="adv1">
-		<description>ChickenMan's 'Adventure Disk 1?</description>
+		<description>ChickenMan's Adventures Disk 1</description>
 		<year>198?</year>
-		<publisher>ChickenMan?</publisher>
+		<publisher>ChickenMan</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -1980,6 +2135,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>ChickenMan's Adventures Disk 2</description>
 		<year>198?</year>
 		<publisher>ChickenMan</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -1992,6 +2148,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>ChickenMan's Adventures Disk 3</description>
 		<year>198?</year>
 		<publisher>ChickenMan</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -2004,6 +2161,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>ChickenMan's Adventures Disk 4</description>
 		<year>198?</year>
 		<publisher>ChickenMan</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -2016,6 +2174,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>ChickenMan's Adventures Disk 5</description>
 		<year>198?</year>
 		<publisher>ChickenMan</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -2028,6 +2187,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>ChickenMan's Adventures Disk 10</description>
 		<year>198?</year>
 		<publisher>ChickenMan</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2040,6 +2200,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>ChickenMan's Adventures Disk 11</description>
 		<year>198?</year>
 		<publisher>ChickenMan</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2052,6 +2213,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>ChickenMan's Adventures Disk 12</description>
 		<year>198?</year>
 		<publisher>ChickenMan</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2064,6 +2226,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>ChickenMan's Adventures Disk 13</description>
 		<year>198?</year>
 		<publisher>ChickenMan</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -2076,6 +2239,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>ChickenMan's Adventures Disk 14</description>
 		<year>198?</year>
 		<publisher>ChickenMan</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -2088,6 +2252,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>ChickenMan's Adventures Disk 15</description>
 		<year>198?</year>
 		<publisher>ChickenMan</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2100,6 +2265,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>ChickenMan's Adventures Disk 16</description>
 		<year>198?</year>
 		<publisher>ChickenMan</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2112,6 +2278,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>ChickenMan's Adventures Disk 17 - Various ScottFree Adventures</description>
 		<year>198?</year>
 		<publisher>ChickenMan</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2124,6 +2291,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>ChickenMan's Games Disk 1</description>
 		<year>198?</year>
 		<publisher>ChickenMan</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -2136,6 +2304,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>ChickenMan's Games Disk 2</description>
 		<year>198?</year>
 		<publisher>ChickenMan</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -2148,6 +2317,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>ChickenMan's Games Disk 3</description>
 		<year>198?</year>
 		<publisher>ChickenMan</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -2160,6 +2330,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>ChickenMan's Games Disk 4</description>
 		<year>198?</year>
 		<publisher>ChickenMan</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -2172,6 +2343,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>ChickenMan's Games Disk 5</description>
 		<year>198?</year>
 		<publisher>ChickenMan</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -2184,6 +2356,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>ChickenMan's Games Disk 6</description>
 		<year>198?</year>
 		<publisher>ChickenMan</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2196,6 +2369,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>ChickenMan's Games Disk 7</description>
 		<year>198?</year>
 		<publisher>ChickenMan</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2208,6 +2382,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>ChickenMan's Games Disk 8</description>
 		<year>198?</year>
 		<publisher>ChickenMan</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -2220,6 +2395,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>ChickenMan's Games Demo Disc</description>
 		<year>198?</year>
 		<publisher>ChickenMan</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -2232,6 +2408,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Colour Sampler 1</description>
 		<year>198?</year>
 		<publisher>HoneySoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2244,6 +2421,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Colour Sampler 1 (Alt)</description>
 		<year>198?</year>
 		<publisher>HoneySoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2256,6 +2434,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>The Complete Scott Adams Original Adventures</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -2268,6 +2447,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Demo Disk</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2280,6 +2460,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Demo Disk (Alt)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2292,6 +2473,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Demonstration Disk No. 1 (Starnet)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2304,6 +2486,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Family Favourites</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2316,6 +2499,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Family Favourites (Alt)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2328,6 +2512,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Family Games Volume One (Color Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2340,6 +2525,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Family Games Volume One (Monochrome Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2352,6 +2538,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Family Games Volume One (Monochrome Menu, Alt)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2364,6 +2551,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Ghostmuncher and Kilopede</description>
 		<year>1983?</year>
 		<publisher>Mytek Computing?</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2376,6 +2564,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Graphic Adventures Volume 1 (Color Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2388,6 +2577,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Graphic Adventures Volume 1 (Monochrome Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2400,6 +2590,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Joystick Games Disk One (Color Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2412,6 +2603,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Joystick Games Disk One (Green/Blue Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2424,6 +2616,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Kids Pack Volume One (Color Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2436,6 +2629,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Kids Pack Volume One (Blue Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2448,6 +2642,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Kids Pack Volume Two</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2460,6 +2655,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Menu No. 1 of Arcade Games</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -2472,6 +2668,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Microbee Cricket (Color Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2484,6 +2681,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Microbee Cricket (Monochrome Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2496,6 +2694,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Microbee Golf</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2508,6 +2707,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Microbee Text Adventures Volume 1 (Color)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2520,6 +2720,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Microbee Text Adventures Volume 1 (Monochrome)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2532,6 +2733,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Microbee Adventures Volume 2 (Color)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2544,6 +2746,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Microbee Adventures Volume 2 (Monochrome)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2556,6 +2759,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Microbee Adventures Volume 3 (Color)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2568,6 +2772,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Microbee Adventures Volume 3 (Monochrome)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2580,6 +2785,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Micro-Golf and Micro-Golf Match Play</description>
 		<year>1984</year>
 		<publisher>George Gardoz</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2592,6 +2798,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Othello/Checkers</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Games"/>
 		<info name="usage" value="Requires CP/M" />
 
 		<part name="flop1" interface="floppy_5_25">
@@ -2605,6 +2812,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Penny Arcade (Color Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2617,6 +2825,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Penny Arcade (Blue/White Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2629,6 +2838,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Replicating Reality</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Games"/>
 		<info name="usage" value="Requires CP/M" />
 
 		<part name="flop1" interface="floppy_5_25">
@@ -2642,6 +2852,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Richard Larkin's Disk</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2654,6 +2865,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>SMUG Tape Library</description>
 		<year>198?</year>
 		<publisher>SMUG</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2666,6 +2878,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Games Disk I - NANOC the Destroyer &amp; Jumpman!</description>
 		<year>198?</year>
 		<publisher>Superior Computer Software</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2678,6 +2891,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Games Disk II - NANOC the Destroyer II, Freedom Fighter, Missile Dodger</description>
 		<year>198?</year>
 		<publisher>Superior Computer Software</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2690,6 +2904,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Games Disk III - NANOC's Revenge</description>
 		<year>198?</year>
 		<publisher>Superior Computer Software</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2702,6 +2917,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Games Disk IV - Fortris, Catalog, Slideshow</description>
 		<year>1990</year>
 		<publisher>Superior Computer Software</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2715,6 +2931,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Games Disk V - Timegap-X</description>
 		<year>1991</year>
 		<publisher>Superior Computer Software</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2727,6 +2944,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Strategic Games Volume 1 (Color Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2739,6 +2957,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Strategic Games Volume 1 (Gray/Blue Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2751,6 +2970,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Strategic Games Volume 1 (Monochrome Menu)</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2763,6 +2983,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Sword Quest + Plus +</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Games"/>
 		<info name="usage" value="Valley and Caves require BASIC"/>
 
 		<part name="flop1" interface="floppy_5_25">
@@ -2776,6 +2997,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>The Winners</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2784,12 +3006,11 @@ All info on non-TOSEC disks comes from this testing.
 		</part>
 	</software>
 
-<!-- Demos -->
-
 	<software name="xmascaro">
 		<description>Christmas Carols</description>
 		<year>198?</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Demos"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="215296">
@@ -2802,6 +3023,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Introducing... MicroBee 256 TC</description>
 		<year>1987</year>
 		<publisher>MicroBee Systems</publisher>
+		<info name="category" value="Demos"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2814,6 +3036,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Slide Show (v2.0)</description>
 		<year>1986</year>
 		<publisher>Microbee Systems</publisher>
+		<info name="category" value="Demos"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2822,12 +3045,11 @@ All info on non-TOSEC disks comes from this testing.
 		</part>
 	</software>
 
-<!-- Educational -->
-
 	<software name="att">
 		<description>Advanced Typing Tutor</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2840,6 +3062,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Antarctic Science Data Base - Birds of Antarctica</description>
 		<year>1984</year>
 		<publisher>Education Department of Western Australia</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2852,6 +3075,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Computer Aided Learning - Agricultral Studies</description>
 		<year>198?</year>
 		<publisher>Education Department of Western Australia</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2864,6 +3088,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Computer Aided Learning - English</description>
 		<year>198?</year>
 		<publisher>Education Department of Western Australia</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2876,6 +3101,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Computer Aided Learning - Manual Arts</description>
 		<year>198?</year>
 		<publisher>Education Department of Western Australia</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2888,6 +3114,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Computer Aided Learning - Physical Science</description>
 		<year>198?</year>
 		<publisher>Education Department of Western Australia</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2900,6 +3127,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Computer Assisted Learning - Biological Science</description>
 		<year>198?</year>
 		<publisher>Education Department of Western Australia</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2912,6 +3140,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Computer Assisted Learning - Home Economics</description>
 		<year>198?</year>
 		<publisher>Education Department of Western Australia</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2924,6 +3153,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Computer Assisted Learning - Mathematics #1</description>
 		<year>198?</year>
 		<publisher>Education Department of Western Australia</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2936,6 +3166,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Computer Assisted Learning - Mathematics #2</description>
 		<year>198?</year>
 		<publisher>Education Department of Western Australia</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2948,6 +3179,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Computer Assisted Learning - Social Science</description>
 		<year>198?</year>
 		<publisher>Education Department of Western Australia</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2960,6 +3192,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Computer-In-A-Book Master (1986-02)</description>
 		<year>1986</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2972,6 +3205,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Computer-In-A-Book Master (1985-03)</description>
 		<year>1985</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -2984,6 +3218,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Computer-In-A-Book Master (Double Sided)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -2996,6 +3231,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Dragon Spells</description>
 		<year>198?</year>
 		<publisher>MicroWorld</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3008,6 +3244,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Educational Graphics</description>
 		<year>198?</year>
 		<publisher>Bernie Nichols</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3020,6 +3257,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Exploring Artifial Inteligence</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Educational"/>
 		<info name="usage" value="Requires CP/M, run programs with included BASIC" />
 
 		<part name="flop1" interface="floppy_5_25">
@@ -3033,6 +3271,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>First Fleet (New)</description>
 		<year>198?</year>
 		<publisher>Education Department of Western Australia</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3045,6 +3284,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>First Fleet (Old)</description>
 		<year>198?</year>
 		<publisher>Education Department of Western Australia</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3057,6 +3297,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Geograbee</description>
 		<year>198?</year>
 		<publisher>Adam Pierce</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3065,11 +3306,12 @@ All info on non-TOSEC disks comes from this testing.
 		</part>
 	</software>
 
-	<!-- Requires Microworld Disk BASIC -->
 	<software name="gtd">
 		<description>Geometrical and Technical Drawing</description>
 		<year>1983</year>
 		<publisher>Honeysoft</publisher>
+		<info name="category" value="Educational"/>
+		<info name="usage" value="Requires Microworld Disk BASIC"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3082,6 +3324,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Language Arts</description>
 		<year>198?</year>
 		<publisher>Bernie Nichols</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3094,6 +3337,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>One World - Countries Database (v1.01)</description>
 		<year>1985</year>
 		<publisher>Active Learning Systems</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3106,6 +3350,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Primary RIME Lessons</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -3118,6 +3363,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Probability - Cards</description>
 		<year>198?</year>
 		<publisher>Denham</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3130,6 +3376,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Probability - Kings and Aces</description>
 		<year>198?</year>
 		<publisher>Denham</publisher>
+		<info name="category" value="Educational"/>
 		<info name="usage" value="Requires CP/M, run with included BASIC" />
 
 		<part name="flop1" interface="floppy_5_25">
@@ -3143,6 +3390,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Reading Programs</description>
 		<year>198?</year>
 		<publisher>Bernie Nichols</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3155,6 +3403,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Science &amp; Miscellaneous</description>
 		<year>198?</year>
 		<publisher>Bernie Nichols</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3167,6 +3416,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Simple and Compound Interest</description>
 		<year>1985</year>
 		<publisher>Denham Software</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3179,6 +3429,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Solutions for Programming Problems</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Educational"/>
 		<info name="usage" value="Requires CP/M"/>
 
 		<part name="flop1" interface="floppy_5_25">
@@ -3192,6 +3443,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Spelling Programs</description>
 		<year>198?</year>
 		<publisher>Bernie Nichols</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3204,6 +3456,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Statistics</description>
 		<year>198?</year>
 		<publisher>Denham</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3216,6 +3469,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Story Maker (128K)</description>
 		<year>198?</year>
 		<publisher>Scholastic</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -3228,6 +3482,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Story Maker (256 TC)</description>
 		<year>198?</year>
 		<publisher>Scholastic</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -3240,6 +3495,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Word Study</description>
 		<year>198?</year>
 		<publisher>J. &amp; H. Beesware</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3248,12 +3504,11 @@ All info on non-TOSEC disks comes from this testing.
 		</part>
 	</software>
 
-<!-- Games -->
-
 	<software name="aus2020">
 		<description>Australia 2020</description>
 		<year>1987</year>
 		<publisher>John Kenna</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3266,6 +3521,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Australiana Quiz</description>
 		<year>198?</year>
 		<publisher>Ken Robinson</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3278,6 +3534,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Battleship</description>
 		<year>1983</year>
 		<publisher>Dreamcards</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3290,6 +3547,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Bee-Alien (v1.0f)</description>
 		<year>1986</year>
 		<publisher>FBN Software</publisher>
+		<info name="category" value="Games"/>
 		<info name="usage" value="Requires CP/M" />
 
 		<part name="flop1" interface="floppy_5_25">
@@ -3303,6 +3561,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Bushwalking Adventure</description>
 		<year>1984</year>
 		<publisher>Dreamcards</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3316,6 +3575,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Chopper Pilot</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3328,6 +3588,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Citadel of Chaos (v2.01)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3340,6 +3601,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Cunning Running</description>
 		<year>1984</year>
 		<publisher>Jacaranda Wiley</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3352,6 +3614,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Dungeon Masters 1 - The Dungeons of Khan</description>
 		<year>198?</year>
 		<publisher>M.G. Watts</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3364,6 +3627,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Faust</description>
 		<year>199?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3377,6 +3641,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Frog Hop</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Games"/>
 		<info name="usage" value="Requires CP/M" />
 
 		<part name="flop1" interface="floppy_5_25">
@@ -3390,6 +3655,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Grotnik Wars</description>
 		<year>1984</year>
 		<publisher>Grotnik Software</publisher>
+		<info name="category" value="Games"/>
 		<info name="usage" value="Requires CP/M" />
 
 		<part name="flop1" interface="floppy_5_25">
@@ -3403,6 +3669,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Hangman</description>
 		<year>1983</year>
 		<publisher>Dreamcards</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3415,6 +3682,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Hoards of the Deep Realm (v1.1t)</description>
 		<year>1987</year>
 		<publisher>Vaughan Clarkson</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3427,6 +3695,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Hoards of the Deep Realm (v1.1t, Alt)</description>
 		<year>1987</year>
 		<publisher>Vaughan Clarkson</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3439,6 +3708,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Hoards of the Deep Realm (v1.1)</description>
 		<year>1986</year>
 		<publisher>Vaughan Clarkson</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3451,6 +3721,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Hoards of the Deep Realm (v1.1, Alt)</description>
 		<year>1986</year>
 		<publisher>Vaughan Clarkson</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3463,6 +3734,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Hoards of the Deep Realm (v1.0)</description>
 		<year>1985</year>
 		<publisher>Vaughan Clarkson</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3475,6 +3747,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Hoards of the Deep Realm (v1.0, Alt)</description>
 		<year>1985</year>
 		<publisher>Vaughan Clarkson</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3487,6 +3760,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Jewels of Sancara Island</description>
 		<year>198?</year>
 		<publisher>Psychic Software</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3499,6 +3773,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Let's Eat Worms</description>
 		<year>1985</year>
 		<publisher>Nectar Software</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3511,6 +3786,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Let's Go Punting!</description>
 		<year>1986</year>
 		<publisher>Goodison Software</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -3523,6 +3799,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>The Lucky Bar Poker Machine</description>
 		<year>1983</year>
 		<publisher>MicroWorld</publisher>
+		<info name="category" value="Games"/>
 		<info name="usage" value="Requires CP/M" />
 
 		<part name="flop1" interface="floppy_5_25">
@@ -3536,6 +3813,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Market Simulation Game</description>
 		<year>1984</year>
 		<publisher>P. O'Neill</publisher>
+		<info name="category" value="Games"/>
 		<info name="usage" value="Requires CP/M" />
 
 		<part name="flop1" interface="floppy_5_25">
@@ -3549,6 +3827,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Melbourne to Hobart Yacht Race (v1.0)</description>
 		<year>198?</year>
 		<publisher>Goodison Software</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -3561,6 +3840,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Micro Defender</description>
 		<year>1983</year>
 		<publisher>J. David Morrison</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3573,6 +3853,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Microspace Invaders II</description>
 		<year>198?</year>
 		<publisher>Tim Morris-Yates</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3585,6 +3866,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Millionwaire</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -3597,6 +3879,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Miners (Color and Monochrome versions)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Games"/>
 		<info name="usage" value="Requires CP/M" />
 
 		<part name="flop1" interface="floppy_5_25">
@@ -3610,6 +3893,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Nemesis and Dungeon Master (v1.2)</description>
 		<year>1981</year>
 		<publisher>Michael Q. Hiller - Michael A. Pagels</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3622,6 +3906,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Nemesis and Dungeon Master (Unknown Version)</description>
 		<year>1981</year>
 		<publisher>Michael Q. Hiller - Michael A. Pagels</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3634,6 +3919,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Quest for Castle Eldritch</description>
 		<year>198?</year>
 		<publisher>Peter de Vries</publisher>
+		<info name="category" value="Games"/>
 		<info name="usage" value="Requires CP/M" />
 
 		<part name="flop1" interface="floppy_5_25">
@@ -3647,6 +3933,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Scrambler</description>
 		<year>1982</year>
 		<publisher>Matthew Hickey</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3659,6 +3946,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Survivor</description>
 		<year>198?</year>
 		<publisher>W. Parker</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3671,6 +3959,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Sydney Approach</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3683,6 +3972,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Takeover - Warriors Against The World</description>
 		<year>1990</year>
 		<publisher>Adrenalin Soft</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3695,6 +3985,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Thunder Road Adventure</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -3707,6 +3998,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Viper</description>
 		<year>1983</year>
 		<publisher>Subatomic Software</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3719,6 +4011,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Zeephon</description>
 		<year>1986</year>
 		<publisher>Grey Matter Software</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3727,12 +4020,11 @@ All info on non-TOSEC disks comes from this testing.
 		</part>
 	</software>
 
-<!-- Misc -->
-
 	<software name="greybrd">
 		<description>Greybeard Tape Files</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Miscellaneous"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -3745,6 +4037,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Poster Disk 1987</description>
 		<year>1987?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Miscellaneous"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -3757,6 +4050,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Springboard Clipart</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Miscellaneous"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="860416">
@@ -3769,6 +4063,7 @@ All info on non-TOSEC disks comes from this testing.
 		<description>Turbo Pascal Sound and Graphics Routines (July 1, 1986)</description>
 		<year>1986</year>
 		<publisher>Gordon Rowell</publisher>
+		<info name="category" value="Miscellaneous"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="430336">
@@ -3782,6 +4077,7 @@ All info on non-TOSEC disks comes from this testing.
         <description>MicroBee Gamma OS Boot &amp; Demo Disk (Proto, v1.1)</description>
         <year>1986</year>
         <publisher>MicroBee</publisher>
+        <info name="category" value="Miscellaneous"/>
 
         <part name="flop1" interface="floppy_5_25">
             <dataarea name="flop" size="819200">
@@ -3792,17 +4088,18 @@ All info on non-TOSEC disks comes from this testing.
 -->
 
 <!-- obviously not for any emulated Microbee
-	<software name="beeboard" supported="no">
-		<description>Beeboard 1 System Disk</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
+    <software name="beeboard" supported="no">
+        <description>Beeboard 1 System Disk</description>
+        <year>198?</year>
+        <publisher>&lt;unknown&gt;</publisher>
+        <info name="category" value="Miscellaneous"/>
 
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="860416">
-				<rom name="beeboard_1_system_disk_ds8b.dsk" size="860416" crc="929904df" sha1="cfe5f6c4e3df8133da10c10f7b9cf28629b4816e" offset="0" />
-			</dataarea>
-		</part>
-	</software>
+        <part name="flop1" interface="floppy_5_25">
+            <dataarea name="flop" size="860416">
+                <rom name="beeboard_1_system_disk_ds8b.dsk" size="860416" crc="929904df" sha1="cfe5f6c4e3df8133da10c10f7b9cf28629b4816e" offset="0" />
+            </dataarea>
+        </part>
+    </software>
 -->
 
 </softwarelist>
