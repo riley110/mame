@@ -1,11 +1,11 @@
 // license:BSD-3-Clause
 // copyright-holders:Robbbert
 
-/*************************************
+/*********************
  *
- *  Targ Test Rom - note that MAME fails the music tests
+ *  Targ Test Rom
  *
- *************************************/
+ *********************/
 
 ROM_START( targtest )
 	ROM_REGION( 0x10000, "maincpu", 0 )
