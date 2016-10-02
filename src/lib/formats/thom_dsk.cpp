@@ -348,40 +348,90 @@ static FLOPPY_CONSTRUCT(qdd_dsk_construct)
 	return basicdsk_construct(floppy, &geometry);
 }
 
+static FLOPPY_IDENTIFY(fdmfm2_dsk_identify)
+{
+	*vote = (floppy_image_size(floppy) == (327680)) ? 100 : 0;
+	return FLOPPY_ERROR_SUCCESS;
+}
+
+static FLOPPY_CONSTRUCT(fdmfm2_dsk_construct)
+{
+	struct basicdsk_geometry geometry;
+
+	memset(&geometry, 0, sizeof(geometry));
+	geometry.heads = 1;
+	geometry.first_sector_id = 1;
+	geometry.sector_length = 256;
+	geometry.tracks = 80;
+	geometry.sectors = 16;
+	return basicdsk_construct(floppy, &geometry);
+}
+
+static FLOPPY_IDENTIFY(fd2_dsk_identify)
+{
+	*vote = (floppy_image_size(floppy) == (163840)) ? 100 : 0;
+	return FLOPPY_ERROR_SUCCESS;
+}
+
+static FLOPPY_CONSTRUCT(fd2_dsk_construct)
+{
+	struct basicdsk_geometry geometry;
+
+	memset(&geometry, 0, sizeof(geometry));
+	geometry.heads = 1;
+	geometry.first_sector_id = 1;
+	geometry.sector_length = 128;
+	geometry.tracks = 80;
+	geometry.sectors = 16;
+	return basicdsk_construct(floppy, &geometry);
+}
+
+static FLOPPY_IDENTIFY(fd_dsk_identify)
+{
+	*vote = (floppy_image_size(floppy) == (81920)) ? 100 : 0;
+	return FLOPPY_ERROR_SUCCESS;
+}
+
+static FLOPPY_CONSTRUCT(fd_dsk_construct)
+{
+	struct basicdsk_geometry geometry;
+
+	memset(&geometry, 0, sizeof(geometry));
+	geometry.heads = 1;
+	geometry.first_sector_id = 1;
+	geometry.sector_length = 128;
+	geometry.tracks = 40;
+	geometry.sectors = 16;
+	return basicdsk_construct(floppy, &geometry);
+}
+
 
 /* ----------------------------------------------------------------------- */
 
 LEGACY_FLOPPY_OPTIONS_START(thomson)
 
-	LEGACY_FLOPPY_OPTION(fdmfm2, "fd", "Thomson FD (MFM) 80 tracks disk image (3\"1/2 DD)", basicdsk_identify_default, basicdsk_construct_default, nullptr,
+	LEGACY_FLOPPY_OPTION(fdmfm2, "fd", "Thomson FD (MFM) 80 tracks disk image (3\"1/2 DD)", fdmfm2_dsk_identify, fdmfm2_dsk_construct, nullptr,
 		HEADS([1])
 		TRACKS([80])
 		SECTORS([16])
 		SECTOR_LENGTH([256])
 		FIRST_SECTOR_ID([1]))
 
-	LEGACY_FLOPPY_OPTION(fdmfm, "fd", "Thomson FD (MFM) 40 tracks disk image (5\"1/4 DD)", basicdsk_identify_default, basicdsk_construct_default, nullptr,
-		HEADS([1])
-		TRACKS([40])
-		SECTORS([16])
-		SECTOR_LENGTH([256])
-		FIRST_SECTOR_ID([1]))
-
-	LEGACY_FLOPPY_OPTION(fd2, "fd", "Thomson FD (FM) 80 tracks disk image (3\"1/2 SD)", basicdsk_identify_default, basicdsk_construct_default, nullptr,
+	LEGACY_FLOPPY_OPTION(fd2, "fd", "Thomson FD (FM) 80 tracks disk image (3\"1/2 SD)", fd2_dsk_identify, fd2_dsk_construct, nullptr,
 		HEADS([1])
 		TRACKS([80])
 		SECTORS([16])
 		SECTOR_LENGTH([128])
 		FIRST_SECTOR_ID([1]))
 
-	LEGACY_FLOPPY_OPTION(fd, "fd", "Thomson FD (FM) 40 tracks disk image (5\"1/4 SD)", basicdsk_identify_default, basicdsk_construct_default, nullptr,
+	LEGACY_FLOPPY_OPTION(fd, "fd", "Thomson FD (FM) 40 tracks disk image (5\"1/4 SD)", fd_dsk_identify, fd_dsk_construct, nullptr,
 		HEADS([1])
 		TRACKS([40])
 		SECTORS([16])
 		SECTOR_LENGTH([128])
 		FIRST_SECTOR_ID([1]))
 
-		LEGACY_FLOPPY_OPTION(sap,"sap", "Thomson SAP floppy disk image",    sap_dsk_identify, sap_dsk_construct, nullptr, nullptr)
+	LEGACY_FLOPPY_OPTION(sap,"sap", "Thomson SAP floppy disk image",    sap_dsk_identify, sap_dsk_construct, nullptr, nullptr)
 
 	LEGACY_FLOPPY_OPTION(qdd,"qd", "Thomson QDD floppy disk image (2\"8 SD)",   qdd_dsk_identify, qdd_dsk_construct, nullptr,
 		HEADS([1])
