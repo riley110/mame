@@ -10,7 +10,7 @@ DRIVER_INIT_MEMBER( neogeo_hbmame, kof97pla )
 	// The following was used in Ash build, purpose unknown:
 	//m_bootleg_prot->patch_kof97pla(cpuregion, cpuregion_size);
 	// This contains:
-	//void ngbootleg_prot_device::patch_kof97pla(UINT8* cpurom, UINT32 cpurom_size)
+	//void ngbootleg_prot_device::patch_kof97pla(uint8_t* cpurom, uint32_t cpurom_size)
 	//cpurom[0x1394A] = 0x6C;
 	//cpurom[0x1394B] = 0xD1;
 	//cpurom[0x1394C] = 0x3A;

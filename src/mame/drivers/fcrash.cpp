@@ -3179,7 +3179,7 @@ ADDRESS_MAP_END
 
 MACHINE_START_MEMBER(cps_state, captcommb2)
 {
-	UINT8 *ROM = memregion("audiocpu")->base();
+	uint8_t *ROM = memregion("audiocpu")->base();
 
 	membank("bank1")->configure_entries(0, 16, &ROM[0x10000], 0x4000);
 

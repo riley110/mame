@@ -183,18 +183,18 @@ public:
 // HBMAME extras
 	DECLARE_VIDEO_START(pacmanx);
 	DECLARE_VIDEO_START(multipac);
-	UINT32 screen_update_pacmanx(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
-	UINT32 screen_update_multipac(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
-	//UINT32 screen_update_pengo(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
+	uint32_t screen_update_pacmanx(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
+	uint32_t screen_update_multipac(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
+	//uint32_t screen_update_pengo(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 	DECLARE_PALETTE_INIT(multipac);
 	//DECLARE_PALETTE_INIT(pengo);
-	void m96in1b_gfxbank_w(UINT8 gfxbank);
-	void madpac_gfxbank_w(UINT8 gfxbank);
+	void m96in1b_gfxbank_w(uint8_t gfxbank);
+	void madpac_gfxbank_w(uint8_t gfxbank);
 	DECLARE_WRITE8_MEMBER(multipac_gfxbank_w);	
 	DECLARE_WRITE8_MEMBER(multipac_palbank_w);
 	TILE_GET_INFO_MEMBER(multipac_get_tile_info);
-	UINT8 m_speedcheat;
-	UINT8 m_timerthing;
+	uint8_t m_speedcheat;
+	uint8_t m_timerthing;
 	DECLARE_READ8_MEMBER(mspacii_prot_r);
 	DECLARE_READ8_MEMBER(zolatimer_r);
 	DECLARE_WRITE8_MEMBER(zolatimer_w);

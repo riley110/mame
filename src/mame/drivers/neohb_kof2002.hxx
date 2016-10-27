@@ -26,7 +26,7 @@ DRIVER_INIT_MEMBER( neogeo_hbmame, kof2k2bd )
 #if 0
 	dynamic_buffer src( fix_region_size );
 	int i,j;
-	UINT8 *dst = fix_region;
+	uint8_t *dst = fix_region;
 	memcpy (&src[0], &dst[0], fix_region_size);
 
 	for (i = 1; i < fix_region_size/0x80; i++)

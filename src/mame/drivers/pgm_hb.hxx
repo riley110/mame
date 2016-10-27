@@ -1702,7 +1702,7 @@ GAME( 1999, kovsh19,    kovsh,     pgm_arm_type1,      kovsh,    pgm_arm_type1_s
 
 void pgm_arm_type1_state::kovplus_fix_patch()
 {
-	UINT8 *mem8 = (UINT8 *)(memregion("maincpu")->base());
+	uint8_t *mem8 = (uint8_t *)(memregion("maincpu")->base());
 
 	mem8[0x1085D4] = 0x1B;
 	mem8[0x1085D5] = 0x3;
@@ -1894,7 +1894,7 @@ void pgm_arm_type1_state::kovplus_fix_patch()
 
 void pgm_arm_type1_state::kovboot_fix_patch()
 {
-	UINT8 *mem8 = (UINT8 *)(memregion("maincpu")->base());
+	uint8_t *mem8 = (uint8_t *)(memregion("maincpu")->base());
 
 	mem8[0x1085D4] = 0x71;
 	mem8[0x1085D5] = 0x4E;
@@ -2082,7 +2082,7 @@ void pgm_arm_type1_state::kovboot_fix_patch()
 
 void pgm_arm_type1_state::kovshp_fix_patch()
 {
-	UINT8 *mem8 = (UINT8 *)(memregion("prot")->base());
+	uint8_t *mem8 = (uint8_t *)(memregion("prot")->base());
 
 	mem8[0x2892] = 0x1;
 	mem8[0x2893] = 0x1;
@@ -2121,8 +2121,8 @@ DRIVER_INIT_MEMBER(pgm_arm_type1_state,kovassga)
 void pgm_arm_type1_state::pgm_decode_kovassg_program()
 {
 	int i;
-	UINT16 *src = (UINT16 *)(memregion("maincpu")->base() + 0x100000);
-	std::vector<UINT16> dst(0x400000);
+	uint16_t *src = (uint16_t *)(memregion("maincpu")->base() + 0x100000);
+	std::vector<uint16_t> dst(0x400000);
 
 	for (i = 0; i < 0x400000 / 2; i++)
 	{

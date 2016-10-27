@@ -109,9 +109,9 @@ ROM_END
 
 DRIVER_INIT_MEMBER( amg_state, amg )
 {
-	UINT8 *src = memregion("user2")->base();
+	uint8_t *src = memregion("user2")->base();
 //	int len = memregion("user1")->bytes();
-	UINT8 *dest = memregion("user3")->base();
+	uint8_t *dest = memregion("user3")->base();
 
 	offs_t i,j;
 

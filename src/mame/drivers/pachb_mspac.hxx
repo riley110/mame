@@ -11,7 +11,7 @@ READ8_MEMBER( pacman_state::mspacii_prot_r )
 
 READ8_MEMBER( pacman_state::zolatimer_r )
 {
-	UINT8 timernow = m_timerthing;
+	uint8_t timernow = m_timerthing;
 	m_timerthing++;
 	return timernow;
 }
