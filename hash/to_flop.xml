@@ -116,21 +116,6 @@
 		</part>
 	</software>
 
-<!--
-    <software name="amigatob" cloneof="amigato">
-        <description>Amiga-TO (Unknown Version, Bad)</description>
-        <year>200?</year>
-        <publisher>Prehis-To - ContacThoms</publisher>
-        <info name="category" value="Applications"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="332707">
-                <rom name="amiga-to.sap" size="332707" crc="bcc0f406" sha1="5e6ad66761a93c2ac176b4e279f6f8475726ae6f" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
-
 	<software name="analpist">
 		<description>ANALPIST</description>
 		<year>1990</year>
@@ -2063,21 +2048,6 @@
 		</part>
 	</software>
 
-<!--
-    <software name="speedywa" cloneof="speedyw">
-        <description>Speedy Wonder (SAP Format, Bad)</description>
-        <year>1986</year>
-        <publisher>Minipuce</publisher>
-        <info name="category" value="Applications/Disk Utilities"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="2948">
-                <rom name="speedy_w.sap" size="2948" crc="30cd3965" sha1="1a00e758507982a8b1c7d2958d6e2af21ae4a978" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
-
 	<software name="statistq">
 		<description>Statistiques</description>
 		<year>1985</year>
@@ -2421,21 +2391,6 @@
 			</dataarea>
 		</part>
 	</software>
-
-<!--
-    <software name="tosnapa" cloneof="tosnap" supported="partial">
-        <description>TO-SNAP &amp; Demo (v1.1, Bad)</description>
-        <year>1992</year>
-        <publisher>HMEL</publisher>
-        <info name="usage" value="To load TO-SNAP, Press 4 key and load file &quot;TO-SNAP&quot;"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="335426">
-                <rom name="to-snap &amp; demo v1.1 (1992)(hmel)(fr)[b].sap" size="335426" crc="8aeaa854" sha1="b28d3b34870493035a43b70eda41b6d92a19689b" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
 
 	<software name="tospool">
 		<description>TO-Spool</description>
@@ -3951,21 +3906,6 @@
 		</part>
 	</software>
 
-<!--
-    <software name="coffcadb" cloneof="coffcad">
-        <description>Coffret Cadeau (SAP Format, Bad)</description>
-        <year>1986</year>
-        <publisher>France Image Logiciel (FIL)</publisher>
-        <info name="category" value="Compilations/Games"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="126401">
-                <rom name="tennis_beret_runway.sap" size="126401" crc="607b6f30" sha1="8e6542825dc5da802afd45e40221026c822449fb" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
-
 	<software name="coktel1">
 		<description>Coktel Vision Compilation 1</description>
 		<year>198?</year>
@@ -4044,21 +3984,6 @@
 		</part>
 	</software>
 
-<!--
-    <software name="coktel2b" cloneof="coktel2">
-        <description>Coktel Vision Compilation 2 (SAP Format, Bad)</description>
-        <year>198?</year>
-        <publisher>Coktel Vision</publisher>
-        <info name="category" value="Compilations/Games"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="93721">
-                <rom name="pack_coktel2.sap" size="93721" crc="3ad19a8f" sha1="cae319aa4c0012f08a75b338cb941ef5753fad6a" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
-
 	<software name="coktel3">
 		<description>Coktel Vision Compilation 3</description>
 		<year>198?</year>
@@ -4084,21 +4009,6 @@
 			</dataarea>
 		</part>
 	</software>
-
-<!--
-    <software name="coktel3b" cloneof="coktel3">
-        <description>Coktel Vision Compilation 3 (SAP Format, Bad)</description>
-        <year>198?</year>
-        <publisher>Coktel Vision</publisher>
-        <info name="category" value="Compilations/Games"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="114576">
-                <rom name="pack_coktel3.sap" size="114576" crc="bbe8579e" sha1="75d726b96175195ef4f07284673caa7dcd997601" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
 
 	<software name="ediljeux">
 		<description>Collection Jeux</description>
@@ -4476,28 +4386,6 @@
 			</dataarea>
 		</part>
 	</software>
-
-<!--
-    <software name="greatcolb" cloneof="greatcol">
-        <description>The Greatest Collection (SAP Format, Bad)</description>
-        <year>1987</year>
-        <publisher>Free Game Blot</publisher>
-        <info name="category" value="Compilations/Games"/>
-
-        <part name="flop1" interface="thom_flop">
-        <feature name="part_id" value="Disk 1"/>
-            <dataarea name="flop" size="71591">
-                <rom name="great_collection1.sap" size="71591" crc="d6013b54" sha1="7d18f49e78bd588216a7daad150951dc236dac2b" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-        <part name="flop2" interface="thom_flop">
-        <feature name="part_id" value="Disk 2"/>
-            <dataarea name="flop" size="81248">
-                <rom name="great_collection2.sap" size="81248" crc="e73fff1b" sha1="6e95c708819f24a8c5b9076eb23d25e2167b8da7" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
 
 	<software name="greates2">
 		<description>The Greatest Collection II</description>
@@ -10456,21 +10344,6 @@
 		</part>
 	</software>
 
-<!--
-    <software name="mbacmatha" cloneof="mbacmath" supported="no">
-        <description>Microbac Maths (Bad)</description>
-        <year>19??</year>
-        <publisher>&lt;unknown&gt;</publisher>
-        <info name="category" value="Educational"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="170291">
-                <rom name="microbac_maths.sap" size="170291" crc="25501bbe" sha1="a8639ce8b14e15ac1473b0255cafe45809561e31" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
-
 	<!-- works in dcmoto, copy protection? -->
 	<software name="mbacsci" supported="no">
 		<description>MicroBac Physique - Chimie</description>
@@ -11155,21 +11028,6 @@
 		</part>
 	</software>
 
-<!--
-    <software name="astrixrad" cloneof="astrixra">
-        <description>Asterix chez Rahazade (Extra Junk Data)</description>
-        <year>1987</year>
-        <publisher>Coktel Vision</publisher>
-        <info name="category" value="Games"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="331776">
-                <rom name="asterix chez rahazade (1987)(coktel vision)(fr)[4k extra bytes].fd" size="331776" crc="df45d7ab" sha1="b6053e673162bfec1ca87fb4f9ed1f2355143564" offset="0" />
-            </dataarea>
-        </part>
-    </software>
--->
-
 	<software name="astrixpo">
 		<description>Asterix et la Potion Magique</description>
 		<year>1986</year>
@@ -11456,21 +11314,6 @@
 		</part>
 	</software>
 
-<!--
-    <software name="bluberryb" cloneof="bluberry">
-        <description>Blueberry (SAP Format, Bad)</description>
-        <year>1987</year>
-        <publisher>Coktel Vision</publisher>
-        <info name="category" value="Games"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="107960">
-                <rom name="blueberry.sap" size="107960" crc="ee1ea1f9" sha1="7d7001f2ed54f1790340e51e3f3438a7c4ec3ddb" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
-
 	<software name="moranech">
 		<description>Bob Morane - Chevalerie 1</description>
 		<year>1987</year>
@@ -11510,21 +11353,6 @@
 		</part>
 	</software>
 
-<!--
-    <software name="moranechc" cloneof="moranech">
-        <description>Bob Morane - Chevalerie 1 (SAP Format, Bad)</description>
-        <year>1987</year>
-        <publisher>Infogrames</publisher>
-        <info name="category" value="Games"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="161176">
-                <rom name="bob_chevalerie.sap" size="161176" crc="723730bb" sha1="af4a468721bc54b736dac931edee2c68c3bf441b" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
-
 	<software name="moraneju">
 		<description>Bob Morane - Jungle 1</description>
 		<year>1987</year>
@@ -11550,21 +11378,6 @@
 			</dataarea>
 		</part>
 	</software>
-
-<!--
-    <software name="moranejub" cloneof="moraneju">
-        <description>Bob Morane - Jungle 1 (SAP Format, Bad)</description>
-        <year>1987</year>
-        <publisher>Infogrames</publisher>
-        <info name="category" value="Games"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="149741">
-                <rom name="bob_jungle.sap" size="149741" crc="e4bf22e1" sha1="3e2d9dac97bd6b5c1146eb9e77bb007b1c61ced5" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
 
 	<software name="moranesf">
 		<description>Bob Morane - Science Fiction 1</description>
@@ -11604,21 +11417,6 @@
 			</dataarea>
 		</part>
 	</software>
-
-<!--
-    <software name="moranesfc" cloneof="moranesf">
-        <description>Bob Morane - Science Fiction 1 (SAP Format, Bad)</description>
-        <year>1987</year>
-        <publisher>Infogrames</publisher>
-        <info name="category" value="Games"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="157224">
-                <rom name="bob_sf.sap" size="157224" crc="a1cf36f4" sha1="c61839e2286f68602e46364a06894353541243a5" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
 
 	<software name="bobwinnr">
 		<description>Bob Winner</description>
@@ -11993,22 +11791,6 @@
 			</dataarea>
 		</part>
 	</software>
-
-<!--
-    <software name="cobrab" cloneof="cobra">
-        <description>Cobra (SAP Format, Bad)</description>
-        <year>1987</year>
-        <publisher>Loriciels</publisher>
-        <info name="category" value="Games"/>
-        <info name="usage" value="Boot with Microsoft BASIC 1.0"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="52212">
-                <rom name="cobra.sap" size="52212" crc="0d0e47df" sha1="d22f5439816c7fe51917705b4f13adff07c7894c" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
 
 	<!-- You MUST use TO9 to run this! -->
 	<software name="coliseum">
@@ -12496,21 +12278,6 @@
 			</dataarea>
 		</part>
 	</software>
-
-<!--
-    <software name="erebusa" cloneof="erebus">
-        <description>Erebus (Bad)</description>
-        <year>1986</year>
-        <publisher>EH Services</publisher>
-        <info name="category" value="Games"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="241539">
-                <rom name="erebus.sap" size="241539" crc="29c34ba5" sha1="1db5768c976402b49ab6b2ab130c42a3aa592203" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
 
 	<software name="f15eagle">
 		<description>F-15 Strike Eagle</description>
@@ -13495,21 +13262,6 @@
 		</part>
 	</software>
 
-<!--
-    <software name="maxibourb" cloneof="maxibour">
-        <description>Maxi Bourse International (SAP Format, Bad)</description>
-        <year>1988</year>
-        <publisher>Cobrasoft</publisher>
-        <info name="category" value="Games"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="110588">
-                <rom name="maxibourse.sap" size="110588" crc="eb1aa73b" sha1="3b253cb5e61e081aef91b54217be5666d21b64d7" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
-
 	<software name="meandres">
 		<description>Meandres</description>
 		<year>1992</year>
@@ -13561,21 +13313,6 @@
 			</dataarea>
 		</part>
 	</software>
-
-<!--
-    <software name="megawattb" cloneof="megawatt">
-        <description>Megawatt (SAP Format, Bad)</description>
-        <year>1987</year>
-        <publisher>SoftBook</publisher>
-        <info name="category" value="Games"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="166271">
-                <rom name="megawatt.sap" size="166271" crc="10b43eaf" sha1="7c646f558c303ab0059b49a5450e4db5c5ce4362" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
 
 	<software name="menacarc">
 		<description>Menace sur l'Arctique</description>
@@ -13932,21 +13669,6 @@
 		</part>
 	</software>
 
-<!--
-    <software name="monopolyb" cloneof="monopoly">
-        <description>Monopoly (SAP Format, Bad)</description>
-        <year>1986</year>
-        <publisher>France Image Logiciel (FIL)</publisher>
-        <info name="category" value="Games"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="83723">
-                <rom name="monopoly.sap" size="83723" crc="59bc1964" sha1="2f04209462f468575244cee42c3201b7535737d9" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
-
 	<software name="mutants">
 		<description>Les Mutants</description>
 		<year>1987</year>
@@ -13985,21 +13707,6 @@
 			</dataarea>
 		</part>
 	</software>
-
-<!--
-    <software name="mysparisb" cloneof="mysparis">
-        <description>Le Mystere de Paris (Bad)</description>
-        <year>1988</year>
-        <publisher>Coktel Vision</publisher>
-        <info name="category" value="Games"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="170316">
-                <rom name="mystere_paris.sap" size="170316" crc="0a4225d8" sha1="8f73cbe3128677832d227401504d72f562869d33" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
 
 	<software name="nuittemp">
 		<description>La Nuit des Templiers</description>
@@ -14314,21 +14021,6 @@
 		</part>
 	</software>
 
-<!--
-    <software name="prohibitc" cloneof="prohibit">
-        <description>Prohibition (SAP Format, Bad)</description>
-        <year>1987</year>
-        <publisher>Infogrames</publisher>
-        <info name="category" value="Games"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="89453">
-                <rom name="prohibition.sap" size="89453" crc="c521142e" sha1="803327da862054cc2a76fc95c5de983224bf9c41" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
-
 	<software name="pulsar2">
 		<description>Pulsar II</description>
 		<year>1984</year>
@@ -14465,21 +14157,6 @@
 		</part>
 	</software>
 
-<!--
-    <software name="renegadeb" cloneof="renegade">
-        <description>Renegade (Bad)</description>
-        <year>1988</year>
-        <publisher>France Image Logiciel (FIL)</publisher>
-        <info name="category" value="Games"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="70403">
-                <rom name="renegade.sap" size="70403" crc="7b36b34f" sha1="15120ac2a4483ac77435bae2d2646ebf5f36f352" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
-
 	<software name="reussite">
 		<description>Reussites</description>
 		<year>1987</year>
@@ -14544,21 +14221,6 @@
 			</dataarea>
 		</part>
 	</software>
-
-<!--
-    <software name="ripouxb" cloneof="ripoux">
-        <description>Les Ripoux (SAP Format, Bad)</description>
-        <year>1987</year>
-        <publisher>Cobrasoft</publisher>
-        <info name="category" value="Games"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="105564">
-                <rom name="ripoux.sap" size="105564" crc="5e1d0e93" sha1="4dd9e39a4eb58d80d7a6a9fa5c025ecd453f2b5f" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
 
 	<software name="risk">
 		<description>Risk</description>
@@ -14728,21 +14390,6 @@
 			</dataarea>
 		</part>
 	</software>
-
-<!--
-    <software name="saphira" cloneof="saphir">
-        <description>Saphir (Bad)</description>
-        <year>1986</year>
-        <publisher>Infogrames</publisher>
-        <info name="category" value="Games"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="332618">
-                <rom name="saphir0.sap" size="332618" crc="3deae3ef" sha1="3030a5f6f451258f0a1a2b4752dbca782c6a9ac7" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
 
 	<software name="sapiens">
 		<description>Sapiens</description>
@@ -14933,21 +14580,6 @@
 		</part>
 	</software>
 
-<!--
-    <software name="slapfighd" cloneof="slapfigh">
-        <description>Slap Fight (SAP Format, Bad)</description>
-        <year>1987</year>
-        <publisher>France Image Logiciel (FIL)</publisher>
-        <info name="category" value="Games"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="107779">
-                <rom name="slap_fight.sap" size="107779" crc="63c6cb2d" sha1="ca5d4e984a6e8058c0e825286a6929f7524b6b11" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
-
 	<software name="sokoban">
 		<description>Sokoban</description>
 		<year>19??</year>
@@ -15012,21 +14644,6 @@
 			</dataarea>
 		</part>
 	</software>
-
-<!--
-    <software name="sorceryb" cloneof="sorcery">
-        <description>Sorcery (SAP Format, Bad)</description>
-        <year>1986</year>
-        <publisher>France Image Logiciel (FIL)</publisher>
-        <info name="category" value="Games"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="274401">
-                <rom name="sorcery.sap" size="274401" crc="749b629f" sha1="9da7793ee2afcc14bf689917b3dad93eb7fd99f2" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
 
 	<software name="sortileg">
 		<description>Sortileges</description>
@@ -15106,21 +14723,6 @@
 		</part>
 	</software>
 
-<!--
-    <software name="spaceracc" cloneof="spacerac">
-        <description>Space Racer (SAP Format, Bad)</description>
-        <year>1988</year>
-        <publisher>Loriciels</publisher>
-        <info name="category" value="Games"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="94315">
-                <rom name="space_racer.sap" size="94315" crc="12d71422" sha1="31388e096a6cf0b2e11aa3060d0b987f5046c8b4" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
-
 	<software name="sshuttle">
 		<description>Space Shuttle Simulator</description>
 		<year>1984</year>
@@ -15146,21 +14748,6 @@
 			</dataarea>
 		</part>
 	</software>
-
-<!--
-    <software name="spacetuna" cloneof="spacetun">
-        <description>Space Tunnel (Bad)</description>
-        <year>1987</year>
-        <publisher>SoftBook</publisher>
-        <info name="category" value="Games"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="335426">
-                <rom name="space tunnel (1987)(softbook)(fr)[b corrupt disk].sap" size="335426" crc="6ba8811f" sha1="bc75556cd42fd5b8cea525c5faebfa5d4c957276" offset="0" status="baddump"/>
-            </dataarea>
-        </part>
-    </software>
--->
 
 	<software name="speedway">
 		<description>Speedway</description>
@@ -15228,21 +14815,6 @@
 			</dataarea>
 		</part>
 	</software>
-
-<!--
-    <software name="startreka" cloneof="startrek">
-        <description>Star-Trek (Corrupted Directory)</description>
-        <year>198?</year>
-        <publisher>&lt;unknown&gt;</publisher>
-        <info name="category" value="Games"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="335426">
-                <rom name="star-trek (198x)(-)(pd)[b dir].sap" size="335426" crc="23d72076" sha1="832a49633622acc61f4c4252e58d3f7301d1cac6" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
 
 	<software name="stonezon">
 		<description>Stone Zone</description>
@@ -15652,21 +15224,6 @@
 		</part>
 	</software>
 
-<!--
-    <software name="topguna" cloneof="topgun">
-        <description>Top Gun (Bad)</description>
-        <year>1988</year>
-        <publisher>France Image Logiciel (FIL)</publisher>
-        <info name="category" value="Games"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="142095">
-                <rom name="topgun.sap" size="142095" crc="3a6beec2" sha1="8f69dfaa5a7aa0fa3fd5d74f613aef5f3f7eb033" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
-
 	<software name="toutshus">
 		<description>Tout Schuss</description>
 		<year>1987</year>
@@ -15986,21 +15543,6 @@
 		</part>
 	</software>
 
-<!--
-    <software name="turbocupc" cloneof="turbocup" supported="no">
-        <description>Turbo Cup (SAP Format, Bad)</description>
-        <year>1988</year>
-        <publisher>Loriciels</publisher>
-        <info name="category" value="Games"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="56272">
-                <rom name="turbocup.sap" size="56272" crc="e7395831" sha1="3ec6fda5e0b1ccd8976a06e94561fbf4f90f9632" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
-
 	<software name="turlogh">
 		<description>Turlogh de Penroth</description>
 		<year>1988?</year>
@@ -16117,21 +15659,6 @@
 			</dataarea>
 		</part>
 	</software>
-
-<!--
-    <software name="mortdinoa" cloneof="mortdino">
-        <description>Vie et Mort des Dinosaures (Bad)</description>
-        <year>1986</year>
-        <publisher>Infogrames</publisher>
-        <info name="category" value="Games"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="120930">
-                <rom name="dinosaures.sap" size="120930" crc="22a4c374" sha1="048bdd547926fd806f835bd8aa9fb19654a39af0" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
 
 	<software name="villfran">
 		<description>Villes de France</description>
@@ -16276,21 +15803,6 @@
 		</part>
 	</software>
 
-<!--
-    <software name="waytigerb" cloneof="waytiger">
-        <description>The Way of the Tiger (SAP Format, Bad)</description>
-        <year>1986</year>
-        <publisher>France Image Logiciel (FIL)</publisher>
-        <info name="category" value="Games"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="175891">
-                <rom name="way_tiger.sap" size="175891" crc="9cb7d401" sha1="297488f9ae6d1df03d66c6d74a43648ec645d2c5" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
-
 	<software name="wizball">
 		<description>Wizball</description>
 		<year>1988</year>
@@ -16342,21 +15854,6 @@
 			</dataarea>
 		</part>
 	</software>
-
-<!--
-    <software name="getmenu0">
-        <description>getmenu0 (Bad)</description>
-        <year>19??</year>
-        <publisher>&lt;unknown&gt;</publisher>
-        <info name="category" value="Miscellaneous"/>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="333663">
-                <rom name="getmenu0.sap" size="333663" crc="6d754377" sha1="b336604d5052532ba0ca1550240ceb84e97e87f3" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
 
 	<!-- only contains an auto.bat file that tries to load off drive 2 (1:) -->
 	<software name="lapinou2" supported="no">

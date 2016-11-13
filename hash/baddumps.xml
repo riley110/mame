@@ -1,9 +1,153 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+Generic software list for bad dumps, organized per system and then per media format.
+Do NOT put any bad dump here if it is the best available for its respective set!
+The following also apply as bad dumps: overdumps [o], copier hacks [h1c]
+-->
 <softwarelist name="baddumps" description="Bad Dumps">
 
+    <software name="mo5_cart">
+        <description>Thomson MO5 (cartridges)</description>
+        <year>????</year>
+        <publisher>&lt;unknown&gt;</publisher>
+
+        <part name="cart" interface="mo_cart">
+            <dataarea name="rom" size="49152">
+                <rom name="colorcalc (1985)(fil)(fr)[b].m5" size="49152" crc="4dbccd60" sha1="928e45a5ffc1ee3e8fe5879207466cfcee54ddef" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+    </software>
+
+    <software name="mo5_cass">
+        <description>Thomson MO5 (cassettes)</description>
+        <year>????</year>
+        <publisher>&lt;unknown&gt;</publisher>
+
+        <part name="cass1" interface="mo_cass">
+            <dataarea name="cass" size="18390">
+                <rom name="jeu de boole, le (1984)(hatier)(fr)(m3)[b].k7" size="18390" crc="3dac3985" sha1="eab6c7f526b05ee039eddba78157a867e7dc282e" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="cass2" interface="mo_cass">
+            <dataarea name="cass" size="34684">
+                <rom name="preterite star (1984)(edil)(fr)(en-fr)[b].k7" size="34684" crc="53fe3906" sha1="6f02625694258047c45b83410fdd0f4ba252c819" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="cass3" interface="mo_cass">
+            <dataarea name="cass" size="9478">
+                <rom name="eliminator (1984)(loriciels)(fr)[b].k7" size="9478" crc="d13b3235" sha1="82d2f65a499df1bada66d398af39f091662c995c" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="cass4" interface="mo_cass">
+            <dataarea name="cass" size="46221">
+                <rom name="enduro racer (1988)(fil)(fr)[b].k7" size="46221" crc="e4efeacf" sha1="60b5b5070c99bf2f549e3a16e754b72c35786d88" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="cass5" interface="mo_cass">
+            <dataarea name="cass" size="17551">
+                <rom name="labyrinthe survie (1984)(vifi-nathan)(fr)[b].k7" size="17551" crc="be00c159" sha1="90d16b432cf94d49538411752de7781a2952c4a4" offset="0" />
+            </dataarea>
+        </part>
+        <part name="cass6" interface="mo_cass">
+            <dataarea name="cass" size="32881">
+                <rom name="planete inconnue, la (198x)(fil)(fr)[b].k7" size="32881" crc="4ef0d7cb" sha1="6eadb2d46fdccabf98e38941f50958ecbb7916f9" offset="0" />
+            </dataarea>
+        </part>
+        <part name="cass7" interface="mo_cass">
+            <dataarea name="cass" size="7424">
+                <rom name="reverse (198x)(coulom, daniel)(fr)(pd)[b].k7" size="7424" crc="0c721916" sha1="11519777a25ffc4e1b1b584fb03d78520c860a92" offset="0" />
+            </dataarea>
+        </part>
+        <part name="cass8" interface="mo_cass">
+            <dataarea name="cass" size="31495">
+                <rom name="sapiens (1986)(loriciels)(fr)[b].k7" size="31495" crc="503e9836" sha1="755c07a9982ad0e156339c0c41ada50e6b376eb1" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="cass9" interface="mo_cass">
+            <dataarea name="cass" size="47927">
+                <rom name="sortileges (1986)(infogrames)[b2].k7" size="47927" crc="f1393ada" sha1="49216c3032c40393d988e7c0462072e2dcc39168" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="cass10" interface="mo_cass">
+            <dataarea name="cass" size="40145">
+                <rom name="vampire (1986)(infogrames)(fr)[b].k7" size="40145" crc="55d6620a" sha1="1dcea5ff2733c8d609997d07694c6b9bd0e16b64" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="cass11" interface="mo_cass">
+            <dataarea name="cass" size="13510">
+                <rom name="yeti (1984)(loriciels)(fr)[b].k7" size="13510" crc="c6f07ee0" sha1="224baa4172769608e541e6df7f6c4ecd57291d4c" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="cass12" interface="mo_cass">
+            <dataarea name="cass" size="38109">
+                <rom name="yeti (1984)(loriciels)(fr)[b2].k7" size="38109" crc="c0ae8b53" sha1="af3e9fb519076ad8be7db6b88e8b7451b474d872" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+    </software>
+
+    <software name="mo6_cass">
+        <description>Thomson MO6 (cassettes)</description>
+        <year>????</year>
+        <publisher>&lt;unknown&gt;</publisher>
+
+        <part name="cass1" interface="mo_cass">
+            <dataarea name="cass" size="12288">
+                <rom name="mgt (198x)(loriciels)[b].k7" size="12288" crc="9dc90455" sha1="9d27a2c5e1fe5a944379c5f55a3403e2d5d286f6" offset="0" />
+            </dataarea>
+        </part>
+        <part name="cass2" interface="mo_cass">
+            <dataarea name="cass" size="88402">
+                <rom name="quad (198x)(microids)[b].k7" size="88402" crc="f664118e" sha1="86d09409997e39087fab6000d062ccd390518773" offset="0" />
+            </dataarea>
+        </part>
+		<!--
+		These two tapes were distributed by Daniel Coulom on mo5.free.fr as part of a "Win a Thomson MO6" contest some time ago, part of a zipfile of three tapes
+        the first programmer that fixed the bugs in the programs would have won a MO6 computer as a prize, but it is unknown if anybody won it
+		-->
+        <part name="cass3" interface="mo_cass">
+            <dataarea name="cass" size="88402">
+                <rom name="quad (198x)(microids)[b].k7" size="88402" crc="f664118e" sha1="86d09409997e39087fab6000d062ccd390518773" offset="0" />
+            </dataarea>
+        </part>
+        <part name="cass4" interface="mo_cass">
+            <dataarea name="cass" size="118216">
+                <rom name="super ski (198x)(microids)[b].k7" size="118216" crc="01e79f7f" sha1="c4232530964f771ef7ade45675f989d458b33dcb" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+    </software>
+
+    <software name="mo6_flop">
+        <description>Thomson MO6 (floppy disks)</description>
+        <year>????</year>
+        <publisher>&lt;unknown&gt;</publisher>
+
+        <part name="flop1" interface="thom_flop">
+            <dataarea name="flop" size="657408">
+                <rom name="games_show_mo6.fd" size="657408" crc="a48a88e3" sha1="14b5184c5f22e384389df01f52a4939c8d89c73c" offset="0" />
+            </dataarea>
+        </part>
+    </software>
+
+    <software name="pro128">
+        <description>Olivetti Prodest PC 128 (cassettes)</description>
+        <year>????</year>
+        <publisher>&lt;unknown&gt;</publisher>
+
+        <part name="cass1" interface="mo_cass">
+            <dataarea name="cass" size="8192">
+                <rom name="maledizione di thaar, la (1986)(coktel vision)(fr)(it)[b].k7" size="8192" crc="cc00a47f" sha1="be459394dad467df2cbcb76ca94586b6e942187b" offset="0" />
+            </dataarea>
+        </part>
+        <part name="cass2" interface="mo_cass">
+            <dataarea name="cass" size="31423">
+                <rom name="pc user #9 cassette (1987)(pc user)(it)[b].k7" size="31423" crc="d0b2941c" sha1="20426faba84bf5d70e153c469806aa580ea6764d" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+    </software>
+
 	<software name="sc3000">
-		<description>SC-3000</description>
+		<description>Sega SC-3000</description>
 		<year>????</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -25,7 +169,7 @@
 	</software>
 
 	<software name="sg1000">
-		<description>SG-1000</description>
+		<description>Sega SG-1000</description>
 		<year>????</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -118,12 +262,12 @@
 		</part>
 		<part name="cart12" interface="sms_cart">
 			<dataarea name="rom" size="262144">
-				<rom name="astro warrior & pit pot (e) [b1][o1].sms" size="262144" crc="6a9eaef7" sha1="ff9a67839bb974e2ec24df28babbe79b4b8a9891" offset="0x0000" />
+				<rom name="astro warrior &amp; pit pot (e) [b1][o1].sms" size="262144" crc="6a9eaef7" sha1="ff9a67839bb974e2ec24df28babbe79b4b8a9891" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cart13" interface="sms_cart">
 			<dataarea name="rom" size="262144">
-				<rom name="astro warrior & pit pot (e) [o1].sms" size="262144" crc="d7c7ff54" sha1="59effe74a9e7b3b8993ecb04f7b2e6ded1f679b3" offset="0x0000" />
+				<rom name="astro warrior &amp; pit pot (e) [o1].sms" size="262144" crc="d7c7ff54" sha1="59effe74a9e7b3b8993ecb04f7b2e6ded1f679b3" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cart14" interface="sms_cart">
@@ -403,7 +547,7 @@
 		</part>
 		<part name="cart73" interface="sms_cart">
 			<dataarea name="rom" size="131072">
-				<rom name="hang-on & safari hunt (uk) [b1].sms" size="131072" crc="c5083000" sha1="16bc6e3fcdd71470dbfa12bc33eb2864a7647b7b" offset="0x0000" />
+				<rom name="hang-on &amp; safari hunt (uk) [b1].sms" size="131072" crc="c5083000" sha1="16bc6e3fcdd71470dbfa12bc33eb2864a7647b7b" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cart74" interface="sms_cart">
@@ -533,12 +677,12 @@
 		</part>
 		<part name="cart99" interface="sms_cart">
 			<dataarea name="rom" size="524288">
-				<rom name="mick & mack as the global gladiators (eb) [o1].sms" size="524288" crc="8dae576e" sha1="c0ba154464f839fdcd2bb36c3bf498f382ffa6b4" offset="0x0000" />
+				<rom name="mick &amp; mack as the global gladiators (eb) [o1].sms" size="524288" crc="8dae576e" sha1="c0ba154464f839fdcd2bb36c3bf498f382ffa6b4" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cart100" interface="sms_cart">
 			<dataarea name="rom" size="524288">
-				<rom name="mick & mack as the global gladiators (eb) [o1][b1].sms" size="524288" crc="87475035" sha1="f9b1f7b17c222ac1bd5bd10a75678f3ab0c809b9" offset="0x0000" />
+				<rom name="mick &amp; mack as the global gladiators (eb) [o1][b1].sms" size="524288" crc="87475035" sha1="f9b1f7b17c222ac1bd5bd10a75678f3ab0c809b9" offset="0x0000" />
 			</dataarea>
 		</part>
 		<part name="cart101" interface="sms_cart">
@@ -981,6 +1125,327 @@
 				<rom name="zillion ii - the tri formation (jue) [o1].sms" size="262144" crc="3328b900" sha1="35dd98834aab5ee6d823887760255515beb86510" offset="0x0000" />
 			</dataarea>
 		</part>
+	</software>
+
+	<software name="to_flop">
+		<description>Thomson TO-series (Floppy disks)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+        <part name="flop1" interface="thom_flop">
+            <dataarea name="flop" size="332707">
+                <rom name="amiga-to.sap" size="332707" crc="bcc0f406" sha1="5e6ad66761a93c2ac176b4e279f6f8475726ae6f" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop2" interface="thom_flop">
+            <dataarea name="flop" size="2948">
+                <rom name="speedy_w.sap" size="2948" crc="30cd3965" sha1="1a00e758507982a8b1c7d2958d6e2af21ae4a978" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop3" interface="thom_flop">
+            <dataarea name="flop" size="335426">
+                <rom name="to-snap &amp; demo v1.1 (1992)(hmel)(fr)[b].sap" size="335426" crc="8aeaa854" sha1="b28d3b34870493035a43b70eda41b6d92a19689b" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop4" interface="thom_flop">
+            <dataarea name="flop" size="126401">
+                <rom name="tennis_beret_runway.sap" size="126401" crc="607b6f30" sha1="8e6542825dc5da802afd45e40221026c822449fb" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop5" interface="thom_flop">
+            <dataarea name="flop" size="93721">
+                <rom name="pack_coktel2.sap" size="93721" crc="3ad19a8f" sha1="cae319aa4c0012f08a75b338cb941ef5753fad6a" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop6" interface="thom_flop">
+            <dataarea name="flop" size="114576">
+                <rom name="pack_coktel3.sap" size="114576" crc="bbe8579e" sha1="75d726b96175195ef4f07284673caa7dcd997601" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop7" interface="thom_flop">
+        <feature name="part_id" value="Disk 1"/>
+            <dataarea name="flop" size="71591">
+                <rom name="great_collection1.sap" size="71591" crc="d6013b54" sha1="7d18f49e78bd588216a7daad150951dc236dac2b" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop8" interface="thom_flop">
+        <feature name="part_id" value="Disk 2"/>
+            <dataarea name="flop" size="81248">
+                <rom name="great_collection2.sap" size="81248" crc="e73fff1b" sha1="6e95c708819f24a8c5b9076eb23d25e2167b8da7" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop9" interface="thom_flop">
+            <dataarea name="flop" size="170291">
+                <rom name="microbac_maths.sap" size="170291" crc="25501bbe" sha1="a8639ce8b14e15ac1473b0255cafe45809561e31" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop10" interface="thom_flop">
+            <dataarea name="flop" size="331776">
+                <rom name="asterix chez rahazade (1987)(coktel vision)(fr)[4k extra bytes].fd" size="331776" crc="df45d7ab" sha1="b6053e673162bfec1ca87fb4f9ed1f2355143564" offset="0" />
+            </dataarea>
+        </part>
+        <part name="flop11" interface="thom_flop">
+            <dataarea name="flop" size="107960">
+                <rom name="blueberry.sap" size="107960" crc="ee1ea1f9" sha1="7d7001f2ed54f1790340e51e3f3438a7c4ec3ddb" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop12" interface="thom_flop">
+            <dataarea name="flop" size="161176">
+                <rom name="bob_chevalerie.sap" size="161176" crc="723730bb" sha1="af4a468721bc54b736dac931edee2c68c3bf441b" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop13" interface="thom_flop">
+            <dataarea name="flop" size="149741">
+                <rom name="bob_jungle.sap" size="149741" crc="e4bf22e1" sha1="3e2d9dac97bd6b5c1146eb9e77bb007b1c61ced5" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop14" interface="thom_flop">
+            <dataarea name="flop" size="157224">
+                <rom name="bob_sf.sap" size="157224" crc="a1cf36f4" sha1="c61839e2286f68602e46364a06894353541243a5" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop15" interface="thom_flop">
+            <dataarea name="flop" size="52212">
+                <rom name="cobra.sap" size="52212" crc="0d0e47df" sha1="d22f5439816c7fe51917705b4f13adff07c7894c" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop16" interface="thom_flop">
+            <dataarea name="flop" size="241539">
+                <rom name="erebus.sap" size="241539" crc="29c34ba5" sha1="1db5768c976402b49ab6b2ab130c42a3aa592203" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop17" interface="thom_flop">
+            <dataarea name="flop" size="110588">
+                <rom name="maxibourse.sap" size="110588" crc="eb1aa73b" sha1="3b253cb5e61e081aef91b54217be5666d21b64d7" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop18" interface="thom_flop">
+            <dataarea name="flop" size="166271">
+                <rom name="megawatt.sap" size="166271" crc="10b43eaf" sha1="7c646f558c303ab0059b49a5450e4db5c5ce4362" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop19" interface="thom_flop">
+            <dataarea name="flop" size="83723">
+                <rom name="monopoly.sap" size="83723" crc="59bc1964" sha1="2f04209462f468575244cee42c3201b7535737d9" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop20" interface="thom_flop">
+            <dataarea name="flop" size="170316">
+                <rom name="mystere_paris.sap" size="170316" crc="0a4225d8" sha1="8f73cbe3128677832d227401504d72f562869d33" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop21" interface="thom_flop">
+            <dataarea name="flop" size="89453">
+                <rom name="prohibition.sap" size="89453" crc="c521142e" sha1="803327da862054cc2a76fc95c5de983224bf9c41" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop22" interface="thom_flop">
+            <dataarea name="flop" size="70403">
+                <rom name="renegade.sap" size="70403" crc="7b36b34f" sha1="15120ac2a4483ac77435bae2d2646ebf5f36f352" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop23" interface="thom_flop">
+            <dataarea name="flop" size="105564">
+                <rom name="ripoux.sap" size="105564" crc="5e1d0e93" sha1="4dd9e39a4eb58d80d7a6a9fa5c025ecd453f2b5f" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop24" interface="thom_flop">
+            <dataarea name="flop" size="332618">
+                <rom name="saphir0.sap" size="332618" crc="3deae3ef" sha1="3030a5f6f451258f0a1a2b4752dbca782c6a9ac7" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop25" interface="thom_flop">
+            <dataarea name="flop" size="107779">
+                <rom name="slap_fight.sap" size="107779" crc="63c6cb2d" sha1="ca5d4e984a6e8058c0e825286a6929f7524b6b11" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop26" interface="thom_flop">
+            <dataarea name="flop" size="274401">
+                <rom name="sorcery.sap" size="274401" crc="749b629f" sha1="9da7793ee2afcc14bf689917b3dad93eb7fd99f2" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop27" interface="thom_flop">
+            <dataarea name="flop" size="94315">
+                <rom name="space_racer.sap" size="94315" crc="12d71422" sha1="31388e096a6cf0b2e11aa3060d0b987f5046c8b4" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop28" interface="thom_flop">
+            <dataarea name="flop" size="335426">
+                <rom name="space tunnel (1987)(softbook)(fr)[b corrupt disk].sap" size="335426" crc="6ba8811f" sha1="bc75556cd42fd5b8cea525c5faebfa5d4c957276" offset="0" status="baddump"/>
+            </dataarea>
+        </part>
+        <part name="flop29" interface="thom_flop">
+            <dataarea name="flop" size="335426">
+                <rom name="star-trek (198x)(-)(pd)[b dir].sap" size="335426" crc="23d72076" sha1="832a49633622acc61f4c4252e58d3f7301d1cac6" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop30" interface="thom_flop">
+            <dataarea name="flop" size="142095">
+                <rom name="topgun.sap" size="142095" crc="3a6beec2" sha1="8f69dfaa5a7aa0fa3fd5d74f613aef5f3f7eb033" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop31" interface="thom_flop">
+            <dataarea name="flop" size="56272">
+                <rom name="turbocup.sap" size="56272" crc="e7395831" sha1="3ec6fda5e0b1ccd8976a06e94561fbf4f90f9632" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop32" interface="thom_flop">
+            <dataarea name="flop" size="120930">
+                <rom name="dinosaures.sap" size="120930" crc="22a4c374" sha1="048bdd547926fd806f835bd8aa9fb19654a39af0" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop33" interface="thom_flop">
+            <dataarea name="flop" size="175891">
+                <rom name="way_tiger.sap" size="175891" crc="9cb7d401" sha1="297488f9ae6d1df03d66c6d74a43648ec645d2c5" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop34" interface="thom_flop">
+            <dataarea name="flop" size="333663">
+                <rom name="getmenu0.sap" size="333663" crc="6d754377" sha1="b336604d5052532ba0ca1550240ceb84e97e87f3" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+	</software>
+
+	<software name="to7_cart">
+		<description>Thomson TO7 (cartridges)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+        <part name="cart1" interface="to_cart">
+            <dataarea name="rom" size="32768">
+                <rom name="colorpeint_memo7.rom" size="32768" crc="e1234738" sha1="3f170f1b7bc39e32edc8fa9b4a02d70d4d0a8ee2" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="cart2" interface="to_cart">
+            <dataarea name="rom" size="16394">
+                <rom name="scriptor (totek) (inconnus) (1986) (memo7).bin" size="16394" crc="46d4e43a" sha1="90c1e35468f7d629babbd529cd22116e086adb44" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+	</software>
+
+	<software name="to7_cass">
+		<description>Thomson TO7 (cassettes)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+        <part name="cass1" interface="to_cass">
+            <dataarea name="cass" size="1544">
+                <rom name="meteo7_to7.k7" size="1544" crc="261aac3f" sha1="8a12f2b832c4ac4cbfe2e941df1b8d6d283ab77f" offset="0" />
+            </dataarea>
+        </part>
+        <part name="cass2" interface="to_cass">
+            <dataarea name="cass" size="32768">
+                <rom name="nuit des templiers, la (1986)(fil)(to7-70)(fr)[b].k7" size="32768" crc="0fe72a9d" sha1="83062d998afbf567318b3692d4946fba11afb29a" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="cass3" interface="to_cass">
+            <dataarea name="cass" size="32768">
+                <rom name="numero 10 (1985)(fil)(fr)[b].k7" size="32768" crc="1f4e10d1" sha1="192f17f43fb0b47afa604a50c2abebb219b165fe" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="cass4" interface="to_cass">
+            <dataarea name="cass" size="23796">
+                <rom name="panique atomique chez novasprites (1985)(novasoft)(to7-70)(fr)[cr snark software][b].k7" size="23796" crc="c02bb7aa" sha1="e07c0aa88614fe53925316bb32421fef33f7d1fe" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="cass5" interface="to_cass">
+            <dataarea name="cass" size="16384">
+                <rom name="runway (1986)(fil)(fr)[b].k7" size="16384" crc="4a61ff24" sha1="33605d562af8c7c4b182f63b5aba7243246abcf1" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="cass6" interface="to_cass">
+            <dataarea name="cass" size="49152">
+                <rom name="toutankhamon (1986)(no man's land)(fr)[b].k7" size="49152" crc="f529bb55" sha1="dbd1ad544245aac8a5f7538751b8e2c89e6e832e" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+	</software>
+
+	<software name="to8_qd">
+		<description>Thomson TO8 (QD)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+        <part name="flop1" interface="thom_flop">
+            <dataarea name="flop" size="51200">
+                <rom name="vampirea.qd" size="51200" crc="a02f3961" sha1="fcdedadd69375a350df8c336194c09a01d2bdaf6" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop2" interface="thom_flop">
+            <dataarea name="flop" size="51200">
+                <rom name="volsoloa.qd" size="51200" crc="3bfb6836" sha1="d73c7f61ade484742f290f810fa5f40b3321364d" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+	</software>
+
+	<software name="vic20_cass">
+		<description>Commodore VIC-20 (cassettes)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+        <part name="cass1" interface="cbm_cass">
+            <dataarea name="cass" size="168985">
+                <rom name="convention (1983)(cymbal)[b][not working].tap" size="168985" crc="512a5cb8" sha1="e767cae3f88fa9c6b6712143b25f7912e03a0f54" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="cass2" interface="cbm_cass">
+            <dataarea name="cass" size="170471">
+                <rom name="frogs (1983)(cymbal)[b][not working].tap" size="170471" crc="670ece17" sha1="c71f3c87c31092b19e10b0309cdd50aa59babd62" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="cass3" interface="cbm_cass">
+            <dataarea name="cass" size="183374">
+                <rom name="ice (1983)(cymbal)[b][not working].tap" size="183374" crc="dec4d58b" sha1="2c8e860bd422b65626ef104253fccedab86c1756" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="cass4" interface="cbm_cass">
+            <dataarea name="cass" size="313797">
+                <rom name="king's ransom (1982)(nufekop)[b].tap" size="313797" crc="3d048117" sha1="9151c5246097bba1e8726ec2d79215fca7700cce" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="cass5" interface="cbm_cass">
+            <dataarea name="cass" size="166038">
+                <rom name="rotate (1983)(cymbal)[b][not working].tap" size="166038" crc="97b5089a" sha1="bb88afbb337a98b841bccb447c657cad6608326e" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="cass6" interface="cbm_cass">
+            <dataarea name="cass" size="173298">
+                <rom name="tanks (1983)(cymbal)[b][not working].tap" size="173298" crc="f76cccb9" sha1="0afd04a56831b8c61e8f72fd4ca4353ad164f1be" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+	</software>
+
+	<software name="zx81_cass">
+		<description>Sinclair ZX-81 (cassettes)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+        <part name="cass1" interface="zx81_cass">
+            <dataarea name="cass" size="3008">
+                <rom name="zx-81 video-index (1982)(video software)[b].p" size="3008" crc="a2ecb0d0" sha1="3512b0a3f2433ef5b49066c706ea344775a10aa3" offset="0" />
+            </dataarea>
+        </part>
+	</software>
+
+	<software name="specpls3_flop">
+		<description>Sinclair ZX Spectrum +3 (floppy disks)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+        <part name="flop1" interface="floppy_3">
+            <dataarea name="flop" size="430336">
+                <rom name="total - platoon + arkanoid ii - revenge of doh + combat school (1989)(erbe software)[b2].dsk" size="430336" crc="923fee32" sha1="3e844d0c938b0da68fe8f967d6e72009b6894704" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop2" interface="floppy_3">
+            <dataarea name="flop" size="408832">
+                <rom name="total - renegade ii - target renegade (1989)(erbe software)[b].dsk" size="408832" crc="41e3e8d7" sha1="803911d691fcf328b0bb8ae7ffb45acab2716400" offset="0" status="baddump" />
+            </dataarea>
+        </part>
+        <part name="flop3" interface="floppy_3">
+            <dataarea name="flop" size="389376">
+                <rom name="back to the future iii (1991)(image works).dsk" size="389376" crc="9fe3c153" sha1="fed66130a1b7d6a9abf808e2d50610f2006de42d" offset="0" />
+            </dataarea>
+        </part>
 	</software>
 
 </softwarelist>
