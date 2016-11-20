@@ -2305,7 +2305,7 @@ static MACHINE_CONFIG_START( pc6001, pc6001_state )
 	MCFG_GENERIC_CARTSLOT_ADD("cartslot", generic_plain_slot, "pc6001_cart")
 
 //  MCFG_CASSETTE_ADD("cassette", pc6001_cassette_interface)
-	MCFG_GENERIC_CARTSLOT_ADD("cas_hack", generic_plain_slot, "pc6001_cass")
+	MCFG_GENERIC_CARTSLOT_ADD("cas_hack", generic_plain_slot, "pc6001_cassh") //changed to prevent conflict with software list
 	MCFG_GENERIC_EXTENSIONS("cas,p6")
 
 	MCFG_SPEAKER_STANDARD_MONO("mono")
@@ -2322,6 +2322,7 @@ static MACHINE_CONFIG_START( pc6001, pc6001_state )
 
 	/* software lists */
 	MCFG_SOFTWARE_LIST_ADD("cart_list", "pc6001_cart")
+	MCFG_SOFTWARE_LIST_ADD("cass_list", "pc6001_cass")
 	MCFG_SOFTWARE_LIST_ADD("flop_list", "pc6001_flop")
 MACHINE_CONFIG_END
 

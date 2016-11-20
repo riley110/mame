@@ -129,6 +129,18 @@ The following also apply as bad dumps: overdumps [o], copier hacks [h1c]
         </part>
     </software>
 
+    <software name="pc6001_cass">
+        <description>NEC PC-6001 (cassettes)</description>
+        <year>????</year>
+        <publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="10828">
+				<rom name="bokosuka wars [b].cas" size="10828" crc="60bd670b" sha1="6292161484a209392c59275bd636b095eb464a96" offset="0x0000" />
+			</dataarea>
+		</part>
+    </software>
+
     <software name="pro128">
         <description>Olivetti Prodest PC 128 (cassettes)</description>
         <year>????</year>
