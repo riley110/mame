@@ -141,7 +141,7 @@
 	<software name="9gyoumich">
 		<description>9-gyou no Michi (CAS)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 		<info name="mode" value="Mode 6" />
 
 		<part name="cass1" interface="pc6001_cass">
@@ -154,7 +154,7 @@
 	<software name="9gyoumicha" cloneof="9gyoumich">
 		<description>9-gyou no Michi (WAV)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 		<info name="mode" value="Mode 6" />
 
 		<part name="cass1" interface="pc6001_cass">
@@ -511,7 +511,7 @@
 	<software name="akihabara">
 		<description>Akihabara Takkyuubin (CAS)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 		<info name="mode" value="Mode 5, Pages 2" />
 
 		<part name="cass1" interface="pc6001_cass">
@@ -524,7 +524,7 @@
 	<software name="akihabaraa" cloneof="akihabara">
 		<description>Akihabara Takkyuubin (WAV)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 		<info name="mode" value="Mode 5, Pages 2" />
 
 		<part name="cass1" interface="pc6001_cass">
@@ -752,7 +752,7 @@
 	<software name="bakuha">
 		<description>Bakuha Man (CAS)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 		<info name="mode" value="Mode 1, Pages 1" />
 
 		<part name="cass1" interface="pc6001_cass">
@@ -765,7 +765,7 @@
 	<software name="bakuhaa" cloneof="bakuha">
 		<description>Bakuha Man (WAV)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 		<info name="mode" value="Mode 1, Pages 1" />
 
 		<part name="cass1" interface="pc6001_cass">
@@ -869,7 +869,7 @@
 	<software name="canmaker">
 		<description>Can Maker (CAS)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 		<info name="mode" value="Mode 1, Pages 2" />
 
 		<part name="cass1" interface="pc6001_cass">
@@ -882,7 +882,7 @@
 	<software name="canmakera" cloneof="canmaker">
 		<description>Can Maker (WAV)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 		<info name="mode" value="Mode 1, Pages 2" />
 
 		<part name="cass1" interface="pc6001_cass">
@@ -967,7 +967,7 @@
 	<software name="cubepuzz">
 		<description>Cube Puzzle (CAS)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 		<info name="mode" value="Mode 2, Pages 2" />
 
 		<part name="cass1" interface="pc6001_cass">
@@ -987,7 +987,7 @@
 	<software name="cubepuzz">
 		<description>Cube Puzzle (WAV)</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 		<info name="mode" value="Mode 2, Pages 2" />
 
 		<part name="cass1" interface="pc6001_cass">
@@ -1020,6 +1020,943 @@
 			<feature name="part_id" value="Tape 2"/>
 			<dataarea name="cass" size="10752">
 				<rom name="cyber village (tape 2) {m2p2}.p6" size="10752" crc="3ac72ecd" sha1="a453a5a02eb4ccf7ea86d1c38f7b99b1502131d2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="daidasso">
+		<description>Dai Dassou</description>
+		<year>198?</year>
+		<publisher>Carry Lab</publisher>
+		<info name="mode" value="Mode 5, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="41712">
+				<rom name="daidassou {m5p1}.cas" size="41712" crc="b0d7af71" sha1="d5cf409aae7c6fbc4332736c16e19850b34d97ef" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dangjung">
+		<description>Dangerous Jungle</description>
+		<year>198?</year>
+		<publisher>T.H.</publisher>
+		<info name="mode" value="Mode 2, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="14271">
+				<rom name="dangerous jungle {m2p2}.cas" size="14271" crc="f8fea055" sha1="351338481775489887dca1c9bace7ed79bf556c0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="debutcho">
+		<description>Debutcho Dragon</description>
+		<year>198?</year>
+		<publisher>Afoxai</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="399">
+				<rom name="debutcho dragon {m1p2}.p6" size="399" crc="61f0bbd9" sha1="960dd15a138e693120f22d797c97b6aeb0a69d0b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dezeni">
+		<description>Dezeni Land</description>
+		<year>198?</year>
+		<publisher>Hudson Soft</publisher>
+		<info name="mode" value="Mode 5, Pages 4, MON R-0" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Chapter 1"/>
+			<dataarea name="cass" size="39484">
+				<rom name="dezeni land (chapter 1) {m5p4 mon r-0}.cas" size="39484" crc="d50d079c" sha1="a2f66fbb79c07602fc8564d3a28aea168052ddff" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Chapter 2"/>
+			<dataarea name="cass" size="25092">
+				<rom name="dezeni land (chapter 2).cas" size="25092" crc="c21bd420" sha1="dcd3f2730b03a2122058627149a5ab3f18dc6c53" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="pc6001_cass">
+			<feature name="part_id" value="Chapter 3"/>
+			<dataarea name="cass" size="26102">
+				<rom name="dezeni land (chapter 3).cas" size="26102" crc="0a49d031" sha1="7f9aa1f8bc70ded09a977bccb982bfb3f6332602" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="pc6001_cass">
+			<feature name="part_id" value="Chapter 4"/>
+			<dataarea name="cass" size="18572">
+				<rom name="dezeni land (chapter 4).cas" size="18572" crc="5964f330" sha1="a0f0f81f19fabc5929e2cdada72f15a874dc18a4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="pc6001_cass">
+			<feature name="part_id" value="Chapter 5"/>
+			<dataarea name="cass" size="27901">
+				<rom name="dezeni land (chapter 5).cas" size="27901" crc="925026a3" sha1="85d7b831ea98be5c10ac192b427cc130022fee1d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="digdug">
+		<description>Dig Dug</description>
+		<year>198?</year>
+		<publisher>Dempa Shinbunsha</publisher>
+		<info name="mode" value="Mode 4, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="29546">
+				<rom name="dig dug {m4p1}.cas" size="29546" crc="162c2d86" sha1="084e4e6e01a58eb7bd782fe8c9e925008b5055bc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dirtyroom">
+		<description>Dirty Room (CAS)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="mode" value="Mode 1, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="3493">
+				<rom name="dirty room {m1p1}.cas" size="3493" crc="6830f4c0" sha1="d11e239900d1158af24c0d69b0da541aa891332c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dirtyrooma" cloneof="dirtyroom">
+		<description>Dirty Room (WAV)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="mode" value="Mode 1, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="445624">
+				<rom name="dirty room {m1p1}.wav" size="445624" crc="dcbe6376" sha1="93a7f1e3ee9c3b7f72d0597ce9a0b3f2c9ebf586" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dobu">
+		<description>Dobu (CAS)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="mode" value="Mode 5, Pages 4" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="2679">
+				<rom name="dobu {m5p4}.cas" size="2679" crc="624c61c7" sha1="a8535014b8059343a029ade421079b9c15cdfbd1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dobua" cloneof="dobu">
+		<description>Dobu (WAV)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="mode" value="Mode 5, Pages 4" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="355880">
+				<rom name="dobu {m5p4}.wav" size="355880" crc="cd5b0a49" sha1="b718483e0de417e7c95c4eeb477bcbf11b142916" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="doubutsu">
+		<description>Doubutsu Shougi</description>
+		<year>198?</year>
+		<publisher>Bookworm</publisher>
+		<info name="mode" value="Mode 2, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="4086">
+				<rom name="doubutsu shougi {m2p2}.p6" size="4086" crc="3068cd50" sha1="81907c4656e7239ec6025394d6fcf9cfe74f950c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dlandakai">
+		<description>Dream Land - Akai Fuusen (CAS)</description>
+		<year>198?</year>
+		<publisher>Masato Ryujin</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="3653">
+				<rom name="dream land - akai fuusen {m1p2}.cas" size="3653" crc="e11fc251" sha1="51421d3cc3eb36b273c93d36c76269cd6cc6b360" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dlandakaia" cloneof="dlandakai">
+		<description>Dream Land - Akai Fuusen (WAV)</description>
+		<year>198?</year>
+		<publisher>Masato Ryujin</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="463264">
+				<rom name="dream land - akai fuusen {m1p2}.wav" size="463264" crc="a7cffbdf" sha1="838756e8f35d9aeb582437a100947d0a94cc932d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dlandobake">
+		<description>Dream Land - Obake no Undoukai (CAS)</description>
+		<year>198?</year>
+		<publisher>Masato Ryujin</publisher>
+		<info name="mode" value="Mode 5, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="6025">
+				<rom name="dream land - obake no undoukai {m5p2}.cas" size="6025" crc="d56ee457" sha1="e2d32c4b95ac60786fefd82f50f750abb820e7ab" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dlandobakea" cloneof="dlandobake">
+		<description>Dream Land - Obake no Undoukai (WAV)</description>
+		<year>198?</year>
+		<publisher>Masato Ryujin</publisher>
+		<info name="mode" value="Mode 5, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="724777">
+				<rom name="dream land - obake no undoukai {m5p2}.wav" size="724777" crc="26407685" sha1="0e448b8150318285aedb6f3b7610a24823298785" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="earthbnd">
+		<description>Earthbound</description>
+		<year>198?</year>
+		<publisher>Xtal Soft</publisher>
+		<info name="mode" value="Mode 2, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="41241">
+				<rom name="earthbound {m2p2}.cas" size="41241" crc="1c4cafba" sha1="d9d8b4088e1bc2cd3d7df9f238215f41bc4ae065" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="eformn">
+		<description>Eformn</description>
+		<year>198?</year>
+		<publisher>System Soft</publisher>
+		<info name="mode" value="Mode 2, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Easy"/>
+			<dataarea name="cass" size="25883">
+				<rom name="eformn (easy) {m2p1}.cas" size="25883" crc="565ff19f" sha1="f4a0eb96defae89304a41bd78ea61489b320bc09" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Normal"/>
+			<dataarea name="cass" size="25884">
+				<rom name="eformn (normal) {m2p1}.cas" size="25884" crc="f3709f1a" sha1="a08a1c3e2dc5e42b5661a97d3fc632632363334f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="eggy">
+		<description>Eggy</description>
+		<year>198?</year>
+		<publisher>Bothtec</publisher>
+		<info name="mode" value="Mode 2, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="22307">
+				<rom name="eggy {m2p1}.cas" size="22307" crc="3c9e47d2" sha1="885c4964480dfcd12164a1ebab0f95aecd06cf2d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kireme">
+		<description>En no Kireme ga Kane no Kireme (CAS)</description>
+		<year>198?</year>
+		<publisher>Tinyan</publisher>
+		<info name="mode" value="Mode 1, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="810">
+				<rom name="en no kireme ga kane no kireme {m1p1}.cas" size="810" crc="76b58e70" sha1="b36de4588a9e1bdef361c44093a6927fa25449c7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kiremea" cloneof="kireme">
+		<description>En no Kireme ga Kane no Kireme (WAV)</description>
+		<year>198?</year>
+		<publisher>Tinyan</publisher>
+		<info name="mode" value="Mode 1, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="149823">
+				<rom name="en no kireme ga kane no kireme {m1p1}.wav" size="149823" crc="78e7ba88" sha1="6361191954bbbbbc9d69d15b714b6a9f9e4db195" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="entotsu">
+		<description>Entotsu Souji (CAS)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="mode" value="Mode 5, Pages 4" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="1515">
+				<rom name="entotsu souji {m5p4}.cas" size="1515" crc="23491d13" sha1="c672f51fbe5a4c6411bb66fa43b34b7958c83868" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="entotsua" cloneof="entotsu">
+		<description>Entotsu Souji (WAV)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="mode" value="Mode 5, Pages 4" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="227549">
+				<rom name="entotsu souji {m5p4}.wav" size="227549" crc="f7bd3979" sha1="85752a996669cbf848ae7e9020932a675a0bc253" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="exit">
+		<description>Exit I (CAS)</description>
+		<year>198?</year>
+		<publisher>Tenochtitlan</publisher>
+		<info name="mode" value="Mode 4, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="11016">
+				<rom name="exit i {m4p2}.p6" size="11016" crc="abaff08f" sha1="5f6147e11c725c24010946141ecfa8296ff2c5df" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="exita" cloneof="exit">
+		<description>Exit I (WAV)</description>
+		<year>198?</year>
+		<publisher>Tenochtitlan</publisher>
+		<info name="mode" value="Mode 4, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="1275035">
+				<rom name="exit i {m4p2}.wav" size="1275035" crc="2582bbcd" sha1="265a03697cd2a7e7d6be3cf40162fd7e051deb52" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fdot">
+		<description>F-Dot (CAS)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="3231">
+				<rom name="f-dot {m1p2}.cas" size="3231" crc="36dcc14b" sha1="22df40a7da0a9a661746e128d60438f1a5983838" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fdota" cloneof="fdot">
+		<description>F-Dot (WAV)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="416738">
+				<rom name="f-dot {m1p2}.wav" size="416738" crc="e8d460cb" sha1="82ff081f0dfab89babfa71085ba5e2004e653c86" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fdot2">
+		<description>F-Dot 2</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+		<info name="mode" value="Mode 2, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="4880">
+				<rom name="f-dot 2 {m2p2}.p6" size="4880" crc="3e4655dd" sha1="c3bffcb6419ec79398d4e0f6e1ba0aae5d934ba9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fdot2p" cloneof="fdot2">
+		<description>F-Dot 2 (Preview version)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+		<info name="mode" value="Mode 2, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="1400">
+				<rom name="f-dot 2 (preview ver.) {m2p2}.p6" size="1400" crc="6d73f25f" sha1="939fed7e55a94bb70911b78042159d96cc20f99b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fantwood">
+		<description>Fantasy Wood Story Demo (P6)</description>
+		<year>198?</year>
+		<publisher>Janmero</publisher>
+		<info name="mode" value="Mode 5, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="37371">
+				<rom name="fantasy wood story demo {m5p2}.p6" size="37371" crc="4c781f96" sha1="49394560f4e96ed0e520d8ab4dd0a304a870a715" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fantwooda" cloneof="fantwood">
+		<description>Fantasy Wood Story Demo (WAV)</description>
+		<year>198?</year>
+		<publisher>Janmero</publisher>
+		<info name="mode" value="Mode 5, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="4298363">
+				<rom name="fantasy wood story demo {m5p2}.wav" size="4298363" crc="7dbeb020" sha1="49003fa93456a7184f847f4baafdd4bafe3d28d1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="flappy">
+		<description>Flappy</description>
+		<year>198?</year>
+		<publisher>dB-Soft</publisher>
+		<info name="mode" value="Mode 5, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="71422">
+				<rom name="flappy {m5p2}.cas" size="71422" crc="acaa6d1a" sha1="ace6bf7ae566fa152adc779d37d7476a15b9ab2b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="flatpuz">
+		<description>Flat Puzzle</description>
+		<year>198?</year>
+		<publisher>Afoxai</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="4295">
+				<rom name="flat puzzle {m1p2}.p6" size="4295" crc="d8dadc8d" sha1="02e5964e7fe73344958461430f71c0b5ff57878c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="flatpuz2">
+		<description>Flat Puzzle 2</description>
+		<year>198?</year>
+		<publisher>Afoxai</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="5200">
+				<rom name="flat puzzle 2 {m1p2}.p6" size="5200" crc="2675722f" sha1="5084d448b2e4672612cf5d34f587d75aaf825b37" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="flightsim">
+		<description>Flight Simulator (CAS)</description>
+		<year>198?</year>
+		<publisher>JA 3500</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="2786">
+				<rom name="flight simulator {m2p3}.cas" size="2786" crc="593e4272" sha1="08dcb69297571d811718fd54caead9dbac2f53b1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="flightsima" cloneof="flightsim">
+		<description>Flight Simulator (WAV)</description>
+		<year>198?</year>
+		<publisher>JA 3500</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="367677">
+				<rom name="flight simulator {m2p3}.wav" size="367677" crc="da978e42" sha1="2d0379cbb7871d33643fbd0e79deac5c156faf24" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="forts">
+		<description>Forts (P6 set 1)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="mode" value="Mode 5, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="15448">
+				<rom name="forts (tape 1) {m5p2}.p6" size="15448" crc="cc1f2cab" sha1="ec0d1afa1624cba66315087a4c2c2a54b4c77436" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="3052">
+				<rom name="forts (tape 2) {m5p2}.p6" size="3052" crc="404e21c4" sha1="36b9c931cc98d7a67bf177a29e8a0a2878061f78" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fortsa" cloneof="forts">
+		<description>Forts (P6 set 2)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="mode" value="Mode 5, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="15446">
+				<rom name="forts [set 1] (tape 1) {m5p2}.p6" size="15446" crc="839ca82c" sha1="aad037185203f8604c0a87e759cb921c822d0004" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="3032">
+				<rom name="forts [set 1] (tape 2) {m5p2}.p6" size="3032" crc="2b6e4077" sha1="9ed932f56ab0bbd8c8037da42359c897ec6e6bdf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fortsb" cloneof="forts">
+		<description>Forts (WAV)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="mode" value="Mode 5, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="1763663">
+				<rom name="forts (tape 1) {m5p2}.wav" size="1763663" crc="ea36300e" sha1="1fd116820d4d37e37808222439c0d26101fa16f9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="397004">
+				<rom name="forts (tape 2) {m5p2}.wav" size="397004" crc="5d09d749" sha1="6312f059a44c569376cbe4974451cb2589a8baee" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="frontlin">
+		<description>Front Line</description>
+		<year>198?</year>
+		<publisher>Nidecom</publisher>
+		<info name="mode" value="Mode 5, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="28812">
+				<rom name="front line {m5p1}.cas" size="28812" crc="271f38c4" sha1="6ac866a27ea6ce46b3305016226933d974cf81b7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fruitlaby">
+		<description>Fruit Labyrinth (P6)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+		<info name="mode" value="Mode 2, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="6701">
+				<rom name="fruit labyrinth {m2p2}.p6" size="6701" crc="32f1833a" sha1="8185e51b24bd7cff6e6dfead5c83b2855d4d3874" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fruitlabya" cloneof="fruitlaby">
+		<description>Fruit Labyrinth (WAV)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+		<info name="mode" value="Mode 2, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="799306">
+				<rom name="fruit labyrinth {m2p2}.wav" size="799306" crc="65dbcd58" sha1="956819a6b6c51f8080a2c05699dfd3b45d7ec6d1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fruitlaby2006" cloneof="fruitlaby">
+		<description>Fruit Labyrinth (2006 version)</description>
+		<year>2006</year>
+		<publisher>Kaw</publisher>
+		<info name="mode" value="Mode 2, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="6701">
+				<rom name="fruit labyrinth (2006 ver.) {m2p2}.p6" size="6701" crc="234a6b85" sha1="0d4a26ad87e64070230566c8d6692a195b4e3504" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fruitpan">
+		<description>Fruit Panic (v1.1)</description>
+		<year>198?</year>
+		<publisher>Kaw - PiO</publisher>
+		<info name="mode" value="Mode 3, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="8385">
+				<rom name="fruit panic (v1.1) {m3p1}.p6" size="8385" crc="9a140a48" sha1="dd6c29495f97881efd953966bed2d4db84671f8d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fruitpan10" cloneof="fruitpan">
+		<description>Fruit Panic (v1.0, P6)</description>
+		<year>198?</year>
+		<publisher>Kaw - PiO</publisher>
+		<info name="mode" value="Mode 3, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="8214">
+				<rom name="fruit panic (v1.0) {m3p1}.p6" size="8214" crc="e228c7ec" sha1="034a30dd49bb4fd464dedeec08fac365f0bd2385" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fruitpan10a" cloneof="fruitpan">
+		<description>Fruit Panic (v1.0, WAV)</description>
+		<year>198?</year>
+		<publisher>Kaw - PiO</publisher>
+		<info name="mode" value="Mode 3, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="966114">
+				<rom name="fruit panic (v1.0) {m3p1}.wav" size="966114" crc="f4a1071c" sha1="d175846559daf07e92821c97e4cc459113807ee8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fpappend" cloneof="fruitpan">
+		<description>Fruit Panic Append</description>
+		<year>198?</year>
+		<publisher>Kaw - PiO</publisher>
+		<info name="mode" value="Mode 3, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="3526">
+				<rom name="fruit panic append {m3p1}.p6" size="3526" crc="e2243bdc" sha1="21962c50d7934510b8cdf8812775301cdf93c76c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="galaxian">
+		<description>Galaxian</description>
+		<year>198?</year>
+		<publisher>Dempa Shinbunsha</publisher>
+		<info name="mode" value="Mode 5, Pages 2, MON R-0, G9000" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="58391">
+				<rom name="galaxian {m5p2 mon r-0 g9000}.cas" size="58391" crc="fcc4fa9c" sha1="cef6d2fc21b3fa042950655fc133a34a50dc5fa8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="genmatai">
+		<description>Genma Taisen</description>
+		<year>198?</year>
+		<publisher>Pony Canyon</publisher>
+		<info name="mode" value="Mode 2, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="40577">
+				<rom name="genma taisen {m2p2}.cas" size="40577" crc="71531000" sha1="205eab089cf3e495a87514ff2633ea753a76c42c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="grmaze2">
+		<description>Graphic Maze (Graphic mode 2, P6)</description>
+		<year>198?</year>
+		<publisher>Akihisa Kanda</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="957">
+				<rom name="graphic maze (graphic mode 2) {m1p2}.p6" size="957" crc="8ef5cd7e" sha1="875aa64d5c32a2f3c748406c6150b34eff24f110" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="grmaze2a" cloneof="grmaze2">
+		<description>Graphic Maze (Graphic mode 2, WAV)</description>
+		<year>198?</year>
+		<publisher>Akihisa Kanda</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="166030">
+				<rom name="graphic maze (graphic mode 2) {m1p2}.wav" size="166030" crc="74afebf1" sha1="6c2f5725e751baff8eb97aeeb02c15ebe6e5f193" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="grmaze4">
+		<description>Graphic Maze (Graphic mode 4, P6)</description>
+		<year>198?</year>
+		<publisher>Akihisa Kanda</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="667">
+				<rom name="graphic maze (graphic mode 4) {m1p2}.p6" size="667" crc="f34443b3" sha1="17348ad542548a2d0686121db10bb812a742c675" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="grmaze4a" cloneof="grmaze4">
+		<description>Graphic Maze (Graphic mode 4, P6, Alt)</description>
+		<year>198?</year>
+		<publisher>Akihisa Kanda</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="702">
+				<rom name="graphic maze (graphic mode 4) [alt 1] {m1p2}.p6" size="702" crc="c2cd5794" sha1="952a0c3e4ccd3478d9f7bde90a3014b0b4959bd0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="grmaze4b" cloneof="grmaze4">
+		<description>Graphic Maze (Graphic mode 4, WAV)</description>
+		<year>198?</year>
+		<publisher>Akihisa Kanda</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="134057">
+				<rom name="graphic maze (graphic mode 4) {m1p2}.wav" size="134057" crc="a02ed283" sha1="1223ac8404d1b3e4b12caa81442949d27026e888" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="grobda">
+		<description>Grobda</description>
+		<year>198?</year>
+		<publisher>Dempa Shinbunsha</publisher>
+		<info name="mode" value="Mode 5, Pages 3" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="42801">
+				<rom name="grobda {m5p3}.cas" size="42801" crc="85d9f580" sha1="86fcb03187700a1ebb00f68bfcef7eec3903c9da" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gundam">
+		<description>Gundam vs. Dopp-tai (CAS)</description>
+		<year>198?</year>
+		<publisher>Kazuhiro Ishiguro</publisher>
+		<info name="mode" value="Mode 1, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="1795">
+				<rom name="gundam vs. dopp-tai {m1p1}.cas" size="1795" crc="77574733" sha1="d28c619f3d5fde2f4a492f9018c745ed51162e6b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gundama" cloneof="gundam">
+		<description>Gundam vs. Dopp-tai (WAV)</description>
+		<year>198?</year>
+		<publisher>Kazuhiro Ishiguro</publisher>
+		<info name="mode" value="Mode 1, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="258419">
+				<rom name="gundam vs. dopp-tai {m1p1}.wav" size="258419" crc="36e27338" sha1="32513c5f4fb7239a39206f79e52206d4421eee6e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hamburger">
+		<description>Hamburger Shop (CAS)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="3538">
+				<rom name="hamburger shop {m1p2}.cas" size="3538" crc="61742201" sha1="348da165cf613ba60fd68958b5b5d7be8b71095e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hamburgera" cloneof="hamburger">
+		<description>Hamburger Shop (WAV)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="450585">
+				<rom name="hamburger shop {m1p2}.wav" size="450585" crc="8831fe31" sha1="90492654c9ff819c0d8495ed7c4d8944016cc3ab" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hanabi">
+		<description>Hanabi</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="1577">
+				<rom name="hanabi {m1p2}.p6" size="1577" crc="3a5487bf" sha1="bbde38ac56e00d2eb6f9baa3a7301a09b4682d42" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="harapeko">
+		<description>Harapeko Hebi-san (CAS)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="2085">
+				<rom name="harapeko hebi-san {m1p2}.p6" size="2085" crc="134ba104" sha1="2a5d2e148afff0955ebd698e13bd2a2ca42537fc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="harapekoa" cloneof="harapeko">
+		<description>Harapeko Hebi-san (WAV)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="290392">
+				<rom name="harapeko hebi-san {m1p2}.wav" size="290392" crc="4077a225" sha1="b1d1359aff7752efb92ab9b38497d2bbee2a7726" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hisha">
+		<description>Hisha</description>
+		<year>198?</year>
+		<publisher>Carry Lab</publisher>
+		<info name="mode" value="Mode 5, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="30124">
+				<rom name="hisha {m5p1}.cas" size="30124" crc="c3d88ac6" sha1="c6a857cf88f1205b4dfff00e063739752992a7fc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hitofude">
+		<description>Hitofudegaki Game</description>
+		<year>198?</year>
+		<publisher>Afoxai</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="2905">
+				<rom name="hitofudegaki game {m1p2}.p6" size="2905" crc="b88af541" sha1="59211e17ffc3e86f030c5da7d33abe16eb2e226a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="holysword">
+		<description>Holy Sword</description>
+		<year>198?</year>
+		<publisher>Xtal Soft</publisher>
+		<info name="mode" value="Mode 2, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="18167">
+				<rom name="holy sword {m2p2}.cas" size="18167" crc="6a84aa38" sha1="df470de4f4df0f5b935877500f7b8d72c359a4c8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="homerun">
+		<description>Homerun King (CAS)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="mode" value="Mode 5, Pages 4" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="5341">
+				<rom name="homerun king {m5p4}.cas" size="5341" crc="b6e591f3" sha1="8f5d61d54781dadcecf6ae36c138d9c0bfb76c16" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="homeruna" cloneof="homerun">
+		<description>Homerun King (WAV)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="mode" value="Mode 5, Pages 4" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="649366">
+				<rom name="homerun king {m5p4}.wav" size="649366" crc="231ffca2" sha1="da142c88e0fa24c53de717d1ada21c44fad68956" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hurryfox">
+		<description>Hurry Fox</description>
+		<year>198?</year>
+		<publisher>Micro Cabin</publisher>
+		<info name="mode" value="Mode 5, Pages 3" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="60911">
+				<rom name="hurry fox {m5p3}.cas" size="60911" crc="2bd8a5c1" sha1="d619aba6783b1bb846c5277af2ac8a61af2cf39e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hurryfox2">
+		<description>Hurry Fox 2 - Yuki no Maou-hen</description>
+		<year>198?</year>
+		<publisher>Micro Cabin</publisher>
+		<info name="mode" value="Mode 5, Pages 3" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="58962">
+				<rom name="hurry fox 2 - yuki no maou-hen {m5p3}.cas" size="58962" crc="84faa166" sha1="1fb694ec67d35e0ce0964870366663f104db7a1a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hydlide">
+		<description>Hydlide</description>
+		<year>198?</year>
+		<publisher>T&amp;E Soft</publisher>
+		<info name="mode" value="Mode 5, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="44791">
+				<rom name="hydlide {m5p2}.cas" size="44791" crc="a2f16f83" sha1="f4b85b3d7d06e91112fe3950d9d65cd9f0f0ad3e" offset="0" />
 			</dataarea>
 		</part>
 	</software>
