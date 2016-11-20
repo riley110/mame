@@ -1961,4 +1961,1206 @@
 		</part>
 	</software>
 
+	<software name="iceblock">
+		<description>Ice Block</description>
+		<year>198?</year>
+		<publisher>dB-Soft</publisher>
+		<info name="mode" value="Mode 5, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="28708">
+				<rom name="ice block {m5p2}.cas" size="28708" crc="90b5276e" sha1="422d51cf71113c29e40acf362104602728ed409c" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ichigo">
+		<description>Ichigo no Utage (P6)</description>
+		<year>198?</year>
+		<publisher>Shigeki Niino</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Part 1"/>
+			<dataarea name="cass" size="3282">
+				<rom name="ichigo no utage (part 1) {m1p2}.p6" size="3282" crc="46aa3127" sha1="ce941b7ee4cc2a9a54224001f0ec1b9293d527ea" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Part 2"/>
+			<dataarea name="cass" size="2739">
+				<rom name="ichigo no utage (part 2) {m1p2}.p6" size="2739" crc="c92b4f8d" sha1="4268fb46c50e647c24eebe6dc16fdca7e686a4c8" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ichigoa" cloneof="ichigo">
+		<description>Ichigo no Utage (P6)</description>
+		<year>198?</year>
+		<publisher>Shigeki Niino</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Part 1"/>
+			<dataarea name="cass" size="422361">
+				<rom name="ichigo no utage (part 1) {m1p2}.wav" size="422361" crc="4ba491d1" sha1="892ad0a66ae50def69c1212496fc263a939555f6" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Part 2"/>
+			<dataarea name="cass" size="362495">
+				<rom name="ichigo no utage (part 2) {m1p2}.wav" size="362495" crc="9f4d324a" sha1="a6789a6f85d97d68e862c73c6dcebc297eef92d2" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="beep8501">
+		<description>Idea File - Beep 1985.01 (P6)</description>
+		<year>198?</year>
+		<publisher>Tinyan - Beep</publisher>
+		<info name="mode" value="Mode settings in part IDs" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Enpitsu Otoshi [m1p1]"/>
+			<dataarea name="cass" size="358">
+				<rom name="idea file - beep 1985.01 (enpitsu otoshi) {m1p1}.cas" size="358" crc="9ae067b2" sha1="5b82acb2d80b8205a2cb1464897ac5373eb1f0f9" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Hitsuji-san Ima Izuko [m1p1]"/>
+			<dataarea name="cass" size="2069">
+				<rom name="idea file - beep 1985.01 (hitsuji-san ima izuko) {m1p1}.p6" size="2069" crc="f76ce397" sha1="cbe7d4c70ba33623ade070c278e3685815d3e2ad" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="pc6001_cass">
+			<feature name="part_id" value="Hokuto Renshuu Game [m1p1]"/>
+			<dataarea name="cass" size="89">
+				<rom name="idea file - beep 1985.01 (hokuto renshuu game) {m1p1}.p6" size="89" crc="fe002573" sha1="f9d211f8940650e05968a4ce22a4136d5efaf199" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="pc6001_cass">
+			<feature name="part_id" value="Inspiration [m1p2]"/>
+			<dataarea name="cass" size="646">
+				<rom name="idea file - beep 1985.01 (inspiration) {m1p2}.p6" size="646" crc="63f1b142" sha1="8cb677a90d0ceb4457f2255c96fbac59e76a0925" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="pc6001_cass">
+			<feature name="part_id" value="Jigoku no Othello [m1p2]"/>
+			<dataarea name="cass" size="3315">
+				<rom name="idea file - beep 1985.01 (jigoku no othello) {m1p2}.p6" size="3315" crc="3caabeca" sha1="0d2ccc02b26b8088ae153455ec642274823b1d1c" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="pc6001_cass">
+			<feature name="part_id" value="Q Dai Simulation [m1p1]"/>
+			<dataarea name="cass" size="3211">
+				<rom name="idea file - beep 1985.01 (q dai simulation) {m1p1}.p6" size="3211" crc="a03aa218" sha1="99a20cfd31f38157e0a52d5311b00c08e3934321" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="beep8501a" cloneof="beep8501">
+		<description>Idea File - Beep 1985.01 (WAV)</description>
+		<year>198?</year>
+		<publisher>Tinyan - Beep</publisher>
+		<info name="mode" value="Mode settings in part IDs" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Enpitsu Otoshi [m1p1]"/>
+			<dataarea name="cass" size="99990">
+				<rom name="idea file - beep 1985.01 (enpitsu otoshi) {m1p1}.wav" size="99990" crc="7323ef8b" sha1="86e5e505ca9288ce215179a9304648eb83bd540b" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Hitsuji-san Ima Izuko [m1p1]"/>
+			<dataarea name="cass" size="288628">
+				<rom name="idea file - beep 1985.01 (hitsuji-san ima izuko) {m1p1}.wav" size="288628" crc="61c48182" sha1="78467db426526298d8da1448e5b95822442cd6e6" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="pc6001_cass">
+			<feature name="part_id" value="Hokuto Renshuu Game [m1p1]"/>
+			<dataarea name="cass" size="70333">
+				<rom name="idea file - beep 1985.01 (hokuto renshuu game) {m1p1}.wav" size="70333" crc="99f04bfa" sha1="b355695de787835df0d53e310d2f29a526889d8a" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="pc6001_cass">
+			<feature name="part_id" value="Inspiration [m1p2]"/>
+			<dataarea name="cass" size="131742">
+				<rom name="idea file - beep 1985.01 (inspiration) {m1p2}.wav" size="131742" crc="2bf51b50" sha1="e5a37194e148a5b249ebf5ef29e3c214cf844c1d" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="pc6001_cass">
+			<feature name="part_id" value="Jigoku no Othello [m1p2]"/>
+			<dataarea name="cass" size="425999">
+				<rom name="idea file - beep 1985.01 (jigoku no othello) {m1p2}.wav" size="425999" crc="900daabd" sha1="ed83719b7914aa85d0228a477520b36039d0cd03" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="pc6001_cass">
+			<feature name="part_id" value="Q Dai Simulation [m1p1]"/>
+			<dataarea name="cass" size="414533">
+				<rom name="idea file - beep 1985.01 (q dai simulation) {m1p1}.wav" size="414533" crc="c9adb956" sha1="10090652f335092ee0d4ec80c7649bf7de36ed2f" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="beep8502">
+		<description>Idea File - Beep 1985.02 (P6)</description>
+		<year>198?</year>
+		<publisher>Tinyan - Beep</publisher>
+		<info name="mode" value="Mode settings in part IDs" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Bound [m1p1]"/>
+			<dataarea name="cass" size="428">
+				<rom name="idea file - beep 1985.02 (bound) {m1p1}.p6" size="428" crc="b45169a3" sha1="b097fe20b6737bc4ce33e26af3b7f7df339a8276" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Color Puzzle [m1p1]"/>
+			<dataarea name="cass" size="2668">
+				<rom name="idea file - beep 1985.02 (color puzzle) {m1p1}.p6" size="2668" crc="8ad7bd74" sha1="609f97c88cd6ec809431884f059a814898b38493" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="pc6001_cass">
+			<feature name="part_id" value="Ringo-hiroi [m1p2]"/>
+			<dataarea name="cass" size="980">
+				<rom name="idea file - beep 1985.02 (ringo-hiroi) {m1p2}.p6" size="980" crc="624de9e9" sha1="6f6f1c553ea27bcd91ac229ef8109d4aa1d78ed6" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="beep8502a" cloneof="beep8502">
+		<description>Idea File - Beep 1985.02 (WAV)</description>
+		<year>198?</year>
+		<publisher>Tinyan - Beep</publisher>
+		<info name="mode" value="Mode settings in part IDs" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Bound [m1p1]"/>
+			<dataarea name="cass" size="107708">
+				<rom name="idea file - beep 1985.02 (bound) {m1p1}.wav" size="107708" crc="8740732d" sha1="db132ea5e82dc4cb44b8f53a0a8c6a6665812a3b" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Color Puzzle [m1p1]"/>
+			<dataarea name="cass" size="354668">
+				<rom name="idea file - beep 1985.02 (color puzzle) {m1p1}.wav" size="354668" crc="d1ae5212" sha1="e63ae79196f78c54fc1d2868e57f75f6a206abdc" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="pc6001_cass">
+			<feature name="part_id" value="Ringo-hiroi [m1p2]"/>
+			<dataarea name="cass" size="168566">
+				<rom name="idea file - beep 1985.02 (ringo-hiroi) {m1p2}.wav" size="168566" crc="7186e475" sha1="9c18b419c2a1e696ca77431fb8130343fac31178" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="beep8503">
+		<description>Idea File - Beep 1985.03 (P6)</description>
+		<year>198?</year>
+		<publisher>Tinyan - Beep</publisher>
+		<info name="mode" value="Mode settings in part IDs" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Beep [m1p1]"/>
+			<dataarea name="cass" size="520">
+				<rom name="idea file - beep 1985.03 (kurukuru) {m1p1}.p6" size="520" crc="3a0d217a" sha1="44b3369ed68ebfb6005441403c7c88f821945c60" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Marubatsu [m1p1]"/>
+			<dataarea name="cass" size="433">
+				<rom name="idea file - beep 1985.03 (marubatsu) {m1p1}.p6" size="433" crc="c40f6e7a" sha1="fe84acc299e22478ad3daefeb0b1a407307c5928" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="pc6001_cass">
+			<feature name="part_id" value="Nikai kara Megusuri [m1p2]"/>
+			<dataarea name="cass" size="729">
+				<rom name="idea file - beep 1985.03 (nikai kara megusuri) {m1p2}.p6" size="729" crc="aabb7e84" sha1="f50365aba9420f1c4fd086862a8792f66c6246ab" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="pc6001_cass">
+			<feature name="part_id" value="Nyandarou Yoku Mienai yo [m1p1]"/>
+			<dataarea name="cass" size="571">
+				<rom name="idea file - beep 1985.03 (nyandarou yoku mienai yo) {m1p1}.p6" size="571" crc="2264e345" sha1="f976b28e28cc5d57e9b664dae23e8cf2406144d3" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="beep8503a" cloneof="beep8503">
+		<description>Idea File - Beep 1985.03 (WAV)</description>
+		<year>198?</year>
+		<publisher>Tinyan - Beep</publisher>
+		<info name="mode" value="Mode settings in part IDs" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Beep [m1p1]"/>
+			<dataarea name="cass" size="117851">
+				<rom name="idea file - beep 1985.03 (kurukuru) {m1p1}.wav" size="117851" crc="0cf1281b" sha1="4dc5e4646cd486a791509406568b226eead02a96" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Marubatsu [m1p1]"/>
+			<dataarea name="cass" size="108259">
+				<rom name="idea file - beep 1985.03 (marubatsu) {m1p1}.wav" size="108259" crc="bec41575" sha1="c9a0e38a38b13e4bf28e3292e981f90ffb315ce9" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="pc6001_cass">
+			<feature name="part_id" value="Nikai kara Megusuri [m1p2]"/>
+			<dataarea name="cass" size="140893">
+				<rom name="idea file - beep 1985.03 (nikai kara megusuri) {m1p2}.wav" size="140893" crc="b70a78ff" sha1="8087d9b71749fb3e7405f208d81efca75829d753" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="pc6001_cass">
+			<feature name="part_id" value="Nyandarou Yoku Mienai yo [m1p1]"/>
+			<dataarea name="cass" size="123473">
+				<rom name="idea file - beep 1985.03 (nyandarou yoku mienai yo) {m1p1}.wav" size="123473" crc="cad5051b" sha1="1019821d4110943589c4bbd3e6420fc30c8c9cd4" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="beep8504">
+		<description>Idea File - Beep 1985.04 - Hanbai Simulation (P6)</description>
+		<year>198?</year>
+		<publisher>Tinyan - Beep</publisher>
+		<info name="mode" value="Mode 1, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="8472">
+				<rom name="idea file - beep 1985.04 (hanbai simulation) {m1p1}.p6" size="8472" crc="315ec1bf" sha1="e1cc42823fce6961e60607937af69fa8f7aa09df" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="beep8504a" cloneof="beep8504">
+		<description>Idea File - Beep 1985.04 - Hanbai Simulation (WAV)</description>
+		<year>198?</year>
+		<publisher>Tinyan - Beep</publisher>
+		<info name="mode" value="Mode 1, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="994559">
+				<rom name="idea file - beep 1985.04 (hanbai simulation) {m1p1}.wav" size="994559" crc="9af7b447" sha1="baec4ed2ac95c67020f7e0fd50dc8da57a55aafc" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="beep8505">
+		<description>Idea File - Beep 1985.05 (P6)</description>
+		<year>198?</year>
+		<publisher>Tinyan - Beep</publisher>
+		<info name="mode" value="Mode 1, Pages 1 for all programs" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Achikochi"/>
+			<dataarea name="cass" size="960">
+				<rom name="idea file - beep 1985.05 (achikochi) {m1p1}.p6" size="960" crc="31dc4ef6" sha1="6198b66ae88c128a3b5003fac0a78c7bd7fef0c4" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Arukebuwa"/>
+			<dataarea name="cass" size="246">
+				<rom name="idea file - beep 1985.05 (arukebuwa) {m1p1}.p6" size="246" crc="1355ebfe" sha1="5f0f1d130932ee3b76f20e620e0c1f7b3065abc5" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="pc6001_cass">
+			<feature name="part_id" value="Kakehiki"/>
+			<dataarea name="cass" size="242">
+				<rom name="idea file - beep 1985.05 (kakehiki) {m1p1}.p6" size="242" crc="d9e734cd" sha1="c0b13d16f2ae629b10035be1fac9e7f213b0f9cf" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="beep8505a" cloneof="beep8505">
+		<description>Idea File - Beep 1985.05 (WAV)</description>
+		<year>198?</year>
+		<publisher>Tinyan - Beep</publisher>
+		<info name="mode" value="Mode 1, Pages 1 for all programs" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Achikochi"/>
+			<dataarea name="cass" size="166361">
+				<rom name="idea file - beep 1985.05 (achikochi) {m1p1}.wav" size="166361" crc="8212ab69" sha1="89b0525011ed4c2ba2c1793c42275c6a8f7d5ff0" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Arukebuwa"/>
+			<dataarea name="cass" size="87642">
+				<rom name="idea file - beep 1985.05 (arukebuwa) {m1p1}.wav" size="87642" crc="1ac0135d" sha1="02e3ceb5c51d506f912c188c7b7c8f6406d15637" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="pc6001_cass">
+			<feature name="part_id" value="Kakehiki"/>
+			<dataarea name="cass" size="87201">
+				<rom name="idea file - beep 1985.05 (kakehiki) {m1p1}.wav" size="87201" crc="be301183" sha1="b9168dfe0f3b444556769bebb8be438fc06af96b" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="beep8506">
+		<description>Idea File - Beep 1985.06 - Aryaryan (P6)</description>
+		<year>198?</year>
+		<publisher>Tinyan - Beep</publisher>
+		<info name="mode" value="Mode 1, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="1924">
+				<rom name="idea file - beep 1985.06 (aryaryan) {m1p1}.p6" size="1924" crc="6d5a1f1e" sha1="c0cf23c0a0cf5da6129b2aa063c3657e1aba3d19" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="beep8506a" cloneof="beep8506">
+		<description>Idea File - Beep 1985.06 - Aryaryan (WAV)</description>
+		<year>198?</year>
+		<publisher>Tinyan - Beep</publisher>
+		<info name="mode" value="Mode 1, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="272642">
+				<rom name="idea file - beep 1985.06 (aryaryan) {m1p1}.wav" size="272642" crc="856dc63c" sha1="bdc08fce88e5431d3aa24bd1d35708875d89a5c1" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="beep8507">
+		<description>Idea File - Beep 1985.07 - Dork II (P6)</description>
+		<year>198?</year>
+		<publisher>Tinyan - Beep</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="602">
+				<rom name="idea file - beep 1985.07 (dork ii) {m1p2}.p6" size="602" crc="d9ebb0cc" sha1="434c69064a6395d2fdca87b0789c73934127074b" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="beep8507a" cloneof="beep8507">
+		<description>Idea File - Beep 1985.07 - Dork II (WAV)</description>
+		<year>198?</year>
+		<publisher>Tinyan - Beep</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="126891">
+				<rom name="idea file - beep 1985.07 (dork ii) {m1p2}.wav" size="126891" crc="a13c737e" sha1="d6167a4cd8e02222f09223e0614413c2d3f96588" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="beep8508">
+		<description>Idea File - Beep 1985.08 (P6)</description>
+		<year>198?</year>
+		<publisher>Tinyan - Beep</publisher>
+		<info name="mode" value="Mode settings in part IDs" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Ba-n [m1p2]"/>
+			<dataarea name="cass" size="1423">
+				<rom name="idea file - beep 1985.08 (ba-n) {m1p2}.p6" size="1423" crc="1975d6ac" sha1="325adb2b10f71b31dacbe02ea018979a0c17c541" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Kuwaminari [m1p1]"/>
+			<dataarea name="cass" size="1461">
+				<rom name="idea file - beep 1985.08 (kuwaminari) {m1p1}.p6" size="1461" crc="1984c4ec" sha1="4f1eae3ca74d60d534f6b14761057ed36b504413" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="beep8508a" cloneof="beep8508">
+		<description>Idea File - Beep 1985.08 (WAV)</description>
+		<year>198?</year>
+		<publisher>Tinyan - Beep</publisher>
+		<info name="mode" value="Mode settings in part IDs" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Ba-n [m1p2]"/>
+			<dataarea name="cass" size="217406">
+				<rom name="idea file - beep 1985.08 (ba-n) {m1p2}.wav" size="217406" crc="a586a7bb" sha1="fa55f29d3cc663e2f2a7e9345212bbfe41964f48" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Kuwaminari [m1p1]"/>
+			<dataarea name="cass" size="221596">
+				<rom name="idea file - beep 1985.08 (kuwaminari) {m1p1}.wav" size="221596" crc="12d8d5db" sha1="f01777db9f0c4d66d1156713219d77b4dc1c8d71" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="beep8509">
+		<description>Idea File - Beep 1985.09 (P6)</description>
+		<year>198?</year>
+		<publisher>Tinyan - Beep</publisher>
+		<info name="mode" value="Mode 1, Pages 1 for all programs" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Jump"/>
+			<dataarea name="cass" size="568">
+				<rom name="idea file - beep 1985.09 (jump) {m1p1}.p6" size="568" crc="8ffaaa73" sha1="74d121c5234e8369537ca4b513a1f25c1fbba3ee" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Semai yo"/>
+			<dataarea name="cass" size="659">
+				<rom name="idea file - beep 1985.09 (semai yo) {m1p1}.p6" size="659" crc="ff4aad52" sha1="1687d09867acadd3bdc83eb89e7b03dc25ff5f73" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="beep8509a" cloneof="beep8509">
+		<description>Idea File - Beep 1985.09 (WAV)</description>
+		<year>198?</year>
+		<publisher>Tinyan - Beep</publisher>
+		<info name="mode" value="Mode 1, Pages 1 for all programs" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Jump"/>
+			<dataarea name="cass" size="123143">
+				<rom name="idea file - beep 1985.09 (jump) {m1p1}.wav" size="123143" crc="15e026a3" sha1="188854434195e71a14ef62573f934bb52b54c1ac" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Semai yo"/>
+			<dataarea name="cass" size="133175">
+				<rom name="idea file - beep 1985.09 (semai yo) {m1p1}.wav" size="133175" crc="c769d682" sha1="2cee5bda2bda4996b9bc6ae7d464ed74f2e4cdc5" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ijimekko">
+		<description>Ijimekko Game</description>
+		<year>198?</year>
+		<publisher>Afoxai</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="6313">
+				<rom name="ijimekko game {m1p2}.p6" size="6313" crc="294cfbdd" sha1="9ae8518435b58dcd35a9f597c79a9c6016758384" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ishoku6">
+		<description>Ishoku 6</description>
+		<year>198?</year>
+		<publisher>Afoxai</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="4296">
+				<rom name="ishoku 6 {m1p2}.p6" size="4296" crc="656544ea" sha1="8fbe2121a4b900dd08a82fac3c0324ab4669992c" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="jelda">
+		<description>Jelda</description>
+		<year>198?</year>
+		<publisher>Carry Lab</publisher>
+		<info name="mode" value="Mode 5, Pages 3" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="25238">
+				<rom name="jelda {m5p3}.cas" size="25238" crc="33be8325" sha1="b728124d4fe6bf6d821160b021b760777e7582c9" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="jewels">
+		<description>Jewels (CAS)</description>
+		<year>198?</year>
+		<publisher>Hiroshi Hashizume</publisher>
+		<info name="mode" value="Mode 6" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="6258">
+				<rom name="jewels {m6}.cas" size="6258" crc="db580f1c" sha1="5c864eb364178a616a88bd5ec04145417b34d1d0" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="jewelsa" cloneof="jewels">
+		<description>Jewels (WAV)</description>
+		<year>198?</year>
+		<publisher>Hiroshi Hashizume</publisher>
+		<info name="mode" value="Mode 6" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="750465">
+				<rom name="jewels {m6}.wav" size="750465" crc="1fa0181d" sha1="7c597a9a38640a96776212824ab5dbd3ba8007fd" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="jugemu">
+		<description>Jugemu</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+		<info name="mode" value="Mode 5, Page 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="17767">
+				<rom name="jugemu {m5p2}.p6" size="17767" crc="da966bd0" sha1="dac4d832833ccaa9a29251bd60dc438ab563b201" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="katataki">
+		<description>Ka Tataki'! (P6)</description>
+		<year>198?</year>
+		<publisher>Shigeki Niino</publisher>
+		<info name="mode" value="Mode 1, Page 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="2542">
+				<rom name="ka tataki'! {m1p2}.p6" size="2542" crc="ad920141" sha1="15bd632212b98a53337fe70872a189ee64564bed" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="katatakia" cloneof="katataki">
+		<description>Ka Tataki'! (WAV)</description>
+		<year>198?</year>
+		<publisher>Shigeki Niino</publisher>
+		<info name="mode" value="Mode 1, Page 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="340776">
+				<rom name="ka tataki'! {m1p2}.wav" size="340776" crc="f950eb66" sha1="b79388ea0a04e550135f4db523582c5f62fc9f0d" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kaiten">
+		<description>Kaiten</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+		<info name="mode" value="Mode 1, Page 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="946">
+				<rom name="kaiten (6001) {m1p1}.p6" size="946" crc="27377ab0" sha1="43ea6f802984df8f7592d9d08589a374052d79e2" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kake">
+		<description>Kake Game (CAS)</description>
+		<year>198?</year>
+		<publisher>Kunihisa Ogawa</publisher>
+		<info name="mode" value="Mode 1, Page 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="3627">
+				<rom name="kake game {m1p1}.cas" size="3627" crc="37d9fa01" sha1="e74462d10c66247027640e9917c543a8ee2ac5c0" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kakea" cloneof="kake">
+		<description>Kake Game (WAV)</description>
+		<year>198?</year>
+		<publisher>Kunihisa Ogawa</publisher>
+		<info name="mode" value="Mode 1, Page 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="460397">
+				<rom name="kake game {m1p1}.wav" size="460397" crc="99459922" sha1="dacdd1280d5b2baf0a0d23899e8ed396ff5045a2" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kakuzato">
+		<description>Kakuzatou Ubaiai Game</description>
+		<year>198?</year>
+		<publisher>Afoxai</publisher>
+		<info name="mode" value="Mode 1, Page 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="2136">
+				<rom name="kakuzatou ubaiai game {m1p2}.p6" size="2136" crc="82ace9ae" sha1="231320273873dc597f32407a8795fa9aadd6fcb2" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="karuizaw">
+		<description>Karuizawa Yuukai Annai</description>
+		<year>198?</year>
+		<publisher>Enix</publisher>
+		<info name="mode" value="Mode 5, Page 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Side A - Ch. 1"/>
+			<dataarea name="cass" size="23080">
+				<rom name="karuizawa yuukai annai (side a - ch. 1) {m5p2}.cas" size="23080" crc="09cdd251" sha1="1e861c60b41e337f59778fdf60f871b1c39413b4" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Side B - Ch. 2+3"/>
+			<dataarea name="cass" size="44016">
+				<rom name="karuizawa yuukai annai (side b - ch. 2+3) {m5p2}.cas" size="44016" crc="33c06466" sha1="9c291edeed04c538462331853ce6edf39f5b6575" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="pc6001_cass">
+			<feature name="part_id" value="Side B2 - Ch. 3"/>
+			<dataarea name="cass" size="8580">
+				<rom name="karuizawa yuukai annai (side b2 - ch. 3) {m5p2}.cas" size="8580" crc="2c765117" sha1="433237251bae874a874dd71a6a978c2025351c12" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="pc6001_cass">
+			<feature name="part_id" value="Side C - Ch. 4"/>
+			<dataarea name="cass" size="34566">
+				<rom name="karuizawa yuukai annai (side c - ch. 4) {m5p2}.cas" size="34566" crc="d66eadfd" sha1="cc72b3e268d2a205d28c8c05b5dc78448bbcb727" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="pc6001_cass">
+			<feature name="part_id" value="Side D - Ch. 5+6 "/>
+			<dataarea name="cass" size="77599">
+				<rom name="karuizawa yuukai annai (side d - ch. 5+6) {m5p2}.cas" size="77599" crc="decd51bd" sha1="074ba981798ff351d3ea42d001a5737c1aaca09b" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="pc6001_cass">
+			<feature name="part_id" value="Side D2 - Ch. 6"/>
+			<dataarea name="cass" size="39497">
+				<rom name="karuizawa yuukai annai (side d2 - ch. 6) {m5p2}.cas" size="39497" crc="9c1ccc52" sha1="18b2f474539bf270e257e54fcc5cb42110be3cd0" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass7" interface="pc6001_cass">
+			<feature name="part_id" value="Side D3 - RPG"/>
+			<dataarea name="cass" size="2500">
+				<rom name="karuizawa yuukai annai (side d3 - rpg) {m5p2}.cas" size="2500" crc="82917330" sha1="585b4806bdded5a637bc5727064843d8c2e9d7bd" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="meikyuu">
+		<description>Kaze no Meikyuu (CAS)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="mode" value="Mode 2, Page 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="5937">
+				<rom name="kaze no meikyuu {m2p2}.cas" size="5937" crc="aa745992" sha1="7ba1349e8b092897a86429518297d7b77d1f6f70" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="meikyuua" cloneof="meikyuu">
+		<description>Kaze no Meikyuu (WAV)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="mode" value="Mode 2, Page 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="715075">
+				<rom name="kaze no meikyuu {m2p2}.wav" size="715075" crc="7c21deae" sha1="fa6654d6b0814a475ebf65dc790d49e7dc0aa03e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nausicaa">
+		<description>Kaze no Tani no Nausicaa (P6)</description>
+		<year>198?</year>
+		<publisher>Technopolis</publisher>
+		<info name="mode_demo" value="Mode 5, Page 1" />
+		<info name="mode_game" value="Mode 5, Page 3" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="57805">
+				<rom name="kaze no tani no nausicaa {demo m5p1, game m5p3}.p6" size="57805" crc="c3120c49" sha1="a030689b8027e43e189166213a11fd86f8368110" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nausicaaa" cloneof="nausicaa">
+		<description>Kaze no Tani no Nausicaa (WAV)</description>
+		<year>198?</year>
+		<publisher>Technopolis</publisher>
+		<info name="mode_demo" value="Mode 5, Page 1" />
+		<info name="mode_game" value="Mode 5, Page 3" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="6835308">
+				<rom name="kaze no tani no nausicaa {demo m5p1, game m5p3}.wav" size="6835308" crc="9d6f36e9" sha1="0b567d9bab88835540dc8ac07dc54a18ca9ce813" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="keiryuuk">
+		<description>Keiryuu Kudari</description>
+		<year>198?</year>
+		<publisher>Afoxai</publisher>
+		<info name="mode" value="Mode 1, Page 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="832">
+				<rom name="keiryuu kudari {m1p2}.p6" size="832" crc="55f21207" sha1="d8afa247cc5d0151d4071cf6f77d4b3efb5c777b" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="naritai">
+		<description>Kirei ni Naritai (P6)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="mode" value="Mode 5, Page 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Part 1"/>
+			<dataarea name="cass" size="3562">
+				<rom name="kirei ni naritai (part 1) {m5p2}.p6" size="3562" crc="36f9561d" sha1="6295cd9707dec9c4bc148222ee22f217e61df632" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Part 2"/>
+			<dataarea name="cass" size="6401">
+				<rom name="kirei ni naritai (part 2) {m5p2}.p6" size="6401" crc="77ecdad6" sha1="7b1162f363e040f270b19031b2d87b69af85e979" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="naritaia" cloneof="naritai">
+		<description>Kirei ni Naritai (WAV)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="mode" value="Mode 5, Page 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Part 1"/>
+			<dataarea name="cass" size="453231">
+				<rom name="kirei ni naritai (part 1) {m5p2}.wav" size="453231" crc="2c2c42e5" sha1="0082312d69b0b90f6f62e7596af483015378da24" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Part 2"/>
+			<dataarea name="cass" size="766231">
+				<rom name="kirei ni naritai (part 2) {m5p2}.wav" size="766231" crc="a8f440af" sha1="0f5c9fdef99ff113f6ede2192d78237d36a8ac4c" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kuroishi">
+		<description>Kuroi Uma to Shiroi Uma</description>
+		<year>198?</year>
+		<publisher>Afoxai</publisher>
+		<info name="mode" value="Mode 1, Page 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="770">
+				<rom name="kuroi uma to shiroi uma {m1p2}.p6" size="770" crc="10208380" sha1="5b14b0fc70b201687e8983b54833a97b5b6154b8" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kyoufu">
+		<description>Kyoufu - Toukousha no Noroi (P6)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="mode" value="Mode 1, Page 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Part 1"/>
+			<dataarea name="cass" size="1163">
+				<rom name="kyoufu - toukousha no noroi (part 1) {m1p2}.p6" size="1163" crc="0c5964e8" sha1="924a42851f732767c440966489032f38bef28252" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Part 2"/>
+			<dataarea name="cass" size="2628">
+				<rom name="kyoufu - toukousha no noroi (part 2) {m1p2}.p6" size="2628" crc="5910fe54" sha1="8a118124bcacfb254463767765ae7cab2de9aa62" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kyoufua" cloneof="kyoufu">
+		<description>Kyoufu - Toukousha no Noroi (WAV)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="mode" value="Mode 1, Page 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Part 1"/>
+			<dataarea name="cass" size="188741">
+				<rom name="kyoufu - toukousha no noroi (part 1) {m1p2}.wav" size="188741" crc="f989fae1" sha1="092a6b77ddd2b560a30f31cd3c12748a154b20c5" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Part 2"/>
+			<dataarea name="cass" size="350258">
+				<rom name="kyoufu - toukousha no noroi (part 2) {m1p2}.wav" size="350258" crc="ded92ef3" sha1="7b2c96f4e59be79fd7e0866ef3b325a625f86804" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ledzone">
+		<description>Led Zone (6001)</description>
+		<year>198?</year>
+		<publisher>T&amp;E Soft</publisher>
+		<info name="mode" value="Unknown" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="9727">
+				<rom name="led zone (6001).cas" size="9727" crc="450a4b45" sha1="93d75f164b4b5a0f93d491ac00ea7fa2893a431e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ledzonemk2" cloneof="ledzone">
+		<description>Led Zone (mkII) {m5p3}.cas</description>
+		<year>198?</year>
+		<publisher>T&amp;E Soft</publisher>
+		<info name="mode" value="Mode 5, Page 3" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="16559">
+				<rom name="led zone (mkii) {m5p3}.cas" size="16559" crc="14a58210" sha1="3a0ad9f38ec7277db534f790c3bc91c496c2b4e9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lsa1">
+		<description>Legends of Star Arthur 1 - Planet Mephius</description>
+		<year>198?</year>
+		<publisher>T&amp;E Soft</publisher>
+		<info name="mode" value="Mode 5, Page 3" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="28362">
+				<rom name="legends of star arthur 1 - planet mephius (tape 1) {m5p3}.cas" size="28362" crc="53589958" sha1="3df544bab8e2e4a31083161ddb2733be9bd3e8d7" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Tape 2 Side A"/>
+			<dataarea name="cass" size="38417">
+				<rom name="legends of star arthur 1 - planet mephius (tape 2 side a) {m5p3}.cas" size="38417" crc="ba718296" sha1="d6f720295bab57afac5a5a1c0684c341f10be4a4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="pc6001_cass">
+			<feature name="part_id" value="Tape 2 Side B"/>
+			<dataarea name="cass" size="8326">
+				<rom name="legends of star arthur 1 - planet mephius (tape 2 side b) {m5p3}.cas" size="8326" crc="4dd24f1c" sha1="654e09eac252f3ba5b5e48fe178ff6218ed66c5d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="pc6001_cass">
+			<feature name="part_id" value="Tape 3 Side A"/>
+			<dataarea name="cass" size="34282">
+				<rom name="legends of star arthur 1 - planet mephius (tape 3 side a) {m5p3}.cas" size="34282" crc="c098c637" sha1="1f199c1adca26e309aceabd7b16942f1b1b0b72a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="pc6001_cass">
+			<feature name="part_id" value="Tape 3 Side B"/>
+			<dataarea name="cass" size="7079">
+				<rom name="legends of star arthur 1 - planet mephius (tape 3 side b) {m5p3}.cas" size="7079" crc="07284e34" sha1="0436126aa742645dade3d71b5976325894575eaa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lsa2">
+		<description>Legends of Star Arthur 2 - Dark Nebula</description>
+		<year>198?</year>
+		<publisher>T&amp;E Soft</publisher>
+		<info name="mode" value="Mode 5, Page 3" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="83853">
+				<rom name="legends of star arthur 2 - dark nebula (tape 1) {m5p3}.cas" size="83853" crc="825da3b3" sha1="17978c8acc7a9bf97097b62f37b2be89194e78cd" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Tape 2 Side A"/>
+			<dataarea name="cass" size="77741">
+				<rom name="legends of star arthur 2 - dark nebula (tape 2 side a) {m5p3}.cas" size="77741" crc="4f084f5a" sha1="3055c272bbebb0da9dc7df447898fbd5b63267ac" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="pc6001_cass">
+			<feature name="part_id" value="Tape 2 Side B"/>
+			<dataarea name="cass" size="52374">
+				<rom name="legends of star arthur 2 - dark nebula (tape 2 side b) {m5p3}.cas" size="52374" crc="f48a3fbd" sha1="157e3f6d872531082203b9da6b0e35791d16d96f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="pc6001_cass">
+			<feature name="part_id" value="Tape 3 Side A"/>
+			<dataarea name="cass" size="81756">
+				<rom name="legends of star arthur 2 - dark nebula (tape 3 side a) {m5p3}.cas" size="81756" crc="112fda98" sha1="9571923af78f16f415052683caa6acc98832b696" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="pc6001_cass">
+			<feature name="part_id" value="Tape 3 Side B"/>
+			<dataarea name="cass" size="54518">
+				<rom name="legends of star arthur 2 - dark nebula (tape 3 side b) {m5p3}.cas" size="54518" crc="2c3149cc" sha1="454b83547e368962017684d69b58c3a8a391b6f5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lsa3">
+		<description>Legends of Star Arthur 3 - Terra 4001</description>
+		<year>198?</year>
+		<publisher>T&amp;E Soft</publisher>
+		<info name="mode" value="Mode 5, Page 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Tape 1 Side A"/>
+			<dataarea name="cass" size="63417">
+				<rom name="legends of star arthur 3 - terra 4001 (tape 1 side a) {m5p2}.cas" size="63417" crc="4d6850ab" sha1="f3ada792697894cede22b6844e9d506edc982d87" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Tape 1 Side B"/>
+			<dataarea name="cass" size="3014">
+				<rom name="legends of star arthur 3 - terra 4001 (tape 1 side b) {m5p2}.cas" size="3014" crc="e1462597" sha1="1a9bd5027a415c8b155e2c8e7f20b48e8fdcca27" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="pc6001_cass">
+			<feature name="part_id" value="Tape 2"/>
+			<dataarea name="cass" size="42400">
+				<rom name="legends of star arthur 3 - terra 4001 (tape 2) {m5p2}.cas" size="42400" crc="d95a2b6d" sha1="106d3bf5be1e90ebd0e0f003604d38e7394cf528" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="pc6001_cass">
+			<feature name="part_id" value="Tape 3"/>
+			<dataarea name="cass" size="41736">
+				<rom name="legends of star arthur 3 - terra 4001 (tape 3) {m5p2}.cas" size="41736" crc="b1fe9d81" sha1="ac3c41246a2274ba64b8b78171c3f67f0dc2cde0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lightsout">
+		<description>Lights Out (CAS)</description>
+		<year>198?</year>
+		<publisher>Hiroshi Ishioka</publisher>
+		<info name="mode" value="Mode 1, Page 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="4504">
+				<rom name="lights out {m1p1}.cas" size="4504" crc="53319d38" sha1="1f33cdcaa640fbafb9c0e3a91b43393d53c94c20" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lightsouta" cloneof="lightsout">
+		<description>Lights Out (WAV)</description>
+		<year>198?</year>
+		<publisher>Hiroshi Ishioka</publisher>
+		<info name="mode" value="Mode 1, Page 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="545968">
+				<rom name="lights out {m1p1}.wav" size="545968" crc="cc8ce9c1" sha1="9f4a1404dfa5c889b24017c0b528e8c3fd5eb1e1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lightsoutp" cloneof="lightsout">
+		<description>Lights Out (BASIC prototype)</description>
+		<year>198?</year>
+		<publisher>Hiroshi Ishioka</publisher>
+		<info name="mode" value="Mode 1, Page 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="1413">
+				<rom name="lights out (basic prototype) {m1p1}.cas" size="1413" crc="4d92c3f7" sha1="f42f2de67bd24f4a679092dc8db5606ab7e11a38" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="likeslide">
+		<description>Like Slide</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+		<info name="mode" value="Mode 5, Page 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="3559">
+				<rom name="like slide {m5p1}.p6" size="3559" crc="7dc0b5d1" sha1="fcc420313f2806dfd83d283ec1e26be1a0880735" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="livarmor">
+		<description>Living Armor (CAS)</description>
+		<year>198?</year>
+		<publisher>M-P6</publisher>
+		<info name="mode" value="Mode 6" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Part 1"/>
+			<dataarea name="cass" size="4060">
+				<rom name="living armor (part 1) {m6}.cas" size="4060" crc="29c329c8" sha1="194d92ffa469bc3dc9bffc1e8b5c34379c39dbdd" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Part 2"/>
+			<dataarea name="cass" size="9834">
+				<rom name="living armor (part 2) {m6}.cas" size="9834" crc="dc7795ea" sha1="d159951a1b42db7ce7d609b003d46f498555cec3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="livarmora" cloneof="livarmor">
+		<description>Living Armor (WAV)</description>
+		<year>198?</year>
+		<publisher>M-P6</publisher>
+		<info name="mode" value="Mode 6" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Part 1"/>
+			<dataarea name="cass" size="508136">
+				<rom name="living armor (part 1) {m6}.wav" size="508136" crc="03ac1672" sha1="bedd276ae895b5e9a52d8a076b77545cd98eb36d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Part 2"/>
+			<dataarea name="cass" size="1144719">
+				<rom name="living armor (part 2) {m6}.wav" size="1144719" crc="5c0bc474" sha1="aab4027968f767ba4f8dd45f3b0110ded968b07b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lizard">
+		<description>Lizard</description>
+		<year>198?</year>
+		<publisher>Xtal Soft</publisher>
+		<info name="mode" value="Mode 5, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="40671">
+				<rom name="lizard {m5p2}.cas" size="40671" crc="cb9d2f73" sha1="92bd14d1ced8cb6c20c30b148d80709e367768b0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lquest">
+		<description>Lizard Quest (CAS)</description>
+		<year>198?</year>
+		<publisher>Taro Kondo</publisher>
+		<info name="mode" value="Mode 6" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="11792">
+				<rom name="lizard quest {m6}.cas" size="11792" crc="6bfb15a3" sha1="b6486977d8de4acfcceb46ae42f2bc77f067dd47" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lquesta" cloneof="lquest">
+		<description>Lizard Quest (WAV)</description>
+		<year>198?</year>
+		<publisher>Taro Kondo</publisher>
+		<info name="mode" value="Mode 6" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="1360589">
+				<rom name="lizard quest {m6}.wav" size="1360589" crc="ba1adef0" sha1="b0d9f1280fbb6ba320e4f5040a3e659aba562afc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lquest2">
+		<description>Lizard Quest II - Shitennou no Houfuku (P6)</description>
+		<year>198?</year>
+		<publisher>Taro Kondo</publisher>
+		<info name="mode" value="Mode 6" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="11322">
+				<rom name="lizard quest ii - shitennou no houfuku {m6}.p6" size="11322" crc="f26c6ad3" sha1="5bc729ce77bca8a3c2212b45337cb42fd9a71fc5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lquest2a" cloneof="lquest2">
+		<description>Lizard Quest II - Shitennou no Houfuku (WAV)</description>
+		<year>198?</year>
+		<publisher>Taro Kondo</publisher>
+		<info name="mode" value="Mode 6" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="1308771">
+				<rom name="lizard quest ii - shitennou no houfuku {m6}.wav" size="1308771" crc="ed66b202" sha1="755521c2355346bd00e3d69cb53cc8521f2b68bb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lquest3">
+		<description>Lizard Quest III - Shi no Kami Gaabarian (CAS)</description>
+		<year>198?</year>
+		<publisher>Taro Kondo</publisher>
+		<info name="mode" value="Mode 6" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="12574">
+				<rom name="lizard quest iii - shi no kami gaabarian {m6}.cas" size="12574" crc="a0a2133a" sha1="d106d968c38fccb19ba954220905b5c05e390f26" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lquest3a" cloneof="lquest3">
+		<description>Lizard Quest III - Shi no Kami Gaabarian (WAV)</description>
+		<year>198?</year>
+		<publisher>Taro Kondo</publisher>
+		<info name="mode" value="Mode 6" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="1446804">
+				<rom name="lizard quest iii - shi no kami gaabarian {m6}.wav" size="1446804" crc="6329c3b2" sha1="748a7c6f46663703cb2fcb4df70eedc566d03ad4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lquest4">
+		<description>Lizard Quest IV - Gold Lizard (CAS)</description>
+		<year>198?</year>
+		<publisher>Taro Kondo</publisher>
+		<info name="mode" value="Mode 6" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="16846">
+				<rom name="lizard quest iv - gold lizard {m6}.cas" size="16846" crc="aeaeb305" sha1="fa8df7fea0444537c005dc994a3af5f78df8fde5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lquest4a" cloneof="lquest4">
+		<description>Lizard Quest IV - Gold Lizard (WAV)</description>
+		<year>198?</year>
+		<publisher>Taro Kondo</publisher>
+		<info name="mode" value="Mode 6" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="1917792">
+				<rom name="lizard quest iv - gold lizard {m6}.wav" size="1917792" crc="422a9a90" sha1="2e0e1d275992e40949a5c5e7e6c4689971fbc6e3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ldrun">
+		<description>Lode Runner (P6)</description>
+		<year>198?</year>
+		<publisher>System Soft</publisher>
+		<info name="mode" value="Mode 2, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="72130">
+				<rom name="lode runner {m2p2}.p6" size="72130" crc="454d46a2" sha1="0d472ca72dc7d2d3dfb41b8d74ff790963d4317d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ldruna" cloneof="ldrun">
+		<description>Lode Runner (P6T)</description>
+		<year>198?</year>
+		<publisher>System Soft</publisher>
+		<info name="mode" value="Mode 2, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="72177">
+				<rom name="lode runner {m2p2}.p6t" size="72177" crc="d3b0ca6c" sha1="ea746d710b97429994f010610a47b7862bc6448e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 </softwarelist>
