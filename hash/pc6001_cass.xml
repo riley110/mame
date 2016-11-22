@@ -3163,4 +3163,1709 @@
 		</part>
 	</software>
 
+	<software name="magic">
+		<description>Magic</description>
+		<year>198?</year>
+		<publisher>Afoxai</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="6407">
+				<rom name="magic {m1p2}.p6" size="6407" crc="eb4bcbb3" sha1="083f01abba7f5a0ee230b0284a484333ed26b985" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magbead">
+		<description>Magnet Bead (P6)</description>
+		<year>198?</year>
+		<publisher>Shigeki Niino</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Part 1"/>
+			<dataarea name="cass" size="1593">
+				<rom name="magnet bead (part 1) {m1p2}.p6" size="1593" crc="e1847504" sha1="acf639a3bb71c556e483d8a0ac1dc2cc503afc80" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Part 2"/>
+			<dataarea name="cass" size="4315">
+				<rom name="magnet bead (part 2) {m1p2}.p6" size="4315" crc="ca2d1da4" sha1="82b71a9d0dcd7776a26ced5d2bbe5530fe5f79f4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magbeada" cloneof="magbead">
+		<description>Magnet Bead (WAV)</description>
+		<year>198?</year>
+		<publisher>Shigeki Niino</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Part 1"/>
+			<dataarea name="cass" size="236149">
+				<rom name="magnet bead (part 1) {m1p2}.wav" size="236149" crc="dd656293" sha1="9a1e5cb8b9bc727a7ced667091cc6ee7df1e69a0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Part 2"/>
+			<dataarea name="cass" size="536249">
+				<rom name="magnet bead (part 2) {m1p2}.wav" size="536249" crc="26c36449" sha1="e9cfe1b0f85239918e496aec849b2b0e094b5351" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="magfield">
+		<description>Magnetic Field</description>
+		<year>198?</year>
+		<publisher>Enix</publisher>
+		<info name="mode" value="Mode 2, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="15666">
+				<rom name="magnetic field {m2p2}.cas" size="15666" crc="55ad4690" sha1="d1d68f25a546963284c20d8f5850ba0564785fa5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mandel">
+		<description>Mandelbrot demo</description>
+		<year>198?</year>
+		<publisher>Bookworm</publisher>
+		<info name="mode" value="Mode 5, Pages 3" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="4774">
+				<rom name="mandelbrot demo {m5p3}.p6" size="4774" crc="58858b7e" sha1="cb776144d9265be69589a6e00a38286d26942430" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="marquee">
+		<description>Marquee</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="2538">
+				<rom name="marquee {m1p2}.p6" size="2538" crc="712e1a74" sha1="8efe45bcbfb1cf3603f21ab3b38e3f1c9d016bab" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mate">
+		<description>Mate'! (P6)</description>
+		<year>198?</year>
+		<publisher>Shigeki Niino</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="3870">
+				<rom name="mate'! {m1p2}.p6" size="3870" crc="2e8ea6b9" sha1="e3400715525d787987a6f0bacb6ce03a57ca0e01" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="matea" cloneof="mate">
+		<description>Mate'! (WAV)</description>
+		<year>198?</year>
+		<publisher>Shigeki Niino</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="487188">
+				<rom name="mate'! {m1p2}.wav" size="487188" crc="f820fd5f" sha1="3583a2125b850d237b7e610d86e582b14d7c826b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="meteorite">
+		<description>Meteorite (CAS)</description>
+		<year>198?</year>
+		<publisher>Kenta Cho</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="2574">
+				<rom name="meteorite {m1p2}.cas" size="2574" crc="dd670702" sha1="f951bcab11b07e125a9bdf4ed2d11b5f4c6526a4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="meteoritea" cloneof="meteorite">
+		<description>Meteorite (WAV)</description>
+		<year>198?</year>
+		<publisher>Kenta Cho</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="344304">
+				<rom name="meteorite {m1p2}.wav" size="344304" crc="c3ff574f" sha1="f4c716c53579bf6859e8eecb8049c1b14abf71a6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mirpoint">
+		<description>Mirror Point (CAS)</description>
+		<year>198?</year>
+		<publisher>Namaga</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="4039">
+				<rom name="mirror point {m1p2}.cas" size="4039" crc="5d2d4298" sha1="906b62d790b3274730836e37e3017a5d72fc9150" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mirpointa" cloneof="mirpoint">
+		<description>Mirror Point (WAV)</description>
+		<year>198?</year>
+		<publisher>Namaga</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="505820">
+				<rom name="mirror point {m1p2}.wav" size="505820" crc="abed808e" sha1="88a72f4c4232428332a1c09258abd1eb2457c6f7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mixmix">
+		<description>Mix Mix</description>
+		<year>198?</year>
+		<publisher>K. Akimoto</publisher>
+		<info name="mode" value="Mode 2, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="17646">
+				<rom name="mix mix {m2p2}.p6" size="17646" crc="bf7df075" sha1="16e8d261344f8de23b3b2867e2bceb42723bf64c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="miyuki">
+		<description>Miyuki the Shoubushi</description>
+		<year>198?</year>
+		<publisher>Pax Softonica</publisher>
+		<info name="mode" value="Mode 2, Pages 3" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="11845">
+				<rom name="miyuki the shoubushi {m2p3}.cas" size="11845" crc="27b5fc89" sha1="fe4334e48599497e5f008c678afca094895112fe" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="moerusen">
+		<description>Moeru! Senshi (CAS)</description>
+		<year>198?</year>
+		<publisher>Prof. Cathy</publisher>
+		<info name="mode" value="Mode 1, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="6468">
+				<rom name="moeru! senshi {m1p1}.cas" size="6468" crc="734aa784" sha1="f6e0474844b29fc9e7d9d86033ba619f91551701" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="moerusena" cloneof="moerusen">
+		<description>Moeru! Senshi (WAV)</description>
+		<year>198?</year>
+		<publisher>Prof. Cathy</publisher>
+		<info name="mode" value="Mode 1, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="774500">
+				<rom name="moeru! senshi {m1p1}.wav" size="774500" crc="85b394ce" sha1="456b2072dbd90a49bb165556e8ea5830ad07727a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="moonraid">
+		<description>Moon Raiders (P6)</description>
+		<year>198?</year>
+		<publisher>Mosesu - XYZ</publisher>
+		<info name="mode" value="Mode 2, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="16196">
+				<rom name="moon raiders {m2p2}.p6" size="16196" crc="defbe913" sha1="d74de71b313f8b278284ea2de02894c834a7f49a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="moonraida" cloneof="moonraid">
+		<description>Moon Raiders (WAV)</description>
+		<year>198?</year>
+		<publisher>Mosesu - XYZ</publisher>
+		<info name="mode" value="Mode 2, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="1846130">
+				<rom name="moon raiders.wav" size="1846130" crc="bf07afa1" sha1="19f0ca51559ee46b194a63b8659ca2c59f3b6c61" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mugyu">
+		<description>Mugyu!</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+		<info name="mode" value="Mode 2, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="6402">
+				<rom name="mugyu! {m2p2}.p6" size="6402" crc="55114f22" sha1="f4e612d3858b6beb452a8dfa741e26b522721eb3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="multigame">
+		<description>Multi-game (CAS)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+		<info name="mode" value="Mode 1, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="5448">
+				<rom name="multi-game {m1p1}.cas" size="5448" crc="13aef731" sha1="773098d8225b3caf094a349d2ba58e249eaf52c6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="multigamea" cloneof="multigame">
+		<description>Multi-game (WAV)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+		<info name="mode" value="Mode 1, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="661163">
+				<rom name="multi-game {m1p1}.wav" size="661163" crc="16cb3345" sha1="9d11e2f2da4d25fddcc2213f4dc18479600dcf8d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="musha">
+		<description>Musha Musha (CAS)</description>
+		<year>198?</year>
+		<publisher>Technopolis</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="370">
+				<rom name="musha musha {m1p2}.cas" size="370" crc="19d86b84" sha1="d443cf9fa218fe0d23114c6666b1c9162740566f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mushaa" cloneof="musha">
+		<description>Musha Musha (WAV)</description>
+		<year>198?</year>
+		<publisher>Technopolis</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="101313">
+				<rom name="musha musha {m1p2}.wav" size="101313" crc="e57b0d1e" sha1="4f306da885fd45dde33d14d6f5eeff210c404262" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mhouse">
+		<description>Mystery House</description>
+		<year>198?</year>
+		<publisher>Micro Cabin</publisher>
+		<info name="mode" value="Mode 2, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="20271">
+				<rom name="mystery house {m2p2}.cas" size="20271" crc="90f6463d" sha1="baab3298cafc9d751cc52e60f0923c96ccc86fde" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mhouse2">
+		<description>Mystery House II</description>
+		<year>198?</year>
+		<publisher>Micro Cabin</publisher>
+		<info name="mode" value="Mode 2, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="73164">
+				<rom name="mystery house ii {m2p2}.cas" size="73164" crc="452a36af" sha1="d19f79465d80a2d1875a6cfc9fbb487d9ace606e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nectrekd">
+		<description>NEC Trek Demo</description>
+		<year>198?</year>
+		<publisher>NEC</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="68851">
+				<rom name="nec trek demo (full demo) {m1p2}.p6" size="68851" crc="4bd7f917" sha1="5ad37d585b25a52e9701e5eed8bf3a405ee03aa9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nectrekds" cloneof="nectrekd">
+		<description>NEC Trek Demo (Split)</description>
+		<year>198?</year>
+		<publisher>NEC</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="A - Color"/>
+			<dataarea name="cass" size="5028">
+				<rom name="nec trek demo (a - color) {m1p2}.p6" size="5028" crc="cb16c5a4" sha1="5401a1b47f757f1c516e6285c5afb821cf8305e7" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="B - Rag"/>
+			<dataarea name="cass" size="5518">
+				<rom name="nec trek demo (b - rag) {m1p2}.p6" size="5518" crc="da4815f2" sha1="1bf9f9caa4b1e3834617f166a1c79cf6000c45cf" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="pc6001_cass">
+			<feature name="part_id" value="C - Intro1"/>
+			<dataarea name="cass" size="6798">
+				<rom name="nec trek demo (c - intro1) {m1p2}.p6" size="6798" crc="ce69ae65" sha1="4355f232cc103a11974f7140af99b6e247318c76" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="pc6001_cass">
+			<feature name="part_id" value="D - Toria"/>
+			<dataarea name="cass" size="5975">
+				<rom name="nec trek demo (d - toria) {m1p2}.p6" size="5975" crc="ac961300" sha1="2c1ece7c41d12e0f09770a698a12fc1d6982cc84" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="pc6001_cass">
+			<feature name="part_id" value="E - PC6001"/>
+			<dataarea name="cass" size="4870">
+				<rom name="nec trek demo (e - pc6001) {m1p2}.p6" size="4870" crc="9da38132" sha1="19359c0f5d35db1a7e59f236ec85fa9a513c0338" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="pc6001_cass">
+			<feature name="part_id" value="F - Sonata"/>
+			<dataarea name="cass" size="4997">
+				<rom name="nec trek demo (f - sonata) {m1p2}.p6" size="4997" crc="188521ad" sha1="92c6ef51e0a47ea32a465a2e14c06e8c902d617b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass7" interface="pc6001_cass">
+			<feature name="part_id" value="G - Sound"/>
+			<dataarea name="cass" size="3748">
+				<rom name="nec trek demo (g - sound) {m1p2}.p6" size="3748" crc="050453f1" sha1="e75b2e64af5d9e41c363221c2cb79d32dbaad088" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass8" interface="pc6001_cass">
+			<feature name="part_id" value="H - Marche"/>
+			<dataarea name="cass" size="5789">
+				<rom name="nec trek demo (h - marche) {m1p2}.p6" size="5789" crc="b1a45b7b" sha1="29a0ea58ee93154e803eb201245604b72d714c66" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass9" interface="pc6001_cass">
+			<feature name="part_id" value="I - Intro2"/>
+			<dataarea name="cass" size="6688">
+				<rom name="nec trek demo (i - intro2) {m1p2}.p6" size="6688" crc="4fd2cd22" sha1="9306b8ee8cda49cc0ba88172e53b60aee5129be8" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass10" interface="pc6001_cass">
+			<feature name="part_id" value="J - Sugar"/>
+			<dataarea name="cass" size="4545">
+				<rom name="nec trek demo (j - sugar) {m1p2}.p6" size="4545" crc="0de3c182" sha1="f4e923dc2252912e6ba1d59796eddd724ebc5b3d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass11" interface="pc6001_cass">
+			<feature name="part_id" value="K - Intro3"/>
+			<dataarea name="cass" size="5033">
+				<rom name="nec trek demo (k - intro3) {m1p2}.p6" size="5033" crc="126aee19" sha1="70159f63b6423995b1c42cddb96d6107f53bcbfd" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass12" interface="pc6001_cass">
+			<feature name="part_id" value="L - Sub Strike [Part A]"/>
+			<dataarea name="cass" size="2670">
+				<rom name="nec trek demo (l - sub strike) (part a) {m1p2}.p6" size="2670" crc="e69971f3" sha1="62c5ee27608ee804dc4b62c269f63c358499401c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass13" interface="pc6001_cass">
+			<feature name="part_id" value="L - Sum Strika [Part B]"/>
+			<dataarea name="cass" size="7192">
+				<rom name="nec trek demo (l - sub strike) (part b) {m1p2}.p6" size="7192" crc="f312107b" sha1="d144637aeb68a9a6fb160b3e22c03db544b5739c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nectrekmp">
+		<description>NEC Trek Micro-Painter files</description>
+		<year>198?</year>
+		<publisher>NEC</publisher>
+		<sharedfeat name="requirement" value="pc6001_cart:micropnt"/>
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="A - Micro-Man"/>
+			<dataarea name="cass" size="6164">
+				<rom name="nec trek micro-painter files (a - micro-man).p6" size="6164" crc="566a81bb" sha1="a77bc14bc6c4749bd22dba73e761db4103373630" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="B - Still Life"/>
+			<dataarea name="cass" size="6164">
+				<rom name="nec trek micro-painter files (b - still life).p6" size="6164" crc="734c1236" sha1="a0b71006337b2fbd8acc05d77f1e9579a31f6591" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="pc6001_cass">
+			<feature name="part_id" value="C - Coffee Mill"/>
+			<dataarea name="cass" size="6164">
+				<rom name="nec trek micro-painter files (c - coffee mill).p6" size="6164" crc="6298e227" sha1="0cb136ce5d08de4d1e1de914441a646f4c91da31" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="pc6001_cass">
+			<feature name="part_id" value="D - Guitar"/>
+			<dataarea name="cass" size="6164">
+				<rom name="nec trek micro-painter files (d - guitar).p6" size="6164" crc="a53d8d92" sha1="8503393bf63c4c426815211cec6b97c50b2612ec" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="pc6001_cass">
+			<feature name="part_id" value="E - Sailboat"/>
+			<dataarea name="cass" size="6164">
+				<rom name="nec trek micro-painter files (e - sailboat).p6" size="6164" crc="b3f350b0" sha1="bd958fc48277876caa3c7432e455be7aac61b8a9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="pc6001_cass">
+			<feature name="part_id" value="F - Tiger"/>
+			<dataarea name="cass" size="6164">
+				<rom name="nec trek micro-painter files (f - tiger).p6" size="6164" crc="159ca369" sha1="af154ab0cdb727f82948a87a44896bc4ed9f553a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass7" interface="pc6001_cass">
+			<feature name="part_id" value="G - Car"/>
+			<dataarea name="cass" size="6164">
+				<rom name="nec trek micro-painter files (g - car).p6" size="6164" crc="61dfffdd" sha1="5d4dc94efcbaac000e62a1cccf310777d67d37b0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass8" interface="pc6001_cass">
+			<feature name="part_id" value="H - Sun &amp; Moon"/>
+			<dataarea name="cass" size="6164">
+				<rom name="nec trek micro-painter files (h - sun &amp; moon).p6" size="6164" crc="98e7a52c" sha1="6531b2c8df45ca1c79e93bd58b8b8471a6bbb0dd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nagara">
+		<description>Nagara Onsei (v1.1)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+		<info name="mode" value="Mode 5, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="3479">
+				<rom name="nagara onsei (v1.1) {m5p2}.p6" size="3479" crc="aabcfb83" sha1="1e38b3ce0f42c1259794ede1ba196ea9f16c8c14" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="namamugi">
+		<description>Namamugi Namatamago</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+		<info name="mode" value="Mode 5, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="1261">
+				<rom name="namamugi namatamago {m5p2}.p6" size="1261" crc="f82ecbef" sha1="855fa496b84fbd4c34dff62bfabbd580a60659ce" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nanachan">
+		<description>Nana-chan no Kinjirareta Asobi (6001)</description>
+		<year>198?</year>
+		<publisher>Pax Softonica</publisher>
+		<info name="mode" value="Mode 2, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="8928">
+				<rom name="nana-chan no kinjirareta asobi (6001) {m2p1}.cas" size="8928" crc="7a266047" sha1="152926cc1b3feac1adf8185ff908237e5cf02768" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nanachanmk2" cloneof="nanachan">
+		<description>Nana-chan no Kinjirareta Asobi (mkII)</description>
+		<year>198?</year>
+		<publisher>Pax Softonica</publisher>
+		<info name="mode" value="Mode 5, Pages 3" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="23841">
+				<rom name="nana-chan no kinjirareta asobi (mkii) {m5p3}.cas" size="23841" crc="e844d56e" sha1="7dc8ddba2b9cbedb3d6023ce6b2bf50b77103133" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="newfanfun">
+		<description>New Fan Fun</description>
+		<year>198?</year>
+		<publisher>Enix</publisher>
+		<info name="mode" value="Mode 5, Pages 3" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="33114">
+				<rom name="new fan fun {m5p3}.cas" size="33114" crc="f210fb11" sha1="26402cd8aa8a9e4c8731028fa44c21b74218f119" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nobunaga">
+		<description>Nobunaga no Yabou</description>
+		<year>198?</year>
+		<publisher>Koei</publisher>
+		<info name="mode" value="Mode 5, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="56435">
+				<rom name="nobunaga no yabou {m5p2}.cas" size="56435" crc="631ab2ab" sha1="c23176b401af93e4dae851a2cab52427c1cda325" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="numalien">
+		<description>Number Alien</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="mode" value="Mode 2, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="9943">
+				<rom name="number alien {m2p2}.p6" size="9943" crc="478d0af5" sha1="6bd7fc7967da947aca2a248a8cf3a44a69a06c5d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="numalienp" cloneof="numalien">
+		<description>Number Alien (Prototype)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="mode" value="Mode 1, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="879">
+				<rom name="number alien (prototype) {m1p1}.p6" size="879" crc="270d2cca" sha1="fa126e9e2ff02d8503223ee239c05e7b2bc03fac" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nyuuryoku">
+		<description>Nyuuryoku Hantei</description>
+		<year>198?</year>
+		<publisher>Afoxai</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="1095">
+				<rom name="nyuuryoku hantei {m1p2}.p6" size="1095" crc="6deaa463" sha1="b9f906c32887012f05e42d0126fd97101ffa8bcc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="obakeyas">
+		<description>Obake Yashiki</description>
+		<year>198?</year>
+		<publisher>Afoxai</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="6613">
+				<rom name="obake yashiki {m1p2}.p6" size="6613" crc="7f02d16a" sha1="e5a05bfeb93fa79dff1cf41b85bb960e3a06d8c4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="onkai">
+		<description>Onkai</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+		<info name="mode" value="Mode 5, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="981">
+				<rom name="onkai {m5p2}.p6" size="981" crc="17bb5cdf" sha1="6a55290c33aaf0d9e276d44b7aba5d9282690877" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="orkanoid2">
+		<description>Orkanoid II (P6)</description>
+		<year>198?</year>
+		<publisher>Shigenori Kumagai</publisher>
+		<info name="mode" value="Mode 2, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Part 1"/>
+			<dataarea name="cass" size="5599">
+				<rom name="orkanoid ii (part 1) {m2p2}.p6" size="5599" crc="843ba5b7" sha1="205966f48935f610aaf5e8dd481e87e6a005f785" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Part 2"/>
+			<dataarea name="cass" size="2984">
+				<rom name="orkanoid ii (part 2) {m2p2}.p6" size="2984" crc="693eaf9f" sha1="be5ea6e6c6eb2d0e84f870f173a8ac497b0f1abb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="orkanoid2a" cloneof="orkanoid2">
+		<description>Orkanoid II (WAV)</description>
+		<year>198?</year>
+		<publisher>Shigenori Kumagai</publisher>
+		<info name="mode" value="Mode 2, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Part 1"/>
+			<dataarea name="cass" size="677810">
+				<rom name="orkanoid ii (part 1) {m2p2}.wav" size="677810" crc="316bb03d" sha1="0ed06595c673849b92f050ecb64183b0bd620c0e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Part 2"/>
+			<dataarea name="cass" size="389507">
+				<rom name="orkanoid ii (part 2) {m2p2}.wav" size="389507" crc="912f0648" sha1="fcb5a0e934f2310c7d52e8a2b9fce6643644613b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ougonhak">
+		<description>Ougon no Haka</description>
+		<year>198?</year>
+		<publisher>Magical Zoo</publisher>
+		<info name="mode" value="Mode 2, Pages 3" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="39810">
+				<rom name="ougon no haka {m2p3}.cas" size="39810" crc="ee70a0d5" sha1="54103efa59e713130072cce178edeb83a5039b61" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="circuit">
+		<description>P6 Circuit</description>
+		<year>198?</year>
+		<publisher>Afoxai</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="2565">
+				<rom name="p6 circuit {m1p2}.p6" size="2565" crc="a132d578" sha1="664b499acfffdeb2724675e728779debb3c9698b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="p6g2004">
+		<description>P6 Gallery (2004)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2004) (no. 01 new year).p6" size="2056" crc="efb170f7" sha1="6b99fb37d404a10b715e24b919fa6a05d2b16275" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2004) (no. 02 akafuji).p6" size="2056" crc="ad03c88f" sha1="b641c43d7a428ba814692edda36b14221575c383" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2004) (no. 03 uruuru).p6" size="2056" crc="2e7d6a41" sha1="61864e02ab9d2407f084fe1a2b2f228996b796ac" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2004) (no. 04 sakura).p6" size="2056" crc="74c18a5d" sha1="1d6b2ddf28e8df1aab9a23d4f9c2fbef68b49875" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2004) (no. 05 robots).p6" size="2056" crc="0375b939" sha1="af003b038f282e5680423f5bd414bf84e93dce53" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2004) (no. 06 semiedit).p6" size="2056" crc="8ea9b780" sha1="b9103ef34660b76b0e9c0f3a69a2d3b1efb0db23" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass7" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2004) (no. 07 terurute).p6" size="2056" crc="84c214a1" sha1="f40b70d3ab259766e2713eb2994495776677c4df" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass8" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2004) (no. 08 festival).p6" size="2056" crc="f8c1b88e" sha1="cf128f864156f7f626213a41760e487b19ac6a42" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass9" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2004) (no. 09 nyudo).p6" size="2056" crc="22268ab9" sha1="15b8a61e674b0809ec06436360fbea1ecc3bfc57" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass10" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2004) (no. 10 olympic).p6" size="2056" crc="13194cda" sha1="e951505d897e79dfc74799e63db5354e6aea934d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass11" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2004) (no. 12 23rd anniv.).p6" size="2056" crc="48493c5a" sha1="c99371a777ef979957ec639c0c708f13ace6f043" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass12" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2004) (no. 13 ichiro).p6" size="2056" crc="1a9b50f0" sha1="e85fe3b9030fae6f54763a2d61a21d2c71b01913" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass13" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2004) (no. 15 262).p6" size="2056" crc="82601050" sha1="79eb2b6c9a001a446f7524d8c04aa37b6cfd7931" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass14" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2004) (no. 15 yosou).p6" size="2056" crc="c1bb83fb" sha1="4ad15c55a675f8b9be051fe4bef4bcbbef0f0c0b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass15" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2004) (no. 16 9d).p6" size="2056" crc="0191ad15" sha1="ef525119755d0cbab871fc5a11790fba248ba077" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass16" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2004) (no. 16 daiku).p6" size="2056" crc="693be3f2" sha1="45f1e485341d03f8ea349303ca37c04c32166ad5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="p6g2005">
+		<description>P6 Gallery (2005)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2005) (no. 17 toripair).p6" size="2056" crc="d13fbf21" sha1="09d1b5adec180dc067c4f77cbf4c865bb1f273a5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2005) (no. 18 orion).p6" size="2056" crc="8ba62a08" sha1="bca231a620108e3ea0b08c39433376c519adec8d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2005) (no. 19 full-fire).p6" size="2056" crc="50ce5cbe" sha1="67183a999e3647f65a6509ccde56f741fec74f21" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2005) (no. 20 ab2).p6" size="2056" crc="71e997da" sha1="b5e07de7df48dceafc4a44902bd83ed921674027" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2005) (no. 21 enikki).p6" size="2056" crc="cd691b2c" sha1="7ceb7f13282cb154f2d418f0bf9d502fd58878e0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2005) (no. 22 rbox 360).p6" size="2056" crc="f09a4b65" sha1="fae0d54619d0f83333ee1611737205ef44e82aaf" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass7" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2005) (no. 23 festival).p6" size="2056" crc="a565eae3" sha1="9fdec317f9893e225dadc8c36bf98eb6d9464403" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass8" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2005) (no. 24 hanabi).p6" size="2056" crc="7e9cb0c7" sha1="fc38ad65f83adfe7a0d60b00779161121f88f4fb" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass9" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2005) (no. 25 9d).p6" size="2056" crc="0e0ce8ec" sha1="bcc80723c8b80007bc68f5468cd30ae1e894c856" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass10" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2005) (no. 26 1009).p6" size="2056" crc="b4cc483e" sha1="a70ab6ae9d038716fbd7a7d5cc1ba1b845a26d04" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass11" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2005) (no. 27 gakuensai).p6" size="2056" crc="e8ecb62d" sha1="4c21ff3993e027036fe7d137459e799bd9892494" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass12" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2005) (no. 28 yosou).p6" size="2056" crc="a5babd29" sha1="60639d6e11c752e47cf289a9b2870a0d6153191b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass13" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2005) (no. 29 ai).p6" size="2056" crc="ab7af25b" sha1="dff5b2d5c17b23e25d7bbea1318c7eb08bc5ae4a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="p6g2006">
+		<description>P6 Gallery (2006)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2006) (2006_1 nanda).p6" size="2056" crc="c7780f2f" sha1="cdd011a982648ec6a8100c5ffbcc306babb0d468" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2006) (2006_2 kandate).p6" size="2056" crc="e93edee6" sha1="51025819027ebd5a60e5939e3f92c5d2eaed8c5a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2006) (2006_3 3 years).p6" size="2056" crc="31d09e3f" sha1="8e6ec792295e92d61c2d92f05b69ca4cfd6c8835" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2006) (no. 30 new year).p6" size="2056" crc="3e7adcb5" sha1="555d706f098bf1b5837ddc6f35c5ff33388fb09e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2006) (no. 31 hina).p6" size="2056" crc="058be168" sha1="210939c8b3ac1af344421249b9ae5bc238c097aa" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2006) (no. 32 shaxian).p6" size="2056" crc="e115082e" sha1="8f1d658962d79dc273d109b956678c10faf5cd31" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass7" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2006) (no. 33 netram).p6" size="2056" crc="089ba4bd" sha1="5ad66c9ad372ef5ee186dd587cab50dac41fe287" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass8" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2006) (no. 34 koipair).p6" size="2056" crc="50932d0a" sha1="ebb471a68591dbc8c93ed35f17602006f32b8796" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass9" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2006) (no. 35 enjoy).p6" size="2056" crc="2ffbb203" sha1="a409c361f41d2126b6c4db5704fec0ac744585e7" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass10" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2006) (no. 36 tanabata).p6" size="2056" crc="a24ce9f3" sha1="b58624985ce3cd8defb9b18436c580ba1fd09c37" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass11" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2006) (no. 37 9d).p6" size="2056" crc="b6095ad6" sha1="9b3bc2b71d098e72d79b272efc503d4d30d97c9e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass12" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2006) (no. 38 halloween).p6" size="2056" crc="8cffc1e3" sha1="38aa12acf6fe16c2a164691ed1111eadcbf78d69" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass13" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2006) (no. 39 yosou).p6" size="2056" crc="d37aa617" sha1="62ad3eb095b3c96ea85cd8609e0e45a6fc6eb302" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="p6g2007">
+		<description>P6 Gallery (2007)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2007) (no. 40 new year).p6" size="2056" crc="5a4f1993" sha1="73cb983bac93b18d63458994ec962e5dd52bca16" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2007) (no. 41 eho).p6" size="2056" crc="c3928543" sha1="3d11cd132253b36a03c0c9b7b448791293553371" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2007) (no. 42 umesakura).p6" size="2056" crc="78764601" sha1="48c1e961cdd946dac8ab0e20c4a9fb51c039904a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2007) (no. 43 6seg).p6" size="2056" crc="2e2fe3c4" sha1="32ab4c63f776f2d835d600da321baa296611d62e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2007) (no. 44 kabuto).p6" size="2056" crc="ed80ec7b" sha1="bda2da6bd2677c58152192bc1f69a357b3dc1c72" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2007) (no. 45 p6 monthly).p6" size="2056" crc="17f60775" sha1="5978ad74a9d50fc1bf9728255e2c19cb7b2058bb" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass7" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2007) (no. 46 ajisai).p6" size="2056" crc="3f609876" sha1="d75ddd8e79c627c162ee5a1dad7704a6a1f6ca0a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass8" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2007) (no. 47 hill).p6" size="2056" crc="31c9e605" sha1="48aab7c7e132a2f6526c205378ea94dea1c81d6c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass9" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2007) (no. 48 9d).p6" size="2056" crc="0b7153c0" sha1="fa36130fb38e7b7a2e75f4912c79e984ccd21f04" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass10" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2007) (no. 49 kuma 1).p6" size="2056" crc="f730306e" sha1="5438f8596c37b6797d52afe274a0005cca743108" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass11" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2007) (no. 49 kuma 2).p6" size="2056" crc="278fa1e0" sha1="e361c543f387e7c8b2885cc8a83a5eda82871a05" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass12" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2007) (no. 49 kuma 3).p6" size="2056" crc="c95ec778" sha1="08a5200bf58a15ca7c7eeb4f25778bf6ddfa53bb" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass13" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2007) (no. 49 kuma 4).p6" size="2056" crc="80e89929" sha1="e89b10f26a48171ed2401421736a194c4623773f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass14" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2007) (no. 49 kuma 5).p6" size="2056" crc="a96ee057" sha1="981d9505e6d859f2c34e2b9393dffbb664f628d5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass15" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2007) (no. 50 christmas).p6" size="2056" crc="3dcbc91f" sha1="29b008692fe4a3e0791046759c75637c10313540" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="p6g2008">
+		<description>P6 Gallery (2008)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2008) (no. 51 new year).p6" size="2056" crc="c1c0e8a4" sha1="e6f0d703223b25e572913004408a48a1c65b0980" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2008) (no. 52 beluga).p6" size="2056" crc="f2aff564" sha1="c83b0d187f355d18ac2a1d2484364ce0ec2c3c8f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2008) (no. 53 utouto).p6" size="2056" crc="793fa0f6" sha1="d3acac9d2e2b777358f002f193b0ffc2564a32fd" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2008) (no. 54 voca 66).p6" size="2056" crc="7be824da" sha1="e0823cdff5dd35cb2d40290d61ded2fbe8c591f6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2008) (no. 55 koi).p6" size="2056" crc="d3ef3a5d" sha1="39ed89f0fd4ac5b54e4cc22e1cd4312066769828" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2008) (no. 56 voca 01).p6" size="2056" crc="e8ff5f27" sha1="0c6266a98048d37be710bce2f3f00f5e919daa69" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass7" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2008) (no. 56 voca 02).p6" size="2056" crc="435d7e63" sha1="187baaac180990b795a1788f42d0cd64d71963bc" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass8" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2008) (no. 56 voca 03).p6" size="2056" crc="ab512134" sha1="a77115f8fe7fcb6d1afba59f63a16482332c813a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass9" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2008) (no. 56 voca 04).p6" size="2056" crc="dc583615" sha1="b49bba74f158332d303bac0d15c67dc0961c5668" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass10" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2008) (no. 56 voca 05).p6" size="2056" crc="bb5dc9d9" sha1="9ad5415154d0f09b60dd488899562af5f7ffeb91" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass11" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2008) (no. 56 voca 06).p6" size="2056" crc="ac6af5c4" sha1="6de12e3d99f3749341ea6e129b528c96e9aa6189" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass12" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2008) (no. 56 voca 07).p6" size="2056" crc="d83a7a83" sha1="b23f56f7021f356e6961d5ed7a28f533ec575fd7" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass13" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2008) (no. 56 voca 08).p6" size="2056" crc="299778ed" sha1="18f8bfb3936525b43c4fc64d11513a6f948b8f79" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass14" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2008) (no. 56 voca 09).p6" size="2056" crc="3e3ed628" sha1="600ac9539b3982c147d5167dec6b113ee8476ba6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass15" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2008) (no. 56 voca 10).p6" size="2056" crc="9fb5c189" sha1="113dcbeb77deb484be9d8f3b1656b948d529980e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass16" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2008) (no. 56 voca 11).p6" size="2056" crc="19803c8d" sha1="277bf61c686234bf52272c5c957b237320736156" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass17" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2008) (no. 56 voca 12).p6" size="2056" crc="960ce427" sha1="230e640a3e741b1d8b35e6df696e0f44725c94a1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass18" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2008) (no. 56 voca 13).p6" size="2056" crc="bd1f490b" sha1="f859d022d4f243f59ebc0c2a9e11cbc0f8d47e4a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass19" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2008) (no. 56 voca 14).p6" size="2056" crc="f26b7d45" sha1="20577f065e24de8e6e266c2b36b0984d490d5044" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass20" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2008) (no. 56 voca 15).p6" size="2056" crc="77285b0e" sha1="f941ef5896e02e07896c4d1c9dd8327dc8f991cc" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass21" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2008) (no. 56 voca 16).p6" size="2056" crc="ff564024" sha1="8a8f513d6856c81ab8bd5956c0449536d8ec068c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass22" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2008) (no. 57 komorebi).p6" size="2056" crc="2539e6cb" sha1="ee7017790fdd5dac715ac21675512edbe2dfbcdd" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass23" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2008) (no. 58 momiji).p6" size="2056" crc="ea538f35" sha1="079c10c8bf70dc55b61f956336842b88bad08ac0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass24" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2008) (no. 59 illumi).p6" size="2056" crc="bfdb6394" sha1="4d85a66cafdc04006b2c91924ddecda842c00400" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="p6g2009">
+		<description>P6 Gallery (2009)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2009) (no. 60 new year).p6" size="2056" crc="ea261263" sha1="d47aba9ab2afed896a32defb9ce3ebee77c58008" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2009) (no. 61 yuki).p6" size="2056" crc="192ae640" sha1="288519c1332c932c0c134adacb8b331b4fbee8de" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2009) (no. 62 asalt).p6" size="2056" crc="9bf45cf0" sha1="987c5c98b164aa65cf35cbc51e2300854fbe0cf5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2009) (no. 63 gw).p6" size="2056" crc="7f7d6683" sha1="33fb4cdb1baa01f09a088bc8edf8562961a5a298" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2009) (no. 64 y+150).p6" size="2056" crc="d5fbe9bb" sha1="b9cced12cb968f01e7bff31193522d661460d8f7" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2009) (no. 65 p6 monthly).p6" size="2056" crc="76c485de" sha1="31f7625ea622d75678246a6b95242076ce04ff78" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass7" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2009) (no. 66 gundam).p6" size="2056" crc="df550cb2" sha1="2b22d99c2e13e96b09a6fc6d4d390fb3f32a1ce2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass8" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2009) (no. 67 reverse p6).p6" size="2056" crc="b93fef54" sha1="cce287c14e47ef8d5358523e674efcb27d3e398b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass9" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2009) (no. 68 1009).p6" size="2056" crc="fba47576" sha1="187492cafdc272deda3083322435ef5312bf8355" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass10" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2009) (no. 69 753).p6" size="2056" crc="8d9b9ffd" sha1="65470530b5391e26c164bc3533429bd7a7263ac1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass11" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2009) (no. 70 illumi).p6" size="2056" crc="9fe08947" sha1="e564f3f1dfa1e9e324303560de73428c61d83a95" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="p6g2010">
+		<description>P6 Gallery (2010)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2010) (bldhop).p6" size="2056" crc="56b1c702" sha1="00e47c88156a359835715cbdcf05139124c3f1cc" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2010) (no. 71 new year).p6" size="2056" crc="2fe5794d" sha1="adb86d222eaeef23eab89ec98a7eb1c22fa39ec1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2010) (no. 72 im@s ds).p6" size="2056" crc="010be116" sha1="727899c801dbbefeeef04acb67953efcfb967289" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2010) (no. 73 3d bm).p6" size="2056" crc="bc23432b" sha1="bc97fb39f863c8651f09556205e5df37d362322c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2010) (no. 74 p6 monthly).p6" size="2056" crc="b5acbf2b" sha1="e2a05f5e686f13ef79dcd47ebdc94c5c0613abc1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2010) (no. 75 sbfz modoki).p6" size="2056" crc="d902704f" sha1="da0979a82167ab16b4a78f3b47774d3f7f3dd89d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass7" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2010) (no. 76 reverse p6).p6" size="2056" crc="ed1cfbb3" sha1="0a1c6118671e80e488241561253f78ac9b6a5cf3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass8" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2010) (no. 77 xmas).p6" size="2056" crc="a93c93c0" sha1="fc27d4e4109961a3b976eb11d1ced7e68b5dbb31" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="p6g2011">
+		<description>P6 Gallery (2011)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2011) (no. 78 new year).p6" size="2056" crc="d0d5d2b6" sha1="67f9c44def9612a40ffaa3ba5dfbdcdb84a279a6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2011) (no. 79 april).p6" size="2056" crc="aaae66ae" sha1="3efc3bb0458e042b04adddb25572680e50382595" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2011) (no. 80 sakura).p6" size="2056" crc="e9b14aba" sha1="265fbe3979f615492ec798f52864d21be8f376e1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2011) (no. 81 30th anniv.).p6" size="2056" crc="f9915b76" sha1="6ed4f3e92db5fcc1be64c7196cbb611a095a9f62" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2011) (no. 82 stega).p6" size="2056" crc="91982c72" sha1="866e5bde42dd213839af3a58a35f83a25ef87a9f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2011) (no. 83 trick or treat).p6" size="2056" crc="a331cc40" sha1="702b175b16a25c66559b845a8f179a414de27c58" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass7" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2011) (no. 85 600g1e).p6" size="2056" crc="9f4e1146" sha1="800beb445c5dc75ca7ac52b352734aafeff78953" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass8" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2011) (no. 85 yosou).p6" size="2056" crc="1a69573b" sha1="7387dba877de44bbe637b48c79bc84c3207744bd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="p6g2012">
+		<description>P6 Gallery (2012)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2012) (no. 86 new year).p6" size="2056" crc="a73c263e" sha1="59dd4238cdbd74ce28157bcd51ff9b401fd61dca" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2012) (no. 87 oni).p6" size="2056" crc="ba323dea" sha1="da0e853b9b567cf2e0746d738251364329f4b9fe" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2012) (no. 88 hanadokei).p6" size="2056" crc="36b70bd5" sha1="55e8dda4ded924d9d71f60bcbcd63919af41fba5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2012) (no. 89 touch).p6" size="2056" crc="eb350d12" sha1="65cc442b7514d16f2bade6034634b08de8d4b39f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2012) (no. 90 sora kara).p6" size="2056" crc="b4fff04e" sha1="32e57cabd79243509784db288f2ad34431a2f927" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="pc6001_cass">
+			<dataarea name="cass" size="2056">
+				<rom name="p6 gallery (2012) (no. 91 p6 monthly).p6" size="2056" crc="fe08520e" sha1="55b8050b1cccb87c0f186e86621e12ba0a886744" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="p6gmenu">
+		<description>P6 Gallery Menu</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+		<info name="mode" value="Mode 5, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="612">
+				<rom name="p6 gallery (menu) {m5p2}.p6" size="612" crc="437c3967" sha1="c3850809af1b1a139014e7bedb58f1f097b5527f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="p6utau">
+		<description>P6 Utau (P6)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+		<info name="mode" value="Mode 5, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Akahana no Tonakai"/>
+			<dataarea name="cass" size="1205">
+				<rom name="p6 utau (akahana no tonakai) {m5p2}.p6" size="1205" crc="8a71c10e" sha1="6c19d00ac242b7694435d8a3eeccbf3563cbe22f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Mori no Kuma-san"/>
+			<dataarea name="cass" size="1815">
+				<rom name="p6 utau (mori no kuma-san) {m5p2}.p6" size="1815" crc="182cc0dc" sha1="5bc2fdf8d7e01d067f1bbe4f55a292d6a402909f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="p6utaua" cloneof="p6utau">
+		<description>P6 Utau (WAV)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+		<info name="mode" value="Mode 5, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Akahana no Tonakai"/>
+			<dataarea name="cass" size="193372">
+				<rom name="p6 utau (akahana no tonakai) {m5p2}.wav" size="193372" crc="7ac8700c" sha1="e866383523f1a44a79f3c0218bf821a574cf8c20" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Mori no Kuma-san"/>
+			<dataarea name="cass" size="260624">
+				<rom name="p6 utau (mori no kuma-san) {m5p2}.wav" size="260624" crc="6082fea6" sha1="fc2e2db92f70648194fcf0a6a3a6167b1db93c67" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="note1">
+		<description>PC-6001 Note No. 1</description>
+		<year>198?</year>
+		<publisher>ASCII</publisher>
+		<info name="mode" value="Mode settings in part IDs" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Biorhythm [m1p2]"/>
+			<dataarea name="cass" size="1998">
+				<rom name="pc-6001 note no. 1 (biorhythm) {m1p2}.p6" size="1998" crc="c4481df9" sha1="3d4c2c78794268ea15fbb829900b822b401bdd17" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Cassette Label Maker [m1p2]"/>
+			<dataarea name="cass" size="2095">
+				<rom name="pc-6001 note no. 1 (cassette label maker) {m1p2}.p6" size="2095" crc="cc120263" sha1="085b6b835eb14adbb71c19d36bd368b8ba87c4b2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="pc6001_cass">
+			<feature name="part_id" value="Eigo no Fukisoku Doushi Test [m1p1]"/>
+			<dataarea name="cass" size="3577">
+				<rom name="pc-6001 note no. 1 (eigo no fukisoku doushi test) {m1p1}.p6" size="3577" crc="94a13573" sha1="e77cbbb3ca15dbbafa79f85db078731b8587e084" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="pc6001_cass">
+			<feature name="part_id" value="Space Satan 1 [m1p1]"/>
+			<dataarea name="cass" size="3735">
+				<rom name="pc-6001 note no. 1 (space satan 1) {m1p1}.p6" size="3735" crc="527eb7ca" sha1="39fe4a7304f08ab8acfd4a3e3d011441ca80f291" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="pc6001_cass">
+			<feature name="part_id" value="Space Satan 2 [m1p1]"/>
+			<dataarea name="cass" size="9034">
+				<rom name="pc-6001 note no. 1 (space satan 2) {m1p1}.p6" size="9034" crc="b635450a" sha1="474129b8c6438b7911f99768bcf762e4aeb282b2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="pc6001_cass">
+			<feature name="part_id" value="Star Command Sigma [m1p1]"/>
+			<dataarea name="cass" size="11692">
+				<rom name="pc-6001 note no. 1 (star command sigma) {m1p1}.p6" size="11692" crc="ae28b3c9" sha1="c3a09c5356b4b86a1b26a49ddf258dc0e8607c18" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass7" interface="pc6001_cass">
+			<feature name="part_id" value="Tournament-sen Jitsuryoku Hantei [m1p1]"/>
+			<dataarea name="cass" size="2131">
+				<rom name="pc-6001 note no. 1 (tournament-sen jitsuryoku hantei) {m1p1}.p6" size="2131" crc="093f4ab9" sha1="c022e00e058cc8ba5516109a5fd6c7426acea2f1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pacman">
+		<description>Pac-Man</description>
+		<year>198?</year>
+		<publisher>Dempa Shinbunsha</publisher>
+		<info name="mode" value="Mode 5, Pages 2, MON R-0, GDD74" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="57671">
+				<rom name="pac-man {m5p2 mon r-0 gdd74}.cas" size="57671" crc="8bdb45fa" sha1="0eb2130b65116a923a386c2d5066d40868db9536" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="packnboy">
+		<description>Pack'n Boy</description>
+		<year>198?</year>
+		<publisher>Compac</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="6961">
+				<rom name="pack'n boy {m1p2}.cas" size="6961" crc="5f289e3c" sha1="a5d4d7e855de5e6402311d798ccd271d6ed10cab" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pakuridi">
+		<description>Pakuridius (CAS)</description>
+		<year>198?</year>
+		<publisher>Hingo</publisher>
+		<info name="mode" value="Mode 6" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="6595">
+				<rom name="pakuridius {m6}.cas" size="6595" crc="d9243f9d" sha1="53543b3d88c66ae81a10106fe233ab855fc5f644" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pakuridia" cloneof="pakuridi">
+		<description>Pakuridius (WAV)</description>
+		<year>198?</year>
+		<publisher>Hingo</publisher>
+		<info name="mode" value="Mode 6" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="787619">
+				<rom name="pakuridius {m6}.wav" size="787619" crc="64509aa1" sha1="b0f6b97d4f06da837732e87fe3e22cfd132a96a6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="panzer">
+		<description>Panzerspitze</description>
+		<year>198?</year>
+		<publisher>K. Mitsuyama</publisher>
+		<info name="mode" value="Mode 2, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="17475">
+				<rom name="panzerspitze {m2p2}.p6" size="17475" crc="eabc2c6b" sha1="61cd715fa349af5be1e8eba6c8375323d696defa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="papitter">
+		<description>Papitter</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+		<info name="mode" value="Mode 1, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="4058">
+				<rom name="papitter {m1p1}.p6" size="4058" crc="2efe929e" sha1="a3fc4ecbab40229c6471be1d7f2e866bdf380fb6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pitest">
+		<description>Pi Test (mkII)</description>
+		<year>198?</year>
+		<publisher>Bookworm</publisher>
+		<info name="mode" value="Mode 1, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="4164">
+				<rom name="pi test (mkii) {m1p1}.p6" size="4164" crc="09f668cc" sha1="cc009b101928091a35d87c14cf30d73f7a5e1e2f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="plazma">
+		<description>Plazma Line</description>
+		<year>198?</year>
+		<publisher>Tecno Soft</publisher>
+		<info name="mode" value="Mode 5, Pages 3" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="35744">
+				<rom name="plazma line {m5p3}.cas" size="35744" crc="972adbaf" sha1="9bf713f6ee0fcb3c8bc1b652b4983a8407769aef" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="polygond">
+		<description>Polygon demo</description>
+		<year>198?</year>
+		<publisher>Bookworm</publisher>
+		<info name="mode" value="Mode 2, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="flat"/>
+			<dataarea name="cass" size="17428">
+				<rom name="polygon demo (flat) {m2p1}.p6" size="17428" crc="e34d3782" sha1="05e39ed4bbff5cdca912c0ca1e4c93dffa1fc5cb" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="projection"/>
+			<dataarea name="cass" size="16626">
+				<rom name="polygon demo (projection) {m2p1}.p6" size="16626" crc="fcd9a65b" sha1="94dd86dc74fa70c261742c462b5143ffa834f1d5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="pc6001_cass">
+			<feature name="part_id" value="rawpoly"/>
+			<dataarea name="cass" size="16916">
+				<rom name="polygon demo (rawpoly) {m2p1}.p6" size="16916" crc="8e06261e" sha1="e0d79e26dffc1905199e4deaf9362b54f3e3aa42" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass4" interface="pc6001_cass">
+			<feature name="part_id" value="texture"/>
+			<dataarea name="cass" size="21367">
+				<rom name="polygon demo (texture) {m2p1}.p6" size="21367" crc="7a16a38a" sha1="f50b833cc83db73364a173105195f06cbfd27b84" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass5" interface="pc6001_cass">
+			<feature name="part_id" value="wire_cull"/>
+			<dataarea name="cass" size="16695">
+				<rom name="polygon demo (wire_cull) {m2p1}.p6" size="16695" crc="d8302b8c" sha1="872d3929217fce1c95f60c1acc416aa00f080d82" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass6" interface="pc6001_cass">
+			<feature name="part_id" value="wireframe"/>
+			<dataarea name="cass" size="16536">
+				<rom name="polygon demo (wireframe) {m2p1}.p6" size="16536" crc="31a3b5c9" sha1="352f9ecace1338be47cab7a5664d552335045d5c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ponyca2">
+		<description>Ponyca 2 Game Series</description>
+		<year>198?</year>
+		<publisher>Ponyca</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Galac Convoy"/>
+			<dataarea name="cass" size="5241">
+				<rom name="ponyca 2 game series (galac convoy) {m1p2}.p6" size="5241" crc="c37e0349" sha1="d860e9b0d6351272240a009db2ef37ee5ab744b6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Shooting Invaders"/>
+			<dataarea name="cass" size="4478">
+				<rom name="ponyca 2 game series (shooting invaders) {m1p2}.p6" size="4478" crc="24ccf028" sha1="88cdc330fb3b837325b275a6979ee0ad8681904b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="portopia">
+		<description>Portopia Renzoku Satsujin Jiken</description>
+		<year>198?</year>
+		<publisher>Enix</publisher>
+		<info name="mode" value="Mode 2, Pages 1" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="28596">
+				<rom name="portopia renzoku satsujin jiken {m2p1}.cas" size="28596" crc="5437dcc5" sha1="7536663a4463107d0841a83f8894012c6b7e35e1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="promj">
+		<description>Professional Mahjong</description>
+		<year>198?</year>
+		<publisher>Chat Noir</publisher>
+		<info name="mode" value="Mode 5, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="25940">
+				<rom name="professional mahjong {m5p2}.cas" size="25940" crc="425239ec" sha1="08029af982ddfce8701f50b8e7e1058164bd560d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="progbug">
+		<description>Programming Bug Syntax Delete (P6)</description>
+		<year>198?</year>
+		<publisher>Maikon Butai Castalia No. 20</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="3151">
+				<rom name="programming bug syntax delete {m1p2}.p6" size="3151" crc="e04d0227" sha1="5218c2b520a797558f01f81e5ee27cbdd249f673" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="progbuga" cloneof="progbug">
+		<description>Programming Bug Syntax Delete (WAV)</description>
+		<year>198?</year>
+		<publisher>Maikon Butai Castalia No. 20</publisher>
+		<info name="mode" value="Mode 1, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="407918">
+				<rom name="programming bug syntax delete {m1p2}.wav" size="407918" crc="af7cb909" sha1="1f1b5be633b42119d1f9459d44adf3078dd7ad07" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="prohibit">
+		<description>Prohibition Island</description>
+		<year>198?</year>
+		<publisher>Onion Soft</publisher>
+		<info name="mode" value="Mode 2, Pages 2" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<feature name="part_id" value="Part 1"/>
+			<dataarea name="cass" size="3122">
+				<rom name="prohibition island (part 1) {m2p2}.p6" size="3122" crc="77b028e5" sha1="cf4ebbe4c1d60eeab44baf7fbbcd0f45b065ee6b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="pc6001_cass">
+			<feature name="part_id" value="Part 2"/>
+			<dataarea name="cass" size="21312">
+				<rom name="prohibition island (part 2) {m2p2}.p6" size="21312" crc="e6a1b3d3" sha1="25041043cfb6a5c5601a53e0cfaf2cb854a38500" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pbmario">
+		<description>Punch Ball Mario Bros.</description>
+		<year>198?</year>
+		<publisher>Hudson Soft</publisher>
+		<info name="mode" value="Mode 5, Pages 4, MON R-0" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="30669">
+				<rom name="punch ball mario bros. {m5p4 mon r-0}.cas" size="30669" crc="a57ba645" sha1="a3852b982638da74e708e0d05c9ef61629495096" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pyramid2">
+		<description>Pyramid 2</description>
+		<year>198?</year>
+		<publisher>T&amp;E Soft</publisher>
+		<info name="mode" value="Mode 4, Pages 3" />
+
+		<part name="cass1" interface="pc6001_cass">
+			<dataarea name="cass" size="18752">
+				<rom name="pyramid 2 {m4p3}.cas" size="18752" crc="dcce31b0" sha1="2dff557da3e489e64a57d2205c5ea940e2062344" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 </softwarelist>
