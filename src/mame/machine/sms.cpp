@@ -455,7 +455,7 @@ READ8_MEMBER(sms_state::sms_input_port_dd_r)
 }
 
 
-WRITE8_MEMBER(sms_state::smsj_audio_control_w)
+void sms_state::smsj_set_audio_control(uint8_t data)
 {
 	m_smsj_audio_control = data & 0x03;
 
@@ -474,6 +474,12 @@ WRITE8_MEMBER(sms_state::smsj_audio_control_w)
 		m_ym->set_output_gain(ALL_OUTPUTS, 1.0);
 	else
 		m_ym->set_output_gain(ALL_OUTPUTS, 0.0);
+}
+
+
+WRITE8_MEMBER(sms_state::smsj_audio_control_w)
+{
+	smsj_set_audio_control(data);
 }
 
 
@@ -957,7 +963,8 @@ void sms_state::setup_media_slots()
 		if (m_cartslot->get_type() == SEGA8_BASIC_L3 ||
 			m_cartslot->get_type() == SEGA8_MUSIC_EDITOR ||
 			m_cartslot->get_type() == SEGA8_DAHJEE_TYPEA ||
-			m_cartslot->get_type() == SEGA8_DAHJEE_TYPEB)
+			m_cartslot->get_type() == SEGA8_DAHJEE_TYPEB ||
+			m_cartslot->get_type() == SEGA8_SEOJIN)
 		{
 			m_mem_device_enabled |= ENABLE_EXT_RAM;
 		}
@@ -1114,7 +1121,7 @@ MACHINE_RESET_MEMBER(sms_state,sms)
 {
 	if (m_is_smsj)
 	{
-		m_smsj_audio_control = 0x00;
+		smsj_set_audio_control(0x00);
 	}
 
 	if (m_port_rapid.found())
