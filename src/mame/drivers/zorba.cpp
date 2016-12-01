@@ -19,10 +19,10 @@ Instead of using a daisy chain, the IM2 vectors are calculated by a prom (u77). 
 contents make no sense at all (mostly FF), so the vectors for IRQ0 and IRQ2 are hard-coded. Other IRQ
 vectors are not used as yet.
 
-Three companies are known to have sold the Zorba over its lifetime: Telcon Industries, Modular Micros 
+Three companies are known to have sold the Zorba over its lifetime: Telcon Industries, Modular Micros
 (a subsidiary of Modular Computers (ModComp)), and Gemini Electronics. 7-inch and 9-inch models were
-available from Telcon and Modular Micros, while Gemini exclusively sold the 9-inch version. The BIOS
-that is currently emulated in MAME comes from a Modular Micros Zorba.
+available from Telcon and Modular Micros, while Gemini exclusively sold the 9-inch version. The ROM dumps
+currently used in this emulation originate from a Modular Micros Zorba.
 
 The two versions of the Zorba were sold by Modular Micros were:
 - Zorba 7: 7" CRT, 2 410K floppies, 22 lbs, $1595
@@ -33,8 +33,8 @@ far right; on the 9-inch version this arrangement is reversed and the logo is re
 
 The startup screen varies across each company:
 - Telcon: "TELCON ZORBA" graphical logo
-- Gemini: "GEMINI ZORBA" graphical logo
 - Modular Micros: "ZORBA" graphical logo with "MODULAR MICROS, INC." below in normal text
+- Gemini: "GEMINI ZORBA" graphical logo
 
 Status:
 - Boots up, and the keyboard works
@@ -452,4 +452,8 @@ ROM_START( zorba )
 	ROM_LOAD( "74ls288.u77", 0x0040, 0x0020, CRC(946e03b0) SHA1(24240bdd7bdf507a5b51628fb36ad1266fc53a28) ) // suspected bad dump
 ROM_END
 
-COMP( 1984, zorba, 0, 0, zorba, zorba, zorba_state, zorba, "Modular Micros", "Zorba 7", MACHINE_NOT_WORKING )
+COMP( 1984?, zorba, 0, 0, zorba, zorba, zorba_state, zorba, "Modular Micros", "Zorba (Modular Micros)", MACHINE_NOT_WORKING )
+
+// Undumped versions (see startup screen notes at top of file)
+// COMP( 1983, zorbat, zorba, 0, zorba, zorba, zorba_state, zorba, "Telcon Industries", "Zorba (Telcon Industries)", MACHINE_NOT_WORKING )
+// COMP( 1984, zorbag, zorba, 0, zorba, zorba, zorba_state, zorba, "Gemini Electronics", "Zorba (Gemini Electronics)", MACHINE_NOT_WORKING )

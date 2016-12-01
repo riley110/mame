@@ -591,10 +591,6 @@ ifdef MAP
 PARAMS += --MAP='$(MAP)'
 endif
 
-ifdef USE_BGFX
-PARAMS += --USE_BGFX='$(USE_BGFX)'
-endif
-
 ifdef NOASM
 TARGET_PARAMS += --NOASM='$(NOASM)'
 endif
@@ -1531,14 +1527,14 @@ endif
 
 ifeq (posix,$(SHELLTYPE))
 $(GENDIR)/version.cpp: $(GENDIR)/git_desc | $(GEN_FOLDERS)
-	@echo '#define BARE_BUILD_VERSION "0.179"' > $@
+	@echo '#define BARE_BUILD_VERSION "0.180"' > $@
 	@echo 'extern const char bare_build_version[];' >> $@
 	@echo 'extern const char build_version[];' >> $@
 	@echo 'const char bare_build_version[] = BARE_BUILD_VERSION;' >> $@
 	@echo 'const char build_version[] = BARE_BUILD_VERSION " ($(NEW_GIT_VERSION))";' >> $@
 else
 $(GENDIR)/version.cpp: $(GENDIR)/git_desc
-	@echo #define BARE_BUILD_VERSION "0.179" > $@
+	@echo #define BARE_BUILD_VERSION "0.180" > $@
 	@echo extern const char bare_build_version[]; >> $@
 	@echo extern const char build_version[]; >> $@
 	@echo const char bare_build_version[] = BARE_BUILD_VERSION; >> $@
