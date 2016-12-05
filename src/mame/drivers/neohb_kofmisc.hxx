@@ -39,7 +39,7 @@ DRIVER_INIT_MEMBER( neogeo_hbmame, kof10thu )
 	uint32_t tsize = m_region_maincpu->bytes();
 	uint8_t *rom = m_region_maincpu->base();
 	uint32_t i, ofst;
-	dynamic_buffer trom( tsize );
+	std::vector<uint8_t> trom( tsize );
 	memcpy( &trom[ 0 ], &rom[ 0 ], tsize );
 	// We unscramble the lower 6 address lines of the program rom.
 	for( i = 0; i < tsize / 2; i++ )
