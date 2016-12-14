@@ -322,6 +322,18 @@
 		</part>
 	</software>
 
+	<software name="alexkiddpp" cloneof="alexkidd">
+		<description>Alex Kidd in Miracle World (v1, Playpal)</description>
+		<year>1986</year>
+		<publisher>Sega</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="131072">
+				<rom name="alex kidd in miracle world (ueb) (v1.1) (playpal version).bin" size="131072" crc="2c08872b" sha1="e9679ddfc8dfce6366cd0f0dfa2780fbe2379d59" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="alexkiddj" cloneof="alexkidd">
 		<description>Alex Kidd no Miracle World (Jpn)</description>
 		<year>1986</year>
@@ -418,6 +430,18 @@
 			<feature name="ic2" value="MPR-12534 T35" />
 			<dataarea name="rom" size="262144">
 				<rom name="mpr-12534 t35.ic2" size="262144" crc="bba2fe98" sha1="413986f174799f094a8dd776d91dcf018ee17290" offset="000000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="altbeastpp" cloneof="altbeast">
+		<description>Altered Beast (Playpal)</description>
+		<year>1989</year>
+		<publisher>Sega</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="262144">
+				<rom name="altered beast (ueb) (playpal version).bin" size="262144" crc="1ae2a97d" sha1="9bc82f6e3e0ca115c3505718c156cf1b91ac84e8" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -676,6 +700,18 @@
 			<feature name="ic1" value="MPR-10387" />
 			<dataarea name="rom" size="131072">
 				<rom name="mpr-10387.ic1" size="131072" crc="299cbb74" sha1="901697a3535ad70190647f34ad5b30b695d54542" offset="000000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="astrowpp" cloneof="astrow">
+		<description>Astro Warrior (Playpal)</description>
+		<year>1986</year>
+		<publisher>Sega</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="131072">
+				<rom name="astro warrior (jub) (playpal version).bin" size="131072" crc="9ef590f5" sha1="ea3f65b9a4485a1975d303e82f52e4cf0698da4d" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -2396,6 +2432,28 @@
 		</part>
 	</software>
 
+	<software name="fantzonepp" cloneof="fantzone">
+		<description>Fantasy Zone (Playpal)</description>
+		<year>1986</year>
+		<publisher>Sega</publisher>
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="131072">
+				<rom name="fantasy zone (jue) (v1.2) (playpal version).bin" size="131072" crc="b6523c5b" sha1="c8bec89c63c4076904550cbf71ca69972ebe9285" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fantzonevc" cloneof="fantzone">
+		<description>Fantasy Zone (v2, Wii Virtual Console)</description>
+		<year>200?</year>
+		<publisher>Sega - Nintendo</publisher>
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="131072">
+				<rom name="fantasy zone (jue) (v1.2) (vc).bin" size="131072" crc="37a098b5" sha1="a8261e18ea184f53ea5549aeaa63e7afd1d1dace" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- Notes: FM support -->
 	<software name="fantzonm">
 		<description>Fantasy Zone - The Maze (Euro, USA)</description>
@@ -2405,6 +2463,18 @@
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="131072">
 				<rom name="fantasy zone - the maze (usa, europe).bin" size="131072" crc="d29889ad" sha1="a2cd356826c8116178394d8aba444cb636ef784e" offset="000000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fantzonmpp" cloneof="fantzonm">
+		<description>Fantasy Zone - The Maze (Playpal)</description>
+		<year>1987</year>
+		<publisher>Sega</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="131072">
+				<rom name="fantasy zone - the maze (ueb) (playpal version).bin" size="131072" crc="be8a3d4c" sha1="ac013235b8b6dea96ab5f006b2483c3d8b457fa7" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -2860,6 +2930,17 @@
 		</part>
 	</software>
 
+	<software name="globaldpp" cloneof="globald">
+		<description>Global Defense (Playpal)</description>
+		<year>1987</year>
+		<publisher>Sega</publisher>
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="131072">
+				<rom name="global defense (ue) (playpal version).bin" size="131072" crc="b89cc547" sha1="a721c3afb048709b77b825c2886957e2198261ba" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="gloc">
 		<description>G-LOC Air Battle (Euro, Bra, Kor)</description>
 		<year>1991</year>
@@ -3280,6 +3361,18 @@
 		</part>
 	</software>
 
+	<software name="hokutovc" cloneof="blackblt">
+		<description>Hokuto no Ken (Jpn, Wii Virtual Console)</description>
+		<year>200?</year>
+		<publisher>Sega - Nintendo</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="131072">
+				<rom name="hokuto no ken (j) (vc).bin" size="131072" crc="083c8742" sha1="38d466fcab75d00184b98e310d05144ff95ada77" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="homea">
 		<description>Home Alone (Euro)</description>
 		<year>1993</year>
@@ -3677,6 +3770,18 @@
 			<feature name="ic1" value="MPR-11069" />
 			<dataarea name="rom" size="131072">
 				<rom name="mpr-11069.ic1" size="131072" crc="1e949d1f" sha1="7e1c32f5abf9ff906ffe113ffab6eecd1c86b381" offset="000000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kungfukpp" cloneof="kungfuk">
+		<description>Kung Fu Kid (Playpal)</description>
+		<year>1987</year>
+		<publisher>Sega</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="131072">
+				<rom name="kung fu kid (ueb) (playpal version).bin" size="131072" crc="3fb8fdba" sha1="bf3d5b99ac14188da102ce31b3ed2588623df828" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -4703,6 +4808,17 @@
 				<rom name="mpr-11190.ic1" size="131072" crc="f97e9875" sha1="8762239c339a084dfb8443cc38515301476bde28" offset="000000" />
 			</dataarea>
 			<dataarea name="ram" size="8192">
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="penglandpp" cloneof="pengland">
+		<description>Penguin Land (Playpal)</description>
+		<year>1987</year>
+		<publisher>Sega</publisher>
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="131088">
+				<rom name="penguin land (ue) (playpal version).bin" size="131088" crc="54307a54" sha1="aefb2831bb4751444983143438b4fc4b32b2ade1" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -5972,6 +6088,28 @@
 			<feature name="ic1" value="MPR-15159" />
 			<dataarea name="rom" size="524288">
 				<rom name="mpr-15159.ic1" size="524288" crc="5b3b922c" sha1="acdb0b5e8bf9c1e9c9d1a8ac6d282cb8017d091c" offset="000000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sonic2vc" cloneof="sonic2">
+		<description>Sonic The Hedgehog 2 (v1, Virtual Console)</description>
+		<year>200?</year>
+		<publisher>Sega - Nintendo</publisher>
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="524288">
+				<rom name="sonic the hedgehog 2 (ebk) (v2.2) (vc).bin" size="524288" crc="7e319213" sha1="cd7a6591782a8cd556adb56086058a119a4ccba8" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sonic2vca" cloneof="sonic2">
+		<description>Sonic The Hedgehog 2 (v0, Virtual Console)</description>
+		<year>200?</year>
+		<publisher>Sega - Nintendo</publisher>
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="524288">
+				<rom name="sonic the hedgehog 2 (eb) (v1.0) (vc).bin" size="524288" crc="50c5ed3a" sha1="083fabf088a480cae8d427e6fdc41f89e439e162" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -9834,336 +9972,791 @@
 		</part>
 	</software>
 
+	<software name="kingkong">
+		<description>King Kong (v1.0)</description>
+		<year>????</year>
+		<publisher>drHirudo</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="king kong by drhirudo v1.0 (pd).bin" size="32768" crc="1074e6d4" sha1="2ce245910fb0c53efea4a3c5baa4766b9588cb1a" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kunkoko">
+		<description>KunKun &amp; KokoKun</description>
+		<year>????</year>
+		<publisher>Bock</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="kunkun &amp; kokokun by bock (pd).bin" size="32768" crc="7e15a103" sha1="ea2e08841aacfb7bc02d9937fb1ae2a74454bf84" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kunkoko2">
+		<description>KunKun &amp; KokoKun 2 - Return of the Kun (v0.99)</description>
+		<year>????</year>
+		<publisher>Bock</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="65536">
+				<rom name="kunkun &amp; kokokun 2 - return of the kun by bock (v0.99) (pd).bin" size="65536" crc="5173b648" sha1="4d559135c0acefb2376aa0812e6e868cde3ba1ca" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kunkoko292" cloneof="kunkoko2">
+		<description>KunKun &amp; KokoKun 2 - Return of the Kun (v0.92)</description>
+		<year>????</year>
+		<publisher>Bock</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="65536">
+				<rom name="kunkun &amp; kokokun 2 - return of the kun by bock (v0.92) (pd).bin" size="65536" crc="857c53e7" sha1="a3dda7c03b737bd05057afbc7375ce591b510e81" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ld19">
+		<description>LD19 Practice Game</description>
+		<year>????</year>
+		<publisher>thematrixeatsyou</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="ld19 practice game by thematrixeatsyou (pd).bin" size="32768" crc="a48ba2cb" sha1="b0653cabbe0b715295d9c14497b36e748464346a" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="libctest">
+		<description>Libc Test</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="4119">
+				<rom name="libc test (pd).bin" size="4119" crc="3e10b246" sha1="1964dc6d866297815b55975f65211c695790022f" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="libctesto" cloneof="libctest">
+		<description>Libc Test (Older)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="4116">
+				<rom name="libc test (older) (pd).bin" size="4116" crc="08a72ed4" sha1="694852668a9e0c25de9fd932b3fbeae3ab921a7b" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lineint">
+		<description>Line Interrupt Test #1</description>
+		<year>????</year>
+		<publisher>Charles MacDonald</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="line interrupt test #1 by charles macdonald (pd).bin" size="32768" crc="c264580f" sha1="ebae1289aefbe590605c3aaff31f677abacff954" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lostraid">
+		<description>Lost Raider (v1.01)</description>
+		<year>????</year>
+		<publisher>vingazole - ichigobankai</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="131072">
+				<rom name="lost raider by vingazole &amp; ichigobankai (v1.01) (pd).bin" size="131072" crc="2553b745" sha1="ad43ebe0f8efe5c472b53acc0f47ac63aa016fb2" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lostraid100" cloneof="lostraid">
+		<description>Lost Raider (v1.00)</description>
+		<year>????</year>
+		<publisher>vingazole - ichigobankai</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="131072">
+				<rom name="lost raider by vingazole &amp; ichigobankai (v1.00) (pd).bin" size="131072" crc="ed850911" sha1="f7797f15d6103d7d8a164de7e547a2ec84edde28" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="maze3d">
+		<description>Maze3D (v2008-01-21)</description>
+		<year>2008</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="34140">
+				<rom name="maze3d v2008-01-21 (pd).bin" size="34140" crc="1d38b843" sha1="fd919e5f1850c61ba35913ff45f686bd05fe3d95" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="maze3da" cloneof="maze3d">
+		<description>Maze3D (v2008-01-18)</description>
+		<year>2008</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="34757">
+				<rom name="maze3d v2008-01-18 (pd).bin" size="34757" crc="5888c1f3" sha1="c2eeb4c3f5b4c99a66450327ccf2fa9d3a30a210" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="maze3db" cloneof="maze3d">
+		<description>Maze3D (v2008-01-16)</description>
+		<year>2008</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="maze3d v2008-01-16 (pd).bin" size="32768" crc="64f7f933" sha1="a7326ae14465d81ff1496ab72f3dfd3c33f54c8b" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="maze3dc" cloneof="maze3d">
+		<description>Maze3D (v2008-01-14)</description>
+		<year>2008</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="maze3d v2008-01-14 (pd).bin" size="32768" crc="5bbb64da" sha1="6b06863c579eac2c6fe0318dbca38bd838387331" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mode5ep">
+		<description>Mode 5 Example Program</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="mode 5 example program (pd).bin" size="32768" crc="b9ff4974" sha1="887b2bf0e10c87d1cae682d520679a80b0c4f1b4" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mode5epd">
+		<description>Mode 5 Example Program Demo</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="49152">
+				<rom name="mode 5 example program demo (pd).bin" size="49152" crc="47fa618d" sha1="c5328def0880effbeaaa650d74220ab1009fe19d" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="modplay">
+		<description>Modplay-Z80 MD</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="4096">
+				<rom name="modplay-z80 md (pd).bin" size="4096" crc="17ecbd3b" sha1="fc65184fc82b428911241ed40cdaaecb0bce6961" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mstation">
+		<description>Music Station (v1.6)</description>
+		<year>????</year>
+		<publisher>Ricardo Bittencourt</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="524288">
+				<rom name="music station by ricardo bittencourt v1.6 (pd).bin" size="524288" crc="f40fa5d6" sha1="8876e8f16b09b69235c249ecadeeec405f096698" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nanowars">
+		<description>NanoWars 8k (v0.7)</description>
+		<year>????</year>
+		<publisher>Haroldo O. Pinheiro</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="nanowars 8k by haroldo o. pinheiro v0.7 (pd).bin" size="32768" crc="a06d065c" sha1="2e9cceec6c872dc988236c96618225e953c4d794" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="newduel">
+		<description>New Duel SMS (WIP)</description>
+		<year>2011</year>
+		<publisher>losinggeneration</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="new duel sms wip by losinggeneration (2011) (pd).bin" size="32768" crc="fc531c7a" sha1="fcdbf5fdb101ecac9d45b7a2d6ff4b579c42d97e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="newduela" cloneof="newduel">
+		<description>New Duel SMS (WIP2)</description>
+		<year>2011</year>
+		<publisher>losinggeneration</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="new duel sms wip2 by losinggeneration (2011) (pd).bin" size="32768" crc="383e7ebd" sha1="c3cafcb083628808441b6f566ceaaaff75d50120" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="9pixels">
+		<description>Nine Pixels (v1.0)</description>
+		<year>????</year>
+		<publisher>Nicolas Warren</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="131072">
+				<rom name="nine pixels by nicolas warren (v1.00) (pd).bin" size="131072" crc="82ae5acd" sha1="124012c8611db1e5a5013012fd8b10f4bfcc2e02" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="notonly">
+		<description>Not Only Words (v1.00)</description>
+		<year>????</year>
+		<publisher>Maxim</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="not only words by maxim (v1.00) (pd).bin" size="32768" crc="261587b8" sha1="9eb8d2bdcfb823d5a86dd2fa262e7890a51cdd7a" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="oplrom">
+		<description>OPLROM Demo</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="49152">
+				<rom name="oplrom demo (msx-sms dual systems binary) (pd).bin" size="49152" crc="cda61b4d" sha1="fdae4c284da8a4cce107e401e62ba16beea30de9" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="onlywords">
+		<description>Only Words (v0.1)</description>
+		<year>????</year>
+		<publisher>Mike Gordon</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="only words by mike gordon (v0.1) (pd).bin" size="32768" crc="580293ee" sha1="f839ca05726c190908b29865a70f9c38ede67a79" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ono">
+		<description>Ono (v1.01)</description>
+		<year>????</year>
+		<publisher>Maxim</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="49152">
+				<rom name="ono by maxim v1.01 (pd).bin" size="49152" crc="5885ce2c" sha1="6f37748faab9c5c908d5ca393a13afdb4f8db0f2" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="onoa" cloneof="ono">
+		<description>Ono (v1.00)</description>
+		<year>????</year>
+		<publisher>Maxim</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="49152">
+				<rom name="ono by maxim v1.00 (pd).bin" size="49152" crc="e1222575" sha1="9e3396ba7719ff4a07641576f93d668145413f17" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="psgsample">
+		<description>PSG Sample Test</description>
+		<year>2006</year>
+		<publisher>Haroldo O. Pinheiro</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="28899">
+				<rom name="psg sample test by haroldo o. pinheiro (2006) (pd).bin" size="28899" crc="bfa31c6f" sha1="c1dbb09ef2ff64762380e279c5be5209b425e209" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pfrd">
+		<description>Page Frame Register Detect (v2.00)</description>
+		<year>????</year>
+		<publisher>Eric R. Quinn</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="page frame register detect v2.00 by eric r. quinn (pd).bin" size="32768" crc="1f30cb32" sha1="e91f0d3c4015d69071c15dee7ffea6e69c03b9ba" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pfrd100" cloneof="pfrd">
+		<description>Page Frame Register Detect (v1.00)</description>
+		<year>????</year>
+		<publisher>Eric R. Quinn</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="page frame register detect v1.00 by eric r. quinn (pd).bin" size="32768" crc="ad0ff4f1" sha1="2067fd259798c8c26492c160ea61384a01c8df26" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pfrd001" cloneof="pfrd">
+		<description>Page Frame Register Detect (v0.01)</description>
+		<year>????</year>
+		<publisher>Eric R. Quinn</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="page frame register detect v0.01 by eric r. quinn (pd).bin" size="32768" crc="6eaead07" sha1="f582a81bb369a9e8b4952d55f6df1db88ecd880c" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pausetest">
+		<description>Pause Test</description>
+		<year>????</year>
+		<publisher>Flubba</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="pause test by flubba (pd).bin" size="32768" crc="592b8297" sha1="7634806e12b6b222fbc214712cd49226fe43bf3d" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="paws32k">
+		<description>Paws 32K Intro</description>
+		<year>????</year>
+		<publisher>An!mal</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="paws 32k intro by an!mal (pd).bin" size="32768" crc="85060847" sha1="316e888237f274663939597bd33407e718bed969" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="picross">
+		<description>Picross (v1.01)</description>
+		<year>2007</year>
+		<publisher>Maxim</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="49152">
+				<rom name="picross v1.01 by maxim (2007) (pd).bin" size="49152" crc="1f0d38c1" sha1="d3d1a3e187724cb23fc2a142b3723dfe7124ae5e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="picross100" cloneof="picross">
+		<description>Picross (v1.00)</description>
+		<year>2007</year>
+		<publisher>Maxim</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="49152">
+				<rom name="picross v1.00 by maxim (2007) (pd).bin" size="49152" crc="cb72a916" sha1="11d14cbce1c850ab766a35f88d99a40f2cfa301e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="platform">
+		<description>Platform Game Test (v0.3)</description>
+		<year>????</year>
+		<publisher>Haroldo O. Pinheiro</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="7068">
+				<rom name="platform game test by haroldo o. pinheiro v0.3 (pd).bin" size="7068" crc="e1c4a4c3" sha1="4171bdc233652c3052f045656e5ed550d89bb823" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="platform02" cloneof="platform">
+		<description>Platform Game Test (v0.2)</description>
+		<year>????</year>
+		<publisher>Haroldo O. Pinheiro</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="6133">
+				<rom name="platform game test by haroldo o. pinheiro v0.2 (pd).bin" size="6133" crc="1da46851" sha1="ceaaa799fc29eacacf761068db5e72a166816257" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="platform01" cloneof="platform">
+		<description>Platform Game Test (v0.1)</description>
+		<year>????</year>
+		<publisher>Haroldo O. Pinheiro</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="6122">
+				<rom name="platform game test by haroldo o. pinheiro v0.1 (pd).bin" size="6122" crc="e54af03b" sha1="5508219bebf7ee0e84edb5ed8214e1abffa72c61" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="playport">
+		<description>Playpal Port Prober</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="playpal port prober (pd).bin" size="32768" crc="080871d9" sha1="991d54ce2502a847c010cd7cb23f99a2625878f2" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pongmstr">
+		<description>Pongmaster</description>
+		<year>????</year>
+		<publisher>Haroldo O. Pinheiro</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="5836">
+				<rom name="pongmaster by haroldo o. pinheiro (pd).bin" size="5836" crc="3879ac1b" sha1="94219edefecb1cdaa78e02ec546b9ddfbf3acfde" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pongmstra" cloneof="pongmstr">
+		<description>Pongmaster (Alt)</description>
+		<year>????</year>
+		<publisher>Haroldo O. Pinheiro</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="6832">
+				<rom name="pongmaster by haroldo o. pinheiro (pd) [a1].bin" size="6832" crc="ef3d4c50" sha1="3806ba3dc2ca3c56f3f74271211cede9e922d420" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pongmstrb" cloneof="pongmstr">
+		<description>Pongmaster (Alt 2)</description>
+		<year>????</year>
+		<publisher>Haroldo O. Pinheiro</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="8019">
+				<rom name="pongmaster by haroldo o. pinheiro (pd) [a2].bin" size="8019" crc="82c12e96" sha1="52ff86e9b7723e4f3099c74d5d18522db507cef8" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pongmstro" cloneof="pongmstr">
+		<description>Pongmaster (Older)</description>
+		<year>????</year>
+		<publisher>Haroldo O. Pinheiro</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="8016">
+				<rom name="pongmaster by haroldo o. pinheiro (older) (pd).bin" size="8016" crc="60d1aaac" sha1="5560a7fe57481e80cddd66588ca9dc6b0628f0bc" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pongmst2">
+		<description>Pongmaster 2</description>
+		<year>????</year>
+		<publisher>Haroldo O. Pinheiro</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="8675">
+				<rom name="pongmaster 2 by haroldo o. pinheiro (pd).bin" size="8675" crc="314c0081" sha1="699349f582874ca94e06c4636ad3aa1edb5ad89a" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pongmst2o" cloneof="pongmst2">
+		<description>Pongmaster 2 (Older)</description>
+		<year>????</year>
+		<publisher>Haroldo O. Pinheiro</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="8672">
+				<rom name="pongmaster 2 by haroldo o. pinheiro (older) (pd).bin" size="8672" crc="d5925acd" sha1="7893e2bfeb4e339669bcd5e12e97665d13267442" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pongmst4">
+		<description>Pongmaster 4k</description>
+		<year>????</year>
+		<publisher>Haroldo O. Pinheiro</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="pongmaster 4k by haroldo o. pinheiro (pd).bin" size="32768" crc="f87d50fd" sha1="25644756bfc1844c6ace0e4aa92e243090441743" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pretty">
+		<description>Pretty Photo (v1.00)</description>
+		<year>????</year>
+		<publisher>Maxim</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="pretty photo by maxim v1.00 (pd).bin" size="32768" crc="0652b785" sha1="1033072fe34e553cbdd9fdeb5577cd1ca30a9c44" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="radical">
+		<description>Radical Rat SMS (v1.00)</description>
+		<year>????</year>
+		<publisher>TmEE</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="87079">
+				<rom name="radical rat sms v1.00 by tmee (pd).bin" size="87079" crc="ba327b42" sha1="8972bd072ef1b5538871617362177c5aed041a6e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="radical03" cloneof="radical">
+		<description>Radical Rat SMS (v0.3)</description>
+		<year>????</year>
+		<publisher>TmEE</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="131072">
+				<rom name="radical rat sms v0.3 by tmee (pd).bin" size="131072" crc="dbc88d37" sha1="f1e16dee2be2e9046608cd0532c5ab5a4145cdcd" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rehashms">
+		<description>RehaShMS (v6, NTSC)</description>
+		<year>????</year>
+		<publisher>mic_</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="rehashms v6 by mic_ (ntsc) (pd).bin" size="16384" crc="04657906" sha1="14aa33cf492ca8bb85936b627dc5d8ed276b0205" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rehashmsp" cloneof="rehashms">
+		<description>RehaShMS (v6, PAL)</description>
+		<year>????</year>
+		<publisher>mic_</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="rehashms v6 by mic_ (pal) (pd).bin" size="16384" crc="6428124a" sha1="ad30fbc5577c50e8eaae6a7b9122c4a380079aea" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rehashms4" cloneof="rehashms">
+		<description>RehaShMS (v4, NTSC)</description>
+		<year>????</year>
+		<publisher>mic_</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="rehashms v4 by mic_ (ntsc) (pd).bin" size="32768" crc="a82411e0" sha1="1079f47627843cfdff023c0213531a7390d86490" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rehashms4p" cloneof="rehashms">
+		<description>RehaShMS (v4, PAL)</description>
+		<year>????</year>
+		<publisher>mic_</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="rehashms v4 by mic_ (pal) (pd).bin" size="32768" crc="ead53688" sha1="f9ed86ed7ef9b0dd74f4427851dd3e9ec022b6ce" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rehashms3" cloneof="rehashms">
+		<description>RehaShMS (v3, NTSC)</description>
+		<year>????</year>
+		<publisher>mic_</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="rehashms v3 by mic_ (ntsc) (pd).bin" size="32768" crc="d58e94b4" sha1="8024667bd555abbbf502c00fa572d421a8d4f6b7" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rehashms3p" cloneof="rehashms">
+		<description>RehaShMS (v3, PAL)</description>
+		<year>????</year>
+		<publisher>mic_</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="rehashms v3 by mic_ (pal) (pd).bin" size="32768" crc="fb9f8f63" sha1="fdd5186bb1ca4f1f40cdcdc948da2a79a8766ab1" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rental">
+		<description>Rental Car (v0.06)</description>
+		<year>2011</year>
+		<publisher>Aypok - PlayGeneration</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="65536">
+				<rom name="rental car v0.06 by aypok and playgeneration (2011) (pd).bin" size="65536" crc="bc6ac56d" sha1="4eeee41bc085c8acf540c363d749b507475b47bd" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rcmusic">
+		<description>RetroCopy MusicTest - Billy Jean (v1.00)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="786432">
+				<rom name="retrocopy musictest (billy jean) v1.00 (pd).bin" size="786432" crc="500af8cb" sha1="2526d194fd2d5000f001cadbd41b0f887155a56e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="riverstr">
+		<description>River Strike (v0.04 Alpha)</description>
+		<year>????</year>
+		<publisher>Haroldo O. Pinheiro</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="8628">
+				<rom name="river strike v0.04alpha by haroldo o. pinheiro (pd).bin" size="8628" crc="1fe7f34e" sha1="3504e57c4cce39d930def2434cbeeb4284af7f85" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="riverstr003" cloneof="riverstr">
+		<description>River Strike (v0.03 Alpha)</description>
+		<year>????</year>
+		<publisher>Haroldo O. Pinheiro</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="8436">
+				<rom name="river strike v0.03alpha by haroldo o. pinheiro (pd).bin" size="8436" crc="767c6744" sha1="7a95d82fd86326b0c5e0f3197a4fc02518fc2559" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="riverstr002" cloneof="riverstr">
+		<description>River Strike (v0.02 Alpha)</description>
+		<year>????</year>
+		<publisher>Haroldo O. Pinheiro</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="7431">
+				<rom name="river strike v0.02alpha by haroldo o. pinheiro (pd).bin" size="7431" crc="78df344c" sha1="029269260f101519e4de723679cd6e39a3310ea4" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="riverstr001" cloneof="riverstr">
+		<description>River Strike (v0.01 Alpha)</description>
+		<year>????</year>
+		<publisher>Haroldo O. Pinheiro</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="4616">
+				<rom name="river strike v0.01alpha by haroldo o. pinheiro (pd).bin" size="4616" crc="53cb13c1" sha1="b14512d5503ee9557608d629857dfb162eb8073a" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="robbyie">
+		<description>RobbyIE (v0.31)</description>
+		<year>????</year>
+		<publisher>drHiduro</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="robbyie by drhiduro (v0.31) (pd).bin" size="32768" crc="e988c541" sha1="870378afd02e092db1d69551ed0fac1ac656b733" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="robbyie030" cloneof="robbyie">
+		<description>RobbyIE (v0.30)</description>
+		<year>????</year>
+		<publisher>drHiduro</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="robbyie by drhiduro (v0.30) (pd).bin" size="32768" crc="55b950fa" sha1="bb38434cf4c1e46f764578c3f3001cc3fdebfa39" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="robbyie2">
+		<description>Robbyie (v0.999)</description>
+		<year>????</year>
+		<publisher>Ventzislav Tzvetkov</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="robbyie by ventzislav tzvetkov v0.999 (pd).bin" size="32768" crc="f61874c9" sha1="f63f90a7d03c45385c14c3f25cad96c7e13792ee" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="robotkit">
+		<description>Robot Finds Kitten (v1.00)</description>
+		<year>????</year>
+		<publisher>thematrixeatsyou</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="32768">
+				<rom name="robot finds kitten by thematrixeatsyou v1.00 (pd).bin" size="32768" crc="efba05fc" sha1="293fa5155b07fc6277d00c573d90199e14ae28f4" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="good_pd">
 		<description>GoodSMS - PD</description>
 		<year>????</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="cart70" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="king kong by drhirudo v1.0 (pd).bin" size="32768" crc="1074e6d4" sha1="2ce245910fb0c53efea4a3c5baa4766b9588cb1a" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart71" interface="sms_cart">
-			<dataarea name="rom" size="65536">
-				<rom name="kunkun &amp; kokokun 2 - return of the kun by bock (v0.92) (pd).bin" size="65536" crc="857c53e7" sha1="a3dda7c03b737bd05057afbc7375ce591b510e81" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart72" interface="sms_cart">
-			<dataarea name="rom" size="65536">
-				<rom name="kunkun &amp; kokokun 2 - return of the kun by bock (v0.99) (pd).bin" size="65536" crc="5173b648" sha1="4d559135c0acefb2376aa0812e6e868cde3ba1ca" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart73" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="kunkun &amp; kokokun by bock (pd).bin" size="32768" crc="7e15a103" sha1="ea2e08841aacfb7bc02d9937fb1ae2a74454bf84" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart74" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="ld19 practice game by thematrixeatsyou (pd).bin" size="32768" crc="a48ba2cb" sha1="b0653cabbe0b715295d9c14497b36e748464346a" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart75" interface="sms_cart">
-			<dataarea name="rom" size="4116">
-				<rom name="libc test (older) (pd).bin" size="4116" crc="08a72ed4" sha1="694852668a9e0c25de9fd932b3fbeae3ab921a7b" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart76" interface="sms_cart">
-			<dataarea name="rom" size="4119">
-				<rom name="libc test (pd).bin" size="4119" crc="3e10b246" sha1="1964dc6d866297815b55975f65211c695790022f" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart77" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="line interrupt test #1 by charles macdonald (pd).bin" size="32768" crc="c264580f" sha1="ebae1289aefbe590605c3aaff31f677abacff954" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart78" interface="sms_cart">
-			<dataarea name="rom" size="131072">
-				<rom name="lost raider by vingazole &amp; ichigobankai (v1.00) (pd).bin" size="131072" crc="ed850911" sha1="f7797f15d6103d7d8a164de7e547a2ec84edde28" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart79" interface="sms_cart">
-			<dataarea name="rom" size="131072">
-				<rom name="lost raider by vingazole &amp; ichigobankai (v1.01) (pd).bin" size="131072" crc="2553b745" sha1="ad43ebe0f8efe5c472b53acc0f47ac63aa016fb2" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart80" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="maze3d v2008-01-14 (pd).bin" size="32768" crc="5bbb64da" sha1="6b06863c579eac2c6fe0318dbca38bd838387331" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart81" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="maze3d v2008-01-16 (pd).bin" size="32768" crc="64f7f933" sha1="a7326ae14465d81ff1496ab72f3dfd3c33f54c8b" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart82" interface="sms_cart">
-			<dataarea name="rom" size="34757">
-				<rom name="maze3d v2008-01-18 (pd).bin" size="34757" crc="5888c1f3" sha1="c2eeb4c3f5b4c99a66450327ccf2fa9d3a30a210" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart83" interface="sms_cart">
-			<dataarea name="rom" size="34140">
-				<rom name="maze3d v2008-01-21 (pd).bin" size="34140" crc="1d38b843" sha1="fd919e5f1850c61ba35913ff45f686bd05fe3d95" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart84" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="mode 5 example program (pd).bin" size="32768" crc="b9ff4974" sha1="887b2bf0e10c87d1cae682d520679a80b0c4f1b4" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart85" interface="sms_cart">
-			<dataarea name="rom" size="49152">
-				<rom name="mode 5 example program demo (pd).bin" size="49152" crc="47fa618d" sha1="c5328def0880effbeaaa650d74220ab1009fe19d" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart86" interface="sms_cart">
-			<dataarea name="rom" size="4096">
-				<rom name="modplay-z80 md (pd).bin" size="4096" crc="17ecbd3b" sha1="fc65184fc82b428911241ed40cdaaecb0bce6961" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart87" interface="sms_cart">
-			<dataarea name="rom" size="524288">
-				<rom name="music station by ricardo bittencourt v1.6 (pd).bin" size="524288" crc="f40fa5d6" sha1="8876e8f16b09b69235c249ecadeeec405f096698" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart88" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="nanowars 8k by haroldo o. pinheiro v0.7 (pd).bin" size="32768" crc="a06d065c" sha1="2e9cceec6c872dc988236c96618225e953c4d794" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart89" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="new duel sms wip by losinggeneration (2011) (pd).bin" size="32768" crc="fc531c7a" sha1="fcdbf5fdb101ecac9d45b7a2d6ff4b579c42d97e" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart90" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="new duel sms wip2 by losinggeneration (2011) (pd).bin" size="32768" crc="383e7ebd" sha1="c3cafcb083628808441b6f566ceaaaff75d50120" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart91" interface="sms_cart">
-			<dataarea name="rom" size="131072">
-				<rom name="nine pixels by nicolas warren (v1.00) (pd).bin" size="131072" crc="82ae5acd" sha1="124012c8611db1e5a5013012fd8b10f4bfcc2e02" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart92" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="not only words by maxim (v1.00) (pd).bin" size="32768" crc="261587b8" sha1="9eb8d2bdcfb823d5a86dd2fa262e7890a51cdd7a" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart93" interface="sms_cart">
-			<dataarea name="rom" size="49152">
-				<rom name="oplrom demo (msx-sms dual systems binary) (pd).bin" size="49152" crc="cda61b4d" sha1="fdae4c284da8a4cce107e401e62ba16beea30de9" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart94" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="only words by mike gordon (v0.1) (pd).bin" size="32768" crc="580293ee" sha1="f839ca05726c190908b29865a70f9c38ede67a79" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart95" interface="sms_cart">
-			<dataarea name="rom" size="49152">
-				<rom name="ono by maxim v1.00 (pd).bin" size="49152" crc="e1222575" sha1="9e3396ba7719ff4a07641576f93d668145413f17" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart96" interface="sms_cart">
-			<dataarea name="rom" size="49152">
-				<rom name="ono by maxim v1.01 (pd).bin" size="49152" crc="5885ce2c" sha1="6f37748faab9c5c908d5ca393a13afdb4f8db0f2" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart97" interface="sms_cart">
-			<dataarea name="rom" size="28899">
-				<rom name="psg sample test by haroldo o. pinheiro (2006) (pd).bin" size="28899" crc="bfa31c6f" sha1="c1dbb09ef2ff64762380e279c5be5209b425e209" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart98" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="page frame register detect v0.01 by eric r. quinn (pd).bin" size="32768" crc="6eaead07" sha1="f582a81bb369a9e8b4952d55f6df1db88ecd880c" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart99" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="page frame register detect v1.00 by eric r. quinn (pd).bin" size="32768" crc="ad0ff4f1" sha1="2067fd259798c8c26492c160ea61384a01c8df26" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart100" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="page frame register detect v2.00 by eric r. quinn (pd).bin" size="32768" crc="1f30cb32" sha1="e91f0d3c4015d69071c15dee7ffea6e69c03b9ba" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart101" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="pause test by flubba (pd).bin" size="32768" crc="592b8297" sha1="7634806e12b6b222fbc214712cd49226fe43bf3d" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart102" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="paws 32k intro by an!mal (pd).bin" size="32768" crc="85060847" sha1="316e888237f274663939597bd33407e718bed969" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart103" interface="sms_cart">
-			<dataarea name="rom" size="49152">
-				<rom name="picross v1.00 by maxim (2007) (pd).bin" size="49152" crc="cb72a916" sha1="11d14cbce1c850ab766a35f88d99a40f2cfa301e" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart104" interface="sms_cart">
-			<dataarea name="rom" size="49152">
-				<rom name="picross v1.01 by maxim (2007) (pd).bin" size="49152" crc="1f0d38c1" sha1="d3d1a3e187724cb23fc2a142b3723dfe7124ae5e" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart105" interface="sms_cart">
-			<dataarea name="rom" size="6122">
-				<rom name="platform game test by haroldo o. pinheiro v0.1 (pd).bin" size="6122" crc="e54af03b" sha1="5508219bebf7ee0e84edb5ed8214e1abffa72c61" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart106" interface="sms_cart">
-			<dataarea name="rom" size="6133">
-				<rom name="platform game test by haroldo o. pinheiro v0.2 (pd).bin" size="6133" crc="1da46851" sha1="ceaaa799fc29eacacf761068db5e72a166816257" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart107" interface="sms_cart">
-			<dataarea name="rom" size="7068">
-				<rom name="platform game test by haroldo o. pinheiro v0.3 (pd).bin" size="7068" crc="e1c4a4c3" sha1="4171bdc233652c3052f045656e5ed550d89bb823" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart108" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="playpal port prober (pd).bin" size="32768" crc="080871d9" sha1="991d54ce2502a847c010cd7cb23f99a2625878f2" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart109" interface="sms_cart">
-			<dataarea name="rom" size="8672">
-				<rom name="pongmaster 2 by haroldo o. pinheiro (older) (pd).bin" size="8672" crc="d5925acd" sha1="7893e2bfeb4e339669bcd5e12e97665d13267442" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart110" interface="sms_cart">
-			<dataarea name="rom" size="8675">
-				<rom name="pongmaster 2 by haroldo o. pinheiro (pd).bin" size="8675" crc="314c0081" sha1="699349f582874ca94e06c4636ad3aa1edb5ad89a" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart111" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="pongmaster 4k by haroldo o. pinheiro (pd).bin" size="32768" crc="f87d50fd" sha1="25644756bfc1844c6ace0e4aa92e243090441743" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart112" interface="sms_cart">
-			<dataarea name="rom" size="8016">
-				<rom name="pongmaster by haroldo o. pinheiro (older) (pd).bin" size="8016" crc="60d1aaac" sha1="5560a7fe57481e80cddd66588ca9dc6b0628f0bc" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart113" interface="sms_cart">
-			<dataarea name="rom" size="6832">
-				<rom name="pongmaster by haroldo o. pinheiro (pd) [a1].bin" size="6832" crc="ef3d4c50" sha1="3806ba3dc2ca3c56f3f74271211cede9e922d420" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart114" interface="sms_cart">
-			<dataarea name="rom" size="8019">
-				<rom name="pongmaster by haroldo o. pinheiro (pd) [a2].bin" size="8019" crc="82c12e96" sha1="52ff86e9b7723e4f3099c74d5d18522db507cef8" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart115" interface="sms_cart">
-			<dataarea name="rom" size="5836">
-				<rom name="pongmaster by haroldo o. pinheiro (pd).bin" size="5836" crc="3879ac1b" sha1="94219edefecb1cdaa78e02ec546b9ddfbf3acfde" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart116" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="pretty photo by maxim v1.00 (pd).bin" size="32768" crc="0652b785" sha1="1033072fe34e553cbdd9fdeb5577cd1ca30a9c44" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart117" interface="sms_cart">
-			<dataarea name="rom" size="131072">
-				<rom name="radical rat sms v0.3 by tmee (pd).bin" size="131072" crc="dbc88d37" sha1="f1e16dee2be2e9046608cd0532c5ab5a4145cdcd" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart118" interface="sms_cart">
-			<dataarea name="rom" size="87079">
-				<rom name="radical rat sms v1.00 by tmee (pd).bin" size="87079" crc="ba327b42" sha1="8972bd072ef1b5538871617362177c5aed041a6e" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart119" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="rehashms v3 by mic_ (ntsc) (pd).bin" size="32768" crc="d58e94b4" sha1="8024667bd555abbbf502c00fa572d421a8d4f6b7" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart120" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="rehashms v3 by mic_ (pal) (pd).bin" size="32768" crc="fb9f8f63" sha1="fdd5186bb1ca4f1f40cdcdc948da2a79a8766ab1" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart121" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="rehashms v4 by mic_ (ntsc) (pd).bin" size="32768" crc="a82411e0" sha1="1079f47627843cfdff023c0213531a7390d86490" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart122" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="rehashms v4 by mic_ (pal) (pd).bin" size="32768" crc="ead53688" sha1="f9ed86ed7ef9b0dd74f4427851dd3e9ec022b6ce" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart123" interface="sms_cart">
-			<dataarea name="rom" size="16384">
-				<rom name="rehashms v6 by mic_ (ntsc) (pd).bin" size="16384" crc="04657906" sha1="14aa33cf492ca8bb85936b627dc5d8ed276b0205" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart124" interface="sms_cart">
-			<dataarea name="rom" size="16384">
-				<rom name="rehashms v6 by mic_ (pal) (pd).bin" size="16384" crc="6428124a" sha1="ad30fbc5577c50e8eaae6a7b9122c4a380079aea" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart125" interface="sms_cart">
-			<dataarea name="rom" size="65536">
-				<rom name="rental car v0.06 by aypok and playgeneration (2011) (pd).bin" size="65536" crc="bc6ac56d" sha1="4eeee41bc085c8acf540c363d749b507475b47bd" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart126" interface="sms_cart">
-			<dataarea name="rom" size="786432">
-				<rom name="retrocopy musictest (billy jean) v1.00 (pd).bin" size="786432" crc="500af8cb" sha1="2526d194fd2d5000f001cadbd41b0f887155a56e" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart127" interface="sms_cart">
-			<dataarea name="rom" size="4616">
-				<rom name="river strike v0.01alpha by haroldo o. pinheiro (pd).bin" size="4616" crc="53cb13c1" sha1="b14512d5503ee9557608d629857dfb162eb8073a" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart128" interface="sms_cart">
-			<dataarea name="rom" size="7431">
-				<rom name="river strike v0.02alpha by haroldo o. pinheiro (pd).bin" size="7431" crc="78df344c" sha1="029269260f101519e4de723679cd6e39a3310ea4" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart129" interface="sms_cart">
-			<dataarea name="rom" size="8436">
-				<rom name="river strike v0.03alpha by haroldo o. pinheiro (pd).bin" size="8436" crc="767c6744" sha1="7a95d82fd86326b0c5e0f3197a4fc02518fc2559" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart130" interface="sms_cart">
-			<dataarea name="rom" size="8628">
-				<rom name="river strike v0.04alpha by haroldo o. pinheiro (pd).bin" size="8628" crc="1fe7f34e" sha1="3504e57c4cce39d930def2434cbeeb4284af7f85" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart131" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="robbyie by drhiduro (v0.30) (pd).bin" size="32768" crc="55b950fa" sha1="bb38434cf4c1e46f764578c3f3001cc3fdebfa39" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart132" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="robbyie by drhiduro (v0.31) (pd).bin" size="32768" crc="e988c541" sha1="870378afd02e092db1d69551ed0fac1ac656b733" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart133" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="robbyie by ventzislav tzvetkov v0.999 (pd).bin" size="32768" crc="f61874c9" sha1="f63f90a7d03c45385c14c3f25cad96c7e13792ee" offset="0x0000" />
-			</dataarea>
-		</part>
-		<part name="cart134" interface="sms_cart">
-			<dataarea name="rom" size="32768">
-				<rom name="robot finds kitten by thematrixeatsyou v1.00 (pd).bin" size="32768" crc="efba05fc" sha1="293fa5155b07fc6277d00c573d90199e14ae28f4" offset="0x0000" />
-			</dataarea>
-		</part>
 		<part name="cart135" interface="sms_cart">
 			<dataarea name="rom" size="32768">
 				<rom name="saly v1.00 by marc klemp (pd).bin" size="32768" crc="7cbd4432" sha1="8630c3135021f51b84d2722b25a9c4081c5d1062" offset="0x0000" />
@@ -10818,156 +11411,6 @@
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="4194304">
 				<rom name="coleco 20-in-1 sms handheld (u).bin" size="4194304" crc="79482586" sha1="fb84592fb985ae4e708a3a8ccc9d225771f0f61c" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-<!-- GoodSMS - USA/Europe -->
-
-	<software name="globaldpp" cloneof="globald">
-		<description>Global Defense (Playpal)</description>
-		<year>1987</year>
-		<publisher>Sega</publisher>
-
-		<part name="cart" interface="sms_cart">
-			<dataarea name="rom" size="131072">
-				<rom name="global defense (ue) (playpal version).bin" size="131072" crc="b89cc547" sha1="a721c3afb048709b77b825c2886957e2198261ba" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="penglandpp" cloneof="pengland">
-		<description>Penguin Land (Playpal)</description>
-		<year>1987</year>
-		<publisher>Sega</publisher>
-
-		<part name="cart" interface="sms_cart">
-			<dataarea name="rom" size="131088">
-				<rom name="penguin land (ue) (playpal version).bin" size="131088" crc="54307a54" sha1="aefb2831bb4751444983143438b4fc4b32b2ade1" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-<!-- GoodSMS - Wii Virtual Console -->
-
-	<software name="fantzonevc" cloneof="fantzone">
-		<description>Fantasy Zone (v2, Wii Virtual Console)</description>
-		<year>1986</year>
-		<publisher>Sega</publisher>
-
-		<part name="cart" interface="sms_cart">
-			<dataarea name="rom" size="131072">
-				<rom name="fantasy zone (jue) (v1.2) (vc).bin" size="131072" crc="37a098b5" sha1="a8261e18ea184f53ea5549aeaa63e7afd1d1dace" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="hokutovc" cloneof="blackblt">
-		<description>Hokuto no Ken (Jpn, Wii Virtual Console)</description>
-		<year>1986</year>
-		<publisher>Sega</publisher>
-
-		<part name="cart" interface="sms_cart">
-			<dataarea name="rom" size="131072">
-				<rom name="hokuto no ken (j) (vc).bin" size="131072" crc="083c8742" sha1="38d466fcab75d00184b98e310d05144ff95ada77" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="sonic2vc" cloneof="sonic2">
-		<description>Sonic The Hedgehog 2 (v1, Virtual Console)</description>
-		<year>1992</year>
-		<publisher>Sega</publisher>
-
-		<part name="cart" interface="sms_cart">
-			<dataarea name="rom" size="524288">
-				<rom name="sonic the hedgehog 2 (ebk) (v2.2) (vc).bin" size="524288" crc="7e319213" sha1="cd7a6591782a8cd556adb56086058a119a4ccba8" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="sonic2vca" cloneof="sonic2">
-		<description>Sonic The Hedgehog 2 (v0, Virtual Console)</description>
-		<year>1992</year>
-		<publisher>Sega</publisher>
-
-		<part name="cart" interface="sms_cart">
-			<dataarea name="rom" size="524288">
-				<rom name="sonic the hedgehog 2 (eb) (v1.0) (vc).bin" size="524288" crc="50c5ed3a" sha1="083fabf088a480cae8d427e6fdc41f89e439e162" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-<!-- GoodSMS - World -->
-
-	<software name="alexkiddpp" cloneof="alexkidd">
-		<description>Alex Kidd in Miracle World (v1, Playpal)</description>
-		<year>1986</year>
-		<publisher>Sega</publisher>
-
-		<part name="cart" interface="sms_cart">
-			<dataarea name="rom" size="131072">
-				<rom name="alex kidd in miracle world (ueb) (v1.1) (playpal version).bin" size="131072" crc="2c08872b" sha1="e9679ddfc8dfce6366cd0f0dfa2780fbe2379d59" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="altbeastpp" cloneof="altbeast">
-		<description>Altered Beast (Playpal)</description>
-		<year>1989</year>
-		<publisher>Sega</publisher>
-
-		<part name="cart" interface="sms_cart">
-			<dataarea name="rom" size="262144">
-				<rom name="altered beast (ueb) (playpal version).bin" size="262144" crc="1ae2a97d" sha1="9bc82f6e3e0ca115c3505718c156cf1b91ac84e8" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="astrowpp" cloneof="astrow">
-		<description>Astro Warrior (Playpal)</description>
-		<year>1986</year>
-		<publisher>Sega</publisher>
-
-		<part name="cart" interface="sms_cart">
-			<dataarea name="rom" size="131072">
-				<rom name="astro warrior (jub) (playpal version).bin" size="131072" crc="9ef590f5" sha1="ea3f65b9a4485a1975d303e82f52e4cf0698da4d" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="fantzonepp" cloneof="fantzone">
-		<description>Fantasy Zone (Playpal)</description>
-		<year>1986</year>
-		<publisher>Sega</publisher>
-
-		<part name="cart" interface="sms_cart">
-			<dataarea name="rom" size="131072">
-				<rom name="fantasy zone (jue) (v1.2) (playpal version).bin" size="131072" crc="b6523c5b" sha1="c8bec89c63c4076904550cbf71ca69972ebe9285" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="fantzonmpp" cloneof="fantzonm">
-		<description>Fantasy Zone - The Maze (Playpal)</description>
-		<year>1987</year>
-		<publisher>Sega</publisher>
-
-		<part name="cart" interface="sms_cart">
-			<dataarea name="rom" size="131072">
-				<rom name="fantasy zone - the maze (ueb) (playpal version).bin" size="131072" crc="be8a3d4c" sha1="ac013235b8b6dea96ab5f006b2483c3d8b457fa7" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="kungfukpp" cloneof="kungfuk">
-		<description>Kung Fu Kid (Playpal)</description>
-		<year>1987</year>
-		<publisher>Sega</publisher>
-
-		<part name="cart" interface="sms_cart">
-			<dataarea name="rom" size="131072">
-				<rom name="kung fu kid (ueb) (playpal version).bin" size="131072" crc="3fb8fdba" sha1="bf3d5b99ac14188da102ce31b3ed2588623df828" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
