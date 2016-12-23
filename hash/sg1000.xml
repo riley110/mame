@@ -3105,42 +3105,84 @@ A135 : 森林歷險記 / Sēnlín lìxiǎn jì -> Pitfall II (same as R-049 by A
 		</part>
 	</software>
 
-	<software name="trans">
-		<description>Translations</description>
+	<software name="blckonyxe" cloneof="blckonyx">
+		<description>The Black Onyx (English Translation v1.0)</description>
 		<year>????</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<publisher>&lt;hack (Bruce Tomlin - S.Seehorn)&gt;</publisher>
 
-		<part name="cart1" interface="sg1000_cart">
-			<dataarea name="rom" size="65535">
-				<rom name="black onyx, the (j) (sg-1000) [t+eng1.0enhanced_bruce tomlin,s.seehorn].bin" size="65535" crc="3003d9bd" sha1="5c46089a417add0f00a3cebf01dc59f53465d47b" offset="000000" />
-			</dataarea>
-		</part>
-		<part name="cart2" interface="sg1000_cart">
+		<part name="cart" interface="sg1000_cart">
 			<dataarea name="rom" size="65535">
 				<rom name="black onyx, the (j) (sg-1000) [t+eng1.0_bruce tomlin,s.seehorn].bin" size="65535" crc="626e30cc" sha1="2e2baee16a34839770587d5fab890080bbcd9550" offset="000000" />
 			</dataarea>
 		</part>
-		<part name="cart3" interface="sg1000_cart">
+	</software>
+
+	<software name="blckonyxee" cloneof="blckonyx">
+		<description>The Black Onyx (English Translation v1.0, Enhanced)</description>
+		<year>????</year>
+		<publisher>&lt;hack (Bruce Tomlin - S.Seehorn)&gt;</publisher>
+
+		<part name="cart" interface="sg1000_cart">
+			<dataarea name="rom" size="65535">
+				<rom name="black onyx, the (j) (sg-1000) [t+eng1.0enhanced_bruce tomlin,s.seehorn].bin" size="65535" crc="3003d9bd" sha1="5c46089a417add0f00a3cebf01dc59f53465d47b" offset="000000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bombjackr" cloneof="bombjack">
+		<description>Bomb Jack (Russian Translation)</description>
+		<year>????</year>
+		<publisher>&lt;hack (Cool-Spot)&gt;</publisher>
+
+		<part name="cart" interface="sg1000_cart">
 			<dataarea name="rom" size="32768">
 				<rom name="bomb jack (ja) (sg-1000) [t+rus_cool-spot].bin" size="32768" crc="2c3a433f" sha1="164e7242a370b9b95bd8257731c111e619d9399d" offset="000000" />
 			</dataarea>
 		</part>
-		<part name="cart4" interface="sg1000_cart">
+	</software>
+
+	<software name="chackne" cloneof="chackn">
+		<description>Chack'n Pop (English Translation v1.02)</description>
+		<year>????</year>
+		<publisher>&lt;hack (Goldenband)&gt;</publisher>
+
+		<part name="cart" interface="sg1000_cart">
 			<dataarea name="rom" size="32768">
 				<rom name="chack'n pop (j) (sg-1000) [t+eng1.02_goldenband].bin" size="32768" crc="c106c923" sha1="c81b116de04468cd605078c78dbd17124556c8a5" offset="000000" />
 			</dataarea>
 		</part>
-		<part name="cart5" interface="sg1000_cart">
+	</software>
+
+	<software name="ninjaprie" cloneof="ninjapri">
+		<description>Ninja Princess (English Translation v1.0)</description>
+		<year>????</year>
+		<publisher>&lt;hack (Goldenband)&gt;</publisher>
+
+		<part name="cart" interface="sg1000_cart">
 			<dataarea name="rom" size="32768">
 				<rom name="ninja princess (ja) (sg-1000) [t+eng1.0_goldenband].bin" size="32768" crc="bdb6cf0e" sha1="0473f6ca89948f08f504c634e00cf2cf72f94fc6" offset="000000" />
 			</dataarea>
 		</part>
-		<part name="cart6" interface="sg1000_cart">
+	</software>
+
+	<software name="spaceinvp" cloneof="spaceinv">
+		<description>Space Invaders (Portuguese Translation)</description>
+		<year>????</year>
+		<publisher>&lt;hack (Wolfwood)&gt;</publisher>
+
+		<part name="cart" interface="sg1000_cart">
 			<dataarea name="rom" size="16384">
 				<rom name="space invaders (j) (sg-1000) [t+bra_wolfwood].bin" size="16384" crc="3dcee02d" sha1="415d80f79258e134f4f19c4f1ba1c4fc9c22f8c0" offset="000000" />
 			</dataarea>
 		</part>
-		<part name="cart7" interface="sg1000_cart">
+	</software>
+
+	<software name="zippyracr" cloneof="zippyrac">
+		<description>Zippy Race (Russian Translation)</description>
+		<year>????</year>
+		<publisher>&lt;hack (Cool-Spot)&gt;</publisher>
+
+		<part name="cart" interface="sg1000_cart">
 			<dataarea name="rom" size="32768">
 				<rom name="zippy race (j) (sg-1000) [t+rus_cool-spot].bin" size="32768" crc="10790ab4" sha1="f5154de9dd651c3c4556e9ad761ad2c8e790c85a" offset="000000" />
 			</dataarea>
