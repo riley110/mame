@@ -8856,7 +8856,7 @@
 		</part>
 	</software>
 
-	<software name="aladdinp1" cloneof="aladdin">
+	<software name="aladdinpt1" cloneof="aladdin">
 		<description>Disney's Aladdin (Portuguese Translation by Imp4444)</description>
 		<year>????</year>
 		<publisher>&lt;hack (Imp4444)&gt;</publisher>
@@ -8868,7 +8868,7 @@
 		</part>
 	</software>
 
-	<software name="aladdinp2" cloneof="aladdin">
+	<software name="aladdinpt2" cloneof="aladdin">
 		<description>Disney's Aladdin (Portuguese Translation by Monkey)</description>
 		<year>????</year>
 		<publisher>&lt;hack (Monkey)&gt;</publisher>
@@ -8967,7 +8967,7 @@
 	<software name="alexkiddp" cloneof="alexkidd">
 		<description>Alex Kidd in Miracle World (v1, Portuguese Translation)</description>
 		<year>????</year>
-		<publisher>&lt;hack (Terminus)&gt;</publisher>
+		<publisher>&lt;hack (CBT)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="131072">
@@ -9529,7 +9529,7 @@
 	</software>
 
 	<software name="highsce" cloneof="highsc">
-		<description>High School! Kimengumi (English Translation v1.00)</description>
+		<description>High School! Kimengumi (English Translation v1.00 by SMSPower)</description>
 		<year>????</year>
 		<publisher>&lt;hack (SMSPower)&gt;</publisher>
 
@@ -9841,81 +9841,98 @@
 		</part>
 	</software>
 
-<!--
-	<software name="">
-		<description></description>
+	<software name="pstarf" cloneof="pstar">
+		<description>Phantasy Star (v3?, French Translation)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (Floflo)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
-			<dataarea name="rom" size="524288">
-				<rom name="phantasy star (j) [t+eng091_z80 gaiden].bin" size="524288" crc="0861bb46" sha1="f93333661a5b5b915e971c95f0877a08bfba3c17" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description></description>
-		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
-
-		<part name="cart" interface="sms_cart">
-			<dataarea name="rom" size="524288">
-				<rom name="phantasy star (j) [t+eng1.02_sms power].bin" size="524288" crc="70e89681" sha1="82067c389b26f65f5a1106a9894a0b19dd3c54f9" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description></description>
-		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
-
-		<part name="cart" interface="sms_cart">
-			<dataarea name="rom" size="524288">
-				<rom name="phantasy star (ue) (v1.1) [t+fre1.0beta_floflo].bin" size="524288" crc="b2a58776" sha1="1abed95657d11f3561507ad875832a170af9a34a" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description></description>
-		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
-
-		<part name="cart" interface="sms_cart">
-			<dataarea name="rom" size="524288">
-				<rom name="phantasy star (ue) (v1.1) [t+rus_chief-net].bin" size="524288" crc="4db35fa8" sha1="ad9ccb28844b000c9b15802ca08e3c606c4e37fe" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description></description>
-		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
-
-		<part name="cart" interface="sms_cart">
+			<feature name="battery" value="yes" />
 			<dataarea name="rom" size="524288">
 				<rom name="phantasy star (ue) (v1.2) [t+fre_floflo].bin" size="524288" crc="56bd28d8" sha1="0ac126a48e3a43c0a2282d51320b9cdc415836b3" offset="0x0000" />
 			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description></description>
-		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
-
-		<part name="cart" interface="sms_cart">
-			<dataarea name="rom" size="524288">
-				<rom name="phantasy star (ue) (v1.2) [t+rus_chief-net].bin" size="524288" crc="a9abf006" sha1="84ff4cc112b68721844eb76fabd8b19f35ef79b9" offset="0x0000" />
+			<dataarea name="ram" size="8192">
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="pstarr" cloneof="pstar">
+		<description>Phantasy Star (v3?, Russian Translation)</description>
+		<year>????</year>
+		<publisher>&lt;hack (Chief-Net)&gt;</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<feature name="battery" value="yes" />
+			<dataarea name="rom" size="524288">
+				<rom name="phantasy star (ue) (v1.2) [t+rus_chief-net].bin" size="524288" crc="a9abf006" sha1="84ff4cc112b68721844eb76fabd8b19f35ef79b9" offset="0x0000" />
+			</dataarea>
+			<dataarea name="ram" size="8192">
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pstar1f" cloneof="pstar">
+		<description>Phantasy Star (v2?, French Translation v1.0 Beta)</description>
+		<year>????</year>
+		<publisher>&lt;hack (Floflo)&gt;</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<feature name="battery" value="yes" />
+			<dataarea name="rom" size="524288">
+				<rom name="phantasy star (ue) (v1.1) [t+fre1.0beta_floflo].bin" size="524288" crc="b2a58776" sha1="1abed95657d11f3561507ad875832a170af9a34a" offset="0x0000" />
+			</dataarea>
+			<dataarea name="ram" size="8192">
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pstar1r" cloneof="pstar">
+		<description>Phantasy Star (v2?, Russian Translation)</description>
+		<year>????</year>
+		<publisher>&lt;hack (Chief-Net)&gt;</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<feature name="battery" value="yes" />
+			<dataarea name="rom" size="524288">
+				<rom name="phantasy star (ue) (v1.1) [t+rus_chief-net].bin" size="524288" crc="4db35fa8" sha1="ad9ccb28844b000c9b15802ca08e3c606c4e37fe" offset="0x0000" />
+			</dataarea>
+			<dataarea name="ram" size="8192">
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pstarje1" cloneof="pstar">
+		<description>Phantasy Star (Jpn, English Translation v098 by Z80 Gaiden)</description>
+		<year>????</year>
+		<publisher>&lt;hack (Z80 Gaiden)&gt;</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<feature name="battery" value="yes" />
+			<dataarea name="rom" size="524288">
+				<rom name="phantasy star (j) [t+eng091_z80 gaiden].bin" size="524288" crc="0861bb46" sha1="f93333661a5b5b915e971c95f0877a08bfba3c17" offset="0x0000" />
+			</dataarea>
+			<dataarea name="ram" size="8192">
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pstarje2" cloneof="pstar">
+		<description>Phantasy Star (Jpn, English Translation v1.02 by SMS Power)</description>
+		<year>????</year>
+		<publisher>&lt;hack (SMS Power)&gt;</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<feature name="battery" value="yes" />
+			<dataarea name="rom" size="524288">
+				<rom name="phantasy star (j) [t+eng1.02_sms power].bin" size="524288" crc="70e89681" sha1="82067c389b26f65f5a1106a9894a0b19dd3c54f9" offset="0x0000" />
+			</dataarea>
+			<dataarea name="ram" size="8192">
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="psychicwf" cloneof="psychicw">
+		<description>Psychic World (French Translation)</description>
 		<year>????</year>
 		<publisher>&lt;hack&gt;</publisher>
 
@@ -9926,10 +9943,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="psychicwg" cloneof="psychicw">
+		<description>Psychic World (German Translation v1.00)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (Star-trans)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="262144">
@@ -9938,10 +9955,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="psychicwi" cloneof="psychicw">
+		<description>Psychic World (Italian Translation v1.00)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (darq)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="262144">
@@ -9950,10 +9967,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="psychofp" cloneof="psychof">
+		<description>Psycho Fox (Portuguese Translation)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (Tamanduon)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="262144">
@@ -9962,10 +9979,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="psychoff" cloneof="psychof">
+		<description>Psycho Fox (French Translation)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (Terminus)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="262144">
@@ -9974,10 +9991,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="rtypept" cloneof="rtype">
+		<description>R-Type (Portuguese Translation)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (Emuboarding)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="524288">
@@ -9986,10 +10003,11 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<!-- Could this be a translated prototype ROM? -->
+	<software name="rtypepta" cloneof="rtype">
+		<description>R-Type (Portuguese Translation, Alt)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (Emuboarding)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="524288">
@@ -9998,10 +10016,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="rcgppt" cloneof="rcgp">
+		<description>R.C. Grand Prix (Portuguese Translation)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (TMT)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="262144">
@@ -10010,10 +10028,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="renegadep" cloneof="renegade">
+		<description>Renegade (Portuguese Translation)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (Emuboarding)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="262144">
@@ -10022,10 +10040,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="renegadef" cloneof="renegade">
+		<description>Renegade (French Translation)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (Terminus)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="262144">
@@ -10034,10 +10052,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="segachssp" cloneof="segachss">
+		<description>Sega Chess (Portuguese Translation)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (Altieres)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="262144">
@@ -10046,8 +10064,8 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="segachsss" cloneof="segachss">
+		<description>Sega Chess (Spanish Translation)</description>
 		<year>????</year>
 		<publisher>&lt;hack&gt;</publisher>
 
@@ -10058,10 +10076,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="shinobip">
+		<description>Shinobi (v1, Portuguese Translation)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (URBANO SLV)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="262656">
@@ -10070,10 +10088,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="sonicf" cloneof="sonic">
+		<description>Sonic The Hedgehog (French Translation)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (Terminus)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="262144">
@@ -10082,8 +10100,8 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="spellcstf" cloneof="spellcst">
+		<description>SpellCaster (French Translation)</description>
 		<year>????</year>
 		<publisher>&lt;hack&gt;</publisher>
 
@@ -10094,8 +10112,8 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="spellcstfa" cloneof="spellcst">
+		<description>SpellCaster (French Translation, Alt)</description>
 		<year>????</year>
 		<publisher>&lt;hack&gt;</publisher>
 
@@ -10106,10 +10124,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="sorf1" cloneof="sor">
+		<description>Streets of Rage (French Translation v1.0 by Lord Oddeye)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (Lord Oddeye)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="524288">
@@ -10118,8 +10136,8 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="sorf2" cloneof="sor">
+		<description>Streets of Rage (Unknown French Translation v1.0)</description>
 		<year>????</year>
 		<publisher>&lt;hack&gt;</publisher>
 
@@ -10130,10 +10148,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="sor2f" cloneof="sor2">
+		<description>Streets of Rage II (French Translation v1.0)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (Lord Oddeye)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="524288">
@@ -10142,10 +10160,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="striderp1" cloneof="strider">
+		<description>Strider (Portuguese Translation by CBT)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (CBT)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="524288">
@@ -10154,10 +10172,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="striderp2" cloneof="strider">
+		<description>Strider (Portuguese Translation by Emunow)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (Emunow)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="524288">
@@ -10166,10 +10184,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="striderp2a" cloneof="strider">
+		<description>Strider (Portuguese Translation by Emunow, Alt)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (Emunow)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="524288">
@@ -10178,10 +10196,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="sukebane" cloneof="sukeban">
+		<description>Sukeban Deka II - Shoujo Tekkamen Densetsu (English Translation)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (Enigmapoeia - S.Seehorn)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="262144">
@@ -10190,10 +10208,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="supermanp" cloneof="superman">
+		<description>Superman - The Man of Steel (Portuguese Translation)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (guto)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="262144">
@@ -10202,10 +10220,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="tazmaniapp" cloneof="tazmania">
+		<description>Taz-Mania (Prototype, Portuguese Translation)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (EmuBrazil)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="262144">
@@ -10214,10 +10232,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="tazmaniapf" cloneof="tazmania">
+		<description>Taz-Mania (Prototype, French Translation v1.0)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (Langoustraduction)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="262144">
@@ -10226,10 +10244,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="timesoldp1" cloneof="timesold">
+		<description>Time Soldiers (Portuguese Translation by CBT)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (CBT)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="262144">
@@ -10238,10 +10256,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="timesoldp2" cloneof="timesold">
+		<description>Time Soldiers (Portuguese Translation by Emunow)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (Emunow)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="262144">
@@ -10250,8 +10268,8 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="ultima4g" cloneof="ultima4">
+		<description>Ultima IV - Quest of the Avatar (German Translation)</description>
 		<year>????</year>
 		<publisher>&lt;hack&gt;</publisher>
 
@@ -10262,10 +10280,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="vampirept" cloneof="mastdark">
+		<description>Vampire (Prototype, Portuguese Translation)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (Renix)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="262144">
@@ -10274,10 +10292,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="vampiref" cloneof="mastdark">
+		<description>Vampire (French Translation v1.00)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (Terminus)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="262144">
@@ -10286,10 +10304,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="vigilantf" cloneof="vigilant">
+		<description>Vigilante (French Translation)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (Terminus)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="262144">
@@ -10298,8 +10316,8 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="wboy3f" cloneof="wboy3">
+		<description>Wonder Boy III - The Dragon's Trap (French Translation)</description>
 		<year>????</year>
 		<publisher>&lt;hack&gt;</publisher>
 
@@ -10310,10 +10328,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="wboy3s" cloneof="wboy3">
+		<description>Wonder Boy III - The Dragon's Trap (Swedish Translation)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (Metalhead)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="262144">
@@ -10322,10 +10340,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="wboymlndf" cloneof="wboymlnd">
+		<description>Wonder Boy in Monster Land (French Translation)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (Crispysix)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="262144">
@@ -10334,10 +10352,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="wboymlnds" cloneof="wboymlnd">
+		<description>Wonder Boy in Monster Land (Spanish Translation)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (Fran)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="262144">
@@ -10346,10 +10364,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="wboymwldf" cloneof="wboymwld">
+		<description>Wonder Boy in Monster World (French Translation</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (Microtrads)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="524288">
@@ -10358,10 +10376,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="wcup90b" cloneof="wcup90">
+		<description>World Cup Italia '90 (Bra, Pirate?)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;pirate?&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="131072">
@@ -10370,10 +10388,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="ysf" cloneof="ys">
+		<description>Ys - The Vanished Omens (French Translation)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (Crispysix)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="262144">
@@ -10382,10 +10400,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="zillionf" cloneof="zillion">
+		<description>Zillion (v2, French Translation v1.0)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (Terminus)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="131072">
@@ -10394,10 +10412,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="zillionap1" cloneof="zillion">
+		<description>Zillion (v1, Portuguese Translation by CBT)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (CBT)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="131072">
@@ -10406,10 +10424,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="zillionap2" cloneof="zillion">
+		<description>Zillion (v1, Portuguese Translation by POBRE)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (POBRE)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="131072">
@@ -10418,10 +10436,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description></description>
+	<software name="zillionaf" cloneof="zillion">
+		<description>Zillion (v1, French Translation)</description>
 		<year>????</year>
-		<publisher>&lt;hack&gt;</publisher>
+		<publisher>&lt;hack (Terminus)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="131072">
@@ -10429,53 +10447,108 @@
 			</dataarea>
 		</part>
 	</software>
--->
 
-	<software name="good_otra">
-		<description>GoodSMS - OlderTranslations</description>
+	<software name="aladdinp1o" cloneof="aladdin">
+		<description>Disney's Aladdin (Portuguese Translation by Imp4444, 70%)</description>
 		<year>????</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<publisher>&lt;hack (Imp4444)&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="524288">
 				<rom name="aladdin (ue) [t-bra70%_lmp4444].bin" size="524288" crc="5cb24c41" sha1="e9b86aa951ce003eb71c657966369f44caee28a1" offset="0x0000" />
 			</dataarea>
 		</part>
+	</software>
+
+	<software name="alexkiddpo1" cloneof="alexkidd">
+		<description>Alex Kidd in Miracle World (v1, Portuguese Translation, Older 1)</description>
+		<year>????</year>
+		<publisher>&lt;hack (CBT)&gt;</publisher>
+
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="131072">
 				<rom name="alex kidd in miracle world (ue) (v1.1) [t-bra_cbt].bin" size="131072" crc="d7d01766" sha1="63665970a6b6f12eeafaf082c35070d3e62ba6e3" offset="0x0000" />
 			</dataarea>
 		</part>
+	</software>
+
+	<software name="alexkiddpo2" cloneof="alexkidd">
+		<description>Alex Kidd in Miracle World (v1, Portuguese Translation, Older 2)</description>
+		<year>????</year>
+		<publisher>&lt;hack (CBT)&gt;</publisher>
+
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="131072">
 				<rom name="alex kidd in miracle world (ueb) (v1.1) [t-bra_cbt][a1].bin" size="131072" crc="61273f35" sha1="a0ace9411b04baf5ed77299262cf4d4c462559a9" offset="0x0000" />
 			</dataarea>
 		</part>
+	</software>
+
+	<software name="hangonpo" cloneof="hangon">
+		<description>Hang-On (Portuguese Translation, Older)</description>
+		<year>????</year>
+		<publisher>&lt;hack&gt;</publisher>
+
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="32768">
 				<rom name="hang-on (eb) [t-bra].bin" size="32768" crc="cf1d7990" sha1="238d71f12bdfed679875c472f0e5663e651e9d5d" offset="0x0000" />
 			</dataarea>
 		</part>
+	</software>
+
+	<software name="highsceo" cloneof="highsc">
+		<description>High School! Kimengumi (Unknown English Translation Beta)</description>
+		<year>????</year>
+		<publisher>&lt;hack&gt;</publisher>
+
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="131072">
 				<rom name="high school! kimengumi (j) [t-engbeta].bin" size="131072" crc="6f30434b" sha1="d62ae48b6f236f1c2296210130c4d0673f687261" offset="0x0000" />
 			</dataarea>
 		</part>
+	</software>
+
+	<software name="kenseidpo1" cloneof="kenseid">
+		<description>Kenseiden (Polish Translation v1.0 Fix)</description>
+		<year>????</year>
+		<publisher>&lt;hack (devilfox)&gt;</publisher>
+
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="262144">
 				<rom name="kenseiden (ueb) [t-pol1.0fix_devilfox].bin" size="262144" crc="616db05d" sha1="c03677e7dda5a7f495c683df2878fce535a611a6" offset="0x0000" />
 			</dataarea>
 		</part>
+	</software>
+
+	<software name="ngaidenfo" cloneof="ngaiden">
+		<description>Ninja Gaiden (French Translation, Older)</description>
+		<year>????</year>
+		<publisher>&lt;hack (Terminus)&gt;</publisher>
+
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="262144">
 				<rom name="ninja gaiden (prototype) [t-fre_terminus].bin" size="262144" crc="41e5b485" sha1="9d0772c95c5fafaf21c1e026dedcd40cb7954491" offset="0x0000" />
 			</dataarea>
 		</part>
+	</software>
+
+	<software name="pstarje1o" cloneof="pstar">
+		<description>Phantasy Star (Jpn, English Translation v090 by Z80 Gaiden)</description>
+		<year>????</year>
+		<publisher>&lt;hack (Z80 Gaiden)&gt;</publisher>
+
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="524288">
 				<rom name="phantasy star (j) [t-eng090_z80 gaiden].bin" size="524288" crc="1cdd9244" sha1="71bcce9670f2a2b3f28f00e7e00530a16de39c4a" offset="0x0000" />
 			</dataarea>
 		</part>
+	</software>
+
+	<software name="sorf1o" cloneof="sor">
+		<description>Streets of Rage (Unknown French Translation, Older)</description>
+		<year>????</year>
+		<publisher>&lt;hack&gt;</publisher>
+
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="524288">
 				<rom name="streets of rage (eb) [t-fre].bin" size="524288" crc="ecc18147" sha1="fd5c661c8b92812af3d161ed1f43e308c85d843a" offset="0x0000" />
@@ -12919,8 +12992,8 @@
 		</part>
 	</software>
 
-	<software name="testold">
-		<description>Test Old</description>
+	<software name="testo" cloneof="test">
+		<description>Test (Old)</description>
 		<year>????</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
@@ -13507,26 +13580,47 @@
 		</part>
 	</software>
 
-	<software name="good_pre">
-		<description>GoodSMS - PreRelease</description>
-		<year>????</year>
-		<publisher>&lt;unknown&gt;</publisher>
+	<software name="aladdinpo" cloneof="aladdin">
+		<description>Disney's Aladdin (Prototype Out - Jan 23, 1994)</description>
+		<year>1994</year>
+		<publisher>Sega</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="524288">
 				<rom name="aladdin (prototype out - jan 23, 1994).bin" size="524288" crc="d06e0071" sha1="d88688b650cdd1e909ae52123c239279c2b8d854" offset="0x0000" />
 			</dataarea>
 		</part>
+	</software>
+
+	<software name="aladdinpw" cloneof="aladdin">
+		<description>Disney's Aladdin (Prototype With - Jan 23, 1994)</description>
+		<year>1994</year>
+		<publisher>Sega</publisher>
+
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="524288">
 				<rom name="aladdin (prototype with - jan 23, 1994).bin" size="524288" crc="9c3d96b9" sha1="9bfad937222b06cb18ecef5d24a4a735fde72442" offset="0x0000" />
 			</dataarea>
 		</part>
+	</software>
+
+	<software name="dinobashh" cloneof="dinobash">
+		<description>Dinobasher Starring Bignose the Caveman (Prototype, Sega Mapper)</description>
+		<year>19??</year>
+		<publisher>&lt;hack&gt;</publisher>
+
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="262144">
 				<rom name="dinobasher starring bignose the caveman (e) (prototype) [f1] (sega mapper).bin" size="262144" crc="422aa3f8" sha1="553abd7b56cf86c29f68a38222f76080994a8bfa" offset="0x0000" />
 			</dataarea>
 		</part>
+	</software>
+
+	<software name="sn_lwep3a" cloneof="sn_lwep3">
+		<description>Lethal Weapon 3 (Music prototype, Alt)</description>
+		<year>1992</year>
+		<publisher>Probe</publisher>
+
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="32768">
 				<rom name="lethal weapon 3 music (prototype) [a1].bin" size="32768" crc="7edf5065" sha1="62c962fe91a8195ae7110091585ee231a2cc4ac3" offset="0x0000" />
@@ -13534,36 +13628,38 @@
 		</part>
 	</software>
 
-	<software name="good_train">
-		<description>GoodSMS - TrainedROMS</description>
+	<software name="mickmackt" cloneof="mickmack">
+		<description>Mick &amp; Mack as the Global Gladiators (Trained)</description>
 		<year>????</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<publisher>&lt;hack&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="262144">
 				<rom name="mick &amp; mack as the global gladiators (eb) [t1].bin" size="262144" crc="619fde2c" sha1="129ea57e49d27ab27683753af445225e55e43d53" offset="0x0000" />
 			</dataarea>
 		</part>
+	</software>
+
+	<software name="paperboyt" cloneof="paperboy">
+		<description>Paperboy (v0, Trained)</description>
+		<year>????</year>
+		<publisher>&lt;hack&gt;</publisher>
+
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="131072">
 				<rom name="paperboy (e) (v1.0) [t1].bin" size="131072" crc="c0e1ebc4" sha1="3ed935f886bc74dcdc9d33effbb10ef7c113df84" offset="0x0000" />
 			</dataarea>
 		</part>
+	</software>
+
+	<software name="paperboyut" cloneof="paperboy">
+		<description>Paperboy (v1, Trained)</description>
+		<year>????</year>
+		<publisher>&lt;hack&gt;</publisher>
+
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="131072">
 				<rom name="paperboy (ub) (v1.1) [t1].bin" size="131072" crc="36f04d14" sha1="0217f7d1e3164830adb9e8675430efed969287d1" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="good_usa">
-		<description>GoodSMS - USA</description>
-		<year>????</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="cart" interface="sms_cart">
-			<dataarea name="rom" size="4194304">
-				<rom name="coleco 20-in-1 sms handheld (u).bin" size="4194304" crc="79482586" sha1="fb84592fb985ae4e708a3a8ccc9d225771f0f61c" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
