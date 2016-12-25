@@ -11252,18 +11252,6 @@
 		</part>
 	</software>
 
-	<software name="hellowld">
-		<description>Hello, World Test 1</description>
-		<year>????</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="cart" interface="sms_cart">
-			<dataarea name="rom" size="3710">
-				<rom name="hello, world test 1 (pd).bin" size="3710" crc="10ca9dd3" sha1="40becc56873eaceb816712a5882df32cfecff8df" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="intsprite">
 		<description>Interactive Sprite Test</description>
 		<year>????</year>
@@ -11470,7 +11458,7 @@
 
 	<software name="lostraid">
 		<description>Lost Raider (v1.01)</description>
-		<year>????</year>
+		<year>2012</year>
 		<publisher>vingazole - ichigobankai</publisher>
 
 		<part name="cart" interface="sms_cart">
@@ -11482,7 +11470,7 @@
 
 	<software name="lostraid100" cloneof="lostraid">
 		<description>Lost Raider (v1.00)</description>
-		<year>????</year>
+		<year>2012</year>
 		<publisher>vingazole - ichigobankai</publisher>
 
 		<part name="cart" interface="sms_cart">
@@ -12993,13 +12981,25 @@
 	</software>
 
 	<software name="testo" cloneof="test">
-		<description>Test (Old)</description>
+		<description>Test (Older)</description>
 		<year>????</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="cart" interface="sms_cart">
 			<dataarea name="rom" size="3701">
 				<rom name="test old (pd).bin" size="3701" crc="8f6efe98" sha1="486a86d9fe7e7d666512b69717222d320e6952ba" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="testoa" cloneof="test">
+		<description>Test (Older, Alt)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="3710">
+				<rom name="hello, world test 1 (pd).bin" size="3710" crc="10ca9dd3" sha1="40becc56873eaceb816712a5882df32cfecff8df" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
