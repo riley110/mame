@@ -172,14 +172,6 @@ public:
 	uint8_t jumpshot_decrypt(int addr, uint8_t e);
 	void jumpshot_decode();
 
-	// acitya.c
-	void acitya_decrypt_rom_8();
-	void acitya_decrypt_rom_9();
-	void acitya_decrypt_rom_A();
-	void acitya_decrypt_rom_B();
-	DECLARE_READ8_MEMBER(acitya_decrypt_rom);
-	DECLARE_MACHINE_START(acitya);
-	DECLARE_MACHINE_RESET(acitya);
 // HBMAME extras
 	DECLARE_VIDEO_START(pacmanx);
 	DECLARE_VIDEO_START(multipac);

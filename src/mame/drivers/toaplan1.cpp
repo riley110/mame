@@ -3148,5 +3148,3 @@ GAME( 1990, outzonecv,  outzone,  outzonecv,outzone,   toaplan1_state, toaplan1,
 GAME( 1991, vimana,     0,        vimana,   vimana,    toaplan1_state, toaplan1, ROT270, "Toaplan",                    "Vimana (World, set 1)", 0 )
 GAME( 1991, vimanan,    vimana,   vimana,   vimanan,   toaplan1_state, toaplan1, ROT270, "Toaplan",                    "Vimana (World, set 2)", 0 )
 GAME( 1991, vimanaj,    vimana,   vimana,   vimanaj,   toaplan1_state, toaplan1, ROT270, "Toaplan",                    "Vimana (Japan)", 0 )
-
-#include "toaplan1_hb.hxx"
