@@ -81,6 +81,7 @@ X - change banks
 #include "sound/beep.h"
 #include "machine/wd_fdc.h"
 #include "machine/clock.h"
+#include "softlist.h"
 
 
 class bigbord2_state : public driver_device
@@ -651,6 +652,8 @@ static MACHINE_CONFIG_START( bigbord2, bigbord2_state )
 	MCFG_SPEAKER_STANDARD_MONO("mono")
 	MCFG_SOUND_ADD("beeper", BEEP, 950) // actual frequency is unknown
 	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.50)
+
+	MCFG_SOFTWARE_LIST_ADD("flop_list", "bigbord2")
 MACHINE_CONFIG_END
 
 
