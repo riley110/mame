@@ -26,15 +26,16 @@ Titles, publishers and release dates taken from:
 	</software>
 
 	<software name="198x">
-		<description>198x</description>
-		<year>1983?</year>
-		<publisher>Kiya Overseas Industry</publisher>
+		<description>198X-nen</description>
+		<year>1983</year>
+		<publisher>CSG / 木屋通商 (Kiya Tsusho)</publisher>
+		<info name="alt_title" value="198X年"/>
 		<info name="usage" value="In BASIC, type LOAD and then RUN"/>
 		<sharedfeat name="requirement" value="x1_flop:hubasc1"/>
 
 		<part name="cass" interface="x1_cass">
 			<dataarea name="cass" size="158720">
-				<rom name="198x (1983)(kiya overseas industry)[basic, load+run].tap" size="158720" crc="64e320c4" sha1="d871fb104e4778e5fc9ecd8c6f32d21b0cc4c620" offset="0" />
+				<rom name="198x.tap" size="158720" crc="64e320c4" sha1="d871fb104e4778e5fc9ecd8c6f32d21b0cc4c620" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -80,27 +81,45 @@ Titles, publishers and release dates taken from:
 	</software>
 
 	<software name="3dgolf">
-		<description>3D Golf</description>
-		<year>198?</year>
+		<description>3D Golf Simulation</description>
+		<year>1983</year>
 		<publisher>T&amp;E Soft</publisher>
+		<info name="release" value="198302xx"/>
+		<info name="alt_title" value="3Dゴルフシミュレーション"/>
+		<info name="usage" value="In BASIC, type LOAD and then RUN"/>
+		<sharedfeat name="requirement" value="x1_flop:hubasc1"/>
 
 		<part name="cass" interface="x1_cass">
 			<dataarea name="cass" size="635600">
-				<rom name="3d golf (198x)(t&amp;e soft).tap" size="635600" crc="df54e77a" sha1="79dfe28548577d289a56e0966db55a18a6139634" offset="0" />
+				<rom name="t_e_3dgolf.tap" size="635600" crc="df54e77a" sha1="79dfe28548577d289a56e0966db55a18a6139634" offset="0" />
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="alice">
-		<description>Alice in Wonderland</description>
-		<year>198?</year>
+		<description>Fushigi no Kuni no Alice</description>
+		<year>1984</year>
 		<publisher>マイクロキャビン (Micro Cabin)</publisher>
+		<info name="alt_title" value="不思議の国のアリス"/>
 		<info name="usage" value="In BASIC, type LOAD and then RUN"/>
 		<sharedfeat name="requirement" value="x1_flop:hubasc1"/>
 
 		<part name="cass" interface="x1_cass">
 			<dataarea name="cass" size="186522">
-				<rom name="alice in wonderland (198x)(micro cabin)[basic, load+run].tap" size="186522" crc="9ea72137" sha1="9bf28ea5c6c37c5501f1ba637ad40fdfbe5240cc" offset="0" />
+				<rom name="alice.tap" size="186522" crc="9ea72137" sha1="9bf28ea5c6c37c5501f1ba637ad40fdfbe5240cc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ankoku">
+		<description>Ankokujou</description>
+		<year>1984</year>
+		<publisher>エニックス (Enix)</publisher>
+		<info name="alt_title" value="暗黒城"/>
+
+		<part name="cass" interface="x1_cass">
+			<dataarea name="side1" size="897591">
+				<rom name="ankoku.tap" size="897591" crc="770d94c5" sha1="e31a3a0b5df860c7d35355d796cd7a14edb20810" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -490,17 +509,18 @@ Titles, publishers and release dates taken from:
 		</part>
 	</software>
 
-	<software name="danchits">
-		<description>Danchi Tsuma no Yuwaku</description>
-		<year>1983?</year>
+	<software name="danchi">
+		<description>Danchizuma no Yuuwaku</description>
+		<year>1983</year>
 		<publisher>光栄 (Koei)</publisher>
+		<info name="release" value="198306xx"/>
 		<info name="alt_title" value="団地妻の誘惑"/>
 		<info name="usage" value="In BASIC, type LOAD and then RUN"/>
 		<sharedfeat name="requirement" value="x1_flop:hubasc1"/>
 
 		<part name="cass" interface="x1_cass">
 			<dataarea name="cass" size="240004">
-				<rom name="zzz-unk-danchi (198x)(koei).tap" size="240004" crc="ccd863dd" sha1="8952368faf7e592c05d72314c1949496dbf51dd7" offset="0" />
+				<rom name="danchi.tap" size="240004" crc="ccd863dd" sha1="8952368faf7e592c05d72314c1949496dbf51dd7" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1266,14 +1286,15 @@ Titles, publishers and release dates taken from:
 		</part>
 	</software>
 
-	<software name="mahjong">
-		<description>Mahjong</description>
-		<year>1983?</year>
-		<publisher>Unison World Inc.</publisher>
+	<software name="intellij">
+		<description>Intelli Janshi - Yonin Mahjong</description>
+		<year>1983</year>
+		<publisher>SilverBall</publisher>
+		<info name="alt_title" value="インテリ雀士 四人麻雀"/>
 
 		<part name="cass" interface="x1_cass">
 			<dataarea name="cass" size="209821">
-				<rom name="mahjong (1983)(unison world inc.).tap" size="209821" crc="3efdbb8d" sha1="9d1fe0801ab680dc443e596e0f39a2c44b171777" offset="0" />
+				<rom name="i_janshi.tap" size="209821" crc="3efdbb8d" sha1="9d1fe0801ab680dc443e596e0f39a2c44b171777" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1669,19 +1690,6 @@ Titles, publishers and release dates taken from:
 		<part name="cass" interface="x1_cass">
 			<dataarea name="side1" size="120004">
 				<rom name="rowdy ball.tap" size="120004" crc="0f1d916a" sha1="51002b8708e7b477577046f3b7c7f2d1b389e98e" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="dragnang">
-		<description>Rukteu Dark Castle - Dragon Angel's Miracle Voyage (Vol. 1)</description>
-		<year>1984?</year>
-		<publisher>エニックス (Enix)</publisher>
-		<info name="alt_title" value="暗黒城 -創造神ギャリアンの復活-"/>
-
-		<part name="cass" interface="x1_cass">
-			<dataarea name="cass" size="897591">
-				<rom name="rukteu dark castle (198x)(enix).tap" size="897591" crc="770d94c5" sha1="e31a3a0b5df860c7d35355d796cd7a14edb20810" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2097,15 +2105,15 @@ Titles, publishers and release dates taken from:
 		</part>
 	</software>
 
-	<software name="ultramon">
-		<description>Ultra Monogatari</description>
-		<year>1986?</year>
+	<software name="ultstory">
+		<description>Ultra Story</description>
+		<year>1985</year>
 		<publisher>ウィンキーソフト (Winky Soft)</publisher>
 		<info name="alt_title" value="ウルトラ物語"/>
 
 		<part name="cass" interface="x1_cass">
 			<dataarea name="cass" size="428309">
-				<rom name="ultra monogatari (198x)(winky soft).tap" size="428309" crc="ebe8c22f" sha1="953736c2d66178db781b2f203b4ba70d6acde645" offset="0" />
+				<rom name="ultra.tap" size="428309" crc="ebe8c22f" sha1="953736c2d66178db781b2f203b4ba70d6acde645" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2200,6 +2208,29 @@ Titles, publishers and release dates taken from:
 		<part name="cass" interface="x1_cass">
 			<dataarea name="side1" size="480004">
 				<rom name="worry.tap" size="480004" crc="219cc4fa" sha1="0fded310354f1f87feddd2468686afd327c68d9e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="xanadu">
+		<description>Xanadu</description>
+		<year>1985</year>
+		<publisher>日本ファルコム (Nihon Falcom)</publisher>
+		<info name="release" value="198511xx"/>
+		<info name="alt_title" value="ザナドゥ"/>
+		<part name="cass1" interface="x1_cass">
+			<dataarea name="side1" size="1046412">
+				<rom name="xana1ta.tap" size="1046412" crc="803752df" sha1="d593a66ff63af01abfd92d9626bd1876da45246b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="x1_cass">
+			<dataarea name="side2" size="1229150">
+				<rom name="xana1tb.tap" size="1229150" crc="da6031de" sha1="1c8b8842c0277c2904842fe1162b2f8f18b49b67" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass3" interface="x1_cass">
+			<dataarea name="side3" size="1443742">
+				<rom name="xana1tc.tap" size="1443742" crc="9aa3a4c3" sha1="b89d16ec5be0f4915f639640083eac2fd59fbe2c" offset="0" />
 			</dataarea>
 		</part>
 	</software>
