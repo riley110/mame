@@ -296,6 +296,7 @@ VIDEOS["HD44780"] = true
 VIDEOS["HD61830"] = true
 --VIDEOS+= HD63484"] = true
 VIDEOS["HD66421"] = true
+VIDEOS["HLCD0515"] = true
 VIDEOS["HUC6202"] = true
 VIDEOS["HUC6260"] = true
 VIDEOS["HUC6261"] = true
@@ -607,6 +608,7 @@ BUSES["ADAMNET"] = true
 BUSES["APF"] = true
 BUSES["APRICOT_EXPANSION"] = true
 BUSES["APRICOT_KEYBOARD"] = true
+BUSES["AMIGA_KEYBOARD"] = true
 BUSES["ARCADIA"] = true
 BUSES["ASTROCADE"] = true
 BUSES["BBC_FDC"] = true
@@ -1327,8 +1329,6 @@ createMESSProjects(_target, _subtarget, "amiga")
 files {
 	MAME_DIR .. "src/mame/drivers/amiga.cpp",
 	MAME_DIR .. "src/mame/includes/amiga.h",
-	MAME_DIR .. "src/mame/machine/amigakbd.cpp",
-	MAME_DIR .. "src/mame/machine/amigakbd.h",
 }
 
 createMESSProjects(_target, _subtarget, "amstrad")
@@ -2071,6 +2071,22 @@ createMESSProjects(_target, _subtarget, "imp")
 files {
 	MAME_DIR .. "src/mame/drivers/tim011.cpp",
 	MAME_DIR .. "src/mame/drivers/tim100.cpp",
+}
+
+createMESSProjects(_target, _subtarget, "interpro")
+files {
+	MAME_DIR .. "src/mame/drivers/interpro.cpp",
+	MAME_DIR .. "src/mame/includes/interpro.h",
+	MAME_DIR .. "src/mame/machine/cammu.h",
+	MAME_DIR .. "src/mame/machine/cammu.cpp",
+	MAME_DIR .. "src/mame/machine/interpro_ioga.h",
+	MAME_DIR .. "src/mame/machine/interpro_ioga.cpp",
+	MAME_DIR .. "src/mame/machine/interpro_ioga.h",
+	MAME_DIR .. "src/mame/machine/interpro_ioga.cpp",
+	MAME_DIR .. "src/mame/machine/interpro_mcga.h",
+	MAME_DIR .. "src/mame/machine/interpro_mcga.cpp",
+	MAME_DIR .. "src/mame/machine/interpro_sga.h",
+	MAME_DIR .. "src/mame/machine/interpro_sga.cpp",
 }
 
 createMESSProjects(_target, _subtarget, "interton")
@@ -3422,6 +3438,9 @@ files {
 	MAME_DIR .. "src/mame/includes/xor100.h",
 	MAME_DIR .. "src/mame/drivers/xavix.cpp",
 	MAME_DIR .. "src/mame/drivers/zorba.cpp",
+	MAME_DIR .. "src/mame/includes/zorba.h",
+	MAME_DIR .. "src/mame/machine/zorbakbd.cpp",
+	MAME_DIR .. "src/mame/machine/zorbakbd.h",
 }
 
 end

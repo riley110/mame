@@ -612,7 +612,6 @@ if (CPUS["HCD62121"]~=null) then
 	files {
 		MAME_DIR .. "src/devices/cpu/hcd62121/hcd62121.cpp",
 		MAME_DIR .. "src/devices/cpu/hcd62121/hcd62121.h",
-		MAME_DIR .. "src/devices/cpu/hcd62121/hcd62121_ops.h",
 	}
 end
 
@@ -2415,4 +2414,20 @@ end
 
 if (CPUS["MB86901"]~=null or _OPTIONS["with-tools"]) then
 	table.insert(disasm_files , MAME_DIR .. "src/devices/cpu/sparc/sparcdasm.cpp")
+end
+
+--------------------------------------------------
+-- Intergraph CLIPPER (C100/C300/C400) series
+--@src/devices/cpu/clipper/clipper.h,CPUS["CLIPPER"] = true
+--------------------------------------------------
+
+if (CPUS["CLIPPER"]~=null) then
+	files {
+		MAME_DIR .. "src/devices/cpu/clipper/clipper.cpp",
+		MAME_DIR .. "src/devices/cpu/clipper/clipper.h",
+	}
+end
+
+if (CPUS["CLIPPER"]~=null or _OPTIONS["with-tools"]) then
+	table.insert(disasm_files , MAME_DIR .. "src/devices/cpu/clipper/clipperd.cpp")
 end
