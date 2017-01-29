@@ -76,6 +76,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="alpinskia" cloneof="alpinski" supported="partial">
+		<description>Alpine Skiing (Alt)</description>
+		<year>19??</year>
+		<publisher>York 10 Computerware</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="york_10_computerware_alpine_skiing_t.cpf" size="7680" crc="6918220c" sha1="3a194b347cd6db8bd44948bd6d8d9531afb92153" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="apfman">
 		<description>APF-MAN</description>
 		<year>1982</year>
@@ -84,6 +96,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="1075884">
 				<rom name="carl_echols_apf-man.wav" size="1075884" crc="748df00d" sha1="01c70f9090f1d32a5b2493cfb70ba58574b92896" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="apfmana" cloneof="apfman">
+		<description>APF-MAN (Alt)</description>
+		<year>1982</year>
+		<publisher>Carl A. Echols</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="carl_echols_apf-man_t.cpf" size="7680" crc="4697ff19" sha1="bedc931c0ce89a0e4cce180dd2fc73e740c132e8" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -114,6 +138,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="asteroida" cloneof="asteroid" supported="partial">
+		<description>Asteroids (Alt)</description>
+		<year>19??</year>
+		<publisher>York 10 Computerware</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="york_10_computerware_asteroids_t.cpf" size="7680" crc="940a8af8" sha1="c2cc97377ab01fe23affdfa6874d3a52f9837350" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="astpatrl">
 		<description>Astroid Patrol</description>
 		<year>198?</year>
@@ -122,6 +158,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="906668">
 				<rom name="rief_games_astroid_patrol.wav" size="906668" crc="426ee685" sha1="5d6ee999b1868bb23686fb4a5fb6503e107a3bd1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="astpatrla" cloneof="astpatrl">
+		<description>Astroid Patrol (Alt)</description>
+		<year>198?</year>
+		<publisher>Rief Games</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="rief_games_astroid_patrol_t.cpf" size="7680" crc="695221fc" sha1="b27fb0f3ef167e3da83318a7573414046d2f478d" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -174,6 +222,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="bzonea" cloneof="bzone">
+		<description>Battle Zone (Alt)</description>
+		<year>19??</year>
+		<publisher>IM-1 Games</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="im-1_games_battle_zone_t.cpf" size="7680" crc="904ebad5" sha1="b207de35a8632c5b97d3e653cdebe522643d619e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="biplane">
 		<description>Bi-Plane Rescue</description>
 		<year>19??</year>
@@ -182,6 +242,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="1007788">
 				<rom name="york_10_computerware_bi-plane_rescue.wav" size="1007788" crc="f1dbccb6" sha1="b73651da4b73b170cc7e68e8076f9977febf0854" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="biplanea" cloneof="biplane">
+		<description>Bi-Plane Rescue (Alt)</description>
+		<year>19??</year>
+		<publisher>York 10 Computerware</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="york_10_computerware_bi-plane_rescue_t.cpf" size="7680" crc="3f901568" sha1="0f9f2b89269e0e9157f2ef400d4411ff1991a081" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -199,6 +271,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="billborda" cloneof="billbord" supported="partial">
+		<description>Electronic Billboard (Alt)</description>
+		<year>1979</year>
+		<publisher>APF Electronics</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="apf_billboard_t.cpf" size="7680" crc="e8acd2c6" sha1="79743b258da93b9ec3ed367dea05e8e32fcfac68" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="boxing">
 		<description>Boxing</description>
 		<year>198?</year>
@@ -207,6 +291,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="1288876">
 				<rom name="millivision_boxing.wav" size="1288876" crc="881ab481" sha1="c9e1b34dab520c763c14af7e7203761c6ba9a567" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="boxinga" cloneof="boxing">
+		<description>Boxing (Alt)</description>
+		<year>198?</year>
+		<publisher>Millivision</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="millivision_boxing_t.cpf" size="7680" crc="95fd1737" sha1="5fcac6ec387696002ec940a27b4f5bd4cc938a24" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -236,6 +332,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="burgmana" cloneof="burgman">
+		<description>Burger Man (Alt)</description>
+		<year>198?</year>
+		<publisher>Rief Games</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="rief_games_of_course_burgerman_t.cpf" size="7680" crc="8edb3350" sha1="272cdd93e208fc5551de614c103831a054f22aec" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="centiped">
 		<description>Centipeed</description>
 		<year>198?</year>
@@ -244,6 +352,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="1089452">
 				<rom name="john_machalas_centipeed.wav" size="1089452" crc="0cc4b9ae" sha1="b02402b99cefa0692cc4d37d7a3e5a62f6a85e82" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="centipeda" cloneof="centiped">
+		<description>Centipeed (Alt)</description>
+		<year>198?</year>
+		<publisher>John Mechalas</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="john_machalas_centipeed_t.cpf" size="7680" crc="fcdc6494" sha1="701941deb2a2d9534af4c7a0a08baea66d9cf8f3" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -261,6 +381,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="choplifta" cloneof="choplift" supported="partial">
+		<description>Choplifter (Alt)</description>
+		<year>19??</year>
+		<publisher>York 10 Computerware</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="york_10_computerware_choplifter_t.cpf" size="7680" crc="688d2ce6" sha1="f078386ba398b99b8b5a6e601a8d396b6f6efac7" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="choppint">
 		<description>Chopper Interceptor</description>
 		<year>19??</year>
@@ -269,6 +401,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="1069484">
 				<rom name="york_10_computerware_chopper_interceptor.wav" size="1069484" crc="be8d0f60" sha1="8012bd1a1454526951f26ad3339044ebc932467b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="choppinta" cloneof="choppint">
+		<description>Chopper Interceptor (Alt)</description>
+		<year>19??</year>
+		<publisher>York 10 Computerware</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="york_10_computerware_chopper_interceptor_t.cpf" size="7680" crc="b3611a36" sha1="b933d604a9cff0621cdfaeed33921c409edc22fe" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -298,6 +442,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="copycata" cloneof="copycat">
+		<description>Copy Cat (Alt)</description>
+		<year>198?</year>
+		<publisher>R. Eisman</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="r_eisman_copy_cat_t.cpf" size="7680" crc="64484598" sha1="f829f88a157245e55e8484471fc1c6c2bd1ef8be" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- glitched gfx -->
 	<software name="deathtnk" supported="partial">
 		<description>Death Tank</description>
@@ -311,6 +467,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="deathtnka" cloneof="deathtnk" supported="partial">
+		<description>Death Tank (Alt)</description>
+		<year>19??</year>
+		<publisher>York 10 Computerware</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="york_10_computerware_death_tank_t.cpf" size="7680" crc="f0fb1326" sha1="5a2a1f87d8be9fd678bea4ec3a289c25c4553f29" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="defender">
 		<description>Defender (MR R)</description>
 		<year>19??</year>
@@ -319,6 +487,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="1013676">
 				<rom name="mr_rs_defender.wav" size="1013676" crc="ac655b82" sha1="cfba2b58c3d2090467218505293c2b753b4ae377" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="defendera" cloneof="defender">
+		<description>Defender (MR R, Alt)</description>
+		<year>19??</year>
+		<publisher>MR R's</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="mr_rs_defender_t.cpf" size="7680" crc="edcd138c" sha1="ae565bde8a9e071955e3d3af2d75a2c5f83c70f0" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -337,7 +517,6 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
-	<!-- glitched gfx -->
 	<software name="defendyca" cloneof="defendyc" supported="partial">
 		<description>Defender (York 10 Computerware, Alt)</description>
 		<year>19??</year>
@@ -346,6 +525,31 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="1150636">
 				<rom name="york_10_computerware_defender.wav" size="1150636" crc="1364f5e7" sha1="0ababf7ae66bc0c0f78be42de26a0132712f6d2a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="defendycb" cloneof="defendyc" supported="partial">
+		<description>Defender (York 10 Computerware, Alt 2)</description>
+		<year>19??</year>
+		<publisher>York 10 Computerware</publisher>
+		<info name="alt_title" value="Allien Defender II?" />
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="york_10_computerware_allien_defender_ii_t.cpf" size="7680" crc="0ea20d4a" sha1="a6385282b78a88584388d59c42f3a79dc8f30904" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="defendycc" cloneof="defendyc" supported="partial">
+		<description>Defender (York 10 Computerware, Alt 3)</description>
+		<year>19??</year>
+		<publisher>York 10 Computerware</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="york_10_computerware_defender_t.cpf" size="7680" crc="c6c525dc" sha1="2c1c9b3fbb2a0709660d169033c452c32e9d160b" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -362,6 +566,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="demoa" cloneof="demo">
+		<description>Demo (Alt)</description>
+		<year>197?</year>
+		<publisher>APF Electronics</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="apf_demo_t.cpf" size="7680" crc="64d5c351" sha1="0813cb2b2c96169147fb89b1541797c24d189d26" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="depthchg">
 		<description>Depth Charge!!</description>
 		<year>19??</year>
@@ -370,6 +586,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="1067180">
 				<rom name="mr_rs_depth_charge.wav" size="1067180" crc="aecaabf0" sha1="095bab2792175e17c1fe0bd0f2bd23b82fcdd676" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="depthchga" cloneof="depthchg">
+		<description>Depth Charge!! (Alt)</description>
+		<year>19??</year>
+		<publisher>MR R's</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="mr_rs_depth_charge_t.cpf" size="7680" crc="2d01bd31" sha1="d1534732e9b2e3c376bbe273d75ddbd149e77e23" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -398,6 +626,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="dkonga" cloneof="dkong">
+		<description>Donki-Kong (Alt)</description>
+		<year>198?</year>
+		<publisher>Millivision</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="millivision_donki-kong_t.cpf" size="7680" crc="f785a014" sha1="1b4982c2148ab92574187357fb0877907bf58a9e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="dkongjr">
 		<description>Donki-Kong Jr</description>
 		<year>198?</year>
@@ -406,6 +646,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="972972">
 				<rom name="millivision_donki-kong_jr.wav" size="972972" crc="ba1c0f50" sha1="afbeeec2ee6da4b6fe1fe70c6689b3937ca2001a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dkongjra" cloneof="dkongjr">
+		<description>Donki-Kong Jr (Alt)</description>
+		<year>198?</year>
+		<publisher>Millivision</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="millivision_donki-kong_jr_t.cpf" size="7680" crc="51c5d7f6" sha1="918c5779a8674c8ea020ad9069515447938e0f03" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -436,6 +688,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="dungtresa" cloneof="dungtres" supported="partial">
+		<description>Dungeon_Treasure (Alt)</description>
+		<year>19??</year>
+		<publisher>IM-1 Games</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="im-1_games_dungeon_treasure_t.cpf" size="7680" crc="83cff6c6" sha1="896280abadf9838493985ff2203485e65eb120dc" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="et">
 		<description>E.T.</description>
 		<year>19??</year>
@@ -444,6 +708,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="1045164">
 				<rom name="york_10_computerware_et.wav" size="1045164" crc="13ed31b4" sha1="097a916acc88f27c75560a3d8736a28a98a8fca9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="eta" cloneof="et">
+		<description>E.T. (Alt)</description>
+		<year>19??</year>
+		<publisher>York 10 Computerware</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="york_10_computerware_et_t.cpf" size="7680" crc="b28f4854" sha1="e3baf08ee0e2c88ab6cde41aee0466a0b62cd3f5" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -487,6 +763,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="emta" cloneof="emt">
+		<description>Excape Mommies Tumb (Alt)</description>
+		<year>19??</year>
+		<publisher>Handy Dandy Games</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="handy_dandy_games_excape_mommies_tumb_t.cpf" size="7680" crc="153545f3" sha1="c35117a5c91e8269d543a701ddad431fc1a93f3b" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="ferzerx">
 		<description>Ferzerx</description>
 		<year>1983</year>
@@ -511,6 +799,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="firea" cloneof"fire">
+		<description>Fire! (Alt)</description>
+		<year>19??</year>
+		<publisher>MR R's</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="mr_rs_fire_t.cpf" size="7680" crc="a6f0fdc3" sha1="bc232f296273f13a99e9cdd715144815af437b59" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="foosebal">
 		<description>FooseBall</description>
 		<year>198?</year>
@@ -519,6 +819,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="1167276">
 				<rom name="e_beckett_fooseball.wav" size="1167276" crc="471f4623" sha1="99a65036eb1c9ccb9e648beb3af8b535b4b08b35" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="foosebala" cloneof="foosebal">
+		<description>FooseBall (Alt)</description>
+		<year>198?</year>
+		<publisher>E. Beckett</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="e_beckett_fooseball_t.cpf" size="7680" crc="56351512" sha1="a6b1a9e34153ca9a2828d06f863cd55b8e6099c5" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -532,6 +844,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="1050796">
 				<rom name="york_10_computerware_frogger.wav" size="1050796" crc="5daf7f16" sha1="b0929f68c54f78ece0c7a3611c168647385ccfc0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="froggera" cloneof="frogger" supported="partial">
+		<description>Frogger (Alt)</description>
+		<year>19??</year>
+		<publisher>York 10 Computerware</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="york_10_computerware_frogger_t.cpf" size="7680" crc="c42c37bb" sha1="3379543cea891df5c3c4142632960e43f60564df" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -569,6 +893,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="1162156">
 				<rom name="carl_echols_graphics_editor.wav" size="1162156" crc="d8160190" sha1="9e2f4a91aabf442191495085fd4dc05daafc1454" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gfxhelpa" cloneof="gfxhelp">
+		<description>Graphics Helper (Alt)</description>
+		<year>1982</year>
+		<publisher>Carl A. Echols</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="carl_echols_graphics_editor_t.cpf" size="7680" crc="b6ae3b53" sha1="ef548a4f96c640abec370b9969d468aa695ecc20" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -611,6 +947,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="heartatka" cloneof="heartatk">
+		<description>Heart Attack (Alt)</description>
+		<year>1983</year>
+		<publisher>MR R's</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="mr_rs_ekg_t.cpf" size="7680" crc="2e7395c6" sha1="a2c0dd05c52f96addfbcc160a7ac3a914682af54" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- It does not load properly -->
 	<software name="tape4" supported="no">
 		<description>IM-1 in a Million Club Newsletter Tape 4</description>
@@ -648,6 +996,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="logiclcka" cloneof="logiclck">
+		<description>Lord Logic-Locks (Alt)</description>
+		<year>19??</year>
+		<publisher>IM-1 in a Million Club Newsletter</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="im-1_in-a-million_lord_logic-locks_t.cpf" size="7680" crc="33483718" sha1="356eba773260e74c0e2c3a31638fe211ab710adf" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- It does not load properly -->
 	<software name="llander" supported="no">
 		<description>Lunar Lander (Bad?)</description>
@@ -673,6 +1033,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="mazea" cloneof="maze">
+		<description>Maze (Alt)</description>
+		<year>198?</year>
+		<publisher>R. Eisman</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="r_eisman_maze_t.cpf" size="7680" crc="f8d662cb" sha1="45a38f6f0a8fbb7c767514f5b8b9d40d68c1d97f" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="mimicmus">
 		<description>Mimic My Music</description>
 		<year>19??</year>
@@ -681,6 +1053,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="1036204">
 				<rom name="im-1_in-a-million_mimic_my_music.wav" size="1036204" crc="99595de5" sha1="c3628b1dae626e46da6697c17d9c07251faea99a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mimicmusa" cloneof="mimicmus">
+		<description>Mimic My Music (Alt)</description>
+		<year>19??</year>
+		<publisher>IM-1 in a Million Club Newsletter</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="im-1_in-a-million_mimic_my_music_t.cpf" size="7680" crc="8203eca7" sha1="4f9574321821873db77b8c61d0eb0e75facc858e" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -748,6 +1132,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="mystmansa" cloneof="mystmans">
+		<description>Mystry Mansion (Alt)</description>
+		<year>19??</year>
+		<publisher>Handy Dandy Games</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="handy_dandy_games_mystry_mansion_t.cpf" size="7680" crc="10c4e318" sha1="d1bb183892cfaf72dcb36a569d0d440f2cbbc5cf" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="pacrat">
 		<description>Pac-Rat</description>
 		<year>19??</year>
@@ -756,6 +1152,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="957868">
 				<rom name="mr_rs_pack_rat(audio lost).wav" size="957868" crc="dbb4f160" sha1="4d8e3475ee20eff4d25f23da816b5cb46ea12514" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pacrata" cloneof="pacrat">
+		<description>Pac-Rat (Alt)</description>
+		<year>19??</year>
+		<publisher>MR R's</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="mr_rs_pack_rat(audio lost)_t.cpf" size="7680" crc="52c809e3" sha1="4886bfa8ff623130110c4221e9381137272807e5" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -772,6 +1180,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="pakmana" cloneof="pakman">
+		<description>Pak-Man (Alt)</description>
+		<year>198?</year>
+		<publisher>E. Beckett</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="e_beckett_pak-man_t.cpf" size="7680" crc="adcd5841" sha1="b8d24ba1090471783fa43c4733a48eb100e9b279" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- glitched gfx -->
 	<software name="pinbwiz" supported="partial">
 		<description>Pinball Wiz</description>
@@ -781,6 +1201,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="1732970">
 				<rom name="g_karabin_wiz.wav" size="1732970" crc="f028bfc9" sha1="cfc24963a37a4e6a2e65a7b71806f0329a3efb4f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="pinbwiza" cloneof="pinbwiz" supported="partial">
+		<description>Pinball Wiz (Alt)</description>
+		<year>1983</year>
+		<publisher>G. Karabin</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="g_karabin_wiz_t.cpf" size="7680" crc="c4b402cc" sha1="d8e0936d82adbd3a454ae6dd7b821b15616c521f" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -809,6 +1241,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="rattlera" cloneof="rattler">
+		<description>Rattler (Alt)</description>
+		<year>198?</year>
+		<publisher>Geo-Grafix</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="geo_grafix_rattler_t.cpf" size="7680" crc="1c901a24" sha1="8900aec03d56ccd55fa0c4c272905b2679010f0f" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="recollct">
 		<description>Recollection</description>
 		<year>19??</year>
@@ -817,6 +1261,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="1076652">
 				<rom name="im-1_in-a-million_recollection.wav" size="1076652" crc="02020981" sha1="0d83fff9da0ef86f52352238910a5a5f4ae97fc5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="recollcta" cloneof="recollct">
+		<description>Recollection (Alt)</description>
+		<year>19??</year>
+		<publisher>IM-1 in a Million Club Newsletter</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="im-1_in-a-million_recollection_t.cpf" size="7680" crc="ca92e50c" sha1="6019fbc0810b8f76832d022552d4c48b84285f0b" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -833,6 +1289,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="roadrunna" cloneof="roadrunn">
+		<description>RoadRunner (Alt)</description>
+		<year>19??</year>
+		<publisher>MR R's</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="mr_rs_roadrunner_t.cpf" size="7680" crc="8c307d11" sha1="4b849d218fda577ec5990e2e8c5760aa7f018736" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="runar">
 		<description>Run Around</description>
 		<year>198?</year>
@@ -845,6 +1313,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="runara" cloneof="runar">
+		<description>Run Around (Alt)</description>
+		<year>198?</year>
+		<publisher>Millivision</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="millivision_run_around_t.cpf" size="7680" crc="626fe8c8" sha1="1cf2f1549edadd4ff8a1eb145971053b165c24dd" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="safari">
 		<description>Safari in Africa</description>
 		<year>198?</year>
@@ -853,6 +1333,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="1751482">
 				<rom name="datacomp_safari_in_africa.wav" size="1751482" crc="4025fe24" sha1="184c3751a99fcbcb15b1b4b769d74de0fb867592" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="safaria" cloneof="safari">
+		<description>Safari in Africa (Alt)</description>
+		<year>198?</year>
+		<publisher>DataComp</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="datacomp_safari_in_africa_t.cpf" size="7680" crc="2f4b7349" sha1="f79cfe72e7f3a9e827227f20a8fd6951e7ecafaa" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -870,6 +1362,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="sailinga" cloneof="sailing" supported="partial">
+		<description>Sailing (Alt)</description>
+		<year>19??</year>
+		<publisher>York 10 Computerware</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="york_10_computerware_sailing_t.cpf" size="7680" crc="f02abf61" sha1="e821c9a48eee1a03bca8aa1bcb2704b1278c7c2b" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- glitched gfx -->
 	<software name="skydiver" supported="partial">
 		<description>Sky Diver</description>
@@ -879,6 +1383,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="1000108">
 				<rom name="york_10_computerware_sky_diver.wav" size="1000108" crc="0f396e8b" sha1="91b9425b1c7cb96020850b5c79eb24a8c97d9502" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="skydivera" cloneof="skydiver" supported="partial">
+		<description>Sky Diver (Alt)</description>
+		<year>19??</year>
+		<publisher>York 10 Computerware</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="york_10_computerware_sky_diver_t.cpf" size="7680" crc="b702c42d" sha1="c6ee91bf4f03a4903fc1dab7669a73cdea73c20b" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -909,6 +1425,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="soundfxa" cloneof="soundfx" supported="partial">
+		<description>Sound Effects Demo Program (Alt)</description>
+		<year>19??</year>
+		<publisher>Ralph A. Rodriguez</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="r_a_rodriguez_sound_effects_sub_porgram_t.cpf" size="7680" crc="76679a40" sha1="e493ec0f8d93f559080c613817f21b8d237284c3" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- glitched gfx -->
 	<software name="spacedst" supported="partial">
 		<description>Space Destroyers</description>
@@ -918,6 +1446,17 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="1672014">
 				<rom name="apf_space_destroyers.wav" size="1672014" crc="aa380a7f" sha1="2defa25ccac8fbbf594b2238d5f97bdf6188f312" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+	<software name="spacedsta" cloneof="spacedst" supported="partial">
+		<description>Space Destroyers (Alt)</description>
+		<year>1980</year>
+		<publisher>APF Electronics</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="apf_space_destroyers_t.cpf" size="7680" crc="134dcfb9" sha1="a0a5a4ac4b095ea287314d7659117fef1d56ca1b" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -948,6 +1487,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="starbtlea" cloneof="starbtle">
+		<description>Star Battle (Alt)</description>
+		<year>19??</year>
+		<publisher>Handy Dandy Games</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="handy_dandy_games_star_battle_t.cpf" size="7680" crc="ecd428c3" sha1="b90a3280b934a5e0ff1d3d42a8357ffc899a19d3" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- glitched gfx -->
 	<software name="starcstl" supported="partial">
 		<description>Star Castle</description>
@@ -961,6 +1512,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="starcstla" cloneof="starcstl" supported="partial">
+		<description>Star Castle (Alt)</description>
+		<year>19??</year>
+		<publisher>York 10 Computerware</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="york_10_computerware_star_castle_t.cpf" size="7680" crc="6efc8691" sha1="db4ee0813c2407b3052b3a8f1b80b2273b1f200e" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- glitched gfx -->
 	<software name="starship" supported="partial">
 		<description>Star Ship</description>
@@ -970,6 +1533,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="1064200">
 				<rom name="r_eisman_star_ship.wav" size="1064200" crc="5b36c175" sha1="287af2d590b308437b31a8ab71b8d827c7a6255e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="starshipa" cloneof="starship" supported="partial">
+		<description>Star Ship (Alt)</description>
+		<year>198?</year>
+		<publisher>R. Eisman</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="r_eisman_star_ship_t.cpf" size="7680" crc="663a9ac4" sha1="055c28be051332b84a8567cdaafeddcce06b6b93" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -998,15 +1573,39 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="gg2in1a" cloneof="gg2in1">
+		<description>Super 21 + Space Hunt (Alt)</description>
+		<year>1983</year>
+		<publisher>Geo-Grafix</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="geo_grafix_super_21_space_hunt_t.cpf" size="7680" crc="d96edfa3" sha1="97567bc5790e63327dfe314b30d44f9252e4ed35" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<!-- Space Hunt does not seem to load fine, it was listed as an "Improved version of the above"... -->
-	<software name="gg2in1a" cloneof="gg2in1" supported="partial">
-		<description>Super 21 + Space Hunt (Alt?)</description>
+	<software name="gg2in1b" cloneof="gg2in1" supported="partial">
+		<description>Super 21 + Space Hunt (Alt 2?)</description>
 		<year>1983</year>
 		<publisher>Geo-Grafix</publisher>
 
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="3931560">
 				<rom name="geo_grafix_super_21ii_space_huntii.wav" size="3931560" crc="d80d3a1b" sha1="41b90a8989a90fb36d1d52b780e7499f192e8519" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gg2in1c" cloneof="gg2in1" supported="partial">
+		<description>Super 21 + Space Hunt (Alt 3?)</description>
+		<year>1983</year>
+		<publisher>Geo-Grafix</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="geo_grafix_super_21ii_space_huntii_t.cpf" size="7680" crc="95382838" sha1="ee13072b7e1af22ac88b368ef36dfd1de0b2cb80" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -1058,6 +1657,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="988972">
 				<rom name="millivision_thief.wav" size="988972" crc="df0cb1b5" sha1="b1933b1a7e923e57547b0abab3d1ce99f3628d4b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thiefa" cloneof="thief">
+		<description>Thief (Alt)</description>
+		<year>198?</year>
+		<publisher>Millivision</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="millivision_thief_t.cpf" size="7680" crc="d762adde" sha1="c76ef330a67674d5a9f11bfad454954c7f5a168a" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -1114,6 +1725,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="tronna" cloneof="tronn">
+		<description>Tronn (Alt)</description>
+		<year>19??</year>
+		<publisher>MR R's</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="mr_rs_tronn_t.cpf" size="7680" crc="73ca8d50" sha1="65e8059ab24a6a30ed1615f600a304ba3e07084d" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="turbo">
 		<description>Turbo</description>
 		<year>19??</year>
@@ -1122,6 +1745,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="1019052">
 				<rom name="york_10_computerware_turbo.wav" size="1019052" crc="6b7dd4b4" sha1="d572934ed4752d78d527714f57944a81e3114eae" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="turboa" cloneof="turbo">
+		<description>Turbo (Alt)</description>
+		<year>19??</year>
+		<publisher>York 10 Computerware</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="york_10_computerware_turbo_t.cpf" size="7680" crc="ff1140a0" sha1="f7017d35ef7435192ed624fc9cffd6044dd4bd8f" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -1138,6 +1773,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="ubeta" cloneof="ubet">
+		<description>UBet (Alt)</description>
+		<year>19??</year>
+		<publisher>MR R's</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="mr_rs_ubet_t.cpf" size="7680" crc="19763236" sha1="606fa93ad9779c5679dbcdda96779d77a4ad6ba6" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="wallstrt">
 		<description>Wall Street Cartel</description>
 		<year>19??</year>
@@ -1150,6 +1797,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="wallstrta" cloneof="wallstrt">
+		<description>Wall Street Cartel (Alt)</description>
+		<year>19??</year>
+		<publisher>IM-1 in a Million Club Newsletter</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="im-1_in-a-million_wall_street_cartel_t.cpf" size="7680" crc="99e6d185" sha1="456fe90eb72cc0642635b1d814394df7ef2f543c" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="zap">
 		<description>Zap</description>
 		<year>198?</year>
@@ -1158,6 +1817,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="1558316">
 				<rom name="r_eisman_zap!!.wav" size="1558316" crc="6828de41" sha1="3f2e43c96a473c95e219e5605db682fdf4e574af" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zapa" cloneof="zap">
+		<description>Zap (Alt)</description>
+		<year>198?</year>
+		<publisher>R. Eisman</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="r_eisman_zap!!_t.cpf" size="7680" crc="ddf0eb28" sha1="b6c3a2536ba72e25d152786b79bc94c5aca4b476" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -1176,6 +1847,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="40tkinita" cloneof="40tkinit">
+		<description>40 Track Initialization Program (Alt)</description>
+		<year>1983</year>
+		<publisher>Hex-Mart Software</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="hex_mart_init40v_t.cpf" size="7680" crc="dbf5b41f" sha1="6ccaf35a9164d4fcbc8216135024b9fdffc24586" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="bastrace">
 		<description>Basic Trace</description>
 		<year>1982</year>
@@ -1188,6 +1871,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="bastracea" cloneof="bastrace">
+		<description>Basic Trace (Alt)</description>
+		<year>1982</year>
+		<publisher>Carl A. Echols</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="carl_echols_basic_trace_function_t.cpf" size="7680" crc="356cf042" sha1="8e9b5839d8cee5020d5882fd4e23dc86e75f6813" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="basnum">
 		<description>BasNum</description>
 		<year>1983</year>
@@ -1196,6 +1891,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="1183404">
 				<rom name="hex_mart_super_basnum.wav" size="1183404" crc="d46bfbd5" sha1="7aba4ab227b838492b3c61f36fd149d6dd64ef10" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basnuma" cloneof="basnum">
+		<description>BasNum (Alt)</description>
+		<year>1983</year>
+		<publisher>Hex-Mart Software</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="hex_mart_super_basnum_t.cpf" size="7680" crc="67077212" sha1="27074564c7b0689cf1565540762d6344eb4b183f" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -1224,6 +1931,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="disktesta" cloneof="disktest">
+		<description>Disk Test (Alt)</description>
+		<year>19??</year>
+		<publisher>IM-1 in a Million Club Newsletter</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="im-1_in-a-million_disk_test_t.cpf" size="7680" crc="6701b00d" sha1="86995722be35b1215e7db622921c512951aa8e48" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="gfxtablt">
 		<description>Graphics Tablet</description>
 		<year>19??</year>
@@ -1232,6 +1951,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="1210540">
 				<rom name="im-1_in-a-million_graphics_tablet.wav" size="1210540" crc="7550af5a" sha1="4a0a6e8f0c818c29f12f8867af1c7ee9af8f09ba" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gfxtablta" cloneof="gfxtablt">
+		<description>Graphics Tablet (Alt)</description>
+		<year>19??</year>
+		<publisher>IM-1 in a Million Club Newsletter</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="im-1_in-a-million_graphics_tablet_t.cpf" size="7680" crc="c895c8f3" sha1="b40f1cf2a9df43fb1710d5e2ad74bcd9287dc150" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -1248,6 +1979,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="hiresplta" cloneof="hiresplt">
+		<description>Hi-res Plot (Alt)</description>
+		<year>19??</year>
+		<publisher>IM-1 in a Million Club Newsletter</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="im-1_in-a-million_hi-res_plot_t.cpf" size="7680" crc="c6d9fe1d" sha1="bc466357cc2bdc8e384e2e65d00f8889d23d79c7" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="loresplt">
 		<description>Lo-res Plot</description>
 		<year>19??</year>
@@ -1256,6 +1999,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="983980">
 				<rom name="im-1_in-a-million_lo-res_plot.wav" size="983980" crc="1e0a5894" sha1="54464ff325787478eca7bed1118350c37c8144a2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="loresplta" cloneof="loresplt">
+		<description>Lo-res Plot (Alt)</description>
+		<year>19??</year>
+		<publisher>IM-1 in a Million Club Newsletter</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="im-1_in-a-million_lo-res_plot_t.cpf" size="7680" crc="5a1a089b" sha1="e96bfcf961d407994c14e14530a32c1ff9096d67" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
@@ -1284,6 +2039,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		</part>
 	</software>
 
+	<software name="renumbera" cloneof="renumber">
+		<description>Renumber (Alt)</description>
+		<year>1982</year>
+		<publisher>Carl A. Echols</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="carl_echols_basic_renumber_t.cpf" size="7680" crc="f6eb5c7c" sha1="ebf86661be1333bcf1b09142645688915539426a" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="sy40dasm">
 		<description>SY-40 Disassembler</description>
 		<year>1979</year>
@@ -1292,6 +2059,18 @@ Once the tape has finished loading, just type RUN to start the loaded program
 		<part name="cass" interface="apf_cass">
 			<dataarea name="cass" size="1729574">
 				<rom name="apf_sy-40 disassembler.wav" size="1729574" crc="601088a8" sha1="ce364a5e7544239b5167c70e5575568e225ab0bc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sy40dasma" cloneof="sy40dasm">
+		<description>SY-40 Disassembler (Alt)</description>
+		<year>1979</year>
+		<publisher>APF Electronics</publisher>
+
+		<part name="cass1" interface="apf_cass">
+			<dataarea name="cass" size="7680">
+				<rom name="apf_sy-40 disassembler_t.cpf" size="7680" crc="73740d18" sha1="007f737452f7733c3be24197ee8922cf521b501e" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>

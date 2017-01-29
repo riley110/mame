@@ -136,4 +136,52 @@
 		</part>
 	</software>
 
+	<software name="posimag30" supported="no">
+		<description>Positive Image 68030 (Demo, v1.12)</description>
+		<year>19??</year>
+		<publisher>Stephan Found</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="1474560">
+				<rom name="positive image 68030 v1.12 (demo) (19xx)(stephan found)[falcon only].st" size="1474560" crc="ba62a4bc" sha1="f76140c589f64b13703ab67e907cfb7719749b8b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="posimag30a" cloneof="posimag30" supported="no">
+		<description>Positive Image 68030 (Demo, v1.12, Alt)</description>
+		<year>19??</year>
+		<publisher>Stephan Found</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="1064960">
+				<rom name="positive image 68030 v1.12 (demo) (19xx)(stephan found)[a][falcon only].st" size="1064960" crc="b8eb0aff" sha1="87a7682f05cd85c68b2e7825d953eff600ebaf41" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="posimag40" cloneof="posimag30" supported="no">
+		<description>Positive Image 68040 (Demo, v1.12)</description>
+		<year>19??</year>
+		<publisher>Stephan Found</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="1474560">
+				<rom name="positive image 68040 v1.12 (demo) (19xx)(stephan found)[falcon only].st" size="1474560" crc="58a94285" sha1="5daaacb42ec0e4c16d6c86c6e389581fca47e999" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="posimag40a" cloneof="posimag30" supported="no">
+		<description>Positive Image 68040 (Demo, v1.12, Alt)</description>
+		<year>19??</year>
+		<publisher>Stephan Found</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="1064960">
+				<rom name="positive image 68040 v1.12 (demo) (19xx)(stephan found)[a][falcon only].st" size="1064960" crc="b87b542b" sha1="ec75960d9fb86403ef8e69cfcad596f0e7ff70da" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 </softwarelist>

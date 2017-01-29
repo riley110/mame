@@ -1,11 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <!--
-Disks with a size less than 102400 bytes are incomplete and therefore are marked as baddumps and commented out.
-There is also a 0 byte file called "misc1.40t" that is not included here.
-
-Many of these programs require ROM expansions (see atom_rom.xml list).
-
 Loading Instructions:
 *DOS - enters the DOS. The LOAD and SAVE commands apply now to disk, not cassette. Use the BREAK key to return to the cassette basic.
 *DIR - load the directory information into a buffer (but does not show it). This is a sort of mount command.
@@ -192,8 +187,12 @@ Loading Instructions:
 	</software>
 
 <!--
-Unsorted stuff.
-Thanks to Wouter ( http://wouter.bbcmicro.net/_archive/atom/software/ ) for these dumps.
+ Unsorted stuff; Thanks to Wouter ( http://wouter.bbcmicro.net/_archive/atom/software/ ) for these dumps.
+
+ A few disks under size 102400 have been commented out until further investigation.
+ There is also a 0 byte file "misc1.40t" that is not included here.
+
+ Many of these programs require ROM expansions (see atom_rom.xml list).
 -->
 
 	<software name="club611">
