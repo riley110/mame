@@ -13907,7 +13907,7 @@
 	<software name="proginst" supported="no">
 		<description>Programming Language Installation Disk (Fra)</description>
 		<year>19??</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -14047,7 +14047,7 @@
 	<software name="qls" supported="no">
 		<description>QLS-Verwaltung (Ger, Bad?)</description>
 		<year>19??</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="732672">
@@ -14436,6 +14436,1408 @@
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="runes divinatoires (19xx)(saint-criq, andre)(fr).st" size="737280" crc="d907b262" sha1="a07624de4dd689ddf381468dca4c97f9c2c787c7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="siprf" supported="no">
+		<description>S.I Ramdisk and Printer Buffer</description>
+		<year>1987</year>
+		<publisher>ST Informer</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="746496">
+				<rom name="s.i ramdisk and printer buffer (1987)(st informer)(sw).st" size="746496" crc="ce76fd20" sha1="fd8a0b8bf56c65736109cc794196a8816c49c29a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stbasic" supported="no">
+		<description>ST Basic</description>
+		<year>1987</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="st basic (1987)(atari).st" size="368640" crc="1f29f895" sha1="4e5a53e986a31ba6688efb5400273a779239bf7b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stbasica" cloneof="stbasic" supported="no">
+		<description>ST Basic (Alt)</description>
+		<year>1987</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="st basic (1987)(atari)[a].st" size="368640" crc="603d1a1d" sha1="bf1869c2b9b114985bc6ff783a9f1a91d5550451" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stbasicb" cloneof="stbasic" supported="no">
+		<description>ST Basic (Alt 2)</description>
+		<year>1987</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st basic (1987)(atari)[a2].st" size="737280" crc="9abb6e76" sha1="78e2d0f3265450515394af0e4cfaf82004a34c60" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stevent" supported="no">
+		<description>ST EVent Editor (Ger)</description>
+		<year>19??</year>
+		<publisher>Computer Technik Kieckbusch</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st event editor (1988)(computer technik kieckbusch)(de).st" size="737280" crc="c62d8ea1" sha1="84bd86ebd2f30c77318ed1c030af42d896770d44" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="multhard" supported="no">
+		<description>ST Multi-Hardcopy (Ger)</description>
+		<year>1986</year>
+		<publisher>CCD</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="st multi-hardcopy (1986)(ccd)(de)[acc].st" size="368640" crc="0be99012" sha1="5945c7eb5c4f18bc8d3bde0518992a10ab120469" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stpascal" supported="no">
+		<description>ST Pascal plus (Ger, v1.2)</description>
+		<year>1986</year>
+		<publisher>Creative Computer Design - OSS</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st pascal plus v1.2 (1986-06-06)(creative computer design und oss)(de).st" size="737280" crc="d8f64709" sha1="7c05270a794e725564a97c93cfabfc09b8f296f6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stwriter" supported="no">
+		<description>ST Writer</description>
+		<year>1987</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st writer (1987)(atari)(fw).st" size="737280" crc="9cf2f714" sha1="5c5c670a40e823becd32f37aa044cc8f847d9ff8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stwritere" supported="no">
+		<description>ST Writer Elite (v4.8)</description>
+		<year>1992</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="st writer elite v4.8 (1992)(atari)(pd).st" size="368640" crc="3ed3122c" sha1="8c66dd48b64cda225fe8aebb6bd998dc1a9635ec" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="organiser" supported="no">
+		<description>ST-Organiser (v1.0)</description>
+		<year>1988</year>
+		<publisher>Triangle Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="st-organiser v1.0 (1988)(triangle publishing).st" size="368640" crc="fedb5298" sha1="c6f4506916d798051a1fefd313945642d2250b00" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Bitz 199 -->
+	<software name="stadpic" supported="no">
+		<description>STAD Picture Show</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="stad picture show (19xx)(-)[xxx][bitz 199].st" size="737280" crc="20934e13" sha1="104589686e75ffd19eebc8cc6be74379adcb3eaf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stad" supported="no">
+		<description>STAD (Ger, v1.3)</description>
+		<year>1987</year>
+		<publisher>Application Systems Heidelberg</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="stad v1.3 (1987)(application systems heidelberg)(de).st" size="737280" crc="ee49147e" sha1="d83424ce3f38a68736e64d67ef4267123c7f5765" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="accounts" supported="no">
+		<description>STAccounts</description>
+		<year>1985</year>
+		<publisher>Chipsoft</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="staccounts (1985)(chipsoft).st" size="368640" crc="eb2366c9" sha1="a8abb4f5fb3b55a740fa99ea83f551624d59950e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stga" supported="no">
+		<description>STGA (Ger)</description>
+		<year>1993</year>
+		<publisher>Till Harbaum</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="stga (1993-01-10)(harbaum, till)(de).st" size="737280" crc="c64b85d3" sha1="b0f160cdd438780e5955b00c698714a4aedb5c5a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stos" supported="no">
+		<description>STOS - The Game Creator (v2.6)</description>
+		<year>198?</year>
+		<publisher>Mandarin</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="stos - the game creator v2.6 (19xx)(mandarin).st" size="839680" crc="1ccef253" sha1="fddfb2a88301fda4381ff5a6bb9fa15989d20778" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stosa" cloneof="stos" supported="no">
+		<description>STOS - The Game Creator (v2.6, Alt)</description>
+		<year>198?</year>
+		<publisher>Mandarin</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="stos - the game creator v2.6 (19xx)(mandarin)[a].st" size="819200" crc="3f5fd74f" sha1="52138e56abca52ea5d73c8c40d005d44f086700e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stos23" cloneof="stos" supported="no">
+		<description>STOS - The Game Creator (v2.3)</description>
+		<year>1988</year>
+		<publisher>Mandarin</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="stos - the game creator v2.3 (1988)(mandarin)(disk 1 of 2).st" size="737280" crc="1a1f108d" sha1="899fc5c4a858f0f7991d4817ba16ec6758d215bd" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="stos - the game creator v2.3 (1988)(mandarin)(disk 2 of 2).st" size="737280" crc="1f8d6e70" sha1="97a63eed24102f76bc064d2361b55a07e3c17bc8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stos23a" cloneof="stos" supported="no">
+		<description>STOS - The Game Creator (v2.3, Alt)</description>
+		<year>1988</year>
+		<publisher>Mandarin</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="stos - the game creator v2.3 (1988)(mandarin).st" size="368640" crc="7da2af46" sha1="f64759e9e0a344b38e5c21e05b6e756214da3a83" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stos23b" cloneof="stos" supported="no">
+		<description>STOS - The Game Creator (v2.3, Alt 2)</description>
+		<year>1988</year>
+		<publisher>Mandarin</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="923648">
+				<rom name="stos - the game creator v2.3 (1988)(mandarin)[a].st" size="923648" crc="653a55b6" sha1="29f8cbc456b98f5f8a61aab3b3134d7c1b9499ad" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stos23f" cloneof="stos" supported="no">
+		<description>STOS - The Game Creator (Fra, v2.3, TOS 1.06)</description>
+		<year>1988?</year>
+		<publisher>Mandarin</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="stos - the game creator v2.3 tos 1.06 version (19xx)(mandarin)(fr).st" size="368640" crc="e5553819" sha1="82734f35baa49c251fe94b69a55c5329ba4b5191" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stos3d" supported="no">
+		<description>STOS 3D</description>
+		<year>19??</year>
+		<publisher>Mandarin</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="stos 3d (19xx)(mandarin)[color].st" size="737280" crc="b4edb59a" sha1="4fb19725de7ca69fd65fd1dcdecbb6abd0e95745" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stos3du" supported="no">
+		<description>STOS 3D Update</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="stos 3d update (19xx)(-)(disk 1 of 2).st" size="737280" crc="ed81af41" sha1="0550eecc3f521902a590bc5fcf629da9bd3993a7" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="stos 3d update (19xx)(-)(disk 2 of 2).st" size="737280" crc="f4a10fb4" sha1="a1e3cb2fdf962c3f7bf29cec141d485fdf40ec3d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stosacc" supported="no">
+		<description>STOS Accessory Disk</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="stos accessory disk (19xx)(-).st" size="368640" crc="cc8e676d" sha1="b331f6a567a6185733a8f09efc993769d2c32684" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stosadv" supported="no">
+		<description>STOS Adventure Creator (v1.04)</description>
+		<year>1992</year>
+		<publisher>Deano</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="746496">
+				<rom name="stos adventure creator v1.04 (1992)(deano).st" size="746496" crc="fb27ba74" sha1="ee9ddc4559e5c53a4eb68da2976e36499161385c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stosexam" supported="no">
+		<description>STOS Examples</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="stos examples (19xx)(-).st" size="737280" crc="13db7ad7" sha1="e2493486fd154bdddfe4c5c68675097c7bd94cd5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stzip" supported="no">
+		<description>STZip (v2.3, Hacked?)</description>
+		<year>19??</year>
+		<publisher>&lt;hack (Noid)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="stzip v2.3 (19xx)(pomey, vincent)(pd)[m noid].st" size="737280" crc="9f845be4" sha1="8e35e949a75f8afcdab456609299882d838e22c9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="straight" supported="no">
+		<description>STraight Fax (v2.10, Cracked)</description>
+		<year>1993</year>
+		<publisher>&lt;bootleg (Anti-IAAD Group)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="straight fax v2.10 (1993)(newstar technology)[cr anti-iaad group].st" size="819200" crc="7e2b38b1" sha1="450070912ab86356e28b406e288b3c523ca1fa00" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="straight107" cloneof="straight" supported="no">
+		<description>STraight Fax (v1.07)</description>
+		<year>1993</year>
+		<publisher>NewSTar Technology</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="straight fax v1.07 (1993-01-03)(newstar technology).st" size="819200" crc="ea57d226" sha1="24a488d9087bd3c3f7c1d99b3819511d07f80290" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sagrotan" supported="no">
+		<description>Sagrotan (v4.17, Bad?)</description>
+		<year>19??</year>
+		<publisher>Henrik Alt</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="sagrotan v4.17 (19xx)(alt, henrik)(de)[b].st" size="737280" crc="bc5475f1" sha1="36c32daa4d7b25abdc9a6fe3edd2b316bec87666" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sagrotan403" cloneof="sagrotan" supported="no">
+		<description>Sagrotan (v4.03, Bad?)</description>
+		<year>19??</year>
+		<publisher>Henrik Alt</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="732672">
+				<rom name="sagrotan v4.03 (19xx)(alt, henrik)(de)[b].st" size="732672" crc="ce651535" sha1="32996df08dc79b6e1f7e657586604027c2cdeac5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- monochrome -->
+	<software name="samplmak1" supported="no">
+		<description>Sample Maker Pro (v1.0)</description>
+		<year>1989</year>
+		<publisher>ACN</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="sample maker pro v1.0 (1989)(acn)[monochrome].st" size="368640" crc="b0b5c2a9" sha1="de18734017216247d723ab2e55b9c55eddc8c680" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="samplmas" supported="no">
+		<description>Sample Master Plus (v1.00)</description>
+		<year>1991</year>
+		<publisher>2-bit Systems</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="sample master plus v1.00 (1991-09-23)(2-bit systems ltd.).st" size="737280" crc="70965d1d" sha1="574d697eb037d3043bfa094b31e1abfd16057c3f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="samplmak2" supported="no">
+		<description>Samplemaker (v1.51, Cracked)</description>
+		<year>1988</year>
+		<publisher>&lt;bootleg (Elite)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="samplemaker v1.51 (1988-08-08)(virtual sounds)[cr elite].st" size="737280" crc="cb98d754" sha1="5568183ce3b9e256b017b1c19569765d4d24af60" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scandes" supported="no">
+		<description>ScanDesign Plus (Ger, v1.0)</description>
+		<year>19??</year>
+		<publisher>TMS</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="scandesign plus v1.0 (19xx)(tms gmbh)(de)(sw).st" size="819200" crc="548991e8" sha1="004fa99221ebf7653fe3dd6c745196eaadfa3718" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scorperf" supported="no">
+		<description>Score Perfect Professional (v2.0, Cracked)</description>
+		<year>1990</year>
+		<publisher>&lt;bootleg (MCA)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="score perfect professional v2.0 (1990)(soft arts)[cr mca].st" size="829440" crc="49b7b274" sha1="01af6ccedd6ec5bd3203084cc0fa594ff442afbc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scorperfa" cloneof="scorperf" supported="no">
+		<description>Score Perfect Professional (v1.0, Cracked)</description>
+		<year>1990</year>
+		<publisher>&lt;bootleg (MCA)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="score perfect professional v1.0 (1990)(soft arts)[cr mca].st" size="737280" crc="175db8f0" sha1="9102472780ee75f4434d333793654b8c5c4d9f6b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scrart" supported="no">
+		<description>Screen Artist (v1.1)</description>
+		<year>1997</year>
+		<publisher>Massimo Farima</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="screen artist v1.1 (1997-07)(farina, massimo)(pd).st" size="737280" crc="12258438" sha1="dd084ee7ed113802ec839fbc5eb3b4e9a38daa7e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scrarta" cloneof="scrart" supported="no">
+		<description>Screen Artist (v1.1, Alt)</description>
+		<year>1997</year>
+		<publisher>Massimo Farima</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="screen artist v1.1 (1997-07)(farina, massimo)(pd)[a].st" size="737280" crc="406801e0" sha1="fde0154d222cca48dc5aba66c413ebbfd6ddce14" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scrart10" cloneof="scrart" supported="no">
+		<description>Screen Artist (v1.0)</description>
+		<year>1997</year>
+		<publisher>Massimo Farima</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="screen artist v1.0 (1997-01)(farina, massimo)(pd).st" size="737280" crc="74f53fb4" sha1="a5ddce96fbdb9307becccb46c7b7eca9513d71c8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="script2" supported="no">
+		<description>Script II (Ger, v2.0)</description>
+		<year>1990</year>
+		<publisher>Application Systems Heidelberg</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="script ii v2.0 (1990)(application systems heidelberg)(de)(disk 1 of 2).st" size="737280" crc="4dd42d84" sha1="929c3a5c3dbdb89b1bc73b125b2f72b41ff0e18d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="script ii v2.0 (1990)(application systems heidelberg)(de)(disk 2 of 2).st" size="737280" crc="86c3ac79" sha1="1d641727b146b2b5b5cad47282fa93da45ca516e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scriptnow" supported="no">
+		<description>Script Now (Fra)</description>
+		<year>1993</year>
+		<publisher>Application Systems Paris</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="script now (1993)(application systems paris)(fr)(disk 1 of 2).st" size="737280" crc="2dd36479" sha1="667734c92c1ebbba02d347d51f8de5477dc0d4b0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="script now (1993)(application systems paris)(fr)(disk 2 of 2).st" size="737280" crc="65baceca" sha1="5519cc7afded63863c9fdd58fb931773311825c1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="script" supported="no">
+		<description>Script (Ger, v4.0)</description>
+		<year>1994</year>
+		<publisher>Pagedown Computer</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="script v4.0 (1994)(pagedown computer)(de)(disk 1 of 3).st" size="819200" crc="c3f05923" sha1="04bb48e490f8756badee3d34fa688bf074d164ed" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="script v4.0 (1994)(pagedown computer)(de)(disk 2 of 3).st" size="737280" crc="ad9c8dac" sha1="d5e2a79f791491dfa0231528d839709430bd4b33" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="script v4.0 (1994)(pagedown computer)(de)(disk 3 of 3).st" size="737280" crc="1bf54ace" sha1="1847affcbe72a6561d128ec0ea79f54d743c1121" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="selectric" supported="no">
+		<description>Selectric (Fra, v1.03)</description>
+		<year>1993</year>
+		<publisher>Stefan Rademacher</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="selectric v1.03 (1993-03-22)(rademacher, stefan)(fr)(sw).st" size="737280" crc="8404103f" sha1="3b1e5f7cbf8993704a33d91b866773b906070153" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="seq1" supported="no">
+		<description>Sequencer One (v2.0)</description>
+		<year>1991</year>
+		<publisher>Gajits</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="sequencer one v2.0 (1991)(gajits).st" size="819200" crc="d48d51a6" sha1="3aa2ae5cfdf3489496b931787d39a16720d232ea" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- high resolution -->
+	<software name="seqpro2" supported="no">
+		<description>Sequencer PRO II</description>
+		<year>1990</year>
+		<publisher>ACN</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="sequencer pro ii (1990)(acn)[high resolution].st" size="368640" crc="adff4449" sha1="2c7bbef9d20eea3cf8793609a4ff4c3df302d0b9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- monochrome -->
+	<software name="sherlock" supported="no">
+		<description>Sherlook Professional (v3.1, Cracked)</description>
+		<year>19??</year>
+		<publisher>&lt;bootleg&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="sherlook professional v3.1 (19xx)(3k-alm)(m3)[cr][monochrome].st" size="819200" crc="003d55d5" sha1="29ee0b5a5a953eaa5bcd87af6a3ba62fef04a5fa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="seuck" supported="no">
+		<description>Shoot'em Up Construction Kit</description>
+		<year>1989</year>
+		<publisher>Palace</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="shoot'em up construction kit (1989)(palace)(disk 1 of 4).st" size="368640" crc="c952ab34" sha1="571367cc67cd4e62a861aac69f76be852195adb6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="shoot'em up construction kit (1989)(palace)(disk 2 of 4).st" size="409600" crc="af35ac9a" sha1="9a18f701c3fe48c643afa7184f8fa614518f1ad1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="shoot'em up construction kit (1989)(palace)(disk 3 of 4).st" size="409600" crc="9a148907" sha1="d5d2e7cfee093be823de332a3357d91d49f2817b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="shoot'em up construction kit (1989)(palace)(disk 4 of 4).st" size="409600" crc="cadf9566" sha1="4cb0900533f33e5b0cd5e7c4421104a5e9941c5f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="seucka" cloneof="seuck" supported="no">
+		<description>Shoot'em Up Construction Kit (Cracked)</description>
+		<year>1989</year>
+		<publisher>&lt;bootleg (Empire)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="746496">
+				<rom name="shoot'em up construction kit (1989)(palace)[cr empire].st" size="746496" crc="8a00b8a2" sha1="d1219cd71b2eff2923635d8709d4b86eccd6c964" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="seuckb" cloneof="seuck" supported="no">
+		<description>Shoot'em Up Construction Kit (Cracked, Alt)</description>
+		<year>1989</year>
+		<publisher>&lt;bootleg (Empire)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="shoot'em up construction kit (1989)(palace)[cr empire][a].st" size="737280" crc="2db725d8" sha1="f440fa9621f322c9dbf477787c05741e1e24e470" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sidsound" supported="no">
+		<description>Sidsound Designer</description>
+		<year>19??</year>
+		<publisher>Animal Mine - Independent</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="sidsound designer (19xx)(animal mine - independent).st" size="737280" crc="3c021f2f" sha1="e71cbb5c42a9d31ef7e9018e8d64379706eabf3c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="signum" supported="no">
+		<description>Signum (Ger, v4.00)</description>
+		<year>1997</year>
+		<publisher>Application Systems Heidelberg</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="signum v4.00 (1997-04-03)(application systems heidelberg)(de)(disk 1 of 3).st" size="737280" crc="687ab147" sha1="efb73015e1e467438e3520c4bc0287127b741baa" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="signum v4.00 (1997-04-03)(application systems heidelberg)(de)(disk 2 of 3).st" size="737280" crc="2a1a80da" sha1="bf3efb9df6eed3744c141e255cad08c59c1e8fdb" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="signum v4.00 (1997-04-03)(application systems heidelberg)(de)(disk 3 of 3).st" size="737280" crc="ca195203" sha1="9273cdefc43e530dd2dd783b4a90eb3932c7bb30" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="signum3" cloneof="signum" supported="no">
+		<description>Signum! 3 (Ger, v1.0, Cracked)</description>
+		<year>1991</year>
+		<publisher>&lt;bootleg (Elite)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="signum! 3 v1.0 (1991-12-11)(application systems heidelberg)(de)(disk 1 of 3)[cr elite].st" size="737280" crc="9e5b911a" sha1="3fd5b248ff0066dbecfe57b281fac3de386ebe59" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="signum! 3 v1.0 (1991-12-11)(application systems heidelberg)(de)(disk 2 of 3)[cr elite].st" size="737280" crc="bc4cb446" sha1="2152ec33d5800f924cdc6b17151fb18513e95f0d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="signum! 3 v1.0 (1991-12-11)(application systems heidelberg)(de)(disk 3 of 3)[cr elite].st" size="737280" crc="b58fcc78" sha1="1664fcd3324f5a230778d481788c1dc0d492c624" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="signum2" cloneof="signum" supported="no">
+		<description>Signum (v2.00, Bad?)</description>
+		<year>1987</year>
+		<publisher>Signa Publishing Systems</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="signum v2.00 (1987-11-06)(signa publishing systems ltd.)[b].st" size="819200" crc="bf93df73" sha1="77bfbf6d6e60617d536cac37cc2ec0ab5abefcf2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="signum2a" cloneof="signum" supported="no">
+		<description>Signum (v2.00, Alt, Bad?)</description>
+		<year>1987</year>
+		<publisher>Signa Publishing Systems</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="signum v2.00 (1987-11-06)(signa publishing systems ltd.)[b][a].st" size="839680" crc="f96fcd9c" sha1="2efccd0cab958966ffbb1a9e4886a811a9761b84" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="signumms" supported="no">
+		<description>Signum Microshell</description>
+		<year>1987</year>
+		<publisher>TS - KS</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="signum microshell (1987-01-11)(ts - ks).st" size="839680" crc="2d3c55d4" sha1="ea0d9b438523074117d57d58a03d33a81dd27f13" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- monochrome -->
+	<software name="silhouet" supported="no">
+		<description>Silhouette (v1.25)</description>
+		<year>1991</year>
+		<publisher>MaxWell C.P.U.</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="746496">
+				<rom name="silhouette v1.25 (1991)(maxwell c.p.u.)[monochrome].st" size="746496" crc="51ffcdea" sha1="dee7c6ba320a59d461b85a53459556210c1307a7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="silhoueta" cloneof="silhouet" supported="no">
+		<description>Silhouette (v1.25, Alt)</description>
+		<year>1991</year>
+		<publisher>MaxWell C.P.U.</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="746496">
+				<rom name="silhouette v1.25 (1991)(maxwell c.p.u.)[a][monochrome].st" size="746496" crc="e2a3d50b" sha1="17a5708ece6b73c3bac122863e39e829af67b8cc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="skyplot" supported="no">
+		<description>Skyplot</description>
+		<year>1986</year>
+		<publisher>CSM</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="skyplot (1986)(csm).st" size="737280" crc="6417c114" sha1="e04766b0039e678e60d9ce870cec0f9d0d603314" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="son" supported="no">
+		<description>Son (Fra)</description>
+		<year>19??</year>
+		<publisher>Floirac Software</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="son (19xx)(floirac software)(fr).st" size="368640" crc="8f81c8bc" sha1="5f8fcb82e09f7023751a5a8a9f35f9fa93d32d4d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="soundtre" supported="no">
+		<description>Sound Treiber fuer Atari (Ger?, v2.01)</description>
+		<year>19??</year>
+		<publisher>Removers</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="sound treiber fuer atari v2.01 (19xx)(removers).st" size="737280" crc="83c25228" sha1="6326409e577a37231f3d33075ca8886df4063194" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="soundtref" cloneof="soundtre" supported="no">
+		<description>Sound Treiber fuer Atari (Fra?, v2.02)</description>
+		<year>19??</year>
+		<publisher>Removers</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="sound treiber fuer atari v2.02 (19xx)(removers)(fr).st" size="368640" crc="66b83cd5" sha1="500bbabe4df1be1edb370002b97f920743668189" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="soundlab" supported="no">
+		<description>Soundlab (v1.1, Hacked)</description>
+		<year>1993</year>
+		<publisher>&lt;hack (Noid)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="849920">
+				<rom name="soundlab v1.1 (1993)(dmj)[m noid].st" size="849920" crc="2b1a60a0" sha1="b2caed045e285c2ed6eb99682a1b4c241c193960" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spack" supported="no">
+		<description>Spack (Fra)</description>
+		<year>1989</year>
+		<publisher>Esat Software</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="414720">
+				<rom name="spack (1989)(esat software)(fr)(disk 1 of 3).st" size="414720" crc="63697b14" sha1="834b9bdbf3cf968ff9d7f6aa8a1b30b47aa4e49a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="spack (1989)(esat software)(fr)(disk 2 of 3).st" size="409600" crc="874fd658" sha1="7913407b661dc1e6aa650454941a60a68761a50a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="spack (1989)(esat software)(fr)(disk 3 of 3).st" size="829440" crc="16175879" sha1="278e45358a213fed05ac0195e17408511f63c406" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- requires STOS -->
+	<software name="speccode" supported="no">
+		<description>Speccode Program (Demo)</description>
+		<year>1992</year>
+		<publisher>Blackwing Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="speccode program (demo-playable) (1992)(blackwing publishing)(pd)[req stos].st" size="368640" crc="96bbf518" sha1="d2c42d0aad7b8cb686643c7350f91604eef84612" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spec512" supported="no">
+		<description>Spectrum 512 (v1.01)</description>
+		<year>1987</year>
+		<publisher>Antic Software</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="spectrum 512 v1.01 (1987)(antic software).st" size="737280" crc="9a65ccaf" sha1="529f54236af7dcd1b687f9c2b0419eb6a18fbf5a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spec512a" cloneof="spec512" supported="no">
+		<description>Spectrum 512 (v1.01?, Alt)</description>
+		<year>1987</year>
+		<publisher>Antic Software</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="spectrum 512 (1987)(antic software).st" size="737280" crc="7fc1679a" sha1="bc32f5b8aa014d918e498e32ff010d0737ff5409" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="speedlig" supported="no">
+		<description>Speed of Light (v3.8, Hacked?)</description>
+		<year>1995</year>
+		<publisher>&lt;hack (Noid)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="speed of light v3.8 (1995)(stusoft)[m noid].st" size="737280" crc="d773e121" sha1="384477ef750f295edadc5d40003721e015c597f2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="speedlig26" cloneof="speedlig" supported="no">
+		<description>Speed of Light (v2.6, Hacked?)</description>
+		<year>1995</year>
+		<publisher>&lt;hack (Noid)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="speed of light v2.6 (1995)(stusoft)[m noid].st" size="737280" crc="e15cd98e" sha1="60cd953fefa869ff529dbdaf02907bebd55966f6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="speedo" supported="no">
+		<description>SpeedoGDOS (v5.0)</description>
+		<year>1994</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="speedo gdos v5.0 (1994)(atari)(disk 1 of 4).st" size="819200" crc="f6ebad8f" sha1="a858656059f0f73eb80739ccfac277d073575a74" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="speedo gdos v5.0 (1994)(atari)(disk 2 of 4).st" size="819200" crc="1943c189" sha1="4955bde6bac7be654de3df7f2782b43caa19bb6e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="speedo gdos v5.0 (1994)(atari)(disk 3 of 4).st" size="819200" crc="6f201699" sha1="68b0e3fb89867798b8bc48d5d2a07d28404f0b2d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="speedo gdos v5.0 (1994)(atari)(disk 4 of 4).st" size="819200" crc="01da356d" sha1="f3e590e067bd1dcdffd4b2d24b16d3b511f266de" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="speedoa" cloneof="speedo" supported="no">
+		<description>SpeedoGDOS (v5.0, Alt Disk 1)</description>
+		<year>1994</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="1474560">
+				<rom name="speedo gdos v5.0 (1994)(atari)(disk 1 of 4)[a].st" size="1474560" crc="fbdf20d4" sha1="227f124173cb3618c4d4479a7eb715c29b9e19cf" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="speedo gdos v5.0 (1994)(atari)(disk 2 of 4).st" size="819200" crc="1943c189" sha1="4955bde6bac7be654de3df7f2782b43caa19bb6e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="speedo gdos v5.0 (1994)(atari)(disk 3 of 4).st" size="819200" crc="6f201699" sha1="68b0e3fb89867798b8bc48d5d2a07d28404f0b2d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="speedo gdos v5.0 (1994)(atari)(disk 4 of 4).st" size="819200" crc="01da356d" sha1="f3e590e067bd1dcdffd4b2d24b16d3b511f266de" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="speedo41" cloneof="speedo" supported="no">
+		<description>SpeedoGDOS (Ger, v4.1)</description>
+		<year>1993</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="1474560">
+				<rom name="speedogdos v4.1 (1993-05-03)(atari)(de)(disk 1 of 2).st" size="1474560" crc="0b9c7ccd" sha1="c89386da95b621ce507fd2ab3b789a09d17cdf62" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="1474560">
+				<rom name="speedogdos v4.1 (1993-05-03)(atari)(de)(disk 2 of 2).st" size="1474560" crc="c1b28474" sha1="2b4ce9390928ced5240f44f6a8605554ec685bee" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="speedo4" cloneof="speedo" supported="no">
+		<description>SpeedoGDOS (Fra, v4.0)</description>
+		<year>1993</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="746496">
+				<rom name="speedo gdos v4.0 (1993-01-25)(atari)(fr)(disk 1 of 4).st" size="746496" crc="fa1bcf43" sha1="b8036c836491decbe3d199da08adb4efd4ec41fc" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="746496">
+				<rom name="speedo gdos v4.0 (1993-01-25)(atari)(fr)(disk 2 of 4).st" size="746496" crc="21b91701" sha1="0e5585fa01d9796390579cda79f79e9bff1cf3c8" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="746496">
+				<rom name="speedo gdos v4.0 (1993-01-25)(atari)(fr)(disk 3 of 4).st" size="746496" crc="29d3de2b" sha1="ebb6d77d270c19a1d40da887aee4eef741c6bfb2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="speedo gdos v4.0 (1993-01-25)(atari)(fr)(disk 4 of 4).st" size="737280" crc="03813a10" sha1="8b2ddb3b467bd46a78a141f4ff0a64170efccd4b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="speedpac" supported="no">
+		<description>Speedpacker (v3.0)</description>
+		<year>1992</year>
+		<publisher>Firehawks</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="speedpacker v3.0 (1992)(firehawks).st" size="737280" crc="370d41c2" sha1="f0ad7683e1aff6319ab4e5bc6afdda3841ccb0d0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="speedpaca" cloneof="speedpac" supported="no">
+		<description>Speedpacker (v3.0, Alt)</description>
+		<year>1992</year>
+		<publisher>Firehawks</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="speedpacker v3.0 (1992)(firehawks)[a].st" size="737280" crc="d7744235" sha1="b0200a70beb60c392742fd0ed107ae6cb16ca32b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="spy2" supported="no">
+		<description>Spy II (Fra, v1.2)</description>
+		<year>1987</year>
+		<publisher>Arcadian</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="spy ii v1.2 (1987)(arcadian)(fr).st" size="368640" crc="ede5cbea" sha1="ff18759a9094f8a9c6999a684ac34f4f009f8ce2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="starstru" supported="no">
+		<description>Star Struck - L'Astrologue (Fra, v1.0)</description>
+		<year>1986</year>
+		<publisher>Harry Koons</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="star struck - l'astrologue v1.0 (1986)(koons, harry)(fr).st" size="409600" crc="ede05c9f" sha1="af3e9229616de72370f32172a4e8f8652438a2e0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stereo" supported="no">
+		<description>Stereo Master (v2.0)</description>
+		<year>19??</year>
+		<publisher>Microdeal</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="stereo master v2.0 (19xx)(microdeal).st" size="737280" crc="e1e127ce" sha1="83389d34c0d75a8e65f5468b50c9ba248371687f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="steve" supported="no">
+		<description>Steve (v3.0)</description>
+		<year>1988</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="steve v3.0 (1988-04)(-).st" size="737280" crc="b4a61a2e" sha1="b789f0ea2f15d589945debc20ce85a4f07f5d04f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="steve23" cloneof="steve" supported="no">
+		<description>Steve (v2.3)</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="steve v2.3 (19xx)(-).st" size="737280" crc="1de200ae" sha1="d99759d5bf80a1bf6abe7a0fa6cc4ac453de0a94" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sticker3" supported="no">
+		<description>Sticker III</description>
+		<year>19??</year>
+		<publisher>ShapoorE.Engineer</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="sticker iii (19xx)(shapoore.engineer)(sw).st" size="737280" crc="bfdca947" sha1="afc0cfff08ff8fdec63659ebf28329ccfce347c6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sting" supported="no">
+		<description>Sting</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="sting (19xx)(-).st" size="737280" crc="d72212f8" sha1="3bd853f1a855714008e43c075a4e991301abc547" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="storm" supported="no">
+		<description>Storm (Bad?)</description>
+		<year>1994</year>
+		<publisher>ASTRAsoft</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="storm (1994-05)(astrasoft)(gb)[b].st" size="737280" crc="1c0a2ca5" sha1="e94adcb698d74384dea5c42760e4764ac0f3c979" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stoscu" supported="no">
+		<description>STOS Compiler Update</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="stos compiler update (19xx)(-).st" size="737280" crc="6d4008d9" sha1="279dd1eca6af87e3aa9d2f5dbd11b594ceb73331" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="studio24" supported="no">
+		<description>Studio 24 (v3.3, Cracked)</description>
+		<year>1990</year>
+		<publisher>&lt;bootleg (Elite)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="studio 24 v3.3 (1990-04)(comus france)[cr elite].st" size="368640" crc="418c021c" sha1="c2351fe286bb45fe1d137daf448af6f6f261453b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="studio24f" cloneof="studio24" supported="no">
+		<description>Studio 24 (Fra, v1.0, Hacked)</description>
+		<year>19??</year>
+		<publisher>&lt;hack (Atariforce)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="studio 24 v1.0 (1997-10-01)(comus france)(fr)[m atariforce].st" size="737280" crc="6c547956" sha1="6a667ede8323e95ee58f3bf9410d3ec4366dbce6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stylemac" supported="no">
+		<description>Style Machine (v1.2)</description>
+		<year>1992</year>
+		<publisher>&lt;bootleg (Elite)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="style machine v1.2 (1992)(emc)[cr elite].st" size="737280" crc="ff9d9cc4" sha1="c0a4309d2930f763764d0cd845532ea061645139" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="scharger" supported="no">
+		<description>Super Charger Utility Disk (v1.40)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="super charger utility disk v1.40 (19xx)(-).st" size="737280" crc="0ba37611" sha1="42ff65cf64dc8cf3b180bc4b33141d1b41abbfe9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="superlib" supported="no">
+		<description>Super Librarian (v3.0)</description>
+		<year>1990</year>
+		<publisher>Pixel Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="super librarian v3.0 (1990)(pixel publishing).st" size="737280" crc="105d1a9a" sha1="87b9f0a94dbe64a410968c0f862e6ce12ed8dd19" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sced" supported="no">
+		<description>SuperCharged Easy-Draw (v2.24)</description>
+		<year>1987</year>
+		<publisher>Migraph</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="supercharged easy-draw v.2.24 (1987)(migraph).st" size="839680" crc="e67abbe1" sha1="6f114ab21ade809f120cf33a18015aed557622f5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="supercharged easy-draw image files (1987)(migraph).st" size="839680" crc="9c241470" sha1="41a9dce90f5575c6fff1ab29976462c0959e49b7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sbaseper" supported="no">
+		<description>Superbase Personal (v1.028)</description>
+		<year>1987</year>
+		<publisher>Precision</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="373248">
+				<rom name="superbase personal v1.028 (1987-08-27)(precision).st" size="373248" crc="d03b2420" sha1="35cfebf5fa3e8e0349bfcc11f1e5eea11a83eb45" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sbaseper2" supported="no">
+		<description>Superbase Personal 2 (v3.03)</description>
+		<year>1989</year>
+		<publisher>Precision</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="superbase personal 2 v3.03 (1989-03-10)(precision).st" size="737280" crc="2febf5ca" sha1="bb22a3b4c60f56c41f03fbb73e7918f4652e8182" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sbasepro" supported="no">
+		<description>Superbase Professional (v3.02)</description>
+		<year>1989</year>
+		<publisher>Precision</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="superbase professional v3.02 (1989-03-10)(precision)(disk 1 of 3).st" size="829440" crc="57deec38" sha1="9794065d44c2c89b6e7db6978ba421009f7408e6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="superbase professional v3.02 (1989-03-10)(precision)(disk 2 of 3).st" size="737280" crc="c80fb6eb" sha1="e1058e7a814849b607b4c547e899b2cc327fee9f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="superbase professional v3.02 (1989-03-10)(precision)(disk 3 of 3).st" size="737280" crc="d6a93d41" sha1="461139a9fc851e201156a975cc1f13d08ad30a49" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sbaseproa" cloneof="sbasepro" supported="no">
+		<description>Superbase Professional (v3.02, Alt)</description>
+		<year>1989</year>
+		<publisher>Precision</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="superbase professional v3.02 (1989-03-10)(precision)(disk 1 of 3)[a].st" size="819200" crc="e24991a6" sha1="869373639f134363dc245366aa13b19b57e416d4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="superbase professional v3.02 (1989-03-10)(precision)(disk 2 of 3)[a].st" size="819200" crc="4717ccf9" sha1="62665230e920df6e4cfc7b7eed1c20e3968db25d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="superbase professional v3.02 (1989-03-10)(precision)(disk 3 of 3).st" size="737280" crc="d6a93d41" sha1="461139a9fc851e201156a975cc1f13d08ad30a49" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sbasepro301" cloneof="sbasepro" supported="no">
+		<description>Superbase Professional (v3.01)</description>
+		<year>1988</year>
+		<publisher>Precision</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="superbase professional v3.01 (1988-11-29)(precision)(disk 1 of 2).st" size="737280" crc="39deeb09" sha1="aed4485636444bab0496c402ad30b7e505083ac4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="superbase professional v3.01 (1988-11-29)(precision)(disk 2 of 2).st" size="737280" crc="4abf77a4" sha1="53b5df4ad1764b11f1f81e0cce9b04ca3f1f8bce" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sbasepro203" cloneof="sbasepro" supported="no">
+		<description>Superbase Professional (v2.03)</description>
+		<year>1988</year>
+		<publisher>Precision</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="superbase professional v2.03 (1988-05-01)(precision)(disk 1 of 2).st" size="737280" crc="f6a4f5e5" sha1="3b4bb51873b0ba93f279da597cfda3ef8c6797ca" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="superbase professional v2.03 (1988-05-01)(precision)(disk 2 of 2).st" size="829440" crc="6c665faa" sha1="aa5ef7823844e4109ee723dea0ec164875e016a9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sbasepro1026" cloneof="sbasepro" supported="no">
+		<description>Superbase Professional (v1.026)</description>
+		<year>1987</year>
+		<publisher>Precision</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="superbase professional v1.026 (1987-04-01)(precision).st" size="737280" crc="958d8a4e" sha1="32b7d8d9a0ab715e4280f3abd33d3cb052080746" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sbaseprofe" supported="no">
+		<description>Superbase Professional Forms Editor (v3.01)</description>
+		<year>1988</year>
+		<publisher>Precision</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="superbase professional forms editor v3.01 (1988-11-29)(precision).st" size="737280" crc="a7360b5f" sha1="526677c8d1010e0662dfae3a3406f41c29b57fc9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="superboot" supported="no">
+		<description>Superboot (v7.0)</description>
+		<year>1991</year>
+		<publisher>Gordon Moore</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="superboot v7.0 (1991-01-03)(moore, gordon).st" size="737280" crc="703c4f59" sha1="3e5d012c5eca33034a30fe908e3e47ec931bdb81" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="supermon" supported="no">
+		<description>Supermon (v1.03)</description>
+		<year>1990</year>
+		<publisher>Will Visser</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="supermon v1.03 (1990-12-01)(visser, will).st" size="737280" crc="4aa24a0d" sha1="57dd0b4427be6be93ff37c99e561ae56081e1608" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="supermona" cloneof="supermon" supported="no">
+		<description>Supermon (v1.03, Alt)</description>
+		<year>1990</year>
+		<publisher>Will Visser</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="supermon v1.03 (1990-12-01)(visser, will)[a].st" size="737280" crc="e3224b7f" sha1="1d16eb3b9ac9bb665b2b595e216cada963d3a3ec" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="synthwork" supported="no">
+		<description>SynthWork</description>
+		<year>1988</year>
+		<publisher>Steinberg</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="746496">
+				<rom name="synthwork (1988)(steinberg).st" size="746496" crc="2f09169d" sha1="9ba00698ff2b959ea8f52b0fbd6bb8c37a6d0165" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="synthart" supported="no">
+		<description>Synthetic Arts Dessin (Fra)</description>
+		<year>1992</year>
+		<publisher>Cybernetics</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="synthetic arts dessin (1992)(cybernetics)(fr).st" size="368640" crc="bec1a96e" sha1="7229ab39acfd64efa8c650cdc98740ad6d404f53" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sam" supported="no">
+		<description>System Audio Manager</description>
+		<year>1992</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="system audio manager (1992)(atari).st" size="737280" crc="e524437d" sha1="68dafb14bcedff2e580aa43860f608ed1d3c8f2b" offset="0" />
 			</dataarea>
 		</part>
 	</software>

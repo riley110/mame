@@ -5,7 +5,7 @@
 <!-- TOSEC - Applications [ST}-->
 
 	<software name="langste" supported="no">
-		<description>Atari STE Language Disk</description>
+		<description>Atari STe Language Disk</description>
 		<year>19??</year>
 		<publisher>Atari</publisher>
 
@@ -17,7 +17,7 @@
 	</software>
 
 	<software name="langstef" cloneof="langste" supported="no">
-		<description>Atari STE Language Disk (Fra)</description>
+		<description>Atari STe Language Disk (Fra)</description>
 		<year>19??</year>
 		<publisher>Atari</publisher>
 
@@ -29,13 +29,25 @@
 	</software>
 
 	<software name="langstefa" cloneof="langste" supported="no">
-		<description>Atari STE Language Disk (Fra, Alt)</description>
+		<description>Atari STe Language Disk (Fra, Alt)</description>
 		<year>19??</year>
 		<publisher>Atari</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="atari language disk ste (19xx)(atari)(fr)[a].st" size="737280" crc="03f95e14" sha1="e907bd49d1a70b52b03a5197c70b291e82c18081" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="langstefb" cloneof="langste" supported="no">
+		<description>Atari STe Language Disk (Fra, Alt 2)</description>
+		<year>19??</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="ste language disk (19xx)(atari)(fr).st" size="737280" crc="3225a186" sha1="20b9a93a5738610ace7b498ec02e471dac82a3f5" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -76,7 +88,10 @@
 		</part>
 	</software>
 
-	<!-- Assuming these two below are STe only also, even though they aren't marked as such in TOSEC -->
+	<!--
+	Assuming these two below are later versions of the above program,
+	and therefore also STe only, even though they aren't marked as such in TOSEC
+	-->
 
 	<software name="cab20" cloneof="cab" supported="no">
 		<description>CAB (Ger, v2.0)</description>
@@ -103,7 +118,7 @@
 	</software>
 
 	<software name="cdplayer" supported="no">
-		<description>CD-Player STE</description>
+		<description>CD-Player STe</description>
 		<year>1990</year>
 		<publisher>Light</publisher>
 
@@ -122,6 +137,88 @@
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="839680">
 				<rom name="compila (2002-09-24)(mjj-prod)(ste).st" size="839680" crc="2904a853" sha1="92ccabbe56cfb2e78488bce305405e72c6ec2c06" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="melody" supported="no">
+		<description>STe Melody Maker (Fra)</description>
+		<year>1990</year>
+		<publisher>Richard Watts Associates - Upgrade Editions</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="728064">
+				<rom name="ste melody maker (1990)(richard watts associates - upgrade editions)(ste)(fr).st" size="728064" crc="f1c9a4f6" sha1="ee12242d9d1403409b26b9b9a02f897b60d7589f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="melodya" cloneof="melody" supported="no">
+		<description>STe Melody Maker (Fra, Alt)</description>
+		<year>1990</year>
+		<publisher>Richard Watts Associates - Upgrade Editions</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="ste melody maker (1990)(richard watts associates - upgrade editions)(ste)(fr)[a].st" size="737280" crc="5b0e912d" sha1="5d6a635b679b0e8e23823fbc2177b166a1f3cc19" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stella" supported="no">
+		<description>Stella (Bad?)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="stella (19xx)(-)(ste)[b].st" size="737280" crc="b3e7e42a" sha1="03a4eea79ae982bf785777e952e73f4b86539060" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="studphot" supported="no">
+		<description>Studio Phot (Fra, v1.0)</description>
+		<year>1993</year>
+		<publisher>Euro-Soft</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="studio phot v1.0 (1993-04-08)(euro-soft)(fr)[ste - falcon].st" size="737280" crc="ade945ce" sha1="132628add752e0fe33d941b15125f41603c504a5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sam" supported="no">
+		<description>System Audio Manager (Fra, v1.1)</description>
+		<year>1992</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="system audio manager v1.1 (1992)(atari)(fr)(disk 1 of 2)[ste - falcon].st" size="737280" crc="38c48d61" sha1="99f50199b8cdd18d3b3e70997addb8f6e8d197f1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="system audio manager v1.1 (1992)(atari)(fr)(disk 2 of 2)[ste - falcon].st" size="737280" crc="97c38484" sha1="a9ed8e41d2df6d060751ce1b32aae16bcb1ab1b3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sama" cloneof="sam" supported="no">
+		<description>System Audio Manager (Fra, v1.1, Alt)</description>
+		<year>1992</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="system audio manager v1.1 (1992)(atari)(fr)(disk 1 of 2)[a][ste - falcon].st" size="737280" crc="adf9604f" sha1="7f05decb10fe8c1ee459a381c690c6e9b956f9d4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="system audio manager v1.1 (1992)(atari)(fr)(disk 2 of 2)[a][ste - falcon].st" size="737280" crc="91f9f08d" sha1="3d1cfceb4efb3746455cb56d2da0a5dc73fdcdfe" offset="0" />
 			</dataarea>
 		</part>
 	</software>
