@@ -13214,7 +13214,7 @@
 	<software name="pov2" supported="no">
 		<description>POV 2 (v1.32)</description>
 		<year>1993</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -13236,7 +13236,7 @@
 	<software name="povdocs" supported="no">
 		<description>POV Docs, Scripts and Pictures</description>
 		<year>19??</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -13248,7 +13248,7 @@
 	<software name="povinclu" supported="no">
 		<description>POV Include</description>
 		<year>19??</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="839680">
@@ -13335,7 +13335,7 @@
 	<software name="papillon" supported="no">
 		<description>Papillon (Bad?)</description>
 		<year>19??</year>
-		<publisher></publisher>
+		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
@@ -15838,6 +15838,1160 @@
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="system audio manager (1992)(atari).st" size="737280" crc="e524437d" sha1="68dafb14bcedff2e580aa43860f608ed1d3c8f2b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tcbtrack" supported="no">
+		<description>TCB Tracker</description>
+		<year>1990</year>
+		<publisher>MPH</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="tcb tracker (1990)(mph).st" size="829440" crc="6dddcad8" sha1="c590a50c1ae08890dab09bb8adcba2a2ebe3a25c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tcbtracka" cloneof="tcbtrack" supported="no">
+		<description>TCB Tracker (Alt)</description>
+		<year>1990</year>
+		<publisher>MPH</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="849920">
+				<rom name="tcb tracker (1990)(mph)[a].st" size="849920" crc="b5c2c111" sha1="fbd54dca1827295d0dfa63480ca86850a0ab0ef9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tcbtrackb" cloneof="tcbtrack" supported="no">
+		<description>TCB Tracker (Alt 2)</description>
+		<year>1990</year>
+		<publisher>MPH</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="tcb tracker (1990)(mph)[a2].st" size="839680" crc="73adbb79" sha1="1c2606bee1821006abd10d2cb748359974d8168d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tcbtrackc" cloneof="tcbtrack" supported="no">
+		<description>TCB Tracker (Alt 3)</description>
+		<year>1990</year>
+		<publisher>MPH</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="tcb tracker (1990)(mph)[a3].st" size="737280" crc="6f4db606" sha1="cdcfa8be237fd28ba0016cf35bc03cb3d953ade3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tcbtrackd" cloneof="tcbtrack" supported="no">
+		<description>TCB Tracker (Cracked by Hemoroids)</description>
+		<year>1990</year>
+		<publisher>&lt;bootleg (Hemoroids)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="tcb tracker (1990)(mph)[cr hemoroids].st" size="737280" crc="5b4bfde8" sha1="23dda4ff6302633bbf6d467b9cb8ec496b209393" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tcbtracke" cloneof="tcbtrack" supported="no">
+		<description>TCB Tracker (Unknown Crack)</description>
+		<year>1990</year>
+		<publisher>&lt;bootleg&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="946176">
+				<rom name="tcb tracker (1990)(mph)[cr].st" size="946176" crc="93ba74e9" sha1="55e88f2cbf8332b316f9925e871c845686289e33" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ttfgdos" supported="no">
+		<description>TTF-GDOS (v2.2)</description>
+		<year>1989</year>
+		<publisher>Trevor Blight</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="ttf-gdos v2.2 (1989)(blight, trevor)(fw).st" size="737280" crc="6cd9c84f" sha1="1186b2383c6259872591f6d721c6d4e72dbb9bbf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ttfgdosa" cloneof="ttfgdos" supported="no">
+		<description>TTF-GDOS (unknown version)</description>
+		<year>19??</year>
+		<publisher>Trevor Blight</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="ttf-gdos (19xx)(blight, trevor)(sw).st" size="368640" crc="ed274d46" sha1="3e3353c81983fa8b87fe291210d13f9a1914f9f5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="teleoffi" supported="no">
+		<description>Tele Office (v2.00)</description>
+		<year>1992</year>
+		<publisher>TKR</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="tele office v2.00 (1992)(tkr gmbh - co kg).st" size="737280" crc="456ca0b5" sha1="fc93a5c5f40a17ba6f5c38999f0fbce78d946cd9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tempustk" supported="no">
+		<description>Tempus Tektseditor (Ned, v2.06)</description>
+		<year>1988</year>
+		<publisher>CCD</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="654336">
+				<rom name="tempus tektseditor v2.06 (1988-12-06)(ccd)(nl).st" size="654336" crc="6eafdb87" sha1="43050f85c9c2c43040f699a0bf6f4fa8fbd6d9e0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tempusjr" supported="no">
+		<description>Tempus Word Junior (Ger, v2.91, Cracked)</description>
+		<year>1996</year>
+		<publisher>&lt;bootleg (Vectronix)</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="tempus word junior v2.91 (1996)(creative computer design)(de)(disk 1 of 3)[cr vectronix][program disk].st" size="737280" crc="3783ada3" sha1="2704c662bb3bdc7d90f4e088ffc7c686e90ba842" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="tempus word junior v2.91 (1996)(creative computer design)(de)(disk 2 of 3)[cr vectronix][data disk].st" size="737280" crc="aaeb0ec3" sha1="d83127627abd44cd2b0400b2670412bd5e36867e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="tempus word junior v2.91 (1996)(creative computer design)(de)(disk 3 of 3)[cr vectronix][font disk].st" size="737280" crc="16b4eba0" sha1="a8214963ccae910f60535afe333d28ee0fdf199f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tempus" supported="no">
+		<description>Tempus Word (v1.10)</description>
+		<year>1987</year>
+		<publisher>Creative Computer Design (CCD)</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="tempus word v1.10 (1987-06-19)(creative computer design).st" size="737280" crc="5deb4e09" sha1="1ed2908217be80ede52b458586b8096b5da2c222" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tempusg" cloneof="tempus" supported="no">
+		<description>Tempus Word (Ger, v1.10)</description>
+		<year>1987</year>
+		<publisher>Creative Computer Design (CCD)</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="tempus word v1.10 (1987-06-19)(creative computer design)(de).st" size="737280" crc="be7eb5df" sha1="a215a145d039592325d581da6100a5fff14f71a5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tempusd" cloneof="tempus" supported="no">
+		<description>Tempus Word (Demo, v1.00, Bad?)</description>
+		<year>1990</year>
+		<publisher>Creative Computer Design (CCD)</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="tempus word v1.00 (demo) (1990)(ccd)[b].st" size="737280" crc="0fa1d4ed" sha1="5b71ef33cb996d3b9bf0e6d04b3cb96a893b1801" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="teradesk" supported="no">
+		<description>Teradesk (v1.40, Hacked)</description>
+		<year>1994</year>
+		<publisher>&lt;hack (Atariforce)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="teradesk v1.40 (1994)(klaren, w.)(en-fr)[m atariforce].st" size="737280" crc="f980cc60" sha1="2fb10e225df724e9ac90ee583bbaf3f43ec217dd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="terminma" supported="no">
+		<description>Terminmanager (Ger)</description>
+		<year>19??</year>
+		<publisher>DiLi Soft</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="terminmanager (19xx)(dili soft)(de)(sw).st" size="368640" crc="44c086e2" sha1="fb1dcedd8215cf13f7030e425ef324c02a47502b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="texel" supported="no">
+		<description>Texel (Ger, Demo, v2.20)</description>
+		<year>1999</year>
+		<publisher>Application Systems Heidelberg</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="1474560">
+				<rom name="texel v2.20 (demo) (1999-03-07)(application systems heidelberg)(de).st" size="1474560" crc="da0aaea0" sha1="22fc5d6254915231acb2e71a5fe582e7c74e7f7e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thatwrit" supported="no">
+		<description>That's Write (Ger, v4.07)</description>
+		<year>1995</year>
+		<publisher>Compo</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="that's write v4.07 (1995-01)(compo)(de)(disk 1 of 6).st" size="737280" crc="26792a24" sha1="06776fe898975d4c7c25576acfd099a37ba4a0d1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="that's write v4.07 (1995-01)(compo)(de)(disk 2 of 6).st" size="737280" crc="d278f6f1" sha1="9471e6635e7b87a7f30a79952bfa7f16d6f961d2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="that's write v4.07 (1995-01)(compo)(de)(disk 3 of 6).st" size="737280" crc="beb2f774" sha1="685eac0ad182137c7702edfa2d6bd269404cbb71" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="that's write v4.07 (1995-01)(compo)(de)(disk 4 of 6).st" size="737280" crc="0465b208" sha1="f94986d6b1cefd86d6595e38f6190833a5473c9a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="that's write v4.07 (1995-01)(compo)(de)(disk 5 of 6).st" size="737280" crc="2aa276de" sha1="20766052b015c34040371cef0ced9614e60a4f1a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="that's write v4.07 (1995-01)(compo)(de)(disk 6 of 6).st" size="737280" crc="31c07ae4" sha1="8eb215210c8a76429145d0aba3182161ce8384ce" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="thatwrit124" cloneof="thatwrit" supported="no">
+		<description>That's Write (Ger, v1.24)</description>
+		<year>1989</year>
+		<publisher>Compo</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="that's write v1.24 (1989)(compo)(disk 1 of 2).st" size="737280" crc="25327791" sha1="df21538cf4e8e61ad4bb44459e88b25b00a50c61" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="that's write v1.24 (1989)(compo)(disk 2 of 2).st" size="737280" crc="62d69786" sha1="7e38e03a27ad751d5768ee0a77dd0db9e3251563" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tigercub" supported="no">
+		<description>Tiger Cub (v2.0)</description>
+		<year>1992</year>
+		<publisher>Dr. T's Music Software</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="tiger cub v2.0 (1992-03-18)(dr. t's music software).st" size="839680" crc="95693f20" sha1="3ae7162943d3edaa312f26ade107bf86efd6aa61" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tigercubd" cloneof="tigercub" supported="no">
+		<description>Tiger Cub (Demo, v1.0)</description>
+		<year>1989</year>
+		<publisher>Dr. T's Music Software</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="tiger cub v1.0 (demo) (1989-12-05)(dr. t's music software).st" size="737280" crc="1cb7134a" sha1="fe0035d9c2c501cb29753a35c515863d2ea8f693" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="timework" supported="no">
+		<description>Timeworks Desktop Publisher ST (Ger)</description>
+		<year>1987</year>
+		<publisher>GST</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="timeworks desktop publisher st (1987)(gst)(de).st" size="737280" crc="7886f755" sha1="cf50a084dd49f23515bcb256a3fb0c5d19fce5cf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="timeworka" cloneof="timework" supported="no">
+		<description>Timeworks Desktop Publisher ST (Ger, Install Version)</description>
+		<year>1987</year>
+		<publisher>GST</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="timeworks desktop publisher st (1987)(gst)[install version].st" size="737280" crc="fbabd1b5" sha1="37eab5150e88edf311e9091728244aaa11fa92fa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="timeworkd" supported="no">
+		<description>Timeworks Data Disk</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="timeworks data disk (19xx)(-).st" size="737280" crc="4891a64a" sha1="d698317a72759033b9bbc233c31a611deb258581" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="touchup" supported="no">
+		<description>Touch Up (v1.84)</description>
+		<year>1992</year>
+		<publisher>Migraph</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="touch up v1.84 (1992)(migraph).st" size="737280" crc="7f9c760b" sha1="559bc5b088683cbfcd685964b13ded58d7010d0b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="touchup156" cloneof="touchup" supported="no">
+		<description>Touch Up (v1.56, Bad?)</description>
+		<year>1989</year>
+		<publisher>Migraph</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="touch up v1.56 (1989-11-09)(migraph)[b].st" size="737280" crc="2985d341" sha1="664387beb3c87c0fc5bd29eb1af231b326a0b84a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="trackman" supported="no">
+		<description>Trackman (v2.5)</description>
+		<year>1993</year>
+		<publisher>Hollies Research</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="trackman v2.5 (1993)(hollies research ltd.).st" size="737280" crc="fd611e5b" sha1="8b40f4e7ae870eb8d7de1d6b604a8edae33d42c1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="transien" supported="no">
+		<description>Transientenrekorder (Ger)</description>
+		<year>19??</year>
+		<publisher>DiLi Soft</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="transientenrekorder (19xx)(dili soft)(de)(sw).st" size="737280" crc="9b1b9bb2" sha1="7e2ab31d1c3d416d78aeb1a15e902029958db57e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="trapido" supported="no">
+		<description>Trapido</description>
+		<year>19??</year>
+		<publisher>Thorsten Bella - Kai Doenemann</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="trapido (19xx)(bella, thorsten - doenemann, kai)(sw).st" size="839680" crc="563b64ff" sha1="40baab0dd57ea77f3f481a864e1b2bfb41017eae" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="triptron" supported="no">
+		<description>Trip a Tron</description>
+		<year>19??</year>
+		<publisher>Yak</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="trip a tron (19xx)(yak)(disk 1 of 2).st" size="368640" crc="1dc9b055" sha1="811a87e628db4ef5f14af075808bb436ca6af9f5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="trip a tron (19xx)(yak)(disk 2 of 2).st" size="368640" crc="33e2924a" sha1="7d1ecd79d046e0edd85d067af9aa3840c15c7391" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="triptrona" cloneof="triptron" supported="no">
+		<description>Trip a Tron (One Disk)</description>
+		<year>19??</year>
+		<publisher>Yak</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="trip a tron (19xx)(yak)[one disk].st" size="737280" crc="c6b11404" sha1="4c43ba927a7308b7fa02cfbce3be9f8b3bf2ab02" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="triptronb" cloneof="triptron" supported="no">
+		<description>Trip a Tron (One Disk, Alt)</description>
+		<year>19??</year>
+		<publisher>Yak</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="trip a tron (19xx)(yak)[a][one disk].st" size="737280" crc="a3bc7a3f" sha1="abc15f0b8a1b71924b44c79bfc4b2ee119bb92bf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="trueimag" supported="no">
+		<description>True Image (v1.7)</description>
+		<year>1993</year>
+		<publisher>HiSoft</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="true imgage v1.7 (1993)(hisoft)(disk 1 of 2).st" size="737280" crc="31f885b7" sha1="44d9ba730672ab084a85f0832b4b3554394e0be7" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="true imgage v1.7 (1993)(hisoft)(disk 2 of 2).st" size="737280" crc="a9b7ecb9" sha1="f6bc111ec0a3cd4d1fdfaba049b9151ff26e510d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="truepaint" supported="no">
+		<description>True Paint (v1.01)</description>
+		<year>1993</year>
+		<publisher>HiSoft</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="true paint v1.01 (1993-03-05)(hisoft).st" size="819200" crc="e1572ef7" sha1="b31ee88a1d6c6adb9ecfe0150c23812213ca04b1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="truepainta" cloneof="truepaint" supported="no">
+		<description>True Paint (v1.01, Cracked)</description>
+		<year>1993</year>
+		<publisher>HiSoft</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="true paint v1.01 (1993-03-05)(hisoft)(disk 1 of 3)[cr major tom].st" size="737280" crc="e02ae544" sha1="8f8c6f2753b3f8b5f84148d1d53b83f51c7b8f79" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="true paint v1.01 (1993-03-05)(hisoft)(disk 2 of 3)[cr major tom].st" size="737280" crc="868b8e9e" sha1="659ed5f5bb1feee6644a175cbdb518c2c4365e01" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="true paint v1.01 (1993-03-05)(hisoft)(disk 3 of 3)[cr major tom].st" size="737280" crc="54820616" sha1="a19cb3aea542dcdbe0b1e88b2efccf21af0f62eb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="truepaintb" cloneof="truepaint" supported="no">
+		<description>True Paint (v1.01, Cracked, Alt)</description>
+		<year>1993</year>
+		<publisher>HiSoft</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="true paint v1.01 (1993-03-05)(hisoft)(disk 1 of 3)[cr major tom][a].st" size="737280" crc="3408170f" sha1="d16c76988900678ba639a0a7e4948ad2cd10a244" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="true paint v1.01 (1993-03-05)(hisoft)(disk 2 of 3)[cr major tom][a].st" size="737280" crc="0679a632" sha1="2f6abd24a48d461fb0f1cfd0f567e664f1604eb7" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="true paint v1.01 (1993-03-05)(hisoft)(disk 3 of 3)[cr major tom][a].st" size="737280" crc="5814ba8d" sha1="b38440486679b88bbbf4f7ec7df04b69885f6632" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tunesmit" supported="no">
+		<description>Tunesmith (v1.11)</description>
+		<year>1991</year>
+		<publisher>Jim Johnson</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="tunesmith v1.11 (1991-12-06)(johnson, jim).st" size="839680" crc="87d6766a" sha1="e653680bad77ce2de49594bf596e1ad7673a2693" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="turboard" supported="no">
+		<description>Turbo Board (v2.20)</description>
+		<year>1992</year>
+		<publisher>Bitblit Systems</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="turbo board v2.20 (1992)(bitblit systems).st" size="901120" crc="01a7f7a6" sha1="7c3a5be5a890a0a537f36aac1c2804b4bfea2b15" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="turboard219" cloneof="turboard" supported="no">
+		<description>Turbo Board (v2.19)</description>
+		<year>1992</year>
+		<publisher>Bitblit Systems</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="turbo board v2.19 (1992)(bitblit systems).st" size="901120" crc="5596c585" sha1="6d30d04589b9db5f5643dc5b0a74b34d09df4395" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="turboc" supported="no">
+		<description>Turbo C for Atari ST (v2.0)</description>
+		<year>1990</year>
+		<publisher>Borland</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="turbo c for atari st v2.0 (1990)(borland)(disk 1 of 3).st" size="737280" crc="d2b4c20a" sha1="a0f0163e37979493474dcc58fef56dd926489cc2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="turbo c for atari st v2.0 (1990)(borland)(disk 2 of 3).st" size="737280" crc="b7cc1d77" sha1="3c71c1f5a6d58302391930f6d1dcebe729791f9a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="turbo c for atari st v2.0 (1990)(borland)(disk 3 of 3).st" size="737280" crc="e30c76cf" sha1="cd414fa30cd5245cad09bc7f252cada8ae5f83a1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="turbocp" cloneof="turboc" supported="no">
+		<description>Turbo C for Atari ST (Beta, v2.0I)</description>
+		<year>1990</year>
+		<publisher>Borland</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="turbo c for atari st v2.0i (1990-02-23)(borland)(beta)(disk 1 of 3).st" size="819200" crc="c39f47ea" sha1="8414ccf862071d9e18375ac62512183c35eeb57d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="turbo c for atari st v2.0i (1990-02-23)(borland)(beta)(disk 2 of 3).st" size="737280" crc="095b7b90" sha1="0a47ea3a4510e5cc17ac39d8557abb904aaa9aec" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="turbo c for atari st v2.0i (1990-02-23)(borland)(beta)(disk 3 of 3).st" size="737280" crc="db95ae80" sha1="f1b7aa9807f5ded067413b85fed82b5bbc3a8a9f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="turbdbug" supported="no">
+		<description>Turbo Debugger (v1.00)</description>
+		<year>1990</year>
+		<publisher>Borland</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="turbo debugger v1.00 (1990)(borland).st" size="737280" crc="700af24d" sha1="28517e86b875c5e22284cf7499d6130bf37fe8de" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="turboass" supported="no">
+		<description>TurboAss (v1.6)</description>
+		<year>1990</year>
+		<publisher>E-Soft</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="turboass v1.6 (1990)(e-soft).st" size="737280" crc="e9a4a2b4" sha1="efa2232270485b72397013b10455e386cf85fc04" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="twenty4" supported="no">
+		<description>Twenty-4 (v3.0)</description>
+		<year>1988</year>
+		<publisher>Steinberg</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="twenty-4 v3.0 (1988)(steinberg).st" size="829440" crc="863b5223" sha1="5b59425e5684213bc8f84e8db6f10b135a231de3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="twenty4a" cloneof="twenty4" supported="no">
+		<description>Twenty-4 (v3.0, Alt)</description>
+		<year>1988</year>
+		<publisher>Steinberg</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="twenty-4 v3.0 (1988)(steinberg)[a].st" size="737280" crc="c1cdb57c" sha1="5ccca47d46f133a9fd4172ab07d691f4a90b480c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="twenty421" cloneof="twenty4" supported="no">
+		<description>Twenty-4 (v2.1)</description>
+		<year>1987</year>
+		<publisher>&lt;bootleg (Crackey 6)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="twenty-4 v2.1 (1987)(steinberg)[cr crackey 6].st" size="737280" crc="073a7be8" sha1="01aa7d0c0445dff00ad6342b38f5b0a91e4f6472" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="twenty4t" supported="no">
+		<description>Twenty-4 Bedienungsanleitung und Tools (Ger)</description>
+		<year>19??</year>
+		<publisher>CAMI Group</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="twenty-4 bedienungsanleitung und tools (19xx)(cami group)(de).st" size="737280" crc="be2b7c23" sha1="28ded9861535564b1331af1d2b033f7037eeff67" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="twilight" supported="no">
+		<description>TwiLight (Ger, v2.00)</description>
+		<year>1996</year>
+		<publisher>Delirium Arts</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="twilight v2.00 (1996-04-19)(delirium arts)(de)(disk 1 of 2).st" size="737280" crc="1ca680e2" sha1="1db8c969953f93522f7751d2cb2e35940ea9a7ca" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="twilight v2.00 (1996-04-19)(delirium arts)(de)(disk 2 of 2).st" size="737280" crc="b2aec46e" sha1="62171883449cbcf3b24030c456446c44753b97c0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ultvirus" supported="no">
+		<description>Ultimate Virus Killer (v6.3)</description>
+		<year>1994</year>
+		<publisher>Douglas Communications</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="ultimate virus killer v6.3 (1994)(douglas communications).st" size="819200" crc="d858fa80" sha1="2fe1351b7dda1d1e58dfe978b647f58307d4ef07" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="uvirus2k" supported="no">
+		<description>Ultimate Virus Killer 2000 (v8.1)</description>
+		<year>1999</year>
+		<publisher>CRIME Development</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="ultimate virus killer 2000 v8.1 (1999)(crime development)(sw).st" size="737280" crc="15c6c454" sha1="bee550aefe78dbe340d481038acea904401b2699" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="uvirus2ka" cloneof="uvirus2k" supported="no">
+		<description>Ultimate Virus Killer 2000 (v8.1, Alt)</description>
+		<year>1999</year>
+		<publisher>CRIME Development</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="ultimate virus killer 2000 v8.1 (1999)(crime development)(sw)[a].st" size="737280" crc="a6c02f1c" sha1="75bb8843d5a9d34b9830bb47807888b5d24d0a72" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ultscrip" supported="no">
+		<description>Ultra Script (Fra, v2.1)</description>
+		<year>1989</year>
+		<publisher>Imagen Corporation</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="ultra script v2.1 (1989)(imagen corporation)(fr)(disk 1 of 3).st" size="737280" crc="e8a79999" sha1="2184955de656c0789574f8249941b117eed0d004" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="ultra script v2.1 (1989)(imagen corporation)(fr)(disk 2 of 3).st" size="737280" crc="fb64bd04" sha1="36b4e8a5e2017c6d6beb397f70525bb6ab81a33b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="ultra script v2.1 (1989)(imagen corporation)(fr)(disk 3 of 3).st" size="737280" crc="a8eb4d8e" sha1="10f06cdc9790722309c527f999fc23ba6e180f31" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="v8music" supported="no">
+		<description>V8 Music System (Bad?)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="v8 music system (19xx)(-)[b].st" size="368640" crc="3c42d73d" sha1="93ce4a1f286a97418eb52fe2a1114a160820d8e4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vdifont" supported="no">
+		<description>VDI Font (v2.0)</description>
+		<year>1998</year>
+		<publisher>URAn</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="vdi font v2.0 (1998-10-12)(uran).st" size="368640" crc="db76e6c8" sha1="43ac5d8ffa560d6bb132fb2dfa8caaafdec84dc9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vip" supported="no">
+		<description>VIP Professional (1987 version)</description>
+		<year>1987</year>
+		<publisher>Ditek</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="746496">
+				<rom name="vip professional (1987)(ditek).st" size="746496" crc="d3eb6875" sha1="9169af73d1dfb9bf4e95e86ee2abc6f43881941a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vip1" cloneof="vip" supported="no">
+		<description>VIP Professional (v1.0)</description>
+		<year>1986</year>
+		<publisher>VIP Technologies</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="vip professional v1.0 (1986)(vip technologies).st" size="737280" crc="c3191d5d" sha1="26cab3db2600c936038220ad1a0bca391aab6d18" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vipmacro" supported="no">
+		<description>VIP Professional Macros</description>
+		<year>1987</year>
+		<publisher>Ditek</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="vip professional macros (1987)(ditek).st" size="819200" crc="d51139d4" sha1="d2c2918461f62f77ace7cd1dfb7e2fc32c3d4766" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vtmenue" supported="no">
+		<description>VT Menue (Ger, v1.0)</description>
+		<year>1993</year>
+		<publisher>Michael Wiegand</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="vt menue v1.0 (1993)(wiegand, michael)(de).st" size="368640" crc="f040085d" sha1="542188d9294ee0efcde2a0562d8fbc6799ae18fa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vecwork" supported="no">
+		<description>Vec Work (v1.51)</description>
+		<year>1993</year>
+		<publisher>W. Schlinsog</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="461824">
+				<rom name="vec work v1.51 (1993-12-19)(schlinsog, w.)(pd).st" size="461824" crc="2d5bafe1" sha1="b99a15a2c29f6444dd7ba01d5ccd813dc7e9f267" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- monochrome -->
+	<software name="vision" supported="no">
+		<description>Vision (Fra, v1.0)</description>
+		<year>1992</year>
+		<publisher>Arobace</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="vision v1.0 (1992-01)(arobace)(fr)[monochrome].st" size="737280" crc="35eea6c0" sha1="6f17cd9155b30197f3ef554f90ec0912fb06b65b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vmem" supported="no">
+		<description>Vmem (Ger, v1.1)</description>
+		<year>1990</year>
+		<publisher>Robert Federle</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="vmem v1.1 (1990)(federle, robert)(de).st" size="737280" crc="99e13df0" sha1="add92a32bd72c97ede2a763f62046df67c862950" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vocalcul" supported="no">
+		<description>Vocalculette (Fra?)</description>
+		<year>1991</year>
+		<publisher>Pressimage</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="vocalculette (1991-10-25)(pressimage).st" size="368640" crc="90668c14" sha1="94a7ea686dc46dece5554ecdee0bc8e24054959c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wgcs" supported="no">
+		<description>War Game Construction Set</description>
+		<year>19??</year>
+		<publisher>SSI</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="war game construction set (19xx)(ssi).st" size="368640" crc="2098b3b0" sha1="d9d98f07145a03388721bbb919d85a5b53ec38f7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="warp9" supported="no">
+		<description>Warp 9 (v3.80)</description>
+		<year>1993</year>
+		<publisher>CodeHead Technologies</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="warp 9 v3.80 (1993-09-18)(codehead technologies).st" size="737280" crc="86958f31" sha1="c685950fd8808e66aff82261cb93f32c501ce081" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="warp935" cloneof="warp9" supported="no">
+		<description>Warp 9 (v3.5)</description>
+		<year>1992</year>
+		<publisher>CodeHead Software</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="warp 9 v3.5 (1992)(codehead software).st" size="819200" crc="ea06c0cd" sha1="5dab43728fbcdf3035105bcd5cfb4e411549af5d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="warp935a" cloneof="warp9" supported="no">
+		<description>Warp 9 (v3.5, Alt)</description>
+		<year>1992</year>
+		<publisher>CodeHead Software</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="warp 9 v3.5 (1992)(codehead software)[a].st" size="819200" crc="1c42cd5c" sha1="ede2d6eee41c2f8139911567bfbc98a7362192b0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="watchit" supported="no">
+		<description>Watch It (v1.0a)</description>
+		<year>19??</year>
+		<publisher>Stefan Bock</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="watch it v1.0a (19xx)(bock, stefan).st" size="737280" crc="f67aac9d" sha1="2a2062e9370dd9d2afcd097d275ba11e2194abf2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wensuite" supported="no">
+		<description>Wen.Suite (Demo, v1.70i)</description>
+		<year>1997</year>
+		<publisher>Oxo Systems</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="wen.suite v1.70i (demo) (1997-05-27)(oxo systems).st" size="409600" crc="f6027811" sha1="02288eae360343ed5797ac0a90b4970f6258bd3e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wensuite3" supported="no">
+		<description>Wen.Suite 3 (Fra, Demo, v3.30c)</description>
+		<year>1999</year>
+		<publisher>Oxo Systems</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="wen.suite 3 v3.30c (demo) (1999-12-31)(oxo systems)(fr).st" size="737280" crc="372785a7" sha1="96384791e5d2637e72642e7dd710b567b790784c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wensuite3b" cloneof="wensuite3" supported="no">
+		<description>Wen.Suite 3 (Demo, v3.30b)</description>
+		<year>1999</year>
+		<publisher>Oxo Systems</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="wen.suite 3 v3.30b (demo) (1999-12-02)(oxo systems).st" size="737280" crc="18c714d3" sha1="a7796cf264e140ca571042f06697552b58b4272f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wensuite3bf" cloneof="wensuite3" supported="no">
+		<description>Wen.Suite 3 (Fra, Demo, v3.30b)</description>
+		<year>1999</year>
+		<publisher>Oxo Systems</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="wen.suite 3 v3.30b (demo) (1999-12-02)(oxo systems)(fr).st" size="737280" crc="fda09737" sha1="6ab239c76be76efced639c566d6a3219d5737e6a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wheee" supported="no">
+		<description>Wheee the Fibbles Music Player (v3.1)</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="wheee the fibbles music player v3.1 (19xx)(-).st" size="737280" crc="67e35e9d" sha1="d3bb3d823542a6f3e8eacef289d019adf1cb5b92" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wperfect" supported="no">
+		<description>Word Perfect (v5.04, Cracked)</description>
+		<year>1996</year>
+		<publisher>&lt;bootleg (Vectronix)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="word perfect v5.04 (1996-01)(word perfect corporation)(disk 1 of 4)[cr vectronix].st" size="737280" crc="70eb62b9" sha1="668526c66f899257854a9f62c74bc51c9a3300ac" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="word perfect v5.04 (1996-01)(word perfect corporation)(disk 2 of 4)[cr vectronix].st" size="737280" crc="c1513c9e" sha1="85720b66d8393b94f3044dacba3792ec71b33301" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="word perfect v5.04 (1996-01)(word perfect corporation)(disk 3 of 4)[cr vectronix].st" size="737280" crc="82405f79" sha1="10c8e4c7bce0ab80c7bba361494837fa3d1187cd" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="word perfect v5.04 (1996-01)(word perfect corporation)(disk 4 of 4)[cr vectronix].st" size="737280" crc="0c60c82f" sha1="e782d65e630013f2b32af7793b9dd45dce5acd1d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wperfect50" cloneof="wperfect" supported="no">
+		<description>Word Perfect (v5.0)</description>
+		<year>1991</year>
+		<publisher>Word Perfect Corporation</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="word perfect v5.0 (1991-03-01)(word perfect corporation)(disk 1 of 3).st" size="819200" crc="f0f13d28" sha1="d6b271d5245474e76257df267e00fe344142b58e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="word perfect v5.0 (1991-03-01)(word perfect corporation)(disk 2 of 3).st" size="839680" crc="7580b586" sha1="358168ef41fc48dd3481327fec2c7fe82bdb9fa5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="word perfect v5.0 (1991-03-01)(word perfect corporation)(disk 3 of 3).st" size="737280" crc="d9482403" sha1="e10d9f2532be7e06cd31a6410fbc0c808a0a5581" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wperfect50a" cloneof="wperfect" supported="no">
+		<description>Word Perfect (v5.0, Alt)</description>
+		<year>1991</year>
+		<publisher>Word Perfect Corporation</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="word perfect v5.0 (1991-03-01)(word perfect corporation)(disk 1 of 3)[a].st" size="737280" crc="dbf0f0df" sha1="aa065b63e4fb8db68fda0098a563cd6d99e94b2c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="word perfect v5.0 (1991-03-01)(word perfect corporation)(disk 2 of 3)[a].st" size="737280" crc="7534b4d8" sha1="a98564df985f0c323ca7d0b91a47a23cc30b4326" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="word perfect v5.0 (1991-03-01)(word perfect corporation)(disk 3 of 3)[a].st" size="737280" crc="f6037420" sha1="b3ec4661f0e534623e3e52fa396af2e7dfa93424" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wscreator" supported="no">
+		<description>Word Search Creator (Demo)</description>
+		<year>1992</year>
+		<publisher>Fair Dinkum Technologies</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="373248">
+				<rom name="word search creator (demo-playable) (1992)(fair dinkum technologies)(sw).st" size="373248" crc="06d8f0c4" sha1="81a4a58116ebaf5b30d511fdce5cf51e5bf7db4c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wordwrit" supported="no">
+		<description>Word Writer (v2.00)</description>
+		<year>1986</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="word writer v2.00 (1986)(-)(disk 1 of 2)(program).st" size="368640" crc="f8808378" sha1="6d91452b7bae7d55e84c15575934fd88aba4993c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="word writer v2.00 (1986)(-)(disk 2 of 2)(dictionary).st" size="839680" crc="dbc5ac13" sha1="09eef75a7415fcbcbef2e1acac5dc2315d787dac" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wwdocs" supported="no">
+		<description>Word Writer Documents for Games</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="word writer documents for games (19xx)(-).st" size="839680" crc="0d0dcc7e" sha1="16370671d30a9bced21dde46cccfe139be9a85b5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="xboot3" supported="no">
+		<description>XBoot III (Fra)</description>
+		<year>1992</year>
+		<publisher>TEN Software</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="xboot iii (1992)(ten software)(fr).st" size="737280" crc="91efba26" sha1="2fccd81607b5a3df1270f033d37fdf922cbe70d6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="xlisp" supported="no">
+		<description>XLISP (v1.5)</description>
+		<year>1985</year>
+		<publisher>David Betz</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="xlisp v1.5 (1985)(betz, david).st" size="737280" crc="3b96b1fb" sha1="2f331db8099a9a622ce61fd40c9d888ee616190e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="xlator" supported="no">
+		<description>Xlator (Bad?)</description>
+		<year>1994</year>
+		<publisher>G. Shields</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="xlator (1994)(shields, g.)(sw)[b].st" size="737280" crc="ede66601" sha1="490b5620d080a844259f91d51d3e9033f378ac6e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="xor" supported="no">
+		<description>Xor (v1.12)</description>
+		<year>1989</year>
+		<publisher>Robert Melvin</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="xor v1.12 (1989)(melvin, robert).st" size="737280" crc="61f22a66" sha1="813e10e64227de108c411fa8e32b8f5a7b01fb04" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ymtracker" supported="no">
+		<description>YM Tracker (Bad?)</description>
+		<year>19??</year>
+		<publisher>A. Vidovic</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="ym tracker (19xx)(vidovic, a.)[b].st" size="737280" crc="ef86cf8f" sha1="7cd1f15c81c48c4a41b6f1354e59f7a749c84f02" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ymtrackerd" cloneof="ymtracker" supported="no">
+		<description>YM Tracker (Demo)</description>
+		<year>19??</year>
+		<publisher>A. Vidovic</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="ym tracker (demo) (19xx)(vidovic, a.).st" size="368640" crc="f95ebfac" sha1="8418c83676304195cc342e581410d36c75f9b3df" offset="0" />
 			</dataarea>
 		</part>
 	</software>

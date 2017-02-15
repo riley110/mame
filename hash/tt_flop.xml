@@ -96,4 +96,52 @@
 		</part>
 	</software>
 
+	<software name="ttartist" supported="no">
+		<description>TT-Artist (v1.71)</description>
+		<year>1994</year>
+		<publisher>Cybercube</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="tt-artist v1.71 (1994-06-08)(cybercube)[tt only].st" size="737280" crc="6bfe7ce2" sha1="8cd8aae588e02286faaa84ee6df6cc5948de10a7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ttartist102" cloneof="ttartist" supported="no">
+		<description>TT-Artist (v1.02)</description>
+		<year>1994</year>
+		<publisher>Cybercube</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="tt-artist v1.02 (1994)(cybercube).st" size="368640" crc="3f370ca7" sha1="2a461c640819b029e5b69c7475b8f11d4cbba229" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ttartist101" cloneof="ttartist" supported="no">
+		<description>TT-Artist (v1.01)</description>
+		<year>1993</year>
+		<publisher>Cybercube</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="tt-artist v1.01 (1993)(cybercube).st" size="368640" crc="e850b2da" sha1="2976d4fc53179107b66da4adc8eefd4b4a22a36f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="3401b" supported="no">
+		<description>Toshiba 3401B CD-ROM Driver for TT</description>
+		<year>1993</year>
+		<publisher>DMC</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="toshiba 3401b cd-rom driver for tt (1993-11-30)(dmc).st" size="368640" crc="8707dfbe" sha1="1f8bc671c1ac8120d5881f622d13764de6315a37" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 </softwarelist>
