@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<softwarelist name="ste_flop" description="Atari STe disk images">
+<softwarelist name="st_ste" description="Atari STe disk images">
 
-<!-- TOSEC - Applications [ST}-->
+<!-- TOSEC - Applications -->
 
 	<software name="langste" supported="no">
 		<description>Atari STe Language Disk</description>
-		<year>19??</year>
+		<year>1989</year>
 		<publisher>Atari</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
@@ -18,7 +18,7 @@
 
 	<software name="langstef" cloneof="langste" supported="no">
 		<description>Atari STe Language Disk (Fra)</description>
-		<year>19??</year>
+		<year>1989</year>
 		<publisher>Atari</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
@@ -30,7 +30,7 @@
 
 	<software name="langstefa" cloneof="langste" supported="no">
 		<description>Atari STe Language Disk (Fra, Alt)</description>
-		<year>19??</year>
+		<year>1989</year>
 		<publisher>Atari</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
@@ -42,12 +42,24 @@
 
 	<software name="langstefb" cloneof="langste" supported="no">
 		<description>Atari STe Language Disk (Fra, Alt 2)</description>
-		<year>19??</year>
+		<year>1989</year>
 		<publisher>Atari</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="ste language disk (19xx)(atari)(fr).st" size="737280" crc="3225a186" sha1="20b9a93a5738610ace7b498ec02e471dac82a3f5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="langsteg" cloneof="langste" supported="no">
+		<description>Atari STe Language Disk (Ger)</description>
+		<year>1989</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="1790340">
+				<rom name="atari language disk ste (1989)(atari corp.)(de)[!].stx" size="1790340" crc="ec716fa5" sha1="a906ffe49c1a78301557784f55134f8c94585512" offset="0" />
 			</dataarea>
 		</part>
 	</software>
