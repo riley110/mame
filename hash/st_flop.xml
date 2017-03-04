@@ -18449,6 +18449,23 @@
 		</part>
 	</software>
 
+	<software name="streview1">
+		<description>Atari ST Review Issue 1</description>
+		<year>1992</year>
+		<publisher>IDG Media</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="atari st review issue 01 (1992)(idg media)(disk 1 of 2).st" size="819200" crc="cbf8a019" sha1="7f4c4cdabc36bc4dcf0de843584bce86760b5062" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="atari st review issue 01 (1992)(idg media)(disk 2 of 2).st" size="829440" crc="316db57b" sha1="85515eee1dcb7bba02817a54e71b1721ac9c1440" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="streview2">
 		<description>Atari ST Review Issue 2</description>
 		<year>199?</year>
@@ -18457,6 +18474,23 @@
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="819200">
 				<rom name="atari st review 02 (19xx)(idg media).st" size="819200" crc="76762d46" sha1="1a120b0b2442c174e77ca2eedc221d0058757ec1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="streview2a" cloneof="streview2">
+		<description>Atari ST Review Issue 2 (Alt)</description>
+		<year>199?</year>
+		<publisher>IDG Media</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="atari st review issue 02 (19xx)(idg media)(disk 1 of 2).st" size="819200" crc="6c54b667" sha1="cf0fd343a5f815fbeb97f0df3b75aea58c34653d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="atari st review issue 02 (19xx)(idg media)(disk 2 of 2).st" size="819200" crc="ca10e5cb" sha1="7d21d476c23be9d6657b745fd9ac4352e0f12216" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -18473,6 +18507,40 @@
 		</part>
 	</software>
 
+	<software name="streview3a" cloneof="streview3">
+		<description>Atari ST Review Issue 3 (Alt)</description>
+		<year>199?</year>
+		<publisher>IDG Media</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari st review issue 03 (19xx)(idg media)(disk 1 of 2).st" size="737280" crc="3963dbf7" sha1="9504002db90e7cde37d038a42de513145e08cc90" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari st review issue 03 (19xx)(idg media)(disk 2 of 2).st" size="737280" crc="27b1d8c7" sha1="a84af01b353edadad79254551bb5feb53d149f7d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="streview3b" cloneof="streview3">
+		<description>Atari ST Review Issue 3 (Alt 2)</description>
+		<year>199?</year>
+		<publisher>IDG Media</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari st review issue 03 (19xx)(idg media)(disk 1 of 2)[a].st" size="737280" crc="331d37f2" sha1="ec94bac8f967a5ac22dd673f2a133d9aff9e6c50" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari st review issue 03 (19xx)(idg media)(disk 2 of 2)[a].st" size="737280" crc="7ff0f964" sha1="6a36ce63baae2be39706295cf8bb8658c7df6984" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="streview4">
 		<description>Atari ST Review Issue 4</description>
 		<year>199?</year>
@@ -18481,6 +18549,23 @@
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="atari st review 04 (19xx)(idg media).st" size="737280" crc="ef33f0d9" sha1="703ea2ca934d14242c8279b9a6087035f463b1fc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="streview4a" cloneof="streview4">
+		<description>Atari ST Review Issue 4 (Alt)</description>
+		<year>199?</year>
+		<publisher>IDG Media</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari st review issue 04 (19xx)(idg media)(disk 1 of 2).st" size="737280" crc="b860bd6c" sha1="e9847b249a889d1328c44887bcd4b0974819afa8" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari st review issue 04 (19xx)(idg media)(disk 2 of 2).st" size="737280" crc="4c1213c1" sha1="435c2847f262667c6e26976c0bd3acb3adcf77b4" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -18497,6 +18582,40 @@
 		</part>
 	</software>
 
+	<software name="streview5a" cloneof="streview5">
+		<description>Atari ST Review Issue 5 (Alt)</description>
+		<year>199?</year>
+		<publisher>IDG Media</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari st review issue 05 (19xx)(idg media)(disk 1 of 2).st" size="737280" crc="e504707c" sha1="cdb92bc50c458ca2cad6284e073c377705d28334" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari st review issue 05 (19xx)(idg media)(disk 2 of 2).st" size="737280" crc="fe710a3b" sha1="e9e179210a752a9c36f47de14da7d67ffe2df769" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="streview6">
+		<description>Atari ST Review Issue 6</description>
+		<year>199?</year>
+		<publisher>IDG Media</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari st review issue 06 (19xx)(idg media)(disk 1 of 2).st" size="737280" crc="83acfe8b" sha1="833594d82f9277975ecc5d9f723d60fc221d704a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari st review issue 06 (19xx)(idg media)(disk 2 of 2).st" size="737280" crc="d630ea06" sha1="750dff659c51355bafc9529a83a502d22ed571d7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="streview7">
 		<description>Atari ST Review Issue 7</description>
 		<year>199?</year>
@@ -18505,6 +18624,23 @@
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="atari st review 07 (19xx)(idg media).st" size="737280" crc="340965b6" sha1="f65096ef6b8e0876777cb1c304bef20deb0bb76b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="streview7a" cloneof="streview7">
+		<description>Atari ST Review Issue 7 (Alt)</description>
+		<year>199?</year>
+		<publisher>IDG Media</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="atari st review issue 07 (19xx)(idg media)(disk 1 of 2).st" size="819200" crc="ec0caaa3" sha1="14a3f719372573dc7d0e3d63c3663363bd3b30aa" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="atari st review issue 07 (19xx)(idg media)(disk 2 of 2).st" size="819200" crc="87b7d843" sha1="345ddfa421ccc42fce1d006bc227fe30cd5c6999" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -18521,6 +18657,23 @@
 		</part>
 	</software>
 
+	<software name="streview8a" cloneof="streview8">
+		<description>Atari ST Review Issue 8 (Alt)</description>
+		<year>199?</year>
+		<publisher>IDG Media</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari st review issue 08 (19xx)(idg media)(disk 1 of 2).st" size="737280" crc="fec67b63" sha1="da0495694369ba3e9852e5862dbe66cea188a616" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari st review issue 08 (19xx)(idg media)(disk 2 of 2).st" size="737280" crc="cffa3b9e" sha1="232d1f6b64adcb487d3861ac3805c8e76e7118cb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="streview9">
 		<description>Atari ST Review Issue 9</description>
 		<year>199?</year>
@@ -18529,6 +18682,23 @@
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="819200">
 				<rom name="atari st review 09 (19xx)(idg media).st" size="819200" crc="d2db6d7e" sha1="1d3cecd8478bf71a1eedbffb348d0142c4a2963e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="streview9a" cloneof="streview9">
+		<description>Atari ST Review Issue 9 (Alt)</description>
+		<year>199?</year>
+		<publisher>IDG Media</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari st review issue 09 (19xx)(idg media)(disk 1 of 2).st" size="737280" crc="23e9e367" sha1="64f68c6cb1176e519d4f6642df46506666c102d9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari st review issue 09 (19xx)(idg media)(disk 2 of 2).st" size="737280" crc="7d4102c9" sha1="d0cf3ab631dbe641c1affbd0c9b79d60e9ba65ad" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -18545,6 +18715,23 @@
 		</part>
 	</software>
 
+	<software name="streview10a" cloneof="streview10">
+		<description>Atari ST Review Issue 10 (Alt)</description>
+		<year>199?</year>
+		<publisher>IDG Media</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari st review issue 10 (19xx)(idg media)(disk 1 of 2).st" size="737280" crc="e8dc7f6d" sha1="44a71d4747903a9a70fec49b8f6dae4b7d5fc645" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari st review issue 10 (19xx)(idg media)(disk 2 of 2).st" size="737280" crc="1f2518ad" sha1="25947a554af18bbe0c7734c372fc12c8c5e1f916" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="streview11">
 		<description>Atari ST Review Issue 11</description>
 		<year>1993</year>
@@ -18557,6 +18744,23 @@
 		</part>
 	</software>
 
+	<software name="streview11a" cloneof="streview11">
+		<description>Atari ST Review Issue 11 (Alt)</description>
+		<year>1993</year>
+		<publisher>IDG Media</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="atari st review issue 11 (19xx)(idg media)(disk 1 of 2).st" size="819200" crc="e88cdabf" sha1="133c4a5fde2c19224bf8cb6559d1df60a91f2503" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari st review issue 11 (19xx)(idg media)(disk 2 of 2).st" size="737280" crc="45a42632" sha1="3c109e92e9fb54aa2c04e9ba9967562bfdeee0e3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="streview12">
 		<description>Atari ST Review Issue 12</description>
 		<year>1993</year>
@@ -18565,6 +18769,18 @@
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="atari st review 12 (1993-04)(idg media).st" size="737280" crc="c0e63fe6" sha1="050abde333ac89d1da679bdb922a3f3fb4c35cd6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="streview12a" cloneof="streview12">
+		<description>Atari ST Review Issue 12 (Alt)</description>
+		<year>1993</year>
+		<publisher>IDG Media</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari st review issue 12 (19xx)(idg media).st" size="737280" crc="5ddfdbb4" sha1="79e436f6b30062abe244f599d9421504eab86ec8" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -18601,6 +18817,18 @@
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="atari st review 14 (1993-06)(idg media).st" size="737280" crc="c23d06d7" sha1="a2c08ae5ddc568257cfa35a543fca4f1403cdcaa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="streview14a" cloneof="streview14">
+		<description>Atari ST Review Issue 14 (Alt)</description>
+		<year>1993</year>
+		<publisher>IDG Media</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari st review issue 14 (19xx)(idg media).st" size="737280" crc="cf36b27b" sha1="b7e36f85a5bc4ff75fe36dad78997c3402db971e" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -18665,8 +18893,20 @@
 		</part>
 	</software>
 
+	<software name="streview17a" cloneof="streview17">
+		<description>Atari ST Review Issue 17 (Alt)</description>
+		<year>1993</year>
+		<publisher>IDG Media</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="atari st review issue 17 (19xx)(idg media).st" size="819200" crc="f9398e3f" sha1="87bf830b6f0c18ec454adfd91e832e912f29a4be" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="streview18">
-		<description>Atari ST Review Issue 18 (Alt)</description>
+		<description>Atari ST Review Issue 18</description>
 		<year>1993</year>
 		<publisher>IDG Media</publisher>
 
@@ -18678,6 +18918,18 @@
 		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="819200">
 				<rom name="atari st review 18 (1993-09)(idg media)(disk 2 of 2).st" size="819200" crc="cfb14f5e" sha1="cf404bec16e75ce9e78d3e14ff0873849804fad5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="streview18a" cloneof="streview18">
+		<description>Atari ST Review Issue 18 (Alt)</description>
+		<year>1993</year>
+		<publisher>IDG Media</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="atari st review issue 18 (19xx)(idg media).st" size="819200" crc="d5e2a035" sha1="640cd35358532425f36025487a4a760afc6ddc79" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -18742,6 +18994,23 @@
 		</part>
 	</software>
 
+	<software name="streview21a" cloneof="streview21">
+		<description>Atari ST Review Issue 21 (Alt)</description>
+		<year>1993</year>
+		<publisher>IDG Media</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="atari st review issue 21 (19xx)(idg media)(disk 1 of 2).st" size="819200" crc="f1504293" sha1="8e2a035b47fa4a28242970474e3225aea0206b72" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="atari st review issue 21 (19xx)(idg media)(disk 2 of 2).st" size="819200" crc="a70979d0" sha1="c394c63c1e50d41228b0d1fea28bdce1807ffe9b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="streview22">
 		<description>Atari ST Review Issue 22</description>
 		<year>1994</year>
@@ -18766,6 +19035,18 @@
 		</part>
 	</software>
 
+	<software name="streview23a" cloneof="streview23">
+		<description>Atari ST Review Issue 23 (Alt)</description>
+		<year>1994</year>
+		<publisher>IDG Media</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="atari st review issue 23 (19xx)(idg media).st" size="819200" crc="fe6ddf7c" sha1="c764dd9fd69603096f3a701e19091273f2eb40e1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="streview24">
 		<description>Atari ST Review Issue 24</description>
 		<year>1994</year>
@@ -18774,6 +19055,18 @@
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="atari st review 24 (1994-03)(idg media).st" size="737280" crc="e068c2dc" sha1="061313051c0deae0930a3fe8df033b44e703d146" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="streview24a" cloneof="streview24">
+		<description>Atari ST Review Issue 24 (Alt)</description>
+		<year>1994</year>
+		<publisher>IDG Media</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="atari st review issue 24 (19xx)(idg media).st" size="819200" crc="79f346df" sha1="8f26931dece9172dc770f8ad9e1f4115ab201687" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -18802,6 +19095,18 @@
 		</part>
 	</software>
 
+	<software name="streview26a" cloneof="streview26">
+		<description>Atari ST Review Issue 26 (Alt)</description>
+		<year>1994</year>
+		<publisher>IDG Media</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="atari st review issue 26 (19xx)(idg media).st" size="819200" crc="f20246f1" sha1="18357ef8be9d92627b65b2e957cd3b2206fe3b3e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="streview27">
 		<description>Atari ST Review Issue 27</description>
 		<year>1994</year>
@@ -18810,6 +19115,18 @@
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="819200">
 				<rom name="atari st review 27 (1994-06)(idg media).st" size="819200" crc="32d8cd7f" sha1="1e85ab72d337547e55d0a966b04afa3a37474975" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="streview27a" cloneof="streview27">
+		<description>Atari ST Review Issue 27 (Alt)</description>
+		<year>1994</year>
+		<publisher>IDG Media</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="atari st review issue 27 (19xx)(idg media).st" size="819200" crc="1e47d8ea" sha1="4ff6804d44d728e29da7b061e0414cdaaab2d845" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -18838,6 +19155,18 @@
 		</part>
 	</software>
 
+	<software name="streview29a" cloneof="streview29">
+		<description>Atari ST Review Issue 29 (Alt)</description>
+		<year>1994</year>
+		<publisher>IDG Media</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="atari st review issue 29 (19xx)(idg media).st" size="819200" crc="ca0e7205" sha1="ae3490b0c57d7ec7b7a0836e2eea28c11195e7b4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="streview30">
 		<description>Atari ST Review Issue 30</description>
 		<year>1994</year>
@@ -18846,6 +19175,23 @@
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="atari st review 30 (1994-09)(idg media).st" size="737280" crc="60060aee" sha1="fce1fdaca782807b85dea72851d9843cc4c2a279" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="streview30a" cloneof="streview30">
+		<description>Atari ST Review Issue 30 (Alt)</description>
+		<year>1994</year>
+		<publisher>IDG Media</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari st review issue 30 (19xx)(idg media)(disk 1 of 2).st" size="737280" crc="d442180a" sha1="55acfb0461f7a48d1c47e80e96489d2e5a4660d2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="atari st review issue 30 (19xx)(idg media)(disk 2 of 2).st" size="819200" crc="a045b94d" sha1="f88f811f0ea9e94b731d719b9182062a7136851c" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -18862,6 +19208,35 @@
 		</part>
 	</software>
 
+	<software name="streview31a" cloneof="streview31">
+		<description>Atari ST Review Issue 31 (Alt)</description>
+		<year>1994</year>
+		<publisher>IDG Media</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="atari st review issue 31 (19xx)(idg media).st" size="819200" crc="f40497e8" sha1="4129b61357979c38cb5395292728f4f572ebaf07" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="streview32">
+		<description>Atari ST Review Issue 32</description>
+		<year>1994?</year>
+		<publisher>IDG Media</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari st review issue 32 (19xx)(idg media)(disk 1 of 2).st" size="737280" crc="677b0c87" sha1="472380fb56a09bdcab8697e77e8e03c006e12679" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="atari st review issue 32 (19xx)(idg media)(disk 2 of 2).st" size="819200" crc="38b93412" sha1="b48893c2247e5b9538ca8e689231ccb5eb3fa816" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="streview33">
 		<description>Atari ST Review Issue 33</description>
 		<year>1994?</year>
@@ -18870,6 +19245,4493 @@
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="819200">
 				<rom name="atari st review 33 (19xx)(idg media).st" size="819200" crc="022ff640" sha1="a9fa35f7f1b858f08aa128c26bb2a66a0bb5ad99" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="streview34">
+		<description>Atari ST Review Issue 34</description>
+		<year>1995?</year>
+		<publisher>IDG Media</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="atari st review issue 34 (19xx)(idg media)(disk 1 of 2).st" size="819200" crc="dfef4c3e" sha1="fc6514ce76f899ce8349fdc3b1615c06bd482a41" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="atari st review issue 34 (19xx)(idg media)(disk 2 of 2).st" size="819200" crc="cdc38c87" sha1="1eff3308f9446261a7e1312dbfd607026aa6a141" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="streview35">
+		<description>Atari ST Review Issue 35</description>
+		<year>1995?</year>
+		<publisher>IDG Media</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="atari st review issue 35 (19xx)(idg media).st" size="839680" crc="d439b6a9" sha1="a270b0f08ab4db89fe91efba14a01d583859cf96" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atrwld1">
+		<description>Atari World Issue 1</description>
+		<year>1995</year>
+		<publisher>Specialist Magazines</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="atari world issue 01 (1995-05)(specialist magazines).st" size="829440" crc="96a088f0" sha1="88e86bbb38cd7cc259785081d844e48a77287b81" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atrwld2">
+		<description>Atari World Issue 2</description>
+		<year>1995</year>
+		<publisher>Specialist Magazines</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="atari world issue 02 (1995-06)(specialist magazines)(disk 1 of 2).st" size="839680" crc="9efd9822" sha1="6c1ab2338dac63af3e8c5918cf58309497796366" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="atari world issue 02 (1995-06)(specialist magazines)(disk 2 of 2).st" size="829440" crc="6bc84122" sha1="ee384e91544aa2b69b9e00c56ef68bb04f4f8966" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atrwld3">
+		<description>Atari World Issue 3</description>
+		<year>1995</year>
+		<publisher>Specialist Magazines</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="atari world issue 03 (1995-07)(specialist magazines).st" size="368640" crc="ff76271e" sha1="65f94bea36dc154127f7c58149861c08dc9ff158" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atrwld4">
+		<description>Atari World Issue 4</description>
+		<year>1995</year>
+		<publisher>Specialist Magazines</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="atari world issue 04 (1995-08)(specialist magazines)(disk 1 of 8).st" size="839680" crc="b99a5d3d" sha1="fd4a2d6b8b6fafe5857dd8d5e4f1546f521aa9b5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari world issue 04 (1995-08)(specialist magazines)(disk 2 of 8).st" size="737280" crc="572bc20c" sha1="1d66722ffa8ed6f6903aee442a48b923c71e21ff" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari world issue 04 (1995-08)(specialist magazines)(disk 3 of 8).st" size="737280" crc="9adf5cfe" sha1="642f7c4848acecffa8c637ae9e9549ccf9701260" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari world issue 04 (1995-08)(specialist magazines)(disk 4 of 8).st" size="737280" crc="ea38b5a6" sha1="b82a05201d1fad430fe1def3651a5df8d65f38b5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+			<dataarea name="flop" size="755712">
+				<rom name="atari world issue 04 (1995-08)(specialist magazines)(disk 5 of 8).st" size="755712" crc="5f10f0b9" sha1="d037c7b0850184e9bf9a39069f51bbe0e499af4b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari world issue 04 (1995-08)(specialist magazines)(disk 6 of 8).st" size="737280" crc="ef707565" sha1="eda70d97878fc370ba120971de89cee0dcaf6c4a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="atari world issue 04 (1995-08)(specialist magazines)(disk 7 of 8).st" size="819200" crc="69596dfa" sha1="2d3db1fbb42684671555a3eb80a9da42db638d9a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop8" interface="floppy_3_5">
+			<dataarea name="flop" size="755712">
+				<rom name="atari world issue 04 (1995-08)(specialist magazines)(disk 8 of 8).st" size="755712" crc="17189639" sha1="25cdc4795e50ea77e7a55ef9deb53bc2c13ee9ba" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atrwld5">
+		<description>Atari World Issue 5</description>
+		<year>1995</year>
+		<publisher>Specialist Magazines</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="atari world issue 05 (1995-09)(specialist magazines).st" size="839680" crc="05cd32d2" sha1="77a3386dab370a588a2f75fc9059ad0dc61eb6bd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atrwld6">
+		<description>Atari World Issue 6</description>
+		<year>1995</year>
+		<publisher>Specialist Magazines</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="atari world issue 06 (1995-10)(specialist magazines)(disk 1 of 2).st" size="819200" crc="938ee0e0" sha1="2a4ad22ef5adbaf8571760ebd8326053b67abdbf" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari world issue 06 (1995-10)(specialist magazines)(disk 2 of 2).st" size="737280" crc="5b332760" sha1="b113ce2a39dcba06ac3ea37a146bd2c5375c158b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atrwld7">
+		<description>Atari World Issue 7</description>
+		<year>1995</year>
+		<publisher>Specialist Magazines</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari world issue 07 (1995-11)(specialist magazines).st" size="737280" crc="295349b0" sha1="10cdc8f81e905d68dca72a92178530bb56a9cfdd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atrwld8">
+		<description>Atari World Issue 8</description>
+		<year>1995</year>
+		<publisher>Specialist Magazines</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="755712">
+				<rom name="atari world issue 08 (1995-12)(specialist magazines).st" size="755712" crc="400847eb" sha1="80286a1736abb7d82b63241a306d874a93d84de0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atrwld9">
+		<description>Atari World Issue 9</description>
+		<year>1996</year>
+		<publisher>Specialist Magazines</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari world issue 09 (1996-01)(specialist magazines).st" size="737280" crc="1b920d2d" sha1="9551759f0aeedee423b587facb722abf06e62ecb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atrwld10">
+		<description>Atari World Issue 10</description>
+		<year>1996</year>
+		<publisher>Specialist Magazines</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="atari world issue 10 (1996-02)(specialist magazines).st" size="901120" crc="8a26082c" sha1="9aa449b122698c6c9727c61118474f6f26905964" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="atrwld11">
+		<description>Atari World Issue 11</description>
+		<year>1996</year>
+		<publisher>Specialist Magazines</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="atari world issue 11 (1996-03)(specialist magazines).st" size="737280" crc="d442ba2d" sha1="a7dbb64cecc4a55102f6120ca66f3f2d9d9f2666" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="domaine1">
+		<description>Domaine Public Magazine Issue 1 (Fra)</description>
+		<year>1990</year>
+		<publisher>Pressimage</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="domaine public magazine issue 01 (1990-10)(pressimage)(fr).st" size="737280" crc="d4ebb7f7" sha1="923774689dcf703a3ac2eab23bff1c8b44cfbf30" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="domaine11">
+		<description>Domaine Public Magazine Issue 11 (Fra)</description>
+		<year>199?</year>
+		<publisher>Pressimage</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="domaine public magazine issue 11 (19xx)(pressimage)(fr).st" size="737280" crc="f377eabd" sha1="b30722010e1948d699616911ff57ec296d148419" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="domaine14">
+		<description>Domaine Public Magazine Issue 14 (Fra)</description>
+		<year>199?</year>
+		<publisher>Pressimage</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="domaine public magazine issue 14 (19xx)(pressimage)(fr).st" size="737280" crc="7b666c9f" sha1="2a6ad3ad66cc6e74b5b941804f36fa43a70304a7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theone1">
+		<description>The One Issue 1 - Nebulus Demo</description>
+		<year>1988</year>
+		<publisher>EMAP</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="one issue 01, the (1988-10)(emap)[nebulus demo].st" size="368640" crc="1b079b6f" sha1="45f9d8ca2215ed4b5c798e5cfd73617b191c50d3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theone6">
+		<description>The One Issue 6 - Blasteroids Demo</description>
+		<year>1989</year>
+		<publisher>EMAP</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="one issue 06, the (1989-06)(emap)[blasteroids demo].st" size="368640" crc="d3056391" sha1="46e2452a006597f63f37e10323ff10ca3f66c517" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theone24">
+		<description>The One Issue 24 - Plotting Demo</description>
+		<year>1990</year>
+		<publisher>EMAP</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="one issue 24, the (1990-09)(emap)[plotting demo].st" size="819200" crc="19379917" sha1="db4b4536a4d1c2c04e1efae72f5c8a2a44a1c139" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theone25">
+		<description>The One Issue 25 - Paradroid 90 Demo</description>
+		<year>1990</year>
+		<publisher>EMAP</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="one issue 25, the (1990-10)(emap)[paradroid 90 demo].st" size="819200" crc="0a7b6dc3" sha1="a3409325a1923e46a1fae7534284cc2e8026fe0d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theone26">
+		<description>The One Issue 26 - Car-Vup Demo</description>
+		<year>1990</year>
+		<publisher>EMAP</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="one issue 26, the (1990-11)(emap)[car-vup demo].st" size="819200" crc="c37b083e" sha1="6e9f8356da76c4f47da00472a53db5e3d1d15b7f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theone27">
+		<description>The One Issue 27 - Cyberon 3 Demo</description>
+		<year>1990</year>
+		<publisher>EMAP</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="one issue 27, the (1990-12)(emap)[cyberon 3 demo].st" size="409600" crc="78f48fa9" sha1="1f2156cbe52e24c3306a78d51e8f3ae347c6c56a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theone28">
+		<description>The One Issue 28 - Midwinter 2 Preview</description>
+		<year>1991</year>
+		<publisher>EMAP</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="one issue 28, the (1991-01)(emap)[midwinter 2 preview].st" size="409600" crc="a86684df" sha1="a2398b186192d602de1b4c085166c01832ebf2a6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theone29">
+		<description>The One Issue 29 - Foundations Waste Full Game</description>
+		<year>1991</year>
+		<publisher>EMAP</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="one issue 29, the (1991-02)(emap)[foundations waste full game].st" size="409600" crc="2ecc6c6a" sha1="564f71c2fa172e18c703eb5115cc26d29a6da449" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theone30">
+		<description>The One Issue 30 - Rotoplex Demo</description>
+		<year>1991</year>
+		<publisher>EMAP</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="one issue 30, the (1991-03)(emap)[rotoplex demo].st" size="819200" crc="8aa2bd07" sha1="03a2f584bb2bde3d8c4fdc4f5c62f1ef1749de88" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theone31">
+		<description>The One Issue 31 - Brat Demo</description>
+		<year>1991</year>
+		<publisher>EMAP</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="one issue 31, the (1991-04)(emap)[brat demo].st" size="819200" crc="dc38d81a" sha1="d650b5aeacd12231d0b725b72d2c0749ad59593c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theone32">
+		<description>The One Issue 32 - Chuck Rock Demo + Skull &amp; Crossbones Demo</description>
+		<year>1991</year>
+		<publisher>EMAP</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="one issue 32, the (1991-05)(emap)(disk 2 of 2)[chuck rock demo - skull &amp; crossbones demo].st" size="819200" crc="991a53a6" sha1="2a83f879fba8bfc262bbfd231725a02fa6ff7f22" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theone33">
+		<description>The One Issue 33 - Logical Demo + Team Suzuki Trainer</description>
+		<year>1991</year>
+		<publisher>EMAP</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="880640">
+				<rom name="one issue 33, the (1991-06)(emap)[logical demo - team suzuki trainer].st" size="880640" crc="05279913" sha1="07de35d586033a7b66a7a0507b5c3462d40ea836" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theone33a" cloneof="theone33">
+		<description>The One Issue 33 - Logical Demo + Team Suzuki Trainer (Alt)</description>
+		<year>1991</year>
+		<publisher>EMAP</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="one issue 33, the (1991-06)(emap)[a][logical demo - team suzuki trainer].st" size="819200" crc="edfef750" sha1="e488ad42b9042b70ee97cda0b5e8b50b7485a1a0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theone34">
+		<description>The One Issue 34 - Prehistoric Demo + RBI Preview</description>
+		<year>1991</year>
+		<publisher>EMAP</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="one issue 34, the (1991-07)(emap)[prehistoric demo - rbi preview].st" size="819200" crc="a1c093f5" sha1="a44c758e822b52b4ad33ce37032a5ad56e64081a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theone34a" cloneof="theone34">
+		<description>The One Issue 34 - Prehistoric Demo + RBI Preview (Alt)</description>
+		<year>1991</year>
+		<publisher>EMAP</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="one issue 34, the (1991-07)(emap)[a][prehistoric demo - rbi preview].st" size="819200" crc="852e0f46" sha1="1bfbf8babe4afe081246aa52f685881d167a7efe" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theone35">
+		<description>The One Issue 35 - Cricket Demo + Rodland Demo</description>
+		<year>1991</year>
+		<publisher>EMAP</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="one issue 35, the (1991-08)(emap)[cricket demo - rodland demo].st" size="819200" crc="30b64dc6" sha1="6826f7c7590f740d92a062678c306bcbf7aea223" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theone35a" cloneof="theone35">
+		<description>The One Issue 35 - Cricket Demo + Rodland Demo (Alt)</description>
+		<year>1991</year>
+		<publisher>EMAP</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="880640">
+				<rom name="one issue 35, the (1991-08)(emap)[a][cricket demo - rodland demo].st" size="880640" crc="d752f970" sha1="1b0c424fb149982a87948a95c459ff2184b9cac7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theone37">
+		<description>The One Issue 37 - Microprose Golf Demo + Pitfighter Demo</description>
+		<year>1991</year>
+		<publisher>EMAP</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="one issue 37, the (1991-10)(emap)[microprose golf demo - pitfighter demo].st" size="409600" crc="6f4a2096" sha1="4c685a445d87f8293f3d544674b4f279833a497c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theone40">
+		<description>The One Issue 40 - Barbarian II Demo + Robocod Demo</description>
+		<year>1992</year>
+		<publisher>EMAP</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="one issue 40, the (1992-01)(emap)[barbarian ii demo - robocod demo].st" size="737280" crc="3ebcc904" sha1="abb9df6ad21b04389608dd33ccea3d8d75d76f03" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="theone42">
+		<description>The One Issue 42 - Penguin + Big Run</description>
+		<year>1992</year>
+		<publisher>EMAP</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="one issue 42, the (1992-03)(emap)[penguin - big run].st" size="819200" crc="af05b791" sha1="1504a61d9fc203c149baf2d455d7bab1b04b9124" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction1">
+		<description>ST Action Issue 1</description>
+		<year>1988</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="st action issue 01 (1988-05)(gollner publishing ltd).st" size="409600" crc="db44659d" sha1="a8ee3c15cd073eb0cf9ad3a8c0cb10ab61c2563e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction1a" cloneof="staction1">
+		<description>ST Action Issue 1 (Alt)</description>
+		<year>1988</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 01 (1988-05)(gollner publishing ltd)[a].st" size="737280" crc="5878b92d" sha1="dceebcf7042537192c390078dc653a9d01be0d2c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction2">
+		<description>ST Action Issue 2</description>
+		<year>1988</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 02 (1988-06)(gollner publishing ltd).st" size="737280" crc="23084d88" sha1="796b10d3115a83bc2c3cb96b0ac76dad440b3787" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction2a" cloneof="staction2">
+		<description>ST Action Issue 2 (Alt)</description>
+		<year>1988</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="st action issue 02 (1988-06)(gollner publishing ltd)[a].st" size="409600" crc="5bad0107" sha1="5704bbea7d144fb29df3fec84639e9ad8eb0dd3b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction3">
+		<description>ST Action Issue 3</description>
+		<year>1988</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 03 (1988-07)(gollner publishing ltd).st" size="819200" crc="5922b593" sha1="53f5d56dbbe5f67539e36184896efaca4726c8ac" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction3a" cloneof="staction3">
+		<description>ST Action Issue 3 (Alt)</description>
+		<year>1988</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 03 (1988-07)(gollner publishing ltd)[a].st" size="819200" crc="da7ec756" sha1="32bdc3e53deabe785024317232a466826c961dde" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction3b" cloneof="staction3">
+		<description>ST Action Issue 3 (Alt 2)</description>
+		<year>1988</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="st action issue 03 (1988-07)(gollner publishing ltd)[a2].st" size="829440" crc="94d9d89d" sha1="c9e7e59e9b0efc48dd4fc38a11135cbf9aca2031" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction4">
+		<description>ST Action Issue 4</description>
+		<year>1988</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 04 (1988-08)(gollner publishing ltd).st" size="737280" crc="6b029583" sha1="f1b6396d9ca8ed263bb0d782412fbad80967c441" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction4a" cloneof="staction4">
+		<description>ST Action Issue 4 (Alt)</description>
+		<year>1988</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 04 (1988-08)(gollner publishing ltd)[a].st" size="737280" crc="ed21a699" sha1="2b77a09d62e493127ed056ae3d2883f9e407760f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction4b" cloneof="staction4">
+		<description>ST Action Issue 4 (Alt 2)</description>
+		<year>1988</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="st action issue 04 (1988-08)(gollner publishing ltd)[a2].st" size="829440" crc="8fc959bc" sha1="577e871c60faceff751e630c5dea0863fd721235" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction5">
+		<description>ST Action Issue 5</description>
+		<year>1988</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 05 (1988-09)(gollner publishing ltd).st" size="819200" crc="2b6989f9" sha1="fade703b26e4798e23568579a641933bfedbfae7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction5a" cloneof="staction5">
+		<description>ST Action Issue 5 (Alt)</description>
+		<year>1988</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 05 (1988-09)(gollner publishing ltd)[a].st" size="819200" crc="2dea462d" sha1="a136df9d4bc0c18e811a9b91c607497b89be4fa9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction6">
+		<description>ST Action Issue 6</description>
+		<year>1988</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 06 (1988-10)(gollner publishing ltd).st" size="819200" crc="24bd6215" sha1="1beae3dbaa77dd48d2b15c2f37806355365a9c3f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction6a" cloneof="staction6">
+		<description>ST Action Issue 6 (Alt)</description>
+		<year>1988</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 06 (1988-10)(gollner publishing ltd)[a].st" size="819200" crc="e7417813" sha1="7fed33033d8a2e417f5226c05c2bd792d9c2d05a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction7">
+		<description>ST Action Issue 7</description>
+		<year>1988</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 07 (1988-11)(gollner publishing ltd).st" size="737280" crc="3da4469d" sha1="40f1ad4b84420ea8aa529c4922f6a82d65d9f3d2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction7a" cloneof="staction7">
+		<description>ST Action Issue 7 (Alt)</description>
+		<year>1988</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 07 (1988-11)(gollner publishing ltd)[a].st" size="737280" crc="3624f6d7" sha1="3b996f0b8bcb95e53fe5532a4f3a9aa071146dee" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction7b" cloneof="staction7">
+		<description>ST Action Issue 7 (Alt 2)</description>
+		<year>1988</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 07 (1988-11)(gollner publishing ltd)[a2].st" size="819200" crc="a14b58cb" sha1="3aca333f1fc1aa289303d63dd11fe1b79c69413f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction8">
+		<description>ST Action Issue 8</description>
+		<year>1988</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="st action issue 08 (1988-12)(gollner publishing ltd).st" size="368640" crc="652953f0" sha1="9a7241573d80c400bc07bbee50c8f67fddf281de" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction9">
+		<description>ST Action Issue 9</description>
+		<year>1989</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 09 (1989-01)(gollner publishing ltd).st" size="737280" crc="dabadaf4" sha1="7632d894983f587abc728c4446295617b38e6be4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction9a" cloneof="staction9">
+		<description>ST Action Issue 9 (Alt)</description>
+		<year>1989</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 09 (1989-01)(gollner publishing ltd)[a].st" size="737280" crc="aadc1767" sha1="6766b418dec43c7c4028e338c52522add4b97c80" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction9b" cloneof="staction9">
+		<description>ST Action Issue 9 (Alt 2)</description>
+		<year>1989</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="st action issue 09 (1989-01)(gollner publishing ltd)[a2].st" size="829440" crc="8061793e" sha1="20852ee55b847ba565e01139658f601c976eb3f0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction10">
+		<description>ST Action Issue 10</description>
+		<year>1989</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 10 (1989-02)(gollner publishing ltd).st" size="737280" crc="77f79f3b" sha1="45099e73e214ebc1e4cf7256ad6f11251d6a1630" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction10a" cloneof="staction10">
+		<description>ST Action Issue 10 (Alt)</description>
+		<year>1989</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 10 (1989-02)(gollner publishing ltd)[a].st" size="737280" crc="2d13a343" sha1="9b260c1a6171d7756ac3e8dc37aaf5ab4136beba" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction10b" cloneof="staction10">
+		<description>ST Action Issue 10 (Alt 2)</description>
+		<year>1989</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="st action issue 10 (1989-02)(gollner publishing ltd)[a2].st" size="829440" crc="91fd8f96" sha1="7f93ee7dc8ccd283c8234900fba4d72977ca3f5f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction11">
+		<description>ST Action Issue 11</description>
+		<year>1989</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 11 (1989-03)(gollner publishing ltd).st" size="819200" crc="81b3b880" sha1="a18a3438b0aeff8bf299aa9d5ab03009b0e1ecce" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction12">
+		<description>ST Action Issue 12</description>
+		<year>1989</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 12 (1989-04)(gollner publishing ltd).st" size="819200" crc="cc44ae6a" sha1="5ce6750b14d50977a51af0bc150e23ef2d46a6e6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction12a" cloneof="staction12">
+		<description>ST Action Issue 12 (Alt)</description>
+		<year>1989</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 12 (1989-04)(gollner publishing ltd)[a].st" size="819200" crc="fed9259b" sha1="952e4f9e3e199439de944fc704429ddbb0580abc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction12b" cloneof="staction12">
+		<description>ST Action Issue 12 (Alt 2)</description>
+		<year>1989</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 12 (1989-04)(gollner publishing ltd)[a2].st" size="819200" crc="dcf5cdff" sha1="72a74cf47251b8dbad5ffd352654c832fdd09f60" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction13">
+		<description>ST Action Issue 13</description>
+		<year>1989</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 13 (1989-05)(gollner publishing ltd).st" size="737280" crc="b685a415" sha1="0205ff08c102420ade90bd526f64d23cee2ccd50" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction13a" cloneof="staction13">
+		<description>ST Action Issue 13 (Alt)</description>
+		<year>1989</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 13 (1989-05)(gollner publishing ltd)[a].st" size="819200" crc="82d5dd0b" sha1="fa604c2619f5d49403dfa684493f00c06c129e4b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction14">
+		<description>ST Action Issue 14</description>
+		<year>1989</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 14 (1989-06)(gollner publishing ltd).st" size="737280" crc="da291eaf" sha1="bcf266153fc2c269382a056832648f2fbcccc1c8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction14a" cloneof="staction14">
+		<description>ST Action Issue 14 (Alt)</description>
+		<year>1989</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 14 (1989-06)(gollner publishing ltd)[a].st" size="737280" crc="344b3dad" sha1="ba393a902f1b428bba2d8ebb9bdd361dbd82290c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction14b" cloneof="staction14">
+		<description>ST Action Issue 14 (Alt 2)</description>
+		<year>1989</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 14 (1989-06)(gollner publishing ltd)[a2].st" size="819200" crc="a61d1cab" sha1="9aa45128bd1cd8e022ff26cfa3b20bd6931cba8f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction14c" cloneof="staction14">
+		<description>ST Action Issue 14 (Alt 3)</description>
+		<year>1989</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="st action issue 14 (1989-06)(gollner publishing ltd)[a3].st" size="829440" crc="1cab9577" sha1="0693704e441d9ec4f1acd1c6e2dea98f359f315d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction15">
+		<description>ST Action Issue 15</description>
+		<year>1989</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 15 (1989-07)(gollner publishing ltd).st" size="737280" crc="8ee799a4" sha1="50d5ff74168e31be9733dd87277ec08a31878f5f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction15a" cloneof="staction15">
+		<description>ST Action Issue 15 (Alt)</description>
+		<year>1989</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 15 (1989-07)(gollner publishing ltd)[a].st" size="819200" crc="96f19fe1" sha1="315db22684e244c118d499b712287bbda456007d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction16">
+		<description>ST Action Issue 16</description>
+		<year>1989</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 16 (1989-08)(gollner publishing ltd).st" size="819200" crc="f778c44f" sha1="58aed3c3f14f37bf6f0422db68093d3be984b92b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction16a" cloneof="staction16">
+		<description>ST Action Issue 16 (Alt)</description>
+		<year>1989</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="849920">
+				<rom name="st action issue 16 (1989-08)(gollner publishing ltd)[a].st" size="849920" crc="e87eef12" sha1="ff3b89f4d6805acbd3b78d65581368dcdf0a017d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction17">
+		<description>ST Action Issue 17</description>
+		<year>1989</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 17 (1989-09)(gollner publishing ltd).st" size="819200" crc="79d3ec0f" sha1="bd6b77740f61be774d576defe403f56c93238ad4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction17a" cloneof="staction17">
+		<description>ST Action Issue 17 (Alt)</description>
+		<year>1989</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="st action issue 17 (1989-09)(gollner publishing ltd)[a].st" size="829440" crc="fd9f2965" sha1="b37b3835c2395080cafd2a9b77900894c0ec23e1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction19">
+		<description>ST Action Issue 19</description>
+		<year>1989</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 19 (1989-11)(gollner publishing ltd).st" size="737280" crc="2ca4fba6" sha1="b4b85bbb544562f8d960435a3e2775c336872d32" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction20">
+		<description>ST Action Issue 20</description>
+		<year>1989</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 20 (1989-12)(gollner publishing ltd).st" size="737280" crc="ee3e65a3" sha1="329064361dc0f76c0f4a0339c625a950aae959d6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction20a" cloneof="staction20">
+		<description>ST Action Issue 20 (Alt)</description>
+		<year>1989</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 20 (1989-12)(gollner publishing ltd)[a].st" size="819200" crc="fd1c1a30" sha1="d4e276b33084d557ff5aacc6cc780b6fec5540e7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction21">
+		<description>ST Action Issue 21</description>
+		<year>1990</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 21 (1990-01)(gollner publishing ltd).st" size="737280" crc="d22fbf05" sha1="cfaf8d59c36e1893513767a13514b296a1f37263" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction21a" cloneof="staction21">
+		<description>ST Action Issue 21 (Alt)</description>
+		<year>1990</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 21 (1990-01)(gollner publishing ltd)[a].st" size="737280" crc="64ee8df3" sha1="673638d481d2cad2d390507195f5fefe983fb652" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction21b" cloneof="staction21">
+		<description>ST Action Issue 21 (Alt 2)</description>
+		<year>1990</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="st action issue 21 (1990-01)(gollner publishing ltd)[a2].st" size="368640" crc="5e7b2a29" sha1="29257f3d29cf68974852f403c5b7ff29249b3402" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction22">
+		<description>ST Action Issue 22</description>
+		<year>1990</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 22 (1990-02)(gollner publishing ltd).st" size="819200" crc="27e784ba" sha1="00d1f8d3c8738fb152f5ffd81be4f07c25a8f745" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction22a" cloneof="staction22">
+		<description>ST Action Issue 22 (Alt)</description>
+		<year>1990</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 22 (1990-02)(gollner publishing ltd)[a].st" size="819200" crc="cd5e91bb" sha1="dd19162019704b1c994523809d7e2664408158c9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction22b" cloneof="staction22">
+		<description>ST Action Issue 22 (Alt 2)</description>
+		<year>1990</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 22 (1990-02)(gollner publishing ltd)[a2].st" size="819200" crc="c103f96e" sha1="c1614fb2521e34a28a12c231c57ce88538a5011f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction23">
+		<description>ST Action Issue 23</description>
+		<year>1990</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 23 (1990-03)(gollner publishing ltd).st" size="737280" crc="55303d33" sha1="aef4377804669745188f581fc49275343393ba20" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction23a" cloneof="staction23">
+		<description>ST Action Issue 23 (Alt)</description>
+		<year>1990</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="st action issue 23 (1990-03)(gollner publishing ltd)[a].st" size="829440" crc="9cbbe94a" sha1="8d0a02beca27f19c991e422a0773b98e83fc3c37" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction24">
+		<description>ST Action Issue 24</description>
+		<year>1990</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="st action issue 24 (1990-04)(gollner publishing ltd).st" size="839680" crc="230aed01" sha1="da9462c515fa16741f71a75cc4ef412168202afe" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction24a" cloneof="staction24">
+		<description>ST Action Issue 24 (Alt)</description>
+		<year>1990</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="st action issue 24 (1990-04)(gollner publishing ltd)[a2].st" size="829440" crc="9731a9e8" sha1="c827954910a76503d0ac3960bbb2095591275209" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction24b" cloneof="staction24">
+		<description>ST Action Issue 24 (Alt 2)</description>
+		<year>1990</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 24 (1990-04)(gollner publishing ltd)[a].st" size="737280" crc="318dc69b" sha1="fbc65f0945a4bc83b8a26b0e66bb7101bebfbbfc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction25">
+		<description>ST Action Issue 25</description>
+		<year>1990</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 25 (1990-05)(gollner publishing ltd).st" size="737280" crc="84049bd6" sha1="120648998134a11476141ee106a9a5e562723a45" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction25a" cloneof="staction25">
+		<description>ST Action Issue 25 (Alt)</description>
+		<year>1990</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 25 (1990-05)(gollner publishing ltd)[a].st" size="819200" crc="ec3f6db2" sha1="22d4639e89155812dd9117a6136ebb386d98f471" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction26">
+		<description>ST Action Issue 26</description>
+		<year>1990</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 26 (1990-06)(gollner publishing ltd).st" size="737280" crc="912c4fd2" sha1="68ad0e54d1e12dfd295a1b8f96fb481eb97fd122" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction26a" cloneof="staction26">
+		<description>ST Action Issue 26 (Alt)</description>
+		<year>1990</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 26 (1990-06)(gollner publishing ltd)[a2].st" size="819200" crc="bbffa451" sha1="985bdf52c43d8b0a46beabc34a8b97906668389c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction26b" cloneof="staction26">
+		<description>ST Action Issue 26 (Alt 2)</description>
+		<year>1990</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 26 (1990-06)(gollner publishing ltd)[a].st" size="737280" crc="03c81533" sha1="a6460646a8f0cdff1a39d7d6ea2f86eb20add2dc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction27">
+		<description>ST Action Issue 27</description>
+		<year>1990</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 27 (1990-07)(gollner publishing ltd).st" size="737280" crc="e7941ad8" sha1="d4f9a0cb362c7d2ab986dff32d724051eb66eda0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction27a" cloneof="staction27">
+		<description>ST Action Issue 27 (Alt)</description>
+		<year>1990</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 27 (1990-07)(gollner publishing ltd)[a].st" size="819200" crc="4e6a5389" sha1="ed6d10c542d46ad2bdafcc144208787d635260ff" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction28">
+		<description>ST Action Issue 28</description>
+		<year>1990</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 28 (1990-08)(gollner publishing ltd).st" size="737280" crc="09ab08ee" sha1="ca3af40def35f84b6cde763b1c966a429810bc42" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction28a" cloneof="staction28">
+		<description>ST Action Issue 28 (Alt)</description>
+		<year>1990</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 28 (1990-08)(gollner publishing ltd)[a].st" size="819200" crc="49ed5cb1" sha1="03706f52af59404e30278b2772fdda5c4cd4743b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction29">
+		<description>ST Action Issue 29</description>
+		<year>1990</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 29 (1990-09)(gollner publishing ltd).st" size="737280" crc="cea17804" sha1="8aba53c8ffc0fc79c069ef4c14de323fadc38b9a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction29a" cloneof="staction29">
+		<description>ST Action Issue 29 (Alt)</description>
+		<year>1990</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 29 (1990-09)(gollner publishing ltd)[a].st" size="819200" crc="d68bae30" sha1="99f15e327861d3639dd823073d5a22765d03eeff" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction30">
+		<description>ST Action Issue 30</description>
+		<year>1990</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 30 (1990-10)(gollner publishing ltd).st" size="737280" crc="f355ac75" sha1="cd63ad1c3047d8b1031313dbfab46c00a0a651b4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction30a" cloneof="staction30">
+		<description>ST Action Issue 30 (Alt)</description>
+		<year>1990</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 30 (1990-10)(gollner publishing ltd)[a].st" size="737280" crc="2a40298b" sha1="30d09bad88b765c7311a57b2d84002194157297e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction32">
+		<description>ST Action Issue 32</description>
+		<year>1990</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 32 (1990-12)(gollner publishing ltd).st" size="819200" crc="1525a2d0" sha1="9abd8cd2623a8f244e276ca90037ceebc155c956" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction34">
+		<description>ST Action Issue 34</description>
+		<year>1991</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 34 (1991-02)(gollner publishing ltd).st" size="819200" crc="d10a5e33" sha1="067e8c1882ed093aa8519c0269b19c6721968a47" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction35">
+		<description>ST Action Issue 35</description>
+		<year>1991</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 35 (1991-03)(gollner publishing ltd).st" size="737280" crc="cf3a259c" sha1="9ed17ca5368553570f1eaf646c1c0714f29d3348" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction35a" cloneof="staction35">
+		<description>ST Action Issue 35 (Alt)</description>
+		<year>1991</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 35 (1991-03)(gollner publishing ltd)[a].st" size="819200" crc="3fa041e0" sha1="31fa8ea308b64d3835e3dd01d2ef154e9da99ba8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction36">
+		<description>ST Action Issue 36</description>
+		<year>1991</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 36 (1991-04)(gollner publishing ltd).st" size="737280" crc="19c3f38f" sha1="d1ef3eb6c73b84479352ff82df0b1953743f8ffd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction36a" cloneof="staction36">
+		<description>ST Action Issue 36 (Alt)</description>
+		<year>1991</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="st action issue 36 (1991-04)(gollner publishing ltd)[a].st" size="829440" crc="1753c09c" sha1="510f676fb7c8a92f97327bddcfeb729fb2248a9c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction37">
+		<description>ST Action Issue 37</description>
+		<year>1991</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 37 (1991-05)(gollner publishing ltd).st" size="737280" crc="a285523a" sha1="218add06a2969f751eefc0d9789fb3f26af2e503" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction37a" cloneof="staction37">
+		<description>ST Action Issue 37 (Alt)</description>
+		<year>1991</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 37 (1991-05)(gollner publishing ltd)[a].st" size="819200" crc="add7dcda" sha1="28082bce578125831c8803215f7ec5fee41b0f8f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction38">
+		<description>ST Action Issue 38</description>
+		<year>1991</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 38 (1991-06)(gollner publishing ltd).st" size="737280" crc="94ebfa5e" sha1="ecdff0d538b691cf7a4cc445dc452a579fbf4629" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction38a" cloneof="staction38">
+		<description>ST Action Issue 38 (Alt)</description>
+		<year>1991</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 38 (1991-06)(gollner publishing ltd)[a].st" size="737280" crc="0095159e" sha1="dbee092e7abacb11b37c09772a321d3b03c654b2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction39">
+		<description>ST Action Issue 39</description>
+		<year>1991</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 39 (1991-07)(gollner publishing ltd).st" size="737280" crc="b1a4c9f1" sha1="168f69eca7923a04d8130ee7ee98596472c5a287" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction39a" cloneof="staction39">
+		<description>ST Action Issue 39 (Alt)</description>
+		<year>1991</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 39 (1991-07)(gollner publishing ltd)[a].st" size="737280" crc="e1aca43f" sha1="795c9626ba0aa945cb2a1b42a1bd245bc904942e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction40">
+		<description>ST Action Issue 40</description>
+		<year>1991</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 40 (1991-08)(gollner publishing ltd).st" size="737280" crc="929f7ac7" sha1="e9207fed37a2c107c431dda6b4f92696ef68da01" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction40a" cloneof="staction40">
+		<description>ST Action Issue 40 (Alt)</description>
+		<year>1991</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 40 (1991-08)(gollner publishing ltd)[a].st" size="737280" crc="e2c956df" sha1="a4a99bd0738cb2e7c59efb47d768ad06b92862c8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction41">
+		<description>ST Action Issue 41</description>
+		<year>1991</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 41 (1991-09)(gollner publishing ltd).st" size="737280" crc="8471d052" sha1="2d0f2f484e34699a72c62d8c45ef4f96684110e0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction43">
+		<description>ST Action Issue 43</description>
+		<year>1991</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 43 (1991-11)(gollner publishing ltd).st" size="737280" crc="9ef33ae5" sha1="a6a7f03c74f2b39867e580863e3357089b3b32df" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction45">
+		<description>ST Action Issue 45</description>
+		<year>1992</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 45 (1992-01)(gollner publishing ltd).st" size="737280" crc="a544de80" sha1="3f01e0dbfa1bf92089c96fdaf74cb7980144c939" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction45a" cloneof="staction45">
+		<description>ST Action Issue 45 (Alt)</description>
+		<year>1992</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 45 (1992-01)(gollner publishing ltd)[a].st" size="737280" crc="bbafa6a5" sha1="483c483eac5124adffcc02bf2e4f644f7a50ee68" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction46">
+		<description>ST Action Issue 46</description>
+		<year>1992</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 46 (1992-02)(gollner publishing ltd).st" size="737280" crc="a24d4a6b" sha1="a13ad52ab8c2ec0d93efb3cd0fd3c533ace23413" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction48">
+		<description>ST Action Issue 48</description>
+		<year>1992</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 48 (1992-04)(gollner publishing ltd).st" size="737280" crc="cb9779bb" sha1="671ba79bf157cfb972da3e3138e553da2c7900c0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction51">
+		<description>ST Action Issue 51</description>
+		<year>1992</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 51 (1992-07)(gollner publishing ltd).st" size="737280" crc="b9c32e0c" sha1="de9a8322eacce40e281a37fa3038cff06125a7cb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction52">
+		<description>ST Action Issue 52</description>
+		<year>1992</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 52 (1992-08)(gollner publishing ltd).st" size="737280" crc="f0de2541" sha1="4f1c887de6cebd4bb2917dc3250d718c467b3397" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction52a" cloneof="staction52">
+		<description>ST Action Issue 52 (Alt)</description>
+		<year>1992</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 52 (1992-08)(gollner publishing ltd)[a].st" size="737280" crc="2ca6f2cd" sha1="bb2313009d86e34e9dcc5455c6dc8845bc02380a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction53">
+		<description>ST Action Issue 53</description>
+		<year>1992</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 53 (1992-09)(gollner publishing ltd).st" size="737280" crc="582bbc45" sha1="e3afcf3b21b79a34eb6bbf8a48ec3bd4e18a9f12" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction56">
+		<description>ST Action Issue 56</description>
+		<year>1992</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 56 (1992-12)(gollner publishing ltd).st" size="737280" crc="0a99dacc" sha1="528a532375aeca588a847462f6ce9bcd714705ce" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction57">
+		<description>ST Action Issue 57</description>
+		<year>1993</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 57 (1993-01)(gollner publishing ltd).st" size="819200" crc="b5b13f62" sha1="f0ebece45f467504a3fb736d829bfc4119fb0154" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction58">
+		<description>ST Action Issue 58</description>
+		<year>1993</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="st action issue 58 (1993-02)(gollner publishing ltd).st" size="829440" crc="f554ce2c" sha1="5acbde5e2429b56ff0515eaed477ef5c965958d7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction59">
+		<description>ST Action Issue 59</description>
+		<year>1993</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="st action issue 59 (1993-03)(gollner publishing ltd).st" size="829440" crc="95c2ec48" sha1="be50c8555b3bd97b2a9b7a30e3a30febbecfec60" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction60">
+		<description>ST Action Issue 60</description>
+		<year>1993</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 60 (1993-04)(gollner publishing ltd).st" size="737280" crc="98549228" sha1="53035820571a7f482dda47c8839415bd5dacaca2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction61">
+		<description>ST Action Issue 61</description>
+		<year>1993</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="st action issue 61 (1993-05)(gollner publishing ltd).st" size="829440" crc="f23865b1" sha1="cba7b30bc603d0d35f52350c37b7e922758ce5ed" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction62">
+		<description>ST Action Issue 62</description>
+		<year>1993</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 62 (1993-06)(gollner publishing ltd).st" size="737280" crc="0320f0da" sha1="c9af1d9204df572a139f8bc3872b24c4ef82bef6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction63">
+		<description>ST Action Issue 63</description>
+		<year>1993</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 63 (1993-07)(gollner publishing ltd).st" size="737280" crc="23c612c4" sha1="b4b5e0fd254c9e1fa1264023d8f181cb74844628" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction64">
+		<description>ST Action Issue 64</description>
+		<year>1993</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 64 (1993-08)(gollner publishing ltd).st" size="737280" crc="f886c7b8" sha1="2def19b4526014c45d87559fd1fee66d4e78ea51" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction65">
+		<description>ST Action Issue 65</description>
+		<year>1993</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 65 (1993-09)(gollner publishing ltd).st" size="737280" crc="aa828098" sha1="7ea68c1864f296a200444435410af578808164f4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction66">
+		<description>ST Action Issue 66</description>
+		<year>1993</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 66 (1993-10)(gollner publishing ltd).st" size="737280" crc="e756073f" sha1="21d3bb9f2c10798fc4f1c828710a432af67609ae" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction67">
+		<description>ST Action Issue 67</description>
+		<year>1993</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st action issue 67 (1993-11)(gollner publishing ltd).st" size="819200" crc="d1acfebb" sha1="084ac53b608f64ff0ce3f0aad63df31d5348e365" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction94">
+		<description>ST Action Issue 94</description>
+		<year>1996</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 94 (1996-02)(gollner publishing ltd).st" size="737280" crc="f3068fed" sha1="ce42202d40a2ce86a12559cbd46a70c24e5bb5a6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction94a" cloneof="staction94">
+		<description>ST Action Issue 94 (Alt)</description>
+		<year>1996</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 94 (1996-02)(gollner publishing ltd)[a].st" size="737280" crc="f854bf69" sha1="7a85cfa128b75f7f8b147ed4d19c4fd64fd2e242" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction95">
+		<description>ST Action Issue 95</description>
+		<year>1996</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 95 (1996-03)(gollner publishing ltd).st" size="737280" crc="2dea5858" sha1="3b4a7cf58c894312052400b38273e3a08fa9cf3c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction95a" cloneof="staction95">
+		<description>ST Action Issue 95 (Alt)</description>
+		<year>1996</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="414720">
+				<rom name="st action issue 95 (1996-03)(gollner publishing ltd)[a].st" size="414720" crc="2022ec75" sha1="30a940ffb41fdacab04916c75f50dcb342e4e0a5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction96">
+		<description>ST Action Issue 96</description>
+		<year>1996</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 96 (1996-04)(gollner publishing ltd).st" size="737280" crc="f6b81f6b" sha1="aff2830d9aa7a831ad7f16c2c67e0397b259802d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction96a" cloneof="staction96">
+		<description>ST Action Issue 96 (Alt)</description>
+		<year>1996</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 96 (1996-04)(gollner publishing ltd)[a].st" size="737280" crc="2bc08c1a" sha1="24a49b29cf8a22f501490aa8360b90bc7e1479ad" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction96b" cloneof="staction96">
+		<description>ST Action Issue 96 (Alt 2)</description>
+		<year>1996</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 96 (1996-04)(gollner publishing ltd)[a2].st" size="737280" crc="166fea95" sha1="d3e8e84b005680e6e63673d8ea8593c5341611a7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction97">
+		<description>ST Action Issue 97</description>
+		<year>1996</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 97 (1996-05)(gollner publishing ltd).st" size="737280" crc="76a4787b" sha1="c6a89da8cda659f4907305745731cb8cf7e5f836" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction97a" cloneof="staction97">
+		<description>ST Action Issue 97 (Alt)</description>
+		<year>1996</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 97 (1996-05)(gollner publishing ltd)[a].st" size="737280" crc="0059fff5" sha1="40a8b32c07fe432f225711728cf45ee86f766e4d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction98">
+		<description>ST Action Issue 98</description>
+		<year>1996</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 98 (1996-06)(gollner publishing ltd).st" size="737280" crc="33501ffe" sha1="a7ccadfcaa4f2a4608cd18e7f50388ef0b80801b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction98a" cloneof="staction98">
+		<description>ST Action Issue 98 (Alt)</description>
+		<year>1996</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="450560">
+				<rom name="st action issue 98 (1996-06)(gollner publishing ltd)[a].st" size="450560" crc="9516ef8f" sha1="b3e122a3340308ec6286b200b6dcdf9ee5cb6b53" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction99">
+		<description>ST Action Issue 99</description>
+		<year>1996</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 99 (1996-07)(gollner publishing ltd).st" size="737280" crc="b9179324" sha1="8f6497cded83640b2aab9fc40fb4108c608ab430" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="staction99a" cloneof="staction99">
+		<description>ST Action Issue 99 (Alt)</description>
+		<year>1996</year>
+		<publisher>Gollner Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st action issue 99 (1996-07)(gollner publishing ltd)[a].st" size="737280" crc="5a021314" sha1="8985543b6784ba67cf6423a1867a0270d43b1e54" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dualform1">
+		<description>ST Amiga Dual Format Issue 1</description>
+		<year>1988</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="st amiga dual format issue 01 (1988-06)(future publishing).st" size="409600" crc="182a8574" sha1="8c7ab94299c02915fe742b1db9e93f83b61d6f8a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dualform2">
+		<description>ST Amiga Dual Format Issue 2</description>
+		<year>198?</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="st amiga dual format issue 02 (19xx)(future publishing).st" size="409600" crc="0e0bdaa5" sha1="907d02fbc7560e91201ec573a624cce5dcf2468a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dualform3">
+		<description>ST Amiga Dual Format Issue 3</description>
+		<year>198?</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="st amiga dual format issue 03 (19xx)(future publishing).st" size="409600" crc="bec17538" sha1="52e84e2c46eb3b4399187e86ed119344ea513da8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dualform34">
+		<description>ST Amiga Dual Format Issues 3 and 4</description>
+		<year>198?</year>
+		<publisher>Future Publishing?</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st amiga dual format issue 03 and 04 (19xx)(future publishing).st" size="819200" crc="ae2ca482" sha1="72e112a5e4fc7cd2beb4ac0e0abb8e142ee1b837" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dualform4">
+		<description>ST Amiga Dual Format Issue 4</description>
+		<year>198?</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="st amiga dual format issue 04 (19xx)(future publishing).st" size="409600" crc="50c6e4cf" sha1="7445d97ddb79f841d372fca71fb9885d4fd1f61d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dualform5">
+		<description>ST Amiga Dual Format Issue 5</description>
+		<year>198?</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="st amiga dual format issue 05 (19xx)(future publishing).st" size="409600" crc="3fa2dcd1" sha1="e8f80c805e69519e46ea7072a8d156cdea09bbf2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dualform56">
+		<description>ST Amiga Dual Format Issues 5 and 6</description>
+		<year>198?</year>
+		<publisher>Future Publishing?</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st amiga dual format issue 05 and 06 (19xx)(future publishing).st" size="819200" crc="f2c6cc27" sha1="a1b7521daa1cfe60db1b549555ff29a6e898e85a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dualform6">
+		<description>ST Amiga Dual Format Issue 6</description>
+		<year>198?</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="st amiga dual format issue 06 (19xx)(future publishing).st" size="409600" crc="cd2a4a3b" sha1="93fe1a8b886a3b54371e67985c0cd9c26d7fb6c8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dualform7">
+		<description>ST Amiga Dual Format Issue 7</description>
+		<year>198?</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="st amiga dual format issue 07 (19xx)(future publishing).st" size="409600" crc="3424a17c" sha1="a2c45b0f6e8e140be0ecae1cdd031bcd00048f69" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dualform78">
+		<description>ST Amiga Dual Format Issues 7 and 8</description>
+		<year>198?</year>
+		<publisher>Future Publishing?</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st amiga dual format issue 07 and 08 (19xx)(future publishing).st" size="819200" crc="b2402603" sha1="c9cc597762d309627a1d2c8799134e29e621310f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dualform8">
+		<description>ST Amiga Dual Format Issue 8</description>
+		<year>198?</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="st amiga dual format issue 08 (19xx)(future publishing).st" size="409600" crc="e010f65d" sha1="9a9bbcaf5de7d744d4d96546e6f88aebdcf2cd98" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dualform9">
+		<description>ST Amiga Dual Format Issue 9</description>
+		<year>198?</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="st amiga dual format issue 09 (19xx)(future publishing).st" size="409600" crc="5403aef4" sha1="58331086c89dbdac3f0a552d03b731ab68c12305" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dualform10">
+		<description>ST Amiga Dual Format Issue 10</description>
+		<year>198?</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="st amiga dual format issue 10 (19xx)(future publishing).st" size="409600" crc="6df890f0" sha1="7e6cf6604c0237a01f3b96fac11c7fb30ed4e5d4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dualform11">
+		<description>ST Amiga Dual Format Issue 11</description>
+		<year>198?</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="st amiga dual format issue 11 (19xx)(future publishing).st" size="409600" crc="db654dd5" sha1="c1660d07ef6f2784ffdb4f8fa012a217b5258566" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dualform12">
+		<description>ST Amiga Dual Format Issue 12</description>
+		<year>198?</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="st amiga dual format issue 12 (19xx)(future publishing).st" size="409600" crc="2a822416" sha1="2689ae3c5f5d899b9d3cd4a787ba3c498173b934" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dualform13">
+		<description>ST Amiga Dual Format Issue 13</description>
+		<year>198?</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="st amiga dual format issue 13 (19xx)(future publishing).st" size="409600" crc="b3a2d5eb" sha1="c4d0182f3bc92903e176d803a938856007ed61ae" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat1">
+		<description>ST Format Magazine Issue 1</description>
+		<year>1989</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 01 (1989-08)(future publishing).st" size="819200" crc="f499dcb3" sha1="bc23dadc8e6f649bfe678a34fcccbbd9f16b1d23" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat1a" cloneof="stformat1">
+		<description>ST Format Magazine Issue 1 (Alt)</description>
+		<year>1989</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st format magazine issue 01 (1989-08)(future publishing)[a].st" size="737280" crc="8e420554" sha1="e2d0d588d75dae4c1618aa3993d5c445f0fe90e7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat1b" cloneof="stformat1">
+		<description>ST Format Magazine Issue 1 (Alt 2)</description>
+		<year>1989</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="808960">
+				<rom name="st format magazine issue 01 (1989-08)(future publishing)[a2].st" size="808960" crc="37d31d65" sha1="43871654491af2f687f6caf2c33ae179f9ac3a08" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat2">
+		<description>ST Format Magazine Issue 2</description>
+		<year>1989</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="813568">
+				<rom name="st format magazine issue 02 (1989-09)(future publishing).st" size="813568" crc="bb217f0f" sha1="b5ccf13be2fe9b077d60dd767a935599453e6b9f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat2a" cloneof="stformat2">
+		<description>ST Format Magazine Issue 2 (Alt)</description>
+		<year>1989</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="808960">
+				<rom name="st format magazine issue 02 (1989-09)(future publishing)[a].st" size="808960" crc="a44e5cc6" sha1="ca2177933fd7435930046b6e04cae098c45d9277" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat3">
+		<description>ST Format Magazine Issue 3</description>
+		<year>1989</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 03 (1989-10)(future publishing).st" size="819200" crc="9adfa23b" sha1="878eb7b058d429382fd07134a3e8a547082d13a2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat3a" cloneof="stformat3">
+		<description>ST Format Magazine Issue 3 (Alt)</description>
+		<year>1989</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="404480">
+				<rom name="st format magazine issue 03 (1989-10)(future publishing)[a].st" size="404480" crc="8dc8e96d" sha1="abe414b1ea261583a999eb9bda0090c0eebdffbf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat3b" cloneof="stformat3">
+		<description>ST Format Magazine Issue 3 (Alt 2)</description>
+		<year>1989</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="808960">
+				<rom name="st format magazine issue 03 (1989-10)(future publishing)[a2].st" size="808960" crc="6526fa5a" sha1="8fc359d0a316c493eafc78de990ad318ab7185be" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat4">
+		<description>ST Format Magazine Issue 4</description>
+		<year>1989</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 04 (1989-11)(future publishing).st" size="819200" crc="82735d23" sha1="60cddf47a977bd455e93bb1da5b1986dd1a3ef24" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat4a" cloneof="stformat4">
+		<description>ST Format Magazine Issue 4 (Alt)</description>
+		<year>1989</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="688040">
+				<rom name="st format magazine issue 04 (1989-11)(future publishing)[a].st" size="688040" crc="96cc9e5f" sha1="1f7564fc156ee076d7d518e64ba3f72e917e452c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat4b" cloneof="stformat4">
+		<description>ST Format Magazine Issue 4 (Alt 2)</description>
+		<year>1989</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 04 (1989-11)(future publishing)[a2].st" size="819200" crc="8139f4a3" sha1="92bd50bb24ce59bb76bfc1fedd0e88a7afaab244" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat5">
+		<description>ST Format Magazine Issue 5</description>
+		<year>1989</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 05 (1989-12)(future publishing).st" size="819200" crc="c7e6d8c5" sha1="026667c4f2b7e425aaf898733e0f4854d012c21d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat5a" cloneof="stformat5">
+		<description>ST Format Magazine Issue 5 (Alt)</description>
+		<year>1989</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="st format magazine issue 05 (1989-12)(future publishing)[a].st" size="829440" crc="4e590924" sha1="6ee4ebff9eafaa0262cfe6d11531a291569376af" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat5b" cloneof="stformat5">
+		<description>ST Format Magazine Issue 5 (Alt 2)</description>
+		<year>1989</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 05 (1989-12)(future publishing)[a2].st" size="819200" crc="01c34365" sha1="a7b5ba023e66cfd41bd6d799ed5746f67b25630c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat5c" cloneof="stformat5">
+		<description>ST Format Magazine Issue 5 (Alt 3)</description>
+		<year>1989</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 05 (1989-12)(future publishing)[a3].st" size="819200" crc="5a6ab548" sha1="50e7306c1a1e72bdb6f01460a97f8421124eb403" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat5d" cloneof="stformat5">
+		<description>ST Format Magazine Issue 5 (Alt 4)</description>
+		<year>1989</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 05 (1989-12)(future publishing)[a4].st" size="819200" crc="8fb9cd76" sha1="ff151e5ae61f217622fa007a8500c9488f100dd9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat6">
+		<description>ST Format Magazine Issue 6</description>
+		<year>1990</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 06 (1990-01)(future publishing).st" size="819200" crc="f564c19f" sha1="f1421506d5a594909d04dbdfe22c45fe8d56c67a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat6a" cloneof="stformat6">
+		<description>ST Format Magazine Issue 6 (Alt)</description>
+		<year>1990</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 06 (1990-01)(future publishing)[a].st" size="819200" crc="0c39587b" sha1="f694b9fde1d78fce3265960f8bf33052787f92c4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat7">
+		<description>ST Format Magazine Issue 7</description>
+		<year>1990</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 07 (1990-02)(future publishing).st" size="819200" crc="46ea8eeb" sha1="77f8b4e002375d76652bb14dec667f33a7d82f7e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat8">
+		<description>ST Format Magazine Issue 8</description>
+		<year>1990</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 08 (1990-03)(future publishing).st" size="819200" crc="73836fc1" sha1="f8d5c6c451c6835bad1234f67403bab7f001d2ad" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat8a" cloneof="stformat8">
+		<description>ST Format Magazine Issue 8 (Alt)</description>
+		<year>1990</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 08 (1990-03)(future publishing)[a].st" size="819200" crc="55075aa6" sha1="776a3bb398745ccaf6f1e10a3a5bce8384514332" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat9">
+		<description>ST Format Magazine Issue 9</description>
+		<year>1990</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 09 (1990-04)(future publishing).st" size="819200" crc="5cd2e6b1" sha1="f968bac4765ef64164b577bb08431cd91dda84df" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat9a" cloneof="stformat9">
+		<description>ST Format Magazine Issue 9 (Alt)</description>
+		<year>1990</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 09 (1990-04)(future publishing)[a].st" size="819200" crc="fb86fdf9" sha1="1a2ce87d1d0ac42780aeca078401ef7bf7c7f094" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat10">
+		<description>ST Format Magazine Issue 10</description>
+		<year>1990</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 10 (1990-05)(future publishing).st" size="819200" crc="3d32dc52" sha1="2fd4735a89079cec43ce67c822774e702ca6beeb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat10a" cloneof="stformat10">
+		<description>ST Format Magazine Issue 10 (Alt)</description>
+		<year>1990</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="522240">
+				<rom name="st format magazine issue 10 (1990-05)(future publishing)[a].st" size="522240" crc="5ac3045c" sha1="a737a776f7d6e85714e4ff00870afdf971247fb9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat10b" cloneof="stformat10">
+		<description>ST Format Magazine Issue 10 (Alt 2)</description>
+		<year>1990</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 10 (1990-05)(future publishing)[a2].st" size="819200" crc="04954f11" sha1="319c33970333402705b5e6e69e71579fee36d130" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat10c" cloneof="stformat10">
+		<description>ST Format Magazine Issue 10 (Alt 3)</description>
+		<year>1990</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 10 (1990-05)(future publishing)[a3].st" size="819200" crc="eeda80a6" sha1="7980006de85067e9120491de906af9db472d01f9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat11">
+		<description>ST Format Magazine Issue 11</description>
+		<year>1990</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 11 (1990-06)(future publishing).st" size="819200" crc="ec636184" sha1="cc005277a00e49fcaebb59d2841d37001aa470bd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat12">
+		<description>ST Format Magazine Issue 12</description>
+		<year>1990</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 12 (1990-07)(future publishing).st" size="819200" crc="5f84fb65" sha1="3a62844e609b8cfd43a96a5b359f21195df57e5e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat12a" cloneof="stformat12">
+		<description>ST Format Magazine Issue 12 (Alt)</description>
+		<year>1990</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 12 (1990-07)(future publishing)[a].st" size="819200" crc="ab054640" sha1="eb0d307bc4a26cac11fb6d672abddb225e09b4a9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat13">
+		<description>ST Format Magazine Issue 13</description>
+		<year>1990</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 13 (1990-08)(future publishing).st" size="819200" crc="9f29a842" sha1="2bf288d1558a2fb21d73a77ee21442f3dce813c5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat13a" cloneof="stformat13">
+		<description>ST Format Magazine Issue 13 (Alt)</description>
+		<year>1990</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="st format magazine issue 13 (1990-08)(future publishing)[a].st" size="829440" crc="e77838bc" sha1="d92526cbaf25a9d725a9c3a2c4b0a4b40f99f4cd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat14">
+		<description>ST Format Magazine Issue 14</description>
+		<year>1990</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 14 (1990-09)(future publishing).st" size="819200" crc="71a1815e" sha1="8c5dca886f7f9b0c06db950cda8ab6f6212800ad" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat14a" cloneof="stformat14">
+		<description>ST Format Magazine Issue 14 (Alt)</description>
+		<year>1990</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 14 (1990-09)(future publishing)[a].st" size="819200" crc="d22e69e2" sha1="539ee1c4cb90db5bfedf4f2431b6d295c2675088" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat15">
+		<description>ST Format Magazine Issue 15</description>
+		<year>1990</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 15 (1990-10)(future publishing).st" size="819200" crc="558fc445" sha1="5c226dd24d62f6d811c1060391791d04ae6da160" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat15a" cloneof="stformat15">
+		<description>ST Format Magazine Issue 15 (Alt)</description>
+		<year>1990</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 15 (1990-10)(future publishing)[a].st" size="819200" crc="863d5538" sha1="23e4b7762467fc9cde3f21c00f7689fb5404a368" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat15b" cloneof="stformat15">
+		<description>ST Format Magazine Issue 15 (Alt 2)</description>
+		<year>1990</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 15 (1990-10)(future publishing)[a2].st" size="819200" crc="32e36a2a" sha1="1294b6fa04d7348d4113f9fafd8c98bcd30a8d79" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat16">
+		<description>ST Format Magazine Issue 16</description>
+		<year>1990</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 16 (1990-11)(future publishing).st" size="819200" crc="43a41b75" sha1="c32cf1b9d5db9643b1ec8cfe7f360aa9c77109de" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat16a" cloneof="stformat16">
+		<description>ST Format Magazine Issue 16 (Alt)</description>
+		<year>1990</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 16 (1990-11)(future publishing)[a].st" size="819200" crc="d1bba0b4" sha1="962a8e88eb25ed9b60b1c4d7f76f4e8601b04f35" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat16b" cloneof="stformat16">
+		<description>ST Format Magazine Issue 16 (Alt 2)</description>
+		<year>1990</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 16 (1990-11)(future publishing)[a2].st" size="819200" crc="7efd98bf" sha1="7a35a64d63d641fcc7ea9bc46815ce2aa33c6485" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat17">
+		<description>ST Format Magazine Issue 17</description>
+		<year>1990</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 17 (1990-12)(future publishing).st" size="819200" crc="f4b19b2e" sha1="bb7d5ce8860a4217bac233bd04574f1a094121e5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat17a" cloneof="stformat17">
+		<description>ST Format Magazine Issue 17 (Alt)</description>
+		<year>1990</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 17 (1990-12)(future publishing)[a].st" size="819200" crc="727179fd" sha1="1e50dd393a837f2499b2c4ed244e6d9dddc75cb1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat18">
+		<description>ST Format Magazine Issue 18</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 18 (1991-01)(future publishing)(disk 1 of 2).st" size="819200" crc="cdb6968c" sha1="b817c4a814ebf13bd9bfdb425dab7f1f861f0a9a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 18 (1991-01)(future publishing)(disk 2 of 2).st" size="819200" crc="2eeb5a46" sha1="ea76e310855007c24bf340eeffc6352b036a81da" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat18a" cloneof="stformat18">
+		<description>ST Format Magazine Issue 18 (Alt)</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 18 (1991-01)(future publishing)(disk 1 of 2)[a].st" size="819200" crc="952e7890" sha1="6221f0d69b28dedd4bf04ba39d5e9a4b4452a1f4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 18 (1991-01)(future publishing)(disk 2 of 2).st" size="819200" crc="2eeb5a46" sha1="ea76e310855007c24bf340eeffc6352b036a81da" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat19">
+		<description>ST Format Magazine Issue 19</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 19 (1991-02)(future publishing).st" size="819200" crc="f80445c6" sha1="0653a3c2106a67580644b983444b0039f3b4e17a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat19a" cloneof="stformat19">
+		<description>ST Format Magazine Issue 19 (Alt)</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 19 (1991-02)(future publishing)[a].st" size="819200" crc="9a856878" sha1="4b2e1dda5e02e5200829775e21e134a7fa1c6c37" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat20">
+		<description>ST Format Magazine Issue 20</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="814080">
+				<rom name="st format magazine issue 20 (1991-03)(future publishing).st" size="814080" crc="86e308d8" sha1="211f3302f8f10d5187c6d5b80eaf4f8ae554365f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat20a" cloneof="stformat20">
+		<description>ST Format Magazine Issue 20 (Alt)</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 20 (1991-03)(future publishing)[a].st" size="819200" crc="a9666395" sha1="3c707199094f6b51ed7a404a9f056dddeab170ed" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat20b" cloneof="stformat20">
+		<description>ST Format Magazine Issue 20 (Alt 2)</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 20 (1991-03)(future publishing)[a2].st" size="819200" crc="bc6bdaaa" sha1="1cd2bd21dfcf862c1f08e96faeafb7d792c92316" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat21">
+		<description>ST Format Magazine Issue 21</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="814080">
+				<rom name="st format magazine issue 21 (1991-04)(future publishing).st" size="814080" crc="7a737d48" sha1="c0c208c485eac3c0bf1452ebc955198c4c2c4a73" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat21a" cloneof="stformat21">
+		<description>ST Format Magazine Issue 21 (Alt)</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 21 (1991-04)(future publishing)[a].st" size="819200" crc="67c38c57" sha1="34ef49ae1d811bb186b771ac5ae9502920a23eb8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat21b" cloneof="stformat21">
+		<description>ST Format Magazine Issue 21 (Alt 2)</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 21 (1991-04)(future publishing)[a2].st" size="819200" crc="2fb1fcdf" sha1="430c7540dbf2614162da2260f65ce5a6d7269ca4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat21c" cloneof="stformat21">
+		<description>ST Format Magazine Issue 21 (Alt 3)</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 21 (1991-04)(future publishing)[a3].st" size="819200" crc="ce027792" sha1="ac9316262b8e0f177fcdf3f76bcf98c48793e4f4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat22">
+		<description>ST Format Magazine Issue 22</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 22 (1991-05)(future publishing).st" size="819200" crc="79714356" sha1="164da0eddc21eec63bdd5ec4c948dd5becb42610" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat22a" cloneof="stformat22">
+		<description>ST Format Magazine Issue 22 (Alt)</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 22 (1991-05)(future publishing)[a].st" size="819200" crc="a08a0fb7" sha1="f2c5b3904a5f8bc34bdf5763fa3d6cac2ab6f223" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat22b" cloneof="stformat22">
+		<description>ST Format Magazine Issue 22 (Alt 2)</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 22 (1991-05)(future publishing)[a2].st" size="819200" crc="e90efef6" sha1="d7128b96486124a5dcfee09148946e5d2e8b4ea4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat23">
+		<description>ST Format Magazine Issue 23</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 23 (1991-06)(future publishing).st" size="819200" crc="dad28c03" sha1="f0de8de4837c5c49e2b11df1f57e3387b03b5b97" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat23a" cloneof="stformat23">
+		<description>ST Format Magazine Issue 23 (Alt)</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 23 (1991-06)(future publishing)[a].st" size="819200" crc="0d078262" sha1="41c8e18e0531bc2b62551a71aa46bf281af9bacd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat23b" cloneof="stformat23">
+		<description>ST Format Magazine Issue 23 (Alt 2)</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 23 (1991-06)(future publishing)[a2].st" size="819200" crc="86c48db4" sha1="d08b21f19c1e907f297e191bb8d44665041e24db" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat23c" cloneof="stformat23">
+		<description>ST Format Magazine Issue 23 (Alt 3)</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 23 (1991-06)(future publishing)[a3].st" size="819200" crc="4b72b246" sha1="848fc090f0364683d10d8a49eb63096c7909efa5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat24">
+		<description>ST Format Magazine Issue 24</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 24 (1991-07)(future publishing).st" size="819200" crc="8f9b2e03" sha1="d6297b04ea8e07e644896046acf46458c81d8ae9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat24a" cloneof="stformat24">
+		<description>ST Format Magazine Issue 24 (Alt)</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st format magazine issue 24 (1991-07)(future publishing)[a].st" size="737280" crc="640b8244" sha1="3e7bde3fb3db50284e47fe5cd915dcfff4ef6339" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat24b" cloneof="stformat24">
+		<description>ST Format Magazine Issue 24 (Alt 2)</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 24 (1991-07)(future publishing)[a2].st" size="819200" crc="ce82c375" sha1="608d53c54951c7c3e61e51b715bcd3d707d5318c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat24c" cloneof="stformat24">
+		<description>ST Format Magazine Issue 24 (Alt 3)</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st format magazine issue 24 (1991-07)(future publishing)[a3].st" size="737280" crc="dbb84ede" sha1="80a5e7653d4373a69ecbbf7edbb5df6607674d17" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat25">
+		<description>ST Format Magazine Issue 25</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 25 (1991-08)(future publishing).st" size="819200" crc="d8f01490" sha1="75c490f8e09587c16ab987f0b8527e809949db0c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat25a" cloneof="stformat25">
+		<description>ST Format Magazine Issue 25 (Alt)</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 25 (1991-08)(future publishing)[a].st" size="819200" crc="b36e2a6c" sha1="69441be39bec947233ad9bd36455cddc401b9069" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat26">
+		<description>ST Format Magazine Issue 26</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 26 (1991-09)(future publishing).st" size="819200" crc="c0f488e8" sha1="747bcef8d01ea69249405643c5210f01e9e406ae" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat26a" cloneof="stformat26">
+		<description>ST Format Magazine Issue 26 (Alt)</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st format magazine issue 26 (1991-09)(future publishing)[a].st" size="737280" crc="8d74567b" sha1="e5852a1504194f718119f275319ae8753e67233b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat26b" cloneof="stformat26">
+		<description>ST Format Magazine Issue 26 (Alt 2)</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 26 (1991-09)(future publishing)[a2].st" size="819200" crc="df5016e5" sha1="c7e3f474c5892b293587bb50badb2b01b2753f44" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat27">
+		<description>ST Format Magazine Issue 27</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 27 (1991-10)(future publishing).st" size="819200" crc="a6e4bf58" sha1="ea5bb0cfaced828495160d57e836e9a90a346de1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat27a" cloneof="stformat27">
+		<description>ST Format Magazine Issue 27 (Alt)</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 27 (1991-10)(future publishing)[a].st" size="819200" crc="b3a98edb" sha1="2713d3a0d297d21ee1489f564cefaffbb493b351" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat28">
+		<description>ST Format Magazine Issue 28</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 28 (1991-11)(future publishing).st" size="819200" crc="309aa3b5" sha1="d8f91705714d7aee73a0ebfcdeb229ad1f0c2d6f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat28a" cloneof="stformat28">
+		<description>ST Format Magazine Issue 28 (Alt)</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st format magazine issue 28 (1991-11)(future publishing)[a].st" size="737280" crc="aad29f76" sha1="2590e9e7a23538a8e09e9491851656ba93f056e8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat28b" cloneof="stformat28">
+		<description>ST Format Magazine Issue 28 (Alt 2)</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 28 (1991-11)(future publishing)[a2].st" size="819200" crc="82815d51" sha1="1c76a652401e77695f7c1b3b7123d8b695ccc299" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat29">
+		<description>ST Format Magazine Issue 29</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 29 (1991-12)(future publishing).st" size="819200" crc="154b7d5e" sha1="3fb96ccf0f88e0e95aff1dce26cb3e71808325d3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat29a" cloneof="stformat29">
+		<description>ST Format Magazine Issue 29 (Alt)</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 29 (1991-12)(future publishing)[a].st" size="819200" crc="f3acb371" sha1="c3f9ffd432078712b79bd872321caa9f5e9f78d7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat29b" cloneof="stformat29">
+		<description>ST Format Magazine Issue 29 (Alt 2)</description>
+		<year>1991</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 29 (1991-12)(future publishing)[a2].st" size="819200" crc="b64abd00" sha1="2d5b807c1bf5404fbf20f269ebbbf122d00349e1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat30">
+		<description>ST Format Magazine Issue 30</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 30 (1992-01)(future publishing)(disk 1 of 2).st" size="819200" crc="5e855fb5" sha1="8ff6b918d9cfcd8f9bff1e5125e8c6f1351188ee" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 30 (1992-01)(future publishing)(disk 2 of 2).st" size="819200" crc="f7a95de9" sha1="6a6fdfb921fafc259546666d8238ec9f749170d8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat30a" cloneof="stformat30">
+		<description>ST Format Magazine Issue 30 (Alt)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 30 (1992-01)(future publishing)(disk 1 of 2)[a].st" size="819200" crc="c6f51b6d" sha1="58aa39d648235c52cac5b61ec1623908af111498" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 30 (1992-01)(future publishing)(disk 2 of 2)[a].st" size="819200" crc="5328331d" sha1="67240b5bf5603485b491ee40ba5d9417de30c932" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat31">
+		<description>ST Format Magazine Issue 31</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 31 (1992-02)(future publishing).st" size="819200" crc="daf00f42" sha1="4dab12517bbfaf468860f0027de0139aabbcf708" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat31a" cloneof="stformat31">
+		<description>ST Format Magazine Issue 31 (Alt)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 31 (1992-02)(future publishing)[a].st" size="819200" crc="abbf70b7" sha1="906917c793f8eaaa4eaab5c81a46b0ef3d2f2805" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat32">
+		<description>ST Format Magazine Issue 32</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 32 (1992-03)(future publishing).st" size="819200" crc="eac27712" sha1="b431b499ea552a7fb7c3a0104e68d7eabc880d70" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat32a" cloneof="stformat32">
+		<description>ST Format Magazine Issue 32 (Alt)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 32 (1992-03)(future publishing)[a].st" size="819200" crc="2e9b5fa7" sha1="4ae4af60d79bffd41c11674548356c6c28ba911d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat33">
+		<description>ST Format Magazine Issue 33</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 33 (1992-04)(future publishing)(disk 1 of 2).st" size="819200" crc="bac7c57d" sha1="d01207074e1f07a33cfc5e88334ce88095bb9bd2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 33 (1992-04)(future publishing)(disk 2 of 2).st" size="819200" crc="8a42a949" sha1="2f464c5f32d443fbb45c10348f96a3e814827a57" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat33a" cloneof="stformat33">
+		<description>ST Format Magazine Issue 33 (Alt)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 33 (1992-04)(future publishing)(disk 1 of 2)[a].st" size="819200" crc="8c19b624" sha1="42fcaa7e776b9f5368338d621a8218fad9c9e082" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 33 (1992-04)(future publishing)(disk 2 of 2)[a].st" size="819200" crc="e2507241" sha1="06c8e8c1d7974f5fd4a0fb86c116df2667a44c2f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat34">
+		<description>ST Format Magazine Issue 34</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 34 (1992-05)(future publishing)(disk 1 of 2).st" size="819200" crc="14bd416b" sha1="1655e852ac18fbecedb9a06607b8af497af735f7" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 34 (1992-05)(future publishing)(disk 2 of 2).st" size="819200" crc="d6fc55ad" sha1="b1714294eec99f62316f9952ec3736a5290c161d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat34a" cloneof="stformat34">
+		<description>ST Format Magazine Issue 34 (Alt)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 34 (1992-05)(future publishing)(disk 1 of 2)[a].st" size="819200" crc="cf49b8e2" sha1="fac8feabffdab4f07661778b6eb54279340c2ac0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 34 (1992-05)(future publishing)(disk 2 of 2).st" size="819200" crc="d6fc55ad" sha1="b1714294eec99f62316f9952ec3736a5290c161d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat35">
+		<description>ST Format Magazine Issue 35</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 35 (1992-06)(future publishing)(disk 1 of 2).st" size="819200" crc="2decbf20" sha1="7dfa5ce3afdebe58a7d90b1e6a6f6d9d48962cc9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 35 (1992-06)(future publishing)(disk 2 of 2).st" size="819200" crc="84549c4c" sha1="ce51ecdca9028c7857755593ee8f863f6f038745" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat35a" cloneof="stformat35">
+		<description>ST Format Magazine Issue 35 (Alt)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 35 (1992-06)(future publishing)(disk 1 of 2)[a].st" size="819200" crc="9eed658a" sha1="5491cc6574bbb49f0588f93c5620e508e5a6e217" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 35 (1992-06)(future publishing)(disk 2 of 2).st" size="819200" crc="84549c4c" sha1="ce51ecdca9028c7857755593ee8f863f6f038745" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat35b" cloneof="stformat35">
+		<description>ST Format Magazine Issue 35 (Alt 2)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 35 (1992-06)(future publishing)(disk 1 of 2)[a2].st" size="819200" crc="1240b036" sha1="0789774e9e697fb954fe81d278cabfe0716f37c7" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 35 (1992-06)(future publishing)(disk 2 of 2).st" size="819200" crc="84549c4c" sha1="ce51ecdca9028c7857755593ee8f863f6f038745" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat36">
+		<description>ST Format Magazine Issue 36</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 36 (1992-07)(future publishing)(disk 1 of 2).st" size="819200" crc="add8293a" sha1="62a467a988dea396a1c05be4c2eecfadd7012d30" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 36 (1992-07)(future publishing)(disk 2 of 2).st" size="819200" crc="da5dc233" sha1="d65d545f8f62786a802cd9b7b87066f97ba95b25" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat36a" cloneof="stformat36">
+		<description>ST Format Magazine Issue 36 (Alt)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 36 (1992-07)(future publishing)(disk 1 of 2)[a].st" size="819200" crc="f2751279" sha1="7943323e52699e5c49b45c53052f679c0028c43b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 36 (1992-07)(future publishing)(disk 2 of 2).st" size="819200" crc="da5dc233" sha1="d65d545f8f62786a802cd9b7b87066f97ba95b25" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat37">
+		<description>ST Format Magazine Issue 37</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 37 (1992-08)(future publishing)(disk 1 of 2).st" size="819200" crc="e40934f3" sha1="db740086e9dbed796be1d037c9e80d5600bc2307" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 37 (1992-08)(future publishing)(disk 2 of 2).st" size="819200" crc="3b939707" sha1="e3fb45bffbfa2fd983817a79e1e6fe5a9ebe8a71" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat37a" cloneof="stformat37">
+		<description>ST Format Magazine Issue 37 (Alt)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 37 (1992-08)(future publishing)(disk 1 of 2)[a2].st" size="819200" crc="b7471303" sha1="ae447bd6bfed8cf4acfa03edae280843a5461b56" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 37 (1992-08)(future publishing)(disk 2 of 2).st" size="819200" crc="3b939707" sha1="e3fb45bffbfa2fd983817a79e1e6fe5a9ebe8a71" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat37b" cloneof="stformat37">
+		<description>ST Format Magazine Issue 37 (Alt 2)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 37 (1992-08)(future publishing).st" size="819200" crc="16a9dfbf" sha1="7ce538c8cb007cf2266a244ebfdb492fc4838728" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat37c" cloneof="stformat37">
+		<description>ST Format Magazine Issue 37 (Alt 3)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 37 (1992-08)(future publishing)[a].st" size="819200" crc="3401d524" sha1="0e8519445a761e9c23904cfe3b8ddd1230f2e5c4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat38">
+		<description>ST Format Magazine Issue 38</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 38 (1992-09)(future publishing)(disk 1 of 2).st" size="819200" crc="efd8adb3" sha1="f7c79994d239c9aea4f00714bde0ccc6aef338c8" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st format magazine issue 38 (1992-09)(future publishing)(disk 2 of 2).st" size="737280" crc="1e248415" sha1="54a224cb8382d3df87157569931e0e2547fffc49" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat38a" cloneof="stformat38">
+		<description>ST Format Magazine Issue 38 (Alt)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 38 (1992-09)(future publishing)(disk 1 of 2)[a].st" size="819200" crc="8b171356" sha1="464e1fd43df53eb6039d9460606f94639f2f782b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st format magazine issue 38 (1992-09)(future publishing)(disk 2 of 2).st" size="737280" crc="1e248415" sha1="54a224cb8382d3df87157569931e0e2547fffc49" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat38b" cloneof="stformat38">
+		<description>ST Format Magazine Issue 38 (Alt 2)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 38 (1992-09)(future publishing)(disk 1 of 2)[a2].st" size="819200" crc="8550cfe7" sha1="c34864909a5f4f6b4931d4a80dcfa4f95cec638b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st format magazine issue 38 (1992-09)(future publishing)(disk 2 of 2).st" size="737280" crc="1e248415" sha1="54a224cb8382d3df87157569931e0e2547fffc49" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat39">
+		<description>ST Format Magazine Issue 39</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="814080">
+				<rom name="st format magazine issue 39 (1992-10)(future publishing)(disk 1 of 2).st" size="814080" crc="f84aeabf" sha1="3c029b5c08bb5e0ce2bb93237135ba10e54d439b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="st format magazine issue 39 (1992-10)(future publishing)(disk 2 of 2).st" size="368640" crc="45603902" sha1="bf5750859f98b181b47ddbfa1ffd6efc7840108d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat39a" cloneof="stformat39">
+		<description>ST Format Magazine Issue 39 (Alt)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 39 (1992-10)(future publishing)(disk 1 of 2)[a].st" size="819200" crc="eb235715" sha1="286f67f82b52086ec8ed48068ccc73eceacd9a6b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="st format magazine issue 39 (1992-10)(future publishing)(disk 2 of 2)[a].st" size="368640" crc="35dc0ad7" sha1="3b8571e6eeda49701bf48f00864daf804c7200b8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat40">
+		<description>ST Format Magazine Issue 40</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 40 (1992-11)(future publishing)(disk 1 of 2).st" size="819200" crc="6b2b7b37" sha1="f5c1aa8ba57e4205a792484829b48511b51a1d8c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st format magazine issue 40 (1992-11)(future publishing)(disk 2 of 2).st" size="737280" crc="e32e66b1" sha1="688a77e27b504120314cd63a3f0c0dc61c36ca52" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat40a" cloneof="stformat40">
+		<description>ST Format Magazine Issue 40 (Alt)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 40 (1992-11)(future publishing)(disk 1 of 2)[a].st" size="819200" crc="4af863da" sha1="39e64e0d57606eb317ea88ab3d39d8e50482da31" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st format magazine issue 40 (1992-11)(future publishing)(disk 2 of 2)[a].st" size="737280" crc="48d2b082" sha1="11c65a518fe5a9ed182fa2ba855770fdafa47f77" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat41">
+		<description>ST Format Magazine Issue 41</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 41 (1992-12)(future publishing)(disk 1 of 2).st" size="819200" crc="fc0994b2" sha1="9e77bc4d64090177e77a486298a69daf59a868b1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st format magazine issue 41 (1992-12)(future publishing)(disk 2 of 2).st" size="737280" crc="deccd423" sha1="d5613180bda7dce14ee34ccb301f18867da8684f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat41a" cloneof="stformat41">
+		<description>ST Format Magazine Issue 41 (Alt)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 41 (1992-12)(future publishing)(disk 1 of 2)[a].st" size="819200" crc="0a210b88" sha1="786fdfa0717840507ad2528d32674207be6ec441" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st format magazine issue 41 (1992-12)(future publishing)(disk 2 of 2).st" size="737280" crc="deccd423" sha1="d5613180bda7dce14ee34ccb301f18867da8684f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat41b" cloneof="stformat41">
+		<description>ST Format Magazine Issue 41 (Alt 2)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st format magazine issue 41 (1992-12)(future publishing)(disk 1 of 2)[a2].st" size="737280" crc="88e0ae6f" sha1="a458067f876bf8da3820fa01c1126b5eb6648c57" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st format magazine issue 41 (1992-12)(future publishing)(disk 2 of 2).st" size="737280" crc="deccd423" sha1="d5613180bda7dce14ee34ccb301f18867da8684f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat42">
+		<description>ST Format Magazine Issue 42</description>
+		<year>1993</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 42 (1993-01)(future publishing)(disk 1 of 2).st" size="819200" crc="8bee036a" sha1="5a73cd0e7729695f09d95d4ff682c29c18992d31" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st format magazine issue 42 (1993-01)(future publishing)(disk 2 of 2).st" size="737280" crc="6deec84e" sha1="82b85ca5b2dc140e61c225de932fa448d597ba9d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat42a" cloneof="stformat42">
+		<description>ST Format Magazine Issue 42 (Alt)</description>
+		<year>1993</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 42 (1993-01)(future publishing)(disk 1 of 2)[a].st" size="819200" crc="dc482bc8" sha1="398b11974e113a9a4106c3a6d9dda3d777dd8849" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st format magazine issue 42 (1993-01)(future publishing)(disk 2 of 2)[a].st" size="737280" crc="11d97e37" sha1="b690ad8bb3719253eee809c0563eec72ea10417b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat43">
+		<description>ST Format Magazine Issue 43</description>
+		<year>1993</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 43 (1993-02)(future publishing).st" size="819200" crc="3ae1d74d" sha1="1fd2e2a3178aef1f4adf4d5c3c371985e14682ea" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat43a" cloneof="stformat43">
+		<description>ST Format Magazine Issue 43 (Alt)</description>
+		<year>1993</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 43 (1993-02)(future publishing)[a].st" size="819200" crc="aa272474" sha1="952d64700084bc598ae09da11ba7b30c7185c64d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat43b" cloneof="stformat43">
+		<description>ST Format Magazine Issue 43 (Alt 2)</description>
+		<year>1993</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st format magazine issue 43 (1993-02)(future publishing)[a2].st" size="737280" crc="80e74e87" sha1="04de89a48c749d8825438fb437a0d1208af03871" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat44">
+		<description>ST Format Magazine Issue 44</description>
+		<year>1993</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 44 (1993-03)(future publishing).st" size="819200" crc="29d0c40c" sha1="8a7b9159471cc5bf49627c42afe32315d9e43772" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat44a" cloneof="stformat44">
+		<description>ST Format Magazine Issue 44 (Alt)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 44 (1993-03)(future publishing)[a].st" size="819200" crc="fbaa0347" sha1="6175583e835e701b69b3bb2b12b109d1ee5345b7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat45">
+		<description>ST Format Magazine Issue 45</description>
+		<year>1993</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 45 (1993-04)(future publishing).st" size="819200" crc="64fb0e6b" sha1="e80621640f14108e271712c773c80430d84758ed" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat45a" cloneof="stformat45">
+		<description>ST Format Magazine Issue 45 (Alt)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 45 (1993-04)(future publishing)[a].st" size="819200" crc="89546481" sha1="415786b5bccaeaf9aa5298457ceae369cf2b4217" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat45b" cloneof="stformat45">
+		<description>ST Format Magazine Issue 45 (Alt 2)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st format magazine issue 45 (1993-04)(future publishing)[a2].st" size="737280" crc="11a995a0" sha1="b1eeeeb570a46ca5c3b0e4c4067c5d6c2afec89d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat46">
+		<description>ST Format Magazine Issue 46</description>
+		<year>1993</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 46 (1993-05)(future publishing).st" size="819200" crc="e256881f" sha1="608f7def21d7a95e83c8d2353504e6b6d77af591" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat46a" cloneof="stformat46">
+		<description>ST Format Magazine Issue 46 (Alt)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 46 (1993-05)(future publishing)[a].st" size="819200" crc="816d81d2" sha1="bf5e115ff8d89e8d53467af3dd0e5e034b6b52c1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat47">
+		<description>ST Format Magazine Issue 47</description>
+		<year>1993</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 47 (1993-06)(future publishing).st" size="819200" crc="e38c3a4b" sha1="9e672ea3e706122cf879e45c1d3c40dd1b41fa28" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat47a" cloneof="stformat47">
+		<description>ST Format Magazine Issue 47 (Alt)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 47 (1993-06)(future publishing)[a].st" size="819200" crc="2af3783d" sha1="614ba958cef56d05d3f5397e9157a8678a8007e4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat48">
+		<description>ST Format Magazine Issue 48</description>
+		<year>1993</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st format magazine issue 48 (1993-07)(future publishing).st" size="737280" crc="ba1e2986" sha1="5301cfae30e685f9ef188bdacf8c28a2115586f7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat48a" cloneof="stformat48">
+		<description>ST Format Magazine Issue 48 (Alt)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st format magazine issue 48 (1993-07)(future publishing)[a].st" size="737280" crc="cdc1dc8d" sha1="41a06d301f0f54bd65b45d0bc3286d7d695c270e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat48b" cloneof="stformat48">
+		<description>ST Format Magazine Issue 48 (Alt 2)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="746496">
+				<rom name="st format magazine issue 48 (1993-07)(future publishing)[a2].st" size="746496" crc="a14aede5" sha1="4ce9c2a4ac5fe4db3b626264b9e27895ae68ad67" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat49">
+		<description>ST Format Magazine Issue 49</description>
+		<year>1993</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 49 (1993-08)(future publishing).st" size="819200" crc="a908382a" sha1="736210d12ef6b5f464ae1b9aef583dec0c41a43d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat49a" cloneof="stformat49">
+		<description>ST Format Magazine Issue 49 (Alt)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="st format magazine issue 49 (1993-08)(future publishing)[a].st" size="829440" crc="9349b84f" sha1="aebf251a711df9188ac8927963ed20cf3d410a66" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat50">
+		<description>ST Format Magazine Issue 50</description>
+		<year>1993</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 50 (1993-09)(future publishing).st" size="819200" crc="df3b7d21" sha1="ff297efc003bd4b6d43f3b22c71db165d1f4b8ea" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat50a" cloneof="stformat50">
+		<description>ST Format Magazine Issue 50 (Alt)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 50 (1993-09)(future publishing)[a].st" size="819200" crc="62f2e54d" sha1="9930a3fde7393cb7d9f852799e7a145fe8f7f769" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat50b" cloneof="stformat50">
+		<description>ST Format Magazine Issue 50 (Alt 2)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 50 (1993-09)(future publishing)[a2].st" size="819200" crc="524e1b72" sha1="c316ceed3d841af1b0defeedd29245b4713d0097" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat50c" cloneof="stformat50">
+		<description>ST Format Magazine Issue 50 (Alt 3)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st format magazine issue 50 (1993-09)(future publishing)[a3].st" size="737280" crc="725d746b" sha1="4f54fff71d7a91822c06dd4fff1bb99b4599a57b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat51">
+		<description>ST Format Magazine Issue 51</description>
+		<year>1993</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 51 (1993-10)(future publishing).st" size="819200" crc="b3b1e861" sha1="7bd2b2775e2ec1805318e8ceb29b80da14d661fe" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat51a" cloneof="stformat51">
+		<description>ST Format Magazine Issue 51 (Alt)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st format magazine issue 51 (1993-10)(future publishing)[a].st" size="737280" crc="f7d23227" sha1="82e4658c526f773e751619cf1915c653b8db8798" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat52">
+		<description>ST Format Magazine Issue 52</description>
+		<year>1993</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 52 (1993-11)(future publishing)(disk 1 of 2).st" size="819200" crc="aa318f11" sha1="bc1182c22b4ac1a777fa18191df753615d23e875" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 52 (1993-11)(future publishing)(disk 2 of 2).st" size="819200" crc="97bfb737" sha1="173a1969bfc83311272560a65fdcb0241e03ae92" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat52a" cloneof="stformat52">
+		<description>ST Format Magazine Issue 52 (Alt)</description>
+		<year>1992</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 52 (1993-11)(future publishing)(disk 1 of 2)[a].st" size="819200" crc="0a4204ba" sha1="525b8cfe65b0ffb6c9f7c5baa0745d666d859e45" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 52 (1993-11)(future publishing)(disk 2 of 2).st" size="819200" crc="97bfb737" sha1="173a1969bfc83311272560a65fdcb0241e03ae92" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat53">
+		<description>ST Format Magazine Issue 53</description>
+		<year>1993</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 53 (1993-12)(future publishing)(disk 1 of 2).st" size="819200" crc="ff6c3b34" sha1="4fb6df65790caadb57847e50eb1ca334b3d39030" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 53 (1993-12)(future publishing)(disk 2 of 2).st" size="819200" crc="158dad3c" sha1="2f0e6694492eb2ef8481eff303eefa175067413b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat54">
+		<description>ST Format Magazine Issue 54</description>
+		<year>1994</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 54 (1994-01)(future publishing)(disk 1 of 2).st" size="819200" crc="c14368a6" sha1="37ec3742b9f1a05bf642b340a72b46f67587728b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 54 (1994-01)(future publishing)(disk 2 of 2).st" size="819200" crc="a790df39" sha1="389b98e8b11ba7f502f079e43bd858f5f140a2bc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat55">
+		<description>ST Format Magazine Issue 55</description>
+		<year>1994</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 55 (1994-02)(future publishing).st" size="819200" crc="f8f4df3e" sha1="393b48b6b57443eb2f4e6262b6cf071e06afb7a0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat56">
+		<description>ST Format Magazine Issue 56</description>
+		<year>1994</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 56 (1994-03)(future publishing).st" size="819200" crc="8be4992a" sha1="666bd939c36a0e074e4aeb57be81065ffb0ab357" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat56a" cloneof="stformat56">
+		<description>ST Format Magazine Issue 56 (Alt)</description>
+		<year>1994</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 56 (1994-03)(future publishing)[a].st" size="819200" crc="576a42ee" sha1="93fedb866fd5b26679880c6148746fca7d584f56" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat57">
+		<description>ST Format Magazine Issue 57</description>
+		<year>1994</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 57 (1994-04)(future publishing).st" size="819200" crc="307e994f" sha1="8e4301d99e89467c34558f0c7f8405aa3be02675" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat57a" cloneof="stformat57">
+		<description>ST Format Magazine Issue 57 (Alt)</description>
+		<year>1994</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 57 (1994-04)(future publishing)[a].st" size="819200" crc="aa679c04" sha1="45e9385f800605a33d32585d8bf65a6b7c31a677" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat58">
+		<description>ST Format Magazine Issue 58</description>
+		<year>1994</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 58 (1994-05)(future publishing)(disk 1 of 2).st" size="819200" crc="4145b256" sha1="caca83829dca7a11ae53dd253714bf94f8b40153" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 58 (1994-05)(future publishing)(disk 2 of 2).st" size="819200" crc="7bad0691" sha1="85c8e1dbe184c3c1674dbaa301f920478b23fc04" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat59">
+		<description>ST Format Magazine Issue 59</description>
+		<year>1994</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 59 (1994-06)(future publishing).st" size="819200" crc="23b60318" sha1="5d77f545a6cb161062394bc98a5ec1ddf86bc8e5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat59a" cloneof="stformat59">
+		<description>ST Format Magazine Issue 59 (Alt)</description>
+		<year>1994</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="849920">
+				<rom name="st format magazine issue 59 (1994-06)(future publishing)[a].st" size="849920" crc="5bfe895b" sha1="c02529a6b66ecca551b3ba27e69d03b3320629fc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat60">
+		<description>ST Format Magazine Issue 60</description>
+		<year>1994</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 60 (1994-07)(future publishing).st" size="819200" crc="d32fe823" sha1="6d5f2cfef29d24c3672d21892bdae864f0d0a2f6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat61">
+		<description>ST Format Magazine Issue 61</description>
+		<year>1994</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 61 (1994-08)(future publishing).st" size="819200" crc="193c8045" sha1="bf157c3faab1792ae1c6b49a8ef84279d95cc793" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat62">
+		<description>ST Format Magazine Issue 62</description>
+		<year>1994</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 62 (1994-09)(future publishing).st" size="819200" crc="7f06751f" sha1="d3df90304b173b3c89947d0c5d4fefe9f7194975" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat63">
+		<description>ST Format Magazine Issue 63</description>
+		<year>1994</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 63 (1994-10)(future publishing).st" size="819200" crc="45576d77" sha1="310a07a3c57003d213519b6323110651e1d47eb8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat64">
+		<description>ST Format Magazine Issue 64</description>
+		<year>1994</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 64 (1994-11)(future publishing)(disk 1 of 2).st" size="819200" crc="b669a0c7" sha1="7f3879d5784ae567a110feee271b469d3cf77ad0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 64 (1994-11)(future publishing)(disk 2 of 2).st" size="819200" crc="2a3c61da" sha1="fe5808ec2aa8789041da0ccff9743ff1c8fca0d8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat65">
+		<description>ST Format Magazine Issue 65</description>
+		<year>1994</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 65 (1994-12)(future publishing).st" size="819200" crc="7705e5c0" sha1="7e38ed434641739042bf2567443cff92355cadf6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat66">
+		<description>ST Format Magazine Issue 66</description>
+		<year>1995</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 66 (1995-01)(future publishing).st" size="819200" crc="a994568a" sha1="e75b617867cc1b51c9320573d1fedfb6290bb3c7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat67">
+		<description>ST Format Magazine Issue 67</description>
+		<year>1995</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 67 (1995-02)(future publishing).st" size="819200" crc="a013caab" sha1="0065fd8b17ca4d5b82ee300e23201d98194ff321" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat68">
+		<description>ST Format Magazine Issue 68</description>
+		<year>1995</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 68 (1995-03)(future publishing).st" size="819200" crc="b00a2cd8" sha1="9b36acfc09db32c28beffdf55dea4f14a59f0a6c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat69">
+		<description>ST Format Magazine Issue 69</description>
+		<year>1995</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 69 (1995-04)(future publishing).st" size="819200" crc="8c91e91d" sha1="b9f7464b3f10a9e688736725589357dafca075fe" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat70">
+		<description>ST Format Magazine Issue 70</description>
+		<year>1995</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 70 (1995-05)(future publishing).st" size="819200" crc="ffe0cafc" sha1="b0882b6eb392b5bb39ef46021d4676f9d7d76908" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat71">
+		<description>ST Format Magazine Issue 71</description>
+		<year>1995</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 71 (1995-06)(future publishing).st" size="819200" crc="f4f1df89" sha1="be7b9e472a9dfca641b899a863f8a5cabbc61b70" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat72">
+		<description>ST Format Magazine Issue 72</description>
+		<year>1995</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 72 (1995-07)(future publishing).st" size="819200" crc="6b29eab9" sha1="f21e6fe1ad07d36a041b7fe5f8ec7c5654bd0cca" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat72a" cloneof="stformat72">
+		<description>ST Format Magazine Issue 72 (Alt)</description>
+		<year>1995</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 72 (1995-07)(future publishing)[a].st" size="819200" crc="2ecdda70" sha1="40bd969e36b7a04f301a8cdcfd29eab52367b6da" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat72b" cloneof="stformat72">
+		<description>ST Format Magazine Issue 72 (Alt 2)</description>
+		<year>1995</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="st format magazine issue 72 (1995-07)(future publishing)[a2].st" size="737280" crc="f54818bb" sha1="63eedfa33e5abda4cb6df582eeb52630fb95f4b8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat73">
+		<description>ST Format Magazine Issue 73</description>
+		<year>1995</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 73 (1995-08)(future publishing).st" size="819200" crc="33ddfb0f" sha1="f23c95687663a7244d45b6a1f1f40aa6187be7c6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat74">
+		<description>ST Format Magazine Issue 74</description>
+		<year>1995</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 74 (1995-09)(future publishing).st" size="819200" crc="e90eaac4" sha1="f3193ab2eaf470d01b0bac907f23f6935e29783d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat75">
+		<description>ST Format Magazine Issue 75</description>
+		<year>1995</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 75 (1995-10)(future publishing).st" size="819200" crc="aa420a45" sha1="e4489abf0d35c9a999bc57fd54084219d8ec073c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat76">
+		<description>ST Format Magazine Issue 76</description>
+		<year>1995</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 76 (1995-11)(future publishing).st" size="819200" crc="1ebdd1c5" sha1="a3be25a36f9b58608d223ed4e3f07dfc4d77f95e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat77">
+		<description>ST Format Magazine Issue 77</description>
+		<year>1995</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 77 (1995-12)(future publishing).st" size="819200" crc="8a4d4a1f" sha1="a9743b943830d0fafc81f3a65e948ac0e0c4b007" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat77a" cloneof="stformat77">
+		<description>ST Format Magazine Issue 77 (Alt)</description>
+		<year>1995</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 77 (1995-12)(future publishing)[a].st" size="819200" crc="fca2c33f" sha1="1ca829918f6da4c5c04e43cbd75e669c0483b67a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat78">
+		<description>ST Format Magazine Issue 78</description>
+		<year>1996</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 78 (1996-01)(future publishing).st" size="819200" crc="e456175e" sha1="9076c8c0fddbc3699b602b34372c85cb47e1dff0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat79">
+		<description>ST Format Magazine Issue 79</description>
+		<year>1996</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 79 (1996-02)(future publishing).st" size="819200" crc="25d70184" sha1="99201034dc1815433af1666ba8ccc627b9327cd8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat79a" cloneof="stformat79">
+		<description>ST Format Magazine Issue 79 (Alt)</description>
+		<year>1996</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 79 (1996-02)(future publishing)[a].st" size="819200" crc="123efb7a" sha1="8dc30a8a164d0e872d1718efab98d51d376f86e0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat80">
+		<description>ST Format Magazine Issue 80</description>
+		<year>1996</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 80 (1996-03)(future publishing).st" size="819200" crc="81eca821" sha1="c6536115d8cfe25e4715f7bea553860f8ad2407a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat80a" cloneof="stformat80">
+		<description>ST Format Magazine Issue 80 (Alt)</description>
+		<year>1996</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 80 (1996-03)(future publishing)[a].st" size="819200" crc="4cd28f97" sha1="0131bc950c7915e894b7faec7ee5d8b9d9dc14b0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat81">
+		<description>ST Format Magazine Issue 81</description>
+		<year>1996</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 81 (1996-04)(future publishing).st" size="819200" crc="0196c8d9" sha1="3b3c16713b498037cc0abf72b14f9bc5429c5771" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat82">
+		<description>ST Format Magazine Issue 82</description>
+		<year>1996</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 82 (1996-05)(future publishing).st" size="819200" crc="cc42ca8d" sha1="ebed31a28ac323de82c6749ee14fea7a55427e21" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat83">
+		<description>ST Format Magazine Issue 83</description>
+		<year>1996</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 83 (1996-06)(future publishing).st" size="819200" crc="28d2bf40" sha1="ee50aed1ee6af9bbc3dd82760afa8fb93c3458b3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat84">
+		<description>ST Format Magazine Issue 84</description>
+		<year>1996</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 84 (1996-07)(future publishing).st" size="819200" crc="1d784de6" sha1="b8b481eb49cb89e0ec170626ce9df806d53db43d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat85">
+		<description>ST Format Magazine Issue 85</description>
+		<year>1996</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 85 (1996-08)(future publishing).st" size="819200" crc="b4d90089" sha1="b3ec8be4c958c0ebd105a40a6cd6b1147cb57ad9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformat86">
+		<description>ST Format Magazine Issue 86</description>
+		<year>1996</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format magazine issue 86 (1996-09)(future publishing).st" size="819200" crc="1dddb2ad" sha1="509991db3baa54ae21230cc7816b86975cc2aeb0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformsw55">
+		<description>ST Format Software Wonder Disk 55</description>
+		<year>19??</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format software wonder disk 55 (19xx)(future publishing).st" size="819200" crc="9f290404" sha1="fe9eaf6ffe1164afcd7e6d62a72cfc3913d70b06" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformsw56">
+		<description>ST Format Software Wonder Disk 56</description>
+		<year>19??</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format software wonder disk 56 (19xx)(future publishing).st" size="819200" crc="ae69b26c" sha1="6d99a3afe81cde8b8567df47488967fc5a670785" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformsw57">
+		<description>ST Format Software Wonder Disk 57</description>
+		<year>19??</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format software wonder disk 57 (19xx)(future publishing).st" size="819200" crc="5c02c032" sha1="590a89d81fb683cd86581c975ed1c94104acb00d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformsw58">
+		<description>ST Format Software Wonder Disk 58</description>
+		<year>19??</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format software wonder disk 58 (19xx)(future publishing).st" size="819200" crc="326baa0c" sha1="9608496ebc31d2293074c1596cf65be4aae24c84" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformsw59">
+		<description>ST Format Software Wonder Disk 59</description>
+		<year>19??</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format software wonder disk 59 (19xx)(future publishing).st" size="819200" crc="b555eb53" sha1="5435cfb0c9403f6e106e200b6b133d7a461595b0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformsw60">
+		<description>ST Format Software Wonder Disk 60</description>
+		<year>19??</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format software wonder disk 60 (19xx)(future publishing).st" size="819200" crc="1e57c0a1" sha1="bc73979385ea911c0bd11d770e731530f40f2ad6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformsw61">
+		<description>ST Format Software Wonder Disk 61</description>
+		<year>19??</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format software wonder disk 61 (19xx)(future publishing).st" size="819200" crc="cc99e321" sha1="014b361c3ef89eb4d4a063f833d21c4065ba7f6d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformsw62">
+		<description>ST Format Software Wonder Disk 62</description>
+		<year>19??</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format software wonder disk 62 (19xx)(future publishing).st" size="819200" crc="c16f6ea6" sha1="71d71ad4dcc0236c1a7d2a552494be6f3950039e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformsw63">
+		<description>ST Format Software Wonder Disk 63</description>
+		<year>19??</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format software wonder disk 63 (19xx)(future publishing).st" size="819200" crc="33dda4b7" sha1="b0dc03ec1753fe5428ef62c1e4e9dbc4fa4832fd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformsw64">
+		<description>ST Format Software Wonder Disk 64</description>
+		<year>19??</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format software wonder disk 64 (19xx)(future publishing).st" size="819200" crc="74d88a3c" sha1="ef96a43c0a0ef88f14c3d4cdaa38abb1ca958453" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformsw65">
+		<description>ST Format Software Wonder Disk 65</description>
+		<year>19??</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format software wonder disk 65 (19xx)(future publishing).st" size="819200" crc="17160662" sha1="30606bd3608542aab30affafa8900e880d56c8c2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stformsw66">
+		<description>ST Format Software Wonder Disk 66</description>
+		<year>19??</year>
+		<publisher>Future Publishing</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="st format software wonder disk 66 (19xx)(future publishing).st" size="819200" crc="5cd85c9d" sha1="fd1db5a2a3b5d7d744e7eed6958f24b7c0588393" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="stlogrj">
+		<description>ST Log - Rabbit Jump</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="st log xx (19xx)(-)[rabbit jump].st" size="368640" crc="24af807c" sha1="a459551b28e5cafd797d92f682ab016ba3eb33a2" offset="0" />
 			</dataarea>
 		</part>
 	</software>
