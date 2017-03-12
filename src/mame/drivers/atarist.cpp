@@ -2157,6 +2157,7 @@ static MACHINE_CONFIG_START( st, st_state )
 
 	// software lists
 	MCFG_SOFTWARE_LIST_ADD("flop_list", "st_flop")
+	MCFG_SOFTWARE_LIST_ADD("pd_flop_list", "st_pd")
 MACHINE_CONFIG_END
 
 
@@ -2249,6 +2250,7 @@ static MACHINE_CONFIG_START( megast, megast_state )
 	// software lists
 	MCFG_SOFTWARE_LIST_ADD("mst_flop_list", "st_megast")
 	MCFG_SOFTWARE_LIST_ADD("st_flop_list", "st_flop")
+	MCFG_SOFTWARE_LIST_ADD("pd_flop_list", "st_pd")
 MACHINE_CONFIG_END
 
 
@@ -2348,6 +2350,7 @@ static MACHINE_CONFIG_START( ste, ste_state )
 	// software lists
 	MCFG_SOFTWARE_LIST_ADD("ste_flop_list", "st_ste")
 	MCFG_SOFTWARE_LIST_ADD("st_flop_list", "st_flop")
+	MCFG_SOFTWARE_LIST_ADD("pd_flop_list", "st_pd")
 MACHINE_CONFIG_END
 
 
