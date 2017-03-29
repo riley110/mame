@@ -37,7 +37,7 @@
 //  DEVICE DEFINITIONS
 //**************************************************************************
 
-const device_type SOFTBOX = &device_creator<softbox_device>;
+const device_type SOFTBOX = device_creator<softbox_device>;
 
 
 //-------------------------------------------------

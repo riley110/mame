@@ -32,6 +32,9 @@ Philips P2000 1 Memory map
 #include "includes/p2000t.h"
 #include "softlist_dev.h"
 
+#include "screen.h"
+#include "speaker.h"
+
 
 /* port i/o functions */
 static ADDRESS_MAP_START( p2000t_io, AS_IO, 8, p2000t_state )

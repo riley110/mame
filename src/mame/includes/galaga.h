@@ -1,9 +1,15 @@
 // license:BSD-3-Clause
 // copyright-holders:Nicola Salmoria
+#ifndef MAME_INCLUDES_GALAGA_H
+#define MAME_INCLUDES_GALAGA_H
+
+#pragma once
+
+#include "machine/namco06.h" // HBMAME
 #include "sound/discrete.h"
 #include "sound/namco.h"
 #include "sound/samples.h"
-#include "machine/namco06.h" // HBMAME
+#include "screen.h"
 
 class galaga_state : public driver_device
 {
@@ -80,7 +86,7 @@ public:
 	DECLARE_VIDEO_START(galaga);
 	DECLARE_PALETTE_INIT(galaga);
 	uint32_t screen_update_galaga(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
-	void screen_eof_galaga(screen_device &screen, bool state);
+	DECLARE_WRITE_LINE_MEMBER(screen_vblank_galaga);
 	INTERRUPT_GEN_MEMBER(main_vblank_irq);
 	INTERRUPT_GEN_MEMBER(sub_vblank_irq);
 	TIMER_CALLBACK_MEMBER(cpu3_interrupt_callback);
@@ -98,3 +104,5 @@ public:
 
 DISCRETE_SOUND_EXTERN( galaga );
 DISCRETE_SOUND_EXTERN( bosco );
+
+#endif // MAME_INCLUDES_GALAGA_H
