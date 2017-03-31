@@ -151,10 +151,4 @@ public:
 		int transparency, int transparent_color,
 		int scalex, int scaley, bitmap_ind8 *pri_buffer, uint32_t pri_mask);
 
-// HBMAME start
-	DECLARE_MACHINE_RESET(redeartn);
-	emu_timer* m_fastboot_timer;
-	TIMER_CALLBACK_MEMBER(fastboot_timer_callback);
-// HBMAME end
-
 };

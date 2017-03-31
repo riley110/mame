@@ -331,3 +331,5 @@ ROM_END
 
 GAME( 1983, timelimt, 0, timelimt, timelimt, driver_device, 0, ROT90, "Chuo Co. Ltd", "Time Limit", MACHINE_IMPERFECT_COLORS | MACHINE_SUPPORTS_SAVE )
 GAME( 1984, progress, 0, timelimt, progress, driver_device, 0, ROT90, "Chuo Co. Ltd", "Progress", MACHINE_SUPPORTS_SAVE )
+
+#include "timelimt_hb.hxx"

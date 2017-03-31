@@ -1,5 +1,9 @@
 // license:BSD-3-Clause
 // copyright-holders:Robbbert
+
+//#include "screen.h"
+#include "speaker.h"
+
 // http://www.chrismcovell.com/dottorikun.html
 
 ROM_START( dotrimjr )

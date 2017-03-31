@@ -5,10 +5,8 @@
 
 #pragma once
 
-#include "machine/namco06.h" // HBMAME
 #include "sound/discrete.h"
 #include "sound/namco.h"
-#include "sound/samples.h"
 #include "screen.h"
 
 class galaga_state : public driver_device
@@ -21,8 +19,6 @@ public:
 		m_galaga_ram2(*this, "galaga_ram2"),
 		m_galaga_ram3(*this, "galaga_ram3"),
 		m_galaga_starcontrol(*this, "starcontrol"),
-		m_samples(*this, "samples"), // HBMAME
-		m_06xx(*this, "06xx"), // HBMAME
 		m_maincpu(*this, "maincpu"),
 		m_subcpu(*this, "sub"),
 		m_subcpu2(*this, "sub2"),
@@ -37,8 +33,6 @@ public:
 	optional_shared_ptr<uint8_t> m_galaga_ram2;
 	optional_shared_ptr<uint8_t> m_galaga_ram3;
 	optional_shared_ptr<uint8_t> m_galaga_starcontrol;    // 6 addresses
-	optional_device<samples_device> m_samples; // HBMAME
-	optional_device<namco_06xx_device> m_06xx; // HBMAME
 	required_device<cpu_device> m_maincpu;
 	required_device<cpu_device> m_subcpu;
 	required_device<cpu_device> m_subcpu2;
@@ -48,7 +42,6 @@ public:
 	required_device<palette_device> m_palette;
 	emu_timer *m_cpu3_interrupt_timer;
 	uint8_t m_custom_mod;
-	DECLARE_WRITE8_MEMBER(galaga_sample_w); //HBMAME
 
 	/* machine state */
 	uint32_t m_stars_scrollx;
@@ -104,5 +97,7 @@ public:
 
 DISCRETE_SOUND_EXTERN( galaga );
 DISCRETE_SOUND_EXTERN( bosco );
+
+#include "galaga_hb.h"
 
 #endif // MAME_INCLUDES_GALAGA_H

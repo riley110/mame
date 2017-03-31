@@ -44,9 +44,7 @@ public:
 	DECLARE_DRIVER_INIT(kof2k2lb);
 	DECLARE_DRIVER_INIT(kof2k2ps2a);
 	DECLARE_DRIVER_INIT(kof2003b);
-	DECLARE_DRIVER_INIT(kof2003d);
-	DECLARE_DRIVER_INIT(kof2k3br);
-	DECLARE_DRIVER_INIT(kof2k3d);
+	DECLARE_DRIVER_INIT(kof2003hb);
 	DECLARE_DRIVER_INIT(kof2k3hd);
 	DECLARE_DRIVER_INIT(kof2k3pcd);
 	DECLARE_DRIVER_INIT(kof10thu);
@@ -105,72 +103,31 @@ static MACHINE_CONFIG_DERIVED( no_watchdog, neogeo_noslot )
 MACHINE_CONFIG_END
 
 
-
-	/* The Encrypted Boards do not have a s1 rom, data for it comes from the Cx ROMs */
-#define NEO_SFIX_MT_128K \
-	ROM_Y_ZOOM \
-	ROM_REGION( 0x20000, "fixedbios", 0 ) \
-	ROM_LOAD( "sfix.sfix",  0, 0x20000, CRC(c2ea0cfd) SHA1(fd4a618cdcdbf849374f0a50dd8efe9dbab706c3) ) \
-	ROM_REGION( 0x20000, "fixed", ROMREGION_ERASE00 )
-
-#define NEO_SFIX_MT_512K \
-	ROM_Y_ZOOM \
-	ROM_REGION( 0x20000, "fixedbios", 0 ) \
-	ROM_LOAD( "sfix.sfix",  0, 0x20000, CRC(c2ea0cfd) SHA1(fd4a618cdcdbf849374f0a50dd8efe9dbab706c3) ) \
-	ROM_REGION( 0x80000, "fixed", ROMREGION_ERASE00 )
-
-#define NEO_SFIX_256K(name, hash) \
-	ROM_Y_ZOOM \
-	ROM_REGION( 0x20000, "fixedbios", 0 ) \
-	ROM_LOAD( "sfix.sfix", 0, 0x20000, CRC(c2ea0cfd) SHA1(fd4a618cdcdbf849374f0a50dd8efe9dbab706c3) ) \
-	ROM_REGION( 0x40000, "fixed", 0 ) \
-	ROM_LOAD( name, 0x000000, 0x40000, hash )
-
-// Specific for MSLUG hacks
-#define NEO_SFIX_MSLUG(name, hash) \
-	ROM_Y_ZOOM \
-	ROM_REGION( 0x20000, "fixedbios", 0 ) \
-	ROM_LOAD( "sfix.sfix", 0, 0x20000, CRC(c2ea0cfd) SHA1(fd4a618cdcdbf849374f0a50dd8efe9dbab706c3) ) \
-	ROM_REGION( 0x80000, "fixed", 0 ) \
-	ROM_LOAD( name, 0x000000, 0x20000, hash ) \
-	ROM_RELOAD( 0x020000, 0x20000 ) \
-	ROM_RELOAD( 0x040000, 0x20000 ) \
-	ROM_RELOAD( 0x060000, 0x20000 )
-
-#define NEO_SFIX_2K(name, hash) \
-	ROM_Y_ZOOM \
-	ROM_REGION( 0x20000, "fixedbios", 0 ) \
-	ROM_LOAD( "sfix.sfix", 0, 0x20000, CRC(c2ea0cfd) SHA1(fd4a618cdcdbf849374f0a50dd8efe9dbab706c3) ) \
-	ROM_REGION( 0x2000, "fixed", 0 ) \
-	ROM_LOAD( name, 0x000000, 0x2000, hash )
-
-
-
 /******************************************************************************/
 
 
-#include "neohb_doubledr.hxx"
-#include "neohb_garoup.hxx"
-#include "neohb_kof94.hxx"
-#include "neohb_kof95.hxx"
-#include "neohb_kof96.hxx"
-#include "neohb_kof97.hxx"
-#include "neohb_kof98.hxx"
-#include "neohb_kof99.hxx"
-#include "neohb_kof2000.hxx"
-#include "neohb_kof2001.hxx"
-#include "neohb_kof2002.hxx"
-#include "neohb_kof2003.hxx"
-#include "neohb_kofmisc.hxx"
-#include "neohb_lastblade.hxx"
-#include "neohb_mgd2.hxx"
-#include "neohb_misc.hxx"
-#include "neohb_mslug.hxx"
-#include "neohb_orig.hxx"
-#include "neohb_rbff.hxx"
-#include "neohb_rotd.hxx"
-#include "neohb_samsho.hxx"
-#include "neohb_sengoku.hxx"
-#include "neohb_svc.hxx"
-#include "neohb_wh.hxx"
+#include "neogeohb.cpp"
+#include "neogeo1.cpp"
+#include "kof94.cpp"
+#include "kof95.cpp"
+#include "kof96.cpp"
+#include "kof97.cpp"
+#include "kof98.cpp"
+#include "kof99.cpp"
+#include "kof2000.cpp"
+#include "kof2001.cpp"
+#include "kof2002.cpp"
+#include "kof2003.cpp"
+#include "mgd2.cpp"
+#include "mslug.cpp"
+#include "ngdoubledr.cpp"
+#include "nggaroup.cpp"
+#include "ngkofmisc.cpp"
+#include "nglastblade.cpp"
+#include "ngrbff.cpp"
+#include "ngrotd.cpp"
+#include "ngsamsho.cpp"
+#include "ngsengoku.cpp"
+#include "ngsvc.cpp"
+#include "ngwh.cpp"
 
