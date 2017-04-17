@@ -37,27 +37,25 @@ image_manager::image_manager(running_machine &machine)
 		if (!image.user_loadable())
 			continue;
 
-		// is an image specified for this image
-		const char *image_name_ptr = machine.options().value(image.instance_name().c_str());
-		if ((image_name_ptr != nullptr) && (image_name_ptr[0] != '\0'))
+		// is an image specified for this image?
+		auto iter = machine.options().image_options().find(image.instance_name());
+		if (iter != machine.options().image_options().end() && !iter->second.empty())
 		{
+			// we do have a startup image specified - load it
+			const std::string &startup_image(iter->second);
 			image_init_result result = image_init_result::FAIL;
-			std::string image_name(image_name_ptr);
-
-			// mark init state
-			image.set_init_phase();
 
 			// try as a softlist
-			if (software_name_parse(image_name))
-				result = image.load_software(image_name);
+			if (software_name_parse(startup_image))
+				result = image.load_software(startup_image);
 
 			// failing that, try as an image
 			if (result != image_init_result::PASS)
-				result = image.load(image_name);
+				result = image.load(startup_image);
 
 			// failing that, try creating it (if appropriate)
 			if (result != image_init_result::PASS && image.support_command_line_image_creation())
-				result = image.create(image_name);
+				result = image.create(startup_image);
 
 			// did the image load fail?
 			if (result != image_init_result::PASS)
@@ -70,7 +68,7 @@ image_manager::image_manager(running_machine &machine)
 
 				fatalerror_exitcode(machine, EMU_ERR_DEVICE, "Device %s load (%s) failed: %s",
 					image.device().name(),
-					image_name.c_str(),
+					startup_image.c_str(),
 					image_err.c_str());
 			}
 		}
@@ -177,24 +175,23 @@ int image_manager::write_config(emu_options &options, const char *filename, cons
 
 void image_manager::options_extract()
 {
-	/* only extract the device options if we've added them
-	   no need to assert in case they are missing */
+	for (device_image_interface &image : image_interface_iterator(machine().root_device()))
 	{
-		int index = 0;
-
-		for (device_image_interface &image : image_interface_iterator(machine().root_device()))
+		// we have to assemble the image option differently for software lists and for normal images
+		std::string image_opt;
+		if (image.exists())
 		{
-			const char *filename = image.filename();
-
-			/* and set the option */
-			std::string error;
-			machine().options().set_value(image.instance_name().c_str(), filename ? filename : "", OPTION_PRIORITY_CMDLINE, error);
-
-			index++;
+			if (image.loaded_through_softlist())
+				image_opt = util::string_format("%s:%s:%s", image.software_list_name(), image.full_software_name(), image.brief_instance_name());
+			else
+				image_opt = image.filename();
 		}
+
+		// and set the option
+		machine().options().image_options()[image.instance_name()] = std::move(image_opt);
 	}
 
-	/* write the config, if appropriate */
+	// write the config, if appropriate
 	if (machine().options().write_config())
 		write_config(machine().options(), nullptr, &machine().system());
 }

@@ -3,27 +3,27 @@
 <!--
 Compiled by K1W1 and Cowering (from GoodCoCo), split and cleaned up by Riley110.
 
-* Nearly all of the cartridges on this coco softwarelist will also run on the CoCo 3, CP400 & Dragon Data systems.
+  * Nearly all of the cartridges on this coco softwarelist will also run on the Dragon Data systems.
 
-* Missing/Undumped Cartridges
-- Star Blaster              (1981)
-- Super Logo        26-2717 (1984)
-- Color Term Plus           (1983)
-- ColorCom/E
+  * Missing/Undumped Cartridges
 
-* These ROMs appear to have been dumped from RAM and have been marked as "Bad Dumps"
-- Alphabet Zoo  proper size is 16K, not dumped from RAM
-- Demon Attack
-- Doodle Bug    pad to 16K works fine.. obviously different version from other alts
-- Dragon Fire
-- JDOS v1.23    overdumped, trim to 8K works fine
-- Spectaculator proper dump is 8K
+    - Star Blaster              (1981)
+    - Color Term Plus           (1983)
+    - ColorCom/E
 
-* Notes:
-Mindroll, Robocop and Predator all have banking.
-(see https://archive.org/stream/rainbowmagazine-1990-06/The_Rainbow_Magazine_06_1990#page/n59/mode/1up
-for technique for the latter two)
-Mindroll selects based on detecting CoCo1/2 or 3
+  * These ROMs appear to have been dumped from RAM and have been marked as "Bad Dumps"
+
+    - Alphabet Zoo  proper size is 16K, not dumped from RAM
+    - Demon Attack
+    - Doodle Bug    pad to 16K works fine.. obviously different version from other alts
+    - Dragon Fire
+    - JDOS v1.23    overdumped, trim to 8K works fine
+    - Spectaculator proper dump is 8K
+
+  * Notes: Mindroll, Robocop and Predator all have banking.
+           (see https://archive.org/stream/rainbowmagazine-1990-06/The_Rainbow_Magazine_06_1990#page/n59/mode/1up
+           for technique for the latter two)
+           Mindroll selects based on detecting CoCo1/2 or 3
 -->
 <softwarelist name="coco_cart" description="Tandy Radio Shack Color Computer cartridges">
 
@@ -72,7 +72,7 @@ Mindroll selects based on detecting CoCo1/2 or 3
 	</software>
 
 	<software name="applianc">
-		<description>Applicance and Light Controller</description>
+		<description>Appliance and Light Controller</description>
 		<year>1984</year>
 		<publisher>Tandy</publisher>
 		<info name="developer" value="Pico Electronics Ltd" />
@@ -423,10 +423,9 @@ Mindroll selects based on detecting CoCo1/2 or 3
 		</part>
 	</software>
 
-	<!-- Re-Badge of Dragon version -->
 	<software name="cyrus">
-		<description>Cyrus Chess</description>
-		<year>1983</year>
+		<description>Cyrus World Class Chess</description>
+		<year>1984</year>
 		<publisher>Tandy</publisher>
 		<info name="developer" value="Intelligent Software" />
 		<info name="author" value="David Levy &amp; Richard Lang" />
@@ -1151,6 +1150,19 @@ Mindroll selects based on detecting CoCo1/2 or 3
 		<part name="cart" interface="coco_cart">
 			<dataarea name="rom" size="16384">
 				<rom name="26-3054.bin" size="16384" crc="bed7dcde" sha1="42f70dacfd1a81ec0e052d7f325e7751855d1113" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="suprlogo">
+		<description>Super LOGO</description>
+		<year>1984</year>
+		<publisher>Tandy</publisher>
+		<info name="developer" value="Larry Kheriaty &amp; George Gerhold" />
+		<info name="serial" value="26-2717" />
+		<part name="cart" interface="coco_cart">
+			<dataarea name="rom" size="16384">
+				<rom name="super logo (1984) (26-2717) (larry kheriaty &amp; george gerhold).rom" size="16384" crc="659b87fe" sha1="2a871c01a62547608ba4c0d47740a9e4310bf6c5" offset="0" />
 			</dataarea>
 		</part>
 	</software>
