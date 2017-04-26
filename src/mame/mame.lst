@@ -294,6 +294,9 @@ ac1                             // 1984 Amateurcomputer AC1
 ac1_32                          // 1984 Amateurcomputer AC1 (32 lines)
 ac1scch                         // 1984 Amateurcomputer AC1 SCCH
 
+@source:acchi.cpp
+acchi                           // 1993 NTC / NMK
+
 @source:aceex.cpp
 aceex2814
 
@@ -8638,12 +8641,14 @@ bingor2                         // (c) 2002 Unknown
 bingor3                         // (c) 2002 Unknown
 bingor4                         // (c) 2002 Unknown
 bingor5                         // (c) 2002 Unknown
+vip2000                         // (c) Paloma-Elektronik
 
 @source:bionicc.cpp
 bionicc                         // 3/1987 (c) 1987 (Euro)
 bionicc1                        // 3/1987 (c) 1987 (US)
 bionicc2                        // 3/1987 (c) 1987 (US)
 bioniccbl                       // bootleg
+bioniccbl2                      // bootleg
 topsecrt                        // 3/1987 (c) 1987 (Japan)
 
 @source:bishi.cpp
@@ -11259,6 +11264,7 @@ garyoret                        // (c) 1987 Data East Corporation (Japan)
 ghostb                          // (c) 1987 Data East USA (US)
 ghostb2a                        // (c) 1987 Data East USA (US)
 ghostb3                         // (c) 1987 Data East USA (US)
+ghostb3a                        // (c) 1987 Data East USA (US)
 gondo                           // (c) 1987 Data East USA (US)
 lastmisn                        // (c) 1986 Data East USA (US)
 lastmisnj                       // (c) 1986 Data East Corporation (Japan)
@@ -11508,6 +11514,7 @@ herodk                          // (c) 1984 Seatongrove + Crown license
 herodku                         // (c) 1984 Seatongrove + Crown license
 hunchbkd                        // (c) 1983 Century
 jrking                          // bootleg
+maguila                         // bootleg
 pestplce                        // bootleg on donkey kong hw
 radarscp                        // (c) 1980 Nintendo
 radarscp1                       // (c) 1980 Nintendo
@@ -13532,6 +13539,7 @@ killcom                         // (c) 1980 Centuri
 leprechn                        // (c) 1982
 leprechp                        // (c) 1982
 megatack                        // (c) 1980 Centuri
+megatacka                       // (c) 1980 Centuri
 piratetr                        // (c) 1982
 potogold                        // (c) 1982
 
@@ -13876,7 +13884,7 @@ hapytour                        // (c) 2005 GAV Company (on Eolith's Ghost hardw
 touryuu                         // (c) 200? Yuki Enterprise
 
 @source:giclassic.cpp
-giclasex	
+giclasex
 giclassvr
 
 @source:gijoe.cpp
@@ -14829,6 +14837,7 @@ uspbball                        // US Games
 @source:hh_sm510.cpp
 gnw_bx301                       // Nintendo
 gnw_dm53                        // Nintendo
+gnw_jr55                        // Nintendo
 kcontra                         // Konami
 kgradius                        // Konami
 kloneran                        // Konami
@@ -28140,14 +28149,14 @@ yis60464                        //
 mt735                           //
 
 @source:mtouchxl.cpp
-mtouchxl						// 1997 Merit Industries
-mtchxl5k						// 1998 Merit Industries
-mtchxl5ko						// 1998 Merit Industries
-mtchxl5ko2						// 1998 Merit Industries
-mtchxl6k						// 1999 Merit Industries
-mtchxl6ko						// 1999 Merit Industries
-mtchxlgld						// 2000 Merit Industries
-mtchxlgldo						// 2000 Merit Industries
+mtouchxl                        // 1997 Merit Industries
+mtchxl5k                        // 1998 Merit Industries
+mtchxl5ko                       // 1998 Merit Industries
+mtchxl5ko2                      // 1998 Merit Industries
+mtchxl6k                        // 1999 Merit Industries
+mtchxl6ko                       // 1999 Merit Industries
+mtchxlgld                       // 2000 Merit Industries
+mtchxlgldo                      // 2000 Merit Industries
 
 @source:mtx.cpp
 mtx500                          // 1983 Memotech MTX 500
@@ -28579,7 +28588,8 @@ gslgr94u                        // (c) 1994
 gslugrsj                        // (c) 1993 (Japan)
 gunbuletj                       // (c) 1994 (GN1 Japan)
 gunbuletw                       // (c) 1994 (GN3 World)
-machbrkr                        // (c) 1995 (Japan)
+machbrkr                        // (c) 1995 (World)
+machbrkrj                       // (c) 1995 (Japan)
 nebulray                        // (c) 1994 (World)
 nebulrayj                       // (c) 1994 (Japan)
 outfxies                        // (c) 1994 (World)
@@ -31297,6 +31307,10 @@ supercon                        //
 @source:novag68k.cpp
 diablo68                        //
 
+@source:novagmcs48.cpp
+nocto                           //
+npresto                         //
+
 @source:nsm.cpp
 firebird                        //
 
@@ -31449,7 +31463,7 @@ othunderu                       // B67 (c) 1988 Taito America Corporation (US, r
 othunderuo                      // B67 (c) 1988 Taito America Corporation (US)
 
 @source:otomedius.cpp
-otomedius						// (c) 2007 Konami
+otomedius                       // (c) 2007 Konami
 
 @source:overdriv.cpp
 overdriv                        // GX789 (c) 1990
@@ -33166,7 +33180,7 @@ pirates                         // (c) 1994 NIX
 piratesb                        // bootleg?
 
 @source:piratesh.cpp
-piratesh						// (c) 1995 Konami
+piratesh                        // (c) 1995 Konami
 
 @source:pitagjr.cpp
 pitagjr                         // Pitagorin Junior
@@ -37204,6 +37218,7 @@ cyvern                          // 1998.02 (c) 1998 Kaneko (US)
 cyvernj                         // 1998.02 (c) 1998 Kaneko (Japan)
 galpani4                        // 1996.09 (c) 1996 Kaneko (Japan)
 galpani4k                       // 1996.09 (c) 1996 Kaneko (Korea)
+galpanidx                       // 1996.09 (c) 1996 Kaneko (Asia)
 galpanis                        // 1997.04 (c) 1997 Kaneko (Europe)
 galpanise                       // 1997.04 (c) 1997 Kaneko (Europe)
 galpanisj                       // 1997.04 (c) 1997 Kaneko (Japan)
@@ -38248,6 +38263,7 @@ ti1000                          //
 ti1250                          //
 ti125076                        //
 ti1270                          //
+ti25503                         //
 ti30                            //
 tibusan                         //
 tiprog                          //
@@ -39003,6 +39019,9 @@ unkhorse                        //
 @source:upscope.cpp
 upscope                         // (c) 1986 Grand products
 
+@source:usbilliards.cpp
+sharkusb                        // (c) 1975 US Billiards
+
 @source:usgames.cpp
 superten                        // (c) 1988
 usg182                          // (c) 1989
@@ -39362,7 +39381,7 @@ votrtnt                         // 1980 Votrax Type-'N-Talk
 
 @source:voyager.cpp
 voyager                         // (c) 2002 Team Play, Inc.
-policet2						// (c) 2003 Team Play, Inc.
+policet2                        // (c) 2003 Team Play, Inc.
 
 @source:vp101.cpp
 jnero                           // (c) 2004 ICE/Play Mechanix
