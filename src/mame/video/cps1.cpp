@@ -1632,8 +1632,10 @@ static const struct CPS1config cps1_config_table[]=
 	//{"cawingb",     CPS_B_16,     mapper_CA24B, 0, 0, 0, 0x8F },			// no sprites here, ok in fcrash.cpp
 	{"cps1demo",    CPS_B_04,     mapper_demo,  0, 0, 0, 0x80 },			//works
 	{"cps1frog",    CPS_B_04,     mapper_frog,  0, 0, 0, 0x80 },			//works
-	{"cps1test",    CPS_B_21_DEF, mapper_S9263B, 0x36 },					//works
-	{"cps1testa",   CPS_B_21_DEF, mapper_RCM63B },							//works
+	{"cps1tests",   CPS_B_21_DEF, mapper_S9263B, 0x36 },					//works
+	{"cps1testsa",  CPS_B_21_DEF, mapper_S9263B, 0x36 },					//works
+	{"cps1testm",   CPS_B_21_DEF, mapper_RCM63B },							//works
+	{"cps1testma",  CPS_B_21_DEF, mapper_RCM63B },							//works
 	{"daimakb",     HACK_H_5,     mapper_DM22A },							//works
 	{"dino08h2",    CPS_B_21_QS2, mapper_CD63B },							//works
 	{"dino08h3",    CPS_B_21_QS2, mapper_CD63B },							//works
@@ -1653,6 +1655,7 @@ static const struct CPS1config cps1_config_table[]=
 	{"dinohx",      CPS_B_21_DEF, mapper_CD63B, 0x36 },						//works
 	{"dinojp",      CPS_B_21_QS2, mapper_CD63B },							//works
 	{"dinorp",      CPS_B_21_QS2, mapper_CD63B },							//works
+	{"dinosf2",     CPS_B_21_QS2, mapper_CD63B },							// nw
 	{"dinoslice",   CPS_B_21_QS2, mapper_CD63B },							//works
 	{"dinouphp",    CPS_B_21_QS2, mapper_CD63B },							//works
 	{"dinoz",       CPS_B_21_QS2, mapper_CD63B },							//works
@@ -1687,6 +1690,7 @@ static const struct CPS1config cps1_config_table[]=
 	{"sf2cehk",     CPS_B_21_DEF, mapper_S9263B, 0x36 },					//works
 	{"sf2cehp",     CPS_B_21_DEF, mapper_S9263B, 0x36 },					//works
 	{"sf2cejem",    CPS_B_21_DEF, mapper_S9263B, 0x36 },					//works
+	{"sf2jbh",      CPS_B_13,     mapper_STF29,  0x36 },					//works
 	{"sf2koryuh",   CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
 	{"sf2h9",       CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
 	{"sf2h10",      CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
