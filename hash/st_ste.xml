@@ -1358,4 +1358,452 @@
 		</part>
 	</software>
 
+	<software name="e605">
+		<description>E605</description>
+		<year>1992</year>
+		<publisher>Light</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="e605 (1992-12)(light)(ste)(de)(en-de).st" size="819200" crc="b75fdf35" sha1="b48ef277db73ee351387660de44d57d378185cc9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="e605a" cloneof="e605">
+		<description>E605 (Alt)</description>
+		<year>1992</year>
+		<publisher>Light</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="e605 (1992-12)(light)(ste)(de)(en-de)[a].st" size="819200" crc="264b8f65" sha1="3a374ce0f6ab80d5dc0c0d4c4f67f48159555a9c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="e605b" cloneof="e605">
+		<description>E605 (Alt 2)</description>
+		<year>1992</year>
+		<publisher>Light</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="e605 (1992-12)(light)(ste)(de)(en-de)[a2].st" size="819200" crc="ffbb1f8b" sha1="c443ae42604345ca9e7cc3d985d48b883b1f3143" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="e605c" cloneof="e605">
+		<description>E605 (Alt 3)</description>
+		<year>1992</year>
+		<publisher>Light</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="e605 (1992-12)(light)(ste)(de)(en-de)[a3].st" size="819200" crc="8367f924" sha1="c06f132153c196edefbe643b30c52c8702ead63a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="edgepanic">
+		<description>Edge of Panic</description>
+		<year>1993</year>
+		<publisher>ACCS</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="edge of panic (1993)(accs)(ste)(fr)(en).st" size="737280" crc="52d8c7ff" sha1="1d72ae93a879adb1a6beac9267cc5f7e640643c5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="electro2">
+		<description>Electrocution 2</description>
+		<year>1990</year>
+		<publisher>Sphere</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="electrocution 2 (1990-09)(sphere)(ste)(se)(en).st" size="737280" crc="161abe6d" sha1="a298663630bef248e6d0f0a5983f9bd2b8ffb478" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 1MB -->
+	<software name="enchanted">
+		<description>The Enchanted Demo</description>
+		<year>1991</year>
+		<publisher>Inner Circuit Explorers</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="enchanted demo, the (1991)(inner circuit explorers)(ste)(se)(en)[1mb].st" size="368640" crc="c440f286" sha1="4815c8e4e6d376c59e427712e36438ffa63fd452" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="enigmat2">
+		<description>The Enigmatic Obsession II</description>
+		<year>1993</year>
+		<publisher>Flash</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="enigmatic obsession ii, the (1993-02-15)(flash)(ste)(fi)(en).st" size="368640" crc="0aa185c0" sha1="4e665331c4f48ab3520120b315c44dc6770cb538" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="enigmat2a" cloneof="enigmat2">
+		<description>The Enigmatic Obsession II (Hacked)</description>
+		<year>1993</year>
+		<publisher>Flash - &lt;hack (suomen.atari.org)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="enigmatic obsession ii, the (1993-02-15)(flash)(ste)(fi)(en)[m suomen.atari.org].st" size="737280" crc="9ceb83b2" sha1="ea87a056b063c8d30dc9e7ba10366656c84f6ae3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 2MB -->
+	<software name="everest">
+		<description>Everest Demo</description>
+		<year>1995</year>
+		<publisher>The Legion</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="everest demo (1995-12-17)(the legion)(ste)(se)(en)[2mb].st" size="819200" crc="76c5983f" sha1="86bc5f7bdcbe54c981e306abf5ac7b9f0acc391d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 2MB -->
+	<software name="everesta" cloneof="everest">
+		<description>Everest Demo (Hacked)</description>
+		<year>1995</year>
+		<publisher>The Legion - &lt;hack (tSCc)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="everest demo (1995-12-17)(the legion)(ste)(se)(en)[m tscc][2mb].st" size="839680" crc="c5502077" sha1="877c6abef6f558513cee6241cc8e9d4e54ff81d1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 1MB -->
+	<software name="exhaust">
+		<description>Exhaust</description>
+		<year>1993</year>
+		<publisher>ACCS - The End</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="exhaust (1993-04-04)(accs - the end)(ste)(fr)(en)[1mb].st" size="839680" crc="8dc1c6bf" sha1="6f321bf0ab7a2f30c369e2ded385d8fa48e63ca7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="extasia">
+		<description>Extasia</description>
+		<year>19??</year>
+		<publisher>The Twins</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="extasia (19xx)(the twins)(ste).st" size="737280" crc="9dc16eee" sha1="53906c81dd690432adedced2b1cc7ceca4d96c4f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="extasiaa" cloneof="extasia">
+		<description>Extasia (Alt)</description>
+		<year>19??</year>
+		<publisher>The Twins</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="extasia (19xx)(the twins)(ste)[a].st" size="737280" crc="563930ca" sha1="fa28261543acec0e52038a23e00b399b450f27ca" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="extasiab" cloneof="extasia">
+		<description>Extasia (Includes Bootsector Protection v1.0)</description>
+		<year>19??</year>
+		<publisher>The Twins</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="extasia (19xx)(the twins)(ste)[m bootsector protection v1.0].st" size="737280" crc="84c5ee81" sha1="8857c545f85d0b1820fbee8d7f53786b8b5985bc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 1MB -->
+	<software name="extrage">
+		<description>Extreme Rage</description>
+		<year>1993</year>
+		<publisher>Anatomica</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="extreme rage (1993-04-08)(anatomica)(ste)(se)(en)[1mb].st" size="737280" crc="4ade179d" sha1="0c3bdb0a1019159ba197bc2ed358cb5efd0ae6cf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 1MB -->
+	<software name="extragea" cloneof="extrage">
+		<description>Extreme Rage (Alt)</description>
+		<year>1993</year>
+		<publisher>Anatomica</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="extreme rage (1993-04-08)(anatomica)(ste)(se)(en)[a time stamps][1mb].st" size="737280" crc="bdba3d41" sha1="fa6128fea33d05263c618d5505f4e0b0206c4f69" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 1MB -->
+	<software name="extrageb" cloneof="extrage">
+		<description>Extreme Rage (Alt 2)</description>
+		<year>1993</year>
+		<publisher>Anatomica</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="extreme rage (1993-04-08)(anatomica)(ste)(se)(en)[a2][1mb].st" size="737280" crc="ff42332d" sha1="38f9f78a70d52be0c5ff9d4041c7424556ba1856" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 1MB -->
+	<software name="fantasiamp">
+		<description>Fantasia (Moving Pixels)</description>
+		<year>1990</year>
+		<publisher>Moving Pixels</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="fantasia (1990-03-15)(moving pixels)(ste)(au)[1mb].st" size="737280" crc="e95ef30f" sha1="f995e99b685e620478c73e2e7cc6d430abd498f3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 1MB -->
+	<software name="felixdemo">
+		<description>The Felix Demo</description>
+		<year>1994</year>
+		<publisher>Sector One</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="923648">
+				<rom name="felix demo, the (1994-08)(sector one)(ste)(fr)(en)[1mb].st" size="923648" crc="59705da3" sha1="816ec66a5f1b3933d7d5768ff62862b9109119bd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="frantic">
+		<description>Frantic (includes The Killer v2.0)</description>
+		<year>1990</year>
+		<publisher>Falcon</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="frantic (1990)(falcon)(ste)(fr)[m the killer v2.0].st" size="839680" crc="c96c4791" sha1="d826ab2324d7fc094dbae7a9883d8aee5637f89f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 1MB -->
+	<software name="futshock">
+		<description>Future Shock</description>
+		<year>1994</year>
+		<publisher>Epsilon</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="future shock (1994)(epsilon)(ste)(fr)(en)[1mb].st" size="839680" crc="1358a583" sha1="d06c253dcd3a5ebd0094e82198ba090a08b0bfcb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 1MB -->
+	<software name="futshocka" cloneof="futshock">
+		<description>Future Shock (Alt)</description>
+		<year>1994</year>
+		<publisher>Epsilon</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="future shock (1994)(epsilon)(ste)(fr)(en)[a][1mb].st" size="839680" crc="d580c023" sha1="2a8b4e05f6605333b8eb92bff09a07cff77a1439" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 1MB -->
+	<software name="futshockb" cloneof="futshock">
+		<description>Future Shock (Includes FastCopy Pro Guardian)</description>
+		<year>1994</year>
+		<publisher>Epsilon</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="future shock (1994)(epsilon)(ste)(fr)(en)[m fastcopy pro guardian][1mb].st" size="839680" crc="d0078393" sha1="7d0591fd1459bf67d7c27a03df68c0d0a40f9a02" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="genborder">
+		<description>Genius has no Border</description>
+		<year>1990</year>
+		<publisher>The Starfires</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="genius has no border (1990)(the starfires)(ste)(it)(en).st" size="737280" crc="392f6803" sha1="55159f9452576d5d6dc62288b5ce9d9848419562" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="goldsound">
+		<description>Golden Soundtracker</description>
+		<year>1990</year>
+		<publisher>Sector One</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="golden soundtracker (1990-07)(sector one)(ste)(fr)(en).st" size="819200" crc="d250d738" sha1="1d8031bc6f0dafe1303b358c4b8f5c6f057c0fb3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="goldsounda" cloneof="goldsound">
+		<description>Golden Soundtracker (Includes Sagrotan antivirus)</description>
+		<year>1990</year>
+		<publisher>Sector One</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="golden soundtracker (1990-07)(sector one)(ste)(fr)(en)[m sagrotan antivirus].st" size="819200" crc="24a0c258" sha1="3c4a5f61ace0ad1c43d278c841691e540993b8dd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 1MB -->
+	<software name="grimey">
+		<description>Grimey</description>
+		<year>2003</year>
+		<publisher>Reservoir Gods</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="grimey (2003-04-20)(reservoir gods)(ste)(gb)[1mb].st" size="737280" crc="4124800b" sha1="ff2b81ed2140f6c16fdc161dbfb2117a507a0cb3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 1MB -->
+	<software name="grotesque">
+		<description>Grotesque</description>
+		<year>1992</year>
+		<publisher>Omega</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="grotesque (1992-10-25)(omega)(ste)(se)(en)[1mb].st" size="737280" crc="627c57ce" sha1="c832c1c6818f504352f7cee363594d262582428c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 1MB -->
+	<software name="grotesquea" cloneof="grotesque">
+		<description>Grotesque (Includes The Medway Boys Protector IV)</description>
+		<year>1992</year>
+		<publisher>Omega</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="grotesque (1992-10-25)(omega)(ste)(se)(en)[m2 the medway boys protector iv][1mb].st" size="737280" crc="ee72be54" sha1="17eafe4e900b073376ce98830d060a7811f408e6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 1MB -->
+	<software name="grotesqueb" cloneof="grotesque">
+		<description>Grotesque (Hacked)</description>
+		<year>1992</year>
+		<publisher>Omega - &lt;hack (Megatari)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="grotesque (1992-10-25)(omega)(ste)(se)(en)[m megatari][1mb].st" size="819200" crc="306754e8" sha1="97b670d25a862be2950767e25fffeb5bea8449e2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="highfid">
+		<description>High Fidelity Dreams</description>
+		<year>1992</year>
+		<publisher>Aura</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="high fidelity dreams (1992-06-05)(aura)(ste)(de)(en).st" size="819200" crc="3873ad51" sha1="05fe17ed8e61bfed5a14e425f0061be5b25eac6b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="highfida" cloneof="highfid">
+		<description>High Fidelity Dreams (Alt)</description>
+		<year>1992</year>
+		<publisher>Aura</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="high fidelity dreams (1992-06-05)(aura)(ste)(de)(en)[a].st" size="819200" crc="cb739309" sha1="474fdb7c26cf4a8daa081ff9d28325a339836601" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="highfidb" cloneof="highfid">
+		<description>High Fidelity Dreams (Alt 2)</description>
+		<year>1992</year>
+		<publisher>Aura</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="high fidelity dreams (1992-06-05)(aura)(ste)(de)(en)[a2].st" size="819200" crc="0b1dd949" sha1="485626237efc023421798b4032031d8390987e78" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="highfidc" cloneof="highfid">
+		<description>High Fidelity Dreams (Alt 3)</description>
+		<year>1992</year>
+		<publisher>Aura</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="high fidelity dreams (1992-06-05)(aura)(ste)(de)(en)[a3].st" size="819200" crc="d7689c7a" sha1="0f485de022a9a9fae1a2892c514acba1a19a5006" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="highfidd" cloneof="highfid">
+		<description>High Fidelity Dreams (Alt 4)</description>
+		<year>1992</year>
+		<publisher>Aura</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="high fidelity dreams (1992-06-05)(aura)(ste)(de)(en)[a4 82 tracks].st" size="839680" crc="0136a65c" sha1="7960d7e136c79accb5f2a50b08c4f88f8fa9693e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 </softwarelist>
