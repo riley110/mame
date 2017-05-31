@@ -410,7 +410,7 @@ static SLOT_INTERFACE_START( z80ne_floppies )
 	SLOT_INTERFACE("sssd", FLOPPY_525_SSSD)
 SLOT_INTERFACE_END
 
-static MACHINE_CONFIG_START( z80ne, z80ne_state )
+static MACHINE_CONFIG_START( z80ne )
 	/* basic machine hardware */
 	MCFG_CPU_ADD("z80ne", Z80, Z80NE_CPU_SPEED_HZ)
 	MCFG_CPU_PROGRAM_MAP(z80ne_mem)
@@ -437,7 +437,8 @@ static MACHINE_CONFIG_START( z80ne, z80ne_state )
 	MCFG_RAM_ADD(RAM_TAG)
 	MCFG_RAM_DEFAULT_SIZE("32K")
 
-	//MCFG_SOFTWARE_LIST_ADD("cass_list","z80ne_cass") /* all known tapes require LX.388 expansion
+	// all known tapes require LX.388 expansion
+	//MCFG_SOFTWARE_LIST_ADD("cass_list","z80ne_cass")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( z80net, z80ne )
@@ -469,7 +470,7 @@ static MACHINE_CONFIG_DERIVED( z80net, z80ne )
 	MCFG_SOFTWARE_LIST_ADD("cass_list","z80ne_cass")
 MACHINE_CONFIG_END
 
-static MACHINE_CONFIG_START( z80netb, z80ne_state )
+static MACHINE_CONFIG_START( z80netb )
 	/* basic machine hardware */
 	MCFG_CPU_ADD("z80ne", Z80, Z80NE_CPU_SPEED_HZ)
 	MCFG_CPU_PROGRAM_MAP(z80netb_mem)
@@ -510,7 +511,7 @@ static MACHINE_CONFIG_START( z80netb, z80ne_state )
 	MCFG_SOFTWARE_LIST_ADD("cass_list","z80ne_cass")
 MACHINE_CONFIG_END
 
-static MACHINE_CONFIG_START( z80netf, z80ne_state )
+static MACHINE_CONFIG_START( z80netf )
 	/* basic machine hardware */
 	MCFG_CPU_ADD("z80ne", Z80, Z80NE_CPU_SPEED_HZ)
 	MCFG_CPU_PROGRAM_MAP(z80netf_mem)
@@ -610,8 +611,8 @@ ROM_START( z80netf )
 	ROM_LOAD( "ep2390.ic6", 0x14C00, 0x0400, CRC(28d28eee) SHA1(b80f75c1ac4905ae369ecbc9b9ce120cc85502ed) )
 ROM_END
 
-/*    YEAR  NAME      PARENT    COMPAT  MACHINE   INPUT     INIT     COMPANY               FULLNAME                      FLAGS */
-COMP( 1980, z80ne,    0,        0,      z80ne,    z80ne, z80ne_state,    z80ne,   "Nuova Elettronica",  "Z80NE",                      MACHINE_NO_SOUND_HW)
-COMP( 1980, z80net,   z80ne,    0,      z80net,   z80net, z80ne_state,   z80net,  "Nuova Elettronica",  "Z80NE + LX.388",             MACHINE_NO_SOUND_HW)
-COMP( 1980, z80netb,  z80ne,    0,      z80netb,  z80net, z80ne_state,   z80netb, "Nuova Elettronica",  "Z80NE + LX.388 + Basic 16k", MACHINE_NO_SOUND_HW)
+//    YEAR  NAME      PARENT    COMPAT  MACHINE   INPUT    STATE         INIT     COMPANY               FULLNAME                      FLAGS
+COMP( 1980, z80ne,    0,        0,      z80ne,    z80ne,   z80ne_state,  z80ne,   "Nuova Elettronica",  "Z80NE",                      MACHINE_NO_SOUND_HW)
+COMP( 1980, z80net,   z80ne,    0,      z80net,   z80net,  z80ne_state,  z80net,  "Nuova Elettronica",  "Z80NE + LX.388",             MACHINE_NO_SOUND_HW)
+COMP( 1980, z80netb,  z80ne,    0,      z80netb,  z80net,  z80ne_state,  z80netb, "Nuova Elettronica",  "Z80NE + LX.388 + Basic 16k", MACHINE_NO_SOUND_HW)
 COMP( 1980, z80netf,  z80ne,    0,      z80netf,  z80netf, z80ne_state,  z80netf, "Nuova Elettronica",  "Z80NE + LX.388 + LX.390",    MACHINE_NO_SOUND_HW)

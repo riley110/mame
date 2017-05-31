@@ -15,9 +15,10 @@ BUGS:
 
 */
 #include "emu.h"
-#include "formats/trd_dsk.h"
 #include "machine/beta.h"
 #include "softlist.h"
+
+#include "formats/trd_dsk.h"
 
 
 /***************************************************************************
@@ -25,10 +26,10 @@ BUGS:
 ***************************************************************************/
 
 
-const device_type BETA_DISK = device_creator<beta_disk_device>;
+DEFINE_DEVICE_TYPE(BETA_DISK, beta_disk_device, "betadisk", "Beta Disk Interface")
 
 beta_disk_device::beta_disk_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
-	: device_t(mconfig, BETA_DISK, "Beta Disk Interface", tag, owner, clock, "betadisk", __FILE__)
+	: device_t(mconfig, BETA_DISK, tag, owner, clock)
 	, m_betadisk_active(0)
 	, m_wd179x(*this, "wd179x")
 	, m_floppy0(*this, "wd179x:0")
@@ -182,20 +183,6 @@ static SLOT_INTERFACE_START( beta_disk_floppies )
 	SLOT_INTERFACE( "drive3", FLOPPY_525_QD )
 SLOT_INTERFACE_END
 
-static MACHINE_CONFIG_FRAGMENT( beta_disk )
-	MCFG_KR1818VG93_ADD("wd179x", XTAL_8MHz / 8)
-	MCFG_FLOPPY_DRIVE_ADD("wd179x:0", beta_disk_floppies, "drive0", beta_disk_device::floppy_formats)
-	MCFG_FLOPPY_DRIVE_SOUND(true)
-	MCFG_FLOPPY_DRIVE_ADD("wd179x:1", beta_disk_floppies, "drive1", beta_disk_device::floppy_formats)
-	MCFG_FLOPPY_DRIVE_SOUND(true)
-	MCFG_FLOPPY_DRIVE_ADD("wd179x:2", beta_disk_floppies, "drive2", beta_disk_device::floppy_formats)
-	MCFG_FLOPPY_DRIVE_SOUND(true)
-	MCFG_FLOPPY_DRIVE_ADD("wd179x:3", beta_disk_floppies, "drive3", beta_disk_device::floppy_formats)
-	MCFG_FLOPPY_DRIVE_SOUND(true)
-
-    MCFG_SOFTWARE_LIST_ADD("beta_flop_list", "spectrum_beta")
-MACHINE_CONFIG_END
-
 ROM_START( beta_disk )
 	ROM_REGION( 0x60000, "beta", 0 )
 	ROM_LOAD( "trd501.rom",     0x00000, 0x4000, CRC(3e3cdd4c) SHA1(8303ba0cc79daa6c04cd1e6ce27e8b6886a3f0de))
@@ -279,14 +266,22 @@ ROM_END
 
 
 //-------------------------------------------------
-//  device_mconfig_additions - return a pointer to
-//  the device's machine fragment
+//  device_add_mconfig - add device configuration
 //-------------------------------------------------
 
-machine_config_constructor beta_disk_device::device_mconfig_additions() const
-{
-	return MACHINE_CONFIG_NAME( beta_disk  );
-}
+MACHINE_CONFIG_MEMBER( beta_disk_device::device_add_mconfig )
+	MCFG_KR1818VG93_ADD("wd179x", XTAL_8MHz / 8)
+	MCFG_FLOPPY_DRIVE_ADD("wd179x:0", beta_disk_floppies, "drive0", beta_disk_device::floppy_formats)
+	MCFG_FLOPPY_DRIVE_SOUND(true)
+	MCFG_FLOPPY_DRIVE_ADD("wd179x:1", beta_disk_floppies, "drive1", beta_disk_device::floppy_formats)
+	MCFG_FLOPPY_DRIVE_SOUND(true)
+	MCFG_FLOPPY_DRIVE_ADD("wd179x:2", beta_disk_floppies, "drive2", beta_disk_device::floppy_formats)
+	MCFG_FLOPPY_DRIVE_SOUND(true)
+	MCFG_FLOPPY_DRIVE_ADD("wd179x:3", beta_disk_floppies, "drive3", beta_disk_device::floppy_formats)
+	MCFG_FLOPPY_DRIVE_SOUND(true)
+
+    MCFG_SOFTWARE_LIST_ADD("beta_flop_list", "spectrum_beta")
+MACHINE_CONFIG_END
 
 //-------------------------------------------------
 //  device_rom_region - return a pointer to the

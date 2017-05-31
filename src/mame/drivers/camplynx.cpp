@@ -180,7 +180,7 @@ private:
 	//required_device<> m_printer;
 	required_device<mc6845_device> m_crtc;
 	required_device<dac_byte_interface> m_dac;
-	optional_device<fd1793_t> m_fdc;
+	optional_device<fd1793_device> m_fdc;
 	optional_device<floppy_connector> m_floppy0;
 	optional_device<floppy_connector> m_floppy1;
 };
@@ -459,15 +459,15 @@ ADDRESS_MAP_END
 
 static ADDRESS_MAP_START( lynx96k_io, AS_IO, 8, camplynx_state )
 	AM_IMPORT_FROM(lynx48k_io)
-	AM_RANGE(0x0050,0x0053) AM_MIRROR(0xff80) AM_DEVREAD("fdc", fd1793_t, read)
-	AM_RANGE(0x0054,0x0057) AM_MIRROR(0xff80) AM_DEVWRITE("fdc", fd1793_t, write)
+	AM_RANGE(0x0050,0x0053) AM_MIRROR(0xff80) AM_DEVREAD("fdc", fd1793_device, read)
+	AM_RANGE(0x0054,0x0057) AM_MIRROR(0xff80) AM_DEVWRITE("fdc", fd1793_device, write)
 	AM_RANGE(0x0058,0x0058) AM_MIRROR(0xff80) AM_WRITE(port58_w)
 ADDRESS_MAP_END
 
 static ADDRESS_MAP_START( lynx128k_io, AS_IO, 8, camplynx_state )
 	ADDRESS_MAP_UNMAP_HIGH
-	AM_RANGE(0x0050,0x0053) AM_MIRROR(0xff80) AM_DEVREAD("fdc", fd1793_t, read)
-	AM_RANGE(0x0054,0x0057) AM_MIRROR(0xff80) AM_DEVWRITE("fdc", fd1793_t, write)
+	AM_RANGE(0x0050,0x0053) AM_MIRROR(0xff80) AM_DEVREAD("fdc", fd1793_device, read)
+	AM_RANGE(0x0054,0x0057) AM_MIRROR(0xff80) AM_DEVWRITE("fdc", fd1793_device, write)
 	AM_RANGE(0x0058,0x0058) AM_MIRROR(0xff80) AM_WRITE(port58_w)
 //  AM_RANGE(0x007a,0x007b) AM_MIRROR(0xff80) AM_READ(lynx128k_joysticks_r)
 //  AM_RANGE(0x007c,0x007c) AM_MIRROR(0xff80) AM_READ(lynx128k_printer_r)
@@ -791,7 +791,7 @@ static SLOT_INTERFACE_START( camplynx_floppies )
 	SLOT_INTERFACE( "drive1", FLOPPY_525_QD )
 SLOT_INTERFACE_END
 
-static MACHINE_CONFIG_FRAGMENT( lynx_common )
+static MACHINE_CONFIG_START( lynx_common )
 	MCFG_PALETTE_ADD_3BIT_RGB("palette")
 
 	/* sound hardware */
@@ -803,7 +803,7 @@ static MACHINE_CONFIG_FRAGMENT( lynx_common )
 	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "speaker", 0.02)
 MACHINE_CONFIG_END
 
-static MACHINE_CONFIG_FRAGMENT( lynx_disk )
+static MACHINE_CONFIG_START( lynx_disk )
 	MCFG_FD1793_ADD("fdc", XTAL_24MHz / 24)
 	MCFG_FLOPPY_DRIVE_ADD("fdc:0", camplynx_floppies, "drive0", camplynx_state::camplynx_floppy_formats)
 	MCFG_FLOPPY_DRIVE_SOUND(true)
@@ -812,7 +812,7 @@ static MACHINE_CONFIG_FRAGMENT( lynx_disk )
 	MCFG_SOFTWARE_LIST_ADD("flop_list","camplynx_flop")
 MACHINE_CONFIG_END
 
-static MACHINE_CONFIG_START( lynx48k, camplynx_state )
+static MACHINE_CONFIG_START( lynx48k )
 
 	/* basic machine hardware */
 	MCFG_CPU_ADD("maincpu", Z80, XTAL_24MHz / 6)
@@ -854,7 +854,7 @@ static MACHINE_CONFIG_DERIVED( lynx96k, lynx48k )
 	MCFG_SOFTWARE_LIST_FILTER("flop_list", "96")
 MACHINE_CONFIG_END
 
-static MACHINE_CONFIG_START( lynx128k, camplynx_state )
+static MACHINE_CONFIG_START( lynx128k )
 
 	/* basic machine hardware */
 	MCFG_CPU_ADD("maincpu", Z80, XTAL_24MHz / 4)
@@ -948,7 +948,7 @@ ROM_END
 
 
 /* Driver */
-/*    YEAR  NAME       PARENT     COMPAT   MACHINE    INPUT    CLASS            INIT         COMPANY     FULLNAME     FLAGS */
-COMP( 1983, lynx48k,   0,         0,       lynx48k,   lynx48k, camplynx_state,  lynx48k,  "Camputers",  "Lynx 48k", 0 )
-COMP( 1983, lynx96k,   lynx48k,   0,       lynx96k,   lynx48k, camplynx_state,  lynx48k,  "Camputers",  "Lynx 96k", 0 )
+/*    YEAR  NAME       PARENT     COMPAT   MACHINE    INPUT    CLASS            INIT      COMPANY       FULLNAME     FLAGS */
+COMP( 1983, lynx48k,   0,         0,       lynx48k,   lynx48k, camplynx_state,  lynx48k,  "Camputers",  "Lynx 48k",  0 )
+COMP( 1983, lynx96k,   lynx48k,   0,       lynx96k,   lynx48k, camplynx_state,  lynx48k,  "Camputers",  "Lynx 96k",  0 )
 COMP( 1983, lynx128k,  lynx48k,   0,       lynx128k,  lynx48k, camplynx_state,  lynx128k, "Camputers",  "Lynx 128k", 0 )

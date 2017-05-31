@@ -1682,7 +1682,7 @@ void gp32_state::machine_reset()
 	s3c240x_machine_reset();
 }
 
-static MACHINE_CONFIG_START( gp32, gp32_state )
+static MACHINE_CONFIG_START( gp32 )
 	MCFG_CPU_ADD("maincpu", ARM9, 40000000)
 	MCFG_CPU_PROGRAM_MAP(gp32_map)
 
@@ -1756,4 +1756,4 @@ ROM_START( gp32 )
 	ROMX_LOAD( "slubfw_pclink.bin", 0x000000, 0x080000, CRC(1a9a7135) SHA1(3b289ab3b199bbc4039a958ab7696867d3875a56), ROM_BIOS(20) )
 ROM_END
 
-CONS(2001, gp32, 0, 0, gp32, gp32, driver_device, 0, "Game Park Holdings", "GP32", ROT270|MACHINE_NOT_WORKING|MACHINE_NO_SOUND)
+CONS(2001, gp32, 0, 0, gp32, gp32, gp32_state, 0, "Game Park Holdings", "GP32", ROT270|MACHINE_NOT_WORKING|MACHINE_NO_SOUND)
