@@ -26,4 +26,4 @@ ROM_END
 
 
 
-GAME( 1992, fstarfrcc, fstarfrc, fstarfrc, fstarfrc, driver_device, 0, ROT90, "Tecmo", "Final Star Force (Chinese)", 0 )
+GAME( 1992, fstarfrcc, fstarfrc, fstarfrc, fstarfrc, tecmo16_state, 0, ROT90, "Tecmo", "Final Star Force (Chinese)", 0 )

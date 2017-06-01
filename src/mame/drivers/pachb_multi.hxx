@@ -1670,7 +1670,7 @@ ROM_END
  *
  *************************************/
 
-GAME( 1995, mschampx, mspacman, mschampx, mschamp,  driver_device, 0,        ROT90, "hack", "Ms. Pacman Champion Edition / Super Zola Pac Gal (hires hack)", MACHINE_SUPPORTS_SAVE )
+GAME( 1995, mschampx, mspacman, mschampx, mschamp,  pacman_state, 0,        ROT90, "hack", "Ms. Pacman Champion Edition / Super Zola Pac Gal (hires hack)", MACHINE_SUPPORTS_SAVE )
 
 /* Dave Widel's Games - http://www.widel.com */
 
@@ -1691,7 +1691,7 @@ GAME( 1998, multi14,  multi15,	multipac, multipac, pacman_state,  multipac, ROT9
 GAME( 1998, multi15,  0,	    multipac, multipac, pacman_state,  multipac, ROT90, "Clay Cowgill", "Multipac 1.5", MACHINE_SUPPORTS_SAVE )
 GAME( 2007, pm4n1,    puckman,  pm4n1,    pacman,  pacman_state,  pm4n1,    ROT90, "Jason Souza", "Pacman 4in1 v1.0 [c]", MACHINE_SUPPORTS_SAVE )
 GAME( 2007, pm4n1a,   puckman,  pm4n1,    pacman,  pacman_state,  pm4n1,    ROT90, "Jason Souza", "Pacman 4in1 v1.1 [c]", MACHINE_SUPPORTS_SAVE )
-GAME( 2007, pm4n1b,   puckman,  pm4n1,    pacman,  pacman_state,  pm4n1,    ROT90, "Jason Souza", "Pacman 4in1 v1.2 [c]", MACHINE_SUPPORTS_SAVE )	// www.souzaonline.com/Games/Hacks/4n1hack.htm
+GAME( 2007, pm4n1b,   puckman,  pm4n1,    pacman,  pacman_state,  pm4n1,    ROT90, "Jason Souza", "Pacman 4in1 v1.2 [c]", MACHINE_SUPPORTS_SAVE )	// arcade.souzaonline.com/downloads.html
 GAME( 2008, pm4n1c,   puckman,  pm4n1c,   pacman,  pacman_state,  pm4n1,    ROT90, "Jason Souza", "Pacman 4in1 v2.3 [c][h]", MACHINE_SUPPORTS_SAVE )
 GAME( 2009, pm4n1d,   puckman,  pm4n1d,   pacman,  pacman_state,  pm4n1,    ROT90, "Jason Souza", "Pacman 4in1 v3.0 [c][h]", MACHINE_SUPPORTS_SAVE )
 GAME( 2010, pm4n1e,   puckman,  pm4n1d,   pacman,  pacman_state,  pm4n1,    ROT90, "Jason Souza", "Pacman 4in1 v3.3 [c][h]", MACHINE_SUPPORTS_SAVE )
