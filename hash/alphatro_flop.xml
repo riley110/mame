@@ -53,7 +53,7 @@
 		</part>
 	</software>
 
-<!-- old raw dumps, currently not working
+<!-- old CPCDSK dumps made incorrectly, completely useless
 	<software name="cpm">
 		<description>CP/M</description>
 		<year>198?</year>
@@ -61,7 +61,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="338176">
-				<rom name="cpm.dsk" size="338176" crc="c7f83bf6" sha1="0dc6d2a95dcf2911d95425b7bee5d9fcc38e5296" offset="0" />
+				<rom name="cpm.dsk" size="338176" crc="c7f83bf6" sha1="0dc6d2a95dcf2911d95425b7bee5d9fcc38e5296" offset="0" status="baddump" />
 			</dataarea>
 		</part>
 	</software>
@@ -73,7 +73,7 @@
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="338176">
-				<rom name="diskbasic.dsk" size="338176" crc="07dce496" sha1="a48b4f722e14b2df0bd84ca6ff900905750b8934" offset="0" />
+				<rom name="diskbasic.dsk" size="338176" crc="07dce496" sha1="a48b4f722e14b2df0bd84ca6ff900905750b8934" offset="0" status="baddump" />
 			</dataarea>
 		</part>
 	</software>
