@@ -4,7 +4,7 @@
 
 	<software name="basic80">
 		<description>BASIC-80 (Rev. 5.26, 27-Oct-83)</description>
-		<year>1983</year>
+		<year>1984</year>
 		<publisher>Microsoft - Triumph-Adler</publisher>
 
 		<part name="flop1" interface="floppy_5_25">
@@ -14,7 +14,32 @@
 		</part>
 	</software>
 
-	<software name="cpm">
+	<software name="basic80a" cloneof="basic80">
+		<description>BASIC-80 (Rev. 5.26, 27-Oct-83, Alt)</description>
+		<year>1984</year>
+		<publisher>Microsoft - Triumph-Adler</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="55813">
+				<rom name="dskbasic.td0" size="64140" crc="38834574" sha1="27a813ba8f7bb7f024ff5ebc49374bd46e005c65" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpm2231">
+		<description>56K CP/M 2.2/3.1</description>
+		<year>1983</year>
+		<publisher>Triumph-Adler</publisher>
+		<info name="serial" value="17558"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="96368">
+				<rom name="roycpm.td0" size="128877" crc="bf47c534" sha1="e69cc39d9a6229c5e5a2055e8950d085b34e607d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpm2230" cloneof="cpm2231">
 		<description>56K CP/M 2.2/3.0</description>
 		<year>1983</year>
 		<publisher>Triumph-Adler</publisher>
@@ -26,8 +51,8 @@
 			</dataarea>
 		</part>
 	</software>
-	
-	<software name="cpma" cloneof="cpm">
+
+	<software name="cpm2230a" cloneof="cpm2231">
 		<description>56K CP/M 2.2/3.0 (Alt)</description>
 		<year>1983</year>
 		<publisher>Triumph-Adler</publisher>
@@ -40,7 +65,7 @@
 		</part>
 	</software>
 	
-	<software name="cpmb" cloneof="cpm">
+	<software name="cpm2230b" cloneof="cpm2231">
 		<description>56K CP/M 2.2/3.0 (Alt 2)</description>
 		<year>1983</year>
 		<publisher>Triumph-Adler</publisher>
@@ -52,31 +77,5 @@
 			</dataarea>
 		</part>
 	</software>
-
-<!-- old CPCDSK dumps made incorrectly, completely useless
-	<software name="cpm">
-		<description>CP/M</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="338176">
-				<rom name="cpm.dsk" size="338176" crc="c7f83bf6" sha1="0dc6d2a95dcf2911d95425b7bee5d9fcc38e5296" offset="0" status="baddump" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="basic">
-		<description>Disk BASIC</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="338176">
-				<rom name="diskbasic.dsk" size="338176" crc="07dce496" sha1="a48b4f722e14b2df0bd84ca6ff900905750b8934" offset="0" status="baddump" />
-			</dataarea>
-		</part>
-	</software>
--->
 
 </softwarelist>
