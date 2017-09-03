@@ -600,7 +600,7 @@ GAME( 2012, tinyworld, 0,        pacman,   mspacman, pacman_state, 0,        ROT
 /* Other Misc Hacks */
 
 GAME( 2002, crashh,    0,        woodpek,  mspacpls, pacman_state, 0,        ROT90,  "hack", "Crash (from HBMAME)", MACHINE_SUPPORTS_SAVE )
-GAME( 1981, mtturbo,   crush,    pacmanp,  maketrax, pacman_state, maketrax, ROT270, "Tim Arcadecollecting", "Make Trax (Turbo Hack)", MACHINE_SUPPORTS_SAVE ) // http://www.arcadecollecting.com/hacks/maketrax
+GAME( 1981, mtturbo,   crush,    pacman,   maketrax, pacman_state, maketrax, ROT270, "Tim Arcadecollecting", "Make Trax (Turbo Hack)", MACHINE_SUPPORTS_SAVE ) // http://www.arcadecollecting.com/hacks/maketrax
 GAME( 1999, tst_pacm,  0,        pacman,   mspacpls, pacman_state, 0,        ROT90,  "David Caldwell", "Test - Pacman Hardware", MACHINE_SUPPORTS_SAVE ) // http://www.porkrind.org/arcade/
 GAME( 1982, eyesbu,    eyes,     pacman,   eyes,     pacman_state, eyes,     ROT90,  "bootleg", "Eyes (unknown bootleg)", MACHINE_SUPPORTS_SAVE )
 GAME( 2016, ghohunt,   puckman,  pacman,   pacman,   pacman_state, 0,        ROT90,  "Hurray Banana", "Ghost Hunt", MACHINE_SUPPORTS_SAVE )
