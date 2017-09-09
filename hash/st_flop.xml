@@ -16909,18 +16909,6 @@
 		</part>
 	</software>
 
-	<software name="v8music" supported="no">
-		<description>V8 Music System (Bad?)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="368640">
-				<rom name="v8 music system (19xx)(-)[b].st" size="368640" crc="3c42d73d" sha1="93ce4a1f286a97418eb52fe2a1114a160820d8e4" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="vdifont" supported="no">
 		<description>VDI Font (v2.0)</description>
 		<year>1998</year>
@@ -29952,6 +29940,18 @@
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="asterix demo (19xx)(-).st" size="737280" crc="66036ee5" sha1="cbb1ff18e591cf398a597f52a3c7d137d80a4e5c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="discovery">
+		<description>Atari Discovery Pack</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="894488">
+				<rom name="atari discovery pack (19xx)(-).stx" size="894488" crc="7988c5f4" sha1="e42a654d706f8c0e2116bf83d33f4912695066bf" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -47326,6 +47326,1906 @@
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="737280">
 				<rom name="two in one v1.1 (1999-12-05)(dead hackers society)(se)(en).st" size="737280" crc="4f243cae" sha1="e10b8578b90aa5685267abb61c18563b397c881a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ulm93">
+		<description>ULM '93</description>
+		<year>1993</year>
+		<publisher>Unlimited Matricks</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="ulm '93 (1993-05)(unlimited matricks)(lu)(en).st" size="737280" crc="fe9b162a" sha1="c336d89ef79876594086afc68ba80639f2f71809" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ulm93a" cloneof="ulm93">
+		<description>ULM '93 (Alt)</description>
+		<year>19?93</year>
+		<publisher>Unlimited Matricks</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="ulm '93 (1993-05)(unlimited matricks)(lu)(en)[a].st" size="839680" crc="e8a0029f" sha1="bb67130b23e2f0220c042defac73c71e56e3558f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="umd8730">
+		<description>UMD 8730</description>
+		<year>2002</year>
+		<publisher>Psycho Hacking Force</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="umd 8730 (2002)(psycho hacking force)(gb)(disk 01 of 11)(boot).st" size="737280" crc="b71a6764" sha1="badba9e147c511cbef68dbb8d5b3fd1cc7bd4192" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="umd 8730 (2002)(psycho hacking force)(gb)(disk 02 of 11)(ac).st" size="737280" crc="aab1141e" sha1="4fa8b3b7bb16108a7f32619fd88cfb825a908861" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="umd 8730 (2002)(psycho hacking force)(gb)(disk 03 of 11)(cd).st" size="737280" crc="c194f6d9" sha1="ad81fb4755401740afd13119fbec9968de066c32" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="umd 8730 (2002)(psycho hacking force)(gb)(disk 04 of 11)(df).st" size="737280" crc="b9a58a40" sha1="98fd70bf87fa941ec154c1a69fba74532a5efd22" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="umd 8730 (2002)(psycho hacking force)(gb)(disk 05 of 11)(fj).st" size="737280" crc="c03e30ef" sha1="3b0f9b7a204f9c7e6a25228d03bfd48db82331ed" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="umd 8730 (2002)(psycho hacking force)(gb)(disk 06 of 11)(jl).st" size="737280" crc="bf296e3e" sha1="646eeddad33b98d580cf6a66c37e86b36df3f33b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="umd 8730 (2002)(psycho hacking force)(gb)(disk 07 of 11)(lm).st" size="737280" crc="cea58c14" sha1="9b90f3de29c69781adaa1119d555702eda8226da" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop8" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="umd 8730 (2002)(psycho hacking force)(gb)(disk 08 of 11)(mr).st" size="737280" crc="7a0076fa" sha1="d7d8d8b45c1fc51f929f1c259ffd32418173d2b1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop9" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="umd 8730 (2002)(psycho hacking force)(gb)(disk 09 of 11)(rt).st" size="737280" crc="e04a6ec3" sha1="c085fce65295caef6bec316d4dc602c93a86923a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop10" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="umd 8730 (2002)(psycho hacking force)(gb)(disk 10 of 11)(tx).st" size="737280" crc="3ab5573f" sha1="097d790a16bc2cd7e39263d4c9ca6c0cb3b0ca6c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop11" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="umd 8730 (2002)(psycho hacking force)(gb)(disk 11 of 11)(w).st" size="737280" crc="7c1e4250" sha1="58718201c73108a4ef0fbf8996c278dd657a4cc0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="usademo">
+		<description>The USA Demo</description>
+		<year>1991</year>
+		<publisher>Kris - Alex</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="usa demo, the (1991)(kris - alex)[dck].st" size="737280" crc="02c1b05a" sha1="1a5803b68e5ae867ef48e6013d5a3e9bce3d8135" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="usademoa" cloneof="usademo">
+		<description>The USA Demo (Alt)</description>
+		<year>1991</year>
+		<publisher>Kris - Alex</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="usa demo, the (1991)(kris - alex)[a][dck].st" size="737280" crc="bcec41d0" sha1="3ca6d6ca68d6c8976777c73954fadd9966b94314" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="usademob" cloneof="usademo">
+		<description>The USA Demo (Hacked)</description>
+		<year>1991</year>
+		<publisher>Kris - Alex - &lt;hack (tSCc)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="usa demo, the (1991)(kris - alex)[m tssc][dck].st" size="839680" crc="b621bb9b" sha1="7e38a9ce626cb22d5402427f8fd9bce20420529d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ullabella">
+		<description>Ulla Bella</description>
+		<year>1987</year>
+		<publisher>STacey</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="ulla bella (1987-12-12)(stacey).st" size="839680" crc="54379c77" sha1="0b0d92bb67416b2be7c34c5e389a5e2ff4ca1d7d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Requires TOS 1.04 or higher -->
+	<software name="ultdots">
+		<description>Ultimate 3D Dots</description>
+		<year>1993</year>
+		<publisher>Impact</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="849920">
+				<rom name="ultimate 3d dots (1993)(impact)(be)(en)[req tos 1.04 or higher].st" size="849920" crc="2133f1b7" sha1="734b1fadbf95364fa2bc4de213fe4184e27093c8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Requires TOS 1.04 or higher -->
+	<software name="ultdotsa" cloneof="ultdots">
+		<description>Ultimate 3D Dots (Alt)</description>
+		<year>1993</year>
+		<publisher>Impact</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="860160">
+				<rom name="ultimate 3d dots (1993)(impact)(be)(en)[a][req tos 1.04 or higher].st" size="860160" crc="856e9057" sha1="c6f519ddc0176702c3ea5dfb5e0ef86fabd7e7f4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ultdotsb" cloneof="ultdots">
+		<description>Ultimate 3D Dots (Alt 2)</description>
+		<year>1993</year>
+		<publisher>Impact</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="ultimate 3d dots (1993)(impact)(be)(en)[a2][req tos 1.04 or higher].st" size="829440" crc="ef0cf4a5" sha1="861e1733c172d3baa2798581064d037b0fa9a704" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ultchip">
+		<description>The Ultimate Chipdisk</description>
+		<year>19??</year>
+		<publisher>Supremacy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="849920">
+				<rom name="ultimate chipdisk, the (19xx)(supremacy).st" size="849920" crc="73447066" sha1="5962084ed8220f0e800fbf1abc61ec73d5884ea0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ultdemo">
+		<description>The Ultimate Demo</description>
+		<year>19??</year>
+		<publisher>Dynamic Duo</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="ultimate demo, the (19xx)(dynamic duo)(gb).st" size="409600" crc="f468dc8e" sha1="1fee406400dfe55719b0dd117bdec374f7e6a684" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ultdemoa" cloneof="ultdemo">
+		<description>The Ultimate Demo (Alt)</description>
+		<year>19??</year>
+		<publisher>Dynamic Duo</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="ultimate demo, the (19xx)(dynamic duo)(gb)[a].st" size="839680" crc="f65e5ff6" sha1="29d505b817156b542f968fc22a3b5a33091ac022" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ultdemob" cloneof="ultdemo">
+		<description>The Ultimate Demo (Alt 2)</description>
+		<year>19??</year>
+		<publisher>Dynamic Duo</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="419840">
+				<rom name="ultimate demo, the (19xx)(dynamic duo)(gb)[a2].st" size="419840" crc="e580df0b" sha1="0edcb68a1f850fc5009fbd2928ac135d630bc17b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ultgfa">
+		<description>Ultimate GFA Demo</description>
+		<year>1990</year>
+		<publisher>Overlanders</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="912384">
+				<rom name="ultimate gfa demo (1990-05-27)(overlanders)(fr)(en).st" size="912384" crc="45db5956" sha1="da17ed3a9e5c2327009ad4f33ce78b478f4005aa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ultgfaa" cloneof="ultgfa">
+		<description>Ultimate GFA Demo (Alt)</description>
+		<year>1990</year>
+		<publisher>Overlanders</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="923648">
+				<rom name="ultimate gfa demo (1990-05-27)(overlanders)(fr)(en)[a].st" size="923648" crc="46131ef0" sha1="d7ef4a47df0d1873d1ea1dac0ec4459a0a86de7b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ultgfab" cloneof="ultgfa">
+		<description>Ultimate GFA Demo (Alt 2)</description>
+		<year>1990</year>
+		<publisher>Overlanders</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="923648">
+				<rom name="ultimate gfa demo (1990-05-27)(overlanders)(fr)(en)[a2].st" size="923648" crc="07bd0f76" sha1="d33f967b338f2b207530a42163fbb01a9f5b4753" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ultgfac" cloneof="ultgfa">
+		<description>Ultimate GFA Demo (Hacked)</description>
+		<year>1990</year>
+		<publisher>Overlanders - &lt;hack (Megatari)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="ultimate gfa demo (1990-05-27)(overlanders)(fr)(en)[m megatari].st" size="819200" crc="e38d065a" sha1="9f702d161913f6f2752d8990715021c7ce35a13e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ultgfa2">
+		<description>Ultimate GFA Demo II</description>
+		<year>1992</year>
+		<publisher>Anti Assembleur Team</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="ultimate gfa demo ii (1992-05)(anti assembleur team).st" size="737280" crc="0d5f4f9d" sha1="8548edd83256dea16111ca130dd17645eb4fc3c1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ultmusic">
+		<description>Ultimate Music Collector</description>
+		<year>1991</year>
+		<publisher>Mad Vision</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="ultimate music collector (1991)(mad vision)(be)(en).st" size="839680" crc="b10c81f1" sha1="3aea61cd45a52a4a6f45850327c5b2c4db308185" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ultmusica" cloneof="ultmusic">
+		<description>Ultimate Music Collector (Alt)</description>
+		<year>1991</year>
+		<publisher>Mad Vision</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="ultimate music collector (1991)(mad vision)(be)(en)[a].st" size="829440" crc="3e9723f6" sha1="2f784a3bb974dbeb4e16e809bedfd43a8f5771db" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ultstr">
+		<description>The Ultimate Soundtrack Routine</description>
+		<year>19??</year>
+		<publisher>Prism</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="ultimate soundtrack routine, the (19xx)(prism).st" size="839680" crc="b143026a" sha1="e76d224ca51c674cd5b8a2d48bc036cae83e4add" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- XXX -->
+	<software name="ultx">
+		<description>The Ultimate X Demo</description>
+		<year>1994</year>
+		<publisher>ACCS</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="ultimate x demo, the (1994)(accs)(fr)(en)[xxx].st" size="829440" crc="24165c0a" sha1="3c1a8effd79d41810b8ecd515ac0c707c61c8d4a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- XXX -->
+	<software name="ultxpic">
+		<description>The Ultimate X-Pic Slide Show</description>
+		<year>19??</year>
+		<publisher>The Legion</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="923648">
+				<rom name="ultimate x-pic slide show, the (19xx)(the legion)(se)(en)[xxx].st" size="923648" crc="00aef10f" sha1="17b06cc36bc8b247571fa7c21ce7bec95b4b5136" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ultravox">
+		<description>The Ultravox Demo</description>
+		<year>1988</year>
+		<publisher>THe Magic Hackers</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="ultravox demo, the (1988-08-26)(the magic hackers)(se).st" size="737280" crc="5961806b" sha1="5b6a540bc5f60da2691d040659c105b41ac147b9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="uniondemo">
+		<description>The Union Demo</description>
+		<year>1989</year>
+		<publisher>Union</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="924380">
+				<rom name="union demo, the (1989-01)(union).stx" size="924380" crc="99dccd63" sha1="b7508f2eb56771ae79099b2bcf3f7ecd9e555a2f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="uniondemoa" cloneof="uniondemo">
+		<description>The Union Demo (Alt)</description>
+		<year>1989</year>
+		<publisher>Union</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="924380">
+				<rom name="union demo, the (1989-01)(union)[a].stx" size="924380" crc="5cf6a669" sha1="fa6dab0c7190263f138b696fa73298bd63e74e3e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="univpict">
+		<description>Universal Pictures</description>
+		<year>1990</year>
+		<publisher>Aggression</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="universal pictures (1990-08)(aggression)(fi)(en).st" size="737280" crc="b4486f48" sha1="1739f96b2e93f5715e950c6497a4d27d2aa5e00c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unnamed">
+		<description>Unnamed Demo and Sources</description>
+		<year>1993</year>
+		<publisher>Dracula</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="unnamed demo and sources (1993-07-19)(dracula).st" size="737280" crc="86a79b01" sha1="46a2ba53649588c17edc4e293e0839b47ce06a28" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Needs to be unprotected -->
+	<software name="upscale">
+		<description>The Upscale Mega Demo</description>
+		<year>1993</year>
+		<publisher>Ellipse</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="upscale mega demo, the (1993)(ellipse)[needs to be unprotected].st" size="829440" crc="a974e826" sha1="6140723803ac2d57593511c0f48725952ae5e1d5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="utopia2">
+		<description>Utopia Data Disk 2</description>
+		<year>19??</year>
+		<publisher>ICS</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="utopia data disk 2 (19xx)(ics).st" size="839680" crc="8a07526b" sha1="8640dfc81fd356ca2a7ccb3f5c38a3f53b0c5b66" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="v8music">
+		<description>V8 Music System</description>
+		<year>1990</year>
+		<publisher>The Marvellous V8</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="v8 music system (1990)(the marvellous v8)(fr)(en-fr).st" size="368640" crc="b48ec2c4" sha1="59c195898e1ebbb1559353d271a9424a40cc0973" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="v8musica" cloneof="v8music">
+		<description>V8 Music System (Alt)</description>
+		<year>1990</year>
+		<publisher>The Marvellous V8</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="v8 music system (1990)(the marvellous v8)(fr)(en-fr)[a].st" size="368640" crc="733c5279" sha1="238109a335044e15bb6306599c72caacab102e5a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="v8music2">
+		<description>V8 Music System 2</description>
+		<year>1990</year>
+		<publisher>The Empire - The Marvellous V8</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="377856">
+				<rom name="v8 music system 2 (1990-02-05)(the empire - the marvellous v8)(fr)(en).st" size="377856" crc="05670bd2" sha1="639da77433e2e9fc22a271e088b274de84fffe2b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vgaslide1">
+		<description>VGA Slideshow 1</description>
+		<year>1990</year>
+		<publisher>Percy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="vga slideshow 1 (1990)(percy).st" size="839680" crc="4f6183cf" sha1="7cb2d4a9b8f60b928a3110fe68a902b4da1ec366" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vgaslide2">
+		<description>VGA Slideshow 2</description>
+		<year>1990</year>
+		<publisher>Percy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="vga slideshow 2 (1990)(percy).st" size="839680" crc="5f42f92e" sha1="d4b307465b6bcfbc588d0935e07d839e3032b5ce" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vgaslide2a" cloneof="vgaslide2">
+		<description>VGA Slideshow 2 (Alt)</description>
+		<year>1990</year>
+		<publisher>Percy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="vga slideshow 2 (1990)(percy)[a].st" size="819200" crc="b73971bb" sha1="43f404671b47c88548c50e65ec7d381e37959aad" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vgaslide3">
+		<description>VGA Slideshow 3</description>
+		<year>1990</year>
+		<publisher>Percy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="vga slideshow 3 (1990)(percy).st" size="839680" crc="0661f1c1" sha1="9809e3c0b7fdc6d66bf3a1de9a7b7f5527a301a1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vgaslide3a" cloneof="vgaslide3">
+		<description>VGA Slideshow 3 (Alt)</description>
+		<year>1990</year>
+		<publisher>Percy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="vga slideshow 3 (1990)(percy)[a].st" size="819200" crc="bac54e4f" sha1="7da2b6a16545a79ed471e9770771fe08515d9dd1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vectballs">
+		<description>Vectorballs - The Red Sector Screen</description>
+		<year>1994</year>
+		<publisher>The Lost Boys</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="vectorballs - the red sector screen (1994)(the lost boys)(gb).st" size="368640" crc="67635eca" sha1="6a5ab5440d97932e6176dd97f608e96a53af536e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ventilat">
+		<description>Ventilator</description>
+		<year>19??</year>
+		<publisher>Black Boxes</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="ventilator (19xx)(black boxes).st" size="839680" crc="84fb69d3" sha1="26659be3b67555a981e94c57084a2d94eaa957ed" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ventilata" cloneof="ventilat">
+		<description>Ventilator (Alt)</description>
+		<year>19??</year>
+		<publisher>Black Boxes</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="746496">
+				<rom name="ventilator (19xx)(black boxes)[a].st" size="746496" crc="50d10c6d" sha1="92bb31ca91ebff57f1f8b067b9a565d5cf10dabd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ventura">
+		<description>The Ventura Demo</description>
+		<year>1992</year>
+		<publisher>Overlanders</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="ventura demo, the (1992-11)(overlanders)(fr)(en)(disk 1 of 2).st" size="829440" crc="26d9d88f" sha1="7f1665c8c12f92ca07c45cef0f911aabadb42cbd" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="ventura demo, the (1992-11)(overlanders)(fr)(en)(disk 2 of 2).st" size="829440" crc="ffff521c" sha1="a11b774e1a053a24b3cd005c5957522ac5ca109d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="venturaa" cloneof="ventura">
+		<description>The Ventura Demo (Alt)</description>
+		<year>1992</year>
+		<publisher>Overlanders</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="ventura demo, the (1992-11)(overlanders)(fr)(en)(disk 1 of 2)[a].st" size="829440" crc="a6927a2b" sha1="3ee684299d1f2c24228f389d90fa0677676cf296" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="ventura demo, the (1992-11)(overlanders)(fr)(en)(disk 2 of 2)[a].st" size="829440" crc="4fc593f3" sha1="67362bab8a9468d11a5770293c2252fd47b65eed" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="venturab" cloneof="ventura">
+		<description>The Ventura Demo (Alt 2)</description>
+		<year>1992</year>
+		<publisher>Overlanders</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="ventura demo, the (1992-11)(overlanders)(fr)(en)(disk 1 of 2)[a2].st" size="829440" crc="740cbb40" sha1="59805b18b43a9b8bbf3ebef9a62f92ca735602d1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="ventura demo, the (1992-11)(overlanders)(fr)(en)(disk 2 of 2)[a2].st" size="839680" crc="b51a3ed1" sha1="fddd7f3da3d71e8982461be0f41d4f7b22892a59" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="venturac" cloneof="ventura">
+		<description>The Ventura Demo (Alt 3)</description>
+		<year>1992</year>
+		<publisher>Overlanders</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="ventura demo, the (1992-11)(overlanders)(fr)(en)(disk 1 of 2)[a3].st" size="829440" crc="3119f8bd" sha1="db10f5d4f74118bd88d232b2c64a0ea7eee1b51e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="ventura demo, the (1992-11)(overlanders)(fr)(en)(disk 2 of 2)[a3].st" size="829440" crc="86600b92" sha1="7af5e0cd45294685caf78946c41b2621d30aac23" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="venturad" cloneof="ventura">
+		<description>The Ventura Demo (Alt 4)</description>
+		<year>1992</year>
+		<publisher>Overlanders</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="ventura demo, the (1992-11)(overlanders)(fr)(en)(disk 1 of 2)[a4].st" size="829440" crc="2b2c63ed" sha1="cd9668ddf2bec3f04b915b805bb90f8fc069f4d4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="ventura demo, the (1992-11)(overlanders)(fr)(en)(disk 2 of 2)[a4].st" size="829440" crc="388684b1" sha1="00369e0580b4d58c203bca1187b3c4ef9a986a57" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vexirik">
+		<description>Vexirik Megademo</description>
+		<year>1993</year>
+		<publisher>Black Eagle</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="vexirik megademo (1993)(black eagle)(disk 1 of 2)[stos].st" size="737280" crc="8005f86e" sha1="57089d13f35228b01b9c799e832c3e100aa4c092" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="vexirik megademo (1993)(black eagle)(disk 2 of 2)[stos].st" size="829440" crc="ed477a3f" sha1="45ce8d50b7bb3f8e400fe3f1bd7352612e609b84" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- XXX -->
+	<software name="teresa">
+		<description>Video Teresa Orlowski Presents...</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="video teresa orlowski presents... (19xx)(-)[xxx].st" size="737280" crc="6bc558e8" sha1="55436d45213874aff3c391f356b5fd0cc35d6974" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- XXX -->
+	<software name="vinter93">
+		<description>Vinterdemo Julen 1993</description>
+		<year>1993</year>
+		<publisher>Crackodiles</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="1474560">
+				<rom name="vinterdemo julen 1993 (1993-12-23)(crackodiles)[stos not ste][xxx].st" size="1474560" crc="f598b23c" sha1="f7ddb1d8c786266750128b0e1349e6bc359ad4e6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vescape">
+		<description>Virtual Escape</description>
+		<year>1999</year>
+		<publisher>Equinox</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="virtual escape (1999-04)(equinox).st" size="819200" crc="46ccede4" sha1="98c700b9a8dfdb842fe523aad24fa4253606fab7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="visillus">
+		<description>Visual Illusions</description>
+		<year>1994</year>
+		<publisher>Blue Jeans</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="visual illusions (1994)(blue jeans).st" size="839680" crc="8614eb22" sha1="b5528244eb6f7f1d10ce3f4e607c8dc04681299c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vodka">
+		<description>The Vodka Demo</description>
+		<year>1991</year>
+		<publisher>Equinox</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="808960">
+				<rom name="vodka demo, the (1991-06)(equinox).st" size="808960" crc="c0424fc7" sha1="ba017eec7963e4077586207135f8abc61e40faa0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vodkaa" cloneof="vodka">
+		<description>The Vodka Demo (Alt)</description>
+		<year>1991</year>
+		<publisher>Equinox</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="vodka demo, the (1991-06)(equinox)[a].st" size="829440" crc="1c2d731c" sha1="5513dbb8026d90d30623628766e9392f5334a0a4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vodkab" cloneof="vodka">
+		<description>The Vodka Demo (Alt 2)</description>
+		<year>1991</year>
+		<publisher>Equinox</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="vodka demo, the (1991-06)(equinox)[a2].st" size="829440" crc="1af1da16" sha1="23e172d9b65eb33e1eeed50f4ba65416e84f84e0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vodkac" cloneof="vodka">
+		<description>The Vodka Demo (Alt 3)</description>
+		<year>1991</year>
+		<publisher>Equinox</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="vodka demo, the (1991-06)(equinox)[a3].st" size="829440" crc="af33cfb3" sha1="7bf2f3e240693e31bccdd64ce0fae1205ffce6ec" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="vodkad" cloneof="vodka">
+		<description>The Vodka Demo (Alt 4)</description>
+		<year>1991</year>
+		<publisher>Equinox</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="vodka demo, the (1991-06)(equinox)[a4].st" size="839680" crc="6ab591d1" sha1="31488222d0139d713590c628f65943b0aaf93489" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="volcanic">
+		<description>Volcanic Mods</description>
+		<year>1995</year>
+		<publisher>Buster and The Beast</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="volcanic mods (1995)(buster and the beast)(be)(en)(disk 1 of 2).st" size="839680" crc="b895af27" sha1="c883b04e0dd713f15663f09341d99c62d71b5e39" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="volcanic mods (1995)(buster and the beast)(be)(en)(disk 2 of 2).st" size="839680" crc="59beaeb3" sha1="eae063a0432a1509286984a99e48e8e07391b820" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="volcanica" cloneof="volcanic">
+		<description>Volcanic Mods (Alt)</description>
+		<year>1995</year>
+		<publisher>Buster and The Beast</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="volcanic mods (1995)(buster and the beast)(be)(en)(disk 1 of 2)[a].st" size="839680" crc="3c05377d" sha1="b3cf78fdff044c28c09327538490b7eedeb5d4a1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="volcanic mods (1995)(buster and the beast)(be)(en)(disk 2 of 2)[a].st" size="839680" crc="0e881159" sha1="bca7bb18e9b5576a83d1f5b96ed22c33e29304a4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="waitapoc">
+		<description>Waiting for Apocalypse</description>
+		<year>2000</year>
+		<publisher>Loud Production</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="waiting for apocalypse (2000-09)(loud production).st" size="737280" crc="94d92315" sha1="6f3bc3b071e30dce9ee3eaad02f36945beec2ddb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="waitapoca" cloneof="waitapoc">
+		<description>Waiting for Apocalypse (Alt)</description>
+		<year>2000</year>
+		<publisher>Loud Production</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="waiting for apocalypse (2000-09)(loud production)[a].st" size="737280" crc="f53d9327" sha1="51ee7ebe98da4324d910d98c119a5348436dd9fc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="waitfalc">
+		<description>Waiting the Falcon</description>
+		<year>1992</year>
+		<publisher>Extract</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="waiting the falcon (1992)(extract).st" size="839680" crc="6e174952" sha1="e692b7cf52514035f5710910a2c0c64086305a71" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 1MB -->
+	<software name="walker1">
+		<description>Walker Demo 1</description>
+		<year>19??</year>
+		<publisher>Imaginetics - Radical Systemz</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="walker demo 1 (19xx)(imaginetics - radical systemz)[1mb].st" size="737280" crc="2b664a2f" sha1="7f7141f5079ec0e77f4ee22ccbb0d5e286e2f9c5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 1MB -->
+	<software name="walker2">
+		<description>Walker Demo 2</description>
+		<year>19??</year>
+		<publisher>Imaginetics - Radical Systemz</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="walker demo 2 (19xx)(imaginetics - radical systemz)[1mb].st" size="737280" crc="97a29505" sha1="f4e0fccacf9296f8ca4a8bfc402df1317a638251" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wangel">
+		<description>Wangel Sucker</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="849920">
+				<rom name="wangel sucker (19xx)(-).st" size="849920" crc="fb2c5318" sha1="8110e5dc471bb748d1f97902a820b7b5a38ca789" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="warnsign12">
+		<description>Warning Sign Demo 1 &amp; 2 (Hacked)</description>
+		<year>19??</year>
+		<publisher>&lt;hack (Megatari)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="warning sign demo 1 &amp; 2 (19xx)(-)[m megatari][stos].st" size="737280" crc="673e3c27" sha1="e90211d9f68c21c6c99c72ef0f5dd95ab9670aa8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="warnsign12a" cloneof="warnsign12">
+		<description>Warning Sign Demo 1 &amp; 2 (Hacked, Alt)</description>
+		<year>19??</year>
+		<publisher>&lt;hack (Megatari)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="warning sign demo 1 &amp; 2 (19xx)(-)[m2 megatari][a][stos].st" size="819200" crc="9400be61" sha1="f663d4c5d483c30e412d5b3d34263e8b793a2b2d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="warnsign3">
+		<description>Warning Sign Demo 3</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="warning sign demo 3 (19xx)(-)[stos not ste].st" size="819200" crc="aeb7dc3a" sha1="d02840c182753f52248c02516aa9d7fc7102d117" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="warnsign3a" cloneof="warnsign3">
+		<description>Warning Sign Demo 3 (Hacked)</description>
+		<year>19??</year>
+		<publisher>&lt;hack (Megatari)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="warning sign demo 3 (19xx)(-)[m megatari][a][stos].st" size="737280" crc="3a7b151e" sha1="2fe611111c50c28e0fd5848594247afd219f4d57" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="watchmen">
+		<description>Watchmen Unreleased Megademo</description>
+		<year>19??</year>
+		<publisher>The Watchmen</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="watchmen unreleased megademo (19xx)(the watchmen)(gb).st" size="409600" crc="c03ec691" sha1="57177d1cbc2a68163254318c15ab4671a6f8e82d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="waveforms">
+		<description>Waveforms</description>
+		<year>19??</year>
+		<publisher>The Wild Boys</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="waveforms (19xx)(the wild boys)(gb).st" size="819200" crc="242d81f8" sha1="2ef36fcb79281c6d3637f28fa755763afad4109c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="waveformsa" cloneof="waveforms">
+		<description>Waveforms (Alt)</description>
+		<year>19??</year>
+		<publisher>The Wild Boys</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="waveforms (19xx)(the wild boys)(gb)[a].st" size="839680" crc="e00c1285" sha1="a1d89ebbe6b79839109ecc88d2b36b02ed064475" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wechamps">
+		<description>We are the Champs</description>
+		<year>1990</year>
+		<publisher>The Crazy Guys</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="we are the champs (1990)(the crazy guys)(se)(en).st" size="737280" crc="ddb37925" sha1="c74c62977bbc36e5968d3c2222c190e49e19f6d2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wdcrack">
+		<description>Weird Dreams Crack Intro</description>
+		<year>19??</year>
+		<publisher>The Marvellous V8</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="weird dreams crack intro (19xx)(the marvellous v8)(fr)(en).st" size="737280" crc="f1eeda81" sha1="b2038361648b92d14e3d33c5a7033345298431ef" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="weissnich">
+		<description>Weissnich Demo</description>
+		<year>19??</year>
+		<publisher>The New Ambitious Teenage Organization</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="weissnich demo (19xx)(the new ambitious teenage organization).st" size="737280" crc="9541d7f3" sha1="facdac2c0ab45fe67a1a8895782414cc440e6677" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- monochrome -->
+	<software name="werner">
+		<description>Werner Daumenkino (Ger)</description>
+		<year>1990</year>
+		<publisher>Guennda</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="werner daumenkino (1990-03)(guennda)(de)[monochrome].st" size="737280" crc="26db47b0" sha1="a3305010ce55f90430373b2163ea987598e62b65" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="whattime">
+		<description>What Time Is It</description>
+		<year>1990</year>
+		<publisher>Offbeat</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="655360">
+				<rom name="what time is it (1990-03-30)(offbeat)(de)(en)[not ste].st" size="655360" crc="52384391" sha1="a0347b78cde529438d7de37da56a8ccd619caf87" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="whattaheck">
+		<description>Whattaheck Demo</description>
+		<year>1989</year>
+		<publisher>The Carebears</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="whattaheck demo (1989-05)(the carebears)(se)(en).st" size="839680" crc="bbdd0b24" sha1="a9be440d376447d7f03263bc077608af0d22e6e7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wmdbart">
+		<description>Wheres My Dick - Bartman</description>
+		<year>1991</year>
+		<publisher>Crystalic</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="wheres my dick - bartman (1991)(crystalic)(se)(en-se).st" size="737280" crc="13f83bcb" sha1="196caf05b5e3cce94cb90db4e9c8e5897629dce6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wilddemo">
+		<description>The Wild Demo</description>
+		<year>1991</year>
+		<publisher>The Wild Boys</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="755712">
+				<rom name="wild demo, the (1991-01)(the wild boys)(gb).st" size="755712" crc="717b132f" sha1="470439aedac8d0d49ad39f8ad35868460c55cd43" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wizdemo1">
+		<description>Wiz Demo 1</description>
+		<year>19??</year>
+		<publisher>Wiz</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="wiz demo 1 (19xx)(wiz).st" size="839680" crc="eb377f3d" sha1="ffa9826def1c1201ce347a74df5fd126d9989ee3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wizdemo2">
+		<description>Wiz Demo 2</description>
+		<year>19??</year>
+		<publisher>Wiz</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="849920">
+				<rom name="wiz demo 2 (19xx)(wiz).st" size="849920" crc="f9c6d0cf" sha1="0f0d52630acd8a6a2d78d5fc55a4786640fac46b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wolverine">
+		<description>Wolverine Megademo</description>
+		<year>1991</year>
+		<publisher>Amadeus Wolf Gang</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="wolverine megademo (1991)(amadeus wolf gang).st" size="839680" crc="6896f724" sha1="6ebdb69333816452d96320fba1f3095b5744abc9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="wolverinea" cloneof="wolverine">
+		<description>Wolverine Megademo (Alt)</description>
+		<year>1991</year>
+		<publisher>Amadeus Wolf Gang</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="wolverine megademo (1991)(amadeus wolf gang)[a].st" size="839680" crc="f6321617" sha1="5a04166f9133385723fa84cd5e0f40fed11bda8d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="woyster">
+		<description>The World is my Oyster</description>
+		<year>1992</year>
+		<publisher>Aura</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="world is my oyster, the (1992-03)(aura)(de)(en).st" size="737280" crc="b599d328" sha1="e0e82a282a3365401bfe658f733c519ea7b1383b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="woystera" cloneof="woyster">
+		<description>The World is my Oyster (Alt)</description>
+		<year>1992</year>
+		<publisher>Aura</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="world is my oyster, the (1992-03)(aura)(de)(en)[a].st" size="737280" crc="ccb3c6a9" sha1="6b0c0444250a4177f2a49cc18d280cd4bd571f69" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="woysterb" cloneof="woyster">
+		<description>The World is my Oyster (Alt 2)</description>
+		<year>1992</year>
+		<publisher>Aura</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="world is my oyster, the (1992-03)(aura)(de)(en)[a2].st" size="737280" crc="1e0e1475" sha1="55770e1e7721992831958c9139d4576eda84e71e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="woysterc" cloneof="woyster">
+		<description>The World is my Oyster (Alt 3)</description>
+		<year>1992</year>
+		<publisher>Aura</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="world is my oyster, the (1992-03)(aura)(de)(en)[a3].st" size="737280" crc="93582684" sha1="942bb2b6cacec2bf052fc4ad96ebfa4f43360a8d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="woysterd" cloneof="woyster">
+		<description>The World is my Oyster (Alt 4)</description>
+		<year>1992</year>
+		<publisher>Aura</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="755712">
+				<rom name="world is my oyster, the (1992-03)(aura)(de)(en)[a4].st" size="755712" crc="ccdc6b96" sha1="bfe191d3de8ec06d171a9ee3773654742e8d6d4e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="woystere" cloneof="woyster">
+		<description>The World is my Oyster (Alt 5)</description>
+		<year>1992</year>
+		<publisher>Aura</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="world is my oyster, the (1992-03)(aura)(de)(en)[a5].st" size="737280" crc="fcb28ce4" sha1="7252f17dd78a2961b3d6c51fe65019d49c496f47" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="worldmus">
+		<description>World of Music</description>
+		<year>1993</year>
+		<publisher>New Power Generation</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="world of music (1993-08)(new power generation)(fr)(en).st" size="839680" crc="224f6f7f" sha1="3a9b8761b441eefc56d7ee24fa01f0fc1ef09751" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="worldmusa" cloneof="worldmus">
+		<description>World of Music (Alt)</description>
+		<year>1993</year>
+		<publisher>New Power Generation</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="world of music (1993-08)(new power generation)(fr)(en)[a].st" size="839680" crc="5de423f1" sha1="e43fa664bc10099bb0b34c1ef153a16b9bca08fa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="worldmusb" cloneof="worldmus">
+		<description>World of Music (Alt 2)</description>
+		<year>1993</year>
+		<publisher>New Power Generation</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="849920">
+				<rom name="world of music (1993-08)(new power generation)(fr)(en)[a2].st" size="849920" crc="519ff8e4" sha1="0cd49659ac656d31de048e732b8774ed924f2769" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="worldwon1">
+		<description>World of Wonders (New Power Generation)</description>
+		<year>1993</year>
+		<publisher>New Power Generation</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="849920">
+				<rom name="world of wonders (1993)(new power generation)(fr)(en).st" size="849920" crc="34c11d91" sha1="4bce3a0322119e58abe0fb42b3a3f5e052f2a230" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="worldwon1a" cloneof="worldwon1">
+		<description>World of Wonders (New Power Generation) (Alt)</description>
+		<year>1993</year>
+		<publisher>New Power Generation</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="849920">
+				<rom name="world of wonders (1993)(new power generation)(fr)(en)[a].st" size="849920" crc="af984d71" sha1="6ec818faab49e9ddcdd6759b03e87eff5dfd7633" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- Is this a single two-disk release? -->
+	<software name="worldwon2_1">
+		<description>World of Wonders Disk I (Dune - Fantasy)</description>
+		<year>1993</year>
+		<publisher>Dune - Fantasy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="world of wonders disk i (1993)(dune - fantasy)(fr)(en).st" size="819200" crc="884aa6ad" sha1="5349afc1ec7ae40b837297ec171943d605c8f3a7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="worldwon2_1a" cloneof="worldwon2_1">
+		<description>World of Wonders Disk I (Dune - Fantasy) (Alt)</description>
+		<year>1993</year>
+		<publisher>Dune - Fantasy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="world of wonders disk i (1993)(dune - fantasy)(fr)(en)[a].st" size="839680" crc="1c1e25e9" sha1="a11e4ab54b005af8b54d4e69e1597b1119c8414f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="worldwon2_2">
+		<description>World of Wonders Disk II (Dune - Fantasy)</description>
+		<year>1993</year>
+		<publisher>Dune - Fantasy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="world of wonders disk ii (1993)(dune - fantasy)(fr)(en).st" size="819200" crc="3df9f9a5" sha1="490cd897bb5e3528d662da61ce78770841f94709" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="worldwon2_2a" cloneof="worldwon2_2">
+		<description>World of Wonders Disk II (Dune - Fantasy) (Alt)</description>
+		<year>1993</year>
+		<publisher>Dune - Fantasy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="world of wonders disk ii (1993)(dune - fantasy)(fr)(en)[a].st" size="839680" crc="2d13e397" sha1="5ec656f3ae8fd4812aebd2cdeb88934729da85b1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="xfiles">
+		<description>The X-Files Demo</description>
+		<year>1996</year>
+		<publisher>Martin Cubitt</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="x-files demo, the (1996-03)(cubitt, martin)[stos].st" size="839680" crc="b0e117fa" sha1="85442cf31b1a65aef5b5ffb2d9266b4e6fa615c1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- XXX -->
+	<software name="xshow1">
+		<description>X-Show 1</description>
+		<year>19??</year>
+		<publisher>Dune</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="x-show 1 (19xx)(dune)(fr)(en)[xxx].st" size="839680" crc="4aab098a" sha1="d64c4ca79db58a77c8086c61970d52037dd226a1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="xmdemo">
+		<description>XM Demo</description>
+		<year>19??</year>
+		<publisher>Benji Jumpers</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="491520">
+				<rom name="xm demo (19xx)(benji jumpers)(fr)[b][dck].st" size="491520" crc="920ec7cf" sha1="bae49985b15de8d62cdb1a1e02b6d28358b91c31" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="xtcdemo">
+		<description>XTC Demo</description>
+		<year>1990</year>
+		<publisher>The Alliance</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="xtc demo (1990)(the alliance)(de)(en).st" size="819200" crc="3e065312" sha1="c5ea5a45d10e847d6c4f439d547300131582f961" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="xtcdemoa" cloneof="xtcdemo">
+		<description>XTC Demo (Alt)</description>
+		<year>1990</year>
+		<publisher>The Alliance</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="xtc demo (1990)(the alliance)(de)(en)[a].st" size="839680" crc="e41f75e8" sha1="f3aaa20bb094c178548ad30e695180c7f321d2e5" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="xtcdemob" cloneof="xtcdemo">
+		<description>XTC Demo (Alt 2)</description>
+		<year>1990</year>
+		<publisher>The Alliance</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="xtc demo (1990)(the alliance)(de)(en)[a2].st" size="839680" crc="b530ffa8" sha1="2863a466aebd1e96d0e1b7c2ff525c5204d70ccc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="xxxinter">
+		<description>XXX International Demo</description>
+		<year>1988</year>
+		<publisher>XXX International</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="409600">
+				<rom name="xxx international demo (1988-07-01)(xxx international).st" size="409600" crc="5e1304e8" sha1="b5729c663f3b662b8bb903f2234c2e6a6e33ec6b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="xxxintera" cloneof="xxxinter">
+		<description>XXX International Demo (Alt)</description>
+		<year>1988</year>
+		<publisher>XXX International</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="xxx international demo (1988-07-01)(xxx international)[a].st" size="839680" crc="1a397c71" sha1="c8d7dc3150caa79b28a37e235042833aa0a93439" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="xdream">
+		<description>Xdream</description>
+		<year>19??</year>
+		<publisher>The Naughty Bytes</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="923648">
+				<rom name="xdream (19xx)(the naughty bytes)(de)(en).st" size="923648" crc="fa7cb50e" sha1="d3073748977ed6bd54b1df52b222a1b31641ff19" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="xmas93">
+		<description>Xmas '93</description>
+		<year>1993</year>
+		<publisher>Positivity</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="xmas '93 (1993)(positivity)(fr)(en).st" size="737280" crc="f56e0b16" sha1="7ca333e09ed4aa16ee92edf46b4af806cd2e63f6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="desmoule">
+		<description>Y'a Des Moules dans le RER (Fra)</description>
+		<year>1993</year>
+		<publisher>Amnesic CactuS - Fantasy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="y'a des moules dans le rer (1993)(amnesic cactus - fantasy)(fr).st" size="819200" crc="f651824f" sha1="9aeae9ff04ae8c95f770555302edce986b81e280" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="desmoulea" cloneof="desmoule">
+		<description>Y'a Des Moules dans le RER (Fra, Alt)</description>
+		<year>1993</year>
+		<publisher>Amnesic CactuS - Fantasy</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="y'a des moules dans le rer (1993)(amnesic cactus - fantasy)(fr)[a].st" size="839680" crc="b88ca611" sha1="7ce26128e315ddd0ec22e4085c7681a5531aafcb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ym50k">
+		<description>YM 50k Demo</description>
+		<year>2005</year>
+		<publisher>Paulo Simoes</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="ym 50k demo (2005-03-28)(simoes, paulo)(pt)(en)(disk 1 of 5).st" size="839680" crc="0c0c886d" sha1="14627b5fa36539cda73a7f0bd5e845cccd2b0bc1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="ym 50k demo (2005-03-28)(simoes, paulo)(pt)(en)(disk 2 of 5).st" size="839680" crc="bf162a57" sha1="0409424cad17b245170b4bc7255bccc683d21513" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="ym 50k demo (2005-03-28)(simoes, paulo)(pt)(en)(disk 3 of 5).st" size="839680" crc="659526b9" sha1="1dc1b484168c4c3983da8431a22f024f64a9d18a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="ym 50k demo (2005-03-28)(simoes, paulo)(pt)(en)(disk 4 of 5).st" size="839680" crc="5a4d84f7" sha1="d23ee6480fdb51075f984a9e8a88d5070b69989a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="ym 50k demo (2005-03-28)(simoes, paulo)(pt)(en)(disk 5 of 5).st" size="839680" crc="97f21c18" sha1="611b70e493d704a3efe096413b051b664d874c73" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ym50ka" cloneof="ym50k">
+		<description>YM 50k Demo (Alt)</description>
+		<year>2005</year>
+		<publisher>Paulo Simoes</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="ym 50k demo (2005-03-28)(simoes, paulo)(pt)(en)(disk 1 of 5)[a].st" size="839680" crc="358e95b0" sha1="ce793c6323e0c7c1daa8c1fbb82e435874b93d94" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="ym 50k demo (2005-03-28)(simoes, paulo)(pt)(en)(disk 2 of 5).st" size="839680" crc="bf162a57" sha1="0409424cad17b245170b4bc7255bccc683d21513" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="ym 50k demo (2005-03-28)(simoes, paulo)(pt)(en)(disk 3 of 5).st" size="839680" crc="659526b9" sha1="1dc1b484168c4c3983da8431a22f024f64a9d18a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="ym 50k demo (2005-03-28)(simoes, paulo)(pt)(en)(disk 4 of 5).st" size="839680" crc="5a4d84f7" sha1="d23ee6480fdb51075f984a9e8a88d5070b69989a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="ym 50k demo (2005-03-28)(simoes, paulo)(pt)(en)(disk 5 of 5).st" size="839680" crc="97f21c18" sha1="611b70e493d704a3efe096413b051b664d874c73" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="yearafter">
+		<description>The Year After</description>
+		<year>1991</year>
+		<publisher>The Alliance</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="year after, the (1991-08)(the alliance)(de)(en).st" size="839680" crc="162922cd" sha1="bb274d27ab4eb2b797405388895830fbec5f7b86" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="yearaftera" cloneof="yearafter">
+		<description>The Year After (Alt)</description>
+		<year>1991</year>
+		<publisher>The Alliance</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="year after, the (1991-08)(the alliance)(de)(en)[a].st" size="839680" crc="d2e597f4" sha1="acacffb34697b0faa1b4f2b5c2572e9fbdac06ed" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="yearafterb" cloneof="yearafter">
+		<description>The Year After (Alt 2)</description>
+		<year>1991</year>
+		<publisher>The Alliance</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="year after, the (1991-08)(the alliance)(de)(en)[a2].st" size="839680" crc="a376f7f3" sha1="499cba0220e7f498063e0471bbb15aeff5426cba" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="yearafterc" cloneof="yearafter">
+		<description>The Year After (Alt 3)</description>
+		<year>1991</year>
+		<publisher>The Alliance</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="year after, the (1991-08)(the alliance)(de)(en)[a3].st" size="839680" crc="710f937b" sha1="f4dee5ea049d0c96e4c69a431a12355daa8b1e1d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="yodemo">
+		<description>The Yo Demo</description>
+		<year>1990</year>
+		<publisher>The Black Cats</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="912384">
+				<rom name="yo demo, the (1990-05)(the black cats)(fr)(en).st" size="912384" crc="d48f0043" sha1="bbac76e2848de0410fd3086e3f9b53c5a8073966" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="0209news">
+		<description>unknown demo "0209news" (Hacked)</description>
+		<year>19??</year>
+		<publisher>&lt;hack (Megatari)</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="zzz-unk-0209news (19xx)(-)[m megatari].st" size="839680" crc="e38caf15" sha1="f8ec353ad37872e300df453e6be904082ea091c3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crazydem">
+		<description>unknown demo "CRAZYDEM"</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="zzz-unk-crazydem (19xx)(-).st" size="737280" crc="11a668ba" sha1="893dbfc77023e409418c233a392ae8f365418a54" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="crcdemo">
+		<description>unknown demo "Crc_demo"</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="zzz-unk-crc_demo (19xx)(-)[b].st" size="737280" crc="b5ab7981" sha1="de285b289d09e38a79d140163a562bf021b9bbcb" offset="0" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dinoslide">
+		<description>unknown demo "DINOSAURS SLIDESHOW"</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="zzz-unk-dinosaurs slideshow (19xx)(-)(fr).st" size="737280" crc="5807a15f" sha1="cd827a14f5aefb4e1243f970887b2374076bd545" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="legacy">
+		<description>unknown demo "Legacy"</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="377856">
+				<rom name="zzz-unk-legacy (19xx)(-)[b].st" size="377856" crc="449331ab" sha1="728c3337ad2f581bcd04f4666b836a834e0fce94" offset="0" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="madmax">
+		<description>unknown demo "MADMAX_1"</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="849920">
+				<rom name="zzz-unk-madmax_1 (19xx)(-).st" size="849920" crc="ff76c9b4" sha1="02103a885b5e0fb983731efc5c904c10dbcb69a2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unkmusic">
+		<description>unknown demo "Music"</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="116874">
+				<rom name="zzz-unk-music (19xx)(-)[b].st" size="116874" crc="6d8a3430" sha1="befb1e4734efc70feee39caf34f057902df6e433" offset="0" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- 1MB -->
+	<software name="bfslide">
+		<description>Slideshow Demo?</description>
+		<year>19??</year>
+		<publisher>Brown Fox</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="zzz-unk-slideshow demo (19xx)(brown fox)[1mb].st" size="737280" crc="31043114" sha1="b8421c09e2d79e96043a4821c1295a4742c4995f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tcbmods">
+		<description>unknown demo "Tcbmods"</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="849920">
+				<rom name="zzz-unk-tcbmods (19xx)(-)[b].st" size="849920" crc="9182a845" sha1="b54feaf7926bb35c8a2ce0c00e7f5391421bae9a" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="unkart">
+		<description>unknown demo "art"</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="368640">
+				<rom name="zzz-unk-art (19xx)(-)[b].st" size="368640" crc="ba717b98" sha1="c91c03b93e1a5efa240e50209dde71015bf06ea0" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="draxxds">
+		<description>unknown demo "draxx_ds"</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="zzz-unk-draxx_ds (19xx)(-)(de).st" size="829440" crc="5b0ad39e" sha1="7f934eafa8ae9eb65a30abfbd5a8fabb51f2afd0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hotline1">
+		<description>unknown demo "hotline1"</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="923648">
+				<rom name="zzz-unk-hotline1 (19xx)(-).st" size="923648" crc="f4293584" sha1="7e4eb4b935b2781963474f28958e9b52f9becba7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="jesus11">
+		<description>unknown demo "jesus_11"</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="829440">
+				<rom name="zzz-unk-jesus_11 (19xx)(-)(se).st" size="829440" crc="098fbad6" sha1="c6df696415ff13dbf4c82e6e19a2b6a4daf90193" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kondemos">
+		<description>unknown demo "kon Demos Etc"</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="901120">
+				<rom name="zzz-unk-kon demos etc.st" size="901120" crc="2581d5df" sha1="fea8a9f878b3d8aa09b8d6650ca8d0f155840cdf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lcddemo">
+		<description>unknown demo "lcddemo"</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="zzz-unk-lcddemo (19xx)(-)[b].st" size="737280" crc="3ec65ff3" sha1="51b7668425601bf8ef794417394f807d21347c4f" offset="0" status="baddump"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="muzaks">
+		<description>unknown demo "muzaks"</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="zzz-unk-muzaks (19xx)(-)[b].st" size="737280" crc="18afa41c" sha1="c6aee4bdcea4564751483c0e383e09910952be0c" offset="0" status="baddump" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="npg1">
+		<description>unknown demo "npg_1"</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="849920">
+				<rom name="zzz-unk-npg_1 (19xx)(-).st" size="849920" crc="6fb9c311" sha1="f6c36f057a4c443eca351bbf6909f52ce4cc7e90" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zikdisk1">
+		<description>ZikDisk 1</description>
+		<year>1994</year>
+		<publisher>Typhoon</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="zikdisk 1 (1994)(typhoon)(fr)(en).st" size="819200" crc="6fdcfffe" sha1="c6f91f8c0ce6d51a5338529408c4f33cf07d8cff" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zikdisk2">
+		<description>ZikDisk 2</description>
+		<year>199?</year>
+		<publisher>Typhoon</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="zikdisk 2 (199x)(typhoon)(fr)(en).st" size="819200" crc="09853068" sha1="8dbd58139013f739101e264100b759db0f1f96c6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zikdisk3">
+		<description>ZikDisk 3</description>
+		<year>1995</year>
+		<publisher>Typhoon</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="zikdisk 3 (1995-10-04)(typhoon)(fr)(en).st" size="839680" crc="ad86e57f" sha1="684f26425efb208d85e766f8126da372f4ef0b3b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zikdisk3a" cloneof="zikdisk3">
+		<description>ZikDisk 3 (Alt)</description>
+		<year>1995</year>
+		<publisher>Typhoon</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="zikdisk 3 (1995-10-04)(typhoon)(fr)(en)[a].st" size="839680" crc="617dc5f7" sha1="e6021748278d561bde8dc37d442f86f8f8dc4483" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zikdisk4">
+		<description>ZikDisk 4</description>
+		<year>199?</year>
+		<publisher>Typhoon</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="zikdisk 4 (199x)(typhoon)(fr)(en).st" size="839680" crc="654b443e" sha1="09bb9e18de0cf89e7bc7a22b38d92ce0442eb137" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zikdisk5">
+		<description>ZikDisk 5</description>
+		<year>1996</year>
+		<publisher>Typhoon</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="zikdisk 5 (1996-01-01)(typhoon)(fr)(en).st" size="839680" crc="ec48c0e1" sha1="9a04321e978edb66c2c279e1256c29d174b027d0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zikdisk5a" cloneof="zikdisk5">
+		<description>ZikDisk 5 (Alt)</description>
+		<year>1996</year>
+		<publisher>Typhoon</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="zikdisk 5 (1996-01-01)(typhoon)(fr)(en)[a].st" size="839680" crc="9a2f23cb" sha1="9f9f4fa4ffc2b48ae1ffefc3b2155bee6cbe8f24" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zikdisk6">
+		<description>ZikDisk 6 (Hacked)</description>
+		<year>1998</year>
+		<publisher>Typhoon - &lt;hack (KOBOLD)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="zikdisk 6 (1998-06-19)(typhoon)(fr)(en)(disk 1 of 2)[m kobold].st" size="819200" crc="238e6b27" sha1="06244a327ae6508f491e9c6af5d05029ddc87b7b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="819200">
+				<rom name="zikdisk 6 (1998-06-19)(typhoon)(fr)(en)(disk 2 of 2)[m kobold].st" size="819200" crc="9573ca4f" sha1="c043d5f9d251c172e8cc4fb353e669ba7462b88a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sarcastic">
+		<description>Zodiac's Sarcastic Party Demo</description>
+		<year>19??</year>
+		<publisher>Zodiac</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="zodiac's sarcastic party demo (19xx)(zodiac).st" size="839680" crc="c26c13bc" sha1="ce2b0d12ca35342f4c8693d6bf596c50062e6d32" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sarcastica" cloneof="sarcastic">
+		<description>Zodiac's Sarcastic Party Demo (Alt)</description>
+		<year>19??</year>
+		<publisher>Zodiac</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="zodiac's sarcastic party demo (19xx)(zodiac)[a].st" size="839680" crc="4b3e44e2" sha1="3aad4c78f8f681d72a5e18ca9965f8228e28932e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="zorro2">
+		<description>Zorro II Compil</description>
+		<year>19??</year>
+		<publisher>Zorro II</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="746496">
+				<rom name="zorro ii compil (19xx)(zorro ii).st" size="746496" crc="658c92d5" sha1="e8c6f75b2568b35007f8181b53941e555fe146b3" offset="0" />
 			</dataarea>
 		</part>
 	</software>
