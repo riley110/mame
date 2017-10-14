@@ -394,4 +394,30 @@
 		</part>
 	</software>
 
+<!-- TOSEC - TOS -->
+
+	<software name="tos492">
+		<description>TOS (v4.92)</description>
+		<year>199?</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="tos v4.92 (199x)(atari corp)[falcon only].st" size="737280" crc="1e1f4f43" sha1="4960327bb02b23ab3ec79f09843c9eddc20dbd9d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tos492a" cloneof="tos492">
+		<description>TOS (v4.92, Alt)</description>
+		<year>199?</year>
+		<publisher>Atari</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="839680">
+				<rom name="tos v4.92 (199x)(atari corp)[a][falcon only].st" size="839680" crc="bdbb2ddb" sha1="d28a1dfcb990d80788cdabcb5a0a4854055429c4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 </softwarelist>
