@@ -81,7 +81,6 @@ public:
 		, m_floppy0(*this, "fdc:0")
 		, m_beep(*this, "beeper")
 		, m_maincpu(*this, "maincpu")
-		, m_acia(*this, "acia")
 		, m_palette(*this, "palette")
 		, m_p_chargen(*this, "chargen")
 	{
@@ -97,7 +96,6 @@ public:
 	DECLARE_WRITE8_MEMBER(ds_w);
 	DECLARE_MACHINE_RESET(cpu09);
 	DECLARE_MACHINE_RESET(ivg09);
-	DECLARE_WRITE_LINE_MEMBER(write_acia_clock);
 	MC6845_UPDATE_ROW(crtc_update_row);
 
 private:
@@ -110,7 +108,6 @@ private:
 	optional_device<floppy_connector> m_floppy0;
 	optional_device<beep_device> m_beep;
 	required_device<cpu_device> m_maincpu;
-	required_device<acia6850_device> m_acia;
 	optional_device<palette_device> m_palette;
 	optional_region_ptr<u8> m_p_chargen;
 };
@@ -292,12 +289,6 @@ void tavernie_state::kbd_put(u8 data)
 	m_pia_ivg->cb1_w(1);
 }
 
-WRITE_LINE_MEMBER( tavernie_state::write_acia_clock )
-{
-	m_acia->write_txc(state);
-	m_acia->write_rxc(state);
-}
-
 static MACHINE_CONFIG_START( cpu09 )
 	/* basic machine hardware */
 	MCFG_CPU_ADD("maincpu",M6809E, XTAL_4MHz)
@@ -335,7 +326,8 @@ static MACHINE_CONFIG_START( cpu09 )
 	MCFG_RS232_CTS_HANDLER(DEVWRITELINE("acia", acia6850_device, write_cts))
 
 	MCFG_DEVICE_ADD("acia_clock", CLOCK, 153600)
-	MCFG_CLOCK_SIGNAL_HANDLER(WRITELINE(tavernie_state, write_acia_clock))
+	MCFG_CLOCK_SIGNAL_HANDLER(DEVWRITELINE("acia", acia6850_device, write_txc))
+	MCFG_DEVCB_CHAIN_OUTPUT(DEVWRITELINE("acia", acia6850_device, write_rxc))
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( ivg09, cpu09 )
