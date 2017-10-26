@@ -41,6 +41,7 @@ MB7051 - fuse programmed prom.
 #include "sound/volt_reg.h"
 #include "sound/wave.h"
 #include "screen.h"
+#include "softlist.h"
 #include "speaker.h"
 
 
@@ -831,6 +832,7 @@ static MACHINE_CONFIG_START( brailab4 )
 
 	MCFG_CASSETTE_ADD( "cassette" )
 	MCFG_QUICKLOAD_ADD("quickload", homelab_state, homelab, "htp", 18)
+	MCFG_SOFTWARE_LIST_ADD("cass_list","brailab_cass")
 MACHINE_CONFIG_END
 
 DRIVER_INIT_MEMBER(homelab_state,brailab4)
