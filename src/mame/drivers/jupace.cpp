@@ -806,6 +806,7 @@ static MACHINE_CONFIG_START( ace )
 	MCFG_RAM_EXTRA_OPTIONS("16K,32K,48K")
 
 	MCFG_SOFTWARE_LIST_ADD("cass_list", "jupace_cass")
+	MCFG_SOFTWARE_LIST_ADD("flop_list", "jupace_flop")
 MACHINE_CONFIG_END
 
 
