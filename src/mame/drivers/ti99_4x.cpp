@@ -871,6 +871,7 @@ static MACHINE_CONFIG_START( ti99_4 )
 
 	// Software list
 	MCFG_SOFTWARE_LIST_ADD("cart_list_ti99", "ti99_cart")
+	MCFG_SOFTWARE_LIST_ADD("flop_list_ti99", "ti99_flop")
 
 	// Input/output port
 	MCFG_IOPORT_ADD( TI99_IOPORT_TAG )
@@ -988,6 +989,7 @@ static MACHINE_CONFIG_START( ti99_4a )
 
 	// Software list
 	MCFG_SOFTWARE_LIST_ADD("cart_list_ti99", "ti99_cart")
+	MCFG_SOFTWARE_LIST_ADD("flop_list_ti99", "ti99_flop")
 
 	// Input/output port
 	MCFG_IOPORT_ADD( TI99_IOPORT_TAG )
@@ -1147,6 +1149,7 @@ static MACHINE_CONFIG_START( ti99_4ev_60hz )
 
 	// Software list
 	MCFG_SOFTWARE_LIST_ADD("cart_list_ti99", "ti99_cart")
+	MCFG_SOFTWARE_LIST_ADD("flop_list_ti99", "ti99_flop")
 
 	// Input/output port
 	MCFG_IOPORT_ADD_WITH_PEB( TI99_IOPORT_TAG )
