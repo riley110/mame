@@ -527,10 +527,12 @@ static MACHINE_CONFIG_START( exl100 )
 	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 1.00)
 
 	/* cartridge */
-	MCFG_GENERIC_CARTSLOT_ADD("cartslot", generic_linear_slot, "exelvision_cart")
+	MCFG_GENERIC_CARTSLOT_ADD("cartslot", generic_linear_slot, "exl100_cart")
 	MCFG_GENERIC_EXTENSIONS("bin,rom")
 
-	MCFG_SOFTWARE_LIST_ADD("cart_list", "exl100")
+	MCFG_SOFTWARE_LIST_ADD("cart_list","exl100_cart")
+	MCFG_SOFTWARE_LIST_ADD("cass_list","exl100_cass")
+	MCFG_SOFTWARE_LIST_ADD("flop_list","exl100_flop")
 MACHINE_CONFIG_END
 
 
@@ -574,6 +576,8 @@ static MACHINE_CONFIG_START( exeltel )
 	MCFG_SOUND_ADD("tms5220c", TMS5220C, 640000)
 	MCFG_TMS52XX_SPEECHROM("vsm")
 	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 1.00)
+
+	MCFG_SOFTWARE_LIST_ADD("flop_list","exeltel_flop")
 MACHINE_CONFIG_END
 
 
