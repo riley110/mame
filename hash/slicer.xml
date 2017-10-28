@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<softwarelist name="slicer" description="Slicer floppy disks">
+
+	<!--
+	bios.imd is a Slicer BIOS source code disk. Format std 360K IBMPC 40 Trk
+	This is probably an originally shipped disk.
+	http://bitsavers.trailing-edge.com/bits/SLICER/bios_unpacked.zip contains the unpacked files
+	-->
+	<software name="bios">
+		<description>bios</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="328630">
+				<rom name="bios.imd" size="328630" crc="da5134ea" sha1="e378e27c0051044f69f81eddccd394f0d7018e81" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	bios37n.imd is an 80Trk 5*1024 disk supposedly containing BIOS 3.7N source.
+	This is probably an originally shipped disk.
+	-->
+	<software name="bios37n">
+		<description>bios37n</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="126560">
+				<rom name="bios37n.imd" size="126560" crc="75177d47" sha1="88c9ea452ab99ee689a192bebb41f950cf1df8af" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	bios38.imd is an 80Trk 5*1024 disk supposedly containing BIOS 3.8 source
+	This is probably an originally shipped disk.
+	-->
+	<software name="bios38">
+		<description>bios38</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="133711">
+				<rom name="bios38.imd" size="133711" crc="40e23d18" sha1="c7da515becfed036dd8936d3c1f47d0a32ad9ad9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	cpm86.imd is a disk probably in CP/M-86 format (40*8*512) containing C source code
+	of some CSE editor. This is likely an application disk.
+	-->
+	<software name="cpm86">
+		<description>cpm86</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="192476">
+				<rom name="cpm86.imd" size="192476" crc="3bc5db6e" sha1="1be688f557ea7ae7a38f3350a9a6cd7c8376fc30" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	dos211.imd is MSDOS 2.11, adapted to Slicer. Format std 360K IBMPC 40 Trk.
+	This is probably an originally shipped disk.
+	http://bitsavers.trailing-edge.com/bits/SLICER/dos211_unpacked.zip contains the unpacked files
+	-->
+	<software name="dos211">
+		<description>dos211</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="313831">
+				<rom name="dos211.imd" size="313831" crc="e38bfc4d" sha1="08a5672453f5e6e0f066c8dbb22864625c0b3de9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	dos80trk.imd is an 80 Trk 5*1024 disk containing MSDOS 2.11. This also contains
+	some unknown programs which might be user code, as well as parts of Microsoft CodeView 
+	and C compiler. This is likely an application disk.
+	-->
+	<software name="dos80trk">
+		<description>dos80trk</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="608868">
+				<rom name="dos80trk.imd" size="608868" crc="2df32a5d" sha1="e90b677421de0d57a4da0f25027a81869c736882" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	dos812k.imd is an 80TTrk 5*1024 disk containing some parts of MSDOS 2.11.
+	This is likely an application disk.
+	-->
+	<software name="dos812k">
+		<description>dos812k</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="166927">
+				<rom name="dos812k.imd" size="166927" crc="444fd366" sha1="f875825666f494e4d09a2990d7242c7bd37095de" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	videosrc.imd contains a86 assembler sources for supposedly the PC extension board 
+	(640x200 video board), probably the video BIOS source. This is probably an originally
+	shipped disk.
+	-->
+	<software name="videosrc">
+		<description>videosrc</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="309137">
+				<rom name="videosrc.imd" size="309137" crc="c56b5824" sha1="4d06f4147f3acb05b66c76b476c7a0a476b1d222" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>
