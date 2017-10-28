@@ -580,3 +580,5 @@ WRITE_LINE_MEMBER(pacman_state::jrpacman_bgpriority_w)
 {
 	m_bgpriority = state;
 }
+
+#include "pacman_hb.hxx"

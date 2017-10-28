@@ -8,7 +8,6 @@
 #include "machine/74259.h"
 #include "sound/discrete.h"
 #include "sound/namco.h"
-#include "sound/samples.h"
 #include "screen.h"
 
 class galaga_state : public driver_device
@@ -98,5 +97,7 @@ public:
 
 DISCRETE_SOUND_EXTERN( galaga );
 DISCRETE_SOUND_EXTERN( bosco );
+
+#include "galaga_hb.h"
 
 #endif // MAME_INCLUDES_GALAGA_H

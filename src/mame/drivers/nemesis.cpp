@@ -2771,3 +2771,5 @@ ROM_START( bubsys )
 ROM_END
 
 GAME( 1985, bubsys,   0,         bubsys,    nemesis, nemesis_state,   0,    ROT0,   "Konami", "Bubble System BIOS", MACHINE_IS_BIOS_ROOT | MACHINE_NOT_WORKING )
+
+#include "nemesis_hb.hxx"
