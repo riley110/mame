@@ -1465,4 +1465,18 @@
 		</part>
 	</software>
 
+<!-- Homebrew -->
+
+	<!-- tested on real hardware -->
+	<software name="twister">
+		<description>Twister in a Mirror</description>
+		<year>2015</year>
+		<publisher>Blastar</publisher>
+		<part name="cdrom" interface="neocd_cdrom">
+			<diskarea name="cdrom">
+				<disk name="twister" sha1="514cb18f0882dcb564d4f38b1cce2a6ff33cd47b"/>
+			</diskarea>
+		</part>
+	</software>
+
 </softwarelist>
