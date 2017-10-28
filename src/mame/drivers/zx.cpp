@@ -365,6 +365,7 @@ static MACHINE_CONFIG_DERIVED( zx81, zx80 )
 
 	/* software lists */
 	MCFG_SOFTWARE_LIST_MODIFY("cass_list", "zx81_cass")
+	MCFG_SOFTWARE_LIST_ADD("old_cass_list", "zx81_cass_old")
 
 	/* internal ram */
 	MCFG_RAM_MODIFY(RAM_TAG)
