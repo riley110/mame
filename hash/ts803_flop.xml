@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<softwarelist name="ts803_flop" description="Televideo TS803(H) floppy disks">
+
+	<software name="ws4sys">
+		<description>Wordstar 4 System Disk</description>
+		<year>1987?</year>
+		<publisher>Televideo</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="333238">
+				<rom name="televideo ts-803 wordstar 4 system diskette.imd" size="333238" crc="130eef6e" sha1="45cb917a7a7b9f359da00f944cca8670fafb99c7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ws4sysa" cloneof="ws4sys">
+		<description>Wordstar 4 System Disk (Alt)</description>
+		<year>1987?</year>
+		<publisher>Televideo</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="327572">
+				<rom name="wordstar4 system disk.td0" size="327572" crc="bc3bce3d" sha1="c279338511f0fe6612441746456475a4f85f305a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="utils">
+		<description>Utilities Disk</description>
+		<year>198?</year>
+		<publisher>Televideo</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="296522">
+				<rom name="televideo ts-803 utilities diskette.imd" size="296522" crc="5d8b3c58" sha1="04110af8beb8408384633d067bf2d7f7607aca47" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="utilsa" cloneof="utils">
+		<description>Utilities Disk (Alt)</description>
+		<year>198?</year>
+		<publisher>Televideo</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="287216">
+				<rom name="tvi's utility disk.td0" size="287216" crc="ff481856" sha1="82e3fb9a51d8282630085ec2e48a85e1ce0c67f2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>
