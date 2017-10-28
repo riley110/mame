@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!-- These are unofficial hacks of tape-based games, to test the cartridge support! -->
+<softwarelist name="x1_cart" description="Sharp X1 cartridges">
+
+	<software name="bokosuka">
+		<description>Bokosuka Wars</description>
+		<year>1985</year>
+		<publisher>アスキー (ASCII)</publisher>
+		<info name="alt_title" value="ボコスカウォーズ"/>
+
+		<part name="cart" interface="x1_cart">
+			<dataarea name="rom" size="65536">
+				<rom name="bokosuka.bin" size="65536" crc="fda67aea" sha1="955d2748739f55c55af643340e37fb5018bac932" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kagiri">
+		<description>Kagirinaki Tatakai</description>
+		<year>1983?</year>
+		<publisher>エニックス (Enix)</publisher>
+		<info name="alt_title" value="カギリナキ (or 限りなき戦い)"/>
+
+		<part name="cart" interface="x1_cart">
+			<dataarea name="rom" size="65536">
+				<rom name="kagiri.bin" size="65536" crc="eeda5550" sha1="1fa74d53c7fd500b8e38eed68c50fdcaf2c86a9a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>
