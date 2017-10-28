@@ -630,6 +630,7 @@ static MACHINE_CONFIG_START( pmd85 )
 
 	/* software lists */
 	MCFG_SOFTWARE_LIST_ADD("cass_list", "pmd85_cass")
+	MCFG_SOFTWARE_LIST_ADD("flop_list", "pmd85_flop")
 
 	/* uart */
 	MCFG_DEVICE_ADD("uart", I8251, 0)
