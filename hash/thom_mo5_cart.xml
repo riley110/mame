@@ -1,15 +1,14 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <!-- Thanks to DCMOTO (http://dcmoto.free.fr) for info! -->
-<softwarelist name="mo5_cart" description="Thomson MO5 cartridges">
-
-<!-- Applications -->
+<softwarelist name="thom_mo5_cart" description="Thomson MO5 cartridges">
 
 	<software name="asm6809">
 		<description>Assembleur 6809 (v1.0)</description>
 		<year>1984</year>
 		<publisher>TO TEK International</publisher>
 		<info name="alt_title" value="6809 Language Module"/>
+		<info name="category" value="Applications"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -23,6 +22,7 @@
 		<year>1984</year>
 		<publisher>TO TEK International</publisher>
 		<info name="alt_title" value="6809 Language Module"/>
+		<info name="category" value="Applications"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -36,6 +36,7 @@
 		<year>1984</year>
 		<publisher>TO TEK International</publisher>
 		<info name="alt_title" value="6809 Language Module"/>
+		<info name="category" value="Applications"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -48,6 +49,7 @@
 		<description>6809 MacroAssembler (v3.6)</description>
 		<year>2006</year>
 		<publisher>Puls</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -60,6 +62,7 @@
 		<description>Agenda</description>
 		<year>1984</year>
 		<publisher>Answare</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -72,6 +75,7 @@
 		<description>Agenda (Alt)</description>
 		<year>1984</year>
 		<publisher>Answare</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -84,6 +88,7 @@
 		<description>Agenda (Alt 2)</description>
 		<year>1984</year>
 		<publisher>Answare</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -96,6 +101,7 @@
 		<description>Carnet d'Adresses</description>
 		<year>1984</year>
 		<publisher>Answare</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -108,6 +114,7 @@
 		<description>Carnet d'Adresses (Alt)</description>
 		<year>1984</year>
 		<publisher>Answare</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -120,6 +127,7 @@
 		<description>Colorcalc</description>
 		<year>1985</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="32768">
@@ -132,6 +140,7 @@
 		<description>Colorcalc (Alt)</description>
 		<year>1985</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="32768">
@@ -140,24 +149,11 @@
 		</part>
 	</software>
 
-<!--
-    <software name="colorclca" cloneof="colorclc">
-        <description>Colorcalc (Bad)</description>
-        <year>1985</year>
-        <publisher>France Image Logiciel (FIL)</publisher>
-
-        <part name="cart" interface="mo_cart">
-            <dataarea name="rom" size="49152">
-                <rom name="colorcalc (1985)(fil)(fr)[b].m5" size="49152" crc="4dbccd60" sha1="928e45a5ffc1ee3e8fe5879207466cfcee54ddef" offset="0" status="baddump" />
-            </dataarea>
-        </part>
-    </software>
--->
-
 	<software name="colorpnt">
 		<description>Colorpaint</description>
 		<year>1985</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="32768">
@@ -170,6 +166,7 @@
 		<description>Desassembleur - Dump et Patch (v4.0)</description>
 		<year>1986</year>
 		<publisher>Daniel Coulom</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -182,6 +179,7 @@
 		<description>LOGO (v1.0)</description>
 		<year>1984</year>
 		<publisher>TO TEK International</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -194,6 +192,7 @@
 		<description>LOGO (v1.0, Alt)</description>
 		<year>1984</year>
 		<publisher>TO TEK International</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -206,6 +205,7 @@
 		<description>LOGO (v1.0, Alt 2)</description>
 		<year>1984</year>
 		<publisher>TO TEK International</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -219,6 +219,7 @@
 		<description>LSEG-EDL (v3.2)</description>
 		<year>1985</year>
 		<publisher>ASELEC</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="32768">
@@ -232,6 +233,7 @@
 		<description>LSEG-EDL (v3.2, Alt)</description>
 		<year>1985</year>
 		<publisher>ASELEC</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="32768">
@@ -244,6 +246,7 @@
 		<description>Melodia</description>
 		<year>1982</year>
 		<publisher>VIFI-Nathan</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -256,6 +259,7 @@
 		<description>Melodia (Alt)</description>
 		<year>1982</year>
 		<publisher>VIFI-Nathan</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -268,6 +272,7 @@
 		<description>Pictor</description>
 		<year>1983</year>
 		<publisher>VIFI-Nathan</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -280,6 +285,7 @@
 		<description>Pictor (Alt)</description>
 		<year>1983</year>
 		<publisher>VIFI-Nathan</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -288,12 +294,11 @@
 		</part>
 	</software>
 
-<!-- Educational -->
-
 	<software name="grille">
 		<description>La Grille</description>
 		<year>1985</year>
 		<publisher>ASELEC</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -306,6 +311,7 @@
 		<description>La Maison d'Amedee</description>
 		<year>1984</year>
 		<publisher>ASELEC</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -318,6 +324,7 @@
 		<description>La Peche a la Barre</description>
 		<year>1984</year>
 		<publisher>ASELEC</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -326,12 +333,11 @@
 		</part>
 	</software>
 
-<!-- Games -->
-
 	<software name="airbus">
 		<description>Airbus</description>
 		<year>1984</year>
 		<publisher>VIFI-Nathan</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -344,6 +350,7 @@
 		<description>Airbus (Alt)</description>
 		<year>1984</year>
 		<publisher>VIFI-Nathan</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -356,6 +363,7 @@
 		<description>Blitz! - Jeu d'Echecs</description>
 		<year>1985</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -368,6 +376,7 @@
 		<description>Blitz! - Jeu d'Echecs (Alt)</description>
 		<year>1985</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -380,6 +389,7 @@
 		<description>Blitz! - Jeu d'Echecs (Alt 2)</description>
 		<year>1985</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -392,6 +402,7 @@
 		<description>Controle Aerien</description>
 		<year>1984</year>
 		<publisher>VIFI International</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -405,6 +416,7 @@
 		<description>Enigmatika</description>
 		<year>1984</year>
 		<publisher>Answare</publisher>
+		<info name="category" value="Games"/>
 		<sharedfeat name="requirement" value="mo5_cass:enigmati"/>
 
 		<part name="cart" interface="mo_cart">
@@ -418,6 +430,7 @@
 		<description>Gemini</description>
 		<year>1982</year>
 		<publisher>VIFI-Nathan</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -430,6 +443,7 @@
 		<description>Gemini (Alt)</description>
 		<year>1982</year>
 		<publisher>VIFI-Nathan</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -442,6 +456,7 @@
 		<description>Glouton</description>
 		<year>1986</year>
 		<publisher>Hebdogiciel</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -454,6 +469,7 @@
 		<description>Glouton (Alt)</description>
 		<year>1986</year>
 		<publisher>Hebdogiciel</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -466,6 +482,7 @@
 		<description>Glouton (Alt 2)</description>
 		<year>1986</year>
 		<publisher>Hebdogiciel</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -478,6 +495,7 @@
 		<description>Melimemot</description>
 		<year>1983</year>
 		<publisher>VIFI-Nathan</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -490,6 +508,7 @@
 		<description>Melimemot (Alt)</description>
 		<year>1983</year>
 		<publisher>VIFI-Nathan</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -502,6 +521,7 @@
 		<description>Miner 2049er</description>
 		<year>1985</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -514,6 +534,7 @@
 		<description>Miner 2049er (Alt)</description>
 		<year>1985</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -526,6 +547,7 @@
 		<description>Motus</description>
 		<year>1982</year>
 		<publisher>VIFI-Nathan</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -538,6 +560,7 @@
 		<description>Motus (Alt)</description>
 		<year>1982</year>
 		<publisher>VIFI-Nathan</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -550,6 +573,7 @@
 		<description>Trap</description>
 		<year>1982</year>
 		<publisher>VIFI-Nathan</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -562,6 +586,7 @@
 		<description>Trap (Alt)</description>
 		<year>1982</year>
 		<publisher>VIFI-Nathan</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -574,6 +599,7 @@
 		<description>Tridi444</description>
 		<year>1982</year>
 		<publisher>VIFI-Nathan</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">
@@ -586,6 +612,7 @@
 		<description>Tridi444 (Alt)</description>
 		<year>1982</year>
 		<publisher>VIFI-Nathan</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="cart" interface="mo_cart">
 			<dataarea name="rom" size="16384">

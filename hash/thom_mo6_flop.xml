@@ -1,14 +1,13 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <!-- Thanks to DCMOTO (http://dcmoto.free.fr) for info! -->
-<softwarelist name="mo6_flop" description="Thomson MO6 floppy disks">
-
-<!-- Applications -->
+<softwarelist name="thom_mo6_flop" description="Thomson MO6 floppy disks">
 
 	<software name="music3v">
 		<description>Music 3 Voix</description>
 		<year>1987</year>
 		<publisher>Loriciels</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="163840">
@@ -17,14 +16,13 @@
 		</part>
 	</software>
 
-<!-- Compilations (Games) -->
-
 	<!-- can also be found in to_flop.xml -->
 	<software name="action1">
 		<description>Action Volume 1</description>
 		<year>1989</year>
 		<publisher>Microids</publisher>
-		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+		<info name="category" value="Compilations (Games)"/>
+		<info name="usage" value="Boot with Microsoft BASIC 1.0"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -38,7 +36,8 @@
 		<description>Action Volume 1 (SAP Format)</description>
 		<year>1989</year>
 		<publisher>Microids</publisher>
-		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+		<info name="category" value="Compilations (Games)"/>
+		<info name="usage" value="Boot with Microsoft BASIC 1.0"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
@@ -52,7 +51,8 @@
 		<description>Bactron &amp; MGT</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+		<info name="category" value="Compilations (Games)"/>
+		<info name="usage" value="Boot with Microsoft BASIC 1.0"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -66,7 +66,8 @@
 		<description>Bactron &amp; MGT (Alt)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+		<info name="category" value="Compilations (Games)"/>
+		<info name="usage" value="Boot with Microsoft BASIC 1.0"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -80,7 +81,8 @@
 		<description>Bactron &amp; MGT (SAP Format)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+		<info name="category" value="Compilations (Games)"/>
+		<info name="usage" value="Boot with Microsoft BASIC 1.0"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
@@ -94,6 +96,7 @@
 		<description>MGT - Sapiens - Mach 3</description>
 		<year>1988</year>
 		<publisher>Loriciels</publisher>
+		<info name="category" value="Compilations (Games)"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -112,6 +115,7 @@
 		<description>MGT - Sapiens - Mach 3 (640K Disk)</description>
 		<year>1988</year>
 		<publisher>Loriciels</publisher>
+		<info name="category" value="Compilations (Games)"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="655360">
@@ -125,6 +129,8 @@
 		<description>Simulation Pack</description>
 		<year>1988</year>
 		<publisher>Microids</publisher>
+		<info name="category" value="Compilations (Games)"/>
+		<info name="usage" value="Boot with Microsoft BASIC 1.0"/>
 
 		<part name="flop1" interface="thom_flop">
 			<feature name="part_id" value="Disk 1"/>
@@ -145,7 +151,8 @@
 		<description>Simulation Pack (SAP Format)</description>
 		<year>1988</year>
 		<publisher>Microids</publisher>
-		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+		<info name="category" value="Compilations (Games)"/>
+		<info name="usage" value="Boot with Microsoft BASIC 1.0"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
@@ -159,6 +166,8 @@
 		<description>Simulation Pack (640K Disk)</description>
 		<year>1988</year>
 		<publisher>Microids</publisher>
+		<info name="category" value="Compilations (Games)"/>
+		<info name="usage" value="Boot with Microsoft BASIC 1.0"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="655360">
@@ -167,12 +176,11 @@
 		</part>
 	</software>
 
-<!-- Demos -->
-
 	<software name="gameshow">
 		<description>Games Show</description>
 		<year>2014</year>
 		<publisher>6502man</publisher>
+		<info name="category" value="Demos"/>
 
 		<part name="flop1" interface="thom_flop">
 			<feature name="part_id" value="Disk 1"/>
@@ -192,6 +200,7 @@
 		<description>Games Show (640K)</description>
 		<year>2014</year>
 		<publisher>6502man</publisher>
+		<info name="category" value="Demos"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="655360">
@@ -200,24 +209,11 @@
 		</part>
 	</software>
 
-<!--
-    <software name="gameshowb" cloneof="gameshow" supported="partial">
-        <description>Games Show (Oversize)</description>
-        <year>2014</year>
-        <publisher>6502man</publisher>
-
-        <part name="flop1" interface="thom_flop">
-            <dataarea name="flop" size="657408">
-                <rom name="games_show_mo6.fd" size="657408" crc="a48a88e3" sha1="14b5184c5f22e384389df01f52a4939c8d89c73c" offset="0" />
-            </dataarea>
-        </part>
-    </software>
--->
-
 	<software name="nyancat">
 		<description>Nyan Cat</description>
 		<year>2016</year>
 		<publisher>OliverP</publisher>
+		<info name="category" value="Demos"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
@@ -230,6 +226,7 @@
 		<description>ZX Art</description>
 		<year>2014</year>
 		<publisher>6502man</publisher>
+		<info name="category" value="Demos"/>
 
 		<part name="flop1" interface="thom_flop">
 			<feature name="part_id" value="Disk 1 Side A"/>
@@ -261,6 +258,7 @@
 		<description>ZX Art (640K)</description>
 		<year>2014</year>
 		<publisher>6502man</publisher>
+		<info name="category" value="Demos"/>
 
 		<part name="flop1" interface="thom_flop">
 			<feature name="part_id" value="Disk 1"/>
@@ -280,6 +278,7 @@
 		<description>ZX Art (1280K)</description>
 		<year>2014</year>
 		<publisher>6502man</publisher>
+		<info name="category" value="Demos"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="1310720">
@@ -288,13 +287,12 @@
 		</part>
 	</software>
 
-<!-- Games -->
-
 	<!-- can also be found in to_flop.xml -->
 	<software name="20kavant">
 		<description>20000 Avant J.C.</description>
 		<year>1987</year>
 		<publisher>Chip</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -308,6 +306,7 @@
 		<description>20000 Avant J.C. (Alt)</description>
 		<year>1987</year>
 		<publisher>Chip</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -321,6 +320,7 @@
 		<description>20000 Avant J.C. (SAP Format)</description>
 		<year>1987</year>
 		<publisher>Chip</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
@@ -334,7 +334,8 @@
 		<description>Chicago 90</description>
 		<year>1989</year>
 		<publisher>Microids</publisher>
-		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+		<info name="category" value="Games"/>
+		<info name="usage" value="Boot with Microsoft BASIC 1.0"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -348,6 +349,7 @@
 		<description>Le Crepuscule du Naja</description>
 		<year>198?</year>
 		<publisher>Chip</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -361,6 +363,7 @@
 		<description>Le Crepuscule du Naja (Alt)</description>
 		<year>198?</year>
 		<publisher>Chip</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -374,6 +377,7 @@
 		<description>Le Crepuscule du Naja (SAP Format)</description>
 		<year>198?</year>
 		<publisher>Chip</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
@@ -387,7 +391,8 @@
 		<description>Grand Prix 500cc</description>
 		<year>1986</year>
 		<publisher>Microids</publisher>
-		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+		<info name="category" value="Games"/>
+		<info name="usage" value="Boot with Microsoft BASIC 1.0"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -401,6 +406,7 @@
 		<description>Le Malefice des Atlantes</description>
 		<year>1987</year>
 		<publisher>Chip</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -414,6 +420,7 @@
 		<description>Le Malefice des Atlantes (Compilation Top Arcade)</description>
 		<year>1987</year>
 		<publisher>Chip</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -427,6 +434,7 @@
 		<description>Menace sur l'Arctique</description>
 		<year>1987</year>
 		<publisher>Chip</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -440,6 +448,7 @@
 		<description>Menace sur l'Arctique (Alt)</description>
 		<year>1987</year>
 		<publisher>Chip</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -453,6 +462,7 @@
 		<description>Menace sur l'Arctique (SAP Format)</description>
 		<year>1987</year>
 		<publisher>Chip</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
@@ -466,7 +476,8 @@
 		<description>Quad</description>
 		<year>1987</year>
 		<publisher>Microids</publisher>
-		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+		<info name="category" value="Games"/>
+		<info name="usage" value="Boot with Microsoft BASIC 1.0"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -480,7 +491,8 @@
 		<description>Quad (Alt)</description>
 		<year>1987</year>
 		<publisher>Microids</publisher>
-		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+		<info name="category" value="Games"/>
+		<info name="usage" value="Boot with Microsoft BASIC 1.0"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -494,7 +506,8 @@
 		<description>Quad (SAP Format)</description>
 		<year>1987</year>
 		<publisher>Microids</publisher>
-		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+		<info name="category" value="Games"/>
+		<info name="usage" value="Boot with Microsoft BASIC 1.0"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
@@ -508,6 +521,7 @@
 		<description>Super Ski</description>
 		<year>1987</year>
 		<publisher>Microids</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -522,6 +536,7 @@
 		<description>Super Ski (640K Disk)</description>
 		<year>1987</year>
 		<publisher>Microids</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="655360">
@@ -535,6 +550,7 @@
 		<description>Le Talisman d'Osiris</description>
 		<year>1986</year>
 		<publisher>Chip</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -548,6 +564,7 @@
 		<description>Le Talisman d'Osiris (Non-Bootable)</description>
 		<year>1986</year>
 		<publisher>Chip</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -561,6 +578,7 @@
 		<description>Traitement Bzzz</description>
 		<year>1987</year>
 		<publisher>Chip</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<feature name="part_id" value="Disk 1"/>
@@ -575,6 +593,7 @@
 		<description>Traitement Bzzz (SAP Format)</description>
 		<year>1987</year>
 		<publisher>Chip</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
@@ -588,6 +607,7 @@
 		<description>Traitement Bzzz (Compilation Top Arcade)</description>
 		<year>1987</year>
 		<publisher>Chip</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -600,6 +620,7 @@
 		<description>Le Tresor des Rats d'Egout</description>
 		<year>1986</year>
 		<publisher>Cedic/Nathan</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -612,6 +633,7 @@
 		<description>Vol Solo</description>
 		<year>198?</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="163840">

@@ -2,14 +2,13 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <!-- Thanks to DCMOTO (http://dcmoto.free.fr) for info! -->
 <!-- This list is exclusively for Italian MO5 and MO6 software -->
-<softwarelist name="pro128_flop" description="Olivetti Prodest PC 128 floppy disks">
-
-<!-- Compilations (Games) -->
+<softwarelist name="thom_p128_flop" description="Olivetti Prodest PC 128 floppy disks">
 
 	<software name="microflp">
 		<description>MicroFloppy Compilation</description>
 		<year>1987</year>
 		<publisher>Olivetti Prodest</publisher>
+		<info name="category" value="Compilations/Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -18,12 +17,11 @@
 		</part>
 	</software>
 
-<!-- Games -->
-
 	<software name="sortelig">
 		<description>Sortileges</description>
 		<year>1987</year>
 		<publisher>Olivetti Prodest</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">

@@ -1,29 +1,13 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <!-- Thanks to DCMOTO (http://dcmoto.free.fr) for info! -->
-<softwarelist name="to7_qd" description="Thomson TO7 &amp; TO7/70 QD disks">
-
-<!-- Applications -->
-
-	<software name="transfer">
-		<description>Transfer</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
-
-		<part name="flop1" interface="thom_flop">
-			<dataarea name="flop" size="51200">
-				<rom name="transfer.qd" size="51200" crc="28b91794" sha1="a82e85de2c1d5e83827a5d9d40ef54450bc7eac9" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-<!-- Games -->
+<softwarelist name="thom_to7_qd" description="Thomson TO7 &amp; TO7/70 QD disks">
 
 	<software name="sydney">
 		<description>L'Affaire Sydney</description>
 		<year>1986</year>
 		<publisher>Infogrames</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<feature name="part_id" value="Disk 1"/>
@@ -43,6 +27,7 @@
 		<description>L'Aigle d'Or (Bad?)</description>
 		<year>1985</year>
 		<publisher>Loriciels</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="51200">
@@ -55,6 +40,7 @@
 		<description>Beach Head</description>
 		<year>1985</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="51200">
@@ -67,6 +53,7 @@
 		<description>Blue War</description>
 		<year>1986</year>
 		<publisher>Free Game Blot</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="51200">
@@ -80,6 +67,7 @@
 		<description>Erebus</description>
 		<year>1986</year>
 		<publisher>EH Services</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<feature name="part_id" value="Disk 1 Side A"/>
@@ -111,6 +99,7 @@
 		<description>Histoire de Theatre</description>
 		<year>1985</year>
 		<publisher>Free Game Blot</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="51200">
@@ -123,6 +112,7 @@
 		<description>Histoire de Theatre (Alt)</description>
 		<year>1985</year>
 		<publisher>Free Game Blot</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="51200">
@@ -135,6 +125,7 @@
 		<description>Karate</description>
 		<year>1985</year>
 		<publisher>Infogrames</publisher>
+		<info name="category" value="Games"/>
 		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
 
 		<part name="flop1" interface="thom_flop">
@@ -148,6 +139,7 @@
 		<description>Karate (Alt)</description>
 		<year>1985</year>
 		<publisher>Infogrames</publisher>
+		<info name="category" value="Games"/>
 		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
 
 		<part name="flop1" interface="thom_flop">
@@ -161,6 +153,7 @@
 		<description>Las Vegas</description>
 		<year>1985</year>
 		<publisher>Infogrames</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<feature name="part_id" value="Disk 1 Side A"/>
@@ -192,6 +185,7 @@
 		<description>La Malediction de Thaar</description>
 		<year>1986</year>
 		<publisher>Coktel Vision</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="51200">
@@ -204,6 +198,7 @@
 		<description>Meurtres sur l'Atlantique</description>
 		<year>1986</year>
 		<publisher>Cobrasoft</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<feature name="part_id" value="Side A"/>
@@ -223,6 +218,7 @@
 		<description>La Mine aux Diamants</description>
 		<year>1986</year>
 		<publisher>Infogrames</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="51200">
@@ -235,6 +231,7 @@
 		<description>Mini Bridge</description>
 		<year>1986</year>
 		<publisher>Edition Informatique Logiciel (EDIL)</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="51200">
@@ -247,6 +244,7 @@
 		<description>Mini Bridge (Alt)</description>
 		<year>1986</year>
 		<publisher>Edition Informatique Logiciel (EDIL)</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="51200">
@@ -255,11 +253,12 @@
 		</part>
 	</software>
 
-	<!-- how to run the game? -->
+	<!-- Is there a special way to boot this, or is it simply not working? -->
 	<software name="poseidon" supported="no">
 		<description>Poseidon</description>
 		<year>1985</year>
 		<publisher>Coktel Vision</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="51200">
@@ -272,10 +271,25 @@
 		<description>San Pablo</description>
 		<year>1985</year>
 		<publisher>Coktel Vision</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="51200">
 				<rom name="sanpablo.qd" size="51200" crc="bdb21fe6" sha1="5b290a45ae698795bfd7934d61cad727d87dc17e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="transfer">
+		<description>Transfer</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Applications"/>
+		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
+
+		<part name="flop1" interface="thom_flop">
+			<dataarea name="flop" size="51200">
+				<rom name="transfer.qd" size="51200" crc="28b91794" sha1="a82e85de2c1d5e83827a5d9d40ef54450bc7eac9" offset="0" />
 			</dataarea>
 		</part>
 	</software>

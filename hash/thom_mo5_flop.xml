@@ -1,14 +1,13 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <!-- Thanks to DCMOTO (http://dcmoto.free.fr) for info! -->
-<softwarelist name="mo5_flop" description="Thomson MO5 floppy disks">
-
-<!-- Applications -->
+<softwarelist name="thom_mo5_flop" description="Thomson MO5 floppy disks">
 
 	<software name="35basic">
 		<description>3'5 Disk BASIC (v1.0)</description>
 		<year>1985</year>
 		<publisher>Microsoft</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -21,6 +20,7 @@
 		<description>3'5 Disk BASIC (v1.0, Alt)</description>
 		<year>1985</year>
 		<publisher>Microsoft</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
@@ -33,6 +33,7 @@
 		<description>3'5 Disk BASIC (v1.0, Alt 2)</description>
 		<year>1985</year>
 		<publisher>Microsoft</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
@@ -45,6 +46,7 @@
 		<description>Arsene</description>
 		<year>1986</year>
 		<publisher>Triel</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="81920">
@@ -57,6 +59,7 @@
 		<description>Colorcalc</description>
 		<year>1985</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -69,6 +72,7 @@
 		<description>Commande du Robot Youpi (v1.1)</description>
 		<year>1985</year>
 		<publisher>JD Productique</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -82,6 +86,7 @@
 		<description>dcsdboot</description>
 		<year>2012</year>
 		<publisher>DCsoft?</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -94,6 +99,7 @@
 		<description>DOS Reduit BASIC</description>
 		<year>198?</year>
 		<publisher>&lt;hack&gt;</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -112,6 +118,7 @@
 		<description>Dump rom UC, controleur, cartouche</description>
 		<year>2008</year>
 		<publisher>DCsoft</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -126,6 +133,7 @@
 		<description>Dump rom UC, controleur, cartouche (640K Disk)</description>
 		<year>2008</year>
 		<publisher>DCsoft</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="655360">
@@ -139,6 +147,7 @@
 		<description>Jane (Hacked to use boot disk)</description>
 		<year>2002</year>
 		<publisher>Thomson - E. Forler</publisher>
+		<info name="category" value="Applications"/>
 		<info name="usage" value="Insert Chargeur disk first, then load Systeme disk when prompted" />
 
 		<part name="flop1" interface="thom_flop">
@@ -171,6 +180,7 @@
 		<description>LOGO DOS</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
@@ -183,6 +193,7 @@
 		<description>MO5 Disk BASIC (v1.0)</description>
 		<year>1985</year>
 		<publisher>Microsoft</publisher>
+		<info name="category" value="Applications"/>
 		<info name="drive_requirement" value="5.25 SD floppy drive"/>
 
 		<part name="flop1" interface="thom_flop">
@@ -196,6 +207,7 @@
 		<description>MO5 Disk BASIC (v1.1)</description>
 		<year>1985</year>
 		<publisher>Microsoft</publisher>
+		<info name="category" value="Applications"/>
 		<info name="drive_requirement" value="5.25 DD floppy drive"/>
 
 		<part name="flop1" interface="floppy_5_25">
@@ -209,6 +221,7 @@
 		<description>Multidos (v1.0)</description>
 		<year>1986</year>
 		<publisher>Thomson</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
@@ -222,6 +235,7 @@
 		<description>Pico-Reseau CLD75</description>
 		<year>1985</year>
 		<publisher>CNDP</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -234,6 +248,7 @@
 		<description>SDANIM7</description>
 		<year>2015</year>
 		<publisher>DCsoft</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -246,6 +261,7 @@
 		<description>SDPLAY44 (2015.09.24)</description>
 		<year>2015</year>
 		<publisher>DCsoft</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -271,6 +287,7 @@
 		<description>SDTRANSFERT - Transferts PC-Thomson par carte SD</description>
 		<year>2013</year>
 		<publisher>DCsoft</publisher>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -284,6 +301,7 @@
 		<year>1984</year>
 		<publisher>ERE Informatique</publisher>
 		<info name="alt_title" value="Vox Basic"/>
+		<info name="category" value="Applications"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="1310720">
@@ -298,6 +316,7 @@
 		<description>Programmes ludo-educatifs pour MO5 (16-11-2015)</description>
 		<year>2015</year>
 		<publisher>dcmoto.free.fr</publisher>
+		<info name="category" value="Compilations (Educational)"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -310,6 +329,7 @@
 		<description>Programmes ludo-educatifs pour MO5 (07-08-2015)</description>
 		<year>2015</year>
 		<publisher>dcmoto.free.fr</publisher>
+		<info name="category" value="Compilations (Educational)"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -322,6 +342,7 @@
 		<description>Programmes ludo-educatifs pour MO5 (27-07-2015)</description>
 		<year>2015</year>
 		<publisher>dcmoto.free.fr</publisher>
+		<info name="category" value="Compilations (Educational)"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -337,6 +358,7 @@
 		<description>Classiques Volume 2</description>
 		<year>1987</year>
 		<publisher>Titus Software</publisher>
+		<info name="category" value="Compilations (Games)"/>
 		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
 
 		<part name="flop1" interface="thom_flop">
@@ -351,6 +373,7 @@
 		<description>Classiques Volume 3</description>
 		<year>1987</year>
 		<publisher>Titus Software</publisher>
+		<info name="category" value="Compilations (Games)"/>
 		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
 
 		<part name="flop1" interface="thom_flop">
@@ -365,6 +388,7 @@
 		<description>Classiques Volume 4</description>
 		<year>1987</year>
 		<publisher>Titus Software</publisher>
+		<info name="category" value="Compilations (Games)"/>
 		<info name="usage" value="Load with Microsoft BASIC 1.0"/>
 
 		<part name="flop1" interface="thom_flop">
@@ -378,6 +402,7 @@
 		<description>Les Hits de Loriciels 1</description>
 		<year>1985</year>
 		<publisher>Loriciels</publisher>
+		<info name="category" value="Compilations (Games)"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -390,6 +415,7 @@
 		<description>Les Hits de Loriciels 1 (Alt)</description>
 		<year>1985</year>
 		<publisher>Loriciels</publisher>
+		<info name="category" value="Compilations (Games)"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -402,6 +428,7 @@
 		<description>Jeux Saya</description>
 		<year>198?</year>
 		<publisher>Sayasupacrew</publisher>
+		<info name="category" value="Compilations (Games)"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -414,6 +441,7 @@
 		<description>Jeux Saya (SAP Format)</description>
 		<year>198?</year>
 		<publisher>Sayasupacrew</publisher>
+		<info name="category" value="Compilations (Games)"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
@@ -426,6 +454,7 @@
 		<description>Jeux sur TO7 et MO5</description>
 		<year>1986</year>
 		<publisher>Sybex</publisher>
+		<info name="category" value="Compilations (Games)"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -438,6 +467,7 @@
 		<description>MEMO5 Chargeur</description>
 		<year>2015</year>
 		<publisher>DSSoft</publisher>
+		<info name="category" value="Compilations (Games)"/>
 
 		<part name="flop1" interface="thom_flop">
 			<feature name="part_id" value="Disk 1"/>
@@ -457,6 +487,7 @@
 		<description>MEMO5 Chargeur (640K)</description>
 		<year>2015</year>
 		<publisher>DSSoft</publisher>
+		<info name="category" value="Compilations (Games)"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="655360">
@@ -472,6 +503,7 @@
 		<description>THOM-CAT</description>
 		<year>2015</year>
 		<publisher>Puls</publisher>
+		<info name="category" value="Demos"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -485,6 +517,7 @@
 		<description>THOM-CAT (SAP Format)</description>
 		<year>2015</year>
 		<publisher>Puls</publisher>
+		<info name="category" value="Demos"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
@@ -499,6 +532,7 @@
 		<description>Enigme a Oxford</description>
 		<year>1986</year>
 		<publisher>Coktel Vision</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -511,6 +545,7 @@
 		<description>La Folle Lecture de Donne Quichotte</description>
 		<year>1988</year>
 		<publisher>Coktel Vision</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -523,6 +558,7 @@
 		<description>Parcours Lexical</description>
 		<year>1987</year>
 		<publisher>CFAPI</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -535,6 +571,7 @@
 		<description>Parole</description>
 		<year>1985</year>
 		<publisher>Cedic/Nathan</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -547,6 +584,7 @@
 		<description>Visa pour Hyde Park</description>
 		<year>1988</year>
 		<publisher>Coktel Vision</publisher>
+		<info name="category" value="Educational"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -561,6 +599,7 @@
 		<description>Le 5eme Axe</description>
 		<year>1985</year>
 		<publisher>Loriciels</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -573,6 +612,7 @@
 		<description>L'Aigle d'Or</description>
 		<year>1985</year>
 		<publisher>Loriciels</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -585,6 +625,7 @@
 		<description>Androides</description>
 		<year>1985</year>
 		<publisher>Infogrames</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -597,6 +638,7 @@
 		<description>Arkanoid</description>
 		<year>1987</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -609,6 +651,7 @@
 		<description>Atlantis</description>
 		<year>1985</year>
 		<publisher>Cobrasoft</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -621,6 +664,7 @@
 		<description>Atomik</description>
 		<year>1987</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -633,6 +677,7 @@
 		<description>Balthazar</description>
 		<year>1987</year>
 		<publisher>Titus Software</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -645,6 +690,7 @@
 		<description>Blitz!</description>
 		<year>1985</year>
 		<publisher>TO TEK International</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -657,6 +703,7 @@
 		<description>Blitz! (Alt)</description>
 		<year>1985</year>
 		<publisher>TO TEK International</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="163840">
@@ -669,6 +716,7 @@
 		<description>Brain Power</description>
 		<year>1987</year>
 		<publisher>SoftBook</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -681,6 +729,7 @@
 		<description>Crocky II</description>
 		<year>1984</year>
 		<publisher>Loriciels</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="163840">
@@ -693,6 +742,7 @@
 		<description>Crystann</description>
 		<year>1985</year>
 		<publisher>Loriciels</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -705,6 +755,7 @@
 		<description>Dakar 4x4</description>
 		<year>1987</year>
 		<publisher>Coktel Vision</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="163840">
@@ -717,6 +768,7 @@
 		<description>F15 Strike Eagle</description>
 		<year>1987</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -729,6 +781,7 @@
 		<description>FBI</description>
 		<year>1984</year>
 		<publisher>Infogrames</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="163840">
@@ -741,6 +794,7 @@
 		<description>Flipper</description>
 		<year>1984</year>
 		<publisher>Loriciels</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -753,6 +807,7 @@
 		<description>Formule 1</description>
 		<year>1987</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="167424">
@@ -765,6 +820,7 @@
 		<description>Fox</description>
 		<year>1985</year>
 		<publisher>Shift-Edition</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -777,6 +833,7 @@
 		<description>Game Over</description>
 		<year>1987</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -789,6 +846,7 @@
 		<description>Hacker</description>
 		<year>1986</year>
 		<publisher>Loriciels</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -801,6 +859,7 @@
 		<description>L'Heritage</description>
 		<year>1986</year>
 		<publisher>Infogrames</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -813,6 +872,7 @@
 		<description>James Debug - Le Grand Saut</description>
 		<year>1987</year>
 		<publisher>Coktel Vision</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="163840">
@@ -825,6 +885,7 @@
 		<description>Labyrinthe (Blanc)</description>
 		<year>1986</year>
 		<publisher>DCsoft</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="1310720">
@@ -837,6 +898,7 @@
 		<description>Labyrinthe (Noir)</description>
 		<year>1986</year>
 		<publisher>DCsoft</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="1310720">
@@ -849,6 +911,7 @@
 		<description>Mandragore (Hacked by Prehisto)</description>
 		<year>1984</year>
 		<publisher>Infogrames</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -861,6 +924,7 @@
 		<description>Mandragore (Hacked by Prehisto, SAP Format)</description>
 		<year>1984</year>
 		<publisher>Infogrames</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="335426">
@@ -873,6 +937,7 @@
 		<description>La Mine aux Diamants</description>
 		<year>1986</year>
 		<publisher>Infogrames</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -885,6 +950,7 @@
 		<description>Poseidon</description>
 		<year>1984</year>
 		<publisher>Coktel Vision</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="51200">
@@ -897,6 +963,7 @@
 		<description>Sapiens</description>
 		<year>1986</year>
 		<publisher>Loriciels</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -909,6 +976,7 @@
 		<description>Sapiens (Alt)</description>
 		<year>1986</year>
 		<publisher>Loriciels</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -921,6 +989,7 @@
 		<description>Sorcery</description>
 		<year>1986</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -933,6 +1002,7 @@
 		<description>Sortileges</description>
 		<year>1986</year>
 		<publisher>Infogrames</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -945,6 +1015,7 @@
 		<description>Super Tennis (Answare)</description>
 		<year>1985</year>
 		<publisher>Answare</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -957,6 +1028,7 @@
 		<description>Vampire</description>
 		<year>1986</year>
 		<publisher>Infogrames</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -969,6 +1041,7 @@
 		<description>Vol Solo</description>
 		<year>1985</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
@@ -981,6 +1054,7 @@
 		<description>Wizball</description>
 		<year>1988</year>
 		<publisher>France Image Logiciel (FIL)</publisher>
+		<info name="category" value="Games"/>
 
 		<part name="flop1" interface="thom_flop">
 			<dataarea name="flop" size="327680">
