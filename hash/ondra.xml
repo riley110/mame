@@ -2,11 +2,14 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="ondra" description="Ondra &amp; Ondra ViLi cassettes">
 
+<!-- Tapes for use with SSM ROM -->
+
 	<software name="copyfile">
-		<description>COPYFILE</description>
+		<description>Copy File</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<info name="usage" value="Works only on the Ondra ViLi" />
+
 		<part name="cass" interface="ondra_cass">
 			<dataarea name="cass" size="112800">
 				<rom name="copyfile.wav" size="112800" crc="b3049df0" sha1="9172a09b22d2e532c96f87ffab098f8b292fecf3" offset="0" />
@@ -15,10 +18,11 @@
 	</software>
 
 	<software name="editasm">
-		<description>EDITASM</description>
+		<description>Edit Assembler</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<info name="usage" value="Works only on the Ondra ViLi" />
+
 		<part name="cass" interface="ondra_cass">
 			<dataarea name="cass" size="1015968">
 				<rom name="editasm.wav" size="1015968" crc="62b18cc1" sha1="71850e204e17c44d3dcd7cda9e9d8717d96063a8" offset="0" />
@@ -27,10 +31,11 @@
 	</software>
 
 	<software name="galaxian">
-		<description>GALAXIANS</description>
+		<description>Galaxians</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<info name="usage" value="Works only on the Ondra ViLi" />
+
 		<part name="cass" interface="ondra_cass">
 			<dataarea name="cass" size="1449244">
 				<rom name="galaxians.wav" size="1449244" crc="e9245841" sha1="bc24392a6ac9db4730363cea8efda4f090d3d1b1" offset="0" />
@@ -39,10 +44,11 @@
 	</software>
 
 	<software name="jetpac">
-		<description>JETPAC</description>
+		<description>Jetpac</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<info name="usage" value="Works only on the Ondra ViLi" />
+
 		<part name="cass" interface="ondra_cass">
 			<dataarea name="cass" size="1304736">
 				<rom name="jetpac.wav" size="1304736" crc="d69d30d2" sha1="9919166ce9b954188af163bcfe52db6df4da8df6" offset="0" />
@@ -51,10 +57,11 @@
 	</software>
 
 	<software name="jetset">
-		<description>JETSETWILLY</description>
+		<description>Jet Set Willy</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<info name="usage" value="Works only on the Ondra ViLi" />
+
 		<part name="cass" interface="ondra_cass">
 			<dataarea name="cass" size="2308256">
 				<rom name="jetsetwilly.wav" size="2308256" crc="753c51fd" sha1="4342dc96eb60fe5ee92222542c714dc22eda77a0" offset="0" />
@@ -63,13 +70,33 @@
 	</software>
 
 	<software name="karel">
-		<description>KAREL</description>
+		<description>Karel</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<info name="usage" value="Works only on the Ondra ViLi" />
+
 		<part name="cass" interface="ondra_cass">
 			<dataarea name="cass" size="385184">
 				<rom name="karel.wav" size="385184" crc="c10354de" sha1="e640e63e5fc4fe34af33ecfaf57196cc00917b71" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mestorob">
+		<description>Mesto Robotu</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="ondra_cass">
+		<feature name="part_id" value="Tape 1"/>
+			<dataarea name="cass" size="1594992">
+				<rom name="mesto_robotu.wav" size="1594992" crc="f6d64f93" sha1="2588d9c28635d467afe62ddcf1c6fbf6e650fbc8" offset="0" />
+			</dataarea>
+		</part>
+		<part name="cass2" interface="ondra_cass">
+		<feature name="part_id" value="Tape 2 (Saves)"/>
+			<dataarea name="cass" size="184348">
+				<rom name="mr_saves_11m8.wav" size="184348" crc="b857b156" sha1="813ad1e7ed8a27e95e53a9e7a10217d0fd15daf6" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -79,9 +106,22 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<info name="usage" value="Works only on the Ondra ViLi" />
+
 		<part name="cass" interface="ondra_cass">
 			<dataarea name="cass" size="297120">
 				<rom name="mikos.wav" size="297120" crc="4ba186d4" sha1="56e15d9e064afa2196a235ff25f504256779ca5a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="slideshw">
+		<description>Ondra Slideshow</description>
+		<year>2014</year>
+		<publisher>Solaris104 - ub880d</publisher>
+
+		<part name="cass" interface="ondra_cass">
+			<dataarea name="cass" size="11487876">
+				<rom name="slideshow.wav" size="11487876" crc="420c03d3" sha1="61cc8c5914cd524af9ffb4c67930f2365f5bed82" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -91,6 +131,7 @@
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<info name="usage" value="Works only on the Ondra ViLi" />
+
 		<part name="cass" interface="ondra_cass">
 			<dataarea name="cass" size="1732768">
 				<rom name="pascal.wav" size="1732768" crc="e9b74b24" sha1="6ba4fd152e8c2e60483f7725ab73f8e5bf39445d" offset="0" />
@@ -99,10 +140,11 @@
 	</software>
 
 	<software name="planetoi">
-		<description>PLANETOIDS</description>
+		<description>Planetoids</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<info name="usage" value="Works only on the Ondra ViLi" />
+
 		<part name="cass" interface="ondra_cass">
 			<dataarea name="cass" size="1355936">
 				<rom name="planetoids.wav" size="1355936" crc="8d517fd8" sha1="e34600276d188018b66a1077697c9a63b9565692" offset="0" />
@@ -111,10 +153,11 @@
 	</software>
 
 	<software name="pssst">
-		<description>PSSST</description>
+		<description>Pssst</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 		<info name="usage" value="Works only on the Ondra ViLi" />
+
 		<part name="cass" interface="ondra_cass">
 			<dataarea name="cass" size="1380112">
 				<rom name="pssst.wav" size="1380112" crc="745ed80b" sha1="2bab363cc8efbac52c46d1ecc09184a667c9c1f3" offset="0" />
@@ -122,6 +165,54 @@
 		</part>
 	</software>
 
+<!-- Tapes for use with MIKOS (not working) -->
 
+	<software name="basicexp" supported="no">
+		<description>Basic EXP</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="ondra_cass">
+			<dataarea name="cass" size="9248696">
+				<rom name="basic_exp.wav" size="9248696" crc="452a09ca" sha1="0a3917fd22c42ffdbd23b7af870cf43e8a45a7d1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ceska" supported="no">
+		<description>Ceska abeceda</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="ondra_cass">
+			<dataarea name="cass" size="337703">
+				<rom name="ceska_abeceda.wav" size="337703" crc="3907729d" sha1="df5da0a997ed6ea045713ecb994ef3ca24da2131" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tedit" supported="no">
+		<description>TEdit</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="ondra_cass">
+			<dataarea name="cass" size="1205003">
+				<rom name="tedit.wav" size="1205003" crc="be0dd6f9" sha1="dc16ce9cd0520c3c5efc17d6a0026ec7dc0d505d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="tool80" supported="no">
+		<description>Tool 80</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="cass1" interface="ondra_cass">
+			<dataarea name="cass" size="1762060">
+				<rom name="tool_80.wav" size="1762060" crc="5084c825" sha1="5fc1029e4ea4ef66fa767426c74f1981576fa847" offset="0" />
+			</dataarea>
+		</part>
+	</software>
 
 </softwarelist>
