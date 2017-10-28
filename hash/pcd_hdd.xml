@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+Both of these images are from real PC-D hard disks
+and were distributed by rfka01 in September 2015 on the Bannister forums.
+-->
+<softwarelist name="pcd_hdd" description="Siemens PC-D hard disks">
+
+	<software name="gem">
+		<description>b6188-pcd-gem</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="hdd" interface="scsi_hdd">
+			<diskarea name="harddriv">
+				<disk name="b6188-pcd-gem" sha1="9832b3daa616349abefb2fa3401fad4af1b4e22f" writeable="yes"/>
+			</diskarea>
+		</part>
+	</software>
+
+	<software name="win">
+		<description>mi522-pcd-win</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="hdd" interface="scsi_hdd">
+			<diskarea name="harddriv">
+				<disk name="mi522-pcd-win" sha1="024bc113eb3e05d5458da081f3db8e3a60f66ee8" writeable="yes"/>
+			</diskarea>
+		</part>
+	</software>
+
+</softwarelist>
