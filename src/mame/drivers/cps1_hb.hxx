@@ -2110,7 +2110,7 @@ ROM_START( knightsa )
 	ROM_LOAD_OPTIONAL( "c632.ic1",     0x0000, 0x0117, CRC(0fbd9270) SHA1(d7e737b20c44d41e29ca94be56114b31934dde81) )
 ROM_END
 
-ROM_START( knightsb2 )
+ROM_START( knightsb3 )
 	ROM_REGION( CODE_SIZE, "maincpu", 0 )
 	ROM_LOAD16_BYTE( "040-z.02",   0x00000, 0x80000, CRC(95d00a7e) SHA1(2da1c47aa15d44aa842a8d79e030e7e7b69bec19) )
 	ROM_LOAD16_BYTE( "040-r.02",   0x00001, 0x80000, CRC(5a9d0b64) SHA1(6ff312879c3d675ceee6fd3e262f797fabb9871e) )
@@ -6557,7 +6557,7 @@ GAME( 2012, dinoz,       dino,     qsound,     dinohz,   cps_state, dinoz,    RO
 GAME( 1989, ffightb,     ffight,   cps1_10MHz, ffight,   cps_state, cps1,     ROT0,   "hack", "Final Fight (Boss Hack dumped by Bonky0013, modified by MPT)", MACHINE_SUPPORTS_SAVE )
 GAME( 1991, knight21,    knights,  cps1_10MHz, knights,  cps_state, cps1,     ROT0,   "hack", "Knights of the Round (Japan, debug bootleg)", MACHINE_SUPPORTS_SAVE )
 GAME( 1991, knightsa,    knights,  cps1_10MHz, knights,  cps_state, cps1,     ROT0,   "LB70", "Knights of the Round (AngryUpdate By EEZEZY(LB70))", MACHINE_NOT_WORKING | MACHINE_SUPPORTS_SAVE )
-GAME( 1991, knightsb2,   knights,  cps1_10MHz, knights,  cps_state, cps1,     ROT0,   "hack", "Knights of the Round (bootleg)", MACHINE_SUPPORTS_SAVE )
+GAME( 1991, knightsb3,   knights,  cps1_10MHz, knights,  cps_state, cps1,     ROT0,   "hack", "Knights of the Round (unknown bootleg)", MACHINE_SUPPORTS_SAVE )
 GAME( 1991, knightsh,    knights,  cps1_10MHz, knightsh, cps_state, cps1,     ROT0,   "hack", "Knights of the Round (hack)" , MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE )
 GAME( 1991, knightsha,   knights,  cps1_10MHz, knightsh, cps_state, cps1,     ROT0,   "hack", "Knights of the Round (Hack set 2)", MACHINE_SUPPORTS_SAVE )
 GAME( 1991, knightsjb,   knights,  cps1_10MHz, knights,  cps_state, cps1,     ROT0,   "hack", "Knights of the Round (Japan, bootleg)", MACHINE_SUPPORTS_SAVE )
