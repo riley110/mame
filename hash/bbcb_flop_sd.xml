@@ -2,11 +2,11 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="bbcb_flop_sd" description="BBC Micro Model B single-density floppy disks">
 
-	<!-- RUN BAS128 -->
 	<software name="64ksupp">
 		<description>64k Support</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="RUN BAS128">
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="204800">
@@ -15,9 +15,8 @@
 		</part>
 	</software>
 
-	<!-- A&B-01 -->
 	<software name="colikon">
-		<description>A&amp;B Colour Ikon</description>
+		<description>A&amp;B Colour Ikon (8-Bit Software Disk A&amp;B-01)</description>
 		<year>1986</year>
 		<publisher>A&amp;B Computing - 8-Bit Software</publisher>
 
@@ -30,7 +29,7 @@
 
 	<!-- TBI-148 -->
 	<software name="packradi">
-		<description>Packet Radio</description>
+		<description>Packet Radio (8-Bit Software Disk TBI-148)</description>
 		<year>19??</year>
 		<publisher>Siskin Electronics - 8-Bit Software</publisher>
 
@@ -53,11 +52,11 @@
 		</part>
 	</software>
 
-	<!-- ARTLOAD -->
 	<software name="artstudi">
 		<description>The Art Studio (Hacked from tape?)</description>
 		<year>1989</year>
 		<publisher>Impact</publisher>
+		<info name="usage" value="ARTLOAD">
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="69888">
@@ -66,11 +65,11 @@
 		</part>
 	</software>
 
-	<!-- ARTLOAD -->
 	<software name="artstudia" cloneof="artstudi">
 		<description>The Art Studio (Hacked from tape?, Alt)</description>
 		<year>1989</year>
 		<publisher>Impact</publisher>
+		<info name="usage" value="ARTLOAD">
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="69888">
@@ -79,11 +78,11 @@
 		</part>
 	</software>
 
-	<!-- ARTIST -->
 	<software name="artist">
 		<description>Artist</description>
 		<year>1983</year>
 		<publisher>Bug Byte</publisher>
+		<info name="usage" value="ARTIST">
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="17152">
@@ -92,11 +91,11 @@
 		</part>
 	</software>
 
-	<!-- GRAPH -->
 	<software name="artgraph">
 		<description>Artist Graphics Pack</description>
 		<year>1983</year>
 		<publisher>Bug Byte</publisher>
+		<info name="usage" value="GRAPH">
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="17152">
@@ -105,11 +104,11 @@
 		</part>
 	</software>
 
-	<!-- GRAPH -->
 	<software name="artgrapha" cloneof="artgraph">
 		<description>Artist Graphics Pack (Alt)</description>
 		<year>1983</year>
 		<publisher>Bug Byte</publisher>
+		<info name="usage" value="GRAPH">
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="17152">
@@ -118,11 +117,11 @@
 		</part>
 	</software>
 
-	<!-- CHEAT -->
 	<software name="autofire">
 		<description>Autofire</description>
 		<year>19??</year>
 		<publisher>Mark de Weger</publisher>
+		<info name="usage" value="CHEAT">
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="1792">
@@ -131,11 +130,11 @@
 		</part>
 	</software>
 
-	<!-- ALIGNER -->
 	<software name="dskalign">
 		<description>BBC Disk Aligner</description>
 		<year>19??</year>
 		<publisher>Cumana</publisher>
+		<info name="usage" value="ALIGNER">
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="3072">
@@ -144,11 +143,11 @@
 		</part>
 	</software>
 
-	<!-- ALIGNER -->
 	<software name="dskaligna" cloneof="dskalign">
 		<description>BBC Disk Aligner (Alt)</description>
 		<year>19??</year>
 		<publisher>Cumana</publisher>
+		<info name="usage" value="ALIGNER">
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="3072">
@@ -157,9 +156,8 @@
 		</part>
 	</software>
 
-	<!-- TBI-55-4 -->
 	<software name="gfxkit">
-		<description>BBC Graphics Kit</description>
+		<description>BBC Graphics Kit (8-Bit Software Disk TBI-55-4)</description>
 		<year>19??</year>
 		<publisher>Digital Solutions Public Domain - 8-Bit Software</publisher>
 
@@ -199,11 +197,11 @@
 		</part>
 	</software>
 
-	<!-- MENU -->
 	<software name="bbugfilr">
 		<description>Filer</description>
 		<year>1987?</year>
 		<publisher>Beebug - 8-Bit Software?</publisher>
+		<info name="usage" value="MENU">
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="204800">
@@ -212,11 +210,11 @@
 		</part>
 	</software>
 
-	<!-- BOOK -->
 	<software name="bookindx">
 		<description>Book Index</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="BOOK">
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="5120">
@@ -225,11 +223,11 @@
 		</part>
 	</software>
 
-	<!-- BOOK -->
 	<software name="bookindxa" cloneof="bookindx">
 		<description>Book Index (Alt)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="BOOK">
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="5120">
@@ -238,9 +236,8 @@
 		</part>
 	</software>
 
-	<!-- TAU-02 -->
 	<software name="calligra">
-		<description>Calligraphy</description>
+		<description>Calligraphy (8-Bit Software Disk TAU-02)</description>
 		<year>1987</year>
 		<publisher>Redwood Publishing - 8-Bit Software</publisher>
 
@@ -407,11 +404,11 @@
 		</part>
 	</software>
 
-	<!-- CRUNCHR -->
 	<software name="dskcrunc">
 		<description>Disk Cruncher</description>
 		<year>1985</year>
 		<publisher>P. Bossert</publisher>
+		<info name="usage" value="CRUNCHR">
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="17408">
@@ -420,11 +417,11 @@
 		</part>
 	</software>
 
-<!--
-    <software name="">
-        <description>Disk Cruncher (1985)(Bossert, P.)[a][CRUNCHR]</description>
-        <year>198?</year>
-        <publisher></publisher>
+ 	<software name="dskcrunca" cloneof="dskcrunc">
+		<description>Disk Cruncher (Alt)</description>
+		<year>1985</year>
+		<publisher>P. Bossert</publisher>
+		<info name="usage" value="CRUNCHR">
 
         <part name="flop1" interface="floppy_5_25">
             <dataarea name="flop" size="17408">
@@ -433,10 +430,11 @@
         </part>
     </software>
 
-    <software name="">
-        <description>Disk Menus (19xx)(-)[RUN !BOOT]</description>
+    <software name="diskmenu">
+        <description>Disk Menus</description>
         <year>198?</year>
-        <publisher></publisher>
+        <publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="RUN !BOOT">
 
         <part name="flop1" interface="floppy_5_25">
             <dataarea name="flop" size="10496">
@@ -445,10 +443,11 @@
         </part>
     </software>
 
-    <software name="">
-        <description>Disk Menus (19xx)(-)[a][RUN !BOOT]</description>
+    <software name="diskmenua" cloneof="diskmenu">
+        <description>Disk Menus (Alt)</description>
         <year>198?</year>
-        <publisher></publisher>
+        <publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="RUN !BOOT">
 
         <part name="flop1" interface="floppy_5_25">
             <dataarea name="flop" size="10496">
@@ -457,10 +456,11 @@
         </part>
     </software>
 
-    <software name="">
-        <description>Disk Utility (19xx)(-)[MENU]</description>
+    <software name="diskutil">
+        <description>Disk Utility</description>
         <year>198?</year>
-        <publisher></publisher>
+        <publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="MENU">
 
         <part name="flop1" interface="floppy_5_25">
             <dataarea name="flop" size="65536">
@@ -469,10 +469,11 @@
         </part>
     </software>
 
-    <software name="">
-        <description>Disk Utility (19xx)(-)[a][MENU]</description>
+    <software name="diskutila" cloneof="diskutil">
+        <description>Disk Utility (Alt)</description>
         <year>198?</year>
-        <publisher></publisher>
+        <publisher>&lt;unknown&gt;</publisher>
+		<info name="usage" value="MENU">
 
         <part name="flop1" interface="floppy_5_25">
             <dataarea name="flop" size="65536">
@@ -481,22 +482,22 @@
         </part>
     </software>
 
-    <software name="">
-        <description>Dynamic Modelling Systems (19xx)(Longman Micro)[b]</description>
+    <software name="dms">
+        <description>Dynamic Modelling Systems</description>
         <year>198?</year>
-        <publisher></publisher>
+        <publisher>Longman Micro</publisher>
 
         <part name="flop1" interface="floppy_5_25">
             <dataarea name="flop" size="37376">
-                <rom name="dynamic modelling systems (19xx)(longman micro)[b].ssd" size="37376" crc="b65f92ca" sha1="5f1300cea9c22d90286aa682920ace2e6f25ac64" offset="0" />
+                <rom name="dynamic modelling systems (19xx)(longman micro)[b].ssd" size="37376" crc="b65f92ca" sha1="5f1300cea9c22d90286aa682920ace2e6f25ac64" offset="0" status="baddump" />
             </dataarea>
         </part>
     </software>
 
-    <software name="">
-        <description>Easy Poke v3.0 (19xx)(A&amp;B)[h TSTH]</description>
+    <software name="easypoke">
+        <description>Easy Poke (v3.0, Hacked)</description>
         <year>198?</year>
-        <publisher></publisher>
+        <publisher>A&amp;B Software - &lt;hack (TSTH)&gt;</publisher>
 
         <part name="flop1" interface="floppy_5_25">
             <dataarea name="flop" size="7936">
@@ -505,6 +506,7 @@
         </part>
     </software>
 
+<!--
     <software name="">
         <description>Elite - BBC System Menu (1984)(Acornsoft)</description>
         <year>198?</year>
