@@ -2,6 +2,8 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="bbcb_flop_dd" description="BBC Micro Model B double-density floppy disks">
 
+<!-- TOSEC - Applications -->
+
 	<!-- FONTCON -->
 	<software name="amxfont">
 		<description>AMX Extras - Font Convertor</description>
@@ -265,6 +267,1047 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="409600">
 				<rom name="wordsearch generator v2 (19xx)(richardson, c.j.).dsd" size="409600" crc="987b9fad" sha1="26fae89afab5d2151d2a9306b2f3914f302aa59f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+<!-- TOSEC - Compilations -->
+
+	<software name="8bitg1">
+		<description>8-Bit Games Disc 1</description>
+		<year>19??</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit games disc 1 (19xx)(8-bit).dsd" size="409600" crc="5b9c8cb6" sha1="96fcbc88dbf06540013a3e3d1ee314f96b54b579" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bitg2">
+		<description>8-Bit Games Disc 2</description>
+		<year>19??</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit games disc 2 (19xx)(8-bit).dsd" size="409600" crc="d0fda366" sha1="353d6cba47650df9e546a8dbab6754b6fd32d262" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bitg3">
+		<description>8-Bit Games Disc 3</description>
+		<year>19??</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit games disc 3 (19xx)(8-bit).dsd" size="409600" crc="12c37432" sha1="9c82f5b437bf40fa563bfb23d39a6fb42077a676" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bitxmas">
+		<description>8-Bit Software - Christmas Disc (v2)</description>
+		<year>19??</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - christmas disc v2 (19xx)(8-bit).dsd" size="409600" crc="2647365f" sha1="ae72e7c1d1ee8f7f09cd90f841eb3e3afcc39a45" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit1to4">
+		<description>8-Bit Software - Issue 01 to 04</description>
+		<year>19??</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 01 to 04 (19xx)(webster, duncan).dsd" size="409600" crc="164a7f2a" sha1="8dfb0a5d7afc153e2e9981ec87c23992e7f452d3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit8">
+		<description>8-Bit Software - Issue 8</description>
+		<year>19??</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 08 (19xx)(webster, duncan).dsd" size="409600" crc="33eca2c9" sha1="ffd9933f81249103daf872b4f43ce1aae8941f27" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit9">
+		<description>8-Bit Software - Issue 9</description>
+		<year>19??</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 09 (19xx)(webster, duncan).dsd" size="409600" crc="77ee91b8" sha1="ca627e43b3fb56f8235bcf5d3485a6ee013ebd53" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit10">
+		<description>8-Bit Software - Issue 10</description>
+		<year>1991</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 10 (1991)(webster, duncan).dsd" size="409600" crc="9b141940" sha1="bd97aac0b91ac289cad03c053bacf20d6579f804" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit11">
+		<description>8-Bit Software - Issue 11</description>
+		<year>1991</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 11 (1991)(webster, duncan).dsd" size="409600" crc="d0cbad6f" sha1="81a552cfd6f0a57bc060afe8aa7d6c9debc03c28" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit12">
+		<description>8-Bit Software - Issue 12</description>
+		<year>1991</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 12 (1991)(webster, duncan).dsd" size="409600" crc="049729a7" sha1="04908e3997ca68f15c0ede4b0694312b3b0cf5ae" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit13">
+		<description>8-Bit Software - Issue 13</description>
+		<year>1991</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 13 (1991)(webster, duncan).dsd" size="409600" crc="2602f06a" sha1="2b62c8f683a7b998e4ce665c664e6841ff16c83b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit14">
+		<description>8-Bit Software - Issue 14</description>
+		<year>1991</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 14 (1991)(webster, duncan).dsd" size="409600" crc="5d42cb66" sha1="4534c2b9ff9b5f7242f4a1e67d41b60133404960" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit15">
+		<description>8-Bit Software - Issue 15</description>
+		<year>1991</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 15 (1991)(webster, duncan).dsd" size="409600" crc="e5ce4871" sha1="88e1e9a8d95d04302d8e96d19baf73d2f979628f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit16">
+		<description>8-Bit Software - Issue 16</description>
+		<year>1991</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 16 (1991)(webster, duncan).dsd" size="409600" crc="1b74ef29" sha1="9538ff1ce3606afe0ecc9e21520ee3568d4326fd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit17">
+		<description>8-Bit Software - Issue 17</description>
+		<year>1991</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 17 (1991)(webster, duncan).dsd" size="409600" crc="87a6c17f" sha1="481f76e918608d1e032eb46024df30cf5f27f2eb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit18">
+		<description>8-Bit Software - Issue 18</description>
+		<year>1992</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 18 (1992)(webster, duncan).dsd" size="409600" crc="7fe21505" sha1="fb52b6603553ed7ed47c6383c2c1f4ecaa3647f2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit19">
+		<description>8-Bit Software - Issue 19</description>
+		<year>1992</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 19 (1992)(webster, duncan).dsd" size="409600" crc="10e3e86e" sha1="8cd5919a6e3911301dc9ea08b67902714a715e93" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit20">
+		<description>8-Bit Software - Issue 20</description>
+		<year>1992</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 20 (1992)(shimmin, daniel).dsd" size="409600" crc="f45c5957" sha1="b775cfaa074380414ba618d02d761225c3a70d4f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit21">
+		<description>8-Bit Software - Issue 21</description>
+		<year>1992</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 21 (1992)(shimmin, daniel).dsd" size="409600" crc="8e3fec0a" sha1="f82c511df2fcccce10c0a655fbb4b63ef2488ce9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit22">
+		<description>8-Bit Software - Issue 22</description>
+		<year>1992</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 22 (1992)(shimmin, daniel).dsd" size="409600" crc="5f0947d4" sha1="9ac1763200182ddb9b65e3cef7ccc5050fb39964" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit23">
+		<description>8-Bit Software - Issue 23</description>
+		<year>1992</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 23 (1992)(richardson, c.j.).dsd" size="409600" crc="6b34c275" sha1="7865d101efa6eba55307700be46437a9a274f55f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit24">
+		<description>8-Bit Software - Issue 24</description>
+		<year>1992</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 24 (1992)(shimmin, daniel).dsd" size="409600" crc="6b101a26" sha1="5b891c25853ef117705972c209703259fa8372df" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit25">
+		<description>8-Bit Software - Issue 25</description>
+		<year>1992</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 25 (1992)(richardson, c.j.).dsd" size="409600" crc="2beb9a83" sha1="4893217cac2c71df416ceb00594f076a3b888a9d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit26">
+		<description>8-Bit Software - Issue 26</description>
+		<year>1992</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 26 (1992)(shimmin, daniel).dsd" size="409600" crc="0ccc0082" sha1="9544d401b6937ea4f25f62d847bd3d2f42702f4f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit27">
+		<description>8-Bit Software - Issue 27</description>
+		<year>1992</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 27 (1992)(richardson, c.j.).dsd" size="409600" crc="33dee3dd" sha1="d6e6e2f73cb990a8d0be03a282aafbaf7f7d45a1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit28">
+		<description>8-Bit Software - Issue 28</description>
+		<year>1992</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 28 (1992)(richardson, c.j.).dsd" size="409600" crc="e1c0bb93" sha1="650deea1838361a7471953135405d600df0a093a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit29">
+		<description>8-Bit Software - Issue 29</description>
+		<year>1992</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 29 (1992)(richardson, c.j.).dsd" size="409600" crc="7203d292" sha1="fd48fe100aabbfac3416f972d898bbbbefe06c7f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit30">
+		<description>8-Bit Software - Issue 30</description>
+		<year>1993</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 30 (1993)(richardson, c.j.).dsd" size="409600" crc="b04b8d35" sha1="15891d82f4b8cf504302a0f57b075c6cafe728cc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit31">
+		<description>8-Bit Software - Issue 31</description>
+		<year>1993</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 31 (1993)(richardson, c.j.).dsd" size="409600" crc="26cc9b50" sha1="86f608191a97b126e7f43434aa7273f16e14b062" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit32">
+		<description>8-Bit Software - Issue 32</description>
+		<year>1993</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 32 (1993)(richardson, c.j.).dsd" size="409600" crc="918bba05" sha1="0b8f7ebd99b105b6f0c8cfb0319d1c33cb8e39ed" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit33">
+		<description>8-Bit Software - Issue 33</description>
+		<year>1993</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 33 (1993)(richardson, c.j.).dsd" size="409600" crc="0f39d77d" sha1="8664155460647d569c36adbc3de772ec77becb47" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit34">
+		<description>8-Bit Software - Issue 34</description>
+		<year>1994</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 34 (1994)(richardson, c.j.).dsd" size="409600" crc="a594ba1a" sha1="a8b8ee8d5942bc25cb78a96922be8b67c98e50a7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit35">
+		<description>8-Bit Software - Issue 35</description>
+		<year>1994</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 35 (1994)(richardson, c.j.).dsd" size="409600" crc="dcf12c98" sha1="8e908548bc10db7994df5a39972bec5ab9a12b81" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit36">
+		<description>8-Bit Software - Issue 36</description>
+		<year>1994</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 36 (1994)(richardson, c.j.).dsd" size="409600" crc="a8e4d4e5" sha1="9d6171de252b9ce5db7d80747ee5dfb51198faeb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit37">
+		<description>8-Bit Software - Issue 37</description>
+		<year>1994</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 37 (1994)(richardson, c.j.).dsd" size="409600" crc="d728a0e2" sha1="13791b35a02fbeb5ac2c28cbf857fe961f5e8b42" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit38">
+		<description>8-Bit Software - Issue 38</description>
+		<year>1994</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 38 (1994)(richardson, c.j.).dsd" size="409600" crc="df5b1b59" sha1="b74218cdab4cdd24c9e4fb27a81dc37fb0831ec3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit39">
+		<description>8-Bit Software - Issue 39</description>
+		<year>1994</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 39 (1994)(richardson, c.j.).dsd" size="409600" crc="87c8795d" sha1="32595eeca48ecba325ddf1a427204e1accefc01a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit40">
+		<description>8-Bit Software - Issue 40</description>
+		<year>1995</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 40 (1995)(richardson, c.j.).dsd" size="409600" crc="d0bdba24" sha1="f8e9b1c46e39fdc4e884d25cdf6b326a7fd61260" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit41">
+		<description>8-Bit Software - Issue 41</description>
+		<year>1995</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 41 (1995)(richardson, c.j.).dsd" size="409600" crc="d4a8b406" sha1="2933edeed078e76c654c81f249534a8b10d25e0f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit42">
+		<description>8-Bit Software - Issue 42</description>
+		<year>1995</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 42 (1995)(richardson, c.j.).dsd" size="409600" crc="3f9d4f10" sha1="771c10cc13d75a7c8664415eb3df45374b935a9c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit43">
+		<description>8-Bit Software - Issue 43</description>
+		<year>1995</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 43 (1995)(richardson, c.j.).dsd" size="409600" crc="a49cfbd6" sha1="49e320a5179956fa8ed3c9488e9007dfa083a937" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit44">
+		<description>8-Bit Software - Issue 44</description>
+		<year>1995</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 44 (1995)(richardson, c.j.).dsd" size="409600" crc="299ed4a9" sha1="a0f1dbb32bf036e025c800bcaa567e224e97adf7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit45">
+		<description>8-Bit Software - Issue 45</description>
+		<year>1995</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 45 (1995)(richardson, c.j.).dsd" size="409600" crc="2cb90709" sha1="ae47ac84c5a7a8e669e7af30930131334e7a1d5e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit46">
+		<description>8-Bit Software - Issue 46</description>
+		<year>1995</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 46 (1995)(richardson, c.j.)(disk 1 of 2).dsd" size="409600" crc="f59aa46d" sha1="98b23b839cdbadd797c1ddab0c9eaf76979cc88b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 46 (1995)(richardson, c.j.)(disk 2 of 2).dsd" size="409600" crc="188cb67b" sha1="1f133be90c890b077fae4a52cd0aca22e3b5fb5f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit47">
+		<description>8-Bit Software - Issue 47</description>
+		<year>1995</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 47 (1995)(richardson, c.j.)(disk 1 of 2).dsd" size="409600" crc="019f4278" sha1="0d2985222db71d60abdecbdef51cd8bf15cc7672" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 47 (1995)(richardson, c.j.)(disk 2 of 2).dsd" size="409600" crc="8e4c8973" sha1="3abcd6dd8ffb2aa1ad63963a043f710d3b2c04e8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit48">
+		<description>8-Bit Software - Issue 48</description>
+		<year>1995</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 48 (1996)(richardson, c.j.).dsd" size="409600" crc="5bd60f78" sha1="ee794c50c03492b3666e0c0748322e8ac59bdc06" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit49">
+		<description>8-Bit Software - Issue 49</description>
+		<year>1995</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 49 (1996)(richardson, c.j.)(disk 1 of 2).dsd" size="409600" crc="181204a4" sha1="d300351458871e4ed37e13704e4addd7f59b13ed" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 49 (1996)(richardson, c.j.)(disk 2 of 2).dsd" size="409600" crc="7cb17786" sha1="33b3f1fc3f6bec88db3623c3db7e025f445ac30f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit50">
+		<description>8-Bit Software - Issue 50</description>
+		<year>1996</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 50 (1996)(richardson, c.j.)(disk 1 of 2).dsd" size="409600" crc="9f30d02f" sha1="bd76fa46dc51e281723f52049c5d610ad501af5b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 50 (1996)(richardson, c.j.)(disk 2 of 2).dsd" size="409600" crc="b9298cd0" sha1="59a15c4c0ee8a19010e636409fde01de8f1e3331" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit51">
+		<description>8-Bit Software - Issue 51</description>
+		<year>1996</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 51 (1996)(richardson, c.j.)(disk 1 of 2).dsd" size="409600" crc="4a41d1eb" sha1="1c12954cf7d78a8fe2e8911e5f8b1016f4407363" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 51 (1996)(richardson, c.j.)(disk 2 of 2).dsd" size="409600" crc="3d0adcb3" sha1="44a03c0541446a7a3800317948405c08c5628410" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit52">
+		<description>8-Bit Software - Issue 52</description>
+		<year>1996</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 52 (1996)(richardson, c.j.)(disk 1 of 2).dsd" size="409600" crc="ff9b6efb" sha1="c539d13b29664b5d7e1a334fc0a86c76b4dcd38a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 52 (1996)(richardson, c.j.)(disk 2 of 2).dsd" size="409600" crc="8b5b3a23" sha1="579720a5b82acdbd7f5c25916dc6a8bf4c66e8e4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit53">
+		<description>8-Bit Software - Issue 53</description>
+		<year>1996</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 53 (1996)(richardson, c.j.)(disk 1 of 2).dsd" size="409600" crc="2e538b48" sha1="fa50f40803f7784c53c1c81aee19dd12acf1545d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 53 (1996)(richardson, c.j.)(disk 2 of 2).dsd" size="409600" crc="42e0aa19" sha1="33eedc94628396fb2e9e3c19979db314e799856e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit54">
+		<description>8-Bit Software - Issue 54</description>
+		<year>1997</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 54 (1997)(richardson, c.j.)(disk 1 of 2).dsd" size="409600" crc="d97b69e3" sha1="388538798fe914039b9932af9d4f8c2793e0261d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 54 (1997)(richardson, c.j.)(disk 2 of 2).dsd" size="409600" crc="19e0af13" sha1="ec1e06a6bf52479bf0ea1f5bae2c8637842d11cb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit55">
+		<description>8-Bit Software - Issue 55</description>
+		<year>1997</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 55 (1997)(richardson, c.j.)(disk 1 of 2).dsd" size="409600" crc="36ca27f3" sha1="a54d15493ebb20ebd7674337cdc6df4af46324f7" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 55 (1997)(richardson, c.j.)(disk 2 of 2).dsd" size="409600" crc="c5829879" sha1="48bd244cf2a01a57cd408fe6355bb67cc7f557c8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit56">
+		<description>8-Bit Software - Issue 56</description>
+		<year>1997</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 56 (1997)(richardson, c.j.)(disk 1 of 2).dsd" size="409600" crc="d7a8de96" sha1="b9f7feaebd01a9c7853d9f56ba22683c10cc024b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 56 (1997)(richardson, c.j.)(disk 2 of 2).dsd" size="409600" crc="364d844c" sha1="ccee1607859a5c937bd92cd316ec67a0bee744b7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit57">
+		<description>8-Bit Software - Issue 57</description>
+		<year>1997</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 57 (1997)(richardson, c.j.)(disk 1 of 2).dsd" size="409600" crc="ab7249d7" sha1="80600597f71a2cb67fc24797788890f3d527c71f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 57 (1997)(richardson, c.j.)(disk 2 of 2).dsd" size="409600" crc="1c09b907" sha1="c2f172b8e839cbe3eeb2f4d452d05af34120d1fc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit58">
+		<description>8-Bit Software - Issue 58</description>
+		<year>1997</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 58 (1997)(richardson, c.j.).dsd" size="409600" crc="811be006" sha1="52d7ad1d710360567d7f1276d45fb03017c26aee" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit58a" cloneof="8bit58">
+		<description>8-Bit Software - Issue 58 (Alt)</description>
+		<year>1997</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="204800">
+				<rom name="8-bit software - issue 58 (1997)(richardson, c.j.)[a].dsd" size="204800" crc="8c80a6ca" sha1="4aebf766a82b088f66dd344dcbd9bc587eaedec3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit59">
+		<description>8-Bit Software - Issue 59</description>
+		<year>1997</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 59 (1997)(richardson, c.j.).dsd" size="409600" crc="152a59c4" sha1="447a56f3565a64b6c6d7dcd0a73f2d2cb34dd110" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit60">
+		<description>8-Bit Software - Issue 60</description>
+		<year>1997</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 60 (1997)(richardson, c.j.).dsd" size="409600" crc="4f62fd47" sha1="edfd8aa78d4cb483681df84f461c8dd2a6ad3ee6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit61">
+		<description>8-Bit Software - Issue 61</description>
+		<year>1998</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 61 (1998)(richardson, c.j.).dsd" size="409600" crc="441bf17e" sha1="ee2043d95eaaafcebfdb3f224ae2d29f90add48f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit62">
+		<description>8-Bit Software - Issue 62</description>
+		<year>1998</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 62 (1998)(richardson, c.j.).dsd" size="409600" crc="8a8a0020" sha1="e6e79fc939b32903b33b63719aef00d48316a566" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit63">
+		<description>8-Bit Software - Issue 63</description>
+		<year>1998</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 63 (1998)(richardson, c.j.).dsd" size="409600" crc="8a1095e1" sha1="3890f5d49caaea208c69d7b2c1a087adc17f41e2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit64">
+		<description>8-Bit Software - Issue 64</description>
+		<year>1998</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 64 (1998)(richardson, c.j.).dsd" size="409600" crc="5b6fdd52" sha1="1b3fcc9021be679f14e365633ce666fc7f619fca" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit65">
+		<description>8-Bit Software - Issue 65</description>
+		<year>1998</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 65 (1998)(richardson, c.j.).dsd" size="409600" crc="14848dcc" sha1="96a082bba3535342b9aa2f51354c811c30884d6e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bit66">
+		<description>8-Bit Software - Issue 66</description>
+		<year>1998</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software - issue 66 (1998)(richardson, c.j.).dsd" size="409600" crc="d289385a" sha1="86b198f5e68748d9f364387c1ba0d7a01b106503" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bitcat98">
+		<description>8-Bit Software Catalogue (1998)</description>
+		<year>1998</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software catalogue (1998)(richardson, c.).dsd" size="409600" crc="38c0c1a9" sha1="2ad65d7fa0deb4c706fa229a4f0bf9f8170f8deb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bitcat00">
+		<description>8-Bit Software Catalogue (2000)</description>
+		<year>2000</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software catalogue (2000)(richardson, c.).dsd" size="409600" crc="3c1cd821" sha1="0bb2704e961148b861eefa0736031ebb5376b730" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bitdb16">
+		<description>8-Bit Software Magazine Database - Issue 16</description>
+		<year>1996</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software magazine database - issue 16 (1996)(richardson, c.j.).dsd" size="409600" crc="7dbd4248" sha1="f890f93acd2103e036385f8fb5b0d78301d1a39d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bitrev">
+		<description>8-Bit Software Reviews</description>
+		<year>1998</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="8-bit software reviews (1998)(8-bit).dsd" size="409600" crc="eab5fa52" sha1="55fda763d44da34114b395a1528af45db5ec7397" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="amxfonts">
+		<description>AMX Fonts</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="amx fonts (19xx)(-).dsd" size="409600" crc="a12de24e" sha1="7e6d5c836ee64b9e0218b046eb8efd4cf2983864" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="adultbas1">
+		<description>Adult Basic Education Disks 1, 4 ,6 &amp; 8 (Hacked)</description>
+		<year>19??</year>
+		<publisher>P. Davy - &lt;hack (8-Bit Software)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="adult basic education disks 1, 4 ,6 &amp; 8 (19xx)(davy, p.)[h 8-bit].dsd" size="409600" crc="d7e52b69" sha1="6ea139fa2007af191f6dfc274c54182476ccd0d4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="adultbas2">
+		<description>Adult Basic Education Disks 10, 12, 14 &amp; 16 (Hacked)</description>
+		<year>19??</year>
+		<publisher>P. Davy - &lt;hack (8-Bit Software)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="adult basic education disks 10, 12, 14 &amp; 16 (19xx)(davy, p.)[h 8-bit].dsd" size="409600" crc="6dc81b1a" sha1="70835c92b44726a8211dd5ba1dcec2fd5ab48c03" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="adultbas3">
+		<description>Adult Basic Education Disks 18, 20, 22 &amp; 24 (Hacked)</description>
+		<year>19??</year>
+		<publisher>P. Davy - &lt;hack (8-Bit Software)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="adult basic education disks 18, 20, 22 &amp; 24 (19xx)(davy, p.)[h 8-bit].dsd" size="409600" crc="f2e1c8cc" sha1="d6841dbaeb15978e460b21cefaccd2aed6b0b722" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="adultbas4">
+		<description>Adult Basic Education Disks 26, 28, 30 &amp; 32 (Hacked)</description>
+		<year>19??</year>
+		<publisher>P. Davy - &lt;hack (8-Bit Software)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="adult basic education disks 26, 28, 30 &amp; 32 (19xx)(davy, p.)[h 8-bit].dsd" size="409600" crc="e85afaae" sha1="c3b84bfb13d44c4e87131925296a8770a3eb6d5e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="adultbas5">
+		<description>Adult Basic Education Disks 34, 36 &amp; Talking Disc (Hacked)</description>
+		<year>19??</year>
+		<publisher>P. Davy - &lt;hack (8-Bit Software)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="adult basic education disks 34, 36 &amp; talking disc (19xx)(davy, p.)[h 8-bit].dsd" size="409600" crc="05b334db" sha1="91386f839c60121931a540e9ab755454fbc449a2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="adultbas6">
+		<description>Adult Basic Education Disks 38 &amp; Talking Disc (Hacked)</description>
+		<year>19??</year>
+		<publisher>P. Davy - &lt;hack (8-Bit Software)&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="adult basic education disks 38 &amp; talking disc (19xx)(davy, p.)[h 8-bit].dsd" size="409600" crc="6cd7c61b" sha1="fbb0bb8f46061b43b5a1338086e99b9a9ab08e76" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bitalli">
+		<description>Alligata Games</description>
+		<year>19??</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="alligata games (19xx)(8-bit).dsd" size="409600" crc="47b9c921" sha1="1a4143f6f2d7e5a8dcdc07926857d5ade14ffe69" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bitallia" cloneof="8bitalli">
+		<description>Alligata Games (Alt)</description>
+		<year>19??</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="alligata games (19xx)(8-bit)[a].dsd" size="409600" crc="556e5910" sha1="867180ff4e4b84fe07dfc9027c74151fc59e8a55" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="8bitallib" cloneof="8bitalli">
+		<description>Alligata Games (Alt 2)</description>
+		<year>19??</year>
+		<publisher>8-Bit Software</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="alligata games (19xx)(8-bit)[a2].dsd" size="409600" crc="cda3ea23" sha1="c81ae06cf527297b1e7a945268650807d0b86c74" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="arcade4">
+		<description>Arcade Games 4</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="arcade games 04 (19xx)(-).dsd" size="409600" crc="591859a9" sha1="2cd4224a84934127de052d7ffab0ab21c2e58f20" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bonanza">
+		<description>BBC Bonanza</description>
+		<year>1987</year>
+		<publisher>Audiogenic</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="277760">
+				<rom name="bbc bonanza (1987)(audiogenic).dsd" size="277760" crc="0c65ae18" sha1="42fee7f8690e1b7cd7105abaafcf3540acf6cb70" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="digsoft">
+		<description>BBC Digitised Software</description>
+		<year>19??</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="409600">
+				<rom name="bbc digitised software (19xx)(-).dsd" size="409600" crc="3d8f1cca" sha1="439d355fe99394130c3b9f8bcaae513c4a1c6266" offset="0" />
 			</dataarea>
 		</part>
 	</software>
