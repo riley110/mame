@@ -2131,9 +2131,9 @@ void pgm_arm_type1_state::pgm_decode_kovassg_program()
 
 	for (i = 0; i < 0x400000 / 2; i++)
 	{
-		int j = (i & ~0xffff) | (BITSWAP16(i, 15, 14, 13, 12,  11, 10, 7, 3,  1, 9, 4, 8,  6, 0, 2, 5) ^ 0x019c);
+		int j = (i & ~0xffff) | (bitswap<16>(i, 15, 14, 13, 12,  11, 10, 7, 3,  1, 9, 4, 8,  6, 0, 2, 5) ^ 0x019c);
 
-		dst[j] = BITSWAP16(src[j], 13, 9, 10, 11, 2, 0, 12 ,5, 4, 1, 14, 8, 15, 6, 3, 7) ^ 0x9d05;
+		dst[j] = bitswap<16>(src[j], 13, 9, 10, 11, 2, 0, 12 ,5, 4, 1, 14, 8, 15, 6, 3, 7) ^ 0x9d05;
 	}
 
 	memcpy( src, &dst[0], 0x400000 );

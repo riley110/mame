@@ -116,11 +116,11 @@ DRIVER_INIT_MEMBER( amg_state, amg )
 	offs_t i,j;
 
 	for (i = 0; i < 0x10000; i++)
-		src[i] = BITSWAP8(src[i], 3, 4, 5, 6, 7, 1, 2, 0);
+		src[i] = bitswap<8>(src[i], 3, 4, 5, 6, 7, 1, 2, 0);
 
 	for (i = 0; i < 0x10000; i++)
 	{
-		j = BITSWAP16(i, 15, 5, 4, 7, 0, 10, 1, 11, 6, 2, 12, 3, 9, 8, 13, 14);
+		j = bitswap<16>(i, 15, 5, 4, 7, 0, 10, 1, 11, 6, 2, 12, 3, 9, 8, 13, 14);
 
 		if (!BIT(i, 10))
 			j ^= 0x100;
@@ -129,11 +129,11 @@ DRIVER_INIT_MEMBER( amg_state, amg )
 	}
 
 	for (i = 0x10000; i < 0x18000; i++)
-		src[i] = BITSWAP8(src[i], 3, 4, 5, 6, 7, 1, 2, 0);
+		src[i] = bitswap<8>(src[i], 3, 4, 5, 6, 7, 1, 2, 0);
 
 	for (i = 0x10000; i < 0x18000; i++)
 	{
-		j = BITSWAP16(i, 15, 6, 5, 12, 11, 10, 9, 8, 7, 14, 13, 4, 3, 2, 1, 0);
+		j = bitswap<16>(i, 15, 6, 5, 12, 11, 10, 9, 8, 7, 14, 13, 4, 3, 2, 1, 0);
 		dest[j|0x10000] = src[i];
 	}
 }

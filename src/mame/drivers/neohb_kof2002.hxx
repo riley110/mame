@@ -32,7 +32,7 @@ DRIVER_INIT_MEMBER( neogeo_hbmame, kof2k2bd )
 
 	for (i = 1; i < fix_region_size/0x80; i++)
 	{
-		j = BITSWAP16(i, 15, 14, 13, 12, 11, 10, 9, 7, 6, 2, 5, 4, 3, 1, 0, 8);
+		j = bitswap<16>(i, 15, 14, 13, 12, 11, 10, 9, 7, 6, 2, 5, 4, 3, 1, 0, 8);
 		memcpy(&dst[i*0x80], &src[j*0x80], 0x80);
 	}
 #endif
