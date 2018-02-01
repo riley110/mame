@@ -402,10 +402,10 @@ SLOT_INTERFACE_END
 
 
 /******************************************************************************/
-static MACHINE_CONFIG_START( hec2hr )
+MACHINE_CONFIG_START(hec2hrp_state::hec2hr)
 /******************************************************************************/
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu",Z80, XTAL_5MHz)
+	MCFG_CPU_ADD("maincpu",Z80, XTAL(5'000'000))
 	MCFG_CPU_PROGRAM_MAP(hec2hrp_mem)
 	MCFG_CPU_IO_MAP(hec2hrp_io)
 	MCFG_CPU_PERIODIC_INT_DRIVER(hec2hrp_state, irq0_line_hold, 50) /*  put on the Z80 irq in Hz*/
@@ -443,10 +443,10 @@ static MACHINE_CONFIG_START( hec2hr )
 MACHINE_CONFIG_END
 
 /*****************************************************************************/
-static MACHINE_CONFIG_START( hec2hrp )
+MACHINE_CONFIG_START(hec2hrp_state::hec2hrp)
 /*****************************************************************************/
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu",Z80, XTAL_5MHz)
+	MCFG_CPU_ADD("maincpu",Z80, XTAL(5'000'000))
 	MCFG_CPU_PROGRAM_MAP(hec2hrp_mem)
 	MCFG_CPU_IO_MAP(hec2hrp_io)
 	MCFG_CPU_PERIODIC_INT_DRIVER(hec2hrp_state, irq0_line_hold, 50) /*  put on the Z80 irq in Hz*/
@@ -488,16 +488,16 @@ static SLOT_INTERFACE_START( hector_floppies )
 SLOT_INTERFACE_END
 
 /*****************************************************************************/
-static MACHINE_CONFIG_START( hec2mx40 )
+MACHINE_CONFIG_START(hec2hrp_state::hec2mx40)
 /*****************************************************************************/
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu",Z80, XTAL_5MHz)
+	MCFG_CPU_ADD("maincpu",Z80, XTAL(5'000'000))
 	MCFG_CPU_PROGRAM_MAP(hec2hrx_mem)
 	MCFG_CPU_IO_MAP(hec2mx40_io)
 	MCFG_CPU_PERIODIC_INT_DRIVER(hec2hrp_state, irq0_line_hold, 50) //  put on the Z80 irq in Hz
 
 	/* Disc II unit */
-	MCFG_CPU_ADD("disc2cpu",Z80, XTAL_4MHz)
+	MCFG_CPU_ADD("disc2cpu",Z80, XTAL(4'000'000))
 	MCFG_CPU_PROGRAM_MAP(hecdisc2_mem)
 	MCFG_CPU_IO_MAP(hecdisc2_io)
 	MCFG_UPD765A_ADD("upd765", false, true)
@@ -539,10 +539,10 @@ static MACHINE_CONFIG_START( hec2mx40 )
 
 MACHINE_CONFIG_END
 /*****************************************************************************/
-static MACHINE_CONFIG_START( hec2hrx )
+MACHINE_CONFIG_START(hec2hrp_state::hec2hrx)
 /*****************************************************************************/
 /* basic machine hardware */
-	MCFG_CPU_ADD("maincpu",Z80, XTAL_5MHz)
+	MCFG_CPU_ADD("maincpu",Z80, XTAL(5'000'000))
 	MCFG_CPU_PROGRAM_MAP(hec2hrx_mem)
 	MCFG_CPU_IO_MAP(hec2hrx_io)
 	MCFG_CPU_PERIODIC_INT_DRIVER(hec2hrp_state, irq0_line_hold, 50) //  put on the Z80 irq in Hz
@@ -550,7 +550,7 @@ static MACHINE_CONFIG_START( hec2hrx )
 	MCFG_MACHINE_START_OVERRIDE(hec2hrp_state,hec2hrx)
 
 	/* Disc II unit */
-	MCFG_CPU_ADD("disc2cpu",Z80, XTAL_4MHz)
+	MCFG_CPU_ADD("disc2cpu",Z80, XTAL(4'000'000))
 	MCFG_CPU_PROGRAM_MAP(hecdisc2_mem)
 	MCFG_CPU_IO_MAP(hecdisc2_io)
 	MCFG_UPD765A_ADD("upd765", false, true)
@@ -590,11 +590,11 @@ static MACHINE_CONFIG_START( hec2hrx )
 
 MACHINE_CONFIG_END
 /*****************************************************************************/
-static MACHINE_CONFIG_START( hec2mdhrx )
+MACHINE_CONFIG_START(hec2hrp_state::hec2mdhrx)
 /*****************************************************************************/
 // minidisc
 /* basic machine hardware */
-	MCFG_CPU_ADD("maincpu",Z80, XTAL_5MHz)
+	MCFG_CPU_ADD("maincpu",Z80, XTAL(5'000'000))
 	MCFG_CPU_PROGRAM_MAP(hec2hrx_mem)
 	MCFG_CPU_IO_MAP(hec2mdhrx_io)
 	MCFG_CPU_PERIODIC_INT_DRIVER(hec2hrp_state, irq0_line_hold, 50) //  put on the Z80 irq in Hz
@@ -602,7 +602,7 @@ static MACHINE_CONFIG_START( hec2mdhrx )
 	MCFG_MACHINE_START_OVERRIDE(hec2hrp_state,hec2mdhrx)
 
 	/* Mini Disc */
-	MCFG_FD1793_ADD("wd179x", XTAL_1MHz)
+	MCFG_FD1793_ADD("wd179x", XTAL(1'000'000))
 
 	MCFG_FLOPPY_DRIVE_ADD("wd179x:0", minidisc_floppies, "dd", hec2hrp_state::minidisc_formats)
 
@@ -639,10 +639,10 @@ static MACHINE_CONFIG_START( hec2mdhrx )
 MACHINE_CONFIG_END
 
 /*****************************************************************************/
-static MACHINE_CONFIG_START( hec2mx80 )
+MACHINE_CONFIG_START(hec2hrp_state::hec2mx80)
 /*****************************************************************************/
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu",Z80, XTAL_5MHz)
+	MCFG_CPU_ADD("maincpu",Z80, XTAL(5'000'000))
 	MCFG_CPU_PROGRAM_MAP(hec2hrx_mem)
 	MCFG_CPU_IO_MAP(hec2mx80_io)
 	MCFG_CPU_PERIODIC_INT_DRIVER(hec2hrp_state, irq0_line_hold, 50) //  put on the Z80 irq in Hz
@@ -650,7 +650,7 @@ static MACHINE_CONFIG_START( hec2mx80 )
 	MCFG_MACHINE_START_OVERRIDE(hec2hrp_state,hec2hrx)
 
 	/* Disc II unit */
-	MCFG_CPU_ADD("disc2cpu",Z80, XTAL_4MHz)
+	MCFG_CPU_ADD("disc2cpu",Z80, XTAL(4'000'000))
 	MCFG_CPU_PROGRAM_MAP(hecdisc2_mem)
 	MCFG_CPU_IO_MAP(hecdisc2_io)
 	MCFG_UPD765A_ADD("upd765", false, true)

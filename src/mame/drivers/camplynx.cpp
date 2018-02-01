@@ -168,6 +168,11 @@ public:
 	MC6845_UPDATE_ROW(lynx48k_update_row);
 	MC6845_UPDATE_ROW(lynx128k_update_row);
 	required_device<palette_device> m_palette;
+	void lynx_common(machine_config &config);
+	void lynx_disk(machine_config &config);
+	void lynx128k(machine_config &config);
+	void lynx48k(machine_config &config);
+	void lynx96k(machine_config &config);
 private:
 	uint8_t m_port58;
 	uint8_t m_port80;
@@ -790,7 +795,7 @@ static SLOT_INTERFACE_START( camplynx_floppies )
 	SLOT_INTERFACE( "525qd", FLOPPY_525_QD )
 SLOT_INTERFACE_END
 
-static MACHINE_CONFIG_START( lynx_common )
+MACHINE_CONFIG_START(camplynx_state::lynx_common)
 	MCFG_PALETTE_ADD_3BIT_RGB("palette")
 
 	/* sound hardware */
@@ -802,8 +807,8 @@ static MACHINE_CONFIG_START( lynx_common )
 	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "speaker", 0.02)
 MACHINE_CONFIG_END
 
-static MACHINE_CONFIG_START( lynx_disk )
-	MCFG_FD1793_ADD("fdc", XTAL_24MHz / 24)
+MACHINE_CONFIG_START(camplynx_state::lynx_disk)
+	MCFG_FD1793_ADD("fdc", XTAL(24'000'000) / 24)
 	MCFG_FLOPPY_DRIVE_ADD("fdc:0", camplynx_floppies, "525qd", camplynx_state::camplynx_floppy_formats)
 	MCFG_FLOPPY_DRIVE_SOUND(true)
 	MCFG_FLOPPY_DRIVE_ADD("fdc:1", camplynx_floppies, "525qd", camplynx_state::camplynx_floppy_formats)
@@ -811,10 +816,10 @@ static MACHINE_CONFIG_START( lynx_disk )
 	MCFG_SOFTWARE_LIST_ADD("flop_list","camplynx_flop")
 MACHINE_CONFIG_END
 
-static MACHINE_CONFIG_START( lynx48k )
+MACHINE_CONFIG_START(camplynx_state::lynx48k)
 
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", Z80, XTAL_24MHz / 6)
+	MCFG_CPU_ADD("maincpu", Z80, XTAL(24'000'000) / 6)
 	MCFG_CPU_PROGRAM_MAP(lynx48k_mem)
 	MCFG_CPU_IO_MAP(lynx48k_io)
 
@@ -837,14 +842,14 @@ static MACHINE_CONFIG_START( lynx48k )
 	MCFG_SOFTWARE_LIST_ADD("cass_list","camplynx_cass")
 
 	/* devices */
-	MCFG_MC6845_ADD("crtc", MC6845, "screen", XTAL_12MHz / 8 )
+	MCFG_MC6845_ADD("crtc", MC6845, "screen", XTAL(12'000'000) / 8 )
 	MCFG_MC6845_SHOW_BORDER_AREA(false)
 	MCFG_MC6845_CHAR_WIDTH(8)
 	MCFG_MC6845_UPDATE_ROW_CB(camplynx_state, lynx48k_update_row)
 	MCFG_MC6845_OUT_VSYNC_CB(INPUTLINE("maincpu", INPUT_LINE_IRQ0))
 MACHINE_CONFIG_END
 
-static MACHINE_CONFIG_DERIVED( lynx96k, lynx48k )
+MACHINE_CONFIG_DERIVED(camplynx_state::lynx96k, lynx48k)
 	/* basic machine hardware */
 	MCFG_CPU_MODIFY("maincpu")
 	MCFG_CPU_IO_MAP(lynx96k_io)
@@ -853,10 +858,10 @@ static MACHINE_CONFIG_DERIVED( lynx96k, lynx48k )
 	MCFG_SOFTWARE_LIST_FILTER("flop_list", "96")
 MACHINE_CONFIG_END
 
-static MACHINE_CONFIG_START( lynx128k )
+MACHINE_CONFIG_START(camplynx_state::lynx128k)
 
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", Z80, XTAL_24MHz / 4)
+	MCFG_CPU_ADD("maincpu", Z80, XTAL(24'000'000) / 4)
 	MCFG_CPU_PROGRAM_MAP(lynx128k_mem)
 	MCFG_CPU_IO_MAP(lynx128k_io)
 
@@ -879,7 +884,7 @@ static MACHINE_CONFIG_START( lynx128k )
 	MCFG_SOFTWARE_LIST_ADD("cass_list","camplynx_cass")
 
 	/* devices */
-	MCFG_MC6845_ADD("crtc", MC6845, "screen", XTAL_12MHz / 8 )
+	MCFG_MC6845_ADD("crtc", MC6845, "screen", XTAL(12'000'000) / 8 )
 	MCFG_MC6845_SHOW_BORDER_AREA(false)
 	MCFG_MC6845_CHAR_WIDTH(8)
 	MCFG_MC6845_UPDATE_ROW_CB(camplynx_state, lynx128k_update_row)
