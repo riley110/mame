@@ -138,9 +138,28 @@ ROM_START( dderby )
 	ROM_LOAD( "82s126.3m",    0x0100, 0x0100, CRC(77245b66) SHA1(0c4d0bee858b97632411c440bea6948a74759746) )
 ROM_END
 
+ROM_START( deathstar ) // No text, no scores. From level 3, you need to use a 2nd joystick (RDFG keys).
+	ROM_REGION( 0x10000, "maincpu", 0 )
+	ROM_LOAD( "deathstar.1",  0x0000, 0x1000, CRC(decc3963) SHA1(cbc291c767def5c92b82d6e00ebb5e61e45cbc41) )
+
+	ROM_REGION( 0x2000, "gfx1", 0 )
+	ROM_LOAD( "puckman.5e",   0x0000, 0x0800, CRC(2066a0b7) SHA1(6d4ccc27d6be185589e08aa9f18702b679e49a4a) )
+	ROM_LOAD( "puckman.5h",   0x0800, 0x0800, CRC(3591b89d) SHA1(79bb456be6c39c1ccd7d077fbe181523131fb300) )
+	ROM_LOAD( "puckman.5f",   0x1000, 0x0800, CRC(9e39323a) SHA1(be933e691df4dbe7d12123913c3b7b7b585b7a35) )
+	ROM_LOAD( "puckman.5j",   0x1800, 0x0800, CRC(1b1d9096) SHA1(53771c573051db43e7185b1d188533056290a620) )
+
+	ROM_REGION( 0x0120, "proms", 0 )
+	ROM_LOAD( "82s123.7f",    0x0000, 0x0020, CRC(2fc650bd) SHA1(8d0268dee78e47c712202b0ec4f1f51109b1f2a5) )
+	ROM_LOAD( "82s126.4a",    0x0020, 0x0100, CRC(3eb3a8e4) SHA1(19097b5f60d1030f8b82d9f1d3a241f93e5c75d6) )
+
+	ROM_REGION( 0x0200, "namco", 0 )
+	ROM_LOAD( "82s126.1m",    0x0000, 0x0100, CRC(a9cc86bf) SHA1(bbcec0570aeceb582ff8238a4bc8546a23430081) )
+	ROM_LOAD( "82s126.3m",    0x0100, 0x0100, CRC(77245b66) SHA1(0c4d0bee858b97632411c440bea6948a74759746) )
+ROM_END
+
 /* E204 - Rockola presents and copyright notice are all removed. Where it should say "EYES" on title screen,
           it has some corrupt gfx instead. The rest is fine. */
-ROM_START( eyesbu )	/* E204 */
+ROM_START( eyesbu )
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "eyesb.7d",     0x0000, 0x1000, CRC(7e7dd02d) SHA1(a0026fec57c089dd500efa107b0e884ed9edd4d6) )
 	ROM_LOAD( "eyesb.7f",     0x1000, 0x1000, CRC(d6d73eb5) SHA1(b0c51afc09dd62bdda70710d57ae5b90a5e981ac) )
@@ -265,7 +284,7 @@ ROM_START( lazybug1 )
 ROM_END
 
 ROM_START( mtturbo )
-	ROM_REGION( 2*0x10000, "maincpu", 0 )	/* 64k for code + 64k for opcode copy to hack protection */
+	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "maketrax.6e",  0x0000, 0x1000, CRC(0150fb4a) SHA1(ba41582d5432670654479b4bf6d938d2168858af) )
 	ROM_LOAD( "maketrax.6f",  0x1000, 0x1000, CRC(77531691) SHA1(68a450bcc8d832368d0f1cb2815cb5c03451796e) )
 	ROM_LOAD( "mtturbo.6h",   0x2000, 0x1000, CRC(77e0e153) SHA1(8be5cf8c0337e05eaf4635f19580d6c1477e6bcc) )
@@ -310,25 +329,6 @@ ROM_START( pacmatri )
 	ROM_REGION( 0x2000, "gfx1", 0 )
 	ROM_LOAD( "at.5e",        0x0000, 0x1000, CRC(EEB359BF) SHA1(36F153B5CE53475FD144AF50E4BD67B0E0B3A01F) )
 	ROM_LOAD( "pacman.5f",    0x1000, 0x1000, CRC(958FEDF9) SHA1(4A937AC02216EA8C96477D4A15522070507FB599) )
-
-	ROM_REGION( 0x0120, "proms", 0 )
-	ROM_LOAD( "82s123.7f",    0x0000, 0x0020, CRC(2fc650bd) SHA1(8d0268dee78e47c712202b0ec4f1f51109b1f2a5) )
-	ROM_LOAD( "82s126.4a",    0x0020, 0x0100, CRC(3eb3a8e4) SHA1(19097b5f60d1030f8b82d9f1d3a241f93e5c75d6) )
-
-	ROM_REGION( 0x0200, "namco", 0 )
-	ROM_LOAD( "82s126.1m",    0x0000, 0x0100, CRC(a9cc86bf) SHA1(bbcec0570aeceb582ff8238a4bc8546a23430081) )
-	ROM_LOAD( "82s126.3m",    0x0100, 0x0100, CRC(77245b66) SHA1(0c4d0bee858b97632411c440bea6948a74759746) )
-ROM_END
-
-ROM_START( deathstar ) // No text, no scores. From level 3, you need to use a 2nd joystick (RDFG keys).
-	ROM_REGION( 0x10000, "maincpu", 0 )
-	ROM_LOAD( "deathstar.1",  0x0000, 0x1000, CRC(decc3963) SHA1(cbc291c767def5c92b82d6e00ebb5e61e45cbc41) )
-
-	ROM_REGION( 0x2000, "gfx1", 0 )
-	ROM_LOAD( "puckman.5e",   0x0000, 0x0800, CRC(2066a0b7) SHA1(6d4ccc27d6be185589e08aa9f18702b679e49a4a) )
-	ROM_LOAD( "puckman.5h",   0x0800, 0x0800, CRC(3591b89d) SHA1(79bb456be6c39c1ccd7d077fbe181523131fb300) )
-	ROM_LOAD( "puckman.5f",   0x1000, 0x0800, CRC(9e39323a) SHA1(be933e691df4dbe7d12123913c3b7b7b585b7a35) )
-	ROM_LOAD( "puckman.5j",   0x1800, 0x0800, CRC(1b1d9096) SHA1(53771c573051db43e7185b1d188533056290a620) )
 
 	ROM_REGION( 0x0120, "proms", 0 )
 	ROM_LOAD( "82s123.7f",    0x0000, 0x0020, CRC(2fc650bd) SHA1(8d0268dee78e47c712202b0ec4f1f51109b1f2a5) )
@@ -419,6 +419,24 @@ ROM_START( rainboh )
 	ROM_REGION( 0x2000, "gfx1", 0 )
 	ROM_LOAD( "rainboh.5e",   0x0000, 0x1000, CRC(c3292da2) SHA1(11d2b8cb36dfa86c08f6072e603f18074d56c2c2) )
 	ROM_LOAD( "rainboh.5f",   0x1000, 0x1000, CRC(2b7455d8) SHA1(9decb7671a97e7fd248cc05798119d82b7830097) )
+
+	ROM_REGION( 0x0120, "proms", 0 )
+	ROM_LOAD( "82s123.7f",    0x0000, 0x0020, CRC(2fc650bd) SHA1(8d0268dee78e47c712202b0ec4f1f51109b1f2a5) )
+	ROM_LOAD( "82s126.4a",    0x0020, 0x0100, CRC(3eb3a8e4) SHA1(19097b5f60d1030f8b82d9f1d3a241f93e5c75d6) )
+
+	ROM_REGION( 0x0200, "namco", 0 )
+	ROM_LOAD( "82s126.1m",    0x0000, 0x0100, CRC(a9cc86bf) SHA1(bbcec0570aeceb582ff8238a4bc8546a23430081) )
+	ROM_LOAD( "82s126.3m",    0x0100, 0x0100, CRC(77245b66) SHA1(0c4d0bee858b97632411c440bea6948a74759746) )
+ROM_END
+
+ROM_START( scroller )
+	ROM_REGION( 0x10000, "maincpu", 0 )
+	ROM_LOAD( "scroller.6e",  0x0000, 0x1000, CRC(081b47c5) SHA1(dc3d1ae904dc56b31b585ac1022b46633c00b016) )
+	ROM_LOAD( "scroller.6f",  0x1000, 0x1000, CRC(93ef7735) SHA1(9ea39352dc658cd6f40f9df0d3aca7cb411f86cf) )
+
+	ROM_REGION( 0x2000, "gfx1", 0 )
+	ROM_LOAD( "scroller.5e",  0x0000, 0x1000, CRC(14473363) SHA1(2e8b73fc4737ac81e66f92ec2dd34eab8e2d6fe6) )
+	ROM_LOAD( "scroller.5f",  0x1000, 0x1000, CRC(47e8e97e) SHA1(51904ab4d5c92870996e6f575f67778cab206c3d) )
 
 	ROM_REGION( 0x0120, "proms", 0 )
 	ROM_LOAD( "82s123.7f",    0x0000, 0x0020, CRC(2fc650bd) SHA1(8d0268dee78e47c712202b0ec4f1f51109b1f2a5) )
@@ -606,4 +624,5 @@ GAME( 1982, eyesbu,    eyes,     pacman,   eyes,     pacman_state, eyes,     ROT
 GAME( 2016, ghohunt,   puckman,  pacman,   pacman,   pacman_state, 0,        ROT90,  "Hurray Banana", "Ghost Hunt", MACHINE_SUPPORTS_SAVE )
 GAME( 2012, pactetris, puckman,  pacman,   pacman,   pacman_state, 0,        ROT90,  "Ben Leperchey", "Tetris on Pacman hardware (incomplete)", MACHINE_SUPPORTS_SAVE )
 GAME( 2017, deathstar, puckman,  pacman,   pacman,   pacman_state, 0,        ROT90,  "Stefano Bodrato", "Death Star", MACHINE_SUPPORTS_SAVE )
+GAME( 2017, scroller,  puckman,  pacman,   pacman,   pacman_state,  0,       ROT90,  "Hurray Banana", "Scroller", MACHINE_SUPPORTS_SAVE )
 GAME( 2017, snakes,    puckman,  pacman,   pacman,   pacman_state, 0,        ROT90,  "Stefano Bodrato", "Snakes", MACHINE_SUPPORTS_SAVE )
