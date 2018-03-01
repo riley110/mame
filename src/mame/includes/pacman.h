@@ -240,24 +240,55 @@ private:
 	void jumpshot_decode();
 
 // HBMAME extras
+public:
+	void _96in1(machine_config &config);
+	void _96in1b(machine_config &config);
+	void hackypac(machine_config &config);
+	void madpac(machine_config &config);
+	void mspaceur(machine_config &config);
+	void mschampx(machine_config &config);
+	void multipac(machine_config &config);
+	void pm4n1(machine_config &config);
+	void pm4n1c(machine_config &config);
+	void pm4n1d(machine_config &config);
+	void mspacmnx(machine_config &config);
+	void woodpekx(machine_config &config);
+	void mspacii(machine_config &config);
+	void zolapc(machine_config &config);
+	void pachack(machine_config &config);
+	void mspachi(machine_config &config);
+	void widel(machine_config &config);
+	void pacmanx(machine_config &config);
+	void zolapac(machine_config &config);
+	void io_map(address_map &map);
+	void mspachi_map(address_map &map);
+	void mspacii_map(address_map &map);
+	void widel_map(address_map &map);
+	void zolapac_io(address_map &map);
+	void _96in1_writeport(address_map &map);
+	void _96in1b_writeport(address_map &map);
+	void hackypac_map(address_map &map);
+	void hackypac_writeport(address_map &map);
+	void madpac_map(address_map &map);
+	void madpac_writeport(address_map &map);
+	void mspaceur_map(address_map &map);
+	void multipac_map(address_map &map);
+	void pm4n1_map(address_map &map);
+	void pm4n1c_map(address_map &map);
+	void pm4n1d_map(address_map &map);
 	DECLARE_VIDEO_START(pacmanx);
 	DECLARE_VIDEO_START(multipac);
 	uint32_t screen_update_pacmanx(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 	uint32_t screen_update_multipac(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
-	//uint32_t screen_update_pengo(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 	DECLARE_PALETTE_INIT(multipac);
-	//DECLARE_PALETTE_INIT(pengo);
 	void m96in1b_gfxbank_w(uint8_t gfxbank);
 	void madpac_gfxbank_w(uint8_t gfxbank);
 	DECLARE_WRITE8_MEMBER(multipac_gfxbank_w);	
 	DECLARE_WRITE8_MEMBER(multipac_palbank_w);
 	TILE_GET_INFO_MEMBER(multipac_get_tile_info);
-	uint8_t m_speedcheat;
-	uint8_t m_timerthing;
 	DECLARE_READ8_MEMBER(mspacii_prot_r);
 	DECLARE_READ8_MEMBER(zolatimer_r);
 	DECLARE_WRITE8_MEMBER(zolatimer_w);
-	DECLARE_MACHINE_RESET(mspacman);
 	DECLARE_WRITE8_MEMBER(m96in1_rombank_w);
 	DECLARE_WRITE8_MEMBER(m96in1b_rombank_w);
 	DECLARE_WRITE8_MEMBER(hackypac_rombank_w);
@@ -277,6 +308,5 @@ private:
 	DECLARE_DRIVER_INIT(mspaceur);
 	DECLARE_DRIVER_INIT(multipac);
 	DECLARE_DRIVER_INIT(pm4n1);
-	//DECLARE_DRIVER_INIT(pengo);
 // END HBMAME
 };

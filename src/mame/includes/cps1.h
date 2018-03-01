@@ -466,6 +466,25 @@ public:
 
 // HBMAME start
 
+	void wofsf2(machine_config &config);
+	void daimakb(machine_config &config);
+	void sk2h3(machine_config &config);
+	void sk2h31(machine_config &config);
+	void sk2h35(machine_config &config);
+	void cps1frog(machine_config &config);
+	void sk2h1q(machine_config &config);
+	void sk2h31q(machine_config &config);
+	void cawingb(machine_config &config);
+	void captcommb2(machine_config &config);
+	void daimakb_map(address_map &map);
+	void sk2h35_map(address_map &map);
+	void cps1frog_map(address_map &map);
+	void sk2h1q_map(address_map &map);
+	void sk2h3_map(address_map &map);
+	void sk2h31q_map(address_map &map);
+	void sk2h31_map(address_map &map);
+	void wofsf2_map(address_map &map);
+	void captcommb2_map(address_map &map);
 	DECLARE_WRITE16_MEMBER(dinoh_sound_command_w);
 	DECLARE_WRITE16_MEMBER(daimakb_layer_w);
 	DECLARE_WRITE16_MEMBER(daimakb_palctrl_w);

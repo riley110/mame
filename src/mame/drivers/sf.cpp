@@ -1102,3 +1102,5 @@ GAME( 1987, sfjan,sf, sfan, sfan, sf_state, 0, ROT0, "Capcom", "Street Fighter (
 GAME( 1987, sfan, sf, sfan, sfan, sf_state, 0, ROT0, "Capcom", "Street Fighter (World, pneumatic buttons)", MACHINE_SUPPORTS_SAVE )
 GAME( 1987, sfp,  sf, sfp,  sfan, sf_state, 0, ROT0, "Capcom", "Street Fighter (prototype)", MACHINE_SUPPORTS_SAVE )
 GAME( 1987, sfw,  sf, sfjp, sfjp, sf_state, 0, ROT0, "Capcom", "Street Fighter (World) (protected)", MACHINE_SUPPORTS_SAVE )  // Shows Capcom copyright
+
+#include "sf_hb.hxx"

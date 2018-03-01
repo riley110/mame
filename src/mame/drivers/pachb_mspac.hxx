@@ -28,7 +28,7 @@ WRITE8_MEMBER( pacman_state::zolatimer_w )	/* to stop it hanging when game reset
 
 
 /* Same as woodhack, plus it has nvram, and some extra ram at fffc */
-static ADDRESS_MAP_START( mspachi_map, AS_PROGRAM, 8, pacman_state )
+ADDRESS_MAP_START( pacman_state::mspachi_map )
 	AM_RANGE(0x0000, 0x3fff) AM_ROM
 	AM_RANGE(0x4000, 0x43ff) AM_MIRROR(0xa000) AM_RAM_WRITE(pacman_videoram_w) AM_SHARE("videoram")
 	AM_RANGE(0x4400, 0x47ff) AM_MIRROR(0xa000) AM_RAM_WRITE(pacman_colorram_w) AM_SHARE("colorram")
@@ -49,7 +49,7 @@ static ADDRESS_MAP_START( mspachi_map, AS_PROGRAM, 8, pacman_state )
 	AM_RANGE(0xfffc, 0xffff) AM_RAM
 ADDRESS_MAP_END
 
-static ADDRESS_MAP_START( mspacii_map, AS_PROGRAM, 8, pacman_state )
+ADDRESS_MAP_START( pacman_state::mspacii_map )
 	/* do not use UNMAP_HIGH (protection issues) */
 	AM_RANGE(0x0000, 0x3fff) AM_ROM
 	AM_RANGE(0x4000, 0x43ff) AM_MIRROR(0xa000) AM_RAM_WRITE(pacman_videoram_w) AM_SHARE("videoram")
@@ -61,7 +61,7 @@ static ADDRESS_MAP_START( mspacii_map, AS_PROGRAM, 8, pacman_state )
 	AM_RANGE(0x5040, 0x505f) AM_MIRROR(0x8000) AM_DEVWRITE("namco", namco_device, pacman_sound_w)
 	AM_RANGE(0x5060, 0x506f) AM_MIRROR(0x8000) AM_WRITEONLY AM_SHARE("spriteram2")
 	AM_RANGE(0x5070, 0x5080) AM_MIRROR(0x8000) AM_WRITENOP
-	AM_RANGE(0x50c0, 0x50c0) AM_MIRROR(0x8000) AM_DEVWRITE("watchdog", watchdog_timer_device, reset_w)
+	AM_RANGE(0x50c0, 0x50c0) AM_DEVWRITE("watchdog", watchdog_timer_device, reset_w)
 	AM_RANGE(0x5000, 0x5000) AM_MIRROR(0x8000) AM_READ_PORT("IN0")
 	AM_RANGE(0x5040, 0x5040) AM_MIRROR(0x8000) AM_READ_PORT("IN1")
 	AM_RANGE(0x504d, 0x506f) AM_READ(mspacii_prot_r)
@@ -72,7 +72,7 @@ static ADDRESS_MAP_START( mspacii_map, AS_PROGRAM, 8, pacman_state )
 ADDRESS_MAP_END
 
 /* For Dave Widel's hacks */
-static ADDRESS_MAP_START( widel_map, AS_PROGRAM, 8, pacman_state )
+ADDRESS_MAP_START( pacman_state::widel_map )
 	/* bace and dderby set 5000-5FFF to zero for no apparent reason */
 	AM_RANGE(0x0000, 0x3fff) AM_ROM
 	AM_RANGE(0x4000, 0x43ff) AM_MIRROR(0x8000) AM_RAM_WRITE(pacman_videoram_w) AM_SHARE("videoram")
@@ -80,7 +80,7 @@ static ADDRESS_MAP_START( widel_map, AS_PROGRAM, 8, pacman_state )
 	AM_RANGE(0x4800, 0x4bff) AM_MIRROR(0x8000) AM_READ(pacman_read_nop)
 	AM_RANGE(0x4c00, 0x4fef) AM_RAM
 	AM_RANGE(0x4ff0, 0x4fff) AM_RAM AM_SHARE("spriteram")
-	AM_RANGE(0x5000, 0x5007) AM_MIRROR(0xaf38) AM_DEVWRITE("mainlatch", addressable_latch_device, write_d0)
+	AM_RANGE(0x5000, 0x5007) AM_DEVWRITE("mainlatch", addressable_latch_device, write_d0)
 	AM_RANGE(0x5040, 0x505f) AM_DEVWRITE("namco", namco_device, pacman_sound_w)
 	AM_RANGE(0x5060, 0x506f) AM_WRITEONLY AM_SHARE("spriteram2")
 	AM_RANGE(0x5070, 0x5080) AM_WRITENOP
@@ -97,7 +97,7 @@ static ADDRESS_MAP_START( widel_map, AS_PROGRAM, 8, pacman_state )
 	AM_RANGE(0xf000, 0xffff) AM_RAM
 ADDRESS_MAP_END
 
-static ADDRESS_MAP_START( zolapac_io, AS_IO, 8, pacman_state )
+ADDRESS_MAP_START( pacman_state::zolapac_io )
 	ADDRESS_MAP_GLOBAL_MASK(0xff)
 	AM_RANGE(0x00, 0x00) AM_READ(zolatimer_r)
 	AM_RANGE(0x10, 0x10) AM_WRITENOP		/* writes 0 at reset */
@@ -112,25 +112,29 @@ ADDRESS_MAP_END
  *************************************/
 
 /* Hires mspacman */
-static MACHINE_CONFIG_DERIVED( mspacmnx, pacmanx )
+MACHINE_CONFIG_START( pacman_state::mspacmnx )
+	pacmanx(config);
 	MCFG_CPU_MODIFY("maincpu")
 	MCFG_CPU_PROGRAM_MAP(mspacman_map)
 MACHINE_CONFIG_END
 
 /* Hires hacks */
-static MACHINE_CONFIG_DERIVED( woodpekx, pacmanx )
+MACHINE_CONFIG_START( pacman_state::woodpekx )
+	pacmanx(config);
 	MCFG_CPU_MODIFY("maincpu")
 	MCFG_CPU_PROGRAM_MAP(woodpek_map)
 MACHINE_CONFIG_END
 
 /* MSPacman with modified memory maps */
 
-static MACHINE_CONFIG_DERIVED( mspacii, pacman )
+MACHINE_CONFIG_START( pacman_state::mspacii )
+	pacman(config);
 	MCFG_CPU_MODIFY("maincpu")
 	MCFG_CPU_PROGRAM_MAP(mspacii_map)
 MACHINE_CONFIG_END
 
-static MACHINE_CONFIG_DERIVED( zolapac, pacman )
+MACHINE_CONFIG_START( pacman_state::zolapac )
+	pacman(config);
 	MCFG_CPU_MODIFY("maincpu")
 	MCFG_CPU_PROGRAM_MAP(woodpek_map)
 	MCFG_CPU_IO_MAP(zolapac_io)
@@ -138,19 +142,22 @@ MACHINE_CONFIG_END
 
 /* These drivers need the watchdog to be removed in order to work */
 
-static MACHINE_CONFIG_DERIVED( pachack, pacman )
+MACHINE_CONFIG_START( pacman_state::pachack )
+	pacman(config);
 	MCFG_WATCHDOG_MODIFY("watchdog")
 	MCFG_WATCHDOG_VBLANK_INIT("screen", 0)
 MACHINE_CONFIG_END
 
-static MACHINE_CONFIG_DERIVED( mspachi, pachack )
+MACHINE_CONFIG_START( pacman_state::mspachi )
+	pachack(config);
 	MCFG_CPU_MODIFY("maincpu")
 	MCFG_CPU_PROGRAM_MAP(mspachi_map)
 	MCFG_NVRAM_ADD_0FILL("nvram")
 
 MACHINE_CONFIG_END
 
-static MACHINE_CONFIG_DERIVED( widel, pachack )
+MACHINE_CONFIG_START( pacman_state::widel )
+	pachack(config);
 	MCFG_CPU_MODIFY("maincpu")
 	MCFG_CPU_PROGRAM_MAP(widel_map)
 MACHINE_CONFIG_END

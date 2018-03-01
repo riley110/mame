@@ -420,6 +420,14 @@ public:
 	void turtles_map(address_map &map);
 	void zigzag_map(address_map &map);
 //HBMAME start
+	void fourplay(machine_config &config);
+	void jumpbugx(machine_config &config);
+	void tst_frog(machine_config &config);
+	void videight(machine_config &config);
+	void jumpbugx_map(address_map &map);
+	void fourplay_map(address_map &map);
+	void tst_frog_map(address_map &map);
+	void videight_map(address_map &map);
 	DECLARE_WRITE8_MEMBER(fourplay_rombank_w);
 	DECLARE_WRITE8_MEMBER(videight_rombank_w);
 	DECLARE_WRITE8_MEMBER(videight_gfxbank_w);

@@ -16,6 +16,7 @@ public:
 	{ }
 
 	INTERRUPT_GEN_MEMBER(hb_irq);
+	void timelimit(machine_config &config);
 private:
 	bool m_irq_state;
 };
@@ -30,7 +31,7 @@ INTERRUPT_GEN_MEMBER(timelimt_hbmame::hb_irq)
 	}
 }
 
-static MACHINE_CONFIG_START( timelimit )
+MACHINE_CONFIG_START( timelimt_hbmame::timelimit )
 
 	/* basic machine hardware */
 	MCFG_CPU_ADD("maincpu", Z80, 5000000)   /* 5.000 MHz */

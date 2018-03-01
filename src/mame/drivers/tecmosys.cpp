@@ -660,3 +660,5 @@ DRIVER_INIT_MEMBER(tecmosys_state,tkdensha)
 GAME( 1995, deroon,           0, deroon, deroon, tecmosys_state, deroon,     ROT0, "Tecmo", "Deroon DeroDero",                         MACHINE_SUPPORTS_SAVE )
 GAME( 1996, tkdensho,         0, deroon, deroon, tecmosys_state, tkdensho,   ROT0, "Tecmo", "Toukidenshou - Angel Eyes (VER. 960614)", MACHINE_SUPPORTS_SAVE )
 GAME( 1996, tkdenshoa, tkdensho, deroon, deroon, tecmosys_state, tkdensha,   ROT0, "Tecmo", "Toukidenshou - Angel Eyes (VER. 960427)", MACHINE_SUPPORTS_SAVE )
+
+#include "tecmosys_hb.hxx"

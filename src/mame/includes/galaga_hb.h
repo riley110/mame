@@ -13,6 +13,8 @@ public:
 		{ }
 
 	DECLARE_WRITE8_MEMBER(galaga_sample_w);
+	void galagost(machine_config &config);
+	void galagost_map(address_map &map);
 
 private:
 	optional_device<samples_device> m_samples;

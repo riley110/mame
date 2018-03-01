@@ -2492,3 +2492,5 @@ GAME( 1992, quizmeku, 0,        system24, quizmeku, segas24_state, quizmeku, ROT
 GAME( 1992, mahmajn,  0,        mahmajn,  mahmajn,  segas24_state, mahmajn,  ROT0,   "Sega", "Tokoro San no MahMahjan (Japan, ROM Based)", 0 )
 GAME( 1994, qgh,      0,        system24, qgh,      segas24_state, qgh,      ROT0,   "Sega", "Quiz Ghost Hunter (Japan, ROM Based)", 0 )
 GAME( 1994, mahmajn2, 0,        mahmajn,  mahmajn,  segas24_state, mahmajn2, ROT0,   "Sega", "Tokoro San no MahMahjan 2 (Japan, ROM Based)", 0 )
+
+#include "segas24_hb.hxx"

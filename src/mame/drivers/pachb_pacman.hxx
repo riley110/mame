@@ -83,7 +83,8 @@ GFXDECODE_END
  *
  *************************************/
 
-static MACHINE_CONFIG_DERIVED( pacmanx, pacman )
+MACHINE_CONFIG_START( pacman_state::pacmanx )
+	pacman(config);
 	MCFG_SCREEN_MODIFY("screen")
 	MCFG_SCREEN_RAW_PARAMS(PIXEL_CLOCK<<2, HTOTAL<<1, HBEND<<1, HBSTART<<1, VTOTAL<<1, VBEND<<1, VBSTART<<1)
 	MCFG_SCREEN_UPDATE_DRIVER(pacman_state, screen_update_pacmanx)

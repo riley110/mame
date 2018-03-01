@@ -29,7 +29,7 @@ ROM_END
 
 
 //    YEAR, NAME,        PARENT,   MACHINE,  INPUT,     INIT,          MONITOR,COMPANY,FULLNAME,FLAGS
-GAME( 2009, ssridersaex, ssriders, ssriders, ssriders,  tmnt_state, 0, ROT0,   "Pipi899","Sunset Riders (2 Players ver ABD EX Super Version)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE )
+GAME( 2009, ssridersaex, ssriders, ssriders, ssriders,  tmnt_state, 0, ROT0,   "Pipi899","Sunset Riders (2 Players ver ABD EX Super Version)", MACHINE_SUPPORTS_SAVE )
 
 
 //PSmame
@@ -158,7 +158,7 @@ ROM_END
 // Proyecto Shadows Mame Build Plus
 /*    YEAR  NAME            PARENT    MACHINE        INPUT       INIT             MONITOR COMPANY                 FULLNAME FLAGS */
 // Sunset Riders
-GAME( 1991, ssridersudas01, ssriders, ssriders, ssrid4ps,  tmnt_state, 0,        ROT0,   "Hacks",  "Sunset Riders (4 Players ver EAC)(Ex Super version)",           MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE )
+GAME( 1991, ssridersudas01, ssriders, ssriders, ssrid4ps,  tmnt_state, 0,        ROT0,   "Hacks",  "Sunset Riders (4 Players ver EAC)(Ex Super version)", MACHINE_SUPPORTS_SAVE )
 // Sunset Riders
 GAME( 1991, tmnt2s01,      tmnt2,    tmnt2,    ssrid4ps,  tmnt_state, 0,        ROT0,   "Hacks",  "Teenage Mutant Ninja Turtles - Turtles in Time (4 Players ver ADA)(Ex Super version)", MACHINE_SUPPORTS_SAVE )
 GAME( 1991, tmnt2s02,      tmnt2,    tmnt2,    ssrid4ps,  tmnt_state, 0,        ROT0,   "Hacks",  "Teenage Mutant Ninja Turtles - Turtles in Time (4 Players ver ADA)(Start Change Char)", MACHINE_SUPPORTS_SAVE )
