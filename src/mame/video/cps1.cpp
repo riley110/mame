@@ -1242,30 +1242,6 @@ static const struct gfx_range mapper_sfzch_table[] =
 	{ 0 }
 };
 
-//HBMAME start
-#define mapper_frog     { 0x8000, 0, 0, 0 }, mapper_frog_table
-static const struct gfx_range mapper_frog_table[] =
-{
-	/* type            start   end    bank */
-	{ GFXTYPE_SPRITES, 0x04e0, 0x050f, 0 }, // frogs and bugs
-	{ GFXTYPE_SCROLL1, 0x0000, 0x003f, 0 }, // text
-	{ GFXTYPE_SCROLL2, 0x0140, 0x025f, 0 }, // frog feast title
-	{ GFXTYPE_SCROLL3, 0x0040, 0x04df, 0 }, // logo and background
-	{ 0 }
-};
-
-#define mapper_demo    { 0x8000, 0, 0, 0 }, mapper_demo_table
-static const struct gfx_range mapper_demo_table[] =
-{
-	/* type            start  end      bank */
-	{ GFXTYPE_SPRITES, 0x0000, 0x003f, 0 }, // moveable chaos
-	{ GFXTYPE_SCROLL1, 0x4400, 0x445f, 0 }, // text
-	{ GFXTYPE_SCROLL2, 0x0040, 0x00ff, 0 }, // logo, blue box, 10th
-	{ GFXTYPE_SCROLL3, 0x0100, 0x011f, 0 }, // must not allow access to 0000, otherwise not used
-	{ 0 }
-};
-//HBMAME end
-
 
 /*
   I don't know if CPS2 ROM boards use PALs as well; since all games seem to be

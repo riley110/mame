@@ -1648,10 +1648,10 @@ GAME( 1995, mschampx, mspacman, mschampx, mschamp,  pacman_state, 0,        ROT9
 
 /* Dave Widel's Games - http://www.widel.com */
 
-GAME( 2005, 96in1,    madpac,	96in1,    96in1,    pacman_state,  96in1,    ROT90, "David Widel", "96 in 1 v3 [h]", MACHINE_SUPPORTS_SAVE )
-GAME( 2005, 96in1c,   madpac,	96in1,    96in1,    pacman_state,  96in1,    ROT90, "David Widel", "96 in 1 v1 [h]", MACHINE_SUPPORTS_SAVE )
-GAME( 2005, 96in1a,   madpac,	96in1,    96in1,    pacman_state,  96in1,    ROT90, "David Widel", "96 in 1 v2 [h]", MACHINE_SUPPORTS_SAVE )
-GAME( 2005, 96in1b,   madpac,   96in1b,   96in1,    pacman_state,  madpac,   ROT90, "David Widel", "96 in 1 v4 [h]", MACHINE_SUPPORTS_SAVE )
+GAME( 2005, 96in1,    madpac,	_96in1,    96in1,    pacman_state,  96in1,    ROT90, "David Widel", "96 in 1 v3 [h]", MACHINE_SUPPORTS_SAVE )
+GAME( 2005, 96in1c,   madpac,	_96in1,    96in1,    pacman_state,  96in1,    ROT90, "David Widel", "96 in 1 v1 [h]", MACHINE_SUPPORTS_SAVE )
+GAME( 2005, 96in1a,   madpac,	_96in1,    96in1,    pacman_state,  96in1,    ROT90, "David Widel", "96 in 1 v2 [h]", MACHINE_SUPPORTS_SAVE )
+GAME( 2005, 96in1b,   madpac,   _96in1b,   96in1,    pacman_state,  madpac,   ROT90, "David Widel", "96 in 1 v4 [h]", MACHINE_SUPPORTS_SAVE )
 GAME( 2001, hackypac, madpac,   hackypac, pacman,  pacman_state,  madpac,   ROT90, "David Widel", "Hacky Pac", MACHINE_SUPPORTS_SAVE )
 GAME( 2005, madpac,   0,        madpac,   96in1,    pacman_state,  madpac,   ROT90, "David Widel", "Mad Pac [h]", MACHINE_SUPPORTS_SAVE )
 

@@ -286,6 +286,7 @@ public:
 	DECLARE_WRITE8_MEMBER(multipac_gfxbank_w);	
 	DECLARE_WRITE8_MEMBER(multipac_palbank_w);
 	TILE_GET_INFO_MEMBER(multipac_get_tile_info);
+	uint8_t m_timerthing;
 	DECLARE_READ8_MEMBER(mspacii_prot_r);
 	DECLARE_READ8_MEMBER(zolatimer_r);
 	DECLARE_WRITE8_MEMBER(zolatimer_w);
@@ -308,5 +309,8 @@ public:
 	DECLARE_DRIVER_INIT(mspaceur);
 	DECLARE_DRIVER_INIT(multipac);
 	DECLARE_DRIVER_INIT(pm4n1);
+	
+private:
+	void init_save_state_multipac();
 // END HBMAME
 };

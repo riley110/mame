@@ -98,40 +98,6 @@ MACHINE_CONFIG_START( galaxian_state::jumpbugx )
 	galaxian_audio(config);
 MACHINE_CONFIG_END
 
-
-/*************************************
- *
- *  Mr. Do Nightmare
- *
- *************************************/
-
-static INPUT_PORTS_START( mrdonm )
-	PORT_START("IN0")
-	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 )
-	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNUSED )
-	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT ) PORT_2WAY
-	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT ) PORT_2WAY
-	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_BUTTON1 )
-	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_UNUSED )
-	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNUSED )
-	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED )
-
-	PORT_START("IN1")
-	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_START1 )
-	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_START2 )
-	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP ) PORT_8WAY
-	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN ) PORT_8WAY
-	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_UNUSED )
-	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_UNUSED )
-
-	PORT_DIPNAME( 0xc0, 0x00, DEF_STR( Coinage ) )
-	PORT_DIPSETTING(    0x00, DEF_STR( 1C_1C ) )
-	PORT_DIPSETTING(    0xc0, DEF_STR( Free_Play ) )
-
-	PORT_START("IN2")
-	PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNUSED )
-INPUT_PORTS_END
-
 /*************************************
  *
  *  Trukker
@@ -501,24 +467,6 @@ ROM_START( mooncrs5 )
 	ROM_LOAD( "mmi6331.6l",  0x0000, 0x0020, CRC(6a0c7d87) SHA1(140335d85c67c75b65689d4e76d29863c209cf32) )
 ROM_END
 
-// Mr. Do. Nightmare
-ROM_START( mrdonm )
-	ROM_REGION( 0x10000, "maincpu", 0 )
-	ROM_LOAD( "mrdonm.u",    0x0000, 0x0800, CRC(197493a6) SHA1(f939fd712985db24dced4f7a66f4a804ca34ce60) )
-	ROM_LOAD( "mrdonm.v",    0x0800, 0x0800, CRC(b8ee84cf) SHA1(c5018f21da2f65fa573a2d5e9c8f96db1f0136e9) )
-	ROM_LOAD( "mrdonm.w",    0x1000, 0x0800, CRC(76879d31) SHA1(7aae5ee1eeaa5dacf4a232b3336f9e3df74018ca) )
-	ROM_LOAD( "mrdonm.y",    0x1800, 0x0800, CRC(d6d5e47e) SHA1(e5f41f90ca357f3e7ef1a6b055ca0cccc91ed391) )
-	ROM_LOAD( "mrdonm.z",    0x2000, 0x0800, CRC(34913886) SHA1(c1936ef6dc6080d080715d1c064513d581180fea) )
-
-	ROM_REGION( 0x1000, "gfx1", 0 )
-	ROM_LOAD( "mrdonm.1h",   0x0000, 0x0800, CRC(f880af4b) SHA1(67d24ac48a6bd68de5b914675dc4cd5982d8ffc4) )
-	ROM_LOAD( "mrdonm.1k",   0x0800, 0x0800, CRC(40fd608a) SHA1(3a58d5ac17e98bea3d58d238d81bd6a5dd24bb81) )
-
-	ROM_REGION( 0x0020, "proms", 0 )
-	ROM_LOAD( "mrdonm.6l",   0x0000, 0x0020, CRC(77f95861) SHA1(2acb3021e31b3c91bbf48763d2504dfad0d87f38) )
-ROM_END
-
-
 /* StarFighter II - This set came with a1,a2,b2,c1,e2 only. The rest I've used from Pisces */
 ROM_START( starfgh2 )
 	ROM_REGION( 0x4000, "maincpu", 0 )
@@ -851,8 +799,8 @@ GAME( 2001, videight, 0,        videight, warofbug, galaxian_state, videight, RO
 
 
 /* Other */
-GAME( 1981, jumpbugx, 0,        jumpbugx, jumpbug,  galaxian_state, jumpbug,  ROT90, "Rock-ola", "Jump Bug (Extra Sounds)", MACHINE_SUPPORTS_SAVE )
-GAME( 1982, monstrz,  0,        sfx,      sfx,      galaxian_state, sfx,      ORIENTATION_FLIP_X, "Nihon Game Co", "Monster Zero", MACHINE_UNEMULATED_PROTECTION | MACHINE_NO_SOUND | MACHINE_WRONG_COLORS | MACHINE_SUPPORTS_SAVE )
+GAME( 1981, jumpbugx, jumpbug,  jumpbugx, jumpbug,  galaxian_state, jumpbug,  ROT90, "Rock-ola", "Jump Bug (Extra Sounds)", MACHINE_SUPPORTS_SAVE )
+GAME( 1982, monstrz,  monsterz, sfx,      sfx,      galaxian_state, sfx,      ORIENTATION_FLIP_X, "Nihon Game Co", "Monster Zero (hack)", MACHINE_UNEMULATED_PROTECTION | MACHINE_NO_SOUND | MACHINE_WRONG_COLORS | MACHINE_SUPPORTS_SAVE )
 GAME( 19??, starfgh2, pisces,   galaxian, piscesb,  galaxian_state, pisces,   ROT90, "bootleg", "Starfighter II", MACHINE_SUPPORTS_SAVE )
 GAME( 1981, wbeast,   0,        galaxian, warofbug, galaxian_state, nolock,   ROT90, "Compost", "Wriggly Beasties", MACHINE_SUPPORTS_SAVE )
 

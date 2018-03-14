@@ -221,6 +221,7 @@ GAMEL(2012, outrunen0, outrun, outrun, outrun, segaorun_state, outrun, ROT0, "Ch
 
 /***************************** OUTRUNM *********************************************/
 
+/*
 //  sound_bank0_w and sound_bank1_w -
 //  handle sound board banking the entire z80 60k rom space
 //  to the first or second half of the 128k sound rom space
@@ -360,3 +361,4 @@ ROM_START( outrunm )
 ROM_END
 
 GAMEL(2016, outrunm, outrun, outrunm, outrun, outrunm_state, init, ROT0, "cmonkey", "Out Run (sitdown/upright, Rev B) (added music)", 0, layout_outrun ) // March? 2016
+*/
