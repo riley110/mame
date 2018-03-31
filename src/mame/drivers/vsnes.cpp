@@ -2866,5 +2866,3 @@ GAME( 1984, vsbballj, vsbball,   vsdual_pi,     vsbballj, vsnes_state, vsdual,  
 GAME( 1984, vsbballja,vsbball,   vsdual_pi,     vsbballj, vsnes_state, vsdual,   ROT0, "Nintendo Co., Ltd.",     "Vs. BaseBall (Japan, set BA A-2)",     0 )
 GAME( 1984, vsbballjb,vsbball,   vsdual_pi,     vsbballj, vsnes_state, vsdual,   ROT0, "Nintendo Co., Ltd.",     "Vs. BaseBall (Japan, set BA A-1)",     0 )
 GAME( 1984, iceclmrd, 0,         vsdual_pi,     iceclmrj, vsnes_state, vsdual,   ROT0, "Nintendo",               "Vs. Ice Climber Dual (set IC4-4 A-1)", 0 )
-
-#include "vsnes_hb.hxx"

@@ -1281,5 +1281,3 @@ GAME( 2000, tgm2,      0,        psikyo5_240, tgm2,     psikyosh_state, ps5,    
 GAME( 2000, tgm2p,     tgm2,     psikyo5_240, tgm2,     psikyosh_state, ps5,      ROT0,   "Arika",  "Tetris the Absolute The Grand Master 2 Plus", MACHINE_SUPPORTS_SAVE )
 GAME( 2001, gnbarich,  0,        psikyo5,     gnbarich, psikyosh_state, ps5,      ROT270, "Psikyo", "Gunbarich", MACHINE_SUPPORTS_SAVE )
 GAME( 2002, mjgtaste,  0,        psikyo5,     mjgtaste, psikyosh_state, mjgtaste, ROT0,   "Psikyo", "Mahjong G-Taste", MACHINE_SUPPORTS_SAVE )
-
-#include "psikyosh_hb.hxx"

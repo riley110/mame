@@ -5737,5 +5737,3 @@ GAME( 1993, qcrayon2,   0,        qcrayon2,  qcrayon2,   taitof2_state, 0,      
 GAME( 1991, driftout,   0,        driftout,  driftout,   taitof2_state, 0,        ROT270, "Visco",                     "Drift Out (Europe)", MACHINE_SUPPORTS_SAVE )
 GAME( 1991, driftoutj,  driftout, driftout,  driftout,   taitof2_state, 0,        ROT270, "Visco",                     "Drift Out (Japan)", MACHINE_SUPPORTS_SAVE )
 GAME( 1991, driveout,   driftout, driveout,  driftout,   taitof2_state, driveout, ROT270, "bootleg",                   "Drive Out (bootleg)", MACHINE_SUPPORTS_SAVE )
-
-#include "taito_f2_hb.hxx"

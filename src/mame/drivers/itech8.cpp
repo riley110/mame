@@ -2815,5 +2815,3 @@ GAME( 1991, ninclown, 0,        ninclown,           ninclown, itech8_state, 0,  
 /* Golden Tee Golf II-style PCB */
 GAME( 1992, gpgolf,   0,        gtg2,               gpgolf,   itech8_state, 0,        ROT0,   "Strata/Incredible Technologies", "Golden Par Golf (Joystick, V1.1)", 0 )
 GAME( 1992, gtg2,     0,        gtg2,               gtg2,     itech8_state, 0,        ROT0,   "Strata/Incredible Technologies", "Golden Tee Golf II (Trackball, V2.2)", 0 )
-
-#include "itech8_hb.hxx"

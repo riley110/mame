@@ -487,16 +487,6 @@ The games seem to use them to mark platforms, kill zones and no-go areas.
 #define HACK_B_1      -1,   -1,    -1,  -1,  -1,  -1,   -1,  -1,  -1,   0x14,{0x12,0x10,0x0e,0x0c},0x0a, {0x0e,0x0e,0x0e,0x30,0x30}
 #define HACK_B_2      -1,   -1,   0x0e,0x0c,0x0a,0x08, 0x06,0x04,0x02,  0x28,{0x26,0x24,0x22,0x20},0x22, {0x20,0x04,0x08,0x12,0x12}
 
-// HBMAME extras
-
-#define HACK_H_2      -1,   -1,    -1,  -1,  -1,  -1,   -1,  -1,  -1,   0x20,{ -1,  -1,  -1,  -1 },0x2a, {0x02,0x02,0x02,0x00,0x00} // wofh etc
-#define HACK_H_3      -1,   -1,    -1,  -1,  -1,  -1,   -1,  -1,  -1,   0x04,{0x12,0x10,0x0e,0x0c},0x0a, {0x02,0x02,0x02,0x00,0x00} // not used
-#define HACK_H_4      -1,   -1,    -1,  -1,  -1,  -1,   -1,  -1,  -1,   0x30,{0x2e,0x2c,0x2a,0x28},0x26, {0x02,0x04,0x08,0x00,0x00} // not used
-#define HACK_H_5      -1, 0x0000,          __not_applicable__,          0x26,{0x28,0x2a,0x2c,0x2e},0x30, {0x40,0x40,0x40,0x00,0x00} // daimakb
-#define HACK_H_6      -1,   -1,   0x06,0x04,0x02,0x00, 0x1e,0x1c,0x1a,  0x28,{0x26,0x24,0x22,0x20},0x30, {0x40,0x10,0x02,0x00,0x00} // knightshb2
-#define HACK_H_7      -1,   -1,   0x06,0x04,0x02,0x00, 0x1e,0x1c,0x1a,  0x26,{0x28,0x2a,0x2c,0x2e},0x30, {0x20,0x10,0x02,0x00,0x00} // knightsha
-#define HACK_H_8      -1,   -1,    -1,  -1,  -1,  -1,   -1,  -1,  -1,   0x20,{0x00,0x00,0x00,0x00},0x00, {0x80,0x80,0x80,0x00,0x00}
-
 /*
 CPS_B_21_DEF is CPS-B-21 at default settings (no battery)
 CPS_B_21_BTx are various battery configurations
@@ -519,6 +509,7 @@ static const struct gfx_range mapper_LWCHR_table[] =
 	/* type            start    end      bank */
 	{ GFXTYPE_SPRITES, 0x00000, 0x07fff, 0 },
 	{ GFXTYPE_SCROLL1, 0x00000, 0x1ffff, 0 },
+
 	{ GFXTYPE_STARS,   0x00000, 0x1ffff, 1 },
 	{ GFXTYPE_SCROLL2, 0x00000, 0x1ffff, 1 },
 	{ GFXTYPE_SCROLL3, 0x00000, 0x1ffff, 1 },
@@ -550,6 +541,7 @@ static const struct gfx_range mapper_LW621_table[] =
 	/* type            start    end      bank */
 	{ GFXTYPE_SPRITES, 0x00000, 0x07fff, 0 },
 	{ GFXTYPE_SCROLL1, 0x00000, 0x1ffff, 0 },
+
 	{ GFXTYPE_STARS,   0x00000, 0x1ffff, 1 },
 	{ GFXTYPE_SCROLL2, 0x00000, 0x1ffff, 1 },
 	{ GFXTYPE_SCROLL3, 0x00000, 0x1ffff, 1 },
@@ -574,7 +566,9 @@ static const struct gfx_range mapper_DM620_table[] =
 
 	/* type            start   end     bank */
 	{ GFXTYPE_SCROLL3, 0x8000, 0xbfff, 1 },
+
 	{ GFXTYPE_SPRITES, 0x2000, 0x3fff, 2 },
+
 	{ GFXTYPE_STARS | GFXTYPE_SPRITES | GFXTYPE_SCROLL1 | GFXTYPE_SCROLL2 | GFXTYPE_SCROLL3, 0x00000, 0x1ffff, 0 },
 	{ 0 }
 };
@@ -591,8 +585,11 @@ static const struct gfx_range mapper_DM22A_table[] =
 	/* type            start   end     bank */
 	{ GFXTYPE_SPRITES, 0x00000, 0x01fff, 0 },
 	{ GFXTYPE_SCROLL1, 0x02000, 0x03fff, 0 },
+
 	{ GFXTYPE_SCROLL2, 0x04000, 0x07fff, 1 },
+
 	{ GFXTYPE_SCROLL3, 0x00000, 0x1ffff, 2 },
+
 	{ GFXTYPE_SPRITES, 0x02000, 0x03fff, 3 },
 	{ 0 }
 };
@@ -609,6 +606,7 @@ static const struct gfx_range mapper_DAM63B_table[] =
 	{ GFXTYPE_SPRITES, 0x00000, 0x01fff, 0 },
 	{ GFXTYPE_SCROLL1, 0x02000, 0x02fff, 0 },
 	{ GFXTYPE_SCROLL2, 0x04000, 0x07fff, 0 },
+
 	{ GFXTYPE_SCROLL3, 0x00000, 0x1ffff, 1 },
 	{ GFXTYPE_SPRITES, 0x02000, 0x03fff, 1 },
 	{ 0 }
@@ -630,6 +628,7 @@ static const struct gfx_range mapper_ST24M1_table[] =
 	{ GFXTYPE_STARS,   0x00000, 0x003ff, 0 },
 	{ GFXTYPE_SPRITES, 0x00000, 0x04fff, 0 },
 	{ GFXTYPE_SCROLL2, 0x04000, 0x07fff, 0 },
+
 	{ GFXTYPE_SCROLL3, 0x00000, 0x07fff, 1 },
 	{ GFXTYPE_SCROLL1, 0x07000, 0x07fff, 1 },
 	{ 0 }
@@ -647,9 +646,12 @@ static const struct gfx_range mapper_ST22B_table[] =
 	/* type            start    end      bank */
 	{ GFXTYPE_STARS,   0x00000, 0x1ffff, 0 },
 	{ GFXTYPE_SPRITES, 0x00000, 0x03fff, 0 },
+
 	{ GFXTYPE_SPRITES, 0x04000, 0x04fff, 1 },
 	{ GFXTYPE_SCROLL2, 0x04000, 0x07fff, 1 },
+
 	{ GFXTYPE_SCROLL3, 0x00000, 0x03fff, 2 },
+
 	{ GFXTYPE_SCROLL3, 0x04000, 0x07fff, 3 },
 	{ GFXTYPE_SCROLL1, 0x07000, 0x07fff, 3 },
 	{ 0 }
@@ -667,9 +669,12 @@ static const struct gfx_range mapper_TK22B_table[] =
 
 	/* type            start  end      bank */
 	{ GFXTYPE_SPRITES, 0x0000, 0x3fff, 0 },
+
 	{ GFXTYPE_SPRITES, 0x4000, 0x5fff, 1 },
 	{ GFXTYPE_SCROLL1, 0x6000, 0x7fff, 1 },
+
 	{ GFXTYPE_SCROLL3, 0x0000, 0x3fff, 2 },
+
 	{ GFXTYPE_SCROLL2, 0x4000, 0x7fff, 3 },
 	{ 0 }
 };
@@ -687,6 +692,7 @@ static const struct gfx_range mapper_WL24B_table[] =
 	{ GFXTYPE_SPRITES, 0x0000, 0x4fff, 0 },
 	{ GFXTYPE_SCROLL3, 0x5000, 0x6fff, 0 },
 	{ GFXTYPE_SCROLL1, 0x7000, 0x7fff, 0 },
+
 	{ GFXTYPE_SCROLL2, 0x0000, 0x3fff, 1 },
 	{ 0 }
 };
@@ -778,6 +784,7 @@ static const struct gfx_range mapper_AR22B_table[] =
 	/* type            start   end     bank */
 	{ GFXTYPE_SPRITES, 0x0000, 0x2fff, 0 },
 	{ GFXTYPE_SCROLL1, 0x3000, 0x3fff, 0 },
+
 	{ GFXTYPE_SCROLL2, 0x4000, 0x5fff, 1 },
 	{ GFXTYPE_SCROLL3, 0x6000, 0x7fff, 1 },
 	{ 0 }
@@ -804,6 +811,7 @@ static const struct gfx_range mapper_O224B_table[] =
 	{ GFXTYPE_SCROLL2, 0x0c00, 0x3bff, 0 },
 	{ GFXTYPE_SCROLL3, 0x3c00, 0x4bff, 0 },
 	{ GFXTYPE_SPRITES, 0x4c00, 0x7fff, 0 },
+
 	{ GFXTYPE_SPRITES, 0x8000, 0xa7ff, 1 },
 	{ GFXTYPE_SCROLL2, 0xa800, 0xb7ff, 1 },
 	{ GFXTYPE_SCROLL3, 0xb800, 0xbfff, 1 },
@@ -914,6 +922,7 @@ static const struct gfx_range mapper_CA22B_table[] =
 	{ GFXTYPE_SPRITES, 0x0000, 0x2fff, 0 },
 	{ GFXTYPE_SCROLL2, 0x0000, 0x2fff, 0 },
 	{ GFXTYPE_SCROLL3, 0x3000, 0x3fff, 0 },
+
 	{ GFXTYPE_SCROLL3, 0x4000, 0x4fff, 1 },
 	{ GFXTYPE_SCROLL1, 0x5000, 0x57ff, 1 },
 	{ GFXTYPE_SPRITES, 0x5800, 0x7fff, 1 },
@@ -932,7 +941,9 @@ static const struct gfx_range mapper_STF29_table[] =
 
 	/* type            start    end      bank */
 	{ GFXTYPE_SPRITES, 0x00000, 0x07fff, 0 },
+
 	{ GFXTYPE_SPRITES, 0x08000, 0x0ffff, 1 },
+
 	{ GFXTYPE_SPRITES, 0x10000, 0x11fff, 2 },
 	{ GFXTYPE_SCROLL3, 0x02000, 0x03fff, 2 },
 	{ GFXTYPE_SCROLL1, 0x04000, 0x04fff, 2 },
@@ -956,6 +967,7 @@ static const struct gfx_range mapper_RT24B_table[] =
 	{ GFXTYPE_SPRITES, 0x0000, 0x53ff, 0 },
 	{ GFXTYPE_SCROLL1, 0x5400, 0x6fff, 0 },
 	{ GFXTYPE_SCROLL3, 0x7000, 0x7fff, 0 },
+
 	{ GFXTYPE_SCROLL3, 0x0000, 0x3fff, 1 },
 	{ GFXTYPE_SCROLL2, 0x2800, 0x7fff, 1 },
 	{ GFXTYPE_SPRITES, 0x5400, 0x7fff, 1 },
@@ -973,11 +985,14 @@ static const struct gfx_range mapper_RT22B_table[] =
 
 	/* type            start   end     bank */
 	{ GFXTYPE_SPRITES, 0x0000, 0x3fff, 0 },
+
 	{ GFXTYPE_SPRITES, 0x4000, 0x53ff, 1 },
 	{ GFXTYPE_SCROLL1, 0x5400, 0x6fff, 1 },
 	{ GFXTYPE_SCROLL3, 0x7000, 0x7fff, 1 },
+
 	{ GFXTYPE_SCROLL3, 0x0000, 0x3fff, 2 },
 	{ GFXTYPE_SCROLL2, 0x2800, 0x3fff, 2 },
+
 	{ GFXTYPE_SCROLL2, 0x4000, 0x7fff, 3 },
 	{ GFXTYPE_SPRITES, 0x5400, 0x7fff, 3 },
 	{ 0 }
@@ -994,6 +1009,7 @@ static const struct gfx_range mapper_KD29B_table[] =
 
 	/* type            start   end     bank */
 	{ GFXTYPE_SPRITES, 0x0000, 0x7fff, 0 },
+
 	{ GFXTYPE_SPRITES, 0x8000, 0x8fff, 1 },
 	{ GFXTYPE_SCROLL2, 0x9000, 0xbfff, 1 },
 	{ GFXTYPE_SCROLL1, 0xc000, 0xd7ff, 1 },
@@ -1013,6 +1029,7 @@ static const struct gfx_range mapper_CC63B_table[] =
 	/* type            start   end     bank */
 	{ GFXTYPE_SPRITES, 0x0000, 0x7fff, 0 },
 	{ GFXTYPE_SCROLL2, 0x0000, 0x7fff, 0 },
+
 	{ GFXTYPE_SPRITES, 0x8000, 0xffff, 1 },
 	{ GFXTYPE_SCROLL1, 0x8000, 0xffff, 1 },
 	{ GFXTYPE_SCROLL2, 0x8000, 0xffff, 1 },
@@ -1032,6 +1049,7 @@ static const struct gfx_range mapper_KR63B_table[] =
 	/* type            start   end     bank */
 	{ GFXTYPE_SPRITES, 0x0000, 0x7fff, 0 },
 	{ GFXTYPE_SCROLL2, 0x0000, 0x7fff, 0 },
+
 	{ GFXTYPE_SCROLL1, 0x8000, 0x9fff, 1 },
 	{ GFXTYPE_SPRITES, 0x8000, 0xcfff, 1 },
 	{ GFXTYPE_SCROLL2, 0x8000, 0xcfff, 1 },
@@ -1053,7 +1071,9 @@ static const struct gfx_range mapper_S9263B_table[] =
 
 	/* type            start    end      bank */
 	{ GFXTYPE_SPRITES, 0x00000, 0x07fff, 0 },
+
 	{ GFXTYPE_SPRITES, 0x08000, 0x0ffff, 1 },
+
 	{ GFXTYPE_SPRITES, 0x10000, 0x11fff, 2 },
 	{ GFXTYPE_SCROLL3, 0x02000, 0x03fff, 2 },
 	{ GFXTYPE_SCROLL1, 0x04000, 0x04fff, 2 },
@@ -1124,6 +1144,7 @@ static const struct gfx_range mapper_CD63B_table[] =
 	/* type                              start   end     bank */
 	{ GFXTYPE_SCROLL1,                   0x0000, 0x0fff, 0 },
 	{ GFXTYPE_SPRITES,                   0x1000, 0x7fff, 0 },
+
 	{ GFXTYPE_SPRITES | GFXTYPE_SCROLL2, 0x8000, 0xdfff, 1 },
 	{ GFXTYPE_SCROLL3,                   0xe000, 0xffff, 1 },
 	{ 0 }
@@ -1136,6 +1157,7 @@ static const struct gfx_range mapper_PS63B_table[] =
 	/* type                              start   end     bank */
 	{ GFXTYPE_SCROLL1,                   0x0000, 0x0fff, 0 },
 	{ GFXTYPE_SPRITES,                   0x1000, 0x7fff, 0 },
+
 	{ GFXTYPE_SPRITES | GFXTYPE_SCROLL2, 0x8000, 0xdbff, 1 },
 	{ GFXTYPE_SCROLL3,                   0xdc00, 0xffff, 1 },
 	{ 0 }
@@ -1148,7 +1170,9 @@ static const struct gfx_range mapper_MB63B_table[] =
 	/* type                              start    end      bank */
 	{ GFXTYPE_SCROLL1,                   0x00000, 0x00fff, 0 },
 	{ GFXTYPE_SPRITES | GFXTYPE_SCROLL2, 0x01000, 0x07fff, 0 },
+
 	{ GFXTYPE_SPRITES | GFXTYPE_SCROLL2, 0x08000, 0x0ffff, 1 },
+
 	{ GFXTYPE_SPRITES | GFXTYPE_SCROLL2, 0x10000, 0x167ff, 2 },
 	{ GFXTYPE_SCROLL3,                   0x16800, 0x17fff, 2 },
 	{ 0 }
@@ -1188,6 +1212,7 @@ static const struct gfx_range mapper_TN2292_table[] =
 	{ GFXTYPE_SCROLL1,                   0x0000, 0x0fff, 0 },
 	{ GFXTYPE_SCROLL3,                   0x1000, 0x3fff, 0 },
 	{ GFXTYPE_SPRITES | GFXTYPE_SCROLL2, 0x4000, 0x7fff, 0 },
+
 	{ GFXTYPE_SPRITES | GFXTYPE_SCROLL2, 0x8000, 0xffff, 1 },
 	{ 0 }
 };
@@ -1227,6 +1252,7 @@ static const struct gfx_range mapper_pang3_table[] =
 {
 	/* type                              start   end     bank */
 	{ GFXTYPE_SPRITES | GFXTYPE_SCROLL2, 0x0000, 0x7fff, 0 },
+
 	{ GFXTYPE_SPRITES | GFXTYPE_SCROLL2, 0x8000, 0x9fff, 1 },
 	{ GFXTYPE_SCROLL1,                   0xa000, 0xbfff, 1 },
 	{ GFXTYPE_SCROLL3,                   0xc000, 0xffff, 1 },
@@ -1610,433 +1636,6 @@ static const struct CPS1config cps1_config_table[]=
 
 	{"kenseim",     CPS_B_21_DEF, mapper_KNM10B },  // wrong, need to convert equations from PAL
 
-// HBMAME
-	{"captcocc",    CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },		// nw
-	{"captcovs",    CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },		// nw
-	{"dinosf2",     CPS_B_21_QS2, mapper_CD63B },							// nw
-	{"kodd",        CPS_B_21_DEF, mapper_KD29B, 0x36, 0, 0x34 },			// nw
-	{"kodud",       CPS_B_21_DEF, mapper_KD29B, 0x36, 0, 0x34 },			// nw
-#if 0
-	{"3wondrud",    CPS_B_21_DEF, mapper_RT24B },							//works
-	{"captcoud",    CPS_B_21_DEF, mapper_CC63B,  0x36, 0x38, 0x34 },		//works
-	{"captcomc",    CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },		//works
-	{"captcomh",    CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },		//works
-	{"captcommb2",  CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },		//works
-	//{"cawingb",     CPS_B_16,     mapper_CA24B, 0, 0, 0, 0x8F },			// no sprites here, ok in fcrash.cpp
-	//{"cawingb",     CPS_B_16,     mapper_CA24B, 0, 0, 0, 0x8F },			// no sprites here, ok in fcrash.cpp
-	{"cps1demo",    CPS_B_04,     mapper_demo,  0, 0, 0, 0x80 },			//works
-	{"cps1frog",    CPS_B_04,     mapper_frog,  0, 0, 0, 0x80 },			//works
-	{"cps1test",    CPS_B_21_DEF, mapper_S9263B, 0x36 },					//works
-	{"cps1testa",   CPS_B_21_DEF, mapper_RCM63B },							//works
-	{"daimakb",     HACK_H_5,     mapper_DM22A },							//works
-	{"dino08h2",    CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dino08h3",    CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dino08hp",    CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dinob",       CPS_B_21_QS2, mapper_CD63B, 0, 0, 0, 0x0F },			//works
-	{"dinobt",      CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dinobtpp",    CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dinocgba",    CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dinocgbb",    CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dinocgbc",    CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dinoeh",      CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dinoex",      CPS_B_21_DEF, mapper_CD63B },							//works
-	{"dinoh",       CPS_B_21_DEF, mapper_CD63B, 0x36 },						//works
-	{"dinoha",      CPS_B_21_DEF, mapper_CD63B, 0x36 },						//works
-	{"dinohb",      CPS_B_21_QS2, mapper_CD63B, 0, 0, 0, 0x0F },			//works
-	{"dinohp",      CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dinohx",      CPS_B_21_DEF, mapper_CD63B, 0x36 },						//works
-	{"dinojp",      CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dinorp",      CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dinoslice",   CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dinouphp",    CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dinoz",       CPS_B_21_QS2, mapper_CD63B },							//works
-	{"ffightb",     CPS_B_01,     mapper_S224B },							//works
-	{"knight21",    CPS_B_21_BT4, mapper_KR63B, 0x36, 0, 0x34 },			//works
-	//{"knightsa",    CPS_B_21_BT4, mapper_KR63B, 0x36, 0, 0x34 },			// a rom is unobtainable
-	{"knightshb2",   HACK_H_6,     mapper_KR63B, 0x36, 0, 0x34, 0x44 }, 		//works
-	{"knightsh",    CPS_B_21_DEF, mapper_KR63B, 0x36, 0, 0x34 },			//works (intro screen is crap)
-	{"knightsha",   HACK_H_7,     mapper_KR63B, 0x36, 0, 0x34 },			//works
-	{"knightsjb",   CPS_B_21_DEF, mapper_KR63B, 0x36, 0, 0x34 },			//works
-	{"knightsro",   CPS_B_21_BT4, mapper_KR63B, 0x36, 0, 0x34 },			//works
-	{"knightud",    CPS_B_21_DEF, mapper_KR63B, 0x36, 0, 0x34 },			//works
-	{"kodh",        CPS_B_21_DEF, mapper_KD29B, 0x36, 0, 0x34 },			//works
-	{"kodsp",       CPS_B_21_BT2, mapper_KD29B, 0x36, 0, 0x34 },			//works
-	{"pnicku",      CPS_B_21_DEF, mapper_PKB10B },							//works
-	{"punisherb",   CPS_B_21_QS3, mapper_PS63B, 0, 0, 0, 0x0E },			//works
-	{"punisherf",   CPS_B_21_QS3, mapper_PS63B },							//works
-	{"punisherje1", CPS_B_21_QS3, mapper_PS63B },							//works
-	{"punisherjh",  CPS_B_21_QS3, mapper_PS63B },							//works
-	{"punisherjh1", CPS_B_21_QS3, mapper_PS63B },							//works
-	{"punisherjha", CPS_B_21_QS3, mapper_PS63B },							//works
-	{"punisherud1", CPS_B_21_DEF, mapper_PS63B },							//works
-	{"punisherud2", CPS_B_21_DEF, mapper_PS63B },							//works
-	{"sf2bhj",      CPS_B_12,     mapper_STF29,  0x36 },					//works
-	{"sf2c",        CPS_B_13,     mapper_STF29,  0x36 },					//works
-	{"sf2cebr",     CPS_B_21_DEF, mapper_S9263B, 0x36 },					//works
-	{"sf2ced",      CPS_B_21_DEF, mapper_S9263B, 0x36 },					//works
-	{"sf2ceda",     CPS_B_21_DEF, mapper_S9263B, 0x36 },					//works
-	{"sf2ceh",      CPS_B_21_DEF, mapper_S9263B, 0x36 },					//works
-	{"sf2cehk",     CPS_B_21_DEF, mapper_S9263B, 0x36 },					//works
-	{"sf2cehp",     CPS_B_21_DEF, mapper_S9263B, 0x36 },					//works
-	{"sf2cejem",    CPS_B_21_DEF, mapper_S9263B, 0x36 },					//works
-	{"sf2koryuh",   CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2h9",       CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2h10",      CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2h11",      HACK_B_1,     mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2h12",      HACK_B_1,     mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2h13",      CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2pun",      CPS_B_21_DEF, mapper_S9263B, 0x36 },					//works
-	{"sf2sl73a",    CPS_B_21_DEF, mapper_S9263B, 0x36 },					//works
-	{"sf2th",       CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2tha",      CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2tlona",    CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2tlonb",    CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2tlonc",    CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2turyu",    CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2yyc3d5",   CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2yyc3g",    CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2yyc6",     CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sk2h1",       HACK_H_2,     mapper_TK263B, 0, 0, 0, 0x8F },			//works, priorities
-	{"sk2h1q",      HACK_H_2,     mapper_TK263B, 0, 0, 0, 0x8F },			//works, priorities
-	{"sk2h2",       HACK_H_2,     mapper_TK263B, 0, 0, 0, 0x8F },			//works, priorities
-	{"sk2h2q",      HACK_H_2,     mapper_TK263B, 0, 0, 0, 0x8F },			//works, priorities
-	{"sk2h3",       HACK_H_2,     mapper_TK263B, 0, 0, 0, 0x8F },			//works, priorities
-	{"sk2h4q",      HACK_H_2,     mapper_TK263B, 0, 0, 0, 0x8F },			//works, priorities
-	{"sk2h5q",      HACK_H_2,     mapper_TK263B, 0, 0, 0, 0x8F },			//works, priorities
-	{"sk2h6q",      HACK_H_2,     mapper_TK263B, 0, 0, 0, 0x8F },			//works, priorities
-	{"sk2h11",      CPS_B_21_DEF, mapper_TK263B },							//works
-	{"sk2h12",      CPS_B_21_DEF, mapper_TK263B },							//works
-	{"sk2h13",      CPS_B_21_DEF, mapper_TK263B },							//works
-	{"sk2h14",      CPS_B_21_DEF, mapper_TK263B },							//works
-	{"sk2h15",      CPS_B_21_DEF, mapper_TK263B },							//works
-	{"sk2h16",      CPS_B_21_DEF, mapper_TK263B },							//works
-	{"sk2h21",      CPS_B_21_DEF, mapper_TK263B, 0x36 },					//works
-	{"sk2h22",      HACK_H_2,     mapper_TK263B, 0x36, 0, 0, 0x8F },		//works, priorities
-	{"sk2h31",      HACK_H_2,     mapper_TK263B, 0x36, 0, 0, 0x8F },		//works, priorities
-	{"sk2h31q",     HACK_H_2,     mapper_TK263B, 0x36, 0, 0, 0x8F },		//works, priorities
-	{"sk2h32",      HACK_H_2,     mapper_TK263B, 0x36, 0, 0, 0x8F },		//works, priorities
-	{"sk2h32q",     HACK_H_2,     mapper_TK263B, 0x36, 0, 0, 0x8F },		//works, priorities
-	{"sk2h33",      HACK_H_2,     mapper_TK263B, 0x36, 0, 0, 0x8F },		//works, priorities
-	{"sk2h33q",     HACK_H_2,     mapper_TK263B, 0x36, 0, 0, 0x8F },		//works, priorities
-	{"sk2h34",      HACK_H_2,     mapper_TK263B, 0x36, 0, 0, 0x8F },		//works, priorities
-	{"sk2h34q",     HACK_H_2,     mapper_TK263B, 0x36, 0, 0, 0x8F },		//works, priorities
-	{"sk2h35",      CPS_B_21_DEF, mapper_TK263B, 0x36 },					//works
-	{"sk3p1",       CPS_B_21_DEF, mapper_sfzch },							//works
-	{"sk3p2",       CPS_B_21_DEF, mapper_TK263B },							//works
-	{"sk3p3",       CPS_B_21_DEF, mapper_TK263B },							//works
-	{"slammastud",  CPS_B_21_DEF, mapper_MB63B },							//works
-	{"stridergf",   CPS_B_01,     mapper_ST24M1 },							//works
-	{"stridergh",   CPS_B_01,     mapper_ST24M1 },							//works
-	{"tk2c1",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c2",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c3",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c4",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c5",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c6",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c7",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c8",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c9",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c10",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c11",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c12",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c13",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c14",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c15",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c16",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c17",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c18",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c19",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c20",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c21",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c22",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c23",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h1",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h2",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h3",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h4",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h5",       CPS_B_21_QS1, mapper_TK263B },							// problem with chinese language roms
-	{"tk2h6",       CPS_B_21_DEF, mapper_TK263B },							//works
-	{"tk2h7",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h8",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h9",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h10",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h11",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h12",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h13",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h14",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h15",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h16",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h17",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h18",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2p2",       CPS_B_21_DEF, mapper_sfzch },							//works
-	{"tk2p3",       CPS_B_21_DEF, mapper_TK263B },							//works
-	{"varthb",      CPS_B_04,     mapper_VA63B, 0, 0, 0, 0x0F },			//works
-	{"wofb",        CPS_B_21_DEF, mapper_TK263B },							//works
-	{"wofes",       CPS_B_21_DEF, mapper_TK263B },							//works
-	{"woffr",       CPS_B_21_DEF, mapper_sfzch },							//works
-	{"wofr1h",      CPS_B_21_DEF, mapper_TK263B },							//works
-	{"wofsf2",      CPS_B_21_QS1, mapper_TK263B, 0x36 },					//works
-	{"wofud",       CPS_B_21_DEF, mapper_TK263B },							//works
-#endif
-	// HBMAME end
-	// PSMame Build Plus
-	{"3wonders01",  CPS_B_21_BT1, mapper_RT24B },
-	{"3wonders02",  CPS_B_21_BT1, mapper_RT24B },
-    {"captcomms01", CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },
-	{"captcomms02", CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },
-	{"captcomms03", CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },
-	{"captcomms04", CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },
-	{"captcomms05", CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },
-	{"captcomms06", CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },
-	{"captcomms07", CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },
-	{"captcomms08", CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },
-	{"captcomms09", CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },
-	{"captcomms10", CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },
-	{"captcomms11", CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },
-	{"captcomms12", CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },
-	{"captcomms13", CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },
-	{"captcomms14", CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },
-	{"captcomms15", CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },
-	{"captcomms16", CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },
-	{"captcomms17", CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },
-	{"captcomms18", CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },
-	{"captcomms19", CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },
-	{"captcomms20", CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },
-	{"captcomms21", CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },
-	{"captcomms22", CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },
-	{"captcomms23", CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },
-	{"captcomms24", CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },
-	{"captcomms25", CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },
-	{"captcomms26", CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },
-    {"captcomms27", CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },
-	{"dinos01",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos02",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos03",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos04",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos05",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos06",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos07",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos08",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos09",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos10",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos11",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos12",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos13",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos14",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos15",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos16",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos17",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos18",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos19",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos20",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos21",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos22",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos23",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos24",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos25",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos26",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos27",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos28",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos29",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos30",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos31",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos32",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos33",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos34",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos35",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos36",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos37",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos38",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos39",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos40",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos41",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos42",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos43",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos44",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos45",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos46",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos47",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos48",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos49",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos50",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos51",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos52",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos53",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos54",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos55",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos56",     CPS_B_21_DEF, mapper_CD63B, 0x36 },
-	{"dinos57",     CPS_B_21_DEF, mapper_CD63B, 0x36 },
-	{"dinos58",     CPS_B_21_DEF, mapper_CD63B, 0x36 },
-	{"dinos59",     CPS_B_21_DEF, mapper_CD63B, 0x36 },
-	{"dinos60",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos61",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos62",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos63",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos64",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos65",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos66",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos67",     CPS_B_21_QS2, mapper_CD63B },
-	{"dinos68",     CPS_B_21_QS2, mapper_CD63B },
-	{"ffights01",   CPS_B_04,     mapper_S224B },
-	{"koduhc01",    CPS_B_21_BT2, mapper_KD29B,  0x36, 0, 0x34 },
-	{"koduhc02",    CPS_B_21_BT2, mapper_KD29B,  0x36, 0, 0x34 },
-	{"koduhc03",    CPS_B_21_BT2, mapper_KD29B,  0x36, 0, 0x34 },
-	{"koduhc04",    CPS_B_21_BT2, mapper_KD29B,  0x36, 0, 0x34 },
-	{"knightsh01",  CPS_B_21_BT4, mapper_KR63B,  0x36, 0, 0x34 },
-	{"knightsh02",  CPS_B_21_BT4, mapper_KR63B,  0x36, 0, 0x34 },
-	{"knightsh03",  CPS_B_21_BT4, mapper_KR63B,  0x36, 0, 0x34 },
-	{"knightsh04",  CPS_B_21_BT4, mapper_KR63B,  0x36, 0, 0x34 },
-	{"knightsh05",  CPS_B_21_BT4, mapper_KR63B,  0x36, 0, 0x34 },
-	{"mercs01",     CPS_B_12,     mapper_O224B,  0x36, 0, 0x34 },
-	{"mercs02",     CPS_B_12,     mapper_O224B,  0x36, 0, 0x34 },
-	{"mbombrds01",  CPS_B_21_QS5, mapper_MB63B },
-	{"mbombrds02",  CPS_B_21_QS5, mapper_MB63B },
-	{"mbombrds03",  CPS_B_21_QS5, mapper_MB63B },
-	{"mbombrds04",  CPS_B_21_QS5, mapper_MB63B },
-	{"punishers01", CPS_B_21_QS3, mapper_PS63B },
-	{"punishers02", CPS_B_21_QS3, mapper_PS63B },
-	{"punishers03", CPS_B_21_QS3, mapper_PS63B },
-	{"punishers04", CPS_B_21_QS3, mapper_PS63B },
-	{"punishers05", CPS_B_21_QS3, mapper_PS63B },
-	{"punisherjs01",   CPS_B_21_QS3, mapper_PS63B },
-	{"punisherjs02",   CPS_B_21_QS3, mapper_PS63B },
-	{"punisherus01",   CPS_B_21_QS3, mapper_PS63B },
-	{"sf2ceeas01",  CPS_B_21_DEF, mapper_S9263B, 0x36 },
-	{"sf2ceeas02",  CPS_B_21_DEF, mapper_S9263B, 0x36 },
-	{"sf2ces01",       CPS_B_21_DEF, mapper_S9263B, 0x36 },
-	{"sf2ces02",       CPS_B_21_DEF, mapper_S9263B, 0x36 },
-	{"sf2ces03",       CPS_B_21_DEF, mapper_S9263B, 0x36 },
-	{"sf2ces04",       CPS_B_21_DEF, mapper_S9263B, 0x36 },
-	{"sf2ces05",       CPS_B_21_DEF, mapper_S9263B, 0x36 },
-	{"sfzchs01",       CPS_B_21_DEF, mapper_sfzch },
-	{"sfzchs02",       CPS_B_21_DEF, mapper_sfzch },
-	{"sf2koryus01",    CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 1 },
-	{"slammasts01", CPS_B_21_QS4, mapper_MB63B },
-	{"slammasts02", CPS_B_21_QS4, mapper_MB63B },
-	{"slammasts03", CPS_B_21_QS4, mapper_MB63B },
-	{"slammasts04", CPS_B_21_QS4, mapper_MB63B },
-	{"striders01",  CPS_B_01,     mapper_ST24M1 },
-	{"varths01",    CPS_B_04,     mapper_VA63B },
-	{"varths02",    CPS_B_21_BT5, mapper_VA22B },
-	{"varths03",    CPS_B_04,     mapper_VA63B },
-	{"willows01",   CPS_B_03,     mapper_WL24B },
-	{"wofs01",      CPS_B_21_DEF, mapper_TK263B },
-	{"wofs02",      CPS_B_21_DEF, mapper_TK263B },
-	{"wofs03",      CPS_B_21_DEF, mapper_TK263B },
-	{"wofs04",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs05",      CPS_B_21_DEF, mapper_TK263B },
-	{"wofs06",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs07",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs08",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs09",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs10",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs11",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs12",      CPS_B_21_DEF, mapper_TK263B },
-	{"wofs13",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs14",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs15",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs16",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs17",      CPS_B_21_DEF, mapper_TK263B },
-	{"wofs18",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs19",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs20",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs21",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs22",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs23",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs24",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs25",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs26",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs27",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs28",      CPS_B_21_DEF, mapper_TK263B },
-	{"wofs29",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs30",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs31",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs32",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs33",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs34",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs35",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofs36",      CPS_B_21_DEF, mapper_TK263B },
-	{"wofs37",      CPS_B_21_DEF, mapper_TK263B },
-	{"wofs38",      CPS_B_21_DEF, mapper_TK263B },
-	{"wofs39",      CPS_B_21_DEF, mapper_TK263B },
-    {"wofs40",      CPS_B_21_DEF, mapper_TK263B },
-	{"wofs41",      CPS_B_21_DEF, mapper_TK263B },
-	{"wofs42",      CPS_B_21_DEF, mapper_TK263B },
-	{"wofs43",      CPS_B_21_DEF, mapper_TK263B },
-	{"wofs44",      CPS_B_21_DEF, mapper_TK263B },
-	{"wofs45",      CPS_B_21_DEF, mapper_TK263B },
-	{"wofr101",     CPS_B_21_DEF, mapper_TK263B },
-	{"wofr102",     CPS_B_21_DEF, mapper_TK263B },
-	{"wofr103",     CPS_B_21_DEF, mapper_TK263B },
-	{"wofr104",     CPS_B_21_DEF, mapper_TK263B },
-	{"wofr105",     CPS_B_21_DEF, mapper_TK263B },
-	{"wofr106",     CPS_B_21_DEF, mapper_TK263B },
-	{"wofr107",     CPS_B_21_DEF, mapper_TK263B },
-	{"wofr108",     CPS_B_21_DEF, mapper_TK263B },
-	{"wofr109",     CPS_B_21_DEF, mapper_TK263B },
-	{"wofj01",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj02",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj03",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj04",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj05",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj06",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj07",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj08",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj09",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj10",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj11",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj12",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj13",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj14",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj15",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj16",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj17",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj18",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj19",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj20",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj21",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj22",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj23",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj24",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj25",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj26",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj27",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj28",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj29",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj30",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj31",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj32",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj33",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj34",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj35",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj36",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj37",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj38",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj39",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj40",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj41",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj42",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj43",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj44",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj45",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj46",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj47",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj48",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj49",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj50",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj51",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj52",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj53",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj54",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj55",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj56",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofj57",      CPS_B_21_QS1, mapper_TK263B },
-	{"wofhl01",     CPS_B_21_DEF, mapper_sfzch },
-	{"wofhl02",     CPS_B_21_DEF, mapper_sfzch },
-	{"wofh01",      HACK_H_2,     mapper_TK263B, 0, 0, 0, 0x8F },
-	{"wofh02",      HACK_H_2,     mapper_TK263B, 0, 0, 0, 0x8F },
-	{"wofh03",      HACK_H_2,     mapper_TK263B, 0, 0, 0, 0x8F },
-	//PSMame Build Plus End
 	{nullptr}     /* End of table */
 };
 
@@ -2197,10 +1796,10 @@ READ16_MEMBER(cps_state::cps1_cps_b_r)
 				m_cps_b_regs[m_game_config->mult_factor2 / 2]) >> 16;
 
 	if (offset == m_game_config->in2_addr / 2)  /* Extra input ports (on C-board) */
-		return cps1_in2_r(space, 0, 0); // HBMAME ioport("IN2")->read();
+		return ioport("IN2")->read();
 
 	if (offset == m_game_config->in3_addr / 2)  /* Player 4 controls (on C-board) ("Captain Commando") */
-		return cps1_in3_r(space, 0, 0); // HBMAME ioport("IN3")->read();
+		return ioport("IN3")->read();
 
 	if (m_cps_version == 2)
 	{
@@ -2679,8 +2278,6 @@ VIDEO_START_MEMBER(cps_state,cps)
 	memset(m_cps_a_regs, 0, 0x40);   /* Clear CPS-A registers */
 	memset(m_cps_b_regs, 0, 0x40);   /* Clear CPS-B registers */
 
-	m_cps_b_regs[m_game_config->palette_control/2] = 0x3F; // HBMAME
-
 	if (m_cps_version == 2)
 	{
 		memset(m_objram1, 0, m_cps2_obj_size);
@@ -2895,7 +2492,7 @@ void cps_state::cps1_render_sprites( screen_device &screen, bitmap_ind16 &bitmap
 	uint16_t *base = m_buffered_obj.get();
 
 	/* some sf2 hacks draw the sprites in reverse order */
-	if (BIT(m_game_config->bootleg_kludge, 6)) // HBMAME
+	if ((m_game_config->bootleg_kludge == 1) || (m_game_config->bootleg_kludge == 2) || (m_game_config->bootleg_kludge == 3))
 	{
 		base += m_last_sprite_offset;
 		baseadd = -4;

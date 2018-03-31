@@ -876,5 +876,3 @@ GAME( 1980, tempest2,  tempest, tempest, tempest, tempest_state, 0, ROT270, "Ata
 GAME( 1980, tempest1,  tempest, tempest, tempest, tempest_state, 0, ROT270, "Atari", "Tempest (rev 1)", MACHINE_SUPPORTS_SAVE )
 GAME( 1980, tempest1r, tempest, tempest, tempest, tempest_state, 0, ROT270, "Atari", "Tempest (rev 1, Revised Hardware)", MACHINE_SUPPORTS_SAVE )
 GAME( 1980, temptube,  tempest, tempest, tempest, tempest_state, 0, ROT270, "hack (Duncan Brown)", "Tempest Tubes", MACHINE_SUPPORTS_SAVE )
-
-#include "tempest_hb.hxx"

@@ -2592,5 +2592,3 @@ GAME( 1995, pclub,     pclubjv2, segac2, pclubjv2, segac2_pc_state, pclubj,   RO
 GAME( 1996, pclubjv4,  0,        segac2, pclubjv2, segac2_pc_state, pclubjv4, ROT0, "Atlus", "Print Club (Japan Vol.4)", MACHINE_NOT_WORKING )
 
 GAME( 1996, pclubjv5,  0,        segac2, pclubjv2, segac2_pc_state, pclubjv5, ROT0, "Atlus", "Print Club (Japan Vol.5)", MACHINE_NOT_WORKING )
-
-#include "segac2_hb.hxx"

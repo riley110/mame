@@ -566,5 +566,3 @@ GAME( 1983, mariof,   mario,   mario,   mariof, mario_state, 0, ROT0, "Nintendo 
 GAME( 1983, marioe,   mario,   mario,   marioe, mario_state, 0, ROT0, "Nintendo of America", "Mario Bros. (US, Revision E)",    MACHINE_SUPPORTS_SAVE )
 GAME( 1983, marioj,   mario,   mario,   marioj, mario_state, 0, ROT0, "Nintendo",            "Mario Bros. (Japan, Revision C)", MACHINE_SUPPORTS_SAVE )
 GAME( 1983, masao,    mario,   masao,   mario,  mario_state, 0, ROT0, "bootleg",             "Masao",                           MACHINE_SUPPORTS_SAVE )
-
-#include "mario_hb.hxx"

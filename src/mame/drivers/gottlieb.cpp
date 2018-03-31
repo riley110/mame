@@ -2680,5 +2680,3 @@ GAME( 1984, 3stooges,  0,        gottlieb2, 3stooges, gottlieb_state, stooges,  
 GAME( 1984, 3stoogesa, 3stooges, gottlieb2, 3stooges, gottlieb_state, stooges,  ROT0,   "Mylstar",                   "The Three Stooges In Brides Is Brides (set 2)", 0 )
 GAME( 1984, vidvince,  0,        gottlieb2, vidvince, gottlieb_state, vidvince, ROT0,   "Mylstar",                   "Video Vince and the Game Factory (prototype)", MACHINE_IMPERFECT_GRAPHICS ) // sprite wrapping issues
 GAME( 1984, wizwarz,   0,        gottlieb2, wizwarz,  gottlieb_state, romtiles, ROT0,   "Mylstar",                   "Wiz Warz (prototype)", 0 )
-
-#include "gottlieb_hb.hxx"

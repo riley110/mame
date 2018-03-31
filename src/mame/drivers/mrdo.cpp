@@ -421,5 +421,3 @@ GAME( 1982, mrdofix,  mrdo, mrdo, mrdo, mrdo_state, 0, ROT270, "Universal (Taito
 GAME( 1982, mrlo,     mrdo, mrlo, mrdo, mrdo_state, 0, ROT270, "bootleg",                   "Mr. Lo!",             MACHINE_SUPPORTS_SAVE )
 GAME( 1982, mrdu,     mrdo, mrdo, mrdo, mrdo_state, 0, ROT270, "bootleg",                   "Mr. Du!",             MACHINE_SUPPORTS_SAVE )
 GAME( 1982, yankeedo, mrdo, mrdo, mrdo, mrdo_state, 0, ROT270, "hack",                      "Yankee DO!",          MACHINE_SUPPORTS_SAVE )
-
-#include "mrdo_hb.hxx"

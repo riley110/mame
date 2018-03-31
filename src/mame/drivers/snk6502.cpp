@@ -1729,5 +1729,3 @@ GAME( 1982, nibbler7,    nibbler,  nibbler,  nibbler8, snk6502_state, 0, ROT90, 
 GAME( 1982, nibbler6,    nibbler,  nibbler,  nibbler6, snk6502_state, 0, ROT90, "Rock-Ola", "Nibbler (rev 6)", MACHINE_SUPPORTS_SAVE )
 GAME( 1982, nibblerp,    nibbler,  nibbler,  nibbler6, snk6502_state, 0, ROT90, "Rock-Ola", "Nibbler (Pioneer Balloon conversion - rev 6)", MACHINE_SUPPORTS_SAVE )
 GAME( 1983, nibblero,    nibbler,  nibbler,  nibbler8, snk6502_state, 0, ROT90, "Rock-Ola (Olympia license)", "Nibbler (Olympia - rev 8)", MACHINE_SUPPORTS_SAVE )
-
-#include "snk6502_hb.hxx"

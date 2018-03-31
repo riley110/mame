@@ -3980,5 +3980,3 @@ GAME( 1999, cps3bootao2, cps3boot, sfiii3,   cps3, cps3_state, sfiii2,     ROT0,
 // these are test bootleg CDs for running 2nd Impact on a standard SH2
 GAME( 1999, cps3bs32,    cps3boot, sfiii3,   cps3, cps3_state, cps3boot,   ROT0, "bootleg", "Street Fighter III 2nd Impact: Giant Attack (USA 970930, bootleg for HD6417095 type SH2, V3)", MACHINE_IMPERFECT_GRAPHICS )
 GAME( 1999, cps3bs32a,   cps3boot, sfiii3,   cps3, cps3_state, cps3boot,   ROT0, "bootleg", "Street Fighter III 2nd Impact: Giant Attack (USA 970930, bootleg for HD6417095 type SH2, older)", MACHINE_IMPERFECT_GRAPHICS ) // older / buggier hack
-
-#include "cps3_hb.hxx"

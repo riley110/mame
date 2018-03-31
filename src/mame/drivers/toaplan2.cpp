@@ -5748,5 +5748,3 @@ GAME( 1999, bbakraidc,  bbakraid, bbakraid, bbakraid, toaplan2_state,  bbakraid,
 GAME( 1999, bbakraidj,  bbakraid, bbakraid, bbakraid, toaplan2_state,  bbakraid, ROT270, "Eighting", "Battle Bakraid - Unlimited Version (Japan) (Tue Jun 8 1999)", MACHINE_SUPPORTS_SAVE )
 // older revision of the code
 GAME( 1999, bbakraidja, bbakraid, bbakraid, bbakraid, toaplan2_state,  bbakraid, ROT270, "Eighting", "Battle Bakraid (Japan) (Wed Apr 7 1999)", MACHINE_SUPPORTS_SAVE )
-
-#include "toaplan2_hb.hxx"

@@ -352,5 +352,3 @@ GAME( 1990, ertictac,         0, ertictac, ertictac, ertictac_state, ertictac, R
 GAME( 1990, ertictaca, ertictac, ertictac, ertictac, ertictac_state, ertictac, ROT0, "Sisteme", "Erotictac/Tactic (ver 01)", MACHINE_IMPERFECT_SOUND)
 GAME( 1990, ertictacb, ertictac, ertictac, ertictac, ertictac_state, ertictac, ROT0, "Sisteme", "Erotictac/Tactic (set 2)",  MACHINE_IMPERFECT_SOUND)
 GAME( 1991, poizone,          0, ertictac, poizone,  ertictac_state, ertictac, ROT0, "Eterna",  "Poizone",                   MACHINE_IMPERFECT_SOUND|MACHINE_IMPERFECT_GRAPHICS)
-
-#include "ertictac_hb.hxx"

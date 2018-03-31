@@ -1787,5 +1787,3 @@ GAME( 1993, earthjkr,  0,        asuka,    earthjkr, asuka_state, 0,      ROT270
 GAME( 1993, earthjkrp, earthjkr, asuka,    earthjkr, asuka_state, 0,      ROT270, "Visco",                     "U.N. Defense Force: Earth Joker (Japan, prototype?)", MACHINE_SUPPORTS_SAVE )
 
 GAME( 1994, eto,       0,        eto,      eto,      asuka_state, 0,      ROT0,   "Visco",                     "Kokontouzai Eto Monogatari (Japan)", MACHINE_SUPPORTS_SAVE )
-
-#include "asuka_hb.hxx"

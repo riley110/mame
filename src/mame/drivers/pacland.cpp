@@ -681,5 +681,3 @@ GAME( 1984, paclandjo, pacland, pacland, pacland, pacland_state, 0, ROT0, "Namco
 GAME( 1984, paclandjo2,pacland, pacland, pacland, pacland_state, 0, ROT0, "Namco", "Pac-Land (Japan older)", MACHINE_SUPPORTS_SAVE )
 GAME( 1984, paclandm,  pacland, pacland, pacland, pacland_state, 0, ROT0, "Namco (Bally Midway license)", "Pac-Land (Midway)", MACHINE_SUPPORTS_SAVE )
 GAME( 1984, paclandm2, pacland, pacland, pacland, pacland_state, 0, ROT0, "Namco (Bally Midway license)", "Pac-Land (Bally-Midway)", MACHINE_SUPPORTS_SAVE )
-
-#include "pacland_hb.hxx"

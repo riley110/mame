@@ -181,8 +181,9 @@ static INPUT_PORTS_START( jrpacman )
 	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT ) PORT_4WAY
 	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT ) PORT_4WAY
 	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN ) PORT_4WAY
-	/* Press this to instantly finish the level - HBMAME */
-	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("Finish Level (Cheat)") PORT_CODE(KEYCODE_8)
+	PORT_DIPNAME( 0x10, 0x10, "Rack Test (Cheat)" ) PORT_CODE(KEYCODE_F1)
+	PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
 	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_COIN1 )
 	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 )
 	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN3 )
@@ -221,21 +222,6 @@ static INPUT_PORTS_START( jrpacman )
 	PORT_DIPNAME( 0x80, 0x80, DEF_STR( Unknown ) )          PORT_DIPLOCATION("SW1:8")
 	PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
 	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-
-// HBMAME extras
-	PORT_START ("FAKE")
-	/* This fake input port is used to get the status of the fire button */
-	/* and activate the speedup cheat. */
-	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 ) PORT_NAME( "Speed (Cheat)" )
-	PORT_DIPNAME( 0x06, 0x02, "Speed Cheat" )
-	PORT_DIPSETTING(    0x00, "Disabled" )
-	PORT_DIPSETTING(    0x02, "Enabled with Button" )
-	PORT_DIPSETTING(    0x04, "Enabled Always" )
-
-	PORT_START ("CONFIG")
-	PORT_CONFNAME( 0x01, 0x01, "Level" )
-	PORT_CONFSETTING(    0x00, DEF_STR( Off ) )
-	PORT_CONFSETTING(    0x01, DEF_STR( On ) )
 INPUT_PORTS_END
 
 
@@ -296,7 +282,6 @@ MACHINE_CONFIG_START(jrpacman_state::jrpacman)
 	MCFG_CPU_PROGRAM_MAP(main_map)
 	MCFG_CPU_IO_MAP(port_map)
 	MCFG_CPU_VBLANK_INT_DRIVER("screen", jrpacman_state,  vblank_irq)
-//	MCFG_CPU_VBLANK_INT_DRIVER("screen", pacman_state,  vblank_irq) // HBMAME
 
 	MCFG_DEVICE_ADD("latch1", LS259, 0) // 5P
 	MCFG_ADDRESSABLE_LATCH_Q0_OUT_CB(WRITELINE(jrpacman_state, irq_mask_w))
@@ -451,5 +436,3 @@ DRIVER_INIT_MEMBER(jrpacman_state,jrpacman)
 
 GAME( 1983, jrpacman,  0,        jrpacman, jrpacman, jrpacman_state, jrpacman, ROT90, "Bally Midway", "Jr. Pac-Man (11/9/83)", MACHINE_SUPPORTS_SAVE )
 GAME( 1983, jrpacmanf, jrpacman, jrpacman, jrpacman, jrpacman_state, jrpacman, ROT90, "hack", "Jr. Pac-Man (speedup hack)", MACHINE_SUPPORTS_SAVE )
-
-#include "jrpacman_hb.hxx"

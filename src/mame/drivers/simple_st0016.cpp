@@ -737,5 +737,3 @@ GAME( 2001, gostop,     0,      st0016,   gostop,   st0016_state, renju,    ROT0
 GAME( 1994, mayjinsn,   0,      mayjinsn, st0016,   st0016_state, mayjinsn, ROT0, "Seta",             "Mayjinsen",           MACHINE_IMPERFECT_GRAPHICS|MACHINE_NOT_WORKING|MACHINE_NO_COCKTAIL)
 GAME( 1994, dcrown,     0,      st0016,   renju,    st0016_state, renju,    ROT0, "Nippon Data Kiki", "Dream Crown (Set 1)", MACHINE_NOT_WORKING|MACHINE_NO_COCKTAIL) // (c) 1994 Nippon Data Kiki is uploaded near the Japanese Insert coin text
 GAME( 1994, dcrowna,    dcrown, st0016,   renju,    st0016_state, renju,    ROT0, "Nippon Data Kiki", "Dream Crown (Set 2)", MACHINE_NOT_WORKING|MACHINE_NO_COCKTAIL) // the Insert Coin text has been translated to English and no (c) is uploaded
-
-#include "simple_st0016_hb.hxx"

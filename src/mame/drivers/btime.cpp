@@ -2086,5 +2086,3 @@ GAME( 1982, zoar,     0,       zoar,     zoar,     btime_state, zoar,     ROT270
 GAME( 1982, disco,    0,       disco,    disco,    btime_state, disco,    ROT270, "Data East",             "Disco No.1",                     MACHINE_SUPPORTS_SAVE )
 GAME( 1982, discof,   disco,   disco,    disco,    btime_state, disco,    ROT270, "Data East",             "Disco No.1 (Rev.F)",             MACHINE_SUPPORTS_SAVE )
 GAME( 1983, sdtennis, 0,       sdtennis, sdtennis, btime_state, sdtennis, ROT270, "Data East Corporation", "Super Doubles Tennis",           MACHINE_SUPPORTS_SAVE )
-
-#include "btime_hb.hxx"

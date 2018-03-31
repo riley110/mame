@@ -708,5 +708,3 @@ GAME( 1986, kicknrun, 0,        mexico86, mexico86, mexico86_state, 0, ROT0,  "T
 GAME( 1986, kicknrunu,kicknrun, mexico86, mexico86, mexico86_state, 0, ROT0,  "Taito America Corp", "Kick and Run (US)",                           MACHINE_SUPPORTS_SAVE )
 GAME( 1986, mexico86, kicknrun, mexico86, mexico86, mexico86_state, 0, ROT0,  "bootleg",            "Mexico 86 (bootleg of Kick and Run) (set 1)", MACHINE_SUPPORTS_SAVE )
 GAME( 1986, mexico86a,kicknrun, mexico86, mexico86, mexico86_state, 0, ROT0,  "bootleg",            "Mexico 86 (bootleg of Kick and Run) (set 2)", MACHINE_NOT_WORKING | MACHINE_SUPPORTS_SAVE )
-
-#include "mexico86_hb.hxx"

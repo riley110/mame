@@ -1960,5 +1960,3 @@ GAME( 1995, s1945bl,   s1945,    s1945bl,  s1945bl,  psikyo_state, s1945bl,  ROT
 
 GAME( 1996, tengai,    0,        s1945,    tengai,   psikyo_state, tengai,   ROT0,   "Psikyo",  "Tengai (World)",                                 MACHINE_SUPPORTS_SAVE )
 GAME( 1996, tengaij,   tengai,   s1945,    tengaij,  psikyo_state, tengai,   ROT0,   "Psikyo",  "Sengoku Blade: Sengoku Ace Episode II / Tengai", MACHINE_SUPPORTS_SAVE ) // Region dip - 0x0f=Japan, anything else=World
-
-#include "psikyo_hb.hxx"

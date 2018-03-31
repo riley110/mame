@@ -5057,5 +5057,3 @@ GAME( 1996, vbowl,        0,        vbowl,           vbowl,     igs011_state, vb
 GAME( 1996, vbowlj,       vbowl,    vbowl,           vbowlj,    igs011_state, vbowlj,       ROT0, "IGS / Alta",              "Virtua Bowling (Japan, V100JCM)",      MACHINE_SUPPORTS_SAVE | MACHINE_IMPERFECT_SOUND )
 GAME( 1996, vbowlhk,      vbowl,    vbowlhk,         vbowl,     igs011_state, vbowlhk,      ROT0, "IGS / Tai Tin Amusement", "Virtua Bowling (Hong Kong, V101HJS)",  MACHINE_SUPPORTS_SAVE | MACHINE_IMPERFECT_SOUND )
 GAME( 1998, nkishusp,     lhb2,     nkishusp,        nkishusp,  igs011_state, nkishusp,     ROT0, "IGS / Alta",              "Mahjong Nenrikishu SP (Japan, V250J)", MACHINE_SUPPORTS_SAVE )
-
-#include "igs011_hb.hxx"

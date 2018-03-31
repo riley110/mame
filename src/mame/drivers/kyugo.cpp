@@ -1481,5 +1481,3 @@ GAME( 1987, airwolfa,  airwolf,  srdmissn,  airwolf,  kyugo_state, srdmissn, ROT
 GAME( 1987, skywolf,   airwolf,  srdmissn,  skywolf,  kyugo_state, srdmissn, ROT0,  "bootleg",                                 "Sky Wolf (set 1)",                     MACHINE_SUPPORTS_SAVE )
 GAME( 1987, skywolf2,  airwolf,  srdmissn,  airwolf,  kyugo_state, srdmissn, ROT0,  "bootleg",                                 "Sky Wolf (set 2)",                     MACHINE_SUPPORTS_SAVE )
 GAME( 1987, skywolf3,  airwolf,  srdmissn,  airwolf,  kyugo_state, srdmissn, ROT0,  "bootleg",                                 "Sky Wolf (set 3)",                     MACHINE_SUPPORTS_SAVE )
-
-#include "kyugo_hb.hxx"

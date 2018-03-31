@@ -2775,5 +2775,3 @@ GAME( 1983, yamato,      0,        yamato,   yamato,  cclimber_state,  yamato,  
 GAME( 1983, yamato2,     yamato,   yamato,   yamato,  cclimber_state,  yamato,   ROT90,  "Sega", "Yamato (World?)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE )
 
 GAME( 1983, toprollr,    0,        toprollr, toprollr, cclimber_state, toprollr, ROT90,  "Jaleco", "Top Roller", MACHINE_IMPERFECT_COLORS | MACHINE_SUPPORTS_SAVE )
-
-#include "cclimber_hb.hxx"

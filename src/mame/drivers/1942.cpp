@@ -965,5 +965,3 @@ GAME( 1991, 1942h,    1942, _1942, 1942, _1942_state, 1942, ROT270, "hack (Two B
 GAME( 1984, 1942b,    1942, _1942, 1942, _1942_state, 1942, ROT270, "Capcom", "1942 (First Version)", MACHINE_SUPPORTS_SAVE )
 GAME( 1985, 1942w,    1942, _1942, 1942, _1942_state, 1942, ROT270, "Capcom (Williams Electronics license)", "1942 (Williams Electronics license)", MACHINE_SUPPORTS_SAVE ) /* Based on 1942 (Revision B) */
 GAME( 1984, 1942p,    1942, _1942p,1942p,_1942_state, 1942, ROT270, "bootleg", "1942 (Tecfri PCB, bootleg?)", MACHINE_SUPPORTS_SAVE )
-
-#include "1942_hb.hxx"

@@ -3370,5 +3370,3 @@ GAME( 1984, inferno,    0,        inferno,        inferno, williams2_state, infe
 
 GAME( 1986, joust2,     0,        joust2,         joust2,  joust2_state,    joust2,   ROT270, "Williams", "Joust 2 - Survival of the Fittest (revision 2)", MACHINE_SUPPORTS_SAVE )
 GAME( 1986, joust2r1,   joust2,   joust2,         joust2,  joust2_state,    joust2,   ROT270, "Williams", "Joust 2 - Survival of the Fittest (revision 1)", MACHINE_SUPPORTS_SAVE )
-
-#include "williams_hb.hxx"

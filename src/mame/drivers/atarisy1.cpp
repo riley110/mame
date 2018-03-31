@@ -2546,5 +2546,3 @@ GAME( 1987, roadblstc,  roadblst, roadb110, roadblst, atarisy1_state, roadblst, 
 GAME( 1987, roadblstcg, roadblst, roadb109, roadblst, atarisy1_state, roadblst, ROT0, "Atari Games", "Road Blasters (cockpit, German, rev 1)", MACHINE_IMPERFECT_GRAPHICS )
 GAME( 1987, roadblstc1, roadblst, roadb109, roadblst, atarisy1_state, roadblst, ROT0, "Atari Games", "Road Blasters (cockpit, rev 1)", MACHINE_IMPERFECT_GRAPHICS )
 GAME( 1987, roadblstgu, roadblst, roadb109, roadblst, atarisy1_state, roadblst, ROT0, "Atari Games", "Road Blasters (upright, German, rev ?)", 0 )
-
-#include "atarisy1_hb.hxx"

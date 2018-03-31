@@ -1521,5 +1521,3 @@ GAMEL(1981, wotw,     0,       wotw,     wotw,     cinemat_state, 0,        ORIE
 GAME( 1981, wotwc,    wotw,    wotwc,    wotw,     cinemat_state, 0,        ORIENTATION_FLIP_Y,   "Cinematronics", "War of the Worlds (color)", MACHINE_IMPERFECT_SOUND | MACHINE_SUPPORTS_SAVE )
 GAMEL(1982, demon,    0,       demon,    demon,    cinemat_state, 0,        ORIENTATION_FLIP_Y,   "Rock-Ola", "Demon", MACHINE_SUPPORTS_SAVE, layout_demon )
 GAME( 1982, qb3,      0,       qb3,      qb3,      cinemat_state, qb3,      ORIENTATION_FLIP_Y,   "Rock-Ola", "QB-3 (prototype)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE )
-
-#include "cinemat_hb.hxx"

@@ -2261,5 +2261,3 @@ GAME( 199?, hexa,        0,        hexa,     hexa,      arkanoid_state, hexa,   
 GAME( 199?, hexaa,       hexa,     hexaa,    hexa,      arkanoid_state, hexaa,    ROT0,   "D.R. Korea",                                  "Hexa (with 2xZ80, protected)",                MACHINE_NOT_WORKING )
 
 GAME( 1993, brixian,     0,        brixian,  brixian,   arkanoid_state, brixian,  ROT0,   "Cheil Computer System",                       "Brixian",                                     MACHINE_SUPPORTS_SAVE )
-
-#include "arkanoid_hb.hxx"

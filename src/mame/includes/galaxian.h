@@ -419,22 +419,4 @@ public:
 	void turpins_sound_map(address_map &map);
 	void turtles_map(address_map &map);
 	void zigzag_map(address_map &map);
-//HBMAME start
-	void fourplay(machine_config &config);
-	void jumpbugx(machine_config &config);
-	void tst_frog(machine_config &config);
-	void videight(machine_config &config);
-	void jumpbugx_map(address_map &map);
-	void fourplay_map(address_map &map);
-	void tst_frog_map(address_map &map);
-	void videight_map(address_map &map);
-	DECLARE_WRITE8_MEMBER(fourplay_rombank_w);
-	DECLARE_WRITE8_MEMBER(videight_rombank_w);
-	DECLARE_WRITE8_MEMBER(videight_gfxbank_w);
-	DECLARE_DRIVER_INIT(fourplay);
-	DECLARE_DRIVER_INIT(trukker);
-	DECLARE_DRIVER_INIT(videight);
-	void videight_extend_tile_info(uint16_t *code, uint8_t *color, uint8_t attrib, uint8_t x);
-	void videight_extend_sprite_info(const uint8_t *base, uint8_t *sx, uint8_t *sy, uint8_t *flipx, uint8_t *flipy, uint16_t *code, uint8_t *color);
-//HBMAME end
 };

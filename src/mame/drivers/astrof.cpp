@@ -1408,5 +1408,3 @@ GAME( 1979, spfghmk22,spfghmk2, spfghmk2, spfghmk22,astrof_state,  0,       ROT9
 
 GAME( 1980, tomahawk, 0,        tomahawk, tomahawk, astrof_state,  0,       ROT90, "Data East",             "Tomahawk 777 (rev 5)",          MACHINE_IMPERFECT_SOUND | MACHINE_SUPPORTS_SAVE )
 GAME( 1980, tomahawk1,tomahawk, tomahawk, tomahawk1,astrof_state,  0,       ROT90, "Data East",             "Tomahawk 777 (rev 1)",          MACHINE_IMPERFECT_SOUND | MACHINE_SUPPORTS_SAVE )
-
-#include "astrof_hb.hxx"

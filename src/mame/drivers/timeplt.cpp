@@ -702,5 +702,3 @@ GAME( 1988, psurge,   0,       psurge,   psurge,   timeplt_state, 0, ROT270, "Vi
 
 GAME( 1988, chkun,    0,       chkun,    chkun,    timeplt_state, 0, ROT90,  "Peni", "Chance Kun (Japan)", MACHINE_SUPPORTS_SAVE | MACHINE_IMPERFECT_SOUND )
 GAME( 1987, bikkuric, 0,       bikkuric, bikkuric, timeplt_state, 0, ROT90,  "Peni", "Bikkuri Card (Japan)", MACHINE_SUPPORTS_SAVE )
-
-#include "timeplt_hb.hxx"

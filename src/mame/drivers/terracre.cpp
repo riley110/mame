@@ -1031,5 +1031,3 @@ GAME( 1987, horekid,  0,        amazon_1412m2,  horekid,  terracre_state, 0,  RO
 // bootlegs
 GAME( 1987, horekidb, horekid,  amazon_base,  horekid,  terracre_state, 0,  ROT270,  "bootleg",    "Kid no Hore Hore Daisakusen (bootleg)", MACHINE_SUPPORTS_SAVE )
 GAME( 1987, boobhack, horekid,  amazon_base,    horekid,  terracre_state, 0,  ROT270,  "bootleg",    "Booby Kids (Italian manufactured graphic hack / bootleg of Kid no Hore Hore Daisakusen (bootleg))", MACHINE_SUPPORTS_SAVE )
-
-#include "terracre_hb.hxx"

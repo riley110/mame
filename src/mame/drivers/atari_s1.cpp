@@ -545,5 +545,3 @@ GAME( 1977, time2000, 0,         atari_s1, atari_s1, atari_s1_state, 0, ROT0, "A
 GAME( 1977, aavenger, 0,         atari_s1, atari_s1, atari_s1_state, 0, ROT0, "Atari", "Airborne Avenger", MACHINE_MECHANICAL | MACHINE_NOT_WORKING | MACHINE_IMPERFECT_SOUND)
 GAME( 1978, midearth, 0,         midearth, atari_s1, atari_s1_state, 0, ROT0, "Atari", "Middle Earth",     MACHINE_IS_SKELETON_MECHANICAL)
 GAME( 1978, spcrider, 0,         atari_s1, atari_s1, atari_s1_state, 0, ROT0, "Atari", "Space Riders",     MACHINE_MECHANICAL | MACHINE_NOT_WORKING | MACHINE_IMPERFECT_SOUND)
-
-#include "atari_s1_hb.hxx"

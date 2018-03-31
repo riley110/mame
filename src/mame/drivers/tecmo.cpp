@@ -1220,5 +1220,3 @@ GAME( 1988, silkworm,  0,        silkworm, silkworm, tecmo_state, silkworm, ROT0
 GAME( 1988, silkwormj, silkworm, silkworm, silkworm, tecmo_state, silkworm, ROT0,  "Tecmo",   "Silk Worm (Japan)",            MACHINE_SUPPORTS_SAVE ) // Japan regional warning screen
 GAME( 1988, silkwormp, silkworm, silkworm, silkworm, tecmo_state, silkworm, ROT0,  "Tecmo",   "Silk Worm (prototype?)",       MACHINE_SUPPORTS_SAVE )
 GAME( 1988, backfirt,  0,        backfirt, backfirt, tecmo_state, backfirt, ROT0,  "Tecmo",   "Back Fire (Tecmo, bootleg)",   MACHINE_SUPPORTS_SAVE )
-
-#include "tecmo_hb.hxx"

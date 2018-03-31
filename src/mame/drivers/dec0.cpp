@@ -3800,5 +3800,3 @@ GAME( 1988, drgninjab2, baddudes, drgninjab,  drgninja,   dec0_state, drgninja, 
 // these are different to the above but quite similar to each other
 GAME( 1988, automat,    robocop,  automat,  robocop,  dec0_automat_state,  robocop, ROT0,   "bootleg", "Automat (bootleg of Robocop)", MACHINE_NOT_WORKING | MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE ) // sound rom / music from section z with mods for ADPCM?
 GAME( 1989, secretab,   secretag, secretab, slyspy,   dec0_automat_state,        0, ROT0,   "bootleg", "Secret Agent (bootleg)", MACHINE_NOT_WORKING | MACHINE_IMPERFECT_GRAPHICS | MACHINE_IMPERFECT_SOUND | MACHINE_SUPPORTS_SAVE )
-
-#include "dec0_hb.hxx"

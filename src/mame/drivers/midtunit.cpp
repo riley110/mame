@@ -1551,5 +1551,3 @@ GAME( 1994, nbajamte3,nbajamte,  tunit_adpcm, nbajamte, midtunit_state, nbajamte
 GAME( 1994, nbajamte2,nbajamte,  tunit_adpcm, nbajamte, midtunit_state, nbajamte, ROT0, "Midway",   "NBA Jam TE (rev 2.0 01/28/94)", MACHINE_SUPPORTS_SAVE )
 GAME( 1994, nbajamte1,nbajamte,  tunit_adpcm, nbajamte, midtunit_state, nbajamte, ROT0, "Midway",   "NBA Jam TE (rev 1.0 01/17/94)", MACHINE_SUPPORTS_SAVE )
 GAME( 1995, nbajamten,nbajamte,  tunit_adpcm, nbajamte, midtunit_state, nbajamte, ROT0, "Midway",   "NBA Jam T.E. Nani Edition (rev 5.2 8/11/95, prototype)", MACHINE_SUPPORTS_SAVE )
-
-#include "midtunit_hb.hxx"

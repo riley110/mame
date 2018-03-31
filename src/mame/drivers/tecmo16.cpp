@@ -636,5 +636,3 @@ GAME( 1992, fstarfrc,  0,        fstarfrc, fstarfrc, tecmo16_state, 0, ROT90, "T
 GAME( 1992, fstarfrcj, fstarfrc, fstarfrc, fstarfrc, tecmo16_state, 0, ROT90, "Tecmo", "Final Star Force (Japan)", MACHINE_SUPPORTS_SAVE )
 GAME( 1992, riot,      0,        riot,     riot,     tecmo16_state, 0, ROT0,  "NMK",   "Riot",                     MACHINE_SUPPORTS_SAVE )
 GAME( 1995, ginkun,    0,        ginkun,   ginkun,   tecmo16_state, 0, ROT0,  "Tecmo", "Ganbare Ginkun",           MACHINE_SUPPORTS_SAVE )
-
-#include "tecmo16_hb.hxx"

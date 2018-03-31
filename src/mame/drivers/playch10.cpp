@@ -1786,5 +1786,3 @@ GAME( 1990, pc_sjetm, playch10, playch10, playch10, playch10_state, pciboard, RO
 
 /* K-Board Games */
 GAME( 1991, pc_moglf, playch10, playch10, playch10, playch10_state, pckboard, ROT0, "Nintendo",                                 "Mario's Open Golf (PlayChoice-10)", 0 )
-
-#include "playch10_hb.hxx"

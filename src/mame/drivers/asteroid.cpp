@@ -1079,5 +1079,3 @@ GAMEL(1980, astdelux1, astdelux,  astdelux,  astdelux,  asteroid_state, 0,      
 GAME( 1979, llander,   0,         llander,   llander,   asteroid_state, 0,         ROT0, "Atari",   "Lunar Lander (rev 2)",     MACHINE_SUPPORTS_SAVE )
 GAME( 1979, llander1,  llander,   llander,   llander1,  asteroid_state, 0,         ROT0, "Atari",   "Lunar Lander (rev 1)",     MACHINE_SUPPORTS_SAVE )
 GAME( 1979, llandert,  llander,   llander,   llandert,  asteroid_state, 0,         ROT0, "Atari",   "Lunar Lander (screen test)", MACHINE_SUPPORTS_SAVE ) // no copyright shown, assume it's an in-house diagnostics romset (PCB came from a seller that has had Atari prototypes in his possession before)
-
-#include "asteroid_hb.hxx"

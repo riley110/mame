@@ -3520,5 +3520,3 @@ GAME( 1982, battles,   xevious, battles, xevious, xevious_state,  battles, ROT90
 GAME( 1982, battles2,  xevious, xevious, xevious, xevious_state,  xevios,  ROT90,  "bootleg", "Battles (set 2)", MACHINE_IMPERFECT_SOUND | MACHINE_SUPPORTS_SAVE )
 
 GAME( 1982, dzigzag,   digdug,  dzigzag, digdug,  digdug_state,   0,       ROT90,  "bootleg", "Zig Zag (Dig Dug hardware)", MACHINE_SUPPORTS_SAVE )
-
-#include "galaga_hb.hxx"

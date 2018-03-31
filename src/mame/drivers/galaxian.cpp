@@ -12375,5 +12375,3 @@ GAME( 1982, losttombh,   losttomb, scobra,     losttomb,   galaxian_state, lostt
 GAME( 1984, spdcoin,     0,        scobra,     spdcoin,    galaxian_state, scobra,     ROT90,  "Stern Electronics", "Speed Coin (prototype)", MACHINE_SUPPORTS_SAVE )
 
 GAME( 1985, superbon,    0,        scobra,     superbon,   galaxian_state, superbon,   ROT90,  "Signatron USA", "Agent Super Bond (Super Cobra conversion)", MACHINE_WRONG_COLORS | MACHINE_SUPPORTS_SAVE )
-
-#include "galaxian_hb.hxx"

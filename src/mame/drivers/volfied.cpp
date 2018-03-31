@@ -498,5 +498,3 @@ GAME( 1989, volfiedj,  volfied, volfied, volfiedj, volfied_state, 0, ROT270, "Ta
 GAME( 1989, volfiedo,  volfied, volfied, volfiedj, volfied_state, 0, ROT270, "Taito Corporation Japan",   "Volfied (World)",             MACHINE_SUPPORTS_SAVE )
 GAME( 1989, volfieduo, volfied, volfied, volfiedj, volfied_state, 0, ROT270, "Taito America Corporation", "Volfied (US)",                MACHINE_SUPPORTS_SAVE )
 GAME( 1989, volfiedjo, volfied, volfied, volfiedj, volfied_state, 0, ROT270, "Taito Corporation",         "Volfied (Japan)",             MACHINE_SUPPORTS_SAVE )
-
-#include "volfied_hb.hxx"

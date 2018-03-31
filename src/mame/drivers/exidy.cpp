@@ -1729,5 +1729,3 @@ GAME( 1982, hardhat,  0,       pepper2,  pepper2,  exidy_state, pepper2,  ROT0, 
 
 GAME( 1983, fax,      0,       fax,      fax,      exidy_state, fax,      ROT0, "Exidy",   "FAX", MACHINE_SUPPORTS_SAVE )
 GAME( 1983, fax2,     fax,     fax,      fax,      exidy_state, fax,      ROT0, "Exidy",   "FAX 2", MACHINE_SUPPORTS_SAVE )
-
-#include "exidy_hb.hxx"

@@ -1355,5 +1355,3 @@ GAME( 1996, nbamht1,   nbamht,   wunit_picsim, nbahangt, midwunit_state, nbahang
 
 GAME( 1997, rmpgwt,    0,        wunit_picemu, rmpgwt,   midwunit_state, rmpgwt,   ROT0, "Midway", "Rampage: World Tour (rev 1.3)", MACHINE_SUPPORTS_SAVE )
 GAME( 1997, rmpgwt11,  rmpgwt,   wunit_picemu, rmpgwt,   midwunit_state, rmpgwt,   ROT0, "Midway", "Rampage: World Tour (rev 1.1)", MACHINE_SUPPORTS_SAVE )
-
-#include "midwunit_hb.hxx"

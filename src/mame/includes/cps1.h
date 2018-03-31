@@ -463,49 +463,6 @@ public:
 	void sound_map(address_map &map);
 	void sub_map(address_map &map);
 	void varthb_map(address_map &map);
-
-// HBMAME start
-
-	void wofsf2(machine_config &config);
-	void daimakb(machine_config &config);
-	void sk2h3(machine_config &config);
-	void sk2h31(machine_config &config);
-	void sk2h35(machine_config &config);
-	void cps1frog(machine_config &config);
-	void sk2h1q(machine_config &config);
-	void sk2h31q(machine_config &config);
-	void cawingb(machine_config &config);
-	void captcommb2(machine_config &config);
-	void daimakb_map(address_map &map);
-	void sk2h35_map(address_map &map);
-	void cps1frog_map(address_map &map);
-	void sk2h1q_map(address_map &map);
-	void sk2h3_map(address_map &map);
-	void sk2h31q_map(address_map &map);
-	void sk2h31_map(address_map &map);
-	void wofsf2_map(address_map &map);
-	void captcommb2_map(address_map &map);
-	DECLARE_WRITE16_MEMBER(dinoh_sound_command_w);
-	DECLARE_WRITE16_MEMBER(daimakb_layer_w);
-	DECLARE_WRITE16_MEMBER(daimakb_palctrl_w);
-	DECLARE_DRIVER_INIT(dinoeh);
-	DECLARE_DRIVER_INIT(dinoh);
-	DECLARE_DRIVER_INIT(dinoz);
-	DECLARE_DRIVER_INIT(dinohb);
-	DECLARE_DRIVER_INIT(punisherb);
-	DECLARE_DRIVER_INIT(sf2h9);
-	DECLARE_DRIVER_INIT(sf2h13);
-	DECLARE_DRIVER_INIT(sk2h1);
-	DECLARE_DRIVER_INIT(sk2h1q);
-	DECLARE_DRIVER_INIT(sk2h3);
-	DECLARE_DRIVER_INIT(sk2h21);
-	DECLARE_DRIVER_INIT(sk2h22);
-	DECLARE_DRIVER_INIT(sk2h31);
-	DECLARE_DRIVER_INIT(sk2h35);
-	DECLARE_DRIVER_INIT(wofb);
-	DECLARE_MACHINE_START(captcommb2);
-
-// HBMAME end
 };
 
 /*----------- defined in drivers/cps1.c -----------*/
@@ -518,9 +475,6 @@ INPUT_PORTS_EXTERN( punisher );
 INPUT_PORTS_EXTERN( sf2 );
 INPUT_PORTS_EXTERN( slammast );
 INPUT_PORTS_EXTERN( varth );
-// HBMAME start
-INPUT_PORTS_EXTERN( captcomm );
-// HBMAME end
 
 
 #endif

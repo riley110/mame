@@ -4284,5 +4284,3 @@ GAME( 1991, thndrx2j,    thndrx2,  thndrx2,  thndrx2,   tmnt_state, 0,        RO
 
 GAME( 1993, prmrsocr,    0,        prmrsocr, prmrsocr,  tmnt_state, 0,        ROT0,   "Konami",  "Premier Soccer (ver EAB)", MACHINE_SUPPORTS_SAVE )
 GAME( 1993, prmrsocrj,   prmrsocr, prmrsocr, prmrsocr,  tmnt_state, 0,        ROT0,   "Konami",  "Premier Soccer (ver JAB)", MACHINE_SUPPORTS_SAVE )
-
-#include "tmnt_hb.hxx"

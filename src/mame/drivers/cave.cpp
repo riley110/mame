@@ -5530,5 +5530,3 @@ GAME( 1999, crusherm,    0,        crusherm, korokoro, cave_state, korokoro,  RO
 GAME( 1999, tjumpman,    0,        tjumpman, tjumpman, cave_state, tjumpman,  ROT0,   "Namco",                                  "Tobikose! Jumpman", MACHINE_SUPPORTS_SAVE )
 
 GAME( 2001, theroes,     0,        gaia,     theroes,  cave_state, gaia,      ROT0,   "Primetek Investments",                   "Thunder Heroes", MACHINE_SUPPORTS_SAVE | MACHINE_IMPERFECT_SOUND ) // cuts out occasionally
-
-#include "cave_hb.hxx"

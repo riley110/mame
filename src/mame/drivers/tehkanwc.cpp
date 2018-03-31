@@ -981,5 +981,3 @@ GAME( 1985, tehkanwcc, tehkanwc, tehkanwcb,tehkanwc, tehkanwc_state, 0,        R
 GAME( 1985, tehkanwcd, tehkanwc, tehkanwc, tehkanwcd,tehkanwc_state, 0,        ROT0,  "Tehkan",  "Tehkan World Cup (set 4, earlier)",  MACHINE_SUPPORTS_SAVE )
 GAMEL(1985, gridiron,  0,        tehkanwc, gridiron, tehkanwc_state, 0,        ROT0,  "Tehkan",  "Gridiron Fight",                     MACHINE_SUPPORTS_SAVE, layout_gridiron )
 GAME( 1986, teedoff,   0,        tehkanwc, teedoff,  tehkanwc_state, teedoff,  ROT90, "Tecmo",   "Tee'd Off (Japan)",                  MACHINE_SUPPORTS_SAVE )
-
-#include "tehkanwc_hb.hxx"

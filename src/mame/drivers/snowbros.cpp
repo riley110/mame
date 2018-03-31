@@ -2962,5 +2962,3 @@ GAME( 2002, snowbro3,   0,        snowbro3,    snowbroj, snowbros_state, snowbro
 GAME( 2003, ballboy,    snowbro3, snowbro3,    snowbroj, snowbros_state, snowbro3, ROT0, "bootleg", "Ball Boy", MACHINE_IMPERFECT_SOUND | MACHINE_SUPPORTS_SAVE )
 // protection appears to handle the sound, should check if it's just a block of code that is conditionally executed like some of the Semicom titles.
 GAME( 1999, yutnori,    0,        yutnori,     yutnori,  snowbros_state, yutnori,  ROT0, "Nunal",   "Puzzle Yutnori (Korea)", MACHINE_UNEMULATED_PROTECTION | MACHINE_NO_SOUND ) // Nunal is apparently Korean slang for Eyeball, hence the logo.  Some places report 'JCC Soft' as the manufacturer
-
-#include "snowbros_hb.hxx"

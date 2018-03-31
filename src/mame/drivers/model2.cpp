@@ -6529,5 +6529,3 @@ GAME( 1997, topskatru, topskatr, model2c,      topskatr, model2c_state, 0,      
 GAME( 1997, topskatruo,topskatr, model2c,      topskatr, model2c_state, 0,       ROT0, "Sega",   "Top Skater (USA)", MACHINE_NOT_WORKING|MACHINE_IMPERFECT_GRAPHICS )
 GAME( 1997, topskatrj, topskatr, model2c,      topskatr, model2c_state, 0,       ROT0, "Sega",   "Top Skater (Japan)", MACHINE_NOT_WORKING|MACHINE_IMPERFECT_GRAPHICS )
 GAME( 1998, dynamcopc, dynamcop, model2c_5881, model2,   model2c_state, 0,       ROT0, "Sega",   "Dynamite Cop (USA, Model 2C)", MACHINE_NOT_WORKING|MACHINE_IMPERFECT_GRAPHICS )
-
-#include "model2_hb.hxx"

@@ -4290,5 +4290,3 @@ GAME( 1997, popnpopj, popnpop,  f3,      f3, taito_f3_state, popnpop,  ROT0,   "
 GAME( 1997, popnpopu, popnpop,  f3,      f3, taito_f3_state, popnpop,  ROT0,   "Taito Corporation",         "Pop'n Pop (Ver 2.07A 1998/02/09)", 0 )
 GAME( 1998, landmakr, 0,        f3,      f3, taito_f3_state, landmakr, ROT0,   "Taito Corporation",         "Land Maker (Ver 2.01J 1998/06/01)", 0 )
 GAME( 1998, landmakrp,landmakr, f3,      f3, taito_f3_state, landmkrp, ROT0,   "Taito Corporation",         "Land Maker (Ver 2.02O 1998/06/02, prototype)", 0 )
-
-#include "taito_f3_hb.hxx"

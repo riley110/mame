@@ -348,5 +348,3 @@ ROM_END
 GAME( 1985, kicker,   0,      shaolins, shaolins, shaolins_state, 0,    ROT90,  "Konami",  "Kicker",                  MACHINE_SUPPORTS_SAVE )
 GAME( 1985, shaolins, kicker, shaolins, shaolins, shaolins_state, 0,    ROT90,  "Konami",  "Shao-lin's Road (set 1)", MACHINE_SUPPORTS_SAVE )
 GAME( 1985, shaolinb, kicker, shaolins, shaolins, shaolins_state, 0,    ROT90,  "Konami",  "Shao-lin's Road (set 2)", MACHINE_SUPPORTS_SAVE )
-
-#include "shaolins_hb.hxx"

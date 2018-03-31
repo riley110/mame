@@ -11254,6 +11254,3 @@ GAME( 2005, lasthope,   neogeo,   neobase,   neogeo, neogeo_state,   neogeo,   R
 /* NEOBITZ */
 // Knight's Chance (c)2014 - MVS/AES
 
-
-// Homebrew standalone drivers (disabled due to using old noslot implementation)
-// #include "neohb.hxx"

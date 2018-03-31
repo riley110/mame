@@ -339,5 +339,3 @@ ROM_END
 
 GAME( 1983, timelimt, 0, timelimt, timelimt, timelimt_state, 0, ROT90, "Chuo Co. Ltd", "Time Limit", MACHINE_SUPPORTS_SAVE )
 GAME( 1984, progress, 0, timelimt, progress, timelimt_state, 0, ROT90, "Chuo Co. Ltd", "Progress",   MACHINE_SUPPORTS_SAVE )
-
-#include "timelimt_hb.hxx"

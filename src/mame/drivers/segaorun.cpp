@@ -3007,5 +3007,3 @@ GAME( 1987, shangon3d, shangon, shangon,  shangon,  segaorun_state,shangon, ROT0
 // see http://reassembler.blogspot.co.uk/2011/08/outrun-enhanced-edition.html
 GAMEL(2013, outrundxeh,  outrun,  outrun,        outrundxeh, segaorun_state,outrun,  ROT0,   "hack (Chris White)",    "Out Run (deluxe sitdown) (Enhanced Edition v1.0.3)", 0,                                layout_outrun ) // Jan 2013
 GAMEL(2014, outruneh,    outrun,  outrun,        outruneh,   segaorun_state,outrun,  ROT0,   "hack (Chris White)",    "Out Run (sitdown/upright, Rev B) (Enhanced Edition v1.1.0)", 0,                        layout_outrun ) // Upright/Sitdown determined by dipswitch settings - July 2014
-
-#include "segaorun_hb.hxx"
