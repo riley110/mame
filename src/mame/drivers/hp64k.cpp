@@ -1478,7 +1478,7 @@ MACHINE_CONFIG_START(hp64k_state::hp64k)
 	MCFG_IEEE488_ATN_CALLBACK(DEVWRITELINE("phi" , phi_device , atn_w))
 	MCFG_IEEE488_REN_CALLBACK(DEVWRITELINE("phi" , phi_device , ren_w))
 	MCFG_IEEE488_DIO_CALLBACK(DEVWRITE8("phi" , phi_device , bus_dio_w))
-	// Feel so lonely here... waiting for the 488 remotizer ;)
+	MCFG_IEEE488_SLOT_ADD("ieee_rem" , 0 , remote488_devices , nullptr)
 
 	MCFG_SOFTWARE_LIST_ADD("flop_list", "hp64k")
 MACHINE_CONFIG_END
