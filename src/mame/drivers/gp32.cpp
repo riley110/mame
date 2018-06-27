@@ -1628,25 +1628,25 @@ void gp32_state::gp32_map(address_map &map)
 {
 	map(0x00000000, 0x0007ffff).rom();
 	map(0x0c000000, 0x0c7fffff).ram().share("s3c240x_ram");
-	map(0x14000000, 0x1400003b).rw(this, FUNC(gp32_state::s3c240x_memcon_r), FUNC(gp32_state::s3c240x_memcon_w));
-	map(0x14200000, 0x1420005b).rw(this, FUNC(gp32_state::s3c240x_usb_host_r), FUNC(gp32_state::s3c240x_usb_host_w));
-	map(0x14400000, 0x14400017).rw(this, FUNC(gp32_state::s3c240x_irq_r), FUNC(gp32_state::s3c240x_irq_w));
-	map(0x14600000, 0x1460007b).rw(this, FUNC(gp32_state::s3c240x_dma_r), FUNC(gp32_state::s3c240x_dma_w));
-	map(0x14800000, 0x14800017).rw(this, FUNC(gp32_state::s3c240x_clkpow_r), FUNC(gp32_state::s3c240x_clkpow_w));
-	map(0x14a00000, 0x14a003ff).rw(this, FUNC(gp32_state::s3c240x_lcd_r), FUNC(gp32_state::s3c240x_lcd_w));
-	map(0x14a00400, 0x14a007ff).rw(this, FUNC(gp32_state::s3c240x_lcd_palette_r), FUNC(gp32_state::s3c240x_lcd_palette_w));
-	map(0x15000000, 0x1500002b).rw(this, FUNC(gp32_state::s3c240x_uart_0_r), FUNC(gp32_state::s3c240x_uart_0_w));
-	map(0x15004000, 0x1500402b).rw(this, FUNC(gp32_state::s3c240x_uart_1_r), FUNC(gp32_state::s3c240x_uart_1_w));
-	map(0x15100000, 0x15100043).rw(this, FUNC(gp32_state::s3c240x_pwm_r), FUNC(gp32_state::s3c240x_pwm_w));
-	map(0x15200140, 0x152001fb).rw(this, FUNC(gp32_state::s3c240x_usb_device_r), FUNC(gp32_state::s3c240x_usb_device_w));
-	map(0x15300000, 0x1530000b).rw(this, FUNC(gp32_state::s3c240x_watchdog_r), FUNC(gp32_state::s3c240x_watchdog_w));
-	map(0x15400000, 0x1540000f).rw(this, FUNC(gp32_state::s3c240x_iic_r), FUNC(gp32_state::s3c240x_iic_w));
-	map(0x15508000, 0x15508013).rw(this, FUNC(gp32_state::s3c240x_iis_r), FUNC(gp32_state::s3c240x_iis_w));
-	map(0x15600000, 0x1560005b).rw(this, FUNC(gp32_state::s3c240x_gpio_r), FUNC(gp32_state::s3c240x_gpio_w));
-	map(0x15700040, 0x1570008b).rw(this, FUNC(gp32_state::s3c240x_rtc_r), FUNC(gp32_state::s3c240x_rtc_w));
-	map(0x15800000, 0x15800007).rw(this, FUNC(gp32_state::s3c240x_adc_r), FUNC(gp32_state::s3c240x_adc_w));
-	map(0x15900000, 0x15900017).rw(this, FUNC(gp32_state::s3c240x_spi_r), FUNC(gp32_state::s3c240x_spi_w));
-	map(0x15a00000, 0x15a0003f).rw(this, FUNC(gp32_state::s3c240x_mmc_r), FUNC(gp32_state::s3c240x_mmc_w));
+	map(0x14000000, 0x1400003b).rw(FUNC(gp32_state::s3c240x_memcon_r), FUNC(gp32_state::s3c240x_memcon_w));
+	map(0x14200000, 0x1420005b).rw(FUNC(gp32_state::s3c240x_usb_host_r), FUNC(gp32_state::s3c240x_usb_host_w));
+	map(0x14400000, 0x14400017).rw(FUNC(gp32_state::s3c240x_irq_r), FUNC(gp32_state::s3c240x_irq_w));
+	map(0x14600000, 0x1460007b).rw(FUNC(gp32_state::s3c240x_dma_r), FUNC(gp32_state::s3c240x_dma_w));
+	map(0x14800000, 0x14800017).rw(FUNC(gp32_state::s3c240x_clkpow_r), FUNC(gp32_state::s3c240x_clkpow_w));
+	map(0x14a00000, 0x14a003ff).rw(FUNC(gp32_state::s3c240x_lcd_r), FUNC(gp32_state::s3c240x_lcd_w));
+	map(0x14a00400, 0x14a007ff).rw(FUNC(gp32_state::s3c240x_lcd_palette_r), FUNC(gp32_state::s3c240x_lcd_palette_w));
+	map(0x15000000, 0x1500002b).rw(FUNC(gp32_state::s3c240x_uart_0_r), FUNC(gp32_state::s3c240x_uart_0_w));
+	map(0x15004000, 0x1500402b).rw(FUNC(gp32_state::s3c240x_uart_1_r), FUNC(gp32_state::s3c240x_uart_1_w));
+	map(0x15100000, 0x15100043).rw(FUNC(gp32_state::s3c240x_pwm_r), FUNC(gp32_state::s3c240x_pwm_w));
+	map(0x15200140, 0x152001fb).rw(FUNC(gp32_state::s3c240x_usb_device_r), FUNC(gp32_state::s3c240x_usb_device_w));
+	map(0x15300000, 0x1530000b).rw(FUNC(gp32_state::s3c240x_watchdog_r), FUNC(gp32_state::s3c240x_watchdog_w));
+	map(0x15400000, 0x1540000f).rw(FUNC(gp32_state::s3c240x_iic_r), FUNC(gp32_state::s3c240x_iic_w));
+	map(0x15508000, 0x15508013).rw(FUNC(gp32_state::s3c240x_iis_r), FUNC(gp32_state::s3c240x_iis_w));
+	map(0x15600000, 0x1560005b).rw(FUNC(gp32_state::s3c240x_gpio_r), FUNC(gp32_state::s3c240x_gpio_w));
+	map(0x15700040, 0x1570008b).rw(FUNC(gp32_state::s3c240x_rtc_r), FUNC(gp32_state::s3c240x_rtc_w));
+	map(0x15800000, 0x15800007).rw(FUNC(gp32_state::s3c240x_adc_r), FUNC(gp32_state::s3c240x_adc_w));
+	map(0x15900000, 0x15900017).rw(FUNC(gp32_state::s3c240x_spi_r), FUNC(gp32_state::s3c240x_spi_w));
+	map(0x15a00000, 0x15a0003f).rw(FUNC(gp32_state::s3c240x_mmc_r), FUNC(gp32_state::s3c240x_mmc_w));
 }
 
 static INPUT_PORTS_START( gp32 )
@@ -1708,45 +1708,45 @@ MACHINE_CONFIG_END
 ROM_START( gp32 )
 	ROM_REGION( 0x80000, "maincpu", 0 )
 	ROM_SYSTEM_BIOS( 0, "157e", "Firmware 1.5.7 (English)" )
-	ROMX_LOAD( "gp32157e.bin", 0x000000, 0x080000, CRC(b1e35643) SHA1(1566bc2a27980602e9eb501cf8b2d62939bfd1e5), ROM_BIOS(1) )
+	ROMX_LOAD( "gp32157e.bin", 0x000000, 0x080000, CRC(b1e35643) SHA1(1566bc2a27980602e9eb501cf8b2d62939bfd1e5), ROM_BIOS(0) )
 	ROM_SYSTEM_BIOS( 1, "100k", "Firmware 1.0.0 (Korean)" )
-	ROMX_LOAD( "gp32100k.bin", 0x000000, 0x080000, CRC(d9925ac9) SHA1(3604d0d7210ed72eddd3e3e0c108f1102508423c), ROM_BIOS(2) )
+	ROMX_LOAD( "gp32100k.bin", 0x000000, 0x080000, CRC(d9925ac9) SHA1(3604d0d7210ed72eddd3e3e0c108f1102508423c), ROM_BIOS(1) )
 	ROM_SYSTEM_BIOS( 2, "156k", "Firmware 1.5.6 (Korean)" )
-	ROMX_LOAD( "gp32156k.bin", 0x000000, 0x080000, CRC(667fb1c8) SHA1(d179ab8e96411272b6a1d683e59da752067f9da8), ROM_BIOS(3) )
+	ROMX_LOAD( "gp32156k.bin", 0x000000, 0x080000, CRC(667fb1c8) SHA1(d179ab8e96411272b6a1d683e59da752067f9da8), ROM_BIOS(2) )
 	ROM_SYSTEM_BIOS( 3, "166m", "Firmware 1.6.6 (European)" )
-	ROMX_LOAD( "gp32166m.bin", 0x000000, 0x080000, CRC(4548a840) SHA1(1ad0cab0af28fb45c182e5e8c87ead2aaa4fffe1), ROM_BIOS(4) )
+	ROMX_LOAD( "gp32166m.bin", 0x000000, 0x080000, CRC(4548a840) SHA1(1ad0cab0af28fb45c182e5e8c87ead2aaa4fffe1), ROM_BIOS(3) )
 	ROM_SYSTEM_BIOS( 4, "mfv2", "Mr. Spiv Multi Firmware V2" )
-	ROMX_LOAD( "gp32mfv2.bin", 0x000000, 0x080000, CRC(7ddaaaeb) SHA1(5a85278f721beb3b00125db5c912d1dc552c5897), ROM_BIOS(5) )
+	ROMX_LOAD( "gp32mfv2.bin", 0x000000, 0x080000, CRC(7ddaaaeb) SHA1(5a85278f721beb3b00125db5c912d1dc552c5897), ROM_BIOS(4) )
 	ROM_SYSTEM_BIOS( 5, "afm1", "AquaFish Multifirmware v1" )
-	ROMX_LOAD( "amfw.bin", 0x000000, 0x080000, CRC(e4d01608) SHA1(66790ab9ea1d2a8661f1a84c077f38b8b025f859), ROM_BIOS(6) )
+	ROMX_LOAD( "amfw.bin", 0x000000, 0x080000, CRC(e4d01608) SHA1(66790ab9ea1d2a8661f1a84c077f38b8b025f859), ROM_BIOS(5) )
 	ROM_SYSTEM_BIOS( 6, "afm2", "AquaFish Multifirmware v2" )
-	ROMX_LOAD( "amfw2.bin", 0x000000, 0x080000, CRC(bb0bcf8c) SHA1(446a6bc4cbdff6d9cf002d8881368adda61ac529), ROM_BIOS(7) )
+	ROMX_LOAD( "amfw2.bin", 0x000000, 0x080000, CRC(bb0bcf8c) SHA1(446a6bc4cbdff6d9cf002d8881368adda61ac529), ROM_BIOS(6) )
 	ROM_SYSTEM_BIOS( 7, "afm3", "AquaFish Multifirmware v3.1b" )
-	ROMX_LOAD( "aquamfw31b.bin", 0x000000, 0x080000, CRC(8a6174c3) SHA1(44ae1197770c985f07015c34366024fe8db3e598), ROM_BIOS(8) )
+	ROMX_LOAD( "aquamfw31b.bin", 0x000000, 0x080000, CRC(8a6174c3) SHA1(44ae1197770c985f07015c34366024fe8db3e598), ROM_BIOS(7) )
 	ROM_SYSTEM_BIOS( 8, "afm4", "AquaFish Multifirmware v4" )
-	ROMX_LOAD( "aqua4.bin", 0x000000, 0x080000, CRC(06787632) SHA1(30eb4b584a1119d2a9151ee79de0e59ce6703239), ROM_BIOS(9) )
+	ROMX_LOAD( "aqua4.bin", 0x000000, 0x080000, CRC(06787632) SHA1(30eb4b584a1119d2a9151ee79de0e59ce6703239), ROM_BIOS(8) )
 	ROM_SYSTEM_BIOS( 9, "afm5", "AquaFish Multifirmware v4.3" )
-	ROMX_LOAD( "aqua43.bin", 0x000000, 0x080000, CRC(f25ee641) SHA1(1851619186e1edc20674e7f3968991b5c89ec22b), ROM_BIOS(10) )
+	ROMX_LOAD( "aqua43.bin", 0x000000, 0x080000, CRC(f25ee641) SHA1(1851619186e1edc20674e7f3968991b5c89ec22b), ROM_BIOS(9) )
 	ROM_SYSTEM_BIOS( 10, "afm6", "AquaFish Multifirmware v4.5" )
-	ROMX_LOAD( "aqua45.bin", 0x000000, 0x080000, CRC(97acdff4) SHA1(9e8151904936e5f2e5ab2d0ad75325a0f4e48e12), ROM_BIOS(11) )
+	ROMX_LOAD( "aqua45.bin", 0x000000, 0x080000, CRC(97acdff4) SHA1(9e8151904936e5f2e5ab2d0ad75325a0f4e48e12), ROM_BIOS(10) )
 	ROM_SYSTEM_BIOS( 11, "afm7", "AquaFish Multifirmware v4.7?" )
-	ROMX_LOAD( "amfw47.bin", 0x000000, 0x080000, CRC(dcb9383a) SHA1(af3883866b1ae079d057d0da9c42f30cae83348a), ROM_BIOS(12) )
+	ROMX_LOAD( "amfw47.bin", 0x000000, 0x080000, CRC(dcb9383a) SHA1(af3883866b1ae079d057d0da9c42f30cae83348a), ROM_BIOS(11) )
 	ROM_SYSTEM_BIOS( 12, "afm8", "AquaFish Multifirmware v5.0a?" )
-	ROMX_LOAD( "amfw50a.bin", 0x000000, 0x080000, CRC(73a0d208) SHA1(fc4b9053a9ee9c8b59496ee67ded70a0062e5af0), ROM_BIOS(13) )
+	ROMX_LOAD( "amfw50a.bin", 0x000000, 0x080000, CRC(73a0d208) SHA1(fc4b9053a9ee9c8b59496ee67ded70a0062e5af0), ROM_BIOS(12) )
 	ROM_SYSTEM_BIOS( 13, "afm9", "AquaFish Multifirmware v5.0b?" )
-	ROMX_LOAD( "amfw50b.bin", 0x000000, 0x080000, CRC(52300947) SHA1(bdce4263e81e30b7bf6184a03e93f2c2b211e169), ROM_BIOS(14) )
+	ROMX_LOAD( "amfw50b.bin", 0x000000, 0x080000, CRC(52300947) SHA1(bdce4263e81e30b7bf6184a03e93f2c2b211e169), ROM_BIOS(13) )
 	ROM_SYSTEM_BIOS( 14, "afma", "AquaFish Multifirmware v5.0a? (BLU+)" )
-	ROMX_LOAD( "amfw50a_blu.bin", 0x000000, 0x080000, CRC(dc9a7b2f) SHA1(48df26cd8069b2386bfcc363770c47c2617440d2), ROM_BIOS(15) )
+	ROMX_LOAD( "amfw50a_blu.bin", 0x000000, 0x080000, CRC(dc9a7b2f) SHA1(48df26cd8069b2386bfcc363770c47c2617440d2), ROM_BIOS(14) )
 	ROM_SYSTEM_BIOS( 15, "afmb", "AquaFish Multifirmware v5.0b? (BLU+)" )
-	ROMX_LOAD( "amfw50b_blu.bin", 0x000000, 0x080000, CRC(fd0aa060) SHA1(8f4d8dc63480ba3558fd468b6e337027e573ade2), ROM_BIOS(16) )
+	ROMX_LOAD( "amfw50b_blu.bin", 0x000000, 0x080000, CRC(fd0aa060) SHA1(8f4d8dc63480ba3558fd468b6e337027e573ade2), ROM_BIOS(15) )
 	ROM_SYSTEM_BIOS( 16, "slb1", "Slubman Firmware (BLU+)" )
-	ROMX_LOAD( "slubfw_blup.bin", 0x000000, 0x080000, CRC(fabba80e) SHA1(51355abd27fa4196ea1c77c6d453f76dc3c6d608), ROM_BIOS(17) )
+	ROMX_LOAD( "slubfw_blup.bin", 0x000000, 0x080000, CRC(fabba80e) SHA1(51355abd27fa4196ea1c77c6d453f76dc3c6d608), ROM_BIOS(16) )
 	ROM_SYSTEM_BIOS( 17, "slb2", "Slubman Firmware (gpdrive)" )
-	ROMX_LOAD( "slubfw_gpdrive.bin", 0x000000, 0x080000, CRC(e6884b76) SHA1(2f2cc3901113f964c5e85047ff4fab325761e24b), ROM_BIOS(18) )
+	ROMX_LOAD( "slubfw_gpdrive.bin", 0x000000, 0x080000, CRC(e6884b76) SHA1(2f2cc3901113f964c5e85047ff4fab325761e24b), ROM_BIOS(17) )
 	ROM_SYSTEM_BIOS( 18, "slb3", "Slubman Firmware (PC Link RAM Mod Beta)" )
-	ROMX_LOAD( "slubfw_pclink_beta.bin", 0x000000, 0x080000, CRC(3ee8b98e) SHA1(2733e61538dacde631ef0f78baee1a5bd5c473d9), ROM_BIOS(19) )
+	ROMX_LOAD( "slubfw_pclink_beta.bin", 0x000000, 0x080000, CRC(3ee8b98e) SHA1(2733e61538dacde631ef0f78baee1a5bd5c473d9), ROM_BIOS(18) )
 	ROM_SYSTEM_BIOS( 19, "slb4", "Slubman Firmware (PC Link)" )
-	ROMX_LOAD( "slubfw_pclink.bin", 0x000000, 0x080000, CRC(1a9a7135) SHA1(3b289ab3b199bbc4039a958ab7696867d3875a56), ROM_BIOS(20) )
+	ROMX_LOAD( "slubfw_pclink.bin", 0x000000, 0x080000, CRC(1a9a7135) SHA1(3b289ab3b199bbc4039a958ab7696867d3875a56), ROM_BIOS(19) )
 ROM_END
 
 CONS(2001, gp32, 0, 0, gp32, gp32, gp32_state, empty_init, "Game Park Holdings", "GP32", ROT270|MACHINE_NOT_WORKING|MACHINE_NO_SOUND)
