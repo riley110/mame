@@ -53,6 +53,11 @@ public:
 		m_vram(*this, "vram")
 		{ }
 
+	void kongambl(machine_config &config);
+
+	void init_kingtut();
+
+private:
 	required_device<cpu_device> m_maincpu;
 	required_device<k053252_device> m_k053252;
 	required_device<k055673_device> m_k055673;
@@ -70,7 +75,7 @@ public:
 	DECLARE_WRITE8_MEMBER(kongambl_ff_w);
 	DECLARE_READ32_MEMBER(test_r);
 	// DECLARE_READ32_MEMBER(rng_r);
-	void init_kingtut();
+
 	DECLARE_VIDEO_START(kongambl);
 	uint8_t m_irq_mask;
 
@@ -81,7 +86,7 @@ public:
 	TIMER_DEVICE_CALLBACK_MEMBER(kongambl_vblank);
 	K056832_CB_MEMBER(tile_callback);
 	K053246_CB_MEMBER(sprite_callback);
-	void kongambl(machine_config &config);
+
 	void kongamaud_map(address_map &map);
 	void kongambl_map(address_map &map);
 };
@@ -655,7 +660,7 @@ MACHINE_CONFIG_START(kongambl_state::kongambl)
 	MCFG_K053252_INT2_ACK_CB(WRITELINE(*this, kongambl_state, hblank_irq_ack_w))
 	MCFG_VIDEO_SET_SCREEN("screen")
 
-	MCFG_DEVICE_ADD("eeprom", EEPROM_SERIAL_93C46_16BIT)
+	EEPROM_93C46_16BIT(config, "eeprom");
 
 	MCFG_SCREEN_ADD("screen", RASTER)
 	MCFG_SCREEN_RAW_PARAMS(25000000, 288+16+32+48, 0, 287, 224+16+8+16, 0, 223) // fake, they'll be changed by CCU anyway, TBD

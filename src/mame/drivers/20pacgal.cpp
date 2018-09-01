@@ -368,7 +368,7 @@ void _20pacgal_state::common_save_state()
 	m_ram_48000 = make_unique_clear<uint8_t[]>(0x2000);
 
 	save_item(NAME(m_game_selected));
-	save_pointer(NAME(m_ram_48000.get()), 0x2000);
+	save_pointer(NAME(m_ram_48000), 0x2000);
 	save_item(NAME(m_irq_mask));
 }
 
@@ -404,7 +404,7 @@ MACHINE_CONFIG_START(_20pacgal_state::_20pacgal)
 	MCFG_DEVICE_PROGRAM_MAP(_20pacgal_map)
 	MCFG_DEVICE_IO_MAP(_20pacgal_io_map)
 
-	MCFG_DEVICE_ADD("eeprom", EEPROM_SERIAL_93C46_8BIT)
+	EEPROM_93C46_8BIT(config, "eeprom");
 
 	MCFG_WATCHDOG_ADD("watchdog")
 

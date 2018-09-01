@@ -28,13 +28,15 @@ public:
 		, m_p_chargen(*this, "chargen")
 	{ }
 
+	void v102(machine_config &config);
+
+private:
 	u32 screen_update(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect);
 
-	void v102(machine_config &config);
 	void io_map(address_map &map);
 	void kbd_map(address_map &map);
 	void mem_map(address_map &map);
-private:
+
 	required_device<cpu_device> m_maincpu;
 	required_region_ptr<u8> m_p_chargen;
 };
@@ -89,7 +91,7 @@ MACHINE_CONFIG_START(v102_state::v102)
 	//MCFG_DEVICE_ADD("vpac", CRT9007, CRTC_CLOCK)
 	//MCFG_CRT9007_CHARACTER_WIDTH(6 or 10)
 
-	MCFG_EEPROM_2804_ADD("eeprom")
+	EEPROM_2804(config, "eeprom");
 
 	MCFG_DEVICE_ADD("mpsc", UPD7201_NEW, XTAL(18'575'000) / 5) // divider not verified
 	MCFG_Z80SIO_OUT_INT_CB(WRITELINE("mainirq", input_merger_device, in_w<0>))

@@ -61,7 +61,7 @@ public:
 
 	virtual void yumefuda(machine_config &config);
 
-protected:
+private:
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
 	virtual void video_start() override;
@@ -80,7 +80,6 @@ protected:
 	void main_map(address_map &map);
 	void port_map(address_map &map);
 
-private:
 	/* memory pointers */
 	required_shared_ptr<uint8_t> m_cus_ram;
 	required_shared_ptr<uint8_t> m_videoram;
@@ -368,7 +367,7 @@ MACHINE_CONFIG_START(albazg_state::yumefuda)
 	MCFG_DEVICE_IO_MAP(port_map)
 	MCFG_DEVICE_VBLANK_INT_DRIVER("screen", albazg_state,  irq0_line_hold)
 
-	MCFG_DEVICE_ADD("eeprom", EEPROM_SERIAL_93C46_16BIT)
+	EEPROM_93C46_16BIT(config, "eeprom");
 
 	MCFG_WATCHDOG_ADD("watchdog")
 	MCFG_WATCHDOG_VBLANK_INIT("screen", 8) // timing is unknown

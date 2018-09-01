@@ -719,7 +719,7 @@ TIMER_DEVICE_CALLBACK_MEMBER(konamigx_state::konamigx_type4_scanline)
 
 /* National Semiconductor ADC0834 4-channel serial ADC emulation */
 
-ADC083X_INPUT_CB(konamigx_state::adc0834_callback)
+double konamigx_state::adc0834_callback(uint8_t input)
 {
 	switch (input)
 	{
@@ -1633,7 +1633,7 @@ MACHINE_CONFIG_START(konamigx_state::konamigx)
 	MCFG_MACHINE_START_OVERRIDE(konamigx_state,konamigx)
 	MCFG_MACHINE_RESET_OVERRIDE(konamigx_state,konamigx)
 
-	MCFG_DEVICE_ADD("eeprom", EEPROM_SERIAL_93C46_16BIT)
+	EEPROM_93C46_16BIT(config, "eeprom");
 
 	/* video hardware */
 	MCFG_SCREEN_ADD("screen", RASTER)
@@ -1677,8 +1677,11 @@ MACHINE_CONFIG_START(konamigx_state::konamigx)
 	SPEAKER(config, "rspeaker").front_right();
 
 	MCFG_DEVICE_MODIFY("dasp")
-	MCFG_SOUND_ROUTE(0, "lspeaker", 0.3)
+	MCFG_SOUND_ROUTE(0, "lspeaker", 0.3) // Connected to the aux input of respective 54539.
 	MCFG_SOUND_ROUTE(1, "rspeaker", 0.3)
+
+	MCFG_SOUND_ROUTE(2, "lspeaker", 0.3)
+	MCFG_SOUND_ROUTE(3, "rspeaker", 0.3)
 
 	MCFG_K056800_ADD("k056800", XTAL(18'432'000))
 	MCFG_K056800_INT_HANDLER(INPUTLINE("soundcpu", M68K_IRQ_1))
@@ -1791,8 +1794,8 @@ MACHINE_CONFIG_START(konamigx_state::opengolf)
 	MCFG_DEVICE_MODIFY("maincpu")
 	MCFG_DEVICE_PROGRAM_MAP(gx_type1_map)
 
-	MCFG_DEVICE_ADD("adc0834", ADC0834, 0)
-	MCFG_ADC083X_INPUT_CB(konamigx_state, adc0834_callback)
+	adc0834_device &adc(ADC0834(config, "adc0834", 0));
+	adc.set_input_callback(FUNC(konamigx_state::adc0834_callback));
 MACHINE_CONFIG_END
 
 MACHINE_CONFIG_START(konamigx_state::racinfrc)
@@ -1816,8 +1819,8 @@ MACHINE_CONFIG_START(konamigx_state::racinfrc)
 	MCFG_DEVICE_MODIFY("maincpu")
 	MCFG_DEVICE_PROGRAM_MAP(gx_type1_map)
 
-	MCFG_DEVICE_ADD("adc0834", ADC0834, 0)
-	MCFG_ADC083X_INPUT_CB(konamigx_state, adc0834_callback)
+	adc0834_device &adc(ADC0834(config, "adc0834", 0));
+	adc.set_input_callback(FUNC(konamigx_state::adc0834_callback));
 MACHINE_CONFIG_END
 
 MACHINE_CONFIG_START(konamigx_state::gxtype3)
@@ -1827,7 +1830,7 @@ MACHINE_CONFIG_START(konamigx_state::gxtype3)
 	MCFG_DEVICE_PROGRAM_MAP(gx_type3_map)
 	MCFG_TIMER_DRIVER_ADD_SCANLINE("scantimer", konamigx_state, konamigx_type4_scanline, "screen", 0, 1)
 
-	MCFG_DEFAULT_LAYOUT(layout_dualhsxs)
+	config.set_default_layout(layout_dualhsxs);
 
 	MCFG_DEVICE_ADD("gfxdecode", GFXDECODE, "palette", gfx_type3)
 	MCFG_VIDEO_START_OVERRIDE(konamigx_state, konamigx_type3)
@@ -1868,7 +1871,7 @@ MACHINE_CONFIG_START(konamigx_state::gxtype4)
 	MCFG_DEVICE_PROGRAM_MAP(gx_type4_map)
 	MCFG_TIMER_DRIVER_ADD_SCANLINE("scantimer", konamigx_state, konamigx_type4_scanline, "screen", 0, 1)
 
-	MCFG_DEFAULT_LAYOUT(layout_dualhsxs)
+	config.set_default_layout(layout_dualhsxs);
 
 	MCFG_SCREEN_MODIFY("screen")
 	MCFG_SCREEN_VIDEO_ATTRIBUTES(VIDEO_UPDATE_AFTER_VBLANK | VIDEO_ALWAYS_UPDATE)
@@ -1905,7 +1908,7 @@ MACHINE_CONFIG_END
 
 MACHINE_CONFIG_START(konamigx_state::gxtype4_vsn)
 	gxtype4(config);
-	MCFG_DEFAULT_LAYOUT(layout_dualhsxs)
+	config.set_default_layout(layout_dualhsxs);
 
 	//MCFG_SCREEN_MODIFY("screen")
 	//MCFG_SCREEN_SIZE(128*8, 32*8)

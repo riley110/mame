@@ -767,11 +767,11 @@ MACHINE_CONFIG_START(imds2_state::imds2)
 
 		MCFG_DEVICE_ADD("ipcsyspic", PIC8259, 0)
 		MCFG_PIC8259_OUT_INT_CB(WRITELINE(*this, imds2_state, imds2_ipc_intr))
-		MCFG_PIC8259_IN_SP_CB(VCC)
+		MCFG_PIC8259_IN_SP_CB(CONSTANT(1))
 
 		MCFG_DEVICE_ADD("ipclocpic", PIC8259, 0)
 		MCFG_PIC8259_OUT_INT_CB(WRITELINE("ipcsyspic", pic8259_device, ir7_w))
-		MCFG_PIC8259_IN_SP_CB(VCC) // ???
+		MCFG_PIC8259_IN_SP_CB(CONSTANT(1)) // ???
 
 		MCFG_DEVICE_ADD("ipctimer" , PIT8253 , 0)
 		MCFG_PIT8253_CLK0(IPC_XTAL_Y1 / 16)
@@ -861,8 +861,8 @@ MACHINE_CONFIG_START(imds2_state::imds2)
 		MCFG_PIT8253_OUT0_HANDLER(WRITELINE("ioctimer" , pit8253_device , write_clk2));
 		MCFG_PIT8253_OUT2_HANDLER(WRITELINE(*this, imds2_state , imds2_beep_timer_w));
 
-		MCFG_DEVICE_ADD("iocfdc" , I8271 , IOC_XTAL_Y1 / 2)
-		MCFG_I8271_DRQ_CALLBACK(WRITELINE("iocdma" , i8257_device , dreq1_w))
+		I8271(config, m_iocfdc, IOC_XTAL_Y1 / 2);
+		m_iocfdc->drq_wr_callback().set(m_iocdma, FUNC(i8257_device::dreq1_w));
 		MCFG_FLOPPY_DRIVE_ADD("iocfdc:0", imds2_floppies, "8sssd", floppy_image_device::default_floppy_formats)
 		MCFG_SLOT_FIXED(true)
 

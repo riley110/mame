@@ -133,6 +133,9 @@ public:
 		m_outputs(*this, "outputs")
 	{ }
 
+	void joystand(machine_config &config);
+
+private:
 	// devices
 	required_device<cpu_device> m_maincpu;
 	required_device<tmp68301_device> m_tmp68301;
@@ -204,7 +207,6 @@ public:
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
 	INTERRUPT_GEN_MEMBER(joystand_interrupt);
-	void joystand(machine_config &config);
 	void joystand_map(address_map &map);
 };
 
@@ -633,7 +635,7 @@ MACHINE_CONFIG_START(joystand_state::joystand)
 	MCFG_TMS_29F040_ADD("cart.u12")
 
 	// devices
-	MCFG_DEVICE_ADD("eeprom", EEPROM_SERIAL_93C46_16BIT)
+	EEPROM_93C46_16BIT(config, "eeprom");
 	MCFG_DEVICE_ADD("rtc", MSM6242, XTAL(32'768))
 MACHINE_CONFIG_END
 

@@ -171,7 +171,7 @@ void astrof_state::video_start()
 {
 	/* allocate the color RAM -- half the size of the video RAM as A0 is not connected */
 	m_colorram = std::make_unique<uint8_t[]>(m_videoram.bytes() / 2);
-	save_pointer(NAME(m_colorram.get()), m_videoram.bytes() / 2);
+	save_pointer(NAME(m_colorram), m_videoram.bytes() / 2);
 }
 
 
@@ -374,7 +374,7 @@ void astrof_state::video_update_common( bitmap_rgb32 &bitmap, const rectangle &c
 		if (!m_flipscreen)
 			y = ~y;
 
-		if ((y <= cliprect.min_y) || (y >= cliprect.max_y))
+		if ((y <= cliprect.top()) || (y >= cliprect.bottom()))
 			continue;
 
 		if (m_screen_off)

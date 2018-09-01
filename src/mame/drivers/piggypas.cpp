@@ -212,7 +212,7 @@ MACHINE_CONFIG_START(piggypas_state::piggypas)
 	MCFG_MCS51_SERIAL_TX_CB(WRITE8(*this, piggypas_state, mcs51_tx_callback))
 //  MCFG_DEVICE_VBLANK_INT_DRIVER("screen", piggypas_state,  irq0_line_hold)
 
-	MCFG_NVRAM_ADD_0FILL("nvram") // DS1220AD
+	NVRAM(config, "nvram", nvram_device::DEFAULT_ALL_0); // DS1220AD
 
 	MCFG_SCREEN_ADD("screen", LCD)
 	MCFG_SCREEN_REFRESH_RATE(50)
@@ -222,7 +222,7 @@ MACHINE_CONFIG_START(piggypas_state::piggypas)
 	MCFG_SCREEN_PALETTE("palette")
 
 	MCFG_PALETTE_ADD("palette", 2)
-	MCFG_DEFAULT_LAYOUT(layout_piggypas)
+	config.set_default_layout(layout_piggypas);
 
 	MCFG_HD44780_ADD("hd44780")
 	MCFG_HD44780_LCD_SIZE(1, 16)

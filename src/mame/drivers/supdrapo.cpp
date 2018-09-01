@@ -84,6 +84,9 @@ public:
 		m_videoram(*this, "videoram"),
 		m_char_bank(*this, "char_bank") { }
 
+	void supdrapo(machine_config &config);
+
+private:
 	required_device<cpu_device> m_maincpu;
 	required_device<watchdog_timer_device> m_watchdog;
 	required_device<gfxdecode_device> m_gfxdecode;
@@ -110,7 +113,6 @@ public:
 	DECLARE_PALETTE_INIT(supdrapo);
 
 	uint32_t screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
-	void supdrapo(machine_config &config);
 	void sdpoker_mem(address_map &map);
 };
 
@@ -461,7 +463,7 @@ MACHINE_CONFIG_START(supdrapo_state::supdrapo)
 
 	MCFG_WATCHDOG_ADD("watchdog")
 
-	MCFG_NVRAM_ADD_0FILL("nvram")
+	NVRAM(config, "nvram", nvram_device::DEFAULT_ALL_0);
 
 	/* video hardware */
 	MCFG_SCREEN_ADD("screen", RASTER)

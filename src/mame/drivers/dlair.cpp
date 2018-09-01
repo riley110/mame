@@ -79,7 +79,7 @@ public:
 	void dleuro(machine_config &config);
 	void dlair_ldv1000(machine_config &config);
 
-protected:
+private:
 	void laserdisc_data_w(uint8_t data)
 	{
 		if (m_ldv1000 != nullptr) m_ldv1000->data_w(data);
@@ -135,7 +135,6 @@ protected:
 	void dleuro_map(address_map &map);
 	void dlus_map(address_map &map);
 
-private:
 	required_device<cpu_device> m_maincpu;
 	optional_device<speaker_sound_device> m_speaker;
 	optional_device<gfxdecode_device> m_gfxdecode;
@@ -778,8 +777,8 @@ MACHINE_CONFIG_START(dlair_state::dleuro)
 	MCFG_Z80CTC_INTR_CB(INPUTLINE("maincpu", INPUT_LINE_IRQ0))
 	MCFG_Z80CTC_ZC0_CB(WRITELINE(*this, dlair_state, write_speaker))
 
-	MCFG_DEVICE_ADD("sio", Z80SIO, MASTER_CLOCK_EURO/4 /* same as "maincpu" */)
-	MCFG_Z80SIO_OUT_INT_CB(INPUTLINE("maincpu", INPUT_LINE_IRQ0))
+	z80sio_device& sio(Z80SIO(config, "sio", MASTER_CLOCK_EURO/4 /* same as "maincpu" */));
+	sio.out_int_callback().set_inputline(m_maincpu, INPUT_LINE_IRQ0);
 	// TODO: hook up tx and rx callbacks
 
 	MCFG_WATCHDOG_ADD("watchdog")

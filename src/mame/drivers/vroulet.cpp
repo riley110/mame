@@ -59,6 +59,9 @@ public:
 		m_colorram(*this, "colorram"),
 		m_ball(*this, "ball") { }
 
+	void vroulet(machine_config &config);
+
+private:
 	required_device<cpu_device> m_maincpu;
 	required_device<gfxdecode_device> m_gfxdecode;
 	required_device<palette_device> m_palette;
@@ -82,7 +85,6 @@ public:
 	virtual void video_start() override;
 
 	uint32_t screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
-	void vroulet(machine_config &config);
 	void vroulet_io_map(address_map &map);
 	void vroulet_map(address_map &map);
 };
@@ -284,7 +286,7 @@ MACHINE_CONFIG_START(vroulet_state::vroulet)
 	MCFG_DEVICE_IO_MAP(vroulet_io_map)
 	MCFG_DEVICE_VBLANK_INT_DRIVER("screen", vroulet_state,  irq0_line_hold)
 
-	MCFG_NVRAM_ADD_1FILL("nvram")
+	NVRAM(config, "nvram", nvram_device::DEFAULT_ALL_1);
 
 	MCFG_DEVICE_ADD("ppi8255_0", I8255A, 0)
 	MCFG_I8255_IN_PORTA_CB(IOPORT("IN0"))

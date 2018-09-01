@@ -848,7 +848,7 @@ void ngcd_state::machine_start()
 	// NeoCD doesn't have memcard slots, rather, it has a larger internal memory which works the same
 	m_meminternal_data = make_unique_clear<uint8_t[]>(0x2000);
 	subdevice<nvram_device>("saveram")->set_base(m_meminternal_data.get(), 0x2000);
-	save_pointer(NAME(m_meminternal_data.get()), 0x2000);
+	save_pointer(NAME(m_meminternal_data), 0x2000);
 
 	m_tempcdc->reset_cd();
 }
@@ -1041,8 +1041,7 @@ MACHINE_CONFIG_START(ngcd_state::neocd)
 	MCFG_DEVICE_PROGRAM_MAP(neocd_audio_map)
 	MCFG_DEVICE_IO_MAP(neocd_audio_io_map)
 
-	MCFG_DEVICE_MODIFY("systemlatch")
-	MCFG_ADDRESSABLE_LATCH_Q1_OUT_CB(LOGGER("NeoCD: write to regular vector change address?")) // what IS going on with "neocdz doubledr" and why do games write here if it's hooked up to nothing?
+	subdevice<hc259_device>("systemlatch")->q_out_cb<1>().set_log("NeoCD: write to regular vector change address?"); // what IS going on with "neocdz doubledr" and why do games write here if it's hooked up to nothing?
 
 	MCFG_SCREEN_MODIFY("screen")
 	MCFG_SCREEN_UPDATE_DRIVER(ngcd_state, screen_update_neocd)
@@ -1054,7 +1053,7 @@ MACHINE_CONFIG_START(ngcd_state::neocd)
 	MCFG_SET_TYPE2_INTERRUPT_CALLBACK( ngcd_state, interrupt_callback_type2 )
 	MCFG_SET_TYPE3_INTERRUPT_CALLBACK( ngcd_state, interrupt_callback_type3 )
 
-	MCFG_NVRAM_ADD_0FILL("saveram")
+	NVRAM(config, "saveram", nvram_device::DEFAULT_ALL_0);
 
 	MCFG_NEOGEO_CONTROL_PORT_ADD("ctrl1", neogeo_controls, "joy", false)
 	MCFG_NEOGEO_CONTROL_PORT_ADD("ctrl2", neogeo_controls, "joy", false)

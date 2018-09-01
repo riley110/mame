@@ -12,6 +12,7 @@
 
 
 #include "machine/taitocchip.h"
+#include "machine/timer.h"
 
 #include "sound/msm5205.h"
 #include "video/pc080sn.h"
@@ -33,22 +34,25 @@ public:
 		m_maincpu(*this, "maincpu"),
 		m_audiocpu(*this, "audiocpu"),
 		m_cchip(*this, "cchip"),
+		m_cchip_irq_clear(*this, "cchip_irq_clear"),
 		m_pc080sn(*this, "pc080sn"),
 		m_pc090oj(*this, "pc090oj"),
 		m_msm1(*this, "msm1"),
 		m_msm2(*this, "msm2")
 	{ }
 
-	DECLARE_CUSTOM_INPUT_MEMBER(opwolf_gun_x_r);
-	DECLARE_CUSTOM_INPUT_MEMBER(opwolf_gun_y_r);
-	void init_opwolf();
-	void init_opwolfb();
-	void init_opwolfp();
 	void opwolf(machine_config &config);
 	void opwolfb(machine_config &config);
 	void opwolfp(machine_config &config);
 
-protected:
+	void init_opwolf();
+	void init_opwolfb();
+	void init_opwolfp();
+
+	DECLARE_CUSTOM_INPUT_MEMBER(opwolf_gun_x_r);
+	DECLARE_CUSTOM_INPUT_MEMBER(opwolf_gun_y_r);
+
+private:
 	DECLARE_READ16_MEMBER(cchip_r);
 	DECLARE_WRITE16_MEMBER(cchip_w);
 	DECLARE_READ16_MEMBER(opwolf_in_r);
@@ -67,6 +71,10 @@ protected:
 	DECLARE_WRITE8_MEMBER(sound_bankswitch_w);
 	DECLARE_WRITE8_MEMBER(opwolf_adpcm_b_w);
 	DECLARE_WRITE8_MEMBER(opwolf_adpcm_c_w);
+	DECLARE_WRITE8_MEMBER(counters_w);
+
+	INTERRUPT_GEN_MEMBER(interrupt);
+	TIMER_DEVICE_CALLBACK_MEMBER(cchip_irq_clear_cb);
 
 	virtual void machine_start() override;
 	virtual void device_timer(emu_timer &timer, device_timer_id id, int param, void *ptr) override;
@@ -86,7 +94,6 @@ protected:
 	void opwolfb_sub_z80_map(address_map &map);
 	void opwolfp_map(address_map &map);
 
-private:
 	/* memory pointers */
 	optional_shared_ptr<uint8_t> m_cchip_ram;
 
@@ -138,6 +145,7 @@ private:
 	required_device<cpu_device> m_maincpu;
 	required_device<cpu_device> m_audiocpu;
 	optional_device<taito_cchip_device> m_cchip;
+	optional_device<timer_device> m_cchip_irq_clear;
 	required_device<pc080sn_device> m_pc080sn;
 	required_device<pc090oj_device> m_pc090oj;
 	required_device<msm5205_device> m_msm1;

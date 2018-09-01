@@ -73,7 +73,7 @@ void beta_disk_device::disable()
 READ8_MEMBER(beta_disk_device::status_r)
 {
 	if (m_betadisk_active==1) {
-		return m_wd179x->status_r(space, 0);
+		return m_wd179x->status_r();
 	} else {
 		return 0xff;
 	}
@@ -82,7 +82,7 @@ READ8_MEMBER(beta_disk_device::status_r)
 READ8_MEMBER(beta_disk_device::track_r)
 {
 	if (m_betadisk_active==1) {
-		return m_wd179x->track_r(space, 0);
+		return m_wd179x->track_r();
 	} else {
 		return 0xff;
 	}
@@ -91,7 +91,7 @@ READ8_MEMBER(beta_disk_device::track_r)
 READ8_MEMBER(beta_disk_device::sector_r)
 {
 	if (m_betadisk_active==1) {
-		return m_wd179x->sector_r(space, 0);
+		return m_wd179x->sector_r();
 	} else {
 		return 0xff;
 	}
@@ -100,7 +100,7 @@ READ8_MEMBER(beta_disk_device::sector_r)
 READ8_MEMBER(beta_disk_device::data_r)
 {
 	if (m_betadisk_active==1) {
-		return m_wd179x->data_r(space, 0);
+		return m_wd179x->data_r();
 	} else {
 		return 0xff;
 	}
@@ -147,28 +147,28 @@ WRITE8_MEMBER(beta_disk_device::param_w)
 WRITE8_MEMBER(beta_disk_device::command_w)
 {
 	if (m_betadisk_active==1) {
-		m_wd179x->cmd_w(space, 0, data);
+		m_wd179x->cmd_w(data);
 	}
 }
 
 WRITE8_MEMBER(beta_disk_device::track_w)
 {
 	if (m_betadisk_active==1) {
-		m_wd179x->track_w(space, 0, data);
+		m_wd179x->track_w(data);
 	}
 }
 
 WRITE8_MEMBER(beta_disk_device::sector_w)
 {
 	if (m_betadisk_active==1) {
-		m_wd179x->sector_w(space, 0, data);
+		m_wd179x->sector_w(data);
 	}
 }
 
 WRITE8_MEMBER(beta_disk_device::data_w)
 {
 	if (m_betadisk_active==1) {
-		m_wd179x->data_w(space, 0, data);
+		m_wd179x->data_w(data);
 	}
 }
 

@@ -324,7 +324,7 @@ void igs011_state::video_start()
 	for (int i = 0; i < 8; i++)
 	{
 		m_layer[i] = std::make_unique<uint8_t[]>(512 * 256);
-		save_pointer(NAME(m_layer[i].get()), 512 * 256, i);
+		save_pointer(NAME(m_layer[i]), 512 * 256, i);
 	}
 
 	m_lhb2_pen_hi = 0;
@@ -4184,7 +4184,7 @@ GFXDECODE_END
 MACHINE_CONFIG_START(igs011_state::igs011_base)
 	MCFG_DEVICE_ADD("maincpu",M68000, XTAL(22'000'000)/3)
 
-	MCFG_NVRAM_ADD_0FILL("nvram")
+	NVRAM(config, "nvram", nvram_device::DEFAULT_ALL_0);
 
 	/* video hardware */
 	MCFG_SCREEN_ADD("screen", RASTER)

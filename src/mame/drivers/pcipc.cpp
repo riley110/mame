@@ -26,6 +26,10 @@
 #include "machine/i82371sb.h"
 #include "video/mga2064w.h"
 #include "bus/isa/isa_cards.h"
+#include "bus/rs232/rs232.h"
+#include "bus/rs232/ser_mouse.h"
+#include "bus/rs232/terminal.h"
+#include "bus/rs232/null_modem.h"
 #include "machine/fdc37c93x.h"
 
 class pcipc_state : public driver_device
@@ -40,18 +44,18 @@ public:
 	static const boot_state_info boot_state_infos_phoenix_ver40_rev6[];
 	static const boot_state_info boot_state_infos_award[];
 
+	void pcipc(machine_config &config);
+	void pcipctx(machine_config &config);
+
+	pcipc_state(const machine_config &mconfig, device_type type, const char *tag);
+
+private:
 	DECLARE_WRITE8_MEMBER(boot_state_phoenix_w);
 	DECLARE_WRITE8_MEMBER(boot_state_phoenix_ver40_rev6_w);
 	DECLARE_WRITE8_MEMBER(boot_state_award_w);
 
-	pcipc_state(const machine_config &mconfig, device_type type, const char *tag);
-
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
-
-
-	void pcipc(machine_config &config);
-	void pcipctx(machine_config &config);
 
 	static void superio_config(device_t *device);
 };
@@ -452,7 +456,7 @@ WRITE8_MEMBER(pcipc_state::boot_state_phoenix_ver40_rev6_w)
 			break;
 		}
 	logerror("Boot state %02x - %s\n", data, desc);
-
+	printf("[%02X]",data);
 }
 
 
@@ -473,14 +477,28 @@ static void isa_internal_devices(device_slot_interface &device)
 	device.option_add("fdc37c93x", FDC37C93X);
 }
 
+static void isa_com(device_slot_interface &device)
+{
+	device.option_add("microsoft_mouse", MSFT_SERIAL_MOUSE);
+	device.option_add("msystems_mouse", MSYSTEM_SERIAL_MOUSE);
+	device.option_add("terminal", SERIAL_TERMINAL);
+	device.option_add("null_modem", NULL_MODEM);
+}
+
 void pcipc_state::superio_config(device_t *device)
 {
-	devcb_base *devcb = nullptr;
-	(void)devcb;
-	MCFG_FDC37C93X_SYSOPT(1)
-	MCFG_FDC37C93X_GP20_RESET_CB(INPUTLINE(":maincpu", INPUT_LINE_RESET))
-	MCFG_FDC37C93X_GP25_GATEA20_CB(INPUTLINE(":maincpu", INPUT_LINE_A20))
-	MCFG_FDC37C93X_IRQ1_CB(WRITELINE(":pci:07.0:pic8259_master", pic8259_device, ir1_w))
+	fdc37c93x_device &fdc = *downcast<fdc37c93x_device *>(device);
+	fdc.set_sysopt_pin(1);
+	fdc.gp20_reset().set_inputline(":maincpu", INPUT_LINE_RESET);
+	fdc.gp25_gatea20().set_inputline(":maincpu", INPUT_LINE_RESET);
+	fdc.irq1().set(":pci:07.0", FUNC(i82371sb_isa_device::pc_irq1_w));
+	fdc.irq8().set(":pci:07.0", FUNC(i82371sb_isa_device::pc_irq8n_w));
+	fdc.txd1().set(":serport0", FUNC(rs232_port_device::write_txd));
+	fdc.ndtr1().set(":serport0", FUNC(rs232_port_device::write_dtr));
+	fdc.nrts1().set(":serport0", FUNC(rs232_port_device::write_rts));
+	fdc.txd2().set(":serport1", FUNC(rs232_port_device::write_txd));
+	fdc.ndtr2().set(":serport1", FUNC(rs232_port_device::write_dtr));
+	fdc.nrts2().set(":serport1", FUNC(rs232_port_device::write_rts));
 }
 
 MACHINE_CONFIG_START(pcipc_state::pcipc)
@@ -494,7 +512,7 @@ MACHINE_CONFIG_START(pcipc_state::pcipc)
 	MCFG_I82371SB_BOOT_STATE_HOOK(WRITE8(*this, pcipc_state, boot_state_phoenix_ver40_rev6_w))
 	MCFG_I82371SB_SMI_CB(INPUTLINE(":maincpu", INPUT_LINE_SMI))
 	MCFG_DEVICE_ADD(      ":pci:07.1", I82371SB_IDE, 0)
-	MCFG_I82371SB_IDE_INTERRUPTS(":pci:07.0:pic8259_slave", pic8259_device, ir6_w, ir7_w)
+	MCFG_I82371SB_IDE_INTERRUPTS(":pci:07.0", i82371sb_isa_device, pc_irq14_w, pc_irq15_w)
 //  MCFG_DEVICE_ADD(      ":pci:12.0", MGA2064W, 0)
 
 	MCFG_DEVICE_ADD("board4", ISA16_SLOT, 0, "pci:07.0:isabus", isa_internal_devices, "fdc37c93x", true)
@@ -504,6 +522,18 @@ MACHINE_CONFIG_START(pcipc_state::pcipc)
 	MCFG_DEVICE_ADD("isa3", ISA16_SLOT, 0, "pci:07.0:isabus", pc_isa16_cards, nullptr, false)
 	MCFG_DEVICE_ADD("isa4", ISA16_SLOT, 0, "pci:07.0:isabus", pc_isa16_cards, nullptr, false)
 	MCFG_DEVICE_ADD("isa5", ISA16_SLOT, 0, "pci:07.0:isabus", pc_isa16_cards, nullptr, false)
+	MCFG_DEVICE_ADD("serport0", RS232_PORT, isa_com, "microsoft_mouse")
+	MCFG_RS232_RXD_HANDLER(WRITELINE("board4:fdc37c93x", fdc37c93x_device, rxd1_w))
+	MCFG_RS232_DCD_HANDLER(WRITELINE("board4:fdc37c93x", fdc37c93x_device, ndcd1_w))
+	MCFG_RS232_DSR_HANDLER(WRITELINE("board4:fdc37c93x", fdc37c93x_device, ndsr1_w))
+	MCFG_RS232_RI_HANDLER(WRITELINE("board4:fdc37c93x", fdc37c93x_device, nri1_w))
+	MCFG_RS232_CTS_HANDLER(WRITELINE("board4:fdc37c93x", fdc37c93x_device, ncts1_w))
+	MCFG_DEVICE_ADD("serport1", RS232_PORT, isa_com, nullptr)
+	MCFG_RS232_RXD_HANDLER(WRITELINE("board4:fdc37c93x", fdc37c93x_device, rxd2_w))
+	MCFG_RS232_DCD_HANDLER(WRITELINE("board4:fdc37c93x", fdc37c93x_device, ndcd2_w))
+	MCFG_RS232_DSR_HANDLER(WRITELINE("board4:fdc37c93x", fdc37c93x_device, ndsr2_w))
+	MCFG_RS232_RI_HANDLER(WRITELINE("board4:fdc37c93x", fdc37c93x_device, nri2_w))
+	MCFG_RS232_CTS_HANDLER(WRITELINE("board4:fdc37c93x", fdc37c93x_device, ncts2_w))
 MACHINE_CONFIG_END
 
 MACHINE_CONFIG_START(pcipc_state::pcipctx)
@@ -521,9 +551,9 @@ MACHINE_CONFIG_END
 ROM_START(pcipc)
 	ROM_REGION32_LE(0x40000, ":pci:07.0", 0) /* PC bios */
 	ROM_SYSTEM_BIOS(0, "m55ns04", "m55ns04") // Micronics M55HI-Plus with no sound
-	ROMX_LOAD("m55-04ns.rom", 0x20000, 0x20000, CRC(0116B2B0) SHA1(19b0203decfd4396695334517488d488aec3ccde), ROM_BIOS(0))
+	ROMX_LOAD("m55-04ns.rom", 0x20000, 0x20000, CRC(0116b2b0) SHA1(19b0203decfd4396695334517488d488aec3ccde), ROM_BIOS(0))
 	ROM_SYSTEM_BIOS(1, "m55s04", "m55s04") // with sound
-	ROMX_LOAD("m55-04s.rom", 0x20000, 0x20000, CRC(34A7422E) SHA1(68753fe373c97844beff83ea75c634c77cfedb8f), ROM_BIOS(1))
+	ROMX_LOAD("m55-04s.rom", 0x20000, 0x20000, CRC(34a7422e) SHA1(68753fe373c97844beff83ea75c634c77cfedb8f), ROM_BIOS(1))
 	ROM_SYSTEM_BIOS(2, "crisis", "Version 07/01/98, for flash recovery")
 	ROMX_LOAD("crisis.rom", 0x00000, 0x40000, CRC(38a1458a) SHA1(8881ac336392cca79a772b4168f63efc31f953dd), ROM_BIOS(2) )
 	ROM_SYSTEM_BIOS(3, "5hx29", "5hx29")

@@ -128,8 +128,8 @@ void backfire_state::video_start()
 	m_left =  std::make_unique<bitmap_ind16>(80*8, 32*8);
 	m_right = std::make_unique<bitmap_ind16>(80*8, 32*8);
 
-	save_pointer(NAME(m_spriteram_1.get()), 0x2000/2);
-	save_pointer(NAME(m_spriteram_2.get()), 0x2000/2);
+	save_pointer(NAME(m_spriteram_1), 0x2000/2);
+	save_pointer(NAME(m_spriteram_2), 0x2000/2);
 
 	save_item(NAME(*m_left));
 	save_item(NAME(*m_right));
@@ -426,18 +426,18 @@ MACHINE_CONFIG_START(backfire_state::backfire)
 	MCFG_DEVICE_ADD("maincpu", ARM, 28000000/4) /* Unconfirmed */
 	MCFG_DEVICE_PROGRAM_MAP(backfire_map)
 
-	MCFG_DEVICE_ADD("eeprom", EEPROM_SERIAL_93C46_16BIT)
+	EEPROM_93C46_16BIT(config, "eeprom");
 
-	MCFG_DEVICE_ADD("adc", ADC0808, 1000000) // unknown clock
-	MCFG_ADC0808_IN0_CB(IOPORT("PADDLE0"))
-	MCFG_ADC0808_IN1_CB(IOPORT("PADDLE1"))
+	ADC0808(config, m_adc, 1000000); // unknown clock
+	m_adc->in_callback<0>().set_ioport("PADDLE0");
+	m_adc->in_callback<1>().set_ioport("PADDLE1");
 
 	/* video hardware */
 	MCFG_PALETTE_ADD("palette", 2048)
 	MCFG_PALETTE_FORMAT(xBBBBBGGGGGRRRRR)
 
 	MCFG_DEVICE_ADD("gfxdecode", GFXDECODE, "palette", gfx_backfire)
-	MCFG_DEFAULT_LAYOUT(layout_dualhsxs)
+	config.set_default_layout(layout_dualhsxs);
 
 	MCFG_SCREEN_ADD("lscreen", RASTER)
 	MCFG_SCREEN_REFRESH_RATE(60)

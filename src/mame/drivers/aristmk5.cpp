@@ -483,6 +483,19 @@ public:
 		, m_lamps(*this, "lamp%u", 0U)
 	 { }
 
+	void aristmk5(machine_config &config);
+	void aristmk5_touch(machine_config &config);
+	void aristmk5_usa(machine_config &config);
+	void aristmk5_usa_touch(machine_config &config);
+
+	void init_aristmk5();
+
+	INPUT_CHANGED_MEMBER(coin_start);
+	CUSTOM_INPUT_MEMBER(coin_r);
+	CUSTOM_INPUT_MEMBER(coin_usa_r);
+	CUSTOM_INPUT_MEMBER(hopper_r);
+
+private:
 	DECLARE_WRITE32_MEMBER(Ns5w48);
 	DECLARE_READ32_MEMBER(Ns5x58);
 	DECLARE_READ32_MEMBER(Ns5r50);
@@ -507,18 +520,6 @@ public:
 	DECLARE_READ8_MEMBER(spi_data_r);
 	DECLARE_WRITE_LINE_MEMBER(uart_irq_callback);
 
-	void init_aristmk5();
-	void aristmk5(machine_config &config);
-	void aristmk5_touch(machine_config &config);
-	void aristmk5_usa(machine_config &config);
-	void aristmk5_usa_touch(machine_config &config);
-
-	INPUT_CHANGED_MEMBER(coin_start);
-	CUSTOM_INPUT_MEMBER(coin_r);
-	CUSTOM_INPUT_MEMBER(coin_usa_r);
-	CUSTOM_INPUT_MEMBER(hopper_r);
-
-protected:
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
 	TIMER_CALLBACK_MEMBER(mk5_VSYNC_callback);
@@ -535,7 +536,6 @@ protected:
 	uint64_t        m_coin_start_cycles;
 	uint8_t         m_coin_div;
 
-private:
 	required_device_array<eeprom_serial_93cxx_device, 2> m_eeprom;
 	required_device<ds1302_device> m_rtc;
 	required_device<nvram_device> m_nvram;
@@ -2054,10 +2054,10 @@ MACHINE_CONFIG_START(aristmk5_state::aristmk5)
 
 	MCFG_PALETTE_ADD("palette", 0x200)
 
-	MCFG_DEVICE_ADD("eeprom0", EEPROM_SERIAL_93C56_16BIT)
-	MCFG_DEVICE_ADD("eeprom1", EEPROM_SERIAL_93C56_16BIT)
+	EEPROM_93C56_16BIT(config, "eeprom0");
+	EEPROM_93C56_16BIT(config, "eeprom1");
 
-	MCFG_NVRAM_ADD_NO_FILL("nvram")
+	NVRAM(config, "nvram", nvram_device::DEFAULT_NONE);
 
 	// TL16C452FN U71
 	MCFG_DEVICE_ADD("uart_0a", NS16450, MASTER_CLOCK / 9)
@@ -4317,7 +4317,7 @@ ROM_START( jumpjoey )
 	*/
 	ROM_REGION( 0x400000, "game_prg", ROMREGION_ERASEFF )
 	ROM_LOAD32_WORD( "0100383v.u7",  0x000000, 0x80000, CRC(9ce4ce4a) SHA1(cde42dc82432baba4c6471cb57be89c0f27ed520) )
-	ROM_LOAD32_WORD( "0100383v.u11", 0x000002, 0x80000, CRC(b67419d0) SHA1(3107d3fd852faB15e8a72850c984b74e522d91cc) )
+	ROM_LOAD32_WORD( "0100383v.u11", 0x000002, 0x80000, CRC(b67419d0) SHA1(3107d3fd852fab15e8a72850c984b74e522d91cc) )
 	ROM_LOAD32_WORD( "0100383v.u8",  0x100000, 0x80000, CRC(94b94149) SHA1(239b510c3ebe9114c27cd7b85fb8f0f5b7b55009) )
 	ROM_LOAD32_WORD( "0100383v.u12", 0x100002, 0x80000, CRC(defce2e9) SHA1(95f88f8647c52f99dceb4920780696d7f7c1c24b) )
 

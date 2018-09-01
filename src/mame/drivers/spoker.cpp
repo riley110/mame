@@ -54,6 +54,16 @@ public:
 		m_leds(*this, "led%u", 0U)
 	{ }
 
+	void spoker(machine_config &config);
+	void _3super8(machine_config &config);
+
+	void init_spkleftover();
+	void init_spk116it();
+	void init_3super8();
+
+	DECLARE_CUSTOM_INPUT_MEMBER(hopper_r);
+
+private:
 	required_device<cpu_device> m_maincpu;
 	required_device<gfxdecode_device> m_gfxdecode;
 	required_device<screen_device> m_screen;
@@ -89,11 +99,6 @@ public:
 	DECLARE_WRITE8_MEMBER(magic_w);
 	DECLARE_READ8_MEMBER(magic_r);
 
-	DECLARE_CUSTOM_INPUT_MEMBER(hopper_r);
-
-	void init_spkleftover();
-	void init_spk116it();
-	void init_3super8();
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
 	virtual void video_start() override;
@@ -102,8 +107,6 @@ public:
 	TILE_GET_INFO_MEMBER(get_fg_tile_info);
 
 	uint32_t screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
-	void spoker(machine_config &config);
-	void _3super8(machine_config &config);
 	void _3super8_portmap(address_map &map);
 	void spoker_map(address_map &map);
 	void spoker_portmap(address_map &map);
@@ -612,7 +615,7 @@ MACHINE_CONFIG_START(spoker_state::spoker)
 	MCFG_DEVICE_IO_MAP(spoker_portmap)
 	MCFG_DEVICE_VBLANK_INT_DRIVER("screen", spoker_state, nmi_line_assert)
 
-	MCFG_NVRAM_ADD_0FILL("nvram")
+	NVRAM(config, "nvram", nvram_device::DEFAULT_ALL_0);
 
 	MCFG_DEVICE_ADD("ppi8255_0", I8255A, 0)  // Control 0x8b --> A:out; B:input; C:input.
 	MCFG_I8255_OUT_PORTA_CB(WRITE8(*this, spoker_state, nmi_and_coins_w))

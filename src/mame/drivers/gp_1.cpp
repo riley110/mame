@@ -52,17 +52,20 @@ public:
 		, m_digits(*this, "digit%u", 0U)
 	{ }
 
+	void gp_1(machine_config &config);
+	void gp_1s(machine_config &config);
+
 	void init_gp_1();
+
+private:
 	DECLARE_WRITE8_MEMBER(porta_w);
 	DECLARE_WRITE8_MEMBER(portas_w);
 	DECLARE_WRITE8_MEMBER(portc_w);
 	DECLARE_READ8_MEMBER(portb_r);
 	TIMER_DEVICE_CALLBACK_MEMBER(zero_timer);
-	void gp_1(machine_config &config);
-	void gp_1s(machine_config &config);
 	void gp_1_io(address_map &map);
 	void gp_1_map(address_map &map);
-private:
+
 	uint8_t m_u14;
 	uint8_t m_digit;
 	uint8_t m_segment[16];
@@ -437,10 +440,10 @@ MACHINE_CONFIG_START(gp_1_state::gp_1)
 	MCFG_DEVICE_IO_MAP(gp_1_io)
 	MCFG_Z80_DAISY_CHAIN(daisy_chain)
 
-	MCFG_NVRAM_ADD_0FILL("nvram")
+	NVRAM(config, "nvram", nvram_device::DEFAULT_ALL_0);
 
 	/* Video */
-	MCFG_DEFAULT_LAYOUT(layout_gp_1)
+	config.set_default_layout(layout_gp_1);
 
 	/* Sound */
 	genpin_audio(config);

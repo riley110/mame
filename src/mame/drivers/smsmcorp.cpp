@@ -235,6 +235,10 @@ public:
 		m_lamps(*this, "lamp%u", 0U)
 	{ }
 
+	void sureshot(machine_config &config);
+	void sms(machine_config &config);
+
+private:
 	DECLARE_WRITE8_MEMBER(bankswitch_w);
 	DECLARE_READ8_MEMBER(link_r);
 	DECLARE_WRITE8_MEMBER(link_w);
@@ -247,13 +251,10 @@ public:
 	DECLARE_WRITE8_MEMBER(ppi0_b_w);
 	DECLARE_MACHINE_START(sureshot);
 	uint32_t screen_update_sms(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
-	void sureshot(machine_config &config);
-	void sms(machine_config &config);
 	void sms_map(address_map &map);
 	void sub_map(address_map &map);
 	void sureshot_map(address_map &map);
 
-protected:
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
 	virtual void video_start() override;
@@ -569,7 +570,7 @@ MACHINE_CONFIG_START(smsmfg_state::sms)
 	MCFG_I8255_IN_PORTB_CB(IOPORT("IN1"))
 	MCFG_I8255_IN_PORTC_CB(IOPORT("IN2"))
 
-	MCFG_NVRAM_ADD_0FILL("nvram")
+	NVRAM(config, "nvram", nvram_device::DEFAULT_ALL_0);
 
 	/* video hardware */
 	MCFG_SCREEN_ADD("screen", RASTER)

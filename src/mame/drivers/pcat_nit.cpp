@@ -99,16 +99,19 @@ public:
 			m_uart(*this, "ns16450_0"),
 			m_microtouch(*this, "microtouch") { }
 
+	void bonanza(machine_config &config);
+	void pcat_nit(machine_config &config);
+
+	void init_pcat_nit();
+
+private:
 	std::unique_ptr<uint8_t[]> m_banked_nvram;
 	required_device<ns16450_device> m_uart;
 	required_device<microtouch_device> m_microtouch;
 
 	DECLARE_WRITE8_MEMBER(pcat_nit_rombank_w);
 	DECLARE_READ8_MEMBER(pcat_nit_io_r);
-	void init_pcat_nit();
 	virtual void machine_start() override;
-	void bonanza(machine_config &config);
-	void pcat_nit(machine_config &config);
 	void bonanza_io_map(address_map &map);
 	void bonanza_map(address_map &map);
 	void pcat_map(address_map &map);
@@ -244,7 +247,7 @@ MACHINE_CONFIG_START(pcat_nit_state::pcat_nit)
 	MCFG_INS8250_OUT_INT_CB(WRITELINE("pic8259_1", pic8259_device, ir4_w))
 	MCFG_MICROTOUCH_ADD( "microtouch", 9600, WRITELINE("ns16450_0", ins8250_uart_device, rx_w) ) // rate?
 
-	MCFG_NVRAM_ADD_0FILL("nvram")
+	NVRAM(config, "nvram", nvram_device::DEFAULT_ALL_0);
 MACHINE_CONFIG_END
 
 MACHINE_CONFIG_START(pcat_nit_state::bonanza)
@@ -263,7 +266,7 @@ MACHINE_CONFIG_START(pcat_nit_state::bonanza)
 	MCFG_INS8250_OUT_INT_CB(WRITELINE("pic8259_1", pic8259_device, ir4_w))
 	MCFG_MICROTOUCH_ADD( "microtouch", 9600, WRITELINE("ns16450_0", ins8250_uart_device, rx_w) ) // rate?
 
-	MCFG_NVRAM_ADD_0FILL("nvram")
+	NVRAM(config, "nvram", nvram_device::DEFAULT_ALL_0);
 MACHINE_CONFIG_END
 
 /***************************************

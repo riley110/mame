@@ -75,11 +75,10 @@ const double XTAL::known_xtals[] = {
 	  1'750'000, /* 1.75_MHz_XTAL          RCA CDP1861 */
 	  1'797'100, /* 1.7971_MHz_XTAL        SWTPC 6800 (with MIKBUG) */
 	  1'843'200, /* 1.8432_MHz_XTAL        Bondwell 12/14 */
-	  1'996'800, /* 1.9968_MHz_XTAL        NEC PC-98xx */
 	  2'000'000, /* 2_MHz_XTAL             - */
 	  2'012'160, /* 2.01216_MHz_XTAL       Cidelsa Draco sound board */
 	  2'097'152, /* 2.097152_MHz_XTAL      Icatel 1995 - Brazilian public payphone */
-	  2'457'600, /* 2.4576_MHz_XTAL        Atari ST MFP, NEC PC-98xx */
+	  2'457'600, /* 2.4576_MHz_XTAL        Atari ST MFP */
 	  2'500'000, /* 2.5_MHz_XTAL           Janken Man units */
 	  2'950'000, /* 2.95_MHz_XTAL          Playmatic MPU-C, MPU-III & Sound-3 */
 	  3'000'000, /* 3_MHz_XTAL             Probably only used to drive 68705 or similar MCUs on 80's Taito PCBs */
@@ -115,6 +114,7 @@ const double XTAL::known_xtals[] = {
 	  5'990'400, /* 5.9904_MHz_XTAL        Luxor ABC 800 keyboard (Keytronic custom part #48-300-008 is equivalent) */
 	  6'000'000, /* 6_MHz_XTAL             American Poker II, Taito SJ System */
 	  6'144'000, /* 6.144_MHz_XTAL         Used on Alpha Denshi early 80's games sound board, Casio FP-200 and Namco Universal System 16 */
+	  6'400'000, /* 6.4_MHz_XTAL           Textel Compact */
 	  6'500'000, /* 6.5_MHz_XTAL           Jupiter Ace */
 	  6'880'000, /* 6.88_MHz_XTAL          Barcrest MPU4 */
 	  6'900'000, /* 6.9_MHz_XTAL           BBN BitGraph CPU */
@@ -140,6 +140,7 @@ const double XTAL::known_xtals[] = {
 	  9'877'680, /* 9.87768_MHz_XTAL       Microterm 420 */
 	  9'987'000, /* 9.987_MHz_XTAL         Crazy Balloon */
 	 10'000'000, /* 10_MHz_XTAL            - */
+	 10'137'600, /* 10.1376_MHz_XTAL       Wyse WY-100 */
 	 10'245'000, /* 10.245_MHz_XTAL        PES Speech box */
 	 10'380'000, /* 10.38_MHz_XTAL         Fairlight Q219 Lightpen/Graphics Card */
 	 10'500'000, /* 10.5_MHz_XTAL          Agat-7 */
@@ -183,6 +184,7 @@ const double XTAL::known_xtals[] = {
 	 13'495'200, /* 13.4952_MHz_XTAL       Used on Shadow Force pcb and maybe other Technos pcbs? */
 	 13'516'800, /* 13.5168_MHz_XTAL       Kontron KDT6 */
 	 13'608'000, /* 13.608_MHz_XTAL        TeleVideo 910 & 925 */
+	 13'824'000, /* 13.824_MHz_XTAL        Robotron PC-1715 display circuit */
 	 14'000'000, /* 14_MHz_XTAL            - */
 	 14'112'000, /* 14.112_MHz_XTAL        Timex/Sinclair TS2068 */
 	 14'192'640, /* 14.19264_MHz_XTAL      Central Data 2650 */
@@ -192,6 +194,7 @@ const double XTAL::known_xtals[] = {
 	 14'318'181, /* 14.318181_MHz_XTAL     Extremely common, used on 100's of PCBs (4x NTSC subcarrier) */
 	 14'705'882, /* 14.705882_MHz_XTAL     Aleck64 */
 	 14'745'600, /* 14.7456_MHz_XTAL       Namco System 12 & System Super 22/23 for JVS */
+	 14'784'000, /* 14.784_MHz_XTAL        Zenith Z-29 */
 	 14'916'000, /* 14.916_MHz_XTAL        ADDS Viewpoint 122 */
 	 14'976'000, /* 14.976_MHz_XTAL        CIT-101 80-column display clock */
 	 15'000'000, /* 15_MHz_XTAL            Sinclair QL, Amusco Poker */
@@ -211,6 +214,7 @@ const double XTAL::known_xtals[] = {
 	 16'128'000, /* 16.128_MHz_XTAL        Fujitsu FM-7 */
 	 16'384'000, /* 16.384_MHz_XTAL        - */
 	 16'400'000, /* 16.4_MHz_XTAL          MS 6102 */
+	 16'572'000, /* 16.572_MHz_XTAL        Micro-Term ACT-5A */
 	 16'588'800, /* 16.5888_MHz_XTAL       SM 7238 */
 	 16'669'800, /* 16.6698_MHz_XTAL       Qume QVT-102 */
 	 16'670'000, /* 16.67_MHz_XTAL         - */
@@ -224,6 +228,7 @@ const double XTAL::known_xtals[] = {
 	 17'971'200, /* 17.9712_MHz_XTAL       - */
 	 18'000'000, /* 18_MHz_XTAL            S.A.R, Ikari Warriors 3 */
 	 18'432'000, /* 18.432_MHz_XTAL        Extremely common, used on 100's of PCBs (48000 * 384) */
+	 18'480'000, /* 18.48_MHz_XTAL         Wyse WY-100 video */
 	 18'575'000, /* 18.575_MHz_XTAL        Visual 102, Visual 220 */
 	 18'720'000, /* 18.72_MHz_XTAL         Nokia MikroMikko 1 */
 	 18'869'600, /* 18.8696_MHz_XTAL       Memorex 2178 */
@@ -307,9 +312,11 @@ const double XTAL::known_xtals[] = {
 	 33'868'800, /* 33.8688_MHz_XTAL       Usually used to drive 90's Yamaha OPL/FM chips with /2 divider */
 	 34'000'000, /* 34_MHz_XTAL            Gaelco PCBs */
 	 34'291'712, /* 34.291712_MHz_XTAL     Fairlight CMI master card */
+	 34'846'000, /* 34.846_MHz_XTAL        Visual 550 */
 	 35'904'000, /* 35.904_MHz_XTAL        Used on HP98543 graphics board */
 	 36'000'000, /* 36_MHz_XTAL            Sega Model 1 video board */
 	 38'769'220, /* 38.76922_MHz_XTAL      Namco System 21 video board */
+	 38'863'630, /* 38.86363_MHz_XTAL      Sharp X68000 15.98kHz video */
 	 39'321'600, /* 39.3216_MHz_XTAL       Sun 2/120 */
 	 39'710'000, /* 39.71_MHz_XTAL         Wyse WY-60 132-column display clock */
 	 40'000'000, /* 40_MHz_XTAL            - */
@@ -351,6 +358,7 @@ const double XTAL::known_xtals[] = {
 	 66'666'700, /* 66.6667_MHz_XTAL       Later Midway games */
 	 67'737'600, /* 67.7376_MHz_XTAL       PSX-based h/w, Sony ZN1-2-based */
 	 68'850'000, /* 68.85_MHz_XTAL         Wyse WY-50 */
+	 69'551'990, /* 69.55199_MHz_XTAL      Sharp X68000 31.5kHz video */
 	 72'000'000, /* 72_MHz_XTAL            Aristocrat MKV */
 	 72'576'000, /* 72.576_MHz_XTAL        Centipede, Millipede, Missile Command, Let's Go Bowling "Multipede" */
 	 73'728'000, /* 73.728_MHz_XTAL        Ms. Pac-Man/Galaga 20th Anniversary */

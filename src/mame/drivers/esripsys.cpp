@@ -635,9 +635,9 @@ void esripsys_state::init_esripsys()
 	membank("bank4")->set_base(&rom[0x8000]);
 
 	/* Register stuff for state saving */
-	save_pointer(NAME(m_fdt_a.get()), FDT_RAM_SIZE);
-	save_pointer(NAME(m_fdt_b.get()), FDT_RAM_SIZE);
-	save_pointer(NAME(m_cmos_ram.get()), CMOS_RAM_SIZE);
+	save_pointer(NAME(m_fdt_a), FDT_RAM_SIZE);
+	save_pointer(NAME(m_fdt_b), FDT_RAM_SIZE);
+	save_pointer(NAME(m_cmos_ram), CMOS_RAM_SIZE);
 
 	save_item(NAME(m_g_iodata));
 	save_item(NAME(m_g_ioaddr));
@@ -685,7 +685,7 @@ MACHINE_CONFIG_START(esripsys_state::esripsys)
 	MCFG_DEVICE_ADD("sound_cpu", MC6809E, XTAL(8'000'000) / 4)
 	MCFG_DEVICE_PROGRAM_MAP(sound_cpu_map)
 
-	MCFG_NVRAM_ADD_0FILL("nvram")
+	NVRAM(config, "nvram", nvram_device::DEFAULT_ALL_0);
 
 	/* Video hardware */
 	MCFG_SCREEN_ADD("screen", RASTER)
@@ -706,9 +706,9 @@ MACHINE_CONFIG_START(esripsys_state::esripsys)
 	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "speaker", 1.0)
 
 	/* 6840 PTM */
-	MCFG_DEVICE_ADD("6840ptm", PTM6840, XTAL(8'000'000) / 4)
-	MCFG_PTM6840_EXTERNAL_CLOCKS(0, 0, 0)
-	MCFG_PTM6840_IRQ_CB(WRITELINE(*this, esripsys_state, ptm_irq))
+	ptm6840_device &ptm(PTM6840(config, "6840ptm", XTAL(8'000'000) / 4));
+	ptm.set_external_clocks(0, 0, 0);
+	ptm.irq_callback().set(FUNC(esripsys_state::ptm_irq));
 MACHINE_CONFIG_END
 
 
