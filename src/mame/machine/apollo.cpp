@@ -1100,13 +1100,13 @@ MACHINE_CONFIG_START(apollo_state::common)
 	MCFG_DEVICE_ADD("ptmclock", CLOCK, 250000)
 	MCFG_CLOCK_SIGNAL_HANDLER(WRITELINE(*this, apollo_state, apollo_ptm_timer_tick))
 
-	MCFG_DEVICE_ADD(APOLLO_RTC_TAG, MC146818, 32.768_kHz_XTAL)
+	MC146818(config, m_rtc, 32.768_kHz_XTAL);
 	// FIXME: is this interrupt really only connected on DN3000?
-	//MCFG_MC146818_IRQ_HANDLER(WRITELINE(*this, apollo_state, apollo_rtc_irq_function))
-	MCFG_MC146818_UTC(true)
-	MCFG_MC146818_BINARY(false)
-	MCFG_MC146818_24_12(false)
-	MCFG_MC146818_EPOCH(0)
+	//m_rtc->irq().set(FUNC(apollo_state::apollo_rtc_irq_function));
+	m_rtc->set_use_utc(true);
+	m_rtc->set_binary(false);
+	m_rtc->set_24hrs(false);
+	m_rtc->set_epoch(0);
 
 	MCFG_APOLLO_NI_ADD(APOLLO_NI_TAG, 0)
 
@@ -1175,10 +1175,9 @@ MACHINE_CONFIG_START(apollo_state::apollo_terminal)
 	MCFG_APOLLO_SIO_OUTPORT_CALLBACK(WRITE8(*this, apollo_state, sio_output))
 	MCFG_APOLLO_SIO_B_TX_CALLBACK(WRITELINE("rs232", rs232_port_device, write_txd))
 
-	MCFG_DEVICE_ADD("rs232", RS232_PORT, default_rs232_devices, "terminal")
-	MCFG_RS232_RXD_HANDLER(WRITELINE(APOLLO_SIO_TAG, apollo_sio, rx_b_w))
-
-	MCFG_SLOT_OPTION_DEVICE_INPUT_DEFAULTS("terminal", apollo_terminal)
+	rs232_port_device &rs232(RS232_PORT(config, "rs232", default_rs232_devices, "terminal"));
+	rs232.rxd_handler().set(APOLLO_SIO_TAG, FUNC(apollo_sio::rx_b_w));
+	rs232.set_option_device_input_defaults("terminal", DEVICE_INPUT_DEFAULTS_NAME(apollo_terminal));
 MACHINE_CONFIG_END
 
 void apollo_state::init_apollo()

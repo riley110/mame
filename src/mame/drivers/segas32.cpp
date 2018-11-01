@@ -2326,17 +2326,17 @@ MACHINE_CONFIG_START(segas32_trackball_state::device_add_mconfig)
 	MCFG_DEVICE_MODIFY("maincpu")
 	MCFG_DEVICE_PROGRAM_MAP(system32_trackball_map)
 
-	MCFG_DEVICE_ADD("upd1", UPD4701A, 0)
-	MCFG_UPD4701_PORTX("TRACKX1")
-	MCFG_UPD4701_PORTY("TRACKY1")
+	upd4701_device &upd1(UPD4701A(config, "upd1"));
+	upd1.set_portx_tag("TRACKX1");
+	upd1.set_porty_tag("TRACKY1");
 
-	MCFG_DEVICE_ADD("upd2", UPD4701A, 0)
-	MCFG_UPD4701_PORTX("TRACKX2")
-	MCFG_UPD4701_PORTY("TRACKY2")
+	upd4701_device &upd2(UPD4701A(config, "upd2"));
+	upd2.set_portx_tag("TRACKX2");
+	upd2.set_porty_tag("TRACKY2");
 
-	MCFG_DEVICE_ADD("upd3", UPD4701A, 0)
-	MCFG_UPD4701_PORTX("TRACKX3")
-	MCFG_UPD4701_PORTY("TRACKY3")
+	upd4701_device &upd3(UPD4701A(config, "upd3"));
+	upd3.set_portx_tag("TRACKX3");
+	upd3.set_porty_tag("TRACKY3");
 
 	// 837-8685 I/O board has an unpopulated space for a fourth UPD4701A
 MACHINE_CONFIG_END
@@ -2365,10 +2365,10 @@ MACHINE_CONFIG_START(segas32_4player_state::device_add_mconfig)
 	MCFG_DEVICE_MODIFY("maincpu")
 	MCFG_DEVICE_PROGRAM_MAP(system32_4player_map)
 
-	MCFG_DEVICE_ADD("ppi", I8255A, 0)
-	MCFG_I8255_IN_PORTA_CB(IOPORT("EXTRA1"))
-	MCFG_I8255_IN_PORTB_CB(IOPORT("EXTRA2"))
-	MCFG_I8255_IN_PORTC_CB(IOPORT("EXTRA3"))
+	i8255_device &ppi(I8255A(config, "ppi"));
+	ppi.in_pa_callback().set_ioport("EXTRA1");
+	ppi.in_pb_callback().set_ioport("EXTRA2");
+	ppi.in_pc_callback().set_ioport("EXTRA3");
 MACHINE_CONFIG_END
 
 DEFINE_DEVICE_TYPE(SEGA_S32_4PLAYER_DEVICE, segas32_4player_state, "segas32_pcb_4player", "Sega System 32 4-player/fighting PCB")
@@ -2663,10 +2663,10 @@ MACHINE_CONFIG_START(sega_multi32_6player_state::device_add_mconfig)
 	MCFG_DEVICE_MODIFY("maincpu")
 	MCFG_DEVICE_PROGRAM_MAP(multi32_6player_map)
 
-	MCFG_DEVICE_ADD("ppi", I8255A, 0)
-	MCFG_I8255_IN_PORTA_CB(IOPORT("EXTRA1"))
-	MCFG_I8255_IN_PORTB_CB(IOPORT("EXTRA2"))
-	MCFG_I8255_IN_PORTC_CB(IOPORT("EXTRA3"))
+	i8255_device &ppi(I8255A(config, "ppi"));
+	ppi.in_pa_callback().set_ioport("EXTRA1");
+	ppi.in_pb_callback().set_ioport("EXTRA2");
+	ppi.in_pc_callback().set_ioport("EXTRA3");
 MACHINE_CONFIG_END
 
 DEFINE_DEVICE_TYPE(SEGA_MULTI32_6PLAYER_DEVICE, sega_multi32_6player_state, "segas32_pcb_multi_6player", "Sega Multi 32 6-player PCB")
@@ -3729,6 +3729,9 @@ ROM_END
  **************************************************************************************************************************
     F1 Super Lap (Export)
     protected via FD1149 317-0210
+     GAME BD NO. 833-9407-02 F1 SUPER LAP
+         ROM BD. 834-9408-02
+      A/D BD NO. 837-7536
 */
 ROM_START( f1lap )
 	ROM_REGION( 0x200000, "mainpcb:maincpu", 0 ) /* v60 code + data */

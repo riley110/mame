@@ -630,7 +630,7 @@ MACHINE_CONFIG_START(looping_state::looping)
 	m_maincpu->set_vblank_int("screen", FUNC(looping_state::looping_interrupt));
 
 	// CPU TMS9980A for audio subsystem; no line connections
-	TMS9980A(config, m_audiocpu, SOUND_CLOCK/4);
+	TMS9980A(config, m_audiocpu, SOUND_CLOCK);
 	m_audiocpu->set_addrmap(AS_PROGRAM, &looping_state::looping_sound_map);
 	m_audiocpu->set_addrmap(AS_IO, &looping_state::looping_sound_io_map);
 
@@ -652,7 +652,7 @@ MACHINE_CONFIG_START(looping_state::looping)
 	mainlatch.q_out_cb<6>().set(FUNC(looping_state::main_irq_ack_w));
 	mainlatch.q_out_cb<7>().set(FUNC(looping_state::watchdog_w));
 
-	MCFG_WATCHDOG_ADD("watchdog")
+	WATCHDOG_TIMER(config, m_watchdog);
 
 	/* video hardware */
 	MCFG_SCREEN_ADD("screen", RASTER)

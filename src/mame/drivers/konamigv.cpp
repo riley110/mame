@@ -135,6 +135,7 @@ Notes:
 #include "sound/cdda.h"
 #include "sound/spu.h"
 #include "video/psx.h"
+#include "screen.h"
 #include "speaker.h"
 #include "cdrom.h"
 
@@ -228,8 +229,8 @@ void konamigv_state::btchamp_map(address_map &map)
 	konamigv_map(map);
 
 	map(0x1f380000, 0x1f3fffff).rw("flash", FUNC(intelfsh16_device::read), FUNC(intelfsh16_device::write));
-	map(0x1f680080, 0x1f680087).r("upd1", FUNC(upd4701_device::read_xy)).umask32(0xff00ff00);
-	map(0x1f680080, 0x1f680087).r("upd2", FUNC(upd4701_device::read_xy)).umask32(0x00ff00ff);
+	map(0x1f680080, 0x1f680087).r(m_btc_trackball[0], FUNC(upd4701_device::read_xy)).umask32(0xff00ff00);
+	map(0x1f680080, 0x1f680087).r(m_btc_trackball[1], FUNC(upd4701_device::read_xy)).umask32(0x00ff00ff);
 	map(0x1f680088, 0x1f680089).w(FUNC(konamigv_state::btc_trackball_w));
 	map(0x1f6800e0, 0x1f6800e3).nopw();
 }
@@ -376,6 +377,9 @@ MACHINE_CONFIG_START(konamigv_state::konamigv)
 
 	/* video hardware */
 	MCFG_PSXGPU_ADD( "maincpu", "gpu", CXD8514Q, 0x100000, XTAL(53'693'175) )
+	MCFG_VIDEO_SET_SCREEN("screen")
+
+	SCREEN(config, "screen", SCREEN_TYPE_RASTER);
 
 	/* sound hardware */
 	SPEAKER(config, "lspeaker").front_left();
@@ -509,14 +513,14 @@ MACHINE_CONFIG_START(simpbowl_state::simpbowl)
 	MCFG_DEVICE_MODIFY( "maincpu" )
 	MCFG_DEVICE_PROGRAM_MAP( simpbowl_map )
 
-	MCFG_FUJITSU_29F016A_ADD("flash0")
-	MCFG_FUJITSU_29F016A_ADD("flash1")
-	MCFG_FUJITSU_29F016A_ADD("flash2")
-	MCFG_FUJITSU_29F016A_ADD("flash3")
+	FUJITSU_29F016A(config, "flash0");
+	FUJITSU_29F016A(config, "flash1");
+	FUJITSU_29F016A(config, "flash2");
+	FUJITSU_29F016A(config, "flash3");
 
-	MCFG_DEVICE_ADD("upd", UPD4701A, 0)
-	MCFG_UPD4701_PORTX("TRACK0_X")
-	MCFG_UPD4701_PORTY("TRACK0_Y")
+	upd4701_device &upd(UPD4701A(config, "upd"));
+	upd.set_portx_tag("TRACK0_X");
+	upd.set_porty_tag("TRACK0_Y");
 MACHINE_CONFIG_END
 
 static INPUT_PORTS_START( simpbowl )
@@ -549,15 +553,15 @@ MACHINE_CONFIG_START(konamigv_state::btchamp)
 	MCFG_DEVICE_MODIFY( "maincpu" )
 	MCFG_DEVICE_PROGRAM_MAP( btchamp_map )
 
-	MCFG_SHARP_LH28F400_ADD("flash")
+	SHARP_LH28F400(config, "flash");
 
-	MCFG_DEVICE_ADD("upd1", UPD4701A, 0)
-	MCFG_UPD4701_PORTX("TRACK0_X")
-	MCFG_UPD4701_PORTY("TRACK0_Y")
+	UPD4701A(config, m_btc_trackball[0]);
+	m_btc_trackball[0]->set_portx_tag("TRACK0_X");
+	m_btc_trackball[0]->set_porty_tag("TRACK0_Y");
 
-	MCFG_DEVICE_ADD("upd2", UPD4701A, 0)
-	MCFG_UPD4701_PORTX("TRACK1_X")
-	MCFG_UPD4701_PORTY("TRACK1_Y")
+	UPD4701A(config, m_btc_trackball[1]);
+	m_btc_trackball[1]->set_portx_tag("TRACK1_X");
+	m_btc_trackball[1]->set_porty_tag("TRACK1_Y");
 MACHINE_CONFIG_END
 
 static INPUT_PORTS_START( btchamp )
@@ -623,7 +627,7 @@ MACHINE_CONFIG_START(konamigv_state::kdeadeye)
 	MCFG_DEVICE_MODIFY( "maincpu" )
 	MCFG_DEVICE_PROGRAM_MAP( kdeadeye_map )
 
-	MCFG_SHARP_LH28F400_ADD("flash")
+	SHARP_LH28F400(config, "flash");
 MACHINE_CONFIG_END
 
 static INPUT_PORTS_START( kdeadeye )
@@ -847,17 +851,17 @@ ROM_END
 /* BIOS placeholder */
 GAME( 1995, konamigv, 0,        konamigv, konamigv, konamigv_state, empty_init, ROT0, "Konami", "Baby Phoenix/GV System", MACHINE_IS_BIOS_ROOT )
 
-GAME( 1996, powyak96, konamigv, konamigv, konamigv, konamigv_state, empty_init, ROT0, "Konami", "Jikkyou Powerful Pro Yakyuu '96 (GV017 Japan 1.03)", MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS )
-GAME( 1996, hyperath, konamigv, konamigv, konamigv, konamigv_state, empty_init, ROT0, "Konami", "Hyper Athlete (GV021 Japan 1.00)", MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS )
-GAME( 1996, lacrazyc, konamigv, konamigv, konamigv, konamigv_state, empty_init, ROT0, "Konami", "Let's Attack Crazy Cross (GV027 Asia 1.10)", MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS )
-GAME( 1996, susume,   lacrazyc, konamigv, konamigv, konamigv_state, empty_init, ROT0, "Konami", "Susume! Taisen Puzzle-Dama (GV027 Japan 1.20)", MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS )
-GAME( 1996, btchamp,  konamigv, btchamp,  btchamp,  konamigv_state, empty_init, ROT0, "Konami", "Beat the Champ (GV053 UAA01)", MACHINE_NOT_WORKING | MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS )
-GAME( 1996, kdeadeye, konamigv, kdeadeye, kdeadeye, konamigv_state, empty_init, ROT0, "Konami", "Dead Eye (GV054 UAA01)", MACHINE_NOT_WORKING | MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS )
-GAME( 1997, weddingr, konamigv, konamigv, weddingr, konamigv_state, empty_init, ROT0, "Konami", "Wedding Rhapsody (GX624 JAA)", MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS )
-GAME( 1997, tmosh,    konamigv, tmosh,    konamigv, konamigv_state, empty_init, ROT0, "Konami", "Tokimeki Memorial Oshiete Your Heart (GQ673 JAA)", MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS | MACHINE_NOT_WORKING )
-GAME( 1997, tmoshs,   konamigv, tmosh,    konamigv, konamigv_state, empty_init, ROT0, "Konami", "Tokimeki Memorial Oshiete Your Heart Seal Version (GE755 JAA)", MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS | MACHINE_NOT_WORKING )
-GAME( 1997, tmoshsp,  konamigv, tmosh,    konamigv, konamigv_state, empty_init, ROT0, "Konami", "Tokimeki Memorial Oshiete Your Heart Seal Version Plus (GE756 JAB)", MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS | MACHINE_NOT_WORKING )
-GAME( 1997, tmoshspa, tmoshsp,  tmosh,    konamigv, konamigv_state, empty_init, ROT0, "Konami", "Tokimeki Memorial Oshiete Your Heart Seal Version Plus (GE756 JAA)", MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS | MACHINE_NOT_WORKING )
-GAME( 1998, nagano98, konamigv, konamigv, konamigv, konamigv_state, empty_init, ROT0, "Konami", "Nagano Winter Olympics '98 (GX720 EAA)", MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE)
-GAME( 1998, naganoj,  nagano98, konamigv, konamigv, konamigv_state, empty_init, ROT0, "Konami", "Hyper Olympic in Nagano (GX720 JAA)", MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE)
-GAME( 2000, simpbowl, konamigv, simpbowl, simpbowl, simpbowl_state, empty_init, ROT0, "Konami", "Simpsons Bowling (GQ829 UAA)", MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS | MACHINE_SUPPORTS_SAVE)
+GAME( 1996, powyak96, konamigv, konamigv, konamigv, konamigv_state, empty_init, ROT0, "Konami", "Jikkyou Powerful Pro Yakyuu '96 (GV017 Japan 1.03)", MACHINE_IMPERFECT_SOUND )
+GAME( 1996, hyperath, konamigv, konamigv, konamigv, konamigv_state, empty_init, ROT0, "Konami", "Hyper Athlete (GV021 Japan 1.00)", MACHINE_IMPERFECT_SOUND )
+GAME( 1996, lacrazyc, konamigv, konamigv, konamigv, konamigv_state, empty_init, ROT0, "Konami", "Let's Attack Crazy Cross (GV027 Asia 1.10)", MACHINE_IMPERFECT_SOUND )
+GAME( 1996, susume,   lacrazyc, konamigv, konamigv, konamigv_state, empty_init, ROT0, "Konami", "Susume! Taisen Puzzle-Dama (GV027 Japan 1.20)", MACHINE_IMPERFECT_SOUND )
+GAME( 1996, btchamp,  konamigv, btchamp,  btchamp,  konamigv_state, empty_init, ROT0, "Konami", "Beat the Champ (GV053 UAA01)", MACHINE_NOT_WORKING | MACHINE_IMPERFECT_SOUND )
+GAME( 1996, kdeadeye, konamigv, kdeadeye, kdeadeye, konamigv_state, empty_init, ROT0, "Konami", "Dead Eye (GV054 UAA01)", MACHINE_NOT_WORKING | MACHINE_IMPERFECT_SOUND )
+GAME( 1997, weddingr, konamigv, konamigv, weddingr, konamigv_state, empty_init, ROT0, "Konami", "Wedding Rhapsody (GX624 JAA)", MACHINE_IMPERFECT_SOUND )
+GAME( 1997, tmosh,    konamigv, tmosh,    konamigv, konamigv_state, empty_init, ROT0, "Konami", "Tokimeki Memorial Oshiete Your Heart (GQ673 JAA)", MACHINE_IMPERFECT_SOUND | MACHINE_NOT_WORKING )
+GAME( 1997, tmoshs,   konamigv, tmosh,    konamigv, konamigv_state, empty_init, ROT0, "Konami", "Tokimeki Memorial Oshiete Your Heart Seal Version (GE755 JAA)", MACHINE_IMPERFECT_SOUND | MACHINE_NOT_WORKING )
+GAME( 1997, tmoshsp,  konamigv, tmosh,    konamigv, konamigv_state, empty_init, ROT0, "Konami", "Tokimeki Memorial Oshiete Your Heart Seal Version Plus (GE756 JAB)", MACHINE_IMPERFECT_SOUND | MACHINE_NOT_WORKING )
+GAME( 1997, tmoshspa, tmoshsp,  tmosh,    konamigv, konamigv_state, empty_init, ROT0, "Konami", "Tokimeki Memorial Oshiete Your Heart Seal Version Plus (GE756 JAA)", MACHINE_IMPERFECT_SOUND | MACHINE_NOT_WORKING )
+GAME( 1998, nagano98, konamigv, konamigv, konamigv, konamigv_state, empty_init, ROT0, "Konami", "Nagano Winter Olympics '98 (GX720 EAA)", MACHINE_IMPERFECT_SOUND | MACHINE_SUPPORTS_SAVE)
+GAME( 1998, naganoj,  nagano98, konamigv, konamigv, konamigv_state, empty_init, ROT0, "Konami", "Hyper Olympic in Nagano (GX720 JAA)", MACHINE_IMPERFECT_SOUND | MACHINE_SUPPORTS_SAVE)
+GAME( 2000, simpbowl, konamigv, simpbowl, simpbowl, simpbowl_state, empty_init, ROT0, "Konami", "Simpsons Bowling (GQ829 UAA)", MACHINE_IMPERFECT_SOUND | MACHINE_SUPPORTS_SAVE)
