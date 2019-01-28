@@ -303,7 +303,7 @@ MACHINE_CONFIG_START(seibucats_state::seibucats)
 
 	EEPROM_93C46_16BIT(config, "eeprom");
 
-	//MCFG_JRC6355E_ADD("rtc", XTAL(32'768))
+	//JRC6355E(config, m_rtc, XTAL(32'768));
 
 	MCFG_DEVICE_ADD("usart1", I8251, 0)
 	MCFG_DEVICE_ADD("usart2", I8251, 0)
@@ -316,7 +316,7 @@ MACHINE_CONFIG_START(seibucats_state::seibucats)
 
 	MCFG_DEVICE_ADD("gfxdecode", GFXDECODE, "palette", gfx_seibucats)
 
-	MCFG_PALETTE_ADD_INIT_BLACK("palette", 8192)
+	MCFG_DEVICE_ADD(m_palette, PALETTE, palette_device::BLACK, 8192);
 //  MCFG_PALETTE_FORMAT(xBBBBBGGGGGRRRRR)
 	//MCFG_PALETTE_INIT_OWNER(seibucats_state, seibucats)
 

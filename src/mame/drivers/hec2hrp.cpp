@@ -414,17 +414,16 @@ MACHINE_CONFIG_START(hec2hrp_state::hec2hr)
 
 	hector_audio(config);
 
-	MCFG_CASSETTE_ADD( "cassette" )
-	MCFG_CASSETTE_FORMATS(hector_cassette_formats)
-	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED)
-	MCFG_CASSETTE_INTERFACE("interact_cass")
+	CASSETTE(config, m_cassette);
+	m_cassette->set_formats(hector_cassette_formats);
+	m_cassette->set_default_state(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED);
 
 	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhr")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("h1_cass_list","hector1")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("vict_cass_list","victor")
 
-	MCFG_DEVICE_ADD("printer", PRINTER, 0)
+	PRINTER(config, m_printer, 0);
 MACHINE_CONFIG_END
 
 MACHINE_CONFIG_START(hec2hrp_state::hec2hrp)
@@ -448,17 +447,16 @@ MACHINE_CONFIG_START(hec2hrp_state::hec2hrp)
 
 	hector_audio(config);
 
-	MCFG_CASSETTE_ADD( "cassette" )
-	MCFG_CASSETTE_FORMATS(hector_cassette_formats)
-	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED)
-	MCFG_CASSETTE_INTERFACE("interact_cass")
+	CASSETTE(config, m_cassette);
+	m_cassette->set_formats(hector_cassette_formats);
+	m_cassette->set_default_state(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED);
 
 	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhr")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("h1_cass_list","hector1")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("vict_cass_list","victor")
 
-	MCFG_DEVICE_ADD("printer", PRINTER, 0)
+	PRINTER(config, m_printer, 0);
 MACHINE_CONFIG_END
 
 static void hector_floppies(device_slot_interface &device)
@@ -475,7 +473,7 @@ MACHINE_CONFIG_START(hec2hrp_state::hec2mx40)
 	MCFG_DEVICE_ADD("disc2cpu", Z80, 4_MHz_XTAL)
 	MCFG_DEVICE_PROGRAM_MAP(hecdisc2_mem)
 	MCFG_DEVICE_IO_MAP(hecdisc2_io)
-	UPD765A(config, m_upd_fdc, false, true);
+	UPD765A(config, m_upd_fdc, 8'000'000, false, true);
 	m_upd_fdc->intrq_wr_callback().set(FUNC(hec2hrp_state::disc2_fdc_interrupt));
 	m_upd_fdc->drq_wr_callback().set(FUNC(hec2hrp_state::disc2_fdc_dma_irq));
 	MCFG_FLOPPY_DRIVE_ADD(m_upd_connector[0], hector_floppies, "525hd", floppy_image_device::default_floppy_formats)
@@ -496,10 +494,9 @@ MACHINE_CONFIG_START(hec2hrp_state::hec2mx40)
 
 	hector_audio(config);
 
-	MCFG_CASSETTE_ADD( "cassette" )
-	MCFG_CASSETTE_FORMATS(hector_cassette_formats)
-	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED)
-	MCFG_CASSETTE_INTERFACE("interact_cass")
+	CASSETTE(config, m_cassette);
+	m_cassette->set_formats(hector_cassette_formats);
+	m_cassette->set_default_state(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED);
 
 	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhrx")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
@@ -507,7 +504,7 @@ MACHINE_CONFIG_START(hec2hrp_state::hec2mx40)
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("vict_cass_list","victor")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("hr_cass_list","hectorhr")
 
-	MCFG_DEVICE_ADD("printer", PRINTER, 0)
+	PRINTER(config, m_printer, 0);
 MACHINE_CONFIG_END
 
 
@@ -522,7 +519,7 @@ MACHINE_CONFIG_START(hec2hrp_state::hec2hrx)
 	MCFG_DEVICE_ADD("disc2cpu", Z80, 4_MHz_XTAL)
 	MCFG_DEVICE_PROGRAM_MAP(hecdisc2_mem)
 	MCFG_DEVICE_IO_MAP(hecdisc2_io)
-	UPD765A(config, m_upd_fdc, false, true);
+	UPD765A(config, m_upd_fdc, 8'000'000, false, true);
 	m_upd_fdc->intrq_wr_callback().set(FUNC(hec2hrp_state::disc2_fdc_interrupt));
 	m_upd_fdc->drq_wr_callback().set(FUNC(hec2hrp_state::disc2_fdc_dma_irq));
 	MCFG_FLOPPY_DRIVE_ADD(m_upd_connector[0], hector_floppies, "525hd", floppy_image_device::default_floppy_formats)
@@ -541,10 +538,9 @@ MACHINE_CONFIG_START(hec2hrp_state::hec2hrx)
 
 	hector_audio(config);
 
-	MCFG_CASSETTE_ADD( "cassette" )
-	MCFG_CASSETTE_FORMATS(hector_cassette_formats)
-	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED)
-	MCFG_CASSETTE_INTERFACE("interact_cass")
+	CASSETTE(config, m_cassette);
+	m_cassette->set_formats(hector_cassette_formats);
+	m_cassette->set_default_state(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED);
 
 	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhrx")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
@@ -552,7 +548,7 @@ MACHINE_CONFIG_START(hec2hrp_state::hec2hrx)
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("vict_cass_list","victor")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("hr_cass_list","hectorhr")
 
-	MCFG_DEVICE_ADD("printer", PRINTER, 0)
+	PRINTER(config, m_printer, 0);
 MACHINE_CONFIG_END
 
 MACHINE_CONFIG_START(hec2hrp_state::hec2mdhrx)
@@ -581,10 +577,9 @@ MACHINE_CONFIG_START(hec2hrp_state::hec2mdhrx)
 
 	hector_audio(config);
 
-	MCFG_CASSETTE_ADD( "cassette" )
-	MCFG_CASSETTE_FORMATS(hector_cassette_formats)
-	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED)
-	MCFG_CASSETTE_INTERFACE("interact_cass")
+	CASSETTE(config, m_cassette);
+	m_cassette->set_formats(hector_cassette_formats);
+	m_cassette->set_default_state(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED);
 
 	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhrx")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
@@ -592,7 +587,7 @@ MACHINE_CONFIG_START(hec2hrp_state::hec2mdhrx)
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("vict_cass_list","victor")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("hr_cass_list","hectorhr")
 
-	MCFG_DEVICE_ADD("printer", PRINTER, 0)
+	PRINTER(config, m_printer, 0);
 MACHINE_CONFIG_END
 
 
@@ -607,7 +602,7 @@ MACHINE_CONFIG_START(hec2hrp_state::hec2mx80)
 	MCFG_DEVICE_ADD("disc2cpu", Z80, 4_MHz_XTAL)
 	MCFG_DEVICE_PROGRAM_MAP(hecdisc2_mem)
 	MCFG_DEVICE_IO_MAP(hecdisc2_io)
-	UPD765A(config, m_upd_fdc, false, true);
+	UPD765A(config, m_upd_fdc, 8'000'000, false, true);
 	m_upd_fdc->intrq_wr_callback().set(FUNC(hec2hrp_state::disc2_fdc_interrupt));
 	m_upd_fdc->drq_wr_callback().set(FUNC(hec2hrp_state::disc2_fdc_dma_irq));
 	MCFG_FLOPPY_DRIVE_ADD(m_upd_connector[0], hector_floppies, "525hd", floppy_image_device::default_floppy_formats)
@@ -626,10 +621,9 @@ MACHINE_CONFIG_START(hec2hrp_state::hec2mx80)
 
 	hector_audio(config);
 
-	MCFG_CASSETTE_ADD( "cassette" )
-	MCFG_CASSETTE_FORMATS(hector_cassette_formats)
-	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED)
-	MCFG_CASSETTE_INTERFACE("interact_cass")
+	CASSETTE(config, m_cassette);
+	m_cassette->set_formats(hector_cassette_formats);
+	m_cassette->set_default_state(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED);
 
 	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhrx")
 	//MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
@@ -637,7 +631,7 @@ MACHINE_CONFIG_START(hec2hrp_state::hec2mx80)
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("vict_cass_list","victor")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("hr_cass_list","hectorhr")
 
-	MCFG_DEVICE_ADD("printer", PRINTER, 0)
+	PRINTER(config, m_printer, 0);
 MACHINE_CONFIG_END
 
 ROM_START( hec2hr )

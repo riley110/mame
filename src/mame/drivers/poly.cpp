@@ -255,8 +255,7 @@ MACHINE_CONFIG_START(poly_state::poly)
 
 	ADDRESS_MAP_BANK(config, "bankdev").set_map(&poly_state::poly_bank).set_options(ENDIANNESS_LITTLE, 8, 17, 0x10000);
 
-	MCFG_INPUT_MERGER_ANY_HIGH("irqs")
-	MCFG_INPUT_MERGER_OUTPUT_HANDLER(INPUTLINE("maincpu", M6809_IRQ_LINE))
+	INPUT_MERGER_ANY_HIGH(config, "irqs").output_handler().set_inputline(m_maincpu, M6809_IRQ_LINE);
 
 	/* video hardware */
 	MCFG_SCREEN_ADD("screen", RASTER)
@@ -266,13 +265,13 @@ MACHINE_CONFIG_START(poly_state::poly)
 	MCFG_SCREEN_VISIBLE_AREA(0, 40 * 12 - 1, 0, 24 * 20 - 1)
 	MCFG_SCREEN_UPDATE_DRIVER(poly_state, screen_update)
 
-	MCFG_DEVICE_ADD("saa5050_1", SAA5050, 12.0576_MHz_XTAL / 2)
-	MCFG_SAA5050_D_CALLBACK(READ8(*this, poly_state, videoram_1_r))
-	MCFG_SAA5050_SCREEN_SIZE(40, 24, 40)
+	SAA5050(config, m_trom[0], 12.0576_MHz_XTAL / 2);
+	m_trom[0]->d_cb().set(FUNC(poly_state::videoram_1_r));
+	m_trom[0]->set_screen_size(40, 24, 40);
 
-	MCFG_DEVICE_ADD("saa5050_2", SAA5050, 12.0576_MHz_XTAL / 2)
-	MCFG_SAA5050_D_CALLBACK(READ8(*this, poly_state, videoram_2_r))
-	MCFG_SAA5050_SCREEN_SIZE(40, 24, 40)
+	SAA5050(config, m_trom[1], 12.0576_MHz_XTAL / 2);
+	m_trom[1]->d_cb().set(FUNC(poly_state::videoram_2_r));
+	m_trom[1]->set_screen_size(40, 24, 40);
 
 	/* sound hardware */
 	SPEAKER(config, "mono").front_center();
@@ -315,8 +314,8 @@ MACHINE_CONFIG_START(poly_state::poly)
 	//m_kr2376->strobe().set("pia1", FUNC(pia6821_device::cb1_w));
 
 	/* generic keyboard until ROM in KR2376-12 is known */
-	MCFG_DEVICE_ADD("keyboard", GENERIC_KEYBOARD, 0)
-	MCFG_GENERIC_KEYBOARD_CB(PUT(poly_state, kbd_put))
+	generic_keyboard_device &keyboard(GENERIC_KEYBOARD(config, "keyboard", 0));
+	keyboard.set_keyboard_callback(FUNC(poly_state::kbd_put));
 
 	/* video control */
 	PIA6821(config, m_pia[0], 0);

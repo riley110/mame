@@ -968,10 +968,10 @@ MACHINE_CONFIG_START(octopus_state::octopus)
 	m_kb_uart->rts_handler().set(FUNC(octopus_state::beep_w));
 	rs232_port_device &keyboard_port(RS232_PORT(config, "keyboard_port", keyboard, "octopus"));
 	keyboard_port.rxd_handler().set(m_kb_uart, FUNC(i8251_device::write_rxd));
-	MCFG_DEVICE_ADD("keyboard_clock_rx", CLOCK, 9600 * 64)
-	MCFG_CLOCK_SIGNAL_HANDLER(WRITELINE(m_kb_uart,i8251_device,write_rxc))
-	MCFG_DEVICE_ADD("keyboard_clock_tx", CLOCK, 1200 * 64)
-	MCFG_CLOCK_SIGNAL_HANDLER(WRITELINE(m_kb_uart,i8251_device,write_txc))
+	clock_device &keyboard_clock_rx(CLOCK(config, "keyboard_clock_rx", 9600 * 64));
+	keyboard_clock_rx.signal_handler().set(m_kb_uart, FUNC(i8251_device::write_rxc));
+	clock_device &keyboard_clock_tx(CLOCK(config, "keyboard_clock_tx", 1200 * 64));
+	keyboard_clock_tx.signal_handler().set(m_kb_uart, FUNC(i8251_device::write_txc));
 
 	FD1793(config, m_fdc, 16_MHz_XTAL / 8);
 	m_fdc->intrq_wr_callback().set(m_pic1, FUNC(pic8259_device::ir5_w));
@@ -980,13 +980,13 @@ MACHINE_CONFIG_START(octopus_state::octopus)
 	MCFG_FLOPPY_DRIVE_ADD("fdc:1", octopus_floppies, "525dd", floppy_image_device::default_floppy_formats)
 	MCFG_SOFTWARE_LIST_ADD("fd_list","octopus")
 
-	MCFG_DEVICE_ADD("pit", PIT8253, 0)
-	MCFG_PIT8253_CLK0(4.9152_MHz_XTAL / 2)  // DART channel A
-	MCFG_PIT8253_OUT0_HANDLER(WRITELINE(*this, octopus_state,serial_clock_w))  // being able to write both Rx and Tx clocks at one time would be nice
-	MCFG_PIT8253_CLK1(4.9152_MHz_XTAL / 2)  // DART channel B
-	MCFG_PIT8253_OUT1_HANDLER(WRITELINE(m_serial,z80sio_device,rxtxcb_w))
-	MCFG_PIT8253_CLK2(4.9152_MHz_XTAL / 2)  // speaker frequency
-	MCFG_PIT8253_OUT2_HANDLER(WRITELINE(*this, octopus_state,spk_freq_w))
+	PIT8253(config, m_pit, 0);
+	m_pit->set_clk<0>(4.9152_MHz_XTAL / 2);  // DART channel A
+	m_pit->out_handler<0>().set(FUNC(octopus_state::serial_clock_w));  // being able to write both Rx and Tx clocks at one time would be nice
+	m_pit->set_clk<1>(4.9152_MHz_XTAL / 2);  // DART channel B
+	m_pit->out_handler<1>().set(m_serial, FUNC(z80sio_device::rxtxcb_w));
+	m_pit->set_clk<2>(4.9152_MHz_XTAL / 2);  // speaker frequency
+	m_pit->out_handler<2>().set(FUNC(octopus_state::spk_freq_w));
 
 	SPEAKER(config, "mono").front_center();
 	MCFG_DEVICE_ADD("speaker", SPEAKER_SOUND)

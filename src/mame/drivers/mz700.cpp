@@ -386,10 +386,10 @@ MACHINE_CONFIG_START(mz_state::mz700)
 	MCFG_SCREEN_ADD("screen", RASTER)
 	MCFG_SCREEN_RAW_PARAMS(XTAL(17'734'470)/2, 568, 0, 40*8, 312, 0, 25*8)
 	MCFG_SCREEN_UPDATE_DRIVER(mz_state, screen_update_mz700)
-	MCFG_SCREEN_PALETTE("palette")
-	MCFG_PALETTE_ADD_3BIT_RGB("palette")
+	MCFG_SCREEN_PALETTE(m_palette)
 
-	MCFG_DEVICE_ADD("gfxdecode", GFXDECODE, "palette", gfx_mz700)
+	PALETTE(config, m_palette, palette_device::RGB_3BIT);
+	GFXDECODE(config, "gfxdecode", m_palette, gfx_mz700);
 
 	/* sound hardware */
 	SPEAKER(config, "mono").front_center();
@@ -397,17 +397,17 @@ MACHINE_CONFIG_START(mz_state::mz700)
 	SPEAKER_SOUND(config, "speaker").add_route(ALL_OUTPUTS, "mono", 0.50);
 
 	/* ne556 timers */
-	MCFG_TIMER_DRIVER_ADD_PERIODIC("cursor", mz_state, ne556_cursor_callback, attotime::from_hz(1.5))
-	MCFG_TIMER_DRIVER_ADD_PERIODIC("other", mz_state, ne556_other_callback, attotime::from_hz(34.5))
+	TIMER(config, "cursor").configure_periodic(FUNC(mz_state::ne556_cursor_callback), attotime::from_hz(1.5));
+	TIMER(config, "other").configure_periodic(FUNC(mz_state::ne556_other_callback), attotime::from_hz(34.5));
 
 	/* devices */
-	MCFG_DEVICE_ADD("pit8253", PIT8253, 0)
-	MCFG_PIT8253_CLK0(XTAL(17'734'470)/20)
-	MCFG_PIT8253_OUT0_HANDLER(WRITELINE(*this, mz_state, pit_out0_changed))
-	MCFG_PIT8253_CLK1(15611.0)
-	MCFG_PIT8253_OUT1_HANDLER(WRITELINE("pit8253", pit8253_device, write_clk2))
-	MCFG_PIT8253_CLK2(0)
-	MCFG_PIT8253_OUT2_HANDLER(WRITELINE(*this, mz_state, pit_irq_2))
+	PIT8253(config, m_pit, 0);
+	m_pit->set_clk<0>(XTAL(17'734'470)/20);
+	m_pit->out_handler<0>().set(FUNC(mz_state::pit_out0_changed));
+	m_pit->set_clk<1>(15611.0);
+	m_pit->out_handler<1>().set(m_pit, FUNC(pit8253_device::write_clk2));
+	m_pit->set_clk<2>(0);
+	m_pit->out_handler<2>().set(FUNC(mz_state::pit_irq_2));
 
 	I8255(config, m_ppi);
 	m_ppi->out_pa_callback().set(FUNC(mz_state::pio_port_a_w));
@@ -417,10 +417,10 @@ MACHINE_CONFIG_START(mz_state::mz700)
 
 	TTL74145(config, m_ls145);
 
-	MCFG_CASSETTE_ADD( "cassette" )
-	MCFG_CASSETTE_FORMATS(mz700_cassette_formats)
-	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_STOPPED | CASSETTE_MOTOR_ENABLED | CASSETTE_SPEAKER_ENABLED)
-	MCFG_CASSETTE_INTERFACE("mz_cass")
+	CASSETTE(config, m_cassette);
+	m_cassette->set_formats(mz700_cassette_formats);
+	m_cassette->set_default_state(CASSETTE_STOPPED | CASSETTE_MOTOR_ENABLED | CASSETTE_SPEAKER_ENABLED);
+	m_cassette->set_interface("mz_cass");
 
 	MCFG_SOFTWARE_LIST_ADD("cass_list","mz700_cass")
 
@@ -441,7 +441,7 @@ MACHINE_CONFIG_START(mz_state::mz800)
 	ADDRESS_MAP_BANK(config, "bankf").set_map(&mz_state::mz800_bankf).set_options(ENDIANNESS_LITTLE, 8, 16, 0x2000);
 
 	MCFG_MACHINE_RESET_OVERRIDE(mz_state, mz800)
-	MCFG_GFXDECODE_MODIFY("gfxdecode", gfx_mz800)
+	subdevice<gfxdecode_device>("gfxdecode")->set_info(gfx_mz800);
 
 	MCFG_SCREEN_MODIFY("screen")
 	MCFG_SCREEN_UPDATE_DRIVER(mz_state, screen_update_mz800)
@@ -453,8 +453,7 @@ MACHINE_CONFIG_START(mz_state::mz800)
 	MCFG_SOFTWARE_LIST_ADD("cass_list","mz800_cass")
 
 	/* devices */
-	MCFG_DEVICE_MODIFY("pit8253")
-	MCFG_PIT8253_CLK0(XTAL(17'734'470)/16)
+	m_pit->set_clk<0>(XTAL(17'734'470)/16);
 
 	z80pio_device& pio(Z80PIO(config, "z80pio", XTAL(17'734'470)/5));
 	pio.out_int_callback().set(FUNC(mz_state::mz800_z80pio_irq));

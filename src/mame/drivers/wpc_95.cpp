@@ -2254,17 +2254,16 @@ MACHINE_CONFIG_START(wpc_95_state::wpc_95)
 	MCFG_DEVICE_ADD("maincpu", MC6809E, XTAL(8'000'000)/4) // 68B09E
 	MCFG_DEVICE_PROGRAM_MAP(wpc_95_map)
 	MCFG_DEVICE_PERIODIC_INT_DRIVER(wpc_95_state, irq0_line_assert, XTAL(8'000'000)/8192.0)
-	MCFG_TIMER_DRIVER_ADD_PERIODIC("zero_crossing", wpc_95_state, zc_timer, attotime::from_hz(120)) // Mains power zero crossing
+	TIMER(config, "zero_crossing").configure_periodic(FUNC(wpc_95_state::zc_timer), attotime::from_hz(120)); // Mains power zero crossing
 
 	MCFG_DEVICE_ADD("pic", WPC_PIC, 0)
 	MCFG_DEVICE_ADD("lamp", WPC_LAMP, 0)
 	MCFG_DEVICE_ADD("out", WPC_OUT, 0, 3)
 	MCFG_DEVICE_ADD("shift", WPC_SHIFT, 0)
-	MCFG_DEVICE_ADD("dmd", WPC_DMD, 0)
-	MCFG_WPC_DMD_SCANLINE_CALLBACK(WRITELINE(*this, wpc_95_state, scanline_irq))
+	WPC_DMD(config, "dmd", 0).scanline_callback().set(FUNC(wpc_95_state::scanline_irq));
 
 	NVRAM(config, "nvram", nvram_device::DEFAULT_ALL_0);
-	MCFG_DEVICE_ADD("dcs", DCS_AUDIO_WPC, 0)
+	DCS_AUDIO_WPC(config, dcs, 0);
 MACHINE_CONFIG_END
 
 /*-----------------

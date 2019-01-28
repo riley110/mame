@@ -509,24 +509,25 @@ MC6845_UPDATE_ROW( tv910_state::crtc_update_row )
 	}
 }
 
-MACHINE_CONFIG_START(tv910_state::tv910)
+void tv910_state::tv910(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_DEVICE_ADD("maincpu", M6502, MASTER_CLOCK/8)
-	MCFG_DEVICE_PROGRAM_MAP(tv910_mem)
+	M6502(config, m_maincpu, MASTER_CLOCK/8);
+	m_maincpu->set_addrmap(AS_PROGRAM, &tv910_state::tv910_mem);
 
-	MCFG_INPUT_MERGER_ANY_HIGH("mainirq")
-	MCFG_INPUT_MERGER_OUTPUT_HANDLER(INPUTLINE("maincpu", M6502_IRQ_LINE))
+	INPUT_MERGER_ANY_HIGH(config, "mainirq").output_handler().set_inputline(m_maincpu, M6502_IRQ_LINE);
 
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_RAW_PARAMS(MASTER_CLOCK, 840, 0, 640, 270, 0, 240)
-	MCFG_SCREEN_UPDATE_DEVICE( CRTC_TAG, r6545_1_device, screen_update )
+	screen_device &screen(SCREEN(config, "screen", SCREEN_TYPE_RASTER));
+	screen.set_raw(MASTER_CLOCK, 840, 0, 640, 270, 0, 240);
+	screen.set_screen_update(CRTC_TAG, FUNC(r6545_1_device::screen_update));
 
-	MCFG_MC6845_ADD(CRTC_TAG, R6545_1, "screen", MASTER_CLOCK/8)
-	MCFG_MC6845_SHOW_BORDER_AREA(false)
-	MCFG_MC6845_CHAR_WIDTH(8)
-	MCFG_MC6845_UPDATE_ROW_CB(tv910_state, crtc_update_row)
-	MCFG_MC6845_ADDR_CHANGED_CB(tv910_state, crtc_update_addr)
-	MCFG_MC6845_OUT_VSYNC_CB(WRITELINE(*this, tv910_state, vbl_w))
+	R6545_1(config, m_crtc, MASTER_CLOCK/8);
+	m_crtc->set_screen("screen");
+	m_crtc->set_show_border_area(false);
+	m_crtc->set_char_width(8);
+	m_crtc->set_update_row_callback(FUNC(tv910_state::crtc_update_row), this);
+	m_crtc->set_on_update_addr_change_callback(FUNC(tv910_state::crtc_update_addr), this);
+	m_crtc->out_vsync_callback().set(FUNC(tv910_state::vbl_w));
 
 	AY3600(config, m_ay3600, 0);
 	m_ay3600->x0().set_ioport("X0");
@@ -555,9 +556,9 @@ MACHINE_CONFIG_START(tv910_state::tv910)
 	rs232.cts_handler().set(ACIA_TAG, FUNC(mos6551_device::write_cts));
 
 	SPEAKER(config, "mono").front_center();
-	MCFG_DEVICE_ADD("bell", BEEP, MASTER_CLOCK / 8400) // 1620 Hz (Row 10 signal)
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.50)
-MACHINE_CONFIG_END
+	BEEP(config, m_beep, MASTER_CLOCK / 8400); // 1620 Hz (Row 10 signal)
+	m_beep->add_route(ALL_OUTPUTS, "mono", 0.50);
+}
 
 /* ROM definition */
 ROM_START( tv910 )

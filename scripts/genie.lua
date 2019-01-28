@@ -219,7 +219,27 @@ newoption {
 
 newoption {
 	trigger = "ARCHOPTS",
-	description = "ARCHOPTS.",
+	description = "Additional options for target C/C++/Objective-C/Objective-C++ compilers and linker.",
+}
+
+newoption {
+	trigger = "ARCHOPTS_C",
+	description = "Additional options for target C++ compiler.",
+}
+
+newoption {
+	trigger = "ARCHOPTS_CXX",
+	description = "Additional options for target C++ compiler.",
+}
+
+newoption {
+	trigger = "ARCHOPTS_OBJC",
+	description = "Additional options for target Objective-C compiler.",
+}
+
+newoption {
+	trigger = "ARCHOPTS_OBJCXX",
+	description = "Additional options for target Objective-C++ compiler.",
 }
 
 newoption {
@@ -461,7 +481,7 @@ flags {
 	"StaticRuntime",
 }
 
-configuration { "vs*" }
+configuration { "vs20*" }
 	buildoptions {
 		"/bigobj",
 	}
@@ -476,13 +496,13 @@ configuration { "vs*" }
 	end
 
 
-configuration { "Debug", "vs*" }
+configuration { "Debug", "vs20*" }
 	flags {
 		"Symbols",
 		"NoMultiProcessorCompilation",
 	}
 
-configuration { "Release", "vs*" }
+configuration { "Release", "vs20*" }
 	flags {
 		"Optimize",
 		"NoEditAndContinue",
@@ -869,6 +889,30 @@ if _OPTIONS["ARCHOPTS"] then
 	}
 end
 
+if _OPTIONS["ARCHOPTS_C"] then
+	buildoptions_c {
+		_OPTIONS["ARCHOPTS_C"]
+	}
+end
+
+if _OPTIONS["ARCHOPTS_CXX"] then
+	buildoptions_cpp {
+		_OPTIONS["ARCHOPTS_CXX"]
+	}
+end
+
+if _OPTIONS["ARCHOPTS_OBJC"] then
+	buildoptions_objc {
+		_OPTIONS["ARCHOPTS_OBJC"]
+	}
+end
+
+if _OPTIONS["ARCHOPTS_OBJCXX"] then
+	buildoptions_objcpp {
+		_OPTIONS["ARCHOPTS_OBJCXX"]
+	}
+end
+
 if _OPTIONS["SHLIB"] then
 	buildoptions {
 		"-fPIC"
@@ -1223,7 +1267,7 @@ configuration { "mingw-clang" }
 	end
 
 
-configuration { "vs*" }
+configuration { "vs20*" }
 		defines {
 			"XML_STATIC",
 			"WIN32",

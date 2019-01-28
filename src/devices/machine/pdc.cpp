@@ -264,7 +264,7 @@ void pdc_device::device_add_mconfig(machine_config &config)
 	//MCFG_QUANTUM_PERFECT_CPU(M6502_TAG)
 
 	/* Floppy Disk Controller - uPD765a - NEC D765AC-2 */
-	UPD765A(config, m_fdc, true, true);
+	UPD765A(config, m_fdc, 4'000'000, true, true);
 	m_fdc->intrq_wr_callback().set(FUNC(pdc_device::fdc_irq));
 	m_fdc->drq_wr_callback().set(m_dma8237, FUNC(am9517a_device::dreq0_w)); //.invert();
 
@@ -279,6 +279,7 @@ void pdc_device::device_add_mconfig(machine_config &config)
 	m_dma8237->out_eop_callback().set(FUNC(pdc_device::i8237_eop_w));
 	m_dma8237->in_memr_callback().set(FUNC(pdc_device::i8237_dma_mem_r));
 	m_dma8237->out_memw_callback().set(FUNC(pdc_device::i8237_dma_mem_w));
+	//m_dma8237->out_dack_callback<0>().set(m_fdc, FUNC(upd765a_device::dack_w));
 	m_dma8237->in_ior_callback<0>().set(FUNC(pdc_device::i8237_fdc_dma_r));
 	m_dma8237->out_iow_callback<0>().set(FUNC(pdc_device::i8237_fdc_dma_w));
 	m_dma8237->in_ior_callback<1>().set(FUNC(pdc_device::m68k_dma_r));

@@ -105,7 +105,7 @@ public:
 		, m_ms7004(*this, "ms7004")
 		, m_screen(*this, "screen")
 		, m_p_chargen(*this, "chargen")
-		{ }
+	{ }
 
 	void ksm(machine_config &config);
 
@@ -422,7 +422,7 @@ MACHINE_CONFIG_START(ksm_state::ksm)
 	MCFG_DEVICE_IO_MAP(ksm_io)
 	MCFG_DEVICE_IRQ_ACKNOWLEDGE_DEVICE("pic8259", pic8259_device, inta_cb)
 
-	MCFG_TIMER_DRIVER_ADD_SCANLINE("scantimer", ksm_state, scanline_callback, "screen", 0, 1)
+	TIMER(config, "scantimer").configure_scanline(FUNC(ksm_state::scanline_callback), "screen", 0, 1);
 
 	MCFG_SCREEN_ADD_MONOCHROME("screen", RASTER, rgb_t::green())
 	MCFG_SCREEN_UPDATE_DRIVER(ksm_state, screen_update)
@@ -433,10 +433,10 @@ MACHINE_CONFIG_START(ksm_state::ksm)
 	MCFG_SCREEN_PALETTE("palette")
 
 	MCFG_DEVICE_ADD("gfxdecode", GFXDECODE, "palette", gfx_ksm)
-	MCFG_PALETTE_ADD_MONOCHROME("palette")
+	PALETTE(config, "palette", palette_device::MONOCHROME);
 
-	MCFG_DEVICE_ADD("pic8259", PIC8259, 0)
-	MCFG_PIC8259_OUT_INT_CB(INPUTLINE("maincpu", 0))
+	PIC8259(config, m_pic8259, 0);
+	m_pic8259->out_int_callback().set_inputline(m_maincpu, 0);
 
 	// D30
 	i8255_device &ppi(I8255(config, "ppi8255"));
@@ -448,7 +448,7 @@ MACHINE_CONFIG_START(ksm_state::ksm)
 	// D42 - serial connection to host
 	I8251(config, m_i8251line, 0);
 	m_i8251line->txd_handler().set(m_rs232, FUNC(rs232_port_device::write_txd));
-	m_i8251line->rxrdy_handler().set("pic8259", FUNC(pic8259_device::ir3_w));
+	m_i8251line->rxrdy_handler().set(m_pic8259, FUNC(pic8259_device::ir3_w));
 
 	RS232_PORT(config, m_rs232, default_rs232_devices, "null_modem");
 	m_rs232->rxd_handler().set(m_i8251line, FUNC(i8251_device::write_rxd));
@@ -457,16 +457,16 @@ MACHINE_CONFIG_START(ksm_state::ksm)
 
 	// D41 - serial connection to MS7004 keyboard
 	I8251(config, m_i8251kbd, 0);
-	m_i8251kbd->rxrdy_handler().set("pic8259", FUNC(pic8259_device::ir1_w));
+	m_i8251kbd->rxrdy_handler().set(m_pic8259, FUNC(pic8259_device::ir1_w));
 	m_i8251kbd->rts_handler().set(FUNC(ksm_state::write_brga));
 	m_i8251kbd->dtr_handler().set(FUNC(ksm_state::write_brgb));
 
-	MCFG_DEVICE_ADD("ms7004", MS7004, 0)
-	MCFG_MS7004_TX_HANDLER(WRITELINE("i8251kbd", i8251_device, write_rxd))
+	MS7004(config, m_ms7004, 0);
+	m_ms7004->tx_handler().set(m_i8251kbd, FUNC(i8251_device::write_rxd));
 
 	// baud rate is supposed to be 4800 but keyboard is slightly faster
-	MCFG_DEVICE_ADD("keyboard_clock", CLOCK, 4960*16)
-	MCFG_CLOCK_SIGNAL_HANDLER(WRITELINE(*this, ksm_state, write_keyboard_clock))
+	clock_device &keyboard_clock(CLOCK(config, "keyboard_clock", 4960*16));
+	keyboard_clock.signal_handler().set(FUNC(ksm_state::write_keyboard_clock));
 MACHINE_CONFIG_END
 
 ROM_START( dvk_ksm )

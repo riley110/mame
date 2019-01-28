@@ -536,7 +536,7 @@ MACHINE_CONFIG_START(ltd_state::ltd3)
 	/* Sound */
 	genpin_audio(config);
 
-	MCFG_TIMER_DRIVER_ADD_PERIODIC("timer_r", ltd_state, timer_r, attotime::from_hz(500))
+	TIMER(config, "timer_r").configure_periodic(FUNC(ltd_state::timer_r), attotime::from_hz(500));
 MACHINE_CONFIG_END
 
 MACHINE_CONFIG_START(ltd_state::ltd4)
@@ -557,10 +557,8 @@ MACHINE_CONFIG_START(ltd_state::ltd4)
 	genpin_audio(config);
 
 	SPEAKER(config, "mono").front_center();
-	MCFG_DEVICE_ADD("aysnd_0", AY8910, XTAL(3'579'545)/2) /* guess */
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.3)
-	MCFG_DEVICE_ADD("aysnd_1", AY8910, XTAL(3'579'545)/2) /* guess */
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.3)
+	AY8910(config, "aysnd_0", XTAL(3'579'545)/2).add_route(ALL_OUTPUTS, "mono", 0.3); /* guess */
+	AY8910(config, "aysnd_1", XTAL(3'579'545)/2).add_route(ALL_OUTPUTS, "mono", 0.3); /* guess */
 MACHINE_CONFIG_END
 
 /*-------------------------------------------------------------------

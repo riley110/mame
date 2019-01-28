@@ -1106,6 +1106,18 @@ end
 
 --------------------------------------------------
 --
+--@src/devices/video/catseye.h,VIDEOS["CATSEYE"] = true
+--------------------------------------------------
+if (VIDEOS["CATSEYE"]~=null) then
+	files {
+		MAME_DIR .. "src/devices/video/catseye.cpp",
+		MAME_DIR .. "src/devices/video/catseye.h",
+	}
+end
+
+
+--------------------------------------------------
+--
 --@src/devices/video/nereid.h,VIDEOS["NEREID"] = true
 --------------------------------------------------
 if (VIDEOS["NEREID"]~=null) then
@@ -1136,3 +1148,15 @@ if (VIDEOS["PS2GS"]~=null) then
 		MAME_DIR .. "src/devices/video/ps2gs.h",
 	}
 end
+
+--------------------------------------------------
+--
+--@src/devices/video/decsfb.h,VIDEOS["DECSFB"] = true
+--------------------------------------------------
+if (VIDEOS["DECSFB"]~=null) then
+	files {
+		MAME_DIR .. "src/devices/video/decsfb.cpp",
+		MAME_DIR .. "src/devices/video/decsfb.h",
+	}
+end
+

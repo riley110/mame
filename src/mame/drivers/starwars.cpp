@@ -335,15 +335,15 @@ MACHINE_CONFIG_START(starwars_state::starwars)
 	outlatch.q_out_cb<7>().set(FUNC(starwars_state::recall_w)); // NVRAM array recall
 
 	/* video hardware */
-	MCFG_VECTOR_ADD("vector")
+	VECTOR(config, "vector", 0);
 	MCFG_SCREEN_ADD("screen", VECTOR)
 	MCFG_SCREEN_REFRESH_RATE(CLOCK_3KHZ / 12 / 6)
 	MCFG_SCREEN_SIZE(400, 300)
 	MCFG_SCREEN_VISIBLE_AREA(0, 250, 0, 280)
 	MCFG_SCREEN_UPDATE_DEVICE("vector", vector_device, screen_update)
 
-	MCFG_DEVICE_ADD("avg", AVG_STARWARS, 0)
-	MCFG_AVGDVG_VECTOR("vector")
+	avg_device &avg(AVG_STARWARS(config, "avg", 0));
+	avg.set_vector_tag("vector");
 
 	/* sound hardware */
 	SPEAKER(config, "mono").front_center();
@@ -371,7 +371,7 @@ MACHINE_CONFIG_START(starwars_state::esb)
 	MCFG_DEVICE_MODIFY("maincpu")
 	MCFG_DEVICE_PROGRAM_MAP(esb_main_map)
 
-	MCFG_DEVICE_ADD("slapstic", SLAPSTIC, 101, false)
+	SLAPSTIC(config, m_slapstic_device, 101, false);
 
 	subdevice<ls259_device>("outlatch")->q_out_cb<4>().append_membank("bank2");
 MACHINE_CONFIG_END

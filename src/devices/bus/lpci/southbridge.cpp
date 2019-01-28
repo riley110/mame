@@ -25,7 +25,8 @@
 //  device_add_mconfig - add device configuration
 //-------------------------------------------------
 
-MACHINE_CONFIG_START(southbridge_device::device_add_mconfig)
+void southbridge_device::device_add_mconfig(machine_config &config)
+{
 	PIT8254(config, m_pit8254, 0);
 	m_pit8254->set_clk<0>(4772720/4); // heartbeat IRQ
 	m_pit8254->out_handler<0>().set(FUNC(southbridge_device::at_pit8254_out0_changed));
@@ -88,27 +89,29 @@ MACHINE_CONFIG_START(southbridge_device::device_add_mconfig)
 	SPEAKER(config, "mono").front_center();
 	SPEAKER_SOUND(config, m_speaker).add_route(ALL_OUTPUTS, "mono", 0.50);
 
-	MCFG_DEVICE_ADD("isabus", ISA16, 0)
-	MCFG_ISA16_CPU(":maincpu")
-	MCFG_ISA_OUT_IRQ3_CB(WRITELINE("pic8259_master", pic8259_device, ir3_w))
-	MCFG_ISA_OUT_IRQ4_CB(WRITELINE("pic8259_master", pic8259_device, ir4_w))
-	MCFG_ISA_OUT_IRQ5_CB(WRITELINE("pic8259_master", pic8259_device, ir5_w))
-	MCFG_ISA_OUT_IRQ6_CB(WRITELINE("pic8259_master", pic8259_device, ir6_w))
-	MCFG_ISA_OUT_IRQ7_CB(WRITELINE("pic8259_master", pic8259_device, ir7_w))
-	MCFG_ISA_OUT_IRQ2_CB(WRITELINE("pic8259_slave", pic8259_device, ir1_w)) // in place of irq 2 on at irq 9 is used
-	MCFG_ISA_OUT_IRQ10_CB(WRITELINE("pic8259_slave", pic8259_device, ir2_w))
-	MCFG_ISA_OUT_IRQ11_CB(WRITELINE("pic8259_slave", pic8259_device, ir3_w))
-	MCFG_ISA_OUT_IRQ12_CB(WRITELINE("pic8259_slave", pic8259_device, ir4_w))
-	MCFG_ISA_OUT_IRQ14_CB(WRITELINE("pic8259_slave", pic8259_device, ir6_w))
-	MCFG_ISA_OUT_IRQ15_CB(WRITELINE("pic8259_slave", pic8259_device, ir7_w))
-	MCFG_ISA_OUT_DRQ0_CB(WRITELINE("dma8237_1", am9517a_device, dreq0_w))
-	MCFG_ISA_OUT_DRQ1_CB(WRITELINE("dma8237_1", am9517a_device, dreq1_w))
-	MCFG_ISA_OUT_DRQ2_CB(WRITELINE("dma8237_1", am9517a_device, dreq2_w))
-	MCFG_ISA_OUT_DRQ3_CB(WRITELINE("dma8237_1", am9517a_device, dreq3_w))
-	MCFG_ISA_OUT_DRQ5_CB(WRITELINE("dma8237_2", am9517a_device, dreq1_w))
-	MCFG_ISA_OUT_DRQ6_CB(WRITELINE("dma8237_2", am9517a_device, dreq2_w))
-	MCFG_ISA_OUT_DRQ7_CB(WRITELINE("dma8237_2", am9517a_device, dreq3_w))
-MACHINE_CONFIG_END
+	ISA16(config, m_isabus, 0);
+	m_isabus->set_memspace(":maincpu", AS_PROGRAM);
+	m_isabus->set_iospace(":maincpu", AS_IO);
+	m_isabus->irq3_callback().set("pic8259_master", FUNC(pic8259_device::ir3_w));
+	m_isabus->irq4_callback().set("pic8259_master", FUNC(pic8259_device::ir4_w));
+	m_isabus->irq5_callback().set("pic8259_master", FUNC(pic8259_device::ir5_w));
+	m_isabus->irq6_callback().set("pic8259_master", FUNC(pic8259_device::ir6_w));
+	m_isabus->irq7_callback().set("pic8259_master", FUNC(pic8259_device::ir7_w));
+	m_isabus->irq2_callback().set("pic8259_slave", FUNC(pic8259_device::ir1_w)); // in place of irq 2 on at irq 9 is used
+	m_isabus->irq10_callback().set("pic8259_slave", FUNC(pic8259_device::ir2_w));
+	m_isabus->irq11_callback().set("pic8259_slave", FUNC(pic8259_device::ir3_w));
+	m_isabus->irq12_callback().set("pic8259_slave", FUNC(pic8259_device::ir4_w));
+	m_isabus->irq14_callback().set("pic8259_slave", FUNC(pic8259_device::ir6_w));
+	m_isabus->irq15_callback().set("pic8259_slave", FUNC(pic8259_device::ir7_w));
+	m_isabus->drq0_callback().set("dma8237_1", FUNC(am9517a_device::dreq0_w));
+	m_isabus->drq1_callback().set("dma8237_1", FUNC(am9517a_device::dreq1_w));
+	m_isabus->drq2_callback().set("dma8237_1", FUNC(am9517a_device::dreq2_w));
+	m_isabus->drq3_callback().set("dma8237_1", FUNC(am9517a_device::dreq3_w));
+	m_isabus->drq5_callback().set("dma8237_2", FUNC(am9517a_device::dreq1_w));
+	m_isabus->drq6_callback().set("dma8237_2", FUNC(am9517a_device::dreq2_w));
+	m_isabus->drq7_callback().set("dma8237_2", FUNC(am9517a_device::dreq3_w));
+	m_isabus->iochck_callback().set(FUNC(southbridge_device::iochck_w));
+}
 
 southbridge_device::southbridge_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock) :
 	device_t(mconfig, type, tag, owner, clock),
@@ -214,7 +217,7 @@ WRITE8_MEMBER(southbridge_device::eisa_irq_write)
 
 void southbridge_device::device_start()
 {
-	spaceio = &machine().device(":maincpu")->memory().space(AS_IO);
+	spaceio = &m_maincpu->space(AS_IO);
 
 	spaceio->install_readwrite_handler(0x0000, 0x001f, read8_delegate(FUNC(am9517a_device::read), &(*m_dma8237_1)), write8_delegate(FUNC(am9517a_device::write), &(*m_dma8237_1)), 0xffffffff);
 	spaceio->install_readwrite_handler(0x0020, 0x003f, read8sm_delegate(FUNC(pic8259_device::read), &(*m_pic8259_master)), write8sm_delegate(FUNC(pic8259_device::write), &(*m_pic8259_master)), 0xffffffff);
@@ -478,7 +481,14 @@ WRITE8_MEMBER( southbridge_device::at_portb_w )
 	m_pit8254->write_gate2(BIT(data, 0));
 	at_speaker_set_spkrdata( BIT(data, 1));
 	m_channel_check = BIT(data, 3);
-	m_isabus->set_nmi_state((m_nmi_enabled==0) && (m_channel_check==0));
+	if (m_channel_check)
+		m_maincpu->set_input_line(INPUT_LINE_NMI, CLEAR_LINE);
+}
+
+WRITE_LINE_MEMBER( southbridge_device::iochck_w )
+{
+	if (!state && !m_channel_check && m_nmi_enabled)
+		m_maincpu->set_input_line(INPUT_LINE_NMI, ASSERT_LINE);
 }
 
 READ8_MEMBER( southbridge_device::at_dma8237_2_r )
@@ -545,7 +555,7 @@ southbridge_extended_device::southbridge_extended_device(const machine_config &m
 
 void southbridge_extended_device::device_start()
 {
-	address_space& spaceio = machine().device(":maincpu")->memory().space(AS_IO);
+	address_space& spaceio = m_maincpu->space(AS_IO);
 
 	southbridge_device::device_start();
 
@@ -567,7 +577,8 @@ WRITE8_MEMBER( southbridge_extended_device::write_rtc )
 {
 	if (offset==0) {
 		m_nmi_enabled = BIT(data,7);
-		m_isabus->set_nmi_state((m_nmi_enabled==0) && (m_channel_check==0));
+		if (!m_nmi_enabled)
+			m_maincpu->set_input_line(INPUT_LINE_NMI, CLEAR_LINE);
 		m_ds12885->write(space,0,data);
 	}
 	else {

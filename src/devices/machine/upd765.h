@@ -5,8 +5,9 @@
 
 #pragma once
 
-#include "imagedev/floppy.h"
 #include "fdc_pll.h"
+
+class floppy_image_device;
 
 /*
  * ready = true if the ready line is physically connected to the floppy drive
@@ -44,6 +45,8 @@ public:
 	auto intrq_wr_callback() { return intrq_cb.bind(); }
 	auto drq_wr_callback() { return drq_cb.bind(); }
 	auto hdl_wr_callback() { return hdl_cb.bind(); }
+	auto us_wr_callback() { return us_cb.bind(); }
+	auto idx_wr_callback() { return idx_cb.bind(); }
 
 	virtual void map(address_map &map) override = 0;
 
@@ -90,6 +93,7 @@ public:
 protected:
 	upd765_family_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock);
 
+	virtual void device_resolve_objects() override;
 	virtual void device_start() override;
 	virtual void device_reset() override;
 	virtual void device_timer(emu_timer &timer, device_timer_id id, int param, void *ptr) override;
@@ -268,7 +272,8 @@ protected:
 	int main_phase;
 
 	live_info cur_live, checkpoint_live;
-	devcb_write_line intrq_cb, drq_cb, hdl_cb;
+	devcb_write_line intrq_cb, drq_cb, hdl_cb, idx_cb;
+	devcb_write8 us_cb;
 	bool cur_irq, other_irq, data_irq, drq, internal_drq, tc, tc_done, locked, mfm, scan_done;
 	floppy_info flopi[4];
 
@@ -378,8 +383,8 @@ protected:
 
 class upd765a_device : public upd765_family_device {
 public:
-	upd765a_device(const machine_config &mconfig, const char *tag, device_t *owner, bool ready, bool select)
-		: upd765a_device(mconfig, tag, owner, 0U)
+	upd765a_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock, bool ready, bool select)
+		: upd765a_device(mconfig, tag, owner, clock)
 	{
 		set_ready_line_connected(ready);
 		set_select_lines_connected(select);
@@ -391,8 +396,8 @@ public:
 
 class upd765b_device : public upd765_family_device {
 public:
-	upd765b_device(const machine_config &mconfig, const char *tag, device_t *owner, bool ready, bool select)
-		: upd765b_device(mconfig, tag, owner, 0U)
+	upd765b_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock, bool ready, bool select)
+		: upd765b_device(mconfig, tag, owner, clock)
 	{
 		set_ready_line_connected(ready);
 		set_select_lines_connected(select);
@@ -404,8 +409,8 @@ public:
 
 class i8272a_device : public upd765_family_device {
 public:
-	i8272a_device(const machine_config &mconfig, const char *tag, device_t *owner, bool ready)
-		: i8272a_device(mconfig, tag, owner, 0U)
+	i8272a_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock, bool ready)
+		: i8272a_device(mconfig, tag, owner, clock)
 	{
 		set_ready_line_connected(ready);
 	}
@@ -416,12 +421,12 @@ public:
 
 class i82072_device : public upd765_family_device {
 public:
-	i82072_device(const machine_config &mconfig, const char *tag, device_t *owner, bool ready)
-		: i82072_device(mconfig, tag, owner)
+	i82072_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock, bool ready)
+		: i82072_device(mconfig, tag, owner, clock)
 	{
 		set_ready_line_connected(ready);
 	}
-	i82072_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock = 24'000'000);
+	i82072_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 	virtual void map(address_map &map) override;
 
@@ -455,7 +460,7 @@ private:
 
 class smc37c78_device : public upd765_family_device {
 public:
-	smc37c78_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock = 0);
+	smc37c78_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 	virtual void map(address_map &map) override;
 };
@@ -477,8 +482,8 @@ public:
 
 class n82077aa_device : public upd765_family_device {
 public:
-	n82077aa_device(const machine_config &mconfig, const char *tag, device_t *owner, int mode)
-		: n82077aa_device(mconfig, tag, owner, 0U)
+	n82077aa_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock, int mode)
+		: n82077aa_device(mconfig, tag, owner, clock)
 	{
 		set_mode(mode);
 	}
@@ -489,35 +494,35 @@ public:
 
 class pc_fdc_superio_device : public upd765_family_device {
 public:
-	pc_fdc_superio_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock = 0);
+	pc_fdc_superio_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 	virtual void map(address_map &map) override;
 };
 
 class dp8473_device : public upd765_family_device {
 public:
-	dp8473_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock = 0);
+	dp8473_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 	virtual void map(address_map &map) override;
 };
 
 class pc8477a_device : public upd765_family_device {
 public:
-	pc8477a_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock = 0);
+	pc8477a_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 	virtual void map(address_map &map) override;
 };
 
 class wd37c65c_device : public upd765_family_device {
 public:
-	wd37c65c_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock = 0);
+	wd37c65c_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 	virtual void map(address_map &map) override;
 };
 
 class mcs3201_device : public upd765_family_device {
 public:
-	mcs3201_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock = 0);
+	mcs3201_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 	// configuration helpers
 	auto input_handler() { return m_input_handler.bind(); }
@@ -534,7 +539,7 @@ private:
 
 class tc8566af_device : public upd765_family_device {
 public:
-	tc8566af_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock = 0);
+	tc8566af_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 	virtual void map(address_map &map) override;
 

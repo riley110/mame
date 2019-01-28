@@ -273,10 +273,10 @@ MACHINE_CONFIG_START(coco3_state::coco3)
 	// Becker Port device
 	MCFG_DEVICE_ADD(DWSOCK_TAG, COCO_DWSOCK, 0)
 
-	MCFG_CASSETTE_ADD("cassette")
-	MCFG_CASSETTE_FORMATS(coco_cassette_formats)
-	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_MUTED)
-	MCFG_CASSETTE_INTERFACE("coco_cass")
+	CASSETTE(config, m_cassette);
+	m_cassette->set_formats(coco_cassette_formats);
+	m_cassette->set_default_state(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_MUTED);
+	m_cassette->set_interface("coco_cass");
 
 	rs232_port_device &rs232(RS232_PORT(config, RS232_TAG, default_rs232_devices, "printer"));
 	rs232.dcd_handler().set(PIA1_TAG, FUNC(pia6821_device::ca1_w));
@@ -287,18 +287,19 @@ MACHINE_CONFIG_START(coco3_state::coco3)
 	cartslot.nmi_callback().set_inputline(m_maincpu, INPUT_LINE_NMI);
 	cartslot.halt_callback().set_inputline(m_maincpu, INPUT_LINE_HALT);
 
-	MCFG_COCO_VHD_ADD(VHD0_TAG)
-	MCFG_COCO_VHD_ADD(VHD1_TAG)
+	COCO_VHD(config, m_vhd_0, 0, m_maincpu);
+	COCO_VHD(config, m_vhd_1, 0, m_maincpu);
 
 	// video hardware
 	config.set_default_layout(layout_coco3);
 
-	MCFG_DEVICE_ADD(GIME_TAG, GIME_NTSC, XTAL(28'636'363), MAINCPU_TAG, RAM_TAG, CARTRIDGE_TAG, MAINCPU_TAG)
-	MCFG_GIME_HSYNC_CALLBACK(WRITELINE(PIA0_TAG, pia6821_device, ca1_w))
-	MCFG_GIME_FSYNC_CALLBACK(WRITELINE(PIA0_TAG, pia6821_device, cb1_w))
-	MCFG_GIME_IRQ_CALLBACK(WRITELINE(*this, coco3_state, gime_irq_w))
-	MCFG_GIME_FIRQ_CALLBACK(WRITELINE(*this, coco3_state, gime_firq_w))
-	MCFG_GIME_FLOATING_BUS_CALLBACK(READ8(*this, coco_state, floating_bus_r))
+	GIME_NTSC(config, m_gime, XTAL(28'636'363), MAINCPU_TAG, RAM_TAG, CARTRIDGE_TAG, MAINCPU_TAG);
+	m_gime->set_screen(COMPOSITE_SCREEN_TAG);
+	m_gime->hsync_wr_callback().set(PIA0_TAG, FUNC(pia6821_device::ca1_w));
+	m_gime->fsync_wr_callback().set(PIA0_TAG, FUNC(pia6821_device::cb1_w));
+	m_gime->irq_wr_callback().set(FUNC(coco3_state::gime_irq_w));
+	m_gime->firq_wr_callback().set(FUNC(coco3_state::gime_firq_w));
+	m_gime->floating_bus_rd_callback().set(FUNC(coco3_state::floating_bus_r));
 
 	// composite monitor
 	MCFG_SCREEN_ADD(COMPOSITE_SCREEN_TAG, RASTER)
@@ -342,12 +343,13 @@ MACHINE_CONFIG_START(coco3_state::coco3p)
 	MCFG_DEVICE_CLOCK(XTAL(28'475'000) / 32)
 
 	// An additional 4.433618 MHz XTAL is required for PAL color encoding
-	MCFG_DEVICE_REPLACE(GIME_TAG, GIME_PAL, XTAL(28'475'000), MAINCPU_TAG, RAM_TAG, CARTRIDGE_TAG, MAINCPU_TAG)
-	MCFG_GIME_HSYNC_CALLBACK(WRITELINE(PIA0_TAG, pia6821_device, ca1_w))
-	MCFG_GIME_FSYNC_CALLBACK(WRITELINE(PIA0_TAG, pia6821_device, cb1_w))
-	MCFG_GIME_IRQ_CALLBACK(WRITELINE(*this, coco3_state, gime_irq_w))
-	MCFG_GIME_FIRQ_CALLBACK(WRITELINE(*this, coco3_state, gime_firq_w))
-	MCFG_GIME_FLOATING_BUS_CALLBACK(READ8(*this, coco_state, floating_bus_r))
+	GIME_PAL(config.replace(), m_gime, XTAL(28'475'000), MAINCPU_TAG, RAM_TAG, CARTRIDGE_TAG, MAINCPU_TAG);
+	m_gime->set_screen(COMPOSITE_SCREEN_TAG);
+	m_gime->hsync_wr_callback().set(PIA0_TAG, FUNC(pia6821_device::ca1_w));
+	m_gime->fsync_wr_callback().set(PIA0_TAG, FUNC(pia6821_device::cb1_w));
+	m_gime->irq_wr_callback().set(FUNC(coco3_state::gime_irq_w));
+	m_gime->firq_wr_callback().set(FUNC(coco3_state::gime_firq_w));
+	m_gime->floating_bus_rd_callback().set(FUNC(coco3_state::floating_bus_r));
 MACHINE_CONFIG_END
 
 MACHINE_CONFIG_START(coco3_state::coco3h)

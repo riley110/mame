@@ -129,8 +129,6 @@ from Brett Selwood and Andrew Davies.
 #include "softlist.h"
 #include "speaker.h"
 
-#define XTAL_13_5MHz 13500000
-
 /********** NOTE !!! ***********************************************************
     The microbee uses lots of bankswitching and the memory maps are still
     being determined. Please don't merge memory maps !!
@@ -669,10 +667,9 @@ MACHINE_CONFIG_START(mbee_state::mbee)
 	MCFG_SCREEN_VISIBLE_AREA(0*8, 64*8-1, 0, 19*16-1)
 	MCFG_SCREEN_UPDATE_DRIVER(mbee_state, screen_update_mbee)
 
-	MCFG_DEVICE_ADD("gfxdecode", GFXDECODE, "palette", gfx_mono)
+	GFXDECODE(config, "gfxdecode", m_palette, gfx_mono);
 
-	MCFG_PALETTE_ADD("palette", 100)
-	MCFG_PALETTE_INIT_OWNER(mbee_state, standard)
+	PALETTE(config, m_palette, FUNC(mbee_state::standard_palette), 100);
 
 	MCFG_VIDEO_START_OVERRIDE(mbee_state, mono)
 
@@ -682,12 +679,13 @@ MACHINE_CONFIG_START(mbee_state::mbee)
 	SPEAKER_SOUND(config, "speaker").add_route(ALL_OUTPUTS, "mono", 0.50);
 
 	/* devices */
-	MCFG_MC6845_ADD("crtc", SY6545_1, "screen", 12_MHz_XTAL / 8)
-	MCFG_MC6845_SHOW_BORDER_AREA(false)
-	MCFG_MC6845_CHAR_WIDTH(8)
-	MCFG_MC6845_UPDATE_ROW_CB(mbee_state, crtc_update_row)
-	MCFG_MC6845_ADDR_CHANGED_CB(mbee_state, crtc_update_addr)
-	MCFG_MC6845_OUT_VSYNC_CB(WRITELINE(*this, mbee_state, crtc_vs))
+	SY6545_1(config, m_crtc, 12_MHz_XTAL / 8);
+	m_crtc->set_screen(m_screen);
+	m_crtc->set_show_border_area(false);
+	m_crtc->set_char_width(8);
+	m_crtc->set_update_row_callback(FUNC(mbee_state::crtc_update_row), this);
+	m_crtc->set_on_update_addr_change_callback(FUNC(mbee_state::crtc_update_addr), this);
+	m_crtc->out_vsync_callback().set(FUNC(mbee_state::crtc_vs));
 
 	MCFG_QUICKLOAD_ADD("quickload", mbee_state, mbee, "mwb,com,bee", 3)
 	MCFG_QUICKLOAD_ADD("quickload2", mbee_state, mbee_z80bin, "bin", 3)
@@ -697,22 +695,22 @@ MACHINE_CONFIG_START(mbee_state::mbee)
 
 	MCFG_CENTRONICS_OUTPUT_LATCH_ADD("cent_data_out", "centronics")
 
-	MCFG_CASSETTE_ADD( "cassette" )
-	MCFG_CASSETTE_FORMATS(mbee_cassette_formats)
-	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_STOPPED | CASSETTE_MOTOR_ENABLED | CASSETTE_SPEAKER_ENABLED)
+	CASSETTE(config, m_cassette);
+	m_cassette->set_formats(mbee_cassette_formats);
+	m_cassette->set_default_state(CASSETTE_STOPPED | CASSETTE_MOTOR_ENABLED | CASSETTE_SPEAKER_ENABLED);
 MACHINE_CONFIG_END
 
 
 MACHINE_CONFIG_START(mbee_state::mbeeic)
 	/* basic machine hardware */
-	Z80(config, m_maincpu, XTAL_13_5MHz / 4);         /* 3.37500 MHz */
+	Z80(config, m_maincpu, 13.5_MHz_XTAL / 4);         /* 3.37500 MHz */
 	m_maincpu->set_addrmap(AS_PROGRAM, &mbee_state::mbeeic_mem);
 	m_maincpu->set_addrmap(AS_IO, &mbee_state::mbeeic_io);
 	m_maincpu->set_daisy_config(mbee_daisy_chain);
 
 	MCFG_MACHINE_RESET_OVERRIDE(mbee_state, mbee)
 
-	Z80PIO(config, m_pio, 3375000);
+	Z80PIO(config, m_pio, 13.5_MHz_XTAL / 4);
 	m_pio->out_int_callback().set_inputline(m_maincpu, INPUT_LINE_IRQ0);
 	m_pio->out_pa_callback().set("cent_data_out", FUNC(output_latch_device::bus_w));
 	m_pio->out_ardy_callback().set(FUNC(mbee_state::pio_ardy));
@@ -726,10 +724,9 @@ MACHINE_CONFIG_START(mbee_state::mbeeic)
 	MCFG_SCREEN_VISIBLE_AREA(0, 80*8-1, 0, 19*16-1)
 	MCFG_SCREEN_UPDATE_DRIVER(mbee_state, screen_update_mbee)
 
-	MCFG_DEVICE_ADD("gfxdecode", GFXDECODE, "palette", gfx_standard)
+	GFXDECODE(config, "gfxdecode", m_palette, gfx_standard);
 
-	MCFG_PALETTE_ADD("palette", 100)
-	MCFG_PALETTE_INIT_OWNER(mbee_state, standard)
+	PALETTE(config, m_palette, FUNC(mbee_state::standard_palette), 100);
 
 	MCFG_VIDEO_START_OVERRIDE(mbee_state, standard)
 
@@ -739,12 +736,13 @@ MACHINE_CONFIG_START(mbee_state::mbeeic)
 	SPEAKER_SOUND(config, "speaker").add_route(ALL_OUTPUTS, "mono", 0.50);
 
 	/* devices */
-	MCFG_MC6845_ADD("crtc", SY6545_1, "screen", XTAL_13_5MHz / 8)
-	MCFG_MC6845_SHOW_BORDER_AREA(false)
-	MCFG_MC6845_CHAR_WIDTH(8)
-	MCFG_MC6845_UPDATE_ROW_CB(mbee_state, crtc_update_row)
-	MCFG_MC6845_ADDR_CHANGED_CB(mbee_state, crtc_update_addr)
-	MCFG_MC6845_OUT_VSYNC_CB(WRITELINE(*this, mbee_state, crtc_vs))
+	SY6545_1(config, m_crtc, 13.5_MHz_XTAL / 8);
+	m_crtc->set_screen(m_screen);
+	m_crtc->set_show_border_area(false);
+	m_crtc->set_char_width(8);
+	m_crtc->set_update_row_callback(FUNC(mbee_state::crtc_update_row), this);
+	m_crtc->set_on_update_addr_change_callback(FUNC(mbee_state::crtc_update_addr), this);
+	m_crtc->out_vsync_callback().set(FUNC(mbee_state::crtc_vs));
 
 	MCFG_QUICKLOAD_ADD("quickload", mbee_state, mbee, "mwb,com,bee", 2)
 	MCFG_QUICKLOAD_ADD("quickload2", mbee_state, mbee_z80bin, "bin", 2)
@@ -754,9 +752,9 @@ MACHINE_CONFIG_START(mbee_state::mbeeic)
 
 	MCFG_CENTRONICS_OUTPUT_LATCH_ADD("cent_data_out", "centronics")
 
-	MCFG_CASSETTE_ADD( "cassette" )
-	MCFG_CASSETTE_FORMATS(mbee_cassette_formats)
-	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_STOPPED | CASSETTE_MOTOR_ENABLED | CASSETTE_SPEAKER_ENABLED)
+	CASSETTE(config, m_cassette);
+	m_cassette->set_formats(mbee_cassette_formats);
+	m_cassette->set_default_state(CASSETTE_STOPPED | CASSETTE_MOTOR_ENABLED | CASSETTE_SPEAKER_ENABLED);
 MACHINE_CONFIG_END
 
 MACHINE_CONFIG_START(mbee_state::mbeepc)
@@ -768,13 +766,13 @@ MACHINE_CONFIG_END
 
 MACHINE_CONFIG_START(mbee_state::mbeeppc)
 	mbeeic(config);
+
 	MCFG_DEVICE_MODIFY( "maincpu" )
 	MCFG_DEVICE_PROGRAM_MAP(mbeeppc_mem)
 	MCFG_DEVICE_IO_MAP(mbeeppc_io)
 	MCFG_VIDEO_START_OVERRIDE(mbee_state, premium)
-	MCFG_GFXDECODE_MODIFY("gfxdecode", gfx_premium)
-	MCFG_PALETTE_MODIFY("palette")
-	MCFG_PALETTE_INIT_OWNER(mbee_state, premium)
+	subdevice<gfxdecode_device>("gfxdecode")->set_info(gfx_premium);
+	m_palette->set_init(FUNC(mbee_state::premium_palette));
 
 	MC146818(config, m_rtc, 32.768_kHz_XTAL);
 	m_rtc->irq().set(FUNC(mbee_state::rtc_irq_w));

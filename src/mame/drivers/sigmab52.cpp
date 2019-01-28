@@ -600,14 +600,14 @@ MACHINE_CONFIG_START(sigmab52_state::jwildb52)
 	MCFG_SCREEN_UPDATE_DEVICE("hd63484", hd63484_device, update_screen)
 	MCFG_SCREEN_PALETTE("palette")
 
-	MCFG_HD63484_ADD("hd63484", XTAL(8'000'000), jwildb52_hd63484_map)
+	HD63484(config, "hd63484", XTAL(8'000'000)).set_addrmap(0, &sigmab52_state::jwildb52_hd63484_map);
 
 	MCFG_PALETTE_ADD("palette", 16)
 
 	/* sound hardware */
 	SPEAKER(config, "mono").front_center();
 
-	MCFG_GENERIC_LATCH_8_ADD("soundlatch")
+	GENERIC_LATCH_8(config, "soundlatch");
 
 	MCFG_DEVICE_ADD("ymsnd", YM3812, XTAL(3'579'545))
 	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 1.0)

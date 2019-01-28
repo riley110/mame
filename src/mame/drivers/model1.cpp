@@ -72,13 +72,13 @@ Notes:
 
       IC6, IC7, IC8,\
       IC9, IC10,    \
-      IC11, IC12,   | 834000 4M MASKROM (DIP32)
+      IC11, IC12,   | 834000 4M mask ROM (DIP32)
       IC13,         |
       IC39, IC40,   /
       IC41, IC42    /
 
       IC26, IC27,   \
-      IC28, IC29,   | 8316200 16M MASKROM (DIP42)
+      IC28, IC29,   | 8316200 16M mask ROM (DIP42)
       IC30, IC31,   /
       IC32, IC33    /
 
@@ -195,13 +195,13 @@ Notes:
       J4, J5, J6    - Jumpers, all set to 2-3
 
       OPR-14742.44  \
-      OPR-14743.45  - 1M SOP40 MASKROMs, tied to 315-5464
+      OPR-14743.45  - 1M SOP40 mask ROMs, tied to 315-5464
 
       OPR-14744.64  \
-      OPR-14745.65  - 1M SOP40 MASKROMs, tied to both 315-5572's
+      OPR-14745.65  - 1M SOP40 mask ROMs, tied to both 315-5572's
 
       OPR-14746.68  \
-      OPR-14747.69  - 1M SOP40 MASKROMs, tied to 315-5572 @ IC66
+      OPR-14747.69  - 1M SOP40 mask ROMs, tied to 315-5572 @ IC66
 
 
 VIDEO PCB
@@ -280,7 +280,7 @@ Notes:
       315-5292 - Sega Custom (QFP160)
 
       OPR-14748.15  \
-      OPR-14748.16  - 1M SOP40 MASKROMs, tied to 315-5423 & 315-5424. Note both ROMs are identical.
+      OPR-14748.16  - 1M SOP40 mask ROMs, tied to 315-5423 & 315-5424. Note both ROMs are identical.
 
 
 Motor PCB
@@ -1674,23 +1674,24 @@ ROM_START( netmerc )
 	ROM_LOAD16_BYTE( "u2", 0x0001, 0x4000, CRC(c589f428) SHA1(98dc0114a5f89636b4e237ed954e19f1cfd186ab) )
 ROM_END
 
-MACHINE_CONFIG_START(model1_state::model1)
-	MCFG_DEVICE_ADD("maincpu", V60, 16000000)
-	MCFG_DEVICE_PROGRAM_MAP(model1_mem)
-	MCFG_DEVICE_IO_MAP(model1_io)
-	MCFG_DEVICE_IRQ_ACKNOWLEDGE_DRIVER(model1_state,irq_callback)
+void model1_state::model1(machine_config &config)
+{
+	V60(config, m_maincpu, 16000000);
+	m_maincpu->set_addrmap(AS_PROGRAM, &model1_state::model1_mem);
+	m_maincpu->set_addrmap(AS_IO, &model1_state::model1_io);
+	m_maincpu->set_irq_acknowledge_callback(FUNC(model1_state::irq_callback));
 
-	MCFG_DEVICE_ADD("copro_fifo_in", GENERIC_FIFO_U32, 0)
-	MCFG_DEVICE_ADD("copro_fifo_out", GENERIC_FIFO_U32, 0)
+	GENERIC_FIFO_U32(config, "copro_fifo_in", 0);
+	GENERIC_FIFO_U32(config, "copro_fifo_out", 0);
 
-	MCFG_TIMER_DRIVER_ADD_SCANLINE("scantimer", model1_state, model1_interrupt, "screen", 0, 1)
+	TIMER(config, "scantimer").configure_scanline(FUNC(model1_state::model1_interrupt), "screen", 0, 1);
 
 #if 1
-	MCFG_DEVICE_ADD("tgp_copro", MB86233, 16000000)
-	MCFG_DEVICE_PROGRAM_MAP(copro_prog_map)
-	MCFG_DEVICE_DATA_MAP(copro_data_map)
-	MCFG_DEVICE_IO_MAP(copro_io_map)
-	MCFG_DEVICE_ADDRESS_MAP(mb86233_device::AS_RF, copro_rf_map)
+	MB86233(config, m_tgp_copro, 16000000);
+	m_tgp_copro->set_addrmap(AS_PROGRAM, &model1_state::copro_prog_map);
+	m_tgp_copro->set_addrmap(AS_DATA, &model1_state::copro_data_map);
+	m_tgp_copro->set_addrmap(AS_IO, &model1_state::copro_io_map);
+	m_tgp_copro->set_addrmap(mb86233_device::AS_RF, &model1_state::copro_rf_map);
 #endif
 
 	model1io_device &ioboard(SEGA_MODEL1IO(config, "ioboard", 0));
@@ -1701,17 +1702,15 @@ MACHINE_CONFIG_START(model1_state::model1)
 
 	MB8421(config, m_dpram, 0);
 
-	MCFG_DEVICE_ADD("tile", S24TILE, 0, 0x3fff)
-	MCFG_GFX_PALETTE("palette")
+	S24TILE(config, m_tiles, 0, 0x3fff).set_palette(m_palette);
 
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_VIDEO_ATTRIBUTES(VIDEO_UPDATE_AFTER_VBLANK )
-	MCFG_SCREEN_RAW_PARAMS(XTAL(16'000'000), 656, 0/*+69*/, 496/*+69*/, 424, 0/*+25*/, 384/*+25*/)
-	MCFG_SCREEN_UPDATE_DRIVER(model1_state, screen_update_model1)
-	MCFG_SCREEN_VBLANK_CALLBACK(WRITELINE(*this, model1_state, screen_vblank_model1))
+	SCREEN(config, m_screen, SCREEN_TYPE_RASTER);
+	m_screen->set_video_attributes(VIDEO_UPDATE_AFTER_VBLANK);
+	m_screen->set_raw(XTAL(16'000'000), 656, 0/*+69*/, 496/*+69*/, 424, 0/*+25*/, 384/*+25*/);
+	m_screen->set_screen_update(FUNC(model1_state::screen_update_model1));
+	m_screen->screen_vblank().set(FUNC(model1_state::screen_vblank_model1));
 
-	MCFG_PALETTE_ADD("palette", 8192)
-	MCFG_PALETTE_FORMAT(xBBBBBGGGGGRRRRR)
+	PALETTE(config, m_palette).set_format(palette_device::xBGR_555, 8192);
 
 	SEGAM1AUDIO(config, m_m1audio, 0);
 	m_m1audio->rxd_handler().set(m_m1uart, FUNC(i8251_device::write_rxd));
@@ -1722,13 +1721,14 @@ MACHINE_CONFIG_START(model1_state::model1)
 	clock_device &m1uart_clock(CLOCK(config, "m1uart_clock", 500000)); // 16 times 31.25MHz (standard Sega/MIDI sound data rate)
 	m1uart_clock.signal_handler().set(m_m1uart, FUNC(i8251_device::write_txc));
 	m1uart_clock.signal_handler().append(m_m1uart, FUNC(i8251_device::write_rxc));
-MACHINE_CONFIG_END
+}
 
-MACHINE_CONFIG_START(model1_state::model1_hle)
+void model1_state::model1_hle(machine_config &config)
+{
 	model1(config);
 
-	MCFG_DEVICE_REMOVE("tgp_copro")
-MACHINE_CONFIG_END
+	config.device_remove("tgp_copro");
+}
 
 void model1_state::vf(machine_config &config)
 {
@@ -1744,6 +1744,8 @@ void model1_state::vr(machine_config &config)
 {
 	model1(config);
 
+	m_maincpu->set_addrmap(AS_PROGRAM, &model1_state::model1_comm_mem);
+
 	model1io_device &ioboard(*subdevice<model1io_device>("ioboard"));
 	ioboard.an_callback<0>().set_ioport("WHEEL");
 	ioboard.an_callback<1>().set_ioport("ACCEL");
@@ -1756,6 +1758,8 @@ void model1_state::vr(machine_config &config)
 void model1_state::vformula(machine_config &config)
 {
 	model1(config);
+
+	m_maincpu->set_addrmap(AS_PROGRAM, &model1_state::model1_comm_mem);
 
 	model1io_device &ioboard(*subdevice<model1io_device>("ioboard"));
 	ioboard.an_callback<0>().set_ioport("WHEEL");
@@ -1789,11 +1793,11 @@ void model1_state::swa(machine_config &config)
 	m_m1audio->rxd_handler().append(m_dsbz80, FUNC(dsbz80_device::write_txd));
 }
 
-MACHINE_CONFIG_START(model1_state::wingwar)
+void model1_state::wingwar(machine_config &config)
+{
 	model1_hle(config);
 
-	MCFG_DEVICE_MODIFY("maincpu")
-	MCFG_DEVICE_PROGRAM_MAP(model1_comm_mem)
+	m_maincpu->set_addrmap(AS_PROGRAM, &model1_state::model1_comm_mem);
 
 	model1io2_device &ioboard(SEGA_MODEL1IO2(config.replace(), "ioboard", 0));
 	ioboard.set_default_bios_tag("epr16891");
@@ -1809,7 +1813,7 @@ MACHINE_CONFIG_START(model1_state::wingwar)
 	config.set_default_layout(layout_model1io2);
 
 	M1COMM(config, "m1comm", 0).set_default_bios_tag("epr15112");
-MACHINE_CONFIG_END
+}
 
 void model1_state::wingwar360(machine_config &config)
 {
@@ -1822,7 +1826,7 @@ void model1_state::wingwar360(machine_config &config)
 	ioboard.output_callback().set(FUNC(model1_state::wingwar360_outputs_w));
 
 	config.set_default_layout(layout_model1io2);
-MACHINE_CONFIG_END
+}
 
 void model1_state::polhemus_map(address_map &map)
 {
@@ -1831,10 +1835,11 @@ void model1_state::polhemus_map(address_map &map)
 	map(0xf8000, 0xfffff).rom().region("polhemus", 0);
 }
 
-MACHINE_CONFIG_START(model1_state::netmerc)
+void model1_state::netmerc(machine_config &config)
+{
 	model1_hle(config);
-	MCFG_DEVICE_ADD("polhemus", I386SX, 16000000)
-	MCFG_DEVICE_PROGRAM_MAP(polhemus_map)
+	i386sx_device &polhemus(I386SX(config, "polhemus", 16000000));
+	polhemus.set_addrmap(AS_PROGRAM, &model1_state::polhemus_map);
 
 	model1io2_device &ioboard(SEGA_MODEL1IO2(config.replace(), "ioboard", 0));
 	ioboard.set_default_bios_tag("epr18021");
@@ -1847,7 +1852,7 @@ MACHINE_CONFIG_START(model1_state::netmerc)
 	ioboard.output_callback().set(FUNC(model1_state::netmerc_outputs_w));
 
 	config.set_default_layout(layout_model1io2);
-MACHINE_CONFIG_END
+}
 
 
 //**************************************************************************

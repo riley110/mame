@@ -284,16 +284,16 @@ MACHINE_CONFIG_START(tdv2324_state::tdv2324)
 	MCFG_SCREEN_SIZE(800, 400)
 	MCFG_SCREEN_VISIBLE_AREA(0, 800-1, 0, 400-1)
 
-	MCFG_PALETTE_ADD_MONOCHROME("palette")
+	PALETTE(config, "palette", palette_device::MONOCHROME);
 
 	TMS9927(config, m_tms, 25.39836_MHz_XTAL / 8).set_char_width(8);
 
 	// devices
-	MCFG_DEVICE_ADD(P8259A_TAG, PIC8259, 0)
+	PIC8259(config, m_pic, 0);
 
-	MCFG_DEVICE_ADD(P8253_5_0_TAG, PIT8253, 0)
+	PIT8253(config, m_pit0, 0);
 
-	MCFG_DEVICE_ADD(P8253_5_1_TAG, PIT8253, 0)
+	PIT8253(config, m_pit1, 0);
 
 	Z80SIO2(config, MK3887N4_TAG, 8000000/2);
 

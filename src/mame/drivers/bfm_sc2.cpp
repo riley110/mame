@@ -2248,20 +2248,20 @@ INPUT_PORTS_END
 // machine config fragments for different meters numbers //////////////////
 ///////////////////////////////////////////////////////////////////////////
 
-MACHINE_CONFIG_START(bfm_sc2_state::_3meters)
-	MCFG_DEVICE_ADD("meters", METERS, 0)
-	MCFG_METERS_NUMBER(3)
-MACHINE_CONFIG_END
+void bfm_sc2_state::_3meters(machine_config &config)
+{
+	METERS(config, m_meters, 0).set_number(3);
+}
 
-MACHINE_CONFIG_START(bfm_sc2_state::_5meters)
-	MCFG_DEVICE_ADD("meters", METERS, 0)
-	MCFG_METERS_NUMBER(5)
-MACHINE_CONFIG_END
+void bfm_sc2_state::_5meters(machine_config &config)
+{
+	METERS(config, m_meters, 0).set_number(5);
+}
 
-MACHINE_CONFIG_START(bfm_sc2_state::_8meters)
-	MCFG_DEVICE_ADD("meters", METERS, 0)
-	MCFG_METERS_NUMBER(8)
-MACHINE_CONFIG_END
+void bfm_sc2_state::_8meters(machine_config &config)
+{
+	METERS(config, m_meters, 0).set_number(8);
+}
 
 ///////////////////////////////////////////////////////////////////////////
 // machine driver for scorpion2 board + adder2 expansion //////////////////
@@ -2285,14 +2285,14 @@ MACHINE_CONFIG_START(bfm_sc2_vid_state::scorpion2_vid)
 
 	WATCHDOG_TIMER(config, "watchdog").set_time(PERIOD_OF_555_MONOSTABLE(120000,100e-9));
 
-	MCFG_BFMBD1_ADD("vfd0",0)
-	MCFG_BFMBD1_ADD("vfd1",1)
+	BFM_BD1(config, m_vfd0, 60, 0);
+	BFM_BD1(config, m_vfd1, 60, 1);
 
 	NVRAM(config, "nvram", nvram_device::DEFAULT_ALL_0);
 	NVRAM(config, "e2ram").set_custom_handler(FUNC(bfm_sc2_vid_state::e2ram_init));
 	config.set_default_layout(layout_sc2_vid);
 
-	MCFG_BFM_ADDER2_ADD("adder2")
+	BFM_ADDER2(config, "adder2", 0);
 
 	SPEAKER(config, "mono").front_center();
 	MCFG_DEVICE_ADD("upd", UPD7759)
@@ -3754,8 +3754,8 @@ MACHINE_CONFIG_START(bfm_sc2_awp_state::scorpion2)
 
 	WATCHDOG_TIMER(config, "watchdog").set_time(PERIOD_OF_555_MONOSTABLE(120000,100e-9));
 
-	MCFG_BFMBD1_ADD("vfd0",0)
-	MCFG_BFMBD1_ADD("vfd1",1)
+	BFM_BD1(config, m_vfd0, 60, 0);
+	BFM_BD1(config, m_vfd1, 60, 1);
 
 	SPEAKER(config, "mono").front_center();
 	MCFG_DEVICE_ADD("upd",UPD7759)

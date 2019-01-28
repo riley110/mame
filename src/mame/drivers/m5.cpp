@@ -1431,10 +1431,10 @@ MACHINE_CONFIG_START(m5_state::m5)
 
 	MCFG_CENTRONICS_OUTPUT_LATCH_ADD("cent_data_out", CENTRONICS_TAG)
 
-	MCFG_CASSETTE_ADD("cassette")
-	MCFG_CASSETTE_FORMATS(sordm5_cassette_formats)
-	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY)
-	MCFG_CASSETTE_INTERFACE("m5_cass")
+	CASSETTE(config, m_cassette);
+	m_cassette->set_formats(sordm5_cassette_formats);
+	m_cassette->set_default_state(CASSETTE_PLAY);
+	m_cassette->set_interface("m5_cass");
 
 	I8255(config, m_ppi);
 	m_ppi->in_pa_callback().set(FUNC(m5_state::ppi_pa_r));
@@ -1443,7 +1443,7 @@ MACHINE_CONFIG_START(m5_state::m5)
 	m_ppi->in_pc_callback().set(FUNC(m5_state::ppi_pc_r));
 	m_ppi->out_pc_callback().set(FUNC(m5_state::ppi_pc_w));
 
-	UPD765A(config, m_fdc, true, true);
+	UPD765A(config, m_fdc, 8'000'000, true, true);
 	m_fdc->intrq_wr_callback().set_inputline(m_fd5cpu, INPUT_LINE_IRQ0);
 	MCFG_FLOPPY_DRIVE_ADD(UPD765_TAG ":0", m5_floppies, "525dd", m5_state::floppy_formats)
 

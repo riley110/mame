@@ -2,7 +2,7 @@
 // copyright-holders:Wilbert Pol, Kevin Thacker
 /******************************************************************************
 
-        nc.c
+        nc.cpp
 
         NC100/NC150/NC200 Notepad computer
 
@@ -18,7 +18,7 @@
             NC100 I/O Specification by Cliff Lawson,
             NC100EM by Russell Marks
         NC200:
-            Dissassembly of the NC200 ROM + e-mail
+            Disassembly of the NC200 ROM + e-mail
             exchange with Russell Marks
 
 
@@ -26,7 +26,7 @@
 
         Hardware:
             - Z80 CPU, 6 MHz
-            - memory powered by lithium batterys!
+            - memory powered by lithium batteries!
             - 2 channel tone (programmable frequency beep's)
             - LCD screen
             - laptop/portable computer
@@ -99,6 +99,7 @@
 #include "includes/nc.h"
 
 #include "cpu/z80/z80.h"
+#include "imagedev/floppy.h"
 #include "machine/mc146818.h"   // for NC200 real time clock
 #include "machine/rp5c01.h"     // for NC100 real time clock
 #include "formats/pc_dsk.h"     // for NC200 disk image
@@ -1387,8 +1388,7 @@ MACHINE_CONFIG_START(nc_state::nc_base)
 	MCFG_SCREEN_VBLANK_TIME(ATTOSECONDS_IN_USEC(2500)) /* not accurate */
 	MCFG_SCREEN_PALETTE("palette")
 
-	MCFG_PALETTE_ADD("palette", NC_NUM_COLOURS)
-	MCFG_PALETTE_INIT_OWNER(nc_state, nc)
+	PALETTE(config, "palette", FUNC(nc_state::nc_colours), NC_NUM_COLOURS);
 
 	/* sound hardware */
 	SPEAKER(config, "mono").front_center();
@@ -1406,8 +1406,8 @@ MACHINE_CONFIG_START(nc_state::nc_base)
 	/* uart */
 	I8251(config, m_uart, 0);
 
-	MCFG_DEVICE_ADD("uart_clock", CLOCK, 19200)
-	MCFG_CLOCK_SIGNAL_HANDLER(WRITELINE(*this, nc_state, write_uart_clock))
+	clock_device &uart_clock(CLOCK(config, "uart_clock", 19200));
+	uart_clock.signal_handler().set(FUNC(nc_state::write_uart_clock));
 
 	/* cartridge */
 	MCFG_GENERIC_CARTSLOT_ADD("cardslot", generic_plain_slot, nullptr)
@@ -1419,7 +1419,7 @@ MACHINE_CONFIG_START(nc_state::nc_base)
 	NVRAM(config, "nvram", nvram_device::DEFAULT_NONE);
 
 	/* dummy timer */
-	MCFG_TIMER_DRIVER_ADD_PERIODIC("dummy_timer", nc_state, dummy_timer_callback, attotime::from_hz(50))
+	TIMER(config, "dummy_timer").configure_periodic(FUNC(nc_state::dummy_timer_callback), attotime::from_hz(50));
 MACHINE_CONFIG_END
 
 MACHINE_CONFIG_START(nc100_state::nc100)
@@ -1443,8 +1443,8 @@ MACHINE_CONFIG_START(nc100_state::nc100)
 	m_uart->txrdy_handler().set(FUNC(nc100_state::nc100_txrdy_callback));
 
 	/* rtc */
-	MCFG_DEVICE_ADD("rtc", TC8521, 32.768_kHz_XTAL)
-	MCFG_RP5C01_OUT_ALARM_CB(WRITELINE(*this, nc100_state, nc100_tc8521_alarm_callback))
+	tc8521_device &rtc(TC8521(config, "rtc", XTAL(32'768)));
+	rtc.out_alarm_callback().set(FUNC(nc100_state::nc100_tc8521_alarm_callback));
 MACHINE_CONFIG_END
 
 static const floppy_format_type ibmpc_floppy_formats[] = {
@@ -1470,9 +1470,9 @@ MACHINE_CONFIG_START(nc200_state::nc200)
 	MCFG_SCREEN_VISIBLE_AREA(0, NC200_SCREEN_WIDTH-1, 0, NC200_SCREEN_HEIGHT-1)
 	MCFG_SCREEN_UPDATE_DRIVER(nc200_state, screen_update_nc200)
 
-	MCFG_PALETTE_MODIFY("palette")
-	MCFG_PALETTE_ENTRIES(NC200_NUM_COLOURS)
-	MCFG_PALETTE_INIT_OWNER(nc200_state, nc)
+	palette_device &palette(*subdevice<palette_device>("palette"));
+	palette.set_entries(NC200_NUM_COLOURS);
+	palette.set_init(FUNC(nc200_state::nc_colours));
 
 	/* printer */
 	MCFG_DEVICE_MODIFY("centronics")
@@ -1482,7 +1482,7 @@ MACHINE_CONFIG_START(nc200_state::nc200)
 	m_uart->rxrdy_handler().set(FUNC(nc200_state::nc200_rxrdy_callback));
 	m_uart->txrdy_handler().set(FUNC(nc200_state::nc200_txrdy_callback));
 
-	UPD765A(config, m_fdc, true, true);
+	UPD765A(config, m_fdc, 8'000'000, true, true);
 	m_fdc->intrq_wr_callback().set(FUNC(nc200_state::nc200_fdc_interrupt));
 	MCFG_FLOPPY_DRIVE_ADD("upd765:0", ibmpc_floppies, "525dd", ibmpc_floppy_formats)
 	MCFG_FLOPPY_DRIVE_ADD("upd765:1", ibmpc_floppies, "525dd", ibmpc_floppy_formats)

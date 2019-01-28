@@ -476,8 +476,8 @@ void taito_f3_state::f3(machine_config &config)
 	m_screen->set_screen_update(FUNC(taito_f3_state::screen_update_f3));
 	m_screen->screen_vblank().set(FUNC(taito_f3_state::screen_vblank_f3));
 
-	GFXDECODE(config, m_gfxdecode, "palette", gfx_taito_f3);
-	PALETTE(config, m_palette, 0x2000);
+	GFXDECODE(config, m_gfxdecode, m_palette, gfx_taito_f3);
+	PALETTE(config, m_palette).set_entries(0x2000);
 
 	/* sound hardware */
 	TAITO_EN(config, m_taito_en, 0);
@@ -569,8 +569,8 @@ void taito_f3_state::bubsympb(machine_config &config)
 	m_screen->set_screen_update(FUNC(taito_f3_state::screen_update_f3));
 	m_screen->screen_vblank().set(FUNC(taito_f3_state::screen_vblank_f3));
 
-	GFXDECODE(config, m_gfxdecode, "palette", gfx_bubsympb);
-	PALETTE(config, m_palette, 0x2000);
+	GFXDECODE(config, m_gfxdecode, m_palette, gfx_bubsympb);
+	PALETTE(config, m_palette).set_entries(0x2000);
 
 	/* sound hardware */
 	SPEAKER(config, "mono").front_center();
@@ -1592,8 +1592,8 @@ Notes:
                          PAL.7          PALCE16V8H
                          D49-12-1       PAL16L8B
 
-      D69-01 to D69-08          16M MASKROM (DIP42)
-      d69-09 to d69-11          8M MASKROM  (DIP42)
+      D69-01 to D69-08          16M mask ROM (DIP42)
+      d69-09 to d69-11          8M mask ROM  (DIP42)
       D69-13 to D69-15/D69-20   27C040 EPROM (DIP32)
       D69-18/D69-19             27C1001 EPROM (DIP32)
 */

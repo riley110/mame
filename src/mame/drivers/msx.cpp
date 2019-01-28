@@ -1,7 +1,7 @@
 // license:BSD-3-Clause
 // copyright-holders:Wilbert Pol
 /*
-** msx.c : driver for MSX
+** msx.cpp : driver for MSX
 **
 ** cpc300:
 **  To get out of the MSX Tutor press the SELECT key. Entering SET SYSTEM 1 should
@@ -530,6 +530,7 @@ PCB Layouts missing
 #include "includes/msx.h"
 #include "formats/dsk_dsk.h"
 #include "formats/dmk_dsk.h"
+#include "machine/input_merger.h"
 #include "machine/msx_matsushita.h"
 #include "machine/msx_s1985.h"
 #include "machine/msx_systemflags.h"
@@ -1310,7 +1311,7 @@ void msx_state::msx_mb8877a(machine_config & config)
 
 void msx_state::msx_tc8566af(machine_config &config)
 {
-	TC8566AF(config, "fdc");
+	TC8566AF(config, "fdc", 16'000'000);
 }
 
 void msx_state::msx_microsol(machine_config &config)
@@ -1350,6 +1351,8 @@ MACHINE_CONFIG_START(msx_state::msx)
 	MCFG_DEVICE_VBLANK_INT_DRIVER("screen", msx_state,  msx_interrupt) /* Needed for mouse updates */
 	MCFG_QUANTUM_TIME(attotime::from_hz(60))
 
+	INPUT_MERGER_ANY_HIGH(config, "mainirq").output_handler().set_inputline("maincpu", INPUT_LINE_IRQ0);
+
 	i8255_device &ppi(I8255(config, "ppi8255"));
 	ppi.out_pa_callback().set(FUNC(msx_state::msx_ppi_port_a_w));
 	ppi.in_pb_callback().set(FUNC(msx_state::msx_ppi_port_b_r));
@@ -1361,14 +1364,14 @@ MACHINE_CONFIG_START(msx_state::msx)
 	MCFG_DEVICE_ADD("vref", VOLTAGE_REGULATOR, 0) MCFG_VOLTAGE_REGULATOR_OUTPUT(5.0)
 	MCFG_SOUND_ROUTE(0, "dac", 1.0, DAC_VREF_POS_INPUT)
 
-	WAVE(config, "wave", "cassette").add_route(ALL_OUTPUTS, "speaker", 0.25);
-	MCFG_DEVICE_ADD("ay8910", AY8910, 10.738635_MHz_XTAL / 3 / 2)
-	MCFG_AY8910_OUTPUT_TYPE(AY8910_SINGLE_OUTPUT)
-	MCFG_AY8910_PORT_A_READ_CB(READ8(*this, msx_state, msx_psg_port_a_r))
-	MCFG_AY8910_PORT_B_READ_CB(READ8(*this, msx_state, msx_psg_port_b_r))
-	MCFG_AY8910_PORT_A_WRITE_CB(WRITE8(*this, msx_state, msx_psg_port_a_w))
-	MCFG_AY8910_PORT_B_WRITE_CB(WRITE8(*this, msx_state, msx_psg_port_b_w))
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "speaker", 0.3)
+	WAVE(config, "wave", m_cassette).add_route(ALL_OUTPUTS, "speaker", 0.25);
+	AY8910(config, m_ay8910, 10.738635_MHz_XTAL / 3 / 2);
+	m_ay8910->set_flags(AY8910_SINGLE_OUTPUT);
+	m_ay8910->port_a_read_callback().set(FUNC(msx_state::msx_psg_port_a_r));
+	m_ay8910->port_b_read_callback().set(FUNC(msx_state::msx_psg_port_b_r));
+	m_ay8910->port_a_write_callback().set(FUNC(msx_state::msx_psg_port_a_w));
+	m_ay8910->port_b_write_callback().set(FUNC(msx_state::msx_psg_port_b_w));
+	m_ay8910->add_route(ALL_OUTPUTS, "speaker", 0.3);
 
 	/* printer */
 	MCFG_DEVICE_ADD("centronics", CENTRONICS, centronics_devices, "printer")
@@ -1381,10 +1384,10 @@ MACHINE_CONFIG_START(msx_state::msx)
 	MCFG_OUTPUT_LATCH_BIT1_HANDLER(WRITELINE("centronics", centronics_device, write_strobe))
 
 	/* cassette */
-	MCFG_CASSETTE_ADD( "cassette" )
-	MCFG_CASSETTE_FORMATS(fmsx_cassette_formats)
-	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY)
-	MCFG_CASSETTE_INTERFACE("msx_cass")
+	CASSETTE(config, m_cassette);
+	m_cassette->set_formats(fmsx_cassette_formats);
+	m_cassette->set_default_state(CASSETTE_PLAY);
+	m_cassette->set_interface("msx_cass");
 
 	/* Software lists */
 	MCFG_SOFTWARE_LIST_ADD("cass_list","msx1_cass")
@@ -1400,7 +1403,7 @@ void msx_state::msx1(VDPType &vdp_type, machine_config &config)
 	tms9928a_device &vdp(vdp_type(config, "tms9928a", 10.738635_MHz_XTAL));
 	vdp.set_screen("screen");
 	vdp.set_vram_size(0x4000);
-	vdp.int_callback().set(FUNC(msx_state::msx_irq_source0));
+	vdp.int_callback().set("mainirq", FUNC(input_merger_device::in_w<0>));
 }
 
 
@@ -1411,6 +1414,8 @@ MACHINE_CONFIG_START(msx2_state::msx2)
 	MCFG_DEVICE_IO_MAP(msx2_io_map)
 	MCFG_QUANTUM_TIME(attotime::from_hz(60))
 
+	INPUT_MERGER_ANY_HIGH(config, "mainirq").output_handler().set_inputline("maincpu", INPUT_LINE_IRQ0);
+
 	i8255_device &ppi(I8255(config, "ppi8255"));
 	ppi.out_pa_callback().set(FUNC(msx2_state::msx_ppi_port_a_w));
 	ppi.in_pb_callback().set(FUNC(msx2_state::msx_ppi_port_b_r));
@@ -1420,7 +1425,7 @@ MACHINE_CONFIG_START(msx2_state::msx2)
 	V9938(config, m_v9938, 21.477272_MHz_XTAL);
 	m_v9938->set_screen_ntsc("screen");
 	m_v9938->set_vram_size(0x20000);
-	m_v9938->int_cb().set(FUNC(msx2_state::msx_irq_source0));
+	m_v9938->int_cb().set("mainirq", FUNC(input_merger_device::in_w<0>));
 	SCREEN(config, "screen", SCREEN_TYPE_RASTER);
 
 	/* sound hardware */
@@ -1429,14 +1434,14 @@ MACHINE_CONFIG_START(msx2_state::msx2)
 	MCFG_DEVICE_ADD("vref", VOLTAGE_REGULATOR, 0) MCFG_VOLTAGE_REGULATOR_OUTPUT(5.0)
 	MCFG_SOUND_ROUTE(0, "dac", 1.0, DAC_VREF_POS_INPUT)
 
-	WAVE(config, "wave", "cassette").add_route(ALL_OUTPUTS, "speaker", 0.25);
-	MCFG_DEVICE_ADD("ay8910", AY8910, 21.477272_MHz_XTAL / 6 / 2)
-	MCFG_AY8910_OUTPUT_TYPE(AY8910_SINGLE_OUTPUT)
-	MCFG_AY8910_PORT_A_READ_CB(READ8(*this, msx2_state, msx_psg_port_a_r))
-	MCFG_AY8910_PORT_B_READ_CB(READ8(*this, msx2_state, msx_psg_port_b_r))
-	MCFG_AY8910_PORT_A_WRITE_CB(WRITE8(*this, msx2_state, msx_psg_port_a_w))
-	MCFG_AY8910_PORT_B_WRITE_CB(WRITE8(*this, msx2_state, msx_psg_port_b_w))
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "speaker", 0.3)
+	WAVE(config, "wave", m_cassette).add_route(ALL_OUTPUTS, "speaker", 0.25);
+	AY8910(config, m_ay8910, 21.477272_MHz_XTAL / 6 / 2);
+	m_ay8910->set_flags(AY8910_SINGLE_OUTPUT);
+	m_ay8910->port_a_read_callback().set(FUNC(msx2_state::msx_psg_port_a_r));
+	m_ay8910->port_b_read_callback().set(FUNC(msx2_state::msx_psg_port_b_r));
+	m_ay8910->port_a_write_callback().set(FUNC(msx2_state::msx_psg_port_a_w));
+	m_ay8910->port_b_write_callback().set(FUNC(msx2_state::msx_psg_port_b_w));
+	m_ay8910->add_route(ALL_OUTPUTS, "speaker", 0.3);
 
 	/* printer */
 	MCFG_DEVICE_ADD("centronics", CENTRONICS, centronics_devices, "printer")
@@ -1449,13 +1454,13 @@ MACHINE_CONFIG_START(msx2_state::msx2)
 	MCFG_OUTPUT_LATCH_BIT1_HANDLER(WRITELINE("centronics", centronics_device, write_strobe))
 
 	/* cassette */
-	MCFG_CASSETTE_ADD( "cassette" )
-	MCFG_CASSETTE_FORMATS(fmsx_cassette_formats)
-	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY)
-	MCFG_CASSETTE_INTERFACE("msx_cass")
+	CASSETTE(config, m_cassette);
+	m_cassette->set_formats(fmsx_cassette_formats);
+	m_cassette->set_default_state(CASSETTE_PLAY);
+	m_cassette->set_interface("msx_cass");
 
 	/* real time clock */
-	MCFG_DEVICE_ADD("rtc", RP5C01, 32.768_kHz_XTAL)
+	RP5C01(config, m_rtc, 32.768_kHz_XTAL);
 
 	/* Software lists */
 	MCFG_SOFTWARE_LIST_ADD("cass_list", "msx2_cass")
@@ -1470,6 +1475,8 @@ MACHINE_CONFIG_START(msx2_state::msx2p)
 	MCFG_DEVICE_IO_MAP(msx2p_io_map)
 	MCFG_QUANTUM_TIME(attotime::from_hz(60))
 
+	INPUT_MERGER_ANY_HIGH(config, "mainirq").output_handler().set_inputline("maincpu", INPUT_LINE_IRQ0);
+
 	i8255_device &ppi(I8255(config, "ppi8255"));
 	ppi.out_pa_callback().set(FUNC(msx2_state::msx_ppi_port_a_w));
 	ppi.in_pb_callback().set(FUNC(msx2_state::msx_ppi_port_b_r));
@@ -1479,7 +1486,7 @@ MACHINE_CONFIG_START(msx2_state::msx2p)
 	V9958(config, m_v9958, 21.477272_MHz_XTAL);
 	m_v9958->set_screen_ntsc("screen");
 	m_v9958->set_vram_size(0x20000);
-	m_v9958->int_cb().set(FUNC(msx2_state::msx_irq_source0));
+	m_v9958->int_cb().set("mainirq", FUNC(input_merger_device::in_w<0>));
 	SCREEN(config, "screen", SCREEN_TYPE_RASTER);
 
 	/* sound hardware */
@@ -1488,14 +1495,14 @@ MACHINE_CONFIG_START(msx2_state::msx2p)
 	MCFG_DEVICE_ADD("vref", VOLTAGE_REGULATOR, 0) MCFG_VOLTAGE_REGULATOR_OUTPUT(5.0)
 	MCFG_SOUND_ROUTE(0, "dac", 1.0, DAC_VREF_POS_INPUT)
 
-	WAVE(config, "wave", "cassette").add_route(ALL_OUTPUTS, "speaker", 0.25);
-	MCFG_DEVICE_ADD("ay8910", AY8910, 21.477272_MHz_XTAL / 6 / 2)
-	MCFG_AY8910_OUTPUT_TYPE(AY8910_SINGLE_OUTPUT)
-	MCFG_AY8910_PORT_A_READ_CB(READ8(*this, msx2_state, msx_psg_port_a_r))
-	MCFG_AY8910_PORT_B_READ_CB(READ8(*this, msx2_state, msx_psg_port_b_r))
-	MCFG_AY8910_PORT_A_WRITE_CB(WRITE8(*this, msx2_state, msx_psg_port_a_w))
-	MCFG_AY8910_PORT_B_WRITE_CB(WRITE8(*this, msx2_state, msx_psg_port_b_w))
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "speaker", 0.3)
+	WAVE(config, "wave", m_cassette).add_route(ALL_OUTPUTS, "speaker", 0.25);
+	AY8910(config, m_ay8910, 21.477272_MHz_XTAL / 6 / 2);
+	m_ay8910->set_flags(AY8910_SINGLE_OUTPUT);
+	m_ay8910->port_a_read_callback().set(FUNC(msx2_state::msx_psg_port_a_r));
+	m_ay8910->port_b_read_callback().set(FUNC(msx2_state::msx_psg_port_b_r));
+	m_ay8910->port_a_write_callback().set(FUNC(msx2_state::msx_psg_port_a_w));
+	m_ay8910->port_b_write_callback().set(FUNC(msx2_state::msx_psg_port_b_w));
+	m_ay8910->add_route(ALL_OUTPUTS, "speaker", 0.3);
 
 	/* printer */
 	MCFG_DEVICE_ADD("centronics", CENTRONICS, centronics_devices, "printer")
@@ -1508,13 +1515,13 @@ MACHINE_CONFIG_START(msx2_state::msx2p)
 	MCFG_OUTPUT_LATCH_BIT1_HANDLER(WRITELINE("centronics", centronics_device, write_strobe))
 
 	/* cassette */
-	MCFG_CASSETTE_ADD( "cassette" )
-	MCFG_CASSETTE_FORMATS(fmsx_cassette_formats)
-	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY)
-	MCFG_CASSETTE_INTERFACE("msx_cass")
+	CASSETTE(config, m_cassette);
+	m_cassette->set_formats(fmsx_cassette_formats);
+	m_cassette->set_default_state(CASSETTE_PLAY);
+	m_cassette->set_interface("msx_cass");
 
 	/* real time clock */
-	MCFG_DEVICE_ADD("rtc", RP5C01, 32.768_kHz_XTAL)
+	RP5C01(config, m_rtc, 32.768_kHz_XTAL);
 
 	/* Software lists */
 	MCFG_SOFTWARE_LIST_ADD("cass_list", "msx2_cass")
@@ -3288,7 +3295,7 @@ MACHINE_CONFIG_START(msx_state::hb10)
 	MCFG_MSX_LAYOUT_CARTRIDGE("cartslot2", 2, 0)
 	MCFG_MSX_LAYOUT_RAM("ram", 3, 0, 3, 1)  /* 16KB? RAM */
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx1_cartlist(config);
 MACHINE_CONFIG_END
@@ -4624,7 +4631,7 @@ MACHINE_CONFIG_START(msx2_state::canonv25)
 	MCFG_MSX_LAYOUT_ROM("ext", 3, 0, 0, 1, "maincpu", 0x8000) // EXT
 	MCFG_MSX_LAYOUT_RAM_MM("ram_mm", 3, 2, 0x10000) // 64KB Mapper RAM
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx2_64kb_vram(config);
 
@@ -4654,7 +4661,7 @@ MACHINE_CONFIG_START(msx2_state::canonv30)
 	MCFG_MSX_LAYOUT_DISK1("disk", 3, 1, 1, 1, "maincpu", 0xc000) // DISK
 	MCFG_MSX_LAYOUT_RAM_MM("ram_mm", 3, 2, 0x10000) // 64KB?? Mapper RAM
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx_wd2793(config);
 	msx_2_35_dd_drive(config);
@@ -4686,7 +4693,7 @@ MACHINE_CONFIG_START(msx2_state::canonv30f)
 	MCFG_MSX_LAYOUT_DISK1("disk", 3, 1, 1, 1, "maincpu", 0xc000) // DISK
 	MCFG_MSX_LAYOUT_RAM_MM("ram_mm", 3, 2, 0x20000) // 128KB Mapper RAM
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx_wd2793(config);
 	msx_2_35_dd_drive(config);
@@ -4719,7 +4726,7 @@ MACHINE_CONFIG_START(msx2_state::cpc300)
 	MCFG_MSX_LAYOUT_CARTRIDGE("cartslot1", 1, 0)
 	MCFG_MSX_LAYOUT_CARTRIDGE("cartslot2", 3, 0)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx2_cartlist(config);
 MACHINE_CONFIG_END
@@ -4778,7 +4785,7 @@ MACHINE_CONFIG_START(msx2_state::cpc330k)
 	MCFG_MSX_LAYOUT_CARTRIDGE("cartslot1", 1, 0)
 	MCFG_MSX_LAYOUT_CARTRIDGE("cartslot2", 3, 0)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx2_cartlist(config);
 MACHINE_CONFIG_END
@@ -4847,7 +4854,7 @@ MACHINE_CONFIG_START(msx2_state::cpc400s)
 	MCFG_MSX_LAYOUT_DISK2("disk", 2, 0, 1, 1, "maincpu", 0x8000)
 	MCFG_MSX_LAYOUT_CARTRIDGE("cartslot2", 3, 0)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx_mb8877a(config);
 	msx_1_35_dd_drive(config);
@@ -4883,7 +4890,7 @@ MACHINE_CONFIG_START(msx2_state::cpc61)
 	MCFG_MSX_LAYOUT_ROM("ext", 0, 3, 0, 2, "maincpu", 0x8000)
 	MCFG_MSX_LAYOUT_CARTRIDGE("cartslot1", 1, 0)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx2_cartlist(config);
 MACHINE_CONFIG_END
@@ -4919,7 +4926,7 @@ MACHINE_CONFIG_START(msx2_state::cpg120)
 	MCFG_MSX_LAYOUT_MUSIC("mus", 2, 0, 1, 1, "maincpu", 0x10000)
 	MCFG_MSX_LAYOUT_CARTRIDGE("cartslot2", 3, 0)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx_ym2413(config);
 
@@ -5020,7 +5027,7 @@ MACHINE_CONFIG_START(msx2_state::mbh70)
 	MCFG_MSX_LAYOUT_DISK1("disk", 3, 0, 1, 1, "maincpu", 0xc000)
 	MCFG_MSX_LAYOUT_RAM_MM("ram_mm", 3, 2, 0x20000) // 128KB Mapper RAM
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx_wd2793(config);
 	msx_1_35_dd_drive(config);
@@ -5057,7 +5064,7 @@ MACHINE_CONFIG_START(msx2_state::kmc5000)
 	MCFG_MSX_LAYOUT_ROM("kdr", 3, 1, 1, 2, "maincpu", 0x10000)
 	MCFG_MSX_LAYOUT_DISK3("disk", 3, 2, 1, 1, "maincpu", 0xc000)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx_tc8566af(config);
 	msx_1_35_dd_drive(config);
@@ -5089,7 +5096,7 @@ MACHINE_CONFIG_START(msx2_state::mlg1)
 	MCFG_MSX_LAYOUT_RAM_MM("ram_mm", 3, 2, 0x20000) // 64KB or 128KB Mapper RAM ?
 	MCFG_MSX_LAYOUT_ROM("paint", 3, 3, 0, 2, "maincpu", 0xc000)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx2_cartlist(config);
 MACHINE_CONFIG_END
@@ -5119,7 +5126,7 @@ MACHINE_CONFIG_START(msx2_state::mlg3)
 	MCFG_MSX_LAYOUT_RAM_MM("ram_mm", 3, 2, 0x20000) // 64KB or 128KB Mapper RAM?
 	//MCFG_MSX_LAYOUT_ROM("rs232c", 3, 3, 1, 1, "maincpu", 0x10000)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx_wd2793(config);
 	msx_1_35_dd_drive(config);
@@ -5152,7 +5159,7 @@ MACHINE_CONFIG_START(msx2_state::mlg10)
 	MCFG_MSX_LAYOUT_ROM("ext", 3, 0, 0, 1, "maincpu", 0x8000)
 	MCFG_MSX_LAYOUT_RAM_MM("ram_mm", 3, 2, 0x20000) // 64KB or 128KB Mapper RAM?
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx2_cartlist(config);
 MACHINE_CONFIG_END
@@ -5232,9 +5239,9 @@ MACHINE_CONFIG_START(msx2_state::fs4500)
 	MCFG_MSX_LAYOUT_ROM("kdr2", 3, 1, 3, 1, "maincpu", 0x3c000)
 	MCFG_MSX_LAYOUT_RAM("ram", 3, 2, 0, 4)  /* 64KB RAM */
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
-	MCFG_MSX_MATSUSHITA_ADD( "matsushita" )
+	MSX_MATSUSHITA(config, "matsushita", 0);
 
 	msx2_cartlist(config);
 MACHINE_CONFIG_END
@@ -5278,7 +5285,7 @@ MACHINE_CONFIG_START(msx2_state::fs4600)
 	MCFG_MSX_RAMIO_SET_BITS(0x80)
 	MCFG_MSX_LAYOUT_DISK2("disk", 3, 3, 1, 1, "maincpu", 0xc000)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx_mb8877a(config);
 	msx_1_35_dd_drive(config);
@@ -5332,9 +5339,9 @@ MACHINE_CONFIG_START(msx2_state::fs4700)
 	MCFG_MSX_LAYOUT_RAM("ram", 3, 2, 0, 4)  /* 64KB RAM */
 	MCFG_MSX_LAYOUT_DISK2("disk", 3, 3, 1, 1, "maincpu", 0xc000)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
-	MCFG_MSX_MATSUSHITA_ADD( "matsushita" )
+	MSX_MATSUSHITA(config, "matsushita", 0);
 
 	msx_mb8877a(config);
 	msx_1_35_dd_drive(config);
@@ -5378,7 +5385,7 @@ MACHINE_CONFIG_START(msx2_state::fs5000)
 	MCFG_MSX_RAMIO_SET_BITS(0x80)
 	MCFG_MSX_LAYOUT_DISK2("disk", 3, 3, 1, 1, "maincpu", 0xc000)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx_wd2793_force_ready(config);
 	msx_2_35_dd_drive(config);
@@ -5425,9 +5432,9 @@ MACHINE_CONFIG_START(msx2_state::fs5500f1)
 	MCFG_MSX_LAYOUT_RAM("ram", 3, 2, 0, 4)  /* 64KB RAM */
 	MCFG_MSX_LAYOUT_DISK2("disk", 3, 3, 1, 1, "maincpu", 0xc000)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
-	MCFG_MSX_MATSUSHITA_ADD( "matsushita" )
+	MSX_MATSUSHITA(config, "matsushita", 0);
 
 	msx_mb8877a(config);
 	msx_1_35_dd_drive(config);
@@ -5474,9 +5481,9 @@ MACHINE_CONFIG_START(msx2_state::fs5500f2)
 	MCFG_MSX_LAYOUT_RAM("ram", 3, 2, 0, 4)  /* 64KB RAM */
 	MCFG_MSX_LAYOUT_DISK2("disk", 3, 3, 1, 1, "maincpu", 0xc000)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
-	MCFG_MSX_MATSUSHITA_ADD( "matsushita" )
+	MSX_MATSUSHITA(config, "matsushita", 0);
 
 	msx_mb8877a(config);
 	msx_2_35_dd_drive(config);
@@ -6337,7 +6344,7 @@ MACHINE_CONFIG_START(msx2_state::phc23)
 	MCFG_MSX_LAYOUT_ROM("ext", 3, 0, 0, 1, "maincpu", 0x8000)
 	MCFG_MSX_LAYOUT_RAM("ram", 3, 2, 0, 4)  /* 64KB RAM */
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx2_cartlist(config);
 MACHINE_CONFIG_END
@@ -6365,7 +6372,7 @@ MACHINE_CONFIG_START(msx2_state::phc55fd2)
 	MCFG_MSX_LAYOUT_ROM("ext", 3, 1, 0, 1, "maincpu", 0x8000)
 	MCFG_MSX_LAYOUT_DISK1("disk", 3, 2, 1, 1, "maincpu", 0xc000)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx_wd2793_force_ready(config);
 	msx_2_35_dd_drive(config);
@@ -6403,7 +6410,7 @@ MACHINE_CONFIG_START(msx2_state::phc77)
 	MCFG_MSX_LAYOUT_DISK1("disk", 3, 2, 1, 1, "maincpu", 0xc000)
 	MCFG_MSX_LAYOUT_ROM("write", 3, 3, 1, 2, "maincpu", 0x10000)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx_wd2793_force_ready(config);
 	msx_1_35_dd_drive(config);
@@ -6527,7 +6534,7 @@ MACHINE_CONFIG_START(msx2_state::hbf1xd)
 	MCFG_MSX_LAYOUT_RAM_MM("ram_mm", 3, 3, 0x10000)   /* 64KB Mapper RAM */
 	MCFG_MSX_RAMIO_SET_BITS(0x80)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx_wd2793(config);
 	msx_1_35_dd_drive(config);
@@ -6708,7 +6715,7 @@ MACHINE_CONFIG_START(msx2_state::hbf700d)
 	MCFG_MSX_LAYOUT_RAM_MM("ram_mm", 3, 3, 0x40000)   /* 256KB Mapper RAM */
 	MCFG_MSX_RAMIO_SET_BITS(0x80)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx_wd2793(config);
 	msx_1_35_dd_drive(config);
@@ -6769,7 +6776,7 @@ MACHINE_CONFIG_START(msx2_state::hbf700p)
 	MCFG_MSX_LAYOUT_RAM_MM("ram_mm", 3, 3, 0x40000)   /* 256KB Mapper RAM */
 	MCFG_MSX_RAMIO_SET_BITS(0x80)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx_wd2793_force_ready(config);
 	msx_1_35_dd_drive(config);
@@ -6901,7 +6908,7 @@ MACHINE_CONFIG_START(msx2_state::hbf9p)
 	MCFG_MSX_LAYOUT_RAM_MM("ram_mm", 3, 2, 0x20000)   /* 128KB Mapper RAM */
 	MCFG_MSX_RAMIO_SET_BITS(0x80)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx2_cartlist(config);
 MACHINE_CONFIG_END
@@ -6927,7 +6934,7 @@ MACHINE_CONFIG_START(msx2_state::hbf9pr)
 	MCFG_MSX_LAYOUT_ROM("ext", 3, 0, 0, 1, "maincpu", 0x8000)
 	MCFG_MSX_LAYOUT_RAM_MM("ram_mm", 3, 2, 0x20000)   /* 128KB Mapper RAM */
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx2_cartlist(config);
 MACHINE_CONFIG_END
@@ -6956,7 +6963,7 @@ MACHINE_CONFIG_START(msx2_state::hbf9s)
 	MCFG_MSX_LAYOUT_RAM_MM("ram_mm", 3, 2, 0x20000)   /* 128KB Mapper RAM */
 	MCFG_MSX_RAMIO_SET_BITS(0x80)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx2_cartlist(config);
 MACHINE_CONFIG_END
@@ -7061,7 +7068,7 @@ MACHINE_CONFIG_START(msx2_state::tpc310)
 	MCFG_MSX_LAYOUT_ROM("acc", 3, 1, 1, 2, "maincpu", 0x14000)
 	MCFG_MSX_LAYOUT_DISK2("disk", 3, 2, 1, 1, "maincpu", 0xc000)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx_mb8877a(config);
 	msx_1_35_dd_drive(config);
@@ -7203,7 +7210,7 @@ MACHINE_CONFIG_START(msx2_state::hx23i)
 	MCFG_MSX_LAYOUT_ROM("ext", 3, 1, 0, 1, "maincpu", 0x8000)
 	MCFG_MSX_LAYOUT_ROM("word", 3, 3, 1, 2, "maincpu", 0xc000)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx2_cartlist(config);
 MACHINE_CONFIG_END
@@ -7235,7 +7242,7 @@ MACHINE_CONFIG_START(msx2_state::hx33)
 	MCFG_MSX_LAYOUT_ROM("ext", 3, 1, 0, 1, "maincpu", 0x8000)
 	MCFG_MSX_LAYOUT_ROM("firm", 3, 2, 1, 2, "maincpu", 0xc000)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx2_64kb_vram(config);
 
@@ -7272,7 +7279,7 @@ MACHINE_CONFIG_START(msx2_state::hx34)
 	MCFG_MSX_LAYOUT_DISK6("disk", 3, 2, 1, 1, "maincpu", 0xc000)
 	MCFG_MSX_LAYOUT_ROM("firm", 3, 3, 1, 2, "maincpu", 0x10000)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx_wd2793(config);
 	msx_1_35_dd_drive(config);
@@ -7308,7 +7315,7 @@ MACHINE_CONFIG_START(msx2_state::hx34i)
 	MCFG_MSX_LAYOUT_DISK6("disk", 3, 2, 1, 1, "maincpu", 0xc000)
 	MCFG_MSX_LAYOUT_ROM("firm", 3, 3, 1, 2, "maincpu", 0x10000)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx_wd2793(config);
 	msx_1_35_dd_drive(config);
@@ -7342,7 +7349,7 @@ MACHINE_CONFIG_START(msx2_state::fstm1)
 	MCFG_MSX_LAYOUT_ROM("desk1", 3, 2, 1, 2, "maincpu", 0xc000)
 	MCFG_MSX_LAYOUT_ROM("desk2", 3, 3, 1, 2, "maincpu", 0x14000)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx2_cartlist(config);
 MACHINE_CONFIG_END
@@ -7376,7 +7383,7 @@ MACHINE_CONFIG_START(msx2_state::victhc90)
 	MCFG_MSX_LAYOUT_CARTRIDGE("cartslot", 1, 0)
 	MCFG_MSX_LAYOUT_DISK1("disk", 3, 0, 1, 1, "maincpu", 0xc000)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx_wd2793_force_ready(config);
 	msx_1_35_dd_drive(config);
@@ -7414,7 +7421,7 @@ MACHINE_CONFIG_START(msx2_state::victhc95)
 	MCFG_MSX_LAYOUT_CARTRIDGE("cartslot", 1, 0)
 	MCFG_MSX_LAYOUT_DISK1("disk", 3, 0, 1, 1, "maincpu", 0xc000)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx_wd2793_force_ready(config);
 	msx_2_35_dd_drive(config);
@@ -7453,7 +7460,7 @@ MACHINE_CONFIG_START(msx2_state::victhc95a)
 	MCFG_MSX_LAYOUT_CARTRIDGE("cartslot", 1, 0)
 	MCFG_MSX_LAYOUT_DISK1("disk", 3, 0, 1, 1, "maincpu", 0xc000)
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx_wd2793_force_ready(config);
 	msx_2_35_dd_drive(config);
@@ -7950,10 +7957,10 @@ MACHINE_CONFIG_START(msx2_state::fsa1fx)
 	MCFG_MSX_LAYOUT_DISK3("disk", 3, 2, 1, 1, "maincpu", 0xc000)
 	MCFG_MSX_LAYOUT_ROM("cock", 3, 3, 1, 2, "maincpu", 0x18000)
 
-	MCFG_MSX_MATSUSHITA_ADD( "matsushita" )
-	MCFG_MSX_MATSUSHITA_TURBO_CB(WRITELINE(*this, msx2_state, turbo_w))
+	msx_matsushita_device &matsushita(MSX_MATSUSHITA(config, "matsushita", 0));
+	matsushita.turbo_callback().set(FUNC(msx2_state::turbo_w));
 
-	MCFG_MSX_SYSTEMFLAGS_ADD("sysflags", 0xff)
+	MSX_SYSTEMFLAGS(config, "sysflags", m_maincpu, 0xff);
 
 	msx_tc8566af(config);
 	msx_1_35_dd_drive(config);
@@ -7996,10 +8003,10 @@ MACHINE_CONFIG_START(msx2_state::fsa1wsx)
 	MCFG_MSX_LAYOUT_DISK3("disk", 3, 2, 1, 1, "maincpu", 0xc000)
 	MCFG_MSX_LAYOUT_PANASONIC08("firm", 3, 3, 0, 4, "maincpu", 0x1c000)
 
-	MCFG_MSX_MATSUSHITA_ADD( "matsushita" )
-	MCFG_MSX_MATSUSHITA_TURBO_CB(WRITELINE(*this, msx2_state, turbo_w))
+	msx_matsushita_device &matsushita(MSX_MATSUSHITA(config, "matsushita", 0));
+	matsushita.turbo_callback().set(FUNC(msx2_state::turbo_w));
 
-	MCFG_MSX_SYSTEMFLAGS_ADD("sysflags", 0xff)
+	MSX_SYSTEMFLAGS(config, "sysflags", m_maincpu, 0xff);
 
 	msx_ym2413(config);
 
@@ -8044,10 +8051,10 @@ MACHINE_CONFIG_START(msx2_state::fsa1wx)
 	MCFG_MSX_LAYOUT_DISK3("disk", 3, 2, 1, 1, "maincpu", 0xc000)
 	MCFG_MSX_LAYOUT_PANASONIC08("firm", 3, 3, 0, 4, "maincpu", 0x1c000)
 
-	MCFG_MSX_MATSUSHITA_ADD( "matsushita" )
-	MCFG_MSX_MATSUSHITA_TURBO_CB(WRITELINE(*this, msx2_state, turbo_w))
+	msx_matsushita_device &matsushita(MSX_MATSUSHITA(config, "matsushita", 0));
+	matsushita.turbo_callback().set(FUNC(msx2_state::turbo_w));
 
-	MCFG_MSX_SYSTEMFLAGS_ADD("sysflags", 0xff)
+	MSX_SYSTEMFLAGS(config, "sysflags", m_maincpu, 0xff);
 
 	msx_ym2413(config);
 
@@ -8090,10 +8097,10 @@ MACHINE_CONFIG_START(msx2_state::fsa1wxa)
 	MCFG_MSX_LAYOUT_DISK3("disk", 3, 2, 1, 1, "maincpu", 0xc000)
 	MCFG_MSX_LAYOUT_PANASONIC08("firm", 3, 3, 0, 4, "maincpu", 0x1c000)
 
-	MCFG_MSX_MATSUSHITA_ADD( "matsushita" )
-	MCFG_MSX_MATSUSHITA_TURBO_CB(WRITELINE(*this, msx2_state, turbo_w))
+	msx_matsushita_device &matsushita(MSX_MATSUSHITA(config, "matsushita", 0));
+	matsushita.turbo_callback().set(FUNC(msx2_state::turbo_w));
 
-	MCFG_MSX_SYSTEMFLAGS_ADD("sysflags", 0xff)
+	MSX_SYSTEMFLAGS(config, "sysflags", m_maincpu, 0xff);
 
 	msx_ym2413(config);
 
@@ -8130,7 +8137,7 @@ MACHINE_CONFIG_START(msx2_state::phc35j)
 	MCFG_MSX_LAYOUT_ROM("ext", 3, 1, 0, 1, "maincpu", 0x8000)
 	MCFG_MSX_LAYOUT_ROM("kdr", 3, 1, 1, 2, "maincpu", 0xc000)
 
-	MCFG_MSX_SYSTEMFLAGS_ADD("sysflags", 0xff)
+	MSX_SYSTEMFLAGS(config, "sysflags", m_maincpu, 0xff);
 
 	msx2_cartlist(config);
 MACHINE_CONFIG_END
@@ -8168,7 +8175,7 @@ MACHINE_CONFIG_START(msx2_state::phc70fd)
 	MCFG_MSX_LAYOUT_MUSIC("mus", 3, 3, 1, 1, "maincpu", 0x18000)
 	MCFG_MSX_LAYOUT_ROM("bas", 3, 3, 2, 1, "maincpu", 0x1c000)
 
-	MCFG_MSX_SYSTEMFLAGS_ADD("sysflags", 0xff)
+	MSX_SYSTEMFLAGS(config, "sysflags", m_maincpu, 0xff);
 
 	msx_ym2413(config);
 
@@ -8211,7 +8218,7 @@ MACHINE_CONFIG_START(msx2_state::phc70fd2)
 	MCFG_MSX_LAYOUT_MUSIC("mus", 3, 3, 1, 1, "maincpu", 0x18000)
 	MCFG_MSX_LAYOUT_ROM("bas", 3, 3, 2, 1, "maincpu", 0x1c000)
 
-	MCFG_MSX_SYSTEMFLAGS_ADD("sysflags", 0xff)
+	MSX_SYSTEMFLAGS(config, "sysflags", m_maincpu, 0xff);
 
 	msx_ym2413(config);
 
@@ -8256,9 +8263,9 @@ MACHINE_CONFIG_START(msx2_state::hbf1xdj)
 	MCFG_MSX_LAYOUT_DISK1("disk", 3, 2, 1, 1, "maincpu", 0xc000)
 	MCFG_MSX_LAYOUT_MUSIC("mus", 3, 3, 1, 1, "maincpu", 0x18000)
 
-	MCFG_MSX_SYSTEMFLAGS_ADD("sysflags", 0x00)
+	MSX_SYSTEMFLAGS(config, "sysflags", m_maincpu, 0x00);
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx_ym2413(config);
 
@@ -8303,9 +8310,9 @@ MACHINE_CONFIG_START(msx2_state::hbf1xv)
 	MCFG_MSX_LAYOUT_DISK1("disk", 3, 2, 1, 1, "maincpu", 0xc000)
 	MCFG_MSX_LAYOUT_MUSIC("mus", 3, 3, 1, 1, "maincpu", 0x18000)
 
-	MCFG_MSX_SYSTEMFLAGS_ADD("sysflags", 0x00)
+	MSX_SYSTEMFLAGS(config, "sysflags", m_maincpu, 0x00);
 
-	MCFG_MSX_S1985_ADD("s1985")
+	MSX_S1985(config, "s1985", 0);
 
 	msx_ym2413(config);
 
@@ -8340,7 +8347,7 @@ MACHINE_CONFIG_START(msx2_state::hbf9sp)
 	MCFG_MSX_LAYOUT_ROM("firm2", 3, 1, 1, 2, "maincpu", 0x10000)
 	MCFG_MSX_LAYOUT_RAM_MM("ram_mm", 3, 2, 0x10000)   /* 64KB?? Mapper RAM */
 
-	MCFG_MSX_SYSTEMFLAGS_ADD("sysflags", 0x00)
+	MSX_SYSTEMFLAGS(config, "sysflags", m_maincpu, 0x00);
 
 	msx2_cartlist(config);
 MACHINE_CONFIG_END
@@ -8378,7 +8385,7 @@ MACHINE_CONFIG_START(msx2_state::fsa1gt)
 	MCFG_MSX_LAYOUT_DISK4("dos", 3, 2, 1, 3, "maincpu", 0xc000)
 	MCFG_MSX_LAYOUT_ROM("firm", 3, 3, 0, 4, "maincpu", 0x6c000)
 
-	MCFG_MSX_SYSTEMFLAGS_ADD("sysflags", 0x00)
+	MSX_SYSTEMFLAGS(config, "sysflags", m_maincpu, 0x00);
 
 	msx_ym2413(config);
 
@@ -8421,7 +8428,7 @@ MACHINE_CONFIG_START(msx2_state::fsa1st)
 	MCFG_MSX_LAYOUT_DISK4("dos", 3, 2, 1, 3, "maincpu", 0xc000)
 	MCFG_MSX_LAYOUT_ROM("firm", 3, 3, 0, 4, "maincpu", 0x6c000)
 
-	MCFG_MSX_SYSTEMFLAGS_ADD("sysflags", 0x00)
+	MSX_SYSTEMFLAGS(config, "sysflags", m_maincpu, 0x00);
 
 	msx_ym2413(config);
 

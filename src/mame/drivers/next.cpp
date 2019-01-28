@@ -995,11 +995,11 @@ static void next_scsi_devices(device_slot_interface &device)
 
 void next_state::ncr5390(device_t *device)
 {
-	devcb_base *devcb;
-	(void)devcb;
-	MCFG_DEVICE_CLOCK(10000000)
-	MCFG_NCR5390_IRQ_HANDLER(WRITELINE(*this, next_state, scsi_irq))
-	MCFG_NCR5390_DRQ_HANDLER(WRITELINE(*this, next_state, scsi_drq))
+	ncr5390_device &adapter = downcast<ncr5390_device &>(*device);
+
+	adapter.set_clock(10000000);
+	adapter.irq_handler_cb().set(*this, FUNC(next_state::scsi_irq));
+	adapter.drq_handler_cb().set(*this, FUNC(next_state::scsi_drq));
 }
 
 MACHINE_CONFIG_START(next_state::next_base)
@@ -1016,15 +1016,15 @@ MACHINE_CONFIG_START(next_state::next_base)
 	// devices
 	MCFG_NSCSI_BUS_ADD("scsibus")
 
-	MCFG_DEVICE_ADD("rtc", MCCS1850, XTAL(32'768))
+	MCCS1850(config, rtc, XTAL(32'768));
 
 	SCC8530(config, scc, XTAL(25'000'000));
 	scc->intrq_callback().set(FUNC(next_state::scc_irq));
 
-	MCFG_DEVICE_ADD("keyboard", NEXTKBD, 0)
-	MCFG_NEXTKBD_INT_CHANGE_CALLBACK(WRITELINE(*this, next_state, keyboard_irq))
-	MCFG_NEXTKBD_INT_POWER_CALLBACK(WRITELINE(*this, next_state, power_irq))
-	MCFG_NEXTKBD_INT_NMI_CALLBACK(WRITELINE(*this, next_state, nmi_irq))
+	NEXTKBD(config, keyboard, 0);
+	keyboard->int_change_wr_callback().set(FUNC(next_state::keyboard_irq));
+	keyboard->int_power_wr_callback().set(FUNC(next_state::power_irq));
+	keyboard->int_nmi_wr_callback().set(FUNC(next_state::nmi_irq));
 
 	MCFG_NSCSI_ADD("scsibus:0", next_scsi_devices, "harddisk", false)
 	MCFG_NSCSI_ADD("scsibus:1", next_scsi_devices, "cdrom", false)
@@ -1042,9 +1042,9 @@ MACHINE_CONFIG_START(next_state::next_base)
 	net->tx_drq().set(FUNC(next_state::net_tx_drq));
 	net->rx_drq().set(FUNC(next_state::net_rx_drq));
 
-	MCFG_DEVICE_ADD("mo", NEXTMO, 0)
-	MCFG_NEXTMO_IRQ_CALLBACK(WRITELINE(*this, next_state, mo_irq))
-	MCFG_NEXTMO_DRQ_CALLBACK(WRITELINE(*this, next_state, mo_drq))
+	NEXTMO(config, mo, 0);
+	mo->irq_wr_callback().set(FUNC(next_state::mo_irq));
+	mo->drq_wr_callback().set(FUNC(next_state::mo_drq));
 MACHINE_CONFIG_END
 
 MACHINE_CONFIG_START(next_state::next)

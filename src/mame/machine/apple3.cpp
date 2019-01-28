@@ -255,10 +255,11 @@ READ8_MEMBER(apple3_state::apple3_c0xx_r)
 
 		case 0xda:
 //          printf("ENCWRT off\n");
+			m_charwrt = false;
 			break;
 
 		case 0xdb:
-			apple3_write_charmem();
+			m_charwrt = true;
 //          printf("ENCWRT on (write_charmem (r))\n");
 			break;
 
@@ -434,10 +435,11 @@ WRITE8_MEMBER(apple3_state::apple3_c0xx_w)
 
 		case 0xda:
 //          printf("ENCWRT off\n");
+			m_charwrt = false;
 			break;
 
 		case 0xdb:
-			apple3_write_charmem();
+			m_charwrt = true;
 //          printf("ENCWRT on (write_charmem (w))\n");
 			break;
 
@@ -470,6 +472,14 @@ WRITE8_MEMBER(apple3_state::apple3_c0xx_w)
 		case 0xf3:
 			m_acia->write(space, offset & 0x03, data);
 			break;
+	}
+}
+
+WRITE_LINE_MEMBER(apple3_state::vbl_w)
+{
+	if ((state) && (m_charwrt))
+	{
+		apple3_write_charmem();
 	}
 }
 
@@ -631,6 +641,7 @@ void apple3_state::machine_reset()
 	m_cnxx_slot = -1;
 	m_analog_sel = 0;
 	m_ramp_active = false;
+	m_charwrt = false;
 
 	m_fdc->set_floppies_4(floppy0, floppy1, floppy2, floppy3);
 
@@ -727,6 +738,7 @@ void apple3_state::init_apple3()
 	save_item(NAME(m_vb));
 	save_item(NAME(m_vc));
 	save_item(NAME(m_smoothscr));
+	save_item(NAME(m_charwrt));
 }
 
 void apple3_state::device_post_load()

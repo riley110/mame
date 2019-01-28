@@ -135,6 +135,7 @@
 #include "cpu/m68000/m68000.h"
 #include "formats/mfi_dsk.h"
 #include "formats/pc_dsk.h"
+#include "imagedev/floppy.h"
 #include "machine/ncr539x.h"
 #include "machine/timekpr.h"
 #include "machine/timer.h"
@@ -622,14 +623,13 @@ MACHINE_CONFIG_START(sun3x_state::sun3_80)
 	MCFG_SCSIDEV_ADD("scsi:" SCSI_PORT_DEVICE1, "harddisk", SCSIHD, SCSI_ID_6)
 	MCFG_SCSIDEV_ADD("scsi:" SCSI_PORT_DEVICE2, "harddisk", SCSIHD, SCSI_ID_5)
 
-	MCFG_DEVICE_ADD(ESP_TAG, NCR539X, 20000000/2)
-	MCFG_LEGACY_SCSI_PORT("scsi")
+	NCR539X(config, ESP_TAG, 20000000/2).set_scsi_port("scsi");
 
 	N82077AA(config, m_fdc, n82077aa_device::MODE_PS2);
 	MCFG_FLOPPY_DRIVE_ADD("fdc:0", sun_floppies, "35hd", sun3x_state::floppy_formats)
 
 	// the timekeeper has no interrupt output, so 3/80 includes a dedicated timer circuit
-	MCFG_TIMER_DRIVER_ADD_PERIODIC("timer", sun3x_state, sun380_timer, attotime::from_hz(100))
+	TIMER(config, "timer").configure_periodic(FUNC(sun3x_state::sun380_timer), attotime::from_hz(100));
 
 	MCFG_SCREEN_ADD("bwtwo", RASTER)
 	MCFG_SCREEN_UPDATE_DRIVER(sun3x_state, bw2_update)

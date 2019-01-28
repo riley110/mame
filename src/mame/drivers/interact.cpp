@@ -154,15 +154,15 @@ MACHINE_CONFIG_START(interact_state::interact)
 
 	hector_audio(config);
 
-	MCFG_CASSETTE_ADD("cassette")
-	MCFG_CASSETTE_FORMATS(hector_cassette_formats)
-	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_STOPPED | CASSETTE_MASK_SPEAKER)
-	MCFG_CASSETTE_INTERFACE("interact_cass")
+	CASSETTE(config, m_cassette);
+	m_cassette->set_formats(hector_cassette_formats);
+	m_cassette->set_default_state(CASSETTE_STOPPED | CASSETTE_MASK_SPEAKER);
+	m_cassette->set_interface("interact_cass");
 
 	MCFG_SOFTWARE_LIST_ADD("cass_list","interact")
 
 	/* printer */
-	MCFG_DEVICE_ADD("printer", PRINTER, 0)
+	PRINTER(config, m_printer, 0);
 
 MACHINE_CONFIG_END
 
@@ -191,16 +191,16 @@ MACHINE_CONFIG_START(interact_state::hector1)
 
 	hector_audio(config);
 
-	MCFG_CASSETTE_ADD("cassette")
-	MCFG_CASSETTE_FORMATS(hector_cassette_formats)
-	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_STOPPED | CASSETTE_MASK_SPEAKER)
-	MCFG_CASSETTE_INTERFACE("interact_cass")
+	CASSETTE(config, m_cassette);
+	m_cassette->set_formats(hector_cassette_formats);
+	m_cassette->set_default_state(CASSETTE_STOPPED | CASSETTE_MASK_SPEAKER);
+	m_cassette->set_interface("interact_cass");
 
 	MCFG_SOFTWARE_LIST_ADD("cass_list","hector1")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
 
 	/* printer */
-	MCFG_DEVICE_ADD("printer", PRINTER, 0)
+	PRINTER(config, m_printer, 0);
 
 MACHINE_CONFIG_END
 

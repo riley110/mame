@@ -14,6 +14,7 @@
 
 #include "cpu/m6502/m6502.h"
 #include "cpu/m6502/m65sc02.h"
+#include "imagedev/floppy.h"
 #include "machine/74259.h"
 #include "machine/6522via.h"
 #include "machine/6850acia.h"
@@ -37,6 +38,7 @@
 #include "bus/rs232/rs232.h"
 #include "bus/centronics/ctronics.h"
 #include "bus/econet/econet.h"
+#include "bus/bbc/rom/slot.h"
 #include "bus/bbc/fdc/fdc.h"
 #include "bus/bbc/analogue/analogue.h"
 #include "bus/bbc/1mhzbus/1mhzbus.h"
@@ -100,9 +102,6 @@ public:
 		, m_bank1(*this, "bank1")
 		, m_bank2(*this, "bank2")
 		, m_bank3(*this, "bank3")
-		, m_bank4(*this, "bank4")
-		, m_bank5(*this, "bank5")
-		, m_bank6(*this, "bank6")
 		, m_bankdev(*this, "bankdev")
 		, m_bbcconfig(*this, "BBCCONFIG")
 	{ }
@@ -118,18 +117,20 @@ public:
 	DECLARE_FLOPPY_FORMATS(floppy_formats);
 
 	DECLARE_WRITE8_MEMBER(bbc_romsel_w);
-	DECLARE_WRITE8_MEMBER(bbc_bank4_w);
+	DECLARE_READ8_MEMBER(bbc_paged_r);
+	DECLARE_WRITE8_MEMBER(bbc_paged_w);
 	DECLARE_READ8_MEMBER(bbcbp_fetch_r);
 	DECLARE_WRITE8_MEMBER(bbcbp_romsel_w);
-	DECLARE_WRITE8_MEMBER(bbcbp_bank4_w);
-	DECLARE_WRITE8_MEMBER(bbcbp_bank5_w);
+	DECLARE_READ8_MEMBER(bbcbp_paged_r);
+	DECLARE_WRITE8_MEMBER(bbcbp_paged_w);
 	DECLARE_READ8_MEMBER(bbcm_fetch_r);
 	DECLARE_READ8_MEMBER(bbcm_acccon_r);
 	DECLARE_WRITE8_MEMBER(bbcm_acccon_w);
 	DECLARE_WRITE8_MEMBER(bbcm_romsel_w);
-	DECLARE_WRITE8_MEMBER(bbcm_bank4_w);
-	DECLARE_WRITE8_MEMBER(bbcm_bank5_w);
-	DECLARE_WRITE8_MEMBER(bbcm_bank6_w);
+	DECLARE_READ8_MEMBER(bbcm_paged_r);
+	DECLARE_WRITE8_MEMBER(bbcm_paged_w);
+	DECLARE_READ8_MEMBER(bbcm_hazel_r);
+	DECLARE_WRITE8_MEMBER(bbcm_hazel_w);
 	DECLARE_READ8_MEMBER(bbcm_tube_r);
 	DECLARE_WRITE8_MEMBER(bbcm_tube_w);
 	DECLARE_WRITE8_MEMBER(bbcbp_drive_control_w);
@@ -141,7 +142,7 @@ public:
 
 	DECLARE_VIDEO_START(bbc);
 
-	DECLARE_PALETTE_INIT(bbc);
+	void bbc_colours(palette_device &palette) const;
 	INTERRUPT_GEN_MEMBER(bbcb_keyscan);
 	TIMER_CALLBACK_MEMBER(tape_timer_cb);
 	TIMER_CALLBACK_MEMBER(reset_timer_cb);
@@ -182,35 +183,9 @@ public:
 	int get_analogue_input(int channel_number);
 	void upd7002_eoc(int data);
 
-	void setup_banks(memory_bank *membank, uint32_t shift);
-
-	image_init_result load_rom16(device_image_interface &image, generic_slot_device *slot);
-	DECLARE_DEVICE_IMAGE_LOAD_MEMBER(rom0) { return load_rom16(image, m_rom[0]); }
-	DECLARE_DEVICE_IMAGE_LOAD_MEMBER(rom1) { return load_rom16(image, m_rom[1]); }
-	DECLARE_DEVICE_IMAGE_LOAD_MEMBER(rom2) { return load_rom16(image, m_rom[2]); }
-	DECLARE_DEVICE_IMAGE_LOAD_MEMBER(rom3) { return load_rom16(image, m_rom[3]); }
-	DECLARE_DEVICE_IMAGE_LOAD_MEMBER(rom4) { return load_rom16(image, m_rom[4]); }
-	DECLARE_DEVICE_IMAGE_LOAD_MEMBER(rom5) { return load_rom16(image, m_rom[5]); }
-	DECLARE_DEVICE_IMAGE_LOAD_MEMBER(rom6) { return load_rom16(image, m_rom[6]); }
-	DECLARE_DEVICE_IMAGE_LOAD_MEMBER(rom7) { return load_rom16(image, m_rom[7]); }
-	DECLARE_DEVICE_IMAGE_LOAD_MEMBER(rom8) { return load_rom16(image, m_rom[8]); }
-	DECLARE_DEVICE_IMAGE_LOAD_MEMBER(rom9) { return load_rom16(image, m_rom[9]); }
-	DECLARE_DEVICE_IMAGE_LOAD_MEMBER(roma) { return load_rom16(image, m_rom[10]); }
-	DECLARE_DEVICE_IMAGE_LOAD_MEMBER(romb) { return load_rom16(image, m_rom[11]); }
-	DECLARE_DEVICE_IMAGE_LOAD_MEMBER(romc) { return load_rom16(image, m_rom[12]); }
-	DECLARE_DEVICE_IMAGE_LOAD_MEMBER(romd) { return load_rom16(image, m_rom[13]); }
-	DECLARE_DEVICE_IMAGE_LOAD_MEMBER(rome) { return load_rom16(image, m_rom[14]); }
-	DECLARE_DEVICE_IMAGE_LOAD_MEMBER(romf) { return load_rom16(image, m_rom[15]); }
-
-	image_init_result load_rom32(device_image_interface &image, generic_slot_device *slot);
-	DECLARE_DEVICE_IMAGE_LOAD_MEMBER(rom01) { return load_rom32(image, m_rom[0]); }
-	DECLARE_DEVICE_IMAGE_LOAD_MEMBER(rom23) { return load_rom32(image, m_rom[2]); }
-	DECLARE_DEVICE_IMAGE_LOAD_MEMBER(rom45) { return load_rom32(image, m_rom[4]); }
-	DECLARE_DEVICE_IMAGE_LOAD_MEMBER(rom67) { return load_rom32(image, m_rom[6]); }
-	DECLARE_DEVICE_IMAGE_LOAD_MEMBER(rom89) { return load_rom32(image, m_rom[8]); }
-	DECLARE_DEVICE_IMAGE_LOAD_MEMBER(romab) { return load_rom32(image, m_rom[10]); }
-	DECLARE_DEVICE_IMAGE_LOAD_MEMBER(romcd) { return load_rom32(image, m_rom[12]); }
-	DECLARE_DEVICE_IMAGE_LOAD_MEMBER(romef) { return load_rom32(image, m_rom[14]); }
+	std::string get_rom_name(uint8_t* header);
+	void insert_device_rom(memory_region *rom);
+	void setup_device_roms();
 
 	image_init_result load_cart(device_image_interface &image, generic_slot_device *slot);
 	DECLARE_DEVICE_IMAGE_LOAD_MEMBER(cart1) { return load_cart(image, m_cart[0]); }
@@ -277,7 +252,7 @@ protected:
 	optional_device<i8271_device> m_i8271;
 	optional_device<wd1770_device> m_wd1770;
 	optional_device<wd1772_device> m_wd1772;
-	optional_device_array<generic_slot_device, 16> m_rom;
+	optional_device_array<bbc_romslot_device, 16> m_rom;
 	optional_device_array<generic_slot_device, 2> m_cart;
 
 	required_memory_region m_region_mos;
@@ -285,21 +260,14 @@ protected:
 	required_memory_bank m_bank1; // bbca bbcb bbcbp bbcbp128 bbcm
 	optional_memory_bank m_bank2; //           bbcbp bbcbp128 bbcm
 	optional_memory_bank m_bank3; // bbca bbcb
-	required_memory_bank m_bank4; // bbca bbcb bbcbp bbcbp128 bbcm
-	optional_memory_bank m_bank5; //           bbcbp bbcbp128 bbcm
-	required_memory_bank m_bank6; // bbca bbcb bbcbp bbcbp128 bbcm
 	optional_device<address_map_bank_device> m_bankdev; //    bbcm
 	optional_ioport m_bbcconfig;
 
 	int m_monitortype;      // monitor type (colour, green, amber)
 	int m_swramtype;        // this stores the setting for the SWRAM type being used
-
 	int m_swrbank;          // This is the latch that holds the sideways ROM bank to read
-	bool m_swrbank_ram;     // Does ROM bank contain RAM
-
 	int m_paged_ram;        // BBC B+ memory handling
 	int m_vdusel;           // BBC B+ memory handling
-
 	bool m_lk18_ic41_paged_rom;  // BBC Master Paged ROM/RAM select IC41
 	bool m_lk19_ic37_paged_rom;  // BBC Master Paged ROM/RAM select IC37
 
