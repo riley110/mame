@@ -2099,6 +2099,7 @@ MACHINE_CONFIG_START(st_state::st)
 	MCFG_SOFTWARE_LIST_ADD("mags_flop_list", "st_mags")
 	MCFG_SOFTWARE_LIST_ADD("pd_flop_list", "st_pd")
 	MCFG_SOFTWARE_LIST_ADD("sps_flop_list", "st_sps")
+	MCFG_SOFTWARE_LIST_ADD("stx_flop_list", "st_stx")
 	MCFG_SOFTWARE_LIST_ADD("tos_flop_list", "st_tos")
 MACHINE_CONFIG_END
 
@@ -2199,6 +2200,7 @@ MACHINE_CONFIG_START(megast_state::megast)
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("mags_flop_list", "st_mags")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("pd_flop_list", "st_pd")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("sps_flop_list", "st_sps")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("stx_flop_list", "st_stx")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("tos_flop_list", "st_tos")
 MACHINE_CONFIG_END
 
@@ -2307,6 +2309,7 @@ MACHINE_CONFIG_START(ste_state::ste)
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("mags_flop_list", "st_mags")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("pd_flop_list", "st_pd")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("sps_flop_list", "st_sps")
+	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("stx_flop_list", "st_stx")
 	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("tos_flop_list", "st_tos")
 MACHINE_CONFIG_END
 
