@@ -92,7 +92,7 @@
 	</software>
 
 	<software name="apba" cloneof="apb">
-		<description>APB - All Points Bulletin</description>
+		<description>APB - All Points Bulletin (Alt)</description>
 		<year>1989</year>
 		<publisher>Tengen</publisher>
 
@@ -1909,7 +1909,7 @@
 				<rom name="captive (1990)(mindscape)(disk 1 of 2).stx" size="1792042" crc="f36895cb" sha1="7a61a89db48c81113443723faa82e5485e588ce3" offset="0x0000" />
 			</dataarea>
 		</part>
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="1496248">
 				<rom name="captive (1990)(mindscape)(disk 2 of 2).stx" size="1496248" crc="91036bf2" sha1="d4d8fa419c9008955d6a9408213b0e2301c9a7ea" offset="0x0000" />
 			</dataarea>
@@ -1926,7 +1926,6 @@
 				<rom name="carl lewis challenge, the (1992)(psygnosis)(disk 1 of 2).stx" size="762896" crc="eef1aaa8" sha1="c22d68cf32b652318517a13abe7438bdfdfb7fe9" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
 		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="1153456">
 				<rom name="carl lewis challenge, the (1992)(psygnosis)(disk 2 of 2).stx" size="1153456" crc="614972ed" sha1="2d28b7c88dafb71ea11520a7672166559d5cb6c3" offset="0x0000" />
@@ -2837,7 +2836,7 @@
 	</software>
 
 	<!-- Doesn't work with TOS 1.06 or later -->
-	<software name="">
+	<software name="dejavu">
 		<description>Deja Vu</description>
 		<year>1987</year>
 		<publisher>ICOM</publisher>
@@ -2912,7 +2911,7 @@
 		</part>
 	</software>
 
-<!--
+	<!--
 	<software name="">
 		<description>Disc (1990)(Loriciel)</description>
 		<year>198?</year>
