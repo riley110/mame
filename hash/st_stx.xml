@@ -2911,11 +2911,10 @@
 		</part>
 	</software>
 
-	<!--
-	<software name="">
-		<description>Disc (1990)(Loriciel)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="disc">
+		<description>Disc</description>
+		<year>1990</year>
+		<publisher>Loriciel</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1876630">
@@ -2924,10 +2923,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Disc (1990)(Loriciel)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="disca" cloneof="disc">
+		<description>Disc (Alt)</description>
+		<year>1990</year>
+		<publisher>Loriciel</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1904102">
@@ -2936,46 +2935,44 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dive Bomber (1988)(Gremlin)(Disk 1 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="divebomb">
+		<description>Dive Bomber</description>
+		<year>1988</year>
+		<publisher>Gremlin</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="412112">
 				<rom name="dive bomber (1988)(gremlin)(disk 1 of 2).stx" size="412112" crc="99b50346" sha1="68ca6509f63ecd10829efd41bbbe2b899e3999f0" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Dive Bomber (1988)(Gremlin)(Disk 1 of 2)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="424752">
-				<rom name="dive bomber (1988)(gremlin)(disk 1 of 2)[a].stx" size="424752" crc="13bcbc70" sha1="366719718c7536670aaea0e3957f1ae8174a7058" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Dive Bomber (1988)(Gremlin)(Disk 2 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="423696">
 				<rom name="dive bomber (1988)(gremlin)(disk 2 of 2).stx" size="423696" crc="b228bb05" sha1="49df30193c536d3d6c70669508f3e2370db0d2ff" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Division One 92 (1992)(Midnight Oil)(GB)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="divebomba" cloneof="divebomb">
+		<description>Dive Bomber (Alt)</description>
+		<year>1988</year>
+		<publisher>Gremlin</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="424752">
+				<rom name="dive bomber (1988)(gremlin)(disk 1 of 2)[a].stx" size="424752" crc="13bcbc70" sha1="366719718c7536670aaea0e3957f1ae8174a7058" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="423696">
+				<rom name="dive bomber (1988)(gremlin)(disk 2 of 2).stx" size="423696" crc="b228bb05" sha1="49df30193c536d3d6c70669508f3e2370db0d2ff" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="divone92">
+		<description>Division One 92</description>
+		<year>1992</year>
+		<publisher>Midnight Oil</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="896260">
@@ -2984,10 +2981,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dizzy Panic (1992)(Codemasters)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dizzyp">
+		<description>Dizzy Panic</description>
+		<year>1992</year>
+		<publisher>Codemasters</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="988520">
@@ -2996,34 +2993,28 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dizzy Wizard (1987)(Diamond)(Disk 1 of 2)[manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<!-- manual protection -->
+	<software name="dizzyw">
+		<description>Dizzy Wizard</description>
+		<year>1987</year>
+		<publisher>Diamond</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="884400">
 				<rom name="dizzy wizard (1987)(diamond)(disk 1 of 2)[manual protection].stx" size="884400" crc="1eac3744" sha1="e958391041ddd0ebd8ebe90eacaed24e0b2986e5" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Dizzy Wizard (1987)(Diamond)(Disk 2 of 2)[manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="884352">
 				<rom name="dizzy wizard (1987)(diamond)(disk 2 of 2)[manual protection].stx" size="884352" crc="ae7009c9" sha1="280125a56066ea0fe8a91618b71832624a8a252e" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Do! Run Run (1990)(Electrocoin)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dorunrun">
+		<description>Do! Run Run</description>
+		<year>1990</year>
+		<publisher>Electrocoin</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1102070">
@@ -3032,58 +3023,44 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Doctor Doom's Revenge (1989)(Paragon)(Disk 1 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="docdoom">
+		<description>Doctor Doom's Revenge</description>
+		<year>1989</year>
+		<publisher>Paragon</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="942154">
 				<rom name="doctor doom's revenge (1989)(paragon)(disk 1 of 2).stx" size="942154" crc="3820d79d" sha1="7d59bcacb99b8af831f2dfaa1018da1f8fea4473" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Doctor Doom's Revenge (1989)(Paragon)(Disk 2 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="926664">
 				<rom name="doctor doom's revenge (1989)(paragon)(disk 2 of 2).stx" size="926664" crc="82f81e35" sha1="1493e0c3da17d2f3b4ddbc1141aed535e52f1738" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dominium (1992)(Microids)(fr)(Disk 1 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dominium">
+		<description>Dominium (Fra)</description>
+		<year>1992</year>
+		<publisher>Microids</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1765684">
 				<rom name="dominium (1992)(microids)(fr)(disk 1 of 2).stx" size="1765684" crc="a483b6d2" sha1="4366ac9547b68e3d4b8419c19b471b364a23069d" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Dominium (1992)(Microids)(fr)(Disk 2 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="1764728">
 				<rom name="dominium (1992)(microids)(fr)(disk 2 of 2).stx" size="1764728" crc="67340b50" sha1="eb05da92849c7b820ab571c3cdfebccc5701d7b9" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Donald Duck's Playground (1986)(Sierra)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dduckpg">
+		<description>Donald Duck's Playground</description>
+		<year>1986</year>
+		<publisher>Sierra</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="376704">
@@ -3092,214 +3069,147 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Double Dragon (1988)(Melbourne House)(Disk 1 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="doubledr">
+		<description>Double Dragon</description>
+		<year>1988</year>
+		<publisher>Melbourne House</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="429152">
 				<rom name="double dragon (1988)(melbourne house)(disk 1 of 2).stx" size="429152" crc="5c3c95d3" sha1="f1389c2fce2b55cef97e988fe3693bdf716d48a0" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Double Dragon (1988)(Melbourne House)(Disk 1 of 2)[a2]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="937788">
-				<rom name="double dragon (1988)(melbourne house)(disk 1 of 2)[a2].stx" size="937788" crc="7424e0ff" sha1="8f707f2b78b5483f51df4d9028f7f43057bdb852" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Double Dragon (1988)(Melbourne House)(Disk 1 of 2)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="424818">
-				<rom name="double dragon (1988)(melbourne house)(disk 1 of 2)[a].stx" size="424818" crc="960a8b5f" sha1="e00fcee9f24ef6b837374cf7708f7a31be5766c1" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Double Dragon (1988)(Melbourne House)(Disk 1 of 2)[m highscore table]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="924778">
-				<rom name="double dragon (1988)(melbourne house)(disk 1 of 2)[m highscore table].stx" size="924778" crc="014ce552" sha1="d7e0dfaeeb5553ecb0d6d766ac9fa2438e6d5cb3" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Double Dragon (1988)(Melbourne House)(Disk 1 of 2)[m2 highscore table]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="925294">
-				<rom name="double dragon (1988)(melbourne house)(disk 1 of 2)[m2 highscore table].stx" size="925294" crc="7aa3213e" sha1="c12651e2966f424408168590e8dd47bebf5deacf" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Double Dragon (1988)(Melbourne House)(Disk 2 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="429152">
 				<rom name="double dragon (1988)(melbourne house)(disk 2 of 2).stx" size="429152" crc="ce0b75a8" sha1="39bdd3c4654b285ac19aa382d6e868837e2efd0e" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Double Dragon (1988)(Melbourne House)(Disk 2 of 2)[a2]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="doubledra" cloneof="doubledr">
+		<description>Double Dragon (Alt)</description>
+		<year>1988</year>
+		<publisher>Melbourne House</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="937252">
-				<rom name="double dragon (1988)(melbourne house)(disk 2 of 2)[a2].stx" size="937252" crc="2cb7fbcd" sha1="59ba448c1c4e9dd033dfafd0fc0811429dae5ec8" offset="0x0000" />
+			<dataarea name="flop" size="424818">
+				<rom name="double dragon (1988)(melbourne house)(disk 1 of 2)[a].stx" size="424818" crc="960a8b5f" sha1="e00fcee9f24ef6b837374cf7708f7a31be5766c1" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Double Dragon (1988)(Melbourne House)(Disk 2 of 2)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="435396">
 				<rom name="double dragon (1988)(melbourne house)(disk 2 of 2)[a].stx" size="435396" crc="0b320bcd" sha1="f00525f1d2927f8cd1b969441e961588dea95c70" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Double Dragon (1988)(Melbourne House)(Disk 2 of 2)[m highscore table]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="doubledrb" cloneof="doubledr">
+		<description>Double Dragon (Alt 2)</description>
+		<year>1988</year>
+		<publisher>Melbourne House</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="937788">
+				<rom name="double dragon (1988)(melbourne house)(disk 1 of 2)[a2].stx" size="937788" crc="7424e0ff" sha1="8f707f2b78b5483f51df4d9028f7f43057bdb852" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="937252">
+				<rom name="double dragon (1988)(melbourne house)(disk 2 of 2)[a2].stx" size="937252" crc="2cb7fbcd" sha1="59ba448c1c4e9dd033dfafd0fc0811429dae5ec8" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="doubledrc" cloneof="doubledr">
+		<description>Double Dragon (Alt 3)</description>
+		<year>1988</year>
+		<publisher>Melbourne House</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="924778">
+				<rom name="double dragon (1988)(melbourne house)(disk 1 of 2)[m highscore table].stx" size="924778" crc="014ce552" sha1="d7e0dfaeeb5553ecb0d6d766ac9fa2438e6d5cb3" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="925320">
 				<rom name="double dragon (1988)(melbourne house)(disk 2 of 2)[m highscore table].stx" size="925320" crc="74dbae23" sha1="520ff0e611ca37ad33f648d4cea3f0af506981ae" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Double Dragon (1988)(Melbourne House)(Disk 2 of 2)[m2 highscore table]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="doubledrd" cloneof="doubledr">
+		<description>Double Dragon (Alt 4)</description>
+		<year>1988</year>
+		<publisher>Melbourne House</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="925294">
+				<rom name="double dragon (1988)(melbourne house)(disk 1 of 2)[m2 highscore table].stx" size="925294" crc="7aa3213e" sha1="c12651e2966f424408168590e8dd47bebf5deacf" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="924868">
 				<rom name="double dragon (1988)(melbourne house)(disk 2 of 2)[m2 highscore table].stx" size="924868" crc="0f8148ac" sha1="a739e85998be1f711e9c52c7887cb64752e5d5a5" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Double Dragon II - The Revenge (1989)(Tradewest)(Disk 1 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="doubled2">
+		<description>Double Dragon II - The Revenge</description>
+		<year>1989</year>
+		<publisher>Tradewest</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1852770">
 				<rom name="double dragon ii - the revenge (1989)(tradewest)(disk 1 of 2).stx" size="1852770" crc="8770abd0" sha1="adf563defc94bca2d9aea7e95f85c53f43cdf180" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Double Dragon II - The Revenge (1989)(Tradewest)(Disk 1 of 2)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="849372">
-				<rom name="double dragon ii - the revenge (1989)(tradewest)(disk 1 of 2)[a].stx" size="849372" crc="5cda5f42" sha1="3dc6ea8eed1e7194908a802e0c1ff2bcca81fcb8" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Double Dragon II - The Revenge (1989)(Tradewest)(Disk 2 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="925386">
 				<rom name="double dragon ii - the revenge (1989)(tradewest)(disk 2 of 2).stx" size="925386" crc="f177c46d" sha1="eb31abd4548c0e136fd04c457af0491b146ca2b0" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Double Dragon II - The Revenge (1989)(Tradewest)(Disk 2 of 2)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="doubled2a" cloneof="doubled2">
+		<description>Double Dragon II - The Revenge (Alt)</description>
+		<year>1989</year>
+		<publisher>Tradewest</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="849372">
+				<rom name="double dragon ii - the revenge (1989)(tradewest)(disk 1 of 2)[a].stx" size="849372" crc="5cda5f42" sha1="3dc6ea8eed1e7194908a802e0c1ff2bcca81fcb8" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="424536">
 				<rom name="double dragon ii - the revenge (1989)(tradewest)(disk 2 of 2)[a].stx" size="424536" crc="b5e5eab5" sha1="6f5bf7141f64f4976deebc080a446eac6f13f518" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dragon Breed (1989)(Activision)(Disk 1 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dgnbreed">
+		<description>Dragon Breed</description>
+		<year>1989</year>
+		<publisher>Activision</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1853386">
 				<rom name="dragon breed (1989)(activision)(disk 1 of 2).stx" size="1853386" crc="1b78b5f8" sha1="2e209a4489b80e2ee3c43332f04cccf4f3dc99ee" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Dragon Breed (1989)(Activision)(Disk 2 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="1851482">
 				<rom name="dragon breed (1989)(activision)(disk 2 of 2).stx" size="1851482" crc="c2fb8782" sha1="00bd66633b99c7009dfc7394cd8550238a040215" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dragon Ninja (1988)(Imagine)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="847376">
-				<rom name="dragon ninja (1988)(imagine)[a].stx" size="847376" crc="5e1785cf" sha1="4529e78f865651f1efdfca81ca7f41cef1c948c3" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Dragon Ninja (1988)(Imagine)[don't work with TOS 1.06 or later]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<!-- Doesn't work with TOS 1.06 or later -->
+	<software name="dgnninja">
+		<description>Dragon Ninja</description>
+		<year>1988</year>
+		<publisher>Imagine</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1857850">
@@ -3308,358 +3218,233 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dragon's Lair (1989)(ReadySoft)(Disk 1 of 4)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<!-- Doesn't work with TOS 1.06 or later -->
+	<software name="dgnninjaa" cloneof="dgnninja">
+		<description>Dragon Ninja (Alt)</description>
+		<year>1988</year>
+		<publisher>Imagine</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="847376">
+				<rom name="dragon ninja (1988)(imagine)[a].stx" size="847376" crc="5e1785cf" sha1="4529e78f865651f1efdfca81ca7f41cef1c948c3" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dlair">
+		<description>Dragon's Lair</description>
+		<year>1989</year>
+		<publisher>ReadySoft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="998816">
 				<rom name="dragon's lair (1989)(readysoft)(disk 1 of 4).stx" size="998816" crc="7b5376cd" sha1="75f9b087328235d2c19209a399b0a4da71cebedc" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Dragon's Lair (1989)(ReadySoft)(Disk 1 of 4)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="998816">
-				<rom name="dragon's lair (1989)(readysoft)(disk 1 of 4)[a].stx" size="998816" crc="53fc52d9" sha1="648b2a8c125fbf8aa13a729209e6487ab773480d" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Dragon's Lair (1989)(ReadySoft)(Disk 2 of 4)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="1000976">
 				<rom name="dragon's lair (1989)(readysoft)(disk 2 of 4).stx" size="1000976" crc="4c35fb2b" sha1="00b9ecd84a7af7b59068831c9d81671eb7cab74d" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Dragon's Lair (1989)(ReadySoft)(Disk 2 of 4)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1000976">
-				<rom name="dragon's lair (1989)(readysoft)(disk 2 of 4)[a].stx" size="1000976" crc="f4086670" sha1="801abfc3a21c81a9f6ab66b49552f5085c9894f8" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Dragon's Lair (1989)(ReadySoft)(Disk 3 of 4)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop3" interface="floppy_3_5">
 			<dataarea name="flop" size="1000976">
 				<rom name="dragon's lair (1989)(readysoft)(disk 3 of 4).stx" size="1000976" crc="1be101b8" sha1="65e7d31777d6a6d36a256d9b9cfe5c51e3573bc0" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Dragon's Lair (1989)(ReadySoft)(Disk 3 of 4)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1000976">
-				<rom name="dragon's lair (1989)(readysoft)(disk 3 of 4)[a].stx" size="1000976" crc="cd3e1b34" sha1="82721fd5df8cf6b3b0f16212842b439208cd69a6" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Dragon's Lair (1989)(ReadySoft)(Disk 4 of 4)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop4" interface="floppy_3_5">
 			<dataarea name="flop" size="1000976">
 				<rom name="dragon's lair (1989)(readysoft)(disk 4 of 4).stx" size="1000976" crc="f66f6d45" sha1="71694aceb56bffa86f419f9f833099f755d0b241" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dragon's Lair (1989)(ReadySoft)(Disk 4 of 4)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dlaira" cloneof="dlair">
+		<description>Dragon's Lair (Alt)</description>
+		<year>1989</year>
+		<publisher>ReadySoft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="998816">
+				<rom name="dragon's lair (1989)(readysoft)(disk 1 of 4)[a].stx" size="998816" crc="53fc52d9" sha1="648b2a8c125fbf8aa13a729209e6487ab773480d" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="1000976">
+				<rom name="dragon's lair (1989)(readysoft)(disk 2 of 4)[a].stx" size="1000976" crc="f4086670" sha1="801abfc3a21c81a9f6ab66b49552f5085c9894f8" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="1000976">
+				<rom name="dragon's lair (1989)(readysoft)(disk 3 of 4)[a].stx" size="1000976" crc="cd3e1b34" sha1="82721fd5df8cf6b3b0f16212842b439208cd69a6" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
 			<dataarea name="flop" size="1000976">
 				<rom name="dragon's lair (1989)(readysoft)(disk 4 of 4)[a].stx" size="1000976" crc="18916735" sha1="826dcda21fa14a731f59d4a618911e1aeb2eff38" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dragonflight (1990)(Thalion)(Disk 1 of 3)(Disk A)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dflight">
+		<description>Dragonflight</description>
+		<year>1990</year>
+		<publisher>Thalion</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1924354">
 				<rom name="dragonflight (1990)(thalion)(disk 1 of 3)(disk a).stx" size="1924354" crc="587e4343" sha1="b1eb3d883b03280076b90c5a9236a2ac5e832758" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Dragonflight (1990)(Thalion)(Disk 2 of 3)(Disk B - C)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="1923338">
 				<rom name="dragonflight (1990)(thalion)(disk 2 of 3)(disk b - c).stx" size="1923338" crc="a5375180" sha1="bd56e9521fa9debe0247fe6281509ae6b7555719" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Dragonflight (1990)(Thalion)(Disk 3 of 3)(Disk C)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop3" interface="floppy_3_5">
 			<dataarea name="flop" size="961628">
 				<rom name="dragonflight (1990)(thalion)(disk 3 of 3)(disk c).stx" size="961628" crc="cdf068fe" sha1="967fb053c37930dc30f0c172aa0c36fae995b4f9" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Dragonflight (1990)(Thalion)(de)(Disk 1 of 3)(Disk A)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1949220">
-				<rom name="dragonflight (1990)(thalion)(de)(disk 1 of 3)(disk a).stx" size="1949220" crc="4c9e7cf6" sha1="4e8c0b2631762c6d833d469086acf074f3762d5c" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Dragonflight (1990)(Thalion)(de)(Disk 2 of 3)(Disk B - C)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1948246">
-				<rom name="dragonflight (1990)(thalion)(de)(disk 2 of 3)(disk b - c).stx" size="1948246" crc="51a7dfab" sha1="7372d3b97ea50f7de3173cada21f92de1dec8926" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Dragonflight (1990)(Thalion)(de)(Disk 3 of 3)(Disk C)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="973992">
-				<rom name="dragonflight (1990)(thalion)(de)(disk 3 of 3)(disk c).stx" size="973992" crc="beeda343" sha1="ef8f5d05dae1bfcc7c0cb07474331946c42668aa" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Dragonflight (1990)(Thalion)(de)[Backupdisk B]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1967918">
-				<rom name="dragonflight (1990)(thalion)(de)[backupdisk b].stx" size="1967918" crc="a7f8d176" sha1="daf5622a4101b30c9558865c3755d3e191375c0c" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Dragonflight (1990)(Thalion)[Backupdisk B]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop4" interface="floppy_3_5">
 			<dataarea name="flop" size="1923338">
 				<rom name="dragonflight (1990)(thalion)[backupdisk b].stx" size="1923338" crc="e180fbc7" sha1="e5454bf9626862d7f2aa83baf6a052013d94d3d7" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dragons Breath (1990)(Palace)(Disk 1 of 2)[manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dflightg" cloneof="dflight">
+		<description>Dragonflight (Ger)</description>
+		<year>1990</year>
+		<publisher>Thalion</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="1949220">
+				<rom name="dragonflight (1990)(thalion)(de)(disk 1 of 3)(disk a).stx" size="1949220" crc="4c9e7cf6" sha1="4e8c0b2631762c6d833d469086acf074f3762d5c" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="1948246">
+				<rom name="dragonflight (1990)(thalion)(de)(disk 2 of 3)(disk b - c).stx" size="1948246" crc="51a7dfab" sha1="7372d3b97ea50f7de3173cada21f92de1dec8926" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="973992">
+				<rom name="dragonflight (1990)(thalion)(de)(disk 3 of 3)(disk c).stx" size="973992" crc="beeda343" sha1="ef8f5d05dae1bfcc7c0cb07474331946c42668aa" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+			<dataarea name="flop" size="1967918">
+				<rom name="dragonflight (1990)(thalion)(de)[backupdisk b].stx" size="1967918" crc="a7f8d176" sha1="daf5622a4101b30c9558865c3755d3e191375c0c" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- manual protection -->
+	<software name="dbreath">
+		<description>Dragons Breath</description>
+		<year>1990</year>
+		<publisher>Palace</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="448674">
 				<rom name="dragons breath (1990)(palace)(disk 1 of 2)[manual protection].stx" size="448674" crc="df6072c1" sha1="081a26ea611ba285793c44c442ad3d02e0854ce4" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Dragons Breath (1990)(Palace)(Disk 2 of 2)[manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="415938">
 				<rom name="dragons breath (1990)(palace)(disk 2 of 2)[manual protection].stx" size="415938" crc="9f820a6e" sha1="b995f204785ed5e2464a0e21755f486a4f742132" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dragons Breath (1990)(Palace)(fr)(Disk 1 of 2)[manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<!-- manual protection -->
+	<software name="dbreathf" cloneof="dbreath">
+		<description>Dragons Breath (Fra)</description>
+		<year>1990</year>
+		<publisher>Palace</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="515194">
 				<rom name="dragons breath (1990)(palace)(fr)(disk 1 of 2)[manual protection].stx" size="515194" crc="d4b0b4fa" sha1="6c3705ad7252e829bede0b2ffe51f457a72d6ceb" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Dragons Breath (1990)(Palace)(fr)(Disk 2 of 2)[manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="511850">
 				<rom name="dragons breath (1990)(palace)(fr)(disk 2 of 2)[manual protection].stx" size="511850" crc="46441be1" sha1="14676c46fb2bd4bb07535ee2dd46f2579031c343" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Drakkhen (1989)(Infogrames)(FR)(Disk 1 of 3)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="916504">
-				<rom name="drakkhen (1989)(infogrames)(fr)(disk 1 of 3).stx" size="916504" crc="4d4376e5" sha1="de4f0f40fd51a264de917752202400b7ac13cf98" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Drakkhen (1989)(Infogrames)(FR)(Disk 2 of 3)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1764368">
-				<rom name="drakkhen (1989)(infogrames)(fr)(disk 2 of 3).stx" size="1764368" crc="416c860d" sha1="ff33c904b371f2df530c6b5ce5b9c2a691563033" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Drakkhen (1989)(Infogrames)(FR)(Disk 3 of 3)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="883212">
-				<rom name="drakkhen (1989)(infogrames)(fr)(disk 3 of 3).stx" size="883212" crc="f145d033" sha1="ad04619c9640760b76acb82acdbfe1e0e646a1e8" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Drakkhen v1.1 (1989)(Infogrames)(Disk 1 of 3)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="drakkhen">
+		<description>Drakkhen (v1.1)</description>
+		<year>1989</year>
+		<publisher>Infogrames</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="803216">
 				<rom name="drakkhen v1.1 (1989)(infogrames)(disk 1 of 3).stx" size="803216" crc="64caf1e4" sha1="4bf395ad27c7351493d3d51444e152898bd1f4bc" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Drakkhen v1.1 (1989)(Infogrames)(Disk 1 of 3)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1788842">
-				<rom name="drakkhen v1.1 (1989)(infogrames)(disk 1 of 3)[a].stx" size="1788842" crc="20c8dd0f" sha1="57459907081188f8dbddfce5a78c01b215793713" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Drakkhen v1.1 (1989)(Infogrames)(Disk 2 of 3)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="762896">
 				<rom name="drakkhen v1.1 (1989)(infogrames)(disk 2 of 3).stx" size="762896" crc="4c465eb2" sha1="63e2b775d73834385492535f013ace01a3c44d2c" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Drakkhen v1.1 (1989)(Infogrames)(Disk 2 of 3)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1764718">
-				<rom name="drakkhen v1.1 (1989)(infogrames)(disk 2 of 3)[a].stx" size="1764718" crc="b29cdc4e" sha1="fbc0b447eaaab4afe6b4bf4c1621984d48ac9cb6" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Drakkhen v1.1 (1989)(Infogrames)(Disk 3 of 3)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop3" interface="floppy_3_5">
 			<dataarea name="flop" size="381456">
 				<rom name="drakkhen v1.1 (1989)(infogrames)(disk 3 of 3).stx" size="381456" crc="9b993915" sha1="1ddf832afccb35541debbf092663771ba5497b26" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Drakkhen v1.1 (1989)(Infogrames)(Disk 3 of 3)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="drakkhena" cloneof="drakkhen">
+		<description>Drakkhen (v1.1, Alt)</description>
+		<year>1989</year>
+		<publisher>Infogrames</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="1788842">
+				<rom name="drakkhen v1.1 (1989)(infogrames)(disk 1 of 3)[a].stx" size="1788842" crc="20c8dd0f" sha1="57459907081188f8dbddfce5a78c01b215793713" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="1764718">
+				<rom name="drakkhen v1.1 (1989)(infogrames)(disk 2 of 3)[a].stx" size="1764718" crc="b29cdc4e" sha1="fbc0b447eaaab4afe6b4bf4c1621984d48ac9cb6" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
 			<dataarea name="flop" size="883362">
 				<rom name="drakkhen v1.1 (1989)(infogrames)(disk 3 of 3)[a].stx" size="883362" crc="a3e373a9" sha1="b29a54ac3170ece40328432efca9afd0cd6f0ce2" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Drivin' Force (1990)(Digital Magic)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="drakkhenf" cloneof="drakkhen">
+		<description>Drakkhen (Fra)</description>
+		<year>1989</year>
+		<publisher>Infogrames</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="916504">
+				<rom name="drakkhen (1989)(infogrames)(fr)(disk 1 of 3).stx" size="916504" crc="4d4376e5" sha1="de4f0f40fd51a264de917752202400b7ac13cf98" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="1764368">
+				<rom name="drakkhen (1989)(infogrames)(fr)(disk 2 of 3).stx" size="1764368" crc="416c860d" sha1="ff33c904b371f2df530c6b5ce5b9c2a691563033" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="883212">
+				<rom name="drakkhen (1989)(infogrames)(fr)(disk 3 of 3).stx" size="883212" crc="f145d033" sha1="ad04619c9640760b76acb82acdbfe1e0e646a1e8" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="drvforce">
+		<description>Drivin' Force</description>
+		<year>1990</year>
+		<publisher>Digital Magic</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="509300">
@@ -3668,34 +3453,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dungeon Master (1987)(FTL)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="411568">
-				<rom name="dungeon master (1987)(ftl).stx" size="411568" crc="3731d106" sha1="740714b73a6ded2daf33e056c3621c16a014c749" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Dungeon Master V1.2 (1987)(FTL)(de)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="925798">
-				<rom name="dungeon master v1.2 (1987)(ftl)(de)[a].stx" size="925798" crc="5efe0e01" sha1="d04b154900a34030e19f194e1b0608de75f31774" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Dungeon Master V1.2 (1987)(FTL)(en)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dmaster">
+		<description>Dungeon Master (v1.2)</description>
+		<year>1987</year>
+		<publisher>FTL</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="925966">
@@ -3704,34 +3465,22 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dungeon Master V1.3 (1987)(FTL)(fr)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dmastera" cloneof="dmaster">
+		<description>Dungeon Master (v1.2?, Alt)</description>
+		<year>1987</year>
+		<publisher>FTL</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="926334">
-				<rom name="dungeon master v1.3 (1987)(ftl)(fr)[a].stx" size="926334" crc="57610722" sha1="d96ff42109b3701203baa959e52925b5b0ed7c65" offset="0x0000" />
+			<dataarea name="flop" size="411568">
+				<rom name="dungeon master (1987)(ftl).stx" size="411568" crc="3731d106" sha1="740714b73a6ded2daf33e056c3621c16a014c749" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dungeon Master v1.2 (1988)(FTL)(de)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="929052">
-				<rom name="dungeon master v1.2 (1988)(ftl)(de).stx" size="929052" crc="8ae1dd25" sha1="a350a4677440a74aee505b5a15ca62c62ee8d395" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Dungeon Master v1.3 (1987)(FTL)(fr)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dmasterf" cloneof="dmaster">
+		<description>Dungeon Master (Fra, v1.3)</description>
+		<year>1987</year>
+		<publisher>FTL</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="924914">
@@ -3740,82 +3489,97 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dynamite Dux (1989)(Core)(Disk 1 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dmasterfa" cloneof="dmaster">
+		<description>Dungeon Master (Fra, v1.3, Alt)</description>
+		<year>1987</year>
+		<publisher>FTL</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="926334">
+				<rom name="dungeon master v1.3 (1987)(ftl)(fr)[a].stx" size="926334" crc="57610722" sha1="d96ff42109b3701203baa959e52925b5b0ed7c65" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dmasterg" cloneof="dmaster">
+		<description>Dungeon Master (Ger, v1.2)</description>
+		<year>1987</year>
+		<publisher>FTL</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="929052">
+				<rom name="dungeon master v1.2 (1988)(ftl)(de).stx" size="929052" crc="8ae1dd25" sha1="a350a4677440a74aee505b5a15ca62c62ee8d395" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dmasterga" cloneof="dmaster">
+		<description>Dungeon Master (Ger, v1.2, Alt)</description>
+		<year>1987</year>
+		<publisher>FTL</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="925798">
+				<rom name="dungeon master v1.2 (1987)(ftl)(de)[a].stx" size="925798" crc="5efe0e01" sha1="d04b154900a34030e19f194e1b0608de75f31774" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="dyndux">
+		<description>Dynamite Dux</description>
+		<year>1989</year>
+		<publisher>Core</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="423696">
 				<rom name="dynamite dux (1989)(core)(disk 1 of 2).stx" size="423696" crc="251986a7" sha1="508b45630100693ae49a88910e709aa672483c1e" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Dynamite Dux (1989)(Core)(Disk 1 of 2)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="924310">
-				<rom name="dynamite dux (1989)(core)(disk 1 of 2)[a].stx" size="924310" crc="9e8eb4e6" sha1="f40888f68db08e91303525ab3e2c0a72da476627" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Dynamite Dux (1989)(Core)(Disk 2 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="423712">
 				<rom name="dynamite dux (1989)(core)(disk 2 of 2).stx" size="423712" crc="445d958a" sha1="cdc7345b2729bde06572a7debf779b4fa24d8356" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dynamite Dux (1989)(Core)(Disk 2 of 2)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dynduxa" cloneof="dyndux">
+		<description>Dynamite Dux (Alt)</description>
+		<year>1989</year>
+		<publisher>Core</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="924310">
+				<rom name="dynamite dux (1989)(core)(disk 1 of 2)[a].stx" size="924310" crc="9e8eb4e6" sha1="f40888f68db08e91303525ab3e2c0a72da476627" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="930360">
 				<rom name="dynamite dux (1989)(core)(disk 2 of 2)[a].stx" size="930360" crc="814efc1b" sha1="b17466f46a6fa96ee91b8e43dca9863d12f52a42" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Dynasty Wars (1990)(U.S. Gold)(Disk 1 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="dynwars">
+		<description>Dynasty Wars</description>
+		<year>1990</year>
+		<publisher>U.S. Gold</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="937714">
 				<rom name="dynasty wars (1990)(u.s. gold)(disk 1 of 2).stx" size="937714" crc="3c794ef6" sha1="3979aad3274f0d27f43bf8c238249e2c7419e948" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Dynasty Wars (1990)(U.S. Gold)(Disk 2 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="937848">
 				<rom name="dynasty wars (1990)(u.s. gold)(disk 2 of 2).stx" size="937848" crc="bbe9bcb8" sha1="c3cc29f903cb84c7d2dac1279110464a175f97a7" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>E-Motion (1990)(U.S. Gold)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="emotion">
+		<description>E-Motion</description>
+		<year>1990</year>
+		<publisher>U.S. Gold</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="925454">
@@ -3824,10 +3588,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>E-Motion (1990)(U.S. Gold)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="emotiona" cloneof="emotion">
+		<description>E-Motion (Alt)</description>
+		<year>1990</year>
+		<publisher>U.S. Gold</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="435360">
@@ -3836,34 +3600,27 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>E-Swat - Cyber Police (1990)(U.S. Gold)(Disk 1 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="eswat">
+		<description>E-Swat - Cyber Police</description>
+		<year>1990</year>
+		<publisher>U.S. Gold</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1845420">
 				<rom name="e-swat - cyber police (1990)(u.s. gold)(disk 1 of 2).stx" size="1845420" crc="68f556df" sha1="2089ca9e6a9ee7533f983a92f3afdf1f6f30e435" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>E-Swat - Cyber Police (1990)(U.S. Gold)(Disk 2 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="1845220">
 				<rom name="e-swat - cyber police (1990)(u.s. gold)(disk 2 of 2).stx" size="1845220" crc="044d5b94" sha1="136022290b4a6dee3d831f6eb9703c7dc278f8f8" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Electronic Pool (1986)(Microdeal)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="elecpool">
+		<description>Electronic Pool</description>
+		<year>1986</year>
+		<publisher>Microdeal</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="658386">
@@ -3872,10 +3629,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Eliminator (1987)(Hewson)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="eliminat">
+		<description>Eliminator</description>
+		<year>1987</year>
+		<publisher>Hewson</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="581376">
@@ -3884,10 +3641,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Emlyn Hughes International Soccer (1990)(Audiogenic)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="ehughes">
+		<description>Emlyn Hughes International Soccer</description>
+		<year>1990</year>
+		<publisher>Audiogenic</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="943216">
@@ -3896,34 +3653,27 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Emmanuelle (1989)(Coktel Vision)(fr)(Disk 1 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="emmanuel">
+		<description>Emmanuelle (Fra)</description>
+		<year>1989</year>
+		<publisher>Coktel Vision</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="925570">
 				<rom name="emmanuelle (1989)(coktel vision)(fr)(disk 1 of 2).stx" size="925570" crc="3de467be" sha1="84b9a052996601cd8c1abce3a73362c34c3f1a23" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Emmanuelle (1989)(Coktel Vision)(fr)(Disk 2 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="924040">
 				<rom name="emmanuelle (1989)(coktel vision)(fr)(disk 2 of 2).stx" size="924040" crc="eff8ded2" sha1="e4237d06f06b17ad0f1380af3a2dd0cff9d3b90d" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Enchanted Land (1990)(Thalion)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="enchland">
+		<description>Enchanted Land</description>
+		<year>1990</year>
+		<publisher>Thalion</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1848744">
@@ -3932,10 +3682,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Enchanter (1985)(Infocom)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="enchantr">
+		<description>Enchanter</description>
+		<year>1985</year>
+		<publisher>Infocom</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="884248">
@@ -3944,34 +3694,28 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Epic (1992)(Ocean)(Disk 1 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="epic">
+		<description>Epic</description>
+		<year>1992</year>
+		<publisher>Ocean</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1926328">
 				<rom name="epic (1992)(ocean)(disk 1 of 2).stx" size="1926328" crc="e7212248" sha1="fa083c153c47dc944bf8344e5617003d0dfbf283" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Epic (1992)(Ocean)(Disk 2 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="1925914">
 				<rom name="epic (1992)(ocean)(disk 2 of 2).stx" size="1925914" crc="a74585cf" sha1="3c3c22270cb9c62f407a4c42bb6eeea814c479d2" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Esprit (1989)(Application Systems Heidelberg)[req high resolution]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<!-- Requires high resolution -->
+	<software name="esprit">
+		<description>Esprit</description>
+		<year>1989</year>
+		<publisher>Application Systems Heidelberg</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1891654">
@@ -3980,46 +3724,32 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>European Space Simulator (1989)(Tomahawk)(FR)(M5)(Disk 1 of 3)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="euross">
+		<description>European Space Simulator</description>
+		<year>1989</year>
+		<publisher>Tomahawk</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="400218">
 				<rom name="european space simulator (1989)(tomahawk)(fr)(m5)(disk 1 of 3).stx" size="400218" crc="670528c7" sha1="44b4b421561820b266aacf2ddd90ed5dca9c0582" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>European Space Simulator (1989)(Tomahawk)(FR)(M5)(Disk 2 of 3)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="400216">
 				<rom name="european space simulator (1989)(tomahawk)(fr)(m5)(disk 2 of 3).stx" size="400216" crc="9c6c63d5" sha1="869a44690cdaa5be140f45b8b8b4b871e56d6eba" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>European Space Simulator (1989)(Tomahawk)(FR)(M5)(Disk 3 of 3)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop3" interface="floppy_3_5">
 			<dataarea name="flop" size="434304">
 				<rom name="european space simulator (1989)(tomahawk)(fr)(m5)(disk 3 of 3).stx" size="434304" crc="d152a171" sha1="54b1bea003499228b52f491c518d7665667ec21c" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Exolon (1987)(Hewson)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="exolon">
+		<description>Exolon</description>
+		<year>1987</year>
+		<publisher>Hewson</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="466688">
@@ -4028,286 +3758,164 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Explora - Time run (1987)(Infomedia)(fr)(Disk 1 of 4)[a][manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="942862">
-				<rom name="explora - time run (1987)(infomedia)(fr)(disk 1 of 4)[a][manual protection].stx" size="942862" crc="ae96301e" sha1="dbd96584eb930942f80970a0d97e052f09951659" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Explora - Time run (1987)(Infomedia)(fr)(Disk 1 of 4)[manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<!-- Manual protection -->
+	<software name="explora">
+		<description>Explora - Time run (Fra)</description>
+		<year>1987</year>
+		<publisher>Infomedia</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="889010">
 				<rom name="explora - time run (1987)(infomedia)(fr)(disk 1 of 4)[manual protection].stx" size="889010" crc="451f55e8" sha1="823c0727115355a25238d80177c370b842e3e75a" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Explora - Time run (1987)(Infomedia)(fr)(Disk 2 of 4)[a][manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="943702">
-				<rom name="explora - time run (1987)(infomedia)(fr)(disk 2 of 4)[a][manual protection].stx" size="943702" crc="f7a3d521" sha1="4c100733f804043ebfc699f012f25ccd7f9e96cf" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Explora - Time run (1987)(Infomedia)(fr)(Disk 2 of 4)[manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="936010">
 				<rom name="explora - time run (1987)(infomedia)(fr)(disk 2 of 4)[manual protection].stx" size="936010" crc="fbf51455" sha1="854a5a78caefc9d46009cf253b9724133af9000d" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Explora - Time run (1987)(Infomedia)(fr)(Disk 3 of 4)[a][manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="942720">
-				<rom name="explora - time run (1987)(infomedia)(fr)(disk 3 of 4)[a][manual protection].stx" size="942720" crc="1076881a" sha1="7de69880d2342e9f5ea217be9cd135e8e6578f1a" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Explora - Time run (1987)(Infomedia)(fr)(Disk 3 of 4)[manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop3" interface="floppy_3_5">
 			<dataarea name="flop" size="936066">
 				<rom name="explora - time run (1987)(infomedia)(fr)(disk 3 of 4)[manual protection].stx" size="936066" crc="6ea4b15d" sha1="7a1db502dbc47dd18491ea71699bcf9110489d17" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Explora - Time run (1987)(Infomedia)(fr)(Disk 4 of 4)[a][manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="940468">
-				<rom name="explora - time run (1987)(infomedia)(fr)(disk 4 of 4)[a][manual protection].stx" size="940468" crc="6f71f4ed" sha1="6f0b983922c0391703c650f0da403efb5d45aafa" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Explora - Time run (1987)(Infomedia)(fr)(Disk 4 of 4)[manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop4" interface="floppy_3_5">
 			<dataarea name="flop" size="947698">
 				<rom name="explora - time run (1987)(infomedia)(fr)(disk 4 of 4)[manual protection].stx" size="947698" crc="3cb72737" sha1="f401968adf93f935b8d34eb1a63bdb62084e500b" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Explora II (1988)(Infomedia)(fr)(Disk 1 of 6)[a][manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<!-- Manual protection -->
+	<software name="exploraa" cloneof="explora">
+		<description>Explora - Time run (Fra, Alt)</description>
+		<year>1987</year>
+		<publisher>Infomedia</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="944042">
-				<rom name="explora ii (1988)(infomedia)(fr)(disk 1 of 6)[a][manual protection].stx" size="944042" crc="fdbd68e4" sha1="085701512f62d2b926416c7b59feba47ed92248a" offset="0x0000" />
+			<dataarea name="flop" size="942862">
+				<rom name="explora - time run (1987)(infomedia)(fr)(disk 1 of 4)[a][manual protection].stx" size="942862" crc="ae96301e" sha1="dbd96584eb930942f80970a0d97e052f09951659" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="943702">
+				<rom name="explora - time run (1987)(infomedia)(fr)(disk 2 of 4)[a][manual protection].stx" size="943702" crc="f7a3d521" sha1="4c100733f804043ebfc699f012f25ccd7f9e96cf" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="942720">
+				<rom name="explora - time run (1987)(infomedia)(fr)(disk 3 of 4)[a][manual protection].stx" size="942720" crc="1076881a" sha1="7de69880d2342e9f5ea217be9cd135e8e6578f1a" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+			<dataarea name="flop" size="940468">
+				<rom name="explora - time run (1987)(infomedia)(fr)(disk 4 of 4)[a][manual protection].stx" size="940468" crc="6f71f4ed" sha1="6f0b983922c0391703c650f0da403efb5d45aafa" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Explora II (1988)(Infomedia)(fr)(Disk 1 of 6)[manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<!-- Manual protection -->
+	<software name="explora2">
+		<description>Explora II (Fra)</description>
+		<year>1988</year>
+		<publisher>Infomedia</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="936676">
 				<rom name="explora ii (1988)(infomedia)(fr)(disk 1 of 6)[manual protection].stx" size="936676" crc="d3d92278" sha1="c39344b76804390e3aa791e948ac6d6a9e09aa58" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Explora II (1988)(Infomedia)(fr)(Disk 2 of 6)[a][manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="943492">
-				<rom name="explora ii (1988)(infomedia)(fr)(disk 2 of 6)[a][manual protection].stx" size="943492" crc="3db96274" sha1="176c4d459e922efb0c36b1221668587737824e9c" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Explora II (1988)(Infomedia)(fr)(Disk 2 of 6)[manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="937846">
 				<rom name="explora ii (1988)(infomedia)(fr)(disk 2 of 6)[manual protection].stx" size="937846" crc="62c212ad" sha1="6e9d165d4d6380f12bb7307b26a0f58311258919" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Explora II (1988)(Infomedia)(fr)(Disk 3 of 6)[a][manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="943344">
-				<rom name="explora ii (1988)(infomedia)(fr)(disk 3 of 6)[a][manual protection].stx" size="943344" crc="17d1b634" sha1="a4c6a2bdfcaa01e213dfa238a5b7ee74de857beb" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Explora II (1988)(Infomedia)(fr)(Disk 3 of 6)[manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop3" interface="floppy_3_5">
 			<dataarea name="flop" size="937578">
 				<rom name="explora ii (1988)(infomedia)(fr)(disk 3 of 6)[manual protection].stx" size="937578" crc="df7bd190" sha1="416e5df30572d6beea5bbcb44e8799a3906c93ea" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Explora II (1988)(Infomedia)(fr)(Disk 4 of 6)[a][manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="943200">
-				<rom name="explora ii (1988)(infomedia)(fr)(disk 4 of 6)[a][manual protection].stx" size="943200" crc="7a533f0d" sha1="43d032a5618cd32c5359c39cd911503c02a1abe8" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Explora II (1988)(Infomedia)(fr)(Disk 4 of 6)[manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop4" interface="floppy_3_5">
 			<dataarea name="flop" size="936488">
 				<rom name="explora ii (1988)(infomedia)(fr)(disk 4 of 6)[manual protection].stx" size="936488" crc="a5c5c5e0" sha1="ee0f8d5443d4f5cc525a37e5fad8e8c97a68d4a0" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Explora II (1988)(Infomedia)(fr)(Disk 5 of 6)[a][manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="936388">
-				<rom name="explora ii (1988)(infomedia)(fr)(disk 5 of 6)[a][manual protection].stx" size="936388" crc="8322dc94" sha1="17a8c38f048243af208011c0be745cb78e22ebcb" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Explora II (1988)(Infomedia)(fr)(Disk 5 of 6)[manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop5" interface="floppy_3_5">
 			<dataarea name="flop" size="1820692">
 				<rom name="explora ii (1988)(infomedia)(fr)(disk 5 of 6)[manual protection].stx" size="1820692" crc="8503a05b" sha1="01892b2e00b6683d10c2b14c83605c0c9e3d33f4" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Explora II (1988)(Infomedia)(fr)(Disk 6 of 6)[a][manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="942834">
-				<rom name="explora ii (1988)(infomedia)(fr)(disk 6 of 6)[a][manual protection].stx" size="942834" crc="1edaddb2" sha1="edfe550f618366ea39a668298fd667f56815f81c" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Explora II (1988)(Infomedia)(fr)(Disk 6 of 6)[manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop6" interface="floppy_3_5">
 			<dataarea name="flop" size="1825584">
 				<rom name="explora ii (1988)(infomedia)(fr)(disk 6 of 6)[manual protection].stx" size="1825584" crc="da3ae777" sha1="939c0061ce06e1bbcaf8939a966bdaade58a7224" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Explora III - Sous le Signe du Serpent (1990)(Infomedia)(fr)(Disk 1 of 3)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<!-- Manual protection -->
+	<software name="explora2a" cloneof="explora2">
+		<description>Explora II (Fra, Alt)</description>
+		<year>1988</year>
+		<publisher>Infomedia</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="944042">
+				<rom name="explora ii (1988)(infomedia)(fr)(disk 1 of 6)[a][manual protection].stx" size="944042" crc="fdbd68e4" sha1="085701512f62d2b926416c7b59feba47ed92248a" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="943492">
+				<rom name="explora ii (1988)(infomedia)(fr)(disk 2 of 6)[a][manual protection].stx" size="943492" crc="3db96274" sha1="176c4d459e922efb0c36b1221668587737824e9c" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_3_5">
+			<dataarea name="flop" size="943344">
+				<rom name="explora ii (1988)(infomedia)(fr)(disk 3 of 6)[a][manual protection].stx" size="943344" crc="17d1b634" sha1="a4c6a2bdfcaa01e213dfa238a5b7ee74de857beb" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_3_5">
+			<dataarea name="flop" size="943200">
+				<rom name="explora ii (1988)(infomedia)(fr)(disk 4 of 6)[a][manual protection].stx" size="943200" crc="7a533f0d" sha1="43d032a5618cd32c5359c39cd911503c02a1abe8" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_3_5">
+			<dataarea name="flop" size="936388">
+				<rom name="explora ii (1988)(infomedia)(fr)(disk 5 of 6)[a][manual protection].stx" size="936388" crc="8322dc94" sha1="17a8c38f048243af208011c0be745cb78e22ebcb" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_3_5">
+			<dataarea name="flop" size="942834">
+				<rom name="explora ii (1988)(infomedia)(fr)(disk 6 of 6)[a][manual protection].stx" size="942834" crc="1edaddb2" sha1="edfe550f618366ea39a668298fd667f56815f81c" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="explora3">
+		<description>Explora III - Sous le Signe du Serpent (Fra)</description>
+		<year>1990</year>
+		<publisher>Infomedia</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1876734">
 				<rom name="explora iii - sous le signe du serpent (1990)(infomedia)(fr)(disk 1 of 3).stx" size="1876734" crc="0bed0717" sha1="dc6a37ea75e5ab78bec9bdc221905c2c5e209bba" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Explora III - Sous le Signe du Serpent (1990)(Infomedia)(fr)(Disk 2 of 3)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="1877008">
 				<rom name="explora iii - sous le signe du serpent (1990)(infomedia)(fr)(disk 2 of 3).stx" size="1877008" crc="0c29f5c2" sha1="95161add2f47a1aa976d51402514c104d21836a2" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Explora III - Sous le Signe du Serpent (1990)(Infomedia)(fr)(Disk 3 of 3)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop3" interface="floppy_3_5">
 			<dataarea name="flop" size="1876428">
 				<rom name="explora iii - sous le signe du serpent (1990)(infomedia)(fr)(disk 3 of 3).stx" size="1876428" crc="a67de248" sha1="eae15f9b0ce49073ba597b661f29010883c5ac8b" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Extase (1990)(Virgin)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="extase">
+		<description>Extase</description>
+		<year>1990</year>
+		<publisher>Virgin</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1823688">
@@ -4316,10 +3924,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>F-15 Strike Eagle (1985)(MicroProse)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="f15se">
+		<description>F-15 Strike Eagle</description>
+		<year>1985</year>
+		<publisher>MicroProse</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="383628">
@@ -4328,214 +3936,136 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>F-15 Strike Eagle 2 (1991)(MicroProse)(Disk 1 of 2)[manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<!-- Manual protection -->
+	<software name="f15se2">
+		<description>F-15 Strike Eagle 2</description>
+		<year>1991</year>
+		<publisher>MicroProse</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1850030">
 				<rom name="f-15 strike eagle 2 (1991)(microprose)(disk 1 of 2)[manual protection].stx" size="1850030" crc="aedd1d73" sha1="83259aabde2a9bd93529fe96c4a98e6e759b97ce" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>F-15 Strike Eagle 2 (1991)(MicroProse)(Disk 2 of 2)[manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="1852248">
 				<rom name="f-15 strike eagle 2 (1991)(microprose)(disk 2 of 2)[manual protection].stx" size="1852248" crc="4d7e548e" sha1="1c6381e6ec1f98a34c1065fd0e31afcb07e2a8d5" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>F-16 Combat Pilot (1989)(Digital Integration)(Disk 1 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="f16cp">
+		<description>F-16 Combat Pilot</description>
+		<year>1989</year>
+		<publisher>Digital Integration</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="934286">
 				<rom name="f-16 combat pilot (1989)(digital integration)(disk 1 of 2).stx" size="934286" crc="6391d71e" sha1="198d45b652703e9d81e3214df45ed077e19fe926" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>F-16 Combat Pilot (1989)(Digital Integration)(Disk 2 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="932584">
 				<rom name="f-16 combat pilot (1989)(digital integration)(disk 2 of 2).stx" size="932584" crc="bb35a789" sha1="c9221aabf1f3176317dafb24bc21c7a9e3e7c439" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>F-19 Stealth Fighter v1.02 (1988)(MicroProse)(Disk 1 of 3)[manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<!-- Manual protection -->
+	<software name="f19sf">
+		<description>F-19 Stealth Fighter (v1.02)</description>
+		<year>1988</year>
+		<publisher>MicroProse</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1849974">
 				<rom name="f-19 stealth fighter v1.02 (1988)(microprose)(disk 1 of 3)[manual protection].stx" size="1849974" crc="5ff1fc01" sha1="ac5527024d7dae04e05a573b44532b7e7c88dffb" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>F-19 Stealth Fighter v1.02 (1988)(MicroProse)(Disk 2 of 3)[manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="931020">
 				<rom name="f-19 stealth fighter v1.02 (1988)(microprose)(disk 2 of 3)[manual protection].stx" size="931020" crc="23c53abb" sha1="70c2ce03a970d9fe5ea63e72a1c8974fd4a32732" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>F-19 Stealth Fighter v1.02 (1988)(MicroProse)(Disk 3 of 3)[manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop3" interface="floppy_3_5">
 			<dataarea name="flop" size="930598">
 				<rom name="f-19 stealth fighter v1.02 (1988)(microprose)(disk 3 of 3)[manual protection].stx" size="930598" crc="9cc1e959" sha1="de80cd6f4e73262f94c6a81ce004f173cd64422b" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Fahrenheit 451 (1984)(Telarium)(Disk 1 of 2)</description>
+	<software name="fahr451">
+		<description>Fahrenheit 451</description>
 		<year>198?</year>
-		<publisher></publisher>
+		<publisher>Telarium</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="381456">
 				<rom name="fahrenheit 451 (1984)(telarium)(disk 1 of 2).stx" size="381456" crc="212fec47" sha1="df23c43765f4b263e907e62226cb28e06484f324" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Fahrenheit 451 (1984)(Telarium)(Disk 2 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="381456">
 				<rom name="fahrenheit 451 (1984)(telarium)(disk 2 of 2).stx" size="381456" crc="18fe6e26" sha1="56141daf42f30b289e3128be25dcfa9f8c23da50" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Falcon (1989)(Spectrum Holobyte)(Disk 1 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="falcon">
+		<description>Falcon</description>
+		<year>1989</year>
+		<publisher>Spectrum Holobyte</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="926758">
 				<rom name="falcon (1989)(spectrum holobyte)(disk 1 of 2).stx" size="926758" crc="283dfa90" sha1="66a92877da374425b82bb294aa51ed87970ffa7f" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Falcon (1989)(Spectrum Holobyte)(Disk 1 of 2)[a2]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="926678">
-				<rom name="falcon (1989)(spectrum holobyte)(disk 1 of 2)[a2].stx" size="926678" crc="74517a69" sha1="e52a269f2366bdb0eeb8b60ffb492afb90672855" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Falcon (1989)(Spectrum Holobyte)(Disk 1 of 2)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="938580">
-				<rom name="falcon (1989)(spectrum holobyte)(disk 1 of 2)[a].stx" size="938580" crc="5f252dbd" sha1="9c81d6165a4782baf067a71146179005c4583b8f" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Falcon (1989)(Spectrum Holobyte)(Disk 2 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="926298">
 				<rom name="falcon (1989)(spectrum holobyte)(disk 2 of 2).stx" size="926298" crc="6c27273e" sha1="57dbcd309973dce80e6364fdc97181080acd59cb" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Falcon (1989)(Spectrum Holobyte)(Disk 2 of 2)[a2]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="falcona" cloneof="falcon">
+		<description>Falcon (Alt)</description>
+		<year>1989</year>
+		<publisher>Spectrum Holobyte</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="926628">
-				<rom name="falcon (1989)(spectrum holobyte)(disk 2 of 2)[a2].stx" size="926628" crc="caefd5d4" sha1="6c5498df05120da50882760272c16f5dfd669cb1" offset="0x0000" />
+			<dataarea name="flop" size="938580">
+				<rom name="falcon (1989)(spectrum holobyte)(disk 1 of 2)[a].stx" size="938580" crc="5f252dbd" sha1="9c81d6165a4782baf067a71146179005c4583b8f" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Falcon (1989)(Spectrum Holobyte)(Disk 2 of 2)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="931958">
 				<rom name="falcon (1989)(spectrum holobyte)(disk 2 of 2)[a].stx" size="931958" crc="2c801c6d" sha1="d90ac1bdcc36dd4cbf4adf67f205bc38c3750b91" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Falcon Mission Disk Volume I (1989)(Sphere)(Disk 1 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="falconb" cloneof="falcon">
+		<description>Falcon (Alt 2)</description>
+		<year>1989</year>
+		<publisher>Spectrum Holobyte</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="926372">
-				<rom name="falcon mission disk volume i (1989)(sphere)(disk 1 of 2).stx" size="926372" crc="7a594a77" sha1="29173258fbdde1fb637583d4480fa88cb5fe7358" offset="0x0000" />
+			<dataarea name="flop" size="926678">
+				<rom name="falcon (1989)(spectrum holobyte)(disk 1 of 2)[a2].stx" size="926678" crc="74517a69" sha1="e52a269f2366bdb0eeb8b60ffb492afb90672855" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="926628">
+				<rom name="falcon (1989)(spectrum holobyte)(disk 2 of 2)[a2].stx" size="926628" crc="caefd5d4" sha1="6c5498df05120da50882760272c16f5dfd669cb1" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Falcon Mission Disk Volume I (1989)(Sphere)(Disk 2 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="926804">
-				<rom name="falcon mission disk volume i (1989)(sphere)(disk 2 of 2).stx" size="926804" crc="8d99f0b0" sha1="3b84e983429ef6ee5b2f4945c88811f3376dd5c6" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Falcon Mission Disk Volume I v1.1 (1989)(Sphere)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="falconm1">
+		<description>Falcon Mission Disk Volume I (v1.1)</description>
+		<year>1989</year>
+		<publisher>Sphere</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1818300">
@@ -4544,10 +4074,27 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Falcon Mission Disk Volume II v1.3 (1990)(Sphere)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="falconm1a" cloneof="falconm1">
+		<description>Falcon Mission Disk Volume I (unknown version)</description>
+		<year>1989</year>
+		<publisher>Sphere</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="926372">
+				<rom name="falcon mission disk volume i (1989)(sphere)(disk 1 of 2).stx" size="926372" crc="7a594a77" sha1="29173258fbdde1fb637583d4480fa88cb5fe7358" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="926804">
+				<rom name="falcon mission disk volume i (1989)(sphere)(disk 2 of 2).stx" size="926804" crc="8d99f0b0" sha1="3b84e983429ef6ee5b2f4945c88811f3376dd5c6" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="falconm2">
+		<description>Falcon Mission Disk Volume II (v1.3)</description>
+		<year>1990</year>
+		<publisher>Sphere</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1875100">
@@ -4556,10 +4103,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Falcon Mission Disk Volume II v1.3 (1990)(Sphere)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="falconm2a" cloneof="falconm2">
+		<description>Falcon Mission Disk Volume II (v1.3, Alt)</description>
+		<year>1990</year>
+		<publisher>Sphere</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1174942">
@@ -4568,10 +4115,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Fantasy World Dizzy (1991)(Codemasters)(GB)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="fwdizzy">
+		<description>Fantasy World Dizzy</description>
+		<year>1991</year>
+		<publisher>Codemasters</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="429994">
@@ -4580,10 +4127,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Fantasy World Dizzy (1991)(Codemasters)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="fwdizzya" cloneof="fwdizzy">
+		<description>Fantasy World Dizzy (Alt)</description>
+		<year>1991</year>
+		<publisher>Codemasters</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1852338">
@@ -4592,46 +4139,27 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Fascination (1991)(Coktel Vision)(fr)(Disk 1 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="fascinat">
+		<description>Fascination (Fra)</description>
+		<year>1991</year>
+		<publisher>Coktel Vision</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1769214">
 				<rom name="fascination (1991)(coktel vision)(fr)(disk 1 of 2).stx" size="1769214" crc="13d1b910" sha1="2c3ff7e49891cd4bd7fdcec5aca077aba17964c4" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Fascination (1991)(Coktel Vision)(fr)(Disk 2 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="1770548">
 				<rom name="fascination (1991)(coktel vision)(fr)(disk 2 of 2).stx" size="1770548" crc="0c54a0cc" sha1="a1356a7b8101742eb9089c578ff5d5fef2c2dba6" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Fast Food! (1991)(Codemasters)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1850272">
-				<rom name="fast food! (1991)(codemasters).stx" size="1850272" crc="c99ba1b1" sha1="0f51d0f046a2ebdecb548708b5df598f2a5374fe" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Fast Food! (1992)(Codemasters)(GB)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="fastfood">
+		<description>Fast Food!</description>
+		<year>1992</year>
+		<publisher>Codemasters</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="430028">
@@ -4640,10 +4168,22 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Fernandez Must Die (1988)(Image Works)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="fastfooda" cloneof="fastfood">
+		<description>Fast Food! (Alt)</description>
+		<year>1992</year>
+		<publisher>Codemasters</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="1850272">
+				<rom name="fast food! (1991)(codemasters).stx" size="1850272" crc="c99ba1b1" sha1="0f51d0f046a2ebdecb548708b5df598f2a5374fe" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fmd">
+		<description>Fernandez Must Die</description>
+		<year>1988</year>
+		<publisher>Image Works</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="383312">
@@ -4652,10 +4192,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Fernandez Must Die (1988)(Image Works)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="fmda" cloneof="fmd">
+		<description>Fernandez Must Die (Alt)</description>
+		<year>1988</year>
+		<publisher>Image Works</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="885022">
@@ -4664,10 +4204,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Fighting Soccer (1989)(Activision)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="fightsoc">
+		<description>Fighting Soccer</description>
+		<year>1989</year>
+		<publisher>Activision</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="694532">
@@ -4676,10 +4216,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Fighting Soccer (1989)(Activision)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="fightsoca" cloneof="fightsoc">
+		<description>Fighting Soccer (Alt)</description>
+		<year>1989</year>
+		<publisher>Activision</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="927556">
@@ -4688,10 +4228,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Final Battle (1990)(Mirrorsoft)(fr)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="fbattle">
+		<description>Final Battle (Fra)</description>
+		<year>1990</year>
+		<publisher>Mirrorsoft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1856032">
@@ -4700,10 +4240,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Final Blow (1991)(Storm)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="fblow">
+		<description>Final Blow</description>
+		<year>1991</year>
+		<publisher>Storm</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="927290">
@@ -4712,58 +4252,46 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Final Fight (1991)(Capcom)(Disk 1 of 2)[TOS 1.06]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<!-- Requires TOS 1.06 -->
+	<software name="ffight">
+		<description>Final Fight</description>
+		<year>1991</year>
+		<publisher>U.S. Gold</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="866424">
 				<rom name="final fight (1991)(capcom)(disk 1 of 2)[tos 1.06].stx" size="866424" crc="fb008939" sha1="c0fc3992703c93405415d5ed4e61114bedac90cf" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Final Fight (1991)(Capcom)(Disk 1 of 2)[a][TOS 1.06]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1851428">
-				<rom name="final fight (1991)(capcom)(disk 1 of 2)[a][tos 1.06].stx" size="1851428" crc="878fb55b" sha1="a61cc737327bc2a971891612b0921e07cdfac860" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Final Fight (1991)(Capcom)(Disk 2 of 2)[TOS 1.06]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="855696">
 				<rom name="final fight (1991)(capcom)(disk 2 of 2)[tos 1.06].stx" size="855696" crc="6d73920e" sha1="5170df765a300c0b04ce50ffa9924f6579dad27d" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Final Fight (1991)(Capcom)(Disk 2 of 2)[a][TOS 1.06]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<!-- Requires TOS 1.06 -->
+	<software name="ffighta" cloneof="ffight">
+		<description>Final Fight (Alt)</description>
+		<year>1991</year>
+		<publisher>U.S. Gold</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="1851428">
+				<rom name="final fight (1991)(capcom)(disk 1 of 2)[a][tos 1.06].stx" size="1851428" crc="878fb55b" sha1="a61cc737327bc2a971891612b0921e07cdfac860" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="1846734">
 				<rom name="final fight (1991)(capcom)(disk 2 of 2)[a][tos 1.06].stx" size="1846734" crc="5cb634b8" sha1="4e332a516f674414497bf26615b7a69ffc5cc80c" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Fire &amp; Forget II - The Death Convoy (1990)(Titus)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="firefor2">
+		<description>Fire &amp; Forget II - The Death Convoy</description>
+		<year>1990</year>
+		<publisher>Titus</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="420784">
@@ -4772,10 +4300,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Fire Brigade v1.11 (1990-02-07)(Panther)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="firebrig">
+		<description>Fire Brigade (v1.11)</description>
+		<year>1990</year>
+		<publisher>Panther</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1791794">
@@ -4784,34 +4312,27 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Fire and Brimstones (1990)(MicroProse)(Disk 1 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="firebrim">
+		<description>Fire and Brimstones</description>
+		<year>1990</year>
+		<publisher>MicroProse</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="926178">
 				<rom name="fire and brimstones (1990)(microprose)(disk 1 of 2).stx" size="926178" crc="66280042" sha1="57bdba7ac988b88cf7b41e81e2a56ae62969d56a" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Fire and Brimstones (1990)(MicroProse)(Disk 2 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="926634">
 				<rom name="fire and brimstones (1990)(microprose)(disk 2 of 2).stx" size="926634" crc="014a7b4e" sha1="6ccf9bc5a89c8a6af22e4e2b48e25343ba5603df" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Firestar (1991)(Trojan)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="firestar">
+		<description>Firestar</description>
+		<year>1991</year>
+		<publisher>Trojan</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1809784">
@@ -4820,10 +4341,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Firezone (1988)(PSS)(fr)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="firezone">
+		<description>Firezone (Fra)</description>
+		<year>1988</year>
+		<publisher>PSS</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="922132">
@@ -4832,10 +4353,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>First Person Pinball (1989)(Tynesoft)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="fppin">
+		<description>First Person Pinball</description>
+		<year>1989</year>
+		<publisher>Tynesoft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="927660">
@@ -4844,58 +4365,44 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>First Samurai, The (1991)(Image Works)(Disk 1 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="fsamurai">
+		<description>The First Samurai</description>
+		<year>1991</year>
+		<publisher>Image Works</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1864588">
 				<rom name="first samurai, the (1991)(image works)(disk 1 of 2).stx" size="1864588" crc="598a7e76" sha1="17bbeb1cb2e16cff00c926672079916d2d1e1214" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>First Samurai, The (1991)(Image Works)(Disk 1 of 2)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1008948">
-				<rom name="first samurai, the (1991)(image works)(disk 1 of 2)[a].stx" size="1008948" crc="6c2864ff" sha1="90250f9d7fcff4c45de99a4acda8a5623c13117f" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>First Samurai, The (1991)(Image Works)(Disk 2 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="1856936">
 				<rom name="first samurai, the (1991)(image works)(disk 2 of 2).stx" size="1856936" crc="e68fdb2c" sha1="b0b277c693eb6a69d257c13d837783b20d6fb6ec" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>First Samurai, The (1991)(Image Works)(Disk 2 of 2)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="fsamuraia" cloneof="fsamurai">
+		<description>The First Samurai (Alt)</description>
+		<year>1991</year>
+		<publisher>Image Works</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="1008948">
+				<rom name="first samurai, the (1991)(image works)(disk 1 of 2)[a].stx" size="1008948" crc="6c2864ff" sha1="90250f9d7fcff4c45de99a4acda8a5623c13117f" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="982262">
 				<rom name="first samurai, the (1991)(image works)(disk 2 of 2)[a].stx" size="982262" crc="a961bb65" sha1="baf06881ced1a63b9b7baf09e0413cccb99c2725" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Fish! v1.00 (1988)(Rainbird)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="fish">
+		<description>Fish! (v1.00)</description>
+		<year>1988</year>
+		<publisher>Rainbird</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="920446">
@@ -4904,10 +4411,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Flight Simulator II (1987)(Sublogic)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="fsim2">
+		<description>Flight Simulator II (v1.1)</description>
+		<year>1987</year>
+		<publisher>Sublogic</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="376704">
@@ -4916,34 +4423,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Flight Simulator II - Scenery Disk 7 (1987)(Sublogic)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="757204">
-				<rom name="flight simulator ii - scenery disk 7 (1987)(sublogic).stx" size="757204" crc="408eff37" sha1="26233c3e303e016ebea1ada768a4aeaa5755154f" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Flight Simulator II v1.1 (1987)(Sublogic)(fr)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="890818">
-				<rom name="flight simulator ii v1.1 (1987)(sublogic)(fr).stx" size="890818" crc="5f86494c" sha1="635903d2d3c524cf58c795d1ad52250ce6c9e085" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Flight Simulator II v1.1 (1987-08-27)(Sublogic)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="fsim2a" cloneof="fsim2">
+		<description>Flight Simulator II (v1.1, Alt)</description>
+		<year>1987</year>
+		<publisher>Sublogic</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="884184">
@@ -4952,10 +4435,46 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Flimbo's Quest (1990)(System 3)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="fsim2f" cloneof="fsim2">
+		<description>Flight Simulator II (Fra, v1.1)</description>
+		<year>1987</year>
+		<publisher>Sublogic</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="890818">
+				<rom name="flight simulator ii v1.1 (1987)(sublogic)(fr).stx" size="890818" crc="5f86494c" sha1="635903d2d3c524cf58c795d1ad52250ce6c9e085" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fsim2g" cloneof="fsim2">
+		<description>Flugsimulator II (Ger)</description>
+		<year>1988</year>
+		<publisher>Sublogic</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="896666">
+				<rom name="flugsimulator ii (1988)(sublogic)(de).stx" size="896666" crc="9923e57a" sha1="99c7194acb28b96e73c83be5bc9621a3db929839" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fsim2s7">
+		<description>Flight Simulator II - Scenery Disk 7</description>
+		<year>1987</year>
+		<publisher>Sublogic</publisher>
+
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="757204">
+				<rom name="flight simulator ii - scenery disk 7 (1987)(sublogic).stx" size="757204" crc="408eff37" sha1="26233c3e303e016ebea1ada768a4aeaa5755154f" offset="0x0000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="flimbo">
+		<description>Flimbo's Quest</description>
+		<year>1990</year>
+		<publisher>System 3</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1411816">
@@ -4964,10 +4483,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Flimbo's Quest (1990)(System 3)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="flimboa" cloneof="flimbo">
+		<description>Flimbo's Quest (Alt)</description>
+		<year>1990</year>
+		<publisher>System 3</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1852132">
@@ -4976,10 +4495,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Flip-Flop (1986)(Kingsoft)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="flipflop">
+		<description>Flip-Flop</description>
+		<year>1986</year>
+		<publisher>Kingsoft</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="393038">
@@ -4988,6 +4507,7 @@
 		</part>
 	</software>
 
+	<!--
 	<software name="">
 		<description>Flip-It and Magnose - Water Carriers from Mars (1990)(Image Works)(GB)</description>
 		<year>198?</year>
@@ -4999,11 +4519,13 @@
 			</dataarea>
 		</part>
 	</software>
-
-	<software name="">
-		<description>Flood (1990)(Bullfrog)[manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	-->
+	
+	<!-- Manual protection -->
+	<software name="flood">
+		<description>Flood</description>
+		<year>1990</year>
+		<publisher>Bullfrog</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1893548">
@@ -5012,22 +4534,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Flugsimulator II (1988)(Sublogic)(de)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="896666">
-				<rom name="flugsimulator ii (1988)(sublogic)(de).stx" size="896666" crc="9923e57a" sha1="99c7194acb28b96e73c83be5bc9621a3db929839" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Football Manager 2 (1990)(Addictive)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="fm2">
+		<description>Football Manager 2</description>
+		<year>1990</year>
+		<publisher>Addictive</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1845340">
@@ -5036,10 +4546,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Football Manager 2 (1990)(Addictive)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="fm2a" cloneof="fm2">
+		<description>Football Manager 2 (Alt)</description>
+		<year>1990</year>
+		<publisher>Addictive</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="424844">
@@ -5048,106 +4558,72 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Forgotten Worlds (1989)(U.S. Gold)(Disk 1 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="fworlds">
+		<description>Forgotten Worlds</description>
+		<year>1989</year>
+		<publisher>U.S. Gold</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="468366">
 				<rom name="forgotten worlds (1989)(u.s. gold)(disk 1 of 2).stx" size="468366" crc="678b1535" sha1="f1c71a770059c5efb3bcfc7385a7e8af81d05fcd" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Forgotten Worlds (1989)(U.S. Gold)(Disk 1 of 2)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="965018">
-				<rom name="forgotten worlds (1989)(u.s. gold)(disk 1 of 2)[a].stx" size="965018" crc="9df4b2bb" sha1="0d0b97306b3ad2d2c5e1e08a0119847170c4ec91" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Forgotten Worlds (1989)(U.S. Gold)(Disk 2 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="466322">
 				<rom name="forgotten worlds (1989)(u.s. gold)(disk 2 of 2).stx" size="466322" crc="aa803b90" sha1="162f28b4981c52e8f873dfc724b875a0c429756c" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Forgotten Worlds (1989)(U.S. Gold)(Disk 2 of 2)[a]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="fworldsa" cloneof="fworlds">
+		<description>Forgotten Worlds (Alt)</description>
+		<year>1989</year>
+		<publisher>U.S. Gold</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="965018">
+				<rom name="forgotten worlds (1989)(u.s. gold)(disk 1 of 2)[a].stx" size="965018" crc="9df4b2bb" sha1="0d0b97306b3ad2d2c5e1e08a0119847170c4ec91" offset="0x0000" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="963822">
 				<rom name="forgotten worlds (1989)(u.s. gold)(disk 2 of 2)[a].stx" size="963822" crc="ba38afda" sha1="cb5c08f4e4b59637a54cd8fb67d5be7e68342335" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Formula One Grand Prix (1991)(MicroProse)(M3)(Disk 1 of 4)[manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<!-- Manual protection -->
+	<software name="f1gp">
+		<description>Formula One Grand Prix</description>
+		<year>1991</year>
+		<publisher>MicroProse</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1768278">
 				<rom name="formula one grand prix (1991)(microprose)(m3)(disk 1 of 4)[manual protection].stx" size="1768278" crc="511c3f2c" sha1="3de017a30969711240daa4a30494a5c55ad1220f" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Formula One Grand Prix (1991)(MicroProse)(M3)(Disk 2 of 4)[manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="1770624">
 				<rom name="formula one grand prix (1991)(microprose)(m3)(disk 2 of 4)[manual protection].stx" size="1770624" crc="c6b0dea4" sha1="c52f2f55f951e59e72dcca7c240c055f22eb1110" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Formula One Grand Prix (1991)(MicroProse)(M3)(Disk 3 of 4)[manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop3" interface="floppy_3_5">
 			<dataarea name="flop" size="1768770">
 				<rom name="formula one grand prix (1991)(microprose)(m3)(disk 3 of 4)[manual protection].stx" size="1768770" crc="59714508" sha1="2a3079d7e5770606a4a2a43b36513f6deddc28fb" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Formula One Grand Prix (1991)(MicroProse)(M3)(Disk 4 of 4)[manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop4" interface="floppy_3_5">
 			<dataarea name="flop" size="1768384">
 				<rom name="formula one grand prix (1991)(microprose)(m3)(disk 4 of 4)[manual protection].stx" size="1768384" crc="3cf80481" sha1="e8928f3ddf9ae35806bc2ffff783faae0a2bb00e" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Frankenstein (1992)(Zeppelin)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="frankens">
+		<description>Frankenstein</description>
+		<year>1992</year>
+		<publisher>Zeppelin</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="775440">
@@ -5156,10 +4632,11 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Freedom - Les Guerriers de l'Ombre (1988)(Coktel Vision)(fr)[manual protection]</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<!-- Manual protection -->
+	<software name="freedom">
+		<description>Freedom - Les Guerriers de l'Ombre (Fra)</description>
+		<year>1988</year>
+		<publisher>Coktel Vision</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1760792">
@@ -5168,10 +4645,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Frenetic (1991)(Core)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="frenetic">
+		<description>Frenetic</description>
+		<year>1991</year>
+		<publisher>Core</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1850792">
@@ -5180,10 +4657,10 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>From Little Acorns... (1991-02)(Budgie)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="acorns">
+		<description>From Little Acorns...</description>
+		<year>1991</year>
+		<publisher>Budgie</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="881914">
@@ -5192,54 +4669,41 @@
 		</part>
 	</software>
 
-	<software name="">
-		<description>Frontier - Elite II (1993)(Gametek - Konami)(Disk 1 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="frontier">
+		<description>Frontier - Elite II</description>
+		<year>1993</year>
+		<publisher>Gametek</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="1781504">
 				<rom name="frontier - elite ii (1993)(gametek - konami)(disk 1 of 2).stx" size="1781504" crc="f9f522a0" sha1="9abe873bbb3869ddcc49271863c309df08b45a3c" offset="0x0000" />
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="">
-		<description>Frontier - Elite II (1993)(Gametek - Konami)(Disk 2 of 2)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
 			<dataarea name="flop" size="1776248">
 				<rom name="frontier - elite ii (1993)(gametek - konami)(disk 2 of 2).stx" size="1776248" crc="bd994f55" sha1="486fb2fa5bde2eac1e5b74e1e6e02cf817fc576c" offset="0x0000" />
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="">
-		<description>Frontline (1990)(CCS)(Scenario Disk)</description>
-		<year>198?</year>
-		<publisher></publisher>
-
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="947204">
-				<rom name="frontline (1990)(ccs)(scenario disk).stx" size="947204" crc="40740047" sha1="f7c03017a9809ff59890609b94c4d46b100f71fe" offset="0x0000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="">
-		<description>Frontline (1990)(CCS)</description>
-		<year>198?</year>
-		<publisher></publisher>
+	<software name="frontlin">
+		<description>Frontline</description>
+		<year>1990</year>
+		<publisher>CCS</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="947840">
 				<rom name="frontline (1990)(ccs).stx" size="947840" crc="21c17a22" sha1="be2fa4039103d1e47a11efc995e96415ce0b39f0" offset="0x0000" />
 			</dataarea>
 		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="947204">
+				<rom name="frontline (1990)(ccs)(scenario disk).stx" size="947204" crc="40740047" sha1="f7c03017a9809ff59890609b94c4d46b100f71fe" offset="0x0000" />
+			</dataarea>
+		</part>
 	</software>
 
+	<!--
 	<software name="">
 		<description>GFL Championship Football (1987)(Activision)</description>
 		<year>198?</year>
