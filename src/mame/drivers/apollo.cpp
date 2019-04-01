@@ -29,14 +29,12 @@
 #include "includes/apollo.h"
 
 #include "cpu/m68000/m68000.h"
-#include "sound/beep.h"
 
 // we use set_verbose
 #include "bus/isa/omti8621.h"
 #include "bus/isa/3c505.h"
 
 #include "debugger.h"
-#include "speaker.h"
 
 #include "apollo_dsp.lh"
 
@@ -1050,21 +1048,16 @@ MACHINE_CONFIG_START(apollo_state::dn3500)
 	MCFG_DEVICE_PROGRAM_MAP(dn3500_map)
 	MCFG_DEVICE_IRQ_ACKNOWLEDGE_DRIVER(apollo_state,apollo_irq_acknowledge)
 
-	MCFG_QUANTUM_TIME(attotime::from_hz(60))
+	config.m_minimum_quantum = attotime::from_hz(60);
 
 	apollo(config);
-
-	/* keyboard beeper */
-	SPEAKER(config, "mono").front_center();
-	MCFG_DEVICE_ADD("beep", BEEP, 1000)
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 1.00)
 
 	/* internal ram */
 	RAM(config, m_ram).set_default_size("8M").set_extra_options("4M,8M,16M,32M");
 
 #ifdef APOLLO_XXL
 	apollo_stdio_device &stdio(APOLLO_STDIO(config, APOLLO_STDIO_TAG, 0));
-	stdio.tx_callback().set(m_sio, FUNC(apollo_sio::rx_b_w));
+	stdio.tx_cb().set(m_sio, FUNC(apollo_sio::rx_b_w));
 #endif
 MACHINE_CONFIG_END
 
@@ -1072,14 +1065,9 @@ MACHINE_CONFIG_START(apollo_state::dsp3500)
 	MCFG_DEVICE_ADD(MAINCPU, M68030, 25000000) /* 25 MHz 68030 */
 	MCFG_DEVICE_PROGRAM_MAP(dsp3500_map)
 	MCFG_DEVICE_IRQ_ACKNOWLEDGE_DRIVER(apollo_state,apollo_irq_acknowledge)
-	MCFG_QUANTUM_TIME(attotime::from_hz(60))
+	config.m_minimum_quantum = attotime::from_hz(60);
 
 	apollo_terminal(config);
-
-	/* keyboard beeper */
-	SPEAKER(config, "mono").front_center();
-	MCFG_DEVICE_ADD("beep", BEEP, 1000)
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 1.00)
 
 	/* internal ram */
 	RAM(config, RAM_TAG).set_default_size("8M").set_extra_options("4M,8M,16M,32M");
@@ -1124,14 +1112,9 @@ MACHINE_CONFIG_START(apollo_state::dsp3000)
 	MCFG_DEVICE_ADD(MAINCPU, M68020PMMU, 12000000) /* 12 MHz */
 	MCFG_DEVICE_IRQ_ACKNOWLEDGE_DRIVER(apollo_state,apollo_irq_acknowledge)
 	MCFG_DEVICE_PROGRAM_MAP(dsp3000_map)
-	MCFG_QUANTUM_TIME(attotime::from_hz(60))
+	config.m_minimum_quantum = attotime::from_hz(60);
 
 	apollo_terminal(config);
-
-	/* keyboard beeper */
-	SPEAKER(config, "mono").front_center();
-	MCFG_DEVICE_ADD("beep", BEEP, 1000)
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 1.00)
 
 	/* internal ram */
 	RAM(config, m_ram).set_default_size("8M").set_extra_options("4M");
@@ -1172,14 +1155,9 @@ MACHINE_CONFIG_START(apollo_state::dsp5500)
 	MCFG_DEVICE_ADD(MAINCPU, M68040, 25000000) /* 25 MHz */
 	MCFG_DEVICE_PROGRAM_MAP(dsp5500_map)
 	MCFG_DEVICE_IRQ_ACKNOWLEDGE_DRIVER(apollo_state,apollo_irq_acknowledge)
-	MCFG_QUANTUM_TIME(attotime::from_hz(60))
+	config.m_minimum_quantum = attotime::from_hz(60);
 
 	apollo_terminal(config);
-
-	/* keyboard beeper */
-	SPEAKER(config, "mono").front_center();
-	MCFG_DEVICE_ADD("beep", BEEP, 1000)
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 1.00)
 
 	/* internal ram */
 	// FIXME: guess, to fix validation

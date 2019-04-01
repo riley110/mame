@@ -1356,20 +1356,20 @@ READ8_MEMBER( sun4_state::fdc_r )
 	switch(offset)
 	{
 		case 0: // Main Status (R, 82072)
-			return m_fdc->msr_r(space, 0, 0xff);
+			return m_fdc->msr_r();
 
 		case 1: // FIFO Data Port (R, 82072)
 		case 5: // FIFO Data Port (R, 82077)
-			return m_fdc->fifo_r(space, 0, 0xff);
+			return m_fdc->fifo_r();
 
 		case 2: // Digital Output Register (R, 82077)
-			return m_fdc->dor_r(space, 0, 0xff);
+			return m_fdc->dor_r();
 
 		case 4: // Main Status Register (R, 82077)
-			return m_fdc->msr_r(space, 0, 0xff);
+			return m_fdc->msr_r();
 
 		case 7:// Digital Input Register (R, 82077)
-			return m_fdc->dir_r(space, 0, 0xff);
+			return m_fdc->dir_r();
 
 		default:
 			break;
@@ -1384,16 +1384,16 @@ WRITE8_MEMBER( sun4_state::fdc_w )
 	{
 		case 0: // Data Rate Select Register (W, 82072)
 		case 4: // Data Rate Select Register (W, 82077)
-			m_fdc->dsr_w(space, 0, data, 0xff);
+			m_fdc->dsr_w(data);
 			break;
 
 		case 1: // FIFO Data Port (W, 82072)
 		case 5: // FIFO Data Port (W, 82077)
-			m_fdc->fifo_w(space, 0, data, 0xff);
+			m_fdc->fifo_w(data);
 			break;
 
 		case 7: // Configuration Control REgister (W, 82077)
-			m_fdc->ccr_w(space, 0, data, 0xff);
+			m_fdc->ccr_w(data);
 			break;
 
 		default:
@@ -1846,7 +1846,8 @@ void sun4_state::ncr53c90a(device_t *device)
 	adapter.drq_handler_cb().set(*this, FUNC(sun4_state::scsi_drq));
 }
 
-MACHINE_CONFIG_START(sun4_state::sun4)
+void sun4_state::sun4(machine_config &config)
+{
 	/* basic machine hardware */
 	MB86901(config, m_maincpu, 16'670'000);
 		m_maincpu->add_asi_desc([](sparc_disassembler *dasm) { dasm->add_asi_desc(sun4_asi_desc); });
@@ -1920,19 +1921,19 @@ MACHINE_CONFIG_START(sun4_state::sun4)
 	rs232b.dcd_handler().set(m_scc2, FUNC(z80scc_device::dcdb_w));
 	rs232b.cts_handler().set(m_scc2, FUNC(z80scc_device::ctsb_w));
 
-	MCFG_NSCSI_BUS_ADD("scsibus")
-	MCFG_NSCSI_ADD("scsibus:0", sun_scsi_devices, "harddisk", false)
-	MCFG_NSCSI_ADD("scsibus:1", sun_scsi_devices, nullptr, false)
-	MCFG_NSCSI_ADD("scsibus:2", sun_scsi_devices, nullptr, false)
-	MCFG_NSCSI_ADD("scsibus:3", sun_scsi_devices, nullptr, false)
-	MCFG_NSCSI_ADD("scsibus:4", sun_scsi_devices, nullptr, false)
-	MCFG_NSCSI_ADD("scsibus:5", sun_scsi_devices, nullptr, false)
-	MCFG_NSCSI_ADD("scsibus:6", sun_scsi_devices, "cdrom", false)
-	MCFG_NSCSI_ADD("scsibus:7", sun_scsi_devices, "ncr53c90a", true)
-	MCFG_SLOT_OPTION_MACHINE_CONFIG("ncr53c90a", [this] (device_t *device) { ncr53c90a(device); })
-MACHINE_CONFIG_END
+	NSCSI_BUS(config, "scsibus");
+	NSCSI_CONNECTOR(config, "scsibus:0", sun_scsi_devices, "harddisk");
+	NSCSI_CONNECTOR(config, "scsibus:1", sun_scsi_devices, nullptr);
+	NSCSI_CONNECTOR(config, "scsibus:2", sun_scsi_devices, nullptr);
+	NSCSI_CONNECTOR(config, "scsibus:3", sun_scsi_devices, nullptr);
+	NSCSI_CONNECTOR(config, "scsibus:4", sun_scsi_devices, nullptr);
+	NSCSI_CONNECTOR(config, "scsibus:5", sun_scsi_devices, nullptr);
+	NSCSI_CONNECTOR(config, "scsibus:6", sun_scsi_devices, "cdrom");
+	NSCSI_CONNECTOR(config, "scsibus:7", sun_scsi_devices, "ncr53c90a", true).set_option_machine_config("ncr53c90a", [this] (device_t *device) { ncr53c90a(device); });
+}
 
-MACHINE_CONFIG_START(sun4_state::sun4c)
+void sun4_state::sun4c(machine_config &config)
+{
 	/* basic machine hardware */
 	MB86901(config, m_maincpu, 20'000'000);
 	m_maincpu->add_asi_desc([](sparc_disassembler *dasm) { dasm->add_asi_desc(sun4c_asi_desc); });
@@ -2004,23 +2005,22 @@ MACHINE_CONFIG_START(sun4_state::sun4c)
 	rs232b.dcd_handler().set(m_scc2, FUNC(z80scc_device::dcdb_w));
 	rs232b.cts_handler().set(m_scc2, FUNC(z80scc_device::ctsb_w));
 
-	MCFG_NSCSI_BUS_ADD("scsibus")
-	MCFG_NSCSI_ADD("scsibus:0", sun_scsi_devices, "harddisk", false)
-	MCFG_NSCSI_ADD("scsibus:1", sun_scsi_devices, "cdrom", false)
-	MCFG_NSCSI_ADD("scsibus:2", sun_scsi_devices, nullptr, false)
-	MCFG_NSCSI_ADD("scsibus:3", sun_scsi_devices, nullptr, false)
-	MCFG_NSCSI_ADD("scsibus:4", sun_scsi_devices, nullptr, false)
-	MCFG_NSCSI_ADD("scsibus:5", sun_scsi_devices, nullptr, false)
-	MCFG_NSCSI_ADD("scsibus:6", sun_scsi_devices, nullptr, false)
-	MCFG_NSCSI_ADD("scsibus:7", sun_scsi_devices, "ncr53c90a", true)
-	MCFG_SLOT_OPTION_MACHINE_CONFIG("ncr53c90a", [this] (device_t *device) { ncr53c90a(device); })
+	NSCSI_BUS(config, "scsibus");
+	NSCSI_CONNECTOR(config, "scsibus:0", sun_scsi_devices, "harddisk");
+	NSCSI_CONNECTOR(config, "scsibus:1", sun_scsi_devices, "cdrom");
+	NSCSI_CONNECTOR(config, "scsibus:2", sun_scsi_devices, nullptr);
+	NSCSI_CONNECTOR(config, "scsibus:3", sun_scsi_devices, nullptr);
+	NSCSI_CONNECTOR(config, "scsibus:4", sun_scsi_devices, nullptr);
+	NSCSI_CONNECTOR(config, "scsibus:5", sun_scsi_devices, nullptr);
+	NSCSI_CONNECTOR(config, "scsibus:6", sun_scsi_devices, nullptr);
+	NSCSI_CONNECTOR(config, "scsibus:7", sun_scsi_devices, "ncr53c90a", true).set_option_machine_config("ncr53c90a", [this] (device_t *device) { ncr53c90a(device); });
 
 	// SBus
 	SBUS(config, m_sbus, 20'000'000, "maincpu", "type1");
 	SBUS_SLOT(config, m_sbus_slot[0], 20'000'000, m_sbus, sbus_cards, nullptr);
 	SBUS_SLOT(config, m_sbus_slot[1], 20'000'000, m_sbus, sbus_cards, nullptr);
 	SBUS_SLOT(config, m_sbus_slot[2], 20'000'000, m_sbus, sbus_cards, nullptr);
-MACHINE_CONFIG_END
+}
 
 void sun4_state::sun4_20(machine_config &config)
 {

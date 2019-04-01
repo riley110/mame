@@ -286,11 +286,11 @@ READ8_MEMBER(elwro800_state::elwro800jr_io_r)
 		// CSFDC
 		if (offset & 1)
 		{
-			return m_upd765->fifo_r(space, 0, 0xff);
+			return m_upd765->fifo_r();
 		}
 		else
 		{
-			return m_upd765->msr_r(space, 0, 0xff);
+			return m_upd765->msr_r();
 		}
 	}
 	else if (!BIT(cs,4))
@@ -334,7 +334,7 @@ WRITE8_MEMBER(elwro800_state::elwro800jr_io_w)
 		// CSFDC
 		if (offset & 1)
 		{
-			m_upd765->fifo_w(space, 0, data, 0xff);
+			m_upd765->fifo_w(data);
 		}
 	}
 	else if (!BIT(cs,4))
@@ -556,24 +556,24 @@ static GFXDECODE_START( gfx_elwro800 )
 GFXDECODE_END
 
 
-MACHINE_CONFIG_START(elwro800_state::elwro800)
-
+void elwro800_state::elwro800(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_DEVICE_ADD("maincpu",Z80, 14_MHz_XTAL / 4)    /* 3.5 MHz */
-	MCFG_DEVICE_PROGRAM_MAP(elwro800_mem)
-	MCFG_DEVICE_IO_MAP(elwro800_io)
-	MCFG_DEVICE_OPCODES_MAP(elwro800_m1)
-	MCFG_DEVICE_VBLANK_INT_DRIVER("screen", elwro800_state,  elwro800jr_interrupt)
+	Z80(config, m_maincpu, 14_MHz_XTAL / 4);    /* 3.5 MHz */
+	m_maincpu->set_addrmap(AS_PROGRAM, &elwro800_state::elwro800_mem);
+	m_maincpu->set_addrmap(AS_IO, &elwro800_state::elwro800_io);
+	m_maincpu->set_addrmap(AS_OPCODES, &elwro800_state::elwro800_m1);
+	m_maincpu->set_vblank_int("screen", FUNC(elwro800_state::elwro800jr_interrupt));
 
 	MCFG_MACHINE_RESET_OVERRIDE(elwro800_state,elwro800)
 
 	/* video hardware */
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_RAW_PARAMS(14_MHz_XTAL / 2, 448, 0, SPEC_SCREEN_WIDTH, 312, 0, SPEC_SCREEN_HEIGHT)
+	screen_device &screen(SCREEN(config, "screen", SCREEN_TYPE_RASTER));
+	screen.set_raw(14_MHz_XTAL / 2, 448, 0, SPEC_SCREEN_WIDTH, 312, 0, SPEC_SCREEN_HEIGHT);
 	// Sync and interrupt timings determined by 2716 EPROM
-	MCFG_SCREEN_UPDATE_DRIVER(elwro800_state, screen_update_spectrum )
-	MCFG_SCREEN_VBLANK_CALLBACK(WRITELINE(*this, elwro800_state, screen_vblank_spectrum))
-	MCFG_SCREEN_PALETTE("palette")
+	screen.set_screen_update(FUNC(elwro800_state::screen_update_spectrum));
+	screen.screen_vblank().set(FUNC(elwro800_state::screen_vblank_spectrum));
+	screen.set_palette("palette");
 
 	PALETTE(config, "palette", FUNC(elwro800_state::spectrum_palette), 16);
 	GFXDECODE(config, "gfxdecode", "palette", gfx_elwro800);
@@ -595,7 +595,8 @@ MACHINE_CONFIG_START(elwro800_state::elwro800)
 	m_centronics->ack_handler().set(FUNC(elwro800_state::write_centronics_ack));
 
 	INPUT_BUFFER(config, "cent_data_in");
-	MCFG_CENTRONICS_OUTPUT_LATCH_ADD("cent_data_out", "centronics")
+	output_latch_device &cent_data_out(OUTPUT_LATCH(config, "cent_data_out"));
+	m_centronics->set_output_latch(cent_data_out);
 
 	I8251(config, m_i8251, 14_MHz_XTAL / 4);
 
@@ -608,8 +609,8 @@ MACHINE_CONFIG_START(elwro800_state::elwro800)
 	m_cassette->set_formats(tzx_cassette_formats);
 	m_cassette->set_default_state(CASSETTE_STOPPED | CASSETTE_SPEAKER_ENABLED | CASSETTE_MOTOR_ENABLED);
 
-	MCFG_FLOPPY_DRIVE_ADD("upd765:0", elwro800jr_floppies, "35dd", floppy_image_device::default_floppy_formats)
-	MCFG_FLOPPY_DRIVE_ADD("upd765:1", elwro800jr_floppies, "35dd", floppy_image_device::default_floppy_formats)
+	FLOPPY_CONNECTOR(config, "upd765:0", elwro800jr_floppies, "35dd", floppy_image_device::default_floppy_formats);
+	FLOPPY_CONNECTOR(config, "upd765:1", elwro800jr_floppies, "35dd", floppy_image_device::default_floppy_formats);
 
 	/* internal ram */
 	RAM(config, RAM_TAG).set_default_size("64K");
@@ -617,9 +618,8 @@ MACHINE_CONFIG_START(elwro800_state::elwro800)
 	ADDRESS_MAP_BANK(config, "bank1").set_map(&elwro800_state::elwro800_bank1).set_data_width(8).set_stride(0x2000);
 	ADDRESS_MAP_BANK(config, "bank2").set_map(&elwro800_state::elwro800_bank2).set_data_width(8).set_stride(0x2000);
 
-	/* software lists */
-	MCFG_SOFTWARE_LIST_ADD("flop_list", "elwro800")
-MACHINE_CONFIG_END
+	SOFTWARE_LIST(config, "flop_list").set_original("elwro800");
+}
 
 /*************************************
  *

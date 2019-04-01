@@ -233,11 +233,12 @@ DEVICE_INPUT_DEFAULTS_END
 //  device_add_mconfig - add device configuration
 //-------------------------------------------------
 
-MACHINE_CONFIG_START(softbox_device::device_add_mconfig)
+void softbox_device::device_add_mconfig(machine_config &config)
+{
 	// basic machine hardware
-	MCFG_DEVICE_ADD(Z80_TAG, Z80, XTAL(8'000'000)/2)
-	MCFG_DEVICE_PROGRAM_MAP(softbox_mem)
-	MCFG_DEVICE_IO_MAP(softbox_io)
+	Z80(config, m_maincpu, XTAL(8'000'000)/2);
+	m_maincpu->set_addrmap(AS_PROGRAM, &softbox_device::softbox_mem);
+	m_maincpu->set_addrmap(AS_IO, &softbox_device::softbox_io);
 
 	// devices
 	i8251_device &i8251(I8251(config, I8251_TAG, 0));
@@ -265,21 +266,17 @@ MACHINE_CONFIG_START(softbox_device::device_add_mconfig)
 	m_dbrg->fr_handler().set(I8251_TAG, FUNC(i8251_device::write_rxc));
 	m_dbrg->ft_handler().set(I8251_TAG, FUNC(i8251_device::write_txc));
 
-	MCFG_DEVICE_ADD(m_hdc, CORVUS_HDC, 0)
-	MCFG_HARDDISK_ADD("harddisk1")
-	MCFG_HARDDISK_INTERFACE("corvus_hdd")
-	MCFG_HARDDISK_ADD("harddisk2")
-	MCFG_HARDDISK_INTERFACE("corvus_hdd")
-	MCFG_HARDDISK_ADD("harddisk3")
-	MCFG_HARDDISK_INTERFACE("corvus_hdd")
-	MCFG_HARDDISK_ADD("harddisk4")
-	MCFG_HARDDISK_INTERFACE("corvus_hdd")
-	//MCFG_IMI7000_BUS_ADD("imi5000h", nullptr, nullptr, nullptr)
-
+	CORVUS_HDC(config, m_hdc, 0);
+	HARDDISK(config, "harddisk1", "corvus_hdd");
+	HARDDISK(config, "harddisk2", "corvus_hdd");
+	HARDDISK(config, "harddisk3", "corvus_hdd");
+	HARDDISK(config, "harddisk4", "corvus_hdd");
+	//imi7000_bus_device::add_config(config, "imi5000h", nullptr, nullptr, nullptr);
+	
 	// software lists
-	MCFG_SOFTWARE_LIST_ADD("flop_list", "softbox_flop")
-	MCFG_SOFTWARE_LIST_ADD("hdd_list", "softbox_hdd")
-MACHINE_CONFIG_END
+	SOFTWARE_LIST(config, "flop_list").set_original("softbox_flop")
+	SOFTWARE_LIST(config, "hdd_list").set_original("softbox_hdd")
+}
 
 
 //-------------------------------------------------
@@ -386,6 +383,6 @@ void softbox_device::ieee488_ifc(int state)
 
 WRITE8_MEMBER( softbox_device::dbrg_w )
 {
-	m_dbrg->write_str(data & 0x0f);
-	m_dbrg->write_stt(data >> 4);
+	m_dbrg->str_w(data & 0x0f);
+	m_dbrg->stt_w(data >> 4);
 }

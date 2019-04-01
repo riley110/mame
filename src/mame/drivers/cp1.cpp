@@ -122,14 +122,14 @@ READ8_MEMBER(cp1_state::i8155_read)
 
 	if (!(m_port2 & 0x10))
 	{
-		m_i8155->ale_w(space, BIT(m_port2, 7), offset);
-		data |= m_i8155->read(space, offset);
+		m_i8155->ale_w(BIT(m_port2, 7), offset);
+		data |= m_i8155->data_r();
 	}
 	if ((m_io_config->read() & 0x02) && !(m_port2 & 0x20))
 	{
 		// CP3 RAM expansion
-		m_i8155_cp3->ale_w(space, BIT(m_port2, 7), offset);
-		data |= m_i8155_cp3->read(space, offset);
+		m_i8155_cp3->ale_w(BIT(m_port2, 7), offset);
+		data |= m_i8155_cp3->data_r();
 	}
 
 	return data;
@@ -139,14 +139,14 @@ WRITE8_MEMBER(cp1_state::i8155_write)
 {
 	if (!(m_port2 & 0x10))
 	{
-		m_i8155->ale_w(space, BIT(m_port2, 7), offset);
-		m_i8155->write(space, offset, data);
+		m_i8155->ale_w(BIT(m_port2, 7), offset);
+		m_i8155->data_w(data);
 	}
 	if ((m_io_config->read() & 0x02) && !(m_port2 & 0x20))
 	{
 		// CP3 RAM expansion
-		m_i8155_cp3->ale_w(space, BIT(m_port2, 7), offset);
-		m_i8155_cp3->write(space, offset, data);
+		m_i8155_cp3->ale_w(BIT(m_port2, 7), offset);
+		m_i8155_cp3->data_w(data);
 	}
 }
 
@@ -244,7 +244,6 @@ void cp1_state::machine_reset()
 
 QUICKLOAD_LOAD_MEMBER( cp1_state, quickload )
 {
-	address_space &space = machine().dummy_space();
 	char line[0x10];
 	int addr = 0;
 	while (image.fgets(line, 10) && addr < 0x100)
@@ -252,8 +251,8 @@ QUICKLOAD_LOAD_MEMBER( cp1_state, quickload )
 		int op = 0, arg = 0;
 		if (sscanf(line, "%d.%d", &op, &arg) == 2)
 		{
-			m_i8155->memory_w(space, addr++, op);
-			m_i8155->memory_w(space, addr++, arg);
+			m_i8155->memory_w(addr++, op);
+			m_i8155->memory_w(addr++, arg);
 		}
 		else
 		{
@@ -290,7 +289,7 @@ void cp1_state::cp1(machine_config &config)
 
 	CASSETTE(config, m_cassette);
 
-	QUICKLOAD(config, "quickload", 0).set_handler(snapquick_load_delegate(&QUICKLOAD_LOAD_NAME(cp1_state, quickload), this), "obj", 1);
+	QUICKLOAD(config, "quickload").set_handler(snapquick_load_delegate(&QUICKLOAD_LOAD_NAME(cp1_state, quickload), this), "obj", attotime::from_seconds(1));
 }
 
 /* ROM definition */
