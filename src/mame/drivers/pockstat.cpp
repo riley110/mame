@@ -1009,7 +1009,7 @@ MACHINE_CONFIG_START(pockstat_state::pockstat)
 	MCFG_GENERIC_ENDIAN(ENDIANNESS_LITTLE)
 	MCFG_GENERIC_LOAD(pockstat_state, pockstat_flash)
 
-	MCFG_SOFTWARE_LIST_ADD("cart_list","pockstat")
+	SOFTWARE_LIST(config, "cart_list").set_original("pockstat");
 MACHINE_CONFIG_END
 
 /* ROM definition */

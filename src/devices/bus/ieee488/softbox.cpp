@@ -274,8 +274,8 @@ void softbox_device::device_add_mconfig(machine_config &config)
 	//imi7000_bus_device::add_config(config, "imi5000h", nullptr, nullptr, nullptr);
 	
 	// software lists
-	SOFTWARE_LIST(config, "flop_list").set_original("softbox_flop")
-	SOFTWARE_LIST(config, "hdd_list").set_original("softbox_hdd")
+	SOFTWARE_LIST(config, "flop_list").set_original("softbox_flop");
+	SOFTWARE_LIST(config, "hdd_list").set_original("softbox_hdd");
 }
 
 

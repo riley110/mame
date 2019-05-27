@@ -420,10 +420,10 @@ void hec2hrp_state::hec2hr(machine_config &config)
 	m_cassette->set_formats(hector_cassette_formats);
 	m_cassette->set_default_state(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED);
 
-	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhr")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("h1_cass_list","hector1")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("vict_cass_list","victor")
+	SOFTWARE_LIST(config, "cass_list").set_original("hectorhr");
+	SOFTWARE_LIST(config, "int_cass_list").set_compatible("interact");
+	SOFTWARE_LIST(config, "h1_cass_list").set_compatible("hector1");
+	SOFTWARE_LIST(config, "vict_cass_list").set_compatible("victor");
 
 	PRINTER(config, m_printer, 0);
 }
@@ -455,10 +455,10 @@ void hec2hrp_state::hec2hrp(machine_config &config)
 	m_cassette->set_formats(hector_cassette_formats);
 	m_cassette->set_default_state(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED);
 
-	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhr")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("h1_cass_list","hector1")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("vict_cass_list","victor")
+	SOFTWARE_LIST(config, "cass_list").set_original("hectorhr");
+	SOFTWARE_LIST(config, "int_cass_list").set_compatible("interact");
+	SOFTWARE_LIST(config, "h1_cass_list").set_compatible("hector1");
+	SOFTWARE_LIST(config, "vict_cass_list").set_compatible("victor");
 
 	PRINTER(config, m_printer, 0);
 }
@@ -506,11 +506,11 @@ void hec2hrp_state::hec2mx40(machine_config &config)
 	m_cassette->set_formats(hector_cassette_formats);
 	m_cassette->set_default_state(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED);
 
-	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhrx")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("h1_cass_list","hector1")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("vict_cass_list","victor")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("hr_cass_list","hectorhr")
+	SOFTWARE_LIST(config, "cass_list").set_original("hectorhrx");
+	SOFTWARE_LIST(config, "hr_cass_list").set_original("hectorhr");
+	SOFTWARE_LIST(config, "int_cass_list").set_compatible("interact");
+	SOFTWARE_LIST(config, "h1_cass_list").set_compatible("hector1");
+	SOFTWARE_LIST(config, "vict_cass_list").set_compatible("victor");
 
 	PRINTER(config, m_printer, 0);
 }
@@ -554,11 +554,11 @@ void hec2hrp_state::hec2hrx(machine_config &config)
 	m_cassette->set_formats(hector_cassette_formats);
 	m_cassette->set_default_state(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED);
 
-	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhrx")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("h1_cass_list","hector1")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("vict_cass_list","victor")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("hr_cass_list","hectorhr")
+	SOFTWARE_LIST(config, "cass_list").set_original("hectorhrx");
+	SOFTWARE_LIST(config, "hr_cass_list").set_original("hectorhr");
+	SOFTWARE_LIST(config, "int_cass_list").set_compatible("interact");
+	SOFTWARE_LIST(config, "h1_cass_list").set_compatible("hector1");
+	SOFTWARE_LIST(config, "vict_cass_list").set_compatible("victor");
 
 	PRINTER(config, m_printer, 0);
 }
@@ -594,11 +594,11 @@ void hec2hrp_state::hec2mdhrx(machine_config &config)
 	m_cassette->set_formats(hector_cassette_formats);
 	m_cassette->set_default_state(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED);
 
-	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhrx")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("h1_cass_list","hector1")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("vict_cass_list","victor")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("hr_cass_list","hectorhr")
+	SOFTWARE_LIST(config, "cass_list").set_original("hectorhrx");
+	SOFTWARE_LIST(config, "hr_cass_list").set_original("hectorhr");
+	SOFTWARE_LIST(config, "int_cass_list").set_compatible("interact");
+	SOFTWARE_LIST(config, "h1_cass_list").set_compatible("hector1");
+	SOFTWARE_LIST(config, "vict_cass_list").set_compatible("victor");
 
 	PRINTER(config, m_printer, 0);
 }
@@ -642,11 +642,11 @@ void hec2hrp_state::hec2mx80(machine_config &config)
 	m_cassette->set_formats(hector_cassette_formats);
 	m_cassette->set_default_state(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED);
 
-	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhrx")
-	//MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
-	//MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("h1_cass_list","hector1")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("vict_cass_list","victor")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("hr_cass_list","hectorhr")
+	SOFTWARE_LIST(config, "cass_list").set_original("hectorhrx");
+	SOFTWARE_LIST(config, "hr_cass_list").set_original("hectorhr");
+	//SOFTWARE_LIST(config, "int_cass_list").set_compatible("interact");
+	//SOFTWARE_LIST(config, "h1_cass_list").set_compatible("hector1");
+	SOFTWARE_LIST(config, "vict_cass_list").set_compatible("victor");
 
 	PRINTER(config, m_printer, 0);
 }

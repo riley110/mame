@@ -195,8 +195,8 @@ void interact_state::hector1(machine_config &config)
 	m_cassette->set_default_state(CASSETTE_STOPPED | CASSETTE_MASK_SPEAKER);
 	m_cassette->set_interface("interact_cass");
 
-	MCFG_SOFTWARE_LIST_ADD("cass_list","hector1")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
+	SOFTWARE_LIST(config, "cass_list").set_original("hector1");
+	SOFTWARE_LIST(config, "int_cass_list").set_compatible("interact");
 
 	/* printer */
 	PRINTER(config, m_printer, 0);
