@@ -69,6 +69,7 @@ Ocha-Ken Hot Medal                          837-14790    G            ROM  JP   
 Tetris Giant / Tetris Dekaris               834-14970    G  MDA-C0076 CF   ANY    253-5508-0604   AAFE-01G03025212
 Tetris Giant / Tetris Dekaris Ver.2.000     834-14970    G            ROM  ANY    253-5508-0604   AAFE-xxxxxxxxxxx
 Thomas: The Tank Engine                     ???-?????                 no          ???-????-????   AAFE-xxxxxxxxxxx
+Unknown                                     834-14865                      JAP
 
 REV PCB       IC6s      Flash       AU1500
 C  171-8278C  315-6370  8x 128Mbit  AMD
@@ -199,7 +200,7 @@ void segasp_state::segasp_map(address_map &map)
 	map(0x00700000, 0x00707fff).mirror(0x02000000).rw(FUNC(segasp_state::dc_aica_reg_r), FUNC(segasp_state::dc_aica_reg_w));
 	map(0x00710000, 0x0071000f).mirror(0x02000000).rw("aicartc", FUNC(aicartc_device::read), FUNC(aicartc_device::write)).umask64(0x0000ffff0000ffff);
 
-	map(0x00800000, 0x00ffffff).mirror(0x02000000).rw(FUNC(segasp_state::sh4_soundram_r), FUNC(segasp_state::sh4_soundram_w));           // sound RAM (8 MB)
+	map(0x00800000, 0x00ffffff).mirror(0x02000000).rw(FUNC(segasp_state::soundram_r), FUNC(segasp_state::soundram_w));           // sound RAM (8 MB)
 
 	/* External Device */
 	map(0x01000000, 0x0100ffff).ram(); // banked access to ROM/NET board address space, mainly backup SRAM and ATA

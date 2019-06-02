@@ -15,6 +15,7 @@
 #include "cdrom.h"
 #include "imagedev/chd_cd.h"
 #include "screen.h"
+#include "emupal.h"
 
 #ifndef ENABLE_SPEEDUP_HACKS
 #define ENABLE_SPEEDUP_HACKS 1
@@ -75,6 +76,7 @@ public:
 		, m_eeprom(*this, "eeprom")
 		, m_ide(*this, "ide")
 		, m_screen(*this, "screen")
+		, m_palette(*this, "palette")
 	{
 	}
 
@@ -250,20 +252,21 @@ private:
 	DECLARE_READ32_MEMBER(butch_regs_r);
 	DECLARE_WRITE32_MEMBER(butch_regs_w);
 
-	// from audio/jaguar.c
+	// from audio/jaguar.cpp
 	DECLARE_READ16_MEMBER( jerry_regs_r );
 	DECLARE_WRITE16_MEMBER( jerry_regs_w );
 	DECLARE_READ32_MEMBER( serial_r );
 	DECLARE_WRITE32_MEMBER( serial_w );
 	void serial_update();
 
-	// from video/jaguar.c
+	// from video/jaguar.cpp
 	DECLARE_READ32_MEMBER( blitter_r );
 	DECLARE_WRITE32_MEMBER( blitter_w );
 	DECLARE_READ16_MEMBER( tom_regs_r );
 	DECLARE_WRITE16_MEMBER( tom_regs_w );
 	DECLARE_READ32_MEMBER( cojag_gun_input_r );
 	uint32_t screen_update(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect);
+	void jagpal_ycc(palette_device &palette) const;
 
 	DECLARE_WRITE_LINE_MEMBER( gpu_cpu_int );
 	DECLARE_WRITE_LINE_MEMBER( dsp_cpu_int );
@@ -271,9 +274,9 @@ private:
 
 	image_init_result quickload(device_image_interface &image, const char *file_type, int quickload_size);
 	void cart_start();
-	IRQ_CALLBACK_MEMBER(jaguar_irq_callback);
 	DECLARE_DEVICE_IMAGE_LOAD_MEMBER( jaguar_cart );
 	DECLARE_QUICKLOAD_LOAD_MEMBER( jaguar );
+	void cpu_space_map(address_map &map);
 	void dsp_map(address_map &map);
 	void dsp_rom_map(address_map &map);
 	void gpu_map(address_map &map);
@@ -386,4 +389,5 @@ private:
 	optional_device<eeprom_serial_93cxx_device> m_eeprom;
 	optional_device<vt83c461_device> m_ide;
 	required_device<screen_device> m_screen;
+	required_device<palette_device> m_palette;
 };

@@ -102,9 +102,8 @@ WRITE8_MEMBER(tbowl_state::trigger_nmi)
 void tbowl_state::_6206C_map(address_map &map)
 {
 	map(0x0000, 0xbfff).rom();
-	map(0xc000, 0xdfff).readonly();
-	map(0xc000, 0xd7ff).writeonly();
-	map(0xd800, 0xdfff).writeonly().share("spriteram");
+	map(0xc000, 0xd7ff).ram();
+	map(0xd800, 0xdfff).ram().share("spriteram");
 	map(0xe000, 0xefff).ram().w(m_palette, FUNC(palette_device::write8)).share("palette"); // 2x palettes, one for each monitor?
 	map(0xf000, 0xf7ff).bankr("subbank");
 	map(0xf800, 0xfbff).ram().share("shared_ram");
@@ -427,7 +426,7 @@ void tbowl_state::machine_reset()
 	m_adpcm_pos[0] = m_adpcm_pos[1] = 0;
 	m_adpcm_end[0] = m_adpcm_end[1] = 0;
 	m_adpcm_data[0] = m_adpcm_data[1] = -1;
-	m_soundlatch->acknowledge_w(machine().dummy_space(), 0, 0);
+	m_soundlatch->acknowledge_w();
 }
 
 void tbowl_state::tbowl(machine_config &config)

@@ -81,10 +81,7 @@ void splash_state::splash_map(address_map &map)
 	map(0x840002, 0x840003).portr("DSW2");
 	map(0x840004, 0x840005).portr("P1");
 	map(0x840006, 0x840007).portr("P2");
-	map(0x84000a, 0x84000a).select(0x000070).lw8("outlatch_w",
-												 [this](address_space &space, offs_t offset, u8 data, u8 mem_mask) {
-													 m_outlatch->write_d0(space, offset >> 3, data, mem_mask);
-												 });
+	map(0x84000a, 0x84000a).select(0x000070).lw8("outlatch_w", [this](offs_t offset, u8 data) { m_outlatch->write_d0(offset >> 3, data); });
 	map(0x84000f, 0x84000f).w(m_soundlatch, FUNC(generic_latch_8_device::write));
 	map(0x880000, 0x8817ff).ram().w(FUNC(splash_state::vram_w)).share("videoram");   /* Video RAM */
 	map(0x881800, 0x881803).ram().share("vregs");                           /* Scroll registers */
@@ -138,7 +135,7 @@ WRITE8_MEMBER(splash_state::sound_bank_w)
 void splash_state::roldfrog_update_irq(  )
 {
 	int irq = (m_sound_irq ? 0x08 : 0) | ((m_vblank_irq) ? 0x18 : 0);
-	m_audiocpu->set_input_line_and_vector(0, irq ? ASSERT_LINE : CLEAR_LINE, 0xc7 | irq);
+	m_audiocpu->set_input_line_and_vector(0, irq ? ASSERT_LINE : CLEAR_LINE, 0xc7 | irq); // Z80
 }
 
 WRITE8_MEMBER(splash_state::roldfrog_vblank_ack_w)
@@ -164,10 +161,7 @@ void splash_state::roldfrog_map(address_map &map)
 	map(0x840002, 0x840003).portr("DSW2");
 	map(0x840004, 0x840005).portr("P1");
 	map(0x840006, 0x840007).portr("P2");
-	map(0x84000a, 0x84000a).select(0x000070).lw8("outlatch_w",
-												 [this](address_space &space, offs_t offset, u8 data, u8 mem_mask) {
-													 m_outlatch->write_d0(space, offset >> 3, data, mem_mask);
-												 });
+	map(0x84000a, 0x84000a).select(0x000070).lw8("outlatch_w", [this](offs_t offset, u8 data) { m_outlatch->write_d0(offset >> 3, data); });
 	map(0x84000f, 0x84000f).w(m_soundlatch, FUNC(generic_latch_8_device::write));
 	map(0x880000, 0x8817ff).ram().w(FUNC(splash_state::vram_w)).share("videoram");   /* Video RAM */
 	map(0x881800, 0x881803).ram().share("vregs");                           /* Scroll registers */
@@ -603,7 +597,7 @@ WRITE_LINE_MEMBER(funystrp_state::adpcm_int1)
 		if (m_msm_toggle1 == 0)
 		{
 			m_msm_source|=1;
-			m_audiocpu->set_input_line_and_vector(0, HOLD_LINE, 0x38);
+			m_audiocpu->set_input_line_and_vector(0, HOLD_LINE, 0x38); // Z80
 		}
 	}
 }
@@ -618,7 +612,7 @@ WRITE_LINE_MEMBER(funystrp_state::adpcm_int2)
 		if (m_msm_toggle2 == 0)
 		{
 			m_msm_source|=2;
-			m_audiocpu->set_input_line_and_vector(0, HOLD_LINE, 0x38);
+			m_audiocpu->set_input_line_and_vector(0, HOLD_LINE, 0x38); // Z80
 		}
 	}
 }

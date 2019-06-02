@@ -173,6 +173,7 @@ SOUNDS["NAMCO_15XX"] = true
 SOUNDS["NAMCO_CUS30"] = true
 SOUNDS["NAMCO_52XX"] = true
 SOUNDS["NAMCO_63701X"] = true
+--SOUNDS["NAMCO_163"] = true
 SOUNDS["T6W28"] = true
 SOUNDS["SNKWAVE"] = true
 SOUNDS["C140"] = true
@@ -340,6 +341,7 @@ VIDEOS["SCN2674"] = true
 --VIDEOS["SED1520"] = true
 VIDEOS["SNES_PPU"] = true
 VIDEOS["STVVDP"] = true
+--VIDEOS["T6963C"] = true
 --VIDEOS["T6A04"] = true
 VIDEOS["TLC34076"] = true
 VIDEOS["TMS34061"] = true
@@ -370,6 +372,7 @@ MACHINES["DMAC"] = true
 MACHINES["GAYLE"] = true
 MACHINES["NCR53C7XX"] = true
 MACHINES["LSI53C810"] = true
+MACHINES["2812FIFO"] = true
 MACHINES["6522VIA"] = true
 MACHINES["TPI6525"] = true
 MACHINES["RIOT6532"] = true
@@ -435,6 +438,7 @@ MACHINES["DS1205"] = true
 MACHINES["DS1302"] = true
 --MACHINES["DS1315"] = true
 --MACHINES["DS1386"] = true
+MACHINES["DS1994"] = true
 MACHINES["DS2401"] = true
 MACHINES["DS2404"] = true
 MACHINES["DS75160A"] = true
@@ -454,6 +458,7 @@ MACHINES["I2CMEM"] = true
 MACHINES["I8155"] = true
 MACHINES["I8212"] = true
 MACHINES["I8214"] = true
+MACHINES["I82355"] = true
 MACHINES["I8243"] = true
 MACHINES["I8251"] = true
 MACHINES["I8255"] = true
@@ -530,7 +535,7 @@ MACHINES["MSM58321"] = true
 MACHINES["MSM6242"] = true
 MACHINES["MSM6253"] = true
 --MACHINES["NCR5380"] = true
---MACHINES["NCR5380N"] = true
+MACHINES["NCR5380N"] = true
 MACHINES["NCR5390"] = true
 MACHINES["NCR539x"] = true
 MACHINES["NETLIST"] = true
@@ -572,6 +577,7 @@ MACHINES["S3520CF"] = true
 MACHINES["S3C24XX"] = true
 --MACHINES["S3C44B0"] = true
 MACHINES["SATURN"] = true
+MACHINES["SCC68070"] = true
 MACHINES["SCSI"] = true
 MACHINES["SCUDSP"] = true
 --MACHINES["SECFLASH"] = true
@@ -639,6 +645,7 @@ MACHINES["GENPC"] = true
 MACHINES["GEN_LATCH"] = true
 MACHINES["WATCHDOG"] = true
 MACHINES["SMARTMEDIA"] = true
+MACHINES["I82586"] = true
 MACHINES["INPUT_MERGER"] = true
 MACHINES["K054321"] = true
 MACHINES["ADC0844"] = true
@@ -655,6 +662,7 @@ MACHINES["PS2INTC"] = true
 --MACHINES["IOPINTC"] = true
 --MACHINES["IOPSIO2"] = true
 --MACHINES["IOPTIMER"] = true
+MACHINES["AIC565"] = true
 MACHINES["AIC6250"] = true
 
 --------------------------------------------------
@@ -1025,6 +1033,7 @@ files {
 
 createMAMEProjects(_target, _subtarget, "atari")
 files {
+	MAME_DIR .. "src/mame/drivers/akkaarrh.cpp",
 	MAME_DIR .. "src/mame/drivers/arcadecl.cpp",
 	MAME_DIR .. "src/mame/includes/arcadecl.h",
 	MAME_DIR .. "src/mame/video/arcadecl.cpp",
@@ -2384,6 +2393,8 @@ files {
 	MAME_DIR .. "src/mame/machine/k573cass.h",
 	MAME_DIR .. "src/mame/machine/k573dio.cpp",
 	MAME_DIR .. "src/mame/machine/k573dio.h",
+	MAME_DIR .. "src/mame/machine/k573fpga.cpp",
+	MAME_DIR .. "src/mame/machine/k573fpga.h",
 	MAME_DIR .. "src/mame/machine/k573mcr.cpp",
 	MAME_DIR .. "src/mame/machine/k573mcr.h",
 	MAME_DIR .. "src/mame/machine/k573msu.cpp",
@@ -2612,6 +2623,7 @@ createMAMEProjects(_target, _subtarget, "merit")
 files {
 	MAME_DIR .. "src/mame/drivers/mgames.cpp",
 	MAME_DIR .. "src/mame/drivers/merit.cpp",
+	MAME_DIR .. "src/mame/drivers/merit3xx.cpp",
 	MAME_DIR .. "src/mame/drivers/meritm.cpp",
 	MAME_DIR .. "src/mame/drivers/mtouchxl.cpp",
 	MAME_DIR .. "src/mame/machine/at.h",
@@ -2708,6 +2720,7 @@ files {
 	MAME_DIR .. "src/mame/drivers/sspeedr.cpp",
 	MAME_DIR .. "src/mame/includes/sspeedr.h",
 	MAME_DIR .. "src/mame/video/sspeedr.cpp",
+	MAME_DIR .. "src/mame/drivers/starrider.cpp",
 	MAME_DIR .. "src/mame/drivers/tmaster.cpp",
 	MAME_DIR .. "src/mame/drivers/vegas.cpp",
 	MAME_DIR .. "src/mame/drivers/wmg.cpp",
@@ -3488,6 +3501,7 @@ files {
 	MAME_DIR .. "src/mame/machine/xbox_usb.cpp",
 	MAME_DIR .. "src/mame/machine/xbox_pci.cpp",
 	MAME_DIR .. "src/mame/drivers/flashbeats.cpp",
+	MAME_DIR .. "src/mame/drivers/segaatom.cpp",
 }
 
 createMAMEProjects(_target, _subtarget, "seibu")
@@ -3533,6 +3547,7 @@ files {
 	MAME_DIR .. "src/mame/video/raiden.cpp",
 	MAME_DIR .. "src/mame/drivers/raiden2.cpp",
 	MAME_DIR .. "src/mame/includes/raiden2.h",
+	MAME_DIR .. "src/mame/video/raiden2.cpp",
 	MAME_DIR .. "src/mame/machine/r2crypt.cpp",
 	MAME_DIR .. "src/mame/machine/r2crypt.h",
 	MAME_DIR .. "src/mame/machine/seibucop/seibucop.cpp",
@@ -4492,6 +4507,7 @@ files {
 	MAME_DIR .. "src/mame/drivers/wpc_s.cpp",
 	MAME_DIR .. "src/mame/machine/wpc.cpp",
 	MAME_DIR .. "src/mame/machine/wpc.h",
+	MAME_DIR .. "src/mame/audio/bally.cpp",
 	MAME_DIR .. "src/mame/audio/wpcsnd.cpp",
 	MAME_DIR .. "src/mame/audio/wpcsnd.h",
 	MAME_DIR .. "src/mame/video/wpc_dmd.cpp",
@@ -4581,8 +4597,6 @@ files {
 	MAME_DIR .. "src/mame/includes/cdi.h",
 	MAME_DIR .. "src/mame/video/mcd212.cpp",
 	MAME_DIR .. "src/mame/video/mcd212.h",
-	MAME_DIR .. "src/mame/machine/cdi070.cpp",
-	MAME_DIR .. "src/mame/machine/cdi070.h",
 	MAME_DIR .. "src/mame/machine/cdislave.cpp",
 	MAME_DIR .. "src/mame/machine/cdislave.h",
 	MAME_DIR .. "src/mame/machine/cdicdic.cpp",
@@ -4614,6 +4628,7 @@ files {
 	MAME_DIR .. "src/mame/video/vrender0.h",
 	MAME_DIR .. "src/mame/drivers/cubeqst.cpp",
 	MAME_DIR .. "src/mame/drivers/cybertnk.cpp",
+	MAME_DIR .. "src/mame/drivers/daryde.cpp",
 	MAME_DIR .. "src/mame/drivers/dcheese.cpp",
 	MAME_DIR .. "src/mame/includes/dcheese.h",
 	MAME_DIR .. "src/mame/video/dcheese.cpp",

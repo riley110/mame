@@ -217,7 +217,7 @@ WRITE32_MEMBER(atarigt_state::latch_w)
 	if (ACCESSING_BITS_24_31)
 	{
 		/* bits 13-11 are the MO control bits */
-		m_rle->control_write(space, offset, (data >> 27) & 7);
+		m_rle->control_write((data >> 27) & 7);
 	}
 
 	if (ACCESSING_BITS_16_23)
@@ -233,7 +233,7 @@ WRITE32_MEMBER(atarigt_state::mo_command_w)
 {
 	COMBINE_DATA(m_mo_command);
 	if (ACCESSING_BITS_0_15)
-		m_rle->command_write(space, offset, ((data & 0xffff) == 2) ? ATARIRLE_COMMAND_CHECKSUM : ATARIRLE_COMMAND_DRAW);
+		m_rle->command_write(((data & 0xffff) == 2) ? ATARIRLE_COMMAND_CHECKSUM : ATARIRLE_COMMAND_DRAW);
 }
 
 
@@ -616,11 +616,14 @@ void atarigt_state::main_map(address_map &map)
 	map(0xd00010, 0xd0001f).r(FUNC(atarigt_state::analog_port_r)).umask32(0xff00ff00);
 	map(0xd20000, 0xd20fff).rw("eeprom", FUNC(eeprom_parallel_28xx_device::read), FUNC(eeprom_parallel_28xx_device::write)).umask32(0xff00ff00);
 	map(0xd40000, 0xd4ffff).w("eeprom", FUNC(eeprom_parallel_28xx_device::unlock_write32));
-	map(0xd70000, 0xd7ffff).ram();
-	map(0xd72000, 0xd75fff).w(m_playfield_tilemap, FUNC(tilemap_device::write32)).share("playfield");
-	map(0xd76000, 0xd76fff).w(m_alpha_tilemap, FUNC(tilemap_device::write32)).share("alpha");
+	map(0xd70000, 0xd71fff).ram();
+	map(0xd72000, 0xd75fff).ram().w(m_playfield_tilemap, FUNC(tilemap_device::write32)).share("playfield");
+	map(0xd76000, 0xd76fff).ram().w(m_alpha_tilemap, FUNC(tilemap_device::write32)).share("alpha");
+	map(0xd77000, 0xd77fff).ram();
 	map(0xd78000, 0xd78fff).ram().share("rle");
-	map(0xd7a200, 0xd7a203).w(FUNC(atarigt_state::mo_command_w)).share("mo_command");
+	map(0xd79000, 0xd7a1ff).ram();
+	map(0xd7a200, 0xd7a203).ram().w(FUNC(atarigt_state::mo_command_w)).share("mo_command");
+	map(0xd7a204, 0xd7ffff).ram();
 	map(0xd80000, 0xdfffff).rw(FUNC(atarigt_state::colorram_protection_r), FUNC(atarigt_state::colorram_protection_w)).share("colorram");
 	map(0xe04000, 0xe04003).w(FUNC(atarigt_state::led_w));
 	map(0xe08000, 0xe08003).w(FUNC(atarigt_state::latch_w));
@@ -806,9 +809,9 @@ static const atari_rle_objects_config modesc =
 MACHINE_CONFIG_START(atarigt_state::atarigt)
 
 	/* basic machine hardware */
-	MCFG_DEVICE_ADD("maincpu", M68EC020, ATARI_CLOCK_50MHz/2)
-	MCFG_DEVICE_PROGRAM_MAP(main_map)
-	MCFG_DEVICE_PERIODIC_INT_DRIVER(atarigt_state, scanline_int_gen, 250)
+	M68EC020(config, m_maincpu, ATARI_CLOCK_50MHz/2);
+	m_maincpu->set_addrmap(AS_PROGRAM, &atarigt_state::main_map);
+	m_maincpu->set_periodic_int(FUNC(atarigt_state::scanline_int_gen), attotime::from_hz(250));
 
 	MCFG_MACHINE_RESET_OVERRIDE(atarigt_state,atarigt)
 
@@ -816,18 +819,18 @@ MACHINE_CONFIG_START(atarigt_state::atarigt)
 
 	/* video hardware */
 	GFXDECODE(config, m_gfxdecode, m_palette, gfx_atarigt);
-	MCFG_PALETTE_ADD("palette", MRAM_ENTRIES)
+	PALETTE(config, m_palette).set_entries(MRAM_ENTRIES);
 
 	MCFG_TILEMAP_ADD_CUSTOM("playfield", "gfxdecode", 2, atarigt_state, get_playfield_tile_info, 8,8, atarigt_playfield_scan, 128,64)
-	MCFG_TILEMAP_ADD_STANDARD("alpha", "gfxdecode", 2, atarigt_state, get_alpha_tile_info, 8,8, SCAN_ROWS, 64, 32)
+	TILEMAP(config, m_alpha_tilemap, m_gfxdecode, 2, 8,8, TILEMAP_SCAN_ROWS, 64, 32).set_info_callback(FUNC(atarigt_state::get_alpha_tile_info));
 
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_VIDEO_ATTRIBUTES(VIDEO_UPDATE_BEFORE_VBLANK)
+	SCREEN(config, m_screen, SCREEN_TYPE_RASTER);
+	m_screen->set_video_attributes(VIDEO_UPDATE_BEFORE_VBLANK);
 	/* note: these parameters are from published specs, not derived */
 	/* the board uses a pair of GALs to determine H and V parameters */
-	MCFG_SCREEN_RAW_PARAMS(ATARI_CLOCK_14MHz/2, 456, 0, 336, 262, 0, 240)
-	MCFG_SCREEN_UPDATE_DRIVER(atarigt_state, screen_update_atarigt)
-	MCFG_SCREEN_VBLANK_CALLBACK(WRITELINE(*this, atarigt_state, video_int_write_line))
+	m_screen->set_raw(ATARI_CLOCK_14MHz/2, 456, 0, 336, 262, 0, 240);
+	m_screen->set_screen_update(FUNC(atarigt_state::screen_update_atarigt));
+	m_screen->screen_vblank().set(FUNC(atarigt_state::video_int_write_line));
 
 	MCFG_VIDEO_START_OVERRIDE(atarigt_state,atarigt)
 
@@ -1313,7 +1316,7 @@ WRITE32_MEMBER(atarigt_state::tmek_pf_w)
 	if (pc == 0x25834 || pc == 0x25860)
 		logerror("%06X:PFW@%06X = %08X & %08X (src=%06X)\n", m_maincpu->pc(), 0xd72000 + offset*4, data, mem_mask, (uint32_t)m_maincpu->state_int(M68K_A3) - 2);
 
-	m_playfield_tilemap->write32(space, offset, data, mem_mask);
+	m_playfield_tilemap->write32(offset, data, mem_mask);
 }
 
 void atarigt_state::init_tmek()

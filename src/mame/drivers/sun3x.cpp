@@ -360,7 +360,8 @@ WRITE32_MEMBER(sun3x_state::ramwrite_w)
 		}
 
 		m_bInBusErr = true; // prevent recursion
-		m_maincpu->set_input_line_and_vector(M68K_IRQ_7, ASSERT_LINE, 2);
+		m_maincpu->set_input_line(M68K_LINE_BUSERROR, ASSERT_LINE);
+		m_maincpu->set_input_line(M68K_LINE_BUSERROR, CLEAR_LINE);
 	}
 
 	COMBINE_DATA(&pRAM[offset]);
@@ -567,8 +568,6 @@ void sun3x_state::machine_reset()
 	uint8_t* user1 = memregion("user1")->base();
 
 	memcpy((uint8_t*)m_p_ram.target(),user1,0x10000);
-
-	m_maincpu->reset();
 
 	memset(m_iommu, 0, sizeof(m_iommu));
 

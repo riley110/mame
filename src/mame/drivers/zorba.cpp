@@ -43,10 +43,10 @@ ToDo:
 - Need software that does more than plain text (such as games)
 - Add masking feature (only used for the UARTs)
 - Connect devices to the above hardware
-- Fix the display
 - Dump Telcon and Gemini BIOSes
 - Emulate the Co-Power-88 expansion (allows PC-DOS, CP/M-86, etc. to be used)
 - Probably lots of other things
+- Press F3 and screen turns into garbage. This breakage started in the 0.198 to 0.199 cycle.
 
 
 *************************************************************************************************************/
@@ -372,10 +372,7 @@ template <unsigned N> WRITE_LINE_MEMBER( zorba_state::irq_w )
 	else if (BIT(m_irq, 3)) vector = 0x88;
 	else                    vector = 0x84; // very wrong, need test cases for other things
 
-	m_maincpu->set_input_line_and_vector(
-			INPUT_LINE_IRQ0,
-			m_irq ? ASSERT_LINE : CLEAR_LINE,
-			vector);
+	m_maincpu->set_input_line_and_vector(INPUT_LINE_IRQ0, m_irq ? ASSERT_LINE : CLEAR_LINE, vector); // Z80
 }
 
 

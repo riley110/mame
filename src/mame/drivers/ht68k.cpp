@@ -94,15 +94,13 @@ void ht68k_state::machine_reset()
 
 	memcpy((uint8_t*)m_p_ram.target(),user1,0x8000);
 
-	m_maincpu->reset();
-
 	m_fdc->reset();
 	m_fdc->set_floppy(nullptr);
 }
 
 WRITE_LINE_MEMBER(ht68k_state::duart_irq_handler)
 {
-	m_maincpu->set_input_line_and_vector(M68K_IRQ_3, state, M68K_INT_ACK_AUTOVECTOR);
+	m_maincpu->set_input_line(M68K_IRQ_3, state);
 }
 
 WRITE_LINE_MEMBER(ht68k_state::duart_txb)

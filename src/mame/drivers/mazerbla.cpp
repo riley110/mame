@@ -962,8 +962,8 @@ void mazerbla_state::machine_reset()
 
 	if (m_soundlatch.found())
 	{
-		m_soundlatch->clear_w(machine().dummy_space(), 0, 0);
-		m_soundlatch->acknowledge_w(machine().dummy_space(), 0, 0);
+		m_soundlatch->clear_w();
+		m_soundlatch->acknowledge_w();
 	}
 
 	for (i = 0; i < 4; i++)
@@ -1053,7 +1053,7 @@ void mazerbla_state::greatgun(machine_config &config)
 	m_screen->set_screen_update(FUNC(mazerbla_state::screen_update_mazerbla));
 	m_screen->screen_vblank().set(FUNC(mazerbla_state::screen_vblank));
 
-	PALETTE(config, "palette", FUNC(mazerbla_state::mazerbla_palette), 246+1);
+	PALETTE(config, "palette", FUNC(mazerbla_state::mazerbla_palette), 256+1);
 
 	/* sound hardware */
 	SPEAKER(config, "mono").front_center();

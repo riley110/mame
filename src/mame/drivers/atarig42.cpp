@@ -92,7 +92,7 @@ WRITE16_MEMBER(atarig42_state::io_latch_w)
 		m_asic65->reset_line((~data >> 14) & 1);
 
 		/* bits 13-11 are the MO control bits */
-		m_rle->control_write(space, 0, (data >> 11) & 7);
+		m_rle->control_write((data >> 11) & 7);
 	}
 
 	/* lower byte */
@@ -113,7 +113,7 @@ WRITE16_MEMBER(atarig42_state::io_latch_w)
 WRITE16_MEMBER(atarig42_state::mo_command_w)
 {
 	COMBINE_DATA(m_mo_command);
-	m_rle->command_write(space, offset, (data == 0) ? ATARIRLE_COMMAND_CHECKSUM : ATARIRLE_COMMAND_DRAW);
+	m_rle->command_write((data == 0) ? ATARIRLE_COMMAND_CHECKSUM : ATARIRLE_COMMAND_DRAW);
 }
 
 
@@ -336,11 +336,12 @@ void atarig42_state::main_map(address_map &map)
 	map(0xf80000, 0xf80003).w(m_asic65, FUNC(asic65_device::data_w));
 	map(0xfa0000, 0xfa0fff).rw("eeprom", FUNC(eeprom_parallel_28xx_device::read), FUNC(eeprom_parallel_28xx_device::write)).umask16(0x00ff);
 	map(0xfc0000, 0xfc0fff).ram().w("palette", FUNC(palette_device::write16)).share("palette");
-	map(0xff0000, 0xffffff).ram();
 	map(0xff0000, 0xff0fff).ram().share("rle");
-	map(0xff2000, 0xff5fff).w(m_playfield_tilemap, FUNC(tilemap_device::write16)).share("playfield");
-	map(0xff6000, 0xff6fff).w(m_alpha_tilemap, FUNC(tilemap_device::write16)).share("alpha");
-	map(0xff7000, 0xff7001).w(FUNC(atarig42_state::mo_command_w)).share("mo_command");
+	map(0xff1000, 0xff1fff).ram();
+	map(0xff2000, 0xff5fff).ram().w(m_playfield_tilemap, FUNC(tilemap_device::write16)).share("playfield");
+	map(0xff6000, 0xff6fff).ram().w(m_alpha_tilemap, FUNC(tilemap_device::write16)).share("alpha");
+	map(0xff7000, 0xff7001).ram().w(FUNC(atarig42_state::mo_command_w)).share("mo_command");
+	map(0xff7002, 0xffffff).ram();
 }
 
 
@@ -515,10 +516,9 @@ static const atari_rle_objects_config modesc_0x400 =
  *************************************/
 
 MACHINE_CONFIG_START(atarig42_state::atarig42)
-
 	/* basic machine hardware */
-	MCFG_DEVICE_ADD("maincpu", M68000, ATARI_CLOCK_14MHz)
-	MCFG_DEVICE_PROGRAM_MAP(main_map)
+	M68000(config, m_maincpu, ATARI_CLOCK_14MHz);
+	m_maincpu->set_addrmap(AS_PROGRAM, &atarig42_state::main_map);
 
 	EEPROM_2816(config, "eeprom").lock_after_write(true);
 
@@ -529,16 +529,16 @@ MACHINE_CONFIG_START(atarig42_state::atarig42)
 	PALETTE(config, "palette").set_format(palette_device::IRGB_1555, 2048);
 
 	MCFG_TILEMAP_ADD_CUSTOM("playfield", "gfxdecode", 2, atarig42_state, get_playfield_tile_info, 8,8, atarig42_playfield_scan, 128,64)
-	MCFG_TILEMAP_ADD_STANDARD_TRANSPEN("alpha", "gfxdecode", 2, atarig42_state, get_alpha_tile_info, 8,8, SCAN_ROWS, 64,32, 0)
+	TILEMAP(config, m_alpha_tilemap, m_gfxdecode, 2, 8,8, TILEMAP_SCAN_ROWS, 64,32, 0).set_info_callback(FUNC(atarig42_state::get_alpha_tile_info));
 
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_VIDEO_ATTRIBUTES(VIDEO_UPDATE_BEFORE_VBLANK)
+	SCREEN(config, m_screen, SCREEN_TYPE_RASTER);
+	m_screen->set_video_attributes(VIDEO_UPDATE_BEFORE_VBLANK);
 	/* note: these parameters are from published specs, not derived */
 	/* the board uses an SOS chip to generate video signals */
-	MCFG_SCREEN_RAW_PARAMS(ATARI_CLOCK_14MHz/2, 456, 0, 336, 262, 0, 240)
-	MCFG_SCREEN_UPDATE_DRIVER(atarig42_state, screen_update_atarig42)
-	MCFG_SCREEN_PALETTE("palette")
-	MCFG_SCREEN_VBLANK_CALLBACK(WRITELINE(*this, atarig42_state, video_int_write_line))
+	m_screen->set_raw(ATARI_CLOCK_14MHz/2, 456, 0, 336, 262, 0, 240);
+	m_screen->set_screen_update(FUNC(atarig42_state::screen_update_atarig42));
+	m_screen->set_palette("palette");
+	m_screen->screen_vblank().set(FUNC(atarig42_state::video_int_write_line));
 
 	MCFG_VIDEO_START_OVERRIDE(atarig42_state,atarig42)
 

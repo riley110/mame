@@ -67,7 +67,7 @@ private:
 
 	TILE_GET_INFO_MEMBER(get_fg_tile_info);
 	TILE_GET_INFO_MEMBER(get_bg_tile_info);
-	uint32_t screen_update_chance32(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
+	uint32_t screen_update_chance32(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect);
 	void chance32_map(address_map &map);
 	void chance32_portmap(address_map &map);
 
@@ -117,7 +117,7 @@ void chance32_state::video_start()
 }
 
 
-uint32_t chance32_state::screen_update_chance32(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect)
+uint32_t chance32_state::screen_update_chance32(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect)
 {
 	m_bg_tilemap->draw(screen, bitmap, cliprect, 0, 0);
 	m_fg_tilemap->draw(screen, bitmap, cliprect, 0, 0);
@@ -474,9 +474,8 @@ void chance32_state::chance32(machine_config &config)
 	screen.set_size(40*16, 32*8);
 	screen.set_visarea(0, 35*16-1, 0, 29*8-1);
 	screen.set_screen_update(FUNC(chance32_state::screen_update_chance32));
-	screen.set_palette("palette");
 
-	h46505_device &crtc(H46505(config, "crtc", 12000000/16));   /* 52.786 Hz (similar to Major Poker) */
+	hd6845s_device &crtc(HD6845S(config, "crtc", 12000000/16));   /* 52.786 Hz (similar to Major Poker) */
 	crtc.set_screen("screen");
 	crtc.set_show_border_area(false);
 	crtc.set_char_width(16);
@@ -517,12 +516,12 @@ ROM_START( chance32 )
 	ROM_LOAD( "gal20v8a.u57.jed.bin", 0x0000, 0x157, CRC(787c4159) SHA1(f4a869b317c6be1024f1ca21bcc4af478c8227c8) )
 	ROM_LOAD( "gal20v8a.u58.jed.bin", 0x0000, 0x157, CRC(7b16053b) SHA1(cdb289d4f27c7a1a918393943bb8db9712e2f52e) )
 
-	ROM_LOAD( "gal16v8a.u47.jed.bin", 0x0000, 0x117, CRC(a733f0de) SHA1(6eec26043cedb3cae4efe93faa84a07327be468b) )
+	ROM_LOAD( "gal16v8a.u47.jed.bin", 0x0000, 0x117, NO_DUMP )
 	ROM_LOAD( "gal16v8a.u48.jed.bin", 0x0000, 0x117, CRC(5f1360ef) SHA1(56e4ee0dbae5602d810b2f7c744a71eb1a1e08a8) )
 
 	ROM_LOAD( "gal16v8a.u32.jed.bin", 0x0000, 0x117, CRC(c0784cd1) SHA1(0ae2ce482d379e29c2a9f130fc0d9ed928faef98) )
 
-	ROM_LOAD( "gal16v8a.u24.jed.bin", 0x0000, 0x117, CRC(a733f0de) SHA1(6eec26043cedb3cae4efe93faa84a07327be468b) )
+	ROM_LOAD( "gal16v8a.u24.jed.bin", 0x0000, 0x117, NO_DUMP )
 ROM_END
 
 

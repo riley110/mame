@@ -41,6 +41,11 @@
 #include "cl_sh260.h"
 #include "bt54x.h"
 #include "dcb.h"
+#include "ultra12f.h"
+#include "ultra14f.h"
+#include "ultra24f.h"
+#include "tekram_dc820.h"
+#include "asc88.h"
 
 // sound
 #include "adlib.h"
@@ -116,6 +121,7 @@ void pc_isa8_cards(device_slot_interface &device)
 	device.option_add("dectalk", ISA8_DECTALK);
 	device.option_add("pds", ISA8_PDS);
 	device.option_add("lba_enhancer", ISA8_LBA_ENHANCER);
+	device.option_add("asc88", ASC88);
 }
 
 void pc_isa16_cards(device_slot_interface &device)
@@ -153,6 +159,7 @@ void pc_isa16_cards(device_slot_interface &device)
 	device.option_add("dectalk", ISA8_DECTALK);
 	device.option_add("pds", ISA8_PDS);
 	device.option_add("lba_enhancer", ISA8_LBA_ENHANCER);
+	device.option_add("finalchs", ISA8_FINALCHS);
 	// 16-bit
 	device.option_add("ide", ISA16_IDE);
 	device.option_add("ne2000", NE2000);
@@ -187,4 +194,11 @@ void pc_isa16_cards(device_slot_interface &device)
 	device.option_add("bt542bh", BT542BH);
 	device.option_add("bt545s", BT545S);
 	device.option_add("dcb", NOVELL_DCB);
+	device.option_add("ultra12f", ULTRA12F);
+	device.option_add("ultra14f", ULTRA14F);
+	device.option_add("ultra24f", ULTRA24F); // actually an EISA card
+	device.option_add("dc320b", TEKRAM_DC320B); // actually an EISA card
+	device.option_add("dc320e", TEKRAM_DC320E); // actually an EISA card
+	device.option_add("dc820", TEKRAM_DC820); // actually an EISA card
+	device.option_add("dc820b", TEKRAM_DC820B); // actually an EISA card
 }

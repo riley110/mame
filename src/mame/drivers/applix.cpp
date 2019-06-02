@@ -30,7 +30,7 @@
     - Audio: it could be better
     - DAC output is used to compare against analog inputs; core doesn't permit
       audio outputs to be used for non-speaker purposes.
-    - Bios 5 crashes mess after scrolling about half a screen
+    - Bios 5 crashes MAME after scrolling about half a screen
 
 ****************************************************************************/
 
@@ -61,46 +61,46 @@
 class applix_state : public driver_device
 {
 public:
-	applix_state(const machine_config &mconfig, device_type type, const char *tag) :
-		driver_device(mconfig, type, tag),
-		m_base(*this, "base"),
-		m_maincpu(*this, "maincpu"),
-		m_crtc(*this, "crtc"),
-		m_via(*this, "via6522"),
-		m_centronics(*this, "centronics"),
-		m_cent_data_out(*this, "cent_data_out"),
-		m_fdc(*this, "fdc"),
-		m_floppy0(*this, "fdc:0"),
-		m_floppy1(*this, "fdc:1"),
-		m_ldac(*this, "ldac"),
-		m_rdac(*this, "rdac"),
-		m_cass(*this, "cassette"),
-		m_io_dsw(*this, "DSW"),
-		m_io_fdc(*this, "FDC"),
-		m_io_k0f(*this, "K0f"),
-		m_io_k300(*this, "K30_0"),
-		m_io_k301(*this, "K30_1"),
-		m_io_k310(*this, "K31_0"),
-		m_io_k311(*this, "K31_1"),
-		m_io_k320(*this, "K32_0"),
-		m_io_k321(*this, "K32_1"),
-		m_io_k330(*this, "K33_0"),
-		m_io_k331(*this, "K33_1"),
-		m_io_k340(*this, "K34_0"),
-		m_io_k341(*this, "K34_1"),
-		m_io_k350(*this, "K35_0"),
-		m_io_k351(*this, "K35_1"),
-		m_io_k360(*this, "K36_0"),
-		m_io_k361(*this, "K36_1"),
-		m_io_k370(*this, "K37_0"),
-		m_io_k371(*this, "K37_1"),
-		m_io_k380(*this, "K38_0"),
-		m_io_k390(*this, "K39_0"),
-		m_io_k3a0(*this, "K3a_0"),
-		m_io_k3b0(*this, "K3b_0"),
-		m_io_k0b(*this, "K0b"),
-		m_expansion(*this, "expansion"),
-		m_palette(*this, "palette")
+	applix_state(const machine_config &mconfig, device_type type, const char *tag)
+		: driver_device(mconfig, type, tag)
+		, m_base(*this, "base")
+		, m_maincpu(*this, "maincpu")
+		, m_crtc(*this, "crtc")
+		, m_via(*this, "via6522")
+		, m_centronics(*this, "centronics")
+		, m_cent_data_out(*this, "cent_data_out")
+		, m_fdc(*this, "fdc")
+		, m_floppy0(*this, "fdc:0")
+		, m_floppy1(*this, "fdc:1")
+		, m_ldac(*this, "ldac")
+		, m_rdac(*this, "rdac")
+		, m_cass(*this, "cassette")
+		, m_io_dsw(*this, "DSW")
+		, m_io_fdc(*this, "FDC")
+		, m_io_k0f(*this, "K0f")
+		, m_io_k300(*this, "K30_0")
+		, m_io_k301(*this, "K30_1")
+		, m_io_k310(*this, "K31_0")
+		, m_io_k311(*this, "K31_1")
+		, m_io_k320(*this, "K32_0")
+		, m_io_k321(*this, "K32_1")
+		, m_io_k330(*this, "K33_0")
+		, m_io_k331(*this, "K33_1")
+		, m_io_k340(*this, "K34_0")
+		, m_io_k341(*this, "K34_1")
+		, m_io_k350(*this, "K35_0")
+		, m_io_k351(*this, "K35_1")
+		, m_io_k360(*this, "K36_0")
+		, m_io_k361(*this, "K36_1")
+		, m_io_k370(*this, "K37_0")
+		, m_io_k371(*this, "K37_1")
+		, m_io_k380(*this, "K38_0")
+		, m_io_k390(*this, "K39_0")
+		, m_io_k3a0(*this, "K3a_0")
+		, m_io_k3b0(*this, "K3b_0")
+		, m_io_k0b(*this, "K0b")
+		, m_expansion(*this, "expansion")
+		, m_palette(*this, "palette")
 	{ }
 
 	void applix(machine_config &config);
@@ -847,14 +847,15 @@ TIMER_DEVICE_CALLBACK_MEMBER(applix_state::cass_timer)
 	}
 }
 
-MACHINE_CONFIG_START(applix_state::applix)
+void applix_state::applix(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_DEVICE_ADD("maincpu", M68000, 30_MHz_XTAL / 4) // MC68000-P10 @ 7.5 MHz
-	MCFG_DEVICE_PROGRAM_MAP(applix_mem)
+	M68000(config, m_maincpu, 30_MHz_XTAL / 4); // MC68000-P10 @ 7.5 MHz
+	m_maincpu->set_addrmap(AS_PROGRAM, &applix_state::applix_mem);
 
-	MCFG_DEVICE_ADD("subcpu", Z80, 16_MHz_XTAL / 2) // Z80H
-	MCFG_DEVICE_PROGRAM_MAP(subcpu_mem)
-	MCFG_DEVICE_IO_MAP(subcpu_io)
+	z80_device &subcpu(Z80(config, "subcpu", 16_MHz_XTAL / 2)); // Z80H
+	subcpu.set_addrmap(AS_PROGRAM, &applix_state::subcpu_mem);
+	subcpu.set_addrmap(AS_IO, &applix_state::subcpu_io);
 
 	i8051_device &kbdcpu(I8051(config, "kbdcpu", 11060250));
 	kbdcpu.set_addrmap(AS_PROGRAM, &applix_state::keytronic_pc3270_program);
@@ -867,12 +868,12 @@ MACHINE_CONFIG_START(applix_state::applix)
 	kbdcpu.port_out_cb<3>().set(FUNC(applix_state::p3_write));
 
 	/* video hardware */
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_REFRESH_RATE(50)
-	MCFG_SCREEN_VBLANK_TIME(ATTOSECONDS_IN_USEC(2500)) /* not accurate */
-	MCFG_SCREEN_SIZE(640, 200)
-	MCFG_SCREEN_VISIBLE_AREA(0, 640-1, 0, 200-1)
-	MCFG_SCREEN_UPDATE_DEVICE("crtc", mc6845_device, screen_update)
+	screen_device &screen(SCREEN(config, "screen", SCREEN_TYPE_RASTER));
+	screen.set_refresh_hz(50);
+	screen.set_vblank_time(ATTOSECONDS_IN_USEC(2500)); /* not accurate */
+	screen.set_size(640, 200);
+	screen.set_visarea_full();
+	screen.set_screen_update("crtc", FUNC(mc6845_device::screen_update));
 	PALETTE(config, m_palette, FUNC(applix_state::applix_palette), 16);
 
 	/* sound hardware */
@@ -918,7 +919,7 @@ MACHINE_CONFIG_START(applix_state::applix)
 	FLOPPY_CONNECTOR(config, "fdc:0", applix_floppies, "35dd", applix_state::floppy_formats).enable_sound(true);
 	FLOPPY_CONNECTOR(config, "fdc:1", applix_floppies, "35dd", applix_state::floppy_formats).enable_sound(true);
 	TIMER(config, "applix_c").configure_periodic(FUNC(applix_state::cass_timer), attotime::from_hz(100000));
-MACHINE_CONFIG_END
+}
 
 /* ROM definition */
 ROM_START( applix )

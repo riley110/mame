@@ -318,7 +318,7 @@ READ8_MEMBER( segas16a_state::sound_data_r )
 {
 	// assert ACK
 	m_i8255->pc6_w(CLEAR_LINE);
-	return m_soundlatch->read(space, 0);
+	return m_soundlatch->read();
 }
 
 
@@ -526,7 +526,7 @@ READ8_MEMBER( segas16a_state::mcu_io_r )
 		case 0:
 			// access watchdog? (unsure about this one)
 			if (                         offset < 0x3fff)
-				return m_watchdog->reset_r(space, 0);
+				return m_watchdog->reset_r(space);
 
 			// access main work RAM
 			else if (offset >= 0x4000 && offset < 0x8000)
@@ -2009,7 +2009,7 @@ void segas16a_state::system16a(machine_config &config)
 	SEGAIC16VID(config, m_segaic16vid, 0, "gfxdecode");
 
 	GFXDECODE(config, "gfxdecode", m_palette, gfx_segas16a);
-	PALETTE(config, m_palette).set_entries(2048*3);
+	PALETTE(config, m_palette).set_entries(2048*2);
 
 	// sound hardware
 	SPEAKER(config, "speaker").front_center();

@@ -34,8 +34,8 @@
        reelpwr, retrsama, retrsamb, rushrst, snowcat, swhr2a, thndh, thndha, thor, topbana,
        trpdlght, wamazona, wcougar, wildbill, wldangel
 
-    BIOS ROMs are actually nowhere to be found on a regular MK5 system, as the BIOS code is at the start of game ROMs U7 and U11.
-    Therefore, no BIOS system is required as it it built into each game, with the exception of casino software (see below).
+    BIOS ROMs are actually nowhere to be found on a regular MK5 system, as the BIOS code is at the start of game ROMs in U7 and U11.
+    Therefore, no BIOS system is required as it is built into each game, with the exception of casino software (see below).
     On most US machines, set chips are required to change the system configurations on a game by swapping them with the game ROMs in U7/U11.
 
     Casino versions actually do have a BIOS, otherwise known as a Base System, which is installed at U7/U11 at all times.
@@ -48,7 +48,7 @@
     The Brazilian casino BIOS does not use comms, therefore qnilebr is playable. By swapping u7/u11 with the other
     casino games (goldpyrb/jungjuic/penpir2), these games also become playable.
 
-    chickna5ql, bumblbugql and the 0700474V casino BIOS all use QCOM, blackpnt uses VLC (Video Lottery Consultants) comms instead.
+    Queensland games and the 0700474V casino BIOS all use QCOM, blackpnt uses VLC (Video Lottery Consultants) comms instead.
 
     Diamond Touch, Dream Weaver, Magic Touch and the New Zealand games have an autoplay option.
     The New Zealand games have this enabled by default in the options, whereas on the NSW games it is disabled by default.
@@ -100,8 +100,9 @@
     List of Hyperlink systems/themes on MK5 hardware:
     Cash Express - Train theme.
     Penguin Pucks - Arctic/Antarctic theme, based on Cash Express.
-    Maximillions - Game show style theme, stylized as Maximillion$. A similar game for the US market is Millioniser, stylized as Millioni$er.
+    Maximillions - Game show style theme, stylized as Maximillion$. A similar game for the US market is Millioniser, stylized as Millioni$er, however this may only be on later hardware.
     Scorchin' Fortune - Sports car/racing theme, based on Cash Express.
+    Fast Lane - Same theme as Scorchin' Fortune but the jackpot feature is slightly different.
     Born To Be Wild - Motorcycle theme, based on Cash Express, later recycled on MK6 hardware as Thunderheart (not to be confused with the game Thunder Heart).
 
     Note: The Hyperlink jackpot feature trigger is won at random and is predetermined the instant the player has started a game.
@@ -128,7 +129,7 @@
     Queen of the Nile does not use this early prerecorded music in any of its variants.
 
     List of clones (identical games with different names and/or graphics):
-    Queen of the Nile = Golden Pyramids = Dolphin Treasure = Adonis = Geisha (note that Adonis has a slightly different symbol layout for reel 1, but the symbol frequency is still identical)
+    Queen of the Nile = Golden Pyramids = Dolphin Treasure = Beyond the Reef (undumped) = Adonis = Geisha (note that Adonis has a slightly different symbol layout for reel 1, but the symbol frequency is still identical)
     Sweethearts II = Heart Throb = Desert Bloom = Tropical Delight = Coral Riches II
     Phantom Pays = Enchanted Forest = Magic Garden = Lucky Clover = The Gambler = Thunder Heart (9 line) = Mountain Money (9 line)
     Diamond Touch = Magic Mask = Party Gras = Diamond Destiny
@@ -167,10 +168,10 @@
 
     Standard NSW/ACT games and similar non-US games, including Holland and Venezuela:
 
-    Step 1: Audit key in (F2), open the main door (M) and press Reserve (A) and the fourth line button (G) together to clear the memory.
+    Step 1: Audit key in (F2), press Reserve (A) and the fourth line button (G) together to clear the memory. Some games may require the main door to be open (press M) prior to clearing.
     Note: On 3-payline games, press Reserve (A) and Bet 1 Credit (E) to clear the memory.
 
-    Optionally, the main door can be closed from this point on (press M again).
+    If open, the main door can be closed from this point on (press M again).
 
     Step 2: Enter Operator Setup -> Machine Options
 
@@ -194,7 +195,7 @@
     Note: To disable both the hopper and forced hand pay on cashout, change both the Collect Limit and Hopper Refill to $0.00.
     Disabling this setting will allow hand pays but still allow the player to continue if they inadvertently hit Collect.
     To perform a hand pay or jackpot reset (e.g. after a Hyperlink feature), press (V) to allow the game to enter play mode.
-    Note that in some games such as Treasure Trove (trstrove), the collect options are been moved to Operator Setup -> Set Collect Limit rather than in Machine Options.
+    Note that in some games such as Treasure Trove (trstrove), the collect options are moved to Operator Setup -> Set Collect Limit rather than in Machine Options.
 
 
     New Zealand non-casino games, and most NSW/ACT touchscreen games:
@@ -212,7 +213,8 @@
     and have smaller but more frequent payouts due to gambling laws which limit the maximum possible win per bought game to $500.00. CCCE comms is not used on New Zealand machines.
 
 
-    Queensland games:
+    Queensland games, older types:
+    bumblbugql, chickna5ql
 
     Audit key in, press Reserve (A) and the fourth line button (G) together to clear the memory.
     The game will automatically enter the Machine Options menu where you can change the QCOM poll address, serial number, denomination and bill acceptor settings.
@@ -223,8 +225,19 @@
     Note 2: As the QCOM protocol is not yet emulated, the games are not playable since they automatically disable themselves after timing out.
 
 
+    Queensland games, newer types:
+    dolphntrql, indrema5ql, qnilefl, qnileql, reelrockql
+
+    Audit key in, press Collect (Q) and the fourth line button (G) together to clear the memory.
+    The game will automatically enter the Machine Options menu where you can change the serial number (it cannot be zero) and enable/disable the bill acceptor.
+    Bill acceptor options should remain disabled until implemented in MAME, otherwise the machine will give a bill acceptor stacker error.
+    Press Collect (Q) to save changes, and key out (F2) to exit the menu.
+    Note 1: Once these settings have been saved, they cannot be changed unlike games from other regions as the Machine Options menu is hidden.
+    Note 2: As the QCOM protocol is not yet emulated, the games are not playable since they automatically disable themselves after timing out.
+
+
     Casino games using the New Zealand 0700474V base EPROMs:
-    Currently, this is limited to goldpyrb, jungjuic and penpir2. The games are universal (including qnilebr below, if you swap the base EPROMs), however the base is region coded.
+    Currently, this is limited to goldpyrb, jungjuic and penpir2 (and also qnilebr if you swap the base EPROMs). The games are universal (all regions), however the base is region coded.
 
     Step 1: Audit key in, press Service (A) and the fourth line button (G) together to clear the memory.
 
@@ -233,7 +246,7 @@
 
 
     Casino games using the Brazilian 0301718V base EPROMs:
-    Currently this is limited to qnilbr (and the above three casino games if you swap the base EPROMs).
+    Currently this is limited to qnilebr (and the above three casino games if you swap the base EPROMs).
 
     This is similar to the NSW/ACT games, however upon keying in (F2), it requires a four-digit setup code before it can be initialized.
     By default, this number is 4856. After the game has accepted this code, press Service (A) and Play 7 Lines (G) at the same time to clear the memory.
@@ -322,7 +335,7 @@
     Step 3: Now that we know the correct bet/line values and the set chip version it is time to swap the U7 and U11 game chips for the set chips.
 
     To do this in MAME, press Tab to open the menu and enter Machine Configuration and select an appropriate set chip with the left/right keys.
-    I use 4.04.09 for all games as it is the latest version supported in MAME; set chips are backward compatible with previous versions so they can also be used to set up older games (for example, cashchamu requires 4.00.xx).
+    It is best to use 4.04.09 for all games as it is the latest version supported in MAME; set chips are backward compatible with previous versions so they can also be used to set up older games (for example, cashchamu requires 4.00.xx).
     You should now be in the set chip menu (if not, hit F3).
 
     Press Service and Cashout together (Q+A) to reset the SRAM and enter the Version Menu.
@@ -339,7 +352,7 @@
 
     Jurisdiction: This option sets the various US regions or Bolivia, Peru/Sask, Puerto Rico or Uruguay.
     Each region has its own gambling laws and restrictions which is why there are so many options.
-    The set chip region with the least restrictions is actually Uruguay rather than a US state, as US slot machines are not allowed to store more than $1200.00 worth of credits and/or wins and wins in excess of the limit must be hand paid.
+    The set chip region with the least restrictions is actually Uruguay rather than a US state, as US slot machines are not allowed to store more than $1200.00 worth of credits and/or wins, and wins in excess of the limit must be hand paid.
 
     Cancel Residual Credit: Soft Lockup or Hard Lockup. Residual credits are credits below the minimum value which cannot be cashed out as coins or otherwise.
     A soft lockup allows the player to either call an attendant for a hand pay or continue playing, while a hard lockup requires a hand pay of the remaining credits.
@@ -347,7 +360,7 @@
     Gamble Feature: Toggle between Disabled or Enabled.
     The gamble feature is not available in the following regions: Arizona, California, Colorado, North Dakota, South Dakota, Wisconsin and Puerto Rico.
 
-    Bill Acceptor Protocol: (To be written later once emulated)
+    Bill Acceptor Protocol: (To be written once emulated)
     EFT/Bonus Transfer: Cashless/ticket acceptance options, not required in MAME.
 
     The following items are hard coded and cannot be changed:
@@ -582,6 +595,7 @@
 
 // Non-US button layouts    Bet buttons       Lines Gamble     Other
 #include "aristmk5.lh"   // 1, 2, 3, 5, 10    20    suits      Take Win/Start Feature
+#include "adonisce.lh"   // 1, 2, 3, 5, 10    20    suits      TW/SF, Cash Express buttons
 #include "baddog.lh"     // Video Poker
 #include "cashcatnz.lh"  // 1, 2, 3, 4, 5     9     suits      TW/SF, 7L or Autoplay
 #include "cashcham.lh"   // 1, 5, 10, 20, 25  20    suits
@@ -608,7 +622,7 @@
 #include "locoloota.lh"  // 1, 2, 5, 10, 20   9     suits
 #include "marmagic.lh"   // multiple configs  9/20  suits      TW/SF (different bets to dynajack/fortellr)
 #include "montree.lh"    // 1, 2, 3, 5, 12    20    suits      15L or Autoplay
-#include "mountmon.lh"   // 1, 5, 10, 25, 50  20    suits
+#include "mountmon.lh"   // 1, 5, 10, 25, 50  20    red/black
 #include "multidrw.lh"   // Video Poker (different to baddog)
 #include "mystgard.lh"   // 1, 2, 3, 4, 5     20    red/black
 #include "one4all.lh"    // 1, 2, 3, 5, 6     20    suits      TW/SF, 15L or Autoplay
@@ -625,22 +639,23 @@
 #include "qnilenl.lh"    // 1, 2, 3, 5, 10    9     red/black  TW/SF, Service
 #include "qtbird.lh"     // 1, 2, 3, 4, 5     9     red/black
 #include "reelrock.lh"   // 1, 2, 3, 5, 8     243   suits
+#include "retrsam.lh"    // 1, 2, 3           3     odds
 #include "retrsamb.lh"   // 1, 2, 3, 5, 10    9     odds
 #include "sbuk2.lh"      // 1, 2, 3, 4, 5     1     red/black  Single line game
 #include "sbuk3.lh"      // 1, 2, 3           3     odds       TW/SF
 #include "snowcat.lh"    // 1, 2, 3, 5, 10    9     suits
 #include "swhr2.lh"      // 1, 2, 3, 5, 10    9     red/black
-#include "tritreat.lh"   // multiple configs  9/20  suits      TW/SF (90 and 500 credit play)
-#include "trstrove.lh"   // 1, 2, 5, 10, 25   20    suits      Take Win/Start Feature
 #include "toutangonl.lh" // 1, 2, 3, 5, 10    9     red/black  Service
+#include "tritreat.lh"   // multiple configs  9/20  suits      TW/SF (90 and 500 credit play)
+#include "trstrove.lh"   // 1, 2, 5, 10, 25   20    suits      TW/SF
 #include "venicea5.lh"   // multiple configs  9/20  suits      TW/SF (different bets to dynajack/fortellr/marmagic)
 #include "wamazon.lh"    // 1, 2, 3           3     suits      Play Feature Game
 #include "wamazona.lh"   // 1, 2, 3, 5, 10    1     suits      Single line game
 #include "wcougar.lh"    // 1, 2, 5, 10, 20   9     red/black
 #include "wikwin.lh"     // 1, 2, 3, 4        243   suits      Max Bet button
 #include "wildbill.lh"   // 1, 2, 3           3     suits
-#include "wtiger.lh"     // 1, 2, 3, 5, 10    20    suits      Classic Buy Feature
 #include "wizways.lh"    // 1, 2, 5, 10, 20   243   suits
+#include "wtiger.lh"     // 1, 2, 3, 5, 10    20    suits      Classic Buy Feature
 #include "yukongl5.lh"   // multiple configs  20    suits      TW/SF
 
 // US button layouts             Lines  Bet buttons     Max bet(s)                    Other
@@ -652,8 +667,10 @@
 #include "cashchamu.lh"       // 20     multiple        60, 100, 200, 400, 500, 1000  Different layout on 3 credit setup
 #include "dolphntrceb.lh"     // 20     multiple        60, 100, 200, 400, 500, 1000  Different bets to bparty, cashchamu and pengpuck
 #include "magimaska.lh"       // 9      multiple        45, 90, 180
+#include "marmagicu.lh"       // 9      multiple        45, 90, 180                   Same bet buttons as magimaska but with Start Feature button
+#include "pengpayce.lh"       // 9      multiple        27, 45, 90, 180, 225, 450     Different layout to cuckoou
 #include "pengpuck.lh"        // 20     multiple        60, 100, 200, 400, 500, 1000  Slightly different layout to dolphntrceb
-#include "qnilecea.lh"        // 9      multiple        27, 45, 90, 180, 225, 450     Same bet buttons as dolphntrceb but with 9 lines
+#include "qnilecea.lh"        // 9      multiple        27, 45, 90, 180, 225, 450     Same bet buttons as pengpayce but with Start Feature button
 #include "swhr2u.lh"          // 5      1, 2, 3, 4, 5   25
 #include "wnpost.lh"          // 5      1, 2, 3, 5, 10  50
 
@@ -3752,6 +3769,31 @@ ROM_START( dolphntrceb )
 ROM_END
 
 
+// 0101250V / 602/17 / 25 Credit Multiplier / 20 Line Multiline
+// Dolphin Treasure / QCOM / A - 20/01/00
+ROM_START( dolphntrql )
+	ARISTOCRAT_MK5_GALS
+	ARISTOCRAT_MK5_EEPROM
+	/*
+	    Checksum code found at 0x000ad0
+	    0x000000-0x0806ab is the Checksummed Range (excluding 0x000020-0x000027 where Checksum is stored)
+	        Expected Checksum   0xb0e71f34
+	        Calculated Checksum 0xb0e71f34  (OK)
+	    0x0806ac-0x1ad0c7 is the non-Checksummed range still containing data but NOT covered by Checksum
+	    0x0806ac-0x1fffff is the non-Checksummed range if the additional vectors? at the end are included
+	*/
+	ROM_REGION( 0x400000, "game_prg", ROMREGION_ERASEFF )
+	ROM_LOAD32_WORD( "0101250v.u7",  0x000000, 0x80000, CRC(4d38af9a) SHA1(4f0bc990b33b8421bde4473d22ad8ca55fc407c9) )
+	ROM_LOAD32_WORD( "0101250v.u11", 0x000002, 0x80000, CRC(f9750215) SHA1(8e44be5c83a1f75a95c856729cfc84c270649caf) )
+	ROM_LOAD32_WORD( "0101250v.u8",  0x100000, 0x80000, CRC(7d82a406) SHA1(c3757597fe9c484de71d81cb02046f6cca27ff44) )
+	ROM_LOAD32_WORD( "0101250v.u12", 0x100002, 0x80000, CRC(35236e6f) SHA1(f196f12a1761a235ad66f4e181ca249b1df7e245) )
+
+	ROM_REGION( 0x800000, "maincpu", ROMREGION_ERASE00 ) /* ARM Code */
+	ROM_REGION( 0x200000, "vram", ROMREGION_ERASE00 )
+	ROM_REGION( 0x20000*4, "sram", ROMREGION_ERASE00 )
+ROM_END
+
+
 // FHG4077-02 / 602/1 / 10 Credit Multiplier / 9 Line Multiline
 // Dolphin Treasure / Export / B - 06/12/96
 // All devices are 27c4002 instead of 27c4096
@@ -4607,6 +4649,32 @@ ROM_START( indrema5 )
 	ROM_LOAD32_WORD( "0100845v.u11", 0x000002, 0x80000, CRC(e371dc0f) SHA1(a01ab7fb63a19c144f2c465ecdfc042695124bdf) )
 	ROM_LOAD32_WORD( "0100845v.u8",  0x100000, 0x80000, CRC(1c6bfb47) SHA1(7f751cb499a6185a0ab64eeec511583ceeee6ee8) )
 	ROM_LOAD32_WORD( "0100845v.u12", 0x100002, 0x80000, CRC(4bbe67f6) SHA1(928f88387da66697f1de54f086531f600f80a15e) )
+
+	ROM_REGION( 0x800000, "maincpu", ROMREGION_ERASE00 ) /* ARM Code */
+	ROM_REGION( 0x200000, "vram", ROMREGION_ERASE00 )
+	ROM_REGION( 0x20000*4, "sram", ROMREGION_ERASE00 )
+ROM_END
+
+
+// 0101340V / 628/3 / 10 Credit Multiplier / 20 Line MultiLine
+// INDIAN DREAMING / QLD / A - 02/05/00
+ROM_START( indrema5ql )
+	ARISTOCRAT_MK5_GALS
+	ARISTOCRAT_MK5_EEPROM
+	/*
+	    Checksum code found at 0x000ad0
+	    0x000000-0x081823 is the Checksummed Range (excluding 0x000020-0x000027 where Checksum is stored)
+	        Expected Checksum   0xa70d8e67
+	        Calculated Checksum 0xa70d8e67  (OK)
+	    0x081824-0x20612b is the non-Checksummed range (unusual endpoint)
+	*/
+	ROM_REGION( 0x400000, "game_prg", ROMREGION_ERASEFF )
+	ROM_LOAD32_WORD( "0101340v.u7",  0x000000, 0x80000, CRC(60b93091) SHA1(6d4953b8312866f952b9658a680e8827bf2b5e57) )
+	ROM_LOAD32_WORD( "0101340v.u11", 0x000002, 0x80000, CRC(34125c7d) SHA1(c6e57346f2c53a04e858b01132abcb4d91403822) )
+	ROM_LOAD32_WORD( "0101340v.u8",  0x100000, 0x80000, CRC(de715129) SHA1(30c15bdfc9ee5c45e04b9f9eb614be89a911260b) )
+	ROM_LOAD32_WORD( "0101340v.u12", 0x100002, 0x80000, CRC(48d7b043) SHA1(835d148db1e2ce7747a4410e3ceea4468355a164) )
+	ROM_LOAD32_WORD( "0101340v.u9",  0x200000, 0x80000, CRC(77c94665) SHA1(48d786a323603d1315f94fef97de6f9d1311c688) )
+	ROM_LOAD32_WORD( "0101340v.u13", 0x200002, 0x80000, CRC(7ec9557e) SHA1(8f143c1ee1c82d822ff66ec5b3dac03b0c911223) )
 
 	ROM_REGION( 0x800000, "maincpu", ROMREGION_ERASE00 ) /* ARM Code */
 	ROM_REGION( 0x200000, "vram", ROMREGION_ERASE00 )
@@ -8346,7 +8414,7 @@ GAMEL( 1995, aristmk5,    0,        aristmk5_usa,       aristmk5_usa, aristmk5_s
 // Dates listed below are for the combination (reel layout), not release dates
 GAMEL( 1998, adonis,      aristmk5, aristmk5,           aristmk5,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Adonis (0200751V, NSW/ACT)",                           MACHINE_NOT_WORKING, layout_aristmk5 )        // 602/9, A - 25/05/98, Rev 10
 GAMEL( 1998, adonisa,     adonis,   aristmk5,           aristmk5,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Adonis (0100751V, NSW/ACT)",                           MACHINE_NOT_WORKING, layout_aristmk5 )        // 602/9, A - 25/05/98, Rev 9
-GAMEL( 1999, adonisce,    adonis,   aristmk5,           adonisce,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Adonis - Cash Express (0201005V, NSW/ACT)",            MACHINE_NOT_WORKING, layout_aristmk5 )        // 602/9, C - 06/07/99, Rev 12
+GAMEL( 1999, adonisce,    adonis,   aristmk5,           adonisce,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Adonis - Cash Express (0201005V, NSW/ACT)",            MACHINE_NOT_WORKING, layout_adonisce )        // 602/9, C - 06/07/99, Rev 12
 GAMEL( 2001, adonisu,     adonis,   aristmk5_usa,       bootsctnua,   aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Adonis (BHG1508, US)",                                 MACHINE_NOT_WORKING, layout_adonisu )         // MV4124/1, B - 31/07/01
 GAMEL( 2002, alchemst,    aristmk5, aristmk5,           goldenra,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Alchemist (01J02046, Venezuela)",                      MACHINE_NOT_WORKING, layout_yukongl5 )        // JB013/1, A - 22/01/02, Rev 17
 GAMEL( 2000, bparty,      aristmk5, aristmk5_usa_touch, bootsctnua,   aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Bachelorette Party (BHG1248, US)",                     MACHINE_NOT_WORKING, layout_bparty )          // MV4119/1, B - 25/08/2000
@@ -8356,7 +8424,6 @@ GAMEL( 1999, bootsctnu,   bootsctn, aristmk5_usa,       aristmk5_usa, aristmk5_s
 GAMEL( 1999, bootsctnua,  bootsctn, aristmk5_usa,       pengpuck,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Boot Scootin' (GHG1008-03, US)",                       MACHINE_NOT_WORKING, layout_aristmk5_us_200 ) // MV4098/1, A - 27/07/99
 GAMEL( 2001, bootsctnub,  bootsctn, aristmk5_usa,       aristmk5_usa, aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Boot Scootin' (AHG1547, US)",                          MACHINE_NOT_WORKING, layout_adonisu )         // MV4098/1, B - 22/03/01
 GAMEL( 1996, bumblbug,    aristmk5, aristmk5,           swhr2,        aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Bumble Bugs (0200510V, NSW/ACT)",                      MACHINE_NOT_WORKING, layout_swhr2 )           // 593, D - 5/07/96, Rev 3
-GAMEL( 1996, bumblbugql,  bumblbug, aristmk5,           swhr2,        aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Bumble Bugs (0200456V, Queensland)",                   MACHINE_NOT_WORKING, layout_swhr2 )           // 593, D - 5/07/96, Rev 1.0
 GAMEL( 1997, bumblbugu,   bumblbug, aristmk5_usa,       aristmk5_usa, aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Bumble Bugs (CHG0479-03, US)",                         MACHINE_NOT_WORKING, layout_aristmk5_us )     // 593, D - 05/07/97
 GAMEL( 1997, bumblbugua,  bumblbug, aristmk5_usa,       aristmk5_usa, aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Bumble Bugs (CHG0479-99, US)",                         MACHINE_NOT_WORKING, layout_aristmk5_us )     // 593, D - 05/07/97
 GAMEL( 1995, buttdeli,    aristmk5, aristmk5,           swhr2,        aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Butterfly Delight (0200143V, NSW/ACT)",                0,                   layout_swhr2 )           // 571/4, A - 19/12/95, Rev 1.8.1.0
@@ -8372,7 +8439,6 @@ GAMEL( 1998, chariotc,    aristmk5, aristmk5,           chariotc,     aristmk5_s
 GAMEL( 1998, chariotcv,   chariotc, aristmk5,           chariotcv,    aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "The Chariot Challenge (04J00714, Venezuela)",          MACHINE_NOT_WORKING, layout_snowcat )         // 630, A - 10/08/98, Rev 12
 GAMEL( 2001, checkma5,    aristmk5, aristmk5,           checkma5,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Checkmate (01J00681, NSW/ACT)",                        MACHINE_NOT_WORKING, layout_checkma5 )        // JB011, B - 06/07/01, Rev 17
 GAMEL( 1996, chickna5,    aristmk5, aristmk5,           chickna5,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Chicken (0100351V, NSW/ACT)",                          0,                   layout_snowcat )         // 596, A - 27/08/96, Rev 1.24
-GAMEL( 1998, chickna5ql,  chickna5, aristmk5,           chickna5,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Chicken (0200530V, Queensland)",                       MACHINE_NOT_WORKING, layout_snowcat )         // 596, C - 23/02/98, Rev 1.0
 GAMEL( 1998, chickna5u,   chickna5, aristmk5_usa,       chickna5u,    aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Chicken (RHG0730-03, US)",                             MACHINE_NOT_WORKING, layout_aristmk5_us )     // 596, C - 23/02/98
 GAMEL( 1998, chickna5ua,  chickna5, aristmk5_usa,       chickna5u,    aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Chicken (RHG0730-99, US)",                             MACHINE_NOT_WORKING, layout_aristmk5_us )     // 596, C - 23/02/98
 GAMEL( 1998, coralrc2,    aristmk5, aristmk5,           coralrc2,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Coral Riches II (0100919V, NSW/ACT)",                  MACHINE_NOT_WORKING, layout_coralrc2 )        // 577/7, A - 29/12/98, Rev 12
@@ -8388,7 +8454,7 @@ GAMEL( 1996, dolphntra,   dolphntr, aristmk5,           aristmk5,     aristmk5_s
 GAMEL( 1996, dolphntrb,   dolphntr, aristmk5,           aristmk5_9,   aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Dolphin Treasure (0100388V, NSW/ACT)",                 0,                   layout_dolphntrb )       // 602, B - 10/12/96, Rev 1.24.4.0
 GAMEL( 1996, dolphntru,   dolphntr, aristmk5_usa,       dolphntru,    aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Dolphin Treasure (FHG4077-02, US)",                    MACHINE_NOT_WORKING, layout_aristmk5_us )     // 602/1, B - 06/12/96
 GAMEL( 1999, dolphntrce,  dolphntr, aristmk5_usa,       dolphntrce,   aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Dolphin Treasure - Cash Express (AHG1607, US)",        MACHINE_NOT_WORKING, layout_adonisu )         // MV4090, D - 22/12/99
-GAMEL( 1999, dolphntrcea, dolphntr, aristmk5_usa,       dolphntru,    aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Dolphin Treasure - Cash Express (AHG1606, US)",        MACHINE_NOT_WORKING, layout_magimaska )       // MV4090, D - 22/12/99
+GAMEL( 1999, dolphntrcea, dolphntr, aristmk5_usa,       dolphntru,    aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Dolphin Treasure - Cash Express (AHG1606, US)",        MACHINE_NOT_WORKING, layout_marmagicu )       // MV4090, D - 22/12/99
 GAMEL( 1999, dolphntrceb, dolphntr, aristmk5_usa,       dolphntrce,   aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Dolphin Treasure - Cash Express (AHG1519, US)",        MACHINE_NOT_WORKING, layout_dolphntrceb )     // MV4090, D - 22/12/99
 GAMEL( 1997, drgneye,     aristmk5, aristmk5,           snowcat,      aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Dragon's Eye (0100521V, NSW/ACT)",                     0,                   layout_snowcat )         // 610, A - 09/05/97, Rev 1.27
 GAMEL( 1997, dreamwv,     aristmk5, aristmk5_touch,     dreamwv,      aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Dream Weaver (0200586V, NSW/ACT)",                     MACHINE_NOT_WORKING, layout_dreamwv )         // 606/2, A - 20/06/97, Rev 16
@@ -8407,7 +8473,6 @@ GAMEL( 2001, glizrdce,    aristmk5, aristmk5_usa,       bootsctnua,   aristmk5_s
 GAMEL( 1998, gnomeatw,    aristmk5, aristmk5,           kgalah,       aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Gnome Around The World (0100767V, NSW/ACT)",           MACHINE_NOT_WORKING, layout_kgalah )          // 625, C - 18/12/98, Rev 16
 GAMEL( 1997, goldpyr,     aristmk5, aristmk5_usa,       dolphntru,    aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Golden Pyramids (AHG1205-03, US)",                     MACHINE_NOT_WORKING, layout_aristmk5_us )     // MV4091, B - 13/05/97
 GAMEL( 1997, goldpyra,    goldpyr,  aristmk5_usa,       bootsctnua,   aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Golden Pyramids (AHG1206-99, US)",                     MACHINE_NOT_WORKING, layout_aristmk5_us_200 ) // 602/2, B - 13/05/97
-GAMEL( 1998, goldpyrb,    goldpyr,  aristmk5,           goldpyrb,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Golden Pyramids (0100878V, Victoria)",                 MACHINE_NOT_WORKING, layout_goldpyrb )        // 602/5, C - 19/06/98
 GAMEL( 2000, goldenra,    aristmk5, aristmk5,           goldenra,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Golden Ra (0101164V, NSW/ACT)",                        MACHINE_NOT_WORKING, layout_goldenra )        // 661, A - 10/04/00, Rev 15
 GAMEL( 2001, hnktonku,    aristmk5, aristmk5_usa,       aristmk5_usa, aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Honky Tonk (BHG1455, US)",                             MACHINE_NOT_WORKING, layout_magimaska )       // MV4122/3, A - 07/08/01
 GAMEL( 2000, honeypot,    aristmk5, aristmk5,           goldenra,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Honey Pot (03J00241, NSW/ACT)",                        MACHINE_NOT_WORKING, layout_yukongl5 )        // JB008, A - 21/11/2000, Rev 17
@@ -8419,7 +8484,6 @@ GAMEL( 2000, incasunua,   incasun,  aristmk5_usa,       bootsctnua,   aristmk5_s
 GAMEL( 1999, incasunv,    incasun,  aristmk5,           incasun,      aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Inca Sun (01J01946, Venezuela)",                       MACHINE_NOT_WORKING, layout_incasun )         // 631/3 B, B- 03/05/99, Rev 15
 GAMEL( 1998, indrema5,    aristmk5, aristmk5,           indrema5,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Indian Dreaming (0100845V, NSW/ACT)",                  MACHINE_NOT_WORKING, layout_indrema5 )        // 628/1, B - 15/12/98, Rev 7
 GAMEL( 1996, jumpjoey,    aristmk5, aristmk5,           cashcham,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Jumpin' Joey (0100383V, NSW/ACT)",                     0,                   layout_cashcham )        // 586/6, C - 13/11/96
-GAMEL( 1996, jungjuic,    aristmk5, aristmk5,           jungjuic,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Jungle Juice (0200240V, New Zealand)",                 MACHINE_NOT_WORKING, layout_jungjuic )        // 566/3, F - 06/03/96
 GAMEL( 1995, kgalah,      aristmk5, aristmk5,           kgalah,       aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "King Galah (0200536V, NSW/ACT)",                       MACHINE_NOT_WORKING, layout_kgalah )          // 613/6, A - 21/07/95
 GAMEL( 1995, kgalaha,     kgalah,   aristmk5,           kgalah,       aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "King Galah (0100536V, NSW/ACT)",                       0,                   layout_kgalah )          // 613, A - 21/07/95
 GAMEL( 2001, kgalahce,    kgalah,   aristmk5_usa,       bootsctnua,   aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "King Galah - Cash Express (AHG1625, US)",              MACHINE_NOT_WORKING, layout_adonisu )         // MV4112/2, B - 07/02/01
@@ -8440,7 +8504,7 @@ GAMEL( 1997, magtcha5,    aristmk5, aristmk5_touch,     dimtouch,     aristmk5_s
 GAMEL( 1997, magtcha5a,   magtcha5, aristmk5_touch,     dimtouch,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Magic Touch (0200455V, NSW/ACT)",                      MACHINE_NOT_WORKING, layout_dimtouch )        // 606, A - 06/03/97, Rev 14
 GAMEL( 1997, mammothm,    aristmk5, aristmk5,           kgalah,       aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Mammoth Money (0100425V, NSW/ACT)",                    0,                   layout_kgalah )          // 595/5, D - 07/04/97, Rev 1.22.14.1
 GAMEL( 2000, marmagic,    aristmk5, aristmk5,           goldenra,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Margarita Magic (01J00101, NSW/ACT)",                  MACHINE_NOT_WORKING, layout_marmagic )        // JB005, A - 07/07/00, Rev 17
-GAMEL( 2000, marmagicu,   marmagic, aristmk5_usa,       aristmk5_usa, aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Margarita Magic (EHG1558, US)",                        MACHINE_NOT_WORKING, layout_magimaska )       // US003, 07/07/2000
+GAMEL( 2000, marmagicu,   marmagic, aristmk5_usa,       aristmk5_usa, aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Margarita Magic (EHG1558, US)",                        MACHINE_NOT_WORKING, layout_marmagicu )       // US003, 07/07/2000
 GAMEL( 2000, marmagicua,  marmagic, aristmk5_usa,       bootsctnua,   aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Margarita Magic (EHG1559, US)",                        MACHINE_NOT_WORKING, layout_adonisu )         // US003, A - 07/07/00
 GAMEL( 1997, mgarden,     aristmk5, aristmk5_usa,       aristmk5_usa, aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Magic Garden (AHG1211-99, US)",                        MACHINE_NOT_WORKING, layout_aristmk5_us )     // MV4033, B - 10/02/97
 GAMEL( 1996, minemine,    aristmk5, aristmk5,           swhr2,        aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Mine, Mine, Mine (0400115V, NSW/ACT)",                 0,                   layout_swhr2 )           // 559/2, D - 16/01/96, Rev 1.18.3.0
@@ -8472,11 +8536,10 @@ GAMEL( 1995, pengpayc,    pengpay,  aristmk5,           wcougar,      aristmk5_s
 GAMEL( 1997, pengpayu,    pengpay,  aristmk5_usa,       aristmk5_usa, aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Penguin Pays (BHI0417-03, US)",                        MACHINE_NOT_WORKING, layout_aristmk5_us )     // 586/7(b), B - 14/07/97
 GAMEL( 1997, pengpayua,   pengpay,  aristmk5_usa,       aristmk5_usa, aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Penguin Pays (OHG0417-03, US)",                        MACHINE_NOT_WORKING, layout_aristmk5_us )     // 586/7(b), B - 14/07/97
 GAMEL( 1997, pengpayub,   pengpay,  aristmk5_usa,       aristmk5_usa, aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Penguin Pays (OHG0417-02, US)",                        MACHINE_NOT_WORKING, layout_aristmk5_us )     // 586/7(b), B - 14/07/97
-GAMEL( 2001, pengpayce,   pengpay,  aristmk5_usa,       aristmk5_usa, aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Penguin Pays - Cash Express (AHG1544, US)",            MACHINE_NOT_WORKING, layout_qnilecea )        // MV4122,  C - 19/01/01
+GAMEL( 2001, pengpayce,   pengpay,  aristmk5_usa,       aristmk5_usa, aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Penguin Pays - Cash Express (AHG1544, US)",            MACHINE_NOT_WORKING, layout_pengpayce )       // MV4122,  C - 19/01/01
 GAMEL( 2001, pengpuck,    pengpay,  aristmk5_usa,       pengpuck,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Penguin Pays - Penguin Pucks (EHG1257, US)",           MACHINE_NOT_WORKING, layout_pengpuck )        // MV4122/1, C - 19/01/01
 GAMEL( 1998, penpir,      aristmk5, aristmk5,           kgalah,       aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Penguin Pirate (0100674V, NSW/ACT)",                   MACHINE_NOT_WORKING, layout_kgalah )          // 619/1, A - 31/03/98, Rev 10
 GAMEL( 1998, penpira,     penpir,   aristmk5,           snowcat,      aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Penguin Pirate (0200578V, NSW/ACT)",                   MACHINE_NOT_WORKING, layout_snowcat )         // 619, A - 27/02/98, Rev 8
-GAMEL( 1998, penpir2,     aristmk5, aristmk5,           penpir2,      aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Penguin Pirate II (0100869V, Victoria)",               MACHINE_NOT_WORKING, layout_penpir2 )         // 619/3, A - 17/12/98
 GAMEL( 1998, petshop,     aristmk5, aristmk5,           petshop,      aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Pet Shop (0100731V, NSW/ACT)",                         MACHINE_NOT_WORKING, layout_petshop )         // 618/1, A - 17/04/98, Rev 13
 GAMEL( 1995, phantpay,    aristmk5, aristmk5,           swhr2,        aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Phantom Pays (0500005V, NSW/ACT)",                     0,                   layout_swhr2 )           // 570/1, E - 12/09/95
 GAMEL( 1996, przfight,    aristmk5, aristmk5,           przfight,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Prize Fight (0100299V, NSW/ACT)",                      0,                   layout_przfight )        // 578/4, B - 08/08/96
@@ -8487,10 +8550,8 @@ GAMEL( 1997, qnileb,      qnile,    aristmk5,           qnile,        aristmk5_s
 GAMEL( 2002, qnilebr,     qnile,    aristmk5,           goldpyrb,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Queen of the Nile (0101707V, Brazil)",                 0,                   layout_goldpyrb )        // MV4162, A - 21/08/02
 GAMEL( 1997, qnilec,      qnile,    aristmk5,           qnilec,       aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Queen of the Nile (0300440V, NSW/ACT)",                MACHINE_NOT_WORKING, layout_qnilec )          // 602/3, B - 13/05/97, Rev 5
 GAMEL( 1999, qniled,      qnile,    aristmk5,           checkma5,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Queen of the Nile (0101139V, NSW/ACT)",                MACHINE_NOT_WORKING, layout_qniled )          // 602/16, A - 11/10/99, Rev 14
-GAMEL( 2001, qnilefl,     qnile,    aristmk5,           trstrove,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Queen of the Nile - Fast Lane (0101670V, Queensland)", MACHINE_NOT_WORKING, layout_trstrove )        // 602/4, E - 17/08/01
 GAMEL( 2000, qnilenl,     qnile,    aristmk5,           qnilenl,      aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Queen of the Nile (0301059V, Holland)",                0,                   layout_qnilenl )         // 602/5, G - 10/04/00
 GAMEL( 1998, qnilenz,     qnile,    aristmk5,           cashcatnz,    aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Queen of the Nile (0300785V, New Zealand)",            0,                   layout_cashcatnz )       // MV4068, A - 31/8/98, Rev 20
-GAMEL( 1999, qnileql,     qnile,    aristmk5,           trstrove,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Queen of the Nile (0201200V, Queensland)",             MACHINE_NOT_WORKING, layout_trstrove )        // 602/4, D - 18/06/99
 GAMEL( 1997, qnileu,      qnile,    aristmk5_usa,       dolphntru,    aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Queen of the Nile (GHG4091-02, US)",                   MACHINE_NOT_WORKING, layout_aristmk5_us )     // MV4091, B - 13/05/97
 GAMEL( 1997, qnileua,     qnile,    aristmk5_usa,       dolphntru,    aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Queen of the Nile (GHG4091-03, US)",                   MACHINE_NOT_WORKING, layout_aristmk5_us )     // MV4091, B - 13/05/97
 GAMEL( 1997, qnilev,      qnile,    aristmk5,           aristmk5_9,   aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Queen of the Nile (04J00784, Venezuela)",              MACHINE_NOT_WORKING, layout_dolphntrb )       // 602/3, B - 13/05/97, Rev 6
@@ -8499,12 +8560,11 @@ GAMEL( 2001, qnilecea,    qnile,    aristmk5_usa,       dolphntru,    aristmk5_s
 GAMEL( 2001, qnileceb,    qnile,    aristmk5_usa,       dolphntru,    aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Queen of the Nile - Cash Express (AHG1608, US)",       MACHINE_NOT_WORKING, layout_magimaska )       // MV4091, F - 17/01/01
 GAMEL( 1999, qnilemax,    qnile,    aristmk5_touch,     trstrove,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Queen of the Nile - Maximillions (0401072V, NSW/ACT)", MACHINE_NOT_WORKING, layout_trstrove )        // 602/4, D - 18/06/99, Rev 14
 GAMEL( 1994, qtbird,      aristmk5, aristmk5,           qtbird,       aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Q.T. Bird (0500009V, NSW/ACT)",                        0,                   layout_qtbird )          // 581, A - 27/10/94, Rev 1.1.1.0
-GAMEL( 2000, rainwrce,    aristmk5, aristmk5,           adonisce,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Rainbow Warriors - Cash Express (0101332V, NSW/ACT)",  MACHINE_NOT_WORKING, layout_aristmk5 )        // 655, B - 02/03/00, Rev 25
+GAMEL( 2000, rainwrce,    aristmk5, aristmk5,           adonisce,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Rainbow Warriors - Cash Express (0101332V, NSW/ACT)",  MACHINE_NOT_WORKING, layout_adonisce )        // 655, B - 02/03/00, Rev 25
 GAMEL( 1998, reelpwr,     aristmk5, aristmk5,           wizways,      aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Reel Power (0100400V, NSW/ACT)",                       0,                   layout_wizways )         // 598/2, A - 01/11/96, Rev 1.23.8.0
 GAMEL( 1998, reelrock,    aristmk5, aristmk5,           reelrock,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Reelin-n-Rockin (0100779V, NSW/ACT)",                  MACHINE_NOT_WORKING, layout_reelrock )        // 628, A - 13/07/98, Rev 5
-GAMEL( 2000, reelrockql,  reelrock, aristmk5,           trstrove,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Reelin-n-Rockin (0101460V, Queensland)",               MACHINE_NOT_WORKING, layout_trstrove )        // 628/2, E - 20/12/00
-GAMEL( 1997, retrsam,     aristmk5, aristmk5,           retrsam,      aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Return of the Samurai (0400549V, NSW/ACT)",            MACHINE_NOT_WORKING, layout_sbuk3 )           // 608, A - 17/04/97, Rev 5
-GAMEL( 1997, retrsama,    retrsam,  aristmk5,           retrsam,      aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Return of the Samurai (0200549V, NSW/ACT)",            0,                   layout_sbuk3 )           // 608, A - 17/04/97, Rev 1.26.25.3
+GAMEL( 1997, retrsam,     aristmk5, aristmk5,           retrsam,      aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Return of the Samurai (0400549V, NSW/ACT)",            MACHINE_NOT_WORKING, layout_retrsam )         // 608, A - 17/04/97, Rev 5
+GAMEL( 1997, retrsama,    retrsam,  aristmk5,           retrsam,      aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Return of the Samurai (0200549V, NSW/ACT)",            0,                   layout_retrsam )         // 608, A - 17/04/97, Rev 1.26.25.3
 GAMEL( 1997, retrsamb,    retrsam,  aristmk5,           retrsamb,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Return of the Samurai (0200506V, NSW/ACT)",            0,                   layout_retrsamb )        // 608, A - 17/04/97, Rev 1.26.25.3
 GAMEL( 1997, rushrst,     aristmk5, aristmk5,           rushrst,      aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Rushin Rooster (0100534V, NSW/ACT)",                   0,                   layout_cashchama )       // 596/3, C - 25/06/97, Rev 1.27.2.3
 GAMEL( 2001, sldeluxe,    aristmk5, aristmk5_usa,       bootsctnua,   aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Sweet Liberty Deluxe (AHG1575, US)",                   MACHINE_NOT_WORKING, layout_adonisu )         // MV4137, A - 11/02/01
@@ -8547,9 +8607,22 @@ GAMEL( 1997, wcougarub,   wcougar,  aristmk5_usa,       aristmk5_usa, aristmk5_s
 GAMEL( 1997, wcougaruc,   wcougar,  aristmk5_usa,       aristmk5_usa, aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Wild Cougar (AHG1531, US)",                            MACHINE_NOT_WORKING, layout_magimaska )       // MV4055, B - 13/05/97
 GAMEL( 1996, wizways,     aristmk5, aristmk5,           wizways,      aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Wizard Ways (0200396V, NSW/ACT)",                      MACHINE_NOT_WORKING, layout_wizways )         // 598/3, A - 04/11/96, Rev 9
 GAMEL( 1997, wnpost,      aristmk5, aristmk5_usa,       wnpost,       aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Winning Post (RHG0418-04, US)",                        MACHINE_NOT_WORKING, layout_wnpost )          // 541/2, G - 11/02/97
-GAMEL( 1999, wthing,      aristmk5, aristmk5,           retrsam,      aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Wild Thing (0101158V, NSW/ACT)",                       MACHINE_NOT_WORKING, layout_sbuk3 )           // 608/4, B - 14/12/99, Rev 8
+GAMEL( 1999, wthing,      aristmk5, aristmk5,           retrsam,      aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Wild Thing (0101158V, NSW/ACT)",                       MACHINE_NOT_WORKING, layout_retrsam )         // 608/4, B - 14/12/99, Rev 8
 GAMEL( 1999, wtiger,      aristmk5, aristmk5,           wtiger,       aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "White Tiger Classic (0200954V, NSW/ACT)",              MACHINE_NOT_WORKING, layout_wtiger )          // 638/1, B - 08/07/99, Rev 13
 GAMEL( 2000, yukongl5,    aristmk5, aristmk5,           goldenra,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Yukon Gold (03J00191, NSW/ACT)",                       MACHINE_NOT_WORKING, layout_yukongl5 )        // JB005/1, A - 30/10/2000, Rev 17
+
+// the following parent sets boot but cannot be played due to unemulated comms
+GAMEL( 1996, jungjuic,    aristmk5, aristmk5,           jungjuic,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Jungle Juice (0200240V, New Zealand)",                 MACHINE_NOT_WORKING, layout_jungjuic )        // 566/3, F - 06/03/96
+GAMEL( 1998, penpir2,     aristmk5, aristmk5,           penpir2,      aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Penguin Pirate II (0100869V, Victoria)",               MACHINE_NOT_WORKING, layout_penpir2 )         // 619/3, A - 17/12/98
+
+// the following clone sets boot but cannot be played due to unemulated comms
+GAMEL( 1996, bumblbugql,  bumblbug, aristmk5,           swhr2,        aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Bumble Bugs (0200456V, Queensland)",                   MACHINE_NOT_WORKING, layout_swhr2 )           // 593, D - 5/07/96, Rev 1.0
+GAMEL( 1998, chickna5ql,  chickna5, aristmk5,           chickna5,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Chicken (0200530V, Queensland)",                       MACHINE_NOT_WORKING, layout_snowcat )         // 596, C - 23/02/98, Rev 1.0
+GAMEL( 2000, dolphntrql,  dolphntr, aristmk5,           trstrove,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Dolphin Treasure (0101250V, Queensland)",              MACHINE_NOT_WORKING, layout_trstrove )        // 602/17, A - 20/01/00, Rev 1.0.1.0
+GAMEL( 1998, goldpyrb,    goldpyr,  aristmk5,           goldpyrb,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Golden Pyramids (0100878V, Victoria)",                 MACHINE_NOT_WORKING, layout_goldpyrb )        // 602/5, C - 19/06/98
+GAMEL( 2000, indrema5ql,  indrema5, aristmk5,           aristmk5,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Indian Dreaming (0101340V, Queensland)",               MACHINE_NOT_WORKING, layout_aristmk5 )        // 628/3, A - 02/05/00, Rev 1.0
+GAMEL( 1999, qnileql,     qnile,    aristmk5,           trstrove,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Queen of the Nile (0201200V, Queensland)",             MACHINE_NOT_WORKING, layout_trstrove )        // 602/4, D - 18/06/99
+GAMEL( 2001, qnilefl,     qnile,    aristmk5,           trstrove,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Queen of the Nile - Fast Lane (0101670V, Queensland)", MACHINE_NOT_WORKING, layout_trstrove )        // 602/4, E - 17/08/01
 
 // the following parent sets are known bad dumps, and do not boot (confirmed)
 GAMEL( 1996, blackpnt,    aristmk5, aristmk5,           wildbill,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Black Panther (0200818V, Victoria)",                   MACHINE_NOT_WORKING, layout_wildbill )        // 594/1, A - 30/07/96
@@ -8571,5 +8644,6 @@ GAMEL( 2001, mountmonu,   mountmon, aristmk5_usa,       aristmk5_usa, aristmk5_s
 GAMEL( 2001, partygrsb,   partygrs, aristmk5_usa_touch, bootsctnua,   aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Party Gras (AHG1568, US)",                             MACHINE_NOT_WORKING, layout_bparty )          // MV4115/6, A - 10/11/2001, 20 lines
 GAMEL( 1995, pengpayd,    pengpay,  aristmk5,           wcougar,      aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Penguin Pays (0300113V, NSW/ACT)",                     MACHINE_NOT_WORKING, layout_wcougar )         // 586, A - 12/10/95, Rev 4
 GAMEL( 1998, petshopa,    petshop,  aristmk5,           snowcat,      aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Pet Shop (0100679V, NSW/ACT)",                         MACHINE_NOT_WORKING, layout_snowcat )         // 618, A - 09/03/98, Rev 10
+GAMEL( 2000, reelrockql,  reelrock, aristmk5,           trstrove,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Reelin-n-Rockin (0101460V, Queensland)",               MACHINE_NOT_WORKING, layout_trstrove )        // 628/2, E - 20/12/00
 GAMEL( 1995, sbuk2a,      sbuk2,    aristmk5,           sbuk2,        aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Super Bucks II (0300006V, NSW/ACT)",                   MACHINE_NOT_WORKING, layout_sbuk2 )           // no data due to missing ROMs
 GAMEL( 2000, wthinga,     wthing,   aristmk5,           aristmk5,     aristmk5_state, init_aristmk5, ROT0, "Aristocrat", "Wild Thing (0201176V, NSW/ACT)",                       MACHINE_NOT_WORKING, layout_aristmk5 )        // 608/5, B - 25/02/00, Rev 11

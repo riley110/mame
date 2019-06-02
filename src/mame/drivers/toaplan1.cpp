@@ -1618,6 +1618,39 @@ static INPUT_PORTS_START( samesame2 )
 	PORT_BIT( 0xf2, IP_ACTIVE_HIGH, IPT_UNKNOWN )   /* Mask bit 2 aswell */
 INPUT_PORTS_END
 
+static INPUT_PORTS_START( jiaojiao )
+	PORT_INCLUDE( fireshrk )
+
+	PORT_MODIFY("P2")
+	TOAPLAN1_PLAYER_INPUT( 2, IPT_UNKNOWN )
+
+	PORT_MODIFY("DSWA")     /* DSW A */
+	PORT_DIPNAME( 0x30, 0x00, DEF_STR( Coin_A ) )
+	PORT_DIPSETTING(    0x30, DEF_STR( 4C_1C ) ) PORT_CONDITION("TJUMP", 0x01, EQUALS, 0x01)
+	PORT_DIPSETTING(    0x20, DEF_STR( 3C_1C ) ) PORT_CONDITION("TJUMP", 0x01, EQUALS, 0x01)
+	PORT_DIPSETTING(    0x10, DEF_STR( 2C_1C ) ) PORT_CONDITION("TJUMP", 0x01, EQUALS, 0x01)
+	PORT_DIPSETTING(    0x00, DEF_STR( 1C_1C ) ) PORT_CONDITION("TJUMP", 0x01, EQUALS, 0x01)
+	PORT_DIPSETTING(    0x20, DEF_STR( 2C_1C ) ) PORT_CONDITION("TJUMP", 0x01, EQUALS, 0x00)
+	PORT_DIPSETTING(    0x00, DEF_STR( 1C_1C ) ) PORT_CONDITION("TJUMP", 0x01, EQUALS, 0x00)
+	PORT_DIPSETTING(    0x30, DEF_STR( 2C_3C ) ) PORT_CONDITION("TJUMP", 0x01, EQUALS, 0x00)
+	PORT_DIPSETTING(    0x10, DEF_STR( 1C_2C ) ) PORT_CONDITION("TJUMP", 0x01, EQUALS, 0x00)
+	PORT_DIPNAME( 0xc0, 0x00, DEF_STR( Coin_B ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( 1C_2C ) ) PORT_CONDITION("TJUMP", 0x01, EQUALS, 0x01)
+	PORT_DIPSETTING(    0x40, DEF_STR( 1C_3C ) ) PORT_CONDITION("TJUMP", 0x01, EQUALS, 0x01)
+	PORT_DIPSETTING(    0x80, DEF_STR( 1C_4C ) ) PORT_CONDITION("TJUMP", 0x01, EQUALS, 0x01)
+	PORT_DIPSETTING(    0xc0, DEF_STR( 1C_6C ) ) PORT_CONDITION("TJUMP", 0x01, EQUALS, 0x01)
+	PORT_DIPSETTING(    0x80, DEF_STR( 2C_1C ) ) PORT_CONDITION("TJUMP", 0x01, EQUALS, 0x00)
+	PORT_DIPSETTING(    0x00, DEF_STR( 1C_1C ) ) PORT_CONDITION("TJUMP", 0x01, EQUALS, 0x00)
+	PORT_DIPSETTING(    0xc0, DEF_STR( 2C_3C ) ) PORT_CONDITION("TJUMP", 0x01, EQUALS, 0x00)
+	PORT_DIPSETTING(    0x40, DEF_STR( 1C_2C ) ) PORT_CONDITION("TJUMP", 0x01, EQUALS, 0x00)
+
+	PORT_MODIFY("TJUMP")        /* Territory Jumper Block */
+	PORT_DIPNAME( 0x01, 0x00, "Coinage Style" )
+	PORT_DIPSETTING(    0x01, "Fire Shark" )
+	PORT_DIPSETTING(    0x00, "Same! Same! Same!" )
+	PORT_BIT( 0xf2, IP_ACTIVE_HIGH, IPT_UNKNOWN )   /* Mask bit 2 aswell */
+INPUT_PORTS_END
+
 /* verified from M68000 and Z80 code */
 static INPUT_PORTS_START( outzone )
 	PORT_INCLUDE( toaplan1_3b )
@@ -1931,7 +1964,6 @@ void toaplan1_rallybik_state::rallybik(machine_config &config)
 	m_screen->set_raw(PIXEL_CLOCK, HTOTAL, HBEND, HBSTART, VTOTAL55, VBEND, VBSTART);
 	m_screen->set_screen_update(FUNC(toaplan1_rallybik_state::screen_update));
 	m_screen->screen_vblank().set(FUNC(toaplan1_rallybik_state::screen_vblank));
-	m_screen->set_palette(m_palette);
 
 	TOAPLAN_SCU(config, m_spritegen, 0);
 	m_spritegen->set_palette(m_palette);
@@ -1966,7 +1998,6 @@ void toaplan1_state::truxton(machine_config &config)
 	m_screen->set_raw(PIXEL_CLOCK, HTOTAL, HBEND, HBSTART, VTOTAL, VBEND, VBSTART);
 	m_screen->set_screen_update(FUNC(toaplan1_state::screen_update));
 	m_screen->screen_vblank().set(FUNC(toaplan1_state::screen_vblank));
-	m_screen->set_palette(m_palette);
 
 	GFXDECODE(config, m_gfxdecode, m_palette, gfx_toaplan1);
 	PALETTE(config, m_palette).set_format(palette_device::xBGR_555, (64*16)+(64*16));
@@ -1997,7 +2028,6 @@ void toaplan1_state::hellfire(machine_config &config)
 	m_screen->set_raw(PIXEL_CLOCK, HTOTAL, HBEND, HBSTART, VTOTAL, VBEND+16, VBSTART+16);
 	m_screen->set_screen_update(FUNC(toaplan1_state::screen_update));
 	m_screen->screen_vblank().set(FUNC(toaplan1_state::screen_vblank));
-	m_screen->set_palette(m_palette);
 
 	GFXDECODE(config, m_gfxdecode, m_palette, gfx_toaplan1);
 	PALETTE(config, m_palette).set_format(palette_device::xBGR_555, (64*16)+(64*16));
@@ -2030,7 +2060,6 @@ void toaplan1_state::zerowing(machine_config &config)
 	m_screen->set_raw(PIXEL_CLOCK, HTOTAL, HBEND, HBSTART, VTOTAL, VBEND+16, VBSTART+16);
 	m_screen->set_screen_update(FUNC(toaplan1_state::screen_update));
 	m_screen->screen_vblank().set(FUNC(toaplan1_state::screen_vblank));
-	m_screen->set_palette(m_palette);
 
 	GFXDECODE(config, m_gfxdecode, m_palette, gfx_toaplan1);
 	PALETTE(config, m_palette).set_format(palette_device::xBGR_555, (64*16)+(64*16));
@@ -2066,7 +2095,6 @@ void toaplan1_demonwld_state::demonwld(machine_config &config)
 	m_screen->set_raw(PIXEL_CLOCK, HTOTAL, HBEND, HBSTART, VTOTAL55, VBEND+16, VBSTART+16);
 	m_screen->set_screen_update(FUNC(toaplan1_demonwld_state::screen_update));
 	m_screen->screen_vblank().set(FUNC(toaplan1_demonwld_state::screen_vblank));
-	m_screen->set_palette(m_palette);
 
 	GFXDECODE(config, m_gfxdecode, m_palette, gfx_toaplan1);
 	PALETTE(config, m_palette).set_format(palette_device::xBGR_555, (64*16)+(64*16));
@@ -2099,7 +2127,6 @@ void toaplan1_samesame_state::samesame(machine_config &config)
 	m_screen->set_raw(PIXEL_CLOCK, HTOTAL, HBEND, HBSTART, VTOTAL, VBEND, VBSTART);
 	m_screen->set_screen_update(FUNC(toaplan1_samesame_state::screen_update));
 	m_screen->screen_vblank().set(FUNC(toaplan1_samesame_state::screen_vblank));
-	m_screen->set_palette(m_palette);
 
 	GFXDECODE(config, m_gfxdecode, m_palette, gfx_toaplan1);
 	PALETTE(config, m_palette).set_format(palette_device::xBGR_555, (64*16)+(64*16));
@@ -2132,7 +2159,6 @@ void toaplan1_state::outzone(machine_config &config)
 	m_screen->set_raw(PIXEL_CLOCK, HTOTAL, HBEND, HBSTART, VTOTAL55, VBEND, VBSTART);
 	m_screen->set_screen_update(FUNC(toaplan1_state::screen_update));
 	m_screen->screen_vblank().set(FUNC(toaplan1_state::screen_vblank));
-	m_screen->set_palette(m_palette);
 
 	GFXDECODE(config, m_gfxdecode, m_palette, gfx_toaplan1);
 	PALETTE(config, m_palette).set_format(palette_device::xBGR_555, (64*16)+(64*16));
@@ -2165,7 +2191,6 @@ void toaplan1_state::outzonecv(machine_config &config)
 	m_screen->set_raw(PIXEL_CLOCK, HTOTAL, HBEND, HBSTART, VTOTAL, VBEND, VBSTART);
 	m_screen->set_screen_update(FUNC(toaplan1_state::screen_update));
 	m_screen->screen_vblank().set(FUNC(toaplan1_state::screen_vblank));
-	m_screen->set_palette(m_palette);
 
 	GFXDECODE(config, m_gfxdecode, m_palette, gfx_toaplan1);
 	PALETTE(config, m_palette).set_format(palette_device::xBGR_555, (64*16)+(64*16));
@@ -2198,7 +2223,6 @@ void toaplan1_state::vimana(machine_config &config)
 	m_screen->set_raw(PIXEL_CLOCK, HTOTAL, HBEND, HBSTART, VTOTAL, VBEND, VBSTART);
 	m_screen->set_screen_update(FUNC(toaplan1_state::screen_update));
 	m_screen->screen_vblank().set(FUNC(toaplan1_state::screen_vblank));
-	m_screen->set_palette(m_palette);
 
 	GFXDECODE(config, m_gfxdecode, m_palette, gfx_toaplan1);
 	PALETTE(config, m_palette).set_format(palette_device::xBGR_555, (64*16)+(64*16));
@@ -2792,8 +2816,8 @@ ROM_END
 
 ROM_START( fireshrkd )
 	ROM_REGION( 0x080000, "maincpu", 0 )    /* Main 68K code */
-	ROM_LOAD16_BYTE( "o17_09dyn.8j",0x000000, 0x10000, CRC(e25eee27) SHA1(1ff3f838123180a0b6672c9beee6c0f0092a0f94) )
-	ROM_LOAD16_BYTE( "o17_10dyn.8l",0x000001, 0x10000, CRC(c4c58cf6) SHA1(5867ecf66cd6c16cfcc54a581d3f4a8b666fd839) )
+	ROM_LOAD16_BYTE( "o17_09dyn.8j",0x000000, 0x10000, CRC(e25eee27) SHA1(1ff3f838123180a0b6672c9beee6c0f0092a0f94) ) /* Identical halves */
+	ROM_LOAD16_BYTE( "o17_10dyn.8l",0x000001, 0x10000, CRC(c4c58cf6) SHA1(5867ecf66cd6c16cfcc54a581d3f4a8b666fd839) ) /* Identical halves */
 	ROM_LOAD16_BYTE( "o17_11ii.7j", 0x040000, 0x20000, CRC(6beac378) SHA1(041ba98a89a4bac32575858db8a061bdf7804594) )
 	ROM_LOAD16_BYTE( "o17_12ii.7l", 0x040001, 0x20000, CRC(6adb6eb5) SHA1(9b6e63aa50d271c2bb0b4cf822fc6f3684f10230) )
 
@@ -2819,8 +2843,8 @@ ROM_END
 
 ROM_START( fireshrkdh )
 	ROM_REGION( 0x080000, "maincpu", 0 )    /* Main 68K code */
-	ROM_LOAD16_BYTE( "o17_09dyh.8j",0x000000, 0x10000, CRC(7b4c14dd) SHA1(d40dcf223f16c0f507aeb282d1524dbf1349c536) )
-	ROM_LOAD16_BYTE( "o17_10dyh.8l",0x000001, 0x10000, CRC(a3f159f9) SHA1(afc9630ca38da730f7cf4954d1333954e8d75787) )
+	ROM_LOAD16_BYTE( "o17_09dyh.8j",0x000000, 0x10000, CRC(7b4c14dd) SHA1(d40dcf223f16c0f507aeb282d1524dbf1349c536) ) /* Identical halves */
+	ROM_LOAD16_BYTE( "o17_10dyh.8l",0x000001, 0x10000, CRC(a3f159f9) SHA1(afc9630ca38da730f7cf4954d1333954e8d75787) ) /* Identical halves */
 	ROM_LOAD16_BYTE( "o17_11ii.7j", 0x040000, 0x20000, CRC(6beac378) SHA1(041ba98a89a4bac32575858db8a061bdf7804594) )
 	ROM_LOAD16_BYTE( "o17_12ii.7l", 0x040001, 0x20000, CRC(6adb6eb5) SHA1(9b6e63aa50d271c2bb0b4cf822fc6f3684f10230) )
 
@@ -3126,7 +3150,7 @@ GAME( 1990, fireshrkd,  fireshrk, samesame, samesame2, toaplan1_samesame_state, 
 GAME( 1990, fireshrkdh, fireshrk, samesame, samesame2, toaplan1_samesame_state, empty_init, ROT270, "Toaplan (Dooyong license)",   "Fire Shark (Korea, set 2, harder)",         0 )
 GAME( 1989, samesame,   fireshrk, samesame, samesame,  toaplan1_samesame_state, empty_init, ROT270, "Toaplan",                     "Same! Same! Same! (1P set)",                0 )
 GAME( 1989, samesame2,  fireshrk, samesame, samesame2, toaplan1_samesame_state, empty_init, ROT270, "Toaplan",                     "Same! Same! Same! (2P set)",                0 )
-GAME( 1990, samesamecn, fireshrk, samesame, samesame2, toaplan1_samesame_state, empty_init, ROT270, "Toaplan (Hong Kong Honest Trading license)",   "Jiao! Jiao! Jiao! (China, 2P set)", 0 )
+GAME( 1990, samesamecn, fireshrk, samesame, jiaojiao,  toaplan1_samesame_state, empty_init, ROT270, "Toaplan (Hong Kong Honest Trading license)",   "Jiao! Jiao! Jiao! (China, 2P set)", 0 )
 GAME( 2015, samesamenh, fireshrk, samesame, samesame,  toaplan1_samesame_state, empty_init, ROT270, "hack (trap15)",               "Same! Same! Same! (1P set, NEW VER! hack)", 0 )
 
 GAME( 1990, outzone,    0,        outzone,  outzone,   toaplan1_state,          empty_init, ROT270, "Toaplan",                     "Out Zone",                                   0 )

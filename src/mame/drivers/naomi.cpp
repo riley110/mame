@@ -569,8 +569,9 @@ Shootout Pool                                           840-0098C    23844    4 
 \Shootout Pool The Medal (Japan) Version B              840-0136C    24148    4 (64Mb)   present  317-0367-COM  requires Naomi-based or 837-14438 hopper controller (selected by P1 BUTTON1 bit)
 SWP Hopper Board                                        840-0130C    24083   20 (64Mb)   present  317-0339-COM  reused VF4 Evo ROM board with all maskROMs still in place; there is an additional 837-14381 IO board
 Touch de Uno! 2                                         840-0022C    23071    6 (64Mb)   present  317-0276-JPN  requires 837-13844 JVS IO with DIPSW 5 On, ELO AccuTouch-compatible touch screen controller and special printer.
-Virtua Fighter 4 Evolution (World)                      840-0106B    23934   20 (64Mb)   present  317-0339-COM
+Virtua Fighter 4 Evolution (World)                      840-0106C    23934   20 (64Mb)   present  317-0339-COM
 Virtua Tennis 2 / Power Smash 2 (Rev A)                 840-0084C    22327A  18 (64Mb)   present  317-0320-COM
+Star Horse 2002 (Sound, Export/Taiwan)                  840-0112B*   23964    6 (64Mb)   present  317-0347-COM  *no case
 
 
 PFSB 128M Mask ROM board
@@ -1728,7 +1729,7 @@ void naomi_state::naomi_map(address_map &map)
 	map(0x00600000, 0x006007ff).mirror(0x02000000).rw(FUNC(naomi_state::dc_modem_r), FUNC(naomi_state::dc_modem_w));
 	map(0x00700000, 0x00707fff).mirror(0x02000000).rw(FUNC(naomi_state::dc_aica_reg_r), FUNC(naomi_state::dc_aica_reg_w));
 	map(0x00710000, 0x0071000f).mirror(0x02000000).rw("aicartc", FUNC(aicartc_device::read), FUNC(aicartc_device::write)).umask64(0x0000ffff0000ffff);
-	map(0x00800000, 0x00ffffff).mirror(0x02000000).rw(FUNC(naomi_state::sh4_soundram_r), FUNC(naomi_state::sh4_soundram_w));           // sound RAM (8 MB)
+	map(0x00800000, 0x00ffffff).mirror(0x02000000).rw(FUNC(naomi_state::soundram_r), FUNC(naomi_state::soundram_w));           // sound RAM (8 MB)
 
 	/* External Device */
 	map(0x01000000, 0x01ffffff).mirror(0x02000000).r(FUNC(naomi_state::naomi_g2bus_r));
@@ -1787,7 +1788,7 @@ void naomi2_state::naomi2_map(address_map &map)
 	map(0x00600000, 0x006007ff).mirror(0x02000000).rw(FUNC(naomi2_state::dc_modem_r), FUNC(naomi2_state::dc_modem_w));
 	map(0x00700000, 0x00707fff).mirror(0x02000000).rw(FUNC(naomi2_state::dc_aica_reg_r), FUNC(naomi2_state::dc_aica_reg_w));
 	map(0x00710000, 0x0071000f).mirror(0x02000000).rw("aicartc", FUNC(aicartc_device::read), FUNC(aicartc_device::write)).umask64(0x0000ffff0000ffff);
-	map(0x00800000, 0x00ffffff).mirror(0x02000000).rw(FUNC(naomi2_state::sh4_soundram_r), FUNC(naomi2_state::sh4_soundram_w));           // sound RAM (8 MB)
+	map(0x00800000, 0x00ffffff).mirror(0x02000000).rw(FUNC(naomi2_state::soundram_r), FUNC(naomi2_state::soundram_w));           // sound RAM (8 MB)
 
 	/* External Device */
 	map(0x01000000, 0x01ffffff).mirror(0x02000000).r(FUNC(naomi2_state::naomi_g2bus_r));
@@ -1964,7 +1965,7 @@ void atomiswave_state::aw_map(address_map &map)
 	map(0x00600000, 0x006007ff).rw(FUNC(atomiswave_state::aw_modem_r), FUNC(atomiswave_state::aw_modem_w));
 	map(0x00700000, 0x00707fff).rw(FUNC(atomiswave_state::dc_aica_reg_r), FUNC(atomiswave_state::dc_aica_reg_w));
 	map(0x00710000, 0x0071000f).mirror(0x02000000).rw("aicartc", FUNC(aicartc_device::read), FUNC(aicartc_device::write)).umask64(0x0000ffff0000ffff);
-	map(0x00800000, 0x00ffffff).rw(FUNC(atomiswave_state::sh4_soundram_r), FUNC(atomiswave_state::sh4_soundram_w));           // sound RAM (8 MB)
+	map(0x00800000, 0x00ffffff).rw(FUNC(atomiswave_state::soundram_r), FUNC(atomiswave_state::soundram_w));           // sound RAM (8 MB)
 
 	/* Area 1 - half the texture memory, like dreamcast, not naomi */
 	map(0x04000000, 0x047fffff).ram().mirror(0x00800000).share("dc_texture_ram");      // texture memory 64 bit access
@@ -2008,8 +2009,14 @@ void atomiswave_state::aw_port(address_map &map)
 void dc_state::dc_audio_map(address_map &map)
 {
 	map.unmap_value_high();
-	map(0x00000000, 0x007fffff).ram().share("dc_sound_ram");                /* shared with SH-4 */
+	map(0x00000000, 0x007fffff).rw(FUNC(naomi_state::soundram_r), FUNC(naomi_state::soundram_w));                /* shared with SH-4 */
 	map(0x00800000, 0x00807fff).rw(FUNC(dc_state::dc_arm_aica_r), FUNC(dc_state::dc_arm_aica_w));
+}
+
+void dc_state::aica_map(address_map &map)
+{
+	map.unmap_value_high();
+	map(0x000000, 0x7fffff).ram().share("dc_sound_ram");
 }
 
 /*
@@ -2908,7 +2915,6 @@ INPUT_PORTS_END
 MACHINE_RESET_MEMBER(naomi_state,naomi)
 {
 	naomi_state::machine_reset();
-	m_aica->set_ram_base(dc_sound_ram, 8*1024*1024);
 }
 
 /*
@@ -2951,11 +2957,11 @@ void dc_state::naomi_aw_base(machine_config &config)
 	SPEAKER(config, "rspeaker").front_right();
 
 	AICA(config, m_aica, (XTAL(33'868'800)*2)/3); // 67.7376MHz(2*33.8688MHz), div 3 for audio block
-	m_aica->set_master(true);
 	m_aica->irq().set(FUNC(dc_state::aica_irq));
 	m_aica->main_irq().set(FUNC(dc_state::sh4_aica_irq));
-	m_aica->add_route(0, "lspeaker", 2.0);
-	m_aica->add_route(1, "rspeaker", 2.0);
+	m_aica->set_addrmap(0, &dc_state::aica_map);
+	m_aica->add_route(0, "lspeaker", 1.0);
+	m_aica->add_route(1, "rspeaker", 1.0);
 
 	AICARTC(config, "aicartc", XTAL(32'768));
 }
@@ -7928,7 +7934,27 @@ ROM_END
 
 
 /***** Star Horse 2002 *****/
-// nothing dumped
+// currently we have only Sound unit ROM board dumped, the rest is missing.
+// ID# 837-14351
+// ROM board ID# 840-0112B
+ROM_START( shors2k2 )
+	NAOMI_BIOS
+	NAOMI_DEFAULT_EEPROM
+
+	ROM_REGION( 0x4000000, "rom_board", ROMREGION_ERASEFF)
+	ROM_LOAD( "epr-23964.ic11",         0x0000000, 0x0400000, CRC(26c53dac) SHA1(75225ebda115338f903b1ddba3ca3c62b5c9611d) )
+	ROM_LOAD32_WORD( "opr-23965.ic17s", 0x1000000, 0x0800000, CRC(28fceb93) SHA1(b733ffddd1a59275ead8f4b95c9d6a1a7845c370) )
+	ROM_LOAD32_WORD( "opr-23966.ic18",  0x1000002, 0x0800000, CRC(d3bb88b4) SHA1(ecbd2f2c0cd446f1b6cf2755aaa97dfcae15e10e) )
+	ROM_LOAD32_WORD( "opr-23967.ic19s", 0x2000000, 0x0800000, CRC(7dae177e) SHA1(0f6b3bf8c28f0b45f523f1d38b4c1a18e3fe6a5b) )
+	ROM_LOAD32_WORD( "opr-23968.ic20",  0x2000002, 0x0800000, CRC(20b3b237) SHA1(43c772b27927db1980ba5c916d1b5ec965a3fbfb) )
+	ROM_LOAD32_WORD( "opr-23969.ic21s", 0x3000000, 0x0800000, CRC(1d8644b6) SHA1(2703ab9b7b02a2f1803562f49a05712dc4b513a2) )
+	ROM_LOAD32_WORD( "opr-23970.ic22",  0x3000002, 0x0800000, CRC(dd0201a8) SHA1(4f9deeffeaf91c108b772ce557ae9a1b9ad08692) )
+
+	ROM_COPY( "rom_board", 0x1000000, 0x400000, 0xc00000 )
+
+	// 840-0112    2002     317-0347-COM   Naomi
+	ROM_PARAMETER( ":rom_board:key", "403431d2" )
+ROM_END
 
 
 /***** Star Horse Progress *****/
@@ -10301,6 +10327,20 @@ ROM_START( wccf116 )
 	ROM_LOAD("317-0329-jpn.pic", 0x00, 0x4000, CRC(097f5f92) SHA1(ffe7df06007bd99908db15c300dd53bbd321bdb8) )
 ROM_END
 
+// Sega Yonin Uchi Mahjong MJ (セガ四人打ち麻雀MJ), "Sega The 4Players Mah-Jong"
+// uses CRP-1231 card RW connected via 838-13661 RS422/RS232C converter BD, and 2x JVS I/O boards (or one special I/O ?).
+ROM_START( mj1 )
+	NAOMIGD_BIOS
+	NAOMI_DEFAULT_EEPROM
+
+	DISK_REGION( "gdrom" )
+	DISK_IMAGE_READONLY( "cdp-10002b", 0, SHA1(bbbaf84c55a39c1ad4b82e01be731f65e07e7d18) ) // CD-R
+
+	ROM_REGION( 0x4000, "pic", ROMREGION_ERASEFF)
+	// chip label is a guess, probably incorrect
+	ROM_LOAD("317-0352-jpn.pic", 0x00, 0x4000, CRC(c2c45f9c) SHA1(d1ff2099db3d918846bb096d335cd7ef05df3901) )
+ROM_END
+
 ROM_START( wccf1dup )
 	NAOMIGD_BIOS
 	NAOMI_DEFAULT_EEPROM
@@ -11161,6 +11201,7 @@ ROM_END
 /* 0088    */ GAME( 2001, drbyocwc,  derbyocw, naomim2, naomi,   naomi_state, init_naomi,   ROT0, "Sega", "Derby Owners Club World Edition (Rev C)", GAME_FLAGS )
 /* 0088    */ GAME( 2005, derbyocw,  naomi,    naomim2, naomi,   naomi_state, init_naomi,   ROT0, "Sega", "Derby Owners Club World Edition EX (Rev D)", GAME_FLAGS )
 /* 0098    */ GAME( 2002, shootopl,  naomi,    naomim1, naomi,   naomi_state, init_naomi,   ROT0, "Sega", "Shootout Pool", GAME_FLAGS )
+/* 0112    */ GAME( 2002, shors2k2,  naomi,    naomim1, naomi,   naomi_state, init_naomi,   ROT0, "Sega", "Star Horse 2002 (sound, Export/Taiwan)", GAME_FLAGS )
 /* 0120    */ GAME( 2003, shorsepm,  shorsep,  naomim2, naomi,   naomi_state, init_naomi,   ROT0, "Sega", "Star Horse Progress (main screens, Rev B)", GAME_FLAGS )
 /* 0121    */ GAME( 2003, shorseps,  shorsep,  naomim2, naomi,   naomi_state, init_naomi,   ROT0, "Sega", "Star Horse Progress (sound & backup, Rev A)", GAME_FLAGS )
 /* 0122    */ GAME( 2003, shorsepl,  shorsep,  naomim2, naomi,   naomi_state, init_naomi,   ROT0, "Sega", "Star Horse Progress (live, Rev A)", GAME_FLAGS )
@@ -11355,7 +11396,6 @@ ROM_END
 // 0042  NAOMI DIMM Firm Update for CF-BOX (GDS-0042)
 /* 0042A */ GAME( 2009, ndcfboxa, naomigd, naomigd,  naomi,   naomi_state, init_naomigd, ROT0, "Sega", "Naomi DIMM Firmware Update for CF-BOX (4.01) (GDS-0042A)", GAME_FLAGS )
 // 00??  Get Bass 2 (GDS-00xx)
-// 00??  Yonin Uchi Mahjong MJ, not sure it was released on GD-ROM, might be satellite CD/DVD, or even not for NAOMI but other hardware.
 
 /* GDL-xxxx ("licensed by Sega" GD-ROM games) */
 /* 0001  */ GAME( 2001, gundmgd,   naomigd, naomigd, naomi, naomi_state,  init_naomigd,  ROT0,"Capcom / Banpresto","Mobile Suit Gundam: Federation Vs. Zeon (GDL-0001)", GAME_FLAGS )
@@ -11418,6 +11458,7 @@ ROM_END
 // CDP-10001?- World Club Champion Football Serie A 2001-2002 (Sega, 2002)
 // CDP-10001?- World Club Champion Football Serie A 2001-2002 Ver.1.2 (Sega, 2002)
 /* CDP-10001C*/ GAME( 2003, wccf116,  naomigd, naomigd, naomi, naomi_state, init_naomigd, ROT0, "Hitmaker / Sega", "World Club Champion Football Serie A 2001-2002 Ver.2 (Japan) (CDP-10001C)", GAME_FLAGS )
+/* CDP-10002B*/ GAME( 2002, mj1,      naomigd, naomigd, naomi, naomi_state, init_naomigd, ROT0, "Sega",            "Sega Yonin Uchi Mahjong MJ (Update Disc Ver.1.008, Japan) (CDP-10002B)", GAME_FLAGS )
 /* CDP-10003 */ GAME( 2002, wccf1dup, naomigd, naomigd, naomi, naomi_state, init_naomigd, ROT0, "Hitmaker / Sega", "World Club Champion Football Serie A 2001-2002 DIMM FIRM Ver.3.03 (CDP-10003)", GAME_FLAGS )
 // CDV-10001 - World Club Champion Football Serie A 2001-2002 Ver.2.11 (Japan) (Sega, 2002)
 /* CDV-10002 */ GAME( 2004, wccf212e, naomigd, naomigd, naomi, naomi_state, init_naomigd, ROT0, "Hitmaker / Sega", "World Club Champion Football Serie A 2002-2003 Ver.2.12 (Italy) (CDV-10002)", GAME_FLAGS )

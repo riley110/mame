@@ -63,6 +63,7 @@
 #include "bus/a2bus/a2cffa.h"
 #include "bus/a2bus/a2memexp.h"
 #include "bus/a2bus/a2scsi.h"
+#include "bus/a2bus/a2hsscsi.h"
 #include "bus/a2bus/a2thunderclock.h"
 #include "bus/a2bus/a2softcard.h"
 #include "bus/a2bus/a2videoterm.h"
@@ -2262,7 +2263,7 @@ READ8_MEMBER(apple2gs_state::c000_r)
 			}
 			else
 			{
-				m_sndglu_dummy_read = m_doc->read(space, m_sndglu_addr);
+				m_sndglu_dummy_read = m_doc->read(m_sndglu_addr);
 			}
 
 			if (m_sndglu_ctrl & 0x20)    // auto-increment
@@ -2591,7 +2592,7 @@ WRITE8_MEMBER(apple2gs_state::c000_w)
 			}
 			else
 			{
-				m_doc->write(space, m_sndglu_addr, data);
+				m_doc->write(m_sndglu_addr, data);
 			}
 
 			if (m_sndglu_ctrl & 0x20)    // auto-increment
@@ -4042,7 +4043,7 @@ READ8_MEMBER(apple2gs_state::doc_adc_read)
 
 int apple2gs_state::apple2_fdc_has_35()
 {
-	return (floppy_get_count(machine())); // - apple525_get_count(machine)) > 0;
+	return device_type_iterator<sonydriv_floppy_image_device>(*this).count(); // - apple525_get_count(machine)) > 0;
 }
 
 int apple2gs_state::apple2_fdc_has_525()
@@ -4526,6 +4527,7 @@ static void apple2_cards(device_slot_interface &device)
 	device.option_add("focusdrive", A2BUS_FOCUSDRIVE);  /* Focus Drive IDE card */
 	device.option_add("echoiiplus", A2BUS_ECHOPLUS);    /* Street Electronics Echo Plus (Echo II + Mockingboard clone) */
 	device.option_add("scsi", A2BUS_SCSI);  /* Apple II SCSI Card */
+	device.option_add("hsscsi", A2BUS_HSSCSI);  /* Apple II High-Speed SCSI Card */
 	device.option_add("applicard", A2BUS_APPLICARD);    /* PCPI Applicard */
 	device.option_add("aesms", A2BUS_AESMS);    /* Applied Engineering Super Music Synthesizer */
 	device.option_add("ultraterm", A2BUS_ULTRATERM);    /* Videx UltraTerm (original) */

@@ -1,5 +1,6 @@
 // license:BSD-3-Clause
-// copyright-holders:hap, Sean Riddle, Kevin Horton
+// copyright-holders:hap
+// thanks-to:Sean Riddle, Kevin Horton
 /***************************************************************************
 
   GI PIC 16xx-driven dedicated handhelds or other simple devices.
@@ -41,8 +42,9 @@
   - some of the games rely on the fact that faster/longer strobed leds appear brighter,
     eg. hccbaskb(player led), ..
   - ttfball: discrete sound part, for volume gating?
-  - what's the relation between hccbaskb and tbaskb? Is one the bootleg
-    of the other? Or are they both made by the same subcontractor?
+  - what's the relation between hccbaskb and tbaskb? Is one the bootleg of the
+    other? Or are they both made by the same subcontractor? I presume Toytronic.
+  - uspbball and pabball internal artwork
 
 ***************************************************************************/
 
@@ -760,6 +762,9 @@ ROM_END
   Known releases:
   - USA(1): Match Me/Mini Match Me(latter is the handheld version, same game)
   - USA(2): Me Too, published by Talbot
+  - Hong Kong: Gotcha!/Encore/Follow Me, published by Toytronic
+
+  The original is probably by Toytronic, Kingsford's version being licensed from them.
 
   Known revisions:
   - PIC 1655A-049 (this one, dumped from a Mini Match Me)
@@ -858,7 +863,7 @@ static INPUT_PORTS_START( matchme )
 	PORT_CONFSETTING(    0x02^0x07, "3" )
 	PORT_CONFSETTING(    0x04^0x07, "4" )
 	PORT_CONFNAME( 0x08, 0x08, DEF_STR( Difficulty ) )
-	PORT_CONFSETTING(    0x08, "Amateur" ) // AMR
+	PORT_CONFSETTING(    0x08, "Amateur" ) // AM
 	PORT_CONFSETTING(    0x00, "Professional" ) // PRO
 
 	PORT_START("IN.4") // another fake
@@ -1186,7 +1191,8 @@ ROM_END
   * 3 7seg LEDs + 44 other LEDs, 1-bit sound
 
   known releases:
-  - Hong Kong: Rocket Pinball
+  - Hong Kong(1): Rocket Pinball
+  - Hong Kong(2): Spaceship Pinball, published by Toytronic
   - USA(1): Rocket Pinball (model 60-2140), published by Tandy
   - USA(2): Cosmic Pinball (model 49-65456), published by Sears
 
@@ -1667,7 +1673,7 @@ INPUT_PORTS_END
 void uspbball_state::uspbball(machine_config &config)
 {
 	/* basic machine hardware */
-	PIC1650(config, m_maincpu, 1000000); // approximation - RC osc. R=22K, C=47pF
+	PIC1650(config, m_maincpu, 900000); // approximation - RC osc. R=22K, C=47pF
 	m_maincpu->read_a().set_ioport("IN.0");
 	m_maincpu->write_a().set(FUNC(uspbball_state::write_a));
 	m_maincpu->read_b().set_constant(0xff);
@@ -1678,7 +1684,7 @@ void uspbball_state::uspbball(machine_config &config)
 	m_maincpu->write_d().set(FUNC(uspbball_state::write_d));
 
 	// PIC CLKOUT, tied to RTCC
-	CLOCK(config, "clock", 1000000/4).signal_handler().set_inputline("maincpu", PIC16C5x_RTCC);
+	CLOCK(config, "clock", 900000/4).signal_handler().set_inputline("maincpu", PIC16C5x_RTCC);
 
 	TIMER(config, "display_decay").configure_periodic(FUNC(hh_pic16_state::display_decay_tick), attotime::from_msec(1));
 	config.set_default_layout(layout_hh_pic16_test);

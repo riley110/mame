@@ -9,6 +9,7 @@ driver by Jarek Burczynski
 Todo:
  - analog sound
  - colors
+ - horizontal sprite positioning when screen is flipped
 
 ***********************************************************
 
@@ -110,8 +111,8 @@ static void plot_pixel_sbw(bitmap_ind16 *tmpbitmap, int x, int y, int col, int f
 {
 	if (flip)
 	{
-		y = 255-y;
-		x = 247-x;
+		y = 255 - y;
+		x = 255 - x;
 	}
 
 	tmpbitmap->pix16(y, x) = col;
@@ -198,10 +199,10 @@ TIMER_DEVICE_CALLBACK_MEMBER(sbowling_state::interrupt)
 	int scanline = param;
 
 	if(scanline == 256)
-		m_maincpu->set_input_line_and_vector(0, HOLD_LINE, 0xcf); /* RST 08h */
+		m_maincpu->set_input_line_and_vector(0, HOLD_LINE, 0xcf); /* Z80 - RST 08h */
 
 	if(scanline == 128)
-		m_maincpu->set_input_line_and_vector(0, HOLD_LINE, 0xd7); /* RST 10h */
+		m_maincpu->set_input_line_and_vector(0, HOLD_LINE, 0xd7); /* Z80 - RST 10h */
 
 }
 
@@ -216,14 +217,11 @@ WRITE8_MEMBER(sbowling_state::system_w)
 	*/
 
 
-	flip_screen_set(data&1);
+	flip_screen_set(BIT(data, 3));
 
-	if ((m_system^data)&1)
-	{
-		int offs;
-		for (offs = 0;offs < 0x4000; offs++)
+	for (int offs = 0; offs < 0x4000; offs++)
 			videoram_w(space, offs, m_videoram[offs]);
-	}
+
 	m_system = data;
 }
 
@@ -292,7 +290,7 @@ static INPUT_PORTS_START( sbowling )
 	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN )
 	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_UNKNOWN )
 	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_BUTTON1 )
-	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_UNKNOWN )
+	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_BUTTON1 ) PORT_COCKTAIL
 	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_START1 )
 	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_START2 )
 

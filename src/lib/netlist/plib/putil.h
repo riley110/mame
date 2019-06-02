@@ -8,10 +8,11 @@
 #ifndef PUTIL_H_
 #define PUTIL_H_
 
+#include "pexception.h"
 #include "pstring.h"
-
 #include <algorithm>
 #include <initializer_list>
+#include <sstream>
 #include <vector>
 
 #define PSTRINGIFY_HELP(y) # y
@@ -62,9 +63,40 @@ namespace plib
 	template <typename T>
 	struct constants
 	{
-		static constexpr T zero() noexcept { return static_cast<T>(0); }
-		static constexpr T one()  noexcept { return static_cast<T>(1); }
-		static constexpr T two()  noexcept { return static_cast<T>(2); }
+		static constexpr T zero()   noexcept { return static_cast<T>(0); }
+		static constexpr T one()    noexcept { return static_cast<T>(1); }
+		static constexpr T two()    noexcept { return static_cast<T>(2); }
+		static constexpr T sqrt2()  noexcept { return static_cast<T>(1.414213562373095048801688724209); }
+		static constexpr T pi()     noexcept { return static_cast<T>(3.14159265358979323846264338327950); }
+
+		/*!
+		 * \brief Electric constant of vacuum
+		 */
+		static constexpr T eps_0() noexcept { return static_cast<T>(8.854187817e-12); }
+		/*!
+		 * \brief Relative permittivity of Silicon dioxide
+		 */
+		static constexpr T eps_SiO2() noexcept { return static_cast<T>(3.9); }
+		/*!
+		 * \brief Relative permittivity of Silicon
+		 */
+		static constexpr T eps_Si() noexcept { return static_cast<T>(11.7); }
+		/*!
+		 * \brief Boltzmann constant
+		 */
+		static constexpr T k_b() noexcept { return static_cast<T>(1.38064852e-23); }
+		/*!
+		 * \brief room temperature (gives VT = 0.02585 at T=300)
+		 */
+		static constexpr T T0() noexcept { return static_cast<T>(300); }
+		/*!
+		 * \brief Elementary charge
+		 */
+		static constexpr T Q_e() noexcept { return static_cast<T>(1.6021765314e-19); }
+		/*!
+		 * \brief Intrinsic carrier concentration in 1/m^3 of Silicon
+		 */
+		static constexpr T NiSi() noexcept { return static_cast<T>(1.45e16); }
 
 		template <typename V>
 		static constexpr const T cast(V &&v) noexcept { return static_cast<T>(v); }
@@ -93,6 +125,99 @@ namespace plib
 			const std::string &token,
 			const std::size_t maxsplit);
 
+	// ----------------------------------------------------------------------------------------
+	// number conversions
+	// ----------------------------------------------------------------------------------------
+
+	template <typename T, bool CLOCALE, typename E = void>
+	struct pstonum_helper;
+
+	template<typename T, bool CLOCALE>
+	struct pstonum_helper<T, CLOCALE, typename std::enable_if<std::is_integral<T>::value
+		&& std::is_signed<T>::value>::type>
+	{
+		template <typename S>
+		long long operator()(const S &arg, std::size_t *idx)
+		{
+			return std::stoll(arg, idx);
+		}
+	};
+
+	template<typename T, bool CLOCALE>
+	struct pstonum_helper<T, CLOCALE, typename std::enable_if<std::is_integral<T>::value
+		&& !std::is_signed<T>::value>::type>
+	{
+		template <typename S>
+		unsigned long long operator()(const S &arg, std::size_t *idx)
+		{
+			return std::stoull(arg, idx);
+		}
+	};
+
+	template<typename T, bool CLOCALE>
+	struct pstonum_helper<T, CLOCALE, typename std::enable_if<std::is_floating_point<T>::value>::type>
+	{
+		template <typename S>
+		long double operator()(const S &arg, std::size_t *idx)
+		{
+			if (CLOCALE)
+			{
+				std::stringstream  ss;
+				ss.imbue(std::locale::classic());
+				ss << arg;
+				long int len(ss.tellp());
+				auto x(constants<long double>::zero());
+				long int pos(0);
+				if (ss >> x)
+				{
+					pos = static_cast<long int>(ss.tellg());
+					if (pos == -1)
+						pos = len;
+				}
+				*idx = static_cast<std::size_t>(pos);
+				//printf("%s, %f, %lu %ld\n", arg, (double)x, *idx, (long int) ss.tellg());
+				return x;
+			}
+			else
+				return std::stold(arg, idx);
+		}
+	};
+
+	template<typename T, bool CLOCALE, typename S>
+	T pstonum(const S &arg)
+	{
+		decltype(arg.c_str()) cstr = arg.c_str();
+		std::size_t idx(0);
+		auto ret = pstonum_helper<T, CLOCALE>()(cstr, &idx);
+		using ret_type = decltype(ret);
+		if (ret >= static_cast<ret_type>(std::numeric_limits<T>::lowest())
+			&& ret <= static_cast<ret_type>(std::numeric_limits<T>::max()))
+			//&& (ret == T(0) || std::abs(ret) >= std::numeric_limits<T>::min() ))
+		{
+			if (cstr[idx] != 0)
+				throw pexception(pstring("Continuation after numeric value ends: ") + cstr);
+		}
+		else
+		{
+			throw pexception(pstring("Out of range: ") + cstr);
+		}
+		return static_cast<T>(ret);
+	}
+
+	template<typename R, bool CLOCALE, typename T>
+	R pstonum_ne(const T &str, bool &err) noexcept
+	{
+		try
+		{
+			err = false;
+			return pstonum<R, CLOCALE>(str);
+		}
+		catch (...)
+		{
+			err = true;
+			return R(0);
+		}
+	}
 
 	//============================================================
 	//  penum - strongly typed enumeration

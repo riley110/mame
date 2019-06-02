@@ -45,12 +45,14 @@ namespace devices
 		LIB_ENTRY(function)   // only for macro devices - NO FEEDBACK loops
 		LIB_ENTRY(QBJT_EB)
 		LIB_ENTRY(QBJT_switch)
+		LIB_ENTRY(MOSFET)
 		LIB_ENTRY(logic_input_ttl)
 		LIB_ENTRY(logic_input)
 		LIB_ENTRY(analog_input)
 		LIB_ENTRY(log)
 		LIB_ENTRY(logD)
 		LIB_ENTRY(clock)
+		LIB_ENTRY(varclock)
 		LIB_ENTRY(extclock)
 		LIB_ENTRY(mainclock)
 		LIB_ENTRY(gnd)
@@ -65,8 +67,10 @@ namespace devices
 		LIB_ENTRY(2102A_dip)
 		LIB_ENTRY(2716)
 		LIB_ENTRY(2716_dip)
+#if !(USE_TRUTHTABLE_7448)
 		LIB_ENTRY(7448)
 		LIB_ENTRY(7448_dip)
+#endif
 		LIB_ENTRY(7450)
 		LIB_ENTRY(7450_dip)
 		LIB_ENTRY(7473)
@@ -89,8 +93,10 @@ namespace devices
 		LIB_ENTRY(7493_dip)
 		LIB_ENTRY(7497)
 		LIB_ENTRY(7497_dip)
+#if (!USE_TRUTHTABLE_74107)
 		LIB_ENTRY(74107)
 		LIB_ENTRY(74107_dip)
+#endif
 		LIB_ENTRY(74107A)    // FIXME: implement missing DIP
 		LIB_ENTRY(74123)
 		LIB_ENTRY(74123_dip)

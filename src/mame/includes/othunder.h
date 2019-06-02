@@ -38,8 +38,7 @@ public:
 		m_2610_1r(*this, "2610.1r"),
 		m_2610_2l(*this, "2610.2l"),
 		m_2610_2r(*this, "2610.2r"),
-		m_gfxdecode(*this, "gfxdecode"),
-		m_palette(*this, "palette")
+		m_gfxdecode(*this, "gfxdecode")
 	{ }
 
 	void othunder(machine_config &config);
@@ -51,14 +50,12 @@ protected:
 private:
 	void draw_sprites(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect, const int *primasks, int y_offs);
 
-	DECLARE_WRITE16_MEMBER(irq_ack_w);
-	DECLARE_WRITE8_MEMBER(eeprom_w);
-	DECLARE_WRITE8_MEMBER(coins_w);
+	void irq_ack_w(offs_t offset, u16 data);
+	void eeprom_w(u8 data);
+	void coins_w(u8 data);
 	DECLARE_WRITE_LINE_MEMBER(adc_eoc_w);
-	DECLARE_WRITE8_MEMBER(sound_bankswitch_w);
-	DECLARE_WRITE16_MEMBER(sound_w);
-	DECLARE_READ16_MEMBER(sound_r);
-	DECLARE_WRITE8_MEMBER(tc0310fam_w);
+	void sound_bankswitch_w(u8 data);
+	void tc0310fam_w(offs_t offset, u8 data);
 	uint32_t screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 	DECLARE_WRITE_LINE_MEMBER(vblank_w);
 
@@ -99,7 +96,6 @@ private:
 	required_device<filter_volume_device> m_2610_2l;
 	required_device<filter_volume_device> m_2610_2r;
 	required_device<gfxdecode_device> m_gfxdecode;
-	required_device<palette_device> m_palette;
 };
 
 #endif // MAME_INCLUDES_OTHUNDER_H

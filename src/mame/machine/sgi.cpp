@@ -10,6 +10,7 @@
 
 #include "emu.h"
 #include "sgi.h"
+#include "ioc2.h"
 
 #define LOG_UNKNOWN     (1 << 0)
 #define LOG_READS       (1 << 1)
@@ -219,6 +220,7 @@ void sgi_mc_device::dma_tick()
 		if (m_dma_mode & (1 << 3))
 		{   // Fill mode
 			m_space->write_dword(addr, m_dma_gio64_addr);
+			m_dma_mem_addr += 4;
 			m_dma_count -= 4;
 		}
 		else
@@ -276,7 +278,8 @@ void sgi_mc_device::dma_tick()
 				m_dma_run &= ~(1 << 6);
 				if (BIT(m_dma_control, 4))
 				{
-					m_hpc3->raise_local_irq(3, 1 << 4);
+					m_dma_int_cause |= (1 << 3);
+					m_hpc3->raise_local_irq(0, ioc2_device::INT3_LOCAL0_MC_DMA);
 				}
 			}
 			else
@@ -369,10 +372,10 @@ READ32_MEMBER(sgi_mc_device::read)
 		LOGMASKED(LOG_READS, "%s: EISA Lock Read: %08x & %08x\n", machine().describe_context(), m_eisa_lock, mem_mask);
 		return m_eisa_lock;
 	case 0x0150/4:
-		LOGMASKED(LOG_READS, "%s: GIO64 Translation Address Mask Read: %08x & %08x\n", machine().describe_context(), m_gio64_translate_mask, mem_mask);
+		LOGMASKED(LOG_READS | LOG_DMA, "%s: GIO64 Translation Address Mask Read: %08x & %08x\n", machine().describe_context(), m_gio64_translate_mask, mem_mask);
 		return m_gio64_translate_mask;
 	case 0x0158/4:
-		LOGMASKED(LOG_READS, "%s: GIO64 Translation Address Substitution Bits Read: %08x & %08x\n", machine().describe_context(), m_gio64_substitute_bits, mem_mask);
+		LOGMASKED(LOG_READS | LOG_DMA, "%s: GIO64 Translation Address Substitution Bits Read: %08x & %08x\n", machine().describe_context(), m_gio64_substitute_bits, mem_mask);
 		return m_gio64_substitute_bits;
 	case 0x0160/4:
 		LOGMASKED(LOG_READS | LOG_DMA, "%s: DMA Interrupt Cause: %08x & %08x\n", machine().describe_context(), m_dma_int_cause, mem_mask);
@@ -567,24 +570,24 @@ WRITE32_MEMBER( sgi_mc_device::write )
 		m_eisa_lock = data;
 		break;
 	case 0x0150/4:
-		LOGMASKED(LOG_WRITES, "%s: GIO64 Translation Address Mask Write: %08x & %08x\n", machine().describe_context(), data, mem_mask);
+		LOGMASKED(LOG_WRITES | LOG_DMA, "%s: GIO64 Translation Address Mask Write: %08x & %08x\n", machine().describe_context(), data, mem_mask);
 		m_gio64_translate_mask = data;
 		break;
 	case 0x0158/4:
-		LOGMASKED(LOG_WRITES, "%s: GIO64 Translation Address Substitution Bits Write: %08x & %08x\n", machine().describe_context(), data, mem_mask);
+		LOGMASKED(LOG_WRITES | LOG_DMA, "%s: GIO64 Translation Address Substitution Bits Write: %08x & %08x\n", machine().describe_context(), data, mem_mask);
 		m_gio64_substitute_bits = data;
 		break;
 	case 0x0160/4:
 		LOGMASKED(LOG_WRITES | LOG_DMA, "%s: DMA Interrupt Cause Write: %08x & %08x\n", machine().describe_context(), data, mem_mask);
 		m_dma_int_cause = data;
+		if (m_dma_int_cause == 0 && m_hpc3)
+		{
+			m_hpc3->lower_local_irq(0, ioc2_device::INT3_LOCAL0_MC_DMA);
+		}
 		break;
 	case 0x0168/4:
 		LOGMASKED(LOG_WRITES | LOG_DMA, "%s: DMA Control Write: %08x & %08x\n", machine().describe_context(), data, mem_mask);
 		m_dma_control = data;
-		if (!BIT(m_dma_control, 4) && m_hpc3)
-		{
-			m_hpc3->lower_local_irq(3, 1 << 4);
-		}
 		break;
 	case 0x0180/4:
 		LOGMASKED(LOG_WRITES | LOG_DMA, "%s: DMA TLB Entry 0 High Write: %08x & %08x\n", machine().describe_context(), data, mem_mask);

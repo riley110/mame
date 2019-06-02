@@ -263,7 +263,7 @@ WRITE8_MEMBER(olibochu_state::sound_command_w)
 	for (c = 15; c >= 0; c--)
 		if (m_cmd & (1 << c)) break;
 
-	if (c >= 0) m_soundlatch->write(space, 0, 15 - c);
+	if (c >= 0) m_soundlatch->write(15 - c);
 }
 
 
@@ -282,9 +282,11 @@ void olibochu_state::olibochu_map(address_map &map)
 	map(0xa005, 0xa005).portr("DSW2");
 	map(0xa800, 0xa801).w(FUNC(olibochu_state::sound_command_w));
 	map(0xa802, 0xa802).w(FUNC(olibochu_state::olibochu_flipscreen_w));    /* bit 6 = enable sound? */
-	map(0xf000, 0xffff).ram();
+	map(0xf000, 0xf3ff).ram();
 	map(0xf400, 0xf41f).ram().share("spriteram");
+	map(0xf420, 0xf43f).ram();
 	map(0xf440, 0xf47f).ram().share("spriteram2");
+	map(0xf480, 0xffff).ram();
 }
 
 void olibochu_state::olibochu_sound_map(address_map &map)
@@ -453,10 +455,10 @@ TIMER_DEVICE_CALLBACK_MEMBER(olibochu_state::olibochu_scanline)
 	int scanline = param;
 
 	if(scanline == 248) // vblank-out irq
-		m_maincpu->set_input_line_and_vector(0, HOLD_LINE, 0xd7);   /* RST 10h - vblank */
+		m_maincpu->set_input_line_and_vector(0, HOLD_LINE, 0xd7);   /* Z80 - RST 10h - vblank */
 
 	if(scanline == 0) // sprite buffer irq
-		m_maincpu->set_input_line_and_vector(0, HOLD_LINE, 0xcf);   /* RST 08h */
+		m_maincpu->set_input_line_and_vector(0, HOLD_LINE, 0xcf);   /* Z80 - RST 08h */
 }
 
 void olibochu_state::olibochu(machine_config &config)

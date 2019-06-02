@@ -327,10 +327,10 @@ READ8_MEMBER(hvyunit_state::mermaid_p0_r)
 WRITE8_MEMBER(hvyunit_state::mermaid_p0_w)
 {
 	if (!BIT(m_mermaid_p[0], 1) && BIT(data, 1))
-		m_slavelatch->write(space, 0, m_mermaid_p[1]);
+		m_slavelatch->write(m_mermaid_p[1]);
 
 	if (BIT(data, 0) == 0)
-		m_mermaid_p[1] = m_mermaidlatch->read(space, 0);
+		m_mermaid_p[1] = m_mermaidlatch->read();
 
 	m_mermaid_p[0] = data;
 }
@@ -415,9 +415,10 @@ void hvyunit_state::slave_memory(address_map &map)
 	map(0x8000, 0xbfff).bankr("slave_bank");
 	map(0xc000, 0xc3ff).ram().w(FUNC(hvyunit_state::videoram_w)).share("videoram");
 	map(0xc400, 0xc7ff).ram().w(FUNC(hvyunit_state::colorram_w)).share("colorram");
-	map(0xd000, 0xdfff).ram();
 	map(0xd000, 0xd1ff).ram().w(m_palette, FUNC(palette_device::write8_ext)).share("palette_ext");
+	map(0xd200, 0xd7ff).ram();
 	map(0xd800, 0xd9ff).ram().w(m_palette, FUNC(palette_device::write8)).share("palette");
+	map(0xda00, 0xdfff).ram();
 	map(0xe000, 0xffff).ram().share("share1");
 }
 
@@ -605,11 +606,11 @@ TIMER_DEVICE_CALLBACK_MEMBER(hvyunit_state::scanline)
 	int scanline = param;
 
 	if(scanline == 240) // vblank-out irq
-		m_mastercpu->set_input_line_and_vector(0, HOLD_LINE, 0xfd);
+		m_mastercpu->set_input_line_and_vector(0, HOLD_LINE, 0xfd); // Z80
 
 	/* Pandora "sprite end dma" irq? TODO: timing is likely off */
 	if(scanline == 64)
-		m_mastercpu->set_input_line_and_vector(0, HOLD_LINE, 0xff);
+		m_mastercpu->set_input_line_and_vector(0, HOLD_LINE, 0xff); // Z80
 }
 
 /*************************************
