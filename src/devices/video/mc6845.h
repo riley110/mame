@@ -219,6 +219,7 @@ protected:
 	uint16_t  m_vsync_on_pos;
 	uint16_t  m_vsync_off_pos;
 	bool    m_has_valid_parameters;
+	bool    m_display_disabled_msg_shown;
 
 	uint16_t   m_current_disp_addr;   /* the display address currently drawn (used only in mc6845_update) */
 
@@ -235,6 +236,7 @@ protected:
 	void set_vsync(int state);
 	void set_cur(int state);
 	bool match_line();
+	virtual bool check_cursor_visible(uint16_t ra, uint16_t line_addr);
 	void handle_line_timer();
 	virtual void update_cursor_state();
 	virtual uint8_t draw_scanline(int y, bitmap_rgb32 &bitmap, const rectangle &cliprect);
@@ -330,6 +332,7 @@ public:
 protected:
 	virtual void device_start() override;
 	virtual void device_reset() override;
+	virtual bool check_cursor_visible(uint16_t ra, uint16_t line_addr) override;
 };
 
 class sy6545_1_device : public mc6845_device

@@ -31,6 +31,10 @@
     - Unlike the 65C816, the program bank register (known here as PG) is
       incremented when PC overflows from 0xFFFF, and may be incremented or
       decremented when the address for a relative branch is calculated.
+    - The external bus, if used, allows for 16-bit transfers, and can be
+      dynamically reduced to 8 bits by asserting the BYTE input. (The
+      65C816 has an 8-bit data bus.) Internal memory is also 16 bits wide,
+      but parallel port registers must be accessed as individual bytes.
 
     The various 7700 series models differ primarily by their on board
     peripherals.  The 7750 and later models do include some additional
@@ -418,7 +422,7 @@ void m37710_cpu_device::m37710_recalc_timer(int timer)
 			switch (m_timer_mode[timer] & 0x3)
 			{
 				case 0:         // timer mode
-					time = attotime::from_hz(unscaled_clock()) * tscales[m_timer_mode[timer]>>6];
+					time = clocks_to_attotime(tscales[m_timer_mode[timer]>>6]);
 					time *= (tval + 1);
 
 					LOGMASKED(LOG_TIMER, "Timer %d in timer mode, %f Hz\n", timer, 1.0 / time.as_double());
@@ -445,7 +449,7 @@ void m37710_cpu_device::m37710_recalc_timer(int timer)
 			switch (m_timer_mode[timer] & 0x3)
 			{
 				case 0:         // timer mode
-					time = attotime::from_hz(unscaled_clock()) * tscales[m_timer_mode[timer]>>6];
+					time = clocks_to_attotime(tscales[m_timer_mode[timer]>>6]);
 					time *= (tval + 1);
 
 					LOGMASKED(LOG_TIMER, "Timer %d in timer mode, %f Hz\n", timer, 1.0 / time.as_double());
@@ -535,7 +539,41 @@ void m37710_cpu_device::ad_control_w(uint8_t data)
 {
 	LOGMASKED(LOG_AD, "ad_control_w %x: A/D control reg = %x\n", data, m_ad_control);
 
+	if (BIT(data, 6) && !BIT(m_ad_control, 6))
+	{
+		// A-D conversion clock may be selected as f2/4 or f2/2
+		m_ad_timer->adjust(clocks_to_attotime(57 * 2 * (BIT(data, 7) ? 2 : 4)));
+		if (BIT(data, 4))
+			data &= 0xf8;
+	}
+	else if (!BIT(data, 6))
+		m_ad_timer->adjust(attotime::never);
+
 	m_ad_control = data;
+}
+
+TIMER_CALLBACK_MEMBER(m37710_cpu_device::ad_timer_cb)
+{
+	int line = m_ad_control & 0x07;
+
+	m_ad_result[line] = m_analog_cb[line]();
+
+	if (BIT(m_ad_control, 4))
+		m_ad_control = (m_ad_control & 0xf8) | ((line + 1) & 0x07);
+
+	// repeat or sweep conversion
+	if (BIT(m_ad_control, 3) || (BIT(m_ad_control, 4) && line != (m_ad_sweep & 0x03) * 2 + 1))
+	{
+		LOGMASKED(LOG_AD, "AN%d input converted = %x (repeat/sweep)\n", line, m_ad_result[line]);
+		m_ad_timer->adjust(clocks_to_attotime(57 * 2 * (BIT(m_ad_control, 7) ? 2 : 4)));
+	}
+	else
+	{
+		// interrupt occurs only when conversion stops
+		LOGMASKED(LOG_AD, "AN%d input converted = %x (finished)\n", line, m_ad_result[line]);
+		m37710_set_irq_line(M37710_LINE_ADC, ASSERT_LINE);
+		m_ad_control &= 0xbf;
+	}
 }
 
 uint8_t m37710_cpu_device::ad_sweep_r()
@@ -552,7 +590,7 @@ void m37710_cpu_device::ad_sweep_w(uint8_t data)
 
 uint16_t m37710_cpu_device::ad_result_r(offs_t offset)
 {
-	uint16_t result = m_analog_cb[offset]();
+	uint16_t result = m_ad_result[offset];
 
 	LOGMASKED(LOG_AD, "ad_result_r from %02x: A/D %d = %x (PC=%x)\n", (int)(offset * 2) + 0x20, offset, result, REG_PB<<16 | REG_PC);
 
@@ -847,10 +885,6 @@ uint8_t m37710_cpu_device::int_control_r(offs_t offset)
 
 	uint8_t result = m_int_control[level];
 
-	// A-D IRQ not properly hooked up yet
-	if (level == M37710_LINE_ADC)
-		result |= 8;
-
 	return result;
 }
 
@@ -1007,6 +1041,7 @@ void m37710_cpu_device::device_reset()
 	// A-D
 	m_ad_control &= 7;
 	m_ad_sweep = (m_ad_sweep & ~0xdc) | 3;
+	m_ad_timer->reset();
 
 	// UARTs
 	for (i = 0; i < 2; i++)
@@ -1208,6 +1243,7 @@ void m37710_cpu_device::device_start()
 	std::fill(std::begin(m_port_dir), std::end(m_port_dir), 0);
 	m_ad_control = 0;
 	m_ad_sweep = 0;
+	std::fill(std::begin(m_ad_result), std::end(m_ad_result), 0);
 	std::fill(std::begin(m_uart_mode), std::end(m_uart_mode), 0);
 	std::fill(std::begin(m_uart_baud), std::end(m_uart_baud), 0);
 	std::fill(std::begin(m_uart_ctrl_reg0), std::end(m_uart_ctrl_reg0), 0);
@@ -1242,6 +1278,8 @@ void m37710_cpu_device::device_start()
 		m_reload[i] = attotime::never;
 		m_timer_out[i] = 0;
 	}
+
+	m_ad_timer = machine().scheduler().timer_alloc(timer_expired_delegate(FUNC(m37710_cpu_device::ad_timer_cb), this));
 
 	save_item(NAME(m_a));
 	save_item(NAME(m_b));
@@ -1279,6 +1317,7 @@ void m37710_cpu_device::device_start()
 	save_item(NAME(m_port_dir));
 	save_item(NAME(m_ad_control));
 	save_item(NAME(m_ad_sweep));
+	save_item(NAME(m_ad_result));
 	save_item(NAME(m_uart_mode));
 	save_item(NAME(m_uart_baud));
 	save_item(NAME(m_uart_ctrl_reg0));

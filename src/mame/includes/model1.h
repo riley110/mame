@@ -159,7 +159,7 @@ private:
 	u32 m_copro_isqrt_base;
 	u32 m_copro_atan_base[4];
 	u32 m_copro_data_base;
-	u32 m_copro_ram_adr;
+	u32 m_copro_ram_adr[4];
 
 	uint16_t m_r360_state;
 	DECLARE_READ8_MEMBER(r360_r);
@@ -390,11 +390,11 @@ private:
 	};
 
 	std::unique_ptr<view_t> m_view;
-	point_t *m_pointdb;
+	std::unique_ptr<point_t[]> m_pointdb;
 	point_t *m_pointpt;
-	quad_t      *m_quaddb;
+	std::unique_ptr<quad_t[]> m_quaddb;
 	quad_t      *m_quadpt;
-	quad_t      **m_quadind;
+	std::unique_ptr<quad_t *[]> m_quadind;
 	offs_t      m_pushpc;
 	u32 m_copro_hle_active_list_pos, m_copro_hle_active_list_length;
 	typedef void (model1_state::*tgp_func)();

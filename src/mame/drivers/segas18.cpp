@@ -211,7 +211,7 @@ READ16_MEMBER( segas18_state::misc_io_r )
 		// I/O chip
 		case 0x0000/2:
 		case 0x1000/2:
-			return m_io->read(space, offset) | (open_bus_r(space) & 0xff00);
+			return m_io->read(space, offset) | (m_mapper->open_bus_r() & 0xff00);
 
 		// video control latch
 		case 0x2000/2:
@@ -224,7 +224,7 @@ READ16_MEMBER( segas18_state::misc_io_r )
 	if (!m_custom_io_r.isnull())
 		return m_custom_io_r(space, offset, mem_mask);
 	logerror("%06X:misc_io_r - unknown read access to address %04X\n", m_maincpu->pc(), offset * 2);
-	return open_bus_r(space);
+	return m_mapper->open_bus_r();
 }
 
 WRITE16_MEMBER( segas18_state::misc_io_w )
@@ -356,7 +356,7 @@ READ16_MEMBER( segas18_state::ddcrew_custom_io_r )
 		case 0x3024/2:
 			return ioport("EXSERVICE")->read();
 	}
-	return open_bus_r(space);
+	return m_mapper->open_bus_r();
 }
 
 
@@ -380,7 +380,7 @@ READ16_MEMBER( segas18_state::lghost_custom_io_r )
 			m_lghost_value <<= 1;
 			return result;
 	}
-	return open_bus_r(space);
+	return m_mapper->open_bus_r();
 }
 
 WRITE16_MEMBER( segas18_state::lghost_custom_io_w )
@@ -584,7 +584,7 @@ READ16_MEMBER( segas18_state::wwally_custom_io_r )
 	if (offset >= 0x3000/2 && offset < 0x3018/2)
 		return m_upd4701[(offset & 0x0018/2) >> 2]->read_xy(space, offset & 0x0006/2);
 
-	return open_bus_r(space);
+	return m_mapper->open_bus_r();
 }
 
 
@@ -1343,7 +1343,7 @@ void segas18_state::system18(machine_config &config)
 	m_vdp->lv4_irq().set(FUNC(segas18_state::vdp_lv4irqline_callback_s18));
 	m_vdp->set_alt_timing(1);
 	m_vdp->set_pal_write_base(0x1000);
-	m_vdp->set_palette(m_palette);
+	m_vdp->set_ext_palette(m_palette);
 	m_vdp->add_route(ALL_OUTPUTS, "mono", 0.0);
 
 	TIMER(config, "scantimer").configure_scanline("gen_vdp", FUNC(sega315_5313_device::megadriv_scanline_timer_callback_alt_timing), "screen", 0, 1);
@@ -2683,6 +2683,9 @@ ROM_END
     Moonwalker, Sega System 18
     CPU: FD1094 (317-0159)
     ROM Board: 171-5873B
+   Main board: 837-7530-02
+      Game BD: 833-7528-02 MOONWALKER
+    ROM Board: 834-7529-02
 */
 ROM_START( mwalk )
 	ROM_REGION( 0x80000, "maincpu", 0 ) // 68000 code - custom cpu 317-0159
@@ -2821,8 +2824,11 @@ ROM_END
 
 /**************************************************************************************************************************
     Moonwalker, Sega System 18
-    CPU: FD1094 (317-0157, version uses i8751(315-5437) known to be exist)
+    CPU: FD1094 (317-0157)
     ROM Board: 171-5873B
+   Main board: 837-7530
+      Game BD: 833-7528 MOONWALKER
+    ROM Board: 834-7529
 */
 ROM_START( mwalkj )
 	ROM_REGION( 0x80000, "maincpu", 0 ) // 68000 code - custom cpu 317-0157
@@ -2854,8 +2860,7 @@ ROM_START( mwalkj )
 	ROM_LOAD( "mpr-13249.b6", 0x180000, 0x40000, CRC(623edc5d) SHA1(c32d9f818d40f311877fbe6532d9e95b6045c3c4) )
 
 	ROM_REGION( 0x10000, "mcu", 0 ) // protection MCU
-	// not verified if mcu is the same as the other sets..
-	ROM_LOAD( "315-5437.ic4", 0x00000, 0x1000, BAD_DUMP CRC(4bf63bc1) SHA1(2766ab30b466b079febb30c488adad9ea56813f7) )
+	ROM_LOAD( "315-5437.ic4", 0x00000, 0x1000, CRC(4bf63bc1) SHA1(2766ab30b466b079febb30c488adad9ea56813f7) )
 ROM_END
 
 ROM_START( mwalkjd )
@@ -3267,8 +3272,8 @@ GAME( 1991, ddcrewj2d,  ddcrew,   system18,      ddcrew2p, segas18_state, init_d
 GAME( 1990, lghostd,    lghost,   lghost,        lghost,   segas18_state, init_lghost,       ROT0,   "bootleg",          "Laser Ghost (World) (bootleg of FD1094 317-0166 set)", 0 )
 GAME( 1990, lghostud,   lghost,   lghost,        lghost,   segas18_state, init_lghost,       ROT0,   "bootleg",          "Laser Ghost (US) (bootleg of FD1094 317-0165 set)", 0 )
 
-GAME( 1990, mwalkd,     mwalk,    system18_i8751,mwalk,    segas18_state, init_generic_5874, ROT0,   "bootleg",          "Michael Jackson's Moonwalker (World) (bootleg of FD1094/8751 317-0159)", 0 )
-GAME( 1990, mwalkud,    mwalk,    system18_i8751,mwalka,   segas18_state, init_generic_5874, ROT0,   "bootleg",          "Michael Jackson's Moonwalker (US) (bootleg of FD1094/8751 317-0158)", 0 )
+GAME( 1990, mwalkd,     mwalk,    system18_i8751,mwalk,    segas18_state, init_generic_5874, ROT0,   "bootleg",          "Michael Jackson's Moonwalker (World) (bootleg of FD1094/8751 317-0159 set)", 0 )
+GAME( 1990, mwalkud,    mwalk,    system18_i8751,mwalka,   segas18_state, init_generic_5874, ROT0,   "bootleg",          "Michael Jackson's Moonwalker (US) (bootleg of FD1094/8751 317-0158 set)", 0 )
 GAME( 1990, mwalkjd,    mwalk,    system18_i8751,mwalk,    segas18_state, init_generic_5874, ROT0,   "bootleg",          "Michael Jackson's Moonwalker (Japan) (bootleg of FD1094/8751 317-0157 set)", 0 )
 
 GAME( 1992, wwallyjd,   wwallyj,  wwally,        wwally,   segas18_state, init_wwally,       ROT0,   "bootleg",          "Wally wo Sagase! (rev B, Japan) (bootleg of FD1094 317-0197B set)", 0 )

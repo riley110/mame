@@ -15,7 +15,11 @@
 #include <SDL2/SDL_syswm.h>
 #endif
 #else
+#if defined(OSD_MAC)
+extern void *GetOSWindow(void *wincontroller);
+#else
 #include <SDL2/SDL_syswm.h>
+#endif
 #endif
 
 // MAMEOS headers
@@ -143,6 +147,17 @@ inline void winSetHwnd(::HWND _window)
 	pd.backBufferDS = NULL;
 	bgfx::setPlatformData(pd);
 }
+#elif defined(OSD_MAC)
+inline void macSetWindow(void *_window)
+{
+	bgfx::PlatformData pd;
+	pd.ndt          = NULL;
+	pd.nwh          = GetOSWindow(_window);
+	pd.context      = NULL;
+	pd.backBuffer   = NULL;
+	pd.backBufferDS = NULL;
+	bgfx::setPlatformData(pd);
+}
 #elif defined(OSD_SDL)
 static void* sdlNativeWindowHandle(SDL_Window* _window)
 {
@@ -240,6 +255,8 @@ int renderer_bgfx::create()
 #elif defined(OSD_UWP)
 
 		winrtSetWindow(AsInspectable(std::static_pointer_cast<uwp_window_info>(win)->platform_window()));
+#elif defined(OSD_MAC)
+		macSetWindow(std::static_pointer_cast<mac_window_info>(win)->platform_window());
 #else
 		sdlSetWindow(std::dynamic_pointer_cast<sdl_window_info>(win)->platform_window());
 #endif
@@ -261,6 +278,10 @@ int renderer_bgfx::create()
 		{
 			init.type = bgfx::RendererType::Direct3D11;
 		}
+		else if (backend == "dx12" || backend == "d3d12")
+		{
+			init.type = bgfx::RendererType::Direct3D12;
+		}
 		else if (backend == "gles")
 		{
 			init.type = bgfx::RendererType::OpenGLES;
@@ -268,6 +289,10 @@ int renderer_bgfx::create()
 		else if (backend == "glsl" || backend == "opengl")
 		{
 			init.type = bgfx::RendererType::OpenGL;
+		}
+		else if (backend == "vulkan")
+		{
+			init.type = bgfx::RendererType::Vulkan;
 		}
 		else if (backend == "metal")
 		{
@@ -296,6 +321,8 @@ int renderer_bgfx::create()
 		m_framebuffer = m_targets->create_backbuffer(std::static_pointer_cast<win_window_info>(win)->platform_window(), m_width[win->m_index], m_height[win->m_index]);
 #elif defined(OSD_UWP)
 		m_framebuffer = m_targets->create_backbuffer(AsInspectable(std::static_pointer_cast<uwp_window_info>(win)->platform_window()), m_width[win->m_index], m_height[win->m_index]);
+#elif defined(OSD_MAC)
+		m_framebuffer = m_targets->create_backbuffer(GetOSWindow(std::static_pointer_cast<mac_window_info>(win)->platform_window()), m_width[win->m_index], m_height[win->m_index]);
 #else
 		m_framebuffer = m_targets->create_backbuffer(sdlNativeWindowHandle(std::dynamic_pointer_cast<sdl_window_info>(win)->platform_window()), m_width[win->m_index], m_height[win->m_index]);
 #endif
@@ -422,7 +449,7 @@ int renderer_bgfx::xy_to_render_target(int x, int y, int *xt, int *yt)
 //  drawbgfx_window_draw
 //============================================================
 
-bgfx::VertexDecl ScreenVertex::ms_decl;
+bgfx::VertexLayout ScreenVertex::ms_decl;
 
 void renderer_bgfx::put_packed_quad(render_primitive *prim, uint32_t hash, ScreenVertex* vertices)
 {
@@ -438,6 +465,15 @@ void renderer_bgfx::put_packed_quad(render_primitive *prim, uint32_t hash, Scree
 	float y[4] = { prim->bounds.y0, prim->bounds.y0, prim->bounds.y1, prim->bounds.y1 };
 	float u[4] = { u0, u1, u0, u1 };
 	float v[4] = { v0, v0, v1, v1 };
+
+	if (bgfx::getRendererType() == bgfx::RendererType::Direct3D9)
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			u[i] += 0.5f / size;
+			v[i] += 0.5f / size;
+		}
+	}
 
 	if (PRIMFLAG_GET_TEXORIENT(prim->flags) & ORIENTATION_SWAP_XY)
 	{
@@ -806,8 +842,13 @@ int renderer_bgfx::draw(int update)
 	}
 
 	win->m_primlist->acquire_lock();
-	s_current_view += m_chains->handle_screen_chains(s_current_view, win->m_primlist->first(), *win.get());
+	uint32_t num_screens = m_chains->update_screen_textures(s_current_view, win->m_primlist->first(), *win.get());
 	win->m_primlist->release_lock();
+
+	if (num_screens)
+	{
+		s_current_view += m_chains->process_screen_chains(s_current_view, *win.get());
+	}
 
 	bool skip_frame = update_dimensions();
 	if (skip_frame)
@@ -949,6 +990,8 @@ bool renderer_bgfx::update_dimensions()
 			m_framebuffer = m_targets->create_backbuffer(std::static_pointer_cast<win_window_info>(win)->platform_window(), width, height);
 #elif defined(OSD_UWP)
 			m_framebuffer = m_targets->create_backbuffer(AsInspectable(std::static_pointer_cast<uwp_window_info>(win)->platform_window()), width, height);
+#elif defined(OSD_MAC)
+			m_framebuffer = m_targets->create_backbuffer(GetOSWindow(std::static_pointer_cast<mac_window_info>(win)->platform_window()), width, height);
 #else
 			m_framebuffer = m_targets->create_backbuffer(sdlNativeWindowHandle(std::dynamic_pointer_cast<sdl_window_info>(win)->platform_window()), width, height);
 #endif
@@ -1110,8 +1153,10 @@ void renderer_bgfx::process_atlas_packs(std::vector<std::vector<rectangle_packer
 				continue;
 			}
 			m_hash_to_entry[rect.hash()] = rect;
-			const bgfx::Memory* mem = bgfx_util::mame_texture_data_to_bgfx_texture_data(rect.format(), rect.width(), rect.height(), rect.rowpixels(), rect.palette(), rect.base());
-			bgfx::updateTexture2D(m_texture_cache->texture(), 0, 0, rect.x(), rect.y(), rect.width(), rect.height(), mem);
+			bgfx::TextureFormat::Enum dst_format = bgfx::TextureFormat::RGBA8;
+			uint16_t pitch = rect.width();
+			const bgfx::Memory* mem = bgfx_util::mame_texture_data_to_bgfx_texture_data(dst_format, rect.format(), rect.width(), rect.height(), rect.rowpixels(), rect.palette(), rect.base(), &pitch);
+			bgfx::updateTexture2D(m_texture_cache->texture(), 0, 0, rect.x(), rect.y(), rect.width(), rect.height(), mem, pitch);
 		}
 	}
 }
