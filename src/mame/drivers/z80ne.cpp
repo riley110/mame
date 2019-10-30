@@ -97,6 +97,7 @@
 #include "formats/dmk_dsk.h"
 #include "machine/ram.h"
 #include "softlist.h"
+#include "speaker.h"
 
 /* Layout */
 #include "z80ne.lh"
@@ -224,7 +225,7 @@ PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED )
 PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED )
 
 PORT_START("RST")           /* RESET key */
-PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_NAME("LX.384 Reset")  PORT_CODE(KEYCODE_F3) PORT_CHANGED_MEMBER(DEVICE_SELF, z80ne_state, z80ne_reset, nullptr)
+PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_NAME("LX.384 Reset")  PORT_CODE(KEYCODE_F3) PORT_CHANGED_MEMBER(DEVICE_SELF, z80ne_state, z80ne_reset, 0)
 
 /* Settings */
 PORT_START("LX.385")
@@ -245,7 +246,7 @@ PORT_INCLUDE( z80ne )
 
 /* LX.387 Keyboard BREAK key */
 PORT_START("LX387_BRK")
-PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_NAME("Break") PORT_CODE(KEYCODE_INSERT) PORT_CHAR(UCHAR_MAMEKEY(INSERT)) PORT_CHANGED_MEMBER(DEVICE_SELF, z80ne_state, z80ne_nmi, nullptr)
+PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_NAME("Break") PORT_CODE(KEYCODE_INSERT) PORT_CHAR(UCHAR_MAMEKEY(INSERT)) PORT_CHANGED_MEMBER(DEVICE_SELF, z80ne_state, z80ne_nmi, 0)
 
 /* LX.387 Keyboard (Encoded by KR2376) */
 
@@ -430,12 +431,16 @@ void z80ne_state::z80ne(machine_config &config)
 	m_uart_clock->signal_handler().set(FUNC(z80ne_state::lx385_uart_tx_clock_w));
 	m_uart_clock->signal_handler().append(m_uart, FUNC(ay31015_device::write_rcp));
 
+	SPEAKER(config, "mono").front_center();
+
 	CASSETTE(config, m_cassette1);
 	m_cassette1->set_default_state(CASSETTE_STOPPED | CASSETTE_MOTOR_ENABLED | CASSETTE_SPEAKER_ENABLED);
+	m_cassette1->add_route(ALL_OUTPUTS, "mono", 0.05);
 	m_cassette1->set_interface("z80ne_cass");
 
 	CASSETTE(config, m_cassette2);
 	m_cassette2->set_default_state(CASSETTE_STOPPED | CASSETTE_MOTOR_ENABLED | CASSETTE_SPEAKER_ENABLED);
+	m_cassette2->add_route(ALL_OUTPUTS, "mono", 0.05);
 	m_cassette2->set_interface("z80ne_cass");
 
 	config.set_default_layout(layout_z80ne);
@@ -507,12 +512,16 @@ void z80ne_state::z80netb(machine_config &config)
 	m_uart_clock->signal_handler().set(FUNC(z80ne_state::lx385_uart_tx_clock_w));
 	m_uart_clock->signal_handler().append(m_uart, FUNC(ay31015_device::write_rcp));
 
+	SPEAKER(config, "mono").front_center();
+
 	CASSETTE(config, m_cassette1);
 	m_cassette1->set_default_state(CASSETTE_STOPPED | CASSETTE_MOTOR_ENABLED | CASSETTE_SPEAKER_ENABLED);
+	m_cassette1->add_route(ALL_OUTPUTS, "mono", 0.05);
 	m_cassette1->set_interface("z80ne_cass");
 
 	CASSETTE(config, m_cassette2);
 	m_cassette2->set_default_state(CASSETTE_STOPPED | CASSETTE_MOTOR_ENABLED | CASSETTE_SPEAKER_ENABLED);
+	m_cassette2->add_route(ALL_OUTPUTS, "mono", 0.05);
 	m_cassette2->set_interface("z80ne_cass");
 
 	lx387(config);
@@ -550,12 +559,16 @@ void z80netf_state::z80netf(machine_config &config)
 	m_uart_clock->signal_handler().set(FUNC(z80netf_state::lx385_uart_tx_clock_w));
 	m_uart_clock->signal_handler().append(m_uart, FUNC(ay31015_device::write_rcp));
 
+	SPEAKER(config, "mono").front_center();
+
 	CASSETTE(config, m_cassette1);
 	m_cassette1->set_default_state(CASSETTE_STOPPED | CASSETTE_MOTOR_ENABLED | CASSETTE_SPEAKER_ENABLED);
+	m_cassette1->add_route(ALL_OUTPUTS, "mono", 0.05);
 	m_cassette1->set_interface("z80ne_cass");
 
 	CASSETTE(config, m_cassette2);
 	m_cassette2->set_default_state(CASSETTE_STOPPED | CASSETTE_MOTOR_ENABLED | CASSETTE_SPEAKER_ENABLED);
+	m_cassette2->add_route(ALL_OUTPUTS, "mono", 0.05);
 	m_cassette2->set_interface("z80ne_cass");
 
 	lx387(config);

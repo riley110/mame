@@ -136,6 +136,7 @@
 #include "emupal.h"
 #include "screen.h"
 #include "speaker.h"
+#include "tilemap.h"
 
 
 #define MASTER_CLOCK    XTAL(14'000'000)
@@ -1254,7 +1255,6 @@ uint32_t coinmstr_state::screen_update_coinmstr(screen_device &screen, bitmap_rg
 	return 0;
 }
 
-
 void coinmstr_state::coinmstr(machine_config &config)
 {
 	Z80(config, m_maincpu, CPU_CLOCK); // 7 MHz.
@@ -1267,6 +1267,7 @@ void coinmstr_state::coinmstr(machine_config &config)
 
 	pia6821_device &pia1(PIA6821(config, "pia1", 0));
 	pia1.readpa_handler().set_ioport("PIA1.A");
+	pia1.set_port_a_input_overrides_output_mask(0xff);
 	pia1.readpb_handler().set_ioport("PIA1.B");
 
 	pia6821_device &pia2(PIA6821(config, "pia2", 0));

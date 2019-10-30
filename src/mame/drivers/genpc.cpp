@@ -149,7 +149,7 @@ ROM_START(pc)
 	ROMX_LOAD( "peterv203.75.bin", 0x00000, 0x2000, CRC(b053a6a4) SHA1(f53218ad3d725f12d9149b22d8afcf6a8869a3bd),ROM_BIOS(15))
 	ROM_SYSTEM_BIOS(16, "pho2271", "XT Phoenix Bios 2.27 #1")
 	ROMX_LOAD( "phoenix2.27.bin", 0x00000, 0x2000, CRC(168ffef0) SHA1(69465db2f9246a614044d1f433d374506a13a07f),ROM_BIOS(16))
-	ROM_SYSTEM_BIOS(17, "pho2272", "XT Phoenix Bios 2.27 #2") // V20 installed on board
+	ROM_SYSTEM_BIOS(17, "pho2272", "XT Phoenix Bios 2.27 #2") // V20 installed on board, 8 ISA8 slots
 	ROMX_LOAD( "compatibility_software_phoenix_technologies_1985_1986_1121277.bin", 0x00000, 0x2000, CRC(33ceb81a) SHA1(7c7db75e61e19025938f30798d9d0f8b4f6ab0ee),ROM_BIOS(17))
 	ROM_SYSTEM_BIOS(18, "pho251", "XT Phoenix Bios 2.51")
 	ROMX_LOAD( "phoenix2.51.bin", 0x00000, 0x2000, CRC(9b7e9c40) SHA1(c948a8d3d715e469105c6e2acd8b46ec274b25a8),ROM_BIOS(18))
@@ -201,6 +201,8 @@ ROM_START(pc)
 	ROMX_LOAD( "fdaypc17.rom", 0x00000, 0x2000, CRC(26bb29ac) SHA1(5a58680b9193f4323db3e7894f853dc82d17f4ee),ROM_BIOS(41))
 	ROM_SYSTEM_BIOS(42, "tava238", "Tava DTK Erso V2.38")
 	ROMX_LOAD( "tava_dtk_erso_bios_2.38_u87.bin", 0x00000, 0x2000, CRC(34f5c0e5) SHA1(5a1590f948670a5ef85a1ee7cbb40387fced8a1f), ROM_BIOS(42))
+	ROM_SYSTEM_BIOS(43, "ecd", "ECD-Computer") // (c) E C D Computer GmbH 1985 - BIOS for ECD Professional Microcomputer - use pcherc
+	ROMX_LOAD( "ecd_computer.bin", 0x00000, 0x2000, CRC(caab05f5) SHA1(060aa6c17ff9405c256684cec8a5165227c7c522), ROM_BIOS(43))
 ROM_END
 
 #define rom_pcmda    rom_pc

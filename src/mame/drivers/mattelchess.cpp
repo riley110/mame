@@ -91,7 +91,7 @@ void mchess_state::update_reset(ioport_value state)
 
 
 /******************************************************************************
-    Devices, I/O
+    I/O
 ******************************************************************************/
 
 template<int Sel>
@@ -182,7 +182,7 @@ static INPUT_PORTS_START( mchess )
 	PORT_BIT(0x80, IP_ACTIVE_HIGH, IPT_KEYPAD) PORT_CODE(KEYCODE_B) PORT_NAME("Take Back")
 
 	PORT_START("IN.3")
-	PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_OTHER) PORT_CODE(KEYCODE_F1) PORT_TOGGLE PORT_CHANGED_MEMBER(DEVICE_SELF, mchess_state, reset_switch, nullptr) PORT_NAME("Save Switch")
+	PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_OTHER) PORT_CODE(KEYCODE_F1) PORT_TOGGLE PORT_CHANGED_MEMBER(DEVICE_SELF, mchess_state, reset_switch, 0) PORT_NAME("Save Switch")
 INPUT_PORTS_END
 
 
@@ -207,8 +207,7 @@ void mchess_state::mchess(machine_config &config)
 	m_lcd[1]->write_cols().set(FUNC(mchess_state::lcd_output_w<1>));
 
 	screen_device &screen(SCREEN(config, "screen", SCREEN_TYPE_SVG));
-	screen.set_svg_region("svg");
-	screen.set_refresh_hz(50);
+	screen.set_refresh_hz(60);
 	screen.set_size(977, 1080);
 	screen.set_visarea_full();
 
@@ -225,7 +224,7 @@ ROM_START( mchess )
 	ROM_REGION( 0x1000, "maincpu", 0 )
 	ROM_LOAD("ins8050-6hwu_n", 0x0000, 0x1000, CRC(de272323) SHA1(9ba323b614504e20b25c86d290c0667f0bbf6c6b) )
 
-	ROM_REGION( 796334, "svg", 0)
+	ROM_REGION( 796334, "screen", 0)
 	ROM_LOAD( "mchess.svg", 0, 796334, CRC(88792457) SHA1(cc8b654829532a8cbb7447176436c113ac584bba) )
 ROM_END
 

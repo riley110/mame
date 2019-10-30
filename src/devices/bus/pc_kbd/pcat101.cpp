@@ -13,12 +13,16 @@
  * Part No  Layout
  * 1391401  US English 101-key
  *
- * TODO
- *   - fix issue receiving commands
  */
 
 #include "emu.h"
 #include "pcat101.h"
+
+#define LOG_GENERAL (1U << 0)
+#define LOG_RXTX    (1U << 1)
+
+//#define VERBOSE (LOG_GENERAL|LOG_RXTX)
+#include "logmacro.h"
 
 DEFINE_DEVICE_TYPE(PC_KBD_IBM_PC_AT_101, ibm_pc_at_101_keyboard_device, "kb_pcat101", "IBM Model M Keyboard")
 
@@ -265,6 +269,23 @@ u8 ibm_pc_at_101_keyboard_device::portb_r()
 
 void ibm_pc_at_101_keyboard_device::portb_w(u8 data)
 {
+	if (VERBOSE & LOG_RXTX)
+	{
+		auto const suppressor(machine().disable_side_effects());
+
+		// the content of the A register at these two specific code addresses
+		// gives the byte being transmitted or received
+		switch (m_mcu->pc())
+		{
+		case 0x86a:
+			LOGMASKED(LOG_RXTX, "rx 0x%02x\n", m_mcu->state_int(4));
+			break;
+		case 0x998:
+			LOGMASKED(LOG_RXTX, "tx 0x%02x\n", m_mcu->state_int(4));
+			break;
+		}
+	}
+
 	m_leds[LED_CAPS] = BIT(data, 7) || BIT(data, 6) || BIT(data, 5);
 	m_leds[LED_NUM] = BIT(data, 4);
 	m_leds[LED_SCROLL] = BIT(data, 3);

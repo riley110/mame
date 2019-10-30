@@ -2,10 +2,20 @@
 // copyright-holders:Miodrag Milanovic, AJR
 /***************************************************************************
 
-        PK-8020 driver by Miodrag Milanovic
-            based on work of Sergey Erokhin from pk8020.narod.ru
+PK-8020 driver by Miodrag Milanovic
+    based on work of Sergey Erokhin from pk8020.narod.ru
 
-        18/07/2008 Preliminary driver.
+2008-07-18 Preliminary driver.
+
+Cassette is "best guess", as I was unable to locate any recordings, and
+also do not know the commands to save and load. SAVE and LOAD appear when
+F2 or shift-F2 pressed (in Korvet), but only produce errors.
+
+Status as at 2019-07-19:
+Korvet - can boot CP/M, but the keyboard then doesn't work.
+Neiva - keyboard not working
+BK8T - keyboard not working, stuck at a "config" screen.
+Kontur - needs to boot from a floppy and we don't have any that work
 
 ****************************************************************************/
 
@@ -249,6 +259,14 @@ void pk8020_state::pk8020(machine_config &config)
 	iop1.out_pc_callback().set(FUNC(pk8020_state::video_page_w));
 
 	i8255_device &iop2(I8255(config, "iop2")); // КР580ВВ55А (D16)
+	iop2.out_pa_callback().set(m_printer, FUNC(centronics_device::write_data0)).bit(0).invert();
+	iop2.out_pa_callback().append(m_printer, FUNC(centronics_device::write_data1)).bit(1).invert();
+	iop2.out_pa_callback().append(m_printer, FUNC(centronics_device::write_data2)).bit(2).invert();
+	iop2.out_pa_callback().append(m_printer, FUNC(centronics_device::write_data3)).bit(3).invert();
+	iop2.out_pa_callback().append(m_printer, FUNC(centronics_device::write_data4)).bit(4).invert();
+	iop2.out_pa_callback().append(m_printer, FUNC(centronics_device::write_data5)).bit(5).invert();
+	iop2.out_pa_callback().append(m_printer, FUNC(centronics_device::write_data6)).bit(6).invert();
+	iop2.out_pa_callback().append(m_printer, FUNC(centronics_device::write_data7)).bit(7).invert();
 	iop2.out_pc_callback().set(FUNC(pk8020_state::ppi_2_portc_w));
 
 	I8255(config, "iop3"); // КР580ВВ55А (D2)
@@ -296,10 +314,14 @@ void pk8020_state::pk8020(machine_config &config)
 
 	/* audio hardware */
 	SPEAKER(config, "mono").front_center();
-	SPEAKER_SOUND(config, "speaker").add_route(ALL_OUTPUTS, "mono", 0.25);
-	WAVE(config, "wave", "cassette").add_route(ALL_OUTPUTS, "mono", 0.25);
+	SPEAKER_SOUND(config, "speaker").add_route(ALL_OUTPUTS, "mono", 0.50);
 
-	CASSETTE(config, "cassette").set_default_state(CASSETTE_PLAY);
+	CASSETTE(config, m_cass);
+	m_cass->set_default_state(CASSETTE_STOPPED | CASSETTE_MOTOR_ENABLED | CASSETTE_SPEAKER_ENABLED);
+	m_cass->add_route(ALL_OUTPUTS, "mono", 0.05);
+
+	CENTRONICS(config, m_printer, centronics_devices, nullptr);
+	m_printer->busy_handler().set(m_inr, FUNC(pic8259_device::ir6_w)).invert();
 
 	/* internal ram */
 	RAM(config, RAM_TAG).set_default_size("258K").set_default_value(0x00); // 64 + 4*48 + 2 = 258
@@ -367,7 +389,7 @@ ROM_END
 /* Driver */
 
 /*    YEAR  NAME    PARENT  COMPAT  MACHINE  INPUT   CLASS         INIT        COMPANY      FULLNAME         FLAGS */
-COMP( 1987, korvet, 0,      0,      pk8020,  pk8020, pk8020_state, empty_init, "<unknown>", "PK8020 Korvet", MACHINE_SUPPORTS_SAVE)
-COMP( 1987, neiva,  korvet, 0,      pk8020,  pk8020, pk8020_state, empty_init, "<unknown>", "PK8020 Neiva",  MACHINE_SUPPORTS_SAVE)
-COMP( 1987, kontur, korvet, 0,      pk8020,  pk8020, pk8020_state, empty_init, "<unknown>", "PK8020 Kontur", MACHINE_SUPPORTS_SAVE)
-COMP( 1987, bk8t,   korvet, 0,      pk8020,  pk8020, pk8020_state, empty_init, "<unknown>", "BK-8T",         MACHINE_SUPPORTS_SAVE)
+COMP( 1987, korvet, 0,      0,      pk8020,  pk8020, pk8020_state, empty_init, "<unknown>", "PK8020 Korvet", MACHINE_NOT_WORKING | MACHINE_SUPPORTS_SAVE)
+COMP( 1987, neiva,  korvet, 0,      pk8020,  pk8020, pk8020_state, empty_init, "<unknown>", "PK8020 Neiva",  MACHINE_NOT_WORKING | MACHINE_SUPPORTS_SAVE)
+COMP( 1987, kontur, korvet, 0,      pk8020,  pk8020, pk8020_state, empty_init, "<unknown>", "PK8020 Kontur", MACHINE_NOT_WORKING | MACHINE_SUPPORTS_SAVE)
+COMP( 1987, bk8t,   korvet, 0,      pk8020,  pk8020, pk8020_state, empty_init, "<unknown>", "BK-8T",         MACHINE_NOT_WORKING | MACHINE_SUPPORTS_SAVE)
