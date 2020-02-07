@@ -89,6 +89,9 @@ address lines), and then reading it from the 051962.
            surpratk sets this register to 70 during the second boss. There is
            nothing obviously wrong so it's not clear what should happen.
            glfgreat sets it to 30 when showing the leader board
+           mariorou sets it to 36 when ingame, while actually does per-row scroll for layer A and per-collumn scroll for layer B.
+           such usage not supported by current implementation, hacked in game driver instead.
+           fuusenpn sets this to 20 but not happy with -6 added to column index, apparently current logic is not entirely correct.
 1d00     : bits 0 & 1 might enable NMI and FIRQ, not sure
          : bit 2 = IRQ enable
 1d80     : ROM bank selector bits 0-3 = bank 0 bits 4-7 = bank 1
@@ -183,6 +186,7 @@ k052109_device::k052109_device(const machine_config &mconfig, const char *tag, d
 	m_romsubbank(0),
 	m_scrollctrl(0),
 	m_char_rom(*this, DEVICE_SELF),
+	m_k052109_cb(*this),
 	m_irq_handler(*this),
 	m_firq_handler(*this),
 	m_nmi_handler(*this)
@@ -215,6 +219,13 @@ void k052109_device::device_start()
 		screen().register_vblank_callback(vblank_state_delegate(&k052109_device::vblank_callback, this));
 	}
 
+	// resolve callbacks
+	m_k052109_cb.resolve();
+
+	m_irq_handler.resolve_safe();
+	m_firq_handler.resolve_safe();
+	m_nmi_handler.resolve_safe();
+
 	decode_gfx();
 	gfx(0)->set_colors(palette().entries() / gfx(0)->depth());
 
@@ -230,21 +241,13 @@ void k052109_device::device_start()
 	m_videoram2_A = &m_ram[0x4800];
 	m_videoram2_B = &m_ram[0x5000];
 
-	m_tilemap[0] = &machine().tilemap().create(*this, tilemap_get_info_delegate(FUNC(k052109_device::get_tile_info0),this), TILEMAP_SCAN_ROWS, 8, 8, 64, 32);
-	m_tilemap[1] = &machine().tilemap().create(*this, tilemap_get_info_delegate(FUNC(k052109_device::get_tile_info1),this), TILEMAP_SCAN_ROWS, 8, 8, 64, 32);
-	m_tilemap[2] = &machine().tilemap().create(*this, tilemap_get_info_delegate(FUNC(k052109_device::get_tile_info2),this), TILEMAP_SCAN_ROWS, 8, 8, 64, 32);
+	m_tilemap[0] = &machine().tilemap().create(*this, tilemap_get_info_delegate(*this, FUNC(k052109_device::get_tile_info0)), TILEMAP_SCAN_ROWS, 8, 8, 64, 32);
+	m_tilemap[1] = &machine().tilemap().create(*this, tilemap_get_info_delegate(*this, FUNC(k052109_device::get_tile_info1)), TILEMAP_SCAN_ROWS, 8, 8, 64, 32);
+	m_tilemap[2] = &machine().tilemap().create(*this, tilemap_get_info_delegate(*this, FUNC(k052109_device::get_tile_info2)), TILEMAP_SCAN_ROWS, 8, 8, 64, 32);
 
 	m_tilemap[0]->set_transparent_pen(0);
 	m_tilemap[1]->set_transparent_pen(0);
 	m_tilemap[2]->set_transparent_pen(0);
-
-	// bind callbacks
-	m_k052109_cb.bind_relative_to(*owner());
-
-	// resolve callbacks
-	m_irq_handler.resolve_safe();
-	m_firq_handler.resolve_safe();
-	m_nmi_handler.resolve_safe();
 
 	save_pointer(NAME(m_ram), 0x6000);
 	save_item(NAME(m_rmrd_line));

@@ -197,9 +197,9 @@ void legionna_state::legionna_map(address_map &map)
 	map(0x100470, 0x100471).nopw(); // toggles 0x2000 / 0x0000, tile bank on some games
 	map(0x100600, 0x10064f).rw(m_crtc, FUNC(seibu_crtc_device::read), FUNC(seibu_crtc_device::write));
 	map(0x100680, 0x100681).nopw(); // irq ack?
-	map(0x100700, 0x10071f).lrw8("seibu_sound_rw",
-								 [this](offs_t offset) { return m_seibu_sound->main_r(offset >> 1); },
-								 [this](offs_t offset, u8 data) { m_seibu_sound->main_w(offset >> 1, data); }).umask16(0x00ff);
+	map(0x100700, 0x10071f).lrw8(
+								 NAME([this](offs_t offset) { return m_seibu_sound->main_r(offset >> 1); }),
+								 NAME([this](offs_t offset, u8 data) { m_seibu_sound->main_w(offset >> 1, data); })).umask16(0x00ff);
 	map(0x100740, 0x100741).portr("DSW1");
 	map(0x100744, 0x100745).portr("PLAYERS12");
 	map(0x100748, 0x100749).portr("PLAYERS34");
@@ -227,9 +227,9 @@ void legionna_state::heatbrl_map(address_map &map)
 	map(0x100744, 0x100745).portr("PLAYERS12");
 	map(0x100748, 0x100749).portr("PLAYERS34");
 	map(0x10074c, 0x10074d).portr("SYSTEM");
-	map(0x1007c0, 0x1007df).lrw8("seibu_sound_rw",
-								 [this](offs_t offset) { return m_seibu_sound->main_r(offset >> 1); },
-								 [this](offs_t offset, u8 data) { m_seibu_sound->main_w(offset >> 1, data); }).umask16(0x00ff);
+	map(0x1007c0, 0x1007df).lrw8(
+								 NAME([this] (offs_t offset) { return m_seibu_sound->main_r(offset >> 1); }),
+								 NAME([this] (offs_t offset, u8 data) { m_seibu_sound->main_w(offset >> 1, data); })).umask16(0x00ff);
 	map(0x100800, 0x100fff).ram(); // .w(FUNC(legionna_state::background_w)).share("back_data");
 	map(0x101000, 0x1017ff).ram(); // .w(FUNC(legionna_state::foreground_w).share("fore_data");
 	map(0x101800, 0x101fff).ram(); // .w(FUNC(legionna_state::midground_w).share("mid_data");
@@ -247,9 +247,9 @@ void legionna_state::godzilla_map(address_map &map)
 	map(0x100470, 0x100471).w(FUNC(legionna_state::heatbrl_setgfxbank));
 	map(0x100600, 0x10064f).rw(m_crtc, FUNC(seibu_crtc_device::read), FUNC(seibu_crtc_device::write));
 	map(0x100680, 0x100681).nopw(); // irq ack?
-	map(0x100700, 0x10071f).lrw8("seibu_sound_rw",
-								 [this](offs_t offset) { return m_seibu_sound->main_r(offset >> 1); },
-								 [this](offs_t offset, u8 data) { m_seibu_sound->main_w(offset >> 1, data); }).umask16(0x00ff);
+	map(0x100700, 0x10071f).lrw8(
+								 NAME([this] (offs_t offset) { return m_seibu_sound->main_r(offset >> 1); }),
+								 NAME([this] (offs_t offset, u8 data) { m_seibu_sound->main_w(offset >> 1, data); })).umask16(0x00ff);
 	map(0x100740, 0x100741).portr("DSW1");
 	map(0x100744, 0x100745).portr("PLAYERS12");
 	map(0x100748, 0x100749).portr("PLAYERS34");
@@ -302,7 +302,7 @@ void legionna_state::denjinmk_map(address_map &map)
 	map(0x100600, 0x10064f).rw(m_crtc, FUNC(seibu_crtc_device::read), FUNC(seibu_crtc_device::write));
 	map(0x100680, 0x100681).nopw(); // irq ack?
 	map(0x100700, 0x10071f).r(FUNC(legionna_state::denjinmk_sound_comms_r))
-		.lw8("seibu_sound_w", [this](offs_t offset, u8 data) { m_seibu_sound->main_w(offset >> 1, data); }).umask16(0x00ff);
+			.lw8(NAME([this] (offs_t offset, u8 data) { m_seibu_sound->main_w(offset >> 1, data); })).umask16(0x00ff);
 	map(0x100740, 0x100741).portr("DSW1");
 	map(0x100744, 0x100745).portr("PLAYERS12");
 	map(0x100748, 0x100749).portr("PLAYERS34");
@@ -329,9 +329,9 @@ void legionna_state::grainbow_map(address_map &map)
 	map(0x100480, 0x100487).w(FUNC(legionna_state::grainbow_layer_config_w)); // probably a COP feature
 	map(0x100600, 0x10064f).rw(m_crtc, FUNC(seibu_crtc_device::read), FUNC(seibu_crtc_device::write));
 	map(0x100680, 0x100681).nopw(); // irq ack?
-	map(0x100700, 0x10071f).lrw8("seibu_sound_rw",
-								 [this](offs_t offset) { return m_seibu_sound->main_r(offset >> 1); },
-								 [this](offs_t offset, u8 data) { m_seibu_sound->main_w(offset >> 1, data); }).umask16(0x00ff);
+	map(0x100700, 0x10071f).lrw8(
+								 NAME([this](offs_t offset) { return m_seibu_sound->main_r(offset >> 1); }),
+								 NAME([this](offs_t offset, u8 data) { m_seibu_sound->main_w(offset >> 1, data); })).umask16(0x00ff);
 	map(0x100740, 0x100741).portr("DSW1");
 	map(0x100744, 0x100745).portr("PLAYERS12");
 	map(0x100748, 0x100749).portr("PLAYERS34");
@@ -356,9 +356,9 @@ void legionna_state::cupsoc_map(address_map &map)
 	map(0x100000, 0x1003ff).ram();
 	map(0x100600, 0x10064f).rw(m_crtc, FUNC(seibu_crtc_device::read), FUNC(seibu_crtc_device::write));
 	map(0x100680, 0x100681).nopw(); // irq ack?
-	map(0x100700, 0x10071f).lrw8("seibu_sound_rw",
-								 [this](offs_t offset) { return m_seibu_sound->main_r(offset >> 1); },
-								 [this](offs_t offset, u8 data) { m_seibu_sound->main_w(offset >> 1, data); }).umask16(0x00ff);
+	map(0x100700, 0x10071f).lrw8(
+								 NAME([this] (offs_t offset) { return m_seibu_sound->main_r(offset >> 1); }),
+								 NAME([this] (offs_t offset, u8 data) { m_seibu_sound->main_w(offset >> 1, data); })).umask16(0x00ff);
 	map(0x100740, 0x100741).portr("DSW1");
 	map(0x100744, 0x100745).portr("PLAYERS12");
 	map(0x100748, 0x100749).portr("PLAYERS34");
@@ -384,22 +384,22 @@ void legionna_state::cupsocs_map(address_map &map)
 	legionna_cop_map(map);
 	map(0x000000, 0x0fffff).rom();
 	map(0x100000, 0x1003ff).ram();
-	map(0x100600, 0x10067f).lrw16("crtc_rw",
-								  [this](address_space &space, offs_t offset, u16 mem_mask) {
+	map(0x100600, 0x10067f).lrw16(
+								  NAME([this](address_space &space, offs_t offset, u16 mem_mask) {
 									  return m_crtc->read(space, offset ^ 0x20, mem_mask);
-								  },
-								  [this](address_space &space, offs_t offset, u16 data, u16 mem_mask) {
+								  }),
+								  NAME([this](address_space &space, offs_t offset, u16 data, u16 mem_mask) {
 									  m_crtc->write(space, offset ^ 0x20, data, mem_mask);
-								  });
+								  }));
 	map(0x100680, 0x100681).nopw(); // irq ack?
 	map(0x100700, 0x100701).portr("DSW1");
 	map(0x100704, 0x100705).portr("PLAYERS12");
 	map(0x100708, 0x100709).portr("PLAYERS34");
 	map(0x10070c, 0x10070d).portr("SYSTEM");
 	map(0x10071c, 0x10071d).portr("DSW2");
-	map(0x100740, 0x10075f).lrw8("seibu_sound_rw",
-								 [this](offs_t offset) { return m_seibu_sound->main_r(offset >> 1); },
-								 [this](offs_t offset, u8 data) { m_seibu_sound->main_w(offset >> 1, data); }).umask16(0x00ff);
+	map(0x100740, 0x10075f).lrw8(
+								 NAME([this] (offs_t offset) { return m_seibu_sound->main_r(offset >> 1); }),
+								 NAME([this] (offs_t offset, u8 data) { m_seibu_sound->main_w(offset >> 1, data); })).umask16(0x00ff);
 	map(0x100800, 0x100fff).ram(); // .w(FUNC(legionna_state::background_w)).share("back_data");
 	map(0x101000, 0x1017ff).ram(); // .w(FUNC(legionna_state::foreground_w).share("fore_data");
 	map(0x101800, 0x101fff).ram(); // .w(FUNC(legionna_state::midground_w).share("mid_data");
@@ -1943,6 +1943,55 @@ ROM_END
 
 /*
 
+Denjin Makai newer set
+PCB labeled BP942KS
+All "denjin" ROM labels from this set are actually written in kanji chars.
+
+*/
+
+ROM_START( denjinmk )
+	ROM_REGION( 0x100000, "maincpu", 0 )    /* 68000 code */
+	ROM_LOAD32_BYTE( "denjin_1.u025", 0x000000, 0x040000, CRC(b23a6e6f) SHA1(73ab330dfc0d2799984874f02da51deb8323b9e2) )
+	ROM_LOAD32_BYTE( "denjin_2.u024", 0x000001, 0x040000, CRC(4fde59e7) SHA1(1618db14a18acc2acabdd93b8e2563d7221e643d) )
+	ROM_LOAD32_BYTE( "denjin_3.u026", 0x000002, 0x040000, CRC(4f10292b) SHA1(c61c88cacc433bb9af6a4225ce5959dd0fefd084) )
+	ROM_LOAD32_BYTE( "denjin_4.u023", 0x000003, 0x040000, CRC(209f1f6b) SHA1(3f6709dc79fae47ef4181d405d3aa94c2df5963a) )
+
+	ROM_REGION( 0x20000, "audiocpu", 0 )    /* Z80 code, banked data */
+	ROM_LOAD( "denjin_7.u1016",  0x000000, 0x08000, CRC(970f36dd) SHA1(010a9edeaedb9e258cd02b3e9294264d00ec7c45) )
+	ROM_CONTINUE(         0x010000, 0x08000 )   /* banked stuff */
+	ROM_COPY( "audiocpu", 0x000000, 0x018000, 0x08000 )
+
+	ROM_REGION( 0x020000, "char", 0 )
+	ROM_LOAD16_BYTE( "denjin_6.u0620", 0x000000, 0x010000, CRC(e1f759b1) SHA1(ddc60e78e7791a59c59403dd4089b3f6e1ecf8cb) )
+	ROM_LOAD16_BYTE( "denjin_5.u0615", 0x000001, 0x010000, CRC(cc36af0d) SHA1(69c2ae38f03be79be4d138fcc73a6a86407eb285) )
+
+	ROM_REGION( 0x500000, "sprite", 0 )
+	ROM_LOAD16_WORD_SWAP( "obj-0-3.748", 0x000000, 0x200000, CRC(67c26a67) SHA1(20543ca9dcf3fed0884968b5249b34b59a14b791) ) /* banks 0,1,2,3 */
+	ROM_LOAD16_WORD_SWAP( "obj-4-5.756", 0x200000, 0x100000, CRC(01f8d4e6) SHA1(25b69da693be8c3404f750b419c330a7a56e88ec) ) /* 4,5 */
+	ROM_LOAD16_WORD_SWAP( "obj-6-7.743", 0x300000, 0x100000, CRC(e5805757) SHA1(9d392c27eef7c1fcda560dac17ba9d7ae2287ac8) ) /* 6,7 */
+	ROM_LOAD16_WORD_SWAP( "obj-8-9.757", 0x400000, 0x100000, CRC(c8f7e1c9) SHA1(a746d187b50a0ecdd5a7f687a2601e5dc8bfe272) ) /* 8,9 */
+
+	ROM_REGION( 0x100000, "back", 0 )   /* MBK tiles */
+	ROM_LOAD16_WORD_SWAP( "bg-1-ab.618", 0x000000, 0x100000, CRC(eaad151a) SHA1(bdd1d83ee8497efe20f21baf873e786446372bcb) )
+
+	ROM_REGION( 0x100000, "mid", 0 )    /* BK2 used (or LBK; just identification string differs?) */
+	ROM_LOAD16_WORD_SWAP( "bg-2-ab.617", 0x000000, 0x100000, CRC(40938f74) SHA1(d68b0f8245a8b390ad5d4e6ebc7514a939b8ac51) )
+
+	ROM_REGION( 0x100000, "fore", 0 )   /* BK3 tiles */
+	ROM_LOAD16_WORD_SWAP( "bg-3-ab.619", 0x000000, 0x100000, CRC(de7366ee) SHA1(0c3969d15f3cd963e579d4164b6e0a6b4012c9c6) )
+
+	ROM_REGION( 0x080000, "oki", 0 )    /* ADPCM samples */
+	ROM_LOAD( "denjin_8.u0922",     0x000000, 0x040000, CRC(a11adb8f) SHA1(50e1158767b506d962bff861c2a6609246d764c4) )
+
+	ROM_REGION( 0x200, "proms", 0 )
+	ROM_LOAD( "s68e08.844",  0x000000, 0x000200, CRC(96f7646e) SHA1(400a831b83d6ac4d2a46ef95b97b1ee237099e44) ) /* Priority */
+
+	ROM_REGION( 0x080000, "user1", 0 )
+	ROM_LOAD( "copx-d2.313", 0x000000, 0x080000, CRC(7c52581b) SHA1(7e668476f886806b0c06fa0bcf4bbc955878c87c) )
+ROM_END
+
+/*
+
 Denjin Makai
 Banpresto, 1994
 
@@ -2013,19 +2062,18 @@ Notes:
 
       S68E08 : PROM type 82S147, labelled 'S68E08'
 
-
 */
 
-ROM_START( denjinmk )
+ROM_START( denjinmka )
 	ROM_REGION( 0x100000, "maincpu", 0 )    /* 68000 code */
-	ROM_LOAD32_BYTE( "rom1.025",        0x000000, 0x040000, CRC(44a648e8) SHA1(a3c1721e89ac6b9fc16f80682b2f701cb24b5d76) )
-	ROM_LOAD32_BYTE( "rom2.024",        0x000001, 0x040000, CRC(e5ee8fe0) SHA1(2ebff4fdbe82062fb526598e10f11358b0b5c02f) )
-	ROM_LOAD32_BYTE( "rom3.026",        0x000002, 0x040000, CRC(781b942e) SHA1(f1f4ddc332de3dc29b716a1b82c2ecc2045efb3a) )
-	ROM_LOAD32_BYTE( "rom4.023",        0x000003, 0x040000, CRC(502a588b) SHA1(9055b631240fe52d33b572e34275d31a9f3d290f) )
+	ROM_LOAD32_BYTE( "rom1.025", 0x000000, 0x040000, CRC(44a648e8) SHA1(a3c1721e89ac6b9fc16f80682b2f701cb24b5d76) )
+	ROM_LOAD32_BYTE( "rom2.024", 0x000001, 0x040000, CRC(e5ee8fe0) SHA1(2ebff4fdbe82062fb526598e10f11358b0b5c02f) )
+	ROM_LOAD32_BYTE( "rom3.026", 0x000002, 0x040000, CRC(781b942e) SHA1(f1f4ddc332de3dc29b716a1b82c2ecc2045efb3a) )
+	ROM_LOAD32_BYTE( "rom4.023", 0x000003, 0x040000, CRC(502a588b) SHA1(9055b631240fe52d33b572e34275d31a9f3d290f) )
 
 	ROM_REGION( 0x20000, "audiocpu", 0 )    /* Z80 code, banked data */
-	ROM_LOAD( "rom5.016",        0x000000, 0x08000, CRC(7fe7e352) SHA1(1ceae22186751ca91dfffab7bd11f275e693451f) )
-	ROM_CONTINUE(             0x010000, 0x08000 )   /* banked stuff */
+	ROM_LOAD( "rom5.016", 0x000000, 0x08000, CRC(7fe7e352) SHA1(1ceae22186751ca91dfffab7bd11f275e693451f) )
+	ROM_CONTINUE(         0x010000, 0x08000 )   /* banked stuff */
 	ROM_COPY( "audiocpu", 0x000000, 0x018000, 0x08000 )
 
 	ROM_REGION( 0x020000, "char", 0 )
@@ -2033,10 +2081,10 @@ ROM_START( denjinmk )
 	ROM_LOAD16_BYTE( "rom8.615",       0x000001, 0x010000, CRC(cc36af0d) SHA1(69c2ae38f03be79be4d138fcc73a6a86407eb285) )
 
 	ROM_REGION( 0x500000, "sprite", 0 )
-	ROM_LOAD16_WORD_SWAP( "obj-0-3.748",     0x000000, 0x200000, CRC(67c26a67) SHA1(20543ca9dcf3fed0884968b5249b34b59a14b791) ) /* banks 0,1,2,3 */
-	ROM_LOAD16_WORD_SWAP( "obj-4-5.756",     0x200000, 0x100000, CRC(01f8d4e6) SHA1(25b69da693be8c3404f750b419c330a7a56e88ec) ) /* 4,5 */
-	ROM_LOAD16_WORD_SWAP( "obj-6-7.743",     0x300000, 0x100000, CRC(e5805757) SHA1(9d392c27eef7c1fcda560dac17ba9d7ae2287ac8) ) /* 6,7 */
-	ROM_LOAD16_WORD_SWAP( "obj-8-9.757",     0x400000, 0x100000, CRC(c8f7e1c9) SHA1(a746d187b50a0ecdd5a7f687a2601e5dc8bfe272) ) /* 8,9 */
+	ROM_LOAD16_WORD_SWAP( "obj-0-3.748", 0x000000, 0x200000, CRC(67c26a67) SHA1(20543ca9dcf3fed0884968b5249b34b59a14b791) ) /* banks 0,1,2,3 */
+	ROM_LOAD16_WORD_SWAP( "obj-4-5.756", 0x200000, 0x100000, CRC(01f8d4e6) SHA1(25b69da693be8c3404f750b419c330a7a56e88ec) ) /* 4,5 */
+	ROM_LOAD16_WORD_SWAP( "obj-6-7.743", 0x300000, 0x100000, CRC(e5805757) SHA1(9d392c27eef7c1fcda560dac17ba9d7ae2287ac8) ) /* 6,7 */
+	ROM_LOAD16_WORD_SWAP( "obj-8-9.757", 0x400000, 0x100000, CRC(c8f7e1c9) SHA1(a746d187b50a0ecdd5a7f687a2601e5dc8bfe272) ) /* 8,9 */
 
 	ROM_REGION( 0x100000, "back", 0 )   /* MBK tiles */
 	ROM_LOAD16_WORD_SWAP( "bg-1-ab.618",      0x000000, 0x100000, CRC(eaad151a) SHA1(bdd1d83ee8497efe20f21baf873e786446372bcb) )
@@ -2543,7 +2591,8 @@ GAME( 1992, heatbrle,  heatbrl,  heatbrl,  heatbrl,  legionna_state, empty_init,
 GAME( 1993, godzilla,  0,        godzilla, godzilla, legionna_state, init_godzilla,  ROT0, "Banpresto", "Godzilla (Japan)", 0 )
 GAME( 1993, grainbow,  0,        grainbow, grainbow, legionna_state, empty_init,     ROT0, "Banpresto", "SD Gundam Sangokushi Rainbow Tairiku Senki (Japan)", 0 )
 GAME( 1993, grainbowk, grainbow, grainbow, grainbow, legionna_state, empty_init,     ROT0, "Banpresto", "SD Gundam Sangokushi Rainbow Tairiku Senki (Korea)", 0 )
-GAME( 1994, denjinmk,  0,        denjinmk, denjinmk, legionna_state, empty_init,     ROT0, "Winkysoft (Banpresto license)", "Denjin Makai", 0 )
+GAME( 1994, denjinmk,  0,        denjinmk, denjinmk, legionna_state, empty_init,     ROT0, "Winkysoft (Banpresto license)", "Denjin Makai (set 1)", 0 )
+GAME( 1994, denjinmka, denjinmk, denjinmk, denjinmk, legionna_state, empty_init,     ROT0, "Winkysoft (Banpresto license)", "Denjin Makai (set 2)", 0 )
 
 GAME( 1992, cupsoc,    0,        cupsoc,   cupsoc,   legionna_state, init_cupsoc,    ROT0, "Seibu Kaihatsu", "Seibu Cup Soccer (set 1)", MACHINE_UNEMULATED_PROTECTION | MACHINE_NOT_WORKING )
 GAME( 1992, cupsoca,   cupsoc,   cupsoc,   cupsoc,   legionna_state, init_cupsoc,    ROT0, "Seibu Kaihatsu", "Seibu Cup Soccer (set 2)", MACHINE_UNEMULATED_PROTECTION | MACHINE_NOT_WORKING )

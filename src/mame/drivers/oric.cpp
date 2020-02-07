@@ -790,7 +790,7 @@ void oric_state::oric(machine_config &config, bool add_ext)
 	M6502(config, m_maincpu, 12_MHz_XTAL / 12);
 	m_maincpu->set_addrmap(AS_PROGRAM, &oric_state::oric_mem);
 
-	config.m_minimum_quantum = attotime::from_hz(60);
+	config.set_maximum_quantum(attotime::from_hz(60));
 
 	/* video hardware */
 	screen_device &screen(SCREEN(config, "screen", SCREEN_TYPE_RASTER));
@@ -834,8 +834,8 @@ void oric_state::oric(machine_config &config, bool add_ext)
 	ORICEXT_CONNECTOR(config, "ext", oricext_intf, nullptr, "maincpu").irq_callback().set(FUNC(oric_state::ext_irq_w));
 	
 	/* software lists */
-	SOFTWARE_LIST(config, "cass_list").set_type("oric_cass", SOFTWARE_LIST_ORIGINAL_SYSTEM);
-	SOFTWARE_LIST(config, "flop_list").set_type("oric_flop", SOFTWARE_LIST_ORIGINAL_SYSTEM);
+	SOFTWARE_LIST(config, "cass_list").set_original("oric_cass");
+	SOFTWARE_LIST(config, "flop_list").set_original("oric_flop");
 }
 
 void oric_state::prav8d(machine_config &config)
