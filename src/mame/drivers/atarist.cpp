@@ -2098,6 +2098,14 @@ void st_state::st(machine_config &config)
 	SOFTWARE_LIST(config, "sps_flop_list").set_original("st_sps");
 	SOFTWARE_LIST(config, "stx_flop_list").set_original("st_stx");
 	SOFTWARE_LIST(config, "tos_flop_list").set_original("st_tos");
+    
+    SOFTWARE_LIST(config, "comp_apps_flop_list").set_original("st_comp_apps");
+    SOFTWARE_LIST(config, "comp_demo_flop_list").set_original("st_comp_demo");
+    SOFTWARE_LIST(config, "comp_edu_flop_list").set_original("st_comp_edu");
+    SOFTWARE_LIST(config, "comp_game_flop_list").set_original("st_comp_game");
+    SOFTWARE_LIST(config, "fast_flop_list").set_original("st_fast");
+    SOFTWARE_LIST(config, "flopshop_flop_list").set_original("st_flopshop");
+    SOFTWARE_LIST(config, "games_flop_list").set_original("st_games");
 }
 
 
@@ -2144,6 +2152,14 @@ void megast_state::megast(machine_config &config)
 	SOFTWARE_LIST(config, "sps_flop_list").set_compatible("st_sps");
 	SOFTWARE_LIST(config, "stx_flop_list").set_compatible("st_stx");
 	SOFTWARE_LIST(config, "tos_flop_list").set_compatible("st_tos");
+    
+    SOFTWARE_LIST(config, "comp_apps_flop_list").set_compatible("st_comp_apps");
+    SOFTWARE_LIST(config, "comp_demo_flop_list").set_compatible("st_comp_demo");
+    SOFTWARE_LIST(config, "comp_edu_flop_list").set_compatible("st_comp_edu");
+    SOFTWARE_LIST(config, "comp_game_flop_list").set_compatible("st_comp_game");
+    SOFTWARE_LIST(config, "fast_flop_list").set_compatible("st_fast");
+    SOFTWARE_LIST(config, "flopshop_flop_list").set_compatible("st_flopshop");
+    SOFTWARE_LIST(config, "games_flop_list").set_compatible("st_games");
 }
 
 
@@ -2195,6 +2211,14 @@ void ste_state::ste(machine_config &config)
 	SOFTWARE_LIST(config, "sps_flop_list").set_compatible("st_sps");
 	SOFTWARE_LIST(config, "stx_flop_list").set_compatible("st_stx");
 	SOFTWARE_LIST(config, "tos_flop_list").set_compatible("st_tos");
+    
+    SOFTWARE_LIST(config, "comp_apps_flop_list").set_compatible("st_comp_apps");
+    SOFTWARE_LIST(config, "comp_demo_flop_list").set_compatible("st_comp_demo");
+    SOFTWARE_LIST(config, "comp_edu_flop_list").set_compatible("st_comp_edu");
+    SOFTWARE_LIST(config, "comp_game_flop_list").set_compatible("st_comp_game");
+    SOFTWARE_LIST(config, "fast_flop_list").set_compatible("st_fast");
+    SOFTWARE_LIST(config, "flopshop_flop_list").set_compatible("st_flopshop");
+    SOFTWARE_LIST(config, "games_flop_list").set_compatible("st_games");
 }
 
 
@@ -2215,7 +2239,7 @@ void megaste_state::megaste(machine_config &config)
 	
 	config.device_remove("ste_flop_list");
 	SOFTWARE_LIST(config, "mste_flop_list").set_original("st_megaste");
-	SOFTWARE_LIST(config, "ste_flop_list").set_compatible("st_ste");	
+	SOFTWARE_LIST(config, "ste_flop_list").set_compatible("st_ste");
 }
 
 
@@ -2309,7 +2333,9 @@ void ste_state::tt030(machine_config &config)
 {
 	ste(config);
 	
+    config.device_remove("ste_flop_list");
 	SOFTWARE_LIST(config, "tt_flop_list").set_original("st_tt");
+    SOFTWARE_LIST(config, "ste_flop_list").set_compatible("st_ste");
 }
 
 
@@ -2321,7 +2347,9 @@ void ste_state::falcon(machine_config &config)
 {
 	ste(config);
 	
+    config.device_remove("ste_flop_list");
 	SOFTWARE_LIST(config, "falc_flop_list").set_original("st_falcon");
+    SOFTWARE_LIST(config, "ste_flop_list").set_compatible("st_ste");
 }
 
 
@@ -2333,7 +2361,9 @@ void ste_state::falcon40(machine_config &config)
 {
 	ste(config);
 	
+    config.device_remove("ste_flop_list");
 	SOFTWARE_LIST(config, "falc_flop_list").set_original("st_falcon");
+    SOFTWARE_LIST(config, "ste_flop_list").set_compatible("st_ste");
 }
 
 
