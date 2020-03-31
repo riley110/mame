@@ -1652,6 +1652,27 @@ void amiga_state::amiga_base(machine_config &config)
 	SOFTWARE_LIST(config, "apps_list").set_original("amiga_apps");
 	SOFTWARE_LIST(config, "flop_list").set_original("amiga_flop");
 	SOFTWARE_LIST(config, "ocs_list").set_original("amigaocs_flop");
+    
+    // TOSEC lists
+    SOFTWARE_LIST(config, "tosec_apps_pd").set_original("amiga_tosec_apps_pd");
+    SOFTWARE_LIST(config, "tosec_apps").set_original("amiga_tosec_apps");
+    SOFTWARE_LIST(config, "tosec_comp_apps").set_original("amiga_tosec_comp_apps");
+    SOFTWARE_LIST(config, "tosec_comp_games").set_original("amiga_tosec_comp_games");
+    SOFTWARE_LIST(config, "tosec_comp_var").set_original("amiga_tosec_comp_var");
+    SOFTWARE_LIST(config, "tosec_cover").set_original("amiga_tosec_cover");
+    SOFTWARE_LIST(config, "tosec_demoav").set_original("amiga_tosec_demoav");
+    SOFTWARE_LIST(config, "tosec_demomusic").set_original("amiga_tosec_demomusic");
+    SOFTWARE_LIST(config, "tosec_demopacks").set_original("amiga_tosec_demopacks");
+    SOFTWARE_LIST(config, "tosec_demoslide").set_original("amiga_tosec_demoslide");
+    SOFTWARE_LIST(config, "tosec_demovar").set_original("amiga_tosec_demovar");
+    SOFTWARE_LIST(config, "tosec_diskmags").set_original("amiga_tosec_diskmags");
+    SOFTWARE_LIST(config, "tosec_docs").set_original("amiga_tosec_docs");
+    SOFTWARE_LIST(config, "tosec_games").set_original("amiga_tosec_games");
+    SOFTWARE_LIST(config, "tosec_games_adds").set_original("amiga_tosec_games_adds");
+    SOFTWARE_LIST(config, "tosec_games_em").set_original("amiga_tosec_games_em");
+    SOFTWARE_LIST(config, "tosec_games_pd").set_original("amiga_tosec_games_pd");
+    SOFTWARE_LIST(config, "tosec_games_save").set_original("amiga_tosec_games_save");
+    SOFTWARE_LIST(config, "tosec_packmags").set_original("amiga_tosec_packmags");
 }
 
 void a1000_state::a1000(machine_config &config)
