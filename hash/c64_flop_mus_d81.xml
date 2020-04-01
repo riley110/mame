@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<softwarelist name="c64_flop_mus_d81" description="c64_flop_mus_d81">
+
+	<software name="set1" supported="no">
+		<description>Neotunes (2011-02-25)</description>
+		<year>2011</year>
+		<publisher>TheRyk</publisher>
+
+		<part name="flop" interface="floppy_3_5">
+			<dataarea name="data" size="819200">
+				<rom name="neotunes (2011-02-25)(theryk).d81" size="819200" crc="06fb2eb8" sha1="e26f07701c598d1e94fdb40f4e910afc70c7953c"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="set2" supported="no">
+		<description>Neotunes (2011-02-25, NeoRAM version)</description>
+		<year>2011</year>
+		<publisher>TheRyk</publisher>
+
+		<part name="flop" interface="floppy_3_5">
+			<dataarea name="data" size="819200">
+				<rom name="neotunes (2011-02-25)(theryk)[neoram version].d81" size="819200" crc="6374339b" sha1="03160156fdf375f3a3f1de55eadde7ff89bc2352"/>
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>
