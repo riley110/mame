@@ -1039,13 +1039,13 @@ void bbc_state::bbcb(machine_config &config)
     SOFTWARE_LIST(config, "flop_edu_ssd").set_original("bbc_flop_edu_ssd");
     SOFTWARE_LIST(config, "flop_games_adl").set_original("bbc_flop_games_adl");
     SOFTWARE_LIST(config, "flop_games_dsd").set_original("bbc_flop_games_dsd");
-    SOFTWARE_LIST(config, "flop_games_ssd").set_original("bbc_flop_games_dsd");
+    SOFTWARE_LIST(config, "flop_games_ssd").set_original("bbc_flop_games_ssd");
     SOFTWARE_LIST(config, "flop_mags_adl").set_original("bbc_flop_mags_adl");
     SOFTWARE_LIST(config, "flop_mags_dsd").set_original("bbc_flop_mags_dsd");
     SOFTWARE_LIST(config, "flop_mags_ssd").set_original("bbc_flop_mags_ssd");
     SOFTWARE_LIST(config, "flop_multi_adl").set_original("bbc_flop_multi_adl");
     SOFTWARE_LIST(config, "flop_multi_dsd").set_original("bbc_flop_multi_dsd");
-    SOFTWARE_LIST(config, "flop_multi_ssd").set_original("bbc_flop_multi_dsd");
+    SOFTWARE_LIST(config, "flop_multi_ssd").set_original("bbc_flop_multi_ssd");
 }
 
 
