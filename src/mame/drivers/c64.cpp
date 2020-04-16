@@ -1547,7 +1547,7 @@ void c64_state::ntsc(machine_config &config)
     
     SOFTWARE_LIST(config, "flop_acs").set_original("c64_flop_acs").set_filter("NTSC");
     SOFTWARE_LIST(config, "flop_anim").set_original("c64_flop_anim").set_filter("NTSC");
-    //SOFTWARE_LIST(config, "flop_apps_d64").set_original("c64_flop_apps_d64").set_filter("NTSC");
+    SOFTWARE_LIST(config, "flop_apps_d64").set_original("c64_flop_apps_d64").set_filter("NTSC");
     SOFTWARE_LIST(config, "flop_apps_d81").set_original("c64_flop_apps_d81").set_filter("NTSC");
     SOFTWARE_LIST(config, "flop_apps_g64").set_original("c64_flop_apps_g64").set_filter("NTSC");
     //SOFTWARE_LIST(config, "flop_bdash_d64").set_original("c64_flop_bdash_d64").set_filter("NTSC");
@@ -1776,7 +1776,7 @@ void c64_state::pal(machine_config &config)
     
     SOFTWARE_LIST(config, "flop_acs").set_original("c64_flop_acs").set_filter("PAL");
     SOFTWARE_LIST(config, "flop_anim").set_original("c64_flop_anim").set_filter("PAL");
-    //SOFTWARE_LIST(config, "flop_apps_d64").set_original("c64_flop_apps_d64").set_filter("PAL");
+    SOFTWARE_LIST(config, "flop_apps_d64").set_original("c64_flop_apps_d64").set_filter("PAL");
     SOFTWARE_LIST(config, "flop_apps_d81").set_original("c64_flop_apps_d81").set_filter("PAL");
     SOFTWARE_LIST(config, "flop_apps_g64").set_original("c64_flop_apps_g64").set_filter("PAL");
     //SOFTWARE_LIST(config, "flop_bdash_d64").set_original("c64_flop_bdash_d64").set_filter("PAL");
