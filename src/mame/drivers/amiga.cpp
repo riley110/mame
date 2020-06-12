@@ -629,12 +629,12 @@ WRITE8_MEMBER( cdtv_state::dmac_scsi_data_write )
 
 READ8_MEMBER( cdtv_state::dmac_io_read )
 {
-	return m_cdrom->read(space, 0);
+	return m_cdrom->read();
 }
 
 WRITE8_MEMBER( cdtv_state::dmac_io_write )
 {
-	m_cdrom->write(space, 0, data);
+	m_cdrom->write(data);
 }
 
 WRITE_LINE_MEMBER( cdtv_state::dmac_int_w )
@@ -1654,6 +1654,7 @@ void amiga_state::amiga_base(machine_config &config)
 	SOFTWARE_LIST(config, "ocs_list").set_original("amigaocs_flop");
     
     // TOSEC lists
+    /*
     SOFTWARE_LIST(config, "tosec_apps_pd").set_original("amiga_tosec_apps_pd");
     SOFTWARE_LIST(config, "tosec_apps").set_original("amiga_tosec_apps");
     SOFTWARE_LIST(config, "tosec_comp_apps").set_original("amiga_tosec_comp_apps");
@@ -1673,6 +1674,7 @@ void amiga_state::amiga_base(machine_config &config)
     SOFTWARE_LIST(config, "tosec_games_pd").set_original("amiga_tosec_games_pd");
     SOFTWARE_LIST(config, "tosec_games_save").set_original("amiga_tosec_games_save");
     SOFTWARE_LIST(config, "tosec_packmags").set_original("amiga_tosec_packmags");
+    */
 }
 
 void a1000_state::a1000(machine_config &config)

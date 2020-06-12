@@ -70,7 +70,7 @@ void beta_disk_device::disable()
 	m_betadisk_active = 0;
 }
 
-READ8_MEMBER(beta_disk_device::status_r)
+uint8_t beta_disk_device::status_r()
 {
 	if (m_betadisk_active==1) {
 		return m_wd179x->status_r();
@@ -79,7 +79,7 @@ READ8_MEMBER(beta_disk_device::status_r)
 	}
 }
 
-READ8_MEMBER(beta_disk_device::track_r)
+uint8_t beta_disk_device::track_r()
 {
 	if (m_betadisk_active==1) {
 		return m_wd179x->track_r();
@@ -88,7 +88,7 @@ READ8_MEMBER(beta_disk_device::track_r)
 	}
 }
 
-READ8_MEMBER(beta_disk_device::sector_r)
+uint8_t beta_disk_device::sector_r()
 {
 	if (m_betadisk_active==1) {
 		return m_wd179x->sector_r();
@@ -97,7 +97,7 @@ READ8_MEMBER(beta_disk_device::sector_r)
 	}
 }
 
-READ8_MEMBER(beta_disk_device::data_r)
+uint8_t beta_disk_device::data_r()
 {
 	if (m_betadisk_active==1) {
 		return m_wd179x->data_r();
@@ -106,10 +106,10 @@ READ8_MEMBER(beta_disk_device::data_r)
 	}
 }
 
-READ8_MEMBER(beta_disk_device::state_r)
+uint8_t beta_disk_device::state_r()
 {
 	if (m_betadisk_active==1) {
-		uint8_t result = 0x3F;        // actually open bus
+		uint8_t result = 0x3f;        // actually open bus
 		result |= m_wd179x->drq_r() ? 0x40 : 0;
 		result |= m_wd179x->intrq_r() ? 0x80 : 0;
 		return result;
@@ -118,7 +118,7 @@ READ8_MEMBER(beta_disk_device::state_r)
 	}
 }
 
-WRITE8_MEMBER(beta_disk_device::param_w)
+void beta_disk_device::param_w(uint8_t data)
 {
 	if (m_betadisk_active == 1)
 	{
@@ -144,28 +144,28 @@ WRITE8_MEMBER(beta_disk_device::param_w)
 	}
 }
 
-WRITE8_MEMBER(beta_disk_device::command_w)
+void beta_disk_device::command_w(uint8_t data)
 {
 	if (m_betadisk_active==1) {
 		m_wd179x->cmd_w(data);
 	}
 }
 
-WRITE8_MEMBER(beta_disk_device::track_w)
+void beta_disk_device::track_w(uint8_t data)
 {
 	if (m_betadisk_active==1) {
 		m_wd179x->track_w(data);
 	}
 }
 
-WRITE8_MEMBER(beta_disk_device::sector_w)
+void beta_disk_device::sector_w(uint8_t data)
 {
 	if (m_betadisk_active==1) {
 		m_wd179x->sector_w(data);
 	}
 }
 
-WRITE8_MEMBER(beta_disk_device::data_w)
+void beta_disk_device::data_w(uint8_t data)
 {
 	if (m_betadisk_active==1) {
 		m_wd179x->data_w(data);

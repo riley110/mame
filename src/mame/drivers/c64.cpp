@@ -1545,6 +1545,7 @@ void c64_state::ntsc(machine_config &config)
 	SOFTWARE_LIST(config, "flop525_clean").set_compatible("c64_flop_clcracked").set_filter("NTSC");
 	SOFTWARE_LIST(config, "flop525_misc").set_compatible("c64_flop_misc").set_filter("NTSC");
     
+    /*
     SOFTWARE_LIST(config, "flop_acs").set_original("c64_flop_acs").set_filter("NTSC");
     SOFTWARE_LIST(config, "flop_anim").set_original("c64_flop_anim").set_filter("NTSC");
     SOFTWARE_LIST(config, "flop_apps_d64").set_original("c64_flop_apps_d64").set_filter("NTSC");
@@ -1599,7 +1600,8 @@ void c64_state::ntsc(machine_config &config)
     SOFTWARE_LIST(config, "flop_test_d64").set_original("c64_flop_test_d64").set_filter("NTSC");
     SOFTWARE_LIST(config, "flop_test_d71").set_original("c64_flop_test_d71").set_filter("NTSC");
     SOFTWARE_LIST(config, "flop_test_g64").set_original("c64_flop_test_g64").set_filter("NTSC");
-
+    */
+    
 	// internal ram
 	RAM(config, RAM_TAG).set_default_size("64K");
 }
@@ -1774,6 +1776,7 @@ void c64_state::pal(machine_config &config)
 	SOFTWARE_LIST(config, "flop525_clean").set_compatible("c64_flop_clcracked").set_filter("PAL");
 	SOFTWARE_LIST(config, "flop525_misc").set_compatible("c64_flop_misc").set_filter("PAL");
     
+    /*
     SOFTWARE_LIST(config, "flop_acs").set_original("c64_flop_acs").set_filter("PAL");
     SOFTWARE_LIST(config, "flop_anim").set_original("c64_flop_anim").set_filter("PAL");
     SOFTWARE_LIST(config, "flop_apps_d64").set_original("c64_flop_apps_d64").set_filter("PAL");
@@ -1828,7 +1831,8 @@ void c64_state::pal(machine_config &config)
     SOFTWARE_LIST(config, "flop_test_d64").set_original("c64_flop_test_d64").set_filter("PAL");
     SOFTWARE_LIST(config, "flop_test_d71").set_original("c64_flop_test_d71").set_filter("PAL");
     SOFTWARE_LIST(config, "flop_test_g64").set_original("c64_flop_test_g64").set_filter("PAL");
-
+    */
+    
 	// internal ram
 	RAM(config, RAM_TAG).set_default_size("64K");
 }
