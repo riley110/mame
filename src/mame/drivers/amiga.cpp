@@ -1654,7 +1654,6 @@ void amiga_state::amiga_base(machine_config &config)
 	SOFTWARE_LIST(config, "ocs_list").set_original("amigaocs_flop");
     
     // TOSEC lists
-    /*
     SOFTWARE_LIST(config, "tosec_apps_pd").set_original("amiga_tosec_apps_pd");
     SOFTWARE_LIST(config, "tosec_apps").set_original("amiga_tosec_apps");
     SOFTWARE_LIST(config, "tosec_comp_apps").set_original("amiga_tosec_comp_apps");
@@ -1674,7 +1673,6 @@ void amiga_state::amiga_base(machine_config &config)
     SOFTWARE_LIST(config, "tosec_games_pd").set_original("amiga_tosec_games_pd");
     SOFTWARE_LIST(config, "tosec_games_save").set_original("amiga_tosec_games_save");
     SOFTWARE_LIST(config, "tosec_packmags").set_original("amiga_tosec_packmags");
-    */
 }
 
 void a1000_state::a1000(machine_config &config)
