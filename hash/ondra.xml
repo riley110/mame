@@ -129,6 +129,87 @@ If asked for numbers, press letters: Q = 1, W = 2, E = 3, etc.
 		</part>
 	</software>
 
+    <software name="mestorob">
+        <description>Mesto Robotu</description>
+        <year>19??</year>
+        <publisher>&lt;unknown&gt;</publisher>
+        <info name="usage" value="Ondrav only. Hit enter to load and run." />
 
+        <part name="cass1" interface="ondra_cass">
+        <feature name="part_id" value="Tape 1"/>
+            <dataarea name="cass" size="1594992">
+                <rom name="mesto_robotu.wav" size="1594992" crc="f6d64f93" sha1="2588d9c28635d467afe62ddcf1c6fbf6e650fbc8" offset="0" />
+            </dataarea>
+        </part>
+        <part name="cass2" interface="ondra_cass">
+        <feature name="part_id" value="Tape 2 (Saves)"/>
+            <dataarea name="cass" size="184348">
+                <rom name="mr_saves_11m8.wav" size="184348" crc="b857b156" sha1="813ad1e7ed8a27e95e53a9e7a10217d0fd15daf6" offset="0" />
+            </dataarea>
+        </part>
+    </software>
+
+    <software name="slideshw">
+        <description>Ondra Slideshow</description>
+        <year>2014</year>
+        <publisher>Solaris104 - ub880d</publisher>
+        <info name="usage" value="Ondrav only. Hit enter to load and run." />
+
+        <part name="cass" interface="ondra_cass">
+            <dataarea name="cass" size="11487876">
+                <rom name="slideshow.wav" size="11487876" crc="420c03d3" sha1="61cc8c5914cd524af9ffb4c67930f2365f5bed82" offset="0" />
+            </dataarea>
+        </part>
+    </software>
+
+    <!-- Tapes for use with MIKOS (need to be looked at soon) -->
+
+    <software name="basicexp" supported="no">
+        <description>Basic EXP</description>
+        <year>19??</year>
+        <publisher>&lt;unknown&gt;</publisher>
+
+        <part name="cass1" interface="ondra_cass">
+            <dataarea name="cass" size="9248696">
+                <rom name="basic_exp.wav" size="9248696" crc="452a09ca" sha1="0a3917fd22c42ffdbd23b7af870cf43e8a45a7d1" offset="0" />
+            </dataarea>
+        </part>
+    </software>
+
+    <software name="ceska" supported="no">
+        <description>Ceska abeceda</description>
+        <year>19??</year>
+        <publisher>&lt;unknown&gt;</publisher>
+
+        <part name="cass1" interface="ondra_cass">
+            <dataarea name="cass" size="337703">
+                <rom name="ceska_abeceda.wav" size="337703" crc="3907729d" sha1="df5da0a997ed6ea045713ecb994ef3ca24da2131" offset="0" />
+            </dataarea>
+        </part>
+    </software>
+
+    <software name="tedit" supported="no">
+        <description>TEdit</description>
+        <year>19??</year>
+        <publisher>&lt;unknown&gt;</publisher>
+
+        <part name="cass1" interface="ondra_cass">
+            <dataarea name="cass" size="1205003">
+                <rom name="tedit.wav" size="1205003" crc="be0dd6f9" sha1="dc16ce9cd0520c3c5efc17d6a0026ec7dc0d505d" offset="0" />
+            </dataarea>
+        </part>
+    </software>
+
+    <software name="tool80" supported="no">
+        <description>Tool 80</description>
+        <year>19??</year>
+        <publisher>&lt;unknown&gt;</publisher>
+
+        <part name="cass1" interface="ondra_cass">
+            <dataarea name="cass" size="1762060">
+                <rom name="tool_80.wav" size="1762060" crc="5084c825" sha1="5fc1029e4ea4ef66fa767426c74f1981576fa847" offset="0" />
+            </dataarea>
+        </part>
+    </software>
 
 </softwarelist>
