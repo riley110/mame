@@ -14,7 +14,7 @@
 #define CURSOR_XPOS         168
 #define CURSOR_YPOS         239
 #define FRAMEBUFFER_MAX_X   431
-#define FRAMEBUFFER_MAX_Y   (uint32_t)((FRAMEBUFFER_CLOCK / (float)(FRAMEBUFFER_MAX_X-1)) / ((float)PIXEL_CLOCK/(HTOTAL*VTOTAL)))
+#define FRAMEBUFFER_MAX_Y   (uint32_t)((FRAMEBUFFER_CLOCK / (FRAMEBUFFER_MAX_X-1)).dvalue() / (PIXEL_CLOCK/(HTOTAL*VTOTAL)).dvalue())
 
 
 /*************************************
@@ -23,12 +23,12 @@
  *
  *************************************/
 
-READ16_MEMBER(lockon_state::lockon_crtc_r)
+uint16_t lockon_state::lockon_crtc_r()
 {
 	return 0xffff;
 }
 
-WRITE16_MEMBER(lockon_state::lockon_crtc_w)
+void lockon_state::lockon_crtc_w(offs_t offset, uint16_t data)
 {
 #if 0
 	data &= 0xff;
@@ -67,7 +67,7 @@ WRITE16_MEMBER(lockon_state::lockon_crtc_w)
 TIMER_CALLBACK_MEMBER(lockon_state::cursor_callback)
 {
 	if (m_main_inten)
-		m_maincpu->set_input_line_and_vector(0, HOLD_LINE, 0xff);
+		m_maincpu->set_input_line_and_vector(0, HOLD_LINE, 0xff); // V30
 
 	m_cursor_timer->adjust(m_screen->time_until_pos(CURSOR_YPOS, CURSOR_XPOS));
 }
@@ -98,16 +98,15 @@ static const res_net_info lockon_pd_net_info =
 	}
 };
 
-PALETTE_INIT_MEMBER(lockon_state, lockon)
+void lockon_state::lockon_palette(palette_device &palette) const
 {
-	const uint8_t *color_prom = memregion("proms")->base();
-	int i;
+	uint8_t const *const color_prom = memregion("proms")->base();
 
-	for (i = 0; i < 1024; ++i)
+	for (int i = 0; i < 1024; ++i)
 	{
 		uint8_t r, g, b;
-		uint8_t p1 = color_prom[i];
-		uint8_t p2 = color_prom[i + 0x400];
+		uint8_t const p1 = color_prom[i];
+		uint8_t const p2 = color_prom[i + 0x400];
 
 		if (p2 & 0x80)
 		{
@@ -133,7 +132,7 @@ PALETTE_INIT_MEMBER(lockon_state, lockon)
  *
  *************************************/
 
-WRITE16_MEMBER(lockon_state::lockon_char_w)
+void lockon_state::lockon_char_w(offs_t offset, uint16_t data)
 {
 	m_char_ram[offset] = data;
 	m_tilemap->mark_tile_dirty(offset);
@@ -145,7 +144,7 @@ TILE_GET_INFO_MEMBER(lockon_state::get_lockon_tile_info)
 	uint32_t col = (m_char_ram[tile_index] >> 10) & 0x3f;
 
 	col = (col & 0x1f) + (col & 0x20 ? 64 : 0);
-	SET_TILE_INFO_MEMBER(0, tileno, col, 0);
+	tileinfo.set(0, tileno, col, 0);
 }
 
 
@@ -155,12 +154,12 @@ TILE_GET_INFO_MEMBER(lockon_state::get_lockon_tile_info)
 
 *******************************************************************************************/
 
-WRITE16_MEMBER(lockon_state::lockon_scene_h_scr_w)
+void lockon_state::lockon_scene_h_scr_w(uint16_t data)
 {
 	m_scroll_h = data & 0x1ff;
 }
 
-WRITE16_MEMBER(lockon_state::lockon_scene_v_scr_w)
+void lockon_state::lockon_scene_v_scr_w(uint16_t data)
 {
 	m_scroll_v = data & 0x81ff;
 }
@@ -275,14 +274,14 @@ void lockon_state::scene_draw(  )
 
  *******************************************************************************************/
 
-WRITE16_MEMBER(lockon_state::lockon_ground_ctrl_w)
+void lockon_state::lockon_ground_ctrl_w(uint16_t data)
 {
 	m_ground_ctrl = data & 0xff;
 }
 
 TIMER_CALLBACK_MEMBER(lockon_state::bufend_callback)
 {
-	m_ground->set_input_line_and_vector(0, HOLD_LINE, 0xff);
+	m_ground->set_input_line_and_vector(0, HOLD_LINE, 0xff); // V30
 	m_object->set_input_line(NEC_INPUT_LINE_POLL, ASSERT_LINE);
 }
 
@@ -599,7 +598,7 @@ void lockon_state::objects_draw(  )
 }
 
 /* The mechanism used by the object CPU to update the object ASICs palette RAM */
-WRITE16_MEMBER(lockon_state::lockon_tza112_w)
+void lockon_state::lockon_tza112_w(offs_t offset, uint16_t data)
 {
 	if (m_iden)
 	{
@@ -609,13 +608,13 @@ WRITE16_MEMBER(lockon_state::lockon_tza112_w)
 	}
 }
 
-READ16_MEMBER(lockon_state::lockon_obj_4000_r)
+uint16_t lockon_state::lockon_obj_4000_r()
 {
 	m_object->set_input_line(NEC_INPUT_LINE_POLL, CLEAR_LINE);
 	return 0xffff;
 }
 
-WRITE16_MEMBER(lockon_state::lockon_obj_4000_w)
+void lockon_state::lockon_obj_4000_w(uint16_t data)
 {
 	m_iden = data & 1;
 }
@@ -643,7 +642,7 @@ WRITE16_MEMBER(lockon_state::lockon_obj_4000_w)
 
 *******************************************************************************************/
 
-WRITE16_MEMBER(lockon_state::lockon_fb_clut_w)
+void lockon_state::lockon_fb_clut_w(offs_t offset, uint16_t data)
 {
 	rgb_t color;
 
@@ -652,7 +651,7 @@ WRITE16_MEMBER(lockon_state::lockon_fb_clut_w)
 }
 
 /* Rotation control register */
-WRITE16_MEMBER(lockon_state::lockon_rotate_w)
+void lockon_state::lockon_rotate_w(offs_t offset, uint16_t data)
 {
 	switch (offset & 7)
 	{
@@ -887,7 +886,7 @@ void lockon_state::hud_draw( bitmap_ind16 &bitmap, const rectangle &cliprect )
 
 void lockon_state::video_start()
 {
-	m_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(lockon_state::get_lockon_tile_info),this), TILEMAP_SCAN_ROWS, 8, 8, 64, 32);
+	m_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(lockon_state::get_lockon_tile_info)), TILEMAP_SCAN_ROWS, 8, 8, 64, 32);
 	m_tilemap->set_transparent_pen(0);
 
 	/* Allocate the two frame buffers for rotation */
@@ -906,7 +905,7 @@ void lockon_state::video_start()
 
 	save_item(NAME(*m_back_buffer));
 	save_item(NAME(*m_front_buffer));
-	save_pointer(NAME(m_obj_pal_ram.get()), 2048);
+	save_pointer(NAME(m_obj_pal_ram), 2048);
 }
 
 uint32_t lockon_state::screen_update_lockon(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect)

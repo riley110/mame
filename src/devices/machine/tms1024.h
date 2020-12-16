@@ -11,17 +11,6 @@
 
 #pragma once
 
-
-
-// ports setup
-
-// 4-bit ports (3210 = DCBA)
-// valid ports: 4-7 for TMS1024, 1-7 for TMS1025
-#define MCFG_TMS1025_READ_PORT_CB(X, cb) \
-		devcb = &tms1024_device::set_read_port_callback<(tms1024_device::X)>(*device, (DEVCB_##cb));
-#define MCFG_TMS1025_WRITE_PORT_CB(X, cb) \
-		devcb = &tms1024_device::set_write_port_callback<(tms1024_device::X)>(*device, (DEVCB_##cb));
-
 // pinout reference
 
 /*
@@ -55,6 +44,8 @@
 class tms1024_device : public device_t
 {
 public:
+	// 4-bit ports (3210 = DCBA)
+	// valid ports: 4-7 for TMS1024, 1-7 for TMS1025
 	enum
 	{
 		PORT1 = 0,
@@ -66,23 +57,24 @@ public:
 		PORT7
 	};
 
-	tms1024_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock);
+	tms1024_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock = 0);
 
-	// static configuration helpers
-	template <unsigned N, class Object> static devcb_base &set_read_port_callback(device_t &device, Object &&cb)
-	{
-		return downcast<tms1024_device &>(device).m_read_port[N].set_callback(std::forward<Object>(cb));
-	}
-	template <unsigned N, class Object> static devcb_base &set_write_port_callback(device_t &device, Object &&cb)
-	{
-		return downcast<tms1024_device &>(device).m_write_port[N].set_callback(std::forward<Object>(cb));
-	}
+	// configuration helpers
+	auto read_port4_callback() { return m_read_port[3].bind(); }
+	auto read_port5_callback() { return m_read_port[4].bind(); }
+	auto read_port6_callback() { return m_read_port[5].bind(); }
+	auto read_port7_callback() { return m_read_port[6].bind(); }
+	auto write_port4_callback() { return m_write_port[3].bind(); }
+	auto write_port5_callback() { return m_write_port[4].bind(); }
+	auto write_port6_callback() { return m_write_port[5].bind(); }
+	auto write_port7_callback() { return m_write_port[6].bind(); }
+	tms1024_device &set_ms(int state) { m_ms = state ? 1 : 0; return *this; } // if hardwired, can just set MS pin state here
 
-	DECLARE_WRITE8_MEMBER(write_h);
-	DECLARE_READ8_MEMBER(read_h);
-	DECLARE_WRITE8_MEMBER(write_s);
-	DECLARE_WRITE_LINE_MEMBER(write_std);
-	DECLARE_WRITE_LINE_MEMBER(write_ms);
+	void write_h(u8 data);
+	u8 read_h();
+	void write_s(u8 data);
+	void write_std(int state);
+	void write_ms(int state);
 
 protected:
 	tms1024_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, u32 clock);
@@ -96,15 +88,22 @@ protected:
 	u8 m_ms;     // mode select pin, default to read mode
 
 	// callbacks
-	devcb_read8 m_read_port[7];
-	devcb_write8 m_write_port[7];
+	devcb_read8::array<7> m_read_port;
+	devcb_write8::array<7> m_write_port;
 };
 
 
 class tms1025_device : public tms1024_device
 {
 public:
-	tms1025_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock);
+	tms1025_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock = 0);
+
+	auto read_port1_callback() { return m_read_port[0].bind(); }
+	auto read_port2_callback() { return m_read_port[1].bind(); }
+	auto read_port3_callback() { return m_read_port[2].bind(); }
+	auto write_port1_callback() { return m_write_port[0].bind(); }
+	auto write_port2_callback() { return m_write_port[1].bind(); }
+	auto write_port3_callback() { return m_write_port[2].bind(); }
 };
 
 

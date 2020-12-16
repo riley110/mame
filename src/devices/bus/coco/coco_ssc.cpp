@@ -31,14 +31,16 @@
 ***************************************************************************/
 
 #include "emu.h"
+#include "coco_ssc.h"
+
+#include "cpu/tms7000/tms7000.h"
+#include "machine/netlist.h"
+#include "machine/ram.h"
+#include "netlist/devices/net_lib.h"
 #include "sound/ay8910.h"
 #include "sound/sp0256.h"
-#include "machine/netlist.h"
-#include "netlist/devices/net_lib.h"
-#include "cpu/tms7000/tms7000.h"
+
 #include "speaker.h"
-#include "cococart.h"
-#include "machine/ram.h"
 
 #define LOG_SSC 0
 #define PIC_TAG "pic7040"
@@ -70,43 +72,43 @@ namespace
 	// ======================> coco_ssc_device
 
 	class coco_ssc_device :
-		public device_t,
-		public device_cococart_interface
+			public device_t,
+			public device_cococart_interface
 	{
 	public:
 		// construction/destruction
-		coco_ssc_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+		coco_ssc_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock);
 
 		// optional information overrides
 		virtual const tiny_rom_entry *device_rom_region() const override;
 		virtual void device_add_mconfig(machine_config &config) override;
 		virtual void device_reset() override;
 
-		DECLARE_READ8_MEMBER(ssc_port_a_r);
-		DECLARE_WRITE8_MEMBER(ssc_port_b_w);
-		DECLARE_READ8_MEMBER(ssc_port_c_r);
-		DECLARE_WRITE8_MEMBER(ssc_port_c_w);
-		DECLARE_READ8_MEMBER(ssc_port_d_r);
-		DECLARE_WRITE8_MEMBER(ssc_port_d_w);
+		u8 ssc_port_a_r();
+		void ssc_port_b_w(u8 data);
+		u8 ssc_port_c_r();
+		void ssc_port_c_w(u8 data);
+		u8 ssc_port_d_r();
+		void ssc_port_d_w(u8 data);
 
 	protected:
 		// device-level overrides
 		virtual void device_start() override;
 		virtual void device_timer(emu_timer &timer, device_timer_id id, int param, void *ptr) override;
-		virtual DECLARE_READ8_MEMBER(ff7d_read);
-		virtual DECLARE_WRITE8_MEMBER(ff7d_write);
+		u8 ff7d_read(offs_t offset);
+		void ff7d_write(offs_t offset, u8 data);
 		virtual void set_sound_enable(bool sound_enable) override;
 		static constexpr device_timer_id BUSY_TIMER_ID  = 0;
 
 	private:
-		uint8_t                                 m_reset_line;
+		u8                                      m_reset_line;
 		bool                                    m_tms7000_busy;
-		uint8_t                                 m_tms7000_porta;
-		uint8_t                                 m_tms7000_portb;
-		uint8_t                                 m_tms7000_portc;
-		uint8_t                                 m_tms7000_portd;
+		u8                                      m_tms7000_porta;
+		u8                                      m_tms7000_portb;
+		u8                                      m_tms7000_portc;
+		u8                                      m_tms7000_portd;
 		emu_timer                               *m_tms7000_busy_timer;
-		required_device<cpu_device>             m_tms7040;
+		required_device<tms7040_device>         m_tms7040;
 		required_device<ram_device>             m_staticram;
 		required_device<ay8910_device>          m_ay;
 		required_device<sp0256_device>          m_spo;
@@ -119,7 +121,7 @@ namespace
 		public device_sound_interface
 	{
 	public:
-		cocossc_sac_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+		cocossc_sac_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock);
 		~cocossc_sac_device() { }
 		bool sound_activity_circuit_output();
 
@@ -142,7 +144,7 @@ namespace
 //  GLOBAL VARIABLES
 //**************************************************************************
 
-DEFINE_DEVICE_TYPE(COCO_SSC, coco_ssc_device, "coco_ssc", "CoCo S/SC PAK");
+DEFINE_DEVICE_TYPE_PRIVATE(COCO_SSC, device_cococart_interface, coco_ssc_device, "coco_ssc", "CoCo S/SC PAK");
 DEFINE_DEVICE_TYPE(COCOSSC_SAC, cocossc_sac_device, "cocossc_sac", "CoCo SSC Sound Activity Circuit");
 
 
@@ -150,34 +152,31 @@ DEFINE_DEVICE_TYPE(COCOSSC_SAC, cocossc_sac_device, "cocossc_sac", "CoCo SSC Sou
 //  MACHINE FRAGMENTS AND ADDRESS MAPS
 //**************************************************************************
 
-static ADDRESS_MAP_START(ssc_io_map, AS_IO, 8, coco_ssc_device)
-	AM_RANGE(TMS7000_PORTA, TMS7000_PORTA) AM_READ(ssc_port_a_r)
-	AM_RANGE(TMS7000_PORTB, TMS7000_PORTB) AM_WRITE(ssc_port_b_w)
-	AM_RANGE(TMS7000_PORTC, TMS7000_PORTC) AM_READWRITE(ssc_port_c_r, ssc_port_c_w)
-	AM_RANGE(TMS7000_PORTD, TMS7000_PORTD) AM_READWRITE(ssc_port_d_r, ssc_port_d_w)
-ADDRESS_MAP_END
+void coco_ssc_device::device_add_mconfig(machine_config &config)
+{
+	TMS7040(config, m_tms7040, DERIVED_CLOCK(2, 1));
+	m_tms7040->in_porta().set(FUNC(coco_ssc_device::ssc_port_a_r));
+	m_tms7040->out_portb().set(FUNC(coco_ssc_device::ssc_port_b_w));
+	m_tms7040->in_portc().set(FUNC(coco_ssc_device::ssc_port_c_r));
+	m_tms7040->out_portc().set(FUNC(coco_ssc_device::ssc_port_c_w));
+	m_tms7040->in_portd().set(FUNC(coco_ssc_device::ssc_port_d_r));
+	m_tms7040->out_portd().set(FUNC(coco_ssc_device::ssc_port_d_w));
 
-MACHINE_CONFIG_MEMBER(coco_ssc_device::device_add_mconfig)
-	MCFG_CPU_ADD(PIC_TAG, TMS7040, DERIVED_CLOCK(1, 2))
-	MCFG_CPU_IO_MAP(ssc_io_map)
+	RAM(config, "staticram").set_default_size("2K").set_default_value(0);
 
-	MCFG_RAM_ADD("staticram")
-	MCFG_RAM_DEFAULT_SIZE("2K")
-	MCFG_RAM_DEFAULT_VALUE(0x00)
+	SPEAKER(config, "ssc_audio").front_center();
 
-	MCFG_SPEAKER_STANDARD_MONO("ssc_audio")
+	SP0256(config, m_spo, XTAL(3'120'000));
+	m_spo->add_route(ALL_OUTPUTS, "ssc_audio", SP0256_GAIN);
+	m_spo->data_request_callback().set_inputline(m_tms7040, TMS7000_INT1_LINE);
 
-	MCFG_SOUND_ADD(SP0256_TAG, SP0256, XTAL_3_12MHz)
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "ssc_audio", SP0256_GAIN)
-	MCFG_SP0256_DATA_REQUEST_CB(INPUTLINE(PIC_TAG, TMS7000_INT1_LINE))
+	AY8913(config, m_ay, DERIVED_CLOCK(2, 1));
+	m_ay->set_flags(AY8910_SINGLE_OUTPUT);
+	m_ay->add_route(ALL_OUTPUTS, "coco_sac_tag", AY8913_GAIN);
 
-	MCFG_SOUND_ADD(AY_TAG, AY8913, DERIVED_CLOCK(1, 2))
-	MCFG_AY8910_OUTPUT_TYPE(AY8910_SINGLE_OUTPUT)
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "coco_sac_tag", AY8913_GAIN)
-
-	MCFG_DEVICE_ADD("coco_sac_tag", COCOSSC_SAC, DERIVED_CLOCK(1, 2))
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "ssc_audio", 1.0)
-MACHINE_CONFIG_END
+	COCOSSC_SAC(config, m_sac, DERIVED_CLOCK(2, 1));
+	m_sac->add_route(ALL_OUTPUTS, "ssc_audio", 1.0);
+}
 
 ROM_START(coco_ssc)
 	ROM_REGION(0x1000, PIC_TAG, 0)
@@ -194,7 +193,7 @@ ROM_END
 //  coco_ssc_device - constructor
 //-------------------------------------------------
 
-coco_ssc_device::coco_ssc_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
+coco_ssc_device::coco_ssc_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock)
 		: device_t(mconfig, COCO_SSC, tag, owner, clock),
 		device_cococart_interface(mconfig, *this ),
 		m_tms7040(*this, PIC_TAG),
@@ -212,9 +211,9 @@ coco_ssc_device::coco_ssc_device(const machine_config &mconfig, const char *tag,
 void coco_ssc_device::device_start()
 {
 	// install $FF7D-E handler
-	write8_delegate wh = write8_delegate(FUNC(coco_ssc_device::ff7d_write), this);
-	read8_delegate rh = read8_delegate(FUNC(coco_ssc_device::ff7d_read), this);
-	install_readwrite_handler(0xFF7D, 0xFF7E, rh, wh);
+	install_readwrite_handler(0xFF7D, 0xFF7E,
+			read8sm_delegate(*this, FUNC(coco_ssc_device::ff7d_read)),
+			write8sm_delegate(*this, FUNC(coco_ssc_device::ff7d_write)));
 
 	save_item(NAME(m_reset_line));
 	save_item(NAME(m_tms7000_busy));
@@ -291,9 +290,9 @@ void coco_ssc_device::set_sound_enable(bool sound_enable)
 //  ff7d_read
 //-------------------------------------------------
 
-READ8_MEMBER(coco_ssc_device::ff7d_read)
+u8 coco_ssc_device::ff7d_read(offs_t offset)
 {
-	uint8_t data = 0xff;
+	u8 data = 0xff;
 
 	switch(offset)
 	{
@@ -349,7 +348,7 @@ READ8_MEMBER(coco_ssc_device::ff7d_read)
 //  ff7d_write
 //-------------------------------------------------
 
-WRITE8_MEMBER(coco_ssc_device::ff7d_write)
+void coco_ssc_device::ff7d_write(offs_t offset, u8 data)
 {
 	switch(offset)
 	{
@@ -392,7 +391,7 @@ WRITE8_MEMBER(coco_ssc_device::ff7d_write)
 //  Handlers for secondary CPU ports
 //-------------------------------------------------
 
-READ8_MEMBER(coco_ssc_device::ssc_port_a_r)
+u8 coco_ssc_device::ssc_port_a_r()
 {
 	if (LOG_SSC)
 	{
@@ -404,7 +403,7 @@ READ8_MEMBER(coco_ssc_device::ssc_port_a_r)
 	return m_tms7000_porta;
 }
 
-WRITE8_MEMBER(coco_ssc_device::ssc_port_b_w)
+void coco_ssc_device::ssc_port_b_w(u8 data)
 {
 	if (LOG_SSC)
 	{
@@ -414,7 +413,7 @@ WRITE8_MEMBER(coco_ssc_device::ssc_port_b_w)
 	m_tms7000_portb = data;
 }
 
-READ8_MEMBER(coco_ssc_device::ssc_port_c_r)
+u8 coco_ssc_device::ssc_port_c_r()
 {
 	if (LOG_SSC)
 	{
@@ -424,11 +423,11 @@ READ8_MEMBER(coco_ssc_device::ssc_port_c_r)
 	return m_tms7000_portc;
 }
 
-WRITE8_MEMBER(coco_ssc_device::ssc_port_c_w)
+void coco_ssc_device::ssc_port_c_w(u8 data)
 {
 	if( (data & C_RCS) == 0 && (data & C_RRW) == 0) /* static RAM write */
 	{
-		uint16_t address = (uint16_t)data << 8;
+		u16 address = u16(data) << 8;
 		address += m_tms7000_portb;
 		address &= 0x7ff;
 
@@ -439,18 +438,18 @@ WRITE8_MEMBER(coco_ssc_device::ssc_port_c_w)
 	{
 		if( (data & (C_BDR|C_BC1)) == (C_BDR|C_BC1) ) /* BDIR = 1, BC1 = 1: latch address */
 		{
-			m_ay->address_w(space, 0, m_tms7000_portd);
+			m_ay->address_w(m_tms7000_portd);
 		}
 
 		if( ((data & C_BDR) == C_BDR) && ((data & C_BC1) == 0) ) /* BDIR = 1, BC1 = 0: write data */
 		{
-			m_ay->data_w(space, 0, m_tms7000_portd);
+			m_ay->data_w(m_tms7000_portd);
 		}
 	}
 
 	if( (data & C_ALD) == 0 )
 	{
-		m_spo->ald_w(space, 0, m_tms7000_portd);
+		m_spo->ald_w(m_tms7000_portd);
 	}
 
 	if( ((m_tms7000_portc & C_BSY) == 0) && ((data & C_BSY) == C_BSY) )
@@ -476,14 +475,14 @@ WRITE8_MEMBER(coco_ssc_device::ssc_port_c_w)
 	m_tms7000_portc = data;
 }
 
-READ8_MEMBER(coco_ssc_device::ssc_port_d_r)
+u8 coco_ssc_device::ssc_port_d_r()
 {
 	if( ((m_tms7000_portc & C_RCS) == 0) && ((m_tms7000_portc & C_ACS) == 0))
 		logerror( "[%s] Warning: Reading RAM and PSG at the same time!\n", machine().describe_context() );
 
 	if( ((m_tms7000_portc & C_RCS) == 0)  && ((m_tms7000_portc & C_RRW) == C_RRW)) /* static ram chip select (low) and static ram chip read (high) */
 	{
-		uint16_t address = (uint16_t)m_tms7000_portc << 8;
+		u16 address = u16(m_tms7000_portc) << 8;
 		address += m_tms7000_portb;
 		address &= 0x7ff;
 
@@ -494,7 +493,7 @@ READ8_MEMBER(coco_ssc_device::ssc_port_d_r)
 	{
 		if( ((m_tms7000_portc & C_BDR) == 0) && ((m_tms7000_portc & C_BC1) == C_BC1) ) /* psg read data */
 		{
-			m_tms7000_portd = m_ay->data_r(space, 0);
+			m_tms7000_portd = m_ay->data_r();
 		}
 	}
 
@@ -506,7 +505,7 @@ READ8_MEMBER(coco_ssc_device::ssc_port_d_r)
 	return m_tms7000_portd;
 }
 
-WRITE8_MEMBER(coco_ssc_device::ssc_port_d_w)
+void coco_ssc_device::ssc_port_d_w(u8 data)
 {
 	if (LOG_SSC)
 	{
@@ -521,7 +520,7 @@ WRITE8_MEMBER(coco_ssc_device::ssc_port_d_w)
 //  cocossc_sac_device - constructor
 //-------------------------------------------------
 
-cocossc_sac_device::cocossc_sac_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
+cocossc_sac_device::cocossc_sac_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock)
 	: device_t(mconfig, COCOSSC_SAC, tag, owner, clock),
 		device_sound_interface(mconfig, *this),
 		m_stream(nullptr),

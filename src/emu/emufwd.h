@@ -14,6 +14,8 @@
 
 #pragma once
 
+#include <type_traits>
+
 
 //----------------------------------
 // 3rdparty
@@ -94,15 +96,28 @@ class debug_view_manager;
 class parsed_expression;
 class symbol_table;
 
+// declared in debug/points.h
+class debug_breakpoint;
+class debug_watchpoint;
+class debug_registerpoint;
+
 // declared in debugger.h
 class debugger_manager;
 
+// declared in devcb.h
+class devcb_base;
+template <typename Input, std::make_unsigned_t<Input> DefaultMask> class devcb_write;
+
 // declared in devfind.h
 class finder_base;
+template <class DeviceClass, bool Required> class device_finder;
 
 // declared in device.h
 class device_interface;
 class device_t;
+
+// declared in didisasm.h
+class device_disasm_interface;
 
 // declared in diexec.h
 class device_execute_interface;
@@ -130,7 +145,6 @@ class driver_device;
 
 // declared in emumem.h
 class address_space;
-class direct_read_data;
 class memory_bank;
 class memory_block;
 class memory_manager;
@@ -139,9 +153,6 @@ class memory_share;
 
 // declared in emuopts.h
 class emu_options;
-
-// declared in emupal.h
-class palette_device;
 
 // declared in gamedrv.h
 class game_driver;
@@ -171,6 +182,7 @@ struct ioport_port_live;
 class running_machine;
 
 // declared in mconfig.h
+namespace emu { namespace detail { class machine_config_replace; } }
 class machine_config;
 
 // declared in natkeyboard.h
@@ -217,6 +229,9 @@ class software_list_loader;
 // declared in sound.h
 class sound_manager;
 class sound_stream;
+
+// declared in speaker.h
+class speaker_device;
 
 // declared in tilemap.h
 class tilemap_device;

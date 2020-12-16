@@ -65,7 +65,7 @@ void sega_16bit_sprite_device::device_start()
 //  draw_write -- trigger a buffer flip
 //-------------------------------------------------
 
-WRITE16_MEMBER( sega_16bit_sprite_device::draw_write )
+void sega_16bit_sprite_device::draw_write(uint16_t data)
 {
 	uint32_t *src = reinterpret_cast<uint32_t *>(spriteram());
 	uint32_t *dst = reinterpret_cast<uint32_t *>(buffer());
@@ -656,21 +656,20 @@ bootleg_sys16a_sprite_device::bootleg_sys16a_sprite_device(const machine_config 
 
 
 //-------------------------------------------------
-//  static_set_remap -- configure sprite address
+//  set_remap -- configure sprite address
 //  remapping
 //-------------------------------------------------
 
-void bootleg_sys16a_sprite_device::static_set_remap(device_t &device, uint8_t offs0, uint8_t offs1, uint8_t offs2, uint8_t offs3, uint8_t offs4, uint8_t offs5, uint8_t offs6, uint8_t offs7)
+void bootleg_sys16a_sprite_device::set_remap(uint8_t offs0, uint8_t offs1, uint8_t offs2, uint8_t offs3, uint8_t offs4, uint8_t offs5, uint8_t offs6, uint8_t offs7)
 {
-	bootleg_sys16a_sprite_device &target = downcast<bootleg_sys16a_sprite_device &>(device);
-	target.m_addrmap[0] = offs0;
-	target.m_addrmap[1] = offs1;
-	target.m_addrmap[2] = offs2;
-	target.m_addrmap[3] = offs3;
-	target.m_addrmap[4] = offs4;
-	target.m_addrmap[5] = offs5;
-	target.m_addrmap[6] = offs6;
-	target.m_addrmap[7] = offs7;
+	m_addrmap[0] = offs0;
+	m_addrmap[1] = offs1;
+	m_addrmap[2] = offs2;
+	m_addrmap[3] = offs3;
+	m_addrmap[4] = offs4;
+	m_addrmap[5] = offs5;
+	m_addrmap[6] = offs6;
+	m_addrmap[7] = offs7;
 }
 
 

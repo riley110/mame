@@ -2,15 +2,16 @@
 // copyright-holders:Vas Crabb, Ryan Holtz
 /***************************************************************************
 
-    rgbgen.c
+    rgbgen.cpp
 
     General RGB utilities.
 
 ***************************************************************************/
 
-#if !(defined(__ALTIVEC__) || ((!defined(MAME_DEBUG) || defined(__OPTIMIZE__)) && (defined(__SSE2__) || defined(_MSC_VER)) && defined(PTR64)))
-
 #include "emu.h"
+
+#if ((defined(MAME_DEBUG) && !defined(__OPTIMIZE__)) || (!defined(__SSE2__) && (!defined(_M_IX86_FP) || (_M_IX86_FP < 2)))) && !defined(__ALTIVEC__)
+
 #include "rgbgen.h"
 
 /***************************************************************************
@@ -113,4 +114,4 @@ void rgbaint_t::scale2_add_and_clamp(const rgbaint_t& scale, const rgbaint_t& ot
 	if (u32(m_b) > 255) { m_b = (m_b < 0) ? 0 : 255; }
 }
 
-#endif // !defined(__ALTIVEC__)
+#endif // ((defined(MAME_DEBUG) && !defined(__OPTIMIZE__)) || (!defined(__SSE2__) && (!defined(_M_IX86_FP) || (_M_IX86_FP < 2)))) && !defined(__ALTIVEC__)

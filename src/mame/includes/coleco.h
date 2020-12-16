@@ -1,9 +1,9 @@
 // license:BSD-3-Clause
-// copyright-holders:Mike Balfour, Ben Bruscella, Sean Young
+// copyright-holders:Mike Balfour, Ben Bruscella, Sean Young, Frank Palazzolo
 #pragma once
 
-#ifndef __COLECO__
-#define __COLECO__
+#ifndef MAME_INCLUDES_COLECO_H
+#define MAME_INCLUDES_COLECO_H
 
 
 #include "cpu/z80/z80.h"
@@ -11,7 +11,7 @@
 #include "sound/sn76496.h"
 #include "video/tms9928a.h"
 #include "machine/coleco.h"
-#include "bus/coleco/exp.h"
+#include "bus/coleco/cartridge/exp.h"
 
 class coleco_state : public driver_device
 {
@@ -43,11 +43,11 @@ public:
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
 
-	DECLARE_READ8_MEMBER( cart_r );
-	DECLARE_READ8_MEMBER( paddle_1_r );
-	DECLARE_READ8_MEMBER( paddle_2_r );
-	DECLARE_WRITE8_MEMBER( paddle_off_w );
-	DECLARE_WRITE8_MEMBER( paddle_on_w );
+	uint8_t cart_r(offs_t offset);
+	uint8_t paddle_1_r();
+	uint8_t paddle_2_r();
+	void paddle_off_w(uint8_t data);
+	void paddle_on_w(uint8_t data);
 
 	TIMER_CALLBACK_MEMBER(paddle_d7reset_callback);
 	TIMER_CALLBACK_MEMBER(paddle_irqreset_callback);
@@ -59,7 +59,14 @@ public:
 	uint8_t coleco_paddle_read(int port, int joy_mode, uint8_t joy_status);
 	uint8_t coleco_scan_paddles(uint8_t *joy_status0, uint8_t *joy_status1);
 
-private:
+	void colecop(machine_config &config);
+	void coleco(machine_config &config);
+	void czz50(machine_config &config);
+	void dina(machine_config &config);
+	void coleco_io_map(address_map &map);
+	void coleco_map(address_map &map);
+	void czz50_map(address_map &map);
+protected:
 	required_device<cpu_device> m_maincpu;
 	required_device<colecovision_cartridge_slot_device> m_cart;
 	required_shared_ptr<uint8_t> m_ram;
@@ -94,6 +101,37 @@ private:
 	optional_ioport m_driv_pedal2;
 	optional_ioport m_roller_x;
 	optional_ioport m_roller_y;
+};
+
+class bit90_state : public coleco_state
+{
+public:
+	bit90_state(const machine_config &mconfig, device_type type, const char *tag)
+		: coleco_state(mconfig, type, tag),
+			m_bank(*this, "bank"),
+			m_io_keyboard(*this, {"ROW0", "ROW1", "ROW2", "ROW3", "ROW4", "ROW5", "ROW6", "ROW7"})
+		{}
+
+	virtual void machine_start() override;
+	virtual void machine_reset() override;
+
+	void bit90(machine_config &config);
+
+	uint8_t bankswitch_u4_r(address_space &space);
+	uint8_t bankswitch_u3_r(address_space &space);
+	uint8_t keyboard_r(address_space &space);
+	void u32_w(uint8_t data);
+
+protected:
+	required_memory_bank m_bank;
+	required_ioport_array<8> m_io_keyboard;
+
+private:
+	void bit90_map(address_map &map);
+	void bit90_io_map(address_map &map);
+
+	uint8_t m_keyselect;
+	uint8_t m_unknown;
 };
 
 #endif

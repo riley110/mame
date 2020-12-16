@@ -7,11 +7,20 @@ forcedincludes {
 	MAME_DIR .. "src/osd/sdl/sdlprefix.h"
 }
 
-if SDL_NETWORK~="" and not _OPTIONS["DONT_USE_NETWORK"] then
+if _OPTIONS["USE_TAPTUN"]=="1" or _OPTIONS["USE_PCAP"]==1 then
 	defines {
 		"USE_NETWORK",
-		"OSD_NET_USE_" .. string.upper(SDL_NETWORK),
 	}
+	if _OPTIONS["USE_TAPTUN"]=="1" then
+		defines {
+			"OSD_NET_USE_TAPTUN",
+		}
+	end
+	if _OPTIONS["USE_PCAP"]=="1" then
+		defines {
+			"OSD_NET_USE_PCAP",
+		}
+	end
 end
 
 if _OPTIONS["NO_OPENGL"]~="1" and _OPTIONS["USE_DISPATCH_GL"]~="1" and _OPTIONS["MESA_INSTALL_ROOT"] then
@@ -52,6 +61,16 @@ else
 	}
 end
 
+if _OPTIONS["NO_USE_XINPUT_WII_LIGHTGUN_HACK"]=="1" then
+	defines {
+		"USE_XINPUT_WII_LIGHTGUN_HACK=0",
+	}
+else
+	defines {
+		"USE_XINPUT_WII_LIGHTGUN_HACK=1",
+	}
+end
+
 if _OPTIONS["NO_USE_MIDI"]~="1" and _OPTIONS["targetos"]=="linux" then
 	buildoptions {
 		backtick(pkgconfigcmd() .. " --cflags alsa"),
@@ -89,7 +108,7 @@ if BASE_TARGETOS=="unix" then
 					backtick(sdlconfigcmd() .. " --cflags | sed 's:/SDL2::'"),
 				}
 			end
-			end
+		end
 	else
 		buildoptions {
 			backtick(sdlconfigcmd() .. " --cflags"),

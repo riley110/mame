@@ -6,8 +6,8 @@
 
 *************************************************************************/
 
-#ifndef _ESRIPSYS_H_
-#define _ESRIPSYS_H_
+#ifndef MAME_INCLUDES_ESRIPSYS_H
+#define MAME_INCLUDES_ESRIPSYS_H
 
 #pragma once
 
@@ -17,7 +17,7 @@
 #include "screen.h"
 
 /* TODO */
-#define ESRIPSYS_PIXEL_CLOCK    (XTAL_25MHz / 2)
+#define ESRIPSYS_PIXEL_CLOCK    (XTAL(25'000'000) / 2)
 #define ESRIPSYS_HTOTAL         (512 + 141 + 2)
 #define ESRIPSYS_HBLANK_START   (512)
 #define ESRIPSYS_HBLANK_END     (0)
@@ -49,6 +49,14 @@ public:
 			m_dac(*this, "dac"),
 			m_screen(*this, "screen") { }
 
+	void esripsys(machine_config &config);
+
+	void init_esripsys();
+
+	DECLARE_INPUT_CHANGED_MEMBER(keypad_interrupt);
+	DECLARE_INPUT_CHANGED_MEMBER(coin_interrupt);
+
+private:
 	required_device<cpu_device> m_framecpu;
 	required_device<esrip_device> m_videocpu;
 	required_device<cpu_device> m_gamecpu;
@@ -89,34 +97,31 @@ public:
 	std::unique_ptr<uint8_t[]> m_scale_table;
 	int m_video_firq;
 	uint8_t m_bg_intensity;
-	DECLARE_WRITE8_MEMBER(uart_w);
-	DECLARE_READ8_MEMBER(uart_r);
-	DECLARE_READ8_MEMBER(g_status_r);
-	DECLARE_WRITE8_MEMBER(g_status_w);
-	DECLARE_READ8_MEMBER(f_status_r);
-	DECLARE_WRITE8_MEMBER(f_status_w);
-	DECLARE_WRITE8_MEMBER(frame_w);
-	DECLARE_READ8_MEMBER(fdt_r);
-	DECLARE_WRITE8_MEMBER(fdt_w);
-	DECLARE_READ16_MEMBER( fdt_rip_r );
-	DECLARE_WRITE16_MEMBER( fdt_rip_w );
-	DECLARE_READ8_MEMBER(rip_status_in);
-	DECLARE_WRITE8_MEMBER(g_iobus_w);
-	DECLARE_READ8_MEMBER(g_iobus_r);
-	DECLARE_WRITE8_MEMBER(g_ioadd_w);
-	DECLARE_READ8_MEMBER(s_200e_r);
-	DECLARE_WRITE8_MEMBER(s_200e_w);
-	DECLARE_WRITE8_MEMBER(s_200f_w);
-	DECLARE_READ8_MEMBER(s_200f_r);
-	DECLARE_READ8_MEMBER(tms5220_r);
-	DECLARE_WRITE8_MEMBER(tms5220_w);
-	DECLARE_WRITE8_MEMBER(control_w);
-	DECLARE_WRITE8_MEMBER(esripsys_bg_intensity_w);
-	DECLARE_INPUT_CHANGED_MEMBER(keypad_interrupt);
-	DECLARE_INPUT_CHANGED_MEMBER(coin_interrupt);
+	void uart_w(offs_t offset, uint8_t data);
+	uint8_t uart_r();
+	uint8_t g_status_r();
+	void g_status_w(uint8_t data);
+	uint8_t f_status_r();
+	void f_status_w(uint8_t data);
+	void frame_w(uint8_t data);
+	uint8_t fdt_r(offs_t offset);
+	void fdt_w(offs_t offset, uint8_t data);
+	uint16_t fdt_rip_r(offs_t offset);
+	void fdt_rip_w(offs_t offset, uint16_t data);
+	uint8_t rip_status_in();
+	void g_iobus_w(uint8_t data);
+	uint8_t g_iobus_r();
+	void g_ioadd_w(uint8_t data);
+	uint8_t s_200e_r();
+	void s_200e_w(uint8_t data);
+	void s_200f_w(uint8_t data);
+	uint8_t s_200f_r();
+	uint8_t tms5220_r(offs_t offset);
+	void tms5220_w(offs_t offset, uint8_t data);
+	void control_w(uint8_t data);
+	void esripsys_bg_intensity_w(uint8_t data);
 	DECLARE_WRITE_LINE_MEMBER(ptm_irq);
-	DECLARE_WRITE8_MEMBER(esripsys_dac_w);
-	DECLARE_DRIVER_INIT(esripsys);
+	void esripsys_dac_w(offs_t offset, uint8_t data);
 	virtual void video_start() override;
 	uint32_t screen_update_esripsys(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect);
 	INTERRUPT_GEN_MEMBER(esripsys_vblank_irq);
@@ -126,6 +131,10 @@ public:
 	required_device<dac_word_interface> m_dac;
 	required_device<screen_device> m_screen;
 	ESRIP_DRAW(esripsys_draw);
+	void frame_cpu_map(address_map &map);
+	void game_cpu_map(address_map &map);
+	void sound_cpu_map(address_map &map);
+	void video_cpu_map(address_map &map);
 };
 
-#endif // _ESRIPSYS_H_
+#endif // MAME_INCLUDES_ESRIPSYS_H

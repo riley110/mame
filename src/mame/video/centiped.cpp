@@ -21,7 +21,7 @@ TILE_GET_INFO_MEMBER(centiped_state::centiped_get_tile_info)
 	uint8_t *videoram = m_videoram;
 
 	int data = videoram[tile_index];
-	SET_TILE_INFO_MEMBER(0, (data & 0x3f) + 0x40, 0, TILE_FLIPYX(data >> 6));
+	tileinfo.set(0, (data & 0x3f) + 0x40, 0, TILE_FLIPYX(data >> 6));
 }
 
 
@@ -31,7 +31,7 @@ TILE_GET_INFO_MEMBER(centiped_state::warlords_get_tile_info)
 	int data = videoram[tile_index];
 	int color = ((tile_index & 0x10) >> 4) | ((tile_index & 0x200) >> 8) | (m_flipscreen >> 5);
 
-	SET_TILE_INFO_MEMBER(0, data & 0x3f, color, TILE_FLIPYX(data >> 6));
+	tileinfo.set(0, data & 0x3f, color, TILE_FLIPYX(data >> 6));
 }
 
 
@@ -44,7 +44,7 @@ TILE_GET_INFO_MEMBER(centiped_state::milliped_get_tile_info)
 	/* Flip both x and y if flipscreen is non-zero */
 	int flip_tiles = (m_flipscreen) ? 0x03 : 0;
 
-	SET_TILE_INFO_MEMBER(0, (data & 0x3f) + 0x40 + (bank * 0x80), color, TILE_FLIPYX(flip_tiles));
+	tileinfo.set(0, (data & 0x3f) + 0x40 + (bank * 0x80), color, TILE_FLIPYX(flip_tiles));
 }
 
 
@@ -54,7 +54,7 @@ TILE_GET_INFO_MEMBER(centiped_state::bullsdrt_get_tile_info)
 	int data = videoram[tile_index];
 	int bank = m_bullsdrt_tiles_bankram[tile_index & 0x1f] & 0x0f;
 
-	SET_TILE_INFO_MEMBER(0, (data & 0x3f) + 0x40 * bank, 0, TILE_FLIPYX(data >> 6));
+	tileinfo.set(0, (data & 0x3f) + 0x40 * bank, 0, TILE_FLIPYX(data >> 6));
 }
 
 
@@ -97,7 +97,7 @@ VIDEO_START_MEMBER(centiped_state,centiped)
 	init_common();
 	init_penmask();
 
-	m_bg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(centiped_state::centiped_get_tile_info),this), TILEMAP_SCAN_ROWS, 8, 8, 32, 32);
+	m_bg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(centiped_state::centiped_get_tile_info)), TILEMAP_SCAN_ROWS, 8, 8, 32, 32);
 }
 
 
@@ -105,7 +105,7 @@ VIDEO_START_MEMBER(centiped_state,warlords)
 {
 	init_common();
 
-	m_bg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(centiped_state::warlords_get_tile_info),this), TILEMAP_SCAN_ROWS, 8, 8, 32, 32);
+	m_bg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(centiped_state::warlords_get_tile_info)), TILEMAP_SCAN_ROWS, 8, 8, 32, 32);
 }
 
 
@@ -114,7 +114,7 @@ VIDEO_START_MEMBER(centiped_state,milliped)
 	init_common();
 	init_penmask();
 
-	m_bg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(centiped_state::milliped_get_tile_info),this), TILEMAP_SCAN_ROWS, 8, 8, 32, 32);
+	m_bg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(centiped_state::milliped_get_tile_info)), TILEMAP_SCAN_ROWS, 8, 8, 32, 32);
 }
 
 
@@ -123,7 +123,7 @@ VIDEO_START_MEMBER(centiped_state,bullsdrt)
 	init_common();
 	init_penmask();
 
-	m_bg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(centiped_state::bullsdrt_get_tile_info),this), TILEMAP_SCAN_ROWS, 8, 8, 32, 32);
+	m_bg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(centiped_state::bullsdrt_get_tile_info)), TILEMAP_SCAN_ROWS, 8, 8, 32, 32);
 }
 
 
@@ -134,11 +134,9 @@ VIDEO_START_MEMBER(centiped_state,bullsdrt)
  *
  *************************************/
 
-WRITE8_MEMBER(centiped_state::centiped_videoram_w)
+void centiped_state::centiped_videoram_w(offs_t offset, uint8_t data)
 {
-	uint8_t *videoram = m_videoram;
-
-	videoram[offset] = data;
+	m_videoram[offset] = data;
 	m_bg_tilemap->mark_tile_dirty(offset);
 }
 
@@ -163,7 +161,7 @@ WRITE_LINE_MEMBER(centiped_state::flip_screen_w)
  *
  *************************************/
 
-WRITE8_MEMBER(centiped_state::multiped_gfxbank_w)
+void centiped_state::multiped_gfxbank_w(uint8_t data)
 {
 	// d0-d6: N/C?
 	// d7: gfx rom bank
@@ -176,14 +174,14 @@ WRITE8_MEMBER(centiped_state::multiped_gfxbank_w)
 }
 
 
-WRITE8_MEMBER(centiped_state::bullsdrt_tilesbank_w)
+void centiped_state::bullsdrt_tilesbank_w(offs_t offset, uint8_t data)
 {
 	m_bullsdrt_tiles_bankram[offset] = data;
 	m_bg_tilemap->mark_all_dirty();
 }
 
 
-WRITE8_MEMBER(centiped_state::bullsdrt_sprites_bank_w)
+void centiped_state::bullsdrt_sprites_bank_w(uint8_t data)
 {
 	m_bullsdrt_sprites_bank = data;
 }
@@ -217,7 +215,7 @@ WRITE8_MEMBER(centiped_state::bullsdrt_sprites_bank_w)
 
 ***************************************************************************/
 
-WRITE8_MEMBER(centiped_state::centiped_paletteram_w)
+void centiped_state::centiped_paletteram_w(offs_t offset, uint8_t data)
 {
 	m_paletteram[offset] = data;
 
@@ -282,15 +280,13 @@ WRITE8_MEMBER(centiped_state::centiped_paletteram_w)
 
 ***************************************************************************/
 
-PALETTE_INIT_MEMBER(centiped_state,warlords)
+void centiped_state::warlords_palette(palette_device &palette) const
 {
-	const uint8_t *color_prom = memregion("proms")->base();
-	int i;
+	uint8_t const *const color_prom = memregion("proms")->base();
 
-	for (i = 0; i < palette.entries(); i++)
+	for (unsigned i = 0; i < palette.entries(); i++)
 	{
 		uint8_t pen;
-		int r, g, b;
 
 		if (i < 0x20)
 			/* characters */
@@ -299,16 +295,16 @@ PALETTE_INIT_MEMBER(centiped_state,warlords)
 			/* sprites */
 			pen = (((i - 0x20) & 0x1c) << 2) | (((i - 0x20) & 0x03) << 2);
 
-		r = ((color_prom[pen] >> 2) & 0x01) * 0xff;
-		g = ((color_prom[pen] >> 1) & 0x01) * 0xff;
-		b = ((color_prom[pen] >> 0) & 0x01) * 0xff;
+		int r = ((color_prom[pen] >> 2) & 0x01) * 0xff;
+		int g = ((color_prom[pen] >> 1) & 0x01) * 0xff;
+		int b = ((color_prom[pen] >> 0) & 0x01) * 0xff;
 
 		/* colors 0x40-0x7f are converted to grey scale as it's used on the
 		   upright version that had an overlay */
 		if (pen >= 0x40)
 		{
 			/* use the standard ratios: r = 30%, g = 59%, b = 11% */
-			int grey = (r * 0x4d / 0xff) + (g * 0x96 / 0xff) + (b * 0x1c / 0xff);
+			int const grey = (r * 0x4d / 0xff) + (g * 0x96 / 0xff) + (b * 0x1c / 0xff);
 			r = g = b = grey;
 		}
 
@@ -400,7 +396,7 @@ void centiped_state::milliped_set_color(offs_t offset, uint8_t data)
 }
 
 
-WRITE8_MEMBER(centiped_state::milliped_paletteram_w)
+void centiped_state::milliped_paletteram_w(offs_t offset, uint8_t data)
 {
 	m_paletteram[offset] = data;
 
@@ -408,7 +404,7 @@ WRITE8_MEMBER(centiped_state::milliped_paletteram_w)
 }
 
 
-WRITE8_MEMBER(centiped_state::mazeinv_paletteram_w)
+void centiped_state::mazeinv_paletteram_w(offs_t offset, uint8_t data)
 {
 	m_paletteram[offset] = data;
 

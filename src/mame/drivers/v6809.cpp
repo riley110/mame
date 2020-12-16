@@ -1,6 +1,6 @@
 // license:BSD-3-Clause
 // copyright-holders:Robbbert
-/***************************************************************************
+/**********************************************************************************************
 
         Vegas 6809
 
@@ -37,28 +37,27 @@ ToDo:
 
    - Find the missing character generator rom.
 
-   - Enable sound, when what seems to be a 6840 bug is fixed.
+   - Schematic is almost useless, riddled with omissions and errors. All documents are in
+     French. The parts list only has half of the parts.
 
-   - Schematic is almost useless, riddled with omissions and errors.
-     All documents are in French, so no help there. The parts list
-     only has half of the parts.
-
-   - Need software
+   - Need software (there are floppy images, but they are not yet in a supported format)
 
 
-****************************************************************************/
+*******************************************************************************************/
 
 #include "emu.h"
 #include "cpu/m6809/m6809.h"
+#include "imagedev/floppy.h"
 #include "machine/6821pia.h"
 #include "machine/6840ptm.h"
 #include "machine/6850acia.h"
 #include "machine/clock.h"
 #include "machine/keyboard.h"
-#include "machine/mm58274c.h"
+#include "machine/mm58174.h"
 #include "machine/wd_fdc.h"
 #include "sound/spkrdev.h"
 #include "video/mc6845.h"
+#include "emupal.h"
 #include "screen.h"
 #include "speaker.h"
 
@@ -74,71 +73,83 @@ public:
 		, m_crtc(*this, "crtc")
 		, m_fdc(*this, "fdc")
 		, m_floppy0(*this, "fdc:0")
+		, m_floppy1(*this, "fdc:1")
 		, m_speaker(*this, "speaker")
 		, m_palette(*this, "palette")
-		, m_p_videoram(*this, "videoram")
 		, m_p_chargen(*this, "chargen")
-	{
-	}
+	{ }
+
+	void v6809(machine_config &config);
+
+private:
+	virtual void machine_reset() override;
+	virtual void machine_start() override;
 
 	DECLARE_WRITE_LINE_MEMBER(speaker_en_w);
 	DECLARE_WRITE_LINE_MEMBER(speaker_w);
-	DECLARE_READ8_MEMBER(pb_r);
-	DECLARE_WRITE8_MEMBER(pa_w);
-	DECLARE_WRITE8_MEMBER(videoram_w);
-	DECLARE_WRITE8_MEMBER(v6809_address_w);
-	DECLARE_WRITE8_MEMBER(v6809_register_w);
+	u8 pb_r();
+	void pa_w(u8 data);
+	void videoram_w(u8 data);
+	void v6809_address_w(u8 data);
+	void v6809_register_w(u8 data);
 	void kbd_put(u8 data);
-	DECLARE_MACHINE_RESET(v6809);
 	MC6845_UPDATE_ROW(crtc_update_row);
 	MC6845_ON_UPDATE_ADDR_CHANGED(crtc_update_addr);
 
-private:
-	uint16_t m_video_address;
+	void v6809_mem(address_map &map);
+
+	u16 m_video_address;
 	bool m_speaker_en;
-	uint8_t m_video_index;
-	uint8_t m_term_data;
-	uint8_t m_vidbyte;
+	u8 m_video_index;
+	u8 m_term_data;
+	u8 m_vidbyte;
+	std::unique_ptr<u8[]> m_vram;
 	required_device<pia6821_device> m_pia0;
 	required_device<cpu_device> m_maincpu;
 	required_device<mc6845_device> m_crtc;
 	required_device<mb8876_device> m_fdc;
 	required_device<floppy_connector> m_floppy0;
+	required_device<floppy_connector> m_floppy1;
 	required_device<speaker_sound_device> m_speaker;
 	required_device<palette_device> m_palette;
-	required_region_ptr<u8> m_p_videoram;
 	required_region_ptr<u8> m_p_chargen;
 };
 
 
-static ADDRESS_MAP_START(v6809_mem, AS_PROGRAM, 8, v6809_state)
-	ADDRESS_MAP_UNMAP_HIGH
-	AM_RANGE(0x0000, 0xefff) AM_RAM
-	AM_RANGE(0xf000, 0xf000) AM_MIRROR(0xfe) AM_DEVREAD("crtc", mc6845_device, status_r) AM_WRITE(v6809_address_w)
-	AM_RANGE(0xf001, 0xf001) AM_MIRROR(0xfe) AM_DEVREAD("crtc", mc6845_device, register_r) AM_WRITE(v6809_register_w)
-	AM_RANGE(0xf200, 0xf200) AM_MIRROR(0xff) AM_WRITE(videoram_w)
-	AM_RANGE(0xf500, 0xf500) AM_MIRROR(0x36) AM_DEVREADWRITE("acia0", acia6850_device, status_r, control_w) // modem
-	AM_RANGE(0xf501, 0xf501) AM_MIRROR(0x36) AM_DEVREADWRITE("acia0", acia6850_device, data_r, data_w)
-	AM_RANGE(0xf508, 0xf508) AM_MIRROR(0x36) AM_DEVREADWRITE("acia1", acia6850_device, status_r, control_w) // printer
-	AM_RANGE(0xf509, 0xf509) AM_MIRROR(0x36) AM_DEVREADWRITE("acia1", acia6850_device, data_r, data_w)
-	AM_RANGE(0xf600, 0xf603) AM_MIRROR(0x3c) AM_DEVREADWRITE("fdc", mb8876_device, read, write)
-	AM_RANGE(0xf640, 0xf64f) AM_MIRROR(0x30) AM_DEVREADWRITE("rtc", mm58274c_device, read, write)
-	AM_RANGE(0xf680, 0xf683) AM_MIRROR(0x3c) AM_DEVREADWRITE("pia0", pia6821_device, read, write)
-	AM_RANGE(0xf6c0, 0xf6c7) AM_MIRROR(0x08) AM_DEVREADWRITE("ptm", ptm6840_device, read, write)
-	AM_RANGE(0xf6d0, 0xf6d3) AM_MIRROR(0x0c) AM_DEVREADWRITE("pia1", pia6821_device, read, write)
-	AM_RANGE(0xf800, 0xffff) AM_ROM
-ADDRESS_MAP_END
-
-static ADDRESS_MAP_START(v6809_io, AS_PROGRAM, 8, v6809_state)
-	AM_RANGE(0x0064, 0x0064) AM_WRITENOP
-ADDRESS_MAP_END
+void v6809_state::v6809_mem(address_map &map)
+{
+	map.unmap_value_high();
+	map(0x0000, 0xefff).ram();
+	map(0xf000, 0xf000).mirror(0xfe).r(m_crtc, FUNC(mc6845_device::status_r)).w(FUNC(v6809_state::v6809_address_w));
+	map(0xf001, 0xf001).mirror(0xfe).r(m_crtc, FUNC(mc6845_device::register_r)).w(FUNC(v6809_state::v6809_register_w));
+	map(0xf200, 0xf200).mirror(0xff).w(FUNC(v6809_state::videoram_w));
+	map(0xf500, 0xf501).mirror(0x36).rw("acia0", FUNC(acia6850_device::read), FUNC(acia6850_device::write)); // modem
+	map(0xf508, 0xf509).mirror(0x36).rw("acia1", FUNC(acia6850_device::read), FUNC(acia6850_device::write)); // printer
+	map(0xf600, 0xf603).mirror(0x3c).rw(m_fdc, FUNC(mb8876_device::read), FUNC(mb8876_device::write));
+	map(0xf640, 0xf64f).mirror(0x30).rw("rtc", FUNC(mm58174_device::read), FUNC(mm58174_device::write));
+	map(0xf680, 0xf683).mirror(0x3c).rw(m_pia0, FUNC(pia6821_device::read), FUNC(pia6821_device::write));
+	map(0xf6c0, 0xf6c7).mirror(0x08).rw("ptm", FUNC(ptm6840_device::read), FUNC(ptm6840_device::write));
+	map(0xf6d0, 0xf6d3).mirror(0x0c).rw("pia1", FUNC(pia6821_device::read), FUNC(pia6821_device::write));
+	map(0xf800, 0xffff).rom().region("maincpu", 0);
+}
 
 
 /* Input ports */
 static INPUT_PORTS_START( v6809 )
 INPUT_PORTS_END
 
-MACHINE_RESET_MEMBER( v6809_state, v6809)
+void v6809_state::machine_start()
+{
+	m_vram = make_unique_clear<u8[]>(0x0800);
+	save_pointer(NAME(m_vram), 0x0800);
+	save_item(NAME(m_speaker_en));
+	save_item(NAME(m_term_data));
+	save_item(NAME(m_video_address));
+	save_item(NAME(m_video_index));
+	save_item(NAME(m_vidbyte));
+}
+
+void v6809_state::machine_reset()
 {
 	m_term_data = 0;
 	m_pia0->cb1_w(1);
@@ -160,21 +171,21 @@ static const gfx_layout v6809_charlayout =
 	8*16                    /* every char takes 16 bytes */
 };
 
-static GFXDECODE_START( v6809 )
+static GFXDECODE_START( gfx_v6809 )
 	GFXDECODE_ENTRY( "chargen", 0x0000, v6809_charlayout, 0, 1 )
 GFXDECODE_END
 
 MC6845_UPDATE_ROW( v6809_state::crtc_update_row )
 {
 	const rgb_t *palette = m_palette->palette()->entry_list_raw();
-	uint8_t chr,gfx;
-	uint16_t mem,x;
-	uint32_t *p = &bitmap.pix32(y);
+	u8 chr,gfx;
+	u16 mem,x;
+	u32 *p = &bitmap.pix32(y);
 
 	for (x = 0; x < x_count; x++)
 	{
 		mem = (ma + x) & 0x7ff;
-		chr = m_p_videoram[mem];
+		chr = m_vram[mem];
 		gfx = m_p_chargen[(chr<<4) | ra] ^ ((x == cursor_x) ? 0xff : 0);
 
 		/* Display a scanline of a character (8 pixels) */
@@ -195,26 +206,26 @@ MC6845_ON_UPDATE_ADDR_CHANGED( v6809_state::crtc_update_addr )
 	m_video_address = address & 0x7ff;
 }
 
-WRITE8_MEMBER( v6809_state::videoram_w )
+void v6809_state::videoram_w(u8 data)
 {
 	m_vidbyte = data;
 }
 
-WRITE8_MEMBER( v6809_state::v6809_address_w )
+void v6809_state::v6809_address_w(u8 data)
 {
-	m_crtc->address_w( space, 0, data );
+	m_crtc->address_w(data);
 
 	m_video_index = data & 0x1f;
 
 	if (m_video_index == 31)
-		m_p_videoram[m_video_address] = m_vidbyte;
+		m_vram[m_video_address] = m_vidbyte;
 }
 
-WRITE8_MEMBER( v6809_state::v6809_register_w )
+void v6809_state::v6809_register_w(u8 data)
 {
-	uint16_t temp = m_video_address;
+	u16 temp = m_video_address;
 
-	m_crtc->register_w( space, 0, data );
+	m_crtc->register_w(data);
 
 	// Get transparent address
 	if (m_video_index == 18)
@@ -233,19 +244,19 @@ void v6809_state::kbd_put(u8 data)
 	m_pia0->cb1_w(1);
 }
 
-READ8_MEMBER( v6809_state::pb_r )
+u8 v6809_state::pb_r()
 {
-	uint8_t ret = m_term_data;
+	u8 ret = m_term_data;
 	m_term_data = 0;
 	return ret;
 }
 
 // can support 4 drives
-WRITE8_MEMBER( v6809_state::pa_w )
+void v6809_state::pa_w(u8 data)
 {
 	floppy_image_device *floppy = nullptr;
 	if ((data & 3) == 0) floppy = m_floppy0->get_device();
-	//if ((data & 3) == 1) floppy = m_floppy1->get_device();
+	if ((data & 3) == 1) floppy = m_floppy1->get_device();
 	//if ((data & 3) == 2) floppy = m_floppy2->get_device();
 	//if ((data & 3) == 3) floppy = m_floppy3->get_device();
 
@@ -260,8 +271,6 @@ WRITE8_MEMBER( v6809_state::pa_w )
 	}
 }
 
-// this should output 1 to enable sound, then output 0 after a short time
-// however it continuously outputs 1
 WRITE_LINE_MEMBER( v6809_state::speaker_en_w )
 {
 	m_speaker_en = state;
@@ -269,95 +278,92 @@ WRITE_LINE_MEMBER( v6809_state::speaker_en_w )
 
 WRITE_LINE_MEMBER( v6809_state::speaker_w )
 {
-//  if (m_speaker_en)
-//      m_speaker->level_w(data);
+	if (m_speaker_en)
+		m_speaker->level_w(state);
 }
 
-static SLOT_INTERFACE_START( v6809_floppies )
-	SLOT_INTERFACE( "525dd", FLOPPY_525_DD )
-SLOT_INTERFACE_END
+static void v6809_floppies(device_slot_interface &device)
+{
+	device.option_add("525dd", FLOPPY_525_DD);
+}
 
 
 // *** Machine ****
 
-static MACHINE_CONFIG_START( v6809 )
+void v6809_state::v6809(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", M6809, XTAL_16MHz / 4)
-	MCFG_CPU_PROGRAM_MAP(v6809_mem)
-	MCFG_CPU_IO_MAP(v6809_io)
-	MCFG_MACHINE_RESET_OVERRIDE(v6809_state, v6809)
+	MC6809(config, m_maincpu, 16_MHz_XTAL / 4); // divided by 4 again internally
+	m_maincpu->set_addrmap(AS_PROGRAM, &v6809_state::v6809_mem);
 
 	/* video hardware */
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_REFRESH_RATE(50)
-	MCFG_SCREEN_VBLANK_TIME(ATTOSECONDS_IN_USEC(2500)) /* not accurate */
-	MCFG_SCREEN_SIZE(640, 480)
-	MCFG_SCREEN_VISIBLE_AREA(0, 640-1, 0, 480-1)
-	MCFG_SCREEN_UPDATE_DEVICE("crtc", sy6545_1_device, screen_update)
-	MCFG_PALETTE_ADD_MONOCHROME("palette")
-	MCFG_GFXDECODE_ADD("gfxdecode", "palette", v6809)
+	screen_device &screen(SCREEN(config, "screen", SCREEN_TYPE_RASTER));
+	screen.set_refresh_hz(50);
+	screen.set_vblank_time(ATTOSECONDS_IN_USEC(2500)); /* not accurate */
+	screen.set_size(640, 480);
+	screen.set_visarea(0, 640-1, 0, 480-1);
+	screen.set_screen_update("crtc", FUNC(sy6545_1_device::screen_update));
+	PALETTE(config, m_palette, palette_device::MONOCHROME);
+	GFXDECODE(config, "gfxdecode", m_palette, gfx_v6809);
 
 	/* sound hardware */
-	MCFG_SPEAKER_STANDARD_MONO("mono")
-	MCFG_SOUND_ADD("speaker", SPEAKER_SOUND, 0)
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.50)
+	SPEAKER(config, "mono").front_center();
+	SPEAKER_SOUND(config, m_speaker).add_route(ALL_OUTPUTS, "mono", 0.50);
 
 	/* devices */
-	MCFG_MC6845_ADD("crtc", SY6545_1, "screen", XTAL_16MHz / 8)
-	MCFG_MC6845_SHOW_BORDER_AREA(false)
-	MCFG_MC6845_CHAR_WIDTH(8)
-	MCFG_MC6845_UPDATE_ROW_CB(v6809_state, crtc_update_row)
-	MCFG_MC6845_ADDR_CHANGED_CB(v6809_state, crtc_update_addr)
+	SY6545_1(config, m_crtc, 16_MHz_XTAL / 8);
+	m_crtc->set_screen("screen");
+	m_crtc->set_show_border_area(false);
+	m_crtc->set_char_width(8);
+	m_crtc->set_update_row_callback(FUNC(v6809_state::crtc_update_row));
+	m_crtc->set_on_update_addr_change_callback(FUNC(v6809_state::crtc_update_addr));
 
-	MCFG_DEVICE_ADD("keyboard", GENERIC_KEYBOARD, 0)
-	MCFG_GENERIC_KEYBOARD_CB(PUT(v6809_state, kbd_put))
+	generic_keyboard_device &keyboard(GENERIC_KEYBOARD(config, "keyboard", 0));
+	keyboard.set_keyboard_callback(FUNC(v6809_state::kbd_put));
 
-// port A = drive select and 2 control lines ; port B = keyboard
-// CB2 connects to the interrupt pin of the RTC (the rtc code doesn't support it)
-	MCFG_DEVICE_ADD("pia0", PIA6821, 0)
-	MCFG_PIA_READPB_HANDLER(READ8(v6809_state, pb_r))
-	MCFG_PIA_WRITEPA_HANDLER(WRITE8(v6809_state, pa_w))
-	MCFG_PIA_IRQA_HANDLER(INPUTLINE("maincpu", M6809_IRQ_LINE))
-	MCFG_PIA_IRQB_HANDLER(INPUTLINE("maincpu", M6809_IRQ_LINE))
+	// port A = drive select and 2 control lines ; port B = keyboard
+	PIA6821(config, m_pia0, 0);
+	m_pia0->readpb_handler().set(FUNC(v6809_state::pb_r));
+	m_pia0->writepa_handler().set(FUNC(v6809_state::pa_w));
+	m_pia0->irqa_handler().set_inputline("maincpu", M6809_IRQ_LINE);
+	m_pia0->irqb_handler().set_inputline("maincpu", M6809_IRQ_LINE);
 
-// no idea what this does
-	MCFG_DEVICE_ADD("pia1", PIA6821, 0)
-	MCFG_PIA_IRQA_HANDLER(INPUTLINE("maincpu", M6809_IRQ_LINE))
-	MCFG_PIA_IRQB_HANDLER(INPUTLINE("maincpu", M6809_IRQ_LINE))
+	// no idea what this does
+	pia6821_device &pia1(PIA6821(config, "pia1", 0));
+	pia1.irqa_handler().set_inputline("maincpu", M6809_IRQ_LINE);
+	pia1.irqb_handler().set_inputline("maincpu", M6809_IRQ_LINE);
 
-	MCFG_DEVICE_ADD("ptm", PTM6840, XTAL_16MHz / 4)
-	MCFG_PTM6840_EXTERNAL_CLOCKS(4000000/14, 4000000/14, 4000000/14/8)
-	MCFG_PTM6840_OUT1_CB(WRITELINE(v6809_state, speaker_w))
-	MCFG_PTM6840_OUT2_CB(WRITELINE(v6809_state, speaker_en_w))
-	MCFG_PTM6840_IRQ_CB(INPUTLINE("maincpu", M6809_IRQ_LINE))
+	ptm6840_device &ptm(PTM6840(config, "ptm", 16_MHz_XTAL / 4));
+	ptm.set_external_clocks(4000000/14, 4000000/14, 4000000/14/8);
+	ptm.o1_callback().set(FUNC(v6809_state::speaker_en_w));
+	ptm.o2_callback().set(FUNC(v6809_state::speaker_w));
+	ptm.irq_callback().set_inputline("maincpu", M6809_IRQ_LINE);
 
-	MCFG_DEVICE_ADD("acia0", ACIA6850, 0)
+	ACIA6850(config, "acia0", 0);
 
-	MCFG_DEVICE_ADD("acia1", ACIA6850, 0)
+	ACIA6850(config, "acia1", 0);
 
-	MCFG_DEVICE_ADD("acia_clock", CLOCK, 153600)
-	MCFG_CLOCK_SIGNAL_HANDLER(DEVWRITELINE("acia0", acia6850_device, write_txc))
-	MCFG_DEVCB_CHAIN_OUTPUT(DEVWRITELINE("acia0", acia6850_device, write_rxc))
-	MCFG_DEVCB_CHAIN_OUTPUT(DEVWRITELINE("acia1", acia6850_device, write_txc))
-	MCFG_DEVCB_CHAIN_OUTPUT(DEVWRITELINE("acia1", acia6850_device, write_rxc))
+	clock_device &acia_clock(CLOCK(config, "acia_clock", 153600));
+	acia_clock.signal_handler().set("acia0", FUNC(acia6850_device::write_txc));
+	acia_clock.signal_handler().append("acia0", FUNC(acia6850_device::write_rxc));
+	acia_clock.signal_handler().append("acia1", FUNC(acia6850_device::write_txc));
+	acia_clock.signal_handler().append("acia1", FUNC(acia6850_device::write_rxc));
 
-	MCFG_DEVICE_ADD("rtc", MM58274C, 0)
-// this is all guess
-	MCFG_MM58274C_MODE24(0) // 12 hour
-	MCFG_MM58274C_DAY1(1)   // monday
+	MM58174(config, "rtc", 0);
+	//rtc.irq_handler().set(m_pia0, FUNC(pia6821_device::cb2_w));   // unsupported by RTC emulation
 
-	MCFG_MB8876_ADD("fdc", XTAL_16MHz / 16)
-	MCFG_FLOPPY_DRIVE_ADD("fdc:0", v6809_floppies, "525dd", floppy_image_device::default_floppy_formats)
-	MCFG_FLOPPY_DRIVE_SOUND(true)
-MACHINE_CONFIG_END
+	MB8876(config, m_fdc, 16_MHz_XTAL / 16);
+	FLOPPY_CONNECTOR(config, "fdc:0", v6809_floppies, "525dd", floppy_image_device::default_floppy_formats).enable_sound(true);
+	FLOPPY_CONNECTOR(config, "fdc:1", v6809_floppies, "525dd", floppy_image_device::default_floppy_formats).enable_sound(true);
+}
 
 /* ROM definition */
 ROM_START( v6809 )
-	ROM_REGION( 0x10000, "maincpu", 0 )
-	ROM_LOAD( "v6809.rom", 0xf800, 0x0800, CRC(54bf5f32) SHA1(10d1d70f0b51e2b90e5c29249d3eab4c6b0033a1) )
-
-	ROM_REGION( 0x800, "videoram", ROMREGION_ERASE00 )
-
+	ROM_REGION( 0x0800, "maincpu", 0 )
+	ROM_SYSTEM_BIOS(0, "v1", "Original")
+	ROMX_LOAD( "v6809.rom",   0x0000, 0x0800, CRC(54bf5f32) SHA1(10d1d70f0b51e2b90e5c29249d3eab4c6b0033a1), ROM_BIOS(0))
+	ROM_SYSTEM_BIOS(1, "v3", "Ver 3.3")
+	ROMX_LOAD( "v6809v3.bin", 0x0000, 0x0800, CRC(f9cd126d) SHA1(2da719820e393efde801057d76b2a63dcfbd8541), ROM_BIOS(1))
 	/* character generator not dumped, using the one from 'h19' for now */
 	ROM_REGION( 0x1000, "chargen", 0 )
 	ROM_LOAD( "2716_444-29_h19font.bin", 0x0000, 0x0800, BAD_DUMP CRC(d595ac1d) SHA1(130fb4ea8754106340c318592eec2d8a0deaf3d0))
@@ -366,5 +372,5 @@ ROM_END
 
 /* Driver */
 
-//    YEAR  NAME    PARENT  COMPAT   MACHINE    INPUT  CLASS          INIT   COMPANY     FULLNAME      FLAGS
-COMP( 1982, v6809,  0,      0,       v6809,     v6809, v6809_state,   0,     "Microkit", "Vegas 6809", MACHINE_NOT_WORKING )
+//    YEAR  NAME   PARENT  COMPAT  MACHINE  INPUT  CLASS        INIT        COMPANY     FULLNAME      FLAGS
+COMP( 1982, v6809, 0,      0,      v6809,   v6809, v6809_state, empty_init, "Microkit", "Vegas 6809", MACHINE_NOT_WORKING | MACHINE_SUPPORTS_SAVE )

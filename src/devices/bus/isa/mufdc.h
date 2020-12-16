@@ -47,16 +47,17 @@ protected:
 	// device_isa8_card_interface
 	virtual uint8_t dack_r(int line) override;
 	virtual void dack_w(int line, uint8_t data) override;
+	virtual void dack_line_w(int line, int state) override;
 	virtual void eop_w(int state) override;
 
 private:
 	DECLARE_FLOPPY_FORMATS( floppy_formats );
 
-	DECLARE_READ8_MEMBER( fdc_input_r );
+	uint8_t fdc_input_r();
 	DECLARE_WRITE_LINE_MEMBER( fdc_irq_w );
 	DECLARE_WRITE_LINE_MEMBER( fdc_drq_w );
 
-	required_device<pc_fdc_interface> m_fdc;
+	required_device<mcs3201_device> m_fdc;
 	required_ioport m_config;
 };
 

@@ -63,63 +63,69 @@ class mod8_state : public driver_device
 public:
 	mod8_state(const machine_config &mconfig, device_type type, const char *tag)
 		: driver_device(mconfig, type, tag)
-		, m_teleprinter(*this, TELEPRINTER_TAG)
+		, m_teleprinter(*this, "teleprinter")
 		, m_maincpu(*this, "maincpu")
 	{ }
 
-	DECLARE_WRITE8_MEMBER(out_w);
-	DECLARE_WRITE8_MEMBER(tty_w);
-	void kbd_put(u8 data);
-	DECLARE_READ8_MEMBER(tty_r);
-	IRQ_CALLBACK_MEMBER(mod8_irq_callback);
+	void mod8(machine_config &config);
+
 private:
-	uint16_t m_tty_data;
-	uint8_t m_tty_key_data;
+	void out_w(uint8_t data);
+	void tty_w(uint8_t data);
+	void kbd_put(u8 data);
+	uint8_t tty_r();
+	IRQ_CALLBACK_MEMBER(mod8_irq_callback);
+	void io_map(address_map &map);
+	void mem_map(address_map &map);
+
+	uint16_t m_tty_data_out;
+	uint8_t m_tty_data_in;
 	int m_tty_cnt;
-	virtual void machine_reset() override;
+	void machine_start() override;
 	required_device<teleprinter_device> m_teleprinter;
 	required_device<cpu_device> m_maincpu;
 };
 
-WRITE8_MEMBER( mod8_state::out_w )
+void mod8_state::out_w(uint8_t data)
 {
-	m_tty_data >>= 1;
-	m_tty_data |= BIT(data, 0) ? 0x8000 : 0;
+	m_tty_data_out >>= 1;
+	m_tty_data_out |= BIT(data, 0) ? 0x8000 : 0;
 	m_tty_cnt++;
 
 	if (m_tty_cnt == 10)
 	{
-		m_teleprinter->write(space, 0, (m_tty_data >> 7) & 0x7f);
+		m_teleprinter->write(BIT(m_tty_data_out, 7, 7));
 		m_tty_cnt = 0;
 	}
 }
 
-WRITE8_MEMBER( mod8_state::tty_w )
+void mod8_state::tty_w(uint8_t data)
 {
-	m_tty_data = 0;
+	m_tty_data_out = 0;
 	m_tty_cnt = 0;
 }
 
-READ8_MEMBER( mod8_state::tty_r )
+uint8_t mod8_state::tty_r()
 {
-	uint8_t d = m_tty_key_data & 1;
-	m_tty_key_data >>= 1;
+	uint8_t d = m_tty_data_in & 1;
+	m_tty_data_in >>= 1;
 	return d;
 }
 
-static ADDRESS_MAP_START(mod8_mem, AS_PROGRAM, 8, mod8_state)
-	ADDRESS_MAP_UNMAP_HIGH
-	AM_RANGE(0x000,0x6ff) AM_ROM
-	AM_RANGE(0x700,0xfff) AM_RAM
-ADDRESS_MAP_END
+void mod8_state::mem_map(address_map &map)
+{
+	map.unmap_value_high();
+	map(0x000, 0x7ff).rom();
+	map(0x800, 0xbff).ram();
+}
 
-static ADDRESS_MAP_START(mod8_io, AS_IO, 8, mod8_state)
-	ADDRESS_MAP_UNMAP_HIGH
-	ADDRESS_MAP_GLOBAL_MASK(0xff)
-	AM_RANGE(0x00,0x00) AM_READ(tty_r)
-	AM_RANGE(0x0a,0x0a) AM_WRITE(out_w)
-	AM_RANGE(0x0b,0x0b) AM_WRITE(tty_w)
-ADDRESS_MAP_END
+void mod8_state::io_map(address_map &map)
+{
+	map.unmap_value_high();
+	map(0x00, 0x00).r(FUNC(mod8_state::tty_r));
+	map(0x0a, 0x0a).w(FUNC(mod8_state::out_w));
+	map(0x0b, 0x0b).w(FUNC(mod8_state::tty_w));
+}
 
 /* Input ports */
 static INPUT_PORTS_START( mod8 )
@@ -130,32 +136,36 @@ IRQ_CALLBACK_MEMBER(mod8_state::mod8_irq_callback)
 	return 0xC0; // LAA - NOP equivalent
 }
 
-void mod8_state::machine_reset()
+void mod8_state::machine_start()
 {
+	save_item(NAME(m_tty_data_out));
+	save_item(NAME(m_tty_data_in));
+	save_item(NAME(m_tty_cnt));
 }
 
 void mod8_state::kbd_put(u8 data)
 {
-	m_tty_key_data = data ^ 0xff;
+	m_tty_data_in = data ^ 0xff;
 	m_maincpu->set_input_line(0, HOLD_LINE);
 }
 
-static MACHINE_CONFIG_START( mod8 )
+void mod8_state::mod8(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu",I8008, 800000)
-	MCFG_CPU_PROGRAM_MAP(mod8_mem)
-	MCFG_CPU_IO_MAP(mod8_io)
-	MCFG_CPU_IRQ_ACKNOWLEDGE_DRIVER(mod8_state,mod8_irq_callback)
+	I8008(config, m_maincpu, 800000);
+	m_maincpu->set_addrmap(AS_PROGRAM, &mod8_state::mem_map);
+	m_maincpu->set_addrmap(AS_IO, &mod8_state::io_map);
+	m_maincpu->set_irq_acknowledge_callback(FUNC(mod8_state::mod8_irq_callback));
 
 	/* video hardware */
-	MCFG_DEVICE_ADD(TELEPRINTER_TAG, TELEPRINTER, 0)
-	MCFG_GENERIC_TELEPRINTER_KEYBOARD_CB(PUT(mod8_state, kbd_put))
-MACHINE_CONFIG_END
+	TELEPRINTER(config, m_teleprinter, 0);
+	m_teleprinter->set_keyboard_callback(FUNC(mod8_state::kbd_put));
+}
 
 
 /* ROM definition */
 ROM_START( mod8 )
-	ROM_REGION( 0x10000, "maincpu", ROMREGION_ERASEFF )
+	ROM_REGION( 0x0800, "maincpu", ROMREGION_ERASEFF )
 	ROM_LOAD( "mon8.001", 0x0000, 0x0100, CRC(b82ac6b8) SHA1(fbea5a6dd4c779ca1671d84089f857a3f548ffcb))
 	ROM_LOAD( "mon8.002", 0x0100, 0x0100, CRC(8b82bc3c) SHA1(66222511527b27e56a5a1f9656d424d407eac7d3))
 	ROM_LOAD( "mon8.003", 0x0200, 0x0100, CRC(679ae913) SHA1(22423efcb9051c9812fcbac9a27af70415d0dd81))
@@ -167,5 +177,5 @@ ROM_END
 
 /* Driver */
 
-//    YEAR  NAME    PARENT  COMPAT   MACHINE    INPUT   CLASS         INIT  COMPANY                           FULLNAME  FLAGS
-COMP( 1974, mod8,   0,       0,      mod8,      mod8,   mod8_state,   0,    "Microsystems International Ltd", "MOD-8",  MACHINE_NO_SOUND_HW )
+//    YEAR  NAME  PARENT  COMPAT  MACHINE  INPUT  CLASS       INIT        COMPANY                           FULLNAME  FLAGS
+COMP( 1974, mod8, 0,      0,      mod8,    mod8,  mod8_state, empty_init, "Microsystems International Ltd", "MOD-8",  MACHINE_NO_SOUND_HW | MACHINE_SUPPORTS_SAVE )

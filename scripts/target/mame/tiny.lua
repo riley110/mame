@@ -21,6 +21,7 @@ CPUS["M6502"] = true
 CPUS["MCS48"] = true
 CPUS["MCS51"] = true
 CPUS["M6800"] = true
+CPUS["M6805"] = true
 CPUS["M6809"] = true
 CPUS["M680X0"] = true
 CPUS["TMS9900"] = true
@@ -54,8 +55,10 @@ SOUNDS["VOLT_REG"] = true
 --------------------------------------------------
 
 MACHINES["6821PIA"] = true
+MACHINES["ADC0808"] = true
 MACHINES["TTL74148"] = true
 MACHINES["TTL74153"] = true
+MACHINES["TTL74157"] = true
 MACHINES["TTL7474"] = true
 MACHINES["TTL74259"] = true
 MACHINES["RIOT6532"] = true
@@ -65,7 +68,12 @@ MACHINES["Z80PIO"] = true
 MACHINES["68681"] = true
 MACHINES["BANKDEV"] = true
 MACHINES["GEN_LATCH"] = true
+MACHINES["INPUT_MERGER"] = true
+MACHINES["OUTPUT_LATCH"] = true
+MACHINES["TICKET"] = true
 MACHINES["WATCHDOG"] = true
+MACHINES["Z80DAISY"] = true
+MACHINES["NETLIST"] = true
 
 
 --------------------------------------------------
@@ -86,7 +94,7 @@ function createProjects_mame_tiny(_target, _subtarget)
 	kind (LIBTYPE)
 	uuid (os.uuid("drv-mame-tiny"))
 	addprojectflags()
-	precompiledheaders()
+	precompiledheaders_novs()
 
 	includedirs {
 		MAME_DIR .. "src/osd",
@@ -100,8 +108,8 @@ function createProjects_mame_tiny(_target, _subtarget)
 	}
 
 files{
-	MAME_DIR .. "src/mame/machine/ticket.cpp",
-	MAME_DIR .. "src/mame/machine/ticket.h",
+	MAME_DIR .. "src/mame/audio/nl_carpolo.h",
+	MAME_DIR .. "src/mame/audio/nl_carpolo.cpp",
 	MAME_DIR .. "src/mame/drivers/carpolo.cpp",
 	MAME_DIR .. "src/mame/includes/carpolo.h",
 	MAME_DIR .. "src/mame/machine/carpolo.cpp",
@@ -117,6 +125,10 @@ files{
 	MAME_DIR .. "src/mame/video/exidy.cpp",
 	MAME_DIR .. "src/mame/audio/exidy440.cpp",
 	MAME_DIR .. "src/mame/audio/exidy440.h",
+	MAME_DIR .. "src/mame/audio/nl_fireone.h",
+	MAME_DIR .. "src/mame/audio/nl_fireone.cpp",
+	MAME_DIR .. "src/mame/audio/nl_starfire.h",
+	MAME_DIR .. "src/mame/audio/nl_starfire.cpp",
 	MAME_DIR .. "src/mame/drivers/starfire.cpp",
 	MAME_DIR .. "src/mame/includes/starfire.h",
 	MAME_DIR .. "src/mame/video/starfire.cpp",
@@ -149,6 +161,8 @@ files{
 	MAME_DIR .. "src/mame/includes/wrally.h",
 	MAME_DIR .. "src/mame/machine/wrally.cpp",
 	MAME_DIR .. "src/mame/video/wrally.cpp",
+	MAME_DIR .. "src/mame/video/gaelco_wrally_sprites.cpp",
+	MAME_DIR .. "src/mame/video/gaelco_wrally_sprites.h",
 	MAME_DIR .. "src/mame/machine/gaelco_ds5002fp.cpp",
 	MAME_DIR .. "src/mame/machine/gaelco_ds5002fp.h",
 	MAME_DIR .. "src/mame/drivers/looping.cpp",

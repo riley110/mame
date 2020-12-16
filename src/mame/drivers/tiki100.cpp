@@ -1,12 +1,18 @@
 // license:BSD-3-Clause
-// copyright-holders:Curt Coder
+// copyright-holders:Curt Coder, Frode van der Meeren
 /***************************************************************************
 
     Tiki 100
 
     12/05/2009 Skeleton driver.
 
-    http://www.djupdal.org/tiki/
+    Most of the driver is written by Curt Coder.
+
+    2020-06-02:
+       Screen-drawing redone by Frode van der Meeren.
+       There is still some work that needs to get this
+       even more accurate, but it's mostly down to
+       triggering update at the right times.
 
 ****************************************************************************/
 
@@ -14,7 +20,6 @@
 
     TODO:
 
-    - palette RAM should be written during HBLANK
     - winchester hard disk
     - analog/digital I/O
     - light pen
@@ -32,11 +37,11 @@
 
 /* Memory Banking */
 
-READ8_MEMBER( tiki100_state::mrq_r )
+uint8_t tiki100_state::mrq_r(offs_t offset)
 {
 	bool mdis = 1;
 
-	uint8_t data = m_exp->mrq_r(space, offset, 0xff, mdis);
+	uint8_t data = m_exp->mrq_r(offset, 0xff, mdis);
 
 	offs_t prom_addr = mdis << 5 | m_vire << 4 | m_rome << 3 | (offset >> 13);
 	uint8_t prom = m_prom->base()[prom_addr] ^ 0xff;
@@ -58,7 +63,7 @@ READ8_MEMBER( tiki100_state::mrq_r )
 		data = m_video_ram[addr];
 	}
 
-	if (prom & RAM)
+	if (prom & RAM0)
 	{
 		data = m_ram->pointer()[offset];
 	}
@@ -66,7 +71,7 @@ READ8_MEMBER( tiki100_state::mrq_r )
 	return data;
 }
 
-WRITE8_MEMBER( tiki100_state::mrq_w )
+void tiki100_state::mrq_w(offs_t offset, uint8_t data)
 {
 	bool mdis = 1;
 	offs_t prom_addr = mdis << 5 | m_vire << 4 | m_rome << 3 | (offset >> 13);
@@ -79,129 +84,129 @@ WRITE8_MEMBER( tiki100_state::mrq_w )
 		m_video_ram[addr] = data;
 	}
 
-	if (prom & RAM)
+	if (prom & RAM0)
 	{
 		m_ram->pointer()[offset] = data;
 	}
 
-	m_exp->mrq_w(space, offset, data);
+	m_exp->mrq_w(offset, data);
 }
 
-READ8_MEMBER( tiki100_state::iorq_r )
+uint8_t tiki100_state::iorq_r(offs_t offset)
 {
-	uint8_t data = m_exp->iorq_r(space, offset, 0xff);
+	uint8_t data = m_exp->iorq_r(offset, 0xff);
 
 	switch ((offset & 0xff) >> 2)
 	{
 	case 0x00: // KEYS
-		data = keyboard_r(space, 0);
+		data = keyboard_r();
 		break;
 
 	case 0x01: // SERS
-		data = m_dart->cd_ba_r(space, offset & 0x03);
+		data = m_dart->cd_ba_r(offset & 0x03);
 		break;
 
 	case 0x02: // PARS
-		data = m_pio->read(space, offset & 0x03);
+		data = m_pio->read(offset & 0x03);
 		break;
 
 	case 0x04: // FLOP
-		data = m_fdc->read(space, offset & 0x03);
+		data = m_fdc->read(offset & 0x03);
 		break;
 
 	case 0x05: // VIPS
 		switch (offset & 0x03)
 		{
 		case 3:
-			data = m_psg->data_r(space, 0);
+			data = m_psg->data_r();
 			break;
 		}
 		break;
 
 	case 0x06: // TIMS
-		data = m_ctc->read(space, offset & 0x03);
+		data = m_ctc->read(offset & 0x03);
 		break;
 	}
 
 	return data;
 }
 
-WRITE8_MEMBER( tiki100_state::iorq_w )
+void tiki100_state::iorq_w(offs_t offset, uint8_t data)
 {
-	m_exp->iorq_w(space, offset, data);
+	m_exp->iorq_w(offset, data);
 
 	switch ((offset & 0xff) >> 2)
 	{
 	case 0x00: // KEYS
-		keyboard_w(space, 0, data);
+		keyboard_w(data);
 		break;
 
 	case 0x01: // SERS
-		m_dart->cd_ba_w(space, offset & 0x03, data);
+		m_dart->cd_ba_w(offset & 0x03, data);
 		break;
 
 	case 0x02: // PARS
-		m_pio->write(space, offset & 0x03, data);
+		m_pio->write(offset & 0x03, data);
 		break;
 
 	case 0x03: // VIPB
-		video_mode_w(space, 0, data);
+		video_mode_w(data);
 		break;
 
 	case 0x04: // FLOP
-		m_fdc->write(space, offset & 0x03, data);
+		m_fdc->write(offset & 0x03, data);
 		break;
 
 	case 0x05: // VIPS
 		switch (offset & 0x03)
 		{
 		case 0: case 1:
-			palette_w(space, 0, data);
+			palette_w(data);
 			break;
 
 		case 2:
-			m_psg->address_w(space, 0, data);
+			m_psg->address_w(data);
 			break;
 
 		case 3:
-			m_psg->data_w(space, 0, data);
+			m_psg->data_w(data);
 			break;
 		}
 		break;
 
 	case 0x06: // TIMS
-		m_ctc->write(space, offset & 0x03, data);
+		m_ctc->write(offset & 0x03, data);
 		break;
 
 	case 0x07: // SYL
-		system_w(space, 0, data);
+		system_w(data);
 		break;
 	}
 }
 
 /* Read/Write Handlers */
 
-READ8_MEMBER( tiki100_state::keyboard_r )
+uint8_t tiki100_state::keyboard_r()
 {
 	uint8_t data = 0xff;
 
-	if (m_keylatch < 12)
+	if (m_keylatch < 13)
 	{
 		data = m_y[m_keylatch]->read();
 	}
 
 	m_keylatch++;
-	if (m_keylatch == 12) m_keylatch = 0;
+	if (m_keylatch == 16) m_keylatch = 0;   // Column selected by a 4-bit counter
 
 	return data;
 }
 
-WRITE8_MEMBER( tiki100_state::keyboard_w )
+void tiki100_state::keyboard_w(uint8_t data)
 {
 	m_keylatch = 0;
 }
 
-WRITE8_MEMBER( tiki100_state::video_mode_w )
+void tiki100_state::video_mode_w(uint8_t data)
 {
 	/*
 
@@ -219,17 +224,9 @@ WRITE8_MEMBER( tiki100_state::video_mode_w )
 	*/
 
 	m_mode = data;
-
-	if (BIT(data, 7))
-	{
-		int color = data & 0x0f;
-		uint8_t colordata = ~m_palette_val;
-
-		m_palette->set_pen_color(color, pal3bit(colordata >> 5), pal3bit(colordata >> 2), pal2bit(colordata >> 0));
-	}
 }
 
-WRITE8_MEMBER( tiki100_state::palette_w )
+void tiki100_state::palette_w(uint8_t data)
 {
 	/*
 
@@ -249,7 +246,7 @@ WRITE8_MEMBER( tiki100_state::palette_w )
 	m_palette_val = data;
 }
 
-WRITE8_MEMBER( tiki100_state::system_w )
+void tiki100_state::system_w(uint8_t data)
 {
 	/*
 
@@ -258,7 +255,7 @@ WRITE8_MEMBER( tiki100_state::system_w )
 	    0       DRIS0   drive select 0
 	    1       DRIS1   drive select 1
 	    2       _ROME   enable ROM at 0000-3fff
-	    3       VIRE    enable video RAM at 0000-7fff
+	    3       VIRE    enable video RAM at 0000-7fff or 4000-bfff
 	    4       SDEN    single density select (0=DD, 1=SD)
 	    5       _LMP0   GRAFIKK key led
 	    6       MOTON   floppy motor
@@ -281,10 +278,10 @@ WRITE8_MEMBER( tiki100_state::system_w )
 	if (floppy) floppy->mon_w(!BIT(data, 6));
 
 	/* GRAFIKK key led */
-	output().set_led_value(1, BIT(data, 5));
+	m_leds[0] = BIT(data, 5);
 
 	/* LOCK key led */
-	output().set_led_value(2, BIT(data, 7));
+	m_leds[1] = BIT(data, 7);
 
 	/* bankswitch */
 	m_rome = BIT(data, 2);
@@ -293,15 +290,17 @@ WRITE8_MEMBER( tiki100_state::system_w )
 
 /* Memory Maps */
 
-static ADDRESS_MAP_START( tiki100_mem, AS_PROGRAM, 8, tiki100_state )
-	ADDRESS_MAP_UNMAP_HIGH
-	AM_RANGE(0x0000, 0xffff) AM_READWRITE(mrq_r, mrq_w)
-ADDRESS_MAP_END
+void tiki100_state::tiki100_mem(address_map &map)
+{
+	map.unmap_value_high();
+	map(0x0000, 0xffff).rw(FUNC(tiki100_state::mrq_r), FUNC(tiki100_state::mrq_w));
+}
 
-static ADDRESS_MAP_START( tiki100_io, AS_IO, 8, tiki100_state )
-	ADDRESS_MAP_UNMAP_HIGH
-	AM_RANGE(0x0000, 0xffff) AM_READWRITE(iorq_r, iorq_w)
-ADDRESS_MAP_END
+void tiki100_state::tiki100_io(address_map &map)
+{
+	map.unmap_value_high();
+	map(0x0000, 0xffff).rw(FUNC(tiki100_state::iorq_r), FUNC(tiki100_state::iorq_w));
+}
 
 /* Input Ports */
 
@@ -321,7 +320,10 @@ static INPUT_PORTS_START( tiki100 )
      10 | + (num) | - (num) | * (num) | 7 (num) | 8 (num) | 9 (num) | % (num) | = (num) |
      11 | 4 (num) | 5 (num) | 6 (num) | HTAB    | 1 (num) | 0 (num) | . (num) |         |
      12 | HJEM    | H?YRE   | 2 (num) | 3 (num) | ENTER   |         |         |         |
+     13 |         |         |         |         |         |         |         |         |
     ----+---------+---------+---------+---------+---------+---------+---------+---------+
+
+    Unused bits may return some fixed values, an undocumented system call will read and return them.
 */
 	PORT_START("Y1")
 	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_NAME("CTRL") PORT_CODE(KEYCODE_LCONTROL) PORT_CHAR(UCHAR_MAMEKEY(LCONTROL))
@@ -443,6 +445,16 @@ static INPUT_PORTS_START( tiki100 )
 	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED )
 	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED )
 
+	PORT_START("Y13")
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNUSED )
+	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED )
+	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED )
+	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNUSED )
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNUSED )
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_UNUSED )
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNUSED )
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED )
+
 	PORT_START("ST")
 	PORT_CONFNAME( 0x01, 0x01, "DART TxCA")
 	PORT_CONFSETTING( 0x00, "BAR0" )
@@ -451,71 +463,69 @@ INPUT_PORTS_END
 
 /* Video */
 
+TIMER_DEVICE_CALLBACK_MEMBER( tiki100_state::scanline_start )
+{
+	// TODO: Optional assertion of VSYNC on one of the PIO-pins, as used by some demos
+	//int scanline = param;
+
+	// TODO: use TIMER to trigger this every 16-pixel chunk (20MHz/16) instead of once at the end of the scanline
+	m_screen->update_now();
+
+	// This point is by the end of a line. Changes in palette are applied here.
+	if (BIT(m_mode, 7))
+	{
+		int color = m_mode & 0x0f;
+		uint8_t colordata = ~m_palette_val;
+
+		m_palette->set_pen_color(color, pal3bit(colordata >> 5), pal3bit(colordata >> 2), pal2bit(colordata >> 0));
+	}
+}
+
 uint32_t tiki100_state::screen_update(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect)
 {
+	//
+	//  Emulates the pixel-shifter and row/column counters from a
+	//  starting point on screen to an ending point on screen.
+	//
+	//  For the most accurate results, this should be run once for
+	//  every 16-pixel chunk, but per the spring of 2020 there is
+	//  only one demo that require this degree of accuracy.
+	//
+	//
+
 	const rgb_t *palette = m_palette->palette()->entry_list_raw();
-	uint16_t addr = (m_scroll << 7);
-	int sx, y, pixel, mode = (m_mode >> 4) & 0x03;
 
-	for (y = 0; y < 256; y++)
+	for (int vaddr = cliprect.min_y; vaddr <= cliprect.max_y; vaddr++)
 	{
-		for (sx = 0; sx < 128; sx++)
+		// This is at the start of a line
+		int haddr = (cliprect.min_x>>4);
+		int haddr_end = (cliprect.max_x>>4);
+		for (; haddr <= haddr_end; haddr++)
 		{
-			uint8_t data = m_video_ram[addr & TIKI100_VIDEORAM_MASK];
-
-			switch (mode)
+			// This is at the start of a 16-dot cluster. Changes in m_scroll and m_video_ram come into effect here.
+			uint16_t addr = ((vaddr+m_scroll)<<7) | (haddr<<1);
+			uint16_t data = (m_video_ram[(addr+1) & TIKI100_VIDEORAM_MASK]<<8) | m_video_ram[addr & TIKI100_VIDEORAM_MASK];
+			for(int dot = 0; dot < 16; dot++)
 			{
-			case 0:
-				for (pixel = 0; pixel < 8; pixel++)
+				// This is at the start of a dot. Changes in m_mode are applied at this point.
+				int mode = (m_mode >> 4) & 0x03;
+				if((mode == 1) || (!(dot&0x01) && mode == 2) || (!(dot&0x03) && mode == 3))
 				{
-					int x = (sx * 8) + pixel;
-
-					bitmap.pix32(y, x) = palette[0];
+					// This is the point when a pixel is latched from the dot-shifter.
+					//
+					//   For the sake of readability:
+					//   mode == 0: keep the old pixel
+					//   mode == 1: latch new pixel once per dot
+					//   mode == 2: latch new pixel once per 2 dots
+					//   mode == 3: latch new pixel once per 4 dots
+					//
+					m_current_pixel = data&0x0F;
 				}
-				break;
+				bitmap.pix32(vaddr, (haddr<<4) + dot) = palette[m_current_pixel&0x0F];
 
-			case 1: /* 1024x256x2 */
-				for (pixel = 0; pixel < 8; pixel++)
-				{
-					int x = (sx * 8) + pixel;
-					int color = BIT(data, 0);
-
-					bitmap.pix32(y, x) = palette[color];
-
-					data >>= 1;
-				}
-				break;
-
-			case 2: /* 512x256x4 */
-				for (pixel = 0; pixel < 4; pixel++)
-				{
-					int x = (sx * 8) + (pixel * 2);
-					int color = data & 0x03;
-
-					bitmap.pix32(y, x) = palette[color];
-					bitmap.pix32(y, x + 1) = palette[color];
-
-					data >>= 2;
-				}
-				break;
-
-			case 3: /* 256x256x16 */
-				for (pixel = 0; pixel < 2; pixel++)
-				{
-					int x = (sx * 8) + (pixel * 4);
-					int color = data & 0x0f;
-
-					bitmap.pix32(y, x) = palette[color];
-					bitmap.pix32(y, x + 1) = palette[color];
-					bitmap.pix32(y, x + 2) = palette[color];
-					bitmap.pix32(y, x + 3) = palette[color];
-
-					data >>= 4;
-				}
-				break;
+				// This will run the dot-shifter and add the TEST-pattern to the upper bits (usually hidden by palette).
+				data = (data>>1)|((haddr&0x02)<<14);
 			}
-
-			addr++;
 		}
 	}
 
@@ -539,7 +549,7 @@ DECLARE_WRITE_LINE_MEMBER( tiki100_state::write_centronics_perror )
 	m_centronics_perror = state;
 }
 
-READ8_MEMBER( tiki100_state::pio_pb_r )
+uint8_t tiki100_state::pio_pb_r()
 {
 	/*
 
@@ -569,7 +579,7 @@ READ8_MEMBER( tiki100_state::pio_pb_r )
 	return data;
 }
 
-WRITE8_MEMBER( tiki100_state::pio_pb_w )
+void tiki100_state::pio_pb_w(uint8_t data)
 {
 	/*
 
@@ -626,15 +636,16 @@ FLOPPY_FORMATS_MEMBER( tiki100_state::floppy_formats )
 	FLOPPY_TIKI100_FORMAT
 FLOPPY_FORMATS_END
 
-static SLOT_INTERFACE_START( tiki100_floppies )
-	SLOT_INTERFACE( "525ssdd", FLOPPY_525_SSDD )
-	SLOT_INTERFACE( "525dd", FLOPPY_525_DD ) // Tead FD-55A
-	SLOT_INTERFACE( "525qd", FLOPPY_525_QD ) // Teac FD-55F
-SLOT_INTERFACE_END
+static void tiki100_floppies(device_slot_interface &device)
+{
+	device.option_add("525ssdd", FLOPPY_525_SSDD);
+	device.option_add("525dd", FLOPPY_525_DD); // Tead FD-55A
+	device.option_add("525qd", FLOPPY_525_QD); // Teac FD-55F
+}
 
 /* AY-3-8912 Interface */
 
-WRITE8_MEMBER( tiki100_state::video_scroll_w )
+void tiki100_state::video_scroll_w(uint8_t data)
 {
 	m_scroll = data;
 }
@@ -668,6 +679,8 @@ WRITE_LINE_MEMBER( tiki100_state::busrq_w )
 
 void tiki100_state::machine_start()
 {
+	m_leds.resolve();
+
 	/* allocate video RAM */
 	m_video_ram.allocate(TIKI100_VIDEORAM_SIZE);
 
@@ -686,101 +699,103 @@ void tiki100_state::machine_start()
 
 void tiki100_state::machine_reset()
 {
-	address_space &space = m_maincpu->space(AS_PROGRAM);
-
-	system_w(space, 0, 0);
+	system_w(0);
 
 	m_st = m_st_io->read();
 }
 
 /* Machine Driver */
 
-static MACHINE_CONFIG_START( tiki100 )
+void tiki100_state::tiki100(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_CPU_ADD(Z80_TAG, Z80, XTAL_8MHz/2)
-	MCFG_CPU_PROGRAM_MAP(tiki100_mem)
-	MCFG_CPU_IO_MAP(tiki100_io)
-	MCFG_Z80_DAISY_CHAIN(tiki100_daisy_chain)
+	Z80(config, m_maincpu, 8_MHz_XTAL / 2);
+	m_maincpu->set_addrmap(AS_PROGRAM, &tiki100_state::tiki100_mem);
+	m_maincpu->set_addrmap(AS_IO, &tiki100_state::tiki100_io);
+	m_maincpu->set_daisy_config(tiki100_daisy_chain);
 
 	/* video hardware */
-	MCFG_SCREEN_ADD(SCREEN_TAG, RASTER)
-	MCFG_SCREEN_RAW_PARAMS(XTAL_20MHz, 1280, 0, 1024, 312, 0, 256)
-	MCFG_SCREEN_UPDATE_DRIVER(tiki100_state, screen_update)
-	MCFG_PALETTE_ADD("palette", 16)
+	TIMER(config, "scantimer").configure_scanline(FUNC(tiki100_state::scanline_start), "screen", 0, 1);
+	SCREEN(config, m_screen, SCREEN_TYPE_RASTER);
+	m_screen->set_raw(20_MHz_XTAL, 1280, 0, 1024, 312, 0, 256);
+	m_screen->set_screen_update(FUNC(tiki100_state::screen_update));
+	PALETTE(config, m_palette).set_entries(16);
 
-	MCFG_TIKI100_BUS_ADD()
-	MCFG_TIKI100_BUS_IRQ_CALLBACK(INPUTLINE(Z80_TAG, INPUT_LINE_IRQ0))
-	MCFG_TIKI100_BUS_NMI_CALLBACK(INPUTLINE(Z80_TAG, INPUT_LINE_NMI))
-	MCFG_TIKI100_BUS_BUSRQ_CALLBACK(WRITELINE(tiki100_state, busrq_w))
-	MCFG_TIKI100_BUS_IN_MREQ_CALLBACK(READ8(tiki100_state, mrq_r))
-	MCFG_TIKI100_BUS_OUT_MREQ_CALLBACK(WRITE8(tiki100_state, mrq_w))
-	MCFG_TIKI100_BUS_SLOT_ADD("slot1", "8088")
-	MCFG_TIKI100_BUS_SLOT_ADD("slot2", "hdc")
-	MCFG_TIKI100_BUS_SLOT_ADD("slot3", nullptr)
+	TIKI100_BUS(config, m_exp, 0);
+	m_exp->irq_wr_callback().set_inputline(m_maincpu, INPUT_LINE_IRQ0);
+	m_exp->nmi_wr_callback().set_inputline(m_maincpu, INPUT_LINE_NMI);
+	m_exp->busrq_wr_callback().set(FUNC(tiki100_state::busrq_w));
+	m_exp->mrq_rd_callback().set(FUNC(tiki100_state::mrq_r));
+	m_exp->mrq_wr_callback().set(FUNC(tiki100_state::mrq_w));
+	TIKI100_BUS_SLOT(config, "slot1", m_exp, tiki100_cards, "8088");
+	TIKI100_BUS_SLOT(config, "slot2", m_exp, tiki100_cards, "hdc");
+	TIKI100_BUS_SLOT(config, "slot3", m_exp, tiki100_cards, nullptr);
 
 	/* devices */
-	MCFG_DEVICE_ADD(Z80DART_TAG, Z80DART, XTAL_8MHz/4)
-	MCFG_Z80DART_OUT_TXDA_CB(DEVWRITELINE(RS232_A_TAG, rs232_port_device, write_txd))
-	MCFG_Z80DART_OUT_DTRA_CB(DEVWRITELINE(RS232_A_TAG, rs232_port_device, write_dtr))
-	MCFG_Z80DART_OUT_RTSA_CB(DEVWRITELINE(RS232_A_TAG, rs232_port_device, write_rts))
-	MCFG_Z80DART_OUT_TXDB_CB(DEVWRITELINE(RS232_B_TAG, rs232_port_device, write_txd))
-	MCFG_Z80DART_OUT_DTRB_CB(DEVWRITELINE(RS232_B_TAG, rs232_port_device, write_dtr))
-	MCFG_Z80DART_OUT_RTSB_CB(DEVWRITELINE(RS232_B_TAG, rs232_port_device, write_rts))
-	MCFG_Z80DART_OUT_INT_CB(INPUTLINE(Z80_TAG, INPUT_LINE_IRQ0))
+	Z80DART(config, m_dart, 8_MHz_XTAL / 4);
+	m_dart->out_txda_callback().set(RS232_A_TAG, FUNC(rs232_port_device::write_txd));
+	m_dart->out_dtra_callback().set(RS232_A_TAG, FUNC(rs232_port_device::write_dtr));
+	m_dart->out_rtsa_callback().set(RS232_A_TAG, FUNC(rs232_port_device::write_rts));
+	m_dart->out_txdb_callback().set(RS232_B_TAG, FUNC(rs232_port_device::write_txd));
+	m_dart->out_dtrb_callback().set(RS232_B_TAG, FUNC(rs232_port_device::write_dtr));
+	m_dart->out_rtsb_callback().set(RS232_B_TAG, FUNC(rs232_port_device::write_rts));
+	m_dart->out_int_callback().set_inputline(m_maincpu, INPUT_LINE_IRQ0);
 
-	MCFG_DEVICE_ADD(Z80PIO_TAG, Z80PIO, XTAL_8MHz/4)
-	MCFG_Z80PIO_OUT_INT_CB(INPUTLINE(Z80_TAG, INPUT_LINE_IRQ0))
-	MCFG_Z80PIO_IN_PA_CB(DEVREAD8("cent_data_in", input_buffer_device, read))
-	MCFG_Z80PIO_OUT_PA_CB(DEVWRITE8("cent_data_out", output_latch_device, write))
-	MCFG_Z80PIO_IN_PB_CB(READ8(tiki100_state, pio_pb_r))
-	MCFG_Z80PIO_OUT_PB_CB(WRITE8(tiki100_state, pio_pb_w))
+	Z80PIO(config, m_pio, 8_MHz_XTAL / 4);
+	m_pio->out_int_callback().set_inputline(m_maincpu, INPUT_LINE_IRQ0);
+	m_pio->in_pa_callback().set("cent_data_in", FUNC(input_buffer_device::read));
+	m_pio->out_pa_callback().set("cent_data_out", FUNC(output_latch_device::write));
+	m_pio->in_pb_callback().set(FUNC(tiki100_state::pio_pb_r));
+	m_pio->out_pb_callback().set(FUNC(tiki100_state::pio_pb_w));
 
-	MCFG_DEVICE_ADD(Z80CTC_TAG, Z80CTC, XTAL_8MHz/4)
-	MCFG_Z80CTC_INTR_CB(INPUTLINE(Z80_TAG, INPUT_LINE_IRQ0))
-	MCFG_Z80CTC_ZC0_CB(WRITELINE(tiki100_state, bar0_w))
-	MCFG_Z80CTC_ZC1_CB(DEVWRITELINE(Z80DART_TAG, z80dart_device, rxtxcb_w))
-	MCFG_Z80CTC_ZC2_CB(WRITELINE(tiki100_state, bar2_w))
+	Z80CTC(config, m_ctc, 8_MHz_XTAL / 4);
+	m_ctc->intr_callback().set_inputline(m_maincpu, INPUT_LINE_IRQ0);
+	m_ctc->zc_callback<0>().set(FUNC(tiki100_state::bar0_w));
+	m_ctc->zc_callback<1>().set(m_dart, FUNC(z80dart_device::rxtxcb_w));
+	m_ctc->zc_callback<2>().set(FUNC(tiki100_state::bar2_w));
 
-	MCFG_TIMER_DRIVER_ADD_PERIODIC("ctc", tiki100_state, ctc_tick, attotime::from_hz(XTAL_8MHz/4))
+	TIMER(config, "ctc").configure_periodic(FUNC(tiki100_state::ctc_tick), attotime::from_hz(8_MHz_XTAL / 4));
 
-	MCFG_FD1797_ADD(FD1797_TAG, XTAL_8MHz/8) // FD1767PL-02 or FD1797-PL
-	MCFG_FLOPPY_DRIVE_ADD(FD1797_TAG":0", tiki100_floppies, "525qd", tiki100_state::floppy_formats)
-	MCFG_FLOPPY_DRIVE_ADD(FD1797_TAG":1", tiki100_floppies, "525qd", tiki100_state::floppy_formats)
+	FD1797(config, m_fdc, 8_MHz_XTAL / 8); // FD1767PL-02 or FD1797-PL
+	FLOPPY_CONNECTOR(config, FD1797_TAG":0", tiki100_floppies, "525qd", tiki100_state::floppy_formats);
+	FLOPPY_CONNECTOR(config, FD1797_TAG":1", tiki100_floppies, "525qd", tiki100_state::floppy_formats);
 
-	MCFG_RS232_PORT_ADD(RS232_A_TAG, default_rs232_devices, nullptr)
-	MCFG_RS232_RXD_HANDLER(DEVWRITELINE(Z80DART_TAG, z80dart_device, rxa_w))
+	rs232_port_device &rs232a(RS232_PORT(config, RS232_A_TAG, default_rs232_devices, nullptr));
+	rs232a.rxd_handler().set(m_dart, FUNC(z80dart_device::rxa_w));
 
-	MCFG_RS232_PORT_ADD(RS232_B_TAG, default_rs232_devices, nullptr)
-	MCFG_RS232_RXD_HANDLER(DEVWRITELINE(Z80DART_TAG, z80dart_device, rxb_w))
+	rs232_port_device &rs232b(RS232_PORT(config, RS232_B_TAG, default_rs232_devices, nullptr));
+	rs232b.rxd_handler().set(m_dart, FUNC(z80dart_device::rxb_w));
 
-	MCFG_CENTRONICS_ADD(CENTRONICS_TAG, centronics_devices, "printer")
-	MCFG_CENTRONICS_DATA_INPUT_BUFFER("cent_data_in")
-	MCFG_CENTRONICS_ACK_HANDLER(WRITELINE(tiki100_state, write_centronics_ack))
-	MCFG_CENTRONICS_BUSY_HANDLER(WRITELINE(tiki100_state, write_centronics_busy))
-	MCFG_CENTRONICS_PERROR_HANDLER(WRITELINE(tiki100_state, write_centronics_perror))
+	CENTRONICS(config, m_centronics, centronics_devices, "printer");
+	m_centronics->set_data_input_buffer("cent_data_in");
+	m_centronics->ack_handler().set(FUNC(tiki100_state::write_centronics_ack));
+	m_centronics->busy_handler().set(FUNC(tiki100_state::write_centronics_busy));
+	m_centronics->perror_handler().set(FUNC(tiki100_state::write_centronics_perror));
 
-	MCFG_DEVICE_ADD("cent_data_in", INPUT_BUFFER, 0)
-	MCFG_CENTRONICS_OUTPUT_LATCH_ADD("cent_data_out", CENTRONICS_TAG)
+	INPUT_BUFFER(config, "cent_data_in");
 
-	MCFG_CASSETTE_ADD(CASSETTE_TAG)
-	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_STOPPED | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_MUTED)
-
-	MCFG_TIMER_DRIVER_ADD_PERIODIC("tape", tiki100_state, tape_tick, attotime::from_hz(44100))
+	output_latch_device &cent_data_out(OUTPUT_LATCH(config, "cent_data_out"));
+	m_centronics->set_output_latch(cent_data_out);
 
 	/* sound hardware */
-	MCFG_SPEAKER_STANDARD_MONO("mono")
-	MCFG_SOUND_ADD(AY8912_TAG, AY8912, XTAL_8MHz/4)
-	MCFG_AY8910_OUTPUT_TYPE(AY8910_SINGLE_OUTPUT)
-	MCFG_AY8910_PORT_A_WRITE_CB(WRITE8(tiki100_state, video_scroll_w))
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.25)
+	SPEAKER(config, "mono").front_center();
+	AY8912(config, m_psg, 8_MHz_XTAL / 4);
+	m_psg->set_flags(AY8910_SINGLE_OUTPUT);
+	m_psg->port_a_write_callback().set(FUNC(tiki100_state::video_scroll_w));
+	m_psg->add_route(ALL_OUTPUTS, "mono", 0.25);
+
+	CASSETTE(config, m_cassette);
+	m_cassette->set_default_state(CASSETTE_STOPPED | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED);
+	m_cassette->add_route(ALL_OUTPUTS, "mono", 0.05);
+
+	TIMER(config, "tape").configure_periodic(FUNC(tiki100_state::tape_tick), attotime::from_hz(44100));
 
 	/* internal ram */
-	MCFG_RAM_ADD(RAM_TAG)
-	MCFG_RAM_DEFAULT_SIZE("64K")
+	RAM(config, RAM_TAG).set_default_size("64K");
 
 	// software list
-	MCFG_SOFTWARE_LIST_ADD("flop_list", "tiki100")
-MACHINE_CONFIG_END
+	SOFTWARE_LIST(config, "flop_list").set_original("tiki100");
+}
 
 /* ROMs */
 
@@ -797,9 +812,9 @@ ROM_START( tiki100 )
 	ROM_DEFAULT_BIOS( "v203w" )
 
 	ROM_SYSTEM_BIOS( 0, "v135", "TIKI ROM v1.35" )
-	ROMX_LOAD( "tikirom-1.35.u10",  0x0000, 0x2000, CRC(7dac5ee7) SHA1(14d622fd843833faec346bf5357d7576061f5a3d), ROM_BIOS(1) )
+	ROMX_LOAD( "tikirom-1.35.u10",  0x0000, 0x2000, CRC(7dac5ee7) SHA1(14d622fd843833faec346bf5357d7576061f5a3d), ROM_BIOS(0) )
 	ROM_SYSTEM_BIOS( 1, "v203w", "TIKI ROM v2.03 W" )
-	ROMX_LOAD( "tikirom-2.03w.u10", 0x0000, 0x2000, CRC(79662476) SHA1(96336633ecaf1b2190c36c43295ac9f785d1f83a), ROM_BIOS(2) )
+	ROMX_LOAD( "tikirom-2.03w.u10", 0x0000, 0x2000, CRC(79662476) SHA1(96336633ecaf1b2190c36c43295ac9f785d1f83a), ROM_BIOS(1) )
 
 	ROM_REGION( 0x100, "u4", 0 )
 	ROM_LOAD( "53ls140.u4", 0x000, 0x100, CRC(894b756f) SHA1(429e10de0e0e749246895801b18186ff514c12bc) )
@@ -807,6 +822,6 @@ ROM_END
 
 /* System Drivers */
 
-//    YEAR  NAME        PARENT      COMPAT  MACHINE     INPUT    STATE          INIT    COMPANY             FULLNAME        FLAGS
-COMP( 1984, kontiki,    0,          0,      tiki100,    tiki100, tiki100_state, 0,      "Kontiki Data A/S", "KONTIKI 100",  MACHINE_SUPPORTS_SAVE )
-COMP( 1984, tiki100,    kontiki,    0,      tiki100,    tiki100, tiki100_state, 0,      "Tiki Data A/S",    "TIKI 100",     MACHINE_SUPPORTS_SAVE )
+//    YEAR  NAME     PARENT   COMPAT  MACHINE  INPUT    CLASS          INIT        COMPANY             FULLNAME        FLAGS
+COMP( 1984, kontiki, 0,       0,      tiki100, tiki100, tiki100_state, empty_init, "Kontiki Data A/S", "KONTIKI 100",  MACHINE_SUPPORTS_SAVE )
+COMP( 1984, tiki100, kontiki, 0,      tiki100, tiki100, tiki100_state, empty_init, "Tiki Data A/S",    "TIKI 100",     MACHINE_SUPPORTS_SAVE )

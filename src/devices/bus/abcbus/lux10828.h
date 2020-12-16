@@ -13,8 +13,9 @@
 
 #include "abcbus.h"
 #include "cpu/z80/z80.h"
-#include "cpu/z80/z80daisy.h"
+#include "machine/z80daisy.h"
 #include "formats/abc800_dsk.h"
+#include "imagedev/floppy.h"
 #include "machine/wd_fdc.h"
 #include "machine/z80pio.h"
 
@@ -55,11 +56,6 @@ public:
 	// construction/destruction
 	luxor_55_10828_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	DECLARE_WRITE8_MEMBER( ctrl_w );
-	DECLARE_WRITE8_MEMBER( status_w );
-	DECLARE_READ8_MEMBER( fdc_r );
-	DECLARE_WRITE8_MEMBER( fdc_w );
-
 protected:
 	// device-level overrides
 	virtual void device_start() override;
@@ -79,15 +75,23 @@ protected:
 	virtual void abcbus_c3(uint8_t data) override;
 
 private:
-	DECLARE_READ8_MEMBER( pio_pa_r );
-	DECLARE_WRITE8_MEMBER( pio_pa_w );
-	DECLARE_READ8_MEMBER( pio_pb_r );
-	DECLARE_WRITE8_MEMBER( pio_pb_w );
+	uint8_t pio_pa_r();
+	void pio_pa_w(uint8_t data);
+	uint8_t pio_pb_r();
+	void pio_pb_w(uint8_t data);
 
 	DECLARE_WRITE_LINE_MEMBER( fdc_intrq_w );
 	DECLARE_WRITE_LINE_MEMBER( fdc_drq_w );
 
+	void ctrl_w(uint8_t data);
+	void status_w(uint8_t data);
+	uint8_t fdc_r(offs_t offset);
+	void fdc_w(offs_t offset, uint8_t data);
+
 	DECLARE_FLOPPY_FORMATS( floppy_formats );
+
+	void luxor_55_10828_io(address_map &map);
+	void luxor_55_10828_mem(address_map &map);
 
 	required_device<z80_device> m_maincpu;
 	required_device<z80pio_device> m_pio;

@@ -16,43 +16,21 @@ The blitter reads compressed data from ROM and copies it to the bitmap RAM.
 
 void hnayayoi_state::common_vh_start( int num_pixmaps )
 {
-	int i;
-
-	m_total_pixmaps = num_pixmaps;
-
-	for (i = 0; i < 8; i++)
+	for (int i = 0; i < num_pixmaps; i++)
 	{
-		if (i < m_total_pixmaps)
-		{
-			m_pixmap[i] = auto_alloc_array(machine(), uint8_t, 256 * 256);
-		}
-		else
-			m_pixmap[i] = nullptr;
+		m_pixmap[i] = make_unique_clear<uint8_t[]>(256 * 256);
+		save_pointer(NAME(m_pixmap[i]), 256 * 256, i);
 	}
 }
 
 void hnayayoi_state::video_start()
 {
 	common_vh_start(4);  /* 4 bitmaps -> 2 layers */
-
-	save_pointer(NAME(m_pixmap[0]), 256 * 256);
-	save_pointer(NAME(m_pixmap[1]), 256 * 256);
-	save_pointer(NAME(m_pixmap[2]), 256 * 256);
-	save_pointer(NAME(m_pixmap[3]), 256 * 256);
 }
 
 VIDEO_START_MEMBER(hnayayoi_state,untoucha)
 {
 	common_vh_start(8);  /* 8 bitmaps -> 4 layers */
-
-	save_pointer(NAME(m_pixmap[0]), 256 * 256);
-	save_pointer(NAME(m_pixmap[1]), 256 * 256);
-	save_pointer(NAME(m_pixmap[2]), 256 * 256);
-	save_pointer(NAME(m_pixmap[3]), 256 * 256);
-	save_pointer(NAME(m_pixmap[4]), 256 * 256);
-	save_pointer(NAME(m_pixmap[5]), 256 * 256);
-	save_pointer(NAME(m_pixmap[6]), 256 * 256);
-	save_pointer(NAME(m_pixmap[7]), 256 * 256);
 }
 
 
@@ -99,7 +77,7 @@ up blit_src for the second call.
 
 ***************************************************************************/
 
-WRITE8_MEMBER(hnayayoi_state::dynax_blitter_rev1_param_w)
+void hnayayoi_state::dynax_blitter_rev1_param_w(offs_t offset, uint8_t data)
 {
 	switch (offset)
 	{
@@ -126,16 +104,14 @@ void hnayayoi_state::copy_pixel( int x, int y, int pen )
 	}
 }
 
-WRITE8_MEMBER(hnayayoi_state::dynax_blitter_rev1_start_w)
+void hnayayoi_state::dynax_blitter_rev1_start_w(uint8_t data)
 {
 	uint8_t *rom = memregion("gfx1")->base();
 	int romlen = memregion("gfx1")->bytes();
 	int sx = m_blit_dest & 0xff;
 	int sy = m_blit_dest >> 8;
-	int x, y;
-
-	x = sx;
-	y = sy;
+	int x = sx;
+	int y = sy;
 	while (m_blit_src < romlen)
 	{
 		int cmd = rom[m_blit_src] & 0x0f;
@@ -201,79 +177,73 @@ WRITE8_MEMBER(hnayayoi_state::dynax_blitter_rev1_start_w)
 	popmessage("GFXROM OVER %06x", m_blit_src);
 }
 
-WRITE8_MEMBER(hnayayoi_state::dynax_blitter_rev1_clear_w)
+void hnayayoi_state::dynax_blitter_rev1_clear_w(uint8_t data)
 {
 	int pen = data >> 4;
-	int i;
 
-	for (i = 0; i < 8; i++)
+	for (int i = 0; i < 8; i++)
 	{
 		if ((~m_blit_layer & (1 << i)) && (m_pixmap[i]))
-			memset(m_pixmap[i] + m_blit_dest, pen, 0x10000 - m_blit_dest);
+			std::fill(&m_pixmap[i][m_blit_dest], &m_pixmap[i][0x10000], pen);
 	}
 }
 
 
-WRITE8_MEMBER(hnayayoi_state::hnayayoi_palbank_w)
+void hnayayoi_state::hnayayoi_palbank_w(offs_t offset, uint8_t data)
 {
 	offset *= 8;
 	m_palbank = (m_palbank & (0xff00 >> offset)) | (data << offset);
 }
 
 
-void hnayayoi_state::draw_layer_interleaved( bitmap_ind16 &bitmap, const rectangle &cliprect, int left_pixmap, int right_pixmap, int palbase, int transp )
+void hnayayoi_state::draw_layer_interleaved(bitmap_rgb32 &bitmap, const rectangle &cliprect, uint16_t row, uint16_t y, uint8_t x_count, int left_pixmap, int right_pixmap, int palbase, bool transp)
 {
-	int county, countx, pen;
-	uint8_t *src1 = m_pixmap[left_pixmap];
-	uint8_t *src2 = m_pixmap[right_pixmap];
-	uint16_t *dstbase = &bitmap.pix16(0);
+	uint8_t *src1 = &m_pixmap[left_pixmap][(row & 255) * 256];
+	uint8_t *src2 = &m_pixmap[right_pixmap][(row & 255) * 256];
+	uint32_t *dst = &bitmap.pix32(y);
 
-	palbase *= 16;
+	const pen_t *pal = &m_palette->pens()[palbase * 16];
 
-	for (county = 255; county >= 0; county--, dstbase += bitmap.rowpixels())
+	if (transp)
 	{
-		uint16_t *dst = dstbase;
-
-		if (transp)
+		for (int countx = x_count * 2 - 1; countx >= 0; countx--, dst += 2)
 		{
-			for (countx = 255; countx >= 0; countx--, dst += 2)
-			{
-				pen = *(src1++);
-				if (pen) *dst = palbase + pen;
-				pen = *(src2++);
-				if (pen) *(dst + 1) = palbase + pen;
-			}
+			int pen = *(src1++);
+			if (pen) *dst = pal[pen];
+			pen = *(src2++);
+			if (pen) *(dst + 1) = pal[pen];
 		}
-		else
+	}
+	else
+	{
+		for (int countx = x_count * 2 - 1; countx >= 0; countx--, dst += 2)
 		{
-			for (countx = 255; countx >= 0; countx--, dst += 2)
-			{
-				*dst = palbase + *(src1++);
-				*(dst + 1) = palbase + *(src2++);
-			}
+			*dst = pal[*(src1++)];
+			*(dst + 1) = pal[*(src2++)];
 		}
 	}
 }
 
 
-uint32_t hnayayoi_state::screen_update_hnayayoi(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect)
+MC6845_UPDATE_ROW(hnayayoi_state::hnayayoi_update_row)
+{
+	int col0 = (m_palbank >>  0) & 0x0f;
+	int col1 = (m_palbank >>  4) & 0x0f;
+
+	draw_layer_interleaved(bitmap, cliprect, y, y, x_count, 3, 2, col1, false);
+	draw_layer_interleaved(bitmap, cliprect, y, y, x_count, 1, 0, col0, true);
+}
+
+
+MC6845_UPDATE_ROW(hnayayoi_state::untoucha_update_row)
 {
 	int col0 = (m_palbank >>  0) & 0x0f;
 	int col1 = (m_palbank >>  4) & 0x0f;
 	int col2 = (m_palbank >>  8) & 0x0f;
 	int col3 = (m_palbank >> 12) & 0x0f;
 
-	if (m_total_pixmaps == 4)
-	{
-		draw_layer_interleaved(bitmap, cliprect, 3, 2, col1, 0);
-		draw_layer_interleaved(bitmap, cliprect, 1, 0, col0, 1);
-	}
-	else    /* total_pixmaps == 8 */
-	{
-		draw_layer_interleaved(bitmap, cliprect, 7, 6, col3, 0);
-		draw_layer_interleaved(bitmap, cliprect, 5, 4, col2, 1);
-		draw_layer_interleaved(bitmap, cliprect, 3, 2, col1, 1);
-		draw_layer_interleaved(bitmap, cliprect, 1, 0, col0, 1);
-	}
-	return 0;
+	draw_layer_interleaved(bitmap, cliprect, y + 16, y, x_count, 7, 6, col3, false);
+	draw_layer_interleaved(bitmap, cliprect, y + 16, y, x_count, 5, 4, col2, true);
+	draw_layer_interleaved(bitmap, cliprect, y + 16, y, x_count, 3, 2, col1, true);
+	draw_layer_interleaved(bitmap, cliprect, y + 16, y, x_count, 1, 0, col0, true);
 }

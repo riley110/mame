@@ -149,22 +149,6 @@
 #define S3C24XX_GPIO_PORT_F S3C2400_GPIO_PORT_F
 #define S3C24XX_GPIO_PORT_G S3C2400_GPIO_PORT_G
 
-
-#define VERBOSE_LEVEL ( 0 )
-
-static inline void ATTR_PRINTF(3,4) verboselog(device_t &device, int n_level, const char *s_fmt, ...)
-{
-	if (VERBOSE_LEVEL >= n_level)
-	{
-		va_list v;
-		char buf[32768];
-		va_start(v, s_fmt);
-		vsprintf( buf, s_fmt, v);
-		va_end(v);
-		device.logerror("%s: %s", device.machine().describe_context( ), buf);
-	}
-}
-
 #define DEVICE_S3C2400
 #define S3C24_CLASS_NAME s3c2400_device
 #include "machine/s3c24xx.hxx"
@@ -179,8 +163,9 @@ DEFINE_DEVICE_TYPE(S3C2400, s3c2400_device, "s3c2400", "Samsung S3C2400 SoC")
 
 s3c2400_device::s3c2400_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
 	: device_t(mconfig, S3C2400, tag, owner, clock)
-	, m_palette(*this, finder_base::DUMMY_TAG)
 	, m_cpu(*this, ":maincpu")
+	, m_palette(*this, finder_base::DUMMY_TAG)
+	, m_screen(*this, finder_base::DUMMY_TAG)
 	, m_pin_r_cb(*this)
 	, m_pin_w_cb(*this)
 	, m_port_r_cb(*this)
@@ -217,16 +202,6 @@ s3c2400_device::~s3c2400_device()
 }
 
 //-------------------------------------------------
-//  static_set_palette_tag: Set the tag of the
-//  palette device
-//-------------------------------------------------
-
-void s3c2400_device::static_set_palette_tag(device_t &device, const char *tag)
-{
-	downcast<s3c2400_device &>(device).m_palette.set_tag(tag);
-}
-
-//-------------------------------------------------
 //  device_start - device-specific startup
 //-------------------------------------------------
 
@@ -234,29 +209,29 @@ void s3c2400_device::device_start()
 {
 	s3c24xx_device_start();
 
-	address_space &space = m_cpu->memory().space( AS_PROGRAM);
-	space.install_readwrite_handler(0x14000000, 0x1400003b, read32_delegate(FUNC(s3c2400_device::s3c24xx_memcon_r), this), write32_delegate(FUNC(s3c2400_device::s3c24xx_memcon_w), this));
-	space.install_readwrite_handler(0x14200000, 0x1420005b, read32_delegate(FUNC(s3c2400_device::s3c24xx_usb_host_r), this), write32_delegate(FUNC(s3c2400_device::s3c24xx_usb_host_w), this));
-	space.install_readwrite_handler(0x14400000, 0x14400017, read32_delegate(FUNC(s3c2400_device::s3c24xx_irq_r), this), write32_delegate(FUNC(s3c2400_device::s3c24xx_irq_w), this));
-	space.install_readwrite_handler(0x14600000, 0x1460001b, read32_delegate(FUNC(s3c2400_device::s3c24xx_dma_0_r), this), write32_delegate(FUNC(s3c2400_device::s3c24xx_dma_0_w), this));
-	space.install_readwrite_handler(0x14600020, 0x1460003b, read32_delegate(FUNC(s3c2400_device::s3c24xx_dma_1_r), this), write32_delegate(FUNC(s3c2400_device::s3c24xx_dma_1_w), this));
-	space.install_readwrite_handler(0x14600040, 0x1460005b, read32_delegate(FUNC(s3c2400_device::s3c24xx_dma_2_r), this), write32_delegate(FUNC(s3c2400_device::s3c24xx_dma_2_w), this));
-	space.install_readwrite_handler(0x14600060, 0x1460007b, read32_delegate(FUNC(s3c2400_device::s3c24xx_dma_3_r), this), write32_delegate(FUNC(s3c2400_device::s3c24xx_dma_3_w), this));
-	space.install_readwrite_handler(0x14800000, 0x14800017, read32_delegate(FUNC(s3c2400_device::s3c24xx_clkpow_r), this), write32_delegate(FUNC(s3c2400_device::s3c24xx_clkpow_w), this));
-	space.install_readwrite_handler(0x14a00000, 0x14a003ff, read32_delegate(FUNC(s3c2400_device::s3c24xx_lcd_r), this), write32_delegate(FUNC(s3c2400_device::s3c24xx_lcd_w), this));
-	space.install_readwrite_handler(0x14a00400, 0x14a007ff, read32_delegate(FUNC(s3c2400_device::s3c24xx_lcd_palette_r), this), write32_delegate(FUNC(s3c2400_device::s3c24xx_lcd_palette_w), this));
-	space.install_readwrite_handler(0x15000000, 0x1500002b, read32_delegate(FUNC(s3c2400_device::s3c24xx_uart_0_r), this), write32_delegate(FUNC(s3c2400_device::s3c24xx_uart_0_w), this));
-	space.install_readwrite_handler(0x15004000, 0x1500402b, read32_delegate(FUNC(s3c2400_device::s3c24xx_uart_1_r), this), write32_delegate(FUNC(s3c2400_device::s3c24xx_uart_1_w), this));
-	space.install_readwrite_handler(0x15100000, 0x15100043, read32_delegate(FUNC(s3c2400_device::s3c24xx_pwm_r), this), write32_delegate(FUNC(s3c2400_device::s3c24xx_pwm_w), this));
-	space.install_readwrite_handler(0x15200140, 0x152001fb, read32_delegate(FUNC(s3c2400_device::s3c24xx_usb_device_r), this), write32_delegate(FUNC(s3c2400_device::s3c24xx_usb_device_w), this));
-	space.install_readwrite_handler(0x15300000, 0x1530000b, read32_delegate(FUNC(s3c2400_device::s3c24xx_wdt_r), this), write32_delegate(FUNC(s3c2400_device::s3c24xx_wdt_w), this));
-	space.install_readwrite_handler(0x15400000, 0x1540000f, read32_delegate(FUNC(s3c2400_device::s3c24xx_iic_r), this), write32_delegate(FUNC(s3c2400_device::s3c24xx_iic_w), this));
-	space.install_readwrite_handler(0x15508000, 0x15508013, read32_delegate(FUNC(s3c2400_device::s3c24xx_iis_r), this), write32_delegate(FUNC(s3c2400_device::s3c24xx_iis_w), this));
-	space.install_readwrite_handler(0x15600000, 0x1560005b, read32_delegate(FUNC(s3c2400_device::s3c24xx_gpio_r), this), write32_delegate(FUNC(s3c2400_device::s3c24xx_gpio_w), this));
-	space.install_readwrite_handler(0x15700040, 0x1570008b, read32_delegate(FUNC(s3c2400_device::s3c24xx_rtc_r), this), write32_delegate(FUNC(s3c2400_device::s3c24xx_rtc_w), this));
-	space.install_readwrite_handler(0x15800000, 0x15800007, read32_delegate(FUNC(s3c2400_device::s3c24xx_adc_r), this), write32_delegate(FUNC(s3c2400_device::s3c24xx_adc_w), this));
-	space.install_readwrite_handler(0x15900000, 0x15900017, read32_delegate(FUNC(s3c2400_device::s3c24xx_spi_0_r), this), write32_delegate(FUNC(s3c2400_device::s3c24xx_spi_0_w), this));
-	space.install_readwrite_handler(0x15a00000, 0x15a0003f, read32_delegate(FUNC(s3c2400_device::s3c24xx_mmc_r), this), write32_delegate(FUNC(s3c2400_device::s3c24xx_mmc_w), this));
+	address_space &space = m_cpu->space(AS_PROGRAM);
+	space.install_readwrite_handler(0x14000000, 0x1400003b, read32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_memcon_r)), write32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_memcon_w)));
+	space.install_readwrite_handler(0x14200000, 0x1420005b, read32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_usb_host_r)), write32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_usb_host_w)));
+	space.install_readwrite_handler(0x14400000, 0x14400017, read32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_irq_r)), write32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_irq_w)));
+	space.install_readwrite_handler(0x14600000, 0x1460001b, read32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_dma_0_r)), write32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_dma_0_w)));
+	space.install_readwrite_handler(0x14600020, 0x1460003b, read32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_dma_1_r)), write32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_dma_1_w)));
+	space.install_readwrite_handler(0x14600040, 0x1460005b, read32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_dma_2_r)), write32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_dma_2_w)));
+	space.install_readwrite_handler(0x14600060, 0x1460007b, read32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_dma_3_r)), write32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_dma_3_w)));
+	space.install_readwrite_handler(0x14800000, 0x14800017, read32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_clkpow_r)), write32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_clkpow_w)));
+	space.install_readwrite_handler(0x14a00000, 0x14a003ff, read32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_lcd_r)), write32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_lcd_w)));
+	space.install_readwrite_handler(0x14a00400, 0x14a007ff, read32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_lcd_palette_r)), write32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_lcd_palette_w)));
+	space.install_readwrite_handler(0x15000000, 0x1500002b, read32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_uart_0_r)), write32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_uart_0_w)));
+	space.install_readwrite_handler(0x15004000, 0x1500402b, read32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_uart_1_r)), write32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_uart_1_w)));
+	space.install_readwrite_handler(0x15100000, 0x15100043, read32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_pwm_r)), write32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_pwm_w)));
+	space.install_readwrite_handler(0x15200140, 0x152001fb, read32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_usb_device_r)), write32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_usb_device_w)));
+	space.install_readwrite_handler(0x15300000, 0x1530000b, read32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_wdt_r)), write32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_wdt_w)));
+	space.install_readwrite_handler(0x15400000, 0x1540000f, read32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_iic_r)), write32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_iic_w)));
+	space.install_readwrite_handler(0x15508000, 0x15508013, read32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_iis_r)), write32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_iis_w)));
+	space.install_readwrite_handler(0x15600000, 0x1560005b, read32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_gpio_r)), write32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_gpio_w)));
+	space.install_readwrite_handler(0x15700040, 0x1570008b, read32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_rtc_r)), write32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_rtc_w)));
+	space.install_readwrite_handler(0x15800000, 0x15800007, read32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_adc_r)), write32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_adc_w)));
+	space.install_readwrite_handler(0x15900000, 0x15900017, read32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_spi_0_r)), write32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_spi_0_w)));
+	space.install_readwrite_handler(0x15a00000, 0x15a0003f, read32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_mmc_r)), write32s_delegate(*this, FUNC(s3c2400_device::s3c24xx_mmc_w)));
 
 	s3c24xx_video_start();
 }

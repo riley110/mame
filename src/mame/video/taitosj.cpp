@@ -112,21 +112,21 @@ void taitosj_state::set_pens()
 		bit1 = (~val >> 7) & 0x01;
 		val = m_paletteram[(i << 1) | 0x00];
 		bit2 = (~val >> 0) & 0x01;
-		r = combine_3_weights(rweights, bit0, bit1, bit2);
+		r = combine_weights(rweights, bit0, bit1, bit2);
 
 		/* green component */
 		val = m_paletteram[(i << 1) | 0x01];
 		bit0 = (~val >> 3) & 0x01;
 		bit1 = (~val >> 4) & 0x01;
 		bit2 = (~val >> 5) & 0x01;
-		g = combine_3_weights(gweights, bit0, bit1, bit2);
+		g = combine_weights(gweights, bit0, bit1, bit2);
 
 		/* blue component */
 		val = m_paletteram[(i << 1) | 0x01];
 		bit0 = (~val >> 0) & 0x01;
 		bit1 = (~val >> 1) & 0x01;
 		bit2 = (~val >> 2) & 0x01;
-		b = combine_3_weights(bweights, bit0, bit1, bit2);
+		b = combine_weights(bweights, bit0, bit1, bit2);
 
 		m_palette->set_pen_color(i, rgb_t(r, g, b));
 	}
@@ -193,7 +193,7 @@ void taitosj_state::video_start()
 
 
 
-READ8_MEMBER(taitosj_state::taitosj_gfxrom_r)
+uint8_t taitosj_state::taitosj_gfxrom_r()
 {
 	uint8_t ret;
 
@@ -214,7 +214,7 @@ READ8_MEMBER(taitosj_state::taitosj_gfxrom_r)
 
 
 
-WRITE8_MEMBER(taitosj_state::taitosj_characterram_w)
+void taitosj_state::taitosj_characterram_w(offs_t offset, uint8_t data)
 {
 	if (m_characterram[offset] != data)
 	{
@@ -233,13 +233,13 @@ WRITE8_MEMBER(taitosj_state::taitosj_characterram_w)
 	}
 }
 
-WRITE8_MEMBER(taitosj_state::junglhbr_characterram_w)
+void taitosj_state::junglhbr_characterram_w(offs_t offset, uint8_t data)
 {
-	taitosj_characterram_w(space, offset, data ^ 0xfc);
+	taitosj_characterram_w(offset, data ^ 0xfc);
 }
 
 
-WRITE8_MEMBER(taitosj_state::taitosj_collision_reg_clear_w)
+void taitosj_state::taitosj_collision_reg_clear_w(uint8_t data)
 {
 	m_collision_reg[0] = 0;
 	m_collision_reg[1] = 0;

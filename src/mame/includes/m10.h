@@ -5,10 +5,16 @@
     IREM M-10,M-11 and M-15 based hardware
 
 ****************************************************************************/
+#ifndef MAME_INCLUDES_M10_H
+#define MAME_INCLUDES_M10_H
+
+#pragma once
 
 #include "sound/samples.h"
 #include "machine/74123.h"
+#include "emupal.h"
 #include "screen.h"
+#include "tilemap.h"
 
 #define IREMM10_MASTER_CLOCK        (12500000)
 
@@ -35,13 +41,8 @@
 class m10_state : public driver_device
 {
 public:
-	enum
-	{
-		TIMER_INTERRUPT
-	};
-
-	m10_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
+	m10_state(const machine_config &mconfig, device_type type, const char *tag) :
+		driver_device(mconfig, type, tag),
 		m_memory(*this, "memory"),
 		m_rom(*this, "rom"),
 		m_videoram(*this, "videoram"),
@@ -53,7 +54,24 @@ public:
 		m_samples(*this, "samples"),
 		m_gfxdecode(*this, "gfxdecode"),
 		m_screen(*this, "screen"),
-		m_palette(*this, "palette") { }
+		m_palette(*this, "palette")
+	{ }
+
+	void m15(machine_config &config);
+	void headoni(machine_config &config);
+	void m10(machine_config &config);
+	void m11(machine_config &config);
+
+	void init_andromed();
+	void init_ipminva1();
+
+	DECLARE_INPUT_CHANGED_MEMBER(coin_inserted);
+
+private:
+	enum
+	{
+		TIMER_INTERRUPT
+	};
 
 	/* memory pointers */
 	required_shared_ptr<uint8_t> m_memory;
@@ -86,35 +104,37 @@ public:
 	required_device<screen_device> m_screen;
 	required_device<palette_device> m_palette;
 
-	DECLARE_WRITE8_MEMBER(m10_ctrl_w);
-	DECLARE_WRITE8_MEMBER(m11_ctrl_w);
-	DECLARE_WRITE8_MEMBER(m15_ctrl_w);
-	DECLARE_WRITE8_MEMBER(m10_a500_w);
-	DECLARE_WRITE8_MEMBER(m11_a100_w);
-	DECLARE_WRITE8_MEMBER(m15_a100_w);
-	DECLARE_READ8_MEMBER(m10_a700_r);
-	DECLARE_READ8_MEMBER(m11_a700_r);
-	DECLARE_WRITE8_MEMBER(m10_colorram_w);
-	DECLARE_WRITE8_MEMBER(m10_chargen_w);
-	DECLARE_WRITE8_MEMBER(m15_chargen_w);
-	DECLARE_INPUT_CHANGED_MEMBER(coin_inserted);
-	DECLARE_DRIVER_INIT(andromed);
-	DECLARE_DRIVER_INIT(ipminva1);
+	void m10_ctrl_w(uint8_t data);
+	void m11_ctrl_w(uint8_t data);
+	void m15_ctrl_w(uint8_t data);
+	void m10_a500_w(uint8_t data);
+	void m11_a100_w(uint8_t data);
+	void m15_a100_w(uint8_t data);
+	uint8_t m10_a700_r();
+	uint8_t m11_a700_r();
+	void m10_colorram_w(offs_t offset, uint8_t data);
+	void m10_chargen_w(offs_t offset, uint8_t data);
+	void m15_chargen_w(offs_t offset, uint8_t data);
 	TILEMAP_MAPPER_MEMBER(tilemap_scan);
 	TILE_GET_INFO_MEMBER(get_tile_info);
 	DECLARE_MACHINE_START(m10);
 	DECLARE_MACHINE_RESET(m10);
 	DECLARE_VIDEO_START(m10);
-	DECLARE_PALETTE_INIT(m10);
+	void m10_palette(palette_device &palette) const;
 	DECLARE_VIDEO_START(m15);
 	uint32_t screen_update_m10(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 	uint32_t screen_update_m15(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 	INTERRUPT_GEN_MEMBER(m15_interrupt);
 	TIMER_CALLBACK_MEMBER(interrupt_callback);
-	DECLARE_WRITE8_MEMBER(ic8j1_output_changed);
-	DECLARE_WRITE8_MEMBER(ic8j2_output_changed);
+	DECLARE_WRITE_LINE_MEMBER(ic8j1_output_changed);
+	DECLARE_WRITE_LINE_MEMBER(ic8j2_output_changed);
 	inline void plot_pixel_m10( bitmap_ind16 &bm, int x, int y, int col );
 
-protected:
+	void m10_main(address_map &map);
+	void m11_main(address_map &map);
+	void m15_main(address_map &map);
+
 	virtual void device_timer(emu_timer &timer, device_timer_id id, int param, void *ptr) override;
 };
+
+#endif // MAME_INCLUDES_M10_H

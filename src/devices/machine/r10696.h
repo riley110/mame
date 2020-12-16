@@ -18,29 +18,18 @@
 
 #pragma once
 
-#include "device.h"
-
-/*************************************
- *
- *  Device configuration macros
- *
- *************************************/
-
-/* Set the read and write group (4-bit; nibble) delegates */
-#define MCFG_R10696_IO(_devcb_rd,_devcb_wr) \
-		r10696_device::set_iord(*device, DEVCB_##_devcb_rd); \
-		r10696_device::set_iowr(*device, DEVCB_##_devcb_wr);
 
 class r10696_device : public device_t
 {
 public:
 	r10696_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	DECLARE_READ8_MEMBER ( io_r );
-	DECLARE_WRITE8_MEMBER( io_w );
+	uint8_t io_r(offs_t offset);
+	void io_w(offs_t offset, uint8_t data);
 
-	template <class Object> static devcb_base &set_iord(device_t &device, Object &&cb) { return downcast<r10696_device &>(device).m_iord.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_iowr(device_t &device, Object &&cb) { return downcast<r10696_device &>(device).m_iowr.set_callback(std::forward<Object>(cb)); }
+	/* Set the read and write group (4-bit; nibble) delegates */
+	auto iord_cb() { return m_iord.bind(); }
+	auto iowr_cb() { return m_iowr.bind(); }
 
 protected:
 	// device-level overrides

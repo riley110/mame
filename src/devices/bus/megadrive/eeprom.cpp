@@ -107,33 +107,40 @@ md_eeprom_blara_device::md_eeprom_blara_device(const machine_config &mconfig, co
 //  device_add_mconfig - add device configuration
 //-------------------------------------------------
 
-MACHINE_CONFIG_MEMBER( md_std_eeprom_device::device_add_mconfig )
-	MCFG_24C01_ADD("i2cmem")
-MACHINE_CONFIG_END
+void md_std_eeprom_device::device_add_mconfig(machine_config &config)
+{
+	I2C_24C01(config, m_i2cmem);
+}
 
-MACHINE_CONFIG_MEMBER( md_eeprom_nbajam_device::device_add_mconfig )
-	MCFG_24C02_ADD("i2cmem")
-MACHINE_CONFIG_END
+void md_eeprom_nbajam_device::device_add_mconfig(machine_config &config)
+{
+	I2C_24C02(config, m_i2cmem);
+}
 
-MACHINE_CONFIG_MEMBER( md_eeprom_nbajamte_device::device_add_mconfig )
-	MCFG_24C02_ADD("i2cmem")
-MACHINE_CONFIG_END
+void md_eeprom_nbajamte_device::device_add_mconfig(machine_config &config)
+{
+	I2C_24C01(config, m_i2cmem);
+}
 
-MACHINE_CONFIG_MEMBER( md_eeprom_cslam_device::device_add_mconfig )
-	MCFG_24C64_ADD("i2cmem")
-MACHINE_CONFIG_END
+void md_eeprom_cslam_device::device_add_mconfig(machine_config &config)
+{
+	I2C_24C64(config, m_i2cmem);
+}
 
-MACHINE_CONFIG_MEMBER( md_eeprom_nflqb_device::device_add_mconfig )
-	MCFG_24C16_ADD("i2cmem")
-MACHINE_CONFIG_END
+void md_eeprom_nflqb_device::device_add_mconfig(machine_config &config)
+{
+	I2C_24C16(config, m_i2cmem);
+}
 
-MACHINE_CONFIG_MEMBER( md_eeprom_nhlpa_device::device_add_mconfig )
-	MCFG_24C01_ADD("i2cmem")
-MACHINE_CONFIG_END
+void md_eeprom_nhlpa_device::device_add_mconfig(machine_config &config)
+{
+	I2C_24C01(config, m_i2cmem);
+}
 
-MACHINE_CONFIG_MEMBER( md_eeprom_blara_device::device_add_mconfig )
-	MCFG_24C64_ADD("i2cmem")
-MACHINE_CONFIG_END
+void md_eeprom_blara_device::device_add_mconfig(machine_config &config)
+{
+	I2C_24C64(config, m_i2cmem);
+}
 
 void md_std_eeprom_device::device_start()
 {
@@ -155,7 +162,7 @@ void md_std_eeprom_device::device_reset()
  CART + EEPROM
  -------------------------------------------------*/
 
-READ16_MEMBER(md_std_eeprom_device::read)
+uint16_t md_std_eeprom_device::read(offs_t offset)
 {
 	if (offset == 0x200000/2)
 	{
@@ -167,7 +174,7 @@ READ16_MEMBER(md_std_eeprom_device::read)
 		return 0xffff;
 }
 
-WRITE16_MEMBER(md_std_eeprom_device::write)
+void md_std_eeprom_device::write(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	if (offset == 0x200000/2)
 	{
@@ -178,7 +185,7 @@ WRITE16_MEMBER(md_std_eeprom_device::write)
 	}
 }
 
-READ16_MEMBER(md_eeprom_nbajam_device::read)
+uint16_t md_eeprom_nbajam_device::read(offs_t offset)
 {
 	if (offset == 0x200000/2)
 	{
@@ -191,7 +198,7 @@ READ16_MEMBER(md_eeprom_nbajam_device::read)
 		return 0xffff;
 }
 
-WRITE16_MEMBER(md_eeprom_nbajam_device::write)
+void md_eeprom_nbajam_device::write(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	if (offset == 0x200000/2)
 	{
@@ -202,7 +209,7 @@ WRITE16_MEMBER(md_eeprom_nbajam_device::write)
 	}
 }
 
-READ16_MEMBER(md_eeprom_nbajamte_device::read)
+uint16_t md_eeprom_nbajamte_device::read(offs_t offset)
 {
 	if (offset == 0x200000/2)
 	{
@@ -215,7 +222,7 @@ READ16_MEMBER(md_eeprom_nbajamte_device::read)
 		return 0xffff;
 }
 
-WRITE16_MEMBER(md_eeprom_nbajamte_device::write)
+void md_eeprom_nbajamte_device::write(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	if (offset == 0x200000/2)
 	{
@@ -234,7 +241,7 @@ WRITE16_MEMBER(md_eeprom_nbajamte_device::write)
 }
 
 // same as NBAJAMTE above... derived class?
-READ16_MEMBER(md_eeprom_cslam_device::read)
+uint16_t md_eeprom_cslam_device::read(offs_t offset)
 {
 	if (offset == 0x200000/2)
 	{
@@ -247,7 +254,7 @@ READ16_MEMBER(md_eeprom_cslam_device::read)
 		return 0xffff;
 }
 
-WRITE16_MEMBER(md_eeprom_cslam_device::write)
+void md_eeprom_cslam_device::write(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	if (offset == 0x200000/2)
 	{
@@ -266,7 +273,7 @@ WRITE16_MEMBER(md_eeprom_cslam_device::write)
 }
 
 // same as NBAJAMTE above... derived class?
-READ16_MEMBER(md_eeprom_nflqb_device::read)
+uint16_t md_eeprom_nflqb_device::read(offs_t offset)
 {
 	if (offset == 0x200000/2)
 	{
@@ -279,7 +286,7 @@ READ16_MEMBER(md_eeprom_nflqb_device::read)
 		return 0xffff;
 }
 
-WRITE16_MEMBER(md_eeprom_nflqb_device::write)
+void md_eeprom_nflqb_device::write(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	if (offset == 0x200000/2)
 	{
@@ -290,7 +297,7 @@ WRITE16_MEMBER(md_eeprom_nflqb_device::write)
 	}
 }
 
-READ16_MEMBER(md_eeprom_nhlpa_device::read)
+uint16_t md_eeprom_nhlpa_device::read(offs_t offset)
 {
 	if (offset == 0x200000/2)
 	{
@@ -303,7 +310,7 @@ READ16_MEMBER(md_eeprom_nhlpa_device::read)
 		return 0xffff;
 }
 
-WRITE16_MEMBER(md_eeprom_nhlpa_device::write)
+void md_eeprom_nhlpa_device::write(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	if (offset == 0x200000/2)
 	{
@@ -314,7 +321,7 @@ WRITE16_MEMBER(md_eeprom_nhlpa_device::write)
 	}
 }
 
-READ16_MEMBER(md_eeprom_blara_device::read)
+uint16_t md_eeprom_blara_device::read(offs_t offset)
 {
 	if (offset == 0x380000/2)
 	{
@@ -327,7 +334,7 @@ READ16_MEMBER(md_eeprom_blara_device::read)
 		return 0xffff;
 }
 
-WRITE16_MEMBER(md_eeprom_blara_device::write)
+void md_eeprom_blara_device::write(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	if (offset == 0x380000/2)
 	{
@@ -577,7 +584,7 @@ uint8_t md_eeprom_nbajam_alt_device::eeprom_i2c_out()
 }
 
 
-READ16_MEMBER(md_eeprom_nbajam_alt_device::read)
+uint16_t md_eeprom_nbajam_alt_device::read(offs_t offset)
 {
 	if (offset == 0x200000/2)
 	{
@@ -589,7 +596,7 @@ READ16_MEMBER(md_eeprom_nbajam_alt_device::read)
 		return 0xffff;
 }
 
-WRITE16_MEMBER(md_eeprom_nbajam_alt_device::write)
+void md_eeprom_nbajam_alt_device::write(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	if (offset == 0x200000/2)
 	{

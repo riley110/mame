@@ -9,12 +9,16 @@
 
 #include "bus/ieee488/ieee488.h"
 
+#include "imagedev/floppy.h"
+
 #include "machine/6821pia.h"
 #include "machine/i8251.h"
 #include "machine/wd_fdc.h"
 #include "machine/z80dma.h"
 
 #include "video/i8275.h"
+
+#include "emupal.h"
 
 
 class zorba_state : public driver_device
@@ -23,7 +27,9 @@ public:
 	zorba_state(const machine_config &mconfig, device_type type, const char *tag)
 		: driver_device(mconfig, type, tag)
 		, m_config_port(*this, "CNF")
-		, m_read_bank(*this, "bankr0")
+		, m_rom(*this, "maincpu")
+		, m_ram(*this, "mainram")
+		, m_bank1(*this, "bank1")
 		, m_p_chargen(*this, "chargen")
 		, m_maincpu(*this, "maincpu")
 		, m_dma(*this, "dma")
@@ -42,35 +48,41 @@ public:
 	{
 	}
 
-public:
-	DECLARE_DRIVER_INIT(zorba);
-	DECLARE_MACHINE_RESET(zorba);
+	DECLARE_INPUT_CHANGED_MEMBER(printer_type);
+	void zorba(machine_config &config);
+
+private:
+	virtual void machine_start() override;
+	virtual void machine_reset() override;
+
+	void zorba_io(address_map &map);
+	void zorba_mem(address_map &map);
 
 	// Memory banking control
-	DECLARE_READ8_MEMBER(ram_r);
-	DECLARE_WRITE8_MEMBER(ram_w);
-	DECLARE_READ8_MEMBER(rom_r);
-	DECLARE_WRITE8_MEMBER(rom_w);
+	uint8_t ram_r();
+	void ram_w(uint8_t data);
+	uint8_t rom_r();
+	void rom_w(uint8_t data);
 
 	// Interrupt vectoring glue
-	DECLARE_WRITE8_MEMBER(intmask_w);
+	void intmask_w(uint8_t data);
 	template <unsigned N> DECLARE_WRITE_LINE_MEMBER(tx_rx_rdy_w);
 	template <unsigned N> DECLARE_WRITE_LINE_MEMBER(irq_w);
 
 	// DMA controller handlers
 	DECLARE_WRITE_LINE_MEMBER(busreq_w);
-	DECLARE_READ8_MEMBER(memory_read_byte);
-	DECLARE_WRITE8_MEMBER(memory_write_byte);
-	DECLARE_READ8_MEMBER(io_read_byte);
-	DECLARE_WRITE8_MEMBER(io_write_byte);
+	uint8_t memory_read_byte(offs_t offset);
+	void memory_write_byte(offs_t offset, uint8_t data);
+	uint8_t io_read_byte(offs_t offset);
+	void io_write_byte(offs_t offset, uint8_t data);
 
 	// PIT handlers
 	DECLARE_WRITE_LINE_MEMBER(br1_w);
 
 	// PIA handlers
-	DECLARE_WRITE8_MEMBER(pia0_porta_w);
-	DECLARE_READ8_MEMBER(pia1_portb_r);
-	DECLARE_WRITE8_MEMBER(pia1_portb_w);
+	void pia0_porta_w(uint8_t data);
+	uint8_t pia1_portb_r();
+	void pia1_portb_w(uint8_t data);
 
 	// Video
 	I8275_DRAW_CHARACTER_MEMBER(zorba_update_chr);
@@ -78,12 +90,12 @@ public:
 	// Printer port glue
 	DECLARE_WRITE_LINE_MEMBER(printer_fault_w);
 	DECLARE_WRITE_LINE_MEMBER(printer_select_w);
-	DECLARE_INPUT_CHANGED_MEMBER(printer_type);
 
-private:
 	required_ioport                     m_config_port;
 
-	required_memory_bank                m_read_bank;
+	required_region_ptr<u8>             m_rom;
+	required_shared_ptr<u8>             m_ram;
+	required_memory_bank                m_bank1;
 	required_region_ptr<uint8_t>        m_p_chargen;
 
 	required_device<cpu_device>         m_maincpu;

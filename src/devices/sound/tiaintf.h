@@ -6,16 +6,6 @@
 #pragma once
 
 //**************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_SOUND_TIA_ADD(_tag, _clock) \
-	MCFG_DEVICE_ADD(_tag, TIA, _clock)
-#define MCFG_SOUND_TIA_REPLACE(_tag, _clock) \
-	MCFG_DEVICE_REPLACE(_tag, TIA, _clock)
-
-
-//**************************************************************************
 //  TYPE DEFINITIONS
 //**************************************************************************
 
@@ -26,7 +16,7 @@ class tia_device : public device_t, public device_sound_interface
 public:
 	tia_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	DECLARE_WRITE8_MEMBER( tia_sound_w );
+	void tia_sound_w(offs_t offset, uint8_t data);
 
 protected:
 	// device-level overrides

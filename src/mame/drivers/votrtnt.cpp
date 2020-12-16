@@ -26,7 +26,6 @@
 *  ToDo:
 *  - Votrax device needs considerable improvement in sound quality.
 *
-*
 ******************************************************************************/
 
 /* Core includes */
@@ -51,10 +50,14 @@ public:
 		, m_clock(*this, "acia_clock")
 	{ }
 
-	DECLARE_MACHINE_RESET(votrtnt);
+	void votrtnt(machine_config &config);
 
 private:
-	required_device<cpu_device> m_maincpu;
+	virtual void machine_reset() override;
+
+	void mem_map(address_map &map);
+
+	required_device<m6802_cpu_device> m_maincpu;
 	required_device<votrax_sc01_device> m_votrax;
 	required_device<clock_device> m_clock;
 };
@@ -78,14 +81,14 @@ private:
       x   1   1   x     *   *   *   *     *   *   *   *     *   *   *   *    R  ROM (2332 4kx8 Mask ROM, inside potted brick)
 */
 
-static ADDRESS_MAP_START(6802_mem, AS_PROGRAM, 8, votrtnt_state)
-	ADDRESS_MAP_UNMAP_HIGH
-	AM_RANGE(0x0000, 0x03ff) AM_MIRROR(0x9c00) AM_RAM /* RAM, 2114*2 (0x400 bytes) mirrored 4x */
-	AM_RANGE(0x2000, 0x2000) AM_MIRROR(0x9ffe) AM_DEVREADWRITE("acia", acia6850_device, status_r, control_w)
-	AM_RANGE(0x2001, 0x2001) AM_MIRROR(0x9ffe) AM_DEVREADWRITE("acia", acia6850_device, data_r, data_w)
-	AM_RANGE(0x4000, 0x4000) AM_MIRROR(0x9fff) AM_DEVWRITE("votrax", votrax_sc01_device, write)
-	AM_RANGE(0x6000, 0x6fff) AM_MIRROR(0x9000) AM_ROM /* ROM in potted block */
-ADDRESS_MAP_END
+void votrtnt_state::mem_map(address_map &map)
+{
+	map.unmap_value_high();
+	map(0x0000, 0x03ff).mirror(0x9c00).ram(); /* RAM, 2114*2 (0x400 bytes) mirrored 4x */
+	map(0x2000, 0x2001).mirror(0x9ffe).rw("acia", FUNC(acia6850_device::read), FUNC(acia6850_device::write));
+	map(0x4000, 0x4000).mirror(0x9fff).w(m_votrax, FUNC(votrax_sc01_device::write));
+	map(0x6000, 0x6fff).mirror(0x9000).rom().region("maincpu",0); /* ROM in potted block */
+}
 
 
 /******************************************************************************
@@ -110,7 +113,7 @@ static INPUT_PORTS_START(votrtnt)
 	PORT_DIPSETTING(    0x80, "9600" )
 INPUT_PORTS_END
 
-MACHINE_RESET_MEMBER( votrtnt_state, votrtnt )
+void votrtnt_state::machine_reset()
 {
 	// Read the dips, whichever one is found to be on first is accepted
 	u8 dips = ioport("DSW1")->read();
@@ -133,35 +136,35 @@ MACHINE_RESET_MEMBER( votrtnt_state, votrtnt )
  Machine Drivers
 ******************************************************************************/
 
-static MACHINE_CONFIG_START( votrtnt )
+void votrtnt_state::votrtnt(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", M6802, XTAL_2_4576MHz)  /* 2.4576MHz XTAL, verified; divided by 4 inside the m6802*/
-	MCFG_CPU_PROGRAM_MAP(6802_mem)
-
-	MCFG_MACHINE_RESET_OVERRIDE(votrtnt_state, votrtnt)
+	M6802(config, m_maincpu, 2.4576_MHz_XTAL);  // 2.4576MHz XTAL, verified; divided by 4 inside the MC6802
+	m_maincpu->set_ram_enable(false);
+	m_maincpu->set_addrmap(AS_PROGRAM, &votrtnt_state::mem_map);
 
 	/* video hardware */
-	//MCFG_DEFAULT_LAYOUT(layout_votrtnt)
+	//config.set_default_layout(layout_votrtnt);
 
 	/* serial hardware */
-	MCFG_DEVICE_ADD("acia", ACIA6850, 0)
-	MCFG_ACIA6850_TXD_HANDLER(DEVWRITELINE("rs232", rs232_port_device, write_txd))
-	MCFG_ACIA6850_RTS_HANDLER(DEVWRITELINE("rs232", rs232_port_device, write_rts))
+	acia6850_device &acia(ACIA6850(config, "acia"));
+	acia.txd_handler().set("rs232", FUNC(rs232_port_device::write_txd));
+	acia.rts_handler().set("rs232", FUNC(rs232_port_device::write_rts));
 
-	MCFG_RS232_PORT_ADD("rs232", default_rs232_devices, "terminal")
-	MCFG_RS232_RXD_HANDLER(DEVWRITELINE("acia", acia6850_device, write_rxd))
-	MCFG_RS232_CTS_HANDLER(DEVWRITELINE("acia", acia6850_device, write_cts))
+	rs232_port_device &rs232(RS232_PORT(config, "rs232", default_rs232_devices, "terminal"));
+	rs232.rxd_handler().set("acia", FUNC(acia6850_device::write_rxd));
+	rs232.cts_handler().set("acia", FUNC(acia6850_device::write_cts));
 
-	MCFG_DEVICE_ADD("acia_clock", CLOCK, 153600)
-	MCFG_CLOCK_SIGNAL_HANDLER(DEVWRITELINE("acia", acia6850_device, write_txc))
-	MCFG_DEVCB_CHAIN_OUTPUT(DEVWRITELINE("acia", acia6850_device, write_rxc))
+	CLOCK(config, m_clock, 153600);
+	m_clock->signal_handler().set("acia", FUNC(acia6850_device::write_txc));
+	m_clock->signal_handler().append("acia", FUNC(acia6850_device::write_rxc));
 
 	/* sound hardware */
-	MCFG_SPEAKER_STANDARD_MONO("mono")
-	MCFG_DEVICE_ADD("votrax", VOTRAX_SC01, 720000) /* 720kHz? needs verify */
-	MCFG_VOTRAX_SC01_REQUEST_CB(INPUTLINE("maincpu", INPUT_LINE_IRQ0))
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 1.00)
-MACHINE_CONFIG_END
+	SPEAKER(config, "mono").front_center();
+	VOTRAX_SC01(config, m_votrax, 720000); // 720kHz? needs verify
+	m_votrax->ar_callback().set_inputline(m_maincpu, INPUT_LINE_IRQ0);
+	m_votrax->add_route(ALL_OUTPUTS, "mono", 1.00);
+}
 
 
 
@@ -170,8 +173,8 @@ MACHINE_CONFIG_END
 ******************************************************************************/
 
 ROM_START(votrtnt)
-	ROM_REGION(0x10000, "maincpu", 0)
-	ROM_LOAD("cn49752n.bin", 0x6000, 0x1000, CRC(a44e1af3) SHA1(af83b9e84f44c126b24ee754a22e34ca992a8d3d)) /* 2332 mask rom inside potted brick */
+	ROM_REGION(0x1000, "maincpu", 0)
+	ROM_LOAD("cn49752n.bin", 0x0000, 0x1000, CRC(a44e1af3) SHA1(af83b9e84f44c126b24ee754a22e34ca992a8d3d)) /* 2332 mask rom inside potted brick */
 ROM_END
 
 
@@ -179,5 +182,5 @@ ROM_END
  Drivers
 ******************************************************************************/
 
-//    YEAR  NAME     PARENT  COMPAT  MACHINE  INPUT    CLASS          INIT  COMPANY   FULLNAME        FLAGS
-COMP( 1980, votrtnt, 0,      0,      votrtnt, votrtnt, votrtnt_state, 0,    "Votrax", "Type 'N Talk", 0 )
+//    YEAR  NAME     PARENT  COMPAT  MACHINE  INPUT    CLASS          INIT        COMPANY   FULLNAME        FLAGS
+COMP( 1980, votrtnt, 0,      0,      votrtnt, votrtnt, votrtnt_state, empty_init, "Votrax", "Type 'N Talk", MACHINE_SUPPORTS_SAVE )

@@ -8,21 +8,6 @@
 #include "cpu/mcs48/mcs48.h"
 #include "sound/beep.h"
 
-//**************************************************************************
-//  MACROS / CONSTANTS
-//**************************************************************************
-
-
-//**************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_KM035_TX_HANDLER(_cb) \
-	devcb = &km035_device::set_tx_handler(*device, DEVCB_##_cb);
-
-#define MCFG_KM035_RTS_HANDLER(_cb) \
-	devcb = &km035_device::set_rts_handler(*device, DEVCB_##_cb);
-
 
 //**************************************************************************
 //  TYPE DEFINITIONS
@@ -36,11 +21,12 @@ public:
 	// construction/destruction
 	km035_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	template<class _Object> static devcb_base &set_tx_handler(device_t &device, _Object wr) { return downcast<km035_device &>(device).m_tx_handler.set_callback(wr); }
-	template<class _Object> static devcb_base &set_rts_handler(device_t &device, _Object wr) { return downcast<km035_device &>(device).m_rts_handler.set_callback(wr); }
+	auto tx_handler() { return m_tx_handler.bind(); }
+	auto rts_handler() { return m_rts_handler.bind(); }
 
 	DECLARE_WRITE_LINE_MEMBER( write_rxd );
 
+	void km035_map(address_map &map);
 protected:
 	// device-level overrides
 	virtual void device_add_mconfig(machine_config &config) override;
@@ -50,7 +36,7 @@ protected:
 	virtual void device_reset() override;
 
 private:
-	required_device<cpu_device> m_maincpu;
+	required_device<i8035_device> m_maincpu;
 	required_device<beep_device> m_speaker;
 
 	required_ioport_array<16> m_kbd;
@@ -63,11 +49,11 @@ private:
 	devcb_write_line m_tx_handler;
 	devcb_write_line m_rts_handler;
 
-	DECLARE_WRITE8_MEMBER( bus_w );
-	DECLARE_WRITE8_MEMBER( p1_w );
-	DECLARE_WRITE8_MEMBER( p2_w );
-	DECLARE_READ8_MEMBER( p1_r );
-	DECLARE_READ8_MEMBER( p2_r );
+	void bus_w(uint8_t data);
+	void p1_w(uint8_t data);
+	void p2_w(uint8_t data);
+	uint8_t p1_r();
+	uint8_t p2_r();
 	DECLARE_READ_LINE_MEMBER( t0_r );
 	DECLARE_READ_LINE_MEMBER( t1_r );
 };

@@ -13,43 +13,133 @@ TODO:
 
 =========================================================================================
 
-Pro Golf
+18 Holes Pro Golf (PCB version)
 Data East 1981
-PCB version (not cassette)
---------------
+Hardware info by Guru
 
-All eproms 2732
 
-g0-m through g6-m on top pcb.
-g7-m through g9-m on bottom pcb.
+Top Board (Sound/Inputs)
+------------------------
 
-Three Proms are 82S123 or equivalents.
+GGM-Ø2  DE-0087C-0   MADE IN JAPAN
+DE-0087B-0 (top side)
+DE-0087A-0 (bottom side)
+  |---------------------------------------|
+  |             G6-M.1B                   |
+ |-|                            6502      |
+ | |  G4-M.2A   MK4118                    |
+ | |                            AY3-8910  |
+ | |  G3-M.4A                             |
+ | |                            AY3-8910  |
+ | |  G2-M.6A                             |
+ |-|            DSW1                      |
+  |   G1-M.8A                             |
+  |                                       |
+  |   G0-M.9A   DSW2                      |
+|-|                                       |
+|1 A18                                    |
+|8                                        |
+|W                                        |
+|A                       555      555     |
+|Y                                        |
+|-|A1      TA75558                        |
+  |  C1181H  VOL                          |
+  |---------------------------------------|
+Notes:
+      6502 Clock - 441.458333kHz [10.595/24]
+  AY3-8910 Clock - 1.324375MHz [10.595/8] (both)
+          MK4118 - MOSTEK MK4118 1kx8 SRAM (also seen 6116 and M58725 on other
+                   PCBs which are both 2kx8 SRAM)
+          DSW1/2 - 8-position DIP Switch
+         TA75558 - Toshiba TA75558 Dual Operational Amplifier
+          C1181H - NEC uPC1181H Power AMP
+             555 - 555 Timer
+             VOL - 1k Volume Pot
+              G* - 2732 4kx8-bit EPROM
 
-gam.k11
-gbm.k4
-gcm.a14
+        TOP BOARD PINOUT
+    -------------------------
+    Parts Side    Solder Side
+    ------+---------+--------
+      GND | A1   B1 | GND
+      GND | A2   B2 | GND
+      GND | A3   B3 | GND
+     SPKR+| A4   B4 | SPKR-
+     -----+---------+----- (KEY)
+ RIGHT P1 | A5   B5 | RIGHT P2
+  LEFT P1 | A6   B6 | LEFT P2
+    UP P1 | A7   B7 | UP P2
+  DOWN P1 | A8   B8 | DOWN P2
+BUTTON P1 | A9   B9 | BUTTON P2
+       NC | A10  B10| NC
+ START P1 | A11  B11| START P2
+       NC | A12  B12| NC
+    COIN 1| A13  B13| COIN 2
+       NC | A14  B14| NC
+       NC | A15  B15| NC
+      GND | A16  B16| GND
+      +5V | A17  B17| +5V
+      +12V| A18  B18| +12V
+   -------+---------+-------
 
-Top pcb contains:
------------------
-One 6502 CPU
 
-Two AY-3-8910
+Bottom Board (CPU/Video)
+------------------------
 
-One 6116 ram.
+GGM-Ø1  DE-0086   MADE IN JAPAN
+DE-0086B-0 (top side)
+DE-0086A-0 (bottom side)
+  |-------------------------------------------------------------------|
+  |                                                                   |
+ |-| |----------|                                                     |
+ | | | DECO     |                                                     |
+ | | | CPU-6    | 6845P                                               |
+ | | | CUSTOM   |                                                     |
+ | | | MODULE   |                           M58725              GBM.4K|
+ | | |----------|                                                     |
+ |-|     G7-M.7A                            M58725                    |
+  |                                                                   |
+  |      G8-M.9A                                                      |
+  |                                                                   |
+|-|      G9-M.10A  555                                                |
+|1 A10                                                         GAM.11K|
+|0                       8116   8116   8116   8116                    |
+|W                       8116   8116   8116   8116                    |
+|A                       8116   8116   8116   8116                    |
+|Y       GCM.14A         8116   8116   8116   8116                    |
+|-|A1                    8116   8116   8116   8116                    |
+  |                      8116   8116   8116   8116          10.595MHz |
+  |-------------------------------------------------------------------|
+Notes:
+    MC6845P - Motorola MC6845P CRT Controller (CRTC). Clock 662.1875kHz [10.595/16]
+      CPU-6 - The input base clock on several pins is 1.324375MHz [10.595/8].
+              There are no other different clocks going into the CPU module.
+              Note the logic inside the CPU-6 module may be dividing the clock so the
+              actual CPU clock is unknown but a 6502 running at 1.32437MHz is highly likely.
+       8116 - Fujitsu MB8116E 16kx1 DRAM (24 chips = 48kB)
+     M58725 - Mitsubishi M58725 2kx8 SRAM (compatible with 6116)
+      Gx-M* - 2732 4kx8-bit EPROM
+GCM/GBM/GAM - Harris M3 7603-5 Bipolar PROM (compatible with 82S123)
+        555 - 555 Timer
+      HSync - 15.45kHz
+      VSync - 57Hz
 
-Two 8 dip banks
-------------------
-
-Bottom pcb contains:
---------------------
-Epoxy CPU module.
-
-MC6845P CRT controller.
-
-Two 6116 rams.
-
-Twenty four 8116 rams.
-
+    BOTTOM BOARD PINOUT
+ -------------------------
+ Parts Side    Solder Side
+ ------+---------+--------
+   +5V | A1   B1 | +5V
+   +5V | A2   B2 | +5V
+   +5V | A3   B3 | +5V
+   +12V| A4   B4 | +12V
+   -5V | A5   B5 | -5V
+   RED | A6   B6 | GREEN
+   BLUE| A7   B7 | SYNC
+   GND | A8   B8 | GND
+  -----+---------+----- (KEY)
+   GND | A9   B9 | GND
+   GND | A10  B10| GND
+-------+---------+-------
 ****************************************************************************************/
 
 #include "emu.h"
@@ -59,6 +149,7 @@ Twenty four 8116 rams.
 #include "machine/deco222.h"
 #include "machine/decocpu6.h"
 #include "machine/gen_latch.h"
+#include "emupal.h"
 #include "screen.h"
 #include "speaker.h"
 
@@ -66,15 +157,25 @@ Twenty four 8116 rams.
 class progolf_state : public driver_device
 {
 public:
-	progolf_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
+	progolf_state(const machine_config &mconfig, device_type type, const char *tag) :
+		driver_device(mconfig, type, tag),
 		m_maincpu(*this, "maincpu"),
 		m_audiocpu(*this, "audiocpu"),
 		m_gfxdecode(*this, "gfxdecode"),
 		m_palette(*this, "palette"),
 		m_videoram(*this, "videoram"),
-		m_fbram(*this, "fbram")  { }
+		m_fbram(*this, "fbram")
+	{ }
 
+	void progolfa(machine_config &config);
+	void progolf(machine_config &config);
+
+	DECLARE_INPUT_CHANGED_MEMBER(coin_inserted);
+
+protected:
+	virtual void video_start() override;
+
+private:
 	required_device<cpu_device> m_maincpu;
 	required_device<cpu_device> m_audiocpu;
 	required_device<gfxdecode_device> m_gfxdecode;
@@ -90,27 +191,20 @@ public:
 	uint8_t m_scrollx_lo;
 	uint8_t m_gfx_switch;
 
-	DECLARE_WRITE8_MEMBER(charram_w);
-	DECLARE_WRITE8_MEMBER(char_vregs_w);
-	DECLARE_WRITE8_MEMBER(scrollx_lo_w);
-	DECLARE_WRITE8_MEMBER(scrollx_hi_w);
-	DECLARE_WRITE8_MEMBER(flip_screen_w);
-	DECLARE_READ8_MEMBER(videoram_r);
-	DECLARE_WRITE8_MEMBER(videoram_w);
+	void charram_w(offs_t offset, uint8_t data);
+	void char_vregs_w(uint8_t data);
+	void scrollx_lo_w(uint8_t data);
+	void scrollx_hi_w(uint8_t data);
+	void flip_screen_w(uint8_t data);
+	uint8_t videoram_r(offs_t offset);
+	void videoram_w(offs_t offset, uint8_t data);
 
-	DECLARE_INPUT_CHANGED_MEMBER(coin_inserted);
+	void progolf_palette(palette_device &palette) const;
 
-	virtual void machine_start() override;
-	virtual void video_start() override;
-	DECLARE_PALETTE_INIT(progolf);
-
-	uint32_t screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
+	uint32_t screen_update(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect);
+	void main_cpu(address_map &map);
+	void sound_cpu(address_map &map);
 };
-
-
-void progolf_state::machine_start()
-{
-}
 
 void progolf_state::video_start()
 {
@@ -121,14 +215,14 @@ void progolf_state::video_start()
 
 	save_item(NAME(m_char_pen));
 	save_item(NAME(m_char_pen_vreg));
-	save_pointer(NAME(m_fg_fb.get()), 0x2000*8);
+	save_pointer(NAME(m_fg_fb), 0x2000*8);
 	save_item(NAME(m_scrollx_hi));
 	save_item(NAME(m_scrollx_lo));
 	save_item(NAME(m_gfx_switch));
 }
 
 
-uint32_t progolf_state::screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect)
+uint32_t progolf_state::screen_update(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect)
 {
 	int count,color,x,y,xi,yi;
 
@@ -152,7 +246,7 @@ uint32_t progolf_state::screen_update(screen_device &screen, bitmap_ind16 &bitma
 		}
 	}
 
-	/* framebuffer is 8x8 chars arranged like a bitmap + a register that controls the pen handling. */
+	// framebuffer is 8x8 chars arranged like a bitmap + a register that controls the pen handling.
 	{
 		count = 0;
 
@@ -167,7 +261,7 @@ uint32_t progolf_state::screen_update(screen_device &screen, bitmap_ind16 &bitma
 						color = m_fg_fb[(xi+yi*8)+count*0x40];
 
 						if(color != 0 && cliprect.contains(x+yi, 256-y+xi))
-							bitmap.pix16(x+yi, 256-y+xi) = m_palette->pen((color & 0x7));
+							bitmap.pix32(x+yi, 256-y+xi) = m_palette->pen((color & 0x7));
 					}
 				}
 
@@ -179,7 +273,7 @@ uint32_t progolf_state::screen_update(screen_device &screen, bitmap_ind16 &bitma
 	return 0;
 }
 
-WRITE8_MEMBER(progolf_state::charram_w)
+void progolf_state::charram_w(offs_t offset, uint8_t data)
 {
 	int i;
 	m_fbram[offset] = data;
@@ -201,31 +295,31 @@ WRITE8_MEMBER(progolf_state::charram_w)
 	}
 }
 
-WRITE8_MEMBER(progolf_state::char_vregs_w)
+void progolf_state::char_vregs_w(uint8_t data)
 {
 	m_char_pen = data & 0x07;
 	m_gfx_switch = data & 0xf0;
 	m_char_pen_vreg = data & 0x30;
 }
 
-WRITE8_MEMBER(progolf_state::scrollx_lo_w)
+void progolf_state::scrollx_lo_w(uint8_t data)
 {
 	m_scrollx_lo = data;
 }
 
-WRITE8_MEMBER(progolf_state::scrollx_hi_w)
+void progolf_state::scrollx_hi_w(uint8_t data)
 {
 	m_scrollx_hi = data;
 }
 
-WRITE8_MEMBER(progolf_state::flip_screen_w)
+void progolf_state::flip_screen_w(uint8_t data)
 {
 	flip_screen_set(data & 1);
 	if(data & 0xfe)
 		printf("$9600 with data = %02x used\n",data);
 }
 
-READ8_MEMBER(progolf_state::videoram_r)
+uint8_t progolf_state::videoram_r(offs_t offset)
 {
 	uint8_t *gfx_rom = memregion("gfx1")->base();
 
@@ -251,37 +345,39 @@ READ8_MEMBER(progolf_state::videoram_r)
 	}
 }
 
-WRITE8_MEMBER(progolf_state::videoram_w)
+void progolf_state::videoram_w(offs_t offset, uint8_t data)
 {
 	//if(m_gfx_switch & 0x40)
 	m_videoram[offset] = data;
 }
 
-static ADDRESS_MAP_START( main_cpu, AS_PROGRAM, 8, progolf_state )
-	AM_RANGE(0x0000, 0x5fff) AM_RAM
-	AM_RANGE(0x6000, 0x7fff) AM_RAM_WRITE(charram_w) AM_SHARE("fbram")
-	AM_RANGE(0x8000, 0x8fff) AM_READWRITE(videoram_r, videoram_w) AM_SHARE("videoram")
-	AM_RANGE(0x9000, 0x9000) AM_READ_PORT("IN2") AM_WRITE(char_vregs_w)
-	AM_RANGE(0x9200, 0x9200) AM_READ_PORT("P1") AM_WRITE(scrollx_hi_w) //p1 inputs
-	AM_RANGE(0x9400, 0x9400) AM_READ_PORT("P2") AM_WRITE(scrollx_lo_w) //p2 inputs
-	AM_RANGE(0x9600, 0x9600) AM_READ_PORT("IN0") AM_WRITE(flip_screen_w)   /* VBLANK */
-	AM_RANGE(0x9800, 0x9800) AM_READ_PORT("DSW1")
-	AM_RANGE(0x9800, 0x9800) AM_DEVWRITE("crtc", mc6845_device, address_w)
-	AM_RANGE(0x9801, 0x9801) AM_DEVWRITE("crtc", mc6845_device, register_w)
-	AM_RANGE(0x9a00, 0x9a00) AM_READ_PORT("DSW2") AM_DEVWRITE("soundlatch", generic_latch_8_device, write)
-//  AM_RANGE(0x9e00, 0x9e00) AM_WRITENOP
-	AM_RANGE(0xb000, 0xffff) AM_ROM
-ADDRESS_MAP_END
+void progolf_state::main_cpu(address_map &map)
+{
+	map(0x0000, 0x5fff).ram();
+	map(0x6000, 0x7fff).ram().w(FUNC(progolf_state::charram_w)).share("fbram");
+	map(0x8000, 0x8fff).rw(FUNC(progolf_state::videoram_r), FUNC(progolf_state::videoram_w)).share("videoram");
+	map(0x9000, 0x9000).portr("IN2").w(FUNC(progolf_state::char_vregs_w));
+	map(0x9200, 0x9200).portr("P1").w(FUNC(progolf_state::scrollx_hi_w)); //p1 inputs
+	map(0x9400, 0x9400).portr("P2").w(FUNC(progolf_state::scrollx_lo_w)); //p2 inputs
+	map(0x9600, 0x9600).portr("IN0").w(FUNC(progolf_state::flip_screen_w)); // VBLANK
+	map(0x9800, 0x9800).portr("DSW1");
+	map(0x9800, 0x9800).w("crtc", FUNC(mc6845_device::address_w));
+	map(0x9801, 0x9801).w("crtc", FUNC(mc6845_device::register_w));
+	map(0x9a00, 0x9a00).portr("DSW2").w("soundlatch", FUNC(generic_latch_8_device::write));
+//  map(0x9e00, 0x9e00).nopw();
+	map(0xb000, 0xffff).rom();
+}
 
-static ADDRESS_MAP_START( sound_cpu, AS_PROGRAM, 8, progolf_state )
-	AM_RANGE(0x0000, 0x0fff) AM_RAM
-	AM_RANGE(0x4000, 0x4fff) AM_DEVREADWRITE("ay1", ay8910_device, data_r, data_w)
-	AM_RANGE(0x5000, 0x5fff) AM_DEVWRITE("ay1", ay8910_device, address_w)
-	AM_RANGE(0x6000, 0x6fff) AM_DEVREADWRITE("ay2", ay8910_device, data_r, data_w)
-	AM_RANGE(0x7000, 0x7fff) AM_DEVWRITE("ay2", ay8910_device, address_w)
-	AM_RANGE(0x8000, 0x8fff) AM_DEVREADWRITE("soundlatch", generic_latch_8_device, read, acknowledge_w)
-	AM_RANGE(0xf000, 0xffff) AM_ROM
-ADDRESS_MAP_END
+void progolf_state::sound_cpu(address_map &map)
+{
+	map(0x0000, 0x0fff).ram();
+	map(0x4000, 0x4fff).rw("ay1", FUNC(ay8910_device::data_r), FUNC(ay8910_device::data_w));
+	map(0x5000, 0x5fff).w("ay1", FUNC(ay8910_device::address_w));
+	map(0x6000, 0x6fff).rw("ay2", FUNC(ay8910_device::data_r), FUNC(ay8910_device::data_w));
+	map(0x7000, 0x7fff).w("ay2", FUNC(ay8910_device::address_w));
+	map(0x8000, 0x8fff).rw("soundlatch", FUNC(generic_latch_8_device::read), FUNC(generic_latch_8_device::acknowledge_w));
+	map(0xf000, 0xffff).rom();
+}
 
 
 INPUT_CHANGED_MEMBER(progolf_state::coin_inserted)
@@ -289,7 +385,7 @@ INPUT_CHANGED_MEMBER(progolf_state::coin_inserted)
 	m_maincpu->set_input_line(INPUT_LINE_NMI, newval ? CLEAR_LINE : ASSERT_LINE);
 }
 
-/* verified from M6502 code */
+// verified from M6502 code
 static INPUT_PORTS_START( progolf )
 	PORT_START("IN0")
 	PORT_BIT( 0x7f, IP_ACTIVE_HIGH, IPT_UNUSED )
@@ -317,144 +413,133 @@ static INPUT_PORTS_START( progolf )
 
 	PORT_START("IN2")
 	PORT_BIT( 0x3f, IP_ACTIVE_HIGH, IPT_UNUSED )
-	PORT_BIT( 0x40, IP_ACTIVE_LOW,IPT_COIN1 ) PORT_CHANGED_MEMBER(DEVICE_SELF, progolf_state,coin_inserted, 0)
-	PORT_BIT( 0x80, IP_ACTIVE_LOW,IPT_COIN2 ) PORT_CHANGED_MEMBER(DEVICE_SELF, progolf_state,coin_inserted, 0)
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 ) PORT_CHANGED_MEMBER(DEVICE_SELF, progolf_state, coin_inserted, 0)
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 ) PORT_CHANGED_MEMBER(DEVICE_SELF, progolf_state, coin_inserted, 0)
 
 	PORT_START("DSW1")
-	PORT_DIPNAME( 0x03, 0x00, DEF_STR( Coin_B ) )
+	PORT_DIPNAME( 0x03, 0x00, DEF_STR( Coin_B ) ) PORT_DIPLOCATION("DSW1:1,2")
 	PORT_DIPSETTING(    0x03, DEF_STR( 2C_1C ) )
 	PORT_DIPSETTING(    0x00, DEF_STR( 1C_1C ) )
 	PORT_DIPSETTING(    0x01, DEF_STR( 1C_2C ) )
 	PORT_DIPSETTING(    0x02, DEF_STR( 1C_3C ) )  PORT_CONDITION("DSW2",0x40,EQUALS,0x00)
 	PORT_DIPSETTING(    0x02, DEF_STR( 1C_6C ) )  PORT_CONDITION("DSW2",0x40,EQUALS,0x40)
-	PORT_DIPNAME( 0x0c, 0x00, DEF_STR( Coin_A ) )
+	PORT_DIPNAME( 0x0c, 0x00, DEF_STR( Coin_A ) ) PORT_DIPLOCATION("DSW1:3,4")
 	PORT_DIPSETTING(    0x0c, DEF_STR( 2C_1C ) )
 	PORT_DIPSETTING(    0x00, DEF_STR( 1C_1C ) )
 	PORT_DIPSETTING(    0x04, DEF_STR( 1C_2C ) )
 	PORT_DIPSETTING(    0x08, DEF_STR( 1C_3C ) )  PORT_CONDITION("DSW2",0x40,EQUALS,0x00)
 	PORT_DIPSETTING(    0x08, DEF_STR( 1C_6C ) )  PORT_CONDITION("DSW2",0x40,EQUALS,0x40)
-	PORT_DIPNAME( 0x10, 0x10, DEF_STR( Cabinet ) )
+	PORT_DIPNAME( 0x10, 0x10, DEF_STR( Cabinet ) ) PORT_DIPLOCATION("DSW1:5")
 	PORT_DIPSETTING(    0x10, DEF_STR( Upright ) )
 	PORT_DIPSETTING(    0x00, DEF_STR( Cocktail ) )
-	PORT_DIPUNUSED( 0x20, IP_ACTIVE_HIGH )
-	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_SERVICE1 ) PORT_CHANGED_MEMBER(DEVICE_SELF, progolf_state,coin_inserted, 0)    /* same coinage as COIN1 */
-	PORT_SERVICE( 0x80, IP_ACTIVE_HIGH )
+	PORT_DIPUNUSED( 0x20, IP_ACTIVE_HIGH ) PORT_DIPLOCATION("DSW1:6")
+	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_SERVICE1 )  PORT_DIPLOCATION("DSW1:7") PORT_CHANGED_MEMBER(DEVICE_SELF, progolf_state, coin_inserted, 0) // same coinage as COIN1
+	PORT_SERVICE( 0x80, IP_ACTIVE_HIGH ) PORT_DIPLOCATION("DSW1:8")
 
 	PORT_START("DSW2")
-	PORT_DIPNAME( 0x01, 0x00, DEF_STR( Lives ) )
+	PORT_DIPNAME( 0x01, 0x00, DEF_STR( Lives ) ) PORT_DIPLOCATION("DSW2:1")
 	PORT_DIPSETTING(    0x00, "1" )
 	PORT_DIPSETTING(    0x01, "2" )
-	PORT_DIPNAME( 0x06, 0x00, DEF_STR( Bonus_Life ) )       /* table at 0xd16e (4 * 3 bytes, LSB first) - no multiple bonus lives */
+	PORT_DIPNAME( 0x06, 0x00, DEF_STR( Bonus_Life ) ) PORT_DIPLOCATION("DSW2:2,3") // table at 0xd16e (4 * 3 bytes, LSB first) - no multiple bonus lives
 	PORT_DIPSETTING(    0x00, "10000" )
 	PORT_DIPSETTING(    0x02, "30000" )
 	PORT_DIPSETTING(    0x04, "50000" )
 	PORT_DIPSETTING(    0x06, DEF_STR( None ) )
-	PORT_DIPNAME( 0x08, 0x00, DEF_STR( Difficulty ) )       /* code at 0xd188 */
+	PORT_DIPNAME( 0x08, 0x00, DEF_STR( Difficulty ) ) PORT_DIPLOCATION("DSW2:4") // code at 0xd188
 	PORT_DIPSETTING(    0x00, DEF_STR( Easy ) )
 	PORT_DIPSETTING(    0x08, DEF_STR( Hard ) )
-	PORT_DIPNAME( 0x10, 0x00, "Display Strength and Position" )
+	PORT_DIPNAME( 0x10, 0x00, "Display Strength and Position" ) PORT_DIPLOCATION("DSW2:5")
 	PORT_DIPSETTING(    0x10, DEF_STR( No ) )
 	PORT_DIPSETTING(    0x00, DEF_STR( Yes ) )
-	PORT_DIPNAME( 0x20, 0x00, "Force Coinage = A 1C/3C - B 1C/8C" )   /* SERVICE1 = 2C/1C */
+	PORT_DIPNAME( 0x20, 0x00, "Force Coinage = A 1C/3C - B 1C/8C" ) PORT_DIPLOCATION("DSW2:6") // SERVICE1 = 2C/1C
 	PORT_DIPSETTING(    0x00, DEF_STR( No ) )
 	PORT_DIPSETTING(    0x20, DEF_STR( Yes ) )
-	PORT_DIPNAME( 0x40, 0x00, "Coin Mode" )
+	PORT_DIPNAME( 0x40, 0x00, "Coin Mode" ) PORT_DIPLOCATION("DSW2:7")
 	PORT_DIPSETTING(    0x00, "Mode 1" )
 	PORT_DIPSETTING(    0x40, "Mode 2" )
-	PORT_DIPUNUSED( 0x80, IP_ACTIVE_HIGH )
+	PORT_DIPUNUSED( 0x80, IP_ACTIVE_HIGH ) PORT_DIPLOCATION("DSW2:8")
 INPUT_PORTS_END
 
-static const gfx_layout charlayout =
-{
-	8,8,            /* 8*8 characters */
-	RGN_FRAC(1,3),  /* 512 characters */
-	3,              /* 3 bits per pixel */
-	{ RGN_FRAC(2,3), RGN_FRAC(1,3), RGN_FRAC(0,3) },  /* the bitplanes are separated */
-	{ 0, 1, 2, 3, 4, 5, 6, 7 },
-	{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
-	8*8     /* every char takes 8 consecutive bytes */
-};
 
-static GFXDECODE_START( progolf )
-	GFXDECODE_ENTRY( "gfx1", 0x0000, charlayout, 0, 8 ) /* sprites */
+static GFXDECODE_START( gfx_progolf )
+	GFXDECODE_ENTRY( "gfx1", 0x0000, gfx_8x8x3_planar, 0, 8 ) // sprites
 GFXDECODE_END
 
 
-PALETTE_INIT_MEMBER(progolf_state, progolf)
+void progolf_state::progolf_palette(palette_device &palette) const
 {
 	const uint8_t *color_prom = memregion("proms")->base();
-	int i;
 
-	for (i = 0;i < m_palette->entries();i++)
+	for (int i = 0; i < palette.entries(); i++)
 	{
-		int bit0,bit1,bit2,r,g,b;
+		int bit0, bit1, bit2;
 
-		/* red component */
-		bit0 = (color_prom[i] >> 0) & 0x01;
-		bit1 = (color_prom[i] >> 1) & 0x01;
-		bit2 = (color_prom[i] >> 2) & 0x01;
-		r = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
-		/* green component */
-		bit0 = (color_prom[i] >> 3) & 0x01;
-		bit1 = (color_prom[i] >> 4) & 0x01;
-		bit2 = (color_prom[i] >> 5) & 0x01;
-		g = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
-		/* blue component */
+		// red component
+		bit0 = BIT(color_prom[i], 0);
+		bit1 = BIT(color_prom[i], 1);
+		bit2 = BIT(color_prom[i], 2);
+		int const r = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
+		// green component
+		bit0 = BIT(color_prom[i], 3);
+		bit1 = BIT(color_prom[i], 4);
+		bit2 = BIT(color_prom[i], 5);
+		int const g = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
+		// blue component
 		bit0 = 0;
-		bit1 = (color_prom[i] >> 6) & 0x01;
-		bit2 = (color_prom[i] >> 7) & 0x01;
-		b = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
+		bit1 = BIT(color_prom[i], 6);
+		bit2 = BIT(color_prom[i], 7);
+		int const b = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 
-		m_palette->set_pen_color(i,rgb_t(r,g,b));
+		palette.set_pen_color(i, rgb_t(r, g, b));
 	}
 }
 
-static MACHINE_CONFIG_START( progolf )
-	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", DECO_222, 3000000/2) /* guess, 3 Mhz makes the game to behave worse? */
-	MCFG_CPU_PROGRAM_MAP(main_cpu)
+void progolf_state::progolf(machine_config &config)
+{
+	// basic machine hardware
+	DECO_222(config, m_maincpu, 10.595_MHz_XTAL / 8);
+	m_maincpu->set_addrmap(AS_PROGRAM, &progolf_state::main_cpu);
 
-	MCFG_CPU_ADD("audiocpu", M6502, 500000)
-	MCFG_CPU_PROGRAM_MAP(sound_cpu)
+	M6502(config, m_audiocpu, 10.595_MHz_XTAL / 24);
+	m_audiocpu->set_addrmap(AS_PROGRAM, &progolf_state::sound_cpu);
 
-	MCFG_QUANTUM_PERFECT_CPU("maincpu")
+	config.set_perfect_quantum(m_maincpu);
 
-	MCFG_GENERIC_LATCH_8_ADD("soundlatch")
-	MCFG_GENERIC_LATCH_DATA_PENDING_CB(INPUTLINE("audiocpu", 0))
-	MCFG_GENERIC_LATCH_SEPARATE_ACKNOWLEDGE(true)
+	generic_latch_8_device &soundlatch(GENERIC_LATCH_8(config, "soundlatch"));
+	soundlatch.data_pending_callback().set_inputline(m_audiocpu, 0);
+	soundlatch.set_separate_acknowledge(true);
 
-	/* video hardware */
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_REFRESH_RATE(57)
-	MCFG_SCREEN_VBLANK_TIME(ATTOSECONDS_IN_USEC(3072))
-	MCFG_SCREEN_SIZE(256, 256)
-	MCFG_SCREEN_VISIBLE_AREA(0*8, 32*8-1, 0*8, 32*8-1)
-	MCFG_SCREEN_UPDATE_DRIVER(progolf_state, screen_update)
-	MCFG_SCREEN_PALETTE("palette")
+	// video hardware
+	screen_device &screen(SCREEN(config, "screen", SCREEN_TYPE_RASTER));
+	screen.set_refresh_hz(57);
+	screen.set_vblank_time(ATTOSECONDS_IN_USEC(3072));
+	screen.set_size(256, 256);
+	screen.set_visarea(0*8, 32*8-1, 0*8, 32*8-1);
+	screen.set_screen_update(FUNC(progolf_state::screen_update));
 
-	MCFG_GFXDECODE_ADD("gfxdecode", "palette", progolf)
-	MCFG_PALETTE_ADD("palette", 32*3)
-	MCFG_PALETTE_INIT_OWNER(progolf_state, progolf)
+	GFXDECODE(config, m_gfxdecode, m_palette, gfx_progolf);
+	PALETTE(config, m_palette, FUNC(progolf_state::progolf_palette), 32 * 3);
 
-	MCFG_MC6845_ADD("crtc", MC6845, "screen", 3000000/4) /* hand tuned to get ~57 fps */
-	MCFG_MC6845_SHOW_BORDER_AREA(false)
-	MCFG_MC6845_CHAR_WIDTH(8)
+	mc6845_device &crtc(MC6845(config, "crtc", 10.595_MHz_XTAL / 16));
+	crtc.set_screen("screen");
+	crtc.set_show_border_area(false);
+	crtc.set_char_width(8);
 
-	/* sound hardware */
-	MCFG_SPEAKER_STANDARD_MONO("mono")
+	// sound hardware
+	SPEAKER(config, "mono").front_center();
 
-	MCFG_SOUND_ADD("ay1", AY8910, 12000000/8)
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.23)
+	AY8910(config, "ay1", 10.595_MHz_XTAL / 8).add_route(ALL_OUTPUTS, "mono", 0.23);
 
-	MCFG_SOUND_ADD("ay2", AY8910, 12000000/8)
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.23)
-MACHINE_CONFIG_END
+	AY8910(config, "ay2", 10.595_MHz_XTAL / 8).add_route(ALL_OUTPUTS, "mono", 0.23);
+}
 
-static MACHINE_CONFIG_DERIVED( progolfa, progolf )
-	MCFG_DEVICE_REMOVE("maincpu") /* different encrypted cpu to progolf */
-	MCFG_CPU_ADD("maincpu", DECO_CPU6, 3000000/2) /* guess, 3 Mhz makes the game to behave worse? */
-	MCFG_CPU_PROGRAM_MAP(main_cpu)
-MACHINE_CONFIG_END
+void progolf_state::progolfa(machine_config &config)
+{
+	progolf(config);
+	// different encrypted cpu to progolf
+	DECO_CPU6(config.replace(), m_maincpu, 10.595_MHz_XTAL / 8);
+	m_maincpu->set_addrmap(AS_PROGRAM, &progolf_state::main_cpu);
+}
 
 
 ROM_START( progolf )
@@ -479,6 +564,8 @@ ROM_START( progolf )
 	ROM_LOAD( "gam.k11",      0x0040, 0x0020, CRC(b9665de3) SHA1(4c5aba5f6589f4bce4692c0d5bb2811ab8e14aed) )
 ROM_END
 
+// top board: GGM-Ø2  DE-0087C-0
+// bottom board: GGM-Ø1  DE-0086B-0
 ROM_START( progolfa )
 	ROM_REGION( 0x10000, "maincpu", 0 ) // custom DECO CPU-6 module
 	ROM_LOAD( "g4-m.a3",      0xb000, 0x1000, CRC(015a08d9) SHA1(671d5cd708e098dbda3e495a8b4ce3393c6971da) )
@@ -486,9 +573,11 @@ ROM_START( progolfa )
 	ROM_LOAD( "g2-m.a6",      0xd000, 0x1000, CRC(fafec36e) SHA1(70880d6f9b11505d466f36c12a43361ee2639fed) )
 	ROM_LOAD( "g1-m.a8",      0xe000, 0x1000, CRC(749032eb) SHA1(daa356b2c70bcd8cdd0c4df4268b6158bc8aae8e) )
 	ROM_LOAD( "g0-m.a9",      0xf000, 0x1000, CRC(a03c533f) SHA1(2e0006be40e32b64b1490bd339d9fc9302eee7c4) )
+	// the following single byte patch gets the ball position to be correct like in the parent. g3-m.a4 dump has been verified on multiple PCBs
+	// ROM_FILL( 0xc14b, 0x01, 0xf0) // from: EB 07    sbc #$07 to: F0 07    beq $c154
 
 	ROM_REGION( 0x10000, "audiocpu", 0 )
-	ROM_LOAD( "g5-m.b1",      0xf000, 0x1000, CRC(0c6fadf5) SHA1(9af2c2152b339cadab7aff0b0164d4431d2558bd) )
+	ROM_LOAD( "g6-m.b1",      0xf000, 0x1000, CRC(0c6fadf5) SHA1(9af2c2152b339cadab7aff0b0164d4431d2558bd) )
 
 	ROM_REGION( 0x3000, "gfx1", 0 )
 	ROM_LOAD( "g7-m.a8",      0x0000, 0x1000, CRC(16b42975) SHA1(29268a8a660781ff0de77b3b1bfc16edff7be134) )
@@ -502,10 +591,7 @@ ROM_START( progolfa )
 ROM_END
 
 
-
-
-
 // this uses DECO222 style encryption
-GAME( 1981, progolf,  0,       progolf,  progolf, progolf_state, 0,       ROT270, "Data East Corporation", "18 Holes Pro Golf (set 1)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
-// this uses DECO CPU-6 as custom module CPU (the same as Zoar, are we sure? our Zoar has different encryption, CPU-7 style)
-GAME( 1981, progolfa, progolf, progolfa, progolf, progolf_state, 0,       ROT270, "Data East Corporation", "18 Holes Pro Golf (set 2)", MACHINE_NOT_WORKING | MACHINE_IMPERFECT_GRAPHICS | MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+GAME( 1981, progolf,  0,       progolf,  progolf, progolf_state, empty_init, ROT270, "Data East Corporation", "18 Holes Pro Golf (set 1)", MACHINE_IMPERFECT_GRAPHICS | MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )
+// this uses DECO CPU-6 as custom module CPU
+GAME( 1981, progolfa, progolf, progolfa, progolf, progolf_state, empty_init, ROT270, "Data East Corporation", "18 Holes Pro Golf (set 2)", MACHINE_NOT_WORKING | MACHINE_IMPERFECT_GRAPHICS | MACHINE_NO_COCKTAIL | MACHINE_SUPPORTS_SAVE )

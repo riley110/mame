@@ -37,17 +37,17 @@
 */
 TIMER_CALLBACK_MEMBER(tx1_state::interrupt_callback)
 {
-	m_maincpu->set_input_line_and_vector(0, HOLD_LINE, 0xff);
+	m_maincpu->set_input_line_and_vector(0, HOLD_LINE, 0xff); // I8086
 	m_interrupt_timer->adjust(m_screen->time_until_pos(CURSOR_YPOS, CURSOR_XPOS));
 }
 
 
-READ16_MEMBER(tx1_state::tx1_crtc_r)
+uint16_t tx1_state::tx1_crtc_r()
 {
 	return 0xffff;
 }
 
-WRITE16_MEMBER(tx1_state::tx1_crtc_w)
+void tx1_state::tx1_crtc_w(offs_t offset, uint16_t data)
 {
 if (PRINT_CRTC_DATA)
 {
@@ -113,11 +113,8 @@ enum
 
 ***************************************************************************/
 
-PALETTE_INIT_MEMBER(tx1_state,tx1)
+void tx1_state::tx1_palette(palette_device &palette) const
 {
-	const uint8_t *const color_prom = &m_proms[0];
-	int i;
-
 	static const res_net_info tx1_net_info =
 	{
 		RES_NET_VCC_5V | RES_NET_VIN_TTL_OUT,
@@ -128,13 +125,12 @@ PALETTE_INIT_MEMBER(tx1_state,tx1)
 		}
 	};
 
-	for (i = 0; i < 256; ++i)
+	uint8_t const *const color_prom = &m_proms[0];
+	for (int i = 0; i < 256; ++i)
 	{
-		int r, g, b;
-
-		r = compute_res_net(color_prom[i + 0x300] & 0xf, 0, tx1_net_info);
-		g = compute_res_net(color_prom[i + 0x400] & 0xf, 1, tx1_net_info);
-		b = compute_res_net(color_prom[i + 0x500] & 0xf, 2, tx1_net_info);
+		int const r = compute_res_net(color_prom[i + 0x300] & 0xf, 0, tx1_net_info);
+		int const g = compute_res_net(color_prom[i + 0x400] & 0xf, 1, tx1_net_info);
+		int const b = compute_res_net(color_prom[i + 0x500] & 0xf, 2, tx1_net_info);
 
 		palette.set_pen_color(i, rgb_t(r, g, b));
 	}
@@ -147,7 +143,7 @@ PALETTE_INIT_MEMBER(tx1_state,tx1)
  *
  *************************************/
 
-WRITE16_MEMBER(tx1_state::tx1_bankcs_w)
+void tx1_state::tx1_bankcs_w(offs_t offset, uint16_t data)
 {
 	vregs_t &tx1_vregs = m_vregs;
 
@@ -200,7 +196,7 @@ WRITE16_MEMBER(tx1_state::tx1_bankcs_w)
 	}
 }
 
-WRITE16_MEMBER(tx1_state::tx1_slincs_w)
+void tx1_state::tx1_slincs_w(offs_t offset, uint16_t data)
 {
 	if (offset == 1)
 		m_vregs.slin_inc = data;
@@ -208,17 +204,17 @@ WRITE16_MEMBER(tx1_state::tx1_slincs_w)
 		m_vregs.slin_inc = m_vregs.slin_val = 0;
 }
 
-WRITE16_MEMBER(tx1_state::tx1_slock_w)
+void tx1_state::tx1_slock_w(uint16_t data)
 {
 	m_vregs.slock = data & 1;
 }
 
-WRITE16_MEMBER(tx1_state::tx1_scolst_w)
+void tx1_state::tx1_scolst_w(uint16_t data)
 {
 	m_vregs.scol = data & 0x0707;
 }
 
-WRITE16_MEMBER(tx1_state::tx1_flgcs_w)
+void tx1_state::tx1_flgcs_w(uint16_t data)
 {
 	m_vregs.flags = data & 0xff;
 }
@@ -1252,36 +1248,34 @@ uint32_t tx1_state::screen_update_tx1_right(screen_device &screen, bitmap_ind16 
 
 ***************************************************************************/
 
-PALETTE_INIT_MEMBER(tx1_state,buggyboy)
+void tx1_state::buggyboy_palette(palette_device &palette) const
 {
-	const uint8_t *const color_prom = &m_proms[0];
-	int i;
+	uint8_t const *const color_prom = &m_proms[0];
 
-	for (i = 0; i < 0x100; i++)
+	for (int i = 0; i < 0x100; i++)
 	{
 		int bit0, bit1, bit2, bit3, bit4;
-		int r, g, b;
 
 		bit0 = BIT(color_prom[i + 0x000], 0);
 		bit1 = BIT(color_prom[i + 0x000], 1);
 		bit2 = BIT(color_prom[i + 0x000], 2);
 		bit3 = BIT(color_prom[i + 0x000], 3);
 		bit4 = BIT(color_prom[i + 0x300], 2);
-		r = 0x06 * bit4 + 0x0d * bit0 + 0x1e * bit1 + 0x41 * bit2 + 0x8a * bit3;
+		int const r = 0x06 * bit4 + 0x0d * bit0 + 0x1e * bit1 + 0x41 * bit2 + 0x8a * bit3;
 
 		bit0 = BIT(color_prom[i + 0x100], 0);
 		bit1 = BIT(color_prom[i + 0x100], 1);
 		bit2 = BIT(color_prom[i + 0x100], 2);
 		bit3 = BIT(color_prom[i + 0x100], 3);
 		bit4 = BIT(color_prom[i + 0x300], 1);
-		g = 0x06 * bit4 + 0x0d * bit0 + 0x1e * bit1 + 0x41 * bit2 + 0x8a * bit3;
+		int const g = 0x06 * bit4 + 0x0d * bit0 + 0x1e * bit1 + 0x41 * bit2 + 0x8a * bit3;
 
 		bit0 = BIT(color_prom[i + 0x200], 0);
 		bit1 = BIT(color_prom[i + 0x200], 1);
 		bit2 = BIT(color_prom[i + 0x200], 2);
 		bit3 = BIT(color_prom[i + 0x200], 3);
 		bit4 = BIT(color_prom[i + 0x300], 0);
-		b = 0x06 * bit4 + 0x0d * bit0 + 0x1e * bit1 + 0x41 * bit2 + 0x8a * bit3;
+		int const b = 0x06 * bit4 + 0x0d * bit0 + 0x1e * bit1 + 0x41 * bit2 + 0x8a * bit3;
 
 		palette.set_pen_color(i, rgb_t(r, g, b));
 	}
@@ -1499,7 +1493,7 @@ void tx1_state::buggyboy_get_roadpix(int screen, int ls161, uint8_t rva0_6, uint
 		*rc3 = d0 & d1;
 
 		if (rom_flip)
-			*rc3 = BITSWAP8(*rc3, 0, 1, 2, 3, 4, 5, 6, 7);
+			*rc3 = bitswap<8>(*rc3, 0, 1, 2, 3, 4, 5, 6, 7);
 	}
 	else
 		*rc3 = 0;
@@ -2832,7 +2826,7 @@ void tx1_state::buggyboy_draw_objs(uint8_t *bitmap, bool wide)
     /WASET  = 24A0-F, 24B0-F
     /FLAGS  = 24E0-F, 24F0-F
 */
-WRITE16_MEMBER(tx1_state::buggyboy_gas_w)
+void tx1_state::buggyboy_gas_w(offs_t offset, uint16_t data)
 {
 	vregs_t &vregs = m_vregs;
 	offset <<= 1;
@@ -2905,12 +2899,12 @@ WRITE16_MEMBER(tx1_state::buggyboy_gas_w)
 	vregs.gas = data;
 }
 
-WRITE16_MEMBER(tx1_state::buggyboy_sky_w)
+void tx1_state::buggyboy_sky_w(uint16_t data)
 {
 	m_vregs.sky = data;
 }
 
-WRITE16_MEMBER(tx1_state::buggyboy_scolst_w)
+void tx1_state::buggyboy_scolst_w(uint16_t data)
 {
 	m_vregs.scol = data;
 }

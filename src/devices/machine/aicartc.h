@@ -9,13 +9,6 @@
 
 
 //**************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_AICARTC_ADD(_tag,_freq) \
-	MCFG_DEVICE_ADD(_tag, AICARTC, _freq)
-
-//**************************************************************************
 //  TYPE DEFINITIONS
 //**************************************************************************
 
@@ -28,8 +21,8 @@ public:
 	aicartc_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 	// I/O operations
-	DECLARE_WRITE16_MEMBER( write );
-	DECLARE_READ16_MEMBER( read );
+	void write(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t read(offs_t offset);
 
 	uint16_t m_rtc_reg_lo,m_rtc_reg_hi;
 	uint16_t m_rtc_tick;

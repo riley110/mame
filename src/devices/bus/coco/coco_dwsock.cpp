@@ -3,8 +3,8 @@
 #include "emu.h"
 #include "coco_dwsock.h"
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 #ifdef __GNUC__
 #include <unistd.h>
 #endif
@@ -24,7 +24,7 @@ DEFINE_DEVICE_TYPE(COCO_DWSOCK, beckerport_device, "coco_dwsock", "Virtual Becke
 
 INPUT_PORTS_START( coco_drivewire )
 	PORT_START(DRIVEWIRE_PORT_TAG)
-	PORT_CONFNAME( 0xffff, 65504, "Drivewire Server TCP Port") PORT_CHANGED_MEMBER(DEVICE_SELF, beckerport_device, drivewire_port_changed, nullptr)
+	PORT_CONFNAME( 0xffff, 65504, "Drivewire Server TCP Port") PORT_CHANGED_MEMBER(DEVICE_SELF, beckerport_device, drivewire_port_changed, 0)
 	PORT_CONFSETTING(      65500, "65500" )
 	PORT_CONFSETTING(      65501, "65501" )
 	PORT_CONFSETTING(      65502, "65502" )
@@ -62,7 +62,7 @@ INPUT_CHANGED_MEMBER(beckerport_device::drivewire_port_changed)
 //  beckerport_device - constructor / destructor
 //-------------------------------------------------
 
-beckerport_device::beckerport_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
+beckerport_device::beckerport_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock)
 	: device_t(mconfig, COCO_DWSOCK, tag, owner, clock)
 	, m_hostname(nullptr), m_dwconfigport(*this, DRIVEWIRE_PORT_TAG), m_dwtcpport(0)
 {
@@ -89,7 +89,7 @@ void beckerport_device::device_start(void)
 
 	osd_printf_verbose("Connecting to Drivewire server on %s:%d... ", m_hostname, m_dwtcpport);
 
-	uint64_t filesize; // unused
+	u64 filesize; // unused
 	osd_file::error filerr = osd_file::open(chAddress, 0, m_pSocket, filesize);
 	if (filerr != osd_file::error::NONE)
 	{
@@ -127,7 +127,7 @@ void beckerport_device::device_config_complete(void)
     read
 -------------------------------------------------*/
 
-READ8_MEMBER(beckerport_device::read)
+u8 beckerport_device::read(offs_t offset)
 {
 	unsigned char data = 0x5a;
 
@@ -169,11 +169,11 @@ READ8_MEMBER(beckerport_device::read)
     write
 -------------------------------------------------*/
 
-WRITE8_MEMBER(beckerport_device::write)
+void beckerport_device::write(offs_t offset, u8 data)
 {
 	char d = char(data);
 	osd_file::error filerr;
-	std::uint32_t written;
+	u32 written;
 
 	if (!m_pSocket)
 		return;

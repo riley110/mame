@@ -5,9 +5,10 @@
  * includes/pcw16.h
  *
  ****************************************************************************/
+#ifndef MAME_INCLUDES_PCW16_H
+#define MAME_INCLUDES_PCW16_H
 
-#ifndef PCW16_H_
-#define PCW16_H_
+#pragma once
 
 #include "cpu/z80/z80.h"
 #include "machine/upd765.h"     /* FDC superio */
@@ -18,8 +19,10 @@
 #include "sound/beep.h"         /* pcw/pcw16 beeper */
 #include "machine/intelfsh.h"
 #include "formats/pc_dsk.h"
+#include "imagedev/floppy.h"
 #include "machine/ram.h"
 #include "machine/timer.h"
+#include "emupal.h"
 
 #define PCW16_BORDER_HEIGHT 8
 #define PCW16_BORDER_WIDTH 8
@@ -34,20 +37,86 @@
 class pcw16_state : public driver_device
 {
 public:
-	pcw16_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
-			m_maincpu(*this, "maincpu"),
-			m_flash0(*this, "flash0"),
-			m_flash1(*this, "flash1"),
-			m_fdc(*this, "fdc"),
-			m_uart2(*this, "ns16550_2"),
-			m_beeper(*this, "beeper"),
-			m_ram(*this, RAM_TAG),
-			m_keyboard(*this, "at_keyboard"),
-			m_region_rom(*this, "maincpu"),
-			m_io_extra(*this, "EXTRA")
+	pcw16_state(const machine_config &mconfig, device_type type, const char *tag) :
+		driver_device(mconfig, type, tag),
+		m_maincpu(*this, "maincpu"),
+		m_flash0(*this, "flash0"),
+		m_flash1(*this, "flash1"),
+		m_fdc(*this, "fdc"),
+		m_uart2(*this, "ns16550_2"),
+		m_beeper(*this, "beeper"),
+		m_ram(*this, RAM_TAG),
+		m_keyboard(*this, "at_keyboard"),
+		m_region_rom(*this, "maincpu"),
+		m_io_extra(*this, "EXTRA")
 	{ }
 
+	void pcw16(machine_config &config);
+
+protected:
+	void pcw16_palette_w(offs_t offset, uint8_t data);
+	uint8_t pcw16_bankhw_r(offs_t offset);
+	void pcw16_bankhw_w(offs_t offset, uint8_t data);
+	void pcw16_video_control_w(uint8_t data);
+	uint8_t pcw16_keyboard_data_shift_r();
+	void pcw16_keyboard_data_shift_w(uint8_t data);
+	uint8_t pcw16_keyboard_status_r();
+	void pcw16_keyboard_control_w(uint8_t data);
+	uint8_t rtc_year_invalid_r();
+	uint8_t rtc_month_r();
+	uint8_t rtc_days_r();
+	uint8_t rtc_hours_r();
+	uint8_t rtc_minutes_r();
+	uint8_t rtc_seconds_r();
+	uint8_t rtc_256ths_seconds_r();
+	void rtc_control_w(uint8_t data);
+	void rtc_seconds_w(uint8_t data);
+	void rtc_minutes_w(uint8_t data);
+	void rtc_hours_w(uint8_t data);
+	void rtc_days_w(uint8_t data);
+	void rtc_month_w(uint8_t data);
+	void rtc_year_w(uint8_t data);
+	uint8_t pcw16_system_status_r();
+	uint8_t pcw16_timer_interrupt_counter_r();
+	void pcw16_system_control_w(uint8_t data);
+	uint8_t pcw16_mem_r(offs_t offset);
+	void pcw16_mem_w(offs_t offset, uint8_t data);
+	void pcw16_keyboard_init();
+	void pcw16_keyboard_refresh_outputs();
+	void pcw16_keyboard_set_clock_state(int state);
+	void pcw16_keyboard_int(int state);
+	void pcw16_keyboard_reset();
+	int pcw16_keyboard_can_transmit();
+	void pcw16_keyboard_signal_byte_received(int data);
+	void pcw16_refresh_ints();
+	void rtc_setup_max_days();
+	uint8_t pcw16_read_mem(uint8_t bank, uint16_t offset);
+	void pcw16_write_mem(uint8_t bank, uint16_t offset, uint8_t data);
+	uint8_t read_bank_data(uint8_t type, uint16_t offset);
+	void write_bank_data(uint8_t type, uint16_t offset, uint8_t data);
+	virtual void machine_start() override;
+	virtual void machine_reset() override;
+	virtual void video_start() override;
+	void pcw16_colours(palette_device &palette) const;
+	uint32_t screen_update_pcw16(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
+	TIMER_DEVICE_CALLBACK_MEMBER(pcw16_timer_callback);
+	TIMER_DEVICE_CALLBACK_MEMBER(rtc_timer_callback);
+	DECLARE_WRITE_LINE_MEMBER(pcw16_com_interrupt_1);
+	DECLARE_WRITE_LINE_MEMBER(pcw16_com_interrupt_2);
+	DECLARE_WRITE_LINE_MEMBER(pcw16_keyboard_callback);
+
+	void trigger_fdc_int();
+	DECLARE_WRITE_LINE_MEMBER( fdc_interrupt );
+	DECLARE_FLOPPY_FORMATS( floppy_formats );
+	inline void pcw16_plot_pixel(bitmap_ind16 &bitmap, int x, int y, uint32_t color);
+	void pcw16_vh_decode_mode0(bitmap_ind16 &bitmap, int x, int y, uint8_t byte);
+	void pcw16_vh_decode_mode1(bitmap_ind16 &bitmap, int x, int y, uint8_t byte);
+	void pcw16_vh_decode_mode2(bitmap_ind16 &bitmap, int x, int y, uint8_t byte);
+
+	void pcw16_io(address_map &map);
+	void pcw16_map(address_map &map);
+
+private:
 	required_device<cpu_device> m_maincpu;
 	required_device<intel_e28f008sa_device> m_flash0;
 	required_device<intel_e28f008sa_device> m_flash1;
@@ -83,64 +152,6 @@ public:
 	int m_previous_fdc_int_state;
 	int m_colour_palette[16];
 	int m_video_control;
-	DECLARE_WRITE8_MEMBER(pcw16_palette_w);
-	DECLARE_READ8_MEMBER(pcw16_bankhw_r);
-	DECLARE_WRITE8_MEMBER(pcw16_bankhw_w);
-	DECLARE_WRITE8_MEMBER(pcw16_video_control_w);
-	DECLARE_READ8_MEMBER(pcw16_keyboard_data_shift_r);
-	DECLARE_WRITE8_MEMBER(pcw16_keyboard_data_shift_w);
-	DECLARE_READ8_MEMBER(pcw16_keyboard_status_r);
-	DECLARE_WRITE8_MEMBER(pcw16_keyboard_control_w);
-	DECLARE_READ8_MEMBER(rtc_year_invalid_r);
-	DECLARE_READ8_MEMBER(rtc_month_r);
-	DECLARE_READ8_MEMBER(rtc_days_r);
-	DECLARE_READ8_MEMBER(rtc_hours_r);
-	DECLARE_READ8_MEMBER(rtc_minutes_r);
-	DECLARE_READ8_MEMBER(rtc_seconds_r);
-	DECLARE_READ8_MEMBER(rtc_256ths_seconds_r);
-	DECLARE_WRITE8_MEMBER(rtc_control_w);
-	DECLARE_WRITE8_MEMBER(rtc_seconds_w);
-	DECLARE_WRITE8_MEMBER(rtc_minutes_w);
-	DECLARE_WRITE8_MEMBER(rtc_hours_w);
-	DECLARE_WRITE8_MEMBER(rtc_days_w);
-	DECLARE_WRITE8_MEMBER(rtc_month_w);
-	DECLARE_WRITE8_MEMBER(rtc_year_w);
-	DECLARE_READ8_MEMBER(pcw16_system_status_r);
-	DECLARE_READ8_MEMBER(pcw16_timer_interrupt_counter_r);
-	DECLARE_WRITE8_MEMBER(pcw16_system_control_w);
-	DECLARE_READ8_MEMBER(pcw16_mem_r);
-	DECLARE_WRITE8_MEMBER(pcw16_mem_w);
-	void pcw16_keyboard_init();
-	void pcw16_keyboard_refresh_outputs();
-	void pcw16_keyboard_set_clock_state(int state);
-	void pcw16_keyboard_int(int state);
-	void pcw16_keyboard_reset();
-	int pcw16_keyboard_can_transmit();
-	void pcw16_keyboard_signal_byte_received(int data);
-	void pcw16_refresh_ints();
-	void rtc_setup_max_days();
-	uint8_t pcw16_read_mem(uint8_t bank, uint16_t offset);
-	void pcw16_write_mem(uint8_t bank, uint16_t offset, uint8_t data);
-	uint8_t read_bank_data(uint8_t type, uint16_t offset);
-	void write_bank_data(uint8_t type, uint16_t offset, uint8_t data);
-	virtual void machine_start() override;
-	virtual void machine_reset() override;
-	virtual void video_start() override;
-	DECLARE_PALETTE_INIT(pcw16);
-	uint32_t screen_update_pcw16(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
-	TIMER_DEVICE_CALLBACK_MEMBER(pcw16_timer_callback);
-	TIMER_DEVICE_CALLBACK_MEMBER(rtc_timer_callback);
-	DECLARE_WRITE_LINE_MEMBER(pcw16_com_interrupt_1);
-	DECLARE_WRITE_LINE_MEMBER(pcw16_com_interrupt_2);
-	DECLARE_WRITE_LINE_MEMBER(pcw16_keyboard_callback);
-
-	void trigger_fdc_int();
-	DECLARE_WRITE_LINE_MEMBER( fdc_interrupt );
-	DECLARE_FLOPPY_FORMATS( floppy_formats );
-	inline void pcw16_plot_pixel(bitmap_ind16 &bitmap, int x, int y, uint32_t color);
-	void pcw16_vh_decode_mode0(bitmap_ind16 &bitmap, int x, int y, unsigned char byte);
-	void pcw16_vh_decode_mode1(bitmap_ind16 &bitmap, int x, int y, unsigned char byte);
-	void pcw16_vh_decode_mode2(bitmap_ind16 &bitmap, int x, int y, unsigned char byte);
 };
 
-#endif /* PCW16_H_ */
+#endif // MAME_INCLUDES_PCW16_H

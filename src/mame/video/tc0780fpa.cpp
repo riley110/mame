@@ -407,10 +407,10 @@ void tc0780fpa_device::device_start()
 	m_texture = std::make_unique<uint8_t[]>(0x400000);
 	m_poly_fifo = std::make_unique<uint16_t[]>(POLY_FIFO_SIZE);
 
-	m_renderer = std::make_unique<tc0780fpa_renderer>(*this, *m_screen, m_texture.get());
+	m_renderer = std::make_unique<tc0780fpa_renderer>(*this, screen(), m_texture.get());
 
-	save_pointer(NAME(m_texture.get()), 0x400000);
-	save_pointer(NAME(m_poly_fifo.get()), POLY_FIFO_SIZE);
+	save_pointer(NAME(m_texture), 0x400000);
+	save_pointer(NAME(m_poly_fifo), POLY_FIFO_SIZE);
 	save_item(NAME(m_poly_fifo_ptr));
 	save_item(NAME(m_tex_address));
 	save_item(NAME(m_tex_offset));
@@ -440,12 +440,12 @@ void tc0780fpa_device::device_stop()
     DEVICE HANDLERS
 *****************************************************************************/
 
-READ16_MEMBER(tc0780fpa_device::tex_addr_r)
+uint16_t tc0780fpa_device::tex_addr_r()
 {
 	return m_tex_address;
 }
 
-WRITE16_MEMBER(tc0780fpa_device::tex_addr_w)
+void tc0780fpa_device::tex_addr_w(uint16_t data)
 {
 	m_tex_address = data;
 
@@ -455,7 +455,7 @@ WRITE16_MEMBER(tc0780fpa_device::tex_addr_w)
 	m_tex_offset = 0;
 }
 
-WRITE16_MEMBER(tc0780fpa_device::tex_w)
+void tc0780fpa_device::tex_w(uint16_t data)
 {
 	int x = ((m_tex_offset >> 0) & 0x1f) | ((m_tex_offset >> 5) & 0x20);
 	int y = ((m_tex_offset >> 5) & 0x1f) | ((m_tex_offset >> 6) & 0x20);
@@ -466,7 +466,7 @@ WRITE16_MEMBER(tc0780fpa_device::tex_w)
 	m_tex_offset++;
 }
 
-WRITE16_MEMBER(tc0780fpa_device::poly_fifo_w)
+void tc0780fpa_device::poly_fifo_w(uint16_t data)
 {
 	assert (m_poly_fifo_ptr < POLY_FIFO_SIZE); // never happens
 	m_poly_fifo[m_poly_fifo_ptr++] = data;
@@ -482,7 +482,7 @@ WRITE16_MEMBER(tc0780fpa_device::poly_fifo_w)
 
 }
 
-WRITE16_MEMBER(tc0780fpa_device::render_w)
+void tc0780fpa_device::render_w(uint16_t data)
 {
 }
 

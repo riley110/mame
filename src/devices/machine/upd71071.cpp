@@ -3,7 +3,7 @@
 
 /*
 
-    am9517a.c is a more complete implementation of this, the uPD71071 appears to be a clone of it
+    am9517a.cpp is a more complete implementation of this, the uPD71071 appears to be a clone of it
 
     NEC uPD71071 DMA Controller
     Used on the Fujitsu FM-Towns
@@ -35,6 +35,7 @@
             But the FM-Towns definitely uses reg 7 as bits 24-31.
             The documentation on the V53A manual doesn't show these bits either, maybe it's
             an external connection on the FMT? might be worth checking overflow behavior etc.
+            The Towns manual confirms the top 8 bits are external to the DMAC and there's no carry into them.
 
     0x08:
     0x09:   Device Control register (16-bit)
@@ -97,9 +98,9 @@ upd71071_device::upd71071_device(const machine_config &mconfig, const char *tag,
 	, m_upd_clock(0)
 	, m_out_hreq_cb(*this)
 	, m_out_eop_cb(*this)
-	, m_dma_read_cb{ {*this}, {*this}, {*this}, {*this} }
-	, m_dma_write_cb{ {*this}, {*this}, {*this}, {*this} }
-	, m_out_dack_cb{ {*this}, {*this}, {*this}, {*this} }
+	, m_dma_read_cb(*this)
+	, m_dma_write_cb(*this)
+	, m_out_dack_cb(*this)
 	, m_cpu(*this, finder_base::DUMMY_TAG)
 {
 }
@@ -112,12 +113,9 @@ void upd71071_device::device_start()
 {
 	m_out_hreq_cb.resolve_safe();
 	m_out_eop_cb.resolve_safe();
-	for (auto &cb : m_dma_read_cb)
-		cb.resolve_safe(0);
-	for (auto &cb : m_dma_write_cb)
-		cb.resolve_safe();
-	for (auto &cb : m_out_dack_cb)
-		cb.resolve_safe();
+	m_dma_read_cb.resolve_all_safe(0);
+	m_dma_write_cb.resolve_all_safe();
+	m_out_dack_cb.resolve_all_safe();
 	for (auto &elem : m_timer)
 		elem = machine().scheduler().timer_alloc(timer_expired_delegate(FUNC(upd71071_device::dma_transfer_timer), this));
 	m_selected_channel = 0;
@@ -195,8 +193,14 @@ TIMER_CALLBACK_MEMBER(upd71071_device::dma_transfer_timer)
 				m_reg.address_current[channel] = m_reg.address_base[channel];
 				m_reg.count_current[channel] = m_reg.count_base[channel];
 			}
+			else
+			{
+				m_timer[channel]->adjust(attotime::never);
+				m_reg.mask |= (0x01 << channel);  // END or TC
+			}
 			// TODO: send terminal count
 			set_eop(ASSERT_LINE);
+			m_reg.status |= (0x01 << channel);  // END or TC
 		}
 		break;
 	case 0x08:  // memory -> I/O
@@ -233,8 +237,14 @@ TIMER_CALLBACK_MEMBER(upd71071_device::dma_transfer_timer)
 				m_reg.address_current[channel] = m_reg.address_base[channel];
 				m_reg.count_current[channel] = m_reg.count_base[channel];
 			}
+			else
+			{
+				m_timer[channel]->adjust(attotime::never);
+				m_reg.mask |= (0x01 << channel);  // END or TC
+			}
 			// TODO: send terminal count
 			set_eop(ASSERT_LINE);
+			m_reg.status |= (0x01 << channel);  // END or TC
 		}
 		break;
 	case 0x0c:  // Invalid
@@ -293,12 +303,12 @@ int upd71071_device::dmarq(int state, int channel)
 	{
 		m_dmarq[channel] = 0;  // clear DMARQ line
 		m_reg.status &= ~(0x10 << channel);
-		m_reg.status |= (0x01 << channel);  // END or TC
+		m_timer[channel]->adjust(attotime::never);
 	}
 	return 0;
 }
 
-READ8_MEMBER(upd71071_device::read)
+uint8_t upd71071_device::read(offs_t offset)
 {
 	uint8_t ret = 0;
 
@@ -375,7 +385,7 @@ READ8_MEMBER(upd71071_device::read)
 	return ret;
 }
 
-WRITE8_MEMBER(upd71071_device::write)
+void upd71071_device::write(offs_t offset, uint8_t data)
 {
 	switch (offset)
 	{

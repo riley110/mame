@@ -7,11 +7,6 @@
 #pragma once
 
 
-#define MCFG_K055555_ADD(_tag) \
-	MCFG_DEVICE_ADD(_tag, K055555, 0)
-
-
-
 /* K055555 registers */
 /* priority inputs */
 #define K55_PALBASE_BG      0   // background palette
@@ -86,8 +81,8 @@ public:
 
 	void K055555_write_reg(uint8_t regnum, uint8_t regdat);
 
-	DECLARE_WRITE16_MEMBER( K055555_word_w );
-	DECLARE_WRITE32_MEMBER( K055555_long_w );
+	void K055555_word_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	void K055555_long_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
 
 	int K055555_read_register(int regnum);
 	int K055555_get_palette_index(int idx);

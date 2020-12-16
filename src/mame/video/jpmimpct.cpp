@@ -29,7 +29,7 @@
  *  1 1 0    Command register
  */
 
-WRITE16_MEMBER(jpmimpct_state::jpmimpct_bt477_w)
+void jpmimpct_state::jpmimpct_bt477_w(offs_t offset, uint16_t data)
 {
 	uint8_t val = data & 0xff;
 
@@ -75,7 +75,7 @@ WRITE16_MEMBER(jpmimpct_state::jpmimpct_bt477_w)
 	}
 }
 
-READ16_MEMBER(jpmimpct_state::jpmimpct_bt477_r)
+uint16_t jpmimpct_state::jpmimpct_bt477_r(offs_t offset)
 {
 	popmessage("Bt477: Unhandled read access (offset:%x)", offset);
 	return 0;
@@ -90,12 +90,12 @@ READ16_MEMBER(jpmimpct_state::jpmimpct_bt477_r)
 
 TMS340X0_TO_SHIFTREG_CB_MEMBER(jpmimpct_state::to_shiftreg)
 {
-	memcpy(shiftreg, &m_vram[TOWORD(address)], 512 * sizeof(uint16_t));
+	memcpy(shiftreg, &m_vram[address >> 4], 512 * sizeof(uint16_t));
 }
 
 TMS340X0_FROM_SHIFTREG_CB_MEMBER(jpmimpct_state::from_shiftreg)
 {
-	memcpy(&m_vram[TOWORD(address)], shiftreg, 512 * sizeof(uint16_t));
+	memcpy(&m_vram[address >> 4], shiftreg, 512 * sizeof(uint16_t));
 }
 
 

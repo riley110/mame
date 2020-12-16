@@ -102,10 +102,10 @@ protected:
 
 
 // device type definition
-DECLARE_DEVICE_TYPE(NES_JOYPAD,      nes_joypad_device)
-DECLARE_DEVICE_TYPE(NES_FCPAD_P2,    nes_fcpad2_device)
-DECLARE_DEVICE_TYPE(NES_CCPAD_LEFT,  nes_ccpadl_device)
-DECLARE_DEVICE_TYPE(NES_CCPAD_RIGHT, nes_ccpadr_device)
-DECLARE_DEVICE_TYPE(NES_ARCSTICK,    nes_arcstick_device)
+DECLARE_DEVICE_TYPE(NES_JOYPAD,         nes_joypad_device)
+DECLARE_DEVICE_TYPE(NES_FCPAD_P2,       nes_fcpad2_device)
+DECLARE_DEVICE_TYPE(NES_CCPAD_LEFT,     nes_ccpadl_device)
+DECLARE_DEVICE_TYPE(NES_CCPAD_RIGHT,    nes_ccpadr_device)
+DECLARE_DEVICE_TYPE(NES_ARCSTICK,       nes_arcstick_device)
 
 #endif // MAME_BUS_NES_CTRL_JOYPAD_H

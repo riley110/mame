@@ -53,6 +53,7 @@ public:
 	required_device<netlist_mame_device> m_maincpu;
 	required_device<fixedfreq_device> m_video;
 
+	void chicago(machine_config &config);
 protected:
 
 	// driver_device overrides
@@ -93,20 +94,20 @@ void chicago_state::video_start()
 {
 }
 
-static MACHINE_CONFIG_START( chicago )
-
+void chicago_state::chicago(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_DEVICE_ADD("maincpu", NETLIST_CPU, NETLIST_CLOCK)
-	MCFG_NETLIST_SETUP(chicago)
+	NETLIST_CPU(config, m_maincpu, netlist::config::DEFAULT_CLOCK()).set_source(netlist_chicago);
 
 	/* video hardware */
-	MCFG_FIXFREQ_ADD("fixfreq", "screen")
-	MCFG_FIXFREQ_MONITOR_CLOCK(MASTER_CLOCK)
-	MCFG_FIXFREQ_HORZ_PARAMS(H_TOTAL-67,H_TOTAL-40,H_TOTAL-8,H_TOTAL)
-	MCFG_FIXFREQ_VERT_PARAMS(V_TOTAL-22,V_TOTAL-19,V_TOTAL-12,V_TOTAL)
-	MCFG_FIXFREQ_FIELDCOUNT(1)
-	MCFG_FIXFREQ_SYNC_THRESHOLD(0.30)
-MACHINE_CONFIG_END
+	SCREEN(config, "screen", SCREEN_TYPE_RASTER);
+	FIXFREQ(config, m_video).set_screen("screen");
+	m_video->set_monitor_clock(MASTER_CLOCK);
+	m_video->set_horz_params(H_TOTAL-67,H_TOTAL-40,H_TOTAL-8,H_TOTAL);
+	m_video->set_vert_params(V_TOTAL-22,V_TOTAL-19,V_TOTAL-12,V_TOTAL);
+	m_video->set_fieldcount(1);
+	m_video->set_threshold(0.30);
+}
 
 /***************************************************************************
 
@@ -114,19 +115,21 @@ MACHINE_CONFIG_END
 
  ***************************************************************************/
 
+// Demolition Derby is licensed from Exidy, PROMs are identical to Exidy Destruction Derby
+// However, the PCBs and layouts are different, so there is a seperate driver here
 
 ROM_START( dmodrbcc )
 	ROM_REGION( 0x10000, "maincpu", ROMREGION_ERASE00 )
 
 	ROM_REGION( 0x0400, "roms", ROMREGION_ERASE00 )
-	ROM_LOAD( "cdi.b2",     0x0000, 0x0200, CRC(9c727712) SHA1(0d5da25fda57da873da0c066d3472c076c18b853) )
-	ROM_LOAD( "cdi.b8",     0x0000, 0x0200, CRC(840653fa) SHA1(b71d35af4bb4a6f98acfa9161c0f3e8165440d16) )
-	ROM_LOAD( "cdi.c8",     0x0000, 0x0200, CRC(79ebcfa1) SHA1(5267a38b76f58a9add928d1241803792b35f65c0) )
-	ROM_LOAD( "cdi.d8",     0x0000, 0x0200, CRC(afcfe339) SHA1(34912eb50fe162743fa2a7433a1e8634050fb514) )
-	ROM_LOAD( "cdi.e8",     0x0000, 0x0200, CRC(7b7bf492) SHA1(6d48ae1963c6f867a461d15e657df8196fdeaf20) )
-	ROM_LOAD( "cdi.h3",     0x0000, 0x0200, CRC(66f25de0) SHA1(1984c3f9a4f5c01b1db784cec7279307aa9a851b) )
-	ROM_LOAD( "cdi.h6",     0x0000, 0x0200, CRC(9c727712) SHA1(0d5da25fda57da873da0c066d3472c076c18b853) )
-	ROM_LOAD( "cdi.n1",     0x0000, 0x0200, CRC(66f25de0) SHA1(1984c3f9a4f5c01b1db784cec7279307aa9a851b) )
+	ROM_LOAD( "cdi.b2",     0x0000, 0x0100, CRC(c3823f0b) SHA1(42fe8c1e0f54b3f968a630dd564a8941410c5d86) )
+	ROM_LOAD( "cdi.b8",     0x0000, 0x0100, CRC(9f65c1df) SHA1(e367cc418b34005198f9b958592573986d37274a) )
+	ROM_LOAD( "cdi.c8",     0x0000, 0x0100, CRC(5e27fc7c) SHA1(bae31e7f0ff7a5ebfe4a12fc537249ee24a4cf4b) )
+	ROM_LOAD( "cdi.d8",     0x0000, 0x0100, CRC(93dc096c) SHA1(b89a478ef731024eb24a79f9e82a5ef779e8e3d0) )
+	ROM_LOAD( "cdi.e8",     0x0000, 0x0100, CRC(ddbb0cc7) SHA1(6f169566cb09c78090cec2e375013c0eb2656890) )
+	ROM_LOAD( "cdi.h3",     0x0000, 0x0100, CRC(82d7d25f) SHA1(d4b3a6655f91647545d493c2ff996daa66df0395) )
+	ROM_LOAD( "cdi.h6",     0x0000, 0x0100, CRC(c3823f0b) SHA1(42fe8c1e0f54b3f968a630dd564a8941410c5d86) )
+	ROM_LOAD( "cdi.n1",     0x0000, 0x0100, CRC(82d7d25f) SHA1(d4b3a6655f91647545d493c2ff996daa66df0395) )
 
 	ROM_LOAD( "cdi.c13",    0x0000, 0x0020, CRC(f304a1fb) SHA1(0f029274bb99723ebcc271d761e1500ca50b2738) )
 	ROM_LOAD( "cdi.c14",    0x0000, 0x0020, CRC(f8dbd779) SHA1(55bdaf9eb1ba6185e20512c4874ebb625861508e) )
@@ -138,4 +141,4 @@ ROM_START( dmodrbcc )
 ROM_END
 
 
-GAME( 1976, dmodrbcc,  0, chicago, 0, chicago_state,  0, ROT0, "Chicago Coin", "Demolition Derby [TTL]", MACHINE_IS_SKELETON )
+GAME( 1976, dmodrbcc, 0, chicago, 0, chicago_state, empty_init, ROT0, "Chicago Coin", "Demolition Derby [TTL]", MACHINE_IS_SKELETON )

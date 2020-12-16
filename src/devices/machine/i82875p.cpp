@@ -7,49 +7,46 @@ DEFINE_DEVICE_TYPE(I82875P_HOST,     i82875p_host_device,     "i82875p_host",   
 DEFINE_DEVICE_TYPE(I82875P_AGP,      i82875p_agp_device,      "i82875p_agp",      "Intel 82875P AGP Bridge")
 DEFINE_DEVICE_TYPE(I82875P_OVERFLOW, i82875p_overflow_device, "i82875p_overflow", "Intel 82875P Configuration Overflow")
 
-DEVICE_ADDRESS_MAP_START(agp_translation_map, 32, i82875p_host_device)
-ADDRESS_MAP_END
-
-DEVICE_ADDRESS_MAP_START(config_map, 32, i82875p_host_device)
-	AM_RANGE(0x50, 0x53) AM_READWRITE8 (agpm_r,     agpm_w,     0x0000ff00)
-	AM_RANGE(0x50, 0x53) AM_READ8      (gc_r,                   0x00ff0000)
-	AM_RANGE(0x50, 0x53) AM_READ8      (csabcont_r,             0xff000000)
-	AM_RANGE(0x58, 0x5b) AM_READ       (eap_r)
-	AM_RANGE(0x5c, 0x5f) AM_READ8      (derrsyn_r,              0x000000ff)
-	AM_RANGE(0x5c, 0x5f) AM_READ8      (des_r,                  0x0000ff00)
-	AM_RANGE(0x60, 0x63) AM_READWRITE8 (fpllcont_r, fpllcont_w, 0x000000ff)
-	AM_RANGE(0x90, 0x97) AM_READWRITE8 (pam_r,      pam_w,      0xffffffff)
-	AM_RANGE(0x9c, 0x9f) AM_READWRITE8 (smram_r,    smram_w,    0x0000ff00)
-	AM_RANGE(0x9c, 0x9f) AM_READWRITE8 (esmramc_r,  esmramc_w,  0x00ff0000)
-	AM_RANGE(0xa0, 0xa3) AM_READ       (acapid_r)
-	AM_RANGE(0xa4, 0xa7) AM_READ       (agpstat_r)
-	AM_RANGE(0xa8, 0xab) AM_READ       (agpcmd_r)
-	AM_RANGE(0xb0, 0xb3) AM_READWRITE  (agpctrl_r,  agpctrl_w)
-	AM_RANGE(0xb4, 0xb7) AM_READWRITE8 (apsize_r,   apsize_w,   0x000000ff)
-	AM_RANGE(0xb8, 0xbb) AM_READWRITE  (attbase_r,  attbase_w)
-	AM_RANGE(0xbc, 0xbf) AM_READWRITE8 (amtt_r,     amtt_w,     0x000000ff)
-	AM_RANGE(0xbc, 0xbf) AM_READWRITE8 (lptt_r,     lptt_w,     0x0000ff00)
-	AM_RANGE(0xc4, 0xc7) AM_READWRITE16(toud_r,     toud_w,     0x0000ffff)
-	AM_RANGE(0xc4, 0xc7) AM_READWRITE16(mchcfg_r,   mchcfg_w,   0xffff0000)
-	AM_RANGE(0xc8, 0xcb) AM_READ16     (errsts_r,               0x0000ffff)
-	AM_RANGE(0xc8, 0xcb) AM_READWRITE16(errcmd_r,   errcmd_w,   0xffff0000)
-	AM_RANGE(0xcc, 0xcf) AM_READWRITE16(smicmd_r,   smicmd_w,   0x0000ffff)
-	AM_RANGE(0xcc, 0xcf) AM_READWRITE16(scicmd_r,   scicmd_w,   0xffff0000)
-	AM_RANGE(0xdc, 0xdf) AM_READWRITE16(skpd_r,     skpd_w,     0xffff0000)
-	AM_RANGE(0xe4, 0xe7) AM_READ       (capreg1_r)
-	AM_RANGE(0xe8, 0xeb) AM_READ8      (capreg2_r,              0x000000ff)
-
-	AM_INHERIT_FROM(pci_host_device::config_map)
-ADDRESS_MAP_END
-
-i82875p_host_device::i82875p_host_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
-	: pci_host_device(mconfig, I82875P_HOST, tag, owner, clock)
+void i82875p_host_device::agp_translation_map(address_map &map)
 {
 }
 
-void i82875p_host_device::set_cpu_tag(const char *_cpu_tag)
+void i82875p_host_device::config_map(address_map &map)
 {
-	cpu_tag = _cpu_tag;
+	pci_host_device::config_map(map);
+	map(0x51, 0x51).rw(FUNC(i82875p_host_device::agpm_r), FUNC(i82875p_host_device::agpm_w));
+	map(0x52, 0x52).r(FUNC(i82875p_host_device::gc_r));
+	map(0x53, 0x53).r(FUNC(i82875p_host_device::csabcont_r));
+	map(0x58, 0x5b).r(FUNC(i82875p_host_device::eap_r));
+	map(0x5c, 0x5c).r(FUNC(i82875p_host_device::derrsyn_r));
+	map(0x5d, 0x5d).r(FUNC(i82875p_host_device::des_r));
+	map(0x60, 0x60).rw(FUNC(i82875p_host_device::fpllcont_r), FUNC(i82875p_host_device::fpllcont_w));
+	map(0x90, 0x97).rw(FUNC(i82875p_host_device::pam_r), FUNC(i82875p_host_device::pam_w));
+	map(0x9d, 0x9d).rw(FUNC(i82875p_host_device::smram_r), FUNC(i82875p_host_device::smram_w));
+	map(0x9e, 0x9e).rw(FUNC(i82875p_host_device::esmramc_r), FUNC(i82875p_host_device::esmramc_w));
+	map(0xa0, 0xa3).r(FUNC(i82875p_host_device::acapid_r));
+	map(0xa4, 0xa7).r(FUNC(i82875p_host_device::agpstat_r));
+	map(0xa8, 0xab).r(FUNC(i82875p_host_device::agpcmd_r));
+	map(0xb0, 0xb3).rw(FUNC(i82875p_host_device::agpctrl_r), FUNC(i82875p_host_device::agpctrl_w));
+	map(0xb4, 0xb4).rw(FUNC(i82875p_host_device::apsize_r), FUNC(i82875p_host_device::apsize_w));
+	map(0xb8, 0xbb).rw(FUNC(i82875p_host_device::attbase_r), FUNC(i82875p_host_device::attbase_w));
+	map(0xbc, 0xbc).rw(FUNC(i82875p_host_device::amtt_r), FUNC(i82875p_host_device::amtt_w));
+	map(0xbd, 0xbd).rw(FUNC(i82875p_host_device::lptt_r), FUNC(i82875p_host_device::lptt_w));
+	map(0xc4, 0xc5).rw(FUNC(i82875p_host_device::toud_r), FUNC(i82875p_host_device::toud_w));
+	map(0xc6, 0xc7).rw(FUNC(i82875p_host_device::mchcfg_r), FUNC(i82875p_host_device::mchcfg_w));
+	map(0xc8, 0xc9).r(FUNC(i82875p_host_device::errsts_r));
+	map(0xca, 0xcb).rw(FUNC(i82875p_host_device::errcmd_r), FUNC(i82875p_host_device::errcmd_w));
+	map(0xcc, 0xcd).rw(FUNC(i82875p_host_device::smicmd_r), FUNC(i82875p_host_device::smicmd_w));
+	map(0xce, 0xcf).rw(FUNC(i82875p_host_device::scicmd_r), FUNC(i82875p_host_device::scicmd_w));
+	map(0xde, 0xdf).rw(FUNC(i82875p_host_device::skpd_r), FUNC(i82875p_host_device::skpd_w));
+	map(0xe4, 0xe7).r(FUNC(i82875p_host_device::capreg1_r));
+	map(0xe8, 0xe8).r(FUNC(i82875p_host_device::capreg2_r));
+}
+
+i82875p_host_device::i82875p_host_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
+	: pci_host_device(mconfig, I82875P_HOST, tag, owner, clock)
+	, cpu(*this, finder_base::DUMMY_TAG)
+{
 }
 
 void i82875p_host_device::set_ram_size(int _ram_size)
@@ -57,7 +54,7 @@ void i82875p_host_device::set_ram_size(int _ram_size)
 	ram_size = _ram_size;
 }
 
-READ8_MEMBER(i82875p_host_device::capptr_r)
+uint8_t i82875p_host_device::capptr_r()
 {
 	return 0xe4;
 }
@@ -65,7 +62,6 @@ READ8_MEMBER(i82875p_host_device::capptr_r)
 void i82875p_host_device::device_start()
 {
 	pci_host_device::device_start();
-	cpu = machine().device<cpu_device>(cpu_tag);
 	memory_space = &cpu->space(AS_PROGRAM);
 	io_space = &cpu->space(AS_IO);
 
@@ -83,71 +79,71 @@ void i82875p_host_device::device_start()
 	add_map(256*1024*1024, M_MEM, FUNC(i82875p_host_device::agp_translation_map));
 }
 
-READ8_MEMBER(  i82875p_host_device::agpm_r)
+uint8_t i82875p_host_device::agpm_r()
 {
 	return agpm;
 }
 
-WRITE8_MEMBER( i82875p_host_device::agpm_w)
+void i82875p_host_device::agpm_w(uint8_t data)
 {
 	agpm = data;
 	logerror("%s: agpm = %02x\n", tag(), agpm);
 }
 
-READ8_MEMBER(  i82875p_host_device::gc_r)
+uint8_t i82875p_host_device::gc_r()
 {
 	return 0x08;
 }
 
-READ8_MEMBER(  i82875p_host_device::csabcont_r)
+uint8_t i82875p_host_device::csabcont_r()
 {
 	return 0x00;
 }
 
-READ32_MEMBER( i82875p_host_device::eap_r)
+uint32_t i82875p_host_device::eap_r()
 {
 	return 0x00000000;
 }
 
-READ8_MEMBER(  i82875p_host_device::derrsyn_r)
+uint8_t i82875p_host_device::derrsyn_r()
 {
 	return 0x00;
 }
 
-READ8_MEMBER(  i82875p_host_device::des_r)
+uint8_t i82875p_host_device::des_r()
 {
 	return 0x00;
 }
 
-READ8_MEMBER(  i82875p_host_device::fpllcont_r)
+uint8_t i82875p_host_device::fpllcont_r()
 {
 	return fpllcont;
 }
 
-WRITE8_MEMBER( i82875p_host_device::fpllcont_w)
+void i82875p_host_device::fpllcont_w(uint8_t data)
 {
 	fpllcont = data;
 	logerror("%s: fpllcont = %02x\n", tag(), data);
 }
 
-READ8_MEMBER(  i82875p_host_device::pam_r)
+uint8_t i82875p_host_device::pam_r(offs_t offset)
 {
 	return pam[offset];
 }
 
-WRITE8_MEMBER( i82875p_host_device::pam_w)
+void i82875p_host_device::pam_w(offs_t offset, uint8_t data)
 {
 	pam[offset] = data;
 	logerror("%s: pam[%d] = %02x\n", tag(), offset, data);
 	remap_cb();
 }
 
-READ8_MEMBER(  i82875p_host_device::smram_r)
+uint8_t i82875p_host_device::smram_r()
 {
 	return smram;
 }
 
-WRITE8_MEMBER( i82875p_host_device::smram_w)
+void i82875p_host_device::smram_w(uint8_t data)
 {
 	if(!(smram & 0x10))
 		smram = (data & 0xfe) | 0x02;
@@ -155,12 +151,12 @@ WRITE8_MEMBER( i82875p_host_device::smram_w)
 	remap_cb();
 }
 
-READ8_MEMBER(  i82875p_host_device::esmramc_r)
+uint8_t i82875p_host_device::esmramc_r()
 {
 	return esmramc;
 }
 
-WRITE8_MEMBER( i82875p_host_device::esmramc_w)
+void i82875p_host_device::esmramc_w(uint8_t data)
 {
 	if(!(smram & 0x10))
 		esmramc = (data & 0x87) | 0x38;
@@ -168,80 +164,80 @@ WRITE8_MEMBER( i82875p_host_device::esmramc_w)
 	remap_cb();
 }
 
-READ32_MEMBER( i82875p_host_device::acapid_r)
+uint32_t i82875p_host_device::acapid_r()
 {
 	return 0x00300002;
 }
 
-READ32_MEMBER( i82875p_host_device::agpstat_r)
+uint32_t i82875p_host_device::agpstat_r()
 {
 	return 0x1f004a13;
 }
 
-READ32_MEMBER( i82875p_host_device::agpcmd_r)
+uint32_t i82875p_host_device::agpcmd_r()
 {
 	return 0x00000a00;
 }
 
-READ32_MEMBER( i82875p_host_device::agpctrl_r)
+uint32_t i82875p_host_device::agpctrl_r()
 {
 	return agpctrl;
 }
 
-WRITE32_MEMBER(i82875p_host_device::agpctrl_w)
+void i82875p_host_device::agpctrl_w(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
 	COMBINE_DATA(&agpctrl);
 	logerror("%s: agpctrl = %08x\n", tag(), agpctrl);
 }
 
-READ8_MEMBER(  i82875p_host_device::apsize_r)
+uint8_t i82875p_host_device::apsize_r()
 {
 	return apsize;
 }
 
-WRITE8_MEMBER( i82875p_host_device::apsize_w)
+void i82875p_host_device::apsize_w(uint8_t data)
 {
 	apsize = data;
 	logerror("%s: apsize = %02x\n", tag(), apsize);
 }
 
-READ32_MEMBER( i82875p_host_device::attbase_r)
+uint32_t i82875p_host_device::attbase_r()
 {
 	return attbase;
 }
 
-WRITE32_MEMBER(i82875p_host_device::attbase_w)
+void i82875p_host_device::attbase_w(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
 	COMBINE_DATA(&attbase);
 	logerror("%s: attbase = %08x\n", tag(), attbase);
 }
 
-READ8_MEMBER(  i82875p_host_device::amtt_r)
+uint8_t i82875p_host_device::amtt_r()
 {
 	return amtt;
 }
 
-WRITE8_MEMBER( i82875p_host_device::amtt_w)
+void i82875p_host_device::amtt_w(uint8_t data)
 {
 	amtt = data;
 }
 
-READ8_MEMBER(  i82875p_host_device::lptt_r)
+uint8_t i82875p_host_device::lptt_r()
 {
 	return lptt;
 }
 
-WRITE8_MEMBER( i82875p_host_device::lptt_w)
+void i82875p_host_device::lptt_w(uint8_t data)
 {
 	lptt = data;
 }
 
-READ16_MEMBER( i82875p_host_device::toud_r)
+uint16_t i82875p_host_device::toud_r()
 {
 	return toud;
 }
 
-WRITE16_MEMBER(i82875p_host_device::toud_w)
+void i82875p_host_device::toud_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	COMBINE_DATA(&toud);
 	toud &= ~7;
@@ -249,67 +245,67 @@ WRITE16_MEMBER(i82875p_host_device::toud_w)
 	remap_cb();
 }
 
-READ16_MEMBER( i82875p_host_device::mchcfg_r)
+uint16_t i82875p_host_device::mchcfg_r()
 {
 	return mchcfg;
 }
 
-WRITE16_MEMBER(i82875p_host_device::mchcfg_w)
+void i82875p_host_device::mchcfg_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	COMBINE_DATA(&mchcfg);
 }
 
-READ16_MEMBER( i82875p_host_device::errsts_r)
+uint16_t i82875p_host_device::errsts_r()
 {
 	return 0x0000;
 }
 
-READ16_MEMBER( i82875p_host_device::errcmd_r)
+uint16_t i82875p_host_device::errcmd_r()
 {
 	return errcmd;
 }
 
-WRITE16_MEMBER(i82875p_host_device::errcmd_w)
+void i82875p_host_device::errcmd_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	COMBINE_DATA(&errcmd);
 }
 
-READ16_MEMBER( i82875p_host_device::smicmd_r)
+uint16_t i82875p_host_device::smicmd_r()
 {
 	return smicmd;
 }
 
-WRITE16_MEMBER(i82875p_host_device::smicmd_w)
+void i82875p_host_device::smicmd_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	COMBINE_DATA(&smicmd);
 }
 
-READ16_MEMBER( i82875p_host_device::scicmd_r)
+uint16_t i82875p_host_device::scicmd_r()
 {
 	return scicmd;
 }
 
-WRITE16_MEMBER(i82875p_host_device::scicmd_w)
+void i82875p_host_device::scicmd_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	COMBINE_DATA(&scicmd);
 }
 
-READ16_MEMBER( i82875p_host_device::skpd_r)
+uint16_t i82875p_host_device::skpd_r()
 {
 	return skpd;
 }
 
-WRITE16_MEMBER(i82875p_host_device::skpd_w)
+void i82875p_host_device::skpd_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	COMBINE_DATA(&skpd);
 }
 
-READ32_MEMBER( i82875p_host_device::capreg1_r)
+uint32_t i82875p_host_device::capreg1_r()
 {
 	return 0x0106a009;
 }
 
-READ8_MEMBER(  i82875p_host_device::capreg2_r)
+uint8_t i82875p_host_device::capreg2_r()
 {
 	return 0x00;
 }
@@ -430,6 +426,7 @@ void i82875p_host_device::map_extra(uint64_t memory_window_start, uint64_t memor
 i82875p_agp_device::i82875p_agp_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
 	: agp_bridge_device(mconfig, I82875P_AGP, tag, owner, clock)
 {
+	set_ids_bridge(0x80862579, 0x02);
 }
 
 void i82875p_agp_device::device_start()
@@ -442,12 +439,13 @@ void i82875p_agp_device::device_reset()
 	agp_bridge_device::device_reset();
 }
 
-DEVICE_ADDRESS_MAP_START(overflow_map, 32, i82875p_overflow_device)
-	AM_RANGE(0x000, 0x007) AM_READWRITE8(dram_row_boundary_r,    dram_row_boundary_w,  0xffffffff)
-	AM_RANGE(0x010, 0x013) AM_READWRITE8(dram_row_attribute_r,   dram_row_attribute_w, 0xffffffff)
-	AM_RANGE(0x060, 0x064) AM_READWRITE (dram_timing_r,          dram_timing_w)
-	AM_RANGE(0x068, 0x06b) AM_READWRITE (dram_controller_mode_r, dram_controller_mode_w)
-ADDRESS_MAP_END
+void i82875p_overflow_device::overflow_map(address_map &map)
+{
+	map(0x000, 0x007).rw(FUNC(i82875p_overflow_device::dram_row_boundary_r), FUNC(i82875p_overflow_device::dram_row_boundary_w));
+	map(0x010, 0x013).rw(FUNC(i82875p_overflow_device::dram_row_attribute_r), FUNC(i82875p_overflow_device::dram_row_attribute_w));
+	map(0x060, 0x064).rw(FUNC(i82875p_overflow_device::dram_timing_r), FUNC(i82875p_overflow_device::dram_timing_w));
+	map(0x068, 0x06b).rw(FUNC(i82875p_overflow_device::dram_controller_mode_r), FUNC(i82875p_overflow_device::dram_controller_mode_w));
+}
 
 
 i82875p_overflow_device::i82875p_overflow_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
@@ -471,45 +469,45 @@ void i82875p_overflow_device::device_reset()
 	dram_controller_mode = 0x00010001;
 }
 
-READ8_MEMBER  (i82875p_overflow_device::dram_row_boundary_r)
+uint8_t i82875p_overflow_device::dram_row_boundary_r(offs_t offset)
 {
 	return dram_row_boundary[offset];
 }
 
-WRITE8_MEMBER (i82875p_overflow_device::dram_row_boundary_w)
+void i82875p_overflow_device::dram_row_boundary_w(offs_t offset, uint8_t data)
 {
 	dram_row_boundary[offset] = data;
 	logerror("%s: dram_row_boundary_w %d, %02x\n", tag(), offset, data);
 }
 
-READ8_MEMBER  (i82875p_overflow_device::dram_row_attribute_r)
+uint8_t i82875p_overflow_device::dram_row_attribute_r(offs_t offset)
 {
 	return dram_row_attribute[offset];
 }
 
-WRITE8_MEMBER (i82875p_overflow_device::dram_row_attribute_w)
+void i82875p_overflow_device::dram_row_attribute_w(offs_t offset, uint8_t data)
 {
 	dram_row_attribute[offset] = data;
 	logerror("%s: dram_row_attribute_w %d, %02x\n", tag(), offset, data);
 }
 
-READ32_MEMBER (i82875p_overflow_device::dram_timing_r)
+uint32_t i82875p_overflow_device::dram_timing_r()
 {
 	return dram_timing;
 }
 
-WRITE32_MEMBER(i82875p_overflow_device::dram_timing_w)
+void i82875p_overflow_device::dram_timing_w(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
 	COMBINE_DATA(&dram_timing);
 	logerror("%s: dram_timing_w %08x\n", tag(), dram_timing);
 }
 
-READ32_MEMBER (i82875p_overflow_device::dram_controller_mode_r)
+uint32_t i82875p_overflow_device::dram_controller_mode_r()
 {
 	return dram_controller_mode;
 }
 
-WRITE32_MEMBER(i82875p_overflow_device::dram_controller_mode_w)
+void i82875p_overflow_device::dram_controller_mode_w(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
 	COMBINE_DATA(&dram_controller_mode);
 	logerror("%s: dram_controller_mode_w %08x\n", tag(), dram_controller_mode);

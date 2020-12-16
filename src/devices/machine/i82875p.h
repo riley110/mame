@@ -9,93 +9,90 @@
 
 #include "pci.h"
 
-#define MCFG_I82875P_HOST_ADD(_tag, _subdevice_id, _cpu_tag, _ram_size)    \
-	MCFG_PCI_HOST_ADD(_tag, I82875P_HOST, 0x80862578, 0x02, _subdevice_id) \
-	downcast<i82875p_host_device *>(device)->set_cpu_tag(_cpu_tag);        \
-	downcast<i82875p_host_device *>(device)->set_ram_size(_ram_size);
-
-#define MCFG_I82875P_AGP_ADD(_tag) \
-	MCFG_AGP_BRIDGE_ADD(_tag, I82875P_AGP, 0x80862579, 0x02)
-
-#define MCFG_I82875P_OVERFLOW_ADD(_tag, _subdevice_id)    \
-	MCFG_PCI_DEVICE_ADD(_tag, I82875P_OVERFLOW, 0x8086257e, 0x02, 0x088000, _subdevice_id)
-
 class i82875p_host_device : public pci_host_device {
 public:
+	template <typename T>
+	i82875p_host_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock, uint32_t subdevice_id, T &&cpu_tag, int ram_size)
+		: i82875p_host_device(mconfig, tag, owner, clock)
+	{
+		set_ids_host(0x80862578, 0x02, subdevice_id);
+		set_cpu_tag(std::forward<T>(cpu_tag));
+		set_ram_size(ram_size);
+	}
+
 	i82875p_host_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	void set_cpu_tag(const char *tag);
+	template <typename T> void set_cpu_tag(T &&tag) { cpu.set_tag(std::forward<T>(tag)); }
 	void set_ram_size(int ram_size);
+
+	virtual uint8_t capptr_r() override;
+
+protected:
+	virtual void device_start() override;
+	virtual void device_reset() override;
 
 	virtual void reset_all_mappings() override;
 
 	virtual void map_extra(uint64_t memory_window_start, uint64_t memory_window_end, uint64_t memory_offset, address_space *memory_space,
 							uint64_t io_window_start, uint64_t io_window_end, uint64_t io_offset, address_space *io_space) override;
 
-	virtual DECLARE_ADDRESS_MAP(config_map, 32) override;
-
-	virtual DECLARE_READ8_MEMBER(capptr_r) override;
-
-	DECLARE_READ8_MEMBER(  agpm_r);
-	DECLARE_WRITE8_MEMBER( agpm_w);
-	DECLARE_READ8_MEMBER(  gc_r);
-	DECLARE_READ8_MEMBER(  csabcont_r);
-	DECLARE_READ32_MEMBER( eap_r);
-	DECLARE_READ8_MEMBER(  derrsyn_r);
-	DECLARE_READ8_MEMBER(  des_r);
-	DECLARE_READ8_MEMBER(  fpllcont_r);
-	DECLARE_WRITE8_MEMBER( fpllcont_w);
-	DECLARE_READ8_MEMBER(  pam_r);
-	DECLARE_WRITE8_MEMBER( pam_w);
-	DECLARE_READ8_MEMBER(  smram_r);
-	DECLARE_WRITE8_MEMBER( smram_w);
-	DECLARE_READ8_MEMBER(  esmramc_r);
-	DECLARE_WRITE8_MEMBER( esmramc_w);
-	DECLARE_READ32_MEMBER( acapid_r);
-	DECLARE_READ32_MEMBER( agpstat_r);
-	DECLARE_READ32_MEMBER( agpcmd_r);
-	DECLARE_READ32_MEMBER( agpctrl_r);
-	DECLARE_WRITE32_MEMBER(agpctrl_w);
-	DECLARE_READ8_MEMBER(  apsize_r);
-	DECLARE_WRITE8_MEMBER( apsize_w);
-	DECLARE_READ32_MEMBER( attbase_r);
-	DECLARE_WRITE32_MEMBER(attbase_w);
-	DECLARE_READ8_MEMBER(  amtt_r);
-	DECLARE_WRITE8_MEMBER( amtt_w);
-	DECLARE_READ8_MEMBER(  lptt_r);
-	DECLARE_WRITE8_MEMBER( lptt_w);
-	DECLARE_READ16_MEMBER( toud_r);
-	DECLARE_WRITE16_MEMBER(toud_w);
-	DECLARE_READ16_MEMBER( mchcfg_r);
-	DECLARE_WRITE16_MEMBER(mchcfg_w);
-	DECLARE_READ16_MEMBER( errsts_r);
-	DECLARE_READ16_MEMBER( errcmd_r);
-	DECLARE_WRITE16_MEMBER(errcmd_w);
-	DECLARE_READ16_MEMBER( smicmd_r);
-	DECLARE_WRITE16_MEMBER(smicmd_w);
-	DECLARE_READ16_MEMBER( scicmd_r);
-	DECLARE_WRITE16_MEMBER(scicmd_w);
-	DECLARE_READ16_MEMBER( skpd_r);
-	DECLARE_WRITE16_MEMBER(skpd_w);
-	DECLARE_READ32_MEMBER( capreg1_r);
-	DECLARE_READ8_MEMBER(  capreg2_r);
-
-protected:
-	virtual void device_start() override;
-	virtual void device_reset() override;
+	virtual void config_map(address_map &map) override;
 
 private:
-	DECLARE_ADDRESS_MAP(agp_translation_map, 32);
+	void agp_translation_map(address_map &map);
 
-	const char *cpu_tag;
 	int ram_size;
-	cpu_device *cpu;
+	required_device<device_memory_interface> cpu;
 	std::vector<uint32_t> ram;
 
 	uint8_t agpm, fpllcont, pam[8], smram, esmramc;
 	uint8_t apsize, amtt, lptt;
 	uint16_t toud, mchcfg, errcmd, smicmd, scicmd, skpd;
 	uint32_t agpctrl, attbase;
+
+	uint8_t agpm_r();
+	void agpm_w(uint8_t data);
+	uint8_t gc_r();
+	uint8_t csabcont_r();
+	uint32_t eap_r();
+	uint8_t derrsyn_r();
+	uint8_t des_r();
+	uint8_t fpllcont_r();
+	void fpllcont_w(uint8_t data);
+	uint8_t pam_r(offs_t offset);
+	void pam_w(offs_t offset, uint8_t data);
+	uint8_t smram_r();
+	void smram_w(uint8_t data);
+	uint8_t esmramc_r();
+	void esmramc_w(uint8_t data);
+	uint32_t acapid_r();
+	uint32_t agpstat_r();
+	uint32_t agpcmd_r();
+	uint32_t agpctrl_r();
+	void agpctrl_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint8_t apsize_r();
+	void apsize_w(uint8_t data);
+	uint32_t attbase_r();
+	void attbase_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint8_t amtt_r();
+	void amtt_w(uint8_t data);
+	uint8_t lptt_r();
+	void lptt_w(uint8_t data);
+	uint16_t toud_r();
+	void toud_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t mchcfg_r();
+	void mchcfg_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t errsts_r();
+	uint16_t errcmd_r();
+	void errcmd_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t smicmd_r();
+	void smicmd_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t scicmd_r();
+	void scicmd_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t skpd_r();
+	void skpd_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint32_t capreg1_r();
+	uint8_t capreg2_r();
 };
 
 class i82875p_agp_device : public agp_bridge_device {
@@ -109,24 +106,29 @@ protected:
 
 class i82875p_overflow_device : public pci_device {
 public:
+	i82875p_overflow_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock, uint32_t subdevice_id)
+		: i82875p_overflow_device(mconfig, tag, owner, clock)
+	{
+		set_ids(0x8086257e, 0x02, 0x088000, subdevice_id);
+	}
 	i82875p_overflow_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-
-	DECLARE_READ8_MEMBER  (dram_row_boundary_r);
-	DECLARE_WRITE8_MEMBER (dram_row_boundary_w);
-	DECLARE_READ8_MEMBER  (dram_row_attribute_r);
-	DECLARE_WRITE8_MEMBER (dram_row_attribute_w);
-	DECLARE_READ32_MEMBER (dram_timing_r);
-	DECLARE_WRITE32_MEMBER(dram_timing_w);
-	DECLARE_READ32_MEMBER (dram_controller_mode_r);
-	DECLARE_WRITE32_MEMBER(dram_controller_mode_w);
+private:
+	uint8_t dram_row_boundary_r(offs_t offset);
+	void dram_row_boundary_w(offs_t offset, uint8_t data);
+	uint8_t dram_row_attribute_r(offs_t offset);
+	void dram_row_attribute_w(offs_t offset, uint8_t data);
+	uint32_t dram_timing_r();
+	void dram_timing_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t dram_controller_mode_r();
+	void dram_controller_mode_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
 
 protected:
 	virtual void device_start() override;
 	virtual void device_reset() override;
 
 private:
-	DECLARE_ADDRESS_MAP(overflow_map, 32);
+	void overflow_map(address_map &map);
 
 	uint8_t dram_row_boundary[8], dram_row_attribute[4];
 	uint32_t dram_timing, dram_controller_mode;

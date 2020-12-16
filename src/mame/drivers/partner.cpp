@@ -2,9 +2,15 @@
 // copyright-holders:Miodrag Milanovic
 /***************************************************************************
 
-        Partner driver by Miodrag Milanovic
+Partner driver by Miodrag Milanovic
 
-        09/06/2008 Preliminary driver.
+2008-06-09 Preliminary driver.
+
+Works well with cassette. Need to find out how to access the built-in
+rom programs. Also need to find out how to access floppy disks, including
+those in the softlist.
+
+Cursor is one position too far to the right.
 
 ****************************************************************************/
 
@@ -13,11 +19,7 @@
 #include "includes/partner.h"
 
 #include "cpu/i8085/i8085.h"
-#include "imagedev/cassette.h"
-#include "sound/wave.h"
-
 #include "screen.h"
-#include "softlist.h"
 #include "speaker.h"
 
 #include "formats/rk_cas.h"
@@ -25,26 +27,27 @@
 
 
 /* Address maps */
-static ADDRESS_MAP_START(partner_mem, AS_PROGRAM, 8, partner_state )
-	AM_RANGE( 0x0000, 0x07ff ) AM_RAMBANK("bank1")
-	AM_RANGE( 0x0800, 0x3fff ) AM_RAMBANK("bank2")
-	AM_RANGE( 0x4000, 0x5fff ) AM_RAMBANK("bank3")
-	AM_RANGE( 0x6000, 0x7fff ) AM_RAMBANK("bank4")
-	AM_RANGE( 0x8000, 0x9fff ) AM_RAMBANK("bank5")
-	AM_RANGE( 0xa000, 0xb7ff ) AM_RAMBANK("bank6")
-	AM_RANGE( 0xb800, 0xbfff ) AM_RAMBANK("bank7")
-	AM_RANGE( 0xc000, 0xc7ff ) AM_RAMBANK("bank8")
-	AM_RANGE( 0xc800, 0xcfff ) AM_RAMBANK("bank9")
-	AM_RANGE( 0xd000, 0xd7ff ) AM_RAMBANK("bank10")
-	AM_RANGE( 0xd800, 0xd8ff ) AM_DEVREADWRITE("i8275", i8275_device, read, write)  // video
-	AM_RANGE( 0xd900, 0xd9ff ) AM_DEVREADWRITE("ppi8255_1", i8255_device, read, write)
-	AM_RANGE( 0xda00, 0xdaff ) AM_WRITE(partner_mem_page_w)
-	AM_RANGE( 0xdb00, 0xdbff ) AM_DEVWRITE("dma8257", i8257_device, write)    // DMA
-	AM_RANGE( 0xdc00, 0xddff ) AM_RAMBANK("bank11")
-	AM_RANGE( 0xde00, 0xdeff ) AM_WRITE(partner_win_memory_page_w)
-	AM_RANGE( 0xe000, 0xe7ff ) AM_RAMBANK("bank12")
-	AM_RANGE( 0xe800, 0xffff ) AM_RAMBANK("bank13")
-ADDRESS_MAP_END
+void partner_state::mem_map(address_map &map)
+{
+	map(0x0000, 0x07ff).bankrw("bank1");
+	map(0x0800, 0x3fff).bankrw("bank2");
+	map(0x4000, 0x5fff).bankrw("bank3");
+	map(0x6000, 0x7fff).bankrw("bank4");
+	map(0x8000, 0x9fff).bankrw("bank5");
+	map(0xa000, 0xb7ff).bankrw("bank6");
+	map(0xb800, 0xbfff).bankrw("bank7");
+	map(0xc000, 0xc7ff).bankrw("bank8");
+	map(0xc800, 0xcfff).bankrw("bank9");
+	map(0xd000, 0xd7ff).bankrw("bank10");
+	map(0xd800, 0xd8ff).rw("crtc", FUNC(i8275_device::read), FUNC(i8275_device::write));
+	map(0xd900, 0xd9ff).rw(m_ppi1, FUNC(i8255_device::read), FUNC(i8255_device::write));
+	map(0xda00, 0xdaff).w(FUNC(partner_state::mem_page_w));
+	map(0xdb00, 0xdbff).w(m_dma, FUNC(i8257_device::write));
+	map(0xdc00, 0xddff).bankrw("bank11");
+	map(0xde00, 0xdeff).w(FUNC(partner_state::win_memory_page_w));
+	map(0xe000, 0xe7ff).bankrw("bank12");
+	map(0xe800, 0xffff).bankrw("bank13");
+}
 
 /* Input ports */
 static INPUT_PORTS_START( partner )
@@ -144,12 +147,8 @@ FLOPPY_FORMATS_MEMBER( partner_state::floppy_formats )
 	FLOPPY_SMX_FORMAT
 FLOPPY_FORMATS_END
 
-static SLOT_INTERFACE_START( partner_floppies )
-	SLOT_INTERFACE( "525qd", FLOPPY_525_QD )
-SLOT_INTERFACE_END
-
 /* F4 Character Displayer */
-static const gfx_layout partner_charlayout =
+static const gfx_layout charlayout =
 {
 	8, 8,                   /* 8 x 8 characters */
 	512,                    /* 512 characters */
@@ -162,85 +161,83 @@ static const gfx_layout partner_charlayout =
 	8*8                 /* every char takes 8 bytes */
 };
 
-static GFXDECODE_START( partner )
-	GFXDECODE_ENTRY( "gfx1", 0x0000, partner_charlayout, 0, 1 )
+static GFXDECODE_START( gfx_partner )
+	GFXDECODE_ENTRY( "chargen", 0x0000, charlayout, 0, 1 )
 GFXDECODE_END
 
 
-static MACHINE_CONFIG_START( partner )
+void partner_state::partner(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", I8080, XTAL_16MHz / 9)
-	MCFG_CPU_PROGRAM_MAP(partner_mem)
+	I8080(config, m_maincpu, 16_MHz_XTAL / 9);
+	m_maincpu->set_addrmap(AS_PROGRAM, &partner_state::mem_map);
 
-	MCFG_MACHINE_RESET_OVERRIDE(partner_state, partner )
+	I8255(config, m_ppi1);
+	m_ppi1->out_pa_callback().set(FUNC(partner_state::radio86_8255_porta_w2));
+	m_ppi1->in_pb_callback().set(FUNC(partner_state::radio86_8255_portb_r2));
+	m_ppi1->in_pc_callback().set(FUNC(partner_state::radio86_8255_portc_r2));
+	m_ppi1->out_pc_callback().set(FUNC(partner_state::radio86_8255_portc_w2));
 
-	MCFG_DEVICE_ADD("ppi8255_1", I8255, 0)
-	MCFG_I8255_OUT_PORTA_CB(WRITE8(radio86_state, radio86_8255_porta_w2))
-	MCFG_I8255_IN_PORTB_CB(READ8(radio86_state, radio86_8255_portb_r2))
-	MCFG_I8255_IN_PORTC_CB(READ8(radio86_state, radio86_8255_portc_r2))
-	MCFG_I8255_OUT_PORTC_CB(WRITE8(radio86_state, radio86_8255_portc_w2))
-
-	MCFG_DEVICE_ADD("i8275", I8275, XTAL_16MHz / 12)
-	MCFG_I8275_CHARACTER_WIDTH(6)
-	MCFG_I8275_DRAW_CHARACTER_CALLBACK_OWNER(partner_state, display_pixels)
-	MCFG_I8275_DRQ_CALLBACK(DEVWRITELINE("dma8257",i8257_device, dreq2_w))
+	auto &i8275(I8275(config, "crtc", 16_MHz_XTAL / 12));
+	i8275.set_character_width(6);
+	i8275.set_display_callback(FUNC(partner_state::display_pixels));
+	i8275.drq_wr_callback().set(m_dma, FUNC(i8257_device::dreq2_w));
 
 	/* video hardware */
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_UPDATE_DEVICE("i8275", i8275_device, screen_update)
-	MCFG_SCREEN_REFRESH_RATE(50)
-	MCFG_SCREEN_SIZE(78*6, 30*10)
-	MCFG_SCREEN_VISIBLE_AREA(0, 78*6-1, 0, 30*10-1)
+	auto &screen(SCREEN(config, "screen", SCREEN_TYPE_RASTER));
+	screen.set_screen_update("crtc", FUNC(i8275_device::screen_update));
+	screen.set_refresh_hz(50);
+	screen.set_size(78*6, 30*10);
+	screen.set_visarea(0, 78*6-1, 0, 30*10-1);
 
-	MCFG_GFXDECODE_ADD("gfxdecode", "palette", partner)
-	MCFG_PALETTE_ADD("palette", 3)
-	MCFG_PALETTE_INIT_OWNER(partner_state,radio86)
+	GFXDECODE(config, "gfxdecode", m_palette, gfx_partner);
+	PALETTE(config, m_palette, FUNC(partner_state::radio86_palette), 3);
 
-	MCFG_SPEAKER_STANDARD_MONO("mono")
-	MCFG_SOUND_WAVE_ADD(WAVE_TAG, "cassette")
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.25)
+	SPEAKER(config, "mono").front_center();
 
-	MCFG_DEVICE_ADD("dma8257", I8257, XTAL_16MHz / 9)
-	MCFG_I8257_OUT_HRQ_CB(WRITELINE(partner_state, hrq_w))
-	MCFG_I8257_IN_MEMR_CB(READ8(radio86_state, memory_read_byte))
-	MCFG_I8257_OUT_MEMW_CB(WRITE8(radio86_state, memory_write_byte))
-	MCFG_I8257_IN_IOR_0_CB(DEVREAD8("wd1793", fd1793_device, data_r))
-	MCFG_I8257_OUT_IOW_0_CB(DEVWRITE8("wd1793", fd1793_device, data_w))
-	MCFG_I8257_OUT_IOW_2_CB(DEVWRITE8("i8275", i8275_device, dack_w))
-	MCFG_I8257_REVERSE_RW_MODE(1)
+	I8257(config, m_dma, 16_MHz_XTAL / 9);
+	m_dma->out_hrq_cb().set(FUNC(partner_state::hrq_w));
+	m_dma->in_memr_cb().set(FUNC(partner_state::memory_read_byte));
+	m_dma->out_memw_cb().set(FUNC(partner_state::memory_write_byte));
+	m_dma->in_ior_cb<0>().set("fdc", FUNC(fd1793_device::data_r));
+	m_dma->out_iow_cb<0>().set("fdc", FUNC(fd1793_device::data_w));
+	m_dma->out_iow_cb<2>().set("crtc", FUNC(i8275_device::dack_w));
+	m_dma->set_reverse_rw_mode(true);
 
-	MCFG_CASSETTE_ADD( "cassette" )
-	MCFG_CASSETTE_FORMATS(rkp_cassette_formats)
-	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_STOPPED | CASSETTE_SPEAKER_ENABLED | CASSETTE_MOTOR_ENABLED)
-	MCFG_CASSETTE_INTERFACE("partner_cass")
+	auto &cassette(CASSETTE(config, "cassette"));
+	cassette.set_formats(rkp_cassette_formats);
+	cassette.set_default_state(CASSETTE_STOPPED | CASSETTE_SPEAKER_ENABLED | CASSETTE_MOTOR_ENABLED);
+	cassette.add_route(ALL_OUTPUTS, "mono", 0.05);
+	cassette.set_interface("partner_cass");
 
-	MCFG_SOFTWARE_LIST_ADD("cass_list","partner_cass")
+	SOFTWARE_LIST(config, "cass_list").set_original("partner_cass");
 
-	MCFG_FD1793_ADD("wd1793", XTAL_16MHz / 16)
-	MCFG_WD_FDC_DRQ_CALLBACK(DEVWRITELINE("dma8257", i8257_device, dreq0_w))
-	MCFG_FLOPPY_DRIVE_ADD("wd1793:0", partner_floppies, "525qd", partner_state::floppy_formats)
-	MCFG_FLOPPY_DRIVE_ADD("wd1793:1", partner_floppies, "525qd", partner_state::floppy_formats)
+	FD1793(config, "fdc", 16_MHz_XTAL / 16);
 
-	MCFG_SOFTWARE_LIST_ADD("flop_list","partner_flop")
+	FLOPPY_CONNECTOR(config, "fd0", "525qd", FLOPPY_525_QD, true, floppy_formats).enable_sound(true);
+	FLOPPY_CONNECTOR(config, "fd1", "525qd", FLOPPY_525_QD, true, floppy_formats).enable_sound(true);
+
+	SOFTWARE_LIST(config, "flop_list").set_original("partner_flop");
 
 	/* internal ram */
-	MCFG_RAM_ADD(RAM_TAG)
-	MCFG_RAM_DEFAULT_SIZE("64K")
-	MCFG_RAM_DEFAULT_VALUE(0x00)
-MACHINE_CONFIG_END
+	RAM(config, m_ram);
+	m_ram->set_default_size("64K");
+	m_ram->set_default_value(0x00);
+}
 
 /* ROM definition */
 ROM_START( partner )
-	ROM_REGION( 0x1A000, "maincpu", ROMREGION_ERASEFF )
-	ROM_LOAD( "partner.rom", 0x10000, 0x2000, CRC(be1eaa10) SHA1(f9658d8055bf434240ec020d7892ea98cb5cbb76))
-	ROM_LOAD( "basic.rom",   0x12000, 0x2000, CRC(1e9be0ec) SHA1(2c431f487cffddaac8413efddfc0527ad595f03b))
-	ROM_LOAD( "mcpg.rom",    0x14000, 0x0800, CRC(3401225c) SHA1(6c252393ee73ed1a53d3e583547d86ab6718a533))
-	ROM_LOAD( "fdd.rom",     0x16000, 0x0800, CRC(8ca350b5) SHA1(76fc92298726fb2840f4c19d7edc860d1ed86356))
-	ROM_LOAD( "font.rom",    0x18000, 0x2000, CRC(dc4f1723) SHA1(6b8d5efb403cf0aeb3fd3197a0529d23c8e2f93c))
-	ROM_REGION(0x2000, "gfx1",0)
-	ROM_LOAD ("partner.fnt", 0x0000, 0x2000, CRC(2705f726) SHA1(3d7b33901ef098a405d7ddad924ba9677f6a9b15))
+	ROM_REGION( 0xA000, "maincpu", ROMREGION_ERASEFF )
+	ROM_LOAD( "partner.rom", 0x0000, 0x2000, CRC(be1eaa10) SHA1(f9658d8055bf434240ec020d7892ea98cb5cbb76))
+	ROM_LOAD( "basic.rom",   0x2000, 0x2000, CRC(1e9be0ec) SHA1(2c431f487cffddaac8413efddfc0527ad595f03b))
+	ROM_LOAD( "mcpg.rom",    0x4000, 0x0800, CRC(3401225c) SHA1(6c252393ee73ed1a53d3e583547d86ab6718a533))
+	ROM_LOAD( "fdd.rom",     0x6000, 0x0800, CRC(8ca350b5) SHA1(76fc92298726fb2840f4c19d7edc860d1ed86356))
+	ROM_LOAD( "font.rom",    0x8000, 0x2000, CRC(dc4f1723) SHA1(6b8d5efb403cf0aeb3fd3197a0529d23c8e2f93c))
+
+	ROM_REGION(0x2000, "chargen",0)
+	ROM_LOAD ("partner.d25", 0x0000, 0x2000, CRC(2705f726) SHA1(3d7b33901ef098a405d7ddad924ba9677f6a9b15))
 ROM_END
 
 /* Driver */
-//    YEAR  NAME     PARENT   COMPAT  MACHINE  INPUT    STATE          INIT     COMPANY       FULLNAME         FLAGS
-COMP( 1987, partner, radio86, 0,      partner, partner, partner_state, partner, "SAM SKB VM", "Partner-01.01", MACHINE_NOT_WORKING )
+//    YEAR  NAME     PARENT   COMPAT  MACHINE  INPUT    CLASS          INIT          COMPANY       FULLNAME         FLAGS
+COMP( 1987, partner, radio86, 0,      partner, partner, partner_state, init_partner, "SAM SKB VM", "Partner-01.01", MACHINE_NOT_WORKING | MACHINE_SUPPORTS_SAVE )

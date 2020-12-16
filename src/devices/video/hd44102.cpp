@@ -79,19 +79,6 @@ hd44102_device::hd44102_device(const machine_config &mconfig, const char *tag, d
 
 
 //-------------------------------------------------
-//  static_set_offsets - configuration helper
-//-------------------------------------------------
-
-void hd44102_device::static_set_offsets(device_t &device, int sx, int sy)
-{
-	hd44102_device &hd44102 = downcast<hd44102_device &>(device);
-
-	hd44102.m_sx = sx;
-	hd44102.m_sy = sy;
-}
-
-
-//-------------------------------------------------
 //  device_start - device-specific startup
 //-------------------------------------------------
 
@@ -125,13 +112,13 @@ void hd44102_device::device_reset()
 //  read - register read
 //-------------------------------------------------
 
-READ8_MEMBER( hd44102_device::read )
+uint8_t hd44102_device::read(offs_t offset)
 {
 	uint8_t data = 0;
 
 	if (m_cs2)
 	{
-		data = (offset & 0x01) ? data_r(space, offset) : status_r(space, offset);
+		data = (offset & 0x01) ? data_r() : status_r();
 	}
 
 	return data;
@@ -142,11 +129,11 @@ READ8_MEMBER( hd44102_device::read )
 //  write - register write
 //-------------------------------------------------
 
-WRITE8_MEMBER( hd44102_device::write )
+void hd44102_device::write(offs_t offset, uint8_t data)
 {
 	if (m_cs2)
 	{
-		(offset & 0x01) ? data_w(space, offset, data) : control_w(space, offset, data);
+		(offset & 0x01) ? data_w(data) : control_w(data);
 	}
 }
 
@@ -155,7 +142,7 @@ WRITE8_MEMBER( hd44102_device::write )
 //  status_r - status read
 //-------------------------------------------------
 
-READ8_MEMBER( hd44102_device::status_r )
+uint8_t hd44102_device::status_r()
 {
 	return m_status;
 }
@@ -165,7 +152,7 @@ READ8_MEMBER( hd44102_device::status_r )
 //  control_w - control write
 //-------------------------------------------------
 
-WRITE8_MEMBER( hd44102_device::control_w )
+void hd44102_device::control_w(uint8_t data)
 {
 	if (m_status & STATUS_BUSY) return;
 
@@ -226,7 +213,7 @@ WRITE8_MEMBER( hd44102_device::control_w )
 //  data_r - data read
 //-------------------------------------------------
 
-READ8_MEMBER( hd44102_device::data_r )
+uint8_t hd44102_device::data_r()
 {
 	uint8_t data = m_output;
 
@@ -242,7 +229,7 @@ READ8_MEMBER( hd44102_device::data_r )
 //  data_w - data write
 //-------------------------------------------------
 
-WRITE8_MEMBER( hd44102_device::data_w )
+void hd44102_device::data_w(uint8_t data)
 {
 	m_ram[m_x][m_y] = data;
 
@@ -254,7 +241,7 @@ WRITE8_MEMBER( hd44102_device::data_w )
 //  cs2_w - chip select 2 write
 //-------------------------------------------------
 
-WRITE_LINE_MEMBER( hd44102_device::cs2_w )
+void hd44102_device::cs2_w(int state)
 {
 	m_cs2 = state;
 }

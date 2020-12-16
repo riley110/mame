@@ -18,7 +18,7 @@ TILE_GET_INFO_MEMBER(cabal_state::get_back_tile_info)
 
 	tile &= 0xfff;
 
-	SET_TILE_INFO_MEMBER(1,
+	tileinfo.set(1,
 			tile,
 			color,
 			0);
@@ -31,7 +31,7 @@ TILE_GET_INFO_MEMBER(cabal_state::get_text_tile_info)
 
 	tile &= 0x3ff;
 
-	SET_TILE_INFO_MEMBER(0,
+	tileinfo.set(0,
 			tile,
 			color,
 			0);
@@ -40,8 +40,8 @@ TILE_GET_INFO_MEMBER(cabal_state::get_text_tile_info)
 
 void cabal_state::video_start()
 {
-	m_background_layer = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(cabal_state::get_back_tile_info),this),TILEMAP_SCAN_ROWS,16,16,16,16);
-	m_text_layer       = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(cabal_state::get_text_tile_info),this),TILEMAP_SCAN_ROWS,  8,8,32,32);
+	m_background_layer = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(cabal_state::get_back_tile_info)), TILEMAP_SCAN_ROWS, 16, 16, 16, 16);
+	m_text_layer       = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(cabal_state::get_text_tile_info)), TILEMAP_SCAN_ROWS,   8, 8, 32, 32);
 
 	m_text_layer->set_transparent_pen(3);
 	m_background_layer->set_transparent_pen(15);
@@ -50,7 +50,7 @@ void cabal_state::video_start()
 
 /**************************************************************************/
 
-WRITE16_MEMBER(cabal_state::flipscreen_w)
+void cabal_state::flipscreen_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	if (ACCESSING_BITS_0_7)
 	{
@@ -62,13 +62,13 @@ WRITE16_MEMBER(cabal_state::flipscreen_w)
 	}
 }
 
-WRITE16_MEMBER(cabal_state::background_videoram_w)
+void cabal_state::background_videoram_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	COMBINE_DATA(&m_videoram[offset]);
 	m_background_layer->mark_tile_dirty(offset);
 }
 
-WRITE16_MEMBER(cabal_state::text_videoram_w)
+void cabal_state::text_videoram_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	COMBINE_DATA(&m_colorram[offset]);
 	m_text_layer->mark_tile_dirty(offset);

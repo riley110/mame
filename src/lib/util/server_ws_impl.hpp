@@ -3,10 +3,11 @@
 #ifndef MAME_LIB_UTIL_SERVER_WS_IMPL_HPP
 #define MAME_LIB_UTIL_SERVER_WS_IMPL_HPP
 #include "path_to_regex.hpp"
+#include "base64.hpp"
 #include "crypto.hpp"
 
 #include "asio.h"
-#include "asio/system_timer.hpp"
+#include <asio/system_timer.hpp>
 
 #include "server_ws.hpp"
 #include <unordered_map>

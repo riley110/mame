@@ -1,12 +1,13 @@
 // license:BSD-3-Clause
 // copyright-holders:Sandro Ronco
+// thanks-to:rfka01
 #ifndef MAME_BUS_DMV_K801_H
 #define MAME_BUS_DMV_K801_H
 
 #pragma once
 
 #include "dmvbus.h"
-#include "machine/mc2661.h"
+#include "machine/scn_pci.h"
 #include "bus/rs232/rs232.h"
 
 
@@ -36,16 +37,17 @@ protected:
 	virtual void device_add_mconfig(machine_config &config) override;
 
 	// dmvcart_interface overrides
-	virtual void io_read(address_space &space, int ifsel, offs_t offset, uint8_t &data) override;
-	virtual void io_write(address_space &space, int ifsel, offs_t offset, uint8_t data) override;
+	virtual void io_read(int ifsel, offs_t offset, uint8_t &data) override;
+	virtual void io_write(int ifsel, offs_t offset, uint8_t data) override;
 
-	required_device<mc2661_device> m_epci;
+	void pci_mconfig(machine_config &config, bool epci, const char *default_option);
+
+	required_device<scn_pci_device> m_pci;
+	required_device<rs232_port_device> m_rs232;
 	required_ioport m_dsw;
 
 private:
-	DECLARE_WRITE_LINE_MEMBER(epci_irq_w);
-
-	dmvcart_slot_device * m_bus;
+	DECLARE_WRITE_LINE_MEMBER(pci_irq_w);
 };
 
 
@@ -66,8 +68,8 @@ protected:
 	virtual void device_add_mconfig(machine_config &config) override;
 
 	// dmvcart_interface overrides
-	virtual void io_read(address_space &space, int ifsel, offs_t offset, uint8_t &data) override;
-	virtual void io_write(address_space &space, int ifsel, offs_t offset, uint8_t data) override;
+	virtual void io_read(int ifsel, offs_t offset, uint8_t &data) override;
+	virtual void io_write(int ifsel, offs_t offset, uint8_t data) override;
 };
 
 // ======================> dmv_k212_device

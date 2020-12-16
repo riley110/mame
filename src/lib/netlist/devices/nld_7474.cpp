@@ -1,168 +1,122 @@
+
 // license:GPL-2.0+
 // copyright-holders:Couriersud
 /*
- * nld_7474.c
+ * nld_7474.cpp
  *
+ *  DM7474: Dual Positive-Edge-Triggered D Flip-Flops
+ *          with Preset, Clear and Complementary Outputs
+ *
+ *          +--------------+
+ *     CLR1 |1     ++    14| VCC
+ *       D1 |2           13| CLR2
+ *     CLK1 |3           12| D2
+ *      PR1 |4    7474   11| CLK2
+ *       Q1 |5           10| PR2
+ *      Q1Q |6            9| Q2
+ *      GND |7            8| Q2Q
+ *          +--------------+
+ *
+ *          +-----+-----+-----+---++---+-----+
+ *          | PR  | CLR | CLK | D || Q | QQ  |
+ *          +=====+=====+=====+===++===+=====+
+ *          |  0  |  1  |  X  | X || 1 |  0  |
+ *          |  1  |  0  |  X  | X || 0 |  1  |
+ *          |  0  |  0  |  X  | X || 1 |  1  | (*)
+ *          |  1  |  1  |  R  | 1 || 1 |  0  |
+ *          |  1  |  1  |  R  | 0 || 0 |  1  |
+ *          |  1  |  1  |  0  | X || Q0| Q0Q |
+ *          +-----+-----+-----+---++---+-----+
+ *
+ *  (*) This configuration is not stable, i.e. it will not persist
+ *  when either the preset and or clear inputs return to their inactive (high) level
+ *
+ *  Q0 The output logic level of Q before the indicated input conditions were established
+ *
+ *  R:  0 -. 1
+ *
+ *  Naming conventions follow National Semiconductor datasheet
+ *
+ *  FIXME: Check that (*) is emulated properly
  */
 
 #include "nld_7474.h"
-#include "../nl_base.h"
+#include "netlist/nl_base.h"
+
+#include <array>
 
 namespace netlist
 {
 	namespace devices
 	{
-	NETLIB_OBJECT(7474sub)
-	{
-		NETLIB_CONSTRUCTOR(7474sub)
-		, m_CLK(*this, "CLK")
-		, m_Q(*this, "Q")
-		, m_QQ(*this, "QQ")
-		, m_nextD(*this, "m_nextD", 0)
-		{
-		}
-
-		NETLIB_RESETI();
-		NETLIB_UPDATEI();
-
-	public:
-		logic_input_t m_CLK;
-		logic_output_t m_Q;
-		logic_output_t m_QQ;
-		state_var<unsigned> m_nextD;
-
-		inline void newstate(const netlist_sig_t stateQ, const netlist_sig_t stateQQ);
-
-	private:
-
-	};
 
 	NETLIB_OBJECT(7474)
 	{
 		NETLIB_CONSTRUCTOR(7474)
-		, sub(*this, "sub")
-		, m_D(*this, "D")
-		, m_CLRQ(*this, "CLRQ")
-		, m_PREQ(*this, "PREQ")
+		, m_D(*this, "D", NETLIB_DELEGATE(inputs))
+		, m_CLRQ(*this, "CLRQ", NETLIB_DELEGATE(inputs))
+		, m_PREQ(*this, "PREQ", NETLIB_DELEGATE(inputs))
+		, m_CLK(*this, "CLK", NETLIB_DELEGATE(clk))
+		, m_Q(*this, "Q")
+		, m_QQ(*this, "QQ")
+		, m_nextD(*this, "m_nextD", 0)
+		, m_power_pins(*this)
 		{
-			register_subalias("CLK",    sub.m_CLK);
-
-			register_subalias("Q",      sub.m_Q);
-			register_subalias("QQ",     sub.m_QQ);
 		}
-
-		NETLIB_RESETI();
-		NETLIB_UPDATEI();
-
-	public:
-		NETLIB_SUB(7474sub) sub;
-
-		logic_input_t m_D;
-		logic_input_t m_CLRQ;
-		logic_input_t m_PREQ;
-	};
-
-	NETLIB_OBJECT(7474_dip)
-	{
-		NETLIB_CONSTRUCTOR(7474_dip)
-		, m_1(*this, "1")
-		, m_2(*this, "2")
-		{
-			register_subalias("1", m_1.m_CLRQ);
-			register_subalias("2", m_1.m_D);
-			register_subalias("3", m_1.sub.m_CLK);
-			register_subalias("4", m_1.m_PREQ);
-			register_subalias("5", m_1.sub.m_Q);
-			register_subalias("6", m_1.sub.m_QQ);
-			// register_subalias("7", ); ==> GND
-
-			register_subalias("8", m_2.sub.m_QQ);
-			register_subalias("9", m_2.sub.m_Q);
-			register_subalias("10", m_2.m_PREQ);
-			register_subalias("11", m_2.sub.m_CLK);
-			register_subalias("12", m_2.m_D);
-			register_subalias("13", m_2.m_CLRQ);
-			// register_subalias("14", ); ==> VCC
-		}
-		NETLIB_UPDATEI();
-		NETLIB_RESETI();
 
 	private:
-		NETLIB_SUB(7474) m_1;
-		NETLIB_SUB(7474) m_2;
-	};
+		NETLIB_RESETI()
+		{
+			m_CLK.set_state(logic_t::STATE_INP_LH);
+			m_D.set_state(logic_t::STATE_INP_ACTIVE);
+			m_nextD = 0;
+		}
 
-	inline void NETLIB_NAME(7474sub)::newstate(const netlist_sig_t stateQ, const netlist_sig_t stateQQ)
-	{
-		// 0: High-to-low 40 ns, 1: Low-to-high 25 ns
-		const netlist_time delay[2] = { NLTIME_FROM_NS(40), NLTIME_FROM_NS(25) };
-		m_Q.push(stateQ, delay[stateQ]);
-		m_QQ.push(stateQQ, delay[stateQQ]);
-	}
-
-	NETLIB_UPDATE(7474sub)
-	{
-		//if (INP_LH(m_CLK))
+		NETLIB_HANDLERI(clk)
 		{
 			newstate(m_nextD, !m_nextD);
 			m_CLK.inactivate();
 		}
-	}
 
-	NETLIB_UPDATE(7474)
-	{
-		if (m_PREQ() && m_CLRQ())
+		NETLIB_HANDLERI(inputs)
 		{
-			m_D.activate();
-			sub.m_nextD = m_D();
-			sub.m_CLK.activate_lh();
+			const auto preq(m_PREQ());
+			const auto clrq(m_CLRQ());
+			if (preq & clrq)
+			{
+				m_D.activate();
+				m_nextD = m_D();
+				m_CLK.activate_lh();
+			}
+			else
+			{
+				newstate(preq ^ 1, clrq ^ 1);
+				m_CLK.inactivate();
+				m_D.inactivate();
+			}
 		}
-		else if (!m_PREQ())
+
+		logic_input_t m_D;
+		logic_input_t m_CLRQ;
+		logic_input_t m_PREQ;
+		logic_input_t m_CLK;
+		logic_output_t m_Q;
+		logic_output_t m_QQ;
+
+		state_var<netlist_sig_t> m_nextD;
+
+		nld_power_pins m_power_pins;
+
+		void newstate(const netlist_sig_t stateQ, const netlist_sig_t stateQQ)
 		{
-			sub.newstate(1, 0);
-			sub.m_CLK.inactivate();
-			m_D.inactivate();
+			// 0: High-to-low 40 ns, 1: Low-to-high 25 ns
+			static constexpr const std::array<netlist_time, 2> delay = { NLTIME_FROM_NS(40), NLTIME_FROM_NS(25) };
+			m_Q.push(stateQ, delay[stateQ]);
+			m_QQ.push(stateQQ, delay[stateQQ]);
 		}
-		else if (!m_CLRQ())
-		{
-			sub.newstate(0, 1);
-			sub.m_CLK.inactivate();
-			m_D.inactivate();
-		}
-		else
-		{
-			sub.newstate(1, 1);
-			sub.m_CLK.inactivate();
-			m_D.inactivate();
-		}
-	}
+	};
 
-	NETLIB_RESET(7474)
-	{
-		sub.do_reset();
-	}
-
-	NETLIB_RESET(7474sub)
-	{
-		m_CLK.set_state(logic_t::STATE_INP_LH);
-
-		m_nextD = 0;
-	}
-
-	NETLIB_RESET(7474_dip)
-	{
-	//  m_1.do_reset();
-		//m_2.do_reset();
-	}
-
-	NETLIB_UPDATE(7474_dip)
-	{
-		//m_1.update_dev();
-		//m_2.update_dev();
-	}
-
-	NETLIB_DEVICE_IMPL(7474)
-	NETLIB_DEVICE_IMPL(7474_dip)
+	NETLIB_DEVICE_IMPL(7474, "TTL_7474", "+CLK,+D,+CLRQ,+PREQ,@VCC,@GND")
 
 	} //namespace devices
 } // namespace netlist

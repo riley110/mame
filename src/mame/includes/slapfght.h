@@ -5,17 +5,23 @@
   Toaplan Slap Fight hardware
 
 ***************************************************************************/
+#ifndef MAME_INCLUDES_SLAPFGHT_H
+#define MAME_INCLUDES_SLAPFGHT_H
+
+#pragma once
 
 #include "cpu/z80/z80.h"
 #include "video/bufsprite.h"
 #include "machine/taito68705interface.h"
+#include "emupal.h"
 #include "screen.h"
+#include "tilemap.h"
 
 class slapfght_state : public driver_device
 {
 public:
-	slapfght_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
+	slapfght_state(const machine_config &mconfig, device_type type, const char *tag) :
+		driver_device(mconfig, type, tag),
 		m_maincpu(*this, "maincpu"),
 		m_audiocpu(*this, "audiocpu"),
 		m_bmcu(*this, "bmcu"),
@@ -29,6 +35,23 @@ public:
 		m_fixcolorram(*this, "fixcolorram")
 	{ }
 
+	void tigerh(machine_config &config);
+	void tigerhb1(machine_config &config);
+	void tigerhb2(machine_config &config);
+	void tigerhb4(machine_config &config);
+	void getstarb2(machine_config &config);
+	void slapfighb2(machine_config &config);
+	void getstarb1(machine_config &config);
+	void perfrman(machine_config &config);
+	void slapfigh(machine_config &config);
+	void slapfighb1(machine_config &config);
+
+	void init_banks();
+	void init_getstarb1();
+	void init_slapfigh();
+	void init_getstarb2();
+
+private:
 	// devices, memory pointers
 	required_device<cpu_device> m_maincpu;
 	required_device<cpu_device> m_audiocpu;
@@ -71,37 +94,32 @@ public:
 	uint8_t m_gs_e;
 	uint8_t m_tigerhb_cmd;
 
-	DECLARE_READ8_MEMBER(tigerh_mcu_status_r);
+	uint8_t tigerh_mcu_status_r();
 	DECLARE_WRITE_LINE_MEMBER(sound_reset_w);
 	DECLARE_WRITE_LINE_MEMBER(irq_enable_w);
-	DECLARE_READ8_MEMBER(vblank_r);
-	DECLARE_WRITE8_MEMBER(sound_nmi_enable_w);
-	DECLARE_WRITE8_MEMBER(videoram_w);
-	DECLARE_WRITE8_MEMBER(colorram_w);
-	DECLARE_WRITE8_MEMBER(fixram_w);
-	DECLARE_WRITE8_MEMBER(fixcol_w);
-	DECLARE_WRITE8_MEMBER(scrollx_lo_w);
-	DECLARE_WRITE8_MEMBER(scrollx_hi_w);
-	DECLARE_WRITE8_MEMBER(scrolly_w);
+	uint8_t vblank_r();
+	void sound_nmi_enable_w(offs_t offset, uint8_t data);
+	void videoram_w(offs_t offset, uint8_t data);
+	void colorram_w(offs_t offset, uint8_t data);
+	void fixram_w(offs_t offset, uint8_t data);
+	void fixcol_w(offs_t offset, uint8_t data);
+	void scrollx_lo_w(uint8_t data);
+	void scrollx_hi_w(uint8_t data);
+	void scrolly_w(uint8_t data);
 	DECLARE_WRITE_LINE_MEMBER(flipscreen_w);
 	DECLARE_WRITE_LINE_MEMBER(palette_bank_w);
 
-	DECLARE_WRITE8_MEMBER(scroll_from_mcu_w);
+	void scroll_from_mcu_w(offs_t offset, uint8_t data);
 
-	DECLARE_READ8_MEMBER(getstar_mcusim_r);
-	DECLARE_WRITE8_MEMBER(getstar_mcusim_w);
-	DECLARE_READ8_MEMBER(getstar_mcusim_status_r);
-	DECLARE_READ8_MEMBER(getstarb1_prot_r);
-	DECLARE_READ8_MEMBER(tigerhb1_prot_r);
-	DECLARE_WRITE8_MEMBER(tigerhb1_prot_w);
+	uint8_t getstar_mcusim_r();
+	void getstar_mcusim_w(uint8_t data);
+	uint8_t getstar_mcusim_status_r();
+	uint8_t getstarb1_prot_r();
+	uint8_t tigerhb1_prot_r();
+	void tigerhb1_prot_w(uint8_t data);
 
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
-
-	void init_banks();
-	DECLARE_DRIVER_INIT(getstarb1);
-	DECLARE_DRIVER_INIT(slapfigh);
-	DECLARE_DRIVER_INIT(getstarb2);
 
 	TILE_GET_INFO_MEMBER(get_pf_tile_info);
 	TILE_GET_INFO_MEMBER(get_pf1_tile_info);
@@ -114,6 +132,25 @@ public:
 	uint32_t screen_update_perfrman(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 	uint32_t screen_update_slapfight(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 
-	INTERRUPT_GEN_MEMBER(vblank_irq);
+	DECLARE_WRITE_LINE_MEMBER(vblank_irq);
 	INTERRUPT_GEN_MEMBER(sound_nmi);
+
+	void getstar_map(address_map &map);
+	void getstarb1_io_map(address_map &map);
+	void getstarb2_io_map(address_map &map);
+	void io_map_mcu(address_map &map);
+	void io_map_nomcu(address_map &map);
+	void perfrman_map(address_map &map);
+	void perfrman_sound_map(address_map &map);
+	void slapfigh_map(address_map &map);
+	void slapfigh_map_mcu(address_map &map);
+	void slapfighb1_map(address_map &map);
+	void slapfighb2_map(address_map &map);
+	void tigerh_map(address_map &map);
+	void tigerh_map_mcu(address_map &map);
+	void tigerh_sound_map(address_map &map);
+	void tigerhb1_map(address_map &map);
+	void tigerhb2_map(address_map &map);
 };
+
+#endif // MAME_INCLUDES_SLAPFGHT_H

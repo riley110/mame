@@ -29,7 +29,7 @@ void segag80r_state::device_timer(emu_timer &timer, device_timer_id id, int para
 		m_vblank_latch = 0;
 		break;
 	default:
-		assert_always(false, "Unknown id in segag80r_state::device_timer");
+		throw emu_fatalerror("Unknown id in segag80r_state::device_timer");
 	}
 }
 
@@ -95,18 +95,18 @@ void segag80r_state::g80_set_palette_entry(int entry, uint8_t data)
 	bit0 = (r >> 0) & 0x01;
 	bit1 = (r >> 1) & 0x01;
 	bit2 = (r >> 2) & 0x01;
-	r = combine_3_weights(m_rweights, bit0, bit1, bit2);
+	r = combine_weights(m_rweights, bit0, bit1, bit2);
 
 	/* green component */
 	bit0 = (g >> 0) & 0x01;
 	bit1 = (g >> 1) & 0x01;
 	bit2 = (g >> 2) & 0x01;
-	g = combine_3_weights(m_gweights, bit0, bit1, bit2);
+	g = combine_weights(m_gweights, bit0, bit1, bit2);
 
 	/* blue component */
 	bit0 = (b >> 0) & 0x01;
 	bit1 = (b >> 1) & 0x01;
-	b = combine_2_weights(m_bweights, bit0, bit1);
+	b = combine_weights(m_bweights, bit0, bit1);
 
 	m_palette->set_pen_color(entry, rgb_t(r, g, b));
 }
@@ -138,17 +138,17 @@ void segag80r_state::spaceod_bg_init_palette()
 		/* red component */
 		bit0 = (r >> 0) & 0x01;
 		bit1 = (r >> 1) & 0x01;
-		r = combine_2_weights(trweights, bit0, bit1);
+		r = combine_weights(trweights, bit0, bit1);
 
 		/* green component */
 		bit0 = (g >> 0) & 0x01;
 		bit1 = (g >> 1) & 0x01;
-		g = combine_2_weights(tgweights, bit0, bit1);
+		g = combine_weights(tgweights, bit0, bit1);
 
 		/* blue component */
 		bit0 = (b >> 0) & 0x01;
 		bit1 = (b >> 1) & 0x01;
-		b = combine_2_weights(tbweights, bit0, bit1);
+		b = combine_weights(tbweights, bit0, bit1);
 
 		m_palette->set_pen_color(64 + i, rgb_t(r, g, b));
 	}
@@ -165,7 +165,7 @@ void segag80r_state::spaceod_bg_init_palette()
 TILE_GET_INFO_MEMBER(segag80r_state::spaceod_get_tile_info)
 {
 	int code = memregion("gfx2")->base()[tile_index + 0x1000 * (m_spaceod_bg_control >> 6)];
-	SET_TILE_INFO_MEMBER(1, code + 0x100 * ((m_spaceod_bg_control >> 2) & 1), 0, 0);
+	tileinfo.set(1, code + 0x100 * ((m_spaceod_bg_control >> 2) & 1), 0, 0);
 }
 
 
@@ -180,7 +180,7 @@ TILEMAP_MAPPER_MEMBER(segag80r_state::spaceod_scan_rows)
 TILE_GET_INFO_MEMBER(segag80r_state::bg_get_tile_info)
 {
 	int code = memregion("gfx2")->base()[tile_index];
-	SET_TILE_INFO_MEMBER(1, code + 0x100 * m_bg_char_bank, code >> 4, 0);
+	tileinfo.set(1, code + 0x100 * m_bg_char_bank, code >> 4, 0);
 }
 
 
@@ -219,19 +219,19 @@ void segag80r_state::video_start()
 		/* and one vertically scrolling */
 		case G80_BACKGROUND_SPACEOD:
 			spaceod_bg_init_palette();
-			m_spaceod_bg_htilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(segag80r_state::spaceod_get_tile_info),this), tilemap_mapper_delegate(FUNC(segag80r_state::spaceod_scan_rows),this),  8,8, 128,32);
-			m_spaceod_bg_vtilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(segag80r_state::spaceod_get_tile_info),this), tilemap_mapper_delegate(FUNC(segag80r_state::spaceod_scan_rows),this),  8,8, 32,128);
+			m_spaceod_bg_htilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(segag80r_state::spaceod_get_tile_info)), tilemap_mapper_delegate(*this, FUNC(segag80r_state::spaceod_scan_rows)),  8,8, 128,32);
+			m_spaceod_bg_vtilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(segag80r_state::spaceod_get_tile_info)), tilemap_mapper_delegate(*this, FUNC(segag80r_state::spaceod_scan_rows)),  8,8, 32,128);
 			break;
 
 		/* background tilemap is effectively 1 screen x n screens */
 		case G80_BACKGROUND_MONSTERB:
-			m_bg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(segag80r_state::bg_get_tile_info),this), TILEMAP_SCAN_ROWS,  8,8, 32,memregion("gfx2")->bytes() / 32);
+			m_bg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(segag80r_state::bg_get_tile_info)), TILEMAP_SCAN_ROWS,  8,8, 32,memregion("gfx2")->bytes() / 32);
 			break;
 
 		/* background tilemap is effectively 4 screens x n screens */
 		case G80_BACKGROUND_PIGNEWT:
 		case G80_BACKGROUND_SINDBADM:
-			m_bg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(segag80r_state::bg_get_tile_info),this), TILEMAP_SCAN_ROWS,  8,8, 128,memregion("gfx2")->bytes() / 128);
+			m_bg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(segag80r_state::bg_get_tile_info)), TILEMAP_SCAN_ROWS,  8,8, 128,memregion("gfx2")->bytes() / 128);
 			break;
 	}
 
@@ -262,9 +262,8 @@ void segag80r_state::video_start()
  *
  *************************************/
 
-WRITE8_MEMBER(segag80r_state::segag80r_videoram_w)
+void segag80r_state::segag80r_videoram_w(offs_t offset, uint8_t data)
 {
-	uint8_t *videoram = m_videoram;
 	/* accesses to the upper half of VRAM go to paletteram if selected */
 	if ((offset & 0x1000) && (m_video_control & 0x02))
 	{
@@ -275,7 +274,7 @@ WRITE8_MEMBER(segag80r_state::segag80r_videoram_w)
 	}
 
 	/* all other accesses go to videoram */
-	videoram[offset] = data;
+	m_videoram[offset] = data;
 
 	/* track which characters are dirty */
 	if (offset & 0x800)
@@ -290,11 +289,11 @@ WRITE8_MEMBER(segag80r_state::segag80r_videoram_w)
  *
  *************************************/
 
-READ8_MEMBER(segag80r_state::segag80r_video_port_r)
+uint8_t segag80r_state::segag80r_video_port_r(offs_t offset)
 {
 	if (offset == 0)
 	{
-		logerror("%04X:segag80r_video_port_r(%d)\n", space.device().safe_pc(), offset);
+		logerror("%04X:segag80r_video_port_r(%d)\n", m_maincpu->pc(), offset);
 		return 0xff;
 	}
 	else
@@ -310,11 +309,11 @@ READ8_MEMBER(segag80r_state::segag80r_video_port_r)
 }
 
 
-WRITE8_MEMBER(segag80r_state::segag80r_video_port_w)
+void segag80r_state::segag80r_video_port_w(offs_t offset, uint8_t data)
 {
 	if (offset == 0)
 	{
-		logerror("%04X:segag80r_video_port_w(%d) = %02X\n", space.device().safe_pc(), offset, data);
+		logerror("%04X:segag80r_video_port_w(%d) = %02X\n", m_maincpu->pc(), offset, data);
 	}
 	else
 	{
@@ -338,7 +337,7 @@ WRITE8_MEMBER(segag80r_state::segag80r_video_port_w)
  *
  *************************************/
 
-READ8_MEMBER(segag80r_state::spaceod_back_port_r)
+uint8_t segag80r_state::spaceod_back_port_r(offs_t offset)
 {
 	/* force an update to get the current detection value */
 	m_screen->update_partial(m_screen->vpos());
@@ -346,7 +345,7 @@ READ8_MEMBER(segag80r_state::spaceod_back_port_r)
 }
 
 
-WRITE8_MEMBER(segag80r_state::spaceod_back_port_w)
+void segag80r_state::spaceod_back_port_w(offs_t offset, uint8_t data)
 {
 	switch (offset & 7)
 	{
@@ -426,7 +425,7 @@ WRITE8_MEMBER(segag80r_state::spaceod_back_port_w)
  *
  *************************************/
 
-WRITE8_MEMBER(segag80r_state::monsterb_videoram_w)
+void segag80r_state::monsterb_videoram_w(offs_t offset, uint8_t data)
 {
 	/* accesses to the area $f040-$f07f go to background palette if */
 	/* the palette access enable bit is set */
@@ -440,11 +439,11 @@ WRITE8_MEMBER(segag80r_state::monsterb_videoram_w)
 	}
 
 	/* handle everything else */
-	segag80r_videoram_w(space, offset, data);
+	segag80r_videoram_w(offset, data);
 }
 
 
-WRITE8_MEMBER(segag80r_state::monsterb_back_port_w)
+void segag80r_state::monsterb_back_port_w(offs_t offset, uint8_t data)
 {
 	switch (offset & 7)
 	{
@@ -496,7 +495,7 @@ WRITE8_MEMBER(segag80r_state::monsterb_back_port_w)
  *
  *************************************/
 
-WRITE8_MEMBER(segag80r_state::pignewt_videoram_w)
+void segag80r_state::pignewt_videoram_w(offs_t offset, uint8_t data)
 {
 	/* accesses to the area $f040-$f07f go to background palette if */
 	/* the palette access enable bit is set */
@@ -509,11 +508,11 @@ WRITE8_MEMBER(segag80r_state::pignewt_videoram_w)
 	}
 
 	/* handle everything else */
-	segag80r_videoram_w(space, offset, data);
+	segag80r_videoram_w(offset, data);
 }
 
 
-WRITE8_MEMBER(segag80r_state::pignewt_back_color_w)
+void segag80r_state::pignewt_back_color_w(offs_t offset, uint8_t data)
 {
 	/* it is not really known what this does */
 	if (offset == 0)
@@ -523,7 +522,7 @@ WRITE8_MEMBER(segag80r_state::pignewt_back_color_w)
 }
 
 
-WRITE8_MEMBER(segag80r_state::pignewt_back_port_w)
+void segag80r_state::pignewt_back_port_w(offs_t offset, uint8_t data)
 {
 	switch (offset & 7)
 	{
@@ -579,7 +578,7 @@ WRITE8_MEMBER(segag80r_state::pignewt_back_port_w)
  *
  *************************************/
 
-WRITE8_MEMBER(segag80r_state::sindbadm_videoram_w)
+void segag80r_state::sindbadm_videoram_w(offs_t offset, uint8_t data)
 {
 	/* accesses to the area $f000-$f03f go to background palette if */
 	/* the palette access enable bit is set */
@@ -592,11 +591,11 @@ WRITE8_MEMBER(segag80r_state::sindbadm_videoram_w)
 	}
 
 	/* handle everything else */
-	segag80r_videoram_w(space, offset, data);
+	segag80r_videoram_w(offset, data);
 }
 
 
-WRITE8_MEMBER(segag80r_state::sindbadm_back_port_w)
+void segag80r_state::sindbadm_back_port_w(offs_t offset, uint8_t data)
 {
 	switch (offset & 3)
 	{

@@ -7,14 +7,6 @@
 #pragma once
 
 
-
-//**************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_JANGOU_BLITTER_ADD(_tag,_freq) \
-	MCFG_DEVICE_ADD(_tag, JANGOU_BLITTER, _freq)
-
 //**************************************************************************
 //  TYPE DEFINITIONS
 //**************************************************************************
@@ -28,21 +20,12 @@ public:
 	jangou_blitter_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 	// I/O operations
-	DECLARE_ADDRESS_MAP(blit_v1_regs, 8);
-	DECLARE_ADDRESS_MAP(blit_v2_regs, 8);
+	void blit_v1_regs(address_map &map);
+	void blit_v2_regs(address_map &map);
 
-	DECLARE_WRITE8_MEMBER( vregs_w );
-	DECLARE_WRITE8_MEMBER( bltflip_w );
-	DECLARE_READ_LINE_MEMBER( status_r );
-
-	// blitter write accessors
-	DECLARE_WRITE8_MEMBER( x_w );
-	DECLARE_WRITE8_MEMBER( y_w );
-	DECLARE_WRITE8_MEMBER( height_and_trigger_w );
-	DECLARE_WRITE8_MEMBER( width_w );
-	DECLARE_WRITE8_MEMBER( src_lo_address_w );
-	DECLARE_WRITE8_MEMBER( src_md_address_w );
-	DECLARE_WRITE8_MEMBER( src_hi_address_w );
+	void vregs_w(offs_t offset, uint8_t data);
+	void bltflip_w(uint8_t data);
+	int status_r();
 
 	const uint8_t &blit_buffer(unsigned y, unsigned x) const { return m_blit_buffer[(256 * y) + x]; }
 
@@ -64,6 +47,15 @@ private:
 	uint8_t *m_gfxrom;
 	uint32_t m_gfxrommask;
 	bool m_bltflip;
+
+	// blitter write accessors
+	void x_w(uint8_t data);
+	void y_w(uint8_t data);
+	void height_and_trigger_w(uint8_t data);
+	void width_w(uint8_t data);
+	void src_lo_address_w(uint8_t data);
+	void src_md_address_w(uint8_t data);
+	void src_hi_address_w(uint8_t data);
 };
 
 

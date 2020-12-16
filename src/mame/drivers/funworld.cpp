@@ -1,42 +1,43 @@
 // license:BSD-3-Clause
-// copyright-holders:Roberto Fresca, Peter Ferrie
+// copyright-holders:Roberto Fresca, Grull Osgo, Andreas Naive, Peter Ferrie
 /****************************************************************************************
 
   Fun World / TAB / Impera
   Series 7000 hardware.
 
-  65C02 + 2x PIAs + M6845 CRTC + AY8910
+  65C02/65SC02 + 2x 6821 PIAs + 6845 CRTC + AY-3-8910.
+  From raw, to different ways of encryption. Even through custom CPUs.
 
-  Also from Amatic, CMC, Dino4 encrypted, and Leopard 4.
+  Also from Amatic, CMC, Dino4 (encrypted), and Leopard 4.
 
   Driver by Roberto Fresca.
   Based on a preliminary work of Curt Coder & Peter Trauner.
+
 
 *****************************************************************************************
 
   Games running on this hardware:
 
-  * Jolly Card (Austrian, set 1),                               TAB Austria,        1985.
-  * Jolly Card (Austrian, set 2),                               TAB Austria,        1985.
+  * Jolly Card (German, set 1),                                 TAB Austria,        1985.
+  * Jolly Card (German, set 2),                                 TAB Austria,        1985.
   * Jolly Card (3x3 deal),                                      TAB Austria,        1985.
   * Jolly Card Professional 2.0 (MZS Tech),                     MZS Tech,           1993.
   * Jolly Card Professional 2.0 (Spale Soft),                   Spale Soft,         2000.
   * Jolly Card (Evona Electronic),                              Evona Electronic    1998.
   * Jolly Card (Croatian, set 1),                               TAB Austria,        1985.
   * Jolly Card (Croatian, set 2),                               Soft Design,        1993.
-  * Jolly Card (Italian, blue TAB board, encrypted),            bootleg,            199?.
-  * Jolly Card (Italian, encrypted bootleg, set 1),             bootleg,            1990.
-  * Jolly Card (Italian, encrypted bootleg, set 2),             bootleg,            1993.
+  * Super Joly 2000 - 3x,                                       M.P.                1985.
+  * Jolly Card (German, Fun World, bootleg),                    Inter Games,        1986.
+  * Jolly Card (Spanish, blue TAB board, encrypted),            TAB Austria,        1992.
   * Jolly Card (Italian, different colors, set 1),              bootleg,            1990.
   * Jolly Card (Italian, different colors, set 2),              bootleg,            1990.
-  * Super Joly 2000 - 3x,                                       M.P.                1985.
-  * Jolly Card (Austrian, Fun World, bootleg),                  Inter Games,        1986.
-  * Jolly Card (Spanish, blue TAB board, encrypted),            TAB Austria,        1992.
-  * Bonus Card (Austrian),                                      Fun World,          1986.
-  * Bonus Card (Austrian, ATG Electronic hack),                 Fun World,          1986.
+  * Jolly Card (Italian, bootleg, set 1),                       bootleg,            1990.
+  * Jolly Card (Italian, bootleg, set 2),                       bootleg,            1993.
+  * Jolly Card (Italian, bootleg, set 3),                       bootleg,            1990.
+  * Bonus Card (German),                                        Fun World,          1986.
+  * Bonus Card (German, ATG Electronic hack),                   Fun World,          1986.
   * Big Deal (Hungarian, set 1),                                Fun World,          1986.
   * Big Deal (Hungarian, set 2),                                Fun World,          1986.
-  * Power Card (Ver 0263, encrypted),                           Fun World,          1993.
   * Cuore 1 (Italian),                                          C.M.C.,             1996.
   * Elephant Family (Italian, new),                             C.M.C.,             1997.
   * Elephant Family (Italian, old),                             C.M.C.,             1996.
@@ -48,7 +49,8 @@
   * Pool 10 (Italian, set 6),                                   C.M.C.,             1996.
   * Pool 10 (Italian, set 7),                                   C.M.C.,             1997.
   * Pool 10 (Italian, set 8),                                   C.M.C.,             1997.
-  * Pool 10 (Italian, Dino 4 hardware, encrypted),              C.M.C.,             1997.
+  * Pool 10 (Italian, set 9),                                   bootleg (R.B.),     1996.
+  * New Biliard 98 (Pool 10 hack),                              bootleg,            1998.
   * Royal (Pool 10 hack),                                       unknown,            2001.
   * Tortuga Family (Italian),                                   C.M.C.,             1997.
   * Pot Game (Italian),                                         C.M.C.,             1996.
@@ -58,19 +60,18 @@
   * Luna Park (set 2, dual program),                            unknown,            1998.
   * Luna Park (set 3),                                          unknown,            1998.
   * Crystal Colours (CMC hardware),                             J.C.D. srl,         1998.
-  * Royal Card (Austrian, set 1),                               TAB Austria,        1991.
-  * Royal Card (Austrian, set 2),                               TAB Austria,        1991.
-  * Royal Card (Austrian/Polish, set 3),                        TAB Austria,        1991.
-  * Royal Card (Austrian, set 4),                               TAB Austria,        1991.
-  * Royal Card (Austrian, set 5),                               TAB Austria,        1991.
-  * Royal Card (Austrian, set 6),                               TAB Austria,        1991.
-  * Royal Card (Austrian, set 7, CMC C1030 HW),                 bootleg,            1991.
+  * Royal Card (German, set 1),                                 TAB Austria,        1991.
+  * Royal Card (German, set 2),                                 TAB Austria,        1991.
+  * Royal Card (German/Polish, set 3),                          TAB Austria,        1991.
+  * Royal Card (German, set 4),                                 TAB Austria,        1991.
+  * Royal Card (German, set 5),                                 TAB Austria,        1991.
+  * Royal Card (German, set 6),                                 TAB Austria,        1991.
+  * Royal Card (German, set 7, CMC C1030 HW),                   bootleg,            1991.
+  * Royal Card (German, set 8),                                 TAB Austria,        1991.
   * Royal Card (French),                                        TAB Austria,        1991.
-  * Royal Card (TAB original),                                  TAB Austria,        1991.
-  * Royal Card (Slovak, encrypted),                             Evona Electronic,   1991.
   * Royal Card Professional 2.0,                                Digital Dreams,     1993.
-  * Royal Card (Italian, Dino 4 hardware, encrypted),           unknown,            1998.
-  * RRoyal Card / Royal Jackpot (with a third draw)(encrypted), TAB / Video Klein,  1991
+  * Royal Card / Royal Jackpot (with a third draw)(encrypted),  TAB / Video Klein,  1991
+  * Witch Royal (Export version 2.1),                           Video Klein,        199?.
   * Lucky Lady (3x3 deal),                                      TAB Austria,        1991.
   * Lucky Lady (4x1 aces),                                      TAB Austria,        1991.
   * Magic Card II (Bulgarian),                                  Impera,             1996.
@@ -81,24 +82,50 @@
   * Royal Vegas Joker Card (Fast deal),                         Soft Design,        1993.
   * Royal Vegas Joker Card (Fast deal, english gfx),            Soft Design,        1993.
   * Royal Vegas Joker Card (Fast deal, Mile),                   Mile,               1993.
-  * Jolly Joker (98bet, set 1).                                 Impera,             198?.
-  * Jolly Joker (98bet, set 2).                                 Impera,             198?.
-  * Jolly Joker (40bet, croatian hack),                         Impera,             198?.
-  * Jolly Joker (Apple Time),                                   Apple Time,         198?.
+  * Jolly Joker (original, interleaved GFX).                    Impera,             199?.
+  * Jolly Joker (original, different encoded GFX).              Impera,             199?.
+  * Jolly Joker (Solid State module in suicide board).          Impera,             199?.
+  * Jolly Joker (98bet, set 1).                                 Impera,             199?.
+  * Jolly Joker (98bet, set 2).                                 Impera,             199?.
+  * Jolly Joker (40bet, higher paytable),                       Impera,             1985.
+  * Jolly Joker (40bet, lower paytable),                        Impera,             1985.
+  * Jolly Joker (Apple Time),                                   Apple Time,         199?.
   * Multi Win (Ver.0167, encrypted),                            Fun World,          1992.
-  * Joker Card (Ver.A267BC, encrypted),                         Vesely Svet,        1993.
+  * Power Card (Ver 0263, encrypted),                           Fun World,          1993.
+  * Mega Card (Ver.0210, encrypted),                            Fun World,          1993.
+  * Joker Card 300 (Ver.A267BC, encrypted),                     Amatic Trading,     1993.
+  * Royal Card (Evona, Polish, encrypted),                      Evona Electronic,   1991.
+  * Saloon (French, encrypted),                                 unknown,            199?.
+  * Nevada (French, encrypted),                                 unknown,            199?.
+  * Jolly Card (Italian, blue TAB board, encrypted),            bootleg,            199?.
+  * Jolly Card (Italian, encrypted bootleg, set 1),             bootleg,            1990.
+  * Jolly Card (Italian, encrypted bootleg, set 2),             bootleg,            1993.
+  * Jolly Card (Italian, encrypted bootleg, set 3),             bootleg,            1993.
+  * Pool 10 (Italian, Dino 4 hardware, encrypted),              C.M.C.,             1997.
+  * Royal Card (Italian, Dino 4 hardware, encrypted),           unknown,            1998.
+  * China Town (Ver 1B, Dino4 HW),                              unknown,            1998.
+  * Royal Card (Italian, Dino 4 hardware, encrypted),           TAB Austria,        1998.
   * Mongolfier New (Italian),                                   unknown,            199?.
   * Soccer New (Italian),                                       unknown,            199?.
-  * Saloon (French, encrypted),                                 unknown,            199?.
-  * Fun World Quiz (Austrian),                                  Fun World,          198?.
-  * Witch Royal (Export version 2.1),                           Video Klein,        199?.
+  * Fun World Quiz (German),                                    Fun World,          198?.
+  * Fun World Quiz (German, 12-11-1990),                        Fun World,          1990.
+  * Fun World Quiz (German, 27-04-1990),                        Fun World,          1990.
   * Novo Play Multi Card / Club Card,                           Admiral/Novomatic,  1986.
-  * unknown encrypted Royal Card (Dino4 HW),                    unknown,            1998.
-  * China Town (Ver 1B, Dino4 HW),                              unknown,            1998.
-  * Unknown Inter Games poker,                                  Inter Games,        1991.
+  * Joker Card (Inter Games),                                   Inter Games,        1991.
   * Unknown Fun World A7-11 game 1,                             Fun World,          1985.
   * Unknown Fun World A7-11 game 2,                             Fun World,          1985.
   * Unknown Fun World A0-1 game,                                Fun World,          1991.
+  * Joker Card / Multi Card (Epoxy brick CPU),                  Fun World,          1991.
+  * Gratis Poker (V.204, set 1),                                Mega Soft,          1995.
+  * Gratis Poker (V.204, set 2),                                Mega Soft,          1995.
+  * Gkoulit (encrypted GFX),                                    JK Amusement,       1995.
+  * Reflex Cards (English, serial protected),                   TAB Austria,        1999.
+  * Royal Card (stealth with NES multigame),                    bootleg,            1991.
+  * Royal Card (stealth with MSX multigame),                    bootleg,            1991.
+
+
+  Supported games: 104
+
 
 *****************************************************************************************
 
@@ -157,11 +184,12 @@
 
   - Encryption.
 
-      A) Encrypted CPU. At least two Fun World boards have custom encrypted CPUs:
+      A) Encrypted CPU. At least five Fun World boards have custom encrypted CPUs:
 
-          - Joker Card from Vesely Svet use a custom unknown CPU and use encrypted prg roms.
+          - Joker Card from Vesely Svet, Mega Card, Power Card and Multi Win,
+             use custom unknown CPUs and also encrypted/scrambled prg roms.
           - Royal Card (slovak, encrypted) from Evona Electronic seems to use a block
-            with CPU + extras (ICs, TTL, etc) to manage the encryption.
+             with CPU + extras (ICs, TTL, etc) to manage the encryption.
 
       B) General encryption. Managed through hardware:
 
@@ -259,7 +287,7 @@
   You have 1 attempt for each 100 earned points. If you lose the game, you lose the points.
 
 
-  * Bonus Card (Austrian)
+  * Bonus Card (German)
   * Big Deal (Hungarian)
 
   These ones seems to have normal RAM instead of NVRAM.
@@ -302,7 +330,7 @@
   The game resolution seems to change 'on the fly' when entering the input test mode.
   There aren't any writes to the m6845 registers to manage these changes.
 
-  Regarding the CPU, it seems to be a custom one, or a daughterboard with a 65c02 + PLDs/TTLs.
+  Regarding the CPU, it's a Mexican Rockwell R65C02 with some mods respect the regular/stock 65C02.
   Some CPU instructions seems to be changed. The following piece of code at $C1A8 is very clear:
 
   C1A8: A0 00         ldy  #$00       ; clear Y register to use as counter.
@@ -335,11 +363,18 @@
   When numbers start to fill the screen, press RESET (key F3) again to start the game.
 
 
-  * (multi) Joker Card (Vesely).
+  * Joker Card 300 (Ver.A267BC, encrypted).
   * Multi Win (Fun World)
+  * Power Card (Fun World)
+  * Mega Card (Fun World)
 
-  These sets seems to run in the same modified hardware.
-  They are encrypted, and have a second program rom with unknown code/purposes.
+  These sets seems to run in the same modified hardware. They are highly encrypted.
+
+  Joker Card has a title nag at boot. You can wait to finish nearly one minute,
+  or simply press SERVICE 2 (key 0), then START (key 1) to enter the game.
+
+  Joker Card has a weird way of play. The more you bet, the more cards burns to
+  get better chances. You're not betting really. Just buying removed cards.
 
 
   * Mongolfier New
@@ -469,6 +504,78 @@
   The only visible changes are in the NVRAM, where the $0000 offset hasn't the JMP $C210 instruction
   injected at the start...
 
+
+  * Joker Card / Multi Card (Epoxy brick CPU)
+
+  These series are running in a derivative hardware with epoxy CPU brick.
+  CPU is RP65C02A, with 2x Toshiba TC5565APL-10 RAMs. 1x Intel D27128A ROM.
+  and 1x PAL16L8B.
+
+  The main program is inside the battery backed RAM, and need to be dumped.
+  See more notes below in the ROM loading.
+
+
+  * Royal Card (Italian, Dino 4 hardware, encrypted)
+
+  This game is highly encrypted and is running in Dino 4 hardware.
+  To initialize the NVRAM, you should press both service buttons together (keys 0-9) and then reset (key F3).
+  Due to the way the routine is programmed, the procedure is time sensitive and often doesn't work.
+
+  This game has a programming menu through the service mode (key 0), then pressing STOP 2 & STOP 4 together
+  and waiting for some seconds.
+
+  You can see two options...
+
+  STOP 1 ---- OPZIONI 1
+  STOP 3 ---- OPZIONI 2
+
+  OPZIONI 1:
+  You can change game parameters for Gioco AB, Play Max, Play Min, Difficolt, Bonus, and Rilancio.
+
+  OPZIONI 2:
+  You can change game parameters for Tabella Vincite, Velocita Simboli, Control Double, Valore Ticket,
+  Limit Credit, and Limit Scarico.
+
+  In both cases, you can exit pressing the START button (key 1).
+
+
+  * Jolly Card (Italian, bootleg, set 2)
+
+  This game PCB has a TI EP910DC-30 CPLD, like others Italian bootlegs
+  that have an Altera EP910PC CPLD on board.
+
+  To init NVRAM, DIP switches must be in the following positions:
+  OFF ON ON ON ON ON ON ON
+
+  Then press SERVICE 1 + SERVICE 2 and reset, then release both buttons.
+
+  Once NVRAM is initialized, the hardware still complains about it due
+  to a hardware check (see more at the rom load), but is now working.
+
+  The game seems to work for a currency that needs decimal values.
+  Maybe Italian Lires...
+
+
+  * Jolly Card (German, Fun World, bootleg)
+
+  This game is a bootleg made from a Fun World original program.
+  The game has hidden features, as a program mode.
+
+  In the Service menu (key 0), press HOLD 1 & HOLD 2 together for
+  some seconds and the programming menu will appear.
+
+
+  * Royal Card (Evona, Polish, encrypted)
+
+  This is another highly encrypted game.
+  To initialize the NVRAM all DIP switches must be in ON. Keep pressed both service buttons
+  (keys 9 & 0) and then RESET (key F3), then release first the service 1 (key 9) and then
+  service 2 (key 0).
+
+  The game does some odd things, due to a possible bug in the
+  decryption scheme. (see the TO DO list).
+
+
 *****************************************************************************************
 
   Memory Map (generic)
@@ -524,456 +631,10 @@
 
 *****************************************************************************************
 
-  *** Hardware Info ***
-
-  Moved all technical info to the ROM load section...
-
-
-*****************************************************************************************
-
-  *** Driver Updates by Roberto Fresca and Peter Ferrie ***
-
-
-  [2005/09/08]
-  - Added Cuore Uno, Elephant Family and Royal Card.
-
-  [2005/09/19]
-  - Added some clones.
-  - Cleaned up and renamed all sets. Made parent-clone relationship.
-
-  [2005/12/15]
-  - Corrected CPU freq (2 MHz) in cuoreuno and elephfam (both have R65C02P2).
-     (I suspect more games must have their CPU running at 2 MHz).
-  - Corrected videoram and colorram offsets in cuoreuno and elephfam.
-  - To initialize the NVRAM in cuoreuno and elephfam:
-     Start game, press and hold Service1 & Service2, press reset (F3),
-     release Service1 & Service2 and press reset (F3) again.
-
-  [2006/10/18]
-  - Corrected the screen size and visible area to cuoreuno and elephfam based on mc6845 registers.
-  - Added all inputs to cuoreuno and elephfam.
-  - Added test mode DIP switch to cuoreuno and elephfam.
-  - Managed cuoreuno and elephfam inputs to pass the initial checks. Now both games are playable.
-  - Changed the cuoreuno full name to "Cuore 1" (as shown in the attract).
-
-  [2006/10/22-28]
-  - Corrected cuoreuno and elephfam graphics to 4bpp.
-  - Fixed elephfam gfx planes.
-  - Simulated cuoreuno palette based on screenshots.
-  - Simulated elephfam palette based on screenshots.
-
-
-  [2006/11/01 to 2006/12/04]
-
-  ******** REWRITE ********
-
-  - Merged/splitted some machine drivers, memory maps and inputs.
-  - Unified get_bg_tile_info for all games.
-  - Mapped the input buttons in a better format (all games). Keys: 156-QW-ZXCVBNM.
-  - Added proper color PROM decode routines.
-  - Rewrote the technical notes.
-  - Splitted the driver to driver/video.
-
-  - Corrected the screen size and visible area to magiccrd based on mc6845 registers.
-  - Added the remaining 2 GFX planes to magiccrd, but GFX are imperfect (bad decode or bad dump?).
-     Color PROM need to be dumped.
-  - Royalcrd: Added all inputs and DIP switches.
-     Fixed memory map, gfx decode
-     Corrected screen size and visible area based on mc6845 registers.
-     Corrected CPU clock to 2mhz.
-
-  - New game added: Joker Poker. Not working due to use of custom encrypted CPU.
-  - New game added: Royal Card (Slovakia, encrypted). Not working due to use of a custom encrypted CPU.
-  - Fixed jolycdcr gfx to 4bpp.
-  - Other fixes to get jolycdcr running.
-  - Managed royalcdb to work, using the 2nd half of program ROM. (seems to be mapped that way)
-  - Managed jolycdit to work, but with imperfect graphics due to gfx encryption.
-  - Fixed CPU clock to 2MHz. in all remaining games.
-  - Fixed ay8910 frequency based on elephfam audio.
-  - Fixed ay8910 volume in all games to avoid clipping.
-  - Reworked jolycdcr inputs: The game was designed to work only with remote credits.
-     After nvram init, set the payout dip to "manual".
-  - Reworked jolycdit inputs: After nvram init, set the payout dip
-     to "manual" to allow work the remote mode.
-  - Set jolycdat as bigdeal clone. The game has the same layout/behaviour instead of the normal
-     jolly card games, even when they are sharing gfx roms.
-  - Added the bipolar PROM and GAL to jolycdit. Confirmed the GFX ROMs as good dumps.
-  - Added an alternate set of Elephant Family. This one lacks of test mode and doesn't allow
-     to switch between min-max bets through stop1.
-  - Added color PROMs to cuoreuno and elephfam sets but still no routed.
-     Also added PLDs (protected, bad dumps).
-  - Corrected jollycrd screen size and visible area based on mc6845 registers.
-  - Hooked, wired and decoded the color prom in jollycrd sets based on jolycdit redump.
-     Now colors are perfect.
-  - Wired and decoded the color prom in cuoreuno and elephfam sets.
-     Now colors are perfect.
-  - Wired and decoded the color prom in royalcrd. Now colors are perfect.
-  - Hooked, wired and decoded the color prom in bigdeal sets based on jolycdat (jollycrd palette).
-     Colors seems to be correct, but need to check against the real thing.
-     Flagged as IMPERFECT_COLORS till a color PROM dump appear.
-  - Decrypted jolycdit gfx roms.
-  - Added set Jolly Card (Austria, encrypted).
-  - Decrypted jolycdae and managed the planes to show correct colors. The set is working properly.
-
-
-  [2006/12/24]
-  - Fixed some incomplete inputs.
-  - Added new working game: Pool 10.
-  - Added new working game: Tortuga Family.
-  - Added new game: Mongolfier New. Not working due to the lack of MCU emulation.
-  - Added new game: Soccer New. Not working due to the lack of MCU emulation.
-  - Updated technical notes.
-
-  [2007/02/01]
-  - All crystals documented via #defines.
-  - All CPU and sound clocks derived from #defined crystal values.
-  - Added DIPLOCATIONS to all games.
-  - Added a pool10 alternate set.
-  - Added proper tsc87c52 MCU dumps to monglfir and soccernew.
-  - Modified the refresh rate to 60 fps according to some video evidences.
-  - Updated technical notes.
-
-  [2007/02/25]
-  - Added new game: Snooker 10 (Ver 1.11). Preliminary.
-     Properly decoded GFX
-     Proper colors decoded.
-  - Updated technical notes.
-
-  [2007/09/21]
-  - Added new game: Saloon (France, encrypted). Preliminary.
-  - Updated technical notes.
-
-  [2008/02/10]
-  - Switched to XTAL def.
-  - Fixed Magic Card II graphics issues.
-  - Fixed Magic Card II inputs.
-  - Fixed screen and visible area to snooker10.
-  - Renamed set monglfir to mongolnw.
-  - Renamed sets description based on languages instead of countries.
-  - Added new game: Magic Card II (green TAB or Impera board). Not working yet.
-  - Added new game: Magic Card II (blue TAB board, encrypted). Not working yet.
-  - Added new game: Jolly Card (3x3 deal).
-  - Added new game: Jolly Card Professional 2.0 (with 'enter code' screen to boot).
-  - Added new game: Lucky Lady (3x3 deal).
-  - Added new game: Lucky Lady (4x1 aces).
-  - Added new game: Royal Vegas Joker Card (fast deal).
-  - Added new game: Royal Vegas Joker Card (slow deal).
-  - Fixed some years and manufacturers.
-  - Updated technical notes.
-  - Cleaned up the driver.
-
-  [2008/02/22]
-  - Switched the color decoding routines to use resnet code.
-  - Added complete color connections to/from 74ls373 to the source.
-
-  [2008/02/25]
-  - Added new game: Royal Vegas Joker Card (fast deal, english gfx).
-  - Added new game: Jolly Joker.
-  - Added new game: Jolly Joker (50bet).
-  - Added new game: Jolly Card (croatian, set 2).
-  - Added new game: Jolly Card (Evona Electronic)
-  - Added new game: Super Joly 2000 - 3x
-  - Fixed some inputs.
-  - Masked inputs to allow jolyjokra to boot.
-  - Added minor corrections.
-  - Updated technical notes.
-
-  [2008/03/14]
-  - Added proper inputs to jolyc980.
-  - Added temporary patch to allow bypass the "code" screen in jolyc980.
-  - Updated technical notes.
-
-  [2008/03/18]
-  - Added new game: Pot Game (italian).
-  - Updated technical notes.
-
-  [2008/04/18]
-  - Removed the temporary hack to jolyc980.
-  - Updated technical notes regarding Magic Card II & Jolly Card Professional 2.0.
-  - Moved snookr10 to its own driver.
-  - Minor clean-up.
-
-  [2008/04/27]
-  - Fixed AY8910 volume to all games to avoid clips.
-  - Merge bigdeal and funworld machine drivers thanks to the AY8910 rewrite.
-  - Removed old unaccurate commentary about magiccrd tiles.
-
-  [2008/04/29]
-  All CMC italian games:
-  - Added TICKET and HOPPER buttons to allow payout through the SUPER GAME.
-  - Documented the featured SUPER GAME with complete instructions.
-  - Improved DIP switches to properly set the payout system.
-
-  [2008/05/13]
-  - Found the proper algorithm to decrypt the blue TAB PCB.
-  - Replaced the old decryption tables with the proper decryption scheme.
-  - Updated technical notes.
-
-  [2008/07/30]
-  - Added new clone: Pool 10 (italian, set 3).
-  - Updated technical notes.
-
-  [2008/09/12]
-  - Added new clone: Pool 10 (italian, set 4).
-  - Improved lamps layout for all games.
-  - Added Pool 10 pinout and DIP switches info.
-  - Updated technical notes.
-
-  [2008/12/01]
-  - Decripted saloon's program, graphics and color PROM.
-  - Created a new memory map and machine driver for saloon.
-  - Removed set jolycdae (not coming from a real board).
-  - Renamed the sets magiccrd, magiccda and magiccdb, to magicrd2, magicd2a and magicd2b.
-  - Updated technical notes.
-
-  [2008/12/15]
-  - Added new set: Jolly Card (italian, encrypted bootleg).
-     No coins... Only remote credits. After nvram init, set the Payout DIP to 'manual'
-     to allow the remote credits mode to work.
-  - Created inputs from the scratch for jolycdib.
-  - Updated technical notes.
-
-  [2008-12-26]
-  - Correctly setup the MC6845 device for all systems.
-  - Added common MC6845 device interface.
-  - Eliminated the screen size & visible area parameters to Magic Card 2.
-
-  [2009/01/23]
-  - Added new sets: Bottle 10 (italian, set 1 & 2).
-  - Updated technical notes.
-
-  [2009/09/09]
-  - Discovered and documented new features in Jolly Card (Evona Electronics).
-  - Removed the commented hack for joly980 driver init since is not needed anymore.
-  - Fixed a bug introduced with the massive input change, that didn't allow initialize
-     all sets that need the normal procedure to do it.
-  - Updated technical notes.
-
-  [2010/03/01]
-  - Fixed Jolly Joker graphics and colors.
-  - Changed Jolly Joker description to Jolly Joker (98bet).
-  - Added a new croatian set of Jolly Joker with maximum bet = 40.
-  - Moved the hardware description and tech notes to the ROM_LOAD section.
-  - Added a external default NVRAM for Jolly Card Professional 2.0.
-  - Updated technical notes.
-
-  [2010/03/09]
-  - Added external default NVRAM support to the following games:
-     bottle10, bottl10b, elephfam, elephfmb, jollycrd, jolyc3x3,
-     jolyccra, jolyccrb, jolycdev, jolycdib, jolycdit, jolyjokr,
-     jolyjokra, jolyjokrb, lluck3x3, lluck4x1, magicrd2, pool10,
-     pool10b, pool10c, pool10d, potgame, royalcrd, royalcdb,
-     sjcd2kx3, tortufam, vegasfst, vegasfte and vegasslw.
-  - Changed default settings for some games, now that NVRAM is
-     loaded externally.
-
-  [2010/03/15]
-  - Removed all hacks in the rom load section. Now the involved sets
-     are properly loaded in the same way the hardware does.
-  - Replaced hardcoded values on graphics decode routines with proper
-     RGN_FRAC calculations.
-  - Fixed graphics bitplanes to involved games.
-  - Added more hardware/technical info.
-  - Modify the mongolnw machine driver. Now can see it starts.
-  - Added Multi Win, from Fun World. The set is encrypted and use a
-     custom CPU. Seems similar hardware than (multi) Joker Card.
-  - Added Fun World Quiz. Needs proper banking, and both graphics and
-     bipolar PROM redumps.
-  - Added Fun World Quiz description, and hardware notes.
-
-  - Improved inputs for Fun World Quiz.
-  - Proper handlers and banking for Fun World Quiz questions.
-  - Partial decryption for royalcdc and multiwin.
-  - Complete Fun World Quiz DIP switches with dip locations.
-  - Promoted Fun World Quiz to working state.
-  - Added Fun World Quiz bookkeeping instructions notes.
-  - Turned lamps off as default state for all supported game.
-  - Changed default button-lamps layout to selective per game,
-     since some games need different one, and some games lack
-     of lamps at all.
-
-  - Reworked button-lamps layouts per game. Cleaned-up the code.
-  - Added specific button-lamps layout for bigdeal games.
-  - Added specific button-lamps layout for royalcrd & jolycdit,
-     but there is a bug in the d-up select code that lights the
-     wrong lamp. This is a leftover from jollycrd routines.
-  - Flagged vegasfte as MACHINE_NOT_WORKING, since is not receiving
-     any coins or remote credits anymore.
-
-  [2010/03/21]
-  - Added dual-state palette (addressable through PLDs).
-     This allow to choose which half of the palette will be addressed.
-  - Splitted the main machine driver to cover both palette states.
-  - Reworked inputs / DIP switches for vegasslw, vagasfst and vegasfte.
-  - Created new default NVRAM for Royal Vegas Joker Card sets.
-     These need to be configurated to be valid ones. Now vegasfte can
-     receive remote credits, and all three in the family have valid
-     min-max bet value and payout.
-  - Removed the not working flag from vegasfte.
-  - Improved colors for Big Deal sets.
-  - Correct colors for Royal Vegas Joker Card sets.
-
-  - Added a second set of Jolly Card Professional.
-     Documented the code differences.
-  - Added another Royal Vegas Joker Card set, from Mile.
-     These sets aren't intended to work with coins. Only remote credits
-     are allowed. There are external modules that can manage up to 4
-     machines simultaneously, adding/removing/watching credits.
-  - Added default NVRAM to the above sets.
-  - Added proper inputs and DIP switches to vegasmil.
-  - Replaced the jolyc980 default NVRAM with one totally clean.
-     Temporal and total meters are cleared to zero.
-
-  [2010/04/18]
-  - Replaced the Fun World Quiz bad ROMs with good ones.
-  - Fixed the Fun World Quiz graphics and colors.
-  - Cleaned-up the flags for non working games.
-  - Modified the default lamps layout to include the bet lamp.
-  - Cleaned-up the Fun World Quiz inputs.
-  - Added 4 new Royal Card sets. Reworked parent/clone relationship.
-     (delete the old .cfg and .nv files to have them working properly).
-  - Splitted the Royal Card machine driver. This is needed to access
-     different halves of the bipolar PROM.
-  - Now principle Royal Card sets have a working bet button.
-  - Added default NVRAM to the new sets.
-
-  [2011/04/04]
-  - Added 'Witch Royal' from Video Klein. Seems a hybrid game
-     from Witch Card and Royal Card...
-  - Reworked the button-lamps layout to get the hold buttons
-     more centered.
-
-  [2011/10/20]
-  - Added 'Novo Play Multi Card / Club Card' from Admiral/Novomatic.
-     Seems a derivated game from Royal Vegas...
-  - Added proper button-lamps support and layout.
-  - Added default NVRAM, necessary to boot.
-  - Added technical notes.
-
-  [2012/10/11]
-  - Added 'Mega Card (Ver 0263, encrypted)' from Fun World.
-  - Added PCB layout.
-  - GFX are properly decoded.
-
-  [2012/10/27-29]
-  - Added 'Bonus Card (Austrian)' from Fun World.
-  - Added PCB layouts.
-  - Set Big Deal sets and Jolly Card hybrid as clones
-     of Bonus Card.
-  - Cleaned up the code.
-  - Changed company name 'Funworld' to 'Fun World'.
-  - Changed Mega Card to Power Card after check the real hardware running.
-  - Fixed Power Card graphics ROM load..
-  - Moved jolycdat program to Bonus Card, making it parent.
-     This program is a real original Bonus Card program, and the PCB
-     was populated with Jolly Card graphics wrongly. The other Bonus Card set
-     was turned as clone, since has a fake copyright string (hack).
-  - Renamed the internal layout artwork: bigdeal --> bonuscrd.
-  - Default Bonus Card & Big Deal DIP switches positions, that
-    allow boot the system without errors.
-  - Added new Yugoslavian set of Magic Card 2 (Nov/New).
-  - Added default NVRAM, needed to boot properly.
-  - Rearrange the whole Magic Card 2 sets, and improved descriptions.
-  - Added technical notes.
-
-  [2012/11/08-09]
-  - New Pool 10 set, from a Dino 4 encrypted hardware.
-  - Added PCB layout and technical notes.
-  - Decrypted the program data & address.
-  - Decrypted the graphics ROMs address.
-  - Added a default NVRAM.
-  - Added button-lamps layout.
-  - Promoted to working state.
-  - Improved the PCB layout.
-  - Added some technical notes.
-  - Added PLD dumps to bonuscrd and powercrd.
-
-  [2012/11/14]
-  - Added a Jolly Card spanish set from an unknown encrypted
-     PCB 'alla TAB blue board. Graphics are decrypted.
-  - Decrypted the program ROM.
-  - Added button-lamps layout.
-  - Added a default NVRAM.
-  - Promoted to working state.
-
-  [2013/01/15]
-  - Added a Jolly Card (Italian) set from an encrypted blue TAB
-     bootleg board. This one allows to play in both 'remote' and
-    'normal' mode. The game could pay through regular hopper, or
-     through manual switch/button, discharging the credits one
-     by one.
-
-  [2013/04/09]
-  - Added default NVRAM to magicrd2b, magicrd2c and royalcrdp,
-     allowing to boot them. Promoted to working state.
-  - Removed the 'hack' in the Magic Card 2 sets description...
-     Almost all the sets on this driver were hacked in different
-     degrees. Not proof that these were released as originals,
-     or just a hack.
-
-  [2013/12/25]
-  - Added default NVRAM to mongolnw and soccernw, allowing boot them.
-     Both games are promoted to working state, but flagged as 'game
-     unemulated protection' due to the lack of MCU emulation.
-
-  [2014/01/23]
-  - Added unknown encrypted Royal Card. This game is running on Dino 4
-     encrypted hardware, with a CPU+PLCC daughterboard.
-  - Decrypted program address + data, but code still jumps into $48xx
-     range where there's no valid code.
-  - Decoded and partially decrypted the graphics set.
-
-  [2014/02/05]
-  - Rcdino4: Fully decrypted the graphics set.
-  - Added technical notes...
-
-  [2014/02/10]
-  - Added China Town. Running in Dino4 encrypted hardware.
-  - Fully decrypted program and graphics set.
-  - Worked out the extra protection.
-  - Added button-lamps support + layout.
-  - Added technical notes...
-
-  [2014/02/16]
-  - Added Luna Park (set 1, dual program). Running in modified
-     CMC hardware, with video RAM 4000-4FFF mirrored in 6000-6FFF
-     and color RAM 5000-5FFF mirrored in 7000-7FFF.
-     This game has the highest address line of the program tied to
-     DIP switch #1, so you can select between 2 different programs.
-     Both programs write to videoram either to each video RAM ranges.
-  - Added proper program ROM banking and connected to DIP switch #1.
-  - Added Luna Park (set 2). This one writes to normal CMC video RAM.
-  - Added Crystal Colours (CMC hardware).
-  - Added default NVRAM to Crystal Colours (CMC hardware), allowing
-     to boot with clean meters/settings.
-  - Cleaned-up the machine drivers.
-  - Derived clocks via #define.
-  - Added technical notes.
-
-  [2014/02/26]
-  - Added Jolly Card (Italian, different colors, set 1).
-    This set is running in a modified hardware with a big CPLD.
-  - Added Jolly Card (Italian, different colors, set 2).
-  - Added Royal Card (Austrian, set 7).
-    These are running in bootleg hardware.
-  - Added technical notes.
-
-  [2014/03/09]
-  - Added Royal Card (French).
-    This set is original, but running in a bootleg board.
-  - Added a default NVRAM to get the game working.
-  - Added technical notes.
-
-  [2014/05/08]
-  - Rcdino4: Fully decrypted the code set.
-  - Corrected technical notes...
-
 
   *** TO DO ***
 
-  - Figure out the royalcdc, jokercrd, multiwin and powercrd encryption.
   - Figure out the remaining PIA connections for almost all games.
-  - Fix Saloon and move it to its own driver.
   - Reverse-engineering the boot code of Jolly Card Professional 2.0,
      and Royal Card Professional 2.0 to get the proper codes to boot.
   - Analyze the unknown writes to $2000/$4000 in some games.
@@ -983,11 +644,6 @@
 
 ****************************************************************************************/
 
-#define MASTER_CLOCK    XTAL_16MHz
-#define CPU_CLOCK      (MASTER_CLOCK/8)
-#define SND_CLOCK      (MASTER_CLOCK/8)
-#define CRTC_CLOCK     (MASTER_CLOCK/8)
-
 #include "emu.h"
 #include "includes/funworld.h"
 
@@ -995,8 +651,6 @@
 #include "cpu/m6502/r65c02.h"
 #include "machine/6821pia.h"
 #include "machine/nvram.h"
-#include "sound/ay8910.h"
-#include "video/mc6845.h"
 #include "screen.h"
 #include "speaker.h"
 
@@ -1006,11 +660,17 @@
 #include "royalcrd.lh"
 
 
+#define MASTER_CLOCK    XTAL(16'000'000)
+#define CPU_CLOCK      (MASTER_CLOCK/8)
+#define SND_CLOCK      (MASTER_CLOCK/8)
+#define CRTC_CLOCK     (MASTER_CLOCK/8)
+
+
 /**********************
 * Read/Write Handlers *
 **********************/
 
-WRITE8_MEMBER(funworld_state::funworld_lamp_a_w)
+void funworld_state::funworld_lamp_a_w(uint8_t data)
 {
 /*  - bits -
     7654 3210
@@ -1023,22 +683,22 @@ WRITE8_MEMBER(funworld_state::funworld_lamp_a_w)
     -x-- ----   Hopper Motor (inverted).
     x--- ----   HOLD4 lamp.
 */
-	output().set_lamp_value(0, 1-((data >> 1) & 1));  /* Hold1 (inverted) */
-	output().set_lamp_value(2, 1-((data >> 1) & 1));  /* Hold3 (inverted, see pinouts) */
+	m_lamps[0] = BIT(~data, 1); // Hold1 (inverted)
+	m_lamps[2] = BIT(~data, 1); // Hold3 (inverted, see pinouts)
 
-	output().set_lamp_value(1, 1-((data >> 3) & 1));  /* Hold2 / Low (inverted) */
-	output().set_lamp_value(3, (data >> 7) & 1);      /* Hold4 / High */
-	output().set_lamp_value(5, 1-((data >> 5) & 1));  /* Cancel / Collect (inverted) */
+	m_lamps[1] = BIT(~data, 3); // Hold2 / Low (inverted)
+	m_lamps[3] = BIT(data, 7);  // Hold4 / High
+	m_lamps[5] = BIT(~data, 5); // Cancel / Collect (inverted)
 
-	machine().bookkeeping().coin_counter_w(0, data & 0x01);  /* Credit In counter */
-	machine().bookkeeping().coin_counter_w(7, data & 0x04);  /* Credit Out counter, mapped as coin 8 */
+	machine().bookkeeping().coin_counter_w(0, data & 0x01); // Credit In counter
+	machine().bookkeeping().coin_counter_w(7, data & 0x04); // Credit Out counter, mapped as coin 8
 
-	output().set_lamp_value(7, 1-((data >> 6) & 1));      /* Hopper Motor (inverted) */
+	m_lamps[7] = BIT(~data, 6);     // Hopper Motor (inverted)
 
 //  popmessage("Lamps A: %02X", (data ^ 0xff));
 }
 
-WRITE8_MEMBER(funworld_state::funworld_lamp_b_w)
+void funworld_state::funworld_lamp_b_w(uint8_t data)
 {
 /*  - bits -
     7654 3210
@@ -1047,17 +707,17 @@ WRITE8_MEMBER(funworld_state::funworld_lamp_b_w)
     ---- -x--   Unknown (inverted).
     xxxx x---   Unknown.
 */
-	output().set_lamp_value(4, (data >> 0) & 1);      /* Hold5 / Bet */
-	output().set_lamp_value(6, (data >> 1) & 1);      /* Start / Deal / Draw */
+	m_lamps[4] = BIT(data, 0);  // Hold5 / Bet
+	m_lamps[6] = BIT(data, 1);  // Start / Deal / Draw
 
 //  popmessage("Lamps B: %02X", data);
 }
 
 WRITE_LINE_MEMBER(funworld_state::pia1_ca2_w)
 {
-/* TAB and Impera games are writing 0x01 constantly, and 0x00 with each screen change.
-   This line is tied to sort of reset circuitery.
-*/
+// TAB and Impera games are writing 0x01 constantly, and 0x00 with each screen change.
+// This line is tied to some sort of reset circuitery.
+
 //  popmessage("PIA1 CA2: %02X", state);
 }
 
@@ -1066,24 +726,25 @@ WRITE_LINE_MEMBER(funworld_state::pia1_ca2_w)
 * Memory map information *
 *************************/
 
-static ADDRESS_MAP_START( funworld_map, AS_PROGRAM, 8, funworld_state )
-	AM_RANGE(0x0000, 0x07ff) AM_RAM AM_SHARE("nvram")
-	AM_RANGE(0x0800, 0x0803) AM_DEVREADWRITE("pia0", pia6821_device, read, write)
-	AM_RANGE(0x0a00, 0x0a03) AM_DEVREADWRITE("pia1", pia6821_device, read, write)
-	AM_RANGE(0x0c00, 0x0c00) AM_DEVREAD("ay8910", ay8910_device, data_r)
-	AM_RANGE(0x0c00, 0x0c01) AM_DEVWRITE("ay8910", ay8910_device, address_data_w)
-	AM_RANGE(0x0e00, 0x0e00) AM_DEVWRITE("crtc", mc6845_device, address_w)
-	AM_RANGE(0x0e01, 0x0e01) AM_DEVREADWRITE("crtc", mc6845_device, register_r, register_w)
-	AM_RANGE(0x2000, 0x2fff) AM_RAM_WRITE(funworld_videoram_w) AM_SHARE("videoram")
-	AM_RANGE(0x3000, 0x3fff) AM_RAM_WRITE(funworld_colorram_w) AM_SHARE("colorram")
-	AM_RANGE(0x4000, 0x4000) AM_READNOP
-	AM_RANGE(0x8000, 0xbfff) AM_ROM
-	AM_RANGE(0xc000, 0xffff) AM_ROM
-ADDRESS_MAP_END
+void funworld_state::funworld_map(address_map &map)
+{
+	map(0x0000, 0x07ff).ram().share("nvram");
+	map(0x0800, 0x0803).rw("pia0", FUNC(pia6821_device::read), FUNC(pia6821_device::write));
+	map(0x0a00, 0x0a03).rw("pia1", FUNC(pia6821_device::read), FUNC(pia6821_device::write));
+	map(0x0c00, 0x0c00).r("ay8910", FUNC(ay8910_device::data_r));
+	map(0x0c00, 0x0c01).w("ay8910", FUNC(ay8910_device::address_data_w));
+	map(0x0e00, 0x0e00).w("crtc", FUNC(mc6845_device::address_w));
+	map(0x0e01, 0x0e01).rw("crtc", FUNC(mc6845_device::register_r), FUNC(mc6845_device::register_w));
+	map(0x2000, 0x2fff).ram().w(FUNC(funworld_state::funworld_videoram_w)).share("videoram");
+	map(0x3000, 0x3fff).ram().w(FUNC(funworld_state::funworld_colorram_w)).share("colorram");
+	map(0x4000, 0x7fff).rom();
+	map(0x8000, 0xbfff).rom();
+	map(0xc000, 0xffff).rom();
+}
 
 static uint8_t funquiz_question_bank = 0x80;
 
-READ8_MEMBER(funworld_state::questions_r)
+uint8_t funworld_state::questions_r(offs_t offset)
 {
 	uint8_t* quiz = memregion("questions")->base();
 	int extraoffset = ((funquiz_question_bank & 0x1f) * 0x8000);
@@ -1094,120 +755,128 @@ READ8_MEMBER(funworld_state::questions_r)
 	return quiz[offset + extraoffset];
 }
 
-WRITE8_MEMBER(funworld_state::question_bank_w)
+void funworld_state::question_bank_w(uint8_t data)
 {
 //  printf("question bank write %02x\n", data);
 	funquiz_question_bank = data;
 }
 
-static ADDRESS_MAP_START( funquiz_map, AS_PROGRAM, 8, funworld_state )
-	AM_RANGE(0x0000, 0x07ff) AM_RAM AM_SHARE("nvram")
-	AM_RANGE(0x0800, 0x0803) AM_DEVREADWRITE("pia0", pia6821_device, read, write)
-	AM_RANGE(0x0a00, 0x0a03) AM_DEVREADWRITE("pia1", pia6821_device, read, write)
-	AM_RANGE(0x0c00, 0x0c00) AM_DEVREAD("ay8910", ay8910_device, data_r)
-	AM_RANGE(0x0c00, 0x0c01) AM_DEVWRITE("ay8910", ay8910_device, address_data_w)
-	AM_RANGE(0x0e00, 0x0e00) AM_DEVWRITE("crtc", mc6845_device, address_w)
-	AM_RANGE(0x0e01, 0x0e01) AM_DEVREADWRITE("crtc", mc6845_device, register_r, register_w)
-
-	AM_RANGE(0x1800, 0x1800) AM_WRITE(question_bank_w)
-
-	AM_RANGE(0x2000, 0x2fff) AM_RAM_WRITE(funworld_videoram_w) AM_SHARE("videoram")
-	AM_RANGE(0x3000, 0x3fff) AM_RAM_WRITE(funworld_colorram_w) AM_SHARE("colorram")
-	AM_RANGE(0x4000, 0x7fff) AM_READ(questions_r)
-
-	AM_RANGE(0xc000, 0xffff) AM_ROM
-ADDRESS_MAP_END
-
-static ADDRESS_MAP_START( magicrd2_map, AS_PROGRAM, 8, funworld_state )
-	AM_RANGE(0x0000, 0x07ff) AM_RAM AM_SHARE("nvram")
-	AM_RANGE(0x0800, 0x0803) AM_DEVREADWRITE("pia0", pia6821_device, read, write)
-	AM_RANGE(0x0a00, 0x0a03) AM_DEVREADWRITE("pia1", pia6821_device, read, write)
-	AM_RANGE(0x0c00, 0x0c00) AM_DEVREAD("ay8910", ay8910_device, data_r)
-	AM_RANGE(0x0c00, 0x0c01) AM_DEVWRITE("ay8910", ay8910_device, address_data_w)
-	AM_RANGE(0x0e00, 0x0e00) AM_DEVWRITE("crtc", mc6845_device, address_w)
-	AM_RANGE(0x0e01, 0x0e01) AM_DEVREADWRITE("crtc", mc6845_device, register_r, register_w)
-	AM_RANGE(0x2c00, 0x2cff) AM_RAM /* range for protection */
-	AM_RANGE(0x3600, 0x36ff) AM_RAM /* some games use $3603-05 range for protection */
-	AM_RANGE(0x3c00, 0x3cff) AM_RAM /* range for protection */
-	AM_RANGE(0x4000, 0x4fff) AM_RAM_WRITE(funworld_videoram_w) AM_SHARE("videoram")
-	AM_RANGE(0x5000, 0x5fff) AM_RAM_WRITE(funworld_colorram_w) AM_SHARE("colorram")
-	AM_RANGE(0x6000, 0xffff) AM_ROM
-ADDRESS_MAP_END
-
-static ADDRESS_MAP_START( cuoreuno_map, AS_PROGRAM, 8, funworld_state )
-	AM_RANGE(0x0000, 0x07ff) AM_RAM AM_SHARE("nvram")
-	AM_RANGE(0x0800, 0x0803) AM_DEVREADWRITE("pia0", pia6821_device, read, write)
-	AM_RANGE(0x0a00, 0x0a03) AM_DEVREADWRITE("pia1", pia6821_device, read, write)
-	AM_RANGE(0x0c00, 0x0c00) AM_DEVREAD("ay8910", ay8910_device, data_r)
-	AM_RANGE(0x0c00, 0x0c01) AM_DEVWRITE("ay8910", ay8910_device, address_data_w)
-	AM_RANGE(0x0e00, 0x0e00) AM_DEVWRITE("crtc", mc6845_device, address_w)
-	AM_RANGE(0x0e01, 0x0e01) AM_DEVREADWRITE("crtc", mc6845_device, register_r, register_w)
-	AM_RANGE(0x2000, 0x2000) AM_READNOP /* some unknown reads */
-	AM_RANGE(0x3e00, 0x3fff) AM_RAM /* some games use $3e03-05 range for protection */
-	AM_RANGE(0x4000, 0x5fff) AM_ROM /* used by rcdino4 (dino4 hw ) */
-	AM_RANGE(0x6000, 0x6fff) AM_RAM_WRITE(funworld_videoram_w) AM_SHARE("videoram")
-	AM_RANGE(0x7000, 0x7fff) AM_RAM_WRITE(funworld_colorram_w) AM_SHARE("colorram")
-	AM_RANGE(0x8000, 0xffff) AM_ROM
-ADDRESS_MAP_END
-
-
-READ8_MEMBER(funworld_state::chinatow_r_32f0)
+void funworld_state::funquiz_map(address_map &map)
 {
-	logerror("read from 0x32f0 at offset %02X\n",offset);
+	map(0x0000, 0x07ff).ram().share("nvram");
+	map(0x0800, 0x0803).rw("pia0", FUNC(pia6821_device::read), FUNC(pia6821_device::write));
+	map(0x0a00, 0x0a03).rw("pia1", FUNC(pia6821_device::read), FUNC(pia6821_device::write));
+	map(0x0c00, 0x0c00).r("ay8910", FUNC(ay8910_device::data_r));
+	map(0x0c00, 0x0c01).w("ay8910", FUNC(ay8910_device::address_data_w));
+	map(0x0e00, 0x0e00).w("crtc", FUNC(mc6845_device::address_w));
+	map(0x0e01, 0x0e01).rw("crtc", FUNC(mc6845_device::register_r), FUNC(mc6845_device::register_w));
+
+	map(0x1800, 0x1800).w(FUNC(funworld_state::question_bank_w));
+
+	map(0x2000, 0x2fff).ram().w(FUNC(funworld_state::funworld_videoram_w)).share("videoram");
+	map(0x3000, 0x3fff).ram().w(FUNC(funworld_state::funworld_colorram_w)).share("colorram");
+	map(0x4000, 0x7fff).r(FUNC(funworld_state::questions_r));
+
+	map(0xc000, 0xffff).rom();
+}
+
+void funworld_state::magicrd2_map(address_map &map)
+{
+	map(0x0000, 0x07ff).ram().share("nvram");
+	map(0x0800, 0x0803).rw("pia0", FUNC(pia6821_device::read), FUNC(pia6821_device::write));
+	map(0x0a00, 0x0a03).rw("pia1", FUNC(pia6821_device::read), FUNC(pia6821_device::write));
+	map(0x0c00, 0x0c00).r("ay8910", FUNC(ay8910_device::data_r));
+	map(0x0c00, 0x0c01).w("ay8910", FUNC(ay8910_device::address_data_w));
+	map(0x0e00, 0x0e00).w("crtc", FUNC(mc6845_device::address_w));
+	map(0x0e01, 0x0e01).rw("crtc", FUNC(mc6845_device::register_r), FUNC(mc6845_device::register_w));
+	map(0x2c00, 0x2cff).ram();  // range for protection
+	map(0x3600, 0x36ff).ram();  // some games use $3603-05 range for protection
+	map(0x3c00, 0x3cff).ram();  // range for protection
+	map(0x4000, 0x4fff).ram().w(FUNC(funworld_state::funworld_videoram_w)).share("videoram");
+	map(0x5000, 0x5fff).ram().w(FUNC(funworld_state::funworld_colorram_w)).share("colorram");
+	map(0x6000, 0xffff).rom();
+}
+
+void funworld_state::cuoreuno_map(address_map &map)
+{
+	map(0x0000, 0x07ff).ram().share("nvram");
+	map(0x0800, 0x0803).rw("pia0", FUNC(pia6821_device::read), FUNC(pia6821_device::write));
+	map(0x0a00, 0x0a03).rw("pia1", FUNC(pia6821_device::read), FUNC(pia6821_device::write));
+	map(0x0c00, 0x0c00).r("ay8910", FUNC(ay8910_device::data_r));
+	map(0x0c00, 0x0c01).w("ay8910", FUNC(ay8910_device::address_data_w));
+	map(0x0e00, 0x0e00).w("crtc", FUNC(mc6845_device::address_w));
+	map(0x0e01, 0x0e01).rw("crtc", FUNC(mc6845_device::register_r), FUNC(mc6845_device::register_w));
+	map(0x2000, 0x2000).nopr(); // some unknown reads
+	map(0x3e00, 0x3fff).ram();  // some games use $3e03-05 range for protection
+	map(0x4000, 0x5fff).rom();  // used by rcdino4 (dino4 hw )
+	map(0x6000, 0x6fff).ram().w(FUNC(funworld_state::funworld_videoram_w)).share("videoram");
+	map(0x7000, 0x7fff).ram().w(FUNC(funworld_state::funworld_colorram_w)).share("colorram");
+	map(0x8000, 0xffff).rom();
+}
+
+
+uint8_t chinatow_state::chinatow_r_32f0(offs_t offset)
+{
+	logerror("read from 0x32f0 at offset %02X\n", offset);
 	switch (offset)
 	{
 	case 0: return 0xfe;
-
 	}
 	return 0xff;
 }
 
-static ADDRESS_MAP_START( chinatow_map, AS_PROGRAM, 8, funworld_state )
-	AM_RANGE(0x0000, 0x07ff) AM_RAM AM_SHARE("nvram")
-	AM_RANGE(0x0800, 0x0803) AM_DEVREADWRITE("pia0", pia6821_device, read, write)
-	AM_RANGE(0x0a00, 0x0a03) AM_DEVREADWRITE("pia1", pia6821_device, read, write)
-	AM_RANGE(0x0c00, 0x0c00) AM_DEVREAD("ay8910", ay8910_device, data_r)
-	AM_RANGE(0x0c00, 0x0c01) AM_DEVWRITE("ay8910", ay8910_device, address_data_w)
-	AM_RANGE(0x0e00, 0x0e00) AM_DEVWRITE("crtc", mc6845_device, address_w)
-	AM_RANGE(0x0e01, 0x0e01) AM_DEVREADWRITE("crtc", mc6845_device, register_r, register_w)
-	AM_RANGE(0x2000, 0x2000) AM_READNOP /* some unknown reads */
-	AM_RANGE(0x32f0, 0x32ff) AM_READ(chinatow_r_32f0)
-	AM_RANGE(0x4000, 0x5fff) AM_ROM /* used by rcdino4 (dino4 hw ) */
-	AM_RANGE(0x6000, 0x6fff) AM_RAM_WRITE(funworld_videoram_w) AM_SHARE("videoram")
-	AM_RANGE(0x7000, 0x7fff) AM_RAM_WRITE(funworld_colorram_w) AM_SHARE("colorram")
-	AM_RANGE(0x8000, 0xffff) AM_ROM
-ADDRESS_MAP_END
+void chinatow_state::chinatow_map(address_map &map)
+{
+	map(0x0000, 0x07ff).ram().share("nvram");
+	map(0x0800, 0x0803).rw("pia0", FUNC(pia6821_device::read), FUNC(pia6821_device::write));
+	map(0x0a00, 0x0a03).rw("pia1", FUNC(pia6821_device::read), FUNC(pia6821_device::write));
+	map(0x0c00, 0x0c00).r("ay8910", FUNC(ay8910_device::data_r));
+	map(0x0c00, 0x0c01).w("ay8910", FUNC(ay8910_device::address_data_w));
+	map(0x0e00, 0x0e00).w("crtc", FUNC(mc6845_device::address_w));
+	map(0x0e01, 0x0e01).rw("crtc", FUNC(mc6845_device::register_r), FUNC(mc6845_device::register_w));
+	map(0x2000, 0x2000).nopr(); // some unknown reads
+	map(0x32f0, 0x32ff).r(FUNC(chinatow_state::chinatow_r_32f0));
+	map(0x4000, 0x5fff).rom(); // used by rcdino4 (dino4 hw)
+	map(0x6000, 0x6fff).ram().w(FUNC(chinatow_state::funworld_videoram_w)).share("videoram");
+	map(0x7000, 0x7fff).ram().w(FUNC(chinatow_state::funworld_colorram_w)).share("colorram");
+	map(0x8000, 0xffff).rom();
+}
 
-static ADDRESS_MAP_START( lunapark_map, AS_PROGRAM, 8, funworld_state ) // mirrored video RAM 4000/5000 to 6000/7000
-	AM_RANGE(0x0000, 0x07ff) AM_RAM AM_SHARE("nvram")
-	AM_RANGE(0x0800, 0x0803) AM_DEVREADWRITE("pia0", pia6821_device, read, write)
-	AM_RANGE(0x0a00, 0x0a03) AM_DEVREADWRITE("pia1", pia6821_device, read, write)
-	AM_RANGE(0x0c00, 0x0c00) AM_DEVREAD("ay8910", ay8910_device, data_r)
-	AM_RANGE(0x0c00, 0x0c01) AM_DEVWRITE("ay8910", ay8910_device, address_data_w)
-	AM_RANGE(0x0e00, 0x0e00) AM_DEVWRITE("crtc", mc6845_device, address_w)
-	AM_RANGE(0x0e01, 0x0e01) AM_DEVREADWRITE("crtc", mc6845_device, register_r, register_w)
-	AM_RANGE(0x4000, 0x4fff) AM_RAM_WRITE(funworld_videoram_w) AM_SHARE("videoram") AM_MIRROR(0x2000)
-	AM_RANGE(0x5000, 0x5fff) AM_RAM_WRITE(funworld_colorram_w) AM_SHARE("colorram") AM_MIRROR(0x2000)
-	AM_RANGE(0x8000, 0xffff) AM_ROMBANK("bank1")
-ADDRESS_MAP_END
+void lunapark_state::lunapark_map(address_map &map)
+{ // mirrored video RAM 4000/5000 to 6000/7000
+	map(0x0000, 0x07ff).ram().share("nvram");
+	map(0x0800, 0x0803).rw("pia0", FUNC(pia6821_device::read), FUNC(pia6821_device::write));
+	map(0x0a00, 0x0a03).rw("pia1", FUNC(pia6821_device::read), FUNC(pia6821_device::write));
+	map(0x0c00, 0x0c00).r("ay8910", FUNC(ay8910_device::data_r));
+	map(0x0c00, 0x0c01).w("ay8910", FUNC(ay8910_device::address_data_w));
+	map(0x0e00, 0x0e00).w("crtc", FUNC(mc6845_device::address_w));
+	map(0x0e01, 0x0e01).rw("crtc", FUNC(mc6845_device::register_r), FUNC(mc6845_device::register_w));
+	map(0x4000, 0x4fff).ram().w(FUNC(lunapark_state::funworld_videoram_w)).share("videoram").mirror(0x2000);
+	map(0x5000, 0x5fff).ram().w(FUNC(lunapark_state::funworld_colorram_w)).share("colorram").mirror(0x2000);
+	map(0x8000, 0xffff).bankr("bank1");
+}
 
-static ADDRESS_MAP_START( saloon_map, AS_PROGRAM, 8, funworld_state )
-	AM_RANGE(0x0000, 0x07ff) AM_RAM AM_SHARE("nvram")
-	AM_RANGE(0x0800, 0x0800) AM_READ_PORT("IN0")
-	AM_RANGE(0x0808, 0x0808) AM_READ_PORT("IN3") // maybe
-	AM_RANGE(0x0802, 0x0802) AM_READ_PORT("IN4") // maybe
-	AM_RANGE(0x0a01, 0x0a01) AM_READ_PORT("IN1")
-	AM_RANGE(0x081c, 0x081c) AM_DEVWRITE("crtc", mc6845_device, address_w)
-	AM_RANGE(0x081d, 0x081d) AM_DEVREADWRITE("crtc", mc6845_device, register_r, register_w)
-	AM_RANGE(0x1000, 0x1000) AM_READ_PORT("IN2")
-	AM_RANGE(0x1800, 0x1800) AM_DEVREAD("ay8910", ay8910_device, data_r)
-	AM_RANGE(0x1800, 0x1801) AM_DEVWRITE("ay8910", ay8910_device, address_data_w)
-//  AM_RANGE(0x2000, 0x2000) AM_READNOP /* some unknown reads... maybe a DSW */
-	AM_RANGE(0x6000, 0x6fff) AM_RAM_WRITE(funworld_videoram_w) AM_SHARE("videoram")
-	AM_RANGE(0x7000, 0x7fff) AM_RAM_WRITE(funworld_colorram_w) AM_SHARE("colorram")
-	AM_RANGE(0x8000, 0xffff) AM_ROM
-ADDRESS_MAP_END
-
+void funworld_state::saloon_map(address_map &map)
+{
+	map(0x0000, 0x07ff).ram().share("nvram");
+	map(0x0800, 0x0800).portr("IN0");
+	map(0x0801, 0x0801).portr("IN1");
+	map(0x0802, 0x0802).portr("IN2"); // maybe
+	map(0x0808, 0x0808).portr("IN3"); // maybe
+	map(0x0810, 0x0810).nopw();
+	map(0x0a00, 0x0a00).portr("IN4");
+	map(0x0a01, 0x0a01).portr("IN5");
+	map(0x081b, 0x081b).portw("I2C_CK");
+	map(0x081c, 0x081c).w("crtc", FUNC(mc6845_device::address_w));
+	map(0x081d, 0x081d).rw("crtc", FUNC(mc6845_device::register_r), FUNC(mc6845_device::register_w));
+	map(0x1000, 0x1000).portr("I2C_DI").portw("I2C_DO");
+	map(0x1800, 0x1800).r("ay8910", FUNC(ay8910_device::data_r));
+	map(0x1800, 0x1801).w("ay8910", FUNC(ay8910_device::address_data_w));
+	map(0x2000, 0x2003).nopr();  // check for extra ROM in $2000. if exist just jump to $2100
+	map(0x6000, 0x6fff).ram().w(FUNC(funworld_state::funworld_videoram_w)).share("videoram");
+	map(0x7000, 0x7fff).ram().w(FUNC(funworld_state::funworld_colorram_w)).share("colorram");
+	map(0x8000, 0xffff).rom();
+}
 /*
     Unknown R/W
     -----------
@@ -1221,47 +890,123 @@ ADDRESS_MAP_END
 
 */
 
-static ADDRESS_MAP_START( witchryl_map, AS_PROGRAM, 8, funworld_state )
-	AM_RANGE(0x0000, 0x07ff) AM_RAM AM_SHARE("nvram")
-	AM_RANGE(0x0800, 0x0803) AM_DEVREADWRITE("pia0", pia6821_device, read, write)
-	AM_RANGE(0x0a00, 0x0a03) AM_DEVREADWRITE("pia1", pia6821_device, read, write)
-	AM_RANGE(0x0c00, 0x0c00) AM_DEVREAD("ay8910", ay8910_device, data_r)
-	AM_RANGE(0x0c00, 0x0c01) AM_DEVWRITE("ay8910", ay8910_device, address_data_w)
-	AM_RANGE(0x0e00, 0x0e00) AM_DEVWRITE("crtc", mc6845_device, address_w)
-	AM_RANGE(0x0e01, 0x0e01) AM_DEVREADWRITE("crtc", mc6845_device, register_r, register_w)
-	AM_RANGE(0x4000, 0x4fff) AM_RAM_WRITE(funworld_videoram_w) AM_SHARE("videoram")
-	AM_RANGE(0x5000, 0x5fff) AM_RAM_WRITE(funworld_colorram_w) AM_SHARE("colorram")
-	AM_RANGE(0x6000, 0x6000) AM_READ_PORT("DSW2")
-	AM_RANGE(0x8000, 0xffff) AM_ROM
-ADDRESS_MAP_END
+void funworld_state::witchryl_map(address_map &map)
+{
+	map(0x0000, 0x07ff).ram().share("nvram");
+	map(0x0800, 0x0803).rw("pia0", FUNC(pia6821_device::read), FUNC(pia6821_device::write));
+	map(0x0a00, 0x0a03).rw("pia1", FUNC(pia6821_device::read), FUNC(pia6821_device::write));
+	map(0x0c00, 0x0c00).r("ay8910", FUNC(ay8910_device::data_r));
+	map(0x0c00, 0x0c01).w("ay8910", FUNC(ay8910_device::address_data_w));
+	map(0x0e00, 0x0e00).w("crtc", FUNC(mc6845_device::address_w));
+	map(0x0e01, 0x0e01).rw("crtc", FUNC(mc6845_device::register_r), FUNC(mc6845_device::register_w));
+	map(0x4000, 0x4fff).ram().w(FUNC(funworld_state::funworld_videoram_w)).share("videoram");
+	map(0x5000, 0x5fff).ram().w(FUNC(funworld_state::funworld_colorram_w)).share("colorram");
+	map(0x6000, 0x6000).portr("DSW2");
+	map(0x8000, 0xffff).rom();
+}
 
-static ADDRESS_MAP_START( intergames_map, AS_PROGRAM, 8, funworld_state )
-	AM_RANGE(0x0000, 0x07ff) AM_RAM AM_SHARE("nvram")
-	AM_RANGE(0x0c00, 0x0c00) AM_DEVREAD("ay8910", ay8910_device, data_r)           // WRONG. just a placeholder...
-	AM_RANGE(0x0c00, 0x0c01) AM_DEVWRITE("ay8910", ay8910_device, address_data_w)  // WRONG. just a placeholder...
-	AM_RANGE(0x2000, 0x2fff) AM_RAM_WRITE(funworld_videoram_w) AM_SHARE("videoram")
-	AM_RANGE(0x3000, 0x3000) AM_DEVWRITE("crtc", mc6845_device, address_w)
-	AM_RANGE(0x3001, 0x3001) AM_DEVREADWRITE("crtc", mc6845_device, register_r, register_w)
-	AM_RANGE(0x3400, 0x3403) AM_DEVREADWRITE("pia0", pia6821_device, read, write)  // the bookkeeping mode requests a byte from $3400 to advance pages...
-	AM_RANGE(0x3800, 0x3803) AM_DEVREADWRITE("pia1", pia6821_device, read, write)  // WRONG. just a placeholder...
-	AM_RANGE(0x7000, 0x7fff) AM_RAM_WRITE(funworld_colorram_w) AM_SHARE("colorram")
-	AM_RANGE(0x8000, 0xffff) AM_ROM
-ADDRESS_MAP_END
+uint8_t intergames_state::crtc_or_psg_r(offs_t offset)
+{
+	if (m_crtc_selected)
+		return m_crtc->register_r();
+	else
+		return m_ay8910->data_r(); // read back from both $3000 and $3001!
+}
 
-static ADDRESS_MAP_START( fw_a7_11_map, AS_PROGRAM, 8, funworld_state )
-	AM_RANGE(0x0000, 0x07ff) AM_RAM AM_SHARE("nvram")
-	AM_RANGE(0x0800, 0x0803) AM_DEVREADWRITE("pia0", pia6821_device, read, write)
-	AM_RANGE(0x0a00, 0x0a03) AM_DEVREADWRITE("pia1", pia6821_device, read, write)
-	AM_RANGE(0x0c00, 0x0c00) AM_DEVREAD("ay8910", ay8910_device, data_r)
-	AM_RANGE(0x0c00, 0x0c01) AM_DEVWRITE("ay8910", ay8910_device, address_data_w)
-	AM_RANGE(0x0e00, 0x0e00) AM_DEVWRITE("crtc", mc6845_device, address_w)
-	AM_RANGE(0x0e01, 0x0e01) AM_DEVREADWRITE("crtc", mc6845_device, register_r, register_w)
-	AM_RANGE(0x2000, 0x2fff) AM_RAM_WRITE(funworld_videoram_w) AM_SHARE("videoram")
-	AM_RANGE(0x3000, 0x3fff) AM_RAM_WRITE(funworld_colorram_w) AM_SHARE("colorram")
-	AM_RANGE(0x4000, 0x4000) AM_READNOP
-	AM_RANGE(0x8000, 0xbfff) AM_RAM
-	AM_RANGE(0xc000, 0xffff) AM_ROM
-ADDRESS_MAP_END
+void intergames_state::crtc_or_psg_w(offs_t offset, uint8_t data)
+{
+	if (!m_crtc_selected)
+		m_ay8910->address_data_w(offset, data);
+	else if (BIT(offset, 0))
+		m_crtc->register_w(data);
+	else
+		m_crtc->address_w(data);
+}
+
+uint8_t intergames_state::prot_r(offs_t offset)
+{
+	if (!machine().side_effects_disabled())
+	{
+		if (offset == 0x99)
+			m_crtc_selected = false;
+		else
+			logerror("%s: Protection read from $%04X\n", machine().describe_context(), offset + 0x3600);
+	}
+
+	return 0xff;
+}
+
+void intergames_state::prot_w(offs_t offset, uint8_t data)
+{
+	logerror("%s: Writing $#%02X to $%04X\n", machine().describe_context(), data, offset + 0x3600);
+}
+
+void intergames_state::machine_reset()
+{
+	m_crtc_selected = true;
+}
+
+void intergames_state::intergames_map(address_map &map)
+{
+	map(0x0000, 0x0fff).ram().share("nvram");
+	map(0x2000, 0x2fff).ram().w(FUNC(intergames_state::funworld_videoram_w)).share("videoram");
+	map(0x3000, 0x3001).rw(FUNC(intergames_state::crtc_or_psg_r), FUNC(intergames_state::crtc_or_psg_w));
+	map(0x3200, 0x3203).rw("pia1", FUNC(pia6821_device::read), FUNC(pia6821_device::write));
+	map(0x3400, 0x3403).rw("pia0", FUNC(pia6821_device::read), FUNC(pia6821_device::write));
+	map(0x3600, 0x37ff).rw(FUNC(intergames_state::prot_r), FUNC(intergames_state::prot_w));
+	map(0x5000, 0x5fff).mirror(0x2000).ram().w(FUNC(intergames_state::funworld_colorram_w)).share("colorram");
+	map(0x8000, 0xdfff).rom();
+	map(0xe000, 0xefff).ram();
+	map(0xf000, 0xffff).rom();
+}
+
+void funworld_state::fw_brick_map(address_map &map)
+{
+	map(0x0000, 0x07ff).ram().share("nvram");
+	map(0x0800, 0x0803).rw("pia0", FUNC(pia6821_device::read), FUNC(pia6821_device::write));
+	map(0x0a00, 0x0a03).rw("pia1", FUNC(pia6821_device::read), FUNC(pia6821_device::write));
+	map(0x0c00, 0x0c00).r("ay8910", FUNC(ay8910_device::data_r));
+	map(0x0c00, 0x0c01).w("ay8910", FUNC(ay8910_device::address_data_w));
+	map(0x0e00, 0x0e00).w("crtc", FUNC(mc6845_device::address_w));
+	map(0x0e01, 0x0e01).rw("crtc", FUNC(mc6845_device::register_r), FUNC(mc6845_device::register_w));
+	map(0x2000, 0x2fff).ram().w(FUNC(funworld_state::funworld_videoram_w)).share("videoram");
+	map(0x3000, 0x3fff).ram().w(FUNC(funworld_state::funworld_colorram_w)).share("colorram");
+	map(0x4000, 0x7fff).nopr();    // check for the brick RAM programming ROM.
+	map(0x8000, 0xbfff).ram().share("nvram1");
+	map(0xc000, 0xffff).rom();
+}
+
+void royalcrdf_state::royalcrdf_map(address_map &map)
+{
+	map(0x0000, 0x07ff).ram().share("nvram");
+	map(0x0800, 0x0803).rw("pia0", FUNC(pia6821_device::read), FUNC(pia6821_device::write));
+	map(0x0a00, 0x0a03).rw("pia1", FUNC(pia6821_device::read), FUNC(pia6821_device::write));
+	map(0x0c00, 0x0c00).r("ay8910", FUNC(ay8910_device::data_r));
+	map(0x0c00, 0x0c01).w("ay8910", FUNC(ay8910_device::address_data_w));
+	map(0x0e00, 0x0e00).w("crtc", FUNC(mc6845_device::address_w));
+	map(0x0e01, 0x0e01).rw("crtc", FUNC(mc6845_device::register_r), FUNC(mc6845_device::register_w));
+	map(0x4000, 0x4fff).ram().w(FUNC(royalcrdf_state::funworld_videoram_w)).share("videoram");
+	map(0x5000, 0x5fff).ram().w(FUNC(royalcrdf_state::funworld_colorram_w)).share("colorram");
+	map(0x6000, 0x6003).rw("pia1", FUNC(pia6821_device::read), FUNC(pia6821_device::write));
+	map(0x6800, 0x6803).rw("pia0", FUNC(pia6821_device::read), FUNC(pia6821_device::write));
+	map(0x8000, 0xbfff).rom();
+	map(0xc000, 0xffff).rom();
+}
+
+
+void funworld_state::gratispk_map(address_map &map)
+{
+	map(0x0000, 0x07ff).ram().share("nvram");
+	map(0x0800, 0x0803).rw("pia0", FUNC(pia6821_device::read), FUNC(pia6821_device::write));
+	map(0x0a00, 0x0a03).rw("pia1", FUNC(pia6821_device::read), FUNC(pia6821_device::write));
+	map(0x0c00, 0x0c00).r("ay8910", FUNC(ay8910_device::data_r));
+	map(0x0c00, 0x0c01).w("ay8910", FUNC(ay8910_device::address_data_w));
+	map(0x0e00, 0x0e00).w("crtc", FUNC(mc6845_device::address_w));
+	map(0x0e01, 0x0e01).rw("crtc", FUNC(mc6845_device::register_r), FUNC(mc6845_device::register_w));
+	map(0x4000, 0x4fff).ram().w(FUNC(funworld_state::funworld_videoram_w)).share("videoram");
+	map(0x5000, 0x5fff).ram().w(FUNC(funworld_state::funworld_colorram_w)).share("colorram");
+	map(0x6000, 0xffff).rom();
+}
 
 
 /*************************
@@ -1316,18 +1061,19 @@ static INPUT_PORTS_START( funworld )
 	PORT_DIPSETTING(    0x00, "Dattl Insert" )
 	PORT_DIPSETTING(    0x10, "TAB Insert" )
 	PORT_DIPNAME( 0x20, 0x00, "Joker" )             PORT_DIPLOCATION("SW1:3")
-	PORT_DIPSETTING(    0x00, "With Joker" )        /* also enable Five of a Kind */
+	PORT_DIPSETTING(    0x00, "With Joker" )        // also enables Five of a Kind
 	PORT_DIPSETTING(    0x20, "Without Joker" )
 	PORT_DIPNAME( 0x40, 0x00, "Hold" )              PORT_DIPLOCATION("SW1:2")
 	PORT_DIPSETTING(    0x00, "Auto Hold" )
 	PORT_DIPSETTING(    0x40, "No Auto Hold" )
 
-	/* after nvram init, set the following one to 'manual'
-	to allow the remote credits mode to work */
+//  after nvram init, set the following one to 'manual'
+//  to allow the remote credits mode to work
 	PORT_DIPNAME( 0x80, 0x80, "Payout" )            PORT_DIPLOCATION("SW1:1")
 	PORT_DIPSETTING(    0x00, "Hopper" )
 	PORT_DIPSETTING(    0x80, "Manual Payout SW" )
 INPUT_PORTS_END
+
 
 static INPUT_PORTS_START( jolycdcr )
 	PORT_START("IN0")
@@ -1364,7 +1110,7 @@ static INPUT_PORTS_START( jolycdcr )
 	PORT_DIPNAME( 0x01, 0x01, "State" )             PORT_DIPLOCATION("SW1:8")
 	PORT_DIPSETTING(    0x00, "Keyboard Test" )
 	PORT_DIPSETTING(    0x01, "Play" )
-	PORT_DIPNAME( 0x02, 0x00, "Remote Value" )          PORT_DIPLOCATION("SW1:7")
+	PORT_DIPNAME( 0x02, 0x00, "Remote Value" )      PORT_DIPLOCATION("SW1:7")
 	PORT_DIPSETTING(    0x00, "10 Points/Pulse" )
 	PORT_DIPSETTING(    0x02, "100 Points/Pulse" )
 	PORT_DIPNAME( 0x04, 0x00, DEF_STR( Unknown ) )  PORT_DIPLOCATION("SW1:6")
@@ -1377,18 +1123,19 @@ static INPUT_PORTS_START( jolycdcr )
 	PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
 	PORT_DIPSETTING(    0x10, DEF_STR( On ) )
 	PORT_DIPNAME( 0x20, 0x00, "Joker" )             PORT_DIPLOCATION("SW1:3")
-	PORT_DIPSETTING(    0x00, "With Joker" )        /* also enable Five of a Kind */
+	PORT_DIPSETTING(    0x00, "With Joker" )        // also enables Five of a Kind
 	PORT_DIPSETTING(    0x20, "Without Joker" )
 	PORT_DIPNAME( 0x40, 0x00, "Hold" )              PORT_DIPLOCATION("SW1:2")
 	PORT_DIPSETTING(    0x00, "Auto Hold" )
 	PORT_DIPSETTING(    0x40, "No Auto Hold" )
 
-	/* after nvram init, set the following one to 'manual'
-	to allow the remote credits mode to work */
+//  after nvram init, set the following one to 'manual'
+//  to allow the remote credits mode to work
 	PORT_DIPNAME( 0x80, 0x80, "Payout" )            PORT_DIPLOCATION("SW1:1")
 	PORT_DIPSETTING(    0x00, "Hopper" )
 	PORT_DIPSETTING(    0x80, "Manual Payout SW" )
 INPUT_PORTS_END
+
 
 static INPUT_PORTS_START( jolycdit )
 	PORT_START("IN0")
@@ -1437,18 +1184,19 @@ static INPUT_PORTS_START( jolycdit )
 	PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
 	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
 	PORT_DIPNAME( 0x20, 0x00, "Joker" )             PORT_DIPLOCATION("SW1:3")
-	PORT_DIPSETTING(    0x00, "With Joker" )        /* also enable Five of a Kind */
+	PORT_DIPSETTING(    0x00, "With Joker" )        // also enables Five of a Kind
 	PORT_DIPSETTING(    0x20, "Without Joker" )
 	PORT_DIPNAME( 0x40, 0x00, "Hold" )              PORT_DIPLOCATION("SW1:2")
 	PORT_DIPSETTING(    0x00, "Auto Hold" )
 	PORT_DIPSETTING(    0x40, "No Auto Hold" )
 
-	/* after nvram init, set the following one to 'manual'
-	to allow the remote credits mode to work */
+//  after nvram init, set the following one to 'manual'
+//  to allow the remote credits mode to work
 	PORT_DIPNAME( 0x80, 0x80, "Payout" )            PORT_DIPLOCATION("SW1:1")
 	PORT_DIPSETTING(    0x00, "Hopper" )
 	PORT_DIPSETTING(    0x80, "Manual Payout SW" )
 INPUT_PORTS_END
+
 
 static INPUT_PORTS_START( jolycdib )
 	PORT_START("IN0")
@@ -1485,7 +1233,7 @@ static INPUT_PORTS_START( jolycdib )
 	PORT_DIPNAME( 0x01, 0x01, DEF_STR( Unknown ) )  PORT_DIPLOCATION("SW1:8")
 	PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
 	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	PORT_DIPNAME( 0x02, 0x00, "Remote Value" )          PORT_DIPLOCATION("SW1:7")
+	PORT_DIPNAME( 0x02, 0x00, "Remote Value" )      PORT_DIPLOCATION("SW1:7")
 	PORT_DIPSETTING(    0x00, "10 Points/Pulse" )
 	PORT_DIPSETTING(    0x02, "100 Points/Pulse" )
 	PORT_DIPNAME( 0x04, 0x00, DEF_STR( Unknown ) )  PORT_DIPLOCATION("SW1:6")
@@ -1498,18 +1246,19 @@ static INPUT_PORTS_START( jolycdib )
 	PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
 	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
 	PORT_DIPNAME( 0x20, 0x00, "Joker" )             PORT_DIPLOCATION("SW1:3")
-	PORT_DIPSETTING(    0x00, "With Joker" )    /* also enables Five of a Kind */
+	PORT_DIPSETTING(    0x00, "With Joker" )        // also enables Five of a Kind
 	PORT_DIPSETTING(    0x20, "Without Joker" )
 	PORT_DIPNAME( 0x40, 0x00, "Auto Hold" )         PORT_DIPLOCATION("SW1:2")
 	PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-	PORT_DIPSETTING(    0x00, DEF_STR( On ) )   /* when is ON, allow the player to activate/deactivate the autohold through CANCEL button */
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )       // when is ON, allows the player to activate/deactivate the autohold through CANCEL button
 
-	/* after nvram init, set the following one to 'manual'
-	to allow the remote credits mode to work */
+//  after nvram init, set the following one to 'manual'
+//  to allow the remote credits mode to work
 	PORT_DIPNAME( 0x80, 0x80, "Payout" )            PORT_DIPLOCATION("SW1:1")
 	PORT_DIPSETTING(    0x00, "Hopper" )
 	PORT_DIPSETTING(    0x80, "Manual Payout SW" )
 INPUT_PORTS_END
+
 
 static INPUT_PORTS_START( jolycdic )
 	PORT_START("IN0")
@@ -1559,15 +1308,16 @@ static INPUT_PORTS_START( jolycdic )
 	PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
 	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
 	PORT_DIPNAME( 0x20, 0x00, "Joker" )             PORT_DIPLOCATION("SW1:3")
-	PORT_DIPSETTING(    0x00, "With Joker" )    /* also enables Five of a Kind */
+	PORT_DIPSETTING(    0x00, "With Joker" )        // also enables Five of a Kind
 	PORT_DIPSETTING(    0x20, "Without Joker" )
 	PORT_DIPNAME( 0x40, 0x00, "Auto Hold" )         PORT_DIPLOCATION("SW1:2")
 	PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-	PORT_DIPSETTING(    0x00, DEF_STR( On ) )   /* when is ON, allow the player to activate/deactivate the autohold through CANCEL button */
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )       // when is ON, allows the player to activate/deactivate the autohold through CANCEL button
 	PORT_DIPNAME( 0x80, 0x00, "Payout" )            PORT_DIPLOCATION("SW1:1")
 	PORT_DIPSETTING(    0x00, "Hopper" )
 	PORT_DIPSETTING(    0x80, "Manual Payout SW" )
 INPUT_PORTS_END
+
 
 static INPUT_PORTS_START( jolyc980 )
 	PORT_START("IN0")
@@ -1617,7 +1367,7 @@ static INPUT_PORTS_START( jolyc980 )
 	PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
 	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
 	PORT_DIPNAME( 0x20, 0x00, "Joker" )             PORT_DIPLOCATION("SW1:3")
-	PORT_DIPSETTING(    0x00, "With Joker" )        /* also enable Five of a Kind */
+	PORT_DIPSETTING(    0x00, "With Joker" )        // also enables Five of a Kind
 	PORT_DIPSETTING(    0x20, "Without Joker" )
 	PORT_DIPNAME( 0x40, 0x00, "Hold" )              PORT_DIPLOCATION("SW1:2")
 	PORT_DIPSETTING(    0x00, "Auto Hold" )
@@ -1626,6 +1376,7 @@ static INPUT_PORTS_START( jolyc980 )
 	PORT_DIPSETTING(    0x00, "Hopper" )
 	PORT_DIPSETTING(    0x80, "Manual Payout SW" )
 INPUT_PORTS_END
+
 
 static INPUT_PORTS_START( bonuscrd )
 	PORT_START("IN0")
@@ -1659,9 +1410,9 @@ static INPUT_PORTS_START( bonuscrd )
 	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
 
 	PORT_START("DSW")
-/*  DIP switch 8 should be left ON by default (all remaining ones in OFF)
-    to allow initialization. You can change settings later, after the boot.
-*/
+//  DIP switch 8 should be left ON by default (all remaining ones in OFF)
+//  to allow initialization. You can change settings later, after the boot.
+
 	PORT_DIPNAME( 0x01, 0x01, DEF_STR( Unknown ) )  PORT_DIPLOCATION("SW1:8")
 	PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
 	PORT_DIPSETTING(    0x01, DEF_STR( On ) )
@@ -1684,12 +1435,13 @@ static INPUT_PORTS_START( bonuscrd )
 	PORT_DIPSETTING(    0x00, "Auto Hold" )
 	PORT_DIPSETTING(    0x40, "No Auto Hold" )
 
-	/* after nvram init, set the following one to 'manual'
-	to allow the remote credits mode to work */
+//  after nvram init, set the following one to 'manual'
+//  to allow the remote credits mode to work
 	PORT_DIPNAME( 0x80, 0x00, "Payout" )    PORT_DIPLOCATION("SW1:1")
 	PORT_DIPSETTING(    0x00, "Hopper" )
 	PORT_DIPSETTING(    0x80, "Manual Payout SW" )
 INPUT_PORTS_END
+
 
 static INPUT_PORTS_START( bigdeal )
 	PORT_START("IN0")
@@ -1723,9 +1475,9 @@ static INPUT_PORTS_START( bigdeal )
 	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
 
 	PORT_START("DSW")
-/*  DIP switch 8 should be left ON by default (all remaining ones in OFF)
-    to allow initialization. You can change settings later, after the boot.
-*/
+//  DIP switch 8 should be left ON by default (all remaining ones in OFF)
+//  to allow initialization. You can change settings later, after the boot.
+
 	PORT_DIPNAME( 0x01, 0x01, DEF_STR( Unknown ) )  PORT_DIPLOCATION("SW1:8")
 	PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
 	PORT_DIPSETTING(    0x01, DEF_STR( On ) )
@@ -1748,12 +1500,13 @@ static INPUT_PORTS_START( bigdeal )
 	PORT_DIPSETTING(    0x00, "Auto Hold" )
 	PORT_DIPSETTING(    0x40, "No Auto Hold" )
 
-	/* after nvram init, set the following one to 'manual'
-	to allow the remote credits mode to work */
+//  after nvram init, set the following one to 'manual'
+//  to allow the remote credits mode to work
 	PORT_DIPNAME( 0x80, 0x00, "Payout" )    PORT_DIPLOCATION("SW1:1")
 	PORT_DIPSETTING(    0x00, "Hopper" )
 	PORT_DIPSETTING(    0x80, "Manual Payout SW" )
 INPUT_PORTS_END
+
 
 static INPUT_PORTS_START( magicrd2 )
 	PORT_START("IN0")
@@ -1790,7 +1543,7 @@ static INPUT_PORTS_START( magicrd2 )
 	PORT_DIPNAME( 0x01, 0x01, "State" )             PORT_DIPLOCATION("SW1:8")
 	PORT_DIPSETTING(    0x00, "Keyboard Test" )
 	PORT_DIPSETTING(    0x01, "Play" )
-	PORT_DIPNAME( 0x02, 0x00, DEF_STR( Unknown ) )  PORT_DIPLOCATION("SW1:7")   /* remote credits settings are always 10 points/pulse */
+	PORT_DIPNAME( 0x02, 0x00, DEF_STR( Unknown ) )  PORT_DIPLOCATION("SW1:7")   // remote credits settings are always 10 points/pulse
 	PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
 	PORT_DIPSETTING(    0x02, DEF_STR( On ) )
 	PORT_DIPNAME( 0x04, 0x00, DEF_STR( Coin_B ) )   PORT_DIPLOCATION("SW1:6")
@@ -1809,12 +1562,13 @@ static INPUT_PORTS_START( magicrd2 )
 	PORT_DIPSETTING(    0x00, "Auto Hold" )
 	PORT_DIPSETTING(    0x40, "No Auto Hold" )
 
-	/* after nvram init, set the following one to 'manual'
-	to allow the remote credits mode to work */
+//  after nvram init, set the following one to 'manual'
+//  to allow the remote credits mode to work
 	PORT_DIPNAME( 0x80, 0x00, "Payout" )            PORT_DIPLOCATION("SW1:1")
 	PORT_DIPSETTING(    0x00, "Hopper" )
 	PORT_DIPSETTING(    0x80, "Manual Payout SW" )
 INPUT_PORTS_END
+
 
 static INPUT_PORTS_START( royalcrd )
 	PORT_START("IN0")
@@ -1851,7 +1605,7 @@ static INPUT_PORTS_START( royalcrd )
 	PORT_DIPNAME( 0x01, 0x01, "State" )             PORT_DIPLOCATION("SW1:8")
 	PORT_DIPSETTING(    0x00, "Keyboard Test" )
 	PORT_DIPSETTING(    0x01, "Play" )
-	PORT_DIPNAME( 0x02, 0x02, "Remote Value" )          PORT_DIPLOCATION("SW1:7")   /* listed as 'Coin-C' in some sources */
+	PORT_DIPNAME( 0x02, 0x02, "Remote Value" )          PORT_DIPLOCATION("SW1:7")   // listed as 'Coin-C' in some sources
 	PORT_DIPSETTING(    0x00, "10 Points/Pulse" )
 	PORT_DIPSETTING(    0x02, "100 Points/Pulse" )
 	PORT_DIPNAME( 0x04, 0x04, DEF_STR( Coin_B ) )   PORT_DIPLOCATION("SW1:6")
@@ -1864,18 +1618,81 @@ static INPUT_PORTS_START( royalcrd )
 	PORT_DIPSETTING(    0x00, "Dattl Insert" )
 	PORT_DIPSETTING(    0x10, "TAB Insert" )
 	PORT_DIPNAME( 0x20, 0x00, "Joker" )             PORT_DIPLOCATION("SW1:3")
-	PORT_DIPSETTING(    0x00, "With Joker" )        /* also enable Five of a Kind */
+	PORT_DIPSETTING(    0x00, "With Joker" )        // also enables Five of a Kind
 	PORT_DIPSETTING(    0x20, "Without Joker" )
 	PORT_DIPNAME( 0x40, 0x00, "Hold" )              PORT_DIPLOCATION("SW1:2")
 	PORT_DIPSETTING(    0x00, "Auto Hold" )
 	PORT_DIPSETTING(    0x40, "No Auto Hold" )
 
-	/* after nvram init, set the following one to 'manual'
-	to allow the remote credits mode to work */
+//  after nvram init, set the following one to 'manual'
+//  to allow the remote credits mode to work
 	PORT_DIPNAME( 0x80, 0x80, "Payout" )            PORT_DIPLOCATION("SW1:1")
 	PORT_DIPSETTING(    0x00, "Hopper" )
 	PORT_DIPSETTING(    0x80, "Manual Payout SW" )
 INPUT_PORTS_END
+
+
+static INPUT_PORTS_START( royalcrdf )
+	PORT_START("IN0")
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_GAMBLE_KEYIN )   PORT_NAME("Kredyt (Remote)")
+	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_POKER_HOLD1 )    PORT_NAME("Stop 1")
+	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_POKER_CANCEL )   PORT_NAME("Zlikwidow (Cancel)")
+	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START1 )         PORT_NAME("Start")
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_POKER_HOLD5 )    PORT_NAME("Stop 5")
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_SERVICE1 )       PORT_NAME("Rachunek (Account)")
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SERVICE2 )       PORT_NAME("Vstawiac (Service 2)")
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_POKER_HOLD4 )    PORT_NAME("Stop 4")
+
+	PORT_START("IN1")
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_POKER_HOLD2 )    PORT_NAME("Stop 2")
+	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_POKER_HOLD3 )    PORT_NAME("Stop 3")
+	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_SERVICE )        PORT_NAME("Vyplatit (Payout)") PORT_CODE(KEYCODE_8)
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_SERVICE )        PORT_NAME("Hopper") PORT_CODE(KEYCODE_H)
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_COIN2 )
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_GAMBLE_KEYOUT )  PORT_NAME("Odpis (Keyout)")
+
+	PORT_START("IN2")
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 )
+	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
+
+	PORT_START("DSW")
+	PORT_DIPNAME( 0x01, 0x01, "State" )             PORT_DIPLOCATION("SW1:8")
+	PORT_DIPSETTING(    0x00, "Keyboard Test" )
+	PORT_DIPSETTING(    0x01, "Play" )
+	PORT_DIPNAME( 0x02, 0x02, "Remote Value" )      PORT_DIPLOCATION("SW1:7")
+	PORT_DIPSETTING(    0x00, "10 Points/Pulse" )
+	PORT_DIPSETTING(    0x02, "100 Points/Pulse" )
+	PORT_DIPNAME( 0x04, 0x04, DEF_STR( Unknown ) )  PORT_DIPLOCATION("SW1:6")
+	PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x08, 0x08, DEF_STR( Unknown ) )  PORT_DIPLOCATION("SW1:5")
+	PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x10, 0x00, "Bonus" )             PORT_DIPLOCATION("SW1:4")
+	PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x20, 0x00, "Joker" )             PORT_DIPLOCATION("SW1:3")
+	PORT_DIPSETTING(    0x00, "With Joker" )        // also enables Five of a Kind
+	PORT_DIPSETTING(    0x20, "Without Joker" )
+	PORT_DIPNAME( 0x40, 0x40, "Hold" )              PORT_DIPLOCATION("SW1:2")
+	PORT_DIPSETTING(    0x00, "Auto Hold" )
+	PORT_DIPSETTING(    0x40, "No Auto Hold" )
+
+//  after nvram init, set the following one to 'manual'
+//  to allow the remote credits mode to work
+	PORT_DIPNAME( 0x80, 0x80, "Payout" )            PORT_DIPLOCATION("SW1:1")
+	PORT_DIPSETTING(    0x00, "Hopper" )
+	PORT_DIPSETTING(    0x80, "Manual Payout SW" )
+INPUT_PORTS_END
+
 
 static INPUT_PORTS_START( royaljp )
 	PORT_START("IN0")
@@ -1965,7 +1782,7 @@ INPUT_PORTS_END
 
 static INPUT_PORTS_START( cuoreuno )
 	PORT_START("IN0")
-	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )    /* no remote credits */
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )        // no remote credits
 	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_POKER_HOLD1 )    PORT_NAME("Stop 1 / Switch Bet (1-Max)")
 	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_POKER_CANCEL )   PORT_NAME("Clear / Bet / Prendi (Take)")
 	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START1 )         PORT_NAME("Start / Gioca (Play)")
@@ -2016,16 +1833,17 @@ static INPUT_PORTS_START( cuoreuno )
 	PORT_DIPSETTING(    0x40, "Manual - Tickets" )
 	PORT_DIPSETTING(    0x60, "Manual - User Choice 2" )
 
-	/* the following one (1st DSW) seems to be disconnected
-	to avoid the use of remote credits or direct payout */
+//  the following one (1st DSW) seems to be disconnected
+//  to avoid the use of remote credits or direct payout
 	PORT_DIPNAME( 0x80, 0x80, DEF_STR( Unused ) )           PORT_DIPLOCATION("SW1:1")
 	PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
 	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
 INPUT_PORTS_END
 
+
 static INPUT_PORTS_START( pool10 )
 	PORT_START("IN0")
-	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )    /* no remote credits */
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )        // no remote credits
 	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_POKER_HOLD1 )    PORT_NAME("Stop 1 / Switch Bet (1-Max)")
 	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_POKER_CANCEL )   PORT_NAME("Clear / Bet / Prendi (Take)")
 	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START1 )         PORT_NAME("Start / Gioca (Play)")
@@ -2076,15 +1894,16 @@ static INPUT_PORTS_START( pool10 )
 	PORT_DIPSETTING(    0x40, "Manual - Tickets" )
 	PORT_DIPSETTING(    0x60, "Manual - User Choice 2" )
 
-	/* direct payout without play Super Game */
+//  direct payout without play Super Game
 	PORT_DIPNAME( 0x80, 0x80, "Direct Payout (tickets)" )   PORT_DIPLOCATION("SW1:1")
 	PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
 	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
 INPUT_PORTS_END
 
+
 static INPUT_PORTS_START( lunapark )
 	PORT_START("IN0")
-	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )    /* no remote credits */
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )        // no remote credits
 	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_POKER_HOLD1 )    PORT_NAME("Stop 1 / Switch Bet (1-Max)")
 	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_POKER_CANCEL )   PORT_NAME("Clear / Bet / Prendi (Take)")
 	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START1 )         PORT_NAME("Start / Gioca (Play)")
@@ -2136,18 +1955,19 @@ static INPUT_PORTS_START( lunapark )
 	PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
 	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
 
-	/* the following one seems to be disconnected
-	to avoid the use of remote credits or direct payout */
+//  the following one seems to be disconnected
+//  to avoid the use of remote credits or direct payout
 	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN )
 
-	/* the following one is connected to 1st DSW and is meant
-	for switch between different programs stored in different
-	halves of the program ROM */
+//  the following one is connected to 1st DSW and is meant
+//  for switch between different programs stored in different
+//  halves of the program ROM
 	PORT_START("SELDSW")
 	PORT_DIPNAME( 0x01, 0x00, "Game Selector" )           PORT_DIPLOCATION("SW1:1")
 	PORT_DIPSETTING(    0x00, "PROGRAM 1, (5 TIRI LIRE 500, ABILITA VINTE)" )
 	PORT_DIPSETTING(    0x01, "PROGRAM 2, (10 TIRI LIRE 500, PARTITA VINTE)" )
 INPUT_PORTS_END
+
 
 static INPUT_PORTS_START( jolyjokra )
 	PORT_START("IN0")
@@ -2197,19 +2017,19 @@ static INPUT_PORTS_START( jolyjokra )
 	PORT_DIPSETTING(    0x00, "disabled" )
 	PORT_DIPSETTING(    0x10, "enabled" )
 	PORT_DIPNAME( 0x20, 0x00, "Joker" )             PORT_DIPLOCATION("SW1:3")
-	PORT_DIPSETTING(    0x00, "With Joker" )        /* also enable Five of a Kind */
+	PORT_DIPSETTING(    0x00, "With Joker" )        // also enables Five of a Kind
 	PORT_DIPSETTING(    0x20, "Without Joker" )
 	PORT_DIPNAME( 0x40, 0x40, "Hold" )              PORT_DIPLOCATION("SW1:2")
 	PORT_DIPSETTING(    0x00, "Auto Hold" )
 	PORT_DIPSETTING(    0x40, "No Auto Hold" )
 
-	/* after nvram init, set the following one to 'manual'
-	to allow the remote credits mode to work */
-
+//  after nvram init, set the following one to 'manual'
+//  to allow the remote credits mode to work
 	PORT_DIPNAME( 0x80, 0x00, "Payout" )            PORT_DIPLOCATION("SW1:1")
 	PORT_DIPSETTING(    0x00, "Hopper" )
 	PORT_DIPSETTING(    0x80, "Manual Payout SW" )
 INPUT_PORTS_END
+
 
 static INPUT_PORTS_START( vegasslw )
 	PORT_START("IN0")
@@ -2259,18 +2079,19 @@ static INPUT_PORTS_START( vegasslw )
 	PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
 	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
 	PORT_DIPNAME( 0x20, 0x00, "Joker" )             PORT_DIPLOCATION("SW1:3")
-	PORT_DIPSETTING(    0x00, "With Joker" )        /* also enable Five of a Kind */
+	PORT_DIPSETTING(    0x00, "With Joker" )        // also enables Five of a Kind
 	PORT_DIPSETTING(    0x20, "Without Joker" )
 	PORT_DIPNAME( 0x40, 0x00, "Hold" )              PORT_DIPLOCATION("SW1:2")
 	PORT_DIPSETTING(    0x00, "Auto Hold" )
 	PORT_DIPSETTING(    0x40, "No Auto Hold" )
 
-	/* after nvram init, set the following one to 'manual'
-	to allow the remote credits mode to work */
+//  after nvram init, set the following one to 'manual'
+//  to allow the remote credits mode to work
 	PORT_DIPNAME( 0x80, 0x00, "Payout" )            PORT_DIPLOCATION("SW1:1")
 	PORT_DIPSETTING(    0x00, "Hopper" )
 	PORT_DIPSETTING(    0x80, "Manual Payout SW" )
 INPUT_PORTS_END
+
 
 static INPUT_PORTS_START( vegasfst )
 	PORT_START("IN0")
@@ -2320,18 +2141,19 @@ static INPUT_PORTS_START( vegasfst )
 	PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
 	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
 	PORT_DIPNAME( 0x20, 0x00, "Joker" )             PORT_DIPLOCATION("SW1:3")
-	PORT_DIPSETTING(    0x00, "With Joker" )        /* also enable Five of a Kind */
+	PORT_DIPSETTING(    0x00, "With Joker" )        // also enables Five of a Kind
 	PORT_DIPSETTING(    0x20, "Without Joker" )
 	PORT_DIPNAME( 0x40, 0x00, "Hold" )              PORT_DIPLOCATION("SW1:2")
 	PORT_DIPSETTING(    0x00, "Auto Hold" )
 	PORT_DIPSETTING(    0x40, "No Auto Hold" )
 
-	/* after nvram init, set the following one to 'manual'
-	to allow the remote credits mode to work */
+//  after nvram init, set the following one to 'manual'
+//  to allow the remote credits mode to work
 	PORT_DIPNAME( 0x80, 0x80, "Payout" )            PORT_DIPLOCATION("SW1:1")
 	PORT_DIPSETTING(    0x00, "Hopper" )
 	PORT_DIPSETTING(    0x80, "Manual Payout SW" )
 INPUT_PORTS_END
+
 
 static INPUT_PORTS_START( vegasfte )
 	PORT_START("IN0")
@@ -2381,18 +2203,19 @@ static INPUT_PORTS_START( vegasfte )
 	PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
 	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
 	PORT_DIPNAME( 0x20, 0x00, "Joker" )             PORT_DIPLOCATION("SW1:3")
-	PORT_DIPSETTING(    0x00, "With Joker" )        /* also enable Five of a Kind */
+	PORT_DIPSETTING(    0x00, "With Joker" )        // also enables Five of a Kind
 	PORT_DIPSETTING(    0x20, "Without Joker" )
 	PORT_DIPNAME( 0x40, 0x00, "Hold" )              PORT_DIPLOCATION("SW1:2")
 	PORT_DIPSETTING(    0x00, "Auto Hold" )
 	PORT_DIPSETTING(    0x40, "No Auto Hold" )
 
-	/* after nvram init, set the following one to 'manual'
-	to allow the remote credits mode to work */
+//  after nvram init, set the following one to 'manual'
+//  to allow the remote credits mode to work
 	PORT_DIPNAME( 0x80, 0x80, "Payout" )            PORT_DIPLOCATION("SW1:1")
 	PORT_DIPSETTING(    0x00, "Hopper" )
 	PORT_DIPSETTING(    0x80, "Manual Payout SW" )
 INPUT_PORTS_END
+
 
 static INPUT_PORTS_START( vegasmil )
 	PORT_START("IN0")
@@ -2442,14 +2265,14 @@ static INPUT_PORTS_START( vegasmil )
 	PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
 	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
 	PORT_DIPNAME( 0x20, 0x00, "Joker" )             PORT_DIPLOCATION("SW1:3")
-	PORT_DIPSETTING(    0x00, "With Joker" )        /* also enable Five of a Kind */
+	PORT_DIPSETTING(    0x00, "With Joker" )        // also enables Five of a Kind
 	PORT_DIPSETTING(    0x20, "Without Joker" )
 	PORT_DIPNAME( 0x40, 0x00, "Hold" )              PORT_DIPLOCATION("SW1:2")
 	PORT_DIPSETTING(    0x00, "Auto Hold" )
 	PORT_DIPSETTING(    0x40, "No Auto Hold" )
 
-	/* after nvram init, set the following one to 'manual'
-	to allow the remote credits mode to work */
+//  after nvram init, set the following one to 'manual'
+//  to allow the remote credits mode to work
 	PORT_DIPNAME( 0x80, 0x00, "Payout" )            PORT_DIPLOCATION("SW1:1")
 	PORT_DIPSETTING(    0x00, "Hopper" )
 	PORT_DIPSETTING(    0x80, "Manual Payout SW" )
@@ -2457,92 +2280,97 @@ INPUT_PORTS_END
 
 
 static INPUT_PORTS_START( saloon )
-	PORT_START("IN0")
-	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("0-1") PORT_CODE(KEYCODE_1)
-	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("0-2") PORT_CODE(KEYCODE_2)
-	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("0-3") PORT_CODE(KEYCODE_3)
-	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("0-4") PORT_CODE(KEYCODE_4)
-	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("0-5") PORT_CODE(KEYCODE_5)
-	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("0-6") PORT_CODE(KEYCODE_6)
-	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("0-7") PORT_CODE(KEYCODE_7)
-	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("0-8") PORT_CODE(KEYCODE_8)
+	PORT_START("IN0")  // 0800h
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 )       PORT_NAME("Play / Start / Enter")
+	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_OTHER )        PORT_NAME("0-2")        PORT_CODE(KEYCODE_2)  // still unknown...
+	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_POKER_HOLD4 )  PORT_NAME("Stop 4 / High / Menu Down")
+	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_POKER_CANCEL ) PORT_NAME("Cancel / Take / Autohold / Exit")
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_SERVICE2 )     PORT_NAME("Menu")
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_OTHER )        PORT_NAME("Menu Up")    PORT_CODE(KEYCODE_6)  // check for extra functions...
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_POKER_HOLD1 )  PORT_NAME("Stop 1")
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_POKER_HOLD5 )  PORT_NAME("Stop 5 / Bet")
 
-	PORT_START("IN1")
-	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("1-1") PORT_CODE(KEYCODE_Q)
-	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("1-2") PORT_CODE(KEYCODE_W)
-	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("1-3") PORT_CODE(KEYCODE_E)
-	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("1-4") PORT_CODE(KEYCODE_R)
-	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("1-5") PORT_CODE(KEYCODE_T)
-	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("1-6") PORT_CODE(KEYCODE_Y)
-	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("1-7") PORT_CODE(KEYCODE_U)
-	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("1-8") PORT_CODE(KEYCODE_I)
+	PORT_START("IN1")  // 0801h
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN ) PORT_NAME("1-1") PORT_CODE(KEYCODE_A)
+	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN ) PORT_NAME("1-2") PORT_CODE(KEYCODE_S)
+	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN ) PORT_NAME("1-3") PORT_CODE(KEYCODE_D)
+	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN ) PORT_NAME("1-4") PORT_CODE(KEYCODE_F)
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN ) PORT_NAME("1-5") PORT_CODE(KEYCODE_G)
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_UNKNOWN ) PORT_NAME("1-6") PORT_CODE(KEYCODE_H)
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN ) PORT_NAME("1-7") PORT_CODE(KEYCODE_J)
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN ) PORT_NAME("1-8") PORT_CODE(KEYCODE_K)
 
-	PORT_START("IN2")
-	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("2-1") PORT_CODE(KEYCODE_A)
-	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("2-2") PORT_CODE(KEYCODE_S)
-	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("2-3") PORT_CODE(KEYCODE_D)
-	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("2-4") PORT_CODE(KEYCODE_F)
-	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("2-5") PORT_CODE(KEYCODE_G)
-	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("2-6") PORT_CODE(KEYCODE_H)
-	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("2-7") PORT_CODE(KEYCODE_J)
-	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("2-8") PORT_CODE(KEYCODE_K)
-
-	PORT_START("IN3")
-	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )
-	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN )
-	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN )
-	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
-	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_UNKNOWN )
-	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_UNKNOWN )
-	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN )
-	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
-
-	PORT_START("IN4")
+	PORT_START("IN2")  // 0802h
 	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNKNOWN )
-	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN )
+	PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_POKER_HOLD2 ) PORT_NAME("Stop 2 / Low")
 	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN )
 	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_UNKNOWN )
 	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_UNKNOWN )
-	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x20, IP_ACTIVE_LOW,  IPT_POKER_HOLD3 ) PORT_NAME("Stop 3")
 	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN )
 	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN )
 
-	PORT_START("DSW")
-	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("3-1") PORT_CODE(KEYCODE_Z)
-	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("3-2") PORT_CODE(KEYCODE_X)
-	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("3-3") PORT_CODE(KEYCODE_C)
-	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("3-4") PORT_CODE(KEYCODE_V)
-	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("3-5") PORT_CODE(KEYCODE_B)
-	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("3-6") PORT_CODE(KEYCODE_N)
-	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("3-7") PORT_CODE(KEYCODE_M)
-	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("3-8") PORT_CODE(KEYCODE_L)
+	PORT_START("IN3")  // 0808h
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 )
+	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN )
+	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_SERVICE1 )      PORT_NAME("Credits IN/OUT")
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_GAMBLE_KEYOUT ) PORT_NAME("Keyout (Scarico Coin)")
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("Warm Reset") PORT_CODE(KEYCODE_R)
 
-	PORT_START("SW1")
-	PORT_DIPNAME( 0x01, 0x01, DEF_STR( Unknown ) )
-	PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	PORT_DIPNAME( 0x02, 0x02, DEF_STR( Unknown ) )
-	PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	PORT_DIPNAME( 0x04, 0x04, DEF_STR( Unknown ) )
-	PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
-	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	PORT_DIPNAME( 0x08, 0x08, DEF_STR( Unknown ) )
-	PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	PORT_DIPNAME( 0x10, 0x10, DEF_STR( Unknown ) )
-	PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	PORT_DIPNAME( 0x20, 0x20, DEF_STR( Unknown ) )
-	PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	PORT_DIPNAME( 0x40, 0x40, DEF_STR( Unknown ) )
-	PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	PORT_DIPNAME( 0x80, 0x80, DEF_STR( Unknown ) )
-	PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_START("IN4")  // 0A00h
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("4-1") PORT_CODE(KEYCODE_1_PAD)
+	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("4-2") PORT_CODE(KEYCODE_2_PAD)
+	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("4-3") PORT_CODE(KEYCODE_3_PAD)
+	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("4-4") PORT_CODE(KEYCODE_4_PAD)
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("4-5") PORT_CODE(KEYCODE_5_PAD)
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("4-6") PORT_CODE(KEYCODE_6_PAD)
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("4-7") PORT_CODE(KEYCODE_7_PAD)
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("4-8") PORT_CODE(KEYCODE_8_PAD)
+
+	PORT_START("IN5")  // 0A01h
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("5-1") PORT_CODE(KEYCODE_Q)
+	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("5-2") PORT_CODE(KEYCODE_L)
+	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("5-3") PORT_CODE(KEYCODE_E)
+	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("5-4") PORT_CODE(KEYCODE_0)
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("5-5") PORT_CODE(KEYCODE_T)
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("5-6") PORT_CODE(KEYCODE_Y)
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("5-7") PORT_CODE(KEYCODE_U)
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("5-8") PORT_CODE(KEYCODE_I)
+
+	PORT_START("I2C_CK")  // 081Bh
+	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED )
+	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNUSED )
+	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNUSED )
+	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_UNUSED )
+	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_OUTPUT ) PORT_WRITE_LINE_DEVICE_MEMBER("i2cmem" , i2cmem_device, write_scl)    // Serial Clock
+	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_UNUSED )
+	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNUSED )
+	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNUSED )
+
+	PORT_START("I2C_DI")  // 1000h Input
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_OTHER ) PORT_READ_LINE_DEVICE_MEMBER("i2cmem", i2cmem_device, read_sda)      // Serial Data In
+	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
+
+	PORT_START("I2C_DO")  // 1000h Output
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_OUTPUT ) PORT_WRITE_LINE_DEVICE_MEMBER("i2cmem", i2cmem_device, write_sda)   // Serial Data Out
+	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
 INPUT_PORTS_END
+
 
 static INPUT_PORTS_START( funquiz )
 	PORT_START("IN0")
@@ -2612,6 +2440,76 @@ static INPUT_PORTS_START( funquiz )
 	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
 INPUT_PORTS_END
 
+
+static INPUT_PORTS_START( funquiza )
+	PORT_START("IN0")  // 0800h
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 ) PORT_NAME("Option B") PORT_CODE(KEYCODE_X)
+	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 ) PORT_NAME("Option A") PORT_CODE(KEYCODE_Z)
+	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START )   PORT_NAME("Start / G")
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON6 ) PORT_NAME("Option F") PORT_CODE(KEYCODE_N)
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_SERVICE1 )  PORT_NAME("Books 1")
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SERVICE2 )  PORT_NAME("Books 2")
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON5 ) PORT_NAME("Option E") PORT_CODE(KEYCODE_B)
+
+	PORT_START("IN1")  // 0801h
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 ) PORT_NAME("Option C") PORT_CODE(KEYCODE_C)
+	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON4 ) PORT_NAME("Option D") PORT_CODE(KEYCODE_V)
+	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_COIN2 )
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
+
+	PORT_START("IN2")  // 0A00h
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 )
+	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
+
+	PORT_START("DSW")  // 0A01h
+/*
+  1 | Buchhaltung / Bookkeeping.
+  2 | Nicht verwendet / Not used.
+  3 | Ohne Zahlen (Wien) / No numbers (Vienna).
+  4 | Nicht verwendet / Not used.
+  5 | Nicht verwendet / Not used.
+  6 | Richtige Antwort wird angezeigt / Right answer is shown.
+  7 | Frage wird bei Einsatz angezeigt / Question is shown when bet is made.
+  8 | Spiel mit Einsatzwahl / Game with betting.
+*/
+	PORT_DIPNAME( 0x01, 0x00, "Game with betting" )     PORT_DIPLOCATION("SW1:8")
+	PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x02, 0x02, "Show question in bet stage" )    PORT_DIPLOCATION("SW1:7")
+	PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x04, 0x04, "Right answer is shown" ) PORT_DIPLOCATION("SW1:6")
+	PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x08, 0x08, DEF_STR( Unused ) )       PORT_DIPLOCATION("SW1:5")
+	PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x10, 0x10, DEF_STR( Unused ) )       PORT_DIPLOCATION("SW1:4")
+	PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x20, 0x20, "No numbers (Vienna)" )   PORT_DIPLOCATION("SW1:3")
+	PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x40, 0x40, DEF_STR( Unused ) )       PORT_DIPLOCATION("SW1:2")
+	PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x80, 0x80, "Bookkeeping" )           PORT_DIPLOCATION("SW1:1")
+	PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+INPUT_PORTS_END
+
+
 static INPUT_PORTS_START( witchryl )
 	PORT_START("IN0")
 	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_GAMBLE_KEYIN )   PORT_NAME("Remote")
@@ -2660,7 +2558,7 @@ static INPUT_PORTS_START( witchryl )
 	PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
 	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
 	PORT_DIPNAME( 0x20, 0x00, "Joker" )             PORT_DIPLOCATION("SW1:3")
-	PORT_DIPSETTING(    0x00, "With Joker" )        /* also enable Five of a Kind */
+	PORT_DIPSETTING(    0x00, "With Joker" )        // also enables Five of a Kind
 	PORT_DIPSETTING(    0x20, "Without Joker" )
 	PORT_DIPNAME( 0x40, 0x00, "Hold" )              PORT_DIPLOCATION("SW1:2")
 	PORT_DIPSETTING(    0x00, "Auto Hold" )
@@ -2695,6 +2593,7 @@ static INPUT_PORTS_START( witchryl )
 	PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
 	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
 INPUT_PORTS_END
+
 
 static INPUT_PORTS_START( novoplay )
 	PORT_START("IN0")
@@ -2754,65 +2653,67 @@ static INPUT_PORTS_START( novoplay )
 	PORT_DIPSETTING(    0x80, "Manual Payout SW" )
 INPUT_PORTS_END
 
+
 static INPUT_PORTS_START( chinatow )
-		PORT_START("IN0")
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )    /* no remote credits */
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_POKER_HOLD1 )    PORT_NAME("Stop 1 / Switch Bet (1-Max)")
-		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_POKER_CANCEL )   PORT_NAME("Clear / Bet / Prendi (Take)")
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START1 )         PORT_NAME("Start / Gioca (Play) / Gmable")
-		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_POKER_HOLD5 )    PORT_NAME("Stop 5 / Half Gamble / Super Game")
-		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_SERVICE1 )
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SERVICE2 )
-		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_POKER_HOLD4 )    PORT_NAME("Stop 4 / Alta (High)")
+	PORT_START("IN0")
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )        // no remote credits
+	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_POKER_HOLD1 )    PORT_NAME("Stop 1 / Switch Bet (1-Max)")
+	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_POKER_CANCEL )   PORT_NAME("Clear / Bet / Prendi (Take)")
+	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START1 )         PORT_NAME("Start / Gioca (Play) / Gmable")
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_POKER_HOLD5 )    PORT_NAME("Stop 5 / Half Gamble / Super Game")
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_SERVICE1 )
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SERVICE2 )
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_POKER_HOLD4 )    PORT_NAME("Stop 4 / Alta (High)")
 
-		PORT_START("IN1")
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_POKER_HOLD2 )    PORT_NAME("Stop 2 / Bassa (Low)")
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_POKER_HOLD3 )    PORT_NAME("Stop 3")
-		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE )        PORT_NAME("Ticket") PORT_CODE(KEYCODE_8)
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_SERVICE )        PORT_NAME("Hopper") PORT_CODE(KEYCODE_H)
-		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_COIN2 )
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_GAMBLE_KEYOUT )
+	PORT_START("IN1")
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_POKER_HOLD2 )    PORT_NAME("Stop 2 / Bassa (Low)")
+	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_POKER_HOLD3 )    PORT_NAME("Stop 3")
+	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE )        PORT_NAME("Ticket") PORT_CODE(KEYCODE_8)
+	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_SERVICE )        PORT_NAME("Hopper") PORT_CODE(KEYCODE_H)
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_COIN2 )
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_GAMBLE_KEYOUT )
 
-		PORT_START("IN2")
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 )
-		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN )
-		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_UNKNOWN )
-		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_UNKNOWN )
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN )
+	PORT_START("IN2")
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 )
+	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNKNOWN )
+	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_UNKNOWN )
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_UNKNOWN )
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN )
 
-		PORT_START("DSW")
-		PORT_DIPNAME( 0x01, 0x01, "Test Mode" )            PORT_DIPLOCATION("SW1:8")
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x02, "Counter" )              PORT_DIPLOCATION("SW1:7")
-		PORT_DIPSETTING(    0x02, "X10" )
-		PORT_DIPSETTING(    0x00, "X1" )
-		PORT_DIPNAME( 0x04, 0x04, "Royal Flush" )          PORT_DIPLOCATION("SW1:6")
-		PORT_DIPSETTING(    0x04, "With" )
-		PORT_DIPSETTING(    0x00, "Without" )
-		PORT_DIPNAME( 0x08, 0x08, "5 of a kind" )          PORT_DIPLOCATION("SW1:5")
-		PORT_DIPSETTING(    0x08, "With" )
-		PORT_DIPSETTING(    0x00, "Without" )
-		PORT_DIPNAME( 0x60, 0x60, "Payout type" )          PORT_DIPLOCATION("SW1:3,2")
-		PORT_DIPSETTING(    0x00, "Ticket + Hopper" )
-		PORT_DIPSETTING(    0x20, "Ticket" )
-		PORT_DIPSETTING(    0x40, "Hopper" )
-		PORT_DIPSETTING(    0x60, "Ticket + Hopper" )
-		PORT_DIPNAME( 0x90, 0x90, "Coin/Credit ratio" )    PORT_DIPLOCATION("SW1:1,4")
-		PORT_DIPSETTING(    0x00, "1 coin 1 credit" )
-		PORT_DIPSETTING(    0x10, "1 coin 1 credit" )
-		PORT_DIPSETTING(    0x80, "1 coin 5 credits" )
-		PORT_DIPSETTING(    0x90, "1 coin 10 credits" )
-	INPUT_PORTS_END
+	PORT_START("DSW")
+	PORT_DIPNAME( 0x01, 0x01, "Test Mode" )            PORT_DIPLOCATION("SW1:8")
+	PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x02, 0x02, "Counter" )              PORT_DIPLOCATION("SW1:7")
+	PORT_DIPSETTING(    0x02, "X10" )
+	PORT_DIPSETTING(    0x00, "X1" )
+	PORT_DIPNAME( 0x04, 0x04, "Royal Flush" )          PORT_DIPLOCATION("SW1:6")
+	PORT_DIPSETTING(    0x04, "With" )
+	PORT_DIPSETTING(    0x00, "Without" )
+	PORT_DIPNAME( 0x08, 0x08, "5 of a kind" )          PORT_DIPLOCATION("SW1:5")
+	PORT_DIPSETTING(    0x08, "With" )
+	PORT_DIPSETTING(    0x00, "Without" )
+	PORT_DIPNAME( 0x60, 0x60, "Payout type" )          PORT_DIPLOCATION("SW1:3,2")
+	PORT_DIPSETTING(    0x00, "Ticket + Hopper" )
+	PORT_DIPSETTING(    0x20, "Ticket" )
+	PORT_DIPSETTING(    0x40, "Hopper" )
+	PORT_DIPSETTING(    0x60, "Ticket + Hopper" )
+	PORT_DIPNAME( 0x90, 0x90, "Coin/Credit ratio" )    PORT_DIPLOCATION("SW1:1,4")
+	PORT_DIPSETTING(    0x00, "1 coin 1 credit" )
+	PORT_DIPSETTING(    0x10, "1 coin 1 credit" )
+	PORT_DIPSETTING(    0x80, "1 coin 5 credits" )
+	PORT_DIPSETTING(    0x90, "1 coin 10 credits" )
+INPUT_PORTS_END
+
 
 static INPUT_PORTS_START( rcdino4 )
 	PORT_START("IN0")
-	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )    /* no remote credits */
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )        // no remote credits
 	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_POKER_HOLD1 )    PORT_NAME("Stop 1")
 	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_POKER_CANCEL )   PORT_NAME("Clear / Bet")
 	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START1 )         PORT_NAME("Start")
@@ -2866,9 +2767,10 @@ static INPUT_PORTS_START( rcdino4 )
 	PORT_DIPSETTING(    0x00, "Pagamenti (Payment) B" )
 INPUT_PORTS_END
 
+
 static INPUT_PORTS_START( royal )
 	PORT_START("IN0")
-	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )    /* no remote credits */
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )        // no remote credits
 	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_POKER_HOLD1 )    PORT_NAME("Stop 1 / Switch Bet (1-Max)")
 	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_POKER_CANCEL )   PORT_NAME("Clear / Bet / Prendi (Take)")
 	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START1 )         PORT_NAME("Start / Gioca (Play)")
@@ -2925,6 +2827,74 @@ static INPUT_PORTS_START( royal )
 INPUT_PORTS_END
 
 
+static INPUT_PORTS_START( fw_brick1 )
+	PORT_INCLUDE( novoplay )
+	PORT_MODIFY("DSW")
+	PORT_DIPNAME( 0x20, 0x00, "Game Type" )         PORT_DIPLOCATION("SW1:3")
+	PORT_DIPSETTING(    0x20, "Multi Card (without Jokers)" )
+	PORT_DIPSETTING(    0x00, "Joker Card (with Jokers)" )
+INPUT_PORTS_END
+
+
+static INPUT_PORTS_START( intrgmes )
+	PORT_START("IN0")
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_GAMBLE_KEYIN )   PORT_NAME("Remote")
+	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_POKER_HOLD1 )    PORT_NAME("Hold 1")
+	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_POKER_CANCEL )   PORT_NAME("Cancel / Take")
+	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START1 )         PORT_NAME("Draw")
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_POKER_HOLD5 )    PORT_NAME("Hold 5 / Bet")
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_SERVICE1 )
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SERVICE2 )
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_POKER_HOLD4 )    PORT_NAME("Hold 4 / High")
+
+	PORT_START("IN1")
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_POKER_HOLD2 )    PORT_NAME("Hold 2 / Low")
+	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_POKER_HOLD3 )    PORT_NAME("Hold 3")
+	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_OTHER )          PORT_NAME("I /7")      PORT_CODE(KEYCODE_E)  // I /7
+	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_OTHER )          PORT_NAME("F. C.")     PORT_CODE(KEYCODE_R)  // F.C.
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_SERVICE )        PORT_NAME("Hopper SW") PORT_CODE(KEYCODE_T)
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_COIN2 )
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_OTHER )          PORT_NAME("CAV")       PORT_CODE(KEYCODE_Y)  // CAV.
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_GAMBLE_KEYOUT )  PORT_NAME("Collect")
+
+	PORT_START("IN2")
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 )
+	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("SER. IN")   PORT_CODE(KEYCODE_A)  // SER. IN
+	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("II/D")      PORT_CODE(KEYCODE_S)  // II/D
+	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("SER. SEL.") PORT_CODE(KEYCODE_D)  // SER. SEL.
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("II/C")      PORT_CODE(KEYCODE_F)  // II/C
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("II/3")      PORT_CODE(KEYCODE_G)  // II/3
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("II/B")      PORT_CODE(KEYCODE_H)  // II/B
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_OTHER ) PORT_NAME("II/2")      PORT_CODE(KEYCODE_J)  // II/2
+
+	PORT_START("DSW")
+	PORT_DIPNAME( 0x01, 0x01, "Test Mode" )                 PORT_DIPLOCATION("SW1:8")
+	PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x02, 0x02, "55/77/99-Bonus" )            PORT_DIPLOCATION("SW1:7")
+	PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x04, 0x04, "Language" )                  PORT_DIPLOCATION("SW1:6")
+	PORT_DIPSETTING(    0x04, "English" )
+	PORT_DIPSETTING(    0x00, "Deutsche" )
+	PORT_DIPNAME( 0x08, 0x08, DEF_STR( Unknown ) )          PORT_DIPLOCATION("SW1:5")
+	PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x10, 0x10, DEF_STR( Unknown ) )          PORT_DIPLOCATION("SW1:4")
+	PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x20, 0x20, DEF_STR( Unknown ) )          PORT_DIPLOCATION("SW1:3")
+	PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x40, 0x40, "Auto Hold" )                 PORT_DIPLOCATION("SW1:2")
+	PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	PORT_DIPNAME( 0x80, 0x80, DEF_STR( Unknown ) )          PORT_DIPLOCATION("SW1:1")
+	PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
+	PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+INPUT_PORTS_END
+
+
 /*************************
 *    Graphics Layouts    *
 *************************/
@@ -2950,11 +2920,11 @@ static const gfx_layout charlayout =
    in the first and second half of the bipolar PROM.
 */
 
-static GFXDECODE_START( fw1stpal )  /* Adressing the first half of the palette */
+static GFXDECODE_START( gfx_fw1stpal )  // Adressing the first half of the palette
 	GFXDECODE_ENTRY( "gfx1", 0, charlayout, 0, 16 )
 GFXDECODE_END
 
-static GFXDECODE_START( fw2ndpal )  /* Adressing the second half of the palette */
+static GFXDECODE_START( gfx_fw2ndpal )  // Adressing the second half of the palette
 	GFXDECODE_ENTRY( "gfx1", 0, charlayout, 0x100, 16 )
 GFXDECODE_END
 
@@ -3021,28 +2991,31 @@ GFXDECODE_END
 
 */
 
-/* these ports are set to output anyway, but this quietens the log */
-READ8_MEMBER(funworld_state::funquiz_ay8910_a_r)
+
+// these ports are set to output anyway, but this quietens the log
+uint8_t funworld_state::funquiz_ay8910_a_r()
 {
 	return 0x00;
 }
 
-READ8_MEMBER(funworld_state::funquiz_ay8910_b_r)
+uint8_t funworld_state::funquiz_ay8910_b_r()
 {
 	return 0x00;
 }
+
 
 /********************************
 *     Machine Start & Reset     *
 ********************************/
 
-MACHINE_START_MEMBER(funworld_state, lunapark)
+void lunapark_state::machine_start()
 {
+	funworld_state::machine_start();
 	uint8_t *ROM = memregion("maincpu")->base();
 	membank("bank1")->configure_entries(0, 2, &ROM[0], 0x8000);
 }
 
-MACHINE_RESET_MEMBER(funworld_state, lunapark)
+void lunapark_state::machine_reset()
 {
 	uint8_t seldsw = (ioport("SELDSW")->read() );
 	popmessage("ROM Bank: %02X", seldsw);
@@ -3050,172 +3023,731 @@ MACHINE_RESET_MEMBER(funworld_state, lunapark)
 	membank("bank1")->set_entry(seldsw);
 }
 
+
 /**************************
 *     Machine Drivers     *
 **************************/
 
-static MACHINE_CONFIG_START( fw1stpal )
-	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", M65SC02, CPU_CLOCK)    /* 2MHz */
-	MCFG_CPU_PROGRAM_MAP(funworld_map)
-	MCFG_CPU_VBLANK_INT_DRIVER("screen", funworld_state, nmi_line_pulse)
+void funworld_state::fw1stpal(machine_config &config)
+{
+	// basic machine hardware
+	M65SC02(config, m_maincpu, CPU_CLOCK);  // 2 MHz.
+	m_maincpu->set_addrmap(AS_PROGRAM, &funworld_state::funworld_map);
 
-	MCFG_NVRAM_ADD_0FILL("nvram")
+	NVRAM(config, "nvram", nvram_device::DEFAULT_ALL_0);
 
-	MCFG_DEVICE_ADD("pia0", PIA6821, 0)
-	MCFG_PIA_READPA_HANDLER(IOPORT("IN0"))
-	MCFG_PIA_READPB_HANDLER(IOPORT("IN1"))
+	pia6821_device &pia0(PIA6821(config, "pia0", 0));
+	pia0.readpa_handler().set_ioport("IN0");
+	pia0.readpb_handler().set_ioport("IN1");
 
-	MCFG_DEVICE_ADD("pia1", PIA6821, 0)
-	MCFG_PIA_READPA_HANDLER(IOPORT("IN2"))
-	MCFG_PIA_READPB_HANDLER(IOPORT("DSW"))
-	MCFG_PIA_CA2_HANDLER(WRITELINE(funworld_state, pia1_ca2_w))
+	pia6821_device &pia1(PIA6821(config, "pia1", 0));
+	pia1.readpa_handler().set_ioport("IN2");
+	pia1.readpb_handler().set_ioport("DSW");
+	pia1.ca2_handler().set(FUNC(funworld_state::pia1_ca2_w));
 
-	/* video hardware */
+	// video hardware
 
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_REFRESH_RATE(60)
-	MCFG_SCREEN_VBLANK_TIME(ATTOSECONDS_IN_USEC(0))
-	MCFG_SCREEN_SIZE((124+1)*4, (30+1)*8)               /* Taken from MC6845 init, registers 00 & 04. Normally programmed with (value-1) */
-	MCFG_SCREEN_VISIBLE_AREA(0*4, 96*4-1, 0*8, 29*8-1)  /* Taken from MC6845 init, registers 01 & 06 */
-	MCFG_SCREEN_UPDATE_DRIVER(funworld_state, screen_update_funworld)
-	MCFG_SCREEN_PALETTE("palette")
+	screen_device &screen(SCREEN(config, "screen", SCREEN_TYPE_RASTER));
+	screen.set_refresh_hz(60);
+	screen.set_vblank_time(ATTOSECONDS_IN_USEC(0));
+	screen.set_size((124+1)*4, (30+1)*8);           // Taken from MC6845 init, registers 00 & 04. Normally programmed with (value-1)
+	screen.set_visarea(0*4, 96*4-1, 0*8, 29*8-1);   // Taken from MC6845 init, registers 01 & 06
+	screen.set_screen_update(FUNC(funworld_state::screen_update_funworld));
 
-	MCFG_GFXDECODE_ADD("gfxdecode", "palette", fw1stpal)
+	GFXDECODE(config, m_gfxdecode, m_palette, gfx_fw1stpal);
+	PALETTE(config, m_palette, FUNC(funworld_state::funworld_palette), 0x200);
 
-	MCFG_PALETTE_ADD("palette", 0x200)
-	MCFG_PALETTE_INIT_OWNER(funworld_state, funworld)
-	MCFG_VIDEO_START_OVERRIDE(funworld_state, funworld)
+	mc6845_device &crtc(MC6845(config, "crtc", CRTC_CLOCK));    // 2 MHz, verified on jollycrd & royalcrd
+	crtc.set_screen("screen");
+	crtc.set_show_border_area(false);
+	crtc.set_char_width(4);
+	crtc.out_vsync_callback().set_inputline(m_maincpu, INPUT_LINE_NMI);
 
-	MCFG_MC6845_ADD("crtc", MC6845, "screen", CRTC_CLOCK)    /* 2MHz, veryfied on jollycrd & royalcrd */
-	MCFG_MC6845_SHOW_BORDER_AREA(false)
-	MCFG_MC6845_CHAR_WIDTH(4)
+	// sound hardware
+	SPEAKER(config, "mono").front_center();
 
-	/* sound hardware */
-	MCFG_SPEAKER_STANDARD_MONO("mono")
-
-	MCFG_SOUND_ADD("ay8910", AY8910, SND_CLOCK)    /* 2MHz */
-	MCFG_AY8910_PORT_A_WRITE_CB(WRITE8(funworld_state, funworld_lamp_a_w))  /* portA out */
-	MCFG_AY8910_PORT_B_WRITE_CB(WRITE8(funworld_state, funworld_lamp_b_w))  /* portB out */
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 2.5)  /* analyzed to avoid clips */
-MACHINE_CONFIG_END
+	ay8910_device &ay8910(AY8910(config, "ay8910", SND_CLOCK)); // 2 MHz.
+	ay8910.port_a_write_callback().set(FUNC(funworld_state::funworld_lamp_a_w));
+	ay8910.port_b_write_callback().set(FUNC(funworld_state::funworld_lamp_b_w));
+	ay8910.add_route(ALL_OUTPUTS, "mono", 2.5); // analyzed to avoid clips
+}
 
 
-static MACHINE_CONFIG_DERIVED( fw2ndpal, fw1stpal )
-	MCFG_CPU_REPLACE("maincpu", R65C02, CPU_CLOCK) /* 2MHz */
-	MCFG_CPU_PROGRAM_MAP(funworld_map)
-	MCFG_CPU_VBLANK_INT_DRIVER("screen", funworld_state, nmi_line_pulse)
-	MCFG_GFXDECODE_MODIFY("gfxdecode", fw2ndpal)
-MACHINE_CONFIG_END
+void funworld_state::fw2ndpal(machine_config &config)
+{
+	fw1stpal(config);
+
+	R65C02(config.replace(), m_maincpu, CPU_CLOCK); // 2 MHz.
+	m_maincpu->set_addrmap(AS_PROGRAM, &funworld_state::funworld_map);
+
+	m_gfxdecode->set_info(gfx_fw2ndpal);
+}
 
 
 
-static MACHINE_CONFIG_DERIVED( funquiz, fw1stpal )
-//  MCFG_FRAGMENT_ADD(fw2ndpal)
-	MCFG_CPU_REPLACE("maincpu", R65C02, CPU_CLOCK) /* 2MHz */
-	MCFG_CPU_PROGRAM_MAP(funquiz_map)
-	MCFG_CPU_VBLANK_INT_DRIVER("screen", funworld_state, nmi_line_pulse)
-	MCFG_SOUND_REPLACE("ay8910", AY8910, SND_CLOCK)    /* 2MHz */
-	MCFG_AY8910_PORT_A_READ_CB(READ8(funworld_state, funquiz_ay8910_a_r)) /* portA in  */
-	MCFG_AY8910_PORT_B_READ_CB(READ8(funworld_state, funquiz_ay8910_b_r)) /* portB in  */
-	MCFG_AY8910_PORT_A_WRITE_CB(WRITE8(funworld_state, funworld_lamp_a_w))  /* portA out */
-	MCFG_AY8910_PORT_B_WRITE_CB(WRITE8(funworld_state, funworld_lamp_b_w))  /* portB out */
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 2.5)
-MACHINE_CONFIG_END
+void funworld_state::funquiz(machine_config &config)
+{
+	fw1stpal(config);  // gray background.
+//  fw2ndpal(config);  // blue background.
+
+	R65C02(config.replace(), m_maincpu, CPU_CLOCK); // 2 MHz.
+	m_maincpu->set_addrmap(AS_PROGRAM, &funworld_state::funquiz_map);
+
+	subdevice<ay8910_device>("ay8910")->port_a_read_callback().set(FUNC(funworld_state::funquiz_ay8910_a_r));
+	subdevice<ay8910_device>("ay8910")->port_b_read_callback().set(FUNC(funworld_state::funquiz_ay8910_b_r));
+}
 
 
-static MACHINE_CONFIG_DERIVED( magicrd2, fw1stpal )
-	MCFG_CPU_REPLACE("maincpu", R65C02, CPU_CLOCK) /* 2MHz */
-	MCFG_CPU_PROGRAM_MAP(magicrd2_map)
-	MCFG_CPU_VBLANK_INT_DRIVER("screen", funworld_state, nmi_line_pulse)
-	MCFG_VIDEO_START_OVERRIDE(funworld_state, magicrd2)
+void magicrd2_state::magicrd2(machine_config &config)
+{
+	fw1stpal(config);
 
-	MCFG_DEVICE_REMOVE("crtc")
-	MCFG_MC6845_ADD("crtc", MC6845, "screen", CRTC_CLOCK)
-	MCFG_MC6845_SHOW_BORDER_AREA(false)
-	MCFG_MC6845_VISAREA_ADJUST(0, -56, 0, 0)
-	MCFG_MC6845_CHAR_WIDTH(4)
+	R65C02(config.replace(), m_maincpu, CPU_CLOCK); // 2 MHz.
+	m_maincpu->set_addrmap(AS_PROGRAM, &magicrd2_state::magicrd2_map);
 
-	MCFG_SOUND_REPLACE("ay8910", AY8910, SND_CLOCK)    /* 2MHz */
-	MCFG_AY8910_PORT_A_WRITE_CB(WRITE8(funworld_state, funworld_lamp_a_w))  /* portA out */
-	MCFG_AY8910_PORT_B_WRITE_CB(WRITE8(funworld_state, funworld_lamp_b_w))  /* portB out */
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 1.5)  /* analyzed to avoid clips */
-MACHINE_CONFIG_END
+	subdevice<mc6845_device>("crtc")->set_visarea_adjust(0, -56, 0, 0);
+
+	ay8910_device &ay8910(AY8910(config.replace(), "ay8910", SND_CLOCK));   // 2 MHz.
+	ay8910.port_a_write_callback().set(FUNC(magicrd2_state::funworld_lamp_a_w));
+	ay8910.port_b_write_callback().set(FUNC(magicrd2_state::funworld_lamp_b_w));
+	ay8910.add_route(ALL_OUTPUTS, "mono", 1.5); // analyzed to avoid clips
+}
 
 
-static MACHINE_CONFIG_DERIVED( royalcd1, fw1stpal )
-	MCFG_CPU_REPLACE("maincpu", R65C02, CPU_CLOCK) /* (G65SC02P in pro version) 2MHz */
-	MCFG_CPU_PROGRAM_MAP(magicrd2_map)
-	MCFG_CPU_VBLANK_INT_DRIVER("screen", funworld_state, nmi_line_pulse)
-MACHINE_CONFIG_END
+void funworld_state::royalcd1(machine_config &config)
+{
+	fw1stpal(config);
+
+	R65C02(config.replace(), m_maincpu, CPU_CLOCK); // (G65SC02P in pro version) 2 MHz.
+	m_maincpu->set_addrmap(AS_PROGRAM, &funworld_state::magicrd2_map);
+}
 
 
-static MACHINE_CONFIG_DERIVED( royalcd2, fw2ndpal )
-	MCFG_CPU_REPLACE("maincpu", R65C02, CPU_CLOCK) /* 2MHz */
-	MCFG_CPU_PROGRAM_MAP(magicrd2_map)
-	MCFG_CPU_VBLANK_INT_DRIVER("screen", funworld_state, nmi_line_pulse)
-MACHINE_CONFIG_END
+void funworld_state::royalcd2(machine_config &config)
+{
+	fw2ndpal(config);
+
+	R65C02(config.replace(), m_maincpu, CPU_CLOCK); // 2 MHz.
+	m_maincpu->set_addrmap(AS_PROGRAM, &funworld_state::magicrd2_map);
+}
 
 
-static MACHINE_CONFIG_DERIVED( cuoreuno, fw1stpal )
-	MCFG_CPU_REPLACE("maincpu", R65C02, CPU_CLOCK) /* 2MHz */
-	MCFG_CPU_PROGRAM_MAP(cuoreuno_map)
-	MCFG_CPU_VBLANK_INT_DRIVER("screen", funworld_state, nmi_line_pulse)
-MACHINE_CONFIG_END
+void funworld_state::cuoreuno(machine_config &config)
+{
+	fw1stpal(config);
+
+	R65C02(config.replace(), m_maincpu, CPU_CLOCK); // 2 MHz.
+	m_maincpu->set_addrmap(AS_PROGRAM, &funworld_state::cuoreuno_map);
+}
 
 
-static MACHINE_CONFIG_DERIVED( saloon, fw1stpal )
-	MCFG_CPU_REPLACE("maincpu", R65C02, CPU_CLOCK) /* 2MHz */
-	MCFG_CPU_PROGRAM_MAP(saloon_map)
-	MCFG_CPU_VBLANK_INT_DRIVER("screen", funworld_state, nmi_line_pulse)
-MACHINE_CONFIG_END
+void funworld_state::saloon(machine_config &config)
+{
+	fw1stpal(config);
+
+	R65C02(config.replace(), m_maincpu, CPU_CLOCK); // 2 MHz.
+	m_maincpu->set_addrmap(AS_PROGRAM, &funworld_state::saloon_map);
+
+	config.device_remove("pia0");
+	config.device_remove("pia1");
+
+	// Serial Memory
+	I2C_24C02(config, "i2cmem", 0).set_e0(1); // ? or maybe 2nd half of 24C04?
+}
 
 
-static MACHINE_CONFIG_DERIVED( witchryl, fw1stpal )
-	MCFG_CPU_REPLACE("maincpu", R65C02, CPU_CLOCK) /* 2MHz */
-	MCFG_CPU_PROGRAM_MAP(witchryl_map)
-	MCFG_CPU_VBLANK_INT_DRIVER("screen", funworld_state, nmi_line_pulse)
-MACHINE_CONFIG_END
+void funworld_state::witchryl(machine_config &config)
+{
+	fw1stpal(config);
+
+	R65C02(config.replace(), m_maincpu, CPU_CLOCK); // 2 MHz.
+	m_maincpu->set_addrmap(AS_PROGRAM, &funworld_state::witchryl_map);
+}
 
 
-static MACHINE_CONFIG_DERIVED( lunapark, fw1stpal )
-	MCFG_CPU_REPLACE("maincpu", R65C02, CPU_CLOCK) /* 2MHz */
-	MCFG_CPU_PROGRAM_MAP(lunapark_map)  // mirrored video RAM (4000/5000 to 6000/7000).
-	MCFG_CPU_VBLANK_INT_DRIVER("screen", funworld_state, nmi_line_pulse)
-	MCFG_MACHINE_START_OVERRIDE(funworld_state, lunapark)
-	MCFG_MACHINE_RESET_OVERRIDE(funworld_state, lunapark)
-MACHINE_CONFIG_END
+void lunapark_state::lunapark(machine_config &config)
+{
+	fw1stpal(config);
+
+	R65C02(config.replace(), m_maincpu, CPU_CLOCK); // 2 MHz.
+	m_maincpu->set_addrmap(AS_PROGRAM, &lunapark_state::lunapark_map);  // mirrored video RAM (4000/5000 to 6000/7000).
+}
 
 
-static MACHINE_CONFIG_DERIVED( chinatow, fw2ndpal )
-	MCFG_CPU_REPLACE("maincpu", R65C02, CPU_CLOCK) /* 2MHz */
-	MCFG_CPU_PROGRAM_MAP(chinatow_map)
-	MCFG_CPU_VBLANK_INT_DRIVER("screen", funworld_state, nmi_line_pulse)
-	MCFG_VIDEO_START_OVERRIDE(funworld_state, chinatow)
-MACHINE_CONFIG_END
+void chinatow_state::chinatow(machine_config &config)
+{
+	fw2ndpal(config);
 
-static MACHINE_CONFIG_DERIVED( rcdino4, fw1stpal )
-	MCFG_CPU_REPLACE("maincpu", R65C02, CPU_CLOCK) /* 2MHz */
-	MCFG_CPU_PROGRAM_MAP(chinatow_map)
-	MCFG_CPU_VBLANK_INT_DRIVER("screen", funworld_state, nmi_line_pulse)
-	MCFG_VIDEO_START_OVERRIDE(funworld_state, chinatow)
-MACHINE_CONFIG_END
+	R65C02(config.replace(), m_maincpu, CPU_CLOCK); // 2 MHz.
+	m_maincpu->set_addrmap(AS_PROGRAM, &chinatow_state::chinatow_map);
+}
 
+void chinatow_state::rcdino4(machine_config &config)
+{
+	fw1stpal(config);
 
-static MACHINE_CONFIG_DERIVED( intrgmes, fw1stpal )
-	MCFG_CPU_REPLACE("maincpu", R65C02, CPU_CLOCK) /* 2MHz */
-	MCFG_CPU_PROGRAM_MAP(intergames_map)
-	MCFG_CPU_VBLANK_INT_DRIVER("screen", funworld_state, nmi_line_pulse)
-	MCFG_GFXDECODE_MODIFY("gfxdecode", fw2ndpal)
-MACHINE_CONFIG_END
+	R65C02(config.replace(), m_maincpu, CPU_CLOCK); // 2 MHz.
+	m_maincpu->set_addrmap(AS_PROGRAM, &chinatow_state::chinatow_map);
+}
 
 
-static MACHINE_CONFIG_DERIVED( fw_a7_11, fw1stpal )
-	MCFG_CPU_REPLACE("maincpu", R65C02, CPU_CLOCK) /* 2MHz */
-	MCFG_CPU_PROGRAM_MAP(fw_a7_11_map)
-	MCFG_CPU_VBLANK_INT_DRIVER("screen", funworld_state, nmi_line_pulse)
-//  MCFG_GFXDECODE_MODIFY("gfxdecode", fw2ndpal)
-MACHINE_CONFIG_END
+void intergames_state::intrgmes(machine_config &config)
+{
+	fw1stpal(config);
+
+	M65SC02(config.replace(), m_maincpu, CPU_CLOCK);    // 2 MHz.
+	m_maincpu->set_addrmap(AS_PROGRAM, &intergames_state::intergames_map);
+	//m_maincpu->set_periodic_int(FUNC(intergames_state::nmi_line_pulse), attotime::from_hz(60));
+
+	m_gfxdecode->set_info(gfx_fw2ndpal);
+}
+
+
+void funworld_state::fw_brick_1(machine_config &config)
+{
+	fw1stpal(config);
+
+	R65C02(config.replace(), m_maincpu, CPU_CLOCK); // 2 MHz.
+	m_maincpu->set_addrmap(AS_PROGRAM, &funworld_state::fw_brick_map);
+
+	NVRAM(config, "nvram1", nvram_device::DEFAULT_ALL_0);
+}
+
+
+void funworld_state::fw_brick_2(machine_config &config)
+{
+	fw2ndpal(config);
+
+	R65C02(config.replace(), m_maincpu, CPU_CLOCK); // 2 MHz.
+	m_maincpu->set_addrmap(AS_PROGRAM, &funworld_state::fw_brick_map);
+
+	NVRAM(config, "nvram1", nvram_device::DEFAULT_ALL_0);
+}
+
+
+void funworld_state::gratispk(machine_config &config)
+{
+//  fw1stpal(config);  // card deck wrong colors.
+	fw2ndpal(config);  // correct palette
+
+	m_maincpu->set_addrmap(AS_PROGRAM, &funworld_state::gratispk_map);
+}
+
+
+uint8_t royalcrdf_state::royalcrdf_opcode_r(offs_t offset)
+{
+	// address-based data bitswap; 4 address bits are involved, but only
+	// 5 different bitswaps exist, with clear regularities, so the
+	// hardware is probably selecting the appropriate one by
+	// applying passive logic to the address bits; we encode it
+	// indexed by all the involved address bits instead. A notable fact is that
+	// all the permutations in royalcrdf & multiwin are odd-parity ones,
+	// so an intriguing possibility is that the hardware be applying
+	// a fixed odd number (3 would suffice) of address-dependent
+	// 1-bit-to-1-bit bitswaps; furthermore, in both sets one of the
+	// bitswaps is equal to the one applied to all the data (but notice
+	// that, in those cases, we are applying it twice to opcodes here)
+	constexpr std::array<std::array<int, 4>, 16> bs{{ // bitswaps for data bits 1, 2, 5 & 7, in that order
+		{ 1, 5, 2, 7 },
+		{ 1, 5, 2, 7 },
+		{ 5, 1, 7, 2 },
+		{ 7, 2, 5, 1 },
+		{ 1, 5, 2, 7 },
+		{ 1, 5, 2, 7 },
+		{ 5, 2, 1, 7 },
+		{ 7, 2, 5, 1 },
+		{ 1, 5, 2, 7 },
+		{ 1, 5, 2, 7 },
+		{ 5, 1, 7, 2 },
+		{ 1, 7, 5, 2 },
+		{ 1, 5, 2, 7 },
+		{ 1, 5, 2, 7 },
+		{ 5, 2, 1, 7 },
+		{ 1, 7, 5, 2 }
+	}};
+
+	// xor masks, dependent on the same address bits than the bitswaps,
+	// and with the same 5-values structure
+	constexpr std::array<uint8_t, 16> xm {
+		0x02, 0x02, 0xa6, 0x82, 0x02, 0x02, 0x06, 0x82, 0x02, 0x02, 0xa6, 0x00, 0x02, 0x02, 0x06, 0x00
+	};
+
+	uint8_t data {_maincpu->space(AS_PROGRAM).read_byte(offset)};
+
+	if(offset < 0x800)
+		data = bitswap<8>(data ^ 0x22, 2, 6, 7, 4, 3, 1, 5, 0);
+
+	unsigned idx {bitswap<4>(offset, 8, 5, 2, 1)};
+
+	return bitswap<8>(data, bs[idx][3], 6, bs[idx][2], 4, 3, bs[idx][1], bs[idx][0], 0) ^ xm[idx];
+}
+
+void royalcrdf_state::royalcrdf_opcodes_map(address_map &map)
+{
+	map(0x0000, 0xffff).r(FUNC(royalcrdf_state::royalcrdf_opcode_r));
+}
+
+void royalcrdf_state::driver_init()
+{
+	uint8_t *ROM = memregion("maincpu")->base();
+	for (int x = 0x8000; x < 0x10000; x++)
+	{
+		ROM[x] = bitswap<8>(ROM[x] ^ 0x22, 2, 6, 7, 4, 3, 1, 5, 0);
+	}
+
+/*  Temporary hack to modify the value that ends to be a NOP,
+    after the BRK, and balanced checksums. Will be removed once
+    found a workaround in the decryption routines.
+*/
+	ROM[0x802d] = 0xa2;  // checksum.
+	ROM[0xbc4e] = 0x68;  // future NOP after BRK.
+}
+
+void royalcrdf_state::royalcrdf(machine_config &config)
+{
+	fw1stpal(config);
+
+	R65C02(config.replace(), m_maincpu, CPU_CLOCK);  // to avoid the NMI into BRK bug...
+	m_maincpu->set_addrmap(AS_PROGRAM, &royalcrdf_state::royalcrdf_map);
+
+	_maincpu = reinterpret_cast<cpu_device*>(config.device("maincpu"));
+	_maincpu->set_addrmap(AS_OPCODES, &royalcrdf_state::royalcrdf_opcodes_map);
+}
+
+
+uint8_t multiwin_state::multiwin_opcode_r(offs_t offset)
+{
+	// same general encryption scheme than the one used by the EVONA Royald Card set;
+	// 4 address bits determine which bitswap+xor is applied to the opcodes; in this case,
+	// one of the address bits don't have effect on the bitswap, just on the xor;
+	// again, we have just five different bitswaps, and the hardware is probably using
+	// passive logic on the address bits to do the selection
+	constexpr std::array<std::array<int, 5>, 8> bs{{ // bitswaps for data bits 0, 2, 4, 5 & 7, in that order
+		{ 5, 2, 4, 0, 7 },
+		{ 4, 0, 2, 7, 5 },
+		{ 7, 4, 5, 2, 0 },
+		{ 4, 0, 2, 7, 5 },
+		{ 2, 7, 0, 5, 4 },
+		{ 4, 0, 2, 7, 5 },
+		{ 0, 5, 7, 4, 2 },
+		{ 4, 0, 2, 7, 5 }
+	}};
+
+	// xor masks
+	constexpr std::array<uint8_t, 16> xm {
+		0x00, 0x00, 0x10, 0x00, 0x20, 0x00, 0x30, 0x00, 0x00, 0xb5, 0x10, 0xb5, 0x20, 0xb5, 0x30, 0xb5
+	};
+
+	uint8_t data {_maincpu->space(AS_PROGRAM).read_byte(offset)};
+	unsigned idx {bitswap<4>(offset, 6,9,5,3)};
+
+	return bitswap<8>(data, bs[idx&7][4],6,bs[idx&7][3],bs[idx&7][2],3,bs[idx&7][1],1,bs[idx&7][0]) ^ xm[idx];
+}
+
+void multiwin_state::multiwin_opcodes_map(address_map &map)
+{
+	map(0x0000, 0xffff).r(FUNC(multiwin_state::multiwin_opcode_r));
+}
+
+void multiwin_state::driver_init()
+{
+	uint8_t *ROM = memregion("maincpu")->base();
+	for (int x = 0x4000; x < 0x10000; x++)
+	{
+		ROM[x] = bitswap<8>(ROM[x] ^ 0x91, 5, 6, 7, 2, 3, 0, 1, 4);
+	}
+}
+
+void multiwin_state::multiwin(machine_config &config)
+{
+	fw2ndpal(config);
+
+	_maincpu = reinterpret_cast<cpu_device*>(config.device("maincpu"));
+	_maincpu->set_addrmap(AS_OPCODES, &multiwin_state::multiwin_opcodes_map);
+}
+
+
+class powercrd_state : public funworld_state
+{
+public:
+	powercrd_state(const machine_config &mconfig, device_type type, const char* tag)
+	: funworld_state(mconfig, type, tag)
+	{
+	}
+
+	void powercrd(machine_config& config);
+
+private:
+	cpu_device* _maincpu {};
+	uint8_t powercrd_opcode_r(offs_t offset);
+
+	void powercrd_opcodes_map(address_map& map);
+};
+
+uint8_t powercrd_state::powercrd_opcode_r(offs_t offset)
+{
+	// encryption controlled by the lower two bits of the address; no clear structure is
+	// seen in the tables, so it looks like a lookup into randomly or pseudorandomly
+	// generated permutation tables; all opcodes in the [8da0, 9e0b) & [c000, ef80) are
+	// believed to be covered by these tables; errors could be lurking in the least used opcodes;
+	// this same encryption scheme (with different tables) is seen in megacard & jokercrd
+
+	constexpr uint8_t UNKN {0xfc};
+
+	constexpr std::array<std::array<uint8_t, 256>, 4> decryption_tables{{
+		//  _0    _1    _2    _3    _4    _5    _6    _7    _8    _9    _a    _b    _c    _d    _e    _f
+		{ 0xe8, 0x29, UNKN, UNKN, 0x85, UNKN, 0x18, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0xd5,  // 0_
+		  UNKN, UNKN, 0xa6, 0x4c, UNKN, UNKN, 0x84, UNKN, UNKN, UNKN, 0x69, UNKN, 0x91, 0x38, 0xa8, UNKN,  // 1_
+		  UNKN, 0x9d, 0xd8, 0x49, 0xc0, UNKN, 0x66, UNKN, UNKN, 0xe6, 0xb9, 0xad, UNKN, UNKN, UNKN, 0x10,  // 2_
+		  UNKN, 0xd0, UNKN, 0x92, UNKN, UNKN, 0x74, UNKN, 0x9e, UNKN, UNKN, UNKN, UNKN, 0xb1, UNKN, 0x3d,  // 3_
+		  0xa5, 0xc4, UNKN, UNKN, UNKN, 0xce, 0x6a, 0x3a, UNKN, UNKN, UNKN, UNKN, 0xa2, UNKN, UNKN, UNKN,  // 4_
+		  0x9c, UNKN, UNKN, UNKN, UNKN, 0x79, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN,  // 5_
+		  UNKN, 0xed, UNKN, UNKN, UNKN, UNKN, 0xc9, 0x99, UNKN, 0xa9, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN,  // 6_
+		  UNKN, UNKN, 0xc8, UNKN, 0xe0, 0x2d, UNKN, 0x7d, UNKN, UNKN, 0x80, 0x64, 0xf0, UNKN, UNKN, UNKN,  // 7_
+		  UNKN, UNKN, UNKN, UNKN, 0x98, UNKN, UNKN, UNKN, 0xbd, UNKN, UNKN, UNKN, 0x1a, UNKN, UNKN, UNKN,  // 8_
+		  UNKN, 0x30, UNKN, UNKN, 0xc6, 0x90, UNKN, UNKN, UNKN, 0x6d, 0xee, UNKN, UNKN, UNKN, 0xe4, UNKN,  // 9_
+		  UNKN, 0x68, UNKN, UNKN, UNKN, UNKN, UNKN, 0x0d, 0x95, UNKN, 0x8e, 0x40, UNKN, 0x20, 0xb2, UNKN,  // a_
+		  UNKN, UNKN, UNKN, UNKN, UNKN, 0x65, UNKN, UNKN, UNKN, UNKN, UNKN, 0xa4, UNKN, UNKN, 0x05, UNKN,  // b_
+		  UNKN, UNKN, 0xba, 0x8a, UNKN, UNKN, UNKN, 0x60, 0xf8, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN,  // c_
+		  0xdd, UNKN, UNKN, UNKN, 0xaa, 0xe9, 0x8d, 0xa0, UNKN, 0xb5, UNKN, 0xca, UNKN, UNKN, 0x0a, UNKN,  // d_
+		  0x2a, UNKN, UNKN, UNKN, 0xb0, UNKN, UNKN, 0x48, UNKN, UNKN, UNKN, UNKN, UNKN, 0x4a, 0xcd, 0x45,  // e_
+		  UNKN, UNKN, UNKN, 0x09, UNKN, UNKN, 0xc5, UNKN, UNKN, 0x88, 0xae, UNKN, 0x86, UNKN, 0xda, 0x8c },// f_
+
+		//  _0    _1    _2    _3    _4    _5    _6    _7    _8    _9    _a    _b    _c    _d    _e    _f
+		{ UNKN, UNKN, UNKN, 0xae, UNKN, 0x4e, 0xda, UNKN, UNKN, UNKN, 0x60, UNKN, UNKN, UNKN, UNKN, 0x64,  // 0_
+		  0xa0, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0x86, 0x9c, 0x88, 0xe4, 0xc4, UNKN, UNKN, 0x95,  // 1_
+		  0x2a, UNKN, 0xe0, UNKN, UNKN, 0x99, UNKN, UNKN, 0x90, UNKN, UNKN, UNKN, 0x6c, 0x49, UNKN, UNKN,  // 2_
+		  0xf0, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0x66, UNKN, 0x11, 0xee, UNKN, UNKN, 0x4c,  // 3_
+		  0xb0, UNKN, UNKN, 0x45, 0xc6, UNKN, UNKN, UNKN, UNKN, 0xcd, UNKN, UNKN, 0xc8, 0x1a, UNKN, UNKN,  // 4_
+		  UNKN, UNKN, 0x09, 0x91, UNKN, 0xc9, 0xf8, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0x92, 0x20, 0xa4,  // 5_
+		  UNKN, 0x65, UNKN, 0xe8, UNKN, 0xd8, 0x3d, UNKN, UNKN, UNKN, UNKN, UNKN, 0x80, 0xbd, 0x84, UNKN,  // 6_
+		  UNKN, UNKN, UNKN, 0x68, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN,  // 7_
+		  0xaa, UNKN, UNKN, UNKN, UNKN, UNKN, 0x0d, 0x18, UNKN, UNKN, UNKN, 0x8a, UNKN, UNKN, UNKN, 0x26,  // 8_
+		  0xc0, UNKN, UNKN, UNKN, 0x3a, 0xc5, UNKN, 0x6d, 0xe9, UNKN, 0x4a, 0xb9, UNKN, 0x05, 0x0a, UNKN,  // 9_
+		  UNKN, 0xfa, UNKN, UNKN, UNKN, 0xd5, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0x48, UNKN,  // a_
+		  0x10, UNKN, 0xf9, 0x5a, UNKN, 0xa2, UNKN, UNKN, UNKN, UNKN, UNKN, 0xa9, UNKN, 0xa6, UNKN, UNKN,  // b_
+		  0xca, UNKN, UNKN, 0x85, UNKN, UNKN, UNKN, UNKN, UNKN, 0xb2, UNKN, UNKN, UNKN, 0x9d, UNKN, 0x7a,  // c_
+		  UNKN, 0x79, 0xa5, UNKN, UNKN, 0xb1, UNKN, 0x8e, 0xad, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN,  // d_
+		  UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0x2d, UNKN, UNKN, UNKN, 0x8d, UNKN, UNKN, UNKN, 0xb5, 0xce,  // e_
+		  UNKN, UNKN, 0x38, UNKN, 0xe6, UNKN, UNKN, 0xd0, 0x69, UNKN, UNKN, 0x29, UNKN, UNKN, UNKN, UNKN },// f_
+
+		//  _0    _1    _2    _3    _4    _5    _6    _7    _8    _9    _a    _b    _c    _d    _e    _f
+		{ UNKN, UNKN, 0x30, 0xb5, 0x49, 0xb0, UNKN, 0xc5, UNKN, 0x1a, UNKN, UNKN, UNKN, UNKN, 0x90, UNKN,  // 0_
+		  UNKN, UNKN, UNKN, UNKN, 0xaa, UNKN, UNKN, 0x2d, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN,  // 1_
+		  UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0x4a, 0x9a, UNKN, 0xfa, UNKN, UNKN, 0x5a, UNKN, 0xae, UNKN,  // 2_
+		  UNKN, UNKN, 0xe0, UNKN, UNKN, UNKN, 0x8d, 0x0a, UNKN, UNKN, 0xed, UNKN, 0x88, UNKN, UNKN, UNKN,  // 3_
+		  UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0xee, UNKN, UNKN, UNKN, 0xb1, UNKN, 0x9c, UNKN, 0x0d,  // 4_
+		  0x4c, UNKN, 0x69, UNKN, UNKN, 0xa9, UNKN, UNKN, 0x05, 0xa4, UNKN, 0x4e, UNKN, UNKN, UNKN, UNKN,  // 5_
+		  0xc6, UNKN, UNKN, 0xbd, 0x09, UNKN, UNKN, UNKN, UNKN, 0x20, UNKN, 0x3a, 0xc0, UNKN, UNKN, UNKN,  // 6_
+		  0xa0, UNKN, UNKN, UNKN, 0x80, UNKN, 0x95, UNKN, UNKN, UNKN, 0xe8, UNKN, 0xd0, UNKN, UNKN, UNKN,  // 7_
+		  0x60, 0xe9, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0x40, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN,  // 8_
+		  UNKN, UNKN, 0x9d, UNKN, UNKN, UNKN, UNKN, 0xa5, UNKN, UNKN, 0xf0, UNKN, UNKN, UNKN, UNKN, UNKN,  // 9_
+		  UNKN, 0x38, UNKN, 0xca, 0xa2, 0x8e, UNKN, 0xb9, UNKN, 0xa6, 0xcd, 0x2a, UNKN, UNKN, UNKN, UNKN,  // a_
+		  UNKN, UNKN, 0xad, UNKN, UNKN, UNKN, UNKN, UNKN, 0xf8, UNKN, UNKN, 0x11, 0xce, UNKN, UNKN, UNKN,  // b_
+		  UNKN, UNKN, 0xda, UNKN, UNKN, UNKN, 0x6c, UNKN, UNKN, UNKN, UNKN, 0x8a, UNKN, UNKN, UNKN, UNKN,  // c_
+		  UNKN, UNKN, UNKN, 0x84, UNKN, UNKN, UNKN, UNKN, 0xc9, UNKN, 0x7a, UNKN, 0x48, 0xd8, UNKN, 0x18,  // d_
+		  0xe6, UNKN, UNKN, 0x68, UNKN, 0x29, UNKN, UNKN, 0xc4, 0x65, UNKN, UNKN, 0xa8, UNKN, 0x85, UNKN,  // e_
+		  UNKN, 0xc8, 0xd5, 0xe4, UNKN, 0x7d, 0x10, UNKN, UNKN, UNKN, 0x25, UNKN, UNKN, 0x1d, 0x64, UNKN },// f_
+
+		//  _0    _1    _2    _3    _4    _5    _6    _7    _8    _9    _a    _b    _c    _d    _e    _f
+		{ UNKN, 0x99, 0xf0, UNKN, UNKN, UNKN, 0xae, UNKN, UNKN, UNKN, UNKN, 0x64, UNKN, UNKN, 0x2a, UNKN,  // 0_
+		  0xb5, UNKN, 0xa6, UNKN, UNKN, 0x65, UNKN, 0xf8, UNKN, UNKN, UNKN, 0x58, UNKN, UNKN, 0xc8, UNKN,  // 1_
+		  0x1a, UNKN, UNKN, UNKN, 0x09, 0x91, UNKN, 0xe0, UNKN, UNKN, UNKN, 0xad, UNKN, UNKN, UNKN, UNKN,  // 2_
+		  UNKN, 0xa4, 0xb0, UNKN, 0xd9, 0xe4, 0xd0, UNKN, UNKN, 0x5a, 0x2d, UNKN, UNKN, 0x4c, 0xa0, UNKN,  // 3_
+		  0x85, UNKN, 0x49, UNKN, UNKN, UNKN, UNKN, UNKN, 0x88, UNKN, UNKN, 0xbd, 0x69, 0x95, UNKN, UNKN,  // 4_
+		  UNKN, 0xe9, UNKN, UNKN, UNKN, UNKN, UNKN, 0x80, 0x0d, UNKN, UNKN, 0x30, UNKN, UNKN, UNKN, 0x9d,  // 5_
+		  UNKN, UNKN, UNKN, 0x26, UNKN, 0xd5, 0x1d, UNKN, 0x4e, UNKN, 0xe8, UNKN, UNKN, UNKN, UNKN, 0x05,  // 6_
+		  0xa5, UNKN, UNKN, UNKN, 0x68, UNKN, UNKN, 0xcd, UNKN, UNKN, UNKN, UNKN, UNKN, 0x25, UNKN, UNKN,  // 7_
+		  UNKN, UNKN, UNKN, 0xc9, UNKN, UNKN, UNKN, 0xa2, UNKN, UNKN, 0x45, UNKN, UNKN, 0xa8, UNKN, UNKN,  // 8_
+		  0x9a, UNKN, 0xca, UNKN, UNKN, UNKN, UNKN, UNKN, 0xe6, UNKN, UNKN, UNKN, UNKN, UNKN, 0x60, 0x8d,  // 9_
+		  UNKN, UNKN, UNKN, UNKN, UNKN, 0xda, 0xee, 0xb2, 0x7d, UNKN, UNKN, 0x84, UNKN, UNKN, 0xaa, UNKN,  // a_
+		  0x90, UNKN, UNKN, 0x6d, 0xb1, UNKN, UNKN, UNKN, UNKN, 0x78, UNKN, UNKN, 0x8e, UNKN, 0xc0, 0x40,  // b_
+		  UNKN, UNKN, 0x38, 0xc6, UNKN, UNKN, UNKN, UNKN, UNKN, 0xd8, UNKN, UNKN, 0x0a, UNKN, UNKN, 0xb9,  // c_
+		  UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0xfa, UNKN, UNKN, UNKN, UNKN, 0x10, 0x20,  // d_
+		  UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0xa9, UNKN, UNKN, UNKN, UNKN, 0xc5, UNKN,  // e_
+		  UNKN, 0x86, 0x29, 0x4a, UNKN, UNKN, 0x18, 0x98, UNKN, UNKN, UNKN, 0x9c, UNKN, 0x7a, UNKN, 0x48 } // f_
+	}};
+
+	uint8_t data {_maincpu->space(AS_PROGRAM).read_byte(offset)};
+	return decryption_tables[offset & 3][data];
+}
+
+void powercrd_state::powercrd_opcodes_map(address_map &map)
+{
+	map(0x0000, 0xffff).r(FUNC(powercrd_state::powercrd_opcode_r));
+}
+
+void powercrd_state::powercrd(machine_config &config)
+{
+	fw2ndpal(config);
+
+	_maincpu = reinterpret_cast<cpu_device*>(config.device("maincpu"));
+	_maincpu->set_addrmap(AS_OPCODES, &powercrd_state::powercrd_opcodes_map);
+}
+
+class megacard_state : public funworld_state
+{
+public:
+	megacard_state(const machine_config &mconfig, device_type type, const char* tag)
+	: funworld_state(mconfig, type, tag)
+	{
+	}
+
+	void megacard(machine_config& config);
+
+private:
+	cpu_device* _maincpu {};
+	uint8_t megacard_opcode_r(offs_t offset);
+
+	void megacard_opcodes_map(address_map& map);
+};
+
+uint8_t megacard_state::megacard_opcode_r(offs_t offset)
+{
+	// all opcodes in the [c000, fc80) range are believed to be covered by these tables;
+	// errors could be lurking in the least used opcodes
+
+	constexpr uint8_t UNKN {0xfc};
+
+	constexpr std::array<std::array<uint8_t, 256>, 4> decryption_tables{{
+		//  _0    _1    _2    _3    _4    _5    _6    _7    _8    _9    _a    _b    _c    _d    _e    _f
+		{ UNKN, 0x6c, UNKN, UNKN, UNKN, 0xfa, 0x38, UNKN, UNKN, 0x4c, 0xd8, UNKN, 0xe8, UNKN, 0xc5, UNKN,  // 0_
+		  UNKN, 0xa6, 0x91, UNKN, UNKN, UNKN, UNKN, 0x58, 0xa0, 0xe0, 0xb9, 0x4e, UNKN, UNKN, UNKN, 0x78,  // 1_
+		  0xe9, 0xee, UNKN, 0xca, 0x85, UNKN, 0xe6, UNKN, UNKN, UNKN, 0xcd, UNKN, UNKN, UNKN, UNKN, UNKN,  // 2_
+		  UNKN, UNKN, UNKN, UNKN, 0x90, UNKN, UNKN, 0x64, UNKN, UNKN, 0x45, 0x60, UNKN, UNKN, 0x69, UNKN,  // 3_
+		  UNKN, UNKN, 0xea, 0xf8, 0x7a, UNKN, UNKN, 0x1a, UNKN, UNKN, UNKN, UNKN, UNKN, 0xb1, UNKN, 0x80,  // 4_
+		  UNKN, UNKN, 0x84, UNKN, UNKN, UNKN, UNKN, 0x49, UNKN, UNKN, 0x7c, UNKN, 0x20, 0x8a, 0xed, UNKN,  // 5_
+		  0x8c, UNKN, UNKN, UNKN, 0x5a, UNKN, UNKN, UNKN, 0xa8, 0xa9, UNKN, 0x6d, 0xc9, 0x95, UNKN, 0xda,  // 6_
+		  0xaa, 0xe4, UNKN, UNKN, UNKN, UNKN, 0x8e, 0xae, 0x3a, 0xc0, UNKN, 0xd5, 0x92, UNKN, UNKN, UNKN,  // 7_
+		  0xc6, UNKN, UNKN, UNKN, UNKN, UNKN, 0x48, UNKN, UNKN, 0x86, 0x9c, UNKN, UNKN, 0xc8, UNKN, UNKN,  // 8_
+		  UNKN, 0x68, UNKN, UNKN, UNKN, UNKN, UNKN, 0xd0, 0xa2, UNKN, UNKN, UNKN, UNKN, 0x25, UNKN, 0xa5,  // 9_
+		  UNKN, 0x9d, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0xbd, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0xa4,  // a_
+		  UNKN, UNKN, UNKN, 0xb2, UNKN, 0x29, UNKN, 0x09, UNKN, UNKN, UNKN, 0xb0, UNKN, UNKN, 0xb5, UNKN,  // b_
+		  UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0x0a, UNKN, UNKN, 0x7d, UNKN, 0xf0, UNKN, 0x00,  // c_
+		  UNKN, UNKN, UNKN, UNKN, 0x2d, UNKN, UNKN, UNKN, 0x4a, 0x88, 0x05, UNKN, UNKN, 0x10, 0xce, UNKN,  // d_
+		  UNKN, UNKN, 0xc4, UNKN, 0x18, UNKN, UNKN, UNKN, 0x99, 0xf9, UNKN, UNKN, UNKN, UNKN, UNKN, 0xdd,  // e_
+		  0x11, UNKN, 0x26, UNKN, 0x65, 0x98, UNKN, 0xad, 0x2a, UNKN, UNKN, 0x8d, UNKN, UNKN, UNKN, UNKN },// f_
+
+		//  _0    _1    _2    _3    _4    _5    _6    _7    _8    _9    _a    _b    _c    _d    _e    _f
+		{ UNKN, UNKN, UNKN, 0x18, UNKN, UNKN, UNKN, 0x8e, UNKN, UNKN, UNKN, UNKN, UNKN, 0xaa, 0xcd, 0x0a,  // 0_
+		  0xe6, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0xad, UNKN, UNKN, UNKN, UNKN,  // 1_
+		  UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0x69, UNKN, 0xd0, UNKN, UNKN, UNKN, UNKN, UNKN, 0x2d, UNKN,  // 2_
+		  UNKN, 0x88, UNKN, UNKN, UNKN, 0x98, UNKN, 0x99, UNKN, 0xb1, UNKN, UNKN, 0x9c, 0x1a, UNKN, UNKN,  // 3_
+		  UNKN, 0x7a, 0xae, 0xa2, 0xca, 0xba, UNKN, 0x25, UNKN, UNKN, 0x10, UNKN, 0xea, 0x79, 0x8a, UNKN,  // 4_
+		  UNKN, 0x60, UNKN, UNKN, UNKN, UNKN, 0x84, 0xd8, 0xa9, UNKN, UNKN, UNKN, 0xe9, UNKN, 0xda, UNKN,  // 5_
+		  0xc0, UNKN, UNKN, 0x3d, 0x8d, UNKN, UNKN, UNKN, UNKN, 0x68, UNKN, 0x92, UNKN, 0x48, UNKN, UNKN,  // 6_
+		  0x9d, 0x49, 0x95, 0xc6, 0xb0, UNKN, 0x40, UNKN, UNKN, UNKN, 0x05, UNKN, UNKN, UNKN, UNKN, UNKN,  // 7_
+		  UNKN, 0x0d, UNKN, UNKN, UNKN, UNKN, 0xa4, UNKN, UNKN, 0x30, UNKN, 0x66, UNKN, UNKN, 0xa5, UNKN,  // 8_
+		  0x64, UNKN, 0x29, UNKN, UNKN, 0x86, UNKN, 0xb2, UNKN, UNKN, UNKN, UNKN, UNKN, 0x2a, 0x6d, 0x3a,  // 9_
+		  0x38, UNKN, UNKN, 0x91, UNKN, UNKN, UNKN, 0xbd, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0xd5, UNKN,  // a_
+		  UNKN, UNKN, UNKN, UNKN, 0xb5, 0xf8, UNKN, UNKN, UNKN, 0xc5, UNKN, UNKN, UNKN, 0x09, UNKN, UNKN,  // b_
+		  UNKN, UNKN, UNKN, UNKN, 0x11, 0x90, 0x4c, UNKN, 0x85, UNKN, UNKN, UNKN, 0x4a, UNKN, UNKN, UNKN,  // c_
+		  UNKN, UNKN, 0x20, 0xb9, UNKN, UNKN, UNKN, UNKN, 0x00, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN,  // d_
+		  UNKN, 0x80, 0x65, UNKN, UNKN, 0xe8, 0xc9, UNKN, UNKN, UNKN, UNKN, UNKN, 0xee, 0xf0, UNKN, UNKN,  // e_
+		  UNKN, 0xa0, 0xc8, UNKN, UNKN, UNKN, 0xc4, UNKN, 0x4e, 0xe0, 0xa8, UNKN, 0x45, UNKN, UNKN, 0xa6 },// f_
+
+		//  _0    _1    _2    _3    _4    _5    _6    _7    _8    _9    _a    _b    _c    _d    _e    _f
+		{ UNKN, 0x86, UNKN, UNKN, 0xe6, 0xc9, UNKN, 0x1a, UNKN, 0xdd, 0x88, UNKN, UNKN, UNKN, UNKN, 0x8e,  // 0_
+		  UNKN, 0xe0, UNKN, UNKN, 0x4c, 0xd0, UNKN, 0x64, UNKN, 0xa4, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN,  // 1_
+		  UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0xee, UNKN, 0x74, UNKN, 0xa0, UNKN, 0xed, UNKN, 0xe9,  // 2_
+		  UNKN, 0xd9, UNKN, UNKN, UNKN, UNKN, 0x0a, UNKN, 0x49, UNKN, 0x1d, 0xa2, UNKN, 0x8d, UNKN, 0x00,  // 3_
+		  0xa9, UNKN, UNKN, 0xea, UNKN, UNKN, UNKN, UNKN, UNKN, 0xf0, 0xfa, UNKN, UNKN, UNKN, UNKN, 0x84,  // 4_
+		  UNKN, UNKN, 0x38, UNKN, 0xbd, UNKN, 0x9d, 0x92, 0xb1, UNKN, 0x95, UNKN, 0xe8, 0x45, UNKN, UNKN,  // 5_
+		  UNKN, UNKN, 0xb5, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0x85, UNKN, UNKN,  // 6_
+		  UNKN, UNKN, UNKN, UNKN, 0xa6, 0xa5, 0xe4, 0x09, UNKN, 0x29, UNKN, 0x5a, 0x90, UNKN, 0xc0, UNKN,  // 7_
+		  0xca, UNKN, UNKN, UNKN, 0x18, UNKN, UNKN, UNKN, UNKN, 0x66, UNKN, UNKN, UNKN, 0x68, UNKN, UNKN,  // 8_
+		  0x98, 0xb0, 0x26, 0xc4, UNKN, 0x2d, UNKN, UNKN, UNKN, UNKN, 0xc6, UNKN, UNKN, UNKN, 0xd8, UNKN,  // 9_
+		  UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0x3d, UNKN, UNKN, UNKN, UNKN, UNKN, 0xaa, UNKN, UNKN,  // a_
+		  0xce, 0x10, UNKN, 0x05, 0x80, 0x48, UNKN, UNKN, UNKN, 0xf8, 0x0d, UNKN, UNKN, UNKN, UNKN, UNKN,  // b_
+		  UNKN, UNKN, UNKN, UNKN, 0x91, 0xc5, UNKN, UNKN, UNKN, 0x9c, UNKN, 0x30, 0xc8, UNKN, UNKN, UNKN,  // c_
+		  0x69, 0x60, 0x9a, 0xb2, UNKN, UNKN, 0x2a, UNKN, 0x65, UNKN, UNKN, UNKN, 0x25, UNKN, 0x79, 0x6a,  // d_
+		  UNKN, 0x20, 0xb9, UNKN, 0x3a, 0xd5, UNKN, 0x4a, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0x99, 0xa8,  // e_
+		  UNKN, UNKN, UNKN, UNKN, 0xda, UNKN, UNKN, UNKN, UNKN, 0xcd, UNKN, 0x7a, 0xad, UNKN, UNKN, UNKN },// f_
+
+		//  _0    _1    _2    _3    _4    _5    _6    _7    _8    _9    _a    _b    _c    _d    _e    _f
+		{ UNKN, UNKN, UNKN, 0x60, UNKN, UNKN, 0xb1, UNKN, UNKN, UNKN, 0x29, UNKN, 0x8e, 0x74, 0x9a, 0xea,  // 0_
+		  UNKN, 0x6d, UNKN, 0x92, 0xb5, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0x7d, 0xb9, 0xa2, UNKN, 0x6a,  // 1_
+		  UNKN, UNKN, UNKN, 0xb0, 0xc4, UNKN, UNKN, 0x2d, UNKN, 0x79, 0x8a, UNKN, UNKN, UNKN, 0xa0, UNKN,  // 2_
+		  UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0xa4, 0x1a, UNKN, 0xaa, 0x80, UNKN, UNKN,  // 3_
+		  UNKN, UNKN, 0x10, UNKN, 0x3a, UNKN, UNKN, UNKN, 0x8d, UNKN, UNKN, UNKN, UNKN, 0xf8, UNKN, 0x25,  // 4_
+		  UNKN, UNKN, 0x40, UNKN, 0x85, UNKN, 0x95, UNKN, UNKN, 0xcd, UNKN, UNKN, 0x4c, 0x98, UNKN, UNKN,  // 5_
+		  UNKN, 0x68, UNKN, 0xe9, 0x9e, 0x09, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0x5a, 0xee,  // 6_
+		  UNKN, 0x86, UNKN, UNKN, UNKN, 0xd5, UNKN, 0xa5, 0x65, UNKN, UNKN, UNKN, UNKN, 0x4e, 0xe0, 0x90,  // 7_
+		  UNKN, UNKN, 0xc0, 0xce, UNKN, UNKN, UNKN, 0xad, UNKN, UNKN, UNKN, 0x88, UNKN, UNKN, UNKN, UNKN,  // 8_
+		  UNKN, 0xda, UNKN, UNKN, UNKN, 0xb2, UNKN, 0x7a, UNKN, UNKN, UNKN, UNKN, 0x91, UNKN, UNKN, 0xc5,  // 9_
+		  UNKN, UNKN, 0x05, 0xe6, UNKN, UNKN, 0x49, UNKN, UNKN, 0x0d, 0x9d, 0x4a, UNKN, UNKN, 0xc8, UNKN,  // a_
+		  UNKN, UNKN, UNKN, UNKN, 0x20, UNKN, 0x1d, UNKN, UNKN, 0xd0, UNKN, UNKN, 0xfa, UNKN, 0xbd, UNKN,  // b_
+		  UNKN, UNKN, UNKN, UNKN, 0x2a, UNKN, UNKN, 0x0a, UNKN, UNKN, 0xca, UNKN, 0x9c, 0x69, UNKN, UNKN,  // c_
+		  0x00, 0xd8, 0x38, UNKN, UNKN, UNKN, 0xa6, UNKN, UNKN, UNKN, 0xc6, UNKN, UNKN, UNKN, UNKN, UNKN,  // d_
+		  UNKN, 0xc9, UNKN, UNKN, UNKN, UNKN, 0x64, 0x48, UNKN, UNKN, 0xa8, UNKN, 0xe8, UNKN, UNKN, UNKN,  // e_
+		  UNKN, UNKN, 0xa9, UNKN, 0xf0, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0x18, UNKN, UNKN, UNKN, UNKN } // f_
+	}};
+
+	uint8_t data {_maincpu->space(AS_PROGRAM).read_byte(offset)};
+	return decryption_tables[offset & 3][data];
+}
+
+void megacard_state::megacard_opcodes_map(address_map &map)
+{
+	map(0x0000, 0xffff).r(FUNC(megacard_state::megacard_opcode_r));
+}
+
+void megacard_state::megacard(machine_config &config)
+{
+	fw2ndpal(config);
+
+	_maincpu = reinterpret_cast<cpu_device*>(config.device("maincpu"));
+	_maincpu->set_addrmap(AS_OPCODES, &megacard_state::megacard_opcodes_map);
+}
+
+class jokercrd_state : public funworld_state
+{
+public:
+	jokercrd_state(const machine_config &mconfig, device_type type, const char* tag)
+	: funworld_state(mconfig, type, tag)
+	{
+	}
+
+	void jokercrd(machine_config& config);
+
+private:
+	cpu_device* _maincpu {};
+	uint8_t jokercrd_opcode_r(offs_t offset);
+
+	void jokercrd_opcodes_map(address_map& map);
+};
+
+uint8_t jokercrd_state::jokercrd_opcode_r(offs_t offset)
+{
+	// even when errors could be lurking in the least used opcodes,
+	// all of them in the [8050,b369) & [c000, f063) ranges are believed
+	// to be covered by these tables, with the exception of the one @c0f1:
+
+	//  c0da: a6 6a     ldx $6a
+	//  c0dc: ad 5c 00  lda $005c
+	//  c0df: 29 3f     and #$3f
+	//  c0e1: 85 70     sta $70
+	//  c0e3: 20 fa c0  jsr $c0fa
+	//  c0e6: a5 70     lda $70
+	//  c0e8: 9d 33 02  sta $0233, x
+	//  c0eb: a2 00     ldx #$00
+	//  c0ed: e4 6a     cpx $6a
+	//  c0ef: f0 08     beq $c0f9
+	//  c0f1: XX 33 02  nop #$33 #$02 [YYY $0233, x]
+	//  c0f4: f0 e4     beq $c0da
+	//  c0f6: e8        inx
+	//  c0f7: 80 f4     bra $c0ed
+	//  c0f9: 60        rts
+	//
+	//  c0fa: ad 4b 07  lda $074b
+	//  c0fd: 0d 4c 07  ora $074c
+	//  c100: d0 01     bne $c103
+	//  c102: 60        rts
+	//  c103: a5 70     lda $70
+	//  c105: 29 30     and #$30
+	//  c107: 09 01     ora #$01
+	//  c109: 85 70     sta $70
+	//  c10b: 60        rts
+
+	// it should be noted, however, that the subroutine @c0da seems to be called just from here:
+	//  c044: 64 6a     stz $6a
+	//  c046: 20 da c0  jsr $c0da
+	// and, if no interrupt is messing with the accesed data, the STZ @c044 should make the BEQ @c0ef
+	// become an inconditional jump, converting the opcode @c0f1 in dead code
+
+
+	constexpr uint8_t UNKN {0xfc};
+
+	constexpr std::array<std::array<uint8_t, 256>, 4> decryption_tables{{
+		//  _0    _1    _2    _3    _4    _5    _6    _7    _8    _9    _a    _b    _c    _d    _e    _f
+		{ UNKN, UNKN, UNKN, 0x3d, 0xe0, UNKN, UNKN, 0xb0, UNKN, 0xa0, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN,  // 0_
+		  UNKN, UNKN, 0x4a, 0x65, 0x18, 0x64, 0xad, UNKN, 0x90, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN,  // 1_
+		  UNKN, UNKN, 0x49, UNKN, 0xa8, 0x8c, 0x20, UNKN, UNKN, 0xf8, UNKN, UNKN, 0xe6, UNKN, 0x88, UNKN,  // 2_
+		  UNKN, UNKN, UNKN, UNKN, 0xb2, UNKN, UNKN, UNKN, UNKN, 0x58, 0x38, 0x45, UNKN, UNKN, UNKN, UNKN,  // 3_
+		  UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0xd5, 0xa5, 0xa9, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN,  // 4_
+		  UNKN, UNKN, UNKN, UNKN, 0xda, 0xa2, UNKN, 0x4e, 0x1a, UNKN, 0xe4, UNKN, UNKN, UNKN, 0x0c, 0x98,  // 5_
+		  0xa6, UNKN, UNKN, UNKN, 0x9c, 0xfa, UNKN, 0xbd, UNKN, 0xae, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN,  // 6_
+		  UNKN, UNKN, 0xc0, 0xc5, UNKN, UNKN, UNKN, UNKN, UNKN, 0xcd, UNKN, UNKN, UNKN, 0x8a, UNKN, 0x80,  // 7_
+		  UNKN, UNKN, 0x95, UNKN, UNKN, UNKN, UNKN, UNKN, 0x8e, UNKN, UNKN, UNKN, UNKN, 0x68, UNKN, UNKN,  // 8_
+		  0xb1, UNKN, UNKN, UNKN, UNKN, 0xd0, 0x0d, 0xc9, UNKN, UNKN, UNKN, UNKN, 0x29, 0x3a, 0xc8, 0x8d,  // 9_
+		  0xc6, 0xee, 0x25, UNKN, 0x05, 0x6e, UNKN, 0x2a, UNKN, 0x85, UNKN, UNKN, 0xd8, UNKN, 0xce, UNKN,  // a_
+		  UNKN, UNKN, UNKN, 0xe9, 0xc4, 0xe8, UNKN, UNKN, 0x99, 0x6a, 0x0a, UNKN, 0x84, UNKN, UNKN, UNKN,  // b_
+		  UNKN, UNKN, UNKN, 0x9d, 0x2d, 0x10, UNKN, UNKN, UNKN, UNKN, UNKN, 0xaa, UNKN, UNKN, 0x11, UNKN,  // c_
+		  UNKN, 0xb9, 0x86, UNKN, 0xca, UNKN, UNKN, UNKN, UNKN, UNKN, 0x7a, UNKN, 0xf0, 0x09, 0x4c, UNKN,  // d_
+		  0x60, 0x78, UNKN, UNKN, UNKN, 0x48, 0x5a, UNKN, UNKN, UNKN, 0x79, UNKN, UNKN, UNKN, UNKN, 0xba,  // e_
+		  UNKN, UNKN, 0x6d, 0x92, UNKN, 0x26, UNKN, UNKN, 0xb5, UNKN, 0x69, UNKN, UNKN, 0xa4, UNKN, 0x1d },// f_
+
+		//  _0    _1    _2    _3    _4    _5    _6    _7    _8    _9    _a    _b    _c    _d    _e    _f
+		{ UNKN, UNKN, UNKN, UNKN, 0x48, UNKN, UNKN, 0x0c, UNKN, 0x60, 0x6d, 0x20, 0xda, UNKN, 0xf0, UNKN,  // 0_
+		  UNKN, 0xcd, 0x95, UNKN, UNKN, 0xae, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0x8e, UNKN, 0x29, UNKN,  // 1_
+		  0x90, UNKN, UNKN, UNKN, 0x69, 0xb5, UNKN, UNKN, UNKN, UNKN, 0xd0, 0xad, UNKN, UNKN, UNKN, 0x9a,  // 2_
+		  0xb6, 0x40, UNKN, 0xd5, 0xfa, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0xa4, UNKN, 0x88, UNKN,  // 3_
+		  UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0x2a, UNKN, UNKN, UNKN, 0xa2, UNKN, UNKN, UNKN, UNKN, UNKN,  // 4_
+		  0xee, UNKN, UNKN, UNKN, 0x64, UNKN, 0xb0, 0x9d, UNKN, UNKN, UNKN, 0x80, UNKN, 0xf8, 0xe8, UNKN,  // 5_
+		  UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0x91, UNKN, 0xb9, 0x8a, UNKN, UNKN, UNKN, 0x10, UNKN,  // 6_
+		  0x4a, UNKN, UNKN, 0xc8, 0x9c, 0x4e, UNKN, UNKN, UNKN, UNKN, 0xb2, 0x85, 0x45, 0xc9, UNKN, UNKN,  // 7_
+		  0x1a, UNKN, UNKN, 0xe9, UNKN, UNKN, UNKN, UNKN, UNKN, 0xca, UNKN, 0xc6, UNKN, 0xb1, UNKN, UNKN,  // 8_
+		  0x1d, UNKN, 0xa8, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0xc5,  // 9_
+		  0xe0, UNKN, 0xa0, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0x30, UNKN, 0x0d, UNKN, 0x8d,  // a_
+		  UNKN, 0x86, UNKN, UNKN, 0xd9, 0xbd, UNKN, UNKN, 0x05, 0xaa, UNKN, 0x38, UNKN, 0x18, 0xe4, UNKN,  // b_
+		  UNKN, 0xa6, UNKN, 0xa5, 0xc0, 0x2d, UNKN, UNKN, UNKN, UNKN, UNKN, 0x4c, 0x84, UNKN, 0x6e, UNKN,  // c_
+		  UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0x19, 0x65, UNKN, UNKN, UNKN, 0xce, 0x7a, UNKN, 0x3a,  // d_
+		  UNKN, 0x7d, UNKN, 0x0a, 0x49, UNKN, UNKN, UNKN, 0xe6, 0xd8, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN,  // e_
+		  UNKN, UNKN, UNKN, UNKN, 0x09, 0xa9, 0x25, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0x5a, UNKN, 0x68 },// f_
+
+		//  _0    _1    _2    _3    _4    _5    _6    _7    _8    _9    _a    _b    _c    _d    _e    _f
+		{ UNKN, 0x20, UNKN, UNKN, UNKN, 0x8e, UNKN, UNKN, UNKN, 0xb0, 0x85, 0x3d, UNKN, 0x86, UNKN, UNKN,  // 0_
+		  0x18, UNKN, UNKN, UNKN, 0x8a, 0xad, 0x79, 0x98, UNKN, UNKN, 0xc0, UNKN, 0x30, UNKN, 0x10, UNKN,  // 1_
+		  UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0xe4, UNKN, UNKN, UNKN, 0x29, UNKN, UNKN, UNKN, UNKN,  // 2_
+		  0x9e, 0x6d, 0xa6, UNKN, 0xc9, 0x6e, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN,  // 3_
+		  UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0xaa, UNKN, 0x9c, 0x09, UNKN, UNKN, UNKN, 0xfa, UNKN,  // 4_
+		  UNKN, 0x69, UNKN, UNKN, 0x2d, UNKN, UNKN, UNKN, UNKN, UNKN, 0xc4, UNKN, 0x1a, 0x4c, 0x5a, UNKN,  // 5_
+		  UNKN, UNKN, 0xe9, UNKN, 0xb1, UNKN, 0x0c, 0xee, 0xda, 0xb2, 0xce, UNKN, 0x74, UNKN, UNKN, UNKN,  // 6_
+		  0x7d, 0x0d, 0x48, UNKN, UNKN, UNKN, 0xf8, 0xd8, UNKN, UNKN, 0x0a, UNKN, UNKN, 0x45, 0xc6, UNKN,  // 7_
+		  UNKN, UNKN, UNKN, UNKN, UNKN, 0x26, UNKN, UNKN, UNKN, 0xc5, UNKN, UNKN, UNKN, 0xae, UNKN, UNKN,  // 8_
+		  0xa9, UNKN, 0x90, 0x3a, UNKN, UNKN, 0x6c, UNKN, 0x64, UNKN, UNKN, 0xd5, UNKN, UNKN, UNKN, UNKN,  // 9_
+		  UNKN, 0x7a, UNKN, 0x05, 0xa8, UNKN, UNKN, 0x60, UNKN, UNKN, 0xa4, 0x8d, 0x2a, UNKN, UNKN, UNKN,  // a_
+		  UNKN, UNKN, UNKN, UNKN, 0xa0, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0x92, 0x66,  // b_
+		  UNKN, UNKN, 0xd0, 0xf0, UNKN, UNKN, 0x38, 0xbd, 0xa2, UNKN, 0xed, 0x9d, 0x80, UNKN, 0xa5, UNKN,  // c_
+		  UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0x99, UNKN, 0x88, UNKN, 0xcd, UNKN, 0xe8,  // d_
+		  0xca, 0xb5, 0x49, 0x68, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0xe6, 0xe0, 0x4a, UNKN,  // e_
+		  UNKN, UNKN, UNKN, 0xc8, UNKN, 0xb9, 0x91, UNKN, UNKN, UNKN, UNKN, 0x65, 0x95, UNKN, UNKN, UNKN },// f_
+
+		//  _0    _1    _2    _3    _4    _5    _6    _7    _8    _9    _a    _b    _c    _d    _e    _f
+		{ 0x65, UNKN, UNKN, UNKN, 0x30, UNKN, UNKN, UNKN, 0x8e, UNKN, UNKN, 0xda, 0x2d, 0xc4, UNKN, 0x68,  // 0_
+		  UNKN, 0xa2, UNKN, UNKN, 0x2a, 0xa6, UNKN, UNKN, UNKN, 0x86, UNKN, UNKN, 0x60, UNKN, 0xe6, 0xa4,  // 1_
+		  UNKN, 0x84, UNKN, UNKN, 0xbd, UNKN, UNKN, UNKN, UNKN, UNKN, 0xce, 0xe4, 0xf8, 0xa0, UNKN, 0x8d,  // 2_
+		  UNKN, 0xcd, UNKN, UNKN, UNKN, 0x88, 0x4a, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN,  // 3_
+		  0xd8, UNKN, UNKN, UNKN, 0x40, 0x11, UNKN, UNKN, 0xaa, 0x79, UNKN, 0x98, UNKN, 0x85, UNKN, UNKN,  // 4_
+		  0x9a, 0xc6, UNKN, UNKN, 0x74, UNKN, UNKN, UNKN, UNKN, 0x95, 0xdd, UNKN, UNKN, 0x6d, UNKN, UNKN,  // 5_
+		  0x8a, 0x6e, UNKN, UNKN, 0x18, 0xc5, UNKN, 0xf9, UNKN, 0xb0, 0x7a, UNKN, UNKN, UNKN, UNKN, 0xc0,  // 6_
+		  0x99, UNKN, UNKN, 0x10, 0x90, 0x38, 0x09, UNKN, UNKN, UNKN, 0xe0, UNKN, UNKN, UNKN, UNKN, UNKN,  // 7_
+		  UNKN, UNKN, UNKN, 0xb5, UNKN, 0x4c, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0xfa, UNKN, UNKN,  // 8_
+		  UNKN, UNKN, 0x6a, 0x29, UNKN, UNKN, 0x5a, 0xae, UNKN, 0x3a, UNKN, 0x9c, UNKN, 0x0d, 0x49, 0xee,  // 9_
+		  UNKN, UNKN, UNKN, UNKN, 0xa5, 0x69, 0xf0, UNKN, 0x80, UNKN, 0xc8, UNKN, UNKN, UNKN, 0xb9, UNKN,  // a_
+		  0x1a, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, UNKN, 0x0c, UNKN, UNKN, UNKN, UNKN, UNKN,  // b_
+		  UNKN, UNKN, UNKN, UNKN, 0x64, UNKN, UNKN, 0xb2, 0x9d, UNKN, UNKN, 0xca, UNKN, UNKN, 0x0a, 0x05,  // c_
+		  UNKN, UNKN, UNKN, 0x91, UNKN, UNKN, UNKN, 0x92, UNKN, UNKN, UNKN, 0xed, UNKN, UNKN, UNKN, UNKN,  // d_
+		  UNKN, 0xec, 0x20, UNKN, 0xad, 0xd0, UNKN, 0x3d, UNKN, 0xb1, 0x6c, 0x66, UNKN, 0x4e, UNKN, 0xd5,  // e_
+		  0xe9, UNKN, UNKN, 0xa9, UNKN, UNKN, 0xe8, UNKN, UNKN, 0xc9, 0xa8, UNKN, UNKN, 0x48, UNKN, UNKN } // f_
+	}};
+
+	uint8_t data {_maincpu->space(AS_PROGRAM).read_byte(offset)};
+	return decryption_tables[offset & 3][data];
+}
+
+void jokercrd_state::jokercrd_opcodes_map(address_map &map)
+{
+	map(0x0000, 0xffff).r(FUNC(jokercrd_state::jokercrd_opcode_r));
+}
+
+void jokercrd_state::jokercrd(machine_config &config)
+{
+	fw2ndpal(config);
+
+	_maincpu = reinterpret_cast<cpu_device*>(config.device("maincpu"));
+	_maincpu->set_addrmap(AS_OPCODES, &jokercrd_state::jokercrd_opcodes_map);
+}
 
 
 
@@ -3299,7 +3831,7 @@ ROM_START( jollycrd )
 	ROM_LOAD( "jolycard.ch2", 0x0000, 0x8000, CRC(c512b103) SHA1(1f4e78e97855afaf0332fb75e1b5571aafd01c29) )
 	ROM_LOAD( "jolycard.ch1", 0x8000, 0x8000, CRC(0f24f39d) SHA1(ac1f6a8a4a2a37cbc0d45c15187b33c25371bffb) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "jollycrd_nvram.bin", 0x0000, 0x0800, CRC(8f0a86c9) SHA1(467bd4f601ac6aa818c036f1269c2d43d27854f6) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -3308,7 +3840,7 @@ ROM_END
 
 
 /*
-  Jolly Card (Austrian)
+  Jolly Card (German)
 
   1x R65C02P2
   2x ST EF68B21P
@@ -3335,13 +3867,13 @@ ROM_START( jollycrda )
 	ROM_LOAD( "tab3.bin", 0x0000, 0x8000, CRC(c512b103) SHA1(1f4e78e97855afaf0332fb75e1b5571aafd01c29) )
 	ROM_LOAD( "tab2.bin", 0x8000, 0x8000, CRC(0f24f39d) SHA1(ac1f6a8a4a2a37cbc0d45c15187b33c25371bffb) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* Default NVRAM. The game doesn't work without it */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM. the game doesn't work without it
 	ROM_LOAD( "jollycrda_nvram.bin", 0x0000, 0x0800, CRC(5cbb4d8f) SHA1(da5edbef20bb4f0c634939389b3a9744c5743641) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "jop.bin", 0x0000, 0x0200, CRC(5ebc5659) SHA1(8d59011a181399682ab6e8ed14f83101e9bfa0c6) )
 
-	ROM_REGION( 0x0200, "plds", 0 )    /* Cracked PLD */
+	ROM_REGION( 0x0200, "plds", 0 ) // cracked PLD
 	ROM_LOAD( "tab1.0_gal16v8s.bin", 0x0000, 0x0117, CRC(574f9a48) SHA1(bb5e2e86da85130d92f61cc57038a844950f443e) )
 ROM_END
 
@@ -3354,7 +3886,7 @@ ROM_START( jolyc3x3 )
 	ROM_LOAD( "jolycard.ch2", 0x0000, 0x8000, CRC(c512b103) SHA1(1f4e78e97855afaf0332fb75e1b5571aafd01c29) )
 	ROM_LOAD( "jolycard.ch1", 0x8000, 0x8000, CRC(0f24f39d) SHA1(ac1f6a8a4a2a37cbc0d45c15187b33c25371bffb) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "jolyc3x3_nvram.bin", 0x0000, 0x0800, CRC(727c70cf) SHA1(3639b0891514064e21ebdb280791cc9c8f5ba481) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -3419,18 +3951,20 @@ ROM_END
 */
 
 ROM_START( jolycmzs )
-	ROM_REGION( 0x10000, "maincpu", 0 ) /* MZS Tech */
+	ROM_REGION( 0x10000, "maincpu", 0 ) // MZS Tech
 	ROM_LOAD( "mzstech.bin", 0x8000, 0x8000, CRC(cebd1e56) SHA1(24d88b3383cecf3829556d75460053663aab4ef1) )
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
 	ROM_LOAD( "jolycard.ch2", 0x0000, 0x8000, CRC(c512b103) SHA1(1f4e78e97855afaf0332fb75e1b5571aafd01c29) )
 	ROM_LOAD( "jolycard.ch1", 0x8000, 0x8000, CRC(0f24f39d) SHA1(ac1f6a8a4a2a37cbc0d45c15187b33c25371bffb) )
 
-/*  Load a default eeprom, otherwise an annoying password system should be inserted with
-    inputs correlated to a code that pops up on the screen.
-    This code should be inserted into a PC-DOS program, that program is nowhere to be found right now.
+/*  Load a default NVRAM, otherwise an annoying password system appears
+    generating a code that needs to be parsed by a PC-DOS program, that
+    is currently missing and never would appear. This program is supossed
+    to give back an hexa code to feed in the game through a combination
+    of inputs.
 */
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "jolycmzs_nvram.bin", 0x0000, 0x0800, CRC(828ffeef) SHA1(6a52282231f1944ba79049f267a9c1941373aea2) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -3438,18 +3972,20 @@ ROM_START( jolycmzs )
 ROM_END
 
 ROM_START( jolyc980 )
-	ROM_REGION( 0x10000, "maincpu", 0 ) /* Spale Soft */
+	ROM_REGION( 0x10000, "maincpu", 0 ) // Spale Soft
 	ROM_LOAD( "j980.bin", 0x8000, 0x8000, CRC(48249fff) SHA1(390cd0eb3399446a66363dc6760458170e1970fd) )
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
 	ROM_LOAD( "jolycard.ch2", 0x0000, 0x8000, CRC(c512b103) SHA1(1f4e78e97855afaf0332fb75e1b5571aafd01c29) )
 	ROM_LOAD( "jolycard.ch1", 0x8000, 0x8000, CRC(0f24f39d) SHA1(ac1f6a8a4a2a37cbc0d45c15187b33c25371bffb) )
 
-/*  Load a default eeprom, otherwise an annoying password system should be inserted with
-    inputs correlated to a code that pops up on the screen.
-    This code should be inserted into a PC-DOS program, that program is nowhere to be found right now.
+/*  Load a default NVRAM, otherwise an annoying password system appears
+    generating a code that needs to be parsed by a PC-DOS program, that
+    is currently missing and never would appear. This program is supossed
+    to give back an hexa code to feed in the game through a combination
+    of inputs.
 */
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "jolyc980_nvram.bin", 0x0000, 0x0800, CRC(ef2c89c7) SHA1(a286001e205dcd16d914e07ba2b7c820335ab9c2) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -3457,7 +3993,7 @@ ROM_START( jolyc980 )
 ROM_END
 
 
-ROM_START( jolycdev )   /* Jolly Card (lipa) from Evona */
+ROM_START( jolycdev )   // Jolly Card (lipa) from Evona
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "lipa.bin", 0x8000, 0x8000, CRC(62657c98) SHA1(237466dde26540c119c631c75f51c87ea59d1a91) )
 
@@ -3465,7 +4001,7 @@ ROM_START( jolycdev )   /* Jolly Card (lipa) from Evona */
 	ROM_LOAD( "jollyb.bin", 0x0000, 0x8000, CRC(c512b103) SHA1(1f4e78e97855afaf0332fb75e1b5571aafd01c29) )
 	ROM_LOAD( "jollya.bin", 0x8000, 0x8000, CRC(0f24f39d) SHA1(ac1f6a8a4a2a37cbc0d45c15187b33c25371bffb) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "jolycdev_nvram.bin", 0x0000, 0x0800, CRC(ae2c2fb8) SHA1(912d673ea8e26ff62520a7b86e702e5260cff4c0) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -3494,7 +4030,7 @@ ROM_END
     Only remote credits, as can be seen in test mode.
 */
 
-ROM_START( jolyccra )   /* Jolly Card (croatian, set 1) */
+ROM_START( jolyccra )   // Jolly Card (Croatian, set 1)
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "jollyc.bin", 0x8000, 0x8000, CRC(8926d99d) SHA1(dd5d1ac03d30d823dfcfe1349328ecb7afbc37fa) )
 
@@ -3502,7 +4038,7 @@ ROM_START( jolyccra )   /* Jolly Card (croatian, set 1) */
 	ROM_LOAD( "jollyb.bin", 0x0000, 0x8000, CRC(c512b103) SHA1(1f4e78e97855afaf0332fb75e1b5571aafd01c29) )
 	ROM_LOAD( "jollya.bin", 0x8000, 0x8000, CRC(0f24f39d) SHA1(ac1f6a8a4a2a37cbc0d45c15187b33c25371bffb) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "jolyccra_nvram.bin", 0x0000, 0x0800, CRC(478ab0a9) SHA1(8c5160d2ac8d4a9db0ae1e478d3bb1513a04544f) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -3510,7 +4046,7 @@ ROM_START( jolyccra )   /* Jolly Card (croatian, set 1) */
 ROM_END
 
 
-ROM_START( jolyccrb )   /* Jolly Card (croatian, set 2) */
+ROM_START( jolyccrb )   // Jolly Card (Croatian, set 2)
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "jollypkr.003", 0x8000, 0x8000, CRC(ea7340b4) SHA1(7dd468f28a488a4781521809d06db1d7917048ad) )
 
@@ -3518,7 +4054,7 @@ ROM_START( jolyccrb )   /* Jolly Card (croatian, set 2) */
 	ROM_LOAD( "jolycard.ch2", 0x0000, 0x8000, CRC(c512b103) SHA1(1f4e78e97855afaf0332fb75e1b5571aafd01c29) )
 	ROM_LOAD( "jolycard.ch1", 0x8000, 0x8000, CRC(0f24f39d) SHA1(ac1f6a8a4a2a37cbc0d45c15187b33c25371bffb) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "jolyccrb_nvram.bin", 0x0000, 0x0800, CRC(c1d49c88) SHA1(27ffdedfc7f09ff11c3b2537db3681473b776074) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -3548,7 +4084,7 @@ ROM_END
     - 1x trimmer (volume)(missing)
 */
 
-ROM_START( jolycdit )   /* blue TAB PCB, encrypted graphics */
+ROM_START( jolycdit )   // blue TAB PCB, encrypted graphics
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "jn.bin", 0x8000, 0x8000, CRC(6ae00ed0) SHA1(5921c2882aeb5eadd0e04a477fa505ad35e9d98c) )
 
@@ -3556,7 +4092,7 @@ ROM_START( jolycdit )   /* blue TAB PCB, encrypted graphics */
 	ROM_LOAD( "2.bin", 0x0000, 0x8000, CRC(46805150) SHA1(63687ac44f6ace6d8924b2629536bcc7d3979ed2) )
 	ROM_LOAD( "1.bin", 0x8000, 0x8000, CRC(43bcb2df) SHA1(5022bc3a0b852a7cd433e25c3c90a720e6328261) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "jolycdit_nvram.bin", 0x0000, 0x0800, CRC(c55c6706) SHA1(a38ae926f057fb47e48ca841b2d097fc4fd06416) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -3568,7 +4104,7 @@ ROM_END
 
 
 /*
-    Jolly Card (italian encrypted bootleg)
+    Jolly Card (Italian encrypted bootleg)
     --------------------------------------
 
     - 1x UM6845P
@@ -3598,7 +4134,7 @@ ROM_END
     Only remote credits, as can be seen in test mode.
 */
 
-ROM_START( jolycdib )   /* bootleg PCB, encrypted graphics */
+ROM_START( jolycdib )   // bootleg PCB, encrypted graphics
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "3.bin", 0x8000, 0x8000, CRC(c76fdc79) SHA1(fc75c274d64fa9c99a546d424f38e79f1acf2576) )
 
@@ -3606,7 +4142,7 @@ ROM_START( jolycdib )   /* bootleg PCB, encrypted graphics */
 	ROM_LOAD( "2.bin", 0x0000, 0x8000, CRC(46805150) SHA1(63687ac44f6ace6d8924b2629536bcc7d3979ed2) ) // sldh
 	ROM_LOAD( "1.bin", 0x8000, 0x8000, CRC(43bcb2df) SHA1(5022bc3a0b852a7cd433e25c3c90a720e6328261) ) // sldh
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "jolycdib_nvram.bin", 0x0000, 0x0800, CRC(038a71fe) SHA1(99d3befbee8f9f86ce7f074de7f16fb25053c077) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -3618,7 +4154,7 @@ ROM_END
 
 
 /*
-    Jolly Card (italian encrypted bootleg, set 2)
+    Jolly Card (Italian encrypted bootleg, set 2)
     ---------------------------------------------
 
     This program works in both 'normal' and 'remote' modes,
@@ -3632,18 +4168,18 @@ ROM_END
     buttons.
 */
 
-ROM_START( jolycdic )   /* another bootleg PCB, encrypted graphics */
+ROM_START( jolycdic )   // another bootleg PCB, encrypted graphics
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "3ss.bin", 0x8000, 0x8000, CRC(3d7cde61) SHA1(6154878491f4d2f1ea035d18cdf43154c550d509) )
-	ROM_IGNORE(                  0x8000 )   /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                  0x8000 )   // Identical halves. Discarding 2nd half
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
 	ROM_LOAD( "2.bin", 0x0000, 0x8000, CRC(32c24495) SHA1(0d78c4d2743401b5ec9919d09814064eeac8023f) ) // sldh
-	ROM_IGNORE(                0x8000 )   /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                0x8000 ) // Identical halves. Discarding 2nd half
 	ROM_LOAD( "1.bin", 0x8000, 0x8000, CRC(91093176) SHA1(b889c617f94161933c35c324c7d84fec182953d8) ) // sldh
-	ROM_IGNORE(                0x8000 )   /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                0x8000 ) // Identical halves. Discarding 2nd half
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "jolycdic_nvram.bin", 0x0000, 0x0800, CRC(47a5890b) SHA1(6a6531fe5e8f6c1b5a9aac314b2cce6a0129f6da) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -3653,31 +4189,95 @@ ROM_START( jolycdic )   /* another bootleg PCB, encrypted graphics */
 	ROM_LOAD( "gal16v8b.bin", 0x0000, 0x0117, NO_DUMP ) // sldh
 ROM_END
 
+/*
+  Jolly Card (Italian encrypted bootleg, set 3)
+  ---------------------------------------------
+
+  Running in a Cleco bootleg board.
+  Encrypted GFX.
+
+  Differences: 1 byte.
+
+         jolycdib     jolycdic
+
+  C1D6:    0x60         0x10
+
+  C1E5:  lda #$60     lda #$10
+  C1E7:  sta $0000    sta $0000
+  C1EA:  sta $0003    sta $0003
+  C1ED:  sta $07f8    sta $07f8
+
+*/
+ROM_START( jolycdii )
+	ROM_REGION( 0x10000, "maincpu", 0 )
+	ROM_LOAD( "145-3.bin", 0x8000, 0x8000, CRC(812f88f1) SHA1(d387b7e4818dc6f5f2b6161a623c6e4f1eeedf2a) )
+
+	ROM_REGION( 0x10000, "gfx1", 0 )
+	ROM_LOAD( "145-2.bin", 0x0000, 0x8000, CRC(46805150) SHA1(63687ac44f6ace6d8924b2629536bcc7d3979ed2) )
+	ROM_LOAD( "145-1.bin", 0x8000, 0x8000, CRC(43bcb2df) SHA1(5022bc3a0b852a7cd433e25c3c90a720e6328261) )
+
+	ROM_REGION( 0x0800, "nvram", 0 )    // Default NVRAM
+	ROM_LOAD( "jolycdii_nvram.bin", 0x0000, 0x0800, CRC(c2a138ad) SHA1(463fed8b495fa5286513f52fa09cf97f29e5f40e) )
+
+	ROM_REGION( 0x0800, "proms", 0 )    // Not a bipolar PROM. Just a replacement.
+	ROM_LOAD( "ws57c291_d27hc65d.bin", 0x0000, 0x0200, CRC(d96f3760) SHA1(07e80baf9c6c08171195b7810261e043197a9c3c) )
+	ROM_IGNORE(                                0x0600 ) // empty
+
+	ROM_REGION( 0x0200, "plds", 0 )
+	ROM_LOAD( "gal16v8b.bin", 0x0000, 0x0117, NO_DUMP )
+ROM_END
+
 
 /* Jolly Card Italian bootleg...
 
    This PCB has an Altera EP910PC CPLD on board
 
-   to init nvram dsw must be
-   ON OFF OFF OFF OFF OFF OFF
+   To init NVRAM, DSW must be:
+   OFF ON ON ON ON ON ON ON
 
-   then service1+service2 and reset,
+   Then (SERVICE1 + SERVICE2) and reset,
    then another reset.
 
    Q is remote (x100)
    W is payout.
+
+-------------------------------------
+
+   Complete specs:
+
+   1x Empty CPU place (surely Rockwell 65C02 bitwise family)
+
+   1x GI AY-3-8910 Sound Processor.
+
+   2x Motorola MC68B21P for I/O.
+   1x GoldStar GM68B45S CRTC.
+   1x Altera EP910PC-40.
+
+   1x KM6264AL-10
+   1x Dallas DS1220Y nonvolatile SRAM.
+
+   2x M27C512 (ROMs 6 & 7)
+   1x MBM27256 (ROM 5)
+
+   1x N82S147N Bipolar PROM (undumped)
+
+   1x Xtal 16 MHz.
+   1x 8 DIP Switches bank.
+   1x Jamma edge connector.
+   1x Unknown POT between two caps, maybe for sound amp stage.
+
 */
-ROM_START( jolycdid )   /* Altera EP910PC CPLD */
+ROM_START( jolycdid )   // Altera EP910PC CPLD
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "5.cpu", 0x8000, 0x8000, CRC(56158851) SHA1(abf1daad1198dcc017352742e3c00d57e8955bd4) )
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
 	ROM_LOAD( "7.bin", 0x0000, 0x8000, CRC(a4452751) SHA1(a0b32a8801ebaee7ede7873b244f1a424433fe94) )
-	ROM_CONTINUE( 0x0000, 0x8000) /* Discarding 1nd half 1ST AND 2ND HALF IDENTICAL*/
+	ROM_CONTINUE( 0x0000, 0x8000)   // Discarding 1nd half. 1ST AND 2ND HALF IDENTICAL
 	ROM_LOAD( "6.bin", 0x8000, 0x8000, CRC(8b64d4c6) SHA1(8106cba31cd3fbda0855e6070182d248e3d52495) )
-	ROM_CONTINUE( 0x8000, 0x8000) /* Discarding 1nd half 1ST AND 2ND HALF IDENTICAL*/
+	ROM_CONTINUE( 0x8000, 0x8000)   // Discarding 1nd half. 1ST AND 2ND HALF IDENTICAL
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "jolycdid_nvram.bin", 0x0000, 0x0800, CRC(6eb66015) SHA1(39490cf5d404c9e9fb58439f6d9876a3e9b29ba0) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -3687,17 +4287,17 @@ ROM_END
 
 /*  Jolly Card Italian bootleg...
 
-   to init nvram dsw must be
+   To init NVRAM, DSW must be:
    OFF ON ON ON ON ON ON ON
 
-   then service1+service2 and reset,
+   Then (SERVICE1 + SERVICE2) and reset,
    then another reset.
 
    This set has spam graphics, but seems
    used by another program.
 
 */
-ROM_START( jolycdie )   /* Bootleg PCB, NON encrypted graphics */
+ROM_START( jolycdie )   // Bootleg PCB, NON encrypted graphics
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "aic.cpu", 0x8000, 0x8000, CRC(56158851) SHA1(abf1daad1198dcc017352742e3c00d57e8955bd4) )
 
@@ -3705,14 +4305,107 @@ ROM_START( jolycdie )   /* Bootleg PCB, NON encrypted graphics */
 	ROM_LOAD( "c.bin", 0x0000, 0x8000, CRC(eff5362c) SHA1(1c9a48866dc5ee37fad6d68465f326d243c821c3) )
 	ROM_LOAD( "b.bin", 0x8000, 0x8000, CRC(98309e14) SHA1(0d3e3766768fafc728a08668ad693f950d1fabab) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "jolycdie_nvram.bin", 0x0000, 0x0800, CRC(1b2fba44) SHA1(be5c956517072581edaebe9ae440a542964c8490) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "82s147.bin", 0x0000, 0x0200, CRC(fc9a8aa3) SHA1(6f0a98bd0c7a64281bb1cce35de11b76978d7123) ) // sldh
 ROM_END
 
-ROM_START( sjcd2kx3 )   /* Super Joly 2000 3x */
+/* Jolly Card Italian bootleg...
+
+   This PCB has an Altera EP910PC CPLD on board
+
+   This set doesn't need any NVRAM initialization.
+
+   5 & 6 are coins.
+   W is payout.
+*/
+ROM_START( jolycdif )   // Altera EP910PC CPLD
+	ROM_REGION( 0x10000, "maincpu", 0 )
+	ROM_LOAD( "1.bin", 0x8000, 0x8000, CRC(80983f6a) SHA1(222ce5d4800887de92a73decbad31e96f8da3b4a) )
+
+	ROM_REGION( 0x10000, "gfx1", 0 )
+	ROM_LOAD( "2.bin", 0x0000, 0x8000, CRC(a4452751) SHA1(a0b32a8801ebaee7ede7873b244f1a424433fe94) )
+	ROM_CONTINUE( 0x0000, 0x8000)   // Discarding 1nd half. 1ST AND 2ND HALF IDENTICAL
+	ROM_LOAD( "3.bin", 0x8000, 0x8000, CRC(2856c82d) SHA1(7ce835bc2246ffede180cff0d8d0d4528afcc297) )
+	ROM_CONTINUE( 0x8000, 0x8000)   // Discarding 1nd half. 1ST AND 2ND HALF IDENTICAL
+
+	ROM_REGION( 0x0200, "proms", 0 )
+	ROM_LOAD( "82s147.bin", 0x0000, 0x0200, CRC(5ebc5659) SHA1(8d59011a181399682ab6e8ed14f83101e9bfa0c6) ) // proper dump
+ROM_END
+
+
+/* Jolly Card Italian bootleg...
+
+   This PCB has a TI EP910DC-30 CPLD,
+   like others italian bootlegs that
+   have an Altera EP910PC CPLD on board.
+
+   To init NVRAM, DSW must be:
+   OFF ON ON ON ON ON ON ON
+
+   Then (SERVICE1 + SERVICE2) and reset,
+   then another reset.
+
+   Once NVRAM is initialized, the hardware still complains about it.
+   The code checks for values 0x45 & 0x56 at ROM space offsets $E825
+   and $E826. If these values are there, the code jumps to $C8C2,
+   where the game stucks with a hardware error message.
+
+   C8B3: LDA $E825    AD 25 E8  ; load the contents of $E825.
+   C8B6: CMP #$45     C9 45     ; compare with #$45, ASCII "E".
+   C8B8: BEQ $C8C2    F0 08     ; if true, jumps to $C8C2.
+   C8BA: LDA $E826    AD 26 E8  ; load the contents of $E826.
+   C8BD: CMP #$56     C9 56     ; compare with #$56, ASCII "V".
+   C8BF: BEQ $C8C2    F0 01     ; if true, jumps to $C8C2.
+   C8C1: RTS          60        ; returns from subroutine.
+   ....
+   C8C2: JMP $C0D8    4C D8 C0  ; jumps to hardware error.
+
+   Maybe something is mapped virtual or physically there that
+   shows different values that the ones from the ROM.
+
+*/
+ROM_START( jolycdig )
+	ROM_REGION( 0x10000, "maincpu", 0 )  // TI EP910DC-30 CPLD (DIP-40 Ceramic)
+	ROM_LOAD( "3__27c256.bin", 0x8000, 0x8000, CRC(e939ed2a) SHA1(a413623499971517569bcf97860caad65ff5535f) )
+
+	ROM_REGION( 0x10000, "gfx1", 0 )
+	ROM_LOAD( "2__27c512.bin", 0x0000, 0x8000, CRC(a4452751) SHA1(a0b32a8801ebaee7ede7873b244f1a424433fe94) )
+	ROM_IGNORE(                        0x8000)    // discarding 2nd half (identical halves)
+	ROM_LOAD( "1__27c512.bin", 0x8000, 0x8000, CRC(8b64d4c6) SHA1(8106cba31cd3fbda0855e6070182d248e3d52495) )
+	ROM_IGNORE(                        0x8000)   // discarding 2nd half (identical halves)
+
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
+	ROM_LOAD( "jolycdig_nvram.bin", 0x0000, 0x0800, CRC(a85854cb) SHA1(601d45f936626a8df7ffe8e36aef17416bbb7cca) )
+
+	ROM_REGION( 0x0200, "proms", 0 )
+	ROM_LOAD( "27s29pc.bin", 0x0000, 0x0200, CRC(5ebc5659) SHA1(8d59011a181399682ab6e8ed14f83101e9bfa0c6) )
+ROM_END
+
+ROM_START( jolycdih )
+	ROM_REGION( 0x10000, "maincpu", 0 )
+	ROM_LOAD( "1.bin", 0x8000, 0x8000, CRC(3b2c237c) SHA1(08f646399c17747d6b9b8e86bb549dde87d26ba4) )
+
+	ROM_REGION( 0x10000, "gfx1", 0 )
+	ROM_LOAD( "3.bin", 0x0000, 0x8000, CRC(a4452751) SHA1(a0b32a8801ebaee7ede7873b244f1a424433fe94) )
+	ROM_CONTINUE( 0x0000, 0x8000)   // Discarding 1nd half. 1ST AND 2ND HALF IDENTICAL
+	ROM_LOAD( "2.bin", 0x8000, 0x8000, CRC(8b64d4c6) SHA1(8106cba31cd3fbda0855e6070182d248e3d52495) )
+	ROM_CONTINUE( 0x8000, 0x8000)   // Discarding 1nd half. 1ST AND 2ND HALF IDENTICAL
+
+	ROM_REGION( 0x0200, "proms", 0 )
+	ROM_LOAD( "dm74s472n.bin", 0x0000, 0x0200, CRC(5ebc5659) SHA1(8d59011a181399682ab6e8ed14f83101e9bfa0c6) )
+
+	ROM_REGION( 0xb000, "plds", 0 )
+	ROM_LOAD( "ep910.bin",           0x0000, 0x0884, CRC(aa62207e) SHA1(a2e51cf3617d07ff1ce42ee1d56e1c17b6fe71de) )
+	ROM_LOAD( "pal16v8h-25pc-4.bin", 0x0900, 0x0117, CRC(df5be97d) SHA1(8cd63d49ab7020cdec07c1198413dc7d93e90d35) )
+
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
+	ROM_LOAD( "jolycdih_nvram.bin", 0x0000, 0x0800, CRC(02b3b335) SHA1(207a1289e4298d942e4806adf8ffb87e0b9b4e58) )
+ROM_END
+
+ROM_START( sjcd2kx3 )   // Super Joly 2000 3x
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "sj3.bin", 0x8000, 0x8000, CRC(c530b518) SHA1(36934d8e1e2cb2f71eb44a05b86ec970c9f398cd) )
 
@@ -3720,7 +4413,7 @@ ROM_START( sjcd2kx3 )   /* Super Joly 2000 3x */
 	ROM_LOAD( "sj2.bin", 0x0000, 0x8000, CRC(d7253325) SHA1(ad40e662519da9b11f77690b7d41c5007f74e280) )
 	ROM_LOAD( "sj1.bin", 0x8000, 0x8000, CRC(82741749) SHA1(d0bf3073dff9ba1c4913fd754f965951e9cb5b03) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "sjcd2kx3_nvram.bin", 0x0000, 0x0800, CRC(1141368b) SHA1(b4af2d59b5e8115440e1219a621cfd2fb8c2c978) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -3732,15 +4425,14 @@ ROM_END
 
 
 ROM_START( jolycdab )
-	ROM_REGION( 0x10000, "maincpu", 0 ) /* program is testing/writing RAM in offset $8800-$BFFF (ROM)...?? */
+	ROM_REGION( 0x10000, "maincpu", 0 )  // program is testing/writing ROM offsets $8800-$BFFF (chksum?).
 	ROM_LOAD( "ig1poker.run", 0x8000, 0x8000, CRC(c96e6542) SHA1(ed6c0cf9fe8597dba9149b2225320d8d9c39219a) )
-//  ROM_RELOAD(               0x4000, 0x4000 )
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
 	ROM_LOAD( "jn1poker.ch2", 0x0000, 0x8000, CRC(8d78e43d) SHA1(15c60f8e0cd88518b0dc72b92aff6d8d4b2149cf) )
 	ROM_LOAD( "jn1poker.ch1", 0x8000, 0x8000, CRC(d0a87f58) SHA1(6b7925557c4e40a1ebe52ecd14391cdd5e00b59a) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM.
 	ROM_LOAD( "jolycdab_nvram.bin", 0x0000, 0x0800, CRC(30fe661b) SHA1(323c9b5e4856601dbd40f8e48aa8cd9a112e08a9) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -3887,7 +4579,7 @@ ROM_START( bigdeal )
 	ROM_LOAD( "poker4.003", 0x0000, 0x8000, CRC(8c33a15f) SHA1(a1c8451c99a23eeffaedb21d1a1b69f54629f8ab) )
 	ROM_LOAD( "poker4.002", 0x8000, 0x8000, CRC(5f4e12d8) SHA1(014b2364879faaf4922cdb82ee07692389f20c2d) )
 
-	ROM_REGION( 0x0200, "proms", 0 )    /* using joker card palette till a correct dump appear */
+	ROM_REGION( 0x0200, "proms", 0 )    // using joker card palette till a correct dump appear
 	ROM_LOAD( "jokercrd_prom.bin", 0x0000, 0x0200, BAD_DUMP CRC(e59fc06e) SHA1(88a3bb89f020fe2b20f768ca010a082e0b974831) )
 ROM_END
 
@@ -3900,7 +4592,7 @@ ROM_START( bigdealb )
 	ROM_LOAD( "poker4.003", 0x0000, 0x8000, CRC(8c33a15f) SHA1(a1c8451c99a23eeffaedb21d1a1b69f54629f8ab) )
 	ROM_LOAD( "poker4.002", 0x8000, 0x8000, CRC(5f4e12d8) SHA1(014b2364879faaf4922cdb82ee07692389f20c2d) )
 
-	ROM_REGION( 0x0200, "proms", 0 )    /* using joker card palette till a correct dump appear */
+	ROM_REGION( 0x0200, "proms", 0 )    // using joker card palette till a correct dump appear
 	ROM_LOAD( "jokercrd_prom.bin", 0x0000, 0x0200, BAD_DUMP CRC(e59fc06e) SHA1(88a3bb89f020fe2b20f768ca010a082e0b974831) )
 ROM_END
 
@@ -3935,16 +4627,16 @@ ROM_START( cuoreuno )
 	ROM_LOAD( "cuore1b.u21", 0x0000, 0x8000, CRC(14eca2b8) SHA1(35cba415800c6cd3e6ed9946057f33510ad2bfc9) )
 	ROM_LOAD( "cuore1c.u22", 0x8000, 0x8000, CRC(253fac84) SHA1(1ad104ab8e8d73df6397a840a4b26565b245d7a3) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "cuoreuno_nvram.bin", 0x0000, 0x0800, CRC(b5a1bf25) SHA1(c2996a28c080debf10ab7a7dc47c305aed172a83) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "am27s29_cu.bin",    0x0000, 0x0200, CRC(7ea61749) SHA1(3167acd79f9bda2078c2af3e049ad6abf160aeae) )
 
 	ROM_REGION( 0x0600, "plds", 0 )
-	ROM_LOAD( "palce16v8h_cu.u5",  0x0000, 0x0117, NO_DUMP ) /* PAL is read protected */
-	ROM_LOAD( "palce20v8h_cu.u22", 0x0200, 0x0157, NO_DUMP ) /* PAL is read protected */
-	ROM_LOAD( "palce20v8h_cu.u23", 0x0400, 0x0157, NO_DUMP ) /* PAL is read protected */
+	ROM_LOAD( "palce16v8h_cu.u5",  0x0000, 0x0117, NO_DUMP )    // PLD is read protected
+	ROM_LOAD( "palce20v8h_cu.u22", 0x0200, 0x0157, NO_DUMP )    // PLD is read protected
+	ROM_LOAD( "palce20v8h_cu.u23", 0x0400, 0x0157, NO_DUMP )    // PLD is read protected
 ROM_END
 
 
@@ -3975,24 +4667,24 @@ ROM_END
 ROM_START( elephfam )
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "eleph_a.u2",  0x8000, 0x8000, CRC(8392b842) SHA1(74c850c734ca8174167b2f826b9b1ac902669392) )
-	ROM_IGNORE(                      0x8000 )   /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                      0x8000 )   // Identical halves. Discarding 2nd half
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
 	ROM_LOAD( "eleph_b.u21", 0x0000, 0x8000, CRC(e3612670) SHA1(beb65f7d2bd6d7bc68cfd876af51910cf6417bd0) )
-	ROM_IGNORE(                      0x8000 )   /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                      0x8000 )   // Identical halves. Discarding 2nd half
 	ROM_LOAD( "eleph_c.u22", 0x8000, 0x8000, CRC(4b909bf3) SHA1(a822b12126bc58af6d3f999ab2117370015a039b) )
-	ROM_IGNORE(                      0x8000 )   /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                      0x8000 )   // Identical halves. Discarding 2nd half
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "elephfam_nvram.bin", 0x0000, 0x0800, CRC(fb9b1100) SHA1(cf15ce55042f1c4399fec480c2f862622905a8b5) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "am27s29_ef.u25",    0x0000, 0x0200, CRC(bca8b82a) SHA1(4aa19f5ecd9953bf8792dceb075a746f77c01cfc) )
 
 	ROM_REGION( 0x0600, "plds", 0 )
-	ROM_LOAD( "palce16v8h_ef.u5",  0x0000, 0x0117, NO_DUMP ) /* PAL is read protected */
-	ROM_LOAD( "palce20v8h_ef.u22", 0x0200, 0x0157, NO_DUMP ) /* PAL is read protected */
-	ROM_LOAD( "palce20v8h_ef.u23", 0x0400, 0x0157, NO_DUMP ) /* PAL is read protected */
+	ROM_LOAD( "palce16v8h_ef.u5",  0x0000, 0x0117, NO_DUMP )    // PLD is read protected
+	ROM_LOAD( "palce20v8h_ef.u22", 0x0200, 0x0157, NO_DUMP )    // PLD is read protected
+	ROM_LOAD( "palce20v8h_ef.u23", 0x0400, 0x0157, NO_DUMP )    // PLD is read protected
 ROM_END
 
 
@@ -4004,16 +4696,16 @@ ROM_START( elephfmb )
 	ROM_LOAD( "elephb.u21", 0x0000, 0x8000, CRC(3c60549c) SHA1(c839b3ea415a877e5eac04e0522c342cce8d6e64) )
 	ROM_LOAD( "elephc.u20", 0x8000, 0x8000, CRC(448ba955) SHA1(2785cbc8cd42a7dda85bd8b81d5fbec01a1ba0bd) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "elephfmb_nvram.bin", 0x0000, 0x0800, CRC(13a0cfea) SHA1(9c8ce509ef1076e88ea853347b64c5591bc2e18c) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "am27s29_ef.u25",    0x0000, 0x0200, CRC(bca8b82a) SHA1(4aa19f5ecd9953bf8792dceb075a746f77c01cfc) )
 
 	ROM_REGION( 0x0600, "plds", 0 )
-	ROM_LOAD( "palce16v8h_ef.u5",  0x0000, 0x0117, NO_DUMP ) /* PAL is read protected */
-	ROM_LOAD( "palce20v8h_ef.u22", 0x0200, 0x0157, NO_DUMP ) /* PAL is read protected */
-	ROM_LOAD( "palce20v8h_ef.u23", 0x0400, 0x0157, NO_DUMP ) /* PAL is read protected */
+	ROM_LOAD( "palce16v8h_ef.u5",  0x0000, 0x0117, NO_DUMP )    // PLD is read protected
+	ROM_LOAD( "palce20v8h_ef.u22", 0x0200, 0x0157, NO_DUMP )    // PLD is read protected
+	ROM_LOAD( "palce20v8h_ef.u23", 0x0400, 0x0157, NO_DUMP )    // PLD is read protected
 ROM_END
 
 
@@ -4123,16 +4815,16 @@ ROM_START( pool10 )
 	ROM_LOAD( "2.u21", 0x0000, 0x8000, CRC(99c8c074) SHA1(f8082b08e895cbcd028a2b7cd961a7a2c8b2762c) )
 	ROM_LOAD( "1.u20", 0x8000, 0x8000, CRC(9abedd0c) SHA1(f184a82e8ec2387069d631bcb77e890acd44b3f5) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "pool10_nvram.bin",  0x0000, 0x0800, CRC(2f2fab43) SHA1(f815b70c171bad99fa6a60c256e4fdc85dd6b290) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "n82s147an_p10.u25", 0x0000, 0x0200, CRC(1de03d14) SHA1(d8eda20865c1d885a428931f4380032e103b252c) )
 
 	ROM_REGION( 0x0600, "plds", 0 )
-	ROM_LOAD( "palce16v8h_p10.u5", 0x0000, 0x0117, NO_DUMP ) /* PAL is read protected */
-	ROM_LOAD( "gal20v8b_p10.u22",  0x0200, 0x0157, NO_DUMP ) /* GAL is read protected */
-	ROM_LOAD( "gal20v8b_p10.u23",  0x0400, 0x0157, NO_DUMP ) /* GAL is read protected */
+	ROM_LOAD( "palce16v8h_p10.u5", 0x0000, 0x0117, NO_DUMP )    // PLD is read protected
+	ROM_LOAD( "gal20v8b_p10.u22",  0x0200, 0x0157, NO_DUMP )    // PLD is read protected
+	ROM_LOAD( "gal20v8b_p10.u23",  0x0400, 0x0157, NO_DUMP )    // PLD is read protected
 ROM_END
 
 
@@ -4143,28 +4835,28 @@ ROM_END
   u20.bin   1ST AND 2ND HALF IDENTICAL
   u21.bin   1ST AND 2ND HALF IDENTICAL
 */
-	ROM_START( pool10b )    /* this set should be the parent */
+	ROM_START( pool10b )    // 1st set nominated for parent
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "u2.bin", 0x8000, 0x8000, CRC(64fee38e) SHA1(8a624a0b6eb4a3ba09e5b396dc5a01994dfdf294) )
-	ROM_IGNORE(                 0x8000 )    /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                 0x8000 )    // Identical halves. Discarding 2nd half
 
-	/* GFX ROMs are the same of pool10, but double sized with identical halves. */
+//  GFX ROMs are the same of pool10, but double sized with identical halves.
 	ROM_REGION( 0x10000, "gfx1", 0 )
 	ROM_LOAD( "u21.bin", 0x0000, 0x8000, CRC(581c4878) SHA1(5ae61af090feea1745e22f46b33b2c01e6013fbe) )
-	ROM_IGNORE(                  0x8000 )   /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                  0x8000 )   // Identical halves. Discarding 2nd half
 	ROM_LOAD( "u20.bin", 0x8000, 0x8000, CRC(3bdf1106) SHA1(fa21cbd49bb27ea4a784cf4e4b3fbd52650a285b) )
-	ROM_IGNORE(                  0x8000 )   /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                  0x8000 )   // Identical halves. Discarding 2nd half
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "pool10b_nvram.bin",   0x0000, 0x0800, CRC(d9f35299) SHA1(2c3608bc9c322a9cc86f74d8fa2f660804a8cf3c) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "n82s147an_p10.u25",   0x0000, 0x0200, CRC(1de03d14) SHA1(d8eda20865c1d885a428931f4380032e103b252c) )
 
 	ROM_REGION( 0x0600, "plds", 0 )
-	ROM_LOAD( "palce16v8h_p10b.u5",  0x0000, 0x0117, NO_DUMP ) /* PAL is read protected */
-	ROM_LOAD( "palce20v8h_p10b.u22", 0x0200, 0x0157, NO_DUMP ) /* PAL is read protected */
-	ROM_LOAD( "palce20v8h_p10b.u23", 0x0400, 0x0157, NO_DUMP ) /* PAL is read protected */
+	ROM_LOAD( "palce16v8h_p10b.u5",  0x0000, 0x0117, NO_DUMP )  // PLD is read protected
+	ROM_LOAD( "palce20v8h_p10b.u22", 0x0200, 0x0157, NO_DUMP )  // PLD is read protected
+	ROM_LOAD( "palce20v8h_p10b.u23", 0x0400, 0x0157, NO_DUMP )  // PLD is read protected
 ROM_END
 
 
@@ -4176,16 +4868,16 @@ ROM_START( pool10c )
 	ROM_LOAD( "b.u21", 0x0000, 0x8000, CRC(99c8c074) SHA1(f8082b08e895cbcd028a2b7cd961a7a2c8b2762c) )
 	ROM_LOAD( "c.u20", 0x8000, 0x8000, CRC(9abedd0c) SHA1(f184a82e8ec2387069d631bcb77e890acd44b3f5) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "pool10c_nvram.bin", 0x0000, 0x0800, CRC(396aefed) SHA1(066b87ff054dfb37f733a812ad0dc1b1bd2478e6) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "n82s147an_p10.u25", 0x0000, 0x0200, CRC(1de03d14) SHA1(d8eda20865c1d885a428931f4380032e103b252c) )
 
 	ROM_REGION( 0x0600, "plds", 0 )
-	ROM_LOAD( "palce16v8h_p10.u5", 0x0000, 0x0117, NO_DUMP ) /* PAL is read protected */
-	ROM_LOAD( "gal20v8b_p10.u22",  0x0200, 0x0157, NO_DUMP ) /* GAL is read protected */
-	ROM_LOAD( "gal20v8b_p10.u23",  0x0400, 0x0157, NO_DUMP ) /* GAL is read protected */
+	ROM_LOAD( "palce16v8h_p10.u5", 0x0000, 0x0117, NO_DUMP )    // PLD is read protected
+	ROM_LOAD( "gal20v8b_p10.u22",  0x0200, 0x0157, NO_DUMP )    // PLD is read protected
+	ROM_LOAD( "gal20v8b_p10.u23",  0x0400, 0x0157, NO_DUMP )    // PLD is read protected
 ROM_END
 
 
@@ -4197,22 +4889,22 @@ ROM_END
 	ROM_START( pool10d )
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "3.50.u2", 0x8000, 0x8000, CRC(4c68e1f4) SHA1(bbab63a18e0c041ce519daa32e12dd1b6a672dce) )
-	ROM_IGNORE(                  0x8000 )   /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                  0x8000 )   // Identical halves. Discarding 2nd half
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
 	ROM_LOAD( "2.u21", 0x0000, 0x8000, CRC(99c8c074) SHA1(f8082b08e895cbcd028a2b7cd961a7a2c8b2762c) ) // sldh
 	ROM_LOAD( "1.u20", 0x8000, 0x8000, CRC(9abedd0c) SHA1(f184a82e8ec2387069d631bcb77e890acd44b3f5) ) // sldh
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "pool10d_nvram.bin", 0x0000, 0x0800, CRC(6b5984a0) SHA1(156a94e74e33b1a15222cffff9b62e65f6f5f2f5) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "n82s147an_p10.u25", 0x0000, 0x0200, CRC(1de03d14) SHA1(d8eda20865c1d885a428931f4380032e103b252c) )
 
 	ROM_REGION( 0x0600, "plds", 0 )
-	ROM_LOAD( "palce16v8h_p10.u5", 0x0000, 0x0117, NO_DUMP ) /* PAL is read protected */
-	ROM_LOAD( "gal20v8b_p10.u22",  0x0200, 0x0157, NO_DUMP ) /* GAL is read protected */
-	ROM_LOAD( "gal20v8b_p10.u23",  0x0400, 0x0157, NO_DUMP ) /* GAL is read protected */
+	ROM_LOAD( "palce16v8h_p10.u5", 0x0000, 0x0117, NO_DUMP )    // PLD is read protected
+	ROM_LOAD( "gal20v8b_p10.u22",  0x0200, 0x0157, NO_DUMP )    // PLD is read protected
+	ROM_LOAD( "gal20v8b_p10.u23",  0x0400, 0x0157, NO_DUMP )    // PLD is read protected
 ROM_END
 
 
@@ -4300,22 +4992,18 @@ ROM_START( pool10e )
 	ROM_LOAD( "2.u21", 0x0000, 0x8000, CRC(a0d54044) SHA1(c7be1f12f72095daee32ae41c3554d8ab4f99245) ) // sldh
 	ROM_LOAD( "1.u20", 0x8000, 0x8000, CRC(55c9fcc8) SHA1(224bdf63ed345b1def4852af3b33f07790fbf123) ) // sldh
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "pool10e_nvram.bin", 0x0000, 0x0800, CRC(e20f9a14) SHA1(617ca53263a971c9f835a95737a66fac5b99780f) )
 
-	ROM_REGION( 0x0200, "proms", 0 )    /* Same as Pool 10, but the 1st half duplicated to cover any PLD addressing */
+	ROM_REGION( 0x0200, "proms", 0 )    // Same as Pool 10, but the 1st half duplicated to cover any PLD addressing
 	ROM_LOAD( "am27s29.u25", 0x0000, 0x0200, CRC(2c315cbf) SHA1(f3f91329f2b8388decf26a050f8fb7da38694218) )
 
 	ROM_REGION( 0x3000, "plds", 0 )
-	ROM_LOAD( "palce16v8h.u5",  0x0000, 0x0892, BAD_DUMP CRC(123d539a) SHA1(cccf0cbae3175b091a998eedf4aa44a55b679400) ) /* read protected */
-	ROM_LOAD( "palce20v8h.u22", 0x1000, 0x0a92, BAD_DUMP CRC(ba2a021f) SHA1(e9c5970f80c7446c91282d53cfe97c92353dce7d) ) /* read protected */
-	ROM_LOAD( "palce20v8h.u23", 0x2000, 0x0a92, BAD_DUMP CRC(ba2a021f) SHA1(e9c5970f80c7446c91282d53cfe97c92353dce7d) ) /* read protected */
+	  ROM_LOAD( "palce16v8h.u5",  0x0000, 0x0892, BAD_DUMP CRC(123d539a) SHA1(cccf0cbae3175b091a998eedf4aa44a55b679400) )   // read protected
+	  ROM_LOAD( "palce20v8h.u22", 0x1000, 0x0a92, BAD_DUMP CRC(ba2a021f) SHA1(e9c5970f80c7446c91282d53cfe97c92353dce7d) )   // read protected
+	  ROM_LOAD( "palce20v8h.u23", 0x2000, 0x0a92, BAD_DUMP CRC(ba2a021f) SHA1(e9c5970f80c7446c91282d53cfe97c92353dce7d) )   // read protected
 ROM_END
 
-
-/*
-
-*/
 
 ROM_START( pool10f )
 	ROM_REGION( 0x10000, "maincpu", 0 )
@@ -4325,20 +5013,20 @@ ROM_START( pool10f )
 	ROM_LOAD( "cmc-pool10-b.u21", 0x0000, 0x8000, CRC(99c8c074) SHA1(f8082b08e895cbcd028a2b7cd961a7a2c8b2762c) )
 	ROM_LOAD( "cmc-pool10-c.u20", 0x8000, 0x8000, CRC(9abedd0c) SHA1(f184a82e8ec2387069d631bcb77e890acd44b3f5) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "pool10f_nvram.bin", 0x0000, 0x0800, CRC(75dd3562) SHA1(a359cada144e7c90946649f5dd0998d0ee48f4d2) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "27s29.u25", 0x0000, 0x0200, CRC(1de03d14) SHA1(d8eda20865c1d885a428931f4380032e103b252c) )
 
 	ROM_REGION( 0x0600, "plds", 0 )
-	ROM_LOAD( "palce16v8h_p10.u5", 0x0000, 0x0117, NO_DUMP ) /* PAL is read protected */
-	ROM_LOAD( "gal20v8b_p10.u22",  0x0200, 0x0157, NO_DUMP ) /* GAL is read protected */
-	ROM_LOAD( "gal20v8b_p10.u23",  0x0400, 0x0157, NO_DUMP ) /* GAL is read protected */
+	ROM_LOAD( "palce16v8h_p10.u5", 0x0000, 0x0117, NO_DUMP )    // PLD is read protected
+	ROM_LOAD( "gal20v8b_p10.u22",  0x0200, 0x0157, NO_DUMP )    // PLD is read protected
+	ROM_LOAD( "gal20v8b_p10.u23",  0x0400, 0x0157, NO_DUMP )    // PLD is read protected
 ROM_END
 
 
-ROM_START( pool10g )    /* this set should be the parent */
+ROM_START( pool10g )    // 2nd set nominated for parent
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "3.u2", 0x8000, 0x8000, CRC(7b537ce6) SHA1(b221d08c53b9e14178335632420e78070b9cfb27) )
 
@@ -4346,7 +5034,7 @@ ROM_START( pool10g )    /* this set should be the parent */
 	ROM_LOAD( "2.u21", 0x0000, 0x8000, CRC(99c8c074) SHA1(f8082b08e895cbcd028a2b7cd961a7a2c8b2762c) )
 	ROM_LOAD( "1.u20", 0x8000, 0x8000, CRC(9abedd0c) SHA1(f184a82e8ec2387069d631bcb77e890acd44b3f5) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "pool10h_nvram.bin",   0x0000, 0x0800, CRC(3ec39472) SHA1(aa2bb5abd16557560a19842929ad7dab852abbbf) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -4362,7 +5050,7 @@ ROM_START( pool10h )
 	ROM_LOAD( "cmc-pool10+b+.u21", 0x0000, 0x8000, CRC(99c8c074) SHA1(f8082b08e895cbcd028a2b7cd961a7a2c8b2762c) )
 	ROM_LOAD( "cmc-pool10+c+.u20", 0x8000, 0x8000, CRC(9abedd0c) SHA1(f184a82e8ec2387069d631bcb77e890acd44b3f5) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "pool10i_nvram.bin",  0x0000, 0x0800, CRC(e93dee30) SHA1(195525e95a3bdc1b002b12fd27bc31c63d7a9276) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -4373,19 +5061,93 @@ ROM_END
 ROM_START( pool10i )
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "a.u2", 0x8000, 0x8000, CRC(566bc05d) SHA1(eec88c8ba6cb664f38ebf8b71f99b4e7d04a9601) ) // sldh
-	ROM_IGNORE(                 0x8000 )    /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                 0x8000 )    // Identical halves. Discarding 2nd half
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
 	ROM_LOAD( "b.u21", 0x0000, 0x8000, CRC(581c4878) SHA1(5ae61af090feea1745e22f46b33b2c01e6013fbe) ) // sldh
-	ROM_IGNORE(                0x8000 )    /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                0x8000 )     // Identical halves. Discarding 2nd half
 	ROM_LOAD( "c.u20", 0x8000, 0x8000, CRC(3bdf1106) SHA1(fa21cbd49bb27ea4a784cf4e4b3fbd52650a285b) ) // sldh
-	ROM_IGNORE(                0x8000 )    /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                0x8000 )     // Identical halves. Discarding 2nd half
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "pool10l_nvram.bin",  0x0000, 0x0800, CRC(89cbee4b) SHA1(ff8031a96ee40e1e62abbae7a0b3d9dc2122759f) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "82s147.u25", 0x0000, 0x0200, CRC(1de03d14) SHA1(d8eda20865c1d885a428931f4380032e103b252c) )
+ROM_END
+
+ROM_START( pool10j )
+	ROM_REGION( 0x10000, "maincpu", 0 )
+	ROM_LOAD( "cmcpool10.u2", 0x8000, 0x8000, CRC(f7fa2b12) SHA1(743563e51327b00dd638bcb2233e833ce74e62a0) )
+
+	ROM_REGION( 0x10000, "gfx1", 0 )
+	ROM_LOAD( "cmcpool10.u21", 0x0000, 0x8000, CRC(99c8c074) SHA1(f8082b08e895cbcd028a2b7cd961a7a2c8b2762c) )
+	ROM_LOAD( "cmcpool10.u20", 0x8000, 0x8000, CRC(9abedd0c) SHA1(f184a82e8ec2387069d631bcb77e890acd44b3f5) )
+
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
+	ROM_LOAD( "pool10j_nvram.bin",  0x0000, 0x0800, CRC(48684b02) SHA1(6f2fbd0e2621e31b881edd8056ff93ee78f331ab) )
+
+	ROM_REGION( 0x0200, "proms", 0 )
+	ROM_LOAD( "am27s29pc.u25", 0x0000, 0x0200, CRC(1de03d14) SHA1(d8eda20865c1d885a428931f4380032e103b252c) )
+
+	ROM_REGION( 0x0600, "plds", 0 ) // all read protected
+	ROM_LOAD( "palce16v8h.u5",  0x0000, 0x0117, NO_DUMP )
+	ROM_LOAD( "palce20v8h.u22", 0x0200, 0x0157, NO_DUMP )
+	ROM_LOAD( "palce20v8h.u23", 0x0400, 0x0157, NO_DUMP )
+ROM_END
+
+/*
+  New Biliard 98
+
+  CPUs:
+  1x    R65C02P2    u1  8-bit Microprocessor - main
+  1x    MC68B45P    u8  CRT Controller (CRTC)
+  2x    MC68B21CP   u29, u30    Peripheral Interface Adapter
+  1x    89C10       u34     Programmable Sound Generator - sound
+  1x    TDA2003     u33     Audio Amplifier - sound
+  1x    oscillator  16.000000MHz    os1
+
+  ROMs:
+  3x    27C256  u2, u20, u21    dumped
+  1x    AM27S29PC   u25     dumped
+
+  RAMs:
+  1x    KM6264BL-10L-12 u13
+  1x    GM76C28A-10     u3
+
+  PLDs:
+  2x    GAL20V8A-25LP   u22, u23  read protected
+  1x    PALCE16V8H-15PC/4   u5    read protected
+
+  Others:
+  1x 28x2 JAMMA edge connector
+  1x trimmer (TR1, volume)
+  1x 8 DIP switches bank (SW1)
+  1x battery 3.6V
+
+  Notes:
+  PCB is marked: "top" and "C.M.C. POOL 10" on component side
+  PCB is marked: "bottom" and "POOL 10 C.M.C" on solder side
+
+*/
+ROM_START( biliard )
+	ROM_REGION( 0x10000, "maincpu", 0 )
+	ROM_LOAD( "biliard-a.u2", 0x8000, 0x8000, CRC(3b20348b) SHA1(002b9b8581adc1b253ee3babf0e4c1aad4a2f017) )
+
+	ROM_REGION( 0x10000, "gfx1", 0 )
+	ROM_LOAD( "cmcpool10-b.u21", 0x0000, 0x8000, CRC(99c8c074) SHA1(f8082b08e895cbcd028a2b7cd961a7a2c8b2762c) )
+	ROM_LOAD( "biliard-c.u20",   0x8000, 0x8000, CRC(b15d10ec) SHA1(9b0f32ff791063cfb2d8339a4e8041e034e73eb7) )
+
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
+	ROM_LOAD( "biliard_nvram.bin",  0x0000, 0x0800, CRC(2f2fab43) SHA1(f815b70c171bad99fa6a60c256e4fdc85dd6b290) )
+
+	ROM_REGION( 0x0200, "proms", 0 )
+	ROM_LOAD( "am27s29pc.u25", 0x0000, 0x0200, CRC(1de03d14) SHA1(d8eda20865c1d885a428931f4380032e103b252c) )
+
+	ROM_REGION( 0x0600, "plds", 0 )
+	ROM_LOAD( "palce16v8h-25pc-4.u5", 0x0000, 0x0117, NO_DUMP ) // PLD is read protected
+	ROM_LOAD( "gal20v8a-25lp.u22",  0x0200, 0x0157, NO_DUMP )   // PLD is read protected
+	ROM_LOAD( "gal20v8a-25lp.u23",  0x0400, 0x0157, NO_DUMP )   // PLD is read protected
 ROM_END
 
 
@@ -4394,18 +5156,18 @@ ROM_END
   This one seems to run in royalcd1 hardware.
 */
 
-ROM_START( royal )    /* brute hack of pool 10 */
+ROM_START( royal )  // brute hack of pool 10
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "3.u2", 0x8000, 0x8000, CRC(d4f36273) SHA1(2049257ea9ee52fde9cabfe40e809e00526a960e) ) // sldh
 
-	/* GFX ROMs are the same of pool10, but double sized with identical halves. */
+//  GFX ROMs are the same of pool10, but double sized with identical halves.
 	ROM_REGION( 0x10000, "gfx1", 0 )
 	ROM_LOAD( "2.u21", 0x0000, 0x8000, CRC(439eec10) SHA1(500139c16a883f0a5b0b8d91f4f067ba428d2d11) ) // sldh
-	ROM_IGNORE(                0x8000 )   /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                0x8000 ) // Identical halves. Discarding 2nd half
 	ROM_LOAD( "1.u20", 0x8000, 0x8000, CRC(9b59e72d) SHA1(96217272ce5abb78ff45ff116a5d921c57717ed9) ) // sldh
-	ROM_IGNORE(                0x8000 )   /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                0x8000 ) // Identical halves. Discarding 2nd half
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "royal_nvram.bin",   0x0000, 0x0800, CRC(9df190d5) SHA1(4be0f5c6f89f822568e45e0e8457cf51ced2dcfe) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -4442,16 +5204,16 @@ ROM_START( tortufam )
 	ROM_LOAD( "tortu.b.u21", 0x0000, 0x8000, CRC(e7b18584) SHA1(fa1c367469d4ced5d7c83c15a25ec5fd6afcca10) )
 	ROM_LOAD( "tortu.c.u20", 0x8000, 0x8000, CRC(3cda6f73) SHA1(b4f3d2d3c652ebf6973358ae33b7808de5939acd) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "tortufam_nvram.bin", 0x0000, 0x0800, CRC(e5a08b1b) SHA1(6575ed3ec66ef0e42129225fe1679519e5e1c946) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "am27s29pc_tf.u25", 0x0000, 0x0200, CRC(c6d433fb) SHA1(065de832bbe8765eb0aacc2029e587a4f5362f8a) )
 
 	ROM_REGION( 0x0600, "plds", 0 )
-	ROM_LOAD( "palce20v8h_tf.u5",  0x0000, 0x0157, NO_DUMP ) /* PAL is read protected */
-	ROM_LOAD( "palce20v8h_tf.u22", 0x0200, 0x0157, NO_DUMP ) /* PAL is read protected */
-	ROM_LOAD( "palce20v8h_tf.u23", 0x0400, 0x0157, NO_DUMP ) /* PAL is read protected */
+	ROM_LOAD( "palce20v8h_tf.u5",  0x0000, 0x0157, NO_DUMP )    // PLD is read protected
+	ROM_LOAD( "palce20v8h_tf.u22", 0x0200, 0x0157, NO_DUMP )    // PLD is read protected
+	ROM_LOAD( "palce20v8h_tf.u23", 0x0400, 0x0157, NO_DUMP )    // PLD is read protected
 ROM_END
 
 
@@ -4463,16 +5225,16 @@ ROM_START( potgame )
 	ROM_LOAD( "potg.b.u21", 0x0000, 0x8000, CRC(32fc1d4f) SHA1(cc533a44498338bc0cbb7c7b9c42559ce7ff1337) )
 	ROM_LOAD( "potg.c.u20", 0x8000, 0x8000, CRC(0331eb42) SHA1(a8e838d644fc6d93a9632070b305e44e4242ce94) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "potgame_nvram.bin",  0x0000, 0x0800, CRC(2b07fb37) SHA1(9cbd3d8fb076d683a7853b3dd8a39a27f1c8872b) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "am27s29_pot.u25",    0x0000, 0x0200, CRC(a221f151) SHA1(270c57c9b7de912b136686bc6720eb8f12dbb805) )
 
 	ROM_REGION( 0x0600, "plds", 0 )
-	ROM_LOAD( "palce16v8h_pot.u5",  0x0000, 0x0157, NO_DUMP ) /* PAL is read protected */
-	ROM_LOAD( "palce20v8h_pot.u22", 0x0200, 0x0157, NO_DUMP ) /* PAL is read protected */
-	ROM_LOAD( "palce20v8h_pot.u23", 0x0400, 0x0157, NO_DUMP ) /* PAL is read protected */
+	ROM_LOAD( "palce16v8h_pot.u5",  0x0000, 0x0157, NO_DUMP )   // PLD is read protected
+	ROM_LOAD( "palce20v8h_pot.u22", 0x0200, 0x0157, NO_DUMP )   // PLD is read protected
+	ROM_LOAD( "palce20v8h_pot.u23", 0x0400, 0x0157, NO_DUMP )   // PLD is read protected
 ROM_END
 
 
@@ -4484,16 +5246,16 @@ ROM_START( bottle10 )
 	ROM_LOAD( "boat_2.bin", 0x0000, 0x8000, CRC(a6b36c3f) SHA1(90b12d9552ad5dbf11a30fc7451da1f3e6763cc3) )
 	ROM_LOAD( "boat_1.bin", 0x8000, 0x8000, CRC(61fd8c19) SHA1(eb8fd8bd7de38a6c8a435e9e36daf699162138a5) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "bottle10_nvram.bin", 0x0000, 0x0800, CRC(82927c53) SHA1(8cde91588cb53fefc84f0b14fc5c0b26a3a445eb) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "n82s147an_p10.u25", 0x0000, 0x0200, CRC(1de03d14) SHA1(d8eda20865c1d885a428931f4380032e103b252c) )
 
 	ROM_REGION( 0x0600, "plds", 0 )
-	ROM_LOAD( "palce16v8h_p10.u5", 0x0000, 0x0117, NO_DUMP ) /* PAL is read protected */
-	ROM_LOAD( "gal20v8b_p10.u22",  0x0200, 0x0157, NO_DUMP ) /* GAL is read protected */
-	ROM_LOAD( "gal20v8b_p10.u23",  0x0400, 0x0157, NO_DUMP ) /* GAL is read protected */
+	ROM_LOAD( "palce16v8h_p10.u5", 0x0000, 0x0117, NO_DUMP )    // PLD is read protected
+	ROM_LOAD( "gal20v8b_p10.u22",  0x0200, 0x0157, NO_DUMP )    // PLD is read protected
+	ROM_LOAD( "gal20v8b_p10.u23",  0x0400, 0x0157, NO_DUMP )    // PLD is read protected
 ROM_END
 
 
@@ -4505,16 +5267,16 @@ ROM_START( bottl10b )
 	ROM_LOAD( "2.u21", 0x0000, 0x8000, CRC(9395c15b) SHA1(e4caefc6f55b07f5c4370a3b8652fa93e08987ce) )
 	ROM_LOAD( "1.u20", 0x8000, 0x8000, CRC(61fd8c19) SHA1(eb8fd8bd7de38a6c8a435e9e36daf699162138a5) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "bottl10b_nvram.bin", 0x0000, 0x0800, CRC(59976182) SHA1(f8d26169e86444607bc5a6649f41e7f5c05ddbb4) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "n82s147an_p10.u25", 0x0000, 0x0200, CRC(1de03d14) SHA1(d8eda20865c1d885a428931f4380032e103b252c) )
 
 	ROM_REGION( 0x0600, "plds", 0 )
-	ROM_LOAD( "palce16v8h_p10.u5", 0x0000, 0x0117, NO_DUMP ) /* PAL is read protected */
-	ROM_LOAD( "gal20v8b_p10.u22",  0x0200, 0x0157, NO_DUMP ) /* GAL is read protected */
-	ROM_LOAD( "gal20v8b_p10.u23",  0x0400, 0x0157, NO_DUMP ) /* GAL is read protected */
+	ROM_LOAD( "palce16v8h_p10.u5", 0x0000, 0x0117, NO_DUMP )    // PLD is read protected
+	ROM_LOAD( "gal20v8b_p10.u22",  0x0200, 0x0157, NO_DUMP )    // PLD is read protected
+	ROM_LOAD( "gal20v8b_p10.u23",  0x0400, 0x0157, NO_DUMP )    // PLD is read protected
 ROM_END
 
 /*
@@ -4546,18 +5308,18 @@ ROM_END
   were changed to match the second program.
 
 */
-/* The following two have mirrored video RAM 4000/5000 to 6000/7000. */
+// The following two have mirrored video RAM 4000/5000 to 6000/7000.
 ROM_START( lunapark )
-	ROM_REGION( 0x10000, "maincpu", 0 ) /* Two different programs. Selectable through a DIP switch */
+	ROM_REGION( 0x10000, "maincpu", 0 ) // Two different programs. Selectable through a DIP switch
 	ROM_LOAD( "lunapark-425-95n003.u2", 0x0000, 0x10000, CRC(b3a620ee) SHA1(67b3498edf7b536e22c4d97c1f6ad5a71521e68f) )
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
 	ROM_LOAD( "lunapark-425-95n002.u21", 0x0000, 0x8000, CRC(2bededb7) SHA1(b8d7e6fe307d347d762adf35d361ade620aab37b) )
-	ROM_CONTINUE(                        0x0000, 0x8000)    /* Discarding 1nd half 0xff filled*/
+	ROM_CONTINUE(                        0x0000, 0x8000)    // Discarding 1nd half 0xff filled
 	ROM_LOAD( "lunapark-425-95n001.u20", 0x8000, 0x8000, CRC(7d91ce1f) SHA1(7e9bfad76f305d5787faffe3a07b218beb37fda8) )
-	ROM_CONTINUE(                        0x8000, 0x8000)    /* Discarding 1nd half 0xff filled*/
+	ROM_CONTINUE(                        0x8000, 0x8000)    // Discarding 1nd half 0xff filled
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "lunapark_nvram.bin", 0x0000, 0x0800, CRC(f99e749b) SHA1(fafd4205dfaacb4c21215af6997d06ab419c9281) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -4565,23 +5327,23 @@ ROM_START( lunapark )
 ROM_END
 
 ROM_START( lunaparkb )
-	ROM_REGION( 0x10000, "maincpu", 0 ) /* Two different programs. Selectable through a DIP switch */
+	ROM_REGION( 0x10000, "maincpu", 0 ) // Two different programs. Selectable through a DIP switch
 	ROM_LOAD( "lunapark-number-03_lunaparkb.u2", 0x0000, 0x10000, CRC(cb819bb7) SHA1(c7fb25eab093de2f644445a713d99ee8024d8499) )
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
-	ROM_LOAD( "27512.u21", 0x0000, 0x8000, CRC(d64ac315) SHA1(c67d9e67a988036844efd4f980d47a90c022ba18) )   /* only the first 2 bytes different */
-	ROM_CONTINUE(          0x0000, 0x8000)  /* Discarding 1nd half 0xff filled*/
+	ROM_LOAD( "27512.u21", 0x0000, 0x8000, CRC(d64ac315) SHA1(c67d9e67a988036844efd4f980d47a90c022ba18) )   // only the first 2 bytes different
+	ROM_CONTINUE(          0x0000, 0x8000)  // Discarding 1nd half 0xff filled
 	ROM_LOAD( "27512.u20", 0x8000, 0x8000, CRC(7d91ce1f) SHA1(7e9bfad76f305d5787faffe3a07b218beb37fda8 ) )
-	ROM_CONTINUE(          0x8000, 0x8000)  /* Discarding 1nd half 0xff filled*/
+	ROM_CONTINUE(          0x8000, 0x8000)  // Discarding 1nd half 0xff filled
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "lunaparkb_nvram.bin", 0x0000, 0x0800, CRC(f99e749b) SHA1(fafd4205dfaacb4c21215af6997d06ab419c9281) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "82s147.u25", 0x0000, 0x0200, CRC(ddb74d72) SHA1(3d5dda3a935a3100cb86017f103b855d6449f73a) )
 ROM_END
 
-/* This one hasn't mirrored video RAM, so could run in regular Cuore 1 hardware */
+//  This one hasn't mirrored video RAM, so could run in regular Cuore 1 hardware
 ROM_START( lunaparkc )
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "lunapark-number-03_lunaparkc.u2", 0x8000, 0x8000, CRC(fdbe49c3) SHA1(a2b14a6998d5a27fba7bc360a15f17a48c91194f) )
@@ -4590,7 +5352,7 @@ ROM_START( lunaparkc )
 	ROM_LOAD( "lunapark-number-01.u21", 0x0000, 0x8000, CRC(ee057944) SHA1(31b76dcadf1dd5aacac1dfed0c7c9f7190797ead) )
 	ROM_LOAD( "lunapark-number-02.u20", 0x8000, 0x8000, CRC(b8795aec) SHA1(5db2e64657dee7742eb9d11e65d29c83a93332b7) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "lunaparkc_nvram.bin", 0x0000, 0x0800, CRC(005b70fc) SHA1(682c2315b4fafb6255db989f0d49255fd8d7a1a9) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -4609,7 +5371,7 @@ ROM_START( crystal )
 	ROM_LOAD( "425-1995-number-02.u21", 0x0000, 0x8000, CRC(1eaf1bd9) SHA1(eb392f4a8864c59c7792f905f165f543087cb4a0) )
 	ROM_LOAD( "425-1995-number-01.u20", 0x8000, 0x8000, CRC(d3972c19) SHA1(a84ae765eeae1f9d443b0c4941b6f93dcc540f8c) )
 
-	ROM_REGION( 0x0800, "nvram", 0 ) /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "crystal_nvram.bin", 0x0000, 0x0800, CRC(21a712ee) SHA1(259d83b8268a93f96b53580562e9c6e835f7473e) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -4621,7 +5383,7 @@ ROM_END
 
 /*
     1.bin   NO MATCH
-    2.bin   = 1.bin              royalcrdd   Royal Card (austrian, set 5)
+    2.bin   = 1.bin              royalcrdd   Royal Card (German, set 5)
             = u4_nmc27c256.bin   royalcrdp   Royal Card v2.0 Professional
     3.bin   NO MATCH
 
@@ -4637,7 +5399,7 @@ ROM_START( royalcrd )
 	ROM_LOAD( "3.bin", 0x0000, 0x8000, CRC(c46d804f) SHA1(b089821c7dae6714b49401d787f8bed859815763) )
 	ROM_LOAD( "2.bin", 0x8000, 0x8000, CRC(41f7a0b3) SHA1(9aff2b8832d2a4f868daa9849a0bfe5e44f88fc0) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "royalcrd_nvram.bin", 0x0000, 0x0800, CRC(1c775f61) SHA1(c810421eaa31a72e3f2fe9a1d82858e7cc2f6b93) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -4646,8 +5408,8 @@ ROM_END
 
 /*
     r.1   NO MATCH
-    r.2   = 1a.bin   royalcrde   Royal Card (austrian, set 6)
-    r.3   = 2a.bin   royalcrde   Royal Card (austrian, set 6)
+    r.2   = 1a.bin   royalcrde   Royal Card (German, set 6)
+    r.3   = 2a.bin   royalcrde   Royal Card (German, set 6)
 
     All ROMs are double sized, with identical halves.
     The set is working properly, with Bet (Hold 5) and normal payout. No Remote.
@@ -4662,7 +5424,7 @@ ROM_START( royalcrda )
 	ROM_LOAD( "r.2", 0x8000, 0x8000, CRC(8a66f22c) SHA1(67d6e8f8f5a0fd979dc498ba2cc67cf707ccdf95) )
 	ROM_IGNORE(              0x8000)
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "royalcrda_nvram.bin", 0x0000, 0x0800, CRC(c42dbad4) SHA1(b38552192e3f5f6bc2a4b92bddd2f95ac17ecc8c) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -4671,9 +5433,9 @@ ROM_END
 
 /*
     rc_1_pl.bin   NO MATCH
-    rc_2_pl.bin   = 1.bin              royalcrdd   Royal Card (austrian, set 5)
+    rc_2_pl.bin   = 1.bin              royalcrdd   Royal Card (German, set 5)
                   = u4_nmc27c256.bin   royalcrdp   Royal Card v2.0 Professional
-    rc_3_pl.bin   = 2.bin              royalcrdd   Royal Card (austrian, set 5)
+    rc_3_pl.bin   = 2.bin              royalcrdd   Royal Card (German, set 5)
 
     Working properly, with Bet (Hold 5) and Hold 2 shown a credit screen that allow payout or clear.
 */
@@ -4685,7 +5447,7 @@ ROM_START( royalcrdb )
 	ROM_LOAD( "rc_3_pl.bin", 0x0000, 0x8000, CRC(85e77661) SHA1(7d7a765c1bfcfeb9eb91d2519b22d734f20eab24) )
 	ROM_LOAD( "rc_2_pl.bin", 0x8000, 0x8000, CRC(41f7a0b3) SHA1(9aff2b8832d2a4f868daa9849a0bfe5e44f88fc0) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "royalcrdb_nvram.bin", 0x0000, 0x0800, CRC(19bb3dea) SHA1(0965fbcec48ded99c5f6793efffb1d9329cc00eb) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -4693,21 +5455,34 @@ ROM_START( royalcrdb )
 ROM_END
 
 /*
-    roj.ic12   NO MATCH
-    roj.ic25   NO MATCH
-    roj.ic26   NO MATCH
+  Royal Card (German, set 4)
+
+  roj.ic12   NO MATCH
+  roj.ic25   NO MATCH
+  roj.ic26   NO MATCH
+
+  roj.ic26   BADADDR    xxxxxxx-xxxxxxxx
+  Bad dump. Address 08 is faulty.
+
+  GFX ROMS are double size.
+  Second half of GFX ROMs seems to be from Jolly Card.
+
 */
 ROM_START( royalcrdc )
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "roj.ic12", 0x8000, 0x8000, CRC(16923d58) SHA1(e865b91246ae5a21bdc9787e6e6e22be5182cabb) )
 
-	ROM_REGION( 0x20000, "gfx1", 0 )
-	ROM_LOAD( "roj.ic26", 0x0000, 0x10000, CRC(3883cdcb) SHA1(b71a786822fe8fcb2c6fcdc463facb2738ec8c01) )
-//  ROM_IGNORE(                   0x8000)
-	ROM_LOAD( "roj.ic25", 0x8000, 0x10000, CRC(c5b787e8) SHA1(be88aa901c1f96d171af45c3602e0ce72b8fff34) )
-//  ROM_IGNORE(                   0x8000)
+	ROM_REGION( 0x10000, "gfx1", 0 )  // borrowed from parent set, that matches 100%.
+	ROM_LOAD( "3.bin", 0x0000, 0x8000, CRC(c46d804f) SHA1(b089821c7dae6714b49401d787f8bed859815763) )
+	ROM_LOAD( "2.bin", 0x8000, 0x8000, CRC(41f7a0b3) SHA1(9aff2b8832d2a4f868daa9849a0bfe5e44f88fc0) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x10000, "gfxbad", 0 )  // faulty gfx set with bad addressing and mix of royal card & jolly card tiles.
+	ROM_LOAD( "roj.ic26", 0x0000, 0x8000, BAD_DUMP CRC(3883cdcb) SHA1(b71a786822fe8fcb2c6fcdc463facb2738ec8c01) )
+	ROM_IGNORE(                   0x8000)
+	ROM_LOAD( "roj.ic25", 0x8000, 0x8000, CRC(c5b787e8) SHA1(be88aa901c1f96d171af45c3602e0ce72b8fff34) )
+	ROM_IGNORE(                   0x8000)
+
+	ROM_REGION( 0x0800, "nvram", 0 )  // default NVRAM
 	ROM_LOAD( "royalcrdc_nvram.bin", 0x0000, 0x0800, CRC(eacb0c7b) SHA1(513816623aa3843dd5d0416fc012060c7a9f6c71) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -4747,15 +5522,15 @@ ROM_START( royalcrdd )
 	ROM_LOAD( "2.bin", 0x0000, 0x8000, CRC(85e77661) SHA1(7d7a765c1bfcfeb9eb91d2519b22d734f20eab24) ) // sldh
 	ROM_LOAD( "1.bin", 0x8000, 0x8000, CRC(41f7a0b3) SHA1(9aff2b8832d2a4f868daa9849a0bfe5e44f88fc0) ) // sldh
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "royalcrdd_nvram.bin", 0x0000, 0x0800, CRC(335bfa5a) SHA1(7e9cbb502f450c515ea03ffcf4b7fbae60af4e73) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "n82s147.bin", 0x0000, 0x0200, CRC(8bc86f48) SHA1(4c677ab9314a1f571e35104b22659e6811aeb194) )
 
 	ROM_REGION( 0x0600, "plds", 0 )
-	ROM_LOAD( "palce16v8h-4.bin", 0x0000, 0x0117, NO_DUMP ) /* PAL is read protected */
-	ROM_LOAD( "1-peel18cv8.bin",  0x0200, 0x0155, NO_DUMP ) /* PEEL is read protected */
+	ROM_LOAD( "palce16v8h-4.bin", 0x0000, 0x0117, NO_DUMP ) // PLD is read protected
+	ROM_LOAD( "1-peel18cv8.bin",  0x0200, 0x0155, NO_DUMP ) // PLD is read protected
 	ROM_LOAD( "2-peel18cv8.bin",  0x0400, 0x0155, CRC(8fdafd55) SHA1(fbb187ba682111648ea1586f400990cb81a3077a) )
 ROM_END
 
@@ -4779,24 +5554,24 @@ ROM_END
     - 1x trimmer (volume)
 */
 
-ROM_START( royalcrde ) /* both halves have different programs. we're using the 2nd one */
-	ROM_REGION( 0x10000, "maincpu", 0 ) /* 1st half prg is testing RAM in offset $8600-$BF00...?? */
+ROM_START( royalcrde )  // both halves have different programs. we're using the 2nd one.
+	ROM_REGION( 0x10000, "maincpu", 0 ) // 1st half prg is testing RAM in offset $8600-$BF00...??
 	ROM_LOAD( "rc.bin", 0x0000, 0x10000, CRC(8a9a6dd6) SHA1(04c3f9f17d5404ac1414c51ef8f930df54530e72) )
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
 	ROM_LOAD( "2a.bin", 0x0000, 0x8000, CRC(3af71cf8) SHA1(3a0ce0d0abebf386573c5936545dada1d3558e55) )
-	ROM_IGNORE(                 0x8000 )    /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                 0x8000 )    // Identical halves. Discarding 2nd half
 	ROM_LOAD( "1a.bin", 0x8000, 0x8000, CRC(8a66f22c) SHA1(67d6e8f8f5a0fd979dc498ba2cc67cf707ccdf95) )
-	ROM_IGNORE(                 0x8000 )    /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                 0x8000 )    // Identical halves. Discarding 2nd half
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "royalcrde_nvram.bin", 0x0000, 0x0800, CRC(3b03440f) SHA1(49e51b8c9e1404d39c479a2d0619aab43f1a6529) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "n82s147.bin", 0x0000, 0x0200, CRC(8bc86f48) SHA1(4c677ab9314a1f571e35104b22659e6811aeb194) )
 
 	ROM_REGION( 0x0200, "plds", 0 )
-	ROM_LOAD( "palce16v8h-4.bin", 0x0000, 0x0117, NO_DUMP ) /* PAL is read protected */
+	ROM_LOAD( "palce16v8h-4.bin", 0x0000, 0x0117, NO_DUMP ) // PLD is read protected
 ROM_END
 
 
@@ -4819,7 +5594,7 @@ ROM_START( royalcrdt )
 	ROM_REGION( 0x0800, "nvram", 0 )
 	ROM_LOAD( "royalcrdt_nv.bin",  0x0000, 0x0800, CRC(67a6e68b) SHA1(d7ab01c4d9bd4fe58b5d0f4a945c00c5c4906008) )
 
-	ROM_REGION( 0x0200, "plds", 0 ) /* Device type is 16L8 */
+	ROM_REGION( 0x0200, "plds", 0 ) // Device type is 16L8
 	ROM_LOAD( "tab01_3.bin",    0x0000, 0x0104, CRC(a13a7a0a) SHA1(28e918ece4dcfa3883d2439c226b2f125d43f386) )
 ROM_END
 
@@ -4847,25 +5622,28 @@ ROM_END
     - 2x 27256 - gfx - "2.bin", "3.bin"
 */
 
-ROM_START( royalcrdf )  /* encrypted program rom */
+ROM_START( royalcrdf )  // encrypted program rom
 	ROM_REGION( 0x10000*2, "maincpu", 0 ) // *2 for decrypted opcodes (see init)
 	ROM_LOAD( "rc_1.bin", 0x8000, 0x8000, CRC(8cdcc978) SHA1(489b58760a7c8646399c8cdfb86ec4341823e7dd) )
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
-	ROM_LOAD( "rc_3.bin", 0x0000, 0x8000, CRC(8612c6ed) SHA1(3306a252af479e0510f136020086015b60dce879) )
-	ROM_LOAD( "rc_2.bin", 0x8000, 0x8000, CRC(7f934488) SHA1(c537a09ef7e88a81ee9c2e1d971b3caf9d3dba0e) )
+	ROM_LOAD( "rc_2.bin", 0x0000, 0x8000, CRC(7f934488) SHA1(c537a09ef7e88a81ee9c2e1d971b3caf9d3dba0e) )
+	ROM_LOAD( "rc_3.bin", 0x8000, 0x8000, CRC(8612c6ed) SHA1(3306a252af479e0510f136020086015b60dce879) )
+
+	ROM_REGION( 0x0800, "nvram", 0 )  // default NVRAM
+	ROM_LOAD( "royalcrdf_nvram.bin", 0x0000, 0x0800, CRC(05c14b70) SHA1(03ed97a67c7cd004f2c0abbb88fa3ec4a43c3f05) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "82s147.bin", 0x0000, 0x0200, CRC(44dbf086) SHA1(43a2d615c00605db75a4fd4d57d9e056c0356f10) ) // sldh
 
 	ROM_REGION( 0x0600, "plds", 0 )
-	ROM_LOAD( "palce16v8.bin",    0x0000, 0x0117, NO_DUMP ) /* not present in the set */
-	ROM_LOAD( "1-peel18cv8p.bin", 0x0200, 0x0155, NO_DUMP ) /* not present in the set */
-	ROM_LOAD( "2-peel18cv8p.bin", 0x0400, 0x0155, NO_DUMP ) /* not present in the set */
+	ROM_LOAD( "palce16v8.bin",    0x0000, 0x0117, NO_DUMP )  // not present in the set
+	ROM_LOAD( "1-peel18cv8p.bin", 0x0200, 0x0155, NO_DUMP )  // not present in the set
+	ROM_LOAD( "2-peel18cv8p.bin", 0x0400, 0x0155, NO_DUMP )  // not present in the set
 ROM_END
 
 
-ROM_START( royalcrdg )   /* CMC C1030 PCB, EP910EC-30 CPLD, NON encrypted graphics */
+ROM_START( royalcrdg )  // CMC C1030 PCB, EP910EC-30 CPLD, NON encrypted graphics
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "3.cpu", 0x8000, 0x8000, CRC(829a6a1d) SHA1(b7064e4d60e33d0875eb73525230ea3b99f10542) )
 
@@ -4873,7 +5651,7 @@ ROM_START( royalcrdg )   /* CMC C1030 PCB, EP910EC-30 CPLD, NON encrypted graphi
 	ROM_LOAD( "2.bin", 0x0000, 0x8000, CRC(85e77661) SHA1(7d7a765c1bfcfeb9eb91d2519b22d734f20eab24) ) // sldh
 	ROM_LOAD( "1.bin", 0x8000, 0x8000, CRC(41f7a0b3) SHA1(9aff2b8832d2a4f868daa9849a0bfe5e44f88fc0) ) // sldh
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "royalcrdg_nvram.bin", 0x0000, 0x0800, CRC(853c7da9) SHA1(e275b22a9f470672bfc71425fcc44f547ba38b6d) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -4882,7 +5660,7 @@ ROM_END
 
 
 /*
-  Royal Card (Austrian, set 8)
+  Royal Card (German, set 8)
   Year: 1991.
   Manufacturer: TAB Austria.
 
@@ -4895,7 +5673,7 @@ ROM_START( royalcrdh )
 	ROM_LOAD( "145-2.bin", 0x0000, 0x8000, CRC(85e77661) SHA1(7d7a765c1bfcfeb9eb91d2519b22d734f20eab24) )
 	ROM_LOAD( "145-1.bin", 0x8000, 0x8000, CRC(41f7a0b3) SHA1(9aff2b8832d2a4f868daa9849a0bfe5e44f88fc0) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "royalcrdh_nvram.bin", 0x0000, 0x0800, CRC(7757d73a) SHA1(997bfbd847d1d21777694331be92a1a5e79e4faf) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -4929,7 +5707,7 @@ ROM_END
   1x battery (missing)
 
 */
-ROM_START( royalcdfr )   /* Seems bootleg PCB, non encrypted graphics */
+ROM_START( royalcdfr )  // Seems bootleg PCB, non encrypted graphics
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "3.bin", 0x8000, 0x8000, CRC(69b944c1) SHA1(6ef76bff01f20376117dd7f67e5890eca754fcfb) ) // sldh
 
@@ -4937,7 +5715,7 @@ ROM_START( royalcdfr )   /* Seems bootleg PCB, non encrypted graphics */
 	ROM_LOAD( "2.bin", 0x0000, 0x8000, CRC(85e77661) SHA1(7d7a765c1bfcfeb9eb91d2519b22d734f20eab24) ) // sldh
 	ROM_LOAD( "1.bin", 0x8000, 0x8000, CRC(41f7a0b3) SHA1(9aff2b8832d2a4f868daa9849a0bfe5e44f88fc0) ) // sldh
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "royalcdfr_nvram.bin", 0x0000, 0x0800, CRC(bda344d4) SHA1(7793d289147bf03c0d8256d4023252c9677ac8ff) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -4956,11 +5734,11 @@ ROM_START( royalcrdp )
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "n82s147a.bin",     0x0000, 0x0200, CRC(8bc86f48) SHA1(4c677ab9314a1f571e35104b22659e6811aeb194) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "royalcrdp_nvram.bin", 0x0000, 0x0800, BAD_DUMP CRC(553f8c66) SHA1(d2c21786d715f81c537d860d8515fda6d766f630) )
 
-	ROM_REGION( 0x0200, "plds", 0 ) /* correct PAL dump */
-	ROM_LOAD( "palce16v8h_1.bin", 0x0000, 0x0117, CRC(c89d2f52) SHA1(f9d52d9c42ef95b7b85bbf6d09888ebdeac11fd3) )
+	ROM_REGION( 0x0200, "plds", 0 )
+	ROM_LOAD( "palce16v8h_1.bin", 0x0000, 0x0117, NO_DUMP )
 ROM_END
 
 
@@ -4984,12 +5762,12 @@ ROM_START( royaljp )
 	ROM_LOAD( "01.bin", 0x8000, 0x8000, CRC(3ced6423) SHA1(2309a856226404789fd219cf77ba2f378a90eee7) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
-	ROM_LOAD( "rj_d27hc65d-2_(82s147).bin",  0x0000, 0x0200, CRC(d6570420) SHA1(90b6c126b485db823acffbfd195964a6282e60ea) )
+	ROM_LOAD( "rj_d27hc65d-2,82s147.bin",  0x0000, 0x0200, CRC(d6570420) SHA1(90b6c126b485db823acffbfd195964a6282e60ea) )
 
 	ROM_REGION( 0x0800, "nvram", 0 )
 	ROM_LOAD( "royaljp_nvram.bin",  0x0000, 0x0800, CRC(48e51e2a) SHA1(b81a1741eef299384d4fa98a534099b2c0332074) )
 
-	ROM_REGION( 0x0600, "plds", 0 ) /* There are 3 GALs */
+	ROM_REGION( 0x0600, "plds", 0 ) // There are 3 GALs
 	ROM_LOAD( "gal20v8b.bin",    0x0000, 0x0157,   NO_DUMP )
 	ROM_LOAD( "gal20v8a.bin",    0x0200, 0x0157,   NO_DUMP )
 	ROM_LOAD( "gal16v8d.bin",    0x0400, 0x0117,   NO_DUMP )
@@ -5006,7 +5784,7 @@ ROM_START( lluck3x3 )
 	ROM_LOAD( "l2.bin", 0x0000, 0x8000, CRC(8ca90a8f) SHA1(bc3db3f8c097f89eff488e3aca39bf24ff2b5cff) )
 	ROM_LOAD( "l1.bin", 0x8000, 0x8000, CRC(beadc35c) SHA1(8a6a5954a827def8c4c3b904d8ee58a4bde53d85) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "lluck3x3_nvram.bin", 0x0000, 0x0800, CRC(2fe79cff) SHA1(7839c04336b7702c7bdcd2b6917a353f4376f824) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -5022,7 +5800,7 @@ ROM_START( lluck4x1 )
 	ROM_LOAD( "l2.bin", 0x0000, 0x8000, CRC(8ca90a8f) SHA1(bc3db3f8c097f89eff488e3aca39bf24ff2b5cff) )
 	ROM_LOAD( "l1.bin", 0x8000, 0x8000, CRC(beadc35c) SHA1(8a6a5954a827def8c4c3b904d8ee58a4bde53d85) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "lluck4x1_nvram.bin", 0x0000, 0x0800, CRC(05d2d7b8) SHA1(1188b2b4835cadd95b1e9160c2948a2e3457afd2) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -5059,28 +5837,28 @@ ROM_END
 
 */
 
-ROM_START( magicrd2 )   /* Impera... but seems Bulgarian hack, just for copyright */
-	ROM_REGION( 0x10000, "maincpu", 0 ) /* magicard.004 has extra code, and 2 different NVRAM contents harcoded */
+ROM_START( magicrd2 )   // Impera... but seems Bulgarian hack, just for copyright
+	ROM_REGION( 0x10000, "maincpu", 0 ) // magicard.004 has extra code, and 2 different NVRAM contents harcoded
 	ROM_LOAD( "magicard.004", 0x0000, 0x8000,  CRC(f6e948b8) SHA1(7d5983015a508ab135ccbf69b7f3c526c229e3ef) )
-	ROM_LOAD( "magicard.01",  0x8000, 0x8000,  CRC(c94767d4) SHA1(171ac946bdf2575f9e4a31e534a8e641597af519) ) /* 1st and 2nd half identical */
-	ROM_IGNORE(                       0x8000 )  /* Identical halves. Discarding 2nd half */
+	ROM_LOAD( "magicard.01",  0x8000, 0x8000,  CRC(c94767d4) SHA1(171ac946bdf2575f9e4a31e534a8e641597af519) )   // 1st and 2nd half identical
+	ROM_IGNORE(                       0x8000 )  // Identical halves. Discarding 2nd half
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
 	ROM_LOAD( "mc2gr2.bin",   0x0000, 0x8000, CRC(733da697) SHA1(45122c64d5a371ec91cecc67b7faf179078e714d) )
 	ROM_LOAD( "mc2gr1.bin",   0x8000, 0x8000, CRC(2406b8d2) SHA1(e9d7a25562fd5adee351d7ef6ba02fff6aab021a) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "magicrd2_nvram.bin", 0x0000, 0x0800, CRC(343b3162) SHA1(1524959dbbc0c6d7c5c3a4a6b20976382cfbe88f) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "mc2-82s147.bin", 0x0000, 0x0200, CRC(aa91cc35) SHA1(79f9a755441500e618c4183f524f969fffd44100) )
 
 	ROM_REGION( 0x0200, "plds", 0 )
-	ROM_LOAD( "gal16v8uni.bin", 0x0000, 0x0117, CRC(b81d7e0a) SHA1(7fef0b2bcea931a830d38ae0f1102434cf281d2d) )  /* Universal GAL */
+	ROM_LOAD( "gal16v8uni.bin", 0x0000, 0x0117, CRC(b81d7e0a) SHA1(7fef0b2bcea931a830d38ae0f1102434cf281d2d) )  // Universal GAL
 ROM_END
 
 
-ROM_START( magicrd2a )  /* Nov (new). Imatic Yugoslavian hack for green TAB or Impera boards */
+ROM_START( magicrd2a )  // Nov (new). Imatic Yugoslavian hack for green TAB or Impera boards
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "m3_nov.bin", 0x8000, 0x8000,  CRC(ee5468e6) SHA1(f859adbad30e561fca86e60ff5b2e666d8bf4071) )
 
@@ -5088,7 +5866,7 @@ ROM_START( magicrd2a )  /* Nov (new). Imatic Yugoslavian hack for green TAB or I
 	ROM_LOAD( "m2_nov.bin",   0x0000, 0x8000, CRC(684d71f2) SHA1(e4522844a0406b3e83fa723508a7c05dd21e7fb6) )
 	ROM_LOAD( "m1_nov.bin",   0x8000, 0x8000, CRC(96151034) SHA1(3107d353705c6240a71faf308e11c45a87d95cf4) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM (passed protection) */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM (passed protection)
 	ROM_LOAD( "mc2_nvram.bin", 0x0000, 0x0800, CRC(2070d63d) SHA1(86c72a2e81651b0138d8551a0cfcd07176f8e7d2) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -5099,16 +5877,15 @@ ROM_START( magicrd2a )  /* Nov (new). Imatic Yugoslavian hack for green TAB or I
 ROM_END
 
 
-ROM_START( magicrd2b )  /* Imatic Yugoslavian hack for green TAB or Impera boards */
+ROM_START( magicrd2b )  // Imatic Yugoslavian hack for green TAB or Impera boards
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "mc2prgv1.bin", 0x8000, 0x8000,  CRC(7f759b70) SHA1(23a1a6e8eda57c4a90c51a970302f9a7bf590083) )
-//  ROM_LOAD( "mc2prgv2.bin", 0x8000, 0x8000,  CRC(b0ed6b40) SHA1(7167e67608f1b0b1cd956c838dacc1310861cb4a) )   // there are also pcbs with this program
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
 	ROM_LOAD( "mc2gr2.bin",   0x0000, 0x8000, CRC(733da697) SHA1(45122c64d5a371ec91cecc67b7faf179078e714d) )
 	ROM_LOAD( "mc2gr1.bin",   0x8000, 0x8000, CRC(2406b8d2) SHA1(e9d7a25562fd5adee351d7ef6ba02fff6aab021a) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM (passed protection) */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM (passed protection)
 	ROM_LOAD( "mc2_v1-v2_nvram.bin", 0x0000, 0x0800, BAD_DUMP CRC(f88c493d) SHA1(8a5352b46ab68164cd7adaaad6f15f04327b7451) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -5119,16 +5896,15 @@ ROM_START( magicrd2b )  /* Imatic Yugoslavian hack for green TAB or Impera board
 ROM_END
 
 
-ROM_START( magicrd2c )  /* Imatic Yugoslavian hack for blue TAB board (encrypted)*/
+ROM_START( magicrd2c )  // Imatic Yugoslavian hack for blue TAB board (encrypted)
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "mc2prgv2.bin", 0x8000, 0x8000,  CRC(b0ed6b40) SHA1(7167e67608f1b0b1cd956c838dacc1310861cb4a) )
-//  ROM_LOAD( "mc2prgv1.bin", 0x8000, 0x8000,  CRC(7f759b70) SHA1(23a1a6e8eda57c4a90c51a970302f9a7bf590083) )   // there are also pcbs with this program
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
 	ROM_LOAD( "mc2gr1b.bin",  0x0000, 0x8000, CRC(ce2629a7) SHA1(84767ed5da8dcee44a210255537e10372bcc264b) )
 	ROM_LOAD( "mc2gr2b.bin",  0x8000, 0x8000, CRC(d2bf8bde) SHA1(975b8f43a0396c09e357b96d5ae7381b12152b9e) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM (passed protection) */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM (passed protection)
 	ROM_LOAD( "mc2_v1-v2_nvram.bin", 0x0000, 0x0800, BAD_DUMP CRC(f88c493d) SHA1(8a5352b46ab68164cd7adaaad6f15f04327b7451) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -5150,10 +5926,10 @@ ROM_START( vegasslw )
 	ROM_LOAD( "v2.bin", 0x0000, 0x8000, CRC(af7ab460) SHA1(01ea400424152c09c10eb83a1bd569019969ccb7) )
 	ROM_LOAD( "v1.bin", 0x8000, 0x8000, CRC(23e0d1c6) SHA1(98967b14d3264c444a1dfbd15c57cde70f41f09d) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "vegasslw_nvram.bin", 0x0000, 0x0800, CRC(1aa043e3) SHA1(c93d071effb2f2fe95e9dc751174c2c765595f74) )
 
-	ROM_REGION( 0x0200, "proms", 0 )    /* PLD address the 2nd half */
+	ROM_REGION( 0x0200, "proms", 0 )    // PLD address the 2nd half
 	ROM_LOAD( "jokercrd_prom.bin", 0x0000, 0x0200, CRC(e59fc06e) SHA1(88a3bb89f020fe2b20f768ca010a082e0b974831) )
 ROM_END
 
@@ -5166,39 +5942,39 @@ ROM_START( vegasfst )
 	ROM_LOAD( "v2.bin", 0x0000, 0x8000, CRC(af7ab460) SHA1(01ea400424152c09c10eb83a1bd569019969ccb7) )
 	ROM_LOAD( "v1.bin", 0x8000, 0x8000, CRC(23e0d1c6) SHA1(98967b14d3264c444a1dfbd15c57cde70f41f09d) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "vegasfst_nvram.bin", 0x0000, 0x0800, CRC(5034de7a) SHA1(ab2077a49d94676531c73ad8d8ce9548bbfa2b81) )
 
-	ROM_REGION( 0x0200, "proms", 0 )    /* PLD address the 2nd half */
+	ROM_REGION( 0x0200, "proms", 0 )    // PLD address the 2nd half
 	ROM_LOAD( "jokercrd_prom.bin", 0x0000, 0x0200, CRC(e59fc06e) SHA1(88a3bb89f020fe2b20f768ca010a082e0b974831) )
 ROM_END
 
 
-ROM_START( vegasfte )   /* Royal Vegas Joker Card (fast deal, english gfx) */
+ROM_START( vegasfte )   // Royal Vegas Joker Card (fast deal, english gfx)
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "ch3.bin", 0x8000, 0x8000, CRC(87dfb28d) SHA1(9a06e695e59722b6c97e5a9fd2c8b238661e5a4a) )
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
 	ROM_LOAD( "ch2.bin", 0x0000, 0x8000, CRC(af7ab460) SHA1(01ea400424152c09c10eb83a1bd569019969ccb7) )
-	ROM_LOAD( "ch1.bin", 0x8000, 0x8000, CRC(0a3679c0) SHA1(ce8a067e1a2eccf9fabb16733ef3a14e0e8129e5) ) /* X & Y in txt layer */
+	ROM_LOAD( "ch1.bin", 0x8000, 0x8000, CRC(0a3679c0) SHA1(ce8a067e1a2eccf9fabb16733ef3a14e0e8129e5) ) // X & Y in txt layer
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "vegasfte_nvram.bin", 0x0000, 0x0800, CRC(166c6055) SHA1(db2143a2a3adc92578bd3707391d2f5030cc6a6f) )
 
-	ROM_REGION( 0x0200, "proms", 0 )    /* PLD address the 2nd half */
+	ROM_REGION( 0x0200, "proms", 0 )    // PLD address the 2nd half
 	ROM_LOAD( "jokercrd_prom.bin", 0x0000, 0x0200, CRC(e59fc06e) SHA1(88a3bb89f020fe2b20f768ca010a082e0b974831) )
 ROM_END
 
 
 ROM_START( vegasmil )
-	ROM_REGION( 0x10000, "maincpu", 0 ) /* Mile */
+	ROM_REGION( 0x10000, "maincpu", 0 ) // Mile
 	ROM_LOAD( "mile.bin", 0x8000, 0x8000, CRC(ef7e02e2) SHA1(7432b0e723dc528901c422ab1d7d01fd1bc1eb20) )
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
 	ROM_LOAD( "v2.bin", 0x0000, 0x8000, CRC(af7ab460) SHA1(01ea400424152c09c10eb83a1bd569019969ccb7) )
 	ROM_LOAD( "v1.bin", 0x8000, 0x8000, CRC(23e0d1c6) SHA1(98967b14d3264c444a1dfbd15c57cde70f41f09d) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "vegasmil_nvram.bin", 0x0000, 0x0800, CRC(d2608e5f) SHA1(ac936df71dbc0bfb811a3ba3c91444a2a3e7b036) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -5290,7 +6066,7 @@ ROM_END
 
 */
 
-ROM_START( jolyjokr )   /* Jolly Joker (98bet, set 1) */
+ROM_START( jolyjokr )   // Jolly Joker (98bet, set 1)
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "impera3orig.bin", 0x8000, 0x8000, CRC(ceb3a0d5) SHA1(25efae9f225abddfa663e6abcc91801996e5b0ea) )
 
@@ -5298,7 +6074,7 @@ ROM_START( jolyjokr )   /* Jolly Joker (98bet, set 1) */
 	ROM_LOAD( "impera2.bin", 0x0000, 0x8000, CRC(f0fa5941) SHA1(1fcade31ed6893ffcfd4efe97dfaaa31d24283ec) )
 	ROM_LOAD( "impera1.bin", 0x8000, 0x8000, CRC(c3ab44dd) SHA1(e46c0fd94da561f57033647f1703fa135777ece5) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "jolyjokr_nvram.bin", 0x0000, 0x0800, CRC(f33e66ed) SHA1(7a4b9a1b2f976d5d26f54915a213d5ac5eca0a42) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -5306,7 +6082,7 @@ ROM_START( jolyjokr )   /* Jolly Joker (98bet, set 1) */
 ROM_END
 
 
-ROM_START( jolyjokra )  /* Jolly Joker (98bet, set 2) */
+ROM_START( jolyjokra )  // Jolly Joker (98bet, set 2)
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "impera50.bin", 0x8000, 0x8000, CRC(7effc044) SHA1(961438e7fb8222296fb959b510cdf646e4ac3226) )
 
@@ -5314,7 +6090,7 @@ ROM_START( jolyjokra )  /* Jolly Joker (98bet, set 2) */
 	ROM_LOAD( "impera2.bin", 0x0000, 0x8000, CRC(f0fa5941) SHA1(1fcade31ed6893ffcfd4efe97dfaaa31d24283ec) )
 	ROM_LOAD( "impera1.bin", 0x8000, 0x8000, CRC(c3ab44dd) SHA1(e46c0fd94da561f57033647f1703fa135777ece5) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "jolyjokra_nvram.bin", 0x0000, 0x0800, CRC(ed43693c) SHA1(d4aa4e539ab12c97bc9b9b1077997195a11d782b) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -5323,34 +6099,80 @@ ROM_END
 
 
 /*
-    Jolly Joker (40bet, croatian hack)
+  Jolly Joker (40bet)
 
-    am27s29_ic40.bin     1ST AND 2ND HALF IDENTICAL
-    ic25.bin             1ST AND 2ND HALF IDENTICAL
-    ic26.bin             1ST AND 2ND HALF IDENTICAL
+  am27s29_ic40.bin     1ST AND 2ND HALF IDENTICAL
+  ic25.bin             1ST AND 2ND HALF IDENTICAL
+  ic26.bin             1ST AND 2ND HALF IDENTICAL
 
-    These graphics ROMs have enough data to fix the bitrotten graphics from the other Jolly Joker sets.
-    impera1.bin ---> bits 7 & 6
-    impera2.bin ---> bits 7 & 0
+  These graphics ROMs have enough data to fix the bitrotten graphics from the other Jolly Joker sets.
+  impera1.bin ---> bits 7 & 6
+  impera2.bin ---> bits 7 & 0
 
-    Two slightly different programs. One in each half.
-    Both have Min Bet (5), Max Bet (40).
-    Surely selectable through a PLD.
+  Two slightly different programs. One in each half.
+  Both have Min Bet (5), Max Bet (40).
+  Surely selectable through a PLD.
+
+  This is clearly the paytable. Here the differences...
+
+  offset:     C9CF C9D0 C9D1 C9D2 C9D3 C9D4 C9D5 C9D6 C9D7 C9D8 C9D9 C9DA C9DB C9DC C9DD C9DE C9DF C9E0 C9E1 C9E2
+  program #1  0x01 0x00 0x02 0x00 0x03 0x00 0x05 0x00 0x07 0x00 0x10 0x00 0x40 0x00 0x00 0x01 0x00 0x05 0x00 0x11
+  program #2  0x01 0x00 0x02 0x00 0x03 0x00 0x05 0x00 0x07 0x00 0x10 0x00 0x40 0x00 0x00 0x01 0x50 0x02 0x00 0x03
+                                                                                              ^^^^ ^^^^      ^^^^
+
+  offset:     C9E3 C9E4 C9E5 C9E6 C9E7 C9E8 C9E9 C9EA C9EB C9EC C9ED C9EE C9EF C9F0 C9F1 C9F2 C9F3 C9F4 C9F5 C9F6
+  program #1  0x01 0x00 0x02 0x00 0x03 0x00 0x05 0x00 0x07 0x00 0x10 0x00 0x40 0x00 0x00 0x01 0x00 0x05 0x00 0x11
+  program #2  0x01 0x00 0x02 0x00 0x03 0x00 0x05 0x00 0x07 0x00 0x10 0x00 0x40 0x00 0x00 0x01 0x50 0x02 0x00 0x03
+                                                                                              ^^^^ ^^^^      ^^^^
+  This change the paytable to the following values:
+
+    Program #1                  Program #2
+
+    Five of a Kind  1100        Five of a Kind   300
+    Royak Flush      500        Royak Flush      250
+    Street Flush     100        Street Flush     100
+    Poker             40        Poker             40
+    Full House        10        Full House        10
+    Farbe              7        Farbe              7
+    Strasse            5        Strasse            5
+    Drilling           3        Drilling           3
+    2 Paare            2        2 Paare            2
+    Hohes Paar         1        Hohes Paar         1
+
+  Will split in two different sets, since these programs were made to use as different
+  game variations, and aren't user selectable.
 
 */
-ROM_START( jolyjokrb )
-	ROM_REGION( 0x10000, "maincpu", 0 ) /* Two slightly different programs. Using the 1st one...*/
-	ROM_LOAD( "unbekannt.bin", 0x8000, 0x8000, CRC(327fa3d7) SHA1(2435aada2377b2f8f01d059a7aba9bc7a8993537) )   /* 1st prg */
-	ROM_IGNORE(                        0x8000 ) /* Using the 1st program. Discarding 2nd half */
-//  ROM_LOAD( "unbekannt.bin", 0x0000, 0x10000, CRC(327fa3d7) SHA1(2435aada2377b2f8f01d059a7aba9bc7a8993537) )  /* 2nd prg */
+ROM_START( jolyjokrb1 )
+	ROM_REGION( 0x10000, "maincpu", 0 ) // Two different paytable programs. Using the 1st one (higher paytable)
+	ROM_LOAD( "unbekannt.bin", 0x8000, 0x8000, CRC(327fa3d7) SHA1(2435aada2377b2f8f01d059a7aba9bc7a8993537) )
+	ROM_IGNORE(                        0x8000 ) // Using the 1st program. Discarding 2nd half
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
 	ROM_LOAD( "ic26.bin", 0x0000, 0x8000, CRC(3e45dfc6) SHA1(8fd0b0cc00cdd96244ae7e7a91f6613b1c144ee0) )
-	ROM_IGNORE(                   0x8000 )  /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                   0x8000 )  // Identical halves. Discarding 2nd half
 	ROM_LOAD( "ic25.bin", 0x8000, 0x8000, CRC(1bd067af) SHA1(9436fe085ba63c00a12ea80903470a84535e3dc1) )
-	ROM_IGNORE(                   0x8000 )  /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                   0x8000 )  // Identical halves. Discarding 2nd half
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
+	ROM_LOAD( "jolyjokrb_nvram.bin", 0x0000, 0x0800, CRC(17007bb5) SHA1(72e08096293ce4fbde205a63b5ecd9641dbee017) )
+
+	ROM_REGION( 0x0200, "proms", 0 )
+	ROM_LOAD( "am27s29_ic40.bin",    0x0000, 0x0200, CRC(0b671bba) SHA1(92d512e02b50f98b7bc5a60deee4fee722656c4f) )
+ROM_END
+
+ROM_START( jolyjokrb2 )
+	ROM_REGION( 0x10000, "maincpu", 0 ) // Two different paytable programs. Using the 2nd one (lower paytable)
+	ROM_LOAD( "unbekannt.bin", 0x8000, 0x8000, CRC(327fa3d7) SHA1(2435aada2377b2f8f01d059a7aba9bc7a8993537) )
+	ROM_CONTINUE(              0x8000, 0x8000)  // overlapping with the 2nd program.
+
+	ROM_REGION( 0x10000, "gfx1", 0 )
+	ROM_LOAD( "ic26.bin", 0x0000, 0x8000, CRC(3e45dfc6) SHA1(8fd0b0cc00cdd96244ae7e7a91f6613b1c144ee0) )
+	ROM_IGNORE(                   0x8000 )  // Identical halves. Discarding 2nd half
+	ROM_LOAD( "ic25.bin", 0x8000, 0x8000, CRC(1bd067af) SHA1(9436fe085ba63c00a12ea80903470a84535e3dc1) )
+	ROM_IGNORE(                   0x8000 )  // Identical halves. Discarding 2nd half
+
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "jolyjokrb_nvram.bin", 0x0000, 0x0800, CRC(17007bb5) SHA1(72e08096293ce4fbde205a63b5ecd9641dbee017) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -5366,7 +6188,7 @@ ROM_END
 */
 ROM_START( jolyjokrc )
 	ROM_REGION( 0x10000, "maincpu", 0 )
-	ROM_LOAD( "b&g_jj1.bin", 0x8000, 0x8000, BAD_DUMP CRC(2fd585a7) SHA1(d517141ef17da9b61ddf3e6e8c41f5173de980c3) )
+	ROM_LOAD( "b+g_jj1.bin", 0x8000, 0x8000, BAD_DUMP CRC(2fd585a7) SHA1(d517141ef17da9b61ddf3e6e8c41f5173de980c3) )
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
 	ROM_LOAD( "jje.bin", 0x0000, 0x8000, CRC(d9da6e74) SHA1(2a966e2d7849aed9d952a9d94c99955ba651d14d) )
@@ -5375,8 +6197,101 @@ ROM_START( jolyjokrc )
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "tbp28s42.bin", 0x0000, 0x0200, CRC(0b671bba) SHA1(92d512e02b50f98b7bc5a60deee4fee722656c4f) )
 
-	ROM_REGION( 0x0200, "plds", 0 )    /* Cracked PLD */
+	ROM_REGION( 0x0200, "plds", 0 ) // cracked PLD
 	ROM_LOAD( "jjpal.bin", 0x0000, 0x0117, CRC(3b084c34) SHA1(5d186b70317ef871c9a426eb420b66efcbd918de) )
+ROM_END
+
+/*
+  Jolly Joker
+  Impera.
+
+  The following two sets have the same program
+  but different graphics system.
+
+  Both sets have graphics ROMs data interleaved
+  inside the second half of a 16bit 27C210 EPROM.
+  The second set has some 8bits data in the first half.
+  Not clear if it's for obfuscation or just are the missing
+  logo graphics tiles.
+
+  The program looks original. The former sets programs
+  have differents offsets patched and moved blocks respect
+  this new program.
+
+  Didn't set as parent due to the fact that seems older.
+  Maybe being more original and less patched should be set
+  as parent.
+
+*/
+ROM_START( jolyjokro )
+	ROM_REGION( 0x10000, "maincpu", 0 )
+	ROM_LOAD( "impera1.bin", 0x0000, 0x10000, CRC(3cad9fcf) SHA1(09f23ae8c04e6b461e17a8b3978fe44566ffc3aa) )
+
+	ROM_REGION( 0x10000, "gfxpool", 0 )
+	ROM_LOAD( "impera2.bin", 0x0000, 0x10000, CRC(aa86dba6) SHA1(fe189dde83bd855f4a0b34b20c161a9addc15017) )
+	ROM_CONTINUE(            0x0000, 0x10000)   // discarding 1nd empty half (0000-ffff)
+
+	ROM_REGION( 0x10000, "gfx1", 0 )
+	ROM_FILL(              0x0000, 0x10000, 0xff)   // deinterleaved GFX data will be placed here
+
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
+	ROM_LOAD( "jolyjokro_nvram.bin", 0x0000, 0x0800, CRC(1f69e567) SHA1(86695ca6f9f93c6badd092410611d8061edf8efa) )
+
+	ROM_REGION( 0x0200, "proms", 0 )    // PLD address the 2nd half
+	ROM_LOAD( "1_impera_color_ii.bin", 0x0000, 0x0200, CRC(9d62f9f5) SHA1(68300c25c7eaa13a3fdbf91ab0711d0bc530543d) )
+ROM_END
+
+ROM_START( jolyjokrp )
+	ROM_REGION( 0x10000, "maincpu", 0 )
+	ROM_LOAD( "impera1.bin", 0x0000, 0x10000, CRC(3cad9fcf) SHA1(09f23ae8c04e6b461e17a8b3978fe44566ffc3aa) )
+
+	ROM_REGION( 0x10000, "gfxpool", 0 )
+	ROM_LOAD( "9c_1ff1.bin", 0x00000, 0x10000, CRC(4b8f0821) SHA1(0821eed07f5e98b66d87a3079756dad72ffe9665) )
+	ROM_CONTINUE(            0x00000, 0x10000)  // discarding 1nd half (0000-ffff), but has some data. leftover?
+
+	ROM_REGION( 0x10000, "gfx1", 0 )
+	ROM_FILL(              0x0000, 0x10000, 0xff)   // deinterleaved GFX data will be placed here
+
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
+	ROM_LOAD( "jolyjokrp_nvram.bin", 0x0000, 0x0800, CRC(c8706e75) SHA1(421420b1ee82615faf290d1204342cdde776ffaf) )
+
+	ROM_REGION( 0x0200, "proms", 0 )    // PLD address the 2nd half
+	ROM_LOAD( "impera_color_ii.bin", 0x0000, 0x0200, CRC(9d62f9f5) SHA1(68300c25c7eaa13a3fdbf91ab0711d0bc530543d) )
+ROM_END
+
+/*
+  Jolly Joker
+  Impera.
+
+  This hardware has a daughterboard that seems a solid state replacement
+  for the suicide modules of funworld boards.
+
+  It's just a theory, but the main battery is routed to the daughterboard
+  connectors, when this module has not suicide program inside a RAM.
+
+  Module contents:
+
+  1x Rockwell R65C02P2 Mexico.
+  1x 27c512 EPROM stickered 'IMPERA1'.
+  1x PAL16L8A2NC.
+  1x 74HC241N.
+  1x 74LS245N.
+  1x 74LS139N.
+
+*/
+ROM_START( jolyjokrm )  // Jolly Joker (Solid State module in suicide board)
+	ROM_REGION( 0x10000, "maincpu", 0 )
+	ROM_LOAD( "impera1.bin", 0x0000, 0x10000, CRC(3cad9fcf) SHA1(09f23ae8c04e6b461e17a8b3978fe44566ffc3aa) )
+
+	ROM_REGION( 0x10000, "gfx1", 0 )
+	ROM_LOAD( "02.bin", 0x0000, 0x8000, CRC(f0fa5941) SHA1(1fcade31ed6893ffcfd4efe97dfaaa31d24283ec) )
+	ROM_LOAD( "01.bin", 0x8000, 0x8000, CRC(c3ab44dd) SHA1(e46c0fd94da561f57033647f1703fa135777ece5) )
+
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
+	ROM_LOAD( "jolyjokrm_nvram.bin", 0x0000, 0x0800, CRC(f33e66ed) SHA1(7a4b9a1b2f976d5d26f54915a213d5ac5eca0a42) )
+
+	ROM_REGION( 0x0200, "proms", 0 )
+	ROM_LOAD( "63s481.bin", 0x0000, 0x0200, CRC(1f974802) SHA1(c9d4d72edef3c03b0c6e1a0ffc0b82f6d213d29c) )
 ROM_END
 
 
@@ -5392,15 +6307,15 @@ ROM_END
 */
 ROM_START( multiwin )
 	ROM_REGION( 0x10000*2, "maincpu", 0 )  // *2 for decrypted opcodes (see init)
-	ROM_LOAD( "multiwin3.bin",  0x8000, 0x8000, CRC(995ca34d) SHA1(4d6ec10810ece493447a01af149ad8387d5f3c2f) )  /* just the 2nd half */
-	ROM_LOAD( "multiwin4.bin",  0x4000, 0x8000, CRC(f062125c) SHA1(93c9aa518810798f3449a28e851eb6433ba7bbf8) )  /* just the 2nd half */
+	ROM_LOAD( "multiwin3.bin",  0x8000, 0x8000, CRC(995ca34d) SHA1(4d6ec10810ece493447a01af149ad8387d5f3c2f) )  // first half is full of ff's
+	ROM_LOAD( "multiwin4.bin",  0x0000, 0x8000, CRC(f062125c) SHA1(93c9aa518810798f3449a28e851eb6433ba7bbf8) )  // first half is full of ff's
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
-	ROM_LOAD( "multiwin1.bin",  0x0000, 0x8000, CRC(97589aa6) SHA1(2486116637bd906cb3b32acd86fc861c48a0475e) )
-	ROM_LOAD( "multiwin2.bin",  0x8000, 0x8000, CRC(580b3239) SHA1(362aa85c57ad0bce1d7d15a93b9998daba4d306a) )
+	ROM_LOAD( "multiwin2.bin",  0x0000, 0x8000, CRC(580b3239) SHA1(362aa85c57ad0bce1d7d15a93b9998daba4d306a) )
+	ROM_LOAD( "multiwin1.bin",  0x8000, 0x8000, CRC(97589aa6) SHA1(2486116637bd906cb3b32acd86fc861c48a0475e) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
-	ROM_LOAD( "multi_prom.bin", 0x0000, 0x0200, BAD_DUMP CRC(e59fc06e) SHA1(88a3bb89f020fe2b20f768ca010a082e0b974831) ) /* using the joker card one */
+	ROM_LOAD( "multi_prom.bin", 0x0000, 0x0200, BAD_DUMP CRC(e59fc06e) SHA1(88a3bb89f020fe2b20f768ca010a082e0b974831) ) // using the joker card one
 ROM_END
 
 
@@ -5498,12 +6413,12 @@ ROM_END
 
 */
 ROM_START( powercrd )
-	ROM_REGION( 0x10000, "maincpu", 0 )  /* need proper decryption */
-	ROM_LOAD( "263a1.bin",  0x8000, 0x8000, CRC(9e5e477d) SHA1(428464a64bea8cb478bc8033859baa47d7de0297) )  /* just the 2nd half */
-	ROM_LOAD( "263a2.bin",  0x4000, 0x8000, CRC(11b1a13f) SHA1(766c1a45c238467d6a292795f5a159187966ceec) )  /* just the 2nd half */
+	ROM_REGION( 0x10000, "maincpu", 0 )
+	ROM_LOAD( "263a1.bin",  0x8000, 0x8000, CRC(9e5e477d) SHA1(428464a64bea8cb478bc8033859baa47d7de0297) )  // just the 2nd half
+	ROM_LOAD( "263a2.bin",  0x0000, 0x8000, CRC(11b1a13f) SHA1(766c1a45c238467d6a292795f5a159187966ceec) )  // just the 2nd half
 
-	ROM_REGION( 0x0800, "decode", 0 )  /* from the CY7C291A inside of the custom CPU */
-	ROM_LOAD( "powercrd_cy7c291a.bin",  0x0000, 0x0800, CRC(f1d8f35d) SHA1(2b5f9222a81a627d43fd8448385f85c71c24b914) )  /* new dump */
+	ROM_REGION( 0x0800, "decode", 0 )   // from the CY7C291A inside of the custom CPU
+	ROM_LOAD( "powercrd_cy7c291a.bin",  0x0000, 0x0800, CRC(f1d8f35d) SHA1(2b5f9222a81a627d43fd8448385f85c71c24b914) )
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
 	ROM_LOAD( "power_c_zg2.ic11",   0x0000, 0x8000, CRC(108380bb) SHA1(922beffe3c06f391239125e6f4ccc86ec6980c45) )
@@ -5632,15 +6547,15 @@ ROM_END
 */
 
 ROM_START( megacard )
-	ROM_REGION( 0x10000, "maincpu", 0 )  /* need proper decryption */
-	ROM_LOAD( "mega_mc3_210-f-1.ic37",  0x8000, 0x8000, CRC(747f5ed1) SHA1(06757bb6a792dca93978b17b54c28e413e3720b1) )  /* just the 2nd half */
-	ROM_LOAD( "mega_mc3_210-f-2.ic41",  0x4000, 0x8000, CRC(373094d2) SHA1(8aed2502e89b0e7522e88f351ac256f1afad7ee8) )  /* just the 2nd half */
+	ROM_REGION( 0x10000, "maincpu", 0 )
+	ROM_LOAD( "mega_mc3_210-f-1.ic37",  0x8000, 0x8000, CRC(747f5ed1) SHA1(06757bb6a792dca93978b17b54c28e413e3720b1) )  // just the 2nd half
+	ROM_LOAD( "mega_mc3_210-f-2.ic41",  0x0000, 0x8000, CRC(373094d2) SHA1(8aed2502e89b0e7522e88f351ac256f1afad7ee8) )  // just the 2nd half
 
-	ROM_REGION( 0x0300, "die_65sc02", 0 )  /* from the 65SC02 die inside of the custom CPU */
+	ROM_REGION( 0x0300, "die_65sc02", 0 )   // from the 65SC02 die inside of the custom CPU
 	ROM_LOAD( "gteu65decoderom.bin",   0x0000, 0x02f1, CRC(089af0c6) SHA1(0f46a73a7859a694a07ebe74d476fae80e57e329) )
 
-	ROM_REGION( 0x0800, "decode", 0 )  /* from the CY7C291A inside of the custom CPU */
-	ROM_LOAD( "megacard_cy7291a.bin",  0x0000, 0x0800, CRC(596f01ac) SHA1(a8606a1dd385fbb46b1a96f11a759fa6580803d8) )  /* new dump */
+	ROM_REGION( 0x0800, "decode", 0 )   // from the CY7C291A inside of the custom CPU
+	ROM_LOAD( "megacard_cy7291a.bin",  0x0000, 0x0800, CRC(596f01ac) SHA1(a8606a1dd385fbb46b1a96f11a759fa6580803d8) )
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
 	ROM_LOAD( "mega_zg2.ic11",   0x0000, 0x8000, CRC(0993d380) SHA1(e5e2386948fba2fb6b79339af27bd1d0f1e198ca) )
@@ -5654,66 +6569,82 @@ ROM_START( megacard )
 ROM_END
 
 
-/*  (Multi) Joker Card from Vesely Svet (Sprightly World). Czech poker game.
-    Program roms seems encrypted. Seems to be a Big Deal clone, running in
-    Fun World Multi Win hardware.
+/*
+  Joker Card 300
+  1993, Amatic Trading GmbH, Austria.
+  Language seems to be Czech.
 
-    1x Custom Fun World CPU, based on 6502 family. Silkscreened "Fun World Elektronik".
-    1x Maxim MAX690CPA - Microprocessor Supervisory IC (DIP 8).
+  There are tiles from Vesely Svet (Sprightly World). Maybe a leftover.
+  Program roms are encrypted. Seems to be a Big Deal clone, running in
+  Fun World Multi Win hardware.
 
-    2x MC68B21P PIAs.
-    1x GM68B45S CRT Controller.
+  Unfortunatelly, the graphics ROM vesely_zg_1.ic10 has address 8 line (leg 25) shorted.
+  Seems that the protection diode was blown due to a bad handling.
 
-    1x AY-3-8910.
-    1x TDA2003 Audio amplifier.
+  With forensics techniques, a special device was constructed to process
+  the faulty ROM and try to read the contents. Fortunatelly after all these
+  efforts, we got a perfect and complete dump.
 
-    4x ROM 27C256.
-    1x RAM GM76C28A.
-    1x RAM KM6264BL.
-    1x PROM N82S147AN.
 
-    1x PAL 16L8ACN
+  Specs:
 
-    1x 8 DIP switches bank.
-    1x Push button (SW2). (reset?)
-    1x Variable Resistor (VR1).
-    1x 16 MHz. Crystal.
-    1x CR2025 (3V) battery.
+  1x Custom Fun World CPU, based on 6502 family. Silkscreened "Fun World Elektronik".
+  1x Maxim MAX690CPA - Microprocessor Supervisory IC (DIP 8).
 
-    1x 2x17 pin male connector.
-    1x 2x22 Edge connector.
-    1x 2x8  Edge connector.
+  2x MC68B21P PIAs.
+  1x GM68B45S CRT Controller.
 
-    ------------------------------------------------------------------------
+  1x AY-3-8910.
+  1x TDA2003 Audio amplifier.
 
-    IC41.bin seems from another game. You can see the following strings:
+  4x ROM 27C256.
+  1x RAM GM76C28A.
+  1x RAM KM6264BL.
+  1x PROM N82S147AN.
 
-    AMATIC TRADING GMBH  AUSTRIA
+  1x PAL 16L8ACN
 
-    JEDE  UNERLAUBTEVERAENDERUNG
-    BZWKOPIE  WIRD  DENZORN DER
-    GOETTERAUF SICH  ZIEHEN
+  1x 8 DIP switches bank.
+  1x Push button (SW2). (reset?)
+  1x Variable Resistor (VR1).
+  1x 16 MHz. Crystal.
+  1x CR2025 (3V) battery.
 
-    VERSION A267BC 200/300 KARTE
-    1993-11-29
+  1x 2x17 pin male connector.
+  1x 2x22 Edge connector.
+  1x 2x8  Edge connector.
 
-    ------------------------------------------------------------------------
+  ------------------------------------------------------------------------
 
-    ic41.bin   1ST AND 2ND HALF IDENTICAL
-    ic37.bin   1ST AND 2ND HALF IDENTICAL
-    ic10.bin   BADADDR    xxxxxx-xxxxxxxx
+  In IC41.bin you can see the following strings:
+
+  AMATIC TRADING GMBH  AUSTRIA
+
+  JEDE  UNERLAUBTEVERAENDERUNG
+  BZWKOPIE  WIRD  DENZORN DER
+  GOETTERAUF SICH  ZIEHEN
+
+  VERSION A267BC 200/300 KARTE
+  1993-11-29
+
+  ------------------------------------------------------------------------
+
+  ic41.bin   1ST AND 2ND HALF IDENTICAL
+  ic37.bin   1ST AND 2ND HALF IDENTICAL
+  ic10.bin   BADADDR    xxxxxx-xxxxxxxx
+
 */
 
 ROM_START( jokercrd )
 	ROM_REGION( 0x10000, "maincpu", 0 )
-	ROM_LOAD( "ic41.bin",   0x8000,  0x4000, CRC(d36188b3) SHA1(3fb848fabbbde9fbb70875b3dfef62bfb3a8cbcb) )
-	ROM_IGNORE(                      0x4000 )   /* Identical halves. Discarding 2nd half */
+	ROM_LOAD( "ic41.bin",   0x4000,  0x4000, CRC(d36188b3) SHA1(3fb848fabbbde9fbb70875b3dfef62bfb3a8cbcb) )
+	ROM_IGNORE(                      0x4000 )   // Identical halves. Discarding 2nd half
 	ROM_LOAD( "ic37.bin",   0xc000,  0x4000, CRC(8e0d70c4) SHA1(018f92631acbe98e5826a41698f0e07b4b46cd71) )
-	ROM_IGNORE(                      0x4000 )   /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                      0x4000 )   // Identical halves. Discarding 2nd half
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
-	ROM_LOAD( "vesely_zg_1.ic10", 0x0000, 0x8000, CRC(2bbd27ad) SHA1(37d37899398d95beac5f3cbffc4277c97aca1a23) )
-	ROM_LOAD( "vesely_zg_2.ic11", 0x8000, 0x8000, CRC(21d05a57) SHA1(156c18ec31b08e4c4af6f73b49cb5d5c68d1670f) ) /* bad dump, or sprite plane bug? */
+	ROM_LOAD( "vesely_zg_2.ic11", 0x0000, 0x8000, CRC(21d05a57) SHA1(156c18ec31b08e4c4af6f73b49cb5d5c68d1670f) )
+	ROM_LOAD( "vesely_zg_1.ic10", 0x8000, 0x8000, CRC(f315587a) SHA1(6f24dd24ae4c48f2ee1db96d5cbff863734048de) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "ic13.bin", 0x0000, 0x0200, CRC(e59fc06e) SHA1(88a3bb89f020fe2b20f768ca010a082e0b974831) )
@@ -5751,25 +6682,25 @@ ROM_END
 ROM_START( mongolnw )
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "prgteov.2.3m.u16", 0x8000, 0x8000, CRC(996b851a) SHA1(ef4e3d036ca10b33c83749024d04c4d4c09feeb7) )
-	ROM_IGNORE(                           0x8000 )  /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                           0x8000 )  // Identical halves. Discarding 2nd half
 
-	ROM_REGION( 0x10000, "cpu1", 0 ) /* TSC87C52-16CB MCU Code */
+	ROM_REGION( 0x10000, "cpu1", 0 )    // TSC87C52-16CB MCU Code
 	ROM_LOAD( "tsc87c52-mf.u40", 0x0000, 0x02000 , CRC(ae22e778) SHA1(0897e05967d68d7f23489e98717663e3a3176070) )
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
 	ROM_LOAD( "mong.rc.b2.u3", 0x0000, 0x8000, CRC(5e019b73) SHA1(63a544dccb9589e5a6b938e604c09d4d8fc060fc) )
-	ROM_IGNORE(                        0x8000 ) /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                        0x8000 ) // Identical halves. Discarding 2nd half
 	ROM_LOAD( "mong.rc.c1.u2", 0x8000, 0x8000, CRC(e3fc24c4) SHA1(ea4e67ace63b55a76365f7e11a67c7d420a52dd7) )
-	ROM_IGNORE(                        0x8000 ) /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                        0x8000 ) // Identical halves. Discarding 2nd half
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "mongolnw_nvram.bin", 0x0000, 0x0800, CRC(700531fa) SHA1(a8bcf86df6bd06d2ee54b4898dd7822060b81dba) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "am27s29pc_mf.u24", 0x0000, 0x0200, CRC(da9181af) SHA1(1b30d992f3b2a4b3bd81e3f99632311988e2e8d1) )
 
 	ROM_REGION( 0x0200, "plds", 0 )
-	ROM_LOAD( "palce16v8h_mf.u5", 0x0000, 0x0117, NO_DUMP ) /* PAL is read protected */
+	ROM_LOAD( "palce16v8h_mf.u5", 0x0000, 0x0117, NO_DUMP ) // PLD is read protected
 ROM_END
 
 
@@ -5811,25 +6742,25 @@ ROM_END
 ROM_START( soccernw )
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "prgteo2gv2.3.u16", 0x8000, 0x8000, CRC(c61d1937) SHA1(c516f13a108da60b7ccee338b63a025009ef9099) )
-	ROM_IGNORE(                           0x8000 )  /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                           0x8000 )  // Identical halves. Discarding 2nd half
 
-	ROM_REGION( 0x10000, "cpu1", 0 ) /* TSC87C52-16CB MCU Code */
+	ROM_REGION( 0x10000, "cpu1", 0 )    // TSC87C52-16CB MCU Code
 	ROM_LOAD( "tsc87c52-sn.u40", 0x0000, 0x02000 , CRC(af0bd35b) SHA1(c6613a7bcdec2fd6060d6dcf639654568de87e75) )
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
 	ROM_LOAD( "soccer2.u3", 0x0000, 0x8000, CRC(db09b5bb) SHA1(a12bf2938f5482ea5ebc0db6fd6594e1beb97017) )
-	ROM_IGNORE(                     0x8000 )    /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                     0x8000 )    // Identical halves. Discarding 2nd half
 	ROM_LOAD( "soccer1.u2", 0x8000, 0x8000, CRC(564cc467) SHA1(8f90c4bacd97484623666b25dae77e628908e243) )
-	ROM_IGNORE(                     0x8000 )    /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                     0x8000 )    // Identical halves. Discarding 2nd half
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "soccernw_nvram.bin", 0x0000, 0x0800, CRC(607247bd) SHA1(06bbed08166d8930f14e1f41843ac7faeded263d) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "am27s29pc_sn.u24", 0x0000, 0x0200, CRC(d02894fc) SHA1(adcdc912cc0b7a7f67b122fa94fca921c957b282) )
 
 	ROM_REGION( 0x0200, "plds", 0 )
-	ROM_LOAD( "palce16v8h_sn.u5", 0x0000, 0x0117, NO_DUMP ) /* PAL is read protected */
+	ROM_LOAD( "palce16v8h_sn.u5", 0x0000, 0x0117, NO_DUMP ) // PLD is read protected
 ROM_END
 
 
@@ -5868,14 +6799,30 @@ ROM_START( saloon )
 	ROM_LOAD( "1s.bin", 0x8000, 0x8000, CRC(66938330) SHA1(09118d607eff7121472db7d2cc24079e063dc7cf) )
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
-	ROM_LOAD( "2s.bin", 0x0000, 0x8000, CRC(39a792d5) SHA1(45c956a4a33587238a24eed602039115db1bb4b6) )
-	ROM_LOAD( "3s.bin", 0x8000, 0x8000, CRC(babc0964) SHA1(f084465cc34ea7ac19091d3e75ef7d55c48273ae) )
+	ROM_LOAD( "3s.bin", 0x0000, 0x8000, CRC(babc0964) SHA1(f084465cc34ea7ac19091d3e75ef7d55c48273ae) )
+	ROM_LOAD( "2s.bin", 0x8000, 0x8000, CRC(39a792d5) SHA1(45c956a4a33587238a24eed602039115db1bb4b6) )
 
-	/* looks strange */
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "82s147_saloon.bin", 0x0000, 0x0200, CRC(f424ccc1) SHA1(6df1215f58cca786e9f0ea4bf35407cf7fe21d83) )
+
+	ROM_REGION( 0x0100, "i2cmem", 0 )
+	ROM_LOAD( "saloon_i2c.bin", 0x0000, 0x0100, CRC(57e9ce5a) SHA1(3a8420a8ed50faf31a30c01f9438f1df95e5789a) )
 ROM_END
 
+ROM_START( nevadafw )
+	ROM_REGION( 0x10000, "maincpu", 0 )
+	ROM_LOAD( "1s.bin", 0x8000, 0x8000, CRC(66938330) SHA1(09118d607eff7121472db7d2cc24079e063dc7cf) )
+
+	ROM_REGION( 0x10000, "gfx1", 0 )
+	ROM_LOAD( "3s.bin", 0x0000, 0x8000, CRC(babc0964) SHA1(f084465cc34ea7ac19091d3e75ef7d55c48273ae) )
+	ROM_LOAD( "2s.bin", 0x8000, 0x8000, CRC(39a792d5) SHA1(45c956a4a33587238a24eed602039115db1bb4b6) )
+
+	ROM_REGION( 0x0200, "proms", 0 )
+	ROM_LOAD( "82s147_saloon.bin", 0x0000, 0x0200, CRC(f424ccc1) SHA1(6df1215f58cca786e9f0ea4bf35407cf7fe21d83) )
+
+	ROM_REGION( 0x0100, "i2cmem", 0 )
+	ROM_LOAD( "nevada_i2c.bin", 0x0000, 0x0100, CRC(cdb519db) SHA1(b7781cebee3c8f788a78f8fec9314ae5af513514) )
+ROM_END
 
 /**** Fun World Quiz ****
 
@@ -5937,10 +6884,9 @@ ROM_END
   --+-----------------------------------------------------------------------
 
 */
-ROM_START( funquiz )    /* Fun World Quiz */
+ROM_START( funquiz )    // Fun World Quiz
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "kqu_6.bin", 0xc000, 0x4000, CRC(50f0e586) SHA1(85ce5b95283113e2ac94fd882c57ce1b26135ed0) )
-
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
 	ROM_FILL(              0x0000, 0x4000, 0xff)
@@ -5948,38 +6894,136 @@ ROM_START( funquiz )    /* Fun World Quiz */
 	ROM_FILL(              0x8000, 0x4000, 0xff)
 	ROM_LOAD( "q_2.bin",   0xc000, 0x4000, CRC(ce07c6e1) SHA1(6b77a9198e29c195d983b856e8826e8174945321) )
 
-
-	/* One unpopulated questions socket... Maybe sport_1 is missing */
+//  One unpopulated questions socket... Maybe sport_1 is missing
 	ROM_REGION( 0x100000, "questions", ROMREGION_ERASEFF )
 
-	/* 01 - Allgemein */
+	// 01 - Allgemein
 	ROM_LOAD( "allg_1.bin",  0x00000, 0x8000, CRC(1351cf56) SHA1(50e89c3e6d256bcf7f1d3c0dbef935e4e8561096) )
 	ROM_LOAD( "allg_2.bin",  0x08000, 0x8000, CRC(021492a4) SHA1(b59e1303f17c9e5af05a808118ae729205690bb2) )
 	ROM_LOAD( "allg_3.bin",  0x10000, 0x8000, CRC(de8e055f) SHA1(593fce143ee5994087bbac8b51ac7e2d02e8701c) )
 	ROM_LOAD( "allg_4.bin",  0x18000, 0x8000, CRC(5c87177a) SHA1(a8a8318165008cb3295e25d4b4d38146f44a32fc) ) // this one has the category in the rom in ALL caps, is it official?
 	ROM_LOAD( "allg_5.bin",  0x20000, 0x8000, CRC(83056686) SHA1(00f14ded371751d54a391bf583d940b32ddeae58) )
 
-	/* 02 - Geschichte */
+	// 02 - Geschichte
 	ROM_LOAD( "gesch_1.bin", 0x28000, 0x8000, CRC(6f785938) SHA1(1e3df7c262d8cb7d7981c9d424d4c1361fe55b50) )
 	ROM_LOAD( "gesch_2.bin", 0x30000, 0x8000, CRC(3363c0ba) SHA1(f1a2a86e6abc73dd9312fa744b6929fae138e219) )
 
-	/* 03 - Geographie */
+	// 03 - Geographie
 	ROM_LOAD( "geo_1.bin",   0x38000, 0x8000, CRC(504da831) SHA1(4bef7bed4d300400c094cb30e9af55d3c6f47c29) )
 	ROM_LOAD( "geo_2.bin",   0x40000, 0x8000, CRC(7c563119) SHA1(9f3ae3ba3e4f60d9ea4b5c95aa5aaada8bb446a3) )
 
-	/* 04 - Technik */
+	// 04 - Technik
 	ROM_LOAD( "tech_1.bin",  0x48000, 0x8000, CRC(cf5b9edc) SHA1(f1085c9915d21c4da581d06c9568d2bb47d467ed) )
 
-	/* 05 - Sport */
+	// 05 - Sport
 	ROM_LOAD( "sport_2.bin", 0x50000, 0x8000, CRC(7accde63) SHA1(75ec3a02368d3a07d48ef9a9ff4ca7f8cf7798e2) )
 
-	/* 07 - Pop */
+	// 07 - Pop
 	ROM_LOAD( "pop_1.bin",   0x58000, 0x8000, CRC(5c74781e) SHA1(0a50a706fd397bb220e31f1a7adaa4204b242888) )
 	ROM_LOAD( "pop_2.bin",   0x60000, 0x8000, CRC(10103648) SHA1(6fdc1aa4dcc8919e46def1c19adc2b9686c0f72d) )
 
 
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "82s147.bin", 0x0000, 0x0200, CRC(f990a9ae) SHA1(f7133798b5f20dd5b8dbe5d1a6876341710d93a8) )
+ROM_END
+
+/*
+  Fun World Quiz.
+  12-11-1990
+
+  CPU Brick:
+  - Ricoh RP65C02G
+  - M27128A
+  - logic...
+
+*/
+ROM_START( funquiza )
+	ROM_REGION( 0x10000, "maincpu", 0 )
+	ROM_LOAD( "a.ic12", 0xc000, 0x4000, CRC(e3b1fa5d) SHA1(3479db70249fd37b6e932d563b41550f910721c8) )
+
+	ROM_REGION( 0x10000, "gfx1", 0 )
+	ROM_LOAD( "q3.ic7",   0x0000, 0x8000, CRC(7fe77d14) SHA1(0cc7395e1cdabd98206a2caa1cb6a1e165e56434) )
+	ROM_LOAD( "q2.ic6",   0x8000, 0x8000, CRC(bc4f1b8f) SHA1(5af1423d2d1c698141848a6d6864cd2f4a54ca1c) )
+
+	ROM_REGION( 0x100000, "questions", ROMREGION_ERASEFF )
+
+	// 01 - Allgemein
+	ROM_LOAD( "allg1.bin",   0x00000, 0x8000, CRC(1351cf56) SHA1(50e89c3e6d256bcf7f1d3c0dbef935e4e8561096) )
+	ROM_LOAD( "allg2.bin",   0x08000, 0x8000, CRC(021492a4) SHA1(b59e1303f17c9e5af05a808118ae729205690bb2) )
+	ROM_LOAD( "allg3.bin",   0x10000, 0x8000, CRC(4eb29de3) SHA1(5c5d47959c06261ab51fc4e821bff0fe41ac9176) )
+	ROM_LOAD( "allg4.bin",   0x18000, 0x8000, CRC(5c87177a) SHA1(a8a8318165008cb3295e25d4b4d38146f44a32fc) )
+	ROM_LOAD( "allg5.bin",   0x20000, 0x8000, CRC(83056686) SHA1(00f14ded371751d54a391bf583d940b32ddeae58) )
+
+	// 02 - Technik
+	ROM_LOAD( "tech1.bin",   0x28000, 0x8000, CRC(cf5b9edc) SHA1(f1085c9915d21c4da581d06c9568d2bb47d467ed) )
+
+	// 03 - Sport
+	ROM_LOAD( "sp1.bin",     0x30000, 0x8000, CRC(20fb1261) SHA1(ad029f1a2b19365543c77fcd1103f6c5783c9f68) )
+	ROM_LOAD( "sp2.bin",     0x38000, 0x8000, CRC(1988f5b7) SHA1(969ae64796e432c04862cb8c159e419a4793e9f0) )
+
+	// 04 - Film - Unterhaltung
+	ROM_LOAD( "unterh1.bin", 0x40000, 0x8000, CRC(996e7adc) SHA1(7b271cdb6ef555d31c2b17c6104bd30cd2eabcb3) )
+
+	// 05 - Geographie
+	ROM_LOAD( "geo1.bin",   0x48000, 0x8000, CRC(504da831) SHA1(4bef7bed4d300400c094cb30e9af55d3c6f47c29) )
+	ROM_LOAD( "geo2.bin",   0x50000, 0x8000, CRC(7c563119) SHA1(9f3ae3ba3e4f60d9ea4b5c95aa5aaada8bb446a3) )
+	ROM_LOAD( "geo3.bin",   0x58000, 0x8000, CRC(7c563119) SHA1(9f3ae3ba3e4f60d9ea4b5c95aa5aaada8bb446a3) )
+
+	// 06 - Pop
+	ROM_LOAD( "pop_1.bin",   0x60000, 0x8000, CRC(5c74781e) SHA1(0a50a706fd397bb220e31f1a7adaa4204b242888) )
+	ROM_LOAD( "pop_2.bin",   0x68000, 0x8000, CRC(10103648) SHA1(6fdc1aa4dcc8919e46def1c19adc2b9686c0f72d) )
+
+
+	ROM_REGION( 0x0200, "proms", 0 )
+	ROM_LOAD( "m3-7649-5.bin", 0x0000, 0x0200, CRC(f990a9ae) SHA1(f7133798b5f20dd5b8dbe5d1a6876341710d93a8) )
+ROM_END
+
+/*
+  Fun World Quiz.
+  27-04-1990
+
+*/
+ROM_START( funquizb )
+	ROM_REGION( 0x10000, "maincpu", 0 )
+	ROM_LOAD( "a.bin",   0xc000, 0x4000, CRC(e3b1fa5d) SHA1(3479db70249fd37b6e932d563b41550f910721c8) )
+
+	ROM_REGION( 0x10000, "gfx1", 0 )
+	ROM_FILL(            0x0000, 0x4000, 0xff)
+	ROM_LOAD( "q3.c7",   0x4000, 0x4000, CRC(0dafa07a) SHA1(5d6fa842c617f92fad14a597396249d5a4d28c9a) )
+	ROM_FILL(            0x8000, 0x4000, 0xff)
+	ROM_LOAD( "q2.c6",   0xc000, 0x4000, CRC(ce07c6e1) SHA1(6b77a9198e29c195d983b856e8826e8174945321) )
+
+	ROM_REGION( 0x100000, "questions", ROMREGION_ERASEFF )
+
+	// 01 - Allgemein
+	ROM_LOAD( "allg1.bin",  0x00000, 0x8000, CRC(1351cf56) SHA1(50e89c3e6d256bcf7f1d3c0dbef935e4e8561096) )
+	ROM_LOAD( "allg2.bin",  0x08000, 0x8000, CRC(021492a4) SHA1(b59e1303f17c9e5af05a808118ae729205690bb2) )
+	ROM_LOAD( "allg3.bin",  0x10000, 0x8000, CRC(de8e055f) SHA1(593fce143ee5994087bbac8b51ac7e2d02e8701c) )
+	ROM_LOAD( "allg4.bin",  0x18000, 0x8000, CRC(5c87177a) SHA1(a8a8318165008cb3295e25d4b4d38146f44a32fc) )
+	ROM_LOAD( "allg5.bin",  0x20000, 0x8000, CRC(83056686) SHA1(00f14ded371751d54a391bf583d940b32ddeae58) )
+
+	// 02 - Technik
+	ROM_LOAD( "tech1.bin",  0x28000, 0x8000, CRC(cf5b9edc) SHA1(f1085c9915d21c4da581d06c9568d2bb47d467ed) )
+
+	// 03 - Sport
+	ROM_LOAD( "sport1.bin", 0x30000, 0x8000, CRC(b351c745) SHA1(3b64d8e935eb4cd5bdf82934983b3ffab465257a) )
+	ROM_LOAD( "sport2.bin", 0x38000, 0x8000, CRC(7accde63) SHA1(75ec3a02368d3a07d48ef9a9ff4ca7f8cf7798e2) )
+
+	// 04 - Film - Unterhaltung
+	ROM_LOAD( "unt1.bin",   0x40000, 0x8000, CRC(996e7adc) SHA1(7b271cdb6ef555d31c2b17c6104bd30cd2eabcb3) )
+
+	// 05 - Geographie
+	ROM_LOAD( "geo1.bin",   0x48000, 0x8000, CRC(504da831) SHA1(4bef7bed4d300400c094cb30e9af55d3c6f47c29) )
+	ROM_LOAD( "geo2.bin",   0x50000, 0x8000, CRC(7c563119) SHA1(9f3ae3ba3e4f60d9ea4b5c95aa5aaada8bb446a3) )
+	ROM_LOAD( "geo3.bin",   0x58000, 0x8000, CRC(7c563119) SHA1(9f3ae3ba3e4f60d9ea4b5c95aa5aaada8bb446a3) )
+
+	// 06 - Pop
+	ROM_LOAD( "pop1.bin",   0x60000, 0x8000, CRC(5c74781e) SHA1(0a50a706fd397bb220e31f1a7adaa4204b242888) )
+	ROM_LOAD( "pop2.bin",   0x68000, 0x8000, CRC(10103648) SHA1(6fdc1aa4dcc8919e46def1c19adc2b9686c0f72d) )
+
+
+	ROM_REGION( 0x0200, "proms", 0 )
+	ROM_LOAD( "m3-7649-5.bin", 0x0000, 0x0200, CRC(f990a9ae) SHA1(f7133798b5f20dd5b8dbe5d1a6876341710d93a8) )
 ROM_END
 
 
@@ -5997,11 +7041,11 @@ ROM_START( witchryl )
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
 	ROM_LOAD( "2.u11", 0x0000, 0x8000, CRC(7edc8f44) SHA1(cabad613fa8a72dc12587d19a72bc9c6861486bd) )
-	ROM_IGNORE(                0x8000 ) /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                0x8000 ) // Identical halves. Discarding 2nd half
 	ROM_LOAD( "3.u4",  0x8000, 0x8000, CRC(5e4a0d59) SHA1(08eb9b1a617a7b2e6f87377819dba07082cf38b4) )
-	ROM_IGNORE(                0x8000 ) /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                0x8000 ) // Identical halves. Discarding 2nd half
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "witchryl_nvram.bin", 0x0000, 0x0800, CRC(98366bed) SHA1(279a5ce4639b8b2ac29146b32512615253c45991) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -6018,7 +7062,7 @@ ROM_END
 
 */
 
-ROM_START( novoplay )   /* Similar to Royal Vegas Joker Card */
+ROM_START( novoplay )   // Similar to Royal Vegas Joker Card
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "np1_run.bin", 0x8000, 0x8000, CRC(4078d695) SHA1(d0e39064250733968044aec216040fe62fecc880) )
 
@@ -6026,10 +7070,10 @@ ROM_START( novoplay )   /* Similar to Royal Vegas Joker Card */
 	ROM_LOAD( "np1_ch2.bin", 0x0000, 0x8000, CRC(188d6fad) SHA1(3bc9bab24d8c7beed0c5f491c19a004ca7d719a1) )
 	ROM_LOAD( "np1_ch1.bin", 0x8000, 0x8000, CRC(fdc3bd67) SHA1(0ec2d5e0b1937849934f98e253e18887af0331e8) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "novoplay_nvram.bin", 0x0000, 0x0800, CRC(92019972) SHA1(e6d1e231cd2ce27e718ed9482dbe9ddc8612eb67) )
 
-	ROM_REGION( 0x0200, "proms", 0 )    /* PLD address the 2nd half */
+	ROM_REGION( 0x0200, "proms", 0 )    // PLD address the 2nd half
 	ROM_LOAD( "np1_27s29.bin", 0x0000, 0x0200, CRC(8992aa4d) SHA1(5a0649bff66e7cab1bcbadcdfc74c77a747cc58f) )
 ROM_END
 
@@ -6049,7 +7093,7 @@ ROM_END
 
 */
 
-ROM_START( jolycdsp )   /* Encrypted program in a module. Blue TAB PCB encrypted graphics */
+ROM_START( jolycdsp )   // Encrypted program in a module. Blue TAB PCB encrypted graphics
 	ROM_REGION( 0x10000, "maincpu", 0 )
 	ROM_LOAD( "ct3.bin", 0x8000, 0x8000, CRC(0c9cbae6) SHA1(4f834370229797cac302a5185ed1e77ef2b7cabb) )
 
@@ -6057,30 +7101,33 @@ ROM_START( jolycdsp )   /* Encrypted program in a module. Blue TAB PCB encrypted
 	ROM_LOAD( "ct2.bin", 0x0000, 0x8000, CRC(7569e719) SHA1(f96e1e72bc13d1888f3868f8d404fd3db94db7b2) )
 	ROM_LOAD( "ct1.bin", 0x8000, 0x8000, CRC(8f438635) SHA1(3200e20f4b28173cc2a68d0f87969627570418dc) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "ctunk_nvram.bin", 0x0000, 0x0800, CRC(c55c6706) SHA1(a38ae926f057fb47e48ca841b2d097fc4fd06416) )
 
-	ROM_REGION( 0x0200, "proms", 0 )    /* Borrowed from the parent set */
+	ROM_REGION( 0x0200, "proms", 0 )    // Borrowed from the parent set
 	ROM_LOAD( "82s147.bin", 0x0000, 0x0200, CRC(5ebc5659) SHA1(8d59011a181399682ab6e8ed14f83101e9bfa0c6) )
 ROM_END
 
 
 /*
-unknown encrypted Royal Card
-Dino4 hardware with daughterboard (CPU+PLCC)
+  Unknown encrypted Royal Card
+  Dino4 hardware with daughterboard (CPU+PLCC)
 
-1x Rockwell R65C02P4 CPU (11450-14 Mexico 9802 B54074-2)
-1x Unknown sanded 44 pin PLCC
+  1x Rockwell R65C02P4 CPU (11450-14 Mexico 9802 B54074-2)
+  1x Unknown sanded 44 pin PLCC
 
-2x 68C21
-1x 6845
-1x YM2149F
+  2x 68C21
+  1x 6845
+  1x YM2149F
 
-16Mhz xtal
+  16 Mhz. xtal
 
------------------
+  -----------------
 
-BP C17C (just after the CRTC init)
+  BP C17C (just after the CRTC init)
+
+  Code checks offset $32F0 for 0xFE, and has two NOPs... Maybe was requested to continue.
+  Same as China Town. WTH is mapped there?
 
 */
 
@@ -6090,9 +7137,12 @@ ROM_START( rcdino4 )
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
 	ROM_LOAD( "m27c512.u2",  0x0000, 0x8000, CRC(915f1e59) SHA1(2eb2a7acca50318eb1775b01a00b1d3c74e1522c) )
-	ROM_IGNORE(                      0x8000 )   /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                      0x8000 )   // Identical halves. Discarding 2nd half
 	ROM_LOAD( "m27c512.u20", 0x8000, 0x8000, CRC(86e55f5a) SHA1(be71301b6887e8cc5924864d0f97b54e0668875e) )
-	ROM_IGNORE(                      0x8000 )   /* Identical halves. Discarding 2nd half */
+	ROM_IGNORE(                      0x8000 )   // Identical halves. Discarding 2nd half
+
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
+	ROM_LOAD( "rcdino4_nvram.bin", 0x0000, 0x0800, CRC(a2dc069e) SHA1(23e296cc0cc0c6f0c34eccffff8c78d2cef2dbae) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "am27s29pc.u25", 0x0000, 0x0200, CRC(649e6ccc) SHA1(674a5ea3b4b2e7de766e787debef5f695bff7a40) )
@@ -6114,11 +7164,11 @@ ROM_START( chinatow )
 
 	ROM_REGION( 0x10000, "gfx1", 0 )
 	ROM_LOAD( "27c512.u2",  0x0000, 0x8000, CRC(6ace221f) SHA1(d35a6621d9d9231a844d7043da78035855ebf572) )
-	ROM_CONTINUE(           0x0000, 0x8000) /* Discarding 1nd half 0xff filled*/
+	ROM_CONTINUE(           0x0000, 0x8000) // Discarding 1nd half 0xff filled
 	ROM_LOAD( "27c512.u20", 0x8000, 0x8000, CRC(efb7f1ec) SHA1(260005526fc9b4087ca03f7cc585e40b6fa007fb) )
-	ROM_CONTINUE(           0x8000, 0x8000) /* Discarding 1nd half 0xff filled*/
+	ROM_CONTINUE(           0x8000, 0x8000) // Discarding 1nd half 0xff filled
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* default NVRAM */
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
 	ROM_LOAD( "chinatow_nvram.bin", 0x0000, 0x0800, CRC(eef4c5e7) SHA1(a2d9a9f617d35ccb99236114e5ce3257ad572f49) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
@@ -6127,9 +7177,9 @@ ROM_END
 
 
 /*
-  Unknown poker game from Inter Games.
+  Joker Card from Inter Games (Austria).
 
-  1x G65C02P-2
+  1x G65SC02P-2
   2x MC68B21P
   1x MC68B45P
   1x AY38910A/P
@@ -6139,21 +7189,25 @@ ROM_END
   1x LM380N
   1x Crystal 16.0000 MHz.
 
-  The game has way different architecture.
+  The hardware has way different architecture.
 
   Video RAM splitted in two well separated offsets:
-  Video RAM at $2000 and Color Ram at $7000.
+  Video RAM at $2000 and Attr/Color Ram at $5000 mirrored at $7000.
 
-  Code expects some input at $3400 to pass through the bookkeeping pages,
-  so at least one PIA should be mapped there.
+  PIAs at $3200 and $3400.
+  AY8910 at $3000-$3001.
+  CRTC at... $3000-$3001 too!!!.
 
   There are multiple buffers and compare from some registers,
   reminding the way some hardwares handle inputs without PIAs.
 
+  Some jumps to hardware errors were patched till we can understand
+  a bit better the hardware behaviour.
+
   Bipolar PROM has the first half empty, so will black the screen
   after any attempt of ROM swap.
 
-  A lot to investigate/reverse...
+  A lot of reverse-engineering was needed to get this game working...
 */
 ROM_START( intrgmes )
 	ROM_REGION( 0x10000, "maincpu", 0 )
@@ -6163,8 +7217,9 @@ ROM_START( intrgmes )
 	ROM_LOAD( "ig2ch2.bin", 0x0000, 0x8000, CRC(52f0bc70) SHA1(cd9ba34efb438c9610551900c3de2a09aea76cb9) )
 	ROM_LOAD( "ig2ch1.bin", 0x8000, 0x8000, CRC(8fc7d74e) SHA1(bf7ee7ef5c95877fe82fb6e04a5d8ab211fc730c) )
 
-	ROM_REGION( 0x0800, "nvram", 0 )    /* Default NVRAM. */
-	ROM_LOAD( "ds1220y.bin", 0x0000, 0x0800, CRC(7bc4554e) SHA1(c9ad1651e673f8edd0fd354b1098db8f27697d18) )
+	ROM_REGION( 0x1000, "nvram", 0 )  // Default NVRAM.
+	ROM_LOAD( "intrgmes_nvram.bin", 0x0000, 0x0800, CRC(7ce7c42c) SHA1(da5b2fbecd83ae87616f3c65fc0d6fd05f9fe7c5) )
+	ROM_LOAD( "ds1220y.bin",        0x0800, 0x0800, CRC(7bc4554e) SHA1(c9ad1651e673f8edd0fd354b1098db8f27697d18) )
 
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "am27s29.bin", 0x0000, 0x0200, CRC(8992aa4d) SHA1(5a0649bff66e7cab1bcbadcdfc74c77a747cc58f) )
@@ -6263,7 +7318,7 @@ ROM_START( fw_a7_11a )
 	ROM_REGION( 0x0200, "proms", 0 )
 	ROM_LOAD( "m3-7649a-5.bin", 0x0000, 0x0200, CRC(f990a9ae) SHA1(f7133798b5f20dd5b8dbe5d1a6876341710d93a8) )
 
-	ROM_REGION( 0x0200, "plds", 0 )    /* Cracked PLD */
+	ROM_REGION( 0x0200, "plds", 0 ) // cracked PLD
 	ROM_LOAD( "pal16l8acn_block.bin", 0x0000, 0x0117, CRC(fcda7872) SHA1(60acdb968e6229a8f71c2e29d22e132906a65bd5) )
 ROM_END
 
@@ -6283,12 +7338,175 @@ ROM_START( fw_a0_1 )
 	ROM_LOAD( "n82s147n.bin", 0x0000, 0x0200, CRC(f990a9ae) SHA1(f7133798b5f20dd5b8dbe5d1a6876341710d93a8) )
 ROM_END
 
+/*
+  Joker Card / Multi Card
+  Funworld.
+
+  This game is running in a derivative hardware with epoxy CPU brick.
+  CPU is a 65C02, with two 5565 RAMs and one 27128 ROM.
+  Also there are present some PLD and logic. (see above).
+
+  The main program is inside the battery backed RAM, and need to be dumped.
+  These RAMs are connected to the mainboard battery, so once the Brick is unplugged,
+  the battery stops to feed the RAM and the program just vanish.
+
+  From factory, they used the central connector to plug a module with the game program,
+  and then the code inside the ROM check for offset $4000 onward if the module is
+  present through some sort of checksum. If the module is present, the code will
+  copy the range 4000-7fff (the game program inside the external module) to the
+  8000-bfff location, where is the battery backed RAM inside the brick.
+
+  We need to find a new working board and reverse the central connector, to construct
+  some interface that allows us to dump the content of the internal battery backed RAM.
+
+  For debug purposes, we plugged an external game code from another similar game, that
+  matches all calls from the original ROM code. We suspect is the same code with different
+  language (English instead German). With this external code the game is completely playable.
+
+  ----
+
+  CPU epoxy brick marked "76AF".
+
+  Epoxy Brick contents:
+
+  - CPU: 1x Ricoh RP65C02A.
+  - RAM: 2x Toshiba TC5565APL-10.
+  - ROM: 1x Intel D27128A.
+  - PLD: 1x PAL16L8B.
+
+  - LOGIC: 1x HD74HC241P.
+           1x M74LS245P.
+           1x SN74LS139N.
+
+*/
+ROM_START( jokcrdep )
+	ROM_REGION( 0x10000, "maincpu", 0 )
+	ROM_LOAD( "e-1.bin", 0xc000, 0x4000, CRC(67ac1337) SHA1(896bd30d4b061f08b8eeeb36aaceb7859f342eaf) )
+
+	ROM_REGION( 0x10000, "gfx1", 0 )
+	ROM_LOAD( "200_zg_2.bin", 0x0000, 0x8000, CRC(ba994fc3) SHA1(95d2a802c38d7249f10eb2bbe46edfb9b14b6faa) )
+	ROM_LOAD( "200_zg_1.bin", 0x8000, 0x8000, CRC(367db105) SHA1(400b82dc9e0be4c17a02add009aab3c43dd901f8) )
+
+	ROM_REGION( 0x0800, "nvram", 0 )
+	ROM_LOAD( "joker_nvram.bin", 0x0000, 0x0800, CRC(92019972) SHA1(E6D1E231CD2CE27E718ED9482DBE9DDC8612EB67) )     // Default NVRAM.
+
+	ROM_REGION( 0x4000, "nvram1", 0 )
+	ROM_LOAD( "e-0.bin", 0x0000, 0x4000, BAD_DUMP CRC(8FD42F3B) SHA1(208209761DE046189070B88AD4340C8D7FF55F1F) )    // Internal suicide program. Taken from Novo Play.
+
+	ROM_REGION( 0x0200, "proms", 0 )
+	ROM_LOAD( "sn82s147n.bin", 0x0000, 0x0200, CRC(f990a9ae) SHA1(f7133798b5f20dd5b8dbe5d1a6876341710d93a8) )
+ROM_END
+
+
+/*
+  Gratis Poker
+  Stmk
+  Version: 004
+  29. Sept.  95
+
+*/
+ROM_START( gratispk )   // Gratis Poker (V.204, Set 1)
+	ROM_REGION( 0x10000, "maincpu", 0 )
+	ROM_LOAD( "gratis_poker_club_ver_204.bin", 0x8000, 0x8000, CRC(e53da78e) SHA1(6b87af4d66082f1a18e9e00a41df2484f5373cc7) )
+
+	ROM_REGION( 0x10000, "gfx1", 0 )
+	ROM_LOAD( "3.bin", 0x0000, 0x8000, CRC(daec20c7) SHA1(340bdb7749a7d898e96db5a470821cfe7216ea57) )
+	ROM_IGNORE(                 0x8000 )    // Identical halves. Discarding 2nd half
+	ROM_LOAD( "2.bin", 0x8000, 0x8000, CRC(112c5f33) SHA1(fffaa247a97f9bde7374cc80ab0bb9fb71bcc4b6) )
+	ROM_IGNORE(                 0x8000 )    // Identical halves. Discarding 2nd half
+
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
+	ROM_LOAD( "gratispk_nvram.bin", 0x0000, 0x0800, CRC(8fcad62f) SHA1(85def713ed5b9bbdbf0d077a38f779d6f4329a1c) )
+
+	ROM_REGION( 0x0200, "proms", 0 )
+	ROM_LOAD( "tbp28s42n.bin", 0x0000, 0x0200, CRC(e92f74e0) SHA1(dfc4a9d140d21b990f769c10802c4d2c33dd4132) )
+ROM_END
+
+ROM_START( gratispka )  // Gratis Poker (V.204, Set 2)
+	ROM_REGION( 0x10000, "maincpu", 0 )
+	ROM_LOAD( "35g_ver_204.bin", 0x8000, 0x8000, CRC(e53da78e) SHA1(6b87af4d66082f1a18e9e00a41df2484f5373cc7) )
+
+	ROM_REGION( 0x10000, "gfx1", 0 )
+	ROM_LOAD( "3.bin", 0x0000, 0x8000, CRC(4f077fa3) SHA1(d65005b7111b77ac7c3707bd12bc376506d9477b) )
+	ROM_LOAD( "2.bin", 0x8000, 0x8000, CRC(0f3711b0) SHA1(ce874dbfc2d7171cff2be41d4a44fe8194526ef7) )
+
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
+	ROM_LOAD( "gratispk_nvram.bin", 0x0000, 0x0800, CRC(8fcad62f) SHA1(85def713ed5b9bbdbf0d077a38f779d6f4329a1c) )
+
+	ROM_REGION( 0x0200, "proms", 0 )
+	ROM_LOAD( "tbp28s42n.bin", 0x0000, 0x0200, CRC(e92f74e0) SHA1(dfc4a9d140d21b990f769c10802c4d2c33dd4132) )
+ROM_END
+
+
+/*
+  Γκούλιτ
+  Nkoúlit
+  Gullit
+
+  Greek hack of Royal Card.
+
+*/
+ROM_START( nkoulit )
+	ROM_REGION( 0x10000, "maincpu", 0 )
+	ROM_LOAD( "27c256-3.bin", 0x8000, 0x8000, CRC(3f4f671d) SHA1(0aa87f813567f7a537315bf3d452343e5a449e13) )
+
+	ROM_REGION( 0x10000, "gfx1", 0 )
+	ROM_LOAD( "27c256-2.bin", 0x0000, 0x8000, CRC(4a9ea5ad) SHA1(50504544265646e12ce769a1fd40d7afeae8b8d3) )
+	ROM_LOAD( "27c256-1.bin", 0x8000, 0x8000, CRC(7b3a6d1a) SHA1(b7f2e534ad4467cd0a9d86019be8110caf45c024) )
+
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
+	ROM_LOAD( "nkoulit_nvram.bin", 0x0000, 0x0800, CRC(73584f67) SHA1(4aab0d4fe846592e1cbc8b3c2411ddc1bf79fd95) )
+
+	ROM_REGION( 0x0200, "proms", 0 )
+	ROM_LOAD( "am27s29pc.bin", 0x0000, 0x0200, CRC(8bc86f48) SHA1(4c677ab9314a1f571e35104b22659e6811aeb194) )
+ROM_END
+
+
+/*
+  Reflex Cards (English)
+  Need special NVRAM to boot.
+
+  Without the factory NVRAM, you can generate one.
+  The attract works, and allow coin up. When you start a game,
+  a serial number entering screen appears. You must to match
+  the secret number to continue:
+
+    Serial: 00000000
+       Key: FFFFFFFF
+
+  The real serial number isn't shown. Just zeroes as mask.
+  You must to enter digit by digit using the HOLD buttons,
+  then turn the machine off, and on. (you can reset in MAME).
+
+  If you entered the correct number, the game continues,
+  otherwise you'll be stuck forever.
+
+  The code and NVRAM were reversed to find the serial number
+  and key offsets and the way they are stored, to construct
+  a working default NVRAM.
+
+*/
+ROM_START( reflexcrd )
+	ROM_REGION( 0x10000, "maincpu", 0 )
+	ROM_LOAD( "bonus_2_27c256-1.bin", 0x8000, 0x8000, CRC(8fbcf0b9) SHA1(3a45c09fbec3e4ecce24ac2562a68b453755886f) )
+
+	ROM_REGION( 0x10000, "gfx1", 0 )
+	ROM_LOAD( "27c256-2.bin", 0x0000, 0x8000, CRC(05fe86fc) SHA1(a58ab5d107936f7d462f8f748bb6ac27bd77429b) )
+	ROM_LOAD( "27c256-3.bin", 0x8000, 0x8000, CRC(1617ed13) SHA1(312065406ce1d1d7c4ad566e2b13268f7eb524bb) )
+
+	ROM_REGION( 0x0800, "nvram", 0 )    // default NVRAM
+	ROM_LOAD( "reflexcrd_nvram.bin", 0x0000, 0x0800, CRC(c2c69e5b) SHA1(e4abbf09abc044ba17e542cc8e1cfa16ee7cf776) )
+
+	ROM_REGION( 0x0200, "proms", 0 )
+	ROM_LOAD( "bipolar_prom.bin", 0x0000, 0x0200, CRC(8bc86f48) SHA1(4c677ab9314a1f571e35104b22659e6811aeb194) )
+ROM_END
+
 
 /**************************
 *  Driver Initialization  *
 **************************/
 
-DRIVER_INIT_MEMBER(funworld_state, tabblue)
+void funworld_state::init_tabblue()
 {
 /****************************************************************************************************
 
@@ -6315,87 +7533,87 @@ DRIVER_INIT_MEMBER(funworld_state, tabblue)
 
 	for (x=0x0000; x < 0x10000; x++)
 	{
-		na = src[x] & 0xf0;     /* nibble A */
-		nb = src[x] << 4;       /* nibble B */
+		na = src[x] & 0xf0;     // nibble A
+		nb = src[x] << 4;       // nibble B
 
-			nad = (na ^ (na >> 1)) << 1;            /* nibble A decrypted */
-			nbd = ((nb ^ (nb >> 1)) >> 3) & 0x0f;   /* nibble B decrypted */
+			nad = (na ^ (na >> 1)) << 1;            // nibble A decrypted
+			nbd = ((nb ^ (nb >> 1)) >> 3) & 0x0f;   // nibble B decrypted
 
-		src[x] = nad + nbd;     /* decrypted byte */
+		src[x] = nad + nbd;     // decrypted byte
 	}
 }
 
 
-DRIVER_INIT_MEMBER(funworld_state, magicd2b)
-/*****************************************************************
-
-  For a serie of Mexican Rockwell's 65c02
-  seems that opcode 0x91 is STA ($zp) instead of STA ($zp),y
-  ...or is patched with the correct opcode (0x92) by PLDs...
-
-  In offset $C1C4, the code is trying to initialize both PIAs
-  putting value 0x34 in $0800-$0803 & $0A00-$0A03.
-
-  The code use STA ($zp),y (opcode 0x91). As soon as register 'y'
-  increments, almost all writes go out of range.
-
-******************************************************************/
+void magicrd2_state::init_magicd2b()
 {
+	/*****************************************************************
+
+	  For a serie of Mexican Rockwell's 65c02
+	  seems that opcode 0x91 is STA ($zp) instead of STA ($zp),y
+	  ...or is patched with the correct opcode (0x92) by PLDs...
+
+	  In offset $C1C4, the code is trying to initialize both PIAs
+	  putting value 0x34 in $0800-$0803 & $0A00-$0A03.
+
+	  The code use STA ($zp),y (opcode 0x91). As soon as register 'y'
+	  increments, almost all writes go out of range.
+
+	******************************************************************/
 	uint8_t *ROM = memregion("maincpu")->base();
 
 	ROM[0xc1c6] = 0x92;
 }
 
 
-DRIVER_INIT_MEMBER(funworld_state, magicd2c)
-/*** same as blue TAB PCB, with the magicd2a patch ***/
+void magicrd2_state::init_magicd2c()
 {
+//  *** same as blue TAB PCB, with the magicd2a patch ***
 	int x, na, nb, nad, nbd;
 	uint8_t *src = memregion( "gfx1" )->base();
 	uint8_t *ROM = memregion("maincpu")->base();
 
 	for (x=0x0000; x < 0x10000; x++)
 	{
-		na = src[x] & 0xf0;     /* nibble A */
-		nb = src[x] << 4;       /* nibble B */
+		na = src[x] & 0xf0;     // nibble A
+		nb = src[x] << 4;       // nibble B
 
-			nad = (na ^ (na >> 1)) << 1;            /* nibble A decrypted */
-			nbd = ((nb ^ (nb >> 1)) >> 3) & 0x0f;   /* nibble B decrypted */
+			nad = (na ^ (na >> 1)) << 1;            // nibble A decrypted
+			nbd = ((nb ^ (nb >> 1)) >> 3) & 0x0f;   // nibble B decrypted
 
-		src[x] = nad + nbd;     /* decrypted byte */
+		src[x] = nad + nbd;     // decrypted byte
 	}
 
 	ROM[0xc1c6] = 0x92;
 }
 
 
-DRIVER_INIT_MEMBER(funworld_state, mongolnw)
+void funworld_state::init_mongolnw()
 {
-/* temporary patch to avoid hardware errors for debug purposes */
+//  temporary patch to avoid hardware errors for debug purposes
 	uint8_t *ROM = memregion("maincpu")->base();
 
 	ROM[0x9115] = 0xa5;
 
-/* prevents one test from triggering hardware error */
+//  prevents one test from triggering hardware error
 	ROM[0xb8f3] = 0xff;
 }
 
 
-DRIVER_INIT_MEMBER(funworld_state, soccernw)
+void funworld_state::init_soccernw()
 {
-/* temporary patch to avoid hardware errors for debug purposes */
+//  temporary patch to avoid hardware errors for debug purposes
 	uint8_t *ROM = memregion("maincpu")->base();
 
 	ROM[0x80b2] = 0xa9;
 	ROM[0x80b3] = 0x00;
 	ROM[0x9115] = 0xa5;
 
-/* prevent one test from triggering hardware error */
+//  prevents one test from triggering hardware error
 	ROM[0xb8f3] = 0xff;
 }
 
 
-DRIVER_INIT_MEMBER(funworld_state, saloon)
+void funworld_state::init_saloon()
 /*************************************************
 
     LEOPARDO 5 Hardware
@@ -6412,8 +7630,8 @@ DRIVER_INIT_MEMBER(funworld_state, saloon)
     Low 11 bits of address are scrambled.
 
     Color:
-    Still trying....
-
+    Data has bits 2-3-5-6-7 scrambled.
+    Address has the 8 lower bits scrambled.
 
 *************************************************/
 {
@@ -6423,37 +7641,36 @@ DRIVER_INIT_MEMBER(funworld_state, saloon)
 
 	uint8_t *gfxrom = memregion("gfx1")->base();
 	int sizeg = memregion("gfx1")->bytes();
-	int startg = 0;
 
 	uint8_t *prom = memregion("proms")->base();
 	int sizep = memregion("proms")->bytes();
-	int startp = 0;
 
-	int i, a;
+	popmessage(" Please: Start with <2> and <Z> buttons pressed to run system properly");
+
 
 	/*****************************
 	*   Program ROM decryption   *
 	*****************************/
 
-	/* data lines swap: 76543210 -> 76543012 */
+	// data lines swap: 76543210 -> 76543012
 
-	for (i = start; i < size; i++)
+	for (int i = start; i < size; i++)
 	{
-		rom[i] = BITSWAP8(rom[i], 7, 6, 5, 4, 3, 0, 1, 2);
+		rom[i] = bitswap<8>(rom[i], 7, 6, 5, 4, 3, 0, 1, 2);
 	}
 
 	{
 		std::vector<uint8_t> buffer(size);
 		memcpy(&buffer[0], rom, size);
 
+		// address lines swap: fedcba9876543210 -> fedcba9820134567
 
-		/* address lines swap: fedcba9876543210 -> fedcba9820134567 */
-
-		for (i = start; i < size; i++)
+		for (int i = start; i < size; i++)
 		{
-			a = ((i & 0xff00) | BITSWAP8(i & 0xff, 2, 0, 1, 3, 4, 5, 6, 7));
+			int a = ((i & 0xff00) | bitswap<8>(i & 0xff, 2, 0, 1, 3, 4, 5, 6, 7));
 			rom[a] = buffer[i];
 		}
+
 	}
 
 
@@ -6465,11 +7682,11 @@ DRIVER_INIT_MEMBER(funworld_state, saloon)
 		std::vector<uint8_t> buffer(sizeg);
 		memcpy(&buffer[0], gfxrom, sizeg);
 
-		/* address lines swap: fedcba9876543210 -> fedcb67584a39012 */
+		// address lines swap: fedcba9876543210 -> fedcb67584a39012
 
-		for (i = startg; i < sizeg; i++)
+		for (int i = 0; i < sizeg; i++)
 		{
-			a = BITSWAP16(i, 15, 14, 13, 12, 11, 6, 7, 5, 8, 4, 10, 3, 9, 0, 1, 2);
+			int a = bitswap<16>(i, 15, 14, 13, 12, 11, 6, 7, 5, 8, 4, 10, 3, 9, 0, 1, 2);
 			gfxrom[a] = buffer[i];
 		}
 	}
@@ -6479,111 +7696,34 @@ DRIVER_INIT_MEMBER(funworld_state, saloon)
 	*   Color PROM decryption   *
 	****************************/
 
-	/* data lines swap: 76543210 -> 23546710 */
-
-	for (i = startp; i < sizep; i++)
-	{
-		prom[i] = BITSWAP8(prom[i], 2, 3, 5, 4, 6, 7, 1, 0);
-	}
+	// data lines swap: 76543210 -> 23546710
 
 	{
-		std::vector<uint8_t> buffer(sizep);
-		memcpy(&buffer[0], prom, sizep);
-
-
-		/* address lines swap: fedcba9876543210 -> fedcba9487652013 */
-
-		for (i = startp; i < sizep; i++)
+		std::vector<uint8_t> buffer;
+		for (int i = 0; i < sizep; i++)
 		{
-			a = BITSWAP16(i, 15, 14, 13, 12, 11, 10, 9, 4, 8, 7, 6, 5, 2, 0, 1, 3);
+			buffer.push_back(bitswap<8>(prom[i], 2, 3, 5, 4, 6, 7, 1, 0));
+		}
+
+		// address lines swap: fedcba9876543210 -> fedcba9487652013
+		for (int i = 0; i < sizep; i++)
+		{
+			int a = bitswap<16>(i, 15, 14, 13, 12, 11, 10, 9, 4, 8, 7, 6, 5, 2, 0, 1, 3);
 			prom[a] = buffer[i];
 		}
 	}
 
 	m_palette->update();
+
+
+	// inversion for i2c clock generation in i2c_rx routine
+	rom[0xbf23] = 0x60; // ex 70h
+	rom[0xbf2a] = 0x70; // ex 60h
+
 }
 
 
-DRIVER_INIT_MEMBER(funworld_state, multiwin)
-/*****************************************************
-
-  This only decrypt the text strings.
-  Need more work to get the opcodes properly decrypted
-
-******************************************************/
-{
-	uint8_t *ROM = memregion("maincpu")->base();
-
-	int x;
-
-	for (x=0x8000; x < 0x10000; x++)
-	{
-		ROM[x] = ROM[x] ^ 0x91;
-		uint8_t code;
-
-		ROM[x] = BITSWAP8(ROM[x],5,6,7,2,3,0,1,4);
-
-		code = ROM[x];
-
-		/* decrypt code here */
-
-		ROM[x+0x10000] = code;
-	}
-}
-
-
-DRIVER_INIT_MEMBER(funworld_state, royalcdc)
-{
-/*****************************************************
-
-  This only decrypt the text strings.
-  The opcode encryption seems to be conditional, and
-  bits of the XOR (and bitswap?) can be turned on and
-  off, possibly depending on the address
-
-******************************************************/
-
-	uint8_t *ROM = memregion("maincpu")->base();
-
-	int x;
-
-	for (x=0x8000; x < 0x10000; x++)
-	{
-		ROM[x] = ROM[x] ^ 0x22;
-		uint8_t code;
-
-		// this seems correct for the data, plaintext decrypts fine
-		ROM[x] = BITSWAP8(ROM[x],2,6,7,4,3,1,5,0);
-
-		// the code uses different encryption, there are conflicts here
-		// so it's probably address based
-		code = ROM[x];
-		if      (code==0x12) code = 0x10; // ^0x02
-		else if (code==0x1a) code = 0x18; // ^0x02
-		else if (code==0x20) code = 0xa2; // ^0x82
-		else if (code==0x26) code = 0xa2; // ^0x84
-		else if (code==0x39) code = 0xbd; // ^0x84
-		else if (code==0x5a) code = 0x58; // ^0x02
-		else if (code==0x5c) code = 0xd8; // ^0x84
-		else if (code==0x84) code = 0xa2; // ^0x26
-		else if (code==0x8f) code = 0xa9; // ^0x26
-		else if (code==0xaf) code = 0xa9; // ^0x06
-		else if (code==0xa2) code = 0x80; // ^0x22
-		else if (code==0xa3) code = 0x85; // ^0x26
-		else if (code==0xa8) code = 0x8e; // ^0x26
-		else if (code==0xa9) code = 0x8d; // ^0x24
-		else if (code==0xbb) code = 0xbd; // ^0x06
-		else if (code==0xc8) code = 0xca; // ^0x02
-		else if (code==0xc6) code = 0xe0; // ^0x26
-		else if (code==0xce) code = 0xe8; // ^0x26
-		else if (code==0xf4) code = 0xd0; // ^0x24
-
-		ROM[x+0x10000] = code;
-	}
-}
-
-
-DRIVER_INIT_MEMBER(funworld_state, dino4)
+void funworld_state::init_dino4()
 /*****************************************************
 
   DINO 4 hardware.
@@ -6606,31 +7746,26 @@ DRIVER_INIT_MEMBER(funworld_state, dino4)
 
 	uint8_t *gfxrom = memregion("gfx1")->base();
 	int sizeg = memregion("gfx1")->bytes();
-	int startg = 0;
-
-	int i, a;
 
 	/*****************************
 	*   Program ROM decryption   *
 	*****************************/
 
-	/* data lines swap: 76543210 -> 76543120 */
+	// data lines swap: 76543210 -> 76543120
 
-	for (i = start; i < size; i++)
+	for (int i = start; i < size; i++)
 	{
-		rom[i] = BITSWAP8(rom[i], 7, 6, 5, 4, 3, 1, 2, 0);
+		rom[i] = bitswap<8>(rom[i], 7, 6, 5, 4, 3, 1, 2, 0);
 	}
 
 	{
 		std::vector<uint8_t> buffer(size);
 		memcpy(&buffer[0], rom, size);
 
-
-		/* address lines swap: fedcba9876543210 -> fedcba9867543210 */
-
-		for (i = start; i < size; i++)
+		// address lines swap: fedcba9876543210 -> fedcba9867543210
+		for (int i = start; i < size; i++)
 		{
-			a = BITSWAP16(i, 15, 13, 14, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0);
+			int a = bitswap<16>(i, 15, 13, 14, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0);
 			rom[a] = buffer[i];
 		}
 	}
@@ -6644,18 +7779,18 @@ DRIVER_INIT_MEMBER(funworld_state, dino4)
 		std::vector<uint8_t> buffer(sizeg);
 		memcpy(&buffer[0], gfxrom, sizeg);
 
-		/* address lines swap: fedcba9876543210 -> fedcb67584a39012 */
+		// address lines swap: fedcba9876543210 -> fedcb67584a39012
 
-		for (i = startg; i < sizeg; i++)
+		for (int i = 0; i < sizeg; i++)
 		{
-			a = BITSWAP16(i, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 4, 5, 3, 2, 1, 0);
+			int a = bitswap<16>(i, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 4, 5, 3, 2, 1, 0);
 			gfxrom[a] = buffer[i];
 		}
 	}
 }
 
 
-DRIVER_INIT_MEMBER(funworld_state, ctunk)
+void funworld_state::init_ctunk()
 /*********************************************************
 
   CTUNK: Rare board with blue TAB board encryption scheme
@@ -6667,18 +7802,15 @@ DRIVER_INIT_MEMBER(funworld_state, ctunk)
 	int size = memregion("maincpu")->bytes();
 	int start = 0x8000;
 
-	//uint8_t *buffer;
-	int i;// a;
-
 	/*****************************
 	*   Program ROM decryption   *
 	*****************************/
 
-	/* data lines swap: 76543210 -> 56734012 */
+	// data lines swap: 76543210 -> 56734012
 
-	for (i = start; i < size; i++)
+	for (int i = start; i < size; i++)
 	{
-		rom[i] = BITSWAP8(rom[i], 5, 6, 7, 3, 4, 0, 1, 2);
+		rom[i] = bitswap<8>(rom[i], 5, 6, 7, 3, 4, 0, 1, 2);
 	}
 
 	//buffer = std::make_unique<uint8_t[]>(size);
@@ -6689,52 +7821,40 @@ DRIVER_INIT_MEMBER(funworld_state, ctunk)
 	*  Graphics ROMs decryption  *
 	*****************************/
 
-	int x, na, nb, nad, nbd;
 	uint8_t *src = memregion( "gfx1" )->base();
 	//uint8_t *ROM = memregion("maincpu")->base();
-
-	for (x=0x0000; x < 0x10000; x++)
+	for (int x = 0x0000; x < 0x10000; x++)
 	{
-		na = src[x] & 0xf0;     /* nibble A */
-		nb = src[x] << 4;       /* nibble B */
+		int na = src[x] & 0xf0;     // nibble A
+		int nb = src[x] << 4;       // nibble B
 
-			nad = (na ^ (na >> 1)) << 1;            /* nibble A decrypted */
-			nbd = ((nb ^ (nb >> 1)) >> 3) & 0x0f;   /* nibble B decrypted */
+		int nad = (na ^ (na >> 1)) << 1;            // nibble A decrypted
+		int nbd = ((nb ^ (nb >> 1)) >> 3) & 0x0f;   // nibble B decrypted
 
-		src[x] = nad + nbd;     /* decrypted byte */
+		src[x] = nad + nbd;         // decrypted byte
 	}
 }
 
 
 static void decrypt_rcdino4(uint8_t *rom, int size, uint8_t *gfxrom, int sizeg, uint8_t *src)
 {
-	int start = 0x0000;
-
-	int startg = 0;
-
-	int i, a;
-
 	/*****************************
 	*   Program ROM decryption   *
 	*****************************/
 
-	/* data lines swap: 76543210 -> 76543120 */
-
-	for (i = start; i < size; i++)
+	// data lines swap: 76543210 -> 76543120
 	{
-		rom[i] = BITSWAP8(rom[i], 7, 6, 5, 4, 3, 1, 2, 0);
-	}
-
-	{
-		std::vector<uint8_t> buffer(size);
-		memcpy(&buffer[0], rom, size);
-
-
-		/* address lines swap: fedcba9876543210 -> fedcba9867543210 */
-
-		for (i = start; i < size; i++)
+		std::vector<uint8_t> buffer;
+		for (int i = 0; i < size; i++)
 		{
-			a = BITSWAP16(i, 15, 13, 14, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0);
+			buffer.push_back(bitswap<8>(rom[i], 7, 6, 5, 4, 3, 1, 2, 0));
+		}
+
+		// address lines swap: fedcba9876543210 -> fedcba9867543210
+
+		for (int i = 0; i < size; i++)
+		{
+			int a = bitswap<16>(i, 15, 13, 14, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0);
 			rom[a] = buffer[i];
 		}
 
@@ -6748,22 +7868,20 @@ static void decrypt_rcdino4(uint8_t *rom, int size, uint8_t *gfxrom, int sizeg, 
 		std::vector<uint8_t> buffer(sizeg);
 		memcpy(&buffer[0], gfxrom, sizeg);
 
-		/* address lines swap: fedcba9876543210 -> fedcb67584a39012 */
+		// address lines swap: fedcba9876543210 -> fedcb67584a39012
 
-		for (i = startg; i < sizeg; i++)
+		for (int i = 0; i < sizeg; i++)
 		{
-			a = BITSWAP16(i, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 4, 5, 3, 2, 1, 0);
+			int a = bitswap<16>(i, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 4, 5, 3, 2, 1, 0);
 			gfxrom[a] = buffer[i];
 		}
 	}
 
-	/* d4-d5 data lines swap, plus a XOR with 0x81, implemented in two steps for an easy view */
+	// d4-d5 data lines swap, plus a XOR with 0x81, implemented in two steps for an easy view
 
-	int x;
-
-	for (x = 0x0000; x < 0x10000; x++)
+	for (int x = 0x0000; x < 0x10000; x++)
 	{
-		src[x] = BITSWAP8(src[x], 7, 6, 4, 5, 3, 2, 1, 0);
+		src[x] = bitswap<8>(src[x], 7, 6, 4, 5, 3, 2, 1, 0);
 		src[x] = src[x] ^ 0x81;
 	}
 
@@ -6773,7 +7891,7 @@ static void decrypt_rcdino4(uint8_t *rom, int size, uint8_t *gfxrom, int sizeg, 
 
 static uint8_t rcdino4_add[] =
 {
-/*      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f*/
+//      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
 /*0*/   1, 9, 9, 9, 9, 2, 9, 9, 1, 2, 1, 9, 9, 3, 9, 9,
 /*1*/   2, 2, 9, 9, 9, 9, 9, 9, 1, 9, 1, 9, 9, 9, 9, 9,
 /*2*/   3, 9, 9, 9, 9, 2, 2, 9, 1, 2, 1, 9, 9, 3, 3, 9,
@@ -6794,100 +7912,93 @@ static uint8_t rcdino4_add[] =
 
 static uint8_t rcdino4_keys40[] =
 {
-/*  40    41    42    43    44    45    46    47    48    49    4a    4b    4c    4d*/
+//   40    41    42    43    44    45    46    47    48    49    4a    4b    4c    4d
 	0x36, 0x54, 0x47, 0x6b, 0xce, 0x95, 0xa2, 0x66, 0x3a, 0x46, 0x53, 0xd7, 0xc4, 0xa4,
-/*  4e    4f*/
+//   4e    4f
 	0x00, 0x00,
-/*  50*/
+//   50
 	0x56
 };
 
 static uint8_t rcdino4_keys80[] =
 {
-/*  81    82    83    84    85 */
+//   81    82    83    84    85
 	0xb8, 0x32, 0x1c, 0x23, 0xe2,
-/*  86    87    88    89    8a    8b    8c    8d    8e    8f    90    91*/
+//   86    87    88    89    8a    8b    8c    8d    8e    8f    90    91
 	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-/*  92    93    94    95    96    97 */
+//   92    93    94    95    96    97
 	0x4c, 0x00, 0x3d, 0x00, 0xd9, 0x16,
-/*  98    99    9a    9b    9c    9d    9e    9f    a0    a1    a2    a3*/
+//   98    99    9a    9b    9c    9d    9e    9f    a0    a1    a2    a3
 	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-/*  a4    a5    a6*/
+//   a4    a5    a6
 	0x5e, 0x73, 0x69,
-/*  a7    a8    a9*/
+//   a7    a8    a9
 	0x00, 0x00, 0x00,
-/*  aa*/
+//   aa
 	0xa6,
-/*  ab    ac    ad    ae    af*/
+//   ab    ac    ad    ae    af
 	0x00, 0x00, 0x00, 0x00, 0x00,
-/*  b0    b1*/
+//   b0    b1
 	0xc3, 0x40,
-/*  b2    b3    b4    b5    b6    b7    b8    b9    ba    bb    bc    bd    be    bf    c0    c1    c2*/
+//   b2    b3    b4    b5    b6    b7    b8    b9    ba    bb    bc    bd    be    bf    c0    c1    c2
 	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-/*  c3    c4    c5*/
+//   c3    c4    c5
 	0x92, 0xb7, 0x24,
-/*  c6    c7    c8    c9*/
+//   c6    c7    c8    c9
 	0x00, 0x00, 0x00, 0x00,
-/*  ca*/
+//   ca
 	0x62,
-/*  cb    cc    cd    ce    cf*/
+//   cb    cc    cd    ce    cf
 	0x00, 0x00, 0x00, 0x00, 0x00,
-/*  d0*/
+//   d0
 	0x84,
-/*  d1*/
+//   d1
 	0x00,
-/*  d2*/
+//   d2
 	0xaa,
-/*  d3    d4    d5*/
+//   d3    d4    d5
 	0x00, 0x00, 0x00,
-/*  d6*/
+//   d6
 	0xea,
-/*  d7    d8    d9    da    db    dc    dd    de    df*/
+//   d7    d8    d9    da    db    dc    dd    de    df
 	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-/*  e0*/
+//   e0
 	0x17,
-/*  e1    e2    e3*/
+//   e1    e2    e3
 	0x00, 0x00, 0x00,
-/*  e4*/
+//   e4
 	0xc0,
-/*  e5    e6    e7    e8    e9    ea    eb    ec    ed    ee    ef    f0    f1    f2    f3    f4    f5    f6    f7*/
+//   e5    e6    e7    e8    e9    ea    eb    ec    ed    ee    ef    f0    f1    f2    f3    f4    f5    f6    f7
 	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-/*  f8    f9    fa    fb    fc    fd    fe*/
+//   f8    f9    fa    fb    fc    fd    fe
 	0x06, 0x1e, 0x28, 0x5a, 0xcf, 0x79, 0x11
 };
 
-DRIVER_INIT_MEMBER(funworld_state, rcdino4)
-/*****************************************************
-
-  Dino4 hardware with CPU+PLCC daughterboard
-
-  Program ROM data & address lines are swapped.
-  GFX ROMs address lines are swapped and data encrypted.
-
-  Color PROM seems straight.
-
-******************************************************/
+void chinatow_state::init_rcdino4()
 {
-	int i, j;
+	/*****************************************************
+
+	  Dino4 hardware with CPU+PLCC daughterboard
+
+	  Program ROM data & address lines are swapped.
+	  GFX ROMs address lines are swapped and data encrypted.
+
+	  Color PROM seems straight.
+
+	******************************************************/
 	uint8_t *rom = memregion("maincpu")->base();
 
 	decrypt_rcdino4(rom, memregion("maincpu")->bytes(), memregion("gfx1")->base(), memregion("gfx1")->bytes(), memregion( "gfx1" )->base());
 
-	j = 0;
-
-	for (i = 0x40; i < (0x40 + ARRAY_LENGTH(rcdino4_keys40));)
+	int j = 0;
+	for (int i = 0x40; i < (0x40 + ARRAY_LENGTH(rcdino4_keys40));)
 	{
-		uint8_t key;
-
-		key = rcdino4_keys40[i - 0x40];
+		uint8_t key = rcdino4_keys40[i - 0x40];
 
 		do
 		{
-			uint8_t c;
-			int add;
-
-			c = rom[(i << 8) + j] ^ key;
-			add = rcdino4_add[c];
+			uint8_t c = rom[(i << 8) + j] ^ key;
+			int add = rcdino4_add[c];
 
 			if (add == 9)
 			{
@@ -6907,57 +8018,52 @@ DRIVER_INIT_MEMBER(funworld_state, rcdino4)
 	}
 
 	j = 1;
-	i = 0x81;
+	int i = 0x81;
 
 	do
 	{
-		uint8_t key;
-
-		key = rcdino4_keys80[i - 0x81];
+		uint8_t key = rcdino4_keys80[i - 0x81];
 
 		do
 		{
-			uint8_t c;
-			int add;
-
-			c = rom[(i << 8) + j] ^ key;
-			add = rcdino4_add[c];
+			uint8_t c = rom[(i << 8) + j] ^ key;
+			int add = rcdino4_add[c];
 
 			if (((i == 0x81)
-				&& (j >= 0xa3) && (j <= 0xb1) /* text string */
+				&& (j >= 0xa3) && (j <= 0xb1)   // text string
 				)
 				|| ((i == 0x82)
-				&& (j >= 0x35) && (j <= 0x53) /* table of addresses */
+				&& (j >= 0x35) && (j <= 0x53)   // table of addresses
 				)
 				|| ((i == 0x85)
-				&& (j >= 0x7e) && (j <= 0x8d) /* '0'-'9', 'A'-'F' */
+				&& (j >= 0x7e) && (j <= 0x8d)   // '0'-'9', 'A'-'F'
 				)
 				|| ((i == 0x94)
-				&& (((j >= 0x4a) && (j <= 0x86)) /* zeroes */
-				|| ((j >= 0xbf) && (j <= 0xc1)) /* set of masks */
+				&& (((j >= 0x4a) && (j <= 0x86))    // zeroes
+				|| ((j >= 0xbf) && (j <= 0xc1))     // set of masks */
 					)
 				)
 				|| ((i == 0x96)
-				&& (j >= 0x39) && (j <= 0x3e) /* set of masks */
+				&& (j >= 0x39) && (j <= 0x3e)   // set of masks
 				)
 				|| ((i == 0xa6)
-				&& (j >= 0x30) && (j <= 0x32) /* set of masks */
+				&& (j >= 0x30) && (j <= 0x32)   // set of masks
 				)
 				|| ((i == 0xaa)
-				&& (j >= 0xf2) /* table of addresses */
+				&& (j >= 0xf2)  // table of addresses
 				)
 				|| ((i == 0xc3)
-				&& (j >= 0x70) && (j <= 0xaf) /* set of masks */
+				&& (j >= 0x70) && (j <= 0xaf)   // set of masks
 				)
 				|| ((i == 0xc4)
-				&& (j >= 0xdc) /* zeroes and things */
+				&& (j >= 0xdc)  // zeroes and things
 				)
 				|| ((i == 0xd0)
-				&& (j >= 0xd2) /* text and zeroes */
+				&& (j >= 0xd2)  // text and zeroes
 				)
 				|| ((i == 0xd2)
-				&& ((j <= 0x2f) /* text and zeroes */
-				|| ((j >= 0x84) && (j <= 0xaf)) /* text and zeroes */
+				&& ((j <= 0x2f) // text and zeroes
+				|| ((j >= 0x84) && (j <= 0xaf)) // text and zeroes
 					)
 				)
 				|| (add == 9)
@@ -6988,141 +8094,238 @@ DRIVER_INIT_MEMBER(funworld_state, rcdino4)
 			|| (i == 0xf8)
 			)
 		{
-			j = 0; /* re-align offset after skipping some pages */
+			j = 0;  // re-align offset after skipping some pages
 		}
 	}
 	while (1);
 }
 
-DRIVER_INIT_MEMBER(funworld_state, rcdinch)
+void chinatow_state::init_rcdinch()
+{
+	/*****************************************************
+
+	  Dino4 hardware with CPU+PLCC daughterboard
+
+	  Less encryption than rc4dino
+
+	******************************************************/
+	decrypt_rcdino4(memregion("maincpu")->base(), memregion("maincpu")->bytes(), memregion("gfx1")->base(), memregion("gfx1")->bytes(), memregion( "gfx1" )->base());
+}
+
+
+void funworld_state::init_jolycdig()
+{
+	// covering two values in ROM space checked for hardware errors.
+	// maybe some virtual or physically mapped there.
+
+	uint8_t *rom = memregion("maincpu")->base();
+
+	rom[0xe825] = 0xff;  // checks for #$45, ascii E.
+	rom[0xe826] = 0xff;  // checks for #$56, ascii V.
+}
+
+
+void intergames_state::driver_init()
+{
+	// NOP'ing some values in ROM space to avoid the hardware error.
+
+	uint8_t *rom = memregion("maincpu")->base();
+
+	rom[0xadc5] = 0xea;
+	rom[0xadc6] = 0xea;
+
+	rom[0xadd2] = 0xea;
+	rom[0xadd3] = 0xea;
+
+	rom[0xade6] = 0xea;
+	rom[0xade7] = 0xea;
+
+	rom[0xadf8] = 0xea;
+	rom[0xadf9] = 0xea;
+
+	rom[0xae16] = 0xea;
+	rom[0xae17] = 0xea;
+
+	rom[0xaead] = 0xea;
+	rom[0xaeae] = 0xea;
+	rom[0xaeaf] = 0xea;
+
+//  verify checksum against values stored at 07F2-07F3.
+//  rom[0xaf69] = 0xea;
+//  rom[0xaf6a] = 0xea;
+//  rom[0xaf6b] = 0xea;
+
+}
+
+
+void funworld_state::init_impera16()
 /*****************************************************
 
-  Dino4 hardware with CPU+PLCC daughterboard
+  Routines to deinterleave the Impera GFX stored
+  in 16 bit EPROMS, on 8 bit systems.
 
-  Less encryption than rc4dino
+  Regular GFX ROMs for this system, are interleaved
+  in a big 27C210 ROM.
 
 ******************************************************/
 {
-	decrypt_rcdino4(memregion("maincpu")->base(), memregion("maincpu")->bytes(), memregion("gfx1")->base(), memregion("gfx1")->bytes(), memregion( "gfx1" )->base());
+	uint8_t *gfx16rom = memregion("gfxpool")->base();
+	int size = memregion("gfxpool")->bytes();
+
+	uint8_t *gfx8rom = memregion("gfx1")->base();
+	int sizeg = memregion("gfx1")->bytes();
+
+	/*****************************
+	*    Deinterleaving GFX      *
+	*****************************/
+
+	int j = 0;
+
+	for (int i = 0; i < size; i += 2)
+	{
+		gfx8rom[j] = gfx16rom[i];
+		gfx8rom[j + (sizeg / 2)] = gfx16rom[i + 1];
+		j++;
+	}
 }
+
 
 /**********************************************
 *                Game Drivers                 *
 **********************************************/
 
-/*     YEAR  NAME       PARENT    MACHINE   INPUT      STATE           INIT      ROT    COMPANY            FULLNAME                                          FLAGS                  LAYOUT */
+//     YEAR  NAME        PARENT    MACHINE   INPUT      STATE           INIT           ROT    COMPANY              FULLNAME                                          FLAGS                    LAYOUT
 
 // Jolly Card based...
-GAMEL( 1985, jollycrd,  0,        fw1stpal, funworld,  funworld_state, 0,        ROT0, "TAB Austria",     "Jolly Card (Austrian, set 1)",                    0,                       layout_jollycrd )
-GAMEL( 1985, jollycrda, jollycrd, fw1stpal, funworld,  funworld_state, 0,        ROT0, "TAB Austria",     "Jolly Card (Austrian, set 2)",                    0,                       layout_jollycrd )
-GAMEL( 1985, jolyc3x3,  jollycrd, fw1stpal, funworld,  funworld_state, 0,        ROT0, "TAB Austria",     "Jolly Card (3x3 deal)",                           0,                       layout_jollycrd )
-GAMEL( 1993, jolycmzs,  jollycrd, cuoreuno, jolyc980,  funworld_state, 0,        ROT0, "MZS Tech",        "Jolly Card Professional 2.0 (MZS Tech)",          0,                       layout_jollycrd )
-GAMEL( 2000, jolyc980,  jollycrd, cuoreuno, jolyc980,  funworld_state, 0,        ROT0, "Spale Soft",      "Jolly Card Professional 2.0 (Spale Soft)",        0,                       layout_jollycrd )
-GAMEL( 1998, jolycdev,  jollycrd, fw1stpal, funworld,  funworld_state, 0,        ROT0, "TAB Austria / Evona Electronic", "Jolly Card (Evona Electronic)",    0,                       layout_jollycrd )
-GAMEL( 1985, jolyccra,  jollycrd, cuoreuno, jolycdcr,  funworld_state, 0,        ROT0, "TAB Austria",     "Jolly Card (Croatian, set 1)",                    0,                       layout_jollycrd )
-GAMEL( 1993, jolyccrb,  jollycrd, cuoreuno, jolycdcr,  funworld_state, 0,        ROT0, "Soft Design",     "Jolly Card (Croatian, set 2)",                    0,                       layout_jollycrd )
-GAMEL( 1985, sjcd2kx3,  jollycrd, fw1stpal, funworld,  funworld_state, 0,        ROT0, "M.P.",            "Super Joly 2000 - 3x",                            0,                       layout_jollycrd )
-GAME(  1986, jolycdab,  jollycrd, fw1stpal, funworld,  funworld_state, 0,        ROT0, "Inter Games",     "Jolly Card (Austrian, Fun World, bootleg)",       MACHINE_NOT_WORKING )
-GAMEL( 1992, jolycdsp,  jollycrd, cuoreuno, jolycdit,  funworld_state, ctunk,    ROT0, "TAB Austria",     "Jolly Card (Spanish, blue TAB board, encrypted)", 0,                       layout_royalcrd )
-GAMEL( 1990, jolycdid,  jollycrd, cuoreuno, jolycdcr,  funworld_state, 0,        ROT0, "bootleg",         "Jolly Card (Italian, different colors, set 1)",   0,                       layout_jollycrd ) // italian, CPLD, different colors.
-GAMEL( 1990, jolycdie,  jollycrd, cuoreuno, jolycdib,  funworld_state, 0,        ROT0, "bootleg",         "Jolly Card (Italian, different colors, set 2)",   0,                       layout_jollycrd ) // not from TAB blue PCB
+GAMEL( 1985, jollycrd,   0,        fw1stpal, funworld,  funworld_state, empty_init,    ROT0, "TAB Austria",       "Jolly Card (German, set 1)",                      0,                       layout_jollycrd )
+GAMEL( 1985, jollycrda,  jollycrd, fw1stpal, funworld,  funworld_state, empty_init,    ROT0, "TAB Austria",       "Jolly Card (German, set 2)",                      0,                       layout_jollycrd )
+GAMEL( 1985, jolyc3x3,   jollycrd, fw1stpal, funworld,  funworld_state, empty_init,    ROT0, "TAB Austria",       "Jolly Card (3x3 deal)",                           0,                       layout_jollycrd )
+GAMEL( 1993, jolycmzs,   jollycrd, cuoreuno, jolyc980,  funworld_state, empty_init,    ROT0, "MZS Tech",          "Jolly Card Professional 2.0 (MZS Tech)",          0,                       layout_jollycrd )
+GAMEL( 2000, jolyc980,   jollycrd, cuoreuno, jolyc980,  funworld_state, empty_init,    ROT0, "Spale Soft",        "Jolly Card Professional 2.0 (Spale Soft)",        0,                       layout_jollycrd )
+GAMEL( 1998, jolycdev,   jollycrd, fw1stpal, funworld,  funworld_state, empty_init,    ROT0, "TAB Austria / Evona Electronic", "Jolly Card (Evona Electronic)",      0,                       layout_jollycrd )
+GAMEL( 1985, jolyccra,   jollycrd, cuoreuno, jolycdcr,  funworld_state, empty_init,    ROT0, "TAB Austria",       "Jolly Card (Croatian, set 1)",                    0,                       layout_jollycrd )
+GAMEL( 1993, jolyccrb,   jollycrd, cuoreuno, jolycdcr,  funworld_state, empty_init,    ROT0, "Soft Design",       "Jolly Card (Croatian, set 2)",                    0,                       layout_jollycrd )
+GAMEL( 1985, sjcd2kx3,   jollycrd, fw1stpal, funworld,  funworld_state, empty_init,    ROT0, "M.P.",              "Super Joly 2000 - 3x",                            0,                       layout_jollycrd )
+GAMEL( 1986, jolycdab,   jollycrd, fw1stpal, funworld,  funworld_state, empty_init,    ROT0, "Inter Games",       "Jolly Card (German, Fun World, bootleg)",         0,                       layout_jollycrd )
+GAMEL( 1992, jolycdsp,   jollycrd, cuoreuno, jolycdit,  funworld_state, init_ctunk,    ROT0, "TAB Austria",       "Jolly Card (Spanish, blue TAB board, encrypted)", 0,                       layout_royalcrd )
+GAMEL( 1990, jolycdid,   jollycrd, cuoreuno, jolycdcr,  funworld_state, empty_init,    ROT0, "bootleg",           "Jolly Card (Italian, different colors, set 1)",   0,                       layout_jollycrd ) // italian, CPLD, different colors.
+GAMEL( 1990, jolycdie,   jollycrd, cuoreuno, jolycdib,  funworld_state, empty_init,    ROT0, "bootleg",           "Jolly Card (Italian, different colors, set 2)",   0,                       layout_jollycrd ) // not from TAB blue PCB.
+GAMEL( 1990, jolycdif,   jollycrd, cuoreuno, jolycdib,  funworld_state, empty_init,    ROT0, "bootleg",           "Jolly Card (Italian, bootleg, set 1)",            0,                       layout_jollycrd ) // italian, CPLD. doesn't need nvram init.
+GAMEL( 1993, jolycdig,   jollycrd, cuoreuno, jolycdib,  funworld_state, init_jolycdig, ROT0, "bootleg",           "Jolly Card (Italian, bootleg, set 2)",            0,                       layout_jollycrd ) // italian, CPLD. needs nvram.
+GAMEL( 1990, jolycdih,   jollycrd, cuoreuno, jolycdib,  funworld_state, empty_init,    ROT0, "bootleg",           "Jolly Card (Italian, bootleg, set 3)",            0,                       layout_jollycrd )
 
 // Bonus Card based...
-GAMEL( 1986, bonuscrd,  0,        fw2ndpal, bonuscrd,  funworld_state, 0,        ROT0, "Fun World",       "Bonus Card (Austrian)",                           MACHINE_IMPERFECT_COLORS,   layout_bonuscrd ) // use fw1stpal machine for green background
-GAMEL( 1986, bonuscrda, bonuscrd, fw2ndpal, bonuscrd,  funworld_state, 0,        ROT0, "Fun World",       "Bonus Card (Austrian, ATG Electronic hack)",      MACHINE_IMPERFECT_COLORS,   layout_bonuscrd ) // use fw1stpal machine for green background
-GAMEL( 1986, bigdeal,   bonuscrd, fw2ndpal, bigdeal,   funworld_state, 0,        ROT0, "Fun World",       "Big Deal (Hungarian, set 1)",                     MACHINE_IMPERFECT_COLORS,   layout_bonuscrd )
-GAMEL( 1986, bigdealb,  bonuscrd, fw2ndpal, bigdeal,   funworld_state, 0,        ROT0, "Fun World",       "Big Deal (Hungarian, set 2)",                     MACHINE_IMPERFECT_COLORS,   layout_bonuscrd )
+GAMEL( 1986, bonuscrd,   0,        fw2ndpal, bonuscrd,  funworld_state, empty_init,    ROT0, "Fun World",         "Bonus Card (German)",                             MACHINE_IMPERFECT_COLORS, layout_bonuscrd ) // use fw1stpal machine for green background
+GAMEL( 1986, bonuscrda,  bonuscrd, fw2ndpal, bonuscrd,  funworld_state, empty_init,    ROT0, "Fun World",         "Bonus Card (German, ATG Electronic hack)",        MACHINE_IMPERFECT_COLORS, layout_bonuscrd ) // use fw1stpal machine for green background
+GAMEL( 1986, bigdeal,    bonuscrd, fw2ndpal, bigdeal,   funworld_state, empty_init,    ROT0, "Fun World",         "Big Deal (Hungarian, set 1)",                     MACHINE_IMPERFECT_COLORS, layout_bonuscrd )
+GAMEL( 1986, bigdealb,   bonuscrd, fw2ndpal, bigdeal,   funworld_state, empty_init,    ROT0, "Fun World",         "Big Deal (Hungarian, set 2)",                     MACHINE_IMPERFECT_COLORS, layout_bonuscrd )
 
 // CMC Italian jamma PCB's...
-GAMEL( 1996, cuoreuno,  0,        cuoreuno, cuoreuno,  funworld_state, 0,        ROT0, "C.M.C.",          "Cuore 1 (Italian)",                               0,                       layout_jollycrd )
-GAMEL( 1997, elephfam,  0,        cuoreuno, cuoreuno,  funworld_state, 0,        ROT0, "C.M.C.",          "Elephant Family (Italian, new)",                  0,                       layout_jollycrd )
-GAMEL( 1996, elephfmb,  elephfam, cuoreuno, cuoreuno,  funworld_state, 0,        ROT0, "C.M.C.",          "Elephant Family (Italian, old)",                  0,                       layout_jollycrd )
-GAMEL( 1996, pool10,    0,        cuoreuno, pool10,    funworld_state, 0,        ROT0, "C.M.C.",          "Pool 10 (Italian, set 1)",                        0,                       layout_jollycrd )
-GAMEL( 1996, pool10b,   pool10,   cuoreuno, cuoreuno,  funworld_state, 0,        ROT0, "C.M.C.",          "Pool 10 (Italian, set 2)",                        0,                       layout_jollycrd )
-GAMEL( 1996, pool10c,   pool10,   cuoreuno, cuoreuno,  funworld_state, 0,        ROT0, "C.M.C.",          "Pool 10 (Italian, set 3)",                        0,                       layout_jollycrd )
-GAMEL( 1997, pool10d,   pool10,   cuoreuno, cuoreuno,  funworld_state, 0,        ROT0, "C.M.C.",          "Pool 10 (Italian, set 4)",                        0,                       layout_jollycrd )
-GAMEL( 1997, pool10f,   pool10,   cuoreuno, cuoreuno,  funworld_state, 0,        ROT0, "C.M.C.",          "Pool 10 (Italian, set 5)",                        0,                       layout_jollycrd )
-GAMEL( 1996, pool10g,   pool10,   cuoreuno, cuoreuno,  funworld_state, 0,        ROT0, "C.M.C.",          "Pool 10 (Italian, set 6)",                        0,                       layout_jollycrd )
-GAMEL( 1996, pool10h,   pool10,   cuoreuno, pool10,    funworld_state, 0,        ROT0, "C.M.C.",          "Pool 10 (Italian, set 7)",                        0,                       layout_jollycrd )
-GAMEL( 1997, pool10i,   pool10,   cuoreuno, pool10,    funworld_state, 0,        ROT0, "C.M.C.",          "Pool 10 (Italian, set 8)",                        0,                       layout_jollycrd )
-GAMEL( 2001, royal,     pool10,   royalcd1, royal,     funworld_state, 0,        ROT0, "<unknown>",       "Royal (Pool 10 hack)",                            0,                       layout_jollycrd )
-GAMEL( 1997, tortufam,  0,        cuoreuno, cuoreuno,  funworld_state, 0,        ROT0, "C.M.C.",          "Tortuga Family (Italian)",                        0,                       layout_jollycrd )
-GAMEL( 1996, potgame,   0,        cuoreuno, cuoreuno,  funworld_state, 0,        ROT0, "C.M.C.",          "Pot Game (Italian)",                              0,                       layout_jollycrd )
-GAMEL( 1996, bottle10,  0,        cuoreuno, cuoreuno,  funworld_state, 0,        ROT0, "C.M.C.",          "Bottle 10 (Italian, set 1)",                      0,                       layout_jollycrd )
-GAMEL( 1996, bottl10b,  bottle10, cuoreuno, cuoreuno,  funworld_state, 0,        ROT0, "C.M.C.",          "Bottle 10 (Italian, set 2)",                      0,                       layout_jollycrd )
-GAMEL( 1998, lunapark,  0,        lunapark, lunapark,  funworld_state, 0,        ROT0, "<unknown>",       "Luna Park (set 1, dual program)",                 0,                       layout_jollycrd ) // mirrored video RAM (4000/5000 to 6000/7000).
-GAMEL( 1998, lunaparkb, lunapark, lunapark, lunapark,  funworld_state, 0,        ROT0, "<unknown>",       "Luna Park (set 2, dual program)",                 0,                       layout_jollycrd ) // mirrored video RAM (4000/5000 to 6000/7000).
-GAMEL( 1998, lunaparkc, lunapark, cuoreuno, cuoreuno,  funworld_state, 0,        ROT0, "<unknown>",       "Luna Park (set 3)",                               0,                       layout_jollycrd ) // regular video RAM 6000/7000.
-GAMEL( 1998, crystal,   0,        cuoreuno, cuoreuno,  funworld_state, 0,        ROT0, "J.C.D. srl",      "Crystal Colours (CMC hardware)",                  0,                       layout_jollycrd )
+GAMEL( 1996, cuoreuno,   0,        cuoreuno, cuoreuno,  funworld_state, empty_init,    ROT0, "C.M.C.",            "Cuore 1 (Italian)",                               0,                       layout_jollycrd )
+GAMEL( 1997, elephfam,   0,        cuoreuno, cuoreuno,  funworld_state, empty_init,    ROT0, "C.M.C.",            "Elephant Family (Italian, new)",                  0,                       layout_jollycrd )
+GAMEL( 1996, elephfmb,   elephfam, cuoreuno, cuoreuno,  funworld_state, empty_init,    ROT0, "C.M.C.",            "Elephant Family (Italian, old)",                  0,                       layout_jollycrd )
+GAMEL( 1996, pool10,     0,        cuoreuno, pool10,    funworld_state, empty_init,    ROT0, "C.M.C.",            "Pool 10 (Italian, set 1)",                        0,                       layout_jollycrd )
+GAMEL( 1996, pool10b,    pool10,   cuoreuno, cuoreuno,  funworld_state, empty_init,    ROT0, "C.M.C.",            "Pool 10 (Italian, set 2)",                        0,                       layout_jollycrd )
+GAMEL( 1996, pool10c,    pool10,   cuoreuno, cuoreuno,  funworld_state, empty_init,    ROT0, "C.M.C.",            "Pool 10 (Italian, set 3)",                        0,                       layout_jollycrd )
+GAMEL( 1997, pool10d,    pool10,   cuoreuno, cuoreuno,  funworld_state, empty_init,    ROT0, "C.M.C.",            "Pool 10 (Italian, set 4)",                        0,                       layout_jollycrd )
+GAMEL( 1997, pool10f,    pool10,   cuoreuno, cuoreuno,  funworld_state, empty_init,    ROT0, "C.M.C.",            "Pool 10 (Italian, set 5)",                        0,                       layout_jollycrd )
+GAMEL( 1996, pool10g,    pool10,   cuoreuno, cuoreuno,  funworld_state, empty_init,    ROT0, "C.M.C.",            "Pool 10 (Italian, set 6)",                        0,                       layout_jollycrd )
+GAMEL( 1996, pool10h,    pool10,   cuoreuno, pool10,    funworld_state, empty_init,    ROT0, "C.M.C.",            "Pool 10 (Italian, set 7)",                        0,                       layout_jollycrd )
+GAMEL( 1997, pool10i,    pool10,   cuoreuno, pool10,    funworld_state, empty_init,    ROT0, "C.M.C.",            "Pool 10 (Italian, set 8)",                        0,                       layout_jollycrd )
+GAMEL( 1996, pool10j,    pool10,   cuoreuno, pool10,    funworld_state, empty_init,    ROT0, "bootleg (R.B.)",    "Pool 10 (Italian, set 9)",                        0,                       layout_jollycrd )
+GAMEL( 1998, biliard,    pool10,   cuoreuno, pool10,    funworld_state, empty_init,    ROT0, "bootleg",           "New Biliard 98 (Pool 10 hack)",                   0,                       layout_jollycrd )
+GAMEL( 2001, royal,      pool10,   royalcd1, royal,     funworld_state, empty_init,    ROT0, "<unknown>",         "Royal (Pool 10 hack)",                            0,                       layout_jollycrd )
+GAMEL( 1997, tortufam,   0,        cuoreuno, cuoreuno,  funworld_state, empty_init,    ROT0, "C.M.C.",            "Tortuga Family (Italian)",                        0,                       layout_jollycrd )
+GAMEL( 1996, potgame,    0,        cuoreuno, cuoreuno,  funworld_state, empty_init,    ROT0, "C.M.C.",            "Pot Game (Italian)",                              0,                       layout_jollycrd )
+GAMEL( 1996, bottle10,   0,        cuoreuno, cuoreuno,  funworld_state, empty_init,    ROT0, "C.M.C.",            "Bottle 10 (Italian, set 1)",                      0,                       layout_jollycrd )
+GAMEL( 1996, bottl10b,   bottle10, cuoreuno, cuoreuno,  funworld_state, empty_init,    ROT0, "C.M.C.",            "Bottle 10 (Italian, set 2)",                      0,                       layout_jollycrd )
+GAMEL( 1998, lunapark,   0,        lunapark, lunapark,  lunapark_state, empty_init,    ROT0, "<unknown>",         "Luna Park (set 1, dual program)",                 0,                       layout_jollycrd ) // mirrored video RAM (4000/5000 to 6000/7000).
+GAMEL( 1998, lunaparkb,  lunapark, lunapark, lunapark,  lunapark_state, empty_init,    ROT0, "<unknown>",         "Luna Park (set 2, dual program)",                 0,                       layout_jollycrd ) // mirrored video RAM (4000/5000 to 6000/7000).
+GAMEL( 1998, lunaparkc,  lunapark, cuoreuno, cuoreuno,  funworld_state, empty_init,    ROT0, "<unknown>",         "Luna Park (set 3)",                               0,                       layout_jollycrd ) // regular video RAM 6000/7000.
+GAMEL( 1998, crystal,    0,        cuoreuno, cuoreuno,  funworld_state, empty_init,    ROT0, "J.C.D. srl",        "Crystal Colours (CMC hardware)",                  0,                       layout_jollycrd )
 
 // Royal Card based...
-GAMEL( 1991, royalcrd,  0,        royalcd2, royalcrd,  funworld_state, 0,        ROT0, "TAB Austria",       "Royal Card (Austrian, set 1)",                    0,                       layout_jollycrd )
-GAMEL( 1991, royalcrda, royalcrd, royalcd2, royalcrd,  funworld_state, 0,        ROT0, "TAB Austria",       "Royal Card (Austrian, set 2)",                    0,                       layout_jollycrd )
-GAMEL( 1991, royalcrdb, royalcrd, royalcd1, royalcrd,  funworld_state, 0,        ROT0, "TAB Austria",       "Royal Card (Austrian/Polish, set 3)",             0,                       layout_jollycrd )
-GAMEL( 1991, royalcrdc, royalcrd, royalcd2, royalcrd,  funworld_state, 0,        ROT0, "TAB Austria",       "Royal Card (Austrian, set 4)",                    MACHINE_IMPERFECT_GRAPHICS, layout_jollycrd )
-GAMEL( 1991, royalcrdd, royalcrd, royalcd1, royalcrd,  funworld_state, 0,        ROT0, "TAB Austria",       "Royal Card (Austrian, set 5)",                    0,                       layout_royalcrd )
-GAMEL( 1991, royalcrde, royalcrd, royalcd1, royalcrd,  funworld_state, 0,        ROT0, "TAB Austria",       "Royal Card (Austrian, set 6)",                    0,                       layout_jollycrd )
-GAMEL( 1991, royalcrdt, royalcrd, royalcd1, royalcrd,  funworld_state, 0,        ROT0, "TAB Austria",       "Royal Card (TAB original)",                       0,                       layout_jollycrd )
-GAME(  1991, royalcrdf, royalcrd, royalcd1, royalcrd,  funworld_state, royalcdc, ROT0, "Evona Electronic",  "Royal Card (Slovak, encrypted)",                  MACHINE_NOT_WORKING )
-GAMEL( 1990, royalcrdg, royalcrd, royalcd1, royalcrd,  funworld_state, 0,        ROT0, "bootleg",           "Royal Card (Austrian, set 7, CMC C1030 HW)",      0,                       layout_jollycrd ) // big CPLD
-GAMEL( 1991, royalcrdh, royalcrd, royalcd2, royalcrd,  funworld_state, 0,        ROT0, "TAB Austria",       "Royal Card (Austrian, set 8)",                    0 ,                      layout_jollycrd )
-GAMEL( 1991, royalcdfr, royalcrd, royalcd1, royalcrd,  funworld_state, 0,        ROT0, "TAB Austria",       "Royal Card (French)",                             0,                       layout_jollycrd )
-GAME(  1993, royalcrdp, royalcrd, cuoreuno, royalcrd,  funworld_state, 0,        ROT0, "Digital Dreams",    "Royal Card v2.0 Professional",                    0 )
-GAMEL( 199?, royaljp,   royalcrd, royalcd1, royaljp,   funworld_state, tabblue,  ROT0, "TAB / Video Klein", "Royal Card / Royal Jackpot (with a third draw)(encrypted)",  0,            layout_jollycrd )
-GAMEL( 199?, witchryl,  0,        witchryl, witchryl,  funworld_state, 0,        ROT0, "Video Klein",       "Witch Royal (Export version 2.1)",                0,                       layout_jollycrd )
+GAMEL( 1991, royalcrd,   0,        royalcd2, royalcrd,  funworld_state, empty_init,    ROT0, "TAB Austria",       "Royal Card (German, set 1)",                      0,                       layout_jollycrd )
+GAMEL( 1991, royalcrda,  royalcrd, royalcd2, royalcrd,  funworld_state, empty_init,    ROT0, "TAB Austria",       "Royal Card (German, set 2)",                      0,                       layout_jollycrd )
+GAMEL( 1991, royalcrdb,  royalcrd, royalcd1, royalcrd,  funworld_state, empty_init,    ROT0, "TAB Austria",       "Royal Card (German/Polish, set 3)",               0,                       layout_jollycrd )
+GAMEL( 1991, royalcrdc,  royalcrd, royalcd2, royalcrd,  funworld_state, empty_init,    ROT0, "TAB Austria",       "Royal Card (German, set 4)",                      0,                       layout_jollycrd )
+GAMEL( 1991, royalcrdd,  royalcrd, royalcd1, royalcrd,  funworld_state, empty_init,    ROT0, "TAB Austria",       "Royal Card (German, set 5)",                      0,                       layout_royalcrd )
+GAMEL( 1991, royalcrde,  royalcrd, royalcd1, royalcrd,  funworld_state, empty_init,    ROT0, "TAB Austria",       "Royal Card (German, set 6)",                      0,                       layout_jollycrd )
+GAMEL( 1991, royalcrdt,  royalcrd, royalcd1, royalcrd,  funworld_state, empty_init,    ROT0, "TAB Austria",       "Royal Card (TAB original)",                       0,                       layout_jollycrd )
+GAMEL( 1990, royalcrdg,  royalcrd, royalcd1, royalcrd,  funworld_state, empty_init,    ROT0, "bootleg",           "Royal Card (German, set 7, CMC C1030 HW)",        0,                       layout_jollycrd ) // big CPLD
+GAMEL( 1991, royalcrdh,  royalcrd, royalcd2, royalcrd,  funworld_state, empty_init,    ROT0, "TAB Austria",       "Royal Card (German, set 8)",                      0,                       layout_jollycrd )
+GAMEL( 1991, royalcdfr,  royalcrd, royalcd1, royalcrd,  funworld_state, empty_init,    ROT0, "TAB Austria",       "Royal Card (French)",                             0,                       layout_jollycrd )
+GAME(  1993, royalcrdp,  royalcrd, cuoreuno, royalcrd,  funworld_state, empty_init,    ROT0, "Digital Dreams",    "Royal Card v2.0 Professional",                    0 )
+GAMEL( 199?, royaljp,    royalcrd, royalcd1, royaljp,   funworld_state, init_tabblue,  ROT0, "TAB / Video Klein", "Royal Card / Royal Jackpot (with a third draw)(encrypted)", 0,             layout_jollycrd )
+GAMEL( 199?, witchryl,   0,        witchryl, witchryl,  funworld_state, empty_init,    ROT0, "Video Klein",       "Witch Royal (Export version 2.1)",                0,                       layout_jollycrd )
 
 // Lucky Lady based...
-GAMEL( 1991, lluck3x3,  royalcrd, cuoreuno, royalcrd,  funworld_state, 0,        ROT0, "TAB Austria",       "Lucky Lady (3x3 deal)",                           0,                       layout_jollycrd )
-GAMEL( 1991, lluck4x1,  royalcrd, royalcd1, royalcrd,  funworld_state, 0,        ROT0, "TAB Austria",       "Lucky Lady (4x1 aces)",                           0,                       layout_jollycrd )
+GAMEL( 1991, lluck3x3,   royalcrd, cuoreuno, royalcrd,  funworld_state, empty_init,    ROT0, "TAB Austria",       "Lucky Lady (3x3 deal)",                           0,                       layout_jollycrd )
+GAMEL( 1991, lluck4x1,   royalcrd, royalcd1, royalcrd,  funworld_state, empty_init,    ROT0, "TAB Austria",       "Lucky Lady (4x1 aces)",                           0,                       layout_jollycrd )
 
 // Magic Card 2 based...
-GAMEL( 1996, magicrd2,  0,        magicrd2, magicrd2,  funworld_state, 0,        ROT0, "Impera",            "Magic Card II (Bulgarian)",                       0,                       layout_jollycrd )
-GAMEL( 1996, magicrd2a, magicrd2, magicrd2, magicrd2,  funworld_state, 0,        ROT0, "Impera",            "Magic Card II (Nov, Yugoslavian)",                0,                       layout_jollycrd )
-GAME(  1996, magicrd2b, magicrd2, magicrd2, magicrd2,  funworld_state, magicd2b, ROT0, "Impera",            "Magic Card II (green TAB or Impera board)",       0 )
-GAME(  1996, magicrd2c, magicrd2, magicrd2, magicrd2,  funworld_state, magicd2c, ROT0, "Impera",            "Magic Card II (blue TAB board, encrypted)",       0 )
+GAMEL( 1996, magicrd2,   0,        magicrd2, magicrd2,  magicrd2_state, empty_init,    ROT0, "Impera",            "Magic Card II (Bulgarian)",                       0,                       layout_jollycrd )
+GAMEL( 1996, magicrd2a,  magicrd2, magicrd2, magicrd2,  magicrd2_state, empty_init,    ROT0, "Impera",            "Magic Card II (Nov, Yugoslavian)",                0,                       layout_jollycrd )
+GAME(  1996, magicrd2b,  magicrd2, magicrd2, magicrd2,  magicrd2_state, init_magicd2b, ROT0, "Impera",            "Magic Card II (green TAB or Impera board)",       0 )
+GAME(  1996, magicrd2c,  magicrd2, magicrd2, magicrd2,  magicrd2_state, init_magicd2c, ROT0, "Impera",            "Magic Card II (blue TAB board, encrypted)",       0 )
 
 // Joker Card based...
-GAMEL( 1993, vegasslw,  0,        fw2ndpal, vegasslw,  funworld_state, 0,        ROT0, "Fun World",         "Royal Vegas Joker Card (slow deal)",              0,                       layout_jollycrd )
-GAMEL( 1993, vegasfst,  vegasslw, fw2ndpal, vegasfst,  funworld_state, 0,        ROT0, "Soft Design",       "Royal Vegas Joker Card (fast deal)",              0,                       layout_jollycrd )
-GAMEL( 1993, vegasfte,  vegasslw, fw2ndpal, vegasfte,  funworld_state, 0,        ROT0, "Soft Design",       "Royal Vegas Joker Card (fast deal, English gfx)", 0,                       layout_jollycrd )
-GAMEL( 1993, vegasmil,  vegasslw, fw2ndpal, vegasmil,  funworld_state, 0,        ROT0, "Mile",              "Royal Vegas Joker Card (fast deal, Mile)",        0,                       layout_jollycrd )
+GAMEL( 1993, vegasslw,   0,        fw2ndpal, vegasslw,  funworld_state, empty_init,    ROT0, "Fun World",         "Royal Vegas Joker Card (slow deal)",              0,                       layout_jollycrd )
+GAMEL( 1993, vegasfst,   vegasslw, fw2ndpal, vegasfst,  funworld_state, empty_init,    ROT0, "Soft Design",       "Royal Vegas Joker Card (fast deal)",              0,                       layout_jollycrd )
+GAMEL( 1993, vegasfte,   vegasslw, fw2ndpal, vegasfte,  funworld_state, empty_init,    ROT0, "Soft Design",       "Royal Vegas Joker Card (fast deal, English gfx)", 0,                       layout_jollycrd )
+GAMEL( 1993, vegasmil,   vegasslw, fw2ndpal, vegasmil,  funworld_state, empty_init,    ROT0, "Mile",              "Royal Vegas Joker Card (fast deal, Mile)",        0,                       layout_jollycrd )
 
 // Jolly Joker based...
-GAMEL( 198?, jolyjokr,  0,        fw1stpal, funworld,  funworld_state, 0,        ROT0, "Impera",            "Jolly Joker (98bet, set 1)",                      0,                       layout_jollycrd )
-GAMEL( 198?, jolyjokra, jolyjokr, fw1stpal, jolyjokra, funworld_state, 0,        ROT0, "Impera",            "Jolly Joker (98bet, set 2)",                      0,                       layout_jollycrd )
-GAMEL( 198?, jolyjokrb, jolyjokr, fw1stpal, funworld,  funworld_state, 0,        ROT0, "Impera",            "Jolly Joker (40bet, Croatian hack)",              0,                       layout_jollycrd )
-GAMEL( 198?, jolyjokrc, jolyjokr, fw1stpal, funworld,  funworld_state, 0,        ROT0, "Apple Time",        "Jolly Joker (Apple Time)",                        MACHINE_NOT_WORKING,     layout_jollycrd ) // bad program ROM...
+GAMEL( 199?, jolyjokr,   0,        fw1stpal, funworld,  funworld_state, empty_init,    ROT0, "Impera",            "Jolly Joker (98bet, set 1)",                      0,                       layout_jollycrd )
+GAMEL( 199?, jolyjokra,  jolyjokr, fw1stpal, jolyjokra, funworld_state, empty_init,    ROT0, "Impera",            "Jolly Joker (98bet, set 2)",                      0,                       layout_jollycrd )
+GAMEL( 199?, jolyjokrb1, jolyjokr, fw1stpal, funworld,  funworld_state, empty_init,    ROT0, "Impera",            "Jolly Joker (40bet, higher paytable)",            0,                       layout_jollycrd )
+GAMEL( 199?, jolyjokrb2, jolyjokr, fw1stpal, funworld,  funworld_state, empty_init,    ROT0, "Impera",            "Jolly Joker (40bet, lower paytable)",             0,                       layout_jollycrd )
+GAMEL( 199?, jolyjokrc,  jolyjokr, fw1stpal, funworld,  funworld_state, empty_init,    ROT0, "Apple Time",        "Jolly Joker (Apple Time)",                        MACHINE_NOT_WORKING,     layout_jollycrd )  // bad program ROM...
+GAMEL( 199?, jolyjokro,  jolyjokr, fw2ndpal, funworld,  funworld_state, init_impera16, ROT0, "Impera",            "Jolly Joker (original program, interleaved GFX, Impera logo)",  0,         layout_jollycrd )
+GAMEL( 199?, jolyjokrp,  jolyjokr, fw2ndpal, funworld,  funworld_state, init_impera16, ROT0, "Impera",            "Jolly Joker (original program, interleaved GFX, no logo)",      0,         layout_jollycrd )
+GAMEL( 199?, jolyjokrm,  jolyjokr, fw1stpal, funworld,  funworld_state, empty_init,    ROT0, "Impera",            "Jolly Joker (Solid State module in suicide board)", 0,                     layout_jollycrd )
 
 // Encrypted games...
-GAME(  1992, multiwin,  0,        fw1stpal, funworld,  funworld_state, multiwin, ROT0, "Fun World",         "Multi Win (Ver.0167, encrypted)",                 MACHINE_NOT_WORKING )
-GAME(  1993, powercrd,  0,        fw2ndpal, funworld,  funworld_state, 0,        ROT0, "Fun World",         "Power Card (Ver 0263, encrypted)",                MACHINE_NOT_WORKING )                      // clone of Bonus Card.
-GAME(  1993, megacard,  0,        fw2ndpal, funworld,  funworld_state, 0,        ROT0, "Fun World",         "Mega Card (Ver.0210, encrypted)",                 MACHINE_NOT_WORKING )
-GAME(  1993, jokercrd,  0,        fw2ndpal, funworld,  funworld_state, 0,        ROT0, "Vesely Svet",       "Joker Card (Ver.A267BC, encrypted)",              MACHINE_NOT_WORKING )
-GAME(  198?, saloon,    0,        saloon,   saloon,    funworld_state, saloon,   ROT0, "<unknown>",         "Saloon (French, encrypted)",                      MACHINE_NOT_WORKING )
+GAME(  1992, multiwin,   0,        multiwin, funworld,  multiwin_state, driver_init,   ROT0, "Fun World",         "Multi Win (Ver.0167, encrypted)",                 0 )
+GAME(  1993, powercrd,   0,        powercrd, funworld,  powercrd_state, empty_init,    ROT0, "Fun World",         "Power Card (Ver 0263, encrypted)",                0 ) // clone of Bonus Card.
+GAME(  1993, megacard,   0,        megacard, funworld,  megacard_state, empty_init,    ROT0, "Fun World",         "Mega Card (Ver.0210, encrypted)",                 0 )
+GAME(  1993, jokercrd,   0,        jokercrd, funworld,  jokercrd_state, empty_init,    ROT0, "Amatic Trading",    "Joker Card 300 (Ver.A267BC, encrypted)",          0 )
+GAME(  1991, royalcrdf,  royalcrd, royalcrdf,royalcrdf, royalcrdf_state,driver_init,   ROT0, "Evona Electronic",  "Royal Card (Evona, Polish, encrypted)",           0 )
+GAME(  198?, saloon,     0,        saloon,   saloon,    funworld_state, init_saloon,   ROT0, "<unknown>",         "Saloon (French, encrypted)",                      0 )
+GAME(  198?, nevadafw,   0,        saloon,   saloon,    funworld_state, init_saloon,   ROT0, "<unknown>",         "Nevada (French, encrypted)",                      0 )
 
 // Encrypted TAB blue PCB...
-GAMEL( 199?, jolycdit,  jollycrd, cuoreuno, jolycdit,  funworld_state, tabblue,  ROT0, "bootleg",           "Jolly Card (Italian, blue TAB board, encrypted)", 0,                       layout_royalcrd )
-GAMEL( 1990, jolycdib,  jollycrd, cuoreuno, jolycdib,  funworld_state, tabblue,  ROT0, "bootleg",           "Jolly Card (Italian, encrypted bootleg, set 1)",  0,                       layout_jollycrd ) // not a real TAB blue PCB
-GAMEL( 1993, jolycdic,  jollycrd, cuoreuno, jolycdic,  funworld_state, tabblue,  ROT0, "bootleg",           "Jolly Card (Italian, encrypted bootleg, set 2)",  0,                       layout_jollycrd ) // not a real TAB blue PCB
+GAMEL( 199?, jolycdit,   jollycrd, cuoreuno, jolycdit,  funworld_state, init_tabblue,  ROT0, "bootleg",           "Jolly Card (Italian, blue TAB board, encrypted)", 0,                       layout_royalcrd )
+GAMEL( 1990, jolycdib,   jollycrd, cuoreuno, jolycdib,  funworld_state, init_tabblue,  ROT0, "bootleg",           "Jolly Card (Italian, encrypted bootleg, set 1)",  0,                       layout_jollycrd ) // not a real TAB blue PCB
+GAMEL( 1993, jolycdic,   jollycrd, cuoreuno, jolycdic,  funworld_state, init_tabblue,  ROT0, "bootleg",           "Jolly Card (Italian, encrypted bootleg, set 2)",  0,                       layout_jollycrd ) // not a real TAB blue PCB
+GAMEL( 1993, jolycdii,   jollycrd, cuoreuno, jolycdib,  funworld_state, init_tabblue,  ROT0, "bootleg (Cleco)",   "Jolly Card (Italian, encrypted bootleg, set 3)",  0,                       layout_jollycrd ) // Cleco bootleg PCB
 
 // Dino 4 encrypted hardware...
-GAMEL( 1997, pool10e,   pool10,   cuoreuno, cuoreuno,  funworld_state, dino4,    ROT0, "C.M.C.",            "Pool 10 (Italian, Dino 4 hardware, encrypted)",   0,                       layout_jollycrd )
-GAME ( 1998, rcdino4,   0,        rcdino4,  rcdino4,   funworld_state, rcdino4,  ROT0, "<unknown>",         "Royal Card (Italian, Dino 4 hardware, encrypted)",0 )
-GAMEL( 1998, chinatow,  0,        chinatow, chinatow,  funworld_state, rcdinch,  ROT0, "<unknown>",         "China Town (Ver 1B, Dino4 HW)",                   0,                       layout_jollycrd )
+GAMEL( 1997, pool10e,    pool10,   cuoreuno, cuoreuno,  funworld_state, init_dino4,    ROT0, "C.M.C.",            "Pool 10 (Italian, Dino 4 hardware, encrypted)",   0,                       layout_jollycrd )
+GAME(  1998, rcdino4,    0,        rcdino4,  rcdino4,   chinatow_state, init_rcdino4,  ROT0, "<unknown>",         "Royal Card (Italian, Dino 4 hardware, encrypted)",0 )
+GAMEL( 1998, chinatow,   0,        chinatow, chinatow,  chinatow_state, init_rcdinch,  ROT0, "<unknown>",         "China Town (Ver 1B, Dino4 HW)",                   0,                       layout_jollycrd )
 
 // MCU based games...
-GAME(  199?, mongolnw,  0,        royalcd1, royalcrd,  funworld_state, mongolnw, ROT0, "<unknown>",         "Mongolfier New (Italian)",                        MACHINE_UNEMULATED_PROTECTION )
-GAME(  199?, soccernw,  0,        royalcd1, royalcrd,  funworld_state, soccernw, ROT0, "<unknown>",         "Soccer New (Italian)",                            MACHINE_UNEMULATED_PROTECTION )
+GAME(  199?, mongolnw,   0,        royalcd1, royalcrd,  funworld_state, init_mongolnw, ROT0, "<unknown>",         "Mongolfier New (Italian)",                        MACHINE_UNEMULATED_PROTECTION )
+GAME(  199?, soccernw,   0,        royalcd1, royalcrd,  funworld_state, init_soccernw, ROT0, "<unknown>",         "Soccer New (Italian)",                            MACHINE_UNEMULATED_PROTECTION )
+
+// Quiz games...
+GAME(  199?, funquiz,    0,        funquiz,  funquiz,   funworld_state, empty_init,    ROT0, "Fun World",         "Fun World Quiz (German)",                         0 )
+GAME(  1990, funquiza,   0,        funquiz,  funquiza,  funworld_state, empty_init,    ROT0, "Fun World",         "Fun World Quiz (German, 12-11-1990)",             0 )
+GAME(  1990, funquizb,   0,        funquiz,  funquiza,  funworld_state, empty_init,    ROT0, "Fun World",         "Fun World Quiz (German, 27-04-1990)",             0 )
 
 // Other games...
-GAME(  198?, funquiz,   0,        funquiz,  funquiz,   funworld_state, 0,        ROT0, "Fun World / Oehlinger", "Fun World Quiz (Austrian)",                   0 )
-GAMEL( 1986, novoplay,  0,        fw2ndpal, novoplay,  funworld_state, 0,        ROT0, "Admiral/Novomatic",     "Novo Play Multi Card / Club Card",            0,                       layout_novoplay )
-GAME(  1991, intrgmes,  0,        intrgmes, funworld,  funworld_state, 0,        ROT0, "Inter Games",           "Unknown Inter Games poker",                   MACHINE_NOT_WORKING )
-GAMEL( 1985, fw_a7_11,  0,        fw_a7_11, funworld,  funworld_state, 0,        ROT0, "Fun World",             "Unknown Fun World A7-11 game 1",              MACHINE_NOT_WORKING,     layout_jollycrd )
-GAMEL( 1985, fw_a7_11a, fw_a7_11, fw_a7_11, funworld,  funworld_state, 0,        ROT0, "Fun World",             "Unknown Fun World A7-11 game 2",              MACHINE_NOT_WORKING,     layout_jollycrd )
-GAMEL( 1991, fw_a0_1,   0,        fw_a7_11, funworld,  funworld_state, 0,        ROT0, "Fun World",             "Unknown Fun World A0-1 game",                 MACHINE_NOT_WORKING,     layout_jollycrd )
+GAMEL( 1986, novoplay,   0,        fw2ndpal,   novoplay,  funworld_state,   empty_init,   ROT0, "Admiral/Novomatic", "Novo Play Multi Card / Club Card",             0,                       layout_novoplay )
+GAME(  1991, intrgmes,   0,        intrgmes,   intrgmes,  intergames_state, empty_init,   ROT0, "Inter Games",       "Joker Card (Inter Games)",                     0 )
+GAMEL( 1985, fw_a7_11,   0,        fw_brick_2, fw_brick1, funworld_state,   empty_init,   ROT0, "Fun World",         "unknown Fun World A7-11 game 1",               MACHINE_NOT_WORKING,     layout_jollycrd )
+GAMEL( 1985, fw_a7_11a,  fw_a7_11, fw_brick_2, fw_brick1, funworld_state,   empty_init,   ROT0, "Fun World",         "unknown Fun World A7-11 game 2",               MACHINE_NOT_WORKING,     layout_jollycrd )
+GAMEL( 1991, fw_a0_1,    0,        fw_brick_2, fw_brick1, funworld_state,   empty_init,   ROT0, "Fun World",         "unknown Fun World A0-1 game",                  MACHINE_NOT_WORKING,     layout_jollycrd )
+GAMEL( 1991, jokcrdep,   0,        fw_brick_2, fw_brick1, funworld_state,   empty_init,   ROT0, "Fun World",         "Joker Card / Multi Card (Epoxy brick CPU)",    MACHINE_NOT_WORKING,     layout_jollycrd )
+GAMEL( 199?, gratispk,   0,        gratispk,   funworld,  funworld_state,   empty_init,   ROT0, "Mega Soft",         "Gratis Poker (V.204, set 1)",                  0,                       layout_jollycrd )
+GAMEL( 199?, gratispka,  gratispk, gratispk,   funworld,  funworld_state,   empty_init,   ROT0, "Mega Soft",         "Gratis Poker (V.204, set 2)",                  0,                       layout_jollycrd )
+GAMEL( 1995, nkoulit,    royalcrd, royalcd1,   royalcrd,  funworld_state,   init_tabblue, ROT0, "JK Amusement",      "Gkoulit (encrypted GFX)",                      0,                       layout_jollycrd )
+GAMEL( 1999, reflexcrd,  royalcrd, royalcd1,   royalcrd,  funworld_state,   empty_init,   ROT0, "TAB Austria",       "Reflex Cards (English, serial protected)",     0,                       layout_jollycrd )
 
 // These are 2-in-1 stealth boards, they can run the Poker game, or, using completely separate hardware on the same PCB, a NES / MSX Multigames!
-GAMEL( 1991, royalcrd_nes,  royalcrd, royalcd2, royalcrd, funworld_state, 0,     ROT0, "bootleg",       "Royal Card (stealth with NES multigame)",  MACHINE_NOT_WORKING,     layout_jollycrd )
-GAMEL( 1991, royalcrd_msx,  royalcrd, royalcd2, royalcrd, funworld_state, 0,     ROT0, "bootleg",       "Royal Card (stealth with MSX multigame)",  MACHINE_NOT_WORKING,     layout_jollycrd )
-
+GAMEL( 1991, royalcrd_nes,  royalcrd, royalcd2, royalcrd, funworld_state, empty_init, ROT0, "bootleg",         "Royal Card (stealth with NES multigame)",         MACHINE_NOT_WORKING,     layout_jollycrd )
+GAMEL( 1991, royalcrd_msx,  royalcrd, royalcd2, royalcrd, funworld_state, empty_init, ROT0, "bootleg",         "Royal Card (stealth with MSX multigame)",         MACHINE_NOT_WORKING,     layout_jollycrd )

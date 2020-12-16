@@ -28,15 +28,15 @@ TILE_GET_INFO_MEMBER(taitojc_state::taitojc_tile_info)
 	uint32_t val = m_tile_ram[tile_index];
 	int color = (val >> 22) & 0xff;
 	int tile = (val >> 2) & 0x7f;
-	SET_TILE_INFO_MEMBER(m_gfx_index, tile, color, 0);
+	tileinfo.set(m_gfx_index, tile, color, 0);
 }
 
-READ32_MEMBER(taitojc_state::taitojc_palette_r)
+uint32_t taitojc_state::taitojc_palette_r(offs_t offset)
 {
 	return m_palette_ram[offset];
 }
 
-WRITE32_MEMBER(taitojc_state::taitojc_palette_w)
+void taitojc_state::taitojc_palette_w(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
 	int r, g, b;
 	uint32_t color;
@@ -51,23 +51,23 @@ WRITE32_MEMBER(taitojc_state::taitojc_palette_w)
 	m_palette->set_pen_color(offset, rgb_t(r, g, b));
 }
 
-READ32_MEMBER(taitojc_state::taitojc_tile_r)
+uint32_t taitojc_state::taitojc_tile_r(offs_t offset)
 {
 	return m_tile_ram[offset];
 }
 
-READ32_MEMBER(taitojc_state::taitojc_char_r)
+uint32_t taitojc_state::taitojc_char_r(offs_t offset)
 {
 	return m_char_ram[offset];
 }
 
-WRITE32_MEMBER(taitojc_state::taitojc_tile_w)
+void taitojc_state::taitojc_tile_w(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
 	COMBINE_DATA(m_tile_ram.get() + offset);
 	m_tilemap->mark_tile_dirty(offset);
 }
 
-WRITE32_MEMBER(taitojc_state::taitojc_char_w)
+void taitojc_state::taitojc_char_w(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
 	COMBINE_DATA(m_char_ram.get() + offset);
 	m_gfxdecode->gfx(m_gfx_index)->mark_dirty(offset/32);
@@ -309,7 +309,7 @@ void taitojc_state::video_start()
 
 	assert(m_gfx_index != MAX_GFX_ELEMENTS);
 
-	m_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(taitojc_state::taitojc_tile_info),this), TILEMAP_SCAN_ROWS, 16, 16, 64, 64);
+	m_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(taitojc_state::taitojc_tile_info)), TILEMAP_SCAN_ROWS, 16, 16, 64, 64);
 
 	m_tilemap->set_transparent_pen(0);
 
@@ -355,15 +355,15 @@ uint32_t taitojc_state::screen_update_dendego(screen_device &screen, bitmap_ind1
 	for (level = 5; level > 0; level--)
 		if (btn == dendego_mascon_table[level]) break;
 
-	if (level != output().get_value("counter0"))
-		output().set_value("counter0", level);
+	if (level != m_counters[0])
+		m_counters[0] = level;
 
 	btn = m_analog_ports[0]->read() & 0xff;
 	for (level = 10; level > 0; level--)
 		if (btn >= dendego_brake_table[level]) break;
 
-	if (level != output().get_value("counter1"))
-		output().set_value("counter1", level);
+	if (level != m_counters[1])
+		m_counters[1] = level;
 
 	return screen_update_taitojc(screen, bitmap, cliprect);
 }

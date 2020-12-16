@@ -21,16 +21,6 @@
 #define K7659_KEYBOARD_TAG  "k7659kb"
 
 
-
-//**************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_K7659_KEYBOARD_ADD() \
-	MCFG_DEVICE_ADD(K7659_KEYBOARD_TAG, K7659_KEYBOARD, 0)
-
-
-
 //**************************************************************************
 //  TYPE DEFINITIONS
 //**************************************************************************
@@ -43,7 +33,7 @@ public:
 	// construction/destruction
 	k7659_keyboard_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	DECLARE_READ8_MEMBER(read);
+	uint8_t read();
 
 protected:
 	// device-level overrides
@@ -67,7 +57,6 @@ private:
 
 
 // device type definition
-extern const device_type K7659_KEYBOARD;
 DECLARE_DEVICE_TYPE(K7659_KEYBOARD, k7659_keyboard_device)
 
 

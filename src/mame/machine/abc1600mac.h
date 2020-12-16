@@ -23,18 +23,6 @@
 #define ABC1600_MAC_TAG "mac"
 
 
-
-///*************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-///*************************************************************************
-
-#define MCFG_ABC1600_MAC_ADD(_cpu_tag, _program_map) \
-	MCFG_DEVICE_ADD(ABC1600_MAC_TAG, ABC1600_MAC, 0) \
-	MCFG_DEVICE_ADDRESS_MAP(AS_PROGRAM, _program_map) \
-	downcast<abc1600_mac_device *>(device)->set_cpu_tag(_cpu_tag);
-
-
-
 ///*************************************************************************
 //  TYPE DEFINITIONS
 ///*************************************************************************
@@ -47,31 +35,32 @@ class abc1600_mac_device : public device_t,
 public:
 	abc1600_mac_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	void set_cpu_tag(const char *cpu_tag) { m_cpu_tag = cpu_tag; }
+	template <typename T> void set_cpu_tag(T &&tag) { m_cpu.set_tag(std::forward<T>(tag)); }
 
-	virtual DECLARE_ADDRESS_MAP(map, 8);
+	virtual void map(address_map &map);
 
-	DECLARE_READ8_MEMBER( cause_r );
-	DECLARE_WRITE8_MEMBER( task_w );
-	DECLARE_READ8_MEMBER( segment_r );
-	DECLARE_WRITE8_MEMBER( segment_w );
-	DECLARE_READ8_MEMBER( page_r );
-	DECLARE_WRITE8_MEMBER( page_w );
-	DECLARE_WRITE8_MEMBER( dmamap_w );
+	uint8_t cause_r();
+	void task_w(offs_t offset, uint8_t data);
+	uint8_t segment_r(offs_t offset);
+	void segment_w(offs_t offset, uint8_t data);
+	uint8_t page_r(offs_t offset);
+	void page_w(offs_t offset, uint8_t data);
+	void dmamap_w(offs_t offset, uint8_t data);
 
-	DECLARE_READ8_MEMBER( dma0_mreq_r ) { return dma_mreq_r(DMAMAP_R0_LO, offset); }
-	DECLARE_WRITE8_MEMBER( dma0_mreq_w ) { dma_mreq_w(DMAMAP_R0_LO, offset, data); }
-	DECLARE_READ8_MEMBER( dma0_iorq_r ) { return dma_iorq_r(DMAMAP_R0_LO, offset); }
-	DECLARE_WRITE8_MEMBER( dma0_iorq_w ) { dma_iorq_w(DMAMAP_R0_LO, offset, data); }
-	DECLARE_READ8_MEMBER( dma1_mreq_r ) { return dma_mreq_r(DMAMAP_R1_LO, offset); }
-	DECLARE_WRITE8_MEMBER( dma1_mreq_w ) { dma_mreq_w(DMAMAP_R1_LO, offset, data); }
-	DECLARE_READ8_MEMBER( dma1_iorq_r ) { return dma_iorq_r(DMAMAP_R1_LO, offset); }
-	DECLARE_WRITE8_MEMBER( dma1_iorq_w ) { dma_iorq_w(DMAMAP_R1_LO, offset, data); }
-	DECLARE_READ8_MEMBER( dma2_mreq_r ) { return dma_mreq_r(DMAMAP_R2_LO, offset); }
-	DECLARE_WRITE8_MEMBER( dma2_mreq_w ) { dma_mreq_w(DMAMAP_R2_LO, offset, data); }
-	DECLARE_READ8_MEMBER( dma2_iorq_r ) { return dma_iorq_r(DMAMAP_R2_LO, offset); }
-	DECLARE_WRITE8_MEMBER( dma2_iorq_w ) { dma_iorq_w(DMAMAP_R2_LO, offset, data); }
+	uint8_t dma0_mreq_r(offs_t offset) { return dma_mreq_r(DMAMAP_R0_LO, offset); }
+	void dma0_mreq_w(offs_t offset, uint8_t data) { dma_mreq_w(DMAMAP_R0_LO, offset, data); }
+	uint8_t dma0_iorq_r(offs_t offset) { return dma_iorq_r(DMAMAP_R0_LO, offset); }
+	void dma0_iorq_w(offs_t offset, uint8_t data) { dma_iorq_w(DMAMAP_R0_LO, offset, data); }
+	uint8_t dma1_mreq_r(offs_t offset) { return dma_mreq_r(DMAMAP_R1_LO, offset); }
+	void dma1_mreq_w(offs_t offset, uint8_t data) { dma_mreq_w(DMAMAP_R1_LO, offset, data); }
+	uint8_t dma1_iorq_r(offs_t offset) { return dma_iorq_r(DMAMAP_R1_LO, offset); }
+	void dma1_iorq_w(offs_t offset, uint8_t data) { dma_iorq_w(DMAMAP_R1_LO, offset, data); }
+	uint8_t dma2_mreq_r(offs_t offset) { return dma_mreq_r(DMAMAP_R2_LO, offset); }
+	void dma2_mreq_w(offs_t offset, uint8_t data) { dma_mreq_w(DMAMAP_R2_LO, offset, data); }
+	uint8_t dma2_iorq_r(offs_t offset) { return dma_iorq_r(DMAMAP_R2_LO, offset); }
+	void dma2_iorq_w(offs_t offset, uint8_t data) { dma_iorq_w(DMAMAP_R2_LO, offset, data); }
 
+	void program_map(address_map &map);
 protected:
 	// device-level overrides
 	virtual void device_start() override;
@@ -95,8 +84,8 @@ private:
 		DMAMAP_R0_HI
 	};
 
-	DECLARE_READ8_MEMBER( read );
-	DECLARE_WRITE8_MEMBER( write );
+	uint8_t read(offs_t offset);
+	void write(offs_t offset, uint8_t data);
 
 	int get_current_task(offs_t offset);
 	offs_t get_segment_address(offs_t offset);
@@ -105,8 +94,8 @@ private:
 	uint8_t read_user_memory(offs_t offset);
 	void write_user_memory(offs_t offset, uint8_t data);
 	int get_fc();
-	uint8_t read_supervisor_memory(address_space &space, offs_t offset);
-	void write_supervisor_memory(address_space &space, offs_t offset, uint8_t data);
+	uint8_t read_supervisor_memory(offs_t offset);
+	void write_supervisor_memory(offs_t offset, uint8_t data);
 	offs_t get_dma_address(int index, uint16_t offset);
 	uint8_t dma_mreq_r(int index, uint16_t offset);
 	void dma_mreq_w(int index, uint16_t offset, uint8_t data);
@@ -121,8 +110,7 @@ private:
 
 	required_device<watchdog_timer_device> m_watchdog;
 
-	const char *m_cpu_tag;
-	m68000_base_device *m_cpu;
+	required_device<m68000_base_device> m_cpu;
 
 	int m_ifc2;
 	uint8_t m_task;

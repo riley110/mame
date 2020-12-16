@@ -7,15 +7,21 @@
     various SNK triple Z80 games
 
 *************************************************************************/
+#ifndef MAME_INCLUDES_SNK_H
+#define MAME_INCLUDES_SNK_H
+
+#pragma once
 
 #include "machine/gen_latch.h"
+#include "emupal.h"
 #include "screen.h"
+#include "tilemap.h"
 
 class snk_state : public driver_device
 {
 public:
-	snk_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
+	snk_state(const machine_config &mconfig, device_type type, const char *tag) :
+		driver_device(mconfig, type, tag),
 		m_maincpu(*this, "maincpu"),
 		m_audiocpu(*this, "audiocpu"),
 		m_subcpu(*this, "sub"),
@@ -26,8 +32,45 @@ public:
 		m_spriteram(*this, "spriteram"),
 		m_fg_videoram(*this, "fg_videoram"),
 		m_bg_videoram(*this, "bg_videoram"),
-		m_tx_videoram(*this, "tx_videoram") { }
+		m_tx_videoram(*this, "tx_videoram"),
+		m_rot_io(*this, "P%uROT", 1U),
+		m_trackball_x_io(*this, "TRACKBALLX%u", 1U),
+		m_trackball_y_io(*this, "TRACKBALLY%u", 1U),
+		m_joymode_io(*this, "JOYSTICK_MODE"),
+		m_bonus_io(*this, "BONUS")
+	{ }
 
+	void gwar(machine_config &config);
+	void psychos(machine_config &config);
+	void fitegolf(machine_config &config);
+	void countryc(machine_config &config);
+	void tdfever2(machine_config &config);
+	void aso(machine_config &config);
+	void gwara(machine_config &config);
+	void tdfever(machine_config &config);
+	void fitegolf2(machine_config &config);
+	void jcross(machine_config &config);
+	void choppera(machine_config &config);
+	void tnk3(machine_config &config);
+	void victroad(machine_config &config);
+	void chopper1(machine_config &config);
+	void vangrd2(machine_config &config);
+	void bermudat(machine_config &config);
+	void hal21(machine_config &config);
+	void marvins(machine_config &config);
+	void athena(machine_config &config);
+	void ikari(machine_config &config);
+	void sgladiat(machine_config &config);
+	void madcrush(machine_config &config);
+
+	DECLARE_READ_LINE_MEMBER(sound_busy_r);
+	template <int Which> DECLARE_CUSTOM_INPUT_MEMBER(gwar_rotary);
+	template <int Which> DECLARE_CUSTOM_INPUT_MEMBER(gwarb_rotary);
+	DECLARE_CUSTOM_INPUT_MEMBER(countryc_trackball_x);
+	DECLARE_CUSTOM_INPUT_MEMBER(countryc_trackball_y);
+	template <int Mask> DECLARE_CUSTOM_INPUT_MEMBER(snk_bonus_r);
+
+private:
 	required_device<cpu_device> m_maincpu;
 	required_device<cpu_device> m_audiocpu;
 	required_device<cpu_device> m_subcpu;
@@ -41,11 +84,16 @@ public:
 	required_shared_ptr<uint8_t> m_bg_videoram;
 	required_shared_ptr<uint8_t> m_tx_videoram;
 
+	optional_ioport_array<2> m_rot_io;
+	optional_ioport_array<2> m_trackball_x_io;
+	optional_ioport_array<2> m_trackball_y_io;
+	optional_ioport m_joymode_io;
+	optional_ioport m_bonus_io;
+
 	int m_countryc_trackball;
 	int m_last_value[2];
 	int m_cp_count[2];
 
-	int m_marvins_sound_busy_flag;
 	// FIXME this should be initialised on machine reset
 	int m_sound_status;
 
@@ -75,94 +123,85 @@ public:
 	int m_tc16_posx;
 	int m_tc32_posy;
 	int m_tc32_posx;
-	DECLARE_READ8_MEMBER(snk_cpuA_nmi_trigger_r);
-	DECLARE_WRITE8_MEMBER(snk_cpuA_nmi_ack_w);
-	DECLARE_READ8_MEMBER(snk_cpuB_nmi_trigger_r);
-	DECLARE_WRITE8_MEMBER(snk_cpuB_nmi_ack_w);
-	DECLARE_WRITE8_MEMBER(marvins_soundlatch_w);
-	DECLARE_READ8_MEMBER(marvins_soundlatch_r);
-	DECLARE_READ8_MEMBER(marvins_sound_nmi_ack_r);
-	DECLARE_WRITE8_MEMBER(sgladiat_soundlatch_w);
-	DECLARE_READ8_MEMBER(sgladiat_soundlatch_r);
-	DECLARE_READ8_MEMBER(sgladiat_sound_nmi_ack_r);
-	DECLARE_READ8_MEMBER(sgladiat_sound_irq_ack_r);
-	DECLARE_WRITE8_MEMBER(snk_soundlatch_w);
-	DECLARE_READ8_MEMBER(snk_sound_status_r);
-	DECLARE_WRITE8_MEMBER(snk_sound_status_w);
-	DECLARE_READ8_MEMBER(tnk3_cmdirq_ack_r);
-	DECLARE_READ8_MEMBER(tnk3_ymirq_ack_r);
-	DECLARE_READ8_MEMBER(tnk3_busy_clear_r);
-	DECLARE_WRITE8_MEMBER(hardflags_scrollx_w);
-	DECLARE_WRITE8_MEMBER(hardflags_scrolly_w);
-	DECLARE_WRITE8_MEMBER(hardflags_scroll_msb_w);
-	DECLARE_READ8_MEMBER(hardflags1_r);
-	DECLARE_READ8_MEMBER(hardflags2_r);
-	DECLARE_READ8_MEMBER(hardflags3_r);
-	DECLARE_READ8_MEMBER(hardflags4_r);
-	DECLARE_READ8_MEMBER(hardflags5_r);
-	DECLARE_READ8_MEMBER(hardflags6_r);
-	DECLARE_READ8_MEMBER(hardflags7_r);
-	DECLARE_WRITE8_MEMBER(turbocheck16_1_w);
-	DECLARE_WRITE8_MEMBER(turbocheck16_2_w);
-	DECLARE_WRITE8_MEMBER(turbocheck32_1_w);
-	DECLARE_WRITE8_MEMBER(turbocheck32_2_w);
-	DECLARE_WRITE8_MEMBER(turbocheck_msb_w);
-	DECLARE_READ8_MEMBER(turbocheck16_1_r);
-	DECLARE_READ8_MEMBER(turbocheck16_2_r);
-	DECLARE_READ8_MEMBER(turbocheck16_3_r);
-	DECLARE_READ8_MEMBER(turbocheck16_4_r);
-	DECLARE_READ8_MEMBER(turbocheck16_5_r);
-	DECLARE_READ8_MEMBER(turbocheck16_6_r);
-	DECLARE_READ8_MEMBER(turbocheck16_7_r);
-	DECLARE_READ8_MEMBER(turbocheck16_8_r);
-	DECLARE_READ8_MEMBER(turbocheck32_1_r);
-	DECLARE_READ8_MEMBER(turbocheck32_2_r);
-	DECLARE_READ8_MEMBER(turbocheck32_3_r);
-	DECLARE_READ8_MEMBER(turbocheck32_4_r);
-	DECLARE_WRITE8_MEMBER(athena_coin_counter_w);
-	DECLARE_WRITE8_MEMBER(ikari_coin_counter_w);
-	DECLARE_WRITE8_MEMBER(tdfever_coin_counter_w);
-	DECLARE_WRITE8_MEMBER(countryc_trackball_w);
-	DECLARE_WRITE8_MEMBER(snk_tx_videoram_w);
-	DECLARE_WRITE8_MEMBER(marvins_fg_videoram_w);
-	DECLARE_WRITE8_MEMBER(marvins_bg_videoram_w);
-	DECLARE_WRITE8_MEMBER(snk_bg_videoram_w);
-	DECLARE_WRITE8_MEMBER(snk_fg_scrollx_w);
-	DECLARE_WRITE8_MEMBER(snk_fg_scrolly_w);
-	DECLARE_WRITE8_MEMBER(snk_bg_scrollx_w);
-	DECLARE_WRITE8_MEMBER(snk_bg_scrolly_w);
-	DECLARE_WRITE8_MEMBER(snk_sp16_scrollx_w);
-	DECLARE_WRITE8_MEMBER(snk_sp16_scrolly_w);
-	DECLARE_WRITE8_MEMBER(snk_sp32_scrollx_w);
-	DECLARE_WRITE8_MEMBER(snk_sp32_scrolly_w);
-	DECLARE_WRITE8_MEMBER(snk_sprite_split_point_w);
-	DECLARE_WRITE8_MEMBER(marvins_palette_bank_w);
-	DECLARE_WRITE8_MEMBER(marvins_flipscreen_w);
-	DECLARE_WRITE8_MEMBER(sgladiat_flipscreen_w);
-	DECLARE_WRITE8_MEMBER(hal21_flipscreen_w);
-	DECLARE_WRITE8_MEMBER(marvins_scroll_msb_w);
-	DECLARE_WRITE8_MEMBER(jcross_scroll_msb_w);
-	DECLARE_WRITE8_MEMBER(sgladiat_scroll_msb_w);
-	DECLARE_WRITE8_MEMBER(aso_videoattrs_w);
-	DECLARE_WRITE8_MEMBER(tnk3_videoattrs_w);
-	DECLARE_WRITE8_MEMBER(aso_bg_bank_w);
-	DECLARE_WRITE8_MEMBER(ikari_bg_scroll_msb_w);
-	DECLARE_WRITE8_MEMBER(ikari_sp_scroll_msb_w);
-	DECLARE_WRITE8_MEMBER(ikari_unknown_video_w);
-	DECLARE_WRITE8_MEMBER(gwar_tx_bank_w);
-	DECLARE_WRITE8_MEMBER(gwar_videoattrs_w);
-	DECLARE_WRITE8_MEMBER(gwara_videoattrs_w);
-	DECLARE_WRITE8_MEMBER(gwara_sp_scroll_msb_w);
-	DECLARE_WRITE8_MEMBER(tdfever_sp_scroll_msb_w);
-	DECLARE_WRITE8_MEMBER(tdfever_spriteram_w);
-	DECLARE_CUSTOM_INPUT_MEMBER(marvins_sound_busy);
-	DECLARE_CUSTOM_INPUT_MEMBER(snk_sound_busy);
-	DECLARE_CUSTOM_INPUT_MEMBER(gwar_rotary);
-	DECLARE_CUSTOM_INPUT_MEMBER(gwarb_rotary);
-	DECLARE_CUSTOM_INPUT_MEMBER(countryc_trackball_x);
-	DECLARE_CUSTOM_INPUT_MEMBER(countryc_trackball_y);
-	DECLARE_CUSTOM_INPUT_MEMBER(snk_bonus_r);
-	DECLARE_DRIVER_INIT(countryc);
+	uint8_t snk_cpuA_nmi_trigger_r();
+	void snk_cpuA_nmi_ack_w(uint8_t data);
+	uint8_t snk_cpuB_nmi_trigger_r();
+	void snk_cpuB_nmi_ack_w(uint8_t data);
+	uint8_t marvins_sound_nmi_ack_r();
+	void sgladiat_soundlatch_w(uint8_t data);
+	uint8_t sgladiat_soundlatch_r();
+	uint8_t sgladiat_sound_nmi_ack_r();
+	uint8_t sgladiat_sound_irq_ack_r();
+	void snk_soundlatch_w(uint8_t data);
+	uint8_t snk_sound_status_r();
+	void snk_sound_status_w(uint8_t data);
+	uint8_t tnk3_cmdirq_ack_r();
+	uint8_t tnk3_ymirq_ack_r();
+	uint8_t tnk3_busy_clear_r();
+	void hardflags_scrollx_w(uint8_t data);
+	void hardflags_scrolly_w(uint8_t data);
+	void hardflags_scroll_msb_w(uint8_t data);
+	uint8_t hardflags1_r();
+	uint8_t hardflags2_r();
+	uint8_t hardflags3_r();
+	uint8_t hardflags4_r();
+	uint8_t hardflags5_r();
+	uint8_t hardflags6_r();
+	uint8_t hardflags7_r();
+	void turbocheck16_1_w(uint8_t data);
+	void turbocheck16_2_w(uint8_t data);
+	void turbocheck32_1_w(uint8_t data);
+	void turbocheck32_2_w(uint8_t data);
+	void turbocheck_msb_w(uint8_t data);
+	uint8_t turbocheck16_1_r();
+	uint8_t turbocheck16_2_r();
+	uint8_t turbocheck16_3_r();
+	uint8_t turbocheck16_4_r();
+	uint8_t turbocheck16_5_r();
+	uint8_t turbocheck16_6_r();
+	uint8_t turbocheck16_7_r();
+	uint8_t turbocheck16_8_r();
+	uint8_t turbocheck32_1_r();
+	uint8_t turbocheck32_2_r();
+	uint8_t turbocheck32_3_r();
+	uint8_t turbocheck32_4_r();
+	void athena_coin_counter_w(uint8_t data);
+	void ikari_coin_counter_w(uint8_t data);
+	void tdfever_coin_counter_w(uint8_t data);
+	void countryc_trackball_w(uint8_t data);
+	void snk_tx_videoram_w(offs_t offset, uint8_t data);
+	void marvins_fg_videoram_w(offs_t offset, uint8_t data);
+	void marvins_bg_videoram_w(offs_t offset, uint8_t data);
+	void snk_bg_videoram_w(offs_t offset, uint8_t data);
+	void snk_fg_scrollx_w(uint8_t data);
+	void snk_fg_scrolly_w(uint8_t data);
+	void snk_bg_scrollx_w(uint8_t data);
+	void snk_bg_scrolly_w(uint8_t data);
+	void snk_sp16_scrollx_w(uint8_t data);
+	void snk_sp16_scrolly_w(uint8_t data);
+	void snk_sp32_scrollx_w(uint8_t data);
+	void snk_sp32_scrolly_w(uint8_t data);
+	void snk_sprite_split_point_w(uint8_t data);
+	void marvins_palette_bank_w(uint8_t data);
+	void marvins_flipscreen_w(uint8_t data);
+	void sgladiat_flipscreen_w(uint8_t data);
+	void hal21_flipscreen_w(uint8_t data);
+	void marvins_scroll_msb_w(uint8_t data);
+	void jcross_scroll_msb_w(uint8_t data);
+	void sgladiat_scroll_msb_w(uint8_t data);
+	void aso_videoattrs_w(uint8_t data);
+	void tnk3_videoattrs_w(uint8_t data);
+	void aso_bg_bank_w(uint8_t data);
+	void ikari_bg_scroll_msb_w(uint8_t data);
+	void ikari_sp_scroll_msb_w(uint8_t data);
+	void ikari_unknown_video_w(uint8_t data);
+	void gwar_tx_bank_w(uint8_t data);
+	void gwar_videoattrs_w(uint8_t data);
+	void gwara_videoattrs_w(uint8_t data);
+	void gwara_sp_scroll_msb_w(uint8_t data);
+	void tdfever_sp_scroll_msb_w(uint8_t data);
+	void tdfever_spriteram_w(offs_t offset, uint8_t data);
+
 	TILEMAP_MAPPER_MEMBER(marvins_tx_scan_cols);
 	TILE_GET_INFO_MEMBER(marvins_get_tx_tile_info);
 	TILE_GET_INFO_MEMBER(ikari_get_tx_tile_info);
@@ -174,7 +213,7 @@ public:
 	TILE_GET_INFO_MEMBER(ikari_get_bg_tile_info);
 	TILE_GET_INFO_MEMBER(gwar_get_bg_tile_info);
 	DECLARE_VIDEO_START(marvins);
-	DECLARE_PALETTE_INIT(tnk3);
+	void tnk3_palette(palette_device &palette) const;
 	DECLARE_VIDEO_START(jcross);
 	DECLARE_VIDEO_START(tnk3);
 	DECLARE_VIDEO_START(ikari);
@@ -204,4 +243,47 @@ public:
 	int turbofront_check(int small, int num);
 	int turbofront_check8(int small, int num);
 	DECLARE_WRITE_LINE_MEMBER(ymirq_callback_1);
+
+	void Y8950_sound_map(address_map &map);
+	void YM3526_Y8950_sound_map(address_map &map);
+	void YM3526_YM3526_sound_map(address_map &map);
+	void YM3812_Y8950_sound_map(address_map &map);
+	void YM3812_sound_map(address_map &map);
+	void aso_YM3526_sound_map(address_map &map);
+	void aso_cpuA_map(address_map &map);
+	void aso_cpuB_map(address_map &map);
+	void bermudat_cpuA_map(address_map &map);
+	void bermudat_cpuB_map(address_map &map);
+	void countryc_cpuA_map(address_map &map);
+	void gwar_cpuA_map(address_map &map);
+	void gwar_cpuB_map(address_map &map);
+	void gwara_cpuA_map(address_map &map);
+	void gwara_cpuB_map(address_map &map);
+	void hal21_cpuA_map(address_map &map);
+	void hal21_cpuB_map(address_map &map);
+	void hal21_sound_map(address_map &map);
+	void hal21_sound_portmap(address_map &map);
+	void ikari_cpuA_map(address_map &map);
+	void ikari_cpuB_map(address_map &map);
+	void jcross_cpuA_map(address_map &map);
+	void jcross_cpuB_map(address_map &map);
+	void jcross_sound_map(address_map &map);
+	void jcross_sound_portmap(address_map &map);
+	void madcrash_cpuA_map(address_map &map);
+	void madcrash_cpuB_map(address_map &map);
+	void madcrush_cpuA_map(address_map &map);
+	void madcrush_cpuB_map(address_map &map);
+	void marvins_cpuA_map(address_map &map);
+	void marvins_cpuB_map(address_map &map);
+	void marvins_sound_map(address_map &map);
+	void marvins_sound_portmap(address_map &map);
+	void sgladiat_cpuA_map(address_map &map);
+	void sgladiat_cpuB_map(address_map &map);
+	void tdfever_cpuA_map(address_map &map);
+	void tdfever_cpuB_map(address_map &map);
+	void tnk3_YM3526_sound_map(address_map &map);
+	void tnk3_cpuA_map(address_map &map);
+	void tnk3_cpuB_map(address_map &map);
 };
+
+#endif // MAME_INCLUDES_SNK_H

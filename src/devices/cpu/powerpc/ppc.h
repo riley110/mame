@@ -8,16 +8,16 @@
     PowerPC emulator.
 
 ***************************************************************************/
-
 #ifndef MAME_CPU_POWERPC_PPC_H
 #define MAME_CPU_POWERPC_PPC_H
 
 #pragma once
 
-#include "divtlb.h"
 #include "cpu/drcfe.h"
 #include "cpu/drcuml.h"
 #include "cpu/drcumlsh.h"
+
+#include "divtlb.h"
 
 
 /***************************************************************************
@@ -164,18 +164,11 @@ enum
     PUBLIC FUNCTIONS
 ***************************************************************************/
 
-#define MCFG_PPC_BUS_FREQUENCY(_frequency) \
-	ppc_device::set_bus_frequency(*device, _frequency);
-
-
-class ppc_frontend;
-
-
 class ppc_device : public cpu_device, public device_vtlb_interface
 {
-	friend class ppc_frontend;
-
 protected:
+	class frontend;
+
 	/* PowerPC flavors */
 	enum powerpc_flavor
 	{
@@ -213,9 +206,13 @@ protected:
 	ppc_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock, int address_bits, int data_bits, powerpc_flavor flavor, uint32_t cap, uint32_t tb_divisor, address_map_constructor internal_map);
 
 public:
-	static void set_bus_frequency(device_t &device, uint32_t bus_frequency) { downcast<ppc_device &>(device).c_bus_frequency = bus_frequency; }
+	virtual ~ppc_device() override;
 
-	void ppc_set_dcstore_callback(write32_delegate callback);
+	void set_cache_dirty() { m_cache_dirty = true; }
+	void set_bus_frequency(uint32_t bus_frequency) { c_bus_frequency = bus_frequency; }
+	void set_bus_frequency(const XTAL &xtal) { set_bus_frequency(xtal.value()); }
+
+	void ppc_set_dcstore_callback(write32sm_delegate callback);
 
 	void ppcdrc_set_options(uint32_t options);
 	void ppcdrc_add_fastram(offs_t start, offs_t end, uint8_t readonly, void *base);
@@ -231,6 +228,7 @@ public:
 	void ppc_cfunc_printf_debug();
 	void ppc_cfunc_printf_probe();
 	void ppc_cfunc_unimplemented();
+	void ppc_cfunc_ppccom_mismatch();
 	void ppccom_tlb_fill();
 	void ppccom_update_fprf();
 	void ppccom_dcstore_callback();
@@ -252,9 +250,9 @@ protected:
 	virtual void device_stop() override;
 
 	// device_execute_interface overrides
-	virtual uint32_t execute_min_cycles() const override { return 1; }
-	virtual uint32_t execute_max_cycles() const override { return 40; }
-	virtual uint32_t execute_input_lines() const override { return 1; }
+	virtual uint32_t execute_min_cycles() const noexcept override { return 1; }
+	virtual uint32_t execute_max_cycles() const noexcept override { return 40; }
+	virtual uint32_t execute_input_lines() const noexcept override { return 1; }
 	virtual void execute_run() override;
 	virtual void execute_set_input(int inputnum, int state) override;
 
@@ -268,9 +266,7 @@ protected:
 	virtual void state_string_export(const device_state_entry &entry, std::string &str) const override;
 
 	// device_disasm_interface overrides
-	virtual uint32_t disasm_min_opcode_bytes() const override { return 4; }
-	virtual uint32_t disasm_max_opcode_bytes() const override { return 4; }
-	virtual offs_t disasm_disassemble(std::ostream &stream, offs_t pc, const uint8_t *oprom, const uint8_t *opram, uint32_t options) override;
+	virtual std::unique_ptr<util::disasm_interface> create_disassembler() override;
 
 	/* exception types */
 	enum
@@ -296,6 +292,8 @@ protected:
 
 	address_space_config m_program_config;
 	address_space *m_program;
+	memory_access<32, 2, 0, ENDIANNESS_BIG>::cache m_cache32;
+	memory_access<32, 3, 0, ENDIANNESS_BIG>::cache m_cache64;
 	uint32_t c_bus_frequency;
 
 	struct internal_ppc_state
@@ -473,13 +471,15 @@ protected:
 	/* PowerPC 4XX-specific serial port state */
 	struct ppc4xx_spu_state
 	{
+		ppc4xx_spu_state(device_t &owner) : tx_cb(owner) { }
+
 		uint8_t           regs[9];
 		uint8_t           txbuf;
 		uint8_t           rxbuf;
 		emu_timer *     timer;
 		uint8_t           rxbuffer[256];
 		uint32_t          rxin, rxout;
-		write8_delegate tx_cb;
+		write8smo_delegate tx_cb;
 	};
 
 	ppc4xx_spu_state m_spu;
@@ -492,21 +492,22 @@ protected:
 	int             m_buffered_dma_rate[4];
 
 	/* internal stuff */
-	direct_read_data *m_direct;
-	offs_t          m_codexor;
+	std::function<u32 (offs_t)> m_pr32;
+	std::function<const void * (offs_t)> m_prptr;
+
 	uint32_t          m_system_clock;
 	uint32_t          m_cpu_clock;
 	uint64_t          m_tb_zero_cycles;
 	uint64_t          m_dec_zero_cycles;
 	emu_timer *     m_decrementer_int_timer;
 
-	read32_delegate  m_dcr_read_func;
-	write32_delegate m_dcr_write_func;
+	read32sm_delegate  m_dcr_read_func;
+	write32sm_delegate m_dcr_write_func;
 
-	write32_delegate m_dcstore_cb;
+	write32sm_delegate m_dcstore_cb;
 
-	read32_delegate m_ext_dma_read_cb[4];
-	write32_delegate m_ext_dma_write_cb[4];
+	read32_delegate::array<4> m_ext_dma_read_cb;
+	write32sm_delegate::array<4> m_ext_dma_write_cb;
 
 	/* PowerPC function pointers for memory accesses/exceptions */
 #ifdef PPC_H_INCLUDED_FROM_PPC_C
@@ -536,7 +537,7 @@ protected:
 	/* core state */
 	drc_cache           m_cache;                      /* pointer to the DRC code cache */
 	std::unique_ptr<drcuml_state>      m_drcuml;                     /* DRC UML generator state */
-	std::unique_ptr<ppc_frontend>      m_drcfe;                      /* pointer to the DRC front-end state */
+	std::unique_ptr<frontend>          m_drcfe;                      /* pointer to the DRC front-end state */
 	uint32_t              m_drcoptions;                 /* configurable DRC options */
 
 	/* parameters for subroutines */
@@ -638,10 +639,10 @@ protected:
 	void ppc4xx_spu_rx_data(uint8_t data);
 	void ppc4xx_spu_timer_reset();
 	void alloc_handle(drcuml_state *drcuml, uml::code_handle **handleptr, const char *name);
-	void load_fast_iregs(drcuml_block *block);
-	void save_fast_iregs(drcuml_block *block);
-	void load_fast_fregs(drcuml_block *block);
-	void save_fast_fregs(drcuml_block *block);
+	void load_fast_iregs(drcuml_block &block);
+	void save_fast_iregs(drcuml_block &block);
+	void load_fast_fregs(drcuml_block &block);
+	void save_fast_fregs(drcuml_block &block);
 	uint32_t compute_rlw_mask(uint8_t mb, uint8_t me);
 	uint32_t compute_crf_mask(uint8_t crm);
 	uint32_t compute_spr(uint32_t spr);
@@ -656,24 +657,24 @@ protected:
 	void static_generate_swap_tgpr();
 	void static_generate_lsw_entries(int mode);
 	void static_generate_stsw_entries(int mode);
-	void generate_update_mode(drcuml_block *block);
-	void generate_update_cycles(drcuml_block *block, compiler_state *compiler, uml::parameter param, bool allow_exception);
-	void generate_checksum_block(drcuml_block *block, compiler_state *compiler, const opcode_desc *seqhead, const opcode_desc *seqlast);
-	void generate_sequence_instruction(drcuml_block *block, compiler_state *compiler, const opcode_desc *desc);
-	void generate_compute_flags(drcuml_block *block, const opcode_desc *desc, int updatecr, uint32_t xermask, int invertcarry);
-	void generate_shift_flags(drcuml_block *block, const opcode_desc *desc, uint32_t op);
-	void generate_fp_flags(drcuml_block *block, const opcode_desc *desc, int updatefprf);
-	void generate_branch(drcuml_block *block, compiler_state *compiler, const opcode_desc *desc, int source, uint8_t link);
-	void generate_branch_bo(drcuml_block *block, compiler_state *compiler, const opcode_desc *desc, uint32_t bo, uint32_t bi, int source, int link);
-	bool generate_opcode(drcuml_block *block, compiler_state *compiler, const opcode_desc *desc);
-	bool generate_instruction_13(drcuml_block *block, compiler_state *compiler, const opcode_desc *desc);
-	bool generate_instruction_1f(drcuml_block *block, compiler_state *compiler, const opcode_desc *desc);
-	bool generate_instruction_3b(drcuml_block *block, compiler_state *compiler, const opcode_desc *desc);
-	bool generate_instruction_3f(drcuml_block *block, compiler_state *compiler, const opcode_desc *desc);
-	void log_add_disasm_comment(drcuml_block *block, uint32_t pc, uint32_t op);
+	void generate_update_mode(drcuml_block &block);
+	void generate_update_cycles(drcuml_block &block, compiler_state *compiler, uml::parameter param, bool allow_exception);
+	void generate_checksum_block(drcuml_block &block, compiler_state *compiler, const opcode_desc *seqhead, const opcode_desc *seqlast);
+	void generate_sequence_instruction(drcuml_block &block, compiler_state *compiler, const opcode_desc *desc);
+	void generate_compute_flags(drcuml_block &block, const opcode_desc *desc, int updatecr, uint32_t xermask, int invertcarry);
+	void generate_shift_flags(drcuml_block &block, const opcode_desc *desc, uint32_t op);
+	void generate_fp_flags(drcuml_block &block, const opcode_desc *desc, int updatefprf);
+	void generate_branch(drcuml_block &block, compiler_state *compiler, const opcode_desc *desc, int source, uint8_t link);
+	void generate_branch_bo(drcuml_block &block, compiler_state *compiler, const opcode_desc *desc, uint32_t bo, uint32_t bi, int source, int link);
+	bool generate_opcode(drcuml_block &block, compiler_state *compiler, const opcode_desc *desc);
+	bool generate_instruction_13(drcuml_block &block, compiler_state *compiler, const opcode_desc *desc);
+	bool generate_instruction_1f(drcuml_block &block, compiler_state *compiler, const opcode_desc *desc);
+	bool generate_instruction_3b(drcuml_block &block, compiler_state *compiler, const opcode_desc *desc);
+	bool generate_instruction_3f(drcuml_block &block, compiler_state *compiler, const opcode_desc *desc);
+	void log_add_disasm_comment(drcuml_block &block, uint32_t pc, uint32_t op);
 	const char *log_desc_flags_to_string(uint32_t flags);
-	void log_register_list(drcuml_state *drcuml, const char *string, const uint32_t *reglist, const uint32_t *regnostarlist);
-	void log_opcode_desc(drcuml_state *drcuml, const opcode_desc *desclist, int indent);
+	void log_register_list(const char *string, const uint32_t *reglist, const uint32_t *regnostarlist);
+	void log_opcode_desc(const opcode_desc *desclist, int indent);
 
 };
 
@@ -684,7 +685,7 @@ protected:
 //  ppc403_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 //
 //protected:
-//  virtual uint32_t execute_input_lines() const { return 8; }
+//  virtual uint32_t execute_input_lines() const noexcept { return 8; }
 //};
 //
 //
@@ -694,7 +695,7 @@ protected:
 //  ppc405_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 //
 //protected:
-//  virtual uint32_t execute_input_lines() const { return 8; }
+//  virtual uint32_t execute_input_lines() const noexcept { return 8; }
 //};
 
 
@@ -750,21 +751,22 @@ public:
 class ppc4xx_device : public ppc_device
 {
 public:
-	void ppc4xx_spu_set_tx_handler(write8_delegate callback);
+	void ppc4xx_spu_set_tx_handler(write8smo_delegate callback);
 	void ppc4xx_spu_receive_byte(uint8_t byteval);
 
 	void ppc4xx_set_dma_read_handler(int channel, read32_delegate callback, int rate);
-	void ppc4xx_set_dma_write_handler(int channel, write32_delegate callback, int rate);
-	void ppc4xx_set_dcr_read_handler(read32_delegate dcr_read_func);
-	void ppc4xx_set_dcr_write_handler(write32_delegate dcr_write_func);
+	void ppc4xx_set_dma_write_handler(int channel, write32sm_delegate callback, int rate);
+	void ppc4xx_set_dcr_read_handler(read32sm_delegate dcr_read_func);
+	void ppc4xx_set_dcr_write_handler(write32sm_delegate dcr_write_func);
 
-	DECLARE_READ8_MEMBER( ppc4xx_spu_r );
-	DECLARE_WRITE8_MEMBER( ppc4xx_spu_w );
+	uint8_t ppc4xx_spu_r(offs_t offset);
+	void ppc4xx_spu_w(offs_t offset, uint8_t data);
 
+	void internal_ppc4xx(address_map &map);
 protected:
 	ppc4xx_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock, powerpc_flavor flavor, uint32_t cap, uint32_t tb_divisor);
 
-	virtual uint32_t execute_input_lines() const override { return 5; }
+	virtual uint32_t execute_input_lines() const noexcept override { return 5; }
 	virtual void execute_set_input(int inputnum, int state) override;
 };
 
@@ -798,7 +800,7 @@ DECLARE_DEVICE_TYPE(PPC603R,   ppc603r_device)
 DECLARE_DEVICE_TYPE(PPC604,    ppc604_device)
 DECLARE_DEVICE_TYPE(MPC8240,   mpc8240_device)
 DECLARE_DEVICE_TYPE(PPC403GA,  ppc403ga_device)
-DECLARE_DEVICE_TYPE(PPC403GCX, ppc403ga_device)
+DECLARE_DEVICE_TYPE(PPC403GCX, ppc403gcx_device)
 DECLARE_DEVICE_TYPE(PPC405GP,  ppc405gp_device)
 
 #endif  // MAME_CPU_POWERPC_PPC_H

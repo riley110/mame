@@ -42,13 +42,13 @@ protected:
 	virtual void device_add_mconfig(machine_config &config) override;
 
 	// device_vic20_expansion_card_interface overrides
-	virtual uint8_t vic20_cd_r(address_space &space, offs_t offset, uint8_t data, int ram1, int ram2, int ram3, int blk1, int blk2, int blk3, int blk5, int io2, int io3) override;
-	virtual void vic20_cd_w(address_space &space, offs_t offset, uint8_t data, int ram1, int ram2, int ram3, int blk1, int blk2, int blk3, int blk5, int io2, int io3) override;
+	virtual uint8_t vic20_cd_r(offs_t offset, uint8_t data, int ram1, int ram2, int ram3, int blk1, int blk2, int blk3, int blk5, int io2, int io3) override;
+	virtual void vic20_cd_w(offs_t offset, uint8_t data, int ram1, int ram2, int ram3, int blk1, int blk2, int blk3, int blk5, int io2, int io3) override;
 
 private:
 	DECLARE_WRITE_LINE_MEMBER( via0_irq_w );
-	DECLARE_READ8_MEMBER( via0_pb_r );
-	DECLARE_WRITE8_MEMBER( via0_pb_w );
+	uint8_t via0_pb_r();
+	void via0_pb_w(uint8_t data);
 	DECLARE_WRITE_LINE_MEMBER( via1_irq_w );
 
 	required_device<via6522_device> m_via0;

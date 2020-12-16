@@ -5,6 +5,10 @@
     Run and Gun / Slam Dunk
 
 *************************************************************************/
+#ifndef MAME_INCLUDES_RUNGUN_H
+#define MAME_INCLUDES_RUNGUN_H
+
+#pragma once
 
 #include "sound/k054539.h"
 #include "machine/k053252.h"
@@ -12,13 +16,15 @@
 #include "video/k053936.h"
 #include "machine/k054321.h"
 #include "video/konami_helper.h"
+#include "emupal.h"
 #include "screen.h"
+#include "tilemap.h"
 
 class rungun_state : public driver_device
 {
 public:
-	rungun_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
+	rungun_state(const machine_config &mconfig, device_type type, const char *tag) :
+		driver_device(mconfig, type, tag),
 		m_maincpu(*this, "maincpu"),
 		m_soundcpu(*this, "soundcpu"),
 		m_k054539_1(*this, "k054539_1"),
@@ -34,6 +40,15 @@ public:
 		m_sysreg(*this, "sysreg")
 	{ }
 
+	void rng(machine_config &config);
+	void rng_dual(machine_config &config);
+
+protected:
+	virtual void machine_start() override;
+	virtual void machine_reset() override;
+	virtual void video_start() override;
+
+private:
 	/* devices */
 	required_device<cpu_device> m_maincpu;
 	required_device<cpu_device> m_soundcpu;
@@ -74,31 +89,25 @@ public:
 	bool        m_single_screen_mode;
 	uint8_t       m_video_mux_bank;
 
-	DECLARE_READ16_MEMBER(rng_sysregs_r);
-	DECLARE_WRITE16_MEMBER(rng_sysregs_w);
-	DECLARE_WRITE16_MEMBER(sound_cmd1_w);
-	DECLARE_WRITE16_MEMBER(sound_cmd2_w);
-	DECLARE_WRITE16_MEMBER(sound_irq_w);
-	DECLARE_READ16_MEMBER(sound_status_msb_r);
-	DECLARE_WRITE8_MEMBER(sound_status_w);
-	DECLARE_WRITE8_MEMBER(sound_ctrl_w);
-	DECLARE_READ16_MEMBER(rng_ttl_ram_r);
-	DECLARE_WRITE16_MEMBER(rng_ttl_ram_w);
-	DECLARE_READ16_MEMBER(rng_psac2_videoram_r);
-	DECLARE_WRITE16_MEMBER(rng_psac2_videoram_w);
-	DECLARE_READ8_MEMBER(rng_53936_rom_r);
+	uint16_t sysregs_r(offs_t offset, uint16_t mem_mask = ~0);
+	void sysregs_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	void sound_irq_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	void sound_status_w(uint8_t data);
+	void sound_ctrl_w(uint8_t data);
+	uint16_t ttl_ram_r(offs_t offset);
+	void ttl_ram_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t psac2_videoram_r(offs_t offset);
+	void psac2_videoram_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint8_t k53936_rom_r(offs_t offset);
 	TILE_GET_INFO_MEMBER(ttl_get_tile_info);
 	TILE_GET_INFO_MEMBER(get_rng_936_tile_info);
 	DECLARE_WRITE_LINE_MEMBER(k054539_nmi_gen);
-	DECLARE_READ16_MEMBER(palette_read);
-	DECLARE_WRITE16_MEMBER(palette_write);
+	uint16_t palette_read(offs_t offset);
+	void palette_write(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
 
 
 	K055673_CB_MEMBER(sprite_callback);
 
-	virtual void machine_start() override;
-	virtual void machine_reset() override;
-	virtual void video_start() override;
 	uint32_t screen_update_rng(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 
 	uint32_t screen_update_rng_dual_left(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
@@ -108,4 +117,9 @@ public:
 	void   sprite_dma_trigger(void);
 
 	INTERRUPT_GEN_MEMBER(rng_interrupt);
+
+	void rungun_map(address_map &map);
+	void rungun_sound_map(address_map &map);
 };
+
+#endif // MAME_INCLUDES_RUNGUN_H

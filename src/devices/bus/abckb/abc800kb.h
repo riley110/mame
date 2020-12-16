@@ -50,12 +50,12 @@ private:
 	inline void serial_clock();
 	inline void key_down(int state);
 
-	DECLARE_READ8_MEMBER( kb_p1_r );
-	DECLARE_WRITE8_MEMBER( kb_p1_w );
-	DECLARE_WRITE8_MEMBER( kb_p2_w );
+	uint8_t kb_p1_r();
+	void kb_p1_w(uint8_t data);
+	void kb_p2_w(uint8_t data);
 	DECLARE_READ_LINE_MEMBER( kb_t1_r );
 
-	required_device<cpu_device> m_maincpu;
+	required_device<i8048_device> m_maincpu;
 	required_ioport_array<12> m_x;
 
 	int m_row;

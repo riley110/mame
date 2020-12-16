@@ -6,7 +6,10 @@
 #pragma once
 
 #include "isa.h"
+#include "machine/pc_lpt.h"
 #include "video/mc6845.h"
+#include "emupal.h"
+#include "screen.h"
 
 //**************************************************************************
 //  TYPE DEFINITIONS
@@ -23,10 +26,10 @@ public:
 	// construction/destruction
 	isa8_mda_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	virtual DECLARE_READ8_MEMBER(io_read);
-	virtual DECLARE_WRITE8_MEMBER(io_write);
-	virtual DECLARE_READ8_MEMBER(status_r);
-	virtual DECLARE_WRITE8_MEMBER(mode_control_w);
+	virtual uint8_t io_read(offs_t offset);
+	virtual void io_write(offs_t offset, uint8_t data);
+	virtual uint8_t status_r();
+	virtual void mode_control_w(uint8_t data);
 
 	DECLARE_WRITE_LINE_MEMBER(hsync_changed);
 	DECLARE_WRITE_LINE_MEMBER(vsync_changed);
@@ -43,6 +46,9 @@ protected:
 	// optional information overrides
 	virtual void device_add_mconfig(machine_config &config) override;
 	virtual const tiny_rom_entry *device_rom_region() const override;
+
+	required_device<mc6845_device> m_crtc;
+	optional_device<pc_lpt_device> m_lpt;
 
 private:
 	WRITE_LINE_MEMBER(pc_cpu_line);
@@ -77,10 +83,10 @@ public:
 	// construction/destruction
 	isa8_hercules_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	virtual DECLARE_READ8_MEMBER(io_read) override;
-	virtual DECLARE_WRITE8_MEMBER(io_write) override;
-	virtual DECLARE_READ8_MEMBER(status_r) override;
-	virtual DECLARE_WRITE8_MEMBER(mode_control_w) override;
+	virtual uint8_t io_read(offs_t offset) override;
+	virtual void io_write(offs_t offset, uint8_t data) override;
+	virtual uint8_t status_r() override;
+	virtual void mode_control_w(uint8_t data) override;
 
 protected:
 	// device-level overrides
@@ -120,7 +126,7 @@ protected:
 	virtual void device_add_mconfig(machine_config &config) override;
 
 private:
-	virtual DECLARE_WRITE8_MEMBER(mode_control_w) override;
+	virtual void mode_control_w(uint8_t data) override;
 
 	virtual MC6845_UPDATE_ROW( crtc_update_row ) override;
 	MC6845_UPDATE_ROW( mda_lowres_text_inten_update_row );

@@ -1,6 +1,13 @@
 // license:BSD-3-Clause
 // copyright-holders:Brad Oliver,Stephane Humbert
+#ifndef MAME_INCLUDES_ARKANOID_H
+#define MAME_INCLUDES_ARKANOID_H
+
+#pragma once
+
 #include "machine/taito68705interface.h"
+#include "emupal.h"
+#include "tilemap.h"
 
 /* This it the best way to allow game specific kludges until the system is fully understood */
 enum {
@@ -17,8 +24,6 @@ enum {
 class arkanoid_state : public driver_device
 {
 public:
-
-
 	arkanoid_state(const machine_config &mconfig, device_type type, const char *tag)
 		: driver_device(mconfig, type, tag)
 		, m_videoram(*this, "videoram")
@@ -61,32 +66,33 @@ public:
 	required_device<palette_device> m_palette;
 
 
-	DECLARE_READ8_MEMBER(arkanoid_bootleg_f000_r);
-	DECLARE_READ8_MEMBER(arkanoid_bootleg_f002_r);
-	DECLARE_WRITE8_MEMBER(arkanoid_bootleg_d018_w);
-	DECLARE_READ8_MEMBER(arkanoid_bootleg_d008_r);
-	DECLARE_WRITE8_MEMBER(arkanoid_videoram_w);
-	DECLARE_WRITE8_MEMBER(arkanoid_d008_w);
-	DECLARE_WRITE8_MEMBER(tetrsark_d008_w);
-	DECLARE_WRITE8_MEMBER(brixian_d008_w);
-	DECLARE_WRITE8_MEMBER(hexa_d008_w);
-	DECLARE_READ8_MEMBER(hexaa_f000_r);
-	DECLARE_WRITE8_MEMBER(hexaa_f000_w);
-	DECLARE_WRITE8_MEMBER(hexaa_sub_80_w);
-	DECLARE_READ8_MEMBER(hexaa_sub_90_r);
+	uint8_t arkanoid_bootleg_f000_r();
+	uint8_t arkanoid_bootleg_f002_r();
+	void arkanoid_bootleg_d018_w(uint8_t data);
+	uint8_t arkanoid_bootleg_d008_r();
+	void arkanoid_videoram_w(offs_t offset, uint8_t data);
+	void arkanoid_d008_w(uint8_t data);
+	void tetrsark_d008_w(uint8_t data);
+	void brixian_d008_w(uint8_t data);
+	void hexa_d008_w(uint8_t data);
+	uint8_t hexaa_f000_r();
+	void hexaa_f000_w(uint8_t data);
+	void hexaa_sub_80_w(uint8_t data);
+	uint8_t hexaa_sub_90_r();
 	DECLARE_CUSTOM_INPUT_MEMBER(arkanoid_semaphore_input_r);
-	DECLARE_CUSTOM_INPUT_MEMBER(arkanoid_input_mux);
-	DECLARE_DRIVER_INIT(block2);
-	DECLARE_DRIVER_INIT(arkblock);
-	DECLARE_DRIVER_INIT(hexa);
-	DECLARE_DRIVER_INIT(hexaa);
-	DECLARE_DRIVER_INIT(paddle2);
-	DECLARE_DRIVER_INIT(tetrsark);
-	DECLARE_DRIVER_INIT(arkgcbl);
-	DECLARE_DRIVER_INIT(arkangc2);
-	DECLARE_DRIVER_INIT(arkbloc2);
-	DECLARE_DRIVER_INIT(arkangc);
-	DECLARE_DRIVER_INIT(brixian);
+	uint8_t input_mux_r();
+	void init_block2();
+	void init_arkblock();
+	void init_hexa();
+	void init_hexaa();
+	void init_paddle2();
+	void init_tetrsark();
+	void init_tetrsark2();
+	void init_arkgcbl();
+	void init_arkangc2();
+	void init_arkbloc2();
+	void init_arkangc();
+	void init_brixian();
 	TILE_GET_INFO_MEMBER(get_bg_tile_info);
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
@@ -96,4 +102,21 @@ public:
 	void draw_sprites( bitmap_ind16 &bitmap, const rectangle &cliprect );
 	void arkanoid_bootleg_init(  );
 
+	void bootleg(machine_config &config);
+	void p3mcuay(machine_config &config);
+	void aysnd(machine_config &config);
+	void hexa(machine_config &config);
+	void brixian(machine_config &config);
+	void hexaa(machine_config &config);
+	void p3mcu(machine_config &config);
+	void arkanoid(machine_config &config);
+	void arkanoid_map(address_map &map);
+	void bootleg_map(address_map &map);
+	void brixian_map(address_map &map);
+	void hexa_map(address_map &map);
+	void hexaa_map(address_map &map);
+	void hexaa_sub_iomap(address_map &map);
+	void hexaa_sub_map(address_map &map);
 };
+
+#endif // MAME_INCLUDES_ARKANOID_H

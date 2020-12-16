@@ -32,7 +32,7 @@ void mslugx_prot_device::device_reset()
   Also found is a QFP144 chip labeled with 0103 - function unknown
 ***************************************************************/
 
-WRITE16_MEMBER( mslugx_prot_device::protection_w )
+void mslugx_prot_device::protection_w(offs_t offset, uint16_t data)
 {
 	switch (offset)
 	{
@@ -54,13 +54,13 @@ WRITE16_MEMBER( mslugx_prot_device::protection_w )
 		break;
 
 		default:
-			logerror("unknown protection write at pc %06x, offset %08x, data %02x\n", space.device().safe_pc(), offset << 1, data);
+			logerror("unknown protection write at %s, offset %08x, data %02x\n", machine().describe_context(), offset << 1, data);
 		break;
 	}
 }
 
 
-READ16_MEMBER( mslugx_prot_device::protection_r )
+uint16_t mslugx_prot_device::protection_r(address_space &space, offs_t offset)
 {
 	uint16_t res = 0;
 
@@ -79,7 +79,7 @@ READ16_MEMBER( mslugx_prot_device::protection_r )
 		break;
 
 		default:
-			logerror("unknown protection read at pc %06x, offset %08x\n", space.device().safe_pc(), offset << 1);
+			logerror("unknown protection read at %s, offset %08x\n", machine().describe_context(), offset << 1);
 		break;
 	}
 

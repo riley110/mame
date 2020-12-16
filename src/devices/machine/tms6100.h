@@ -11,19 +11,6 @@
 
 #pragma once
 
-
-
-//**************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-//**************************************************************************
-
-// 4-bit mode (mask option)
-// note: in 4-bit mode, use data_r, otherwise use data_line_r
-
-#define MCFG_TMS6100_4BIT_MODE() \
-		tms6100_device::enable_4bit_mode(*device);
-
-
 // pinout reference
 
 /*
@@ -97,17 +84,19 @@ class tms6100_device : public device_t
 public:
 	tms6100_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock);
 
-	static void enable_4bit_mode(device_t &device) { downcast<tms6100_device &>(device).m_4bit_mode = true; }
+	// 4-bit mode (mask option)
+	// note: in 4-bit mode, use data_r, otherwise use data_line_r
+	void enable_4bit_mode(bool mode) { m_4bit_mode = mode; }
 
-	DECLARE_WRITE_LINE_MEMBER(m0_w);
-	DECLARE_WRITE_LINE_MEMBER(m1_w);
-	DECLARE_WRITE_LINE_MEMBER(rck_w);
-	DECLARE_WRITE_LINE_MEMBER(cs_w);
-	DECLARE_WRITE_LINE_MEMBER(clk_w);
+	void m0_w(int state);
+	void m1_w(int state);
+	void rck_w(int state);
+	void cs_w(int state);
+	void clk_w(int state);
 
-	DECLARE_WRITE8_MEMBER(add_w);
-	DECLARE_READ8_MEMBER(data_r); // 4bit
-	DECLARE_READ_LINE_MEMBER(data_line_r);
+	void add_w(u8 data);
+	u8 data_r(); // 4bit
+	int data_line_r();
 
 protected:
 	tms6100_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, u32 clock);

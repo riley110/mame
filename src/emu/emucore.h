@@ -5,6 +5,7 @@
     emucore.h
 
     General core utilities and macros used throughout the emulator.
+
 ***************************************************************************/
 
 #ifndef MAME_EMU_EMUCORE_H
@@ -13,12 +14,12 @@
 #pragma once
 
 // standard C includes
-#include <assert.h>
-#include <math.h>
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <stdarg.h>
+#include <cassert>
+#include <cmath>
+#include <cstdio>
+#include <cstring>
+#include <cstdlib>
+#include <cstdarg>
 
 // some cleanups for Solaris for things defined in stdlib.h
 #if defined(__sun__) && defined(__svr4__)
@@ -29,6 +30,7 @@
 // standard C++ includes
 #include <cassert>
 #include <exception>
+#include <string>
 #include <type_traits>
 #include <typeinfo>
 
@@ -37,6 +39,7 @@
 #include "emualloc.h"
 #include "corestr.h"
 #include "bitmap.h"
+#include "strformat.h"
 
 #include "emufwd.h"
 
@@ -66,6 +69,15 @@ using osd::s8;
 using osd::s16;
 using osd::s32;
 using osd::s64;
+
+// useful utility functions
+using util::underlying_value;
+using util::enum_value;
+using util::make_bitmask;
+using util::BIT;
+using util::bitswap;
+using util::iabs;
+
 
 // genf is a generic function pointer; cast function pointers to this instead of void *
 typedef void genf(void);
@@ -151,6 +163,7 @@ enum endianness_t
 	ENDIANNESS_BIG
 };
 
+extern const char *const endianness_names[2];
 
 // declare native endianness to be one or the other
 #ifdef LSB_FIRST
@@ -211,25 +224,9 @@ inline TYPE &operator|=(TYPE &a, TYPE b) { return a = a | b; }
 #define FUNC(x) &x, #x
 
 
-// standard assertion macros
-#undef assert
-#undef assert_always
-
-#if defined(MAME_DEBUG_FAST)
-#define assert(x)               do { } while (0)
-#define assert_always(x, msg)   do { if (!(x)) throw emu_fatalerror("Fatal error: %s\nCaused by assert: %s:%d: %s", msg, __FILE__, __LINE__, #x); } while (0)
-#elif defined(MAME_DEBUG)
-#define assert(x)               do { if (!(x)) throw emu_fatalerror("assert: %s:%d: %s", __FILE__, __LINE__, #x); } while (0)
-#define assert_always(x, msg)   do { if (!(x)) throw emu_fatalerror("Fatal error: %s\nCaused by assert: %s:%d: %s", msg, __FILE__, __LINE__, #x); } while (0)
-#else
-#define assert(x)               do { } while (0)
-#define assert_always(x, msg)   do { if (!(x)) throw emu_fatalerror("Fatal error: %s (%s:%d)", msg, __FILE__, __LINE__); } while (0)
-#endif
-
-
 // macros to convert radians to degrees and degrees to radians
-#define RADIAN_TO_DEGREE(x)   ((180.0 / M_PI) * (x))
-#define DEGREE_TO_RADIAN(x)   ((M_PI / 180.0) * (x))
+template <typename T> constexpr auto RADIAN_TO_DEGREE(T const &x) { return (180.0 / M_PI) * x; }
+template <typename T> constexpr auto DEGREE_TO_RADIAN(T const &x) { return (M_PI / 180.0) * x; }
 
 
 // endian-based value: first value is if 'endian' is little-endian, second is if 'endian' is big-endian
@@ -240,38 +237,6 @@ inline TYPE &operator|=(TYPE &a, TYPE b) { return a = a | b; }
 
 // endian-based value: first value is if 'endian' matches native, second is if 'endian' doesn't match native
 #define ENDIAN_VALUE_NE_NNE(endian,neval,nneval) (((endian) == ENDIANNESS_NATIVE) ? (neval) : (nneval))
-
-
-// useful functions to deal with bit shuffling encryptions
-template <typename T, typename U> constexpr T BIT(T x, U n) { return (x >> n) & T(1); }
-
-template <typename T, typename U> constexpr T bitswap(T val, U b)
-{
-	return BIT(val, b) << 0U;
-}
-
-template <typename T, typename U, typename... V> constexpr T bitswap(T val, U b, V... c)
-{
-	return (BIT(val, b) << sizeof...(c)) | bitswap(val, c...);
-}
-
-template <unsigned B, typename T, typename... U> T bitswap(T val, U... b)
-{
-	static_assert(sizeof...(b) == B, "wrong number of bits");
-	static_assert((sizeof(std::remove_reference_t<T>) * 8) >= B, "return type too small for result");
-	return bitswap(val, b...);
-}
-
-// explicit versions that check number of bit position arguments
-template <typename T, typename... U> constexpr T BITSWAP8(T val, U... b) {  return bitswap<8U>(val, b...); }
-template <typename T, typename... U> constexpr T BITSWAP16(T val, U... b) {  return bitswap<16U>(val, b...); }
-template <typename T, typename... U> constexpr T BITSWAP24(T val, U... b) {  return bitswap<24U>(val, b...); }
-template <typename T, typename... U> constexpr T BITSWAP32(T val, U... b) {  return bitswap<32U>(val, b...); }
-template <typename T, typename... U> constexpr T BITSWAP40(T val, U... b) {  return bitswap<40U>(val, b...); }
-template <typename T, typename... U> constexpr T BITSWAP48(T val, U... b) {  return bitswap<48U>(val, b...); }
-template <typename T, typename... U> constexpr T BITSWAP56(T val, U... b) {  return bitswap<56U>(val, b...); }
-template <typename T, typename... U> constexpr T BITSWAP64(T val, U... b) {  return bitswap<64U>(val, b...); }
-
 
 
 //**************************************************************************
@@ -286,17 +251,26 @@ class emu_exception : public std::exception { };
 class emu_fatalerror : public emu_exception
 {
 public:
-	emu_fatalerror(const char *format, ...) ATTR_PRINTF(2,3);
-	emu_fatalerror(const char *format, va_list ap);
-	emu_fatalerror(int _exitcode, const char *format, ...) ATTR_PRINTF(3,4);
-	emu_fatalerror(int _exitcode, const char *format, va_list ap);
+	emu_fatalerror(util::format_argument_pack<std::ostream> const &args);
+	emu_fatalerror(int _exitcode, util::format_argument_pack<std::ostream> const &args);
 
-	const char *string() const { return text; }
-	int exitcode() const { return code; }
+	template <typename Format, typename... Params>
+	emu_fatalerror(Format const &fmt, Params &&... args)
+		: emu_fatalerror(static_cast<util::format_argument_pack<std::ostream> const &>(util::make_format_argument_pack(fmt, std::forward<Params>(args)...)))
+	{
+	}
+	template <typename Format, typename... Params>
+	emu_fatalerror(int _exitcode, Format const &fmt, Params &&... args)
+		: emu_fatalerror(_exitcode, static_cast<util::format_argument_pack<std::ostream> const &>(util::make_format_argument_pack(fmt, std::forward<Params>(args)...)))
+	{
+	}
+
+	virtual char const *what() const noexcept override { return m_text.c_str(); }
+	int exitcode() const noexcept { return m_code; }
 
 private:
-	char text[1024];
-	int code;
+	std::string m_text;
+	int m_code;
 };
 
 class tag_add_exception
@@ -308,12 +282,13 @@ private:
 	std::string m_tag;
 };
 
+
 //**************************************************************************
 //  CASTING TEMPLATES
 //**************************************************************************
 
-void report_bad_cast(const std::type_info &src_type, const std::type_info &dst_type);
-void report_bad_device_cast(const device_t *dev, const std::type_info &src_type, const std::type_info &dst_type);
+[[noreturn]] void report_bad_cast(const std::type_info &src_type, const std::type_info &dst_type);
+[[noreturn]] void report_bad_device_cast(const device_t *dev, const std::type_info &src_type, const std::type_info &dst_type);
 
 template <typename Dest, typename Source>
 inline std::enable_if_t<std::is_base_of<device_t, Source>::value> report_bad_cast(Source *const src)
@@ -335,7 +310,7 @@ inline std::enable_if_t<!std::is_base_of<device_t, Source>::value> report_bad_ca
 template <typename Dest, typename Source>
 inline Dest downcast(Source *src)
 {
-#if defined(MAME_DEBUG) && !defined(MAME_DEBUG_FAST)
+#if defined(MAME_DEBUG)
 	Dest const chk(dynamic_cast<Dest>(src));
 	if (chk != src) report_bad_cast<std::remove_pointer_t<Dest>, Source>(src);
 #endif
@@ -345,56 +320,24 @@ inline Dest downcast(Source *src)
 template<class Dest, class Source>
 inline Dest downcast(Source &src)
 {
-#if defined(MAME_DEBUG) && !defined(MAME_DEBUG_FAST)
+#if defined(MAME_DEBUG)
 	std::remove_reference_t<Dest> *const chk(dynamic_cast<std::remove_reference_t<Dest> *>(&src));
 	if (chk != &src) report_bad_cast<std::remove_reference_t<Dest>, Source>(&src);
 #endif
 	return static_cast<Dest>(src);
 }
 
-// template function which takes a strongly typed enumerator and returns its value as a compile-time constant
-template <typename E>
-using enable_enum_t = typename std::enable_if_t<std::is_enum<E>::value, typename std::underlying_type_t<E>>;
 
-template <typename E>
-constexpr inline enable_enum_t<E>
-underlying_value(E e) noexcept
-{
-	return static_cast< typename std::underlying_type<E>::type >( e );
-}
-
-// template function which takes an integral value and returns its representation as enumerator (even strongly typed)
-template <typename E , typename T>
-constexpr inline typename std::enable_if_t<std::is_enum<E>::value && std::is_integral<T>::value, E>
-enum_value(T value) noexcept
-{
-	return static_cast<E>(value);
-}
-
-
-
-//**************************************************************************
-//  FUNCTION PROTOTYPES
-//**************************************************************************
-
-[[noreturn]] void fatalerror(const char *format, ...) ATTR_PRINTF(1,2);
-[[noreturn]] void fatalerror_exitcode(running_machine &machine, int exitcode, const char *format, ...) ATTR_PRINTF(3,4);
 
 //**************************************************************************
 //  INLINE FUNCTIONS
 //**************************************************************************
 
-// population count
-#if !defined(__NetBSD__)
-inline int popcount(u32 val)
+template <typename... T>
+[[noreturn]] inline void fatalerror(T &&... args)
 {
-	int count;
-
-	for (count = 0; val != 0; count++)
-		val &= val - 1;
-	return count;
+	throw emu_fatalerror(std::forward<T>(args)...);
 }
-#endif
 
 
 // convert a series of 32 bits into a float
@@ -444,4 +387,4 @@ inline u64 d2u(double d)
 	return u.vv;
 }
 
-#endif  /* MAME_EMU_EMUCORE_H */
+#endif // MAME_EMU_EMUCORE_H

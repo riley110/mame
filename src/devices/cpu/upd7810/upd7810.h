@@ -37,134 +37,57 @@ enum
 #define UPD7810_INTFE1      4
 
 
-
-#define MCFG_UPD7810_TO(_devcb) \
-	devcb = &upd7810_device::set_to_func(*device, DEVCB_##_devcb);
-
-#define MCFG_UPD7810_CO0(_devcb) \
-	devcb = &upd7810_device::set_co0_func(*device, DEVCB_##_devcb);
-
-#define MCFG_UPD7810_CO1(_devcb) \
-	devcb = &upd7810_device::set_co1_func(*device, DEVCB_##_devcb);
-
-#define MCFG_UPD7810_TXD(_devcb) \
-	devcb = &upd7810_device::set_txd_func(*device, DEVCB_##_devcb);
-
-#define MCFG_UPD7810_RXD(_devcb) \
-	devcb = &upd7810_device::set_rxd_func(*device, DEVCB_##_devcb);
-
-#define MCFG_UPD7810_AN0(_devcb) \
-	devcb = &upd7810_device::set_an0_func(*device, DEVCB_##_devcb);
-
-#define MCFG_UPD7810_AN1(_devcb) \
-	devcb = &upd7810_device::set_an1_func(*device, DEVCB_##_devcb);
-
-#define MCFG_UPD7810_AN2(_devcb) \
-	devcb = &upd7810_device::set_an2_func(*device, DEVCB_##_devcb);
-
-#define MCFG_UPD7810_AN3(_devcb) \
-	devcb = &upd7810_device::set_an3_func(*device, DEVCB_##_devcb);
-
-#define MCFG_UPD7810_AN4(_devcb) \
-	devcb = &upd7810_device::set_an4_func(*device, DEVCB_##_devcb);
-
-#define MCFG_UPD7810_AN5(_devcb) \
-	devcb = &upd7810_device::set_an5_func(*device, DEVCB_##_devcb);
-
-#define MCFG_UPD7810_AN6(_devcb) \
-	devcb = &upd7810_device::set_an6_func(*device, DEVCB_##_devcb);
-
-#define MCFG_UPD7810_AN7(_devcb) \
-	devcb = &upd7810_device::set_an7_func(*device, DEVCB_##_devcb);
-
-
-#define MCFG_UPD7810_PORTA_READ_CB(_devcb) \
-	devcb = &upd7810_device::set_pa_in_cb(*device, DEVCB_##_devcb);
-
-#define MCFG_UPD7810_PORTB_READ_CB(_devcb) \
-	devcb = &upd7810_device::set_pb_in_cb(*device, DEVCB_##_devcb);
-
-#define MCFG_UPD7810_PORTC_READ_CB(_devcb) \
-	devcb = &upd7810_device::set_pc_in_cb(*device, DEVCB_##_devcb);
-
-#define MCFG_UPD7810_PORTD_READ_CB(_devcb) \
-	devcb = &upd7810_device::set_pd_in_cb(*device, DEVCB_##_devcb);
-
-#define MCFG_UPD7810_PORTF_READ_CB(_devcb) \
-	devcb = &upd7810_device::set_pf_in_cb(*device, DEVCB_##_devcb);
-
-#define MCFG_UPD7810_PORTA_WRITE_CB(_devcb) \
-	devcb = &upd7810_device::set_pa_out_cb(*device, DEVCB_##_devcb);
-
-#define MCFG_UPD7810_PORTB_WRITE_CB(_devcb) \
-	devcb = &upd7810_device::set_pb_out_cb(*device, DEVCB_##_devcb);
-
-#define MCFG_UPD7810_PORTC_WRITE_CB(_devcb) \
-	devcb = &upd7810_device::set_pc_out_cb(*device, DEVCB_##_devcb);
-
-#define MCFG_UPD7810_PORTD_WRITE_CB(_devcb) \
-	devcb = &upd7810_device::set_pd_out_cb(*device, DEVCB_##_devcb);
-
-#define MCFG_UPD7810_PORTF_WRITE_CB(_devcb) \
-	devcb = &upd7810_device::set_pf_out_cb(*device, DEVCB_##_devcb);
-
-
-#define MCFG_UPD7807_PORTA_READ_CB MCFG_UPD7810_PORTA_READ_CB
-#define MCFG_UPD7807_PORTB_READ_CB MCFG_UPD7810_PORTB_READ_CB
-#define MCFG_UPD7807_PORTC_READ_CB MCFG_UPD7810_PORTC_READ_CB
-#define MCFG_UPD7807_PORTD_READ_CB MCFG_UPD7810_PORTD_READ_CB
-#define MCFG_UPD7807_PORTF_READ_CB MCFG_UPD7810_PORTF_READ_CB
-#define MCFG_UPD7807_PORTA_WRITE_CB MCFG_UPD7810_PORTA_WRITE_CB
-#define MCFG_UPD7807_PORTB_WRITE_CB MCFG_UPD7810_PORTB_WRITE_CB
-#define MCFG_UPD7807_PORTC_WRITE_CB MCFG_UPD7810_PORTC_WRITE_CB
-#define MCFG_UPD7807_PORTD_WRITE_CB MCFG_UPD7810_PORTD_WRITE_CB
-#define MCFG_UPD7807_PORTF_WRITE_CB MCFG_UPD7810_PORTF_WRITE_CB
-
-#define MCFG_UPD7807_PORTT_READ_CB(_devcb) \
-	devcb = &upd7810_device::set_pt_in_cb(*device, DEVCB_##_devcb);
-
-
 class upd7810_device : public cpu_device
 {
 public:
 	// construction/destruction
 	upd7810_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	// static configuration helpers
-	template <class Object> static devcb_base &set_to_func(device_t &device, Object &&cb) { return downcast<upd7810_device &>(device).m_to_func.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_co0_func(device_t &device, Object &&cb) { return downcast<upd7810_device &>(device).m_co0_func.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_co1_func(device_t &device, Object &&cb) { return downcast<upd7810_device &>(device).m_co1_func.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_txd_func(device_t &device, Object &&cb) { return downcast<upd7810_device &>(device).m_txd_func.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_rxd_func(device_t &device, Object &&cb) { return downcast<upd7810_device &>(device).m_rxd_func.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_an0_func(device_t &device, Object &&cb) { return downcast<upd7810_device &>(device).m_an0_func.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_an1_func(device_t &device, Object &&cb) { return downcast<upd7810_device &>(device).m_an1_func.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_an2_func(device_t &device, Object &&cb) { return downcast<upd7810_device &>(device).m_an2_func.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_an3_func(device_t &device, Object &&cb) { return downcast<upd7810_device &>(device).m_an3_func.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_an4_func(device_t &device, Object &&cb) { return downcast<upd7810_device &>(device).m_an4_func.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_an5_func(device_t &device, Object &&cb) { return downcast<upd7810_device &>(device).m_an5_func.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_an6_func(device_t &device, Object &&cb) { return downcast<upd7810_device &>(device).m_an6_func.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_an7_func(device_t &device, Object &&cb) { return downcast<upd7810_device &>(device).m_an7_func.set_callback(std::forward<Object>(cb)); }
+	// configuration helpers
+	auto to_func() { return m_to_func.bind(); }
+	auto co0_func() { return m_co0_func.bind(); }
+	auto co1_func() { return m_co1_func.bind(); }
+	auto txd_func() { return m_txd_func.bind(); }
+	auto rxd_func() { return m_rxd_func.bind(); }
+	auto an0_func() { return m_an_func[0].bind(); }
+	auto an1_func() { return m_an_func[1].bind(); }
+	auto an2_func() { return m_an_func[2].bind(); }
+	auto an3_func() { return m_an_func[3].bind(); }
+	auto an4_func() { return m_an_func[4].bind(); }
+	auto an5_func() { return m_an_func[5].bind(); }
+	auto an6_func() { return m_an_func[6].bind(); }
+	auto an7_func() { return m_an_func[7].bind(); }
 
-	template <class Object> static devcb_base &set_pa_in_cb(device_t &device, Object &&cb) { return downcast<upd7810_device &>(device).m_pa_in_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_pb_in_cb(device_t &device, Object &&cb) { return downcast<upd7810_device &>(device).m_pb_in_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_pc_in_cb(device_t &device, Object &&cb) { return downcast<upd7810_device &>(device).m_pc_in_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_pd_in_cb(device_t &device, Object &&cb) { return downcast<upd7810_device &>(device).m_pd_in_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_pf_in_cb(device_t &device, Object &&cb) { return downcast<upd7810_device &>(device).m_pf_in_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_pa_out_cb(device_t &device, Object &&cb) { return downcast<upd7810_device &>(device).m_pa_out_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_pb_out_cb(device_t &device, Object &&cb) { return downcast<upd7810_device &>(device).m_pb_out_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_pc_out_cb(device_t &device, Object &&cb) { return downcast<upd7810_device &>(device).m_pc_out_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_pd_out_cb(device_t &device, Object &&cb) { return downcast<upd7810_device &>(device).m_pd_out_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_pf_out_cb(device_t &device, Object &&cb) { return downcast<upd7810_device &>(device).m_pf_out_cb.set_callback(std::forward<Object>(cb)); }
+	auto pa_in_cb() { return m_pa_in_cb.bind(); }
+	auto pb_in_cb() { return m_pb_in_cb.bind(); }
+	auto pc_in_cb() { return m_pc_in_cb.bind(); }
+	auto pd_in_cb() { return m_pd_in_cb.bind(); }
+	auto pf_in_cb() { return m_pf_in_cb.bind(); }
+	auto pa_out_cb() { return m_pa_out_cb.bind(); }
+	auto pb_out_cb() { return m_pb_out_cb.bind(); }
+	auto pc_out_cb() { return m_pc_out_cb.bind(); }
+	auto pd_out_cb() { return m_pd_out_cb.bind(); }
+	auto pf_out_cb() { return m_pf_out_cb.bind(); }
 
-	template <class Object> static devcb_base &set_pt_in_cb(device_t &device, Object &&cb) { return downcast<upd7810_device &>(device).m_pt_in_cb.set_callback(std::forward<Object>(cb)); }
+	void set_pa_pullups(uint8_t p) { m_pa_pullups = p; }
+	void set_pb_pullups(uint8_t p) { m_pb_pullups = p; }
+	void set_pc_pullups(uint8_t p) { m_pc_pullups = p; }
+	void set_pd_pullups(uint8_t p) { m_pd_pullups = p; }
+	void set_pf_pullups(uint8_t p) { m_pf_pullups = p; }
 
-	DECLARE_WRITE8_MEMBER(pa_w);
-	DECLARE_WRITE8_MEMBER(pb_w);
-	DECLARE_WRITE8_MEMBER(pc_w);
-	DECLARE_WRITE8_MEMBER(pd_w);
-	DECLARE_WRITE8_MEMBER(pf_w);
+	auto pt_in_cb() { return m_pt_in_cb.bind(); }
+
+	void pa_w(uint8_t data, uint8_t mem_mask = ~0);
+	void pb_w(uint8_t data, uint8_t mem_mask = ~0);
+	void pc_w(uint8_t data, uint8_t mem_mask = ~0);
+	void pd_w(uint8_t data, uint8_t mem_mask = ~0);
+	void pf_w(uint8_t data, uint8_t mem_mask = ~0);
 
 protected:
+	void upd_internal_128_ram_map(address_map &map);
+	void upd_internal_256_ram_map(address_map &map);
+	void upd_internal_4096_rom_map(address_map &map);
+
 	// flags
 	enum
 	{
@@ -181,7 +104,7 @@ protected:
 	// IRR flags
 	enum
 	{
-		INTNMI  = 0x0001,
+		INTFNMI = 0x0001,
 		INTFT0  = 0x0002,
 		INTFT1  = 0x0004,
 		INTF1   = 0x0008,
@@ -214,9 +137,12 @@ protected:
 	virtual void device_reset() override;
 
 	// device_execute_interface overrides
-	virtual uint32_t execute_min_cycles() const override { return 1; }
-	virtual uint32_t execute_max_cycles() const override { return 40; }
-	virtual uint32_t execute_input_lines() const override { return 2; }
+	virtual uint64_t execute_clocks_to_cycles(uint64_t clocks) const noexcept override { return (clocks + 3 - 1) / 3; }
+	virtual uint64_t execute_cycles_to_clocks(uint64_t cycles) const noexcept override { return (cycles * 3); }
+	virtual uint32_t execute_min_cycles() const noexcept override { return 1; }
+	virtual uint32_t execute_max_cycles() const noexcept override { return 40; }
+	virtual uint32_t execute_input_lines() const noexcept override { return 2; }
+	virtual bool execute_input_edge_triggered(int inputnum) const noexcept override { return true; }
 	virtual void execute_run() override;
 	virtual void execute_set_input(int inputnum, int state) override;
 
@@ -227,9 +153,7 @@ protected:
 	virtual void state_string_export(const device_state_entry &entry, std::string &str) const override;
 
 	// device_disasm_interface overrides
-	virtual uint32_t disasm_min_opcode_bytes() const override { return 1; }
-	virtual uint32_t disasm_max_opcode_bytes() const override { return 4; }
-	virtual offs_t disasm_disassemble(std::ostream &stream, offs_t pc, const uint8_t *oprom, const uint8_t *opram, uint32_t options) override;
+	virtual std::unique_ptr<util::disasm_interface> create_disassembler() override;
 
 	virtual void handle_timers(int cycles);
 	virtual void upd7810_take_irq();
@@ -245,14 +169,7 @@ protected:
 	devcb_write_line  m_co1_func;
 	devcb_write_line  m_txd_func;
 	devcb_read_line   m_rxd_func;
-	devcb_read8       m_an0_func;
-	devcb_read8       m_an1_func;
-	devcb_read8       m_an2_func;
-	devcb_read8       m_an3_func;
-	devcb_read8       m_an4_func;
-	devcb_read8       m_an5_func;
-	devcb_read8       m_an6_func;
-	devcb_read8       m_an7_func;
+	devcb_read8::array<8> m_an_func;
 
 	devcb_read8       m_pa_in_cb;
 	devcb_read8       m_pb_in_cb;
@@ -321,6 +238,7 @@ protected:
 	uint8_t   m_op;     /* opcode */
 	uint8_t   m_op2;    /* opcode part 2 */
 	uint8_t   m_iff;    /* interrupt enable flip flop */
+	uint8_t   m_iff_pending;
 	uint8_t   m_psw;    /* processor status word */
 	PAIR    m_ea;     /* extended accumulator */
 	PAIR    m_va;     /* accumulator + vector register */
@@ -342,6 +260,7 @@ protected:
 	uint8_t   m_mc;     /* port C input or output mask */
 	uint8_t   m_mm;     /* memory mapping */
 	uint8_t   m_mf;     /* port F input or output mask */
+	uint8_t   m_mt;     /* port T input threshold level */
 	uint8_t   m_tmm;    /* timer 0 and timer 1 operating parameters */
 	uint8_t   m_etmm;   /* 16-bit multifunction timer/event counter */
 	uint8_t   m_eom;    /* 16-bit timer/event counter output control */
@@ -362,10 +281,12 @@ protected:
 	uint8_t   m_pc_out;
 	uint8_t   m_pd_out;
 	uint8_t   m_pf_out;
-	uint8_t   m_cr0;    /* analog digital conversion register 0 */
-	uint8_t   m_cr1;    /* analog digital conversion register 1 */
-	uint8_t   m_cr2;    /* analog digital conversion register 2 */
-	uint8_t   m_cr3;    /* analog digital conversion register 3 */
+	uint8_t   m_pa_pullups;
+	uint8_t   m_pb_pullups;
+	uint8_t   m_pc_pullups;
+	uint8_t   m_pd_pullups;
+	uint8_t   m_pf_pullups;
+	uint8_t   m_cr[4];  /* analog digital conversion registers */
 	uint8_t   m_txb;    /* transmitter buffer */
 	uint8_t   m_rxb;    /* receiver buffer */
 	uint8_t   m_txd;    /* port C control line states */
@@ -412,8 +333,8 @@ protected:
 	const struct opcode_s *m_op64;
 	const struct opcode_s *m_op70;
 	const struct opcode_s *m_op74;
-	address_space *m_program;
-	direct_read_data *m_direct;
+	memory_access<16, 0, 0, ENDIANNESS_LITTLE>::cache m_opcodes;
+	memory_access<16, 0, 0, ENDIANNESS_LITTLE>::specific m_program;
 	int m_icount;
 
 	uint8_t RP(offs_t port);
@@ -567,6 +488,7 @@ protected:
 	void MOV_TXB_A();
 	void MOV_TM0_A();
 	void MOV_TM1_A();
+	void MOV_MT_A();
 	void MOV_ZCM_A();
 	void ANA_V_A();
 	void ANA_A_A();
@@ -1436,6 +1358,17 @@ protected:
 };
 
 
+class upd78c10_device : public upd7810_device
+{
+public:
+	// construction/destruction
+	upd78c10_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+
+protected:
+	upd78c10_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock, address_map_constructor internal_map);
+};
+
+
 class upd7807_device : public upd7810_device
 {
 public:
@@ -1443,7 +1376,7 @@ public:
 	upd7807_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 protected:
-	virtual offs_t disasm_disassemble(std::ostream &stream, offs_t pc, const uint8_t *oprom, const uint8_t *opram, uint32_t options) override;
+	virtual std::unique_ptr<util::disasm_interface> create_disassembler() override;
 	virtual void configure_ops() override;
 };
 
@@ -1456,8 +1389,10 @@ public:
 
 protected:
 	virtual void device_reset() override;
+	virtual uint64_t execute_clocks_to_cycles(uint64_t clocks) const noexcept override { return (clocks + 2 - 1) / 2; }
+	virtual uint64_t execute_cycles_to_clocks(uint64_t cycles) const noexcept override { return (cycles * 2); }
 	virtual void execute_set_input(int inputnum, int state) override;
-	virtual offs_t disasm_disassemble(std::ostream &stream, offs_t pc, const uint8_t *oprom, const uint8_t *opram, uint32_t options) override;
+	virtual std::unique_ptr<util::disasm_interface> create_disassembler() override;
 	virtual void handle_timers(int cycles) override;
 	virtual void upd7810_take_irq() override;
 	virtual void configure_ops() override;
@@ -1475,9 +1410,9 @@ protected:
 
 	virtual void device_start() override;
 	virtual void device_reset() override;
-	virtual uint64_t execute_clocks_to_cycles(uint64_t clocks) const override { return (clocks + 4 - 1) / 4; }
-	virtual uint64_t execute_cycles_to_clocks(uint64_t cycles) const override { return (cycles * 4); }
-	virtual offs_t disasm_disassemble(std::ostream &stream, offs_t pc, const uint8_t *oprom, const uint8_t *opram, uint32_t options) override;
+	virtual uint64_t execute_clocks_to_cycles(uint64_t clocks) const noexcept override { return (clocks + 4 - 1) / 4; }
+	virtual uint64_t execute_cycles_to_clocks(uint64_t cycles) const noexcept override { return (cycles * 4); }
+	virtual std::unique_ptr<util::disasm_interface> create_disassembler() override;
 	virtual void handle_timers(int cycles) override;
 	virtual void configure_ops() override;
 };
@@ -1493,6 +1428,7 @@ public:
 
 
 DECLARE_DEVICE_TYPE(UPD7810,  upd7810_device)
+DECLARE_DEVICE_TYPE(UPD78C10, upd78c10_device)
 DECLARE_DEVICE_TYPE(UPD7807,  upd7807_device)
 DECLARE_DEVICE_TYPE(UPD7801,  upd7801_device)
 DECLARE_DEVICE_TYPE(UPD78C05, upd78c05_device)

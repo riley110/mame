@@ -22,52 +22,6 @@ public:
 	// construction/destruction
 	sb16_lle_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	READ8_MEMBER( mpu401_r );
-	WRITE8_MEMBER( mpu401_w );
-
-	// mcu ports
-	DECLARE_READ8_MEMBER( dsp_data_r );
-	DECLARE_WRITE8_MEMBER( dsp_data_w );
-	DECLARE_READ8_MEMBER( p1_r );
-	DECLARE_WRITE8_MEMBER( p1_w );
-	DECLARE_READ8_MEMBER( p2_r );
-	DECLARE_WRITE8_MEMBER( p2_w );
-	DECLARE_WRITE8_MEMBER( rate_w );
-	DECLARE_READ8_MEMBER( dma8_r );
-	DECLARE_WRITE8_MEMBER( dma8_w );
-	DECLARE_READ8_MEMBER( ctrl8_r );
-	DECLARE_WRITE8_MEMBER( ctrl8_w );
-	DECLARE_READ8_MEMBER( ctrl16_r );
-	DECLARE_WRITE8_MEMBER( ctrl16_w );
-	DECLARE_READ8_MEMBER( dac_ctrl_r );
-	DECLARE_WRITE8_MEMBER( dac_ctrl_w );
-	DECLARE_READ8_MEMBER( dac_fifo_ctrl_r );
-	DECLARE_WRITE8_MEMBER( dac_fifo_ctrl_w );
-	DECLARE_READ8_MEMBER( adc_fifo_ctrl_r );
-	DECLARE_WRITE8_MEMBER( adc_fifo_ctrl_w );
-	DECLARE_READ8_MEMBER( dma_stat_r );
-	DECLARE_WRITE8_MEMBER( dac_data_w );
-	DECLARE_READ8_MEMBER( adc_data_r );
-	DECLARE_READ8_MEMBER( dma8_ready_r );
-	DECLARE_READ8_MEMBER( adc_data_ready_r );
-	DECLARE_READ8_MEMBER( dma8_cnt_lo_r );
-	DECLARE_READ8_MEMBER( dma8_cnt_hi_r );
-	DECLARE_WRITE8_MEMBER( dma8_len_lo_w );
-	DECLARE_WRITE8_MEMBER( dma8_len_hi_w );
-	DECLARE_WRITE8_MEMBER( dma16_len_lo_w );
-	DECLARE_WRITE8_MEMBER( dma16_len_hi_w );
-	DECLARE_READ8_MEMBER( mode_r );
-	DECLARE_WRITE8_MEMBER( mode_w );
-
-	// host ports
-	DECLARE_READ8_MEMBER( host_data_r );
-	DECLARE_WRITE8_MEMBER( host_cmd_w );
-	DECLARE_WRITE8_MEMBER( dsp_reset_w );
-	DECLARE_READ8_MEMBER( dsp_wbuf_status_r );
-	DECLARE_READ8_MEMBER( dsp_rbuf_status_r );
-	DECLARE_READ8_MEMBER( invalid_r );
-	DECLARE_WRITE8_MEMBER( invalid_w );
-
 protected:
 	// device-level overrides
 	virtual void device_start() override;
@@ -84,13 +38,60 @@ protected:
 	uint16_t dack16_r(int line) override;
 	void dack16_w(int line, uint16_t data) override;
 
+private:
+	uint8_t mpu401_r(offs_t offset);
+	void mpu401_w(offs_t offset, uint8_t data);
+
+	// mcu ports
+	uint8_t dsp_data_r();
+	void dsp_data_w(uint8_t data);
+	uint8_t p1_r();
+	void p1_w(uint8_t data);
+	uint8_t p2_r();
+	void p2_w(uint8_t data);
+	void rate_w(uint8_t data);
+	uint8_t dma8_r();
+	void dma8_w(uint8_t data);
+	uint8_t ctrl8_r();
+	void ctrl8_w(uint8_t data);
+	uint8_t ctrl16_r();
+	void ctrl16_w(uint8_t data);
+	uint8_t dac_ctrl_r();
+	void dac_ctrl_w(uint8_t data);
+	uint8_t dac_fifo_ctrl_r();
+	void dac_fifo_ctrl_w(uint8_t data);
+	uint8_t adc_fifo_ctrl_r();
+	void adc_fifo_ctrl_w(uint8_t data);
+	uint8_t dma_stat_r();
+	void dac_data_w(uint8_t data);
+	uint8_t adc_data_r();
+	uint8_t dma8_ready_r();
+	uint8_t adc_data_ready_r();
+	uint8_t dma8_cnt_lo_r();
+	uint8_t dma8_cnt_hi_r();
+	void dma8_len_lo_w(uint8_t data);
+	void dma8_len_hi_w(uint8_t data);
+	void dma16_len_lo_w(uint8_t data);
+	void dma16_len_hi_w(uint8_t data);
+	uint8_t mode_r();
+	void mode_w(uint8_t data);
+
+	// host ports
+	uint8_t host_data_r();
+	void host_cmd_w(uint8_t data);
+	void dsp_reset_w(uint8_t data);
+	uint8_t dsp_wbuf_status_r(offs_t offset);
+	uint8_t dsp_rbuf_status_r(offs_t offset);
+
+	void sb16_io(address_map &map);
+	void host_io(address_map &map);
+
+	void control_timer(bool start);
+
 	required_device<dac_word_interface> m_ldac;
 	required_device<dac_word_interface> m_rdac;
 	required_device<pc_joy_device> m_joy;
-	required_device<cpu_device> m_cpu;
-
-private:
-	void control_timer(bool start);
+	required_device<i80c52_device> m_cpu;
 
 	// internal state
 	bool m_data_in;
@@ -115,6 +116,6 @@ private:
 
 // device type definition
 
-extern const device_type ISA16_SB16;
+DECLARE_DEVICE_TYPE(ISA16_SB16, sb16_lle_device)
 
 #endif // MAME_BUS_ISA_SB16_H

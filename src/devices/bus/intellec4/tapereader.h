@@ -29,22 +29,22 @@ public:
 	virtual image_init_result call_load() override;
 	virtual void call_unload() override;
 
-	virtual iodevice_t  image_type()       const override { return IO_PUNCHTAPE; }
-	virtual bool        is_readable()      const override { return true; }
-	virtual bool        is_writeable()     const override { return false; }
-	virtual bool        is_creatable()     const override { return false; }
-	virtual bool        must_be_loaded()   const override { return false; }
-	virtual bool        is_reset_on_load() const override { return false; }
-	virtual char const *file_extensions()  const override { return "bnpf,hex,lst,txt"; }
+	virtual iodevice_t  image_type()       const noexcept override { return IO_PUNCHTAPE; }
+	virtual bool        is_readable()      const noexcept override { return true; }
+	virtual bool        is_writeable()     const noexcept override { return false; }
+	virtual bool        is_creatable()     const noexcept override { return false; }
+	virtual bool        must_be_loaded()   const noexcept override { return false; }
+	virtual bool        is_reset_on_load() const noexcept override { return false; }
+	virtual char const *file_extensions()  const noexcept override { return "bnpf,hex,lst,txt"; }
 
 protected:
 	virtual void device_start() override;
 
 private:
-	DECLARE_READ8_MEMBER(rom4_in) { return m_ready ? 0x07U : 0x0fU; }
-	DECLARE_READ8_MEMBER(rom6_in) { return ~m_data & 0x0fU; }
-	DECLARE_READ8_MEMBER(rom7_in) { return (~m_data >> 4) & 0x0fU; }
-	DECLARE_WRITE8_MEMBER(rom4_out) { advance(BIT(data, 3)); }
+	u8 rom4_in() { return m_ready ? 0x07U : 0x0fU; }
+	u8 rom6_in() { return ~m_data & 0x0fU; }
+	u8 rom7_in() { return (~m_data >> 4) & 0x0fU; }
+	void rom4_out(u8 data) { advance(BIT(data, 3)); }
 	DECLARE_WRITE_LINE_MEMBER(advance);
 	TIMER_CALLBACK_MEMBER(step);
 

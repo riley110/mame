@@ -19,81 +19,75 @@
 #include "includes/konamipt.h"
 
 #include "cpu/z80/z80.h"
-#include "cpu/m6809/m6809.h"
+#include "cpu/m6809/hd6309.h"
 #include "machine/gen_latch.h"
 #include "machine/watchdog.h"
 #include "speaker.h"
 
 
-INTERRUPT_GEN_MEMBER(bottom9_state::bottom9_interrupt)
-{
-	if (m_k052109->is_irq_enabled())
-		device.execute().set_input_line(0, HOLD_LINE);
-}
-
-READ8_MEMBER(bottom9_state::k052109_051960_r)
+uint8_t bottom9_state::k052109_051960_r(offs_t offset)
 {
 	if (m_k052109->get_rmrd_line() == CLEAR_LINE)
 	{
 		if (offset >= 0x3800 && offset < 0x3808)
-			return m_k051960->k051937_r(space, offset - 0x3800);
+			return m_k051960->k051937_r(offset - 0x3800);
 		else if (offset < 0x3c00)
-			return m_k052109->read(space, offset);
+			return m_k052109->read(offset);
 		else
-			return m_k051960->k051960_r(space, offset - 0x3c00);
+			return m_k051960->k051960_r(offset - 0x3c00);
 	}
 	else
-		return m_k052109->read(space, offset);
+		return m_k052109->read(offset);
 }
 
-WRITE8_MEMBER(bottom9_state::k052109_051960_w)
+void bottom9_state::k052109_051960_w(offs_t offset, uint8_t data)
 {
 	if (offset >= 0x3800 && offset < 0x3808)
-		m_k051960->k051937_w(space, offset - 0x3800, data);
+		m_k051960->k051937_w(offset - 0x3800, data);
 	else if (offset < 0x3c00)
-		m_k052109->write(space, offset, data);
+		m_k052109->write(offset, data);
 	else
-		m_k051960->k051960_w(space, offset - 0x3c00, data);
+		m_k051960->k051960_w(offset - 0x3c00, data);
 }
 
-READ8_MEMBER(bottom9_state::bottom9_bankedram1_r)
+uint8_t bottom9_state::bottom9_bankedram1_r(offs_t offset)
 {
 	if (m_k052109_selected)
-		return k052109_051960_r(space, offset);
+		return k052109_051960_r(offset);
 	else
 	{
 		if (m_zoomreadroms)
-			return m_k051316->rom_r(space, offset);
+			return m_k051316->rom_r(offset);
 		else
-			return m_k051316->read(space, offset);
+			return m_k051316->read(offset);
 	}
 }
 
-WRITE8_MEMBER(bottom9_state::bottom9_bankedram1_w)
+void bottom9_state::bottom9_bankedram1_w(offs_t offset, uint8_t data)
 {
 	if (m_k052109_selected)
-		k052109_051960_w(space, offset, data);
+		k052109_051960_w(offset, data);
 	else
-		m_k051316->write(space, offset, data);
+		m_k051316->write(offset, data);
 }
 
-READ8_MEMBER(bottom9_state::bottom9_bankedram2_r)
+uint8_t bottom9_state::bottom9_bankedram2_r(offs_t offset)
 {
 	if (m_k052109_selected)
-		return k052109_051960_r(space, offset + 0x2000);
+		return k052109_051960_r(offset + 0x2000);
 	else
 		return m_palette->basemem().read8(offset);
 }
 
-WRITE8_MEMBER(bottom9_state::bottom9_bankedram2_w)
+void bottom9_state::bottom9_bankedram2_w(offs_t offset, uint8_t data)
 {
 	if (m_k052109_selected)
-		k052109_051960_w(space, offset + 0x2000, data);
+		k052109_051960_w(offset + 0x2000, data);
 	else
-		m_palette->write(space, offset, data);
+		m_palette->write8(offset, data);
 }
 
-WRITE8_MEMBER(bottom9_state::bankswitch_w)
+void bottom9_state::bankswitch_w(uint8_t data)
 {
 	int bank;
 
@@ -110,7 +104,7 @@ WRITE8_MEMBER(bottom9_state::bankswitch_w)
 	membank("bank1")->set_entry(bank);
 }
 
-WRITE8_MEMBER(bottom9_state::bottom9_1f90_w)
+void bottom9_state::bottom9_1f90_w(uint8_t data)
 {
 	/* bits 0/1 = coin counters */
 	machine().bookkeeping().coin_counter_w(0, data & 0x01);
@@ -129,23 +123,23 @@ WRITE8_MEMBER(bottom9_state::bottom9_1f90_w)
 	m_k052109_selected = data & 0x20;
 }
 
-WRITE8_MEMBER(bottom9_state::bottom9_sh_irqtrigger_w)
+void bottom9_state::bottom9_sh_irqtrigger_w(uint8_t data)
 {
-	m_audiocpu->set_input_line_and_vector(0, HOLD_LINE, 0xff);
+	m_audiocpu->set_input_line_and_vector(0, HOLD_LINE, 0xff); // Z80
 }
 
 INTERRUPT_GEN_MEMBER(bottom9_state::bottom9_sound_interrupt)
 {
 	if (m_nmienable)
-		device.execute().set_input_line(INPUT_LINE_NMI, PULSE_LINE);
+		device.execute().pulse_input_line(INPUT_LINE_NMI, attotime::zero);
 }
 
-WRITE8_MEMBER(bottom9_state::nmi_enable_w)
+void bottom9_state::nmi_enable_w(uint8_t data)
 {
 	m_nmienable = data;
 }
 
-WRITE8_MEMBER(bottom9_state::sound_bank_w)
+void bottom9_state::sound_bank_w(uint8_t data)
 {
 	int bank_A, bank_B;
 
@@ -159,35 +153,37 @@ WRITE8_MEMBER(bottom9_state::sound_bank_w)
 }
 
 
-static ADDRESS_MAP_START( main_map, AS_PROGRAM, 8, bottom9_state )
-	AM_RANGE(0x0000, 0x07ff) AM_READWRITE(bottom9_bankedram1_r, bottom9_bankedram1_w)
-	AM_RANGE(0x1f80, 0x1f80) AM_WRITE(bankswitch_w)
-	AM_RANGE(0x1f90, 0x1f90) AM_WRITE(bottom9_1f90_w)
-	AM_RANGE(0x1fa0, 0x1fa0) AM_DEVWRITE("watchdog", watchdog_timer_device, reset_w)
-	AM_RANGE(0x1fb0, 0x1fb0) AM_DEVWRITE("soundlatch", generic_latch_8_device, write)
-	AM_RANGE(0x1fc0, 0x1fc0) AM_WRITE(bottom9_sh_irqtrigger_w)
-	AM_RANGE(0x1fd0, 0x1fd0) AM_READ_PORT("SYSTEM")
-	AM_RANGE(0x1fd1, 0x1fd1) AM_READ_PORT("P1")
-	AM_RANGE(0x1fd2, 0x1fd2) AM_READ_PORT("P2")
-	AM_RANGE(0x1fd3, 0x1fd3) AM_READ_PORT("DSW1")
-	AM_RANGE(0x1fe0, 0x1fe0) AM_READ_PORT("DSW2")
-	AM_RANGE(0x1ff0, 0x1fff) AM_DEVWRITE("k051316", k051316_device, ctrl_w)
-	AM_RANGE(0x2000, 0x27ff) AM_READWRITE(bottom9_bankedram2_r, bottom9_bankedram2_w) AM_SHARE("palette")
-	AM_RANGE(0x0000, 0x3fff) AM_READWRITE(k052109_051960_r, k052109_051960_w)
-	AM_RANGE(0x4000, 0x5fff) AM_RAM
-	AM_RANGE(0x6000, 0x7fff) AM_ROMBANK("bank1")
-	AM_RANGE(0x8000, 0xffff) AM_ROM
-ADDRESS_MAP_END
+void bottom9_state::main_map(address_map &map)
+{
+	map(0x0000, 0x3fff).rw(FUNC(bottom9_state::k052109_051960_r), FUNC(bottom9_state::k052109_051960_w));
+	map(0x0000, 0x07ff).rw(FUNC(bottom9_state::bottom9_bankedram1_r), FUNC(bottom9_state::bottom9_bankedram1_w));
+	map(0x1f80, 0x1f80).w(FUNC(bottom9_state::bankswitch_w));
+	map(0x1f90, 0x1f90).w(FUNC(bottom9_state::bottom9_1f90_w));
+	map(0x1fa0, 0x1fa0).w("watchdog", FUNC(watchdog_timer_device::reset_w));
+	map(0x1fb0, 0x1fb0).w("soundlatch", FUNC(generic_latch_8_device::write));
+	map(0x1fc0, 0x1fc0).w(FUNC(bottom9_state::bottom9_sh_irqtrigger_w));
+	map(0x1fd0, 0x1fd0).portr("SYSTEM");
+	map(0x1fd1, 0x1fd1).portr("P1");
+	map(0x1fd2, 0x1fd2).portr("P2");
+	map(0x1fd3, 0x1fd3).portr("DSW1");
+	map(0x1fe0, 0x1fe0).portr("DSW2");
+	map(0x1ff0, 0x1fff).w(m_k051316, FUNC(k051316_device::ctrl_w));
+	map(0x2000, 0x27ff).rw(FUNC(bottom9_state::bottom9_bankedram2_r), FUNC(bottom9_state::bottom9_bankedram2_w)).share("palette");
+	map(0x4000, 0x5fff).ram();
+	map(0x6000, 0x7fff).bankr("bank1");
+	map(0x8000, 0xffff).rom();
+}
 
-static ADDRESS_MAP_START( audio_map, AS_PROGRAM, 8, bottom9_state )
-	AM_RANGE(0x0000, 0x7fff) AM_ROM
-	AM_RANGE(0x8000, 0x87ff) AM_RAM
-	AM_RANGE(0x9000, 0x9000) AM_WRITE(sound_bank_w)
-	AM_RANGE(0xa000, 0xa00d) AM_DEVREADWRITE("k007232_1", k007232_device, read, write)
-	AM_RANGE(0xb000, 0xb00d) AM_DEVREADWRITE("k007232_2", k007232_device, read, write)
-	AM_RANGE(0xd000, 0xd000) AM_DEVREAD("soundlatch", generic_latch_8_device, read)
-	AM_RANGE(0xf000, 0xf000) AM_WRITE(nmi_enable_w)
-ADDRESS_MAP_END
+void bottom9_state::audio_map(address_map &map)
+{
+	map(0x0000, 0x7fff).rom();
+	map(0x8000, 0x87ff).ram();
+	map(0x9000, 0x9000).w(FUNC(bottom9_state::sound_bank_w));
+	map(0xa000, 0xa00d).rw(m_k007232_1, FUNC(k007232_device::read), FUNC(k007232_device::write));
+	map(0xb000, 0xb00d).rw(m_k007232_2, FUNC(k007232_device::read), FUNC(k007232_device::write));
+	map(0xd000, 0xd000).r("soundlatch", FUNC(generic_latch_8_device::read));
+	map(0xf000, 0xf000).w(FUNC(bottom9_state::nmi_enable_w));
+}
 
 
 static INPUT_PORTS_START( bottom9 )
@@ -266,13 +262,13 @@ INPUT_PORTS_END
 
 
 
-WRITE8_MEMBER(bottom9_state::volume_callback0)
+void bottom9_state::volume_callback0(uint8_t data)
 {
 	m_k007232_1->set_volume(0, (data >> 4) * 0x11, 0);
 	m_k007232_1->set_volume(1, 0, (data & 0x0f) * 0x11);
 }
 
-WRITE8_MEMBER(bottom9_state::volume_callback1)
+void bottom9_state::volume_callback1(uint8_t data)
 {
 	m_k007232_2->set_volume(0, (data >> 4) * 0x11, 0);
 	m_k007232_2->set_volume(1, 0, (data & 0x0f) * 0x11);
@@ -298,60 +294,60 @@ void bottom9_state::machine_reset()
 	m_nmienable = 0;
 }
 
-static MACHINE_CONFIG_START( bottom9 )
-
+void bottom9_state::bottom9(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", M6809, 2000000) /* ? */
-	MCFG_CPU_PROGRAM_MAP(main_map)
-	MCFG_CPU_VBLANK_INT_DRIVER("screen", bottom9_state,  bottom9_interrupt)
+	HD6309E(config, m_maincpu, XTAL(24'000'000) / 8); // 63C09E
+	m_maincpu->set_addrmap(AS_PROGRAM, &bottom9_state::main_map);
 
-	MCFG_CPU_ADD("audiocpu", Z80, 3579545)
-	MCFG_CPU_PROGRAM_MAP(audio_map)
-	MCFG_CPU_PERIODIC_INT_DRIVER(bottom9_state, bottom9_sound_interrupt, 8*60)  /* irq is triggered by the main CPU */
+	Z80(config, m_audiocpu, XTAL(3'579'545));
+	m_audiocpu->set_addrmap(AS_PROGRAM, &bottom9_state::audio_map);
+	m_audiocpu->set_periodic_int(FUNC(bottom9_state::bottom9_sound_interrupt), attotime::from_hz(8*60));  /* irq is triggered by the main CPU */
 
-	MCFG_WATCHDOG_ADD("watchdog")
+	WATCHDOG_TIMER(config, "watchdog");
 
 	/* video hardware */
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_REFRESH_RATE(60)
-	MCFG_SCREEN_VBLANK_TIME(ATTOSECONDS_IN_USEC(0))
-	MCFG_SCREEN_SIZE(64*8, 32*8)
-	MCFG_SCREEN_VISIBLE_AREA(14*8, (64-14)*8-1, 2*8, 30*8-1 )
-	MCFG_SCREEN_UPDATE_DRIVER(bottom9_state, screen_update_bottom9)
-	MCFG_SCREEN_PALETTE("palette")
+	screen_device &screen(SCREEN(config, "screen", SCREEN_TYPE_RASTER));
+	screen.set_refresh_hz(60);
+	screen.set_vblank_time(ATTOSECONDS_IN_USEC(0));
+	screen.set_size(64*8, 32*8);
+	screen.set_visarea(14*8, (64-14)*8-1, 2*8, 30*8-1);
+	screen.set_screen_update(FUNC(bottom9_state::screen_update_bottom9));
+	screen.set_palette(m_palette);
 
-	MCFG_PALETTE_ADD("palette", 1024)
-	MCFG_PALETTE_ENABLE_SHADOWS()
-	MCFG_PALETTE_FORMAT(xBBBBBGGGGGRRRRR)
+	PALETTE(config, m_palette).set_format(palette_device::xBGR_555, 1024);
+	m_palette->enable_shadows();
 
-	MCFG_DEVICE_ADD("k052109", K052109, 0)
-	MCFG_GFX_PALETTE("palette")
-	MCFG_K052109_CB(bottom9_state, tile_callback)
+	K052109(config, m_k052109, 0); // 051961 on schematics
+	m_k052109->set_palette(m_palette);
+	m_k052109->set_screen("screen");
+	m_k052109->set_tile_callback(FUNC(bottom9_state::tile_callback));
+	m_k052109->irq_handler().set_inputline(m_maincpu, M6809_IRQ_LINE);
 
-	MCFG_DEVICE_ADD("k051960", K051960, 0)
-	MCFG_GFX_PALETTE("palette")
-	MCFG_K051960_SCREEN_TAG("screen")
-	MCFG_K051960_CB(bottom9_state, sprite_callback)
+	K051960(config, m_k051960, 0);
+	m_k051960->set_palette(m_palette);
+	m_k051960->set_screen("screen");
+	m_k051960->set_sprite_callback(FUNC(bottom9_state::sprite_callback));
 
-	MCFG_DEVICE_ADD("k051316", K051316, 0)
-	MCFG_GFX_PALETTE("palette")
-	MCFG_K051316_CB(bottom9_state, zoom_callback)
+	K051316(config, m_k051316, 0);
+	m_k051316->set_palette(m_palette);
+	m_k051316->set_zoom_callback(FUNC(bottom9_state::zoom_callback));
 
 	/* sound hardware */
-	MCFG_SPEAKER_STANDARD_MONO("mono")
+	SPEAKER(config, "mono").front_center();
 
-	MCFG_GENERIC_LATCH_8_ADD("soundlatch")
+	GENERIC_LATCH_8(config, "soundlatch");
 
-	MCFG_SOUND_ADD("k007232_1", K007232, 3579545)
-	MCFG_K007232_PORT_WRITE_HANDLER(WRITE8(bottom9_state, volume_callback0))
-	MCFG_SOUND_ROUTE(0, "mono", 0.40)
-	MCFG_SOUND_ROUTE(1, "mono", 0.40)
+	K007232(config, m_k007232_1, XTAL(3'579'545));
+	m_k007232_1->port_write().set(FUNC(bottom9_state::volume_callback0));
+	m_k007232_1->add_route(0, "mono", 0.40);
+	m_k007232_1->add_route(1, "mono", 0.40);
 
-	MCFG_SOUND_ADD("k007232_2", K007232, 3579545)
-	MCFG_K007232_PORT_WRITE_HANDLER(WRITE8(bottom9_state, volume_callback1))
-	MCFG_SOUND_ROUTE(0, "mono", 0.40)
-	MCFG_SOUND_ROUTE(1, "mono", 0.40)
-MACHINE_CONFIG_END
+	K007232(config, m_k007232_2, XTAL(3'579'545));
+	m_k007232_2->port_write().set(FUNC(bottom9_state::volume_callback1));
+	m_k007232_2->add_route(0, "mono", 0.40);
+	m_k007232_2->add_route(1, "mono", 0.40);
+}
 
 
 /***************************************************************************
@@ -534,6 +530,6 @@ ROM_END
 
 
 
-GAME( 1989, bottom9,  0,       bottom9, bottom9,  bottom9_state, 0, ROT0, "Konami", "Bottom of the Ninth (version T)", MACHINE_SUPPORTS_SAVE )
-GAME( 1989, bottom9n, bottom9, bottom9, bottom9,  bottom9_state, 0, ROT0, "Konami", "Bottom of the Ninth (version N)", MACHINE_SUPPORTS_SAVE )
-GAME( 1989, mstadium, bottom9, bottom9, mstadium, bottom9_state, 0, ROT0, "Konami", "Main Stadium (Japan)", MACHINE_SUPPORTS_SAVE )
+GAME( 1989, bottom9,  0,       bottom9, bottom9,  bottom9_state, empty_init, ROT0, "Konami", "Bottom of the Ninth (version T)", MACHINE_SUPPORTS_SAVE )
+GAME( 1989, bottom9n, bottom9, bottom9, bottom9,  bottom9_state, empty_init, ROT0, "Konami", "Bottom of the Ninth (version N)", MACHINE_SUPPORTS_SAVE )
+GAME( 1989, mstadium, bottom9, bottom9, mstadium, bottom9_state, empty_init, ROT0, "Konami", "Main Stadium (Japan)", MACHINE_SUPPORTS_SAVE )

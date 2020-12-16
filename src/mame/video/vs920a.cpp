@@ -1,7 +1,7 @@
 // license:BSD-3-Clause
 // copyright-holders:David Haywood
 
-// currently used by gstriker.c, apparently inufuku uses the same chip
+// currently used by gstriker.cpp, apparently inufuku uses the same chip
 
 /*** VS920A (score tilemap) **********************************************/
 
@@ -49,31 +49,17 @@ void vs920a_text_tilemap_device::device_start()
 		throw device_missing_dependencies();
 
 	m_vram = make_unique_clear<uint16_t[]>(0x1000/2);
-	save_pointer(NAME(m_vram.get()), 0x1000/2);
+	save_pointer(NAME(m_vram), 0x1000/2);
 	save_item(NAME(m_pal_base));
 
 
-	m_tmap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(vs920a_text_tilemap_device::get_tile_info),this),TILEMAP_SCAN_ROWS,8,8,64,32);
+	m_tmap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(vs920a_text_tilemap_device::get_tile_info)), TILEMAP_SCAN_ROWS, 8, 8, 64, 32);
 	m_tmap->set_transparent_pen(0);
 }
 
 void vs920a_text_tilemap_device::device_reset()
 {
 }
-
-
-void vs920a_text_tilemap_device::set_gfx_region(device_t &device, int gfxregion)
-{
-	vs920a_text_tilemap_device &dev = downcast<vs920a_text_tilemap_device &>(device);
-	dev.m_gfx_region = gfxregion;
-}
-
-void vs920a_text_tilemap_device::static_set_gfxdecode_tag(device_t &device, const char *tag)
-{
-	downcast<vs920a_text_tilemap_device &>(device).m_gfxdecode.set_tag(tag);
-}
-
-
 
 TILE_GET_INFO_MEMBER(vs920a_text_tilemap_device::get_tile_info)
 {
@@ -85,17 +71,17 @@ TILE_GET_INFO_MEMBER(vs920a_text_tilemap_device::get_tile_info)
 	tileno = data & 0xFFF;
 	pal =   (data >> 12) & 0xF;
 
-	SET_TILE_INFO_MEMBER(m_gfx_region, tileno, m_pal_base + pal, 0);
+	tileinfo.set(m_gfx_region, tileno, m_pal_base + pal, 0);
 }
 
-WRITE16_MEMBER(vs920a_text_tilemap_device::vram_w)
+void vs920a_text_tilemap_device::vram_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	COMBINE_DATA(&m_vram[offset]);
 	m_tmap->mark_tile_dirty(offset);
 }
 
 
-READ16_MEMBER(vs920a_text_tilemap_device::vram_r)
+uint16_t vs920a_text_tilemap_device::vram_r(offs_t offset)
 {
 	return m_vram[offset];
 }

@@ -15,34 +15,7 @@
 
 #include "cpu/mcs51/mcs51.h"
 #include "sound/okiadpcm.h"
-
-//**************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_QS1000_EXTERNAL_ROM(_bool) \
-	qs1000_device::set_external_rom(*device, _bool);
-
-#define MCFG_QS1000_IN_P1_CB(_devcb) \
-	devcb = &qs1000_device::set_in_p1_callback(*device, DEVCB_##_devcb);
-
-#define MCFG_QS1000_IN_P2_CB(_devcb) \
-	devcb = &qs1000_device::set_in_p2_callback(*device, DEVCB_##_devcb);
-
-#define MCFG_QS1000_IN_P3_CB(_devcb) \
-	devcb = &qs1000_device::set_in_p3_callback(*device, DEVCB_##_devcb);
-
-#define MCFG_QS1000_OUT_P1_CB(_devcb) \
-	devcb = &qs1000_device::set_out_p1_callback(*device, DEVCB_##_devcb);
-
-#define MCFG_QS1000_OUT_P2_CB(_devcb) \
-	devcb = &qs1000_device::set_out_p2_callback(*device, DEVCB_##_devcb);
-
-#define MCFG_QS1000_OUT_P3_CB(_devcb) \
-	devcb = &qs1000_device::set_out_p3_callback(*device, DEVCB_##_devcb);
-
-/*#define MCFG_QS1000_SERIAL_W_CB(_devcb) \
-    devcb = &qs1000_device::set_serial_w_callback(*device, DEVCB_##_devcb);*/
+#include "dirom.h"
 
 //**************************************************************************
 //  TYPE DEFINITIONS
@@ -52,38 +25,44 @@
 
 class qs1000_device :   public device_t,
 						public device_sound_interface,
-						public device_rom_interface
+						public device_rom_interface<24>
 {
 public:
+	static constexpr feature_type imperfect_features() { return feature::SOUND; }
+
 	// construction/destruction
 	qs1000_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	static void set_external_rom(device_t &device, bool external_rom) { downcast<qs1000_device &>(device).m_external_rom = external_rom; }
-	template <class Object> static devcb_base &set_in_p1_callback(device_t &device, Object &&cb) { return downcast<qs1000_device &>(device).m_in_p1_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_in_p2_callback(device_t &device, Object &&cb) { return downcast<qs1000_device &>(device).m_in_p2_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_in_p3_callback(device_t &device, Object &&cb) { return downcast<qs1000_device &>(device).m_in_p3_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_out_p1_callback(device_t &device, Object &&cb) { return downcast<qs1000_device &>(device).m_out_p1_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_out_p2_callback(device_t &device, Object &&cb) { return downcast<qs1000_device &>(device).m_out_p2_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_out_p3_callback(device_t &device, Object &&cb) { return downcast<qs1000_device &>(device).m_out_p3_cb.set_callback(std::forward<Object>(cb)); }
-	//template <class Object> static devcb_base &set_serial_w_callback(device_t &device, Object &&cb) { return downcast<qs1000_device &>(device).m_serial_w_cb.set_callback(std::forward<Object>(cb)); }
+	void set_external_rom(bool external_rom) { m_external_rom = external_rom; }
+	auto p1_in() { return m_in_p1_cb.bind(); }
+	auto p2_in() { return m_in_p2_cb.bind(); }
+	auto p3_in() { return m_in_p3_cb.bind(); }
+	auto p1_out() { return m_out_p1_cb.bind(); }
+	auto p2_out() { return m_out_p2_cb.bind(); }
+	auto p3_out() { return m_out_p3_cb.bind(); }
+	//auto serial_w() { return m_serial_w_cb.bind(); }
 
 	// external
+	i8052_device &cpu() const { return *m_cpu; }
 	void serial_in(uint8_t data);
 	void set_irq(int state);
 
-	DECLARE_WRITE8_MEMBER( wave_w );
+	void wave_w(offs_t offset, uint8_t data);
 
-	DECLARE_READ8_MEMBER( p0_r );
-	DECLARE_WRITE8_MEMBER( p0_w );
+	uint8_t p0_r();
+	void p0_w(uint8_t data);
 
-	DECLARE_READ8_MEMBER( p1_r );
-	DECLARE_WRITE8_MEMBER( p1_w );
+	uint8_t p1_r();
+	void p1_w(uint8_t data);
 
-	DECLARE_READ8_MEMBER( p2_r );
-	DECLARE_WRITE8_MEMBER( p2_w );
+	uint8_t p2_r();
+	void p2_w(uint8_t data);
 
-	DECLARE_READ8_MEMBER( p3_r );
-	DECLARE_WRITE8_MEMBER( p3_w );
+	uint8_t p3_r();
+	void p3_w(uint8_t data);
+
+	void qs1000_io_map(address_map &map);
+	void qs1000_prg_map(address_map &map);
 
 protected:
 	// device-level overrides
@@ -152,7 +131,7 @@ private:
 
 	qs1000_channel                  m_channels[QS1000_CHANNELS];
 
-	DECLARE_READ8_MEMBER( data_to_i8052 );
+	uint8_t data_to_i8052();
 };
 
 

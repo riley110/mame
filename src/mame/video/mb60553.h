@@ -7,12 +7,14 @@
 
 #pragma once
 
+#include "tilemap.h"
+
 
 class mb60553_zooming_tilemap_device : public device_t
 {
 public:
-	static void static_set_gfxdecode_tag(device_t &device, const char *tag);
-	static void set_gfx_region(device_t &device, int gfxregion);
+	template <typename T> void set_gfxdecode_tag(T &&tag) { m_gfxdecode.set_tag(std::forward<T>(tag)); }
+	void set_gfx_region(int gfxregion) { m_gfx_region = gfxregion; }
 
 	mb60553_zooming_tilemap_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
@@ -22,13 +24,13 @@ public:
 
 	TILEMAP_MAPPER_MEMBER(twc94_scan);
 
-	DECLARE_WRITE16_MEMBER(regs_w);
-	DECLARE_WRITE16_MEMBER(vram_w);
-	DECLARE_WRITE16_MEMBER(line_w);
+	void regs_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	void vram_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	void line_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
 
-	DECLARE_READ16_MEMBER(regs_r);
-	DECLARE_READ16_MEMBER(vram_r);
-	DECLARE_READ16_MEMBER(line_r);
+	uint16_t regs_r(offs_t offset);
+	uint16_t vram_r(offs_t offset);
+	uint16_t line_r(offs_t offset);
 
 protected:
 	virtual void device_start() override;
@@ -57,12 +59,5 @@ private:
 };
 
 DECLARE_DEVICE_TYPE(MB60553, mb60553_zooming_tilemap_device)
-
-
-#define MCFG_MB60553_GFX_REGION(_region) \
-	mb60553_zooming_tilemap_device::set_gfx_region(*device, _region);
-
-#define MCFG_MB60553_GFXDECODE(_gfxtag) \
-	mb60553_zooming_tilemap_device::static_set_gfxdecode_tag(*device, "^" _gfxtag);
 
 #endif // MAME_VIDEO_MB60533_H

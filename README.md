@@ -9,6 +9,7 @@ Build status for tiny build only, containing just core parts of project:
 | ------------- |:-------------:| 
 |Linux GCC / OSX Clang| [![Build Status](https://travis-ci.org/mamedev/mame.svg?branch=master)](https://travis-ci.org/mamedev/mame) |
 |Windows MinGW | [![Build Status](https://tea-ci.org/api/badges/mamedev/mame/status.svg)](https://tea-ci.org/mamedev/mame) |
+|Windows MSVC | [![Build status](https://ci.appveyor.com/api/projects/status/te0qy56b72tp5kmo?svg=true)](https://ci.appveyor.com/project/startaq/mame) |
 
 Static analysis status for entire build (except for third-party parts of project):
 
@@ -17,9 +18,9 @@ Static analysis status for entire build (except for third-party parts of project
 What is MAME?
 =============
 
-MAME originally stood for Multiple Arcade Machine Emulator.
+MAME is a multi-purpose emulation framework.
 
-MAME's purpose is to preserve decades of software history. As electronic technology continues to rush forward, MAME prevents this important "vintage" software from being lost and forgotten. This is achieved by documenting the hardware and how it functions. The source code to MAME serves as this documentation. The fact that the software is usable serves primarily to validate the accuracy of the documentation (how else can you prove that you have recreated the hardware faithfully?). Over time, MAME absorbed the sister-project MESS (Multi Emulator Super System), so MAME now documents a wide variety of (mostly vintage) computers, video game consoles and calculators, in addition to the arcade video games that were its initial focus.
+MAME's purpose is to preserve decades of software history. As electronic technology continues to rush forward, MAME prevents this important "vintage" software from being lost and forgotten. This is achieved by documenting the hardware and how it functions. The source code to MAME serves as this documentation. The fact that the software is usable serves primarily to validate the accuracy of the documentation (how else can you prove that you have recreated the hardware faithfully?). Over time, MAME (originally stood for Multiple Arcade Machine Emulator) absorbed the sister-project MESS (Multi Emulator Super System), so MAME now documents a wide variety of (mostly vintage) computers, video game consoles and calculators, in addition to the arcade video games that were its initial focus.
 
 How to compile?
 ===============
@@ -54,20 +55,20 @@ Visual Studio builds are also possible, but you still need [build environment](h
 In order to generate solution and project files just run:
 
 ```
-make vs2015
+make vs2017
 ```
 or use this command to build it directly using msbuild
 
 ```
-make vs2015 MSBUILD=1
+make vs2017 MSBUILD=1
 ```
 
 
 Where can I find out more?
 =============
 
-* [Official MAME Development Team Site](http://mamedev.org/) (includes binary downloads for MAME and MESS, wiki, forums, and more)
-* [Official MESS Wiki](http://www.mess.org/)
+* [Official MAME Development Team Site](http://mamedev.org/) (includes binary downloads, wiki, forums, and more)
+* [Official MESS Wiki](http://mess.redump.net/)
 * [MAME Testers](http://mametesters.org/) (official bug tracker for MAME and MESS)
 
 
@@ -84,28 +85,31 @@ All contributors need to either add a standard header for license info (on new f
 
 License
 =======
-The MAME project as a whole is distributed under the terms of the [GNU General Public License, version 2](http://opensource.org/licenses/GPL-2.0) or later (GPL-2.0+), since it contains code made available under multiple GPL-compatible licenses. A great majority of files (over 90% including core files) are under the [BSD-3-Clause License](http://opensource.org/licenses/BSD-3-Clause) and we would encourage new contributors to distribute files under this license.
+The MAME project as a whole is made available under the terms of the
+[GNU General Public License, version 2](http://opensource.org/licenses/GPL-2.0)
+or later (GPL-2.0+), since it contains code made available under multiple
+GPL-compatible licenses.  A great majority of the source files (over 90%
+including core files) are made available under the terms of the
+[3-clause BSD License](http://opensource.org/licenses/BSD-3-Clause), and we
+would encourage new contributors to make their contributions available under the
+terms of this license.
 
-Please note that MAME is a registered trademark of Gregory Ember, and permission is required to use the "MAME" name, logo, or wordmark.
+Please note that MAME is a registered trademark of Gregory Ember, and permission
+is required to use the "MAME" name, logo, or wordmark.
 
 <a href="http://opensource.org/licenses/GPL-2.0" target="_blank">
 <img align="right" src="http://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png">
 </a>
 
-    Copyright (C) 1997-2017  MAMEDev and contributors
+    Copyright (C) 1997-2020  MAMEDev and contributors
 
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or
-    (at your option) any later version.
+    This program is free software; you can redistribute it and/or modify it
+    under the terms of the GNU General Public License version 2, as provided in
+    docs/legal/GPL-2.0.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+    This program is distributed in the hope that it will be useful, but WITHOUT
+    ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+    FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+    more details.
 
-    You should have received a copy of the GNU General Public License along
-    with this program; if not, write to the Free Software Foundation, Inc.,
-    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
-
-Please see [LICENSE.md](LICENSE.md) for further details.
+Please see COPYING for more details.

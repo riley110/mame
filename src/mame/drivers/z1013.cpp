@@ -54,7 +54,7 @@ Due to no input checking, misuse of commands can crash the system.
 #include "machine/z80pio.h"
 #include "imagedev/cassette.h"
 #include "imagedev/snapquik.h"
-#include "sound/wave.h"
+#include "emupal.h"
 #include "screen.h"
 #include "speaker.h"
 
@@ -65,23 +65,35 @@ public:
 	z1013_state(const machine_config &mconfig, device_type type, const char *tag)
 		: driver_device(mconfig, type, tag)
 		, m_maincpu(*this, "maincpu")
+		, m_rom(*this, "maincpu")
+		, m_ram(*this, "mainram")
 		, m_cass(*this, "cassette")
 		, m_p_videoram(*this, "videoram")
 		, m_p_chargen(*this, "chargen")
 	{ }
 
-	DECLARE_WRITE8_MEMBER(z1013_keyboard_w);
-	DECLARE_READ8_MEMBER(port_b_r);
-	DECLARE_WRITE8_MEMBER(port_b_w);
-	DECLARE_READ8_MEMBER(k7659_port_b_r);
-	DECLARE_SNAPSHOT_LOAD_MEMBER(z1013);
-	uint32_t screen_update_z1013(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
+	void z1013k76(machine_config &config);
+	void z1013(machine_config &config);
 
 private:
+	void z1013_keyboard_w(uint8_t data);
+	uint8_t port_b_r();
+	void port_b_w(uint8_t data);
+	uint8_t k7659_port_b_r();
+	DECLARE_SNAPSHOT_LOAD_MEMBER(snapshot_cb);
+	uint32_t screen_update_z1013(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
+
+	void io_map(address_map &map);
+	void mem_map(address_map &map);
+
 	uint8_t m_keyboard_line;
 	bool m_keyboard_part;
 	virtual void machine_reset() override;
+	virtual void machine_start() override;
+
 	required_device<cpu_device> m_maincpu;
+	required_region_ptr<u8> m_rom;
+	required_shared_ptr<u8> m_ram;
 	required_device<cassette_image_device> m_cass;
 	required_shared_ptr<uint8_t> m_p_videoram;
 	required_region_ptr<u8> m_p_chargen;
@@ -89,17 +101,19 @@ private:
 
 
 /* Address maps */
-static ADDRESS_MAP_START(z1013_mem, AS_PROGRAM, 8, z1013_state)
-	AM_RANGE( 0x0000, 0xebff ) AM_RAM
-	AM_RANGE( 0xec00, 0xefff ) AM_RAM AM_SHARE("videoram")
-	AM_RANGE( 0xf000, 0xffff ) AM_ROM //  ROM
-ADDRESS_MAP_END
+void z1013_state::mem_map(address_map &map)
+{
+	map(0x0000, 0xebff).ram().share("mainram");
+	map(0xec00, 0xefff).ram().share("videoram");
+	map(0xf000, 0xffff).rom().region("maincpu",0);
+}
 
-static ADDRESS_MAP_START(z1013_io, AS_IO, 8, z1013_state)
-	ADDRESS_MAP_GLOBAL_MASK(0xff)
-	AM_RANGE( 0x00, 0x03 ) AM_DEVREADWRITE("z80pio", z80pio_device, read_alt, write_alt)
-	AM_RANGE( 0x08, 0x08 ) AM_WRITE(z1013_keyboard_w)
-ADDRESS_MAP_END
+void z1013_state::io_map(address_map &map)
+{
+	map.global_mask(0xff);
+	map(0x00, 0x03).rw("z80pio", FUNC(z80pio_device::read_alt), FUNC(z80pio_device::write_alt));
+	map(0x08, 0x08).w(FUNC(z1013_state::z1013_keyboard_w));
+}
 
 /* Input ports */
 static INPUT_PORTS_START( z1013_8x4 )
@@ -260,17 +274,24 @@ uint32_t z1013_state::screen_update_z1013(screen_device &screen, bitmap_ind16 &b
 
 void z1013_state::machine_reset()
 {
-	m_maincpu->set_state_int(Z80_PC, 0xF000);
 	m_keyboard_part = 0;
 	m_keyboard_line = 0;
+
+	m_maincpu->set_state_int(Z80_PC, 0xf000);
 }
 
-WRITE8_MEMBER( z1013_state::z1013_keyboard_w )
+void z1013_state::machine_start()
+{
+	save_item(NAME(m_keyboard_line));
+	save_item(NAME(m_keyboard_part));
+}
+
+void z1013_state::z1013_keyboard_w(uint8_t data)
 {
 	m_keyboard_line = data;
 }
 
-READ8_MEMBER( z1013_state::port_b_r )
+uint8_t z1013_state::port_b_r()
 {
 	char kbdrow[6];
 	sprintf(kbdrow,"X%d", m_keyboard_line & 7);
@@ -287,18 +308,18 @@ READ8_MEMBER( z1013_state::port_b_r )
 	return data;
 }
 
-WRITE8_MEMBER( z1013_state::port_b_w )
+void z1013_state::port_b_w(uint8_t data)
 {
 	m_keyboard_part = BIT(data, 4); // for z1013a2 only
 	m_cass->output(BIT(data, 7) ? -1.0 : +1.0);
 }
 
-READ8_MEMBER( z1013_state::k7659_port_b_r )
+uint8_t z1013_state::k7659_port_b_r()
 {
 	return 0xff;
 }
 
-SNAPSHOT_LOAD_MEMBER( z1013_state, z1013 )
+SNAPSHOT_LOAD_MEMBER(z1013_state::snapshot_cb)
 {
 /* header layout
 0000,0001 - load address
@@ -344,7 +365,7 @@ SNAPSHOT_LOAD_MEMBER( z1013_state, z1013 )
 }
 
 /* F4 Character Displayer */
-static const gfx_layout z1013_charlayout =
+static const gfx_layout charlayout =
 {
 	8, 8,                   /* 8 x 8 characters */
 	512,                    /* 2 x 256 characters */
@@ -357,59 +378,62 @@ static const gfx_layout z1013_charlayout =
 	8*8                 /* every char takes 8 bytes */
 };
 
-static GFXDECODE_START( z1013 )
-	GFXDECODE_ENTRY( "chargen", 0x0000, z1013_charlayout, 0, 1 )
+static GFXDECODE_START( gfx_z1013 )
+	GFXDECODE_ENTRY( "chargen", 0x0000, charlayout, 0, 1 )
 GFXDECODE_END
 
 /* Machine driver */
-static MACHINE_CONFIG_START( z1013 )
+void z1013_state::z1013(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", Z80, XTAL_1MHz )
-	MCFG_CPU_PROGRAM_MAP(z1013_mem)
-	MCFG_CPU_IO_MAP(z1013_io)
+	Z80(config, m_maincpu, XTAL(1'000'000));
+	m_maincpu->set_addrmap(AS_PROGRAM, &z1013_state::mem_map);
+	m_maincpu->set_addrmap(AS_IO, &z1013_state::io_map);
 
 	/* video hardware */
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_REFRESH_RATE(50)
-	MCFG_SCREEN_VBLANK_TIME(ATTOSECONDS_IN_USEC(2500)) /* not accurate */
-	MCFG_SCREEN_SIZE(32*8, 32*8)
-	MCFG_SCREEN_VISIBLE_AREA(0, 32*8-1, 0, 32*8-1)
-	MCFG_SCREEN_UPDATE_DRIVER(z1013_state, screen_update_z1013)
-	MCFG_SCREEN_PALETTE("palette")
+	screen_device &screen(SCREEN(config, "screen", SCREEN_TYPE_RASTER));
+	screen.set_refresh_hz(50);
+	screen.set_vblank_time(ATTOSECONDS_IN_USEC(2500)); /* not accurate */
+	screen.set_size(32*8, 32*8);
+	screen.set_visarea(0, 32*8-1, 0, 32*8-1);
+	screen.set_screen_update(FUNC(z1013_state::screen_update_z1013));
+	screen.set_palette("palette");
 
-	MCFG_GFXDECODE_ADD("gfxdecode", "palette", z1013)
-	MCFG_PALETTE_ADD_MONOCHROME("palette")
+	GFXDECODE(config, "gfxdecode", "palette", gfx_z1013);
+	PALETTE(config, "palette", palette_device::MONOCHROME);
 
 	/* sound hardware */
-	MCFG_SPEAKER_STANDARD_MONO("mono")
-	MCFG_SOUND_WAVE_ADD(WAVE_TAG, "cassette")
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.25)
+	SPEAKER(config, "mono").front_center();
 
 	/* devices */
-	MCFG_DEVICE_ADD("z80pio", Z80PIO, XTAL_1MHz)
-	MCFG_Z80PIO_IN_PB_CB(READ8(z1013_state, port_b_r))
-	MCFG_Z80PIO_OUT_PB_CB(WRITE8(z1013_state, port_b_w))
+	z80pio_device& pio(Z80PIO(config, "z80pio", XTAL(1'000'000)));
+	pio.in_pb_callback().set(FUNC(z1013_state::port_b_r));
+	pio.out_pb_callback().set(FUNC(z1013_state::port_b_w));
 
-	MCFG_CASSETTE_ADD( "cassette" )
-	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_STOPPED | CASSETTE_MOTOR_ENABLED | CASSETTE_SPEAKER_ENABLED)
+	CASSETTE(config, m_cass);
+	m_cass->set_default_state(CASSETTE_STOPPED | CASSETTE_MOTOR_ENABLED | CASSETTE_SPEAKER_ENABLED);
+	m_cass->add_route(ALL_OUTPUTS, "mono", 0.05);
 
-	MCFG_SNAPSHOT_ADD("snapshot", z1013_state, z1013, "z80", 0)
-MACHINE_CONFIG_END
+	SNAPSHOT(config, "snapshot", "z80").set_load_callback(FUNC(z1013_state::snapshot_cb));
+}
 
-static MACHINE_CONFIG_DERIVED( z1013k76, z1013 )
-	MCFG_DEVICE_REMOVE("z80pio")
-	MCFG_DEVICE_ADD("z80pio", Z80PIO, XTAL_1MHz)
-	MCFG_Z80PIO_IN_PB_CB(READ8(z1013_state, k7659_port_b_r))
-MACHINE_CONFIG_END
+void z1013_state::z1013k76(machine_config &config)
+{
+	z1013(config);
+
+	z80pio_device &pio(*subdevice<z80pio_device>("z80pio"));
+	pio.in_pb_callback().set(FUNC(z1013_state::k7659_port_b_r));
+	pio.out_pb_callback().set_nop();
+}
 
 /* ROM definition */
 ROM_START( z1013 )
-	ROM_REGION( 0x10000, "maincpu", ROMREGION_ERASEFF )
+	ROM_REGION( 0x1000, "maincpu", 0 )
 	ROM_SYSTEM_BIOS( 0, "202", "Original" )
-	ROMX_LOAD( "mon_202.bin", 0xf000, 0x0800, CRC(5884edab) SHA1(c3a45ea5cc4da2b7c270068ba1e2d75916960709), ROM_BIOS(1))
+	ROMX_LOAD( "mon_202.bin", 0x0000, 0x0800, CRC(5884edab) SHA1(c3a45ea5cc4da2b7c270068ba1e2d75916960709), ROM_BIOS(0))
 
 	ROM_SYSTEM_BIOS( 1, "jm", "Jens Muller version" )
-	ROMX_LOAD( "mon_jm_1992.bin", 0xf000, 0x0800, CRC(186d2888) SHA1(b52ccb557c41c96bace7db4c4f5031a0cd736168), ROM_BIOS(2))
+	ROMX_LOAD( "mon_jm_1992.bin", 0x0000, 0x0800, CRC(186d2888) SHA1(b52ccb557c41c96bace7db4c4f5031a0cd736168), ROM_BIOS(1))
 
 	ROM_REGION(0x1000, "chargen",0)
 	ROM_LOAD ("z1013font.bin",   0x0000, 0x0800, CRC(7023088f) SHA1(8b197a51c070efeba173d10be197bd41e764358c))
@@ -417,8 +441,8 @@ ROM_START( z1013 )
 ROM_END
 
 ROM_START( z1013a2 )
-	ROM_REGION( 0x10000, "maincpu", ROMREGION_ERASEFF )
-	ROM_LOAD( "mon_a2.bin", 0xf000, 0x0800, CRC(98b19b10) SHA1(97e158f589198cb96aae1567ee0aa6e47824027e))
+	ROM_REGION( 0x1000, "maincpu", 0 )
+	ROM_LOAD( "mon_a2.bin", 0x0000, 0x0800, CRC(98b19b10) SHA1(97e158f589198cb96aae1567ee0aa6e47824027e))
 
 	ROM_REGION(0x1000, "chargen",0)
 	ROM_LOAD ("z1013font.bin",   0x0000, 0x0800, CRC(7023088f) SHA1(8b197a51c070efeba173d10be197bd41e764358c))
@@ -426,8 +450,8 @@ ROM_START( z1013a2 )
 ROM_END
 
 ROM_START( z1013k76 )
-	ROM_REGION( 0x10000, "maincpu", ROMREGION_ERASEFF )
-	ROM_LOAD( "mon_rb_k7659.bin", 0xf000, 0x1000, CRC(b3d88c45) SHA1(0bcd20338cf0706b384f40901b7f8498c6f6c320))
+	ROM_REGION( 0x1000, "maincpu", 0 )
+	ROM_LOAD( "mon_rb_k7659.bin", 0x0000, 0x1000, CRC(b3d88c45) SHA1(0bcd20338cf0706b384f40901b7f8498c6f6c320))
 
 	ROM_REGION(0x1000, "chargen",0)
 	ROM_LOAD ("z1013font.bin",   0x0000, 0x0800, CRC(7023088f) SHA1(8b197a51c070efeba173d10be197bd41e764358c))
@@ -438,12 +462,12 @@ ROM_START( z1013k76 )
 ROM_END
 
 ROM_START( z1013s60 )
-	ROM_REGION( 0x10000, "maincpu", ROMREGION_ERASEFF )
+	ROM_REGION( 0x1000, "maincpu", 0 )
 	ROM_SYSTEM_BIOS( 0, "v1", "Version 1" )
-	ROMX_LOAD( "mon_rb_s6009.bin", 0xf000, 0x1000, CRC(b37faeed) SHA1(ce2e69af5378d39284e8b3be23da50416a0b0fbe), ROM_BIOS(1))
+	ROMX_LOAD( "mon_rb_s6009.bin", 0x0000, 0x1000, CRC(b37faeed) SHA1(ce2e69af5378d39284e8b3be23da50416a0b0fbe), ROM_BIOS(0))
 
 	ROM_SYSTEM_BIOS( 1, "v2", "Version 2" )
-	ROMX_LOAD( "4k-moni-k7652.bin", 0xf000, 0x1000, CRC(a1625fce) SHA1(f0847399502b38a73ad26b38ee2d85ba04ab85ec), ROM_BIOS(2))
+	ROMX_LOAD( "4k-moni-k7652.bin", 0x0000, 0x1000, CRC(a1625fce) SHA1(f0847399502b38a73ad26b38ee2d85ba04ab85ec), ROM_BIOS(1))
 
 	ROM_REGION(0x1000, "chargen",0)
 	ROM_LOAD ("z1013font.bin",   0x0000, 0x0800, CRC(7023088f) SHA1(8b197a51c070efeba173d10be197bd41e764358c))
@@ -451,8 +475,8 @@ ROM_START( z1013s60 )
 ROM_END
 
 ROM_START( z1013k69 )
-	ROM_REGION( 0x10000, "maincpu", ROMREGION_ERASEFF )
-	ROM_LOAD( "4k-moni-k7669.bin", 0xf000, 0x1000, CRC(09cd2a7a) SHA1(0b8500320d464469868a6b48db31105f34710c41))
+	ROM_REGION( 0x1000, "maincpu", 0 )
+	ROM_LOAD( "4k-moni-k7669.bin", 0x0000, 0x1000, CRC(09cd2a7a) SHA1(0b8500320d464469868a6b48db31105f34710c41))
 
 	ROM_REGION(0x1000, "chargen",0)
 	ROM_LOAD ("z1013font.bin",   0x0000, 0x0800, CRC(7023088f) SHA1(8b197a51c070efeba173d10be197bd41e764358c))
@@ -460,9 +484,9 @@ ROM_START( z1013k69 )
 ROM_END
 /* Driver */
 
-//    YEAR  NAME       PARENT  COMPAT  MACHINE      INPUT      STATE        INIT  COMPANY                           FULLNAME               FLAGS
-COMP( 1985, z1013,     0,      0,      z1013,       z1013_8x4, z1013_state, 0,    "VEB Robotron Electronics Riesa", "Z1013 (matrix 8x4)",  0 )
-COMP( 1985, z1013a2,   z1013,  0,      z1013,       z1013_8x8, z1013_state, 0,    "VEB Robotron Electronics Riesa", "Z1013 (matrix 8x8)",  0 )
-COMP( 1985, z1013k76,  z1013,  0,      z1013k76,    z1013,     z1013_state, 0,    "VEB Robotron Electronics Riesa", "Z1013 (K7659)",       MACHINE_NOT_WORKING | MACHINE_NO_SOUND_HW)
-COMP( 1985, z1013s60,  z1013,  0,      z1013k76,    z1013_8x8, z1013_state, 0,    "VEB Robotron Electronics Riesa", "Z1013 (K7652/S6009)", MACHINE_NOT_WORKING | MACHINE_NO_SOUND_HW)
-COMP( 1985, z1013k69,  z1013,  0,      z1013k76,    z1013,     z1013_state, 0,    "VEB Robotron Electronics Riesa", "Z1013 (K7669)",       MACHINE_NOT_WORKING | MACHINE_NO_SOUND_HW)
+//    YEAR  NAME      PARENT  COMPAT  MACHINE   INPUT      CLASS        INIT        COMPANY                           FULLNAME               FLAGS
+COMP( 1985, z1013,    0,      0,      z1013,    z1013_8x4, z1013_state, empty_init, "VEB Robotron Electronics Riesa", "Z1013 (matrix 8x4)",  MACHINE_SUPPORTS_SAVE )
+COMP( 1985, z1013a2,  z1013,  0,      z1013,    z1013_8x8, z1013_state, empty_init, "VEB Robotron Electronics Riesa", "Z1013 (matrix 8x8)",  MACHINE_SUPPORTS_SAVE )
+COMP( 1985, z1013k76, z1013,  0,      z1013k76, z1013,     z1013_state, empty_init, "VEB Robotron Electronics Riesa", "Z1013 (K7659)",       MACHINE_NOT_WORKING | MACHINE_NO_SOUND_HW | MACHINE_SUPPORTS_SAVE )
+COMP( 1985, z1013s60, z1013,  0,      z1013k76, z1013_8x8, z1013_state, empty_init, "VEB Robotron Electronics Riesa", "Z1013 (K7652/S6009)", MACHINE_NOT_WORKING | MACHINE_NO_SOUND_HW | MACHINE_SUPPORTS_SAVE )
+COMP( 1985, z1013k69, z1013,  0,      z1013k76, z1013,     z1013_state, empty_init, "VEB Robotron Electronics Riesa", "Z1013 (K7669)",       MACHINE_NOT_WORKING | MACHINE_NO_SOUND_HW | MACHINE_SUPPORTS_SAVE )

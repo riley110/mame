@@ -14,18 +14,7 @@
 #pragma once
 
 #include "cpu/tms32010/tms32010.h"
-
-
-//**************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_BSMT2000_ADD(_tag, _clock) \
-	MCFG_DEVICE_ADD(_tag, BSMT2000, _clock)
-#define MCFG_BSMT2000_REPLACE(_tag, _clock) \
-	MCFG_DEVICE_REPLACE(_tag, BSMT2000, _clock)
-#define MCFG_BSMT2000_READY_CALLBACK(_class, _method) \
-	bsmt2000_device::static_set_ready_callback(*device, bsmt2000_device::ready_callback(&_class::_method, #_class "::" #_method, nullptr, (_class *)nullptr));
+#include "dirom.h"
 
 
 //**************************************************************************
@@ -37,7 +26,7 @@
 
 class bsmt2000_device : public device_t,
 						public device_sound_interface,
-						public device_rom_interface
+						public device_rom_interface<32>
 {
 public:
 	typedef device_delegate<void ()> ready_callback;
@@ -46,13 +35,15 @@ public:
 	bsmt2000_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 	// inline configuration helpers
-	static void static_set_ready_callback(device_t &device, ready_callback &&callback);
+	template <typename... T> void set_ready_callback(T &&... args) { m_ready_callback.set(std::forward<T>(args)...); }
 
 	// public interface
 	uint16_t read_status();
 	void write_reg(uint16_t data);
 	void write_data(uint16_t data);
 
+	void tms_io_map(address_map &map);
+	void tms_program_map(address_map &map);
 protected:
 	// device-level overrides
 	virtual const tiny_rom_entry *device_rom_region() const override;
@@ -69,13 +60,13 @@ protected:
 
 public:
 	// internal TMS I/O callbacks
-	DECLARE_READ16_MEMBER( tms_register_r );
-	DECLARE_READ16_MEMBER( tms_data_r );
-	DECLARE_READ16_MEMBER( tms_rom_r );
-	DECLARE_WRITE16_MEMBER( tms_rom_addr_w );
-	DECLARE_WRITE16_MEMBER( tms_rom_bank_w );
-	DECLARE_WRITE16_MEMBER( tms_left_w );
-	DECLARE_WRITE16_MEMBER( tms_right_w );
+	uint16_t tms_register_r();
+	uint16_t tms_data_r();
+	uint16_t tms_rom_r();
+	void tms_rom_addr_w(uint16_t data);
+	void tms_rom_bank_w(uint16_t data);
+	void tms_left_w(uint16_t data);
+	void tms_right_w(uint16_t data);
 
 private:
 	// timers

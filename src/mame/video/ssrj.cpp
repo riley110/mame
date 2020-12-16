@@ -5,7 +5,7 @@
 
 /* tilemap 1 */
 
-WRITE8_MEMBER(ssrj_state::vram1_w)
+void ssrj_state::vram1_w(offs_t offset, uint8_t data)
 {
 	m_vram1[offset] = data;
 	m_tilemap1->mark_tile_dirty(offset>>1);
@@ -15,7 +15,7 @@ TILE_GET_INFO_MEMBER(ssrj_state::get_tile_info1)
 {
 	int code;
 	code = m_vram1[tile_index<<1] + (m_vram1[(tile_index<<1)+1]<<8);
-	SET_TILE_INFO_MEMBER(0,
+	tileinfo.set(0,
 		code&0x3ff,
 		(code>>12)&0x3,
 		((code & 0x8000) ? TILE_FLIPY:0) |( (code & 0x4000) ? TILE_FLIPX:0) );
@@ -23,7 +23,7 @@ TILE_GET_INFO_MEMBER(ssrj_state::get_tile_info1)
 
 /* tilemap 2 */
 
-WRITE8_MEMBER(ssrj_state::vram2_w)
+void ssrj_state::vram2_w(offs_t offset, uint8_t data)
 {
 	m_vram2[offset] = data;
 	m_tilemap2->mark_tile_dirty(offset>>1);
@@ -33,7 +33,7 @@ TILE_GET_INFO_MEMBER(ssrj_state::get_tile_info2)
 {
 	int code;
 	code = m_vram2[tile_index<<1] + (m_vram2[(tile_index<<1)+1]<<8);
-	SET_TILE_INFO_MEMBER(0,
+	tileinfo.set(0,
 		code&0x3ff,
 		((code>>12)&0x3)+4,
 		((code & 0x8000) ? TILE_FLIPY:0) |( (code & 0x4000) ? TILE_FLIPX:0) );
@@ -41,7 +41,7 @@ TILE_GET_INFO_MEMBER(ssrj_state::get_tile_info2)
 
 /* tilemap 4 */
 
-WRITE8_MEMBER(ssrj_state::vram4_w)
+void ssrj_state::vram4_w(offs_t offset, uint8_t data)
 {
 	m_vram4[offset] = data;
 	m_tilemap4->mark_tile_dirty(offset>>1);
@@ -51,7 +51,7 @@ TILE_GET_INFO_MEMBER(ssrj_state::get_tile_info4)
 {
 	int code;
 	code = m_vram4[tile_index<<1] + (m_vram4[(tile_index<<1)+1]<<8);
-	SET_TILE_INFO_MEMBER(0,
+	tileinfo.set(0,
 		code&0x3ff,
 		((code>>12)&0x3)+12,
 		((code & 0x8000) ? TILE_FLIPY:0) |( (code & 0x4000) ? TILE_FLIPX:0) );
@@ -66,7 +66,7 @@ TODO: This table is nowhere near as accurate. If you bother, here's how colors s
 -after the first stage, houses have red/white colors.
 */
 
-static const uint8_t fakecols[4*4][8][3]=
+static constexpr rgb_t fakecols[4 * 4][8] =
 {
 {{0x00,0x00,0x00},
 	{42,87,140},
@@ -220,9 +220,9 @@ static const uint8_t fakecols[4*4][8][3]=
 
 void ssrj_state::video_start()
 {
-	m_tilemap1 = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(ssrj_state::get_tile_info1),this), TILEMAP_SCAN_COLS, 8, 8, 32, 32);
-	m_tilemap2 = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(ssrj_state::get_tile_info2),this), TILEMAP_SCAN_COLS, 8, 8, 32, 32);
-	m_tilemap4 = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(ssrj_state::get_tile_info4),this), TILEMAP_SCAN_COLS, 8, 8, 32, 32);
+	m_tilemap1 = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(ssrj_state::get_tile_info1)), TILEMAP_SCAN_COLS, 8, 8, 32, 32);
+	m_tilemap2 = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(ssrj_state::get_tile_info2)), TILEMAP_SCAN_COLS, 8, 8, 32, 32);
+	m_tilemap4 = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(ssrj_state::get_tile_info4)), TILEMAP_SCAN_COLS, 8, 8, 32, 32);
 	m_tilemap2->set_transparent_pen(0);
 	m_tilemap4->set_transparent_pen(0);
 
@@ -264,12 +264,11 @@ void ssrj_state::draw_objects(bitmap_ind16 &bitmap, const rectangle &cliprect )
 }
 
 
-PALETTE_INIT_MEMBER(ssrj_state, ssrj)
+void ssrj_state::ssrj_palette(palette_device &palette) const
 {
-	int i, j;
-	for(i=0; i<4*4; i++)
-		for(j=0; j<8; j++)
-			palette.set_pen_color(i*8+j, fakecols[i][j][0], fakecols[i][j][1], fakecols[i][j][2]);
+	for (int i = 0; i < 4*4; i++)
+		for (int j = 0; j < 8; j++)
+			palette.set_pen_color(i*8 + j, fakecols[i][j]);
 }
 
 uint32_t ssrj_state::screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect)

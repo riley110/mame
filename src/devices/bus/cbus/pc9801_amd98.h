@@ -11,7 +11,7 @@
 
 #pragma once
 
-
+#include "bus/cbus/pc9801_cbus.h"
 #include "sound/ay8910.h"
 
 
@@ -29,8 +29,8 @@ public:
 
 	static constexpr feature_type imperfect_features() { return feature::SOUND; }
 
-	DECLARE_READ8_MEMBER(read);
-	DECLARE_WRITE8_MEMBER(write);
+	uint8_t read(offs_t offset);
+	void write(offs_t offset, uint8_t data);
 
 protected:
 	// device-level overrides
@@ -39,16 +39,15 @@ protected:
 	virtual void device_reset() override;
 	// optional information overrides
 	virtual void device_add_mconfig(machine_config &config) override;
-	void install_device(offs_t start, offs_t end, read8_delegate rhandler, write8_delegate whandler);
 	virtual ioport_constructor device_input_ports() const override;
 
 private:
-	DECLARE_WRITE8_MEMBER(ay3_address_w);
-	DECLARE_WRITE8_MEMBER(ay3_data_latch_w);
+	void ay3_address_w(uint8_t data);
+	void ay3_data_latch_w(uint8_t data);
 
 	uint8_t m_ay3_latch;
 
-//  required_device<cpu_device>  m_maincpu;
+	required_device<pc9801_slot_device> m_bus;
 	required_device<ay8910_device>  m_ay1;
 	required_device<ay8910_device>  m_ay2;
 	required_device<ay8910_device>  m_ay3;

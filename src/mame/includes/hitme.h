@@ -5,9 +5,14 @@
     Hitme hardware
 
 *************************************************************************/
+#ifndef MAME_INCLUDES_HITME_H
+#define MAME_INCLUDES_HITME_H
+
+#pragma once
 
 #include "sound/discrete.h"
 #include "screen.h"
+#include "tilemap.h"
 
 /* Discrete Sound Input Nodes */
 #define HITME_DOWNCOUNT_VAL      NODE_01
@@ -18,14 +23,19 @@
 class hitme_state : public driver_device
 {
 public:
-	hitme_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
+	hitme_state(const machine_config &mconfig, device_type type, const char *tag) :
+		driver_device(mconfig, type, tag),
 		m_videoram(*this, "videoram"),
 		m_maincpu(*this, "maincpu"),
 		m_discrete(*this, "discrete"),
 		m_gfxdecode(*this, "gfxdecode"),
-		m_screen(*this, "screen") { }
+		m_screen(*this, "screen")
+	{ }
 
+	void hitme(machine_config &config);
+	void barricad(machine_config &config);
+
+private:
 	/* memory pointers */
 	required_shared_ptr<uint8_t> m_videoram;
 
@@ -34,13 +44,13 @@ public:
 
 	/* misc */
 	attotime m_timeout_time;
-	DECLARE_WRITE8_MEMBER(hitme_vidram_w);
-	DECLARE_READ8_MEMBER(hitme_port_0_r);
-	DECLARE_READ8_MEMBER(hitme_port_1_r);
-	DECLARE_READ8_MEMBER(hitme_port_2_r);
-	DECLARE_READ8_MEMBER(hitme_port_3_r);
-	DECLARE_WRITE8_MEMBER(output_port_0_w);
-	DECLARE_WRITE8_MEMBER(output_port_1_w);
+	void hitme_vidram_w(offs_t offset, uint8_t data);
+	uint8_t hitme_port_0_r();
+	uint8_t hitme_port_1_r();
+	uint8_t hitme_port_2_r();
+	uint8_t hitme_port_3_r();
+	void output_port_0_w(uint8_t data);
+	void output_port_1_w(uint8_t data);
 	TILE_GET_INFO_MEMBER(get_hitme_tile_info);
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
@@ -54,8 +64,12 @@ public:
 	required_device<discrete_device> m_discrete;
 	required_device<gfxdecode_device> m_gfxdecode;
 	required_device<screen_device> m_screen;
+	void hitme_map(address_map &map);
+	void hitme_portmap(address_map &map);
 };
 
 
 /*----------- defined in audio/hitme.c -----------*/
-DISCRETE_SOUND_EXTERN( hitme );
+DISCRETE_SOUND_EXTERN( hitme_discrete );
+
+#endif // MAME_INCLUDES_HITME_H

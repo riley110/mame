@@ -19,88 +19,82 @@
 
 ******************************************************************************/
 
-PALETTE_INIT_MEMBER(ojankohs_state,ojankoy)
+void ojankohs_state::ojankoy_palette(palette_device &palette) const
 {
 	const uint8_t *color_prom = memregion("proms")->base();
-	int i;
-	int bit0, bit1, bit2, bit3, bit4, r, g, b;
+	int bit0, bit1, bit2, bit3, bit4;
 
-	for (i = 0; i < palette.entries(); i++)
+	for (int i = 0; i < palette.entries(); i++)
 	{
 		bit0 = BIT(color_prom[0], 2);
 		bit1 = BIT(color_prom[0], 3);
 		bit2 = BIT(color_prom[0], 4);
 		bit3 = BIT(color_prom[0], 5);
 		bit4 = BIT(color_prom[0], 6);
-		r = 0x08 * bit0 + 0x11 * bit1 + 0x21 * bit2 + 0x43 * bit3 + 0x82 * bit4;
+		int const r = 0x08 * bit0 + 0x11 * bit1 + 0x21 * bit2 + 0x43 * bit3 + 0x82 * bit4;
+
 		bit0 = BIT(color_prom[palette.entries()], 5);
 		bit1 = BIT(color_prom[palette.entries()], 6);
 		bit2 = BIT(color_prom[palette.entries()], 7);
 		bit3 = BIT(color_prom[0], 0);
 		bit4 = BIT(color_prom[0], 1);
-		g = 0x08 * bit0 + 0x11 * bit1 + 0x21 * bit2 + 0x43 * bit3 + 0x82 * bit4;
+		int const g = 0x08 * bit0 + 0x11 * bit1 + 0x21 * bit2 + 0x43 * bit3 + 0x82 * bit4;
+
 		bit0 = BIT(color_prom[palette.entries()], 0);
 		bit1 = BIT(color_prom[palette.entries()], 1);
 		bit2 = BIT(color_prom[palette.entries()], 2);
 		bit3 = BIT(color_prom[palette.entries()], 3);
 		bit4 = BIT(color_prom[palette.entries()], 4);
-		b = 0x08 * bit0 + 0x11 * bit1 + 0x21 * bit2 + 0x43 * bit3 + 0x82 * bit4;
+		int const b = 0x08 * bit0 + 0x11 * bit1 + 0x21 * bit2 + 0x43 * bit3 + 0x82 * bit4;
 
 		palette.set_pen_color(i, rgb_t(r, g, b));
 		color_prom++;
 	}
 }
 
-WRITE8_MEMBER(ojankohs_state::ojankohs_palette_w)
+void ojankohs_state::ojankohs_palette_w(offs_t offset, uint8_t data)
 {
-	int r, g, b;
+	m_paletteram[offset] = data;
+
+	offset &= 0x7fe;
+
+	int const r = (m_paletteram[offset + 0] & 0x7c) >> 2;
+	int const g = ((m_paletteram[offset + 0] & 0x03) << 3) | ((m_paletteram[offset + 1] & 0xe0) >> 5);
+	int const b = (m_paletteram[offset + 1] & 0x1f) >> 0;
+
+	m_palette->set_pen_color(offset >> 1, pal5bit(r), pal5bit(g), pal5bit(b));
+}
+
+void ojankohs_state::ccasino_palette_w(offs_t offset, uint8_t data)
+{
+	offset = bitswap<11>(offset, 2, 1, 0, 15, 14, 13, 12, 11, 10, 9, 8);
 
 	m_paletteram[offset] = data;
 
 	offset &= 0x7fe;
 
-	r = (m_paletteram[offset + 0] & 0x7c) >> 2;
-	g = ((m_paletteram[offset + 0] & 0x03) << 3) | ((m_paletteram[offset + 1] & 0xe0) >> 5);
-	b = (m_paletteram[offset + 1] & 0x1f) >> 0;
+	int const r = (m_paletteram[offset + 0] & 0x7c) >> 2;
+	int const g = ((m_paletteram[offset + 0] & 0x03) << 3) | ((m_paletteram[offset + 1] & 0xe0) >> 5);
+	int const b = (m_paletteram[offset + 1] & 0x1f) >> 0;
 
 	m_palette->set_pen_color(offset >> 1, pal5bit(r), pal5bit(g), pal5bit(b));
 }
 
-WRITE8_MEMBER(ojankohs_state::ccasino_palette_w)
+void ojankohs_state::ojankoc_palette_w(offs_t offset, uint8_t data)
 {
-	int r, g, b;
+	if (m_paletteram[offset] != data)
+	{
+		m_paletteram[offset] = data;
+		m_screen_refresh = 1;
 
-	/* get top 8 bits of the I/O port address */
-	offset = (offset << 8) | (space.device().state().state_int(Z80_BC) >> 8);
+		int const color = (m_paletteram[offset & 0x1e] << 8) | m_paletteram[offset | 0x01];
 
-	m_paletteram[offset] = data;
+		int const r = (color >> 10) & 0x1f;
+		int const g = (color >>  5) & 0x1f;
+		int const b = (color >>  0) & 0x1f;
 
-	offset &= 0x7fe;
-
-	r = (m_paletteram[offset + 0] & 0x7c) >> 2;
-	g = ((m_paletteram[offset + 0] & 0x03) << 3) | ((m_paletteram[offset + 1] & 0xe0) >> 5);
-	b = (m_paletteram[offset + 1] & 0x1f) >> 0;
-
-	m_palette->set_pen_color(offset >> 1, pal5bit(r), pal5bit(g), pal5bit(b));
-}
-
-WRITE8_MEMBER(ojankohs_state::ojankoc_palette_w)
-{
-	int r, g, b, color;
-
-	if (m_paletteram[offset] == data)
-		return;
-
-	m_paletteram[offset] = data;
-	m_screen_refresh = 1;
-
-	color = (m_paletteram[offset & 0x1e] << 8) | m_paletteram[offset | 0x01];
-
-	r = (color >> 10) & 0x1f;
-	g = (color >>  5) & 0x1f;
-	b = (color >>  0) & 0x1f;
-
-	m_palette->set_pen_color(offset >> 1, pal5bit(r), pal5bit(g), pal5bit(b));
+		m_palette->set_pen_color(offset >> 1, pal5bit(r), pal5bit(g), pal5bit(b));
+	}
 }
 
 
@@ -110,19 +104,19 @@ WRITE8_MEMBER(ojankohs_state::ojankoc_palette_w)
 
 ******************************************************************************/
 
-WRITE8_MEMBER(ojankohs_state::ojankohs_videoram_w)
+void ojankohs_state::ojankohs_videoram_w(offs_t offset, uint8_t data)
 {
 	m_videoram[offset] = data;
 	m_tilemap->mark_tile_dirty(offset);
 }
 
-WRITE8_MEMBER(ojankohs_state::ojankohs_colorram_w)
+void ojankohs_state::ojankohs_colorram_w(offs_t offset, uint8_t data)
 {
 	m_colorram[offset] = data;
 	m_tilemap->mark_tile_dirty(offset);
 }
 
-WRITE8_MEMBER(ojankohs_state::ojankohs_gfxreg_w)
+void ojankohs_state::ojankohs_gfxreg_w(uint8_t data)
 {
 	if (m_gfxreg != data)
 	{
@@ -131,7 +125,7 @@ WRITE8_MEMBER(ojankohs_state::ojankohs_gfxreg_w)
 	}
 }
 
-WRITE8_MEMBER(ojankohs_state::ojankohs_flipscreen_w)
+void ojankohs_state::ojankohs_flipscreen_w(uint8_t data)
 {
 	if (m_flipscreen != BIT(data, 0))
 	{
@@ -163,7 +157,7 @@ TILE_GET_INFO_MEMBER(ojankohs_state::ojankohs_get_tile_info)
 		color |= (m_gfxreg & 0xe0) >> 2;
 	}
 
-	SET_TILE_INFO_MEMBER(0, tile, color, 0);
+	tileinfo.set(0, tile, color, 0);
 }
 
 TILE_GET_INFO_MEMBER(ojankohs_state::ojankoy_get_tile_info)
@@ -173,7 +167,7 @@ TILE_GET_INFO_MEMBER(ojankohs_state::ojankoy_get_tile_info)
 	int flipx = ((m_colorram[tile_index] & 0x40) >> 6) ? TILEMAP_FLIPX : 0;
 	int flipy = ((m_colorram[tile_index] & 0x80) >> 7) ? TILEMAP_FLIPY : 0;
 
-	SET_TILE_INFO_MEMBER(0, tile, color, (flipx | flipy));
+	tileinfo.set(0, tile, color, (flipx | flipy));
 }
 
 
@@ -183,7 +177,7 @@ TILE_GET_INFO_MEMBER(ojankohs_state::ojankoy_get_tile_info)
 
 ******************************************************************************/
 
-void ojankohs_state::ojankoc_flipscreen( address_space &space, int data )
+void ojankohs_state::ojankoc_flipscreen(int data)
 {
 	int x, y;
 	uint8_t color1, color2;
@@ -199,20 +193,20 @@ void ojankohs_state::ojankoc_flipscreen( address_space &space, int data )
 		{
 			color1 = m_videoram[0x0000 + ((y * 256) + x)];
 			color2 = m_videoram[0x3fff - ((y * 256) + x)];
-			ojankoc_videoram_w(space, 0x0000 + ((y * 256) + x), color2);
-			ojankoc_videoram_w(space, 0x3fff - ((y * 256) + x), color1);
+			ojankoc_videoram_w(0x0000 + ((y * 256) + x), color2);
+			ojankoc_videoram_w(0x3fff - ((y * 256) + x), color1);
 
 			color1 = m_videoram[0x4000 + ((y * 256) + x)];
 			color2 = m_videoram[0x7fff - ((y * 256) + x)];
-			ojankoc_videoram_w(space, 0x4000 + ((y * 256) + x), color2);
-			ojankoc_videoram_w(space, 0x7fff - ((y * 256) + x), color1);
+			ojankoc_videoram_w(0x4000 + ((y * 256) + x), color2);
+			ojankoc_videoram_w(0x7fff - ((y * 256) + x), color1);
 		}
 	}
 
 	m_flipscreen_old = m_flipscreen;
 }
 
-WRITE8_MEMBER(ojankohs_state::ojankoc_videoram_w)
+void ojankohs_state::ojankoc_videoram_w(offs_t offset, uint8_t data)
 {
 	int i;
 	uint8_t x, y, xx, px, py ;
@@ -257,7 +251,7 @@ WRITE8_MEMBER(ojankohs_state::ojankoc_videoram_w)
 
 VIDEO_START_MEMBER(ojankohs_state,ojankohs)
 {
-	m_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(ojankohs_state::ojankohs_get_tile_info),this), TILEMAP_SCAN_ROWS,  8, 4, 64, 64);
+	m_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(ojankohs_state::ojankohs_get_tile_info)), TILEMAP_SCAN_ROWS,  8, 4, 64, 64);
 //  m_videoram = std::make_unique<uint8_t[]>(0x1000);
 //  m_colorram = std::make_unique<uint8_t[]>(0x1000);
 //  m_paletteram = std::make_unique<uint8_t[]>(0x800);
@@ -265,9 +259,15 @@ VIDEO_START_MEMBER(ojankohs_state,ojankohs)
 
 VIDEO_START_MEMBER(ojankohs_state,ojankoy)
 {
-	m_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(ojankohs_state::ojankoy_get_tile_info),this), TILEMAP_SCAN_ROWS,  8, 4, 64, 64);
+	m_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(ojankohs_state::ojankoy_get_tile_info)), TILEMAP_SCAN_ROWS,  8, 4, 64, 64);
 //  m_videoram = std::make_unique<uint8_t[]>(0x2000);
 //  m_colorram = std::make_unique<uint8_t[]>(0x1000);
+}
+
+VIDEO_START_MEMBER(ojankohs_state,ccasino)
+{
+	VIDEO_START_CALL_MEMBER(ojankoy);
+	m_paletteram.allocate(0x800);
 }
 
 VIDEO_START_MEMBER(ojankohs_state,ojankoc)
@@ -301,12 +301,10 @@ uint32_t ojankohs_state::screen_update_ojankoc(screen_device &screen, bitmap_ind
 
 	if (m_screen_refresh)
 	{
-		address_space &space = m_maincpu->space(AS_PROGRAM);
-
 		/* redraw bitmap */
 		for (offs = 0; offs < 0x8000; offs++)
 		{
-			ojankoc_videoram_w(space, offs, m_videoram[offs]);
+			ojankoc_videoram_w(offs, m_videoram[offs]);
 		}
 		m_screen_refresh = 0;
 	}

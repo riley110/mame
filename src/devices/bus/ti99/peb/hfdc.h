@@ -37,11 +37,11 @@ class myarc_hfdc_device : public device_t, public device_ti99_peribox_card_inter
 public:
 	myarc_hfdc_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	DECLARE_READ8Z_MEMBER(readz) override;
-	DECLARE_WRITE8_MEMBER(write) override;
-	DECLARE_SETADDRESS_DBIN_MEMBER(setaddress_dbin) override;
-	DECLARE_READ8Z_MEMBER(crureadz) override;
-	DECLARE_WRITE8_MEMBER(cruwrite) override;
+	void readz(offs_t offset, uint8_t *value) override;
+	void write(offs_t offset, uint8_t data) override;
+	void setaddress_dbin(offs_t offset, int state) override;
+	void crureadz(offs_t offset, uint8_t *value) override;
+	void cruwrite(offs_t offset, uint8_t data) override;
 
 protected:
 	void device_config_complete() override;
@@ -58,9 +58,9 @@ private:
 	DECLARE_WRITE_LINE_MEMBER( dmarq_w );
 	DECLARE_WRITE_LINE_MEMBER( intrq_w );
 	DECLARE_WRITE_LINE_MEMBER( dip_w );
-	DECLARE_WRITE8_MEMBER( auxbus_out );
-	DECLARE_READ8_MEMBER( read_buffer );
-	DECLARE_WRITE8_MEMBER( write_buffer );
+	void auxbus_out(offs_t offset, uint8_t data);
+	uint8_t read_buffer();
+	void write_buffer(uint8_t data);
 
 	DECLARE_FLOPPY_FORMATS( floppy_formats );
 

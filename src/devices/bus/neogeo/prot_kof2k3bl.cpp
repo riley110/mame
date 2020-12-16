@@ -31,17 +31,17 @@ void kof2k3bl_prot_device::device_reset()
 
 /* The King of Fighters 2003 (bootleg set 1) */
 
-READ16_MEMBER( kof2k3bl_prot_device::protection_r)
+uint16_t kof2k3bl_prot_device::protection_r(offs_t offset)
 {
 	return m_cartridge_ram[offset];
 }
 
-READ16_MEMBER(kof2k3bl_prot_device::overlay_r) // hack?
+uint16_t kof2k3bl_prot_device::overlay_r() // hack?
 {
 	return m_overlay;
 }
 
-WRITE16_MEMBER(kof2k3bl_prot_device::kof2003_w)
+void kof2k3bl_prot_device::kof2003_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	data = COMBINE_DATA(&m_cartridge_ram[offset]);
 	if (offset == 0x1ff0/2 || offset == 0x1ff2/2)
@@ -60,7 +60,7 @@ WRITE16_MEMBER(kof2k3bl_prot_device::kof2003_w)
 	}
 }
 
-WRITE16_MEMBER(kof2k3bl_prot_device::kof2003p_w)
+void kof2k3bl_prot_device::kof2003p_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	data = COMBINE_DATA(&m_cartridge_ram[offset]);
 	if (offset == 0x1ff0/2 || offset == 0x1ff2/2)
@@ -102,7 +102,7 @@ void kof2k3bl_prot_device::pl_px_decrypt(uint8_t* cpurom, uint32_t cpurom_size)
 	{
 		memcpy(&tmp[0], &rom16[i], 0x100000);
 		for (int j = 0; j < 0x100000/2; j++)
-			rom16[i+j] = tmp[BITSWAP24(j,23,22,21,20,19,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18)];
+			rom16[i+j] = tmp[bitswap<24>(j,23,22,21,20,19,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18)];
 	}
 
 	/* patched by Altera protection chip on PCB */
@@ -124,7 +124,7 @@ void kof2k3bl_prot_device::upl_px_decrypt(uint8_t* cpurom, uint32_t cpurom_size)
 	uint8_t *buf = cpurom + 0xd0610;
 	for (int i = 0; i < 0x2000 / 2; i++)
 	{
-		int ofst = (i & 0xff00) + BITSWAP8((i & 0x00ff), 7, 6, 0, 4, 3, 2, 1, 5);
+		int ofst = (i & 0xff00) + bitswap<8>((i & 0x00ff), 7, 6, 0, 4, 3, 2, 1, 5);
 		memcpy(&rom[i * 2], &buf[ofst * 2], 2);
 	}
 

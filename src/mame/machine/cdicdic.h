@@ -26,18 +26,11 @@ TODO:
 
 #pragma once
 
-#include "cdrom.h"
+#include "imagedev/chd_cd.h"
+#include "machine/scc68070.h"
 #include "sound/cdda.h"
-
-
-//**************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_CDICDIC_ADD(_tag) \
-	MCFG_DEVICE_ADD(_tag, MACHINE_CDICDIC, 0)
-#define MCFG_CDICDIC_REPLACE(_tag) \
-	MCFG_DEVICE_REPLACE(_tag, MACHINE_CDICDIC, 0)
+#include "sound/dmadac.h"
+#include "cdrom.h"
 
 
 //**************************************************************************
@@ -52,26 +45,86 @@ public:
 	// construction/destruction
 	cdicdic_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
+	void set_clock2(uint32_t clock) { m_clock2 = clock; }
+	void set_clock2(const XTAL &xtal) { set_clock2(xtal.value()); }
+	uint32_t clock2() const { return m_clock2; }
+
+	auto intreq_callback() { return m_intreq_callback.bind(); }
+
 	// non-static internal members
 	void sample_trigger();
 	void process_delayed_command();
 
-	DECLARE_READ16_MEMBER( regs_r );
-	DECLARE_WRITE16_MEMBER( regs_w );
-	DECLARE_READ16_MEMBER( ram_r );
-	DECLARE_WRITE16_MEMBER( ram_w );
+	uint16_t regs_r(offs_t offset, uint16_t mem_mask = ~0);
+	void regs_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t ram_r(offs_t offset, uint16_t mem_mask = ~0);
+	void ram_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
 
+	uint8_t intack_r();
 
 protected:
 	// device-level overrides
+	virtual void device_resolve_objects() override;
 	virtual void device_start() override;
 	virtual void device_reset() override;
 
 	// internal callbacks
+	TIMER_CALLBACK_MEMBER( periodic_sample_trigger );
 	TIMER_CALLBACK_MEMBER( audio_sample_trigger );
+	TIMER_CALLBACK_MEMBER( initial_sample_trigger );
 	TIMER_CALLBACK_MEMBER( trigger_readback_int );
 
 private:
+	enum
+	{
+		CDIC_SECTOR_SYNC        = 0,
+
+		CDIC_SECTOR_HEADER      = 12,
+
+		CDIC_SECTOR_MODE        = 15,
+
+		CDIC_SECTOR_FILE1       = 16,
+		CDIC_SECTOR_CHAN1       = 17,
+		CDIC_SECTOR_SUBMODE1    = 18,
+		CDIC_SECTOR_CODING1     = 19,
+
+		CDIC_SECTOR_FILE2       = 20,
+		CDIC_SECTOR_CHAN2       = 21,
+		CDIC_SECTOR_SUBMODE2    = 22,
+		CDIC_SECTOR_CODING2     = 23,
+
+		CDIC_SECTOR_DATA        = 24,
+
+		CDIC_SECTOR_SIZE        = 2352,
+
+		CDIC_SECTOR_DATASIZE    = 2048,
+		CDIC_SECTOR_AUDIOSIZE   = 2304,
+		CDIC_SECTOR_VIDEOSIZE   = 2324,
+
+		CDIC_SUBMODE_EOF        = 0x80,
+		CDIC_SUBMODE_RT         = 0x40,
+		CDIC_SUBMODE_FORM       = 0x20,
+		CDIC_SUBMODE_TRIG       = 0x10,
+		CDIC_SUBMODE_DATA       = 0x08,
+		CDIC_SUBMODE_AUDIO      = 0x04,
+		CDIC_SUBMODE_VIDEO      = 0x02,
+		CDIC_SUBMODE_EOR        = 0x01
+	};
+
+	int is_valid_sample_buf(uint16_t addr) const;
+	double sample_buf_freq(uint16_t addr) const;
+	int sample_buf_size(uint16_t addr) const;
+
+	devcb_write_line m_intreq_callback;
+
+	required_address_space m_memory_space;
+	required_device_array<dmadac_sound_device, 2> m_dmadac;
+	required_device<scc68070_device> m_scc;
+	required_device<cdda_device> m_cdda;
+	optional_device<cdrom_image_device> m_cdrom_dev;
+
+	uint32_t m_clock2;
+
 	// internal state
 	uint16_t m_command;           // CDIC Command Register            (0x303c00)
 	uint32_t m_time;              // CDIC Time Register               (0x303c02)
@@ -90,17 +143,21 @@ private:
 	cdrom_file *m_cd;
 
 	emu_timer *m_audio_sample_timer;
+	emu_timer *m_audio_playback_timer;
+	emu_timer *m_periodic_sample_timer[2];
 	int32_t m_audio_sample_freq;
 	int32_t m_audio_sample_size;
 
 	uint16_t m_decode_addr;
 	uint8_t m_decode_delay;
 	attotime m_decode_period;
+	bool m_break_on_achan;
+	bool m_valid_audio_sample;
 
 	int m_xa_last[4];
 	std::unique_ptr<uint16_t[]> m_ram;
+	std::unique_ptr<int16_t[]> m_samples[2];
 
-	// static internal members
 	static void decode_xa_mono(int32_t *cdic_xa_last, const uint8_t *xa, int16_t *dp);
 	static void decode_xa_mono8(int32_t *cdic_xa_last, const uint8_t *xa, int16_t *dp);
 	static void decode_xa_stereo(int32_t *cdic_xa_last, const uint8_t *xa, int16_t *dp);
@@ -108,13 +165,13 @@ private:
 
 	static const int32_t s_cdic_adpcm_filter_coef[5][2];
 
-	// non-static internal members
 	uint32_t increment_cdda_frame_bcd(uint32_t bcd);
 	uint32_t increment_cdda_sector_bcd(uint32_t bcd);
 	void decode_audio_sector(const uint8_t *xa, int32_t triggered);
+	void play_audio_sector();
 };
 
 // device type definition
-DECLARE_DEVICE_TYPE(MACHINE_CDICDIC, cdicdic_device)
+DECLARE_DEVICE_TYPE(CDI_CDIC, cdicdic_device)
 
 #endif // MAME_MACHINE_CDICDIC_H

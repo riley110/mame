@@ -5,15 +5,6 @@
 
 #pragma once
 
-//**************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_SNKWAVE_ADD(_tag, _clock) \
-	MCFG_DEVICE_ADD(_tag, SNKWAVE, _clock)
-#define MCFG_SNKWAVE_REPLACE(_tag, _clock) \
-	MCFG_DEVICE_REPLACE(_tag, SNKWAVE, _clock)
-
 
 //**************************************************************************
 //  TYPE DEFINITIONS
@@ -28,7 +19,7 @@ class snkwave_device : public device_t,
 public:
 	snkwave_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	DECLARE_WRITE8_MEMBER( snkwave_w );
+	void snkwave_w(offs_t offset, uint8_t data);
 
 protected:
 	// device-level overrides

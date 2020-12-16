@@ -18,25 +18,19 @@
 
 #include "sound/discrete.h"
 
-
-/***************************************************************************
-    TYPE DEFINITIONS
-***************************************************************************/
-
 class latch8_device : public device_t
 {
 public:
-	latch8_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
-
+	latch8_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock = 0);
 
 	/* write & read full byte */
 
-	DECLARE_READ8_MEMBER( read );
-	DECLARE_WRITE8_MEMBER( write );
+	uint8_t read(offs_t offset);
+	void write(offs_t offset, uint8_t data);
 
 	/* reset the latch */
 
-	DECLARE_WRITE8_MEMBER( reset_w );
+	void reset_w(offs_t offset, uint8_t data);
 
 	/* read bit x                 */
 	/* return (latch >> x) & 0x01 */
@@ -65,22 +59,29 @@ public:
 	/* write bit x from data into bit determined by offset */
 	/* latch = (latch & ~(1<<offset)) | (((data >> x) & 0x01) << offset) */
 
-	DECLARE_WRITE8_MEMBER( bit0_w );
-	DECLARE_WRITE8_MEMBER( bit1_w );
-	DECLARE_WRITE8_MEMBER( bit2_w );
-	DECLARE_WRITE8_MEMBER( bit3_w );
-	DECLARE_WRITE8_MEMBER( bit4_w );
-	DECLARE_WRITE8_MEMBER( bit5_w );
-	DECLARE_WRITE8_MEMBER( bit6_w );
-	DECLARE_WRITE8_MEMBER( bit7_w );
+	void bit0_w(offs_t offset, uint8_t data);
+	void bit1_w(offs_t offset, uint8_t data);
+	void bit2_w(offs_t offset, uint8_t data);
+	void bit3_w(offs_t offset, uint8_t data);
+	void bit4_w(offs_t offset, uint8_t data);
+	void bit5_w(offs_t offset, uint8_t data);
+	void bit6_w(offs_t offset, uint8_t data);
+	void bit7_w(offs_t offset, uint8_t data);
 
-	static void set_maskout(device_t &device, uint32_t maskout) { downcast<latch8_device &>(device).m_maskout = maskout; }
-	static void set_xorvalue(device_t &device, uint32_t xorvalue) { downcast<latch8_device &>(device).m_xorvalue = xorvalue; }
-	static void set_nosync(device_t &device, uint32_t nosync) { downcast<latch8_device &>(device).m_nosync = nosync; }
+	/* Bit mask specifying bits to be masked *out* */
+	void set_maskout(uint32_t maskout) { m_maskout = maskout; }
 
-	template <unsigned N, class Object> static devcb_base &set_write_cb(device_t &device, Object &&cb) { return downcast<latch8_device &>(device).m_write_cb[N].set_callback(std::forward<Object>(cb)); }
+	/* Bit mask specifying bits to be inverted */
+	void set_xorvalue(uint32_t xorvalue) { m_xorvalue = xorvalue; }
 
-	template <unsigned N, class Object> static devcb_base &set_read_cb(device_t &device, Object &&cb) { return downcast<latch8_device &>(device).m_read_cb[N].set_callback(std::forward<Object>(cb)); }
+	/* Bit mask specifying bits not needing cpu synchronization. */
+	void set_nosync(uint32_t nosync) { m_nosync = nosync; }
+
+	/* Write bit to discrete node */
+	template <unsigned N> auto write_cb() { return m_write_cb[N].bind(); }
+
+	/* Upon read, replace bits by reading from another device handler */
+	template <unsigned N> auto read_cb() { return m_read_cb[N].bind(); }
 
 protected:
 	// device-level overrides
@@ -103,81 +104,10 @@ private:
 	uint32_t           m_xorvalue;  /* after mask */
 	uint32_t           m_nosync;
 
-	devcb_write_line   m_write_cb[8];
-	devcb_read_line    m_read_cb[8];
+	devcb_write_line::array<8> m_write_cb;
+	devcb_read_line::array<8> m_read_cb;
 };
 
 DECLARE_DEVICE_TYPE(LATCH8, latch8_device)
-
-/***************************************************************************
-    DEVICE CONFIGURATION MACROS
-***************************************************************************/
-
-/* add device */
-#define MCFG_LATCH8_ADD(_tag) \
-	MCFG_DEVICE_ADD(_tag, LATCH8, 0)
-
-/* Bit mask specifying bits to be masked *out* */
-#define MCFG_LATCH8_MASKOUT(_maskout) \
-	latch8_device::set_maskout(*device, _maskout);
-
-/* Bit mask specifying bits to be inverted */
-#define MCFG_LATCH8_INVERT(_xor) \
-	latch8_device::set_xorvalue(*device, _xor);
-
-/* Bit mask specifying bits not needing cpu synchronization. */
-#define MCFG_LATCH8_NOSYNC(_nosync) \
-	latch8_device::set_nosync(*device, _nosync);
-
-/* Write bit to discrete node */
-#define MCFG_LATCH8_WRITE_0(_devcb) \
-	devcb = &latch8_device::set_write_cb<0>(*device, DEVCB_##_devcb);
-
-#define MCFG_LATCH8_WRITE_1(_devcb) \
-	devcb = &latch8_device::set_write_cb<1>(*device, DEVCB_##_devcb);
-
-#define MCFG_LATCH8_WRITE_2(_devcb) \
-	devcb = &latch8_device::set_write_cb<2>(*device, DEVCB_##_devcb);
-
-#define MCFG_LATCH8_WRITE_3(_devcb) \
-	devcb = &latch8_device::set_write_cb<3>(*device, DEVCB_##_devcb);
-
-#define MCFG_LATCH8_WRITE_4(_devcb) \
-	devcb = &latch8_device::set_write_cb<4>(*device, DEVCB_##_devcb);
-
-#define MCFG_LATCH8_WRITE_5(_devcb) \
-	devcb = &latch8_device::set_write_cb<5>(*device, DEVCB_##_devcb);
-
-#define MCFG_LATCH8_WRITE_6(_devcb) \
-	devcb = &latch8_device::set_write_cb<6>(*device, DEVCB_##_devcb);
-
-#define MCFG_LATCH8_WRITE_7(_devcb) \
-	devcb = &latch8_device::set_write_cb<7>(*device, DEVCB_##_devcb);
-
-/* Upon read, replace bits by reading from another device handler */
-#define MCFG_LATCH8_READ_0(_devcb) \
-	devcb = &latch8_device::set_read_cb<0>(*device, DEVCB_##_devcb);
-
-#define MCFG_LATCH8_READ_1(_devcb) \
-	devcb = &latch8_device::set_read_cb<1>(*device, DEVCB_##_devcb);
-
-#define MCFG_LATCH8_READ_2(_devcb) \
-	devcb = &latch8_device::set_read_cb<2>(*device, DEVCB_##_devcb);
-
-#define MCFG_LATCH8_READ_3(_devcb) \
-	devcb = &latch8_device::set_read_cb<3>(*device, DEVCB_##_devcb);
-
-#define MCFG_LATCH8_READ_4(_devcb) \
-	devcb = &latch8_device::set_read_cb<4>(*device, DEVCB_##_devcb);
-
-#define MCFG_LATCH8_READ_5(_devcb) \
-	devcb = &latch8_device::set_read_cb<5>(*device, DEVCB_##_devcb);
-
-#define MCFG_LATCH8_READ_6(_devcb) \
-	devcb = &latch8_device::set_read_cb<6>(*device, DEVCB_##_devcb);
-
-#define MCFG_LATCH8_READ_7(_devcb) \
-	devcb = &latch8_device::set_read_cb<7>(*device, DEVCB_##_devcb);
-
 
 #endif // MAME_MACHINE_LATCH8_H

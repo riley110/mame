@@ -5,6 +5,8 @@
 
 #pragma once
 
+#include "tilemap.h"
+
 class pass_state : public driver_device
 {
 public:
@@ -19,17 +21,23 @@ public:
 	{
 	}
 
-	DECLARE_WRITE16_MEMBER(pass_bg_videoram_w);
-	DECLARE_WRITE16_MEMBER(pass_fg_videoram_w);
-	TILE_GET_INFO_MEMBER(get_pass_bg_tile_info);
-	TILE_GET_INFO_MEMBER(get_pass_fg_tile_info);
-
-	uint32_t screen_update_pass(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
+	void pass(machine_config &config);
 
 protected:
 	virtual void video_start() override;
 
 private:
+	void pass_bg_videoram_w(offs_t offset, uint16_t data);
+	void pass_fg_videoram_w(offs_t offset, uint16_t data);
+	TILE_GET_INFO_MEMBER(get_pass_bg_tile_info);
+	TILE_GET_INFO_MEMBER(get_pass_fg_tile_info);
+
+	uint32_t screen_update_pass(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
+
+	void pass_map(address_map &map);
+	void pass_sound_io_map(address_map &map);
+	void pass_sound_map(address_map &map);
+
 	tilemap_t *m_bg_tilemap;
 	tilemap_t *m_fg_tilemap;
 

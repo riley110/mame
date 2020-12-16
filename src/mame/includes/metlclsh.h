@@ -6,6 +6,9 @@
 
 *************************************************************************/
 
+#include "emupal.h"
+#include "tilemap.h"
+
 class metlclsh_state : public driver_device
 {
 public:
@@ -20,6 +23,11 @@ public:
 		m_gfxdecode(*this, "gfxdecode"),
 		m_palette(*this, "palette") { }
 
+	void metlclsh(machine_config &config);
+
+	DECLARE_INPUT_CHANGED_MEMBER(coin_inserted);
+
+private:
 	/* memory pointers */
 	required_shared_ptr<uint8_t> m_fgram;
 	required_shared_ptr<uint8_t> m_spriteram;
@@ -39,17 +47,16 @@ public:
 	required_device<gfxdecode_device> m_gfxdecode;
 	required_device<palette_device> m_palette;
 
-	DECLARE_WRITE8_MEMBER(metlclsh_cause_irq);
-	DECLARE_WRITE8_MEMBER(metlclsh_ack_nmi);
-	DECLARE_WRITE8_MEMBER(metlclsh_cause_nmi2);
-	DECLARE_WRITE8_MEMBER(metlclsh_ack_irq2);
-	DECLARE_WRITE8_MEMBER(metlclsh_ack_nmi2);
-	DECLARE_WRITE8_MEMBER(metlclsh_flipscreen_w);
-	DECLARE_WRITE8_MEMBER(metlclsh_rambank_w);
-	DECLARE_WRITE8_MEMBER(metlclsh_gfxbank_w);
-	DECLARE_WRITE8_MEMBER(metlclsh_bgram_w);
-	DECLARE_WRITE8_MEMBER(metlclsh_fgram_w);
-	DECLARE_INPUT_CHANGED_MEMBER(coin_inserted);
+	void metlclsh_cause_irq(uint8_t data);
+	void metlclsh_ack_nmi(uint8_t data);
+	void metlclsh_cause_nmi2(uint8_t data);
+	void metlclsh_ack_irq2(uint8_t data);
+	void metlclsh_ack_nmi2(uint8_t data);
+	void metlclsh_flipscreen_w(uint8_t data);
+	void metlclsh_rambank_w(uint8_t data);
+	void metlclsh_gfxbank_w(uint8_t data);
+	void metlclsh_bgram_w(offs_t offset, uint8_t data);
+	void metlclsh_fgram_w(offs_t offset, uint8_t data);
 	TILEMAP_MAPPER_MEMBER(metlclsh_bgtilemap_scan);
 	TILE_GET_INFO_MEMBER(get_bg_tile_info);
 	TILE_GET_INFO_MEMBER(get_fg_tile_info);
@@ -58,4 +65,6 @@ public:
 	virtual void video_start() override;
 	uint32_t screen_update_metlclsh(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 	void draw_sprites( bitmap_ind16 &bitmap, const rectangle &cliprect );
+	void metlclsh_master_map(address_map &map);
+	void metlclsh_slave_map(address_map &map);
 };

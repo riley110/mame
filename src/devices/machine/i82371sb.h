@@ -1,103 +1,57 @@
 // license:BSD-3-Clause
 // copyright-holders:Olivier Galibert
 // Intel i82371sb southbridge (PIIX3)
-
 #ifndef MAME_MACHINE_I82371SB_H
 #define MAME_MACHINE_I82371SB_H
 
 #pragma once
 
 #include "pci.h"
+#include "machine/pci-ide.h"
 
 #include "machine/ins8250.h"
 #include "machine/ds128x.h"
 #include "machine/pic8259.h"
 #include "machine/pit8253.h"
 
-#include "machine/ataintf.h"
-#include "machine/at_keybc.h"
+#include "bus/ata/ataintf.h"
 
 #include "sound/spkrdev.h"
 #include "machine/ram.h"
+#include "bus/isa/isa.h"
 #include "machine/nvram.h"
-
-#include "machine/pc_lpt.h"
-#include "bus/pc_kbd/pc_kbdc.h"
 
 #include "machine/am9517a.h"
 
-
-#define MCFG_I82371SB_ISA_ADD(_tag) \
-	MCFG_PCI_DEVICE_ADD(_tag, I82371SB_ISA, 0x80867000, 0x03, 0x060100, 0x00000000)
-
-#define MCFG_I82371SB_BOOT_STATE_HOOK(_devcb) \
-	devcb = &i82371sb_isa_device::set_boot_state_hook(*device, DEVCB_##_devcb);
 
 class i82371sb_isa_device : public pci_device {
 public:
 	i82371sb_isa_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	template <class Object> static devcb_base &set_boot_state_hook(device_t &device, Object &&cb) { return downcast<i82371sb_isa_device &>(device).m_boot_state_hook.set_callback(std::forward<Object>(cb)); }
+	auto smi() { return m_smi_callback.bind(); }
+	auto boot_state_hook() { return m_boot_state_hook.bind(); }
 
-	virtual void reset_all_mappings() override;
-	virtual void map_extra(uint64_t memory_window_start, uint64_t memory_window_end, uint64_t memory_offset, address_space *memory_space,
-						   uint64_t io_window_start, uint64_t io_window_end, uint64_t io_offset, address_space *io_space) override;
+	DECLARE_WRITE_LINE_MEMBER(pc_pirqa_w);
+	DECLARE_WRITE_LINE_MEMBER(pc_pirqb_w);
+	DECLARE_WRITE_LINE_MEMBER(pc_pirqc_w);
+	DECLARE_WRITE_LINE_MEMBER(pc_pirqd_w);
+	DECLARE_WRITE_LINE_MEMBER(pc_mirq0_w);
+	DECLARE_WRITE_LINE_MEMBER(pc_mirq1_w);
+	DECLARE_WRITE_LINE_MEMBER(pc_ferr_w);
 
-	virtual DECLARE_ADDRESS_MAP(config_map, 32) override;
-	DECLARE_ADDRESS_MAP(internal_io_map, 32);
-
-	DECLARE_WRITE8_MEMBER (boot_state_w);
-	DECLARE_WRITE8_MEMBER (nop_w);
-
-	DECLARE_READ8_MEMBER  (iort_r);
-	DECLARE_WRITE8_MEMBER (iort_w);
-	DECLARE_READ16_MEMBER (xbcs_r);
-	DECLARE_WRITE16_MEMBER(xbcs_w);
-	DECLARE_READ8_MEMBER  (pirqrc_r);
-	DECLARE_WRITE8_MEMBER (pirqrc_w);
-	DECLARE_READ8_MEMBER  (tom_r);
-	DECLARE_WRITE8_MEMBER (tom_w);
-	DECLARE_READ16_MEMBER (mstat_r);
-	DECLARE_WRITE16_MEMBER(mstat_w);
-	DECLARE_READ8_MEMBER  (mbirq0_r);
-	DECLARE_WRITE8_MEMBER (mbirq0_w);
-	DECLARE_READ8_MEMBER  (mbdma_r);
-	DECLARE_WRITE8_MEMBER (mbdma_w);
-	DECLARE_READ16_MEMBER (pcsc_r);
-	DECLARE_WRITE16_MEMBER(pcsc_w);
-	DECLARE_READ8_MEMBER  (apicbase_r);
-	DECLARE_WRITE8_MEMBER (apicbase_w);
-	DECLARE_READ8_MEMBER  (dlc_r);
-	DECLARE_WRITE8_MEMBER (dlc_w);
-	DECLARE_READ8_MEMBER  (smicntl_r);
-	DECLARE_WRITE8_MEMBER (smicntl_w);
-	DECLARE_READ16_MEMBER (smien_r);
-	DECLARE_WRITE16_MEMBER(smien_w);
-	DECLARE_READ32_MEMBER (see_r);
-	DECLARE_WRITE32_MEMBER(see_w);
-	DECLARE_READ8_MEMBER  (ftmr_r);
-	DECLARE_WRITE8_MEMBER (ftmr_w);
-	DECLARE_READ16_MEMBER (smireq_r);
-	DECLARE_WRITE16_MEMBER(smireq_w);
-	DECLARE_READ8_MEMBER  (ctltmr_r);
-	DECLARE_WRITE8_MEMBER (ctltmr_w);
-	DECLARE_READ8_MEMBER  (cthtmr_r);
-	DECLARE_WRITE8_MEMBER (cthtmr_w);
-
-	// southbridge
-	DECLARE_READ8_MEMBER(at_page8_r);
-	DECLARE_WRITE8_MEMBER(at_page8_w);
-	DECLARE_READ8_MEMBER(at_portb_r);
-	DECLARE_WRITE8_MEMBER(at_portb_w);
-	DECLARE_READ8_MEMBER(ide_read_cs1_r);
-	DECLARE_WRITE8_MEMBER(ide_write_cs1_w);
-	DECLARE_READ8_MEMBER(ide2_read_cs1_r);
-	DECLARE_WRITE8_MEMBER(ide2_write_cs1_w);
-	DECLARE_READ8_MEMBER(at_dma8237_2_r);
-	DECLARE_WRITE8_MEMBER(at_dma8237_2_w);
-	DECLARE_READ8_MEMBER(at_keybc_r);
-	DECLARE_WRITE8_MEMBER(at_keybc_w);
-	DECLARE_WRITE8_MEMBER(write_rtc);
+	DECLARE_WRITE_LINE_MEMBER(pc_irq1_w);
+	DECLARE_WRITE_LINE_MEMBER(pc_irq3_w);
+	DECLARE_WRITE_LINE_MEMBER(pc_irq4_w);
+	DECLARE_WRITE_LINE_MEMBER(pc_irq5_w);
+	DECLARE_WRITE_LINE_MEMBER(pc_irq6_w);
+	DECLARE_WRITE_LINE_MEMBER(pc_irq7_w);
+	DECLARE_WRITE_LINE_MEMBER(pc_irq8n_w);
+	DECLARE_WRITE_LINE_MEMBER(pc_irq9_w);
+	DECLARE_WRITE_LINE_MEMBER(pc_irq10_w);
+	DECLARE_WRITE_LINE_MEMBER(pc_irq11_w);
+	DECLARE_WRITE_LINE_MEMBER(pc_irq12m_w);
+	DECLARE_WRITE_LINE_MEMBER(pc_irq14_w);
+	DECLARE_WRITE_LINE_MEMBER(pc_irq15_w);
 
 protected:
 	virtual void device_start() override;
@@ -105,24 +59,32 @@ protected:
 	// optional information overrides
 	virtual void device_add_mconfig(machine_config &config) override;
 
+	virtual void reset_all_mappings() override;
+	virtual void map_extra(uint64_t memory_window_start, uint64_t memory_window_end, uint64_t memory_offset, address_space *memory_space,
+						   uint64_t io_window_start, uint64_t io_window_end, uint64_t io_offset, address_space *io_space) override;
+
+	virtual bool map_first() const override { return true; }
+
+	virtual void config_map(address_map &map) override;
+
 private:
 	DECLARE_WRITE_LINE_MEMBER(at_pit8254_out0_changed);
 	DECLARE_WRITE_LINE_MEMBER(at_pit8254_out1_changed);
 	DECLARE_WRITE_LINE_MEMBER(at_pit8254_out2_changed);
-	DECLARE_READ8_MEMBER(pc_dma8237_0_dack_r);
-	DECLARE_READ8_MEMBER(pc_dma8237_1_dack_r);
-	DECLARE_READ8_MEMBER(pc_dma8237_2_dack_r);
-	DECLARE_READ8_MEMBER(pc_dma8237_3_dack_r);
-	DECLARE_READ8_MEMBER(pc_dma8237_5_dack_r);
-	DECLARE_READ8_MEMBER(pc_dma8237_6_dack_r);
-	DECLARE_READ8_MEMBER(pc_dma8237_7_dack_r);
-	DECLARE_WRITE8_MEMBER(pc_dma8237_0_dack_w);
-	DECLARE_WRITE8_MEMBER(pc_dma8237_1_dack_w);
-	DECLARE_WRITE8_MEMBER(pc_dma8237_2_dack_w);
-	DECLARE_WRITE8_MEMBER(pc_dma8237_3_dack_w);
-	DECLARE_WRITE8_MEMBER(pc_dma8237_5_dack_w);
-	DECLARE_WRITE8_MEMBER(pc_dma8237_6_dack_w);
-	DECLARE_WRITE8_MEMBER(pc_dma8237_7_dack_w);
+	uint8_t pc_dma8237_0_dack_r();
+	uint8_t pc_dma8237_1_dack_r();
+	uint8_t pc_dma8237_2_dack_r();
+	uint8_t pc_dma8237_3_dack_r();
+	uint8_t pc_dma8237_5_dack_r();
+	uint8_t pc_dma8237_6_dack_r();
+	uint8_t pc_dma8237_7_dack_r();
+	void pc_dma8237_0_dack_w(uint8_t data);
+	void pc_dma8237_1_dack_w(uint8_t data);
+	void pc_dma8237_2_dack_w(uint8_t data);
+	void pc_dma8237_3_dack_w(uint8_t data);
+	void pc_dma8237_5_dack_w(uint8_t data);
+	void pc_dma8237_6_dack_w(uint8_t data);
+	void pc_dma8237_7_dack_w(uint8_t data);
 	DECLARE_WRITE_LINE_MEMBER(pc_dack0_w);
 	DECLARE_WRITE_LINE_MEMBER(pc_dack1_w);
 	DECLARE_WRITE_LINE_MEMBER(pc_dack2_w);
@@ -133,21 +95,75 @@ private:
 	DECLARE_WRITE_LINE_MEMBER(pc_dack7_w);
 	DECLARE_WRITE_LINE_MEMBER(at_dma8237_out_eop);
 	DECLARE_WRITE_LINE_MEMBER(pc_dma_hrq_changed);
-	DECLARE_READ8_MEMBER(pc_dma_read_byte);
-	DECLARE_WRITE8_MEMBER(pc_dma_write_byte);
-	DECLARE_READ8_MEMBER(pc_dma_read_word);
-	DECLARE_WRITE8_MEMBER(pc_dma_write_word);
-	DECLARE_READ8_MEMBER(get_slave_ack);
+	uint8_t pc_dma_read_byte(offs_t offset);
+	void pc_dma_write_byte(offs_t offset, uint8_t data);
+	uint8_t pc_dma_read_word(offs_t offset);
+	void pc_dma_write_word(offs_t offset,uint8_t data);
+	uint8_t get_slave_ack(offs_t offset);
 
+	void internal_io_map(address_map &map);
+
+	void boot_state_w(uint8_t data);
+	void nop_w(uint8_t data);
+
+	uint8_t iort_r();
+	void iort_w(uint8_t data);
+	uint16_t xbcs_r();
+	void xbcs_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint8_t pirqrc_r(offs_t offset);
+	void pirqrc_w(offs_t offset, uint8_t data);
+	uint8_t tom_r();
+	void tom_w(uint8_t data);
+	uint16_t mstat_r();
+	void mstat_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint8_t mbirq01_r(offs_t offset);
+	void mbirq01_w(offs_t offset, uint8_t data);
+	uint8_t mbdma_r(offs_t offset);
+	void mbdma_w(offs_t offset, uint8_t data);
+	uint8_t apicbase_r();
+	void apicbase_w(uint8_t data);
+	uint8_t dlc_r();
+	void dlc_w(uint8_t data);
+	uint8_t smicntl_r();
+	void smicntl_w(uint8_t data);
+	uint16_t smien_r();
+	void smien_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint32_t see_r();
+	void see_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint8_t ftmr_r();
+	void ftmr_w(uint8_t data);
+	uint16_t smireq_r();
+	void smireq_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint8_t ctltmr_r();
+	void ctltmr_w(uint8_t data);
+	uint8_t cthtmr_r();
+	void cthtmr_w(uint8_t data);
+
+	// southbridge
+	uint8_t at_page8_r(offs_t offset);
+	void at_page8_w(offs_t offset, uint8_t data);
+	uint8_t at_portb_r();
+	void at_portb_w(uint8_t data);
+	DECLARE_WRITE_LINE_MEMBER(iochck_w);
+	uint8_t at_dma8237_2_r(offs_t offset);
+	void at_dma8237_2_w(offs_t offset, uint8_t data);
+	uint8_t eisa_irq_read(offs_t offset);
+	void eisa_irq_write(offs_t offset, uint8_t data);
+	uint8_t read_apmcapms(offs_t offset);
+	void write_apmcapms(offs_t offset, uint8_t data);
+
+	void update_smireq_line();
+
+	devcb_write_line m_smi_callback;
 	devcb_write8 m_boot_state_hook;
 
 	uint32_t see;
 	uint16_t xbcs, mstat, pcsc, smien, smireq;
-	uint8_t iort, pirqrc[4], tom, mbirq0, mbdma[2], apicbase;
+	uint8_t apmc, apms;
+	uint8_t iort, pirqrc[4], tom, mbirq0, mbirq1, mbdma[2], apicbase;
 	uint8_t dlc, smicntl, ftmr, ctlmtr, cthmtr;
 
 	void map_bios(address_space *memory_space, uint32_t start, uint32_t end);
-
 
 	//southbridge
 	required_device<cpu_device> m_maincpu;
@@ -156,10 +172,8 @@ private:
 	required_device<am9517a_device> m_dma8237_1;
 	required_device<am9517a_device> m_dma8237_2;
 	required_device<pit8254_device> m_pit8254;
-	required_device<at_keyboard_controller_device> m_keybc;
+	required_device<isa16_device> m_isabus;
 	required_device<speaker_sound_device> m_speaker;
-	required_device<ds12885_device> m_ds12885;
-	required_device<pc_kbdc_device> m_pc_kbdc;
 
 	uint8_t m_at_spkrdata;
 	uint8_t m_pit_out2;
@@ -168,6 +182,7 @@ private:
 	uint8_t m_dma_offset[2][4];
 	uint8_t m_at_pages[0x10];
 	uint16_t m_dma_high_byte;
+	uint16_t m_eisa_irq_mode;
 	uint8_t m_at_speaker;
 	bool m_refresh;
 	void at_speaker_set_spkrdata(uint8_t data);
@@ -176,10 +191,69 @@ private:
 	uint8_t m_nmi_enabled;
 
 	void pc_select_dma_channel(int channel, bool state);
-	// VGA-HACK
-	optional_memory_region m_vga_region;
+	void redirect_irq(int irq, int state);
 };
 
 DECLARE_DEVICE_TYPE(I82371SB_ISA, i82371sb_isa_device)
+
+
+class i82371sb_ide_device : public pci_device {
+public:
+	i82371sb_ide_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+
+	auto irq_pri() { return m_irq_pri_callback.bind(); }
+	auto irq_sec() { return m_irq_sec_callback.bind(); }
+
+protected:
+	virtual void device_start() override;
+	virtual void device_reset() override;
+	// optional information overrides
+	virtual void device_add_mconfig(machine_config &config) override;
+
+	virtual void reset_all_mappings() override;
+	virtual void map_extra(uint64_t memory_window_start, uint64_t memory_window_end, uint64_t memory_offset, address_space *memory_space,
+		uint64_t io_window_start, uint64_t io_window_end, uint64_t io_offset, address_space *io_space) override;
+
+	virtual void config_map(address_map &map) override;
+
+	DECLARE_WRITE_LINE_MEMBER(primary_int);
+	DECLARE_WRITE_LINE_MEMBER(secondary_int);
+
+private:
+	uint16_t command_r();
+	void command_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint32_t bmiba_r();
+	void bmiba_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint16_t idetim_primary_r();
+	void idetim_primary_w(uint16_t data);
+	uint16_t idetim_secondary_r();
+	void idetim_secondary_w(uint16_t data);
+	uint8_t sidetim_r();
+	void sidetim_w(uint8_t data);
+
+	uint32_t ide1_read32_cs0_r(offs_t offset, uint32_t mem_mask = ~0);
+	void ide1_write32_cs0_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t ide2_read32_cs0_r(offs_t offset, uint32_t mem_mask = ~0);
+	void ide2_write32_cs0_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint8_t ide1_read_cs1_r();
+	void ide1_write_cs1_w(uint8_t data);
+	uint8_t ide2_read_cs1_r();
+	void ide2_write_cs1_w(uint8_t data);
+
+	void internal_io_map(address_map &map);
+
+	uint16_t command;
+	uint32_t bmiba;
+	int idetim_primary, idetim_secondary;
+	int sidetim;
+
+	devcb_write_line m_irq_pri_callback;
+	devcb_write_line m_irq_sec_callback;
+
+	required_device<bus_master_ide_controller_device> m_ide1;
+	required_device<bus_master_ide_controller_device> m_ide2;
+};
+
+DECLARE_DEVICE_TYPE(I82371SB_IDE, i82371sb_ide_device)
 
 #endif // MAME_MACHINE_I82371SB_H

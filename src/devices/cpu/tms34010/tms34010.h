@@ -103,41 +103,10 @@ enum
 #define TMS34010_WV         0x0800      /* Window Violation Interrupt */
 
 
-#define MCFG_TMS340X0_HALT_ON_RESET(_value) \
-	tms340x0_device::set_halt_on_reset(*device, _value);
-
-#define MCFG_TMS340X0_PIXEL_CLOCK(_value) \
-	tms340x0_device::set_pixel_clock(*device, _value);
-
-#define MCFG_TMS340X0_PIXELS_PER_CLOCK(_value) \
-	tms340x0_device::set_pixels_per_clock(*device, _value);
-
 #define TMS340X0_SCANLINE_IND16_CB_MEMBER(_name) void _name(screen_device &screen, bitmap_ind16 &bitmap, int scanline, const tms340x0_device::display_params *params)
-
-#define MCFG_TMS340X0_SCANLINE_IND16_CB(_class, _method) \
-		tms340x0_device::set_scanline_ind16_callback(*device, tms340x0_device::scanline_ind16_cb_delegate(&_class::_method, #_class "::" #_method, downcast<_class *>(owner)));
-
-
 #define TMS340X0_SCANLINE_RGB32_CB_MEMBER(_name) void _name(screen_device &screen, bitmap_rgb32 &bitmap, int scanline, const tms340x0_device::display_params *params)
-
-#define MCFG_TMS340X0_SCANLINE_RGB32_CB(_class, _method) \
-		tms340x0_device::set_scanline_rgb32_callback(*device, tms340x0_device::scanline_rgb32_cb_delegate(&_class::_method, #_class "::" #_method, downcast<_class *>(owner)));
-
-
-#define MCFG_TMS340X0_OUTPUT_INT_CB(_devcb) \
-	devcb = &tms340x0_device::set_output_int_callback(*device, DEVCB_##_devcb);
-
-
-#define TMS340X0_TO_SHIFTREG_CB_MEMBER(_name) void _name(address_space &space, offs_t address, uint16_t *shiftreg)
-
-#define MCFG_TMS340X0_TO_SHIFTREG_CB(_class, _method) \
-		tms340x0_device::set_to_shiftreg_callback(*device, tms340x0_device::to_shiftreg_cb_delegate(&_class::_method, #_class "::" #_method, downcast<_class *>(owner)));
-
-
-#define TMS340X0_FROM_SHIFTREG_CB_MEMBER(_name) void _name(address_space &space, offs_t address, uint16_t *shiftreg)
-
-#define MCFG_TMS340X0_FROM_SHIFTREG_CB(_class, _method) \
-		tms340x0_device::set_from_shiftreg_callback(*device, tms340x0_device::from_shiftreg_cb_delegate(&_class::_method, #_class "::" #_method, downcast<_class *>(owner)));
+#define TMS340X0_TO_SHIFTREG_CB_MEMBER(_name) void _name(offs_t address, uint16_t *shiftreg)
+#define TMS340X0_FROM_SHIFTREG_CB_MEMBER(_name) void _name(offs_t address, uint16_t *shiftreg)
 
 
 class tms340x0_device : public cpu_device,
@@ -157,29 +126,55 @@ public:
 
 	typedef device_delegate<void (screen_device &screen, bitmap_ind16 &bitmap, int scanline, const display_params *params)> scanline_ind16_cb_delegate;
 	typedef device_delegate<void (screen_device &screen, bitmap_rgb32 &bitmap, int scanline, const display_params *params)> scanline_rgb32_cb_delegate;
-	typedef device_delegate<void (address_space &space, offs_t address, uint16_t *shiftreg)> to_shiftreg_cb_delegate;
-	typedef device_delegate<void (address_space &space, offs_t address, uint16_t *shiftreg)> from_shiftreg_cb_delegate;
+	typedef device_delegate<void (offs_t address, uint16_t *shiftreg)> shiftreg_in_cb_delegate;
+	typedef device_delegate<void (offs_t address, uint16_t *shiftreg)> shiftreg_out_cb_delegate;
 
-	static void set_halt_on_reset(device_t &device, bool halt_on_reset) { downcast<tms340x0_device &>(device).m_halt_on_reset = halt_on_reset; }
-	static void set_pixel_clock(device_t &device, uint32_t pixclock) { downcast<tms340x0_device &>(device).m_pixclock = pixclock; }
-	static void set_pixels_per_clock(device_t &device, int pixperclock) { downcast<tms340x0_device &>(device).m_pixperclock = pixperclock; }
-	static void set_scanline_ind16_callback(device_t &device, scanline_ind16_cb_delegate callback) { downcast<tms340x0_device &>(device).m_scanline_ind16_cb = callback; }
-	static void set_scanline_rgb32_callback(device_t &device, scanline_rgb32_cb_delegate callback) { downcast<tms340x0_device &>(device).m_scanline_rgb32_cb = callback; }
-	template <class Object> static devcb_base &set_output_int_callback(device_t &device, Object &&cb) { return downcast<tms340x0_device &>(device).m_output_int_cb.set_callback(std::forward<Object>(cb)); }
-	static void set_to_shiftreg_callback(device_t &device, to_shiftreg_cb_delegate callback) { downcast<tms340x0_device &>(device).m_to_shiftreg_cb = callback; }
-	static void set_from_shiftreg_callback(device_t &device, from_shiftreg_cb_delegate callback) { downcast<tms340x0_device &>(device).m_from_shiftreg_cb = callback; }
+	void set_halt_on_reset(bool halt_on_reset) { m_halt_on_reset = halt_on_reset; }
+	void set_pixel_clock(uint32_t pixclock) { m_pixclock = pixclock; }
+	void set_pixel_clock(const XTAL &xtal) { set_pixel_clock(xtal.value()); }
+	void set_pixels_per_clock(int pixperclock) { m_pixperclock = pixperclock; }
+
+	auto output_int() { return m_output_int_cb.bind(); }
+	auto ioreg_pre_write() { return m_ioreg_pre_write_cb.bind(); }
+
+	// Setter for ind16 scanline callback
+	template <typename... T>
+	void set_scanline_ind16_callback(T &&... args)
+	{
+		m_scanline_ind16_cb.set(std::forward<T>(args)...);
+	}
+
+	// Setter for rgb32 scanline callback
+	template <typename... T>
+	void set_scanline_rgb32_callback(T &&... args)
+	{
+		m_scanline_rgb32_cb.set(std::forward<T>(args)...);
+	}
+
+	// Setter for shift register input callback
+	template <typename... T>
+	void set_shiftreg_in_callback(T &&... args)
+	{
+		m_to_shiftreg_cb.set(std::forward<T>(args)...);
+	}
+
+	// Setters for shift register output callback
+	template <typename... T>
+	void set_shiftreg_out_callback(T &&... args)
+	{
+		m_from_shiftreg_cb.set(std::forward<T>(args)...);
+	}
 
 	void get_display_params(display_params *params);
-	void tms34010_state_postload();
 
 	uint32_t tms340x0_ind16(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 	uint32_t tms340x0_rgb32(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect);
 
-	virtual DECLARE_WRITE16_MEMBER(io_register_w) = 0;
-	virtual DECLARE_READ16_MEMBER(io_register_r) = 0;
+	virtual void io_register_w(offs_t offset, u16 data, u16 mem_mask = ~u16(0)) = 0;
+	virtual u16 io_register_r(offs_t offset) = 0;
 
-	DECLARE_WRITE16_MEMBER(host_w);
-	DECLARE_READ16_MEMBER(host_r);
+	void host_w(offs_t offset, u16 data, u16 mem_mask = ~u16(0));
+	u16 host_r(offs_t offset);
 
 	TIMER_CALLBACK_MEMBER(internal_interrupt_callback);
 	TIMER_CALLBACK_MEMBER(scanline_callback);
@@ -257,16 +252,17 @@ protected:
 	};
 
 	// construction/destruction
-	tms340x0_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock);
+	tms340x0_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock, address_map_constructor internal_regs_map, bool is_34020);
 
 	// device-level overrides
 	virtual void device_start() override;
 	virtual void device_reset() override;
+	virtual void device_post_load() override;
 
 	// device_execute_interface overrides
-	virtual uint32_t execute_min_cycles() const override { return 1; }
-	virtual uint32_t execute_max_cycles() const override { return 10000; }
-	virtual uint32_t execute_input_lines() const override { return 2; }
+	virtual uint32_t execute_min_cycles() const noexcept override { return 1; }
+	virtual uint32_t execute_max_cycles() const noexcept override { return 10000; }
+	virtual uint32_t execute_input_lines() const noexcept override { return 2; }
 	virtual void execute_run() override;
 	virtual void execute_set_input(int inputnum, int state) override;
 
@@ -275,10 +271,6 @@ protected:
 
 	// device_state_interface overrides
 	virtual void state_string_export(const device_state_entry &entry, std::string &str) const override;
-
-	// device_disasm_interface overrides
-	virtual uint32_t disasm_min_opcode_bytes() const override { return 2; }
-	virtual uint32_t disasm_max_opcode_bytes() const override { return 10; }
 
 	typedef void (tms340x0_device::*pixel_write_func)(offs_t offset, uint32_t data);
 	typedef uint32_t (tms340x0_device::*pixel_read_func)(offs_t offset);
@@ -289,8 +281,8 @@ protected:
 	typedef uint32_t (tms340x0_device::*pixel_op_func)(uint32_t, uint32_t, uint32_t);
 	typedef void (tms340x0_device::*pixblt_op_func)(int, int);
 	typedef void (tms340x0_device::*pixblt_b_op_func)(int);
-	typedef void (tms340x0_device::*word_write_func)(address_space &space, offs_t offset,uint16_t data);
-	typedef uint16_t (tms340x0_device::*word_read_func)(address_space &space, offs_t offset);
+	typedef void (tms340x0_device::*word_write_func)(offs_t offset, uint16_t data);
+	typedef uint16_t (tms340x0_device::*word_read_func)(offs_t offset);
 
 	static const wfield_func s_wfield_functions[32];
 	static const rfield_func s_rfield_functions[64];
@@ -320,14 +312,13 @@ protected:
 	uint32_t           m_convmp;
 	int32_t            m_gfxcycles;
 	uint8_t            m_pixelshift;
-	uint8_t            m_is_34020;
+	const bool         m_is_34020;
 	bool             m_reset_deferred;
 	bool             m_halt_on_reset; /* /HCS pin, which determines HALT state after reset */
 	uint8_t            m_hblank_stable;
 	uint8_t            m_external_host_access;
 	uint8_t            m_executing;
-	address_space *m_program;
-	direct_read_data *m_direct;
+
 	uint32_t  m_pixclock;                           /* the pixel clock (0 means don't adjust screen size) */
 	int     m_pixperclock;                        /* pixels per clock */
 	emu_timer *m_scantimer;
@@ -336,8 +327,9 @@ protected:
 	scanline_ind16_cb_delegate m_scanline_ind16_cb;
 	scanline_rgb32_cb_delegate m_scanline_rgb32_cb;
 	devcb_write_line m_output_int_cb; /* output interrupt callback */
-	to_shiftreg_cb_delegate m_to_shiftreg_cb;  /* shift register write */
-	from_shiftreg_cb_delegate m_from_shiftreg_cb; /* shift register read */
+	devcb_write16 m_ioreg_pre_write_cb;
+	shiftreg_in_cb_delegate m_to_shiftreg_cb;  /* shift register write */
+	shiftreg_out_cb_delegate m_from_shiftreg_cb; /* shift register read */
 
 	struct XY
 	{
@@ -361,15 +353,18 @@ protected:
 	uint16_t m_IOregs[64];
 	uint16_t              m_shiftreg[(8 * 512 * sizeof(uint16_t))/2];
 
-	uint32_t TMS34010_RDMEM_DWORD(offs_t A);
-	void TMS34010_WRMEM_DWORD(offs_t A, uint32_t V);
+
+	virtual uint32_t TMS34010_RDMEM_WORD(offs_t A) = 0;
+	virtual uint32_t TMS34010_RDMEM_DWORD(offs_t A) = 0;
+	virtual void TMS34010_WRMEM_WORD(offs_t A, uint32_t V) = 0;
+	virtual void TMS34010_WRMEM_DWORD(offs_t A, uint32_t V) = 0;
 	void SET_ST(uint32_t st);
 	void RESET_ST();
-	uint32_t ROPCODE();
-	int16_t PARAM_WORD();
-	int32_t PARAM_LONG();
-	int16_t PARAM_WORD_NO_INC();
-	int32_t PARAM_LONG_NO_INC();
+	virtual uint32_t ROPCODE() = 0;
+	virtual int16_t PARAM_WORD() = 0;
+	virtual int32_t PARAM_LONG() = 0;
+	virtual int16_t PARAM_WORD_NO_INC() = 0;
+	virtual int32_t PARAM_LONG_NO_INC() = 0;
 	uint32_t RBYTE(offs_t offset);
 	void WBYTE(offs_t offset, uint32_t data);
 	uint32_t RLONG(offs_t offset);
@@ -899,11 +894,11 @@ protected:
 	int compute_fill_cycles(int left_partials, int right_partials, int full_words, int op_timing);
 	int compute_pixblt_cycles(int left_partials, int right_partials, int full_words, int op_timing);
 	int compute_pixblt_b_cycles(int left_partials, int right_partials, int full_words, int rows, int op_timing, int bpp);
-	void memory_w(address_space &space, offs_t offset,uint16_t data);
-	uint16_t memory_r(address_space &space, offs_t offset);
-	void shiftreg_w(address_space &space, offs_t offset, uint16_t data);
-	uint16_t shiftreg_r(address_space &space, offs_t offset);
-	uint16_t dummy_shiftreg_r(address_space &space, offs_t offset);
+	void memory_w(offs_t offset, uint16_t data);
+	uint16_t memory_r(offs_t offset);
+	void shiftreg_w(offs_t offset, uint16_t data);
+	uint16_t shiftreg_r(offs_t offset);
+	uint16_t dummy_shiftreg_r(offs_t offset);
 	uint32_t pixel_op00(uint32_t dstpix, uint32_t mask, uint32_t srcpix);
 	uint32_t pixel_op01(uint32_t dstpix, uint32_t mask, uint32_t srcpix);
 	uint32_t pixel_op02(uint32_t dstpix, uint32_t mask, uint32_t srcpix);
@@ -1019,13 +1014,31 @@ public:
 	tms34010_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 	/* Reads & writes to the 34010 I/O registers; place at 0xc0000000 */
-	virtual DECLARE_WRITE16_MEMBER( io_register_w ) override;
-	virtual DECLARE_READ16_MEMBER( io_register_r ) override;
+	virtual void io_register_w(offs_t offset, u16 data, u16 mem_mask = ~u16(0)) override;
+	virtual u16 io_register_r(offs_t offset) override;
 
 protected:
-	virtual uint64_t execute_clocks_to_cycles(uint64_t clocks) const override { return (clocks + 8 - 1) / 8; }
-	virtual uint64_t execute_cycles_to_clocks(uint64_t cycles) const override { return (cycles * 8); }
-	virtual offs_t disasm_disassemble(std::ostream &stream, offs_t pc, const uint8_t *oprom, const uint8_t *opram, uint32_t options) override;
+	// device-level overrides
+	virtual void device_start() override;
+
+	virtual uint64_t execute_clocks_to_cycles(uint64_t clocks) const noexcept override { return (clocks + 8 - 1) / 8; }
+	virtual uint64_t execute_cycles_to_clocks(uint64_t cycles) const noexcept override { return (cycles * 8); }
+	virtual std::unique_ptr<util::disasm_interface> create_disassembler() override;
+	void internal_regs_map(address_map &map);
+
+	virtual uint32_t ROPCODE() override;
+	virtual int16_t PARAM_WORD() override;
+	virtual int32_t PARAM_LONG() override;
+	virtual int16_t PARAM_WORD_NO_INC() override;
+	virtual int32_t PARAM_LONG_NO_INC() override;
+	virtual uint32_t TMS34010_RDMEM_WORD(offs_t A) override;
+	virtual uint32_t TMS34010_RDMEM_DWORD(offs_t A) override;
+	virtual void TMS34010_WRMEM_WORD(offs_t A, uint32_t V) override;
+	virtual void TMS34010_WRMEM_DWORD(offs_t A, uint32_t V) override;
+
+private:
+	memory_access<32, 1, 3, ENDIANNESS_LITTLE>::cache m_cache;
+	memory_access<32, 1, 3, ENDIANNESS_LITTLE>::specific m_program;
 };
 
 DECLARE_DEVICE_TYPE(TMS34010, tms34010_device)
@@ -1035,14 +1048,32 @@ class tms34020_device : public tms340x0_device
 public:
 	tms34020_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	/* Reads & writes to the 34010 I/O registers; place at 0xc0000000 */
-	virtual DECLARE_WRITE16_MEMBER( io_register_w ) override;
-	virtual DECLARE_READ16_MEMBER( io_register_r ) override;
+	/* Reads & writes to the 34020 I/O registers; place at 0xc0000000 */
+	virtual void io_register_w(offs_t offset, u16 data, u16 mem_mask = ~u16(0)) override;
+	virtual u16 io_register_r(offs_t offset) override;
 
 protected:
-	virtual uint64_t execute_clocks_to_cycles(uint64_t clocks) const override { return (clocks + 4 - 1) / 4; }
-	virtual uint64_t execute_cycles_to_clocks(uint64_t cycles) const override { return (cycles * 4); }
-	virtual offs_t disasm_disassemble(std::ostream &stream, offs_t pc, const uint8_t *oprom, const uint8_t *opram, uint32_t options) override;
+	// device-level overrides
+	virtual void device_start() override;
+
+	virtual uint64_t execute_clocks_to_cycles(uint64_t clocks) const noexcept override { return (clocks + 4 - 1) / 4; }
+	virtual uint64_t execute_cycles_to_clocks(uint64_t cycles) const noexcept override { return (cycles * 4); }
+	virtual std::unique_ptr<util::disasm_interface> create_disassembler() override;
+	void internal_regs_map(address_map &map);
+
+	virtual uint32_t ROPCODE() override;
+	virtual int16_t PARAM_WORD() override;
+	virtual int32_t PARAM_LONG() override;
+	virtual int16_t PARAM_WORD_NO_INC() override;
+	virtual int32_t PARAM_LONG_NO_INC() override;
+	virtual uint32_t TMS34010_RDMEM_WORD(offs_t A) override;
+	virtual uint32_t TMS34010_RDMEM_DWORD(offs_t A) override;
+	virtual void TMS34010_WRMEM_WORD(offs_t A, uint32_t V) override;
+	virtual void TMS34010_WRMEM_DWORD(offs_t A, uint32_t V) override;
+
+private:
+	memory_access<32, 2, 3, ENDIANNESS_LITTLE>::cache m_cache;
+	memory_access<32, 2, 3, ENDIANNESS_LITTLE>::specific m_program;
 };
 
 DECLARE_DEVICE_TYPE(TMS34020, tms34020_device)
@@ -1054,13 +1085,5 @@ DECLARE_DEVICE_TYPE(TMS34020, tms34020_device)
 #define TMS34010_HOST_ADDRESS_H     1
 #define TMS34010_HOST_DATA          2
 #define TMS34010_HOST_CONTROL       3
-
-/* Use this macro in the memory definitions to specify bit-based addresses */
-#define TOBYTE(bitaddr) ((offs_t)(bitaddr) >> 3)
-#define TOWORD(bitaddr) ((offs_t)(bitaddr) >> 4)
-
-
-CPU_DISASSEMBLE( tms34010 );
-CPU_DISASSEMBLE( tms34020 );
 
 #endif // MAME_CPU_TMS34010_TMS34010_H

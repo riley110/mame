@@ -23,26 +23,6 @@ public:
 	// construction/destruction
 	stereo_fx_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	// mcu ports
-	DECLARE_READ8_MEMBER( dev_dsp_data_r );
-	DECLARE_WRITE8_MEMBER( dev_dsp_data_w );
-	DECLARE_READ8_MEMBER( p1_r );
-	DECLARE_READ8_MEMBER( p3_r );
-	DECLARE_WRITE8_MEMBER( p3_w );
-	DECLARE_WRITE8_MEMBER( dev_host_irq_w );
-	DECLARE_WRITE8_MEMBER( raise_drq_w );
-	DECLARE_WRITE8_MEMBER( port20_w );
-	DECLARE_WRITE8_MEMBER( port00_w );
-
-	// host ports
-	DECLARE_READ8_MEMBER( dsp_data_r );
-	DECLARE_WRITE8_MEMBER( dsp_cmd_w );
-	DECLARE_WRITE8_MEMBER( dsp_reset_w );
-	DECLARE_READ8_MEMBER( dsp_wbuf_status_r );
-	DECLARE_READ8_MEMBER( dsp_rbuf_status_r );
-	DECLARE_READ8_MEMBER( invalid_r );
-	DECLARE_WRITE8_MEMBER( invalid_w );
-
 protected:
 	// device-level overrides
 	virtual void device_start() override;
@@ -58,7 +38,7 @@ protected:
 	void dack_w(int line, uint8_t data) override;
 
 	required_device<pc_joy_device> m_joy;
-	required_device<cpu_device> m_cpu;
+	required_device<i80c31_device> m_cpu;
 
 private:
 	// internal state
@@ -72,6 +52,29 @@ private:
 	emu_timer *m_timer;
 	uint8_t m_t0;
 	uint8_t m_t1;
+
+	// mcu ports
+	uint8_t dev_dsp_data_r();
+	void dev_dsp_data_w(uint8_t data);
+	uint8_t p1_r();
+	uint8_t p3_r();
+	void p3_w(uint8_t data);
+	void dev_host_irq_w(uint8_t data);
+	void raise_drq_w(uint8_t data);
+	void port20_w(uint8_t data);
+	void port00_w(uint8_t data);
+
+	// host ports
+	uint8_t dsp_data_r();
+	void dsp_cmd_w(uint8_t data);
+	void dsp_reset_w(uint8_t data);
+	uint8_t dsp_wbuf_status_r();
+	uint8_t dsp_rbuf_status_r();
+	uint8_t invalid_r();
+	void invalid_w(uint8_t data);
+
+	void stereo_fx_io(address_map &map);
+	void stereo_fx_rom(address_map &map);
 };
 
 // device type definition

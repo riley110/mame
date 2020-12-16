@@ -13,10 +13,10 @@ public:
 
 	lynx_sound_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	DECLARE_READ8_MEMBER(read);
-	DECLARE_WRITE8_MEMBER(write);
+	uint8_t read(offs_t offset);
+	void write(offs_t offset, uint8_t data);
 	void count_down(int nr);
-	static void set_timer_delegate(device_t &device, timer_delegate cb);
+	template <typename... T> void set_timer_delegate(T &&... args) { m_timer_delegate.set(std::forward<T>(args)...); }
 
 protected:
 	struct LYNX_AUDIO {
@@ -81,10 +81,5 @@ protected:
 
 DECLARE_DEVICE_TYPE(LYNX_SND,  lynx_sound_device)
 DECLARE_DEVICE_TYPE(LYNX2_SND, lynx2_sound_device)
-
-
-#define MCFG_LYNX_SND_SET_TIMER( _class, _method) \
-	lynx_sound_device::set_timer_delegate(*device, lynx_sound_device::timer_delegate(&_class::_method, #_class "::" #_method, nullptr, (_class *)nullptr));
-
 
 #endif // MAME_AUDIO_LYNX_H

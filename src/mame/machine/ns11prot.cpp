@@ -34,7 +34,7 @@ keycus_c406_device::keycus_c406_device(const machine_config &mconfig, const char
 {
 }
 
-READ16_MEMBER(keycus_c406_device::read)
+uint16_t keycus_c406_device::read(offs_t offset)
 {
 	if( offset == 0 && m_p1 == 0x1234 && m_p2 == 0x5678 && m_p3 == 0x000f )
 	{
@@ -45,7 +45,7 @@ READ16_MEMBER(keycus_c406_device::read)
 	return machine().rand();
 }
 
-WRITE16_MEMBER(keycus_c406_device::write)
+void keycus_c406_device::write(offs_t offset, uint16_t data)
 {
 	switch( offset )
 	{
@@ -74,18 +74,23 @@ keycus_c409_device::keycus_c409_device(const machine_config &mconfig, const char
 {
 }
 
-READ16_MEMBER(keycus_c409_device::read)
+uint16_t keycus_c409_device::read(offs_t offset)
 {
-	if( offset == 7 && m_p1 == 0x0006 && m_p2 == 0x0000 && m_p3 == 0x0013 )
+	if( offset == 7 )
 	{
-		return 0x000f;
+		int a2 = (m_p1 - 0x01) & 0x1f;
+		int a3 = (0x20 - m_p1) & 0x1f;
+		int r = (((m_p2 & 0x1f) * a2) + ((m_p3 & 0x1f) * a3)) / 0x1f;
+		int g = ((((m_p2 >> 5) & 0x1f) * a2) + (((m_p3 >> 5) & 0x1f) * a3)) / 0x1f;
+		int b = ((((m_p2 >> 10) & 0x1f) * a2) + (((m_p3 >> 10) & 0x1f) * a3)) / 0x1f;
+		return r | (g << 5) | (b << 10);
 	}
 
 	logerror( "keycus_c409_device::read unexpected offset=%d m_p1=%04x m_p2=%04x m_p3=%04x\n", offset, m_p1, m_p2, m_p3 );
 	return machine().rand();
 }
 
-WRITE16_MEMBER(keycus_c409_device::write)
+void keycus_c409_device::write(offs_t offset, uint16_t data)
 {
 	switch( offset )
 	{
@@ -114,7 +119,7 @@ keycus_c410_device::keycus_c410_device(const machine_config &mconfig, const char
 {
 }
 
-READ16_MEMBER(keycus_c410_device::read)
+uint16_t keycus_c410_device::read(offs_t offset)
 {
 	if( m_p2 == 0 )
 	{
@@ -143,7 +148,7 @@ READ16_MEMBER(keycus_c410_device::read)
 	return machine().rand();
 }
 
-WRITE16_MEMBER(keycus_c410_device::write)
+void keycus_c410_device::write(offs_t offset, uint16_t data)
 {
 	switch( offset )
 	{
@@ -168,7 +173,7 @@ keycus_c411_device::keycus_c411_device(const machine_config &mconfig, const char
 {
 }
 
-READ16_MEMBER(keycus_c411_device::read)
+uint16_t keycus_c411_device::read(offs_t offset)
 {
 	if( m_p2 == 0x0000 && ( ( ( m_p1 == 0x0000 || m_p1 == 0x100 ) && m_p3 == 0xff7f ) || ( m_p1 == 0x7256 ) ) )
 	{
@@ -195,7 +200,7 @@ READ16_MEMBER(keycus_c411_device::read)
 	return machine().rand();
 }
 
-WRITE16_MEMBER(keycus_c411_device::write)
+void keycus_c411_device::write(offs_t offset, uint16_t data)
 {
 	switch( offset )
 	{
@@ -224,7 +229,7 @@ keycus_c430_device::keycus_c430_device(const machine_config &mconfig, const char
 {
 }
 
-READ16_MEMBER(keycus_c430_device::read)
+uint16_t keycus_c430_device::read(offs_t offset)
 {
 	if( m_p2 == 0x0000 && ( ( m_p1 == 0xbfff && m_p3 == 0x0000 ) || m_p3 == 0xe296 ) )
 	{
@@ -254,7 +259,7 @@ READ16_MEMBER(keycus_c430_device::read)
 	return machine().rand();
 }
 
-WRITE16_MEMBER(keycus_c430_device::write)
+void keycus_c430_device::write(offs_t offset, uint16_t data)
 {
 	switch( offset )
 	{
@@ -283,7 +288,7 @@ keycus_c431_device::keycus_c431_device(const machine_config &mconfig, const char
 {
 }
 
-READ16_MEMBER(keycus_c431_device::read)
+uint16_t keycus_c431_device::read(offs_t offset)
 {
 	if( m_p2 == 0x0000 && ( ( ( m_p1 == 0x0000 || m_p1 == 0xab50 ) && m_p3 == 0x7fff ) || m_p1 == 0x9e61 ) )
 	{
@@ -312,7 +317,7 @@ READ16_MEMBER(keycus_c431_device::read)
 	return machine().rand();
 }
 
-WRITE16_MEMBER(keycus_c431_device::write)
+void keycus_c431_device::write(offs_t offset, uint16_t data)
 {
 	switch( offset )
 	{
@@ -341,7 +346,7 @@ keycus_c432_device::keycus_c432_device(const machine_config &mconfig, const char
 {
 }
 
-READ16_MEMBER(keycus_c432_device::read)
+uint16_t keycus_c432_device::read(offs_t offset)
 {
 	if( m_p1 == 0x0000 && ( ( ( m_p3 == 0x0000 || m_p3 == 0x00dc ) && m_p2 == 0xefff ) || m_p3 == 0x2f15 ) )
 	{
@@ -372,7 +377,7 @@ READ16_MEMBER(keycus_c432_device::read)
 	return machine().rand();
 }
 
-WRITE16_MEMBER(keycus_c432_device::write)
+void keycus_c432_device::write(offs_t offset, uint16_t data)
 {
 	switch( offset )
 	{
@@ -401,7 +406,7 @@ keycus_c442_device::keycus_c442_device(const machine_config &mconfig, const char
 {
 }
 
-READ16_MEMBER(keycus_c442_device::read)
+uint16_t keycus_c442_device::read(offs_t offset)
 {
 	if( ( offset == 0 && m_p1 == 0x0020 && m_p2 == 0x0000 ) ||
 		( offset == 0 && m_p1 == 0x0020 && m_p2 == 0x0021 ) )
@@ -424,7 +429,7 @@ READ16_MEMBER(keycus_c442_device::read)
 	return machine().rand();
 }
 
-WRITE16_MEMBER(keycus_c442_device::write)
+void keycus_c442_device::write(offs_t offset, uint16_t data)
 {
 	switch( offset )
 	{
@@ -449,7 +454,7 @@ keycus_c443_device::keycus_c443_device(const machine_config &mconfig, const char
 {
 }
 
-READ16_MEMBER(keycus_c443_device::read)
+uint16_t keycus_c443_device::read(offs_t offset)
 {
 	if( offset == 0 && m_p1 == 0x0020 && ( m_p2 == 0x0000 || m_p2 == 0xffff || m_p2 == 0xffe0 ) )
 	{
@@ -470,7 +475,7 @@ READ16_MEMBER(keycus_c443_device::read)
 	return machine().rand();
 }
 
-WRITE16_MEMBER(keycus_c443_device::write)
+void keycus_c443_device::write(offs_t offset, uint16_t data)
 {
 	switch( offset )
 	{

@@ -73,7 +73,11 @@ public:
 	// on the real hardware (e.g. Model 2's interrupt control registers)
 	void i960_noburst() { m_bursting = 0; }
 
-	void i960_stall() { m_IP = m_PIP; }
+	void i960_stall()
+	{
+		m_stalled = true;
+		m_IP = m_PIP;
+	}
 
 protected:
 	enum { I960_RCACHE_SIZE = 4 };
@@ -83,10 +87,9 @@ protected:
 	virtual void device_reset() override;
 
 	// device_execute_interface overrides
-	virtual uint32_t execute_min_cycles() const override { return 1; } /* ???? TODO: Exact timing unknown */
-	virtual uint32_t execute_max_cycles() const override { return 1; } /* ???? TODO: Exact timing unknown */
-	virtual uint32_t execute_input_lines() const override { return 4; }
-	virtual uint32_t execute_default_irq_vector() const override { return 0xffffffff; }
+	virtual uint32_t execute_min_cycles() const noexcept override { return 1; } /* ???? TODO: Exact timing unknown */
+	virtual uint32_t execute_max_cycles() const noexcept override { return 1; } /* ???? TODO: Exact timing unknown */
+	virtual uint32_t execute_input_lines() const noexcept override { return 4; }
 	virtual void execute_run() override;
 	virtual void execute_set_input(int inputnum, int state) override;
 
@@ -97,11 +100,19 @@ protected:
 	virtual void state_string_export(const device_state_entry &entry, std::string &str) const override;
 
 	// device_disasm_interface overrides
-	virtual uint32_t disasm_min_opcode_bytes() const override { return 4; }
-	virtual uint32_t disasm_max_opcode_bytes() const override { return 8; }
-	virtual offs_t disasm_disassemble(std::ostream &stream, offs_t pc, const uint8_t *oprom, const uint8_t *opram, uint32_t options) override;
+	virtual std::unique_ptr<util::disasm_interface> create_disassembler() override;
 
 private:
+	void burst_stall_save(uint32_t t1, uint32_t t2, int index, int size, bool iswriteop);
+
+	struct {
+		uint32_t t1 = 0, t2 = 0;
+		int index = 0, size = 0;
+		bool burst_mode = false;
+		bool iswriteop = false;
+	}m_stall_state;
+	bool m_stalled;
+
 	address_space_config m_program_config;
 
 	uint32_t m_r[0x20];
@@ -126,8 +137,8 @@ private:
 	int m_immediate_vector;
 	int  m_immediate_pri;
 
-	address_space *m_program;
-	direct_read_data *m_direct;
+	memory_access<32, 2, 0, ENDIANNESS_LITTLE>::cache m_cache;
+	memory_access<32, 2, 0, ENDIANNESS_LITTLE>::specific m_program;
 
 	int m_icount;
 
@@ -163,6 +174,7 @@ private:
 	void fxx(uint32_t opcode, int mask);
 	void test(uint32_t opcode, int mask);
 	void execute_op(uint32_t opcode);
+	void execute_burst_stall_op(uint32_t opcode);
 	void take_interrupt(int vector, int lvl);
 	void check_irqs();
 	void do_call(uint32_t adr, int type, uint32_t stack);

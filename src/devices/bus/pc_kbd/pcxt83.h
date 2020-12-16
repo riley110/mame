@@ -44,14 +44,14 @@ protected:
 	virtual DECLARE_WRITE_LINE_MEMBER( data_write ) override;
 
 private:
-	DECLARE_READ8_MEMBER( bus_r );
-	DECLARE_WRITE8_MEMBER( bus_w );
-	DECLARE_WRITE8_MEMBER( p1_w );
-	DECLARE_WRITE8_MEMBER( p2_w );
+	uint8_t bus_r();
+	void bus_w(uint8_t data);
+	void p1_w(uint8_t data);
+	void p2_w(uint8_t data);
 	DECLARE_READ_LINE_MEMBER( t0_r );
 	DECLARE_READ_LINE_MEMBER( t1_r );
 
-	required_device<cpu_device> m_maincpu;
+	required_device<i8048_device> m_maincpu;
 	required_ioport_array<12> m_md;
 
 	uint8_t m_bus;

@@ -50,7 +50,9 @@
     these values to mode 7 when running.
 
     Unknowns:
-        SO is connected to IOSEL on Pole Position
+    The Atari schematic for Pole Position lists pin 5 (SO) connected to IOSEL.
+    This seems to be a misprint, and it likely goes to to pin 3 (reset) like
+    the other Namco custom chips.
 
 ***************************************************************************/
 
@@ -58,36 +60,38 @@
 #include "namco53.h"
 
 
-#define VERBOSE 0
-#include "logmacro.h"
+WRITE_LINE_MEMBER( namco_53xx_device::reset )
+{
+	// The incoming signal is active low
+	m_cpu->set_input_line(INPUT_LINE_RESET, !state);
+}
 
-
-READ8_MEMBER( namco_53xx_device::K_r )
+uint8_t namco_53xx_device::K_r()
 {
 	return m_k(0);
 }
 
-READ8_MEMBER( namco_53xx_device::R0_r )
+uint8_t namco_53xx_device::R0_r()
 {
 	return m_in[0](0);
 }
 
-READ8_MEMBER( namco_53xx_device::R1_r )
+uint8_t namco_53xx_device::R1_r()
 {
 	return m_in[1](0);
 }
 
-READ8_MEMBER( namco_53xx_device::R2_r )
+uint8_t namco_53xx_device::R2_r()
 {
 	return m_in[2](0);
 }
 
-READ8_MEMBER( namco_53xx_device::R3_r )
+uint8_t namco_53xx_device::R3_r()
 {
 	return m_in[3](0);
 }
 
-WRITE8_MEMBER( namco_53xx_device::O_w )
+void namco_53xx_device::O_w(uint8_t data)
 {
 	uint8_t out = (data & 0x0f);
 	if (data & 0x10)
@@ -96,36 +100,19 @@ WRITE8_MEMBER( namco_53xx_device::O_w )
 		m_portO = (m_portO & 0xf0) | (out);
 }
 
-WRITE8_MEMBER( namco_53xx_device::P_w )
+void namco_53xx_device::P_w(uint8_t data)
 {
-	m_p(space, 0, data);
+	m_p(0, data);
 }
 
-
-TIMER_CALLBACK_MEMBER( namco_53xx_device::irq_clear )
+WRITE_LINE_MEMBER(namco_53xx_device::chip_select)
 {
-	m_cpu->set_input_line(0, CLEAR_LINE);
+	m_cpu->set_input_line(0, state);
 }
 
-WRITE_LINE_MEMBER(namco_53xx_device::read_request)
+uint8_t namco_53xx_device::read()
 {
-	m_cpu->set_input_line(0, ASSERT_LINE);
-
-	// The execution time of one instruction is ~4us, so we must make sure to
-	// give the cpu time to poll the /IRQ input before we clear it.
-	// The input clock to the 06XX interface chip is 64H, that is
-	// 18432000/6/64 = 48kHz, so it makes sense for the irq line to be
-	// asserted for one clock cycle ~= 21us.
-	machine().scheduler().timer_set(attotime::from_usec(21), timer_expired_delegate(FUNC(namco_53xx_device::irq_clear),this), 0);
-}
-
-READ8_MEMBER( namco_53xx_device::read )
-{
-	uint8_t res = m_portO;
-
-	read_request(0);
-
-	return res;
+	return m_portO;
 }
 
 
@@ -140,12 +127,12 @@ ROM_END
 
 DEFINE_DEVICE_TYPE(NAMCO_53XX, namco_53xx_device, "namco53", "Namco 53xx")
 
-namco_53xx_device::namco_53xx_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
-	: device_t(mconfig, NAMCO_53XX, tag, owner, clock),
+namco_53xx_device::namco_53xx_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock) :
+	device_t(mconfig, NAMCO_53XX, tag, owner, clock),
 	m_cpu(*this, "mcu"),
 	m_portO(0),
 	m_k(*this),
-	m_in{ { *this }, { *this }, { *this }, { *this } },
+	m_in(*this),
 	m_p(*this)
 {
 }
@@ -157,8 +144,7 @@ void namco_53xx_device::device_start()
 {
 	/* resolve our read/write callbacks */
 	m_k.resolve_safe(0);
-	for (devcb_read8 &cb : m_in)
-		cb.resolve_safe(0);
+	m_in.resolve_all_safe(0);
 	m_p.resolve_safe();
 
 	save_item(NAME(m_portO));
@@ -168,16 +154,17 @@ void namco_53xx_device::device_start()
 //  device_add_mconfig - add device configuration
 //-------------------------------------------------
 
-MACHINE_CONFIG_MEMBER( namco_53xx_device::device_add_mconfig )
-	MCFG_CPU_ADD("mcu", MB8843, DERIVED_CLOCK(1,1))     /* parent clock, internally divided by 6 */
-	MCFG_MB88XX_READ_K_CB(READ8(namco_53xx_device, K_r))
-	MCFG_MB88XX_WRITE_O_CB(WRITE8(namco_53xx_device, O_w))
-	MCFG_MB88XX_WRITE_P_CB(WRITE8(namco_53xx_device, P_w))
-	MCFG_MB88XX_READ_R0_CB(READ8(namco_53xx_device, R0_r))
-	MCFG_MB88XX_READ_R1_CB(READ8(namco_53xx_device, R1_r))
-	MCFG_MB88XX_READ_R2_CB(READ8(namco_53xx_device, R2_r))
-	MCFG_MB88XX_READ_R3_CB(READ8(namco_53xx_device, R3_r))
-MACHINE_CONFIG_END
+void namco_53xx_device::device_add_mconfig(machine_config &config)
+{
+	MB8843(config, m_cpu, DERIVED_CLOCK(1,1)); /* parent clock, internally divided by 6 */
+	m_cpu->read_k().set(FUNC(namco_53xx_device::K_r));
+	m_cpu->write_o().set(FUNC(namco_53xx_device::O_w));
+	m_cpu->write_p().set(FUNC(namco_53xx_device::P_w));
+	m_cpu->read_r<0>().set(FUNC(namco_53xx_device::R0_r));
+	m_cpu->read_r<1>().set(FUNC(namco_53xx_device::R1_r));
+	m_cpu->read_r<2>().set(FUNC(namco_53xx_device::R2_r));
+	m_cpu->read_r<3>().set(FUNC(namco_53xx_device::R3_r));
+}
 
 //-------------------------------------------------
 //  device_rom_region - return a pointer to the

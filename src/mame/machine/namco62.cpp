@@ -30,11 +30,11 @@ ROM_END
 
 DEFINE_DEVICE_TYPE(NAMCO_62XX, namco_62xx_device, "namco62", "Namco 62xx")
 
-namco_62xx_device::namco_62xx_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
-	: device_t(mconfig, NAMCO_62XX, tag, owner, clock),
+namco_62xx_device::namco_62xx_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock) :
+	device_t(mconfig, NAMCO_62XX, tag, owner, clock),
 	m_cpu(*this, "mcu"),
-	m_in{ { *this }, { *this }, { *this }, { *this } },
-	m_out{ { *this }, { *this } }
+	m_in(*this),
+	m_out(*this)
 {
 }
 
@@ -45,26 +45,25 @@ namco_62xx_device::namco_62xx_device(const machine_config &mconfig, const char *
 void namco_62xx_device::device_start()
 {
 	/* resolve our read callbacks */
-	for (devcb_read8 &cb : m_in)
-		cb.resolve_safe(0);
+	m_in.resolve_all_safe(0);
 
 	/* resolve our write callbacks */
-	for (devcb_write8 &cb : m_out)
-		cb.resolve_safe();
+	m_out.resolve_all_safe();
 }
 
 //-------------------------------------------------
 //  device_add_mconfig - add device configuration
 //-------------------------------------------------
 
-MACHINE_CONFIG_MEMBER( namco_62xx_device::device_add_mconfig )
-	MCFG_CPU_ADD("mcu", MB8843, DERIVED_CLOCK(1,1))     /* parent clock, internally divided by 6 (TODO: Correct?) */
-//  MCFG_MB88XX_READ_K_CB(READ8(namco_62xx_device, namco_62xx_K_r))
-//  MCFG_MB88XX_WRITE_O_CB(WRITE8(namco_62xx_device, namco_62xx_O_w))
-//  MCFG_MB88XX_READ_R0_CB(READ8(namco_62xx_device, namco_62xx_R0_r))
-//  MCFG_MB88XX_READ_R2_CB(READ8(namco_62xx_device, namco_62xx_R2_r))
-	MCFG_DEVICE_DISABLE()
-MACHINE_CONFIG_END
+void namco_62xx_device::device_add_mconfig(machine_config &config)
+{
+	MB8843(config, m_cpu, DERIVED_CLOCK(1,1)); /* parent clock, internally divided by 6 (TODO: Correct?) */
+//  m_cpu->read_k().set(FUNC(namco_62xx_device::namco_62xx_K_r));
+//  m_cpu->write_o().set(FUNC(namco_62xx_device::namco_62xx_O_w));
+//  m_cpu->read_r<0>().set(FUNC(namco_62xx_device::namco_62xx_R0_r));
+//  m_cpu->read_r<2>().set(FUNC(namco_62xx_device::namco_62xx_R2_r));
+	m_cpu->set_disable();
+}
 
 //-------------------------------------------------
 //  device_rom_region - return a pointer to the

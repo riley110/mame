@@ -29,9 +29,6 @@ public:
 	// construction/destruction
 	bbc_tube_80286_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	DECLARE_READ8_MEMBER( disable_boot_rom );
-	DECLARE_WRITE8_MEMBER( irq_latch_w );
-
 protected:
 	// device-level overrides
 	virtual void device_start() override;
@@ -41,8 +38,8 @@ protected:
 	virtual void device_add_mconfig(machine_config &config) override;
 	virtual const tiny_rom_entry *device_rom_region() const override;
 
-	virtual DECLARE_READ8_MEMBER( host_r ) override;
-	virtual DECLARE_WRITE8_MEMBER( host_w ) override;
+	virtual uint8_t host_r(offs_t offset) override;
+	virtual void host_w(offs_t offset, uint8_t data) override;
 
 private:
 	uint8_t m_irq_latch;
@@ -53,6 +50,12 @@ private:
 	required_device<tube_device> m_ula;
 	required_device<ram_device> m_ram;
 	required_memory_region m_bootstrap;
+
+	uint8_t disable_boot_rom();
+	void irq_latch_w(uint8_t data);
+
+	void tube_80286_io(address_map &map);
+	void tube_80286_mem(address_map &map);
 };
 
 

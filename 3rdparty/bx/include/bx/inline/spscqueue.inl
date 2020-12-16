@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Branimir Karadzic. All rights reserved.
+ * Copyright 2010-2019 Branimir Karadzic. All rights reserved.
  * License: https://github.com/bkaradzic/bx#license-bsd-2-clause
  */
 
@@ -9,9 +9,13 @@
 
 namespace bx
 {
-	// http://drdobbs.com/article/print?articleId=210604448&siteSectionName=
-	inline SpScUnboundedQueue::SpScUnboundedQueue()
-		: m_first(new Node(NULL) )
+	// Reference(s):
+	// - Writing Lock-Free Code: A Corrected Queue
+	//   https://web.archive.org/web/20190207230604/http://www.drdobbs.com/parallel/writing-lock-free-code-a-corrected-queue/210604448
+	//
+	inline SpScUnboundedQueue::SpScUnboundedQueue(AllocatorI* _allocator)
+		: m_allocator(_allocator)
+		, m_first(BX_NEW(m_allocator, Node)(NULL) )
 		, m_divider(m_first)
 		, m_last(m_first)
 	{
@@ -23,19 +27,19 @@ namespace bx
 		{
 			Node* node = m_first;
 			m_first = node->m_next;
-			delete node;
+			BX_DELETE(m_allocator, node);
 		}
 	}
 
 	inline void SpScUnboundedQueue::push(void* _ptr)
 	{
-		m_last->m_next = new Node( (void*)_ptr);
+		m_last->m_next = BX_NEW(m_allocator, Node)(_ptr);
 		atomicExchangePtr( (void**)&m_last, m_last->m_next);
 		while (m_first != m_divider)
 		{
 			Node* node = m_first;
 			m_first = m_first->m_next;
-			delete node;
+			BX_DELETE(m_allocator, node);
 		}
 	}
 
@@ -68,7 +72,8 @@ namespace bx
 	}
 
 	template<typename Ty>
-	inline SpScUnboundedQueueT<Ty>::SpScUnboundedQueueT()
+	inline SpScUnboundedQueueT<Ty>::SpScUnboundedQueueT(AllocatorI* _allocator)
+		: m_queue(_allocator)
 	{
 	}
 
@@ -96,7 +101,8 @@ namespace bx
 	}
 
 #if BX_CONFIG_SUPPORTS_THREADING
-	inline SpScBlockingUnboundedQueue::SpScBlockingUnboundedQueue()
+	inline SpScBlockingUnboundedQueue::SpScBlockingUnboundedQueue(AllocatorI* _allocator)
+		: m_queue(_allocator)
 	{
 	}
 
@@ -106,7 +112,7 @@ namespace bx
 
 	inline void SpScBlockingUnboundedQueue::push(void* _ptr)
 	{
-		m_queue.push( (void*)_ptr);
+		m_queue.push(_ptr);
 		m_count.post();
 	}
 
@@ -126,7 +132,8 @@ namespace bx
 	}
 
 	template<typename Ty>
-	inline SpScBlockingUnboundedQueueT<Ty>::SpScBlockingUnboundedQueueT()
+	inline SpScBlockingUnboundedQueueT<Ty>::SpScBlockingUnboundedQueueT(AllocatorI* _allocator)
+		: m_queue(_allocator)
 	{
 	}
 

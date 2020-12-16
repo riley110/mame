@@ -13,6 +13,7 @@
 
 #include "emu.h"
 #include "asap.h"
+#include "asapdasm.h"
 #include "debugger.h"
 
 
@@ -130,7 +131,7 @@ const asap_device::ophandler asap_device::s_conditiontable[16] =
 //**************************************************************************
 
 // device type definition
-DEFINE_DEVICE_TYPE(ASAP, asap_device, "asap", "ASAP")
+DEFINE_DEVICE_TYPE(ASAP, asap_device, "asap", "Atari ASAP")
 
 //-------------------------------------------------
 //  asap_device - constructor
@@ -150,9 +151,7 @@ asap_device::asap_device(const machine_config &mconfig, const char *tag, device_
 		m_ppc(0),
 		m_nextpc(0),
 		m_irq_state(0),
-		m_icount(0),
-		m_program(nullptr),
-		m_direct(nullptr)
+		m_icount(0)
 {
 	// initialize the src2val table to contain immediates for low values
 	for (int i = 0; i < REGBASE; i++)
@@ -182,8 +181,8 @@ asap_device::asap_device(const machine_config &mconfig, const char *tag, device_
 void asap_device::device_start()
 {
 	// get our address spaces
-	m_program = &space(AS_PROGRAM);
-	m_direct = &m_program->direct();
+	space(AS_PROGRAM).cache(m_cache);
+	space(AS_PROGRAM).specific(m_program);
 
 	// register our state for the debugger
 	state_add(STATE_GENPC,     "GENPC",     m_pc).noshow();
@@ -208,7 +207,7 @@ void asap_device::device_start()
 	save_item(NAME(m_irq_state));
 
 	// set our instruction counter
-	m_icountptr = &m_icount;
+	set_icountptr(m_icount);
 }
 
 
@@ -300,38 +299,14 @@ void asap_device::state_string_export(const device_state_entry &entry, std::stri
 
 
 //-------------------------------------------------
-//  disasm_min_opcode_bytes - return the length
-//  of the shortest instruction, in bytes
-//-------------------------------------------------
-
-uint32_t asap_device::disasm_min_opcode_bytes() const
-{
-	return 4;
-}
-
-
-//-------------------------------------------------
-//  disasm_max_opcode_bytes - return the length
-//  of the longest instruction, in bytes
-//-------------------------------------------------
-
-uint32_t asap_device::disasm_max_opcode_bytes() const
-{
-	return 12;
-}
-
-
-//-------------------------------------------------
-//  disasm_disassemble - call the disassembly
+//  disassemble - call the disassembly
 //  helper function
 //-------------------------------------------------
 
-offs_t asap_device::disasm_disassemble(std::ostream &stream, offs_t pc, const uint8_t *oprom, const uint8_t *opram, uint32_t options)
+std::unique_ptr<util::disasm_interface> asap_device::create_disassembler()
 {
-	extern CPU_DISASSEMBLE( asap );
-	return CPU_DISASSEMBLE_NAME(asap)(this, stream, pc, oprom, opram, options);
+	return std::make_unique<asap_disassembler>();
 }
-
 
 
 //**************************************************************************
@@ -344,7 +319,7 @@ offs_t asap_device::disasm_disassemble(std::ostream &stream, offs_t pc, const ui
 
 inline uint32_t asap_device::readop(offs_t pc)
 {
-	return m_direct->read_dword(pc);
+	return m_cache.read_dword(pc);
 }
 
 
@@ -355,7 +330,7 @@ inline uint32_t asap_device::readop(offs_t pc)
 inline uint8_t asap_device::readbyte(offs_t address)
 {
 	// no alignment issues with bytes
-	return m_program->read_byte(address);
+	return m_program.read_byte(address);
 }
 
 
@@ -367,10 +342,10 @@ inline uint16_t asap_device::readword(offs_t address)
 {
 	// aligned reads are easy
 	if (WORD_ALIGNED(address))
-		return m_program->read_word(address);
+		return m_program.read_word(address);
 
 	// misaligned reads are tricky
-	return m_program->read_dword(address & ~3) >> (address & 3);
+	return m_program.read_dword(address & ~3) >> (address & 3);
 }
 
 
@@ -382,10 +357,10 @@ inline uint32_t asap_device::readlong(offs_t address)
 {
 	// aligned reads are easy
 	if (DWORD_ALIGNED(address))
-		return m_program->read_dword(address);
+		return m_program.read_dword(address);
 
 	// misaligned reads are tricky
-	return m_program->read_dword(address & ~3) >> (address & 3);
+	return m_program.read_dword(address & ~3) >> (address & 3);
 }
 
 
@@ -396,7 +371,7 @@ inline uint32_t asap_device::readlong(offs_t address)
 inline void asap_device::writebyte(offs_t address, uint8_t data)
 {
 	// no alignment issues with bytes
-	m_program->write_byte(address, data);
+	m_program.write_byte(address, data);
 }
 
 
@@ -409,18 +384,18 @@ inline void asap_device::writeword(offs_t address, uint16_t data)
 	// aligned writes are easy
 	if (WORD_ALIGNED(address))
 	{
-		m_program->write_word(address, data);
+		m_program.write_word(address, data);
 		return;
 	}
 
 	// misaligned writes are tricky
 	if (!(address & 2))
 	{
-		m_program->write_byte(address + 1, data);
-		m_program->write_byte(address + 2, data >> 8);
+		m_program.write_byte(address + 1, data);
+		m_program.write_byte(address + 2, data >> 8);
 	}
 	else
-		m_program->write_byte(address + 1, data);
+		m_program.write_byte(address + 1, data);
 }
 
 
@@ -433,7 +408,7 @@ inline void asap_device::writelong(offs_t address, uint32_t data)
 	// aligned writes are easy
 	if (DWORD_ALIGNED(address))
 	{
-		m_program->write_dword(address, data);
+		m_program.write_dword(address, data);
 		return;
 	}
 
@@ -441,14 +416,14 @@ inline void asap_device::writelong(offs_t address, uint32_t data)
 	switch (address & 3)
 	{
 		case 1:
-			m_program->write_byte(address, data);
-			m_program->write_word(address + 1, data >> 8);
+			m_program.write_byte(address, data);
+			m_program.write_word(address + 1, data >> 8);
 			break;
 		case 2:
-			m_program->write_word(address, data);
+			m_program.write_word(address, data);
 			break;
 		case 3:
-			m_program->write_byte(address, data);
+			m_program.write_byte(address, data);
 			break;
 	}
 }
@@ -507,7 +482,7 @@ inline void asap_device::fetch_instruction_debug()
 {
 	// debugging
 	m_ppc = m_pc;
-	debugger_instruction_hook(this, m_pc);
+	debugger_instruction_hook(m_pc);
 
 	// instruction fetch
 	m_op = readop(m_pc);
@@ -526,7 +501,7 @@ inline void asap_device::execute_instruction()
 //  cycles it takes for one instruction to execute
 //-------------------------------------------------
 
-uint32_t asap_device::execute_min_cycles() const
+uint32_t asap_device::execute_min_cycles() const noexcept
 {
 	return 1;
 }
@@ -537,7 +512,7 @@ uint32_t asap_device::execute_min_cycles() const
 //  cycles it takes for one instruction to execute
 //-------------------------------------------------
 
-uint32_t asap_device::execute_max_cycles() const
+uint32_t asap_device::execute_max_cycles() const noexcept
 {
 	return 2;
 }
@@ -548,7 +523,7 @@ uint32_t asap_device::execute_max_cycles() const
 //  input/interrupt lines
 //-------------------------------------------------
 
-uint32_t asap_device::execute_input_lines() const
+uint32_t asap_device::execute_input_lines() const noexcept
 {
 	return 1;
 }

@@ -3,103 +3,103 @@
 #include "emu.h"
 #include "includes/pk8000.h"
 
-READ8_MEMBER(pk8000_base_state::video_color_r)
+uint8_t pk8000_base_state::video_color_r()
 {
 	return m_video_color;
 }
 
-WRITE8_MEMBER(pk8000_base_state::video_color_w)
+void pk8000_base_state::video_color_w(uint8_t data)
 {
 	m_video_color = data;
 }
 
-READ8_MEMBER(pk8000_base_state::text_start_r)
+uint8_t pk8000_base_state::text_start_r()
 {
 	return m_text_start;
 }
 
-WRITE8_MEMBER(pk8000_base_state::text_start_w)
+void pk8000_base_state::text_start_w(uint8_t data)
 {
 	m_text_start = data;
 }
 
-READ8_MEMBER(pk8000_base_state::chargen_start_r)
+uint8_t pk8000_base_state::chargen_start_r()
 {
 	return m_chargen_start;
 }
 
-WRITE8_MEMBER(pk8000_base_state::chargen_start_w)
+void pk8000_base_state::chargen_start_w(uint8_t data)
 {
 	m_chargen_start = data;
 }
 
-READ8_MEMBER(pk8000_base_state::video_start_r)
+uint8_t pk8000_base_state::video_start_r()
 {
 	return m_video_start;
 }
 
-WRITE8_MEMBER(pk8000_base_state::video_start_w)
+void pk8000_base_state::video_start_w(uint8_t data)
 {
 	m_video_start = data;
 }
 
-READ8_MEMBER(pk8000_base_state::color_start_r)
+uint8_t pk8000_base_state::color_start_r()
 {
 	return m_color_start;
 }
 
-WRITE8_MEMBER(pk8000_base_state::color_start_w)
+void pk8000_base_state::color_start_w(uint8_t data)
 {
 	m_color_start = data;
 }
 
-READ8_MEMBER(pk8000_base_state::color_r)
+uint8_t pk8000_base_state::color_r(offs_t offset)
 {
 	return m_color[offset];
 }
 
-WRITE8_MEMBER(pk8000_base_state::color_w)
+void pk8000_base_state::color_w(offs_t offset, uint8_t data)
 {
 	m_color[offset] = data;
 }
 
-static const rgb_t pk8000_palette[16] = {
-	rgb_t(0x00, 0x00, 0x00), // 0
-	rgb_t(0x00, 0x00, 0x00), // 1
-	rgb_t(0x00, 0xc0, 0x00), // 2
-	rgb_t(0x00, 0xff, 0x00), // 3
-	rgb_t(0x00, 0x00, 0xc0), // 4
-	rgb_t(0x00, 0x00, 0xff), // 5
-	rgb_t(0x00, 0xc0, 0xc0), // 6
-	rgb_t(0x00, 0xff, 0xff), // 7
-	rgb_t(0xc0, 0x00, 0x00), // 8
-	rgb_t(0xff, 0x00, 0x00), // 9
-	rgb_t(0xc0, 0xc0, 0x00), // A
-	rgb_t(0xff, 0xff, 0x00), // B
-	rgb_t(0xc0, 0x00, 0xc0), // C
-	rgb_t(0xff, 0x00, 0xff), // D
-	rgb_t(0xc0, 0xc0, 0xc0), // E
-	rgb_t(0xff, 0xff, 0xff), // F
+static constexpr rgb_t pk8000_pens[16] = {
+	{ 0x00, 0x00, 0x00 }, // 0
+	{ 0x00, 0x00, 0x00 }, // 1
+	{ 0x00, 0xc0, 0x00 }, // 2
+	{ 0x00, 0xff, 0x00 }, // 3
+	{ 0x00, 0x00, 0xc0 }, // 4
+	{ 0x00, 0x00, 0xff }, // 5
+	{ 0x00, 0xc0, 0xc0 }, // 6
+	{ 0x00, 0xff, 0xff }, // 7
+	{ 0xc0, 0x00, 0x00 }, // 8
+	{ 0xff, 0x00, 0x00 }, // 9
+	{ 0xc0, 0xc0, 0x00 }, // A
+	{ 0xff, 0xff, 0x00 }, // B
+	{ 0xc0, 0x00, 0xc0 }, // C
+	{ 0xff, 0x00, 0xff }, // D
+	{ 0xc0, 0xc0, 0xc0 }, // E
+	{ 0xff, 0xff, 0xff }  // F
 };
 
-PALETTE_INIT_MEMBER(pk8000_base_state, pk8000)
+void pk8000_base_state::pk8000_palette(palette_device &palette) const
 {
-	palette.set_pen_colors(0, pk8000_palette, ARRAY_LENGTH(pk8000_palette));
+	palette.set_pen_colors(0, pk8000_pens);
 }
 
-READ8_MEMBER(pk8000_base_state::_84_porta_r)
+uint8_t pk8000_base_state::_84_porta_r()
 {
 	return m_video_mode;
 }
 
-WRITE8_MEMBER(pk8000_base_state::_84_porta_w)
+void pk8000_base_state::_84_porta_w(uint8_t data)
 {
 	m_video_mode = data;
 }
 
-WRITE8_MEMBER(pk8000_base_state::_84_portc_w)
+void pk8000_base_state::_84_portc_w(uint8_t data)
 {
-	m_video_enable = BIT(data,4);
+	m_video_enable = BIT(data, 4);
 }
 
 uint32_t pk8000_base_state::video_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect, uint8_t *videomem)

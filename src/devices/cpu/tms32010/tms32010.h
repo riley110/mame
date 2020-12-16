@@ -15,15 +15,8 @@
 
 #pragma once
 
-
-
-#define MCFG_TMS32010_BIO_IN_CB(_devcb) \
-	devcb = &tms32010_device::set_bio_in_cb(*device, DEVCB_##_devcb); /* BIO input  */
-
-
 #define TMS32010_INT_PENDING    0x80000000
 #define TMS32010_INT_NONE       0
-
 
 enum
 {
@@ -44,9 +37,11 @@ public:
 	// construction/destruction
 	tms32010_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	// static configuration helpers
-	template <class Object> static devcb_base & set_bio_in_cb(device_t &device, Object &&cb) { return downcast<tms32010_device &>(device).m_bio_in.set_callback(std::forward<Object>(cb)); }
+	// configuration helpers
+	auto bio() { return m_bio_in.bind(); }
 
+	void tms32010_ram(address_map &map);
+	void tms32015_ram(address_map &map);
 protected:
 	tms32010_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock, address_map_constructor data_map, int addr_mask);
 
@@ -55,13 +50,13 @@ protected:
 	virtual void device_reset() override;
 
 	// device_execute_interface overrides
-	virtual uint32_t execute_min_cycles() const override { return 1; }
-	virtual uint32_t execute_max_cycles() const override { return 3; }
-	virtual uint32_t execute_input_lines() const override { return 1; }
+	virtual uint32_t execute_min_cycles() const noexcept override { return 1; }
+	virtual uint32_t execute_max_cycles() const noexcept override { return 3; }
+	virtual uint32_t execute_input_lines() const noexcept override { return 1; }
 	virtual void execute_run() override;
 	virtual void execute_set_input(int inputnum, int state) override;
-	virtual uint64_t execute_clocks_to_cycles(uint64_t clocks) const override { return (clocks + 4 - 1) / 4; }
-	virtual uint64_t execute_cycles_to_clocks(uint64_t cycles) const override { return (cycles * 4); }
+	virtual uint64_t execute_clocks_to_cycles(uint64_t clocks) const noexcept override { return (clocks + 4 - 1) / 4; }
+	virtual uint64_t execute_cycles_to_clocks(uint64_t cycles) const noexcept override { return (cycles * 4); }
 
 	// device_memory_interface overrides
 	virtual space_config_vector memory_space_config() const override;
@@ -70,9 +65,7 @@ protected:
 	virtual void state_string_export(const device_state_entry &entry, std::string &str) const override;
 
 	// device_disasm_interface overrides
-	virtual uint32_t disasm_min_opcode_bytes() const override { return 2; }
-	virtual uint32_t disasm_max_opcode_bytes() const override { return 4; }
-	virtual offs_t disasm_disassemble(std::ostream &stream, offs_t pc, const uint8_t *oprom, const uint8_t *opram, uint32_t options) override;
+	virtual std::unique_ptr<util::disasm_interface> create_disassembler() override;
 
 private:
 	address_space_config m_program_config;
@@ -108,10 +101,10 @@ private:
 	uint16_t  m_memaccess;
 	int     m_addr_mask;
 
-	address_space *m_program;
-	direct_read_data *m_direct;
-	address_space *m_data;
-	address_space *m_io;
+	memory_access<12, 1, -1, ENDIANNESS_BIG>::cache m_cache;
+	memory_access<12, 1, -1, ENDIANNESS_BIG>::specific m_program;
+	memory_access< 8, 1, -1, ENDIANNESS_BIG>::specific m_data;
+	memory_access< 4, 1, -1, ENDIANNESS_BIG>::specific m_io;
 
 	inline void CLR(uint16_t flag);
 	inline void SET_FLAG(uint16_t flag);

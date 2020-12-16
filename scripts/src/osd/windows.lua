@@ -44,6 +44,7 @@ function maintargetosdoptions(_target,_subtarget)
 		"comdlg32",
 		"psapi",
 		"ole32",
+		"shlwapi",
 	}
 end
 
@@ -226,7 +227,6 @@ project ("ocore_" .. _OPTIONS["osd"])
 
 	includedirs {
 		MAME_DIR .. "src/osd/windows",
-		MAME_DIR .. "src/lib/winpcap",
 	}
 
 	files {

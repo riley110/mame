@@ -42,7 +42,7 @@
 
 
 // device type definition
-DEFINE_DEVICE_TYPE(ARCADIA_SOUND, arcadia_sound_device, "arcadia_sound", "Arcadia Audio Custom")
+DEFINE_DEVICE_TYPE(ARCADIA_SOUND, arcadia_sound_device, "arcadia_sound", "Arcadia Custom Sound")
 
 //-------------------------------------------------
 //  arcadia_sound_device - constructor
@@ -141,7 +141,7 @@ void arcadia_sound_device::sound_stream_update(sound_stream &stream, stream_samp
 //  soundport_w
 //-------------------------------------------------
 
-WRITE8_MEMBER(arcadia_sound_device::write)
+void arcadia_sound_device::write(offs_t offset, uint8_t data)
 {
 	m_channel->update();
 	m_reg[offset] = data;

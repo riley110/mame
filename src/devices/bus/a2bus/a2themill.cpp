@@ -18,8 +18,6 @@
     ProDOS "Stellation The Mill Disk.po" requires Mill in slot 2; boot
     the disc and type "-DEMO1" and press Enter to launch the simple demo.
 
-    TODO: Add DIP switch to select standard and OS-9 modes.
-
 *********************************************************************/
 
 #include "emu.h"
@@ -38,11 +36,27 @@
 
 DEFINE_DEVICE_TYPE(A2BUS_THEMILL, a2bus_themill_device, "a2themill", "Stellation Two The Mill")
 
-#define M6809_TAG         "m6809"
+void a2bus_themill_device::m6809_mem(address_map &map)
+{
+	map(0x0000, 0xffff).rw(FUNC(a2bus_themill_device::dma_r), FUNC(a2bus_themill_device::dma_w));
+}
 
-static ADDRESS_MAP_START( m6809_mem, AS_PROGRAM, 8, a2bus_themill_device )
-	AM_RANGE(0x0000, 0xffff) AM_READWRITE(dma_r, dma_w)
-ADDRESS_MAP_END
+static INPUT_PORTS_START( themill )
+	PORT_START("MILLCFG")
+	PORT_DIPNAME( 0x01, 0x01, "6809 Mapping" )
+	PORT_DIPSETTING(    0x00, "Original")
+	PORT_DIPSETTING(    0x01, "OS-9")
+INPUT_PORTS_END
+
+//-------------------------------------------------
+//  input_ports - device-specific input ports
+//-------------------------------------------------
+
+ioport_constructor a2bus_themill_device::device_input_ports() const
+{
+	return INPUT_PORTS_NAME( themill );
+}
+
 
 /***************************************************************************
     FUNCTION PROTOTYPES
@@ -52,19 +66,25 @@ ADDRESS_MAP_END
 //  device_add_mconfig - add device configuration
 //-------------------------------------------------
 
-MACHINE_CONFIG_MEMBER( a2bus_themill_device::device_add_mconfig )
-	MCFG_CPU_ADD(M6809_TAG, M6809, 1021800)   // M6809 runs at ~1 MHz as per Stellation Two's print ads
-	MCFG_CPU_PROGRAM_MAP(m6809_mem)
-MACHINE_CONFIG_END
+void a2bus_themill_device::device_add_mconfig(machine_config &config)
+{
+	MC6809E(config, m_6809, 1021800);   // 6809E runs at ~1 MHz as per Stellation Two's print ads
+	m_6809->set_addrmap(AS_PROGRAM, &a2bus_themill_device::m6809_mem);
+}
 
 //**************************************************************************
 //  LIVE DEVICE
 //**************************************************************************
 
-a2bus_themill_device::a2bus_themill_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock) :
-	device_t(mconfig, type, tag, owner, clock),
-	device_a2bus_card_interface(mconfig, *this),
-	m_6809(*this, M6809_TAG), m_bEnabled(false), m_flipAddrSpace(false), m_6809Mode(false), m_status(0)
+a2bus_themill_device::a2bus_themill_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock)
+	: device_t(mconfig, type, tag, owner, clock)
+	, device_a2bus_card_interface(mconfig, *this)
+	, m_6809(*this, "m6809")
+	, m_cfgsw(*this, "MILLCFG")
+	, m_bEnabled(false)
+	, m_flipAddrSpace(false)
+	, m_6809Mode(false)
+	, m_status(0)
 {
 }
 
@@ -79,9 +99,6 @@ a2bus_themill_device::a2bus_themill_device(const machine_config &mconfig, const 
 
 void a2bus_themill_device::device_start()
 {
-	// set_a2bus_device makes m_slot valid
-	set_a2bus_device();
-
 	save_item(NAME(m_bEnabled));
 	save_item(NAME(m_flipAddrSpace));
 	save_item(NAME(m_6809Mode));
@@ -92,18 +109,18 @@ void a2bus_themill_device::device_reset()
 {
 	m_bEnabled = false;
 	m_flipAddrSpace = false;
-	m_6809Mode = true;
+	m_6809Mode = (m_cfgsw->read() & 1) ? true : false;
 	m_status = 0xc0;    // OS9 loader relies on this
 	m_6809->set_input_line(INPUT_LINE_HALT, ASSERT_LINE);
 	m_6809->set_input_line(INPUT_LINE_RESET, ASSERT_LINE);
 }
 
-uint8_t a2bus_themill_device::read_c0nx(address_space &space, uint8_t offset)
+uint8_t a2bus_themill_device::read_c0nx(uint8_t offset)
 {
 	return m_status;
 }
 
-void a2bus_themill_device::write_c0nx(address_space &space, uint8_t offset, uint8_t data)
+void a2bus_themill_device::write_c0nx(uint8_t offset, uint8_t data)
 {
 	switch (offset)
 	{
@@ -225,7 +242,7 @@ void a2bus_themill_device::write_c0nx(address_space &space, uint8_t offset, uint
 	}
 }
 
-READ8_MEMBER( a2bus_themill_device::dma_r )
+uint8_t a2bus_themill_device::dma_r(offs_t offset)
 {
 	// MAME startup ordering has the 6809 free-running at boot, which is undesirable
 	if (!m_bEnabled)
@@ -237,34 +254,34 @@ READ8_MEMBER( a2bus_themill_device::dma_r )
 	{
 		if (offset <= 0x7fff)
 		{
-			return slot_dma_read(space, offset+0x1000);
+			return slot_dma_read(offset+0x1000);
 		}
 		else if (offset <= 0xafff)
 		{
-			return slot_dma_read(space, (offset&0x3fff) + 0xd000);
+			return slot_dma_read((offset&0x3fff) + 0xd000);
 		}
 		else if (offset <= 0xbfff)
 		{
-			return slot_dma_read(space, (offset&0xfff) + 0xc000);
+			return slot_dma_read((offset&0xfff) + 0xc000);
 		}
 		else if (offset <= 0xcfff)  // 6809 Cxxx -> 6502 ZP
 		{
-			return slot_dma_read(space, (offset&0xfff));
+			return slot_dma_read((offset&0xfff));
 		}
 		else    // 6809 Dxxx -> 6502 9000
 		{
-			return slot_dma_read(space, (offset-0xd000)+0x9000);
+			return slot_dma_read((offset-0xd000)+0x9000);
 		}
 	}
 	else
 	{
 		if (m_flipAddrSpace)
 		{
-			return slot_dma_read(space, offset^0x8000);
+			return slot_dma_read(offset^0x8000);
 		}
 		else
 		{
-			return slot_dma_read(space, offset);
+			return slot_dma_read(offset);
 		}
 	}
 
@@ -276,40 +293,40 @@ READ8_MEMBER( a2bus_themill_device::dma_r )
 //  dma_w -
 //-------------------------------------------------
 
-WRITE8_MEMBER( a2bus_themill_device::dma_w )
+void a2bus_themill_device::dma_w(offs_t offset, uint8_t data)
 {
 	if (m_6809Mode)
 	{
 		if (offset <= 0x7fff)
 		{
-			slot_dma_write(space, offset+0x1000, data);
+			slot_dma_write(offset+0x1000, data);
 		}
 		else if (offset <= 0xafff)
 		{
-			slot_dma_write(space, (offset&0x3fff) + 0xd000, data);
+			slot_dma_write((offset&0x3fff) + 0xd000, data);
 		}
 		else if (offset <= 0xbfff)
 		{
-			slot_dma_write(space, (offset&0xfff) + 0xc000, data);
+			slot_dma_write((offset&0xfff) + 0xc000, data);
 		}
 		else if (offset <= 0xcfff)
 		{
-			slot_dma_write(space, (offset&0xfff), data);
+			slot_dma_write((offset&0xfff), data);
 		}
 		else    // 6809 Dxxx -> 6502 9000
 		{
-			slot_dma_write(space, (offset-0xd000)+0x9000, data);
+			slot_dma_write((offset-0xd000)+0x9000, data);
 		}
 	}
 	else
 	{
 		if (m_flipAddrSpace)
 		{
-			slot_dma_write(space, offset^0x8000, data);
+			slot_dma_write(offset^0x8000, data);
 		}
 		else
 		{
-			slot_dma_write(space, offset, data);
+			slot_dma_write(offset, data);
 		}
 	}
 }

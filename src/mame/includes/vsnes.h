@@ -1,5 +1,7 @@
 // license:BSD-3-Clause
 // copyright-holders:Pierpaolo Prazzoli
+
+#include "sound/sn76496.h"
 #include "video/ppu2c0x.h"
 
 class vsnes_state : public driver_device
@@ -11,97 +13,107 @@ public:
 		, m_subcpu(*this, "sub")
 		, m_ppu1(*this, "ppu1")
 		, m_ppu2(*this, "ppu2")
+		, m_sn1(*this, "sn1")
+		, m_sn2(*this, "sn2")
 		, m_work_ram(*this, "work_ram")
 		, m_work_ram_1(*this, "work_ram_1")
-		, m_palette(*this, "palette")
 		, m_gfx1_rom(*this, "gfx1")
 	{
 	}
 
+	void vsdual(machine_config &config);
+	void vsgshoe(machine_config &config);
+	void vsnes(machine_config &config);
+	void vsdual_pi(machine_config &config);
+	void topgun(machine_config &config);
+	void mightybj(machine_config &config);
+	void vsnes_bootleg(machine_config &config);
+	void jajamaru(machine_config &config);
+
+	void init_vskonami();
+	void init_vsvram();
+	void init_bnglngby();
+	void init_drmario();
+	void init_MMC3();
+	void init_vsfdf();
+	void init_tkoboxng();
+	void init_vsgun();
+	void init_supxevs();
+	void init_vsgshoe();
+	void init_vsnormal();
+	void init_platoon();
+	void init_rbibb();
+	void init_vsdual();
+
+private:
 	required_device<cpu_device> m_maincpu;
 	optional_device<cpu_device> m_subcpu;
 	required_device<ppu2c0x_device> m_ppu1;
 	optional_device<ppu2c0x_device> m_ppu2;
+	optional_device<sn76489_device> m_sn1;
+	optional_device<sn76489_device> m_sn2;
 
 	required_shared_ptr<uint8_t> m_work_ram;
 	optional_shared_ptr<uint8_t> m_work_ram_1;
-	required_device<palette_device> m_palette;
 
 	optional_memory_region m_gfx1_rom;
 
-	DECLARE_WRITE8_MEMBER(sprite_dma_0_w);
-	DECLARE_WRITE8_MEMBER(sprite_dma_1_w);
-	DECLARE_WRITE8_MEMBER(vsnes_coin_counter_w);
-	DECLARE_READ8_MEMBER(vsnes_coin_counter_r);
-	DECLARE_WRITE8_MEMBER(vsnes_coin_counter_1_w);
-	DECLARE_WRITE8_MEMBER(vsnes_in0_w);
-	DECLARE_READ8_MEMBER(vsnes_in0_r);
-	DECLARE_READ8_MEMBER(vsnes_in1_r);
-	DECLARE_WRITE8_MEMBER(vsnes_in0_1_w);
-	DECLARE_READ8_MEMBER(vsnes_in0_1_r);
-	DECLARE_READ8_MEMBER(vsnes_in1_1_r);
-	DECLARE_READ8_MEMBER(gun_in0_r);
-	DECLARE_WRITE8_MEMBER(vsnes_nt0_w);
-	DECLARE_WRITE8_MEMBER(vsnes_nt1_w);
-	DECLARE_READ8_MEMBER(vsnes_nt0_r);
-	DECLARE_READ8_MEMBER(vsnes_nt1_r);
-	DECLARE_WRITE8_MEMBER(vsnormal_vrom_banking);
-	DECLARE_WRITE8_MEMBER(gun_in0_w);
-	DECLARE_WRITE8_MEMBER(vskonami_rom_banking);
-	DECLARE_WRITE8_MEMBER(vsgshoe_gun_in0_w);
-	DECLARE_WRITE8_MEMBER(drmario_rom_banking);
-	DECLARE_WRITE8_MEMBER(vsvram_rom_banking);
-	DECLARE_WRITE8_MEMBER(mapper4_w);
-	DECLARE_READ8_MEMBER(rbi_hack_r);
-	DECLARE_READ8_MEMBER(supxevs_read_prot_1_r);
-	DECLARE_READ8_MEMBER(supxevs_read_prot_2_r);
-	DECLARE_READ8_MEMBER(supxevs_read_prot_3_r);
-	DECLARE_READ8_MEMBER(supxevs_read_prot_4_r);
-	DECLARE_READ8_MEMBER(tko_security_r);
-	DECLARE_WRITE8_MEMBER(mapper68_rom_banking);
-	DECLARE_WRITE8_MEMBER(set_bnglngby_irq_w);
-	DECLARE_READ8_MEMBER(set_bnglngby_irq_r);
-	DECLARE_WRITE8_MEMBER(vsdual_vrom_banking_main);
-	DECLARE_WRITE8_MEMBER(vsdual_vrom_banking_sub);
+	void sprite_dma_0_w(address_space &space, uint8_t data);
+	void sprite_dma_1_w(address_space &space, uint8_t data);
+	void vsnes_coin_counter_w(uint8_t data);
+	uint8_t vsnes_coin_counter_r();
+	void vsnes_coin_counter_1_w(uint8_t data);
+	void vsnes_in0_w(uint8_t data);
+	uint8_t vsnes_in0_r();
+	uint8_t vsnes_in1_r();
+	void vsnes_in0_1_w(uint8_t data);
+	uint8_t vsnes_in0_1_r();
+	uint8_t vsnes_in1_1_r();
+	uint8_t gun_in0_r();
+	void vsnes_nt0_w(offs_t offset, uint8_t data);
+	void vsnes_nt1_w(offs_t offset, uint8_t data);
+	uint8_t vsnes_nt0_r(offs_t offset);
+	uint8_t vsnes_nt1_r(offs_t offset);
+	void vsnormal_vrom_banking(uint8_t data);
+	void gun_in0_w(uint8_t data);
+	void vskonami_rom_banking(offs_t offset, uint8_t data);
+	void vsgshoe_gun_in0_w(uint8_t data);
+	void drmario_rom_banking(offs_t offset, uint8_t data);
+	void vsvram_rom_banking(uint8_t data);
+	void mapper4_w(offs_t offset, uint8_t data);
+	uint8_t rbi_hack_r(offs_t offset);
+	uint8_t supxevs_read_prot_1_r();
+	uint8_t supxevs_read_prot_2_r();
+	uint8_t supxevs_read_prot_3_r();
+	uint8_t supxevs_read_prot_4_r();
+	uint8_t tko_security_r(offs_t offset);
+	void mapper68_rom_banking(offs_t offset, uint8_t data);
+	void set_bnglngby_irq_w(uint8_t data);
+	uint8_t set_bnglngby_irq_r();
+	void vsdual_vrom_banking_main(uint8_t data);
+	void vsdual_vrom_banking_sub(uint8_t data);
+	void vssmbbl_sn_w(offs_t offset, uint8_t data);
 	void v_set_mirroring(int ppu, int mirroring);
 
-	DECLARE_DRIVER_INIT(vskonami);
-	DECLARE_DRIVER_INIT(vsvram);
-	DECLARE_DRIVER_INIT(bnglngby);
-	DECLARE_DRIVER_INIT(drmario);
-	DECLARE_DRIVER_INIT(MMC3);
-	DECLARE_DRIVER_INIT(vsfdf);
-	DECLARE_DRIVER_INIT(tkoboxng);
-	DECLARE_DRIVER_INIT(vsgun);
-	DECLARE_DRIVER_INIT(supxevs);
-	DECLARE_DRIVER_INIT(vsgshoe);
-	DECLARE_DRIVER_INIT(vsnormal);
-	DECLARE_DRIVER_INIT(platoon);
-	DECLARE_DRIVER_INIT(rbibb);
-	DECLARE_DRIVER_INIT(vsdual);
 	DECLARE_MACHINE_START(vsnes);
 	DECLARE_MACHINE_RESET(vsnes);
-	DECLARE_VIDEO_START(vsnes);
-	DECLARE_PALETTE_INIT(vsnes);
 	DECLARE_MACHINE_START(vsdual);
 	DECLARE_MACHINE_RESET(vsdual);
-	DECLARE_VIDEO_START(vsdual);
-	DECLARE_PALETTE_INIT(vsdual);
-	uint32_t screen_update_vsnes(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
-	uint32_t screen_update_vsnes_bottom(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 	void v_set_videorom_bank(  int start, int count, int vrom_start_bank );
 	void mapper4_set_prg(  );
 	void mapper4_set_chr(  );
 	void mapper4_irq( int scanline, int vblank, int blanked );
-	void ppu_irq_1(int *ppu_regs);
-	void ppu_irq_2(int *ppu_regs);
 
-	DECLARE_READ8_MEMBER( vsnes_bootleg_z80_latch_r );
-	DECLARE_WRITE8_MEMBER(bootleg_sound_write);
-	DECLARE_READ8_MEMBER(vsnes_bootleg_z80_data_r);
-	DECLARE_READ8_MEMBER(vsnes_bootleg_z80_address_r);
+	uint8_t vsnes_bootleg_z80_latch_r();
+	void bootleg_sound_write(offs_t offset, uint8_t data);
+	uint8_t vsnes_bootleg_z80_data_r();
+	uint8_t vsnes_bootleg_z80_address_r();
 
-private:
+	void vsnes_bootleg_z80_map(address_map &map);
+	void vsnes_cpu1_bootleg_map(address_map &map);
+	void vsnes_cpu1_map(address_map &map);
+	void vsnes_cpu2_map(address_map &map);
+
 	int m_coin;
 	int m_do_vrom_bank;
 	int m_input_latch[4];

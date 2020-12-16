@@ -12,13 +12,6 @@
 
 #include "machine/legscsi.h"
 
-#define MCFG_FMSCSI_ADD(_tag) \
-	MCFG_DEVICE_ADD(_tag, FMSCSI, 0)
-
-#define MCFG_FMSCSI_IRQ_HANDLER(_devcb) \
-	devcb = &fmscsi_device::set_irq_handler(*device, DEVCB_##_devcb);
-#define MCFG_FMSCSI_DRQ_HANDLER(_devcb) \
-	devcb = &fmscsi_device::set_drq_handler(*device, DEVCB_##_devcb);
 
 class fmscsi_device : public legacy_scsi_host_adapter
 {
@@ -26,17 +19,17 @@ public:
 	// construction/destruction
 	fmscsi_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	// static configuration helpers
-	template <class Object> static devcb_base &set_irq_handler(device_t &device, Object &&cb) { return downcast<fmscsi_device &>(device).m_irq_handler.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_drq_handler(device_t &device, Object &&cb) { return downcast<fmscsi_device &>(device).m_drq_handler.set_callback(std::forward<Object>(cb)); }
+	// configuration helpers
+	auto irq_handler() { return m_irq_handler.bind(); }
+	auto drq_handler() { return m_drq_handler.bind(); }
 
 	// any publically accessible interfaces needed for runtime
 	uint8_t fmscsi_data_r(void);
 	void fmscsi_data_w(uint8_t data);
 	uint8_t fmscsi_status_r(void);
 	void fmscsi_control_w(uint8_t data);
-	DECLARE_READ8_MEMBER( fmscsi_r );
-	DECLARE_WRITE8_MEMBER( fmscsi_w );
+	uint8_t fmscsi_r(offs_t offset);
+	void fmscsi_w(offs_t offset, uint8_t data);
 
 	void set_phase(int phase);
 	int get_phase(void);

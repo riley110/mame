@@ -7,13 +7,6 @@
 
 #include "cpu/m6800/m6801.h"
 
-#define MCFG_MPU401_ADD(tag, irqf) \
-		MCFG_DEVICE_ADD((tag), MPU401, 0) \
-		MCFG_IRQ_FUNC(irqf)
-
-#define MCFG_IRQ_FUNC(irqf) \
-		devcb = &downcast<mpu401_device *>(device)->set_irqf(DEVCB_##irqf);
-
 //**************************************************************************
 //  TYPE DEFINITIONS
 //**************************************************************************
@@ -22,25 +15,13 @@ class mpu401_device : public device_t
 {
 public:
 	// construction/destruction
-	mpu401_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+	mpu401_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock = 0);
 
-	template <class Write> devcb_base &set_irqf(Write &&wr)
-	{
-		return write_irq.set_callback(std::forward<Write>(wr));
-	}
-
-	DECLARE_READ8_MEMBER(regs_mode2_r);
-	DECLARE_WRITE8_MEMBER(regs_mode2_w);
-	DECLARE_READ8_MEMBER(asic_r);
-	DECLARE_WRITE8_MEMBER(asic_w);
-	DECLARE_READ8_MEMBER(port1_r);
-	DECLARE_WRITE8_MEMBER(port1_w);
-	DECLARE_READ8_MEMBER(port2_r);
-	DECLARE_WRITE8_MEMBER(port2_w);
+	auto irq_cb() { return write_irq.bind(); }
 
 	// public API - call for reads/writes at I/O 330/331 on PC, C0n0/C0n1 on Apple II, etc.
-	DECLARE_READ8_MEMBER(mpu_r);
-	DECLARE_WRITE8_MEMBER(mpu_w);
+	uint8_t mpu_r(offs_t offset);
+	void mpu_w(offs_t offset, uint8_t data);
 
 protected:
 	// device-level overrides
@@ -51,7 +32,16 @@ protected:
 	virtual void device_add_mconfig(machine_config &config) override;
 
 private:
-	DECLARE_WRITE_LINE_MEMBER(midi_rx_w);
+	void midi_rx_w(int state);
+
+	uint8_t asic_r(offs_t offset);
+	void asic_w(offs_t offset, uint8_t data);
+	uint8_t port1_r();
+	void port1_w(uint8_t data);
+	uint8_t port2_r();
+	void port2_w(uint8_t data);
+
+	void mpu401_map(address_map &map);
 
 	required_device<m6801_cpu_device> m_ourcpu;
 

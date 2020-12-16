@@ -6,16 +6,6 @@
 #pragma once
 
 
-//**************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_K005289_ADD(_tag, _clock) \
-	MCFG_DEVICE_ADD(_tag, K005289, _clock)
-#define MCFG_K005289_REPLACE(_tag, _clock) \
-	MCFG_DEVICE_REPLACE(_tag, K005289, _clock)
-
-
 // ======================> k005289_device
 
 class k005289_device : public device_t,
@@ -24,12 +14,12 @@ class k005289_device : public device_t,
 public:
 	k005289_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	DECLARE_WRITE8_MEMBER( k005289_control_A_w );
-	DECLARE_WRITE8_MEMBER( k005289_control_B_w );
-	DECLARE_WRITE8_MEMBER( ld1_w );
-	DECLARE_WRITE8_MEMBER( ld2_w );
-	DECLARE_WRITE8_MEMBER( tg1_w );
-	DECLARE_WRITE8_MEMBER( tg2_w );
+	void control_A_w(uint8_t data);
+	void control_B_w(uint8_t data);
+	void ld1_w(offs_t offset, uint8_t data);
+	void ld2_w(offs_t offset, uint8_t data);
+	void tg1_w(uint8_t data);
+	void tg2_w(uint8_t data);
 
 protected:
 	// device-level overrides

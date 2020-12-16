@@ -13,13 +13,8 @@
 
 #pragma once
 
+#include "emupal.h"
 
-///*************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-///*************************************************************************
-
-#define MCFG_HD66421_ADD(_tag) \
-	MCFG_DEVICE_ADD(_tag, HD66421, 0)
 
 ///*************************************************************************
 //  TYPE DEFINITIONS
@@ -35,12 +30,12 @@ public:
 	static constexpr unsigned HEIGHT  = 100;
 
 	// construction/destruction
-	hd66421_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+	hd66421_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock = 0);
 
-	DECLARE_READ8_MEMBER( reg_idx_r );
-	DECLARE_WRITE8_MEMBER( reg_idx_w );
-	DECLARE_READ8_MEMBER( reg_dat_r );
-	DECLARE_WRITE8_MEMBER( reg_dat_w );
+	uint8_t reg_idx_r();
+	void reg_idx_w(uint8_t data);
+	uint8_t reg_dat_r();
+	void reg_dat_w(uint8_t data);
 
 	uint32_t update_screen(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 
@@ -65,7 +60,9 @@ private:
 	int m_x, m_y;
 	required_device<palette_device> m_palette;
 
-	DECLARE_PALETTE_INIT(hd66421);
+	void hd66421(address_map &map);
+
+	void hd66421_palette(palette_device &palette) const;
 };
 
 

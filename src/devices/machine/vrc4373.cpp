@@ -70,33 +70,38 @@
 
 DEFINE_DEVICE_TYPE(VRC4373, vrc4373_device, "vrc4373", "NEC VRC4373 System Controller")
 
-DEVICE_ADDRESS_MAP_START(config_map, 32, vrc4373_device)
-	AM_RANGE(0x40, 0x43) AM_READWRITE  (pcictrl_r,  pcictrl_w)
-	AM_INHERIT_FROM(pci_bridge_device::config_map)
-ADDRESS_MAP_END
+void vrc4373_device::config_map(address_map &map)
+{
+	pci_bridge_device::config_map(map);
+	map(0x40, 0x43).rw(FUNC(vrc4373_device::pcictrl_r), FUNC(vrc4373_device::pcictrl_w));
+}
 
 // cpu i/f map
-DEVICE_ADDRESS_MAP_START(cpu_map, 32, vrc4373_device)
-	AM_RANGE(0x00000000, 0x0000007b) AM_READWRITE(    cpu_if_r,          cpu_if_w)
-ADDRESS_MAP_END
+void vrc4373_device::cpu_map(address_map &map)
+{
+	map(0x00000000, 0x0000007b).rw(FUNC(vrc4373_device::cpu_if_r), FUNC(vrc4373_device::cpu_if_w));
+}
 
 // Target Window 1 map
-DEVICE_ADDRESS_MAP_START(target1_map, 32, vrc4373_device)
-	AM_RANGE(0x00000000, 0xFFFFFFFF) AM_READWRITE(    target1_r,          target1_w)
-ADDRESS_MAP_END
+void vrc4373_device::target1_map(address_map &map)
+{
+	map(0x00000000, 0xFFFFFFFF).rw(FUNC(vrc4373_device::target1_r), FUNC(vrc4373_device::target1_w));
+}
 
 // Target Window 2 map
-DEVICE_ADDRESS_MAP_START(target2_map, 32, vrc4373_device)
-	AM_RANGE(0x00000000, 0xFFFFFFFF) AM_READWRITE(    target2_r,          target2_w)
-ADDRESS_MAP_END
+void vrc4373_device::target2_map(address_map &map)
+{
+	map(0x00000000, 0xFFFFFFFF).rw(FUNC(vrc4373_device::target2_r), FUNC(vrc4373_device::target2_w));
+}
 
 vrc4373_device::vrc4373_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
-	: pci_host_device(mconfig, VRC4373, tag, owner, clock),
-		m_cpu_space(nullptr), m_irq_cb(*this), m_cpu(nullptr), cpu_tag(nullptr), m_ram_size(0x0), m_simm0_size(0x0),
-		m_mem_config("memory_space", ENDIANNESS_LITTLE, 32, 32),
-		m_io_config("io_space", ENDIANNESS_LITTLE, 32, 32), m_pci1_laddr(0), m_pci2_laddr(0), m_pci_io_laddr(0), m_target1_laddr(0), m_target2_laddr(0),
-		m_romRegion(*this, "rom")
+	: pci_host_device(mconfig, VRC4373, tag, owner, clock)
+	, m_cpu_space(nullptr), m_irq_cb(*this), m_cpu(*this, finder_base::DUMMY_TAG), m_ram_size(0x0), m_simm0_size(0x0)
+	, m_mem_config("memory_space", ENDIANNESS_LITTLE, 32, 32)
+	, m_io_config("io_space", ENDIANNESS_LITTLE, 32, 32), m_pci1_laddr(0), m_pci2_laddr(0), m_pci_io_laddr(0), m_target1_laddr(0), m_target2_laddr(0)
+	, m_romRegion(*this, "rom")
 {
+	set_ids_host(0x1033005B, 0x00, 0x00000000);
 }
 
 device_memory_interface::space_config_vector vrc4373_device::memory_space_config() const
@@ -110,13 +115,13 @@ device_memory_interface::space_config_vector vrc4373_device::memory_space_config
 void vrc4373_device::device_start()
 {
 	pci_host_device::device_start();
-	m_cpu = machine().device<mips3_device>(cpu_tag);
+
 	m_cpu_space = &m_cpu->space(AS_PCI_CONFIG);
 	memory_space = &space(AS_PCI_MEM);
 	io_space = &space(AS_PCI_IO);
 	is_multifunction_device = false;
 
-	memset(m_cpu_regs, 0, sizeof(m_cpu_regs));
+	std::fill(std::begin(m_cpu_regs), std::end(m_cpu_regs), 0);
 
 	memory_window_start = 0;
 	memory_window_end   = 0xffffffff;
@@ -161,10 +166,9 @@ void vrc4373_device::device_start()
 	save_item(NAME(m_pci_io_laddr));
 	save_item(NAME(m_target1_laddr));
 	save_item(NAME(m_target2_laddr));
-	machine().save().register_postload(save_prepost_delegate(FUNC(vrc4373_device::postload), this));
 }
 
-void vrc4373_device::postload()
+void vrc4373_device::device_post_load()
 {
 	map_cpu_space();
 	//remap_cb();
@@ -231,8 +235,8 @@ void vrc4373_device::map_cpu_space()
 		winStart = m_cpu_regs[NREG_PCIMW1]&0xff000000;
 		winEnd = winStart | (~(0x80000000 | (((m_cpu_regs[NREG_PCIMW1]>>13)&0x7f)<<24)));
 		winSize = winEnd - winStart + 1;
-		m_cpu_space->install_read_handler(winStart, winEnd, read32_delegate(FUNC(vrc4373_device::master1_r), this));
-		m_cpu_space->install_write_handler(winStart, winEnd, write32_delegate(FUNC(vrc4373_device::master1_w), this));
+		m_cpu_space->install_read_handler(winStart, winEnd, read32s_delegate(*this, FUNC(vrc4373_device::master1_r)));
+		m_cpu_space->install_write_handler(winStart, winEnd, write32s_delegate(*this, FUNC(vrc4373_device::master1_w)));
 		LOGNILE("map_cpu_space Master Window 1 start=%08X end=%08X size=%08X laddr=%08X\n", winStart, winEnd, winSize,  m_pci1_laddr);
 	}
 	// PCI Master Window 2
@@ -240,8 +244,8 @@ void vrc4373_device::map_cpu_space()
 		winStart = m_cpu_regs[NREG_PCIMW2]&0xff000000;
 		winEnd = winStart | (~(0x80000000 | (((m_cpu_regs[NREG_PCIMW2]>>13)&0x7f)<<24)));
 		winSize = winEnd - winStart + 1;
-		m_cpu_space->install_read_handler(winStart, winEnd, read32_delegate(FUNC(vrc4373_device::master2_r), this));
-		m_cpu_space->install_write_handler(winStart, winEnd, write32_delegate(FUNC(vrc4373_device::master2_w), this));
+		m_cpu_space->install_read_handler(winStart, winEnd, read32s_delegate(*this, FUNC(vrc4373_device::master2_r)));
+		m_cpu_space->install_write_handler(winStart, winEnd, write32s_delegate(*this, FUNC(vrc4373_device::master2_w)));
 		LOGNILE("map_cpu_space Master Window 2 start=%08X end=%08X size=%08X laddr=%08X\n", winStart, winEnd, winSize,  m_pci2_laddr);
 	}
 	// PCI IO Window
@@ -249,8 +253,8 @@ void vrc4373_device::map_cpu_space()
 		winStart = m_cpu_regs[NREG_PCIMIOW]&0xff000000;
 		winEnd = winStart | (~(0x80000000 | (((m_cpu_regs[NREG_PCIMIOW]>>13)&0x7f)<<24)));
 		winSize = winEnd - winStart + 1;
-		m_cpu_space->install_read_handler(winStart, winEnd, read32_delegate(FUNC(vrc4373_device::master_io_r), this));
-		m_cpu_space->install_write_handler(winStart, winEnd, write32_delegate(FUNC(vrc4373_device::master_io_w), this));
+		m_cpu_space->install_read_handler(winStart, winEnd, read32s_delegate(*this, FUNC(vrc4373_device::master_io_r)));
+		m_cpu_space->install_write_handler(winStart, winEnd, write32s_delegate(*this, FUNC(vrc4373_device::master_io_w)));
 		LOGNILE("map_cpu_space IO Window start=%08X end=%08X size=%08X laddr=%08X\n", tag(), winStart, winEnd, winSize,  m_pci_io_laddr);
 	}
 }
@@ -265,8 +269,8 @@ void vrc4373_device::map_extra(uint64_t memory_window_start, uint64_t memory_win
 		winStart = m_cpu_regs[NREG_PCITW1]&0xffe00000;
 		winEnd = winStart | (~(0xf0000000 | (((m_cpu_regs[NREG_PCITW1]>>13)&0x7f)<<21)));
 		winSize = winEnd - winStart + 1;
-		memory_space->install_read_handler(winStart, winEnd, read32_delegate(FUNC(vrc4373_device::target1_r), this));
-		memory_space->install_write_handler(winStart, winEnd, write32_delegate(FUNC(vrc4373_device::target1_w), this));
+		memory_space->install_read_handler(winStart, winEnd, read32s_delegate(*this, FUNC(vrc4373_device::target1_r)));
+		memory_space->install_write_handler(winStart, winEnd, write32s_delegate(*this, FUNC(vrc4373_device::target1_w)));
 		LOGNILE("map_extra Target Window 1 start=%08X end=%08X size=%08X laddr=%08X\n", winStart, winEnd, winSize,  m_target1_laddr);
 	}
 	// PCI Target Window 2
@@ -274,8 +278,8 @@ void vrc4373_device::map_extra(uint64_t memory_window_start, uint64_t memory_win
 		winStart = m_cpu_regs[NREG_PCITW2]&0xffe00000;
 		winEnd = winStart | (~(0xf0000000 | (((m_cpu_regs[NREG_PCITW2]>>13)&0x7f)<<21)));
 		winSize = winEnd - winStart + 1;
-		memory_space->install_read_handler(winStart, winEnd, read32_delegate(FUNC(vrc4373_device::target2_r), this));
-		memory_space->install_write_handler(winStart, winEnd, write32_delegate(FUNC(vrc4373_device::target2_w), this));
+		memory_space->install_read_handler(winStart, winEnd, read32s_delegate(*this, FUNC(vrc4373_device::target2_r)));
+		memory_space->install_write_handler(winStart, winEnd, write32s_delegate(*this, FUNC(vrc4373_device::target2_w)));
 		LOGNILE("map_extra Target Window 2 start=%08X end=%08X size=%08X laddr=%08X\n", winStart, winEnd, winSize,  m_target2_laddr);
 	}
 }
@@ -285,85 +289,80 @@ void vrc4373_device::reset_all_mappings()
 	pci_device::reset_all_mappings();
 }
 
-void vrc4373_device::set_cpu_tag(const char *_cpu_tag)
-{
-	LOGNILE("set_cpu_tag\n");
-	cpu_tag = _cpu_tag;
-}
 // PCI bus control
-READ32_MEMBER (vrc4373_device::pcictrl_r)
+uint32_t vrc4373_device::pcictrl_r(offs_t offset, uint32_t mem_mask)
 {
 	uint32_t result = 0;
-	LOGNILE("%06X:nile pcictrl_r from offset %02X = %08X & %08X\n", space.device().safe_pc(), offset*4, result, mem_mask);
+	LOGNILE("%s nile pcictrl_r from offset %02X = %08X & %08X\n", machine().describe_context(), offset*4, result, mem_mask);
 	return result;
 }
-WRITE32_MEMBER (vrc4373_device::pcictrl_w)
+void vrc4373_device::pcictrl_w(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
-	LOGNILE("%06X:nile pcictrl_w to offset %02X = %08X & %08X\n", space.device().safe_pc(), offset*4, data, mem_mask);
+	LOGNILE("%s nile pcictrl_w to offset %02X = %08X & %08X\n", machine().describe_context(), offset*4, data, mem_mask);
 }
 // PCI Master Window 1
-READ32_MEMBER (vrc4373_device::master1_r)
+uint32_t vrc4373_device::master1_r(offs_t offset, uint32_t mem_mask)
 {
 	uint32_t result = this->space(AS_PCI_MEM).read_dword(m_pci1_laddr | (offset*4), mem_mask);
-	LOGNILEMASTER("%06X:nile master1 read from offset %02X = %08X & %08X\n", space.device().safe_pc(), offset*4, result, mem_mask);
+	LOGNILEMASTER("%s nile master1 read from offset %02X = %08X & %08X\n", machine().describe_context(), offset*4, result, mem_mask);
 	return result;
 }
-WRITE32_MEMBER (vrc4373_device::master1_w)
+void vrc4373_device::master1_w(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
 	this->space(AS_PCI_MEM).write_dword(m_pci1_laddr | (offset*4), data, mem_mask);
-	LOGNILEMASTER("%06X:nile master1 write to offset %02X = %08X & %08X\n", space.device().safe_pc(), offset*4, data, mem_mask);
+	LOGNILEMASTER("%s nile master1 write to offset %02X = %08X & %08X\n", machine().describe_context(), offset*4, data, mem_mask);
 }
 
 // PCI Master Window 2
-READ32_MEMBER (vrc4373_device::master2_r)
+uint32_t vrc4373_device::master2_r(offs_t offset, uint32_t mem_mask)
 {
 	uint32_t result = this->space(AS_PCI_MEM).read_dword(m_pci2_laddr | (offset*4), mem_mask);
-	LOGNILEMASTER("%06X:nile master2 read from offset %02X = %08X & %08X\n", space.device().safe_pc(), offset*4, result, mem_mask);
+	LOGNILEMASTER("%s nile master2 read from offset %02X = %08X & %08X\n", machine().describe_context(), offset*4, result, mem_mask);
 	return result;
 }
-WRITE32_MEMBER (vrc4373_device::master2_w)
+void vrc4373_device::master2_w(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
 	this->space(AS_PCI_MEM).write_dword(m_pci2_laddr | (offset*4), data, mem_mask);
-	LOGNILEMASTER("%06X:nile master2 write to offset %02X = %08X & %08X\n", space.device().safe_pc(), offset*4, data, mem_mask);
+	LOGNILEMASTER("%s nile master2 write to offset %02X = %08X & %08X\n", machine().describe_context(), offset*4, data, mem_mask);
 }
 
 // PCI Master IO Window
-READ32_MEMBER (vrc4373_device::master_io_r)
+uint32_t vrc4373_device::master_io_r(offs_t offset, uint32_t mem_mask)
 {
 	uint32_t result = this->space(AS_PCI_IO).read_dword(m_pci_io_laddr | (offset*4), mem_mask);
-	LOGNILEMASTER("%06X:nile master io read from offset %02X = %08X & %08X\n", space.device().safe_pc(), offset*4, result, mem_mask);
+	LOGNILEMASTER("%s nile master io read from offset %02X = %08X & %08X\n", machine().describe_context(), offset*4, result, mem_mask);
 	return result;
 }
-WRITE32_MEMBER (vrc4373_device::master_io_w)
+void vrc4373_device::master_io_w(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
 	this->space(AS_PCI_IO).write_dword(m_pci_io_laddr | (offset*4), data, mem_mask);
-	LOGNILEMASTER("%06X:nile master io write to offset %02X = %08X & %08X\n", space.device().safe_pc(), offset*4, data, mem_mask);
+	LOGNILEMASTER("%s nile master io write to offset %02X = %08X & %08X\n", machine().describe_context(), offset*4, data, mem_mask);
 }
 
 // PCI Target Window 1
-READ32_MEMBER (vrc4373_device::target1_r)
+uint32_t vrc4373_device::target1_r(offs_t offset, uint32_t mem_mask)
 {
 	uint32_t result = m_cpu->space(AS_PCI_CONFIG).read_dword(m_target1_laddr | (offset*4), mem_mask);
-	LOGNILETARGET("%08X:nile target1 read from offset %02X = %08X & %08X\n", m_cpu->device_t::safe_pc(), offset*4, result, mem_mask);
+	LOGNILETARGET("%08X:nile target1 read from offset %02X = %08X & %08X\n", m_cpu->pc(), offset*4, result, mem_mask);
 	return result;
 }
-WRITE32_MEMBER (vrc4373_device::target1_w)
+void vrc4373_device::target1_w(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
 	m_cpu->space(AS_PCI_CONFIG).write_dword(m_target1_laddr | (offset*4), data, mem_mask);
-	LOGNILETARGET("%08X:nile target1 write to offset %02X = %08X & %08X\n", m_cpu->device_t::safe_pc(), offset*4, data, mem_mask);
+	LOGNILETARGET("%08X:nile target1 write to offset %02X = %08X & %08X\n", m_cpu->pc(), offset*4, data, mem_mask);
 }
 
 // PCI Target Window 2
-READ32_MEMBER (vrc4373_device::target2_r)
+uint32_t vrc4373_device::target2_r(offs_t offset, uint32_t mem_mask)
 {
 	uint32_t result = m_cpu->space(AS_PCI_CONFIG).read_dword(m_target2_laddr | (offset*4), mem_mask);
-	LOGNILETARGET("%08X:nile target2 read from offset %02X = %08X & %08X\n", m_cpu->device_t::safe_pc(), offset*4, result, mem_mask);
+	LOGNILETARGET("%08X:nile target2 read from offset %02X = %08X & %08X\n", m_cpu->pc(), offset*4, result, mem_mask);
 	return result;
 }
-WRITE32_MEMBER (vrc4373_device::target2_w)
+void vrc4373_device::target2_w(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
 	m_cpu->space(AS_PCI_CONFIG).write_dword(m_target2_laddr | (offset*4), data, mem_mask);
-	LOGNILETARGET("%08X:nile target2 write to offset %02X = %08X & %08X\n", m_cpu->device_t::safe_pc(), offset*4, data, mem_mask);
+	LOGNILETARGET("%08X:nile target2 write to offset %02X = %08X & %08X\n", m_cpu->pc(), offset*4, data, mem_mask);
 }
 
 // DMA Transfer
@@ -373,7 +372,7 @@ TIMER_CALLBACK_MEMBER (vrc4373_device::dma_transfer)
 
 	// Check for dma suspension
 	if (m_cpu_regs[NREG_DMACR1 + which * 0xc] & DMA_SUS) {
-		LOGNILE("%08X:nile DMA Suspended PCI: %08X MEM: %08X Words: %X\n", m_cpu->space(AS_PCI_CONFIG).device().safe_pc(), m_cpu_regs[NREG_DMA_CPAR], m_cpu_regs[NREG_DMA_CMAR], m_cpu_regs[NREG_DMA_REM]);
+		LOGNILE("%08X:nile DMA Suspended PCI: %08X MEM: %08X Words: %X\n", m_cpu->pc(), m_cpu_regs[NREG_DMA_CPAR], m_cpu_regs[NREG_DMA_CMAR], m_cpu_regs[NREG_DMA_REM]);
 		return;
 	}
 
@@ -430,15 +429,15 @@ TIMER_CALLBACK_MEMBER (vrc4373_device::dma_transfer)
 }
 
 // CPU I/F
-READ32_MEMBER (vrc4373_device::cpu_if_r)
+uint32_t vrc4373_device::cpu_if_r(offs_t offset, uint32_t mem_mask)
 {
 	uint32_t result = m_cpu_regs[offset];
 	switch (offset) {
 		case NREG_PCICAR:
-			result = config_address_r(space, offset);
+			result = config_address_r();
 			break;
 		case NREG_PCICDR:
-			result = config_data_r(space, offset);
+			result = config_data_r(offset);
 			break;
 		case NREG_ICSR:
 			// Top 16 bits always read as zero
@@ -447,13 +446,13 @@ READ32_MEMBER (vrc4373_device::cpu_if_r)
 		default:
 			break;
 	}
-	LOGNILE("%06X:nile read from offset %02X = %08X & %08X\n", space.device().safe_pc(), offset*4, result, mem_mask);
+	LOGNILE("%s nile read from offset %02X = %08X & %08X\n", machine().describe_context(), offset*4, result, mem_mask);
 	return result;
 }
 
-WRITE32_MEMBER(vrc4373_device::cpu_if_w)
+void vrc4373_device::cpu_if_w(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
-	LOGNILE("%06X:nile write to offset %02X = %08X & %08X\n", space.device().safe_pc(), offset*4, data, mem_mask);
+	LOGNILE("%s nile write to offset %02X = %08X & %08X\n", machine().describe_context(), offset*4, data, mem_mask);
 
 	uint32_t modData, oldData;
 	oldData = m_cpu_regs[offset];
@@ -499,10 +498,10 @@ WRITE32_MEMBER(vrc4373_device::cpu_if_w)
 				// Type 1 transaction, no modification needed
 				modData = data;
 			}
-			pci_host_device::config_address_w(space, offset, modData);
+			pci_host_device::config_address_w(offset, modData);
 			break;
 		case NREG_PCICDR:
-			pci_host_device::config_data_w(space, offset, data);
+			pci_host_device::config_data_w(offset, data);
 			break;
 		case NREG_DMACR1:
 		case NREG_DMACR2:
@@ -519,7 +518,7 @@ WRITE32_MEMBER(vrc4373_device::cpu_if_w)
 				// Start the transfer
 				m_dma_timer->set_param(which);
 				m_dma_timer->adjust(attotime::zero, 0, DMA_TIMER_PERIOD);
-				LOGNILE("%08X:nile Start DMA Lane %i PCI: %08X MEM: %08X Words: %X\n", m_cpu->space(AS_PCI_CONFIG).device().safe_pc(), which, m_cpu_regs[NREG_DMA_CPAR], m_cpu_regs[NREG_DMA_CMAR], m_cpu_regs[NREG_DMA_REM]);
+				LOGNILE("%08X:nile Start DMA Lane %i PCI: %08X MEM: %08X Words: %X\n", m_cpu->pc(), which, m_cpu_regs[NREG_DMA_CPAR], m_cpu_regs[NREG_DMA_CMAR], m_cpu_regs[NREG_DMA_REM]);
 			}
 			break;
 		case NREG_ICSR:

@@ -7,27 +7,22 @@
 
 #include "naomig1.h"
 
-#define MCFG_AW_ROM_BOARD_ADD(_tag, _keyregion, _irq_cb)  \
-	MCFG_NAOMI_G1_ADD(_tag, AW_ROM_BOARD, _irq_cb)        \
-	aw_rom_board::static_set_keyregion(*device, "^" _keyregion);
 
 class aw_rom_board : public naomi_g1_device
 {
 public:
 	aw_rom_board(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	static void static_set_keyregion(device_t &device, const char *keyregion);
+	virtual void submap(address_map &map) override;
 
-	DECLARE_ADDRESS_MAP(submap, 16);
-
-	DECLARE_WRITE16_MEMBER(epr_offsetl_w);          // 5f7000
-	DECLARE_WRITE16_MEMBER(epr_offseth_w);          // 5f7004
-	DECLARE_WRITE16_MEMBER(mpr_record_index_w);     // 5f700c
-	DECLARE_WRITE16_MEMBER(mpr_first_file_index_w); // 5f7010
-	DECLARE_WRITE16_MEMBER(mpr_file_offsetl_w);     // 5f7014
-	DECLARE_WRITE16_MEMBER(mpr_file_offseth_w);     // 5f7018
-	DECLARE_READ16_MEMBER(pio_r);                   // 5f7080
-	DECLARE_WRITE16_MEMBER(pio_w);                  // 5f7080
+	void epr_offsetl_w(uint16_t data);          // 5f7000
+	void epr_offseth_w(uint16_t data);          // 5f7004
+	void mpr_record_index_w(uint16_t data);     // 5f700c
+	void mpr_first_file_index_w(uint16_t data); // 5f7010
+	void mpr_file_offsetl_w(uint16_t data);     // 5f7014
+	void mpr_file_offseth_w(uint16_t data);     // 5f7018
+	uint16_t pio_r();                           // 5f7080
+	void pio_w(uint16_t data);                  // 5f7080
 
 protected:
 	virtual void device_start() override;
@@ -40,8 +35,7 @@ private:
 	enum { EPR, MPR_RECORD, MPR_FILE };
 
 	required_memory_region m_region;
-	optional_memory_region m_keyregion;
-	uint32_t rombd_key;
+	uint8_t  rombd_key;
 	uint32_t mpr_offset, mpr_bank;
 	uint32_t epr_offset, mpr_file_offset;
 	uint16_t mpr_record_index, mpr_first_file_index;
@@ -58,10 +52,10 @@ private:
 
 	static const int permutation_table[4][16];
 	static const sbox_set sboxes_table[4];
-	static uint16_t decrypt(uint16_t cipherText, uint32_t address, const uint32_t key);
+	static const int xor_table[16];
+	static uint16_t decrypt(uint16_t cipherText, uint32_t address, const uint8_t key);
 	uint16_t decrypt16(uint32_t address) { return decrypt(m_region->as_u16(address), address, rombd_key); }
 
-	void set_key();
 	void recalc_dma_offset(int mode);
 };
 

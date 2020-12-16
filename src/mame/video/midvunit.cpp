@@ -40,14 +40,11 @@ void midvunit_state::device_timer(emu_timer &timer, device_timer_id id, int para
 {
 	switch (id)
 	{
-	case TIMER_ADC_READY:
-		m_maincpu->set_input_line(3, ASSERT_LINE);
-		break;
 	case TIMER_SCANLINE:
 		scanline_timer_cb(ptr, param);
 		break;
 	default:
-		assert_always(false, "Unknown id in midvunit_state::device_timer");
+		throw emu_fatalerror("Unknown id in midvunit_state::device_timer");
 	}
 }
 
@@ -379,28 +376,28 @@ void midvunit_renderer::process_dma_queue()
  *
  *************************************/
 
-WRITE32_MEMBER(midvunit_state::midvunit_dma_queue_w)
+void midvunit_state::midvunit_dma_queue_w(uint32_t data)
 {
 	if (LOG_DMA && machine().input().code_pressed(KEYCODE_L))
-		logerror("%06X:queue(%X) = %08X\n", space.device().safe_pc(), m_dma_data_index, data);
+		logerror("%06X:queue(%X) = %08X\n", m_maincpu->pc(), m_dma_data_index, data);
 	if (m_dma_data_index < 16)
 		m_dma_data[m_dma_data_index++] = data;
 }
 
 
-READ32_MEMBER(midvunit_state::midvunit_dma_queue_entries_r)
+uint32_t midvunit_state::midvunit_dma_queue_entries_r()
 {
 	/* always return 0 entries */
 	return 0;
 }
 
 
-READ32_MEMBER(midvunit_state::midvunit_dma_trigger_r)
+uint32_t midvunit_state::midvunit_dma_trigger_r(offs_t offset)
 {
 	if (offset)
 	{
 		if (LOG_DMA && machine().input().code_pressed(KEYCODE_L))
-			logerror("%06X:trigger\n", space.device().safe_pc());
+			logerror("%06X:trigger\n", m_maincpu->pc());
 		m_poly->process_dma_queue();
 		m_dma_data_index = 0;
 	}
@@ -415,7 +412,7 @@ READ32_MEMBER(midvunit_state::midvunit_dma_trigger_r)
  *
  *************************************/
 
-WRITE32_MEMBER(midvunit_state::midvunit_page_control_w)
+void midvunit_state::midvunit_page_control_w(uint32_t data)
 {
 	/* watch for the display page to change */
 	if ((m_page_control ^ data) & 1)
@@ -429,7 +426,7 @@ WRITE32_MEMBER(midvunit_state::midvunit_page_control_w)
 }
 
 
-READ32_MEMBER(midvunit_state::midvunit_page_control_r)
+uint32_t midvunit_state::midvunit_page_control_r()
 {
 	return m_page_control;
 }
@@ -442,7 +439,7 @@ READ32_MEMBER(midvunit_state::midvunit_page_control_r)
  *
  *************************************/
 
-WRITE32_MEMBER(midvunit_state::midvunit_video_control_w)
+void midvunit_state::midvunit_video_control_w(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
 	uint16_t old = m_video_regs[offset];
 
@@ -468,7 +465,7 @@ WRITE32_MEMBER(midvunit_state::midvunit_video_control_w)
 }
 
 
-READ32_MEMBER(midvunit_state::midvunit_scanline_r)
+uint32_t midvunit_state::midvunit_scanline_r()
 {
 	return m_screen->vpos();
 }
@@ -481,7 +478,7 @@ READ32_MEMBER(midvunit_state::midvunit_scanline_r)
  *
  *************************************/
 
-WRITE32_MEMBER(midvunit_state::midvunit_videoram_w)
+void midvunit_state::midvunit_videoram_w(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
 	m_poly->wait("Video RAM write");
 	if (!m_video_changed)
@@ -494,7 +491,7 @@ WRITE32_MEMBER(midvunit_state::midvunit_videoram_w)
 }
 
 
-READ32_MEMBER(midvunit_state::midvunit_videoram_r)
+uint32_t midvunit_state::midvunit_videoram_r(offs_t offset)
 {
 	m_poly->wait("Video RAM read");
 	return m_videoram[offset];
@@ -508,7 +505,7 @@ READ32_MEMBER(midvunit_state::midvunit_videoram_r)
  *
  *************************************/
 
-WRITE32_MEMBER(midvunit_state::midvunit_paletteram_w)
+void midvunit_state::midvunit_paletteram_w(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
 	int newword;
 
@@ -525,7 +522,7 @@ WRITE32_MEMBER(midvunit_state::midvunit_paletteram_w)
  *
  *************************************/
 
-WRITE32_MEMBER(midvunit_state::midvunit_textureram_w)
+void midvunit_state::midvunit_textureram_w(offs_t offset, uint32_t data)
 {
 	uint8_t *base = (uint8_t *)m_textureram.target();
 	m_poly->wait("Texture RAM write");
@@ -534,7 +531,7 @@ WRITE32_MEMBER(midvunit_state::midvunit_textureram_w)
 }
 
 
-READ32_MEMBER(midvunit_state::midvunit_textureram_r)
+uint32_t midvunit_state::midvunit_textureram_r(offs_t offset)
 {
 	uint8_t *base = (uint8_t *)m_textureram.target();
 	return (base[offset * 2 + 1] << 8) | base[offset * 2];

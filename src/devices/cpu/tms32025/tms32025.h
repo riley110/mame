@@ -23,25 +23,6 @@
 #pragma once
 
 
-#define MCFG_TMS32025_BIO_IN_CB(_devcb) \
-	devcb = &tms32025_device::set_bio_in_cb(*device, DEVCB_##_devcb); /* BIO input  */
-
-#define MCFG_TMS32025_HOLD_IN_CB(_devcb) \
-	devcb = &tms32025_device::set_hold_in_cb(*device, DEVCB_##_devcb); /* HOLD input */
-
-#define MCFG_TMS32025_HOLD_ACK_OUT_CB(_devcb) \
-	devcb = &tms32025_device::set_hold_ack_out_cb(*device, DEVCB_##_devcb); /* HOLD Acknowledge output */
-
-#define MCFG_TMS32025_XF_OUT_CB(_devcb) \
-	devcb = &tms32025_device::set_xf_out_cb(*device, DEVCB_##_devcb); /* XF output  */
-
-#define MCFG_TMS32025_DR_IN_CB(_devcb) \
-	devcb = &tms32025_device::set_dr_in_cb(*device, DEVCB_##_devcb); /* Serial Data  Receive  input  */
-
-#define MCFG_TMS32025_DX_OUT_CB(_devcb) \
-	devcb = &tms32025_device::set_dx_out_cb(*device, DEVCB_##_devcb); /* Serial Data  Transmit output */
-
-
 /****************************************************************************
  *  Interrupt constants
  */
@@ -82,39 +63,32 @@ class tms32025_device : public cpu_device
 public:
 	// construction/destruction
 	tms32025_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+	tms32025_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock);
 
-	// static configuration helpers
-	template<class _Object> static devcb_base & set_bio_in_cb(device_t &device, _Object object) { return downcast<tms32025_device &>(device).m_bio_in.set_callback(object); }
-	template<class _Object> static devcb_base & set_hold_in_cb(device_t &device, _Object object) { return downcast<tms32025_device &>(device).m_hold_in.set_callback(object); }
-	template<class _Object> static devcb_base & set_hold_ack_out_cb(device_t &device, _Object object) { return downcast<tms32025_device &>(device).m_hold_ack_out.set_callback(object); }
-	template<class _Object> static devcb_base & set_xf_out_cb(device_t &device, _Object object) { return downcast<tms32025_device &>(device).m_xf_out.set_callback(object); }
-	template<class _Object> static devcb_base & set_dr_in_cb(device_t &device, _Object object) { return downcast<tms32025_device &>(device).m_dr_in.set_callback(object); }
-	template<class _Object> static devcb_base & set_dx_out_cb(device_t &device, _Object object) { return downcast<tms32025_device &>(device).m_dx_out.set_callback(object); }
+	// configuration helpers
+	auto bio_in_cb() { return m_bio_in.bind(); }
+	auto hold_in_cb() { return m_hold_in.bind(); }
+	auto hold_ack_out_cb() { return m_hold_ack_out.bind(); }
+	auto xf_out_cb() { return m_xf_out.bind(); }
+	auto dr_in_cb() { return m_dr_in.bind(); }
+	auto dx_out_cb() { return m_dx_out.bind(); }
 
-	DECLARE_READ16_MEMBER( drr_r);
-	DECLARE_WRITE16_MEMBER(drr_w);
-	DECLARE_READ16_MEMBER( dxr_r);
-	DECLARE_WRITE16_MEMBER(dxr_w);
-	DECLARE_READ16_MEMBER( tim_r);
-	DECLARE_WRITE16_MEMBER(tim_w);
-	DECLARE_READ16_MEMBER( prd_r);
-	DECLARE_WRITE16_MEMBER(prd_w);
-	DECLARE_READ16_MEMBER( imr_r);
-	DECLARE_WRITE16_MEMBER(imr_w);
-	DECLARE_READ16_MEMBER( greg_r);
-	DECLARE_WRITE16_MEMBER(greg_w);
+	void set_mp_mc(bool state) { m_mp_mc = state; }
 
+	//void tms32025_program(address_map &map);
+	void tms32025_data(address_map &map);
+	void tms32026_data(address_map &map);
 protected:
-	tms32025_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock, address_map_constructor map);
+	tms32025_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock, address_map_constructor prgmap, address_map_constructor datamap);
 
 	// device-level overrides
 	virtual void device_start() override;
 	virtual void device_reset() override;
 
 	// device_execute_interface overrides
-	virtual uint32_t execute_min_cycles() const override { return 4; }
-	virtual uint32_t execute_max_cycles() const override { return 20; }
-	virtual uint32_t execute_input_lines() const override { return 6; }
+	virtual uint32_t execute_min_cycles() const noexcept override { return 4; }
+	virtual uint32_t execute_max_cycles() const noexcept override { return 20; }
+	virtual uint32_t execute_input_lines() const noexcept override { return 6; }
 	virtual void execute_run() override;
 	virtual void execute_set_input(int inputnum, int state) override;
 
@@ -125,9 +99,9 @@ protected:
 	virtual void state_string_export(const device_state_entry &entry, std::string &str) const override;
 
 	// device_disasm_interface overrides
-	virtual uint32_t disasm_min_opcode_bytes() const override { return 2; }
-	virtual uint32_t disasm_max_opcode_bytes() const override { return 4; }
-	virtual offs_t disasm_disassemble(std::ostream &stream, offs_t pc, const uint8_t *oprom, const uint8_t *opram, uint32_t options) override;
+	virtual std::unique_ptr<util::disasm_interface> create_disassembler() override;
+
+	virtual const tiny_rom_entry *device_rom_region() const override;
 
 	void common_reset();
 
@@ -140,10 +114,10 @@ protected:
 	required_shared_ptr<uint16_t> m_b2;
 	optional_shared_ptr<uint16_t> m_b3;
 
-	address_space *m_program;
-	direct_read_data *m_direct;
-	address_space *m_data;
-	address_space *m_io;
+	memory_access<16, 1, -1, ENDIANNESS_BIG>::cache m_cache;
+	memory_access<16, 1, -1, ENDIANNESS_BIG>::specific m_program;
+	memory_access<16, 1, -1, ENDIANNESS_BIG>::specific m_data;
+	memory_access<16, 1, -1, ENDIANNESS_BIG>::specific m_io;
 
 	typedef void ( tms32025_device::*opcode_func ) ();
 	struct tms32025_opcode
@@ -196,6 +170,20 @@ protected:
 	int     m_icount;
 	int     m_mHackIgnoreARP;          /* special handling for lst, lst1 instructions */
 	int     m_waiting_for_serial_frame;
+	bool    m_mp_mc;
+
+	uint16_t drr_r();
+	void drr_w(uint16_t data);
+	uint16_t dxr_r();
+	void dxr_w(uint16_t data);
+	uint16_t tim_r();
+	void tim_w(uint16_t data);
+	uint16_t prd_r();
+	void prd_w(uint16_t data);
+	uint16_t imr_r();
+	void imr_w(uint16_t data);
+	uint16_t greg_r();
+	void greg_w(uint16_t data);
 
 	inline void CLR0(uint16_t flag);
 	inline void SET0(uint16_t flag);
@@ -204,10 +192,6 @@ protected:
 	inline void MODIFY_DP(int data);
 	inline void MODIFY_PM(int data);
 	inline void MODIFY_ARP(int data);
-	inline uint16_t M_RDROM(offs_t addr);
-	inline void M_WRTROM(offs_t addr, uint16_t data);
-	inline uint16_t M_RDRAM(offs_t addr);
-	inline void M_WRTRAM(offs_t addr, uint16_t data);
 	uint16_t reverse_carry_add(uint16_t arg0, uint16_t arg1 );
 	inline void MODIFY_AR_ARP();
 	inline void CALCULATE_ADD_CARRY();
@@ -392,7 +376,6 @@ protected:
 	virtual void cnfp() override;
 	virtual void conf() override;
 };
-
 
 DECLARE_DEVICE_TYPE(TMS32025, tms32025_device)
 DECLARE_DEVICE_TYPE(TMS32026, tms32026_device)

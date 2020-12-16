@@ -6,8 +6,8 @@
  *  Created on: 1/01/2013
  */
 
-#ifndef S11C_H_
-#define S11C_H_
+#ifndef MAME_INCLUDES_S11C_H
+#define MAME_INCLUDES_S11C_H
 
 #include "includes/s11b.h"
 
@@ -18,15 +18,13 @@ public:
 		: s11b_state(mconfig, type, tag)
 	{ }
 
-	DECLARE_MACHINE_RESET(s11c);
-	DECLARE_DRIVER_INIT(s11c);
+	void s11c(machine_config &config);
+
+	void init_s11c();
 
 protected:
-
-private:
-
-
+	virtual void machine_reset() override;
 };
 
 
-#endif /* S11C_H_ */
+#endif // MAME_INCLUDES_S11C_H

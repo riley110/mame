@@ -6,28 +6,19 @@
 #pragma once
 
 
-#define MCFG_SCMP_CONFIG(_flag_out_devcb, _sout_devcb, _sin_devcb, _sensea_devcb, _senseb_devcb, _halt_devcb) \
-	scmp_device::set_flag_out_cb(*device, DEVCB_##_flag_out_devcb); \
-	scmp_device::set_sout_cb(*device, DEVCB_##_sout_devcb); \
-	scmp_device::set_sin_cb(*device, DEVCB_##_sin_devcb); \
-	scmp_device::set_sensea_cb(*device, DEVCB_##_sensea_devcb); \
-	scmp_device::set_senseb_cb(*device, DEVCB_##_senseb_devcb); \
-	scmp_device::set_halt_cb(*device, DEVCB_##_halt_devcb);
-
-
 class scmp_device : public cpu_device
 {
 public:
 	// construction/destruction
 	scmp_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	// static configuration helpers
-	template <class Object> static devcb_base &set_flag_out_cb(device_t &device, Object &&cb) { return downcast<scmp_device &>(device).m_flag_out_func.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_sout_cb(device_t &device, Object &&cb) { return downcast<scmp_device &>(device).m_sout_func.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_sin_cb(device_t &device, Object &&cb) { return downcast<scmp_device &>(device).m_sin_func.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_sensea_cb(device_t &device, Object &&cb) { return downcast<scmp_device &>(device).m_sensea_func.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_senseb_cb(device_t &device, Object &&cb) { return downcast<scmp_device &>(device).m_senseb_func.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_halt_cb(device_t &device, Object &&cb) { return downcast<scmp_device &>(device).m_halt_func.set_callback(std::forward<Object>(cb)); }
+	// configuration helpers
+	auto flag_out() { return m_flag_out_func.bind(); }
+	auto s_out() { return m_sout_func.bind(); }
+	auto s_in() { return m_sin_func.bind(); }
+	auto sense_a() { return m_sensea_func.bind(); }
+	auto sense_b() { return m_senseb_func.bind(); }
+	auto halt() { return m_halt_func.bind(); }
 
 protected:
 	enum
@@ -42,9 +33,9 @@ protected:
 	virtual void device_reset() override;
 
 	// device_execute_interface overrides
-	virtual uint32_t execute_min_cycles() const override { return 5; }
-	virtual uint32_t execute_max_cycles() const override { return 131593; }
-	virtual uint32_t execute_input_lines() const override { return 0; }
+	virtual uint32_t execute_min_cycles() const noexcept override { return 5; }
+	virtual uint32_t execute_max_cycles() const noexcept override { return 23+8; } // max opcode + interrupt
+	virtual uint32_t execute_input_lines() const noexcept override { return 0; }
 	virtual void execute_run() override;
 
 	// device_memory_interface overrides
@@ -54,9 +45,7 @@ protected:
 	virtual void state_string_export(const device_state_entry &entry, std::string &str) const override;
 
 	// device_disasm_interface overrides
-	virtual uint32_t disasm_min_opcode_bytes() const override { return 1; }
-	virtual uint32_t disasm_max_opcode_bytes() const override { return 2; }
-	virtual offs_t disasm_disassemble(std::ostream &stream, offs_t pc, const uint8_t *oprom, const uint8_t *opram, uint32_t options) override;
+	virtual std::unique_ptr<util::disasm_interface> create_disassembler() override;
 
 private:
 	address_space_config m_program_config;
@@ -69,8 +58,8 @@ private:
 	uint8_t   m_ER;
 	uint8_t   m_SR;
 
-	address_space *m_program;
-	direct_read_data *m_direct;
+	memory_access<16, 0, 0, ENDIANNESS_LITTLE>::cache m_cache;
+	memory_access<16, 0, 0, ENDIANNESS_LITTLE>::specific m_program;
 	int                 m_icount;
 
 	devcb_write8       m_flag_out_func;
@@ -102,8 +91,8 @@ public:
 	ins8060_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 protected:
-	virtual uint64_t execute_clocks_to_cycles(uint64_t clocks) const override { return (clocks + 2 - 1) / 2; }
-	virtual uint64_t execute_cycles_to_clocks(uint64_t cycles) const override { return (cycles * 2); }
+	virtual uint64_t execute_clocks_to_cycles(uint64_t clocks) const noexcept override { return (clocks + 2 - 1) / 2; }
+	virtual uint64_t execute_cycles_to_clocks(uint64_t cycles) const noexcept override { return (cycles * 2); }
 };
 
 

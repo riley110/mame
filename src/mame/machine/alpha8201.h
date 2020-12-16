@@ -9,6 +9,7 @@
 #ifndef MAME_MACHINE_ALPHA8201_H
 #define MAME_MACHINE_ALPHA8201_H
 
+#include "cpu/hmcs40/hmcs40.h"
 
 class alpha_8201_device : public device_t
 {
@@ -19,8 +20,8 @@ public:
 	// external I/O
 	DECLARE_WRITE_LINE_MEMBER(bus_dir_w);
 	DECLARE_WRITE_LINE_MEMBER(mcu_start_w);
-	DECLARE_READ8_MEMBER(ext_ram_r);
-	DECLARE_WRITE8_MEMBER(ext_ram_w);
+	u8 ext_ram_r(offs_t offset);
+	void ext_ram_w(offs_t offset, u8 data);
 
 protected:
 	// device-level overrides
@@ -29,7 +30,7 @@ protected:
 	virtual void device_add_mconfig(machine_config &config) override;
 private:
 	// devices/pointers
-	required_device<cpu_device> m_mcu;
+	required_device<hmcs40_cpu_device> m_mcu;
 
 	// internal state
 	int m_bus;                  // shared RAM bus direction
@@ -41,9 +42,9 @@ private:
 	void mcu_update_address();
 	void mcu_writeram();
 
-	DECLARE_READ8_MEMBER(mcu_data_r);
-	DECLARE_WRITE8_MEMBER(mcu_data_w);
-	DECLARE_WRITE16_MEMBER(mcu_d_w);
+	u8 mcu_data_r(offs_t offset);
+	void mcu_data_w(offs_t offset, u8 data);
+	void mcu_d_w(u16 data);
 };
 
 

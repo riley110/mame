@@ -1,16 +1,22 @@
 // license:BSD-3-Clause
 // copyright-holders:Tomasz Slanina
+#ifndef MAME_INCLUDES_NYCAPTOR_H
+#define MAME_INCLUDES_NYCAPTOR_H
+
+#pragma once
 
 #include "machine/gen_latch.h"
 #include "machine/input_merger.h"
 #include "sound/msm5232.h"
 #include "machine/taito68705interface.h"
+#include "emupal.h"
+#include "tilemap.h"
 
 class nycaptor_state : public driver_device
 {
 public:
-	nycaptor_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
+	nycaptor_state(const machine_config &mconfig, device_type type, const char *tag) :
+		driver_device(mconfig, type, tag),
 		m_videoram(*this, "videoram"),
 		m_scrlram(*this, "scrlram"),
 		m_sharedram(*this, "sharedram"),
@@ -24,8 +30,24 @@ public:
 		m_palette(*this, "palette"),
 		m_soundlatch(*this, "soundlatch"),
 		m_soundlatch2(*this, "soundlatch2"),
-		m_soundnmi(*this, "soundnmi") { }
+		m_soundnmi(*this, "soundnmi")
+	{ }
 
+	void nycaptor(machine_config &config);
+	void cyclshtg(machine_config &config);
+	void bronx(machine_config &config);
+
+	void init_cyclshtg();
+	void init_colt();
+	void init_bronx();
+	void init_nycaptor();
+
+protected:
+	virtual void machine_start() override;
+	virtual void machine_reset() override;
+	virtual void video_start() override;
+
+private:
 	/* memory pointers */
 	required_shared_ptr<uint8_t> m_videoram;
 	required_shared_ptr<uint8_t> m_scrlram;
@@ -57,41 +79,44 @@ public:
 	required_device<generic_latch_8_device> m_soundlatch2;
 	required_device<input_merger_device> m_soundnmi;
 
-	DECLARE_WRITE8_MEMBER(sub_cpu_halt_w);
-	DECLARE_READ8_MEMBER(nycaptor_b_r);
-	DECLARE_READ8_MEMBER(nycaptor_by_r);
-	DECLARE_READ8_MEMBER(nycaptor_bx_r);
-	DECLARE_WRITE8_MEMBER(sound_cpu_reset_w);
-	DECLARE_WRITE8_MEMBER(nmi_disable_w);
-	DECLARE_WRITE8_MEMBER(nmi_enable_w);
-	DECLARE_READ8_MEMBER(nycaptor_generic_control_r);
-	DECLARE_WRITE8_MEMBER(nycaptor_generic_control_w);
-	DECLARE_READ8_MEMBER(cyclshtg_mcu_status_r);
-	DECLARE_READ8_MEMBER(cyclshtg_mcu_r);
-	DECLARE_WRITE8_MEMBER(cyclshtg_mcu_w);
-	DECLARE_READ8_MEMBER(cyclshtg_mcu_status_r1);
-	DECLARE_WRITE8_MEMBER(cyclshtg_generic_control_w);
-	DECLARE_READ8_MEMBER(unk_r);
+	void sub_cpu_halt_w(uint8_t data);
+	uint8_t nycaptor_b_r();
+	uint8_t nycaptor_by_r();
+	uint8_t nycaptor_bx_r();
+	void sound_cpu_reset_w(uint8_t data);
+	void nmi_disable_w(uint8_t data);
+	void nmi_enable_w(uint8_t data);
+	uint8_t nycaptor_generic_control_r();
+	void nycaptor_generic_control_w(uint8_t data);
+	uint8_t cyclshtg_mcu_status_r();
+	uint8_t cyclshtg_mcu_r();
+	void cyclshtg_mcu_w(uint8_t data);
+	uint8_t cyclshtg_mcu_status_r1();
+	void cyclshtg_generic_control_w(uint8_t data);
+	uint8_t unk_r();
 
-	DECLARE_READ8_MEMBER(nycaptor_mcu_status_r1);
-	DECLARE_READ8_MEMBER(nycaptor_mcu_status_r2);
-	DECLARE_READ8_MEMBER(sound_status_r);
-	DECLARE_WRITE8_MEMBER(nycaptor_videoram_w);
-	DECLARE_WRITE8_MEMBER(nycaptor_palette_w);
-	DECLARE_READ8_MEMBER(nycaptor_palette_r);
-	DECLARE_WRITE8_MEMBER(nycaptor_gfxctrl_w);
-	DECLARE_READ8_MEMBER(nycaptor_gfxctrl_r);
-	DECLARE_WRITE8_MEMBER(nycaptor_scrlram_w);
-	DECLARE_WRITE8_MEMBER(unk_w);
-	DECLARE_DRIVER_INIT(cyclshtg);
-	DECLARE_DRIVER_INIT(colt);
-	DECLARE_DRIVER_INIT(bronx);
-	DECLARE_DRIVER_INIT(nycaptor);
+	uint8_t nycaptor_mcu_status_r1();
+	uint8_t nycaptor_mcu_status_r2();
+	uint8_t sound_status_r();
+	void nycaptor_videoram_w(offs_t offset, uint8_t data);
+	void nycaptor_palette_w(offs_t offset, uint8_t data);
+	uint8_t nycaptor_palette_r(offs_t offset);
+	void nycaptor_gfxctrl_w(uint8_t data);
+	uint8_t nycaptor_gfxctrl_r();
+	void nycaptor_scrlram_w(offs_t offset, uint8_t data);
+	void unk_w(uint8_t data);
 	TILE_GET_INFO_MEMBER(get_tile_info);
-	virtual void machine_start() override;
-	virtual void machine_reset() override;
-	virtual void video_start() override;
 	uint32_t screen_update_nycaptor(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
-	int nycaptor_spot(  );
-	void draw_sprites( bitmap_ind16 &bitmap, const rectangle &cliprect, int pri );
+	int nycaptor_spot();
+	void draw_sprites(bitmap_ind16 &bitmap, const rectangle &cliprect, int pri);
+	void bronx_master_map(address_map &map);
+	void bronx_slave_io_map(address_map &map);
+	void bronx_slave_map(address_map &map);
+	void cyclshtg_master_map(address_map &map);
+	void cyclshtg_slave_map(address_map &map);
+	void nycaptor_master_map(address_map &map);
+	void nycaptor_slave_map(address_map &map);
+	void sound_map(address_map &map);
 };
+
+#endif // MAME_INCLUDES_NYCAPTOR_H

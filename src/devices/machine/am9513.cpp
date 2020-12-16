@@ -33,7 +33,7 @@
 #define LOG_MODE (1U << 1)
 #define LOG_INPUT (1U << 2)
 #define LOG_TC (1U << 3)
-#define VERBOSE (LOG_GENERAL | LOG_MODE)
+//#define VERBOSE (LOG_GENERAL | LOG_MODE)
 
 #include "logmacro.h"
 
@@ -55,10 +55,10 @@ DEFINE_DEVICE_TYPE(AM9513A, am9513a_device, "am9513a", "Am9513A STC")
 //-------------------------------------------------
 
 am9513_device::am9513_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, u32 clock, bool is_am9513a)
-	: device_t(mconfig, type, tag, owner, clock),
-		m_out_cb{{*this}, {*this}, {*this}, {*this}, {*this}},
-		m_fout_cb(*this),
-		m_is_am9513a(is_am9513a)
+	: device_t(mconfig, type, tag, owner, clock)
+	, m_out_cb(*this)
+	, m_fout_cb(*this)
+	, m_is_am9513a(is_am9513a)
 {
 }
 
@@ -80,8 +80,7 @@ am9513a_device::am9513a_device(const machine_config &mconfig, const char *tag, d
 void am9513_device::device_start()
 {
 	// Resolve callbacks
-	for (auto &cb : m_out_cb)
-		cb.resolve_safe();
+	m_out_cb.resolve_all_safe();
 	m_fout_cb.resolve();
 
 	// Power-on reset
@@ -100,12 +99,16 @@ void am9513_device::device_start()
 	std::fill(std::begin(m_counter_armed), std::end(m_counter_armed), false);
 	std::fill(std::begin(m_counter_running), std::end(m_counter_running), false);
 	std::fill(std::begin(m_alternate_count), std::end(m_alternate_count), false);
-	std::fill(std::begin(m_src), std::end(m_src), true);
-	std::fill(std::begin(m_gate), std::end(m_gate), true);
-	std::fill(std::begin(m_gate_alt), std::end(m_gate_alt), true);
-	std::fill(std::begin(m_gate_active), std::end(m_gate_active), true);
 	std::fill(std::begin(m_tc), std::end(m_tc), false);
 	std::fill(std::begin(m_toggle), std::end(m_toggle), false);
+
+	// Unused SRC and GATE inputs are typically grounded
+	std::fill(std::begin(m_src), std::end(m_src), false);
+	std::fill(std::begin(m_gate), std::end(m_gate), false);
+	std::fill(std::begin(m_gate_active), std::end(m_gate_active), false);
+
+	// Alternate gate inputs should be tied high if not used
+	std::fill(std::begin(m_gate_alt), std::end(m_gate_alt), true);
 
 	// Set up frequency timers
 	for (int f = 0; f < 5; f++)
@@ -1160,7 +1163,7 @@ void am9513_device::internal_write(u16 data)
 
 void am9513_device::advance_dpr()
 {
-	if (machine().side_effect_disabled())
+	if (machine().side_effects_disabled())
 		return;
 
 	if (bus_is_16_bit() || !BIT(m_status, 0))
@@ -1378,7 +1381,7 @@ void am9513_device::data_write(u16 data)
 //  read8 - 8-bit read access
 //-------------------------------------------------
 
-READ8_MEMBER(am9513_device::read8)
+u8 am9513_device::read8(offs_t offset)
 {
 	if (BIT(offset, 0))
 		return status_read();
@@ -1391,7 +1394,7 @@ READ8_MEMBER(am9513_device::read8)
 //  write8 - 8-bit write access
 //-------------------------------------------------
 
-WRITE8_MEMBER(am9513_device::write8)
+void am9513_device::write8(offs_t offset, u8 data)
 {
 	if (BIT(offset, 0))
 	{
@@ -1408,7 +1411,7 @@ WRITE8_MEMBER(am9513_device::write8)
 //  read16 - 16-bit read access
 //-------------------------------------------------
 
-READ16_MEMBER(am9513_device::read16)
+u16 am9513_device::read16(offs_t offset)
 {
 	if (BIT(offset, 0))
 		return status_read() | 0xff00;
@@ -1425,7 +1428,7 @@ READ16_MEMBER(am9513_device::read16)
 //  write16 - 16-bit write access
 //-------------------------------------------------
 
-WRITE16_MEMBER(am9513_device::write16)
+void am9513_device::write16(offs_t offset, u16 data)
 {
 	if ((!bus_is_16_bit() || BIT(offset, 0)) && (data & 0xff00) != 0xff00)
 		logerror("Errant write of %02X to upper byte of %s register in %d-bit bus mode\n",

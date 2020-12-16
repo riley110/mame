@@ -20,8 +20,8 @@ public:
 	gf4500_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 
-	DECLARE_READ32_MEMBER( read );
-	DECLARE_WRITE32_MEMBER( write );
+	uint32_t read(offs_t offset);
+	void write(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
 
 	uint32_t screen_update(screen_device &device, bitmap_rgb32 &bitmap, const rectangle &cliprect);
 
@@ -43,12 +43,6 @@ private:
 	int m_screen_x_min;
 	int m_screen_y_min;
 };
-
-
-
-#define MCFG_GF4500_ADD(_tag) \
-	MCFG_DEVICE_ADD(_tag, GF4500, 0)
-
 
 DECLARE_DEVICE_TYPE(GF4500, gf4500_device)
 

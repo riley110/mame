@@ -14,6 +14,7 @@
 #pragma once
 
 #include "cpcexp.h"
+#include "imagedev/floppy.h"
 #include "machine/upd765.h"
 
 class cpc_ddi1_device : public device_t, public device_cpc_expansion_card_interface
@@ -22,10 +23,10 @@ public:
 	// construction/destruction
 	cpc_ddi1_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	DECLARE_WRITE8_MEMBER(motor_w);
-	DECLARE_WRITE8_MEMBER(fdc_w);
-	DECLARE_READ8_MEMBER(fdc_r);
-	DECLARE_WRITE8_MEMBER(rombank_w);
+	void motor_w(offs_t offset, uint8_t data);
+	void fdc_w(offs_t offset, uint8_t data);
+	uint8_t fdc_r(offs_t offset);
+	void rombank_w(uint8_t data);
 
 protected:
 	// device-level overrides
@@ -49,7 +50,6 @@ private:
 };
 
 // device type definition
-extern const device_type CPC_DDI1;
 DECLARE_DEVICE_TYPE(CPC_DDI1, cpc_ddi1_device)
 
 #endif // MAME_BUS_CPC_DDI1_H

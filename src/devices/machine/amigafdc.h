@@ -7,16 +7,17 @@
 
 #include "imagedev/floppy.h"
 
-#define MCFG_AMIGA_FDC_INDEX_CALLBACK(_write) \
-	devcb = &amiga_fdc_device::set_index_wr_callback(*device, DEVCB_##_write);
-
 class amiga_fdc_device : public device_t {
 public:
 	amiga_fdc_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	template <class Object> static devcb_base &set_index_wr_callback(device_t &device, Object &&cb) { return downcast<amiga_fdc_device &>(device).m_write_index.set_callback(std::forward<Object>(cb)); }
+	auto index_callback() { return m_write_index.bind(); }
+	auto read_dma_callback() { return m_read_dma.bind(); }
+	auto write_dma_callback() { return m_write_dma.bind(); }
+	auto dskblk_callback() { return m_write_dskblk.bind(); }
+	auto dsksyn_callback() { return m_write_dsksyn.bind(); }
 
-	DECLARE_WRITE8_MEMBER(ciaaprb_w);
+	void ciaaprb_w(uint8_t data);
 
 	uint8_t ciaapra_r();
 	uint16_t dskbytr_r();
@@ -87,6 +88,12 @@ private:
 	};
 
 	devcb_write_line m_write_index;
+	devcb_read16 m_read_dma;
+	devcb_write16 m_write_dma;
+	devcb_write_line m_write_dskblk;
+	devcb_write_line m_write_dsksyn;
+	output_finder<2> m_leds;
+	output_finder<> m_fdc_led;
 
 	floppy_image_device *floppy;
 	floppy_image_device *floppy_devices[4];

@@ -27,31 +27,17 @@
 #pragma once
 
 
-/***************************************************************************
-    MACROS / CONSTANTS
-***************************************************************************/
-
-#define MCFG_UPD4701_PORTX(_tag) \
-	upd4701_device::set_portx_tag(*device, "^" _tag);
-#define MCFG_UPD4701_PORTY(_tag) \
-	upd4701_device::set_porty_tag(*device, "^" _tag);
-#define MCFG_UPD4701_CF_CALLBACK(_devcb) \
-	devcb = upd4701_device::set_cf_cb(*device, DEVCB_##_devcb);
-#define MCFG_UPD4701_SF_CALLBACK(_devcb) \
-	devcb = upd4701_device::set_sf_cb(*device, DEVCB_##_devcb);
-
 class upd4701_device : public device_t
 {
 public:
-	upd4701_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock);
+	upd4701_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock = 0);
 
-	// static configuration
-	static void set_portx_tag(device_t &device, const char *tag) { downcast<upd4701_device &>(device).m_portx.set_tag(tag); }
-	static void set_porty_tag(device_t &device, const char *tag) { downcast<upd4701_device &>(device).m_porty.set_tag(tag); }
-	template<class Object>
-	static devcb_base &set_cf_cb(device_t &device, Object &&cb) { return downcast<upd4701_device &>(device).m_cf_cb.set_callback(std::forward<Object>(cb)); }
-	template<class Object>
-	static devcb_base &set_sf_cb(device_t &device, Object &&cb) { return downcast<upd4701_device &>(device).m_sf_cb.set_callback(std::forward<Object>(cb)); }
+	// configuration
+	template <typename T> void set_portx_tag(T &&tag) { m_portx.set_tag(std::forward<T>(tag)); }
+	template <typename T> void set_porty_tag(T &&tag) { m_porty.set_tag(std::forward<T>(tag)); }
+	auto cf_cb() { return m_cf_cb.bind(); }
+	auto sf_cb() { return m_sf_cb.bind(); }
+	auto open_bus_cb() { return m_open_bus_cb.bind(); }
 
 	void x_add(s16 data);
 	void y_add(s16 data);
@@ -61,17 +47,17 @@ public:
 	DECLARE_WRITE_LINE_MEMBER(ul_w);
 	DECLARE_WRITE_LINE_MEMBER(resetx_w);
 	DECLARE_WRITE_LINE_MEMBER(resety_w);
-	DECLARE_READ8_MEMBER(reset_x);
-	DECLARE_WRITE8_MEMBER(reset_x);
-	DECLARE_READ8_MEMBER(reset_y);
-	DECLARE_WRITE8_MEMBER(reset_y);
-	DECLARE_READ8_MEMBER(reset_xy);
-	DECLARE_WRITE8_MEMBER(reset_xy);
+	u8 reset_x_r();
+	void reset_x_w(u8 data);
+	u8 reset_y_r();
+	void reset_y_w(u8 data);
+	u8 reset_xy_r();
+	void reset_xy_w(u8 data);
 
-	DECLARE_READ8_MEMBER(d_r);
-	DECLARE_READ8_MEMBER(read_x);
-	DECLARE_READ8_MEMBER(read_y);
-	DECLARE_READ8_MEMBER(read_xy);
+	u8 d_r();
+	u8 read_x(offs_t offset);
+	u8 read_y(offs_t offset);
+	u8 read_xy(offs_t offset);
 
 	DECLARE_WRITE_LINE_MEMBER(left_w);
 	DECLARE_WRITE_LINE_MEMBER(right_w);
@@ -114,6 +100,7 @@ private:
 	bool m_cf;
 	devcb_write_line m_cf_cb;
 	devcb_write_line m_sf_cb;
+	devcb_read8 m_open_bus_cb;
 };
 
 DECLARE_DEVICE_TYPE(UPD4701A, upd4701_device)

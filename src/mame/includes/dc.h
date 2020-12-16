@@ -35,7 +35,7 @@ class dc_state : public driver_device
 	required_shared_ptr<uint64_t> dc_framebuffer_ram; // '32-bit access area'
 	required_shared_ptr<uint64_t> dc_texture_ram; // '64-bit access area'
 
-	required_shared_ptr<uint32_t> dc_sound_ram;
+	required_shared_ptr<uint16_t> dc_sound_ram;
 	required_shared_ptr<uint64_t> dc_ram;
 
 	/* machine related */
@@ -53,36 +53,38 @@ class dc_state : public driver_device
 		uint8_t indirect;
 		uint8_t start;
 		uint8_t sel;
-	}m_g2_dma[4];
+	} m_g2_dma[4];
 
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
 	TIMER_CALLBACK_MEMBER(g2_dma_irq);
 	TIMER_CALLBACK_MEMBER(ch2_dma_irq);
-	DECLARE_READ32_MEMBER(dc_aica_reg_r);
-	DECLARE_WRITE32_MEMBER(dc_aica_reg_w);
-	DECLARE_READ32_MEMBER(dc_arm_aica_r);
-	DECLARE_WRITE32_MEMBER(dc_arm_aica_w);
+	uint32_t dc_aica_reg_r(offs_t offset, uint32_t mem_mask = ~0);
+	void dc_aica_reg_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t dc_arm_aica_r(offs_t offset);
+	void dc_arm_aica_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
 	void g2_dma_execute(address_space &space, int channel);
 	inline int decode_reg32_64(uint32_t offset, uint64_t mem_mask, uint64_t *shift);
 	inline int decode_reg3216_64(uint32_t offset, uint64_t mem_mask, uint64_t *shift);
 	int dc_compute_interrupt_level();
 	void dc_update_interrupt_status();
 	inline int decode_reg_64(uint32_t offset, uint64_t mem_mask, uint64_t *shift);
-	DECLARE_READ64_MEMBER( dc_sysctrl_r );
-	DECLARE_WRITE64_MEMBER( dc_sysctrl_w );
-	DECLARE_READ64_MEMBER( dc_gdrom_r );
-	DECLARE_WRITE64_MEMBER( dc_gdrom_w );
-	DECLARE_READ64_MEMBER( dc_g2_ctrl_r );
-	DECLARE_WRITE64_MEMBER( dc_g2_ctrl_w );
-	DECLARE_READ64_MEMBER( dc_modem_r );
-	DECLARE_WRITE64_MEMBER( dc_modem_w );
-	DECLARE_WRITE8_MEMBER( g1_irq );
-	DECLARE_WRITE8_MEMBER( pvr_irq );
-	DECLARE_READ64_MEMBER( sh4_soundram_r );
-	DECLARE_WRITE64_MEMBER( sh4_soundram_w );
+	uint64_t dc_sysctrl_r(offs_t offset, uint64_t mem_mask = ~0);
+	void dc_sysctrl_w(offs_t offset, uint64_t data, uint64_t mem_mask = ~0);
+	uint64_t dc_gdrom_r(offs_t offset, uint64_t mem_mask = ~0);
+	void dc_gdrom_w(offs_t offset, uint64_t data, uint64_t mem_mask = ~0);
+	uint64_t dc_g2_ctrl_r(offs_t offset, uint64_t mem_mask = ~0);
+	void dc_g2_ctrl_w(address_space &space, offs_t offset, uint64_t data, uint64_t mem_mask = ~0);
+	uint64_t dc_modem_r(offs_t offset, uint64_t mem_mask = ~0);
+	void dc_modem_w(offs_t offset, uint64_t data, uint64_t mem_mask = ~0);
+	void g1_irq(uint8_t data);
+	void pvr_irq(uint8_t data);
+	void maple_irq(uint8_t data);
+	uint16_t soundram_r(offs_t offset);
+	void soundram_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
 	DECLARE_WRITE_LINE_MEMBER(aica_irq);
 	DECLARE_WRITE_LINE_MEMBER(sh4_aica_irq);
+	DECLARE_WRITE_LINE_MEMBER(external_irq);
 
 
 	required_device<sh4_base_device> m_maincpu;
@@ -96,7 +98,9 @@ class dc_state : public driver_device
 	TIMER_DEVICE_CALLBACK_MEMBER(dc_scanline);
 	DECLARE_MACHINE_RESET(dc_console);
 
-	DECLARE_INPUT_CHANGED_MEMBER(mastercpu_cheat_r);
+	void naomi_aw_base(machine_config &config);
+	void aica_map(address_map &map);
+	void dc_audio_map(address_map &map);
 };
 
 /*--------- Ch2-DMA Control Registers ----------*/
@@ -285,7 +289,5 @@ class dc_state : public driver_device
 /* -------------- error interrupts ------------- */
 #define IST_ERR_ISP_LIMIT        0x00000004
 #define IST_ERR_PVRIF_ILL_ADDR   0x00000040
-
-void dc_maple_irq(running_machine &machine);
 
 #endif // MAME_INCLUDES_DC_H

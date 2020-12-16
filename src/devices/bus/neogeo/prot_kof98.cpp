@@ -81,7 +81,7 @@ void kof98_prot_device::decrypt_68k(uint8_t* cpurom, uint32_t cpurom_size)
   The boards have an ALTERA chip (EPM7128SQC100-15) which is tied to 242-P1
 ***************************************************************/
 
-READ16_MEMBER(kof98_prot_device::protection_r)
+uint16_t kof98_prot_device::protection_r(offs_t offset)
 {
 	if (m_prot_state == 1)
 	{
@@ -106,23 +106,23 @@ READ16_MEMBER(kof98_prot_device::protection_r)
 
 
 /* when 0x20aaaa contains 0x0090 (word) then 0x100 (normally the neogeo header) should return 0x00c200fd worked out using real hw */
-WRITE16_MEMBER( kof98_prot_device::protection_w )
+void kof98_prot_device::protection_w(uint16_t data)
 {
 	/* info from razoola */
 	switch (data)
 	{
 	case 0x0090:
-		logerror ("%06x kof98 - protection 0x0090x\n", space.device().safe_pc());
+		logerror ("%s kof98 - protection 0x0090x\n", machine().describe_context());
 		m_prot_state = 1;
 		break;
 
 	case 0x00f0:
-		logerror ("%06x kof98 - protection 0x00f0x\n", space.device().safe_pc());
+		logerror ("%s kof98 - protection 0x00f0x\n", machine().describe_context());
 		m_prot_state = 2;
 		break;
 
 	default: // 00aa is written, but not needed?
-		logerror ("%06x kof98 - unknown protection write %04x\n", space.device().safe_pc(), data);
+		logerror ("%s kof98 - unknown protection write %04x\n", machine().describe_context(), data);
 		break;
 	}
 }

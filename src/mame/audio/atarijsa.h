@@ -18,7 +18,7 @@
 #include "sound/ym2151.h"
 #include "sound/okim6295.h"
 #include "sound/pokey.h"
-#include "machine/atarigen.h"
+#include "machine/atariscom.h"
 
 
 //**************************************************************************
@@ -29,32 +29,6 @@ DECLARE_DEVICE_TYPE(ATARI_JSA_I,    atari_jsa_i_device)
 DECLARE_DEVICE_TYPE(ATARI_JSA_II,   atari_jsa_ii_device)
 DECLARE_DEVICE_TYPE(ATARI_JSA_III,  atari_jsa_iii_device)
 DECLARE_DEVICE_TYPE(ATARI_JSA_IIIS, atari_jsa_iiis_device)
-
-
-
-//**************************************************************************
-//  DEVICE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_ATARI_JSA_I_ADD(_tag, _intcb) \
-	MCFG_DEVICE_ADD(_tag, ATARI_JSA_I, 0) \
-	devcb = &atari_jsa_i_device::static_set_main_int_cb(*device, DEVCB_##_intcb);
-
-#define MCFG_ATARI_JSA_II_ADD(_tag, _intcb) \
-	MCFG_DEVICE_ADD(_tag, ATARI_JSA_II, 0) \
-	devcb = &atari_jsa_ii_device::static_set_main_int_cb(*device, DEVCB_##_intcb);
-
-#define MCFG_ATARI_JSA_III_ADD(_tag, _intcb) \
-	MCFG_DEVICE_ADD(_tag, ATARI_JSA_III, 0) \
-	devcb = &atari_jsa_iii_device::static_set_main_int_cb(*device, DEVCB_##_intcb);
-
-#define MCFG_ATARI_JSA_IIIS_ADD(_tag, _intcb) \
-	MCFG_DEVICE_ADD(_tag, ATARI_JSA_IIIS, 0) \
-	devcb = &atari_jsa_iiis_device::static_set_main_int_cb(*device, DEVCB_##_intcb);
-
-#define MCFG_ATARI_JSA_TEST_PORT(_port, _bitnum) \
-	devcb = &atari_jsa_base_device::static_set_test_read_cb(*device, DEVCB_IOPORT(_port)); \
-	MCFG_DEVCB_RSHIFT(_bitnum);
 
 
 //**************************************************************************
@@ -83,9 +57,9 @@ protected:
 	atari_jsa_base_device(const machine_config &mconfig, device_type devtype, const char *tag, device_t *owner, uint32_t clock, int channels);
 
 public:
-	// static configuration
-	template <class Object> static devcb_base &static_set_test_read_cb(device_t &device, Object &&cb) { return downcast<atari_jsa_base_device &>(device).m_test_read_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &static_set_main_int_cb(device_t &device, Object &&cb) { return downcast<atari_jsa_base_device &>(device).m_main_int_cb.set_callback(std::forward<Object>(cb)); }
+	// configuration
+	auto test_read_cb() { return m_test_read_cb.bind(); }
+	auto main_int_cb() { return m_main_int_cb.bind(); }
 
 	// getters
 	m6502_device &soundcpu() const { return *m_jsacpu; }
@@ -93,16 +67,22 @@ public:
 	DECLARE_READ_LINE_MEMBER(sound_to_main_ready) { return m_soundcomm->sound_to_main_ready(); }
 
 	// main cpu accessors
-	DECLARE_WRITE8_MEMBER(main_command_w);
-	DECLARE_READ8_MEMBER(main_response_r);
-	DECLARE_WRITE16_MEMBER(sound_reset_w);
+	void main_command_w(uint8_t data);
+	uint8_t main_response_r();
+	void sound_reset_w(uint16_t data);
 
 	// read/write handlers
-	DECLARE_WRITE8_MEMBER(ym2151_port_w);
+	void ym2151_port_w(uint8_t data);
 	DECLARE_READ_LINE_MEMBER(main_test_read_line);
 
 	// I/O lines
 	DECLARE_WRITE_LINE_MEMBER(main_int_write_line);
+
+	// 6502 interrupt handlers
+	INTERRUPT_GEN_MEMBER(sound_irq_gen);
+	void sound_irq_ack_w(u8 data = 0);
+	u8 sound_irq_ack_r();
+	DECLARE_WRITE_LINE_MEMBER(ym2151_irq_gen);
 
 protected:
 	// device-level overrides
@@ -111,6 +91,7 @@ protected:
 
 	// internal helpers
 	virtual void update_all_volumes() = 0;
+	void update_sound_irq();
 
 	// devices
 	required_device<atari_sound_comm_device> m_soundcomm;
@@ -128,9 +109,11 @@ protected:
 	devcb_write_line   m_main_int_cb;
 
 	// internal state
+	bool                m_timed_int;
+	bool                m_ym2151_int;
 	double              m_ym2151_volume;
-	uint8_t               m_ym2151_ct1;
-	uint8_t               m_ym2151_ct2;
+	uint8_t             m_ym2151_ct1;
+	uint8_t             m_ym2151_ct2;
 };
 
 
@@ -144,11 +127,11 @@ protected:
 
 public:
 	// read/write handlers
-	DECLARE_READ8_MEMBER( oki_r );
-	DECLARE_WRITE8_MEMBER( oki_w );
-	DECLARE_WRITE8_MEMBER( wrio_w );
-	DECLARE_WRITE8_MEMBER( mix_w );
-	DECLARE_WRITE8_MEMBER( overall_volume_w );
+	uint8_t oki_r(offs_t offset);
+	void oki_w(offs_t offset, uint8_t data);
+	void wrio_w(uint8_t data);
+	void mix_w(uint8_t data);
+	void overall_volume_w(uint8_t data);
 
 protected:
 	// device level overrides
@@ -187,13 +170,14 @@ public:
 	atari_jsa_i_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 	// read/write handlers
-	DECLARE_READ8_MEMBER( rdio_r );
-	DECLARE_WRITE8_MEMBER( wrio_w );
-	DECLARE_WRITE8_MEMBER( mix_w );
-	DECLARE_WRITE8_MEMBER( tms5220_voice );
-	DECLARE_READ8_MEMBER( pokey_r );
-	DECLARE_WRITE8_MEMBER( pokey_w );
+	uint8_t rdio_r();
+	void wrio_w(uint8_t data);
+	void mix_w(uint8_t data);
+	void tms5220_voice(uint8_t data);
+	uint8_t pokey_r(offs_t offset);
+	void pokey_w(offs_t offset, uint8_t data);
 
+	void atarijsa1_map(address_map &map);
 protected:
 	// device level overrides
 	virtual void device_add_mconfig(machine_config &config) override;
@@ -224,8 +208,9 @@ public:
 	atari_jsa_ii_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 	// read/write handlers
-	DECLARE_READ8_MEMBER( rdio_r );
+	uint8_t rdio_r();
 
+	void atarijsa2_map(address_map &map);
 protected:
 	// device level overrides
 	virtual void device_add_mconfig(machine_config &config) override;
@@ -243,13 +228,15 @@ public:
 	// construction/destruction
 	atari_jsa_iii_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
+	void atarijsa3_map(address_map &map);
+	void jsa3_oki1_map(address_map &map);
 protected:
 	// derived construction/destruction
 	atari_jsa_iii_device(const machine_config &mconfig, device_type devtype, const char *tag, device_t *owner, uint32_t clock, int channels);
 
 public:
 	// read/write handlers
-	DECLARE_READ8_MEMBER( rdio_r );
+	uint8_t rdio_r();
 
 protected:
 	// device level overrides
@@ -268,6 +255,7 @@ public:
 	// construction/destruction
 	atari_jsa_iiis_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
+	void jsa3_oki2_map(address_map &map);
 protected:
 	// device level overrides
 	virtual void device_add_mconfig(machine_config &config) override;

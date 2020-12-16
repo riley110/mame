@@ -10,32 +10,33 @@
 #include "machine/pit8253.h"
 #include "machine/pic8259.h"
 
-#define MCFG_M24_Z8000_HALT(_devcb) \
-	devcb = &m24_z8000_device::set_halt_callback(*device, DEVCB_##_devcb);
 
 class m24_z8000_device :  public device_t
 {
 public:
 	m24_z8000_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	template <class Object> static devcb_base &set_halt_callback(device_t &device, Object &&cb) { return downcast<m24_z8000_device &>(device).m_halt_out.set_callback(std::forward<Object>(cb)); }
+	auto halt_callback() { return m_halt_out.bind(); }
 
-	DECLARE_READ16_MEMBER(pmem_r);
-	DECLARE_WRITE16_MEMBER(pmem_w);
-	DECLARE_READ16_MEMBER(dmem_r);
-	DECLARE_WRITE16_MEMBER(dmem_w);
-	DECLARE_READ16_MEMBER(i86_io_r);
-	DECLARE_WRITE16_MEMBER(i86_io_w);
-	DECLARE_WRITE8_MEMBER(irqctl_w);
-	DECLARE_WRITE8_MEMBER(serctl_w);
-	DECLARE_READ8_MEMBER(handshake_r);
-	DECLARE_WRITE8_MEMBER(handshake_w);
+	uint16_t pmem_r(offs_t offset, uint16_t mem_mask = ~0);
+	void pmem_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t dmem_r(offs_t offset, uint16_t mem_mask = ~0);
+	void dmem_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t i86_io_r(offs_t offset, uint16_t mem_mask = ~0);
+	void i86_io_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	void irqctl_w(uint8_t data);
+	void serctl_w(uint8_t data);
+	uint8_t handshake_r();
+	void handshake_w(uint8_t data);
 
 	DECLARE_WRITE_LINE_MEMBER(halt_w) { m_z8000->set_input_line(INPUT_LINE_HALT, state); }
-	DECLARE_WRITE_LINE_MEMBER(int_w) { m_z8000->set_input_line(INPUT_LINE_IRQ1, state); }
+	DECLARE_WRITE_LINE_MEMBER(int_w) { m_z8000->set_input_line(z8001_device::VI_LINE, state); }
 
 	bool halted() const { return m_z8000_halt; }
 
+	void z8000_data(address_map &map);
+	void z8000_io(address_map &map);
+	void z8000_prog(address_map &map);
 protected:
 	void device_start() override;
 	void device_reset() override;
@@ -54,10 +55,10 @@ private:
 
 	DECLARE_WRITE_LINE_MEMBER(mo_w);
 	DECLARE_WRITE_LINE_MEMBER(timer_irq_w);
-	IRQ_CALLBACK_MEMBER(int_cb);
+	uint16_t nviack_r();
+	uint16_t viack_r();
 };
 
-extern const device_type M24_Z8000;
 DECLARE_DEVICE_TYPE(M24_Z8000, m24_z8000_device)
 
 #endif // MAME_MACHINE_M24_Z8000_H

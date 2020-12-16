@@ -14,18 +14,6 @@
 
 // I/O ports setup
 
-// max 8 4-bit R ports
-#define MCFG_HMCS40_READ_R_CB(R, _devcb) \
-	devcb = &hmcs40_cpu_device::set_read_r##R##_callback(*device, DEVCB_##_devcb);
-#define MCFG_HMCS40_WRITE_R_CB(R, _devcb) \
-	devcb = &hmcs40_cpu_device::set_write_r##R##_callback(*device, DEVCB_##_devcb);
-
-// 16-bit discrete
-#define MCFG_HMCS40_READ_D_CB(_devcb) \
-	devcb = &hmcs40_cpu_device::set_read_d_callback(*device, DEVCB_##_devcb);
-#define MCFG_HMCS40_WRITE_D_CB(_devcb) \
-	devcb = &hmcs40_cpu_device::set_write_d_callback(*device, DEVCB_##_devcb);
-
 enum
 {
 	HMCS40_INPUT_LINE_INT0 = 0,
@@ -93,39 +81,13 @@ enum
 class hmcs40_cpu_device : public cpu_device
 {
 public:
-	enum
-	{
-		PORT_R0X = 0,
-		PORT_R1X,
-		PORT_R2X,
-		PORT_R3X,
-		PORT_R4X,
-		PORT_R5X,
-		PORT_R6X,
-		PORT_R7X
-	};
+	// max 8 4-bit R ports
+	template <std::size_t Bit> auto read_r() { return m_read_r[Bit].bind(); }
+	template <std::size_t Bit> auto write_r() { return m_write_r[Bit].bind(); }
 
-	// static configuration helpers
-	template <class Object> static devcb_base &set_read_r0_callback(device_t &device, Object &&cb) { return downcast<hmcs40_cpu_device &>(device).m_read_r0.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_read_r1_callback(device_t &device, Object &&cb) { return downcast<hmcs40_cpu_device &>(device).m_read_r1.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_read_r2_callback(device_t &device, Object &&cb) { return downcast<hmcs40_cpu_device &>(device).m_read_r2.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_read_r3_callback(device_t &device, Object &&cb) { return downcast<hmcs40_cpu_device &>(device).m_read_r3.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_read_r4_callback(device_t &device, Object &&cb) { return downcast<hmcs40_cpu_device &>(device).m_read_r4.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_read_r5_callback(device_t &device, Object &&cb) { return downcast<hmcs40_cpu_device &>(device).m_read_r5.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_read_r6_callback(device_t &device, Object &&cb) { return downcast<hmcs40_cpu_device &>(device).m_read_r6.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_read_r7_callback(device_t &device, Object &&cb) { return downcast<hmcs40_cpu_device &>(device).m_read_r7.set_callback(std::forward<Object>(cb)); }
-
-	template <class Object> static devcb_base &set_write_r0_callback(device_t &device, Object &&cb) { return downcast<hmcs40_cpu_device &>(device).m_write_r0.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_write_r1_callback(device_t &device, Object &&cb) { return downcast<hmcs40_cpu_device &>(device).m_write_r1.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_write_r2_callback(device_t &device, Object &&cb) { return downcast<hmcs40_cpu_device &>(device).m_write_r2.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_write_r3_callback(device_t &device, Object &&cb) { return downcast<hmcs40_cpu_device &>(device).m_write_r3.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_write_r4_callback(device_t &device, Object &&cb) { return downcast<hmcs40_cpu_device &>(device).m_write_r4.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_write_r5_callback(device_t &device, Object &&cb) { return downcast<hmcs40_cpu_device &>(device).m_write_r5.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_write_r6_callback(device_t &device, Object &&cb) { return downcast<hmcs40_cpu_device &>(device).m_write_r6.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_write_r7_callback(device_t &device, Object &&cb) { return downcast<hmcs40_cpu_device &>(device).m_write_r7.set_callback(std::forward<Object>(cb)); }
-
-	template <class Object> static devcb_base &set_read_d_callback(device_t &device, Object &&cb) { return downcast<hmcs40_cpu_device &>(device).m_read_d.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_write_d_callback(device_t &device, Object &&cb) { return downcast<hmcs40_cpu_device &>(device).m_write_d.set_callback(std::forward<Object>(cb)); }
+	// 16-bit discrete
+	auto read_d() { return m_read_d.bind(); }
+	auto write_d() { return m_write_d.bind(); }
 
 protected:
 	enum
@@ -146,11 +108,11 @@ protected:
 	virtual void device_reset() override;
 
 	// device_execute_interface overrides
-	virtual u64 execute_clocks_to_cycles(u64 clocks) const override { return (clocks + 4 - 1) / 4; } // 4 cycles per machine cycle
-	virtual u64 execute_cycles_to_clocks(u64 cycles) const override { return (cycles * 4); } // "
-	virtual u32 execute_min_cycles() const override { return 1; }
-	virtual u32 execute_max_cycles() const override { return 2; }
-	virtual u32 execute_input_lines() const override { return 2+1; } // 3rd one is internal
+	virtual u64 execute_clocks_to_cycles(u64 clocks) const noexcept override { return (clocks + 4 - 1) / 4; } // 4 cycles per machine cycle
+	virtual u64 execute_cycles_to_clocks(u64 cycles) const noexcept override { return (cycles * 4); } // "
+	virtual u32 execute_min_cycles() const noexcept override { return 1; }
+	virtual u32 execute_max_cycles() const noexcept override { return 2+1; } // max 2 + interrupt
+	virtual u32 execute_input_lines() const noexcept override { return 2+1; } // 3rd one is internal
 	virtual void execute_set_input(int line, int state) override;
 	virtual void execute_run() override;
 
@@ -158,10 +120,14 @@ protected:
 	virtual space_config_vector memory_space_config() const override;
 
 	// device_disasm_interface overrides
-	virtual u32 disasm_min_opcode_bytes() const override { return 2; }
-	virtual u32 disasm_max_opcode_bytes() const override { return 2; }
-	virtual offs_t disasm_disassemble(std::ostream &stream, offs_t pc, const u8 *oprom, const u8 *opram, u32 options) override;
+	virtual std::unique_ptr<util::disasm_interface> create_disassembler() override;
 	virtual void state_string_export(const device_state_entry &entry, std::string &str) const override;
+
+	// memorymaps
+	void program_1k(address_map &map);
+	void program_2k(address_map &map);
+	void data_160x4(address_map &map);
+	void data_80x4(address_map &map);
 
 	address_space_config m_program_config;
 	address_space_config m_data_config;
@@ -178,13 +144,13 @@ protected:
 	u16 m_polarity;     // i/o polarity (pmos vs cmos)
 	int m_stack_levels; // number of callstack levels
 	u16 m_stack[4];     // max 4
+	int m_sp;           // internal 'stackpointer'
 	u16 m_op;           // current opcode
 	u16 m_prev_op;
 	u8 m_i;             // 4-bit immediate opcode param
 	int m_eint_line;    // which input_line caused an interrupt
-	emu_timer *m_timer;
 	int m_halt;         // internal HLT state
-	attotime m_timer_halted_remain;
+	u8 m_prescaler;     // internal timer prescaler
 	int m_icount;
 
 	u16 m_pc;           // Program Counter
@@ -209,9 +175,9 @@ protected:
 	u8 m_r[8];          // R outputs state
 	u16 m_d;            // D pins state
 
-	// i/o handlers
-	devcb_read8 m_read_r0, m_read_r1, m_read_r2, m_read_r3, m_read_r4, m_read_r5, m_read_r6, m_read_r7;
-	devcb_write8 m_write_r0, m_write_r1, m_write_r2, m_write_r3, m_write_r4, m_write_r5, m_write_r6, m_write_r7;
+	// I/O handlers
+	devcb_read8::array<8> m_read_r;
+	devcb_write8::array<8> m_write_r;
 	devcb_read16 m_read_d;
 	devcb_write16 m_write_d;
 
@@ -220,6 +186,7 @@ protected:
 
 	u8 ram_r();
 	void ram_w(u8 data);
+	void exc_stack();
 	void pop_stack();
 	void push_stack();
 
@@ -228,8 +195,7 @@ protected:
 	virtual int read_d(int index);
 	virtual void write_d(int index, int state);
 
-	void reset_prescaler();
-	TIMER_CALLBACK_MEMBER( simple_timer_cb );
+	void cycle();
 	void increment_tc();
 	void do_interrupt();
 

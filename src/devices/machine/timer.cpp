@@ -10,7 +10,6 @@
 
 #include "emu.h"
 #include "machine/timer.h"
-#include "screen.h"
 
 
 /***************************************************************************
@@ -37,109 +36,17 @@ DEFINE_DEVICE_TYPE(TIMER, timer_device, "timer", "Timer")
 timer_device::timer_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock)
 	: device_t(mconfig, TIMER, tag, owner, clock),
 		m_type(TIMER_TYPE_GENERIC),
-		m_callback(),
+		m_callback(*this),
 		m_ptr(nullptr),
 		m_start_delay(attotime::zero),
 		m_period(attotime::zero),
 		m_param(0),
-		m_screen_tag(nullptr),
-		m_screen(nullptr),
+		m_screen(*this, finder_base::DUMMY_TAG),
 		m_first_vpos(0),
 		m_increment(0),
 		m_timer(nullptr),
 		m_first_time(true)
 {
-}
-
-
-//-------------------------------------------------
-//  static_configure_generic - configuration
-//  helper to set up a generic timer
-//-------------------------------------------------
-
-void timer_device::static_configure_generic(device_t &device, expired_delegate callback)
-{
-	timer_device &timer = downcast<timer_device &>(device);
-	timer.m_type = TIMER_TYPE_GENERIC;
-	timer.m_callback = callback;
-}
-
-
-//-------------------------------------------------
-//  static_configure_periodic - configuration
-//  helper to set up a periodic timer
-//-------------------------------------------------
-
-void timer_device::static_configure_periodic(device_t &device, expired_delegate callback, const attotime &period)
-{
-	timer_device &timer = downcast<timer_device &>(device);
-	timer.m_type = TIMER_TYPE_PERIODIC;
-	timer.m_callback = callback;
-	timer.m_period = period;
-}
-
-
-//-------------------------------------------------
-//  static_configure_scanline - configuration
-//  helper to set up a scanline timer
-//-------------------------------------------------
-
-void timer_device::static_configure_scanline(device_t &device, expired_delegate callback, const char *screen, int first_vpos, int increment)
-{
-	timer_device &timer = downcast<timer_device &>(device);
-	timer.m_type = TIMER_TYPE_SCANLINE;
-	timer.m_callback = callback;
-	timer.m_screen_tag = screen;
-	timer.m_first_vpos = first_vpos;
-	timer.m_increment = increment;
-}
-
-
-//-------------------------------------------------
-//  static_set_callback - configuration helper
-//  to set the callback
-//-------------------------------------------------
-
-void timer_device::static_set_callback(device_t &device, expired_delegate callback)
-{
-	timer_device &timer = downcast<timer_device &>(device);
-	timer.m_callback = callback;
-}
-
-
-//-------------------------------------------------
-//  static_set_start_delay - configuration helper
-//  to set the starting delay
-//-------------------------------------------------
-
-void timer_device::static_set_start_delay(device_t &device, const attotime &delay)
-{
-	timer_device &timer = downcast<timer_device &>(device);
-	timer.m_start_delay = delay;
-}
-
-
-//-------------------------------------------------
-//  static_set_param - configuration helper to set
-//  the integer parameter
-//-------------------------------------------------
-
-void timer_device::static_set_param(device_t &device, int param)
-{
-	timer_device &timer = downcast<timer_device &>(device);
-	timer.m_param = param;
-}
-
-
-//-------------------------------------------------
-//  static_set_ptr - configuration helper to set
-//  the pointer parameter
-//-------------------------------------------------
-
-void timer_device::static_set_ptr(device_t &device, void *ptr)
-{
-	timer_device &timer = downcast<timer_device &>(device);
-	timer.m_ptr = ptr;
 }
 
 
@@ -154,14 +61,14 @@ void timer_device::device_validity_check(validity_checker &valid) const
 	switch (m_type)
 	{
 		case TIMER_TYPE_GENERIC:
-			if (m_screen_tag != nullptr || m_first_vpos != 0 || m_start_delay != attotime::zero)
+			if (m_screen.finder_tag() != finder_base::DUMMY_TAG || m_first_vpos != 0 || m_start_delay != attotime::zero)
 				osd_printf_warning("Generic timer specified parameters for a scanline timer\n");
 			if (m_period != attotime::zero || m_start_delay != attotime::zero)
 				osd_printf_warning("Generic timer specified parameters for a periodic timer\n");
 			break;
 
 		case TIMER_TYPE_PERIODIC:
-			if (m_screen_tag != nullptr || m_first_vpos != 0)
+			if (m_screen.finder_tag() != finder_base::DUMMY_TAG || m_first_vpos != 0)
 				osd_printf_warning("Periodic timer specified parameters for a scanline timer\n");
 			if (m_period <= attotime::zero)
 				osd_printf_error("Periodic timer specified invalid period\n");
@@ -172,6 +79,10 @@ void timer_device::device_validity_check(validity_checker &valid) const
 				osd_printf_warning("Scanline timer specified parameters for a periodic timer\n");
 			if (m_param != 0)
 				osd_printf_warning("Scanline timer specified parameter which is ignored\n");
+			if (m_screen.finder_tag() == finder_base::DUMMY_TAG)
+				osd_printf_error("Scanline timer has no screen specified\n");
+			else if (!m_screen)
+				osd_printf_error("Scanline timer specifies nonexistent screen %s\n", m_screen.finder_tag());
 //          if (m_first_vpos < 0)
 //              osd_printf_error("Scanline timer specified invalid initial position\n");
 //          if (m_increment < 0)
@@ -192,14 +103,10 @@ void timer_device::device_validity_check(validity_checker &valid) const
 
 void timer_device::device_start()
 {
-	// fetch the screen
-	if (m_screen_tag != nullptr)
-		m_screen = machine().device<screen_device>(m_screen_tag);
-
 	// allocate the timer
 	m_timer = timer_alloc();
 
-	m_callback.bind_relative_to(*owner());
+	m_callback.resolve();
 
 	// register for save states
 	save_item(NAME(m_first_time));
@@ -236,8 +143,8 @@ void timer_device::device_reset()
 		}
 
 		case TIMER_TYPE_SCANLINE:
-			if (m_screen == nullptr)
-				fatalerror("timer '%s': unable to find screen '%s'\n", tag(), m_screen_tag);
+			if (!m_screen)
+				fatalerror("timer '%s': unable to find screen '%s'\n", tag(), m_screen.finder_tag());
 
 			// set the timer to fire immediately
 			m_first_time = true;
@@ -262,8 +169,7 @@ void timer_device::device_timer(emu_timer &timer, device_timer_id id, int param,
 				(m_callback)(*this, m_ptr, param);
 			break;
 
-
-		// scanline timers have to do some additiona bookkeeping
+		// scanline timers have to do some additional bookkeeping
 		case TIMER_TYPE_SCANLINE:
 		{
 			// by default, we fire at the first position

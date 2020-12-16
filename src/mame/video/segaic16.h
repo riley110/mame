@@ -10,24 +10,46 @@
 
 #pragma once
 
+#include "emupal.h"
+#include "tilemap.h"
+
 typedef device_delegate<void (int, uint16_t*, uint16_t*, uint16_t*, uint16_t*)> segaic16_video_pagelatch_delegate;
 
-#define MCFG_SEGAIC16_VIDEO_SET_PAGELATCH_CB( _class, _method) \
-	segaic16_video_device::set_pagelatch_cb(*device, segaic16_video_pagelatch_delegate(&_class::_method, #_class "::" #_method, nullptr, (_class *)nullptr));
+
+//**************************************************************************
+//  TYPE DEFINITIONS
+//**************************************************************************
 
 
-/*************************************
- *
- *  Type definitions
- *
- *************************************/
+// ======================> sega_16bit_common_base
 
+class sega_16bit_common_base : public driver_device
+{
+public:
+	// palette helpers
+	void paletteram_w(address_space &space, offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	void hangon_paletteram_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	void philko_paletteram_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
 
+protected:
+	// construction/destruction
+	sega_16bit_common_base(const machine_config &mconfig, device_type type, const char *tag);
 
-/***************************************************************************
-    FUNCTION PROTOTYPES
-***************************************************************************/
+	// internal helpers
+	void palette_init();
 
+public: // -- stupid system16.cpp
+	// memory pointers
+	required_shared_ptr<u16> m_paletteram;
+protected:
+
+	// internal state
+	u32      m_palette_entries;          // number of palette entries
+	u8       m_palette_normal[32];       // RGB translations for normal pixels
+	u8       m_palette_shadow[32];       // RGB translations for shadowed pixels
+	u8       m_palette_hilight[32];      // RGB translations for hilighted pixels
+	required_device<palette_device> m_palette;
+};
 
 
 class segaic16_video_device :   public device_t,
@@ -98,12 +120,16 @@ public:
 		std::unique_ptr<uint16_t[]>        buffer;                         /* buffered data */
 	};
 
+	template <typename T> segaic16_video_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock, T &&decode_tag)
+		: segaic16_video_device(mconfig, tag, owner, clock)
+	{
+		m_gfxdecode.set_tag(std::forward<T>(decode_tag));
+	}
 
 	segaic16_video_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	// static configuration
-	static void static_set_gfxdecode_tag(device_t &device, const char *tag);
-	static void set_pagelatch_cb(device_t &device,segaic16_video_pagelatch_delegate newtilecb);
+	// configuration
+	template <typename... T> void set_pagelatch_cb(T &&... args) { m_pagelatch_cb.set(std::forward<T>(args)...); }
 
 	uint8_t m_display_enable;
 	optional_shared_ptr<uint16_t> m_tileram;
@@ -132,14 +158,14 @@ public:
 	void tilemap_init(int which, int type, int colorbase, int xoffs, int numbanks);
 	void rotate_init(int which, int type, int colorbase);
 
-	DECLARE_READ16_MEMBER( tileram_r );
-	DECLARE_READ16_MEMBER( textram_r );
-	DECLARE_WRITE16_MEMBER( tileram_w );
-	DECLARE_WRITE16_MEMBER( textram_w );
+	uint16_t tileram_r(offs_t offset);
+	uint16_t textram_r(offs_t offset);
+	void tileram_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	void textram_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
 
 	void rotate_draw(int which, bitmap_ind16 &bitmap, const rectangle &cliprect, bitmap_ind8 &priority_bitmap, bitmap_ind16 &srcbitmap);
 
-	DECLARE_READ16_MEMBER( rotate_control_r );
+	uint16_t rotate_control_r();
 
 	TILE_GET_INFO_MEMBER( tilemap_16b_tile_info );
 	TILE_GET_INFO_MEMBER( tilemap_16b_text_info );
@@ -160,11 +186,5 @@ private:
 };
 
 DECLARE_DEVICE_TYPE(SEGAIC16VID, segaic16_video_device)
-
-#define MCFG_SEGAIC16VID_ADD(_tag) \
-	MCFG_DEVICE_ADD(_tag, SEGAIC16VID, 0)
-
-#define MCFG_SEGAIC16VID_GFXDECODE(_gfxtag) \
-	segaic16_video_device::static_set_gfxdecode_tag(*device, "^" _gfxtag);
 
 #endif // MAME_VIDEO_SEGAIC16_H

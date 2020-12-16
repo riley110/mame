@@ -6,6 +6,7 @@
 #pragma once
 
 #include "galaga.h"
+#include "tilemap.h"
 
 class bosco_state : public galaga_state
 {
@@ -24,6 +25,8 @@ public:
 	uint8_t *m_bosco_radarx;
 	uint8_t *m_bosco_radary;
 
+	uint8_t m_bosco_starclr;
+
 	uint8_t *m_spriteram;
 	uint8_t *m_spriteram2;
 	uint32_t m_spriteram_size;
@@ -31,7 +34,7 @@ public:
 	TILE_GET_INFO_MEMBER(bg_get_tile_info);
 	TILE_GET_INFO_MEMBER(fg_get_tile_info);
 	DECLARE_VIDEO_START(bosco);
-	DECLARE_PALETTE_INIT(bosco);
+	void bosco_palette(palette_device &palette) const;
 	uint32_t screen_update_bosco(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 	DECLARE_WRITE_LINE_MEMBER(screen_vblank_bosco);
 
@@ -39,10 +42,12 @@ public:
 	void draw_sprites(bitmap_ind16 &bitmap, const rectangle &cliprect, int flip);
 	void draw_bullets(bitmap_ind16 &bitmap, const rectangle &cliprect, int flip);
 	void draw_stars(bitmap_ind16 &bitmap, const rectangle &cliprect, int flip);
-	DECLARE_WRITE8_MEMBER( bosco_videoram_w );
-	DECLARE_WRITE8_MEMBER( bosco_scrollx_w );
-	DECLARE_WRITE8_MEMBER( bosco_scrolly_w );
-	DECLARE_WRITE8_MEMBER( bosco_starclr_w );
+	void bosco_videoram_w(offs_t offset, uint8_t data);
+	void bosco_scrollx_w(uint8_t data);
+	void bosco_scrolly_w(uint8_t data);
+	void bosco_starclr_w(uint8_t data);
+	void bosco(machine_config &config);
+	void bosco_map(address_map &map);
 };
 
 #endif // MAME_INCLUDES_BOSCO_H

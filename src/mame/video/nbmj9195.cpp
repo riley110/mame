@@ -17,7 +17,7 @@
 
 ******************************************************************************/
 
-WRITE8_MEMBER(nbmj9195_state::palette_w)
+void nbmj9195_state::palette_w(offs_t offset, uint8_t data)
 {
 	m_palette_ptr[offset] = data;
 
@@ -33,7 +33,7 @@ WRITE8_MEMBER(nbmj9195_state::palette_w)
 	}
 }
 
-WRITE8_MEMBER(nbmj9195_state::nb22090_palette_w)
+void nbmj9195_state::nb22090_palette_w(offs_t offset, uint8_t data)
 {
 	int r, g, b;
 	int offs_h, offs_l;
@@ -116,7 +116,7 @@ void nbmj9195_state::blitter_w(int offset, int data, int vram)
 	}
 }
 
-WRITE8_MEMBER(nbmj9195_state::clutsel_w)
+void nbmj9195_state::clutsel_w(uint8_t data)
 {
 	m_clutsel = data;
 }
@@ -126,7 +126,7 @@ void nbmj9195_state::clut_w(int offset, int data, int vram)
 	m_clut[vram][((m_clutsel & 0xff) * 0x10) + (offset & 0x0f)] = data;
 }
 
-WRITE8_MEMBER(nbmj9195_state::gfxflag2_w)
+void nbmj9195_state::gfxflag2_w(uint8_t data)
 {
 	m_gfxflag2 = data;
 }
@@ -187,7 +187,7 @@ void nbmj9195_state::device_timer(emu_timer &timer, device_timer_id id, int para
 		m_nb19010_busyflag = 1;
 		break;
 	default:
-		assert_always(false, "Unknown id in nbmj9195_state::device_timer");
+		throw emu_fatalerror("Unknown id in nbmj9195_state::device_timer");
 	}
 }
 
@@ -355,14 +355,14 @@ void nbmj9195_state::gfxdraw(int vram)
 
 
 ******************************************************************************/
-WRITE8_MEMBER(nbmj9195_state::blitter_0_w){ blitter_w(offset, data, 0); }
-WRITE8_MEMBER(nbmj9195_state::blitter_1_w){ blitter_w(offset, data, 1); }
+void nbmj9195_state::blitter_0_w(offs_t offset, uint8_t data){ blitter_w(offset, data, 0); }
+void nbmj9195_state::blitter_1_w(offs_t offset, uint8_t data){ blitter_w(offset, data, 1); }
 
-READ8_MEMBER(nbmj9195_state::blitter_0_r){ return blitter_r(offset, 0); }
-READ8_MEMBER(nbmj9195_state::blitter_1_r){ return blitter_r(offset, 1); }
+uint8_t nbmj9195_state::blitter_0_r(offs_t offset){ return blitter_r(offset, 0); }
+uint8_t nbmj9195_state::blitter_1_r(offs_t offset){ return blitter_r(offset, 1); }
 
-WRITE8_MEMBER(nbmj9195_state::clut_0_w){ clut_w(offset, data, 0); }
-WRITE8_MEMBER(nbmj9195_state::clut_1_w){ clut_w(offset, data, 1); }
+void nbmj9195_state::clut_0_w(offs_t offset, uint8_t data){ clut_w(offset, data, 0); }
+void nbmj9195_state::clut_1_w(offs_t offset, uint8_t data){ clut_w(offset, data, 1); }
 
 /******************************************************************************
 
@@ -401,8 +401,8 @@ VIDEO_START_MEMBER(nbmj9195_state,_1layer)
 	save_item(NAME(m_gfxdraw_mode));
 	save_item(NAME(m_nb19010_busyctr));
 	save_item(NAME(m_nb19010_busyflag));
-	save_pointer(NAME(m_videoram[0].get()), width * height);
-	save_pointer(NAME(m_clut[0].get()), 0x1000);
+	save_pointer(NAME(m_videoram[0]), width * height);
+	save_pointer(NAME(m_clut[0]), 0x1000);
 	save_item(NAME(m_flipscreen_old));
 	machine().save().register_postload(save_prepost_delegate(FUNC(nbmj9195_state::postload), this));
 }
@@ -444,10 +444,10 @@ void nbmj9195_state::video_start()
 	save_item(NAME(m_gfxdraw_mode));
 	save_item(NAME(m_nb19010_busyctr));
 	save_item(NAME(m_nb19010_busyflag));
-	save_pointer(NAME(m_videoram[0].get()), width * height);
-	save_pointer(NAME(m_videoram[1].get()), width * height);
-	save_pointer(NAME(m_clut[0].get()), 0x1000);
-	save_pointer(NAME(m_clut[1].get()), 0x1000);
+	save_pointer(NAME(m_videoram[0]), width * height);
+	save_pointer(NAME(m_videoram[1]), width * height);
+	save_pointer(NAME(m_clut[0]), 0x1000);
+	save_pointer(NAME(m_clut[1]), 0x1000);
 	save_item(NAME(m_flipscreen_old));
 	machine().save().register_postload(save_prepost_delegate(FUNC(nbmj9195_state::postload), this));
 }
@@ -467,8 +467,8 @@ VIDEO_START_MEMBER(nbmj9195_state,nb22090)
 	m_videoworkram[0] = make_unique_clear<uint16_t[]>(width * height);
 	m_videoworkram[1] = make_unique_clear<uint16_t[]>(width * height);
 
-	save_pointer(NAME(m_videoworkram[0].get()), width * height);
-	save_pointer(NAME(m_videoworkram[1].get()), width * height);
+	save_pointer(NAME(m_videoworkram[0]), width * height);
+	save_pointer(NAME(m_videoworkram[1]), width * height);
 
 	m_gfxdraw_mode = 2;
 }

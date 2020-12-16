@@ -14,37 +14,11 @@
 
 ******************************************************************************/
 
-#pragma once
-
 #ifndef MAME_VIDEO_DECORMC3_H
 #define MAME_VIDEO_DECORMC3_H
 
+#pragma once
 
-
-//**************************************************************************
-//  DEVICE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_DECO_RMC3_ADD(_tag, _entries) \
-	MCFG_DEVICE_ADD(_tag, DECO_RMC3, 0) \
-	MCFG_DECO_RMC3_SET_PALETTE_SIZE(_entries)
-
-#define MCFG_DECO_RMC3_MODIFY MCFG_DEVICE_MODIFY
-
-#define MCFG_DECO_RMC3_SET_PALETTE_SIZE(_entries) \
-	deco_rmc3_device::static_set_entries(*device, _entries);
-
-#define MCFG_DECO_RMC3_INDIRECT_ENTRIES(_entries) \
-	deco_rmc3_device::static_set_indirect_entries(*device, _entries);
-
-// other standard palettes
-#define MCFG_DECO_RMC3_ADD_PROMS(_tag, _region, _entries) \
-	MCFG_DECO_RMC3_ADD(_tag, _entries) \
-	deco_rmc3_device::static_set_prom_region(*device, "^" _region); \
-	deco_rmc3_device::static_set_init(*device, deco_rmc3_palette_init_delegate(FUNC(deco_rmc3_device::palette_init_proms), downcast<deco_rmc3_device *>(device)));
-
-//#define MCFG_DECO_RMC3_INIT_OWNER(_class, _method)
-//  deco_rmc3_device::static_set_init(*device, deco_rmc3_palette_init_delegate(&_class::PALETTE_INIT_NAME(_method), #_class "::palette_init_" #_method, downcast<_class *>(owner)));
 
 //**************************************************************************
 //  TYPE DEFINITIONS
@@ -59,15 +33,22 @@ class deco_rmc3_device : public device_t, public device_palette_interface
 {
 public:
 	// construction/destruction
+	deco_rmc3_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock, u32 entries)
+		: deco_rmc3_device(mconfig, tag, owner, clock)
+	{
+		set_entries(entries);
+	}
+
 	deco_rmc3_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock);
 
-	// static configuration
-	static void static_set_init(device_t &device, deco_rmc3_palette_init_delegate init);
-	static void static_set_membits(device_t &device, int membits);
-	static void static_set_endianness(device_t &device, endianness_t endianness);
-	static void static_set_entries(device_t &device, u32 entries);
-	static void static_set_indirect_entries(device_t &device, u32 entries);
-	static void static_set_prom_region(device_t &device, const char *region);
+	// configuration
+	template <typename... T> void set_init(T &&... args) { m_init.set(std::forward<T>(args)...); }
+//  void set_membits(int membits);
+//  void set_endianness(endianness_t endianness);
+	void set_entries(u32 entries) { m_entries = entries; }
+	void set_indirect_entries(u32 entries) { m_indirect_entries = entries; }
+	void set_prom_region(const char *region) { m_prom_region.set_tag(region); }
+	template <typename T> void set_prom_region(T &&tag) { m_prom_region.set_tag(std::forward<T>(tag)); }
 
 	// palette RAM accessors
 	memory_array &basemem() { return m_paletteram; }
@@ -83,16 +64,16 @@ public:
 	}
 
 	// generic read/write handlers
-	DECLARE_READ8_MEMBER(read);
-	DECLARE_WRITE8_MEMBER(write);
-	DECLARE_WRITE8_MEMBER(write_ext);
-	DECLARE_WRITE8_MEMBER(write_indirect);
-	DECLARE_WRITE8_MEMBER(write_indirect_ext);
-	DECLARE_READ16_MEMBER(read);
-	DECLARE_WRITE16_MEMBER(write);
-	DECLARE_WRITE16_MEMBER(write_ext);
-	DECLARE_READ32_MEMBER(read);
-	DECLARE_WRITE32_MEMBER(write);
+	u8 read8(offs_t offset);
+	void write8(offs_t offset, u8 data);
+	void write8_ext(offs_t offset, u8 data);
+	void write_indirect(offs_t offset, u8 data);
+	void write_indirect_ext(offs_t offset, u8 data);
+	u16 read16(offs_t offset);
+	void write16(offs_t offset, u16 data, u16 mem_mask = ~0);
+	void write16_ext(offs_t offset, u16 data, u16 mem_mask = ~0);
+	u32 read32(offs_t offset);
+	void write32(offs_t offset, u32 data, u32 mem_mask = ~0);
 
 	void palette_init_proms(deco_rmc3_device &palette);
 

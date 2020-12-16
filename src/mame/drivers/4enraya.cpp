@@ -156,19 +156,19 @@
 #include "screen.h"
 #include "speaker.h"
 
-#define MAIN_CLOCK XTAL_8MHz
+#define MAIN_CLOCK XTAL(8'000'000)
 
 
 /***********************************
 *         Custom Handlers          *
 ***********************************/
 
-WRITE8_MEMBER(_4enraya_state::sound_data_w)
+void _4enraya_state::sound_data_w(uint8_t data)
 {
 	m_soundlatch = data;
 }
 
-WRITE8_MEMBER(_4enraya_state::sound_control_w)
+void _4enraya_state::sound_control_w(uint8_t data)
 {
 	// BDIR must be high
 	if (~data & 4)
@@ -178,12 +178,12 @@ WRITE8_MEMBER(_4enraya_state::sound_control_w)
 	{
 		case 0: case 3:
 			// latch address
-			m_ay->address_w(space, 0, m_soundlatch);
+			m_ay->address_w(m_soundlatch);
 			break;
 
 		case 2:
 			// write to psg
-			m_ay->data_w(space, 0, m_soundlatch);
+			m_ay->data_w(m_soundlatch);
 			break;
 
 		default:
@@ -192,7 +192,7 @@ WRITE8_MEMBER(_4enraya_state::sound_control_w)
 	}
 }
 
-READ8_MEMBER(_4enraya_state::fenraya_custom_map_r)
+uint8_t _4enraya_state::fenraya_custom_map_r(offs_t offset)
 {
 	uint8_t prom_routing = (m_prom[offset >> 12] & 0xf) ^ 0xf;
 	uint8_t res = 0;
@@ -220,7 +220,7 @@ READ8_MEMBER(_4enraya_state::fenraya_custom_map_r)
 	return res;
 }
 
-WRITE8_MEMBER(_4enraya_state::fenraya_custom_map_w)
+void _4enraya_state::fenraya_custom_map_w(offs_t offset, uint8_t data)
 {
 	uint8_t prom_routing = (m_prom[offset >> 12] & 0xf) ^ 0xf;
 
@@ -241,7 +241,7 @@ WRITE8_MEMBER(_4enraya_state::fenraya_custom_map_w)
 
 	if (prom_routing & 8) // gfx control / RAM wait
 	{
-		fenraya_videoram_w(space, offset & 0xfff, data);
+		fenraya_videoram_w(offset & 0xfff, data);
 	}
 }
 
@@ -250,37 +250,41 @@ WRITE8_MEMBER(_4enraya_state::fenraya_custom_map_w)
 *      Memory Map Information      *
 ***********************************/
 
-static ADDRESS_MAP_START( main_map, AS_PROGRAM, 8, _4enraya_state )
-	AM_RANGE(0x0000, 0xffff) AM_READWRITE(fenraya_custom_map_r, fenraya_custom_map_w)
-ADDRESS_MAP_END
+void _4enraya_state::main_map(address_map &map)
+{
+	map(0x0000, 0xffff).rw(FUNC(_4enraya_state::fenraya_custom_map_r), FUNC(_4enraya_state::fenraya_custom_map_w));
+}
 
-static ADDRESS_MAP_START( main_portmap, AS_IO, 8, _4enraya_state )
-	ADDRESS_MAP_GLOBAL_MASK(0xff)
-	AM_RANGE(0x00, 0x00) AM_READ_PORT("DSW")
-	AM_RANGE(0x01, 0x01) AM_READ_PORT("INPUTS")
-	AM_RANGE(0x02, 0x02) AM_READ_PORT("SYSTEM")
-	AM_RANGE(0x23, 0x23) AM_WRITE(sound_data_w)
-	AM_RANGE(0x33, 0x33) AM_WRITE(sound_control_w)
-ADDRESS_MAP_END
+void _4enraya_state::main_portmap(address_map &map)
+{
+	map.global_mask(0xff);
+	map(0x00, 0x00).portr("DSW");
+	map(0x01, 0x01).portr("INPUTS");
+	map(0x02, 0x02).portr("SYSTEM");
+	map(0x23, 0x23).w(FUNC(_4enraya_state::sound_data_w));
+	map(0x33, 0x33).w(FUNC(_4enraya_state::sound_control_w));
+}
 
 
-static ADDRESS_MAP_START( unkpacg_main_map, AS_PROGRAM, 8, _4enraya_state )
-	AM_RANGE(0x0000, 0x1fff) AM_ROM
-	AM_RANGE(0x6000, 0x67ff) AM_RAM AM_SHARE("nvram")
-	AM_RANGE(0x7000, 0x7fff) AM_WRITE(fenraya_videoram_w)
-	AM_RANGE(0x8000, 0x9fff) AM_ROM
-ADDRESS_MAP_END
+void unk_gambl_state::unkpacg_main_map(address_map &map)
+{
+	map(0x0000, 0x1fff).rom();
+	map(0x6000, 0x67ff).ram().share("nvram");
+	map(0x7000, 0x7fff).w(FUNC(_4enraya_state::fenraya_videoram_w));
+	map(0x8000, 0x9fff).rom();
+}
 
-static ADDRESS_MAP_START( unkpacg_main_portmap, AS_IO, 8, _4enraya_state )
-	ADDRESS_MAP_GLOBAL_MASK(0xff)
-	AM_RANGE(0x00, 0x00) AM_READ_PORT("DSW1")
-	AM_RANGE(0x01, 0x01) AM_READ_PORT("IN1")
-	AM_RANGE(0x02, 0x02) AM_READ_PORT("IN2")
-//  AM_RANGE(0x03, 0x03) AM_WRITE("out_w")  // to investigate...
-	AM_RANGE(0x17, 0x17) AM_DEVWRITE("aysnd", ay8910_device, data_w)
-	AM_RANGE(0x27, 0x27) AM_DEVREAD("aysnd", ay8910_device, data_r)
-	AM_RANGE(0x37, 0x37) AM_DEVWRITE("aysnd", ay8910_device, address_w)
-ADDRESS_MAP_END
+void unk_gambl_state::unkpacg_main_portmap(address_map &map)
+{
+	map.global_mask(0xff);
+	map(0x00, 0x00).portr("DSW1");
+	map(0x01, 0x01).portr("IN1");
+	map(0x02, 0x02).portr("IN2");
+//  map(0x03, 0x03).w(FUNC(unk_gambl_state::out_w));  // to investigate...
+	map(0x17, 0x17).w(m_ay, FUNC(ay8910_device::data_w));
+	map(0x27, 0x27).r(m_ay, FUNC(ay8910_device::data_r));
+	map(0x37, 0x37).w(m_ay, FUNC(ay8910_device::address_w));
+}
 
 
 /***********************************
@@ -440,7 +444,7 @@ static const gfx_layout charlayout =
 	8*8
 };
 
-static GFXDECODE_START( 4enraya )
+static GFXDECODE_START( gfx_4enraya )
 	GFXDECODE_ENTRY( "gfx1", 0, charlayout, 0, 1 )
 GFXDECODE_END
 
@@ -466,48 +470,47 @@ void _4enraya_state::machine_reset()
 *         Machine Drivers          *
 ***********************************/
 
-static MACHINE_CONFIG_START( 4enraya )
-
+void _4enraya_state::_4enraya(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", Z80, MAIN_CLOCK/2)
-	MCFG_CPU_PROGRAM_MAP(main_map)
-	MCFG_CPU_IO_MAP(main_portmap)
-	MCFG_CPU_PERIODIC_INT_DRIVER(_4enraya_state, irq0_line_hold, 4*60) // unknown timing
+	Z80(config, m_maincpu, MAIN_CLOCK/2);
+	m_maincpu->set_addrmap(AS_PROGRAM, &_4enraya_state::main_map);
+	m_maincpu->set_addrmap(AS_IO, &_4enraya_state::main_portmap);
+	m_maincpu->set_periodic_int(FUNC(_4enraya_state::irq0_line_hold), attotime::from_hz(4*60)); // unknown timing
 
 	/* video hardware */
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_REFRESH_RATE(60)
-	MCFG_SCREEN_VBLANK_TIME(ATTOSECONDS_IN_USEC(0))
-	MCFG_SCREEN_SIZE(32*8, 32*8)
-	MCFG_SCREEN_VISIBLE_AREA(0*8, 32*8-1, 2*8, 30*8-1)
-	MCFG_SCREEN_UPDATE_DRIVER(_4enraya_state, screen_update_4enraya)
-	MCFG_SCREEN_PALETTE("palette")
+	screen_device &screen(SCREEN(config, "screen", SCREEN_TYPE_RASTER));
+	screen.set_refresh_hz(60);
+	screen.set_vblank_time(ATTOSECONDS_IN_USEC(0));
+	screen.set_size(32*8, 32*8);
+	screen.set_visarea(0*8, 32*8-1, 2*8, 30*8-1);
+	screen.set_screen_update(FUNC(_4enraya_state::screen_update_4enraya));
+	screen.set_palette(m_palette);
 
-	MCFG_GFXDECODE_ADD("gfxdecode", "palette", 4enraya)
+	GFXDECODE(config, m_gfxdecode, m_palette, gfx_4enraya);
 
-	MCFG_PALETTE_ADD_3BIT_RGB("palette")
+	PALETTE(config, m_palette, palette_device::RGB_3BIT);
 
 	/* sound hardware */
-	MCFG_SPEAKER_STANDARD_MONO("mono")
-	MCFG_SOUND_ADD("aysnd", AY8910, MAIN_CLOCK/4) /* guess */
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.3)
-MACHINE_CONFIG_END
+	SPEAKER(config, "mono").front_center();
+	AY8910(config, m_ay, MAIN_CLOCK/4).add_route(ALL_OUTPUTS, "mono", 0.3); /* guess */
+}
 
 
-static MACHINE_CONFIG_DERIVED( unkpacg, 4enraya )
+void unk_gambl_state::unkpacg(machine_config &config)
+{
+	_4enraya(config);
 
 	/* basic machine hardware */
-	MCFG_CPU_MODIFY("maincpu")
-	MCFG_CPU_PROGRAM_MAP(unkpacg_main_map)
-	MCFG_CPU_IO_MAP(unkpacg_main_portmap)
-	MCFG_NVRAM_ADD_0FILL("nvram")
+	m_maincpu->set_addrmap(AS_PROGRAM, &unk_gambl_state::unkpacg_main_map);
+	m_maincpu->set_addrmap(AS_IO, &unk_gambl_state::unkpacg_main_portmap);
+	NVRAM(config, "nvram", nvram_device::DEFAULT_ALL_0);
 
 	/* sound hardware */
-//  MCFG_SPEAKER_STANDARD_MONO("mono")
-	MCFG_SOUND_REPLACE("aysnd", AY8910, MAIN_CLOCK/4) /* guess */
-	MCFG_AY8910_PORT_A_READ_CB(IOPORT("DSW2"))
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 1.0)
-MACHINE_CONFIG_END
+	AY8910(config.replace(), m_ay, MAIN_CLOCK/4); /* guess */
+	m_ay->port_a_read_callback().set_ioport("DSW2");
+	m_ay->add_route(ALL_OUTPUTS, "mono", 1.0);
+}
 
 
 /***********************************
@@ -631,12 +634,14 @@ ROM_END
 *          Driver Init             *
 ***********************************/
 
-DRIVER_INIT_MEMBER(_4enraya_state, unkpacg)
+void unk_gambl_state::driver_init()
 {
+	_4enraya_state::driver_init();
+
 	// descramble rom
 	uint8_t *rom = memregion("maincpu")->base();
 	for (int i = 0x8000; i < 0xa000; i++)
-		rom[i] = BITSWAP8(rom[i], 7,6,5,4,3,2,0,1);
+		rom[i] = bitswap<8>(rom[i], 7,6,5,4,3,2,0,1);
 }
 
 
@@ -644,9 +649,9 @@ DRIVER_INIT_MEMBER(_4enraya_state, unkpacg)
 *           Game Drivers           *
 ***********************************/
 
-/*    YEAR  NAME      PARENT   MACHINE   INPUT    STATE           INIT     ROT    COMPANY      FULLNAME                                         FLAGS  */
-GAME( 1990, 4enraya,  0,       4enraya,  4enraya, _4enraya_state, 0,       ROT0, "IDSA",      "4 En Raya (set 1)",                              MACHINE_SUPPORTS_SAVE )
-GAME( 1990, 4enrayaa, 4enraya, 4enraya,  4enraya, _4enraya_state, 0,       ROT0, "IDSA",      "4 En Raya (set 2)",                              MACHINE_SUPPORTS_SAVE )
-GAME( 199?, unkpacg,  0,       unkpacg,  unkpacg, _4enraya_state, unkpacg, ROT0, "<unknown>", "unknown 'Pac-Man' gambling game",                MACHINE_SUPPORTS_SAVE )
-GAME( 199?, unksig,   0,       unkpacg,  unkfr,   _4enraya_state, unkpacg, ROT0, "<unknown>", "unknown 'Space Invaders' gambling game (set 1)", MACHINE_SUPPORTS_SAVE )
-GAME( 199?, unksiga,  unksig,  unkpacg,  unkfr,   _4enraya_state, unkpacg, ROT0, "<unknown>", "unknown 'Space Invaders' gambling game (set 2)", MACHINE_SUPPORTS_SAVE )
+/*    YEAR  NAME      PARENT   MACHINE   INPUT    CLASS            INIT        ROT   COMPANY      FULLNAME                                         FLAGS  */
+GAME( 1990, 4enraya,  0,       _4enraya, 4enraya, _4enraya_state,  empty_init, ROT0, "IDSA",      "4 En Raya (set 1)",                              MACHINE_SUPPORTS_SAVE )
+GAME( 1990, 4enrayaa, 4enraya, _4enraya, 4enraya, _4enraya_state,  empty_init, ROT0, "IDSA",      "4 En Raya (set 2)",                              MACHINE_SUPPORTS_SAVE )
+GAME( 199?, unkpacg,  0,       unkpacg,  unkpacg, unk_gambl_state, empty_init, ROT0, "<unknown>", "unknown 'Pac-Man' gambling game",                MACHINE_SUPPORTS_SAVE )
+GAME( 199?, unksig,   0,       unkpacg,  unkfr,   unk_gambl_state, empty_init, ROT0, "<unknown>", "unknown 'Space Invaders' gambling game (set 1)", MACHINE_SUPPORTS_SAVE )
+GAME( 199?, unksiga,  unksig,  unkpacg,  unkfr,   unk_gambl_state, empty_init, ROT0, "<unknown>", "unknown 'Space Invaders' gambling game (set 2)", MACHINE_SUPPORTS_SAVE )

@@ -1,4 +1,4 @@
-// license:GPL-2.0+
+// license:BSD-3-Clause
 // copyright-holders:Dirk Best
 /***************************************************************************
 
@@ -29,19 +29,6 @@
 
 #pragma once
 
-
-
-//**************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_EF9369_ADD(_tag) \
-	MCFG_DEVICE_ADD(_tag, EF9369, 0) \
-
-#define MCFG_EF9369_COLOR_UPDATE_CB(_class, _method) \
-	ef9369_device::set_color_update_callback(*device, ef9369_device::color_update_delegate(&_class::_method, #_class "::" #_method, downcast<_class *>(owner)));
-
-
 //**************************************************************************
 //  TYPE DEFINITIONS
 //**************************************************************************
@@ -56,14 +43,14 @@ public:
 	typedef device_delegate<void (int entry, bool m, uint8_t ca, uint8_t cb, uint8_t cc)> color_update_delegate;
 
 	// construction/destruction
-	ef9369_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+	ef9369_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock = 0);
 
 	// configuration
-	static void set_color_update_callback(device_t &device, color_update_delegate &&cb) { downcast<ef9369_device &>(device).m_color_update_cb = std::move(cb); }
+	template <typename... T> void set_color_update_callback(T &&... args) { m_color_update_cb.set(std::forward<T>(args)...); }
 
-	DECLARE_READ8_MEMBER(data_r);
-	DECLARE_WRITE8_MEMBER(data_w);
-	DECLARE_WRITE8_MEMBER(address_w);
+	uint8_t data_r();
+	void data_w(uint8_t data);
+	void address_w(uint8_t data);
 
 	static constexpr int NUMCOLORS = 16;
 

@@ -1,6 +1,5 @@
 // license:BSD-3-Clause
 // copyright-holders:Juergen Buchmueller
-
 /*****************************************************************************
  *
  *   pps4.c
@@ -78,14 +77,15 @@
 
 #include "emu.h"
 #include "pps4.h"
+#include "pps4dasm.h"
 #include "debugger.h"
 
 
 #define VERBOSE 0       //!< set to 1 to log certain instruction conditions
 #include "logmacro.h"
 
-DEFINE_DEVICE_TYPE(PPS4,   pps4_device,   "pps4",   "PPS4-4")
-DEFINE_DEVICE_TYPE(PPS4_2, pps4_2_device, "pps4_2", "PPS-4/2")
+DEFINE_DEVICE_TYPE(PPS4,   pps4_device,   "pps4",   "Rockwell PPS4-4")
+DEFINE_DEVICE_TYPE(PPS4_2, pps4_2_device, "pps4_2", "Rockwell PPS-4/2")
 
 pps4_device::pps4_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, u32 clock)
 	: cpu_device(mconfig, type, tag, owner, clock)
@@ -123,7 +123,7 @@ device_memory_interface::space_config_vector pps4_device::memory_space_config() 
  */
 u8 pps4_device::M()
 {
-	u8 ret = m_data->read_byte(m_B & ~m_SAG);
+	u8 ret = m_data.read_byte(m_B & ~m_SAG);
 	m_SAG = 0;
 	return ret;
 }
@@ -135,14 +135,13 @@ u8 pps4_device::M()
  */
 void pps4_device::W(u8 data)
 {
-	m_data->write_byte(m_B & ~m_SAG, data);
+	m_data.write_byte(m_B & ~m_SAG, data);
 	m_SAG = 0;
 }
 
-offs_t pps4_device::disasm_disassemble(std::ostream &stream, offs_t pc, const u8 *oprom, const u8 *opram, u32 options)
+std::unique_ptr<util::disasm_interface> pps4_device::create_disassembler()
 {
-	extern CPU_DISASSEMBLE( pps4 );
-	return CPU_DISASSEMBLE_NAME(pps4)(this, stream, pc, oprom, opram, options);
+	return std::make_unique<pps4_disassembler>();
 }
 
 /**
@@ -154,7 +153,7 @@ offs_t pps4_device::disasm_disassemble(std::ostream &stream, offs_t pc, const u8
  */
 inline u8 pps4_device::ROP()
 {
-	const u8 op = m_direct->read_byte(m_P & 0xFFF);
+	const u8 op = m_cache.read_byte(m_P & 0xFFF);
 	m_Ip = m_I1;         // save previous opcode
 	m_P = (m_P + 1) & 0xFFF;
 	m_icount -= 1;
@@ -170,7 +169,7 @@ inline u8 pps4_device::ROP()
  */
 inline u8 pps4_device::ARG()
 {
-	const u8 arg = m_direct->read_byte(m_P & 0xFFF);
+	const u8 arg = m_cache.read_byte(m_P & 0xFFF);
 	m_P = (m_P + 1) & 0xFFF;
 	m_icount -= 1;
 	return arg;
@@ -1238,9 +1237,9 @@ void pps4_device::iIOL()
 {
 	u8 ac = (~m_A & 15);
 	m_I2 = ARG();
-	m_io->write_byte(m_I2, ac);
+	m_io.write_byte(m_I2, ac);
 	LOG("%s: port:%02x <- %x\n", __FUNCTION__, m_I2, ac);
-	ac = m_io->read_byte(m_I2) & 15;
+	ac = m_io.read_byte(m_I2) & 15;
 	LOG("%s: port:%02x -> %x\n", __FUNCTION__, m_I2, ac);
 	m_A = ~ac & 15;
 }
@@ -1557,7 +1556,7 @@ void pps4_device::execute_run()
 {
 	do
 	{
-		debugger_instruction_hook(this, m_P);
+		debugger_instruction_hook(m_P);
 		execute_one();
 
 	} while (m_icount > 0);
@@ -1569,10 +1568,10 @@ void pps4_device::execute_run()
 
 void pps4_device::device_start()
 {
-	m_program = &space(AS_PROGRAM);
-	m_direct = &m_program->direct();
-	m_data = &space(AS_DATA);
-	m_io = &space(AS_IO);
+	space(AS_PROGRAM).cache(m_cache);
+	space(AS_PROGRAM).specific(m_program);
+	space(AS_DATA).specific(m_data);
+	space(AS_IO).specific(m_io);
 
 	save_item(NAME(m_A));
 	save_item(NAME(m_X));
@@ -1604,7 +1603,7 @@ void pps4_device::device_start()
 	state_add( STATE_GENPCBASE,"CURPC", m_P ).noshow();
 	state_add( STATE_GENFLAGS, "GENFLAGS", m_C).formatstr("%3s").noshow();
 
-	m_icountptr = &m_icount;
+	set_icountptr(m_icount);
 
 	m_dia_cb.resolve_safe(0);
 	m_dib_cb.resolve_safe(0);
@@ -1657,11 +1656,12 @@ void pps4_2_device::device_reset()
 	m_DIO = 15;     // DIO clamp
 }
 
-READ16_MEMBER(pps4_device::address_bus_r)
+u16 pps4_device::address_bus_r(address_space &space)
 {
-	if (&space == m_io || &space == m_data)
+	int id = space.spacenum();
+	if (id == AS_IO || id == AS_DATA)
 		return m_B;
-	else if (&space == m_program)
+	else if (id == AS_PROGRAM)
 		return m_P;
 	else
 		return 0;

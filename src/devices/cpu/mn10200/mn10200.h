@@ -13,12 +13,6 @@
 
 #pragma once
 
-// port setup
-#define MCFG_MN10200_READ_PORT_CB(X, _devcb) \
-	devcb = &mn10200_device::set_read_port##X##_callback(*device, DEVCB_##_devcb);
-#define MCFG_MN10200_WRITE_PORT_CB(X, _devcb) \
-	devcb = &mn10200_device::set_write_port##X##_callback(*device, DEVCB_##_devcb);
-
 enum
 {
 	MN10200_PORT0 = 0,
@@ -42,22 +36,14 @@ enum
 class mn10200_device : public cpu_device
 {
 public:
-	// static configuration helpers
-	template <class Object> static devcb_base &set_read_port0_callback(device_t &device, Object &&cb) { return downcast<mn10200_device &>(device).m_read_port0.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_read_port1_callback(device_t &device, Object &&cb) { return downcast<mn10200_device &>(device).m_read_port1.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_read_port2_callback(device_t &device, Object &&cb) { return downcast<mn10200_device &>(device).m_read_port2.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_read_port3_callback(device_t &device, Object &&cb) { return downcast<mn10200_device &>(device).m_read_port3.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_read_port4_callback(device_t &device, Object &&cb) { return downcast<mn10200_device &>(device).m_read_port4.set_callback(std::forward<Object>(cb)); }
+	// configuration helpers
+	template <std::size_t Port> auto read_port() { return m_read_port[Port].bind(); }
+	template <std::size_t Port> auto write_port() { return m_write_port[Port].bind(); }
 
-	template <class Object> static devcb_base &set_write_port0_callback(device_t &device, Object &&cb) { return downcast<mn10200_device &>(device).m_write_port0.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_write_port1_callback(device_t &device, Object &&cb) { return downcast<mn10200_device &>(device).m_write_port1.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_write_port2_callback(device_t &device, Object &&cb) { return downcast<mn10200_device &>(device).m_write_port2.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_write_port3_callback(device_t &device, Object &&cb) { return downcast<mn10200_device &>(device).m_write_port3.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_write_port4_callback(device_t &device, Object &&cb) { return downcast<mn10200_device &>(device).m_write_port4.set_callback(std::forward<Object>(cb)); }
+	uint8_t io_control_r(offs_t offset);
+	void io_control_w(offs_t offset, uint8_t data);
 
-	DECLARE_READ8_MEMBER(io_control_r);
-	DECLARE_WRITE8_MEMBER(io_control_w);
-
+	void mn1020012a_internal_map(address_map &map);
 protected:
 	static constexpr unsigned MN10200_NUM_PRESCALERS = 2;
 	static constexpr unsigned MN10200_NUM_TIMERS_8BIT = 10;
@@ -72,11 +58,11 @@ protected:
 	virtual void device_reset() override;
 
 	// device_execute_interface overrides
-	virtual uint64_t execute_clocks_to_cycles(uint64_t clocks) const override { return (clocks + 2 - 1) / 2; } // internal /2 divider
-	virtual uint64_t execute_cycles_to_clocks(uint64_t cycles) const override { return (cycles * 2); } // internal /2 divider
-	virtual uint32_t execute_min_cycles() const override { return 1; }
-	virtual uint32_t execute_max_cycles() const override { return 13+7; } // max opcode cycles + interrupt duration
-	virtual uint32_t execute_input_lines() const override { return 4; }
+	virtual uint64_t execute_clocks_to_cycles(uint64_t clocks) const noexcept override { return (clocks + 2 - 1) / 2; } // internal /2 divider
+	virtual uint64_t execute_cycles_to_clocks(uint64_t cycles) const noexcept override { return (cycles * 2); } // internal /2 divider
+	virtual uint32_t execute_min_cycles() const noexcept override { return 1; }
+	virtual uint32_t execute_max_cycles() const noexcept override { return 13+7; } // max opcode cycles + interrupt duration
+	virtual uint32_t execute_input_lines() const noexcept override { return 4; }
 	virtual void execute_run() override;
 	virtual void execute_set_input(int inputnum, int state) override;
 
@@ -87,17 +73,15 @@ protected:
 	virtual void state_string_export(const device_state_entry &entry, std::string &str) const override;
 
 	// device_disasm_interface overrides
-	virtual uint32_t disasm_min_opcode_bytes() const override { return 1; }
-	virtual uint32_t disasm_max_opcode_bytes() const override { return 7; }
-	virtual offs_t disasm_disassemble(std::ostream &stream, offs_t pc, const uint8_t *oprom, const uint8_t *opram, uint32_t options) override;
+	virtual std::unique_ptr<util::disasm_interface> create_disassembler() override;
 
 private:
 	address_space_config m_program_config;
 	address_space *m_program;
 
 	// i/o handlers
-	devcb_read8 m_read_port0, m_read_port1, m_read_port2, m_read_port3, m_read_port4;
-	devcb_write8 m_write_port0, m_write_port1, m_write_port2, m_write_port3, m_write_port4;
+	devcb_read8::array<5> m_read_port;
+	devcb_write8::array<5> m_write_port;
 
 	int m_cycles;
 

@@ -16,19 +16,11 @@
 #include "sound/hc55516.h"
 
 
-#define MCFG_WPC_ROM_REGION(_region) \
-	wpcsnd_device::static_set_romregion(*device, _region);
-
-#define MCFG_WPC_SOUND_REPLY_CALLBACK(_reply) \
-	downcast<wpcsnd_device *>(device)->set_reply_callback(DEVCB_##_reply);
-
-
-class wpcsnd_device : public device_t,
-	public device_mixer_interface
+class wpcsnd_device : public device_t, public device_mixer_interface
 {
 public:
 	// construction/destruction
-	wpcsnd_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+	wpcsnd_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock = 0);
 
 	required_device<cpu_device> m_cpu;
 	required_device<ym2151_device> m_ym2151;
@@ -37,23 +29,17 @@ public:
 	required_memory_bank m_fixedbank;
 	required_memory_region m_rom;
 
-	DECLARE_WRITE8_MEMBER(bg_speech_clock_w);
-	DECLARE_WRITE8_MEMBER(bg_speech_digit_w);
-	DECLARE_WRITE8_MEMBER(rombank_w);
-	DECLARE_READ8_MEMBER(latch_r);
-	DECLARE_WRITE8_MEMBER(latch_w);
-	DECLARE_WRITE8_MEMBER(volume_w);
-
 	void ctrl_w(uint8_t data);
 	void data_w(uint8_t data);
 	uint8_t ctrl_r();
 	uint8_t data_r();
 
-	static void static_set_romregion(device_t &device, const char *tag);
+	template <typename T> void set_romregion(T &&tag) { m_rom.set_tag(std::forward<T>(tag)); }
 
 	// callbacks
-	template <class Reply> void set_reply_callback(Reply &&cb) { m_reply_cb.set_callback(std::forward<Reply>(cb)); }
+	auto reply_callback() { return m_reply_cb.bind(); }
 
+	void wpcsnd_map(address_map &map);
 protected:
 	// overrides
 	virtual void device_start() override;
@@ -69,6 +55,13 @@ private:
 	devcb_write_line m_reply_cb;
 
 	DECLARE_WRITE_LINE_MEMBER(ym2151_irq_w);
+
+	void bg_cvsd_clock_set_w(uint8_t data);
+	void bg_cvsd_digit_clock_clear_w(uint8_t data);
+	void rombank_w(uint8_t data);
+	uint8_t latch_r();
+	void latch_w(uint8_t data);
+	void volume_w(uint8_t data);
 };
 
 DECLARE_DEVICE_TYPE(WPCSND, wpcsnd_device)

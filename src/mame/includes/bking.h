@@ -1,16 +1,22 @@
 // license:BSD-3-Clause
 // copyright-holders:Mike Balfour, Zsolt Vasvari
+#ifndef MAME_INCLUDES_BKING_H
+#define MAME_INCLUDES_BKING_H
+
+#pragma once
 
 #include "machine/taito68705interface.h"
 #include "machine/gen_latch.h"
 #include "machine/input_merger.h"
+#include "emupal.h"
 #include "screen.h"
+#include "tilemap.h"
 
 class bking_state : public driver_device
 {
 public:
-	bking_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
+	bking_state(const machine_config &mconfig, device_type type, const char *tag) :
+		driver_device(mconfig, type, tag),
 		m_playfield_ram(*this, "playfield_ram"),
 		m_audiocpu(*this, "audiocpu"),
 		m_bmcu(*this, "bmcu"),
@@ -58,39 +64,47 @@ public:
 	required_device<generic_latch_8_device> m_soundlatch;
 	required_device<input_merger_device> m_soundnmi;
 
-	DECLARE_READ8_MEMBER(bking_sndnmi_disable_r);
-	DECLARE_WRITE8_MEMBER(bking_sndnmi_enable_w);
-	DECLARE_WRITE8_MEMBER(bking_soundlatch_w);
-	DECLARE_WRITE8_MEMBER(bking3_addr_l_w);
-	DECLARE_WRITE8_MEMBER(bking3_addr_h_w);
-	DECLARE_READ8_MEMBER(bking3_extrarom_r);
-	DECLARE_READ8_MEMBER(bking3_ext_check_r);
-	DECLARE_READ8_MEMBER(bking3_mcu_status_r);
-	DECLARE_WRITE8_MEMBER(bking_xld1_w);
-	DECLARE_WRITE8_MEMBER(bking_yld1_w);
-	DECLARE_WRITE8_MEMBER(bking_xld2_w);
-	DECLARE_WRITE8_MEMBER(bking_yld2_w);
-	DECLARE_WRITE8_MEMBER(bking_xld3_w);
-	DECLARE_WRITE8_MEMBER(bking_yld3_w);
-	DECLARE_WRITE8_MEMBER(bking_cont1_w);
-	DECLARE_WRITE8_MEMBER(bking_cont2_w);
-	DECLARE_WRITE8_MEMBER(bking_cont3_w);
-	DECLARE_WRITE8_MEMBER(bking_msk_w);
-	DECLARE_WRITE8_MEMBER(bking_hitclr_w);
-	DECLARE_WRITE8_MEMBER(bking_playfield_w);
-	DECLARE_READ8_MEMBER(bking_input_port_5_r);
-	DECLARE_READ8_MEMBER(bking_input_port_6_r);
-	DECLARE_READ8_MEMBER(bking_pos_r);
-	DECLARE_WRITE8_MEMBER(unk_w);
-	DECLARE_WRITE8_MEMBER(port_b_w);
+	uint8_t bking_sndnmi_disable_r();
+	void bking_sndnmi_enable_w(uint8_t data);
+	void bking_soundlatch_w(uint8_t data);
+	void bking3_addr_l_w(uint8_t data);
+	void bking3_addr_h_w(uint8_t data);
+	uint8_t bking3_extrarom_r();
+	uint8_t bking3_ext_check_r();
+	uint8_t bking3_mcu_status_r();
+	void bking_xld1_w(uint8_t data);
+	void bking_yld1_w(uint8_t data);
+	void bking_xld2_w(uint8_t data);
+	void bking_yld2_w(uint8_t data);
+	void bking_xld3_w(uint8_t data);
+	void bking_yld3_w(uint8_t data);
+	void bking_cont1_w(uint8_t data);
+	void bking_cont2_w(uint8_t data);
+	void bking_cont3_w(uint8_t data);
+	void bking_msk_w(uint8_t data);
+	void bking_hitclr_w(uint8_t data);
+	void bking_playfield_w(offs_t offset, uint8_t data);
+	uint8_t bking_input_port_5_r();
+	uint8_t bking_input_port_6_r();
+	uint8_t bking_pos_r(offs_t offset);
+	void unk_w(uint8_t data);
+	void port_b_w(uint8_t data);
 	TILE_GET_INFO_MEMBER(get_tile_info);
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
 	virtual void video_start() override;
-	DECLARE_PALETTE_INIT(bking);
+	void bking_palette(palette_device &palette) const;
 	DECLARE_MACHINE_START(bking3);
 	DECLARE_MACHINE_RESET(bking3);
 	DECLARE_MACHINE_RESET(common);
 	uint32_t screen_update_bking(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 	DECLARE_WRITE_LINE_MEMBER(screen_vblank_bking);
+	void bking(machine_config &config);
+	void bking3(machine_config &config);
+	void bking3_io_map(address_map &map);
+	void bking_audio_map(address_map &map);
+	void bking_io_map(address_map &map);
+	void bking_map(address_map &map);
 };
+
+#endif // MAME_INCLUDES_BKING_H

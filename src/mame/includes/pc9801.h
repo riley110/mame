@@ -1,27 +1,28 @@
 // license:BSD-3-Clause
 // copyright-holders:Angelo Salese,Carl
+#ifndef MAME_INCLUDES_PC9801_H
+#define MAME_INCLUDES_PC9801_H
 
 #pragma once
-
-#ifndef __PC9801__
-#define __PC9801__
 
 #include "cpu/i386/i386.h"
 #include "cpu/i86/i286.h"
 #include "cpu/i86/i86.h"
 #include "cpu/nec/nec.h"
 
+#include "imagedev/floppy.h"
 #include "machine/am9517a.h"
 #include "machine/bankdev.h"
 #include "machine/buffer.h"
 #include "machine/i8251.h"
 #include "machine/i8255.h"
-#include "machine/latch.h"
+#include "machine/output_latch.h"
 #include "machine/pic8259.h"
 #include "machine/pit8253.h"
 #include "machine/ram.h"
 #include "machine/timer.h"
 #include "machine/upd1990a.h"
+#include "machine/pc9801_memsw.h"
 #include "machine/upd765.h"
 
 #include "bus/scsi/pc9801_sasi.h"
@@ -43,10 +44,11 @@
 #include "machine/pc9801_kbd.h"
 #include "machine/pc9801_cd.h"
 
-#include "machine/idectrl.h"
-#include "machine/idehd.h"
+#include "bus/ata/atadev.h"
+#include "bus/ata/ataintf.h"
 
 #include "debugger.h"
+#include "emupal.h"
 #include "screen.h"
 #include "softlist.h"
 #include "speaker.h"
@@ -84,9 +86,12 @@ public:
 		m_pit8253(*this, "pit8253"),
 		m_pic1(*this, "pic8259_master"),
 		m_pic2(*this, "pic8259_slave"),
+		m_ppi_sys(*this, "ppi8255_sys"),
+		m_ppi_prn(*this, "ppi8255_prn"),
 		m_fdc_2hd(*this, "upd765_2hd"),
 		m_fdc_2dd(*this, "upd765_2dd"),
 		m_rtc(*this, UPD1990A_TAG),
+		m_memsw(*this, "memsw"),
 		m_keyb(*this, "keyb"),
 		m_sio(*this, UPD8251_TAG),
 		m_hgdc1(*this, "upd7220_chr"),
@@ -95,8 +100,7 @@ public:
 		m_sasi_data_out(*this, "sasi_data_out"),
 		m_sasi_data_in(*this, "sasi_data_in"),
 		m_sasi_ctrl_in(*this, "sasi_ctrl_in"),
-		m_ide1(*this, "ide1"),
-		m_ide2(*this, "ide2"),
+		m_ide(*this, "ide%u", 1U),
 		m_video_ram_1(*this, "video_ram_1"),
 		m_video_ram_2(*this, "video_ram_2"),
 		m_ext_gvram(*this, "ext_gvram"),
@@ -109,14 +113,36 @@ public:
 	{
 	}
 
+	void pc9821v20(machine_config &config);
+	void pc9801ux(machine_config &config);
+	void pc9801vm(machine_config &config);
+	void pc9801(machine_config &config);
+	void pc9801bx2(machine_config &config);
+	void pc9801rs(machine_config &config);
+	void pc9821(machine_config &config);
+	void pc9821as(machine_config &config);
+	void pc9821ap2(machine_config &config);
+	DECLARE_CUSTOM_INPUT_MEMBER(system_type_r);
+	void init_pc9801_kanji();
+	void init_pc9801vm_kanji();
+
+protected:
+	virtual void video_start() override;
+
+private:
+	static void cdrom_headphones(device_t *device);
+
 	required_device<cpu_device> m_maincpu;
 	required_device<am9517a_device> m_dmac;
 	required_device<pit8253_device> m_pit8253;
 	required_device<pic8259_device> m_pic1;
 	required_device<pic8259_device> m_pic2;
+	required_device<i8255_device> m_ppi_sys;
+	required_device<i8255_device> m_ppi_prn;
 	required_device<upd765a_device> m_fdc_2hd;
 	optional_device<upd765a_device> m_fdc_2dd;
 	required_device<upd1990a_device> m_rtc;
+	required_device<pc9801_memsw_device> m_memsw;
 	required_device<pc9801_kbd_device> m_keyb;
 	required_device<i8251_device> m_sio;
 	required_device<upd7220_device> m_hgdc1;
@@ -125,8 +151,7 @@ public:
 	optional_device<output_latch_device> m_sasi_data_out;
 	optional_device<input_buffer_device> m_sasi_data_in;
 	optional_device<input_buffer_device> m_sasi_ctrl_in;
-	optional_device<ata_interface_device> m_ide1;
-	optional_device<ata_interface_device> m_ide2;
+	optional_device_array<ata_interface_device, 2> m_ide;
 	required_shared_ptr<uint16_t> m_video_ram_1;
 	required_shared_ptr<uint16_t> m_video_ram_2;
 	optional_shared_ptr<uint32_t> m_ext_gvram;
@@ -137,114 +162,114 @@ public:
 	required_device<palette_device> m_palette;
 	required_device<screen_device> m_screen;
 
-	DECLARE_WRITE_LINE_MEMBER( write_uart_clock );
-	DECLARE_WRITE8_MEMBER(rtc_w);
-	DECLARE_WRITE8_MEMBER(dmapg4_w);
-	DECLARE_WRITE8_MEMBER(dmapg8_w);
-	DECLARE_WRITE8_MEMBER(nmi_ctrl_w);
-	DECLARE_WRITE8_MEMBER(vrtc_clear_w);
-	DECLARE_WRITE8_MEMBER(pc9801_video_ff_w);
-	DECLARE_READ8_MEMBER(txt_scrl_r);
-	DECLARE_WRITE8_MEMBER(txt_scrl_w);
-	DECLARE_READ8_MEMBER(grcg_r);
-	DECLARE_WRITE8_MEMBER(grcg_w);
-	DECLARE_WRITE16_MEMBER(egc_w);
-	DECLARE_READ8_MEMBER(pc9801_a0_r);
-	DECLARE_WRITE8_MEMBER(pc9801_a0_w);
-	DECLARE_READ8_MEMBER(fdc_2hd_ctrl_r);
-	DECLARE_WRITE8_MEMBER(fdc_2hd_ctrl_w);
-	DECLARE_READ8_MEMBER(fdc_2dd_ctrl_r);
-	DECLARE_WRITE8_MEMBER(fdc_2dd_ctrl_w);
-	DECLARE_READ16_MEMBER(tvram_r);
-	DECLARE_WRITE16_MEMBER(tvram_w);
-	DECLARE_READ8_MEMBER(gvram_r);
-	DECLARE_WRITE8_MEMBER(gvram_w);
-	DECLARE_WRITE8_MEMBER(pc9801rs_mouse_freq_w);
-	DECLARE_CUSTOM_INPUT_MEMBER(system_type_r);
-	DECLARE_READ16_MEMBER(grcg_gvram_r);
-	DECLARE_WRITE16_MEMBER(grcg_gvram_w);
-	DECLARE_READ16_MEMBER(grcg_gvram0_r);
-	DECLARE_WRITE16_MEMBER(grcg_gvram0_w);
+	void rtc_w(uint8_t data);
+	void dmapg4_w(offs_t offset, uint8_t data);
+	void dmapg8_w(offs_t offset, uint8_t data);
+	void nmi_ctrl_w(offs_t offset, uint8_t data);
+	void vrtc_clear_w(uint8_t data);
+	void pc9801_video_ff_w(uint8_t data);
+	uint8_t txt_scrl_r(offs_t offset);
+	void txt_scrl_w(offs_t offset, uint8_t data);
+	uint8_t grcg_r(offs_t offset);
+	void grcg_w(offs_t offset, uint8_t data);
+	void egc_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint8_t pc9801_a0_r(offs_t offset);
+	void pc9801_a0_w(offs_t offset, uint8_t data);
+	uint8_t fdc_2hd_ctrl_r();
+	void fdc_2hd_ctrl_w(uint8_t data);
+	uint8_t fdc_2dd_ctrl_r();
+	void fdc_2dd_ctrl_w(uint8_t data);
+	uint16_t tvram_r(offs_t offset, uint16_t mem_mask = ~0);
+	void tvram_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint8_t gvram_r(offs_t offset);
+	void gvram_w(offs_t offset, uint8_t data);
+	void pc9801rs_mouse_freq_w(offs_t offset, uint8_t data);
+	uint16_t grcg_gvram_r(offs_t offset, uint16_t mem_mask = ~0);
+	void grcg_gvram_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t grcg_gvram0_r(offs_t offset, uint16_t mem_mask = ~0);
+	void grcg_gvram0_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
 
-	DECLARE_READ16_MEMBER(pc9821_grcg_gvram_r);
-	DECLARE_WRITE16_MEMBER(pc9821_grcg_gvram_w);
-	DECLARE_READ16_MEMBER(pc9821_grcg_gvram0_r);
-	DECLARE_WRITE16_MEMBER(pc9821_grcg_gvram0_w);
+	uint16_t pc9821_grcg_gvram_r(offs_t offset, uint16_t mem_mask = ~0);
+	void pc9821_grcg_gvram_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t pc9821_grcg_gvram0_r(offs_t offset, uint16_t mem_mask = ~0);
+	void pc9821_grcg_gvram0_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
 
-	DECLARE_READ16_MEMBER(upd7220_grcg_r);
-	DECLARE_WRITE16_MEMBER(upd7220_grcg_w);
+	uint16_t upd7220_grcg_r(offs_t offset, uint16_t mem_mask = ~0);
+	void upd7220_grcg_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
 
-	DECLARE_READ8_MEMBER(ide_ctrl_r);
-	DECLARE_WRITE8_MEMBER(ide_ctrl_w);
-	DECLARE_READ16_MEMBER(ide_cs0_r);
-	DECLARE_WRITE16_MEMBER(ide_cs0_w);
-	DECLARE_READ16_MEMBER(ide_cs1_r);
-	DECLARE_WRITE16_MEMBER(ide_cs1_w);
-	DECLARE_WRITE_LINE_MEMBER(ide1_irq_w);
-	DECLARE_WRITE_LINE_MEMBER(ide2_irq_w);
+	uint8_t ide_ctrl_r();
+	void ide_ctrl_w(uint8_t data);
+	uint16_t ide_cs0_r(offs_t offset, uint16_t mem_mask = ~0);
+	void ide_cs0_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t ide_cs1_r(offs_t offset, uint16_t mem_mask = ~0);
+	void ide_cs1_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
 
-	DECLARE_WRITE8_MEMBER(sasi_data_w);
-	DECLARE_READ8_MEMBER(sasi_data_r);
+	void sasi_data_w(uint8_t data);
+	uint8_t sasi_data_r();
 	DECLARE_WRITE_LINE_MEMBER(write_sasi_io);
 	DECLARE_WRITE_LINE_MEMBER(write_sasi_req);
-	DECLARE_READ8_MEMBER(sasi_status_r);
-	DECLARE_WRITE8_MEMBER(sasi_ctrl_w);
+	uint8_t sasi_status_r();
+	void sasi_ctrl_w(uint8_t data);
 
-	DECLARE_READ8_MEMBER(pc9801rs_knjram_r);
-	DECLARE_WRITE8_MEMBER(pc9801rs_knjram_w);
-	DECLARE_WRITE8_MEMBER(pc9801rs_bank_w);
-	DECLARE_READ8_MEMBER(f0_r);
+	uint8_t pc9801rs_knjram_r(offs_t offset);
+	void pc9801rs_knjram_w(offs_t offset, uint8_t data);
+	void pc9801rs_bank_w(offs_t offset, uint8_t data);
+	uint8_t f0_r(offs_t offset);
 
-	DECLARE_READ8_MEMBER(a20_ctrl_r);
-	DECLARE_WRITE8_MEMBER(a20_ctrl_w);
-	DECLARE_READ8_MEMBER(fdc_mode_ctrl_r);
-	DECLARE_WRITE8_MEMBER(fdc_mode_ctrl_w);
-//  DECLARE_READ8_MEMBER(pc9801rs_2dd_r);
-//  DECLARE_WRITE8_MEMBER(pc9801rs_2dd_w);
-	DECLARE_WRITE8_MEMBER(pc9801rs_video_ff_w);
-	DECLARE_WRITE8_MEMBER(pc9801rs_a0_w);
-	DECLARE_WRITE8_MEMBER(pc9821_video_ff_w);
-	DECLARE_READ8_MEMBER(pc9821_a0_r);
-	DECLARE_WRITE8_MEMBER(pc9821_a0_w);
-	DECLARE_READ8_MEMBER(access_ctrl_r);
-	DECLARE_WRITE8_MEMBER(access_ctrl_w);
-	DECLARE_READ8_MEMBER(midi_r);
-//  DECLARE_READ8_MEMBER(winram_r);
-//  DECLARE_WRITE8_MEMBER(winram_w);
-	DECLARE_READ8_MEMBER(pic_r);
-	DECLARE_WRITE8_MEMBER(pic_w);
+	uint8_t a20_ctrl_r(offs_t offset);
+	void a20_ctrl_w(offs_t offset, uint8_t data);
+	uint8_t fdc_mode_ctrl_r();
+	void fdc_mode_ctrl_w(uint8_t data);
+//  uint8_t pc9801rs_2dd_r();
+//  void pc9801rs_2dd_w(uint8_t data);
+	void pc9801rs_video_ff_w(offs_t offset, uint8_t data);
+	void pc9801rs_a0_w(offs_t offset, uint8_t data);
+	void pc9821_video_ff_w(offs_t offset, uint8_t data);
+	uint8_t pc9821_a0_r(offs_t offset);
+	void pc9821_a0_w(offs_t offset, uint8_t data);
+	uint8_t access_ctrl_r(offs_t offset);
+	void access_ctrl_w(offs_t offset, uint8_t data);
+	uint8_t midi_r();
+//  uint8_t winram_r();
+//  void winram_w(uint8_t data);
+	uint8_t pic_r(offs_t offset);
+	void pic_w(offs_t offset, uint8_t data);
 
-	DECLARE_READ8_MEMBER(sdip_0_r);
-	DECLARE_READ8_MEMBER(sdip_1_r);
-	DECLARE_READ8_MEMBER(sdip_2_r);
-	DECLARE_READ8_MEMBER(sdip_3_r);
-	DECLARE_READ8_MEMBER(sdip_4_r);
-	DECLARE_READ8_MEMBER(sdip_5_r);
-	DECLARE_READ8_MEMBER(sdip_6_r);
-	DECLARE_READ8_MEMBER(sdip_7_r);
-	DECLARE_READ8_MEMBER(sdip_8_r);
-	DECLARE_READ8_MEMBER(sdip_9_r);
-	DECLARE_READ8_MEMBER(sdip_a_r);
-	DECLARE_READ8_MEMBER(sdip_b_r);
+	uint8_t sdip_0_r(offs_t offset);
+	uint8_t sdip_1_r(offs_t offset);
+	uint8_t sdip_2_r(offs_t offset);
+	uint8_t sdip_3_r(offs_t offset);
+	uint8_t sdip_4_r(offs_t offset);
+	uint8_t sdip_5_r(offs_t offset);
+	uint8_t sdip_6_r(offs_t offset);
+	uint8_t sdip_7_r(offs_t offset);
+	uint8_t sdip_8_r(offs_t offset);
+	uint8_t sdip_9_r(offs_t offset);
+	uint8_t sdip_a_r(offs_t offset);
+	uint8_t sdip_b_r(offs_t offset);
 
-	DECLARE_WRITE8_MEMBER(sdip_0_w);
-	DECLARE_WRITE8_MEMBER(sdip_1_w);
-	DECLARE_WRITE8_MEMBER(sdip_2_w);
-	DECLARE_WRITE8_MEMBER(sdip_3_w);
-	DECLARE_WRITE8_MEMBER(sdip_4_w);
-	DECLARE_WRITE8_MEMBER(sdip_5_w);
-	DECLARE_WRITE8_MEMBER(sdip_6_w);
-	DECLARE_WRITE8_MEMBER(sdip_7_w);
-	DECLARE_WRITE8_MEMBER(sdip_8_w);
-	DECLARE_WRITE8_MEMBER(sdip_9_w);
-	DECLARE_WRITE8_MEMBER(sdip_a_w);
-	DECLARE_WRITE8_MEMBER(sdip_b_w);
+	void sdip_0_w(offs_t offset, uint8_t data) ;
+	void sdip_1_w(offs_t offset, uint8_t data) ;
+	void sdip_2_w(offs_t offset, uint8_t data) ;
+	void sdip_3_w(offs_t offset, uint8_t data) ;
+	void sdip_4_w(offs_t offset, uint8_t data) ;
+	void sdip_5_w(offs_t offset, uint8_t data) ;
+	void sdip_6_w(offs_t offset, uint8_t data) ;
+	void sdip_7_w(offs_t offset, uint8_t data) ;
+	void sdip_8_w(offs_t offset, uint8_t data) ;
+	void sdip_9_w(offs_t offset, uint8_t data) ;
+	void sdip_a_w(offs_t offset, uint8_t data) ;
+	void sdip_b_w(offs_t offset, uint8_t data) ;
 
-	DECLARE_READ8_MEMBER(window_bank_r);
-	DECLARE_WRITE8_MEMBER(window_bank_w);
-	DECLARE_READ16_MEMBER(timestamp_r);
-	DECLARE_READ8_MEMBER(ext2_video_ff_r);
-	DECLARE_WRITE8_MEMBER(ext2_video_ff_w);
+	uint8_t as_unkdev_data_r(offs_t offset);
+	void as_unkdev_data_w(offs_t offset, uint8_t data);
+	void as_unkdev_addr_w(offs_t offset, uint8_t data);
+
+	uint8_t window_bank_r(offs_t offset);
+	void window_bank_w(offs_t offset, uint8_t data);
+	uint16_t timestamp_r(offs_t offset);
+	uint8_t ext2_video_ff_r();
+	void ext2_video_ff_w(uint8_t data);
 
 	DECLARE_FLOPPY_FORMATS( floppy_formats );
 	UPD7220_DISPLAY_PIXELS_MEMBER( hgdc_display_pixels );
@@ -261,49 +286,61 @@ public:
 	DECLARE_MACHINE_RESET(pc9801rs);
 	DECLARE_MACHINE_RESET(pc9821);
 
-	DECLARE_PALETTE_INIT(pc9801);
-	INTERRUPT_GEN_MEMBER(vrtc_irq);
-	DECLARE_READ8_MEMBER(get_slave_ack);
+	void pc9801_palette(palette_device &palette) const;
+	DECLARE_WRITE_LINE_MEMBER(vrtc_irq);
+	uint8_t get_slave_ack(offs_t offset);
 	DECLARE_WRITE_LINE_MEMBER(dma_hrq_changed);
 	DECLARE_WRITE_LINE_MEMBER(tc_w);
-	DECLARE_READ8_MEMBER(dma_read_byte);
-	DECLARE_WRITE8_MEMBER(dma_write_byte);
+	uint8_t dma_read_byte(offs_t offset);
+	void dma_write_byte(offs_t offset, uint8_t data);
 	DECLARE_WRITE_LINE_MEMBER(dack0_w);
 	DECLARE_WRITE_LINE_MEMBER(dack1_w);
 	DECLARE_WRITE_LINE_MEMBER(dack2_w);
 	DECLARE_WRITE_LINE_MEMBER(dack3_w);
-	DECLARE_WRITE8_MEMBER(ppi_sys_portc_w);
+	void ppi_sys_portc_w(uint8_t data);
 
 	DECLARE_WRITE_LINE_MEMBER(fdc_2dd_irq);
 	DECLARE_WRITE_LINE_MEMBER(pc9801rs_fdc_irq);
 	DECLARE_WRITE_LINE_MEMBER(pc9801rs_fdc_drq);
 
-	DECLARE_READ8_MEMBER(ppi_mouse_porta_r);
-	DECLARE_WRITE8_MEMBER(ppi_mouse_porta_w);
-	DECLARE_WRITE8_MEMBER(ppi_mouse_portb_w);
-	DECLARE_WRITE8_MEMBER(ppi_mouse_portc_w);
+	uint8_t ppi_mouse_porta_r();
+	void ppi_mouse_porta_w(uint8_t data);
+	void ppi_mouse_portb_w(uint8_t data);
+	void ppi_mouse_portc_w(uint8_t data);
 	TIMER_DEVICE_CALLBACK_MEMBER( mouse_irq_cb );
-	DECLARE_READ8_MEMBER(unk_r);
+	uint8_t unk_r();
 
-	DECLARE_DRIVER_INIT(pc9801_kanji);
 
 	uint32_t screen_update(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect);
 	uint32_t a20_286(bool state);
 
-protected:
-	virtual void video_start() override;
-	virtual void device_timer(emu_timer &timer, device_timer_id id, int param, void *ptr) override;
-	virtual void device_reset_after_children() override;
+	void pc9801_keyboard(machine_config &config);
+	void pc9801_mouse(machine_config &config);
+	void pc9801_cbus(machine_config &config);
+	void pc9801_sasi(machine_config &config);
+	void pc9801_ide(machine_config &config);
+	void pc9801_common(machine_config &config);
+	void ipl_bank(address_map &map);
+	void pc9801_common_io(address_map &map);
+	void pc9801_io(address_map &map);
+	void pc9801_map(address_map &map);
+	void pc9801rs_io(address_map &map);
+	void pc9801rs_map(address_map &map);
+	void pc9801ux_io(address_map &map);
+	void pc9801ux_map(address_map &map);
+	void pc9821_io(address_map &map);
+	void pc9821_map(address_map &map);
+	void pc9821as_io(address_map &map);
+	void upd7220_1_map(address_map &map);
+	void upd7220_2_map(address_map &map);
+	void upd7220_grcg_2_map(address_map &map);
 
-
-private:
 	enum
 	{
 		TIMER_VBIRQ
 	};
 
 	inline void set_dma_channel(int channel, int state);
-	emu_timer *m_vbirq;
 	uint8_t *m_char_rom;
 	uint8_t *m_kanji_rom;
 
@@ -340,7 +377,6 @@ private:
 	}m_mouse;
 
 	uint8_t m_ide_sel;
-	bool m_ide1_irq, m_ide2_irq;
 
 	/* PC9801RS specific, move to specific state */
 	uint8_t m_gate_a20; //A20 line
@@ -354,8 +390,7 @@ private:
 	struct {
 		uint8_t pal_entry;
 		uint8_t r[0x100],g[0x100],b[0x100];
-		uint16_t read_bank;
-		uint16_t write_bank;
+		uint16_t bank[2];
 	}m_analog256;
 	struct {
 		uint8_t mode;
@@ -368,6 +403,7 @@ private:
 
 	/* PC9821 specific */
 	uint8_t m_sdip[24], m_sdip_bank;
+	uint8_t m_unkdev0468[0x100], m_unkdev0468_addr;
 	uint8_t m_pc9821_window_bank;
 	uint8_t m_ext2_ff;
 	uint8_t m_sys_type;
@@ -390,5 +426,4 @@ private:
 	uint16_t egc_shift(int plane, uint16_t val);
 };
 
-
-#endif
+#endif // MAME_INCLUDES_PC9801_H

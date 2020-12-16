@@ -45,24 +45,25 @@
 #include "h8.h"
 #include "h8_intc.h"
 
-#define MCFG_H8_WATCHDOG_ADD( _tag, intc, irq, type )   \
-	MCFG_DEVICE_ADD( _tag, H8_WATCHDOG, 0 ) \
-	downcast<h8_watchdog_device *>(device)->set_info(intc, irq, type);
-
 class h8_watchdog_device : public device_t {
 public:
 	enum { B, H, S };
 
 	h8_watchdog_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+	h8_watchdog_device(const machine_config &mconfig, const char *tag, device_t *owner, const char *intc, int irq, int type)
+		: h8_watchdog_device(mconfig, tag, owner, 0)
+	{
+		set_info(intc, irq, type);
+	}
 
 	void set_info(const char *intc, int irq, int type);
 
 	uint64_t internal_update(uint64_t current_time);
 
-	DECLARE_READ16_MEMBER(wd_r);
-	DECLARE_WRITE16_MEMBER(wd_w);
-	DECLARE_READ16_MEMBER(rst_r);
-	DECLARE_WRITE16_MEMBER(rst_w);
+	uint16_t wd_r();
+	void wd_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t rst_r();
+	void rst_w(uint16_t data);
 
 protected:
 	virtual void device_start() override;

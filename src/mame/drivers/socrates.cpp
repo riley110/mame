@@ -2,12 +2,17 @@
 // copyright-holders:Jonathan Gevaryahu
 /******************************************************************************
 *
-*  V-tech Socrates Driver
-*  Copyright (C) 2009-2013 Jonathan Gevaryahu AKA Lord Nightmare
+*  V-tech Socrates-series devices
+*  Copyright (C) 2009-2020 Jonathan Gevaryahu AKA Lord Nightmare
 *  with dumping help from Kevin 'kevtris' Horton
 *
+*  The devices in this driver all use a similar ASIC, presumably produced by
+*  Toshiba for Vtech/Yeno, in a QFP package with 100 pins (30+20+30+20)
+*  The asic variants seen in the wild are:
+*  27-0769 TC17G032AF-0248 (Socrates NTSC)
+*  27-0883 1732-8277 (Video Painter and Socrates PAL)
 *
-TODO:
+TODO (socrates):
     * The speech chip is a Toshiba tc8802AF (which is pin and speech
       compatible with the older Toshiba t6803, but adds vsm rom read mode and
       apparently does away with the melody mode); the chip is running at
@@ -88,6 +93,7 @@ TODO:
 #include "bus/generic/slot.h"
 #include "machine/bankdev.h"
 
+#include "emupal.h"
 #include "screen.h"
 #include "softlist.h"
 #include "speaker.h"
@@ -96,15 +102,8 @@ TODO:
 class socrates_state : public driver_device
 {
 public:
-	enum
-	{
-		TIMER_KBMCU_SIM,
-		TIMER_CLEAR_SPEECH,
-		TIMER_CLEAR_IRQ
-	};
-
-	socrates_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
+	socrates_state(const machine_config &mconfig, device_type type, const char *tag) :
+		driver_device(mconfig, type, tag),
 		m_maincpu(*this, "maincpu"),
 		m_sound(*this, "soc_snd"),
 		m_screen(*this, "screen"),
@@ -116,11 +115,28 @@ public:
 		m_rambank1(*this, "rambank1"),
 		m_rambank2(*this, "rambank2"),
 		m_kbdrow(*this, "IN%u", 0)
-		{ }
+	{ }
+
+	void socrates(machine_config &config);
+	void socrates_pal(machine_config &config);
+	void vpainter_pal(machine_config &config);
+
+	void init_socrates();
+	void init_iqunlimz();
+	void init_vpainter();
+
+protected:
+	enum
+	{
+		TIMER_KBMCU_SIM,
+		TIMER_CLEAR_SPEECH,
+		TIMER_CLEAR_IRQ
+	};
+
 	required_device<cpu_device> m_maincpu;
 	required_device<socrates_snd_device> m_sound;
 	required_device<screen_device> m_screen;
-	required_device<generic_slot_device> m_cart;
+	optional_device<generic_slot_device> m_cart;
 	memory_region *m_cart_reg;
 	required_memory_region m_bios_reg;
 	required_memory_region m_vram_reg;
@@ -130,14 +146,12 @@ public:
 	required_device<address_map_bank_device> m_rambank2;
 	optional_ioport_array<0xC> m_kbdrow;
 
-	rgb_t m_palette_val[256];
-
 	uint8_t m_rom_bank[2];
 	uint8_t m_ram_bank;
 	uint16_t m_scroll_offset;
 	uint16_t m_kb_spi_buffer;
 	bool m_kb_spi_request;
-	uint8_t m_kbmcu_type; // 0 for socrates, 1 for iqunlimz
+	uint8_t m_kbmcu_type; // 0 for socrates, 1 for iqunlimz, 2 for vpainter
 	uint16_t m_oldkeyvalue; // previous key pressed
 	uint16_t m_keyrepeat_holdoffcounter; // keyrepeat holdoff countdown
 	uint8_t m_io40_latch; // what was last written to speech reg (for open bus)?
@@ -147,39 +161,7 @@ public:
 	uint8_t m_speech_dummy_read; // have we done a dummy read yet?
 	uint8_t m_speech_load_address_count; // number of times load address has happened
 	uint8_t m_speech_load_settings_count; // number of times load settings has happened
-	DECLARE_READ8_MEMBER(common_rom_bank_r);
-	DECLARE_WRITE8_MEMBER(common_rom_bank_w);
-	DECLARE_READ8_MEMBER(common_ram_bank_r);
-	DECLARE_WRITE8_MEMBER(common_ram_bank_w);
-	DECLARE_READ8_MEMBER(socrates_cart_r);
-	DECLARE_READ8_MEMBER(read_f3);
-	DECLARE_WRITE8_MEMBER(kbmcu_reset);
-	DECLARE_READ8_MEMBER(status_and_speech);
-	DECLARE_WRITE8_MEMBER(speech_command);
-	DECLARE_READ8_MEMBER(keyboard_buffer_read);
-	DECLARE_WRITE8_MEMBER(keyboard_buffer_update);
-	void kbmcu_sim_reset();
-	void kbmcu_sim_fifo_enqueue(uint16_t data);
-	uint16_t kbmcu_sim_fifo_dequeue();
-	uint16_t kbmcu_sim_fifo_peek();
-	void kbmcu_sim_fifo_head_clear();
-	DECLARE_WRITE8_MEMBER(reset_speech);
-	DECLARE_WRITE8_MEMBER(socrates_scroll_w);
-	DECLARE_WRITE8_MEMBER(socrates_sound_w);
-	DECLARE_DRIVER_INIT(socrates);
-	DECLARE_DRIVER_INIT(iqunlimz);
-	virtual void machine_reset() override;
-	virtual void machine_start() override;
-	virtual void video_start() override;
-	DECLARE_PALETTE_INIT(socrates);
-	uint32_t screen_update_socrates(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
-	INTERRUPT_GEN_MEMBER(assert_irq);
-	TIMER_CALLBACK_MEMBER(kbmcu_sim_cb);
-	TIMER_CALLBACK_MEMBER(clear_speech_cb);
-	TIMER_CALLBACK_MEMBER(clear_irq_cb);
-	void socrates_update_kb();
-	void socrates_check_kb_latch();
-	rgb_t socrates_create_color(uint8_t color);
+
 	emu_timer *m_kbmcu_sim_timer;
 	emu_timer *m_clear_speech_timer;
 	emu_timer *m_clear_irq_timer;
@@ -192,30 +174,78 @@ public:
 		uint8_t    count;
 	} m_kb_queue;
 
-protected:
+	void socrates_palette(palette_device &palete) const;
+
+	uint8_t common_rom_bank_r(offs_t offset);
+	void common_rom_bank_w(offs_t offset, uint8_t data);
+	uint8_t common_ram_bank_r();
+	void common_ram_bank_w(uint8_t data);
+	uint8_t socrates_cart_r(offs_t offset);
+	uint8_t read_f3();
+	void kbmcu_reset(uint8_t data);
+	uint8_t socrates_status_r();
+	void speech_command(uint8_t data);
+	uint8_t keyboard_buffer_read(offs_t offset);
+	void keyboard_buffer_update(uint8_t data);
+	void kbmcu_sim_reset();
+	void kbmcu_sim_fifo_enqueue(uint16_t data);
+	uint16_t kbmcu_sim_fifo_dequeue();
+	uint16_t kbmcu_sim_fifo_peek();
+	void kbmcu_sim_fifo_head_clear();
+	void reset_speech(uint8_t data);
+	void socrates_scroll_w(offs_t offset, uint8_t data);
+	void socrates_sound_w(offs_t offset, uint8_t data);
+
+	virtual void machine_reset() override;
+	virtual void machine_start() override;
+	virtual void video_start() override;
+
+	uint32_t screen_update_socrates(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
+	INTERRUPT_GEN_MEMBER(assert_irq);
+	TIMER_CALLBACK_MEMBER(kbmcu_sim_cb);
+	TIMER_CALLBACK_MEMBER(clear_speech_cb);
+	TIMER_CALLBACK_MEMBER(clear_irq_cb);
+	void socrates_update_kb();
+	void socrates_check_kb_latch();
+	static rgb_t socrates_create_color(uint8_t color);
+
+	void socrates_rambank_map(address_map &map);
+	void socrates_rombank_map(address_map &map);
+	void socrates_io(address_map &map);
+	void socrates_mem(address_map &map);
+
 	virtual void device_timer(emu_timer &timer, device_timer_id id, int param, void *ptr) override;
 };
 
 
-class iqunlim_state : public socrates_state
+class iqunlimz_state : public socrates_state
 {
 public:
-	iqunlim_state(const machine_config &mconfig, device_type type, const char *tag)
-		: socrates_state(mconfig, type, tag)
-		{ }
+	iqunlimz_state(const machine_config &mconfig, device_type type, const char *tag) :
+		socrates_state(mconfig, type, tag)
+	{ }
 
-	uint32_t screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
-	DECLARE_WRITE8_MEMBER( colors_w );
-	DECLARE_READ8_MEMBER( video_regs_r );
-	DECLARE_WRITE8_MEMBER( video_regs_w );
-	DECLARE_READ8_MEMBER( status_r );
+	void iqunlimz(machine_config &config);
+
 	DECLARE_INPUT_CHANGED_MEMBER( send_input );
 
 protected:
 	virtual void machine_reset() override;
-	int get_color(int index, int y);
 
 private:
+	uint32_t screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
+	void colors_w(offs_t offset, uint8_t data);
+	uint8_t video_regs_r(offs_t offset);
+	void video_regs_w(offs_t offset, uint8_t data);
+	uint8_t status_r();
+
+	void iqunlimz_io(address_map &map);
+	void iqunlimz_mem(address_map &map);
+	void iqunlimz_rambank_map(address_map &map);
+	void iqunlimz_rombank_map(address_map &map);
+
+	int get_color(int index, int y);
+
 	uint8_t   m_colors[8];
 	uint8_t   m_video_regs[4];
 
@@ -314,7 +344,7 @@ void socrates_state::kbmcu_sim_fifo_head_clear()
 void socrates_state::machine_start()
 {
 	m_kbmcu_sim_timer = timer_alloc(TIMER_KBMCU_SIM);
-	m_kbmcu_sim_timer->adjust(attotime::from_hz((XTAL_21_4772MHz/6)/3000)); // timer rate is a massive guess, depends on instructions per loop of mcu
+	m_kbmcu_sim_timer->adjust(attotime::from_hz((XTAL(21'477'272)/6)/3000)); // timer rate is a massive guess, depends on instructions per loop of mcu
 	m_clear_speech_timer = timer_alloc(TIMER_CLEAR_SPEECH);
 	m_clear_irq_timer = timer_alloc(TIMER_CLEAR_IRQ);
 	save_item(NAME(m_rom_bank));
@@ -342,7 +372,7 @@ void socrates_state::machine_start()
 
 void socrates_state::machine_reset()
 {
-	m_cart_reg = memregion(util::string_format("%s%s", m_cart->tag(), GENERIC_ROM_REGION_TAG).c_str());
+	m_cart_reg = m_cart ? memregion(util::string_format("%s%s", m_cart->tag(), GENERIC_ROM_REGION_TAG).c_str()) : nullptr;
 	kbmcu_sim_reset();
 	m_kb_spi_request = true;
 	m_oldkeyvalue = 0;
@@ -370,11 +400,11 @@ void socrates_state::device_timer(emu_timer &timer, device_timer_id id, int para
 		clear_irq_cb(ptr, param);
 		break;
 	default:
-		assert_always(false, "Unknown id in socrates_state::device_timer");
+		throw emu_fatalerror("Unknown id in socrates_state::device_timer");
 	}
 }
 
-DRIVER_INIT_MEMBER(socrates_state,socrates)
+void socrates_state::init_socrates()
 {
 	uint8_t *gfx = memregion("vram")->base();
 
@@ -385,7 +415,7 @@ DRIVER_INIT_MEMBER(socrates_state,socrates)
 	m_kbmcu_type = 0;
 }
 
-DRIVER_INIT_MEMBER(socrates_state,iqunlimz)
+void socrates_state::init_iqunlimz()
 {
 	uint8_t *gfx = memregion("vram")->base();
 
@@ -396,12 +426,23 @@ DRIVER_INIT_MEMBER(socrates_state,iqunlimz)
 	m_kbmcu_type = 1;
 }
 
-READ8_MEMBER(socrates_state::common_rom_bank_r)
+void socrates_state::init_vpainter()
+{
+	uint8_t *gfx = memregion("vram")->base();
+
+	/* fill vram with its init powerup bit pattern, so startup has the checkerboard screen */
+	for (int i = 0; i < 0x10000; i++)
+		gfx[i] = (((i&0x1)?0x00:0xFF)^((i&0x100)?0x00:0xff));
+	m_maincpu->set_clock_scale(0.45f); /// TODO: RAM access waitstates etc. aren't emulated - slow the CPU to compensate
+	m_kbmcu_type = 2;
+}
+
+uint8_t socrates_state::common_rom_bank_r(offs_t offset)
 {
 	return m_rom_bank[offset];
 }
 
-WRITE8_MEMBER(socrates_state::common_rom_bank_w)
+void socrates_state::common_rom_bank_w(offs_t offset, uint8_t data)
 {
 	m_rom_bank[offset] = data;
 	if (offset && m_rombank2)
@@ -410,45 +451,46 @@ WRITE8_MEMBER(socrates_state::common_rom_bank_w)
 		m_rombank1->set_bank(data);
 }
 
-READ8_MEMBER(socrates_state::common_ram_bank_r)
+uint8_t socrates_state::common_ram_bank_r()
 {
 	return m_ram_bank;
 }
 
-WRITE8_MEMBER(socrates_state::common_ram_bank_w)
+void socrates_state::common_ram_bank_w(uint8_t data)
 {
 	m_ram_bank = data;
 	m_rambank1->set_bank(((data>>2) & 0x0c) | ((data>>0) & 0x03));
 	m_rambank2->set_bank(((data>>4) & 0x0c) | ((data>>2) & 0x03));
 }
 
-READ8_MEMBER(socrates_state::socrates_cart_r)
+uint8_t socrates_state::socrates_cart_r(offs_t offset)
 {
-	///TODO: do m_rombank->space(AS_PROGRAM).install_write_handler(0x0002, 0x0002, write8_delegate(FUNC(dac_byte_interface::write), (dac_byte_interface *)m_dac)); style stuff
+	///TODO: do m_rombank->space(AS_PROGRAM).install_write_handler(0x0002, 0x0002, write8_delegate(FUNC(dac_byte_interface::data_w), (dac_byte_interface *)m_dac)); style stuff
 	// demangle the offset, offset passed is bits 11111111 11111111 00000000 00000000
 	// where . is 0                               EDCBA987 65432.10 FEDCBA98 76543210
 	offset = ((offset&0x3FFFF)|((offset&0xF80000)>>1));
 	if (m_cart_reg)
 	{
-		offset &= (m_cart->get_rom_size()-1);
-		return (*(m_cart_reg->base()+offset));
+		assert(m_cart);
+		offset &= m_cart->get_rom_size()-1;
+		return *(m_cart_reg->base()+offset);
 	}
 	else
 		return 0xF3;
 }
 
-READ8_MEMBER(socrates_state::read_f3)// used for read-only i/o ports as mame/mess doesn't have a way to set the unmapped area to read as 0xF3
+uint8_t socrates_state::read_f3()// used for read-only i/o ports as mame/mess doesn't have a way to set the unmapped area to read as 0xF3
 {
 	return 0xF3;
 }
 
-WRITE8_MEMBER(socrates_state::kbmcu_reset) // reset the keyboard MCU, clear its fifo
+void socrates_state::kbmcu_reset(uint8_t data) // reset the keyboard MCU, clear its fifo
 {
 	//logerror("0x%04X: kbmcu written with %02X!\n", m_maincpu->pc(), data); //if (m_maincpu->pc() != 0x31D)
 	kbmcu_sim_reset();
 }
 
-READ8_MEMBER(socrates_state::status_and_speech)// read 0x4x, some sort of status reg
+uint8_t socrates_state::socrates_status_r()// read 0x4x, some sort of status reg
 {
 // bit 7 - speech status: high when speech is playing, low when it is not (or when speech cart is not present)
 // bit 6 - unknown, usually set, possibly mcu ready state?
@@ -458,8 +500,8 @@ READ8_MEMBER(socrates_state::status_and_speech)// read 0x4x, some sort of status
 // bit 2 - speech chip bit 2
 // bit 1 - speech chip bit 1
 // bit 0 - speech chip bit 0
-uint8_t *speechromint = memregion("speechint")->base();
-uint8_t *speechromext = memregion("speechext")->base();
+	uint8_t *speechromint = memregion("speechint")->base();
+	uint8_t *speechromext = memregion("speechext")->base();
 	int temp = 0;
 	temp |= (m_speech_running)?0x80:0;
 	temp |= (1)?0x40:0; // unknown, possibly IR mcu ready?
@@ -502,7 +544,7 @@ TIMER_CALLBACK_MEMBER(socrates_state::clear_speech_cb)
 	m_speech_load_settings_count = 0;
 }
 
-WRITE8_MEMBER(socrates_state::speech_command) // write 0x4x
+void socrates_state::speech_command(uint8_t data) // write 0x4x
 {
 	/*
 	 * 76543210
@@ -609,27 +651,27 @@ SEL 5 4 3 2 1 0
 	m_io40_latch = data;
 }
 
-READ8_MEMBER( socrates_state::keyboard_buffer_read )
+uint8_t socrates_state::keyboard_buffer_read(offs_t offset)
 {
 	if (m_kbmcu_type == 0)
 	{
 		if (offset == 1) return m_kb_spi_buffer&0xFF;
 		else return (m_kb_spi_buffer&0xFF00)>>8;
 	}
-	else // (m_kbmcu_type == 1) // iqunlimz hack, the system won't work without this?!?!
+	else // if ( (m_kbmcu_type == 1) || (m_kbmcu_type == 2) ) // iqunlimz hack, the system won't work without this?!?!
 	{
 		if (offset == 1) return (m_screen->vblank()?0x80:0)|(m_kbdrow[0]->read()&0xf);
 		else return (m_kb_spi_buffer&0xFF00)>>8;
 	}
 }
 
-WRITE8_MEMBER( socrates_state::keyboard_buffer_update )
+void socrates_state::keyboard_buffer_update(uint8_t data)
 {
 	m_kb_spi_request = true;
 	m_kb_spi_buffer = 0x0001;
 }
 
-WRITE8_MEMBER(socrates_state::reset_speech)// i/o 60: reset speech synth
+void socrates_state::reset_speech(uint8_t data)// i/o 60: reset speech synth
 {
 	m_speech_running = 0;
 	m_speech_address = 0;
@@ -647,7 +689,7 @@ logerror("write to i/o 0x60 of %x\n",data);
     0x21 - W - msb offset of screen display
     resulting screen line is one of 512 total offsets on 128-byte boundaries in the whole 64k ram
     */
-WRITE8_MEMBER(socrates_state::socrates_scroll_w)
+void socrates_state::socrates_scroll_w(offs_t offset, uint8_t data)
 {
 	if (offset == 0)
 	m_scroll_offset = (m_scroll_offset&0x100) | data;
@@ -676,43 +718,40 @@ WRITE8_MEMBER(socrates_state::socrates_scroll_w)
 
 rgb_t socrates_state::socrates_create_color(uint8_t color)
 {
-	rgb_t composedcolor;
-	static const double lumatable[256] = {
-	LUMA_COL_0
-	LUMA_COL_COMMON
-	LUMA_COL_2
-	LUMA_COL_COMMON
-	LUMA_COL_COMMON
-	LUMA_COL_5
-	LUMA_COL_COMMON
-	LUMA_COL_COMMON
-	LUMA_COL_COMMON
-	LUMA_COL_COMMON
-	LUMA_COL_COMMON
-	LUMA_COL_COMMON
-	LUMA_COL_COMMON
-	LUMA_COL_COMMON
-	LUMA_COL_COMMON
-	LUMA_COL_F
-	};
-	static const double chromaintensity[256] = {
-	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-	CHROMA_COL_COMMON
-	CHROMA_COL_2
-	CHROMA_COL_COMMON
-	CHROMA_COL_COMMON
-	CHROMA_COL_5
-	CHROMA_COL_COMMON
-	CHROMA_COL_COMMON
-	CHROMA_COL_COMMON
-	CHROMA_COL_COMMON
-	CHROMA_COL_COMMON
-	CHROMA_COL_COMMON
-	CHROMA_COL_COMMON
-	CHROMA_COL_COMMON
-	CHROMA_COL_COMMON
-	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-	};
+	static constexpr double lumatable[256] = {
+			LUMA_COL_0
+			LUMA_COL_COMMON
+			LUMA_COL_2
+			LUMA_COL_COMMON
+			LUMA_COL_COMMON
+			LUMA_COL_5
+			LUMA_COL_COMMON
+			LUMA_COL_COMMON
+			LUMA_COL_COMMON
+			LUMA_COL_COMMON
+			LUMA_COL_COMMON
+			LUMA_COL_COMMON
+			LUMA_COL_COMMON
+			LUMA_COL_COMMON
+			LUMA_COL_COMMON
+			LUMA_COL_F };
+	static constexpr double chromaintensity[256] = {
+			0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+			CHROMA_COL_COMMON
+			CHROMA_COL_2
+			CHROMA_COL_COMMON
+			CHROMA_COL_COMMON
+			CHROMA_COL_5
+			CHROMA_COL_COMMON
+			CHROMA_COL_COMMON
+			CHROMA_COL_COMMON
+			CHROMA_COL_COMMON
+			CHROMA_COL_COMMON
+			CHROMA_COL_COMMON
+			CHROMA_COL_COMMON
+			CHROMA_COL_COMMON
+			CHROMA_COL_COMMON
+			0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
 	/* chroma colors and phases:
 	 0: black-through-grey (0 assumed chroma)
 	 1: purple (90 chroma seems correct)
@@ -731,19 +770,18 @@ rgb_t socrates_state::socrates_create_color(uint8_t color)
 	 E: blue-purple (more blue than color 1, 120 is closest)
 	 F: grey-through-white (0 assumed chroma)
 	*/
-	static const double phaseangle[16] = { 0, 90, 220, 150, 270, 40, 0, 315, 180, 210, 240, 300, 330, 60, 120, 0 }; // note: these are guessed, not measured yet!
-	int chromaindex = color&0x0F;
-	int swappedcolor = ((color&0xf0)>>4)|((color&0x0f)<<4);
-	double finalY, finalI, finalQ, finalR, finalG, finalB;
-	finalY = (1/LUMAMAX) * lumatable[swappedcolor];
-	finalI = (M_I * (cos((phaseangle[chromaindex]/180)*3.141592653589793)))* ((1/CHROMAMAX)*chromaintensity[swappedcolor]);
-	finalQ = (M_Q * (sin((phaseangle[chromaindex]/180)*3.141592653589793)))* ((1/CHROMAMAX)*chromaintensity[swappedcolor]);
+	static constexpr double phaseangle[16] = { 0, 90, 220, 150, 270, 40, 0, 315, 180, 210, 240, 300, 330, 60, 120, 0 }; // note: these are guessed, not measured yet!
+	int const chromaindex = color&0x0F;
+	int const swappedcolor = ((color&0xf0)>>4)|((color&0x0f)<<4);
+	double finalY = (1/LUMAMAX) * lumatable[swappedcolor];
+	double const finalI = (M_I * (cos((phaseangle[chromaindex]/180)*3.141592653589793)))* ((1/CHROMAMAX)*chromaintensity[swappedcolor]);
+	double const finalQ = (M_Q * (sin((phaseangle[chromaindex]/180)*3.141592653589793)))* ((1/CHROMAMAX)*chromaintensity[swappedcolor]);
 	if (finalY > 1) finalY = 1; // clamp luma
-	/* calculate the R, G and B values here, neato matrix math */
-	finalR = (finalY*1)+(finalI*0.9563)+(finalQ*0.6210);
-	finalG = (finalY*1)+(finalI*-0.2721)+(finalQ*-0.6474);
-	finalB = (finalY*1)+(finalI*-1.1070)+(finalQ*1.7046);
-	/* scale/clamp to 0-255 range */
+	// calculate the R, G and B values here, neato matrix math
+	double finalR = (finalY*1)+(finalI*0.9563)+(finalQ*0.6210);
+	double finalG = (finalY*1)+(finalI*-0.2721)+(finalQ*-0.6474);
+	double finalB = (finalY*1)+(finalI*-1.1070)+(finalQ*1.7046);
+	// scale/clamp to 0-255 range
 	if (finalR<0) finalR = 0;
 	if (finalR>1) finalR = 1;
 	if (finalG<0) finalG = 0;
@@ -754,19 +792,14 @@ rgb_t socrates_state::socrates_create_color(uint8_t color)
 	finalR = pow(finalR, 1/GAMMA)*255;
 	finalG = pow(finalG, 1/GAMMA)*255;
 	finalB = pow(finalB, 1/GAMMA)*255;
-composedcolor = rgb_t((int)finalR,(int)finalG,(int)finalB);
-return composedcolor;
+	return rgb_t((int)finalR,(int)finalG,(int)finalB);
 }
 
 
-PALETTE_INIT_MEMBER(socrates_state, socrates)
+void socrates_state::socrates_palette(palette_device &palette) const
 {
-	int i; // iterator
-	for (i = 0; i < 256; i++)
-	{
-		m_palette_val[i] = socrates_create_color(i);
-	}
-	palette.set_pen_colors(0, m_palette_val, ARRAY_LENGTH(m_palette_val));
+	for (int i = 0; i < 256; i++)
+		palette.set_pen_color(i, socrates_create_color(i));
 }
 
 void socrates_state::video_start()
@@ -811,9 +844,9 @@ uint32_t socrates_state::screen_update_socrates(screen_device &screen, bitmap_in
 	return 0;
 }
 
-/* below belongs in sound/socrates.c */
+/* below belongs in audio/socrates.cpp */
 
-WRITE8_MEMBER(socrates_state::socrates_sound_w)
+void socrates_state::socrates_sound_w(offs_t offset, uint8_t data)
 {
 	switch(offset)
 	{
@@ -843,7 +876,7 @@ WRITE8_MEMBER(socrates_state::socrates_sound_w)
 //
 //-----------------------------------------------------------------------------
 
-int iqunlim_state::get_color(int index, int y)
+int iqunlimz_state::get_color(int index, int y)
 {
 	if (index < 8)
 		return m_colors[index];
@@ -851,7 +884,7 @@ int iqunlim_state::get_color(int index, int y)
 		return m_vram_reg->as_u8(0xf000 + ((index & 0x0f) << 8) + ((m_scroll_offset + y + 1) & 0xff));
 }
 
-uint32_t iqunlim_state::screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect)
+uint32_t iqunlimz_state::screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect)
 {
 	uint8_t *videoram = m_vram_reg->base();
 
@@ -910,7 +943,7 @@ uint32_t iqunlim_state::screen_update(screen_device &screen, bitmap_ind16 &bitma
 	return 0;
 }
 
-READ8_MEMBER( iqunlim_state::status_r )
+uint8_t iqunlimz_state::status_r()
 {
 	// ---x ----    main battery status
 	// --x- ----    backup battery status
@@ -918,12 +951,12 @@ READ8_MEMBER( iqunlim_state::status_r )
 	return 0x30;
 }
 
-READ8_MEMBER( iqunlim_state::video_regs_r )
+uint8_t iqunlimz_state::video_regs_r(offs_t offset)
 {
 	return m_video_regs[offset];
 }
 
-WRITE8_MEMBER( iqunlim_state::video_regs_w )
+void iqunlimz_state::video_regs_w(offs_t offset, uint8_t data)
 {
 	if (offset == 2 && ((m_video_regs[offset] ^ data) & 0x02))
 	{
@@ -935,7 +968,7 @@ WRITE8_MEMBER( iqunlim_state::video_regs_w )
 	m_video_regs[offset] = data;
 }
 
-void iqunlim_state::machine_reset()
+void iqunlimz_state::machine_reset()
 {
 	socrates_state::machine_reset();
 
@@ -944,7 +977,7 @@ void iqunlim_state::machine_reset()
 	kbmcu_sim_reset();
 }
 
-WRITE8_MEMBER( iqunlim_state::colors_w )
+void iqunlimz_state::colors_w(offs_t offset, uint8_t data)
 {
 	m_colors[offset] = data;
 }
@@ -952,9 +985,9 @@ WRITE8_MEMBER( iqunlim_state::colors_w )
 
 // IQ Unlimited keyboard MCU simulation
 
-INPUT_CHANGED_MEMBER( iqunlim_state::send_input )
+INPUT_CHANGED_MEMBER( iqunlimz_state::send_input )
 {
-	uint8_t data = (uint8_t)(uintptr_t)param;
+	uint8_t data = (uint8_t)param;
 
 	if (newval)
 	{
@@ -966,33 +999,37 @@ INPUT_CHANGED_MEMBER( iqunlim_state::send_input )
  Address Maps
 ******************************************************************************/
 
-static ADDRESS_MAP_START(z80_mem, AS_PROGRAM, 8, socrates_state )
-	ADDRESS_MAP_UNMAP_HIGH
-	AM_RANGE(0x0000, 0x3fff) AM_ROM /* system rom, bank 0 (fixed) */
-	AM_RANGE(0x4000, 0x7fff) AM_DEVICE("rombank1", address_map_bank_device, amap8) /* banked rom space; system rom is banks 0 through F, cartridge rom is banks 10 onward, usually banks 10 through 17. area past the end of the cartridge, and the whole 10-ff area when no cartridge is inserted, reads as 0xF3 */
-	AM_RANGE(0x8000, 0xbfff) AM_DEVICE("rambank1", address_map_bank_device, amap8) /* banked ram 'window' 0 */
-	AM_RANGE(0xc000, 0xffff) AM_DEVICE("rambank2", address_map_bank_device, amap8) /* banked ram 'window' 1 */
-ADDRESS_MAP_END
+void socrates_state::socrates_mem(address_map &map)
+{
+	map.unmap_value_high();
+	map(0x0000, 0x3fff).rom(); /* system rom, bank 0 (fixed) */
+	map(0x4000, 0x7fff).m(m_rombank1, FUNC(address_map_bank_device::amap8)); /* banked rom space; system rom is banks 0 through F, cartridge rom is banks 10 onward, usually banks 10 through 17. area past the end of the cartridge, and the whole 10-ff area when no cartridge is inserted, reads as 0xF3 */
+	map(0x8000, 0xbfff).m(m_rambank1, FUNC(address_map_bank_device::amap8)); /* banked ram 'window' 0 */
+	map(0xc000, 0xffff).m(m_rambank2, FUNC(address_map_bank_device::amap8)); /* banked ram 'window' 1 */
+}
 
-static ADDRESS_MAP_START( socrates_rombank_map, AS_PROGRAM, 8, socrates_state )
-	ADDRESS_MAP_UNMAP_HIGH
-	AM_RANGE(0x000000, 0x03ffff) AM_ROM AM_REGION("maincpu", 0) AM_MIRROR(0xF00000)      // xxxx 00** **** **** **** ****
-	AM_RANGE(0x040000, 0x07ffff) AM_READ(socrates_cart_r) AM_SELECT(0xF80000)            // **** *1** **** **** **** ****
-	AM_RANGE(0x080000, 0x0bffff) AM_READ(read_f3)                                        // xxxx 10** **** **** **** ****
-ADDRESS_MAP_END
+void socrates_state::socrates_rombank_map(address_map &map)
+{
+	map.unmap_value_high();
+	map(0x000000, 0x03ffff).rom().region("maincpu", 0).mirror(0xF00000);      // xxxx 00** **** **** **** ****
+	map(0x040000, 0x07ffff).r(FUNC(socrates_state::socrates_cart_r)).select(0xF80000);            // **** *1** **** **** **** ****
+	map(0x080000, 0x0bffff).r(FUNC(socrates_state::read_f3));                                        // xxxx 10** **** **** **** ****
+}
 
-static ADDRESS_MAP_START( socrates_rambank_map, AS_PROGRAM, 8, socrates_state )
-	ADDRESS_MAP_UNMAP_HIGH
-	AM_RANGE(0x0000, 0xffff) AM_RAM AM_REGION("vram", 0) AM_MIRROR(0x30000)
-ADDRESS_MAP_END
+void socrates_state::socrates_rambank_map(address_map &map)
+{
+	map.unmap_value_high();
+	map(0x0000, 0xffff).ram().region("vram", 0).mirror(0x30000);
+}
 
-static ADDRESS_MAP_START(z80_io, AS_IO, 8, socrates_state )
-	ADDRESS_MAP_UNMAP_HIGH
-	ADDRESS_MAP_GLOBAL_MASK(0xff)
-	AM_RANGE(0x00, 0x00) AM_READWRITE(common_rom_bank_r, common_rom_bank_w) AM_MIRROR(0x7) /* rom bank select - RW - 8 bits */
-	AM_RANGE(0x08, 0x08) AM_READWRITE(common_ram_bank_r, common_ram_bank_w) AM_MIRROR(0x7) /* ram banks select - RW - 4 low bits; Format: 0b****HHLL where LL controls whether window 0 points at ram area: 0b00: 0x0000-0x3fff; 0b01: 0x4000-0x7fff; 0b10: 0x8000-0xbfff; 0b11: 0xc000-0xffff. HH controls the same thing for window 1 */
-	AM_RANGE(0x10, 0x17) AM_READWRITE(read_f3, socrates_sound_w) AM_MIRROR (0x8) /* sound section:
-	0x10 - W - frequency control for channel 1 (louder channel) - 01=high pitch, ff=low; time between 1->0/0->1 transitions = (XTAL_21_4772MHz/(512+256) / (freq_reg+1)) (note that this is double the actual frequency since each full low and high squarewave pulse is two transitions)
+void socrates_state::socrates_io(address_map &map)
+{
+	map.unmap_value_high();
+	map.global_mask(0xff);
+	map(0x00, 0x00).rw(FUNC(socrates_state::common_rom_bank_r), FUNC(socrates_state::common_rom_bank_w)).mirror(0x7); /* rom bank select - RW - 8 bits */
+	map(0x08, 0x08).rw(FUNC(socrates_state::common_ram_bank_r), FUNC(socrates_state::common_ram_bank_w)).mirror(0x7); /* ram banks select - RW - 4 low bits; Format: 0b****HHLL where LL controls whether window 0 points at ram area: 0b00: 0x0000-0x3fff; 0b01: 0x4000-0x7fff; 0b10: 0x8000-0xbfff; 0b11: 0xc000-0xffff. HH controls the same thing for window 1 */
+	map(0x10, 0x17).rw(FUNC(socrates_state::read_f3), FUNC(socrates_state::socrates_sound_w)).mirror(0x8); /* sound section:
+	0x10 - W - frequency control for channel 1 (louder channel) - 01=high pitch, ff=low; time between 1->0/0->1 transitions = (XTAL(21'477'272)/(512+256) / (freq_reg+1)) (note that this is double the actual frequency since each full low and high squarewave pulse is two transitions)
 	0x11 - W - frequency control for channel 2 (softer channel) - 01=high pitch, ff=low; same equation as above
 	0x12 - W - 0b***EVVVV enable, volume control for channel 1
 	0x13 - W - 0b***EVVVV enable, volume control for channel 2
@@ -1003,51 +1040,55 @@ static ADDRESS_MAP_START(z80_io, AS_IO, 8, socrates_state )
 	0xC0 produces a DMC wave read from an unknown address at around 342hz
 	<todo: test the others, maybe take samples?>
 	*/
-	AM_RANGE(0x20, 0x21) AM_READWRITE(read_f3, socrates_scroll_w) AM_MIRROR(0xE)
-	AM_RANGE(0x30, 0x30) AM_READWRITE(read_f3, kbmcu_reset) AM_MIRROR(0xF) /* resets the keyboard IR decoder MCU */
-	AM_RANGE(0x40, 0x40) AM_READWRITE(status_and_speech, speech_command ) AM_MIRROR(0xF) /* reads status register for vblank/hblank/speech, also reads and writes speech module */
-	AM_RANGE(0x50, 0x51) AM_READWRITE(keyboard_buffer_read, keyboard_buffer_update) AM_MIRROR(0xE) /* Keyboard fifo read, pop fifo on write */
-	AM_RANGE(0x60, 0x60) AM_READWRITE(read_f3, reset_speech) AM_MIRROR(0xF) /* reset the speech module, or perhaps fire an NMI?  */
-	AM_RANGE(0x70, 0xFF) AM_READ(read_f3) // nothing mapped here afaik
-ADDRESS_MAP_END
+	map(0x20, 0x21).rw(FUNC(socrates_state::read_f3), FUNC(socrates_state::socrates_scroll_w)).mirror(0xE);
+	map(0x30, 0x30).rw(FUNC(socrates_state::read_f3), FUNC(socrates_state::kbmcu_reset)).mirror(0xF); /* resets the keyboard IR decoder MCU */
+	map(0x40, 0x40).rw(FUNC(socrates_state::socrates_status_r), FUNC(socrates_state::speech_command)).mirror(0xF); /* reads status register for vblank/hblank/speech, also reads and writes speech module */
+	map(0x50, 0x51).rw(FUNC(socrates_state::keyboard_buffer_read), FUNC(socrates_state::keyboard_buffer_update)).mirror(0xE); /* Keyboard fifo read, pop fifo on write */
+	map(0x60, 0x60).rw(FUNC(socrates_state::read_f3), FUNC(socrates_state::reset_speech)).mirror(0xF); /* reset the speech module, or perhaps fire an NMI?  */
+	map(0x70, 0xFF).r(FUNC(socrates_state::read_f3)); // nothing mapped here afaik
+}
 
-static ADDRESS_MAP_START(iqunlimz_mem, AS_PROGRAM, 8, iqunlim_state)
-	ADDRESS_MAP_UNMAP_HIGH
-	AM_RANGE(0x0000, 0x3fff) AM_DEVICE("rombank2", address_map_bank_device, amap8)
-	AM_RANGE(0x4000, 0x7fff) AM_DEVICE("rombank1", address_map_bank_device, amap8)
-	AM_RANGE(0x8000, 0xbfff) AM_DEVICE("rambank1", address_map_bank_device, amap8)
-	AM_RANGE(0xc000, 0xffff) AM_DEVICE("rambank2", address_map_bank_device, amap8)
-ADDRESS_MAP_END
+void iqunlimz_state::iqunlimz_mem(address_map &map)
+{
+	map.unmap_value_high();
+	map(0x0000, 0x3fff).m(m_rombank2, FUNC(address_map_bank_device::amap8));
+	map(0x4000, 0x7fff).m(m_rombank1, FUNC(address_map_bank_device::amap8));
+	map(0x8000, 0xbfff).m(m_rambank1, FUNC(address_map_bank_device::amap8));
+	map(0xc000, 0xffff).m(m_rambank2, FUNC(address_map_bank_device::amap8));
+}
 
-static ADDRESS_MAP_START( iqunlimz_rombank_map, AS_PROGRAM, 8, iqunlim_state )
-	ADDRESS_MAP_UNMAP_HIGH
-	AM_RANGE(0x000000, 0x03ffff) AM_ROM AM_REGION("maincpu", 0) AM_MIRROR(0xF00000)      // xxxx 00** **** **** **** ****
-	AM_RANGE(0x040000, 0x07ffff) AM_READ(socrates_cart_r) AM_SELECT(0xF80000)            // **** *1** **** **** **** ****
-	AM_RANGE(0x080000, 0x0bffff) AM_ROM AM_REGION("maincpu", 0x40000) AM_MIRROR(0xF00000)// xxxx 10** **** **** **** ****
-ADDRESS_MAP_END
+void iqunlimz_state::iqunlimz_rombank_map(address_map &map)
+{
+	map.unmap_value_high();
+	map(0x000000, 0x03ffff).rom().region("maincpu", 0).mirror(0xF00000);      // xxxx 00** **** **** **** ****
+	map(0x040000, 0x07ffff).r(FUNC(iqunlimz_state::socrates_cart_r)).select(0xF80000);            // **** *1** **** **** **** ****
+	map(0x080000, 0x0bffff).rom().region("maincpu", 0x40000).mirror(0xF00000);// xxxx 10** **** **** **** ****
+}
 
-static ADDRESS_MAP_START( iqunlimz_rambank_map, AS_PROGRAM, 8, iqunlim_state )
-	ADDRESS_MAP_UNMAP_HIGH
-	AM_RANGE(0x0000, 0x3ffff) AM_RAM AM_REGION("vram", 0)
-ADDRESS_MAP_END
+void iqunlimz_state::iqunlimz_rambank_map(address_map &map)
+{
+	map.unmap_value_high();
+	map(0x0000, 0x3ffff).ram().region("vram", 0);
+}
 
-static ADDRESS_MAP_START( iqunlimz_io , AS_IO, 8, iqunlim_state)
-	ADDRESS_MAP_UNMAP_HIGH
-	ADDRESS_MAP_GLOBAL_MASK(0xff)
-	AM_RANGE(0x00, 0x01) AM_READWRITE(common_rom_bank_r, common_rom_bank_w) AM_MIRROR(0x06)
-	AM_RANGE(0x08, 0x08) AM_READWRITE(common_ram_bank_r, common_ram_bank_w) AM_MIRROR(0x07)
-	AM_RANGE(0x10, 0x17) AM_WRITE(socrates_sound_w) AM_MIRROR(0x08)
-	AM_RANGE(0x20, 0x21) AM_WRITE(socrates_scroll_w) AM_MIRROR(0x0E)
+void iqunlimz_state::iqunlimz_io(address_map &map)
+{
+	map.unmap_value_high();
+	map.global_mask(0xff);
+	map(0x00, 0x01).rw(FUNC(iqunlimz_state::common_rom_bank_r), FUNC(iqunlimz_state::common_rom_bank_w)).mirror(0x06);
+	map(0x08, 0x08).rw(FUNC(iqunlimz_state::common_ram_bank_r), FUNC(iqunlimz_state::common_ram_bank_w)).mirror(0x07);
+	map(0x10, 0x17).w(FUNC(iqunlimz_state::socrates_sound_w)).mirror(0x08);
+	map(0x20, 0x21).w(FUNC(iqunlimz_state::socrates_scroll_w)).mirror(0x0E);
 	// 30: writes an incrementing value here, once per keypress?
 	// 40: some sort of serial select/reset or enable, related to 0x60
-	AM_RANGE(0x50, 0x51) AM_READWRITE(keyboard_buffer_read, keyboard_buffer_update) AM_MIRROR(0xE)
+	map(0x50, 0x51).rw(FUNC(iqunlimz_state::keyboard_buffer_read), FUNC(iqunlimz_state::keyboard_buffer_update)).mirror(0xE);
 	// 60: some sort of serial read/write port, related to 0x40
-	AM_RANGE(0x70, 0x73) AM_READWRITE(video_regs_r, video_regs_w) AM_MIRROR(0x0C)
-	AM_RANGE(0x80, 0x81) AM_WRITENOP // LCD
-	AM_RANGE(0xb1, 0xb1) AM_WRITENOP
-	AM_RANGE(0xa0, 0xa0) AM_READ(status_r) AM_MIRROR(0x0F)
-	AM_RANGE(0xe0, 0xe7) AM_WRITE(colors_w) AM_MIRROR(0x08)
-ADDRESS_MAP_END
+	map(0x70, 0x73).rw(FUNC(iqunlimz_state::video_regs_r), FUNC(iqunlimz_state::video_regs_w)).mirror(0x0C);
+	map(0x80, 0x81).nopw(); // LCD
+	map(0xb1, 0xb1).nopw();
+	map(0xa0, 0xa0).r(FUNC(iqunlimz_state::status_r)).mirror(0x0F);
+	map(0xe0, 0xe7).w(FUNC(iqunlimz_state::colors_w)).mirror(0x08);
+}
 
 
 
@@ -1246,104 +1287,104 @@ static INPUT_PORTS_START( iqunlimz )
 	PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNUSED )
 
 	PORT_START( "IN1" )
-	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_N ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x10 )
-	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_M ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x11 )
-	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_COMMA ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x12 )
-	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_B ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x13 )
-	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_C ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x14 )
-	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_Z ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x15 )
-	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_V ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x16 )
-	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_X ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x17 )
+	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_N ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x10 )
+	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_M ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x11 )
+	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_COMMA ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x12 )
+	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_B ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x13 )
+	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_C ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x14 )
+	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_Z ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x15 )
+	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_V ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x16 )
+	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_X ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x17 )
 
 	PORT_START( "IN2" )
-	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x20 )
-	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_2_PAD ) PORT_CODE( KEYCODE_DOWN ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x21 )
-	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_5_PAD ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x22 )
-	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_DEL_PAD ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x23 )
-	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_SLASH_PAD ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x24 )
-	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_8_PAD ) PORT_CODE( KEYCODE_UP ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x25 )
-	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_ASTERISK ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x26 )
-	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_7_PAD ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x27 )
+	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x20 )
+	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_2_PAD ) PORT_CODE( KEYCODE_DOWN ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x21 )
+	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_5_PAD ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x22 )
+	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_DEL_PAD ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x23 )
+	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_SLASH_PAD ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x24 )
+	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_8_PAD ) PORT_CODE( KEYCODE_UP ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x25 )
+	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_ASTERISK ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x26 )
+	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_7_PAD ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x27 )
 
 	PORT_START( "IN3" )
-	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x30 )
-	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x31 )
-	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x32 )
-	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x33 )
-	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_F1 ) PORT_NAME( "Help" ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x34 )
-	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_9 ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x35 )
-	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_BACKSPACE ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x36 )
-	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_0 ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x37 )
+	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x30 )
+	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x31 )
+	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x32 )
+	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x33 )
+	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_F1 ) PORT_NAME( "Help" ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x34 )
+	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_9 ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x35 )
+	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_BACKSPACE ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x36 )
+	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_0 ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x37 )
 
 	PORT_START( "IN4" )
-	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_H ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x40 )
-	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_J ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x41 )
-	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_K ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x42 )
-	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_G ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x43 )
-	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_D ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x44 )
-	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_A ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x45 )
-	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_F ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x46 )
-	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_S ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x47 )
+	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_H ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x40 )
+	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_J ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x41 )
+	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_K ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x42 )
+	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_G ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x43 )
+	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_D ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x44 )
+	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_A ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x45 )
+	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_F ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x46 )
+	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_S ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x47 )
 
 	PORT_START( "IN5" )
-	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x50 )
-	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x51 )
-	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x52 )
-	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x53 )
-	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_EQUALS ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x54 )
-	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_O ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x55 )
-	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_NUMLOCK ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x56 )
-	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_P ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x57 )
+	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x50 )
+	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x51 )
+	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x52 )
+	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x53 )
+	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_EQUALS ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x54 )
+	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_O ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x55 )
+	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_NUMLOCK ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x56 )
+	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_P ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x57 )
 
 	PORT_START( "IN6" )
-	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_Y ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x60 )
-	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_U ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x61 )
-	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_I ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x62 )
-	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_T ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x63 )
-	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_E ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x64 )
-	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_Q ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x65 )
-	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_R ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x66 )
-	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_W ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x67 )
+	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_Y ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x60 )
+	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_U ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x61 )
+	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_I ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x62 )
+	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_T ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x63 )
+	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_E ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x64 )
+	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_Q ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x65 )
+	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_R ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x66 )
+	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_W ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x67 )
 
 	PORT_START( "IN7" )
-	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_MINUS ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x70 )
-	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_SLASH ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x71 )
-	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x72 )
-	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_STOP ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x73 )
-	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_QUOTE ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x74 )
-	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_L ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x75 )
-	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_ENTER ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x76 )
-	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_COLON ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x77 )
+	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_MINUS ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x70 )
+	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_SLASH ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x71 )
+	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x72 )
+	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_STOP ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x73 )
+	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_QUOTE ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x74 )
+	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_L ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x75 )
+	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_ENTER ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x76 )
+	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_COLON ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x77 )
 
 	PORT_START( "IN8" )
-	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_6 ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x80 )
-	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_7 ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x81 )
-	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_8 ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x82 )
-	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_5 ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x83 )
-	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_3 ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x84 )
-	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_1 ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x85 )
-	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_4 ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x86 )
-	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_2 ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x87 )
+	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_6 ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x80 )
+	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_7 ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x81 )
+	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_8 ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x82 )
+	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_5 ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x83 )
+	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_3 ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x84 )
+	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_1 ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x85 )
+	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_4 ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x86 )
+	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_2 ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x87 )
 
 	PORT_START( "IN9" )
-	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_4_PAD ) PORT_CODE( KEYCODE_LEFT ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x90 )
-	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_3_PAD ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x91 )
-	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_6_PAD ) PORT_CODE( KEYCODE_RIGHT ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x92 )
-	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_PLUS_PAD ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x93 )
-	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_0_PAD ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x94 )
-	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_9_PAD ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x95 )
-	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_MINUS_PAD ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x96 )
-	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_1_PAD ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0x97 )
+	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_4_PAD ) PORT_CODE( KEYCODE_LEFT ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x90 )
+	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_3_PAD ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x91 )
+	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_6_PAD ) PORT_CODE( KEYCODE_RIGHT ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x92 )
+	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_PLUS_PAD ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x93 )
+	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_0_PAD ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x94 )
+	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_9_PAD ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x95 )
+	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_MINUS_PAD ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x96 )
+	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_1_PAD ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0x97 )
 
 	PORT_START( "INA" )
-	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0xa0 )
-	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0xa1 )
-	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0xa2 )
-	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0xa3 )
-	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_F2 ) PORT_NAME("Answer") PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0xa4 )
-	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_ESC ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0xa5 )
-	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_SPACE ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0xa6 )
-	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_TAB ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlim_state, send_input, 0xa7 )
+	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0xa0 )
+	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0xa1 )
+	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0xa2 )
+	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_UNUSED ) // PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0xa3 )
+	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_F2 ) PORT_NAME("Answer") PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0xa4 )
+	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_ESC ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0xa5 )
+	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_SPACE ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0xa6 )
+	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_CODE( KEYCODE_TAB ) PORT_CHANGED_MEMBER( DEVICE_SELF, iqunlimz_state, send_input, 0xa7 )
 INPUT_PORTS_END
 
 /******************************************************************************
@@ -1366,7 +1407,7 @@ TIMER_CALLBACK_MEMBER(socrates_state::kbmcu_sim_cb)
 	// timer rate is a massive guess; we're assuming the mcu runs at the same speed as the cpu does,
 	// and the refresh rate depends on instructions per loop of mcu, which we've randomly guessed is 60 cycles.
 	m_kbmcu_sim_timer->adjust(m_maincpu->cycles_to_attotime(3000));
-	/// TODO: dump the mcu and get rid of this...
+	/// TODO: dump the mcus and get rid of this...
 	if (m_kbmcu_type == 0)
 	{
 		// socrates keyboard MCU simulation: if a keyboard key is pressed, enqueue it into the fifo as needed
@@ -1425,7 +1466,7 @@ TIMER_CALLBACK_MEMBER(socrates_state::kbmcu_sim_cb)
 			m_oldkeyvalue = keyvalue; // set this new key to be the 'previous key'
 		}
 	}
-	//else // m_kbmcu_type = 1 // this is currently hacked around by the input system so no code here
+	//else if (m_kbmcu_type == 1) // this is currently hacked around by the input system so no code here
 	//{
 	//}
 
@@ -1443,133 +1484,105 @@ TIMER_CALLBACK_MEMBER(socrates_state::kbmcu_sim_cb)
 	}
 }
 
-static MACHINE_CONFIG_START( socrates )
+void socrates_state::socrates(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", Z80, XTAL_21_4772MHz/6)  /* Toshiba TMPZ84C00AP @ 3.579545 MHz, verified, xtal is divided by 6 */
-	MCFG_CPU_PROGRAM_MAP(z80_mem)
-	MCFG_CPU_IO_MAP(z80_io)
-	MCFG_QUANTUM_TIME(attotime::from_hz(60))
-	MCFG_CPU_VBLANK_INT_DRIVER("screen", socrates_state,  assert_irq)
+	Z80(config, m_maincpu, XTAL(21'477'272)/6);  /* Toshiba TMPZ84C00AP @ 3.579545 MHz, verified, xtal is divided by 6 */
+	m_maincpu->set_addrmap(AS_PROGRAM, &socrates_state::socrates_mem);
+	m_maincpu->set_addrmap(AS_IO, &socrates_state::socrates_io);
+	m_maincpu->set_vblank_int("screen", FUNC(socrates_state::assert_irq));
+	config.set_maximum_quantum(attotime::from_hz(60));
 
-	MCFG_DEVICE_ADD("rombank1", ADDRESS_MAP_BANK, 0)
-	MCFG_DEVICE_PROGRAM_MAP(socrates_rombank_map)
-	MCFG_ADDRESS_MAP_BANK_ENDIANNESS(ENDIANNESS_LITTLE)
-	MCFG_ADDRESS_MAP_BANK_DATABUS_WIDTH(8)
-	MCFG_ADDRESS_MAP_BANK_STRIDE(0x4000)
-
-	MCFG_DEVICE_ADD("rambank1", ADDRESS_MAP_BANK, 0)
-	MCFG_DEVICE_PROGRAM_MAP(socrates_rambank_map)
-	MCFG_ADDRESS_MAP_BANK_ENDIANNESS(ENDIANNESS_LITTLE)
-	MCFG_ADDRESS_MAP_BANK_DATABUS_WIDTH(8)
-	MCFG_ADDRESS_MAP_BANK_STRIDE(0x4000)
-
-	MCFG_DEVICE_ADD("rambank2", ADDRESS_MAP_BANK, 0)
-	MCFG_DEVICE_PROGRAM_MAP(socrates_rambank_map)
-	MCFG_ADDRESS_MAP_BANK_ENDIANNESS(ENDIANNESS_LITTLE)
-	MCFG_ADDRESS_MAP_BANK_DATABUS_WIDTH(8)
-	MCFG_ADDRESS_MAP_BANK_STRIDE(0x4000)
+	ADDRESS_MAP_BANK(config, "rombank1").set_map(&socrates_state::socrates_rombank_map).set_options(ENDIANNESS_LITTLE, 8, 32, 0x4000);
+	ADDRESS_MAP_BANK(config, "rambank1").set_map(&socrates_state::socrates_rambank_map).set_options(ENDIANNESS_LITTLE, 8, 32, 0x4000);
+	ADDRESS_MAP_BANK(config, "rambank2").set_map(&socrates_state::socrates_rambank_map).set_options(ENDIANNESS_LITTLE, 8, 32, 0x4000);
 
 	/* video hardware */
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_REFRESH_RATE(60)
-	MCFG_SCREEN_VBLANK_TIME(ATTOSECONDS_IN_USEC(2500)) /* not accurate */
-	MCFG_SCREEN_SIZE(264, 228) // technically the screen size is 256x228 but super painter abuses what I suspect is a hardware bug to display repeated pixels of the very last pixel beyond this horizontal space, well into hblank
-	MCFG_SCREEN_VISIBLE_AREA(0, 263, 0, 219) // the last few rows are usually cut off by the screen bottom but are indeed displayed if you mess with v-hold
-	MCFG_SCREEN_UPDATE_DRIVER(socrates_state, screen_update_socrates)
-	MCFG_SCREEN_PALETTE("palette")
+	SCREEN(config, m_screen, SCREEN_TYPE_RASTER);
+	m_screen->set_refresh_hz(60);
+	m_screen->set_vblank_time(ATTOSECONDS_IN_USEC(2500)); /* not accurate */
+	m_screen->set_size(264, 228); // technically the screen size is 256x228 but super painter abuses what I suspect is a hardware bug to display repeated pixels of the very last pixel beyond this horizontal space, well into hblank
+	m_screen->set_visarea(0, 263, 0, 219); // the last few rows are usually cut off by the screen bottom but are indeed displayed if you mess with v-hold
+	m_screen->set_screen_update(FUNC(socrates_state::screen_update_socrates));
+	m_screen->set_palette("palette");
 
-	MCFG_PALETTE_ADD("palette", 256)
-	MCFG_PALETTE_INIT_OWNER(socrates_state, socrates)
+	PALETTE(config, "palette", FUNC(socrates_state::socrates_palette), 256);
 
 	/* sound hardware */
-	MCFG_SPEAKER_STANDARD_MONO("mono")
-	MCFG_SOUND_ADD("soc_snd", SOCRATES_SOUND, XTAL_21_4772MHz/(512+256)) // this is correct, as strange as it sounds.
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.25)
+	SPEAKER(config, "mono").front_center();
+	SOCRATES_SOUND(config, m_sound, XTAL(21'477'272)/(512+256)).add_route(ALL_OUTPUTS, "mono", 0.25); // this is correct, as strange as it sounds.
 
-	MCFG_GENERIC_CARTSLOT_ADD("cartslot", generic_plain_slot, "socrates_cart")
+	GENERIC_CARTSLOT(config, m_cart, generic_plain_slot, "socrates_cart");
 
 	/* Software lists */
-	MCFG_SOFTWARE_LIST_ADD("cart_list", "socrates")
-MACHINE_CONFIG_END
+	SOFTWARE_LIST(config, "cart_list").set_original("socrates");
+}
 
-static MACHINE_CONFIG_DERIVED( socrates_pal, socrates )
-	MCFG_CPU_REPLACE("maincpu", Z80, XTAL_26_601712MHz/8)
-	MCFG_CPU_PROGRAM_MAP(z80_mem)
-	MCFG_CPU_IO_MAP(z80_io)
-	MCFG_QUANTUM_TIME(attotime::from_hz(50))
-	MCFG_CPU_VBLANK_INT_DRIVER("screen", socrates_state,  assert_irq)
+void socrates_state::socrates_pal(machine_config &config)
+{
+	socrates(config);
 
-	MCFG_SCREEN_MODIFY("screen")
-	MCFG_SCREEN_REFRESH_RATE(50)
-	MCFG_SCREEN_VBLANK_TIME(ATTOSECONDS_IN_USEC(2500)) // not accurate
-	MCFG_SCREEN_SIZE(264, 238) // technically the screen size is 256x228 but super painter abuses what I suspect is a hardware bug to display repeated pixels of the very last pixel beyond this horizontal space, well into hblank
-	MCFG_SCREEN_VISIBLE_AREA(0, 263, 0, 229) // the last few rows are usually cut off by the screen bottom but are indeed displayed if you mess with v-hold
-	MCFG_SCREEN_UPDATE_DRIVER(socrates_state, screen_update_socrates)
+	m_maincpu->set_clock(XTAL(26'601'712)/8); // XTAL verified, divider NOT verified; this is a later ASIC so the divider may be different
 
-	MCFG_SOUND_REPLACE("soc_snd", SOCRATES_SOUND, XTAL_26_601712MHz/(512+256)) // this is correct, as strange as it sounds.
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.25)
-MACHINE_CONFIG_END
+	config.set_maximum_quantum(attotime::from_hz(50));
 
-static MACHINE_CONFIG_START( iqunlimz )
+	m_screen->set_refresh_hz(50);
+	m_screen->set_vblank_time(ATTOSECONDS_IN_USEC(2500)); // not accurate
+	m_screen->set_size(264, 238); // technically the screen size is 256x228 but super painter abuses what I suspect is a hardware bug to display repeated pixels of the very last pixel beyond this horizontal space, well into hblank
+	m_screen->set_visarea(0, 263, 0, 229); // the last few rows are usually cut off by the screen bottom but are indeed displayed if you mess with v-hold
+	m_screen->set_screen_update(FUNC(socrates_state::screen_update_socrates));
+
+	m_sound->set_clock(XTAL(26'601'712)/(512+256)); // this is correct, as strange as it sounds.
+}
+
+void socrates_state::vpainter_pal(machine_config &config)
+{
+	socrates_pal(config);
+
+	config.device_remove("cartslot");
+	config.device_remove("cart_list");
+}
+
+void iqunlimz_state::iqunlimz(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", Z80, XTAL_4MHz) /* not accurate */
-	MCFG_CPU_PROGRAM_MAP(iqunlimz_mem)
-	MCFG_CPU_IO_MAP(iqunlimz_io)
-	MCFG_CPU_VBLANK_INT_DRIVER("screen", iqunlim_state,  assert_irq)
+	Z80(config, m_maincpu, XTAL(4'000'000)); /* not accurate */
+	m_maincpu->set_addrmap(AS_PROGRAM, &iqunlimz_state::iqunlimz_mem);
+	m_maincpu->set_addrmap(AS_IO, &iqunlimz_state::iqunlimz_io);
+	m_maincpu->set_vblank_int("screen", FUNC(iqunlimz_state::assert_irq));
 
-	MCFG_DEVICE_ADD("rombank1", ADDRESS_MAP_BANK, 0)
-	MCFG_DEVICE_PROGRAM_MAP(iqunlimz_rombank_map)
-	MCFG_ADDRESS_MAP_BANK_ENDIANNESS(ENDIANNESS_LITTLE)
-	MCFG_ADDRESS_MAP_BANK_DATABUS_WIDTH(8)
-	MCFG_ADDRESS_MAP_BANK_STRIDE(0x4000)
-
-	MCFG_DEVICE_ADD("rombank2", ADDRESS_MAP_BANK, 0)
-	MCFG_DEVICE_PROGRAM_MAP(iqunlimz_rombank_map)
-	MCFG_ADDRESS_MAP_BANK_ENDIANNESS(ENDIANNESS_LITTLE)
-	MCFG_ADDRESS_MAP_BANK_DATABUS_WIDTH(8)
-	MCFG_ADDRESS_MAP_BANK_STRIDE(0x4000)
-
-	MCFG_DEVICE_ADD("rambank1", ADDRESS_MAP_BANK, 0)
-	MCFG_DEVICE_PROGRAM_MAP(iqunlimz_rambank_map)
-	MCFG_ADDRESS_MAP_BANK_ENDIANNESS(ENDIANNESS_LITTLE)
-	MCFG_ADDRESS_MAP_BANK_DATABUS_WIDTH(8)
-	MCFG_ADDRESS_MAP_BANK_STRIDE(0x4000)
-
-	MCFG_DEVICE_ADD("rambank2", ADDRESS_MAP_BANK, 0)
-	MCFG_DEVICE_PROGRAM_MAP(iqunlimz_rambank_map)
-	MCFG_ADDRESS_MAP_BANK_ENDIANNESS(ENDIANNESS_LITTLE)
-	MCFG_ADDRESS_MAP_BANK_DATABUS_WIDTH(8)
-	MCFG_ADDRESS_MAP_BANK_STRIDE(0x4000)
+	ADDRESS_MAP_BANK(config, "rombank1").set_map(&iqunlimz_state::iqunlimz_rombank_map).set_options(ENDIANNESS_LITTLE, 8, 32, 0x4000);
+	ADDRESS_MAP_BANK(config, "rombank2").set_map(&iqunlimz_state::iqunlimz_rombank_map).set_options(ENDIANNESS_LITTLE, 8, 32, 0x4000);
+	ADDRESS_MAP_BANK(config, "rambank1").set_map(&iqunlimz_state::iqunlimz_rambank_map).set_options(ENDIANNESS_LITTLE, 8, 32, 0x4000);
+	ADDRESS_MAP_BANK(config, "rambank2").set_map(&iqunlimz_state::iqunlimz_rambank_map).set_options(ENDIANNESS_LITTLE, 8, 32, 0x4000);
 
 	/* video hardware */
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_REFRESH_RATE(60)
-	MCFG_SCREEN_VBLANK_TIME(ATTOSECONDS_IN_USEC(2500)) /* not accurate */
-	MCFG_SCREEN_UPDATE_DRIVER(iqunlim_state, screen_update)
-	MCFG_SCREEN_SIZE(256, 224)
-	MCFG_SCREEN_VISIBLE_AREA(0, 256-1, 0, 224-1)
-	MCFG_SCREEN_PALETTE("palette")
+	SCREEN(config, m_screen, SCREEN_TYPE_RASTER);
+	m_screen->set_refresh_hz(60);
+	m_screen->set_vblank_time(ATTOSECONDS_IN_USEC(2500)); /* not accurate */
+	m_screen->set_screen_update(FUNC(iqunlimz_state::screen_update));
+	m_screen->set_size(256, 224);
+	m_screen->set_visarea(0, 256-1, 0, 224-1);
+	m_screen->set_palette("palette");
 
-	MCFG_PALETTE_ADD("palette", 256)
-	MCFG_PALETTE_INIT_OWNER(socrates_state, socrates)
+	PALETTE(config, "palette", FUNC(iqunlimz_state::socrates_palette), 256);
 
 	/* sound hardware */
-	MCFG_SPEAKER_STANDARD_MONO("mono")
-	MCFG_SOUND_ADD("soc_snd", SOCRATES_SOUND, XTAL_21_4772MHz/(512+256))
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.25)
+	SPEAKER(config, "mono").front_center();
+	SOCRATES_SOUND(config, m_sound, XTAL(21'477'272)/(512+256)).add_route(ALL_OUTPUTS, "mono", 0.25);
 
-	MCFG_GENERIC_CARTSLOT_ADD("cartslot", generic_plain_slot, nullptr)
-MACHINE_CONFIG_END
+	GENERIC_CARTSLOT(config, m_cart, generic_plain_slot, nullptr);
+}
 
 /******************************************************************************
  ROM Definitions
 ******************************************************************************/
 
 ROM_START(socrates)
-	ROM_REGION(0x400000, "maincpu", ROMREGION_ERASEVAL(0xF3)) /* can technically address 4mb of rom via bankswitching; open bus area reads as 0xF3 */
-	/* Socrates US NTSC */
-	/* all cart roms are 28 pin 23c1000/tc531000 128Kx8 roms */
-	/* cart port pinout:
+	ROM_REGION(0x400000, "maincpu", ROMREGION_ERASEVAL(0xF3)) /* can technically address 4mb of rom via bankswitching; open bus area reads as 0xF3 on fluke */
+	/* Socrates English (same ROM for NTSC and PAL) */
+	/* All cart ROMs are 28 pin 23c1000/tc531000 128Kx8 ROMs */
+	/* Cart port pinout:
 	(looking into end of disk-shaped cartridge with label/top side pointing to the right)
 	A15 -> 19  18 -- VCC
 	A14 -> 20  17 <- A16
@@ -1592,9 +1605,9 @@ ROM_START(socrates)
 	Note that a17 goes to what would be pin 2 on a rom chip if a 32 pin rom were installed, which is not the case. (pins 1, 31 and 32 would be tied to vcc)
 	It is likely that at least one of the 6 unknown lines is R/W from the z80, and another may be phi1/m1/clock etc to allow for ram to live in cart space
 
-	Cartridge check procedure by socrates is, after screen init and check for speech synth,
+	Cartridge check procedure by Socrates is, after screen init and check for speech synth,
 	bankswitch to bank 0x10 (i.e. first 0x4000 of cart appears at 4000-7fff in z80 space),
-	do following tests; if any tests fail, jump to 0x0015 (socrates main menu)
+	do following tests; if any tests fail, jump to 0x0015 (Socrates main menu)
 	* read 0x7ff0(0x3ff0 in cart rom) and compare to 0xAA
 	* read 0x7ff1(0x3ff1 in cart rom) and compare to 0x55
 	* read 0x7ff2(0x3ff2 in cart rom) and compare to 0xE7
@@ -1643,9 +1656,9 @@ ROM_START(profweis)
 	ROM_REGION(0x80000, "maincpu", ROMREGION_ERASEVAL(0xF3))
 	/* Yeno Professor Weiss-Alles (German PAL) */
 	ROM_SYSTEM_BIOS(0, "89", "1989")
-	ROMX_LOAD("lh53216d.u1", 0x00000, 0x40000, CRC(6e801762) SHA1(b80574a3abacf18133dacb9d3a8d9e2916730423), ROM_BIOS(1)) // Label: "(Vtech) LH53216D // (C)1989 VIDEO TECHNOLOGY // 9119 D"
+	ROMX_LOAD("lh53216d.u1", 0x00000, 0x40000, CRC(6e801762) SHA1(b80574a3abacf18133dacb9d3a8d9e2916730423), ROM_BIOS(0)) // Label: "(Vtech) LH53216D // (C)1989 VIDEO TECHNOLOGY // 9119 D"
 	ROM_SYSTEM_BIOS(1, "88", "1988")
-	ROMX_LOAD("27-00885-001-000.u1", 0x00000, 0x40000, CRC(fcaf8850) SHA1(a99011ee6a1ef63461c00d062278951252f117db), ROM_BIOS(2)) // Label: "(Vtech) 27-00884-001-000 // (C)1988 VIDEO TECHNOLOGY // 8911 D"
+	ROMX_LOAD("27-00885-000-000.u1", 0x00000, 0x40000, CRC(fcaf8850) SHA1(a99011ee6a1ef63461c00d062278951252f117db), ROM_BIOS(1)) // Label: "(Vtech) 27-00885-000-000 // (C)1988 VIDEO TECHNOLOGY // 8844 D"
 
 	ROM_REGION(0x10000, "vram", ROMREGION_ERASEFF) /* fill with ff, driver_init changes this to the 'correct' startup pattern */
 
@@ -1664,19 +1677,38 @@ ROM_START( iqunlimz )
 	ROM_REGION( 0x80000, "maincpu", 0 )
 	ROM_LOAD( "vtech.bin", 0x000000, 0x080000, CRC(f100c8a7) SHA1(6ad2a8accae2dd5c5c46ae953eef33cdd1ea3cf9) )
 
+	ROM_REGION(0x1000, "kbmcu", ROMREGION_ERASEFF)
+	ROM_LOAD("kbmcu.bin", 0x0000, 0x1000, NO_DUMP) /* keyboard reader MCU */
+
 	ROM_REGION( 0x40000, "vram", ROMREGION_ERASE )
 ROM_END
 
+ROM_START( vpainter )
+	ROM_REGION(0x80000, "maincpu", ROMREGION_ERASEVAL(0xF3))
+	ROM_LOAD("lh531g02.u1", 0x00000, 0x20000, CRC(898defac) SHA1(8307e00b5ce3675ce71960e7cf2d1334197a1dce)) // Label: "(Vtech)LH531G02 // (C)1991 VIDEO TECHNOLOGY // 9211 D"
+
+	ROM_REGION(0x1000, "kbmcu", ROMREGION_ERASEFF)
+	ROM_LOAD("tmp47c241nj408.u6", 0x0000, 0x1000, NO_DUMP) /* key/touchpad reader MCU */
+
+	///TODO: get rid of these regions in the status_read function or make it socrates-specific
+	ROM_REGION(0x2000, "speechint", ROMREGION_ERASE00) // doesn't exist? on vpainter, presumably reads as all zeroes
+	ROM_REGION(0x10000, "speechext", ROMREGION_ERASE00) // doesn't exist? on vpainter, presumably reads as all zeroes
+
+	ROM_REGION( 0x10000, "vram", ROMREGION_ERASE )
+ROM_END
 
 /******************************************************************************
  Drivers
 ******************************************************************************/
 
-//    YEAR  NAME      PARENT    COMPAT  MACHINE       INPUT     STATE           INIT      COMPANY                  FULLNAME                             FLAGS
-COMP( 1988, socrates, 0,        0,      socrates,     socrates, socrates_state, socrates, "Video Technology",      "Socrates Educational Video System", MACHINE_NOT_WORKING | MACHINE_IMPERFECT_SOUND | MACHINE_SUPPORTS_SAVE ) // English NTSC, no title copyright
-COMP( 1988, socratfc, socrates, 0,      socrates,     socrates, socrates_state, socrates, "Video Technology",      "Socrates SAITOUT",                  MACHINE_NOT_WORKING | MACHINE_IMPERFECT_SOUND | MACHINE_SUPPORTS_SAVE ) // French Canandian NTSC, 1988 title copyright
-COMP( 1988, profweis, socrates, 0,      socrates_pal, socrates, socrates_state, socrates, "Video Technology/Yeno", "Professor Weiss-Alles",             MACHINE_NOT_WORKING | MACHINE_IMPERFECT_SOUND | MACHINE_SUPPORTS_SAVE ) // German PAL, 1988 title copyright
-// Yeno Professeur Saitout goes here (french SECAM)
-// ? goes here (spanish PAL)
+//    YEAR  NAME      PARENT    COMPAT  MACHINE       INPUT     STATE           INIT           COMPANY                    FULLNAME                             FLAGS
+COMP( 1988, socrates, 0,        0,      socrates,     socrates, socrates_state, init_socrates, "Video Technology",        "Socrates Educational Video System", MACHINE_NOT_WORKING | MACHINE_IMPERFECT_SOUND | MACHINE_SUPPORTS_SAVE ) // English, no title copyright, same ROM for NTSC and PAL
+COMP( 1988, socratfc, socrates, 0,      socrates,     socrates, socrates_state, init_socrates, "Video Technology",        "Socrates SAITOUT",                  MACHINE_NOT_WORKING | MACHINE_IMPERFECT_SOUND | MACHINE_SUPPORTS_SAVE ) // French Canandian NTSC, 1988 title copyright
+// Yeno Professeur Saitout (French SECAM) matches the Socrates SAITOUT dump (same ROM 27-00884-001-000)
+COMP( 1988, profweis, socrates, 0,      socrates_pal, socrates, socrates_state, init_socrates, "Video Technology / Yeno", "Professor Weiss-Alles",             MACHINE_NOT_WORKING | MACHINE_IMPERFECT_SOUND | MACHINE_SUPPORTS_SAVE ) // German PAL, 1988 title copyright
+// ? goes here (Spanish PAL)
 
-COMP( 1991, iqunlimz, 0,        0,      iqunlimz,     iqunlimz, iqunlim_state,  iqunlimz, "Video Technology",      "IQ Unlimited (Z80)",               MACHINE_NOT_WORKING | MACHINE_IMPERFECT_SOUND )
+COMP( 1991, iqunlimz, 0,        0,      iqunlimz,     iqunlimz, iqunlimz_state, init_iqunlimz, "Video Technology",        "IQ Unlimited (Z80)",                MACHINE_NOT_WORKING | MACHINE_IMPERFECT_SOUND )
+
+COMP( 1991, vpainter, 0,        0,      vpainter_pal, socrates, socrates_state, init_vpainter, "Video Technology",        "Video Painter (PAL)",               MACHINE_NOT_WORKING | MACHINE_IMPERFECT_SOUND )
+// Master Video Painter goes here

@@ -9,6 +9,7 @@
  *****************************************************************************/
 #include "emu.h"
 #include "mcs40.h"
+#include "mcs40dasm.h"
 #include "debugger.h"
 
 
@@ -55,7 +56,7 @@ opcode spaces.  It's accessed via a 4008/4009 pair, or a 4289.  With a
 support requires a 4040 with a 4289.  Accesses are 4 bits wide.  The
 address consists of the 8-bit value latched with the SRC instruction and
 a first/last bit that toggles on each program memory operation.  There's
-no way for the CPU to get the sate of the first/last bit (even using
+no way for the CPU to get the state of the first/last bit (even using
 additional I/O to read it is difficult because it's only output during
 program memory reads and writes), so the developer has to be very
 careful to always do program memory operations in pairs or track the
@@ -85,7 +86,7 @@ mcs40_cpu_device_base::mcs40_cpu_device_base(
 		device_type type,
 		const char *tag,
 		device_t *owner,
-		uint32_t clock,
+		u32 clock,
 		bool extended_cm,
 		unsigned rom_width,
 		unsigned stack_ptr_mask,
@@ -101,11 +102,10 @@ mcs40_cpu_device_base::mcs40_cpu_device_base(
 			{ "ramport", ENDIANNESS_LITTLE, 8, u8(5),             0 },
 			{ "program", ENDIANNESS_LITTLE, 8, u8(rom_width - 3), 0 }, }
 	, m_spaces{ nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr }
-	, m_direct(nullptr)
-	, m_bus_cycle_cb()
+	, m_bus_cycle_cb(*this)
 	, m_sync_cb(*this)
-	, m_cm_rom_cb{ { *this }, { *this } }
-	, m_cm_ram_cb{ { *this }, { *this }, { *this }, { *this }, }
+	, m_cm_rom_cb(*this)
+	, m_cm_ram_cb(*this)
 	, m_cy_cb(*this), m_stp_ack_cb(*this)
 	, m_4289_pm_cb(*this), m_4289_f_l_cb(*this)
 	, m_extended_cm(extended_cm)
@@ -133,7 +133,7 @@ mcs40_cpu_device_base::mcs40_cpu_device_base(
 
 void mcs40_cpu_device_base::device_start()
 {
-	m_icountptr = &m_icount;
+	set_icountptr(m_icount);
 
 	m_spaces[AS_ROM]            = &space(AS_ROM);
 	m_spaces[AS_RAM_MEMORY]     = &space(AS_RAM_MEMORY);
@@ -141,16 +141,12 @@ void mcs40_cpu_device_base::device_start()
 	m_spaces[AS_RAM_STATUS]     = &space(AS_RAM_STATUS);
 	m_spaces[AS_RAM_PORTS]      = &space(AS_RAM_PORTS);
 	m_spaces[AS_PROGRAM_MEMORY] = &space(AS_PROGRAM_MEMORY);
-	m_direct = &m_spaces[AS_ROM]->direct();
+	m_spaces[AS_ROM]->cache(m_cache);
 
-	m_bus_cycle_cb.bind_relative_to(*owner());
+	m_bus_cycle_cb.resolve();
 	m_sync_cb.resolve_safe();
-	m_cm_rom_cb[0].resolve_safe();
-	m_cm_rom_cb[1].resolve_safe();
-	m_cm_ram_cb[0].resolve_safe();
-	m_cm_ram_cb[1].resolve_safe();
-	m_cm_ram_cb[2].resolve_safe();
-	m_cm_ram_cb[3].resolve_safe();
+	m_cm_rom_cb.resolve_all_safe();
+	m_cm_ram_cb.resolve_all_safe();
 	m_cy_cb.resolve_safe();
 	m_stp_ack_cb.resolve_safe();
 	m_4289_pm_cb.resolve_safe();
@@ -228,9 +224,9 @@ void mcs40_cpu_device_base::device_start()
 	save_item(NAME(m_4289_first));
 	save_item(NAME(m_a));
 	save_item(NAME(m_c));
-	save_pointer(NAME(m_addr_stack.get()), m_stack_ptr_mask + 1);
+	save_pointer(NAME(m_addr_stack), m_stack_ptr_mask + 1);
 	save_item(NAME(m_stack_ptr));
-	save_pointer(NAME(m_index_regs.get()), m_index_reg_cnt >> 1);
+	save_pointer(NAME(m_index_regs), m_index_reg_cnt >> 1);
 	save_item(NAME(m_index_reg_bank));
 	save_item(NAME(m_cr));
 	save_item(NAME(m_pending_cr3));
@@ -416,21 +412,6 @@ void mcs40_cpu_device_base::state_string_export(device_state_entry const &entry,
 
 
 /***********************************************************************
-    device_disasm_interface implementation
-***********************************************************************/
-
-u32 mcs40_cpu_device_base::disasm_min_opcode_bytes() const
-{
-	return 1U;
-}
-
-u32 mcs40_cpu_device_base::disasm_max_opcode_bytes() const
-{
-	return 2U;
-}
-
-
-/***********************************************************************
     register access
 ***********************************************************************/
 
@@ -608,7 +589,7 @@ inline void mcs40_cpu_device_base::do_a1()
 	{
 		m_pcbase = rom_bank() | m_rom_addr;
 		if (machine().debug_flags & DEBUG_FLAG_ENABLED)
-			debugger_instruction_hook(this, pc());
+			debugger_instruction_hook(pc());
 		if (m_stop_latch)
 		{
 			m_stp = (ASSERT_LINE == m_stp) ? ASSERT_LINE : CLEAR_LINE;
@@ -651,7 +632,7 @@ inline void mcs40_cpu_device_base::do_m1()
 		update_cm_rom(0x0fU);
 	}
 	// TODO: just read the high nybble here - MAME doesn't support this
-	u8 const read = m_direct->read_byte(rom_bank() | m_rom_addr);
+	u8 const read = m_cache.read_byte(rom_bank() | m_rom_addr);
 	if (cycle::OP == m_cycle)
 	{
 		m_opr = (m_stop_ff) ? 0x0U : (read >> 4);
@@ -669,7 +650,7 @@ inline void mcs40_cpu_device_base::do_m1()
 inline void mcs40_cpu_device_base::do_m2()
 {
 	// TODO: just read the low nybble here - MAME doesn't support this
-	u8 const read = m_direct->read_byte(rom_bank() | m_rom_addr);
+	u8 const read = m_cache.read_byte(rom_bank() | m_rom_addr);
 	if (cycle::OP == m_cycle)
 		m_opa = (m_stop_ff) ? 0x0U : (read & 0x0fU);
 	else
@@ -842,7 +823,7 @@ inline void mcs40_cpu_device_base::update_4289_f_l(u8 val)
 
 
 
-i4004_cpu_device::i4004_cpu_device(machine_config const &mconfig, char const *tag, device_t *owner, uint32_t clock)
+i4004_cpu_device::i4004_cpu_device(machine_config const &mconfig, char const *tag, device_t *owner, u32 clock)
 	: mcs40_cpu_device_base(mconfig, I4004, tag, owner, clock, false, 12U, 0x3U, 16U, 0x7U)
 {
 }
@@ -852,7 +833,7 @@ i4004_cpu_device::i4004_cpu_device(machine_config const &mconfig, char const *ta
     device_execute_interface implementation
 ***********************************************************************/
 
-u32 i4004_cpu_device::execute_input_lines() const
+u32 i4004_cpu_device::execute_input_lines() const noexcept
 {
 	return 1U;
 }
@@ -874,15 +855,9 @@ void i4004_cpu_device::execute_set_input(int inputnum, int state)
     device_disasm_interface implementation
 ***********************************************************************/
 
-offs_t i4004_cpu_device::disasm_disassemble(
-		std::ostream &stream,
-		offs_t pc,
-		uint8_t const *oprom,
-		uint8_t const *opram,
-		uint32_t options)
+std::unique_ptr<util::disasm_interface> i4004_cpu_device::create_disassembler()
 {
-	extern CPU_DISASSEMBLE(i4004);
-	return CPU_DISASSEMBLE_NAME(i4004)(this, stream, pc, oprom, opram, options);
+	return std::make_unique<i4004_disassembler>();
 }
 
 
@@ -897,7 +872,7 @@ bool i4004_cpu_device::is_io_op(u8 opr)
 
 i4004_cpu_device::cycle i4004_cpu_device::do_cycle1(u8 opr, u8 opa, pmem &program_op)
 {
-	static constexpr uint8_t kbp_table[] = { 0x0, 0x1, 0x2, 0xf, 0x3, 0xf, 0xf, 0xf, 0x4, 0xf, 0xf, 0xf, 0xf, 0xf, 0xf, 0xf };
+	static constexpr u8 kbp_table[] = { 0x0, 0x1, 0x2, 0xf, 0x3, 0xf, 0xf, 0xf, 0x4, 0xf, 0xf, 0xf, 0xf, 0xf, 0xf, 0xf };
 
 	switch (opr)
 	{
@@ -1158,7 +1133,7 @@ u8 i4004_cpu_device::do_io(u8 opr, u8 opa)
 
 
 
-i4040_cpu_device::i4040_cpu_device(machine_config const &mconfig, char const *tag, device_t *owner, uint32_t clock)
+i4040_cpu_device::i4040_cpu_device(machine_config const &mconfig, char const *tag, device_t *owner, u32 clock)
 	: i4004_cpu_device(mconfig, I4040, tag, owner, clock, true, 13U, 0x7U, 24U, 0xfU)
 {
 }
@@ -1168,7 +1143,7 @@ i4040_cpu_device::i4040_cpu_device(machine_config const &mconfig, char const *ta
     device_execute_interface implementation
 ***********************************************************************/
 
-u32 i4040_cpu_device::execute_input_lines() const
+u32 i4040_cpu_device::execute_input_lines() const noexcept
 {
 	return 3U;
 }
@@ -1190,15 +1165,9 @@ void i4040_cpu_device::execute_set_input(int inputnum, int state)
     device_disasm_interface implementation
 ***********************************************************************/
 
-offs_t i4040_cpu_device::disasm_disassemble(
-		std::ostream &stream,
-		offs_t pc,
-		uint8_t const *oprom,
-		uint8_t const *opram,
-		uint32_t options)
+std::unique_ptr<util::disasm_interface> i4040_cpu_device::create_disassembler()
 {
-	extern CPU_DISASSEMBLE(i4040);
-	return CPU_DISASSEMBLE_NAME(i4040)(this, stream, pc, oprom, opram, options);
+	return std::make_unique<i4040_disassembler>();
 }
 
 

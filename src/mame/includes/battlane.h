@@ -6,6 +6,9 @@
 
 ***************************************************************************/
 
+#include "emupal.h"
+#include "tilemap.h"
+
 class battlane_state : public driver_device
 {
 public:
@@ -34,14 +37,14 @@ public:
 	required_device<gfxdecode_device> m_gfxdecode;
 	required_device<palette_device> m_palette;
 
-	DECLARE_WRITE8_MEMBER(battlane_cpu_command_w);
-	DECLARE_WRITE8_MEMBER(battlane_palette_w);
-	DECLARE_WRITE8_MEMBER(battlane_scrollx_w);
-	DECLARE_WRITE8_MEMBER(battlane_scrolly_w);
-	DECLARE_WRITE8_MEMBER(battlane_tileram_w);
-	DECLARE_WRITE8_MEMBER(battlane_spriteram_w);
-	DECLARE_WRITE8_MEMBER(battlane_bitmap_w);
-	DECLARE_WRITE8_MEMBER(battlane_video_ctrl_w);
+	void battlane_cpu_command_w(uint8_t data);
+	void battlane_palette_w(offs_t offset, uint8_t data);
+	void battlane_scrollx_w(uint8_t data);
+	void battlane_scrolly_w(uint8_t data);
+	void battlane_tileram_w(offs_t offset, uint8_t data);
+	void battlane_spriteram_w(offs_t offset, uint8_t data);
+	void battlane_bitmap_w(offs_t offset, uint8_t data);
+	void battlane_video_ctrl_w(uint8_t data);
 	TILE_GET_INFO_MEMBER(get_tile_info_bg);
 	TILEMAP_MAPPER_MEMBER(battlane_tilemap_scan_rows_2x2);
 	virtual void machine_start() override;
@@ -51,4 +54,6 @@ public:
 	INTERRUPT_GEN_MEMBER(battlane_cpu1_interrupt);
 	void draw_sprites( bitmap_ind16 &bitmap, const rectangle &cliprect );
 	void draw_fg_bitmap( bitmap_ind16 &bitmap );
+	void battlane(machine_config &config);
+	void battlane_map(address_map &map);
 };

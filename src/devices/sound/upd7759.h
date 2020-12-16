@@ -5,6 +5,8 @@
 
 #pragma once
 
+#include "dirom.h"
+
 /* NEC uPD7759/55/56/P56/57/58 ADPCM Speech Processor */
 
 /* There are two modes for the uPD7759, selected through the !MD pin.
@@ -13,19 +15,17 @@
    software.
 */
 
-#define UPD7759_STANDARD_CLOCK      XTAL_640kHz
-
-class upd775x_device : public device_t, public device_sound_interface
+class upd775x_device : public device_t,
+	public device_sound_interface,
+	public device_rom_interface<17>
 {
 public:
-	template <class Object> static devcb_base &set_drq_callback(device_t &device, Object &&cb) { return downcast<upd775x_device &>(device).m_drqcallback.set_callback(std::forward<Object>(cb)); }
-
-	void set_bank_base(offs_t base);
+	enum : u32 { STANDARD_CLOCK = 640'000 };
 
 	DECLARE_WRITE_LINE_MEMBER( reset_w );
 	DECLARE_READ_LINE_MEMBER( busy_r );
-	virtual DECLARE_WRITE8_MEMBER( port_w );
-	void postload();
+	virtual void port_w(u8 data);
+	void set_start_delay(uint32_t data) { m_start_delay = data; };
 
 protected:
 	// chip states
@@ -50,7 +50,10 @@ protected:
 
 	// device-level overrides
 	virtual void device_start() override;
+	virtual void device_clock_changed() override;
 	virtual void device_reset() override;
+
+	virtual void rom_bank_updated() override;
 
 	// sound stream update overrides
 	virtual void sound_stream_update(sound_stream &stream, stream_sample_t **inputs, stream_sample_t **outputs, int samples) override;
@@ -89,6 +92,7 @@ protected:
 	uint8_t       m_first_valid_header;         /* did we get our first valid header yet? */
 	uint32_t      m_offset;                     /* current ROM offset */
 	uint32_t      m_repeat_offset;              /* current ROM repeat offset */
+	uint32_t      m_start_delay;
 
 	/* ADPCM processing */
 	int8_t        m_adpcm_state;                /* ADPCM state index */
@@ -96,19 +100,17 @@ protected:
 	int16_t       m_sample;                     /* current sample value */
 
 	/* ROM access */
-	optional_region_ptr<uint8_t> m_rombase;     /* pointer to ROM data or nullptr for slave mode */
-	uint8_t *     m_rom;                        /* pointer to ROM data or nullptr for slave mode */
-	uint32_t      m_romoffset;                  /* ROM offset to make save/restore easier */
-	uint32_t      m_rommask;                    /* maximum address offset */
-
-	devcb_write_line m_drqcallback;
+	int           m_md;                         /* High is stand alone, low is slave. */
 };
 
 class upd7759_device : public upd775x_device
 {
 public:
-	upd7759_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+	auto drq() { return m_drqcallback.bind(); }
 
+	upd7759_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock = STANDARD_CLOCK);
+
+	DECLARE_WRITE_LINE_MEMBER( md_w );
 	DECLARE_WRITE_LINE_MEMBER( start_w );
 
 protected:
@@ -122,31 +124,27 @@ protected:
 	virtual void device_start() override;
 	virtual void device_reset() override;
 	virtual void device_timer(emu_timer &timer, device_timer_id id, int param, void *ptr) override;
-	virtual void sound_stream_update(sound_stream &stream, stream_sample_t **inputs, stream_sample_t **outputs, int samples) override;
 
+	devcb_write_line m_drqcallback;
 	emu_timer *m_timer;
 };
 
 class upd7756_device : public upd775x_device
 {
 public:
-	upd7756_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+	upd7756_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock = STANDARD_CLOCK);
+
+	virtual void device_reset() override;
 
 	DECLARE_WRITE_LINE_MEMBER( start_w );
 
 protected:
+	upd7756_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock);
+
 	virtual void device_start() override;
-	virtual void device_reset() override;
-	virtual void sound_stream_update(sound_stream &stream, stream_sample_t **inputs, stream_sample_t **outputs, int samples) override;
 };
 
 DECLARE_DEVICE_TYPE(UPD7759, upd7759_device)
 DECLARE_DEVICE_TYPE(UPD7756, upd7756_device)
-
-#define MCFG_UPD7759_DRQ_CALLBACK(_write) \
-	devcb = &upd7759_device::set_drq_callback(*device, DEVCB_##_write);
-
-#define MCFG_UPD7756_DRQ_CALLBACK(_write) \
-	devcb = &upd7756_device::set_drq_callback(*device, DEVCB_##_write);
 
 #endif // MAME_SOUND_UPD7759_H

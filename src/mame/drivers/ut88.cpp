@@ -26,43 +26,41 @@ Paste facility was tested but doesn't work, so all code remnants removed.
 #include "includes/ut88.h"
 
 #include "formats/rk_cas.h"
-#include "softlist.h"
 #include "ut88mini.lh"
 #include "sound/volt_reg.h"
 #include "screen.h"
 #include "speaker.h"
 
 
-static GFXDECODE_START( ut88 )
-	GFXDECODE_ENTRY( "chargen", 0x0000, ut88_charlayout, 0, 1 )
-GFXDECODE_END
-
 /* Address maps */
-static ADDRESS_MAP_START( ut88mini_mem, AS_PROGRAM, 8, ut88_state )
-	ADDRESS_MAP_UNMAP_HIGH
-	AM_RANGE( 0x0000, 0x03ff ) AM_ROM  // System ROM
-	AM_RANGE( 0xc000, 0xc3ff ) AM_RAM  // RAM
-	AM_RANGE( 0x9000, 0x9fff ) AM_WRITE(ut88mini_write_led) // 7seg LED
-ADDRESS_MAP_END
+void ut88mini_state::mem_map(address_map &map)
+{
+	map.unmap_value_high();
+	map(0x0000, 0x03ff).rom();  // System ROM
+	map(0xc000, 0xc3ff).ram();  // RAM
+	map(0x9000, 0x9fff).w(FUNC(ut88mini_state::led_w)); // 7seg LED
+}
 
-static ADDRESS_MAP_START( ut88_mem, AS_PROGRAM, 8, ut88_state )
-	AM_RANGE( 0x0000, 0x07ff ) AM_RAMBANK("bank1") // First bank
-	AM_RANGE( 0x0800, 0xdfff ) AM_RAM  // RAM
-	AM_RANGE( 0xe000, 0xe7ff ) AM_RAM  // Video RAM (not used)
-	AM_RANGE( 0xe800, 0xefff ) AM_RAM AM_SHARE("videoram") // Video RAM
-	AM_RANGE( 0xf400, 0xf7ff ) AM_RAM  // System RAM
-	AM_RANGE( 0xf800, 0xffff ) AM_ROM  // System ROM
-ADDRESS_MAP_END
+void ut88_state::mem_map(address_map &map)
+{
+	map(0x0000, 0xdfff).ram().share("mainram");
+	map(0xe000, 0xe7ff).ram();  // Video RAM (not used)
+	map(0xe800, 0xefff).ram().share("videoram"); // Video RAM
+	map(0xf400, 0xf7ff).ram();  // System RAM
+	map(0xf800, 0xffff).rom().region("maincpu",0);  // System ROM
+}
 
-static ADDRESS_MAP_START( ut88mini_io, AS_IO, 8, ut88_state )
-	AM_RANGE( 0xA0, 0xA0) AM_READ(ut88mini_keyboard_r)
-	AM_RANGE( 0xA1, 0xA1) AM_READ(ut88_tape_r)
-ADDRESS_MAP_END
+void ut88mini_state::io_map(address_map &map)
+{
+	map(0xA0, 0xA0).r(FUNC(ut88mini_state::keyboard_r));
+	map(0xA1, 0xA1).r(FUNC(ut88mini_state::tape_r));
+}
 
-static ADDRESS_MAP_START( ut88_io, AS_IO, 8, ut88_state )
-	AM_RANGE( 0x04, 0x07) AM_READWRITE(ut88_keyboard_r, ut88_keyboard_w)
-	AM_RANGE( 0xA1, 0xA1) AM_READWRITE(ut88_tape_r, ut88_sound_w)
-ADDRESS_MAP_END
+void ut88_state::io_map(address_map &map)
+{
+	map(0x04, 0x07).rw(FUNC(ut88_state::keyboard_r), FUNC(ut88_state::keyboard_w));
+	map(0xA1, 0xA1).rw(FUNC(ut88_state::tape_r), FUNC(ut88_state::sound_w));
+}
 
 /* Input ports */
 static INPUT_PORTS_START( ut88 )
@@ -182,92 +180,118 @@ static INPUT_PORTS_START( ut88mini )
 	PORT_BIT(0x80, IP_ACTIVE_LOW, IPT_KEYPAD) PORT_NAME("Backspace") PORT_CODE(KEYCODE_BACKSPACE)
 INPUT_PORTS_END
 
+const gfx_layout charlayout =
+{
+	8, 8,               /* 8x8 characters */
+	256,                /* 256 characters */
+	1,                /* 1 bits per pixel */
+	{0},                /* no bitplanes; 1 bit per pixel */
+	{0, 1, 2, 3, 4, 5, 6, 7},
+	{0 * 8, 1 * 8, 2 * 8, 3 * 8, 4 * 8, 5 * 8, 6 * 8, 7 * 8},
+	8*8                 /* size of one char */
+};
+
+static GFXDECODE_START( gfx_ut88 )
+	GFXDECODE_ENTRY( "chargen", 0x0000, charlayout, 0, 1 )
+GFXDECODE_END
+
+u32 ut88_state::screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect)
+{
+	for (u8 y = 0; y < 28; y++)
+	{
+		for (u8 x = 0; x < 64; x++)
+		{
+			u8 code = m_vram[x +   y*64] & 0x7f;
+			u8 attr = m_vram[x+1 + y*64] & 0x80;
+			m_gfxdecode->gfx(0)->opaque(bitmap,cliprect, code | attr, 0, 0,0, x*8,y*8);
+		}
+	}
+	return 0;
+}
+
 /* Machine driver */
-static MACHINE_CONFIG_START( ut88 )
+void ut88_state::ut88(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", I8080, 2000000)
-	MCFG_CPU_PROGRAM_MAP(ut88_mem)
-	MCFG_CPU_IO_MAP(ut88_io)
-	MCFG_MACHINE_RESET_OVERRIDE(ut88_state, ut88 )
+	I8080(config, m_maincpu, 2000000);
+	m_maincpu->set_addrmap(AS_PROGRAM, &ut88_state::mem_map);
+	m_maincpu->set_addrmap(AS_IO, &ut88_state::io_map);
 
 	/* video hardware */
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_REFRESH_RATE(50)
-	MCFG_SCREEN_VBLANK_TIME(ATTOSECONDS_IN_USEC(2500)) /* not accurate */
-	MCFG_SCREEN_SIZE(64*8, 28*8)
-	MCFG_SCREEN_VISIBLE_AREA(0, 64*8-1, 0, 28*8-1)
-	MCFG_VIDEO_START_OVERRIDE(ut88_state,ut88)
-	MCFG_SCREEN_UPDATE_DRIVER(ut88_state, screen_update_ut88)
-	MCFG_SCREEN_PALETTE("palette")
+	screen_device &screen(SCREEN(config, "screen", SCREEN_TYPE_RASTER));
+	screen.set_refresh_hz(50);
+	screen.set_vblank_time(ATTOSECONDS_IN_USEC(2500)); /* not accurate */
+	screen.set_size(64*8, 28*8);
+	screen.set_visarea(0, 64*8-1, 0, 28*8-1);
+	screen.set_screen_update(FUNC(ut88_state::screen_update));
+	screen.set_palette(m_palette);
 
-	MCFG_PALETTE_ADD_MONOCHROME("palette")
-	MCFG_GFXDECODE_ADD("gfxdecode", "palette", ut88 )
+	PALETTE(config, m_palette, palette_device::MONOCHROME);
+	GFXDECODE(config, m_gfxdecode, m_palette, gfx_ut88);
 
 	/* audio hardware */
-	MCFG_SPEAKER_STANDARD_MONO("speaker")
-	MCFG_SOUND_ADD("dac", DAC_1BIT, 0) MCFG_SOUND_ROUTE(ALL_OUTPUTS, "speaker", 0.25)
-	MCFG_DEVICE_ADD("vref", VOLTAGE_REGULATOR, 0) MCFG_VOLTAGE_REGULATOR_OUTPUT(5.0)
-	MCFG_SOUND_ROUTE_EX(0, "dac", 1.0, DAC_VREF_POS_INPUT)
-
-	MCFG_SOUND_WAVE_ADD(WAVE_TAG, "cassette")
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "speaker", 0.25)
+	SPEAKER(config, "speaker").front_center();
+	DAC_1BIT(config, "dac", 0).add_route(ALL_OUTPUTS, "speaker", 0.25);
+	voltage_regulator_device &vref(VOLTAGE_REGULATOR(config, "vref", 0));
+	vref.add_route(0, "dac", 1.0, DAC_VREF_POS_INPUT);
 
 	/* Devices */
-	MCFG_DEVICE_ADD("ppi8255", I8255A, 0)
-	MCFG_I8255_OUT_PORTA_CB(WRITE8(ut88_state, ut88_8255_porta_w))
-	MCFG_I8255_IN_PORTB_CB(READ8(ut88_state, ut88_8255_portb_r))
-	MCFG_I8255_IN_PORTC_CB(READ8(ut88_state, ut88_8255_portc_r))
+	I8255A(config, m_ppi);
+	m_ppi->out_pa_callback().set(FUNC(ut88_state::ppi_porta_w));
+	m_ppi->in_pb_callback().set(FUNC(ut88_state::ppi_portb_r));
+	m_ppi->in_pc_callback().set(FUNC(ut88_state::ppi_portc_r));
 
-	MCFG_CASSETTE_ADD( "cassette" )
-	MCFG_CASSETTE_FORMATS(rku_cassette_formats)
-	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_STOPPED | CASSETTE_SPEAKER_ENABLED | CASSETTE_MOTOR_ENABLED)
-	MCFG_CASSETTE_INTERFACE("ut88_cass")
+	CASSETTE(config, m_cassette);
+	m_cassette->set_formats(rku_cassette_formats);
+	m_cassette->set_default_state(CASSETTE_STOPPED | CASSETTE_SPEAKER_ENABLED | CASSETTE_MOTOR_ENABLED);
+	m_cassette->add_route(ALL_OUTPUTS, "speaker", 0.05);
+	m_cassette->set_interface("ut88_cass");
 
-	MCFG_SOFTWARE_LIST_ADD("cass_list","ut88")
-MACHINE_CONFIG_END
+	SOFTWARE_LIST(config, "cass_list").set_original("ut88");
+}
 
-static MACHINE_CONFIG_START( ut88mini )
+void ut88mini_state::ut88mini(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", I8080, 2000000)
-	MCFG_CPU_PROGRAM_MAP(ut88mini_mem)
-	MCFG_CPU_IO_MAP(ut88mini_io)
-	MCFG_MACHINE_START_OVERRIDE(ut88_state,ut88mini)
-	MCFG_MACHINE_RESET_OVERRIDE(ut88_state, ut88mini )
+	I8080(config, m_maincpu, 2000000);
+	m_maincpu->set_addrmap(AS_PROGRAM, &ut88mini_state::mem_map);
+	m_maincpu->set_addrmap(AS_IO, &ut88mini_state::io_map);
 
 	/* video hardware */
-	MCFG_DEFAULT_LAYOUT(layout_ut88mini)
+	config.set_default_layout(layout_ut88mini);
 
 	/* Cassette */
-	MCFG_SPEAKER_STANDARD_MONO("speaker")
-	MCFG_SOUND_WAVE_ADD(WAVE_TAG, "cassette")
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "speaker", 0.25)
+	SPEAKER(config, "speaker").front_center();
 
-	MCFG_CASSETTE_ADD( "cassette" )
-	MCFG_CASSETTE_FORMATS(rku_cassette_formats)
-	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_STOPPED | CASSETTE_SPEAKER_ENABLED | CASSETTE_MOTOR_ENABLED)
-	MCFG_CASSETTE_INTERFACE("ut88_cass")
+	CASSETTE(config, m_cassette);
+	m_cassette->set_formats(rku_cassette_formats);
+	m_cassette->set_default_state(CASSETTE_STOPPED | CASSETTE_SPEAKER_ENABLED | CASSETTE_MOTOR_ENABLED);
+	m_cassette->add_route(ALL_OUTPUTS, "speaker", 0.05);
+	m_cassette->set_interface("ut88_cass");
 
-	MCFG_SOFTWARE_LIST_ADD("cass_list","ut88")
-MACHINE_CONFIG_END
+	//SOFTWARE_LIST(config, "cass_list").set_original("ut88");   // no suitable software in the list
+}
 
 /* ROM definition */
 ROM_START( ut88 )
-	ROM_REGION( 0x10000, "maincpu", ROMREGION_ERASEFF )
-	ROM_LOAD( "ut88.rom", 0xf800, 0x0800, CRC(f433202e) SHA1(a5808a4f68fb10eb7f17f2a05c3b8479fec0e05d) )
-	ROM_REGION(0x0800, "chargen",0)
-	ROM_LOAD ("ut88.fnt", 0x0000, 0x0800, CRC(874b4d29) SHA1(357efbb295cd9e47fa97d4d03f4f1859a915b5c3) )
+	ROM_REGION( 0x0800, "maincpu", 0 )
+	ROM_LOAD( "ut88.rom", 0x0000, 0x0800, CRC(f433202e) SHA1(a5808a4f68fb10eb7f17f2a05c3b8479fec0e05d) )
+
+	ROM_REGION( 0x0800, "chargen",0 )
+	ROM_LOAD( "ut88.fnt", 0x0000, 0x0800, CRC(874b4d29) SHA1(357efbb295cd9e47fa97d4d03f4f1859a915b5c3) )
 ROM_END
 
 ROM_START( ut88mini )
-	ROM_REGION( 0x10000, "maincpu", ROMREGION_ERASEFF )
-	ROM_LOAD( "ut88mini.rom", 0x0000, 0x0400, CRC(ce9213ee) SHA1(16b71b3051a800386d664dbcc5983b783475d0c6) )
-	ROM_REGION( 0x200, "proms", 0 )
-	ROM_LOAD( "ut88key1.rom", 0x0000, 0x0100, CRC(ecfe42c7) SHA1(d7f10bbb05934150c1a258db1c8b4eb65771af59) )
-	ROM_LOAD( "ut88key2.rom", 0x0100, 0x0100, CRC(96324d23) SHA1(9dca3f639fc29d87df56505b3dde668ef2849da3) )
+	ROM_REGION( 0x0400, "maincpu", 0 )
+	ROM_LOAD( "ut88mini.rom", 0x0000, 0x0400, CRC(ce9213ee) SHA1(16b71b3051a800386d664dbcc5983b783475d0c6) ) // DD10,DD11 (0x200 each)
+
+	ROM_REGION( 0x0200, "proms", 0 )
+	ROM_LOAD( "ut88key1.dd15", 0x0000, 0x0100, CRC(ecfe42c7) SHA1(d7f10bbb05934150c1a258db1c8b4eb65771af59) )
+	ROM_LOAD( "ut88key2.dd16", 0x0100, 0x0100, CRC(96324d23) SHA1(9dca3f639fc29d87df56505b3dde668ef2849da3) )
 ROM_END
 
 /* Driver */
 
-/*    YEAR  NAME       PARENT    COMPAT  MACHINE     INPUT     STATE         INIT      COMPANY      FULLNAME      FLAGS */
-COMP( 1989, ut88mini,  0,        0,      ut88mini,   ut88mini, ut88_state,   ut88mini, "<unknown>", "UT-88 mini", 0)
-COMP( 1989, ut88,      ut88mini, 0,      ut88,       ut88,     ut88_state,   ut88,     "<unknown>", "UT-88",      0)
+/*    YEAR  NAME      PARENT    COMPAT  MACHINE   INPUT     CLASS           INIT        COMPANY      FULLNAME      FLAGS */
+COMP( 1989, ut88mini, 0,        0,      ut88mini, ut88mini, ut88mini_state, empty_init, "<unknown>", "UT-88 mini", MACHINE_SUPPORTS_SAVE )
+COMP( 1989, ut88,     ut88mini, 0,      ut88,     ut88,     ut88_state,     empty_init, "<unknown>", "UT-88",      MACHINE_SUPPORTS_SAVE )

@@ -23,11 +23,14 @@ DEFINE_DEVICE_TYPE(VTECH_PRINTER_INTERFACE, vtech_printer_interface_device, "vte
 //  device_add_mconfig - add device configuration
 //-------------------------------------------------
 
-MACHINE_CONFIG_MEMBER( vtech_printer_interface_device::device_add_mconfig )
-	MCFG_CENTRONICS_ADD("centronics", centronics_devices, "printer")
-	MCFG_CENTRONICS_BUSY_HANDLER(WRITELINE(vtech_printer_interface_device, busy_w))
-	MCFG_CENTRONICS_OUTPUT_LATCH_ADD("latch", "centronics")
-MACHINE_CONFIG_END
+void vtech_printer_interface_device::device_add_mconfig(machine_config &config)
+{
+	CENTRONICS(config, m_centronics, centronics_devices, "printer");
+	m_centronics->busy_handler().set(FUNC(vtech_printer_interface_device::busy_w));
+
+	OUTPUT_LATCH(config, m_latch);
+	m_centronics->set_output_latch(*m_latch);
+}
 
 
 //**************************************************************************
@@ -61,9 +64,9 @@ void vtech_printer_interface_device::device_start()
 
 void vtech_printer_interface_device::device_reset()
 {
-	io_space().install_read_handler(0x00, 0x00, read8_delegate(FUNC(vtech_printer_interface_device::busy_r), this));
-	io_space().install_write_handler(0x0d, 0x0d, write8_delegate(FUNC(vtech_printer_interface_device::strobe_w), this));
-	io_space().install_write_handler(0x0e, 0x0e, write8_delegate(FUNC(output_latch_device::write), m_latch.target()));
+	io_space().install_read_handler(0x00, 0x00, read8smo_delegate(*this, FUNC(vtech_printer_interface_device::busy_r)));
+	io_space().install_write_handler(0x0d, 0x0d, write8smo_delegate(*this, FUNC(vtech_printer_interface_device::strobe_w)));
+	io_space().install_write_handler(0x0e, 0x0e, write8smo_delegate(*m_latch, FUNC(output_latch_device::write)));
 }
 
 
@@ -76,12 +79,12 @@ WRITE_LINE_MEMBER( vtech_printer_interface_device::busy_w )
 	m_centronics_busy = state;
 }
 
-READ8_MEMBER( vtech_printer_interface_device::busy_r )
+uint8_t vtech_printer_interface_device::busy_r()
 {
 	return 0xfe | m_centronics_busy;
 }
 
-WRITE8_MEMBER( vtech_printer_interface_device::strobe_w )
+void vtech_printer_interface_device::strobe_w(uint8_t data)
 {
 	m_centronics->write_strobe(1);
 	m_centronics->write_strobe(0);

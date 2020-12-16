@@ -7,7 +7,7 @@
 #pragma once
 
 #include "cpu/z80/z80.h"
-#include "cpu/z80/z80daisy.h"
+#include "machine/z80daisy.h"
 #include "machine/z80ctc.h"
 #include "machine/gen_latch.h"
 #include "machine/40105.h"
@@ -18,9 +18,6 @@
 DECLARE_DEVICE_TYPE(EFO_ZSU,            efo_zsu_device)
 DECLARE_DEVICE_TYPE(EFO_ZSU1,           efo_zsu1_device)
 DECLARE_DEVICE_TYPE(CEDAR_MAGNET_SOUND, cedar_magnet_sound_device)
-
-#define MCFG_CEDAR_MAGNET_SOUND_ADD(_tag) \
-	MCFG_DEVICE_ADD(_tag, CEDAR_MAGNET_SOUND, 0)
 
 
 class efo_zsu_device : public device_t
@@ -35,9 +32,11 @@ public:
 	required_device<cmos_40105_device> m_fifo;
 	required_device<msm5205_device> m_adpcm;
 
-	DECLARE_WRITE8_MEMBER(sound_command_w);
-	DECLARE_WRITE8_MEMBER(adpcm_fifo_w);
+	void sound_command_w(u8 data);
+	void adpcm_fifo_w(u8 data);
 
+	void zsu_io(address_map &map);
+	void zsu_map(address_map &map);
 protected:
 	efo_zsu_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, u32 clock);
 
@@ -45,7 +44,7 @@ protected:
 	virtual void device_start() override;
 
 private:
-	DECLARE_WRITE8_MEMBER(ay1_porta_w);
+	void ay1_porta_w(u8 data);
 
 	DECLARE_WRITE_LINE_MEMBER(ctc1_z0_w);
 	DECLARE_WRITE_LINE_MEMBER(ctc1_z1_w);
@@ -76,12 +75,13 @@ public:
 
 	TIMER_CALLBACK_MEMBER(reset_assert_callback) override;
 
+	void cedar_magnet_sound_map(address_map &map);
 protected:
 	virtual void device_add_mconfig(machine_config &config) override;
 	virtual void device_start() override;
 
 private:
-	DECLARE_WRITE8_MEMBER(ay0_porta_w);
+	void ay0_porta_w(u8 data);
 };
 
 #endif // MAME_AUDIO_EFO_ZSU_H

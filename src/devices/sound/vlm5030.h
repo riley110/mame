@@ -5,7 +5,9 @@
 
 #pragma once
 
-class vlm5030_device : public device_t, public device_sound_interface, public device_rom_interface
+#include "dirom.h"
+
+class vlm5030_device : public device_t, public device_sound_interface, public device_rom_interface<16>
 {
 public:
 	vlm5030_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
@@ -14,7 +16,7 @@ public:
 	DECLARE_READ_LINE_MEMBER( bsy );
 
 	/* latch contoll data */
-	DECLARE_WRITE8_MEMBER( data_w );
+	void data_w(uint8_t data);
 
 	/* set RST pin level : reset / set table address A8-A15 */
 	DECLARE_WRITE_LINE_MEMBER( rst );
@@ -29,6 +31,7 @@ protected:
 	// device-level overrides
 	virtual void device_start() override;
 	virtual void device_reset() override;
+	virtual void device_post_load() override;
 
 	// sound stream update overrides
 	virtual void sound_stream_update(sound_stream &stream, stream_sample_t **inputs, stream_sample_t **outputs, int samples) override;

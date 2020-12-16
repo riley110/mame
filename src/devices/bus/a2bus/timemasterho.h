@@ -39,10 +39,10 @@ protected:
 	virtual ioport_constructor device_input_ports() const override;
 
 	// overrides of standard a2bus slot functions
-	virtual uint8_t read_c0nx(address_space &space, uint8_t offset) override;
-	virtual void write_c0nx(address_space &space, uint8_t offset, uint8_t data) override;
-	virtual uint8_t read_cnxx(address_space &space, uint8_t offset) override;
-	virtual uint8_t read_c800(address_space &space, uint16_t offset) override;
+	virtual uint8_t read_c0nx(uint8_t offset) override;
+	virtual void write_c0nx(uint8_t offset, uint8_t data) override;
+	virtual uint8_t read_cnxx(uint8_t offset) override;
+	virtual uint8_t read_c800(uint16_t offset) override;
 
 	required_device<pia6821_device> m_pia;
 	required_device<msm5832_device> m_msm5832;
@@ -50,8 +50,8 @@ protected:
 
 private:
 	void update_irqs();
-	DECLARE_WRITE8_MEMBER(pia_out_a);
-	DECLARE_WRITE8_MEMBER(pia_out_b);
+	void pia_out_a(uint8_t data);
+	void pia_out_b(uint8_t data);
 	DECLARE_WRITE_LINE_MEMBER(pia_irqa_w);
 	DECLARE_WRITE_LINE_MEMBER(pia_irqb_w);
 

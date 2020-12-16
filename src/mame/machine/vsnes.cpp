@@ -10,6 +10,7 @@ Nintendo VS UniSystem and DualSystem - (c) 1984 Nintendo of America
 ***************************************************************************/
 
 #include "emu.h"
+#include "screen.h"
 #include "video/ppu2c0x.h"
 #include "includes/vsnes.h"
 
@@ -34,7 +35,7 @@ static const char * const chr_banknames[] = { "bank2", "bank3", "bank4", "bank5"
  *
  *************************************/
 
-WRITE8_MEMBER(vsnes_state::vsnes_in0_w)
+void vsnes_state::vsnes_in0_w(uint8_t data)
 {
 	/* Toggling bit 0 high then low resets both controllers */
 	if (data & 1)
@@ -45,7 +46,7 @@ WRITE8_MEMBER(vsnes_state::vsnes_in0_w)
 	}
 }
 
-READ8_MEMBER(vsnes_state::gun_in0_r)
+uint8_t vsnes_state::gun_in0_r()
 {
 	int ret = (m_input_latch[0]) & 1;
 
@@ -69,7 +70,7 @@ READ8_MEMBER(vsnes_state::gun_in0_r)
 
 }
 
-READ8_MEMBER(vsnes_state::vsnes_in0_r)
+uint8_t vsnes_state::vsnes_in0_r()
 {
 	int ret = (m_input_latch[0]) & 1;
 
@@ -83,7 +84,7 @@ READ8_MEMBER(vsnes_state::vsnes_in0_r)
 
 }
 
-READ8_MEMBER(vsnes_state::vsnes_in1_r)
+uint8_t vsnes_state::vsnes_in1_r()
 {
 	int ret = (m_input_latch[1]) & 1;
 
@@ -95,7 +96,7 @@ READ8_MEMBER(vsnes_state::vsnes_in1_r)
 	return ret;
 }
 
-WRITE8_MEMBER(vsnes_state::vsnes_in0_1_w)
+void vsnes_state::vsnes_in0_1_w(uint8_t data)
 {
 	/* Toggling bit 0 high then low resets both controllers */
 	if (data & 1)
@@ -106,7 +107,7 @@ WRITE8_MEMBER(vsnes_state::vsnes_in0_1_w)
 	}
 }
 
-READ8_MEMBER(vsnes_state::vsnes_in0_1_r)
+uint8_t vsnes_state::vsnes_in0_1_r()
 {
 	int ret = (m_input_latch[2]) & 1;
 
@@ -118,7 +119,7 @@ READ8_MEMBER(vsnes_state::vsnes_in0_1_r)
 	return ret;
 }
 
-READ8_MEMBER(vsnes_state::vsnes_in1_1_r)
+uint8_t vsnes_state::vsnes_in1_1_r()
 {
 	int ret = (m_input_latch[3]) & 1;
 
@@ -184,7 +185,7 @@ void vsnes_state::v_set_videorom_bank(  int start, int count, int vrom_start_ban
 
 MACHINE_START_MEMBER(vsnes_state,vsnes)
 {
-	address_space &ppu1_space = machine().device("ppu1")->memory().space(AS_PROGRAM);
+	address_space &ppu1_space = m_ppu1->space(AS_PROGRAM);
 	int i;
 
 	/* establish nametable ram */
@@ -195,7 +196,7 @@ MACHINE_START_MEMBER(vsnes_state,vsnes)
 	m_nt_page[0][2] = m_nt_ram[0].get() + 0x800;
 	m_nt_page[0][3] = m_nt_ram[0].get() + 0xc00;
 
-	ppu1_space.install_readwrite_handler(0x2000, 0x3eff, read8_delegate(FUNC(vsnes_state::vsnes_nt0_r),this), write8_delegate(FUNC(vsnes_state::vsnes_nt0_w),this));
+	ppu1_space.install_readwrite_handler(0x2000, 0x3eff, read8sm_delegate(*this, FUNC(vsnes_state::vsnes_nt0_r)), write8sm_delegate(*this, FUNC(vsnes_state::vsnes_nt0_w)));
 
 	if (m_gfx1_rom != nullptr)
 	{
@@ -248,12 +249,12 @@ MACHINE_START_MEMBER(vsnes_state,vsdual)
 	m_nt_page[1][2] = m_nt_ram[1].get() + 0x800;
 	m_nt_page[1][3] = m_nt_ram[1].get() + 0xc00;
 
-	machine().device("ppu1")->memory().space(AS_PROGRAM).install_readwrite_handler(0x2000, 0x3eff, read8_delegate(FUNC(vsnes_state::vsnes_nt0_r),this), write8_delegate(FUNC(vsnes_state::vsnes_nt0_w),this));
-	machine().device("ppu2")->memory().space(AS_PROGRAM).install_readwrite_handler(0x2000, 0x3eff, read8_delegate(FUNC(vsnes_state::vsnes_nt1_r),this), write8_delegate(FUNC(vsnes_state::vsnes_nt1_w),this));
+	m_ppu1->space(AS_PROGRAM).install_readwrite_handler(0x2000, 0x3eff, read8sm_delegate(*this, FUNC(vsnes_state::vsnes_nt0_r)), write8sm_delegate(*this, FUNC(vsnes_state::vsnes_nt0_w)));
+	m_ppu2->space(AS_PROGRAM).install_readwrite_handler(0x2000, 0x3eff, read8sm_delegate(*this, FUNC(vsnes_state::vsnes_nt1_r)), write8sm_delegate(*this, FUNC(vsnes_state::vsnes_nt1_w)));
 	// read only!
-	machine().device("ppu1")->memory().space(AS_PROGRAM).install_read_bank(0x0000, 0x1fff, "bank2");
+	m_ppu1->space(AS_PROGRAM).install_read_bank(0x0000, 0x1fff, "bank2");
 	// read only!
-	machine().device("ppu2")->memory().space(AS_PROGRAM).install_read_bank(0x0000, 0x1fff, "bank3");
+	m_ppu2->space(AS_PROGRAM).install_read_bank(0x0000, 0x1fff, "bank3");
 	membank("bank2")->configure_entries(0, m_vrom_size[0] / 0x2000, m_vrom[0], 0x2000);
 	membank("bank3")->configure_entries(0, m_vrom_size[1] / 0x2000, m_vrom[1], 0x2000);
 	membank("bank2")->set_entry(0);
@@ -266,25 +267,25 @@ MACHINE_START_MEMBER(vsnes_state,vsdual)
  *
  *************************************/
 
-WRITE8_MEMBER(vsnes_state::vsnes_nt0_w)
+void vsnes_state::vsnes_nt0_w(offs_t offset, uint8_t data)
 {
 	int page = ((offset & 0xc00) >> 10);
 	m_nt_page[0][page][offset & 0x3ff] = data;
 }
 
-WRITE8_MEMBER(vsnes_state::vsnes_nt1_w)
+void vsnes_state::vsnes_nt1_w(offs_t offset, uint8_t data)
 {
 	int page = ((offset & 0xc00) >> 10);
 	m_nt_page[1][page][offset & 0x3ff] = data;
 }
 
-READ8_MEMBER(vsnes_state::vsnes_nt0_r)
+uint8_t vsnes_state::vsnes_nt0_r(offs_t offset)
 {
 	int page = ((offset&0xc00) >> 10);
 	return m_nt_page[0][page][offset & 0x3ff];
 }
 
-READ8_MEMBER(vsnes_state::vsnes_nt1_r)
+uint8_t vsnes_state::vsnes_nt1_r(offs_t offset)
 {
 	int page = ((offset & 0xc00) >> 10);
 	return m_nt_page[1][page][offset & 0x3ff];
@@ -332,7 +333,7 @@ void vsnes_state::v_set_mirroring(int ppu, int mirroring)
 /**********************************************************************************/
 /* Most games: VROM Banking in controller 0 write */
 
-WRITE8_MEMBER(vsnes_state::vsnormal_vrom_banking)
+void vsnes_state::vsnormal_vrom_banking(uint8_t data)
 {
 	/* switch vrom */
 	v_set_videorom_bank(0, 8, (data & 4) ? 8 : 0);
@@ -340,19 +341,19 @@ WRITE8_MEMBER(vsnes_state::vsnormal_vrom_banking)
 	/* bit 1 ( data & 2 ) enables writes to extra ram, we ignore it */
 
 	/* move along */
-	vsnes_in0_w(space, offset, data);
+	vsnes_in0_w(data);
 }
 
-DRIVER_INIT_MEMBER(vsnes_state,vsnormal)
+void vsnes_state::init_vsnormal()
 {
 	/* vrom switching is enabled with bit 2 of $4016 */
-	m_maincpu->space(AS_PROGRAM).install_write_handler(0x4016, 0x4016, write8_delegate(FUNC(vsnes_state::vsnormal_vrom_banking),this));
+	m_maincpu->space(AS_PROGRAM).install_write_handler(0x4016, 0x4016, write8smo_delegate(*this, FUNC(vsnes_state::vsnormal_vrom_banking)));
 }
 
 /**********************************************************************************/
 /* Gun games: VROM Banking in controller 0 write */
 
-WRITE8_MEMBER(vsnes_state::gun_in0_w)
+void vsnes_state::gun_in0_w(uint8_t data)
 {
 	if (m_do_vrom_bank)
 	{
@@ -369,17 +370,23 @@ WRITE8_MEMBER(vsnes_state::gun_in0_w)
 		/* do the gun thing */
 		int x = ioport("GUNX")->read();
 		float y = ioport("GUNY")->read();
-		uint8_t pix;
 
 		y = y * 0.9375f; // scale 256 (our gun input range is 0 - 255) to 240 (screen visible area / bitmap we're using is 0 - 239)
 
 		uint8_t realy = (int)y;
 
+		// update the screen if necessary
+		if (!m_ppu1->screen().vblank())
+		{
+			int vpos = m_ppu1->screen().vpos();
+			int hpos = m_ppu1->screen().hpos();
+
+			if (vpos > realy || (vpos == realy && hpos >= x))
+				m_ppu1->screen().update_now();
+		}
+
 		/* get the pixel at the gun position */
-		pix = m_ppu1->get_pixel(x, realy);
-
-
-		rgb_t col = m_palette->pen_color(pix);
+		rgb_t col = m_ppu1->screen().pixel(x, realy);
 		uint8_t bright = col.brightness();
 		// todo, calculate how bright it is with pix.r * 0.3 + pix.g * 0.59 + pix.b * 0.11 ?
 		// the mame calc above is uint8_t brightness() const { return (r() * 222 + g() * 707 + b() * 71) / 1000; }  (from lib/util/palette.h)
@@ -387,7 +394,7 @@ WRITE8_MEMBER(vsnes_state::gun_in0_w)
 		uint8_t r = col.r();
 		uint8_t g = col.g();
 		uint8_t b = col.b();
-		printf("pix is %02x | %02x %02x %02x | %02x\n", pix, r,g,b,bright);
+		printf("pix is %02x %02x %02x | %02x\n", r,g,b,bright);
 #endif
 		if (bright == 0xff)
 		{
@@ -398,7 +405,7 @@ WRITE8_MEMBER(vsnes_state::gun_in0_w)
 
 #if 0 // this is junk code, only works for NES palette..
 		/* get the color base from the ppu */
-		uint32_t color_base = m_ppu1->get_colorbase();
+		uint32_t color_base = 0;
 
 		/* look at the screen and see if the cursor is over a bright pixel */
 		if ((pix == color_base + 0x20 ) || (pix == color_base + 0x30) ||
@@ -420,17 +427,17 @@ WRITE8_MEMBER(vsnes_state::gun_in0_w)
 	m_zapstore = data;
 }
 
-DRIVER_INIT_MEMBER(vsnes_state,vsgun)
+void vsnes_state::init_vsgun()
 {
 	/* VROM switching is enabled with bit 2 of $4016 */
-	m_maincpu->space(AS_PROGRAM).install_readwrite_handler(0x4016, 0x4016, read8_delegate(FUNC(vsnes_state::gun_in0_r),this), write8_delegate(FUNC(vsnes_state::gun_in0_w),this));
+	m_maincpu->space(AS_PROGRAM).install_readwrite_handler(0x4016, 0x4016, read8smo_delegate(*this, FUNC(vsnes_state::gun_in0_r)), write8smo_delegate(*this, FUNC(vsnes_state::gun_in0_w)));
 	m_do_vrom_bank = 1;
 }
 
 /**********************************************************************************/
 /* Konami games: ROMs bankings at $8000-$ffff */
 
-WRITE8_MEMBER(vsnes_state::vskonami_rom_banking)
+void vsnes_state::vskonami_rom_banking(offs_t offset, uint8_t data)
 {
 	int reg = (offset >> 12) & 0x07;
 	int bankoffset = (data & 7) * 0x2000 + 0x10000;
@@ -456,7 +463,7 @@ WRITE8_MEMBER(vsnes_state::vskonami_rom_banking)
 	}
 }
 
-DRIVER_INIT_MEMBER(vsnes_state,vskonami)
+void vsnes_state::init_vskonami()
 {
 	/* We do manual banking, in case the code falls through */
 	/* Copy the initial banks */
@@ -464,13 +471,13 @@ DRIVER_INIT_MEMBER(vsnes_state,vskonami)
 	memcpy(&prg[0x08000], &prg[0x18000], 0x8000);
 
 	/* banking is done with writes to the $8000-$ffff area */
-	m_maincpu->space(AS_PROGRAM).install_write_handler(0x8000, 0xffff, write8_delegate(FUNC(vsnes_state::vskonami_rom_banking),this));
+	m_maincpu->space(AS_PROGRAM).install_write_handler(0x8000, 0xffff, write8sm_delegate(*this, FUNC(vsnes_state::vskonami_rom_banking)));
 }
 
 /***********************************************************************/
 /* Vs. Gumshoe */
 
-WRITE8_MEMBER(vsnes_state::vsgshoe_gun_in0_w)
+void vsnes_state::vsgshoe_gun_in0_w(uint8_t data)
 {
 	int addr;
 	if((data & 0x04) != m_old_bank)
@@ -481,17 +488,17 @@ WRITE8_MEMBER(vsnes_state::vsgshoe_gun_in0_w)
 		memcpy(&prg[0x08000], &prg[addr], 0x2000);
 	}
 
-	gun_in0_w(space, offset, data);
+	gun_in0_w(data);
 }
 
-DRIVER_INIT_MEMBER(vsnes_state,vsgshoe)
+void vsnes_state::init_vsgshoe()
 {
 	/* set up the default bank */
 	uint8_t *prg = memregion("maincpu")->base();
 	memcpy (&prg[0x08000], &prg[0x12000], 0x2000);
 
 	/* vrom switching is enabled with bit 2 of $4016 */
-	m_maincpu->space(AS_PROGRAM).install_readwrite_handler(0x4016, 0x4016, read8_delegate(FUNC(vsnes_state::gun_in0_r),this), write8_delegate(FUNC(vsnes_state::vsgshoe_gun_in0_w),this));
+	m_maincpu->space(AS_PROGRAM).install_readwrite_handler(0x4016, 0x4016, read8smo_delegate(*this, FUNC(vsnes_state::gun_in0_r)), write8smo_delegate(*this, FUNC(vsnes_state::vsgshoe_gun_in0_w)));
 
 	m_do_vrom_bank = 1;
 }
@@ -500,7 +507,7 @@ DRIVER_INIT_MEMBER(vsnes_state,vsgshoe)
 /* Dr Mario: ROMs bankings at $8000-$ffff */
 
 
-WRITE8_MEMBER(vsnes_state::drmario_rom_banking)
+void vsnes_state::drmario_rom_banking(offs_t offset, uint8_t data)
 {
 	/* basically, a MMC1 mapper from the nes */
 
@@ -611,7 +618,7 @@ WRITE8_MEMBER(vsnes_state::drmario_rom_banking)
 	}
 }
 
-DRIVER_INIT_MEMBER(vsnes_state,drmario)
+void vsnes_state::init_drmario()
 {
 	/* We do manual banking, in case the code falls through */
 	/* Copy the initial banks */
@@ -620,7 +627,7 @@ DRIVER_INIT_MEMBER(vsnes_state,drmario)
 	memcpy(&prg[0x0c000], &prg[0x1c000], 0x4000);
 
 	/* MMC1 mapper at writes to $8000-$ffff */
-	m_maincpu->space(AS_PROGRAM).install_write_handler(0x8000, 0xffff, write8_delegate(FUNC(vsnes_state::drmario_rom_banking),this));
+	m_maincpu->space(AS_PROGRAM).install_write_handler(0x8000, 0xffff, write8sm_delegate(*this, FUNC(vsnes_state::drmario_rom_banking)));
 
 	m_drmario_shiftreg = 0;
 	m_drmario_shiftcount = 0;
@@ -629,7 +636,7 @@ DRIVER_INIT_MEMBER(vsnes_state,drmario)
 /**********************************************************************************/
 /* Games with VRAM instead of graphics ROMs: ROMs bankings at $8000-$ffff */
 
-WRITE8_MEMBER(vsnes_state::vsvram_rom_banking)
+void vsnes_state::vsvram_rom_banking(uint8_t data)
 {
 	int rombank = 0x10000 + (data & 7) * 0x4000;
 	uint8_t *prg = memregion("maincpu")->base();
@@ -637,14 +644,14 @@ WRITE8_MEMBER(vsnes_state::vsvram_rom_banking)
 	memcpy(&prg[0x08000], &prg[rombank], 0x4000);
 }
 
-DRIVER_INIT_MEMBER(vsnes_state,vsvram)
+void vsnes_state::init_vsvram()
 {
 	/* when starting the game, the 1st 16k and the last 16k are loaded into the 2 banks */
 	uint8_t *prg = memregion("maincpu")->base();
 	memcpy(&prg[0x08000], &prg[0x28000], 0x8000);
 
 	/* banking is done with writes to the $8000-$ffff area */
-	m_maincpu->space(AS_PROGRAM).install_write_handler(0x8000, 0xffff, write8_delegate(FUNC(vsnes_state::vsvram_rom_banking),this));
+	m_maincpu->space(AS_PROGRAM).install_write_handler(0x8000, 0xffff, write8smo_delegate(*this, FUNC(vsnes_state::vsvram_rom_banking)));
 
 	/* allocate m_vram */
 	m_vram = std::make_unique<uint8_t[]>(0x2000);
@@ -698,7 +705,7 @@ void vsnes_state::mapper4_irq( int scanline, int vblank, int blanked )
 	}
 }
 
-WRITE8_MEMBER(vsnes_state::mapper4_w)
+void vsnes_state::mapper4_w(offs_t offset, uint8_t data)
 {
 	uint8_t MMC3_helper, cmd;
 
@@ -761,12 +768,12 @@ WRITE8_MEMBER(vsnes_state::mapper4_w)
 		case 0x6000: /* $e000 - Disable IRQs */
 			m_IRQ_enable = 0;
 			m_IRQ_count = m_IRQ_count_latch;
-			m_ppu1->set_scanline_callback(ppu2c0x_device::scanline_delegate());
+			m_ppu1->set_scanline_callback(nullptr);
 			break;
 
 		case 0x6001: /* $e001 - Enable IRQs */
 			m_IRQ_enable = 1;
-			m_ppu1->set_scanline_callback(ppu2c0x_device::scanline_delegate(FUNC(vsnes_state::mapper4_irq), this));
+			m_ppu1->set_scanline_callback(*this, FUNC(vsnes_state::mapper4_irq));
 			break;
 
 		default:
@@ -777,7 +784,7 @@ WRITE8_MEMBER(vsnes_state::mapper4_w)
 
 /* Common init for MMC3 games */
 
-DRIVER_INIT_MEMBER(vsnes_state,MMC3)
+void vsnes_state::init_MMC3()
 {
 	uint8_t *prg = memregion("maincpu")->base();
 	m_IRQ_enable = m_IRQ_count = m_IRQ_count_latch = 0;
@@ -795,7 +802,7 @@ DRIVER_INIT_MEMBER(vsnes_state,MMC3)
 	memcpy(&prg[0xe000], &prg[(MMC3_prg_chunks - 1) * 0x4000 + 0x12000], 0x2000);
 
 	/* MMC3 mapper at writes to $8000-$ffff */
-	m_maincpu->space(AS_PROGRAM).install_write_handler(0x8000, 0xffff, write8_delegate(FUNC(vsnes_state::mapper4_w),this));
+	m_maincpu->space(AS_PROGRAM).install_write_handler(0x8000, 0xffff, write8sm_delegate(*this, FUNC(vsnes_state::mapper4_w)));
 
 	/* extra ram at $6000-$7fff */
 	m_maincpu->space(AS_PROGRAM).install_ram(0x6000, 0x7fff);
@@ -803,7 +810,7 @@ DRIVER_INIT_MEMBER(vsnes_state,MMC3)
 
 /* Vs. RBI Baseball */
 
-READ8_MEMBER(vsnes_state::rbi_hack_r)
+uint8_t vsnes_state::rbi_hack_r(offs_t offset)
 {
 	/* Supplied by Ben Parnell <xodnizel@home.com> of FCE Ultra fame */
 
@@ -830,23 +837,23 @@ READ8_MEMBER(vsnes_state::rbi_hack_r)
 	}
 }
 
-DRIVER_INIT_MEMBER(vsnes_state,rbibb)
+void vsnes_state::init_rbibb()
 {
-	DRIVER_INIT_CALL(MMC3);
+	init_MMC3();
 
 	/* RBI Base ball hack */
-	m_maincpu->space(AS_PROGRAM).install_read_handler(0x5e00, 0x5e01, read8_delegate(FUNC(vsnes_state::rbi_hack_r),this)) ;
+	m_maincpu->space(AS_PROGRAM).install_read_handler(0x5e00, 0x5e01, read8sm_delegate(*this, FUNC(vsnes_state::rbi_hack_r)));
 }
 
 /* Vs. Super Xevious */
 
 
-READ8_MEMBER(vsnes_state::supxevs_read_prot_1_r)
+uint8_t vsnes_state::supxevs_read_prot_1_r()
 {
 	return 0x05;
 }
 
-READ8_MEMBER(vsnes_state::supxevs_read_prot_2_r)
+uint8_t vsnes_state::supxevs_read_prot_2_r()
 {
 	if (m_supxevs_prot_index)
 		return 0;
@@ -854,7 +861,7 @@ READ8_MEMBER(vsnes_state::supxevs_read_prot_2_r)
 		return 0x01;
 }
 
-READ8_MEMBER(vsnes_state::supxevs_read_prot_3_r)
+uint8_t vsnes_state::supxevs_read_prot_3_r()
 {
 	if (m_supxevs_prot_index)
 		return 0xd1;
@@ -862,7 +869,7 @@ READ8_MEMBER(vsnes_state::supxevs_read_prot_3_r)
 		return 0x89;
 }
 
-READ8_MEMBER(vsnes_state::supxevs_read_prot_4_r)
+uint8_t vsnes_state::supxevs_read_prot_4_r()
 {
 	if (m_supxevs_prot_index)
 	{
@@ -877,20 +884,20 @@ READ8_MEMBER(vsnes_state::supxevs_read_prot_4_r)
 }
 
 
-DRIVER_INIT_MEMBER(vsnes_state,supxevs)
+void vsnes_state::init_supxevs()
 {
-	DRIVER_INIT_CALL(MMC3);
+	init_MMC3();
 
 	/* Vs. Super Xevious Protection */
-	m_maincpu->space(AS_PROGRAM).install_read_handler(0x54ff, 0x54ff, read8_delegate(FUNC(vsnes_state::supxevs_read_prot_1_r),this));
-	m_maincpu->space(AS_PROGRAM).install_read_handler(0x5678, 0x5678, read8_delegate(FUNC(vsnes_state::supxevs_read_prot_2_r),this));
-	m_maincpu->space(AS_PROGRAM).install_read_handler(0x578f, 0x578f, read8_delegate(FUNC(vsnes_state::supxevs_read_prot_3_r),this));
-	m_maincpu->space(AS_PROGRAM).install_read_handler(0x5567, 0x5567, read8_delegate(FUNC(vsnes_state::supxevs_read_prot_4_r),this));
+	m_maincpu->space(AS_PROGRAM).install_read_handler(0x54ff, 0x54ff, read8smo_delegate(*this, FUNC(vsnes_state::supxevs_read_prot_1_r)));
+	m_maincpu->space(AS_PROGRAM).install_read_handler(0x5678, 0x5678, read8smo_delegate(*this, FUNC(vsnes_state::supxevs_read_prot_2_r)));
+	m_maincpu->space(AS_PROGRAM).install_read_handler(0x578f, 0x578f, read8smo_delegate(*this, FUNC(vsnes_state::supxevs_read_prot_3_r)));
+	m_maincpu->space(AS_PROGRAM).install_read_handler(0x5567, 0x5567, read8smo_delegate(*this, FUNC(vsnes_state::supxevs_read_prot_4_r)));
 }
 
 /* Vs. TKO Boxing */
 
-READ8_MEMBER(vsnes_state::tko_security_r)
+uint8_t vsnes_state::tko_security_r(offs_t offset)
 {
 	static const uint8_t security_data[] = {
 		0xff, 0xbf, 0xb7, 0x97, 0x97, 0x17, 0x57, 0x4f,
@@ -909,21 +916,21 @@ READ8_MEMBER(vsnes_state::tko_security_r)
 
 }
 
-DRIVER_INIT_MEMBER(vsnes_state,tkoboxng)
+void vsnes_state::init_tkoboxng()
 {
-	DRIVER_INIT_CALL(MMC3);
+	init_MMC3();
 
 	/* security device at $5e00-$5e01 */
-	m_maincpu->space(AS_PROGRAM).install_read_handler(0x5e00, 0x5e01, read8_delegate(FUNC(vsnes_state::tko_security_r),this));
+	m_maincpu->space(AS_PROGRAM).install_read_handler(0x5e00, 0x5e01, read8sm_delegate(*this, FUNC(vsnes_state::tko_security_r)));
 }
 
 /* Vs. Freedom Force */
 
-DRIVER_INIT_MEMBER(vsnes_state,vsfdf)
+void vsnes_state::init_vsfdf()
 {
-	DRIVER_INIT_CALL(MMC3);
+	init_MMC3();
 
-	m_maincpu->space(AS_PROGRAM).install_readwrite_handler(0x4016, 0x4016, read8_delegate(FUNC(vsnes_state::gun_in0_r),this), write8_delegate(FUNC(vsnes_state::gun_in0_w),this));
+	m_maincpu->space(AS_PROGRAM).install_readwrite_handler(0x4016, 0x4016, read8smo_delegate(*this, FUNC(vsnes_state::gun_in0_r)), write8smo_delegate(*this, FUNC(vsnes_state::gun_in0_w)));
 
 	m_do_vrom_bank = 0;
 }
@@ -931,7 +938,7 @@ DRIVER_INIT_MEMBER(vsnes_state,vsfdf)
 /**********************************************************************************/
 /* Platoon rom banking */
 
-WRITE8_MEMBER(vsnes_state::mapper68_rom_banking)
+void vsnes_state::mapper68_rom_banking(offs_t offset, uint8_t data)
 {
 	switch (offset & 0x7000)
 	{
@@ -963,7 +970,7 @@ WRITE8_MEMBER(vsnes_state::mapper68_rom_banking)
 
 }
 
-DRIVER_INIT_MEMBER(vsnes_state,platoon)
+void vsnes_state::init_platoon()
 {
 	/* when starting a mapper 68 game  the first 16K ROM bank in the cart is loaded into $8000
 	the LAST 16K ROM bank is loaded into $C000. The last 16K of ROM cannot be swapped. */
@@ -972,13 +979,13 @@ DRIVER_INIT_MEMBER(vsnes_state,platoon)
 	memcpy(&prg[0x08000], &prg[0x10000], 0x4000);
 	memcpy(&prg[0x0c000], &prg[0x2c000], 0x4000);
 
-	m_maincpu->space(AS_PROGRAM).install_write_handler(0x8000, 0xffff, write8_delegate(FUNC(vsnes_state::mapper68_rom_banking),this));
+	m_maincpu->space(AS_PROGRAM).install_write_handler(0x8000, 0xffff, write8sm_delegate(*this, FUNC(vsnes_state::mapper68_rom_banking)));
 }
 
 /**********************************************************************************/
 /* Vs. Raid on Bungeling Bay (Japan) */
 
-WRITE8_MEMBER(vsnes_state::set_bnglngby_irq_w)
+void vsnes_state::set_bnglngby_irq_w(uint8_t data)
 {
 	m_ret = data;
 	m_maincpu->set_input_line(0, (data & 2) ? ASSERT_LINE : CLEAR_LINE);
@@ -986,14 +993,14 @@ WRITE8_MEMBER(vsnes_state::set_bnglngby_irq_w)
 	/* 0, 4, 84 */
 }
 
-READ8_MEMBER(vsnes_state::set_bnglngby_irq_r)
+uint8_t vsnes_state::set_bnglngby_irq_r()
 {
 	return m_ret;
 }
 
-DRIVER_INIT_MEMBER(vsnes_state,bnglngby)
+void vsnes_state::init_bnglngby()
 {
-	m_maincpu->space(AS_PROGRAM).install_readwrite_handler(0x0231, 0x0231, read8_delegate(FUNC(vsnes_state::set_bnglngby_irq_r),this), write8_delegate(FUNC(vsnes_state::set_bnglngby_irq_w),this));
+	m_maincpu->space(AS_PROGRAM).install_readwrite_handler(0x0231, 0x0231, read8smo_delegate(*this, FUNC(vsnes_state::set_bnglngby_irq_r)), write8smo_delegate(*this, FUNC(vsnes_state::set_bnglngby_irq_w)));
 
 	/* extra ram */
 	m_maincpu->space(AS_PROGRAM).install_ram(0x6000, 0x7fff);
@@ -1001,13 +1008,13 @@ DRIVER_INIT_MEMBER(vsnes_state,bnglngby)
 	m_ret = 0;
 
 	/* normal banking */
-	DRIVER_INIT_CALL(vsnormal);
+	init_vsnormal();
 }
 
 /**********************************************************************************/
 /* VS Dualsystem */
 
-WRITE8_MEMBER(vsnes_state::vsdual_vrom_banking_main)
+void vsnes_state::vsdual_vrom_banking_main(uint8_t data)
 {
 	/* switch vrom */
 	membank("bank2")->set_entry(BIT(data, 2));
@@ -1016,10 +1023,10 @@ WRITE8_MEMBER(vsnes_state::vsdual_vrom_banking_main)
 	m_subcpu->set_input_line(0, (data & 2) ? CLEAR_LINE : ASSERT_LINE);
 
 	/* move along */
-	vsnes_in0_w(space, offset, data);
+	vsnes_in0_w(data);
 }
 
-WRITE8_MEMBER(vsnes_state::vsdual_vrom_banking_sub)
+void vsnes_state::vsdual_vrom_banking_sub(uint8_t data)
 {
 	/* switch vrom */
 	membank("bank3")->set_entry(BIT(data, 2));
@@ -1028,16 +1035,16 @@ WRITE8_MEMBER(vsnes_state::vsdual_vrom_banking_sub)
 	m_maincpu->set_input_line(0, (data & 2) ? CLEAR_LINE : ASSERT_LINE);
 
 	/* move along */
-	vsnes_in0_1_w(space, offset, data);
+	vsnes_in0_1_w(data);
 }
 
-DRIVER_INIT_MEMBER(vsnes_state,vsdual)
+void vsnes_state::init_vsdual()
 {
 	uint8_t *prg = memregion("maincpu")->base();
 
 	/* vrom switching is enabled with bit 2 of $4016 */
-	m_maincpu->space(AS_PROGRAM).install_write_handler(0x4016, 0x4016, write8_delegate(FUNC(vsnes_state::vsdual_vrom_banking_main),this));
-	m_subcpu->space(AS_PROGRAM).install_write_handler(0x4016, 0x4016, write8_delegate(FUNC(vsnes_state::vsdual_vrom_banking_sub),this));
+	m_maincpu->space(AS_PROGRAM).install_write_handler(0x4016, 0x4016, write8smo_delegate(*this, FUNC(vsnes_state::vsdual_vrom_banking_main)));
+	m_subcpu->space(AS_PROGRAM).install_write_handler(0x4016, 0x4016, write8smo_delegate(*this, FUNC(vsnes_state::vsdual_vrom_banking_sub)));
 
 	/* shared ram at $6000 */
 	m_maincpu->space(AS_PROGRAM).install_ram(0x6000, 0x7fff, &prg[0x6000]);

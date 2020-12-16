@@ -5,13 +5,7 @@
 
 #pragma once
 
-
-//**************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_NAMCO_C45_ROAD_ADD(_tag) \
-	MCFG_DEVICE_ADD(_tag, NAMCO_C45_ROAD, 0)
+#include "tilemap.h"
 
 
 //**************************************************************************
@@ -27,11 +21,11 @@ public:
 	// construction/destruction
 	namco_c45_road_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	DECLARE_ADDRESS_MAP(map, 16);
+	void map(address_map &map);
 
 	// read/write handlers
-	DECLARE_READ16_MEMBER( read );
-	DECLARE_WRITE16_MEMBER( write );
+	uint16_t read(offs_t offset);
+	void write(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
 
 	// C45 Land (Road) Emulation
 	void set_transparent_color(pen_t pen) { m_transparent_color = pen; }
@@ -54,8 +48,8 @@ private:
 
 	// internal helpers
 	DECLARE_GFXDECODE_MEMBER(gfxinfo);
-	DECLARE_WRITE16_MEMBER( tilemap_w );
-	DECLARE_WRITE16_MEMBER( tileram_w );
+	void tilemap_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	void tileram_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
 	TILE_GET_INFO_MEMBER( get_road_info );
 
 	// internal state
@@ -63,7 +57,7 @@ private:
 	required_shared_ptr<uint16_t> m_tmapram;
 	required_shared_ptr<uint16_t> m_tileram;
 	required_shared_ptr<uint16_t> m_lineram;
-	uint8_t *                     m_clut;
+	optional_region_ptr<uint8_t>  m_clut;
 	tilemap_t *                 m_tilemap;
 	pen_t                       m_transparent_color;
 };

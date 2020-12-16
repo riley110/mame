@@ -18,24 +18,24 @@
 #include "cpu/mcs48/mcs48.h"
 #include "includes/tnzs.h"
 
-READ8_MEMBER(tnzs_mcu_state::mcu_r)
+uint8_t tnzs_mcu_state::mcu_r(offs_t offset)
 {
-	uint8_t data = m_mcu->upi41_master_r(space, offset & 1);
-	space.device().execute().yield();
+	uint8_t data = m_mcu->upi41_master_r(offset & 1);
+	m_subcpu->yield();
 
-//  logerror("PC %04x: read %02x from mcu $c00%01x\n", space.device().safe_pcbase(), data, offset);
+//  logerror("%s: read %02x from mcu $c00%01x\n", m_maincpu->pcbase(), data, offset);
 
 	return data;
 }
 
-WRITE8_MEMBER(tnzs_mcu_state::mcu_w)
+void tnzs_mcu_state::mcu_w(offs_t offset, uint8_t data)
 {
-//  logerror("PC %04x: write %02x to mcu $c00%01x\n", space.device().safe_pcbase(), data, offset);
+//  logerror("%s: write %02x to mcu $c00%01x\n", m_maincpu->pcbase(), data, offset);
 
-	m_mcu->upi41_master_w(space, offset & 1, data);
+	m_mcu->upi41_master_w(offset & 1, data);
 }
 
-READ8_MEMBER(tnzs_mcu_state::mcu_port1_r)
+uint8_t tnzs_mcu_state::mcu_port1_r()
 {
 	int data = 0;
 
@@ -47,17 +47,12 @@ READ8_MEMBER(tnzs_mcu_state::mcu_port1_r)
 		default:    data = 0xff; break;
 	}
 
-//  logerror("I8742:%04x  Read %02x from port 1\n", space.device().safe_pcbase(), data);
+//  logerror("%s:  Read %02x from port 1\n", m_maincpu->pcbase(), data);
 
 	return data;
 }
 
-READ8_MEMBER(tnzs_mcu_state::mcu_port2_r)
-{
-	return m_in2->read();
-}
-
-WRITE8_MEMBER(tnzs_mcu_state::mcu_port2_w)
+void tnzs_mcu_state::mcu_port2_w(uint8_t data)
 {
 	machine().bookkeeping().coin_lockout_w(0, (data & 0x40) != 0 ? m_lockout_level : !m_lockout_level);
 	machine().bookkeeping().coin_lockout_w(1, (data & 0x80) != 0 ? m_lockout_level : !m_lockout_level);
@@ -67,10 +62,10 @@ WRITE8_MEMBER(tnzs_mcu_state::mcu_port2_w)
 	m_input_select = data & 0xf;
 }
 
-READ8_MEMBER(tnzs_mcu_state::analog_r)
+uint8_t tnzs_mcu_state::analog_r(offs_t offset)
 {
 	if (m_upd4701.found())
-		return m_upd4701->read_xy(space, offset);
+		return m_upd4701->read_xy(offset);
 
 	return 0;
 }
@@ -212,17 +207,17 @@ TIMER_CALLBACK_MEMBER(tnzs_base_state::kludge_callback)
     tnzs_sharedram[0x0f10] = param;
 }
 
-WRITE8_MEMBER(tnzs_base_state::tnzs_sync_kludge_w)
+void tnzs_base_state::tnzs_sync_kludge_w(uint8_t data)
 {
     machine().scheduler().synchronize(timer_expired_delegate(FUNC(tnzs_base_state::kludge_callback),this), data);
 }
 */
 
-READ8_MEMBER(arknoid2_state::mcu_r)
+uint8_t arknoid2_state::mcu_r(offs_t offset)
 {
 	static const char mcu_startup[] = "\x55\xaa\x5a";
 
-	//logerror("PC %04x: read mcu %04x\n", space.device().safe_pc(), 0xc000 + offset);
+	//logerror("%s: read mcu %04x\n", m_maincpu->pc(), 0xc000 + offset);
 
 	if (offset == 0)
 	{
@@ -279,11 +274,11 @@ READ8_MEMBER(arknoid2_state::mcu_r)
 	}
 }
 
-WRITE8_MEMBER(arknoid2_state::mcu_w)
+void arknoid2_state::mcu_w(offs_t offset, uint8_t data)
 {
 	if (offset == 0)
 	{
-		//logerror("PC %04x: write %02x to mcu %04x\n", space.device().safe_pc(), data, 0xc000 + offset);
+		//logerror("%s: write %02x to mcu %04x\n", m_maincpu->pc(), data, 0xc000 + offset);
 		if (m_mcu_command == 0x41)
 		{
 			m_mcu_credits = (m_mcu_credits + data) & 0xff;
@@ -300,7 +295,7 @@ WRITE8_MEMBER(arknoid2_state::mcu_w)
 		0x80: release coin lockout (issued only in test mode)
 		during initialization, a sequence of 4 bytes sets coin/credit settings
 		*/
-		//logerror("PC %04x: write %02x to mcu %04x\n", space.device().safe_pc(), data, 0xc000 + offset);
+		//logerror("%s: write %02x to mcu %04x\n", m_maincpu->pc(), data, 0xc000 + offset);
 
 		if (m_mcu_initializing)
 		{
@@ -394,9 +389,9 @@ void kabukiz_state::machine_start()
 	m_audiobank->configure_entries(0, 8, &sound[0x00000], 0x4000);
 }
 
-WRITE8_MEMBER(tnzs_base_state::ramrom_bankswitch_w)
+void tnzs_base_state::ramrom_bankswitch_w(uint8_t data)
 {
-//  logerror("PC %04x: writing %02x to bankswitch\n", space.device().safe_pc(),data);
+//  logerror("%s: writing %02x to bankswitch\n", m_maincpu->pc(),data);
 
 	/* bit 4 resets the second CPU */
 	if (data & 0x10)
@@ -408,9 +403,9 @@ WRITE8_MEMBER(tnzs_base_state::ramrom_bankswitch_w)
 	m_mainbank->set_bank(data & 0x07);
 }
 
-WRITE8_MEMBER(arknoid2_state::bankswitch1_w)
+void arknoid2_state::bankswitch1_w(uint8_t data)
 {
-	tnzs_base_state::bankswitch1_w(space, offset, data, mem_mask);
+	tnzs_base_state::bankswitch1_w(data);
 	if (data & 0x04)
 		mcu_reset();
 
@@ -419,37 +414,37 @@ WRITE8_MEMBER(arknoid2_state::bankswitch1_w)
 	m_upd4701->resety_w(BIT(data, 5));
 }
 
-WRITE8_MEMBER(insectx_state::bankswitch1_w)
+void insectx_state::bankswitch1_w(uint8_t data)
 {
-	tnzs_base_state::bankswitch1_w(space, offset, data, mem_mask);
+	tnzs_base_state::bankswitch1_w(data);
 	machine().bookkeeping().coin_lockout_w(0, (~data & 0x04));
 	machine().bookkeeping().coin_lockout_w(1, (~data & 0x08));
 	machine().bookkeeping().coin_counter_w(0, (data & 0x10));
 	machine().bookkeeping().coin_counter_w(1, (data & 0x20));
 }
 
-WRITE8_MEMBER(tnzsb_state::bankswitch1_w) // kabukiz_state
+void tnzsb_state::bankswitch1_w(uint8_t data) // kabukiz_state
 {
-	tnzs_base_state::bankswitch1_w(space, offset, data, mem_mask);
+	tnzs_base_state::bankswitch1_w(data);
 	machine().bookkeeping().coin_lockout_w(0, (~data & 0x10));
 	machine().bookkeeping().coin_lockout_w(1, (~data & 0x20));
 	machine().bookkeeping().coin_counter_w(0, (data & 0x04));
 	machine().bookkeeping().coin_counter_w(1, (data & 0x08));
 }
 
-WRITE8_MEMBER(kageki_state::bankswitch1_w)
+void kageki_state::bankswitch1_w(uint8_t data)
 {
-	tnzs_base_state::bankswitch1_w(space, offset, data, mem_mask);
+	tnzs_base_state::bankswitch1_w(data);
 	machine().bookkeeping().coin_lockout_global_w((~data & 0x20));
 	machine().bookkeeping().coin_counter_w(0, (data & 0x04));
 	machine().bookkeeping().coin_counter_w(1, (data & 0x08));
 }
 
-WRITE8_MEMBER(tnzs_mcu_state::bankswitch1_w)
+void tnzs_mcu_state::bankswitch1_w(uint8_t data)
 {
-	tnzs_base_state::bankswitch1_w(space, offset, data, mem_mask);
+	tnzs_base_state::bankswitch1_w(data);
 	if ((data & 0x04) != 0 && m_mcu != nullptr)
-		m_mcu->set_input_line(INPUT_LINE_RESET, PULSE_LINE);
+		m_mcu->pulse_input_line(INPUT_LINE_RESET, attotime::zero);
 
 	// written only at startup by plumppop?
 	if (m_upd4701.found())
@@ -459,9 +454,9 @@ WRITE8_MEMBER(tnzs_mcu_state::bankswitch1_w)
 	}
 }
 
-WRITE8_MEMBER(tnzs_base_state::bankswitch1_w)
+void tnzs_base_state::bankswitch1_w(uint8_t data)
 {
-//  logerror("PC %04x: writing %02x to bankswitch 1\n", space.device().safe_pc(),data);
+//  logerror("%s: writing %02x to bankswitch 1\n", m_maincpu->pc(),data);
 
 	/* bits 0-1 select ROM bank */
 	m_bank2 = data & 0x03;
@@ -473,7 +468,7 @@ void jpopnics_state::machine_reset()
 	tnzs_base_state::machine_reset();
 }
 
-WRITE8_MEMBER(jpopnics_state::subbankswitch_w)
+void jpopnics_state::subbankswitch_w(uint8_t data)
 {
 	// bits 0-1 select ROM bank
 	m_subbank->set_entry(data & 0x03);
@@ -483,10 +478,10 @@ WRITE8_MEMBER(jpopnics_state::subbankswitch_w)
 	m_upd4701->resety_w(BIT(data, 5));
 }
 
-WRITE8_MEMBER(tnzsb_state::sound_command_w)
+void tnzsb_state::sound_command_w(uint8_t data)
 {
-	m_soundlatch->write(space, offset, data);
-	m_audiocpu->set_input_line_and_vector(0, HOLD_LINE, 0xff);
+	m_soundlatch->write(data);
+	m_audiocpu->set_input_line_and_vector(0, HOLD_LINE, 0xff); // Z80
 }
 
 /* handler called by the 2203 emulator when the internal timers cause an IRQ */
@@ -495,7 +490,7 @@ WRITE_LINE_MEMBER(tnzsb_state::ym2203_irqhandler)
 	m_audiocpu->set_input_line(INPUT_LINE_NMI, state ? ASSERT_LINE : CLEAR_LINE);
 }
 
-WRITE8_MEMBER(kabukiz_state::sound_bank_w)
+void kabukiz_state::sound_bank_w(uint8_t data)
 {
 	// to avoid the write when the sound chip is initialized
 	if (data != 0xff)

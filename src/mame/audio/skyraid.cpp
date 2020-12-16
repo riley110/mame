@@ -184,7 +184,7 @@ DISCRETE_RESET( skyraid_missle_custom_charge )
 
 
 
-DISCRETE_SOUND_START( skyraid )
+DISCRETE_SOUND_START( skyraid_discrete )
 	/************************************************
 	 * Input register mapping
 	 ************************************************/
@@ -285,7 +285,7 @@ DISCRETE_SOUND_START( skyraid )
 DISCRETE_SOUND_END
 
 
-WRITE8_MEMBER(skyraid_state::skyraid_sound_w)
+void skyraid_state::skyraid_sound_w(uint8_t data)
 {
 	/* BIT0 => PLANE SWEEP */
 	/* BIT1 => MISSILE     */
@@ -294,10 +294,10 @@ WRITE8_MEMBER(skyraid_state::skyraid_sound_w)
 	/* BIT4 => PLANE ON    */
 	/* BIT5 => ATTRACT     */
 
-	m_discrete->write(space, SKYRAID_PLANE_SWEEP_EN, data & 0x01);
-	m_discrete->write(space, SKYRAID_MISSILE_EN, data & 0x02);
-	m_discrete->write(space, SKYRAID_EXPLOSION_EN, data & 0x04);
-	output().set_led_value(0, !(data & 0x08));
-	m_discrete->write(space, SKYRAID_PLANE_ON_EN, data & 0x10);
-	m_discrete->write(space, SKYRAID_ATTRACT_EN, data & 0x20);
+	m_discrete->write(SKYRAID_PLANE_SWEEP_EN, data & 0x01);
+	m_discrete->write(SKYRAID_MISSILE_EN, data & 0x02);
+	m_discrete->write(SKYRAID_EXPLOSION_EN, data & 0x04);
+	m_led = !BIT(data, 3);
+	m_discrete->write(SKYRAID_PLANE_ON_EN, data & 0x10);
+	m_discrete->write(SKYRAID_ATTRACT_EN, data & 0x20);
 }

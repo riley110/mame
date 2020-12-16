@@ -1,12 +1,19 @@
 // license:BSD-3-Clause
 // copyright-holders:Paul Leaman, Curt Coder
+#ifndef MAME_INCLUDES_SIDEARMS_H
+#define MAME_INCLUDES_SIDEARMS_H
+
+#pragma once
+
 #include "video/bufsprite.h"
+#include "emupal.h"
+#include "tilemap.h"
 
 class sidearms_state : public driver_device
 {
 public:
-	sidearms_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
+	sidearms_state(const machine_config &mconfig, device_type type, const char *tag) :
+		driver_device(mconfig, type, tag),
 		m_maincpu(*this, "maincpu"),
 		m_audiocpu(*this, "audiocpu"),
 		m_gfxdecode(*this, "gfxdecode"),
@@ -20,6 +27,16 @@ public:
 	{
 	}
 
+	void sidearms(machine_config &config);
+	void turtship(machine_config &config);
+	void whizz(machine_config &config);
+
+	void init_dyger();
+	void init_sidearms();
+	void init_whizz();
+	void init_turtship();
+
+private:
 	required_device<cpu_device> m_maincpu;
 	required_device<cpu_device> m_audiocpu;
 	required_device<gfxdecode_device> m_gfxdecode;
@@ -50,22 +67,18 @@ public:
 	uint32_t m_vcount_191;
 	uint32_t m_latch_374;
 
-	DECLARE_WRITE8_MEMBER(bankswitch_w);
-	DECLARE_WRITE8_MEMBER(videoram_w);
-	DECLARE_WRITE8_MEMBER(colorram_w);
-	DECLARE_WRITE8_MEMBER(c804_w);
-	DECLARE_WRITE8_MEMBER(gfxctrl_w);
-	DECLARE_WRITE8_MEMBER(star_scrollx_w);
-	DECLARE_WRITE8_MEMBER(star_scrolly_w);
+	void bankswitch_w(uint8_t data);
+	void videoram_w(offs_t offset, uint8_t data);
+	void colorram_w(offs_t offset, uint8_t data);
+	void c804_w(uint8_t data);
+	void gfxctrl_w(uint8_t data);
+	void star_scrollx_w(uint8_t data);
+	void star_scrolly_w(uint8_t data);
 
-	DECLARE_READ8_MEMBER(turtship_ports_r);
+	uint8_t turtship_ports_r(offs_t offset);
 
-	DECLARE_WRITE8_MEMBER(whizz_bankswitch_w);
+	void whizz_bankswitch_w(uint8_t data);
 
-	DECLARE_DRIVER_INIT(dyger);
-	DECLARE_DRIVER_INIT(sidearms);
-	DECLARE_DRIVER_INIT(whizz);
-	DECLARE_DRIVER_INIT(turtship);
 	virtual void machine_start() override;
 	virtual void video_start() override;
 
@@ -78,4 +91,13 @@ public:
 	void draw_sprites_region(bitmap_ind16 &bitmap, const rectangle &cliprect, int start_offset, int end_offset );
 	void draw_starfield( bitmap_ind16 &bitmap );
 	void draw_sprites(bitmap_ind16 &bitmap, const rectangle &cliprect);
+
+	void sidearms_map(address_map &map);
+	void sidearms_sound_map(address_map &map);
+	void turtship_map(address_map &map);
+	void whizz_io_map(address_map &map);
+	void whizz_map(address_map &map);
+	void whizz_sound_map(address_map &map);
 };
+
+#endif // MAME_INCLUDES_SIDEARMS_H

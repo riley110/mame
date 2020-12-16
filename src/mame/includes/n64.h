@@ -12,6 +12,7 @@
 /*----------- driver state -----------*/
 
 class n64_rdp;
+class n64_periphs;
 
 class n64_state : public driver_device
 {
@@ -24,6 +25,7 @@ public:
 		, m_rdram(*this, "rdram")
 		, m_rsp_imem(*this, "rsp_imem")
 		, m_rsp_dmem(*this, "rsp_dmem")
+		, m_rcp_periphs(*this, "rcp")
 	{
 	}
 
@@ -51,14 +53,13 @@ protected:
 	required_shared_ptr<uint32_t> m_rsp_imem;
 	required_shared_ptr<uint32_t> m_rsp_dmem;
 
+	required_device<n64_periphs> m_rcp_periphs;
+
 	/* video-related */
 	n64_rdp *m_rdp;
 };
 
 /*----------- devices -----------*/
-
-#define MCFG_N64_PERIPHS_ADD(_tag) \
-	MCFG_DEVICE_ADD(_tag, N64PERIPH, 0)
 
 #define AUDIO_DMA_DEPTH     2
 
@@ -83,39 +84,39 @@ public:
 	// construction/destruction
 	n64_periphs(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	DECLARE_READ32_MEMBER( is64_r );
-	DECLARE_WRITE32_MEMBER( is64_w );
-	DECLARE_READ32_MEMBER( open_r );
-	DECLARE_WRITE32_MEMBER( open_w );
-	DECLARE_READ32_MEMBER( rdram_reg_r );
-	DECLARE_WRITE32_MEMBER( rdram_reg_w );
-	DECLARE_READ32_MEMBER( mi_reg_r );
-	DECLARE_WRITE32_MEMBER( mi_reg_w );
-	DECLARE_READ32_MEMBER( vi_reg_r );
-	DECLARE_WRITE32_MEMBER( vi_reg_w );
-	DECLARE_READ32_MEMBER( ai_reg_r );
-	DECLARE_WRITE32_MEMBER( ai_reg_w );
-	DECLARE_READ32_MEMBER( pi_reg_r );
-	DECLARE_WRITE32_MEMBER( pi_reg_w );
-	DECLARE_READ32_MEMBER( ri_reg_r );
-	DECLARE_WRITE32_MEMBER( ri_reg_w );
-	DECLARE_READ32_MEMBER( si_reg_r );
-	DECLARE_WRITE32_MEMBER( si_reg_w );
-	DECLARE_READ32_MEMBER( dd_reg_r );
-	DECLARE_WRITE32_MEMBER( dd_reg_w );
-	DECLARE_READ32_MEMBER( pif_ram_r );
-	DECLARE_WRITE32_MEMBER( pif_ram_w );
+	uint32_t is64_r(offs_t offset);
+	void is64_w(offs_t offset, uint32_t data);
+	uint32_t open_r(offs_t offset);
+	void open_w(uint32_t data);
+	uint32_t rdram_reg_r(offs_t offset, uint32_t mem_mask = ~0);
+	void rdram_reg_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t mi_reg_r(offs_t offset, uint32_t mem_mask = ~0);
+	void mi_reg_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t vi_reg_r(offs_t offset, uint32_t mem_mask = ~0);
+	void vi_reg_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t ai_reg_r(offs_t offset, uint32_t mem_mask = ~0);
+	void ai_reg_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t pi_reg_r(offs_t offset, uint32_t mem_mask = ~0);
+	void pi_reg_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t ri_reg_r(offs_t offset, uint32_t mem_mask = ~0);
+	void ri_reg_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t si_reg_r(offs_t offset);
+	void si_reg_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t dd_reg_r(offs_t offset);
+	void dd_reg_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t pif_ram_r(offs_t offset, uint32_t mem_mask = ~0);
+	void pif_ram_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
 	TIMER_CALLBACK_MEMBER(reset_timer_callback);
 	TIMER_CALLBACK_MEMBER(vi_scanline_callback);
 	TIMER_CALLBACK_MEMBER(dp_delay_callback);
 	TIMER_CALLBACK_MEMBER(ai_timer_callback);
 	TIMER_CALLBACK_MEMBER(pi_dma_callback);
 	TIMER_CALLBACK_MEMBER(si_dma_callback);
-	DECLARE_READ32_MEMBER( dp_reg_r );
-	DECLARE_WRITE32_MEMBER( dp_reg_w );
-	DECLARE_READ32_MEMBER( sp_reg_r );
-	DECLARE_WRITE32_MEMBER( sp_reg_w );
-	DECLARE_WRITE32_MEMBER(sp_set_status);
+	uint32_t dp_reg_r(offs_t offset, uint32_t mem_mask = ~0);
+	void dp_reg_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t sp_reg_r(offs_t offset);
+	void sp_reg_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	void sp_set_status(uint32_t data);
 	void signal_rcp_interrupt(int interrupt);
 	void check_interrupts();
 
@@ -170,8 +171,8 @@ protected:
 private:
 	n64_state* m_n64;
 	address_space *m_mem_map;
-	mips3_device *m_vr4300;
-	rsp_device *m_rsp;
+	required_device<mips3_device> m_vr4300;
+	required_device<rsp_device> m_rsp;
 
 	uint32_t *m_rdram;
 	uint32_t *m_sram;
@@ -196,7 +197,7 @@ private:
 	void ai_fifo_pop();
 	bool ai_delayed_carry;
 
-	dmadac_sound_device *ai_dac[2];
+	required_device_array<dmadac_sound_device, 2> ai_dac;
 	uint32_t ai_dram_addr;
 	uint32_t ai_len;
 	uint32_t ai_control;

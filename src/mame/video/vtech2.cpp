@@ -42,9 +42,6 @@
  *      1 1 1 1 GR1 bank 3 0E000-0FFFF
  */
 
-void vtech2_state::video_start()
-{
-}
 
 static const int offs_2[192] = {
 	0x0000,0x0800,0x1000,0x1800,0x2000,0x2800,0x3000,0x3800,
@@ -115,11 +112,16 @@ static const int offs_0[96] = {
 	0x26a0,0x2ea0,0x36a0,0x3ea0,0x27a0,0x2fa0,0x37a0,0x3fa0
 };
 
-uint32_t vtech2_state::screen_update_laser(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect)
+uint32_t vtech2_state::screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect)
 {
-	uint8_t *videoram = m_videoram;
 	int offs, x, y;
 	int full_refresh = 1;
+	int lang_offs = 0;
+	if (m_language == 0x10)
+		lang_offs = 0x300;
+	else
+	if (m_language == 0x20)
+		lang_offs = 0x200;
 
 	if( full_refresh )
 		bitmap.fill(((m_laser_bg_mode >> 4) & 15)<<1, cliprect);
@@ -143,7 +145,7 @@ uint32_t vtech2_state::screen_update_laser(screen_device &screen, bitmap_ind16 &
 					int sx, sy, code, color = m_laser_two_color;
 					sy = BORDER_V/2 + y;
 					sx = BORDER_H/2 + x * 8;
-					code = videoram[offs];
+					code = m_vram[offs];
 					m_gfxdecode->gfx(2)->opaque(bitmap,cliprect,code,color,0,0,sx,sy);
 				}
 			}
@@ -162,8 +164,8 @@ uint32_t vtech2_state::screen_update_laser(screen_device &screen, bitmap_ind16 &
 					int sx, sy, code, color;
 					sy = BORDER_V/2 + y;
 					sx = BORDER_H/2 + x * 16;
-					code = videoram[offs];
-					color = videoram[offs+1];
+					code = m_vram[offs];
+					color = m_vram[offs+1];
 					m_gfxdecode->gfx(3)->opaque(bitmap,cliprect,code,color,0,0,sx,sy);
 				}
 			}
@@ -182,7 +184,7 @@ uint32_t vtech2_state::screen_update_laser(screen_device &screen, bitmap_ind16 &
 					int sx, sy, code;
 					sy = BORDER_V/2 + y;
 					sx = BORDER_H/2 + x * 8;
-					code = videoram[offs];
+					code = m_vram[offs];
 					m_gfxdecode->gfx(5)->opaque(bitmap,cliprect,code,0,0,0,sx,sy);
 				}
 			}
@@ -202,7 +204,7 @@ uint32_t vtech2_state::screen_update_laser(screen_device &screen, bitmap_ind16 &
 					int sx, sy, code;
 					sy = BORDER_V/2 + y * 2;
 					sx = BORDER_H/2 + x * 8;
-					code = videoram[offs];
+					code = m_vram[offs];
 					m_gfxdecode->gfx(6)->opaque(bitmap,cliprect,code,0,0,0,sx,sy);
 				}
 			}
@@ -221,7 +223,7 @@ uint32_t vtech2_state::screen_update_laser(screen_device &screen, bitmap_ind16 &
 					int sx, sy, code, color = m_laser_two_color;
 					sy = BORDER_V/2 + y;
 					sx = BORDER_H/2 + x * 16;
-					code = videoram[offs];
+					code = m_vram[offs];
 					m_gfxdecode->gfx(3)->opaque(bitmap,cliprect,code,color,0,0,sx,sy);
 				}
 			}
@@ -240,8 +242,8 @@ uint32_t vtech2_state::screen_update_laser(screen_device &screen, bitmap_ind16 &
 					int sx, sy, code, color;
 					sy = BORDER_V/2 + y;
 					sx = BORDER_H/2 + x * 32;
-					code = videoram[offs];
-					color = videoram[offs+1];
+					code = m_vram[offs];
+					color = m_vram[offs+1];
 					m_gfxdecode->gfx(4)->opaque(bitmap,cliprect,code,color,0,0,sx,sy);
 				}
 			}
@@ -262,7 +264,7 @@ uint32_t vtech2_state::screen_update_laser(screen_device &screen, bitmap_ind16 &
 					int sx, sy, code, color = m_laser_two_color;
 					sy = BORDER_V/2 + y * 8;
 					sx = BORDER_H/2 + x * 8;
-					code = videoram[0x3800+offs];
+					code = m_vram[0x3800+offs] + lang_offs;
 					m_gfxdecode->gfx(0)->opaque(bitmap,cliprect,code,color,0,0,sx,sy);
 				}
 			}
@@ -278,8 +280,8 @@ uint32_t vtech2_state::screen_update_laser(screen_device &screen, bitmap_ind16 &
 					int sx, sy, code, color = 0;
 					sy = BORDER_V/2 + y * 8;
 					sx = BORDER_H/2 + x * 16;
-					code = videoram[0x3800+offs];
-					color = videoram[0x3801+offs];
+					code = m_vram[0x3800+offs] + lang_offs;
+					color = m_vram[0x3801+offs];
 					m_gfxdecode->gfx(1)->opaque(bitmap,cliprect,code,color,0,0,sx,sy);
 				}
 			}
@@ -293,7 +295,7 @@ uint32_t vtech2_state::screen_update_laser(screen_device &screen, bitmap_ind16 &
 	return 0;
 }
 
-WRITE8_MEMBER(vtech2_state::laser_bg_mode_w)
+void vtech2_state::laser_bg_mode_w(uint8_t data)
 {
 	if (m_laser_bg_mode != data)
 	{
@@ -302,7 +304,7 @@ WRITE8_MEMBER(vtech2_state::laser_bg_mode_w)
 	}
 }
 
-WRITE8_MEMBER(vtech2_state::laser_two_color_w)
+void vtech2_state::laser_two_color_w(uint8_t data)
 {
 	if (m_laser_two_color != data)
 	{

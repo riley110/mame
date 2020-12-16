@@ -28,8 +28,8 @@ public:
 	virtual void set_mapping(uint8_t type) override;
 	virtual WRITE_LINE_MEMBER( romen_w ) override { m_romen = state; }
 
-	DECLARE_READ8_MEMBER(input_r);
-	DECLARE_WRITE8_MEMBER(output_w);
+	uint8_t input_r();
+	void output_w(uint8_t data);
 	DECLARE_INPUT_CHANGED_MEMBER(button_red_w);
 	DECLARE_INPUT_CHANGED_MEMBER(button_black_w);
 
@@ -40,7 +40,6 @@ protected:
 
 private:
 	cpc_expansion_slot_device *m_slot;
-	cpu_device* m_cpu;
 	address_space* m_space;
 	std::unique_ptr<uint8_t[]> m_ram;  // 8kB internal RAM
 	bool m_rom_active;

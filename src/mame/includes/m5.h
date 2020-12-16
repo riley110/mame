@@ -4,8 +4,10 @@
 #define MAME_INCLUDES_M5_H
 
 #include "imagedev/cassette.h"
+#include "imagedev/floppy.h"
 #include "imagedev/snapquik.h"
 
+#include "cpu/z80/z80.h"
 #include "machine/i8255.h"
 #include "machine/ram.h"
 #include "machine/upd765.h"
@@ -51,40 +53,17 @@ public:
 		, m_DIPS(*this, "DIPS")
 	{ }
 
-	DECLARE_READ8_MEMBER( sts_r );
-	DECLARE_WRITE8_MEMBER( com_w );
-	DECLARE_READ8_MEMBER( ppi_pa_r );
-	DECLARE_WRITE8_MEMBER( ppi_pa_w );
-	DECLARE_WRITE8_MEMBER( ppi_pb_w );
-	DECLARE_READ8_MEMBER( ppi_pc_r );
-	DECLARE_WRITE8_MEMBER( ppi_pc_w );
+	void m5(machine_config &config);
+	void pal(machine_config &config);
+	void ntsc(machine_config &config);
 
-	DECLARE_READ8_MEMBER( fd5_data_r );
-	DECLARE_WRITE8_MEMBER( fd5_data_w );
-	DECLARE_READ8_MEMBER( fd5_com_r );
-	DECLARE_WRITE8_MEMBER( fd5_com_w );
-	DECLARE_WRITE8_MEMBER( fd5_ctrl_w );
-	DECLARE_WRITE8_MEMBER( fd5_tc_w );
+	void init_pal();
+	void init_ntsc();
 
-	DECLARE_FLOPPY_FORMATS( floppy_formats );
-
-	DECLARE_WRITE_LINE_MEMBER(write_centronics_busy);
-
-	DECLARE_DRIVER_INIT(pal);
-	DECLARE_DRIVER_INIT(ntsc);
 	DECLARE_WRITE_LINE_MEMBER(sordm5_video_interrupt_callback);
 
-	// memory
-	DECLARE_READ8_MEMBER( mem64KBI_r );
-	DECLARE_WRITE8_MEMBER( mem64KBI_w );
-	DECLARE_WRITE8_MEMBER( mem64KBF_w );
-	DECLARE_WRITE8_MEMBER( mem64KRX_w );
-
 protected:
-	virtual void machine_start() override;
-	virtual void machine_reset() override;
-
-	required_device<cpu_device> m_maincpu;
+	required_device<z80_device> m_maincpu;
 	required_device<z80ctc_device> m_ctc;
 	//I've changed following devices to optional since we have to remove them in BRNO mod (I don't know better solution)
 	optional_device<cpu_device> m_fd5cpu;
@@ -98,6 +77,41 @@ protected:
 	required_device<ram_device> m_ram;
 	required_ioport m_reset;
 	optional_ioport m_DIPS;
+	m5_cart_slot_device *m_cart_ram, *m_cart;
+
+	uint8_t sts_r();
+	void com_w(uint8_t data);
+
+	virtual void machine_start() override;
+	virtual void machine_reset() override;
+private:
+	uint8_t ppi_pa_r();
+	void ppi_pa_w(uint8_t data);
+	void ppi_pb_w(uint8_t data);
+	uint8_t ppi_pc_r();
+	void ppi_pc_w(uint8_t data);
+
+	uint8_t fd5_data_r();
+	void fd5_data_w(uint8_t data);
+	uint8_t fd5_com_r();
+	void fd5_com_w(uint8_t data);
+	void fd5_ctrl_w(uint8_t data);
+	void fd5_tc_w(uint8_t data);
+
+	DECLARE_FLOPPY_FORMATS( floppy_formats );
+
+	DECLARE_WRITE_LINE_MEMBER(write_centronics_busy);
+
+	// memory
+	uint8_t mem64KBI_r();
+	void mem64KBI_w(offs_t offset, uint8_t data);
+	void mem64KBF_w(uint8_t data);
+	void mem64KRX_w(offs_t offset, uint8_t data);
+
+	void fd5_io(address_map &map);
+	void fd5_mem(address_map &map);
+	void m5_io(address_map &map);
+	void m5_mem(address_map &map);
 
 	// video state
 //  const TMS9928a_interface *m_vdp_intf;
@@ -107,7 +121,6 @@ protected:
 	uint8_t m_ram_mode;
 	uint8_t m_ram_type;
 	memory_region *m_cart_rom;
-	m5_cart_slot_device *m_cart_ram, *m_cart;
 
 	// floppy state for fd5
 	uint8_t m_fd5_data;
@@ -129,28 +142,34 @@ public:
 		//,  m_ramdisk(*this, RAMDISK)
 	{ }
 
-	DECLARE_READ8_MEMBER( mmu_r );
-	DECLARE_WRITE8_MEMBER( mmu_w );
-	DECLARE_READ8_MEMBER( ramsel_r );
-	DECLARE_WRITE8_MEMBER(ramsel_w );
-	DECLARE_READ8_MEMBER( romsel_r );
-	DECLARE_WRITE8_MEMBER(romsel_w );
+	void brno(machine_config &config);
 
-	DECLARE_READ8_MEMBER( fd_r );
-	DECLARE_WRITE8_MEMBER( fd_w );
-	DECLARE_FLOPPY_FORMATS( floppy_formats );
+	void init_brno();
+
+private:
+	uint8_t mmu_r();
+	void mmu_w(uint8_t data);
+	uint8_t ramsel_r();
+	void ramsel_w(uint8_t data);
+	uint8_t romsel_r();
+	void romsel_w(uint8_t data);
+
+	uint8_t fd_r();
+	void fd_w(uint8_t data);
+	DECLARE_FLOPPY_FORMATS(floppy_formats);
 
 
-//  DECLARE_WRITE_LINE_MEMBER( wd2797_intrq_w );
-//  DECLARE_WRITE_LINE_MEMBER( wd2797_drq_w );
-//  DECLARE_WRITE_LINE_MEMBER( wd2797_index_callback);
+	//  DECLARE_WRITE_LINE_MEMBER( wd2797_intrq_w );
+	//  DECLARE_WRITE_LINE_MEMBER( wd2797_drq_w );
+	//  DECLARE_WRITE_LINE_MEMBER( wd2797_index_callback);
 
-	//required_device<ram_device> m_ramdisk;
-	DECLARE_DRIVER_INIT(brno);
-	DECLARE_SNAPSHOT_LOAD_MEMBER( brno );
-//  DECLARE_DEVICE_IMAGE_LOAD_MEMBER(m5_cart);
+		//required_device<ram_device> m_ramdisk;
+	DECLARE_SNAPSHOT_LOAD_MEMBER(brno);
+	//  DECLARE_DEVICE_IMAGE_LOAD_MEMBER(m5_cart);
 
-protected:
+	void brno_io(address_map &map);
+	void m5_mem_brno(address_map &map);
+
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
 

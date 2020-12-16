@@ -57,7 +57,7 @@
                                          S
 
     Block Diagram / Pin Descriptions:
-    http://www.mess.org/_media/datasheets/fujitsu/mb89363b_partial.pdf
+    http://mess.redump.net/_media/datasheets/fujitsu/mb89363b_partial.pdf
 
     D.C. Characteristics:
     (Recommended operating conditions unless otherwise noted)
@@ -103,54 +103,55 @@ mb89363b_device::mb89363b_device(const machine_config &mconfig, const char *tag,
 }
 
 
-READ8_MEMBER(mb89363b_device::i8255_a_port_a_r) { return m_in_a_pa_cb(space, offset); }
-READ8_MEMBER(mb89363b_device::i8255_a_port_b_r) { return m_in_a_pb_cb(space, offset); }
-READ8_MEMBER(mb89363b_device::i8255_a_port_c_r) { return m_in_a_pc_cb(space, offset); }
-WRITE8_MEMBER(mb89363b_device::i8255_a_port_a_w) { m_out_a_pa_cb(space, offset, data); }
-WRITE8_MEMBER(mb89363b_device::i8255_a_port_b_w) { m_out_a_pb_cb(space, offset, data); }
-WRITE8_MEMBER(mb89363b_device::i8255_a_port_c_w) { m_out_a_pc_cb(space, offset, data); }
-READ8_MEMBER(mb89363b_device::i8255_b_port_a_r) { return m_in_b_pa_cb(space, offset); }
-READ8_MEMBER(mb89363b_device::i8255_b_port_b_r) { return m_in_b_pb_cb(space, offset); }
-READ8_MEMBER(mb89363b_device::i8255_b_port_c_r) { return m_in_b_pc_cb(space, offset); }
-WRITE8_MEMBER(mb89363b_device::i8255_b_port_a_w) { m_out_b_pa_cb(space, offset, data); }
-WRITE8_MEMBER(mb89363b_device::i8255_b_port_b_w) { m_out_b_pb_cb(space, offset, data); }
-WRITE8_MEMBER(mb89363b_device::i8255_b_port_c_w) { m_out_b_pc_cb(space, offset, data); }
+uint8_t mb89363b_device::i8255_a_port_a_r(offs_t offset) { return m_in_a_pa_cb(offset); }
+uint8_t mb89363b_device::i8255_a_port_b_r(offs_t offset) { return m_in_a_pb_cb(offset); }
+uint8_t mb89363b_device::i8255_a_port_c_r(offs_t offset) { return m_in_a_pc_cb(offset); }
+void mb89363b_device::i8255_a_port_a_w(offs_t offset, uint8_t data) { m_out_a_pa_cb(offset, data); }
+void mb89363b_device::i8255_a_port_b_w(offs_t offset, uint8_t data) { m_out_a_pb_cb(offset, data); }
+void mb89363b_device::i8255_a_port_c_w(offs_t offset, uint8_t data) { m_out_a_pc_cb(offset, data); }
+uint8_t mb89363b_device::i8255_b_port_a_r(offs_t offset) { return m_in_b_pa_cb(offset); }
+uint8_t mb89363b_device::i8255_b_port_b_r(offs_t offset) { return m_in_b_pb_cb(offset); }
+uint8_t mb89363b_device::i8255_b_port_c_r(offs_t offset) { return m_in_b_pc_cb(offset); }
+void mb89363b_device::i8255_b_port_a_w(offs_t offset, uint8_t data) { m_out_b_pa_cb(offset, data); }
+void mb89363b_device::i8255_b_port_b_w(offs_t offset, uint8_t data) { m_out_b_pb_cb(offset, data); }
+void mb89363b_device::i8255_b_port_c_w(offs_t offset, uint8_t data) { m_out_b_pc_cb(offset, data); }
 
 
-READ8_MEMBER( mb89363b_device::read )
+uint8_t mb89363b_device::read(offs_t offset)
 {
 	if (offset & 4)
-		return m_i8255_b->read(space, offset & 3);
+		return m_i8255_b->read(offset & 3);
 	else
-		return m_i8255_a->read(space, offset & 3);
+		return m_i8255_a->read(offset & 3);
 }
 
-WRITE8_MEMBER( mb89363b_device::write )
+void mb89363b_device::write(offs_t offset, uint8_t data)
 {
 	if (offset & 4)
-		m_i8255_b->write(space, offset & 3, data);
+		m_i8255_b->write(offset & 3, data);
 	else
-		m_i8255_a->write(space, offset & 3, data);
+		m_i8255_a->write(offset & 3, data);
 }
 
 
-MACHINE_CONFIG_MEMBER( mb89363b_device::device_add_mconfig )
-	MCFG_DEVICE_ADD("i8255_a", I8255, 0)
-	MCFG_I8255_IN_PORTA_CB(READ8(mb89363b_device, i8255_a_port_a_r))
-	MCFG_I8255_IN_PORTB_CB(READ8(mb89363b_device, i8255_a_port_b_r))
-	MCFG_I8255_IN_PORTC_CB(READ8(mb89363b_device, i8255_a_port_c_r))
-	MCFG_I8255_OUT_PORTA_CB(WRITE8(mb89363b_device, i8255_a_port_a_w))
-	MCFG_I8255_OUT_PORTB_CB(WRITE8(mb89363b_device, i8255_a_port_b_w))
-	MCFG_I8255_OUT_PORTC_CB(WRITE8(mb89363b_device, i8255_a_port_c_w))
+void mb89363b_device::device_add_mconfig(machine_config &config)
+{
+	I8255(config, m_i8255_a);
+	m_i8255_a->in_pa_callback().set(FUNC(mb89363b_device::i8255_a_port_a_r));
+	m_i8255_a->in_pb_callback().set(FUNC(mb89363b_device::i8255_a_port_b_r));
+	m_i8255_a->in_pc_callback().set(FUNC(mb89363b_device::i8255_a_port_c_r));
+	m_i8255_a->out_pa_callback().set(FUNC(mb89363b_device::i8255_a_port_a_w));
+	m_i8255_a->out_pb_callback().set(FUNC(mb89363b_device::i8255_a_port_b_w));
+	m_i8255_a->out_pc_callback().set(FUNC(mb89363b_device::i8255_a_port_c_w));
 
-	MCFG_DEVICE_ADD("i8255_b", I8255, 0)
-	MCFG_I8255_IN_PORTA_CB(READ8(mb89363b_device, i8255_b_port_a_r))
-	MCFG_I8255_IN_PORTB_CB(READ8(mb89363b_device, i8255_b_port_b_r))
-	MCFG_I8255_IN_PORTC_CB(READ8(mb89363b_device, i8255_b_port_c_r))
-	MCFG_I8255_OUT_PORTA_CB(WRITE8(mb89363b_device, i8255_b_port_a_w))
-	MCFG_I8255_OUT_PORTB_CB(WRITE8(mb89363b_device, i8255_b_port_b_w))
-	MCFG_I8255_OUT_PORTC_CB(WRITE8(mb89363b_device, i8255_b_port_c_w))
-MACHINE_CONFIG_END
+	I8255(config, m_i8255_b);
+	m_i8255_b->in_pa_callback().set(FUNC(mb89363b_device::i8255_b_port_a_r));
+	m_i8255_b->in_pb_callback().set(FUNC(mb89363b_device::i8255_b_port_b_r));
+	m_i8255_b->in_pc_callback().set(FUNC(mb89363b_device::i8255_b_port_c_r));
+	m_i8255_b->out_pa_callback().set(FUNC(mb89363b_device::i8255_b_port_a_w));
+	m_i8255_b->out_pb_callback().set(FUNC(mb89363b_device::i8255_b_port_b_w));
+	m_i8255_b->out_pc_callback().set(FUNC(mb89363b_device::i8255_b_port_c_w));
+}
 
 
 void mb89363b_device::device_start()

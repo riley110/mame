@@ -11,13 +11,6 @@
 
 #include "e0c6200.h"
 
-
-// I/O ports setup
-
-// 5 4-bit R output ports
-#define MCFG_E0C6S46_WRITE_R_CB(R, _devcb) \
-	devcb = &e0c6s46_device::set_write_r##R##_callback(*device, DEVCB_##_devcb);
-
 enum
 {
 	E0C6S46_PORT_R0X = 0,
@@ -26,12 +19,6 @@ enum
 	E0C6S46_PORT_R3X,
 	E0C6S46_PORT_R4X
 };
-
-// 4 4-bit P I/O ports
-#define MCFG_E0C6S46_READ_P_CB(R, _devcb) \
-	devcb = &hmcs40_cpu_device::set_read_r##P##_callback(*device, DEVCB_##_devcb);
-#define MCFG_E0C6S46_WRITE_P_CB(R, _devcb) \
-	devcb = &e0c6s46_device::set_write_r##P##_callback(*device, DEVCB_##_devcb);
 
 enum
 {
@@ -56,9 +43,6 @@ enum
 
 
 // lcd driver
-#define MCFG_E0C6S46_PIXEL_UPDATE_CB(_class, _method) \
-	e0c6s46_device::static_set_pixel_update_cb(*device, e0c6s46_device::pixel_update_delegate(&_class::_method, #_class "::" #_method, downcast<_class *>(owner)));
-
 #define E0C6S46_PIXEL_UPDATE(name) void name(bitmap_ind16 &bitmap, const rectangle &cliprect, int contrast, int seg, int com, int state)
 
 
@@ -69,26 +53,17 @@ public:
 
 	e0c6s46_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock);
 
-	// static configuration helpers
-	template <class Object> static devcb_base &set_write_r0_callback(device_t &device, Object &&cb) { return downcast<e0c6s46_device &>(device).m_write_r0.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_write_r1_callback(device_t &device, Object &&cb) { return downcast<e0c6s46_device &>(device).m_write_r1.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_write_r2_callback(device_t &device, Object &&cb) { return downcast<e0c6s46_device &>(device).m_write_r2.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_write_r3_callback(device_t &device, Object &&cb) { return downcast<e0c6s46_device &>(device).m_write_r3.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_write_r4_callback(device_t &device, Object &&cb) { return downcast<e0c6s46_device &>(device).m_write_r4.set_callback(std::forward<Object>(cb)); }
+	// 5 4-bit R output ports
+	template <std::size_t Port> auto write_r() { return m_write_r[Port].bind(); }
 
-	template <class Object> static devcb_base &set_read_p0_callback(device_t &device, Object &&cb) { return downcast<e0c6s46_device &>(device).m_read_p0.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_read_p1_callback(device_t &device, Object &&cb) { return downcast<e0c6s46_device &>(device).m_read_p1.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_read_p2_callback(device_t &device, Object &&cb) { return downcast<e0c6s46_device &>(device).m_read_p2.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_read_p3_callback(device_t &device, Object &&cb) { return downcast<e0c6s46_device &>(device).m_read_p3.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_write_p0_callback(device_t &device, Object &&cb) { return downcast<e0c6s46_device &>(device).m_write_p0.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_write_p1_callback(device_t &device, Object &&cb) { return downcast<e0c6s46_device &>(device).m_write_p1.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_write_p2_callback(device_t &device, Object &&cb) { return downcast<e0c6s46_device &>(device).m_write_p2.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_write_p3_callback(device_t &device, Object &&cb) { return downcast<e0c6s46_device &>(device).m_write_p3.set_callback(std::forward<Object>(cb)); }
+	// 4 4-bit P I/O ports
+	template <std::size_t Port> auto read_p() { return m_read_p[Port].bind(); }
+	template <std::size_t Port> auto write_p() { return m_write_p[Port].bind(); }
 
-	static void static_set_pixel_update_cb(device_t &device, pixel_update_delegate &&cb) { downcast<e0c6s46_device &>(device).m_pixel_update_cb = std::move(cb); }
+	template <typename... T> void set_pixel_update_cb(T &&... args) { m_pixel_update_cb.set(std::forward<T>(args)...); }
 
-	DECLARE_READ8_MEMBER(io_r);
-	DECLARE_WRITE8_MEMBER(io_w);
+	u8 io_r(offs_t offset);
+	void io_w(offs_t offset, u8 data);
 
 	u32 screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 
@@ -98,10 +73,13 @@ protected:
 	virtual void device_reset() override;
 
 	// device_execute_interface overrides
-	virtual u32 execute_input_lines() const override { return 8; }
+	virtual u32 execute_input_lines() const noexcept override { return 8; }
 	virtual void execute_set_input(int line, int state) override;
 	virtual void execute_one() override;
 	virtual bool check_interrupt() override;
+
+	void e0c6s46_data(address_map &map);
+	void e0c6s46_program(address_map &map);
 
 private:
 	required_shared_ptr<u8> m_vram1;
@@ -117,9 +95,9 @@ private:
 	pixel_update_delegate m_pixel_update_cb;
 
 	// i/o ports
-	devcb_write8 m_write_r0, m_write_r1, m_write_r2, m_write_r3, m_write_r4;
-	devcb_read8 m_read_p0, m_read_p1, m_read_p2, m_read_p3;
-	devcb_write8 m_write_p0, m_write_p1, m_write_p2, m_write_p3;
+	devcb_write8::array<5> m_write_r;
+	devcb_read8::array<4> m_read_p;
+	devcb_write8::array<4> m_write_p;
 	void write_r(u8 port, u8 data);
 	void write_r4_out();
 	void write_p(u8 port, u8 data);

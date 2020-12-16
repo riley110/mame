@@ -5,9 +5,10 @@
  * includes/intv.h
  *
  ****************************************************************************/
-
 #ifndef MAME_INCLUDES_INTV_H
 #define MAME_INCLUDES_INTV_H
+
+#pragma once
 
 #include "sound/ay8910.h"
 #include "video/stic.h"
@@ -24,19 +25,14 @@
 #include "bus/generic/slot.h"
 #include "bus/generic/carts.h"
 
+#include "emupal.h"
+
 
 class intv_state : public driver_device
 {
 public:
-	enum
-	{
-		TIMER_INTV_INTERRUPT2_COMPLETE,
-		TIMER_INTV_INTERRUPT_COMPLETE,
-		TIMER_INTV_BTB_FILL
-	};
-
-	intv_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
+	intv_state(const machine_config &mconfig, device_type type, const char *tag) :
+		driver_device(mconfig, type, tag),
 		m_maincpu(*this, "maincpu"),
 		m_sound(*this, "ay8914"),
 		m_stic(*this, "stic"),
@@ -54,6 +50,24 @@ public:
 		m_palette(*this, "palette")
 	{ }
 
+	void intvkbd(machine_config &config);
+	void intv2(machine_config &config);
+	void intvoice(machine_config &config);
+	void intvecs(machine_config &config);
+	void intv(machine_config &config);
+
+	void init_intvecs();
+	void init_intvkbd();
+	void init_intv();
+
+private:
+	enum
+	{
+		TIMER_INTV_INTERRUPT2_COMPLETE,
+		TIMER_INTV_INTERRUPT_COMPLETE,
+		TIMER_INTV_BTB_FILL
+	};
+
 	required_device<cpu_device> m_maincpu;
 	required_device<ay8914_device> m_sound;
 	required_device<stic_device> m_stic;
@@ -62,35 +76,35 @@ public:
 	optional_shared_ptr<uint16_t> m_intvkbd_dualport_ram;
 	optional_shared_ptr<uint8_t> m_videoram;
 
-	DECLARE_READ16_MEMBER(intv_stic_r);
-	DECLARE_WRITE16_MEMBER(intv_stic_w);
-	DECLARE_READ16_MEMBER(intv_gram_r);
-	DECLARE_WRITE16_MEMBER(intv_gram_w);
-	DECLARE_READ16_MEMBER(intv_ram8_r);
-	DECLARE_WRITE16_MEMBER(intv_ram8_w);
-	DECLARE_READ16_MEMBER(intv_ram16_r);
-	DECLARE_WRITE16_MEMBER(intv_ram16_w);
-	DECLARE_READ8_MEMBER(intvkb_iocart_r);
-
-	DECLARE_READ8_MEMBER(intv_right_control_r);
-	DECLARE_READ8_MEMBER(intv_left_control_r);
+	uint16_t intv_stic_r(offs_t offset);
+	void intv_stic_w(offs_t offset, uint16_t data);
+	uint16_t intv_gram_r(offs_t offset);
+	void intv_gram_w(offs_t offset, uint16_t data);
+	uint16_t intv_ram8_r(offs_t offset);
+	void intv_ram8_w(offs_t offset, uint16_t data);
+	uint16_t intv_ram16_r(offs_t offset);
+	void intv_ram16_w(offs_t offset, uint16_t data);
+	uint8_t intvkb_iocart_r(offs_t offset);
 
 	uint8_t m_bus_copy_mode;
 	uint8_t m_backtab_row;
 	uint16_t m_ram16[0x160];
 	int m_sr1_int_pending;
 	uint8_t m_ram8[256];
+	bool m_maincpu_reset;
 
 	// Keyboard Component
-	DECLARE_WRITE16_MEMBER(intvkbd_dualport16_w);
-	DECLARE_READ8_MEMBER(intvkbd_dualport8_lsb_r);
-	DECLARE_WRITE8_MEMBER(intvkbd_dualport8_lsb_w);
-	DECLARE_READ8_MEMBER(intvkbd_dualport8_msb_r);
-	DECLARE_WRITE8_MEMBER(intvkbd_dualport8_msb_w);
-	DECLARE_READ8_MEMBER(intvkbd_io_r);
-	DECLARE_WRITE8_MEMBER(intvkbd_io_w);
-	DECLARE_READ8_MEMBER(intvkbd_periph_r);
-	DECLARE_WRITE8_MEMBER(intvkbd_periph_w);
+	void intvkbd_dualport16_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint8_t intvkbd_dualport8_lsb_r(offs_t offset);
+	void intvkbd_dualport8_lsb_w(offs_t offset, uint8_t data);
+	uint8_t intvkbd_dualport8_msb_r(offs_t offset);
+	void intvkbd_dualport8_msb_w(offs_t offset, uint8_t data);
+	uint8_t intvkbd_io_r(offs_t offset);
+	void intvkbd_io_w(offs_t offset, uint8_t data);
+	uint8_t intvkbd_periph_r(offs_t offset);
+	void intvkbd_periph_w(offs_t offset, uint8_t data);
+
+	uint16_t iab_r();
 
 	bool m_printer_not_busy;        // printer state
 	bool m_printer_no_paper;        // printer state
@@ -102,13 +116,10 @@ public:
 	int m_tape_interrupts_enabled;
 	int m_tape_motor_mode;
 
-	DECLARE_DRIVER_INIT(intvecs);
-	DECLARE_DRIVER_INIT(intvkbd);
-	DECLARE_DRIVER_INIT(intv);
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
 	virtual void video_start() override;
-	DECLARE_PALETTE_INIT(intv);
+	void intv_palette(palette_device &palette) const;
 	uint32_t screen_update_intv(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 	uint32_t screen_update_intvkbd(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 	INTERRUPT_GEN_MEMBER(intv_interrupt2);
@@ -117,7 +128,13 @@ public:
 	TIMER_CALLBACK_MEMBER(intv_interrupt_complete);
 	TIMER_CALLBACK_MEMBER(intv_btb_fill);
 
-protected:
+	void intv2_mem(address_map &map);
+	void intv_mem(address_map &map);
+	void intvecs_mem(address_map &map);
+	void intvkbd2_mem(address_map &map);
+	void intvkbd_mem(address_map &map);
+	void intvoice_mem(address_map &map);
+
 	int m_is_keybd;
 
 	optional_device<cpu_device> m_keyboard;

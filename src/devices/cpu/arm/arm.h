@@ -1,5 +1,6 @@
 // license:BSD-3-Clause
-// copyright-holders:Bryan McPhail
+// copyright-holders:Bryan McPhail, Phil Stroffolino
+
 #ifndef MAME_CPU_ARM_ARM_H
 #define MAME_CPU_ARM_ARM_H
 
@@ -16,10 +17,6 @@
  *  PUBLIC FUNCTIONS
  ***************************************************************************************************/
 
-#define MCFG_ARM_COPRO(_type) \
-	arm_cpu_device::set_copro_type(*device, arm_cpu_device::copro_type::_type);
-
-
 class arm_cpu_device : public cpu_device
 {
 public:
@@ -32,7 +29,7 @@ public:
 	// construction/destruction
 	arm_cpu_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	static void set_copro_type(device_t &device, copro_type type) { downcast<arm_cpu_device &>(device).m_copro_type = type; }
+	void set_copro_type(copro_type type) { m_copro_type = type; }
 
 protected:
 	enum
@@ -51,9 +48,9 @@ protected:
 	virtual void device_reset() override;
 
 	// device_execute_interface overrides
-	virtual uint32_t execute_min_cycles() const override { return 3; }
-	virtual uint32_t execute_max_cycles() const override { return 4; }
-	virtual uint32_t execute_input_lines() const override { return 2; }
+	virtual uint32_t execute_min_cycles() const noexcept override { return 3; }
+	virtual uint32_t execute_max_cycles() const noexcept override { return 4; }
+	virtual uint32_t execute_input_lines() const noexcept override { return 2; }
 	virtual void execute_run() override;
 	virtual void execute_set_input(int inputnum, int state) override;
 
@@ -64,11 +61,11 @@ protected:
 	virtual void state_string_export(const device_state_entry &entry, std::string &str) const override;
 
 	// device_disasm_interface overrides
-	virtual uint32_t disasm_min_opcode_bytes() const override { return 4; }
-	virtual uint32_t disasm_max_opcode_bytes() const override { return 4; }
-	virtual offs_t disasm_disassemble(std::ostream &stream, offs_t pc, const uint8_t *oprom, const uint8_t *opram, uint32_t options) override;
+	virtual std::unique_ptr<util::disasm_interface> create_disassembler() override;
 
 	address_space_config m_program_config;
+	memory_access<26, 2, 0, ENDIANNESS_LITTLE>::cache m_cachele;
+	memory_access<26, 2, 0, ENDIANNESS_BIG>::cache m_cachebe;
 
 	int m_icount;
 	uint32_t m_sArmRegister[27];
@@ -76,7 +73,7 @@ protected:
 	uint8_t m_pendingIrq;
 	uint8_t m_pendingFiq;
 	address_space *m_program;
-	direct_read_data *m_direct;
+	std::function<u32 (offs_t)> m_pr32;
 	endianness_t m_endian;
 	copro_type m_copro_type;
 
@@ -111,9 +108,6 @@ class arm_be_cpu_device : public arm_cpu_device
 public:
 	// construction/destruction
 	arm_be_cpu_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
-
-protected:
-	virtual offs_t disasm_disassemble(std::ostream &stream, offs_t pc, const uint8_t *oprom, const uint8_t *opram, uint32_t options) override;
 };
 
 

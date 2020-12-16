@@ -53,7 +53,7 @@ TILE_GET_INFO_MEMBER(m107_state::get_pf_tile_info)
 	attrib = m_vram_data[tile_index + 1];
 	tile = m_vram_data[tile_index] + ((attrib & 0x1000) << 4);
 
-	SET_TILE_INFO_MEMBER(0,
+	tileinfo.set(0,
 			tile,
 			attrib & 0x7f,
 			TILE_FLIPYX(attrib >> 10));
@@ -64,19 +64,17 @@ TILE_GET_INFO_MEMBER(m107_state::get_pf_tile_info)
 
 /*****************************************************************************/
 
-WRITE16_MEMBER(m107_state::vram_w)
+void m107_state::vram_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
-	int laynum;
-
 	COMBINE_DATA(&m_vram_data[offset]);
-	for (laynum = 0; laynum < 4; laynum++)
+	for (int laynum = 0; laynum < 4; laynum++)
 		if ((offset & 0x6000) == m_pf_layer[laynum].vram_base)
 			m_pf_layer[laynum].tmap->mark_tile_dirty((offset & 0x1fff) / 2);
 }
 
 /*****************************************************************************/
 
-WRITE16_MEMBER(m107_state::control_w)
+void m107_state::control_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	uint16_t old = m_control[offset];
 	pf_layer_info *layer;
@@ -122,14 +120,12 @@ WRITE16_MEMBER(m107_state::control_w)
 
 void m107_state::video_start()
 {
-	int laynum;
-
-	for (laynum = 0; laynum < 4; laynum++)
+	for (int laynum = 0; laynum < 4; laynum++)
 	{
 		pf_layer_info *layer = &m_pf_layer[laynum];
 
 		/* allocate a tilemaps per layer */
-		layer->tmap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(m107_state::get_pf_tile_info),this), TILEMAP_SCAN_ROWS,  8,8, 64,64);
+		layer->tmap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(m107_state::get_pf_tile_info)), TILEMAP_SCAN_ROWS,  8,8, 64,64);
 
 		/* set the user data to point to the layer */
 		layer->tmap->set_user_data(&m_pf_layer[laynum]);
@@ -143,12 +139,9 @@ void m107_state::video_start()
 			layer->tmap->set_transparent_pen(0);
 	}
 
-	m_buffered_spriteram = make_unique_clear<uint16_t[]>(0x1000/2);
-
 	save_item(NAME(m_sprite_display));
 	save_item(NAME(m_raster_irq_position));
 	save_item(NAME(m_control));
-	save_pointer(NAME(m_buffered_spriteram.get()), 0x1000/2);
 
 	for (int i = 0; i < 4; i++)
 	{
@@ -160,9 +153,9 @@ void m107_state::video_start()
 
 void m107_state::draw_sprites(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect)
 {
-	uint16_t *spriteram = m_buffered_spriteram.get();
+	const uint16_t *spriteram = m_spriteram->buffer();
 	int offs;
-	uint8_t *rom = m_user1_ptr;
+	const uint8_t *rom = m_sprtable_rom;
 
 	for (offs = 0;offs < 0x800;offs += 4)
 	{
@@ -223,7 +216,7 @@ void m107_state::draw_sprites(screen_device &screen, bitmap_ind16 &bitmap, const
 
 			if (rom[rom_offs+1] || rom[rom_offs+3] || rom[rom_offs+5] || rom[rom_offs+7])
 			{
-				while (rom_offs < 0x40000)  /* safety check */
+				while (rom_offs < m_sprtable_rom.length())  /* safety check */
 				{
 					/*
 					[1]
@@ -376,16 +369,16 @@ void m107_state::screenrefresh(screen_device &screen, bitmap_ind16 &bitmap, cons
 
 /*****************************************************************************/
 
-WRITE16_MEMBER(m107_state::spritebuffer_w)
+void m107_state::spritebuffer_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	if (ACCESSING_BITS_0_7) {
 		/*
 		TODO: this register looks a lot more complex than how the game uses it. All of them seems to test various bit combinations during POST.
 		*/
-//      logerror("%04x: buffered spriteram\n",space.device().safe_pc());
+//      logerror("%s: buffered spriteram\n",m_maincpu->pc());
 		m_sprite_display    = (!(data & 0x1000));
 
-		memcpy(m_buffered_spriteram.get(), m_spriteram, 0x1000);
+		m_spriteram->copy();
 	}
 }
 

@@ -19,8 +19,12 @@ msx_cart_super_swangi_device::msx_cart_super_swangi_device(const machine_config 
 void msx_cart_super_swangi_device::device_start()
 {
 	save_item(NAME(m_selected_bank));
+}
 
-	machine().save().register_postload(save_prepost_delegate(FUNC(msx_cart_super_swangi_device::restore_banks), this));
+
+void msx_cart_super_swangi_device::device_post_load()
+{
+	restore_banks();
 }
 
 
@@ -41,14 +45,14 @@ void msx_cart_super_swangi_device::initialize_cartridge()
 {
 	if (get_rom_size() < 0x10000)
 	{
-		fatalerror("rtype: Invalid ROM size\n");
+		fatalerror("super_swangi: Invalid ROM size\n");
 	}
 
 	restore_banks();
 }
 
 
-READ8_MEMBER(msx_cart_super_swangi_device::read_cart)
+uint8_t msx_cart_super_swangi_device::read_cart(offs_t offset)
 {
 	if (offset >= 0x4000 && offset < 0xc000)
 	{
@@ -58,7 +62,7 @@ READ8_MEMBER(msx_cart_super_swangi_device::read_cart)
 }
 
 
-WRITE8_MEMBER(msx_cart_super_swangi_device::write_cart)
+void msx_cart_super_swangi_device::write_cart(offs_t offset, uint8_t data)
 {
 	if (offset == 0x8000)
 	{

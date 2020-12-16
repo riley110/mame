@@ -60,7 +60,7 @@ UPD7220_DISPLAY_PIXELS_MEMBER( pc9801_state::hgdc_display_pixels )
 			res_x = x + xi;
 			res_y = y;
 
-			pen = ext_gvram[(address >> 1)*16+xi+(m_vram_disp*0x20000)];
+			pen = ext_gvram[(address >> 1)*16+xi+(m_vram_disp*0x40000)];
 
 			bitmap.pix32(res_y, res_x) = palette[pen + 0x20];
 		}
@@ -167,7 +167,7 @@ UPD7220_DRAW_TEXT_LINE_MEMBER( pc9801_state::hgdc_draw_text )
 					int res_x,res_y;
 
 					res_x = ((x+kanji_lr)*8+xi) * (m_video_ff[WIDTH40_REG]+1);
-					res_y = y+yi - (m_txt_scroll_reg[3] & 0xf);
+					res_y = y+yi - (m_txt_scroll_reg[3] % 20);
 
 					if(!m_screen->visible_area().contains(res_x, res_y))
 						continue;
@@ -214,7 +214,7 @@ UPD7220_DRAW_TEXT_LINE_MEMBER( pc9801_state::hgdc_draw_text )
 						tile_data^=0xff;
 
 					if(blink && m_screen->frame_number() & 0x10)
-						tile_data^=0xff;
+						tile_data = 0;
 
 					if(yi >= char_size)
 						pen = -1;
@@ -244,7 +244,7 @@ UPD7220_DRAW_TEXT_LINE_MEMBER( pc9801_state::hgdc_draw_text )
  *
  ************************************************/
 
-WRITE8_MEMBER(pc9801_state::pc9801_video_ff_w)
+void pc9801_state::pc9801_video_ff_w(uint8_t data)
 {
 	/*
 	TODO: this is my best bet so far. Register 4 is annoying, the pattern seems to be:
@@ -289,7 +289,7 @@ WRITE8_MEMBER(pc9801_state::pc9801_video_ff_w)
 	}
 }
 
-READ8_MEMBER(pc9801_state::txt_scrl_r)
+uint8_t pc9801_state::txt_scrl_r(offs_t offset)
 {
 	//logerror("Read to display register [%02x]\n",offset+0x70);
 	/* TODO: ok? */
@@ -298,7 +298,7 @@ READ8_MEMBER(pc9801_state::txt_scrl_r)
 	return 0xff;
 }
 
-WRITE8_MEMBER(pc9801_state::txt_scrl_w)
+void pc9801_state::txt_scrl_w(offs_t offset, uint8_t data)
 {
 	//logerror("Write to display register [%02x] %02x\n",offset+0x70,data);
 	if(offset <= 5)
@@ -313,7 +313,7 @@ WRITE8_MEMBER(pc9801_state::txt_scrl_w)
  *
  ************************************************/
 
-READ8_MEMBER(pc9801_state::pc9801_a0_r)
+uint8_t pc9801_state::pc9801_a0_r(offs_t offset)
 {
 	if((offset & 1) == 0)
 	{
@@ -321,7 +321,7 @@ READ8_MEMBER(pc9801_state::pc9801_a0_r)
 		{
 			case 0x00:
 			case 0x02:
-				return m_hgdc2->read(space, (offset & 2) >> 1);
+				return m_hgdc2->read((offset & 2) >> 1);
 			/* TODO: double check these two */
 			case 0x04:
 				return m_vram_disp & 1;
@@ -358,7 +358,7 @@ READ8_MEMBER(pc9801_state::pc9801_a0_r)
 	}
 }
 
-WRITE8_MEMBER(pc9801_state::pc9801_a0_w)
+void pc9801_state::pc9801_a0_w(offs_t offset, uint8_t data)
 {
 	if((offset & 1) == 0)
 	{
@@ -366,7 +366,7 @@ WRITE8_MEMBER(pc9801_state::pc9801_a0_w)
 		{
 			case 0x00:
 			case 0x02:
-				m_hgdc2->write(space, (offset & 2) >> 1,data);
+				m_hgdc2->write((offset & 2) >> 1,data);
 				return;
 			case 0x04:
 				m_vram_disp = data & 1;
@@ -402,10 +402,10 @@ WRITE8_MEMBER(pc9801_state::pc9801_a0_w)
 		switch((offset & 0xe) + 1)
 		{
 			case 0x01:
-				m_font_addr = (data & 0xff) | (m_font_addr & 0x7f00);
+				m_font_addr = (data & 0xff) | (m_font_addr & 0xff00);
 				return;
 			case 0x03:
-				m_font_addr = ((data & 0x7f) << 8) | (m_font_addr & 0xff);
+				m_font_addr = ((data & 0xff) << 8) | (m_font_addr & 0xff);
 				return;
 			case 0x05:
 				//logerror("%02x\n",data);
@@ -416,7 +416,7 @@ WRITE8_MEMBER(pc9801_state::pc9801_a0_w)
 			{
 				uint32_t pcg_offset;
 
-				pcg_offset = m_font_addr << 5;
+				pcg_offset = (m_font_addr & 0x7fff) << 5;
 				pcg_offset|= m_font_line;
 				pcg_offset|= m_font_lr;
 				//logerror("%04x %02x %02x %08x\n",m_font_addr,m_font_line,m_font_lr,pcg_offset);
@@ -441,22 +441,27 @@ WRITE8_MEMBER(pc9801_state::pc9801_a0_w)
  ************************************************/
 
 /* TODO: banking? */
-READ16_MEMBER(pc9801_state::tvram_r)
+uint16_t pc9801_state::tvram_r(offs_t offset, uint16_t mem_mask)
 {
 	uint16_t res;
 
 	if((offset & 0x1000) && (mem_mask == 0xff00))
 		return 0xffff;
 
-	res = m_tvram[offset];
+	if(offset < (0x3fe2>>1))
+		res = m_tvram[offset];
+	else
+		res = m_memsw->read(offset & 0xf);
 
 	return res;
 }
 
-WRITE16_MEMBER(pc9801_state::tvram_w)
+void pc9801_state::tvram_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
-	if(offset < (0x3fe2>>1) || m_video_ff[MEMSW_REG])
+	if(offset < (0x3fe2>>1))
 		COMBINE_DATA(&m_tvram[offset]);
+	else if(m_video_ff[MEMSW_REG] && ACCESSING_BITS_0_7)
+		m_memsw->write(offset & 0x0f, data & 0xff);
 
 	COMBINE_DATA(&m_video_ram_1[offset]); //TODO: check me
 }
@@ -468,16 +473,16 @@ WRITE16_MEMBER(pc9801_state::tvram_w)
  ************************************************/
 
 /* +0x8000 is trusted (bank 0 is actually used by 16 colors mode) */
-READ8_MEMBER(pc9801_state::gvram_r)
+uint8_t pc9801_state::gvram_r(offs_t offset)
 {
-	return BITSWAP8(m_video_ram_2[(offset>>1)+0x04000+m_vram_bank*0x10000] >> ((offset & 1) << 3),0,1,2,3,4,5,6,7);
+	return bitswap<8>(m_video_ram_2[(offset>>1)+0x04000+m_vram_bank*0x10000] >> ((offset & 1) << 3),0,1,2,3,4,5,6,7);
 }
 
-WRITE8_MEMBER(pc9801_state::gvram_w)
+void pc9801_state::gvram_w(offs_t offset, uint8_t data)
 {
 	uint16_t ram = m_video_ram_2[(offset>>1)+0x04000+m_vram_bank*0x10000];
 	int mask = (offset & 1) << 3;
-	data = BITSWAP8(data,0,1,2,3,4,5,6,7);
+	data = bitswap<8>(data,0,1,2,3,4,5,6,7);
 	m_video_ram_2[(offset>>1)+0x04000+m_vram_bank*0x10000] = (ram & (0xff00 >> mask)) | (data << mask);
 }
 
@@ -487,11 +492,11 @@ WRITE8_MEMBER(pc9801_state::gvram_w)
  *
  ************************************************/
 
-READ16_MEMBER(pc9801_state::upd7220_grcg_r)
+uint16_t pc9801_state::upd7220_grcg_r(offs_t offset, uint16_t mem_mask)
 {
 	uint16_t res = 0;
 
-	if(!(m_grcg.mode & 0x80) || machine().side_effect_disabled())
+	if(!(m_grcg.mode & 0x80) || machine().side_effects_disabled())
 		res = m_video_ram_2[offset];
 	else if(m_ex_video_ff[2])
 		res = egc_blit_r(offset, mem_mask);
@@ -515,7 +520,7 @@ READ16_MEMBER(pc9801_state::upd7220_grcg_r)
 	return res;
 }
 
-WRITE16_MEMBER(pc9801_state::upd7220_grcg_w)
+void pc9801_state::upd7220_grcg_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	if(!(m_grcg.mode & 0x80))
 		COMBINE_DATA(&m_video_ram_2[offset]);

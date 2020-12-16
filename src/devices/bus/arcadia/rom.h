@@ -18,8 +18,8 @@ public:
 	arcadia_rom_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 	// reading and writing
-	virtual DECLARE_READ8_MEMBER(read_rom) override;
-	virtual DECLARE_READ8_MEMBER(extra_rom) override;
+	virtual uint8_t read_rom(offs_t offset) override;
+	virtual uint8_t extra_rom(offs_t offset) override;
 
 public:
 	arcadia_rom_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock);
@@ -42,8 +42,6 @@ public:
 
 
 // device type definition
-extern const device_type ARCADIA_ROM_STD;
-extern const device_type ARCADIA_ROM_GOLF;
 DECLARE_DEVICE_TYPE(ARCADIA_ROM_STD,  arcadia_rom_device)
 DECLARE_DEVICE_TYPE(ARCADIA_ROM_GOLF, arcadia_golf_device)
 

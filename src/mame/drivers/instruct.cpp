@@ -47,8 +47,8 @@
 #include "cpu/s2650/s2650.h"
 #include "imagedev/cassette.h"
 #include "imagedev/snapquik.h"
-#include "sound/wave.h"
 #include "speaker.h"
+#include "video/pwm.h"
 
 #include "instruct.lh"
 
@@ -63,32 +63,44 @@ public:
 		, m_p_smiram(*this, "smiram")
 		, m_p_extram(*this, "extram")
 		, m_cass(*this, "cassette")
+		, m_display(*this, "display")
+		, m_io_keyboard(*this, "X%u", 0U)
 	{ }
 
-	DECLARE_READ8_MEMBER(port_r);
-	DECLARE_READ8_MEMBER(portfc_r);
-	DECLARE_READ8_MEMBER(portfd_r);
-	DECLARE_READ8_MEMBER(portfe_r);
+	void instruct(machine_config &config);
+
+private:
+
+	uint8_t port_r();
+	uint8_t portfc_r();
+	uint8_t portfd_r();
+	uint8_t portfe_r();
 	DECLARE_READ_LINE_MEMBER(sense_r);
 	DECLARE_WRITE_LINE_MEMBER(flag_w);
-	DECLARE_WRITE8_MEMBER(port_w);
-	DECLARE_WRITE8_MEMBER(portf8_w);
-	DECLARE_WRITE8_MEMBER(portf9_w);
-	DECLARE_WRITE8_MEMBER(portfa_w);
-	DECLARE_QUICKLOAD_LOAD_MEMBER(instruct);
+	void port_w(uint8_t data);
+	void portf8_w(uint8_t data);
+	void portf9_w(uint8_t data);
+	void portfa_w(uint8_t data);
+	DECLARE_QUICKLOAD_LOAD_MEMBER(quickload_cb);
 	INTERRUPT_GEN_MEMBER(t2l_int);
-private:
-	virtual void machine_reset() override;
+	void data_map(address_map &map);
+	void io_map(address_map &map);
+	void mem_map(address_map &map);
+
+	void machine_reset() override;
+	void machine_start() override;
 	uint16_t m_lar;
 	uint8_t m_digit;
-	bool m_valid_digit;
+	u8 m_seg;
 	bool m_cassin;
 	bool m_irqstate;
-	required_device<cpu_device> m_maincpu;
+	required_device<s2650_device> m_maincpu;
 	required_shared_ptr<uint8_t> m_p_ram;
 	required_shared_ptr<uint8_t> m_p_smiram;
 	required_shared_ptr<uint8_t> m_p_extram;
 	required_device<cassette_image_device> m_cass;
+	required_device<pwm_display_device> m_display;
+	required_ioport_array<6> m_io_keyboard;
 };
 
 // flag led
@@ -98,7 +110,7 @@ WRITE_LINE_MEMBER( instruct_state::flag_w )
 }
 
 // user port
-WRITE8_MEMBER( instruct_state::port_w )
+void instruct_state::port_w(uint8_t data)
 {
 	char ledname[8];
 	for (int i = 0; i < 8; i++)
@@ -109,7 +121,7 @@ WRITE8_MEMBER( instruct_state::port_w )
 }
 
 // cassette port
-WRITE8_MEMBER( instruct_state::portf8_w )
+void instruct_state::portf8_w(uint8_t data)
 {
 	if (BIT(data, 4))
 		m_cass->output(BIT(data, 3) ? -1.0 : +1.0);
@@ -120,52 +132,47 @@ WRITE8_MEMBER( instruct_state::portf8_w )
 }
 
 // segment output
-WRITE8_MEMBER( instruct_state::portf9_w )
+void instruct_state::portf9_w(uint8_t data)
 {
-	if (m_valid_digit)
-		output().set_digit_value(m_digit, data);
-	m_valid_digit = false;
+	m_seg = data;
+	m_display->matrix(m_digit, m_seg);
 }
 
 // digit & keyrow-scan select
-WRITE8_MEMBER( instruct_state::portfa_w )
+void instruct_state::portfa_w(uint8_t data)
 {
 	m_digit = data;
-	m_valid_digit = true;
+	m_display->matrix(m_digit, m_seg);
 }
 
 // user switches
-READ8_MEMBER( instruct_state::port_r )
+uint8_t instruct_state::port_r()
 {
 	return ioport("USW")->read();
 }
 
 // last address register A0-7 copied to 17E9 at boot
-READ8_MEMBER( instruct_state::portfc_r )
+uint8_t instruct_state::portfc_r()
 {
 	return m_lar;
 }
 
 // last address register A8-14 copied to 17E8 at boot
-READ8_MEMBER( instruct_state::portfd_r )
+uint8_t instruct_state::portfd_r()
 {
 	return (m_lar >> 8) & 0x7f;
 }
 
 // read keyboard
-READ8_MEMBER( instruct_state::portfe_r )
+uint8_t instruct_state::portfe_r()
 {
-	for (uint8_t i = 0; i < 6; i++)
-	{
-		if (BIT(m_digit, i))
-		{
-			char kbdrow[6];
-			sprintf(kbdrow,"X%X",i);
-			return ioport(kbdrow)->read();
-		}
-	}
+	u8 data = 15;
 
-	return 0xf;
+	for (uint8_t i = 0; i < 6; i++)
+		if (BIT(m_digit, i))
+			data &= m_io_keyboard[i]->read();
+
+	return data;
 }
 
 
@@ -199,45 +206,45 @@ INTERRUPT_GEN_MEMBER( instruct_state::t2l_int )
 	{
 		uint8_t switches = ioport("SW")->read();
 
-		// Set vector from INDIRECT sw
-		uint8_t vector = BIT(switches, 0) ? 0x87 : 0x07;
-
 		// Check INT sw & key
 		if (BIT(switches, 1))
-			device.execute().set_input_line_and_vector(0, BIT(hwkeys, 1) ? ASSERT_LINE : CLEAR_LINE, vector);
+			device.execute().set_input_line(0, BIT(hwkeys, 1) ? ASSERT_LINE : CLEAR_LINE);
 		else
 		// process ac input
 		{
 			m_irqstate ^= 1;
-			device.execute().set_input_line_and_vector(0, m_irqstate ? ASSERT_LINE : CLEAR_LINE, vector);
+			device.execute().set_input_line(0, m_irqstate ? ASSERT_LINE : CLEAR_LINE);
 		}
 	}
 }
 
-static ADDRESS_MAP_START( instruct_mem, AS_PROGRAM, 8, instruct_state )
-	ADDRESS_MAP_UNMAP_HIGH
-	AM_RANGE(0x0000, 0x0ffe) AM_RAM AM_SHARE("mainram")
-	AM_RANGE(0x0fff, 0x0fff) AM_READWRITE(port_r,port_w)
-	AM_RANGE(0x1780, 0x17ff) AM_RAM AM_SHARE("smiram")
-	AM_RANGE(0x1800, 0x1fff) AM_ROM AM_REGION("roms",0)
-	AM_RANGE(0x2000, 0x7fff) AM_RAM AM_SHARE("extram")
-ADDRESS_MAP_END
+void instruct_state::mem_map(address_map &map)
+{
+	map.unmap_value_high();
+	map(0x0000, 0x0ffe).ram().share("mainram");
+	map(0x0fff, 0x0fff).rw(FUNC(instruct_state::port_r), FUNC(instruct_state::port_w));
+	map(0x1780, 0x17ff).ram().share("smiram");
+	map(0x1800, 0x1fff).rom().region("roms", 0);
+	map(0x2000, 0x7fff).ram().share("extram");
+}
 
-static ADDRESS_MAP_START( instruct_io, AS_IO, 8, instruct_state )
-	ADDRESS_MAP_UNMAP_HIGH
-	AM_RANGE(0x07, 0x07) AM_READWRITE(port_r,port_w)
-	AM_RANGE(0xf8, 0xf8) AM_WRITE(portf8_w)
-	AM_RANGE(0xf9, 0xf9) AM_WRITE(portf9_w)
-	AM_RANGE(0xfa, 0xfa) AM_WRITE(portfa_w)
-	AM_RANGE(0xfc, 0xfc) AM_READ(portfc_r)
-	AM_RANGE(0xfd, 0xfd) AM_READ(portfd_r)
-	AM_RANGE(0xfe, 0xfe) AM_READ(portfe_r)
-ADDRESS_MAP_END
+void instruct_state::io_map(address_map &map)
+{
+	map.unmap_value_high();
+	map(0x07, 0x07).rw(FUNC(instruct_state::port_r), FUNC(instruct_state::port_w));
+	map(0xf8, 0xf8).w(FUNC(instruct_state::portf8_w));
+	map(0xf9, 0xf9).w(FUNC(instruct_state::portf9_w));
+	map(0xfa, 0xfa).w(FUNC(instruct_state::portfa_w));
+	map(0xfc, 0xfc).r(FUNC(instruct_state::portfc_r));
+	map(0xfd, 0xfd).r(FUNC(instruct_state::portfd_r));
+	map(0xfe, 0xfe).r(FUNC(instruct_state::portfe_r));
+}
 
-static ADDRESS_MAP_START( instruct_data, AS_DATA, 8, instruct_state )
-	ADDRESS_MAP_UNMAP_HIGH
-	AM_RANGE(S2650_DATA_PORT, S2650_DATA_PORT) AM_READWRITE(port_r,port_w)
-ADDRESS_MAP_END
+void instruct_state::data_map(address_map &map)
+{
+	map.unmap_value_high();
+	map(S2650_DATA_PORT, S2650_DATA_PORT).rw(FUNC(instruct_state::port_r), FUNC(instruct_state::port_w));
+}
 
 /* Input ports */
 static INPUT_PORTS_START( instruct )
@@ -322,12 +329,20 @@ INPUT_PORTS_END
 void instruct_state::machine_reset()
 {
 	m_cassin = 0;
-	address_space &space = m_maincpu->space(AS_IO);
-	port_w(space, 0, 0); // turn round leds off
+	port_w(0); // turn round leds off
 	m_maincpu->set_state_int(S2650_PC, 0x1800);
 }
 
-QUICKLOAD_LOAD_MEMBER( instruct_state, instruct )
+void instruct_state::machine_start()
+{
+	save_item(NAME(m_lar));
+	save_item(NAME(m_digit));
+	save_item(NAME(m_seg));
+	save_item(NAME(m_cassin));
+	save_item(NAME(m_irqstate));
+}
+
+QUICKLOAD_LOAD_MEMBER(instruct_state::quickload_cb)
 {
 	uint16_t i, exec_addr, quick_length, read_;
 	image_init_result result = image_init_result::FAIL;
@@ -408,28 +423,34 @@ QUICKLOAD_LOAD_MEMBER( instruct_state, instruct )
 	return result;
 }
 
-static MACHINE_CONFIG_START( instruct )
+void instruct_state::instruct(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu",S2650, XTAL_3_579545MHz / 4)
-	MCFG_CPU_PROGRAM_MAP(instruct_mem)
-	MCFG_CPU_IO_MAP(instruct_io)
-	MCFG_CPU_DATA_MAP(instruct_data)
-	MCFG_CPU_PERIODIC_INT_DRIVER(instruct_state, t2l_int, 120)
-	MCFG_S2650_SENSE_INPUT(READLINE(instruct_state, sense_r))
-	MCFG_S2650_FLAG_OUTPUT(WRITELINE(instruct_state, flag_w))
+	S2650(config, m_maincpu, XTAL(3'579'545) / 4);
+	m_maincpu->set_addrmap(AS_PROGRAM, &instruct_state::mem_map);
+	m_maincpu->set_addrmap(AS_IO, &instruct_state::io_map);
+	m_maincpu->set_addrmap(AS_DATA, &instruct_state::data_map);
+	m_maincpu->set_periodic_int(FUNC(instruct_state::t2l_int), attotime::from_hz(120));
+	m_maincpu->sense_handler().set(FUNC(instruct_state::sense_r));
+	m_maincpu->flag_handler().set(FUNC(instruct_state::flag_w));
+	// Set vector from INDIRECT sw
+	m_maincpu->intack_handler().set([this]() { return BIT(ioport("SW")->read(), 0) ? 0x87 : 0x07; });
 
 	/* video hardware */
-	MCFG_DEFAULT_LAYOUT(layout_instruct)
+	config.set_default_layout(layout_instruct);
+	PWM_DISPLAY(config, m_display).set_size(8, 8);
+	m_display->set_segmask(0xff, 0xff);
 
 	/* quickload */
-	MCFG_QUICKLOAD_ADD("quickload", instruct_state, instruct, "pgm", 1)
+	QUICKLOAD(config, "quickload", "pgm", attotime::from_seconds(1)).set_load_callback(FUNC(instruct_state::quickload_cb));
+
+	SPEAKER(config, "mono").front_center();
 
 	/* cassette */
-	MCFG_CASSETTE_ADD( "cassette" )
-	MCFG_SPEAKER_STANDARD_MONO("mono")
-	MCFG_SOUND_WAVE_ADD(WAVE_TAG, "cassette")
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.25)
-MACHINE_CONFIG_END
+	CASSETTE(config, m_cass);
+	m_cass->set_default_state(CASSETTE_STOPPED | CASSETTE_MOTOR_ENABLED | CASSETTE_SPEAKER_ENABLED);
+	m_cass->add_route(ALL_OUTPUTS, "mono", 0.05);
+}
 
 /* ROM definition */
 ROM_START( instruct )
@@ -443,5 +464,5 @@ ROM_END
 
 /* Driver */
 
-//    YEAR  NAME       PARENT   COMPAT   MACHINE    INPUT     STATE           INIT  COMPANY      FULLNAME                   FLAGS
-COMP( 1978, instruct,  0,       0,       instruct,  instruct, instruct_state, 0,    "Signetics", "Signetics Instructor 50", 0 )
+//    YEAR  NAME      PARENT  COMPAT  MACHINE   INPUT     CLASS           INIT        COMPANY      FULLNAME                   FLAGS
+COMP( 1978, instruct, 0,      0,      instruct, instruct, instruct_state, empty_init, "Signetics", "Signetics Instructor 50", MACHINE_SUPPORTS_SAVE )

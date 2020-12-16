@@ -22,8 +22,7 @@
 #include "machine/rp5c01.h"
 #include "machine/timer.h"
 #include "sound/spkrdev.h"
-
-#define AVIGO_NUM_COLOURS 2
+#include "emupal.h"
 
 #define AVIGO_SCREEN_WIDTH        160
 #define AVIGO_SCREEN_HEIGHT       240
@@ -34,18 +33,64 @@ class avigo_state : public driver_device
 {
 public:
 	avigo_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
-			m_maincpu(*this, "maincpu"),
-			m_ram(*this, RAM_TAG),
-			m_speaker(*this, "speaker"),
-			m_uart(*this, "ns16550"),
-			m_serport(*this, "serport"),
-			m_palette(*this, "palette"),
-			m_bankdev1(*this, "bank0"),
-			m_bankdev2(*this, "bank1"),
-			m_flash1(*this, "flash1"),
-			m_nvram(*this, "nvram")
-		{ }
+		: driver_device(mconfig, type, tag)
+		, m_maincpu(*this, "maincpu")
+		, m_ram(*this, RAM_TAG)
+		, m_speaker(*this, "speaker")
+		, m_uart(*this, "ns16550")
+		, m_serport(*this, "serport")
+		, m_palette(*this, "palette")
+		, m_bankdev1(*this, "bank0")
+		, m_bankdev2(*this, "bank1")
+		, m_flash1(*this, "flash1")
+		, m_nvram(*this, "nvram")
+	{ }
+
+	void avigo(machine_config &config);
+
+	DECLARE_INPUT_CHANGED_MEMBER(pen_irq);
+	DECLARE_INPUT_CHANGED_MEMBER(pen_move_irq);
+	DECLARE_INPUT_CHANGED_MEMBER(kb_irq);
+	DECLARE_INPUT_CHANGED_MEMBER(power_down_irq);
+
+protected:
+	// defined in drivers/avigo.cpp
+	virtual void machine_start() override;
+	virtual void machine_reset() override;
+	void refresh_ints();
+	void nvram_init(nvram_device &nvram, void *base, size_t size);
+
+	DECLARE_WRITE_LINE_MEMBER( tc8521_alarm_int );
+	DECLARE_WRITE_LINE_MEMBER( com_interrupt );
+
+	uint8_t key_data_read_r();
+	void set_key_line_w(uint8_t data);
+	void port2_w(uint8_t data);
+	uint8_t irq_r();
+	void irq_w(uint8_t data);
+	uint8_t bank1_r(offs_t offset);
+	uint8_t bank2_r(offs_t offset);
+	void bank1_w(offs_t offset, uint8_t data);
+	void bank2_w(offs_t offset, uint8_t data);
+	uint8_t ad_control_status_r();
+	void ad_control_status_w(uint8_t data);
+	uint8_t ad_data_r();
+	void speaker_w(uint8_t data);
+	uint8_t port_04_r();
+
+	// defined in video/avigo.cpp
+	virtual void video_start() override;
+	uint32_t screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
+	uint8_t vid_memory_r(offs_t offset);
+	void vid_memory_w(offs_t offset, uint8_t data);
+
+	TIMER_DEVICE_CALLBACK_MEMBER(avigo_scan_timer);
+	TIMER_DEVICE_CALLBACK_MEMBER(avigo_1hz_timer);
+
+	DECLARE_QUICKLOAD_LOAD_MEMBER(quickload_cb);
+	void avigo_banked_map(address_map &map);
+	void avigo_io(address_map &map);
+	void avigo_mem(address_map &map);
 
 	required_device<cpu_device> m_maincpu;
 	required_device<ram_device> m_ram;
@@ -58,41 +103,6 @@ public:
 	required_device<intelfsh8_device> m_flash1;
 	required_shared_ptr<uint8_t> m_nvram;
 
-	// defined in drivers/avigo.c
-	virtual void machine_start() override;
-	virtual void machine_reset() override;
-	void refresh_ints();
-	void nvram_init(nvram_device &nvram, void *base, size_t size);
-
-	DECLARE_WRITE_LINE_MEMBER( tc8521_alarm_int );
-	DECLARE_WRITE_LINE_MEMBER( com_interrupt );
-
-	DECLARE_READ8_MEMBER(key_data_read_r);
-	DECLARE_WRITE8_MEMBER(set_key_line_w);
-	DECLARE_WRITE8_MEMBER(port2_w);
-	DECLARE_READ8_MEMBER(irq_r);
-	DECLARE_WRITE8_MEMBER(irq_w);
-	DECLARE_READ8_MEMBER(bank1_r);
-	DECLARE_READ8_MEMBER(bank2_r);
-	DECLARE_WRITE8_MEMBER(bank1_w);
-	DECLARE_WRITE8_MEMBER(bank2_w);
-	DECLARE_READ8_MEMBER(ad_control_status_r);
-	DECLARE_WRITE8_MEMBER(ad_control_status_w);
-	DECLARE_READ8_MEMBER(ad_data_r);
-	DECLARE_WRITE8_MEMBER(speaker_w);
-	DECLARE_READ8_MEMBER(port_04_r);
-
-	DECLARE_INPUT_CHANGED_MEMBER(pen_irq);
-	DECLARE_INPUT_CHANGED_MEMBER(pen_move_irq);
-	DECLARE_INPUT_CHANGED_MEMBER(kb_irq);
-	DECLARE_INPUT_CHANGED_MEMBER(power_down_irq);
-
-	// defined in video/avigo.c
-	virtual void video_start() override;
-	uint32_t screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
-	DECLARE_READ8_MEMBER(vid_memory_r);
-	DECLARE_WRITE8_MEMBER(vid_memory_w);
-
 	// driver state
 	uint8_t               m_key_line;
 	uint8_t               m_irq;
@@ -103,14 +113,9 @@ public:
 	uint8_t               m_bank1_h;
 	uint8_t               m_ad_control_status;
 	uint16_t              m_ad_value;
-	uint8_t *             m_video_memory;
+	std::unique_ptr<uint8_t[]> m_video_memory;
 	uint8_t               m_screen_column;
 	uint8_t               m_warm_start;
-	DECLARE_PALETTE_INIT(avigo);
-	TIMER_DEVICE_CALLBACK_MEMBER(avigo_scan_timer);
-	TIMER_DEVICE_CALLBACK_MEMBER(avigo_1hz_timer);
-
-	DECLARE_QUICKLOAD_LOAD_MEMBER( avigo);
 };
 
 #endif // MAME_INCLUDES_AVIGO_H

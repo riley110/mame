@@ -7,15 +7,13 @@
 
 #include "cpu/mcs48/mcs48.h"
 
-#define MCFG_M24_KEYBOARD_OUT_DATA_HANDLER(_devcb) \
-	devcb = &m24_keyboard_device::set_out_data_handler(*device, DEVCB_##_devcb);
 
 class m24_keyboard_device :  public device_t
 {
 public:
 	m24_keyboard_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	template <class Object> static devcb_base &set_out_data_handler(device_t &device, Object &&cb) { return downcast<m24_keyboard_device &>(device).m_out_data.set_callback(std::forward<Object>(cb)); }
+	auto out_data_handler() { return m_out_data.bind(); }
 
 	DECLARE_WRITE_LINE_MEMBER(clock_w);
 	DECLARE_WRITE_LINE_MEMBER(data_w);
@@ -34,13 +32,13 @@ private:
 	uint8_t m_p1;
 	bool m_keypress, m_kbcdata;
 	devcb_write_line m_out_data;
-	required_device<cpu_device> m_mcu;
+	required_device<i8049_device> m_mcu;
 	emu_timer *m_reset_timer;
 
-	DECLARE_WRITE8_MEMBER(bus_w);
-	DECLARE_READ8_MEMBER(p1_r);
-	DECLARE_WRITE8_MEMBER(p1_w);
-	DECLARE_READ8_MEMBER(p2_r);
+	void bus_w(uint8_t data);
+	uint8_t p1_r();
+	void p1_w(uint8_t data);
+	uint8_t p2_r();
 	DECLARE_READ_LINE_MEMBER(t0_r);
 	DECLARE_READ_LINE_MEMBER(t1_r);
 };

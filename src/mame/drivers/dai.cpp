@@ -63,26 +63,23 @@ Timings:
 #include "emu.h"
 #include "includes/dai.h"
 #include "screen.h"
-#include "softlist.h"
 #include "speaker.h"
 
-/* I/O ports */
-static ADDRESS_MAP_START( dai_io , AS_IO, 8, dai_state )
-ADDRESS_MAP_END
 
 /* memory w/r functions */
-static ADDRESS_MAP_START( dai_mem , AS_PROGRAM, 8, dai_state )
-	AM_RANGE( 0x0000, 0xbfff) AM_RAMBANK("bank1")
-	AM_RANGE( 0xc000, 0xdfff) AM_ROM
-	AM_RANGE( 0xe000, 0xefff) AM_ROMBANK("bank2")
-	AM_RANGE( 0xf000, 0xf7ff) AM_WRITE(dai_stack_interrupt_circuit_w )
-	AM_RANGE( 0xf800, 0xf8ff) AM_RAM
-	AM_RANGE( 0xfb00, 0xfbff) AM_READWRITE(dai_amd9511_r, dai_amd9511_w )
-	AM_RANGE( 0xfc00, 0xfcff) AM_READWRITE(dai_pit_r, dai_pit_w) // AM_DEVREADWRITE("pit8253", pit8253_device, read, write)
-	AM_RANGE( 0xfd00, 0xfdff) AM_READWRITE(dai_io_discrete_devices_r, dai_io_discrete_devices_w )
-	AM_RANGE( 0xfe00, 0xfeff) AM_DEVREADWRITE("ppi8255", i8255_device, read, write)
-	AM_RANGE( 0xff00, 0xff0f) AM_MIRROR(0xf0) AM_DEVICE("tms5501", tms5501_device, io_map)
-ADDRESS_MAP_END
+void dai_state::mem_map(address_map &map)
+{
+	map(0x0000, 0xbfff).ram().share("mainram");
+	map(0xc000, 0xdfff).rom().region("maincpu",0);
+	map(0xe000, 0xefff).bankr("bank2");
+	map(0xf000, 0xf7ff).w(FUNC(dai_state::stack_interrupt_circuit_w));
+	map(0xf800, 0xf8ff).ram();
+	map(0xfb00, 0xfbff).rw(FUNC(dai_state::amd9511_r), FUNC(dai_state::amd9511_w));
+	map(0xfc00, 0xfcff).rw(FUNC(dai_state::pit_r), FUNC(dai_state::pit_w)); // .rw(m_pit, FUNC(pit8253_device::read), FUNC(pit8253_device::write));
+	map(0xfd00, 0xfdff).rw(FUNC(dai_state::io_discrete_devices_r), FUNC(dai_state::io_discrete_devices_w));
+	map(0xfe00, 0xfeff).rw("ppi", FUNC(i8255_device::read), FUNC(i8255_device::write));
+	map(0xff00, 0xff0f).mirror(0xf0).m(m_tms5501, FUNC(tms5501_device::io_map));
+}
 
 
 /* keyboard input */
@@ -180,82 +177,76 @@ static const gfx_layout dai_charlayout =
 	8*16                    /* every char takes 16 bytes */
 };
 
-static GFXDECODE_START( dai )
-	GFXDECODE_ENTRY( "gfx1", 0x0000, dai_charlayout, 0, 8 )
+static GFXDECODE_START( gfx_dai )
+	GFXDECODE_ENTRY( "chargen", 0x0000, dai_charlayout, 0, 8 )
 GFXDECODE_END
 
 /* machine definition */
-static MACHINE_CONFIG_START( dai )
+void dai_state::dai(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", I8080, 2000000)
-	MCFG_CPU_PROGRAM_MAP(dai_mem)
-	MCFG_CPU_IO_MAP(dai_io)
-	MCFG_CPU_IRQ_ACKNOWLEDGE_DRIVER(dai_state,int_ack)
-	MCFG_QUANTUM_TIME(attotime::from_hz(60))
+	I8080(config, m_maincpu, 2000000);
+	m_maincpu->set_addrmap(AS_PROGRAM, &dai_state::mem_map);
+	m_maincpu->set_irq_acknowledge_callback(FUNC(dai_state::int_ack));
+	config.set_maximum_quantum(attotime::from_hz(60));
 
-	MCFG_DEVICE_ADD("pit8253", PIT8253, 0)
-	MCFG_PIT8253_CLK0(2000000)
-	MCFG_PIT8253_OUT0_HANDLER(DEVWRITELINE("custom", dai_sound_device, set_input_ch0))
-	MCFG_PIT8253_CLK1(2000000)
-	MCFG_PIT8253_OUT1_HANDLER(DEVWRITELINE("custom", dai_sound_device, set_input_ch1))
-	MCFG_PIT8253_CLK2(2000000)
-	MCFG_PIT8253_OUT2_HANDLER(DEVWRITELINE("custom", dai_sound_device, set_input_ch2))
+	PIT8253(config, m_pit, 0);
+	m_pit->set_clk<0>(2000000);
+	m_pit->out_handler<0>().set(m_sound, FUNC(dai_sound_device::set_input_ch0));
+	m_pit->set_clk<1>(2000000);
+	m_pit->out_handler<1>().set(m_sound, FUNC(dai_sound_device::set_input_ch1));
+	m_pit->set_clk<2>(2000000);
+	m_pit->out_handler<2>().set(m_sound, FUNC(dai_sound_device::set_input_ch2));
 
-	MCFG_DEVICE_ADD("ppi8255", I8255, 0)
+	I8255(config, "ppi");
 
 	/* video hardware */
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_REFRESH_RATE(50)
-	MCFG_SCREEN_VBLANK_TIME(ATTOSECONDS_IN_USEC(2500)) /* not accurate */
-	MCFG_SCREEN_SIZE(1056, 542)
-	MCFG_SCREEN_VISIBLE_AREA(0, 1056-1, 0, 302-1)
-	MCFG_SCREEN_UPDATE_DRIVER(dai_state, screen_update_dai)
-	MCFG_SCREEN_PALETTE("palette")
+	screen_device &screen(SCREEN(config, "screen", SCREEN_TYPE_RASTER));
+	screen.set_refresh_hz(50);
+	screen.set_vblank_time(ATTOSECONDS_IN_USEC(2500)); /* not accurate */
+	screen.set_size(1056, 542);
+	screen.set_visarea(0, 1056-1, 0, 302-1);
+	screen.set_screen_update(FUNC(dai_state::screen_update));
+	screen.set_palette(m_palette);
 
-	MCFG_GFXDECODE_ADD("gfxdecode", "palette", dai)
-	MCFG_PALETTE_ADD("palette", sizeof (dai_palette) / 3)
-	MCFG_PALETTE_INIT_OWNER(dai_state, dai)
+	GFXDECODE(config, "gfxdecode", m_palette, gfx_dai);
+	PALETTE(config, m_palette, FUNC(dai_state::dai_palette), ARRAY_LENGTH(s_palette));
 
 
 	/* sound hardware */
-	MCFG_SPEAKER_STANDARD_MONO("mono")
-	MCFG_SOUND_WAVE_ADD(WAVE_TAG, "cassette")
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.25)
-	MCFG_SPEAKER_STANDARD_STEREO("lspeaker", "rspeaker")
-	MCFG_SOUND_ADD("custom", DAI_SOUND, 0)
-	MCFG_SOUND_ROUTE(0, "lspeaker", 0.50)
-	MCFG_SOUND_ROUTE(1, "rspeaker", 0.50)
+	SPEAKER(config, "mono").front_center();
+	SPEAKER(config, "lspeaker").front_left();
+	SPEAKER(config, "rspeaker").front_right();
+	DAI_SOUND(config, m_sound).add_route(0, "lspeaker", 0.50).add_route(1, "rspeaker", 0.50);
 
 	/* cassette */
-	MCFG_CASSETTE_ADD( "cassette" )
-	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED)
-	MCFG_CASSETTE_INTERFACE("dai_cass")
+	CASSETTE(config, m_cassette);
+	m_cassette->set_default_state(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED);
+	m_cassette->add_route(ALL_OUTPUTS, "mono", 0.05);
+	m_cassette->set_interface("dai_cass");
 
 	/* tms5501 */
-	MCFG_DEVICE_ADD("tms5501", TMS5501, 2000000)
-	MCFG_TMS5501_IRQ_CALLBACK(INPUTLINE("maincpu", I8085_INTR_LINE))
-	MCFG_TMS5501_XI_CALLBACK(READ8(dai_state, dai_keyboard_r))
-	MCFG_TMS5501_XO_CALLBACK(WRITE8(dai_state, dai_keyboard_w))
-
-	/* internal ram */
-	MCFG_RAM_ADD(RAM_TAG)
-	MCFG_RAM_DEFAULT_SIZE("48K")
+	TMS5501(config, m_tms5501, 2000000);
+	m_tms5501->int_callback().set_inputline("maincpu", I8085_INTR_LINE);
+	m_tms5501->xi_callback().set(FUNC(dai_state::keyboard_r));
+	m_tms5501->xo_callback().set(FUNC(dai_state::keyboard_w));
 
 	/* software lists */
-	MCFG_SOFTWARE_LIST_ADD("cass_list", "dai_cass")
-MACHINE_CONFIG_END
+	SOFTWARE_LIST(config, "cass_list").set_original("dai_cass");
+}
 
 
 ROM_START(dai)
-	ROM_REGION(0x14000,"maincpu",0)
-	ROM_LOAD("dai.bin", 0xc000, 0x2000, CRC(ca71a7d5) SHA1(6bbe2336c717354beab2ae201debeb4fd055bdcb))
-	ROM_LOAD("dai00.bin", 0x10000, 0x1000, CRC(fa7d39ac) SHA1(3d1824a1f273882f934249ef3cb1b38ef99de7b9))
-	ROM_LOAD("dai01.bin", 0x11000, 0x1000, CRC(cb5809f2) SHA1(523656f0a9d98888cd3e2bd66886c589e9ae75b4))
-	ROM_LOAD("dai02.bin", 0x12000, 0x1000, CRC(03f72d4a) SHA1(573d65dc82321970dcaf81d7638a02252ea18a7a))
-	ROM_LOAD("dai03.bin", 0x13000, 0x1000, CRC(c475c96f) SHA1(96fc3cc4b8a2873f0d044bd8033d1e7b7197dd97))
-	ROM_REGION(0x2000, "gfx1",0)
+	ROM_REGION(0x6000,"maincpu",0)
+	ROM_LOAD("dai.bin",   0x0000, 0x2000, CRC(ca71a7d5) SHA1(6bbe2336c717354beab2ae201debeb4fd055bdcb))
+	ROM_LOAD("dai00.bin", 0x2000, 0x1000, CRC(fa7d39ac) SHA1(3d1824a1f273882f934249ef3cb1b38ef99de7b9))
+	ROM_LOAD("dai01.bin", 0x3000, 0x1000, CRC(cb5809f2) SHA1(523656f0a9d98888cd3e2bd66886c589e9ae75b4))
+	ROM_LOAD("dai02.bin", 0x4000, 0x1000, CRC(03f72d4a) SHA1(573d65dc82321970dcaf81d7638a02252ea18a7a))
+	ROM_LOAD("dai03.bin", 0x5000, 0x1000, CRC(c475c96f) SHA1(96fc3cc4b8a2873f0d044bd8033d1e7b7197dd97))
+
+	ROM_REGION(0x2000, "chargen",0)
 	ROM_LOAD ("nch.bin", 0x0000, 0x1000, CRC(a9f5b30b) SHA1(24119b2984ab4e50dc0dabae1065ff6d6c1f237d))
 ROM_END
 
-/*    YEAR  NAME PARENT  COMPAT MACHINE INPUT  STATE      INIT  COMPANY                            FULLNAME */
-COMP( 1978, dai, 0,      0,     dai,    dai,   dai_state, 0,    "Data Applications International", "DAI Personal Computer", 0)
+/*    YEAR  NAME  PARENT  COMPAT  MACHINE  INPUT  CLASS      INIT        COMPANY                            FULLNAME */
+COMP( 1978, dai,  0,      0,      dai,     dai,   dai_state, empty_init, "Data Applications International", "DAI Personal Computer", MACHINE_SUPPORTS_SAVE )

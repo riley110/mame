@@ -8,6 +8,8 @@
 
 #include "machine/bankdev.h"
 #include "machine/gen_latch.h"
+#include "emupal.h"
+#include "tilemap.h"
 
 #define BW_DEBUG 0
 
@@ -59,17 +61,17 @@ public:
 	int m_bwp3_nmimask;
 	int m_bwp3_u8F_d;
 
-	DECLARE_WRITE8_MEMBER(bwp3_u8F_w);
-	DECLARE_WRITE8_MEMBER(bwp3_nmimask_w);
-	DECLARE_WRITE8_MEMBER(bwp3_nmiack_w);
-	DECLARE_WRITE8_MEMBER(bwp1_ctrl_w);
-	DECLARE_WRITE8_MEMBER(bwp2_ctrl_w);
-	DECLARE_WRITE8_MEMBER(videoram_w);
-	DECLARE_WRITE8_MEMBER(fgscrollram_w);
-	DECLARE_WRITE8_MEMBER(bgscrollram_w);
-	DECLARE_WRITE8_MEMBER(gfxram_w);
-	DECLARE_WRITE8_MEMBER(scrollreg_w);
-	DECLARE_WRITE8_MEMBER(paletteram_w);
+	void bwp3_u8F_w(uint8_t data);
+	void bwp3_nmimask_w(uint8_t data);
+	void bwp3_nmiack_w(uint8_t data);
+	void bwp1_ctrl_w(offs_t offset, uint8_t data);
+	void bwp2_ctrl_w(offs_t offset, uint8_t data);
+	void videoram_w(offs_t offset, uint8_t data);
+	void fgscrollram_w(offs_t offset, uint8_t data);
+	void bgscrollram_w(offs_t offset, uint8_t data);
+	void gfxram_w(offs_t offset, uint8_t data);
+	void scrollreg_w(offs_t offset, uint8_t data);
+	void paletteram_w(offs_t offset, uint8_t data);
 
 	DECLARE_INPUT_CHANGED_MEMBER(coin_inserted);
 	DECLARE_INPUT_CHANGED_MEMBER(tilt_pressed);
@@ -79,7 +81,7 @@ public:
 	TILE_GET_INFO_MEMBER(get_charinfo);
 	TILEMAP_MAPPER_MEMBER(scan_cols);
 
-	DECLARE_DRIVER_INIT(bwing);
+	void init_bwing();
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
 	virtual void video_start() override;
@@ -89,4 +91,10 @@ public:
 	void draw_sprites( bitmap_ind16 &bmp, const rectangle &clip, uint8_t *ram, int pri );
 
 	INTERRUPT_GEN_MEMBER(bwp3_interrupt);
+	void bwing(machine_config &config);
+	void bank_map(address_map &map);
+	void bwp1_map(address_map &map);
+	void bwp2_map(address_map &map);
+	void bwp3_io_map(address_map &map);
+	void bwp3_map(address_map &map);
 };

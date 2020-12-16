@@ -111,54 +111,55 @@ enum
 };
 
 
-class s3c44b0_device : public device_t
+class s3c44b0_device : public device_t, public device_video_interface
 {
 public:
 	s3c44b0_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	template <class Object> static devcb_base &set_gpio_port_r_callback(device_t &device, Object &&cb) { return downcast<s3c44b0_device &>(device).m_port_r_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_gpio_port_w_callback(device_t &device, Object &&cb) { return downcast<s3c44b0_device &>(device).m_port_w_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_i2c_scl_w_callback(device_t &device, Object &&cb) { return downcast<s3c44b0_device &>(device).m_scl_w_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_i2c_sda_r_callback(device_t &device, Object &&cb) { return downcast<s3c44b0_device &>(device).m_sda_r_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_i2c_sda_w_callback(device_t &device, Object &&cb) { return downcast<s3c44b0_device &>(device).m_sda_w_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_adc_data_r_callback(device_t &device, Object &&cb) { return downcast<s3c44b0_device &>(device).m_data_r_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_i2s_data_w_callback(device_t &device, Object &&cb) { return downcast<s3c44b0_device &>(device).m_data_w_cb.set_callback(std::forward<Object>(cb)); }
+	template <class T> void set_cpu(T &&tag) { m_cpu.set_tag(std::forward<T>(tag)); }
+	auto gpio_port_r_cb() { return m_port_r_cb.bind(); }
+	auto gpio_port_w_cb() { return m_port_w_cb.bind(); }
+	auto i2c_scl_w_cb() { return m_scl_w_cb.bind(); }
+	auto i2c_sda_r_cb() { return m_sda_r_cb.bind(); }
+	auto i2c_sda_w_cb() { return m_sda_w_cb.bind(); }
+	auto adc_data_r_cb() { return m_data_r_cb.bind(); }
+	auto i2s_data_w_cb() { return m_data_w_cb.bind(); }
 
-	DECLARE_READ32_MEMBER(lcd_r);
-	DECLARE_READ32_MEMBER(clkpow_r);
-	DECLARE_READ32_MEMBER(irq_r);
-	DECLARE_READ32_MEMBER(pwm_r);
-	DECLARE_READ32_MEMBER(iic_r);
-	DECLARE_READ32_MEMBER(gpio_r);
-	DECLARE_READ32_MEMBER(uart_0_r);
-	DECLARE_READ32_MEMBER(uart_1_r);
-	DECLARE_READ32_MEMBER(wdt_r);
-	DECLARE_READ32_MEMBER(cpuwrap_r);
-	DECLARE_READ32_MEMBER(adc_r);
-	DECLARE_READ32_MEMBER(sio_r);
-	DECLARE_READ32_MEMBER(iis_r);
-	DECLARE_READ32_MEMBER(zdma_0_r);
-	DECLARE_READ32_MEMBER(zdma_1_r);
-	DECLARE_READ32_MEMBER(bdma_0_r);
-	DECLARE_READ32_MEMBER(bdma_1_r);
+	uint32_t lcd_r(offs_t offset, uint32_t mem_mask = ~0);
+	uint32_t clkpow_r(offs_t offset, uint32_t mem_mask = ~0);
+	uint32_t irq_r(offs_t offset, uint32_t mem_mask = ~0);
+	uint32_t pwm_r(offs_t offset, uint32_t mem_mask = ~0);
+	uint32_t iic_r(offs_t offset, uint32_t mem_mask = ~0);
+	uint32_t gpio_r(offs_t offset, uint32_t mem_mask = ~0);
+	uint32_t uart_0_r(offs_t offset, uint32_t mem_mask = ~0);
+	uint32_t uart_1_r(offs_t offset, uint32_t mem_mask = ~0);
+	uint32_t wdt_r(offs_t offset, uint32_t mem_mask = ~0);
+	uint32_t cpuwrap_r(offs_t offset, uint32_t mem_mask = ~0);
+	uint32_t adc_r(offs_t offset, uint32_t mem_mask = ~0);
+	uint32_t sio_r(offs_t offset, uint32_t mem_mask = ~0);
+	uint32_t iis_r(offs_t offset, uint32_t mem_mask = ~0);
+	uint32_t zdma_0_r(offs_t offset, uint32_t mem_mask = ~0);
+	uint32_t zdma_1_r(offs_t offset, uint32_t mem_mask = ~0);
+	uint32_t bdma_0_r(offs_t offset, uint32_t mem_mask = ~0);
+	uint32_t bdma_1_r(offs_t offset, uint32_t mem_mask = ~0);
 
-	DECLARE_WRITE32_MEMBER(lcd_w);
-	DECLARE_WRITE32_MEMBER(clkpow_w);
-	DECLARE_WRITE32_MEMBER(irq_w);
-	DECLARE_WRITE32_MEMBER(pwm_w);
-	DECLARE_WRITE32_MEMBER(iic_w);
-	DECLARE_WRITE32_MEMBER(gpio_w);
-	DECLARE_WRITE32_MEMBER(uart_0_w);
-	DECLARE_WRITE32_MEMBER(uart_1_w);
-	DECLARE_WRITE32_MEMBER(wdt_w);
-	DECLARE_WRITE32_MEMBER(cpuwrap_w);
-	DECLARE_WRITE32_MEMBER(adc_w);
-	DECLARE_WRITE32_MEMBER(sio_w);
-	DECLARE_WRITE32_MEMBER(iis_w);
-	DECLARE_WRITE32_MEMBER(zdma_0_w);
-	DECLARE_WRITE32_MEMBER(zdma_1_w);
-	DECLARE_WRITE32_MEMBER(bdma_0_w);
-	DECLARE_WRITE32_MEMBER(bdma_1_w);
+	void lcd_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	void clkpow_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	void irq_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	void pwm_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	void iic_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	void gpio_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	void uart_0_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	void uart_1_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	void wdt_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	void cpuwrap_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	void adc_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	void sio_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	void iis_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	void zdma_0_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	void zdma_1_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	void bdma_0_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	void bdma_1_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
 
 	void request_eint(uint32_t number);
 	uint32_t video_update(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect);
@@ -166,6 +167,7 @@ public:
 protected:
 	// device-level overrides
 	virtual void device_start() override;
+	virtual void device_post_load() override;
 	virtual void device_reset() override;
 
 private:
@@ -551,7 +553,7 @@ private:
 	TIMER_CALLBACK_MEMBER(sio_timer_exp);
 
 	// IIS
-	inline void iface_i2s_data_w(address_space &space, int ch, uint16_t data);
+	inline void iface_i2s_data_w(int ch, uint16_t data);
 	void iis_start();
 	void iis_stop();
 	TIMER_CALLBACK_MEMBER(iis_timer_exp);
@@ -572,7 +574,7 @@ private:
 	void bdma_w(int ch, uint32_t offset, uint32_t data, uint32_t mem_mask);
 	TIMER_CALLBACK_MEMBER(bdma_timer_exp);
 
-	cpu_device *m_cpu;
+	required_device<cpu_device> m_cpu;
 	//s3c44b0_memcon_t m_memcon;
 	s3c44b0_irq_t m_irq;
 	s3c44b0_dma_t m_zdma[2];
@@ -598,32 +600,10 @@ private:
 	devcb_read32 m_data_r_cb;
 	devcb_write16 m_data_w_cb;
 
-	void s3c44b0_postload();
+	memory_access<32, 2, 0, ENDIANNESS_LITTLE>::cache m_cache;
 };
 
 DECLARE_DEVICE_TYPE(S3C44B0, s3c44b0_device)
-
-
-#define MCFG_S3C44B0_GPIO_PORT_R_CB(cb) \
-		devcb = &s3c44b0_device::set_gpio_port_r_callback(*device, DEVCB_##cb);
-
-#define MCFG_S3C44B0_GPIO_PORT_W_CB(cb) \
-		devcb = &s3c44b0_device::set_gpio_port_w_callback(*device, DEVCB_##cb);
-
-#define MCFG_S3C44B0_I2C_SCL_W_CB(cb) \
-		devcb = &s3c44b0_device::set_i2c_scl_w_callback(*device, DEVCB_##cb);
-
-#define MCFG_S3C44B0_I2C_SDA_R_CB(cb) \
-		devcb = &s3c44b0_device::set_i2c_sda_r_callback(*device, DEVCB_##cb);
-
-#define MCFG_S3C44B0_I2C_SDA_W_CB(cb) \
-		devcb = &s3c44b0_device::set_i2c_sda_w_callback(*device, DEVCB_##cb);
-
-#define MCFG_S3C44B0_ADC_DATA_R_CB(cb) \
-		devcb = &s3c44b0_device::set_adc_data_r_callback(*device, DEVCB_##cb);
-
-#define MCFG_S3C44B0_I2S_DATA_W_CB(cb) \
-		devcb = &s3c44b0_device::set_i2s_data_w_callback(*device, DEVCB_##cb);
 
 
 #endif // MAME_MACHINE_S3C44B0_H

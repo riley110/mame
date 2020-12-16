@@ -28,11 +28,11 @@ DEFINE_DEVICE_TYPE(VIC10_EXPANSION_SLOT, vic10_expansion_slot_device, "vic10_exp
 //  device_vic10_expansion_card_interface - constructor
 //-------------------------------------------------
 
-device_vic10_expansion_card_interface::device_vic10_expansion_card_interface(const machine_config &mconfig, device_t &device)
-	: device_slot_card_interface(mconfig,device),
-		m_lorom(*this, "lorom"),
-		m_exram(*this, "exram"),
-		m_uprom(*this, "uprom")
+device_vic10_expansion_card_interface::device_vic10_expansion_card_interface(const machine_config &mconfig, device_t &device) :
+	device_interface(device, "vic10exp"),
+	m_lorom(*this, "lorom"),
+	m_exram(*this, "exram"),
+	m_uprom(*this, "uprom")
 {
 	m_slot = dynamic_cast<vic10_expansion_slot_device *>(device.owner());
 }
@@ -58,7 +58,7 @@ device_vic10_expansion_card_interface::~device_vic10_expansion_card_interface()
 
 vic10_expansion_slot_device::vic10_expansion_slot_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock) :
 	device_t(mconfig, VIC10_EXPANSION_SLOT, tag, owner, clock),
-	device_slot_interface(mconfig, *this),
+	device_single_card_slot_interface<device_vic10_expansion_card_interface>(mconfig, *this),
 	device_image_interface(mconfig, *this),
 	m_write_irq(*this),
 	m_write_res(*this),
@@ -75,7 +75,7 @@ vic10_expansion_slot_device::vic10_expansion_slot_device(const machine_config &m
 
 void vic10_expansion_slot_device::device_start()
 {
-	m_card = dynamic_cast<device_vic10_expansion_card_interface *>(get_card_device());
+	m_card = get_card_device();
 
 	// resolve callbacks
 	m_write_irq.resolve_safe();
@@ -84,24 +84,12 @@ void vic10_expansion_slot_device::device_start()
 	m_write_sp.resolve_safe();
 
 	// inherit bus clock
+	// FIXME: this should be unnecessary as slots pass DERIVED_CLOCK(1, 1) through by default
 	if (clock() == 0)
 	{
 		vic10_expansion_slot_device *root = machine().device<vic10_expansion_slot_device>(VIC10_EXPANSION_SLOT_TAG);
 		assert(root);
 		set_unscaled_clock(root->clock());
-	}
-}
-
-
-//-------------------------------------------------
-//  device_reset - device-specific reset
-//-------------------------------------------------
-
-void vic10_expansion_slot_device::device_reset()
-{
-	if (get_card_device())
-	{
-		get_card_device()->reset();
 	}
 }
 
@@ -187,11 +175,11 @@ std::string vic10_expansion_slot_device::get_default_card_software(get_default_c
 //  cd_r - cartridge data read
 //-------------------------------------------------
 
-uint8_t vic10_expansion_slot_device::cd_r(address_space &space, offs_t offset, uint8_t data, int lorom, int uprom, int exram)
+uint8_t vic10_expansion_slot_device::cd_r(offs_t offset, uint8_t data, int lorom, int uprom, int exram)
 {
 	if (m_card != nullptr)
 	{
-		data = m_card->vic10_cd_r(space, offset, data, lorom, uprom, exram);
+		data = m_card->vic10_cd_r(offset, data, lorom, uprom, exram);
 	}
 
 	return data;
@@ -202,11 +190,11 @@ uint8_t vic10_expansion_slot_device::cd_r(address_space &space, offs_t offset, u
 //  cd_w - cartridge data write
 //-------------------------------------------------
 
-void vic10_expansion_slot_device::cd_w(address_space &space, offs_t offset, uint8_t data, int lorom, int uprom, int exram)
+void vic10_expansion_slot_device::cd_w(offs_t offset, uint8_t data, int lorom, int uprom, int exram)
 {
 	if (m_card != nullptr)
 	{
-		m_card->vic10_cd_w(space, offset, data, lorom, uprom, exram);
+		m_card->vic10_cd_w(offset, data, lorom, uprom, exram);
 	}
 }
 
@@ -220,8 +208,11 @@ WRITE_LINE_MEMBER( vic10_expansion_slot_device::p0_w ) { if (m_card != nullptr) 
 
 // slot devices
 #include "std.h"
+#include "multimax.h"
 
-SLOT_INTERFACE_START( vic10_expansion_cards )
+void vic10_expansion_cards(device_slot_interface &device)
+{
 	// the following need ROMs from the software list
-	SLOT_INTERFACE_INTERNAL("standard", VIC10_STD)
-SLOT_INTERFACE_END
+	device.option_add_internal("standard", VIC10_STD);
+	device.option_add_internal("multimax", VIC10_MULTIMAX);
+}

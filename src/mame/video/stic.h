@@ -41,7 +41,7 @@ struct intv_sprite_type
 
 // ======================> stic_device
 
-class stic_device :  public device_t
+class stic_device :  public device_t, public device_video_interface
 {
 public:
 	// GROM/GRAM cards are 8x8
@@ -84,11 +84,11 @@ public:
 	stic_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 	virtual ~stic_device();
 
-	DECLARE_READ16_MEMBER(read);
-	DECLARE_READ16_MEMBER(gram_read);
-	DECLARE_READ16_MEMBER(grom_read) { if (offset > 0x800) printf("help! %X\n", offset); return (0xff00 | m_grom[offset]); }
-	DECLARE_WRITE16_MEMBER(write);
-	DECLARE_WRITE16_MEMBER(gram_write);
+	uint16_t read(offs_t offset);
+	uint16_t gram_read(offs_t offset);
+	uint16_t grom_read(offs_t offset) { if (offset > 0x800) printf("help! %X\n", offset); return (0xff00 | m_grom[offset]); }
+	void write(offs_t offset, uint16_t data);
+	void gram_write(offs_t offset, uint16_t data);
 
 	void write_to_btb(int h, int w, uint16_t data) { m_backtab_buffer[h][w] = data; }
 	int read_row_delay() { return m_row_delay; }
@@ -182,14 +182,6 @@ private:
 
 // device type definition
 DECLARE_DEVICE_TYPE(STIC, stic_device)
-
-
-/***************************************************************************
- DEVICE CONFIGURATION MACROS
- ***************************************************************************/
-
-#define MCFG_STIC_ADD(_tag) \
-	MCFG_DEVICE_ADD(_tag, STIC, 0)
 
 
 #endif // MAME_VIDEO_STIC_H

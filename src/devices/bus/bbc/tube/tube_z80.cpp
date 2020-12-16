@@ -19,31 +19,35 @@
 //**************************************************************************
 
 DEFINE_DEVICE_TYPE(BBC_TUBE_Z80, bbc_tube_z80_device, "bbc_tube_z80", "Acorn Z80 2nd Processor")
+DEFINE_DEVICE_TYPE(BBC_TUBE_Z80W, bbc_tube_z80w_device, "bbc_tube_z80w", "Acorn Z80 2nd Processor (Winchester)")
 
 
 //-------------------------------------------------
 //  ADDRESS_MAP( tube_z80_mem )
 //-------------------------------------------------
 
-static ADDRESS_MAP_START(tube_z80_mem, AS_PROGRAM, 8, bbc_tube_z80_device)
-	AM_RANGE(0x0000, 0xffff) AM_READWRITE(mem_r, mem_w)
-ADDRESS_MAP_END
+void bbc_tube_z80_device::tube_z80_mem(address_map &map)
+{
+	map(0x0000, 0xffff).rw(FUNC(bbc_tube_z80_device::mem_r), FUNC(bbc_tube_z80_device::mem_w));
+}
 
 //-------------------------------------------------
 //  ADDRESS_MAP( tube_z80_fetch )
 //-------------------------------------------------
 
-static ADDRESS_MAP_START(tube_z80_fetch, AS_OPCODES, 8, bbc_tube_z80_device)
-	AM_RANGE(0x000, 0xffff) AM_READ(opcode_r)
-ADDRESS_MAP_END
+void bbc_tube_z80_device::tube_z80_fetch(address_map &map)
+{
+	map(0x000, 0xffff).r(FUNC(bbc_tube_z80_device::opcode_r));
+}
 
 //-------------------------------------------------
 //  ADDRESS_MAP( tube_z80_io )
 //-------------------------------------------------
 
-static ADDRESS_MAP_START(tube_z80_io, AS_IO, 8, bbc_tube_z80_device)
-	AM_RANGE(0x00, 0x07) AM_MIRROR(0xff00) AM_DEVREADWRITE("ula", tube_device, parasite_r, parasite_w)
-ADDRESS_MAP_END
+void bbc_tube_z80_device::tube_z80_io(address_map &map)
+{
+	map(0x00, 0x07).mirror(0xff00).rw("ula", FUNC(tube_device::parasite_r), FUNC(tube_device::parasite_w));
+}
 
 //-------------------------------------------------
 //  ROM( tube_z80 )
@@ -51,33 +55,36 @@ ADDRESS_MAP_END
 
 ROM_START( tube_z80 )
 	ROM_REGION(0x1000, "rom", 0)
-	ROM_LOAD("Z80_120.rom", 0x0000, 0x1000, CRC(315bfc20) SHA1(069077df498599a9c880d4ec9f4bc53fcc602d82))
+	ROM_SYSTEM_BIOS(0, "120", "Z80 v1.20")
+	ROMX_LOAD("z80_120.rom", 0x0000, 0x1000, CRC(315bfc20) SHA1(069077df498599a9c880d4ec9f4bc53fcc602d82), ROM_BIOS(0))
+ROM_END
+
+ROM_START( tube_z80w )
+	ROM_REGION(0x1000, "rom", 0)
+	ROM_SYSTEM_BIOS(0, "200", "Z80 v2.00") /* supplied with Acorn Business Computer */
+	ROMX_LOAD("z80_200.rom", 0x0000, 0x1000, CRC(84672c3d) SHA1(47211cead3a1b0f9830dcdef8e54e29522c69bf8), ROM_BIOS(0))
 ROM_END
 
 //-------------------------------------------------
 //  device_add_mconfig - add device configuration
 //-------------------------------------------------
 
-MACHINE_CONFIG_MEMBER( bbc_tube_z80_device::device_add_mconfig )
-	MCFG_CPU_ADD("z80", Z80, XTAL_12MHz / 2)
-	MCFG_CPU_PROGRAM_MAP(tube_z80_mem)
-	MCFG_CPU_DECRYPTED_OPCODES_MAP(tube_z80_fetch)
-	MCFG_CPU_IO_MAP(tube_z80_io)
-	MCFG_CPU_IRQ_ACKNOWLEDGE_DEVICE(DEVICE_SELF, bbc_tube_z80_device, irq_callback)
+void bbc_tube_z80_device::device_add_mconfig(machine_config &config)
+{
+	Z80(config, m_z80, 12_MHz_XTAL / 2);
+	m_z80->set_addrmap(AS_PROGRAM, &bbc_tube_z80_device::tube_z80_mem);
+	m_z80->set_addrmap(AS_OPCODES, &bbc_tube_z80_device::tube_z80_fetch);
+	m_z80->set_addrmap(AS_IO, &bbc_tube_z80_device::tube_z80_io);
+	m_z80->set_irq_acknowledge_callback(FUNC(bbc_tube_z80_device::irq_callback));
 
-	MCFG_TUBE_ADD("ula")
-	MCFG_TUBE_HIRQ_HANDLER(DEVWRITELINE(DEVICE_SELF_OWNER, bbc_tube_slot_device, irq_w))
-	MCFG_TUBE_PNMI_HANDLER(WRITELINE(bbc_tube_z80_device, nmi_w))
-	MCFG_TUBE_PIRQ_HANDLER(INPUTLINE("z80", INPUT_LINE_IRQ0))
-
-	/* internal ram */
-	MCFG_RAM_ADD(RAM_TAG)
-	MCFG_RAM_DEFAULT_SIZE("64K")
-	MCFG_RAM_DEFAULT_VALUE(0x00)
+	TUBE(config, m_ula);
+	m_ula->hirq_handler().set(DEVICE_SELF_OWNER, FUNC(bbc_tube_slot_device::irq_w));
+	m_ula->pnmi_handler().set_inputline(m_z80, INPUT_LINE_NMI);
+	m_ula->pirq_handler().set_inputline(m_z80, INPUT_LINE_IRQ0);
 
 	/* software lists */
-	MCFG_SOFTWARE_LIST_ADD("flop_ls_z80", "bbc_flop_z80")
-MACHINE_CONFIG_END
+	SOFTWARE_LIST(config, "flop_ls_z80").set_original("bbc_flop_z80");
+}
 
 //-------------------------------------------------
 //  rom_region - device-specific ROM region
@@ -88,6 +95,11 @@ const tiny_rom_entry *bbc_tube_z80_device::device_rom_region() const
 	return ROM_NAME( tube_z80 );
 }
 
+const tiny_rom_entry *bbc_tube_z80w_device::device_rom_region() const
+{
+	return ROM_NAME( tube_z80w );
+}
+
 //**************************************************************************
 //  LIVE DEVICE
 //**************************************************************************
@@ -96,14 +108,23 @@ const tiny_rom_entry *bbc_tube_z80_device::device_rom_region() const
 //  bbc_tube_z80_device - constructor
 //-------------------------------------------------
 
+bbc_tube_z80_device::bbc_tube_z80_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock)
+	: device_t(mconfig, type, tag, owner, clock)
+	, device_bbc_tube_interface(mconfig, *this)
+	, m_z80(*this, "z80")
+	, m_ula(*this, "ula")
+	, m_rom(*this, "rom")
+	, m_rom_enabled(true)
+{
+}
+
 bbc_tube_z80_device::bbc_tube_z80_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
-	: device_t(mconfig, BBC_TUBE_Z80, tag, owner, clock),
-		device_bbc_tube_interface(mconfig, *this),
-		m_z80(*this, "z80"),
-		m_ula(*this, "ula"),
-		m_ram(*this, "ram"),
-		m_rom(*this, "rom"),
-		m_rom_enabled(true)
+	: bbc_tube_z80_device(mconfig, BBC_TUBE_Z80, tag, owner, clock)
+{
+}
+
+bbc_tube_z80w_device::bbc_tube_z80w_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
+	: bbc_tube_z80_device(mconfig, BBC_TUBE_Z80W, tag, owner, clock)
 {
 }
 
@@ -113,7 +134,11 @@ bbc_tube_z80_device::bbc_tube_z80_device(const machine_config &mconfig, const ch
 
 void bbc_tube_z80_device::device_start()
 {
-	m_slot = dynamic_cast<bbc_tube_slot_device *>(owner());
+	m_ram = std::make_unique<uint8_t[]>(0x10000);
+	memset(m_ram.get(), 0xff, 0x10000);
+
+	/* register for save states */
+	save_pointer(NAME(m_ram), 0x10000);
 }
 
 //-------------------------------------------------
@@ -122,8 +147,6 @@ void bbc_tube_z80_device::device_start()
 
 void bbc_tube_z80_device::device_reset()
 {
-	m_ula->reset();
-
 	m_rom_enabled = true;
 }
 
@@ -132,20 +155,20 @@ void bbc_tube_z80_device::device_reset()
 //  IMPLEMENTATION
 //**************************************************************************
 
-READ8_MEMBER(bbc_tube_z80_device::host_r)
+uint8_t bbc_tube_z80_device::host_r(offs_t offset)
 {
-	return m_ula->host_r(space, offset);
+	return m_ula->host_r(offset);
 }
 
-WRITE8_MEMBER(bbc_tube_z80_device::host_w)
+void bbc_tube_z80_device::host_w(offs_t offset, uint8_t data)
 {
-	m_ula->host_w(space, offset, data);
+	m_ula->host_w(offset, data);
 }
 
 
-READ8_MEMBER(bbc_tube_z80_device::opcode_r)
+uint8_t bbc_tube_z80_device::opcode_r(offs_t offset)
 {
-	if (!machine().side_effect_disabled())
+	if (!machine().side_effects_disabled())
 	{
 		if (offset == 0x0066 && m_z80->input_state(INPUT_LINE_NMI))
 			m_rom_enabled = true;
@@ -156,26 +179,21 @@ READ8_MEMBER(bbc_tube_z80_device::opcode_r)
 }
 
 
-READ8_MEMBER(bbc_tube_z80_device::mem_r)
+uint8_t bbc_tube_z80_device::mem_r(offs_t offset)
 {
 	uint8_t data;
 
 	if (m_rom_enabled && (offset < 0x1000))
 		data = m_rom->base()[offset & 0xfff];
 	else
-		data = m_ram->pointer()[offset];
+		data = m_ram[offset];
 
 	return data;
 }
 
-WRITE8_MEMBER(bbc_tube_z80_device::mem_w)
+void bbc_tube_z80_device::mem_w(offs_t offset, uint8_t data)
 {
-	m_ram->pointer()[offset] = data;
-}
-
-WRITE_LINE_MEMBER(bbc_tube_z80_device::nmi_w)
-{
-	m_z80->set_input_line(INPUT_LINE_NMI, state);
+	m_ram[offset] = data;
 }
 
 

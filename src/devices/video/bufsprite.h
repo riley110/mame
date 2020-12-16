@@ -28,20 +28,6 @@ DECLARE_DEVICE_TYPE(BUFFERED_SPRITERAM64, buffered_spriteram64_device)
 
 
 //**************************************************************************
-//  DEVICE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_BUFFERED_SPRITERAM8_ADD(_tag) \
-	MCFG_DEVICE_ADD(_tag, BUFFERED_SPRITERAM8, 0)
-#define MCFG_BUFFERED_SPRITERAM16_ADD(_tag) \
-	MCFG_DEVICE_ADD(_tag, BUFFERED_SPRITERAM16, 0)
-#define MCFG_BUFFERED_SPRITERAM32_ADD(_tag) \
-	MCFG_DEVICE_ADD(_tag, BUFFERED_SPRITERAM32, 0)
-#define MCFG_BUFFERED_SPRITERAM64_ADD(_tag) \
-	MCFG_DEVICE_ADD(_tag, BUFFERED_SPRITERAM64, 0)
-
-
-//**************************************************************************
 //  TYPE DEFINITIONS
 //**************************************************************************
 
@@ -70,8 +56,8 @@ public:
 	void write(address_space &space, offs_t offset, Type data, Type mem_mask = ~Type(0)) { copy(); }
 
 	// VBLANK handlers
-	DECLARE_WRITE_LINE_MEMBER(vblank_copy_rising) { if (state) copy(); }
-	DECLARE_WRITE_LINE_MEMBER(vblank_copy_falling) { if (!state) copy(); }
+	void vblank_copy_rising(int state) { if (state) copy(); }
+	void vblank_copy_falling(int state) { if (!state) copy(); }
 
 protected:
 	// construction
@@ -98,7 +84,7 @@ class buffered_spriteram8_device : public buffered_spriteram_device<uint8_t>
 {
 public:
 	// construction
-	buffered_spriteram8_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+	buffered_spriteram8_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock = 0);
 };
 
 
@@ -108,7 +94,7 @@ class buffered_spriteram16_device : public buffered_spriteram_device<uint16_t>
 {
 public:
 	// construction
-	buffered_spriteram16_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+	buffered_spriteram16_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock = 0);
 };
 
 
@@ -118,7 +104,7 @@ class buffered_spriteram32_device : public buffered_spriteram_device<uint32_t>
 {
 public:
 	// construction
-	buffered_spriteram32_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+	buffered_spriteram32_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock = 0);
 };
 
 
@@ -128,7 +114,7 @@ class buffered_spriteram64_device : public buffered_spriteram_device<uint64_t>
 {
 public:
 	// construction
-	buffered_spriteram64_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+	buffered_spriteram64_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock = 0);
 };
 
 

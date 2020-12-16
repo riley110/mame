@@ -14,11 +14,6 @@
 
 //#define SMARTMEDIA_IMAGE_SAVE
 
-#define MCFG_NAND_TYPE(type) \
-	nand_device::set_nand_type(*device, (nand_device::chip::type));
-
-#define MCFG_NAND_RNB_CALLBACK(write) \
-		devcb = &nand_device::set_rnb_wr_callback(*device, DEVCB_##write);
 
 /***************************************************************************
     TYPE DEFINITIONS
@@ -41,78 +36,77 @@ public:
 	// construction/destruction
 	nand_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	template <class Object> static devcb_base &set_rnb_wr_callback(device_t &device, Object &&cb) { return downcast<nand_device &>(device).m_write_rnb.set_callback(std::forward<Object>(cb)); }
+	auto rnb_wr_callback() { return m_write_rnb.bind(); }
 
-	static void set_nand_type(device_t &device, chip type)
+	void set_nand_type(chip type)
 	{
-		nand_device &dev = downcast<nand_device &>(device);
 		switch (type)
 		{
 		case chip::K9F5608U0D:
-			dev.m_id_len = 2;
-			dev.m_id[0] = 0xec;
-			dev.m_id[1] = 0x75;
-			dev.m_page_data_size = 512;
-			dev.m_page_total_size = 512 + 16;
-			dev.m_log2_pages_per_block = compute_log2(32);
-			dev.m_num_pages = 32 * 2048;
-			dev.m_col_address_cycles = 1;
-			dev.m_row_address_cycles = 2;
-			dev.m_sequential_row_read = 1;
+			m_id_len = 2;
+			m_id[0] = 0xec;
+			m_id[1] = 0x75;
+			m_page_data_size = 512;
+			m_page_total_size = 512 + 16;
+			m_log2_pages_per_block = compute_log2(32);
+			m_num_pages = 32 * 2048;
+			m_col_address_cycles = 1;
+			m_row_address_cycles = 2;
+			m_sequential_row_read = 1;
 			break;
 		case chip::K9F5608U0D_J:
 		case chip::K9F5608U0B:
-			dev.m_id_len = 2;
-			dev.m_id[0] = 0xec;
-			dev.m_id[1] = 0x75;
-			dev.m_page_data_size = 512;
-			dev.m_page_total_size = 512 + 16;
-			dev.m_log2_pages_per_block = compute_log2(32);
-			dev.m_num_pages = 32 * 2048;
-			dev.m_col_address_cycles = 1;
-			dev.m_row_address_cycles = 2;
-			dev.m_sequential_row_read = 0;
+			m_id_len = 2;
+			m_id[0] = 0xec;
+			m_id[1] = 0x75;
+			m_page_data_size = 512;
+			m_page_total_size = 512 + 16;
+			m_log2_pages_per_block = compute_log2(32);
+			m_num_pages = 32 * 2048;
+			m_col_address_cycles = 1;
+			m_row_address_cycles = 2;
+			m_sequential_row_read = 0;
 			break;
 		case chip::K9F1G08U0B:
-			dev.m_id_len = 5;
-			dev.m_id[0] = 0xec;
-			dev.m_id[1] = 0xf1;
-			dev.m_id[2] = 0x00;
-			dev.m_id[3] = 0x95;
-			dev.m_id[4] = 0x40;
-			dev.m_page_data_size = 2048;
-			dev.m_page_total_size = 2048 + 64;
-			dev.m_log2_pages_per_block = compute_log2(64);
-			dev.m_num_pages = 64 * 1024;
-			dev.m_col_address_cycles = 2;
-			dev.m_row_address_cycles = 2;
-			dev.m_sequential_row_read = 0;
+			m_id_len = 5;
+			m_id[0] = 0xec;
+			m_id[1] = 0xf1;
+			m_id[2] = 0x00;
+			m_id[3] = 0x95;
+			m_id[4] = 0x40;
+			m_page_data_size = 2048;
+			m_page_total_size = 2048 + 64;
+			m_log2_pages_per_block = compute_log2(64);
+			m_num_pages = 64 * 1024;
+			m_col_address_cycles = 2;
+			m_row_address_cycles = 2;
+			m_sequential_row_read = 0;
 			break;
 		case chip::K9LAG08U0M:
-			dev.m_id_len = 5;
-			dev.m_id[0] = 0xec;
-			dev.m_id[1] = 0xd5;
-			dev.m_id[2] = 0x55;
-			dev.m_id[3] = 0x25;
-			dev.m_id[4] = 0x68;
-			dev.m_page_data_size = 2048;
-			dev.m_page_total_size = 2048 + 64;
-			dev.m_log2_pages_per_block = compute_log2(128);
-			dev.m_num_pages = 128 * 8192;
-			dev.m_col_address_cycles = 2;
-			dev.m_row_address_cycles = 3;
-			dev.m_sequential_row_read = 0;
+			m_id_len = 5;
+			m_id[0] = 0xec;
+			m_id[1] = 0xd5;
+			m_id[2] = 0x55;
+			m_id[3] = 0x25;
+			m_id[4] = 0x68;
+			m_page_data_size = 2048;
+			m_page_total_size = 2048 + 64;
+			m_log2_pages_per_block = compute_log2(128);
+			m_num_pages = 128 * 8192;
+			m_col_address_cycles = 2;
+			m_row_address_cycles = 3;
+			m_sequential_row_read = 0;
 			break;
 		default:
 			printf("Unknown NAND type!\n");
-			dev.m_id_len = 0;
-			dev.m_page_data_size = 0;
-			dev.m_page_total_size = 0;
-			dev.m_log2_pages_per_block = 0;
-			dev.m_num_pages = 0;
-			dev.m_col_address_cycles = 0;
-			dev.m_row_address_cycles = 0;
-			dev.m_sequential_row_read = 0;
+			m_id_len = 0;
+			m_page_data_size = 0;
+			m_page_total_size = 0;
+			m_log2_pages_per_block = 0;
+			m_num_pages = 0;
+			m_col_address_cycles = 0;
+			m_row_address_cycles = 0;
+			m_sequential_row_read = 0;
 			break;
 		}
 	}
@@ -207,21 +201,22 @@ public:
 	smartmedia_image_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 	// image-level overrides
-	virtual iodevice_t image_type() const override { return IO_MEMCARD; }
+	virtual iodevice_t image_type() const noexcept override { return IO_MEMCARD; }
 
-	virtual bool is_readable()  const override { return 1; }
-	virtual bool is_writeable() const override { return 1; }
-	virtual bool is_creatable() const override { return 0; }
-	virtual bool must_be_loaded() const override { return 0; }
-	virtual bool is_reset_on_load() const override { return 0; }
-	virtual const char *image_interface() const override { return "sm_memc"; }
-	virtual const char *file_extensions() const override { return "smc"; }
+	virtual bool is_readable()  const noexcept override { return true; }
+	virtual bool is_writeable() const noexcept override { return true; }
+	virtual bool is_creatable() const noexcept override { return false; }
+	virtual bool must_be_loaded() const noexcept override { return false; }
+	virtual bool is_reset_on_load() const noexcept override { return false; }
+	virtual const char *image_interface() const noexcept override { return "sm_memc"; }
+	virtual const char *file_extensions() const noexcept override { return "smc"; }
 
 	virtual image_init_result call_load() override;
 	virtual void call_unload() override;
-	virtual const software_list_loader &get_software_list_loader() const override { return image_software_list_loader::instance(); }
 
 protected:
+	virtual const software_list_loader &get_software_list_loader() const override { return image_software_list_loader::instance(); }
+
 	image_init_result smartmedia_format_1();
 	image_init_result smartmedia_format_2();
 	int detect_geometry(uint8_t id1, uint8_t id2);

@@ -72,11 +72,9 @@ cpc_brunword4_device::cpc_brunword4_device(const machine_config &mconfig, const 
 
 void cpc_brunword4_device::device_start()
 {
-	device_t* cpu = machine().device("maincpu");
-	address_space& space = cpu->memory().space(AS_IO);
 	m_slot = dynamic_cast<cpc_expansion_slot_device *>(owner());
-
-	space.install_write_handler(0xdf00,0xdfff,write8_delegate(FUNC(cpc_brunword4_device::rombank_w),this));
+	address_space &space = m_slot->cpu().space(AS_IO);
+	space.install_write_handler(0xdf00,0xdfff, write8smo_delegate(*this, FUNC(cpc_brunword4_device::rombank_w)));
 }
 
 void cpc_brunword4_device::device_reset()
@@ -84,7 +82,7 @@ void cpc_brunword4_device::device_reset()
 	m_rombank_active = false;
 }
 
-WRITE8_MEMBER(cpc_brunword4_device::rombank_w)
+void cpc_brunword4_device::rombank_w(uint8_t data)
 {
 	if((data & 0xc0) == 0xc0 && (data & 0x04) == 0)
 	{
@@ -97,7 +95,7 @@ WRITE8_MEMBER(cpc_brunword4_device::rombank_w)
 		m_rombank_active = false;
 		return;
 	}
-	m_slot->rom_select(space,0,data & 0x3f);  // repeats every 64 ROMs, this breaks upper cart ROM selection on the Plus
+	m_slot->rom_select(data & 0x3f);  // repeats every 64 ROMs, this breaks upper cart ROM selection on the Plus
 }
 
 void cpc_brunword4_device::set_mapping(uint8_t type)

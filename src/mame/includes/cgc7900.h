@@ -1,9 +1,9 @@
 // license:BSD-3-Clause
 // copyright-holders:Curt Coder
-#pragma once
-
 #ifndef MAME_INCLUDES_CGC7900_H
 #define MAME_INCLUDES_CGC7900_H
+
+#pragma once
 
 
 #include "bus/rs232/rs232.h"
@@ -17,6 +17,7 @@
 #include "machine/timer.h"
 #include "sound/ay8910.h"
 
+#include "emupal.h"
 #include "screen.h"
 
 #define M68000_TAG      "uh8"
@@ -33,83 +34,77 @@ class cgc7900_state : public driver_device
 {
 public:
 	cgc7900_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
-			m_maincpu(*this, M68000_TAG),
-			m_palette(*this, "palette"),
-			m_screen(*this, "screen"),
-			m_char_rom(*this, "gfx1"),
-			m_chrom_ram(*this, "chrom_ram"),
-			m_plane_ram(*this, "plane_ram"),
-			m_clut_ram(*this, "clut_ram"),
-			m_overlay_ram(*this, "overlay_ram"),
-			m_roll_bitmap(*this, "roll_bitmap"),
-			m_pan_x(*this, "pan_x"),
-			m_pan_y(*this, "pan_y"),
-			m_zoom(*this, "zoom"),
-			m_blink_select(*this, "blink_select"),
-			m_plane_select(*this, "plane_select"),
-			m_plane_switch(*this, "plane_switch"),
-			m_color_status_fg(*this, "color_status_fg"),
-			m_color_status_bg(*this, "color_status_bg"),
-			m_roll_overlay(*this, "roll_overlay"),
-			m_i8251_0(*this, INS8251_0_TAG),
-			m_i8251_1(*this, INS8251_1_TAG),
-			m_dbrg(*this, K1135A_TAG)
+		: driver_device(mconfig, type, tag)
+		, m_maincpu(*this, M68000_TAG)
+		, m_palette(*this, "palette")
+		, m_screen(*this, "screen")
+		, m_char_rom(*this, "gfx1")
+		, m_chrom_ram(*this, "chrom_ram")
+		, m_plane_ram(*this, "plane_ram")
+		, m_clut_ram(*this, "clut_ram")
+		, m_overlay_ram(*this, "overlay_ram")
+		, m_roll_bitmap(*this, "roll_bitmap")
+		, m_pan_x(*this, "pan_x")
+		, m_pan_y(*this, "pan_y")
+		, m_zoom(*this, "zoom")
+		, m_blink_select(*this, "blink_select")
+		, m_plane_select(*this, "plane_select")
+		, m_plane_switch(*this, "plane_switch")
+		, m_color_status_fg(*this, "color_status_fg")
+		, m_color_status_bg(*this, "color_status_bg")
+		, m_roll_overlay(*this, "roll_overlay")
+		, m_i8251_0(*this, INS8251_0_TAG)
+		, m_i8251_1(*this, INS8251_1_TAG)
 	{ }
 
 	required_device<cpu_device> m_maincpu;
 	required_device<palette_device> m_palette;
 	required_device<screen_device> m_screen;
 	required_memory_region m_char_rom;
-	required_shared_ptr<uint16_t> m_chrom_ram;
-	required_shared_ptr<uint16_t> m_plane_ram;
-	required_shared_ptr<uint16_t> m_clut_ram;
-	required_shared_ptr<uint16_t> m_overlay_ram;
-	required_shared_ptr<uint16_t> m_roll_bitmap;
-	required_shared_ptr<uint16_t> m_pan_x;
-	required_shared_ptr<uint16_t> m_pan_y;
-	required_shared_ptr<uint16_t> m_zoom;
-	required_shared_ptr<uint16_t> m_blink_select;
-	required_shared_ptr<uint16_t> m_plane_select;
-	required_shared_ptr<uint16_t> m_plane_switch;
-	required_shared_ptr<uint16_t> m_color_status_fg;
-	required_shared_ptr<uint16_t> m_color_status_bg;
-	required_shared_ptr<uint16_t> m_roll_overlay;
+	required_shared_ptr<u16> m_chrom_ram;
+	required_shared_ptr<u16> m_plane_ram;
+	required_shared_ptr<u16> m_clut_ram;
+	required_shared_ptr<u16> m_overlay_ram;
+	required_shared_ptr<u16> m_roll_bitmap;
+	required_shared_ptr<u16> m_pan_x;
+	required_shared_ptr<u16> m_pan_y;
+	required_shared_ptr<u16> m_zoom;
+	required_shared_ptr<u16> m_blink_select;
+	required_shared_ptr<u16> m_plane_select;
+	required_shared_ptr<u16> m_plane_switch;
+	required_shared_ptr<u16> m_color_status_fg;
+	required_shared_ptr<u16> m_color_status_bg;
+	required_shared_ptr<u16> m_roll_overlay;
 	required_device<i8251_device> m_i8251_0;
 	required_device<i8251_device> m_i8251_1;
-	required_device<com8116_device> m_dbrg;
 
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
 
-	DECLARE_PALETTE_INIT(cgc7900);
-	uint32_t screen_update(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect);
+	void cgc7900_palette(palette_device &palette) const;
+	u32 screen_update(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect);
 
-	DECLARE_READ16_MEMBER( keyboard_r );
-	DECLARE_WRITE16_MEMBER( keyboard_w );
-	DECLARE_WRITE16_MEMBER( interrupt_mask_w );
-	DECLARE_READ16_MEMBER( disk_data_r );
-	DECLARE_WRITE16_MEMBER( disk_data_w );
-	DECLARE_READ16_MEMBER( disk_status_r );
-	DECLARE_WRITE16_MEMBER( disk_command_w );
-	DECLARE_READ16_MEMBER( z_mode_r );
-	DECLARE_WRITE16_MEMBER( z_mode_w );
-	DECLARE_WRITE16_MEMBER( color_status_w );
-	DECLARE_READ16_MEMBER( sync_r );
-	DECLARE_READ16_MEMBER( unmapped_r );
+	u16 keyboard_r();
+	void keyboard_w(u16 data);
+	void interrupt_mask_w(u16 data);
+	u16 disk_data_r();
+	void disk_data_w(u16 data);
+	u16 disk_status_r();
+	void disk_command_w(u16 data);
+	u16 z_mode_r();
+	void z_mode_w(u16 data);
+	void color_status_w(u16 data);
+	u16 sync_r();
+	u16 unmapped_r();
 
 	template <unsigned N> DECLARE_WRITE_LINE_MEMBER(irq) { irq_encoder(N, state); }
-
-	DECLARE_WRITE8_MEMBER(baud_write);
-	DECLARE_WRITE_LINE_MEMBER(write_rs232_clock);
-	DECLARE_WRITE_LINE_MEMBER(write_rs449_clock);
 
 	void update_clut();
 	void draw_bitmap(screen_device *screen, bitmap_rgb32 &bitmap);
 	void draw_overlay(screen_device *screen, bitmap_rgb32 &bitmap);
 
 	/* interrupt state */
-	uint16_t m_int_mask, m_int_active;
+	u16 m_int_mask, m_int_active;
 
 	/* video state */
 	rgb_t m_clut[256];
@@ -119,6 +114,11 @@ public:
 
 	void kbd_put(u8 data);
 
+	void cgc7900(machine_config &config);
+	void cgc7900_video(machine_config &config);
+	void cgc7900_mem(address_map &map);
+	void keyboard_mem(address_map &map);
+	void cpu_space_map(address_map &map);
 private:
 	u16 kbd_mods;
 	u8 kbd_data;
@@ -126,9 +126,5 @@ private:
 
 	void irq_encoder(int pin, int state);
 };
-
-/*----------- defined in video/cgc7900.c -----------*/
-
-MACHINE_CONFIG_EXTERN( cgc7900_video );
 
 #endif

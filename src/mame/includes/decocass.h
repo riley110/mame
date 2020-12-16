@@ -1,5 +1,10 @@
 // license:GPL-2.0+
 // copyright-holders:Juergen Buchmueller, David Haywood
+#ifndef MAME_INCLUDES_DECOCASS_H
+#define MAME_INCLUDES_DECOCASS_H
+
+#pragma once
+
 #ifdef MAME_DEBUG
 #define LOGLEVEL  5
 #else
@@ -12,7 +17,9 @@
 #include "machine/timer.h"
 #include "machine/watchdog.h"
 #include "cpu/mcs48/mcs48.h"
+#include "emupal.h"
 #include "screen.h"
+#include "tilemap.h"
 
 #define T1PROM 1
 #define T1DIRECT 2
@@ -23,31 +30,53 @@ class decocass_state : public driver_device
 {
 public:
 	decocass_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
-			m_maincpu(*this, "maincpu"),
-			m_audiocpu(*this, "audiocpu"),
-			m_mcu(*this, "mcu"),
-			m_watchdog(*this, "watchdog"),
-			m_cassette(*this, "cassette"),
-			m_gfxdecode(*this, "gfxdecode"),
-			m_screen(*this, "screen"),
-			m_palette(*this, "palette"),
-			m_soundlatch(*this, "soundlatch"),
-			m_soundlatch2(*this, "soundlatch2"),
-			m_rambase(*this, "rambase"),
-			m_charram(*this, "charram"),
-			m_fgvideoram(*this, "fgvideoram"),
-			m_colorram(*this, "colorram"),
-			m_tileram(*this, "tileram"),
-			m_objectram(*this, "objectram"),
-			m_paletteram(*this, "paletteram")
+		: driver_device(mconfig, type, tag)
+		, m_maincpu(*this, "maincpu")
+		, m_mcu(*this, "mcu")
+		, m_dongle_r(*this)
+		, m_dongle_w(*this)
+		, m_audiocpu(*this, "audiocpu")
+		, m_watchdog(*this, "watchdog")
+		, m_cassette(*this, "cassette")
+		, m_gfxdecode(*this, "gfxdecode")
+		, m_screen(*this, "screen")
+		, m_palette(*this, "palette")
+		, m_soundlatch(*this, "soundlatch")
+		, m_soundlatch2(*this, "soundlatch2")
+		, m_rambase(*this, "rambase")
+		, m_charram(*this, "charram")
+		, m_fgvideoram(*this, "fgvideoram")
+		, m_colorram(*this, "colorram")
+		, m_tileram(*this, "tileram")
+		, m_objectram(*this, "objectram")
+		, m_paletteram(*this, "paletteram")
 	{
 	}
 
+	void decocass(machine_config &config);
+
+	void init_decocass();
+	void init_decocrom();
+	void init_cdsteljn();
+
+protected:
 	/* devices */
 	required_device<cpu_device> m_maincpu;
-	required_device<cpu_device> m_audiocpu;
 	required_device<upi41_cpu_device> m_mcu;
+
+	/* dongles-related */
+	read8sm_delegate    m_dongle_r; // TODO: why isn't this a virtual method?
+	write8sm_delegate   m_dongle_w; // TODO: why isn't this a virtual method?
+
+	virtual void machine_start() override;
+	virtual void machine_reset() override;
+
+	int32_t     m_firsttime;
+	uint8_t     m_latch1;
+
+private:
+	/* devices */
+	required_device<cpu_device> m_audiocpu;
 	required_device<watchdog_timer_device> m_watchdog;
 	required_device<decocass_tape_device> m_cassette;
 	required_device<gfxdecode_device> m_gfxdecode;
@@ -94,8 +123,6 @@ public:
 	uint8_t     m_audio_nmi_state;
 
 	/* misc */
-	int32_t     m_firsttime;
-	uint8_t     m_latch1;
 	uint8_t     m_decocass_reset;
 	int32_t     m_de0091_enable;  /* DE-0091xx daughter board enable */
 	uint8_t     m_quadrature_decoder[4];  /* four inputs from the quadrature decoder (H1, V1, H2, V2) */
@@ -109,89 +136,82 @@ public:
 	int       m_i8041_p2_write_latch;
 	int       m_i8041_p2_read_latch;
 
-	/* dongles-related */
-	read8_delegate    m_dongle_r;
-	write8_delegate   m_dongle_w;
-
 	/* DS Telejan */
 	uint8_t     m_mux_data;
 
-	DECLARE_DRIVER_INIT(decocass);
-	DECLARE_DRIVER_INIT(decocrom);
-	DECLARE_DRIVER_INIT(cdsteljn);
 	TILEMAP_MAPPER_MEMBER(fgvideoram_scan_cols);
 	TILEMAP_MAPPER_MEMBER(bgvideoram_scan_cols);
 	TILE_GET_INFO_MEMBER(get_bg_l_tile_info);
 	TILE_GET_INFO_MEMBER(get_bg_r_tile_info);
 	TILE_GET_INFO_MEMBER(get_fg_tile_info);
-	virtual void machine_start() override;
-	virtual void machine_reset() override;
 	virtual void video_start() override;
-	DECLARE_PALETTE_INIT(decocass);
+	void decocass_palette(palette_device &palette) const;
 
 	uint32_t screen_update_decocass(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
-	DECLARE_WRITE8_MEMBER(decocass_coin_counter_w);
-	DECLARE_WRITE8_MEMBER(decocass_sound_command_w);
-	DECLARE_READ8_MEMBER(decocass_sound_command_main_r);
-	DECLARE_READ8_MEMBER(decocass_sound_data_r);
-	DECLARE_READ8_MEMBER(decocass_sound_ack_r);
-	DECLARE_WRITE8_MEMBER(decocass_sound_data_w);
-	DECLARE_READ8_MEMBER(decocass_sound_command_r);
-	DECLARE_WRITE8_MEMBER(decocass_sound_nmi_enable_w);
-	DECLARE_READ8_MEMBER(decocass_sound_nmi_enable_r);
-	DECLARE_READ8_MEMBER(decocass_sound_data_ack_reset_r);
-	DECLARE_WRITE8_MEMBER(decocass_sound_data_ack_reset_w);
-	DECLARE_WRITE8_MEMBER(decocass_nmi_reset_w);
-	DECLARE_WRITE8_MEMBER(decocass_quadrature_decoder_reset_w);
-	DECLARE_WRITE8_MEMBER(decocass_adc_w);
-	DECLARE_READ8_MEMBER(decocass_input_r);
+	void decocass_coin_counter_w(uint8_t data);
+	void decocass_sound_command_w(uint8_t data);
+	uint8_t decocass_sound_command_main_r();
+	uint8_t decocass_sound_data_r();
+	uint8_t decocass_sound_ack_r();
+	void decocass_sound_data_w(uint8_t data);
+	uint8_t decocass_sound_command_r();
+	void decocass_sound_nmi_enable_w(uint8_t data);
+	uint8_t decocass_sound_nmi_enable_r();
+	uint8_t decocass_sound_data_ack_reset_r();
+	void decocass_sound_data_ack_reset_w(uint8_t data);
+	void decocass_nmi_reset_w(uint8_t data);
+	void decocass_quadrature_decoder_reset_w(uint8_t data);
+	void decocass_adc_w(uint8_t data);
+	uint8_t decocass_input_r(offs_t offset);
 
-	DECLARE_WRITE8_MEMBER(decocass_reset_w);
+	void decocass_reset_w(offs_t offset, uint8_t data);
 
-	DECLARE_READ8_MEMBER(decocass_e5xx_r);
-	DECLARE_WRITE8_MEMBER(decocass_e5xx_w);
-	DECLARE_WRITE8_MEMBER(decocass_de0091_w);
-	DECLARE_WRITE8_MEMBER(decocass_e900_w);
+	uint8_t decocass_e5xx_r(offs_t offset);
+	void decocass_e5xx_w(offs_t offset, uint8_t data);
+	void decocass_de0091_w(offs_t offset, uint8_t data);
+	void decocass_e900_w(uint8_t data);
 
 
-	DECLARE_WRITE8_MEMBER(i8041_p1_w);
-	DECLARE_READ8_MEMBER(i8041_p1_r);
-	DECLARE_WRITE8_MEMBER(i8041_p2_w);
-	DECLARE_READ8_MEMBER(i8041_p2_r);
+	void i8041_p1_w(uint8_t data);
+	uint8_t i8041_p1_r();
+	void i8041_p2_w(uint8_t data);
+	uint8_t i8041_p2_r();
 
 	void decocass_machine_state_save_init();
 
-	DECLARE_WRITE8_MEMBER(decocass_paletteram_w);
-	DECLARE_WRITE8_MEMBER(decocass_charram_w);
-	DECLARE_WRITE8_MEMBER(decocass_fgvideoram_w);
-	DECLARE_WRITE8_MEMBER(decocass_colorram_w);
-	DECLARE_WRITE8_MEMBER(decocass_bgvideoram_w);
-	DECLARE_WRITE8_MEMBER(decocass_tileram_w);
-	DECLARE_WRITE8_MEMBER(decocass_objectram_w);
+	void decocass_paletteram_w(offs_t offset, uint8_t data);
+	void decocass_charram_w(offs_t offset, uint8_t data);
+	void decocass_fgvideoram_w(offs_t offset, uint8_t data);
+	void decocass_colorram_w(offs_t offset, uint8_t data);
+	void decocass_bgvideoram_w(offs_t offset, uint8_t data);
+	void decocass_tileram_w(offs_t offset, uint8_t data);
+	void decocass_objectram_w(offs_t offset, uint8_t data);
 
-	DECLARE_WRITE8_MEMBER(decocass_watchdog_count_w);
-	DECLARE_WRITE8_MEMBER(decocass_watchdog_flip_w);
-	DECLARE_WRITE8_MEMBER(decocass_color_missiles_w);
-	DECLARE_WRITE8_MEMBER(decocass_mode_set_w);
-	DECLARE_WRITE8_MEMBER(decocass_color_center_bot_w);
-	DECLARE_WRITE8_MEMBER(decocass_back_h_shift_w);
-	DECLARE_WRITE8_MEMBER(decocass_back_vl_shift_w);
-	DECLARE_WRITE8_MEMBER(decocass_back_vr_shift_w);
-	DECLARE_WRITE8_MEMBER(decocass_part_h_shift_w);
-	DECLARE_WRITE8_MEMBER(decocass_part_v_shift_w);
-	DECLARE_WRITE8_MEMBER(decocass_center_h_shift_space_w);
-	DECLARE_WRITE8_MEMBER(decocass_center_v_shift_w);
+	void decocass_watchdog_count_w(uint8_t data);
+	void decocass_watchdog_flip_w(uint8_t data);
+	void decocass_color_missiles_w(uint8_t data);
+	void decocass_mode_set_w(uint8_t data);
+	void decocass_color_center_bot_w(uint8_t data);
+	void decocass_back_h_shift_w(uint8_t data);
+	void decocass_back_vl_shift_w(uint8_t data);
+	void decocass_back_vr_shift_w(uint8_t data);
+	void decocass_part_h_shift_w(uint8_t data);
+	void decocass_part_v_shift_w(uint8_t data);
+	void decocass_center_h_shift_space_w(uint8_t data);
+	void decocass_center_v_shift_w(uint8_t data);
 
 	void decocass_video_state_save_init();
 
-	DECLARE_WRITE8_MEMBER(mirrorvideoram_w);
-	DECLARE_WRITE8_MEMBER(mirrorcolorram_w);
-	DECLARE_READ8_MEMBER(mirrorvideoram_r);
-	DECLARE_READ8_MEMBER(mirrorcolorram_r);
-	DECLARE_READ8_MEMBER(cdsteljn_input_r);
-	DECLARE_WRITE8_MEMBER(cdsteljn_mux_w);
+	void mirrorvideoram_w(offs_t offset, uint8_t data);
+	void mirrorcolorram_w(offs_t offset, uint8_t data);
+	uint8_t mirrorvideoram_r(offs_t offset);
+	uint8_t mirrorcolorram_r(offs_t offset);
+	uint8_t cdsteljn_input_r(offs_t offset);
+	void cdsteljn_mux_w(uint8_t data);
 	TIMER_DEVICE_CALLBACK_MEMBER(decocass_audio_nmi_gen);
-private:
+	void decocass_map(address_map &map);
+	void decocass_sound_map(address_map &map);
+
 	void draw_edge(bitmap_ind16 &bitmap, const rectangle &cliprect, int which, bool opaque);
 	void draw_special_priority(bitmap_ind16 &bitmap, bitmap_ind8 &priority, const rectangle &cliprect);
 	void draw_center(bitmap_ind16 &bitmap, const rectangle &cliprect);
@@ -216,6 +236,25 @@ public:
 		m_type1_map = nullptr;
 	}
 
+	void cprogolfj(machine_config &config);
+	void cfboy0a1(machine_config &config);
+	void cdsteljn(machine_config &config);
+	void csuperas(machine_config &config);
+	void clocknch(machine_config &config);
+	void cterrani(machine_config &config);
+	void chwy(machine_config &config);
+	void ctisland3(machine_config &config);
+	void cocean1a(machine_config &config);
+	void cluckypo(machine_config &config);
+	void cexplore(machine_config &config);
+	void cmanhat(machine_config &config);
+	void clocknchj(machine_config &config);
+	void cprogolf(machine_config &config);
+	void ctsttape(machine_config &config);
+	void castfant(machine_config &config);
+	void ctisland(machine_config &config);
+
+private:
 	DECLARE_MACHINE_RESET(ctsttape);
 	DECLARE_MACHINE_RESET(chwy);
 	DECLARE_MACHINE_RESET(cdsteljn);
@@ -234,14 +273,10 @@ public:
 	DECLARE_MACHINE_RESET(cfboy0a1); /* 12 */
 	DECLARE_MACHINE_RESET(clocknchj); /* 11 */
 
-protected:
-
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
 
-private:
-
-	DECLARE_READ8_MEMBER(decocass_type1_r);
+	uint8_t decocass_type1_r(offs_t offset);
 
 	/* dongle type #1 */
 	uint32_t    m_type1_inmap;
@@ -258,15 +293,12 @@ public:
 	{
 	}
 
-protected:
-
+private:
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
 
-private:
-
-	DECLARE_READ8_MEMBER(decocass_type2_r);
-	DECLARE_WRITE8_MEMBER(decocass_type2_w);
+	uint8_t decocass_type2_r(offs_t offset);
+	void decocass_type2_w(offs_t offset, uint8_t data);
 
 	/* dongle type #2: status of the latches */
 	int32_t     m_type2_d2_latch; /* latched 8041-STATUS D2 value */
@@ -283,6 +315,23 @@ public:
 	{
 	}
 
+
+	void csdtenis(machine_config &config);
+	void cburnrub(machine_config &config);
+	void cppicf(machine_config &config);
+	void cgraplop2(machine_config &config);
+	void cfghtice(machine_config &config);
+	void cpsoccer(machine_config &config);
+	void cnightst(machine_config &config);
+	void cprobowl(machine_config &config);
+	void cskater(machine_config &config);
+	void cbtime(machine_config &config);
+	void cgraplop(machine_config &config);
+	void clapapa(machine_config &config);
+	void cfishing(machine_config &config);
+	void czeroize(machine_config &config);
+
+private:
 	DECLARE_MACHINE_RESET(cfishing);
 	DECLARE_MACHINE_RESET(cbtime);
 	DECLARE_MACHINE_RESET(cburnrub);
@@ -298,15 +347,11 @@ public:
 	DECLARE_MACHINE_RESET(cppicf);
 	DECLARE_MACHINE_RESET(cfghtice);
 
-protected:
-
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
 
-private:
-
-	DECLARE_READ8_MEMBER(decocass_type3_r);
-	DECLARE_WRITE8_MEMBER(decocass_type3_w);
+	uint8_t decocass_type3_r(offs_t offset);
+	void decocass_type3_w(offs_t offset, uint8_t data);
 
 	/* dongle type #3: status and patches */
 	int32_t     m_type3_ctrs;     /* 12 bit counter stage */
@@ -325,15 +370,13 @@ public:
 	{
 	}
 
-protected:
+private:
 
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
 
-private:
-
-	DECLARE_READ8_MEMBER(decocass_type4_r);
-	DECLARE_WRITE8_MEMBER(decocass_type4_w);
+	uint8_t decocass_type4_r(offs_t offset);
+	void decocass_type4_w(offs_t offset, uint8_t data);
 
 	/* dongle type #4: status */
 	int32_t     m_type4_ctrs;     /* latched PROM address (E5x0 LSB, E5x1 MSB) */
@@ -349,15 +392,13 @@ public:
 	{
 	}
 
-protected:
+private:
 
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
 
-private:
-
-	DECLARE_READ8_MEMBER(decocass_type5_r);
-	DECLARE_WRITE8_MEMBER(decocass_type5_w);
+	uint8_t decocass_type5_r(offs_t offset);
+	void decocass_type5_w(offs_t offset, uint8_t data);
 
 	/* dongle type #5: status */
 	int32_t     m_type5_latch;        /* latched enable PROM (1100xxxx written to E5x1) */
@@ -372,13 +413,12 @@ public:
 	{
 	}
 
-protected:
+private:
 
 	//virtual void machine_start() override;
 	virtual void machine_reset() override;
 
-private:
-	DECLARE_READ8_MEMBER(decocass_nodong_r);
+	uint8_t decocass_nodong_r(offs_t offset);
 };
 
 
@@ -390,18 +430,17 @@ public:
 	{
 	}
 
-protected:
+private:
 
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
 
-private:
-
-	DECLARE_READ8_MEMBER(decocass_widel_r);
-	DECLARE_WRITE8_MEMBER(decocass_widel_w);
+	uint8_t decocass_widel_r(offs_t offset);
+	void decocass_widel_w(offs_t offset, uint8_t data);
 
 	/* dongle type widel: status */
 	int32_t     m_widel_ctrs;     /* latched PROM address (E5x0 LSB, E5x1 MSB) */
 	int32_t     m_widel_latch;        /* latched enable PROM (1100xxxx written to E5x1) */
 };
 
+#endif // MAME_INCLUDES_DECOCASS_H

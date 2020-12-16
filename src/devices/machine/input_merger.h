@@ -15,27 +15,6 @@
 #pragma once
 
 
-
-//**************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_INPUT_MERGER_ANY_HIGH(_tag) \
-	MCFG_DEVICE_ADD(_tag, INPUT_MERGER_ANY_HIGH, 0)
-
-#define MCFG_INPUT_MERGER_ALL_HIGH(_tag) \
-	MCFG_DEVICE_ADD(_tag, INPUT_MERGER_ALL_HIGH, 0)
-
-#define MCFG_INPUT_MERGER_ANY_LOW(_tag) \
-	MCFG_DEVICE_ADD(_tag, INPUT_MERGER_ANY_LOW, 0)
-
-#define MCFG_INPUT_MERGER_ALL_LOW(_tag) \
-	MCFG_DEVICE_ADD(_tag, INPUT_MERGER_ALL_LOW, 0)
-
-#define MCFG_INPUT_MERGER_OUTPUT_HANDLER(_devcb) \
-	devcb = &input_merger_device::set_output_handler(*device, DEVCB_##_devcb);
-
-
 //**************************************************************************
 //  TYPE DEFINITIONS
 //**************************************************************************
@@ -44,13 +23,12 @@ class input_merger_device : public device_t
 {
 public:
 	// callback
-	template <class Object> static devcb_base &set_output_handler(device_t &device, Object &&cb)
-	{ return downcast<input_merger_device &>(device).m_output_handler.set_callback(std::forward<Object>(cb)); }
+	auto output_handler() { return m_output_handler.bind(); }
 
 	// input lines
 	template <unsigned Bit> DECLARE_WRITE_LINE_MEMBER(in_w) { static_assert(Bit < 32, "invalid bit"); machine().scheduler().synchronize(timer_expired_delegate(FUNC(input_merger_device::update_state), this), (Bit << 1) | (state ? 1U : 0U)); }
-	template <unsigned Bit> DECLARE_WRITE8_MEMBER(in_set) { in_w<Bit>(1); }
-	template <unsigned Bit> DECLARE_WRITE8_MEMBER(in_clear) { in_w<Bit>(0); }
+	template <unsigned Bit> void in_set(u8 data) { in_w<Bit>(1); }
+	template <unsigned Bit> void in_clear(u8 data) { in_w<Bit>(0); }
 
 protected:
 	// constructor/destructor
@@ -81,28 +59,28 @@ protected:
 class input_merger_any_high_device : public input_merger_device
 {
 public:
-	input_merger_any_high_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+	input_merger_any_high_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock = 0);
 };
 
 
 class input_merger_all_high_device : public input_merger_device
 {
 public:
-	input_merger_all_high_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+	input_merger_all_high_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock = 0);
 };
 
 
 class input_merger_any_low_device : public input_merger_device
 {
 public:
-	input_merger_any_low_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+	input_merger_any_low_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock = 0);
 };
 
 
 class input_merger_all_low_device : public input_merger_device
 {
 public:
-	input_merger_all_low_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+	input_merger_all_low_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock = 0);
 };
 
 

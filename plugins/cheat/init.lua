@@ -37,6 +37,10 @@
 --     "varname": "tag",
 --     ...
 --   },
+--   "share": {
+--     "varname": "tag",
+--     ...
+--   },
 --   "script": {
 --     "on|off|run|change": "script",
 --      ...
@@ -92,9 +96,13 @@ function cheat.startplugin()
 		local newcheats = {}
 		local file = emu.file(manager:machine():options().entries.cheatpath:value():gsub("([^;]+)", "%1;%1/cheat") , 1)
 		if emu.softname() ~= "" then
-			for name, image in pairs(manager:machine().images) do
-				if image:exists() and image:software_list_name() ~= "" then
-					filename = image:software_list_name() .. "/" .. emu.softname()
+			if emu.softname():find(":") then
+				filename = emu.softname():gsub(":", "/")
+			else
+				for name, image in pairs(manager:machine().images) do
+					if image:exists() and image:software_list_name() ~= "" then
+						filename = image:software_list_name() .. "/" .. emu.softname()
+					end
 				end
 			end
 		end
@@ -178,7 +186,7 @@ function cheat.startplugin()
 	end
 
 	local function cheat_error(cheat, msg)
-		emu.print_verbose("error cheat script error: \"" .. cheat.desc .. "\" " .. msg)
+		emu.print_error("error cheat script error: \"" .. cheat.desc .. "\" " .. msg)
 		cheat.desc = cheat.desc .. " error"
 		cheat.script = nil
 		cheat.enabled = nil
@@ -383,6 +391,7 @@ function cheat.startplugin()
 					time = time,
 					input_trans = input_trans,
 					input_run = function(list) input_run(cheat, list) end,
+					os = { time = os.time, date = os.date, difftime = os.difftime },
 					table =
 					{ insert = table.insert,
 						  remove = table.remove } }
@@ -477,6 +486,16 @@ function cheat.startplugin()
 				cheat.cheat_env[name] = emu.item(ram.items["0/m_pointer"])
 			end
 		end
+		if cheat.share then
+			for name, tag in pairs(cheat.share) do
+				local share = manager:machine():memory().shares[tag]
+				if not share then
+					cheat_error(cheat, "missing share " .. share)
+					return
+				end
+				cheat.cheat_env[name] = share
+			end
+		end
 		local param = cheat.parameter
 		if not param then
 			return
@@ -517,9 +536,26 @@ function cheat.startplugin()
 				manager:machine():video():frame_update(true)
 				input:seq_poll_start("switch")
 				local time = os.clock()
-				while (not input:seq_poll()) and (os.clock() < time + 1) do end
-				cheat.hotkeys = {pressed = false, keys = input:seq_poll_final()}
-				manager:machine():popmessage()
+				local clearmsg = true
+				while (not input:seq_poll()) and (input.seq_poll_modified() or (os.clock() < time + 1)) do
+					if input:seq_poll_modified() then
+						if not input:seq_poll_valid() then
+							manager:machine():popmessage(_("Invalid sequence entered"))
+							clearmsg = false
+							break
+						end
+						manager:machine():popmessage(input:seq_name(input:seq_poll_sequence()))
+						manager:machine():video():frame_update(true)
+					end
+				end
+				if input:seq_poll_valid() then
+					cheat.hotkeys = {pressed = false, keys = input:seq_poll_final()}
+				else
+					cheat.hotkeys = nil
+				end
+				if clearmsg then
+					manager:machine():popmessage()
+				end
 				manager:machine():video():frame_update(true)
 			end
 

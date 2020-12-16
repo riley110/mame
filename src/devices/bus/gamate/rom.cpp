@@ -77,11 +77,11 @@ void gamate_rom_4in1_device::device_reset()
  -------------------------------------------------*/
 
 
-READ8_MEMBER(gamate_rom_plain_device::read_cart)
+uint8_t gamate_rom_plain_device::read_cart(offs_t offset)
 {
 	if (m_protection->is_protection_passed())
 	{
-		return read_rom(space, offset, mem_mask);
+		return read_rom(offset);
 	}
 	else
 	{
@@ -91,12 +91,12 @@ READ8_MEMBER(gamate_rom_plain_device::read_cart)
 	return 0xff;
 }
 
-READ8_MEMBER(gamate_rom_plain_device::read_rom)
+uint8_t gamate_rom_plain_device::read_rom(offs_t offset)
 {
 	return m_rom[offset & (m_rom_size-1)];
 }
 
-READ8_MEMBER(gamate_rom_banked_device::read_rom)
+uint8_t gamate_rom_banked_device::read_rom(offs_t offset)
 {
 	if (offset < 0x4000)
 	{
@@ -110,7 +110,7 @@ READ8_MEMBER(gamate_rom_banked_device::read_rom)
 	return 0xff;
 }
 
-READ8_MEMBER(gamate_rom_4in1_device::read_rom)
+uint8_t gamate_rom_4in1_device::read_rom(offs_t offset)
 {
 	if (offset < 0x4000)
 	{
@@ -122,11 +122,11 @@ READ8_MEMBER(gamate_rom_4in1_device::read_rom)
 	}
 }
 
-WRITE8_MEMBER(gamate_rom_plain_device::write_cart)
+void gamate_rom_plain_device::write_cart(offs_t offset, uint8_t data)
 {
 	if (m_protection->is_protection_passed())
 	{
-		write_rom(space, offset, data, mem_mask);
+		write_rom(offset, data);
 	}
 	else
 	{
@@ -134,13 +134,13 @@ WRITE8_MEMBER(gamate_rom_plain_device::write_cart)
 	}
 }
 
-WRITE8_MEMBER(gamate_rom_plain_device::write_rom)
+void gamate_rom_plain_device::write_rom(offs_t offset, uint8_t data)
 {
 	// shouldn't be any write on an unbanked game
 	logerror("gamate_rom_plain_device::write_rom %04x %02x\n", offset, data);
 }
 
-WRITE8_MEMBER(gamate_rom_banked_device::write_rom)
+void gamate_rom_banked_device::write_rom(offs_t offset, uint8_t data)
 {
 	if (offset == 0x6000)
 	{
@@ -152,7 +152,7 @@ WRITE8_MEMBER(gamate_rom_banked_device::write_rom)
 	}
 }
 
-WRITE8_MEMBER(gamate_rom_4in1_device::write_rom)
+void gamate_rom_4in1_device::write_rom(offs_t offset, uint8_t data)
 {
 	if (offset == 0x2000)
 	{
@@ -168,17 +168,19 @@ WRITE8_MEMBER(gamate_rom_4in1_device::write_rom)
 	}
 }
 
-MACHINE_CONFIG_MEMBER( gamate_rom_plain_device::device_add_mconfig )
-	MCFG_DEVICE_ADD("protection", GAMATE_PROT, 0)
-MACHINE_CONFIG_END
+void gamate_rom_plain_device::device_add_mconfig(machine_config &config)
+{
+	GAMATE_PROT(config, m_protection, 0);
+}
 
 
 /*-------------------------------------------------
  slot interface
  -------------------------------------------------*/
 
-SLOT_INTERFACE_START(gamate_cart)
-	SLOT_INTERFACE_INTERNAL("plain",       GAMATE_ROM_PLAIN)
-	SLOT_INTERFACE_INTERNAL("banked",      GAMATE_ROM_BANKED)
-	SLOT_INTERFACE_INTERNAL("4in1",        GAMATE_ROM_4IN1)
-SLOT_INTERFACE_END
+void gamate_cart(device_slot_interface &device)
+{
+	device.option_add_internal("plain",       GAMATE_ROM_PLAIN);
+	device.option_add_internal("banked",      GAMATE_ROM_BANKED);
+	device.option_add_internal("4in1",        GAMATE_ROM_4IN1);
+}

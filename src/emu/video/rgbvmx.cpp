@@ -2,15 +2,16 @@
 // copyright-holders:Vas Crabb, Ryan Holtz
 /***************************************************************************
 
-    rgbsse.c
+    rgbvmx.cpp
 
     VMX/Altivec optimised RGB utilities.
 
 ***************************************************************************/
 
+#include "emu.h"
+
 #if defined(__ALTIVEC__)
 
-#include "emu.h"
 #include "rgbutil.h"
 
 /***************************************************************************

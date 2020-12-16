@@ -195,29 +195,31 @@ ROM_END
 //  ADDRESS_MAP
 //-------------------------------------------------
 
-static ADDRESS_MAP_START( lk201_map, AS_PROGRAM, 8, lk201_device )
-	AM_RANGE(0x0000, 0x0002) AM_READWRITE(ports_r, ports_w)
-	AM_RANGE(0x0004, 0x0006) AM_READWRITE(ddr_r, ddr_w)
-	AM_RANGE(0x000a, 0x000c) AM_READWRITE(spi_r, spi_w)
-	AM_RANGE(0x000d, 0x0011) AM_READWRITE(sci_r, sci_w)
-	AM_RANGE(0x0012, 0x001b) AM_READWRITE(timer_r, timer_w)
-	AM_RANGE(0x0050, 0x00ff) AM_RAM
-	AM_RANGE(0x0100, 0x1fff) AM_ROM AM_REGION(LK201_CPU_TAG, 0x100)
-ADDRESS_MAP_END
+void lk201_device::lk201_map(address_map &map)
+{
+	map(0x0000, 0x0002).rw(FUNC(lk201_device::ports_r), FUNC(lk201_device::ports_w));
+	map(0x0004, 0x0006).rw(FUNC(lk201_device::ddr_r), FUNC(lk201_device::ddr_w));
+	map(0x000a, 0x000c).rw(FUNC(lk201_device::spi_r), FUNC(lk201_device::spi_w));
+	map(0x000d, 0x0011).rw(FUNC(lk201_device::sci_r), FUNC(lk201_device::sci_w));
+	map(0x0012, 0x001b).rw(FUNC(lk201_device::timer_r), FUNC(lk201_device::timer_w));
+	map(0x0050, 0x00ff).ram();
+	map(0x0100, 0x1fff).rom().region(LK201_CPU_TAG, 0x100);
+}
 
 
 //-------------------------------------------------
 //  device_add_mconfig - add device configuration
 //-------------------------------------------------
 
-MACHINE_CONFIG_MEMBER( lk201_device::device_add_mconfig )
-	MCFG_CPU_ADD(LK201_CPU_TAG, M68HC05EG, XTAL_4MHz) // actually 68HC05C4, clock verified by Lord_Nightmare
-	MCFG_CPU_PROGRAM_MAP(lk201_map)
+void lk201_device::device_add_mconfig(machine_config &config)
+{
+	M68HC05EG(config, m_maincpu, XTAL(4'000'000)); // actually 68HC05C4, clock verified by Lord_Nightmare
+	m_maincpu->set_addrmap(AS_PROGRAM, &lk201_device::lk201_map);
 
-	MCFG_SPEAKER_STANDARD_MONO("mono")
-	MCFG_SOUND_ADD(LK201_SPK_TAG, BEEP, 2000) // clocked by a 555 timer at E8, the volume of the beep is controllable by: (8051 model) P2.0 thru P2.3, or (6805 model) the upper 4 bits of the LED data latch
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.50)
-MACHINE_CONFIG_END
+	SPEAKER(config, "mono").front_center();
+	BEEP(config, m_speaker, 2000); // clocked by a 555 timer at E8, the volume of the beep is controllable by: (8051 model) P2.0 thru P2.3, or (6805 model) the upper 4 bits of the LED data latch
+	m_speaker->add_route(ALL_OUTPUTS, "mono", 0.50);
+}
 
 const tiny_rom_entry *lk201_device::device_rom_region() const
 {
@@ -426,20 +428,20 @@ N/C = switch present, but officially unused?
 	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_NAME("Left") PORT_CODE(KEYCODE_LEFT) PORT_CHAR(UCHAR_MAMEKEY(LEFT)) // B16
 	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_NAME("Return") PORT_CODE(KEYCODE_ENTER) PORT_CHAR(13) // C13
 	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_NAME("]") PORT_CODE(KEYCODE_CLOSEBRACE) PORT_CHAR(']') PORT_CHAR('}') // D12
-	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_NAME("Select") PORT_CODE(KEYCODE_DEL) PORT_CHAR(UCHAR_MAMEKEY(DEL)) // D16
+	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_NAME("Select") PORT_CODE(KEYCODE_DEL) PORT_CHAR(UCHAR_MAMEKEY(END)) // D16
 	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_NAME("Help (F15)") PORT_CODE(KEYCODE_RALT) PORT_CHAR(UCHAR_MAMEKEY(RALT)) // G15
 	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_NAME("=") PORT_CODE(KEYCODE_EQUALS) PORT_CHAR('=') PORT_CHAR('+') // E12
-	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_NAME("Find") PORT_CODE(KEYCODE_INSERT) PORT_CHAR(UCHAR_MAMEKEY(INSERT)) // E16
+	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_NAME("Find") PORT_CODE(KEYCODE_INSERT) PORT_CHAR(UCHAR_MAMEKEY(HOME)) // E16
 
 	PORT_START("KBD13") // Row P3-2
 	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_UNUSED ) // A17, exists but no key above this position (below the 'Down Arrow')
 	PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNUSED ) // B13, exists but no key above this position (right of right shift, 'whoami' or 'linefeed' key on decwriter?)
 	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_NAME("'") PORT_CODE(KEYCODE_QUOTE) PORT_CHAR('\'') PORT_CHAR('"') // C11
 	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_NAME("[") PORT_CODE(KEYCODE_OPENBRACE) PORT_CHAR('[') PORT_CHAR('{') // D11
-	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_NAME("Previous [^]") PORT_CODE(KEYCODE_END) PORT_CHAR(UCHAR_MAMEKEY(END)) // D17
+	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_NAME("Previous [^]") PORT_CODE(KEYCODE_END) PORT_CHAR(UCHAR_MAMEKEY(PGUP)) // D17
 	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_NAME("Do (F16) [Ausfuehren]") PORT_CODE(KEYCODE_RCONTROL) PORT_CHAR(UCHAR_MAMEKEY(RCONTROL)) // G16
 	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_NAME("-") PORT_CODE(KEYCODE_MINUS) PORT_CHAR('-') PORT_CHAR('_') // E11
-	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_NAME("Insert Here") PORT_CODE(KEYCODE_HOME) PORT_CHAR(UCHAR_MAMEKEY(HOME)) // E17
+	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_NAME("Insert Here") PORT_CODE(KEYCODE_HOME) PORT_CHAR(UCHAR_MAMEKEY(INSERT)) // E17
 
 	PORT_START("KBD14") // Row P3-4
 	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_NAME("Num 0") PORT_CODE(KEYCODE_0_PAD) PORT_CHAR(UCHAR_MAMEKEY(0_PAD)) // A20
@@ -447,7 +449,7 @@ N/C = switch present, but officially unused?
 	PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_NAME("Num 4") PORT_CODE(KEYCODE_4_PAD) PORT_CHAR(UCHAR_MAMEKEY(4_PAD)) // C20
 	PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_NAME("Num 7") PORT_CODE(KEYCODE_7_PAD) PORT_CHAR(UCHAR_MAMEKEY(7_PAD)) // D20
 	PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_NAME("Up") PORT_CODE(KEYCODE_UP) PORT_CHAR(UCHAR_MAMEKEY(UP)) // C17
-	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_NAME("Remove") PORT_CODE(KEYCODE_PGUP) PORT_CHAR(UCHAR_MAMEKEY(PGUP)) // E18
+	PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_NAME("Remove") PORT_CODE(KEYCODE_PGUP) PORT_CHAR(UCHAR_MAMEKEY(DEL)) // E18
 	PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_NAME("Next [v]") PORT_CODE(KEYCODE_PGDN) PORT_CHAR(UCHAR_MAMEKEY(PGDN)) // D18
 	PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD ) PORT_NAME("PF1") PORT_CODE(KEYCODE_NUMLOCK) PORT_CHAR(UCHAR_MAMEKEY(NUMLOCK)) // E20
 
@@ -628,7 +630,7 @@ void lk201_device::update_interrupts()
 	}
 }
 
-READ8_MEMBER( lk201_device::timer_r )
+uint8_t lk201_device::timer_r(offs_t offset)
 {
 	static uint16_t count;
 
@@ -653,7 +655,7 @@ READ8_MEMBER( lk201_device::timer_r )
 	return ret;
 }
 
-WRITE8_MEMBER( lk201_device::timer_w )
+void lk201_device::timer_w(offs_t offset, uint8_t data)
 {
 	static uint16_t count;
 	static int save_tsr;
@@ -677,21 +679,21 @@ WRITE8_MEMBER( lk201_device::timer_w )
 	}
 }
 
-READ8_MEMBER( lk201_device::ddr_r )
+uint8_t lk201_device::ddr_r(offs_t offset)
 {
 	return ddrs[offset];
 }
 
-WRITE8_MEMBER( lk201_device::ddr_w )
+void lk201_device::ddr_w(offs_t offset, uint8_t data)
 {
 //  printf("%02x to PORT %c DDR (PC=%x)\n", data, 'A' + offset, m_maincpu->pc());
 
 	uint8_t olddata = ddrs[offset];
 	ddrs[offset] = data;
-	send_port(space, offset, ports[offset] & olddata);
+	send_port(offset, ports[offset] & olddata);
 }
 
-READ8_MEMBER( lk201_device::ports_r )
+uint8_t lk201_device::ports_r(offs_t offset)
 {
 	uint8_t incoming = 0;
 
@@ -705,15 +707,15 @@ READ8_MEMBER( lk201_device::ports_r )
 	return incoming;
 }
 
-WRITE8_MEMBER( lk201_device::ports_w )
+void lk201_device::ports_w(offs_t offset, uint8_t data)
 {
 	uint8_t olddata = ports[offset];
 	ports[offset] = data;            //   "port writes are independent of DDRC"
-	send_port(space, offset, olddata & ddrs[offset]);
+	send_port(offset, olddata & ddrs[offset]);
 //  printf("\nPORT %c write %02x (OLD = %02x) (DDR = %02x) (PC=%x)\n", 'A' + offset, data, olddata, ddrs[offset], m_maincpu->pc());
 }
 
-void lk201_device::send_port(address_space &space, uint8_t offset, uint8_t olddata)
+void lk201_device::send_port(uint8_t offset, uint8_t olddata)
 {
 	uint8_t porta = ports[0] & ddrs[0];
 	uint8_t portb = ports[1] & ddrs[1];
@@ -806,7 +808,7 @@ void lk201_device::send_port(address_space &space, uint8_t offset, uint8_t oldda
 		} // outer switch
 }
 
-READ8_MEMBER( lk201_device::sci_r )
+uint8_t lk201_device::sci_r(offs_t offset)
 {
 	uint8_t incoming = 0;
 
@@ -839,7 +841,7 @@ READ8_MEMBER( lk201_device::sci_r )
 	return incoming;
 }
 
-WRITE8_MEMBER( lk201_device::sci_w )
+void lk201_device::sci_w(offs_t offset, uint8_t data)
 {
 	switch (offset)
 	{
@@ -869,7 +871,7 @@ WRITE8_MEMBER( lk201_device::sci_w )
 //  printf("SCI %02x to %x (PC=%x)\n", data, offset, m_maincpu->pc());
 }
 
-READ8_MEMBER( lk201_device::spi_r )
+uint8_t lk201_device::spi_r(offs_t offset)
 {
 	uint8_t incoming = 0;
 
@@ -893,7 +895,7 @@ READ8_MEMBER( lk201_device::spi_r )
 	return incoming;
 }
 
-WRITE8_MEMBER( lk201_device::spi_w )
+void lk201_device::spi_w(offs_t offset, uint8_t data)
 {
 	switch (offset)
 	{

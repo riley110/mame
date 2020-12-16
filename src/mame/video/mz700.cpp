@@ -32,7 +32,7 @@ uint32_t mz_state::screen_update_mz700(screen_device &screen, bitmap_ind16 &bitm
 				if (col != oldcol)
 				{
 					oldcol = col;
-					col = BITSWAP8(col, 7, 3, 4, 6, 5, 0, 2, 1); // turn BRG into RGB
+					col = bitswap<8>(col, 7, 3, 4, 6, 5, 0, 2, 1); // turn BRG into RGB
 					bg = col & 7;
 					fg = (col >> 3) & 7;
 				}
@@ -98,7 +98,7 @@ uint32_t mz_state::screen_update_mz800(screen_device &screen, bitmap_ind16 &bitm
     CGRAM
 ***************************************************************************/
 
-WRITE8_MEMBER(mz_state::mz800_cgram_w)
+void mz_state::mz800_cgram_w(offs_t offset, uint8_t data)
 {
 	m_cgram[offset] = data;
 }

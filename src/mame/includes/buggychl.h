@@ -3,6 +3,10 @@
 /*
     buggychl
 */
+#ifndef MAME_INCLUDES_BUGGYCHL_H
+#define MAME_INCLUDES_BUGGYCHL_H
+
+#pragma once
 
 #include "machine/taito68705interface.h"
 #include "machine/input_merger.h"
@@ -10,13 +14,14 @@
 #include "sound/msm5232.h"
 #include "sound/ta7630.h"
 #include "sound/ay8910.h"
+#include "emupal.h"
 #include "screen.h"
 
 class buggychl_state : public driver_device
 {
 public:
-	buggychl_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
+	buggychl_state(const machine_config &mconfig, device_type type, const char *tag) :
+		driver_device(mconfig, type, tag),
 		m_charram(*this, "charram"),
 		m_videoram(*this, "videoram"),
 		m_spriteram(*this, "spriteram"),
@@ -35,8 +40,9 @@ public:
 		m_soundnmi(*this, "soundnmi"),
 		m_soundlatch(*this, "soundlatch"),
 		m_soundlatch2(*this, "soundlatch2"),
-		m_pedal_input(*this, "PEDAL")
-		{ }
+		m_pedal_input(*this, "PEDAL"),
+		m_led(*this, "led%u", 0U)
+	{ }
 
 	/* memory pointers */
 	required_shared_ptr<uint8_t> m_charram;
@@ -61,28 +67,33 @@ public:
 	required_device<generic_latch_8_device> m_soundlatch2;
 	required_ioport m_pedal_input;
 
-	DECLARE_WRITE8_MEMBER(bankswitch_w);
-	DECLARE_WRITE8_MEMBER(sound_enable_w);
-	DECLARE_READ8_MEMBER(mcu_status_r);
-	DECLARE_READ8_MEMBER(sound_status_main_r);
-	DECLARE_READ8_MEMBER(sound_status_sound_r);
-	DECLARE_WRITE8_MEMBER(buggychl_chargen_w);
-	DECLARE_WRITE8_MEMBER(buggychl_sprite_lookup_bank_w);
-	DECLARE_WRITE8_MEMBER(buggychl_sprite_lookup_w);
-	DECLARE_WRITE8_MEMBER(buggychl_ctrl_w);
-	DECLARE_WRITE8_MEMBER(buggychl_bg_scrollx_w);
-	DECLARE_WRITE8_MEMBER(ta7630_volbal_ay1_w);
-	DECLARE_WRITE8_MEMBER(port_b_0_w);
-	DECLARE_WRITE8_MEMBER(ta7630_volbal_ay2_w);
-	DECLARE_WRITE8_MEMBER(port_b_1_w);
-	DECLARE_WRITE8_MEMBER(ta7630_volbal_msm_w);
+	output_finder<1> m_led;
+
+	void bankswitch_w(uint8_t data);
+	void sound_enable_w(uint8_t data);
+	uint8_t mcu_status_r();
+	uint8_t sound_status_main_r();
+	uint8_t sound_status_sound_r();
+	void buggychl_chargen_w(offs_t offset, uint8_t data);
+	void buggychl_sprite_lookup_bank_w(uint8_t data);
+	void buggychl_sprite_lookup_w(offs_t offset, uint8_t data);
+	void buggychl_ctrl_w(uint8_t data);
+	void buggychl_bg_scrollx_w(uint8_t data);
+	void ta7630_volbal_ay1_w(uint8_t data);
+	void port_b_0_w(uint8_t data);
+	void ta7630_volbal_ay2_w(uint8_t data);
+	void port_b_1_w(uint8_t data);
+	void ta7630_volbal_msm_w(uint8_t data);
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
 	virtual void video_start() override;
-	DECLARE_PALETTE_INIT(buggychl);
+	void buggychl_palette(palette_device &palette) const;
 	uint32_t screen_update_buggychl(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 	DECLARE_CUSTOM_INPUT_MEMBER( pedal_in_r );
 
+	void buggychl(machine_config &config);
+	void buggychl_map(address_map &map);
+	void sound_map(address_map &map);
 private:
 	void draw_sky( bitmap_ind16 &bitmap, const rectangle &cliprect );
 	void draw_bg( bitmap_ind16 &bitmap, const rectangle &cliprect );
@@ -99,3 +110,5 @@ private:
 	bool        m_sound_irq_enable;
 	uint8_t       m_sprite_lookup[0x2000];
 };
+
+#endif // MAME_INCLUDES_BUGGYCHL_H

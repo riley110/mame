@@ -6,16 +6,6 @@
 #pragma once
 
 //**************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_NAMCO_63701X_ADD(_tag, _clock) \
-	MCFG_DEVICE_ADD(_tag, NAMCO_63701X, _clock)
-#define MCFG_NAMCO_63701X_REPLACE(_tag, _clock) \
-	MCFG_DEVICE_REPLACE(_tag, NAMCO_63701X, _clock)
-
-
-//**************************************************************************
 //  TYPE DEFINITIONS
 //**************************************************************************
 
@@ -28,7 +18,7 @@ class namco_63701x_device : public device_t,
 public:
 	namco_63701x_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	DECLARE_WRITE8_MEMBER(namco_63701x_w);
+	void write(offs_t offset, uint8_t data);
 
 protected:
 	// device-level overrides

@@ -6,6 +6,9 @@
 
 ***************************************************************************/
 
+#include "emupal.h"
+#include "tilemap.h"
+
 class battlex_state : public driver_device
 {
 public:
@@ -28,14 +31,14 @@ public:
 	uint8_t m_scroll_lsb;
 	uint8_t m_scroll_msb;
 	uint8_t m_starfield_enabled;
-	DECLARE_WRITE8_MEMBER(battlex_palette_w);
-	DECLARE_WRITE8_MEMBER(battlex_scroll_x_lsb_w);
-	DECLARE_WRITE8_MEMBER(battlex_scroll_x_msb_w);
-	DECLARE_WRITE8_MEMBER(battlex_scroll_starfield_w);
-	DECLARE_WRITE8_MEMBER(battlex_videoram_w);
-	DECLARE_WRITE8_MEMBER(battlex_flipscreen_w);
+	void battlex_palette_w(offs_t offset, uint8_t data);
+	void battlex_scroll_x_lsb_w(uint8_t data);
+	void battlex_scroll_x_msb_w(uint8_t data);
+	void battlex_scroll_starfield_w(uint8_t data);
+	void battlex_videoram_w(offs_t offset, uint8_t data);
+	void battlex_flipscreen_w(uint8_t data);
 	DECLARE_CUSTOM_INPUT_MEMBER(battlex_in0_b4_r);
-	DECLARE_DRIVER_INIT(battlex);
+	void init_battlex();
 	TILE_GET_INFO_MEMBER(get_bg_tile_info);
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
@@ -49,4 +52,9 @@ public:
 
 	DECLARE_VIDEO_START(dodgeman);
 	TILE_GET_INFO_MEMBER(get_dodgeman_bg_tile_info);
+	void dodgeman(machine_config &config);
+	void battlex(machine_config &config);
+	void battlex_map(address_map &map);
+	void dodgeman_io_map(address_map &map);
+	void io_map(address_map &map);
 };

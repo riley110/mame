@@ -2,14 +2,15 @@
 // copyright-holders:Aaron Giles
 /***************************************************************************
 
-    textbuf.c
+    textbuf.cpp
 
     Debugger text buffering engine.
 
 ***************************************************************************/
 
-#include "corealloc.h"
 #include "textbuf.h"
+
+#include <new>
 
 
 
@@ -27,47 +28,53 @@
 
 struct text_buffer
 {
-	char *      buffer;
-	s32 *       lineoffs;
-	s32         bufsize;
-	s32         bufstart;
-	s32         bufend;
-	s32         linesize;
-	s32         linestart;
-	s32         lineend;
-	u32         linestartseq;
-	s32         maxwidth;
+	text_buffer(u32 bytes, u32 lines) noexcept
+		: buffer(new (std::nothrow) char [bytes])
+		, lineoffs(new (std::nothrow) s32 [lines])
+		, bufsize(buffer ? bytes : 0)
+		, linesize(lineoffs ? lines : 0)
+	{
+	}
+	~text_buffer()
+	{
+		if (buffer)
+			delete [] buffer;
+		if (lineoffs)
+			delete [] lineoffs;
+	}
+
+	char *const buffer;
+	s32 *const  lineoffs;
+	s32 const   bufsize;
+	s32         bufstart = 0;
+	s32         bufend = 0;
+	s32 const   linesize;
+	s32         linestart = 0;
+	s32         lineend = 0;
+	u32         linestartseq = 0;
+	s32         maxwidth = 0;
+
+	/*-------------------------------------------------
+	    buffer_used - return the number of bytes
+	    currently held in the buffer
+	-------------------------------------------------*/
+
+	s32 buffer_used() const noexcept
+	{
+		s32 const used(bufend - bufstart);
+		return (used < 0) ? (used + bufsize) : used;
+	}
+
+	/*-------------------------------------------------
+	    buffer_space - return the number of bytes
+	    available in the buffer
+	-------------------------------------------------*/
+
+	s32 buffer_space() const noexcept
+	{
+		return bufsize - buffer_used();
+	}
 };
-
-
-
-/***************************************************************************
-    INLINE FUNCTIONS
-***************************************************************************/
-
-/*-------------------------------------------------
-    buffer_used - return the number of bytes
-    currently held in the buffer
--------------------------------------------------*/
-
-static inline s32 buffer_used(text_buffer *text)
-{
-	s32 used = text->bufend - text->bufstart;
-	if (used < 0)
-		used += text->bufsize;
-	return used;
-}
-
-
-/*-------------------------------------------------
-    buffer_space - return the number of bytes
-    available in the buffer
--------------------------------------------------*/
-
-static inline s32 buffer_space(text_buffer *text)
-{
-	return text->bufsize - buffer_used(text);
-}
 
 
 
@@ -83,33 +90,19 @@ static inline s32 buffer_space(text_buffer *text)
 
 text_buffer *text_buffer_alloc(u32 bytes, u32 lines)
 {
-	text_buffer *text;
+	// allocate memory for the text buffer object
+	text_buffer *const text(new (std::nothrow) text_buffer(bytes, lines));
 
-	/* allocate memory for the text buffer object */
-	text = global_alloc_nothrow(text_buffer);
 	if (!text)
 		return nullptr;
 
-	/* allocate memory for the buffer itself */
-	text->buffer = global_alloc_array_nothrow(char, bytes);
-	if (!text->buffer)
+	if (!text->buffer || !text->lineoffs)
 	{
-		global_free(text);
+		delete text;
 		return nullptr;
 	}
 
-	/* allocate memory for the lines array */
-	text->lineoffs = global_alloc_array_nothrow(s32, lines);
-	if (!text->lineoffs)
-	{
-		global_free_array(text->buffer);
-		global_free(text);
-		return nullptr;
-	}
-
-	/* initialize the buffer description */
-	text->bufsize = bytes;
-	text->linesize = lines;
+	// initialize the buffer description
 	text_buffer_clear(text);
 
 	return text;
@@ -123,11 +116,7 @@ text_buffer *text_buffer_alloc(u32 bytes, u32 lines)
 
 void text_buffer_free(text_buffer *text)
 {
-	if (text->lineoffs)
-		global_free_array(text->lineoffs);
-	if (text->buffer)
-		global_free_array(text->buffer);
-	global_free(text);
+	delete text;
 }
 
 
@@ -186,7 +175,7 @@ void text_buffer_print_wrap(text_buffer *text, const char *data, int wrapcol)
 	needed_space = s32(strlen(data)) + MAX_LINE_LENGTH;
 
 	/* make space in the buffer if we need to */
-	while (buffer_space(text) < needed_space && text->linestart != text->lineend)
+	while (text->buffer_space() < needed_space && text->linestart != text->lineend)
 	{
 		text->linestartseq++;
 		if (++text->linestart >= text->linesize)
@@ -321,4 +310,67 @@ const char *text_buffer_get_seqnum_line(text_buffer *text, u32 seqnum)
 	if (index >= numlines)
 		return nullptr;
 	return &text->buffer[text->lineoffs[(text->linestart + index) % text->linesize]];
+}
+
+text_buffer_lines text_buffer_get_lines(text_buffer *text)
+{
+	return text_buffer_lines(*text);
+}
+
+/*---------------------------------------------------------------------
+    text_buffer_lines::text_buffer_line_iterator::operator*
+    Gets the line that the iterator currently points to.
+-----------------------------------------------------------------------*/
+
+text_buffer_line text_buffer_lines::text_buffer_line_iterator::operator*() const
+{
+	const char *line = &m_buffer.buffer[m_buffer.lineoffs[m_lineptr]];
+
+	auto next_lineptr = m_lineptr + 1;
+	if (next_lineptr == m_buffer.linesize)
+		next_lineptr = 0;
+
+	const char *nextline = &m_buffer.buffer[m_buffer.lineoffs[next_lineptr]];
+
+	/* -1 for the '\0' at the end of line */
+
+	ptrdiff_t difference = (nextline - line) - 1;
+
+	if (difference < 0)
+		difference += m_buffer.bufsize;
+
+	return text_buffer_line{ line, (size_t)difference };
+}
+
+/*---------------------------------------------------------------------
+    text_buffer_lines::text_buffer_line_iterator::operator++
+    Moves to the next line.
+-----------------------------------------------------------------------*/
+
+text_buffer_lines::text_buffer_line_iterator &text_buffer_lines::text_buffer_line_iterator::operator++()
+{
+	if (++m_lineptr == m_buffer.linesize)
+		m_lineptr = 0;
+
+	return *this;
+}
+
+/*------------------------------------------------------
+    text_buffer_lines::begin()
+    Returns an iterator that points to the first line.
+--------------------------------------------------------*/
+
+text_buffer_lines::iterator text_buffer_lines::begin() const
+{
+	return text_buffer_line_iterator(m_buffer, m_buffer.linestart);
+}
+
+/*-----------------------------------------------------------
+    text_buffer_lines::begin()
+    Returns an iterator that points just past the last line.
+-------------------------------------------------------------*/
+
+text_buffer_lines::iterator text_buffer_lines::end() const
+{
+	return text_buffer_line_iterator(m_buffer, m_buffer.lineend);
 }

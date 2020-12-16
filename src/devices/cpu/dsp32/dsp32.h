@@ -30,9 +30,6 @@ const int DSP32_OUTPUT_PDF  = 0x02;
 //  TYPE DEFINITIONS
 //**************************************************************************
 
-#define MCFG_DSP32C_OUTPUT_CALLBACK(_write) \
-	devcb = &dsp32c_device::set_output_pins_callback(*device, DEVCB_##_write);
-
 // ======================> dsp32c_device
 
 class dsp32c_device : public cpu_device
@@ -41,8 +38,7 @@ public:
 	// construction/destruction
 	dsp32c_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	template <class Object> static devcb_base &set_output_pins_callback(device_t &device, Object &&cb) { return downcast<dsp32c_device &>(device).m_output_pins_changed.set_callback(std::forward<Object>(cb)); }
-
+	auto out_cb() { return m_output_pins_changed.bind(); }
 
 	// public interfaces
 	void pio_w(int reg, int data);
@@ -111,9 +107,9 @@ protected:
 	virtual void device_reset() override;
 
 	// device_execute_interface overrides
-	virtual uint32_t execute_min_cycles() const override;
-	virtual uint32_t execute_max_cycles() const override;
-	virtual uint32_t execute_input_lines() const override;
+	virtual uint32_t execute_min_cycles() const noexcept override;
+	virtual uint32_t execute_max_cycles() const noexcept override;
+	virtual uint32_t execute_input_lines() const noexcept override;
 	virtual void execute_run() override;
 	virtual void execute_set_input(int inputnum, int state) override;
 
@@ -126,9 +122,7 @@ protected:
 	virtual void state_string_export(const device_state_entry &entry, std::string &str) const override;
 
 	// device_disasm_interface overrides
-	virtual uint32_t disasm_min_opcode_bytes() const override;
-	virtual uint32_t disasm_max_opcode_bytes() const override;
-	virtual offs_t disasm_disassemble(std::ostream &stream, offs_t pc, const uint8_t *oprom, const uint8_t *opram, uint32_t options) override;
+	virtual std::unique_ptr<util::disasm_interface> create_disassembler() override;
 
 	// memory accessors
 	uint32_t ROPCODE(offs_t pc);
@@ -422,8 +416,8 @@ protected:
 	int             m_icount;
 	uint8_t           m_lastpins;
 	uint32_t          m_ppc;
-	address_space * m_program;
-	direct_read_data *m_direct;
+	memory_access<24, 2, 0, ENDIANNESS_LITTLE>::cache m_cache;
+	memory_access<24, 2, 0, ENDIANNESS_LITTLE>::specific m_program;
 
 	devcb_write32 m_output_pins_changed;
 	// tables

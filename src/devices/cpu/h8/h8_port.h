@@ -16,24 +16,25 @@
 
 #include "h8.h"
 
-#define MCFG_H8_PORT_ADD( _tag, address, ddr, mask )    \
-	MCFG_DEVICE_ADD( _tag, H8_PORT, 0 ) \
-	downcast<h8_port_device *>(device)->set_info(address, ddr, mask);
-
 class h8_port_device : public device_t {
 public:
 	h8_port_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+	h8_port_device(const machine_config &mconfig, const char *tag, device_t *owner, int address, uint8_t default_ddr, uint8_t mask)
+		: h8_port_device(mconfig, tag, owner, 0)
+	{
+		set_info(address, default_ddr, mask);
+	}
 
 	void set_info(int address, uint8_t default_ddr, uint8_t mask);
 
-	DECLARE_WRITE8_MEMBER(ddr_w);
-	DECLARE_WRITE8_MEMBER(dr_w);
-	DECLARE_READ8_MEMBER(dr_r);
-	DECLARE_READ8_MEMBER(port_r);
-	DECLARE_WRITE8_MEMBER(pcr_w);
-	DECLARE_READ8_MEMBER(pcr_r);
-	DECLARE_WRITE8_MEMBER(odr_w);
-	DECLARE_READ8_MEMBER(odr_r);
+	void ddr_w(uint8_t data);
+	void dr_w(uint8_t data);
+	uint8_t dr_r();
+	uint8_t port_r();
+	void pcr_w(uint8_t data);
+	uint8_t pcr_r();
+	void odr_w(uint8_t data);
+	uint8_t odr_r();
 
 protected:
 	required_device<h8_device> cpu;

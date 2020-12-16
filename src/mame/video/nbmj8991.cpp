@@ -16,7 +16,7 @@
 
 ******************************************************************************/
 
-WRITE8_MEMBER(nbmj8991_state::palette_type1_w)
+void nbmj8991_state::palette_type1_w(offs_t offset, uint8_t data)
 {
 	int r, g, b;
 
@@ -33,7 +33,7 @@ WRITE8_MEMBER(nbmj8991_state::palette_type1_w)
 	m_palette->set_pen_color((offset >> 1), pal4bit(r), pal4bit(g), pal4bit(b));
 }
 
-WRITE8_MEMBER(nbmj8991_state::palette_type2_w)
+void nbmj8991_state::palette_type2_w(offs_t offset, uint8_t data)
 {
 	int r, g, b;
 
@@ -50,7 +50,7 @@ WRITE8_MEMBER(nbmj8991_state::palette_type2_w)
 	m_palette->set_pen_color((offset / 2), pal5bit(r), pal5bit(g), pal5bit(b));
 }
 
-WRITE8_MEMBER(nbmj8991_state::palette_type3_w)
+void nbmj8991_state::palette_type3_w(offs_t offset, uint8_t data)
 {
 	int r, g, b;
 
@@ -71,7 +71,7 @@ WRITE8_MEMBER(nbmj8991_state::palette_type3_w)
 
 
 ******************************************************************************/
-WRITE8_MEMBER(nbmj8991_state::blitter_w)
+void nbmj8991_state::blitter_w(offs_t offset, uint8_t data)
 {
 	int gfxlen = memregion("gfx1")->bytes();
 
@@ -115,12 +115,12 @@ WRITE8_MEMBER(nbmj8991_state::blitter_w)
 	}
 }
 
-READ8_MEMBER(nbmj8991_state::clut_r)
+uint8_t nbmj8991_state::clut_r(offs_t offset)
 {
 	return m_clut[offset];
 }
 
-WRITE8_MEMBER(nbmj8991_state::clut_w)
+void nbmj8991_state::clut_w(offs_t offset, uint8_t data)
 {
 	m_clut[((m_clutsel & 0x7f) * 0x10) + (offset & 0x0f)] = data;
 }
@@ -170,10 +170,10 @@ void nbmj8991_state::device_timer(emu_timer &timer, device_timer_id id, int para
 	switch (id)
 	{
 	case TIMER_BLITTER:
-		m_nb1413m3->m_busyflag = 1;
+		m_nb1413m3->busyflag_w(1);
 		break;
 	default:
-		assert_always(false, "Unknown id in nbmj8991_state::device_timer");
+		throw emu_fatalerror("Unknown id in nbmj8991_state::device_timer");
 	}
 }
 
@@ -278,7 +278,7 @@ void nbmj8991_state::gfxdraw()
 		}
 	}
 
-	m_nb1413m3->m_busyflag = 0;
+	m_nb1413m3->busyflag_w(0);
 	m_blitter_timer->adjust(attotime::from_nsec(1650) * m_nb1413m3->m_busyctr);
 }
 
@@ -313,8 +313,8 @@ void nbmj8991_state::video_start()
 	save_item(NAME(m_dispflag));
 	save_item(NAME(m_flipscreen));
 	save_item(NAME(m_clutsel));
-	save_pointer(NAME(m_videoram.get()), width * height);
-	save_pointer(NAME(m_clut.get()), 0x800);
+	save_pointer(NAME(m_videoram), width * height);
+	save_pointer(NAME(m_clut), 0x800);
 	save_item(NAME(m_flipscreen_old));
 
 	machine().save().register_postload(save_prepost_delegate(FUNC(nbmj8991_state::postload), this));

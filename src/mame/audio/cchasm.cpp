@@ -13,7 +13,7 @@
 #include "sound/ay8910.h"
 
 
-WRITE8_MEMBER(cchasm_state::reset_coin_flag_w)
+void cchasm_state::reset_coin_flag_w(uint8_t data)
 {
 	if (m_coin_flag)
 	{
@@ -31,27 +31,27 @@ INPUT_CHANGED_MEMBER(cchasm_state::set_coin_flag )
 	}
 }
 
-READ8_MEMBER(cchasm_state::coin_sound_r)
+uint8_t cchasm_state::coin_sound_r()
 {
 	uint8_t coin = (ioport("IN3")->read() >> 4) & 0x7;
 	return m_sound_flags | (m_coin_flag << 3) | coin;
 }
 
-READ8_MEMBER(cchasm_state::soundlatch2_r)
+uint8_t cchasm_state::soundlatch2_r()
 {
 	m_sound_flags &= ~0x80;
 	m_ctc->trg2(0);
-	return m_soundlatch2->read(space, offset);
+	return m_soundlatch2->read();
 }
 
-WRITE8_MEMBER(cchasm_state::soundlatch4_w)
+void cchasm_state::soundlatch4_w(uint8_t data)
 {
 	m_sound_flags |= 0x40;
-	m_soundlatch4->write(space, offset, data);
+	m_soundlatch4->write(data);
 	m_maincpu->set_input_line(1, HOLD_LINE);
 }
 
-WRITE16_MEMBER(cchasm_state::io_w)
+void cchasm_state::io_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	//static int led;
 
@@ -61,13 +61,13 @@ WRITE16_MEMBER(cchasm_state::io_w)
 		switch (offset & 0xf)
 		{
 		case 0:
-			m_soundlatch->write(space, offset, data);
+			m_soundlatch->write(data);
 			break;
 		case 1:
 			m_sound_flags |= 0x80;
-			m_soundlatch2->write(space, offset, data);
+			m_soundlatch2->write(data);
 			m_ctc->trg2(1);
-			m_audiocpu->set_input_line(INPUT_LINE_NMI, PULSE_LINE);
+			m_audiocpu->pulse_input_line(INPUT_LINE_NMI, attotime::zero);
 			break;
 		case 2:
 			//led = data;
@@ -76,15 +76,15 @@ WRITE16_MEMBER(cchasm_state::io_w)
 	}
 }
 
-READ16_MEMBER(cchasm_state::io_r)
+uint16_t cchasm_state::io_r(offs_t offset)
 {
 	switch (offset & 0xf)
 	{
 	case 0x0:
-		return m_soundlatch3->read(space, offset) << 8;
+		return m_soundlatch3->read() << 8;
 	case 0x1:
 		m_sound_flags &= ~0x40;
-		return m_soundlatch4->read(space,offset) << 8;
+		return m_soundlatch4->read() << 8;
 	case 0x2:
 		return (m_sound_flags| (ioport("IN3")->read() & 0x07) | 0x08) << 8;
 	case 0x5:

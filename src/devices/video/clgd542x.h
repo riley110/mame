@@ -12,23 +12,20 @@
 
 #include "video/pc_vga.h"
 
-MACHINE_CONFIG_EXTERN( pcvideo_cirrus_gd5428 );
-MACHINE_CONFIG_EXTERN( pcvideo_cirrus_gd5430 );
-
 class cirrus_gd5428_device :  public svga_device
 {
 public:
 	// construction/destruction
 	cirrus_gd5428_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	virtual READ8_MEMBER(port_03c0_r) override;
-	virtual WRITE8_MEMBER(port_03c0_w) override;
-	virtual READ8_MEMBER(port_03b0_r) override;
-	virtual WRITE8_MEMBER(port_03b0_w) override;
-	virtual READ8_MEMBER(port_03d0_r) override;
-	virtual WRITE8_MEMBER(port_03d0_w) override;
-	virtual READ8_MEMBER(mem_r) override;
-	virtual WRITE8_MEMBER(mem_w) override;
+	virtual uint8_t port_03c0_r(offs_t offset) override;
+	virtual void port_03c0_w(offs_t offset, uint8_t data) override;
+	virtual uint8_t port_03b0_r(offs_t offset) override;
+	virtual void port_03b0_w(offs_t offset, uint8_t data) override;
+	virtual uint8_t port_03d0_r(offs_t offset) override;
+	virtual void port_03d0_w(offs_t offset, uint8_t data) override;
+	virtual uint8_t mem_r(offs_t offset) override;
+	virtual void mem_w(offs_t offset, uint8_t data) override;
 
 	virtual uint32_t screen_update(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect) override;
 
@@ -91,6 +88,9 @@ protected:
 
 	inline uint8_t cirrus_vga_latch_write(int offs, uint8_t data);
 
+	void pcvideo_cirrus_gd5428(machine_config &config);
+	void pcvideo_cirrus_gd5430(machine_config &config);
+
 private:
 	void cirrus_define_video_mode();
 	uint8_t cirrus_seq_reg_read(uint8_t index);
@@ -117,8 +117,19 @@ protected:
 	virtual void device_start() override;
 };
 
+class cirrus_gd5446_device :  public cirrus_gd5428_device
+{
+public:
+	cirrus_gd5446_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+
+protected:
+	virtual void device_start() override;
+};
+
+
 // device type definition
 DECLARE_DEVICE_TYPE(CIRRUS_GD5428, cirrus_gd5428_device)
 DECLARE_DEVICE_TYPE(CIRRUS_GD5430, cirrus_gd5430_device)
+DECLARE_DEVICE_TYPE(CIRRUS_GD5446, cirrus_gd5446_device)
 
 #endif // MAME_VIDEO_CLGD542X_H

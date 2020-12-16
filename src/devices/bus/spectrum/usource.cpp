@@ -60,7 +60,7 @@ spectrum_usource_device::spectrum_usource_device(const machine_config &mconfig, 
 
 void spectrum_usource_device::device_start()
 {
-	m_slot = dynamic_cast<spectrum_expansion_slot_device *>(owner());
+	save_item(NAME(m_romcs));
 }
 
 
@@ -83,17 +83,20 @@ READ_LINE_MEMBER(spectrum_usource_device::romcs)
 	return m_romcs;
 }
 
-
-READ8_MEMBER(spectrum_usource_device::mreq_r)
+void spectrum_usource_device::pre_opcode_fetch(offs_t offset)
 {
-	uint8_t data;
-
-	if (!machine().side_effect_disabled() && (offset == 0x2bae))
+	if (!machine().side_effects_disabled() && (offset == 0x2bae))
 	{
 		m_romcs = !m_romcs;
 	}
+}
 
-	data = m_rom->base()[offset & 0x1fff];
+uint8_t spectrum_usource_device::mreq_r(offs_t offset)
+{
+	u8 data = 0xff;
+
+	if (m_romcs)
+		data = m_rom->base()[offset & 0x1fff];
 
 	return data;
 }

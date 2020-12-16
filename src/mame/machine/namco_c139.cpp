@@ -8,6 +8,7 @@
     TODO:
     - Make this to actually work!
     - Is RAM shared with a specific CPU other than master/slave?
+    - is this another MCU with internal ROM?
 
 ***************************************************************************/
 
@@ -28,17 +29,19 @@ DEFINE_DEVICE_TYPE(NAMCO_C139, namco_c139_device, "namco_c139", "Namco C139 Seri
 //  LIVE DEVICE
 //**************************************************************************
 
-static ADDRESS_MAP_START( data_map, AS_DATA, 16, namco_c139_device )
-	AM_RANGE(0x0000, 0x3fff) AM_RAM AM_SHARE("sharedram")
-ADDRESS_MAP_END
+void namco_c139_device::data_map(address_map &map)
+{
+	map(0x0000, 0x3fff).ram().share("sharedram");
+}
 
-DEVICE_ADDRESS_MAP_START( regs_map, 16, namco_c139_device )
-	AM_RANGE(0x00, 0x00) AM_READ(status_r) // WRITE clears flags
-	AM_RANGE(0x02, 0x02) AM_NOP // settings?
-//  AM_RANGE(0x0a, 0x0a) // WRITE tx_w
-//  AM_RANGE(0x0c, 0x0c) // READ rx_r
-//  AM_RANGE(0x0e, 0x0e) //
-ADDRESS_MAP_END
+void namco_c139_device::regs_map(address_map &map)
+{
+	map(0x00, 0x01).r(FUNC(namco_c139_device::status_r)); // WRITE clears flags
+	map(0x02, 0x03).noprw(); // settings?
+//  map(0x0a, 0x0b) // WRITE tx_w
+//  map(0x0c, 0x0d) // READ rx_r
+//  map(0x0e, 0x0f) //
+}
 
 //-------------------------------------------------
 //  namco_c139_device - constructor
@@ -47,7 +50,7 @@ ADDRESS_MAP_END
 namco_c139_device::namco_c139_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
 	: device_t(mconfig, NAMCO_C139, tag, owner, clock),
 	device_memory_interface(mconfig, *this),
-	m_space_config("data", ENDIANNESS_BIG, 16, 14, 0, *ADDRESS_MAP_NAME(data_map))
+	m_space_config("data", ENDIANNESS_BIG, 16, 14, 0, address_map_constructor(FUNC(namco_c139_device::data_map), this))
 {
 }
 
@@ -89,17 +92,17 @@ device_memory_interface::space_config_vector namco_c139_device::memory_space_con
 //  READ/WRITE HANDLERS
 //**************************************************************************
 
-READ16_MEMBER(namco_c139_device::ram_r)
+uint16_t namco_c139_device::ram_r(offs_t offset)
 {
 	return m_ram[offset];
 }
 
-WRITE16_MEMBER(namco_c139_device::ram_w)
+void namco_c139_device::ram_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	COMBINE_DATA(&m_ram[offset]);
 }
 
-READ16_MEMBER(namco_c139_device::status_r)
+uint16_t namco_c139_device::status_r()
 {
 	/*
 	 x-- RX READY or irq pending?

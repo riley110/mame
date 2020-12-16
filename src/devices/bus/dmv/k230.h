@@ -1,5 +1,6 @@
 // license:BSD-3-Clause
 // copyright-holders:Sandro Ronco
+// thanks-to:rfka01
 #ifndef MAME_BUS_DMV_K230_H
 #define MAME_BUS_DMV_K230_H
 
@@ -30,12 +31,6 @@ public:
 	// construction/destruction
 	dmv_k230_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	DECLARE_READ8_MEMBER(io_r);
-	DECLARE_READ8_MEMBER(program_r);
-	DECLARE_WRITE8_MEMBER(io_w);
-	DECLARE_WRITE8_MEMBER(program_w);
-	DECLARE_READ8_MEMBER(rom_r);
-
 protected:
 	dmv_k230_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock);
 
@@ -52,13 +47,21 @@ protected:
 	virtual void switch16_w(int state) override;
 	virtual bool av16bit() override;
 
-protected:
+	void k230_io(address_map &map);
+	void k230_mem(address_map &map);
+
 	required_device<cpu_device> m_maincpu;
 	optional_memory_region      m_rom;
-	dmvcart_slot_device *       m_bus;
-	address_space *             m_io;
 	int                         m_switch16;
 	int                         m_hold;
+
+	uint8_t io_r(offs_t offset);
+	uint8_t program_r(offs_t offset);
+	void io_w(offs_t offset, uint8_t data);
+	void program_w(offs_t offset, uint8_t data);
+
+private:
+	uint8_t rom_r(offs_t offset);
 };
 
 
@@ -85,9 +88,6 @@ public:
 	// construction/destruction
 	dmv_k234_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	DECLARE_READ8_MEMBER(snr_r);
-	DECLARE_WRITE8_MEMBER(snr_w);
-
 protected:
 	// optional information overrides
 	virtual const tiny_rom_entry *device_rom_region() const override;
@@ -103,6 +103,11 @@ protected:
 
 private:
 	int                         m_snr;
+
+	uint8_t snr_r();
+	void snr_w(uint8_t data);
+
+	void k234_mem(address_map &map);
 };
 
 
@@ -135,6 +140,8 @@ protected:
 private:
 	required_device<pic8259_device> m_pic;
 	required_ioport m_dsw;
+
+	void k235_io(address_map &map);
 };
 
 // device type definition

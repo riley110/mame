@@ -31,9 +31,6 @@ public:
 	// Construction/destruction
 	isa8_ibm_mfc_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	DECLARE_READ8_MEMBER( ibm_mfc_r );
-	DECLARE_WRITE8_MEMBER( ibm_mfc_w );
-
 protected:
 	// Device-level overrides
 	virtual void                    device_start() override;
@@ -45,15 +42,15 @@ protected:
 	virtual const tiny_rom_entry*        device_rom_region() const override;
 
 private:
-	DECLARE_READ8_MEMBER( ppi0_i_a );
-	DECLARE_WRITE8_MEMBER( ppi0_o_b );
-	DECLARE_READ8_MEMBER( ppi0_i_c );
-	DECLARE_WRITE8_MEMBER( ppi0_o_c );
+	uint8_t ppi0_i_a();
+	void ppi0_o_b(uint8_t data);
+	uint8_t ppi0_i_c();
+	void ppi0_o_c(uint8_t data);
 
-	DECLARE_WRITE8_MEMBER( ppi1_o_a );
-	DECLARE_READ8_MEMBER( ppi1_i_b );
+	void ppi1_o_a(uint8_t data);
+	uint8_t ppi1_i_b();
 
-	DECLARE_WRITE8_MEMBER( ppi1_o_c );
+	void ppi1_o_c(uint8_t data);
 
 	DECLARE_WRITE_LINE_MEMBER( d8253_out0 );
 	DECLARE_WRITE_LINE_MEMBER( d8253_out1 );
@@ -61,6 +58,12 @@ private:
 	DECLARE_WRITE_LINE_MEMBER( write_usart_clock );
 
 	DECLARE_WRITE_LINE_MEMBER( ibm_mfc_ym_irq );
+
+	uint8_t ibm_mfc_r(offs_t offset);
+	void ibm_mfc_w(offs_t offset, uint8_t data);
+
+	void io_map(address_map &map);
+	void prg_map(address_map &map);
 
 	void                            set_z80_interrupt(int src, int state);
 	void                            set_pc_interrupt(int src, int state);

@@ -98,7 +98,7 @@ void tms340x0_device::wfield_16(offs_t offset, uint32_t data)
 	}
 	else
 	{
-		TMS34010_WRMEM_WORD(TOBYTE(offset),data);
+		TMS34010_WRMEM_WORD(offset,data);
 	}
 }
 
@@ -313,7 +313,7 @@ uint32_t tms340x0_device::rfield_z_16(offs_t offset)
 	}
 
 	else
-		ret = TMS34010_RDMEM_WORD(TOBYTE(offset));
+		ret = TMS34010_RDMEM_WORD(offset);
 	return ret;
 }
 
@@ -484,13 +484,7 @@ uint32_t tms340x0_device::rfield_s_07(offs_t offset)
 uint32_t tms340x0_device::rfield_s_08(offs_t offset)
 {
 	uint32_t ret;
-	if (offset & 0x07)
-	{
-		RFIELDMAC(0xff,9);
-	}
-
-	else
-		ret = TMS34010_RDMEM(TOBYTE(offset));
+	RFIELDMAC_8();
 	return (int32_t)(int8_t)ret;
 }
 
@@ -553,7 +547,7 @@ uint32_t tms340x0_device::rfield_s_16(offs_t offset)
 
 	else
 	{
-		ret = TMS34010_RDMEM_WORD(TOBYTE(offset));
+		ret = TMS34010_RDMEM_WORD(offset);
 	}
 
 	return (int32_t)(int16_t)ret;

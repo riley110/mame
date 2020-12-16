@@ -57,13 +57,13 @@ int nitedrvr_state::nitedrvr_steering(  )
 nitedrvr_steering_reset
 ***************************************************************************/
 
-READ8_MEMBER(nitedrvr_state::nitedrvr_steering_reset_r)
+uint8_t nitedrvr_state::nitedrvr_steering_reset_r()
 {
 	m_steering_val = 0;
 	return 0;
 }
 
-WRITE8_MEMBER(nitedrvr_state::nitedrvr_steering_reset_w)
+void nitedrvr_state::nitedrvr_steering_reset_w(uint8_t data)
 {
 	m_steering_val = 0;
 }
@@ -97,7 +97,7 @@ Night Driver looks for the following:
 Fill in the steering and gear bits in a special way.
 ***************************************************************************/
 
-READ8_MEMBER(nitedrvr_state::nitedrvr_in0_r)
+uint8_t nitedrvr_state::nitedrvr_in0_r(offs_t offset)
 {
 	int gear = ioport("GEARS")->read();
 
@@ -160,7 +160,7 @@ Night Driver looks for the following:
 Fill in the track difficulty switch and special signal in a special way.
 ***************************************************************************/
 
-READ8_MEMBER(nitedrvr_state::nitedrvr_in1_r)
+uint8_t nitedrvr_state::nitedrvr_in1_r(offs_t offset)
 {
 	int port = ioport("IN0")->read();
 
@@ -207,11 +207,11 @@ D4 = SKID1
 D5 = SKID2
 ***************************************************************************/
 
-WRITE8_MEMBER(nitedrvr_state::nitedrvr_out0_w)
+void nitedrvr_state::nitedrvr_out0_w(uint8_t data)
 {
-	m_discrete->write(space, NITEDRVR_MOTOR_DATA, data & 0x0f);  // Motor freq data
-	m_discrete->write(space, NITEDRVR_SKID1_EN, data & 0x10);    // Skid1 enable
-	m_discrete->write(space, NITEDRVR_SKID2_EN, data & 0x20);    // Skid2 enable
+	m_discrete->write(NITEDRVR_MOTOR_DATA, data & 0x0f);  // Motor freq data
+	m_discrete->write(NITEDRVR_SKID1_EN, data & 0x10);    // Skid1 enable
+	m_discrete->write(NITEDRVR_SKID2_EN, data & 0x20);    // Skid2 enable
 }
 
 /***************************************************************************
@@ -225,14 +225,14 @@ D4 = LED START
 D5 = Spare (Not used)
 ***************************************************************************/
 
-WRITE8_MEMBER(nitedrvr_state::nitedrvr_out1_w)
+void nitedrvr_state::nitedrvr_out1_w(uint8_t data)
 {
-	output().set_led_value(0, data & 0x10);
+	m_led = BIT(data, 4);
 
 	m_crash_en = data & 0x01;
 
-	m_discrete->write(space, NITEDRVR_CRASH_EN, m_crash_en); // Crash enable
-	m_discrete->write(space, NITEDRVR_ATTRACT_EN, data & 0x02);      // Attract enable (sound disable)
+	m_discrete->write(NITEDRVR_CRASH_EN, m_crash_en); // Crash enable
+	m_discrete->write(NITEDRVR_ATTRACT_EN, data & 0x02);      // Attract enable (sound disable)
 
 	if (!m_crash_en)
 	{
@@ -243,7 +243,7 @@ WRITE8_MEMBER(nitedrvr_state::nitedrvr_out1_w)
 		m_palette->set_pen_color(1, rgb_t(0x00,0x00,0x00)); /* BLACK */
 		m_palette->set_pen_color(0, rgb_t(0xff,0xff,0xff)); /* WHITE */
 	}
-	m_discrete->write(space, NITEDRVR_BANG_DATA, m_crash_data_en ? m_crash_data : 0);    // Crash Volume
+	m_discrete->write(NITEDRVR_BANG_DATA, m_crash_data_en ? m_crash_data : 0);    // Crash Volume
 }
 
 
@@ -252,8 +252,7 @@ TIMER_DEVICE_CALLBACK_MEMBER(nitedrvr_state::nitedrvr_crash_toggle_callback)
 	if (m_crash_en && m_crash_data_en)
 	{
 		m_crash_data--;
-		address_space &space = machine().dummy_space();
-		m_discrete->write(space, NITEDRVR_BANG_DATA, m_crash_data);  // Crash Volume
+		m_discrete->write(NITEDRVR_BANG_DATA, m_crash_data);  // Crash Volume
 		if (!m_crash_data)
 			m_crash_data_en = 0;    // Done counting?
 
@@ -274,6 +273,8 @@ TIMER_DEVICE_CALLBACK_MEMBER(nitedrvr_state::nitedrvr_crash_toggle_callback)
 
 void nitedrvr_state::machine_start()
 {
+	m_led.resolve();
+
 	save_item(NAME(m_gear));
 	save_item(NAME(m_track));
 	save_item(NAME(m_steering_buf));

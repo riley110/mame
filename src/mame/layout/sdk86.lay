@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
-<!-- sdk86.lay -->
-
-<!-- 2011-06-23: Initial version.  [Robbbert] -->
+<!--
+license:CC0
+copyright-holders:Robbbert
+-->
 
 <mamelayout version="2">
 
@@ -21,9 +22,12 @@
 	<view name="Default Layout">
 
 		<!-- Background -->
-		<backdrop element="background">
+		<screen index="0">
 			<bounds left="0" top="0" right="362" bottom="69" />
-		</backdrop>
+		</screen>
+		<bezel element="background">
+			<bounds left="0" top="0" right="362" bottom="69" />
+		</bezel>
 
 		<!-- LEDs -->
 		<bezel name="digit7" element="digit">
@@ -51,12 +55,6 @@
 			<bounds left="318" top="10" right="352" bottom="59" />
 		</bezel>
 
-	</view>
-
-	<view name="Terminal">
-		<screen index="0">
-			<bounds left="0" top="0" right="4" bottom="3" />
-		</screen>
 	</view>
 
 </mamelayout>

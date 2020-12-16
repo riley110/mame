@@ -64,21 +64,21 @@ static const res_net_info mario_net_info_std =
   bit 0 -- 470 ohm resistor -- inverter  -- BLUE
 
 ***************************************************************************/
-PALETTE_INIT_MEMBER(mario_state, mario)
+void mario_state::mario_palette(palette_device &palette) const
 {
-	const uint8_t *color_prom = memregion("proms")->base();
-	std::vector<rgb_t> rgb;
+	uint8_t const *const color_prom = memregion("proms")->base();
 
+	std::vector<rgb_t> rgb;
 	if (m_monitor == 0)
 		compute_res_net_all(rgb, color_prom, mario_decode_info, mario_net_info);
 	else
-		compute_res_net_all(rgb, color_prom+256, mario_decode_info, mario_net_info_std);
+		compute_res_net_all(rgb, color_prom + 256, mario_decode_info, mario_net_info_std);
 
 	palette.set_pen_colors(0, rgb);
 	palette.palette()->normalize_range(0, 255);
 }
 
-WRITE8_MEMBER(mario_state::mario_videoram_w)
+void mario_state::mario_videoram_w(offs_t offset, uint8_t data)
 {
 	m_videoram[offset] = data;
 	m_bg_tilemap->mark_tile_dirty(offset);
@@ -96,7 +96,7 @@ WRITE_LINE_MEMBER(mario_state::palette_bank_w)
 	machine().tilemap().mark_all_dirty();
 }
 
-WRITE8_MEMBER(mario_state::mario_scroll_w)
+void mario_state::mario_scroll_w(uint8_t data)
 {
 	m_gfx_scroll = data + 17;
 }
@@ -115,13 +115,13 @@ TILE_GET_INFO_MEMBER(mario_state::get_bg_tile_info)
 {
 	int code = m_videoram[tile_index] + 256 * m_gfx_bank;
 	int color = 8 + (m_videoram[tile_index] >> 5) + 16 * m_palette_bank;
-	SET_TILE_INFO_MEMBER(0, code, color, 0);
+	tileinfo.set(0, code, color, 0);
 }
 
 void mario_state::video_start()
 {
 	m_bg_tilemap = &machine().tilemap().create(
-			*m_gfxdecode, tilemap_get_info_delegate(FUNC(mario_state::get_bg_tile_info),this), TILEMAP_SCAN_ROWS,
+			*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(mario_state::get_bg_tile_info)), TILEMAP_SCAN_ROWS,
 			8, 8, 32, 32);
 
 	m_gfxdecode->gfx(0)->set_granularity(8);
@@ -212,13 +212,11 @@ void mario_state::draw_sprites(bitmap_ind16 &bitmap, const rectangle &cliprect)
 
 uint32_t mario_state::screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect)
 {
-	int t;
-
-	t = ioport("MONITOR")->read();
+	int const t = ioport("MONITOR")->read();
 	if (t != m_monitor)
 	{
 		m_monitor = t;
-		PALETTE_INIT_NAME(mario)(*m_palette);
+		mario_palette(*m_palette);
 	}
 
 	m_bg_tilemap->set_scrolly(0, m_gfx_scroll);

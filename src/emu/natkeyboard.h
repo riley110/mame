@@ -50,10 +50,13 @@ public:
 	void set_in_use(bool usage);
 
 	// posting
-	void post(char32_t ch);
+	void post_char(char32_t ch, bool normalize_crlf = false);
 	void post(const char32_t *text, size_t length = 0, const attotime &rate = attotime::zero);
 	void post_utf8(const char *text, size_t length = 0, const attotime &rate = attotime::zero);
+	void post_utf8(const std::string &text, const attotime &rate = attotime::zero);
 	void post_coded(const char *text, size_t length = 0, const attotime &rate = attotime::zero);
+	void post_coded(const std::string &text, const attotime &rate = attotime::zero);
+	void paste();
 
 	// debugging
 	void dump(std::ostream &str) const;
@@ -69,10 +72,12 @@ private:
 	// internal keyboard code information
 	struct keycode_map_entry
 	{
-		ioport_field *  field[SHIFT_COUNT + 1];
-		unsigned        shift;
+		std::array<ioport_field *, SHIFT_COUNT + 1> field;
+		unsigned                                    shift;
+		ioport_condition                        condition;
 	};
-	typedef std::unordered_map<char32_t, keycode_map_entry> keycode_map;
+	typedef std::vector<keycode_map_entry> keycode_map_entries;
+	typedef std::unordered_map<char32_t, keycode_map_entries> keycode_map;
 
 	// internal helpers
 	void build_codes(ioport_manager &manager);

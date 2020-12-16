@@ -143,7 +143,7 @@ void ym3802_device::midi_clk()
 
 void ym3802_device::reset_midi_timer()
 {
-	uint64_t rate;
+	uint32_t rate;
 	uint8_t divisor = m_reg[REG_TRR] & 0x1f;
 
 	if(!(divisor & 0x10))
@@ -188,7 +188,7 @@ void ym3802_device::set_comms_mode()
 	logerror("MIDI comms set to 1 start bit, %i data bits, %s, parity = %i\n",data_bits, (stop_bits == STOP_BITS_2) ? "2 stop bits" : "1 stop bit", parity);
 }
 
-READ8_MEMBER(ym3802_device::read)
+uint8_t ym3802_device::read(offs_t offset)
 {
 	if(offset < 4)
 	{
@@ -225,7 +225,7 @@ READ8_MEMBER(ym3802_device::read)
 	}
 }
 
-WRITE8_MEMBER(ym3802_device::write)
+void ym3802_device::write(offs_t offset, uint8_t data)
 {
 	m_wdr = data;
 	if(offset == 1)
@@ -260,7 +260,7 @@ WRITE8_MEMBER(ym3802_device::write)
 				{
 					if((data & 0x07) == 2)
 					{
-						uint64_t rate = (m_reg[REG_CCR] & 0x02) ? m_clkm_rate / 4 : m_clkm_rate / 8;
+						const double rate = (m_reg[REG_CCR] & 0x02) ? m_clkm_rate / 4 : m_clkm_rate / 8;
 
 						// start message to click counter
 						m_midi_counter_timer->adjust(attotime::from_hz(rate),0,attotime::from_hz(rate));

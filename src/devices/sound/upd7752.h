@@ -7,13 +7,6 @@
 
 
 //**************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_UPD7752_ADD(_tag,_freq) \
-	MCFG_DEVICE_ADD(_tag, UPD7752, _freq)
-
-//**************************************************************************
 //  TYPE DEFINITIONS
 //**************************************************************************
 
@@ -26,8 +19,10 @@ public:
 	upd7752_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 	// I/O operations
-	DECLARE_WRITE8_MEMBER( write );
-	DECLARE_READ8_MEMBER( read );
+	void write(offs_t offset, uint8_t data);
+	uint8_t read(offs_t offset);
+
+	void upd7752_ram(address_map &map);
 
 protected:
 	// device-level overrides

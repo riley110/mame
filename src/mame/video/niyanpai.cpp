@@ -15,12 +15,12 @@
 
 
 ******************************************************************************/
-READ16_MEMBER(niyanpai_state::palette_r)
+uint16_t niyanpai_state::palette_r(offs_t offset)
 {
 	return m_palette_ptr[offset];
 }
 
-WRITE16_MEMBER(niyanpai_state::palette_w)
+void niyanpai_state::palette_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	int r, g, b;
 	int offs_h, offs_l;
@@ -170,7 +170,7 @@ void niyanpai_state::device_timer(emu_timer &timer, device_timer_id id, int para
 		m_nb19010_busyflag = 1;
 		break;
 	default:
-		assert_always(false, "Unknown id in niyanpai_state::device_timer");
+		throw emu_fatalerror("Unknown id in niyanpai_state::device_timer");
 	}
 }
 
@@ -333,21 +333,21 @@ void niyanpai_state::gfxdraw(int vram)
 
 
 ******************************************************************************/
-WRITE8_MEMBER(niyanpai_state::blitter_0_w){ blitter_w(0, offset, data); }
-WRITE8_MEMBER(niyanpai_state::blitter_1_w){ blitter_w(1, offset, data); }
-WRITE8_MEMBER(niyanpai_state::blitter_2_w){ blitter_w(2, offset, data); }
+void niyanpai_state::blitter_0_w(offs_t offset, uint8_t data){ blitter_w(0, offset, data); }
+void niyanpai_state::blitter_1_w(offs_t offset, uint8_t data){ blitter_w(1, offset, data); }
+void niyanpai_state::blitter_2_w(offs_t offset, uint8_t data){ blitter_w(2, offset, data); }
 
-READ8_MEMBER(niyanpai_state::blitter_0_r){ return blitter_r(0, offset); }
-READ8_MEMBER(niyanpai_state::blitter_1_r){ return blitter_r(1, offset); }
-READ8_MEMBER(niyanpai_state::blitter_2_r){ return blitter_r(2, offset); }
+uint8_t niyanpai_state::blitter_0_r(offs_t offset){ return blitter_r(0, offset); }
+uint8_t niyanpai_state::blitter_1_r(offs_t offset){ return blitter_r(1, offset); }
+uint8_t niyanpai_state::blitter_2_r(offs_t offset){ return blitter_r(2, offset); }
 
-WRITE8_MEMBER(niyanpai_state::clut_0_w){ clut_w(0, offset, data); }
-WRITE8_MEMBER(niyanpai_state::clut_1_w){ clut_w(1, offset, data); }
-WRITE8_MEMBER(niyanpai_state::clut_2_w){ clut_w(2, offset, data); }
+void niyanpai_state::clut_0_w(offs_t offset, uint8_t data){ clut_w(0, offset, data); }
+void niyanpai_state::clut_1_w(offs_t offset, uint8_t data){ clut_w(1, offset, data); }
+void niyanpai_state::clut_2_w(offs_t offset, uint8_t data){ clut_w(2, offset, data); }
 
-WRITE8_MEMBER(niyanpai_state::clutsel_0_w){ clutsel_w(0, data); }
-WRITE8_MEMBER(niyanpai_state::clutsel_1_w){ clutsel_w(1, data); }
-WRITE8_MEMBER(niyanpai_state::clutsel_2_w){ clutsel_w(2, data); }
+void niyanpai_state::clutsel_0_w(uint8_t data){ clutsel_w(0, data); }
+void niyanpai_state::clutsel_1_w(uint8_t data){ clutsel_w(1, data); }
+void niyanpai_state::clutsel_2_w(uint8_t data){ clutsel_w(2, data); }
 
 /******************************************************************************
 
@@ -392,16 +392,16 @@ void niyanpai_state::video_start()
 	save_item(NAME(m_nb19010_busyctr));
 	save_item(NAME(m_nb19010_busyflag));
 	save_item(NAME(m_flipscreen_old));
-	save_pointer(NAME(m_palette_ptr.get()), 0x480);
-	save_pointer(NAME(m_videoram[0].get()), width * height);
-	save_pointer(NAME(m_videoram[1].get()), width * height);
-	save_pointer(NAME(m_videoram[2].get()), width * height);
-	save_pointer(NAME(m_videoworkram[0].get()), width * height);
-	save_pointer(NAME(m_videoworkram[1].get()), width * height);
-	save_pointer(NAME(m_videoworkram[2].get()), width * height);
-	save_pointer(NAME(m_clut[0].get()), 0x1000);
-	save_pointer(NAME(m_clut[1].get()), 0x1000);
-	save_pointer(NAME(m_clut[2].get()), 0x1000);
+	save_pointer(NAME(m_palette_ptr), 0x480);
+	save_pointer(NAME(m_videoram[0]), width * height);
+	save_pointer(NAME(m_videoram[1]), width * height);
+	save_pointer(NAME(m_videoram[2]), width * height);
+	save_pointer(NAME(m_videoworkram[0]), width * height);
+	save_pointer(NAME(m_videoworkram[1]), width * height);
+	save_pointer(NAME(m_videoworkram[2]), width * height);
+	save_pointer(NAME(m_clut[0]), 0x1000);
+	save_pointer(NAME(m_clut[1]), 0x1000);
+	save_pointer(NAME(m_clut[2]), 0x1000);
 	save_item(NAME(m_tmpbitmap[0]));
 	save_item(NAME(m_tmpbitmap[1]));
 	save_item(NAME(m_tmpbitmap[2]));

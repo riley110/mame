@@ -7,30 +7,19 @@
 #include "cpu/mb88xx/mb88xx.h"
 
 
-#define MCFG_NAMCO_54XX_ADD(_tag, _clock) \
-	MCFG_DEVICE_ADD(_tag, NAMCO_54XX, _clock)
-
-#define MCFG_NAMCO_54XX_DISCRETE(_tag) \
-	namco_54xx_device::set_discrete(*device, "^" _tag);
-
-#define MCFG_NAMCO_54XX_BASENODE(_node) \
-	namco_54xx_device::set_basenote(*device, _node);
-
-
 class namco_54xx_device : public device_t
 {
 public:
 	namco_54xx_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	static void set_discrete(device_t &device, const char *tag) { downcast<namco_54xx_device &>(device).m_discrete.set_tag(tag); }
-	static void set_basenote(device_t &device, int node) { downcast<namco_54xx_device &>(device).m_basenode = node; }
+	template <typename T> void set_discrete(T &&tag) { m_discrete.set_tag(std::forward<T>(tag)); }
+	void set_basenote(int node) { m_basenode = node; }
+	namco_54xx_device &set_irq_duration(attotime t) { m_irq_duration = t; return *this; }
 
-	DECLARE_READ8_MEMBER( K_r );
-	DECLARE_READ8_MEMBER( R0_r );
-	DECLARE_WRITE8_MEMBER( O_w );
-	DECLARE_WRITE8_MEMBER( R1_w );
+	DECLARE_WRITE_LINE_MEMBER( reset );
+	WRITE_LINE_MEMBER( chip_select );
+	void write(uint8_t data);
 
-	DECLARE_WRITE8_MEMBER( write );
 protected:
 	// device-level overrides
 	virtual void device_start() override;
@@ -38,14 +27,20 @@ protected:
 	virtual void device_add_mconfig(machine_config &config) override;
 
 	TIMER_CALLBACK_MEMBER( latch_callback );
-	TIMER_CALLBACK_MEMBER( irq_clear );
+
 private:
 	// internal state
 	required_device<mb88_cpu_device> m_cpu;
 	required_device<discrete_device> m_discrete;
 
+	attotime m_irq_duration;
 	int m_basenode;
 	uint8_t m_latched_cmd;
+
+	uint8_t K_r();
+	uint8_t R0_r();
+	void O_w(uint8_t data);
+	void R1_w(uint8_t data);
 };
 
 DECLARE_DEVICE_TYPE(NAMCO_54XX, namco_54xx_device)

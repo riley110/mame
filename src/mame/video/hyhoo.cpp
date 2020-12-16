@@ -12,14 +12,14 @@
 #include "includes/hyhoo.h"
 
 
-WRITE8_MEMBER(hyhoo_state::hyhoo_blitter_w)
+void hyhoo_state::hyhoo_blitter_w(offs_t offset, uint8_t data)
 {
 	switch (offset)
 	{
 		case 0x00:  m_blitter_src_addr = (m_blitter_src_addr & 0xff00) | data;
-					m_nb1413m3->gfxradr_l_w(space, 0, data); break;
+					m_nb1413m3->gfxradr_l_w(data); break;
 		case 0x01:  m_blitter_src_addr = (m_blitter_src_addr & 0x00ff) | (data << 8);
-					m_nb1413m3->gfxradr_h_w(space, 0, data); break;
+					m_nb1413m3->gfxradr_h_w(data); break;
 		case 0x02:  m_blitter_destx = data; break;
 		case 0x03:  m_blitter_desty = data; break;
 		case 0x04:  m_blitter_sizex = data; break;
@@ -37,12 +37,12 @@ WRITE8_MEMBER(hyhoo_state::hyhoo_blitter_w)
 }
 
 
-WRITE8_MEMBER(hyhoo_state::hyhoo_romsel_w)
+void hyhoo_state::hyhoo_romsel_w(uint8_t data)
 {
 	int gfxlen = memregion("gfx1")->bytes();
 	m_gfxrom = (((data & 0xc0) >> 4) + (data & 0x03));
 	m_highcolorflag = data;
-	m_nb1413m3->gfxrombank_w(space, 0, data);
+	m_nb1413m3->gfxrombank_w(data);
 
 	if ((0x20000 * m_gfxrom) > (gfxlen - 1))
 	{
@@ -58,10 +58,10 @@ void hyhoo_state::device_timer(emu_timer &timer, device_timer_id id, int param, 
 	switch (id)
 	{
 	case TIMER_BLITTER:
-		m_nb1413m3->m_busyflag = 1;
+		m_nb1413m3->busyflag_w(1);
 		break;
 	default:
-		assert_always(false, "Unknown id in hyhoo_state::device_timer");
+		throw emu_fatalerror("Unknown id in hyhoo_state::device_timer");
 	}
 }
 
@@ -220,7 +220,7 @@ void hyhoo_state::hyhoo_gfxdraw()
 		}
 	}
 
-	m_nb1413m3->m_busyflag = 0;
+	m_nb1413m3->busyflag_w(0);
 	m_blitter_timer->adjust(attotime::from_hz(400000) * m_nb1413m3->m_busyctr);
 }
 

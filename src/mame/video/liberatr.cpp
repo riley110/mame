@@ -24,24 +24,25 @@
 
 
 
-WRITE8_MEMBER( liberatr_state::bitmap_xy_w )
+void liberatr_state::bitmap_xy_w(uint8_t data)
 {
 	m_videoram[(*m_ycoord << 8) | *m_xcoord] = data & 0xe0;
 }
 
 
-READ8_MEMBER( liberatr_state::bitmap_xy_r )
+uint8_t liberatr_state::bitmap_xy_r()
 {
 	return m_videoram[(*m_ycoord << 8) | *m_xcoord];
 }
 
 
-WRITE8_MEMBER( liberatr_state::bitmap_w )
+void liberatr_state::bitmap_w(offs_t offset, uint8_t data)
 {
 	uint8_t x, y;
 
 	m_bitmapram[offset] = data;
 
+	offset += 3;
 	x = (offset & 0x3f) << 2;
 	y = offset >> 6;
 
@@ -51,12 +52,6 @@ WRITE8_MEMBER( liberatr_state::bitmap_w )
 	m_videoram[(y << 8) | x | 1] = data;
 	m_videoram[(y << 8) | x | 2] = data;
 	m_videoram[(y << 8) | x | 3] = data;
-}
-
-
-WRITE_LINE_MEMBER(liberatr_state::planet_select_w)
-{
-	m_planet_select = state;
 }
 
 

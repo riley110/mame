@@ -147,7 +147,7 @@ static const int exception_codes[] =
 static const int sh3_intevt2_exception_codes[] =
 
 { 0x000, /* Power-on Reset */
-	-1, /* Manual Reset */
+	0x020, /* Manual Reset */
 	-1, /* H-UDI Reset */
 	-1, /* Inst TLB Multiple Hit */
 	-1, /* Data TLB Multiple Hit */
@@ -169,26 +169,26 @@ static const int sh3_intevt2_exception_codes[] =
 	-1, /* FPU Exception */
 	-1, /* Initial Page Write exception */
 
-	-1, /* Unconditional TRAP */
+	0x160, /* Unconditional TRAP */
 	-1, /* User break After Instruction */
 
-	-1, /* NMI */     /* SH4_INTC_NMI=23 represents this location in this list.. */
+	0x1C0, /* NMI */     /* SH4_INTC_NMI=23 represents this location in this list.. */
 
-	-1, /* EX Irq 0 */
-	-1, /*        1 */
-	-1, /*        2 */
-	-1, /*        3 */
-	-1, /*        4 */
-	-1, /*        5 */
-	-1, /*        6 */
-	-1, /*        7 */
-	-1, /*        8 */
-	-1, /*        9 */
-	-1, /*        A */
-	-1, /*        B */
-	-1, /*        C */
-	-1, /*        D */
-	-1, /*        E */
+	0x200, /* EX Irq 0 */
+	0x220, /*        1 */
+	0x240, /*        2 */
+	0x260, /*        3 */
+	0x280, /*        4 */
+	0x2A0, /*        5 */
+	0x2C0, /*        6 */
+	0x2E0, /*        7 */
+	0x300, /*        8 */
+	0x320, /*        9 */
+	0x340, /*        A */
+	0x360, /*        B */
+	0x380, /*        C */
+	0x3A0, /*        D */
+	0x3C0, /*        E */
 
 	0x600, /* SH4_INTC_IRL0 */
 	0x620, /* SH4_INTC_IRL1 */
@@ -198,10 +198,10 @@ static const int sh3_intevt2_exception_codes[] =
 
 	-1, /* HUDI */
 	-1, /* SH4_INTC_GPOI */
-	-1, /* SH4_INTC_DMTE0 */
-	-1, /* SH4_INTC_DMTE1 */
-	-1, /* SH4_INTC_DMTE2 */
-	-1, /* SH4_INTC_DMTE3 */
+	0x800, /* SH4_INTC_DMTE0 */
+	0x820, /* SH4_INTC_DMTE1 */
+	0x840, /* SH4_INTC_DMTE2 */
+	0x860, /* SH4_INTC_DMTE3 */
 
 	-1, /* SH4_INTC_DMTE4 */
 	-1, /* SH4_INTC_DMTE5 */
@@ -240,9 +240,9 @@ void sh34_base_device::sh4_swap_fp_registers()
 
 	for (s = 0;s <= 15;s++)
 	{
-		z = m_fr[s];
-		m_fr[s] = m_xf[s];
-		m_xf[s] = z;
+		z = m_sh2_state->m_fr[s];
+		m_sh2_state->m_fr[s] = m_sh2_state->m_xf[s];
+		m_sh2_state->m_xf[s] = z;
 	}
 }
 
@@ -253,12 +253,12 @@ void sh34_base_device::sh4_swap_fp_couples()
 
 	for (s = 0;s <= 15;s = s+2)
 	{
-		z = m_fr[s];
-		m_fr[s] = m_fr[s + 1];
-		m_fr[s + 1] = z;
-		z = m_xf[s];
-		m_xf[s] = m_xf[s + 1];
-		m_xf[s + 1] = z;
+		z = m_sh2_state->m_fr[s];
+		m_sh2_state->m_fr[s] = m_sh2_state->m_fr[s + 1];
+		m_sh2_state->m_fr[s + 1] = z;
+		z = m_sh2_state->m_xf[s];
+		m_sh2_state->m_xf[s] = m_sh2_state->m_xf[s + 1];
+		m_sh2_state->m_xf[s + 1] = z;
 	}
 }
 
@@ -271,16 +271,16 @@ void sh34_base_device::sh4_change_register_bank(int to)
 	{
 		for (s = 0;s < 8;s++)
 		{
-			m_rbnk[0][s] = m_sh2_state->r[s];
-			m_sh2_state->r[s] = m_rbnk[1][s];
+			m_sh2_state->m_rbnk[0][s] = m_sh2_state->r[s];
+			m_sh2_state->r[s] = m_sh2_state->m_rbnk[1][s];
 		}
 	}
 	else // 1 -> 0
 	{
 		for (s = 0;s < 8;s++)
 		{
-			m_rbnk[1][s] = m_sh2_state->r[s];
-			m_sh2_state->r[s] = m_rbnk[0][s];
+			m_sh2_state->m_rbnk[1][s] = m_sh2_state->r[s];
+			m_sh2_state->r[s] = m_sh2_state->m_rbnk[0][s];
 		}
 	}
 }
@@ -291,7 +291,7 @@ void sh34_base_device::sh4_syncronize_register_bank(int to)
 
 	for (s = 0;s < 8;s++)
 	{
-		m_rbnk[to][s] = m_sh2_state->r[s];
+		m_sh2_state->m_rbnk[to][s] = m_sh2_state->r[s];
 	}
 }
 
@@ -315,8 +315,8 @@ void sh34_base_device::sh4_exception_recompute() // checks if there is any inter
 {
 	int a,z;
 
-	m_test_irq = 0;
-	if ((!m_pending_irq) || ((m_sh2_state->sr & BL) && (m_exception_requesting[SH4_INTC_NMI] == 0)))
+	m_sh2_state->m_test_irq = 0;
+	if ((!m_sh2_state->m_pending_irq) || ((m_sh2_state->sr & BL) && (m_exception_requesting[SH4_INTC_NMI] == 0)))
 		return;
 	z = (m_sh2_state->sr >> 4) & 15;
 	for (a=0;a <= SH4_INTC_ROVI;a++)
@@ -328,7 +328,7 @@ void sh34_base_device::sh4_exception_recompute() // checks if there is any inter
 			if (pri > z)
 			{
 				//logerror("will test\n");
-				m_test_irq = 1; // will check for exception at end of instructions
+				m_sh2_state->m_test_irq = 1; // will check for exception at end of instructions
 				break;
 			}
 		}
@@ -342,7 +342,7 @@ void sh34_base_device::sh4_exception_request(int exception) // start requesting 
 	{
 		//logerror("sh4_exception_request b\n");
 		m_exception_requesting[exception] = 1;
-		m_pending_irq++;
+		m_sh2_state->m_pending_irq++;
 		sh4_exception_recompute();
 	}
 }
@@ -352,7 +352,7 @@ void sh34_base_device::sh4_exception_unrequest(int exception) // stop requesting
 	if (m_exception_requesting[exception])
 	{
 		m_exception_requesting[exception] = 0;
-		m_pending_irq--;
+		m_sh2_state->m_pending_irq--;
 		sh4_exception_recompute();
 	}
 }
@@ -371,9 +371,9 @@ void sh34_base_device::sh4_exception_process(int exception, uint32_t vector)
 {
 	sh4_exception_checkunrequest(exception);
 
-	m_spc = m_sh2_state->pc;
-	m_ssr = m_sh2_state->sr;
-	m_sgr = m_sh2_state->r[15];
+	m_sh2_state->m_spc = m_sh2_state->pc;
+	m_sh2_state->m_ssr = m_sh2_state->sr;
+	m_sh2_state->m_sgr = m_sh2_state->r[15];
 
 	//printf("stored m_spc %08x m_ssr %08x m_sgr %08x\n", m_spc, m_ssr, m_sgr);
 
@@ -458,6 +458,10 @@ void sh34_base_device::sh4_exception(const char *message, int exception) // hand
 
 			m_sh3internal_lower[INTEVT2] = sh3_intevt2_exception_codes[exception];
 			m_sh3internal_upper[SH3_EXPEVT_ADDR] = exception_codes[exception];
+			if (sh3_intevt2_exception_codes[exception] >= 0x600)
+				m_sh3internal_upper[SH3_INTEVT_ADDR] = 0x3E0 - ((m_exception_priority[exception] >> 8) & 255) * 0x20;
+			else
+				m_sh3internal_upper[SH3_INTEVT_ADDR] = sh3_intevt2_exception_codes[exception];
 
 
 			LOG(("SH-3 '%s' interrupt exception #%d after [%s]\n", tag(), exception, message));
@@ -669,7 +673,7 @@ void sh34_base_device::sh4_handler_ipra_w(uint32_t data, uint32_t mem_mask)
 }
 
 
-WRITE32_MEMBER( sh4_base_device::sh4_internal_w )
+void sh4_base_device::sh4_internal_w(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
 	int a;
 	uint32_t addr = (offset << 2) + 0xfe000000;
@@ -976,7 +980,7 @@ WRITE32_MEMBER( sh4_base_device::sh4_internal_w )
 	}
 }
 
-READ32_MEMBER( sh4_base_device::sh4_internal_r )
+uint32_t sh4_base_device::sh4_internal_r(offs_t offset, uint32_t mem_mask)
 {
 	if (m_cpu_type != CPU_TYPE_SH4)
 		fatalerror("sh4_internal_r uses m_m[] with SH3\n");
@@ -1066,23 +1070,16 @@ READ32_MEMBER( sh4_base_device::sh4_internal_r )
 	return m_m[offset];
 }
 
-void sh34_base_device::sh4_set_frt_input(int state)
+void sh34_base_device::set_frt_input(int state)
 {
 	if (m_cpu_type != CPU_TYPE_SH4)
 		fatalerror("sh4_set_frt_input uses m_m[] with SH3\n");
 
-	if(state == PULSE_LINE)
-	{
-		sh4_set_frt_input(ASSERT_LINE);
-		sh4_set_frt_input(CLEAR_LINE);
+	if(m_sh2_state->m_frt_input == state) {
 		return;
 	}
 
-	if(m_frt_input == state) {
-		return;
-	}
-
-	m_frt_input = state;
+	m_sh2_state->m_frt_input = state;
 
 	if (m_cpu_type == CPU_TYPE_SH4)
 	{
@@ -1218,49 +1215,49 @@ void sh34_base_device::execute_set_input(int irqline, int state) // set state of
 				LOG(("SH-4 '%s' IRLn0-IRLn3 level #%d\n", tag(), m_irln));
 			}
 		}
-		if (m_test_irq && (!m_sh2_state->m_delay))
+		if (m_sh2_state->m_test_irq && (!m_sh2_state->m_delay))
 			sh4_check_pending_irq("sh4_set_irq_line");
 	}
 }
 
 void sh34_base_device::sh4_parse_configuration()
 {
-	if(c_clock > 0)
+	if(m_clock > 0)
 	{
-		switch((c_md2 << 2) | (c_md1 << 1) | (c_md0))
+		switch((m_md[2] << 2) | (m_md[1] << 1) | (m_md[0]))
 		{
 		case 0:
-			m_cpu_clock = c_clock;
-			m_bus_clock = c_clock / 4;
-			m_pm_clock = c_clock / 4;
+			m_cpu_clock = m_clock;
+			m_bus_clock = m_clock / 4;
+			m_pm_clock = m_clock / 4;
 			break;
 		case 1:
-			m_cpu_clock = c_clock;
-			m_bus_clock = c_clock / 6;
-			m_pm_clock = c_clock / 6;
+			m_cpu_clock = m_clock;
+			m_bus_clock = m_clock / 6;
+			m_pm_clock = m_clock / 6;
 			break;
 		case 2:
-			m_cpu_clock = c_clock;
-			m_bus_clock = c_clock / 3;
-			m_pm_clock = c_clock / 6;
+			m_cpu_clock = m_clock;
+			m_bus_clock = m_clock / 3;
+			m_pm_clock = m_clock / 6;
 			break;
 		case 3:
-			m_cpu_clock = c_clock;
-			m_bus_clock = c_clock / 3;
-			m_pm_clock = c_clock / 6;
+			m_cpu_clock = m_clock;
+			m_bus_clock = m_clock / 3;
+			m_pm_clock = m_clock / 6;
 			break;
 		case 4:
-			m_cpu_clock = c_clock;
-			m_bus_clock = c_clock / 2;
-			m_pm_clock = c_clock / 4;
+			m_cpu_clock = m_clock;
+			m_bus_clock = m_clock / 2;
+			m_pm_clock = m_clock / 4;
 			break;
 		case 5:
-			m_cpu_clock = c_clock;
-			m_bus_clock = c_clock / 2;
-			m_pm_clock = c_clock / 4;
+			m_cpu_clock = m_clock;
+			m_bus_clock = m_clock / 2;
+			m_pm_clock = m_clock / 4;
 			break;
 		}
-		m_is_slave = (~(c_md7)) & 1;
+		m_is_slave = (~(m_md[7])) & 1;
 	}
 	else
 	{
@@ -1327,7 +1324,7 @@ uint32_t sh4_base_device::sh4_getsqremap(uint32_t address)
 }
 
 
-WRITE64_MEMBER( sh4_base_device::sh4_utlb_address_array_w )
+void sh4_base_device::sh4_utlb_address_array_w(offs_t offset, uint64_t data)
 {
 /*  uses bits 13:8 of address to select which UTLB entry we're addressing
     bit 7 of the address enables 'associative' mode, causing a search
@@ -1363,7 +1360,7 @@ WRITE64_MEMBER( sh4_base_device::sh4_utlb_address_array_w )
 	}
 }
 
-READ64_MEMBER( sh4_base_device::sh4_utlb_address_array_r )
+uint64_t sh4_base_device::sh4_utlb_address_array_r(offs_t offset)
 {
 	// associative bit is ignored for reads
 	int offs = offset*8;
@@ -1381,7 +1378,7 @@ READ64_MEMBER( sh4_base_device::sh4_utlb_address_array_r )
 }
 
 
-WRITE64_MEMBER( sh4_base_device::sh4_utlb_data_array1_w )
+void sh4_base_device::sh4_utlb_data_array1_w(offs_t offset, uint64_t data)
 {
 /*  uses bits 13:8 of address to select which UTLB entry we're addressing
 
@@ -1414,7 +1411,7 @@ WRITE64_MEMBER( sh4_base_device::sh4_utlb_data_array1_w )
 }
 
 
-READ64_MEMBER(sh4_base_device::sh4_utlb_data_array1_r)
+uint64_t sh4_base_device::sh4_utlb_data_array1_r(offs_t offset)
 {
 	uint32_t ret = 0;
 	int offs = offset*8;
@@ -1436,7 +1433,7 @@ READ64_MEMBER(sh4_base_device::sh4_utlb_data_array1_r)
 
 
 
-WRITE64_MEMBER( sh4_base_device::sh4_utlb_data_array2_w )
+void sh4_base_device::sh4_utlb_data_array2_w(offs_t offset, uint64_t data)
 {
 /*  uses bits 13:8 of address to select which UTLB entry we're addressing
 
@@ -1458,7 +1455,7 @@ WRITE64_MEMBER( sh4_base_device::sh4_utlb_data_array2_w )
 }
 
 
-READ64_MEMBER(sh4_base_device::sh4_utlb_data_array2_r)
+uint64_t sh4_base_device::sh4_utlb_data_array2_r(offs_t offset)
 {
 	uint32_t ret = 0;
 	int offs = offset*8;

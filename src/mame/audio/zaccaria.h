@@ -19,16 +19,6 @@ DECLARE_DEVICE_TYPE(ZACCARIA_1B11107, zac1b11107_audio_device)
 DECLARE_DEVICE_TYPE(ZACCARIA_1B11142, zac1b11142_audio_device)
 
 
-
-//**************************************************************************
-//  DEVICE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_ZACCARIA_1B11142_SET_ACS_CALLBACK(_devcb) \
-	devcb = &zac1b11142_audio_device::static_set_acs_cb(*device, DEVCB_##_devcb);
-
-
-
 //**************************************************************************
 //  TYPE DEFINITIONS
 //**************************************************************************
@@ -43,10 +33,10 @@ protected:
 			device_t *owner,
 			u32 clock);
 
-	DECLARE_READ8_MEMBER(melodypia_porta_r);
-	DECLARE_WRITE8_MEMBER(melodypia_porta_w);
-	DECLARE_WRITE8_MEMBER(melodypia_portb_w);
-	DECLARE_READ8_MEMBER(melodypsg1_portb_r);
+	u8 melodypia_porta_r();
+	void melodypia_porta_w(u8 data);
+	void melodypia_portb_w(u8 data);
+	u8 melodypsg1_portb_r();
 
 	virtual void device_add_mconfig(machine_config &config) override;
 	virtual void device_start() override;
@@ -58,22 +48,24 @@ protected:
 	required_device<ay8910_device>  m_melodypsg2;
 
 	u8  m_melody_command;
+	void zac1b111xx_melody_base_map(address_map &map);
 };
 
 
 class zac1b11107_audio_device : public zac1b111xx_melody_base
 {
 public:
-	zac1b11107_audio_device(machine_config const &mconfig, char const *tag, device_t *owner, u32 clock);
+	zac1b11107_audio_device(machine_config const &mconfig, char const *tag, device_t *owner, u32 clock = 0);
 
 	// host interface
-	DECLARE_WRITE8_MEMBER(sound_w);
+	void sound_w(u8 data);
 	DECLARE_WRITE_LINE_MEMBER(reset_w);
 
+	void zac1b11107_melody_map(address_map &map);
 protected:
 	// PSG output handlers
-	DECLARE_WRITE8_MEMBER(melodypsg1_porta_w);
-	DECLARE_WRITE8_MEMBER(melodypsg2_porta_w);
+	void melodypsg1_porta_w(u8 data);
+	void melodypsg2_porta_w(u8 data);
 
 	virtual void device_add_mconfig(machine_config &config) override;
 };
@@ -82,29 +74,30 @@ protected:
 class zac1b11142_audio_device : public zac1b111xx_melody_base
 {
 public:
-	template <class Object> static devcb_base &static_set_acs_cb(device_t &device, Object &&cb)
-	{ return downcast<zac1b11142_audio_device &>(device).m_acs_cb.set_callback(std::forward<Object>(cb)); }
+	auto acs_cb() { return m_acs_cb.bind(); }
 
-	zac1b11142_audio_device(machine_config const &mconfig, char const *tag, device_t *owner, u32 clock);
+	zac1b11142_audio_device(machine_config const &mconfig, char const *tag, device_t *owner, u32 clock = 0);
 
 	// host interface
-	DECLARE_WRITE8_MEMBER(hs_w);
+	void hs_w(u8 data);
 	DECLARE_READ_LINE_MEMBER(acs_r);
 	DECLARE_WRITE_LINE_MEMBER(ressound_w);
 
 	// master audio section handlers
-	DECLARE_READ8_MEMBER(host_command_r);
-	DECLARE_WRITE8_MEMBER(melody_command_w);
+	u8 host_command_r();
+	void melody_command_w(u8 data);
 	DECLARE_INPUT_CHANGED_MEMBER(p1_changed);
 
+	void zac1b11142_audio_map(address_map &map);
+	void zac1b11142_melody_map(address_map &map);
 protected:
 	// melody section handlers
-	DECLARE_WRITE8_MEMBER(ay_4g_porta_w);
-	DECLARE_WRITE8_MEMBER(ay_4h_porta_w);
-	DECLARE_WRITE8_MEMBER(ay_4h_portb_w);
+	void ay_4g_porta_w(u8 data);
+	void ay_4h_porta_w(u8 data);
+	void ay_4h_portb_w(u8 data);
 
 	// master audio section handlers
-	DECLARE_WRITE8_MEMBER(pia_1i_portb_w);
+	void pia_1i_portb_w(u8 data);
 
 	// input ports don't push
 	INTERRUPT_GEN_MEMBER(input_poll);

@@ -20,14 +20,14 @@
 //  TYPE DEFINITIONS
 //**************************************************************************
 
-// ======================> databoard_4112_23_t
+// ======================> abc_databoard_4112_23_device
 
-class databoard_4112_23_t :  public device_t,
+class abc_databoard_4112_23_device :  public device_t,
 							 public device_abcbus_card_interface
 {
 public:
 	// construction/destruction
-	databoard_4112_23_t(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+	abc_databoard_4112_23_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 protected:
 	// device-level overrides
@@ -51,10 +51,13 @@ private:
 	required_device<cpu_device> m_maincpu;
 
 	bool m_cs;
+
+	void databoard_4112_23_io(address_map &map);
+	void databoard_4112_23_mem(address_map &map);
 };
 
 
 // device type definition
-DECLARE_DEVICE_TYPE(DATABOARD_4112_23, databoard_4112_23_t)
+DECLARE_DEVICE_TYPE(DATABOARD_4112_23, abc_databoard_4112_23_device)
 
 #endif // MAME_BUS_ABCBUS_DATABOARD_4112_23_H

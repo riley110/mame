@@ -27,34 +27,10 @@ nvram_device::nvram_device(const machine_config &mconfig, const char *tag, devic
 		device_nvram_interface(mconfig, *this),
 		m_region(*this, DEVICE_SELF),
 		m_default_value(DEFAULT_ALL_1),
+		m_custom_handler(*this),
 		m_base(nullptr),
 		m_length(0)
 {
-}
-
-
-//-------------------------------------------------
-//  static_set_interface - configuration helper
-//  to set the interface
-//-------------------------------------------------
-
-void nvram_device::static_set_default_value(device_t &device, default_value value)
-{
-	nvram_device &nvram = downcast<nvram_device &>(device);
-	nvram.m_default_value = value;
-}
-
-
-//-------------------------------------------------
-//  static_set_custom_handler - configuration
-//  helper to set a custom callback
-//-------------------------------------------------
-
-void nvram_device::static_set_custom_handler(device_t &device, init_delegate &&handler)
-{
-	nvram_device &nvram = downcast<nvram_device &>(device);
-	nvram.m_default_value = DEFAULT_CUSTOM;
-	nvram.m_custom_handler = std::move(handler);
 }
 
 
@@ -65,7 +41,7 @@ void nvram_device::static_set_custom_handler(device_t &device, init_delegate &&h
 void nvram_device::device_start()
 {
 	// bind our handler
-	m_custom_handler.bind_relative_to(*owner());
+	m_custom_handler.resolve();
 }
 
 
@@ -159,7 +135,7 @@ void nvram_device::determine_final_base()
 	{
 		memory_share *share = owner()->memshare(tag());
 		if (share == nullptr)
-			throw emu_fatalerror("NVRAM device '%s' has no corresponding AM_SHARE region", tag());
+			throw emu_fatalerror("NVRAM device '%s' has no corresponding share() region", tag());
 		m_base = share->ptr();
 		m_length = share->bytes();
 	}

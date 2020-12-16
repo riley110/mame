@@ -52,11 +52,12 @@ void iq151_grafik_device::device_start()
 
 void iq151_grafik_device::device_reset()
 {
-	screen_device *screen = machine().first_screen();
-
 	// if required adjust screen size
-	if (screen->visible_area().max_x < 64*8-1)
-		screen->set_visible_area(0, 64*8-1, 0, 32*8-1);
+	if (m_screen != nullptr && m_screen->visible_area().max_x < 64*8-1)
+	{
+		printf("adjusting screen size\n");
+		m_screen->set_visible_area(0, 64*8-1, 0, 32*8-1);
+	}
 
 	memset(m_videoram, 0x00, sizeof(m_videoram));
 }
@@ -65,18 +66,19 @@ void iq151_grafik_device::device_reset()
 //  device_add_mconfig - add device configuration
 //-------------------------------------------------
 
-MACHINE_CONFIG_MEMBER( iq151_grafik_device::device_add_mconfig )
-	MCFG_DEVICE_ADD("ppi8255", I8255, 0)
-	MCFG_I8255_OUT_PORTA_CB(WRITE8(iq151_grafik_device, x_write))
-	MCFG_I8255_OUT_PORTB_CB(WRITE8(iq151_grafik_device, y_write))
-	MCFG_I8255_OUT_PORTC_CB(WRITE8(iq151_grafik_device, control_w))
-MACHINE_CONFIG_END
+void iq151_grafik_device::device_add_mconfig(machine_config &config)
+{
+	I8255(config, m_ppi8255);
+	m_ppi8255->out_pa_callback().set(FUNC(iq151_grafik_device::x_write));
+	m_ppi8255->out_pb_callback().set(FUNC(iq151_grafik_device::y_write));
+	m_ppi8255->out_pc_callback().set(FUNC(iq151_grafik_device::control_w));
+}
 
 //-------------------------------------------------
 //  I8255 port a
 //-------------------------------------------------
 
-WRITE8_MEMBER(iq151_grafik_device::x_write)
+void iq151_grafik_device::x_write(uint8_t data)
 {
 	if (LOG) logerror("Grafik: set posx 0x%02x\n", data);
 
@@ -87,7 +89,7 @@ WRITE8_MEMBER(iq151_grafik_device::x_write)
 //  I8255 port b
 //-------------------------------------------------
 
-WRITE8_MEMBER(iq151_grafik_device::y_write)
+void iq151_grafik_device::y_write(uint8_t data)
 {
 	if (LOG) logerror("Grafik: set posy 0x%02x\n", data);
 
@@ -98,7 +100,7 @@ WRITE8_MEMBER(iq151_grafik_device::y_write)
 //  I8255 port c
 //-------------------------------------------------
 
-WRITE8_MEMBER(iq151_grafik_device::control_w)
+void iq151_grafik_device::control_w(uint8_t data)
 {
 	if (LOG) logerror("Grafik: control write 0x%02x\n", data);
 
@@ -119,8 +121,7 @@ void iq151_grafik_device::io_read(offs_t offset, uint8_t &data)
 {
 	if (offset >= 0xd0 && offset < 0xd4)
 	{
-		address_space& space = machine().device("maincpu")->memory().space(AS_IO);
-		data = m_ppi8255->read(space, offset & 3);
+		data = m_ppi8255->read(offset & 3);
 	}
 	else if (offset == 0xd4)
 	{
@@ -139,8 +140,7 @@ void iq151_grafik_device::io_write(offs_t offset, uint8_t data)
 {
 	if (offset >= 0xd0 && offset < 0xd4)
 	{
-		address_space& space = machine().device("maincpu")->memory().space(AS_IO);
-		m_ppi8255->write(space, offset & 3, data);
+		m_ppi8255->write(offset & 3, data);
 	}
 	else if (offset == 0xd4)
 	{

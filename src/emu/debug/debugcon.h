@@ -28,6 +28,7 @@
 /* flags for command parsing */
 #define CMDFLAG_NONE                        (0x0000)
 #define CMDFLAG_KEEP_QUOTES                 (0x0001)
+#define CMDFLAG_CUSTOM_HELP                 (0x0002)
 
 /* values for the error code in a command error */
 #define CMDERR_NONE                         (0)
@@ -80,6 +81,8 @@ public:
 	CMDERR          execute_command(const std::string &command, bool echo);
 	CMDERR          validate_command(const char *command);
 	void            register_command(const char *command, u32 flags, int ref, int minparams, int maxparams, std::function<void(int, const std::vector<std::string> &)> handler);
+	void            source_script(const char *file);
+	void            process_source_file();
 
 	/* console management */
 	void            vprintf(util::format_argument_pack<std::ostream> const &args);
@@ -104,18 +107,29 @@ public:
 		vprintf_wrap(wrapcol, util::make_format_argument_pack(std::forward<Format>(fmt), std::forward<Params>(args)...));
 	}
 
+	device_t *get_visible_cpu() { return m_visiblecpu; }
+	void set_visible_cpu(device_t *visiblecpu) { m_visiblecpu = visiblecpu; }
+	symbol_table &visible_symtable();
+
 	static std::string cmderr_to_string(CMDERR error);
 
 private:
 	void exit();
 
+	void execute_help_custom(int ref, const std::vector<std::string> &params);
+	void execute_condump(int ref, const std::vector<std::string>& params);
+
 	void trim_parameter(char **paramptr, bool keep_quotes);
 	CMDERR internal_execute_command(bool execute, int params, char **param);
 	CMDERR internal_parse_command(const std::string &original_command, bool execute);
 
+	void print_core(const char *text);                   // core text output
+	void print_core_wrap(const char *text, int wrapcol); // core text output
+
 	struct debug_command
 	{
-		debug_command * next;
+		debug_command(const char *_command, u32 _flags, int _ref, int _minparams, int _maxparams, std::function<void(int, const std::vector<std::string> &)> _handler);
+
 		char            command[32];
 		const char *    params;
 		const char *    help;
@@ -128,10 +142,16 @@ private:
 
 	running_machine &m_machine;
 
+	// visible CPU device (the one that commands should apply to)
+	device_t        *m_visiblecpu;
+
 	text_buffer     *m_console_textbuf;
 	text_buffer     *m_errorlog_textbuf;
 
-	debug_command   *m_commandlist;
+	std::forward_list<debug_command> m_commandlist;
+
+	std::unique_ptr<std::istream> m_source_file;        // script source file
+	std::unique_ptr<emu_file> m_logfile;                // logfile for debug console output
 };
 
 #endif // MAME_EMU_DEBUG_DEBUGCON_H

@@ -93,21 +93,20 @@ DEFINE_DEVICE_TYPE(PCI_BUS_LEGACY, pci_bus_legacy_device, "pci_bus_legacy", "PCI
 //-------------------------------------------------
 pci_bus_legacy_device::pci_bus_legacy_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock) :
 	device_t(mconfig, PCI_BUS_LEGACY, tag, owner, clock),
-	m_father(nullptr)
+	m_read_callback(*this),
+	m_write_callback(*this),
+	m_father(nullptr),
+	m_siblings_count(0)
 {
-	for (int i = 0; i < ARRAY_LENGTH(m_devtag); i++) {
-		m_devtag[i]= nullptr;
-		m_read_callback[i] = nullptr;
-		m_write_callback[i] = nullptr;
-	}
-	m_siblings_count = 0;
+	std::fill(std::begin(m_siblings), std::end(m_siblings), nullptr);
+	std::fill(std::begin(m_siblings_busnum), std::end(m_siblings_busnum), 0);
 }
 
 /***************************************************************************
     INLINE FUNCTIONS
 ***************************************************************************/
 
-READ32_MEMBER( pci_bus_legacy_device::read )
+uint32_t pci_bus_legacy_device::read(offs_t offset, uint32_t mem_mask)
 {
 	uint32_t result = 0xffffffff;
 	int function, reg;
@@ -123,12 +122,12 @@ READ32_MEMBER( pci_bus_legacy_device::read )
 		case 1:
 			if (m_devicenum != -1)
 			{
-				pci_read_func read = m_busnumaddr->m_read_callback[m_devicenum];
-				if (read != nullptr)
+				pci_bus_legacy_read_delegate &read = m_busnumaddr->m_read_callback[m_devicenum];
+				if (!read.isnull())
 				{
 					function = (m_address >> 8) & 0x07;
 					reg = (m_address >> 0) & 0xfc;
-					result = (*read)(m_busnumaddr, m_busnumaddr->m_device[m_devicenum], function, reg, mem_mask);
+					result = read(function, reg, mem_mask);
 				}
 			}
 			break;
@@ -161,7 +160,7 @@ pci_bus_legacy_device *pci_bus_legacy_device::pci_search_bustree(int busnum, int
 
 
 
-WRITE32_MEMBER( pci_bus_legacy_device::write )
+void pci_bus_legacy_device::write(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
 	offset %= 2;
 
@@ -192,12 +191,12 @@ WRITE32_MEMBER( pci_bus_legacy_device::write )
 		case 1:
 			if (m_devicenum != -1)
 			{
-				pci_write_func write = m_busnumaddr->m_write_callback[m_devicenum];
-				if (write != nullptr)
+				pci_bus_legacy_write_delegate &write = m_busnumaddr->m_write_callback[m_devicenum];
+				if (!write.isnull())
 				{
 					int function = (m_address >> 8) & 0x07;
 					int reg = (m_address >> 0) & 0xfc;
-					(*write)(m_busnumaddr, m_busnumaddr->m_device[m_devicenum], function, reg, data, mem_mask);
+					write(function, reg, data, mem_mask);
 				}
 				LOG("  function:%d register:%d\n", (m_address >> 8) & 0x07, (m_address >> 0) & 0xfc);
 			}
@@ -207,25 +206,25 @@ WRITE32_MEMBER( pci_bus_legacy_device::write )
 
 
 
-READ64_MEMBER(pci_bus_legacy_device::read_64be)
+uint64_t pci_bus_legacy_device::read_64be(offs_t offset, uint64_t mem_mask)
 {
 	uint64_t result = 0;
-	mem_mask = flipendian_int64(mem_mask);
+	mem_mask = swapendian_int64(mem_mask);
 	if (ACCESSING_BITS_0_31)
-		result |= (uint64_t)read(space, offset * 2 + 0, mem_mask >> 0) << 0;
+		result |= (uint64_t)read(offset * 2 + 0, mem_mask >> 0) << 0;
 	if (ACCESSING_BITS_32_63)
-		result |= (uint64_t)read(space, offset * 2 + 1, mem_mask >> 32) << 32;
-	return flipendian_int64(result);
+		result |= (uint64_t)read(offset * 2 + 1, mem_mask >> 32) << 32;
+	return swapendian_int64(result);
 }
 
-WRITE64_MEMBER(pci_bus_legacy_device::write_64be)
+void pci_bus_legacy_device::write_64be(offs_t offset, uint64_t data, uint64_t mem_mask)
 {
-	data = flipendian_int64(data);
-	mem_mask = flipendian_int64(mem_mask);
+	data = swapendian_int64(data);
+	mem_mask = swapendian_int64(mem_mask);
 	if (ACCESSING_BITS_0_31)
-		write(space, offset * 2 + 0, data >> 0, mem_mask >> 0);
+		write(offset * 2 + 0, data >> 0, mem_mask >> 0);
 	if (ACCESSING_BITS_32_63)
-		write(space, offset * 2 + 1, data >> 32, mem_mask >> 32);
+		write(offset * 2 + 1, data >> 32, mem_mask >> 32);
 }
 
 
@@ -259,12 +258,11 @@ void pci_bus_legacy_device::device_start()
 	/* store a pointer back to the device */
 	m_devicenum = -1;
 
-	/* find all our devices */
-	for (int i = 0; i < ARRAY_LENGTH(m_devtag); i++)
-		if (m_devtag[i] != nullptr)
-			m_device[i] = machine().device(m_devtag[i]);
+	/* find all our device callbacks */
+	m_read_callback.resolve_all();
+	m_write_callback.resolve_all();
 
-	if (m_father != nullptr) {
+	if (m_father) {
 		pci_bus_legacy_device *father = machine().device<pci_bus_legacy_device>(m_father);
 		if (father)
 			father->add_sibling(this, m_busnum);

@@ -5,15 +5,21 @@
     Lady Frog
 
 *************************************************************************/
+#ifndef MAME_INCLUDES_LADYFROG_H
+#define MAME_INCLUDES_LADYFROG_H
+
+#pragma once
 
 #include "machine/gen_latch.h"
 #include "sound/msm5232.h"
+#include "emupal.h"
+#include "tilemap.h"
 
 class ladyfrog_state : public driver_device
 {
 public:
-	ladyfrog_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
+	ladyfrog_state(const machine_config &mconfig, device_type type, const char *tag) :
+		driver_device(mconfig, type, tag),
 		m_videoram(*this, "videoram"),
 		m_scrlram(*this, "scrlram"),
 		m_maincpu(*this, "maincpu"),
@@ -21,8 +27,18 @@ public:
 		m_msm(*this, "msm"),
 		m_gfxdecode(*this, "gfxdecode"),
 		m_palette(*this, "palette"),
-		m_soundlatch(*this, "soundlatch") { }
+		m_soundlatch(*this, "soundlatch")
+	{ }
 
+	void toucheme(machine_config &config);
+	void ladyfrog(machine_config &config);
+
+protected:
+	virtual void machine_start() override;
+	virtual void machine_reset() override;
+	virtual void video_start() override;
+
+private:
 	/* memory pointers */
 	required_shared_ptr<uint8_t> m_videoram;
 	std::unique_ptr<uint8_t[]>    m_spriteram;
@@ -50,31 +66,32 @@ public:
 	required_device<palette_device> m_palette;
 	required_device<generic_latch_8_device> m_soundlatch;
 
-	DECLARE_READ8_MEMBER(from_snd_r);
-	DECLARE_WRITE8_MEMBER(to_main_w);
-	DECLARE_WRITE8_MEMBER(sound_cpu_reset_w);
-	DECLARE_WRITE8_MEMBER(sound_command_w);
-	DECLARE_WRITE8_MEMBER(nmi_disable_w);
-	DECLARE_WRITE8_MEMBER(nmi_enable_w);
-	DECLARE_READ8_MEMBER(snd_flag_r);
-	DECLARE_WRITE8_MEMBER(ladyfrog_spriteram_w);
-	DECLARE_READ8_MEMBER(ladyfrog_spriteram_r);
-	DECLARE_WRITE8_MEMBER(ladyfrog_videoram_w);
-	DECLARE_READ8_MEMBER(ladyfrog_videoram_r);
-	DECLARE_WRITE8_MEMBER(ladyfrog_palette_w);
-	DECLARE_READ8_MEMBER(ladyfrog_palette_r);
-	DECLARE_WRITE8_MEMBER(ladyfrog_gfxctrl_w);
-	DECLARE_WRITE8_MEMBER(ladyfrog_gfxctrl2_w);
-	DECLARE_READ8_MEMBER(ladyfrog_scrlram_r);
-	DECLARE_WRITE8_MEMBER(ladyfrog_scrlram_w);
-	DECLARE_WRITE8_MEMBER(unk_w);
+	uint8_t from_snd_r();
+	void to_main_w(uint8_t data);
+	void sound_cpu_reset_w(uint8_t data);
+	void sound_command_w(uint8_t data);
+	void nmi_disable_w(uint8_t data);
+	void nmi_enable_w(uint8_t data);
+	uint8_t snd_flag_r();
+	void ladyfrog_spriteram_w(offs_t offset, uint8_t data);
+	uint8_t ladyfrog_spriteram_r(offs_t offset);
+	void ladyfrog_videoram_w(offs_t offset, uint8_t data);
+	uint8_t ladyfrog_videoram_r(offs_t offset);
+	void ladyfrog_palette_w(offs_t offset, uint8_t data);
+	uint8_t ladyfrog_palette_r(offs_t offset);
+	void ladyfrog_gfxctrl_w(uint8_t data);
+	void ladyfrog_gfxctrl2_w(uint8_t data);
+	uint8_t ladyfrog_scrlram_r(offs_t offset);
+	void ladyfrog_scrlram_w(offs_t offset, uint8_t data);
+	void unk_w(uint8_t data);
 	TILE_GET_INFO_MEMBER(get_tile_info);
-	virtual void machine_start() override;
-	virtual void machine_reset() override;
-	virtual void video_start() override;
 	DECLARE_VIDEO_START(toucheme);
 	DECLARE_VIDEO_START(ladyfrog_common);
 	uint32_t screen_update_ladyfrog(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 	TIMER_CALLBACK_MEMBER(nmi_callback);
 	void draw_sprites( bitmap_ind16 &bitmap, const rectangle &cliprect );
+	void ladyfrog_map(address_map &map);
+	void ladyfrog_sound_map(address_map &map);
 };
+
+#endif // MAME_INCLUDES_LADYFROG_H

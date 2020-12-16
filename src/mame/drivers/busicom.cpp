@@ -16,76 +16,84 @@
 
 uint8_t busicom_state::get_bit_selected(uint32_t val,int num)
 {
-	int i;
-	for(i=0;i<num;i++) {
-		if (BIT(val,i)==0) return i;
-	}
+	for(int i=0;i<num;i++)
+		if (BIT(val,i)==0)
+			return i;
+
 	return 0;
 }
 
-READ8_MEMBER(busicom_state::keyboard_r)
+uint8_t busicom_state::keyboard_r()
 {
 	return m_input_lines[get_bit_selected(m_keyboard_shifter & 0x3ff, 10)]->read();
 }
 
-READ8_MEMBER(busicom_state::printer_r)
+uint8_t busicom_state::printer_r()
 {
 	uint8_t retVal = 0;
-	if (m_drum_index==0) retVal |= 1;
+	if (m_drum_index==0)
+		retVal |= 1;
 	retVal |= ioport("PAPERADV")->read() & 1 ? 8 : 0;
 	return retVal;
 }
 
 
-WRITE8_MEMBER(busicom_state::shifter_w)
+void busicom_state::shifter_w(uint8_t data)
 {
 	// FIXME: detect edges, maybe make 4003 shifter a device
-	if (BIT(data,0)) {
+	if (BIT(data,0))
+	{
 		m_keyboard_shifter <<= 1;
 		m_keyboard_shifter |= BIT(data,1);
 	}
-	if (BIT(data,2)) {
+
+	if (BIT(data,2))
+	{
 		m_printer_shifter <<= 1;
 		m_printer_shifter |= BIT(data,1);
 	}
 }
 
-WRITE8_MEMBER(busicom_state::printer_w)
+void busicom_state::printer_w(uint8_t data)
 {
-	int i,j;
-	if (BIT(data,0)) {
+	u8 i,j;
+	if (BIT(data,0))
+	{
 		logerror("color : %02x %02x %d\n",BIT(data,0),data,m_drum_index);
 		m_printer_line_color[10] = 1;
+	}
 
-	}
-	if (BIT(data,1)) {
-		for(i=3;i<18;i++) {
-			if(BIT(m_printer_shifter,i)) {
+	if (BIT(data,1))
+	{
+		for(i=3;i<18;i++)
+			if(BIT(m_printer_shifter,i))
 				m_printer_line[10][i-3] = m_drum_index + 1;
-			}
-		}
-		if(BIT(m_printer_shifter,0)) {
+
+		if(BIT(m_printer_shifter,0))
 			m_printer_line[10][15] = m_drum_index + 13 + 1;
-		}
-		if(BIT(m_printer_shifter,1)) {
+
+		if(BIT(m_printer_shifter,1))
 			m_printer_line[10][16] = m_drum_index + 26 + 1;
-		}
 	}
-	if (BIT(data,3)) {
-		for(j=0;j<10;j++) {
-			for(i=0;i<17;i++) {
+
+	if (BIT(data,3))
+	{
+		for(j=0;j<10;j++)
+		{
+			for(i=0;i<17;i++)
+			{
 				m_printer_line[j][i] = m_printer_line[j+1][i];
 				m_printer_line_color[j] = m_printer_line_color[j+1];
 			}
 		}
-		for(i=0;i<17;i++) {
-			m_printer_line[10][i] = 0;
-		}
-		m_printer_line_color[10] = 0;
 
+		for(i=0;i<17;i++)
+			m_printer_line[10][i] = 0;
+
+		m_printer_line_color[10] = 0;
 	}
 }
-WRITE8_MEMBER(busicom_state::status_w)
+void busicom_state::status_w(uint8_t data)
 {
 #if 0
 	uint8_t mem_lamp = BIT(data,0);
@@ -95,36 +103,41 @@ WRITE8_MEMBER(busicom_state::status_w)
 	//logerror("status %c %c %c\n",mem_lamp ? 'M':'x',over_lamp ? 'O':'x',minus_lamp ? '-':'x');
 }
 
-WRITE8_MEMBER(busicom_state::printer_ctrl_w)
+void busicom_state::printer_ctrl_w(uint8_t data)
 {
 }
 
-static ADDRESS_MAP_START(busicom_rom, i4004_cpu_device::AS_ROM, 8, busicom_state )
-	ADDRESS_MAP_UNMAP_HIGH
-	AM_RANGE(0x0000, 0x04FF) AM_ROM AM_REGION("maincpu", 0)
-ADDRESS_MAP_END
+void busicom_state::busicom_rom(address_map &map)
+{
+	map.unmap_value_high();
+	map(0x0000, 0x04FF).rom().region("maincpu", 0);
+}
 
-static ADDRESS_MAP_START(busicom_mem, i4004_cpu_device::AS_RAM_MEMORY, 8, busicom_state )
-	ADDRESS_MAP_UNMAP_HIGH
-	AM_RANGE(0x0000, 0x07F) AM_RAM
-ADDRESS_MAP_END
+void busicom_state::busicom_mem(address_map &map)
+{
+	map.unmap_value_high();
+	map(0x0000, 0x07F).ram();
+}
 
-static ADDRESS_MAP_START(busicom_stat, i4004_cpu_device::AS_RAM_STATUS, 8, busicom_state )
-	ADDRESS_MAP_UNMAP_HIGH
-	AM_RANGE(0x0000, 0x01F) AM_RAM
-ADDRESS_MAP_END
+void busicom_state::busicom_stat(address_map &map)
+{
+	map.unmap_value_high();
+	map(0x0000, 0x01F).ram();
+}
 
-static ADDRESS_MAP_START( busicom_rp, i4004_cpu_device::AS_ROM_PORTS, 8, busicom_state )
-	ADDRESS_MAP_UNMAP_HIGH
-	AM_RANGE(0x0000, 0x000f) AM_MIRROR(0x0700) AM_WRITE(shifter_w) // ROM0 I/O
-	AM_RANGE(0x0010, 0x001f) AM_MIRROR(0x0700) AM_READWRITE(keyboard_r,printer_ctrl_w) // ROM1 I/O
-	AM_RANGE(0x0020, 0x002f) AM_MIRROR(0x0700) AM_READ(printer_r)  // ROM2 I/O
-ADDRESS_MAP_END
+void busicom_state::busicom_rp(address_map &map)
+{
+	map.unmap_value_high();
+	map(0x0000, 0x000f).mirror(0x0700).w(FUNC(busicom_state::shifter_w)); // ROM0 I/O
+	map(0x0010, 0x001f).mirror(0x0700).rw(FUNC(busicom_state::keyboard_r), FUNC(busicom_state::printer_ctrl_w)); // ROM1 I/O
+	map(0x0020, 0x002f).mirror(0x0700).r(FUNC(busicom_state::printer_r));  // ROM2 I/O
+}
 
-static ADDRESS_MAP_START( busicom_mp, i4004_cpu_device::AS_RAM_PORTS, 8, busicom_state )
-	AM_RANGE(0x00, 0x00) AM_WRITE(printer_w) // RAM0 output
-	AM_RANGE(0x01, 0x01) AM_WRITE(status_w)  // RAM1 output
-ADDRESS_MAP_END
+void busicom_state::busicom_mp(address_map &map)
+{
+	map(0x00, 0x00).w(FUNC(busicom_state::printer_w)); // RAM0 output
+	map(0x01, 0x01).w(FUNC(busicom_state::status_w));  // RAM1 output
+}
 
 /* Input ports */
 static INPUT_PORTS_START( busicom )
@@ -192,13 +205,21 @@ INPUT_PORTS_END
 TIMER_DEVICE_CALLBACK_MEMBER(busicom_state::timer_callback)
 {
 	m_timer ^= 1;
-	if (m_timer == 1) m_drum_index++;
-	if (m_drum_index == 13) m_drum_index = 0;
+	if (m_timer == 1)
+		m_drum_index++;
+	if (m_drum_index == 13)
+		m_drum_index = 0;
 	m_maincpu->set_input_line(I4004_TEST_LINE, m_timer);
 }
 
 void busicom_state::machine_start()
 {
+	save_item(NAME(m_drum_index));
+	save_item(NAME(m_keyboard_shifter));
+	save_item(NAME(m_printer_shifter));
+	save_item(NAME(m_timer));
+	save_item(NAME(m_printer_line));
+	save_item(NAME(m_printer_line_color));
 }
 
 void busicom_state::machine_reset()
@@ -208,8 +229,10 @@ void busicom_state::machine_reset()
 	m_keyboard_shifter = 0;
 	m_printer_shifter = 0;
 
-	for(i=0;i<17;i++) {
-		for(j=0;j<11;j++) {
+	for(i=0;i<17;i++)
+	{
+		for(j=0;j<11;j++)
+		{
 			m_printer_line[j][i] = 0;
 			m_printer_line_color[j] = 0;
 		}
@@ -217,35 +240,33 @@ void busicom_state::machine_reset()
 
 }
 
-//static const char layout_busicom [] = "busicom";
-
-static MACHINE_CONFIG_START( busicom )
+void busicom_state::busicom(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", I4004, 750000)
-	MCFG_I4004_ROM_MAP(busicom_rom)
-	MCFG_I4004_RAM_MEMORY_MAP(busicom_mem)
-	MCFG_I4004_ROM_PORTS_MAP(busicom_rp)
-	MCFG_I4004_RAM_STATUS_MAP(busicom_stat)
-	MCFG_I4004_RAM_PORTS_MAP(busicom_mp)
+	I4004(config, m_maincpu, 750000);
+	m_maincpu->set_rom_map(&busicom_state::busicom_rom);
+	m_maincpu->set_ram_memory_map(&busicom_state::busicom_mem);
+	m_maincpu->set_rom_ports_map(&busicom_state::busicom_rp);
+	m_maincpu->set_ram_status_map(&busicom_state::busicom_stat);
+	m_maincpu->set_ram_ports_map(&busicom_state::busicom_mp);
 
 	/* video hardware */
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_REFRESH_RATE(50)
-	MCFG_SCREEN_VBLANK_TIME(ATTOSECONDS_IN_USEC(2500)) /* not accurate */
-	MCFG_SCREEN_SIZE(40*17, 44*11)
-	MCFG_SCREEN_VISIBLE_AREA(0, 40*17-1, 0, 44*11-1)
-	MCFG_SCREEN_UPDATE_DRIVER(busicom_state, screen_update_busicom)
-	MCFG_SCREEN_PALETTE("palette")
+	screen_device &screen(SCREEN(config, "screen", SCREEN_TYPE_RASTER));
+	screen.set_refresh_hz(50);
+	screen.set_vblank_time(ATTOSECONDS_IN_USEC(2500)); /* not accurate */
+	screen.set_size(40*17, 44*11);
+	screen.set_visarea_full();
+	screen.set_screen_update(FUNC(busicom_state::screen_update_busicom));
+	screen.set_palette(m_palette);
 
-	MCFG_PALETTE_ADD("palette", 16)
-	MCFG_PALETTE_INIT_OWNER(busicom_state, busicom)
+	PALETTE(config, m_palette, FUNC(busicom_state::busicom_palette), 16);
 
-	MCFG_TIMER_DRIVER_ADD_PERIODIC("busicom_timer", busicom_state, timer_callback, attotime::from_msec(28*2))
-MACHINE_CONFIG_END
+	TIMER(config, "busicom_timer").configure_periodic(FUNC(busicom_state::timer_callback), attotime::from_msec(28*2));
+}
 
 /* ROM definition */
 ROM_START( busicom )
-	ROM_REGION( 0x1000, "maincpu", ROMREGION_ERASEFF )
+	ROM_REGION( 0x0500, "maincpu", 0 )
 	ROM_LOAD( "busicom.l01", 0x0000, 0x0100, CRC(51ae2513) SHA1(5cb4097a3945db35af4ed64b629b20b08fc9824f))
 	ROM_LOAD( "busicom.l02", 0x0100, 0x0100, CRC(a05411ad) SHA1(81503a99a0d34fa29bf1245de0a44af2f174abdd))
 	ROM_LOAD( "busicom.l05", 0x0200, 0x0100, CRC(6120addf) SHA1(4b7ec183613630120b3c313c782122713d4327c5))
@@ -255,5 +276,5 @@ ROM_END
 
 /* Driver */
 
-//    YEAR  NAME    PARENT  COMPAT   MACHINE    INPUT    STATE          INIT COMPANY                          FULLNAME          FLAGS
-COMP( 1974, busicom,  0,       0,   busicom,    busicom, busicom_state, 0,   "Business Computer Corporation", "Busicom 141-PF", MACHINE_NOT_WORKING | MACHINE_NO_SOUND )
+//    YEAR  NAME     PARENT  COMPAT  MACHINE  INPUT    CLASS          INIT        COMPANY                          FULLNAME          FLAGS
+COMP( 1974, busicom, 0,      0,      busicom, busicom, busicom_state, empty_init, "Business Computer Corporation", "Busicom 141-PF", MACHINE_NO_SOUND_HW | MACHINE_SUPPORTS_SAVE )

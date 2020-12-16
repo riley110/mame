@@ -18,8 +18,9 @@ DECLARE_DEVICE_TYPE(MSX_CART_SFG05, msx_cart_sfg05_device)
 class msx_cart_sfg_device : public device_t, public msx_cart_interface
 {
 public:
-	virtual DECLARE_READ8_MEMBER(read_cart) override;
-	virtual DECLARE_WRITE8_MEMBER(write_cart) override;
+	virtual uint8_t read_cart(offs_t offset) override;
+	virtual void write_cart(offs_t offset, uint8_t data) override;
+
 protected:
 	msx_cart_sfg_device(const machine_config &mconfig, const device_type type, const char *tag, device_t *owner, uint32_t clock);
 
@@ -30,7 +31,6 @@ protected:
 
 	IRQ_CALLBACK_MEMBER(irq_callback);
 
-private:
 	DECLARE_WRITE_LINE_MEMBER(ym2151_irq_w);
 	DECLARE_WRITE_LINE_MEMBER(ym2148_irq_w);
 
@@ -60,6 +60,7 @@ class msx_cart_sfg05_device : public msx_cart_sfg_device
 public:
 	msx_cart_sfg05_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
+	virtual void device_add_mconfig(machine_config &config) override;
 	virtual const tiny_rom_entry *device_rom_region() const override;
 };
 

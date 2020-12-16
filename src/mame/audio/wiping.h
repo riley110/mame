@@ -10,7 +10,7 @@ class wiping_sound_device : public device_t, public device_sound_interface
 public:
 	wiping_sound_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	DECLARE_WRITE8_MEMBER( sound_w );
+	void sound_w(offs_t offset, uint8_t data);
 
 protected:
 	// device-level overrides
@@ -58,6 +58,6 @@ private:
 	void make_mixer_table(int voices, int gain);
 };
 
-DECLARE_DEVICE_TYPE(WIPING, wiping_sound_device)
+DECLARE_DEVICE_TYPE(WIPING_CUSTOM, wiping_sound_device)
 
 #endif // MAME_AUDIO_WIPING_H

@@ -16,12 +16,12 @@
 
 
 ******************************************************************************/
-READ8_MEMBER(nbmj8891_state::palette_type1_r)
+uint8_t nbmj8891_state::palette_type1_r(offs_t offset)
 {
 	return m_palette_ptr[offset];
 }
 
-WRITE8_MEMBER(nbmj8891_state::palette_type1_w)
+void nbmj8891_state::palette_type1_w(offs_t offset, uint8_t data)
 {
 	int r, g, b;
 
@@ -38,12 +38,12 @@ WRITE8_MEMBER(nbmj8891_state::palette_type1_w)
 	m_palette->set_pen_color((offset >> 1), pal4bit(r), pal4bit(g), pal4bit(b));
 }
 
-READ8_MEMBER(nbmj8891_state::palette_type2_r)
+uint8_t nbmj8891_state::palette_type2_r(offs_t offset)
 {
 	return m_palette_ptr[offset];
 }
 
-WRITE8_MEMBER(nbmj8891_state::palette_type2_w)
+void nbmj8891_state::palette_type2_w(offs_t offset, uint8_t data)
 {
 	int r, g, b;
 
@@ -60,12 +60,12 @@ WRITE8_MEMBER(nbmj8891_state::palette_type2_w)
 	m_palette->set_pen_color((offset & 0x0ff), pal4bit(r), pal4bit(g), pal4bit(b));
 }
 
-READ8_MEMBER(nbmj8891_state::palette_type3_r)
+uint8_t nbmj8891_state::palette_type3_r(offs_t offset)
 {
 	return m_palette_ptr[offset];
 }
 
-WRITE8_MEMBER(nbmj8891_state::palette_type3_w)
+void nbmj8891_state::palette_type3_w(offs_t offset, uint8_t data)
 {
 	int r, g, b;
 
@@ -82,17 +82,17 @@ WRITE8_MEMBER(nbmj8891_state::palette_type3_w)
 	m_palette->set_pen_color((offset >> 1), pal4bit(r), pal4bit(g), pal4bit(b));
 }
 
-WRITE8_MEMBER(nbmj8891_state::clutsel_w)
+void nbmj8891_state::clutsel_w(uint8_t data)
 {
 	m_clutsel = data;
 }
 
-READ8_MEMBER(nbmj8891_state::clut_r)
+uint8_t nbmj8891_state::clut_r(offs_t offset)
 {
 	return m_clut[offset];
 }
 
-WRITE8_MEMBER(nbmj8891_state::clut_w)
+void nbmj8891_state::clut_w(offs_t offset, uint8_t data)
 {
 	m_clut[((m_clutsel & 0x7f) * 0x10) + (offset & 0x0f)] = data;
 }
@@ -101,7 +101,7 @@ WRITE8_MEMBER(nbmj8891_state::clut_w)
 
 
 ******************************************************************************/
-WRITE8_MEMBER(nbmj8891_state::blitter_w)
+void nbmj8891_state::blitter_w(offs_t offset, uint8_t data)
 {
 	switch (offset)
 	{
@@ -125,7 +125,7 @@ WRITE8_MEMBER(nbmj8891_state::blitter_w)
 	}
 }
 
-WRITE8_MEMBER(nbmj8891_state::taiwanmb_blitter_w)
+void nbmj8891_state::taiwanmb_blitter_w(offs_t offset, uint8_t data)
 {
 	switch (offset)
 	{
@@ -138,19 +138,19 @@ WRITE8_MEMBER(nbmj8891_state::taiwanmb_blitter_w)
 	}
 }
 
-WRITE8_MEMBER(nbmj8891_state::taiwanmb_gfxdraw_w)
+void nbmj8891_state::taiwanmb_gfxdraw_w(uint8_t data)
 {
 //  gfxdraw();
 }
 
-WRITE8_MEMBER(nbmj8891_state::taiwanmb_gfxflag_w)
+void nbmj8891_state::taiwanmb_gfxflag_w(uint8_t data)
 {
 	m_flipscreen = (data & 0x04) ? 1 : 0;
 
 	vramflip(0);
 }
 
-WRITE8_MEMBER(nbmj8891_state::taiwanmb_mcu_w)
+void nbmj8891_state::taiwanmb_mcu_w(uint8_t data)
 {
 	m_param_old[m_param_cnt & 0x0f] = data;
 
@@ -233,12 +233,12 @@ WRITE8_MEMBER(nbmj8891_state::taiwanmb_mcu_w)
 	m_param_cnt++;
 }
 
-WRITE8_MEMBER(nbmj8891_state::scrolly_w)
+void nbmj8891_state::scrolly_w(uint8_t data)
 {
 	m_scrolly = data;
 }
 
-WRITE8_MEMBER(nbmj8891_state::vramsel_w)
+void nbmj8891_state::vramsel_w(uint8_t data)
 {
 	/* protection - not sure about this */
 	m_nb1413m3->m_sndromrgntag = (data & 0x20) ? "protection" : "voice";
@@ -246,7 +246,7 @@ WRITE8_MEMBER(nbmj8891_state::vramsel_w)
 	m_vram = data;
 }
 
-WRITE8_MEMBER(nbmj8891_state::romsel_w)
+void nbmj8891_state::romsel_w(uint8_t data)
 {
 	int gfxlen = memregion("gfx1")->bytes();
 	m_gfxrom = (data & 0x0f);
@@ -310,10 +310,10 @@ void nbmj8891_state::device_timer(emu_timer &timer, device_timer_id id, int para
 	switch (id)
 	{
 	case TIMER_BLITTER:
-		m_nb1413m3->m_busyflag = 1;
+		m_nb1413m3->busyflag_w(1);
 		break;
 	default:
-		assert_always(false, "Unknown id in nbmj8891_state::device_timer");
+		throw emu_fatalerror("Unknown id in nbmj8891_state::device_timer");
 	}
 }
 
@@ -472,7 +472,7 @@ void nbmj8891_state::gfxdraw()
 		}
 	}
 
-	m_nb1413m3->m_busyflag = 0;
+	m_nb1413m3->busyflag_w(0);
 	m_blitter_timer->adjust(attotime::from_hz(400000) * m_nb1413m3->m_busyctr);
 }
 
@@ -528,7 +528,7 @@ void nbmj8891_state::video_start()
 	m_screen_refresh = 1;
 
 	common_save_state();
-	save_pointer(NAME(m_videoram1.get()), width * height);
+	save_pointer(NAME(m_videoram1), width * height);
 }
 
 void nbmj8891_state::common_save_state()
@@ -547,9 +547,9 @@ void nbmj8891_state::common_save_state()
 	save_item(NAME(m_flipscreen));
 	save_item(NAME(m_clutsel));
 	save_item(NAME(m_gfxdraw_mode));
-	save_pointer(NAME(m_videoram0.get()), m_screen->width() * m_screen->height());
-	save_pointer(NAME(m_palette_ptr.get()), 0x200);
-	save_pointer(NAME(m_clut.get()), 0x800);
+	save_pointer(NAME(m_videoram0), m_screen->width() * m_screen->height());
+	save_pointer(NAME(m_palette_ptr), 0x200);
+	save_pointer(NAME(m_clut), 0x800);
 	save_item(NAME(m_flipscreen_old));
 
 	machine().save().register_postload(save_prepost_delegate(FUNC(nbmj8891_state::postload), this));

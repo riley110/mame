@@ -21,7 +21,7 @@ class machine_static_info
 {
 public:
 	// construction
-	machine_static_info(machine_config const &config);
+	machine_static_info(const ui_options &options, machine_config const &config);
 
 	// overall emulation status
 	::machine_flags::type machine_flags() const { return m_flags; }
@@ -43,10 +43,12 @@ public:
 	rgb_t warnings_color() const;
 
 protected:
-	machine_static_info(machine_config const &config, ioport_list const &ports);
+	machine_static_info(const ui_options &options, machine_config const &config, ioport_list const &ports);
 
 private:
-	machine_static_info(machine_config const &config, ioport_list const *ports);
+	machine_static_info(const ui_options &options, machine_config const &config, ioport_list const *ports);
+
+	const ui_options &      m_options;
 
 	// overall feature status
 	::machine_flags::type   m_flags;
@@ -74,7 +76,6 @@ public:
 	// text generators
 	std::string warnings_string() const;
 	std::string game_info_string() const;
-	std::string mandatory_images() const;
 	std::string get_screen_desc(screen_device &screen) const;
 
 private:
@@ -88,6 +89,18 @@ class menu_game_info : public menu
 public:
 	menu_game_info(mame_ui_manager &mui, render_container &container);
 	virtual ~menu_game_info() override;
+
+private:
+	virtual void populate(float &customtop, float &custombottom) override;
+	virtual void handle() override;
+};
+
+
+class menu_warn_info : public menu
+{
+public:
+	menu_warn_info(mame_ui_manager &mui, render_container &container);
+	virtual ~menu_warn_info() override;
 
 private:
 	virtual void populate(float &customtop, float &custombottom) override;

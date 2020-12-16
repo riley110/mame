@@ -329,7 +329,7 @@ void a26_rom_32in1_device::device_reset()
  GAMES: a large majority
  -------------------------------------------------*/
 
-READ8_MEMBER(a26_rom_2k_device::read_rom)
+uint8_t a26_rom_2k_device::read_rom(offs_t offset)
 {
 	// Super Chip RAM reads are mapped in 0x1080-0x10ff
 	if (!m_ram.empty() && offset >= 0x80 && offset < 0x100)
@@ -348,7 +348,7 @@ READ8_MEMBER(a26_rom_2k_device::read_rom)
  GAMES: Fatal Run
  -------------------------------------------------*/
 
-READ8_MEMBER(a26_rom_f4_device::read_rom)
+uint8_t a26_rom_f4_device::read_rom(offs_t offset)
 {
 	// Super Chip RAM reads are mapped in 0x1080-0x10ff
 	if (!m_ram.empty() && offset >= 0x80 && offset < 0x100)
@@ -357,7 +357,7 @@ READ8_MEMBER(a26_rom_f4_device::read_rom)
 	}
 
 	// update banks
-	if (!machine().side_effect_disabled())
+	if (!machine().side_effects_disabled())
 	{
 		switch (offset)
 		{
@@ -377,7 +377,7 @@ READ8_MEMBER(a26_rom_f4_device::read_rom)
 	return m_rom[offset + (m_base_bank * 0x1000)];
 }
 
-WRITE8_MEMBER(a26_rom_f4_device::write_bank)
+void a26_rom_f4_device::write_bank(address_space &space, offs_t offset, uint8_t data)
 {
 	// Super Chip RAM writes are mapped in 0x1000-0x107f
 	if (!m_ram.empty() && offset < 0x80)
@@ -414,7 +414,7 @@ WRITE8_MEMBER(a26_rom_f4_device::write_bank)
 
  -------------------------------------------------*/
 
-READ8_MEMBER(a26_rom_f6_device::read_rom)
+uint8_t a26_rom_f6_device::read_rom(offs_t offset)
 {
 	// Super Chip RAM reads are mapped in 0x1080-0x10ff
 	if (!m_ram.empty() && offset >= 0x80 && offset < 0x100)
@@ -423,7 +423,7 @@ READ8_MEMBER(a26_rom_f6_device::read_rom)
 	}
 
 	// update banks
-	if (!machine().side_effect_disabled())
+	if (!machine().side_effects_disabled())
 	{
 		switch (offset)
 		{
@@ -439,7 +439,7 @@ READ8_MEMBER(a26_rom_f6_device::read_rom)
 	return m_rom[offset + (m_base_bank * 0x1000)];
 }
 
-WRITE8_MEMBER(a26_rom_f6_device::write_bank)
+void a26_rom_f6_device::write_bank(address_space &space, offs_t offset, uint8_t data)
 {
 	// Super Chip RAM writes are mapped in 0x1000-0x107f
 	if (!m_ram.empty() && offset < 0x80)
@@ -472,7 +472,7 @@ WRITE8_MEMBER(a26_rom_f6_device::write_bank)
 
  -------------------------------------------------*/
 
-READ8_MEMBER(a26_rom_f8_device::read_rom)
+uint8_t a26_rom_f8_device::read_rom(offs_t offset)
 {
 	// Super Chip RAM reads are mapped in 0x1080-0x10ff
 	if (!m_ram.empty() && offset >= 0x80 && offset < 0x100)
@@ -481,7 +481,7 @@ READ8_MEMBER(a26_rom_f8_device::read_rom)
 	}
 
 	// update banks
-	if (!machine().side_effect_disabled())
+	if (!machine().side_effects_disabled())
 	{
 		switch (offset)
 		{
@@ -495,7 +495,7 @@ READ8_MEMBER(a26_rom_f8_device::read_rom)
 	return m_rom[offset + (m_base_bank * 0x1000)];
 }
 
-WRITE8_MEMBER(a26_rom_f8_device::write_bank)
+void a26_rom_f8_device::write_bank(address_space &space, offs_t offset, uint8_t data)
 {
 	// Super Chip RAM writes are mapped in 0x1000-0x107f
 	if (!m_ram.empty() && offset < 0x80)
@@ -528,7 +528,7 @@ WRITE8_MEMBER(a26_rom_f8_device::write_bank)
 
  -------------------------------------------------*/
 
-READ8_MEMBER(a26_rom_fa_device::read_rom)
+uint8_t a26_rom_fa_device::read_rom(offs_t offset)
 {
 	// CBS RAM+ reads are mapped in 0x1100-0x11ff
 	if (!m_ram.empty() && offset >= 0x100 && offset < 0x200)
@@ -537,7 +537,7 @@ READ8_MEMBER(a26_rom_fa_device::read_rom)
 	}
 
 	// update banks
-	if (!machine().side_effect_disabled())
+	if (!machine().side_effects_disabled())
 	{
 		switch (offset)
 		{
@@ -552,7 +552,7 @@ READ8_MEMBER(a26_rom_fa_device::read_rom)
 	return m_rom[offset + (m_base_bank * 0x1000)];
 }
 
-WRITE8_MEMBER(a26_rom_fa_device::write_bank)
+void a26_rom_fa_device::write_bank(address_space &space, offs_t offset, uint8_t data)
 {
 	// CBS RAM+ writes are mapped in 0x1000-0x10ff
 	if (!m_ram.empty() && offset < 0x100)
@@ -593,7 +593,7 @@ WRITE8_MEMBER(a26_rom_fa_device::write_bank)
 
  */
 
-READ8_MEMBER(a26_rom_fe_device::read_rom)
+uint8_t a26_rom_fe_device::read_rom(offs_t offset)
 {
 	uint8_t data;
 
@@ -605,7 +605,7 @@ READ8_MEMBER(a26_rom_fe_device::read_rom)
 
 	data = m_rom[offset + (m_base_bank * 0x1000)];
 
-	if (!machine().side_effect_disabled())
+	if (!machine().side_effects_disabled())
 	{
 		if (m_trigger_on_next_access)
 		{
@@ -617,7 +617,7 @@ READ8_MEMBER(a26_rom_fe_device::read_rom)
 	return data;
 }
 
-WRITE8_MEMBER(a26_rom_fe_device::write_ram)
+void a26_rom_fe_device::write_ram(offs_t offset, uint8_t data)
 {
 	// Super Chip RAM writes are mapped in 0x1000-0x107f
 	if (!m_ram.empty() && offset < 0x80)
@@ -626,11 +626,11 @@ WRITE8_MEMBER(a26_rom_fe_device::write_ram)
 	}
 }
 
-READ8_MEMBER(a26_rom_fe_device::read_bank)
+uint8_t a26_rom_fe_device::read_bank(address_space &space, offs_t offset)
 {
 	uint8_t data = space.read_byte(0xfe + offset);
 
-	if (!machine().side_effect_disabled())
+	if (!machine().side_effects_disabled())
 	{
 		switch (offset & 1)
 		{
@@ -651,10 +651,10 @@ READ8_MEMBER(a26_rom_fe_device::read_bank)
 	return data;
 }
 
-WRITE8_MEMBER(a26_rom_fe_device::write_bank)
+void a26_rom_fe_device::write_bank(address_space &space, offs_t offset, uint8_t data)
 {
 	space.write_byte(0xfe, data);
-	if (!machine().side_effect_disabled())
+	if (!machine().side_effects_disabled())
 	{
 		// The next byte on the data bus determines which bank to switch to
 		m_trigger_on_next_access = 1;
@@ -671,7 +671,7 @@ WRITE8_MEMBER(a26_rom_fe_device::write_bank)
 
  -------------------------------------------------*/
 
-READ8_MEMBER(a26_rom_3e_device::read_rom)
+uint8_t a26_rom_3e_device::read_rom(offs_t offset)
 {
 	if (!m_ram.empty() && m_ram_enable && offset < 0x400)
 		return m_ram[offset + (m_ram_bank * 0x400)];
@@ -682,7 +682,7 @@ READ8_MEMBER(a26_rom_3e_device::read_rom)
 		return m_rom[offset + m_base_bank * 0x800];
 }
 
-WRITE8_MEMBER(a26_rom_3e_device::write_bank)
+void a26_rom_3e_device::write_bank(address_space &space, offs_t offset, uint8_t data)
 {
 	if (offset == 0x3f)
 	{
@@ -696,7 +696,7 @@ WRITE8_MEMBER(a26_rom_3e_device::write_bank)
 	}
 }
 
-WRITE8_MEMBER(a26_rom_3e_device::write_ram)
+void a26_rom_3e_device::write_ram(offs_t offset, uint8_t data)
 {
 	if (!m_ram.empty() && m_ram_enable && offset >= 0x400 && offset < 0x800)
 		m_ram[(offset & 0x3ff) + (m_ram_bank * 0x400)] = data;
@@ -714,7 +714,7 @@ WRITE8_MEMBER(a26_rom_3e_device::write_ram)
 
  -------------------------------------------------*/
 
-READ8_MEMBER(a26_rom_3f_device::read_rom)
+uint8_t a26_rom_3f_device::read_rom(offs_t offset)
 {
 	if (offset >= 0x800)
 		return m_rom[(offset & 0x7ff)  + (m_num_bank - 1) * 0x800];
@@ -722,7 +722,7 @@ READ8_MEMBER(a26_rom_3f_device::read_rom)
 		return m_rom[offset + m_base_bank * 0x800];
 }
 
-WRITE8_MEMBER(a26_rom_3f_device::write_bank)
+void a26_rom_3f_device::write_bank(address_space &space, offs_t offset, uint8_t data)
 {
 	m_base_bank = data & (m_num_bank - 1);
 }
@@ -737,10 +737,10 @@ WRITE8_MEMBER(a26_rom_3f_device::write_bank)
 
  -------------------------------------------------*/
 
-READ8_MEMBER(a26_rom_e0_device::read_rom)
+uint8_t a26_rom_e0_device::read_rom(offs_t offset)
 {
 	// update banks
-	if (!machine().side_effect_disabled())
+	if (!machine().side_effects_disabled())
 	{
 		if (offset >= 0xfe0 && offset <= 0xff8)
 			m_base_banks[(offset >> 3) & 3] = offset & 7;
@@ -749,7 +749,7 @@ READ8_MEMBER(a26_rom_e0_device::read_rom)
 	return m_rom[(offset & 0x3ff) + (m_base_banks[(offset >> 10) & 3] * 0x400)];
 }
 
-WRITE8_MEMBER(a26_rom_e0_device::write_bank)
+void a26_rom_e0_device::write_bank(address_space &space, offs_t offset, uint8_t data)
 {
 	if (offset >= 0xfe0 && offset <= 0xff8)
 		m_base_banks[(offset >> 3) & 3] = offset & 7;
@@ -776,10 +776,10 @@ WRITE8_MEMBER(a26_rom_e0_device::write_bank)
 
  -------------------------------------------------*/
 
-READ8_MEMBER(a26_rom_e7_device::read_rom)
+uint8_t a26_rom_e7_device::read_rom(offs_t offset)
 {
 	// update banks
-	if (!machine().side_effect_disabled())
+	if (!machine().side_effects_disabled())
 	{
 		if (offset >= 0xfe0 && offset <= 0xfe7)
 			m_base_bank = offset - 0xfe0;
@@ -806,7 +806,7 @@ READ8_MEMBER(a26_rom_e7_device::read_rom)
 		return m_rom[(offset & 0x7ff) + (m_base_bank * 0x800)];
 }
 
-WRITE8_MEMBER(a26_rom_e7_device::write_bank)
+void a26_rom_e7_device::write_bank(address_space &space, offs_t offset, uint8_t data)
 {
 	if (offset >= 0xfe0 && offset <= 0xfe7)
 		m_base_bank = offset - 0xfe0;
@@ -838,20 +838,20 @@ WRITE8_MEMBER(a26_rom_e7_device::write_bank)
 
  -------------------------------------------------*/
 
-READ8_MEMBER(a26_rom_ua_device::read_rom)
+uint8_t a26_rom_ua_device::read_rom(offs_t offset)
 {
 	return m_rom[(offset + (m_base_bank * 0x1000)) & (m_rom_size - 1)];
 }
 
-READ8_MEMBER(a26_rom_ua_device::read_bank)
+uint8_t a26_rom_ua_device::read_bank(address_space &space, offs_t offset)
 {
-	if (!machine().side_effect_disabled())
+	if (!machine().side_effects_disabled())
 		m_base_bank = offset >> 6;
 
 	return 0;
 }
 
-WRITE8_MEMBER(a26_rom_ua_device::write_bank)
+void a26_rom_ua_device::write_bank(address_space &space, offs_t offset, uint8_t data)
 {
 	m_base_bank = offset >> 6;
 }
@@ -867,7 +867,7 @@ WRITE8_MEMBER(a26_rom_ua_device::write_bank)
 
  -------------------------------------------------*/
 
-READ8_MEMBER(a26_rom_cv_device::read_rom)
+uint8_t a26_rom_cv_device::read_rom(offs_t offset)
 {
 	if (!m_ram.empty() && offset < 0x400)
 	{
@@ -879,7 +879,7 @@ READ8_MEMBER(a26_rom_cv_device::read_rom)
 	return m_rom[offset & 0x7ff];
 }
 
-WRITE8_MEMBER(a26_rom_cv_device::write_bank)
+void a26_rom_cv_device::write_bank(address_space &space, offs_t offset, uint8_t data)
 {
 	if (!m_ram.empty() && offset >= 0x400 && offset < 0x800)
 	{
@@ -898,9 +898,9 @@ WRITE8_MEMBER(a26_rom_cv_device::write_bank)
 
  -------------------------------------------------*/
 
-READ8_MEMBER(a26_rom_dc_device::read_rom)
+uint8_t a26_rom_dc_device::read_rom(offs_t offset)
 {
-	if (!machine().side_effect_disabled())
+	if (!machine().side_effects_disabled())
 	{
 		if (offset == 0xff0)
 			m_base_bank = (m_base_bank + 1) & 0x0f;
@@ -912,7 +912,7 @@ READ8_MEMBER(a26_rom_dc_device::read_rom)
 	return m_rom[offset + (m_base_bank * 0x1000)];
 }
 
-WRITE8_MEMBER(a26_rom_dc_device::write_bank)
+void a26_rom_dc_device::write_bank(address_space &space, offs_t offset, uint8_t data)
 {
 	if (offset == 0xff0)
 		m_base_bank = (m_base_bank + 1) & 0x0f;
@@ -928,9 +928,9 @@ WRITE8_MEMBER(a26_rom_dc_device::write_bank)
 
  -------------------------------------------------*/
 
-READ8_MEMBER(a26_rom_fv_device::read_rom)
+uint8_t a26_rom_fv_device::read_rom(offs_t offset)
 {
-	if (!machine().side_effect_disabled())
+	if (!machine().side_effects_disabled())
 	{
 		if (offset == 0xfd0)
 		{
@@ -945,7 +945,7 @@ READ8_MEMBER(a26_rom_fv_device::read_rom)
 	return m_rom[offset + (m_base_bank * 0x1000)];
 }
 
-WRITE8_MEMBER(a26_rom_fv_device::write_bank)
+void a26_rom_fv_device::write_bank(address_space &space, offs_t offset, uint8_t data)
 {
 	if (offset == 0xfd0)
 	{
@@ -969,12 +969,12 @@ WRITE8_MEMBER(a26_rom_fv_device::write_bank)
 
  -------------------------------------------------*/
 
-READ8_MEMBER(a26_rom_jvp_device::read_rom)
+uint8_t a26_rom_jvp_device::read_rom(offs_t offset)
 {
 	return m_rom[offset + (m_base_bank * 0x1000)];
 }
 
-WRITE8_MEMBER(a26_rom_jvp_device::write_bank)
+void a26_rom_jvp_device::write_bank(address_space &space, offs_t offset, uint8_t data)
 {
 	switch (offset)
 	{
@@ -997,7 +997,7 @@ WRITE8_MEMBER(a26_rom_jvp_device::write_bank)
 
  -------------------------------------------------*/
 
-READ8_MEMBER(a26_rom_4in1_device::read_rom)
+uint8_t a26_rom_4in1_device::read_rom(offs_t offset)
 {
 	return m_rom[offset + (m_base_bank * 0x1000)];
 }
@@ -1012,9 +1012,9 @@ READ8_MEMBER(a26_rom_4in1_device::read_rom)
 
  -------------------------------------------------*/
 
-READ8_MEMBER(a26_rom_8in1_device::read_rom)
+uint8_t a26_rom_8in1_device::read_rom(offs_t offset)
 {
-	if (!machine().side_effect_disabled())
+	if (!machine().side_effects_disabled())
 	{
 		switch (offset)
 		{
@@ -1037,7 +1037,7 @@ READ8_MEMBER(a26_rom_8in1_device::read_rom)
 
  -------------------------------------------------*/
 
-READ8_MEMBER(a26_rom_32in1_device::read_rom)
+uint8_t a26_rom_32in1_device::read_rom(offs_t offset)
 {
 	return m_rom[(offset & 0x7ff) + (m_base_bank * 0x800)];
 }
@@ -1050,12 +1050,12 @@ READ8_MEMBER(a26_rom_32in1_device::read_rom)
  http://blog.kevtris.org/blogfiles/Atari%202600%20Mappers.txt
  --------------------------------------------------*/
 
-READ8_MEMBER(a26_rom_x07_device::read_rom)
+uint8_t a26_rom_x07_device::read_rom(offs_t offset)
 {
 	return m_rom[offset + (m_base_bank * 0x1000)];
 }
 
-WRITE8_MEMBER(a26_rom_x07_device::write_bank)
+void a26_rom_x07_device::write_bank(address_space &space, offs_t offset, uint8_t data)
 {
 	/*
 	A13           A0

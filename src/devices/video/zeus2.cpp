@@ -25,6 +25,7 @@ DEFINE_DEVICE_TYPE(ZEUS2, zeus2_device, "zeus2", "Midway Zeus2")
 
 zeus2_device::zeus2_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
 	: device_t(mconfig, ZEUS2, tag, owner, clock)
+	, device_video_interface(mconfig, *this)
 	, m_vblank(*this), m_irq(*this), m_atlantis(0)
 {
 }
@@ -37,13 +38,13 @@ TIMER_CALLBACK_MEMBER(zeus2_device::display_irq_off)
 {
 	m_vblank(CLEAR_LINE);
 
-	//attotime vblank_period = m_screen->time_until_pos(m_zeusbase[0x37] & 0xffff);
+	//attotime vblank_period = screen().time_until_pos(m_zeusbase[0x37] & 0xffff);
 
 	///* if zero, adjust to next frame, otherwise we may get stuck in an infinite loop */
 	//if (vblank_period == attotime::zero)
-	//  vblank_period = m_screen->frame_period();
+	//  vblank_period = screen().frame_period();
 	//vblank_timer->adjust(vblank_period);
-	vblank_timer->adjust(m_screen->time_until_vblank_start());
+	vblank_timer->adjust(screen().time_until_vblank_start());
 	//machine().scheduler().timer_set(attotime::from_hz(30000000), timer_expired_delegate(FUNC(zeus2_device::display_irq), this));
 }
 
@@ -51,8 +52,8 @@ TIMER_CALLBACK_MEMBER(zeus2_device::display_irq)
 {
 	m_vblank(ASSERT_LINE);
 	/* set a timer for the next off state */
-	//machine().scheduler().timer_set(m_screen->time_until_pos(0), timer_expired_delegate(FUNC(zeus2_device::display_irq_off), this), 0, this);
-	machine().scheduler().timer_set(m_screen->time_until_vblank_end(), timer_expired_delegate(FUNC(zeus2_device::display_irq_off), this), 0, this);
+	//machine().scheduler().timer_set(screen().time_until_pos(0), timer_expired_delegate(FUNC(zeus2_device::display_irq_off), this), 0, this);
+	machine().scheduler().timer_set(screen().time_until_vblank_end(), timer_expired_delegate(FUNC(zeus2_device::display_irq_off), this), 0, this);
 	//machine().scheduler().timer_set(attotime::from_hz(30000000), timer_expired_delegate(FUNC(zeus2_device::display_irq_off), this));
 }
 
@@ -70,15 +71,13 @@ TIMER_CALLBACK_MEMBER(zeus2_device::int_timer_callback)
 void zeus2_device::device_start()
 {
 	/* allocate memory for "wave" RAM */
-	waveram = auto_alloc_array(machine(), uint32_t, WAVERAM0_WIDTH * WAVERAM0_HEIGHT * 8/4);
+	m_waveram = std::make_unique<uint32_t[]>(WAVERAM0_WIDTH * WAVERAM0_HEIGHT * 8/4);
 	m_frameColor = std::make_unique<uint32_t[]>(WAVERAM1_WIDTH * WAVERAM1_HEIGHT * 2);
 	m_frameDepth = std::make_unique<int32_t[]>(WAVERAM1_WIDTH * WAVERAM1_HEIGHT * 2);
 
 	/* initialize polygon engine */
-	poly = auto_alloc(machine(), zeus2_renderer(this));
+	poly = std::make_unique<zeus2_renderer>(this);
 
-	//m_screen = machine().first_screen();
-	m_screen = downcast<screen_device *>(machine().device("screen"));
 	m_vblank.resolve_safe();
 	m_irq.resolve_safe();
 
@@ -117,9 +116,9 @@ void zeus2_device::device_start()
 	save_item(NAME(zeus_texbase));
 	save_item(NAME(zeus_quad_size));
 	save_item(NAME(m_useZOffset));
-	save_pointer(NAME(waveram), WAVERAM0_WIDTH * WAVERAM0_HEIGHT * 8 / 4);
-	save_pointer(NAME(m_frameColor.get()), WAVERAM1_WIDTH * WAVERAM1_HEIGHT * 2);
-	save_pointer(NAME(m_frameDepth.get()), WAVERAM1_WIDTH * WAVERAM1_HEIGHT * 2);
+	save_pointer(NAME(m_waveram), WAVERAM0_WIDTH * WAVERAM0_HEIGHT * 8 / 4);
+	save_pointer(NAME(m_frameColor), WAVERAM1_WIDTH * WAVERAM1_HEIGHT * 2);
+	save_pointer(NAME(m_frameDepth), WAVERAM1_WIDTH * WAVERAM1_HEIGHT * 2);
 	save_item(NAME(m_pal_table));
 	// m_ucode
 	save_item(NAME(m_curUCodeSrc));
@@ -172,7 +171,7 @@ void zeus2_device::device_stop()
 	myfile.open(fileName.c_str(), std::ios::out | std::ios::trunc | std::ios::binary);
 
 	if (myfile.is_open())
-		myfile.write((char *)waveram, WAVERAM0_WIDTH * WAVERAM0_HEIGHT * 2 * sizeof(uint32_t));
+		myfile.write((char *)m_waveram.get(), WAVERAM0_WIDTH * WAVERAM0_HEIGHT * 2 * sizeof(uint32_t));
 	myfile.close();
 #endif
 
@@ -292,7 +291,7 @@ uint32_t zeus2_device::screen_update(screen_device &screen, bitmap_rgb32 &bitmap
  *
  *************************************/
 
-READ32_MEMBER( zeus2_device::zeus2_r )
+uint32_t zeus2_device::zeus2_r(offs_t offset)
 {
 	int logit = (offset != 0x00 && offset != 0x01 &&
 		offset != 0x18 && offset != 0x19 && offset != 0x48 && offset != 0x49
@@ -327,7 +326,7 @@ READ32_MEMBER( zeus2_device::zeus2_r )
 			/* bits $00080000 is tested in a loop until 0 */
 			/* bit  $00000004 is tested for toggling; probably VBLANK */
 			result = 0x00;
-			if (m_screen->vblank())
+			if (screen().vblank())
 				result |= 0x04;
 			break;
 
@@ -346,13 +345,13 @@ READ32_MEMBER( zeus2_device::zeus2_r )
 
 		case 0x54:
 			// VCOUNT upper 16 bits
-			//result = (m_screen->vpos() << 16) | m_screen->vpos();
-			result = (m_screen->vpos() << 16);
+			//result = (screen().vpos() << 16) | screen().vpos();
+			result = (screen().vpos() << 16);
 			break;
 	}
 
 	if (logit)
-		logerror("%08X:zeus2_r(%02X) = %08X\n", machine().device("maincpu")->safe_pc(), offset, result);
+		logerror("%s:zeus2_r(%02X) = %08X\n", machine().describe_context(), offset, result);
 
 	return result;
 }
@@ -365,7 +364,7 @@ READ32_MEMBER( zeus2_device::zeus2_r )
  *
  *************************************/
 
-WRITE32_MEMBER( zeus2_device::zeus2_w )
+void zeus2_device::zeus2_w(offs_t offset, uint32_t data)
 {
 	int logit = (offset != 0x08 &&
 					 offset != 0x18 && offset != 0x19 && (offset != 0x20 || data != 0) &&
@@ -375,7 +374,7 @@ WRITE32_MEMBER( zeus2_device::zeus2_w )
 		);
 	logit &= LOG_REGS;
 	if (logit)
-		logerror("%08X:zeus2_w", machine().device("maincpu")->safe_pc());
+		logerror("%s:zeus2_w", machine().describe_context());
 	zeus2_register32_w(offset, data, logit);
 }
 
@@ -412,7 +411,7 @@ if (regdata_count[offset] < 256)
 
 	/* writes to register $CC need to force a partial update */
 //  if ((offset & ~1) == 0xcc)
-//      m_screen->update_partial(m_screen->vpos());
+//      screen().update_partial(screen().vpos());
 
 	/* always write to low word? */
 	m_zeusbase[offset] = data;
@@ -462,7 +461,7 @@ void zeus2_device::zeus2_register_update(offs_t offset, uint32_t oldval, int log
 			int htotal = (m_zeusbase[0x34] >> 16) << m_yScale;
 			//rectangle visarea((m_zeusbase[0x33] >> 16) << m_yScale, htotal - 1, 0, (m_zeusbase[0x35] & 0xffff) << m_yScale);
 			rectangle visarea(0, hor - 1, 0, ver - 1);
-			m_screen->configure(htotal, vtotal, visarea, HZ_TO_ATTOSECONDS((double)ZEUS2_VIDEO_CLOCK / 4.0 / (htotal * vtotal)));
+			screen().configure(htotal, vtotal, visarea, HZ_TO_ATTOSECONDS(ZEUS2_VIDEO_CLOCK / 4.0 / (htotal * vtotal)));
 			zeus_cliprect = visarea;
 			zeus_cliprect.max_x -= zeus_cliprect.min_x;
 			zeus_cliprect.min_x = 0;
@@ -551,7 +550,7 @@ void zeus2_device::zeus2_register_update(offs_t offset, uint32_t oldval, int log
 	{
 		uint32_t temp = m_zeusbase[0x38];
 		m_zeusbase[0x38] = oldval;
-		m_screen->update_partial(m_screen->vpos());
+		screen().update_partial(screen().vpos());
 		log_fifo = machine().input().code_pressed(KEYCODE_L) | ALWAYS_LOG_FIFO;
 		m_zeusbase[0x38] = temp;
 	}
@@ -1108,7 +1107,7 @@ if (subregdata_count[which] < 256)
 			{
 				//int blockNum = ((m_renderRegs[0x9] >> 16) * 1024 + (m_renderRegs[0x9] & 0xffff));
 				int blockNum = m_renderRegs[0x9];
-				void *dataPtr = (void *)(&waveram[blockNum * 2]);
+				void *dataPtr = (void *)(&m_waveram[blockNum * 2]);
 				if (logit)
 					logerror("\t(R%02X) = %06x PAL Control Load Table Byte Addr = %08X", which, value, blockNum * 8);
 				m_curPalTableSrc = m_renderRegs[0x9];
@@ -2072,7 +2071,7 @@ void zeus2_device::check_tex(uint32_t &texmode, float &zObj, float &zMat, float 
 		infoStr += tex_info();
 
 		tex_map.insert(std::pair<uint32_t, std::string>(zeus_texbase, infoStr));
-		osd_printf_info("%s\n", infoStr.c_str());
+		osd_printf_info("%s\n", infoStr);
 	}
 }
 

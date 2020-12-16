@@ -20,15 +20,6 @@
     REGISTER ENUMERATION
 ***************************************************************************/
 
-
-
-#define MCFG_CCPU_EXTERNAL_FUNC(_devcb) \
-	ccpu_cpu_device::set_external_func(*device, DEVCB_##_devcb);
-
-#define MCFG_CCPU_VECTOR_FUNC(d) \
-	ccpu_cpu_device::set_vector_func(*device, d);
-
-
 class ccpu_cpu_device : public cpu_device
 {
 public:
@@ -53,11 +44,12 @@ public:
 	// construction/destruction
 	ccpu_cpu_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	// static configuration helpers
-	template <class Object> static devcb_base &set_external_func(device_t &device, Object &&cb) { return downcast<ccpu_cpu_device &>(device).m_external_input.set_callback(std::forward<Object>(cb)); }
-	static void set_vector_func(device_t &device, vector_delegate callback) { downcast<ccpu_cpu_device &>(device).m_vector_callback = callback; }
+	// configuration helpers
+	auto external_func() { return m_external_input.bind(); }
 
-	DECLARE_READ8_MEMBER( read_jmi );
+	template <typename... T> void set_vector_func(T &&... args) { m_vector_callback.set(std::forward<T>(args)...); }
+
+	uint8_t read_jmi();
 	void wdt_timer_trigger();
 
 protected:
@@ -66,9 +58,9 @@ protected:
 	virtual void device_reset() override;
 
 	// device_execute_interface overrides
-	virtual uint32_t execute_min_cycles() const override { return 1; }
-	virtual uint32_t execute_max_cycles() const override { return 1; }
-	virtual uint32_t execute_input_lines() const override { return 0; }
+	virtual uint32_t execute_min_cycles() const noexcept override { return 1; }
+	virtual uint32_t execute_max_cycles() const noexcept override { return 1; }
+	virtual uint32_t execute_input_lines() const noexcept override { return 0; }
 	virtual void execute_run() override;
 
 	// device_memory_interface overrides
@@ -78,9 +70,7 @@ protected:
 	virtual void state_string_export(const device_state_entry &entry, std::string &str) const override;
 
 	// device_disasm_interface overrides
-	virtual uint32_t disasm_min_opcode_bytes() const override { return 1; }
-	virtual uint32_t disasm_max_opcode_bytes() const override { return 3; }
-	virtual offs_t disasm_disassemble(std::ostream &stream, offs_t pc, const uint8_t *oprom, const uint8_t *opram, uint32_t options) override;
+	virtual std::unique_ptr<util::disasm_interface> create_disassembler() override;
 
 	address_space_config m_program_config;
 	address_space_config m_data_config;
@@ -110,10 +100,10 @@ protected:
 
 	int                 m_icount;
 
-	address_space *m_program;
-	direct_read_data *m_direct;
-	address_space *m_data;
-	address_space *m_io;
+	memory_access<15, 0,  0, ENDIANNESS_BIG>::cache m_cache;
+	memory_access<15, 0,  0, ENDIANNESS_BIG>::specific m_program;
+	memory_access<32, 1, -1, ENDIANNESS_BIG>::specific m_data;
+	memory_access< 5, 0,  0, ENDIANNESS_BIG>::specific m_io;
 
 	uint16_t m_flags;
 };

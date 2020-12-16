@@ -20,7 +20,7 @@
 //  MACROS/CONSTANTS
 //**************************************************************************
 
-#define VERBOSE      1
+#define VERBOSE      0
 #define VERBOSE_DMA  0
 
 // channel control register fields
@@ -83,11 +83,8 @@ void i8089_channel_device::device_start()
 	save_item(NAME(m_drq));
 	save_item(NAME(m_prio));
 
-	for (int i = 0; i < ARRAY_LENGTH(m_r); i++)
-	{
-		save_item(NAME(m_r[i].w), i);
-		save_item(NAME(m_r[i].t), i);
-	}
+	save_item(STRUCT_MEMBER(m_r, w));
+	save_item(STRUCT_MEMBER(m_r, t));
 }
 
 //-------------------------------------------------
@@ -374,11 +371,10 @@ int i8089_channel_device::execute_run()
 			// do we need to read another byte?
 			if (BIT(m_r[PSW].w, 1) && !BIT(m_r[PSW].w, 0) && !m_store_hi)
 			{
+				m_store_hi = true;
+
 				if (CC_SYNC == 0x02)
-				{
-					m_store_hi = true;
 					m_dma_state = DMA_WAIT_FOR_DEST_DRQ;
-				}
 				else
 					m_dma_state = DMA_STORE_BYTE_HIGH;
 			}
@@ -422,7 +418,7 @@ int i8089_channel_device::execute_run()
 	else if (executing())
 	{
 		// call debugger
-		debugger_instruction_hook(m_iop, m_iop->m_current_tp);
+		m_iop->debugger_instruction_hook(m_iop->m_current_tp);
 
 		// dma transfer pending?
 		if (m_xfer_pending)
@@ -461,7 +457,7 @@ int i8089_channel_device::execute_run()
 			{
 			case 0: nop(); break;
 			case 1: invalid(opc); break;
-			case 2: sintr(); break;
+			case 2: do_sintr(); break;
 			case 3: xfer(); break;
 			default: wid(BIT(brp, 1), BIT(brp, 0));
 			}

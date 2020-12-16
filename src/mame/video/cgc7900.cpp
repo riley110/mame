@@ -25,7 +25,7 @@
 #define OVERLAY_CURSOR_BLINK        BIT(m_roll_overlay[0], 14)
 #define OVERLAY_CHARACTER_BLINK     BIT(m_roll_overlay[0], 15)
 
-PALETTE_INIT_MEMBER(cgc7900_state, cgc7900)
+void cgc7900_state::cgc7900_palette(palette_device &palette) const
 {
 	palette.set_pen_color(0, rgb_t::black());
 	palette.set_pen_color(1, rgb_t(0x00, 0x00, 0xff));
@@ -45,7 +45,7 @@ PALETTE_INIT_MEMBER(cgc7900_state, cgc7900)
     cgc7900_z_mode_r - Z mode read
 -------------------------------------------------*/
 
-READ16_MEMBER( cgc7900_state::z_mode_r )
+u16 cgc7900_state::z_mode_r()
 {
 	return 0;
 }
@@ -54,7 +54,7 @@ READ16_MEMBER( cgc7900_state::z_mode_r )
     cgc7900_z_mode_w - Z mode write
 -------------------------------------------------*/
 
-WRITE16_MEMBER( cgc7900_state::z_mode_w )
+void cgc7900_state::z_mode_w(u16 data)
 {
 }
 
@@ -62,7 +62,7 @@ WRITE16_MEMBER( cgc7900_state::z_mode_w )
     cgc7900_color_status_w - color status write
 -------------------------------------------------*/
 
-WRITE16_MEMBER( cgc7900_state::color_status_w )
+void cgc7900_state::color_status_w(u16 data)
 {
 }
 
@@ -70,7 +70,7 @@ WRITE16_MEMBER( cgc7900_state::color_status_w )
     cgc7900_sync_r - sync information read
 -------------------------------------------------*/
 
-READ16_MEMBER( cgc7900_state::sync_r )
+u16 cgc7900_state::sync_r()
 {
 	u16 data = 0xffff;
 
@@ -115,11 +115,11 @@ void cgc7900_state::update_clut()
 {
 	for (int i = 0; i < 256; i++)
 	{
-		uint16_t addr = i * 2;
-		uint32_t data = (m_clut_ram[addr + 1] << 16) | m_clut_ram[addr];
-		uint8_t b = data & 0xff;
-		uint8_t g = (data >> 8) & 0xff;
-		uint8_t r = (data >> 16) & 0xff;
+		u16 addr = i * 2;
+		u32 data = (m_clut_ram[addr + 1] << 16) | m_clut_ram[addr];
+		u8 b = data & 0xff;
+		u8 g = (data >> 8) & 0xff;
+		u8 r = (data >> 16) & 0xff;
 
 		m_clut[i] = rgb_t(r, g, b);
 	}
@@ -147,9 +147,9 @@ void cgc7900_state::draw_overlay(screen_device *screen, bitmap_rgb32 &bitmap)
 
 		for (int sx = 0; sx < 85; sx++)
 		{
-			uint16_t addr = (sy * 170) + (sx * 2);
-			uint32_t cell = (m_overlay_ram[addr] << 16) | m_overlay_ram[addr + 1];
-			uint8_t data = m_char_rom->base()[(OVERLAY_DATA << 3) | line];
+			u16 addr = (sy * 170) + (sx * 2);
+			u32 cell = (m_overlay_ram[addr] << 16) | m_overlay_ram[addr + 1];
+			u8 data = m_char_rom->base()[(OVERLAY_DATA << 3) | line];
 			int fg = (cell >> 8) & 0x07;
 			int bg = (cell >> 16) & 0x07;
 
@@ -187,7 +187,7 @@ TIMER_DEVICE_CALLBACK_MEMBER(cgc7900_state::blink_tick)
 	m_blink = !m_blink;
 }
 
-uint32_t cgc7900_state::screen_update(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect)
+u32 cgc7900_state::screen_update(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect)
 {
 	update_clut();
 	draw_bitmap(&screen, bitmap);
@@ -215,7 +215,7 @@ static const gfx_layout cgc7900_charlayout =
     GFXDECODE( cgc7900 )
 -------------------------------------------------*/
 
-static GFXDECODE_START( cgc7900 )
+static GFXDECODE_START( gfx_cgc7900 )
 	GFXDECODE_ENTRY( "gfx1", 0x0000, cgc7900_charlayout, 0, 1 )
 GFXDECODE_END
 
@@ -227,18 +227,18 @@ GFXDECODE_END
     MACHINE_DRIVER( cgc7900_video )
 -------------------------------------------------*/
 
-MACHINE_CONFIG_START( cgc7900_video )
-	MCFG_SCREEN_ADD(SCREEN_TAG, RASTER)
-	MCFG_SCREEN_REFRESH_RATE(60)
-	MCFG_SCREEN_VBLANK_TIME(ATTOSECONDS_IN_USEC(2500)) /* not accurate */
-	MCFG_SCREEN_UPDATE_DRIVER(cgc7900_state, screen_update)
-	MCFG_SCREEN_SIZE(1024, 768)
-	MCFG_SCREEN_VISIBLE_AREA(0, 1024-1, 0, 768-1)
-	MCFG_SCREEN_VBLANK_CALLBACK(WRITELINE(cgc7900_state, irq<0xc>))
+void cgc7900_state::cgc7900_video(machine_config &config)
+{
+	screen_device &screen(SCREEN(config, SCREEN_TAG, SCREEN_TYPE_RASTER));
+	screen.set_refresh_hz(60);
+	screen.set_vblank_time(ATTOSECONDS_IN_USEC(2500)); /* not accurate */
+	screen.set_screen_update(FUNC(cgc7900_state::screen_update));
+	screen.set_size(1024, 768);
+	screen.set_visarea(0, 1024-1, 0, 768-1);
+	screen.screen_vblank().set(FUNC(cgc7900_state::irq<0xc>));
 
-	MCFG_GFXDECODE_ADD("gfxdecode", "palette", cgc7900)
-	MCFG_PALETTE_ADD("palette", 8)
-	MCFG_PALETTE_INIT_OWNER(cgc7900_state, cgc7900)
+	GFXDECODE(config, "gfxdecode", m_palette, gfx_cgc7900);
+	PALETTE(config, m_palette, FUNC(cgc7900_state::cgc7900_palette), 8);
 
-	MCFG_TIMER_DRIVER_ADD_PERIODIC("blink", cgc7900_state, blink_tick, attotime::from_hz(XTAL_28_48MHz/7500000))
-MACHINE_CONFIG_END
+	TIMER(config, "blink").configure_periodic(FUNC(cgc7900_state::blink_tick), attotime::from_hz(XTAL(28'480'000)/7500000));
+}

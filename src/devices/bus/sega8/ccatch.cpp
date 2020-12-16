@@ -33,25 +33,27 @@ sega8_cardcatch_device::sega8_cardcatch_device(const machine_config &mconfig, co
  mapper specific handlers
  -------------------------------------------------*/
 
-READ8_MEMBER(sega8_cardcatch_device::read_cart)
+uint8_t sega8_cardcatch_device::read_cart(offs_t offset)
 {
 	if (offset < 0x8000)
-		return m_card->read_cart(space, offset);
+		return m_card->read_cart(offset);
 
 	return 0xff;
 }
 
-WRITE8_MEMBER(sega8_cardcatch_device::write_cart)
+void sega8_cardcatch_device::write_cart(offs_t offset, uint8_t data)
 {
 	// this should never happen, because there is no RAM on cards
 	if (offset < 0x8000)
 		logerror("Attempt to write to MyCard\n");
 }
 
-static SLOT_INTERFACE_START(sg1000_card)
-	SLOT_INTERFACE_INTERNAL("rom",  SEGA8_ROM_STD)
-SLOT_INTERFACE_END
+static void sg1000_card(device_slot_interface &device)
+{
+	device.option_add_internal("rom",  SEGA8_ROM_STD);
+}
 
-MACHINE_CONFIG_MEMBER( sega8_cardcatch_device::device_add_mconfig )
-	MCFG_SG1000_CARD_ADD("cardslot", sg1000_card, nullptr)
-MACHINE_CONFIG_END
+void sega8_cardcatch_device::device_add_mconfig(machine_config &config)
+{
+	SG1000_CARD_SLOT(config, "cardslot", sg1000_card, nullptr);
+}

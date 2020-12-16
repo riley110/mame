@@ -253,9 +253,9 @@ void fga002_device::trigger_interrupt(uint8_t data)
 	m_out_int_cb(ASSERT_LINE);
 }
 
-IRQ_CALLBACK_MEMBER(fga002_device::iack)
+u16 fga002_device::iack()
 {
-	int vec = M68K_INT_ACK_AUTOVECTOR;
+	int vec = 0x18; // Spurious interrupt
 	int vec_found = 0;
 	int level;
 
@@ -295,7 +295,7 @@ IRQ_CALLBACK_MEMBER(fga002_device::iack)
 						default: break; /* Since we need the vector for the switch statement the default job is already done */
 						}
 						LOGVEC("dev:%02x ", vec);
-						if (vec == INT_ACK_AUTOVECTOR) vec = INT_EMPTY;
+						if (vec == 0x18) vec = INT_EMPTY;
 						LOGVEC("avec:%02x ", vec);
 
 						// Add vector page bits and return vector
@@ -608,7 +608,7 @@ WRITE_LINE_MEMBER (fga002_device::lirq5_w) { LOGINT("%s\n", FUNCNAME); lirq_w( F
 WRITE_LINE_MEMBER (fga002_device::lirq6_w) { LOGINT("%s\n", FUNCNAME); lirq_w( FGA_ISLOCAL6, INT_LOCAL6, FGA_ICRLOCAL6, state ); }
 WRITE_LINE_MEMBER (fga002_device::lirq7_w) { LOGINT("%s\n", FUNCNAME); lirq_w( FGA_ISLOCAL7, INT_LOCAL7, FGA_ICRLOCAL7, state ); }
 
-WRITE8_MEMBER (fga002_device::write){
+void fga002_device::write(offs_t offset, uint8_t data){
 	LOG("%s[%04x] <- %02x    - ", FUNCNAME, offset, data);
 	LOGSETUP(" * %s Reg %04x <- %02x\n", tag(), offset, data);
 	switch(offset)
@@ -718,7 +718,7 @@ WRITE8_MEMBER (fga002_device::write){
 	}
 }
 
-READ8_MEMBER (fga002_device::read){
+uint8_t fga002_device::read(offs_t offset){
 	uint8_t ret = 0;
 
 	LOG("%s[%04x]      ", FUNCNAME, offset);

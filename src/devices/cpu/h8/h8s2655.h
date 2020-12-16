@@ -30,8 +30,8 @@ class h8s2655_device : public h8s2600_device {
 public:
 	h8s2655_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	DECLARE_READ8_MEMBER(syscr_r);
-	DECLARE_WRITE8_MEMBER(syscr_w);
+	uint8_t syscr_r();
+	void syscr_w(uint8_t data);
 
 protected:
 	required_device<h8s_intc_device> intc;
@@ -75,7 +75,7 @@ protected:
 	virtual void irq_setup() override;
 	virtual void internal_update(uint64_t current_time) override;
 	virtual void device_add_mconfig(machine_config &config) override;
-	DECLARE_ADDRESS_MAP(map, 16);
+	void map(address_map &map);
 
 	virtual void device_start() override;
 	virtual void device_reset() override;

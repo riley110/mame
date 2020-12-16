@@ -11,16 +11,8 @@
 
 #pragma once
 
+#include "cbmiec.h"
 #include "cpu/m6502/m65c02.h"
-#include "bus/cbmiec/cbmiec.h"
-
-
-
-//**************************************************************************
-//  MACROS / CONSTANTS
-//**************************************************************************
-
-#define SERIAL_BOX_TAG          "serialbox"
 
 
 
@@ -28,13 +20,13 @@
 //  TYPE DEFINITIONS
 //**************************************************************************
 
-// ======================> serial_box_device
+// ======================> cbm_serial_box_device
 
-class serial_box_device : public device_t, public device_cbm_iec_interface
+class cbm_serial_box_device : public device_t, public device_cbm_iec_interface
 {
 public:
 	// construction/destruction
-	serial_box_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+	cbm_serial_box_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 protected:
 	// device-level overrides
@@ -52,11 +44,13 @@ protected:
 
 private:
 	required_device<m65c02_device> m_maincpu;
+
+	void serial_box_mem(address_map &map);
 };
 
 
 // device type definition
-DECLARE_DEVICE_TYPE(SERIAL_BOX, serial_box_device)
+DECLARE_DEVICE_TYPE(CBM_SERIAL_BOX, cbm_serial_box_device)
 
 
 #endif // MAME_BUS_CBMIEC_SERIALBOX_H

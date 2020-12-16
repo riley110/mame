@@ -76,26 +76,20 @@ md_seprom_mm96_device::md_seprom_mm96_device(const machine_config &mconfig, cons
 //  SERIAL I2C DEVICE
 //-------------------------------------------------
 
-// MD_SEPROM_CODEMAST
-
-
-// MD_SEPROM_MM96
-MACHINE_CONFIG_START( md_i2c_24c16a )
-	MCFG_24C16A_ADD("i2cmem")
-MACHINE_CONFIG_END
-
 
 //-------------------------------------------------
 //  device_add_mconfig - add device configuration
 //-------------------------------------------------
 
-MACHINE_CONFIG_MEMBER( md_seprom_codemast_device::device_add_mconfig )
-	MCFG_24C08_ADD("i2cmem")
-MACHINE_CONFIG_END
+void md_seprom_codemast_device::device_add_mconfig(machine_config &config)
+{
+	I2C_24C08(config, m_i2cmem);
+}
 
-MACHINE_CONFIG_MEMBER( md_seprom_mm96_device::device_add_mconfig )
-	MCFG_24C16A_ADD("i2cmem")
-MACHINE_CONFIG_END
+void md_seprom_mm96_device::device_add_mconfig(machine_config &config)
+{
+	I2C_24C16(config, m_i2cmem); // 24C16A
+}
 
 
 static INPUT_PORTS_START( jcart_ipt )
@@ -163,7 +157,7 @@ void md_seprom_codemast_device::device_reset()
  J-CART ONLY (Pete Sampras Tennis)
  -------------------------------------------------*/
 
-READ16_MEMBER(md_jcart_device::read)
+uint16_t md_jcart_device::read(offs_t offset)
 {
 	if (offset == 0x38fffe/2)
 	{
@@ -188,7 +182,7 @@ READ16_MEMBER(md_jcart_device::read)
 		return 0xffff;
 }
 
-WRITE16_MEMBER(md_jcart_device::write)
+void md_jcart_device::write(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	if (offset == 0x38fffe/2)
 	{
@@ -201,7 +195,7 @@ WRITE16_MEMBER(md_jcart_device::write)
  J-CART + SEPROM
  -------------------------------------------------*/
 
-READ16_MEMBER(md_seprom_codemast_device::read)
+uint16_t md_seprom_codemast_device::read(offs_t offset)
 {
 	if (offset == 0x380000/2)
 	{
@@ -231,7 +225,7 @@ READ16_MEMBER(md_seprom_codemast_device::read)
 		return 0xffff;
 }
 
-WRITE16_MEMBER(md_seprom_codemast_device::write)
+void md_seprom_codemast_device::write(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	if (offset == 0x380000/2)
 	{

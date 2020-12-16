@@ -8,6 +8,7 @@
 #include "slot.h"
 #include "rom.h"
 #include "prot_cmc.h"
+#include "machine/nvram.h"
 
 // ======================> neogeo_cmc_cart_device
 
@@ -213,15 +214,18 @@ public:
 	virtual void decrypt_all(DECRYPT_ALL_PARAMS) override;
 	virtual int get_fixed_bank_type() override { return 1; }
 
-	virtual DECLARE_READ16_MEMBER(ram_r) override { return m_ram[offset]; }
-	virtual DECLARE_WRITE16_MEMBER(ram_w) override { COMBINE_DATA(&m_ram[offset]); }
+	virtual uint16_t ram_r(offs_t offset) override { return m_ram[offset]; }
+	virtual void ram_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0) override { COMBINE_DATA(&m_ram[offset]); }
 
 protected:
 	virtual void device_start() override;
-	virtual void device_reset() override;
+
+	virtual void device_add_mconfig(machine_config &config) override;
 
 private:
-	uint16_t m_ram[0x1000];
+	std::unique_ptr<uint16_t[]> m_ram;
+
+	required_device<nvram_device> m_nvram;
 };
 
 DECLARE_DEVICE_TYPE(NEOGEO_CMC_JOCKEYGP_CART, neogeo_cmc_jockeygp_cart_device)

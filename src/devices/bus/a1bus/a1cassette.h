@@ -28,8 +28,8 @@ public:
 	// construction/destruction
 	a1bus_cassette_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	DECLARE_READ8_MEMBER(cassette_r);
-	DECLARE_WRITE8_MEMBER(cassette_w);
+	uint8_t cassette_r(offs_t offset);
+	void cassette_w(offs_t offset, uint8_t data);
 
 protected:
 	a1bus_cassette_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock);
@@ -46,7 +46,7 @@ protected:
 	optional_device<cassette_image_device> m_cassette;
 
 private:
-	uint8_t *m_rom;
+	required_region_ptr<uint8_t> m_rom;
 	int m_cassette_output_flipflop;
 };
 

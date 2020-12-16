@@ -59,11 +59,13 @@ gba_rom_sram_device::gba_rom_sram_device(const machine_config &mconfig, const ch
 
 gba_rom_drilldoz_device::gba_rom_drilldoz_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
 	: gba_rom_sram_device(mconfig, GBA_ROM_DRILLDOZ, tag, owner, clock)
+	, m_rumble(*this, "Rumble")
 {
 }
 
 gba_rom_wariotws_device::gba_rom_wariotws_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
 	: gba_rom_sram_device(mconfig, GBA_ROM_WARIOTWS, tag, owner, clock)
+	, m_rumble(*this, "Rumble")
 	, m_gyro_z(*this, "GYROZ")
 {
 }
@@ -158,12 +160,20 @@ void gba_rom_device::device_reset()
 	m_gpio_regs[1] = 0;
 	m_gpio_regs[2] = 0;
 	m_gpio_regs[3] = 0;
-	m_gpio_write_only = 0;
+	m_gpio_write_only = 1;
 	m_gpio_dirs = 0;
+}
+
+void gba_rom_drilldoz_device::device_start()
+{
+	gba_rom_device::device_start();
+	m_rumble.resolve();
 }
 
 void gba_rom_wariotws_device::device_start()
 {
+	gba_rom_device::device_start();
+	m_rumble.resolve();
 	save_item(NAME(m_last_val));
 	save_item(NAME(m_counter));
 }
@@ -187,6 +197,8 @@ void gba_rom_flash1m_device::device_reset()
 
 void gba_rom_eeprom_device::device_start()
 {
+	gba_rom_device::device_start();
+
 	// for the moment we use a custom eeprom implementation, so we alloc/save it as nvram
 	nvram_alloc(0x200);
 	m_eeprom = std::make_unique<gba_eeprom_device>(machine(), (uint8_t*)get_nvram_base(), get_nvram_size(), 6);
@@ -232,16 +244,19 @@ void gba_rom_boktai_device::device_reset()
 
 void gba_rom_flash_rtc_device::device_start()
 {
+	gba_rom_device::device_start();
 	m_rtc = std::make_unique<gba_s3511_device>(machine());
 }
 
 void gba_rom_flash1m_rtc_device::device_start()
 {
+	gba_rom_device::device_start();
 	m_rtc = std::make_unique<gba_s3511_device>(machine());
 }
 
 void gba_rom_3dmatrix_device::device_start()
 {
+	gba_rom_device::device_start();
 	save_item(NAME(m_src));
 	save_item(NAME(m_dst));
 	save_item(NAME(m_nblock));
@@ -271,9 +286,8 @@ void gba_rom_3dmatrix_device::device_reset()
  cart types.
  -------------------------------------------------*/
 
-READ32_MEMBER(gba_rom_device::read_gpio)
+uint32_t gba_rom_device::read_gpio(offs_t offset, uint32_t mem_mask)
 {
-	logerror("read GPIO offs %X\n", offset);
 	if (!m_gpio_write_only)
 	{
 		switch (offset)
@@ -299,9 +313,8 @@ READ32_MEMBER(gba_rom_device::read_gpio)
 		return m_rom[offset + 0xc4/4];
 }
 
-WRITE32_MEMBER(gba_rom_device::write_gpio)
+void gba_rom_device::write_gpio(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
-	logerror("write GPIO offs %X data %X\n", offset, data);
 	switch (offset)
 	{
 		case 0:
@@ -333,7 +346,7 @@ WRITE32_MEMBER(gba_rom_device::write_gpio)
  Carts with SRAM
  -------------------------------------------------*/
 
-READ32_MEMBER(gba_rom_sram_device::read_ram)
+uint32_t gba_rom_sram_device::read_ram(offs_t offset, uint32_t mem_mask)
 {
 	if (!m_nvram.empty() && offset < m_nvram.size())
 		return m_nvram[offset];
@@ -341,7 +354,7 @@ READ32_MEMBER(gba_rom_sram_device::read_ram)
 		return 0xffffffff;
 }
 
-WRITE32_MEMBER(gba_rom_sram_device::write_ram)
+void gba_rom_sram_device::write_ram(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
 	if (!m_nvram.empty() && offset < m_nvram.size())
 		COMBINE_DATA(&m_nvram[offset]);
@@ -355,7 +368,7 @@ void gba_rom_drilldoz_device::gpio_dev_write(uint16_t data, int gpio_dirs)
 	if ((gpio_dirs & 0x08))
 	{
 		// send impulse to Rumble sensor
-		machine().output().set_value("Rumble", BIT(data, 3));
+		m_rumble = BIT(data, 3);
 	}
 }
 
@@ -385,7 +398,7 @@ void gba_rom_wariotws_device::gpio_dev_write(uint16_t data, int gpio_dirs)
 	if ((gpio_dirs & 0x08))
 	{
 		// send impulse to Rumble sensor
-		machine().output().set_value("Rumble", BIT(data, 3));
+		m_rumble = BIT(data, 3);
 	}
 
 	if (gpio_dirs == 0x0b)
@@ -406,12 +419,13 @@ void gba_rom_wariotws_device::gpio_dev_write(uint16_t data, int gpio_dirs)
  Carts with Flash RAM
  -------------------------------------------------*/
 
-MACHINE_CONFIG_MEMBER( gba_rom_flash_device::device_add_mconfig )
-	MCFG_PANASONIC_MN63F805MNP_ADD("flash")
-MACHINE_CONFIG_END
+void gba_rom_flash_device::device_add_mconfig(machine_config &config)
+{
+	PANASONIC_MN63F805MNP(config, "flash");
+}
 
 
-READ32_MEMBER(gba_rom_flash_device::read_ram)
+uint32_t gba_rom_flash_device::read_ram(offs_t offset, uint32_t mem_mask)
 {
 	uint32_t rv = 0;
 
@@ -429,7 +443,7 @@ READ32_MEMBER(gba_rom_flash_device::read_ram)
 	return rv;
 }
 
-WRITE32_MEMBER(gba_rom_flash_device::write_ram)
+void gba_rom_flash_device::write_ram(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
 	offset &= m_flash_mask;
 
@@ -452,12 +466,13 @@ WRITE32_MEMBER(gba_rom_flash_device::write_ram)
 	}
 }
 
-MACHINE_CONFIG_MEMBER( gba_rom_flash1m_device::device_add_mconfig )
-	MCFG_SANYO_LE26FV10N1TS_ADD("flash")
-MACHINE_CONFIG_END
+void gba_rom_flash1m_device::device_add_mconfig(machine_config &config)
+{
+	SANYO_LE26FV10N1TS(config, "flash");
+}
 
 
-READ32_MEMBER(gba_rom_flash1m_device::read_ram)
+uint32_t gba_rom_flash1m_device::read_ram(offs_t offset, uint32_t mem_mask)
 {
 	uint32_t rv = 0;
 
@@ -475,7 +490,7 @@ READ32_MEMBER(gba_rom_flash1m_device::read_ram)
 	return rv;
 }
 
-WRITE32_MEMBER(gba_rom_flash1m_device::write_ram)
+void gba_rom_flash1m_device::write_ram(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
 	offset &= m_flash_mask;
 
@@ -526,7 +541,7 @@ void gba_rom_flash1m_rtc_device::gpio_dev_write(uint16_t data, int gpio_dirs)
  Carts with EEPROM
  -------------------------------------------------*/
 
-READ32_MEMBER(gba_rom_eeprom_device::read_ram)
+uint32_t gba_rom_eeprom_device::read_ram(offs_t offset, uint32_t mem_mask)
 {
 	// Larger games have smaller access to EERPOM content
 	if (m_rom_size > (16 * 1024 * 1024) && offset < 0xffff00/4)
@@ -535,7 +550,7 @@ READ32_MEMBER(gba_rom_eeprom_device::read_ram)
 	return m_eeprom->read();
 }
 
-WRITE32_MEMBER(gba_rom_eeprom_device::write_ram)
+void gba_rom_eeprom_device::write_ram(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
 	// Larger games have smaller access to EEPROM content
 	if (m_rom_size > (16 * 1024 * 1024) && offset < 0xffff00/4)
@@ -547,7 +562,7 @@ WRITE32_MEMBER(gba_rom_eeprom_device::write_ram)
 	m_eeprom->write(data);
 }
 
-READ32_MEMBER(gba_rom_eeprom64_device::read_ram)
+uint32_t gba_rom_eeprom64_device::read_ram(offs_t offset, uint32_t mem_mask)
 {
 	// Larger games have smaller access to EERPOM content
 	if (m_rom_size > (16 * 1024 * 1024) && offset < 0xffff00/4)
@@ -556,7 +571,7 @@ READ32_MEMBER(gba_rom_eeprom64_device::read_ram)
 	return m_eeprom->read();
 }
 
-WRITE32_MEMBER(gba_rom_eeprom64_device::write_ram)
+void gba_rom_eeprom64_device::write_ram(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
 	// Larger games have smaller access to EEPROM content
 	if (m_rom_size > (16 * 1024 * 1024) && offset < 0xffff00/4)
@@ -599,7 +614,7 @@ ioport_constructor gba_rom_yoshiug_device::device_input_ports() const
 }
 
 
-READ32_MEMBER(gba_rom_yoshiug_device::read_tilt)
+uint32_t gba_rom_yoshiug_device::read_tilt(offs_t offset, uint32_t mem_mask)
 {
 	switch (offset)
 	{
@@ -625,7 +640,7 @@ READ32_MEMBER(gba_rom_yoshiug_device::read_tilt)
 	return 0xffffffff;
 }
 
-WRITE32_MEMBER(gba_rom_yoshiug_device::write_tilt)
+void gba_rom_yoshiug_device::write_tilt(offs_t offset, uint32_t data)
 {
 	switch (offset)
 	{
@@ -728,27 +743,34 @@ void gba_rom_boktai_device::gpio_dev_write(uint16_t data, int gpio_dirs)
    the cart "range" is accessible...)
  -------------------------------------------------*/
 
-WRITE32_MEMBER(gba_rom_3dmatrix_device::write_mapper)
+void gba_rom_3dmatrix_device::write_mapper(offs_t offset, uint32_t data)
 {
-	//printf("mapper write 0x%.8X - 0x%X\n", offset, data);
+	//printf("mapper write 0x%.8X - 0x%X\n", offset, data); fflush(stdout);
 	switch (offset & 3)
 	{
 		case 0:
-			if (data == 0x1)    // transfer data
+			//printf("command: %08x\n", data); fflush(stdout);
+			if (data & 0x01)    // transfer data
 				memcpy((uint8_t *)m_romhlp + m_dst, (uint8_t *)m_rom + m_src, m_nblock * 0x200);
 			else
 				printf("Unknown mapper command 0x%X\n", data);
 			break;
 		case 1:
-			m_src = data;
+			//printf("m_src: %08x\n", data); fflush(stdout);
+			m_src = data & 0x3ffffff;
 			break;
 		case 2:
+			//printf("m_dst: %08x\n", data); fflush(stdout);
 			if (data >= 0xa000000)
+			{
 				printf("Unknown transfer destination 0x%X\n", data);
+				fflush(stdout);
+			}
 			m_dst = (data & 0x1ffffff);
 			break;
 		case 3:
 		default:
+			//printf("m_nblock: %08x\n", data); fflush(stdout);
 			m_nblock = data;
 			break;
 	}
@@ -955,7 +977,6 @@ uint32_t gba_eeprom_device::read()
 	switch (m_state)
 	{
 		case EEP_IDLE:
-//          printf("eeprom_r: @ %x, mask %08x (state %d) (PC=%x) = %d\n", offset, ~mem_mask, m_state, activecpu_get_pc(), 1);
 			return 0x00010001;  // "ready"
 
 		case EEP_READFIRST:
@@ -994,17 +1015,13 @@ uint32_t gba_eeprom_device::read()
 				m_state = EEP_IDLE;
 			}
 
-//          printf("out = %08x\n", out);
-//          printf("eeprom_r: @ %x, mask %08x (state %d) (PC=%x) = %08x\n", offset, ~mem_mask, m_state, activecpu_get_pc(), out);
 			return out;
 	}
-//  printf("eeprom_r: @ %x, mask %08x (state %d) (PC=%x) = %d\n", offset, ~mem_mask, m_state, space.device().safe_pc(), 0);
 	return 0;
 }
 
 void gba_eeprom_device::write(uint32_t data)
 {
-//  printf("eeprom_w: %x @ %x (state %d) (PC=%x)\n", data, offset, m_state, space.device().safe_pc());
 	switch (m_state)
 	{
 		case EEP_IDLE:
@@ -1058,7 +1075,7 @@ void gba_eeprom_device::write(uint32_t data)
 
 			if (m_bits == 0)
 			{
-				osd_printf_verbose("%08x: EEPROM: %02x to %x\n", machine().device("maincpu")->safe_pc(), m_eep_data, m_addr);
+				osd_printf_verbose("%s: EEPROM: %02x to %x\n", machine().describe_context(), m_eep_data, m_addr);
 				if (m_addr >= m_data_size)
 					fatalerror("eeprom: invalid address (%x)\n", m_addr);
 

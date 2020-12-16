@@ -19,32 +19,6 @@ public:
 	// construction/destruction
 	md_rom_svp_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	// reading and writing
-	virtual DECLARE_READ16_MEMBER(read) override;
-	virtual DECLARE_WRITE16_MEMBER(write) override;
-	virtual DECLARE_READ16_MEMBER(read_a15) override;
-	virtual DECLARE_WRITE16_MEMBER(write_a15) override;
-
-	virtual int read_test() override;
-
-	virtual DECLARE_READ16_MEMBER(rom_read1);
-	virtual DECLARE_READ16_MEMBER(rom_read2);
-
-	virtual DECLARE_READ16_MEMBER(read_pm0);
-	virtual DECLARE_READ16_MEMBER(read_pm1);
-	virtual DECLARE_READ16_MEMBER(read_pm2);
-	virtual DECLARE_READ16_MEMBER(read_pm4);
-	virtual DECLARE_READ16_MEMBER(read_xst);
-	virtual DECLARE_READ16_MEMBER(read_pmc);
-	virtual DECLARE_READ16_MEMBER(read_al);
-	virtual DECLARE_WRITE16_MEMBER(write_pm0);
-	virtual DECLARE_WRITE16_MEMBER(write_pm1);
-	virtual DECLARE_WRITE16_MEMBER(write_pm2);
-	virtual DECLARE_WRITE16_MEMBER(write_pm4);
-	virtual DECLARE_WRITE16_MEMBER(write_xst);
-	virtual DECLARE_WRITE16_MEMBER(write_pmc);
-	virtual DECLARE_WRITE16_MEMBER(write_al);
-
 protected:
 	md_rom_svp_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock);
 
@@ -55,7 +29,34 @@ protected:
 	virtual ioport_constructor device_input_ports() const override;
 	virtual void set_bank_to_rom(const char *banktag, uint32_t offset) override;
 
-	required_device<device_t> m_svp;
+	// reading and writing
+	virtual uint16_t read(offs_t offset) override;
+	virtual void write(offs_t offset, uint16_t data, uint16_t mem_mask = ~0) override;
+	virtual uint16_t read_a15(offs_t offset) override;
+	virtual void write_a15(offs_t offset, uint16_t data) override;
+
+	virtual int read_test() override;
+
+	virtual uint16_t rom_read1(offs_t offset);
+	virtual uint16_t rom_read2(offs_t offset);
+
+	virtual uint16_t read_pm0();
+	virtual uint16_t read_pm1();
+	virtual uint16_t read_pm2();
+	virtual uint16_t read_pm4();
+	virtual uint16_t read_xst();
+	virtual uint16_t read_pmc();
+	virtual uint16_t read_al();
+	virtual void write_pm0(uint16_t data);
+	virtual void write_pm1(uint16_t data);
+	virtual void write_pm2(uint16_t data);
+	virtual void write_pm4(uint16_t data);
+	virtual void write_xst(uint16_t data);
+	virtual void write_pmc(uint16_t data);
+	virtual void write_al(uint16_t data);
+
+private:
+	required_device<cpu_device> m_svp;
 	required_ioport m_test_ipt;
 
 	uint32_t pm_io(int reg, int write, uint32_t d);
@@ -68,6 +69,9 @@ protected:
 	uint16_t m_xst2;      // status of XST (bit1 set when 68k writes to XST)
 	uint8_t m_iram[0x800]; // IRAM (0-0x7ff)
 	uint8_t m_dram[0x20000]; // [0x20000];
+
+	void md_svp_ext_map(address_map &map);
+	void md_svp_ssp_map(address_map &map);
 };
 
 

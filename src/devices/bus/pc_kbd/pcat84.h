@@ -47,27 +47,28 @@ protected:
 	virtual DECLARE_WRITE_LINE_MEMBER( data_write ) override { };
 
 private:
-	DECLARE_WRITE8_MEMBER( bus_w );
-	DECLARE_READ8_MEMBER( p1_r );
-	DECLARE_WRITE8_MEMBER( p1_w );
-	DECLARE_READ8_MEMBER( p2_r );
-	DECLARE_WRITE8_MEMBER( p2_w );
+	void bus_w(uint8_t data);
+	uint8_t p1_r();
+	void p1_w(uint8_t data);
+	uint8_t p2_r();
+	void p2_w(uint8_t data);
 	DECLARE_READ_LINE_MEMBER( t0_r );
 	DECLARE_READ_LINE_MEMBER( t1_r );
 
 	enum
 	{
-		LED_SCROLL,
+		LED_SCROLL = 0,
 		LED_NUM,
 		LED_CAPS
 	};
 
 	int key_depressed();
 
-	required_device<cpu_device> m_maincpu;
+	required_device<i8048_device> m_maincpu;
 	required_ioport_array<16> m_dr;
 	optional_ioport m_kbdida;
 	optional_ioport m_kbdidb;
+	output_finder<3> m_leds;
 
 	uint8_t m_db;
 	int m_cnt;

@@ -14,30 +14,27 @@
 #include "machine/ram.h"
 #include "machine/timer.h"
 
-#define MCFG_DECODMD_TYPE1_ADD(_tag, _region) \
-	MCFG_DEVICE_ADD(_tag, DECODMD1, 0) \
-	decodmd_type1_device::static_set_gfxregion(*device, _region);
 
 class decodmd_type1_device : public device_t
 {
 public:
-	decodmd_type1_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
-	required_device<cpu_device> m_cpu;
-	required_memory_bank m_rombank1;
-	required_memory_bank m_rombank2;
-	required_device<ram_device> m_ram;
-	required_device<hc259_device> m_bitlatch;
-	memory_region* m_rom;
+	template <typename T>
+	decodmd_type1_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock, T &&gfxregion_tag)
+		: decodmd_type1_device(mconfig, tag, owner, clock)
+	{
+		set_gfxregion(std::forward<T>(gfxregion_tag));
+	}
 
-	DECLARE_READ8_MEMBER(latch_r);
-	DECLARE_WRITE8_MEMBER(data_w);
-	DECLARE_READ8_MEMBER(busy_r);
-	DECLARE_WRITE8_MEMBER(ctrl_w);
-	DECLARE_READ8_MEMBER(ctrl_r);
-	DECLARE_READ8_MEMBER(status_r);
-	DECLARE_WRITE8_MEMBER(status_w);
-	DECLARE_READ8_MEMBER(dmd_port_r);
-	DECLARE_WRITE8_MEMBER(dmd_port_w);
+	decodmd_type1_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+
+	uint8_t latch_r();
+	void data_w(uint8_t data);
+	uint8_t busy_r();
+	void ctrl_w(uint8_t data);
+	uint8_t ctrl_r();
+	uint8_t status_r();
+	uint8_t dmd_port_r(offs_t offset);
+	void dmd_port_w(offs_t offset, uint8_t data);
 
 	DECLARE_WRITE_LINE_MEMBER(blank_w);
 	DECLARE_WRITE_LINE_MEMBER(status_w);
@@ -45,8 +42,10 @@ public:
 	DECLARE_WRITE_LINE_MEMBER(rowclock_w);
 	DECLARE_WRITE_LINE_MEMBER(test_w);
 
-	static void static_set_gfxregion(device_t &device, const char *tag);
+	template <typename T> void set_gfxregion(T &&tag) { m_rom.set_tag(std::forward<T>(tag)); }
 
+	void decodmd1_io_map(address_map &map);
+	void decodmd1_map(address_map &map);
 protected:
 	virtual void device_add_mconfig(machine_config &config) override;
 	virtual void device_start() override;
@@ -74,7 +73,13 @@ private:
 	uint32_t m_pixels[0x200];
 	uint8_t m_busy_lines;
 	uint32_t m_prevrow;
-	const char* m_gfxtag;
+
+	required_device<cpu_device> m_cpu;
+	required_memory_bank m_rombank1;
+	required_memory_bank m_rombank2;
+	required_device<ram_device> m_ram;
+	required_device<hc259_device> m_bitlatch;
+	required_region_ptr<uint8_t> m_rom;
 
 	void output_data();
 	void set_busy(uint8_t input, uint8_t val);

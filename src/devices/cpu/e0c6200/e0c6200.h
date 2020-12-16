@@ -22,9 +22,9 @@ protected:
 	virtual void device_reset() override;
 
 	// device_execute_interface overrides
-	virtual u32 execute_min_cycles() const override { return 5; }
-	virtual u32 execute_max_cycles() const override { return 14; } // longest opcode is 12 cycles, but interrupt service takes up to 14
-	virtual u32 execute_input_lines() const override { return 1; }
+	virtual u32 execute_min_cycles() const noexcept override { return 5; }
+	virtual u32 execute_max_cycles() const noexcept override { return 14; } // longest opcode is 12 cycles, but interrupt service takes up to 14
+	virtual u32 execute_input_lines() const noexcept override { return 1; }
 	virtual void execute_run() override;
 	virtual void execute_one();
 	virtual bool check_interrupt() { return false; } // nothing to do by default
@@ -34,9 +34,8 @@ protected:
 	virtual space_config_vector memory_space_config() const override;
 
 	// device_disasm_interface overrides
-	virtual u32 disasm_min_opcode_bytes() const override { return 2; }
-	virtual u32 disasm_max_opcode_bytes() const override { return 2; }
-	virtual offs_t disasm_disassemble(std::ostream &stream, offs_t pc, const u8 *oprom, const u8 *opram, u32 options) override;
+	virtual std::unique_ptr<util::disasm_interface> create_disassembler() override;
+
 	virtual void state_string_export(const device_state_entry &entry, std::string &str) const override;
 
 	address_space_config m_program_config;

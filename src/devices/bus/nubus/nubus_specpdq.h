@@ -6,6 +6,7 @@
 #pragma once
 
 #include "nubus.h"
+#include "emupal.h"
 
 //**************************************************************************
 //  TYPE DEFINITIONS
@@ -35,10 +36,10 @@ protected:
 	virtual void device_timer(emu_timer &timer, device_timer_id id, int param, void *ptr) override;
 
 private:
-	DECLARE_READ32_MEMBER(specpdq_r);
-	DECLARE_WRITE32_MEMBER(specpdq_w);
-	DECLARE_READ32_MEMBER(vram_r);
-	DECLARE_WRITE32_MEMBER(vram_w);
+	uint32_t specpdq_r(offs_t offset, uint32_t mem_mask = ~0);
+	void specpdq_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t vram_r(offs_t offset, uint32_t mem_mask = ~0);
+	void vram_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
 
 	uint32_t screen_update(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect);
 
@@ -47,7 +48,6 @@ private:
 	uint32_t m_mode, m_vbl_disable;
 	uint32_t m_palette_val[256], m_colors[3], m_count, m_clutoffs;
 	emu_timer *m_timer;
-	const std::string m_assembled_tag;
 
 	uint32_t m_7xxxxx_regs[0x100000/4];
 	int m_width, m_height, m_patofsx, m_patofsy;

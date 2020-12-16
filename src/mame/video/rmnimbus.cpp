@@ -47,7 +47,7 @@
 
 #define DEBUG_SET(flags)    ((m_debug_video & (flags))==(flags))
 
-READ16_MEMBER(rmnimbus_state::nimbus_video_io_r)
+uint16_t rmnimbus_state::nimbus_video_io_r(offs_t offset, uint16_t mem_mask)
 {
 	uint16_t result = 0;
 
@@ -93,7 +93,7 @@ READ16_MEMBER(rmnimbus_state::nimbus_video_io_r)
 	}
 
 	if(DEBUG_SET(DEBUG_TEXT))
-		logerror("Nimbus video IOR at %05X from %04X mask=%04X, data=%04X\n",space.device().safe_pc(),(offset*2),mem_mask,result);
+		logerror("Nimbus video IOR at %05X from %04X mask=%04X, data=%04X\n",m_maincpu->pc(),(offset*2),mem_mask,result);
 
 	return result;
 }
@@ -202,13 +202,13 @@ uint16_t rmnimbus_state::read_pixel_data(uint16_t x, uint16_t y)
 
 */
 
-WRITE16_MEMBER(rmnimbus_state::nimbus_video_io_w)
+void rmnimbus_state::nimbus_video_io_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	uint16_t colours = data;
 	if(offset < 0x14)
 	{
 		if(DEBUG_SET(DEBUG_TEXT))
-			logerror("Nimbus video IOW at %05X write of %04X to %04X mask=%04X\n",space.device().safe_pc(),data,(offset*2),mem_mask);
+			logerror("Nimbus video IOW at %05X write of %04X to %04X mask=%04X\n",m_maincpu->pc(),data,(offset*2),mem_mask);
 
 		if(DEBUG_SET(DEBUG_DB))
 			logerror("dw %05X,%05X\n",(offset*2),data);

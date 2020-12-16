@@ -7,6 +7,7 @@
 
 #include "nxrom.h"
 #include "imagedev/flopdrv.h"
+#include "sound/rp2c33_snd.h"
 
 
 // ======================> nes_disksys_device
@@ -17,12 +18,12 @@ public:
 	// construction/destruction
 	nes_disksys_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	virtual DECLARE_READ8_MEMBER(read_ex) override;
-	virtual DECLARE_READ8_MEMBER(read_m) override;
-	virtual DECLARE_READ8_MEMBER(read_h) override;
-	virtual DECLARE_WRITE8_MEMBER(write_ex) override;
-	virtual DECLARE_WRITE8_MEMBER(write_m) override;
-	virtual DECLARE_WRITE8_MEMBER(write_h) override;
+	virtual uint8_t read_ex(offs_t offset) override;
+	virtual uint8_t read_m(offs_t offset) override;
+	virtual uint8_t read_h(offs_t offset) override;
+	virtual void write_ex(offs_t offset, uint8_t data) override;
+	virtual void write_m(offs_t offset, uint8_t data) override;
+	virtual void write_h(offs_t offset, uint8_t data) override;
 
 	virtual void disk_flip_side() override;
 
@@ -45,6 +46,7 @@ private:
 
 	std::unique_ptr<uint8_t[]> m_fds_data;    // here, we store a copy of the disk
 	required_device<legacy_floppy_image_device> m_disk;
+	required_device<rp2c33_sound_device> m_sound;
 
 	static const device_timer_id TIMER_IRQ = 0;
 	emu_timer *irq_timer;
@@ -54,6 +56,7 @@ private:
 
 	uint16_t m_irq_count, m_irq_count_latch;
 	int m_irq_enable, m_irq_transfer;
+	bool m_sound_en;
 
 	uint8_t m_fds_motor_on;
 	uint8_t m_fds_door_closed;

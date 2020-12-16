@@ -9,13 +9,12 @@
 #include "machine/pccard.h"
 
 class linear_flash_pccard_device : public device_t,
-	public pccard_interface,
-	public device_memory_interface,
-	public device_slot_card_interface
+	public device_pccard_interface,
+	public device_memory_interface
 {
 public:
-	virtual DECLARE_READ16_MEMBER(read_memory) override;
-	virtual DECLARE_WRITE16_MEMBER(write_memory) override;
+	virtual uint16_t read_memory(offs_t offset, uint16_t mem_mask = ~0) override;
+	virtual void write_memory(offs_t offset, uint16_t data, uint16_t mem_mask = ~0) override;
 
 protected:
 	linear_flash_pccard_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock);
@@ -39,6 +38,9 @@ public:
 protected:
 	// device-level overrides
 	virtual void device_add_mconfig(machine_config &config) override;
+
+private:
+	void linear_flash_pccard_16mb(address_map &map);
 };
 
 
@@ -50,6 +52,9 @@ public:
 protected:
 	// device-level overrides
 	virtual void device_add_mconfig(machine_config &config) override;
+
+private:
+	void linear_flash_pccard_32mb(address_map &map);
 };
 
 
@@ -61,6 +66,9 @@ public:
 protected:
 	// device-level overrides
 	virtual void device_add_mconfig(machine_config &config) override;
+
+private:
+	void linear_flash_pccard_64mb(address_map &map);
 };
 
 

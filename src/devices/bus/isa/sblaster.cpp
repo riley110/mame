@@ -5,7 +5,6 @@
   ISA 8/16 bit Creative Labs Sound Blaster Sound Card
 
   TODO:
-  - implement DAC
   - DSP type is a MCS-51 family, it has an internal ROM that needs decapping;
   - implement jumpers DIP-SWs;
 
@@ -52,8 +51,8 @@
 
   jumperable? normally 0x220
 */
-#define ym3812_StdClock XTAL_3_579545MHz
-#define ymf262_StdClock XTAL_14_31818MHz
+#define ym3812_StdClock XTAL(3'579'545)
+#define ymf262_StdClock XTAL(14'318'181)
 
 static const int m_cmd_fifo_length[256] =
 {
@@ -67,10 +66,10 @@ static const int m_cmd_fifo_length[256] =
 	-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, /* 6x */
 	-1, -1, -1, -1,  3,  3,  3,  3, -1, -1, -1, -1, -1,  1, -1,  1, /* 7x */
 	-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, /* 8x */
-	-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, /* 9x */
+	1,  1,  -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, /* 9x */
 	-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, /* Ax */
-		4, -1, -1, -1, -1, -1,  4, -1,  4, -1, -1,  -1, -1, -1,  4, -1, /* Bx */
-		4, -1, -1, -1, -1, -1,  4, -1,  4, -1, -1,  -1, -1, -1,  4, -1, /* Cx */
+		4, -1,  4, -1,  4, -1,  4, -1,  4, -1, -1,  -1, -1, -1,  4, -1, /* Bx */
+		4, -1,  4, -1,  4, -1,  4, -1,  4, -1, -1,  -1, -1, -1,  4, -1, /* Cx */
 		1,  1, -1,  1, -1,  1,  1, -1,  1,  1,  1,  -1, -1, -1, -1, -1, /* Dx */
 		2,  1,  2,  1,  2, -1, -1, -1,  1, -1, -1,  -1, -1, -1, -1, -1, /* Ex */
 	-1, -1,  1, -1, -1, -1, -1, -1,  1, -1, -1, -1,  1, -1, -1, -1  /* Fx */
@@ -78,38 +77,38 @@ static const int m_cmd_fifo_length[256] =
 
 static const int protection_magic[4] = { 0x96, 0xa5, 0x69, 0x5a };
 
-READ8_MEMBER( sb8_device::ym3812_16_r )
+uint8_t sb8_device::ym3812_16_r(offs_t offset)
 {
 	uint8_t retVal = 0xff;
 	switch(offset)
 	{
-		case 0 : retVal = m_ym3812->status_port_r( space, offset ); break;
+		case 0 : retVal = m_ym3812->status_port_r(); break;
 	}
 	return retVal;
 }
 
-WRITE8_MEMBER( sb8_device::ym3812_16_w )
+void sb8_device::ym3812_16_w(offs_t offset, uint8_t data)
 {
 	switch(offset)
 	{
-		case 0 : m_ym3812->control_port_w( space, offset, data ); break;
-		case 1 : m_ym3812->write_port_w( space, offset, data ); break;
+		case 0 : m_ym3812->control_port_w(data); break;
+		case 1 : m_ym3812->write_port_w(data); break;
 	}
 }
 
-READ8_MEMBER( isa8_sblaster1_0_device::saa1099_16_r )
+uint8_t isa8_sblaster1_0_device::saa1099_16_r(offs_t offset)
 {
 	return 0xff;
 }
 
-WRITE8_MEMBER( isa8_sblaster1_0_device::saa1099_1_16_w )
+void isa8_sblaster1_0_device::saa1099_1_16_w(offs_t offset, uint8_t data)
 {
-	m_saa1099_1->write(space, offset, data);
+	m_saa1099_1->write(offset, data);
 }
 
-WRITE8_MEMBER( isa8_sblaster1_0_device::saa1099_2_16_w )
+void isa8_sblaster1_0_device::saa1099_2_16_w(offs_t offset, uint8_t data)
 {
-	m_saa1099_2->write(space, offset, data);
+	m_saa1099_2->write(offset, data);
 }
 
 void sb_device::queue(uint8_t data)
@@ -165,7 +164,7 @@ uint8_t sb_device::dequeue_r()
 }
 
 
-READ8_MEMBER( sb_device::dsp_reset_r )
+uint8_t sb_device::dsp_reset_r(offs_t offset)
 {
 //    printf("read DSP reset @ %x\n", offset);
 	if(offset)
@@ -174,7 +173,7 @@ READ8_MEMBER( sb_device::dsp_reset_r )
 	return 0xff;
 }
 
-WRITE8_MEMBER( sb_device::dsp_reset_w )
+void sb_device::dsp_reset_w(offs_t offset, uint8_t data)
 {
 //    printf("%02x to DSP reset @ %x\n", data, offset);
 	if(offset)
@@ -220,7 +219,7 @@ WRITE8_MEMBER( sb_device::dsp_reset_w )
 	//printf("%02x\n",data);
 }
 
-READ8_MEMBER( sb_device::dsp_data_r )
+uint8_t sb_device::dsp_data_r(offs_t offset)
 {
 //    printf("read DSP data @ %x\n", offset);
 	if(offset)
@@ -245,7 +244,7 @@ READ8_MEMBER( sb_device::dsp_data_r )
 	return dequeue_r();
 }
 
-WRITE8_MEMBER( sb_device::dsp_data_w )
+void sb_device::dsp_data_w(offs_t offset, uint8_t data)
 {
 //    printf("%02x to DSP data @ %x\n", data, offset);
 	if(offset)
@@ -253,7 +252,7 @@ WRITE8_MEMBER( sb_device::dsp_data_w )
 	logerror("Soundblaster DSP data port undocumented write\n");
 }
 
-READ8_MEMBER(sb_device::dsp_rbuf_status_r)
+uint8_t sb_device::dsp_rbuf_status_r(offs_t offset)
 {
 //    printf("read Rbufstat @ %x\n", offset);
 
@@ -282,7 +281,7 @@ READ8_MEMBER(sb_device::dsp_rbuf_status_r)
 	return m_dsp.rbuf_status;
 }
 
-READ8_MEMBER(sb_device::dsp_wbuf_status_r)
+uint8_t sb_device::dsp_wbuf_status_r(offs_t offset)
 {
 //    printf("read Wbufstat @ %x\n", offset);
 
@@ -304,7 +303,7 @@ READ8_MEMBER(sb_device::dsp_wbuf_status_r)
 	return m_dsp.wbuf_status;
 }
 
-WRITE8_MEMBER(sb_device::dsp_rbuf_status_w)
+void sb_device::dsp_rbuf_status_w(offs_t offset, uint8_t data)
 {
 //    printf("%02x to Rbufstat @ %x\n", data, offset);
 	if(offset)
@@ -327,9 +326,12 @@ void sb_device::process_fifo(uint8_t cmd)
 		switch(cmd)
 		{
 			case 0x10:  // Direct DAC
+				m_ldac->write(m_dsp.fifo[1] << 8);
+				m_rdac->write(m_dsp.fifo[1] << 8);
 				break;
 
 			case 0x14:  // 8-bit DMA, no autoinit
+			case 0x91:  // 8-bit DMA, no autoinit, high speed. XXX only on DSP 3.xx
 				m_dsp.dma_length = (m_dsp.fifo[1] + (m_dsp.fifo[2]<<8)) + 1;
 //                printf("Start DMA (not autoinit, size = %x)\n", m_dsp.dma_length);
 				m_dsp.dma_transferred = 0;
@@ -355,6 +357,7 @@ void sb_device::process_fifo(uint8_t cmd)
 				break;
 
 			case 0x1c:  // 8-bit DMA with autoinit
+			case 0x90:  // 8-bit DMA with autoinit, high speed. XXX only on DSP 3.xx
 				//              printf("Start DMA (autoinit, size = %x)\n", m_dsp.dma_length);
 				m_dsp.dma_transferred = 0;
 				m_dsp.dma_autoinit = 1;
@@ -576,12 +579,22 @@ void sb_device::process_fifo(uint8_t cmd)
 							m_dsp.dma_autoinit = 0;
 							break;
 						case 0xb0:
+						case 0xb2:
+						case 0xb4:
 						case 0xb6:
 						case 0xc0:
+						case 0xc2:
+						case 0xc4:
 						case 0xc6:
 							mode = m_dsp.fifo[1];
 							m_dsp.flags = 0;
 							m_dsp.dma_length = (m_dsp.fifo[2] + (m_dsp.fifo[3]<<8)) + 1;
+							if(cmd & 0x04)
+								m_dsp.dma_autoinit = 1;
+							if(mode & 0x10)
+								m_dsp.flags |= SIGNED;
+							if(mode & 0x20)
+								m_dsp.flags |= STEREO;
 							if((cmd & 0xf0) == 0xb0)
 							{
 								m_dsp.flags |= SIXTEENBIT;
@@ -590,15 +603,6 @@ void sb_device::process_fifo(uint8_t cmd)
 							}
 							else
 								drq_w(1);
-							if(cmd & 0x04)
-								m_dsp.dma_autoinit = 1;
-							if(mode & 0x10)
-								m_dsp.flags |= SIGNED;
-							if(mode & 0x20)
-							{
-								m_dsp.flags |= STEREO;
-								m_dsp.dma_length <<= 1;
-							}
 							m_dsp.dma_transferred = 0;
 							m_dsp.dma_timer_started = false;
 							m_dsp.dma_throttled = false;
@@ -636,7 +640,7 @@ void sb_device::process_fifo(uint8_t cmd)
 	}
 }
 
-WRITE8_MEMBER(sb_device::dsp_cmd_w)
+void sb_device::dsp_cmd_w(offs_t offset, uint8_t data)
 {
 //  printf("%02x to DSP command @ %x\n", data, offset);
 
@@ -706,7 +710,7 @@ void sb_device::adpcm_decode(uint8_t sample, int size)
 	m_rdac->write(m_dsp.adpcm_ref << 8);
 }
 
-READ8_MEMBER( sb16_device::mpu401_r )
+uint8_t sb16_device::mpu401_r(offs_t offset)
 {
 	uint8_t res;
 
@@ -740,7 +744,7 @@ READ8_MEMBER( sb16_device::mpu401_r )
 	return res;
 }
 
-WRITE8_MEMBER( sb16_device::mpu401_w )
+void sb16_device::mpu401_w(offs_t offset, uint8_t data)
 {
 	if(offset == 0) // data
 	{
@@ -820,14 +824,14 @@ void sb16_device::mixer_reset()
 	mixer_set();
 }
 
-READ8_MEMBER( sb16_device::mixer_r )
+uint8_t sb16_device::mixer_r(offs_t offset)
 {
 	if(offset == 0)
 		return m_mixer.status;
 	return m_mixer.data;
 }
 
-WRITE8_MEMBER( sb16_device::mixer_w )
+void sb16_device::mixer_w(offs_t offset, uint8_t data)
 {
 	if(offset == 0)
 	{
@@ -1140,71 +1144,62 @@ DEFINE_DEVICE_TYPE(ISA16_SOUND_BLASTER_16, isa16_sblaster16_device, "isa_sblaste
 //  device_add_mconfig - add device configuration
 //-------------------------------------------------
 
-MACHINE_CONFIG_MEMBER( isa8_sblaster1_0_device::device_add_mconfig )
-	MCFG_SPEAKER_STANDARD_STEREO("lspeaker", "rspeaker")
-	MCFG_SOUND_ADD("ym3812", YM3812, ym3812_StdClock)
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "lspeaker", 3.00)
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "rspeaker", 3.00)
-	MCFG_SAA1099_ADD("saa1099.1", 7159090)
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "lspeaker", 0.50)
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "rspeaker", 0.50)
-	MCFG_SAA1099_ADD("saa1099.2", 7159090)
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "lspeaker", 0.50)
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "rspeaker", 0.50)
+void sb_device::common(machine_config &config)
+{
+	SPEAKER(config, "lspeaker").front_left();
+	SPEAKER(config, "rspeaker").front_right();
 
-	MCFG_SOUND_ADD("ldac", DAC_16BIT_R2R, 0) MCFG_SOUND_ROUTE(ALL_OUTPUTS, "lspeaker", 0.5) // unknown DAC
-	MCFG_SOUND_ADD("rdac", DAC_16BIT_R2R, 0) MCFG_SOUND_ROUTE(ALL_OUTPUTS, "rspeaker", 0.5) // unknown DAC
-	MCFG_DEVICE_ADD("vref", VOLTAGE_REGULATOR, 0) MCFG_VOLTAGE_REGULATOR_OUTPUT(5.0)
-	MCFG_SOUND_ROUTE_EX(0, "ldac", 1.0, DAC_VREF_POS_INPUT) MCFG_SOUND_ROUTE_EX(0, "ldac", -1.0, DAC_VREF_NEG_INPUT)
-	MCFG_SOUND_ROUTE_EX(0, "rdac", 1.0, DAC_VREF_POS_INPUT) MCFG_SOUND_ROUTE_EX(0, "rdac", -1.0, DAC_VREF_NEG_INPUT)
+	DAC_16BIT_R2R(config, m_ldac, 0).add_route(ALL_OUTPUTS, "lspeaker", 0.5); // unknown DAC
+	DAC_16BIT_R2R(config, m_rdac, 0).add_route(ALL_OUTPUTS, "rspeaker", 0.5); // unknown DAC
+	voltage_regulator_device &vref(VOLTAGE_REGULATOR(config, "vref", 0));
+	vref.add_route(0, "ldac", 1.0, DAC_VREF_POS_INPUT);
+	vref.add_route(0, "ldac", -1.0, DAC_VREF_NEG_INPUT);
+	vref.add_route(0, "rdac", 1.0, DAC_VREF_POS_INPUT);
+	vref.add_route(0, "rdac", -1.0, DAC_VREF_NEG_INPUT);
 
-	MCFG_PC_JOY_ADD("pc_joy")
-	MCFG_MIDI_PORT_ADD("mdin", midiin_slot, "midiin")
-	MCFG_MIDI_RX_HANDLER(DEVWRITELINE(DEVICE_SELF, sb_device, midi_rx_w))
+	PC_JOY(config, m_joy);
 
-	MCFG_MIDI_PORT_ADD("mdout", midiout_slot, "midiout")
-MACHINE_CONFIG_END
+	MIDI_PORT(config, "mdin", midiin_slot, "midiin").rxd_handler().set(FUNC(sb_device::midi_rx_w));
+	MIDI_PORT(config, "mdout", midiout_slot, "midiout");
+}
 
-MACHINE_CONFIG_MEMBER( isa8_sblaster1_5_device::device_add_mconfig )
-	MCFG_SPEAKER_STANDARD_STEREO("lspeaker", "rspeaker")
-	MCFG_SOUND_ADD("ym3812", YM3812, ym3812_StdClock)
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "lspeaker", 1.00)
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "rspeaker", 1.00)
+void isa8_sblaster1_0_device::device_add_mconfig(machine_config &config)
+{
+	common(config);
+
+	YM3812(config, m_ym3812, ym3812_StdClock);
+	m_ym3812->add_route(ALL_OUTPUTS, "lspeaker", 3.0);
+	m_ym3812->add_route(ALL_OUTPUTS, "rspeaker", 3.0);
+
+	SAA1099(config, m_saa1099_1, XTAL(14'318'181) / 2); // or CMS-301, from OSC pin in ISA bus
+	m_saa1099_1->add_route(0, "lspeaker", 0.5);
+	m_saa1099_1->add_route(1, "rspeaker", 0.5);
+
+	SAA1099(config, m_saa1099_2, XTAL(14'318'181) / 2); // or CMS-301, from OSC pin in ISA bus
+	m_saa1099_2->add_route(0, "lspeaker", 0.5);
+	m_saa1099_2->add_route(1, "rspeaker", 0.5);
+}
+
+void isa8_sblaster1_5_device::device_add_mconfig(machine_config &config)
+{
+	common(config);
+
+	YM3812(config, m_ym3812, ym3812_StdClock);
+	m_ym3812->add_route(ALL_OUTPUTS, "lspeaker", 1.0);
+	m_ym3812->add_route(ALL_OUTPUTS, "rspeaker", 1.0);
 	/* no CM/S support (empty sockets) */
+}
 
-	MCFG_SOUND_ADD("ldac", DAC_16BIT_R2R, 0) MCFG_SOUND_ROUTE(ALL_OUTPUTS, "lspeaker", 0.5) // unknown DAC
-	MCFG_SOUND_ADD("rdac", DAC_16BIT_R2R, 0) MCFG_SOUND_ROUTE(ALL_OUTPUTS, "rspeaker", 0.5) // unknown DAC
-	MCFG_DEVICE_ADD("vref", VOLTAGE_REGULATOR, 0) MCFG_VOLTAGE_REGULATOR_OUTPUT(5.0)
-	MCFG_SOUND_ROUTE_EX(0, "ldac", 1.0, DAC_VREF_POS_INPUT) MCFG_SOUND_ROUTE_EX(0, "ldac", -1.0, DAC_VREF_NEG_INPUT)
-	MCFG_SOUND_ROUTE_EX(0, "rdac", 1.0, DAC_VREF_POS_INPUT) MCFG_SOUND_ROUTE_EX(0, "rdac", -1.0, DAC_VREF_NEG_INPUT)
+void isa16_sblaster16_device::device_add_mconfig(machine_config &config)
+{
+	common(config);
 
-	MCFG_PC_JOY_ADD("pc_joy")
-	MCFG_MIDI_PORT_ADD("mdin", midiin_slot, "midiin")
-	MCFG_MIDI_RX_HANDLER(DEVWRITELINE(DEVICE_SELF, sb_device, midi_rx_w))
-
-	MCFG_MIDI_PORT_ADD("mdout", midiout_slot, "midiout")
-MACHINE_CONFIG_END
-
-MACHINE_CONFIG_MEMBER( isa16_sblaster16_device::device_add_mconfig )
-	MCFG_SPEAKER_STANDARD_STEREO("lspeaker", "rspeaker")
-	MCFG_SOUND_ADD("ymf262", YMF262, ymf262_StdClock)
-	MCFG_SOUND_ROUTE(0, "lspeaker", 1.00)
-	MCFG_SOUND_ROUTE(1, "rspeaker", 1.00)
-	MCFG_SOUND_ROUTE(2, "lspeaker", 1.00)
-	MCFG_SOUND_ROUTE(3, "rspeaker", 1.00)
-
-	MCFG_SOUND_ADD("ldac", DAC_16BIT_R2R, 0) MCFG_SOUND_ROUTE(ALL_OUTPUTS, "lspeaker", 0.5) // unknown DAC
-	MCFG_SOUND_ADD("rdac", DAC_16BIT_R2R, 0) MCFG_SOUND_ROUTE(ALL_OUTPUTS, "rspeaker", 0.5) // unknown DAC
-	MCFG_DEVICE_ADD("vref", VOLTAGE_REGULATOR, 0) MCFG_VOLTAGE_REGULATOR_OUTPUT(5.0)
-	MCFG_SOUND_ROUTE_EX(0, "ldac", 1.0, DAC_VREF_POS_INPUT) MCFG_SOUND_ROUTE_EX(0, "ldac", -1.0, DAC_VREF_NEG_INPUT)
-	MCFG_SOUND_ROUTE_EX(0, "rdac", 1.0, DAC_VREF_POS_INPUT) MCFG_SOUND_ROUTE_EX(0, "rdac", -1.0, DAC_VREF_NEG_INPUT)
-
-	MCFG_PC_JOY_ADD("pc_joy")
-	MCFG_MIDI_PORT_ADD("mdin", midiin_slot, "midiin")
-	MCFG_MIDI_RX_HANDLER(DEVWRITELINE(DEVICE_SELF, sb_device, midi_rx_w))
-
-	MCFG_MIDI_PORT_ADD("mdout", midiout_slot, "midiout")
-MACHINE_CONFIG_END
+	ymf262_device &ymf262(YMF262(config, "ymf262", ymf262_StdClock));
+	ymf262.add_route(0, "lspeaker", 1.0);
+	ymf262.add_route(1, "rspeaker", 1.0);
+	ymf262.add_route(2, "lspeaker", 1.0);
+	ymf262.add_route(3, "rspeaker", 1.0);
+}
 
 //**************************************************************************
 //  LIVE DEVICE
@@ -1261,23 +1256,23 @@ isa16_sblaster16_device::isa16_sblaster16_device(const machine_config &mconfig, 
 
 void sb8_device::device_start()
 {
-	m_isa->install_device(0x0200, 0x0207, read8_delegate(FUNC(pc_joy_device::joy_port_r), subdevice<pc_joy_device>("pc_joy")), write8_delegate(FUNC(pc_joy_device::joy_port_w), subdevice<pc_joy_device>("pc_joy")));
-	m_isa->install_device(0x0226, 0x0227, read8_delegate(FUNC(sb_device::dsp_reset_r), this), write8_delegate(FUNC(sb_device::dsp_reset_w), this));
-	m_isa->install_device(0x022a, 0x022b, read8_delegate(FUNC(sb_device::dsp_data_r), this), write8_delegate(FUNC(sb_device::dsp_data_w), this) );
-	m_isa->install_device(0x022c, 0x022d, read8_delegate(FUNC(sb_device::dsp_wbuf_status_r), this), write8_delegate(FUNC(sb_device::dsp_cmd_w), this) );
-	m_isa->install_device(0x022e, 0x022f, read8_delegate(FUNC(sb_device::dsp_rbuf_status_r), this), write8_delegate(FUNC(sb_device::dsp_rbuf_status_w), this) );
+	m_isa->install_device(0x0200, 0x0207, read8smo_delegate(*subdevice<pc_joy_device>("pc_joy"), FUNC(pc_joy_device::joy_port_r)), write8smo_delegate(*subdevice<pc_joy_device>("pc_joy"), FUNC(pc_joy_device::joy_port_w)));
+	m_isa->install_device(0x0226, 0x0227, read8sm_delegate(*this, FUNC(sb_device::dsp_reset_r)), write8sm_delegate(*this, FUNC(sb_device::dsp_reset_w)));
+	m_isa->install_device(0x022a, 0x022b, read8sm_delegate(*this, FUNC(sb_device::dsp_data_r)), write8sm_delegate(*this, FUNC(sb_device::dsp_data_w)));
+	m_isa->install_device(0x022c, 0x022d, read8sm_delegate(*this, FUNC(sb_device::dsp_wbuf_status_r)), write8sm_delegate(*this, FUNC(sb_device::dsp_cmd_w)));
+	m_isa->install_device(0x022e, 0x022f, read8sm_delegate(*this, FUNC(sb_device::dsp_rbuf_status_r)), write8sm_delegate(*this, FUNC(sb_device::dsp_rbuf_status_w)));
 	if(m_dsp.version >= 0x0301)
 	{
-		ymf262_device *ymf262 = subdevice<ymf262_device>("ymf262");
+		ymf262_device &ymf262 = *subdevice<ymf262_device>("ymf262");
 
-		m_isa->install_device(0x0388, 0x038b, read8_delegate(FUNC(ymf262_device::read), ymf262), write8_delegate(FUNC(ymf262_device::write), ymf262));
-		m_isa->install_device(0x0220, 0x0223, read8_delegate(FUNC(ymf262_device::read), ymf262), write8_delegate(FUNC(ymf262_device::write), ymf262));
-		m_isa->install_device(0x0228, 0x0229, read8_delegate(FUNC(ymf262_device::read), ymf262), write8_delegate(FUNC(ymf262_device::write), ymf262));
+		m_isa->install_device(0x0388, 0x038b, read8sm_delegate(ymf262, FUNC(ymf262_device::read)), write8sm_delegate(ymf262, FUNC(ymf262_device::write)));
+		m_isa->install_device(0x0220, 0x0223, read8sm_delegate(ymf262, FUNC(ymf262_device::read)), write8sm_delegate(ymf262, FUNC(ymf262_device::write)));
+		m_isa->install_device(0x0228, 0x0229, read8sm_delegate(ymf262, FUNC(ymf262_device::read)), write8sm_delegate(ymf262, FUNC(ymf262_device::write)));
 	}
 	else
 	{
-		m_isa->install_device(0x0388, 0x0389, read8_delegate( FUNC(sb8_device::ym3812_16_r), this ), write8_delegate( FUNC(sb8_device::ym3812_16_w), this ) );
-		m_isa->install_device(0x0228, 0x0229, read8_delegate( FUNC(sb8_device::ym3812_16_r), this ), write8_delegate( FUNC(sb8_device::ym3812_16_w), this ) );
+		m_isa->install_device(0x0388, 0x0389, read8sm_delegate(*this, FUNC(sb8_device::ym3812_16_r)), write8sm_delegate(*this, FUNC(sb8_device::ym3812_16_w)));
+		m_isa->install_device(0x0228, 0x0229, read8sm_delegate(*this, FUNC(sb8_device::ym3812_16_r)), write8sm_delegate(*this, FUNC(sb8_device::ym3812_16_w)));
 	}
 
 	sb_device::device_start();
@@ -1287,8 +1282,8 @@ void isa8_sblaster1_0_device::device_start()
 {
 	set_isa_device();
 	// 1.0 always has the SAA1099s for CMS back-compatibility
-	m_isa->install_device(0x0220, 0x0221, read8_delegate( FUNC(isa8_sblaster1_0_device::saa1099_16_r), this ), write8_delegate( FUNC(isa8_sblaster1_0_device::saa1099_1_16_w), this ) );
-	m_isa->install_device(0x0222, 0x0223, read8_delegate( FUNC(isa8_sblaster1_0_device::saa1099_16_r), this ), write8_delegate( FUNC(isa8_sblaster1_0_device::saa1099_2_16_w), this ) );
+	m_isa->install_device(0x0220, 0x0221, read8sm_delegate(*this, FUNC(isa8_sblaster1_0_device::saa1099_16_r)), write8sm_delegate(*this, FUNC(isa8_sblaster1_0_device::saa1099_1_16_w)));
+	m_isa->install_device(0x0222, 0x0223, read8sm_delegate(*this, FUNC(isa8_sblaster1_0_device::saa1099_16_r)), write8sm_delegate(*this, FUNC(isa8_sblaster1_0_device::saa1099_2_16_w)));
 	m_isa->set_dma_channel(1, this, false);
 	m_dsp.version = 0x0105;
 	sb8_device::device_start();
@@ -1305,17 +1300,17 @@ void isa8_sblaster1_5_device::device_start()
 
 void sb16_device::device_start()
 {
-	ymf262_device *ymf262 = subdevice<ymf262_device>("ymf262");
-	m_isa->install_device(0x0200, 0x0207, read8_delegate(FUNC(pc_joy_device::joy_port_r), subdevice<pc_joy_device>("pc_joy")), write8_delegate(FUNC(pc_joy_device::joy_port_w), subdevice<pc_joy_device>("pc_joy")));
-	m_isa->install_device(0x0226, 0x0227, read8_delegate(FUNC(sb_device::dsp_reset_r), this), write8_delegate(FUNC(sb_device::dsp_reset_w), this));
-	m_isa->install_device(0x022a, 0x022b, read8_delegate(FUNC(sb_device::dsp_data_r), this), write8_delegate(FUNC(sb_device::dsp_data_w), this) );
-	m_isa->install_device(0x022c, 0x022d, read8_delegate(FUNC(sb_device::dsp_wbuf_status_r), this), write8_delegate(FUNC(sb_device::dsp_cmd_w), this) );
-	m_isa->install_device(0x022e, 0x022f, read8_delegate(FUNC(sb_device::dsp_rbuf_status_r), this), write8_delegate(FUNC(sb_device::dsp_rbuf_status_w), this) );
-	m_isa->install_device(0x0224, 0x0225, read8_delegate(FUNC(sb16_device::mixer_r), this), write8_delegate(FUNC(sb16_device::mixer_w), this));
-	m_isa->install_device(0x0330, 0x0331, read8_delegate(FUNC(sb16_device::mpu401_r), this), write8_delegate(FUNC(sb16_device::mpu401_w), this));
-	m_isa->install_device(0x0388, 0x038b, read8_delegate(FUNC(ymf262_device::read), ymf262), write8_delegate(FUNC(ymf262_device::write), ymf262));
-	m_isa->install_device(0x0220, 0x0223, read8_delegate(FUNC(ymf262_device::read), ymf262), write8_delegate(FUNC(ymf262_device::write), ymf262));
-	m_isa->install_device(0x0228, 0x0229, read8_delegate(FUNC(ymf262_device::read), ymf262), write8_delegate(FUNC(ymf262_device::write), ymf262));
+	ymf262_device &ymf262 = *subdevice<ymf262_device>("ymf262");
+	m_isa->install_device(0x0200, 0x0207, read8smo_delegate(*subdevice<pc_joy_device>("pc_joy"), FUNC(pc_joy_device::joy_port_r)), write8smo_delegate(*subdevice<pc_joy_device>("pc_joy"), FUNC(pc_joy_device::joy_port_w)));
+	m_isa->install_device(0x0226, 0x0227, read8sm_delegate(*this, FUNC(sb_device::dsp_reset_r)), write8sm_delegate(*this, FUNC(sb_device::dsp_reset_w)));
+	m_isa->install_device(0x022a, 0x022b, read8sm_delegate(*this, FUNC(sb_device::dsp_data_r)), write8sm_delegate(*this, FUNC(sb_device::dsp_data_w)));
+	m_isa->install_device(0x022c, 0x022d, read8sm_delegate(*this, FUNC(sb_device::dsp_wbuf_status_r)), write8sm_delegate(*this, FUNC(sb_device::dsp_cmd_w)));
+	m_isa->install_device(0x022e, 0x022f, read8sm_delegate(*this, FUNC(sb_device::dsp_rbuf_status_r)), write8sm_delegate(*this, FUNC(sb_device::dsp_rbuf_status_w)));
+	m_isa->install_device(0x0224, 0x0225, read8sm_delegate(*this, FUNC(sb16_device::mixer_r)), write8sm_delegate(*this, FUNC(sb16_device::mixer_w)));
+	m_isa->install_device(0x0330, 0x0331, read8sm_delegate(*this, FUNC(sb16_device::mpu401_r)), write8sm_delegate(*this, FUNC(sb16_device::mpu401_w)));
+	m_isa->install_device(0x0388, 0x038b, read8sm_delegate(ymf262, FUNC(ymf262_device::read)), write8sm_delegate(ymf262, FUNC(ymf262_device::write)));
+	m_isa->install_device(0x0220, 0x0223, read8sm_delegate(ymf262, FUNC(ymf262_device::read)), write8sm_delegate(ymf262, FUNC(ymf262_device::write)));
+	m_isa->install_device(0x0228, 0x0229, read8sm_delegate(ymf262, FUNC(ymf262_device::read)), write8sm_delegate(ymf262, FUNC(ymf262_device::write)));
 
 	save_item(NAME(m_mixer.data));
 	save_item(NAME(m_mixer.status));

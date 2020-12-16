@@ -33,10 +33,10 @@ public:
 	// construction/destruction
 	newbrain_eim_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	DECLARE_READ8_MEMBER( anout_r );
-	DECLARE_WRITE8_MEMBER( anout_w );
-	DECLARE_READ8_MEMBER( anin_r );
-	DECLARE_WRITE8_MEMBER( anio_w );
+	uint8_t anout_r();
+	void anout_w(uint8_t data);
+	uint8_t anin_r();
+	void anio_w(uint8_t data);
 
 protected:
 	// device-level overrides
@@ -48,19 +48,15 @@ protected:
 	virtual void device_add_mconfig(machine_config &config) override;
 
 	// device_newbrain_expansion_slot_interface overrides
-	virtual uint8_t mreq_r(address_space &space, offs_t offset, uint8_t data, bool &romov, int &exrm, bool &raminh) override;
-	virtual void mreq_w(address_space &space, offs_t offset, uint8_t data, bool &romov, int &exrm, bool &raminh) override;
-	virtual uint8_t iorq_r(address_space &space, offs_t offset, uint8_t data, bool &prtov) override;
-	virtual void iorq_w(address_space &space, offs_t offset, uint8_t data, bool &prtov) override;
+	virtual uint8_t mreq_r(offs_t offset, uint8_t data, bool &romov, int &exrm, bool &raminh) override;
+	virtual void mreq_w(offs_t offset, uint8_t data, bool &romov, int &exrm, bool &raminh) override;
+	virtual uint8_t iorq_r(offs_t offset, uint8_t data, bool &prtov) override;
+	virtual void iorq_w(offs_t offset, uint8_t data, bool &prtov) override;
 
 private:
 	DECLARE_WRITE_LINE_MEMBER( acia_interrupt );
 	DECLARE_WRITE_LINE_MEMBER( ctc_z2_w );
 	DECLARE_WRITE_LINE_MEMBER( adc_eoc_w );
-
-	ADC0808_ANALOG_READ_CB(adc_vref_pos_r);
-	ADC0808_ANALOG_READ_CB(adc_vref_neg_r);
-	ADC0808_ANALOG_READ_CB(adc_input_r);
 
 	TIMER_DEVICE_CALLBACK_MEMBER(ctc_c2_tick);
 
@@ -76,7 +72,6 @@ private:
 
 
 // device type definition
-extern const device_type NEWBRAIN_EIM;
 DECLARE_DEVICE_TYPE(NEWBRAIN_EIM, newbrain_eim_device)
 
 #endif // MAME_BUS_NEWBRAIN_EIM_H

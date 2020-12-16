@@ -6,11 +6,15 @@
 
 #pragma once
 
+#include "cpu/m68000/m68000.h"
 #include "cpu/sh/sh2.h"
 #include "cpu/sh/sh2comn.h"
+#include "machine/timer.h"
 #include "sound/dac.h"
+#include "emupal.h"
+#include "screen.h"
 
-class sega_32x_device : public device_t
+class sega_32x_device : public device_t, public device_palette_interface, public device_sound_interface, public device_video_interface
 {
 public:
 	void pause_cpu();
@@ -19,6 +23,7 @@ public:
 	void set_framerate(int rate) { m_framerate = rate; }
 	void set_32x_pal(bool pal) { m_32x_pal = pal ? 1 : 0; }
 	void set_total_scanlines(int total) { m_base_total_scanlines = total; }     // this get set at start only
+	double get_framerate() { return has_screen() ? screen().frame_period().as_hz() : double(m_framerate); }
 
 	void screen_eof(bool mode3)
 	{
@@ -27,83 +32,70 @@ public:
 		update_total_scanlines(mode3);
 	}
 
-	// static configuration
-	static void static_set_palette_tag(device_t &device, const char *tag);
-
-	DECLARE_READ32_MEMBER( _32x_sh2_master_4000_common_4002_r );
-	DECLARE_READ32_MEMBER( _32x_sh2_slave_4000_common_4002_r );
-	DECLARE_READ32_MEMBER( _32x_sh2_common_4004_common_4006_r );
-	DECLARE_WRITE32_MEMBER( _32x_sh2_master_4000_common_4002_w );
-	DECLARE_WRITE32_MEMBER( _32x_sh2_slave_4000_common_4002_w );
-	DECLARE_WRITE32_MEMBER( _32x_sh2_common_4004_common_4006_w );
-	DECLARE_WRITE32_MEMBER( _32x_sh2_master_4014_master_4016_w );
-	DECLARE_WRITE32_MEMBER( _32x_sh2_master_4018_master_401a_w );
-	DECLARE_WRITE32_MEMBER( _32x_sh2_master_401c_master_401e_w );
-	DECLARE_WRITE32_MEMBER( _32x_sh2_slave_4014_slave_4016_w );
-	DECLARE_WRITE32_MEMBER( _32x_sh2_slave_4018_slave_401a_w );
-	DECLARE_WRITE32_MEMBER( _32x_sh2_slave_401c_slave_401e_w );
-
-
-	DECLARE_READ16_MEMBER( _32x_68k_palette_r );
-	DECLARE_WRITE16_MEMBER( _32x_68k_palette_w );
-	DECLARE_READ16_MEMBER( _32x_68k_dram_r );
-	DECLARE_WRITE16_MEMBER( _32x_68k_dram_w );
-	DECLARE_READ16_MEMBER( _32x_68k_dram_overwrite_r );
-	DECLARE_WRITE16_MEMBER( _32x_68k_dram_overwrite_w );
-	DECLARE_READ16_MEMBER( _32x_68k_a15106_r );
-	DECLARE_WRITE16_MEMBER( _32x_68k_a15106_w );
-	DECLARE_READ16_MEMBER( _32x_dreq_common_r );
-	DECLARE_WRITE16_MEMBER( _32x_dreq_common_w );
-	DECLARE_READ16_MEMBER( _32x_68k_a1511a_r );
-	DECLARE_WRITE16_MEMBER( _32x_68k_a1511a_w );
-	DECLARE_READ16_MEMBER( _32x_68k_m_hint_vector_r );
-	DECLARE_WRITE16_MEMBER( _32x_68k_m_hint_vector_w );
-	DECLARE_READ16_MEMBER( _32x_68k_MARS_r );
-	DECLARE_READ16_MEMBER( _32x_68k_a15100_r );
-	DECLARE_WRITE16_MEMBER( _32x_68k_a15100_w );
-	DECLARE_READ16_MEMBER( _32x_68k_a15102_r );
-	DECLARE_WRITE16_MEMBER( _32x_68k_a15102_w );
-	DECLARE_READ16_MEMBER( _32x_68k_a15104_r );
-	DECLARE_WRITE16_MEMBER( _32x_68k_a15104_w );
-	DECLARE_READ16_MEMBER( _32x_68k_m_commsram_r );
-	DECLARE_WRITE16_MEMBER( _32x_68k_m_commsram_w );
-	DECLARE_READ16_MEMBER( _32x_pwm_r );
-	DECLARE_WRITE16_MEMBER( _32x_pwm_w );
-	DECLARE_WRITE16_MEMBER( _32x_68k_pwm_w );
-	DECLARE_READ16_MEMBER( _32x_common_vdp_regs_r );
-	DECLARE_WRITE16_MEMBER( _32x_common_vdp_regs_w );
-	DECLARE_READ16_MEMBER( _32x_sh2_master_4000_r );
-	DECLARE_WRITE16_MEMBER( _32x_sh2_master_4000_w );
-	DECLARE_READ16_MEMBER( _32x_sh2_slave_4000_r );
-	DECLARE_WRITE16_MEMBER( _32x_sh2_slave_4000_w );
-	DECLARE_READ16_MEMBER( _32x_sh2_common_4002_r );
-	DECLARE_WRITE16_MEMBER( _32x_sh2_common_4002_w );
-	DECLARE_READ16_MEMBER( _32x_sh2_common_4004_r );
-	DECLARE_WRITE16_MEMBER( _32x_sh2_common_4004_w );
-	DECLARE_READ16_MEMBER( _32x_sh2_common_4006_r );
-	DECLARE_WRITE16_MEMBER( _32x_sh2_common_4006_w );
-	DECLARE_WRITE16_MEMBER( _32x_sh2_master_4014_w );
-	DECLARE_WRITE16_MEMBER( _32x_sh2_slave_4014_w );
-	DECLARE_WRITE16_MEMBER( _32x_sh2_master_4016_w );
-	DECLARE_WRITE16_MEMBER( _32x_sh2_slave_4016_w );
-	DECLARE_WRITE16_MEMBER( _32x_sh2_master_4018_w );
-	DECLARE_WRITE16_MEMBER( _32x_sh2_slave_4018_w ) ;
-	DECLARE_WRITE16_MEMBER( _32x_sh2_master_401a_w );
-	DECLARE_WRITE16_MEMBER( _32x_sh2_slave_401a_w );
-	DECLARE_WRITE16_MEMBER( _32x_sh2_master_401c_w );
-	DECLARE_WRITE16_MEMBER( _32x_sh2_slave_401c_w );
-	DECLARE_WRITE16_MEMBER( _32x_sh2_master_401e_w );
-	DECLARE_WRITE16_MEMBER( _32x_sh2_slave_401e_w );
+	uint16_t m68k_palette_r(offs_t offset);
+	void m68k_palette_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t m68k_dram_r(offs_t offset);
+	void m68k_dram_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t m68k_dram_overwrite_r(offs_t offset);
+	void m68k_dram_overwrite_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t m68k_a15106_r();
+	void m68k_a15106_w(address_space &space, offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t dreq_common_r(address_space &space, offs_t offset);
+	void dreq_common_w(address_space &space, offs_t offset, uint16_t data);
+	uint16_t m68k_a1511a_r();
+	void m68k_a1511a_w(uint16_t data);
+	uint16_t m68k_m_hint_vector_r(offs_t offset);
+	void m68k_m_hint_vector_w(offs_t offset, uint16_t data);
+	uint16_t m68k_MARS_r(offs_t offset);
+	uint16_t m68k_a15100_r();
+	void m68k_a15100_w(address_space &space, offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t m68k_a15102_r();
+	void m68k_a15102_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t m68k_a15104_r();
+	void m68k_a15104_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t m68k_m_commsram_r(offs_t offset);
+	void m68k_m_commsram_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t pwm_r(offs_t offset);
+	void pwm_w(offs_t offset, uint16_t data);
+	void m68k_pwm_w(offs_t offset, uint16_t data);
+	uint16_t common_vdp_regs_r(offs_t offset);
+	void common_vdp_regs_w(address_space &space, offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t master_4000_r();
+	void master_4000_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t slave_4000_r();
+	void slave_4000_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t common_4002_r();
+	void common_4002_w(uint16_t data);
+	uint16_t common_4004_r();
+	void common_4004_w(uint16_t data);
+	uint16_t common_4006_r();
+	void common_4006_w(uint16_t data);
+	void master_4014_w(uint16_t data);
+	void slave_4014_w(uint16_t data);
+	void master_4016_w(uint16_t data);
+	void slave_4016_w(uint16_t data);
+	void master_4018_w(uint16_t data);
+	void slave_4018_w(uint16_t data);
+	void master_401a_w(uint16_t data);
+	void slave_401a_w(uint16_t data);
+	void master_401c_w(uint16_t data);
+	void slave_401c_w(uint16_t data);
+	void master_401e_w(uint16_t data);
+	void slave_401e_w(uint16_t data);
 
 	SH2_DMA_FIFO_DATA_AVAILABLE_CB(_32x_fifo_available_callback);
 
-	void _32x_render_videobuffer_to_screenbuffer_helper(int scanline);
-	void _32x_render_videobuffer_to_screenbuffer(int x, uint32_t priority, uint16_t &lineptr);
+	void render_videobuffer_to_screenbuffer_helper(int scanline);
+	void render_videobuffer_to_screenbuffer(int x, uint32_t priority, uint32_t &lineptr);
 	int sh2_master_pwmint_enable, sh2_slave_pwmint_enable;
 
-	void _32x_check_framebuffer_swap(bool enabled);
-	void _32x_check_irqs();
-	void _32x_interrupt_cb(int scanline, int irq6);
+	void check_framebuffer_swap(bool enabled);
+	void check_irqs();
+	void interrupt_cb(int scanline, int irq6);
+
+	void sh2_main_map(address_map &map);
+	void sh2_slave_map(address_map &map);
+	void sh2_common_map(address_map &map);
 
 protected:
 	sega_32x_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock);
@@ -112,14 +104,23 @@ protected:
 
 	virtual void device_start() override;
 	virtual void device_reset() override;
+	virtual void device_add_mconfig(machine_config &config) override;
+
+	// device_palette_interface overrides
+	virtual uint32_t palette_entries() const override { return 32*32*32/**2*/; }
+
+	// device_sound_interface overrides
+	virtual void sound_stream_update(sound_stream &stream, stream_sample_t **inputs, stream_sample_t **outputs, int samples) override;
 
 	void update_total_scanlines(bool mode3) { m_total_scanlines = mode3 ? (m_base_total_scanlines * 2) : m_base_total_scanlines; }  // this gets set at each EOF
 
 	/* our main vblank handler resets this */
+	required_device<m68000_base_device> m_main_cpu;
 	required_device<sh2_device> m_master_cpu;
 	required_device<sh2_device> m_slave_cpu;
 	required_device<dac_word_interface> m_ldac;
 	required_device<dac_word_interface> m_rdac;
+	required_device<timer_device> m_scan_timer;
 
 	int m_32x_hcount_compare_val;
 	int m_32x_vblank_flag;
@@ -127,15 +128,19 @@ protected:
 	int m_32x_240mode;
 	uint16_t m_32x_a1518a_reg;
 
+	sound_stream *m_stream;
 	TIMER_CALLBACK_MEMBER(handle_pwm_callback);
 	void calculate_pwm_timer();
 	uint16_t m_pwm_ctrl, m_pwm_cycle, m_pwm_tm_reg;
-	uint16_t m_cur_lch[0x10],m_cur_rch[0x10];
+	static constexpr int PWM_FIFO_SIZE = 3;
+	uint16_t m_cur_lch[PWM_FIFO_SIZE],m_cur_rch[PWM_FIFO_SIZE];
 	uint16_t m_pwm_cycle_reg; //used for latching
 	uint8_t m_pwm_timer_tick;
-	uint8_t m_lch_index_r, m_rch_index_r, m_lch_index_w, m_rch_index_w;
+	uint8_t m_lch_size, m_rch_size;
 	uint16_t m_lch_fifo_state, m_rch_fifo_state;
 
+	void lch_pop();
+	void rch_pop();
 
 	uint16_t get_hposition(void);
 
@@ -182,7 +187,6 @@ private:
 	std::unique_ptr<uint16_t[]> m_32x_dram1;
 	uint16_t *m_32x_display_dram, *m_32x_access_dram;
 	std::unique_ptr<uint16_t[]> m_32x_palette;
-	std::unique_ptr<uint16_t[]> m_32x_palette_lookup;
 
 	uint16_t m_fifo_block_a[4];
 	uint16_t m_fifo_block_b[4];
@@ -192,14 +196,20 @@ private:
 	int m_current_fifo_read_pos;
 	int m_fifo_block_a_full;
 	int m_fifo_block_b_full;
-
-	required_device<palette_device> m_palette;
 };
 
 
 class sega_32x_ntsc_device : public sega_32x_device
 {
 public:
+	template <typename T, typename U>
+	sega_32x_ntsc_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock, T &&main_cpu_tag, U &&timer_tag)
+		: sega_32x_ntsc_device(mconfig, tag, owner, clock)
+	{
+		m_main_cpu.set_tag(std::forward<T>(main_cpu_tag));
+		m_scan_timer.set_tag(std::forward<U>(timer_tag));
+	}
+
 	sega_32x_ntsc_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 protected:
@@ -210,6 +220,14 @@ protected:
 class sega_32x_pal_device : public sega_32x_device
 {
 public:
+	template <typename T, typename U>
+	sega_32x_pal_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock, T &&main_cpu_tag, U &&timer_tag)
+		: sega_32x_pal_device(mconfig, tag, owner, clock)
+	{
+		m_main_cpu.set_tag(std::forward<T>(main_cpu_tag));
+		m_scan_timer.set_tag(std::forward<U>(timer_tag));
+	}
+
 	sega_32x_pal_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 protected:
@@ -219,8 +237,5 @@ protected:
 
 DECLARE_DEVICE_TYPE(SEGA_32X_NTSC, sega_32x_ntsc_device)
 DECLARE_DEVICE_TYPE(SEGA_32X_PAL,  sega_32x_pal_device)
-
-#define MCFG_SEGA_32X_PALETTE(_palette_tag) \
-	sega_32x_device::static_set_palette_tag(*device, "^" _palette_tag);
 
 #endif // MAME_MACHINE_MEGA32X_H

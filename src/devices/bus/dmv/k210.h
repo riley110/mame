@@ -1,5 +1,6 @@
 // license:BSD-3-Clause
 // copyright-holders:Sandro Ronco
+// thanks-to:rfka01
 #ifndef MAME_BUS_DMV_K210_H
 #define MAME_BUS_DMV_K210_H
 
@@ -33,16 +34,16 @@ protected:
 	virtual void device_add_mconfig(machine_config &config) override;
 
 	// dmvcart_interface overrides
-	virtual void io_read(address_space &space, int ifsel, offs_t offset, uint8_t &data) override;
-	virtual void io_write(address_space &space, int ifsel, offs_t offset, uint8_t data) override;
+	virtual void io_read(int ifsel, offs_t offset, uint8_t &data) override;
+	virtual void io_write(int ifsel, offs_t offset, uint8_t data) override;
 
 private:
-	DECLARE_READ8_MEMBER(porta_r);
-	DECLARE_READ8_MEMBER(portb_r);
-	DECLARE_READ8_MEMBER(portc_r);
-	DECLARE_WRITE8_MEMBER(porta_w);
-	DECLARE_WRITE8_MEMBER(portb_w);
-	DECLARE_WRITE8_MEMBER(portc_w);
+	uint8_t porta_r();
+	uint8_t portb_r();
+	uint8_t portc_r();
+	void porta_w(uint8_t data);
+	void portb_w(uint8_t data);
+	void portc_w(uint8_t data);
 
 	DECLARE_WRITE_LINE_MEMBER(cent_ack_w);
 	DECLARE_WRITE_LINE_MEMBER(cent_busy_w);
@@ -56,7 +57,6 @@ private:
 	required_device<centronics_device> m_centronics;
 	required_device<input_buffer_device> m_cent_data_in;
 	required_device<output_latch_device> m_cent_data_out;
-	dmvcart_slot_device * m_bus;
 
 	emu_timer * m_clk1_timer;
 	uint8_t       m_portb;

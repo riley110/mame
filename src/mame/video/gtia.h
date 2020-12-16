@@ -16,14 +16,13 @@
 #pragma once
 
 
-#define MCFG_GTIA_READ_CB(_devcb) \
-	devcb = &gtia_device::set_read_callback(*device, DEVCB_##_devcb);
-
-#define MCFG_GTIA_WRITE_CB(_devcb) \
-	devcb = &gtia_device::set_write_callback(*device, DEVCB_##_devcb);
-
-
 // ======================> gtia_device
+
+enum gtia_region : unsigned
+{
+	GTIA_NTSC,
+	GTIA_PAL
+};
 
 class gtia_device :  public device_t
 {
@@ -31,11 +30,12 @@ public:
 	// construction/destruction
 	gtia_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	template <class Object> static devcb_base &set_read_callback(device_t &device, Object &&cb) { return downcast<gtia_device &>(device).m_read_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_write_callback(device_t &device, Object &&cb) { return downcast<gtia_device &>(device).m_write_cb.set_callback(std::forward<Object>(cb)); }
+	void set_region(gtia_region region) { m_region = region; }
+	auto read_callback() { return m_read_cb.bind(); }
+	auto write_callback() { return m_write_cb.bind(); }
 
-	DECLARE_READ8_MEMBER( read );
-	DECLARE_WRITE8_MEMBER( write );
+	uint8_t read(offs_t offset);
+	void write(offs_t offset, uint8_t data);
 
 	uint16_t *get_color_lookup() { return m_color_lookup; }
 	void set_color_lookup(int i, uint16_t data) { m_color_lookup[i] = data; }
@@ -169,15 +169,16 @@ private:
 		uint8_t   vdelay_p3;  /* vertical delay for player 3 */
 	};
 
-	gtia_readregs   m_r;          /* read registers */
-	gtia_writeregs  m_w;          /* write registers */
-	gtia_helpervars m_h;          /* helper variables */
+	gtia_readregs   m_r;
+	gtia_writeregs  m_w;
+	gtia_helpervars m_h;
+	gtia_region     m_region;
 
 	uint8_t m_lumpf1;
 	uint8_t m_huepm0, m_huepm1, m_huepm2, m_huepm3, m_huepm4;
 	uint8_t m_huepf2, m_huebk;
 
-	uint16_t m_color_lookup[256];  /* color lookup table */   // probably better fit to ANTIC, but it remains here for the moment...
+	uint16_t m_color_lookup[256]; // probably better fit to ANTIC, but it remains here for the moment...
 
 	devcb_read8 m_read_cb;
 	devcb_write8 m_write_cb;

@@ -17,14 +17,6 @@ public:
 	static const int BT459_OVERLAY_COLORS = 16;
 	static const int BT459_CURSOR_COLORS  = 3;
 
-	enum control_input
-	{
-		ADDRESS_LO = 0x0,
-		ADDRESS_HI = 0x1,
-		REGISTERS  = 0x2,
-		PALETTE    = 0x3
-	};
-
 	enum address_mask
 	{
 		REG_OVERLAY_COLOR_0    = 0x0100,
@@ -187,10 +179,19 @@ public:
 		CR4241_7PIX = 0x06  // cross hair thickness 7 pixels
 	};
 
-	DECLARE_READ8_MEMBER(read);
-	DECLARE_WRITE8_MEMBER(write);
+	void map(address_map &map);
+
+	u8 address_lo_r();
+	void address_lo_w(u8 data);
+	u8 address_hi_r();
+	void address_hi_w(u8 data);
+	u8 register_r();
+	void register_w(u8 data);
+	u8 palette_r();
+	void palette_w(u8 data);
 
 	void screen_update(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect, u8 *pixel_data);
+	void set_contrast(const u8 data) { m_contrast = data; }
 
 protected:
 	virtual void device_start() override;
@@ -200,9 +201,17 @@ protected:
 
 private:
 	// helper functions
-	u8 get_component(rgb_t *arr, int index);
-	void set_component(rgb_t *arr, int index, u8 data);
-	u32 get_rgb(u8 data) const { return m_palette_ram[data & m_pixel_read_mask]; }
+	u8 get_component(rgb_t *const arr, const int index);
+	void set_component(rgb_t *const arr, const int index, const u8 data);
+	u32 get_rgb(const u8 data, const u8 mask)
+	{
+		rgb_t rgb = m_palette_ram[data & mask];
+
+		if (m_contrast != 0xff)
+			rgb.scale8(m_contrast + 1);
+
+		return rgb;
+	}
 
 	// device state in memory map order
 	u16 m_address;
@@ -237,6 +246,9 @@ private:
 
 	u8 m_cursor_ram[1024];
 	rgb_t m_palette_ram[BT459_PIXEL_COLORS];
+
+	u64 m_blink_start;
+	u8 m_contrast;
 };
 
 DECLARE_DEVICE_TYPE(BT459, bt459_device)

@@ -49,7 +49,7 @@ void neogeo_rom_device::device_reset()
  mapper specific handlers
  -------------------------------------------------*/
 
-READ16_MEMBER(neogeo_rom_device::rom_r)
+uint16_t neogeo_rom_device::rom_r(offs_t offset)
 {
 	// to speed up access to ROM, the access to ROM are actually replaced in the driver
 	// by accesses to the maincpu rom region, where we have anyway copied the rom content
@@ -58,7 +58,7 @@ READ16_MEMBER(neogeo_rom_device::rom_r)
 }
 
 
-WRITE16_MEMBER(neogeo_rom_device::banksel_w)
+void neogeo_rom_device::banksel_w(uint16_t data)
 {
 	// to speed up access to ROM, the banking is taken care of at driver level
 	// by mapping higher banks to the corresponding offset in maincpu rom region
@@ -73,17 +73,19 @@ WRITE16_MEMBER(neogeo_rom_device::banksel_w)
 DEFINE_DEVICE_TYPE(NEOGEO_VLINER_CART, neogeo_vliner_cart_device, "neocart_vliner", "Neo Geo V-Liner Cart")
 
 neogeo_vliner_cart_device::neogeo_vliner_cart_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock) :
-	neogeo_rom_device(mconfig, NEOGEO_VLINER_CART, tag, owner, clock)
+	neogeo_rom_device(mconfig, NEOGEO_VLINER_CART, tag, owner, clock),
+	m_nvram(*this, "nvram")
 {
 }
-
 
 void neogeo_vliner_cart_device::device_start()
 {
-	save_item(NAME(m_cart_ram));
+	m_cart_ram = make_unique_clear<uint16_t[]>(0x2000/2);
+	m_nvram->set_base(m_cart_ram.get(), 0x2000);
+	save_pointer(NAME(m_cart_ram), 0x2000/2);
 }
 
-void neogeo_vliner_cart_device::device_reset()
+void neogeo_vliner_cart_device::device_add_mconfig(machine_config &config)
 {
-	memset(m_cart_ram, 0, 0x2000);
+	NVRAM(config, m_nvram);
 }

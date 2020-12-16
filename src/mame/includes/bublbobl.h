@@ -10,6 +10,7 @@
 #include "machine/gen_latch.h"
 #include "sound/2203intf.h"
 #include "sound/3526intf.h"
+#include "emupal.h"
 #include "screen.h"
 
 #include "machine/taito68705interface.h"
@@ -90,36 +91,36 @@ public:
 
 
 	void common_sreset(int state);
-	DECLARE_WRITE8_MEMBER(bublbobl_bankswitch_w);
-	DECLARE_WRITE8_MEMBER(tokio_bankswitch_w);
-	DECLARE_WRITE8_MEMBER(tokio_videoctrl_w);
-	DECLARE_WRITE8_MEMBER(bublbobl_nmitrigger_w);
-	DECLARE_READ8_MEMBER(tokiob_mcu_r);
-	DECLARE_WRITE8_MEMBER(bublbobl_soundcpu_reset_w);
-	DECLARE_READ8_MEMBER(common_sound_semaphores_r);
-	DECLARE_READ8_MEMBER(bublbobl_mcu_ddr1_r);
-	DECLARE_WRITE8_MEMBER(bublbobl_mcu_ddr1_w);
-	DECLARE_READ8_MEMBER(bublbobl_mcu_ddr2_r);
-	DECLARE_WRITE8_MEMBER(bublbobl_mcu_ddr2_w);
-	DECLARE_READ8_MEMBER(bublbobl_mcu_ddr3_r);
-	DECLARE_WRITE8_MEMBER(bublbobl_mcu_ddr3_w);
-	DECLARE_READ8_MEMBER(bublbobl_mcu_ddr4_r);
-	DECLARE_WRITE8_MEMBER(bublbobl_mcu_ddr4_w);
-	DECLARE_READ8_MEMBER(bublbobl_mcu_port1_r);
-	DECLARE_WRITE8_MEMBER(bublbobl_mcu_port1_w);
-	DECLARE_READ8_MEMBER(bublbobl_mcu_port2_r);
-	DECLARE_WRITE8_MEMBER(bublbobl_mcu_port2_w);
-	DECLARE_READ8_MEMBER(bublbobl_mcu_port3_r);
-	DECLARE_WRITE8_MEMBER(bublbobl_mcu_port3_w);
-	DECLARE_READ8_MEMBER(bublbobl_mcu_port4_r);
-	DECLARE_WRITE8_MEMBER(bublbobl_mcu_port4_w);
-	DECLARE_READ8_MEMBER(boblbobl_ic43_a_r);
-	DECLARE_WRITE8_MEMBER(boblbobl_ic43_a_w);
-	DECLARE_WRITE8_MEMBER(boblbobl_ic43_b_w);
-	DECLARE_READ8_MEMBER(boblbobl_ic43_b_r);
+	void bublbobl_bankswitch_w(uint8_t data);
+	void tokio_bankswitch_w(uint8_t data);
+	void tokio_videoctrl_w(uint8_t data);
+	void bublbobl_nmitrigger_w(uint8_t data);
+	uint8_t tokiob_mcu_r();
+	void bublbobl_soundcpu_reset_w(uint8_t data);
+	uint8_t common_sound_semaphores_r();
+	uint8_t bublbobl_mcu_ddr1_r();
+	void bublbobl_mcu_ddr1_w(uint8_t data);
+	uint8_t bublbobl_mcu_ddr2_r();
+	void bublbobl_mcu_ddr2_w(uint8_t data);
+	uint8_t bublbobl_mcu_ddr3_r();
+	void bublbobl_mcu_ddr3_w(uint8_t data);
+	uint8_t bublbobl_mcu_ddr4_r();
+	void bublbobl_mcu_ddr4_w(uint8_t data);
+	uint8_t bublbobl_mcu_port1_r();
+	void bublbobl_mcu_port1_w(uint8_t data);
+	uint8_t bublbobl_mcu_port2_r();
+	void bublbobl_mcu_port2_w(uint8_t data);
+	uint8_t bublbobl_mcu_port3_r();
+	void bublbobl_mcu_port3_w(uint8_t data);
+	uint8_t bublbobl_mcu_port4_r();
+	void bublbobl_mcu_port4_w(uint8_t data);
+	uint8_t boblbobl_ic43_a_r(offs_t offset);
+	void boblbobl_ic43_a_w(offs_t offset, uint8_t data);
+	void boblbobl_ic43_b_w(offs_t offset, uint8_t data);
+	uint8_t boblbobl_ic43_b_r(offs_t offset);
 
-	DECLARE_DRIVER_INIT(dland);
-	DECLARE_DRIVER_INIT(common);
+	void init_dland();
+	void init_common();
 	DECLARE_MACHINE_START(tokio);
 	DECLARE_MACHINE_RESET(tokio);
 	DECLARE_MACHINE_START(bublbobl);
@@ -131,6 +132,23 @@ public:
 	uint32_t screen_update_bublbobl(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 	void configure_banks();
 
+	void tokio(machine_config &config);
+	void boblbobl(machine_config &config);
+	void bublbobl(machine_config &config);
+	void bublbobl_nomcu(machine_config &config);
+	void bublboblp(machine_config &config);
+	void tokiob(machine_config &config);
+	void bootleg_map(address_map &map);
+	void bublbobl_maincpu_map(address_map &map);
+	void common_maincpu_map(address_map &map);
+	void mcu_map(address_map &map);
+	void sound_map(address_map &map);
+	void subcpu_map(address_map &map);
+	void tokio_map(address_map &map);
+	void tokio_map_bootleg(address_map &map);
+	void tokio_map_mcu(address_map &map);
+	void tokio_sound_map(address_map &map);
+	void tokio_subcpu_map(address_map &map);
 protected:
 	virtual void device_timer(emu_timer &timer, device_timer_id id, int param, void *ptr) override;
 };
@@ -150,14 +168,15 @@ public:
 	{
 	}
 
-	DECLARE_WRITE8_MEMBER(port_a_w);
-	DECLARE_WRITE8_MEMBER(port_b_w);
+	void port_a_w(uint8_t data);
+	void port_b_w(offs_t offset, uint8_t data, uint8_t mem_mask = ~0);
 
 	INTERRUPT_GEN_MEMBER(bublbobl_m68705_interrupt);
 
 	DECLARE_MACHINE_START(bub68705);
 	DECLARE_MACHINE_RESET(bub68705);
 
+	void bub68705(machine_config &config);
 protected:
 	required_device<m68705p_device> m_mcu;
 	required_ioport_array<4>        m_mux_ports;

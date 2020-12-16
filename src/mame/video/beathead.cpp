@@ -34,7 +34,7 @@ void beathead_state::video_start()
  *
  *************************************/
 
-WRITE32_MEMBER( beathead_state::vram_transparent_w )
+void beathead_state::vram_transparent_w(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
 	/* writes to this area appear to handle transparency */
 	if (!(data & 0x000000ff)) mem_mask &= ~0x000000ff;
@@ -45,7 +45,7 @@ WRITE32_MEMBER( beathead_state::vram_transparent_w )
 }
 
 
-WRITE32_MEMBER( beathead_state::vram_bulk_w )
+void beathead_state::vram_bulk_w(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
 	/* it appears that writes to this area pass in a mask for 4 words in VRAM */
 	/* allowing them to be filled from a preset latch */
@@ -60,14 +60,14 @@ WRITE32_MEMBER( beathead_state::vram_bulk_w )
 }
 
 
-WRITE32_MEMBER( beathead_state::vram_latch_w )
+void beathead_state::vram_latch_w(offs_t offset, uint32_t data)
 {
 	/* latch the address */
 	m_vram_latch_offset = (4 * offset) & 0x7ffff;
 }
 
 
-WRITE32_MEMBER( beathead_state::vram_copy_w )
+void beathead_state::vram_copy_w(offs_t offset, uint32_t data)
 {
 	/* copy from VRAM to VRAM, for 1024 bytes */
 	offs_t dest_offset = (4 * offset) & 0x7ffff;
@@ -82,7 +82,7 @@ WRITE32_MEMBER( beathead_state::vram_copy_w )
  *
  *************************************/
 
-WRITE32_MEMBER( beathead_state::finescroll_w )
+void beathead_state::finescroll_w(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
 	uint32_t oldword = m_finescroll;
 	uint32_t newword = COMBINE_DATA(&m_finescroll);
@@ -103,11 +103,11 @@ WRITE32_MEMBER( beathead_state::finescroll_w )
  *
  *************************************/
 
-READ32_MEMBER( beathead_state::hsync_ram_r )
+uint32_t beathead_state::hsync_ram_r(offs_t offset)
 {
 	/* offset 0 is probably write-only */
 	if (offset == 0)
-		logerror("%08X:Unexpected HSYNC RAM read at offset 0\n", space.device().safe_pcbase());
+		logerror("%08X:Unexpected HSYNC RAM read at offset 0\n", m_maincpu->pcbase());
 
 	/* offset 1 reads the data */
 	else
@@ -116,7 +116,7 @@ READ32_MEMBER( beathead_state::hsync_ram_r )
 	return 0;
 }
 
-WRITE32_MEMBER( beathead_state::hsync_ram_w )
+void beathead_state::hsync_ram_w(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
 	/* offset 0 selects the address, and can specify the start address */
 	if (offset == 0)
@@ -145,29 +145,29 @@ uint32_t beathead_state::screen_update(screen_device &screen, bitmap_ind16 &bitm
 	int x, y;
 
 	/* generate the final screen */
-	for (y = cliprect.min_y; y <= cliprect.max_y; y++)
+	for (y = cliprect.top(); y <= cliprect.bottom(); y++)
 	{
 		pen_t pen_base = (*m_palette_select & 0x7f) * 256;
 		uint16_t scanline[336];
 
 		/* blanking */
 		if (m_finescroll & 8)
-			for (x = cliprect.min_x; x <= cliprect.max_x; x++)
+			for (x = cliprect.left(); x <= cliprect.right(); x++)
 				scanline[x] = pen_base;
 
 		/* non-blanking */
 		else
 		{
 			offs_t scanline_offset = m_vram_latch_offset + (m_finescroll & 3);
-			offs_t src = scanline_offset + cliprect.min_x;
+			offs_t src = scanline_offset + cliprect.left();
 
 			/* unswizzle the scanline first */
-			for (x = cliprect.min_x; x <= cliprect.max_x; x++)
+			for (x = cliprect.left(); x <= cliprect.right(); x++)
 				scanline[x] = pen_base | videoram[BYTE4_XOR_LE(src++)];
 		}
 
 		/* then draw it */
-		draw_scanline16(bitmap, cliprect.min_x, y, cliprect.width(), &scanline[cliprect.min_x], nullptr);
+		draw_scanline16(bitmap, cliprect.left(), y, cliprect.width(), &scanline[cliprect.left()], nullptr);
 	}
 	return 0;
 }

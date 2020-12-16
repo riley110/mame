@@ -9,8 +9,9 @@
 ***************************************************************************/
 
 #include "emu.h"
-#include "video/resnet.h"
 #include "includes/wiz.h"
+
+#include "video/resnet.h"
 
 
 /***************************************************************************
@@ -27,44 +28,43 @@
 
 ***************************************************************************/
 
-PALETTE_INIT_MEMBER(wiz_state, wiz)
+void wiz_state::wiz_palette(palette_device &palette) const
 {
-	const uint8_t *color_prom = memregion("proms")->base();
-	static const int resistances[4] = { 1000, 470, 220, 100 };
-	double rweights[4], gweights[4], bweights[4];
+	uint8_t const *const color_prom = memregion("proms")->base();
+	static constexpr int resistances[4] = { 1000, 470, 220, 100 };
 
-	/* compute the color output resistor weights */
+	// compute the color output resistor weights
+	double rweights[4], gweights[4], bweights[4];
 	compute_resistor_weights(0, 255, -1.0,
 			4, resistances, rweights, 470, 0,
 			4, resistances, gweights, 470, 0,
 			4, resistances, bweights, 470, 0);
 
-	/* initialize the palette with these colors */
+	// initialize the palette with these colors
 	for (int i = 0; i < 0x100; i++)
 	{
 		int bit0, bit1, bit2, bit3;
-		int r, g, b;
 
-		/* red component */
-		bit0 = (color_prom[i + 0x000] >> 0) & 0x01;
-		bit1 = (color_prom[i + 0x000] >> 1) & 0x01;
-		bit2 = (color_prom[i + 0x000] >> 2) & 0x01;
-		bit3 = (color_prom[i + 0x000] >> 3) & 0x01;
-		r = combine_4_weights(rweights, bit0, bit1, bit2, bit3);
+		// red component
+		bit0 = BIT(color_prom[i + 0x000], 0);
+		bit1 = BIT(color_prom[i + 0x000], 1);
+		bit2 = BIT(color_prom[i + 0x000], 2);
+		bit3 = BIT(color_prom[i + 0x000], 3);
+		int const r = combine_weights(rweights, bit0, bit1, bit2, bit3);
 
-		/* green component */
-		bit0 = (color_prom[i + 0x100] >> 0) & 0x01;
-		bit1 = (color_prom[i + 0x100] >> 1) & 0x01;
-		bit2 = (color_prom[i + 0x100] >> 2) & 0x01;
-		bit3 = (color_prom[i + 0x100] >> 3) & 0x01;
-		g = combine_4_weights(gweights, bit0, bit1, bit2, bit3);
+		// green component
+		bit0 = BIT(color_prom[i + 0x100], 0);
+		bit1 = BIT(color_prom[i + 0x100], 1);
+		bit2 = BIT(color_prom[i + 0x100], 2);
+		bit3 = BIT(color_prom[i + 0x100], 3);
+		int const g = combine_weights(gweights, bit0, bit1, bit2, bit3);
 
-		/* blue component */
-		bit0 = (color_prom[i + 0x200] >> 0) & 0x01;
-		bit1 = (color_prom[i + 0x200] >> 1) & 0x01;
-		bit2 = (color_prom[i + 0x200] >> 2) & 0x01;
-		bit3 = (color_prom[i + 0x200] >> 3) & 0x01;
-		b = combine_4_weights(bweights, bit0, bit1, bit2, bit3);
+		// blue component
+		bit0 = BIT(color_prom[i + 0x200], 0);
+		bit1 = BIT(color_prom[i + 0x200], 1);
+		bit2 = BIT(color_prom[i + 0x200], 2);
+		bit3 = BIT(color_prom[i + 0x200], 3);
+		int const b = combine_weights(bweights, bit0, bit1, bit2, bit3);
 
 		m_palette->set_pen_color(i, rgb_t(r, g, b));
 	}
@@ -78,32 +78,32 @@ PALETTE_INIT_MEMBER(wiz_state, wiz)
 
 ***************************************************************************/
 
-WRITE8_MEMBER(wiz_state::wiz_palette_bank_w)
+void wiz_state::wiz_palette_bank_w(offs_t offset, uint8_t data)
 {
 	m_palbank[offset] = data & 1;
 }
 
-WRITE8_MEMBER(wiz_state::wiz_char_bank_w)
+void wiz_state::wiz_char_bank_w(offs_t offset, uint8_t data)
 {
 	m_charbank[offset] = data & 1;
 }
 
-WRITE8_MEMBER(wiz_state::wiz_sprite_bank_w)
+void wiz_state::wiz_sprite_bank_w(uint8_t data)
 {
 	m_sprite_bank = data & 1;
 }
 
-WRITE8_MEMBER(wiz_state::wiz_bgcolor_w)
+void wiz_state::wiz_bgcolor_w(uint8_t data)
 {
 	m_bgcolor = data;
 }
 
-WRITE8_MEMBER(wiz_state::wiz_flipx_w)
+void wiz_state::wiz_flipx_w(uint8_t data)
 {
 	m_flipx = data & 1;
 }
 
-WRITE8_MEMBER(wiz_state::wiz_flipy_w)
+void wiz_state::wiz_flipy_w(uint8_t data)
 {
 	m_flipy = data & 1;
 }

@@ -17,6 +17,7 @@
 
 #include "peribox.h"
 #include "sound/tms5220.h"
+#include "machine/tms6100.h"
 
 namespace bus { namespace ti99 { namespace peb {
 
@@ -24,26 +25,27 @@ class ti_speech_synthesizer_device : public device_t, public device_ti99_peribox
 {
 public:
 	ti_speech_synthesizer_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
-	DECLARE_READ8Z_MEMBER(readz) override;
-	DECLARE_WRITE8_MEMBER(write) override;
-	DECLARE_SETADDRESS_DBIN_MEMBER(setaddress_dbin) override;
+	void readz(offs_t offset, uint8_t *value) override;
+	void write(offs_t offset, uint8_t data) override;
+	void setaddress_dbin(offs_t offset, int state) override;
 
-	DECLARE_READ8Z_MEMBER(crureadz) override { }
-	DECLARE_WRITE8_MEMBER(cruwrite) override { }
+	void crureadz(offs_t offset, uint8_t *value) override { }
+	void cruwrite(offs_t offset, uint8_t data) override { }
 
 protected:
 	virtual void            device_start() override;
 	virtual void            device_reset() override;
 	virtual const tiny_rom_entry *device_rom_region() const override;
 	virtual void device_add_mconfig(machine_config &config) override;
+	virtual ioport_constructor device_input_ports() const override;
 
 private:
 	DECLARE_WRITE_LINE_MEMBER( speech_ready );
 
-	address_space*  m_space;
-	cd2501e_device* m_vsp;
-	bool            m_reading;
-	bool            m_sbe;          // Signal "Speech block enable"
+	required_device<cd2501e_device> m_vsp;
+	bool m_reading;
+	bool m_sbe;          // Signal "Speech block enable"
+	bool m_dec_high;     // Decode the AMA/AMB/ABC address lines
 };
 
 } } } // end namespace bus::ti99::peb

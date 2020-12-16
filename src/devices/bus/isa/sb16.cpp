@@ -14,26 +14,26 @@
 
 DEFINE_DEVICE_TYPE(ISA16_SB16, sb16_lle_device, "sb16", "SoundBlaster 16 Audio Adapter LLE")
 
-READ8_MEMBER( sb16_lle_device::dsp_data_r )
+uint8_t sb16_lle_device::dsp_data_r()
 {
-	if(!machine().side_effect_disabled())
+	if(!machine().side_effects_disabled())
 		m_data_in = false;
 
 	return m_in_byte;
 }
 
-WRITE8_MEMBER( sb16_lle_device::dsp_data_w )
+void sb16_lle_device::dsp_data_w(uint8_t data)
 {
 	m_data_out = true;
 	m_out_byte = data;
 }
 
-READ8_MEMBER( sb16_lle_device::dac_ctrl_r )
+uint8_t sb16_lle_device::dac_ctrl_r()
 {
 	return 0;
 }
 
-WRITE8_MEMBER( sb16_lle_device::dac_ctrl_w )
+void sb16_lle_device::dac_ctrl_w(uint8_t data)
 {
 	/* port 0x05
 	 * bit0 -
@@ -52,18 +52,18 @@ WRITE8_MEMBER( sb16_lle_device::dac_ctrl_w )
 	}
 }
 
-READ8_MEMBER( sb16_lle_device::adc_data_r )
+uint8_t sb16_lle_device::adc_data_r()
 {
 	return 0;
 }
 
-WRITE8_MEMBER( sb16_lle_device::dac_data_w )
+void sb16_lle_device::dac_data_w(uint8_t data)
 {
 	m_ldac->write(data << 8);
 	m_rdac->write(data << 8);
 }
 
-READ8_MEMBER( sb16_lle_device::p1_r )
+uint8_t sb16_lle_device::p1_r()
 {
 	uint8_t ret = 0;
 	ret |= m_data_out << 0;
@@ -71,7 +71,7 @@ READ8_MEMBER( sb16_lle_device::p1_r )
 	return ret;
 }
 
-WRITE8_MEMBER( sb16_lle_device::p1_w )
+void sb16_lle_device::p1_w(uint8_t data)
 {
 	/* port P1
 	 * bit0 - output byte ready
@@ -85,12 +85,12 @@ WRITE8_MEMBER( sb16_lle_device::p1_w )
 	*/
 }
 
-READ8_MEMBER( sb16_lle_device::p2_r )
+uint8_t sb16_lle_device::p2_r()
 {
 	return 0;
 }
 
-WRITE8_MEMBER( sb16_lle_device::p2_w )
+void sb16_lle_device::p2_w(uint8_t data)
 {
 	/* port P2
 	 * bit0 -
@@ -108,32 +108,32 @@ void sb16_lle_device::control_timer(bool start)
 {
 	if(start && m_freq)
 	{
-		double rate = (46615120.0/1024/256) * m_freq;
+		double rate = ((46.61512_MHz_XTAL).dvalue()/1024/256) * m_freq;
 		m_timer->adjust(attotime::from_hz(rate), 0, attotime::from_hz(rate));
 	}
 	else
 		m_timer->adjust(attotime::never);
 }
 
-WRITE8_MEMBER( sb16_lle_device::rate_w )
+void sb16_lle_device::rate_w(uint8_t data)
 {
 	m_freq = data;
 	if(!(m_ctrl8 & 2) || !(m_ctrl16 & 2))
 		control_timer(true);
 }
 
-READ8_MEMBER( sb16_lle_device::dma8_r )
+uint8_t sb16_lle_device::dma8_r()
 {
 	return m_dac_fifo[0].b[0];
 }
 
-WRITE8_MEMBER( sb16_lle_device::dma8_w )
+void sb16_lle_device::dma8_w(uint8_t data)
 {
 	m_adc_fifo[0].b[0] = data;
 	m_isa->drq1_w(0);
 }
 
-READ8_MEMBER( sb16_lle_device::dma_stat_r )
+uint8_t sb16_lle_device::dma_stat_r()
 {
 	/* port 0x06
 	 * bit0 - 8 bit complete
@@ -149,12 +149,12 @@ READ8_MEMBER( sb16_lle_device::dma_stat_r )
 	return ret;
 }
 
-READ8_MEMBER( sb16_lle_device::ctrl8_r )
+uint8_t sb16_lle_device::ctrl8_r()
 {
 	return m_ctrl8;
 }
 
-WRITE8_MEMBER( sb16_lle_device::ctrl8_w )
+void sb16_lle_device::ctrl8_w(uint8_t data)
 {
 	/* port 0x08
 	 * bit0 - ?
@@ -190,12 +190,12 @@ WRITE8_MEMBER( sb16_lle_device::ctrl8_w )
 	m_ctrl8 = data;
 }
 
-READ8_MEMBER( sb16_lle_device::ctrl16_r )
+uint8_t sb16_lle_device::ctrl16_r()
 {
 	return m_ctrl16;
 }
 
-WRITE8_MEMBER( sb16_lle_device::ctrl16_w )
+void sb16_lle_device::ctrl16_w(uint8_t data)
 {
 	/* port 0x10
 	 * bit0 -
@@ -231,12 +231,12 @@ WRITE8_MEMBER( sb16_lle_device::ctrl16_w )
 	m_ctrl16 = data;
 }
 
-READ8_MEMBER( sb16_lle_device::dac_fifo_ctrl_r )
+uint8_t sb16_lle_device::dac_fifo_ctrl_r()
 {
 	return m_dac_fifo_ctrl;
 }
 
-WRITE8_MEMBER( sb16_lle_device::dac_fifo_ctrl_w )
+void sb16_lle_device::dac_fifo_ctrl_w(uint8_t data)
 {
 	/* port 0x0E
 	 * bit0 - reset fifo
@@ -258,12 +258,12 @@ WRITE8_MEMBER( sb16_lle_device::dac_fifo_ctrl_w )
 	m_dac_fifo_ctrl = data;
 }
 
-READ8_MEMBER( sb16_lle_device::adc_fifo_ctrl_r )
+uint8_t sb16_lle_device::adc_fifo_ctrl_r()
 {
 	return m_adc_fifo_ctrl;
 }
 
-WRITE8_MEMBER( sb16_lle_device::adc_fifo_ctrl_w )
+void sb16_lle_device::adc_fifo_ctrl_w(uint8_t data)
 {
 	/* port 0x16
 	 * bit0 - reset fifo
@@ -285,12 +285,12 @@ WRITE8_MEMBER( sb16_lle_device::adc_fifo_ctrl_w )
 	m_adc_fifo_ctrl = data;
 }
 
-READ8_MEMBER( sb16_lle_device::mode_r )
+uint8_t sb16_lle_device::mode_r()
 {
 	return m_mode;
 }
 
-WRITE8_MEMBER( sb16_lle_device::mode_w )
+void sb16_lle_device::mode_w(uint8_t data)
 {
 	/* port 0x04
 	 * bit0 - 1 -- dac 16, adc 8; 0 -- adc 16, dac 8
@@ -305,7 +305,7 @@ WRITE8_MEMBER( sb16_lle_device::mode_w )
 	m_mode = data;
 }
 
-READ8_MEMBER( sb16_lle_device::dma8_ready_r )
+uint8_t sb16_lle_device::dma8_ready_r()
 {
 	/* port 0x0F
 	 * bit0 -
@@ -320,7 +320,7 @@ READ8_MEMBER( sb16_lle_device::dma8_ready_r )
 	return ((m_dac_fifo_tail - m_dac_fifo_head) != 1) << 6;
 }
 
-READ8_MEMBER( sb16_lle_device::adc_data_ready_r )
+uint8_t sb16_lle_device::adc_data_ready_r()
 {
 	/* port 0x17
 	 * bit0 -
@@ -335,105 +335,119 @@ READ8_MEMBER( sb16_lle_device::adc_data_ready_r )
 	return (m_mode & 1) ? 0x80 : 0;
 }
 
-READ8_MEMBER( sb16_lle_device::dma8_cnt_lo_r )
+uint8_t sb16_lle_device::dma8_cnt_lo_r()
 {
 	return m_dma8_cnt & 0xff;
 }
 
-READ8_MEMBER( sb16_lle_device::dma8_cnt_hi_r )
+uint8_t sb16_lle_device::dma8_cnt_hi_r()
 {
 	return m_dma8_cnt >> 8;
 }
 
-WRITE8_MEMBER( sb16_lle_device::dma8_len_lo_w )
+void sb16_lle_device::dma8_len_lo_w(uint8_t data)
 {
 	m_dma8_len = (m_dma8_len & 0xff00) | data;
 }
 
-WRITE8_MEMBER( sb16_lle_device::dma8_len_hi_w )
+void sb16_lle_device::dma8_len_hi_w(uint8_t data)
 {
 	m_dma8_len = (m_dma8_len & 0xff) | (data << 8);
 }
 
-WRITE8_MEMBER( sb16_lle_device::dma16_len_lo_w )
+void sb16_lle_device::dma16_len_lo_w(uint8_t data)
 {
 	m_dma16_len = (m_dma16_len & 0xff00) | data;
 }
 
-WRITE8_MEMBER( sb16_lle_device::dma16_len_hi_w )
+void sb16_lle_device::dma16_len_hi_w(uint8_t data)
 {
 	m_dma16_len = (m_dma16_len & 0xff) | (data << 8);
 }
 
 ROM_START( sb16 )
 	ROM_REGION( 0x2000, "sb16_cpu", 0 )
-	ROM_LOAD("ct1741_v413[80c52].bin", 0x0000, 0x2000, CRC(5181892f) SHA1(5b42f1c34c4e9c8dbbdcffa0a36c178ca4f1aa77))
+	ROM_LOAD("ct1741_v413@80c52.bin", 0x0000, 0x2000, CRC(5181892f) SHA1(5b42f1c34c4e9c8dbbdcffa0a36c178ca4f1aa77))
 
 	ROM_REGION(0x40, "xor_table", 0)
 	ROM_LOAD("ct1741_v413_xor.bin", 0x00, 0x40, CRC(5243d15a) SHA1(c7637c92828843f47e6e2f956af639b07aee4571))
 ROM_END
 
-static ADDRESS_MAP_START(sb16_io, AS_IO, 8, sb16_lle_device)
-	AM_RANGE(0x0000, 0x0000) AM_MIRROR(0xff00) AM_READWRITE(dsp_data_r, dsp_data_w)
-//  AM_RANGE(0x0001, 0x0001) // MIDI related?
-//  AM_RANGE(0x0002, 0x0002)
-	AM_RANGE(0x0004, 0x0004) AM_MIRROR(0xff00) AM_READWRITE(mode_r, mode_w)
-	AM_RANGE(0x0005, 0x0005) AM_MIRROR(0xff00) AM_READWRITE(dac_ctrl_r, dac_ctrl_w)
-	AM_RANGE(0x0006, 0x0006) AM_MIRROR(0xff00) AM_READ(dma_stat_r)
-//  AM_RANGE(0x0007, 0x0007) // unknown
-	AM_RANGE(0x0008, 0x0008) AM_MIRROR(0xff00) AM_READWRITE(ctrl8_r, ctrl8_w)
-	AM_RANGE(0x0009, 0x0009) AM_MIRROR(0xff00) AM_WRITE(rate_w)
-	AM_RANGE(0x000A, 0x000A) AM_MIRROR(0xff00) AM_READ(dma8_cnt_lo_r)
-	AM_RANGE(0x000B, 0x000B) AM_MIRROR(0xff00) AM_WRITE(dma8_len_lo_w)
-	AM_RANGE(0x000C, 0x000C) AM_MIRROR(0xff00) AM_WRITE(dma8_len_hi_w)
-	AM_RANGE(0x000D, 0x000D) AM_MIRROR(0xff00) AM_READ(dma8_cnt_hi_r)
-	AM_RANGE(0x000E, 0x000E) AM_MIRROR(0xff00) AM_READWRITE(dac_fifo_ctrl_r, dac_fifo_ctrl_w)
-	AM_RANGE(0x000F, 0x000F) AM_MIRROR(0xff00) AM_READ(dma8_ready_r)
-	AM_RANGE(0x0010, 0x0010) AM_MIRROR(0xff00) AM_READWRITE(ctrl16_r, ctrl16_w)
-	AM_RANGE(0x0013, 0x0013) AM_MIRROR(0xff00) AM_WRITE(dma16_len_lo_w)
-	AM_RANGE(0x0014, 0x0014) AM_MIRROR(0xff00) AM_WRITE(dma16_len_hi_w)
-	AM_RANGE(0x0016, 0x0016) AM_MIRROR(0xff00) AM_READWRITE(adc_fifo_ctrl_r, adc_fifo_ctrl_w)
-	AM_RANGE(0x0017, 0x0017) AM_MIRROR(0xff00) AM_READ(adc_data_ready_r)
-	AM_RANGE(0x0019, 0x0019) AM_MIRROR(0xff00) AM_WRITE(dac_data_w)
-	AM_RANGE(0x001B, 0x001B) AM_MIRROR(0xff00) AM_READ(adc_data_r)
-	AM_RANGE(0x001D, 0x001D) AM_MIRROR(0xff00) AM_WRITE(dma8_w)
-	AM_RANGE(0x001F, 0x001F) AM_MIRROR(0xff00) AM_READ(dma8_r)
-//  AM_RANGE(0x0080, 0x0080) // ASP comms
-//  AM_RANGE(0x0081, 0x0081)
-//  AM_RANGE(0x0082, 0x0082)
-	AM_RANGE(MCS51_PORT_P1, MCS51_PORT_P1) AM_READWRITE(p1_r, p1_w)
-	AM_RANGE(MCS51_PORT_P2, MCS51_PORT_P2) AM_READWRITE(p2_r, p2_w)
-ADDRESS_MAP_END
+void sb16_lle_device::sb16_io(address_map &map)
+{
+	map(0x0000, 0x0000).mirror(0xff00).rw(FUNC(sb16_lle_device::dsp_data_r), FUNC(sb16_lle_device::dsp_data_w));
+//  map(0x0001, 0x0001) // MIDI related?
+//  map(0x0002, 0x0002)
+	map(0x0004, 0x0004).mirror(0xff00).rw(FUNC(sb16_lle_device::mode_r), FUNC(sb16_lle_device::mode_w));
+	map(0x0005, 0x0005).mirror(0xff00).rw(FUNC(sb16_lle_device::dac_ctrl_r), FUNC(sb16_lle_device::dac_ctrl_w));
+	map(0x0006, 0x0006).mirror(0xff00).r(FUNC(sb16_lle_device::dma_stat_r));
+//  map(0x0007, 0x0007) // unknown
+	map(0x0008, 0x0008).mirror(0xff00).rw(FUNC(sb16_lle_device::ctrl8_r), FUNC(sb16_lle_device::ctrl8_w));
+	map(0x0009, 0x0009).mirror(0xff00).w(FUNC(sb16_lle_device::rate_w));
+	map(0x000A, 0x000A).mirror(0xff00).r(FUNC(sb16_lle_device::dma8_cnt_lo_r));
+	map(0x000B, 0x000B).mirror(0xff00).w(FUNC(sb16_lle_device::dma8_len_lo_w));
+	map(0x000C, 0x000C).mirror(0xff00).w(FUNC(sb16_lle_device::dma8_len_hi_w));
+	map(0x000D, 0x000D).mirror(0xff00).r(FUNC(sb16_lle_device::dma8_cnt_hi_r));
+	map(0x000E, 0x000E).mirror(0xff00).rw(FUNC(sb16_lle_device::dac_fifo_ctrl_r), FUNC(sb16_lle_device::dac_fifo_ctrl_w));
+	map(0x000F, 0x000F).mirror(0xff00).r(FUNC(sb16_lle_device::dma8_ready_r));
+	map(0x0010, 0x0010).mirror(0xff00).rw(FUNC(sb16_lle_device::ctrl16_r), FUNC(sb16_lle_device::ctrl16_w));
+	map(0x0013, 0x0013).mirror(0xff00).w(FUNC(sb16_lle_device::dma16_len_lo_w));
+	map(0x0014, 0x0014).mirror(0xff00).w(FUNC(sb16_lle_device::dma16_len_hi_w));
+	map(0x0016, 0x0016).mirror(0xff00).rw(FUNC(sb16_lle_device::adc_fifo_ctrl_r), FUNC(sb16_lle_device::adc_fifo_ctrl_w));
+	map(0x0017, 0x0017).mirror(0xff00).r(FUNC(sb16_lle_device::adc_data_ready_r));
+	map(0x0019, 0x0019).mirror(0xff00).w(FUNC(sb16_lle_device::dac_data_w));
+	map(0x001B, 0x001B).mirror(0xff00).r(FUNC(sb16_lle_device::adc_data_r));
+	map(0x001D, 0x001D).mirror(0xff00).w(FUNC(sb16_lle_device::dma8_w));
+	map(0x001F, 0x001F).mirror(0xff00).r(FUNC(sb16_lle_device::dma8_r));
+//  map(0x0080, 0x0080) // ASP comms
+//  map(0x0081, 0x0081)
+//  map(0x0082, 0x0082)
+}
+
+void sb16_lle_device::host_io(address_map &map)
+{
+	map(0x6, 0x7).w(FUNC(sb16_lle_device::dsp_reset_w));
+	map(0xa, 0xb).r(FUNC(sb16_lle_device::host_data_r));
+	map(0xc, 0xd).rw(FUNC(sb16_lle_device::dsp_wbuf_status_r), FUNC(sb16_lle_device::host_cmd_w));
+	map(0xe, 0xf).r(FUNC(sb16_lle_device::dsp_rbuf_status_r));
+}
 
 const tiny_rom_entry *sb16_lle_device::device_rom_region() const
 {
 	return ROM_NAME( sb16 );
 }
 
-MACHINE_CONFIG_MEMBER( sb16_lle_device::device_add_mconfig )
-	MCFG_CPU_ADD("sb16_cpu", I80C52, XTAL_24MHz)
-	MCFG_CPU_IO_MAP(sb16_io)
-
-	MCFG_SPEAKER_STANDARD_STEREO("lspeaker", "rspeaker")
-	MCFG_SOUND_ADD("ymf262", YMF262, XTAL_14_31818MHz)
-	MCFG_SOUND_ROUTE(0, "lspeaker", 1.00)
-	MCFG_SOUND_ROUTE(1, "rspeaker", 1.00)
-	MCFG_SOUND_ROUTE(2, "lspeaker", 1.00)
-	MCFG_SOUND_ROUTE(3, "rspeaker", 1.00)
-
-	MCFG_SOUND_ADD("ldac", DAC_16BIT_R2R, 0) MCFG_SOUND_ROUTE(ALL_OUTPUTS, "lspeaker", 0.5) // unknown DAC
-	MCFG_SOUND_ADD("rdac", DAC_16BIT_R2R, 0) MCFG_SOUND_ROUTE(ALL_OUTPUTS, "rspeaker", 0.5) // unknown DAC
-
-	MCFG_PC_JOY_ADD("pc_joy")
-MACHINE_CONFIG_END
-
-READ8_MEMBER( sb16_lle_device::host_data_r )
+void sb16_lle_device::device_add_mconfig(machine_config &config)
 {
-	m_data_out = false;
+	I80C52(config, m_cpu, XTAL(24'000'000));
+	m_cpu->set_addrmap(AS_IO, &sb16_lle_device::sb16_io);
+	m_cpu->port_in_cb<1>().set(FUNC(sb16_lle_device::p1_r));
+	m_cpu->port_out_cb<1>().set(FUNC(sb16_lle_device::p1_w));
+	m_cpu->port_in_cb<2>().set(FUNC(sb16_lle_device::p2_r));
+	m_cpu->port_out_cb<2>().set(FUNC(sb16_lle_device::p2_w));
+
+	SPEAKER(config, "lspeaker").front_left();
+	SPEAKER(config, "rspeaker").front_right();
+	ymf262_device &ymf262(YMF262(config, "ymf262", XTAL(14'318'181)));
+	ymf262.add_route(0, "lspeaker", 1.00);
+	ymf262.add_route(1, "rspeaker", 1.00);
+	ymf262.add_route(2, "lspeaker", 1.00);
+	ymf262.add_route(3, "rspeaker", 1.00);
+
+	DAC_16BIT_R2R(config, m_ldac, 0).add_route(ALL_OUTPUTS, "lspeaker", 0.5); // unknown DAC
+	DAC_16BIT_R2R(config, m_rdac, 0).add_route(ALL_OUTPUTS, "rspeaker", 0.5); // unknown DAC
+
+	PC_JOY(config, m_joy);
+}
+
+uint8_t sb16_lle_device::host_data_r()
+{
+	if (!machine().side_effects_disabled())
+		m_data_out = false;
 	return m_out_byte;
 }
 
-WRITE8_MEMBER( sb16_lle_device::host_cmd_w )
+void sb16_lle_device::host_cmd_w(uint8_t data)
 {
 	m_data_in = true;
 	m_in_byte = data;
@@ -593,48 +607,43 @@ void sb16_lle_device::dack16_w(int line, uint16_t data)
 		m_isa->drq5_w(0);
 }
 
-WRITE8_MEMBER( sb16_lle_device::dsp_reset_w )
+void sb16_lle_device::dsp_reset_w(uint8_t data)
 {
 	if(data & 1)
 	{
 		device_reset();
-		m_cpu->set_input_line(INPUT_LINE_RESET, PULSE_LINE);
+		m_cpu->pulse_input_line(INPUT_LINE_RESET, attotime::zero);
 	}
 }
 
-READ8_MEMBER( sb16_lle_device::dsp_wbuf_status_r )
+uint8_t sb16_lle_device::dsp_wbuf_status_r(offs_t offset)
 {
 	if(offset)
 		return 0xff;
 	return m_data_in << 7;
 }
 
-READ8_MEMBER( sb16_lle_device::dsp_rbuf_status_r )
+uint8_t sb16_lle_device::dsp_rbuf_status_r(offs_t offset)
 {
 	if(offset)
 	{
-		m_irq16 = false;
-		m_isa->irq5_w((m_irq8 || m_irq16 || m_irq_midi) ? ASSERT_LINE : CLEAR_LINE);
+		if(!machine().side_effects_disabled())
+		{
+			m_irq16 = false;
+			m_isa->irq5_w((m_irq8 || m_irq16 || m_irq_midi) ? ASSERT_LINE : CLEAR_LINE);
+		}
 		return 0xff;
 	}
-	m_irq8 = false;
-	m_isa->irq5_w((m_irq8 || m_irq16 || m_irq_midi) ? ASSERT_LINE : CLEAR_LINE);
+	if(!machine().side_effects_disabled())
+	{
+		m_irq8 = false;
+		m_isa->irq5_w((m_irq8 || m_irq16 || m_irq_midi) ? ASSERT_LINE : CLEAR_LINE);
+	}
 	return m_data_out << 7;
 }
 
-WRITE8_MEMBER( sb16_lle_device::invalid_w )
-{
-	logerror("sb16: invalid port write\n");
-}
-
-READ8_MEMBER( sb16_lle_device::invalid_r )
-{
-	logerror("sb16: invalid port read\n");
-	return 0xff;
-}
-
 // just using the old dummy mpu401 for now
-READ8_MEMBER( sb16_lle_device::mpu401_r )
+uint8_t sb16_lle_device::mpu401_r(offs_t offset)
 {
 	uint8_t res;
 
@@ -653,7 +662,7 @@ READ8_MEMBER( sb16_lle_device::mpu401_r )
 	return res;
 }
 
-WRITE8_MEMBER( sb16_lle_device::mpu401_w )
+void sb16_lle_device::mpu401_w(offs_t offset, uint8_t data)
 {
 	if(offset == 0) // data
 	{
@@ -697,18 +706,15 @@ void sb16_lle_device::device_start()
 		rom[i] = rom[i] ^ xor_table[i & 0x3f];
 
 
-	ymf262_device *ymf262 = subdevice<ymf262_device>("ymf262");
+	ymf262_device &ymf262 = *subdevice<ymf262_device>("ymf262");
 	set_isa_device();
 
-	m_isa->install_device(0x0200, 0x0207, read8_delegate(FUNC(pc_joy_device::joy_port_r), subdevice<pc_joy_device>("pc_joy")), write8_delegate(FUNC(pc_joy_device::joy_port_w), subdevice<pc_joy_device>("pc_joy")));
-	m_isa->install_device(0x0226, 0x0227, read8_delegate(FUNC(sb16_lle_device::invalid_r), this), write8_delegate(FUNC(sb16_lle_device::dsp_reset_w), this));
-	m_isa->install_device(0x022a, 0x022b, read8_delegate(FUNC(sb16_lle_device::host_data_r), this), write8_delegate(FUNC(sb16_lle_device::invalid_w), this) );
-	m_isa->install_device(0x022c, 0x022d, read8_delegate(FUNC(sb16_lle_device::dsp_wbuf_status_r), this), write8_delegate(FUNC(sb16_lle_device::host_cmd_w), this) );
-	m_isa->install_device(0x022e, 0x022f, read8_delegate(FUNC(sb16_lle_device::dsp_rbuf_status_r), this), write8_delegate(FUNC(sb16_lle_device::invalid_w), this) );
-	m_isa->install_device(0x0330, 0x0331, read8_delegate(FUNC(sb16_lle_device::mpu401_r), this), write8_delegate(FUNC(sb16_lle_device::mpu401_w), this));
-	m_isa->install_device(0x0388, 0x0389, read8_delegate(FUNC(ymf262_device::read), ymf262), write8_delegate(FUNC(ymf262_device::write), ymf262));
-	m_isa->install_device(0x0220, 0x0223, read8_delegate(FUNC(ymf262_device::read), ymf262), write8_delegate(FUNC(ymf262_device::write), ymf262));
-	m_isa->install_device(0x0228, 0x0229, read8_delegate(FUNC(ymf262_device::read), ymf262), write8_delegate(FUNC(ymf262_device::write), ymf262));
+	m_isa->install_device(0x0200, 0x0207, read8smo_delegate(*subdevice<pc_joy_device>("pc_joy"), FUNC(pc_joy_device::joy_port_r)), write8smo_delegate(*subdevice<pc_joy_device>("pc_joy"), FUNC(pc_joy_device::joy_port_w)));
+	m_isa->install_device(0x0220, 0x022f, *this, &sb16_lle_device::host_io);
+	m_isa->install_device(0x0330, 0x0331, read8sm_delegate(*this, FUNC(sb16_lle_device::mpu401_r)), write8sm_delegate(*this, FUNC(sb16_lle_device::mpu401_w)));
+	m_isa->install_device(0x0388, 0x0389, read8sm_delegate(ymf262, FUNC(ymf262_device::read)), write8sm_delegate(ymf262, FUNC(ymf262_device::write)));
+	m_isa->install_device(0x0220, 0x0223, read8sm_delegate(ymf262, FUNC(ymf262_device::read)), write8sm_delegate(ymf262, FUNC(ymf262_device::write)));
+	m_isa->install_device(0x0228, 0x0229, read8sm_delegate(ymf262, FUNC(ymf262_device::read)), write8sm_delegate(ymf262, FUNC(ymf262_device::write)));
 	m_isa->set_dma_channel(1, this, false);
 	m_isa->set_dma_channel(5, this, false);
 	m_timer = timer_alloc();

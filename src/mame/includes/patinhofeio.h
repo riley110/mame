@@ -16,20 +16,21 @@ public:
 		, m_tty(*this, "teletype")
 	{ }
 
-	DECLARE_DRIVER_INIT(patinho_feio);
+	void init_patinho_feio();
 
-	DECLARE_WRITE8_MEMBER(decwriter_data_w);
+	void decwriter_data_w(uint8_t data);
 	void decwriter_kbd_input(u8 data);
 	TIMER_CALLBACK_MEMBER(decwriter_callback);
 
-	DECLARE_WRITE8_MEMBER(teletype_data_w);
+	void teletype_data_w(uint8_t data);
 	void teletype_kbd_input(u8 data);
 	TIMER_CALLBACK_MEMBER(teletype_callback);
 
-	DECLARE_DEVICE_IMAGE_LOAD_MEMBER( patinho_tape );
+	DECLARE_DEVICE_IMAGE_LOAD_MEMBER( tape_load );
 
 	void update_panel(uint8_t ACC, uint8_t opcode, uint8_t mem_data, uint16_t mem_addr, uint16_t PC, uint8_t FLAGS, uint16_t RC, uint8_t mode);
 
+	void patinho_feio(machine_config &config);
 protected:
 	virtual void machine_start() override;
 

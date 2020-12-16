@@ -10,25 +10,26 @@
 #include "video/k054000.h"
 #include "machine/k054321.h"
 #include "machine/timer.h"
+#include "tilemap.h"
 
 class mystwarr_state : public konamigx_state
 {
 public:
-	mystwarr_state(const machine_config &mconfig, device_type type, const char *tag)
-		: konamigx_state(mconfig, type, tag),
-		m_maincpu(*this,"maincpu"),
-		m_k053252(*this, "k053252"),
-		m_k056832(*this, "k056832"),
-		m_k055673(*this, "k055673"),
+	mystwarr_state(const machine_config &mconfig, device_type type, const char *tag) :
+		konamigx_state(mconfig, type, tag),
 		m_k054321(*this, "k054321"),
-		m_gx_workram(*this,"gx_workram"),
-		m_spriteram(*this,"spriteram")
-		{ }
+		m_gx_workram(*this, "gx_workram"),
+		m_spriteram(*this, "spriteram")
+	{ }
 
-	required_device<cpu_device> m_maincpu;
-	required_device<k053252_device> m_k053252;
-	required_device<k056832_device> m_k056832;
-	required_device<k055673_device> m_k055673;
+	void martchmp(machine_config &config);
+	void mystwarr(machine_config &config);
+	void dadandrn(machine_config &config);
+	void viostorm(machine_config &config);
+	void gaiapols(machine_config &config);
+	void metamrph(machine_config &config);
+
+private:
 	required_device<k054321_device> m_k054321;
 	required_shared_ptr<uint16_t> m_gx_workram;
 	optional_shared_ptr<uint16_t> m_spriteram;
@@ -51,28 +52,28 @@ public:
 	uint8_t m_sound_ctrl;
 	uint8_t m_sound_nmi_clk;
 
-	DECLARE_READ16_MEMBER(eeprom_r);
-	DECLARE_WRITE16_MEMBER(mweeprom_w);
-	DECLARE_READ16_MEMBER(dddeeprom_r);
-	DECLARE_WRITE16_MEMBER(mmeeprom_w);
-	DECLARE_WRITE16_MEMBER(sound_irq_w);
-	DECLARE_WRITE16_MEMBER(irq_ack_w);
-	DECLARE_READ16_MEMBER(k053247_scattered_word_r);
-	DECLARE_WRITE16_MEMBER(k053247_scattered_word_w);
-	DECLARE_READ16_MEMBER(k053247_martchmp_word_r);
-	DECLARE_WRITE16_MEMBER(k053247_martchmp_word_w);
-	DECLARE_WRITE16_MEMBER(mceeprom_w);
-	DECLARE_READ16_MEMBER(mccontrol_r);
-	DECLARE_WRITE16_MEMBER(mccontrol_w);
-	DECLARE_WRITE8_MEMBER(sound_ctrl_w);
+	uint16_t eeprom_r(offs_t offset, uint16_t mem_mask = ~0);
+	void mweeprom_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t dddeeprom_r(offs_t offset, uint16_t mem_mask = ~0);
+	void mmeeprom_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	void sound_irq_w(uint16_t data);
+	void irq_ack_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t k053247_scattered_word_r(offs_t offset);
+	void k053247_scattered_word_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t k053247_martchmp_word_r(offs_t offset);
+	void k053247_martchmp_word_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	void mceeprom_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t mccontrol_r();
+	void mccontrol_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	void sound_ctrl_w(uint8_t data);
 
-	DECLARE_WRITE16_MEMBER(ddd_053936_enable_w);
-	DECLARE_WRITE16_MEMBER(ddd_053936_clip_w);
-	DECLARE_READ16_MEMBER(gai_053936_tilerom_0_r);
-	DECLARE_READ16_MEMBER(ddd_053936_tilerom_0_r);
-	DECLARE_READ16_MEMBER(ddd_053936_tilerom_1_r);
-	DECLARE_READ16_MEMBER(gai_053936_tilerom_2_r);
-	DECLARE_READ16_MEMBER(ddd_053936_tilerom_2_r);
+	void ddd_053936_enable_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	void ddd_053936_clip_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t gai_053936_tilerom_0_r(offs_t offset);
+	uint16_t ddd_053936_tilerom_0_r(offs_t offset);
+	uint16_t ddd_053936_tilerom_1_r(offs_t offset);
+	uint16_t gai_053936_tilerom_2_r(offs_t offset);
+	uint16_t ddd_053936_tilerom_2_r(offs_t offset);
 	TILE_GET_INFO_MEMBER(get_gai_936_tile_info);
 	TILE_GET_INFO_MEMBER(get_ult_936_tile_info);
 	DECLARE_MACHINE_START(mystwarr);
@@ -105,4 +106,12 @@ public:
 	K055673_CB_MEMBER(gaiapols_sprite_callback);
 	K055673_CB_MEMBER(martchmp_sprite_callback);
 	void decode_tiles();
+	void dadandrn_map(address_map &map);
+	void gaiapols_map(address_map &map);
+	void martchmp_map(address_map &map);
+	void martchmp_sound_map(address_map &map);
+	void metamrph_map(address_map &map);
+	void mystwarr_map(address_map &map);
+	void mystwarr_sound_map(address_map &map);
+	void viostorm_map(address_map &map);
 };

@@ -883,12 +883,12 @@ static void execute_fdeliminate(running_machine &machine, int ref, int params, c
 
 static void execute_fdunlock(running_machine &machine, int ref, int params, const char **param)
 {
-	device_t *cpu = machine.debugger().cpu().get_visible_cpu();
+	device_t *cpu = machine.debugger().console().get_visible_cpu();
 
 	/* support 0 or 1 parameters */
 	uint64_t offset;
 	if (params != 1 || !machine.debugger().commands().validate_number_parameter(param[0], &offset))
-		offset = cpu->safe_pc();
+		offset = cpu->state().pc();
 	int keyaddr = addr_to_keyaddr(offset / 2);
 
 	/* toggle the ignore PC status */
@@ -920,7 +920,7 @@ static void execute_fdunlock(running_machine &machine, int ref, int params, cons
 
 static void execute_fdignore(running_machine &machine, int ref, int params, const char **param)
 {
-	device_t *cpu = machine.debugger().cpu().get_visible_cpu();
+	device_t *cpu = machine.debugger().console().get_visible_cpu();
 
 	/* support 0 or 1 parameters */
 	if (params == 1 && strcmp(param[0], "all") == 0)
@@ -932,7 +932,7 @@ static void execute_fdignore(running_machine &machine, int ref, int params, cons
 
 	uint64_t offset;
 	if (params != 1 || !machine.debugger().commands().validate_number_parameter(param[0], &offset))
-		offset = cpu->safe_pc();
+		offset = cpu->state().pc();
 	offset /= 2;
 
 	/* toggle the ignore PC status */
@@ -944,7 +944,7 @@ static void execute_fdignore(running_machine &machine, int ref, int params, cons
 
 	/* if no parameter given, implicitly run as well */
 	if (params == 0)
-		machine.debugger().cpu().get_visible_cpu()->debug()->go();
+		machine.debugger().console().get_visible_cpu()->debug()->go();
 }
 
 
@@ -1026,12 +1026,12 @@ static void execute_fdstate(running_machine &machine, int ref, int params, const
 
 static void execute_fdpc(running_machine &machine, int ref, int params, const char **param)
 {
-	device_t *cpu = machine.debugger().cpu().get_visible_cpu();
+	device_t *cpu = machine.debugger().console().get_visible_cpu();
 
 	/* support 0 or 1 parameters */
 	uint64_t newpc = 0;
 	if (!machine.debugger().commands().validate_number_parameter(param[0], &newpc))
-		newpc = cpu->safe_pc();
+		newpc = cpu->state().pc();
 
 	/* set the new PC */
 	cpu->state().set_pc(newpc);
@@ -1048,8 +1048,8 @@ static void execute_fdpc(running_machine &machine, int ref, int params, const ch
 
 static void execute_fdsearch(running_machine &machine, int ref, int params, const char **param)
 {
-	address_space &space = machine->debugger().cpu().get_visible_cpu()->memory().space(AS_PROGRAM);
-	int pc = space.device().safe_pc();
+	address_space &space = machine->debugger().console().get_visible_cpu()->memory().space(AS_PROGRAM);
+	int pc = space.device().state().pc();
 	int length, first = true;
 	uint8_t instrdata[2];
 	uint16_t decoded;
@@ -1174,7 +1174,7 @@ static void execute_fdsearch(running_machine &machine, int ref, int params, cons
 
 static void execute_fddasm(running_machine &machine, int ref, int params, const char **param)
 {
-	address_space &space = machine->debugger().cpu().get_visible_cpu()->memory().space(AS_PROGRAM);
+	address_space &space = machine->debugger().console().get_visible_cpu()->memory().space(AS_PROGRAM);
 	int origstate = fd1094_set_state(keyregion, -1);
 	const char *filename;
 	int skipped = false;

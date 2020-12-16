@@ -4,17 +4,17 @@
 #include "includes/rollrace.h"
 
 
-
 #define RA_FGCHAR_BASE  0
 #define RA_BGCHAR_BASE  4
 #define RA_SP_BASE  5
+
 
 TILE_GET_INFO_MEMBER(rollrace_state::get_fg_tile_info)
 {
 	int code = m_videoram[tile_index];
 	int color = m_colorram[(tile_index & 0x1f)*2+1] & 0x1f;
 
-	SET_TILE_INFO_MEMBER(RA_FGCHAR_BASE + m_chrbank,
+	tileinfo.set(RA_FGCHAR_BASE + m_chrbank,
 		code,
 		color,
 		TILE_FLIPY);
@@ -22,19 +22,19 @@ TILE_GET_INFO_MEMBER(rollrace_state::get_fg_tile_info)
 
 void rollrace_state::video_start()
 {
-	m_fg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(rollrace_state::get_fg_tile_info),this),TILEMAP_SCAN_ROWS,8,8,32,32 );
+	m_fg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(rollrace_state::get_fg_tile_info)), TILEMAP_SCAN_ROWS, 8, 8, 32, 32);
 
 	m_fg_tilemap->set_transparent_pen(0);
 	m_fg_tilemap->set_scroll_cols(32);
 }
 
-WRITE8_MEMBER(rollrace_state::vram_w)
+void rollrace_state::vram_w(offs_t offset, uint8_t data)
 {
 	m_videoram[offset] = data;
 	m_fg_tilemap->mark_tile_dirty(offset);
 }
 
-WRITE8_MEMBER(rollrace_state::cram_w)
+void rollrace_state::cram_w(offs_t offset, uint8_t data)
 {
 	m_colorram[offset] = data;
 	if(offset & 1)
@@ -61,32 +61,33 @@ WRITE8_MEMBER(rollrace_state::cram_w)
   bit 0 -- 1  kohm resistor  -- RED/GREEN/BLUE
 
 ***************************************************************************/
-PALETTE_INIT_MEMBER(rollrace_state, rollrace)
+void rollrace_state::rollrace_palette(palette_device &palette) const
 {
 	const uint8_t *color_prom = memregion("proms")->base();
-	int i;
 
-	for (i = 0;i < palette.entries();i++)
+	for (int i = 0; i < palette.entries(); i++)
 	{
-		int bit0,bit1,bit2,bit3,r,g,b;
+		int bit0, bit1, bit2, bit3;
 
-		bit0 = (color_prom[0] >> 0) & 0x01;
-		bit1 = (color_prom[0] >> 1) & 0x01;
-		bit2 = (color_prom[0] >> 2) & 0x01;
-		bit3 = (color_prom[0] >> 3) & 0x01;
-		r = 0x0e * bit0 + 0x1f * bit1 + 0x42 * bit2 + 0x90 * bit3;
-		bit0 = (color_prom[palette.entries()] >> 0) & 0x01;
-		bit1 = (color_prom[palette.entries()] >> 1) & 0x01;
-		bit2 = (color_prom[palette.entries()] >> 2) & 0x01;
-		bit3 = (color_prom[palette.entries()] >> 3) & 0x01;
-		g = 0x0e * bit0 + 0x1f * bit1 + 0x42 * bit2 + 0x90 * bit3;
-		bit0 = (color_prom[2*palette.entries()] >> 0) & 0x01;
-		bit1 = (color_prom[2*palette.entries()] >> 1) & 0x01;
-		bit2 = (color_prom[2*palette.entries()] >> 2) & 0x01;
-		bit3 = (color_prom[2*palette.entries()] >> 3) & 0x01;
-		b = 0x0e * bit0 + 0x1f * bit1 + 0x42 * bit2 + 0x90 * bit3;
+		bit0 = BIT(color_prom[0], 0);
+		bit1 = BIT(color_prom[0], 1);
+		bit2 = BIT(color_prom[0], 2);
+		bit3 = BIT(color_prom[0], 3);
+		int const r = 0x0e * bit0 + 0x1f * bit1 + 0x42 * bit2 + 0x90 * bit3;
 
-		palette.set_pen_color(i,rgb_t(r,g,b));
+		bit0 = BIT(color_prom[palette.entries()], 0);
+		bit1 = BIT(color_prom[palette.entries()], 1);
+		bit2 = BIT(color_prom[palette.entries()], 2);
+		bit3 = BIT(color_prom[palette.entries()], 3);
+		int const g = 0x0e * bit0 + 0x1f * bit1 + 0x42 * bit2 + 0x90 * bit3;
+
+		bit0 = BIT(color_prom[2 * palette.entries()], 0);
+		bit1 = BIT(color_prom[2 * palette.entries()], 1);
+		bit2 = BIT(color_prom[2 * palette.entries()], 2);
+		bit3 = BIT(color_prom[2 * palette.entries()], 3);
+		int const b = 0x0e * bit0 + 0x1f * bit1 + 0x42 * bit2 + 0x90 * bit3;
+
+		palette.set_pen_color(i, rgb_t(r, g, b));
 
 		color_prom++;
 	}
@@ -104,7 +105,7 @@ WRITE_LINE_MEMBER(rollrace_state::charbank_1_w)
 	m_fg_tilemap->mark_all_dirty();
 }
 
-WRITE8_MEMBER(rollrace_state::bkgpen_w)
+void rollrace_state::bkgpen_w(uint8_t data)
 {
 	m_bkgpen = data;
 }
@@ -114,7 +115,7 @@ WRITE_LINE_MEMBER(rollrace_state::spritebank_w)
 	m_spritebank = state;
 }
 
-WRITE8_MEMBER(rollrace_state::backgroundpage_w)
+void rollrace_state::backgroundpage_w(uint8_t data)
 {
 	m_bkgpage = data & 0x1f;
 	m_bkgflip = ( data & 0x80 ) >> 7;
@@ -122,12 +123,12 @@ WRITE8_MEMBER(rollrace_state::backgroundpage_w)
 	/* 0x80 flip vertical */
 }
 
-WRITE8_MEMBER(rollrace_state::backgroundcolor_w)
+void rollrace_state::backgroundcolor_w(uint8_t data)
 {
 	m_bkgcol = data;
 }
 
-WRITE8_MEMBER(rollrace_state::flipy_w)
+void rollrace_state::flipy_w(uint8_t data)
 {
 	m_flipy = data & 0x01;
 	// bit 2: cleared at night stage in attract, unknown purpose

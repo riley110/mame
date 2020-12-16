@@ -5,10 +5,15 @@
     Burger Time hardware
 
 ***************************************************************************/
+#ifndef MAME_INCLUDES_BTIME_H
+#define MAME_INCLUDES_BTIME_H
+
+#pragma once
 
 #include "machine/gen_latch.h"
 #include "machine/input_merger.h"
 #include "machine/timer.h"
+#include "emupal.h"
 #include "screen.h"
 
 class btime_state : public driver_device
@@ -74,45 +79,45 @@ public:
 	optional_device<generic_latch_8_device> m_soundlatch;
 	optional_memory_region m_prom_region;
 
-	DECLARE_WRITE8_MEMBER(audio_nmi_enable_w);
-	DECLARE_READ8_MEMBER(zoar_dsw1_read);
-	DECLARE_READ8_MEMBER(wtennis_reset_hack_r);
-	DECLARE_READ8_MEMBER(mmonkey_protection_r);
-	DECLARE_WRITE8_MEMBER(mmonkey_protection_w);
-	DECLARE_WRITE8_MEMBER(lnc_videoram_w);
-	DECLARE_READ8_MEMBER(btime_mirrorvideoram_r);
-	DECLARE_READ8_MEMBER(btime_mirrorcolorram_r);
-	DECLARE_WRITE8_MEMBER(btime_mirrorvideoram_w);
-	DECLARE_WRITE8_MEMBER(lnc_mirrorvideoram_w);
-	DECLARE_WRITE8_MEMBER(btime_mirrorcolorram_w);
-	DECLARE_WRITE8_MEMBER(deco_charram_w);
-	DECLARE_WRITE8_MEMBER(bnj_background_w);
-	DECLARE_WRITE8_MEMBER(bnj_scroll1_w);
-	DECLARE_WRITE8_MEMBER(bnj_scroll2_w);
-	DECLARE_WRITE8_MEMBER(btime_video_control_w);
-	DECLARE_WRITE8_MEMBER(bnj_video_control_w);
-	DECLARE_WRITE8_MEMBER(zoar_video_control_w);
-	DECLARE_WRITE8_MEMBER(disco_video_control_w);
+	void audio_nmi_enable_w(uint8_t data);
+	uint8_t zoar_dsw1_read();
+	uint8_t wtennis_reset_hack_r();
+	uint8_t mmonkey_protection_r(offs_t offset);
+	void mmonkey_protection_w(offs_t offset, uint8_t data);
+	void lnc_videoram_w(offs_t offset, uint8_t data);
+	uint8_t btime_mirrorvideoram_r(offs_t offset);
+	uint8_t btime_mirrorcolorram_r(offs_t offset);
+	void btime_mirrorvideoram_w(offs_t offset, uint8_t data);
+	void lnc_mirrorvideoram_w(offs_t offset, uint8_t data);
+	void btime_mirrorcolorram_w(offs_t offset, uint8_t data);
+	void deco_charram_w(offs_t offset, uint8_t data);
+	void bnj_background_w(offs_t offset, uint8_t data);
+	void bnj_scroll1_w(uint8_t data);
+	void bnj_scroll2_w(uint8_t data);
+	void btime_video_control_w(uint8_t data);
+	void bnj_video_control_w(uint8_t data);
+	void zoar_video_control_w(uint8_t data);
+	void disco_video_control_w(uint8_t data);
 	DECLARE_INPUT_CHANGED_MEMBER(coin_inserted_irq_hi);
 	DECLARE_INPUT_CHANGED_MEMBER(coin_inserted_irq_lo);
 	DECLARE_INPUT_CHANGED_MEMBER(coin_inserted_nmi_lo);
-	DECLARE_WRITE8_MEMBER(ay_audio_nmi_enable_w);
+	void ay_audio_nmi_enable_w(uint8_t data);
 
-	DECLARE_DRIVER_INIT(btime);
-	DECLARE_DRIVER_INIT(tisland);
-	DECLARE_DRIVER_INIT(cookrace);
-	DECLARE_DRIVER_INIT(zoar);
-	DECLARE_DRIVER_INIT(sdtennis);
-	DECLARE_DRIVER_INIT(wtennis);
-	DECLARE_DRIVER_INIT(bnj);
-	DECLARE_DRIVER_INIT(protennb);
-	DECLARE_DRIVER_INIT(disco);
-	DECLARE_DRIVER_INIT(lnc);
+	void init_btime();
+	void init_tisland();
+	void init_cookrace();
+	void init_zoar();
+	void init_sdtennis();
+	void init_wtennis();
+	void init_bnj();
+	void init_protennb();
+	void init_disco();
+	void init_lnc();
 	DECLARE_MACHINE_START(btime);
 	DECLARE_MACHINE_RESET(btime);
-	DECLARE_PALETTE_INIT(btime);
+	void btime_palette(palette_device &palette) const;
 	DECLARE_MACHINE_RESET(lnc);
-	DECLARE_PALETTE_INIT(lnc);
+	void lnc_palette(palette_device &palette) const;
 	DECLARE_MACHINE_START(mmonkey);
 	DECLARE_MACHINE_RESET(mmonkey);
 	DECLARE_VIDEO_START(bnj);
@@ -131,4 +136,28 @@ public:
 							uint8_t sprite_y_adjust, uint8_t sprite_y_adjust_flip_screen,
 							uint8_t *sprite_ram, offs_t interleave );
 
+	void lnc(machine_config &config);
+	void disco(machine_config &config);
+	void mmonkey(machine_config &config);
+	void bnj(machine_config &config);
+	void cookrace(machine_config &config);
+	void protenn(machine_config &config);
+	void wtennis(machine_config &config);
+	void sdtennis(machine_config &config);
+	void tisland(machine_config &config);
+	void zoar(machine_config &config);
+	void btime(machine_config &config);
+	void audio_map(address_map &map);
+	void bnj_map(address_map &map);
+	void btime_map(address_map &map);
+	void cookrace_map(address_map &map);
+	void disco_audio_map(address_map &map);
+	void disco_map(address_map &map);
+	void lnc_map(address_map &map);
+	void mmonkey_map(address_map &map);
+	void protenn_map(address_map &map);
+	void tisland_map(address_map &map);
+	void zoar_map(address_map &map);
 };
+
+#endif // MAME_INCLUDES_BTIME_H

@@ -14,6 +14,7 @@
 #include "cbmiec.h"
 #include "cpu/m6502/m6502.h"
 #include "formats/d81_dsk.h"
+#include "imagedev/floppy.h"
 #include "machine/mos6526.h"
 #include "machine/wd_fdc.h"
 
@@ -68,10 +69,12 @@ private:
 
 	DECLARE_WRITE_LINE_MEMBER( cnt_w );
 	DECLARE_WRITE_LINE_MEMBER( sp_w );
-	DECLARE_READ8_MEMBER( cia_pa_r );
-	DECLARE_WRITE8_MEMBER( cia_pa_w );
-	DECLARE_READ8_MEMBER( cia_pb_r );
-	DECLARE_WRITE8_MEMBER( cia_pb_w );
+	uint8_t cia_pa_r();
+	void cia_pa_w(uint8_t data);
+	uint8_t cia_pb_r();
+	void cia_pb_w(uint8_t data);
+
+	void c1581_mem(address_map &map);
 
 	DECLARE_FLOPPY_FORMATS( floppy_formats );
 
@@ -80,6 +83,7 @@ private:
 	required_device<wd1772_device> m_fdc;
 	required_device<floppy_image_device> m_floppy;
 	required_ioport m_address;
+	output_finder<2> m_leds;
 
 	int m_data_out;             // serial data out
 	int m_atn_ack;              // attention acknowledge

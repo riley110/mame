@@ -12,7 +12,7 @@
 #include "machine/pic8259.h"
 #include "machine/pit8253.h"
 
-#include "machine/ataintf.h"
+#include "bus/ata/ataintf.h"
 #include "machine/at_keybc.h"
 #include "machine/idectrl.h"
 
@@ -58,11 +58,8 @@ protected:
 	required_device<am9517a_device> m_dma8237_1;
 	required_device<am9517a_device> m_dma8237_2;
 	required_device<pit8254_device> m_pit8254;
-	required_device<at_keyboard_controller_device> m_keybc;
 	required_device<isa16_device> m_isabus;
 	required_device<speaker_sound_device> m_speaker;
-	required_device<ds12885_device> m_ds12885;
-	required_device<pc_kbdc_device> m_pc_kbdc;
 	required_device<bus_master_ide_controller_device> m_ide;
 	required_device<bus_master_ide_controller_device> m_ide2;
 
@@ -75,37 +72,41 @@ protected:
 	uint16_t m_dma_high_byte;
 	uint8_t m_at_speaker;
 	bool m_refresh;
+	uint16_t m_eisa_irq_mode;
 	void at_speaker_set_spkrdata(uint8_t data);
 
 	uint8_t m_channel_check;
 	uint8_t m_nmi_enabled;
+	bool m_ide_io_ports_enabled;
+	address_space *spaceio;
 
 	void pc_select_dma_channel(int channel, bool state);
 
 private:
-	DECLARE_READ8_MEMBER(at_page8_r);
-	DECLARE_WRITE8_MEMBER(at_page8_w);
-	DECLARE_READ8_MEMBER(at_portb_r);
-	DECLARE_WRITE8_MEMBER(at_portb_w);
-	DECLARE_READ8_MEMBER(get_slave_ack);
+	uint8_t at_page8_r(offs_t offset);
+	void at_page8_w(offs_t offset, uint8_t data);
+	uint8_t at_portb_r();
+	void at_portb_w(uint8_t data);
+	DECLARE_WRITE_LINE_MEMBER(iochck_w);
+	uint8_t get_slave_ack(offs_t offset);
 	DECLARE_WRITE_LINE_MEMBER(at_pit8254_out0_changed);
 	DECLARE_WRITE_LINE_MEMBER(at_pit8254_out1_changed);
 	DECLARE_WRITE_LINE_MEMBER(at_pit8254_out2_changed);
 	DECLARE_WRITE_LINE_MEMBER(pc_dma_hrq_changed);
-	DECLARE_READ8_MEMBER(pc_dma8237_0_dack_r);
-	DECLARE_READ8_MEMBER(pc_dma8237_1_dack_r);
-	DECLARE_READ8_MEMBER(pc_dma8237_2_dack_r);
-	DECLARE_READ8_MEMBER(pc_dma8237_3_dack_r);
-	DECLARE_READ8_MEMBER(pc_dma8237_5_dack_r);
-	DECLARE_READ8_MEMBER(pc_dma8237_6_dack_r);
-	DECLARE_READ8_MEMBER(pc_dma8237_7_dack_r);
-	DECLARE_WRITE8_MEMBER(pc_dma8237_0_dack_w);
-	DECLARE_WRITE8_MEMBER(pc_dma8237_1_dack_w);
-	DECLARE_WRITE8_MEMBER(pc_dma8237_2_dack_w);
-	DECLARE_WRITE8_MEMBER(pc_dma8237_3_dack_w);
-	DECLARE_WRITE8_MEMBER(pc_dma8237_5_dack_w);
-	DECLARE_WRITE8_MEMBER(pc_dma8237_6_dack_w);
-	DECLARE_WRITE8_MEMBER(pc_dma8237_7_dack_w);
+	uint8_t pc_dma8237_0_dack_r();
+	uint8_t pc_dma8237_1_dack_r();
+	uint8_t pc_dma8237_2_dack_r();
+	uint8_t pc_dma8237_3_dack_r();
+	uint8_t pc_dma8237_5_dack_r();
+	uint8_t pc_dma8237_6_dack_r();
+	uint8_t pc_dma8237_7_dack_r();
+	void pc_dma8237_0_dack_w(uint8_t data);
+	void pc_dma8237_1_dack_w(uint8_t data);
+	void pc_dma8237_2_dack_w(uint8_t data);
+	void pc_dma8237_3_dack_w(uint8_t data);
+	void pc_dma8237_5_dack_w(uint8_t data);
+	void pc_dma8237_6_dack_w(uint8_t data);
+	void pc_dma8237_7_dack_w(uint8_t data);
 	DECLARE_WRITE_LINE_MEMBER(at_dma8237_out_eop);
 	DECLARE_WRITE_LINE_MEMBER(pc_dack0_w);
 	DECLARE_WRITE_LINE_MEMBER(pc_dack1_w);
@@ -115,17 +116,50 @@ private:
 	DECLARE_WRITE_LINE_MEMBER(pc_dack5_w);
 	DECLARE_WRITE_LINE_MEMBER(pc_dack6_w);
 	DECLARE_WRITE_LINE_MEMBER(pc_dack7_w);
-	DECLARE_READ8_MEMBER(ide_read_cs1_r);
-	DECLARE_WRITE8_MEMBER(ide_write_cs1_w);
-	DECLARE_READ8_MEMBER(ide2_read_cs1_r);
-	DECLARE_WRITE8_MEMBER(ide2_write_cs1_w);
-	DECLARE_READ8_MEMBER(at_dma8237_2_r);
-	DECLARE_WRITE8_MEMBER(at_dma8237_2_w);
-	DECLARE_WRITE8_MEMBER(write_rtc);
-	DECLARE_READ8_MEMBER(pc_dma_read_byte);
-	DECLARE_WRITE8_MEMBER(pc_dma_write_byte);
-	DECLARE_READ8_MEMBER(pc_dma_read_word);
-	DECLARE_WRITE8_MEMBER(pc_dma_write_word);
+
+	uint32_t ide1_read32_cs0_r(offs_t offset, uint32_t mem_mask = ~0);
+	void ide1_write32_cs0_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t ide2_read32_cs0_r(offs_t offset, uint32_t mem_mask = ~0);
+	void ide2_write32_cs0_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint8_t ide1_read_cs1_r();
+	void ide1_write_cs1_w(uint8_t data);
+	uint8_t ide2_read_cs1_r();
+	void ide2_write_cs1_w(uint8_t data);
+
+	uint8_t at_dma8237_2_r(offs_t offset);
+	void at_dma8237_2_w(offs_t offset, uint8_t data);
+	uint8_t pc_dma_read_byte(offs_t offset);
+	void pc_dma_write_byte(offs_t offset, uint8_t data);
+	uint8_t pc_dma_read_word(offs_t offset);
+	void pc_dma_write_word(offs_t offset, uint8_t data);
+	uint8_t eisa_irq_read(offs_t offset);
+	void eisa_irq_write(offs_t offset, uint8_t data);
+};
+
+// ======================> southbridge_extended_device
+
+class southbridge_extended_device :
+	public southbridge_device
+{
+public:
+
+
+protected:
+	// construction/destruction
+	southbridge_extended_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock);
+
+	// optional information overrides
+	virtual void device_add_mconfig(machine_config &config) override;
+
+	// device-level overrides
+	virtual void device_start() override;
+	virtual void device_reset() override;
+	required_device<at_keyboard_controller_device> m_keybc;
+	required_device<ds12885_device> m_ds12885;
+	required_device<pc_kbdc_device> m_pc_kbdc;
+
+private:
+	void write_rtc(offs_t offset, uint8_t data);
 };
 
 #endif  // MAME_BUS_LPCI_SOUTHBRIDGE_H

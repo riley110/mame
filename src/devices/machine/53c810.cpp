@@ -396,7 +396,7 @@ void lsi53c810_device::dma_exec()
 
 uint8_t lsi53c810_device::reg_r(int offset)
 {
-//  logerror("53c810: read reg %d:0x%x (PC=%x)\n", offset, offset, space.device().safe_pc());
+//  logerror("53c810: read reg %d:0x%x %s\n", offset, offset, machine().describe_context());
 	switch(offset)
 	{
 		case 0x00:      /* SCNTL0 */
@@ -479,7 +479,7 @@ uint8_t lsi53c810_device::reg_r(int offset)
 
 void lsi53c810_device::reg_w(int offset, uint8_t data)
 {
-//  logerror("53c810: %02x to reg %d:0x%x (PC=%x)\n", data, offset, offset, space.device().safe_pc());
+//  logerror("53c810: %02x to reg %d:0x%x %s\n", data, offset, offset, machine().describe_context());
 	switch(offset)
 	{
 		case 0x00:      /* SCNTL0 */
@@ -623,6 +623,9 @@ void lsi53c810_device::add_opcode(uint8_t op, uint8_t mask, opcode_handler_deleg
 
 lsi53c810_device::lsi53c810_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
 	: legacy_scsi_host_adapter(mconfig, LSI53C810, tag, owner, clock)
+	, m_irq_cb(*this)
+	, m_dma_cb(*this)
+	, m_fetch_cb(*this)
 {
 }
 
@@ -630,9 +633,9 @@ void lsi53c810_device::device_start()
 {
 	legacy_scsi_host_adapter::device_start();
 
-	m_irq_cb.bind_relative_to(*owner());
-	m_dma_cb.bind_relative_to(*owner());
-	m_fetch_cb.bind_relative_to(*owner());
+	m_irq_cb.resolve();
+	m_dma_cb.resolve();
+	m_fetch_cb.resolve();
 
 	for (auto & elem : dma_opcode)
 	{

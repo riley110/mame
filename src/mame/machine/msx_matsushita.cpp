@@ -69,7 +69,7 @@ void msx_matsushita_device::nvram_write(emu_file &file)
 }
 
 
-READ8_MEMBER(msx_matsushita_device::switched_read)
+uint8_t msx_matsushita_device::switched_read(offs_t offset)
 {
 	if (m_selected)
 	{
@@ -85,7 +85,7 @@ READ8_MEMBER(msx_matsushita_device::switched_read)
 		{
 			uint8_t result = (((m_pattern & 0x80) ? m_nibble1 : m_nibble2) << 4) | ((m_pattern & 0x40) ? m_nibble1 : m_nibble2);
 
-			if (!machine().side_effect_disabled())
+			if (!machine().side_effects_disabled())
 				m_pattern = (m_pattern << 2) | (m_pattern >> 6);
 
 			return result;
@@ -137,7 +137,7 @@ READ8_MEMBER(msx_matsushita_device::switched_read)
 */
 
 
-WRITE8_MEMBER(msx_matsushita_device::switched_write)
+void msx_matsushita_device::switched_write(offs_t offset, uint8_t data)
 {
 	if (offset == 0)
 	{

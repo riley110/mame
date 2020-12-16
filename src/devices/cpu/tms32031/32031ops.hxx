@@ -2,9 +2,9 @@
 // copyright-holders:Aaron Giles
 /***************************************************************************
 
-    32031ops.cpp
+    32031ops.hxx
 
-    TMS32031/2 emulator
+    TMS320C3x family 32-bit floating point DSP emulator
 
 ***************************************************************************/
 
@@ -5490,11 +5490,11 @@ inline void tms3203x_device::execute_delayed(uint32_t newpc)
 	}
 	else
 	{
-		debugger_instruction_hook(this, m_pc);
+		debugger_instruction_hook(m_pc);
 		execute_one();
-		debugger_instruction_hook(this, m_pc);
+		debugger_instruction_hook(m_pc);
 		execute_one();
-		debugger_instruction_hook(this, m_pc);
+		debugger_instruction_hook(m_pc);
 		execute_one();
 	}
 

@@ -24,38 +24,6 @@
 #pragma once
 
 //**************************************************************************
-//  CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_MSM6253_IN0_ANALOG_PORT(_input) \
-	msm6253_device::static_set_input_tag(*device, 0, "^" _input);
-#define MCFG_MSM6253_IN1_ANALOG_PORT(_input) \
-	msm6253_device::static_set_input_tag(*device, 1, "^" _input);
-#define MCFG_MSM6253_IN2_ANALOG_PORT(_input) \
-	msm6253_device::static_set_input_tag(*device, 2, "^" _input);
-#define MCFG_MSM6253_IN3_ANALOG_PORT(_input) \
-	msm6253_device::static_set_input_tag(*device, 3, "^" _input);
-
-#define MCFG_MSM6253_IN0_ANALOG_READ(_class, _method) \
-	msm6253_device::static_set_input_cb(*device, 0, msm6253_device::port_read_delegate(&_class::_method, #_class "::" #_method, downcast<_class *>(owner)));
-#define MCFG_MSM6253_IN1_ANALOG_READ(_class, _method) \
-	msm6253_device::static_set_input_cb(*device, 1, msm6253_device::port_read_delegate(&_class::_method, #_class "::" #_method, downcast<_class *>(owner)));
-#define MCFG_MSM6253_IN2_ANALOG_READ(_class, _method) \
-	msm6253_device::static_set_input_cb(*device, 2, msm6253_device::port_read_delegate(&_class::_method, #_class "::" #_method, downcast<_class *>(owner)));
-#define MCFG_MSM6253_IN3_ANALOG_READ(_class, _method) \
-	msm6253_device::static_set_input_cb(*device, 3, msm6253_device::port_read_delegate(&_class::_method, #_class "::" #_method, downcast<_class *>(owner)));
-
-#define MCFG_MSM6253_IN0_ANALOG_DEVREAD(_tag, _class, _method) \
-	msm6253_device::static_set_input_cb(*device, 0, msm6253_device::port_read_delegate(&_class::_method, #_class "::" #_method, _tag));
-#define MCFG_MSM6253_IN1_ANALOG_DEVREAD(_tag, _class, _method) \
-	msm6253_device::static_set_input_cb(*device, 1, msm6253_device::port_read_delegate(&_class::_method, #_class "::" #_method, _tag));
-#define MCFG_MSM6253_IN2_ANALOG_DEVREAD(_tag, _class, _method) \
-	msm6253_device::static_set_input_cb(*device, 2, msm6253_device::port_read_delegate(&_class::_method, #_class "::" #_method, _tag));
-#define MCFG_MSM6253_IN3_ANALOG_DEVREAD(_tag, _class, _method) \
-	msm6253_device::static_set_input_cb(*device, 3, msm6253_device::port_read_delegate(&_class::_method, #_class "::" #_method, _tag));
-
-
-//**************************************************************************
 //  TYPE DEFINITIONS
 //**************************************************************************
 
@@ -69,18 +37,18 @@ public:
 	// construction/destruction
 	msm6253_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock);
 
-	// static configuration
-	static void static_set_input_tag(device_t &device, int port, const char *tag) { downcast<msm6253_device &>(device).m_analog_ports[port].set_tag(tag); }
-	static void static_set_input_cb(device_t &device, int port, port_read_delegate &&cb) { downcast<msm6253_device &>(device).m_analog_input_cb[port] = std::move(cb); }
+	// configuration
+	template <unsigned P> void set_input_tag(const char *tag) { m_analog_ports[P].set_tag(tag); }
+	template <unsigned P, typename... T> void set_input_cb(T &&... args) { m_analog_input_cb[P].set(std::forward<T>(args)...); }
 
 	// write handlers
-	WRITE8_MEMBER(address_w);
-	WRITE8_MEMBER(select_w);
+	void address_w(offs_t offset, u8 data);
+	void select_w(offs_t offset, u8 data);
 
 	// read handlers
 	bool shift_out();
-	READ8_MEMBER(d0_r);
-	READ8_MEMBER(d7_r);
+	u8 d0_r(address_space &space);
+	u8 d7_r(address_space &space);
 
 protected:
 	// device-level overrides
@@ -92,7 +60,7 @@ private:
 
 	// input configuration
 	optional_ioport_array<4> m_analog_ports;
-	port_read_delegate m_analog_input_cb[4];
+	port_read_delegate::array<4> m_analog_input_cb;
 
 	// private data
 	u8 m_shift_register;

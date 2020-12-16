@@ -5,9 +5,10 @@
     includes/micronic.h
 
 *****************************************************************************/
+#ifndef MAME_INCLUDES_MICRONIC_H
+#define MAME_INCLUDES_MICRONIC_H
 
-#ifndef __MICRONIC__
-#define __MICRONIC__
+#pragma once
 
 #include "cpu/z80/z80.h"
 #include "video/hd61830.h"
@@ -16,6 +17,7 @@
 #include "machine/nvram.h"
 #include "sound/beep.h"
 #include "imagedev/cassette.h"
+#include "emupal.h"
 
 #define SCREEN_TAG      "screen"
 #define Z80_TAG         "z80"
@@ -25,8 +27,8 @@
 class micronic_state : public driver_device
 {
 public:
-	micronic_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
+	micronic_state(const machine_config &mconfig, device_type type, const char *tag) :
+		driver_device(mconfig, type, tag),
 		m_maincpu(*this, Z80_TAG),
 		m_lcdc(*this, HD61830_TAG),
 		m_beep(*this, "beeper"),
@@ -48,6 +50,34 @@ public:
 		m_cassette(*this, "cassette")
 	{ }
 
+	void micronic(machine_config &config);
+
+protected:
+	virtual void machine_start() override;
+	virtual void machine_reset() override;
+
+private:
+	void nvram_init(nvram_device &nvram, void *data, size_t size);
+
+	uint8_t keypad_r();
+	uint8_t status_flag_r();
+	void status_flag_w(uint8_t data);
+	void kp_matrix_w(uint8_t data);
+	void beep_w(uint8_t data);
+	uint8_t irq_flag_r();
+	void port_2c_w(uint8_t data);
+	void bank_select_w(uint8_t data);
+	void lcd_contrast_w(uint8_t data);
+	void rtc_address_w(uint8_t data);
+	uint8_t rtc_data_r();
+	void rtc_data_w(uint8_t data);
+	DECLARE_WRITE_LINE_MEMBER( mc146818_irq );
+
+	void micronic_palette(palette_device &palette) const;
+
+	void micronic_io(address_map &map);
+	void micronic_mem(address_map &map);
+
 	required_device<cpu_device> m_maincpu;
 	required_device<hd61830_device> m_lcdc;
 	required_device<beep_device> m_beep;
@@ -56,33 +86,13 @@ public:
 	required_device<nvram_device> m_nvram2;
 	required_device<ram_device> m_ram;
 
-	virtual void machine_start() override;
-	virtual void machine_reset() override;
-	void nvram_init(nvram_device &nvram, void *data, size_t size);
-
-	DECLARE_READ8_MEMBER( keypad_r );
-	DECLARE_READ8_MEMBER( status_flag_r );
-	DECLARE_WRITE8_MEMBER( status_flag_w );
-	DECLARE_WRITE8_MEMBER( kp_matrix_w );
-	DECLARE_WRITE8_MEMBER( beep_w );
-	DECLARE_READ8_MEMBER( irq_flag_r );
-	DECLARE_WRITE8_MEMBER( port_2c_w );
-	DECLARE_WRITE8_MEMBER( bank_select_w );
-	DECLARE_WRITE8_MEMBER( lcd_contrast_w );
-	DECLARE_WRITE8_MEMBER( rtc_address_w );
-	DECLARE_READ8_MEMBER( rtc_data_r );
-	DECLARE_WRITE8_MEMBER( rtc_data_w );
-	DECLARE_WRITE_LINE_MEMBER( mc146818_irq );
-
 	required_shared_ptr<uint8_t> m_ram_base;
 	uint8_t m_banks_num;
 	uint8_t m_kp_matrix;
 	uint8_t m_lcd_contrast;
 	int m_lcd_backlight;
 	uint8_t m_status_flag;
-	DECLARE_PALETTE_INIT(micronic);
 
-protected:
 	required_memory_bank m_bank1;
 	required_ioport m_bit0;
 	required_ioport m_bit1;
@@ -95,4 +105,4 @@ protected:
 	optional_device<cassette_image_device> m_cassette;
 };
 
-#endif
+#endif // MAME_INCLUDES_MICRONIC_H

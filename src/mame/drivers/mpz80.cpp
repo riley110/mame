@@ -163,7 +163,7 @@ inline offs_t mpz80_state::get_address(offs_t offset)
 //  mmu_r -
 //-------------------------------------------------
 
-READ8_MEMBER( mpz80_state::mmu_r )
+uint8_t mpz80_state::mmu_r(offs_t offset)
 {
 	if (m_trap && offset >= m_trap_start && offset <= m_trap_start + 0xf)
 		return m_rom->base()[0x3f0 | (m_trap_reset << 10) | (offset - m_trap_start)];
@@ -189,19 +189,19 @@ READ8_MEMBER( mpz80_state::mmu_r )
 		}
 		else if (offset == 0x400)
 		{
-			data = trap_addr_r(space, 0);
+			data = trap_addr_r();
 		}
 		else if (offset == 0x401)
 		{
-			data = keyboard_r(space, 0);
+			data = keyboard_r();
 		}
 		else if (offset == 0x402)
 		{
-			data = switch_r(space, 0);
+			data = switch_r();
 		}
 		else if (offset == 0x403)
 		{
-			data = status_r(space, 0);
+			data = status_r();
 		}
 		else if (offset >= 0x600 && offset < 0x800)
 		{
@@ -219,7 +219,7 @@ READ8_MEMBER( mpz80_state::mmu_r )
 	}
 	else
 	{
-		data = m_s100->smemr_r(space, m_addr);
+		data = m_s100->smemr_r(m_addr);
 	}
 
 	return data;
@@ -230,7 +230,7 @@ READ8_MEMBER( mpz80_state::mmu_r )
 //  mmu_w -
 //-------------------------------------------------
 
-WRITE8_MEMBER( mpz80_state::mmu_w )
+void mpz80_state::mmu_w(offs_t offset, uint8_t data)
 {
 	m_addr = get_address(offset);
 
@@ -242,19 +242,19 @@ WRITE8_MEMBER( mpz80_state::mmu_w )
 		}
 		else if (offset == 0x400)
 		{
-			disp_seg_w(space, 0, data);
+			disp_seg_w(data);
 		}
 		else if (offset == 0x401)
 		{
-			disp_col_w(space, 0, data);
+			disp_col_w(data);
 		}
 		else if (offset == 0x402)
 		{
-			task_w(space, 0, data);
+			task_w(data);
 		}
 		else if (offset == 0x403)
 		{
-			mask_w(space, 0, data);
+			mask_w(data);
 		}
 		else if (offset >= 0x600 && offset < 0x800)
 		{
@@ -267,7 +267,7 @@ WRITE8_MEMBER( mpz80_state::mmu_w )
 	}
 	else
 	{
-		m_s100->mwrt_w(space, m_addr, data);
+		m_s100->mwrt_w(m_addr, data);
 	}
 }
 
@@ -292,9 +292,9 @@ inline offs_t mpz80_state::get_io_address(offs_t offset)
 //  mmu_io_r -
 //-------------------------------------------------
 
-READ8_MEMBER( mpz80_state::mmu_io_r )
+uint8_t mpz80_state::mmu_io_r(offs_t offset)
 {
-	return m_s100->sinp_r(space, get_io_address(offset));
+	return m_s100->sinp_r(get_io_address(offset));
 }
 
 
@@ -302,9 +302,9 @@ READ8_MEMBER( mpz80_state::mmu_io_r )
 //  mmu_io_w -
 //-------------------------------------------------
 
-WRITE8_MEMBER( mpz80_state::mmu_io_w )
+void mpz80_state::mmu_io_w(offs_t offset, uint8_t data)
 {
-	m_s100->sout_w(space, get_io_address(offset), data);
+	m_s100->sout_w(get_io_address(offset), data);
 }
 
 
@@ -312,7 +312,7 @@ WRITE8_MEMBER( mpz80_state::mmu_io_w )
 //  trap_addr_r - trap address register
 //-------------------------------------------------
 
-READ8_MEMBER( mpz80_state::trap_addr_r )
+uint8_t mpz80_state::trap_addr_r()
 {
 	/*
 
@@ -337,7 +337,7 @@ READ8_MEMBER( mpz80_state::trap_addr_r )
 //  status_r - trap status register
 //-------------------------------------------------
 
-READ8_MEMBER( mpz80_state::status_r )
+uint8_t mpz80_state::status_r()
 {
 	/*
 
@@ -362,7 +362,7 @@ READ8_MEMBER( mpz80_state::status_r )
 //  task_w - task register
 //-------------------------------------------------
 
-WRITE8_MEMBER( mpz80_state::task_w )
+void mpz80_state::task_w(uint8_t data)
 {
 	/*
 
@@ -390,7 +390,7 @@ WRITE8_MEMBER( mpz80_state::task_w )
 //  mask_w - mask register
 //-------------------------------------------------
 
-WRITE8_MEMBER( mpz80_state::mask_w )
+void mpz80_state::mask_w(uint8_t data)
 {
 	/*
 
@@ -420,7 +420,7 @@ WRITE8_MEMBER( mpz80_state::mask_w )
 //  keyboard_r - front panel keyboard
 //-------------------------------------------------
 
-READ8_MEMBER( mpz80_state::keyboard_r )
+uint8_t mpz80_state::keyboard_r()
 {
 	/*
 
@@ -445,7 +445,7 @@ READ8_MEMBER( mpz80_state::keyboard_r )
 //  switch_r - switch register
 //-------------------------------------------------
 
-READ8_MEMBER( mpz80_state::switch_r )
+uint8_t mpz80_state::switch_r()
 {
 	/*
 
@@ -481,7 +481,7 @@ READ8_MEMBER( mpz80_state::switch_r )
 //  disp_seg_w - front panel segment
 //-------------------------------------------------
 
-WRITE8_MEMBER( mpz80_state::disp_seg_w )
+void mpz80_state::disp_seg_w(uint8_t data)
 {
 	/*
 
@@ -504,7 +504,7 @@ WRITE8_MEMBER( mpz80_state::disp_seg_w )
 //  disp_col_w - front panel column
 //-------------------------------------------------
 
-WRITE8_MEMBER( mpz80_state::disp_col_w )
+void mpz80_state::disp_col_w(uint8_t data)
 {
 	/*
 
@@ -532,29 +532,31 @@ WRITE8_MEMBER( mpz80_state::disp_col_w )
 //  ADDRESS_MAP( mpz80_mem )
 //-------------------------------------------------
 
-static ADDRESS_MAP_START( mpz80_mem, AS_PROGRAM, 8, mpz80_state )
-	AM_RANGE(0x0000, 0xffff) AM_READWRITE(mmu_r, mmu_w)
+void mpz80_state::mpz80_mem(address_map &map)
+{
+	map(0x0000, 0xffff).rw(FUNC(mpz80_state::mmu_r), FUNC(mpz80_state::mmu_w));
 /*
     Task 0 Segment 0 map:
 
-    AM_RANGE(0x0000, 0x03ff) AM_RAM
-    AM_RANGE(0x0400, 0x0400) AM_READWRITE(trap_addr_r, disp_seg_w)
-    AM_RANGE(0x0401, 0x0401) AM_READWRITE(keyboard_r, disp_col_w)
-    AM_RANGE(0x0402, 0x0402) AM_READWRITE(switch_r, task_w)
-    AM_RANGE(0x0403, 0x0403) AM_READWRITE(status_r, mask_w)
-    AM_RANGE(0x0600, 0x07ff) AM_RAM AM_SHARE("map_ram")
-    AM_RANGE(0x0800, 0x0bff) AM_ROM AM_REGION(Z80_TAG, 0)
-    AM_RANGE(0x0c00, 0x0c00) AM_DEVREADWRITE(AM9512_TAG, am9512_device, read, write)
+    map(0x0000, 0x03ff).ram();
+    map(0x0400, 0x0400).rw(FUNC(mpz80_state::trap_addr_r), FUNC(mpz80_state::disp_seg_w));
+    map(0x0401, 0x0401).rw(FUNC(mpz80_state::keyboard_r), FUNC(mpz80_state::disp_col_w));
+    map(0x0402, 0x0402).rw(FUNC(mpz80_state::switch_r), FUNC(mpz80_state::task_w));
+    map(0x0403, 0x0403).rw(FUNC(mpz80_state::status_r), FUNC(mpz80_state::mask_w));
+    map(0x0600, 0x07ff).ram().share("map_ram");
+    map(0x0800, 0x0bff).rom().region(Z80_TAG, 0);
+    map(0x0c00, 0x0c00).rw(AM9512_TAG, FUNC(am9512_device::read), FUNC(am9512_device::write));
 */
-ADDRESS_MAP_END
+}
 
 //-------------------------------------------------
 //  ADDRESS_MAP( mpz80_io )
 //-------------------------------------------------
 
-static ADDRESS_MAP_START( mpz80_io, AS_IO, 8, mpz80_state )
-	AM_RANGE(0x0000, 0xffff) AM_READWRITE(mmu_io_r, mmu_io_w)
-ADDRESS_MAP_END
+void mpz80_state::mpz80_io(address_map &map)
+{
+	map(0x0000, 0xffff).rw(FUNC(mpz80_state::mmu_io_r), FUNC(mpz80_state::mmu_io_w));
+}
 
 
 
@@ -662,15 +664,16 @@ WRITE_LINE_MEMBER( mpz80_state::s100_nmi_w )
 //#include "bus/s100/nsmdsad.h"
 #include "bus/s100/wunderbus.h"
 
-static SLOT_INTERFACE_START( mpz80_s100_cards )
-	SLOT_INTERFACE("mm65k16s", S100_MM65K16S)
-	SLOT_INTERFACE("wunderbus", S100_WUNDERBUS)
-	SLOT_INTERFACE("dj2db", S100_DJ2DB)
-	SLOT_INTERFACE("djdma", S100_DJDMA)
-//  SLOT_INTERFACE("multio", S100_MULTIO)
-//  SLOT_INTERFACE("hdcdma", S100_HDCDMA)
-//  SLOT_INTERFACE("hdca", S100_HDCA)
-SLOT_INTERFACE_END
+static void mpz80_s100_cards(device_slot_interface &device)
+{
+	device.option_add("mm65k16s", S100_MM65K16S);
+	device.option_add("wunderbus", S100_WUNDERBUS);
+	device.option_add("dj2db", S100_DJ2DB);
+	device.option_add("djdma", S100_DJDMA);
+//  device.option_add("multio", S100_MULTIO);
+//  device.option_add("hdcdma", S100_HDCDMA);
+//  device.option_add("hdca", S100_HDCA);
+}
 
 
 
@@ -706,42 +709,42 @@ void mpz80_state::machine_reset()
 //**************************************************************************
 
 //-------------------------------------------------
-//  MACHINE_CONFIG( mpz80 )
+//  machine_config( mpz80 )
 //-------------------------------------------------
 
-static MACHINE_CONFIG_START( mpz80 )
+void mpz80_state::mpz80(machine_config &config)
+{
 	// basic machine hardware
-	MCFG_CPU_ADD(Z80_TAG, Z80, XTAL_4MHz)
-	MCFG_CPU_PROGRAM_MAP(mpz80_mem)
-	MCFG_CPU_IO_MAP(mpz80_io)
+	Z80(config, m_maincpu, XTAL(4'000'000));
+	m_maincpu->set_addrmap(AS_PROGRAM, &mpz80_state::mpz80_mem);
+	m_maincpu->set_addrmap(AS_IO, &mpz80_state::mpz80_io);
 
 	// S-100
-	MCFG_DEVICE_ADD(S100_TAG, S100_BUS, XTAL_4MHz / 2)
-	MCFG_S100_IRQ_CALLBACK(WRITELINE(mpz80_state, s100_pint_w))
-	MCFG_S100_NMI_CALLBACK(WRITELINE(mpz80_state, s100_nmi_w))
-	MCFG_S100_RDY_CALLBACK(INPUTLINE(Z80_TAG, Z80_INPUT_LINE_BOGUSWAIT))
-	MCFG_S100_SLOT_ADD(S100_TAG ":1", mpz80_s100_cards, "mm65k16s")
-	MCFG_S100_SLOT_ADD(S100_TAG ":2", mpz80_s100_cards, "wunderbus")
-	MCFG_S100_SLOT_ADD(S100_TAG ":3", mpz80_s100_cards, "dj2db")
-	MCFG_S100_SLOT_ADD(S100_TAG ":4", mpz80_s100_cards, nullptr)//"hdcdma")
-	MCFG_S100_SLOT_ADD(S100_TAG ":5", mpz80_s100_cards, nullptr)
-	MCFG_S100_SLOT_ADD(S100_TAG ":6", mpz80_s100_cards, nullptr)
-	MCFG_S100_SLOT_ADD(S100_TAG ":7", mpz80_s100_cards, nullptr)
-	MCFG_S100_SLOT_ADD(S100_TAG ":8", mpz80_s100_cards, nullptr)
-	MCFG_S100_SLOT_ADD(S100_TAG ":9", mpz80_s100_cards, nullptr)
-	MCFG_S100_SLOT_ADD(S100_TAG ":10", mpz80_s100_cards, nullptr)
-	MCFG_S100_SLOT_ADD(S100_TAG ":11", mpz80_s100_cards, nullptr)
-	MCFG_S100_SLOT_ADD(S100_TAG ":12", mpz80_s100_cards, nullptr)
-	MCFG_S100_SLOT_ADD(S100_TAG ":13", mpz80_s100_cards, nullptr)
-	MCFG_S100_SLOT_ADD(S100_TAG ":14", mpz80_s100_cards, nullptr)
+	S100_BUS(config, m_s100, XTAL(4'000'000) / 2);
+	m_s100->irq().set(FUNC(mpz80_state::s100_pint_w));
+	m_s100->nmi().set(FUNC(mpz80_state::s100_nmi_w));
+	m_s100->rdy().set_inputline(m_maincpu, Z80_INPUT_LINE_BOGUSWAIT);
+	S100_SLOT(config, S100_TAG ":1", mpz80_s100_cards, "mm65k16s");
+	S100_SLOT(config, S100_TAG ":2", mpz80_s100_cards, "wunderbus");
+	S100_SLOT(config, S100_TAG ":3", mpz80_s100_cards, "dj2db");
+	S100_SLOT(config, S100_TAG ":4", mpz80_s100_cards, nullptr);//"hdcdma")
+	S100_SLOT(config, S100_TAG ":5", mpz80_s100_cards, nullptr);
+	S100_SLOT(config, S100_TAG ":6", mpz80_s100_cards, nullptr);
+	S100_SLOT(config, S100_TAG ":7", mpz80_s100_cards, nullptr);
+	S100_SLOT(config, S100_TAG ":8", mpz80_s100_cards, nullptr);
+	S100_SLOT(config, S100_TAG ":9", mpz80_s100_cards, nullptr);
+	S100_SLOT(config, S100_TAG ":10", mpz80_s100_cards, nullptr);
+	S100_SLOT(config, S100_TAG ":11", mpz80_s100_cards, nullptr);
+	S100_SLOT(config, S100_TAG ":12", mpz80_s100_cards, nullptr);
+	S100_SLOT(config, S100_TAG ":13", mpz80_s100_cards, nullptr);
+	S100_SLOT(config, S100_TAG ":14", mpz80_s100_cards, nullptr);
 
 	// internal ram
-	MCFG_RAM_ADD(RAM_TAG)
-	MCFG_RAM_DEFAULT_SIZE("65K")
+	RAM(config, RAM_TAG).set_default_size("65K"); // 65K???
 
 	// software list
-	MCFG_SOFTWARE_LIST_ADD("flop_list", "mpz80")
-MACHINE_CONFIG_END
+	SOFTWARE_LIST(config, "flop_list").set_original("mpz80");
+}
 
 
 
@@ -757,11 +760,11 @@ ROM_START( mpz80 )
 	ROM_REGION( 0x1000, Z80_TAG, 0 )
 	ROM_DEFAULT_BIOS("447")
 	ROM_SYSTEM_BIOS( 0, "373", "3.73" )
-	ROMX_LOAD( "mpz80 mon3.73 fb34.17c", 0x0000, 0x1000, CRC(0bbffaec) SHA1(005ba726fc071f06cb1c969d170960438a3fc1a8), ROM_BIOS(1) )
+	ROMX_LOAD( "mpz80 mon3.73 fb34.17c", 0x0000, 0x1000, CRC(0bbffaec) SHA1(005ba726fc071f06cb1c969d170960438a3fc1a8), ROM_BIOS(0) )
 	ROM_SYSTEM_BIOS( 1, "375", "3.75" )
-	ROMX_LOAD( "mpz80 mon3.75 0706.17c", 0x0000, 0x1000, CRC(1118a592) SHA1(d70f94c09602cd0bdc4fbaeb14989e8cc1540960), ROM_BIOS(2) )
+	ROMX_LOAD( "mpz80 mon3.75 0706.17c", 0x0000, 0x1000, CRC(1118a592) SHA1(d70f94c09602cd0bdc4fbaeb14989e8cc1540960), ROM_BIOS(1) )
 	ROM_SYSTEM_BIOS( 2, "447", "4.47" )
-	ROMX_LOAD( "mon 4.47 f4f6.17c", 0x0000, 0x1000, CRC(b99c5d7f) SHA1(11181432ee524c7e5a68ead0671fc945256f5d1b), ROM_BIOS(3) )
+	ROMX_LOAD( "mon 4.47 f4f6.17c", 0x0000, 0x1000, CRC(b99c5d7f) SHA1(11181432ee524c7e5a68ead0671fc945256f5d1b), ROM_BIOS(2) )
 
 	ROM_REGION( 0x20, "s100rev2", 0 )
 	ROM_LOAD( "z80-2 15a.15a", 0x00, 0x20, CRC(8a84249d) SHA1(dfbc49c5944f110f48419fd893fa84f4f0e113b8) ) // 82S123 or 6331
@@ -778,5 +781,5 @@ ROM_END
 //  SYSTEM DRIVERS
 //**************************************************************************
 
-//    YEAR  NAME    PARENT  COMPAT  MACHINE  INPUT  STATE         INIT    COMPANY            FULLNAME    FLAGS
-COMP( 1980, mpz80,  0,      0,      mpz80,   mpz80, mpz80_state,  0,      "Morrow Designs",  "MPZ80",    MACHINE_NOT_WORKING | MACHINE_NO_SOUND_HW )
+//    YEAR  NAME   PARENT  COMPAT  MACHINE  INPUT  CLASS        INIT        COMPANY            FULLNAME    FLAGS
+COMP( 1980, mpz80, 0,      0,      mpz80,   mpz80, mpz80_state, empty_init, "Morrow Designs",  "MPZ80",    MACHINE_NOT_WORKING | MACHINE_NO_SOUND_HW )

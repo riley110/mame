@@ -40,15 +40,20 @@ public:
 		: coco_state(mconfig, type, tag)
 		, m_gime(*this, GIME_TAG) { }
 
-	virtual DECLARE_WRITE8_MEMBER( ff20_write ) override;
-	virtual DECLARE_READ8_MEMBER( ff40_read ) override;
-	virtual DECLARE_WRITE8_MEMBER( ff40_write ) override;
+	virtual void ff20_write(offs_t offset, uint8_t data) override;
+	virtual uint8_t ff40_read(offs_t offset) override;
+	virtual void ff40_write(offs_t offset, uint8_t data) override;
 
 	DECLARE_WRITE_LINE_MEMBER(gime_firq_w) { recalculate_firq(); }
 	DECLARE_WRITE_LINE_MEMBER(gime_irq_w) { recalculate_irq(); }
 
 	uint32_t screen_update(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect);
 
+	void coco3p(machine_config &config);
+	void coco3h(machine_config &config);
+	void coco3dw1(machine_config &config);
+	void coco3(machine_config &config);
+	void coco3_mem(address_map &map);
 protected:
 	virtual void update_cart_base(uint8_t *cart_base) override;
 
@@ -57,7 +62,7 @@ protected:
 	virtual bool irq_get_line(void) override;
 
 	// miscellaneous
-	virtual void update_keyboard_input(uint8_t value, uint8_t z) override;
+	virtual void update_keyboard_input(uint8_t value) override;
 	virtual void cart_w(bool line) override;
 
 private:

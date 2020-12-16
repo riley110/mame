@@ -50,12 +50,18 @@
 #include "emu.h"
 #include "namco52.h"
 
+WRITE_LINE_MEMBER( namco_52xx_device::reset )
+{
+	// The incoming signal is active low
+	m_cpu->set_input_line(INPUT_LINE_RESET, !state);
+}
+
 TIMER_CALLBACK_MEMBER( namco_52xx_device::latch_callback )
 {
 	m_latched_cmd = param;
 }
 
-READ8_MEMBER( namco_52xx_device::K_r )
+uint8_t namco_52xx_device::K_r()
 {
 	return m_latched_cmd & 0x0f;
 }
@@ -65,33 +71,33 @@ READ_LINE_MEMBER( namco_52xx_device::SI_r )
 	return m_si(0) ? 1 : 0;
 }
 
-READ8_MEMBER( namco_52xx_device::R0_r )
+uint8_t namco_52xx_device::R0_r()
 {
 	return m_romread(m_address) & 0x0f;
 }
 
-READ8_MEMBER( namco_52xx_device::R1_r )
+uint8_t namco_52xx_device::R1_r()
 {
 	return m_romread(m_address) >> 4;
 }
 
 
-WRITE8_MEMBER( namco_52xx_device::P_w )
+void namco_52xx_device::P_w(uint8_t data)
 {
-	m_discrete->write(space, NAMCO_52XX_P_DATA(m_basenode), data & 0x0f);
+	m_discrete->write(NAMCO_52XX_P_DATA(m_basenode), data & 0x0f);
 }
 
-WRITE8_MEMBER( namco_52xx_device::R2_w )
+void namco_52xx_device::R2_w(uint8_t data)
 {
 	m_address = (m_address & 0xfff0) | ((data & 0xf) << 0);
 }
 
-WRITE8_MEMBER( namco_52xx_device::R3_w )
+void namco_52xx_device::R3_w(uint8_t data)
 {
 	m_address = (m_address & 0xff0f) | ((data & 0xf) << 4);
 }
 
-WRITE8_MEMBER( namco_52xx_device::O_w )
+void namco_52xx_device::O_w(uint8_t data)
 {
 	if (data & 0x10)
 		m_address = (m_address & 0x0fff) | ((data & 0xf) << 12);
@@ -99,28 +105,20 @@ WRITE8_MEMBER( namco_52xx_device::O_w )
 		m_address = (m_address & 0xf0ff) | ((data & 0xf) << 8);
 }
 
-TIMER_CALLBACK_MEMBER( namco_52xx_device::irq_clear )
-{
-	m_cpu->set_input_line(0, CLEAR_LINE);
-}
 
-WRITE8_MEMBER( namco_52xx_device::write )
+void namco_52xx_device::write(uint8_t data)
 {
 	machine().scheduler().synchronize(timer_expired_delegate(FUNC(namco_52xx_device::latch_callback),this), data);
 
-	m_cpu->set_input_line(0, ASSERT_LINE);
-
-	// The execution time of one instruction is ~4us, so we must make sure to
-	// give the cpu time to poll the /IRQ input before we clear it.
-	// The input clock to the 06XX interface chip is 64H, that is
-	// 18432000/6/64 = 48kHz, so it makes sense for the irq line to be
-	// asserted for one clock cycle ~= 21us.
-
-	/* the 52xx uses TSTI to check for an interrupt; it also may be handling
-	   a timer interrupt, so we need to ensure the IRQ line is held long enough */
-	machine().scheduler().timer_set(attotime::from_usec(5*21), timer_expired_delegate(FUNC(namco_52xx_device::irq_clear),this), 0);
+	// TODO: should use chip_select line for this
+	m_cpu->pulse_input_line(0, m_irq_duration);
 }
 
+WRITE_LINE_MEMBER( namco_52xx_device::chip_select )
+{
+	// TODO: broken sound when using this
+	//m_cpu->set_input_line(0, state);
+}
 
 TIMER_CALLBACK_MEMBER( namco_52xx_device::external_clock_pulse )
 {
@@ -145,6 +143,7 @@ namco_52xx_device::namco_52xx_device(const machine_config &mconfig, const char *
 	: device_t(mconfig, NAMCO_52XX, tag, owner, clock),
 	m_cpu(*this, "mcu"),
 	m_discrete(*this, finder_base::DUMMY_TAG),
+	m_irq_duration(attotime::from_usec(100)),
 	m_basenode(0),
 	m_extclock(0),
 	m_romread(*this),
@@ -170,23 +169,27 @@ void namco_52xx_device::device_start()
 		m_extclock_pulse_timer = machine().scheduler().timer_alloc(timer_expired_delegate(FUNC(namco_52xx_device::external_clock_pulse), this));
 		m_extclock_pulse_timer->adjust(attotime(0, m_extclock), 0, attotime(0, m_extclock));
 	}
+
+	save_item(NAME(m_latched_cmd));
+	save_item(NAME(m_address));
 }
 
 //-------------------------------------------------
 // device_add_mconfig - add device configuration
 //-------------------------------------------------
 
-MACHINE_CONFIG_MEMBER( namco_52xx_device::device_add_mconfig )
-	MCFG_CPU_ADD("mcu", MB8843, DERIVED_CLOCK(1,1))     /* parent clock, internally divided by 6 */
-	MCFG_MB88XX_READ_K_CB(READ8(namco_52xx_device, K_r))
-	MCFG_MB88XX_WRITE_O_CB(WRITE8(namco_52xx_device, O_w))
-	MCFG_MB88XX_WRITE_P_CB(WRITE8(namco_52xx_device, P_w))
-	MCFG_MB88XX_READ_SI_CB(READLINE(namco_52xx_device, SI_r))
-	MCFG_MB88XX_READ_R0_CB(READ8(namco_52xx_device, R0_r))
-	MCFG_MB88XX_READ_R1_CB(READ8(namco_52xx_device, R1_r))
-	MCFG_MB88XX_WRITE_R2_CB(WRITE8(namco_52xx_device, R2_w))
-	MCFG_MB88XX_WRITE_R3_CB(WRITE8(namco_52xx_device, R3_w))
-MACHINE_CONFIG_END
+void namco_52xx_device::device_add_mconfig(machine_config &config)
+{
+	MB8843(config, m_cpu, DERIVED_CLOCK(1,1));     /* parent clock, internally divided by 6 */
+	m_cpu->read_k().set(FUNC(namco_52xx_device::K_r));
+	m_cpu->write_o().set(FUNC(namco_52xx_device::O_w));
+	m_cpu->write_p().set(FUNC(namco_52xx_device::P_w));
+	m_cpu->read_si().set(FUNC(namco_52xx_device::SI_r));
+	m_cpu->read_r<0>().set(FUNC(namco_52xx_device::R0_r));
+	m_cpu->read_r<1>().set(FUNC(namco_52xx_device::R1_r));
+	m_cpu->write_r<2>().set(FUNC(namco_52xx_device::R2_w));
+	m_cpu->write_r<3>().set(FUNC(namco_52xx_device::R3_w));
+}
 
 //-------------------------------------------------
 //  device_rom_region - return a pointer to the

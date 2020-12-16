@@ -15,12 +15,13 @@ as rom.  In the region/block cases, banking is automatically handled.
 2. Setup
 --------
 
-| **device_rom_interface**\ (const machine_config &mconfig, device_t &device, UINT8 addrwidth, endianness_t endian = ENDIANNESS_LITTLE, UINT8 datawidth = 8)
+| device_rom_interface<AddrWidth, DataWidth=0, AddrShift=0, Endian=ENDIANNESS_LITTLE>
 
-The constructor of the interface wants, in addition to the standard
-parameters, the address bus width of the dedicated bus.  In addition
-the endianness (if not little endian or byte-sized bus) and data bus
-width (if not byte) can be provided.
+The interface is a template that takes the address bus width of the
+dedicated bus as a parameter.  In addition the data bus width (if not
+byte), address shift (if not 0) and endianness (if not little endian
+or byte-sized bus) can be provided.  Data bus width is 0 for byte, 1
+for word, etc.
 
 | **MCFG_DEVICE_ADDRESS_MAP**\ (AS_0, map)
 
@@ -41,7 +42,12 @@ rom description for the system, it will be automatically picked up as
 the connected rom.  An address map has priority over the region if
 present in the machine config.
 
-| void **set_rom**\ (const void \*base, UINT32 size);
+| void **override_address_width**\ (u8 width)
+
+This method allows to override the address bus width. It must be
+called from within the device before **config_complete** time.
+
+| void **set_rom**\ (const void \*base, u32 size);
 
 At any time post- **interface_pre_start**, a memory block can be
 setup as the connected rom with that method.  It overrides any
@@ -51,10 +57,10 @@ times.
 3. Rom access
 -------------
 
-| UINT8 **read_byte**\ (offs_t byteaddress)
-| UINT16 **read_word**\ (offs_t byteaddress)
-| UINT32 **read_dword**\ (offs_t byteaddress)
-| UINT64 **read_qword**\ (offs_t byteaddress)
+| u8 **read_byte**\ (offs_t byteaddress)
+| u16 **read_word**\ (offs_t byteaddress)
+| u32 **read_dword**\ (offs_t byteaddress)
+| u64 **read_qword**\ (offs_t byteaddress)
 
 These methods provide read access to the connected rom.  Out-of-bounds
 access results in standard unmapped read logerror messages.
@@ -76,3 +82,8 @@ Using that interface makes the device derive from
 **device_memory_interface**. If the device wants to actually use the
 memory interface for itself, remember that AS_0/AS_PROGRAM is used by
 the rom interface, and don't forget to upcall **memory_space_config**.
+
+For devices which have outputs that can be used to address ROMs but
+only to forward the data to another device for processing, it may be
+helpful to disable the interface when it is not required. This can be
+done by overriding **memory_space_config** to return an empty vector.

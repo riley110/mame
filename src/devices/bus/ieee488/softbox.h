@@ -35,8 +35,6 @@ public:
 	// construction/destruction
 	softbox_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	DECLARE_WRITE8_MEMBER( dbrg_w );
-
 protected:
 	// device-level overrides
 	virtual void device_start() override;
@@ -51,17 +49,22 @@ protected:
 	virtual void ieee488_ifc(int state) override;
 
 private:
-	DECLARE_READ8_MEMBER( ppi0_pa_r );
-	DECLARE_WRITE8_MEMBER( ppi0_pb_w );
+	uint8_t ppi0_pa_r();
+	void ppi0_pb_w(uint8_t data);
 
-	DECLARE_READ8_MEMBER( ppi1_pa_r );
-	DECLARE_WRITE8_MEMBER( ppi1_pb_w );
-	DECLARE_READ8_MEMBER( ppi1_pc_r );
-	DECLARE_WRITE8_MEMBER( ppi1_pc_w );
+	uint8_t ppi1_pa_r();
+	void ppi1_pb_w(uint8_t data);
+	uint8_t ppi1_pc_r();
+	void ppi1_pc_w(uint8_t data);
+
+	void dbrg_w(uint8_t data);
+
+	void softbox_io(address_map &map);
+	void softbox_mem(address_map &map);
 
 	enum
 	{
-		LED_A,
+		LED_A = 0,
 		LED_B,
 		LED_READY
 	};
@@ -69,6 +72,7 @@ private:
 	required_device<cpu_device> m_maincpu;
 	required_device<com8116_device> m_dbrg;
 	required_device<corvus_hdc_device> m_hdc;
+	output_finder<3> m_leds;
 
 	int m_ifc;  // Tracks previous state of IEEE-488 IFC line
 };

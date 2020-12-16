@@ -1,5 +1,9 @@
 // license:BSD-3-Clause
 // copyright-holders:Nicola Salmoria
+#ifndef MAME_INCLUDES_FLSTORY_H
+#define MAME_INCLUDES_FLSTORY_H
+
+#pragma once
 
 #include "machine/gen_latch.h"
 #include "machine/input_merger.h"
@@ -7,12 +11,14 @@
 #include "machine/taito68705interface.h"
 #include "sound/ta7630.h"
 #include "sound/ay8910.h"
+#include "emupal.h"
+#include "tilemap.h"
 
 class flstory_state : public driver_device
 {
 public:
-	flstory_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
+	flstory_state(const machine_config &mconfig, device_type type, const char *tag) :
+		driver_device(mconfig, type, tag),
 		m_videoram(*this, "videoram"),
 		m_spriteram(*this, "spriteram"),
 		m_scrlram(*this, "scrlram"),
@@ -27,8 +33,21 @@ public:
 		m_palette(*this, "palette"),
 		m_soundlatch(*this, "soundlatch"),
 		m_soundlatch2(*this, "soundlatch2"),
-		m_soundnmi(*this, "soundnmi") { }
+		m_soundnmi(*this, "soundnmi"),
+		m_extraio1(*this, "EXTRA_P1")
+	{ }
 
+	void common(machine_config &config);
+	void flstory(machine_config &config);
+	void rumba(machine_config &config);
+	void onna34ro(machine_config &config);
+	void victnine(machine_config &config);
+	void onna34ro_mcu(machine_config &config);
+
+protected:
+	virtual void machine_start() override;
+
+private:
 	/* memory pointers */
 	required_shared_ptr<uint8_t> m_videoram;
 	required_shared_ptr<uint8_t> m_spriteram;
@@ -65,29 +84,26 @@ public:
 	required_device<generic_latch_8_device> m_soundlatch;
 	required_device<generic_latch_8_device> m_soundlatch2;
 	required_device<input_merger_device> m_soundnmi;
+	optional_ioport m_extraio1;
 
-	DECLARE_READ8_MEMBER(snd_flag_r);
-	DECLARE_WRITE8_MEMBER(snd_reset_w);
-	DECLARE_READ8_MEMBER(flstory_mcu_status_r);
-	DECLARE_WRITE8_MEMBER(victnine_mcu_w);
-	DECLARE_READ8_MEMBER(victnine_mcu_r);
-	DECLARE_READ8_MEMBER(victnine_mcu_status_r);
-	DECLARE_WRITE8_MEMBER(flstory_videoram_w);
-	DECLARE_WRITE8_MEMBER(flstory_palette_w);
-	DECLARE_READ8_MEMBER(flstory_palette_r);
-	DECLARE_WRITE8_MEMBER(flstory_gfxctrl_w);
-	DECLARE_READ8_MEMBER(victnine_gfxctrl_r);
-	DECLARE_WRITE8_MEMBER(victnine_gfxctrl_w);
-	DECLARE_WRITE8_MEMBER(flstory_scrlram_w);
-	DECLARE_CUSTOM_INPUT_MEMBER(victnine_mcu_status_bit01_r);
-	DECLARE_WRITE8_MEMBER(sound_control_0_w);
-	DECLARE_WRITE8_MEMBER(sound_control_1_w);
-	DECLARE_WRITE8_MEMBER(sound_control_2_w);
-	DECLARE_WRITE8_MEMBER(sound_control_3_w);
+	uint8_t snd_flag_r();
+	void snd_reset_w(uint8_t data);
+	uint8_t flstory_mcu_status_r();
+	uint8_t victnine_mcu_status_r();
+	void flstory_videoram_w(offs_t offset, uint8_t data);
+	void flstory_palette_w(offs_t offset, uint8_t data);
+	uint8_t flstory_palette_r(offs_t offset);
+	void flstory_gfxctrl_w(uint8_t data);
+	uint8_t victnine_gfxctrl_r();
+	void victnine_gfxctrl_w(uint8_t data);
+	void flstory_scrlram_w(offs_t offset, uint8_t data);
+	void sound_control_0_w(uint8_t data);
+	void sound_control_1_w(uint8_t data);
+	void sound_control_2_w(uint8_t data);
+	void sound_control_3_w(uint8_t data);
 	TILE_GET_INFO_MEMBER(get_tile_info);
 	TILE_GET_INFO_MEMBER(victnine_get_tile_info);
 	TILE_GET_INFO_MEMBER(get_rumba_tile_info);
-	virtual void machine_start() override;
 	DECLARE_MACHINE_RESET(flstory);
 	DECLARE_VIDEO_START(flstory);
 	DECLARE_VIDEO_START(victnine);
@@ -99,4 +115,13 @@ public:
 	uint32_t screen_update_rumba(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 	void flstory_draw_sprites( bitmap_ind16 &bitmap, const rectangle &cliprect, int pri );
 	void victnine_draw_sprites( bitmap_ind16 &bitmap, const rectangle &cliprect );
+	void base_map(address_map &map);
+	void flstory_map(address_map &map);
+	void onna34ro_map(address_map &map);
+	void onna34ro_mcu_map(address_map &map);
+	void rumba_map(address_map &map);
+	void sound_map(address_map &map);
+	void victnine_map(address_map &map);
 };
+
+#endif // MAME_INCLUDES_FLSTORY_H

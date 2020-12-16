@@ -25,30 +25,33 @@
 #define INLINE_EA   1
 
 
-DEFINE_DEVICE_TYPE(S2650, s2650_device, "s2650", "S2650")
+DEFINE_DEVICE_TYPE(S2650, s2650_device, "s2650", "Signetics 2650")
 
 
 s2650_device::s2650_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
 	: cpu_device(mconfig, S2650, tag, owner, clock)
-	, m_program_config("program", ENDIANNESS_LITTLE, 8, 15)
-	, m_io_config("io", ENDIANNESS_LITTLE, 8, 8)
-	, m_data_config("data", ENDIANNESS_LITTLE, 8, 1)
+	, m_program_config("program", ENDIANNESS_BIG, 8, 15)
+	, m_io_config("io", ENDIANNESS_BIG, 8, 8)
+	, m_data_config("data", ENDIANNESS_BIG, 8, 1)
 	, m_sense_handler(*this)
 	, m_flag_handler(*this), m_intack_handler(*this)
 	, m_ppc(0), m_page(0), m_iar(0), m_ea(0), m_psl(0), m_psu(0), m_r(0)
-	, m_halt(0), m_ir(0), m_irq_state(0), m_icount(0), m_direct(nullptr)
+	, m_halt(0), m_ir(0), m_irq_state(0), m_icount(0)
 	, m_debugger_temp(0)
 {
 	memset(m_reg, 0x00, sizeof(m_reg));
 }
 
-
-offs_t s2650_device::disasm_disassemble(std::ostream &stream, offs_t pc, const uint8_t *oprom, const uint8_t *opram, uint32_t options)
+bool s2650_device::get_z80_mnemonics_mode() const
 {
-	extern CPU_DISASSEMBLE( s2650 );
-	return CPU_DISASSEMBLE_NAME(s2650)(this, stream, pc, oprom, opram, options);
+	// Needs to become configurable live
+	return false;
 }
 
+std::unique_ptr<util::disasm_interface> s2650_device::create_disassembler()
+{
+	return std::make_unique<s2650_disassembler>(this);
+}
 
 device_memory_interface::space_config_vector s2650_device::memory_space_config() const
 {
@@ -164,7 +167,7 @@ static const int S2650_relative[0x100] =
  * RDMEM
  * read memory byte from addr
  ***************************************************************/
-#define RDMEM(addr) space(AS_PROGRAM).read_byte(addr)
+#define RDMEM(addr) m_program.read_byte(addr)
 
 inline void s2650_device::set_psu(uint8_t new_val)
 {
@@ -206,17 +209,15 @@ inline int s2650_device::check_irq_line()
 	{
 		if( (m_psu & II) == 0 )
 		{
-			int vector;
 			if (m_halt)
 			{
 				m_halt = 0;
 				m_iar = (m_iar + 1) & PMSK;
 			}
-			vector = standard_irq_callback(0) & 0xff;
+			standard_irq_callback(0);
 
 			/* Say hi */
-			m_intack_handler(true);
-
+			int vector = m_intack_handler();
 			/* build effective address within first 8K page */
 			m_ea = S2650_relative[vector] & PMSK;
 			if (vector & 0x80)      /* indirect bit set ? */
@@ -263,7 +264,7 @@ inline int s2650_device::check_irq_line()
  ***************************************************************/
 inline uint8_t s2650_device::ROP()
 {
-	uint8_t result = m_direct->read_byte(m_page + m_iar);
+	uint8_t result = m_cprogram.read_byte(m_page + m_iar);
 	m_iar = (m_iar + 1) & PMSK;
 	return result;
 }
@@ -274,7 +275,7 @@ inline uint8_t s2650_device::ROP()
  ***************************************************************/
 inline uint8_t s2650_device::ARG()
 {
-	uint8_t result = m_direct->read_byte(m_page + m_iar);
+	uint8_t result = m_cprogram.read_byte(m_page + m_iar);
 	m_iar = (m_iar + 1) & PMSK;
 	return result;
 }
@@ -560,7 +561,7 @@ inline uint8_t s2650_device::ARG()
  * Store source register to memory addr (CC unchanged)
  ***************************************************************/
 #define M_STR(address,source)                                   \
-	space(AS_PROGRAM).write_byte(address, source)
+	m_program.write_byte(address, source)
 
 /***************************************************************
  * M_AND
@@ -821,9 +822,12 @@ void s2650_device::device_start()
 {
 	m_sense_handler.resolve();
 	m_flag_handler.resolve_safe();
-	m_intack_handler.resolve_safe();
+	m_intack_handler.resolve_safe(0x00);
 
-	m_direct = &space(AS_PROGRAM).direct();
+	space(AS_PROGRAM).cache(m_cprogram);
+	space(AS_PROGRAM).specific(m_program);
+	space(AS_DATA).specific(m_data);
+	space(AS_IO).specific(m_io);
 
 	save_item(NAME(m_ppc));
 	save_item(NAME(m_page));
@@ -855,7 +859,7 @@ void s2650_device::device_start()
 	state_add( STATE_GENPCBASE, "CURPC", m_ppc).noshow();
 	state_add( STATE_GENFLAGS, "GENFLAGS", m_debugger_temp).formatstr("%16s").noshow();
 
-	m_icountptr = &m_icount;
+	set_icountptr(m_icount);
 }
 
 void s2650_device::state_import(const device_state_entry &entry)
@@ -999,7 +1003,7 @@ void s2650_device::execute_run()
 	{
 		m_ppc = m_page + m_iar;
 
-		debugger_instruction_hook(this, m_page + m_iar);
+		debugger_instruction_hook(m_page + m_iar);
 
 		m_ir = ROP();
 		m_r = m_ir & 3;         /* register / value */
@@ -1123,7 +1127,7 @@ void s2650_device::execute_run()
 			case 0x32:      /* REDC,2 */
 			case 0x33:      /* REDC,3 */
 				m_icount -= 6;
-				m_reg[m_r] = space(AS_DATA).read_byte(S2650_CTRL_PORT);
+				m_reg[m_r] = m_data.read_byte(S2650_CTRL_PORT);
 				SET_CC( m_reg[m_r] );
 				break;
 
@@ -1213,7 +1217,7 @@ void s2650_device::execute_run()
 			case 0x56:      /* REDE,2 v */
 			case 0x57:      /* REDE,3 v */
 				m_icount -= 9;
-				m_reg[m_r] = space(AS_IO).read_byte(ARG());
+				m_reg[m_r] = m_io.read_byte(ARG());
 				SET_CC(m_reg[m_r]);
 				break;
 
@@ -1272,7 +1276,7 @@ void s2650_device::execute_run()
 			case 0x72:      /* REDD,2 */
 			case 0x73:      /* REDD,3 */
 				m_icount -= 6;
-				m_reg[m_r] = space(AS_DATA).read_byte(S2650_DATA_PORT);
+				m_reg[m_r] = m_data.read_byte(S2650_DATA_PORT);
 				SET_CC(m_reg[m_r]);
 				break;
 
@@ -1428,7 +1432,7 @@ void s2650_device::execute_run()
 			case 0xb2:      /* WRTC,2 */
 			case 0xb3:      /* WRTC,3 */
 				m_icount -= 6;
-				space(AS_DATA).write_byte(S2650_CTRL_PORT,m_reg[m_r]);
+				m_data.write_byte(S2650_CTRL_PORT,m_reg[m_r]);
 				break;
 
 			case 0xb4:      /* TPSU */
@@ -1514,7 +1518,7 @@ void s2650_device::execute_run()
 			case 0xd6:      /* WRTE,2 v */
 			case 0xd7:      /* WRTE,3 v */
 				m_icount -= 9;
-				space(AS_IO).write_byte( ARG(), m_reg[m_r] );
+				m_io.write_byte( ARG(), m_reg[m_r] );
 				break;
 
 			case 0xd8:      /* BIRR,0 (*)a */
@@ -1572,7 +1576,7 @@ void s2650_device::execute_run()
 			case 0xf2:      /* WRTD,2 */
 			case 0xf3:      /* WRTD,3 */
 				m_icount -= 6;
-				space(AS_DATA).write_byte(S2650_DATA_PORT, m_reg[m_r]);
+				m_data.write_byte(S2650_DATA_PORT, m_reg[m_r]);
 				break;
 
 			case 0xf4:      /* TMI,0  v */

@@ -8,6 +8,7 @@
 #include "emu.h"
 #include "sharc.h"
 #include "sharcfe.h"
+#include "sharcdsm.h"
 
 #include "debugger.h"
 
@@ -53,38 +54,66 @@ enum
 	SHARC_B12,      SHARC_B13,      SHARC_B14,      SHARC_B15
 };
 
-DEFINE_DEVICE_TYPE(ADSP21062, adsp21062_device, "adsp21062", "ADSP21062")
+DEFINE_DEVICE_TYPE(ADSP21062, adsp21062_device, "adsp21062", "Analog Devices ADSP21062 \"SHARC\"")
 
-static ADDRESS_MAP_START( internal_pgm, AS_PROGRAM, 64, adsp21062_device )
-	AM_RANGE(0x20000, 0x24fff) AM_READWRITE(pm0_r, pm0_w)
-	AM_RANGE(0x28000, 0x2cfff) AM_READWRITE(pm1_r, pm1_w)
-	AM_RANGE(0x30000, 0x34fff) AM_READWRITE(pm1_r, pm1_w)
-	AM_RANGE(0x38000, 0x3cfff) AM_READWRITE(pm1_r, pm1_w)
-ADDRESS_MAP_END
+void adsp21062_device::internal_pgm(address_map &map)
+{
+	map(0x20000, 0x24fff).rw(FUNC(adsp21062_device::pm0_r), FUNC(adsp21062_device::pm0_w));
+	map(0x28000, 0x2cfff).rw(FUNC(adsp21062_device::pm1_r), FUNC(adsp21062_device::pm1_w));
+	map(0x30000, 0x34fff).rw(FUNC(adsp21062_device::pm1_r), FUNC(adsp21062_device::pm1_w));
+	map(0x38000, 0x3cfff).rw(FUNC(adsp21062_device::pm1_r), FUNC(adsp21062_device::pm1_w));
+}
 
-static ADDRESS_MAP_START( internal_data, AS_DATA, 32, adsp21062_device )
-	AM_RANGE(0x00000, 0x000ff) AM_READWRITE(iop_r, iop_w)
-	AM_RANGE(0x20000, 0x27fff) AM_RAM AM_SHARE("block0")
-	AM_RANGE(0x28000, 0x2ffff) AM_RAM AM_SHARE("block1")
-	AM_RANGE(0x30000, 0x37fff) AM_RAM AM_SHARE("block1")
-	AM_RANGE(0x38000, 0x3ffff) AM_RAM AM_SHARE("block1")
-	AM_RANGE(0x40000, 0x4ffff) AM_READWRITE(dmw0_r, dmw0_w)
-	AM_RANGE(0x50000, 0x5ffff) AM_READWRITE(dmw1_r, dmw1_w)
-	AM_RANGE(0x60000, 0x6ffff) AM_READWRITE(dmw1_r, dmw1_w)
-	AM_RANGE(0x70000, 0x7ffff) AM_READWRITE(dmw1_r, dmw1_w)
-ADDRESS_MAP_END
+void adsp21062_device::internal_data(address_map &map)
+{
+	map(0x00000, 0x000ff).rw(FUNC(adsp21062_device::iop_r), FUNC(adsp21062_device::iop_w));
+	map(0x20000, 0x27fff).ram().share("block0");
+	map(0x28000, 0x2ffff).ram().share("block1");
+	map(0x30000, 0x37fff).ram().share("block1");
+	map(0x38000, 0x3ffff).ram().share("block1");
+	map(0x40000, 0x4ffff).rw(FUNC(adsp21062_device::dmw0_r), FUNC(adsp21062_device::dmw0_w));
+	map(0x50000, 0x5ffff).rw(FUNC(adsp21062_device::dmw1_r), FUNC(adsp21062_device::dmw1_w));
+	map(0x60000, 0x6ffff).rw(FUNC(adsp21062_device::dmw1_r), FUNC(adsp21062_device::dmw1_w));
+	map(0x70000, 0x7ffff).rw(FUNC(adsp21062_device::dmw1_r), FUNC(adsp21062_device::dmw1_w));
+}
 
 adsp21062_device::adsp21062_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
 	: cpu_device(mconfig, ADSP21062, tag, owner, clock)
-	, m_program_config("program", ENDIANNESS_LITTLE, 64, 24, -3, ADDRESS_MAP_NAME(internal_pgm))
-	, m_data_config("data", ENDIANNESS_LITTLE, 32, 32, -2, ADDRESS_MAP_NAME(internal_data))
+	, m_program_config("program", ENDIANNESS_LITTLE, 64, 24, -3, address_map_constructor(FUNC(adsp21062_device::internal_pgm), this))
+	, m_data_config("data", ENDIANNESS_LITTLE, 32, 32, -2, address_map_constructor(FUNC(adsp21062_device::internal_data), this))
 	, m_boot_mode(BOOT_MODE_HOST)
 	, m_cache(CACHE_SIZE + sizeof(sharc_internal_state))
 	, m_drcuml(nullptr)
 	, m_drcfe(nullptr)
+	, m_entry(nullptr)
+	, m_nocode(nullptr)
+	, m_out_of_cycles(nullptr)
+	, m_pm_read48(nullptr)
+	, m_pm_write48(nullptr)
+	, m_pm_read32(nullptr)
+	, m_pm_write32(nullptr)
+	, m_dm_read32(nullptr)
+	, m_dm_write32(nullptr)
+	, m_push_pc(nullptr)
+	, m_pop_pc(nullptr)
+	, m_push_loop(nullptr)
+	, m_pop_loop(nullptr)
+	, m_push_status(nullptr)
+	, m_pop_status(nullptr)
+	, m_swap_dag1_0_3(nullptr)
+	, m_swap_dag1_4_7(nullptr)
+	, m_swap_dag2_0_3(nullptr)
+	, m_swap_dag2_4_7(nullptr)
+	, m_swap_r0_7(nullptr)
+	, m_swap_r8_15(nullptr)
 	, m_block0(*this, "block0")
 	, m_block1(*this, "block1")
 	, m_enable_drc(false)
+{
+	std::fill(std::begin(m_exception), std::end(m_exception), nullptr);
+}
+
+adsp21062_device::~adsp21062_device()
 {
 }
 
@@ -96,10 +125,9 @@ device_memory_interface::space_config_vector adsp21062_device::memory_space_conf
 	};
 }
 
-offs_t adsp21062_device::disasm_disassemble(std::ostream &stream, offs_t pc, const uint8_t *oprom, const uint8_t *opram, uint32_t options)
+std::unique_ptr<util::disasm_interface> adsp21062_device::create_disassembler()
 {
-	extern CPU_DISASSEMBLE( sharc );
-	return CPU_DISASSEMBLE_NAME(sharc)(this, stream, pc, oprom, opram, options);
+	return std::make_unique<sharc_disassembler>();
 }
 
 void adsp21062_device::enable_recompiler()
@@ -166,7 +194,7 @@ void adsp21062_device::sharc_iop_delayed_w(uint32_t reg, uint32_t data, int cycl
 // 3 ab9 5h 5l 4l
 // 4 cde 6h 6l 7h
 
-READ64_MEMBER( adsp21062_device::pm0_r)
+uint64_t adsp21062_device::pm0_r(offs_t offset)
 {
 	offs_t slot = offset >> 12;
 	offs_t base = (offset & 0xfff) + (slot >> 1) * (3<<12);
@@ -176,7 +204,7 @@ READ64_MEMBER( adsp21062_device::pm0_r)
 		return (uint64_t(m_block0[base         ]) << 16) | (m_block0[base + 0x1000] >> 16);
 }
 
-WRITE64_MEMBER(adsp21062_device::pm0_w)
+void adsp21062_device::pm0_w(offs_t offset, uint64_t data, uint64_t mem_mask)
 {
 	offs_t slot = offset >> 12;
 	offs_t base = (offset & 0xfff) + (slot >> 1) * (3<<12);
@@ -191,7 +219,7 @@ WRITE64_MEMBER(adsp21062_device::pm0_w)
 	}
 }
 
-READ64_MEMBER( adsp21062_device::pm1_r)
+uint64_t adsp21062_device::pm1_r(offs_t offset)
 {
 	offs_t slot = offset >> 12;
 	offs_t base = (offset & 0xfff) + (slot >> 1) * (3<<12);
@@ -201,7 +229,7 @@ READ64_MEMBER( adsp21062_device::pm1_r)
 		return (uint64_t(m_block1[base         ]) << 16) | (m_block1[base + 0x1000] >> 16);
 }
 
-WRITE64_MEMBER(adsp21062_device::pm1_w)
+void adsp21062_device::pm1_w(offs_t offset, uint64_t data, uint64_t mem_mask)
 {
 	offs_t slot = offset >> 12;
 	offs_t base = (offset & 0xfff) + (slot >> 1) * (3<<12);
@@ -216,7 +244,7 @@ WRITE64_MEMBER(adsp21062_device::pm1_w)
 	}
 }
 
-READ32_MEMBER( adsp21062_device::dmw0_r)
+uint32_t adsp21062_device::dmw0_r(offs_t offset)
 {
 	if(offset & 1)
 		return m_block0[offset >> 1] >> 16;
@@ -224,7 +252,7 @@ READ32_MEMBER( adsp21062_device::dmw0_r)
 		return m_block0[offset >> 1] & 0xffff;
 }
 
-WRITE32_MEMBER(adsp21062_device::dmw0_w)
+void adsp21062_device::dmw0_w(offs_t offset, uint32_t data)
 {
 	if(offset & 1)
 		m_block0[offset >> 1] = (m_block0[offset >> 1] & 0xffff) | (data << 16);
@@ -232,7 +260,7 @@ WRITE32_MEMBER(adsp21062_device::dmw0_w)
 		m_block0[offset >> 1] = (m_block0[offset >> 1] & 0xffff0000) | (data & 0xffff);
 }
 
-READ32_MEMBER( adsp21062_device::dmw1_r)
+uint32_t adsp21062_device::dmw1_r(offs_t offset)
 {
 	if(offset & 1)
 		return m_block1[offset >> 1] >> 16;
@@ -240,7 +268,7 @@ READ32_MEMBER( adsp21062_device::dmw1_r)
 		return m_block1[offset >> 1] & 0xffff;
 }
 
-WRITE32_MEMBER(adsp21062_device::dmw1_w)
+void adsp21062_device::dmw1_w(offs_t offset, uint32_t data)
 {
 	if(offset & 1)
 		m_block1[offset >> 1] = (m_block1[offset >> 1] & 0xffff) | (data << 16);
@@ -249,7 +277,7 @@ WRITE32_MEMBER(adsp21062_device::dmw1_w)
 }
 
 /* IOP registers */
-READ32_MEMBER( adsp21062_device::iop_r)
+uint32_t adsp21062_device::iop_r(offs_t offset)
 {
 	switch (offset)
 	{
@@ -259,11 +287,15 @@ READ32_MEMBER( adsp21062_device::iop_r)
 		{
 			return m_core->dma_status;
 		}
-		default:        fatalerror("sharc_iop_r: Unimplemented IOP reg %02X at %08X\n", offset, m_core->pc);
+		default:
+		if(!machine().side_effects_disabled())
+			fatalerror("sharc_iop_r: Unimplemented IOP reg %02X at %08X\n", offset, m_core->pc);
+
+		return 0;
 	}
 }
 
-WRITE32_MEMBER(adsp21062_device::iop_w)
+void adsp21062_device::iop_w(offs_t offset, uint32_t data)
 {
 	switch (offset)
 	{
@@ -400,7 +432,7 @@ void adsp21062_device::external_iop_write(uint32_t address, uint32_t data)
 	else
 	{
 		osd_printf_debug("SHARC IOP write %08X, %08X\n", address, data);
-		m_data->write_dword(address << 2, data);
+		m_data->write_dword(address, data);
 	}
 }
 
@@ -859,7 +891,7 @@ void adsp21062_device::device_start()
 	state_add( STATE_GENPC, "GENPC", m_core->pc).noshow();
 	state_add( STATE_GENPCBASE, "CURPC", m_core->pc).noshow();
 
-	m_icountptr = &m_core->icount;
+	set_icountptr(m_core->icount);
 }
 
 void adsp21062_device::device_reset()
@@ -1010,7 +1042,7 @@ void adsp21062_device::execute_run()
 		if (m_core->idle && m_core->irq_pending == 0)
 		{
 			m_core->icount = 0;
-			debugger_instruction_hook(this, m_core->daddr);
+			debugger_instruction_hook(m_core->daddr);
 		}
 		if (m_core->irq_pending != 0)
 		{
@@ -1029,9 +1061,9 @@ void adsp21062_device::execute_run()
 			m_core->astat_old_old = m_core->astat_old;
 			m_core->astat_old = m_core->astat;
 
-			debugger_instruction_hook(this, m_core->pc);
+			debugger_instruction_hook(m_core->pc);
 
-			m_core->opcode = m_program->read_qword(m_core->pc << 3);
+			m_core->opcode = m_program->read_qword(m_core->pc);
 
 			// handle looping
 			if (m_core->pc == m_core->laddr.addr)

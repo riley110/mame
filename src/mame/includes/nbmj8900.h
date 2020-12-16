@@ -1,15 +1,13 @@
 // license:BSD-3-Clause
 // copyright-holders:Takahiro Nogi
-#include "includes/nb1413m3.h"
+#include "machine/nb1413m3.h"
+#include "emupal.h"
 #include "screen.h"
 
 class nbmj8900_state : public driver_device
 {
 public:
-	enum
-	{
-		TIMER_BLITTER
-	};
+
 
 	nbmj8900_state(const machine_config &mconfig, device_type type, const char *tag)
 		: driver_device(mconfig, type, tag) ,
@@ -17,6 +15,18 @@ public:
 		m_nb1413m3(*this, "nb1413m3"),
 		m_screen(*this, "screen"),
 		m_palette(*this, "palette")   { }
+
+	void ohpaipee(machine_config &config);
+	void togenkyo(machine_config &config);
+
+	void init_togenkyo();
+	void init_ohpaipee();
+
+private:
+	enum
+	{
+		TIMER_BLITTER
+	};
 
 	required_device<cpu_device> m_maincpu;
 	required_device<nb1413m3_device> m_nb1413m3;
@@ -49,18 +59,16 @@ public:
 	int m_flipscreen_old;
 	emu_timer *m_blitter_timer;
 
-	DECLARE_READ8_MEMBER(palette_type1_r);
-	DECLARE_WRITE8_MEMBER(palette_type1_w);
-	DECLARE_WRITE8_MEMBER(clutsel_w);
-	DECLARE_READ8_MEMBER(clut_r);
-	DECLARE_WRITE8_MEMBER(clut_w);
-	DECLARE_WRITE8_MEMBER(blitter_w);
-	DECLARE_WRITE8_MEMBER(scrolly_w);
-	DECLARE_WRITE8_MEMBER(vramsel_w);
-	DECLARE_WRITE8_MEMBER(romsel_w);
+	uint8_t palette_type1_r(offs_t offset);
+	void palette_type1_w(offs_t offset, uint8_t data);
+	void clutsel_w(uint8_t data);
+	uint8_t clut_r(offs_t offset);
+	void clut_w(offs_t offset, uint8_t data);
+	void blitter_w(offs_t offset, uint8_t data);
+	void scrolly_w(uint8_t data);
+	void vramsel_w(uint8_t data);
+	void romsel_w(uint8_t data);
 
-	DECLARE_DRIVER_INIT(togenkyo);
-	DECLARE_DRIVER_INIT(ohpaipee);
 	virtual void video_start() override;
 
 	uint32_t screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
@@ -70,6 +78,9 @@ public:
 	void gfxdraw();
 	void postload();
 
-protected:
+	void ohpaipee_io_map(address_map &map);
+	void ohpaipee_map(address_map &map);
+	void togenkyo_map(address_map &map);
+
 	virtual void device_timer(emu_timer &timer, device_timer_id id, int param, void *ptr) override;
 };

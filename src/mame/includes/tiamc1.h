@@ -7,6 +7,8 @@
 
 #include "machine/pit8253.h"
 #include "sound/spkrdev.h"
+#include "emupal.h"
+#include "tilemap.h"
 
 class tiamc1_state : public driver_device
 {
@@ -19,6 +21,14 @@ public:
 		, m_speaker(*this, "speaker")
 	{ }
 
+	void kot(machine_config &config);
+	void tiamc1(machine_config &config);
+
+protected:
+	virtual void machine_reset() override;
+	virtual void video_start() override;
+
+private:
 	std::unique_ptr<uint8_t[]> m_videoram;
 	uint8_t *m_tileram;
 	uint8_t *m_charram;
@@ -34,34 +44,37 @@ public:
 	tilemap_t *m_bg_tilemap1;
 	tilemap_t *m_bg_tilemap2;
 	std::unique_ptr<rgb_t[]> m_palette_ptr;
-	DECLARE_WRITE8_MEMBER(tiamc1_control_w);
-	DECLARE_WRITE8_MEMBER(tiamc1_videoram_w);
-	DECLARE_WRITE8_MEMBER(tiamc1_bankswitch_w);
-	DECLARE_WRITE8_MEMBER(tiamc1_sprite_x_w);
-	DECLARE_WRITE8_MEMBER(tiamc1_sprite_y_w);
-	DECLARE_WRITE8_MEMBER(tiamc1_sprite_a_w);
-	DECLARE_WRITE8_MEMBER(tiamc1_sprite_n_w);
-	DECLARE_WRITE8_MEMBER(tiamc1_bg_vshift_w);
-	DECLARE_WRITE8_MEMBER(tiamc1_bg_hshift_w);
-	DECLARE_WRITE8_MEMBER(tiamc1_bg_bplctrl_w);
-	DECLARE_WRITE8_MEMBER(tiamc1_palette_w);
-	DECLARE_WRITE8_MEMBER(kot_bankswitch_w);
-	DECLARE_WRITE8_MEMBER(kot_videoram_w);
+	void tiamc1_control_w(uint8_t data);
+	void tiamc1_videoram_w(offs_t offset, uint8_t data);
+	void tiamc1_bankswitch_w(uint8_t data);
+	void tiamc1_sprite_x_w(offs_t offset, uint8_t data);
+	void tiamc1_sprite_y_w(offs_t offset, uint8_t data);
+	void tiamc1_sprite_a_w(offs_t offset, uint8_t data);
+	void tiamc1_sprite_n_w(offs_t offset, uint8_t data);
+	void tiamc1_bg_vshift_w(uint8_t data);
+	void tiamc1_bg_hshift_w(uint8_t data);
+	void tiamc1_bg_bplctrl_w(uint8_t data);
+	void tiamc1_palette_w(offs_t offset, uint8_t data);
+	void kot_bankswitch_w(uint8_t data);
+	void kot_videoram_w(offs_t offset, uint8_t data);
 	DECLARE_WRITE_LINE_MEMBER(pit8253_2_w);
 
 	TILE_GET_INFO_MEMBER(get_bg1_tile_info);
 	TILE_GET_INFO_MEMBER(get_bg2_tile_info);
-	virtual void machine_reset() override;
-	virtual void video_start() override;
 	DECLARE_VIDEO_START(kot);
-	DECLARE_PALETTE_INIT(tiamc1);
+	void tiamc1_palette(palette_device &palette);
 	uint32_t screen_update_tiamc1(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 	uint32_t screen_update_kot(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 	void draw_sprites(bitmap_ind16 &bitmap, const rectangle &cliprect);
 	required_device<cpu_device> m_maincpu;
 	required_device<gfxdecode_device> m_gfxdecode;
 	required_device<palette_device> m_palette;
-private:
+
+	void kotrybolov_io_map(address_map &map);
+	void kotrybolov_map(address_map &map);
+	void tiamc1_io_map(address_map &map);
+	void tiamc1_map(address_map &map);
+
 	optional_device<speaker_sound_device> m_speaker;
 	void update_bg_palette();
 };

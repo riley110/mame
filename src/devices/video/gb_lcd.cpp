@@ -359,7 +359,7 @@ cgb_ppu_device::cgb_ppu_device(const machine_config &mconfig, const char *tag, d
 
 void dmg_ppu_device::common_start()
 {
-	m_screen->register_screen_bitmap(m_bitmap);
+	screen().register_screen_bitmap(m_bitmap);
 	save_item(NAME(m_bitmap));
 	m_oam = make_unique_clear<uint8_t[]>(m_oam_size);
 	m_vram = make_unique_clear<uint8_t[]>(m_vram_size);
@@ -369,8 +369,8 @@ void dmg_ppu_device::common_start()
 
 	m_program_space = &m_lr35902->space(AS_PROGRAM);
 
-	save_pointer(NAME(m_oam.get()), m_oam_size);
-	save_pointer(NAME(m_vram.get()), m_vram_size);
+	save_pointer(NAME(m_oam), m_oam_size);
+	save_pointer(NAME(m_vram), m_vram_size);
 	save_item(NAME(m_window_lines_drawn));
 	save_item(NAME(m_vid_regs));
 	save_item(NAME(m_bg_zbuf));
@@ -515,7 +515,7 @@ void sgb_ppu_device::device_start()
 	common_start();
 
 	m_sgb_tile_data = make_unique_clear<uint8_t[]>(0x2000);
-	save_pointer(NAME(m_sgb_tile_data.get()), 0x2000);
+	save_pointer(NAME(m_sgb_tile_data), 0x2000);
 
 	memset(m_sgb_tile_map, 0, sizeof(m_sgb_tile_map));
 
@@ -1268,7 +1268,7 @@ void dmg_ppu_device::update_scanline(uint32_t cycles_to_go)
 			{
 				if (m_current_line < 144)
 				{
-					const rectangle &r = m_screen->visible_area();
+					const rectangle &r = screen().visible_area();
 					rectangle r1(r.min_x, r.max_x, m_current_line, m_current_line);
 					m_bitmap.fill(0, r1);
 				}
@@ -1889,7 +1889,7 @@ void cgb_ppu_device::update_scanline(uint32_t cycles_to_go)
 			{
 				if (m_current_line < 144)
 				{
-					const rectangle &r1 = m_screen->visible_area();
+					const rectangle &r1 = screen().visible_area();
 					rectangle r(r1.min_x, r1.max_x, m_current_line, m_current_line);
 					m_bitmap.fill((!m_gbc_mode) ? 0 : 32767 , r);
 				}
@@ -2866,9 +2866,9 @@ void dmg_ppu_device::lcd_switch_on(uint8_t new_data)
 }
 
 
-READ8_MEMBER(dmg_ppu_device::vram_r)
+uint8_t dmg_ppu_device::vram_r(offs_t offset)
 {
-	if (!machine().side_effect_disabled())
+	if (!machine().side_effects_disabled())
 	{
 		update_state();
 		LOG("vram_r: offset=0x%04x\n", offset);
@@ -2878,7 +2878,7 @@ READ8_MEMBER(dmg_ppu_device::vram_r)
 }
 
 
-WRITE8_MEMBER(dmg_ppu_device::vram_w)
+void dmg_ppu_device::vram_w(offs_t offset, uint8_t data)
 {
 	update_state();
 	if (m_vram_locked == LOCKED)
@@ -2888,9 +2888,9 @@ WRITE8_MEMBER(dmg_ppu_device::vram_w)
 }
 
 
-READ8_MEMBER(dmg_ppu_device::oam_r)
+uint8_t dmg_ppu_device::oam_r(offs_t offset)
 {
-	if (!machine().side_effect_disabled())
+	if (!machine().side_effects_disabled())
 	{
 		update_state();
 		LOG("oam_r: offset=0x%02x\n", offset);
@@ -2900,7 +2900,7 @@ READ8_MEMBER(dmg_ppu_device::oam_r)
 }
 
 
-WRITE8_MEMBER(dmg_ppu_device::oam_w)
+void dmg_ppu_device::oam_w(offs_t offset, uint8_t data)
 {
 	update_state();
 	if (m_oam_locked == LOCKED || offset >= 0xa0 || m_oam_dma_processing)
@@ -2911,9 +2911,9 @@ WRITE8_MEMBER(dmg_ppu_device::oam_w)
 
 
 
-READ8_MEMBER(dmg_ppu_device::video_r)
+uint8_t dmg_ppu_device::video_r(offs_t offset)
 {
-	if (!machine().side_effect_disabled())
+	if (!machine().side_effects_disabled())
 	{
 		update_state();
 		if (offset == 1) LOG("STAT read\n");
@@ -3048,7 +3048,7 @@ void dmg_ppu_device::check_stat_irq()
 }
 
 
-WRITE8_MEMBER(dmg_ppu_device::video_w)
+void dmg_ppu_device::video_w(offs_t offset, uint8_t data)
 {
 	update_state();
 	LOG("video_w: offset = %02x, data = %02x\n", offset, data);
@@ -3183,9 +3183,9 @@ WRITE8_MEMBER(dmg_ppu_device::video_w)
 	m_vid_regs[offset] = data;
 }
 
-READ8_MEMBER(cgb_ppu_device::video_r)
+uint8_t cgb_ppu_device::video_r(offs_t offset)
 {
-	if (!machine().side_effect_disabled())
+	if (!machine().side_effects_disabled())
 	{
 		update_state();
 		if (offset == 1) LOG("STAT read\n");
@@ -3271,7 +3271,7 @@ bool cgb_ppu_device::stat_write(uint8_t new_data)
 }
 
 
-WRITE8_MEMBER(cgb_ppu_device::video_w)
+void cgb_ppu_device::video_w(offs_t offset, uint8_t data)
 {
 	update_state();
 	LOG("video_w\n");
@@ -3487,7 +3487,7 @@ WRITE8_MEMBER(cgb_ppu_device::video_w)
 		return;
 	default:
 		/* we didn't handle the write, so pass it to the GB handler */
-		dmg_ppu_device::video_w(space, offset, data);
+		dmg_ppu_device::video_w(offset, data);
 		return;
 	}
 

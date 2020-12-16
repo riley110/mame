@@ -37,23 +37,7 @@ enum
 //  TYPE DEFINITIONS
 //**************************************************************************
 
-#define LC8670_LCD_UPDATE(name) uint32_t name(device_t &device, bitmap_ind16 &bitmap, const rectangle &cliprect, uint8_t* vram, bool lcd_enabled, uint8_t stad)
-
-
-//**************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_LC8670_SET_CLOCK_SOURCES(_sub_clock, _rc_clock, _cf_clock) \
-	lc8670_cpu_device::static_set_cpu_clock(*device, lc8670_cpu_device::clock_source::SUB, _sub_clock); \
-	lc8670_cpu_device::static_set_cpu_clock(*device, lc8670_cpu_device::clock_source::RC, _rc_clock); \
-	lc8670_cpu_device::static_set_cpu_clock(*device, lc8670_cpu_device::clock_source::CF, _cf_clock);
-#define MCFG_LC8670_BANKSWITCH_CB(_devcb) \
-	devcb = &lc8670_cpu_device::static_set_bankswitch_cb(*device, DEVCB_##_devcb);
-
-#define MCFG_LC8670_LCD_UPDATE_CB(_cb) \
-	lc8670_cpu_device::static_set_lcd_update_cb(*device, _cb);
-
+#define LC8670_LCD_UPDATE(name) uint32_t name(bitmap_ind16 &bitmap, const rectangle &cliprect, uint8_t* vram, bool lcd_enabled, uint8_t stad)
 
 // ======================> lc8670_cpu_device
 
@@ -67,7 +51,7 @@ public:
 		CF
 	};
 
-	typedef uint32_t (*lcd_update)(device_t &device, bitmap_ind16 &bitmap, const rectangle &cliprect, uint8_t* vram, bool lcd_enabled, uint8_t stad);
+	typedef device_delegate<uint32_t (bitmap_ind16 &bitmap, const rectangle &cliprect, uint8_t* vram, bool lcd_enabled, uint8_t stad)> lcd_update_delegate;
 
 	// construction/destruction
 	lc8670_cpu_device(const machine_config &mconfig, const char *_tag, device_t *_owner, uint32_t _clock);
@@ -76,18 +60,29 @@ public:
 	uint32_t screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 
 	// internal map handlers
-	DECLARE_READ8_MEMBER(regs_r);
-	DECLARE_WRITE8_MEMBER(regs_w);
-	DECLARE_READ8_MEMBER(mram_r);
-	DECLARE_WRITE8_MEMBER(mram_w);
-	DECLARE_READ8_MEMBER(xram_r);
-	DECLARE_WRITE8_MEMBER(xram_w);
+	uint8_t regs_r(offs_t offset);
+	void regs_w(offs_t offset, uint8_t data);
+	uint8_t mram_r(offs_t offset);
+	void mram_w(offs_t offset, uint8_t data);
+	uint8_t xram_r(offs_t offset);
+	void xram_w(offs_t offset, uint8_t data);
 
-	// static configuration helpers
-	static void static_set_cpu_clock(device_t &device, clock_source source, uint32_t clock) { downcast<lc8670_cpu_device &>(device).m_clocks[unsigned(source)] = clock; }
-	static void static_set_lcd_update_cb(device_t &device, lcd_update cb) { downcast<lc8670_cpu_device &>(device).m_lcd_update_func = cb; }
-	template <class Object> static devcb_base & static_set_bankswitch_cb(device_t &device, Object &&cb) { return downcast<lc8670_cpu_device &>(device).m_bankswitch_func.set_callback(std::forward<Object>(cb)); }
+	// configuration helpers
+	void set_cpu_clock(clock_source source, uint32_t clock) { m_clocks[unsigned(source)] = clock; }
+	void set_cpu_clock(clock_source source, const XTAL &clock) { set_cpu_clock(source, clock.value()); }
+	template <typename T, typename U, typename V>
+	void set_clock_sources(T &&sub_clock, U &&rc_clock, V &&cf_clock)
+	{
+		set_cpu_clock(lc8670_cpu_device::clock_source::SUB, std::forward<T>(sub_clock));
+		set_cpu_clock(lc8670_cpu_device::clock_source::RC, std::forward<U>(rc_clock));
+		set_cpu_clock(lc8670_cpu_device::clock_source::CF, std::forward<V>(cf_clock));
+	}
 
+	auto bank_cb() { return m_bankswitch_func.bind(); }
+
+	template <typename... T> void set_lcd_update_cb(T &&... args) { m_lcd_update_func.set(std::forward<T>(args)...); }
+
+	void lc8670_internal_map(address_map &map);
 protected:
 	enum
 	{
@@ -101,9 +96,9 @@ protected:
 	virtual void device_timer(emu_timer &timer, device_timer_id id, int param, void *ptr) override;
 
 	// device_execute_interface overrides
-	virtual uint32_t execute_min_cycles() const override { return 1; }
-	virtual uint32_t execute_max_cycles() const override { return 7; }
-	virtual uint32_t execute_input_lines() const override { return 4; }
+	virtual uint32_t execute_min_cycles() const noexcept override { return 1; }
+	virtual uint32_t execute_max_cycles() const noexcept override { return 7; }
+	virtual uint32_t execute_input_lines() const noexcept override { return 4; }
 	virtual void execute_run() override;
 	virtual void execute_set_input(int inputnum, int state) override;
 
@@ -115,9 +110,7 @@ protected:
 	virtual space_config_vector memory_space_config() const override;
 
 	// device_disasm_interface overrides
-	virtual uint32_t disasm_min_opcode_bytes() const override { return 1; }
-	virtual uint32_t disasm_max_opcode_bytes() const override { return 4; }
-	virtual offs_t disasm_disassemble(std::ostream &stream, offs_t pc, const uint8_t *oprom, const uint8_t *opram, uint32_t options) override;
+	virtual std::unique_ptr<util::disasm_interface> create_disassembler() override;
 
 private:
 	// helpers
@@ -142,7 +135,6 @@ private:
 	void timer0_tick(bool ext_line = false);
 	void timer1_tick();
 	void base_timer_tick();
-	static void dasm_arg(uint8_t op, char *buffer, offs_t pc, int arg, const uint8_t *oprom, int &pos);
 
 	// opcodes handlers
 	int op_nop();
@@ -193,23 +185,23 @@ private:
 	int op_rolc();
 	int op_xor();
 
-	address_space_config m_program_config;
-	address_space_config m_data_config;
-	address_space_config m_io_config;
+	address_space_config  m_program_config;
+	address_space_config  m_data_config;
+	address_space_config  m_io_config;
 
-	address_space *     m_program;              // program space (ROM or flash)
-	address_space *     m_data;                 // internal RAM/register
-	address_space *     m_io;                   // I/O ports
-	direct_read_data *  m_direct;
+	memory_access<16, 0, 0, ENDIANNESS_BIG>::cache m_cache;
+	memory_access<16, 0, 0, ENDIANNESS_BIG>::specific m_program; // program space (ROM or flash)
+	memory_access< 9, 0, 0, ENDIANNESS_BIG>::specific m_data;    // internal RAM/register
+	memory_access< 8, 0, 0, ENDIANNESS_BIG>::specific m_io;      // I/O ports
 
 	// timers
 	static const device_timer_id BASE_TIMER = 1;
 	static const device_timer_id CLOCK_TIMER = 2;
-	emu_timer *         m_basetimer;
-	emu_timer *         m_clocktimer;
+	emu_timer *           m_basetimer;
+	emu_timer *           m_clocktimer;
 
 	// internal state
-	int                 m_icount;
+	int                   m_icount;
 	uint16_t              m_pc;
 	uint16_t              m_ppc;
 	uint8_t               m_op;
@@ -219,20 +211,20 @@ private:
 	uint8_t               m_vtrbf[0x200];         // work RAM
 	uint16_t              m_irq_flag;
 	uint8_t               m_irq_lev;
-	bool                m_after_reti;
+	bool                  m_after_reti;
 	uint8_t               m_p1_data;
 	uint8_t               m_timer0_prescaler;
 	uint8_t               m_timer0[2];
 	uint8_t               m_timer1[2];
 	uint8_t               m_timer1_comparator[2];
 	uint8_t               m_base_timer[2];
-	bool                m_clock_changed;
-	int                 m_input_lines[4];
+	bool                  m_clock_changed;
+	int                   m_input_lines[4];
 
 	// configuration
-	uint32_t              m_clocks[3];            // clock sources
-	devcb_write8       m_bankswitch_func;      // bankswitch CB
-	lcd_update   m_lcd_update_func;      // LCD update CB
+	uint32_t              m_clocks[3];       // clock sources
+	devcb_write8          m_bankswitch_func; // bankswitch CB
+	lcd_update_delegate   m_lcd_update_func; // LCD update CB
 
 	// interrupts vectors
 	static const uint16_t s_irq_vectors[16];
@@ -240,33 +232,6 @@ private:
 	// opcodes table
 	typedef int (lc8670_cpu_device::*op_handler)();
 	static const op_handler s_opcode_table[80];
-
-	// disassembler
-	enum
-	{
-		OP_NULL,
-		OP_R8,
-		OP_R8RI,
-		OP_R16,
-		OP_RI,
-		OP_A12,
-		OP_A16,
-		OP_I8,
-		OP_B3,
-		OP_D9,
-		OP_D9B3,
-		OP_RII8
-	};
-
-	// disasm table
-	struct dasm_entry
-	{
-		const char *str;
-		uint8_t       arg1;
-		uint8_t       arg2;
-		bool        inv;
-	};
-	static const dasm_entry s_dasm_table[80];
 };
 
 DECLARE_DEVICE_TYPE(LC8670, lc8670_cpu_device)

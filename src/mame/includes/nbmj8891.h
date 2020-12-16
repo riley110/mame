@@ -1,7 +1,8 @@
 // license:BSD-3-Clause
 // copyright-holders:Takahiro Nogi
 
-#include "includes/nb1413m3.h"
+#include "machine/nb1413m3.h"
+#include "emupal.h"
 #include "screen.h"
 
 class nbmj8891_state : public driver_device
@@ -22,6 +23,49 @@ public:
 	{
 	}
 
+	void mjfocusm(machine_config &config);
+	void mjfocus(machine_config &config);
+	void bananadr(machine_config &config);
+	void scandal(machine_config &config);
+	void hanamomo(machine_config &config);
+	void telmahjn(machine_config &config);
+	void pairsten(machine_config &config);
+	void club90s(machine_config &config);
+	void mgion(machine_config &config);
+	void chinmoku(machine_config &config);
+	void msjiken(machine_config &config);
+	void hnageman(machine_config &config);
+	void mjcamerb(machine_config &config);
+	void mjnanpas(machine_config &config);
+	void mmcamera(machine_config &config);
+	void pairsnb(machine_config &config);
+	void taiwanmb(machine_config &config);
+	void hanaoji(machine_config &config);
+	void lovehous(machine_config &config);
+	void hnxmasev(machine_config &config);
+	void mmaiko(machine_config &config);
+	void maiko(machine_config &config);
+	void mladyhtr(machine_config &config);
+	void omotesnd(machine_config &config);
+	void abunai(machine_config &config);
+	void gionbana(machine_config &config);
+	void mgmen89(machine_config &config);
+	void scandalm(machine_config &config);
+
+	void init_pairsten();
+	void init_telmahjn();
+	void init_gionbana();
+	void init_omotesnd();
+	void init_scandal();
+	void init_mgmen89();
+	void init_mjfocusm();
+	void init_mjfocus();
+	void init_pairsnb();
+	void init_mjnanpas();
+
+	DECLARE_READ_LINE_MEMBER(nb1413m3_outcoin_flag_r);
+
+private:
 	required_device<cpu_device> m_maincpu;
 	required_device<nb1413m3_device> m_nb1413m3;
 	required_device<screen_device> m_screen;
@@ -54,39 +98,26 @@ public:
 	int m_flipscreen_old;
 	emu_timer *m_blitter_timer;
 
-	DECLARE_READ8_MEMBER(palette_type1_r);
-	DECLARE_WRITE8_MEMBER(palette_type1_w);
-	DECLARE_READ8_MEMBER(palette_type2_r);
-	DECLARE_WRITE8_MEMBER(palette_type2_w);
-	DECLARE_READ8_MEMBER(palette_type3_r);
-	DECLARE_WRITE8_MEMBER(palette_type3_w);
-	DECLARE_WRITE8_MEMBER(clutsel_w);
-	DECLARE_READ8_MEMBER(clut_r);
-	DECLARE_WRITE8_MEMBER(clut_w);
-	DECLARE_WRITE8_MEMBER(blitter_w);
-	DECLARE_WRITE8_MEMBER(scrolly_w);
-	DECLARE_WRITE8_MEMBER(vramsel_w);
-	DECLARE_WRITE8_MEMBER(romsel_w);
+	uint8_t palette_type1_r(offs_t offset);
+	void palette_type1_w(offs_t offset, uint8_t data);
+	uint8_t palette_type2_r(offs_t offset);
+	void palette_type2_w(offs_t offset, uint8_t data);
+	uint8_t palette_type3_r(offs_t offset);
+	void palette_type3_w(offs_t offset, uint8_t data);
+	void clutsel_w(uint8_t data);
+	uint8_t clut_r(offs_t offset);
+	void clut_w(offs_t offset, uint8_t data);
+	void blitter_w(offs_t offset, uint8_t data);
+	void scrolly_w(uint8_t data);
+	void vramsel_w(uint8_t data);
+	void romsel_w(uint8_t data);
 
-	DECLARE_READ8_MEMBER(taiwanmb_unk_r);
-	DECLARE_WRITE8_MEMBER(taiwanmb_blitter_w);
-	DECLARE_WRITE8_MEMBER(taiwanmb_gfxdraw_w);
-	DECLARE_WRITE8_MEMBER(taiwanmb_gfxflag_w);
-	DECLARE_WRITE8_MEMBER(taiwanmb_mcu_w);
+	uint8_t taiwanmb_unk_r();
+	void taiwanmb_blitter_w(offs_t offset, uint8_t data);
+	void taiwanmb_gfxdraw_w(uint8_t data);
+	void taiwanmb_gfxflag_w(uint8_t data);
+	void taiwanmb_mcu_w(uint8_t data);
 
-	DECLARE_CUSTOM_INPUT_MEMBER(nb1413m3_busyflag_r);
-	DECLARE_CUSTOM_INPUT_MEMBER(nb1413m3_outcoin_flag_r);
-
-	DECLARE_DRIVER_INIT(pairsten);
-	DECLARE_DRIVER_INIT(telmahjn);
-	DECLARE_DRIVER_INIT(gionbana);
-	DECLARE_DRIVER_INIT(omotesnd);
-	DECLARE_DRIVER_INIT(scandal);
-	DECLARE_DRIVER_INIT(mgmen89);
-	DECLARE_DRIVER_INIT(mjfocusm);
-	DECLARE_DRIVER_INIT(mjfocus);
-	DECLARE_DRIVER_INIT(pairsnb);
-	DECLARE_DRIVER_INIT(mjnanpas);
 	virtual void video_start() override;
 	DECLARE_VIDEO_START(_1layer);
 
@@ -99,6 +130,30 @@ public:
 	void common_save_state();
 	void postload();
 
-protected:
+	void bananadr_io_map(address_map &map);
+	void club90s_map(address_map &map);
+	void gionbana_io_map(address_map &map);
+	void gionbana_map(address_map &map);
+	void hanamomo_io_map(address_map &map);
+	void hanamomo_map(address_map &map);
+	void hanaoji_map(address_map &map);
+	void hnageman_map(address_map &map);
+	void hnxmasev_map(address_map &map);
+	void lovehous_io_map(address_map &map);
+	void lovehous_map(address_map &map);
+	void maiko_io_map(address_map &map);
+	void maiko_map(address_map &map);
+	void mgion_io_map(address_map &map);
+	void mgion_map(address_map &map);
+	void mmaiko_map(address_map &map);
+	void msjiken_io_map(address_map &map);
+	void omotesnd_io_map(address_map &map);
+	void omotesnd_map(address_map &map);
+	void scandal_io_map(address_map &map);
+	void scandalm_io_map(address_map &map);
+	void scandalm_map(address_map &map);
+	void taiwanmb_io_map(address_map &map);
+	void taiwanmb_map(address_map &map);
+
 	virtual void device_timer(emu_timer &timer, device_timer_id id, int param, void *ptr) override;
 };

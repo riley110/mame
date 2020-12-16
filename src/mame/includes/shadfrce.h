@@ -1,16 +1,22 @@
 // license:BSD-3-Clause
 // copyright-holders:David Haywood
+#ifndef MAME_INCLUDES_SHADFRCE_H
+#define MAME_INCLUDES_SHADFRCE_H
+
+#pragma once
 
 #include "machine/gen_latch.h"
 #include "machine/timer.h"
 #include "sound/okim6295.h"
+#include "emupal.h"
 #include "screen.h"
+#include "tilemap.h"
 
 class shadfrce_state : public driver_device
 {
 public:
-	shadfrce_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
+	shadfrce_state(const machine_config &mconfig, device_type type, const char *tag) :
+		driver_device(mconfig, type, tag),
 		m_maincpu(*this, "maincpu"),
 		m_audiocpu(*this, "audiocpu"),
 		m_oki(*this, "oki"),
@@ -29,8 +35,15 @@ public:
 		m_fgvideoram(*this, "fgvideoram"),
 		m_bg0videoram(*this, "bg0videoram"),
 		m_bg1videoram(*this, "bg1videoram"),
-		m_spvideoram(*this, "spvideoram") { }
+		m_spvideoram(*this, "spvideoram")
+	{ }
 
+	void shadfrce(machine_config &config);
+
+protected:
+	virtual void video_start() override;
+
+private:
 	required_device<cpu_device> m_maincpu;
 	required_device<cpu_device> m_audiocpu;
 	required_device<okim6295_device> m_oki;
@@ -64,30 +77,33 @@ public:
 	int m_vblank;
 	int m_prev_value;
 
-	DECLARE_WRITE16_MEMBER(flip_screen);
-	DECLARE_READ16_MEMBER(input_ports_r);
-	DECLARE_WRITE8_MEMBER(screen_brt_w);
-	DECLARE_WRITE16_MEMBER(irq_ack_w);
-	DECLARE_WRITE16_MEMBER(irq_w);
-	DECLARE_WRITE16_MEMBER(scanline_w);
-	DECLARE_WRITE16_MEMBER(fgvideoram_w);
-	DECLARE_WRITE16_MEMBER(bg0videoram_w);
-	DECLARE_WRITE16_MEMBER(bg1videoram_w);
-	DECLARE_WRITE16_MEMBER(bg0scrollx_w);
-	DECLARE_WRITE16_MEMBER(bg0scrolly_w);
-	DECLARE_WRITE16_MEMBER(bg1scrollx_w);
-	DECLARE_WRITE16_MEMBER(bg1scrolly_w);
-	DECLARE_WRITE8_MEMBER(oki_bankswitch_w);
+	void flip_screen(uint16_t data);
+	uint16_t input_ports_r(offs_t offset);
+	void screen_brt_w(uint8_t data);
+	void irq_ack_w(offs_t offset, uint16_t data);
+	void irq_w(uint16_t data);
+	void scanline_w(uint16_t data);
+	void fgvideoram_w(offs_t offset, uint16_t data);
+	void bg0videoram_w(offs_t offset, uint16_t data);
+	void bg1videoram_w(offs_t offset, uint16_t data);
+	void bg0scrollx_w(uint16_t data);
+	void bg0scrolly_w(uint16_t data);
+	void bg1scrollx_w(uint16_t data);
+	void bg1scrolly_w(uint16_t data);
+	void oki_bankswitch_w(uint8_t data);
 
 	TILE_GET_INFO_MEMBER(get_fgtile_info);
 	TILE_GET_INFO_MEMBER(get_bg0tile_info);
 	TILE_GET_INFO_MEMBER(get_bg1tile_info);
-
-	virtual void video_start() override;
 
 	TIMER_DEVICE_CALLBACK_MEMBER(scanline);
 
 	uint32_t screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 	DECLARE_WRITE_LINE_MEMBER(screen_vblank);
 	void draw_sprites(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect );
+
+	void shadfrce_map(address_map &map);
+	void shadfrce_sound_map(address_map &map);
 };
+
+#endif // MAME_INCLUDES_SHADFRCE_H

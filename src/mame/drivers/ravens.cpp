@@ -7,14 +7,14 @@ Ravensburger Selbstbaucomputer
 This is a project described in "Ravensburger" magazine. You had to make
 the entire thing (including the circuit boards) yourself.
 
-http://petersieg.bplaced.com/?2650_Computer:2650_Selbstbaucomputer
 
+https://web.archive.org/web/20160321001634/http://petersieg.bplaced.com/?2650_Computer:2650_Selbstbaucomputer
         2013-04-23 Skeleton driver.
 
 
 No instructions, no schematics - it's all guesswork.
 
-The cassette saves a noise but it returns a bad load.
+The cassette saves a noise but it returns a bad load. This is why MNW is set.
 
 
 Version 0.9
@@ -57,12 +57,12 @@ Commands (must be in uppercase):
 A    Examine memory; press C to alter memory
 B    Set breakpoint?
 C    View breakpoint?
-D    Dump to screen and tape (at the same time)
+D    Dump to screen and tape (at the same time) D 00 04 dumps pages 0 to 4
 E    Execute
-I    ?
+I    Registers? (Esc to quit)
 L    Load
-R    ?
-V    Verify?
+R    ? (Esc to quit)
+V    Verify
 
 ToDo:
 - Cassette
@@ -75,58 +75,87 @@ ToDo:
 #include "imagedev/cassette.h"
 #include "imagedev/snapquik.h"
 #include "machine/terminal.h"
-#include "sound/wave.h"
 #include "speaker.h"
 
 #include "ravens.lh"
 
 
-class ravens_state : public driver_device
+class ravens_base : public driver_device
 {
 public:
-	ravens_state(const machine_config &mconfig, device_type type, const char *tag)
+	ravens_base(const machine_config &mconfig, device_type type, const char *tag)
 		: driver_device(mconfig, type, tag)
 		, m_maincpu(*this, "maincpu")
-		, m_terminal(*this, "terminal")
 		, m_cass(*this, "cassette")
 	{ }
 
-	DECLARE_READ8_MEMBER(port07_r);
-	DECLARE_READ8_MEMBER(port17_r);
-	DECLARE_WRITE8_MEMBER(port1b_w);
-	DECLARE_WRITE8_MEMBER(port1c_w);
-	DECLARE_WRITE8_MEMBER(display_w);
-	DECLARE_WRITE8_MEMBER(leds_w);
-	void kbd_put(u8 data);
-	DECLARE_MACHINE_RESET(ravens2);
+protected:
 	DECLARE_READ_LINE_MEMBER(cass_r);
 	DECLARE_WRITE_LINE_MEMBER(cass_w);
-	DECLARE_QUICKLOAD_LOAD_MEMBER( ravens );
-
-private:
-	uint8_t m_term_char;
-	uint8_t m_term_data;
-	required_device<cpu_device> m_maincpu;
-	optional_device<generic_terminal_device> m_terminal;
+	DECLARE_QUICKLOAD_LOAD_MEMBER(quickload_cb);
+	void mem_map(address_map &map);
+	required_device<s2650_device> m_maincpu;
 	required_device<cassette_image_device> m_cass;
 };
 
-WRITE_LINE_MEMBER( ravens_state::cass_w )
+class ravens_state : public ravens_base
+{
+public:
+	ravens_state(const machine_config &mconfig, device_type type, const char *tag)
+		: ravens_base(mconfig, type, tag)
+		, m_digits(*this, "digit%u", 0U)
+	{ }
+
+	void ravens(machine_config &config);
+
+private:
+	virtual void machine_start() override { m_digits.resolve(); }
+	void io_map(address_map &map);
+	u8 port17_r();
+	void display_w(offs_t offset, u8 data);
+	void leds_w(u8 data);
+	output_finder<7> m_digits;
+};
+
+class ravens2_state : public ravens_base
+{
+public:
+	ravens2_state(const machine_config &mconfig, device_type type, const char *tag)
+		: ravens_base(mconfig, type, tag)
+		, m_terminal(*this, "terminal")
+	{ }
+
+	void ravens2(machine_config &config);
+
+private:
+	virtual void machine_reset() override;
+	virtual void machine_start() override;
+	void io_map(address_map &map);
+	void kbd_put(u8 data);
+	u8 port07_r();
+	void port1b_w(u8 data);
+	void port1c_w(u8 data);
+	u8 m_term_out;
+	u8 m_term_in;
+	required_device<generic_terminal_device> m_terminal;
+};
+
+WRITE_LINE_MEMBER( ravens_base::cass_w )
 {
 	m_cass->output(state ? -1.0 : +1.0);
 }
 
-READ_LINE_MEMBER( ravens_state::cass_r )
+READ_LINE_MEMBER( ravens_base::cass_r )
 {
 	return (m_cass->input() > 0.03) ? 1 : 0;
 }
 
-WRITE8_MEMBER( ravens_state::display_w )
+void ravens_state::display_w(offs_t offset, u8 data)
 {
-	output().set_digit_value(offset, data);
+	m_digits[offset] = data;
 }
 
-WRITE8_MEMBER( ravens_state::leds_w )
+void ravens_state::leds_w(u8 data)
 {
 	char ledname[8];
 	for (int i = 0; i < 8; i++)
@@ -136,16 +165,16 @@ WRITE8_MEMBER( ravens_state::leds_w )
 	}
 }
 
-READ8_MEMBER( ravens_state::port07_r )
+u8 ravens2_state::port07_r()
 {
-	uint8_t ret = m_term_data;
-	m_term_data = 0x80;
+	u8 ret = m_term_in;
+	m_term_in = 0x80;
 	return ret;
 }
 
-READ8_MEMBER( ravens_state::port17_r )
+u8 ravens_state::port17_r()
 {
-	uint8_t keyin, i;
+	u8 keyin, i;
 
 	keyin = ioport("X0")->read();
 	if (keyin != 0xff)
@@ -170,57 +199,66 @@ READ8_MEMBER( ravens_state::port17_r )
 	return 0;
 }
 
-WRITE8_MEMBER( ravens_state::port1b_w )
+void ravens2_state::port1b_w(u8 data)
 {
 	if (BIT(data, 7))
 		return;
+	if (data == 1) // don't send PSU register to terminal
+		return;
 	else
-	if ((data == 0x08 && m_term_char == 0x20))
+	if ((data == 0x08 && m_term_out == 0x20))
 		data = 0x0c; // FormFeed
 	else
-	if ((data == 0x0a && m_term_char == 0x20))
+	if ((data == 0x0a && m_term_out == 0x20))
 		data = 0x0a; // LineFeed
 	else
-	if ((data == 0x01 && m_term_char == 0xc2))
+	if ((data == 0x01 && m_term_out == 0xc2))
 		data = 0x0d; // CarriageReturn
 	else
-		data = m_term_char;
+		data = m_term_out;
 
-	m_terminal->write(space, 0, data);
+	m_terminal->write(data);
 }
 
-WRITE8_MEMBER( ravens_state::port1c_w )
+void ravens2_state::port1c_w(u8 data)
 {
-	m_term_char = data;
+	m_term_out = data;
 }
 
-MACHINE_RESET_MEMBER( ravens_state, ravens2 )
+void ravens2_state::machine_reset()
 {
-	m_term_data = 0x80;
-	output().set_digit_value(6, 0);
+	m_term_in = 0x80;
 }
 
+void ravens2_state::machine_start()
+{
+	save_item(NAME(m_term_out));
+	save_item(NAME(m_term_in));
+}
 
-static ADDRESS_MAP_START( ravens_mem, AS_PROGRAM, 8, ravens_state )
-	ADDRESS_MAP_UNMAP_HIGH
-	AM_RANGE( 0x0000, 0x07ff) AM_ROM
-	AM_RANGE( 0x0800, 0x1fff) AM_RAM
-	AM_RANGE( 0x2000, 0x7FFF) AM_RAM // for quickload, optional
-ADDRESS_MAP_END
+void ravens_base::mem_map(address_map &map)
+{
+	map.unmap_value_high();
+	map(0x0000, 0x07ff).rom();
+	map(0x0800, 0x1fff).ram();
+	map(0x2000, 0x7FFF).ram(); // for quickload, optional
+}
 
-static ADDRESS_MAP_START( ravens_io, AS_IO, 8, ravens_state )
-	ADDRESS_MAP_UNMAP_HIGH
-	AM_RANGE(0x09, 0x09) AM_WRITE(leds_w) // LED output port
-	AM_RANGE(0x10, 0x15) AM_WRITE(display_w) // 6-led display
-	AM_RANGE(0x17, 0x17) AM_READ(port17_r) // pushbuttons
-ADDRESS_MAP_END
+void ravens_state::io_map(address_map &map)
+{
+	map.unmap_value_high();
+	map(0x09, 0x09).w(FUNC(ravens_state::leds_w)); // LED output port
+	map(0x10, 0x15).w(FUNC(ravens_state::display_w)); // 6-led display
+	map(0x17, 0x17).r(FUNC(ravens_state::port17_r)); // pushbuttons
+}
 
-static ADDRESS_MAP_START( ravens2_io, AS_IO, 8, ravens_state )
-	ADDRESS_MAP_UNMAP_HIGH
-	AM_RANGE(0x07, 0x07) AM_READ(port07_r)
-	AM_RANGE(0x1b, 0x1b) AM_WRITE(port1b_w)
-	AM_RANGE(0x1c, 0x1c) AM_WRITE(port1c_w)
-ADDRESS_MAP_END
+void ravens2_state::io_map(address_map &map)
+{
+	map.unmap_value_high();
+	map(0x07, 0x07).r(FUNC(ravens2_state::port07_r));
+	map(0x1b, 0x1b).w(FUNC(ravens2_state::port1b_w));
+	map(0x1c, 0x1c).w(FUNC(ravens2_state::port1c_w));
+}
 
 /* Input ports */
 static INPUT_PORTS_START( ravens )
@@ -255,20 +293,20 @@ static INPUT_PORTS_START( ravens )
 	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_NAME("???") PORT_CODE(KEYCODE_O) PORT_CHAR('O')
 INPUT_PORTS_END
 
-void ravens_state::kbd_put(u8 data)
+void ravens2_state::kbd_put(u8 data)
 {
 	if (data > 0x60) data -= 0x20; // fold to uppercase
-	m_term_data = data;
+	m_term_in = data;
 }
 
-QUICKLOAD_LOAD_MEMBER( ravens_state, ravens )
+QUICKLOAD_LOAD_MEMBER(ravens_base::quickload_cb)
 {
 	address_space &space = m_maincpu->space(AS_PROGRAM);
 	int i;
 	int quick_addr = 0x900;
 	int exec_addr;
 	int quick_length;
-	std::vector<uint8_t> quick_data;
+	std::vector<u8> quick_data;
 	int read_;
 	image_init_result result = image_init_result::FAIL;
 
@@ -325,67 +363,67 @@ QUICKLOAD_LOAD_MEMBER( ravens_state, ravens )
 	return result;
 }
 
-static MACHINE_CONFIG_START( ravens )
+void ravens_state::ravens(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu",S2650, XTAL_1MHz) // frequency is unknown
-	MCFG_CPU_PROGRAM_MAP(ravens_mem)
-	MCFG_CPU_IO_MAP(ravens_io)
-	MCFG_S2650_SENSE_INPUT(READLINE(ravens_state, cass_r))
-	MCFG_S2650_FLAG_OUTPUT(WRITELINE(ravens_state, cass_w))
+	S2650(config, m_maincpu, XTAL(1'000'000)); // frequency is unknown
+	m_maincpu->set_addrmap(AS_PROGRAM, &ravens_state::mem_map);
+	m_maincpu->set_addrmap(AS_IO, &ravens_state::io_map);
+	m_maincpu->sense_handler().set(FUNC(ravens_state::cass_r));
+	m_maincpu->flag_handler().set(FUNC(ravens_state::cass_w));
 
 	/* video hardware */
-	MCFG_DEFAULT_LAYOUT(layout_ravens)
+	config.set_default_layout(layout_ravens);
 
 	/* quickload */
-	MCFG_QUICKLOAD_ADD("quickload", ravens_state, ravens, "pgm", 1)
+	QUICKLOAD(config, "quickload", "pgm", attotime::from_seconds(1)).set_load_callback(FUNC(ravens_state::quickload_cb));
+
+	SPEAKER(config, "mono").front_center();
 
 	/* cassette */
-	MCFG_CASSETTE_ADD( "cassette" )
-	MCFG_SPEAKER_STANDARD_MONO("mono")
-	MCFG_SOUND_WAVE_ADD(WAVE_TAG, "cassette")
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.05)
-MACHINE_CONFIG_END
+	CASSETTE(config, m_cass);
+	m_cass->add_route(ALL_OUTPUTS, "mono", 0.05);
+}
 
-static MACHINE_CONFIG_START( ravens2 )
+void ravens2_state::ravens2(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu",S2650, XTAL_1MHz) // frequency is unknown
-	MCFG_CPU_PROGRAM_MAP(ravens_mem)
-	MCFG_CPU_IO_MAP(ravens2_io)
-	MCFG_S2650_SENSE_INPUT(READLINE(ravens_state, cass_r))
-	MCFG_S2650_FLAG_OUTPUT(WRITELINE(ravens_state, cass_w))
-
-	MCFG_MACHINE_RESET_OVERRIDE(ravens_state, ravens2)
+	S2650(config, m_maincpu, XTAL(1'000'000)); // frequency is unknown
+	m_maincpu->set_addrmap(AS_PROGRAM, &ravens2_state::mem_map);
+	m_maincpu->set_addrmap(AS_IO, &ravens2_state::io_map);
+	m_maincpu->sense_handler().set(FUNC(ravens2_state::cass_r));
+	m_maincpu->flag_handler().set(FUNC(ravens2_state::cass_w));
 
 	/* video hardware */
-	MCFG_DEVICE_ADD("terminal", GENERIC_TERMINAL, 0)
-	MCFG_GENERIC_TERMINAL_KEYBOARD_CB(PUT(ravens_state, kbd_put))
+	GENERIC_TERMINAL(config, m_terminal, 0);
+	m_terminal->set_keyboard_callback(FUNC(ravens2_state::kbd_put));
 
 	/* quickload */
-	MCFG_QUICKLOAD_ADD("quickload", ravens_state, ravens, "pgm", 1)
+	QUICKLOAD(config, "quickload", "pgm", attotime::from_seconds(1)).set_load_callback(FUNC(ravens2_state::quickload_cb));
+
+	SPEAKER(config, "mono").front_center();
 
 	/* cassette */
-	MCFG_CASSETTE_ADD( "cassette" )
-	MCFG_SPEAKER_STANDARD_MONO("mono")
-	MCFG_SOUND_WAVE_ADD(WAVE_TAG, "cassette")
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.05)
-MACHINE_CONFIG_END
+	CASSETTE(config, m_cass);
+	m_cass->add_route(ALL_OUTPUTS, "mono", 0.05);
+}
 
 /* ROM definition */
 ROM_START( ravens )
-	ROM_REGION( 0x8000, "maincpu", 0 )
+	ROM_REGION( 0x0800, "maincpu", 0 )
 	ROM_SYSTEM_BIOS( 0, "v1.0", "V1.0" )
-	ROMX_LOAD( "mon_v1.0.bin", 0x0000, 0x0800, CRC(785eb1ad) SHA1(c316b8ac32ab6aa37746af37b9f81a23367fedd8), ROM_BIOS(1))
+	ROMX_LOAD( "mon_v1.0.bin", 0x0000, 0x0800, CRC(785eb1ad) SHA1(c316b8ac32ab6aa37746af37b9f81a23367fedd8), ROM_BIOS(0))
 	ROM_SYSTEM_BIOS( 1, "v0.9", "V0.9" )
-	ROMX_LOAD( "mon_v0_9.bin", 0x0000, 0x07b5, CRC(2f9b9178) SHA1(ec2ebbc80ee9ff2502c1409ab4f99127032ed724), ROM_BIOS(2))
+	ROMX_LOAD( "mon_v0_9.bin", 0x0000, 0x07b5, CRC(2f9b9178) SHA1(ec2ebbc80ee9ff2502c1409ab4f99127032ed724), ROM_BIOS(1))
 ROM_END
 
 ROM_START( ravens2 )
-	ROM_REGION( 0x8000, "maincpu", 0 )
+	ROM_REGION( 0x0800, "maincpu", 0 )
 	ROM_LOAD( "mon_v2.0.bin", 0x0000, 0x0800, CRC(bcd47c58) SHA1(f261a3f128fbedbf59a8b5480758fff4d7f76de1))
 ROM_END
 
 /* Driver */
 
-/*    YEAR  NAME     PARENT   COMPAT   MACHINE  INPUT   CLASS         INIT  COMPANY                            FULLNAME                               FLAGS */
-COMP( 1984, ravens,  0,       0,       ravens,  ravens, ravens_state, 0,    "Joseph Glagla and Dieter Feiler", "Ravensburger Selbstbaucomputer V0.9", MACHINE_NO_SOUND_HW )
-COMP( 1985, ravens2, ravens,  0,       ravens2, ravens, ravens_state, 0,    "Joseph Glagla and Dieter Feiler", "Ravensburger Selbstbaucomputer V2.0", MACHINE_NO_SOUND_HW )
+/*    YEAR  NAME     PARENT  COMPAT  MACHINE  INPUT   CLASS          INIT        COMPANY                            FULLNAME                               FLAGS */
+COMP( 1984, ravens,  0,      0,      ravens,  ravens, ravens_state,  empty_init, "Joseph Glagla and Dieter Feiler", "Ravensburger Selbstbaucomputer V0.9", MACHINE_NOT_WORKING | MACHINE_NO_SOUND_HW | MACHINE_SUPPORTS_SAVE )
+COMP( 1985, ravens2, ravens, 0,      ravens2, ravens, ravens2_state, empty_init, "Joseph Glagla and Dieter Feiler", "Ravensburger Selbstbaucomputer V2.0", MACHINE_NOT_WORKING | MACHINE_NO_SOUND_HW | MACHINE_SUPPORTS_SAVE )

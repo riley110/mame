@@ -14,7 +14,7 @@
 #define DIABLO_HD_0 "diablo0"
 #define DIABLO_HD_1 "diablo1"
 
-extern const device_type DIABLO_HD;
+DECLARE_DEVICE_TYPE(DIABLO_HD, diablo_hd_device)
 
 class diablo_hd_device : public device_t
 {
@@ -101,7 +101,7 @@ private:
 	int m_sector;                           //!< current sector number in track
 	int m_page;                             //!< current page (derived from cylinder, head and sector)
 	std::unique_ptr<uint8_t[]> m_cache[2 * DIABLO_PAGES];                        //!< pages raw bytes
-	uint32_t** m_bits;                        //!< pages expanded to bits
+	std::unique_ptr<std::unique_ptr<uint32_t[]>[]> m_bits;                       //!< pages expanded to bits
 	int m_rdfirst;                          //!< set to first bit of a sector that is read from
 	int m_rdlast;                           //!< set to last bit of a sector that was read from
 	int m_wrfirst;                          //!< set to non-zero if a sector is written to
@@ -162,7 +162,4 @@ private:
 	void sector_mark_0();
 };
 
-#define MCFG_DIABLO_DRIVES_ADD()    \
-	MCFG_DEVICE_ADD(DIABLO_HD_0, DIABLO_HD, 3333333)    \
-	MCFG_DEVICE_ADD(DIABLO_HD_1, DIABLO_HD, 3333333)
 #endif  // !defined(_DIABLO_HD_DEVICE_)

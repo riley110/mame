@@ -40,7 +40,7 @@
 
 ***************************************************************************/
 
-WRITE8_MEMBER(cloak_state::cloak_paletteram_w)
+void cloak_state::cloak_paletteram_w(offs_t offset, uint8_t data)
 {
 	m_palette_ram[offset & 0x3f] = ((offset & 0x40) << 2) | data;
 	set_pen(offset & 0x3f);
@@ -66,19 +66,19 @@ void cloak_state::set_pen(int i)
 	bit0 = (~palette_ram[i] >> 6) & 0x01;
 	bit1 = (~palette_ram[i] >> 7) & 0x01;
 	bit2 = (~palette_ram[i] >> 8) & 0x01;
-	r = combine_3_weights(weights, bit0, bit1, bit2);
+	r = combine_weights(weights, bit0, bit1, bit2);
 
 	/* green component */
 	bit0 = (~palette_ram[i] >> 3) & 0x01;
 	bit1 = (~palette_ram[i] >> 4) & 0x01;
 	bit2 = (~palette_ram[i] >> 5) & 0x01;
-	g = combine_3_weights(weights, bit0, bit1, bit2);
+	g = combine_weights(weights, bit0, bit1, bit2);
 
 	/* blue component */
 	bit0 = (~palette_ram[i] >> 0) & 0x01;
 	bit1 = (~palette_ram[i] >> 1) & 0x01;
 	bit2 = (~palette_ram[i] >> 2) & 0x01;
-	b = combine_3_weights(weights, bit0, bit1, bit2);
+	b = combine_weights(weights, bit0, bit1, bit2);
 
 	m_palette->set_pen_color(i, rgb_t(r, g, b));
 }
@@ -90,7 +90,7 @@ void cloak_state::set_current_bitmap_videoram_pointer()
 	m_current_bitmap_videoram_displayed = m_bitmap_videoram_selected ? m_bitmap_videoram2.get() : m_bitmap_videoram1.get();
 }
 
-WRITE8_MEMBER(cloak_state::cloak_clearbmp_w)
+void cloak_state::cloak_clearbmp_w(uint8_t data)
 {
 //  m_screen->update_now();
 	m_screen->update_partial(m_screen->vpos());
@@ -115,7 +115,7 @@ void cloak_state::adjust_xy(int offset)
 	}
 }
 
-READ8_MEMBER(cloak_state::graph_processor_r)
+uint8_t cloak_state::graph_processor_r(offs_t offset)
 {
 	uint8_t ret = m_current_bitmap_videoram_displayed[(m_bitmap_videoram_address_y << 8) | m_bitmap_videoram_address_x];
 
@@ -124,7 +124,7 @@ READ8_MEMBER(cloak_state::graph_processor_r)
 	return ret;
 }
 
-WRITE8_MEMBER(cloak_state::graph_processor_w)
+void cloak_state::graph_processor_w(offs_t offset, uint8_t data)
 {
 	switch (offset)
 	{
@@ -138,11 +138,9 @@ WRITE8_MEMBER(cloak_state::graph_processor_w)
 	}
 }
 
-WRITE8_MEMBER(cloak_state::cloak_videoram_w)
+void cloak_state::cloak_videoram_w(offs_t offset, uint8_t data)
 {
-	uint8_t *videoram = m_videoram;
-
-	videoram[offset] = data;
+	m_videoram[offset] = data;
 	m_bg_tilemap->mark_tile_dirty(offset);
 }
 
@@ -156,12 +154,12 @@ TILE_GET_INFO_MEMBER(cloak_state::get_bg_tile_info)
 	uint8_t *videoram = m_videoram;
 	int code = videoram[tile_index];
 
-	SET_TILE_INFO_MEMBER(0, code, 0, 0);
+	tileinfo.set(0, code, 0, 0);
 }
 
 void cloak_state::video_start()
 {
-	m_bg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(cloak_state::get_bg_tile_info),this), TILEMAP_SCAN_ROWS, 8, 8, 32, 32);
+	m_bg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(cloak_state::get_bg_tile_info)), TILEMAP_SCAN_ROWS, 8, 8, 32, 32);
 
 	m_bitmap_videoram1 = std::make_unique<uint8_t[]>(256*256);
 	m_bitmap_videoram2 = std::make_unique<uint8_t[]>(256*256);
@@ -172,9 +170,9 @@ void cloak_state::video_start()
 	save_item(NAME(m_bitmap_videoram_address_x));
 	save_item(NAME(m_bitmap_videoram_address_y));
 	save_item(NAME(m_bitmap_videoram_selected));
-	save_pointer(NAME(m_bitmap_videoram1.get()), 256*256);
-	save_pointer(NAME(m_bitmap_videoram2.get()), 256*256);
-	save_pointer(NAME(m_palette_ram.get()), NUM_PENS);
+	save_pointer(NAME(m_bitmap_videoram1), 256*256);
+	save_pointer(NAME(m_bitmap_videoram2), 256*256);
+	save_pointer(NAME(m_palette_ram), NUM_PENS);
 	machine().save().register_postload(save_prepost_delegate(FUNC(cloak_state::set_current_bitmap_videoram_pointer), this));
 }
 
@@ -182,8 +180,8 @@ void cloak_state::draw_bitmap(bitmap_ind16 &bitmap, const rectangle &cliprect)
 {
 	int x, y;
 
-	for (y = cliprect.min_y; y <= cliprect.max_y; y++)
-		for (x = cliprect.min_x; x <= cliprect.max_x; x++)
+	for (y = cliprect.top(); y <= cliprect.bottom(); y++)
+		for (x = cliprect.left(); x <= cliprect.right(); x++)
 		{
 			pen_t pen = m_current_bitmap_videoram_displayed[(y << 8) | x] & 0x07;
 

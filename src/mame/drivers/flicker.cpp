@@ -53,30 +53,39 @@ public:
 		, m_maincpu(*this, "maincpu")
 		, m_testport(*this, "TEST")
 		, m_coinport(*this, "COIN")
-		, m_switch(*this, "SWITCH.%X", 0)
+		, m_switch(*this, "SWITCH.%X", 0U)
+		, m_digits(*this, "digit%u", 0U)
 	{
 	}
-
-	DECLARE_WRITE8_MEMBER(ram0_out) { m_ram0_output = data; }
-	DECLARE_WRITE8_MEMBER(rom0_out) { m_rom0_output = data; }
-	DECLARE_WRITE8_MEMBER(rom1_out) { m_rom1_output = data; }
-	DECLARE_READ8_MEMBER(rom2_in);
-
-	DECLARE_WRITE_LINE_MEMBER(cm_ram1_w);
-	DECLARE_WRITE_LINE_MEMBER(cm_ram2_w);
 
 	DECLARE_CUSTOM_INPUT_MEMBER(coins_in);
 
 	DECLARE_INPUT_CHANGED_MEMBER(test_changed);
 
-protected:
-	virtual void driver_start() override;
+	void flicker(machine_config &config);
 
 private:
+	virtual void driver_start() override;
+
+	void ram0_out(u8 data) { m_ram0_output = data; }
+	void rom0_out(u8 data) { m_rom0_output = data; }
+	void rom1_out(u8 data) { m_rom1_output = data; }
+	u8 rom2_in();
+
+	DECLARE_WRITE_LINE_MEMBER(cm_ram1_w);
+	DECLARE_WRITE_LINE_MEMBER(cm_ram2_w);
+
+	void flicker_memory(address_map &map);
+	void flicker_ram_ports(address_map &map);
+	void flicker_rom(address_map &map);
+	void flicker_rom_ports(address_map &map);
+	void flicker_status(address_map &map);
+
 	required_device<i4004_cpu_device>   m_maincpu;
 	required_ioport                     m_testport;
 	required_ioport                     m_coinport;
 	required_ioport_array<16>           m_switch;
+	output_finder<16>                   m_digits;
 
 	bool    m_cm_ram1 = false, m_cm_ram2 = false;
 	u8      m_ram0_output = 0U, m_rom0_output = 0U, m_rom1_output = 0U;
@@ -84,49 +93,54 @@ private:
 };
 
 
-static ADDRESS_MAP_START( flicker_rom, i4004_cpu_device::AS_ROM, 8, flicker_state )
-	AM_RANGE(0x0000, 0x03ff) AM_ROM AM_REGION("maincpu", 0)
-ADDRESS_MAP_END
+void flicker_state::flicker_rom(address_map &map)
+{
+	map(0x0000, 0x03ff).rom().region("maincpu", 0);
+}
 
-static ADDRESS_MAP_START( flicker_memory, i4004_cpu_device::AS_RAM_MEMORY, 8, flicker_state )
-	AM_RANGE(0x0000, 0x003f) AM_RAM AM_SHARE("memory")
-ADDRESS_MAP_END
+void flicker_state::flicker_memory(address_map &map)
+{
+	map(0x0000, 0x003f).ram().share("memory");
+}
 
-static ADDRESS_MAP_START( flicker_status, i4004_cpu_device::AS_RAM_STATUS, 8, flicker_state )
-	AM_RANGE(0x0000, 0x000f) AM_RAM AM_SHARE("status")
-ADDRESS_MAP_END
+void flicker_state::flicker_status(address_map &map)
+{
+	map(0x0000, 0x000f).ram().share("status");
+}
 
-static ADDRESS_MAP_START( flicker_rom_ports, i4004_cpu_device::AS_ROM_PORTS, 8, flicker_state )
-	AM_RANGE(0x0000, 0x000f) AM_MIRROR(0x0700) AM_WRITE(rom0_out)
-	AM_RANGE(0x0010, 0x001f) AM_MIRROR(0x0700) AM_WRITE(rom1_out)
-	AM_RANGE(0x0020, 0x002f) AM_MIRROR(0x0700) AM_READ(rom2_in)
-ADDRESS_MAP_END
+void flicker_state::flicker_rom_ports(address_map &map)
+{
+	map(0x0000, 0x000f).mirror(0x0700).w(FUNC(flicker_state::rom0_out));
+	map(0x0010, 0x001f).mirror(0x0700).w(FUNC(flicker_state::rom1_out));
+	map(0x0020, 0x002f).mirror(0x0700).r(FUNC(flicker_state::rom2_in));
+}
 
-static ADDRESS_MAP_START( flicker_ram_ports, i4004_cpu_device::AS_RAM_PORTS, 8, flicker_state )
-	AM_RANGE(0x00, 0x00) AM_WRITE(ram0_out)
-ADDRESS_MAP_END
+void flicker_state::flicker_ram_ports(address_map &map)
+{
+	map(0x00, 0x00).w(FUNC(flicker_state::ram0_out));
+}
 
 static INPUT_PORTS_START( flicker )
 	PORT_START("TEST")
 	PORT_BIT(0x0001, IP_ACTIVE_HIGH, IPT_UNUSED)
-	PORT_BIT(0x0002, IP_ACTIVE_HIGH, IPT_OTHER)    PORT_NAME("Door Slam")     PORT_CODE(KEYCODE_HOME) PORT_CHANGED_MEMBER(DEVICE_SELF, flicker_state, test_changed, nullptr)
+	PORT_BIT(0x0002, IP_ACTIVE_HIGH, IPT_OTHER)    PORT_NAME("Door Slam")     PORT_CODE(KEYCODE_HOME) PORT_CHANGED_MEMBER(DEVICE_SELF, flicker_state, test_changed, 0)
 	PORT_BIT(0x001c, IP_ACTIVE_HIGH, IPT_UNKNOWN)  // called "two coins", "three coins", "four coins" in patent, purpose unknown
-	PORT_BIT(0x07e0, IP_ACTIVE_HIGH, IPT_SPECIAL)  PORT_CUSTOM_MEMBER(DEVICE_SELF, flicker_state, coins_in, nullptr)
+	PORT_BIT(0x07e0, IP_ACTIVE_HIGH, IPT_CUSTOM)  PORT_CUSTOM_MEMBER(flicker_state, coins_in)
 	PORT_BIT(0x0800, IP_ACTIVE_HIGH, IPT_TILT)
-	PORT_BIT(0x1000, IP_ACTIVE_HIGH, IPT_START)    PORT_NAME("Credit Button")                         PORT_CHANGED_MEMBER(DEVICE_SELF, flicker_state, test_changed, nullptr)
+	PORT_BIT(0x1000, IP_ACTIVE_HIGH, IPT_START)    PORT_NAME("Credit Button")                         PORT_CHANGED_MEMBER(DEVICE_SELF, flicker_state, test_changed, 0)
 	PORT_BIT(0x6000, IP_ACTIVE_HIGH, IPT_UNUSED)
-	PORT_BIT(0x8000, IP_ACTIVE_HIGH, IPT_SERVICE1) PORT_NAME("Test")                                  PORT_CHANGED_MEMBER(DEVICE_SELF, flicker_state, test_changed, nullptr)
+	PORT_BIT(0x8000, IP_ACTIVE_HIGH, IPT_SERVICE1) PORT_NAME("Test")                                  PORT_CHANGED_MEMBER(DEVICE_SELF, flicker_state, test_changed, 0)
 
 	// The coin slot would be connected to one of the lines via a wire jumper on a terminal strip
 	PORT_START("COIN")
-	PORT_CONFNAME(0x3f, 0x01, DEF_STR(Coinage)) PORT_CHANGED_MEMBER(DEVICE_SELF, flicker_state, test_changed, nullptr)
+	PORT_CONFNAME(0x3f, 0x01, DEF_STR(Coinage)) PORT_CHANGED_MEMBER(DEVICE_SELF, flicker_state, test_changed, 0)
 	PORT_CONFSETTING(   0x01, DEF_STR(1C_1C))
 	PORT_CONFSETTING(   0x02, DEF_STR(1C_2C))
 	PORT_CONFSETTING(   0x04, DEF_STR(1C_3C))
 	PORT_CONFSETTING(   0x08, DEF_STR(1C_4C))
 	PORT_CONFSETTING(   0x10, DEF_STR(1C_5C))
 	PORT_CONFSETTING(   0x20, DEF_STR(1C_6C))
-	PORT_BIT(0x80, IP_ACTIVE_HIGH, IPT_COIN1)   PORT_CHANGED_MEMBER(DEVICE_SELF, flicker_state, test_changed, nullptr)
+	PORT_BIT(0x80, IP_ACTIVE_HIGH, IPT_COIN1)   PORT_CHANGED_MEMBER(DEVICE_SELF, flicker_state, test_changed, 0)
 
 	PORT_START("SWITCH.0")
 	PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_OTHER)  PORT_NAME("Left Lane Target") PORT_CODE(KEYCODE_W)
@@ -266,7 +280,7 @@ static INPUT_PORTS_START( flicker )
 INPUT_PORTS_END
 
 
-READ8_MEMBER(flicker_state::rom2_in)
+u8 flicker_state::rom2_in()
 {
 	return (m_switch.size() > m_mux_col) ? m_switch[m_mux_col]->read() : 0;
 }
@@ -274,7 +288,7 @@ READ8_MEMBER(flicker_state::rom2_in)
 
 WRITE_LINE_MEMBER(flicker_state::cm_ram1_w)
 {
-	static constexpr uint8_t led_digits[16] = { 0x3f, 0x06, 0x5b, 0x4f, 0x66, 0x6d, 0x7d, 0x07, 0x7f, 0x6f, 0, 0, 0, 0, 0, 0 };
+	static constexpr u8 led_digits[16] = { 0x3f, 0x06, 0x5b, 0x4f, 0x66, 0x6d, 0x7d, 0x07, 0x7f, 0x6f, 0, 0, 0, 0, 0, 0 };
 	static constexpr char const *const lamp_matrix[][4] = {
 			{ nullptr,                "lamp_credit_lamp",  "lamp_flippers",    "lamp_special"            },
 			{ "lamp_a_lamp",          "lamp_b_lamp",       "lamp_c_lamp",      "lamp_d_lamp"             },
@@ -291,7 +305,7 @@ WRITE_LINE_MEMBER(flicker_state::cm_ram1_w)
 	if (!m_cm_ram1 && !state)
 	{
 		m_mux_col = m_ram0_output;
-		output().set_digit_value(m_mux_col, led_digits[m_rom0_output]);
+		m_digits[m_mux_col] = led_digits[m_rom0_output];
 		if (ARRAY_LENGTH(lamp_matrix) > m_mux_col)
 		{
 			if (lamp_matrix[m_mux_col][0])
@@ -370,6 +384,8 @@ INPUT_CHANGED_MEMBER(flicker_state::test_changed)
 
 void flicker_state::driver_start()
 {
+	m_digits.resolve();
+
 	save_item(NAME(m_cm_ram1));
 	save_item(NAME(m_cm_ram2));
 	save_item(NAME(m_ram0_output));
@@ -379,23 +395,24 @@ void flicker_state::driver_start()
 }
 
 
-static MACHINE_CONFIG_START(flicker)
+void flicker_state::flicker(machine_config &config)
+{
 	// basic machine hardware
-	MCFG_CPU_ADD("maincpu", I4004, XTAL_5MHz / 8)
-	MCFG_I4004_ROM_MAP(flicker_rom)
-	MCFG_I4004_RAM_MEMORY_MAP(flicker_memory)
-	MCFG_I4004_ROM_PORTS_MAP(flicker_rom_ports)
-	MCFG_I4004_RAM_STATUS_MAP(flicker_status)
-	MCFG_I4004_RAM_PORTS_MAP(flicker_ram_ports)
-	MCFG_I4004_CM_RAM1_CB(WRITELINE(flicker_state, cm_ram1_w))
-	MCFG_I4004_CM_RAM2_CB(WRITELINE(flicker_state, cm_ram2_w))
+	I4004(config, m_maincpu, 5_MHz_XTAL / 8);
+	m_maincpu->set_rom_map(&flicker_state::flicker_rom);
+	m_maincpu->set_ram_memory_map(&flicker_state::flicker_memory);
+	m_maincpu->set_rom_ports_map(&flicker_state::flicker_rom_ports);
+	m_maincpu->set_ram_status_map(&flicker_state::flicker_status);
+	m_maincpu->set_ram_ports_map(&flicker_state::flicker_ram_ports);
+	m_maincpu->cm_ram_cb<1>().set(FUNC(flicker_state::cm_ram1_w));
+	m_maincpu->cm_ram_cb<2>().set(FUNC(flicker_state::cm_ram2_w));
 
 	// video
-	MCFG_DEFAULT_LAYOUT(layout_flicker)
+	config.set_default_layout(layout_flicker);
 
 	// sound
-	MCFG_FRAGMENT_ADD(genpin_audio)
-MACHINE_CONFIG_END
+	genpin_audio(config);
+}
 
 
 ROM_START(flicker)
@@ -403,5 +420,5 @@ ROM_START(flicker)
 	ROM_LOAD("flicker.rom", 0x0000, 0x0400, CRC(c692e586) SHA1(5cabb28a074d18b589b5b8f700c57e1610071c68))
 ROM_END
 
-//    YEAR   GAME      PARENT  MACHINE   INPUT    CLASS           INIT      ORIENTATION  COMPANY                            DESCRIPTION            FLAGS
-GAME( 1974,  flicker,  0,      flicker,  flicker, flicker_state,  0,        ROT0,        "Dave Nutting Associates / Bally", "Flicker (prototype)", MACHINE_IS_INCOMPLETE | MACHINE_MECHANICAL | MACHINE_NOT_WORKING | MACHINE_SUPPORTS_SAVE )
+//    YEAR   GAME      PARENT  MACHINE   INPUT    CLASS           INIT        ORIENTATION  COMPANY                            DESCRIPTION            FLAGS
+GAME( 1974,  flicker,  0,      flicker,  flicker, flicker_state,  empty_init, ROT0,        "Dave Nutting Associates / Bally", "Flicker (prototype)", MACHINE_IS_INCOMPLETE | MACHINE_MECHANICAL | MACHINE_NOT_WORKING | MACHINE_SUPPORTS_SAVE )

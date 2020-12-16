@@ -1,13 +1,15 @@
 // license:BSD-3-Clause
-// copyright-holders:Frank Palazzolo
+// copyright-holders:Frank Palazzolo, Ryan Holtz
 /***************************************************************************
 
-Ramtek Star Cruiser Driver
+    Ramtek Star Cruiser Driver
 
-(no known issues)
+    (no known issues)
 
-Frank Palazzolo
-palazzol@home.com
+    Frank Palazzolo
+    palazzol@home.com
+
+    Netlist Audio by Ryan Holtz
 
 ***************************************************************************/
 
@@ -15,30 +17,35 @@ palazzol@home.com
 #include "includes/starcrus.h"
 
 #include "cpu/i8085/i8085.h"
-#include "sound/samples.h"
 #include "screen.h"
 #include "speaker.h"
 
+void starcrus_state::machine_start()
+{
+	m_led.resolve();
+}
 
-static ADDRESS_MAP_START( starcrus_map, AS_PROGRAM, 8, starcrus_state )
-	AM_RANGE(0x0000, 0x0fff) AM_ROM
-	AM_RANGE(0x1000, 0x10ff) AM_RAM
-ADDRESS_MAP_END
+void starcrus_state::starcrus_map(address_map &map)
+{
+	map(0x0000, 0x0fff).rom();
+	map(0x1000, 0x10ff).ram();
+}
 
-static ADDRESS_MAP_START( starcrus_io_map, AS_IO, 8, starcrus_state )
-	AM_RANGE(0x00, 0x00) AM_READ_PORT("P1") AM_WRITE(s1_x_w)
-	AM_RANGE(0x01, 0x01) AM_READ_PORT("P2") AM_WRITE(s1_y_w)
-	AM_RANGE(0x02, 0x02) AM_READWRITE(coll_det_r, s2_x_w)
-	AM_RANGE(0x03, 0x03) AM_READ_PORT("DSW") AM_WRITE(s2_y_w)
-	AM_RANGE(0x04, 0x04) AM_WRITE(p1_x_w)
-	AM_RANGE(0x05, 0x05) AM_WRITE(p1_y_w)
-	AM_RANGE(0x06, 0x06) AM_WRITE(p2_x_w)
-	AM_RANGE(0x07, 0x07) AM_WRITE(p2_y_w)
-	AM_RANGE(0x08, 0x08) AM_WRITE(ship_parm_1_w)
-	AM_RANGE(0x09, 0x09) AM_WRITE(ship_parm_2_w)
-	AM_RANGE(0x0a, 0x0a) AM_WRITE(proj_parm_1_w)
-	AM_RANGE(0x0b, 0x0b) AM_WRITE(proj_parm_2_w)
-ADDRESS_MAP_END
+void starcrus_state::starcrus_io_map(address_map &map)
+{
+	map(0x00, 0x00).portr("P1").w(FUNC(starcrus_state::s1_x_w));
+	map(0x01, 0x01).portr("P2").w(FUNC(starcrus_state::s1_y_w));
+	map(0x02, 0x02).rw(FUNC(starcrus_state::coll_det_r), FUNC(starcrus_state::s2_x_w));
+	map(0x03, 0x03).portr("DSW").w(FUNC(starcrus_state::s2_y_w));
+	map(0x04, 0x04).w(FUNC(starcrus_state::p1_x_w));
+	map(0x05, 0x05).w(FUNC(starcrus_state::p1_y_w));
+	map(0x06, 0x06).w(FUNC(starcrus_state::p2_x_w));
+	map(0x07, 0x07).w(FUNC(starcrus_state::p2_y_w));
+	map(0x08, 0x08).w(FUNC(starcrus_state::ship_parm_1_w));
+	map(0x09, 0x09).w(FUNC(starcrus_state::ship_parm_2_w));
+	map(0x0a, 0x0a).w(FUNC(starcrus_state::proj_parm_1_w));
+	map(0x0b, 0x0b).w(FUNC(starcrus_state::proj_parm_2_w));
+}
 
 
 static INPUT_PORTS_START( starcrus )
@@ -78,6 +85,12 @@ static INPUT_PORTS_START( starcrus )
 	PORT_DIPSETTING(    0x00, DEF_STR( Alternate ) )
 	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
 	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
+
+	PORT_START("POT_1")
+	PORT_ADJUSTER( 50, "Pot: Noise Level" )  NETLIST_ANALOG_PORT_CHANGED("sound_nl", "noise_volume")
+
+	PORT_START("POT_2")
+	PORT_ADJUSTER( 50, "Pot: Volume" )  NETLIST_ANALOG_PORT_CHANGED("sound_nl", "volume")
 INPUT_PORTS_END
 
 
@@ -107,7 +120,7 @@ static const gfx_layout spritelayout2 =
 	1 /* every sprite takes 1 consecutive bytes */
 };
 
-static GFXDECODE_START( starcrus )
+static GFXDECODE_START( gfx_starcrus )
 	GFXDECODE_ENTRY( "gfx1", 0x0000, spritelayout1, 0, 1 )
 	GFXDECODE_ENTRY( "gfx1", 0x0040, spritelayout1, 0, 1 )
 	GFXDECODE_ENTRY( "gfx1", 0x0080, spritelayout1, 0, 1 )
@@ -123,46 +136,44 @@ static GFXDECODE_START( starcrus )
 GFXDECODE_END
 
 
-static const char *const starcrus_sample_names[] =
+void starcrus_state::starcrus(machine_config &config)
 {
-	"*starcrus",
-	"engine",   /* engine sound, channel 0 */
-	"explos1",  /* explosion sound, first part, channel 1 */
-	"explos2",  /* explosion sound, second part, channel 1 */
-	"launch",   /* launch sound, channels 2 and 3 */
-	nullptr
-};
-
-
-static MACHINE_CONFIG_START( starcrus )
-
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", I8080,9750000/9)  /* 8224 chip is a divide by 9 */
-	MCFG_CPU_PROGRAM_MAP(starcrus_map)
-	MCFG_CPU_IO_MAP(starcrus_io_map)
-	MCFG_CPU_VBLANK_INT_DRIVER("screen", starcrus_state,  irq0_line_hold)
+	I8080(config, m_maincpu, 9750000/9);  /* 8224 chip is a divide by 9 */
+	m_maincpu->set_addrmap(AS_PROGRAM, &starcrus_state::starcrus_map);
+	m_maincpu->set_addrmap(AS_IO, &starcrus_state::starcrus_io_map);
+	m_maincpu->set_vblank_int("screen", FUNC(starcrus_state::irq0_line_hold));
 
 	/* video hardware */
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_REFRESH_RATE(57)
-	MCFG_SCREEN_VBLANK_TIME(ATTOSECONDS_IN_USEC(2500) /* not accurate */)
-	MCFG_SCREEN_SIZE(32*8, 32*8)
-	MCFG_SCREEN_VISIBLE_AREA(0*8, 32*8-1, 0*8, 32*8-1)
-	MCFG_SCREEN_UPDATE_DRIVER(starcrus_state, screen_update)
-	MCFG_SCREEN_PALETTE("palette")
+	screen_device &screen(SCREEN(config, "screen", SCREEN_TYPE_RASTER));
+	screen.set_refresh_hz(57);
+	screen.set_vblank_time(ATTOSECONDS_IN_USEC(2500)); /* not accurate */
+	screen.set_size(32*8, 32*8);
+	screen.set_visarea(0*8, 32*8-1, 0*8, 32*8-1);
+	screen.set_screen_update(FUNC(starcrus_state::screen_update));
+	screen.set_palette(m_palette);
 
-	MCFG_GFXDECODE_ADD("gfxdecode", "palette", starcrus)
-
-	MCFG_PALETTE_ADD_MONOCHROME("palette")
+	GFXDECODE(config, m_gfxdecode, m_palette, gfx_starcrus);
+	PALETTE(config, m_palette, palette_device::MONOCHROME);
 
 	/* sound hardware */
-	MCFG_SPEAKER_STANDARD_MONO("mono")
+	SPEAKER(config, "mono").front_center();
 
-	MCFG_SOUND_ADD("samples", SAMPLES, 0)
-	MCFG_SAMPLES_CHANNELS(4)
-	MCFG_SAMPLES_NAMES(starcrus_sample_names)
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 1.0)
-MACHINE_CONFIG_END
+	NETLIST_SOUND(config, "sound_nl", 48000)
+		.set_source(NETLIST_NAME(starcrus))
+		.add_route(ALL_OUTPUTS, "mono", 1.0);
+
+	NETLIST_LOGIC_INPUT(config, "sound_nl:explode1", "EXPLODE_1.IN", 0);
+	NETLIST_LOGIC_INPUT(config, "sound_nl:explode2", "EXPLODE_2.IN", 0);
+	NETLIST_LOGIC_INPUT(config, "sound_nl:launch1", "LAUNCH_1.IN", 0);
+	NETLIST_LOGIC_INPUT(config, "sound_nl:launch2", "LAUNCH_2.IN", 0);
+	NETLIST_LOGIC_INPUT(config, "sound_nl:engine1", "ENGINE_1.IN", 0);
+	NETLIST_LOGIC_INPUT(config, "sound_nl:engine2", "ENGINE_2.IN", 0);
+	NETLIST_ANALOG_INPUT(config, "sound_nl:noise_volume", "R23.DIAL");
+	NETLIST_ANALOG_INPUT(config, "sound_nl:volume", "R75.DIAL");
+
+	NETLIST_STREAM_OUTPUT(config, "sound_nl:cout0", 0, "R77.2").set_mult_offset(100000.0, 0.0);
+}
 
 /***************************************************************************
 
@@ -193,4 +204,4 @@ ROM_START( starcrus )
 ROM_END
 
 
-GAME( 1977, starcrus, 0, starcrus, starcrus, starcrus_state, 0, ROT0, "Ramtek", "Star Cruiser", MACHINE_IMPERFECT_SOUND | MACHINE_SUPPORTS_SAVE )
+GAME( 1977, starcrus, 0, starcrus, starcrus, starcrus_state, empty_init, ROT0, "Ramtek", "Star Cruiser", MACHINE_IMPERFECT_SOUND | MACHINE_SUPPORTS_SAVE )

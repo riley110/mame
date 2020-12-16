@@ -8,6 +8,8 @@
 
 ***************************************************************************/
 
+#include "emupal.h"
+
 class kangaroo_state : public driver_device
 {
 public:
@@ -24,12 +26,12 @@ public:
 	std::unique_ptr<uint32_t[]>      m_videoram;
 
 	/* misc */
-	uint8_t        m_mcu_clock;
-	DECLARE_READ8_MEMBER(mcu_sim_r);
-	DECLARE_WRITE8_MEMBER(mcu_sim_w);
-	DECLARE_WRITE8_MEMBER(kangaroo_coin_counter_w);
-	DECLARE_WRITE8_MEMBER(kangaroo_videoram_w);
-	DECLARE_WRITE8_MEMBER(kangaroo_video_control_w);
+	uint8_t m_mcu_clock;
+	uint8_t mcu_sim_r();
+	void mcu_sim_w(uint8_t data);
+	void kangaroo_coin_counter_w(uint8_t data);
+	void kangaroo_videoram_w(offs_t offset, uint8_t data);
+	void kangaroo_video_control_w(offs_t offset, uint8_t data);
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
 	virtual void video_start() override;
@@ -39,4 +41,9 @@ public:
 	void blitter_execute(  );
 	required_device<cpu_device> m_maincpu;
 	required_device<palette_device> m_palette;
+	void nomcu(machine_config &config);
+	void mcu(machine_config &config);
+	void main_map(address_map &map);
+	void sound_map(address_map &map);
+	void sound_portmap(address_map &map);
 };

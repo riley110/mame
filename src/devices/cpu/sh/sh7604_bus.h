@@ -14,13 +14,6 @@
 
 
 //**************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_SH7604_BUS_ADD(_tag,_freq) \
-	MCFG_DEVICE_ADD(_tag, SH7604_BUS, _freq)
-
-//**************************************************************************
 //  TYPE DEFINITIONS
 //**************************************************************************
 
@@ -33,24 +26,24 @@ public:
 	sh7604_bus_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 	// I/O operations
-	DECLARE_ADDRESS_MAP( bus_regs, 16 );
+	void bus_regs(address_map &map);
 
-	DECLARE_WRITE32_MEMBER( write );
-	DECLARE_READ32_MEMBER( read );
-	DECLARE_READ16_MEMBER( bus_control_1_r );
-	DECLARE_WRITE16_MEMBER( bus_control_1_w );
-	DECLARE_READ16_MEMBER( bus_control_2_r );
-	DECLARE_WRITE16_MEMBER( bus_control_2_w );
-	DECLARE_READ16_MEMBER( wait_control_r );
-	DECLARE_WRITE16_MEMBER( wait_control_w );
-	DECLARE_READ16_MEMBER( memory_control_r );
-	DECLARE_WRITE16_MEMBER( memory_control_w );
-	DECLARE_READ16_MEMBER( refresh_timer_status_r );
-	DECLARE_WRITE16_MEMBER( refresh_timer_control_w );
-	DECLARE_READ16_MEMBER( refresh_timer_counter_r );
-	DECLARE_WRITE16_MEMBER( refresh_timer_counter_w );
-	DECLARE_READ16_MEMBER( refresh_timer_constant_r );
-	DECLARE_WRITE16_MEMBER( refresh_timer_constant_w );
+	void write(address_space &space, offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t read(address_space &space, offs_t offset);
+	uint16_t bus_control_1_r();
+	void bus_control_1_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t bus_control_2_r();
+	void bus_control_2_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t wait_control_r();
+	void wait_control_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t memory_control_r();
+	void memory_control_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t refresh_timer_status_r();
+	void refresh_timer_control_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t refresh_timer_counter_r();
+	void refresh_timer_counter_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t refresh_timer_constant_r();
+	void refresh_timer_constant_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
 
 protected:
 	// device-level overrides

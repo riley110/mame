@@ -17,6 +17,8 @@
 #ifndef MAME_INCLUDES_CYBIKO_H
 #define MAME_INCLUDES_CYBIKO_H
 
+#include "bus/rs232/rs232.h"
+
 #include "cpu/h8/h8s2245.h"
 #include "cpu/h8/h8s2320.h"
 
@@ -46,27 +48,28 @@ public:
 		, m_flash1(*this, "flash1")
 		, m_nvram(*this, "nvram")
 		, m_input(*this, "A.%u", 0)
+		, m_debug_serial(*this, "debug_serial")
 	{ }
 
-	DECLARE_WRITE16_MEMBER(serflash_w);
-	DECLARE_READ16_MEMBER(clock_r);
-	DECLARE_WRITE16_MEMBER(clock_w);
-	DECLARE_READ16_MEMBER(xtclock_r);
-	DECLARE_WRITE16_MEMBER(xtclock_w);
-	DECLARE_READ16_MEMBER(xtpower_r);
-	DECLARE_READ16_MEMBER(adc1_r);
-	DECLARE_READ16_MEMBER(adc2_r);
-	DECLARE_READ16_MEMBER(port0_r);
+	void serflash_w(uint16_t data);
+	uint16_t clock_r();
+	void clock_w(uint16_t data);
+	uint16_t xtclock_r();
+	void xtclock_w(uint16_t data);
+	uint16_t xtpower_r();
+	uint16_t adc1_r();
+	uint16_t adc2_r();
+	uint16_t port0_r();
 
-	DECLARE_READ16_MEMBER(cybiko_lcd_r);
-	DECLARE_WRITE16_MEMBER(cybiko_lcd_w);
-	DECLARE_READ16_MEMBER(cybikov1_key_r);
-	DECLARE_READ16_MEMBER(cybikov2_key_r);
-	DECLARE_READ16_MEMBER(cybikoxt_key_r);
-	DECLARE_WRITE16_MEMBER(cybiko_usb_w);
-	int cybiko_key_r( offs_t offset, int mem_mask);
+	uint16_t cybiko_lcd_r(offs_t offset, uint16_t mem_mask = ~0);
+	void cybiko_lcd_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t cybikov1_key_r(offs_t offset, uint16_t mem_mask = ~0);
+	uint16_t cybikov2_key_r(offs_t offset, uint16_t mem_mask = ~0);
+	uint16_t cybikoxt_key_r(offs_t offset, uint16_t mem_mask = ~0);
+	void cybiko_usb_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	int cybiko_key_r(offs_t offset, int mem_mask);
 
-	required_device<cpu_device> m_maincpu;
+	required_device<h8_device> m_maincpu;
 	required_device<hd66421_device> m_crtc;
 	required_device<speaker_sound_device> m_speaker;
 	required_device<pcf8593_device> m_rtc;
@@ -74,12 +77,27 @@ public:
 	optional_device<at45db041_device> m_flash1;
 	required_device<nvram_device>   m_nvram;
 	optional_ioport_array<15> m_input;
-	DECLARE_DRIVER_INIT(cybikoxt);
-	DECLARE_DRIVER_INIT(cybiko);
+	required_device<rs232_port_device> m_debug_serial;
+	void init_cybikoxt();
+	void init_cybiko();
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
-	DECLARE_QUICKLOAD_LOAD_MEMBER( cybiko );
-	DECLARE_QUICKLOAD_LOAD_MEMBER( cybikoxt );
+	DECLARE_QUICKLOAD_LOAD_MEMBER(quickload_cybiko);
+	DECLARE_QUICKLOAD_LOAD_MEMBER(quickload_cybikoxt);
+
+	void cybikov1_base(machine_config &config);
+	void cybikov1_flash(machine_config &config);
+	void cybikov1_debug_serial(machine_config &config);
+	void cybikov1(machine_config &config);
+	void cybikov2(machine_config &config);
+	void cybikoxt(machine_config &config);
+
+	void cybikov1_io(address_map &map);
+	void cybikov1_mem(address_map &map);
+	void cybikov2_io(address_map &map);
+	void cybikov2_mem(address_map &map);
+	void cybikoxt_io(address_map &map);
+	void cybikoxt_mem(address_map &map);
 };
 
 #endif // MAME_INCLUDES_CYBIKO_H

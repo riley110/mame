@@ -5,10 +5,6 @@
 
 #pragma once
 
-#define MCFG_POWERVR2_ADD(_tag, _irq_cb)                                \
-	MCFG_DEVICE_ADD(_tag, POWERVR2, 0)                                  \
-	downcast<powervr2_device *>(device)->set_irq_cb(DEVCB_ ## _irq_cb);
-
 class powervr2_device : public device_t,
 						public device_video_interface
 {
@@ -32,8 +28,8 @@ public:
 		ERR_PVRIF_ILL_ADDR_IRQ
 	};
 
-	DECLARE_ADDRESS_MAP(ta_map, 32);
-	DECLARE_ADDRESS_MAP(pd_dma_map, 32);
+	void ta_map(address_map &map);
+	void pd_dma_map(address_map &map);
 
 	struct {
 		uint32_t pvr_addr;
@@ -59,10 +55,35 @@ public:
 	//  our implementation is not currently tile based, and thus the accumulation buffer is screen sized
 	std::unique_ptr<bitmap_rgb32> fake_accumulationbuffer_bitmap;
 
+	/*
+	 * Per-polygon base and offset colors.  These are scaled by per-vertex
+	 * weights.
+	 *
+	 * These are only used if the colortype in the polygon header is 2
+	 * or 3.  If it is 0 or 1, then each vertex's base and offset colors are
+	 * specified completely independently of one another in the per-vertex
+	 * parameters.
+	 *
+	 * The base color is combined with the texture sample (if any) according
+	 * to one of four fixed functions.  The offset color is then added to
+	 * the combined texture sample and base color with the exception of
+	 * alpha.
+	 *
+	 * poly_offs_color is not always used.  Not specifying a poly_offs_color
+	 * is equivalent to using a poly_offs_color of 0.
+	 *
+	 * poly_last_mode_2_base_color is used to hold the last base color
+	 * specified using color type 2.  Color type 3 will always use the last
+	 * base color specified using color type 2.
+	 */
+	float poly_base_color[4], poly_offs_color[4],
+		poly_last_mode_2_base_color[4];
+
 	struct texinfo  {
 		uint32_t address, vqbase;
-		uint32_t nontextured_pal_int;
-		uint8_t nontextured_fpal_a,nontextured_fpal_r,nontextured_fpal_g,nontextured_fpal_b;
+
+		uint32_t tsinstruction;
+
 		int textured, sizex, sizey, stride, sizes, pf, palette, mode, mipmapped, blend_mode, filter_mode;
 		int coltype;
 
@@ -76,6 +97,9 @@ public:
 	typedef struct
 	{
 		float x, y, w, u, v;
+
+		// base and offset colors
+		float b[4], o[4];
 	} vert;
 
 	struct strip
@@ -84,16 +108,48 @@ public:
 		texinfo ti;
 	};
 
-	struct receiveddata {
-		vert verts[65536];
-		strip strips[65536];
+	static const unsigned MAX_VERTS = 65536;
+	static const unsigned MAX_STRIPS = 65536;
 
-		int verts_size, strips_size;
+	/*
+	 * There are five polygon lists:
+	 *
+	 * Opaque
+	 * Punch-through polygon
+	 * Opaque/punch-through modifier volume
+	 * Translucent
+	 * Translucent modifier volume
+	 *
+	 * They are rendered in that order.  List indices are are three bits, so
+	 * technically there are 8 polygon lists, but only the first 5 are valid.
+	 */
+	enum {
+		DISPLAY_LIST_OPAQUE,
+		DISPLAY_LIST_OPAQUE_MOD,
+		DISPLAY_LIST_TRANS,
+		DISPLAY_LIST_TRANS_MOD,
+		DISPLAY_LIST_PUNCH_THROUGH,
+		DISPLAY_LIST_LAST,
+
+		DISPLAY_LIST_COUNT,
+
+		DISPLAY_LIST_NONE = -1
+	};
+
+	struct poly_group {
+		strip strips[MAX_STRIPS];
+		int strips_size;
+	};
+
+	struct receiveddata {
+		vert verts[MAX_VERTS];
+		struct poly_group groups[DISPLAY_LIST_COUNT];
 		uint32_t ispbase;
 		uint32_t fbwsof1;
 		uint32_t fbwsof2;
 		int busy;
 		int valid;
+		int verts_size;
 	};
 
 	enum {
@@ -113,13 +169,11 @@ public:
 	int grabsellast;
 	uint32_t paracontrol,paratype,endofstrip,listtype,global_paratype,parameterconfig;
 	uint32_t groupcontrol,groupen,striplen,userclip;
-	uint32_t objcontrol,shadow,volume,coltype,texture,offfset,gouraud,uv16bit;
+	uint32_t objcontrol,shadow,volume,coltype,texture,offset_color_enable,gouraud,uv16bit;
 	uint32_t texturesizes,textureaddress,scanorder,pixelformat;
 	uint32_t blend_mode, srcselect,dstselect,fogcontrol,colorclamp, use_alpha;
 	uint32_t ignoretexalpha,flipuv,clampuv,filtermode,sstexture,mmdadjust,tsinstruction;
 	uint32_t depthcomparemode,cullingmode,zwritedisable,cachebypass,dcalcctrl,volumeinstruction,mipmapped,vqcompressed,strideselect,paletteselector;
-	uint32_t nontextured_pal_int;
-	float nontextured_fpal_a,nontextured_fpal_r,nontextured_fpal_g,nontextured_fpal_b;
 
 	uint64_t *dc_texture_ram;
 	uint64_t *dc_framebuffer_ram;
@@ -141,125 +195,125 @@ public:
 	int next_y;
 
 	powervr2_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
-	template<class _cb> void set_irq_cb(_cb cb) { irq_cb.set_callback(cb); }
+	auto irq_callback() { return irq_cb.bind(); }
 
-	DECLARE_READ32_MEMBER(  id_r );
-	DECLARE_READ32_MEMBER(  revision_r );
-	DECLARE_READ32_MEMBER(  softreset_r );
-	DECLARE_WRITE32_MEMBER( softreset_w );
-	DECLARE_WRITE32_MEMBER( startrender_w );
-	DECLARE_READ32_MEMBER(  param_base_r );
-	DECLARE_WRITE32_MEMBER( param_base_w );
-	DECLARE_READ32_MEMBER(  region_base_r );
-	DECLARE_WRITE32_MEMBER( region_base_w );
-	DECLARE_READ32_MEMBER(  vo_border_col_r );
-	DECLARE_WRITE32_MEMBER( vo_border_col_w );
-	DECLARE_READ32_MEMBER(  fb_r_ctrl_r );
-	DECLARE_WRITE32_MEMBER( fb_r_ctrl_w );
-	DECLARE_READ32_MEMBER(  fb_w_ctrl_r );
-	DECLARE_WRITE32_MEMBER( fb_w_ctrl_w );
-	DECLARE_READ32_MEMBER(  fb_w_linestride_r );
-	DECLARE_WRITE32_MEMBER( fb_w_linestride_w );
-	DECLARE_READ32_MEMBER(  fb_r_sof1_r );
-	DECLARE_WRITE32_MEMBER( fb_r_sof1_w );
-	DECLARE_READ32_MEMBER(  fb_r_sof2_r );
-	DECLARE_WRITE32_MEMBER( fb_r_sof2_w );
-	DECLARE_READ32_MEMBER(  fb_r_size_r );
-	DECLARE_WRITE32_MEMBER( fb_r_size_w );
-	DECLARE_READ32_MEMBER(  fb_w_sof1_r );
-	DECLARE_WRITE32_MEMBER( fb_w_sof1_w );
-	DECLARE_READ32_MEMBER(  fb_w_sof2_r );
-	DECLARE_WRITE32_MEMBER( fb_w_sof2_w );
-	DECLARE_READ32_MEMBER(  fb_x_clip_r );
-	DECLARE_WRITE32_MEMBER( fb_x_clip_w );
-	DECLARE_READ32_MEMBER(  fb_y_clip_r );
-	DECLARE_WRITE32_MEMBER( fb_y_clip_w );
-	DECLARE_READ32_MEMBER(  fpu_param_cfg_r );
-	DECLARE_WRITE32_MEMBER( fpu_param_cfg_w );
-	DECLARE_READ32_MEMBER(  isp_backgnd_t_r );
-	DECLARE_WRITE32_MEMBER( isp_backgnd_t_w );
-	DECLARE_READ32_MEMBER(  spg_hblank_int_r );
-	DECLARE_WRITE32_MEMBER( spg_hblank_int_w );
-	DECLARE_READ32_MEMBER(  spg_vblank_int_r );
-	DECLARE_WRITE32_MEMBER( spg_vblank_int_w );
-	DECLARE_READ32_MEMBER(  spg_control_r );
-	DECLARE_WRITE32_MEMBER( spg_control_w );
-	DECLARE_READ32_MEMBER(  spg_hblank_r );
-	DECLARE_WRITE32_MEMBER( spg_hblank_w );
-	DECLARE_READ32_MEMBER(  spg_load_r );
-	DECLARE_WRITE32_MEMBER( spg_load_w );
-	DECLARE_READ32_MEMBER(  spg_vblank_r );
-	DECLARE_WRITE32_MEMBER( spg_vblank_w );
-	DECLARE_READ32_MEMBER(  spg_width_r );
-	DECLARE_WRITE32_MEMBER( spg_width_w );
-	DECLARE_READ32_MEMBER(  text_control_r );
-	DECLARE_WRITE32_MEMBER( text_control_w );
-	DECLARE_READ32_MEMBER(  vo_control_r );
-	DECLARE_WRITE32_MEMBER( vo_control_w );
-	DECLARE_READ32_MEMBER(  vo_startx_r );
-	DECLARE_WRITE32_MEMBER( vo_startx_w );
-	DECLARE_READ32_MEMBER(  vo_starty_r );
-	DECLARE_WRITE32_MEMBER( vo_starty_w );
-	DECLARE_READ32_MEMBER(  pal_ram_ctrl_r );
-	DECLARE_WRITE32_MEMBER( pal_ram_ctrl_w );
-	DECLARE_READ32_MEMBER(  spg_status_r );
+	uint32_t id_r();
+	uint32_t revision_r();
+	uint32_t softreset_r();
+	void softreset_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	void startrender_w(address_space &space, uint32_t data);
+	uint32_t param_base_r();
+	void param_base_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t region_base_r();
+	void region_base_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t vo_border_col_r();
+	void vo_border_col_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t fb_r_ctrl_r();
+	void fb_r_ctrl_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t fb_w_ctrl_r();
+	void fb_w_ctrl_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t fb_w_linestride_r();
+	void fb_w_linestride_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t fb_r_sof1_r();
+	void fb_r_sof1_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t fb_r_sof2_r();
+	void fb_r_sof2_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t fb_r_size_r();
+	void fb_r_size_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t fb_w_sof1_r();
+	void fb_w_sof1_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t fb_w_sof2_r();
+	void fb_w_sof2_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t fb_x_clip_r();
+	void fb_x_clip_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t fb_y_clip_r();
+	void fb_y_clip_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t fpu_param_cfg_r();
+	void fpu_param_cfg_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t isp_backgnd_t_r();
+	void isp_backgnd_t_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t spg_hblank_int_r();
+	void spg_hblank_int_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t spg_vblank_int_r();
+	void spg_vblank_int_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t spg_control_r();
+	void spg_control_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t spg_hblank_r();
+	void spg_hblank_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t spg_load_r();
+	void spg_load_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t spg_vblank_r();
+	void spg_vblank_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t spg_width_r();
+	void spg_width_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t text_control_r();
+	void text_control_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t vo_control_r();
+	void vo_control_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t vo_startx_r();
+	void vo_startx_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t vo_starty_r();
+	void vo_starty_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t pal_ram_ctrl_r();
+	void pal_ram_ctrl_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t spg_status_r();
 
-	DECLARE_READ32_MEMBER(  ta_ol_base_r );
-	DECLARE_WRITE32_MEMBER( ta_ol_base_w );
-	DECLARE_READ32_MEMBER(  ta_isp_base_r );
-	DECLARE_WRITE32_MEMBER( ta_isp_base_w );
-	DECLARE_READ32_MEMBER(  ta_ol_limit_r );
-	DECLARE_WRITE32_MEMBER( ta_ol_limit_w );
-	DECLARE_READ32_MEMBER(  ta_isp_limit_r );
-	DECLARE_WRITE32_MEMBER( ta_isp_limit_w );
-	DECLARE_READ32_MEMBER(  ta_next_opb_r );
-	DECLARE_READ32_MEMBER(  ta_itp_current_r );
-	DECLARE_READ32_MEMBER(  ta_alloc_ctrl_r );
-	DECLARE_WRITE32_MEMBER( ta_alloc_ctrl_w );
-	DECLARE_READ32_MEMBER(  ta_list_init_r );
-	DECLARE_WRITE32_MEMBER( ta_list_init_w );
-	DECLARE_READ32_MEMBER(  ta_yuv_tex_base_r );
-	DECLARE_WRITE32_MEMBER( ta_yuv_tex_base_w );
-	DECLARE_READ32_MEMBER(  ta_yuv_tex_ctrl_r );
-	DECLARE_WRITE32_MEMBER( ta_yuv_tex_ctrl_w );
-	DECLARE_READ32_MEMBER(  ta_yuv_tex_cnt_r );
-	DECLARE_WRITE32_MEMBER( ta_yuv_tex_cnt_w );
-	DECLARE_WRITE32_MEMBER( ta_list_cont_w );
-	DECLARE_READ32_MEMBER(  ta_next_opb_init_r );
-	DECLARE_WRITE32_MEMBER( ta_next_opb_init_w );
+	uint32_t ta_ol_base_r();
+	void ta_ol_base_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t ta_isp_base_r();
+	void ta_isp_base_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t ta_ol_limit_r();
+	void ta_ol_limit_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t ta_isp_limit_r();
+	void ta_isp_limit_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t ta_next_opb_r();
+	uint32_t ta_itp_current_r();
+	uint32_t ta_alloc_ctrl_r();
+	void ta_alloc_ctrl_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t ta_list_init_r();
+	void ta_list_init_w(uint32_t data);
+	uint32_t ta_yuv_tex_base_r();
+	void ta_yuv_tex_base_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t ta_yuv_tex_ctrl_r();
+	void ta_yuv_tex_ctrl_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t ta_yuv_tex_cnt_r();
+	void ta_yuv_tex_cnt_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	void ta_list_cont_w(uint32_t data);
+	uint32_t ta_next_opb_init_r();
+	void ta_next_opb_init_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
 
 
-	DECLARE_READ32_MEMBER(  fog_table_r );
-	DECLARE_WRITE32_MEMBER( fog_table_w );
-	DECLARE_READ32_MEMBER(  palette_r );
-	DECLARE_WRITE32_MEMBER( palette_w );
+	uint32_t fog_table_r(offs_t offset);
+	void fog_table_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t palette_r(offs_t offset);
+	void palette_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
 
-	DECLARE_READ32_MEMBER(  sb_pdstap_r );
-	DECLARE_WRITE32_MEMBER( sb_pdstap_w );
-	DECLARE_READ32_MEMBER(  sb_pdstar_r );
-	DECLARE_WRITE32_MEMBER( sb_pdstar_w );
-	DECLARE_READ32_MEMBER(  sb_pdlen_r );
-	DECLARE_WRITE32_MEMBER( sb_pdlen_w );
-	DECLARE_READ32_MEMBER(  sb_pddir_r );
-	DECLARE_WRITE32_MEMBER( sb_pddir_w );
-	DECLARE_READ32_MEMBER(  sb_pdtsel_r );
-	DECLARE_WRITE32_MEMBER( sb_pdtsel_w );
-	DECLARE_READ32_MEMBER(  sb_pden_r );
-	DECLARE_WRITE32_MEMBER( sb_pden_w );
-	DECLARE_READ32_MEMBER(  sb_pdst_r );
-	DECLARE_WRITE32_MEMBER( sb_pdst_w );
-	DECLARE_READ32_MEMBER(  sb_pdapro_r );
-	DECLARE_WRITE32_MEMBER( sb_pdapro_w );
+	uint32_t sb_pdstap_r();
+	void sb_pdstap_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t sb_pdstar_r();
+	void sb_pdstar_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t sb_pdlen_r();
+	void sb_pdlen_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t sb_pddir_r();
+	void sb_pddir_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t sb_pdtsel_r();
+	void sb_pdtsel_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t sb_pden_r();
+	void sb_pden_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t sb_pdst_r();
+	void sb_pdst_w(address_space &space, offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t sb_pdapro_r();
+	void sb_pdapro_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
 
-	DECLARE_READ32_MEMBER(  pvr2_ta_r );
-	DECLARE_WRITE32_MEMBER( pvr2_ta_w );
-	DECLARE_WRITE32_MEMBER( pvrs_ta_w );
-	DECLARE_READ32_MEMBER(  elan_regs_r );
-	DECLARE_WRITE32_MEMBER( elan_regs_w );
-	DECLARE_WRITE64_MEMBER( ta_fifo_poly_w );
-	DECLARE_WRITE8_MEMBER( ta_fifo_yuv_w );
-	DECLARE_WRITE64_MEMBER( ta_texture_directpath0_w );
-	DECLARE_WRITE64_MEMBER( ta_texture_directpath1_w );
+	uint32_t pvr2_ta_r(offs_t offset);
+	void pvr2_ta_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	void pvrs_ta_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t elan_regs_r(offs_t offset);
+	void elan_regs_w(offs_t offset, uint32_t data);
+	void ta_fifo_poly_w(offs_t offset, uint64_t data, uint64_t mem_mask = ~0);
+	void ta_fifo_yuv_w(uint8_t data);
+	void ta_texture_directpath0_w(offs_t offset, uint64_t data, uint64_t mem_mask = ~0);
+	void ta_texture_directpath1_w(offs_t offset, uint64_t data, uint64_t mem_mask = ~0);
 
 	TIMER_CALLBACK_MEMBER(vbin);
 	TIMER_CALLBACK_MEMBER(vbout);
@@ -278,6 +332,13 @@ public:
 	void pvr_dma_execute(address_space &space);
 	void pvr_scanline_timer(int vpos);
 	uint32_t screen_update(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect);
+
+	typedef uint32_t(powervr2_device::*pix_sample_fn)(texinfo*,float,float,uint32_t,uint32_t);
+
+	inline uint32_t sample_nontextured(texinfo *ti, float u, float v, uint32_t offset_color, uint32_t base_color);
+
+	template <int tsinst, bool bilinear>
+		inline uint32_t sample_textured(texinfo *ti, float u, float v, uint32_t offset_color, uint32_t base_color);
 
 protected:
 	virtual void device_start() override;
@@ -321,6 +382,9 @@ private:
 	static int uv_flip(float uv, int size);
 	static int uv_clamp(float uv, int size);
 
+	static inline uint32_t float_argb_to_packed_argb(float argb[4]);
+	static inline void packed_argb_to_float_argb(float dst[4], uint32_t in);
+
 	static inline int32_t clamp(int32_t in, int32_t min, int32_t max);
 	static inline uint32_t bilinear_filter(uint32_t c0, uint32_t c1, uint32_t c2, uint32_t c3, float u, float v);
 	static inline uint32_t bla(uint32_t c, uint32_t a);
@@ -328,6 +392,8 @@ private:
 	static inline uint32_t blc(uint32_t c1, uint32_t c2);
 	static inline uint32_t blic(uint32_t c1, uint32_t c2);
 	static inline uint32_t bls(uint32_t c1, uint32_t c2);
+	static inline uint32_t bls24(uint32_t c1, uint32_t c2);
+
 	static uint32_t bl00(uint32_t s, uint32_t d);
 	static uint32_t bl01(uint32_t s, uint32_t d);
 	static uint32_t bl02(uint32_t s, uint32_t d);
@@ -428,26 +494,45 @@ private:
 	uint32_t tex_r_p8_8888_tw(texinfo *t, float x, float y);
 	uint32_t tex_r_p8_8888_vq(texinfo *t, float x, float y);
 
-	uint32_t tex_r_nt_palint(texinfo *t, float x, float y);
-	uint32_t tex_r_nt_palfloat(texinfo *t, float x, float y);
-
 	uint32_t tex_r_default(texinfo *t, float x, float y);
 	void tex_get_info(texinfo *t);
 
-	void render_hline(bitmap_rgb32 &bitmap, texinfo *ti, int y, float xl, float xr, float ul, float ur, float vl, float vr, float wl, float wr);
-	void render_span(bitmap_rgb32 &bitmap, texinfo *ti,
-						float y0, float y1,
-						float xl, float xr,
-						float ul, float ur,
-						float vl, float vr,
-						float wl, float wr,
-						float dxldy, float dxrdy,
-						float duldy, float durdy,
-						float dvldy, float dvrdy,
-						float dwldy, float dwrdy);
+	template <pix_sample_fn sample_fn, int group_no>
+		inline void render_hline(bitmap_rgb32 &bitmap, texinfo *ti,
+									int y, float xl, float xr,
+									float ul, float ur, float vl, float vr,
+									float wl, float wr,
+									float const bl[4], float const br[4],
+									float const offl[4], float const offr[4]);
+
+	template <pix_sample_fn sample_fn, int group_no>
+		inline void render_span(bitmap_rgb32 &bitmap, texinfo *ti,
+								float y0, float y1,
+								float xl, float xr,
+								float ul, float ur,
+								float vl, float vr,
+								float wl, float wr,
+								float const bl[4], float const br[4],
+								float const offl[4], float const offr[4],
+								float dxldy, float dxrdy,
+								float duldy, float durdy,
+								float dvldy, float dvrdy,
+								float dwldy, float dwrdy,
+								float const dbldy[4], float const dbrdy[4],
+								float const doldy[4], float const dordy[4]);
+
+	template <pix_sample_fn sample_fn, int group_no>
+		inline void render_tri_sorted(bitmap_rgb32 &bitmap, texinfo *ti,
+										const vert *v0,
+										const vert *v1, const vert *v2);
+
+	template <int group_no>
+		void render_tri(bitmap_rgb32 &bitmap, texinfo *ti, const vert *v);
+
+	template <int group_no>
+		void render_group_to_accumulation_buffer(bitmap_rgb32 &bitmap, const rectangle &cliprect);
+
 	void sort_vertices(const vert *v, int *i0, int *i1, int *i2);
-	void render_tri_sorted(bitmap_rgb32 &bitmap, texinfo *ti, const vert *v0, const vert *v1, const vert *v2);
-	void render_tri(bitmap_rgb32 &bitmap, texinfo *ti, const vert *v);
 	void render_to_accumulation_buffer(bitmap_rgb32 &bitmap, const rectangle &cliprect);
 	void pvr_accumulationbuffer_to_framebuffer(address_space &space, int x, int y);
 	void pvr_drawframebuffer(bitmap_rgb32 &bitmap,const rectangle &cliprect);

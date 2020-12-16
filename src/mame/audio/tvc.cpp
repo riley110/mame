@@ -10,7 +10,7 @@
 #include "tvc.h"
 
 // device type definition
-DEFINE_DEVICE_TYPE(TVC_SOUND, tvc_sound_device, "tvc_sound", "TVC 64 Audio Custom")
+DEFINE_DEVICE_TYPE(TVC_SOUND, tvc_sound_device, "tvc_sound", "TVC 64 Custom Sound")
 
 //-------------------------------------------------
 //  tvc_sound_device - constructor
@@ -92,7 +92,7 @@ void tvc_sound_device::sound_stream_update(sound_stream &stream, stream_sample_t
 //  ports write
 //-------------------------------------------------
 
-WRITE8_MEMBER(tvc_sound_device::write)
+void tvc_sound_device::write(offs_t offset, uint8_t data)
 {
 	m_stream->update();
 

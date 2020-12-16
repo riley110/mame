@@ -48,10 +48,25 @@
     less than 2 MiB onboard. As the community is still alive we can hope for
     a fix for this problem; so we make the size configurable.
 
+    According to the Genmod setup instructions, the Horizon Ramdisks do not
+    decode the AMA/AMB/AMC lines, so it is important to modify them when
+    running with the Genmod system. This can be done with the configuration
+    setting "Genmod fix".
+
 *****************************************************************************/
 
 #include "emu.h"
 #include "horizon.h"
+
+#define LOG_WARN        (1U<<1)   // Warnings
+#define LOG_CONFIG      (1U<<2)   // Configuration
+#define LOG_READ        (1U<<3)
+#define LOG_WRITE       (1U<<4)
+#define LOG_CRU         (1U<<5)
+
+#define VERBOSE ( LOG_CONFIG | LOG_WARN )
+
+#include "logmacro.h"
 
 DEFINE_DEVICE_TYPE_NS(TI99_HORIZON, bus::ti99::peb, horizon_ramdisk_device, "ti99_horizon", "Horizon 4000 Ramdisk")
 
@@ -64,11 +79,6 @@ namespace bus { namespace ti99 { namespace peb {
 #define MAXSIZE 16777216
 #define ROSSIZE 8192
 
-#define TRACE_CONFIG 0
-#define TRACE_READ 0
-#define TRACE_WRITE 0
-#define TRACE_CRU 0
-
 horizon_ramdisk_device::horizon_ramdisk_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock):
 	device_t(mconfig, TI99_HORIZON, tag, owner, clock),
 	device_ti99_peribox_card_interface(mconfig, *this),
@@ -76,8 +86,6 @@ horizon_ramdisk_device::horizon_ramdisk_device(const machine_config &mconfig, co
 	m_ram(*this, RAMREGION),
 	m_nvram(*this, NVRAMREGION),
 	m_ros(*this, ROSREGION),
-	m_select6_value(0),
-	m_select_all(0),
 	m_page(0),
 	m_cru_horizon(0),
 	m_cru_phoenix(0),
@@ -86,7 +94,8 @@ horizon_ramdisk_device::horizon_ramdisk_device(const machine_config &mconfig, co
 	m_split_mode(false),
 	m_rambo_mode(false),
 	m_hideswitch(false),
-	m_use_rambo(false)
+	m_use_rambo(false),
+	m_genmod_fix(false)
 {
 }
 
@@ -148,7 +157,7 @@ void horizon_ramdisk_device::nvram_write(emu_file &file)
 	file.write(buffer, nvramsize + ROSSIZE);
 }
 
-READ8Z_MEMBER(horizon_ramdisk_device::readz)
+void horizon_ramdisk_device::readz(offs_t offset, uint8_t *value)
 {
 	// 32K expansion
 	// According to the manual, "this memory is not affected by the HIDE switch"
@@ -180,41 +189,41 @@ READ8Z_MEMBER(horizon_ramdisk_device::readz)
 
 	if (!m_rambo_mode)
 	{
-		if ((offset & m_select_mask) == m_select_value)
+		if (in_dsr_space(offset, m_genmod_fix))
 		{
 			if ((offset & 0x1800) == 0x1800)
 			{
 				// NVRAM page of size 2 KiB
 				*value = m_nvram->pointer()[(m_page << 11)|(offset & 0x07ff)];
-				if (TRACE_READ) logerror("offset=%04x, page=%04x -> %02x\n", offset&0xffff,  m_page, *value);
+				LOGMASKED(LOG_READ, "offset=%04x, page=%04x -> %02x\n", offset&0xffff,  m_page, *value);
 			}
 			else
 			{
 				// ROS
 				*value = m_ros->pointer()[offset & 0x1fff];
-				if (TRACE_READ) logerror("offset=%04x (ROS) -> %02x\n", offset&0xffff,  *value);
+				LOGMASKED(LOG_READ, "offset=%04x (ROS) -> %02x\n", offset&0xffff,  *value);
 			}
 		}
 	}
 	else
 	{
-		if ((offset & m_select_mask)==m_select_value)
+		if (in_dsr_space(offset, m_genmod_fix))
 		{
 			*value = m_ros->pointer()[offset & 0x1fff];
-			if (TRACE_READ) logerror("offset=%04x (Rambo) -> %02x\n", offset&0xffff,  *value);
+			LOGMASKED(LOG_READ, "offset=%04x (Rambo) -> %02x\n", offset&0xffff,  *value);
 		}
-		if ((offset & m_select_mask)==m_select6_value)
+		if (in_cart_space(offset, m_genmod_fix))
 		{
 			// In RAMBO mode the page numbers are multiples of 4
 			// (encompassing 4 Horizon pages)
 			// We clear away the rightmost two bits
 			*value = m_nvram->pointer()[((m_page&0xfffc)<<11) | (offset & 0x1fff)];
-			if (TRACE_READ) logerror("offset=%04x, page=%04x (Rambo) -> %02x\n", offset&0xffff,  m_page, *value);
+			LOGMASKED(LOG_READ, "offset=%04x, page=%04x (Rambo) -> %02x\n", offset&0xffff,  m_page, *value);
 		}
 	}
 }
 
-WRITE8_MEMBER(horizon_ramdisk_device::write)
+void horizon_ramdisk_device::write(offs_t offset, uint8_t data)
 {
 	// 32K expansion
 	// According to the manual, "this memory is not affected by the HIDE switch"
@@ -246,41 +255,41 @@ WRITE8_MEMBER(horizon_ramdisk_device::write)
 
 	if (!m_rambo_mode)
 	{
-		if ((offset & m_select_mask) == m_select_value)
+		if (in_dsr_space(offset, m_genmod_fix))
 		{
 			if ((offset & 0x1800) == 0x1800)
 			{
 				// NVRAM page of size 2 KiB
 				m_nvram->pointer()[(m_page << 11)|(offset & 0x07ff)] = data;
-				if (TRACE_WRITE) logerror("offset=%04x, page=%04x <- %02x\n", offset&0xffff,  m_page, data);
+				LOGMASKED(LOG_WRITE, "offset=%04x, page=%04x <- %02x\n", offset&0xffff,  m_page, data);
 			}
 			else
 			{
 				// ROS
 				m_ros->pointer()[offset & 0x1fff] = data;
-				if (TRACE_WRITE) logerror("offset=%04x (ROS) <- %02x\n", offset&0xffff,  data);
+				LOGMASKED(LOG_WRITE, "offset=%04x (ROS) <- %02x\n", offset&0xffff,  data);
 			}
 		}
 	}
 	else
 	{
-		if ((offset & m_select_mask)==m_select_value)
+		if (in_dsr_space(offset, m_genmod_fix))
 		{
 			m_ros->pointer()[offset & 0x1fff] = data;
-			if (TRACE_WRITE) logerror("offset=%04x (Rambo) <- %02x\n", offset&0xffff,  data);
+			LOGMASKED(LOG_WRITE, "offset=%04x (Rambo) <- %02x\n", offset&0xffff,  data);
 		}
-		if ((offset & m_select_mask)==m_select6_value)
+		if (in_cart_space(offset, m_genmod_fix))
 		{
 			// In RAMBO mode the page numbers are multiples of 4
 			// (encompassing 4 Horizon pages)
 			// We clear away the rightmost two bits
 			m_nvram->pointer()[((m_page&0xfffc)<<11) | (offset & 0x1fff)] = data;
-			if (TRACE_WRITE) logerror("offset=%04x, page=%04x (Rambo) <- %02x\n", offset&0xffff,  m_page, data);
+			LOGMASKED(LOG_WRITE, "offset=%04x, page=%04x (Rambo) <- %02x\n", offset&0xffff,  m_page, data);
 		}
 	}
 }
 
-READ8Z_MEMBER(horizon_ramdisk_device::crureadz)
+void horizon_ramdisk_device::crureadz(offs_t offset, uint8_t *value)
 {
 	// There is no CRU read operation for the Horizon.
 	return;
@@ -298,7 +307,7 @@ void horizon_ramdisk_device::setbit(int& page, int pattern, bool set)
 	}
 }
 
-WRITE8_MEMBER(horizon_ramdisk_device::cruwrite)
+void horizon_ramdisk_device::cruwrite(offs_t offset, uint8_t data)
 {
 	int size = ioport("HORIZONSIZE")->read();
 	int split_bit = size + 10;
@@ -307,12 +316,12 @@ WRITE8_MEMBER(horizon_ramdisk_device::cruwrite)
 	if (((offset & 0xff00)==m_cru_horizon)||((offset & 0xff00)==m_cru_phoenix))
 	{
 		int bit = (offset >> 1) & 0x0f;
-		if (TRACE_CRU) logerror("CRU write bit %d <- %d\n", bit, data);
+		LOGMASKED(LOG_CRU, "CRU write bit %d <- %d\n", bit, data);
 		switch (bit)
 		{
 		case 0:
 			m_selected = (data!=0);
-			if (TRACE_CRU) logerror("Activate ROS = %d\n", m_selected);
+			LOGMASKED(LOG_CRU, "Activate ROS = %d\n", m_selected);
 			break;
 		case 1:
 			// Swap the lines so that the access with RAMBO is consistent
@@ -337,7 +346,7 @@ WRITE8_MEMBER(horizon_ramdisk_device::cruwrite)
 			if (m_use_rambo)
 			{
 				m_rambo_mode = (data != 0);
-				if (TRACE_CRU) logerror("RAMBO = %d\n", m_rambo_mode);
+				LOGMASKED(LOG_CRU, "RAMBO = %d\n", m_rambo_mode);
 			}
 			break;
 
@@ -371,8 +380,6 @@ void horizon_ramdisk_device::device_start(void)
 	m_cru_horizon = 0;
 	m_cru_phoenix = 0;
 
-	save_item(NAME(m_select6_value));
-	save_item(NAME(m_select_all));
 	save_item(NAME(m_page));
 	save_item(NAME(m_cru_horizon));
 	save_item(NAME(m_cru_phoenix));
@@ -386,21 +393,6 @@ void horizon_ramdisk_device::device_start(void)
 
 void horizon_ramdisk_device::device_reset(void)
 {
-	if (m_genmod)
-	{
-		m_select_mask = 0x1fe000;
-		m_select_value = 0x174000;
-		m_select6_value = 0x176000;
-		m_select_all = 0x170000;
-	}
-	else
-	{
-		m_select_mask = 0x7e000;
-		m_select_value = 0x74000;
-		m_select6_value = 0x76000;
-		m_select_all = 0x70000;
-	}
-
 	m_cru_horizon = ioport("CRUHOR")->read();
 	m_cru_phoenix = ioport("CRUPHOE")->read();
 
@@ -414,13 +406,15 @@ void horizon_ramdisk_device::device_reset(void)
 
 	m_use_rambo = (ioport("RAMBO")->read()!=0);
 
+	m_genmod_fix = (ioport("GENMODFIX")->read()!=0);
+
 	m_page = 0;
 	m_selected = false;
 }
 
 INPUT_CHANGED_MEMBER( horizon_ramdisk_device::hs_changed )
 {
-	if (TRACE_CONFIG) logerror("hideswitch changed %d\n", newval);
+	LOGMASKED(LOG_CONFIG, "hideswitch changed %d\n", newval);
 	m_hideswitch = (newval!=0);
 }
 
@@ -451,7 +445,7 @@ INPUT_PORTS_START( horizon )
 		PORT_DIPSETTING(    0x02, "Geneve mode" )
 
 	PORT_START( "HORIZONACT" )
-	PORT_DIPNAME( 0x01, 0x00, "Horizon hideswitch" ) PORT_CHANGED_MEMBER(DEVICE_SELF, horizon_ramdisk_device, hs_changed, nullptr)
+	PORT_DIPNAME( 0x01, 0x00, "Horizon hideswitch" ) PORT_CHANGED_MEMBER(DEVICE_SELF, horizon_ramdisk_device, hs_changed, 0)
 		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
 		PORT_DIPSETTING(    0x01, DEF_STR( On ) )
 
@@ -472,19 +466,19 @@ INPUT_PORTS_START( horizon )
 		PORT_CONFSETTING( 0x02, "8 MiB")
 		PORT_CONFSETTING( 0x03, "16 MiB")
 
+	PORT_START( "GENMODFIX" )
+	PORT_CONFNAME( 0x01, 0x00, "Horizon Genmod fix" )
+		PORT_CONFSETTING( 0x00, DEF_STR( Off ))
+		PORT_CONFSETTING( 0x01, DEF_STR( On ))
+
 INPUT_PORTS_END
 
-MACHINE_CONFIG_MEMBER( horizon_ramdisk_device::device_add_mconfig )
-	MCFG_RAM_ADD(NVRAMREGION)
-	MCFG_RAM_DEFAULT_SIZE("16M")
-
-	MCFG_RAM_ADD(ROSREGION)
-	MCFG_RAM_DEFAULT_SIZE("8k")
-
-	MCFG_RAM_ADD(RAMREGION)
-	MCFG_RAM_DEFAULT_SIZE("32k")
-	MCFG_RAM_DEFAULT_VALUE(0)
-MACHINE_CONFIG_END
+void horizon_ramdisk_device::device_add_mconfig(machine_config &config)
+{
+	RAM(config, NVRAMREGION).set_default_size("16M");
+	RAM(config, ROSREGION).set_default_size("8K");
+	RAM(config, RAMREGION).set_default_size("32K").set_default_value(0);
+}
 
 ioport_constructor horizon_ramdisk_device::device_input_ports() const
 {

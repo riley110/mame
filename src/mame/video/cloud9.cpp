@@ -40,7 +40,7 @@ void cloud9_state::video_start()
 	m_screen->register_screen_bitmap(m_spritebitmap);
 
 	/* register for savestates */
-	save_pointer(NAME(m_videoram.get()), 0x8000);
+	save_pointer(NAME(m_videoram), 0x8000);
 	save_item(NAME(m_bitmode_addr));
 }
 
@@ -52,7 +52,7 @@ void cloud9_state::video_start()
  *
  *************************************/
 
-WRITE8_MEMBER(cloud9_state::cloud9_paletteram_w)
+void cloud9_state::cloud9_paletteram_w(offs_t offset, uint8_t data)
 {
 	int bit0, bit1, bit2;
 	int r, g, b;
@@ -66,19 +66,19 @@ WRITE8_MEMBER(cloud9_state::cloud9_paletteram_w)
 	bit0 = (~r >> 0) & 0x01;
 	bit1 = (~r >> 1) & 0x01;
 	bit2 = (~r >> 2) & 0x01;
-	r = combine_3_weights(m_rweights, bit0, bit1, bit2);
+	r = combine_weights(m_rweights, bit0, bit1, bit2);
 
 	/* green component (inverted) */
 	bit0 = (~g >> 0) & 0x01;
 	bit1 = (~g >> 1) & 0x01;
 	bit2 = (~g >> 2) & 0x01;
-	g = combine_3_weights(m_gweights, bit0, bit1, bit2);
+	g = combine_weights(m_gweights, bit0, bit1, bit2);
 
 	/* blue component (inverted) */
 	bit0 = (~b >> 0) & 0x01;
 	bit1 = (~b >> 1) & 0x01;
 	bit2 = (~b >> 2) & 0x01;
-	b = combine_3_weights(m_bweights, bit0, bit1, bit2);
+	b = combine_weights(m_bweights, bit0, bit1, bit2);
 
 	m_palette->set_pen_color(offset & 0x3f, rgb_t(r, g, b));
 }
@@ -160,7 +160,7 @@ inline void cloud9_state::bitmode_autoinc(  )
  *
  *************************************/
 
-WRITE8_MEMBER(cloud9_state::cloud9_videoram_w)
+void cloud9_state::cloud9_videoram_w(offs_t offset, uint8_t data)
 {
 	/* direct writes to VRAM go through the write protect PROM as well */
 	cloud9_write_vram(offset, data, 0, 0);
@@ -174,7 +174,7 @@ WRITE8_MEMBER(cloud9_state::cloud9_videoram_w)
  *
  *************************************/
 
-READ8_MEMBER(cloud9_state::cloud9_bitmode_r)
+uint8_t cloud9_state::cloud9_bitmode_r()
 {
 	/* in bitmode, the address comes from the autoincrement latches */
 	uint16_t addr = (m_bitmode_addr[1] << 6) | (m_bitmode_addr[0] >> 2);
@@ -190,7 +190,7 @@ READ8_MEMBER(cloud9_state::cloud9_bitmode_r)
 }
 
 
-WRITE8_MEMBER(cloud9_state::cloud9_bitmode_w)
+void cloud9_state::cloud9_bitmode_w(uint8_t data)
 {
 	/* in bitmode, the address comes from the autoincrement latches */
 	uint16_t addr = (m_bitmode_addr[1] << 6) | (m_bitmode_addr[0] >> 2);
@@ -206,7 +206,7 @@ WRITE8_MEMBER(cloud9_state::cloud9_bitmode_w)
 }
 
 
-WRITE8_MEMBER(cloud9_state::cloud9_bitmode_addr_w)
+void cloud9_state::cloud9_bitmode_addr_w(offs_t offset, uint8_t data)
 {
 	/* write through to video RAM and also to the addressing latches */
 	cloud9_write_vram(offset, data, 0, 0);
@@ -246,14 +246,14 @@ uint32_t cloud9_state::screen_update_cloud9(screen_device &screen, bitmap_ind16 
 		}
 
 	/* draw the bitmap to the screen, looping over Y */
-	for (y = cliprect.min_y; y <= cliprect.max_y; y++)
+	for (y = cliprect.top(); y <= cliprect.bottom(); y++)
 	{
 		uint16_t *dst = &bitmap.pix16(y);
 
 		/* if we're in the VBLANK region, just fill with black */
 		if (~m_syncprom[y] & 2)
 		{
-			for (x = cliprect.min_x; x <= cliprect.max_x; x++)
+			for (x = cliprect.left(); x <= cliprect.right(); x++)
 				dst[x] = black;
 		}
 
@@ -269,7 +269,7 @@ uint32_t cloud9_state::screen_update_cloud9(screen_device &screen, bitmap_ind16 
 			src[1] = &m_videoram[0x0000 | (effy * 64)];
 
 			/* loop over X */
-			for (x = cliprect.min_x; x <= cliprect.max_x; x++)
+			for (x = cliprect.left(); x <= cliprect.right(); x++)
 			{
 				/* if we're in the HBLANK region, just store black */
 				if (x >= 256)

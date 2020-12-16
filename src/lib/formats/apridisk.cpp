@@ -1,4 +1,4 @@
-// license:GPL-2.0+
+// license:BSD-3-Clause
 // copyright-holders:Dirk Best
 /***************************************************************************
 
@@ -8,9 +8,10 @@
 
 ***************************************************************************/
 
-#include "emu.h"
-#include "imageutl.h"
 #include "apridisk.h"
+
+#include "imageutl.h"
+
 
 apridisk_format::apridisk_format()
 {
@@ -97,7 +98,10 @@ bool apridisk_format::load(io_generic *io, uint32_t form_factor, floppy_image *i
 					uint16_t length = pick_integer_le(comp, 0, 2);
 
 					if (length != SECTOR_SIZE)
-						fatalerror("apridisk_format: Invalid compression length %04x\n", length);
+					{
+						osd_printf_error("apridisk_format: Invalid compression length %04x\n", length);
+						return false;
+					}
 
 					memset(data_ptr, comp[2], SECTOR_SIZE);
 				}
@@ -108,7 +112,8 @@ bool apridisk_format::load(io_generic *io, uint32_t form_factor, floppy_image *i
 				break;
 
 			default:
-				fatalerror("apridisk_format: Invalid compression %04x\n", compression);
+				osd_printf_error("apridisk_format: Invalid compression %04x\n", compression);
+				return false;
 			}
 
 			sectors[track][head][sector - 1].data = data_ptr;

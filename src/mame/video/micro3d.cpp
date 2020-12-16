@@ -105,7 +105,7 @@ TMS340X0_SCANLINE_IND16_CB_MEMBER(micro3d_state::scanline_update)
 	}
 }
 
-WRITE16_MEMBER(micro3d_state::micro3d_creg_w)
+void micro3d_state::micro3d_creg_w(uint16_t data)
 {
 	if (~data & 0x80)
 		m_vgb->set_input_line(0, CLEAR_LINE);
@@ -113,7 +113,7 @@ WRITE16_MEMBER(micro3d_state::micro3d_creg_w)
 	m_creg = data;
 }
 
-WRITE16_MEMBER(micro3d_state::micro3d_xfer3dk_w)
+void micro3d_state::micro3d_xfer3dk_w(uint16_t data)
 {
 	m_xfer3dk = data;
 }
@@ -145,15 +145,14 @@ int micro3d_state::inside(micro3d_vtx *v, enum planes plane)
 	return 0;
 }
 
-/* Calculate where two points intersect */
-micro3d_vtx micro3d_state::intersect(micro3d_vtx *v1, micro3d_vtx *v2, enum planes plane)
+// Calculate where two points intersect
+micro3d_state::micro3d_vtx micro3d_state::intersect(micro3d_vtx *v1, micro3d_vtx *v2, enum planes plane)
 {
 	float m = 0.0;
-	micro3d_vtx vo = { 0, 0, 0 };
-
 	if (v1->x != v2->x)
-		m = (float)(v1->y - v2->y) / (float)(v1->x - v2->x);
+		m = float(v1->y - v2->y) / float(v1->x - v2->x);
 
+	micro3d_vtx vo = { 0, 0, 0 };
 	switch (plane)
 	{
 		case CLIP_Z_MIN:
@@ -162,8 +161,8 @@ micro3d_vtx micro3d_state::intersect(micro3d_vtx *v1, micro3d_vtx *v2, enum plan
 
 			if (v1->z != v2->z)
 			{
-				mxz = (float)(v1->x - v2->x) / (float)(v1->z - v2->z);
-				myz = (float)(v1->y - v2->y) / (float)(v1->z - v2->z);
+				mxz = float(v1->x - v2->x) / float(v1->z - v2->z);
+				myz = float(v1->y - v2->y) / float(v1->z - v2->z);
 			}
 			else
 			{
@@ -182,8 +181,8 @@ micro3d_vtx micro3d_state::intersect(micro3d_vtx *v1, micro3d_vtx *v2, enum plan
 
 			if (v1->z != v2->z)
 			{
-				mxz = (float)(v1->x - v2->x) / (float)(v1->z - v2->z);
-				myz = (float)(v1->y - v2->y) / (float)(v1->z - v2->z);
+				mxz = float(v1->x - v2->x) / float(v1->z - v2->z);
+				myz = float(v1->y - v2->y) / float(v1->z - v2->z);
 			}
 			else
 			{
@@ -621,7 +620,7 @@ bc000000-1fc DPRAM address for read access
 
 ******************************************************************************/
 
-WRITE32_MEMBER(micro3d_state::micro3d_fifo_w)
+void micro3d_state::micro3d_fifo_w(uint32_t data)
 {
 	uint32_t opcode = data >> 24;
 
@@ -721,12 +720,12 @@ WRITE32_MEMBER(micro3d_state::micro3d_fifo_w)
 	}
 }
 
-WRITE32_MEMBER(micro3d_state::micro3d_alt_fifo_w)
+void micro3d_state::micro3d_alt_fifo_w(uint32_t data)
 {
 	m_vtx_fifo[m_fifo_idx++] = VTX_SEX(data);
 }
 
-READ32_MEMBER(micro3d_state::micro3d_pipe_r)
+uint32_t micro3d_state::micro3d_pipe_r()
 {
 	m_drmath->set_input_line(AM29000_INTR1, CLEAR_LINE);
 	return m_pipe_data;

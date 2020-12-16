@@ -22,7 +22,7 @@
 //  DEVICE DEFINITIONS
 //**************************************************************************
 
-DEFINE_DEVICE_TYPE(DATABOARD_4112_23, databoard_4112_23_t, "db411223", "Databoard 4112-23")
+DEFINE_DEVICE_TYPE(DATABOARD_4112_23, abc_databoard_4112_23_device, "abc_db411223", "Databoard 4112-23")
 
 
 //-------------------------------------------------
@@ -39,7 +39,7 @@ ROM_END
 //  rom_region - device-specific ROM region
 //-------------------------------------------------
 
-const tiny_rom_entry *databoard_4112_23_t::device_rom_region() const
+const tiny_rom_entry *abc_databoard_4112_23_device::device_rom_region() const
 {
 	return ROM_NAME( databoard_4112_23 );
 }
@@ -49,28 +49,31 @@ const tiny_rom_entry *databoard_4112_23_t::device_rom_region() const
 //  ADDRESS_MAP( databoard_4112_23_mem )
 //-------------------------------------------------
 
-static ADDRESS_MAP_START( databoard_4112_23_mem, AS_PROGRAM, 8, databoard_4112_23_t )
-	AM_RANGE(0x0000, 0x1fff) AM_ROM AM_REGION(Z80_TAG, 0)
-ADDRESS_MAP_END
+void abc_databoard_4112_23_device::databoard_4112_23_mem(address_map &map)
+{
+	map(0x0000, 0x1fff).rom().region(Z80_TAG, 0);
+}
 
 
 //-------------------------------------------------
 //  ADDRESS_MAP( databoard_4112_23_io )
 //-------------------------------------------------
 
-static ADDRESS_MAP_START( databoard_4112_23_io, AS_IO, 8, databoard_4112_23_t )
-ADDRESS_MAP_END
+void abc_databoard_4112_23_device::databoard_4112_23_io(address_map &map)
+{
+}
 
 
 //-------------------------------------------------
 //  device_add_mconfig - add device configuration
 //-------------------------------------------------
 
-MACHINE_CONFIG_MEMBER( databoard_4112_23_t::device_add_mconfig )
-	MCFG_CPU_ADD(Z80_TAG, Z80, 4000000)
-	MCFG_CPU_PROGRAM_MAP(databoard_4112_23_mem)
-	MCFG_CPU_IO_MAP(databoard_4112_23_io)
-MACHINE_CONFIG_END
+void abc_databoard_4112_23_device::device_add_mconfig(machine_config &config)
+{
+	Z80(config, m_maincpu, 4000000);
+	m_maincpu->set_addrmap(AS_PROGRAM, &abc_databoard_4112_23_device::databoard_4112_23_mem);
+	m_maincpu->set_addrmap(AS_IO, &abc_databoard_4112_23_device::databoard_4112_23_io);
+}
 
 
 //-------------------------------------------------
@@ -85,7 +88,7 @@ INPUT_PORTS_END
 //  input_ports - device-specific input ports
 //-------------------------------------------------
 
-ioport_constructor databoard_4112_23_t::device_input_ports() const
+ioport_constructor abc_databoard_4112_23_device::device_input_ports() const
 {
 	return INPUT_PORTS_NAME( databoard_4112_23 );
 }
@@ -97,10 +100,10 @@ ioport_constructor databoard_4112_23_t::device_input_ports() const
 //**************************************************************************
 
 //-------------------------------------------------
-//  databoard_4112_23_t - constructor
+//  abc_databoard_4112_23_device - constructor
 //-------------------------------------------------
 
-databoard_4112_23_t::databoard_4112_23_t(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock) :
+abc_databoard_4112_23_device::abc_databoard_4112_23_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock) :
 	device_t(mconfig, DATABOARD_4112_23, tag, owner, clock),
 	device_abcbus_card_interface(mconfig, *this),
 	m_maincpu(*this, Z80_TAG)
@@ -112,7 +115,7 @@ databoard_4112_23_t::databoard_4112_23_t(const machine_config &mconfig, const ch
 //  device_start - device-specific startup
 //-------------------------------------------------
 
-void databoard_4112_23_t::device_start()
+void abc_databoard_4112_23_device::device_start()
 {
 }
 
@@ -121,7 +124,7 @@ void databoard_4112_23_t::device_start()
 //  device_reset - device-specific reset
 //-------------------------------------------------
 
-void databoard_4112_23_t::device_reset()
+void abc_databoard_4112_23_device::device_reset()
 {
 	m_cs = false;
 }
@@ -136,7 +139,7 @@ void databoard_4112_23_t::device_reset()
 //  abcbus_cs -
 //-------------------------------------------------
 
-void databoard_4112_23_t::abcbus_cs(uint8_t data)
+void abc_databoard_4112_23_device::abcbus_cs(uint8_t data)
 {
 }
 
@@ -145,7 +148,7 @@ void databoard_4112_23_t::abcbus_cs(uint8_t data)
 //  abcbus_stat -
 //-------------------------------------------------
 
-uint8_t databoard_4112_23_t::abcbus_stat()
+uint8_t abc_databoard_4112_23_device::abcbus_stat()
 {
 	uint8_t data = 0xff;
 
@@ -161,7 +164,7 @@ uint8_t databoard_4112_23_t::abcbus_stat()
 //  abcbus_inp -
 //-------------------------------------------------
 
-uint8_t databoard_4112_23_t::abcbus_inp()
+uint8_t abc_databoard_4112_23_device::abcbus_inp()
 {
 	uint8_t data = 0xff;
 
@@ -177,7 +180,7 @@ uint8_t databoard_4112_23_t::abcbus_inp()
 //  abcbus_out -
 //-------------------------------------------------
 
-void databoard_4112_23_t::abcbus_out(uint8_t data)
+void abc_databoard_4112_23_device::abcbus_out(uint8_t data)
 {
 	if (!m_cs) return;
 }
@@ -187,7 +190,7 @@ void databoard_4112_23_t::abcbus_out(uint8_t data)
 //  abcbus_c1 -
 //-------------------------------------------------
 
-void databoard_4112_23_t::abcbus_c1(uint8_t data)
+void abc_databoard_4112_23_device::abcbus_c1(uint8_t data)
 {
 	if (m_cs)
 	{
@@ -199,7 +202,7 @@ void databoard_4112_23_t::abcbus_c1(uint8_t data)
 //  abcbus_c3 -
 //-------------------------------------------------
 
-void databoard_4112_23_t::abcbus_c3(uint8_t data)
+void abc_databoard_4112_23_device::abcbus_c3(uint8_t data)
 {
 	if (m_cs)
 	{

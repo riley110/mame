@@ -10,14 +10,18 @@ EEPROM (M68HC805) variants.  The suffix gives some indication of the
 memory sizes and on-board peripherals, but there's not a lot of
 consistency across the ROM/EPROM/EEPROM variants.
 
-All devices in this family have a 16-bit free-running counter fed from
+Most devices in this family have a 16-bit free-running counter fed from
 the internal clock.  The counter value can be captured on an input edge,
 and an output can be automatically set when the counter reaches a
-certain value.
+certain value.  The lower-end devices instead have a 15-bit multifunction
+ripple counter with a programmable selector for the last four stages that
+determines both the COP watchdog timeout and the real-time interrupt rate
+(this is not currently emulated).
 */
 #include "emu.h"
 #include "m68hc05.h"
 #include "m6805defs.h"
+#include "6805dasm.h"
 
 
 /****************************************************************************
@@ -60,8 +64,35 @@ std::pair<u16, char const *> const m68hc705c8a_syms[] = {
 	{ 0x0014, "ICRH"   }, { 0x0015, "ICRL"  }, { 0x0016, "OCRH"  }, { 0x0017, "OCRL"  },
 	{ 0x0018, "TRH"    }, { 0x0019, "TRL"   }, { 0x001a, "ATRH"  }, { 0x001b, "ATRL"  },
 	{ 0x001c, "PROG"   },
-	{ 0x001d, "COPRST" }, { 0x001e, "COPCR" } };
+	{ 0x001d, "COPRST" }, { 0x001e, "COPCR" },
+	{ 0x1fdf, "OPTION" } };
 
+std::pair<u16, char const *> const m68hc705j1a_syms[] = {
+	{ 0x0000, "PORTA"  }, { 0x0001, "PORTB" },
+	{ 0x0004, "DDRA"   }, { 0x0005, "DDRB"  },
+	{ 0x0008, "TSCR"   }, { 0x0009, "TCR"   }, { 0x000a, "ISCR"  },
+	{ 0x0010, "PDRA"   }, { 0x0011, "PDRB"  },
+	{ 0x0014, "EPROG"  },
+	{ 0x07f0, "COPR"   }, { 0x07f1, "MOR"   } };
+
+std::pair<u16, char const *> const m68hc05l9_syms[] = {
+	{ 0x0000, "PORTA"  }, { 0x0001, "PORTB"  }, { 0x0002, "PORTC"  }, { 0x0003, "PORTD"  },
+	{ 0x0004, "DDRA"   }, { 0x0005, "DDRB"   }, { 0x0006, "DDRC"   }, { 0x0007, "DDRD"   },
+	{ 0x0008, "COUNT"  },
+	{ 0x0009, "GCR1"   }, { 0x000a, "GCR2"   },
+	{ 0x000b, "MINA"   }, { 0x000c, "HOURA"  },
+	{ 0x000d, "BAUD"   }, { 0x000e, "SCCR1"  }, { 0x000f, "SCCR2"  }, { 0x0010, "SCSR"   }, { 0x0011, "SCDR"   },
+	{ 0x0012, "TCR"    }, { 0x0013, "TSR"    },
+	{ 0x0014, "ICRH"   }, { 0x0015, "ICRL"   }, { 0x0016, "OCRH"   }, { 0x0017, "OCRL"   },
+	{ 0x0018, "TRH"    }, { 0x0019, "TRL"    }, { 0x001a, "ATRH"   }, { 0x001b, "ATRL"   },
+	{ 0x001c, "RTCSR"  },
+	{ 0x001d, "HOUR"   }, { 0x001e, "MIN"    }, { 0x001f, "SEC"    } };
+
+
+ROM_START( m68hc705c4a )
+	ROM_REGION(0x00f0, "bootstrap", 0)
+	ROM_LOAD("bootstrap.bin", 0x0000, 0x00f0, NO_DUMP)
+ROM_END
 
 ROM_START( m68hc705c8a )
 	ROM_REGION(0x00f0, "bootstrap", 0)
@@ -89,9 +120,13 @@ constexpr u16 M68HC05_INT_MASK          = M68HC05_INT_IRQ | M68HC05_INT_TIMER;
  * Global variables
  ****************************************************************************/
 
-DEFINE_DEVICE_TYPE(M68HC05C4,   m68hc05c4_device,   "m68hc05c4",   "MC68HC05C4")
-DEFINE_DEVICE_TYPE(M68HC05C8,   m68hc05c8_device,   "m68hc05c8",   "MC68HC05C8")
-DEFINE_DEVICE_TYPE(M68HC705C8A, m68hc705c8a_device, "m68hc705c8a", "MC68HC705C8A")
+DEFINE_DEVICE_TYPE(M68HC05C4,   m68hc05c4_device,   "m68hc05c4",   "Motorola MC68HC05C4")
+DEFINE_DEVICE_TYPE(M68HC05C8,   m68hc05c8_device,   "m68hc05c8",   "Motorola MC68HC05C8")
+DEFINE_DEVICE_TYPE(M68HC705C4A, m68hc705c4a_device, "m68hc705c4a", "Motorola MC68HC705C4A")
+DEFINE_DEVICE_TYPE(M68HC705C8A, m68hc705c8a_device, "m68hc705c8a", "Motorola MC68HC705C8A")
+DEFINE_DEVICE_TYPE(M68HC705J1A, m68hc705j1a_device, "m68hc705j1a", "Motorola MC68HC705J1A")
+DEFINE_DEVICE_TYPE(M68HC05L9,   m68hc05l9_device,   "m68hc05l9",   "Motorola MC68HC05L9")
+DEFINE_DEVICE_TYPE(M68HC05L11,  m68hc05l11_device,  "m68hc05l11",  "Motorola MC68HC05L11")
 
 
 
@@ -105,17 +140,19 @@ m68hc05_device::m68hc05_device(
 		device_t *owner,
 		u32 clock,
 		device_type type,
-		address_map_delegate internal_map)
+		u32 addr_width,
+		u16 vector_mask,
+		address_map_constructor internal_map)
 	: m6805_base_device(
 			mconfig,
 			tag,
 			owner,
 			clock,
 			type,
-			{ s_hc_ops, s_hc_cycles, 13, 0x00ff, 0x00c0, M68HC05_VECTOR_SWI },
+			{ addr_width > 13 ? s_hc_b_ops : s_hc_s_ops, s_hc_cycles, addr_width, 0x00ff, 0x00c0, vector_mask, M68HC05_VECTOR_SWI },
 			internal_map)
-	, m_port_cb_r{ *this, *this, *this, *this }
-	, m_port_cb_w{ *this, *this, *this, *this }
+	, m_port_cb_r(*this)
+	, m_port_cb_w(*this)
 	, m_port_bits{ 0xff, 0xff, 0xff, 0xff }
 	, m_port_interrupt{ 0x00, 0x00, 0x00, 0x00 }
 	, m_port_input{ 0xff, 0xff, 0xff, 0xff }
@@ -164,12 +201,12 @@ void m68hc05_device::set_port_interrupt(std::array<u8, PORT_COUNT> const &interr
 	if (diff) update_port_irq();
 }
 
-READ8_MEMBER(m68hc05_device::port_r)
+u8 m68hc05_device::port_read(offs_t offset)
 {
 	offset &= PORT_COUNT - 1;
-	if (!machine().side_effect_disabled() && !m_port_cb_r[offset].isnull())
+	if (!machine().side_effects_disabled() && !m_port_cb_r[offset].isnull())
 	{
-		u8 const newval(m_port_cb_r[offset](space, 0, ~m_port_ddr[offset] & m_port_bits[offset]) & m_port_bits[offset]);
+		u8 const newval(m_port_cb_r[offset](0, ~m_port_ddr[offset] & m_port_bits[offset]) & m_port_bits[offset]);
 		u8 const diff(newval ^ m_port_input[offset]);
 		if (diff)
 		{
@@ -183,7 +220,7 @@ READ8_MEMBER(m68hc05_device::port_r)
 	return port_value(offset);
 }
 
-WRITE8_MEMBER(m68hc05_device::port_latch_w)
+void m68hc05_device::port_latch_w(offs_t offset, u8 data)
 {
 	offset &= PORT_COUNT - 1;
 	data &= m_port_bits[offset];
@@ -195,15 +232,15 @@ WRITE8_MEMBER(m68hc05_device::port_latch_w)
 	}
 	m_port_latch[offset] = data;
 	if (diff & m_port_ddr[offset])
-		m_port_cb_w[offset](space, 0, port_value(offset), m_port_ddr[offset]);
+		m_port_cb_w[offset](0, port_value(offset), m_port_ddr[offset]);
 }
 
-READ8_MEMBER(m68hc05_device::port_ddr_r)
+u8 m68hc05_device::port_ddr_r(offs_t offset)
 {
 	return m_port_ddr[offset & (PORT_COUNT - 1)];
 }
 
-WRITE8_MEMBER(m68hc05_device::port_ddr_w)
+void m68hc05_device::port_ddr_w(offs_t offset, u8 data)
 {
 	offset &= PORT_COUNT - 1;
 	data &= m_port_bits[offset];
@@ -216,7 +253,7 @@ WRITE8_MEMBER(m68hc05_device::port_ddr_w)
 		{
 			if (!m_port_cb_r[offset].isnull())
 			{
-				u8 const newval(m_port_cb_r[offset](space, 0, ~m_port_ddr[offset] & m_port_bits[offset]) & m_port_bits[offset]);
+				u8 const newval(m_port_cb_r[offset](0, ~m_port_ddr[offset] & m_port_bits[offset]) & m_port_bits[offset]);
 				u8 const diff(newval ^ m_port_input[offset]);
 				if (diff)
 				{
@@ -227,17 +264,17 @@ WRITE8_MEMBER(m68hc05_device::port_ddr_w)
 			}
 			update_port_irq();
 		}
-		m_port_cb_w[offset](space, 0, port_value(offset), m_port_ddr[offset]);
+		m_port_cb_w[offset](0, port_value(offset), m_port_ddr[offset]);
 	}
 }
 
 
-READ8_MEMBER(m68hc05_device::tcr_r)
+u8 m68hc05_device::tcr_r()
 {
 	return m_tcr;
 }
 
-WRITE8_MEMBER(m68hc05_device::tcr_w)
+void m68hc05_device::tcr_w(u8 data)
 {
 	data &= 0xe3;
 	LOGTIMER("write TCR: ICIE=%u OCIE=%u TOIE=%u IEDG=%u OLVL=%u\n",
@@ -249,9 +286,9 @@ WRITE8_MEMBER(m68hc05_device::tcr_w)
 		m_pending_interrupts &= ~M68HC05_INT_TIMER;
 }
 
-READ8_MEMBER(m68hc05_device::tsr_r)
+u8 m68hc05_device::tsr_r()
 {
-	if (!machine().side_effect_disabled())
+	if (!machine().side_effects_disabled())
 	{
 		u8 const events(m_tsr & ~m_tsr_seen);
 		if (events)
@@ -264,13 +301,13 @@ READ8_MEMBER(m68hc05_device::tsr_r)
 	return m_tsr;
 }
 
-READ8_MEMBER(m68hc05_device::icr_r)
+u8 m68hc05_device::icr_r(offs_t offset)
 {
 	// reading IRCH inhibits capture until ICRL is read
 	// reading ICRL after reading TCR with ICF set clears ICF
 
 	u8 const low(BIT(offset, 0));
-	if (!machine().side_effect_disabled())
+	if (!machine().side_effects_disabled())
 	{
 		if (low)
 		{
@@ -293,12 +330,12 @@ READ8_MEMBER(m68hc05_device::icr_r)
 	return u8(m_icr >> (low ? 0 : 8));
 }
 
-READ8_MEMBER(m68hc05_device::ocr_r)
+u8 m68hc05_device::ocr_r(offs_t offset)
 {
 	// reading OCRL after reading TCR with OCF set clears OCF
 
 	u8 const low(BIT(offset, 0));
-	if (!machine().side_effect_disabled() && low && BIT(m_tsr_seen, 6))
+	if (!machine().side_effects_disabled() && low && BIT(m_tsr_seen, 6))
 	{
 		LOGTIMER("read OCRL, clear OCF\n");
 		m_tsr &= 0xbf;
@@ -308,13 +345,13 @@ READ8_MEMBER(m68hc05_device::ocr_r)
 	return u8(m_ocr >> (low ? 0 : 8));
 }
 
-WRITE8_MEMBER(m68hc05_device::ocr_w)
+void m68hc05_device::ocr_w(offs_t offset, u8 data)
 {
 	// writing ORCH inhibits compare until OCRL is written
 	// writing OCRL after reading TCR with OCF set clears OCF
 
 	u8 const low(BIT(offset, 0));
-	if (!machine().side_effect_disabled())
+	if (!machine().side_effects_disabled())
 	{
 		if (low)
 		{
@@ -337,7 +374,7 @@ WRITE8_MEMBER(m68hc05_device::ocr_w)
 	m_ocr = (m_ocr & (low ? 0xff00 : 0x00ff)) | (u16(data) << (low ? 0 : 8));
 }
 
-READ8_MEMBER(m68hc05_device::timer_r)
+u8 m68hc05_device::timer_r(offs_t offset)
 {
 	// reading [A]TRH returns current counter MSB and latches [A]TRL buffer
 	// reading [A]TRL returns current [A]TRL buffer and completes read sequence
@@ -348,7 +385,7 @@ READ8_MEMBER(m68hc05_device::timer_r)
 	u8 const alt(BIT(offset, 1));
 	if (low)
 	{
-		if (!machine().side_effect_disabled())
+		if (!machine().side_effects_disabled())
 		{
 			if (m_trl_latched[alt]) LOGTIMER("read %sTRL, read sequence complete\n", alt ? "A" : "");
 			m_trl_latched[alt] = false;
@@ -364,7 +401,7 @@ READ8_MEMBER(m68hc05_device::timer_r)
 	}
 	else
 	{
-		if (!machine().side_effect_disabled() && !m_trl_latched[alt])
+		if (!machine().side_effects_disabled() && !m_trl_latched[alt])
 		{
 			LOGTIMER("read %sTRH, latch %sTRL\n", alt ? "A" : "", alt ? "A" : "");
 			m_trl_latched[alt] = true;
@@ -375,7 +412,7 @@ READ8_MEMBER(m68hc05_device::timer_r)
 }
 
 
-WRITE8_MEMBER(m68hc05_device::coprst_w)
+void m68hc05_device::coprst_w(u8 data)
 {
 	LOGCOP("write COPRST=%02x%s\n", data, ((0xaa == data) && (0x55 == m_coprst)) ? ", reset" : "");
 	if (0x55 == data)
@@ -389,22 +426,25 @@ WRITE8_MEMBER(m68hc05_device::coprst_w)
 	}
 }
 
-READ8_MEMBER(m68hc05_device::copcr_r)
+u8 m68hc05_device::copcr_r()
 {
-	if (copcr_copf()) LOGCOP("read COPCR, clear COPF\n");
 	u8 const result(m_copcr);
-	m_copcr &= 0xef;
+	if (!machine().side_effects_disabled())
+	{
+		if (copcr_copf()) LOGCOP("read COPCR, clear COPF\n");
+		m_copcr &= 0xef;
+	}
 	return result;
 }
 
-WRITE8_MEMBER(m68hc05_device::copcr_w)
+void m68hc05_device::copcr_w(u8 data)
 {
 	LOGCOP("write COPCR: CME=%u PCOPE=%u [%s] CM=%u\n",
 			BIT(data, 3), BIT(data, 2), (!copcr_pcope() && BIT(data, 2)) ? "set" : "ignored", data & 0x03);
 	m_copcr = (m_copcr & 0xf4) | (data & 0x0f); // PCOPE is set-only, hence the mask overlap
 }
 
-WRITE8_MEMBER(m68hc05_device::copr_w)
+void m68hc05_device::copr_w(u8 data)
 {
 	LOGCOP("write COPR: COPC=%u\n", BIT(data, 0));
 	if (!BIT(data, 0)) m_ncop_cnt = 0;
@@ -416,8 +456,8 @@ void m68hc05_device::device_start()
 	m6805_base_device::device_start();
 
 	// resolve callbacks
-	for (devcb_read8 &cb : m_port_cb_r) cb.resolve();
-	for (devcb_write8 &cb : m_port_cb_w) cb.resolve_safe();
+	m_port_cb_r.resolve_all();
+	m_port_cb_w.resolve_all_safe();
 	m_tcmp_cb.resolve_safe();
 
 	// save digital I/O
@@ -438,7 +478,7 @@ void m68hc05_device::device_start()
 	save_item(NAME(m_counter));
 	save_item(NAME(m_icr));
 	save_item(NAME(m_ocr));
-	save_item(NAME(m_inhibit_cap));;
+	save_item(NAME(m_inhibit_cap));
 	save_item(NAME(m_inhibit_cmp));
 	save_item(NAME(m_trl_buf));
 	save_item(NAME(m_trl_latched));
@@ -531,25 +571,19 @@ void m68hc05_device::execute_set_input(int inputnum, int state)
 	}
 }
 
-u64 m68hc05_device::execute_clocks_to_cycles(u64 clocks) const
+u64 m68hc05_device::execute_clocks_to_cycles(u64 clocks) const noexcept
 {
 	return (clocks + 1) / 2;
 }
 
-u64 m68hc05_device::execute_cycles_to_clocks(u64 cycles) const
+u64 m68hc05_device::execute_cycles_to_clocks(u64 cycles) const noexcept
 {
 	return cycles * 2;
 }
 
-
-offs_t m68hc05_device::disasm_disassemble(
-		std::ostream &stream,
-		offs_t pc,
-		const u8 *oprom,
-		const u8 *opram,
-		u32 options)
+std::unique_ptr<util::disasm_interface> m68hc05_device::create_disassembler()
 {
-	return CPU_DISASSEMBLE_NAME(m68hc05)(this, stream, pc, oprom, opram, options);
+	return std::make_unique<m68hc05_disassembler>();
 }
 
 
@@ -557,10 +591,19 @@ void m68hc05_device::interrupt()
 {
 	if ((m_pending_interrupts & M68HC05_INT_MASK) && !(CC & IFLAG))
 	{
-		pushword(m_pc);
-		pushbyte(m_x);
-		pushbyte(m_a);
-		pushbyte(m_cc);
+		if (m_params.m_addr_width > 13) {
+			pushword<true>(m_pc);
+			pushbyte<true>(m_x);
+			pushbyte<true>(m_a);
+			pushbyte<true>(m_cc);
+		}
+		else
+		{
+			pushword<false>(m_pc);
+			pushbyte<false>(m_x);
+			pushbyte<false>(m_a);
+			pushbyte<false>(m_cc);
+		}
 		SEI;
 		standard_irq_callback(0);
 
@@ -569,12 +612,18 @@ void m68hc05_device::interrupt()
 			LOGINT("servicing external interrupt\n");
 			m_irq_latch = 0;
 			m_pending_interrupts &= ~M68HC05_INT_IRQ;
-			rm16(M68HC05_VECTOR_IRQ, m_pc);
+			if (m_params.m_addr_width > 13)
+				rm16<true>(M68HC05_VECTOR_IRQ & m_params.m_vector_mask, m_pc);
+			else
+				rm16<false>(M68HC05_VECTOR_IRQ & m_params.m_vector_mask, m_pc);
 		}
 		else if (m_pending_interrupts & M68HC05_INT_TIMER)
 		{
 			LOGINT("servicing timer interrupt\n");
-			rm16(M68HC05_VECTOR_TIMER, m_pc);
+			if (m_params.m_addr_width > 13)
+				rm16<true>(M68HC05_VECTOR_TIMER & m_params.m_vector_mask, m_pc);
+			else
+				rm16<false>(M68HC05_VECTOR_TIMER & m_params.m_vector_mask, m_pc);
 		}
 		else
 		{
@@ -623,15 +672,15 @@ void m68hc05_device::burn_cycles(unsigned count)
 	{
 		LOGCOP("PCOP reset\n");
 		m_copcr |= 0x10;
-		set_input_line(INPUT_LINE_RESET, PULSE_LINE);
+		pulse_input_line(INPUT_LINE_RESET, attotime::zero);
 	}
 	m_pcop_cnt = (m_pcop_cnt + count) & ((u32(1) << 21) - 1);
 
 	// run non-programmable COP
 	m_ncop_cnt += count;
-	if ((u32(1) << 17) <= m_ncop_cnt)
+	if (m_ncope && ((u32(1) << 17) <= m_ncop_cnt))
 	{
-		set_input_line(INPUT_LINE_RESET, PULSE_LINE);
+		pulse_input_line(INPUT_LINE_RESET, attotime::zero);
 		LOGCOP("NCOP reset\n");
 	}
 	m_ncop_cnt &= (u32(1) << 17) - 1;
@@ -712,8 +761,9 @@ m68hc705_device::m68hc705_device(
 		device_t *owner,
 		u32 clock,
 		device_type type,
-		address_map_delegate internal_map)
-	: m68hc05_device(mconfig, tag, owner, clock, type, internal_map)
+		u32 addr_width,
+		address_map_constructor internal_map)
+	: m68hc05_device(mconfig, tag, owner, clock, type, addr_width, (1U << addr_width) - 1, internal_map)
 {
 }
 
@@ -723,12 +773,13 @@ m68hc705_device::m68hc705_device(
  * MC68HC05C4 device
  ****************************************************************************/
 
-DEVICE_ADDRESS_MAP_START( c4_map, 8, m68hc05c4_device )
-	ADDRESS_MAP_GLOBAL_MASK(0x1fff)
-	ADDRESS_MAP_UNMAP_HIGH
+void m68hc05c4_device::c4_map(address_map &map)
+{
+	map.global_mask(0x1fff);
+	map.unmap_value_high();
 
-	AM_RANGE(0x0000, 0x0003) AM_READWRITE(port_r, port_latch_w)
-	AM_RANGE(0x0004, 0x0006) AM_READWRITE(port_ddr_r, port_ddr_w)
+	map(0x0000, 0x0003).rw(FUNC(m68hc05c4_device::port_read), FUNC(m68hc05c4_device::port_latch_w));
+	map(0x0004, 0x0006).rw(FUNC(m68hc05c4_device::port_ddr_r), FUNC(m68hc05c4_device::port_ddr_w));
 	// 0x0007-0x0009 unused
 	// 0x000a SPCR
 	// 0x000b SPSR
@@ -738,20 +789,20 @@ DEVICE_ADDRESS_MAP_START( c4_map, 8, m68hc05c4_device )
 	// 0x000f SCCR2
 	// 0x0010 SCSR
 	// 0x0011 SCDR
-	AM_RANGE(0x0012, 0x0012) AM_READWRITE(tcr_r, tcr_w)
-	AM_RANGE(0x0013, 0x0013) AM_READ(tsr_r)
-	AM_RANGE(0x0014, 0x0015) AM_READ(icr_r)
-	AM_RANGE(0x0016, 0x0017) AM_READWRITE(ocr_r, ocr_w)
-	AM_RANGE(0x0018, 0x001b) AM_READ(timer_r)
+	map(0x0012, 0x0012).rw(FUNC(m68hc05c4_device::tcr_r), FUNC(m68hc05c4_device::tcr_w));
+	map(0x0013, 0x0013).r(FUNC(m68hc05c4_device::tsr_r));
+	map(0x0014, 0x0015).r(FUNC(m68hc05c4_device::icr_r));
+	map(0x0016, 0x0017).rw(FUNC(m68hc05c4_device::ocr_r), FUNC(m68hc05c4_device::ocr_w));
+	map(0x0018, 0x001b).r(FUNC(m68hc05c4_device::timer_r));
 	// 0x001c-0x001f unused
-	AM_RANGE(0x0020, 0x004f) AM_ROM // user ROM
-	AM_RANGE(0x0050, 0x00ff) AM_RAM // RAM/stack
-	AM_RANGE(0x0100, 0x10ff) AM_ROM // user ROM
+	map(0x0020, 0x004f).rom(); // user ROM
+	map(0x0050, 0x00ff).ram(); // RAM/stack
+	map(0x0100, 0x10ff).rom(); // user ROM
 	// 0x1100-0x1eff unused
-	AM_RANGE(0x1f00, 0x1fef) AM_ROM // self-check
+	map(0x1f00, 0x1fef).rom(); // self-check
 	// 0x1ff0-0x1ff3 unused
-	AM_RANGE(0x1ff4, 0x1fff) AM_ROM // user vectors
-ADDRESS_MAP_END
+	map(0x1ff4, 0x1fff).rom(); // user vectors
+}
 
 
 m68hc05c4_device::m68hc05c4_device(machine_config const &mconfig, char const *tag, device_t *owner, u32 clock)
@@ -761,7 +812,9 @@ m68hc05c4_device::m68hc05c4_device(machine_config const &mconfig, char const *ta
 			owner,
 			clock,
 			M68HC05C4,
-			address_map_delegate(FUNC(m68hc05c4_device::c4_map), this))
+			13,
+			0x1fff,
+			address_map_constructor(FUNC(m68hc05c4_device::c4_map), this))
 {
 	set_port_bits(std::array<u8, PORT_COUNT>{{ 0xff, 0xff, 0xff, 0xbf }});
 }
@@ -777,14 +830,9 @@ void m68hc05c4_device::device_start()
 }
 
 
-offs_t m68hc05c4_device::disasm_disassemble(
-		std::ostream &stream,
-		offs_t pc,
-		const u8 *oprom,
-		const u8 *opram,
-		u32 options)
+std::unique_ptr<util::disasm_interface> m68hc05c4_device::create_disassembler()
 {
-	return CPU_DISASSEMBLE_NAME(m68hc05)(this, stream, pc, oprom, opram, options, m68hc05c4_syms);
+	return std::make_unique<m68hc05_disassembler>(m68hc05c4_syms);
 }
 
 
@@ -793,12 +841,13 @@ offs_t m68hc05c4_device::disasm_disassemble(
  * MC68HC05C8 device
  ****************************************************************************/
 
-DEVICE_ADDRESS_MAP_START( c8_map, 8, m68hc05c8_device )
-	ADDRESS_MAP_GLOBAL_MASK(0x1fff)
-	ADDRESS_MAP_UNMAP_HIGH
+void m68hc05c8_device::c8_map(address_map &map)
+{
+	map.global_mask(0x1fff);
+	map.unmap_value_high();
 
-	AM_RANGE(0x0000, 0x0003) AM_READWRITE(port_r, port_latch_w)
-	AM_RANGE(0x0004, 0x0006) AM_READWRITE(port_ddr_r, port_ddr_w)
+	map(0x0000, 0x0003).rw(FUNC(m68hc05c8_device::port_read), FUNC(m68hc05c8_device::port_latch_w));
+	map(0x0004, 0x0006).rw(FUNC(m68hc05c8_device::port_ddr_r), FUNC(m68hc05c8_device::port_ddr_w));
 	// 0x0007-0x0009 unused
 	// 0x000a SPCR
 	// 0x000b SPSR
@@ -808,19 +857,19 @@ DEVICE_ADDRESS_MAP_START( c8_map, 8, m68hc05c8_device )
 	// 0x000f SCCR2
 	// 0x0010 SCSR
 	// 0x0011 SCDR
-	AM_RANGE(0x0012, 0x0012) AM_READWRITE(tcr_r, tcr_w)
-	AM_RANGE(0x0013, 0x0013) AM_READ(tsr_r)
-	AM_RANGE(0x0014, 0x0015) AM_READ(icr_r)
-	AM_RANGE(0x0016, 0x0017) AM_READWRITE(ocr_r, ocr_w)
-	AM_RANGE(0x0018, 0x001b) AM_READ(timer_r)
+	map(0x0012, 0x0012).rw(FUNC(m68hc05c8_device::tcr_r), FUNC(m68hc05c8_device::tcr_w));
+	map(0x0013, 0x0013).r(FUNC(m68hc05c8_device::tsr_r));
+	map(0x0014, 0x0015).r(FUNC(m68hc05c8_device::icr_r));
+	map(0x0016, 0x0017).rw(FUNC(m68hc05c8_device::ocr_r), FUNC(m68hc05c8_device::ocr_w));
+	map(0x0018, 0x001b).r(FUNC(m68hc05c8_device::timer_r));
 	// 0x001c-0x001f unused
-	AM_RANGE(0x0020, 0x004f) AM_ROM // user ROM
-	AM_RANGE(0x0050, 0x00ff) AM_RAM // RAM/stack
-	AM_RANGE(0x0100, 0x1eff) AM_ROM // user ROM
-	AM_RANGE(0x1f00, 0x1fef) AM_ROM // self-check
+	map(0x0020, 0x004f).rom(); // user ROM
+	map(0x0050, 0x00ff).ram(); // RAM/stack
+	map(0x0100, 0x1eff).rom(); // user ROM
+	map(0x1f00, 0x1fef).rom(); // self-check
 	// 0x1ff0-0x1ff3 unused
-	AM_RANGE(0x1ff4, 0x1fff) AM_ROM // user vectors
-ADDRESS_MAP_END
+	map(0x1ff4, 0x1fff).rom(); // user vectors
+}
 
 
 m68hc05c8_device::m68hc05c8_device(machine_config const &mconfig, char const *tag, device_t *owner, u32 clock)
@@ -830,7 +879,9 @@ m68hc05c8_device::m68hc05c8_device(machine_config const &mconfig, char const *ta
 			owner,
 			clock,
 			M68HC05C8,
-			address_map_delegate(FUNC(m68hc05c8_device::c8_map), this))
+			13,
+			0x1fff,
+			address_map_constructor(FUNC(m68hc05c8_device::c8_map), this))
 {
 	set_port_bits(std::array<u8, PORT_COUNT>{{ 0xff, 0xff, 0xff, 0xbf }});
 }
@@ -845,29 +896,25 @@ void m68hc05c8_device::device_start()
 }
 
 
-offs_t m68hc05c8_device::disasm_disassemble(
-		std::ostream &stream,
-		offs_t pc,
-		const u8 *oprom,
-		const u8 *opram,
-		u32 options)
+std::unique_ptr<util::disasm_interface> m68hc05c8_device::create_disassembler()
 {
 	// same I/O registers as MC68HC05C4
-	return CPU_DISASSEMBLE_NAME(m68hc05)(this, stream, pc, oprom, opram, options, m68hc05c4_syms);
+	return std::make_unique<m68hc05_disassembler>(m68hc05c4_syms);
 }
 
 
 
 /****************************************************************************
- * MC68HC705C8A device
+ * MC68HC705C4A device
  ****************************************************************************/
 
-DEVICE_ADDRESS_MAP_START( c8a_map, 8, m68hc705c8a_device )
-	ADDRESS_MAP_GLOBAL_MASK(0x1fff)
-	ADDRESS_MAP_UNMAP_HIGH
+void m68hc705c4a_device::c4a_map(address_map &map)
+{
+	map.global_mask(0x1fff);
+	map.unmap_value_high();
 
-	AM_RANGE(0x0000, 0x0003) AM_READWRITE(port_r, port_latch_w)
-	AM_RANGE(0x0004, 0x0006) AM_READWRITE(port_ddr_r, port_ddr_w)
+	map(0x0000, 0x0003).rw(FUNC(m68hc705c4a_device::port_read), FUNC(m68hc705c4a_device::port_latch_w));
+	map(0x0004, 0x0006).rw(FUNC(m68hc705c4a_device::port_ddr_r), FUNC(m68hc705c4a_device::port_ddr_w));
 	// 0x0007-0x0009 unused
 	// 0x000a SPCR
 	// 0x000b SPSR
@@ -877,25 +924,119 @@ DEVICE_ADDRESS_MAP_START( c8a_map, 8, m68hc705c8a_device )
 	// 0x000f SCCR2
 	// 0x0010 SCSR
 	// 0x0011 SCDR
-	AM_RANGE(0x0012, 0x0012) AM_READWRITE(tcr_r, tcr_w)
-	AM_RANGE(0x0013, 0x0013) AM_READ(tsr_r)
-	AM_RANGE(0x0014, 0x0015) AM_READ(icr_r)
-	AM_RANGE(0x0016, 0x0017) AM_READWRITE(ocr_r, ocr_w)
-	AM_RANGE(0x0018, 0x001b) AM_READ(timer_r)
+	map(0x0012, 0x0012).rw(FUNC(m68hc705c4a_device::tcr_r), FUNC(m68hc705c4a_device::tcr_w));
+	map(0x0013, 0x0013).r(FUNC(m68hc705c4a_device::tsr_r));
+	map(0x0014, 0x0015).r(FUNC(m68hc705c4a_device::icr_r));
+	map(0x0016, 0x0017).rw(FUNC(m68hc705c4a_device::ocr_r), FUNC(m68hc705c4a_device::ocr_w));
+	map(0x0018, 0x001b).r(FUNC(m68hc705c4a_device::timer_r));
 	// 0x001c PROG
-	AM_RANGE(0x001d, 0x001d) AM_WRITE(coprst_w)
-	AM_RANGE(0x001e, 0x001e) AM_READWRITE(copcr_r, copcr_w)
+	// 0x001d-0x001f unused
+	map(0x0020, 0x004f).rom();                                 // user PROM
+	map(0x0050, 0x00ff).ram();                                 // RAM/stack
+	map(0x0100, 0x10ff).rom();                                 // user PROM
+	// 0x1100-0x1eff unused
+	map(0x1f00, 0x1fde).rom().region("bootstrap", 0x0000);  // bootloader
+	map(0x1fdf, 0x1fdf).lw8(NAME([this] (u8 data) { m_option = data; }));
+	map(0x1fe0, 0x1fef).rom().region("bootstrap", 0x00e0);  // boot ROM vectors
+	map(0x1ff0, 0x1ff0).w(FUNC(m68hc705c4a_device::copr_w));
+	map(0x1ff0, 0x1fff).rom();                                 // user vectors
+}
+
+
+m68hc705c4a_device::m68hc705c4a_device(machine_config const &mconfig, char const *tag, device_t *owner, u32 clock)
+	: m68hc705_device(
+			mconfig,
+			tag,
+			owner,
+			clock,
+			M68HC705C4A,
+			13,
+			address_map_constructor(FUNC(m68hc705c4a_device::c4a_map), this))
+	, m_rom(*this, DEVICE_SELF, 0x2000)
+{
+	set_port_bits(std::array<u8, PORT_COUNT>{{ 0xff, 0xff, 0xff, 0xbf }});
+}
+
+
+tiny_rom_entry const *m68hc705c4a_device::device_rom_region() const
+{
+	return ROM_NAME(m68hc705c4a);
+}
+
+
+void m68hc705c4a_device::device_start()
+{
+	m68hc705_device::device_start();
+
+	add_port_state(std::array<bool, PORT_COUNT>{{ true, true, true, false }});
+	add_timer_state();
+	add_ncop_state();
+
+	state_add(M68HC705C8A_OPTION, "OPTION", m_option).mask(0xff);
+
+	save_item(NAME(m_option));
+}
+
+void m68hc705c4a_device::device_reset()
+{
+	m68hc705_device::device_reset();
+
+	// latch MOR registers on reset
+	set_port_interrupt(std::array<u8, PORT_COUNT>{{ 0x00, u8(rdmem<false>(0xfff0)), 0x00, 0x00 }});
+	set_ncope(BIT(rdmem<false>(0xfff1), 0));
+
+	// IRQ negative edge and level sensitive
+	m_option = 0x02;
+}
+
+
+std::unique_ptr<util::disasm_interface> m68hc705c4a_device::create_disassembler()
+{
+	return std::make_unique<m68hc05_disassembler>(m68hc705c8a_syms);
+}
+
+
+
+
+/****************************************************************************
+ * MC68HC705C8A device
+ ****************************************************************************/
+
+void m68hc705c8a_device::c8a_map(address_map &map)
+{
+	map.global_mask(0x1fff);
+	map.unmap_value_high();
+
+	map(0x0000, 0x0003).rw(FUNC(m68hc705c8a_device::port_read), FUNC(m68hc705c8a_device::port_latch_w));
+	map(0x0004, 0x0006).rw(FUNC(m68hc705c8a_device::port_ddr_r), FUNC(m68hc705c8a_device::port_ddr_w));
+	// 0x0007-0x0009 unused
+	// 0x000a SPCR
+	// 0x000b SPSR
+	// 0x000c SPDR
+	// 0x000d BAUD
+	// 0x000e SCCR1
+	// 0x000f SCCR2
+	// 0x0010 SCSR
+	// 0x0011 SCDR
+	map(0x0012, 0x0012).rw(FUNC(m68hc705c8a_device::tcr_r), FUNC(m68hc705c8a_device::tcr_w));
+	map(0x0013, 0x0013).r(FUNC(m68hc705c8a_device::tsr_r));
+	map(0x0014, 0x0015).r(FUNC(m68hc705c8a_device::icr_r));
+	map(0x0016, 0x0017).rw(FUNC(m68hc705c8a_device::ocr_r), FUNC(m68hc705c8a_device::ocr_w));
+	map(0x0018, 0x001b).r(FUNC(m68hc705c8a_device::timer_r));
+	// 0x001c PROG
+	map(0x001d, 0x001d).w(FUNC(m68hc705c8a_device::coprst_w));
+	map(0x001e, 0x001e).rw(FUNC(m68hc705c8a_device::copcr_r), FUNC(m68hc705c8a_device::copcr_w));
 	// 0x001f unused
-	AM_RANGE(0x0020, 0x004f) AM_ROM                                 // user PROM FIXME: banked with RAM
-	AM_RANGE(0x0050, 0x00ff) AM_RAM                                 // RAM/stack
-	AM_RANGE(0x0100, 0x015f) AM_ROM                                 // user PROM FIXME: banked with RAM
-	AM_RANGE(0x0160, 0x1eff) AM_ROM                                 // user PROM
-	AM_RANGE(0x1f00, 0x1fde) AM_ROM AM_REGION("bootstrap", 0x0000)  // bootloader
-	// 0x1fdf option register FIXME: controls banking
-	AM_RANGE(0x1fe0, 0x1fef) AM_ROM AM_REGION("bootstrap", 0x00e0)  // boot ROM vectors
-	AM_RANGE(0x1ff0, 0x1ff0) AM_WRITE(copr_w)
-	AM_RANGE(0x1ff0, 0x1fff) AM_ROM                                 // user vectors
-ADDRESS_MAP_END
+	map(0x0020, 0x004f).rw(FUNC(m68hc705c8a_device::ram0_r), FUNC(m68hc705c8a_device::ram0_w)); // PROM/RAM
+	map(0x0050, 0x00ff).ram();                                 // RAM/stack
+	map(0x0100, 0x015f).rw(FUNC(m68hc705c8a_device::ram1_r), FUNC(m68hc705c8a_device::ram1_w)); // PROM/RAM
+	map(0x0160, 0x1eff).rom();                                 // user PROM
+	map(0x1f00, 0x1fde).rom().region("bootstrap", 0x0000);  // bootloader
+	map(0x1fdf, 0x1fdf).lw8(NAME([this] (u8 data) { m_option = data; }));
+	map(0x1fe0, 0x1fef).rom().region("bootstrap", 0x00e0);  // boot ROM vectors
+	map(0x1ff0, 0x1ff0).w(FUNC(m68hc705c8a_device::copr_w));
+	map(0x1ff0, 0x1fff).rom();                                 // user vectors
+}
 
 
 m68hc705c8a_device::m68hc705c8a_device(machine_config const &mconfig, char const *tag, device_t *owner, u32 clock)
@@ -905,7 +1046,9 @@ m68hc705c8a_device::m68hc705c8a_device(machine_config const &mconfig, char const
 			owner,
 			clock,
 			M68HC705C8A,
-			address_map_delegate(FUNC(m68hc705c8a_device::c8a_map), this))
+			13,
+			address_map_constructor(FUNC(m68hc705c8a_device::c8a_map), this))
+	, m_rom(*this, DEVICE_SELF, 0x2000)
 {
 	set_port_bits(std::array<u8, PORT_COUNT>{{ 0xff, 0xff, 0xff, 0xbf }});
 }
@@ -925,6 +1068,14 @@ void m68hc705c8a_device::device_start()
 	add_timer_state();
 	add_pcop_state();
 	add_ncop_state();
+
+	state_add(M68HC705C8A_OPTION, "OPTION", m_option).mask(0xff);
+
+	save_item(NAME(m_ram));
+	save_item(NAME(m_option));
+
+	// clear RAM
+	std::fill(std::begin(m_ram), std::end(m_ram), 0x00);
 }
 
 void m68hc705c8a_device::device_reset()
@@ -932,17 +1083,267 @@ void m68hc705c8a_device::device_reset()
 	m68hc705_device::device_reset();
 
 	// latch MOR registers on reset
-	set_port_interrupt(std::array<u8, PORT_COUNT>{{ 0x00, u8(rdmem(0xfff0)), 0x00, 0x00 }});
-	set_ncope(BIT(rdmem(0xfff1), 0));
+	set_port_interrupt(std::array<u8, PORT_COUNT>{{ 0x00, u8(rdmem<false>(0xfff0)), 0x00, 0x00 }});
+	set_ncope(BIT(rdmem<false>(0xfff1), 0));
+
+	// RAM disabled, IRQ negative edge and level sensitive
+	m_option = 0x02;
 }
 
 
-offs_t m68hc705c8a_device::disasm_disassemble(
-		std::ostream &stream,
-		offs_t pc,
-		const u8 *oprom,
-		const u8 *opram,
-		u32 options)
+std::unique_ptr<util::disasm_interface> m68hc705c8a_device::create_disassembler()
 {
-	return CPU_DISASSEMBLE_NAME(m68hc05)(this, stream, pc, oprom, opram, options, m68hc705c8a_syms);
+	return std::make_unique<m68hc05_disassembler>(m68hc705c8a_syms);
+}
+
+
+u8 m68hc705c8a_device::ram0_r(offs_t offset)
+{
+	if (BIT(m_option, 7))
+		return offset >= 0x10 ? m_ram[offset - 0x10] : 0x00; // 20-2f reserved
+	else
+		return m_rom[0x20 + offset];
+}
+
+void m68hc705c8a_device::ram0_w(offs_t offset, u8 data)
+{
+	if (BIT(m_option, 7) && offset >= 0x10)
+		m_ram[offset - 0x10] = data;
+}
+
+u8 m68hc705c8a_device::ram1_r(offs_t offset)
+{
+	if (BIT(m_option, 6))
+		return m_ram[0x20 + offset];
+	else
+		return m_rom[0x100 + offset];
+}
+
+void m68hc705c8a_device::ram1_w(offs_t offset, u8 data)
+{
+	if (BIT(m_option, 6))
+		m_ram[0x20 + offset] = data;
+}
+
+
+
+/****************************************************************************
+ * MC68HC05J1A device
+ ****************************************************************************/
+
+void m68hc705j1a_device::j1a_map(address_map &map)
+{
+	map.global_mask(0x07ff);
+	map.unmap_value_high();
+
+	map(0x0000, 0x0001).rw(FUNC(m68hc705j1a_device::port_read), FUNC(m68hc705j1a_device::port_latch_w));
+	map(0x0004, 0x0005).rw(FUNC(m68hc705j1a_device::port_ddr_r), FUNC(m68hc705j1a_device::port_ddr_w));
+	// 0x0008 TSCR (bits 7 and 6 are read-only; bits 3 and 2 are write-only)
+	// 0x0009 TCR (read-only)
+	// 0x000a ISCR (bits 7 and 3 are readable; bits 7, 4 and 1 are writeable)
+	// 0x0010 PDRA (write-only)
+	// 0x0011 PDRB (write-only)
+	// 0x0014 EPROG
+	// 0x001f reserved
+	map(0x00c0, 0x00ff).ram();
+	map(0x0300, 0x07cf).rom(); // EPROM
+	map(0x07ee, 0x07ef).rom(); // test ROM
+	map(0x07f0, 0x07f0).w(FUNC(m68hc705j1a_device::copr_w));
+	map(0x07f1, 0x07f1).rom(); // MOR
+	// 0x07f2-0x07f7 reserved
+	map(0x07f8, 0x07ff).rom(); // user vectors
+}
+
+
+m68hc705j1a_device::m68hc705j1a_device(machine_config const &mconfig, char const *tag, device_t *owner, u32 clock)
+	: m68hc705_device(
+			mconfig,
+			tag,
+			owner,
+			clock,
+			M68HC705J1A,
+			11,
+			address_map_constructor(FUNC(m68hc705j1a_device::j1a_map), this))
+{
+	set_port_bits(std::array<u8, PORT_COUNT>{{ 0xff, 0x3f, 0x00, 0x00 }});
+}
+
+
+void m68hc705j1a_device::device_start()
+{
+	m68hc705_device::device_start();
+
+	add_port_state(std::array<bool, PORT_COUNT>{{ true, true, false, false }});
+	add_ncop_state();
+}
+
+void m68hc705j1a_device::device_reset()
+{
+	m68hc705_device::device_reset();
+
+	// latch MOR register on reset
+	set_ncope(BIT(rdmem<false>(0x07f1), 0)); // FIXME: this is more like C8A's PCOP
+}
+
+
+std::unique_ptr<util::disasm_interface> m68hc705j1a_device::create_disassembler()
+{
+	return std::make_unique<m68hc05_disassembler>(m68hc705j1a_syms);
+}
+
+
+
+/****************************************************************************
+ * MC68HC05L9 device
+ ****************************************************************************/
+
+void m68hc05l9_device::l9_map(address_map &map)
+{
+	map.global_mask(0xffff);
+	map.unmap_value_high();
+
+	map(0x0000, 0x0003).rw(FUNC(m68hc05l9_device::port_read), FUNC(m68hc05l9_device::port_latch_w));
+	map(0x0004, 0x0007).rw(FUNC(m68hc05l9_device::port_ddr_r), FUNC(m68hc05l9_device::port_ddr_w));
+	// 0x0008 count down
+	// 0x0009-0x000a configuration
+	// 0x000b minute alarm
+	// 0x000c hour alarm
+	// 0x000d BAUD
+	// 0x000e SCCR1
+	// 0x000f SCCR2
+	// 0x0010 SCSR
+	// 0x0011 SCDR
+	map(0x0012, 0x0012).rw(FUNC(m68hc05l9_device::tcr_r), FUNC(m68hc05l9_device::tcr_w));
+	map(0x0013, 0x0013).r(FUNC(m68hc05l9_device::tsr_r));
+	map(0x0014, 0x0015).r(FUNC(m68hc05l9_device::icr_r));
+	map(0x0016, 0x0017).rw(FUNC(m68hc05l9_device::ocr_r), FUNC(m68hc05l9_device::ocr_w));
+	map(0x0018, 0x001b).r(FUNC(m68hc05l9_device::timer_r));
+	// 0x001c RTC status and clock control
+	// 0x001d hours
+	// 0x001e minutes
+	// 0x001f seconds
+	map(0x0020, 0x004f).rom(); // user ROM
+	map(0x0050, 0x00ff).ram(); // RAM/stack
+	// 0x0100-0x01ff unused
+	map(0x0200, 0x027f).ram(); // display RAM (128x5)
+	// 0x0280-0x048f reserved for slaves (528x5)
+	// 0x0490-0x07ff unused
+	map(0x0800, 0x1e69).rom(); // user ROM
+	map(0x1e6a, 0x1fef).rom(); // self-test (vectors at 0x1fe0-0x1fef)
+	map(0x1ff0, 0x1fff).rom(); // user vectors
+	// 0x2000-0xffff external memory
+}
+
+
+m68hc05l9_device::m68hc05l9_device(machine_config const &mconfig, char const *tag, device_t *owner, u32 clock)
+	: m68hc05_device(
+			mconfig,
+			tag,
+			owner,
+			clock,
+			M68HC05L9,
+			16,
+			0x1fff,
+			address_map_constructor(FUNC(m68hc05l9_device::l9_map), this))
+{
+	set_port_bits(std::array<u8, PORT_COUNT>{{ 0xff, 0xff, 0xff, 0x1f }});
+}
+
+
+
+void m68hc05l9_device::device_start()
+{
+	m68hc05_device::device_start();
+
+	add_port_state(std::array<bool, PORT_COUNT>{{ true, true, true, false }});
+	add_timer_state();
+}
+
+
+std::unique_ptr<util::disasm_interface> m68hc05l9_device::create_disassembler()
+{
+	return std::make_unique<m68hc05_disassembler>(m68hc05l9_syms);
+}
+
+
+
+/****************************************************************************
+ * MC68HC05L11 device
+ ****************************************************************************/
+
+void m68hc05l11_device::l11_map(address_map &map)
+{
+	map(0x0000, 0x0003).rw(FUNC(m68hc05l11_device::port_read), FUNC(m68hc05l11_device::port_latch_w));
+	// 0x0004 port E
+	// 0x0005 port F
+	map(0x0006, 0x0008).rw(FUNC(m68hc05l11_device::port_ddr_r), FUNC(m68hc05l11_device::port_ddr_w));
+	// 0x0009 port E direction
+	// 0x000a port F direction
+	// 0x000b minute alarm
+	// 0x000c hour alarm
+	// 0x000d BAUD
+	// 0x000e SCCR1
+	// 0x000f SCCR2
+	// 0x0010 SCSR
+	// 0x0011 SCDR
+	map(0x0012, 0x0012).rw(FUNC(m68hc05l11_device::tcr_r), FUNC(m68hc05l11_device::tcr_w));
+	map(0x0013, 0x0013).r(FUNC(m68hc05l11_device::tsr_r));
+	map(0x0014, 0x0015).r(FUNC(m68hc05l11_device::icr_r));
+	map(0x0016, 0x0017).rw(FUNC(m68hc05l11_device::ocr_r), FUNC(m68hc05l11_device::ocr_w));
+	map(0x0018, 0x001b).r(FUNC(m68hc05l11_device::timer_r));
+	// 0x001c-0x001d output compare 2
+	// 0x001e reserved
+	// 0x001f RTC interrupt status
+	// 0x0020 count down
+	// 0x0021 control 1
+	// 0x0022 SPCR
+	// 0x0023 SPSR
+	// 0x0024 SPDR
+	// 0x0025 control 2
+	// 0x0026 TONEA
+	// 0x0027 TONEB
+	// 0x0028-0x0033 LCD registers
+	// 0x0033 reserved
+	// 0x0034-0x003b MMU registers
+	// 0x003c hours
+	// 0x003d minutes
+	// 0x003e seconds
+	// 0x003f reserved
+	map(0x0040, 0x01ff).ram(); // RAM/stack
+	// 0x0200-0x6fff external memory (common area)
+	map(0x7000, 0x7dff).rom().region(DEVICE_SELF, 0); // user ROM
+	map(0x7e00, 0x7fef).rom().region(DEVICE_SELF, 0xe00); // self-check (incl. vectors)
+	map(0x7ff0, 0x7fff).rom().region(DEVICE_SELF, 0xff0); // user vectors
+	// 0x8000-0x7fffff external memory (banked in four 8K segments)
+}
+
+
+m68hc05l11_device::m68hc05l11_device(machine_config const &mconfig, char const *tag, device_t *owner, u32 clock)
+	: m68hc05_device(
+			mconfig,
+			tag,
+			owner,
+			clock,
+			M68HC05L11,
+			16, // FIXME: 16 logical mapped to 23 physical
+			0x7fff,
+			address_map_constructor(FUNC(m68hc05l11_device::l11_map), this))
+{
+	set_port_bits(std::array<u8, PORT_COUNT>{{ 0xff, 0xff, 0xff, 0xff }});
+}
+
+
+
+void m68hc05l11_device::device_start()
+{
+	m68hc05_device::device_start();
+
+	add_port_state(std::array<bool, PORT_COUNT>{{ true, true, true, false }});
+	add_timer_state();
+}
+
+
+std::unique_ptr<util::disasm_interface> m68hc05l11_device::create_disassembler()
+{
+	return std::make_unique<m68hc05_disassembler>(m68hc05c4_syms);
 }

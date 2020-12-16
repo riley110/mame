@@ -27,11 +27,11 @@
 #include "vsystem_spr2.h"
 
 
-DEFINE_DEVICE_TYPE(VSYSTEM_SPR2, vsystem_spr2_device, "vsystem2_spr", "Video System Sprites Type 2")
+DEFINE_DEVICE_TYPE(VSYSTEM_SPR2, vsystem_spr2_device, "vsystem2_spr", "Video System VS8904/VS8905 Sprites")
 
 vsystem_spr2_device::vsystem_spr2_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
 	: device_t(mconfig, VSYSTEM_SPR2, tag, owner, clock)
-	, m_newtilecb(vsystem_tile2_indirection_delegate(FUNC(vsystem_spr2_device::tile_callback_noindirect), this))
+	, m_newtilecb(*this, DEVICE_SELF, FUNC(vsystem_spr2_device::tile_callback_noindirect))
 	, m_pritype(0) // hack until we have better handling
 	, m_gfx_region(0)
 	, m_xoffs(0)
@@ -39,42 +39,6 @@ vsystem_spr2_device::vsystem_spr2_device(const machine_config &mconfig, const ch
 	, m_curr_sprite()
 	, m_gfxdecode(*this, finder_base::DUMMY_TAG)
 {
-}
-
-//-------------------------------------------------
-//  static_set_gfxdecode_tag: Set the tag of the
-//  gfx decoder
-//-------------------------------------------------
-
-void vsystem_spr2_device::static_set_gfxdecode_tag(device_t &device, const char *tag)
-{
-	downcast<vsystem_spr2_device &>(device).m_gfxdecode.set_tag(tag);
-}
-
-
-void vsystem_spr2_device::set_tile_indirect_cb(device_t &device,vsystem_tile2_indirection_delegate newtilecb)
-{
-	vsystem_spr2_device &dev = downcast<vsystem_spr2_device &>(device);
-	dev.m_newtilecb = newtilecb;
-}
-
-void vsystem_spr2_device::set_pritype(device_t &device,int pritype)
-{
-	vsystem_spr2_device &dev = downcast<vsystem_spr2_device &>(device);
-	dev.m_pritype = pritype;
-}
-
-void vsystem_spr2_device::set_gfx_region(device_t &device, int gfx_region)
-{
-	vsystem_spr2_device &dev = downcast<vsystem_spr2_device &>(device);
-	dev.m_gfx_region = gfx_region;
-}
-
-void vsystem_spr2_device::set_offsets(device_t &device, int xoffs, int yoffs)
-{
-	vsystem_spr2_device &dev = downcast<vsystem_spr2_device &>(device);
-	dev.m_xoffs = xoffs;
-	dev.m_yoffs = yoffs;
 }
 
 uint32_t vsystem_spr2_device::tile_callback_noindirect(uint32_t tile)
@@ -86,7 +50,7 @@ uint32_t vsystem_spr2_device::tile_callback_noindirect(uint32_t tile)
 void vsystem_spr2_device::device_start()
 {
 	// bind our handler
-	m_newtilecb.bind_relative_to(*owner());
+	m_newtilecb.resolve();
 }
 
 void vsystem_spr2_device::device_reset()

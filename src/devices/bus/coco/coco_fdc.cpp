@@ -11,7 +11,7 @@
     which mostly uses the same command set with some subtle differences, most
     notably the 2797 handles disk side select internally. The Dragon Alpha also
     uses the WD2797, however as this is a built in interface and not an external
-    cartrige, it is dealt with in the main coco.cpp file.
+    cartridge, it is dealt with in the main coco.cpp file.
 
     The wd's variables are mapped to $FF48-$FF4B on the CoCo and on $FF40-$FF43
     on the Dragon.  In addition, there is another register
@@ -40,30 +40,63 @@
 
     Reading from $FF48-$FF4F clears bit 7 of DSKREG ($FF40)
 
+    ---------------------------------------------------------------------------
+
+    Disto No Halt Extension
+
+    The Disto Super Controller II includes "no halt" circuitry. Implemented
+    by using a read and write cache.
+
+    CachDat - Cache Data Register
+        $FF74 & $FF75: Read/Write cache data.
+
+    CachCtrl - Cache Controller
+      $FF76: Read
+        Bit 7 low indicates an interrupt request from the disk controller
+
+      $FF76: Write:
+        00000000 = Caching off
+        00001000 = Tell cache controller to send interrupt when device is
+                   ready to send/receive a buffer (seek done, etc.)
+        00000111 = Read cache on - Get next 256 data bytes from controller
+                   to cache
+        00000100 = Write cache on - Next 256 bytes stored in cache are
+                   sector
+        00000110 = Copy Write cache to controller
+
+
+
 *********************************************************************/
 
 #include "emu.h"
 #include "cococart.h"
 #include "coco_fdc.h"
-#include "imagedev/flopdrv.h"
+#include "imagedev/floppy.h"
 #include "machine/msm6242.h"
 #include "machine/ds1315.h"
 #include "machine/wd_fdc.h"
+#include "machine/ram.h"
 #include "formats/dmk_dsk.h"
 #include "formats/jvc_dsk.h"
 #include "formats/vdk_dsk.h"
 #include "formats/sdf_dsk.h"
+#include "formats/os9_dsk.h"
 
+// #define VERBOSE (LOG_GENERAL )
+#include "logmacro.h"
 
 /***************************************************************************
     PARAMETERS
 ***************************************************************************/
 
-#define LOG_FDC                 0
 #define WD_TAG                  "wd17xx"
 #define WD2797_TAG              "wd2797"
 #define DISTO_TAG               "disto"
 #define CLOUD9_TAG              "cloud9"
+
+
+template class device_finder<coco_family_fdc_device_base, false>;
+template class device_finder<coco_family_fdc_device_base, true>;
 
 
 /***************************************************************************
@@ -74,7 +107,7 @@ class coco_fdc_device_base : public coco_family_fdc_device_base
 {
 protected:
 	// construction/destruction
-	coco_fdc_device_base(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock);
+	coco_fdc_device_base(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, u32 clock);
 
 	enum class rtc_type
 	{
@@ -84,13 +117,18 @@ protected:
 	};
 
 	// device-level overrides
-	virtual DECLARE_READ8_MEMBER(scs_read) override;
-	virtual DECLARE_WRITE8_MEMBER(scs_write) override;
+	virtual void device_start() override;
+	virtual void device_reset() override;
+
+	// device-level overrides
+	virtual u8 cts_read(offs_t offset) override;
+	virtual u8 scs_read(offs_t offset) override;
+	virtual void scs_write(offs_t offset, u8 data) override;
 	virtual void device_add_mconfig(machine_config &config) override;
 
 	// methods
 	virtual void update_lines() override;
-	void dskreg_w(uint8_t data);
+	void dskreg_w(u8 data);
 	rtc_type real_time_clock();
 
 	// devices
@@ -102,6 +140,16 @@ protected:
 	required_device<msm6242_device> m_disto_msm6242;        // 6242 RTC on Disto interface
 	offs_t m_msm6242_rtc_address;
 	optional_ioport m_rtc;
+
+	// Protected
+	u8 ff74_read(offs_t offset);
+	void ff74_write(offs_t offset, u8 data);
+
+private:
+	// registers
+	u8 m_cache_controler;
+	u8 m_cache_pointer;
+	required_device<ram_device>                 m_cache_buffer;
 };
 
 
@@ -114,30 +162,32 @@ FLOPPY_FORMATS_MEMBER( coco_family_fdc_device_base::floppy_formats )
 	FLOPPY_DMK_FORMAT,
 	FLOPPY_JVC_FORMAT,
 	FLOPPY_VDK_FORMAT,
-	FLOPPY_SDF_FORMAT
+	FLOPPY_SDF_FORMAT,
+	FLOPPY_OS9_FORMAT
 FLOPPY_FORMATS_END
 
-static SLOT_INTERFACE_START( coco_fdc_floppies )
-	SLOT_INTERFACE("qd", FLOPPY_525_QD)
-SLOT_INTERFACE_END
+static void coco_fdc_floppies(device_slot_interface &device)
+{
+	device.option_add("qd", FLOPPY_525_QD);
+}
 
-MACHINE_CONFIG_MEMBER(coco_fdc_device_base::device_add_mconfig )
-	MCFG_WD1773_ADD(WD_TAG, XTAL_8MHz)
-	MCFG_WD_FDC_INTRQ_CALLBACK(WRITELINE(coco_fdc_device_base, fdc_intrq_w))
-	MCFG_WD_FDC_DRQ_CALLBACK(WRITELINE(coco_fdc_device_base, fdc_drq_w))
+void coco_fdc_device_base::device_add_mconfig(machine_config &config)
+{
+	WD1773(config, m_wd17xx, 8_MHz_XTAL);
+	m_wd17xx->intrq_wr_callback().set(FUNC(coco_fdc_device_base::fdc_intrq_w));
+	m_wd17xx->drq_wr_callback().set(FUNC(coco_fdc_device_base::fdc_drq_w));
 
-	MCFG_FLOPPY_DRIVE_ADD(WD_TAG ":0", coco_fdc_floppies, "qd", coco_fdc_device_base::floppy_formats)
-	MCFG_FLOPPY_DRIVE_SOUND(true)
-	MCFG_FLOPPY_DRIVE_ADD(WD_TAG ":1", coco_fdc_floppies, "qd", coco_fdc_device_base::floppy_formats)
-	MCFG_FLOPPY_DRIVE_SOUND(true)
-	MCFG_FLOPPY_DRIVE_ADD(WD_TAG ":2", coco_fdc_floppies, nullptr, coco_fdc_device_base::floppy_formats)
-	MCFG_FLOPPY_DRIVE_SOUND(true)
-	MCFG_FLOPPY_DRIVE_ADD(WD_TAG ":3", coco_fdc_floppies, nullptr, coco_fdc_device_base::floppy_formats)
-	MCFG_FLOPPY_DRIVE_SOUND(true)
+	FLOPPY_CONNECTOR(config, m_floppies[0], coco_fdc_floppies, "qd", coco_fdc_device_base::floppy_formats).enable_sound(true);
+	FLOPPY_CONNECTOR(config, m_floppies[1], coco_fdc_floppies, "qd", coco_fdc_device_base::floppy_formats).enable_sound(true);
+	FLOPPY_CONNECTOR(config, m_floppies[2], coco_fdc_floppies, nullptr, coco_fdc_device_base::floppy_formats).enable_sound(true);
+	FLOPPY_CONNECTOR(config, m_floppies[3], coco_fdc_floppies, nullptr, coco_fdc_device_base::floppy_formats).enable_sound(true);
 
-	MCFG_DEVICE_ADD(DISTO_TAG, MSM6242, XTAL_32_768kHz)
-	MCFG_DS1315_ADD(CLOUD9_TAG)
-MACHINE_CONFIG_END
+	MSM6242(config, m_disto_msm6242, 32.768_kHz_XTAL);
+
+	DS1315(config, CLOUD9_TAG, 0);
+
+	RAM(config, "cachebuffer").set_default_size("256").set_default_value(0);
+}
 
 
 //***************************************************************************
@@ -172,9 +222,19 @@ void coco_family_fdc_device_base::device_reset()
 //  coco_family_fdc_device_base::get_cart_base
 //-------------------------------------------------
 
-uint8_t* coco_family_fdc_device_base::get_cart_base()
+u8 *coco_family_fdc_device_base::get_cart_base()
 {
 	return memregion("eprom")->base();
+}
+
+
+//-------------------------------------------------
+//  coco_family_fdc_device_base::get_cart_memregion
+//-------------------------------------------------
+
+memory_region *coco_family_fdc_device_base::get_cart_memregion()
+{
+	return memregion("eprom");
 }
 
 
@@ -186,7 +246,7 @@ uint8_t* coco_family_fdc_device_base::get_cart_base()
 //  coco_fdc_device_base - constructor
 //-------------------------------------------------
 
-coco_fdc_device_base::coco_fdc_device_base(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock)
+coco_fdc_device_base::coco_fdc_device_base(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, u32 clock)
 	: coco_family_fdc_device_base(mconfig, type, tag, owner, clock)
 	, m_wd17xx(*this, WD_TAG)
 	, m_ds1315(*this, CLOUD9_TAG)
@@ -194,8 +254,101 @@ coco_fdc_device_base::coco_fdc_device_base(const machine_config &mconfig, device
 	, m_disto_msm6242(*this, DISTO_TAG)
 	, m_msm6242_rtc_address(0)
 	, m_rtc(*this, ":real_time_clock")
+	, m_cache_buffer(*this, "cachebuffer")
 {
 }
+
+
+//-------------------------------------------------
+//  device_start - device-specific start
+//-------------------------------------------------
+
+void coco_fdc_device_base::device_start()
+{
+	install_readwrite_handler(0xFF74, 0xFF76,
+			read8sm_delegate(*this, FUNC(coco_fdc_device_base::ff74_read)),
+			write8sm_delegate(*this, FUNC(coco_fdc_device_base::ff74_write)));
+
+	save_item(NAME(m_cache_controler));
+	save_item(NAME(m_cache_pointer));
+}
+
+
+//-------------------------------------------------
+//  device_reset - device-specific reset
+//-------------------------------------------------
+
+void coco_fdc_device_base::device_reset()
+{
+	coco_family_fdc_device_base::device_reset();
+
+	m_cache_controler = 0x80;
+	m_cache_pointer = 0;
+}
+
+
+//-------------------------------------------------
+//  ff74_read - no halt registers
+//-------------------------------------------------
+
+u8 coco_fdc_device_base::ff74_read(offs_t offset)
+{
+	u8 data = 0x0;
+
+	switch(offset)
+	{
+		case 0x0:
+			data = m_cache_buffer->read(m_cache_pointer++);
+			LOG( "CachDat_A read: %2.2x\n", data );
+			break;
+		case 0x1:
+			data = m_cache_buffer->read(m_cache_pointer++);
+			LOG( "CachDat_B read: %2.2x\n", data );
+			break;
+		case 0x2:
+			data = m_cache_controler;
+			LOG( "CachCtrl read: %2.2x\n", data );
+			break;
+	}
+
+	return data;
+}
+
+
+//-------------------------------------------------
+//  ff74_write - no halt registers
+//-------------------------------------------------
+
+void coco_fdc_device_base::ff74_write(offs_t offset, u8 data)
+{
+	switch(offset)
+	{
+		case 0x0:
+			LOG( "CachDat_A write: %2.2x\n", data );
+			m_cache_buffer->write(m_cache_pointer++, data);
+			break;
+		case 0x1:
+			LOG( "CachDat_B write: %2.2x\n", data );
+			m_cache_buffer->write(m_cache_pointer++, data);
+			break;
+		case 0x2:
+			LOG( "CachCtrl write: %2.2x\n", data );
+
+			// reset static ram buffer pointer on any write
+			m_cache_pointer = 0;
+
+			if(data == 0)
+			{
+				// Clear interrupt when caching is turned off
+				set_line_value(line::CART, CLEAR_LINE);
+				m_cache_controler |= 0x80;
+			}
+
+			m_cache_controler = (m_cache_controler & 0x80) | (data & 0x7f);
+			break;
+	}
+}
+
 
 //-------------------------------------------------
 //  real_time_clock
@@ -223,15 +376,60 @@ coco_fdc_device_base::rtc_type coco_fdc_device_base::real_time_clock()
 
 void coco_fdc_device_base::update_lines()
 {
-	// clear HALT enable under certain circumstances
-	if (intrq() && (dskreg() & 0x20))
-		set_dskreg(dskreg() & ~0x80);  // clear halt enable
+	if( (m_cache_controler & 0x7f) == 0) /* cache disabled */
+	{
+		// clear HALT enable under certain circumstances
+		if (intrq() && (dskreg() & 0x20))
+			set_dskreg(dskreg() & ~0x80);  // clear halt enable
 
-	// set the NMI line
-	set_line_value(line::NMI, intrq() && (dskreg() & 0x20));
+		// set the NMI line
+		set_line_value(line::NMI, intrq() && (dskreg() & 0x20));
 
-	// set the HALT line
-	set_line_value(line::HALT, !drq() && (dskreg() & 0x80));
+		// set the HALT line
+		set_line_value(line::HALT, !drq() && (dskreg() & 0x80));
+	}
+	else
+	{
+		if( drq() == ASSERT_LINE)
+		{
+			if( (m_cache_controler & 0x07) == 0x07) /* Read cache on */
+			{
+				u8 data = m_wd17xx->data_r();
+				LOG("Cached drq read: %2.2x\n", data );
+				m_cache_buffer->write(m_cache_pointer++, data);
+			}
+			else if( (m_cache_controler & 0x07) == 0x04 ) /* Write cache on */
+			{
+				u8 data = m_cache_buffer->read(m_cache_pointer++);
+				LOG("Cached drq write: %2.2x\n", data );
+				m_wd17xx->data_w(data);
+			}
+			else if( (m_cache_controler & 0x07) == 0x06 ) /* Copy Write cache to controller */
+			{
+				u8 data = m_cache_buffer->read(m_cache_pointer++);
+				LOG("Cached drq write: %2.2x\n", data );
+				m_wd17xx->data_w(data);
+			}
+			else
+			{
+				LOG("illegal DRQ cached assert mode\n" );
+			}
+		}
+
+		if( (m_cache_controler & 0x08) == 0x08)
+		{
+			set_line_value(line::CART, intrq());
+		}
+
+		if( intrq() == ASSERT_LINE)
+		{
+			m_cache_controler &= 0x7f;
+		}
+		else
+		{
+			m_cache_controler |= 0x80;
+		}
+	}
 }
 
 
@@ -239,24 +437,21 @@ void coco_fdc_device_base::update_lines()
 //  dskreg_w - function to write to CoCo dskreg
 //-------------------------------------------------
 
-void coco_fdc_device_base::dskreg_w(uint8_t data)
+void coco_fdc_device_base::dskreg_w(u8 data)
 {
-	uint8_t drive = 0;
-	uint8_t head;
+	u8 drive = 0;
+	u8 head;
 
-	if (LOG_FDC)
-	{
-		logerror("fdc_coco_dskreg_w(): %c%c%c%c%c%c%c%c ($%02x)\n",
-			data & 0x80 ? 'H' : 'h',
-			data & 0x40 ? '3' : '.',
-			data & 0x20 ? 'D' : 'S',
-			data & 0x10 ? 'P' : 'p',
-			data & 0x08 ? 'M' : 'm',
-			data & 0x04 ? '2' : '.',
-			data & 0x02 ? '1' : '.',
-			data & 0x01 ? '0' : '.',
-			data);
-	}
+	LOG("fdc_coco_dskreg_w(): %c%c%c%c%c%c%c%c ($%02x)\n",
+		data & 0x80 ? 'H' : 'h',
+		data & 0x40 ? '3' : '.',
+		data & 0x20 ? 'D' : 'S',
+		data & 0x10 ? 'P' : 'p',
+		data & 0x08 ? 'M' : 'm',
+		data & 0x04 ? '2' : '.',
+		data & 0x02 ? '1' : '.',
+		data & 0x01 ? '0' : '.',
+		data);
 
 	// An email from John Kowalski informed me that if the DS3 is
 	// high, and one of the other drive bits is selected (DS0-DS2), then the
@@ -298,52 +493,67 @@ void coco_fdc_device_base::dskreg_w(uint8_t data)
 
 
 //-------------------------------------------------
+//  cts_read
+//-------------------------------------------------
+
+u8 coco_fdc_device_base::cts_read(offs_t offset)
+{
+	return memregion("eprom")->base()[offset];
+}
+
+
+//-------------------------------------------------
 //  scs_read
 //-------------------------------------------------
 
-READ8_MEMBER(coco_fdc_device_base::scs_read)
+u8 coco_fdc_device_base::scs_read(offs_t offset)
 {
-	uint8_t result = 0;
+	u8 result = 0;
 
 	switch(offset & 0x1F)
 	{
 		case 8:
-			result = m_wd17xx->status_r(space, 0);
+			result = m_wd17xx->status_r();
+			LOG("m_wd17xx->status_r: %2.2x\n", result );
 			break;
 		case 9:
-			result = m_wd17xx->track_r(space, 0);
+			result = m_wd17xx->track_r();
+			LOG("m_wd17xx->track_r: %2.2x\n", result );
 			break;
 		case 10:
-			result = m_wd17xx->sector_r(space, 0);
+			result = m_wd17xx->sector_r();
+			LOG("m_wd17xx->sector_r: %2.2x\n", result );
 			break;
 		case 11:
-			result = m_wd17xx->data_r(space, 0);
+			result = m_wd17xx->data_r();
+			LOG("m_wd17xx->data_r: %2.2x\n", result );
 			break;
 	}
 
 	/* other stuff for RTCs */
 	switch (offset)
 	{
-	case 0x10:  /* FF50 */
-		if (real_time_clock() == rtc_type::DISTO)
-			result = m_disto_msm6242->read(space, m_msm6242_rtc_address);
-		break;
+		case 0x10:  /* FF50 */
+			if (real_time_clock() == rtc_type::DISTO)
+				result = m_disto_msm6242->read(m_msm6242_rtc_address);
+			break;
 
-	case 0x38:  /* FF78 */
-		if (real_time_clock() == rtc_type::CLOUD9)
-			m_ds1315->read_0(space, offset);
-		break;
+		case 0x38:  /* FF78 */
+			if (real_time_clock() == rtc_type::CLOUD9)
+				m_ds1315->read_0();
+			break;
 
-	case 0x39:  /* FF79 */
-		if (real_time_clock() == rtc_type::CLOUD9)
-			m_ds1315->read_1(space, offset);
-		break;
+		case 0x39:  /* FF79 */
+			if (real_time_clock() == rtc_type::CLOUD9)
+				m_ds1315->read_1();
+			break;
 
-	case 0x3C:  /* FF7C */
-		if (real_time_clock() == rtc_type::CLOUD9)
-			result = m_ds1315->read_data(space, offset);
-		break;
+		case 0x3C:  /* FF7C */
+			if (real_time_clock() == rtc_type::CLOUD9)
+				result = m_ds1315->read_data();
+			break;
 	}
+
 	return result;
 }
 
@@ -352,7 +562,7 @@ READ8_MEMBER(coco_fdc_device_base::scs_read)
 //  scs_write
 //-------------------------------------------------
 
-WRITE8_MEMBER(coco_fdc_device_base::scs_write)
+void coco_fdc_device_base::scs_write(offs_t offset, u8 data)
 {
 	switch(offset & 0x1F)
 	{
@@ -361,16 +571,20 @@ WRITE8_MEMBER(coco_fdc_device_base::scs_write)
 			dskreg_w(data);
 			break;
 		case 8:
-			m_wd17xx->cmd_w(space, 0, data);
+			LOG("m_wd17xx->cmd_w: %2.2x\n", data );
+			m_wd17xx->cmd_w(data);
 			break;
 		case 9:
-			m_wd17xx->track_w(space, 0, data);
+			LOG("m_wd17xx->track_w: %2.2x\n", data );
+			m_wd17xx->track_w(data);
 			break;
 		case 10:
-			m_wd17xx->sector_w(space, 0, data);
+			LOG("m_wd17xx->sector_w: %2.2x\n", data );
+			m_wd17xx->sector_w(data);
 			break;
 		case 11:
-			m_wd17xx->data_w(space, 0, data);
+			LOG("m_wd17xx->data_w: %2.2x\n", data );
+			m_wd17xx->data_w(data);
 			break;
 	};
 
@@ -379,7 +593,7 @@ WRITE8_MEMBER(coco_fdc_device_base::scs_write)
 	{
 		case 0x10:  /* FF50 */
 			if (real_time_clock() == rtc_type::DISTO)
-				m_disto_msm6242->write(space,m_msm6242_rtc_address, data);
+				m_disto_msm6242->write(m_msm6242_rtc_address, data);
 			break;
 
 		case 0x11:  /* FF51 */
@@ -396,7 +610,7 @@ WRITE8_MEMBER(coco_fdc_device_base::scs_write)
 
 ROM_START(coco_fdc)
 	ROM_REGION(0x4000, "eprom", ROMREGION_ERASE00)
-	ROM_LOAD_OPTIONAL("disk10.rom", 0x0000, 0x2000, CRC(b4f9968e) SHA1(04115be3f97952b9d9310b52f806d04f80b40d03))
+	ROM_LOAD("disk10.rom", 0x0000, 0x2000, CRC(b4f9968e) SHA1(04115be3f97952b9d9310b52f806d04f80b40d03))
 ROM_END
 
 namespace
@@ -405,7 +619,7 @@ namespace
 	{
 	public:
 		// construction/destruction
-		coco_fdc_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
+		coco_fdc_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock)
 			: coco_fdc_device_base(mconfig, COCO_FDC, tag, owner, clock)
 		{
 		}
@@ -421,7 +635,7 @@ namespace
 
 }
 
-DEFINE_DEVICE_TYPE(COCO_FDC, coco_fdc_device, "coco_fdc", "CoCo FDC")
+DEFINE_DEVICE_TYPE_PRIVATE(COCO_FDC, coco_family_fdc_device_base, coco_fdc_device, "coco_fdc", "CoCo FDC")
 
 
 //**************************************************************************
@@ -430,7 +644,7 @@ DEFINE_DEVICE_TYPE(COCO_FDC, coco_fdc_device, "coco_fdc", "CoCo FDC")
 
 ROM_START(coco_fdc_v11)
 	ROM_REGION(0x8000, "eprom", ROMREGION_ERASE00)
-	ROM_LOAD_OPTIONAL("disk11.rom", 0x0000, 0x2000, CRC(0b9c5415) SHA1(10bdc5aa2d7d7f205f67b47b19003a4bd89defd1))
+	ROM_LOAD("disk11.rom", 0x0000, 0x2000, CRC(0b9c5415) SHA1(10bdc5aa2d7d7f205f67b47b19003a4bd89defd1))
 	ROM_RELOAD(0x2000, 0x2000)
 	ROM_RELOAD(0x4000, 0x2000)
 	ROM_RELOAD(0x6000, 0x2000)
@@ -442,7 +656,7 @@ namespace
 	{
 	public:
 		// construction/destruction
-		coco_fdc_v11_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
+		coco_fdc_v11_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock)
 			: coco_fdc_device_base(mconfig, COCO_FDC_V11, tag, owner, clock)
 		{
 		}
@@ -456,7 +670,7 @@ namespace
 	};
 }
 
-DEFINE_DEVICE_TYPE(COCO_FDC_V11, coco_fdc_v11_device, "coco_fdc_v11", "CoCo FDC v1.1")
+DEFINE_DEVICE_TYPE_PRIVATE(COCO_FDC_V11, coco_family_fdc_device_base, coco_fdc_v11_device, "coco_fdc_v11", "CoCo FDC v1.1")
 
 
 //**************************************************************************
@@ -477,7 +691,7 @@ namespace
 	{
 	public:
 		// construction/destruction
-		coco3_hdb1_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
+		coco3_hdb1_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock)
 			: coco_fdc_device_base(mconfig, COCO3_HDB1, tag, owner, clock)
 		{
 		}
@@ -491,25 +705,28 @@ namespace
 	};
 }
 
-DEFINE_DEVICE_TYPE(COCO3_HDB1, coco3_hdb1_device, "coco3_hdb1", "CoCo3 HDB-DOS")
+DEFINE_DEVICE_TYPE_PRIVATE(COCO3_HDB1, coco_family_fdc_device_base, coco3_hdb1_device, "coco3_hdb1", "CoCo3 HDB-DOS")
 
 //**************************************************************************
-//              CP400 FDC
+//              COCO-2 HDB-DOS
 //**************************************************************************
 
-ROM_START(cp400_fdc)
-	ROM_REGION(0x4000, "eprom", ROMREGION_ERASE00)
-	ROM_LOAD("cp400dsk.rom", 0x0000, 0x2000, CRC(e9ad60a0) SHA1(827697fa5b755f5dc1efb054cdbbeb04e405405b))
+ROM_START(coco2_hdb1)
+	ROM_REGION(0x8000, "eprom", ROMREGION_ERASE00)
+	ROM_LOAD("hdbdw3bck.rom", 0x0000, 0x2000, CRC(867a3f42) SHA1(8fd64f1c246489e0bf2b3743ae76332ff324716a))
+	ROM_RELOAD(0x2000, 0x2000)
+	ROM_RELOAD(0x4000, 0x2000)
+	ROM_RELOAD(0x6000, 0x2000)
 ROM_END
 
 namespace
 {
-	class cp400_fdc_device : public coco_fdc_device_base
+	class coco2_hdb1_device : public coco_fdc_device_base
 	{
 	public:
 		// construction/destruction
-		cp400_fdc_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
-			: coco_fdc_device_base(mconfig, CP400_FDC, tag, owner, clock)
+		coco2_hdb1_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock)
+			: coco_fdc_device_base(mconfig, COCO2_HDB1, tag, owner, clock)
 		{
 		}
 
@@ -517,9 +734,79 @@ namespace
 		// optional information overrides
 		virtual const tiny_rom_entry *device_rom_region() const override
 		{
-			return ROM_NAME(cp400_fdc);
+			return ROM_NAME(coco2_hdb1);
 		}
 	};
 }
 
-DEFINE_DEVICE_TYPE(CP400_FDC, cp400_fdc_device, "cp400_fdc", "CP400 FDC")
+DEFINE_DEVICE_TYPE_PRIVATE(COCO2_HDB1, coco_family_fdc_device_base, coco2_hdb1_device, "coco2_hdb1", "CoCo2 HDB-DOS")
+
+//**************************************************************************
+//              Prológica CP-450 BASIC Disco V. 1.0 (1984)
+//
+//  There is a photo of the CP-450 disk controller unit at:
+//  https://datassette.org/softwares/tandy-trs-color/cp-450-basic-disco-v-10
+//  http://files.datassette.org/softwares/img/wp_20141212_22_08_26_pro.jpg
+//
+//**************************************************************************
+
+ROM_START(cp450_fdc)
+	ROM_REGION(0x4000, "eprom", ROMREGION_ERASE00)
+	ROM_LOAD("cp450_basic_disco_v1.0.rom", 0x0000, 0x2000, CRC(e9ad60a0) SHA1(827697fa5b755f5dc1efb054cdbbeb04e405405b))
+ROM_END
+
+namespace
+{
+	class cp450_fdc_device : public coco_fdc_device_base
+	{
+	public:
+		// construction/destruction
+		cp450_fdc_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock)
+			: coco_fdc_device_base(mconfig, CP450_FDC, tag, owner, clock)
+		{
+		}
+
+	protected:
+		// optional information overrides
+		virtual const tiny_rom_entry *device_rom_region() const override
+		{
+			return ROM_NAME(cp450_fdc);
+		}
+	};
+}
+
+DEFINE_DEVICE_TYPE_PRIVATE(CP450_FDC, coco_family_fdc_device_base, cp450_fdc_device, "cp450_fdc", "Prológica CP-450 BASIC Disco V. 1.0 (1984)")
+
+//**************************************************************************
+//              Codimex CD-6809 FDC (1986)
+//
+// Seems to be a clone of the JFD-COCO originally manufactured by J&M
+// More ifo at: http://amxproject.com/?p=2747
+//**************************************************************************
+
+ROM_START(cd6809_fdc)
+	ROM_REGION(0x4000, "eprom", ROMREGION_ERASE00)
+	ROM_LOAD("cd6809dsk.u16", 0x0000, 0x2000, CRC(3c35bda8) SHA1(9b2eec25188bed4326b84739a666435884e4ddf4))
+ROM_END
+
+namespace
+{
+	class cd6809_fdc_device : public coco_fdc_device_base
+	{
+	public:
+		// construction/destruction
+		cd6809_fdc_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock)
+			: coco_fdc_device_base(mconfig, CD6809_FDC, tag, owner, clock)
+		{
+		}
+
+	protected:
+		// optional information overrides
+		virtual const tiny_rom_entry *device_rom_region() const override
+		{
+			return ROM_NAME(cd6809_fdc);
+		}
+	};
+}
+
+DEFINE_DEVICE_TYPE_PRIVATE(CD6809_FDC, coco_family_fdc_device_base, cd6809_fdc_device, "cd6809_fdc", "Codimex CD-6809 Disk BASIC (1986)")

@@ -41,47 +41,35 @@ enum
 class cosmicos_state : public driver_device
 {
 public:
-	cosmicos_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
-			m_maincpu(*this, CDP1802_TAG),
-			m_cti(*this, CDP1864_TAG),
-			m_led(*this, DM9368_TAG),
-			m_cassette(*this, "cassette"),
-			m_speaker(*this, "speaker"),
-			m_ram(*this, RAM_TAG),
-			m_rom(*this, CDP1802_TAG),
-			m_key_row(*this, {"Y1", "Y2", "Y3", "Y4"}),
-			m_io_data(*this, "DATA"),
-			m_special(*this, "SPECIAL"),
-			m_buttons(*this, "BUTTONS")
+	cosmicos_state(const machine_config &mconfig, device_type type, const char *tag) :
+		driver_device(mconfig, type, tag),
+		m_digit(0),
+		m_maincpu(*this, CDP1802_TAG),
+		m_cti(*this, CDP1864_TAG),
+		m_led(*this, DM9368_TAG),
+		m_cassette(*this, "cassette"),
+		m_speaker(*this, "speaker"),
+		m_ram(*this, RAM_TAG),
+		m_rom(*this, CDP1802_TAG),
+		m_key_row(*this, {"Y1", "Y2", "Y3", "Y4"}),
+		m_io_data(*this, "DATA"),
+		m_special(*this, "SPECIAL"),
+		m_buttons(*this, "BUTTONS"),
+		m_digits(*this, "digit%u", 0U),
+		m_leds(*this, "led%u", 0U)
 	{ }
 
-	required_device<cosmac_device> m_maincpu;
-	required_device<cdp1864_device> m_cti;
-	required_device<dm9368_device> m_led;
-	required_device<cassette_image_device> m_cassette;
-	required_device<speaker_sound_device> m_speaker;
-	required_device<ram_device> m_ram;
-	required_memory_region m_rom;
-	required_ioport_array<4> m_key_row;
-	required_ioport m_io_data;
-	required_ioport m_special;
-	required_ioport m_buttons;
-
-	virtual void machine_start() override;
-	virtual void machine_reset() override;
-
-	DECLARE_READ8_MEMBER( read );
-	DECLARE_WRITE8_MEMBER( write );
-	DECLARE_READ8_MEMBER( video_off_r );
-	DECLARE_READ8_MEMBER( video_on_r );
-	DECLARE_WRITE8_MEMBER( audio_latch_w );
-	DECLARE_READ8_MEMBER( hex_keyboard_r );
-	DECLARE_WRITE8_MEMBER( hex_keylatch_w );
-	DECLARE_READ8_MEMBER( reset_counter_r );
-	DECLARE_WRITE8_MEMBER( segment_w );
-	DECLARE_READ8_MEMBER( data_r );
-	DECLARE_WRITE8_MEMBER( display_w );
+	uint8_t read(offs_t offset);
+	void write(offs_t offset, uint8_t data);
+	uint8_t video_off_r();
+	uint8_t video_on_r();
+	void audio_latch_w(uint8_t data);
+	uint8_t hex_keyboard_r();
+	void hex_keylatch_w(uint8_t data);
+	uint8_t reset_counter_r();
+	void segment_w(uint8_t data);
+	uint8_t data_r();
+	void display_w(uint8_t data);
 	DECLARE_WRITE_LINE_MEMBER( dmaout_w );
 	DECLARE_WRITE_LINE_MEMBER( efx_w );
 	DECLARE_READ_LINE_MEMBER( wait_r );
@@ -91,8 +79,8 @@ public:
 	DECLARE_READ_LINE_MEMBER( ef3_r );
 	DECLARE_READ_LINE_MEMBER( ef4_r );
 	DECLARE_WRITE_LINE_MEMBER( q_w );
-	DECLARE_READ8_MEMBER( dma_r );
-	DECLARE_WRITE8_MEMBER( sc_w );
+	uint8_t dma_r();
+	void sc_w(uint8_t data);
 	DECLARE_INPUT_CHANGED_MEMBER( data );
 	DECLARE_INPUT_CHANGED_MEMBER( enter );
 	DECLARE_INPUT_CHANGED_MEMBER( single_step );
@@ -104,8 +92,15 @@ public:
 	DECLARE_INPUT_CHANGED_MEMBER( memory_protect );
 	DECLARE_INPUT_CHANGED_MEMBER( memory_disable );
 
-	DECLARE_QUICKLOAD_LOAD_MEMBER( cosmicos );
+	DECLARE_QUICKLOAD_LOAD_MEMBER(quickload_cb);
+	void init_cosmicos();
+	TIMER_DEVICE_CALLBACK_MEMBER(digit_tick);
+	TIMER_DEVICE_CALLBACK_MEMBER(int_tick);
+	void cosmicos(machine_config &config);
+	void cosmicos_io(address_map &map);
+	void cosmicos_mem(address_map &map);
 
+private:
 	void set_cdp1802_mode(int mode);
 	void clear_input_data();
 
@@ -132,9 +127,21 @@ public:
 	int m_efx;
 	int m_video_on;
 
-	DECLARE_DRIVER_INIT(cosmicos);
-	TIMER_DEVICE_CALLBACK_MEMBER(digit_tick);
-	TIMER_DEVICE_CALLBACK_MEMBER(int_tick);
+	virtual void machine_start() override;
+	virtual void machine_reset() override;
+	required_device<cosmac_device> m_maincpu;
+	required_device<cdp1864_device> m_cti;
+	required_device<dm9368_device> m_led;
+	required_device<cassette_image_device> m_cassette;
+	required_device<speaker_sound_device> m_speaker;
+	required_device<ram_device> m_ram;
+	required_memory_region m_rom;
+	required_ioport_array<4> m_key_row;
+	required_ioport m_io_data;
+	required_ioport m_special;
+	required_ioport m_buttons;
+	output_finder<10> m_digits;
+	output_finder<14> m_leds;
 };
 
 #endif // MAME_INCLUDES_COSMICOS_H

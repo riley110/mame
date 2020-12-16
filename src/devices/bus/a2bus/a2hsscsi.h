@@ -28,6 +28,8 @@ public:
 	// construction/destruction
 	a2bus_hsscsi_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
+	static constexpr feature_type unemulated_features() { return feature::DISK; }
+
 	DECLARE_WRITE_LINE_MEMBER( drq_w );
 
 protected:
@@ -39,14 +41,14 @@ protected:
 	virtual const tiny_rom_entry *device_rom_region() const override;
 
 	// overrides of standard a2bus slot functions
-	virtual uint8_t read_c0nx(address_space &space, uint8_t offset) override;
-	virtual void write_c0nx(address_space &space, uint8_t offset, uint8_t data) override;
-	virtual uint8_t read_cnxx(address_space &space, uint8_t offset) override;
-	virtual void write_cnxx(address_space &space, uint8_t offset, uint8_t data) override;
-	virtual uint8_t read_c800(address_space &space, uint16_t offset) override;
-	virtual void write_c800(address_space &space, uint16_t offset, uint8_t data) override;
+	virtual uint8_t read_c0nx(uint8_t offset) override;
+	virtual void write_c0nx(uint8_t offset, uint8_t data) override;
+	virtual uint8_t read_cnxx(uint8_t offset) override;
+	virtual void write_cnxx(uint8_t offset, uint8_t data) override;
+	virtual uint8_t read_c800(uint16_t offset) override;
+	virtual void write_c800(uint16_t offset, uint8_t data) override;
 
-	required_device<ncr5380n_device> m_ncr5380;
+	required_device<ncr53c80_device> m_ncr5380;
 	required_device<nscsi_bus_device> m_scsibus;
 
 private:

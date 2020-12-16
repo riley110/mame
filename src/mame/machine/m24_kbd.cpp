@@ -16,15 +16,16 @@ const tiny_rom_entry *m24_keyboard_device::device_rom_region() const
 	return ROM_NAME( m24_keyboard );
 }
 
-MACHINE_CONFIG_MEMBER( m24_keyboard_device::device_add_mconfig )
-	MCFG_CPU_ADD("mcu", I8049, XTAL_6MHz)
-	MCFG_MCS48_PORT_BUS_OUT_CB(WRITE8(m24_keyboard_device, bus_w))
-	MCFG_MCS48_PORT_P1_IN_CB(READ8(m24_keyboard_device, p1_r))
-	MCFG_MCS48_PORT_P1_OUT_CB(WRITE8(m24_keyboard_device, p1_w))
-	MCFG_MCS48_PORT_P2_IN_CB(READ8(m24_keyboard_device, p2_r))
-	MCFG_MCS48_PORT_T0_IN_CB(READLINE(m24_keyboard_device, t0_r))
-	MCFG_MCS48_PORT_T1_IN_CB(READLINE(m24_keyboard_device, t1_r))
-MACHINE_CONFIG_END
+void m24_keyboard_device::device_add_mconfig(machine_config &config)
+{
+	I8049(config, m_mcu, XTAL(6'000'000));
+	m_mcu->bus_out_cb().set(FUNC(m24_keyboard_device::bus_w));
+	m_mcu->p1_in_cb().set(FUNC(m24_keyboard_device::p1_r));
+	m_mcu->p1_out_cb().set(FUNC(m24_keyboard_device::p1_w));
+	m_mcu->p2_in_cb().set(FUNC(m24_keyboard_device::p2_r));
+	m_mcu->t0_in_cb().set(FUNC(m24_keyboard_device::t0_r));
+	m_mcu->t1_in_cb().set(FUNC(m24_keyboard_device::t1_r));
+}
 
 INPUT_PORTS_START( m24_keyboard )
 	PORT_START("ROW.0")
@@ -230,12 +231,12 @@ void m24_keyboard_device::device_timer(emu_timer &timer, device_timer_id id, int
 	m_out_data(1);
 }
 
-READ8_MEMBER( m24_keyboard_device::p1_r )
+uint8_t m24_keyboard_device::p1_r()
 {
 	return m_p1 | (m_kbcdata ? 0 : 2);
 }
 
-WRITE8_MEMBER( m24_keyboard_device::p1_w )
+void m24_keyboard_device::p1_w(uint8_t data)
 {
 	// bit 3 and 4 are leds and bits 6 and 7 are jumpers to ground
 	m_p1 = data & ~0xc0;
@@ -246,7 +247,7 @@ WRITE8_MEMBER( m24_keyboard_device::p1_w )
 	m_out_data(!BIT(data, 2));
 }
 
-READ8_MEMBER( m24_keyboard_device::p2_r )
+uint8_t m24_keyboard_device::p2_r()
 {
 	return (m_keypress << 7) | m_mousebtn->read();
 }
@@ -261,7 +262,7 @@ READ_LINE_MEMBER( m24_keyboard_device::t1_r )
 	return 0;
 }
 
-WRITE8_MEMBER( m24_keyboard_device::bus_w )
+void m24_keyboard_device::bus_w(uint8_t data)
 {
 	uint8_t col = m_rows[(data >> 3) & 0xf]->read();
 	m_keypress = (col & (1 << (data & 7))) ? 1 : 0;

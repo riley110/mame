@@ -16,14 +16,6 @@
 
 
 //**************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_DMV_KEYBOARD_ADD(_tag) \
-	MCFG_DEVICE_ADD(_tag, DMV_KEYBOARD, 0)
-
-
-//**************************************************************************
 //  TYPE DEFINITIONS
 //**************************************************************************
 
@@ -49,16 +41,16 @@ protected:
 	virtual ioport_constructor device_input_ports() const override;
 
 private:
-	required_device<upi41_cpu_device> m_maincpu;
+	required_device<i8741a_device> m_maincpu;
 	required_ioport_array<16> m_keyboard;
 
 	uint8_t   m_col;
 	int     m_sd_data_state;
 	int     m_sd_poll_state;
 
-	DECLARE_READ8_MEMBER( port1_r );
-	DECLARE_READ8_MEMBER( port2_r );
-	DECLARE_WRITE8_MEMBER( port2_w );
+	uint8_t port1_r();
+	uint8_t port2_r();
+	void port2_w(uint8_t data);
 };
 
 

@@ -14,10 +14,12 @@
 #include "machine/buffer.h"
 #include "bus/centronics/ctronics.h"
 #include "imagedev/cassette.h"
+#include "imagedev/floppy.h"
 #include "sound/beep.h"
 #include "sound/2203intf.h"
 #include "machine/wd_fdc.h"
 #include "machine/bankdev.h"
+#include "emupal.h"
 
 
 // Interrupt flags
@@ -111,6 +113,47 @@ struct fm7_alu_t
 class fm7_state : public driver_device
 {
 public:
+	fm7_state(const machine_config &mconfig, device_type type, const char *tag) :
+		driver_device(mconfig, type, tag),
+		m_shared_ram(*this, "shared_ram"),
+		m_boot_ram(*this, "boot_ram"),
+		m_maincpu(*this, "maincpu"),
+		m_sub(*this, "sub"),
+		m_x86(*this, "x86"),
+		m_cassette(*this, "cassette"),
+		m_beeper(*this, "beeper"),
+		m_ym(*this, "ym"),
+		m_psg(*this, "psg"),
+		m_screen(*this, "screen"),
+		m_centronics(*this, "centronics"),
+		m_cent_data_out(*this, "cent_data_out"),
+		m_fdc(*this, "fdc"),
+		m_floppy0(*this, "fdc:0"),
+		m_floppy1(*this, "fdc:1"),
+		m_floppy(nullptr),
+		m_ram_ptr(*this, "maincpu"),
+		m_rom_ptr(*this, "init"),
+		m_basic_ptr(*this, "fbasic"),
+		m_kanji(*this, "kanji1"),
+		m_kb_ports(*this, "key%u", 1),
+		m_keymod(*this, "key_modifiers"),
+		m_joy1(*this, "joy1"),
+		m_dsw(*this, "DSW"),
+		m_palette(*this, "palette"),
+		m_av_palette(*this, "av_palette"),
+		m_avbank(*this, "av_bank%u", 1)
+	{
+	}
+
+	void fm16beta(machine_config &config);
+	void fm8(machine_config &config);
+	void fm7(machine_config &config);
+	void fm77av(machine_config &config);
+	void fm11(machine_config &config);
+
+	void init_fm7();
+
+private:
 	enum
 	{
 		TIMER_FM7_BEEPER_OFF,
@@ -122,54 +165,6 @@ public:
 		TIMER_FM77AV_VSYNC
 	};
 
-	fm7_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
-		m_shared_ram(*this, "shared_ram"),
-		m_boot_ram(*this, "boot_ram"),
-		m_maincpu(*this, "maincpu"),
-		m_sub(*this, "sub"),
-		m_x86(*this, "x86"),
-		m_cassette(*this, "cassette"),
-		m_beeper(*this, "beeper"),
-		m_ym(*this, "ym"),
-		m_psg(*this, "psg"),
-		m_centronics(*this, "centronics"),
-		m_cent_data_out(*this, "cent_data_out"),
-		m_fdc(*this, "fdc"),
-		m_floppy0(*this, "fdc:0"),
-		m_floppy1(*this, "fdc:1"),
-		m_floppy(nullptr),
-		m_ram_ptr(*this, "maincpu"),
-		m_rom_ptr(*this, "init"),
-		m_basic_ptr(*this, "fbasic"),
-		m_kanji(*this, "kanji1"),
-		m_kb_ports(*this, {"key1", "key2", "key3"}),
-		m_keymod(*this, "key_modifiers"),
-		m_joy1(*this, "joy1"),
-		m_joy2(*this, "joy2"),
-		m_dsw(*this, "DSW"),
-		m_palette(*this, "palette"),
-		m_av_palette(*this, "av_palette"),
-		m_avbank1(*this, "av_bank1"),
-		m_avbank2(*this, "av_bank2"),
-		m_avbank3(*this, "av_bank3"),
-		m_avbank4(*this, "av_bank4"),
-		m_avbank5(*this, "av_bank5"),
-		m_avbank6(*this, "av_bank6"),
-		m_avbank7(*this, "av_bank7"),
-		m_avbank8(*this, "av_bank8"),
-		m_avbank9(*this, "av_bank9"),
-		m_avbank10(*this, "av_bank10"),
-		m_avbank11(*this, "av_bank11"),
-		m_avbank12(*this, "av_bank12"),
-		m_avbank13(*this, "av_bank13"),
-		m_avbank14(*this, "av_bank14"),
-		m_avbank15(*this, "av_bank15"),
-		m_avbank16(*this, "av_bank16")
-	{
-	}
-	DECLARE_DRIVER_INIT(fm7);
-
 	virtual void machine_reset() override;
 	virtual void video_start() override;
 
@@ -180,96 +175,94 @@ public:
 
 	DECLARE_WRITE_LINE_MEMBER(fm7_fdc_intrq_w);
 	DECLARE_WRITE_LINE_MEMBER(fm7_fdc_drq_w);
-	DECLARE_READ8_MEMBER(fm77av_joy_1_r);
-	DECLARE_READ8_MEMBER(fm77av_joy_2_r);
 	DECLARE_WRITE_LINE_MEMBER(fm77av_fmirq);
 
-	DECLARE_READ8_MEMBER(fm7_subintf_r);
-	DECLARE_WRITE8_MEMBER(fm7_subintf_w);
-	DECLARE_READ8_MEMBER(fm7_sub_busyflag_r);
-	DECLARE_WRITE8_MEMBER(fm7_sub_busyflag_w);
-	DECLARE_READ8_MEMBER(fm7_cancel_ack);
-	DECLARE_READ8_MEMBER(fm7_attn_irq_r);
-	DECLARE_READ8_MEMBER(fm7_vram_access_r);
-	DECLARE_WRITE8_MEMBER(fm7_vram_access_w);
-	DECLARE_READ8_MEMBER(fm7_vram_r);
-	DECLARE_WRITE8_MEMBER(fm7_vram_w);
-	DECLARE_WRITE8_MEMBER(fm7_vram_banked_w);
-	DECLARE_READ8_MEMBER(fm7_vram0_r);
-	DECLARE_READ8_MEMBER(fm7_vram1_r);
-	DECLARE_READ8_MEMBER(fm7_vram2_r);
-	DECLARE_READ8_MEMBER(fm7_vram3_r);
-	DECLARE_READ8_MEMBER(fm7_vram4_r);
-	DECLARE_READ8_MEMBER(fm7_vram5_r);
-	DECLARE_READ8_MEMBER(fm7_vram6_r);
-	DECLARE_READ8_MEMBER(fm7_vram7_r);
-	DECLARE_READ8_MEMBER(fm7_vram8_r);
-	DECLARE_READ8_MEMBER(fm7_vram9_r);
-	DECLARE_READ8_MEMBER(fm7_vramA_r);
-	DECLARE_READ8_MEMBER(fm7_vramB_r);
-	DECLARE_WRITE8_MEMBER(fm7_vram0_w);
-	DECLARE_WRITE8_MEMBER(fm7_vram1_w);
-	DECLARE_WRITE8_MEMBER(fm7_vram2_w);
-	DECLARE_WRITE8_MEMBER(fm7_vram3_w);
-	DECLARE_WRITE8_MEMBER(fm7_vram4_w);
-	DECLARE_WRITE8_MEMBER(fm7_vram5_w);
-	DECLARE_WRITE8_MEMBER(fm7_vram6_w);
-	DECLARE_WRITE8_MEMBER(fm7_vram7_w);
-	DECLARE_WRITE8_MEMBER(fm7_vram8_w);
-	DECLARE_WRITE8_MEMBER(fm7_vram9_w);
-	DECLARE_WRITE8_MEMBER(fm7_vramA_w);
-	DECLARE_WRITE8_MEMBER(fm7_vramB_w);
-	DECLARE_READ8_MEMBER(fm7_crt_r);
-	DECLARE_WRITE8_MEMBER(fm7_crt_w);
-	DECLARE_WRITE8_MEMBER(fm7_vram_offset_w);
-	DECLARE_WRITE8_MEMBER(fm7_multipage_w);
-	DECLARE_READ8_MEMBER(fm7_palette_r);
-	DECLARE_WRITE8_MEMBER(fm7_palette_w);
-	DECLARE_WRITE8_MEMBER(fm77av_analog_palette_w);
-	DECLARE_READ8_MEMBER(fm77av_video_flags_r);
-	DECLARE_WRITE8_MEMBER(fm77av_video_flags_w);
-	DECLARE_READ8_MEMBER(fm77av_sub_modestatus_r);
-	DECLARE_WRITE8_MEMBER(fm77av_sub_modestatus_w);
-	DECLARE_WRITE8_MEMBER(fm77av_sub_bank_w);
-	DECLARE_READ8_MEMBER(fm77av_alu_r);
-	DECLARE_WRITE8_MEMBER(fm77av_alu_w);
-	DECLARE_READ8_MEMBER(fm7_sub_ram_ports_banked_r);
-	DECLARE_WRITE8_MEMBER(fm7_sub_ram_ports_banked_w);
-	DECLARE_READ8_MEMBER(fm7_console_ram_banked_r);
-	DECLARE_WRITE8_MEMBER(fm7_console_ram_banked_w);
-	DECLARE_WRITE8_MEMBER(fm7_irq_mask_w);
-	DECLARE_READ8_MEMBER(fm7_irq_cause_r);
-	DECLARE_WRITE8_MEMBER(fm7_beeper_w);
-	DECLARE_READ8_MEMBER(fm7_sub_beeper_r);
-	DECLARE_READ8_MEMBER(vector_r);
-	DECLARE_WRITE8_MEMBER(vector_w);
-	DECLARE_READ8_MEMBER(fm7_fd04_r);
-	DECLARE_READ8_MEMBER(fm7_rom_en_r);
-	DECLARE_WRITE8_MEMBER(fm7_rom_en_w);
-	DECLARE_WRITE8_MEMBER(fm7_init_en_w);
-	DECLARE_READ8_MEMBER(fm7_fdc_r);
-	DECLARE_WRITE8_MEMBER(fm7_fdc_w);
-	DECLARE_READ8_MEMBER(fm7_keyboard_r);
-	DECLARE_READ8_MEMBER(fm7_sub_keyboard_r);
-	DECLARE_READ8_MEMBER(fm77av_key_encoder_r);
-	DECLARE_WRITE8_MEMBER(fm77av_key_encoder_w);
-	DECLARE_READ8_MEMBER(fm7_cassette_printer_r);
-	DECLARE_WRITE8_MEMBER(fm7_cassette_printer_w);
-	DECLARE_READ8_MEMBER(fm77av_boot_mode_r);
-	DECLARE_READ8_MEMBER(fm7_psg_select_r);
-	DECLARE_WRITE8_MEMBER(fm7_psg_select_w);
-	DECLARE_WRITE8_MEMBER(fm77av_ym_select_w);
-	DECLARE_READ8_MEMBER(fm7_psg_data_r);
-	DECLARE_WRITE8_MEMBER(fm7_psg_data_w);
-	DECLARE_WRITE8_MEMBER(fm77av_bootram_w);
-	DECLARE_READ8_MEMBER(fm7_main_shared_r);
-	DECLARE_WRITE8_MEMBER(fm7_main_shared_w);
-	DECLARE_READ8_MEMBER(fm7_fmirq_r);
-	DECLARE_READ8_MEMBER(fm7_unknown_r);
-	DECLARE_READ8_MEMBER(fm7_mmr_r);
-	DECLARE_WRITE8_MEMBER(fm7_mmr_w);
-	DECLARE_READ8_MEMBER(fm7_kanji_r);
-	DECLARE_WRITE8_MEMBER(fm7_kanji_w);
+	uint8_t fm7_subintf_r();
+	void fm7_subintf_w(uint8_t data);
+	uint8_t fm7_sub_busyflag_r();
+	void fm7_sub_busyflag_w(uint8_t data);
+	uint8_t fm7_cancel_ack();
+	uint8_t fm7_attn_irq_r();
+	uint8_t fm7_vram_access_r();
+	void fm7_vram_access_w(uint8_t data);
+	uint8_t fm7_vram_r(offs_t offset);
+	void fm7_vram_w(offs_t offset, uint8_t data);
+	void fm7_vram_banked_w(offs_t offset, uint8_t data);
+	uint8_t fm7_vram0_r(offs_t offset);
+	uint8_t fm7_vram1_r(offs_t offset);
+	uint8_t fm7_vram2_r(offs_t offset);
+	uint8_t fm7_vram3_r(offs_t offset);
+	uint8_t fm7_vram4_r(offs_t offset);
+	uint8_t fm7_vram5_r(offs_t offset);
+	uint8_t fm7_vram6_r(offs_t offset);
+	uint8_t fm7_vram7_r(offs_t offset);
+	uint8_t fm7_vram8_r(offs_t offset);
+	uint8_t fm7_vram9_r(offs_t offset);
+	uint8_t fm7_vramA_r(offs_t offset);
+	uint8_t fm7_vramB_r(offs_t offset);
+	void fm7_vram0_w(offs_t offset, uint8_t data);
+	void fm7_vram1_w(offs_t offset, uint8_t data);
+	void fm7_vram2_w(offs_t offset, uint8_t data);
+	void fm7_vram3_w(offs_t offset, uint8_t data);
+	void fm7_vram4_w(offs_t offset, uint8_t data);
+	void fm7_vram5_w(offs_t offset, uint8_t data);
+	void fm7_vram6_w(offs_t offset, uint8_t data);
+	void fm7_vram7_w(offs_t offset, uint8_t data);
+	void fm7_vram8_w(offs_t offset, uint8_t data);
+	void fm7_vram9_w(offs_t offset, uint8_t data);
+	void fm7_vramA_w(offs_t offset, uint8_t data);
+	void fm7_vramB_w(offs_t offset, uint8_t data);
+	uint8_t fm7_crt_r();
+	void fm7_crt_w(uint8_t data);
+	void fm7_vram_offset_w(offs_t offset, uint8_t data);
+	void fm7_multipage_w(uint8_t data);
+	uint8_t fm7_palette_r(offs_t offset);
+	void fm7_palette_w(offs_t offset, uint8_t data);
+	void fm77av_analog_palette_w(offs_t offset, uint8_t data);
+	uint8_t fm77av_video_flags_r();
+	void fm77av_video_flags_w(uint8_t data);
+	uint8_t fm77av_sub_modestatus_r();
+	void fm77av_sub_modestatus_w(uint8_t data);
+	void fm77av_sub_bank_w(uint8_t data);
+	uint8_t fm77av_alu_r(offs_t offset);
+	void fm77av_alu_w(offs_t offset, uint8_t data);
+	uint8_t fm7_sub_ram_ports_banked_r(offs_t offset);
+	void fm7_sub_ram_ports_banked_w(offs_t offset, uint8_t data);
+	uint8_t fm7_console_ram_banked_r(offs_t offset);
+	void fm7_console_ram_banked_w(offs_t offset, uint8_t data);
+	void fm7_irq_mask_w(uint8_t data);
+	uint8_t fm7_irq_cause_r();
+	void fm7_beeper_w(uint8_t data);
+	uint8_t fm7_sub_beeper_r();
+	uint8_t vector_r(offs_t offset);
+	void vector_w(offs_t offset, uint8_t data);
+	uint8_t fm7_fd04_r();
+	uint8_t fm7_rom_en_r(address_space &space);
+	void fm7_rom_en_w(address_space &space, uint8_t data);
+	void fm7_init_en_w(address_space &space, uint8_t data);
+	uint8_t fm7_fdc_r(offs_t offset);
+	void fm7_fdc_w(offs_t offset, uint8_t data);
+	uint8_t fm7_keyboard_r(offs_t offset);
+	uint8_t fm7_sub_keyboard_r(offs_t offset);
+	uint8_t fm77av_key_encoder_r(offs_t offset);
+	void fm77av_key_encoder_w(offs_t offset, uint8_t data);
+	uint8_t fm7_cassette_printer_r();
+	void fm7_cassette_printer_w(offs_t offset, uint8_t data);
+	uint8_t fm77av_boot_mode_r();
+	uint8_t fm7_psg_select_r();
+	void fm7_psg_select_w(uint8_t data);
+	void fm77av_ym_select_w(uint8_t data);
+	uint8_t fm7_psg_data_r();
+	void fm7_psg_data_w(uint8_t data);
+	void fm77av_bootram_w(offs_t offset, uint8_t data);
+	uint8_t fm7_main_shared_r(offs_t offset);
+	void fm7_main_shared_w(offs_t offset, uint8_t data);
+	uint8_t fm7_fmirq_r();
+	uint8_t fm7_unknown_r();
+	uint8_t fm7_mmr_r(offs_t offset);
+	void fm7_mmr_w(address_space &space, offs_t offset, uint8_t data);
+	uint8_t fm7_kanji_r(offs_t offset);
+	void fm7_kanji_w(offs_t offset, uint8_t data);
 
 	IRQ_CALLBACK_MEMBER(fm7_irq_ack);
 	IRQ_CALLBACK_MEMBER(fm7_sub_irq_ack);
@@ -281,7 +274,20 @@ public:
 
 	uint32_t screen_update_fm7(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect);
 
-protected:
+	void fm11_mem(address_map &map);
+	void fm11_sub_mem(address_map &map);
+	void fm11_x86_io(address_map &map);
+	void fm11_x86_mem(address_map &map);
+	void fm16_io(address_map &map);
+	void fm16_mem(address_map &map);
+	void fm16_sub_mem(address_map &map);
+	void fm77av_mem(address_map &map);
+	void fm77av_sub_mem(address_map &map);
+	void fm7_banked_mem(address_map &map);
+	void fm7_mem(address_map &map);
+	void fm7_sub_mem(address_map &map);
+	void fm8_mem(address_map &map);
+
 	optional_shared_ptr<uint8_t> m_shared_ram;
 	optional_shared_ptr<uint8_t> m_boot_ram;
 
@@ -341,6 +347,7 @@ protected:
 	required_device<beep_device> m_beeper;
 	optional_device<ym2203_device> m_ym;
 	optional_device<ay8910_device> m_psg;
+	required_device<screen_device> m_screen;
 
 	required_device<centronics_device> m_centronics;
 	required_device<output_latch_device> m_cent_data_out;
@@ -383,27 +390,11 @@ protected:
 	required_ioport_array<3> m_kb_ports;
 	required_ioport m_keymod;
 	required_ioport m_joy1;
-	required_ioport m_joy2;
 	required_ioport m_dsw;
 	required_device<palette_device> m_palette;
 	optional_device<palette_device> m_av_palette;
 
-	optional_device<address_map_bank_device> m_avbank1;
-	optional_device<address_map_bank_device> m_avbank2;
-	optional_device<address_map_bank_device> m_avbank3;
-	optional_device<address_map_bank_device> m_avbank4;
-	optional_device<address_map_bank_device> m_avbank5;
-	optional_device<address_map_bank_device> m_avbank6;
-	optional_device<address_map_bank_device> m_avbank7;
-	optional_device<address_map_bank_device> m_avbank8;
-	optional_device<address_map_bank_device> m_avbank9;
-	optional_device<address_map_bank_device> m_avbank10;
-	optional_device<address_map_bank_device> m_avbank11;
-	optional_device<address_map_bank_device> m_avbank12;
-	optional_device<address_map_bank_device> m_avbank13;
-	optional_device<address_map_bank_device> m_avbank14;
-	optional_device<address_map_bank_device> m_avbank15;
-	optional_device<address_map_bank_device> m_avbank16;
+	optional_device_array<address_map_bank_device, 16> m_avbank;
 
 	virtual void device_timer(emu_timer &timer, device_timer_id id, int param, void *ptr) override;
 };

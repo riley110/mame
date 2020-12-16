@@ -24,15 +24,17 @@ maybe close to jalmah.cpp?
 #include "machine/timer.h"
 #include "sound/okim6295.h"
 
+#include "emupal.h"
 #include "screen.h"
 #include "speaker.h"
+#include "tilemap.h"
 
 
 class patapata_state : public driver_device
 {
 public:
-	patapata_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
+	patapata_state(const machine_config &mconfig, device_type type, const char *tag) :
+		driver_device(mconfig, type, tag),
 		m_bg_videoram(*this, "bg_videoram"),
 		m_fg_videoram(*this, "fg_videoram"),
 		m_vregs(*this, "videoregs"),
@@ -40,15 +42,18 @@ public:
 		m_gfxdecode(*this, "gfxdecode")
 	{ }
 
-	DECLARE_WRITE16_MEMBER(bg_videoram_w);
-	DECLARE_WRITE16_MEMBER(fg_videoram_w);
-	DECLARE_WRITE8_MEMBER(flipscreen_w);
+	void patapata(machine_config &config);
+
+protected:
+	void bg_videoram_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	void fg_videoram_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	void flipscreen_w(uint8_t data);
 
 	TIMER_DEVICE_CALLBACK_MEMBER(scanline);
 
 	uint32_t screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 
-protected:
+	void main_map(address_map &map);
 	virtual void video_start() override;
 
 private:
@@ -70,7 +75,7 @@ private:
 	TILE_GET_INFO_MEMBER(get_fg_tile_info);
 };
 
-WRITE16_MEMBER(patapata_state::bg_videoram_w)
+void patapata_state::bg_videoram_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	COMBINE_DATA(&m_bg_videoram[offset]);
 	m_bg_tilemap->mark_tile_dirty(offset);
@@ -80,16 +85,16 @@ TILE_GET_INFO_MEMBER(patapata_state::get_bg_tile_info)
 {
 	int tileno = m_bg_videoram[tile_index];
 	int pal = tileno>>12;
-	SET_TILE_INFO_MEMBER(0, tileno&0x1fff, pal, 0);
+	tileinfo.set(0, tileno&0x1fff, pal, 0);
 }
 
-WRITE16_MEMBER(patapata_state::fg_videoram_w)
+void patapata_state::fg_videoram_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	COMBINE_DATA(&m_fg_videoram[offset]);
 	m_fg_tilemap->mark_tile_dirty(offset);
 }
 
-WRITE8_MEMBER(patapata_state::flipscreen_w)
+void patapata_state::flipscreen_w(uint8_t data)
 {
 	flip_screen_set(data & 0x01);
 }
@@ -101,7 +106,7 @@ TILE_GET_INFO_MEMBER(patapata_state::get_fg_tile_info)
 	int tileno = m_fg_videoram[tile_index];
 	int pal = tileno>>12;
 
-	SET_TILE_INFO_MEMBER(1, (tileno&0x0fff)+(bank*0x1000), pal, 0);
+	tileinfo.set(1, (tileno&0x0fff)+(bank*0x1000), pal, 0);
 }
 
 TILEMAP_MAPPER_MEMBER(patapata_state::pagescan)
@@ -113,12 +118,12 @@ TILEMAP_MAPPER_MEMBER(patapata_state::pagescan)
 
 void patapata_state::video_start()
 {
-	m_bg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(patapata_state::get_bg_tile_info),this), tilemap_mapper_delegate(FUNC(patapata_state::pagescan),this), 16, 16, 1024,16*2);
-	m_fg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(patapata_state::get_fg_tile_info),this), tilemap_mapper_delegate(FUNC(patapata_state::pagescan),this), 16, 16, 1024,16*2);
+	m_bg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(patapata_state::get_bg_tile_info)), tilemap_mapper_delegate(*this, FUNC(patapata_state::pagescan)), 16, 16, 1024, 16*2);
+	m_fg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(patapata_state::get_fg_tile_info)), tilemap_mapper_delegate(*this, FUNC(patapata_state::pagescan)), 16, 16, 1024, 16*2);
 
 // 2nd half of the ram seems unused, maybe it's actually a mirror meaning this would be the correct tilemap sizes
-// m_bg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(patapata_state::get_bg_tile_info),this), tilemap_mapper_delegate(FUNC(patapata_state::pagescan),this), 16, 16, 1024/2,16*2);
-// m_fg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(patapata_state::get_fg_tile_info),this), tilemap_mapper_delegate(FUNC(patapata_state::pagescan),this), 16, 16, 1024/2,16*2);
+// m_bg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(patapata_state::get_bg_tile_info)), tilemap_mapper_delegate(*this, FUNC(patapata_state::pagescan)), 16, 16, 1024/2, 16*2);
+// m_fg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(patapata_state::get_fg_tile_info)), tilemap_mapper_delegate(*this, FUNC(patapata_state::pagescan)), 16, 16, 1024/2, 16*2);
 
 	m_fg_tilemap->set_transparent_pen(0xf);
 
@@ -179,23 +184,24 @@ also
 
 */
 
-static ADDRESS_MAP_START( main_map, AS_PROGRAM, 16, patapata_state )
-	AM_RANGE(0x000000, 0x07ffff) AM_ROM
+void patapata_state::main_map(address_map &map)
+{
+	map(0x000000, 0x07ffff).rom();
 
-	AM_RANGE(0x100000, 0x100001) AM_READ_PORT("IN0")
-	AM_RANGE(0x100002, 0x100003) AM_READ_PORT("IN1")
-	AM_RANGE(0x100008, 0x100009) AM_READ_PORT("DSW1")
-	AM_RANGE(0x10000a, 0x10000b) AM_READ_PORT("DSW2")
-	AM_RANGE(0x100014, 0x100015) AM_WRITE8(flipscreen_w, 0x00ff)
-	AM_RANGE(0x110000, 0x1103ff) AM_RAM AM_SHARE("videoregs")
-	AM_RANGE(0x120000, 0x1205ff) AM_RAM_DEVWRITE("palette", palette_device, write) AM_SHARE("palette")
-	AM_RANGE(0x130000, 0x13ffff) AM_RAM_WRITE(fg_videoram_w) AM_SHARE("fg_videoram")
-	AM_RANGE(0x140000, 0x14ffff) AM_RAM_WRITE(bg_videoram_w) AM_SHARE("bg_videoram")
-	AM_RANGE(0x150000, 0x150001) AM_DEVREADWRITE8("oki1", okim6295_device, read, write, 0x00ff)
-	AM_RANGE(0x150010, 0x150011) AM_DEVREADWRITE8("oki2", okim6295_device, read, write, 0x00ff)
-	AM_RANGE(0x150020, 0x15002f) AM_DEVWRITE8("nmk112", nmk112_device, okibank_w, 0x00ff)
-	AM_RANGE(0x180000, 0x18ffff) AM_RAM // mainram?
-ADDRESS_MAP_END
+	map(0x100000, 0x100001).portr("IN0");
+	map(0x100002, 0x100003).portr("IN1");
+	map(0x100008, 0x100009).portr("DSW1");
+	map(0x10000a, 0x10000b).portr("DSW2");
+	map(0x100015, 0x100015).w(FUNC(patapata_state::flipscreen_w));
+	map(0x110000, 0x1103ff).ram().share("videoregs");
+	map(0x120000, 0x1205ff).ram().w("palette", FUNC(palette_device::write16)).share("palette");
+	map(0x130000, 0x13ffff).ram().w(FUNC(patapata_state::fg_videoram_w)).share("fg_videoram");
+	map(0x140000, 0x14ffff).ram().w(FUNC(patapata_state::bg_videoram_w)).share("bg_videoram");
+	map(0x150001, 0x150001).rw("oki1", FUNC(okim6295_device::read), FUNC(okim6295_device::write));
+	map(0x150011, 0x150011).rw("oki2", FUNC(okim6295_device::read), FUNC(okim6295_device::write));
+	map(0x150020, 0x15002f).w("nmk112", FUNC(nmk112_device::okibank_w)).umask16(0x00ff);
+	map(0x180000, 0x18ffff).ram(); // mainram?
+}
 
 static INPUT_PORTS_START( patapata )
 	PORT_START("IN0")
@@ -256,22 +262,9 @@ static INPUT_PORTS_START( patapata )
 INPUT_PORTS_END
 
 
-static const gfx_layout tilelayout =
-{
-	16,16,
-	RGN_FRAC(1,1),
-	4,
-	{ 0, 1, 2, 3 },
-	{ 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4,
-			16*32+0*4, 16*32+1*4, 16*32+2*4, 16*32+3*4, 16*32+4*4, 16*32+5*4, 16*32+6*4, 16*32+7*4 },
-	{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32,
-			8*32, 9*32, 10*32, 11*32, 12*32, 13*32, 14*32, 15*32 },
-	32*32
-};
-
-static GFXDECODE_START( patapata )
-	GFXDECODE_ENTRY( "tilesa", 0, tilelayout, 0x000, 16 )
-	GFXDECODE_ENTRY( "tilesb", 0, tilelayout, 0x100, 16 )
+static GFXDECODE_START( gfx_patapata )
+	GFXDECODE_ENTRY( "tilesa", 0, gfx_8x8x4_col_2x2_group_packed_msb, 0x000, 16 )
+	GFXDECODE_ENTRY( "tilesb", 0, gfx_8x8x4_col_2x2_group_packed_msb, 0x100, 16 )
 GFXDECODE_END
 
 TIMER_DEVICE_CALLBACK_MEMBER(patapata_state::scanline)
@@ -280,38 +273,36 @@ TIMER_DEVICE_CALLBACK_MEMBER(patapata_state::scanline)
 	if (param==128) m_maincpu->set_input_line(1, HOLD_LINE);
 }
 
-static MACHINE_CONFIG_START( patapata )
+void patapata_state::patapata(machine_config &config)
+{
+	M68000(config, m_maincpu, 16_MHz_XTAL); // 16 MHz XTAL, 16 MHz CPU
+	m_maincpu->set_addrmap(AS_PROGRAM, &patapata_state::main_map);
+	m_maincpu->set_vblank_int("screen", FUNC(patapata_state::irq4_line_hold)); // 1 + 4 valid? (4 main VBL)
 
-	MCFG_CPU_ADD("maincpu", M68000, XTAL_16MHz) // 16 MHz XTAL, 16 MHz CPU
-	MCFG_CPU_PROGRAM_MAP(main_map)
-	MCFG_CPU_VBLANK_INT_DRIVER("screen", patapata_state,  irq4_line_hold) // 1 + 4 valid? (4 main VBL)
-	MCFG_TIMER_DRIVER_ADD_SCANLINE("scantimer", patapata_state, scanline, "screen", 0, 1)
+	TIMER(config, "scantimer").configure_scanline(FUNC(patapata_state::scanline), "screen", 0, 1);
 
-	MCFG_GFXDECODE_ADD("gfxdecode", "palette", patapata)
+	GFXDECODE(config, m_gfxdecode, "palette", gfx_patapata);
 
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_REFRESH_RATE(60)
-	MCFG_SCREEN_VBLANK_TIME(ATTOSECONDS_IN_USEC(0))
-	MCFG_SCREEN_SIZE(64*8, 64*8)
-	MCFG_SCREEN_VISIBLE_AREA(0*8, 60*8-1, 0*8, 44*8-1)
-	MCFG_SCREEN_UPDATE_DRIVER(patapata_state, screen_update)
-	MCFG_SCREEN_PALETTE("palette")
+	screen_device &screen(SCREEN(config, "screen", SCREEN_TYPE_RASTER));
+	screen.set_refresh_hz(60);
+	screen.set_vblank_time(ATTOSECONDS_IN_USEC(0));
+	screen.set_size(64*8, 64*8);
+	screen.set_visarea(0*8, 60*8-1, 0*8, 44*8-1);
+	screen.set_screen_update(FUNC(patapata_state::screen_update));
+	screen.set_palette("palette");
 
-	MCFG_PALETTE_ADD("palette", 0x600/2)
-	MCFG_PALETTE_FORMAT(RRRRGGGGBBBBRGBx)
+	PALETTE(config, "palette").set_format(palette_device::RRRRGGGGBBBBRGBx, 0x600/2);
 
-	MCFG_SPEAKER_STANDARD_MONO("mono")
+	SPEAKER(config, "mono").front_center();
 
-	MCFG_OKIM6295_ADD("oki1", XTAL_16MHz / 4, PIN7_LOW) // not verified
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.40)
+	OKIM6295(config, "oki1", 16_MHz_XTAL / 4, okim6295_device::PIN7_LOW).add_route(ALL_OUTPUTS, "mono", 0.40); // not verified
 
-	MCFG_OKIM6295_ADD("oki2", XTAL_16MHz / 4, PIN7_LOW) // not verified
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.40)
+	OKIM6295(config, "oki2", 16_MHz_XTAL / 4, okim6295_device::PIN7_LOW).add_route(ALL_OUTPUTS, "mono", 0.40); // not verified
 
-	MCFG_DEVICE_ADD("nmk112", NMK112, 0) // or 212? difficult to read (maybe 212 is 2* 112?)
-	MCFG_NMK112_ROM0("oki1")
-	MCFG_NMK112_ROM1("oki2")
-MACHINE_CONFIG_END
+	nmk112_device &nmk112(NMK112(config, "nmk112", 0)); // or 212? difficult to read (maybe 212 is 2* 112?)
+	nmk112.set_rom0_tag("oki1");
+	nmk112.set_rom1_tag("oki2");
+}
 
 ROM_START( patapata )
 	ROM_REGION( 0x80000, "maincpu", 0 )  /* 68000 code */
@@ -341,4 +332,4 @@ ROM_START( patapata )
 ROM_END
 
 // cabinet shows Atlus logo, though there's no copyright on the title screen and PCB is NTC / NMK
-GAME( 1993, patapata, 0, patapata, patapata, patapata_state, 0, ROT0,  "Atlus", "Pata Pata Panic", MACHINE_SUPPORTS_SAVE )
+GAME( 1993, patapata, 0, patapata, patapata, patapata_state, empty_init, ROT0,  "Atlus", "Pata Pata Panic", MACHINE_SUPPORTS_SAVE )

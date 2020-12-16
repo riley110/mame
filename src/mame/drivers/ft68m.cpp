@@ -22,16 +22,21 @@ Interrupts: INT6 is output of Timer 2, INT7 is output of Timer 3 (refresh),
 class ft68m_state : public driver_device
 {
 public:
-	ft68m_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
+	ft68m_state(const machine_config &mconfig, device_type type, const char *tag) :
+		driver_device(mconfig, type, tag),
 		m_p_base(*this, "rambase"),
 		m_maincpu(*this, "maincpu")
 	{
 	}
 
-	DECLARE_READ16_MEMBER(switches_r);
+	void ft68m(machine_config &config);
 
 private:
+	uint16_t switches_r();
+
+	void mem_map(address_map &map);
+
+	virtual void machine_start() override;
 	virtual void machine_reset() override;
 
 	required_shared_ptr<uint16_t> m_p_base;
@@ -39,24 +44,25 @@ private:
 	required_device<cpu_device> m_maincpu;
 };
 
-READ16_MEMBER( ft68m_state::switches_r )
+uint16_t ft68m_state::switches_r()
 {
 	return 0x7c00; // bypass self test
 }
 
 
-static ADDRESS_MAP_START(ft68m_mem, AS_PROGRAM, 16, ft68m_state)
-	ADDRESS_MAP_UNMAP_HIGH
-	ADDRESS_MAP_GLOBAL_MASK(0xffffff)
-	AM_RANGE(0x000000, 0x1fffff) AM_RAM AM_SHARE("rambase")
-	AM_RANGE(0x200000, 0x201fff) AM_ROM AM_REGION("roms", 0x0000)
-	AM_RANGE(0x400000, 0x401fff) AM_ROM AM_REGION("roms", 0x2000)
-	AM_RANGE(0x600000, 0x600007) AM_MIRROR(0x1ffff8) AM_DEVREADWRITE8("mpsc", upd7201_new_device, ba_cd_r, ba_cd_w, 0xff00)
-	AM_RANGE(0x800000, 0x800003) AM_MIRROR(0x1ffffc) AM_DEVREADWRITE("stc", am9513_device, read16, write16)
-	AM_RANGE(0xa00000, 0xbfffff) AM_RAM //Page Map
-	AM_RANGE(0xc00000, 0xdfffff) AM_RAM //Segment Map
-	AM_RANGE(0xe00000, 0xffffff) AM_READ(switches_r) //Context Register
-ADDRESS_MAP_END
+void ft68m_state::mem_map(address_map &map)
+{
+	map.unmap_value_high();
+	map.global_mask(0xffffff);
+	map(0x000000, 0x1fffff).ram().share("rambase");
+	map(0x200000, 0x201fff).rom().region("roms", 0x0000);
+	map(0x400000, 0x401fff).rom().region("roms", 0x2000);
+	map(0x600000, 0x600007).mirror(0x1ffff8).rw("mpsc", FUNC(upd7201_device::ba_cd_r), FUNC(upd7201_device::ba_cd_w)).umask16(0xff00);
+	map(0x800000, 0x800003).mirror(0x1ffffc).rw("stc", FUNC(am9513_device::read16), FUNC(am9513_device::write16));
+	map(0xa00000, 0xbfffff).ram(); //Page Map
+	map(0xc00000, 0xdfffff).ram(); //Segment Map
+	map(0xe00000, 0xffffff).r(FUNC(ft68m_state::switches_r)); //Context Register
+}
 
 
 /* Input ports */
@@ -64,42 +70,47 @@ static INPUT_PORTS_START( ft68m )
 INPUT_PORTS_END
 
 
+void ft68m_state::machine_start()
+{
+	// GATE 1 is tied to Vcc; other GATE and SRC pins are all grounded
+	subdevice<am9513_device>("stc")->gate1_w(1);
+}
+
 void ft68m_state::machine_reset()
 {
 	uint8_t* ROM = memregion("roms")->base();
 	memcpy(m_p_base, ROM, 8);
-	m_maincpu->reset();
 }
 
-static MACHINE_CONFIG_START( ft68m )
-
+void ft68m_state::ft68m(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", M68000, XTAL_19_6608MHz / 2)
-	MCFG_CPU_PROGRAM_MAP(ft68m_mem)
+	M68000(config, m_maincpu, XTAL(19'660'800) / 2);
+	m_maincpu->set_addrmap(AS_PROGRAM, &ft68m_state::mem_map);
 
-	MCFG_DEVICE_ADD("mpsc", UPD7201_NEW, 0)
-	MCFG_Z80SIO_OUT_TXDA_CB(DEVWRITELINE("rs232a", rs232_port_device, write_txd))
-	MCFG_Z80SIO_OUT_DTRA_CB(DEVWRITELINE("rs232a", rs232_port_device, write_dtr))
-	MCFG_Z80SIO_OUT_RTSA_CB(DEVWRITELINE("rs232a", rs232_port_device, write_rts))
-	MCFG_Z80SIO_OUT_TXDB_CB(DEVWRITELINE("rs232b", rs232_port_device, write_txd))
-	MCFG_Z80SIO_OUT_INT_CB(INPUTLINE("maincpu", M68K_IRQ_5))
+	upd7201_device& mpsc(UPD7201(config, "mpsc", 0));
+	mpsc.out_txda_callback().set("rs232a", FUNC(rs232_port_device::write_txd));
+	mpsc.out_dtra_callback().set("rs232a", FUNC(rs232_port_device::write_dtr));
+	mpsc.out_rtsa_callback().set("rs232a", FUNC(rs232_port_device::write_rts));
+	mpsc.out_txdb_callback().set("rs232b", FUNC(rs232_port_device::write_txd));
+	mpsc.out_int_callback().set_inputline(m_maincpu, M68K_IRQ_5);
 
-	MCFG_DEVICE_ADD("stc", AM9513A, XTAL_19_6608MHz / 8)
-	MCFG_AM9513_OUT2_CALLBACK(INPUTLINE("maincpu", M68K_IRQ_6))
-	MCFG_AM9513_OUT3_CALLBACK(INPUTLINE("maincpu", M68K_IRQ_7))
-	MCFG_AM9513_OUT4_CALLBACK(DEVWRITELINE("mpsc", upd7201_new_device, rxca_w))
-	MCFG_DEVCB_CHAIN_OUTPUT(DEVWRITELINE("mpsc", upd7201_new_device, txca_w))
-	MCFG_AM9513_OUT5_CALLBACK(DEVWRITELINE("mpsc", upd7201_new_device, rxcb_w))
-	MCFG_DEVCB_CHAIN_OUTPUT(DEVWRITELINE("mpsc", upd7201_new_device, txcb_w))
+	am9513_device &stc(AM9513A(config, "stc", XTAL(19'660'800) / 8));
+	stc.out2_cb().set_inputline(m_maincpu, M68K_IRQ_6);
+	stc.out3_cb().set_inputline(m_maincpu, M68K_IRQ_7);
+	stc.out4_cb().set("mpsc", FUNC(upd7201_device::rxca_w));
+	stc.out4_cb().append("mpsc", FUNC(upd7201_device::txca_w));
+	stc.out5_cb().set("mpsc", FUNC(upd7201_device::rxcb_w));
+	stc.out5_cb().append("mpsc", FUNC(upd7201_device::txcb_w));
 
-	MCFG_RS232_PORT_ADD("rs232a", default_rs232_devices, "terminal")
-	MCFG_RS232_RXD_HANDLER(DEVWRITELINE("mpsc", upd7201_new_device, rxa_w))
-	MCFG_RS232_DSR_HANDLER(DEVWRITELINE("mpsc", upd7201_new_device, dcda_w))
-	MCFG_RS232_CTS_HANDLER(DEVWRITELINE("mpsc", upd7201_new_device, ctsa_w))
+	rs232_port_device &rs232a(RS232_PORT(config, "rs232a", default_rs232_devices, "terminal"));
+	rs232a.rxd_handler().set("mpsc", FUNC(upd7201_device::rxa_w));
+	rs232a.dsr_handler().set("mpsc", FUNC(upd7201_device::dcda_w));
+	rs232a.cts_handler().set("mpsc", FUNC(upd7201_device::ctsa_w));
 
-	MCFG_RS232_PORT_ADD("rs232b", default_rs232_devices, nullptr)
-	MCFG_RS232_RXD_HANDLER(DEVWRITELINE("mpsc", upd7201_new_device, rxb_w))
-MACHINE_CONFIG_END
+	rs232_port_device &rs232b(RS232_PORT(config, "rs232b", default_rs232_devices, nullptr));
+	rs232b.rxd_handler().set("mpsc", FUNC(upd7201_device::rxb_w));
+}
 
 /* ROM definition */
 ROM_START( ft68m )
@@ -121,5 +132,5 @@ ROM_END
 
 /* Driver */
 
-//    YEAR  NAME   PARENT  COMPAT  MACHINE INPUT   CLASS        INIT  COMPANY               FULLNAME  FLAGS
-COMP( 198?, ft68m, 0,      0,      ft68m,  ft68m,  ft68m_state, 0,    "Forward Technology", "FT-68M", MACHINE_NOT_WORKING | MACHINE_NO_SOUND_HW )
+//    YEAR  NAME   PARENT  COMPAT  MACHINE  INPUT   CLASS        INIT        COMPANY               FULLNAME  FLAGS
+COMP( 198?, ft68m, 0,      0,      ft68m,   ft68m,  ft68m_state, empty_init, "Forward Technology", "FT-68M", MACHINE_NOT_WORKING | MACHINE_NO_SOUND_HW | MACHINE_SUPPORTS_SAVE )

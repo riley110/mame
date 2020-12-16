@@ -18,21 +18,6 @@ public:
 	// construction/destruction
 	sns_sa1_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	// reading and writing
-	virtual DECLARE_READ8_MEMBER(read_l) override;
-	virtual DECLARE_READ8_MEMBER(read_h) override;
-	virtual DECLARE_WRITE8_MEMBER(write_l) override;
-	virtual DECLARE_WRITE8_MEMBER(write_h) override;
-
-	// additional reading and writing
-	virtual DECLARE_READ8_MEMBER(chip_read) override;
-	virtual DECLARE_WRITE8_MEMBER(chip_write) override;
-
-	DECLARE_READ8_MEMBER(sa1_lo_r);
-	DECLARE_READ8_MEMBER(sa1_hi_r);
-	DECLARE_WRITE8_MEMBER(sa1_lo_w);
-	DECLARE_WRITE8_MEMBER(sa1_hi_w);
-
 protected:
 	// device-level overrides
 	virtual void device_start() override;
@@ -40,16 +25,27 @@ protected:
 
 	virtual void device_add_mconfig(machine_config &config) override;
 
-private:
-	uint8_t var_length_read(address_space &space, uint32_t offset);
-	void dma_transfer(address_space &space);
-	void dma_cctype1_transfer(address_space &space);
-	void dma_cctype2_transfer(address_space &space);
+	// reading and writing
+	virtual uint8_t read_l(offs_t offset) override;
+	virtual uint8_t read_h(offs_t offset) override;
+	virtual void write_l(offs_t offset, uint8_t data) override;
+	virtual void write_h(offs_t offset, uint8_t data) override;
 
-	uint8_t read_regs(address_space &space, uint32_t offset);
+	// additional reading and writing
+	virtual uint8_t chip_read(offs_t offset) override;
+	virtual void chip_write(offs_t offset, uint8_t data) override;
+
+private:
+	template<bool SA1Read> uint8_t var_length_read(uint32_t offset);
+	void dma_transfer();
+	void dma_cctype1_transfer();
+	void dma_cctype2_transfer();
+
+	template<bool SA1Read> uint8_t read_regs(uint32_t offset);
 	uint8_t read_iram(uint32_t offset);
-	uint8_t read_bwram(uint32_t offset);
-	void write_regs(address_space &space, uint32_t offset, uint8_t data);
+	template<bool SA1Read> uint8_t read_bwram(uint32_t offset);
+	uint8_t read_cconv1_dma(uint32_t offset);
+	void write_regs(uint32_t offset, uint8_t data);
 	void write_iram(uint32_t offset, uint8_t data);
 	void write_bwram(uint32_t offset, uint8_t data);
 	void recalc_irqs();
@@ -89,6 +85,9 @@ private:
 	uint8_t m_iram_write_snes, m_iram_write_sa1;
 	// $2230-$2231
 	uint8_t m_dma_ctrl, m_dma_ccparam;
+	bool m_dma_cconv_end;
+	uint8_t m_dma_cconv_size;
+	uint8_t m_dma_cconv_bits;
 	// $2232-$2237
 	uint32_t m_src_addr, m_dst_addr;
 	// $2238-$2239
@@ -107,6 +106,18 @@ private:
 	uint8_t m_scpu_flags, m_sa1_flags;
 	// $2302-$2305
 	uint16_t m_hcr, m_vcr;
+
+	bool m_cconv1_dma_active;
+	uint32_t m_cconv_bits;
+
+	uint8_t sa1_lo_r(offs_t offset);
+	uint8_t sa1_hi_r(offs_t offset);
+	void sa1_lo_w(offs_t offset, uint8_t data);
+	void sa1_hi_w(offs_t offset, uint8_t data);
+
+	void sa1_map(address_map &map);
+
+	uint8_t dma_cctype1_read(offs_t offset);
 };
 
 

@@ -4,11 +4,11 @@
 #include "includes/buggychl.h"
 
 
-PALETTE_INIT_MEMBER(buggychl_state, buggychl)
+void buggychl_state::buggychl_palette(palette_device &palette) const
 {
-	/* arbitrary blue shading for the sky, estimation */
+	// arbitrary blue shading for the sky, estimation
 	for (int i = 0; i < 128; i++)
-		palette.set_pen_color(i + 128, rgb_t(0, 240-i, 255));
+		palette.set_pen_color(i + 128, rgb_t(0, 240 - i, 255));
 }
 
 void buggychl_state::video_start()
@@ -24,7 +24,7 @@ void buggychl_state::video_start()
 
 
 
-WRITE8_MEMBER(buggychl_state::buggychl_chargen_w)
+void buggychl_state::buggychl_chargen_w(offs_t offset, uint8_t data)
 {
 	if (m_charram[offset] != data)
 	{
@@ -33,17 +33,17 @@ WRITE8_MEMBER(buggychl_state::buggychl_chargen_w)
 	}
 }
 
-WRITE8_MEMBER(buggychl_state::buggychl_sprite_lookup_bank_w)
+void buggychl_state::buggychl_sprite_lookup_bank_w(uint8_t data)
 {
 	m_sl_bank = (data & 0x10) << 8;
 }
 
-WRITE8_MEMBER(buggychl_state::buggychl_sprite_lookup_w)
+void buggychl_state::buggychl_sprite_lookup_w(offs_t offset, uint8_t data)
 {
 	m_sprite_lookup[offset + m_sl_bank] = data;
 }
 
-WRITE8_MEMBER(buggychl_state::buggychl_ctrl_w)
+void buggychl_state::buggychl_ctrl_w(uint8_t data)
 {
 /*
     bit7 = lamp
@@ -64,10 +64,10 @@ WRITE8_MEMBER(buggychl_state::buggychl_ctrl_w)
 	m_sprite_color_base = (data & 0x10) ? 1 * 16 : 3 * 16;
 
 	machine().bookkeeping().coin_lockout_global_w((~data & 0x40) >> 6);
-	output().set_led_value(0, ~data & 0x80);
+	m_led[0] = BIT(~data, 7);
 }
 
-WRITE8_MEMBER(buggychl_state::buggychl_bg_scrollx_w)
+void buggychl_state::buggychl_bg_scrollx_w(uint8_t data)
 {
 	m_bg_scrollx = -(data - 0x12);
 }

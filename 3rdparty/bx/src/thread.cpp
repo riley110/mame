@@ -1,13 +1,23 @@
 /*
- * Copyright 2010-2017 Branimir Karadzic. All rights reserved.
+ * Copyright 2010-2019 Branimir Karadzic. All rights reserved.
  * License: https://github.com/bkaradzic/bx#license-bsd-2-clause
  */
 
+#include "bx_p.h"
 #include <bx/thread.h>
 
-#if    BX_PLATFORM_ANDROID \
+#if BX_CONFIG_SUPPORTS_THREADING
+
+#if BX_PLATFORM_WINDOWS && !BX_CRT_NONE
+#	include <bx/string.h>
+#endif
+
+#if BX_CRT_NONE
+#	include "crt0.h"
+#elif  BX_PLATFORM_ANDROID \
+	|| BX_PLATFORM_BSD     \
+	|| BX_PLATFORM_HAIKU   \
 	|| BX_PLATFORM_LINUX   \
-	|| BX_PLATFORM_NACL    \
 	|| BX_PLATFORM_IOS     \
 	|| BX_PLATFORM_OSX     \
 	|| BX_PLATFORM_PS4     \
@@ -21,7 +31,6 @@
 #	endif // BX_PLATFORM_
 #elif  BX_PLATFORM_WINDOWS \
 	|| BX_PLATFORM_WINRT   \
-	|| BX_PLATFORM_XBOX360 \
 	|| BX_PLATFORM_XBOXONE
 #	include <windows.h>
 #	include <limits.h>
@@ -33,15 +42,21 @@ using namespace Windows::System::Threading;
 #	endif // BX_PLATFORM_WINRT
 #endif // BX_PLATFORM_
 
-#if BX_CONFIG_SUPPORTS_THREADING
-
 namespace bx
 {
+	static AllocatorI* getAllocator()
+	{
+		static DefaultAllocator s_allocator;
+		return &s_allocator;
+	}
+
 	struct ThreadInternal
 	{
-#if    BX_PLATFORM_WINDOWS \
+#if BX_CRT_NONE
+		static int32_t threadFunc(void* _arg);
+		int32_t m_handle;
+#elif  BX_PLATFORM_WINDOWS \
 	|| BX_PLATFORM_WINRT   \
-	|| BX_PLATFORM_XBOX360 \
 	|| BX_PLATFORM_XBOXONE
 		static DWORD WINAPI threadFunc(LPVOID _arg);
 		HANDLE m_handle;
@@ -52,7 +67,16 @@ namespace bx
 #endif // BX_PLATFORM_
 	};
 
-#if BX_PLATFORM_WINDOWS || BX_PLATFORM_XBOX360 || BX_PLATFORM_XBOXONE || BX_PLATFORM_WINRT
+#if BX_CRT_NONE
+	int32_t ThreadInternal::threadFunc(void* _arg)
+	{
+		Thread* thread = (Thread*)_arg;
+		int32_t result = thread->entry();
+		return result;
+	}
+#elif  BX_PLATFORM_WINDOWS \
+	|| BX_PLATFORM_XBOXONE \
+	|| BX_PLATFORM_WINRT
 	DWORD WINAPI ThreadInternal::threadFunc(LPVOID _arg)
 	{
 		Thread* thread = (Thread*)_arg;
@@ -76,16 +100,18 @@ namespace bx
 	Thread::Thread()
 		: m_fn(NULL)
 		, m_userData(NULL)
+		, m_queue(getAllocator() )
 		, m_stackSize(0)
-		, m_exitCode(0 /*EXIT_SUCCESS*/)
+		, m_exitCode(kExitSuccess)
 		, m_running(false)
 	{
 		BX_STATIC_ASSERT(sizeof(ThreadInternal) <= sizeof(m_internal) );
 
 		ThreadInternal* ti = (ThreadInternal*)m_internal;
-#if    BX_PLATFORM_WINDOWS \
+#if BX_CRT_NONE
+		ti->m_handle = INT32_MIN;
+#elif  BX_PLATFORM_WINDOWS \
 	|| BX_PLATFORM_WINRT   \
-	|| BX_PLATFORM_XBOX360 \
 	|| BX_PLATFORM_XBOXONE
 		ti->m_handle   = INVALID_HANDLE_VALUE;
 		ti->m_threadId = UINT32_MAX;
@@ -112,7 +138,10 @@ namespace bx
 		m_running = true;
 
 		ThreadInternal* ti = (ThreadInternal*)m_internal;
-#if BX_PLATFORM_WINDOWS || BX_PLATFORM_XBOX360 || BX_PLATFORM_XBOXONE
+#if BX_CRT_NONE
+		ti->m_handle = crt0::threadCreate(&ti->threadFunc, _userData, m_stackSize, _name);
+#elif  BX_PLATFORM_WINDOWS \
+	|| BX_PLATFORM_XBOXONE
 		ti->m_handle = ::CreateThread(NULL
 				, m_stackSize
 				, (LPTHREAD_START_ROUTINE)ti->threadFunc
@@ -163,7 +192,9 @@ namespace bx
 	{
 		BX_CHECK(m_running, "Not running!");
 		ThreadInternal* ti = (ThreadInternal*)m_internal;
-#if BX_PLATFORM_WINDOWS || BX_PLATFORM_XBOX360
+#if BX_CRT_NONE
+		crt0::threadJoin(ti->m_handle, NULL);
+#elif BX_PLATFORM_WINDOWS
 		WaitForSingleObject(ti->m_handle, INFINITE);
 		GetExitCodeThread(ti->m_handle, (DWORD*)&m_exitCode);
 		CloseHandle(ti->m_handle);
@@ -200,48 +231,75 @@ namespace bx
 	{
 		ThreadInternal* ti = (ThreadInternal*)m_internal;
 		BX_UNUSED(ti);
-#if BX_PLATFORM_OSX || BX_PLATFORM_IOS
+#if BX_CRT_NONE
+		BX_UNUSED(_name);
+#elif  BX_PLATFORM_OSX \
+	|| BX_PLATFORM_IOS
 		pthread_setname_np(_name);
 #elif (BX_CRT_GLIBC >= 21200) && ! BX_PLATFORM_HURD
 		pthread_setname_np(ti->m_handle, _name);
 #elif BX_PLATFORM_LINUX
 		prctl(PR_SET_NAME,_name, 0, 0, 0);
 #elif BX_PLATFORM_BSD
-#	ifdef __NetBSD__
+#	if defined(__NetBSD__)
 		pthread_setname_np(ti->m_handle, "%s", (void*)_name);
 #	else
 		pthread_set_name_np(ti->m_handle, _name);
-#	endif // __NetBSD__
-#elif BX_PLATFORM_WINDOWS && BX_COMPILER_MSVC
-#	pragma pack(push, 8)
-		struct ThreadName
+#	endif // defined(__NetBSD__)
+#elif BX_PLATFORM_WINDOWS
+		// Try to use the new thread naming API from Win10 Creators update onwards if we have it
+		typedef HRESULT (WINAPI *SetThreadDescriptionProc)(HANDLE, PCWSTR);
+		SetThreadDescriptionProc SetThreadDescription = (SetThreadDescriptionProc)(GetProcAddress(GetModuleHandleA("Kernel32.dll"), "SetThreadDescription"));
+		if (SetThreadDescription)
 		{
-			DWORD  type;
-			LPCSTR name;
-			DWORD  id;
-			DWORD  flags;
-		};
-#	pragma pack(pop)
-		ThreadName tn;
-		tn.type  = 0x1000;
-		tn.name  = _name;
-		tn.id    = ti->m_threadId;
-		tn.flags = 0;
+			uint32_t length = (uint32_t)bx::strLen(_name)+1;
+			uint32_t size = length*sizeof(wchar_t);
+			wchar_t* name = (wchar_t*)alloca(size);
+			mbstowcs(name, _name, size-2);
+			SetThreadDescription(ti->m_handle, name);
+		}
+#	if BX_COMPILER_MSVC
+#		pragma pack(push, 8)
+			struct ThreadName
+			{
+				DWORD  type;
+				LPCSTR name;
+				DWORD  id;
+				DWORD  flags;
+			};
+#		pragma pack(pop)
+			ThreadName tn;
+			tn.type  = 0x1000;
+			tn.name  = _name;
+			tn.id    = ti->m_threadId;
+			tn.flags = 0;
 
-		__try
-		{
-			RaiseException(0x406d1388
-					, 0
-					, sizeof(tn)/4
-					, reinterpret_cast<ULONG_PTR*>(&tn)
-					);
-		}
-		__except(EXCEPTION_EXECUTE_HANDLER)
-		{
-		}
+			__try
+			{
+				RaiseException(0x406d1388
+						, 0
+						, sizeof(tn)/4
+						, reinterpret_cast<ULONG_PTR*>(&tn)
+						);
+			}
+			__except(EXCEPTION_EXECUTE_HANDLER)
+			{
+			}
+#	endif // BX_COMPILER_MSVC
 #else
 		BX_UNUSED(_name);
 #endif // BX_PLATFORM_
+	}
+
+	void Thread::push(void* _ptr)
+	{
+		m_queue.push(_ptr);
+	}
+
+	void* Thread::pop()
+	{
+		void* ptr = m_queue.pop();
+		return ptr;
 	}
 
 	int32_t Thread::entry()
@@ -252,19 +310,48 @@ namespace bx
 #endif // BX_PLATFORM_WINDOWS
 
 		m_sem.post();
-		return m_fn(m_userData);
+		int32_t result = m_fn(this, m_userData);
+		return result;
 	}
 
 	struct TlsDataInternal
 	{
-#if BX_PLATFORM_WINDOWS
+#if BX_CRT_NONE
+#elif BX_PLATFORM_WINDOWS
 		uint32_t m_id;
 #elif !(BX_PLATFORM_XBOXONE || BX_PLATFORM_WINRT)
 		pthread_key_t m_id;
 #endif // BX_PLATFORM_*
 	};
 
-#if BX_PLATFORM_WINDOWS
+#if BX_CRT_NONE
+	TlsData::TlsData()
+	{
+		BX_STATIC_ASSERT(sizeof(TlsDataInternal) <= sizeof(m_internal) );
+
+		TlsDataInternal* ti = (TlsDataInternal*)m_internal;
+		BX_UNUSED(ti);
+	}
+
+	TlsData::~TlsData()
+	{
+		TlsDataInternal* ti = (TlsDataInternal*)m_internal;
+		BX_UNUSED(ti);
+	}
+
+	void* TlsData::get() const
+	{
+		return NULL;
+	}
+
+	void TlsData::set(void* _ptr)
+	{
+		BX_UNUSED(_ptr);
+
+		TlsDataInternal* ti = (TlsDataInternal*)m_internal;
+		BX_UNUSED(ti);
+	}
+#elif BX_PLATFORM_WINDOWS
 	TlsData::TlsData()
 	{
 		BX_STATIC_ASSERT(sizeof(TlsDataInternal) <= sizeof(m_internal) );

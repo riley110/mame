@@ -241,7 +241,7 @@
                                            _
 
 
-    Regarding the abobe diagram, there are 2 different states controlled by both 06B53P.
+    Regarding the above diagram, there are 2 different states controlled by both 06B53P.
     Each state arrange a different palette that will be assigned to each graphics bank.
 
     As we can see here, same pin of different PROMs are connected together in parallel.
@@ -304,7 +304,7 @@
     Test Mode CANCEL           DE  E0  00  DF  EF  01  "call attendant"
     Coin                       EF  E0  00  DF  F6  01  "ready?"
 
-    (*) "big" and "small" are splitted from the sample "big or small".
+    (*) "big" and "small" are split from the sample "big or small".
 
 
     So, you can easily see that writes to ports 0x00-0x01 define the start (pos) offset,
@@ -331,7 +331,7 @@
     devices from this hardware, plus V-Sync, H-Sync and (V+H)-Sync (composite) frequencies.
 
     All generated clocks are proportional to the Clock In (12MHz). There are not fixed or
-    harcoded frequencies.
+    hardcoded frequencies.
 
 
     Pinout
@@ -709,7 +709,7 @@
     - Changes on the interrupt system (need to be verified on the PCB).
     - Renamed the graphics regions to more descriptive names.
     - Corrected the manufacturer's name.
-    - Splitted the driver to driver + video.
+    - Split the driver to driver + video.
     - Updated technical notes.
 
 
@@ -763,7 +763,6 @@
 
 #include "cpu/z80/z80.h"
 #include "sound/ay8910.h"
-#include "sound/msm5205.h"
 #include "sound/sn76496.h"
 #include "machine/i8255.h"
 #include "machine/nvram.h"
@@ -773,29 +772,42 @@
 #include "lucky74.lh"
 
 
-#define MASTER_CLOCK        XTAL_12MHz      /* confirmed */
+#define MASTER_CLOCK        XTAL(12'000'000)      // confirmed
 
-/* custom 06B49P clocks */
-#define C_06B49P_CLKOUT_01  (MASTER_CLOCK/2)        /* 6 MHz. */
-#define C_06B49P_CLKOUT_02  (MASTER_CLOCK/4)        /* 3 MHz. */
-#define C_06B49P_CLKOUT_03  (MASTER_CLOCK/4)        /* 3 MHz. */
-#define C_06B49P_CLKOUT_04  (MASTER_CLOCK/8)        /* 1.5 MHz. */
-#define C_06B49P_CLKOUT_05  (MASTER_CLOCK/16)       /* 750 kHz. */
-#define C_06B49P_CLKOUT_06  (MASTER_CLOCK/32)       /* 375 kHz. */
-#define C_06B49P_CLKOUT_07  (MASTER_CLOCK/64)       /* 187.5 kHz. */
-#define C_06B49P_CLKOUT_08  (MASTER_CLOCK/128)      /* 93.75 kHz. */
-#define C_06B49P_CLKOUT_09  (MASTER_CLOCK/256)      /* 46875 Hz. */
-#define C_06B49P_CLKOUT_10  (7782)                  /* 7782 Hz. measured */
-#define C_06B49P_CLKOUT_11  (3920)                  /* 3920 Hz. measured */
-#define C_06B49P_CLKOUT_12  (1960)                  /* 1960 Hz. measured */
-#define C_06B49P_CLKOUT_13  (950)                   /* 950 Hz. measured */
-#define C_06B49P_CLKOUT_14  (475)                   /* 475 Hz. measured */
-#define C_06B49P_CLKOUT_15  (237)                   /* 237 Hz. measured */
-#define C_06B49P_CLKOUT_16  (MASTER_CLOCK/100000)   /* 120 Hz. */
-#define C_06B49P_CLKOUT_17  (MASTER_CLOCK/200000)   /* 60 Hz. */
-#define C_06B49P_CLKOUT_18  (MASTER_CLOCK/256/3)    /* 15625 Hz. (H-Sync) */
-#define C_06B49P_CLKOUT_19  (MASTER_CLOCK/200000)   /* 60 Hz. (V-Sync) */
+// custom 06B49P clocks
+#define C_06B49P_CLKOUT_01  (MASTER_CLOCK/2)        // 6 MHz.
+#define C_06B49P_CLKOUT_02  (MASTER_CLOCK/4)        // 3 MHz.
+#define C_06B49P_CLKOUT_03  (MASTER_CLOCK/4)        // 3 MHz.
+#define C_06B49P_CLKOUT_04  (MASTER_CLOCK/8)        // 1.5 MHz.
+#define C_06B49P_CLKOUT_05  (MASTER_CLOCK/16)       // 750 kHz.
+#define C_06B49P_CLKOUT_06  (MASTER_CLOCK/32)       // 375 kHz.
+#define C_06B49P_CLKOUT_07  (MASTER_CLOCK/64)       // 187.5 kHz.
+#define C_06B49P_CLKOUT_08  (MASTER_CLOCK/128)      // 93.75 kHz.
+#define C_06B49P_CLKOUT_09  (MASTER_CLOCK/256)      // 46875 Hz.
+#define C_06B49P_CLKOUT_10  (7782)                  // 7782 Hz. measured
+#define C_06B49P_CLKOUT_11  (3920)                  // 3920 Hz. measured
+#define C_06B49P_CLKOUT_12  (1960)                  // 1960 Hz. measured
+#define C_06B49P_CLKOUT_13  (950)                   // 950 Hz. measured
+#define C_06B49P_CLKOUT_14  (475)                   // 475 Hz. measured
+#define C_06B49P_CLKOUT_15  (237)                   // 237 Hz. measured
+#define C_06B49P_CLKOUT_16  (MASTER_CLOCK/100000)   // 120 Hz.
+#define C_06B49P_CLKOUT_17  (MASTER_CLOCK/200000)   // 60 Hz.
+#define C_06B49P_CLKOUT_18  (MASTER_CLOCK/256/3)    // 15625 Hz. (H-Sync)
+#define C_06B49P_CLKOUT_19  (MASTER_CLOCK/200000)   // 60 Hz. (V-Sync)
 
+void lucky74_state::machine_start()
+{
+	m_lamps.resolve();
+
+	save_item(NAME(m_ym2149_portb));
+	save_item(NAME(m_usart_8251));
+	save_item(NAME(m_copro_sm7831));
+	save_item(NAME(m_adpcm_pos));
+	save_item(NAME(m_adpcm_end));
+	save_item(NAME(m_adpcm_data));
+	save_item(NAME(m_adpcm_reg));
+	save_item(NAME(m_adpcm_busy_line));
+}
 
 void lucky74_state::machine_reset()
 {
@@ -807,7 +819,7 @@ void lucky74_state::machine_reset()
 *    Read/Write  Handlers    *
 *****************************/
 
-READ8_MEMBER(lucky74_state::custom_09R81P_port_r)
+uint8_t lucky74_state::custom_09R81P_port_r(offs_t offset)
 {
 	if (offset != 0x00)
 	{
@@ -819,12 +831,12 @@ READ8_MEMBER(lucky74_state::custom_09R81P_port_r)
 	}
 }
 
-WRITE8_MEMBER(lucky74_state::custom_09R81P_port_w)
+void lucky74_state::custom_09R81P_port_w(offs_t offset, uint8_t data)
 {
 	m_adpcm_reg[offset] = data;
 }
 
-WRITE8_MEMBER(lucky74_state::ym2149_portb_w)
+void lucky74_state::ym2149_portb_w(uint8_t data)
 {
 /*  when is in game mode writes 0x0a.
     when is in test mode writes 0x0e.
@@ -836,30 +848,30 @@ WRITE8_MEMBER(lucky74_state::ym2149_portb_w)
 	flip_screen_set(data & 0x01);
 }
 
-READ8_MEMBER(lucky74_state::usart_8251_r)
+uint8_t lucky74_state::usart_8251_r()
 {
-	/* reads to USART 8251 port */
+	// reads to USART 8251 port
 	logerror("read from USART port.\n");
 	return 0xff;
 }
 
-WRITE8_MEMBER(lucky74_state::usart_8251_w)
+void lucky74_state::usart_8251_w(uint8_t data)
 {
-	/* writes to USART 8251 port */
+	// writes to USART 8251 port
 	m_usart_8251 = data;
 	logerror("write to USART port: %02x \n", m_usart_8251);
 }
 
-READ8_MEMBER(lucky74_state::copro_sm7831_r)
+uint8_t lucky74_state::copro_sm7831_r()
 {
-	/* read from SM7831 co-processor */
+	// read from SM7831 co-processor
 	logerror("read from co-processor.\n");
 	return 0xff;
 }
 
-WRITE8_MEMBER(lucky74_state::copro_sm7831_w)
+void lucky74_state::copro_sm7831_w(uint8_t data)
 {
-	/* write to SM7831 co-processor */
+	// write to SM7831 co-processor
 	m_copro_sm7831 = data;
 	logerror("write to co-processor: %2X\n", m_copro_sm7831);
 }
@@ -869,7 +881,7 @@ WRITE8_MEMBER(lucky74_state::copro_sm7831_w)
 *    Lamps    *
 **************/
 
-WRITE8_MEMBER(lucky74_state::lamps_a_w)
+void lucky74_state::lamps_a_w(uint8_t data)
 {
 /*  LAMPSA:
 
@@ -878,13 +890,13 @@ WRITE8_MEMBER(lucky74_state::lamps_a_w)
     ---- xx--  BIG + SMALL (need to be individualized)
 */
 
-	output().set_lamp_value(8, (data >> 0) & 1);      /* D-UP */
-	output().set_lamp_value(9, (data >> 1) & 1);      /* TAKE SCORE */
-	output().set_lamp_value(10, (data >> 2) & 1);     /* BIG */
-	output().set_lamp_value(11, (data >> 3) & 1);     /* SMALL */
+	m_lamps[8] = BIT(data, 0);      // D-UP
+	m_lamps[9] = BIT(data, 1);      // TAKE SCORE
+	m_lamps[10] = BIT(data, 2);     // BIG
+	m_lamps[11] = BIT(data, 3);     // SMALL
 }
 
-WRITE8_MEMBER(lucky74_state::lamps_b_w)
+void lucky74_state::lamps_b_w(uint8_t data)
 {
 /*  LAMPSB:
 
@@ -895,17 +907,17 @@ WRITE8_MEMBER(lucky74_state::lamps_b_w)
     ---- x---  HOLD4
     ---x ----  HOLD5
     -xx- ----  BET + START (need to be individualized)
-    x--- ----  CANCEL (should lit start too?)
+    x--- ----  CANCEL (should light start too?)
 */
 
-	output().set_lamp_value(0, (data >> 0) & 1);                      /* HOLD1 */
-	output().set_lamp_value(1, (data >> 1) & 1);                      /* HOLD2 */
-	output().set_lamp_value(2, (data >> 2) & 1);                      /* HOLD3 */
-	output().set_lamp_value(3, (data >> 3) & 1);                      /* HOLD4 */
-	output().set_lamp_value(4, (data >> 4) & 1);                      /* HOLD5 */
-	output().set_lamp_value(5, (data >> 5) & 1);                      /* BET */
-	output().set_lamp_value(6, ((data >> 6) & 1)|((data >> 7) & 1));  /* START */
-	output().set_lamp_value(7, (data >> 7) & 1);                      /* CANCEL */
+	m_lamps[0] = BIT(data, 0);                 // HOLD1
+	m_lamps[1] = BIT(data, 1);                 // HOLD2
+	m_lamps[2] = BIT(data, 2);                 // HOLD3
+	m_lamps[3] = BIT(data, 3);                 // HOLD4
+	m_lamps[4] = BIT(data, 4);                 // HOLD5
+	m_lamps[5] = BIT(data, 5);                 // BET
+	m_lamps[6] = BIT(data, 6) | BIT(data, 7);  // START
+	m_lamps[7] = BIT(data, 7);                 // CANCEL
 }
 
 
@@ -915,9 +927,9 @@ WRITE8_MEMBER(lucky74_state::lamps_b_w)
 
 INTERRUPT_GEN_MEMBER(lucky74_state::nmi_interrupt)
 {
-	if ((m_ym2149_portb & 0x10) == 0)   /* ym2149 portB bit 4 trigger the NMI */
+	if ((m_ym2149_portb & 0x10) == 0)   // ym2149 portB bit 4 triggers the NMI
 	{
-		device.execute().set_input_line(INPUT_LINE_NMI, PULSE_LINE);
+		device.execute().pulse_input_line(INPUT_LINE_NMI, attotime::zero);
 	}
 }
 
@@ -926,31 +938,33 @@ INTERRUPT_GEN_MEMBER(lucky74_state::nmi_interrupt)
 * Memory Map Information *
 *************************/
 
-static ADDRESS_MAP_START( lucky74_map, AS_PROGRAM, 8, lucky74_state )
-	AM_RANGE(0x0000, 0xbfff) AM_ROM
-	AM_RANGE(0xc000, 0xcfff) AM_RAM AM_SHARE("nvram")   /* NVRAM */
-	AM_RANGE(0xd000, 0xd7ff) AM_RAM_WRITE(lucky74_fg_videoram_w) AM_SHARE("fg_videoram")    /* VRAM1-1 */
-	AM_RANGE(0xd800, 0xdfff) AM_RAM_WRITE(lucky74_fg_colorram_w) AM_SHARE("fg_colorram")    /* VRAM1-2 */
-	AM_RANGE(0xe000, 0xe7ff) AM_RAM_WRITE(lucky74_bg_videoram_w) AM_SHARE("bg_videoram")    /* VRAM2-1 */
-	AM_RANGE(0xe800, 0xefff) AM_RAM_WRITE(lucky74_bg_colorram_w) AM_SHARE("bg_colorram")    /* VRAM2-2 */
-	AM_RANGE(0xf000, 0xf003) AM_DEVREADWRITE("ppi8255_0", i8255_device, read, write)        /* Input Ports 0 & 1 */
-	AM_RANGE(0xf080, 0xf083) AM_DEVREADWRITE("ppi8255_2", i8255_device, read, write)        /* DSW 1, 2 & 3 */
-	AM_RANGE(0xf0c0, 0xf0c3) AM_DEVREADWRITE("ppi8255_3", i8255_device, read, write)        /* DSW 4 */
-	AM_RANGE(0xf100, 0xf100) AM_DEVWRITE("sn1", sn76489_device, write)                      /* SN76489 #1 */
-	AM_RANGE(0xf200, 0xf203) AM_DEVREADWRITE("ppi8255_1", i8255_device, read, write)        /* Input Ports 2 & 4 */
-	AM_RANGE(0xf300, 0xf300) AM_DEVWRITE("sn2", sn76489_device, write)                      /* SN76489 #2 */
-	AM_RANGE(0xf400, 0xf400) AM_DEVWRITE("aysnd", ay8910_device, address_w)                  /* YM2149 control */
-	AM_RANGE(0xf500, 0xf500) AM_DEVWRITE("sn3", sn76489_device, write)                      /* SN76489 #3 */
-	AM_RANGE(0xf600, 0xf600) AM_DEVREADWRITE("aysnd", ay8910_device, data_r, data_w)       /* YM2149 (Input Port 1) */
-	AM_RANGE(0xf700, 0xf701) AM_READWRITE(usart_8251_r, usart_8251_w)                       /* USART 8251 port */
-	AM_RANGE(0xf800, 0xf803) AM_READWRITE(copro_sm7831_r, copro_sm7831_w)                   /* SM7831 Co-Processor */
-ADDRESS_MAP_END
+void lucky74_state::prg_map(address_map &map)
+{
+	map(0x0000, 0xbfff).rom();
+	map(0xc000, 0xcfff).ram().share("nvram");   // NVRAM
+	map(0xd000, 0xd7ff).ram().w(FUNC(lucky74_state::fg_videoram_w)).share(m_fg_videoram);             // VRAM1-1
+	map(0xd800, 0xdfff).ram().w(FUNC(lucky74_state::fg_colorram_w)).share(m_fg_colorram);             // VRAM1-2
+	map(0xe000, 0xe7ff).ram().w(FUNC(lucky74_state::bg_videoram_w)).share(m_bg_videoram);             // VRAM2-1
+	map(0xe800, 0xefff).ram().w(FUNC(lucky74_state::bg_colorram_w)).share(m_bg_colorram);             // VRAM2-2
+	map(0xf000, 0xf003).rw("ppi8255_0", FUNC(i8255_device::read), FUNC(i8255_device::write));         // Input Ports 0 & 1
+	map(0xf080, 0xf083).rw("ppi8255_2", FUNC(i8255_device::read), FUNC(i8255_device::write));         // DSW 1, 2 & 3
+	map(0xf0c0, 0xf0c3).rw("ppi8255_3", FUNC(i8255_device::read), FUNC(i8255_device::write));         // DSW 4
+	map(0xf100, 0xf100).w("sn1", FUNC(sn76489_device::write));                                        // SN76489 #1
+	map(0xf200, 0xf203).rw("ppi8255_1", FUNC(i8255_device::read), FUNC(i8255_device::write));         // Input Ports 2 & 4
+	map(0xf300, 0xf300).w("sn2", FUNC(sn76489_device::write));                                        // SN76489 #2
+	map(0xf400, 0xf400).w("aysnd", FUNC(ay8910_device::address_w));                                   // YM2149 control
+	map(0xf500, 0xf500).w("sn3", FUNC(sn76489_device::write));                                        // SN76489 #3
+	map(0xf600, 0xf600).rw("aysnd", FUNC(ay8910_device::data_r), FUNC(ay8910_device::data_w));        // YM2149 (Input Port 1)
+	map(0xf700, 0xf701).rw(FUNC(lucky74_state::usart_8251_r), FUNC(lucky74_state::usart_8251_w));     // USART 8251 port
+	map(0xf800, 0xf803).rw(FUNC(lucky74_state::copro_sm7831_r), FUNC(lucky74_state::copro_sm7831_w)); // SM7831 Co-Processor
+}
 
-static ADDRESS_MAP_START( lucky74_portmap, AS_IO, 8, lucky74_state )
-	ADDRESS_MAP_GLOBAL_MASK(0xff)
-	AM_RANGE(0x00, 0x05) AM_READWRITE(custom_09R81P_port_r, custom_09R81P_port_w)           /* custom 09R81P (samples system) */
-	AM_RANGE(0xff, 0xff) AM_RAM // presumably HS satellite control port (check patched in Lucky 74)
-ADDRESS_MAP_END
+void lucky74_state::portmap(address_map &map)
+{
+	map.global_mask(0xff);
+	map(0x00, 0x05).rw(FUNC(lucky74_state::custom_09R81P_port_r), FUNC(lucky74_state::custom_09R81P_port_w));           // custom 09R81P (samples system)
+	map(0xff, 0xff).ram(); // presumably HS satellite control port (check patched in Lucky 74)
+}
 
 /* unknown I/O byte R/W
 
@@ -1017,24 +1031,24 @@ static INPUT_PORTS_START( lucky74 )
     Test mode shows them as dupes. Maybe are multiplexed?
 */
 	PORT_START("IN0")
-	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_POKER_HOLD1 )    /* 'A' in test mode */
-	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_POKER_HOLD2 )    /* 'B' in test mode */
-	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_POKER_HOLD3 )    /* 'C' in test mode */
-	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_POKER_HOLD4 )    /* 'D' in test mode */
-	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_POKER_HOLD5 )    /* 'E' in test mode */
-	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_GAMBLE_LOW ) PORT_NAME("Small")  /* 'F' in test mode */
-	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SERVICE )    PORT_NAME("Flip SC Off") PORT_CODE(KEYCODE_O)  /* 'G' in test mode (normal screen) */
-	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_OTHER )      PORT_NAME("Input H") PORT_CODE(KEYCODE_K)  /* 'H' in test mode */
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_POKER_HOLD1 )    // 'A' in test mode
+	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_POKER_HOLD2 )    // 'B' in test mode
+	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_POKER_HOLD3 )    // 'C' in test mode
+	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_POKER_HOLD4 )    // 'D' in test mode
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_POKER_HOLD5 )    // 'E' in test mode
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_GAMBLE_LOW ) PORT_NAME("Small")  // 'F' in test mode
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SERVICE )    PORT_NAME("Flip SC Off") PORT_CODE(KEYCODE_O)  // 'G' in test mode (normal screen)
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_OTHER )      PORT_NAME("Input H") PORT_CODE(KEYCODE_K)  // 'H' in test mode
 
 	PORT_START("IN1")
-	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_GAMBLE_BET )     /* 'I' in test mode */
-	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START1 )     PORT_NAME("Start")  /* 'J' in test mode */
-	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_POKER_CANCEL )   /* 'K' in test mode */
-	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_GAMBLE_D_UP )        /* 'L' in test mode */
-	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_GAMBLE_TAKE )        /* 'M' & 'Q' in test mode */
-	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_GAMBLE_HIGH ) PORT_NAME("Big")   /* 'N' & 'P' in test mode */
-	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SERVICE )    PORT_NAME("Flip SC On")  PORT_CODE(KEYCODE_I)  /* 'O' in test mode (inverted screen) */
-	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )        /* not in test mode */
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_GAMBLE_BET )     // 'I' in test mode
+	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START1 )     PORT_NAME("Start")  // 'J' in test mode
+	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_POKER_CANCEL )   // 'K' in test mode
+	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_GAMBLE_D_UP )        // 'L' in test mode
+	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_GAMBLE_TAKE )        // 'M' & 'Q' in test mode
+	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_GAMBLE_HIGH ) PORT_NAME("Big")   // 'N' & 'P' in test mode
+	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SERVICE )    PORT_NAME("Flip SC On")  PORT_CODE(KEYCODE_I)  // 'O' in test mode (inverted screen)
+	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )        // not in test mode
 
 	PORT_START("IN2")
 	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )
@@ -1046,11 +1060,11 @@ static INPUT_PORTS_START( lucky74 )
 	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
 	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
 
-	PORT_START("IN3")   /* YM2149, port A */
-	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 )    PORT_IMPULSE(2)   /* Coin A */
+	PORT_START("IN3")   // YM2149, port A
+	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 )    PORT_IMPULSE(2)   // Coin A
 	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_GAMBLE_KEYIN )
-	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN2 )    PORT_IMPULSE(2)   /* Coin B */
-	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_COIN3 )    PORT_IMPULSE(2)   /* Coin C */
+	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN2 )    PORT_IMPULSE(2)   // Coin B
+	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_COIN3 )    PORT_IMPULSE(2)   // Coin C
 	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_GAMBLE_SERVICE )  PORT_NAME("Service")
 	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_UNKNOWN )
 	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
@@ -1067,38 +1081,38 @@ static INPUT_PORTS_START( lucky74 )
 	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
 
 	PORT_START("DSW1")
-	PORT_DIPNAME( 0x01, 0x01, "Auto Hold" )             PORT_DIPLOCATION("DSW1:1")  /* see note 1 */
+	PORT_DIPNAME( 0x01, 0x01, "Auto Hold" )             PORT_DIPLOCATION("DSW1:1")  // see note 1
 	PORT_DIPSETTING(    0x00, DEF_STR( No ) )
 	PORT_DIPSETTING(    0x01, DEF_STR( Yes ) )
-	PORT_DIPNAME( 0x02, 0x02, "Jackpot" )               PORT_DIPLOCATION("DSW1:2")  /* see note 2 */
+	PORT_DIPNAME( 0x02, 0x02, "Jackpot" )               PORT_DIPLOCATION("DSW1:2")  // see note 2
 	PORT_DIPSETTING(    0x02, "Bet x 100" )
 	PORT_DIPSETTING(    0x00, "Bet x 150" )
-	PORT_DIPNAME( 0x04, 0x04, "Ceiling Bonus Point" )   PORT_DIPLOCATION("DSW1:3")  /* see note 3 */
+	PORT_DIPNAME( 0x04, 0x04, "Ceiling Bonus Point" )   PORT_DIPLOCATION("DSW1:3")  // see note 3
 	PORT_DIPSETTING(    0x04, "Bet x 40"  )
 	PORT_DIPSETTING(    0x00, "Bet x 50"  )
-	PORT_DIPNAME( 0x78, 0x40, "Percentage" )            PORT_DIPLOCATION("DSW1:4,5,6,7")    /* see note 4 */
-	PORT_DIPSETTING(    0x00, "90%" )   /* 110% in the instruction sheet */
-	PORT_DIPSETTING(    0x08, "87%" )   /* 106% in the instruction sheet */
-	PORT_DIPSETTING(    0x10, "84%" )   /* 102% in the instruction sheet */
-	PORT_DIPSETTING(    0x18, "81%" )   /* 98% in the instruction sheet */
-	PORT_DIPSETTING(    0x20, "78%" )   /* 94% in the instruction sheet */
-	PORT_DIPSETTING(    0x28, "75%" )   /* 90% in the instruction sheet */
-	PORT_DIPSETTING(    0x30, "72%" )   /* 86% in the instruction sheet */
-	PORT_DIPSETTING(    0x38, "69%" )   /* 82% in the instruction sheet */
-	PORT_DIPSETTING(    0x40, "66%" )   /* 78% in the instruction sheet */
-	PORT_DIPSETTING(    0x48, "63%" )   /* 74% in the instruction sheet */
-	PORT_DIPSETTING(    0x50, "60%" )   /* 70% in the instruction sheet */
-	PORT_DIPSETTING(    0x58, "57%" )   /* 66% in the instruction sheet */
-	PORT_DIPSETTING(    0x60, "54%" )   /* 62% in the instruction sheet */
-	PORT_DIPSETTING(    0x68, "51%" )   /* 58% in the instruction sheet */
-	PORT_DIPSETTING(    0x70, "48%" )   /* 54% in the instruction sheet */
-	PORT_DIPSETTING(    0x78, "45%" )   /* 50% in the instruction sheet */
+	PORT_DIPNAME( 0x78, 0x40, "Percentage" )            PORT_DIPLOCATION("DSW1:4,5,6,7")    // see note 4
+	PORT_DIPSETTING(    0x00, "90%" )   // 110% in the instruction sheet
+	PORT_DIPSETTING(    0x08, "87%" )   // 106% in the instruction sheet
+	PORT_DIPSETTING(    0x10, "84%" )   // 102% in the instruction sheet
+	PORT_DIPSETTING(    0x18, "81%" )   // 98% in the instruction sheet
+	PORT_DIPSETTING(    0x20, "78%" )   // 94% in the instruction sheet
+	PORT_DIPSETTING(    0x28, "75%" )   // 90% in the instruction sheet
+	PORT_DIPSETTING(    0x30, "72%" )   // 86% in the instruction sheet
+	PORT_DIPSETTING(    0x38, "69%" )   // 82% in the instruction sheet
+	PORT_DIPSETTING(    0x40, "66%" )   // 78% in the instruction sheet
+	PORT_DIPSETTING(    0x48, "63%" )   // 74% in the instruction sheet
+	PORT_DIPSETTING(    0x50, "60%" )   // 70% in the instruction sheet
+	PORT_DIPSETTING(    0x58, "57%" )   // 66% in the instruction sheet
+	PORT_DIPSETTING(    0x60, "54%" )   // 62% in the instruction sheet
+	PORT_DIPSETTING(    0x68, "51%" )   // 58% in the instruction sheet
+	PORT_DIPSETTING(    0x70, "48%" )   // 54% in the instruction sheet
+	PORT_DIPSETTING(    0x78, "45%" )   // 50% in the instruction sheet
 	PORT_DIPNAME( 0x80, 0x80, "Panties" )               PORT_DIPLOCATION("DSW1:8")
 	PORT_DIPSETTING(    0x00, "Without" )
 	PORT_DIPSETTING(    0x80, "With" )
 
 	PORT_START("DSW2")
-	/* DIPs 1-4 handle the harcoded coinage for Coin A, B and Remote credits (B = A x 5; R = A x 10) */
+	// DIPs 1-4 handle the hardcoded coinage for Coin A, B and Remote credits (B = A x 5; R = A x 10)
 	PORT_DIPNAME( 0x0f, 0x0f, "Coinage A, B & Remote" ) PORT_DIPLOCATION("DSW2:1,2,3,4")
 	PORT_DIPSETTING(    0x00, "A: 20 Coins/1 Credit; B: 4 Coins/1 Credit;   R: 2 Pulses/1 Credit" )
 	PORT_DIPSETTING(    0x01, "A: 15 Coins/1 Credit; B: 3 Coins/1 Credit;   R: 15 Pulses/10 Credits" )
@@ -1116,13 +1130,13 @@ static INPUT_PORTS_START( lucky74 )
 	PORT_DIPSETTING(    0x0d, "A: 1 Coin/2 Credits;  B: 1 Coin/10 Credits;  R: 1 Pulse/20 Credits" )
 	PORT_DIPSETTING(    0x0e, "A: 1 Coin/5 Credits;  B: 1 Coin/25 Credits;  R: 1 Pulse/50 Credits" )
 	PORT_DIPSETTING(    0x0f, "A: 1 Coin/10 Credits; B: 1 Coin/50 Credits;  R: 1 Pulse/100 Credits" )
-	/* DIPs 5-8 handle the Coin C coinage */
+	// DIPs 5-8 handle the Coin C coinage
 	PORT_DIPNAME( 0xf0, 0xf0, "Coinage C" )             PORT_DIPLOCATION("DSW2:5,6,7,8")
 	PORT_DIPSETTING(    0x00, "10 Coins/1 Credit" )
 	PORT_DIPSETTING(    0x10, DEF_STR( 5C_1C ) )
 	PORT_DIPSETTING(    0x30, DEF_STR( 4C_1C ) )
 	PORT_DIPSETTING(    0x40, DEF_STR( 3C_1C ) )
-	PORT_DIPSETTING(    0x20, "5 Coins/2 Credits" )     /* 2.5 coins per credit */
+	PORT_DIPSETTING(    0x20, "5 Coins/2 Credits" )     // 2.5 coins per credit
 	PORT_DIPSETTING(    0x50, DEF_STR( 2C_1C ) )
 	PORT_DIPSETTING(    0x70, DEF_STR( 1C_1C ) )
 	PORT_DIPSETTING(    0x60, DEF_STR( 2C_3C ) )
@@ -1139,7 +1153,7 @@ static INPUT_PORTS_START( lucky74 )
 	PORT_DIPNAME( 0x01, 0x00, "Bet Max" )                       PORT_DIPLOCATION("DSW3:1")
 	PORT_DIPSETTING(    0x01, "20" )
 	PORT_DIPSETTING(    0x00, "40" )
-	PORT_DIPNAME( 0x06, 0x06, "Minimum Bet" )                   PORT_DIPLOCATION("DSW3:2,3")    /* Bet Min */
+	PORT_DIPNAME( 0x06, 0x06, "Minimum Bet" )                   PORT_DIPLOCATION("DSW3:2,3")    // Bet Min
 	PORT_DIPSETTING(    0x06, "1" )
 	PORT_DIPSETTING(    0x04, "5" )
 	PORT_DIPSETTING(    0x02, "8" )
@@ -1149,12 +1163,12 @@ static INPUT_PORTS_START( lucky74 )
 	PORT_DIPSETTING(    0x10, "10000" )
 	PORT_DIPSETTING(    0x08, "15000" )
 	PORT_DIPSETTING(    0x00, "20000" )
-	PORT_DIPNAME( 0x20, 0x20, "Woman's figure in Main Game" )   PORT_DIPLOCATION("DSW3:6")  /* see note 6 */
+	PORT_DIPNAME( 0x20, 0x20, "Woman's figure in Main Game" )   PORT_DIPLOCATION("DSW3:6")  // see note 6
 	PORT_DIPSETTING(    0x00, DEF_STR( No ) )
 	PORT_DIPSETTING(    0x20, DEF_STR( Yes ) )
 	PORT_DIPNAME( 0x40, 0x40, "Type of Poker" )                 PORT_DIPLOCATION("DSW3:7")
-	PORT_DIPSETTING(    0x40, "A - Without Wild Card" ) /* see the game notes */
-	PORT_DIPSETTING(    0x00, "B - Joker Wild Poker" )  /* see the game notes */
+	PORT_DIPSETTING(    0x40, "A - Without Wild Card" ) // see the game notes
+	PORT_DIPSETTING(    0x00, "B - Joker Wild Poker" )  // see the game notes
 	PORT_DIPNAME( 0x80, 0x80, "Kinds of Poker" )                PORT_DIPLOCATION("DSW3:8")
 	PORT_DIPSETTING(    0x80, "A - Hold" )
 	PORT_DIPSETTING(    0x00, "B - Discard" )
@@ -1169,20 +1183,20 @@ static INPUT_PORTS_START( lucky74 )
 	PORT_DIPNAME( 0x04, 0x00, "Hopper Capacity" )               PORT_DIPLOCATION("DSW4:3")
 	PORT_DIPSETTING(    0x04, "700" )
 	PORT_DIPSETTING(    0x00, "Unlimited" )
-	PORT_DIPNAME( 0x08, 0x08, "Woman's figure in D-UP game" )   PORT_DIPLOCATION("DSW4:4")  /* doesn't seems to work */
+	PORT_DIPNAME( 0x08, 0x08, "Woman's figure in D-UP game" )   PORT_DIPLOCATION("DSW4:4")  // doesn't seems to work
 	PORT_DIPSETTING(    0x00, DEF_STR( No ) )
 	PORT_DIPSETTING(    0x08, DEF_STR( Yes ) )
 	PORT_DIPNAME( 0x10, 0x10, "Double-Up game" )                PORT_DIPLOCATION("DSW4:5")
 	PORT_DIPSETTING(    0x00, DEF_STR( No ) )
 	PORT_DIPSETTING(    0x10, DEF_STR( Yes ) )
-	PORT_DIPNAME( 0x20, 0x20, "Stop by 6th Double-Up" )         PORT_DIPLOCATION("DSW4:6")  /* see note 7 */
+	PORT_DIPNAME( 0x20, 0x20, "Stop by 6th Double-Up" )         PORT_DIPLOCATION("DSW4:6")  // see note 7
 	PORT_DIPSETTING(    0x00, DEF_STR( No ) )
 	PORT_DIPSETTING(    0x20, DEF_STR( Yes ) )
 	PORT_DIPNAME( 0xC0, 0xC0, "Double-Up difficulty" )          PORT_DIPLOCATION("DSW4:7,8")
-	PORT_DIPSETTING(    0x00, DEF_STR( Hardest ) )  /* easy      (from instruction sheet) */
-	PORT_DIPSETTING(    0x40, DEF_STR( Hard ) )     /* ....      (from instruction sheet) */
-	PORT_DIPSETTING(    0x80, DEF_STR( Normal ) )   /* ....      (from instruction sheet) */
-	PORT_DIPSETTING(    0xC0, DEF_STR( Easy ) )     /* difficult (from instruction sheet) */
+	PORT_DIPSETTING(    0x00, DEF_STR( Hardest ) )  // easy      (from instruction sheet)
+	PORT_DIPSETTING(    0x40, DEF_STR( Hard ) )     // ....      (from instruction sheet)
+	PORT_DIPSETTING(    0x80, DEF_STR( Normal ) )   // ....      (from instruction sheet)
+	PORT_DIPSETTING(    0xC0, DEF_STR( Easy ) )     // difficult (from instruction sheet)
 INPUT_PORTS_END
 
 
@@ -1192,22 +1206,22 @@ static INPUT_PORTS_START( lucky74a )
 
 	PORT_MODIFY("DSW1")
 	PORT_DIPNAME( 0x78, 0x40, "Percentage" )    PORT_DIPLOCATION("DSW1:4,5,6,7")
-	PORT_DIPSETTING(    0x00, "110%" )   /* 110% in the instruction sheet */
-	PORT_DIPSETTING(    0x08, "106%" )   /* 106% in the instruction sheet */
-	PORT_DIPSETTING(    0x10, "102%" )   /* 102% in the instruction sheet */
-	PORT_DIPSETTING(    0x18, "98%" )   /* 98% in the instruction sheet */
-	PORT_DIPSETTING(    0x20, "94%" )   /* 94% in the instruction sheet */
-	PORT_DIPSETTING(    0x28, "90%" )   /* 90% in the instruction sheet */
-	PORT_DIPSETTING(    0x30, "86%" )   /* 86% in the instruction sheet */
-	PORT_DIPSETTING(    0x38, "82%" )   /* 82% in the instruction sheet */
-	PORT_DIPSETTING(    0x40, "78%" )   /* 78% in the instruction sheet */
-	PORT_DIPSETTING(    0x48, "74%" )   /* 74% in the instruction sheet */
-	PORT_DIPSETTING(    0x50, "70%" )   /* 70% in the instruction sheet */
-	PORT_DIPSETTING(    0x58, "66%" )   /* 66% in the instruction sheet */
-	PORT_DIPSETTING(    0x60, "62%" )   /* 62% in the instruction sheet */
-	PORT_DIPSETTING(    0x68, "58%" )   /* 58% in the instruction sheet */
-	PORT_DIPSETTING(    0x70, "54%" )   /* 54% in the instruction sheet */
-	PORT_DIPSETTING(    0x78, "50%" )   /* 50% in the instruction sheet */
+	PORT_DIPSETTING(    0x00, "110%" )  // 110% in the instruction sheet
+	PORT_DIPSETTING(    0x08, "106%" )  // 106% in the instruction sheet
+	PORT_DIPSETTING(    0x10, "102%" )  // 102% in the instruction sheet
+	PORT_DIPSETTING(    0x18, "98%" )   // 98% in the instruction sheet
+	PORT_DIPSETTING(    0x20, "94%" )   // 94% in the instruction sheet
+	PORT_DIPSETTING(    0x28, "90%" )   // 90% in the instruction sheet
+	PORT_DIPSETTING(    0x30, "86%" )   // 86% in the instruction sheet
+	PORT_DIPSETTING(    0x38, "82%" )   // 82% in the instruction sheet
+	PORT_DIPSETTING(    0x40, "78%" )   // 78% in the instruction sheet
+	PORT_DIPSETTING(    0x48, "74%" )   // 74% in the instruction sheet
+	PORT_DIPSETTING(    0x50, "70%" )   // 70% in the instruction sheet
+	PORT_DIPSETTING(    0x58, "66%" )   // 66% in the instruction sheet
+	PORT_DIPSETTING(    0x60, "62%" )   // 62% in the instruction sheet
+	PORT_DIPSETTING(    0x68, "58%" )   // 58% in the instruction sheet
+	PORT_DIPSETTING(    0x70, "54%" )   // 54% in the instruction sheet
+	PORT_DIPSETTING(    0x78, "50%" )   // 50% in the instruction sheet
 INPUT_PORTS_END
 
 
@@ -1375,12 +1389,12 @@ INPUT_PORTS_END
 static const gfx_layout tilelayout =
 {
 	8, 8,
-	RGN_FRAC(1,4),  /* 4096 tiles */
+	RGN_FRAC(1,4),  // 4096 tiles */
 	4,
-	{ 0, RGN_FRAC(1,4), RGN_FRAC(2,4), RGN_FRAC(3,4) }, /* bitplanes are separated */
+	{ 0, RGN_FRAC(1,4), RGN_FRAC(2,4), RGN_FRAC(3,4) }, // bitplanes are separated
 	{ 0, 1, 2, 3, 4, 5, 6, 7 },
 	{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
-	8*8 /* every char takes 8 consecutive bytes */
+	8*8 // every char takes 8 consecutive bytes
 };
 
 
@@ -1388,9 +1402,9 @@ static const gfx_layout tilelayout =
 * Graphics Decode Information *
 ******************************/
 
-static GFXDECODE_START( lucky74 )
-	GFXDECODE_ENTRY( "fgtiles", 0, tilelayout, 0, 16 )      /* text, frames & cards */
-	GFXDECODE_ENTRY( "bgtiles", 0, tilelayout, 256, 16 )    /* title & whores */
+static GFXDECODE_START( gfx_lucky74 )
+	GFXDECODE_ENTRY( "fgtiles", 0, tilelayout, 0, 16 )      // text, frames & cards
+	GFXDECODE_ENTRY( "bgtiles", 0, tilelayout, 256, 16 )    // title & ladies
 GFXDECODE_END
 
 
@@ -1400,7 +1414,7 @@ GFXDECODE_END
 
 void lucky74_state::sound_start()
 {
-	/* cleaning all 09R81P registers */
+	// cleaning all 09R81P registers
 
 	uint8_t i;
 
@@ -1409,18 +1423,18 @@ void lucky74_state::sound_start()
 		m_adpcm_reg[i] = 0;
 	}
 
-	m_adpcm_busy_line = 0x01;    /* free and ready */
+	m_adpcm_busy_line = 0x01;    // free and ready
 }
 
-WRITE_LINE_MEMBER(lucky74_state::lucky74_adpcm_int)
+WRITE_LINE_MEMBER(lucky74_state::adpcm_int)
 {
-	if (m_adpcm_reg[05] == 0x01) /* register 0x05 (bit 0 activated), trigger the sample */
+	if (m_adpcm_reg[05] == 0x01) // register 0x05 (bit 0 activated), trigger the sample
 	{
-		/* conditional zone for samples reproduction */
+		// conditional zone for samples reproduction
 
-		if (m_adpcm_busy_line)     /* still not started */
+		if (m_adpcm_busy_line)     // still not started
 		{
-			/* init all 09R81P registers */
+			// init all 09R81P registers
 			logerror("init ADPCM registers\n");
 			m_adpcm_end = (m_adpcm_reg[04] << 8) + m_adpcm_reg[03];
 			m_adpcm_pos = (m_adpcm_reg[01] << 8) + m_adpcm_reg[00];
@@ -1433,22 +1447,22 @@ WRITE_LINE_MEMBER(lucky74_state::lucky74_adpcm_int)
 
 		if (m_adpcm_data == -1)
 		{
-			/* transferring 1st nibble */
+			// transferring 1st nibble
 			m_adpcm_data = memregion("adpcm")->base()[m_adpcm_pos];
 			m_adpcm_pos = (m_adpcm_pos + 1) & 0xffff;
 			m_msm->data_w(m_adpcm_data >> 4);
 
 			if (m_adpcm_pos == m_adpcm_end)
 			{
-				m_msm->reset_w(0);         /* reset the M5205 */
-				m_adpcm_reg[05] = 0;     /* clean trigger register */
-				m_adpcm_busy_line = 0x01;    /* deactivate busy flag */
+				m_msm->reset_w(0);         // reset the M5205
+				m_adpcm_reg[05] = 0;     // clean trigger register
+				m_adpcm_busy_line = 0x01;    // deactivate busy flag
 				logerror("end of sample.\n");
 			}
 		}
 		else
 		{
-			/* transferring 2nd nibble */
+			// transferring 2nd nibble
 			m_msm->data_w(m_adpcm_data & 0x0f);
 			m_adpcm_data = -1;
 		}
@@ -1461,75 +1475,67 @@ WRITE_LINE_MEMBER(lucky74_state::lucky74_adpcm_int)
 *    Machine Drivers     *
 *************************/
 
-static MACHINE_CONFIG_START( lucky74 )
+void lucky74_state::lucky74(machine_config &config)
+{
+	// basic machine hardware
+	Z80(config, m_maincpu, C_06B49P_CLKOUT_03);     // 3 MHz.
+	m_maincpu->set_addrmap(AS_PROGRAM, &lucky74_state::prg_map);
+	m_maincpu->set_addrmap(AS_IO, &lucky74_state::portmap);
+	m_maincpu->set_vblank_int("screen", FUNC(lucky74_state::nmi_interrupt));    // 60 Hz. measured
 
-	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", Z80, C_06B49P_CLKOUT_03)    /* 3 MHz. */
-	MCFG_CPU_PROGRAM_MAP(lucky74_map)
-	MCFG_CPU_IO_MAP(lucky74_portmap)
-	MCFG_CPU_VBLANK_INT_DRIVER("screen", lucky74_state,  nmi_interrupt) /* 60 Hz. measured */
-
-	MCFG_NVRAM_ADD_0FILL("nvram")
+	NVRAM(config, "nvram", nvram_device::DEFAULT_ALL_0);
 
 	// Each 82C255 behaves like 2x 8255 (in mode 0). Since MAME doesn't support it yet, I replaced
 	// both 82C255 with 4x 8255...
-	MCFG_DEVICE_ADD("ppi8255_0", I8255A, 0)
-	MCFG_I8255_IN_PORTA_CB(IOPORT("IN0"))
-	MCFG_I8255_IN_PORTB_CB(IOPORT("IN1"))
+	i8255_device &ppi0(I8255A(config, "ppi8255_0"));
+	ppi0.in_pa_callback().set_ioport("IN0");
+	ppi0.in_pb_callback().set_ioport("IN1");
 	// Port C write: 0x00 after reset, 0xff during game, and 0xfd when tap F2 for percentage and run count
 
-	MCFG_DEVICE_ADD("ppi8255_1", I8255A, 0)
-	MCFG_I8255_IN_PORTA_CB(IOPORT("IN2"))
-	MCFG_I8255_IN_PORTC_CB(IOPORT("IN4"))
+	i8255_device &ppi1(I8255A(config, "ppi8255_1"));
+	ppi1.in_pa_callback().set_ioport("IN2");
+	ppi1.in_pc_callback().set_ioport("IN4");
 
-	MCFG_DEVICE_ADD("ppi8255_2", I8255A, 0)
-	MCFG_I8255_IN_PORTA_CB(IOPORT("DSW1"))
-	MCFG_I8255_IN_PORTB_CB(IOPORT("DSW2"))
-	MCFG_I8255_IN_PORTC_CB(IOPORT("DSW3"))
+	i8255_device &ppi2(I8255A(config, "ppi8255_2"));
+	ppi2.in_pa_callback().set_ioport("DSW1");
+	ppi2.in_pb_callback().set_ioport("DSW2");
+	ppi2.in_pc_callback().set_ioport("DSW3");
 
-	MCFG_DEVICE_ADD("ppi8255_3", I8255A, 0)
-	MCFG_I8255_IN_PORTA_CB(IOPORT("DSW4"))
-	MCFG_I8255_OUT_PORTB_CB(WRITE8(lucky74_state, lamps_a_w))
-	MCFG_I8255_OUT_PORTC_CB(WRITE8(lucky74_state, lamps_b_w))
+	i8255_device &ppi3(I8255A(config, "ppi8255_3"));
+	ppi3.in_pa_callback().set_ioport("DSW4");
+	ppi3.out_pb_callback().set(FUNC(lucky74_state::lamps_a_w));
+	ppi3.out_pc_callback().set(FUNC(lucky74_state::lamps_b_w));
 
-	/* video hardware */
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_REFRESH_RATE(60)
-	MCFG_SCREEN_VBLANK_TIME(ATTOSECONDS_IN_USEC(0))
-	MCFG_SCREEN_SIZE(64*8, 32*8)
-	MCFG_SCREEN_VISIBLE_AREA(0*8, 64*8-1, 1*8, 30*8-1)
-	MCFG_SCREEN_UPDATE_DRIVER(lucky74_state, screen_update_lucky74)
-	MCFG_SCREEN_PALETTE("palette")
+	// video hardware
+	screen_device &screen(SCREEN(config, "screen", SCREEN_TYPE_RASTER));
+	screen.set_refresh_hz(60);
+	screen.set_vblank_time(ATTOSECONDS_IN_USEC(0));
+	screen.set_size(64*8, 32*8);
+	screen.set_visarea(0*8, 64*8-1, 1*8, 30*8-1);
+	screen.set_screen_update(FUNC(lucky74_state::screen_update));
+	screen.set_palette("palette");
 
-	MCFG_GFXDECODE_ADD("gfxdecode", "palette", lucky74)
+	GFXDECODE(config, m_gfxdecode, "palette", gfx_lucky74);
+	PALETTE(config, "palette", FUNC(lucky74_state::palette), 512);
 
-	MCFG_PALETTE_ADD("palette", 512)
-	MCFG_PALETTE_INIT_OWNER(lucky74_state, lucky74)
+	// sound hardware
+	SPEAKER(config, "mono").front_center();
 
-	/* sound hardware */
-	MCFG_SPEAKER_STANDARD_MONO("mono")
+	SN76489(config, "sn1", C_06B49P_CLKOUT_03).add_route(ALL_OUTPUTS, "mono", 0.80);    // 3 MHz.
+	SN76489(config, "sn2", C_06B49P_CLKOUT_03).add_route(ALL_OUTPUTS, "mono", 0.80);    // 3 MHz.
+	SN76489(config, "sn3", C_06B49P_CLKOUT_03).add_route(ALL_OUTPUTS, "mono", 0.80);    // 3 MHz.
 
-	MCFG_SOUND_ADD("sn1", SN76489, C_06B49P_CLKOUT_03)  /* 3 MHz. */
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.80)
+	ay8910_device &aysnd(AY8910(config, "aysnd", C_06B49P_CLKOUT_04)); // 1.5 MHz.
+	aysnd.port_a_read_callback().set_ioport("IN3");
+	// port b read is a sort of status byte
+	aysnd.port_b_write_callback().set(FUNC(lucky74_state::ym2149_portb_w));
+	aysnd.add_route(ALL_OUTPUTS, "mono", 0.00);         // not routed to audio hardware
 
-	MCFG_SOUND_ADD("sn2", SN76489, C_06B49P_CLKOUT_03)  /* 3 MHz. */
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.80)
-
-	MCFG_SOUND_ADD("sn3", SN76489, C_06B49P_CLKOUT_03)  /* 3 MHz. */
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.80)
-
-	MCFG_SOUND_ADD("aysnd", AY8910, C_06B49P_CLKOUT_04) /* 1.5 MHz. */
-	MCFG_AY8910_PORT_A_READ_CB(IOPORT("IN3"))
-	/* port b read is a sort of status byte */
-	MCFG_AY8910_PORT_B_WRITE_CB(WRITE8(lucky74_state, ym2149_portb_w))
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.00)         /* not routed to audio hardware */
-
-	MCFG_SOUND_ADD("msm", MSM5205, C_06B49P_CLKOUT_06)  /* 375 kHz. */
-	MCFG_MSM5205_VCLK_CB(WRITELINE(lucky74_state, lucky74_adpcm_int))  /* interrupt function */
-	MCFG_MSM5205_PRESCALER_SELECTOR(S48_4B)      /* 8KHz */
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.70)
-
-MACHINE_CONFIG_END
+	MSM5205(config, m_msm, C_06B49P_CLKOUT_06); // 375 kHz.
+	m_msm->vck_legacy_callback().set(FUNC(lucky74_state::adpcm_int));   // interrupt function
+	m_msm->set_prescaler_selector(msm5205_device::S48_4B);  // 8KHz
+	m_msm->add_route(ALL_OUTPUTS, "mono", 0.70);
+}
 
 
 /*************************
@@ -1563,9 +1569,9 @@ ROM_START( lucky74 )
 	ROM_LOAD( "luckychi.18",    0x10000, 0x8000, CRC(f2d45e76) SHA1(46df7bf98434c836fd38539575a35bf67c9ec2c6) )
 	ROM_LOAD( "luckychi.19",    0x18000, 0x8000, CRC(6b0196f3) SHA1(277049279dcfcf07189dbdb20935c2a71b2f6061) )
 
-	ROM_REGION( 0x20000, "adpcm", 0 )   /* 4-bits ADPCM samples @ 8kHz */
-	ROM_LOAD( "luckyson.15",    0x00000, 0x10000, CRC(b896c87f) SHA1(985e625a937abd6353218f0cace14d3adec4c1bf) )    /* location 2n */
-	ROM_FILL(                   0x10000, 0x10000, 0xff )                                                            /* empty socket @ 1n */
+	ROM_REGION( 0x20000, "adpcm", 0 )   // 4-bits ADPCM samples @ 8kHz
+	ROM_LOAD( "luckyson.15",    0x00000, 0x10000, CRC(b896c87f) SHA1(985e625a937abd6353218f0cace14d3adec4c1bf) )    // location 2n
+	ROM_FILL(                   0x10000, 0x10000, 0xff )                                                            // empty socket @ 1n
 
 	ROM_REGION( 0x0600, "proms", 0 )
 	ROM_LOAD( "luckyprom.e6",   0x0000, 0x0100, CRC(ae793fef) SHA1(e4e2d2dccabad7d756811fb2d5e123bf30f106f3) )
@@ -1633,9 +1639,9 @@ ROM_START( lucky74a )
 	ROM_LOAD( "8.1k",   0x10000, 0x8000, CRC(f2d45e76) SHA1(46df7bf98434c836fd38539575a35bf67c9ec2c6) )
 	ROM_LOAD( "9.1m",   0x18000, 0x8000, CRC(6b0196f3) SHA1(277049279dcfcf07189dbdb20935c2a71b2f6061) )
 
-	ROM_REGION( 0x20000, "adpcm", 0 )   /* 4-bits ADPCM samples @ 8kHz */
-	ROM_LOAD( "5.2n",   0x00000, 0x10000, CRC(b896c87f) SHA1(985e625a937abd6353218f0cace14d3adec4c1bf) )    /* location 2n */
-	ROM_FILL(           0x10000, 0x10000, 0xff )                                                            /* empty socket @ 1n */
+	ROM_REGION( 0x20000, "adpcm", 0 )   // 4-bits ADPCM samples @ 8kHz
+	ROM_LOAD( "5.2n",   0x00000, 0x10000, CRC(b896c87f) SHA1(985e625a937abd6353218f0cace14d3adec4c1bf) )    // location 2n
+	ROM_FILL(           0x10000, 0x10000, 0xff )                                                            // empty socket @ 1n
 
 	ROM_REGION( 0x0600, "proms", 0 )
 	ROM_LOAD( "82s129.e6",  0x0000, 0x0100, CRC(ae793fef) SHA1(e4e2d2dccabad7d756811fb2d5e123bf30f106f3) )
@@ -1658,7 +1664,7 @@ ROM_END
 */
 ROM_START( lucky74b )
 	ROM_REGION( 0x10000, "maincpu", 0 )
-	ROM_LOAD( "luckygde.00",    0x0000, 0x10000, CRC(e3f7db99) SHA1(5c7d9d3fed9eb19d3d666c8c08b34968a9996a96) ) /* bad dump? */
+	ROM_LOAD( "luckygde.00",    0x0000, 0x10000, CRC(e3f7db99) SHA1(5c7d9d3fed9eb19d3d666c8c08b34968a9996a96) ) // bad dump?
 
 	ROM_REGION( 0x20000, "fgtiles", 0 )
 	ROM_LOAD( "luckygde.12",    0x00000, 0x8000, CRC(7127465b) SHA1(3f72f91652fcab52c073744b1651fdfe772c584a) )
@@ -1672,9 +1678,9 @@ ROM_START( lucky74b )
 	ROM_LOAD( "luckygde.18",    0x10000, 0x8000, CRC(717e5f4e) SHA1(0f14c9525bf77bbc4de0d9695648acb40870a176) )
 	ROM_LOAD( "luckygde.19",    0x18000, 0x8000, CRC(bb4608ae) SHA1(cc8ec596f445fe0364f254241227de368f309ebb) )
 
-	ROM_REGION( 0x20000, "adpcm", 0 )   /* 4-bits ADPCM samples @ 8kHz */
-	ROM_LOAD( "luckyson.15",    0x00000, 0x10000, CRC(b896c87f) SHA1(985e625a937abd6353218f0cace14d3adec4c1bf) )    /* location 2n */
-	ROM_FILL(                   0x10000, 0x10000, 0xff )                                                            /* empty socket @ 1n */
+	ROM_REGION( 0x20000, "adpcm", 0 )   // 4-bits ADPCM samples @ 8kHz
+	ROM_LOAD( "luckyson.15",    0x00000, 0x10000, CRC(b896c87f) SHA1(985e625a937abd6353218f0cace14d3adec4c1bf) )    // location 2n
+	ROM_FILL(                   0x10000, 0x10000, 0xff )                                                            // empty socket @ 1n
 
 	ROM_REGION( 0x0600, "proms", 0 )
 	ROM_LOAD( "luckyprom.e6",   0x0000, 0x0100, CRC(ae793fef) SHA1(e4e2d2dccabad7d756811fb2d5e123bf30f106f3) )
@@ -1727,9 +1733,9 @@ ROM_START( excitbj )
 	ROM_LOAD( "ebj_s8.1k",  0x20000, 0x10000, CRC(297443a7) SHA1(3a20498dcf69412f5bd3156391a55d3b1273c0b4) )
 	ROM_LOAD( "ebj_s9.1l",  0x30000, 0x10000, CRC(79ba7d75) SHA1(7301143a019d5e79eff7941a1a34fe96036acffa) )
 
-	ROM_REGION( 0x20000, "adpcm", 0 )   /* 4-bits ADPCM samples @ 8kHz */
-	ROM_LOAD( "ebj_s5.2n",  0x00000, 0x10000, CRC(9b4a10a2) SHA1(843ab5955ba96bb1b1a5367652d0f6424ba23bdf) )    /* location 2n */
-	ROM_LOAD( "ebj_s10.1n", 0x10000, 0x10000, CRC(2fa7401d) SHA1(80a5dfd2b7c183acd2fc124d220de4a4921178b2) )    /* location 1n */
+	ROM_REGION( 0x20000, "adpcm", 0 )   // 4-bits ADPCM samples @ 8kHz
+	ROM_LOAD( "ebj_s5.2n",  0x00000, 0x10000, CRC(9b4a10a2) SHA1(843ab5955ba96bb1b1a5367652d0f6424ba23bdf) )    // location 2n
+	ROM_LOAD( "ebj_s10.1n", 0x10000, 0x10000, CRC(2fa7401d) SHA1(80a5dfd2b7c183acd2fc124d220de4a4921178b2) )    // location 1n
 
 	ROM_REGION( 0x0600, "proms", 0 )
 	ROM_LOAD( "6e-a.6e",    0x0000, 0x0100, CRC(bcaa7a0d) SHA1(75554d539bf67effb862234cdf89e4df4e2193ed) )
@@ -1745,8 +1751,8 @@ ROM_END
 *                Game Drivers                *
 **********************************************/
 
-//     YEAR  NAME      PARENT   MACHINE  INPUT     STATS           INIT  ROT   COMPANY            FULLNAME                    FLAGS                LAYOUT
-GAMEL( 1988, lucky74,  0,       lucky74, lucky74,  lucky74_state,  0,    ROT0, "Wing Co., Ltd.", "Lucky 74 (bootleg, set 1)", 0,                   layout_lucky74 )
-GAMEL( 1988, lucky74a, lucky74, lucky74, lucky74a, lucky74_state,  0,    ROT0, "Wing Co., Ltd.", "Lucky 74 (bootleg, set 3)", 0,                   layout_lucky74 )
-GAMEL( 1988, lucky74b, lucky74, lucky74, lucky74,  lucky74_state,  0,    ROT0, "Wing Co., Ltd.", "Lucky 74 (bootleg, set 2)", MACHINE_NOT_WORKING, layout_lucky74 )
-GAME(  1989, excitbj,  0,       lucky74, excitbj,  lucky74_state,  0,    ROT0, "Sega",           "Exciting Black Jack",       MACHINE_NOT_WORKING )
+//     YEAR  NAME      PARENT   MACHINE  INPUT     STATS          INIT        ROT   COMPANY            FULLNAME                    FLAGS                                        LAYOUT
+GAMEL( 1988, lucky74,  0,       lucky74, lucky74,  lucky74_state, empty_init, ROT0, "Wing Co., Ltd.", "Lucky 74 (bootleg, set 1)", MACHINE_SUPPORTS_SAVE,                       layout_lucky74 )
+GAMEL( 1988, lucky74a, lucky74, lucky74, lucky74a, lucky74_state, empty_init, ROT0, "Wing Co., Ltd.", "Lucky 74 (bootleg, set 3)", MACHINE_SUPPORTS_SAVE,                       layout_lucky74 )
+GAMEL( 1988, lucky74b, lucky74, lucky74, lucky74,  lucky74_state, empty_init, ROT0, "Wing Co., Ltd.", "Lucky 74 (bootleg, set 2)", MACHINE_NOT_WORKING | MACHINE_SUPPORTS_SAVE, layout_lucky74 )
+GAME(  1989, excitbj,  0,       lucky74, excitbj,  lucky74_state, empty_init, ROT0, "Sega",           "Exciting Black Jack",       MACHINE_NOT_WORKING | MACHINE_SUPPORTS_SAVE )

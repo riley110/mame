@@ -22,13 +22,14 @@ Oxx,yy          = Out port
 
 #include "emu.h"
 #include "bus/rs232/rs232.h"
+//#include "bus/s100/s100.h"
 #include "cpu/z80/z80.h"
-#include "cpu/z80/z80daisy.h"
+#include "machine/z80daisy.h"
+#include "machine/am9519.h"
 #include "machine/com8116.h"
-#include "machine/pic8259.h"
 #include "machine/ram.h"
-#include "machine/z80dart.h"
 #include "machine/z80pio.h"
+#include "machine/z80sio.h"
 
 #define Z80_TAG         "u45"
 #define Z80DART_0_TAG   "u14"
@@ -58,15 +59,21 @@ public:
 		, m_cmd(0x01)
 	{ }
 
-	DECLARE_READ8_MEMBER( read );
-	DECLARE_WRITE8_MEMBER( write );
-	DECLARE_WRITE8_MEMBER( baud_w );
-	DECLARE_WRITE8_MEMBER( memctrl_w );
-	DECLARE_READ8_MEMBER( status_r );
-	DECLARE_WRITE8_MEMBER( cmd_w );
+	void superslave(machine_config &config);
 
 private:
-	required_device<cpu_device> m_maincpu;
+	virtual void machine_start() override;
+	virtual void machine_reset() override;
+	void superslave_io(address_map &map);
+	void superslave_mem(address_map &map);
+
+	uint8_t read(offs_t offset);
+	void write(offs_t offset, uint8_t data);
+	void memctrl_w(uint8_t data);
+	uint8_t status_r();
+	void cmd_w(uint8_t data);
+
+	required_device<z80_device> m_maincpu;
 	required_device<com8116_device> m_dbrg;
 	required_device<ram_device> m_ram;
 	required_device<rs232_port_device> m_rs232a;
@@ -74,9 +81,6 @@ private:
 	required_device<rs232_port_device> m_rs232c;
 	required_device<rs232_port_device> m_rs232d;
 	required_memory_region m_rom;
-
-	virtual void machine_start() override;
-	virtual void machine_reset() override;
 
 	uint8_t m_memctrl;
 	uint8_t m_cmd;
@@ -92,7 +96,7 @@ private:
 //  read -
 //-------------------------------------------------
 
-READ8_MEMBER( superslave_state::read )
+uint8_t superslave_state::read(offs_t offset)
 {
 	uint8_t data = 0;
 
@@ -126,7 +130,7 @@ READ8_MEMBER( superslave_state::read )
 //  write -
 //-------------------------------------------------
 
-WRITE8_MEMBER( superslave_state::write )
+void superslave_state::write(offs_t offset, uint8_t data)
 {
 	offs_t boundary = 0xc000 | ((m_memctrl & 0xf0) << 6);
 
@@ -149,21 +153,10 @@ WRITE8_MEMBER( superslave_state::write )
 
 
 //-------------------------------------------------
-//  baud_w -
-//-------------------------------------------------
-
-WRITE8_MEMBER( superslave_state::baud_w )
-{
-	m_dbrg->str_w(data & 0x0f);
-	m_dbrg->stt_w(data >> 4);
-}
-
-
-//-------------------------------------------------
 //  memctrl_w -
 //-------------------------------------------------
 
-WRITE8_MEMBER( superslave_state::memctrl_w )
+void superslave_state::memctrl_w(uint8_t data)
 {
 	/*
 
@@ -188,7 +181,7 @@ WRITE8_MEMBER( superslave_state::memctrl_w )
 //  status_r -
 //-------------------------------------------------
 
-READ8_MEMBER( superslave_state::status_r)
+uint8_t superslave_state::status_r()
 {
 	/*
 
@@ -221,7 +214,7 @@ READ8_MEMBER( superslave_state::status_r)
 //  cmd_w -
 //-------------------------------------------------
 
-WRITE8_MEMBER( superslave_state::cmd_w )
+void superslave_state::cmd_w(uint8_t data)
 {
 	/*
 
@@ -251,26 +244,29 @@ WRITE8_MEMBER( superslave_state::cmd_w )
 //  ADDRESS_MAP( superslave_mem )
 //-------------------------------------------------
 
-static ADDRESS_MAP_START( superslave_mem, AS_PROGRAM, 8, superslave_state )
-	AM_RANGE(0x0000, 0xffff) AM_READWRITE(read, write)
-ADDRESS_MAP_END
+void superslave_state::superslave_mem(address_map &map)
+{
+	map(0x0000, 0xffff).rw(FUNC(superslave_state::read), FUNC(superslave_state::write));
+}
 
 
 //-------------------------------------------------
 //  ADDRESS_MAP( superslave_io )
 //-------------------------------------------------
 
-static ADDRESS_MAP_START( superslave_io, AS_IO, 8, superslave_state )
-	ADDRESS_MAP_GLOBAL_MASK(0xff)
-	AM_RANGE(0x00, 0x03) AM_DEVREADWRITE(Z80DART_0_TAG, z80dart_device, ba_cd_r, ba_cd_w)
-	AM_RANGE(0x0c, 0x0f) AM_DEVREADWRITE(Z80DART_1_TAG, z80dart_device, ba_cd_r, ba_cd_w)
-	AM_RANGE(0x10, 0x10) AM_MIRROR(0x03) AM_WRITE(baud_w)
-	AM_RANGE(0x14, 0x17) AM_DEVREADWRITE(Z80PIO_TAG, z80pio_device, read_alt, write_alt)
-	AM_RANGE(0x18, 0x1c) AM_DEVREADWRITE(AM9519_TAG, pic8259_device, read, write)
-	AM_RANGE(0x1d, 0x1d) AM_WRITE(memctrl_w)
-	AM_RANGE(0x1e, 0x1e) AM_NOP // master communications
-	AM_RANGE(0x1f, 0x1f) AM_READWRITE(status_r, cmd_w)
-ADDRESS_MAP_END
+void superslave_state::superslave_io(address_map &map)
+{
+	map.global_mask(0xff);
+	map(0x00, 0x03).rw(Z80DART_0_TAG, FUNC(z80dart_device::ba_cd_r), FUNC(z80dart_device::ba_cd_w));
+	map(0x0c, 0x0f).rw(Z80DART_1_TAG, FUNC(z80dart_device::ba_cd_r), FUNC(z80dart_device::ba_cd_w));
+	map(0x10, 0x10).mirror(0x03).w(BR1941_TAG, FUNC(com8116_device::stt_str_w));
+	map(0x14, 0x17).rw(Z80PIO_TAG, FUNC(z80pio_device::read_alt), FUNC(z80pio_device::write_alt));
+	map(0x18, 0x18).mirror(0x02).rw(AM9519_TAG, FUNC(am9519_device::data_r), FUNC(am9519_device::data_w));
+	map(0x19, 0x19).mirror(0x02).rw(AM9519_TAG, FUNC(am9519_device::stat_r), FUNC(am9519_device::cmd_w));
+	map(0x1d, 0x1d).w(FUNC(superslave_state::memctrl_w));
+	map(0x1e, 0x1e).noprw(); // master communications
+	map(0x1f, 0x1f).rw(FUNC(superslave_state::status_r), FUNC(superslave_state::cmd_w));
+}
 
 
 
@@ -309,11 +305,6 @@ INPUT_PORTS_END
 //  DEVICE CONFIGURATION
 //**************************************************************************
 
-//-------------------------------------------------
-//  COM8116_INTERFACE( dbrg_intf )
-//-------------------------------------------------
-
-
 static DEVICE_INPUT_DEFAULTS_START( terminal )
 	DEVICE_INPUT_DEFAULTS( "RS232_TXBAUD", 0xff, RS232_BAUD_9600 )
 	DEVICE_INPUT_DEFAULTS( "RS232_RXBAUD", 0xff, RS232_BAUD_9600 )
@@ -343,7 +334,7 @@ static const z80_daisy_config superslave_daisy_chain[] =
 //**************************************************************************
 
 //-------------------------------------------------
-//  MACHINE_START( superslave )
+//  machine_start()
 //-------------------------------------------------
 
 void superslave_state::machine_start()
@@ -367,75 +358,74 @@ void superslave_state::machine_reset()
 //**************************************************************************
 
 //-------------------------------------------------
-//  MACHINE_CONFIG( superslave )
+//  machine_config( superslave )
 //-------------------------------------------------
 
-static MACHINE_CONFIG_START( superslave )
+void superslave_state::superslave(machine_config &config)
+{
 	// basic machine hardware
-	MCFG_CPU_ADD(Z80_TAG, Z80, XTAL_8MHz/2)
-	MCFG_CPU_PROGRAM_MAP(superslave_mem)
-	MCFG_CPU_IO_MAP(superslave_io)
-	MCFG_Z80_DAISY_CHAIN(superslave_daisy_chain)
+	Z80(config, m_maincpu, XTAL(8'000'000)/2);
+	m_maincpu->set_addrmap(AS_PROGRAM, &superslave_state::superslave_mem);
+	m_maincpu->set_addrmap(AS_IO, &superslave_state::superslave_io);
+	m_maincpu->set_daisy_config(superslave_daisy_chain);
 
 	// devices
-	MCFG_DEVICE_ADD(AM9519_TAG, PIC8259, 0)
-	MCFG_PIC8259_OUT_INT_CB(INPUTLINE(Z80_TAG, INPUT_LINE_IRQ0))
+	am9519_device &am9519(AM9519(config, AM9519_TAG, 0));
+	am9519.out_int_callback().set_inputline(Z80_TAG, INPUT_LINE_IRQ0);
 
-	MCFG_DEVICE_ADD(Z80PIO_TAG, Z80PIO, XTAL_8MHz/2)
-	MCFG_Z80PIO_OUT_INT_CB(INPUTLINE(Z80_TAG, INPUT_LINE_IRQ0))
+	z80pio_device& pio(Z80PIO(config, Z80PIO_TAG, XTAL(8'000'000)/2));
+	pio.out_int_callback().set_inputline(m_maincpu, INPUT_LINE_IRQ0);
 
-	MCFG_DEVICE_ADD(Z80DART_0_TAG, Z80DART, XTAL_8MHz/2)
-	MCFG_Z80DART_OUT_TXDA_CB(DEVWRITELINE(RS232_A_TAG, rs232_port_device, write_txd))
-	MCFG_Z80DART_OUT_DTRA_CB(DEVWRITELINE(RS232_A_TAG, rs232_port_device, write_dtr))
-	MCFG_Z80DART_OUT_RTSA_CB(DEVWRITELINE(RS232_A_TAG, rs232_port_device, write_rts))
-	MCFG_Z80DART_OUT_TXDB_CB(DEVWRITELINE(RS232_B_TAG, rs232_port_device, write_txd))
-	MCFG_Z80DART_OUT_DTRB_CB(DEVWRITELINE(RS232_B_TAG, rs232_port_device, write_dtr))
-	MCFG_Z80DART_OUT_RTSB_CB(DEVWRITELINE(RS232_B_TAG, rs232_port_device, write_rts))
-	MCFG_Z80DART_OUT_INT_CB(INPUTLINE(Z80_TAG, INPUT_LINE_IRQ0))
+	z80dart_device& dart0(Z80DART(config, Z80DART_0_TAG, XTAL(8'000'000)/2));
+	dart0.out_txda_callback().set(m_rs232a, FUNC(rs232_port_device::write_txd));
+	dart0.out_dtra_callback().set(m_rs232a, FUNC(rs232_port_device::write_dtr));
+	dart0.out_rtsa_callback().set(m_rs232a, FUNC(rs232_port_device::write_rts));
+	dart0.out_txdb_callback().set(m_rs232b, FUNC(rs232_port_device::write_txd));
+	dart0.out_dtrb_callback().set(m_rs232b, FUNC(rs232_port_device::write_dtr));
+	dart0.out_rtsb_callback().set(m_rs232b, FUNC(rs232_port_device::write_rts));
+	dart0.out_int_callback().set_inputline(m_maincpu, INPUT_LINE_IRQ0);
 
-	MCFG_RS232_PORT_ADD(RS232_A_TAG, default_rs232_devices, "terminal")
-	MCFG_RS232_RXD_HANDLER(DEVWRITELINE(Z80DART_0_TAG, z80dart_device, rxa_w))
-	MCFG_RS232_DCD_HANDLER(DEVWRITELINE(Z80DART_0_TAG, z80dart_device, dcda_w))
-	MCFG_RS232_CTS_HANDLER(DEVWRITELINE(Z80DART_0_TAG, z80dart_device, ctsa_w))
-	MCFG_DEVICE_CARD_DEVICE_INPUT_DEFAULTS("terminal", terminal)
+	RS232_PORT(config, m_rs232a, default_rs232_devices, "terminal");
+	m_rs232a->rxd_handler().set(Z80DART_0_TAG, FUNC(z80dart_device::rxa_w));
+	m_rs232a->dcd_handler().set(Z80DART_0_TAG, FUNC(z80dart_device::dcda_w));
+	m_rs232a->cts_handler().set(Z80DART_0_TAG, FUNC(z80dart_device::ctsa_w));
+	m_rs232a->set_option_device_input_defaults("terminal", DEVICE_INPUT_DEFAULTS_NAME(terminal));
 
-	MCFG_RS232_PORT_ADD(RS232_B_TAG, default_rs232_devices, nullptr)
-	MCFG_RS232_RXD_HANDLER(DEVWRITELINE(Z80DART_0_TAG, z80dart_device, rxb_w))
-	MCFG_RS232_DCD_HANDLER(DEVWRITELINE(Z80DART_0_TAG, z80dart_device, dcdb_w))
-	MCFG_RS232_CTS_HANDLER(DEVWRITELINE(Z80DART_0_TAG, z80dart_device, ctsb_w))
+	RS232_PORT(config, m_rs232b, default_rs232_devices, nullptr);
+	m_rs232b->rxd_handler().set(Z80DART_0_TAG, FUNC(z80dart_device::rxb_w));
+	m_rs232b->dcd_handler().set(Z80DART_0_TAG, FUNC(z80dart_device::dcdb_w));
+	m_rs232b->cts_handler().set(Z80DART_0_TAG, FUNC(z80dart_device::ctsb_w));
 
-	MCFG_DEVICE_ADD(Z80DART_1_TAG, Z80DART, XTAL_8MHz/2)
-	MCFG_Z80DART_OUT_TXDA_CB(DEVWRITELINE(RS232_C_TAG, rs232_port_device, write_txd))
-	MCFG_Z80DART_OUT_DTRA_CB(DEVWRITELINE(RS232_C_TAG, rs232_port_device, write_dtr))
-	MCFG_Z80DART_OUT_RTSA_CB(DEVWRITELINE(RS232_C_TAG, rs232_port_device, write_rts))
-	MCFG_Z80DART_OUT_TXDB_CB(DEVWRITELINE(RS232_D_TAG, rs232_port_device, write_txd))
-	MCFG_Z80DART_OUT_DTRB_CB(DEVWRITELINE(RS232_D_TAG, rs232_port_device, write_dtr))
-	MCFG_Z80DART_OUT_RTSB_CB(DEVWRITELINE(RS232_D_TAG, rs232_port_device, write_rts))
-	MCFG_Z80DART_OUT_INT_CB(INPUTLINE(Z80_TAG, INPUT_LINE_IRQ0))
+	z80dart_device& dart1(Z80DART(config, Z80DART_1_TAG, XTAL(8'000'000)/2));
+	dart1.out_txda_callback().set(m_rs232c, FUNC(rs232_port_device::write_txd));
+	dart1.out_dtra_callback().set(m_rs232c, FUNC(rs232_port_device::write_dtr));
+	dart1.out_rtsa_callback().set(m_rs232c, FUNC(rs232_port_device::write_rts));
+	dart1.out_txdb_callback().set(m_rs232d, FUNC(rs232_port_device::write_txd));
+	dart1.out_dtrb_callback().set(m_rs232d, FUNC(rs232_port_device::write_dtr));
+	dart1.out_rtsb_callback().set(m_rs232d, FUNC(rs232_port_device::write_rts));
+	dart1.out_int_callback().set_inputline(m_maincpu, INPUT_LINE_IRQ0);
 
-	MCFG_RS232_PORT_ADD(RS232_C_TAG, default_rs232_devices, nullptr)
-	MCFG_RS232_RXD_HANDLER(DEVWRITELINE(Z80DART_1_TAG, z80dart_device, rxa_w))
-	MCFG_RS232_DCD_HANDLER(DEVWRITELINE(Z80DART_1_TAG, z80dart_device, dcda_w))
-	MCFG_RS232_CTS_HANDLER(DEVWRITELINE(Z80DART_1_TAG, z80dart_device, ctsa_w))
+	RS232_PORT(config, m_rs232c, default_rs232_devices, nullptr);
+	m_rs232c->rxd_handler().set(Z80DART_1_TAG, FUNC(z80dart_device::rxa_w));
+	m_rs232c->dcd_handler().set(Z80DART_1_TAG, FUNC(z80dart_device::dcda_w));
+	m_rs232c->cts_handler().set(Z80DART_1_TAG, FUNC(z80dart_device::ctsa_w));
 
-	MCFG_RS232_PORT_ADD(RS232_D_TAG, default_rs232_devices, nullptr)
-	MCFG_RS232_RXD_HANDLER(DEVWRITELINE(Z80DART_1_TAG, z80dart_device, rxb_w))
-	MCFG_RS232_DCD_HANDLER(DEVWRITELINE(Z80DART_1_TAG, z80dart_device, dcdb_w))
-	MCFG_RS232_CTS_HANDLER(DEVWRITELINE(Z80DART_1_TAG, z80dart_device, ctsb_w))
+	RS232_PORT(config, m_rs232d, default_rs232_devices, nullptr);
+	m_rs232d->rxd_handler().set(Z80DART_1_TAG, FUNC(z80dart_device::rxb_w));
+	m_rs232d->dcd_handler().set(Z80DART_1_TAG, FUNC(z80dart_device::dcdb_w));
+	m_rs232d->cts_handler().set(Z80DART_1_TAG, FUNC(z80dart_device::ctsb_w));
 
-	MCFG_DEVICE_ADD(BR1941_TAG, COM8116, XTAL_5_0688MHz)
-	MCFG_COM8116_FR_HANDLER(DEVWRITELINE(Z80DART_0_TAG, z80dart_device, txca_w))
-	MCFG_DEVCB_CHAIN_OUTPUT(DEVWRITELINE(Z80DART_0_TAG, z80dart_device, rxca_w))
-	MCFG_DEVCB_CHAIN_OUTPUT(DEVWRITELINE(Z80DART_1_TAG, z80dart_device, txca_w))
-	MCFG_DEVCB_CHAIN_OUTPUT(DEVWRITELINE(Z80DART_1_TAG, z80dart_device, rxca_w))
-	MCFG_COM8116_FT_HANDLER(DEVWRITELINE(Z80DART_0_TAG, z80dart_device, rxtxcb_w))
-	MCFG_DEVCB_CHAIN_OUTPUT(DEVWRITELINE(Z80DART_1_TAG, z80dart_device, rxtxcb_w))
+	COM8116(config, m_dbrg, XTAL(5'068'800));
+	m_dbrg->fr_handler().set(Z80DART_0_TAG, FUNC(z80dart_device::txca_w));
+	m_dbrg->fr_handler().append(Z80DART_0_TAG, FUNC(z80dart_device::rxca_w));
+	m_dbrg->fr_handler().append(Z80DART_1_TAG, FUNC(z80dart_device::txca_w));
+	m_dbrg->fr_handler().append(Z80DART_1_TAG, FUNC(z80dart_device::rxca_w));
+	m_dbrg->ft_handler().set(Z80DART_0_TAG, FUNC(z80dart_device::rxtxcb_w));
+	m_dbrg->ft_handler().append(Z80DART_1_TAG, FUNC(z80dart_device::rxtxcb_w));
 
 	// internal ram
-	MCFG_RAM_ADD(RAM_TAG)
-	MCFG_RAM_DEFAULT_SIZE("64K")
-	MCFG_RAM_EXTRA_OPTIONS("128K")
-MACHINE_CONFIG_END
+	RAM(config, RAM_TAG).set_default_size("64K").set_extra_options("128K");
+}
 
 
 
@@ -458,5 +448,5 @@ ROM_END
 //  SYSTEM DRIVERS
 //**************************************************************************
 
-//    YEAR  NAME      PARENT  COMPAT  MACHINE     INPUT       CLASS             INIT  COMPANY                         FULLNAME        FLAGS
-COMP( 1983, superslv, 0,      0,      superslave, superslave, superslave_state, 0,    "Advanced Digital Corporation", "Super Slave",  MACHINE_NOT_WORKING | MACHINE_NO_SOUND_HW )
+//    YEAR  NAME      PARENT  COMPAT  MACHINE     INPUT       CLASS             INIT        COMPANY                         FULLNAME        FLAGS
+COMP( 1983, superslv, 0,      0,      superslave, superslave, superslave_state, empty_init, "Advanced Digital Corporation", "Super Slave",  MACHINE_NOT_WORKING | MACHINE_NO_SOUND_HW )

@@ -2,8 +2,8 @@
 // copyright-holders:Angelo Salese, Tomasz Slanina
 /******************************************************************
  NEC V810 (upd70732) core
-  Tomasz Slanina - analog[at]op.pl
-  Angelo Salese - lordkale[at]libero.it
+  Tomasz Slanina
+  Angelo Salese
 
  Change Log
  - 23/08/2012 - Implemented remaining BSU opcodes (Angelo Salese)
@@ -29,13 +29,14 @@
 
 #include "emu.h"
 #include "v810.h"
+#include "v810dasm.h"
 #include "debugger.h"
 
 #define clkIF 3
 #define clkMEM 3
 
 
-DEFINE_DEVICE_TYPE(V810, v810_device, "v810", "V810")
+DEFINE_DEVICE_TYPE(V810, v810_device, "v810", "NEC V810")
 
 
 v810_device::v810_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
@@ -54,10 +55,9 @@ device_memory_interface::space_config_vector v810_device::memory_space_config() 
 }
 
 
-offs_t v810_device::disasm_disassemble(std::ostream &stream, offs_t pc, const uint8_t *oprom, const uint8_t *opram, uint32_t options)
+std::unique_ptr<util::disasm_interface> v810_device::create_disassembler()
 {
-	extern CPU_DISASSEMBLE( v810 );
-	return CPU_DISASSEMBLE_NAME(v810)(this, stream, pc, oprom, opram, options);
+	return std::make_unique<v810_disassembler>();
 }
 
 
@@ -126,26 +126,26 @@ offs_t v810_device::disasm_disassemble(std::ostream &stream, offs_t pc, const ui
 #define SET_EP(val)             (PSW = (PSW & ~0x00004000) | ((val) << 14))
 #define SET_NP(val)             (PSW = (PSW & ~0x00008000) | ((val) << 15))
 
-#define R_B(addr) (m_program->read_byte(addr))
-#define R_H(addr) (m_program->read_word(addr))
-#define R_W(addr) (m_program->read_dword(addr))
+#define R_B(addr) (m_program.read_byte(addr))
+#define R_H(addr) (m_program.read_word(addr))
+#define R_W(addr) (m_program.read_dword(addr))
 
 
-#define W_B(addr, val) (m_program->write_byte(addr,val))
-#define W_H(addr, val) (m_program->write_word(addr,val))
-#define W_W(addr, val) (m_program->write_dword(addr,val))
+#define W_B(addr, val) (m_program.write_byte(addr,val))
+#define W_H(addr, val) (m_program.write_word(addr,val))
+#define W_W(addr, val) (m_program.write_dword(addr,val))
 
 
-#define RIO_B(addr) (m_io->read_byte(addr))
-#define RIO_H(addr) (m_io->read_word(addr))
-#define RIO_W(addr) (m_io->read_dword(addr))
+#define RIO_B(addr) (m_io.read_byte(addr))
+#define RIO_H(addr) (m_io.read_word(addr))
+#define RIO_W(addr) (m_io.read_dword(addr))
 
 
-#define WIO_B(addr, val) (m_io->write_byte(addr,val))
-#define WIO_H(addr, val) (m_io->write_word(addr,val))
-#define WIO_W(addr, val) (m_io->write_dword(addr,val))
+#define WIO_B(addr, val) (m_io.write_byte(addr,val))
+#define WIO_H(addr, val) (m_io.write_word(addr,val))
+#define WIO_W(addr, val) (m_io.write_dword(addr,val))
 
-#define R_OP(addr)  (m_direct->read_word(addr))
+#define R_OP(addr)  (m_cache.read_word(addr))
 
 #define GET1 (op&0x1f)
 #define GET2 ((op>>5)&0x1f)
@@ -1255,9 +1255,9 @@ const v810_device::opcode_func v810_device::s_OpCodeTable[64] =
 
 void v810_device::device_start()
 {
-	m_program = &space(AS_PROGRAM);
-	m_direct = &m_program->direct();
-	m_io = &space(AS_IO);
+	space(AS_PROGRAM).cache(m_cache);
+	space(AS_PROGRAM).specific(m_program);
+	space(has_space(AS_IO) ? AS_IO : AS_PROGRAM).specific(m_io);
 
 	m_irq_line = 0;
 	m_irq_state = CLEAR_LINE;
@@ -1319,7 +1319,7 @@ void v810_device::device_start()
 	state_add(STATE_GENSP, "GENSP", SP).noshow();
 	state_add(STATE_GENFLAGS, "GENFLAGS", PSW).formatstr("%8s").noshow();
 
-	m_icountptr = &m_icount;
+	set_icountptr(m_icount);
 }
 
 void v810_device::state_string_export(const device_state_entry &entry, std::string &str) const
@@ -1383,7 +1383,7 @@ void v810_device::execute_run()
 		uint32_t op;
 
 		m_PPC=PC;
-		debugger_instruction_hook(this, PC);
+		debugger_instruction_hook(PC);
 		op=R_OP(PC);
 		PC+=2;
 		int cnt;

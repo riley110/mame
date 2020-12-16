@@ -7,21 +7,22 @@
 
 
 #include "cpu/z80/z80.h"
-#include "cpu/z80/z80daisy.h"
+#include "machine/z80daisy.h"
 #include "cpu/mcs48/mcs48.h"
 #include "cpu/m68000/m68000.h"
 #include "bus/centronics/ctronics.h"
+#include "imagedev/floppy.h"
+#include "machine/am9519.h"
 #include "machine/keyboard.h"
-#include "machine/pic8259.h"
 #include "machine/ram.h"
-#include "machine/timer.h"
 #include "machine/trs80m2kb.h"
 #include "machine/wd_fdc.h"
 #include "machine/z80ctc.h"
 #include "machine/z80dma.h"
 #include "machine/z80pio.h"
-#include "machine/z80dart.h"
+#include "machine/z80sio.h"
 #include "video/mc6845.h"
+#include "emupal.h"
 
 #define SCREEN_TAG      "screen"
 #define Z80_TAG         "u12"
@@ -38,8 +39,8 @@
 class trs80m2_state : public driver_device
 {
 public:
-	trs80m2_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
+	trs80m2_state(const machine_config &mconfig, device_type type, const char *tag) :
+		driver_device(mconfig, type, tag),
 		m_maincpu(*this, Z80_TAG),
 		m_ctc(*this, Z80CTC_TAG),
 		m_dmac(*this, Z80DMA_TAG),
@@ -65,41 +66,44 @@ public:
 
 	uint32_t screen_update(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect);
 
-	DECLARE_READ8_MEMBER( read );
-	DECLARE_WRITE8_MEMBER( write );
-	DECLARE_WRITE8_MEMBER( drvslt_w );
-	DECLARE_WRITE8_MEMBER( rom_enable_w );
-	DECLARE_READ8_MEMBER( keyboard_r );
-	DECLARE_READ8_MEMBER( rtc_r );
-	DECLARE_READ8_MEMBER( nmi_r );
-	DECLARE_WRITE8_MEMBER( nmi_w );
-	DECLARE_READ8_MEMBER( fdc_r );
-	DECLARE_WRITE8_MEMBER( fdc_w );
+	uint8_t read(offs_t offset);
+	void write(offs_t offset, uint8_t data);
+	void drvslt_w(uint8_t data);
+	void rom_enable_w(uint8_t data);
+	uint8_t keyboard_r();
+	uint8_t rtc_r();
+	uint8_t nmi_r();
+	void nmi_w(uint8_t data);
+	uint8_t fdc_r(offs_t offset);
+	void fdc_w(offs_t offset, uint8_t data);
 	DECLARE_WRITE_LINE_MEMBER( de_w );
 	DECLARE_WRITE_LINE_MEMBER( vsync_w );
-	DECLARE_READ8_MEMBER( pio_pa_r );
-	DECLARE_WRITE8_MEMBER( pio_pa_w );
+	uint8_t pio_pa_r();
+	void pio_pa_w(uint8_t data);
 	DECLARE_WRITE_LINE_MEMBER( strobe_w );
 	DECLARE_WRITE_LINE_MEMBER( kb_clock_w );
 	void kbd_w(u8 data);
 
 	MC6845_UPDATE_ROW( crtc_update_row );
 
-	TIMER_DEVICE_CALLBACK_MEMBER(ctc_tick);
-	DECLARE_READ8_MEMBER(io_read_byte);
-	DECLARE_WRITE8_MEMBER(io_write_byte);
+	uint8_t io_read_byte(offs_t offset);
+	void io_write_byte(offs_t offset, uint8_t data);
 
 	DECLARE_WRITE_LINE_MEMBER(write_centronics_busy);
 	DECLARE_WRITE_LINE_MEMBER(write_centronics_fault);
 	DECLARE_WRITE_LINE_MEMBER(write_centronics_perror);
 
+	void trs80m2(machine_config &config);
+	void m68000_mem(address_map &map);
+	void z80_io(address_map &map);
+	void z80_mem(address_map &map);
 protected:
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
 
 	virtual void video_start() override;
 
-	required_device<cpu_device> m_maincpu;
+	required_device<z80_device> m_maincpu;
 	required_device<z80ctc_device> m_ctc;
 	required_device<z80dma_device> m_dmac;
 	required_device<z80pio_device> m_pio;
@@ -149,18 +153,20 @@ public:
 	trs80m16_state(const machine_config &mconfig, device_type type, const char *tag)
 		: trs80m2_state(mconfig, type, tag)
 		, m_subcpu(*this, M68000_TAG)
-		, m_pic(*this, AM9519A_TAG)
+		, m_uic(*this, AM9519A_TAG)
 	{
 	}
 
-	DECLARE_WRITE8_MEMBER( ual_w );
-	DECLARE_WRITE8_MEMBER( tcl_w );
+	void ual_w(uint8_t data);
+	void tcl_w(uint8_t data);
 
+	void trs80m16(machine_config &config);
+	void m16_z80_io(address_map &map);
 protected:
 	virtual void machine_start() override;
 
 	required_device<cpu_device> m_subcpu;
-	required_device<pic8259_device> m_pic;
+	required_device<am9519_device> m_uic;
 
 	uint16_t m_ual;
 	uint8_t m_limit[2];

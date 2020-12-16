@@ -1,65 +1,78 @@
 // license:GPL-2.0+
 // copyright-holders:Couriersud
-/*
- * nl_parser.c
- *
- */
+
+///
+/// \file nl_parser.h
+///
 
 #ifndef NL_PARSER_H_
 #define NL_PARSER_H_
 
-#include "nl_setup.h"
-#include "plib/pparser.h"
+#include "nltypes.h" // for setup_t
+#include "plib/ptokenizer.h"
+
+#include <unordered_map>
 
 namespace netlist
 {
-	class parser_t : public plib::ptokenizer
+	class parser_t : public plib::ptoken_reader
 	{
 	public:
-		parser_t(plib::putf8_reader &strm, setup_t &setup)
-		: plib::ptokenizer(strm), m_setup(setup) {}
+		using token_t = plib::ptokenizer::token_t;
+		using token_type = plib::ptokenizer::token_type;
+		using token_id_t = plib::ptokenizer::token_id_t;
+		using token_store = plib::ptokenizer::token_store;
 
-		bool parse(const pstring &nlname = "");
+		parser_t(nlparse_t &setup);
+
+		bool parse(plib::psource_t::stream_ptr &&strm, const pstring &nlname);
+		bool parse(const token_store &tokstor, const pstring &nlname);
+		void parse_tokens(plib::psource_t::stream_ptr &&strm, token_store &tokstor);
 
 	protected:
 		void parse_netlist(const pstring &nlname);
 		void net_alias();
 		void dippins();
 		void netdev_param();
+		void netdev_defparam();
 		void netdev_hint();
 		void net_c();
 		void frontier();
 		void device(const pstring &dev_type);
-		void netdev_netlist_start();
 		void netdev_netlist_end();
 		void net_model();
 		void net_submodel();
 		void net_include();
 		void net_local_source();
+		void net_external_source();
+		void net_register_dev();
 		void net_truthtable_start(const pstring &nlname);
 
-		/* for debugging messages */
-		netlist_t &netlist() { return m_setup.netlist(); }
-
-		virtual void verror(const pstring &msg, int line_num, const pstring &line) override;
+		void verror(const pstring &msg) override;
 	private:
+		void register_local_as_source(const pstring &name);
 
-		nl_double eval_param(const token_t tok);
+		pstring stringify_expression(token_t &tok);
 
-		token_id_t m_tok_param_left;
-		token_id_t m_tok_param_right;
+		token_id_t m_tok_paren_left;
+		token_id_t m_tok_paren_right;
 		token_id_t m_tok_comma;
+		token_id_t m_tok_static;
 		token_id_t m_tok_ALIAS;
 		token_id_t m_tok_NET_C;
 		token_id_t m_tok_DIPPINS;
 		token_id_t m_tok_FRONTIER;
 		token_id_t m_tok_PARAM;
+		token_id_t m_tok_DEFPARAM;
 		token_id_t m_tok_HINT;
 		token_id_t m_tok_NET_MODEL;
+		token_id_t m_tok_NET_REGISTER_DEV;
 		token_id_t m_tok_NETLIST_START;
 		token_id_t m_tok_NETLIST_END;
+		token_id_t m_tok_NETLIST_EXTERNAL;
 		token_id_t m_tok_SUBMODEL;
 		token_id_t m_tok_INCLUDE;
+		token_id_t m_tok_EXTERNAL_SOURCE;
 		token_id_t m_tok_LOCAL_SOURCE;
 		token_id_t m_tok_LOCAL_LIB_ENTRY;
 		token_id_t m_tok_TRUTHTABLE_START;
@@ -68,9 +81,13 @@ namespace netlist
 		token_id_t m_tok_TT_LINE;
 		token_id_t m_tok_TT_FAMILY;
 
-		setup_t &m_setup;
+		plib::ptokenizer m_tokenizer;
+		nlparse_t &m_setup;
+
+		std::unordered_map<pstring, token_store> m_local;
+		token_store *m_cur_local;
 };
 
-}
+} // namespace netlist
 
-#endif /* NL_PARSER_H_ */
+#endif // NL_PARSER_H_

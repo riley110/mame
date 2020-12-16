@@ -6,25 +6,6 @@
 #pragma once
 
 
-#define MCFG_PCI_ROOT_ADD(_tag) \
-	MCFG_DEVICE_ADD(_tag, PCI_ROOT, 0)
-
-#define MCFG_PCI_DEVICE_ADD(_tag, _type, _main_id, _revision, _pclass, _subsystem_id) \
-	MCFG_DEVICE_ADD(_tag, _type, 0) \
-	downcast<pci_device *>(device)->set_ids(_main_id, _revision, _pclass, _subsystem_id);
-
-#define MCFG_AGP_DEVICE_ADD(_tag, _type, _main_id, _revision, _subsystem_id) \
-	MCFG_PCI_DEVICE_ADD(_tag, _type, _main_id, _revision, 0x030000, _subsystem_id)
-
-#define MCFG_PCI_HOST_ADD(_tag, _type, _main_id, _revision, _subsystem_id) \
-	MCFG_PCI_DEVICE_ADD(_tag, _type, _main_id, _revision, 0x060000, _subsystem_id)
-
-#define MCFG_PCI_BRIDGE_ADD(_tag, _main_id, _revision) \
-	MCFG_PCI_DEVICE_ADD(_tag, PCI_BRIDGE, _main_id, _revision, 0x060400, 0x00000000)
-
-#define MCFG_AGP_BRIDGE_ADD(_tag, _type, _main_id, _revision) \
-	MCFG_PCI_DEVICE_ADD(_tag, _type, _main_id, _revision, 0x060400, 0x00000000)
-
 class pci_device : public device_t {
 public:
 	typedef delegate<void ()> mapper_cb;
@@ -32,6 +13,9 @@ public:
 	mapper_cb remap_cb, remap_config_cb;
 
 	void set_ids(uint32_t main_id, uint8_t revision, uint32_t pclass, uint32_t subsystem_id);
+	void set_ids_host(uint32_t main_id, uint32_t revision, uint64_t subsystem_id) { set_ids(main_id, revision, 0x060000, subsystem_id); }
+	void set_ids_bridge(uint32_t main_id, uint32_t revision) { set_ids(main_id, revision, 0x060400, 0x00000000); }
+	void set_ids_agp(uint64_t main_id, uint32_t revision, uint32_t subsystem_id) { set_ids(main_id, revision, 0x030000, subsystem_id); }
 	void set_multifunction_device(bool enable);
 
 	virtual void set_remap_cb(mapper_cb _remap_cb);
@@ -41,48 +25,51 @@ public:
 	virtual void map_extra(uint64_t memory_window_start, uint64_t memory_window_end, uint64_t memory_offset, address_space *memory_space,
 							uint64_t io_window_start, uint64_t io_window_end, uint64_t io_offset, address_space *io_space);
 
+	// Specify if this device must be mapped before all the others on the pci bus
+	virtual bool map_first() const { return false; }
+
 	void map_config(uint8_t device, address_space *config_space);
 
-	virtual DECLARE_ADDRESS_MAP(config_map, 32);
+	virtual void config_map(address_map &map);
 
 	uint32_t unmapped_r(offs_t offset, uint32_t mem_mask, int bank);
 	void unmapped_w(offs_t offset, uint32_t data, uint32_t mem_mask, int bank);
 
-	READ32_MEMBER (unmapped0_r);
-	WRITE32_MEMBER(unmapped0_w);
-	READ32_MEMBER (unmapped1_r);
-	WRITE32_MEMBER(unmapped1_w);
-	READ32_MEMBER (unmapped2_r);
-	WRITE32_MEMBER(unmapped2_w);
-	READ32_MEMBER (unmapped3_r);
-	WRITE32_MEMBER(unmapped3_w);
-	READ32_MEMBER (unmapped4_r);
-	WRITE32_MEMBER(unmapped4_w);
-	READ32_MEMBER (unmapped5_r);
-	WRITE32_MEMBER(unmapped5_w);
+	uint32_t unmapped0_r(offs_t offset, uint32_t mem_mask = ~0);
+	void unmapped0_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t unmapped1_r(offs_t offset, uint32_t mem_mask = ~0);
+	void unmapped1_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t unmapped2_r(offs_t offset, uint32_t mem_mask = ~0);
+	void unmapped2_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t unmapped3_r(offs_t offset, uint32_t mem_mask = ~0);
+	void unmapped3_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t unmapped4_r(offs_t offset, uint32_t mem_mask = ~0);
+	void unmapped4_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t unmapped5_r(offs_t offset, uint32_t mem_mask = ~0);
+	void unmapped5_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
 
 
-	DECLARE_READ16_MEMBER(vendor_r);
-	DECLARE_READ16_MEMBER(device_r);
-	DECLARE_READ16_MEMBER(command_r);
-	DECLARE_WRITE16_MEMBER(command_w);
-	DECLARE_READ16_MEMBER(status_r);
-	DECLARE_READ32_MEMBER(class_rev_r);
-	virtual DECLARE_READ8_MEMBER(cache_line_size_r);
-	virtual DECLARE_READ8_MEMBER(latency_timer_r);
-	virtual DECLARE_READ8_MEMBER(header_type_r);
-	virtual DECLARE_READ8_MEMBER(bist_r);
-	DECLARE_READ32_MEMBER(address_base_r);
-	DECLARE_WRITE32_MEMBER(address_base_w);
-	DECLARE_READ16_MEMBER(subvendor_r);
-	DECLARE_READ16_MEMBER(subsystem_r);
-	DECLARE_READ32_MEMBER (expansion_base_r);
-	DECLARE_WRITE32_MEMBER(expansion_base_w);
-	virtual DECLARE_READ8_MEMBER(capptr_r);
-	DECLARE_READ8_MEMBER(interrupt_line_r);
-	DECLARE_WRITE8_MEMBER(interrupt_line_w);
-	DECLARE_READ8_MEMBER(interrupt_pin_r);
-	DECLARE_WRITE8_MEMBER(interrupt_pin_w);
+	uint16_t vendor_r();
+	uint16_t device_r();
+	uint16_t command_r();
+	void command_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t status_r();
+	uint32_t class_rev_r();
+	virtual uint8_t cache_line_size_r();
+	virtual uint8_t latency_timer_r();
+	virtual uint8_t header_type_r();
+	virtual uint8_t bist_r();
+	uint32_t address_base_r(offs_t offset);
+	void address_base_w(offs_t offset, uint32_t data);
+	uint16_t subvendor_r();
+	uint16_t subsystem_r();
+	uint32_t expansion_base_r();
+	void expansion_base_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	virtual uint8_t capptr_r();
+	uint8_t interrupt_line_r();
+	void interrupt_line_w(offs_t offset, uint8_t data, uint8_t mem_mask = ~0);
+	uint8_t interrupt_pin_r();
+	void interrupt_pin_w(offs_t offset, uint8_t data, uint8_t mem_mask = ~0);
 
 protected:
 	pci_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock);
@@ -99,7 +86,7 @@ protected:
 	};
 
 	struct bank_info {
-		address_map_delegate map;
+		address_map_constructor map;
 		device_t *device;
 
 		uint64_t adr;
@@ -129,9 +116,9 @@ protected:
 	virtual void device_reset() override;
 
 	void skip_map_regs(int count);
-	void add_map(uint64_t size, int flags, address_map_delegate &map, device_t *relative_to = nullptr);
+	void add_map(uint64_t size, int flags, const address_map_constructor &map, device_t *relative_to = nullptr);
 	template <typename T> void add_map(uint64_t size, int flags, void (T::*map)(address_map &map), const char *name) {
-		address_map_delegate delegate(map, name, static_cast<T *>(this));
+		address_map_constructor delegate(map, name, static_cast<T *>(this));
 		add_map(size, flags, delegate);
 	}
 
@@ -153,6 +140,11 @@ protected:
 
 class pci_bridge_device : public pci_device, public device_memory_interface {
 public:
+	pci_bridge_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock, uint32_t main_id, uint32_t revision)
+		: pci_bridge_device(mconfig, tag, owner, clock)
+	{
+		set_ids_bridge(main_id, revision);
+	}
 	pci_bridge_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 	virtual void set_remap_cb(mapper_cb _remap_cb) override;
@@ -160,44 +152,44 @@ public:
 							uint64_t io_window_start, uint64_t io_window_end, uint64_t io_offset, address_space *io_space) override;
 	virtual void reset_all_mappings() override;
 
-	virtual DECLARE_READ8_MEMBER(header_type_r) override;
+	virtual uint8_t header_type_r() override;
 
-	virtual DECLARE_ADDRESS_MAP(config_map, 32) override;
+	virtual void config_map(address_map &map) override;
 
-	DECLARE_READ32_MEMBER (b_address_base_r);
-	DECLARE_WRITE32_MEMBER(b_address_base_w);
-	DECLARE_READ8_MEMBER  (primary_bus_r);
-	DECLARE_WRITE8_MEMBER (primary_bus_w);
-	DECLARE_READ8_MEMBER  (secondary_bus_r);
-	DECLARE_WRITE8_MEMBER (secondary_bus_w);
-	DECLARE_READ8_MEMBER  (subordinate_bus_r);
-	DECLARE_WRITE8_MEMBER (subordinate_bus_w);
-	DECLARE_READ8_MEMBER  (secondary_latency_r);
-	DECLARE_WRITE8_MEMBER (secondary_latency_w);
-	DECLARE_READ8_MEMBER  (iobase_r);
-	DECLARE_WRITE8_MEMBER (iobase_w);
-	DECLARE_READ8_MEMBER  (iolimit_r);
-	DECLARE_WRITE8_MEMBER (iolimit_w);
-	DECLARE_READ16_MEMBER (secondary_status_r);
-	DECLARE_WRITE16_MEMBER(secondary_status_w);
-	DECLARE_READ16_MEMBER (memory_base_r);
-	DECLARE_WRITE16_MEMBER(memory_base_w);
-	DECLARE_READ16_MEMBER (memory_limit_r);
-	DECLARE_WRITE16_MEMBER(memory_limit_w);
-	DECLARE_READ16_MEMBER (prefetch_base_r);
-	DECLARE_WRITE16_MEMBER(prefetch_base_w);
-	DECLARE_READ16_MEMBER (prefetch_limit_r);
-	DECLARE_WRITE16_MEMBER(prefetch_limit_w);
-	DECLARE_READ32_MEMBER (prefetch_baseu_r);
-	DECLARE_WRITE32_MEMBER(prefetch_baseu_w);
-	DECLARE_READ32_MEMBER (prefetch_limitu_r);
-	DECLARE_WRITE32_MEMBER(prefetch_limitu_w);
-	DECLARE_READ16_MEMBER (iobaseu_r);
-	DECLARE_WRITE16_MEMBER(iobaseu_w);
-	DECLARE_READ16_MEMBER (iolimitu_r);
-	DECLARE_WRITE16_MEMBER(iolimitu_w);
-	DECLARE_READ16_MEMBER (bridge_control_r);
-	DECLARE_WRITE16_MEMBER(bridge_control_w);
+	uint32_t b_address_base_r(offs_t offset);
+	void b_address_base_w(offs_t offset, uint32_t data);
+	uint8_t primary_bus_r();
+	void primary_bus_w(uint8_t data);
+	uint8_t secondary_bus_r();
+	void secondary_bus_w(uint8_t data);
+	uint8_t subordinate_bus_r();
+	void subordinate_bus_w(uint8_t data);
+	uint8_t secondary_latency_r();
+	void secondary_latency_w(uint8_t data);
+	uint8_t iobase_r();
+	void iobase_w(uint8_t data);
+	uint8_t iolimit_r();
+	void iolimit_w(uint8_t data);
+	uint16_t secondary_status_r();
+	void secondary_status_w(uint16_t data);
+	uint16_t memory_base_r();
+	void memory_base_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t memory_limit_r();
+	void memory_limit_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t prefetch_base_r();
+	void prefetch_base_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t prefetch_limit_r();
+	void prefetch_limit_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint32_t prefetch_baseu_r();
+	void prefetch_baseu_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t prefetch_limitu_r();
+	void prefetch_limitu_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint16_t iobaseu_r();
+	void iobaseu_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t iolimitu_r();
+	void iolimitu_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t bridge_control_r();
+	void bridge_control_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
 
 protected:
 	enum
@@ -243,15 +235,15 @@ protected:
 
 class pci_host_device : public pci_bridge_device {
 public:
-	DECLARE_ADDRESS_MAP(io_configuration_access_map, 32);
+	void io_configuration_access_map(address_map &map);
 
 protected:
 	pci_host_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock);
 
-	DECLARE_READ32_MEMBER(config_address_r);
-	DECLARE_WRITE32_MEMBER(config_address_w);
-	DECLARE_READ32_MEMBER(config_data_r);
-	DECLARE_WRITE32_MEMBER(config_data_w);
+	uint32_t config_address_r();
+	void config_address_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t config_data_r(offs_t offset, uint32_t mem_mask = ~0);
+	void config_data_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
 
 	virtual void device_start() override;
 	virtual void device_reset() override;

@@ -4,7 +4,7 @@
 
 P.I.M.P.S. (Personal Interactive MicroProcessor System)
 
-06/12/2009 Skeleton driver.
+2009-12-06 Skeleton driver.
 
 No schematics or hardware info available.
 
@@ -57,7 +57,7 @@ Assembler:
  8-bit values MUST contain two hex digits or one quoted character. 16-bit
  constants MUST contain four hex digits or two quoted characters.
 
- Use 'S' instead if 'SP', eg: LXI S,$1000
+ Use 'S' instead of 'SP', eg: LXI S,$1000
 
  Only EQU, DB, DW and END directives are supported. An END statement is
  REQUIRED (otherwise you get the message '?tab-ful' as it fills the symbol
@@ -80,27 +80,36 @@ public:
 	pimps_state(const machine_config &mconfig, device_type type, const char *tag)
 		: driver_device(mconfig, type, tag)
 		, m_maincpu(*this, "maincpu")
+		, m_rom(*this, "roms")
+		, m_ram(*this, "mainram")
 	{ }
 
+	void pimps(machine_config &config);
+
 private:
+	void io_map(address_map &map);
+	void mem_map(address_map &map);
 	virtual void machine_reset() override;
+
+	memory_passthrough_handler *m_rom_shadow_tap;
 	required_device<cpu_device> m_maincpu;
+	required_region_ptr<u8> m_rom;
+	required_shared_ptr<u8> m_ram;
 };
 
 
-static ADDRESS_MAP_START(pimps_mem, AS_PROGRAM, 8, pimps_state)
-	ADDRESS_MAP_UNMAP_HIGH
-	AM_RANGE(0x0000, 0xefff) AM_RAM
-	AM_RANGE(0xf000, 0xffff) AM_ROM AM_REGION("roms", 0)
-ADDRESS_MAP_END
+void pimps_state::mem_map(address_map &map)
+{
+	map(0x0000, 0xefff).ram().share("mainram");
+	map(0xf000, 0xffff).rom().region("roms", 0);
+}
 
-static ADDRESS_MAP_START(pimps_io, AS_IO, 8, pimps_state)
-	ADDRESS_MAP_UNMAP_HIGH
-	AM_RANGE(0xf0, 0xf0) AM_DEVREADWRITE("uart1", i8251_device, data_r, data_w)
-	AM_RANGE(0xf1, 0xf1) AM_DEVREADWRITE("uart1", i8251_device, status_r, control_w)
-	AM_RANGE(0xf2, 0xf2) AM_DEVREADWRITE("uart2", i8251_device, data_r, data_w)
-	AM_RANGE(0xf3, 0xf3) AM_DEVREADWRITE("uart2", i8251_device, status_r, control_w)
-ADDRESS_MAP_END
+void pimps_state::io_map(address_map &map)
+{
+	map.unmap_value_high();
+	map(0xf0, 0xf1).rw("uart1", FUNC(i8251_device::read), FUNC(i8251_device::write));
+	map(0xf2, 0xf3).rw("uart2", FUNC(i8251_device::read), FUNC(i8251_device::write));
+}
 
 /* Input ports */
 static INPUT_PORTS_START( pimps )
@@ -109,7 +118,22 @@ INPUT_PORTS_END
 
 void pimps_state::machine_reset()
 {
-	m_maincpu->set_pc(0xf000);
+	address_space &program = m_maincpu->space(AS_PROGRAM);
+	program.install_rom(0x0000, 0x07ff, m_rom);   // do it here for F3
+	m_rom_shadow_tap = program.install_read_tap(0xf000, 0xf7ff, "rom_shadow_r",[this](offs_t offset, u8 &data, u8 mem_mask)
+	{
+		if (!machine().side_effects_disabled())
+		{
+			// delete this tap
+			m_rom_shadow_tap->remove();
+
+			// reinstall ram over the rom shadow
+			m_maincpu->space(AS_PROGRAM).install_ram(0x0000, 0x07ff, m_ram);
+		}
+
+		// return the original data
+		return data;
+	});
 }
 
 // baud is not documented, we will use 9600
@@ -122,47 +146,47 @@ static DEVICE_INPUT_DEFAULTS_START( terminal ) // set up terminal to default to 
 	DEVICE_INPUT_DEFAULTS( "RS232_STOPBITS", 0xff, RS232_STOPBITS_2 )
 DEVICE_INPUT_DEFAULTS_END
 
-static MACHINE_CONFIG_START( pimps )
-	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu",I8085A, XTAL_2MHz)
-	MCFG_CPU_PROGRAM_MAP(pimps_mem)
-	MCFG_CPU_IO_MAP(pimps_io)
+void pimps_state::pimps(machine_config &config)
+{
+	I8085A(config, m_maincpu, 2_MHz_XTAL);
+	m_maincpu->set_addrmap(AS_PROGRAM, &pimps_state::mem_map);
+	m_maincpu->set_addrmap(AS_IO, &pimps_state::io_map);
 
-	MCFG_DEVICE_ADD("uart_clock", CLOCK, 153600)
-	MCFG_CLOCK_SIGNAL_HANDLER(DEVWRITELINE("uart1", i8251_device, write_txc))
-	MCFG_DEVCB_CHAIN_OUTPUT(DEVWRITELINE("uart1", i8251_device, write_rxc))
-	MCFG_DEVCB_CHAIN_OUTPUT(DEVWRITELINE("uart2", i8251_device, write_txc))
-	MCFG_DEVCB_CHAIN_OUTPUT(DEVWRITELINE("uart2", i8251_device, write_rxc))
+	clock_device &uart_clock(CLOCK(config, "uart_clock", 153'600));
+	uart_clock.signal_handler().set("uart1", FUNC(i8251_device::write_txc));
+	uart_clock.signal_handler().append("uart1", FUNC(i8251_device::write_rxc));
+	uart_clock.signal_handler().append("uart2", FUNC(i8251_device::write_txc));
+	uart_clock.signal_handler().append("uart2", FUNC(i8251_device::write_rxc));
 
-	MCFG_DEVICE_ADD("uart1", I8251, 0)
-	MCFG_I8251_TXD_HANDLER(DEVWRITELINE("rs232a", rs232_port_device, write_txd))
-	MCFG_I8251_DTR_HANDLER(DEVWRITELINE("rs232a", rs232_port_device, write_dtr))
-	MCFG_I8251_RTS_HANDLER(DEVWRITELINE("rs232a", rs232_port_device, write_rts))
+	i8251_device &uart1(I8251(config, "uart1", 0));
+	uart1.txd_handler().set("rs232a", FUNC(rs232_port_device::write_txd));
+	uart1.dtr_handler().set("rs232a", FUNC(rs232_port_device::write_dtr));
+	uart1.rts_handler().set("rs232a", FUNC(rs232_port_device::write_rts));
 
-	MCFG_RS232_PORT_ADD("rs232a", default_rs232_devices, "terminal")
-	MCFG_RS232_RXD_HANDLER(DEVWRITELINE("uart1", i8251_device, write_rxd))
-	MCFG_RS232_DSR_HANDLER(DEVWRITELINE("uart1", i8251_device, write_dsr))
-	MCFG_RS232_CTS_HANDLER(DEVWRITELINE("uart1", i8251_device, write_cts))
-	MCFG_DEVICE_CARD_DEVICE_INPUT_DEFAULTS("terminal", terminal) // must be exactly here
+	rs232_port_device &rs232a(RS232_PORT(config, "rs232a", default_rs232_devices, "terminal"));
+	rs232a.rxd_handler().set("uart1", FUNC(i8251_device::write_rxd));
+	rs232a.dsr_handler().set("uart1", FUNC(i8251_device::write_dsr));
+	rs232a.cts_handler().set("uart1", FUNC(i8251_device::write_cts));
+	rs232a.set_option_device_input_defaults("terminal", DEVICE_INPUT_DEFAULTS_NAME(terminal)); // must be exactly here
 
-	MCFG_DEVICE_ADD("uart2", I8251, 0)
-	MCFG_I8251_TXD_HANDLER(DEVWRITELINE("rs232b", rs232_port_device, write_txd))
-	MCFG_I8251_DTR_HANDLER(DEVWRITELINE("rs232b", rs232_port_device, write_dtr))
-	MCFG_I8251_RTS_HANDLER(DEVWRITELINE("rs232b", rs232_port_device, write_rts))
+	i8251_device &uart2(I8251(config, "uart2", 0));
+	uart2.txd_handler().set("rs232b", FUNC(rs232_port_device::write_txd));
+	uart2.dtr_handler().set("rs232b", FUNC(rs232_port_device::write_dtr));
+	uart2.rts_handler().set("rs232b", FUNC(rs232_port_device::write_rts));
 
-	MCFG_RS232_PORT_ADD("rs232b", default_rs232_devices, nullptr)
-	MCFG_RS232_RXD_HANDLER(DEVWRITELINE("uart2", i8251_device, write_rxd))
-	MCFG_RS232_DSR_HANDLER(DEVWRITELINE("uart2", i8251_device, write_dsr))
-	MCFG_RS232_CTS_HANDLER(DEVWRITELINE("uart2", i8251_device, write_cts))
-MACHINE_CONFIG_END
+	rs232_port_device &rs232b(RS232_PORT(config, "rs232b", default_rs232_devices, nullptr));
+	rs232b.rxd_handler().set("uart2", FUNC(i8251_device::write_rxd));
+	rs232b.dsr_handler().set("uart2", FUNC(i8251_device::write_dsr));
+	rs232b.cts_handler().set("uart2", FUNC(i8251_device::write_cts));
+}
 
 /* ROM definition */
 ROM_START( pimps )
-	ROM_REGION( 0x1000, "roms", ROMREGION_ERASEFF )
+	ROM_REGION( 0x1000, "roms", 0 )
 	ROM_LOAD( "pimps.bin", 0x0000, 0x1000, CRC(5da1898f) SHA1(d20e31d0981a1f54c83186dbdfcf4280e49970d0))
 ROM_END
 
 /* Driver */
 
-/*    YEAR  NAME    PARENT  COMPAT   MACHINE    INPUT  STATE         INIT  COMPANY          FULLNAME      FLAGS */
-COMP( 197?, pimps,  0,      0,       pimps,     pimps, pimps_state,  0,    "Henry Colford", "P.I.M.P.S.", MACHINE_NO_SOUND_HW) // terminal beeps
+/*    YEAR  NAME   PARENT  COMPAT  MACHINE  INPUT  STATE        INIT        COMPANY          FULLNAME      FLAGS */
+COMP( 197?, pimps, 0,      0,      pimps,   pimps, pimps_state, empty_init, "Henry Colford", "P.I.M.P.S.", MACHINE_NO_SOUND_HW | MACHINE_SUPPORTS_SAVE ) // terminal beeps

@@ -34,33 +34,7 @@
 
 #pragma once
 
-#include "cpu/z80/z80daisy.h"
-
-
-//**************************************************************************
-//  DEVICE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_Z80DMA_OUT_BUSREQ_CB(_devcb) \
-	devcb = &z80dma_device::set_out_busreq_callback(*device, DEVCB_##_devcb);
-
-#define MCFG_Z80DMA_OUT_INT_CB(_devcb) \
-	devcb = &z80dma_device::set_out_int_callback(*device, DEVCB_##_devcb);
-
-#define MCFG_Z80DMA_OUT_BAO_CB(_devcb) \
-	devcb = &z80dma_device::set_out_bao_callback(*device, DEVCB_##_devcb);
-
-#define MCFG_Z80DMA_IN_MREQ_CB(_devcb) \
-	devcb = &z80dma_device::set_in_mreq_callback(*device, DEVCB_##_devcb);
-
-#define MCFG_Z80DMA_OUT_MREQ_CB(_devcb) \
-	devcb = &z80dma_device::set_out_mreq_callback(*device, DEVCB_##_devcb);
-
-#define MCFG_Z80DMA_IN_IORQ_CB(_devcb) \
-	devcb = &z80dma_device::set_in_iorq_callback(*device, DEVCB_##_devcb);
-
-#define MCFG_Z80DMA_OUT_IORQ_CB(_devcb) \
-	devcb = &z80dma_device::set_out_iorq_callback(*device, DEVCB_##_devcb);
+#include "machine/z80daisy.h"
 
 
 //**************************************************************************
@@ -77,19 +51,19 @@ public:
 	// construction/destruction
 	z80dma_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	template <class Object> static devcb_base &set_out_busreq_callback(device_t &device, Object &&cb) { return downcast<z80dma_device &>(device).m_out_busreq_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_out_int_callback(device_t &device, Object &&cb) { return downcast<z80dma_device &>(device).m_out_int_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_out_bao_callback(device_t &device, Object &&cb) { return downcast<z80dma_device &>(device).m_out_bao_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_in_mreq_callback(device_t &device, Object &&cb) { return downcast<z80dma_device &>(device).m_in_mreq_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_out_mreq_callback(device_t &device, Object &&cb) { return downcast<z80dma_device &>(device).m_out_mreq_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_in_iorq_callback(device_t &device, Object &&cb) { return downcast<z80dma_device &>(device).m_in_iorq_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_out_iorq_callback(device_t &device, Object &&cb) { return downcast<z80dma_device &>(device).m_out_iorq_cb.set_callback(std::forward<Object>(cb)); }
+	auto out_busreq_callback() { return m_out_busreq_cb.bind(); }
+	auto out_int_callback() { return m_out_int_cb.bind(); }
+	auto out_ieo_callback() { return m_out_ieo_cb.bind(); }
+	auto out_bao_callback() { return m_out_bao_cb.bind(); }
+	auto in_mreq_callback() { return m_in_mreq_cb.bind(); }
+	auto out_mreq_callback() { return m_out_mreq_cb.bind(); }
+	auto in_iorq_callback() { return m_in_iorq_cb.bind(); }
+	auto out_iorq_callback() { return m_out_iorq_cb.bind(); }
 
 	uint8_t read();
 	void write(uint8_t data);
-	DECLARE_READ8_MEMBER( read ) { return read(); }
-	DECLARE_WRITE8_MEMBER( write ) { write(data); }
 
+	DECLARE_WRITE_LINE_MEMBER(iei_w) { m_iei = state; interrupt_check(); }
 	DECLARE_WRITE_LINE_MEMBER(rdy_w);
 	DECLARE_WRITE_LINE_MEMBER(wait_w);
 	DECLARE_WRITE_LINE_MEMBER(bai_w);
@@ -122,6 +96,7 @@ private:
 	// internal state
 	devcb_write_line   m_out_busreq_cb;
 	devcb_write_line   m_out_int_cb;
+	devcb_write_line   m_out_ieo_cb;
 	devcb_write_line   m_out_bao_cb;
 	devcb_read8        m_in_mreq_cb;
 	devcb_write8       m_out_mreq_cb;
@@ -153,6 +128,7 @@ private:
 	uint8_t m_latch;
 
 	// interrupts
+	bool m_iei;
 	int m_ip;                   // interrupt pending
 	int m_ius;                  // interrupt under service
 	uint8_t m_vector;             // interrupt vector
@@ -160,7 +136,6 @@ private:
 
 
 // device type definition
-extern const device_type Z80DMA;
 DECLARE_DEVICE_TYPE(Z80DMA, z80dma_device)
 
 #endif // MAME_MACHINE_Z80DMA_H

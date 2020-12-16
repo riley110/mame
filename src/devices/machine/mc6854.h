@@ -14,25 +14,6 @@
 #pragma once
 
 
-#define MC6854_OUT_FRAME_CB(name)  void name(uint8_t * data, int length)
-
-
-#define MCFG_MC6854_OUT_IRQ_CB(_devcb) \
-	devcb = &mc6854_device::set_out_irq_callback(*device, DEVCB_##_devcb);
-
-#define MCFG_MC6854_OUT_TXD_CB(_devcb) \
-	devcb = &mc6854_device::set_out_txd_callback(*device, DEVCB_##_devcb);
-
-#define MCFG_MC6854_OUT_FRAME_CB(_class, _method) \
-	mc6854_device::set_out_frame_callback(*device, mc6854_device::out_frame_delegate(&_class::_method, #_class "::" #_method, downcast<_class *>(owner)));
-
-#define MCFG_MC6854_OUT_RTS_CB(_devcb) \
-	devcb = &mc6854_device::set_out_rts_callback(*device, DEVCB_##_devcb);
-
-#define MCFG_MC6854_OUT_DTR_CB(_devcb) \
-	devcb = &mc6854_device::set_out_dtr_callback(*device, DEVCB_##_devcb);
-
-
 class mc6854_device : public device_t
 {
 public:
@@ -40,17 +21,21 @@ public:
 
 	typedef device_delegate<void (uint8_t *data, int length)> out_frame_delegate;
 
-	mc6854_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+	mc6854_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock = 0);
 
-	template <class Object> static devcb_base &set_out_irq_callback(device_t &device, Object &&cb) { return downcast<mc6854_device &>(device).m_out_irq_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_out_txd_callback(device_t &device, Object &&cb) { return downcast<mc6854_device &>(device).m_out_txd_cb.set_callback(std::forward<Object>(cb)); }
-	static void set_out_frame_callback(device_t &device, out_frame_delegate &&callback) { downcast<mc6854_device &>(device).m_out_frame_cb = std::move(callback); }
-	template <class Object> static devcb_base &set_out_rts_callback(device_t &device, Object &&cb) { return downcast<mc6854_device &>(device).m_out_rts_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_out_dtr_callback(device_t &device, Object &&cb) { return downcast<mc6854_device &>(device).m_out_dtr_cb.set_callback(std::forward<Object>(cb)); }
+	auto out_irq_cb()  { return m_out_irq_cb.bind(); }
+	auto out_rdsr_cb() { return m_out_rdsr_cb.bind(); }
+	auto out_tdsr_cb() { return m_out_tdsr_cb.bind(); }
+	auto out_txd_cb()  { return m_out_txd_cb.bind(); }
+	auto out_rts_cb()  { return m_out_rts_cb.bind(); }
+	auto out_dtr_cb()  { return m_out_dtr_cb.bind(); }
+
+	template <typename... T> void set_out_frame_callback(T &&... args) { m_out_frame_cb.set(std::forward<T>(args)...); }
 
 	/* interface to CPU via address/data bus*/
-	DECLARE_READ8_MEMBER( read );
-	DECLARE_WRITE8_MEMBER( write );
+	uint8_t read(offs_t offset);
+	void write(offs_t offset, uint8_t data);
+	uint8_t dma_r(){ return read(2); }
 
 	/* low-level, bit-based interface */
 	DECLARE_WRITE_LINE_MEMBER( set_rx );
@@ -70,17 +55,20 @@ protected:
 	// device-level overrides
 	virtual void device_start() override;
 	virtual void device_reset() override;
+	bool receive_allowed() const;
 
 private:
 	static constexpr unsigned FIFO_SIZE = 3; // hardcoded size of the 6854 FIFO (this is a hardware limit)
 
 	// internal state
 	devcb_write_line  m_out_irq_cb; /* interrupt request */
+	devcb_write_line  m_out_rdsr_cb; /* Rx fifo DMA request */
+	devcb_write_line  m_out_tdsr_cb; /* Tx fifo DMA request */
 
 	/* low-level, bit-based interface */
 	devcb_write_line  m_out_txd_cb; /* transmit bit */
 
-		/* high-level, frame-based interface */
+	/* high-level, frame-based interface */
 	out_frame_delegate   m_out_frame_cb;
 
 	/* control lines */
@@ -105,6 +93,8 @@ private:
 	uint8_t  m_rones;             /* count '1 bits */
 	uint8_t  m_rsize;             /* bits in the shift register */
 	uint16_t m_rfifo[FIFO_SIZE];  /* X x 8-bit FIFO + full & addr marker bits */
+	bool     m_rxd;
+	bool     m_rxc;
 
 	/* frame-based interface*/
 	uint8_t  m_frame[MAX_FRAME_LENGTH];
@@ -150,6 +140,7 @@ DECLARE_DEVICE_TYPE(MC6854, mc6854_device)
    The frame-based interface is higher-level and faster.
    It passes bytes directly from one end to the other without bothering with
    the actual bit-encoding, synchronization, and CRC.
+
    Once completed, a frame is sent through out_frame. Aborted frames are not
    transmitted at all. No start flag, stop flag, or crc bits are transmitted.
    send_frame makes a frame available to the CPU through the 6854 (it may

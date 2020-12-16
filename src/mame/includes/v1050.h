@@ -5,12 +5,11 @@
 
 #pragma once
 
-#pragma once
-
 #include "cpu/z80/z80.h"
 #include "cpu/m6502/m6502.h"
 #include "bus/centronics/ctronics.h"
 #include "bus/scsi/s1410.h"
+#include "imagedev/floppy.h"
 #include "machine/clock.h"
 #include "machine/i8214.h"
 #include "machine/i8251.h"
@@ -23,6 +22,7 @@
 #include "machine/v1050kb.h"
 #include "machine/wd_fdc.h"
 #include "video/mc6845.h"
+#include "emupal.h"
 
 #define SCREEN_TAG              "screen"
 
@@ -63,8 +63,8 @@
 class v1050_state : public driver_device
 {
 public:
-	v1050_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
+	v1050_state(const machine_config &mconfig, device_type type, const char *tag) :
+		driver_device(mconfig, type, tag),
 		m_maincpu(*this, Z80_TAG),
 		m_subcpu(*this, M6502_TAG),
 		m_pic(*this, UPB8214_TAG),
@@ -99,36 +99,40 @@ public:
 	{
 	}
 
-	DECLARE_READ8_MEMBER( kb_data_r );
-	DECLARE_READ8_MEMBER( kb_status_r );
-	DECLARE_WRITE8_MEMBER( v1050_i8214_w );
-	DECLARE_READ8_MEMBER( vint_clr_r );
-	DECLARE_WRITE8_MEMBER( vint_clr_w );
-	DECLARE_READ8_MEMBER( dint_clr_r );
-	DECLARE_WRITE8_MEMBER( dint_clr_w );
-	DECLARE_WRITE8_MEMBER( bank_w );
-	DECLARE_WRITE8_MEMBER( dint_w );
-	DECLARE_WRITE8_MEMBER( dvint_clr_w );
-	DECLARE_WRITE8_MEMBER( misc_ppi_pa_w );
-	DECLARE_WRITE8_MEMBER( misc_ppi_pc_w );
-	DECLARE_READ8_MEMBER( rtc_ppi_pa_r );
-	DECLARE_WRITE8_MEMBER( rtc_ppi_pa_w );
-	DECLARE_WRITE8_MEMBER( rtc_ppi_pb_w );
-	DECLARE_READ8_MEMBER( rtc_ppi_pc_r );
-	DECLARE_WRITE8_MEMBER( rtc_ppi_pc_w );
+	void v1050(machine_config &config);
+	void v1050_video(machine_config &config);
+
+private:
+	uint8_t kb_data_r();
+	uint8_t kb_status_r();
+	void v1050_i8214_w(uint8_t data);
+	uint8_t vint_clr_r();
+	void vint_clr_w(uint8_t data);
+	uint8_t dint_clr_r();
+	void dint_clr_w(uint8_t data);
+	void bank_w(uint8_t data);
+	void dint_w(uint8_t data);
+	void dvint_clr_w(uint8_t data);
+	void misc_ppi_pa_w(uint8_t data);
+	void misc_ppi_pc_w(uint8_t data);
+	uint8_t rtc_ppi_pa_r();
+	void rtc_ppi_pa_w(uint8_t data);
+	void rtc_ppi_pb_w(uint8_t data);
+	uint8_t rtc_ppi_pc_r();
+	void rtc_ppi_pc_w(uint8_t data);
 	DECLARE_WRITE_LINE_MEMBER( kb_rxrdy_w );
 	DECLARE_WRITE_LINE_MEMBER( sio_rxrdy_w );
 	DECLARE_WRITE_LINE_MEMBER( sio_txrdy_w );
 	DECLARE_WRITE_LINE_MEMBER( fdc_intrq_w );
 	DECLARE_WRITE_LINE_MEMBER( fdc_drq_w );
-	DECLARE_READ8_MEMBER( attr_r );
-	DECLARE_WRITE8_MEMBER( attr_w );
-	DECLARE_READ8_MEMBER( videoram_r );
-	DECLARE_WRITE8_MEMBER( videoram_w );
+	uint8_t attr_r();
+	void attr_w(uint8_t data);
+	uint8_t videoram_r(offs_t offset);
+	void videoram_w(offs_t offset, uint8_t data);
 	DECLARE_WRITE_LINE_MEMBER( crtc_vs_w );
-	DECLARE_WRITE8_MEMBER(sasi_data_w);
+	void sasi_data_w(uint8_t data);
 	DECLARE_WRITE_LINE_MEMBER(write_sasi_io);
-	DECLARE_WRITE8_MEMBER( sasi_ctrl_w );
+	void sasi_ctrl_w(uint8_t data);
 
 	WRITE_LINE_MEMBER( rtc_ppi_pa_0_w ){ m_rtc_ppi_pa = (m_rtc_ppi_pa & ~(1 << 0)) | ((state & 1) << 0); }
 	WRITE_LINE_MEMBER( rtc_ppi_pa_1_w ){ m_rtc_ppi_pa = (m_rtc_ppi_pa & ~(1 << 1)) | ((state & 1) << 1); }
@@ -142,9 +146,9 @@ public:
 	DECLARE_WRITE_LINE_MEMBER(write_keyboard_clock);
 	DECLARE_WRITE_LINE_MEMBER(write_sio_clock);
 	DECLARE_WRITE_LINE_MEMBER(pic_int_w);
-	DECLARE_WRITE8_MEMBER(disp_ppi_pc_w);
-	DECLARE_WRITE8_MEMBER(m6502_ppi_pc_w);
-	DECLARE_READ8_MEMBER(misc_ppi_pc_r);
+	void disp_ppi_pc_w(uint8_t data);
+	void m6502_ppi_pc_w(uint8_t data);
+	uint8_t misc_ppi_pc_r();
 	IRQ_CALLBACK_MEMBER(v1050_int_ack);
 
 	DECLARE_WRITE_LINE_MEMBER(write_centronics_busy);
@@ -152,13 +156,15 @@ public:
 
 	MC6845_UPDATE_ROW(crtc_update_row);
 
-protected:
+	void v1050_crt_mem(address_map &map);
+	void v1050_io(address_map &map);
+	void v1050_mem(address_map &map);
+
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
 
 	virtual void video_start() override;
 
-private:
 	void bankswitch();
 	void update_fdc();
 	void set_interrupt(int line, int state);
@@ -226,9 +232,5 @@ private:
 	int m_centronics_busy;
 	int m_centronics_perror;
 };
-
-//----------- defined in video/v1050.c -----------
-
-MACHINE_CONFIG_EXTERN( v1050_video );
 
 #endif // MAME_INCLUDES_V1050_H

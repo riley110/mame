@@ -37,19 +37,6 @@
 
 
 //**************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_YM2151_ADD(_tag, _clock) \
-	MCFG_DEVICE_ADD(_tag, YM2151, _clock)
-
-#define MCFG_YM2151_IRQ_HANDLER(_devcb) \
-	devcb = &ym2151_device::set_irq_handler(*device, DEVCB_##_devcb);
-#define MCFG_YM2151_PORT_WRITE_HANDLER(_devcb) \
-	devcb = &ym2151_device::set_port_write_handler(*device, DEVCB_##_devcb);
-
-
-//**************************************************************************
 //  TYPE DEFINITIONS
 //**************************************************************************
 
@@ -63,22 +50,24 @@ public:
 	// construction/destruction
 	ym2151_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	// static configuration helpers
-	template <class Object> static devcb_base &set_irq_handler(device_t &device, Object &&cb) { return downcast<ym2151_device &>(device).m_irqhandler.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_port_write_handler(device_t &device, Object &&cb) { return downcast<ym2151_device &>(device).m_portwritehandler.set_callback(std::forward<Object>(cb)); }
+	// configuration helpers
+	auto irq_handler() { return m_irqhandler.bind(); }
+	auto port_write_handler() { return m_portwritehandler.bind(); }
 
 	// read/write
-	DECLARE_READ8_MEMBER(read);
-	DECLARE_WRITE8_MEMBER(write);
+	u8 read(offs_t offset);
+	void write(offs_t offset, u8 data);
 
-	DECLARE_READ8_MEMBER(status_r);
-	DECLARE_WRITE8_MEMBER(register_w);
-	DECLARE_WRITE8_MEMBER(data_w);
+	u8 status_r();
+	void register_w(u8 data);
+	void data_w(u8 data);
 
 	DECLARE_WRITE_LINE_MEMBER(reset_w);
 
 protected:
 	// device-level overrides
+	ym2151_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock);
+
 	virtual void device_start() override;
 	virtual void device_reset() override;
 	virtual void device_timer(emu_timer &timer, device_timer_id id, int param, void *ptr) override;
@@ -87,6 +76,9 @@ protected:
 
 	// sound stream update overrides
 	virtual void sound_stream_update(sound_stream &stream, stream_sample_t **inputs, stream_sample_t **outputs, int samples) override;
+
+	virtual void calculate_timers();
+	virtual void write_reg(int r, int v);
 
 private:
 	enum {
@@ -221,8 +213,11 @@ private:
 	emu_timer   *timer_A, *timer_A_irq_off;
 	emu_timer   *timer_B, *timer_B_irq_off;
 
+protected:
 	attotime    timer_A_time[1024];     /* timer A times for MAME */
 	attotime    timer_B_time[256];      /* timer B times for MAME */
+
+private:
 	int         irqlinestate;
 
 	uint32_t      timer_A_index;          /* timer A index */
@@ -253,8 +248,6 @@ private:
 	*/
 	int32_t       dt1_freq[8*32];         /* 8 DT1 levels, 32 KC values */
 
-	uint32_t      noise_tab[32];          /* 17bit Noise Generator periods */
-
 	// internal state
 	sound_stream *         m_stream;
 	uint8_t                  m_lastreg;
@@ -263,12 +256,10 @@ private:
 	bool                   m_reset_active;
 
 	void init_tables();
-	void calculate_timers();
 	void envelope_KONKOFF(YM2151Operator * op, int v);
 	void set_connect(YM2151Operator *om1, int cha, int v);
 	void advance();
 	void advance_eg();
-	void write_reg(int r, int v);
 	void chan_calc(unsigned int chan);
 	void chan7_calc();
 	int op_calc(YM2151Operator * OP, unsigned int env, signed int pm);
@@ -276,9 +267,32 @@ private:
 	void refresh_EG(YM2151Operator * op);
 };
 
+// ======================> ym2164_device
+
+class ym2164_device : public ym2151_device
+{
+public:
+	// construction/destruction
+	ym2164_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+
+protected:
+	virtual void calculate_timers() override;
+	virtual void write_reg(int r, int v) override;
+};
+
+// ======================> ym2414_device
+
+class ym2414_device : public ym2151_device
+{
+public:
+	// construction/destruction
+	ym2414_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+};
 
 // device type definition
 DECLARE_DEVICE_TYPE(YM2151, ym2151_device)
+DECLARE_DEVICE_TYPE(YM2164, ym2164_device)
+DECLARE_DEVICE_TYPE(YM2414, ym2414_device)
 
 
 #endif // MAME_SOUND_YM2151_H

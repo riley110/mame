@@ -5,25 +5,26 @@
 
 #pragma once
 
+#define EXIDY440_AUDIO_CLOCK    (XTAL(12'979'200) / 4)
+#define EXIDY440_MC3418_CLOCK   (EXIDY440_AUDIO_CLOCK / 4 / 16)
+#define EXIDY440_MC3417_CLOCK   (EXIDY440_AUDIO_CLOCK / 4 / 32)
+
+
 class exidy440_sound_device : public device_t, public device_sound_interface
 {
 public:
 	exidy440_sound_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 	~exidy440_sound_device() {}
 
-	DECLARE_READ8_MEMBER( sound_command_r );
-	DECLARE_READ8_MEMBER( sound_volume_r );
-	DECLARE_WRITE8_MEMBER( sound_volume_w );
-	DECLARE_WRITE8_MEMBER( sound_interrupt_clear_w );
-	DECLARE_READ8_MEMBER( m6844_r );
-	DECLARE_WRITE8_MEMBER( m6844_w );
-	DECLARE_WRITE8_MEMBER( sound_banks_w );
-
 	void exidy440_sound_command(uint8_t param);
 	uint8_t exidy440_sound_command_ack();
 
+	DECLARE_WRITE_LINE_MEMBER(sound_interrupt_w);
+	DECLARE_WRITE_LINE_MEMBER(sound_reset_w);
+
 protected:
 	// device-level overrides
+	virtual void device_add_mconfig(machine_config &config) override;
 	virtual void device_start() override;
 	virtual void device_stop() override;
 
@@ -31,6 +32,8 @@ protected:
 	virtual void sound_stream_update(sound_stream &stream, stream_sample_t **inputs, stream_sample_t **outputs, int samples) override;
 
 private:
+	void exidy440_audio_map(address_map &map);
+
 	/* channel_data structure holds info about each 6844 DMA channel */
 	struct m6844_channel_data
 	{
@@ -63,6 +66,8 @@ private:
 		int16_t data[1];
 	};
 
+	required_device<cpu_device> m_audiocpu;
+	required_region_ptr<uint8_t> m_samples;
 
 	// internal state
 	uint8_t m_sound_command;
@@ -107,10 +112,17 @@ private:
 
 	void add_and_scale_samples(int ch, int32_t *dest, int samples, int volume);
 	void mix_to_16(int length, stream_sample_t *dest_left, stream_sample_t *dest_right);
+
+	uint8_t sound_command_r();
+	uint8_t sound_volume_r(offs_t offset);
+	void sound_volume_w(offs_t offset, uint8_t data);
+	void sound_interrupt_clear_w(uint8_t data);
+	uint8_t m6844_r(offs_t offset);
+	void m6844_w(offs_t offset, uint8_t data);
+	void sound_banks_w(offs_t offset, uint8_t data);
 };
 
 DECLARE_DEVICE_TYPE(EXIDY440, exidy440_sound_device)
 
-MACHINE_CONFIG_EXTERN( exidy440_audio );
 
 #endif // MAME_AUDIO_EXIDY440_H

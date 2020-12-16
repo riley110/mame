@@ -11,6 +11,7 @@
 #ifndef PCECOMMON_H
 #define PCECOMMON_H
 
+#include "cpu/h6280/h6280.h"
 #include "video/huc6260.h"
 #include "video/huc6270.h"
 #define PCE_MAIN_CLOCK      21477270
@@ -23,12 +24,12 @@ public:
 		m_maincpu(*this, "maincpu"),
 		m_huc6260(*this, "huc6260") { }
 
-	DECLARE_WRITE8_MEMBER(pce_joystick_w);
-	DECLARE_READ8_MEMBER(pce_joystick_r);
+	void pce_joystick_w(uint8_t data);
+	uint8_t pce_joystick_r();
 
-	DECLARE_DRIVER_INIT(pce_common);
+	void init_pce_common();
 
-	required_device<cpu_device> m_maincpu;
+	required_device<h6280_device> m_maincpu;
 
 	virtual uint8_t joy_read();
 	uint32_t screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);

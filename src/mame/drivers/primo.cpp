@@ -104,47 +104,57 @@ I/O Ports:
 Interrupts:
     NMI - 20ms (50HZ), can be disbled/enabled by I/O write
 
+ToDO:
+- primoc64 works, but it seems it should be used with a commodore 64
+  disk drive. This isn't emulated.
+
 *******************************************************************************/
 
 #include "emu.h"
 #include "includes/primo.h"
 
 #include "cpu/z80/z80.h"
-#include "sound/wave.h"
+#include "emupal.h"
 #include "screen.h"
 #include "speaker.h"
 
 #include "formats/primoptp.h"
 
 
-static ADDRESS_MAP_START( primoa_port, AS_IO, 8, primo_state )
-	ADDRESS_MAP_GLOBAL_MASK(0xff)
-	AM_RANGE( 0x00, 0x3f ) AM_READWRITE(primo_be_1_r, primo_ki_1_w )
-	AM_RANGE( 0xfd, 0xfd ) AM_WRITE(primo_FD_w )
-ADDRESS_MAP_END
+void primo_state::primoa_io(address_map &map)
+{
+	map.global_mask(0xff);
+	map(0x00, 0x3f).rw(FUNC(primo_state::be_1_r), FUNC(primo_state::ki_1_w));
+	map(0xfd, 0xfd).w(FUNC(primo_state::FD_w));
+}
 
-static ADDRESS_MAP_START( primob_port, AS_IO, 8, primo_state )
-	ADDRESS_MAP_GLOBAL_MASK(0xff)
-	AM_RANGE( 0x00, 0x3f ) AM_READWRITE(primo_be_1_r, primo_ki_1_w )
-	AM_RANGE( 0x40, 0x7f ) AM_READWRITE(primo_be_2_r, primo_ki_2_w )
-	AM_RANGE( 0xfd, 0xfd ) AM_WRITE(primo_FD_w )
-ADDRESS_MAP_END
+void primo_state::primob_io(address_map &map)
+{
+	map.global_mask(0xff);
+	map(0x00, 0x3f).rw(FUNC(primo_state::be_1_r), FUNC(primo_state::ki_1_w));
+	map(0x40, 0x7f).rw(FUNC(primo_state::be_2_r), FUNC(primo_state::ki_2_w));
+	map(0xfd, 0xfd).w(FUNC(primo_state::FD_w));
+}
 
-static ADDRESS_MAP_START( primo32_mem, AS_PROGRAM, 8, primo_state )
-	AM_RANGE( 0x0000, 0x3fff ) AM_RAMBANK("bank1")
-	AM_RANGE( 0x4000, 0x7fff ) AM_RAM AM_MIRROR ( 0x8000 )
-ADDRESS_MAP_END
+void primo_state::primo32_mem(address_map &map)
+{
+	map(0x0000, 0x3fff).bankrw("bank1");
+	map(0x4000, 0x7fff).ram().share("videoram").mirror(0x8000);
+}
 
-static ADDRESS_MAP_START( primo48_mem, AS_PROGRAM, 8, primo_state )
-	AM_RANGE( 0x0000, 0x3fff ) AM_RAMBANK("bank1")
-	AM_RANGE( 0x4000, 0x7fff ) AM_RAM
-	AM_RANGE( 0x8000, 0xbfff ) AM_RAM AM_MIRROR ( 0x4000 )
-ADDRESS_MAP_END
+void primo_state::primo48_mem(address_map &map)
+{
+	map(0x0000, 0x3fff).bankrw("bank1");
+	map(0x4000, 0x7fff).ram();
+	map(0x8000, 0xbfff).ram().share("videoram").mirror(0x4000);
+}
 
-static ADDRESS_MAP_START( primo64_mem, AS_PROGRAM, 8, primo_state )
-	AM_RANGE( 0x0000, 0x3fff ) AM_RAMBANK("bank1")
-	AM_RANGE( 0x4000, 0xffff ) AM_RAM
-ADDRESS_MAP_END
+void primo_state::primo64_mem(address_map &map)
+{
+	map(0x0000, 0x3fff).bankrw("bank1");
+	map(0x4000, 0xbfff).ram();
+	map(0xc000, 0xffff).ram().share("videoram");
+}
 
 static INPUT_PORTS_START( primo )
 	PORT_START( "IN0" )
@@ -240,144 +250,146 @@ static const struct CassetteOptions primo_cassette_options = {
 	22050   /* sample frequency */
 };
 
-static MACHINE_CONFIG_START( primoa32 )
+void primo_state::primoa32(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_CPU_ADD( "maincpu", Z80, 2500000 )
-	MCFG_CPU_PROGRAM_MAP( primo32_mem)
-	MCFG_CPU_IO_MAP( primoa_port)
-	MCFG_CPU_VBLANK_INT_DRIVER("screen", primo_state,  primo_vblank_interrupt)
+	Z80(config, m_maincpu, 2500000);
+	m_maincpu->set_addrmap(AS_PROGRAM, &primo_state::primo32_mem);
+	m_maincpu->set_addrmap(AS_IO, &primo_state::primoa_io);
 
 	/* video hardware */
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_REFRESH_RATE( 50 )
-	MCFG_SCREEN_VBLANK_TIME(ATTOSECONDS_IN_USEC(2500)) /* not accurate */
-	MCFG_SCREEN_SIZE( 256, 192 )
-	MCFG_SCREEN_VISIBLE_AREA( 0, 256-1, 0, 192-1 )
-	MCFG_SCREEN_UPDATE_DRIVER(primo_state, screen_update_primo)
-	MCFG_SCREEN_PALETTE("palette")
+	SCREEN(config, m_screen, SCREEN_TYPE_RASTER);
+	m_screen->set_refresh_hz(50);
+	m_screen->set_vblank_time(ATTOSECONDS_IN_USEC(2500)); /* not accurate */
+	m_screen->set_size(256, 192);
+	m_screen->set_visarea(0, 256-1, 0, 192-1);
+	m_screen->set_screen_update(FUNC(primo_state::screen_update));
+	m_screen->set_palette("palette");
+	m_screen->screen_vblank().set(FUNC(primo_state::vblank_irq));
 
-	MCFG_PALETTE_ADD_MONOCHROME("palette")
+	PALETTE(config, "palette", palette_device::MONOCHROME);
 
 	/* sound hardware */
-	MCFG_SPEAKER_STANDARD_MONO("mono")
-	MCFG_SOUND_WAVE_ADD(WAVE_TAG, "cassette")
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.25)
-	MCFG_SOUND_ADD("speaker", SPEAKER_SOUND, 0)
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.50)
+	SPEAKER(config, "mono").front_center();
+	SPEAKER_SOUND(config, "speaker").add_route(ALL_OUTPUTS, "mono", 0.50);
 
 	/* snapshot/quickload */
-	MCFG_SNAPSHOT_ADD("snapshot", primo_state, primo, "pss", 0)
-	MCFG_QUICKLOAD_ADD("quickload", primo_state, primo, "pp", 0)
+	SNAPSHOT(config, "snapshot", "pss").set_load_callback(FUNC(primo_state::snapshot_cb));
+	QUICKLOAD(config, "quickload", "pp").set_load_callback(FUNC(primo_state::quickload_cb));
 
-	MCFG_CASSETTE_ADD( "cassette" )
-	MCFG_CASSETTE_FORMATS(primo_ptp_format)
-	MCFG_CASSETTE_CREATE_OPTS(&primo_cassette_options)
-	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_STOPPED | CASSETTE_SPEAKER_ENABLED)
+	CASSETTE(config, m_cassette);
+	m_cassette->set_formats(primo_ptp_format);
+	m_cassette->set_create_opts(&primo_cassette_options);
+	m_cassette->set_default_state(CASSETTE_STOPPED | CASSETTE_SPEAKER_ENABLED);
+	m_cassette->add_route(ALL_OUTPUTS, "mono", 0.05);
 
 	/* floppy from serial bus */
-	MCFG_CBM_IEC_ADD(nullptr)
+	cbm_iec_slot_device::add(config, m_iec, nullptr);
 
 	/* cartridge */
-	MCFG_GENERIC_CARTSLOT_ADD("cartslot1", generic_plain_slot, nullptr)
-	MCFG_GENERIC_EXTENSIONS("bin,rom")
-	MCFG_GENERIC_CARTSLOT_ADD("cartslot2", generic_plain_slot, nullptr)
-	MCFG_GENERIC_EXTENSIONS("bin,rom")
-MACHINE_CONFIG_END
+	GENERIC_CARTSLOT(config, m_cart1, generic_plain_slot, nullptr, "bin,rom");
+	GENERIC_CARTSLOT(config, m_cart2, generic_plain_slot, nullptr, "bin,rom");
+}
 
-static MACHINE_CONFIG_DERIVED( primoa48, primoa32 )
-	MCFG_CPU_MODIFY("maincpu")
-	MCFG_CPU_PROGRAM_MAP(primo48_mem)
-MACHINE_CONFIG_END
+void primo_state::primoa48(machine_config &config)
+{
+	primoa32(config);
+	m_maincpu->set_addrmap(AS_PROGRAM, &primo_state::primo48_mem);
+}
 
-static MACHINE_CONFIG_DERIVED( primoa64, primoa32 )
-	MCFG_CPU_MODIFY("maincpu")
-	MCFG_CPU_PROGRAM_MAP(primo64_mem)
-MACHINE_CONFIG_END
+void primo_state::primoa64(machine_config &config)
+{
+	primoa32(config);
+	m_maincpu->set_addrmap(AS_PROGRAM, &primo_state::primo64_mem);
+}
 
-static MACHINE_CONFIG_DERIVED( primob32, primoa32 )
-	MCFG_CPU_MODIFY("maincpu")
-	MCFG_CPU_IO_MAP(primob_port)
-
-	MCFG_MACHINE_RESET_OVERRIDE(primo_state, primob)
-MACHINE_CONFIG_END
-
-static MACHINE_CONFIG_DERIVED( primob48, primoa48 )
-	MCFG_CPU_MODIFY("maincpu")
-	MCFG_CPU_IO_MAP(primob_port)
+void primo_state::primob32(machine_config &config)
+{
+	primoa32(config);
+	m_maincpu->set_addrmap(AS_IO, &primo_state::primob_io);
 
 	MCFG_MACHINE_RESET_OVERRIDE(primo_state, primob)
-MACHINE_CONFIG_END
+}
 
-static MACHINE_CONFIG_DERIVED( primob64, primoa64 )
-	MCFG_CPU_MODIFY("maincpu")
-	MCFG_CPU_IO_MAP(primob_port)
-
-	MCFG_MACHINE_RESET_OVERRIDE(primo_state, primob)
-MACHINE_CONFIG_END
-
-static MACHINE_CONFIG_DERIVED( primoc64, primoa64 )
-	MCFG_CPU_MODIFY("maincpu")
-	MCFG_CPU_IO_MAP(primob_port)
+void primo_state::primob48(machine_config &config)
+{
+	primoa48(config);
+	m_maincpu->set_addrmap(AS_IO, &primo_state::primob_io);
 
 	MCFG_MACHINE_RESET_OVERRIDE(primo_state, primob)
-MACHINE_CONFIG_END
+}
+
+void primo_state::primob64(machine_config &config)
+{
+	primoa64(config);
+	m_maincpu->set_addrmap(AS_IO, &primo_state::primob_io);
+
+	MCFG_MACHINE_RESET_OVERRIDE(primo_state, primob)
+}
+
+void primo_state::primoc64(machine_config &config)
+{
+	primoa64(config);
+	m_maincpu->set_addrmap(AS_IO, &primo_state::primob_io);
+
+	MCFG_MACHINE_RESET_OVERRIDE(primo_state, primob)
+}
 
 ROM_START( primoa32 )
-	ROM_REGION( 0x14000, "maincpu", ROMREGION_ERASEFF )
-	ROM_LOAD( "a32_1.rom", 0x10000, 0x1000, CRC(4e91c1a4) SHA1(bf6e41b6b36a2556a50065e9acfd8cd57968f039) )
-	ROM_LOAD( "a32_2.rom", 0x11000, 0x1000, CRC(81a8a0fb) SHA1(df75bd7774969cabb062e50da6004f2efbde489e) )
-	ROM_LOAD( "a32_3.rom", 0x12000, 0x1000, CRC(a97de2f5) SHA1(743c76121f5b9e1eab35c8c00797311f58da5243) )
-	ROM_LOAD( "a32_4.rom", 0x13000, 0x1000, CRC(70f84bc8) SHA1(9ae1c06531edf20c14ba47e78c0747dd2a92612a) )
+	ROM_REGION( 0x4000, "maincpu", 0 )
+	ROM_LOAD( "a32_1.rom", 0x0000, 0x1000, CRC(4e91c1a4) SHA1(bf6e41b6b36a2556a50065e9acfd8cd57968f039) )
+	ROM_LOAD( "a32_2.rom", 0x1000, 0x1000, CRC(81a8a0fb) SHA1(df75bd7774969cabb062e50da6004f2efbde489e) )
+	ROM_LOAD( "a32_3.rom", 0x2000, 0x1000, CRC(a97de2f5) SHA1(743c76121f5b9e1eab35c8c00797311f58da5243) )
+	ROM_LOAD( "a32_4.rom", 0x3000, 0x1000, CRC(70f84bc8) SHA1(9ae1c06531edf20c14ba47e78c0747dd2a92612a) )
 ROM_END
 
 ROM_START( primoa48 )
-	ROM_REGION( 0x14000, "maincpu", ROMREGION_ERASEFF )
-	ROM_LOAD( "a48_1.rom", 0x10000, 0x1000, CRC(7de6ad6f) SHA1(f2fd6fac4f9bc57c646efe40281758bb7c3f56e1) )
-	ROM_LOAD( "a48_2.rom", 0x11000, 0x1000, CRC(81a8a0fb) SHA1(df75bd7774969cabb062e50da6004f2efbde489e) )
-	ROM_LOAD( "a48_3.rom", 0x12000, 0x1000, CRC(a97de2f5) SHA1(743c76121f5b9e1eab35c8c00797311f58da5243) )
-	ROM_LOAD( "a48_4.rom", 0x13000, 0x1000, CRC(e4d0c452) SHA1(4a98ff7502f1236445250d6b4e1c34850734350e) )
+	ROM_REGION( 0x4000, "maincpu", 0 )
+	ROM_LOAD( "a48_1.rom", 0x0000, 0x1000, CRC(7de6ad6f) SHA1(f2fd6fac4f9bc57c646efe40281758bb7c3f56e1) )
+	ROM_LOAD( "a48_2.rom", 0x1000, 0x1000, CRC(81a8a0fb) SHA1(df75bd7774969cabb062e50da6004f2efbde489e) )
+	ROM_LOAD( "a48_3.rom", 0x2000, 0x1000, CRC(a97de2f5) SHA1(743c76121f5b9e1eab35c8c00797311f58da5243) )
+	ROM_LOAD( "a48_4.rom", 0x3000, 0x1000, CRC(e4d0c452) SHA1(4a98ff7502f1236445250d6b4e1c34850734350e) )
 ROM_END
 
 ROM_START( primoa64 )
-	ROM_REGION( 0x14000, "maincpu", ROMREGION_ERASEFF )
-	ROM_SYSTEM_BIOS(0, "ver1", "ver 1")
-	ROM_LOAD( "a64_1.rom", 0x10000, 0x1000, CRC(6a7a9b9b) SHA1(e9ce16f90d9a799a26a9cef09d9ee6a6d7749484) )
-	ROM_LOAD( "a64_2.rom", 0x11000, 0x1000, CRC(81a8a0fb) SHA1(df75bd7774969cabb062e50da6004f2efbde489e) )
-	ROM_LOAD( "a64_3.rom", 0x12000, 0x1000, CRC(a97de2f5) SHA1(743c76121f5b9e1eab35c8c00797311f58da5243) )
-	ROM_LOAD( "a64_4.rom", 0x13000, 0x1000, CRC(e4d0c452) SHA1(4a98ff7502f1236445250d6b4e1c34850734350e) )
+	ROM_REGION( 0x4000, "maincpu", 0 )
+	ROM_LOAD( "a64_1.rom", 0x0000, 0x1000, CRC(6a7a9b9b) SHA1(e9ce16f90d9a799a26a9cef09d9ee6a6d7749484) )
+	ROM_LOAD( "a64_2.rom", 0x1000, 0x1000, CRC(81a8a0fb) SHA1(df75bd7774969cabb062e50da6004f2efbde489e) )
+	ROM_LOAD( "a64_3.rom", 0x2000, 0x1000, CRC(a97de2f5) SHA1(743c76121f5b9e1eab35c8c00797311f58da5243) )
+	ROM_LOAD( "a64_4.rom", 0x3000, 0x1000, CRC(e4d0c452) SHA1(4a98ff7502f1236445250d6b4e1c34850734350e) )
 ROM_END
 
 ROM_START( primob32 )
-	ROM_REGION( 0x14000, "maincpu", ROMREGION_ERASEFF )
-	ROM_LOAD( "b32.rom",   0x10000, 0x4000, CRC(f594d2bb) SHA1(b74961dba008a1a6f15a22ddbd1b89acd7e286c2) )
+	ROM_REGION( 0x4000, "maincpu", 0 )
+	ROM_LOAD( "b32.rom",   0x0000, 0x4000, CRC(f594d2bb) SHA1(b74961dba008a1a6f15a22ddbd1b89acd7e286c2) )
 ROM_END
 
 ROM_START( primob48 )
-	ROM_REGION( 0x14000, "maincpu", ROMREGION_ERASEFF )
-	ROM_LOAD( "b48.rom",   0x10000, 0x4000, CRC(df3d2a57) SHA1(ab9413aa9d7749d30a486da00bc8c6d178a2172c) )
+	ROM_REGION( 0x4000, "maincpu", 0 )
+	ROM_LOAD( "b48.rom",   0x0000, 0x4000, CRC(df3d2a57) SHA1(ab9413aa9d7749d30a486da00bc8c6d178a2172c) )
 ROM_END
 
 ROM_START( primob64 )
-	ROM_REGION( 0x14000, "maincpu", ROMREGION_ERASEFF )
+	ROM_REGION( 0x4000, "maincpu", 0 )
 	ROM_SYSTEM_BIOS(0, "standard", "Standard")
-	ROMX_LOAD( "b64.rom",     0x10000, 0x4000, CRC(cea28188) SHA1(a77e42e97402e601b78ab3751eac1e85d0bbb4a0), ROM_BIOS(1) )
+	ROMX_LOAD( "b64.rom",     0x0000, 0x4000, CRC(cea28188) SHA1(a77e42e97402e601b78ab3751eac1e85d0bbb4a0), ROM_BIOS(0) )
 	ROM_SYSTEM_BIOS(1, "cdos", "CDOS")
-	ROMX_LOAD( "b64cdos.rom", 0x10000, 0x4000, CRC(73305e4d) SHA1(c090c3430cdf19eed8363377b981e1c21a4ed169), ROM_BIOS(2) )
+	ROMX_LOAD( "b64cdos.rom", 0x0000, 0x4000, CRC(73305e4d) SHA1(c090c3430cdf19eed8363377b981e1c21a4ed169), ROM_BIOS(1) )
 ROM_END
 
 ROM_START( primoc64 )
-	ROM_REGION( 0x14000, "maincpu", ROMREGION_ERASEFF )
-	ROM_LOAD( "c64_1.rom", 0x10000, 0x1000, CRC(c22290ea) SHA1(af5c73f6d0f7a987c4f082a5cb69e3f016127d57) )
-	ROM_LOAD( "c64_2.rom", 0x11000, 0x1000, CRC(0756b56e) SHA1(589dbdb7c43ca7ca29ed1e56e080adf8c069e407) )
-	ROM_LOAD( "c64_3.rom", 0x12000, 0x1000, CRC(fc56e0af) SHA1(b547fd270d3413400bc800f5b7ea9153b7a59bff) )
-	ROM_LOAD( "c64_4.rom", 0x13000, 0x1000, CRC(3770e3e6) SHA1(792cc71d8f89eb447f94aded5afc70d626a26030) )
+	ROM_REGION( 0x4000, "maincpu", 0 )
+	ROM_LOAD( "c64_1.rom", 0x0000, 0x1000, CRC(c22290ea) SHA1(af5c73f6d0f7a987c4f082a5cb69e3f016127d57) )
+	ROM_LOAD( "c64_2.rom", 0x1000, 0x1000, CRC(0756b56e) SHA1(589dbdb7c43ca7ca29ed1e56e080adf8c069e407) )
+	ROM_LOAD( "c64_3.rom", 0x2000, 0x1000, CRC(fc56e0af) SHA1(b547fd270d3413400bc800f5b7ea9153b7a59bff) )
+	ROM_LOAD( "c64_4.rom", 0x3000, 0x1000, CRC(3770e3e6) SHA1(792cc71d8f89eb447f94aded5afc70d626a26030) )
 ROM_END
 
-//     YEAR  NAME      PARENT    COMPAT MACHINE   INPUT  STATE        INIT     COMPANY     FULLNAME       FLAGS
-COMP ( 1984, primoa32, 0,        0,     primoa32, primo, primo_state, primo32, "Microkey", "Primo A-32" , 0 )
-COMP ( 1984, primoa48, primoa32, 0,     primoa48, primo, primo_state, primo48, "Microkey", "Primo A-48" , 0 )
-COMP ( 1984, primoa64, primoa32, 0,     primoa64, primo, primo_state, primo64, "Microkey", "Primo A-64" , 0 )
-COMP ( 1984, primob32, primoa32, 0,     primob32, primo, primo_state, primo32, "Microkey", "Primo B-32" , 0 )
-COMP ( 1984, primob48, primoa32, 0,     primob48, primo, primo_state, primo48, "Microkey", "Primo B-48" , 0 )
-COMP ( 1984, primob64, primoa32, 0,     primob64, primo, primo_state, primo64, "Microkey", "Primo B-64" , 0 )
-COMP ( 1984, primoc64, primoa32, 0,     primoc64, primo, primo_state, primo64, "Microkey", "Primo C-64" , MACHINE_NOT_WORKING )
+//    YEAR  NAME      PARENT    COMPAT  MACHINE   INPUT  CLASS        INIT        COMPANY     FULLNAME      FLAGS
+COMP( 1984, primoa32, 0,        0,      primoa32, primo, primo_state, init_primo, "Microkey", "Primo A-32", MACHINE_SUPPORTS_SAVE )
+COMP( 1984, primoa48, primoa32, 0,      primoa48, primo, primo_state, init_primo, "Microkey", "Primo A-48", MACHINE_SUPPORTS_SAVE )
+COMP( 1984, primoa64, primoa32, 0,      primoa64, primo, primo_state, init_primo, "Microkey", "Primo A-64", MACHINE_SUPPORTS_SAVE )
+COMP( 1984, primob32, primoa32, 0,      primob32, primo, primo_state, init_primo, "Microkey", "Primo B-32", MACHINE_SUPPORTS_SAVE )
+COMP( 1984, primob48, primoa32, 0,      primob48, primo, primo_state, init_primo, "Microkey", "Primo B-48", MACHINE_SUPPORTS_SAVE )
+COMP( 1984, primob64, primoa32, 0,      primob64, primo, primo_state, init_primo, "Microkey", "Primo B-64", MACHINE_SUPPORTS_SAVE )
+COMP( 1984, primoc64, primoa32, 0,      primoc64, primo, primo_state, init_primo, "Microkey", "Primo C-64", MACHINE_NOT_WORKING | MACHINE_SUPPORTS_SAVE )

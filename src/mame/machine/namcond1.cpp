@@ -52,7 +52,7 @@ void namcond1_state::machine_reset()
 }
 
 // $c3ff00-$c3ffff
-READ16_MEMBER(namcond1_state::cuskey_r)
+uint16_t namcond1_state::cuskey_r(offs_t offset)
 {
 	switch( offset )
 	{
@@ -64,13 +64,13 @@ READ16_MEMBER(namcond1_state::cuskey_r)
 			return( 0x0000 );
 
 		default :
-			logerror( "offset $%X accessed from $%X\n",
-						offset<<1, space.device().safe_pc() );
+			logerror("%s offset $%X accessed\n",
+				machine().describe_context(), offset << 1);
 			return( 0 );
 	}
 }
 
-WRITE16_MEMBER(namcond1_state::cuskey_w)
+void namcond1_state::cuskey_w(offs_t offset, uint16_t data)
 {
 	switch( offset )
 	{
@@ -84,7 +84,7 @@ WRITE16_MEMBER(namcond1_state::cuskey_w)
 			break;
 
 		case (0x0c>>1):
-			m_ygv608->set_gfxbank((data & 0x0002) >> 1); // i think
+			m_ygv608->set_gfxbank(data & 0x0003);
 			// bit 0 used in abcheck during garbage screens, tile/color select of some kind?
 			break;
 

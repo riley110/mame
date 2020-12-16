@@ -3,8 +3,8 @@
 #include "emu.h"
 #include "null_modem.h"
 
-null_modem_device::null_modem_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
-	: device_t(mconfig, NULL_MODEM, tag, owner, clock),
+null_modem_device::null_modem_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock) :
+	device_t(mconfig, NULL_MODEM, tag, owner, clock),
 	device_serial_interface(mconfig, *this),
 	device_rs232_port_interface(mconfig, *this),
 	m_stream(*this, "stream"),
@@ -18,25 +18,31 @@ null_modem_device::null_modem_device(const machine_config &mconfig, const char *
 	m_input_count(0),
 	m_input_index(0),
 	m_timer_poll(nullptr),
-	m_rts(0)
+	m_rts(0),
+	m_dtr(0),
+	m_xoff(0)
 {
 }
 
-MACHINE_CONFIG_MEMBER(null_modem_device::device_add_mconfig)
-	MCFG_DEVICE_ADD("stream", BITBANGER, 0)
-MACHINE_CONFIG_END
+void null_modem_device::device_add_mconfig(machine_config &config)
+{
+	BITBANGER(config, m_stream, 0);
+}
 
 static INPUT_PORTS_START(null_modem)
-	MCFG_RS232_BAUD("RS232_TXBAUD", RS232_BAUD_9600, "TX Baud", null_modem_device, update_serial)
-	MCFG_RS232_BAUD("RS232_RXBAUD", RS232_BAUD_9600, "RX Baud", null_modem_device, update_serial)
-	MCFG_RS232_STARTBITS("RS232_STARTBITS", RS232_STARTBITS_1, "Start Bits", null_modem_device, update_serial)
-	MCFG_RS232_DATABITS("RS232_DATABITS", RS232_DATABITS_8, "Data Bits", null_modem_device, update_serial)
-	MCFG_RS232_PARITY("RS232_PARITY", RS232_PARITY_NONE, "Parity", null_modem_device, update_serial)
-	MCFG_RS232_STOPBITS("RS232_STOPBITS", RS232_STOPBITS_1, "Stop Bits", null_modem_device, update_serial)
+	PORT_RS232_BAUD("RS232_TXBAUD", RS232_BAUD_9600, "TX Baud", null_modem_device, update_serial)
+	PORT_RS232_BAUD("RS232_RXBAUD", RS232_BAUD_9600, "RX Baud", null_modem_device, update_serial)
+	PORT_RS232_STARTBITS("RS232_STARTBITS", RS232_STARTBITS_1, "Start Bits", null_modem_device, update_serial)
+	PORT_RS232_DATABITS("RS232_DATABITS", RS232_DATABITS_8, "Data Bits", null_modem_device, update_serial)
+	PORT_RS232_PARITY("RS232_PARITY", RS232_PARITY_NONE, "Parity", null_modem_device, update_serial)
+	PORT_RS232_STOPBITS("RS232_STOPBITS", RS232_STOPBITS_1, "Stop Bits", null_modem_device, update_serial)
+
 	PORT_START("FLOW_CONTROL")
-	PORT_CONFNAME(0x01, 0x00, "Flow Control")
+	PORT_CONFNAME(0x07, 0x00, "Flow Control")
 	PORT_CONFSETTING(0x00, "Off")
-	PORT_CONFSETTING(0x01, "On")
+	PORT_CONFSETTING(0x01, "RTS")
+	PORT_CONFSETTING(0x02, "DTR")
+	PORT_CONFSETTING(0x04, "XON/XOFF")
 INPUT_PORTS_END
 
 ioport_constructor null_modem_device::device_input_ports() const
@@ -72,6 +78,8 @@ WRITE_LINE_MEMBER(null_modem_device::update_serial)
 	output_cts(0);
 
 	m_rts = 0;
+	m_dtr = 0;
+	m_xoff = 0;
 }
 
 void null_modem_device::device_reset()
@@ -103,17 +111,20 @@ void null_modem_device::queue()
 			m_input_count = m_stream->input(m_input_buffer, sizeof(m_input_buffer));
 		}
 
-		if (m_input_count != 0 && (m_rts == 0 || !m_flow->read()))
+		if (m_input_count != 0)
 		{
-			transmit_register_setup(m_input_buffer[m_input_index++]);
+			uint8_t fc = m_flow->read();
 
-			m_timer_poll->adjust(attotime::never);
+			if (fc == 0 || (fc == 1 && m_rts == 0) || (fc == 2 && m_dtr == 0) || (fc == 4 && m_xoff == 0))
+			{
+				transmit_register_setup(m_input_buffer[m_input_index++]);
+				m_timer_poll->adjust(attotime::never);
+				return;
+			}
 		}
-		else
-		{
-			int txbaud = convert_baud(m_rs232_txbaud->read());
-			m_timer_poll->adjust(attotime::from_hz(txbaud));
-		}
+
+		int txbaud = convert_baud(m_rs232_txbaud->read());
+		m_timer_poll->adjust(attotime::from_hz(txbaud));
 	}
 }
 
@@ -129,8 +140,32 @@ void null_modem_device::tra_complete()
 
 void null_modem_device::rcv_complete()
 {
+	u8 data;
+
 	receive_register_extract();
-	m_stream->output(get_received_char());
+
+	data = get_received_char();
+	if (m_flow->read() != 4)
+	{
+		m_stream->output(data);
+	}
+	else
+	{
+		switch (data)
+		{
+		case 0x13: // XOFF
+			m_xoff = 1;
+			return;
+
+		case 0x11: // XON
+			m_xoff = 0;
+			return;
+
+		default:
+			break;
+		}
+		m_stream->output(data);
+	}
 }
 
 DEFINE_DEVICE_TYPE(NULL_MODEM, null_modem_device, "null_modem", "RS232 Null Modem")

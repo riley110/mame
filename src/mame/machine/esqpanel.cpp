@@ -12,12 +12,13 @@
 // External panel support
 //**************************************************************************
 
+#include <list>
 #include <mutex>
 #include <set>
 #include <sstream>
 #include <string>
 #include <thread>
-#include <list>
+
 
 namespace esqpanel {
 
@@ -154,7 +155,7 @@ namespace esqpanel {
 			m_to_send.put(c);
 			const std::string &s = m_to_send.str();
 
-			for (auto iter: m_panels)
+			for (const auto &iter: m_panels)
 			{
 				external_panel_ptr panel = iter.second;
 				if (panel->send_display_data())
@@ -215,7 +216,7 @@ namespace esqpanel {
 				}
 
 				// Echo the non-command message to any other connected panels that want it
-				for (auto iter: m_panels)
+				for (const auto &iter: m_panels)
 				{
 					external_panel_ptr other_panel = iter.second;
 					if (other_panel != panel && (t & other_panel->send_message_types()) != 0)
@@ -415,6 +416,7 @@ esqpanel_device::esqpanel_device(const machine_config &mconfig, device_type type
 	m_write_tx(*this),
 	m_write_analog(*this)
 {
+	std::fill(std::begin(m_xmitring), std::end(m_xmitring), 0);
 }
 
 
@@ -655,9 +657,10 @@ void esqpanel_device::set_analog_value(offs_t offset, uint16_t value)
 
 /* panel with 1x22 VFD display used in the EPS-16 and EPS-16 Plus */
 
-MACHINE_CONFIG_MEMBER(esqpanel1x22_device::device_add_mconfig)
-	MCFG_ESQ1X22_ADD("vfd")
-MACHINE_CONFIG_END
+void esqpanel1x22_device::device_add_mconfig(machine_config &config)
+{
+	ESQ1X22(config, m_vfd, 60);
+}
 
 
 esqpanel1x22_device::esqpanel1x22_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock) :
@@ -669,9 +672,10 @@ esqpanel1x22_device::esqpanel1x22_device(const machine_config &mconfig, const ch
 
 /* panel with 2x40 VFD display used in the ESQ-1, SQ-80 */
 
-MACHINE_CONFIG_MEMBER(esqpanel2x40_device::device_add_mconfig)
-	MCFG_ESQ2X40_ADD("vfd")
-MACHINE_CONFIG_END
+void esqpanel2x40_device::device_add_mconfig(machine_config &config)
+{
+	ESQ2X40(config, m_vfd, 60);
+}
 
 
 esqpanel2x40_device::esqpanel2x40_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock) :
@@ -683,9 +687,10 @@ esqpanel2x40_device::esqpanel2x40_device(const machine_config &mconfig, const ch
 
 /* panel with 2x40 VFD display used in the VFX, VFX-SD, SD-1 series */
 
-MACHINE_CONFIG_MEMBER(esqpanel2x40_vfx_device::device_add_mconfig)
-	MCFG_ESQ2X40_ADD("vfd")
-MACHINE_CONFIG_END
+void esqpanel2x40_vfx_device::device_add_mconfig(machine_config &config)
+{
+	ESQ2X40(config, m_vfd, 60);
+}
 
 esqpanel2x40_vfx_device::esqpanel2x40_vfx_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock) :
 	esqpanel_device(mconfig, ESQPANEL2X40_VFX, tag, owner, clock),
@@ -708,9 +713,10 @@ bool esqpanel2x40_vfx_device::write_contents(std::ostream &o)
 
 
 // --- SQ1 - Parduz --------------------------------------------------------------------------------------------------------------------------
-MACHINE_CONFIG_MEMBER(esqpanel2x16_sq1_device::device_add_mconfig)
-	MCFG_ESQ2X16_SQ1_ADD("vfd")
-MACHINE_CONFIG_END
+void esqpanel2x16_sq1_device::device_add_mconfig(machine_config &config)
+{
+	ESQ2X16_SQ1(config, m_vfd, 60);
+}
 
 // --- SQ1 - Parduz --------------------------------------------------------------------------------------------------------------------------
 esqpanel2x16_sq1_device::esqpanel2x16_sq1_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock) :

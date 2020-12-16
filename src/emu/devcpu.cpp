@@ -2,7 +2,7 @@
 // copyright-holders:Aaron Giles
 /***************************************************************************
 
-    devcpu.c
+    devcpu.cpp
 
     CPU device definitions.
 
@@ -10,7 +10,7 @@
 
 #include "emu.h"
 #include "emuopts.h"
-#include <ctype.h>
+#include <cctype>
 
 
 //**************************************************************************
@@ -38,17 +38,6 @@ cpu_device::cpu_device(const machine_config &mconfig, device_type type, const ch
 
 cpu_device::~cpu_device()
 {
-}
-
-
-//-------------------------------------------------
-//  static_set_force_no_drc - configuration helper
-//  to disable DRC
-//-------------------------------------------------
-
-void cpu_device::static_set_force_no_drc(device_t &device, bool value)
-{
-	downcast<cpu_device &>(device).m_force_no_drc = value;
 }
 
 

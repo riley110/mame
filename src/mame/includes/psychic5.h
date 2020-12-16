@@ -4,6 +4,8 @@
 #include "machine/bankdev.h"
 #include "machine/timer.h"
 #include "video/jalblend.h"
+#include "emupal.h"
+#include "tilemap.h"
 
 class psychic5_state : public driver_device
 {
@@ -26,6 +28,10 @@ public:
 
 	{ }
 
+	void psychic5(machine_config &config);
+	void bombsa(machine_config &config);
+
+private:
 	required_device<cpu_device> m_maincpu;
 	required_device<cpu_device> m_audiocpu;
 	required_device<gfxdecode_device> m_gfxdecode;
@@ -53,24 +59,24 @@ public:
 	int m_sy1;
 	int m_sy2;
 
-	DECLARE_READ8_MEMBER(bankselect_r);
-	DECLARE_READ8_MEMBER(vram_page_select_r);
-	DECLARE_WRITE8_MEMBER(vram_page_select_w);
-	DECLARE_WRITE8_MEMBER(fg_videoram_w);
-	DECLARE_WRITE8_MEMBER(bg_videoram_w);
-	DECLARE_WRITE8_MEMBER(sprite_col_w);
-	DECLARE_WRITE8_MEMBER(bg_col_w);
-	DECLARE_WRITE8_MEMBER(tx_col_w);
+	uint8_t bankselect_r();
+	uint8_t vram_page_select_r();
+	void vram_page_select_w(uint8_t data);
+	void fg_videoram_w(offs_t offset, uint8_t data);
+	void bg_videoram_w(offs_t offset, uint8_t data);
+	void sprite_col_w(offs_t offset, uint8_t data);
+	void bg_col_w(offs_t offset, uint8_t data);
+	void tx_col_w(offs_t offset, uint8_t data);
 
 	/* psychic5 specific */
-	DECLARE_WRITE8_MEMBER(psychic5_coin_counter_w);
-	DECLARE_WRITE8_MEMBER(psychic5_bankselect_w);
-	DECLARE_WRITE8_MEMBER(psychic5_title_screen_w);
+	void psychic5_coin_counter_w(uint8_t data);
+	void psychic5_bankselect_w(uint8_t data);
+	void psychic5_title_screen_w(uint8_t data);
 
 	/* bombsa specific */
-	DECLARE_WRITE8_MEMBER(bombsa_bankselect_w);
-	DECLARE_WRITE8_MEMBER(bombsa_flipscreen_w);
-	DECLARE_WRITE8_MEMBER(bombsa_unknown_w);
+	void bombsa_bankselect_w(uint8_t data);
+	void bombsa_flipscreen_w(uint8_t data);
+	void bombsa_unknown_w(uint8_t data);
 
 	TILE_GET_INFO_MEMBER(get_bg_tile_info);
 	TILE_GET_INFO_MEMBER(get_fg_tile_info);
@@ -81,7 +87,7 @@ public:
 	virtual void video_start() override;
 	DECLARE_VIDEO_START(psychic5);
 	DECLARE_VIDEO_START(bombsa);
-	DECLARE_VIDEO_RESET(psychic5);
+	virtual void video_reset() override;
 
 	TIMER_DEVICE_CALLBACK_MEMBER(scanline);
 
@@ -91,5 +97,13 @@ public:
 	void change_bg_palette(int color, int lo_offs, int hi_offs);
 	void set_background_palette_intensity();
 	void draw_sprites(bitmap_rgb32 &bitmap, const rectangle &cliprect);
+	void bombsa_main_map(address_map &map);
+	void bombsa_sound_map(address_map &map);
+	void bombsa_soundport_map(address_map &map);
+	void bombsa_vrambank_map(address_map &map);
+	void psychic5_main_map(address_map &map);
+	void psychic5_sound_map(address_map &map);
+	void psychic5_soundport_map(address_map &map);
+	void psychic5_vrambank_map(address_map &map);
 	void draw_background(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect); //only used by psychic5
 };

@@ -36,75 +36,68 @@ enum
 
 ******************************************************************************/
 
-PALETTE_INIT_MEMBER(nbmj8688_state,mbmj8688_8bit)
+void nbmj8688_state::mbmj8688_8bit(palette_device &palette) const
 {
-	int i;
-	int bit0, bit1, bit2, r, g, b;
-
-	/* initialize 332 RGB lookup */
-	for (i = 0; i < 0x100; i++)
+	// initialize 332 RGB lookup
+	for (int i = 0; i < 0x100; i++)
 	{
+		int bit0, bit1, bit2;
+
 		// xxxxxxxx_bbgggrrr
-		/* red component */
-		bit0 = ((i >> 0) & 0x01);
-		bit1 = ((i >> 1) & 0x01);
-		bit2 = ((i >> 2) & 0x01);
-		r = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
-		/* green component */
-		bit0 = ((i >> 3) & 0x01);
-		bit1 = ((i >> 4) & 0x01);
-		bit2 = ((i >> 5) & 0x01);
-		g = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
-		/* blue component */
+		// red component
+		bit0 = BIT(i, 0);
+		bit1 = BIT(i, 1);
+		bit2 = BIT(i, 2);
+		int const r = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
+		// green component
+		bit0 = BIT(i, 3);
+		bit1 = BIT(i, 4);
+		bit2 = BIT(i, 5);
+		int const g = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
+		// blue component
 		bit0 = 0;
-		bit1 = ((i >> 6) & 0x01);
-		bit2 = ((i >> 7) & 0x01);
-		b = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
+		bit1 = BIT(i, 6);
+		bit2 = BIT(i, 7);
+		int const b = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 
 		palette.set_pen_color(i, rgb_t(r, g, b));
 	}
 }
 
-PALETTE_INIT_MEMBER(nbmj8688_state,mbmj8688_12bit)
+void nbmj8688_state::mbmj8688_12bit(palette_device &palette) const
 {
-	int i;
-	int r, g, b;
-
-	/* initialize 444 RGB lookup */
-	for (i = 0; i < 0x1000; i++)
+	// initialize 444 RGB lookup
+	for (int i = 0; i < 0x1000; i++)
 	{
 		// high and low bytes swapped for convenience
-		r = ((i & 0x07) << 1) | (((i >> 8) & 0x01) >> 0);
-		g = ((i & 0x38) >> 2) | (((i >> 8) & 0x02) >> 1);
-		b = ((i & 0xc0) >> 4) | (((i >> 8) & 0x0c) >> 2);
+		int const r = ((i & 0x07) << 1) | (((i >> 8) & 0x01) >> 0);
+		int const g = ((i & 0x38) >> 2) | (((i >> 8) & 0x02) >> 1);
+		int const b = ((i & 0xc0) >> 4) | (((i >> 8) & 0x0c) >> 2);
 
 		palette.set_pen_color(i, pal4bit(r), pal4bit(g), pal4bit(b));
 	}
 }
 
-PALETTE_INIT_MEMBER(nbmj8688_state,mbmj8688_16bit)
+void nbmj8688_state::mbmj8688_16bit(palette_device &palette) const
 {
-	int i;
-	int r, g, b;
-
-	/* initialize 655 RGB lookup */
-	for (i = 0; i < 0x10000; i++)
+	// initialize 655 RGB lookup
+	for (int i = 0; i < 0x10000; i++)
 	{
-		r = (((i & 0x0700) >>  5) | ((i & 0x0007) >>  0));  // R 6bit
-		g = (((i & 0x3800) >>  9) | ((i & 0x0018) >>  3));  // G 5bit
-		b = (((i & 0xc000) >> 11) | ((i & 0x00e0) >>  5));  // B 5bit
+		int const r = (((i & 0x0700) >>  5) | ((i & 0x0007) >>  0));  // R 6bit
+		int const g = (((i & 0x3800) >>  9) | ((i & 0x0018) >>  3));  // G 5bit
+		int const b = (((i & 0xc000) >> 11) | ((i & 0x00e0) >>  5));  // B 5bit
 
 		palette.set_pen_color(i, pal6bit(r), pal5bit(g), pal5bit(b));
 	}
 }
 
-PALETTE_INIT_MEMBER(nbmj8688_state,mbmj8688_lcd)
+void nbmj8688_state::mbmj8688_lcd(palette_device &palette) const
 {
 	palette.set_pen_color(0, rgb_t(28, 123, 57));
 	palette.set_pen_color(1, rgb_t(0, 0, 0));
 }
 
-WRITE8_MEMBER(nbmj8688_state::clut_w)
+void nbmj8688_state::clut_w(offs_t offset, uint8_t data)
 {
 	m_clut[offset] = (data ^ 0xff);
 }
@@ -114,7 +107,7 @@ WRITE8_MEMBER(nbmj8688_state::clut_w)
 
 ******************************************************************************/
 
-WRITE8_MEMBER(nbmj8688_state::blitter_w)
+void nbmj8688_state::blitter_w(offs_t offset, uint8_t data)
 {
 	switch (offset)
 	{
@@ -137,7 +130,7 @@ WRITE8_MEMBER(nbmj8688_state::blitter_w)
 	}
 }
 
-WRITE8_MEMBER(nbmj8688_state::mjsikaku_gfxflag2_w)
+void nbmj8688_state::mjsikaku_gfxflag2_w(uint8_t data)
 {
 	m_gfxflag2 = data;
 
@@ -152,17 +145,17 @@ WRITE8_MEMBER(nbmj8688_state::mjsikaku_gfxflag2_w)
 		m_gfxflag2 |= 0x20;
 }
 
-WRITE8_MEMBER(nbmj8688_state::mjsikaku_gfxflag3_w)
+void nbmj8688_state::mjsikaku_gfxflag3_w(uint8_t data)
 {
 	m_gfxflag3 = (data & 0xe0);
 }
 
-WRITE8_MEMBER(nbmj8688_state::scrolly_w)
+void nbmj8688_state::scrolly_w(uint8_t data)
 {
 	m_scrolly = data;
 }
 
-WRITE8_MEMBER(nbmj8688_state::mjsikaku_romsel_w)
+void nbmj8688_state::mjsikaku_romsel_w(uint8_t data)
 {
 	int gfxlen = memregion("gfx1")->bytes();
 	m_gfxrom = (data & 0x0f);
@@ -176,11 +169,11 @@ WRITE8_MEMBER(nbmj8688_state::mjsikaku_romsel_w)
 	}
 }
 
-WRITE8_MEMBER(nbmj8688_state::secolove_romsel_w)
+void nbmj8688_state::secolove_romsel_w(uint8_t data)
 {
 	int gfxlen = memregion("gfx1")->bytes();
 	m_gfxrom = ((data & 0xc0) >> 4) + (data & 0x03);
-	mjsikaku_gfxflag2_w(space, 0, data);
+	mjsikaku_gfxflag2_w(data);
 
 	if ((m_gfxrom << 17) > (gfxlen - 1))
 	{
@@ -191,11 +184,11 @@ WRITE8_MEMBER(nbmj8688_state::secolove_romsel_w)
 	}
 }
 
-WRITE8_MEMBER(nbmj8688_state::crystalg_romsel_w)
+void nbmj8688_state::crystalg_romsel_w(uint8_t data)
 {
 	int gfxlen = memregion("gfx1")->bytes();
 	m_gfxrom = (data & 0x03);
-	mjsikaku_gfxflag2_w(space, 0, data);
+	mjsikaku_gfxflag2_w(data);
 
 	if ((m_gfxrom << 17) > (gfxlen - 1))
 	{
@@ -206,11 +199,11 @@ WRITE8_MEMBER(nbmj8688_state::crystalg_romsel_w)
 	}
 }
 
-WRITE8_MEMBER(nbmj8688_state::seiha_romsel_w)
+void nbmj8688_state::seiha_romsel_w(uint8_t data)
 {
 	int gfxlen = memregion("gfx1")->bytes();
 	m_gfxrom = (data & 0x1f);
-	mjsikaku_gfxflag3_w(space, 0, data);
+	mjsikaku_gfxflag3_w(data);
 
 	if ((m_gfxrom << 17) > (gfxlen - 1))
 	{
@@ -273,10 +266,10 @@ void nbmj8688_state::device_timer(emu_timer &timer, device_timer_id id, int para
 	switch (id)
 	{
 	case TIMER_BLITTER:
-		m_nb1413m3->m_busyflag = 1;
+		m_nb1413m3->busyflag_w(1);
 		break;
 	default:
-		assert_always(false, "Unknown id in nbmj8688_state::device_timer");
+		throw emu_fatalerror("Unknown id in nbmj8688_state::device_timer");
 	}
 }
 
@@ -532,7 +525,7 @@ void nbmj8688_state::gfxdraw(int gfxtype)
 		}
 	}
 
-	m_nb1413m3->m_busyflag = 0;
+	m_nb1413m3->busyflag_w(0);
 
 	if (gfxtype == GFXTYPE_8BIT)
 		m_blitter_timer->adjust(attotime::from_hz(400000) * m_nb1413m3->m_busyctr);
@@ -557,8 +550,8 @@ void nbmj8688_state::common_video_start()
 	m_scrolly = 0;  // reset because crystalg/crystal2 don't write to this register
 	m_screen_refresh = 1;
 
-	save_pointer(NAME(m_videoram.get()), 512 * 256);
-	save_pointer(NAME(m_clut.get()), 0x20);
+	save_pointer(NAME(m_videoram), 512 * 256);
+	save_pointer(NAME(m_clut), 0x20);
 	save_item(NAME(m_scrolly));
 	save_item(NAME(m_blitter_destx));
 	save_item(NAME(m_blitter_desty));
@@ -618,16 +611,16 @@ VIDEO_START_MEMBER(nbmj8688_state,mbmj8688_pure_16bit_LCD)
 	common_video_start();
 }
 
-WRITE8_MEMBER(nbmj8688_state::HD61830B_both_instr_w)
+void nbmj8688_state::HD61830B_both_instr_w(uint8_t data)
 {
-	m_lcdc0->control_w(space, offset, data);
-	m_lcdc1->control_w(space, offset, data);
+	m_lcdc0->control_w(data);
+	m_lcdc1->control_w(data);
 }
 
-WRITE8_MEMBER(nbmj8688_state::HD61830B_both_data_w)
+void nbmj8688_state::HD61830B_both_data_w(uint8_t data)
 {
-	m_lcdc0->data_w(space, offset, data);
-	m_lcdc1->data_w(space, offset, data);
+	m_lcdc0->data_w(data);
+	m_lcdc1->data_w(data);
 }
 
 
@@ -641,11 +634,6 @@ WRITE8_MEMBER(nbmj8688_state::HD61830B_both_data_w)
 uint32_t nbmj8688_state::screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect)
 {
 	int x, y;
-
-if(machine().input().code_pressed_once(KEYCODE_T))
-{
-	//
-}
 
 	if (m_screen_refresh)
 	{

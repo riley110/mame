@@ -14,29 +14,6 @@
 
 #pragma once
 
-
-
-//**************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_ASC_ADD(_tag, _clock, _type, _irqf) \
-	MCFG_DEVICE_ADD(_tag, ASC, _clock) \
-	MCFG_ASC_TYPE(_type) \
-	MCFG_IRQ_FUNC(_irqf)
-
-#define MCFG_ASC_REPLACE(_tag, _clock, _type, _irqf) \
-	MCFG_DEVICE_REPLACE(_tag, ASC, _clock) \
-	MCFG_ASC_TYPE(_type) \
-	MCFG_IRQ_FUNC(_irqf)
-
-#define MCFG_ASC_TYPE(_type) \
-	asc_device::static_set_type(*device, asc_device::asc_type::_type);
-
-#define MCFG_IRQ_FUNC(_irqf) \
-	devcb = &downcast<asc_device *>(device)->set_irqf(DEVCB_##_irqf);
-
-
 //**************************************************************************
 //  TYPE DEFINITIONS
 //**************************************************************************
@@ -59,21 +36,19 @@ public:
 		ARDBEG = 7  // Subset of ASC included in the Ardbeg ASIC (LC520)
 	};
 
-
-	// construction/destruction
-	asc_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
-
-	// inline configuration helpers
-	static void static_set_type(device_t &device, asc_type type);
-
-
-	template <class Write> devcb_base &set_irqf(Write &&wr)
+	asc_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock, asc_type type)
+		: asc_device(mconfig, tag, owner, clock)
 	{
-		return write_irq.set_callback(std::forward<Write>(wr));
+		set_type(type);
 	}
 
-	DECLARE_READ8_MEMBER(read);
-	DECLARE_WRITE8_MEMBER(write);
+	asc_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+
+	void set_type(asc_type type) { m_chip_type = type; }
+	auto irqf_callback() { return write_irq.bind(); }
+
+	uint8_t read(offs_t offset);
+	void write(offs_t offset, uint8_t data);
 
 protected:
 	enum

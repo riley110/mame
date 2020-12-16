@@ -25,50 +25,43 @@
   Zarzon has a different PROM layout from the others.
 
 ***************************************************************************/
-PALETTE_INIT_MEMBER(snk6502_state,snk6502)
+void snk6502_state::snk6502_palette(palette_device &palette)
 {
-	const uint8_t *color_prom = memregion("proms")->base();
-	int i;
-
-	for (i = 0; i < palette.entries(); i++)
+	uint8_t const *const color_prom = memregion("proms")->base();
+	for (int i = 0; i < palette.entries(); i++)
 	{
-		int bit0, bit1, bit2, r, g, b;
+		int bit0, bit1, bit2;
 
-		/* red component */
+		// red component
+		bit0 = BIT(color_prom[i], 0);
+		bit1 = BIT(color_prom[i], 1);
+		bit2 = BIT(color_prom[i], 2);
 
-		bit0 = (*color_prom >> 0) & 0x01;
-		bit1 = (*color_prom >> 1) & 0x01;
-		bit2 = (*color_prom >> 2) & 0x01;
+		int const r = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 
-		r = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
+		// green component
+		bit0 = BIT(color_prom[i], 3);
+		bit1 = BIT(color_prom[i], 4);
+		bit2 = BIT(color_prom[i], 5);
 
-		/* green component */
+		int const g = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 
-		bit0 = (*color_prom >> 3) & 0x01;
-		bit1 = (*color_prom >> 4) & 0x01;
-		bit2 = (*color_prom >> 5) & 0x01;
-
-		g = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
-
-		/* blue component */
-
+		// blue component
 		bit0 = 0;
-		bit1 = (*color_prom >> 6) & 0x01;
-		bit2 = (*color_prom >> 7) & 0x01;
+		bit1 = BIT(color_prom[i], 6);
+		bit2 = BIT(color_prom[i], 7);
 
-		b = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
+		int const b = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 
 		m_palette_val[i] = rgb_t(r, g, b);
-
-		color_prom++;
 	}
 
-	m_backcolor = 0;    /* background color can be changed by the game */
+	m_backcolor = 0;    // background color can be changed by the game
 
-	for (i = 0; i < TOTAL_COLORS(0); i++)
+	for (int i = 0; i < TOTAL_COLORS(0); i++)
 		palette.set_pen_color(COLOR(0, i), m_palette_val[i]);
 
-	for (i = 0; i < TOTAL_COLORS(1); i++)
+	for (int i = 0; i < TOTAL_COLORS(1); i++)
 	{
 		if (i % 4 == 0)
 			palette.set_pen_color(COLOR(1, i), m_palette_val[4 * m_backcolor + 0x20]);
@@ -77,26 +70,26 @@ PALETTE_INIT_MEMBER(snk6502_state,snk6502)
 	}
 }
 
-WRITE8_MEMBER(snk6502_state::videoram_w)
+void snk6502_state::videoram_w(offs_t offset, uint8_t data)
 {
 	m_videoram[offset] = data;
 	m_bg_tilemap->mark_tile_dirty(offset);
 }
 
-WRITE8_MEMBER(snk6502_state::videoram2_w)
+void snk6502_state::videoram2_w(offs_t offset, uint8_t data)
 {
 	m_videoram2[offset] = data;
 	m_fg_tilemap->mark_tile_dirty(offset);
 }
 
-WRITE8_MEMBER(snk6502_state::colorram_w)
+void snk6502_state::colorram_w(offs_t offset, uint8_t data)
 {
 	m_colorram[offset] = data;
 	m_bg_tilemap->mark_tile_dirty(offset);
 	m_fg_tilemap->mark_tile_dirty(offset);
 }
 
-WRITE8_MEMBER(snk6502_state::charram_w)
+void snk6502_state::charram_w(offs_t offset, uint8_t data)
 {
 	if (m_charram[offset] != data)
 	{
@@ -106,7 +99,7 @@ WRITE8_MEMBER(snk6502_state::charram_w)
 }
 
 
-WRITE8_MEMBER(snk6502_state::flipscreen_w)
+void snk6502_state::flipscreen_w(uint8_t data)
 {
 	/* bits 0-2 select background color */
 
@@ -137,18 +130,18 @@ WRITE8_MEMBER(snk6502_state::flipscreen_w)
 	}
 }
 
-WRITE8_MEMBER(snk6502_state::fantasy_flipscreen_w)
+void fantasy_state::fantasy_flipscreen_w(offs_t offset, uint8_t data)
 {
-	m_sound->fantasy_sound_w(space, offset | 0x03, data, mem_mask);
-	flipscreen_w(space, offset, data, mem_mask);
+	m_sound->sound_w(offset | 0x03, data);
+	flipscreen_w(data);
 }
 
-WRITE8_MEMBER(snk6502_state::scrollx_w)
+void snk6502_state::scrollx_w(uint8_t data)
 {
 	m_bg_tilemap->set_scrollx(0, data);
 }
 
-WRITE8_MEMBER(snk6502_state::scrolly_w)
+void snk6502_state::scrolly_w(uint8_t data)
 {
 	m_bg_tilemap->set_scrolly(0, data);
 }
@@ -159,7 +152,7 @@ TILE_GET_INFO_MEMBER(snk6502_state::get_bg_tile_info)
 	int code = m_videoram[tile_index] + 256 * m_charbank;
 	int color = (m_colorram[tile_index] & 0x38) >> 3;
 
-	SET_TILE_INFO_MEMBER(1, code, color, 0);
+	tileinfo.set(1, code, color, 0);
 }
 
 TILE_GET_INFO_MEMBER(snk6502_state::get_fg_tile_info)
@@ -167,13 +160,13 @@ TILE_GET_INFO_MEMBER(snk6502_state::get_fg_tile_info)
 	int code = m_videoram2[tile_index];
 	int color = m_colorram[tile_index] & 0x07;
 
-	SET_TILE_INFO_MEMBER(0, code, color, 0);
+	tileinfo.set(0, code, color, 0);
 }
 
 VIDEO_START_MEMBER(snk6502_state,snk6502)
 {
-	m_bg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(snk6502_state::get_bg_tile_info),this), TILEMAP_SCAN_ROWS, 8, 8, 32, 32);
-	m_fg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(snk6502_state::get_fg_tile_info),this), TILEMAP_SCAN_ROWS, 8, 8, 32, 32);
+	m_bg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(snk6502_state::get_bg_tile_info)), TILEMAP_SCAN_ROWS, 8, 8, 32, 32);
+	m_fg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(snk6502_state::get_fg_tile_info)), TILEMAP_SCAN_ROWS, 8, 8, 32, 32);
 
 	m_fg_tilemap->set_transparent_pen(0);
 
@@ -195,7 +188,7 @@ VIDEO_START_MEMBER(snk6502_state,pballoon)
 }
 
 
-uint32_t snk6502_state::screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect)
+uint32_t snk6502_state::screen_update(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect)
 {
 	m_bg_tilemap->draw(screen, bitmap, cliprect, 0, 0);
 	m_fg_tilemap->draw(screen, bitmap, cliprect, 0, 0);
@@ -204,50 +197,43 @@ uint32_t snk6502_state::screen_update(screen_device &screen, bitmap_ind16 &bitma
 
 /* Satan of Saturn */
 
-PALETTE_INIT_MEMBER(snk6502_state,satansat)
+void snk6502_state::satansat_palette(palette_device &palette)
 {
-	const uint8_t *color_prom = memregion("proms")->base();
-	int i;
-
-	for (i = 0; i < palette.entries(); i++)
+	uint8_t const *const color_prom = memregion("proms")->base();
+	for (int i = 0; i < palette.entries(); i++)
 	{
-		int bit0, bit1, bit2, r, g, b;
+		int bit0, bit1, bit2;
 
-		/* red component */
+		// red component
+		bit0 = BIT(color_prom[i], 0);
+		bit1 = BIT(color_prom[i], 1);
+		bit2 = BIT(color_prom[i], 2);
 
-		bit0 = (*color_prom >> 0) & 0x01;
-		bit1 = (*color_prom >> 1) & 0x01;
-		bit2 = (*color_prom >> 2) & 0x01;
+		int const r = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 
-		r = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
+		// green component
+		bit0 = BIT(color_prom[i], 3);
+		bit1 = BIT(color_prom[i], 4);
+		bit2 = BIT(color_prom[i], 5);
 
-		/* green component */
+		int const g = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 
-		bit0 = (*color_prom >> 3) & 0x01;
-		bit1 = (*color_prom >> 4) & 0x01;
-		bit2 = (*color_prom >> 5) & 0x01;
-
-		g = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
-
-		/* blue component */
-
+		// blue component
 		bit0 = 0;
-		bit1 = (*color_prom >> 6) & 0x01;
-		bit2 = (*color_prom >> 7) & 0x01;
+		bit1 = BIT(color_prom[i], 6);
+		bit2 = BIT(color_prom[i], 7);
 
-		b = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
+		int const b = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 
 		m_palette_val[i] = rgb_t(r, g, b);
-
-		color_prom++;
 	}
 
-	m_backcolor = 0;    /* background color can be changed by the game */
+	m_backcolor = 0;    // background color can be changed by the game
 
-	for (i = 0; i < TOTAL_COLORS(0); i++)
+	for (int i = 0; i < TOTAL_COLORS(0); i++)
 		palette.set_pen_color(COLOR(0, i), m_palette_val[4 * (i % 4) + (i / 4)]);
 
-	for (i = 0; i < TOTAL_COLORS(1); i++)
+	for (int i = 0; i < TOTAL_COLORS(1); i++)
 	{
 		if (i % 4 == 0)
 			palette.set_pen_color(COLOR(1, i), m_palette_val[m_backcolor + 0x10]);
@@ -256,7 +242,7 @@ PALETTE_INIT_MEMBER(snk6502_state,satansat)
 	}
 }
 
-WRITE8_MEMBER(snk6502_state::satansat_b002_w)
+void snk6502_state::satansat_b002_w(uint8_t data)
 {
 	/* bit 0 flips screen */
 
@@ -272,7 +258,7 @@ WRITE8_MEMBER(snk6502_state::satansat_b002_w)
 	/* other bits unused */
 }
 
-WRITE8_MEMBER(snk6502_state::satansat_backcolor_w)
+void snk6502_state::satansat_backcolor_w(uint8_t data)
 {
 	/* bits 0-1 select background color. Other bits unused. */
 
@@ -290,7 +276,7 @@ TILE_GET_INFO_MEMBER(snk6502_state::satansat_get_bg_tile_info)
 	int code = m_videoram[tile_index];
 	int color = (m_colorram[tile_index] & 0x0c) >> 2;
 
-	SET_TILE_INFO_MEMBER(1, code, color, 0);
+	tileinfo.set(1, code, color, 0);
 }
 
 TILE_GET_INFO_MEMBER(snk6502_state::satansat_get_fg_tile_info)
@@ -298,13 +284,13 @@ TILE_GET_INFO_MEMBER(snk6502_state::satansat_get_fg_tile_info)
 	int code = m_videoram2[tile_index];
 	int color = m_colorram[tile_index] & 0x03;
 
-	SET_TILE_INFO_MEMBER(0, code, color, 0);
+	tileinfo.set(0, code, color, 0);
 }
 
 VIDEO_START_MEMBER(snk6502_state,satansat)
 {
-	m_bg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(snk6502_state::satansat_get_bg_tile_info),this), TILEMAP_SCAN_ROWS, 8, 8, 32, 32);
-	m_fg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(FUNC(snk6502_state::satansat_get_fg_tile_info),this), TILEMAP_SCAN_ROWS, 8, 8, 32, 32);
+	m_bg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(snk6502_state::satansat_get_bg_tile_info)), TILEMAP_SCAN_ROWS, 8, 8, 32, 32);
+	m_fg_tilemap = &machine().tilemap().create(*m_gfxdecode, tilemap_get_info_delegate(*this, FUNC(snk6502_state::satansat_get_fg_tile_info)), TILEMAP_SCAN_ROWS, 8, 8, 32, 32);
 
 	m_fg_tilemap->set_transparent_pen(0);
 

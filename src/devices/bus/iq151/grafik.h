@@ -37,9 +37,9 @@ protected:
 
 private:
 	// ppi8255 callback
-	DECLARE_WRITE8_MEMBER(x_write);
-	DECLARE_WRITE8_MEMBER(y_write);
-	DECLARE_WRITE8_MEMBER(control_w);
+	void x_write(uint8_t data);
+	void y_write(uint8_t data);
+	void control_w(uint8_t data);
 
 	required_device<i8255_device> m_ppi8255;
 
@@ -56,7 +56,6 @@ private:
 
 
 // device type definition
-extern const device_type IQ151_GRAFIK;
 DECLARE_DEVICE_TYPE(IQ151_GRAFIK, iq151_grafik_device)
 
 #endif // MAME_BUS_IQ151_GRAFIK_H

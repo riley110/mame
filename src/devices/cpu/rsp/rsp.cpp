@@ -17,8 +17,9 @@
 
 #include "rspdefs.h"
 
+#include "rsp_dasm.h"
 
-DEFINE_DEVICE_TYPE(RSP, rsp_device, "rsp", "RSP")
+DEFINE_DEVICE_TYPE(RSP, rsp_device, "rsp", "Nintendo & SGI Reality Signal Processor RSP")
 
 
 #define LOG_INSTRUCTION_EXECUTION       0
@@ -77,7 +78,7 @@ DEFINE_DEVICE_TYPE(RSP, rsp_device, "rsp", "RSP")
 #define CLEAR_ZERO_FLAG(x)      { m_vflag[ZERO][x & 7] = 0; }
 #define CLEAR_CLIP2_FLAG(x)     { m_vflag[CLIP2][x & 7] = 0; }
 
-#define ROPCODE(pc)     m_program->read_dword(pc)
+#define ROPCODE(pc)     m_pcache.read_dword(pc)
 
 
 /***************************************************************************
@@ -143,6 +144,10 @@ rsp_device::rsp_device(const machine_config &mconfig, const char *tag, device_t 
 {
 }
 
+rsp_device::~rsp_device()
+{
+}
+
 device_memory_interface::space_config_vector rsp_device::memory_space_config() const
 {
 	return space_config_vector {
@@ -150,10 +155,9 @@ device_memory_interface::space_config_vector rsp_device::memory_space_config() c
 	};
 }
 
-offs_t rsp_device::disasm_disassemble(std::ostream &stream, offs_t pc, const uint8_t *oprom, const uint8_t *opram, uint32_t options)
+std::unique_ptr<util::disasm_interface> rsp_device::create_disassembler()
 {
-	extern CPU_DISASSEMBLE( rsp );
-	return CPU_DISASSEMBLE_NAME( rsp )(this, stream, pc, oprom, opram, options);
+	return std::make_unique<rsp_disassembler>();
 }
 
 void rsp_device::rsp_add_imem(uint32_t *base)
@@ -228,7 +232,7 @@ uint8_t rsp_device::READ8(uint32_t address)
 {
 	uint8_t ret;
 	address &= 0xfff;
-	ret = m_program->read_byte(address);
+	ret = m_program.read_byte(address);
 	//printf("R8:%08x=%02x\n", address, ret);
 	return ret;
 }
@@ -238,7 +242,7 @@ uint16_t rsp_device::READ16(uint32_t address)
 	uint16_t ret;
 	address &= 0xfff;
 
-	ret = (m_program->read_byte(address) << 8) | (m_program->read_byte(address + 1) & 0xff);
+	ret = (m_program.read_byte(address) << 8) | (m_program.read_byte(address + 1) & 0xff);
 
 	//printf("R16:%08x=%04x\n", address, ret);
 	return ret;
@@ -249,10 +253,10 @@ uint32_t rsp_device::READ32(uint32_t address)
 	uint32_t ret;
 	address &= 0xfff;
 
-	ret =   (m_program->read_byte(address) << 24) |
-			(m_program->read_byte(address + 1) << 16) |
-			(m_program->read_byte(address + 2) << 8) |
-			(m_program->read_byte(address + 3) << 0);
+	ret =   (m_program.read_byte(address) << 24) |
+			(m_program.read_byte(address + 1) << 16) |
+			(m_program.read_byte(address + 2) << 8) |
+			(m_program.read_byte(address + 3) << 0);
 
 	//printf("R32:%08x=%08x\n", address, ret);
 	return ret;
@@ -261,7 +265,7 @@ uint32_t rsp_device::READ32(uint32_t address)
 void rsp_device::WRITE8(uint32_t address, uint8_t data)
 {
 	address &= 0xfff;
-	m_program->write_byte(address, data);
+	m_program.write_byte(address, data);
 	//printf("W8:%08x=%02x\n", address, data);
 }
 
@@ -269,8 +273,8 @@ void rsp_device::WRITE16(uint32_t address, uint16_t data)
 {
 	address &= 0xfff;
 
-	m_program->write_byte(address, data >> 8);
-	m_program->write_byte(address + 1, data & 0xff);
+	m_program.write_byte(address, data >> 8);
+	m_program.write_byte(address + 1, data & 0xff);
 	//printf("W16:%08x=%04x\n", address, data);
 }
 
@@ -278,10 +282,10 @@ void rsp_device::WRITE32(uint32_t address, uint32_t data)
 {
 	address &= 0xfff;
 
-	m_program->write_byte(address, data >> 24);
-	m_program->write_byte(address + 1, (data >> 16) & 0xff);
-	m_program->write_byte(address + 2, (data >> 8) & 0xff);
-	m_program->write_byte(address + 3, data & 0xff);
+	m_program.write_byte(address, data >> 24);
+	m_program.write_byte(address + 1, (data >> 16) & 0xff);
+	m_program.write_byte(address + 2, (data >> 8) & 0xff);
+	m_program.write_byte(address + 3, data & 0xff);
 	//printf("W32:%08x=%08x\n", address, data);
 }
 
@@ -319,10 +323,10 @@ void rsp_device::unimplemented_opcode(uint32_t op)
 {
 	if ((machine().debug_flags & DEBUG_FLAG_ENABLED) != 0)
 	{
-		util::ovectorstream string;
-		rsp_dasm_one(string, m_ppc, op);
-		string.put('\0');
-		osd_printf_debug("%08X: %s\n", m_ppc, &string.vec()[0]);
+		std::ostringstream string;
+		rsp_disassembler rspd;
+		rspd.dasm_one(string, m_ppc, op);
+		osd_printf_debug("%08X: %s\n", m_ppc, string.str());
 	}
 
 #if SAVE_DISASM
@@ -377,26 +381,21 @@ void rsp_device::device_start()
 	if (LOG_INSTRUCTION_EXECUTION)
 		m_exec_output = fopen("rsp_execute.txt", "wt");
 
-	m_program = &space(AS_PROGRAM);
-	m_direct = &m_program->direct();
+	space(AS_PROGRAM).cache(m_pcache);
+	space(AS_PROGRAM).specific(m_program);
 	resolve_cb();
 
 	if (m_isdrc)
-	{
-		m_cop2 = std::make_unique<rsp_cop2_drc>(*this, machine());
-	}
+		m_cop2 = std::make_unique<cop2_drc>(*this, machine());
 	else
-	{
-		m_cop2 = std::make_unique<rsp_cop2>(*this, machine());
-	}
+		m_cop2 = std::make_unique<cop2>(*this, machine());
+
 	m_cop2->init();
 	m_cop2->start();
 
 	// RSP registers should power on to a random state
-	for(int regIdx = 0; regIdx < 32; regIdx++ )
-	{
+	for (int regIdx = 0; regIdx < 32; regIdx++)
 		m_rsp_state->r[regIdx] = 0;
-	}
 
 	m_sr = RSP_STATUS_HALT;
 	m_step_count = 0;
@@ -421,7 +420,7 @@ void rsp_device::device_start()
 	m_drcuml->symbol_add(&m_numcycles, sizeof(m_numcycles), "numcycles");
 
 	/* initialize the front-end helper */
-	m_drcfe = std::make_unique<rsp_frontend>(*this, COMPILE_BACKWARDS_BYTES, COMPILE_FORWARDS_BYTES, SINGLE_INSTRUCTION_MODE ? 1 : COMPILE_MAX_SEQUENCE);
+	m_drcfe = std::make_unique<frontend>(*this, COMPILE_BACKWARDS_BYTES, COMPILE_FORWARDS_BYTES, SINGLE_INSTRUCTION_MODE ? 1 : COMPILE_MAX_SEQUENCE);
 
 	/* compute the register parameters */
 	for (int regnum = 0; regnum < 32; regnum++)
@@ -507,7 +506,7 @@ void rsp_device::device_start()
 	state_add( STATE_GENFLAGS, "GENFLAGS", m_debugger_temp).formatstr("%1s").noshow();
 	state_add( STATE_GENSP, "GENSP", m_rsp_state->r[31]).noshow();
 
-	m_icountptr = &m_rsp_state->icount;
+	set_icountptr(m_rsp_state->icount);
 }
 
 void rsp_device::state_import(const device_state_entry &entry)
@@ -631,7 +630,7 @@ void rsp_device::execute_run()
 	while (m_rsp_state->icount > 0)
 	{
 		m_ppc = m_rsp_state->pc;
-		debugger_instruction_hook(this, m_rsp_state->pc);
+		debugger_instruction_hook(m_rsp_state->pc);
 
 		uint32_t op = ROPCODE(m_rsp_state->pc);
 		if (m_nextpc != ~0)
@@ -747,13 +746,13 @@ void rsp_device::execute_run()
 			int i, l;
 			static uint32_t prev_regs[32];
 
-			util::ovectorstream string;
-			rsp_dasm_one(string, m_ppc, op);
-			string.put('\0');
+			rsp_disassembler rspd;
+			std::ostringstream string;
+			rspd.dasm_one(string, m_ppc, op);
 
-			fprintf(m_exec_output, "%08X: %s", m_ppc, &string.vec()[0]);
+			fprintf(m_exec_output, "%08X: %s", m_ppc, string.str().c_str());
 
-			l = string.vec().size() - 1;
+			l = string.str().size();
 			if (l < 36)
 			{
 				for (i=l; i < 36; i++)

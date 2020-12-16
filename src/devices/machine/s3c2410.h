@@ -12,58 +12,8 @@
 #pragma once
 
 #include "s3c24xx.h"
+#include "emupal.h"
 
-
-/*******************************************************************************
-    MACROS / CONSTANTS
-*******************************************************************************/
-
-#define S3C2410_TAG "s3c2410"
-
-#define MCFG_S3C2410_PALETTE(palette_tag) \
-		s3c2410_device::static_set_palette_tag(*device, ("^" palette_tag));
-
-#define MCFG_S3C2410_CORE_PIN_R_CB(cb) \
-		devcb = &s3c2410_device::set_core_pin_r_callback(*device, DEVCB_##cb);
-
-#define MCFG_S3C2410_CORE_PIN_W_CB(cb) \
-		devcb = &s3c2410_device::set_core_pin_w_callback(*device, DEVCB_##cb);
-
-#define MCFG_S3C2410_GPIO_PORT_R_CB(cb) \
-		devcb = &s3c2410_device::set_gpio_port_r_callback(*device, DEVCB_##cb);
-
-#define MCFG_S3C2410_GPIO_PORT_W_CB(cb) \
-		devcb = &s3c2410_device::set_gpio_port_w_callback(*device, DEVCB_##cb);
-
-#define MCFG_S3C2410_I2C_SCL_W_CB(cb) \
-		devcb = &s3c2410_device::set_i2c_scl_w_callback(*device, DEVCB_##cb);
-
-#define MCFG_S3C2410_I2C_SDA_R_CB(cb) \
-		devcb = &s3c2410_device::set_i2c_sda_r_callback(*device, DEVCB_##cb);
-
-#define MCFG_S3C2410_I2C_SDA_W_CB(cb) \
-		devcb = &s3c2410_device::set_i2c_sda_w_callback(*device, DEVCB_##cb);
-
-#define MCFG_S3C2410_ADC_DATA_R_CB(cb) \
-		devcb = &s3c2410_device::set_adc_data_r_callback(*device, DEVCB_##cb);
-
-#define MCFG_S3C2410_I2S_DATA_W_CB(cb) \
-		devcb = &s3c2410_device::set_i2s_data_w_callback(*device, DEVCB_##cb);
-
-#define MCFG_S3C2410_NAND_COMMAND_W_CB(cb) \
-		devcb = &s3c2410_device::set_nand_command_w_callback(*device, DEVCB_##cb);
-
-#define MCFG_S3C2410_NAND_ADDRESS_W_CB(cb) \
-		devcb = &s3c2410_device::set_nand_address_w_callback(*device, DEVCB_##cb);
-
-#define MCFG_S3C2410_NAND_DATA_R_CB(cb) \
-		devcb = &s3c2410_device::set_nand_data_r_callback(*device, DEVCB_##cb);
-
-#define MCFG_S3C2410_NAND_DATA_W_CB(cb) \
-		devcb = &s3c2410_device::set_nand_data_w_callback(*device, DEVCB_##cb);
-
-#define MCFG_S3C2410_LCD_FLAGS(flags) \
-		s3c2410_device::set_lcd_flags(*device, (flags));
 
 enum
 {
@@ -187,26 +137,27 @@ public:
 	s3c2410_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 	~s3c2410_device();
 
-	// static configuration
-	static void static_set_palette_tag(device_t &device, const char *tag);
-	template <class Object> static devcb_base &set_core_pin_r_callback(device_t &device, Object &&cb) { return downcast<s3c2410_device &>(device).m_pin_r_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_core_pin_w_callback(device_t &device, Object &&cb) { return downcast<s3c2410_device &>(device).m_pin_w_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_gpio_port_r_callback(device_t &device, Object &&cb) { return downcast<s3c2410_device &>(device).m_port_r_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_gpio_port_w_callback(device_t &device, Object &&cb) { return downcast<s3c2410_device &>(device).m_port_w_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_i2c_scl_w_callback(device_t &device, Object &&cb) { return downcast<s3c2410_device &>(device).m_scl_w_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_i2c_sda_r_callback(device_t &device, Object &&cb) { return downcast<s3c2410_device &>(device).m_sda_r_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_i2c_sda_w_callback(device_t &device, Object &&cb) { return downcast<s3c2410_device &>(device).m_sda_w_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_adc_data_r_callback(device_t &device, Object &&cb) { return downcast<s3c2410_device &>(device).m_data_r_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_i2s_data_w_callback(device_t &device, Object &&cb) { return downcast<s3c2410_device &>(device).m_data_w_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_nand_command_w_callback(device_t &device, Object &&cb) { return downcast<s3c2410_device &>(device).m_command_w_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_nand_address_w_callback(device_t &device, Object &&cb) { return downcast<s3c2410_device &>(device).m_address_w_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_nand_data_r_callback(device_t &device, Object &&cb) { return downcast<s3c2410_device &>(device).m_nand_data_r_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_nand_data_w_callback(device_t &device, Object &&cb) { return downcast<s3c2410_device &>(device).m_nand_data_w_cb.set_callback(std::forward<Object>(cb)); }
-	static void set_lcd_flags(device_t &device, int flags) { downcast<s3c2410_device &>(device).m_flags = flags; }
+	// configuration
+	template <typename T> void set_palette_tag(T &&tag) { m_palette.set_tag(std::forward<T>(tag)); }
+	template <typename T> void set_screen_tag(T &&tag) { m_screen.set_tag(std::forward<T>(tag)); }
+	auto core_pin_r_callback() { return m_pin_r_cb.bind(); }
+	auto core_pin_w_callback() { return m_pin_w_cb.bind(); }
+	auto gpio_port_r_callback() { return m_port_r_cb.bind(); }
+	auto gpio_port_w_callback() { return m_port_w_cb.bind(); }
+	auto i2c_scl_w_callback() { return m_scl_w_cb.bind(); }
+	auto i2c_sda_r_callback() { return m_sda_r_cb.bind(); }
+	auto i2c_sda_w_callback() { return m_sda_w_cb.bind(); }
+	auto adc_data_r_callback() { return m_data_r_cb.bind(); }
+	auto i2s_data_w_callback() { return m_data_w_cb.bind(); }
+	auto nand_command_w_callback() { return m_command_w_cb.bind(); }
+	auto nand_address_w_callback() { return m_address_w_cb.bind(); }
+	auto nand_data_r_callback() { return m_nand_data_r_cb.bind(); }
+	auto nand_data_w_callback() { return m_nand_data_w_cb.bind(); }
+	void set_lcd_flags(int flags) { m_flags = flags; }
 
 	DECLARE_WRITE_LINE_MEMBER( frnb_w );
 
-	READ32_MEMBER( s3c24xx_lcd_r );
+	uint32_t s3c24xx_lcd_r(offs_t offset, uint32_t mem_mask = ~0);
 
 	uint32_t screen_update(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect);
 
@@ -256,15 +207,15 @@ protected:
 	void s3c24xx_lcd_start();
 	void s3c24xx_lcd_stop();
 	void s3c24xx_lcd_recalc();
-	WRITE32_MEMBER( s3c24xx_lcd_w );
-	READ32_MEMBER( s3c24xx_lcd_palette_r );
-	WRITE32_MEMBER( s3c24xx_lcd_palette_w );
+	void s3c24xx_lcd_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t s3c24xx_lcd_palette_r(offs_t offset, uint32_t mem_mask = ~0);
+	void s3c24xx_lcd_palette_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
 	void s3c24xx_clkpow_reset();
 	uint32_t s3c24xx_get_fclk();
 	uint32_t s3c24xx_get_hclk();
 	uint32_t s3c24xx_get_pclk();
-	READ32_MEMBER( s3c24xx_clkpow_r );
-	WRITE32_MEMBER( s3c24xx_clkpow_w );
+	uint32_t s3c24xx_clkpow_r(offs_t offset, uint32_t mem_mask = ~0);
+	void s3c24xx_clkpow_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
 	void s3c24xx_irq_reset();
 	void s3c24xx_check_pending_irq();
 	void s3c24xx_request_irq(uint32_t int_type);
@@ -272,13 +223,13 @@ protected:
 	void s3c24xx_request_subirq( uint32_t int_type);
 	void s3c24xx_check_pending_eint();
 	void s3c24xx_request_eint(uint32_t number);
-	READ32_MEMBER( s3c24xx_irq_r );
-	WRITE32_MEMBER( s3c24xx_irq_w );
-	READ32_MEMBER( s3c24xx_pwm_r );
+	uint32_t s3c24xx_irq_r(offs_t offset, uint32_t mem_mask = ~0);
+	void s3c24xx_irq_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t s3c24xx_pwm_r(offs_t offset, uint32_t mem_mask = ~0);
 	void s3c24xx_pwm_start(int timer);
 	void s3c24xx_pwm_stop(int timer);
 	void s3c24xx_pwm_recalc(int timer);
-	WRITE32_MEMBER( s3c24xx_pwm_w );
+	void s3c24xx_pwm_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
 	TIMER_CALLBACK_MEMBER( s3c24xx_pwm_timer_exp );
 	void s3c24xx_dma_reset();
 	void s3c24xx_dma_reload(int ch);
@@ -290,42 +241,42 @@ protected:
 	void s3c24xx_dma_recalc(int ch);
 	uint32_t s3c24xx_dma_r(uint32_t ch, uint32_t offset);
 	void s3c24xx_dma_w(uint32_t ch, uint32_t offset, uint32_t data, uint32_t mem_mask);
-	READ32_MEMBER( s3c24xx_dma_0_r );
-	READ32_MEMBER( s3c24xx_dma_1_r );
-	READ32_MEMBER( s3c24xx_dma_2_r );
-	READ32_MEMBER( s3c24xx_dma_3_r );
-	WRITE32_MEMBER( s3c24xx_dma_0_w );
-	WRITE32_MEMBER( s3c24xx_dma_1_w );
-	WRITE32_MEMBER( s3c24xx_dma_2_w );
-	WRITE32_MEMBER( s3c24xx_dma_3_w );
+	uint32_t s3c24xx_dma_0_r(offs_t offset, uint32_t mem_mask = ~0);
+	uint32_t s3c24xx_dma_1_r(offs_t offset, uint32_t mem_mask = ~0);
+	uint32_t s3c24xx_dma_2_r(offs_t offset, uint32_t mem_mask = ~0);
+	uint32_t s3c24xx_dma_3_r(offs_t offset, uint32_t mem_mask = ~0);
+	void s3c24xx_dma_0_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	void s3c24xx_dma_1_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	void s3c24xx_dma_2_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	void s3c24xx_dma_3_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
 	TIMER_CALLBACK_MEMBER( s3c24xx_dma_timer_exp );
 	void s3c24xx_gpio_reset();
 	inline uint32_t iface_gpio_port_r(int port, uint32_t mask);
 	inline void iface_gpio_port_w(int port, uint32_t mask, uint32_t data);
 	uint16_t s3c24xx_gpio_get_mask( uint32_t con, int val);
-	READ32_MEMBER( s3c24xx_gpio_r );
-	WRITE32_MEMBER( s3c24xx_gpio_w );
-	READ32_MEMBER( s3c24xx_memcon_r );
-	WRITE32_MEMBER( s3c24xx_memcon_w );
-	READ32_MEMBER( s3c24xx_usb_host_r );
-	WRITE32_MEMBER( s3c24xx_usb_host_w );
+	uint32_t s3c24xx_gpio_r(offs_t offset, uint32_t mem_mask = ~0);
+	void s3c24xx_gpio_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t s3c24xx_memcon_r(offs_t offset, uint32_t mem_mask = ~0);
+	void s3c24xx_memcon_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t s3c24xx_usb_host_r(offs_t offset, uint32_t mem_mask = ~0);
+	void s3c24xx_usb_host_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
 	uint32_t s3c24xx_uart_r(uint32_t ch, uint32_t offset);
 	void s3c24xx_uart_w(uint32_t ch, uint32_t offset, uint32_t data, uint32_t mem_mask);
-	READ32_MEMBER( s3c24xx_uart_0_r );
-	READ32_MEMBER( s3c24xx_uart_1_r );
-	READ32_MEMBER( s3c24xx_uart_2_r );
-	WRITE32_MEMBER( s3c24xx_uart_0_w );
-	WRITE32_MEMBER( s3c24xx_uart_1_w );
-	WRITE32_MEMBER( s3c24xx_uart_2_w );
+	uint32_t s3c24xx_uart_0_r(offs_t offset, uint32_t mem_mask = ~0);
+	uint32_t s3c24xx_uart_1_r(offs_t offset, uint32_t mem_mask = ~0);
+	uint32_t s3c24xx_uart_2_r(offs_t offset, uint32_t mem_mask = ~0);
+	void s3c24xx_uart_0_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	void s3c24xx_uart_1_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	void s3c24xx_uart_2_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
 	void s3c24xx_uart_fifo_w(int uart, uint8_t data);
 	void s3c24xx_usb_device_reset();
-	READ32_MEMBER( s3c24xx_usb_device_r );
-	WRITE32_MEMBER( s3c24xx_usb_device_w );
-	READ32_MEMBER( s3c24xx_wdt_r );
+	uint32_t s3c24xx_usb_device_r(offs_t offset, uint32_t mem_mask = ~0);
+	void s3c24xx_usb_device_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	uint32_t s3c24xx_wdt_r(offs_t offset, uint32_t mem_mask = ~0);
 	void s3c24xx_wdt_start();
 	void s3c24xx_wdt_stop();
 	void s3c24xx_wdt_recalc();
-	WRITE32_MEMBER( s3c24xx_wdt_w );
+	void s3c24xx_wdt_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
 	TIMER_CALLBACK_MEMBER( s3c24xx_wdt_timer_exp );
 	void s3c24xx_iic_reset();
 	inline void iface_i2c_scl_w( int state);
@@ -338,38 +289,38 @@ protected:
 	void iic_start();
 	void iic_stop();
 	void iic_resume();
-	READ32_MEMBER( s3c24xx_iic_r );
-	WRITE32_MEMBER( s3c24xx_iic_w );
+	uint32_t s3c24xx_iic_r(offs_t offset, uint32_t mem_mask = ~0);
+	void s3c24xx_iic_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
 	TIMER_CALLBACK_MEMBER( s3c24xx_iic_timer_exp );
 	inline void iface_i2s_data_w(int ch, uint16_t data);
 	void s3c24xx_iis_start();
 	void s3c24xx_iis_stop();
 	void s3c24xx_iis_recalc();
-	READ32_MEMBER( s3c24xx_iis_r );
-	WRITE32_MEMBER( s3c24xx_iis_w );
+	uint32_t s3c24xx_iis_r(offs_t offset, uint32_t mem_mask = ~0);
+	void s3c24xx_iis_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
 	TIMER_CALLBACK_MEMBER( s3c24xx_iis_timer_exp );
-	READ32_MEMBER( s3c24xx_rtc_r );
-	WRITE32_MEMBER( s3c24xx_rtc_w );
+	uint32_t s3c24xx_rtc_r(offs_t offset, uint32_t mem_mask = ~0);
+	void s3c24xx_rtc_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
 	TIMER_CALLBACK_MEMBER( s3c24xx_rtc_timer_tick_count_exp );
 	void s3c24xx_rtc_update();
 	void s3c24xx_rtc_check_alarm();
 	TIMER_CALLBACK_MEMBER( s3c24xx_rtc_timer_update_exp );
 	void s3c24xx_adc_reset();
 	uint32_t iface_adc_data_r(int ch);
-	READ32_MEMBER( s3c24xx_adc_r );
+	uint32_t s3c24xx_adc_r(offs_t offset, uint32_t mem_mask = ~0);
 	void s3c24xx_adc_start();
-	WRITE32_MEMBER( s3c24xx_adc_w );
+	void s3c24xx_adc_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
 	void s3c24xx_touch_screen(int state);
 	void s3c24xx_spi_reset();
 	uint32_t s3c24xx_spi_r(uint32_t ch, uint32_t offset);
 	void s3c24xx_spi_w(uint32_t ch, uint32_t offset, uint32_t data, uint32_t mem_mask);
-	READ32_MEMBER( s3c24xx_spi_0_r );
-	READ32_MEMBER( s3c24xx_spi_1_r );
-	WRITE32_MEMBER( s3c24xx_spi_0_w );
-	WRITE32_MEMBER( s3c24xx_spi_1_w );
+	uint32_t s3c24xx_spi_0_r(offs_t offset, uint32_t mem_mask = ~0);
+	uint32_t s3c24xx_spi_1_r(offs_t offset, uint32_t mem_mask = ~0);
+	void s3c24xx_spi_0_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
+	void s3c24xx_spi_1_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
 	void s3c24xx_sdi_reset();
-	READ32_MEMBER( s3c24xx_sdi_r );
-	WRITE32_MEMBER( s3c24xx_sdi_w );
+	uint32_t s3c24xx_sdi_r(offs_t offset, uint32_t mem_mask = ~0);
+	void s3c24xx_sdi_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
 	void s3c24xx_nand_reset();
 	inline void iface_nand_command_w(uint8_t data);
 	inline void iface_nand_address_w(uint8_t data);
@@ -381,9 +332,9 @@ protected:
 	void s3c24xx_nand_address_w(uint8_t data);
 	uint8_t s3c24xx_nand_data_r();
 	void s3c24xx_nand_data_w(uint8_t data);
-	READ32_MEMBER( s3c24xx_nand_r );
+	uint32_t s3c24xx_nand_r(offs_t offset, uint32_t mem_mask = ~0);
 	void s3c24xx_nand_init_ecc();
-	WRITE32_MEMBER( s3c24xx_nand_w );
+	void s3c24xx_nand_w(offs_t offset, uint32_t data, uint32_t mem_mask = ~0);
 	ATTR_UNUSED WRITE_LINE_MEMBER( s3c24xx_pin_frnb_w );
 	void s3c24xx_nand_auto_boot();
 	void s3c24xx_device_reset();
@@ -608,7 +559,10 @@ private:
 	};
 
 	// internal state
+	required_device<arm7_cpu_device> m_cpu;
 	required_device<palette_device> m_palette;
+	required_device<screen_device> m_screen;
+	memory_access<24, 2, 0, ENDIANNESS_LITTLE>::cache m_cache;
 
 	uint8_t m_steppingstone[4*1024];
 	memcon_t m_memcon;
@@ -629,8 +583,6 @@ private:
 	rtc_t m_rtc;
 	adc_t m_adc;
 	spi_t m_spi[SPI_COUNT];
-	sdi_t m_sdi;
-	required_device<device_t> m_cpu;
 	devcb_read32 m_pin_r_cb;
 	devcb_write32 m_pin_w_cb;
 	devcb_read32 m_port_r_cb;
@@ -645,6 +597,8 @@ private:
 	devcb_read8  m_nand_data_r_cb;
 	devcb_write8 m_nand_data_w_cb;
 	int m_flags;
+
+	sdi_t m_sdi;
 };
 
 DECLARE_DEVICE_TYPE(S3C2410, s3c2410_device)

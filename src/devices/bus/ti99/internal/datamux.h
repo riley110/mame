@@ -3,7 +3,7 @@
 /****************************************************************************
 
     TI-99/4(A) databus multiplexer circuit
-    See datamux.c for documentation
+    See datamux.cpp for documentation
 
     Michael Zapf
 
@@ -16,13 +16,22 @@
 
 #pragma once
 
-#include "bus/ti99/ti99defs.h"
 #include "machine/tmc0430.h"
 #include "bus/ti99/gromport/gromport.h"
 #include "bus/ti99/internal/ioport.h"
 #include "sound/sn76496.h"
 #include "video/tms9928a.h"
 #include "machine/ram.h"
+
+#define TI99_DATAMUX_TAG     "datamux_16_8"
+#define TI99_GROM0_TAG       "console_grom_0"
+#define TI99_GROM1_TAG       "console_grom_1"
+#define TI99_GROM2_TAG       "console_grom_2"
+#define TI99_PADRAM_TAG      "scratchpad"
+#define TI99_EXPRAM_TAG      "internal_32k_mod"
+#define TI99_CONSOLEROM      "console_rom"
+#define TI99_SOUNDCHIP_TAG   "soundchip"
+#define TI99_VDP_TAG         "vdp"
 
 namespace bus { namespace ti99 { namespace internal {
 
@@ -33,9 +42,9 @@ class datamux_device : public device_t
 {
 public:
 	datamux_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
-	DECLARE_READ16_MEMBER( read );
-	DECLARE_WRITE16_MEMBER( write );
-	DECLARE_SETOFFSET_MEMBER( setoffset );
+	uint16_t read(offs_t offset);
+	void write(offs_t offset, uint16_t data);
+	void setaddress(offs_t offset, uint16_t busctrl);
 
 	DECLARE_WRITE_LINE_MEMBER( clock_in );
 	DECLARE_WRITE_LINE_MEMBER( dbin_in );
@@ -43,17 +52,13 @@ public:
 
 	DECLARE_WRITE_LINE_MEMBER( gromclk_in );
 
-	template <class Object> static devcb_base &static_set_ready_callback(device_t &device, Object &&cb)
-	{
-		return downcast<datamux_device &>(device).m_ready.set_callback(std::forward<Object>(cb));
-	}
+	auto ready_cb() { return m_ready.bind(); }
 
 protected:
 	/* Constructor */
 	void device_start() override;
 	void device_stop() override;
 	void device_reset() override;
-	void device_config_complete() override;
 	ioport_constructor device_input_ports() const override;
 
 private:
@@ -75,27 +80,29 @@ private:
 	// Console RAM
 	required_device<ram_device> m_padram;
 
-	// Keeps the address space pointer
-	address_space* m_spacep;
+	// Link to the CPU
+	required_device<cpu_device> m_cpu;
 
 	// Console ROM
 	uint16_t* m_consolerom;
 
 	// Console GROMs
-	tmc0430_device* m_grom[3];
+	required_device<tmc0430_device> m_grom0;
+	required_device<tmc0430_device> m_grom1;
+	required_device<tmc0430_device> m_grom2;
 
 	// Common read routine
-	void read_all(address_space& space, uint16_t addr, uint8_t *target);
+	void read_all(uint16_t addr, uint8_t *target);
 
 	// Common write routine
-	void write_all(address_space& space, uint16_t addr, uint8_t value);
+	void write_all(uint16_t addr, uint8_t value);
 
 	// Common set address method
-	void setaddress_all(address_space& space, uint16_t addr);
+	void setaddress_all(uint16_t addr);
 
 	// Debugger access
-	uint16_t debugger_read(address_space& space, uint16_t addr);
-	void debugger_write(address_space& space, uint16_t addr, uint16_t data);
+	uint16_t debugger_read(uint16_t addr);
+	void debugger_write(uint16_t addr, uint16_t data);
 
 	// Join own READY and external READY
 	void ready_join();
@@ -121,6 +128,10 @@ private:
 	// Counter for the wait states.
 	int   m_waitcount;
 
+	// Keep the state of the ROMG* and MEMEN* lines so that debugger does not mess up things
+	line_state m_romgq_state;
+	line_state m_memen_state;
+
 	// Use the memory expansion?
 	bool m_use32k;
 
@@ -135,9 +146,6 @@ private:
 };
 
 /******************************************************************************/
-
-#define MCFG_DMUX_READY_HANDLER( _intcallb ) \
-	devcb = &bus::ti99::internal::datamux_device::static_set_ready_callback( *device, DEVCB_##_intcallb );
 
 } } } // end namespace bus::ti99::internal
 

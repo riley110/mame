@@ -20,6 +20,7 @@
 #include "emu.h"
 #include "cpu/m6800/m6800.h"
 #include "sound/beep.h"
+#include "emupal.h"
 #include "screen.h"
 #include "speaker.h"
 
@@ -27,8 +28,8 @@
 class jr200_state : public driver_device
 {
 public:
-	jr200_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
+	jr200_state(const machine_config &mconfig, device_type type, const char *tag) :
+		driver_device(mconfig, type, tag),
 		m_vram(*this, "vram"),
 		m_cram(*this, "cram"),
 		m_mn1271_ram(*this, "mn1271_ram"),
@@ -48,8 +49,12 @@ public:
 		m_row8(*this, "ROW8"),
 		m_row9(*this, "ROW9"),
 		m_gfxdecode(*this, "gfxdecode"),
-		m_palette(*this, "palette")  { }
+		m_palette(*this, "palette")
+	{ }
 
+	void jr200(machine_config &config);
+
+private:
 	required_shared_ptr<uint8_t> m_vram;
 	required_shared_ptr<uint8_t> m_cram;
 	required_shared_ptr<uint8_t> m_mn1271_ram;
@@ -57,25 +62,26 @@ public:
 	uint8_t m_old_keydata;
 	uint8_t m_freq_reg[2];
 	emu_timer *m_timer_d;
-	DECLARE_READ8_MEMBER(jr200_pcg_1_r);
-	DECLARE_READ8_MEMBER(jr200_pcg_2_r);
-	DECLARE_WRITE8_MEMBER(jr200_pcg_1_w);
-	DECLARE_WRITE8_MEMBER(jr200_pcg_2_w);
-	DECLARE_READ8_MEMBER(jr200_bios_char_r);
-	DECLARE_WRITE8_MEMBER(jr200_bios_char_w);
-	DECLARE_READ8_MEMBER(mcu_keyb_r);
-	DECLARE_WRITE8_MEMBER(jr200_beep_w);
-	DECLARE_WRITE8_MEMBER(jr200_beep_freq_w);
-	DECLARE_WRITE8_MEMBER(jr200_border_col_w);
-	DECLARE_READ8_MEMBER(mn1271_io_r);
-	DECLARE_WRITE8_MEMBER(mn1271_io_w);
+	uint8_t jr200_pcg_1_r(offs_t offset);
+	uint8_t jr200_pcg_2_r(offs_t offset);
+	void jr200_pcg_1_w(offs_t offset, uint8_t data);
+	void jr200_pcg_2_w(offs_t offset, uint8_t data);
+	uint8_t jr200_bios_char_r(offs_t offset);
+	void jr200_bios_char_w(offs_t offset, uint8_t data);
+	uint8_t mcu_keyb_r();
+	void jr200_beep_w(uint8_t data);
+	void jr200_beep_freq_w(offs_t offset, uint8_t data);
+	void jr200_border_col_w(uint8_t data);
+	uint8_t mn1271_io_r(offs_t offset);
+	void mn1271_io_w(offs_t offset, uint8_t data);
 	virtual void machine_start() override;
 	virtual void machine_reset() override;
 	virtual void video_start() override;
 	uint32_t screen_update_jr200(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 	TIMER_CALLBACK_MEMBER(timer_d_callback);
 
-protected:
+	void jr200_mem(address_map &map);
+
 	required_device<cpu_device> m_maincpu;
 	required_device<beep_device> m_beeper;
 	required_memory_region m_pcg;
@@ -212,35 +218,35 @@ uint32_t jr200_state::screen_update_jr200(screen_device &screen, bitmap_ind16 &b
 	return 0;
 }
 
-READ8_MEMBER(jr200_state::jr200_pcg_1_r)
+uint8_t jr200_state::jr200_pcg_1_r(offs_t offset)
 {
 	return m_pcg->base()[offset+0x000];
 }
 
-READ8_MEMBER(jr200_state::jr200_pcg_2_r)
+uint8_t jr200_state::jr200_pcg_2_r(offs_t offset)
 {
 	return m_pcg->base()[offset+0x400];
 }
 
-WRITE8_MEMBER(jr200_state::jr200_pcg_1_w)
+void jr200_state::jr200_pcg_1_w(offs_t offset, uint8_t data)
 {
 	m_pcg->base()[offset+0x000] = data;
 	m_gfxdecode->gfx(1)->mark_dirty((offset+0x000) >> 3);
 }
 
-WRITE8_MEMBER(jr200_state::jr200_pcg_2_w)
+void jr200_state::jr200_pcg_2_w(offs_t offset, uint8_t data)
 {
 	m_pcg->base()[offset+0x400] = data;
 	m_gfxdecode->gfx(1)->mark_dirty((offset+0x400) >> 3);
 }
 
-READ8_MEMBER(jr200_state::jr200_bios_char_r)
+uint8_t jr200_state::jr200_bios_char_r(offs_t offset)
 {
 	return m_gfx_ram->base()[offset];
 }
 
 
-WRITE8_MEMBER(jr200_state::jr200_bios_char_w)
+void jr200_state::jr200_bios_char_w(offs_t offset, uint8_t data)
 {
 	/* TODO: writing is presumably controlled by an I/O bit */
 //  m_gfx_ram->base()[offset] = data;
@@ -253,7 +259,7 @@ I/O Device
 
 */
 
-READ8_MEMBER(jr200_state::mcu_keyb_r)
+uint8_t jr200_state::mcu_keyb_r()
 {
 	int row, col, table = 0;
 	uint8_t keydata = 0;
@@ -300,13 +306,13 @@ READ8_MEMBER(jr200_state::mcu_keyb_r)
 	return keydata;
 }
 
-WRITE8_MEMBER(jr200_state::jr200_beep_w)
+void jr200_state::jr200_beep_w(uint8_t data)
 {
 	/* writing 0x0e enables the beeper, writing anything else disables it */
 	m_beeper->set_state(((data & 0xf) == 0x0e) ? 1 : 0);
 }
 
-WRITE8_MEMBER(jr200_state::jr200_beep_freq_w)
+void jr200_state::jr200_beep_freq_w(offs_t offset, uint8_t data)
 {
 	uint32_t beep_freq;
 
@@ -317,7 +323,7 @@ WRITE8_MEMBER(jr200_state::jr200_beep_freq_w)
 	m_beeper->set_clock(84000 / beep_freq);
 }
 
-WRITE8_MEMBER(jr200_state::jr200_border_col_w)
+void jr200_state::jr200_border_col_w(uint8_t data)
 {
 	m_border_col = data;
 }
@@ -328,7 +334,7 @@ TIMER_CALLBACK_MEMBER(jr200_state::timer_d_callback)
 	m_maincpu->set_input_line(0, HOLD_LINE);
 }
 
-READ8_MEMBER(jr200_state::mn1271_io_r)
+uint8_t jr200_state::mn1271_io_r(offs_t offset)
 {
 	uint8_t retVal = m_mn1271_ram[offset];
 	if((offset+0xc800) > 0xca00)
@@ -336,7 +342,7 @@ READ8_MEMBER(jr200_state::mn1271_io_r)
 
 	switch(offset+0xc800)
 	{
-		case 0xc801: retVal= mcu_keyb_r(space,0); break;
+		case 0xc801: retVal= mcu_keyb_r(); break;
 		case 0xc803: retVal= (m_mn1271_ram[0x03] & 0xcf) | 0x30;  break;//---x ---- printer status ready (ACTIVE HIGH)
 		case 0xc807: retVal= (m_mn1271_ram[0x07] & 0x80) | 0x60; break;
 		case 0xc80a: retVal= (m_mn1271_ram[0x0a] & 0xfe); break;
@@ -351,48 +357,49 @@ READ8_MEMBER(jr200_state::mn1271_io_r)
 	return retVal;
 }
 
-WRITE8_MEMBER(jr200_state::mn1271_io_w)
+void jr200_state::mn1271_io_w(offs_t offset, uint8_t data)
 {
 	m_mn1271_ram[offset] = data;
 	switch(offset+0xc800)
 	{
 		case 0xc805: break; //LPT printer port W
 		case 0xc816: if (data!=0) {
-					m_timer_d->adjust(attotime::zero, 0, attotime::from_hz(XTAL_14_31818MHz) * (m_mn1271_ram[0x17]*0x100 + m_mn1271_ram[0x18]));
+					m_timer_d->adjust(attotime::zero, 0, attotime::from_hz(XTAL(14'318'181)) * (m_mn1271_ram[0x17]*0x100 + m_mn1271_ram[0x18]));
 				} else {
 					m_timer_d->adjust(attotime::zero, 0,  attotime::zero);
 				}
 				break;
-		case 0xc819: jr200_beep_w(space,0,data); break;
+		case 0xc819: jr200_beep_w(data); break;
 		case 0xc81a:
-		case 0xc81b: jr200_beep_freq_w(space,offset-0x1a,data); break;
-		case 0xca00: jr200_border_col_w(space,0,data); break;
+		case 0xc81b: jr200_beep_freq_w(offset-0x1a,data); break;
+		case 0xca00: jr200_border_col_w(data); break;
 	}
 }
 
-static ADDRESS_MAP_START(jr200_mem, AS_PROGRAM, 8, jr200_state )
+void jr200_state::jr200_mem(address_map &map)
+{
 /*
     0000-3fff RAM
     4000-4fff RAM ( 4k expansion)
     4000-7fff RAM (16k expansion)
     4000-bfff RAM (32k expansion)
 */
-	AM_RANGE(0x0000, 0x7fff) AM_RAM
+	map(0x0000, 0x7fff).ram();
 
-	AM_RANGE(0xa000, 0xbfff) AM_ROM
+	map(0xa000, 0xbfff).rom();
 
-	AM_RANGE(0xc000, 0xc0ff) AM_READWRITE(jr200_pcg_1_r,jr200_pcg_1_w) //PCG area (1)
-	AM_RANGE(0xc100, 0xc3ff) AM_RAM AM_SHARE("vram")
-	AM_RANGE(0xc400, 0xc4ff) AM_READWRITE(jr200_pcg_2_r,jr200_pcg_2_w) //PCG area (2)
-	AM_RANGE(0xc500, 0xc7ff) AM_RAM AM_SHARE("cram")
+	map(0xc000, 0xc0ff).rw(FUNC(jr200_state::jr200_pcg_1_r), FUNC(jr200_state::jr200_pcg_1_w)); //PCG area (1)
+	map(0xc100, 0xc3ff).ram().share("vram");
+	map(0xc400, 0xc4ff).rw(FUNC(jr200_state::jr200_pcg_2_r), FUNC(jr200_state::jr200_pcg_2_w)); //PCG area (2)
+	map(0xc500, 0xc7ff).ram().share("cram");
 
 //  0xc800 - 0xcfff I / O area
-	AM_RANGE(0xc800, 0xcfff) AM_READWRITE(mn1271_io_r,mn1271_io_w) AM_SHARE("mn1271_ram")
+	map(0xc800, 0xcfff).rw(FUNC(jr200_state::mn1271_io_r), FUNC(jr200_state::mn1271_io_w)).share("mn1271_ram");
 
-	AM_RANGE(0xd000, 0xd7ff) AM_READWRITE(jr200_bios_char_r,jr200_bios_char_w) //BIOS PCG RAM area
-	AM_RANGE(0xd800, 0xdfff) AM_ROM // cart space (header 0x7e)
-	AM_RANGE(0xe000, 0xffff) AM_ROM
-ADDRESS_MAP_END
+	map(0xd000, 0xd7ff).rw(FUNC(jr200_state::jr200_bios_char_r), FUNC(jr200_state::jr200_bios_char_w)); //BIOS PCG RAM area
+	map(0xd800, 0xdfff).rom(); // cart space (header 0x7e)
+	map(0xe000, 0xffff).rom();
+}
 
 /* Input ports */
 static INPUT_PORTS_START( jr200 )
@@ -507,7 +514,7 @@ static const gfx_layout tiles8x8_layout =
 	8*8
 };
 
-static GFXDECODE_START( jr200 )
+static GFXDECODE_START( gfx_jr200 )
 	GFXDECODE_ENTRY( "gfx_ram", 0, tiles8x8_layout, 0, 1 )
 	GFXDECODE_ENTRY( "pcg", 0, tiles8x8_layout, 0, 1 )
 GFXDECODE_END
@@ -532,32 +539,32 @@ void jr200_state::machine_reset()
 }
 
 
-static MACHINE_CONFIG_START( jr200 )
+void jr200_state::jr200(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", M6802, XTAL_14_31818MHz / 4) /* MN1800A, ? Mhz assumption that it is same as JR-100*/
-	MCFG_CPU_PROGRAM_MAP(jr200_mem)
+	M6808(config, m_maincpu, XTAL(14'318'181) / 4); /* MN1800A, ? MHz assumption that it is same as JR-100*/
+	m_maincpu->set_addrmap(AS_PROGRAM, &jr200_state::jr200_mem);
 
-//  MCFG_CPU_ADD("mn1544", MN1544, ?)
+//  MN1544(config, "mn1544", ?);
 
 	/* video hardware */
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_REFRESH_RATE(60)
-	MCFG_SCREEN_VBLANK_TIME(ATTOSECONDS_IN_USEC(2500)) /* not accurate */
-	MCFG_SCREEN_SIZE(16 + 256 + 16, 16 + 192 + 16) /* border size not accurate */
-	MCFG_SCREEN_VISIBLE_AREA(0, 16 + 256 + 16 - 1, 0, 16 + 192 + 16 - 1)
-	MCFG_SCREEN_UPDATE_DRIVER(jr200_state, screen_update_jr200)
-	MCFG_SCREEN_PALETTE("palette")
+	screen_device &screen(SCREEN(config, "screen", SCREEN_TYPE_RASTER));
+	screen.set_refresh_hz(60);
+	screen.set_vblank_time(ATTOSECONDS_IN_USEC(2500)); /* not accurate */
+	screen.set_size(16 + 256 + 16, 16 + 192 + 16); /* border size not accurate */
+	screen.set_visarea(0, 16 + 256 + 16 - 1, 0, 16 + 192 + 16 - 1);
+	screen.set_screen_update(FUNC(jr200_state::screen_update_jr200));
+	screen.set_palette(m_palette);
 
-	MCFG_GFXDECODE_ADD("gfxdecode", "palette", jr200)
-	MCFG_PALETTE_ADD_3BIT_BRG("palette")
+	GFXDECODE(config, m_gfxdecode, m_palette, gfx_jr200);
+	PALETTE(config, m_palette, palette_device::BRG_3BIT);
 
-	MCFG_SPEAKER_STANDARD_MONO("mono")
+	SPEAKER(config, "mono").front_center();
 
 	// AY-8910 ?
 
-	MCFG_SOUND_ADD("beeper", BEEP, 0)
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS,"mono",0.50)
-MACHINE_CONFIG_END
+	BEEP(config, m_beeper, 0).add_route(ALL_OUTPUTS,"mono",0.50);
+}
 
 
 
@@ -596,6 +603,6 @@ ROM_END
 
 /* Driver */
 
-//    YEAR  NAME    PARENT  COMPAT  MACHINE  INPUT  STATE        INIT  COMPANY      FULLNAME   FLAGS
-COMP( 1982, jr200,  0,      0,      jr200,   jr200, jr200_state, 0,    "National",  "JR-200",  MACHINE_NOT_WORKING | MACHINE_NO_SOUND)
-COMP( 1982, jr200u, jr200,  0,      jr200,   jr200, jr200_state, 0,    "Panasonic", "JR-200U", MACHINE_NOT_WORKING | MACHINE_NO_SOUND)
+//    YEAR  NAME    PARENT  COMPAT  MACHINE  INPUT  CLASS        INIT        COMPANY      FULLNAME   FLAGS
+COMP( 1982, jr200,  0,      0,      jr200,   jr200, jr200_state, empty_init, "National",  "JR-200",  MACHINE_NOT_WORKING | MACHINE_NO_SOUND)
+COMP( 1982, jr200u, jr200,  0,      jr200,   jr200, jr200_state, empty_init, "Panasonic", "JR-200U", MACHINE_NOT_WORKING | MACHINE_NO_SOUND)

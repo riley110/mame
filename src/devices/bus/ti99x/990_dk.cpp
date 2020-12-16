@@ -705,23 +705,20 @@ void fd800_legacy_device::do_cmd()
         30: unit MSB
         31: Interrupt (CBUSY???) (1 -> controller is ready)
 */
-READ8_MEMBER( fd800_legacy_device::cru_r )
+uint8_t fd800_legacy_device::cru_r(offs_t offset)
 {
 	int reply = 0;
 
-	switch (offset)
+	offset &= 31;
+	if (offset < 16)
 	{
-	case 0:
-	case 1:
 		// receive buffer
-		reply = m_recv_buf >> (offset*8);
-		break;
-
-	case 2:
-	case 3:
+		reply = BIT(m_recv_buf, offset);
+	}
+	else
+	{
 		// status register
-		reply = m_stat_reg >> ((offset-2)*8);
-		break;
+		reply = BIT(m_stat_reg, offset - 16);
 	}
 
 	return reply;
@@ -739,7 +736,7 @@ READ8_MEMBER( fd800_legacy_device::cru_r )
     27: FD unit number MSB/extended command code
     28-31: command code
 */
-WRITE8_MEMBER( fd800_legacy_device::cru_w )
+void fd800_legacy_device::cru_w(offs_t offset, uint8_t data)
 {
 	switch (offset)
 	{

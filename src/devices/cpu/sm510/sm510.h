@@ -13,51 +13,9 @@
 
 // I/O ports setup
 
-// 4-bit K input port (pull-down)
-#define MCFG_SM510_READ_K_CB(_devcb) \
-	devcb = &sm510_base_device::set_read_k_callback(*device, DEVCB_##_devcb);
 // when in halt state, any K input going High can wake up the CPU,
-// driver is required to use execute_set_input(SM510_INPUT_LINE_K, state)
+// driver is required to use set_input_line(SM510_INPUT_LINE_K, state)
 #define SM510_INPUT_LINE_K 0
-
-// 1-bit BA(aka alpha) input pin (pull-up)
-#define MCFG_SM510_READ_BA_CB(_devcb) \
-	devcb = &sm510_base_device::set_read_ba_callback(*device, DEVCB_##_devcb);
-
-// 1-bit B(beta) input pin (pull-up)
-#define MCFG_SM510_READ_B_CB(_devcb) \
-	devcb = &sm510_base_device::set_read_b_callback(*device, DEVCB_##_devcb);
-
-// 8-bit S strobe output port
-#define MCFG_SM510_WRITE_S_CB(_devcb) \
-	devcb = &sm510_base_device::set_write_s_callback(*device, DEVCB_##_devcb);
-
-// 2/4-bit R (melody) output port
-#define MCFG_SM510_WRITE_R_CB(_devcb) \
-	devcb = &sm510_base_device::set_write_r_callback(*device, DEVCB_##_devcb);
-
-// R port can be set to direct control with a mask option (default false)
-#define MCFG_SM510_R_DIRECT_CONTROL(_direct) \
-	sm510_base_device::set_r_direct_control(*device, _direct);
-
-// LCD segment outputs: H1-4 as offset(low), a/b/c 1-16 as data d0-d15
-#define MCFG_SM510_WRITE_SEGA_CB(_devcb) \
-	devcb = &sm510_base_device::set_write_sega_callback(*device, DEVCB_##_devcb);
-#define MCFG_SM510_WRITE_SEGB_CB(_devcb) \
-	devcb = &sm510_base_device::set_write_segb_callback(*device, DEVCB_##_devcb);
-#define MCFG_SM510_WRITE_SEGC_CB(_devcb) \
-	devcb = &sm510_base_device::set_write_segc_callback(*device, DEVCB_##_devcb);
-
-// LCD bs output: same as above, but only up to 2 bits used
-#define MCFG_SM510_WRITE_SEGBS_CB(_devcb) \
-	devcb = &sm510_base_device::set_write_segbs_callback(*device, DEVCB_##_devcb);
-
-// LCD output lazy combination
-#define MCFG_SM510_WRITE_SEGS_CB(_devcb) \
-	MCFG_SM510_WRITE_SEGA_CB(_devcb) \
-	MCFG_SM510_WRITE_SEGB_CB(_devcb) \
-	MCFG_SM510_WRITE_SEGC_CB(_devcb) \
-	MCFG_SM510_WRITE_SEGBS_CB(_devcb)
 
 // ACL input pin
 #define SM510_INPUT_LINE_ACL INPUT_LINE_RESET
@@ -112,9 +70,9 @@ public:
 		, m_prgwidth(prgwidth)
 		, m_datawidth(datawidth)
 		, m_stack_levels(stack_levels)
-		, m_r_direct(false)
+		, m_r_mask_option(RMASK_DIRECT)
 		, m_lcd_ram_a(*this, "lcd_ram_a"), m_lcd_ram_b(*this, "lcd_ram_b"), m_lcd_ram_c(*this, "lcd_ram_c")
-		, m_write_sega(*this), m_write_segb(*this), m_write_segc(*this), m_write_segbs(*this)
+		, m_write_segs(*this)
 		, m_melody_rom(*this, "melody")
 		, m_read_k(*this)
 		, m_read_ba(*this), m_read_b(*this)
@@ -122,18 +80,32 @@ public:
 		, m_write_r(*this)
 	{ }
 
-	// static configuration helpers
-	template <class Object> static devcb_base &set_read_k_callback(device_t &device, Object &&cb) { return downcast<sm510_base_device &>(device).m_read_k.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_read_ba_callback(device_t &device, Object &&cb) { return downcast<sm510_base_device &>(device).m_read_ba.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_read_b_callback(device_t &device, Object &&cb) { return downcast<sm510_base_device &>(device).m_read_b.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_write_s_callback(device_t &device, Object &&cb) { return downcast<sm510_base_device &>(device).m_write_s.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_write_r_callback(device_t &device, Object &&cb) { return downcast<sm510_base_device &>(device).m_write_r.set_callback(std::forward<Object>(cb)); }
-	static void set_r_direct_control(device_t &device, bool direct) { downcast<sm510_base_device &>(device).m_r_direct = direct; }
+	// For SM510, SM500, SM5A, R port output is selected with a mask option,
+	// either from the divider or direct contol. Documented options are:
+	// SM510/SM5A: direct control, 2(4096Hz meant for alarm sound)
+	// SM500: 14, 11, 3 (divider f1, f4, f12)
+	void set_r_mask_option(int bit) { m_r_mask_option = bit; }
+	static constexpr int RMASK_DIRECT = -1;
 
-	template <class Object> static devcb_base &set_write_sega_callback(device_t &device, Object &&cb) { return downcast<sm510_base_device &>(device).m_write_sega.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_write_segb_callback(device_t &device, Object &&cb) { return downcast<sm510_base_device &>(device).m_write_segb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_write_segc_callback(device_t &device, Object &&cb) { return downcast<sm510_base_device &>(device).m_write_segc.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_write_segbs_callback(device_t &device, Object &&cb) { return downcast<sm510_base_device &>(device).m_write_segbs.set_callback(std::forward<Object>(cb)); }
+	// 4-bit K input port (pull-down)
+	auto read_k() { return m_read_k.bind(); }
+
+	// 1-bit BA(aka alpha) input pin (pull-up)
+	auto read_ba() { return m_read_ba.bind(); }
+
+	// 1-bit B(beta) input pin (pull-up)
+	auto read_b() { return m_read_b.bind(); }
+
+	// 8-bit S strobe output port
+	auto write_s() { return m_write_s.bind(); }
+
+	// 1/2/4-bit R (buzzer/melody) output port
+	auto write_r() { return m_write_r.bind(); }
+
+	// LCD segment outputs, SM51X: H1-4 as offset(low), a/b/c 1-16 as data d0-d15,
+	// bs output is same as above, but only up to 2 bits used.
+	// SM500/SM5A: H1/2 as a0, O group as a1-a4, O data as d0-d3
+	auto write_segs() { return m_write_segs.bind(); }
 
 protected:
 	// device-level overrides
@@ -141,21 +113,17 @@ protected:
 	virtual void device_reset() override;
 
 	// device_execute_interface overrides
-	virtual u64 execute_clocks_to_cycles(u64 clocks) const override { return (clocks + m_clk_div - 1) / m_clk_div; } // default 2 cycles per machine cycle
-	virtual u64 execute_cycles_to_clocks(u64 cycles) const override { return (cycles * m_clk_div); } // "
-	virtual u32 execute_min_cycles() const override { return 1; }
-	virtual u32 execute_max_cycles() const override { return 2; }
-	virtual u32 execute_input_lines() const override { return 1; }
+	virtual u64 execute_clocks_to_cycles(u64 clocks) const noexcept override { return (clocks + m_clk_div - 1) / m_clk_div; } // default 2 cycles per machine cycle
+	virtual u64 execute_cycles_to_clocks(u64 cycles) const noexcept override { return (cycles * m_clk_div); } // "
+	virtual u32 execute_min_cycles() const noexcept override { return 1; }
+	virtual u32 execute_max_cycles() const noexcept override { return 2; }
+	virtual u32 execute_input_lines() const noexcept override { return 1; }
 	virtual void execute_set_input(int line, int state) override;
 	virtual void execute_run() override;
 	virtual void execute_one() { } // -> child class
 
 	// device_memory_interface overrides
 	virtual space_config_vector memory_space_config() const override;
-
-	// device_disasm_interface overrides
-	virtual u32 disasm_min_opcode_bytes() const override { return 1; }
-	virtual u32 disasm_max_opcode_bytes() const override { return 2; }
 
 	address_space_config m_program_config;
 	address_space_config m_data_config;
@@ -181,22 +149,23 @@ protected:
 	u8 m_bl;
 	u8 m_bm;
 	bool m_sbm;
+	bool m_sbl;
 	u8 m_c;
 	bool m_skip;
 	u8 m_w;
 	u8 m_r, m_r_out;
-	bool m_r_direct;
+	int m_r_mask_option;
 	bool m_k_active;
 	bool m_halt;
 	int m_clk_div;
 
 	// lcd driver
 	optional_shared_ptr<u8> m_lcd_ram_a, m_lcd_ram_b, m_lcd_ram_c;
-	devcb_write16 m_write_sega, m_write_segb, m_write_segc, m_write_segbs;
+	devcb_write16 m_write_segs;
 	emu_timer *m_lcd_timer;
 	u8 m_l, m_x;
 	u8 m_y;
-	bool m_bp;
+	u8 m_bp;
 	bool m_bc;
 
 	u16 get_lcd_row(int column, u8* ram);
@@ -236,8 +205,8 @@ protected:
 	virtual void get_opcode_param() { }
 	virtual void update_w_latch() { }
 
-	u8 ram_r();
-	void ram_w(u8 data);
+	virtual u8 ram_r();
+	virtual void ram_w(u8 data);
 	void pop_stack();
 	void push_stack();
 	virtual void do_branch(u8 pu, u8 pm, u8 pl);
@@ -246,6 +215,7 @@ protected:
 	// opcode handlers
 	virtual void op_lb();
 	virtual void op_lbl();
+	virtual void op_sbl();
 	virtual void op_sbm();
 	virtual void op_exbla();
 	virtual void op_incb();
@@ -318,10 +288,13 @@ protected:
 class sm510_device : public sm510_base_device
 {
 public:
-	sm510_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock);
+	sm510_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock = 32768);
 
 protected:
-	virtual offs_t disasm_disassemble(std::ostream &stream, offs_t pc, const u8 *oprom, const u8 *opram, u32 options) override;
+	void program_2_7k(address_map &map);
+	void data_96_32x4(address_map &map);
+
+	virtual std::unique_ptr<util::disasm_interface> create_disassembler() override;
 	virtual void execute_one() override;
 	virtual void get_opcode_param() override;
 
@@ -334,15 +307,18 @@ protected:
 class sm511_device : public sm510_base_device
 {
 public:
-	sm511_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock);
+	sm511_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock = 32768);
 
 protected:
 	sm511_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, u32 clock, int stack_levels, int prgwidth, address_map_constructor program, int datawidth, address_map_constructor data);
 
+	void program_4k(address_map &map);
+	void data_96_32x4(address_map &map);
+
 	virtual void device_post_load() override { notify_clock_changed(); }
 	virtual void device_reset() override;
 
-	virtual offs_t disasm_disassemble(std::ostream &stream, offs_t pc, const u8 *oprom, const u8 *opram, u32 options) override;
+	virtual std::unique_ptr<util::disasm_interface> create_disassembler() override;
 	virtual void execute_one() override;
 	virtual void get_opcode_param() override;
 
@@ -353,7 +329,10 @@ protected:
 class sm512_device : public sm511_device
 {
 public:
-	sm512_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock);
+	sm512_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock = 32768);
+
+protected:
+	void data_80_48x4(address_map &map);
 };
 
 

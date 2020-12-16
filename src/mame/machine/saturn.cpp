@@ -58,14 +58,14 @@
 
 /**************************************************************************************/
 
-WRITE16_MEMBER(saturn_state::saturn_soundram_w)
+void saturn_state::saturn_soundram_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	//machine().scheduler().synchronize(); // force resync
 
 	COMBINE_DATA(&m_sound_ram[offset]);
 }
 
-READ16_MEMBER(saturn_state::saturn_soundram_r)
+uint16_t saturn_state::saturn_soundram_r(offs_t offset)
 {
 	//machine().scheduler().synchronize(); // force resync
 
@@ -73,21 +73,21 @@ READ16_MEMBER(saturn_state::saturn_soundram_r)
 }
 
 /* communication,SLAVE CPU acquires data from the MASTER CPU and triggers an irq.  */
-WRITE32_MEMBER(saturn_state::minit_w)
+void saturn_state::minit_w(uint32_t data)
 {
-	//logerror("cpu %s (PC=%08X) MINIT write = %08x\n", space.device().tag(), space.device().safe_pc(),data);
+	//logerror("%s MINIT write = %08x\n", machine().describe_context(),data);
 	machine().scheduler().boost_interleave(m_minit_boost_timeslice, attotime::from_usec(m_minit_boost));
 	machine().scheduler().trigger(1000);
 	machine().scheduler().synchronize(); // force resync
-	m_slave->sh2_set_frt_input(PULSE_LINE);
+	m_slave->pulse_frt_input();
 }
 
-WRITE32_MEMBER(saturn_state::sinit_w)
+void saturn_state::sinit_w(uint32_t data)
 {
-	//logerror("cpu %s (PC=%08X) SINIT write = %08x\n", space.device().tag(), space.device().safe_pc(),data);
+	//logerror("%s SINIT write = %08x\n", machine().describe_context(),data);
 	machine().scheduler().boost_interleave(m_sinit_boost_timeslice, attotime::from_usec(m_sinit_boost));
 	machine().scheduler().synchronize(); // force resync
-	m_maincpu->sh2_set_frt_input(PULSE_LINE);
+	m_maincpu->pulse_frt_input();
 }
 
 /*
@@ -109,9 +109,9 @@ Shinrei Jusatsushi Taromaru (options menu)
 
 */
 
-WRITE32_MEMBER(saturn_state::saturn_minit_w)
+void saturn_state::saturn_minit_w(uint32_t data)
 {
-	//logerror("cpu %s (PC=%08X) MINIT write = %08x\n", space.device().tag(), space.device().safe_pc(),data);
+	//logerror("%s MINIT write = %08x\n", machine().describe_context(),data);
 	if(m_fake_comms->read() & 1)
 		machine().scheduler().synchronize(); // force resync
 	else
@@ -120,22 +120,22 @@ WRITE32_MEMBER(saturn_state::saturn_minit_w)
 		machine().scheduler().trigger(1000);
 	}
 
-	m_slave->sh2_set_frt_input(PULSE_LINE);
+	m_slave->pulse_frt_input();
 }
 
-WRITE32_MEMBER(saturn_state::saturn_sinit_w)
+void saturn_state::saturn_sinit_w(uint32_t data)
 {
-	//logerror("cpu %s (PC=%08X) SINIT write = %08x\n", space.device().tag(), space.device().safe_pc(),data);
+	//logerror("%s SINIT write = %08x\n", machine().describe_context(),data);
 	if(m_fake_comms->read() & 1)
 		machine().scheduler().synchronize(); // force resync
 	else
 		machine().scheduler().boost_interleave(m_sinit_boost_timeslice, attotime::from_usec(m_sinit_boost));
 
-	m_maincpu->sh2_set_frt_input(PULSE_LINE);
+	m_maincpu->pulse_frt_input();
 }
 
 
-READ8_MEMBER(saturn_state::saturn_backupram_r)
+uint8_t saturn_state::saturn_backupram_r(offs_t offset)
 {
 	if(!(offset & 1))
 		return 0; // yes, it makes sure the "holes" are there.
@@ -143,7 +143,7 @@ READ8_MEMBER(saturn_state::saturn_backupram_r)
 	return m_backupram[offset >> 1] & 0xff;
 }
 
-WRITE8_MEMBER(saturn_state::saturn_backupram_w)
+void saturn_state::saturn_backupram_w(offs_t offset, uint8_t data)
 {
 	if(!(offset & 1))
 		return;
@@ -159,7 +159,7 @@ WRITE_LINE_MEMBER(saturn_state::m68k_reset_callback)
 	printf("m68k RESET opcode triggered\n");
 }
 
-WRITE8_MEMBER(saturn_state::scsp_irq)
+void saturn_state::scsp_irq(offs_t offset, uint8_t data)
 {
 	// don't bother the 68k if it's off
 	if (!m_en_68k)
@@ -256,9 +256,9 @@ TIMER_DEVICE_CALLBACK_MEMBER(saturn_state::saturn_slave_scanline )
 	y_step = get_ystep_count();
 
 	if(scanline == vblank_line*y_step)
-		m_slave->set_input_line_and_vector(0x6, HOLD_LINE, 0x43);
+		m_slave->set_input_line_and_vector(0x6, HOLD_LINE, 0x43); // SH2
 	else if((scanline % y_step) == 0 && scanline < vblank_line*y_step)
-		m_slave->set_input_line_and_vector(0x2, HOLD_LINE, 0x41);
+		m_slave->set_input_line_and_vector(0x2, HOLD_LINE, 0x41); // SH2
 }
 
 static const gfx_layout tiles8x8x4_layout =
@@ -319,7 +319,7 @@ static const gfx_layout tiles16x16x8_layout =
 
 
 
-GFXDECODE_START( stv )
+GFXDECODE_START( gfx_stv )
 	GFXDECODE_ENTRY( nullptr, 0, tiles8x8x4_layout,   0x00, (0x80*(2+1))  )
 	GFXDECODE_ENTRY( nullptr, 0, tiles16x16x4_layout, 0x00, (0x80*(2+1))  )
 	GFXDECODE_ENTRY( nullptr, 0, tiles8x8x8_layout,   0x00, (0x08*(2+1))  )
@@ -377,12 +377,10 @@ WRITE_LINE_MEMBER(saturn_state::system_halt_w)
 
 WRITE_LINE_MEMBER(saturn_state::dot_select_w)
 {
-	uint32_t xtal;
+	const XTAL &xtal = state ? MASTER_CLOCK_320 : MASTER_CLOCK_352;
 
-	xtal = state ? MASTER_CLOCK_320 : MASTER_CLOCK_352;
-
-	machine().device("maincpu")->set_unscaled_clock(xtal/2);
-	machine().device("slave")->set_unscaled_clock(xtal/2);
+	m_maincpu->set_unscaled_clock(xtal/2);
+	m_slave->set_unscaled_clock(xtal/2);
 
 	m_vdp2.dotsel = state ^ 1;
 	stv_vdp2_dynamic_res_change();

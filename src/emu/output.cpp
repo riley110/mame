@@ -2,17 +2,21 @@
 // copyright-holders:Nicola Salmoria, Aaron Giles, Vas Crabb
 /***************************************************************************
 
-    output.c
+    output.cpp
 
     General purpose output routines.
+
 ***************************************************************************/
 
 #include "emu.h"
+#include "output.h"
+
 #include "coreutil.h"
-#include "modules/output/output_module.h"
+
+#include <algorithm>
 
 
-#define OUTPUT_VERBOSE  0
+#define OUTPUT_VERBOSE 0
 
 
 
@@ -58,9 +62,7 @@ void output_manager::output_item::notify(s32 value)
 void output_manager::item_proxy::resolve(device_t &device, std::string const &name)
 {
 	assert(!m_item);
-	m_item = device.machine().output().find_item(name.c_str());
-	if (!m_item)
-		m_item = &device.machine().output().create_new_item(name.c_str(), 0);
+	m_item = &device.machine().output().find_or_create_item(name.c_str(), 0);
 }
 
 
@@ -69,24 +71,54 @@ void output_manager::item_proxy::resolve(device_t &device, std::string const &na
 //  OUTPUT MANAGER
 //**************************************************************************
 
-//-------------------------------------------------
-//  output_manager - constructor
-//-------------------------------------------------
+/*-------------------------------------------------
+    output_manager - constructor
+-------------------------------------------------*/
 
 output_manager::output_manager(running_machine &machine)
-	: m_machine(machine),
-		m_uniqueid(12345)
+	: m_machine(machine)
+	, m_uniqueid(12345)
 {
-	/* add pause callback */
+	// add callbacks
 	machine.add_notifier(MACHINE_NOTIFY_PAUSE, machine_notify_delegate(&output_manager::pause, this));
 	machine.add_notifier(MACHINE_NOTIFY_RESUME, machine_notify_delegate(&output_manager::resume, this));
+	machine.save().register_presave(save_prepost_delegate(FUNC(output_manager::presave), this));
+	machine.save().register_postload(save_prepost_delegate(FUNC(output_manager::postload), this));
 }
+
+
+/*-------------------------------------------------
+    register_save - register for save states
+-------------------------------------------------*/
+
+void output_manager::register_save()
+{
+	assert(m_save_order.empty());
+	assert(!m_save_data);
+
+	// make space for the data
+	m_save_order.clear();
+	m_save_order.reserve(m_itemtable.size());
+	m_save_data = std::make_unique<s32 []>(m_itemtable.size());
+
+	// sort existing outputs by name and register for save
+	for (auto &item : m_itemtable)
+		m_save_order.emplace_back(item.second);
+	std::sort(m_save_order.begin(), m_save_order.end(), [] (auto const &l, auto const &r) { return l.get().name() < r.get().name(); });
+
+	// register the reserved space for saving
+	machine().save().save_pointer(nullptr, "output", nullptr, 0, NAME(m_save_data), m_itemtable.size());
+	if (OUTPUT_VERBOSE)
+		osd_printf_verbose("Registered %u outputs for save states\n", m_itemtable.size());
+
+}
+
 
 /*-------------------------------------------------
     find_item - find an item based on a string
 -------------------------------------------------*/
 
-output_manager::output_item* output_manager::find_item(const char *string)
+output_manager::output_item *output_manager::find_item(char const *string)
 {
 	auto item = m_itemtable.find(std::string(string));
 	if (item != m_itemtable.end())
@@ -100,8 +132,11 @@ output_manager::output_item* output_manager::find_item(const char *string)
     create_new_item - create a new item
 -------------------------------------------------*/
 
-output_manager::output_item &output_manager::create_new_item(const char *outname, s32 value)
+output_manager::output_item &output_manager::create_new_item(char const *outname, s32 value)
 {
+	if (OUTPUT_VERBOSE)
+		osd_printf_verbose("Creating output %s = %d%s\n", outname, value, m_save_data ? " (will not be saved)" : "");
+
 	auto const ins(m_itemtable.emplace(
 			std::piecewise_construct,
 			std::forward_as_tuple(outname),
@@ -109,6 +144,13 @@ output_manager::output_item &output_manager::create_new_item(const char *outname
 	assert(ins.second);
 	return ins.first->second;
 }
+
+output_manager::output_item &output_manager::find_or_create_item(char const *outname, s32 value)
+{
+	output_item *const item = find_item(outname);
+	return item ? *item : create_new_item(outname, value);
+}
+
 
 /*-------------------------------------------------
     output_pause - send pause message
@@ -126,10 +168,32 @@ void output_manager::resume()
 
 
 /*-------------------------------------------------
+    presave - prepare data for save state
+-------------------------------------------------*/
+
+void output_manager::presave()
+{
+	for (size_t i = 0; m_save_order.size() > i; ++i)
+		m_save_data[i] = m_save_order[i].get().get();
+}
+
+
+/*-------------------------------------------------
+    postload - restore loaded data
+-------------------------------------------------*/
+
+void output_manager::postload()
+{
+	for (size_t i = 0; m_save_order.size() > i; ++i)
+		 m_save_order[i].get().set(m_save_data[i]);
+}
+
+
+/*-------------------------------------------------
     output_set_value - set the value of an output
 -------------------------------------------------*/
 
-void output_manager::set_value(const char *outname, s32 value)
+void output_manager::set_value(char const *outname, s32 value)
 {
 	output_item *const item = find_item(outname);
 
@@ -142,37 +206,11 @@ void output_manager::set_value(const char *outname, s32 value)
 
 
 /*-------------------------------------------------
-    output_set_indexed_value - set the value of an
-    indexed output
--------------------------------------------------*/
-
-void output_manager::set_indexed_value(const char *basename, int index, int value)
-{
-	char buffer[100];
-	char *dest = buffer;
-
-	/* copy the string */
-	while (*basename != 0)
-		*dest++ = *basename++;
-
-	/* append the index */
-	if (index >= 1000) *dest++ = '0' + ((index / 1000) % 10);
-	if (index >= 100) *dest++ = '0' + ((index / 100) % 10);
-	if (index >= 10) *dest++ = '0' + ((index / 10) % 10);
-	*dest++ = '0' + (index % 10);
-	*dest++ = 0;
-
-	/* set the value */
-	set_value(buffer, value);
-}
-
-
-/*-------------------------------------------------
     output_get_value - return the value of an
     output
 -------------------------------------------------*/
 
-s32 output_manager::get_value(const char *outname)
+s32 output_manager::get_value(char const *outname)
 {
 	output_item const *const item = find_item(outname);
 
@@ -182,38 +220,12 @@ s32 output_manager::get_value(const char *outname)
 
 
 /*-------------------------------------------------
-    output_get_indexed_value - get the value of an
-    indexed output
--------------------------------------------------*/
-
-s32 output_manager::get_indexed_value(const char *basename, int index)
-{
-	char buffer[100];
-	char *dest = buffer;
-
-	/* copy the string */
-	while (*basename != 0)
-		*dest++ = *basename++;
-
-	/* append the index */
-	if (index >= 1000) *dest++ = '0' + ((index / 1000) % 10);
-	if (index >= 100) *dest++ = '0' + ((index / 100) % 10);
-	if (index >= 10) *dest++ = '0' + ((index / 10) % 10);
-	*dest++ = '0' + (index % 10);
-	*dest++ = 0;
-
-	/* set the value */
-	return get_value(buffer);
-}
-
-
-/*-------------------------------------------------
     output_set_notifier - sets a notifier callback
     for a particular output, or for all outputs
     if nullptr is specified
 -------------------------------------------------*/
 
-void output_manager::set_notifier(const char *outname, output_notifier_func callback, void *param)
+void output_manager::set_notifier(char const *outname, notifier_func callback, void *param)
 {
 	// if an item is specified, find/create it
 	if (outname)
@@ -229,23 +241,11 @@ void output_manager::set_notifier(const char *outname, output_notifier_func call
 
 
 /*-------------------------------------------------
-    output_notify_all - immediately call the given
-    notifier for all outputs
--------------------------------------------------*/
-
-void output_manager::notify_all(output_module *module)
-{
-	for (auto &item : m_itemtable)
-		module->notify(item.second.name().c_str(), item.second.get());
-}
-
-
-/*-------------------------------------------------
     output_name_to_id - returns a unique ID for
     a given name
 -------------------------------------------------*/
 
-u32 output_manager::name_to_id(const char *outname)
+u32 output_manager::name_to_id(char const *outname)
 {
 	// if no item, ID is 0
 	output_item const *const item = find_item(outname);
@@ -258,12 +258,12 @@ u32 output_manager::name_to_id(const char *outname)
     to a given unique ID
 -------------------------------------------------*/
 
-const char *output_manager::id_to_name(u32 id)
+char const *output_manager::id_to_name(u32 id)
 {
 	for (auto &item : m_itemtable)
 		if (item.second.id() == id)
 			return item.second.name().c_str();
 
-	/* nothing found, return nullptr */
+	// nothing found, return nullptr
 	return nullptr;
 }

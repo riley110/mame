@@ -17,7 +17,7 @@
 /*************************************
 *  Constants
 *************************************/
-#define ZEUS2_VIDEO_CLOCK     XTAL_66_6667MHz
+#define ZEUS2_VIDEO_CLOCK     XTAL(66'666'700)
 
 #define DUMP_WAVE_RAM       0
 #define TRACK_REG_USAGE     0
@@ -63,8 +63,8 @@ struct zeus2_poly_extra_data
 *  Macros
 *************************************/
 
-#define WAVERAM_BLOCK0(blocknum)                ((void *)((uint8_t *)waveram + 8 * (blocknum)))
-#define WAVERAM_BLOCK0_EXT(blocknum)                ((void *)((uint8_t *)m_state->waveram + 8 * (blocknum)))
+#define WAVERAM_BLOCK0(blocknum)                ((void *)((uint8_t *)m_waveram.get() + 8 * (blocknum)))
+#define WAVERAM_BLOCK0_EXT(blocknum)            ((void *)((uint8_t *)m_state->m_waveram.get() + 8 * (blocknum)))
 
 #define WAVERAM_PTR8(base, bytenum)             ((uint8_t *)(base) + BYTE4_XOR_LE(bytenum))
 #define WAVERAM_READ8(base, bytenum)            (*WAVERAM_PTR8(base, bytenum))
@@ -101,30 +101,20 @@ typedef zeus2_renderer::extent_t z2_poly_extent;
 /*************************************
 *  Zeus2 Video Device
 *************************************/
-#define MCFG_ZEUS2_VBLANK_CB(_devcb) \
-	devcb = &zeus2_device::set_vblank_callback(*device, DEVCB_##_devcb);
-
-#define MCFG_ZEUS2_IRQ_CB(_devcb) \
-	devcb = &zeus2_device::set_irq_callback(*device, DEVCB_##_devcb);
-
-#define MCFG_ZEUS2_FLOAT_MODE(_mode) \
-	downcast<zeus2_device *>(device)->set_float_mode(_mode);
-
-class zeus2_device : public device_t
+class zeus2_device : public device_t, public device_video_interface
 {
 public:
 	zeus2_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	screen_device *m_screen;              /* the screen we are acting on */
-
 	uint32_t screen_update(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect);
-	DECLARE_READ32_MEMBER( zeus2_r );
-	DECLARE_WRITE32_MEMBER( zeus2_w );
+	uint32_t zeus2_r(offs_t offset);
+	void zeus2_w(offs_t offset, uint32_t data);
 	TIMER_CALLBACK_MEMBER(display_irq_off);
 	TIMER_CALLBACK_MEMBER(display_irq);
 
-	template <class Object> static devcb_base &set_vblank_callback(device_t &device, Object &&cb) { return downcast<zeus2_device &>(device).m_vblank.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_irq_callback(device_t &device, Object &&cb) { return downcast<zeus2_device &>(device).m_irq.set_callback(std::forward<Object>(cb)); }
+	auto vblank_callback() { return m_vblank.bind(); }
+	auto irq_callback() { return m_irq.bind(); }
+
 	devcb_write_line   m_vblank;
 	devcb_write_line   m_irq;
 
@@ -134,7 +124,7 @@ public:
 	uint32_t m_zeusbase[0x80];
 	uint32_t m_renderRegs[0x50];
 
-	zeus2_renderer* poly;
+	std::unique_ptr<zeus2_renderer> poly;
 
 	rectangle zeus_cliprect;
 
@@ -146,7 +136,7 @@ public:
 	int zeus_quad_size;
 	bool m_useZOffset;
 
-	uint32_t *waveram;
+	std::unique_ptr<uint32_t[]> m_waveram;
 	std::unique_ptr<uint32_t[]> m_frameColor;
 	std::unique_ptr<int32_t[]> m_frameDepth;
 	uint32_t m_pal_table[0x100];

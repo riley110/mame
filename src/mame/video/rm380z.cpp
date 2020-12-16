@@ -193,9 +193,9 @@ void rm380z_state::check_scroll_register()
 // 20e2: prints "Ready:"
 // 0195: prints "\n"
 
-WRITE8_MEMBER( rm380z_state::videoram_write )
+void rm380z_state::videoram_write(offs_t offset, uint8_t data)
 {
-	//printf("vramw [%2.2x][%2.2x] port0 [%2.2x] fbfd [%2.2x] fbfe [%2.2x] PC [%4.4x]\n",offset,data,m_port0,m_fbfd,m_fbfe,m_maincpu->safe_pc());
+	//printf("%s vramw [%2.2x][%2.2x] port0 [%2.2x] fbfd [%2.2x] fbfe [%2.2x]\n",machine().describe_context().c_str(),offset,data,m_port0,m_fbfd,m_fbfe);
 
 	int lineWidth=0x80;
 	if (m_videomode==RM380Z_VIDEOMODE_40COL)
@@ -226,7 +226,7 @@ WRITE8_MEMBER( rm380z_state::videoram_write )
 	m_mainVideoram[offset]=data;
 }
 
-READ8_MEMBER( rm380z_state::videoram_read )
+uint8_t rm380z_state::videoram_read(offs_t offset)
 {
 	return m_mainVideoram[offset];
 }

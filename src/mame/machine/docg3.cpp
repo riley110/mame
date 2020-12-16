@@ -103,7 +103,7 @@ uint8_t diskonchip_g3_device::g3_read_data()
 	return data;
 }
 
-READ16_MEMBER( diskonchip_g3_device::sec_1_r )
+uint16_t diskonchip_g3_device::sec_1_r(offs_t offset)
 {
 	uint16_t data;
 	if (m_sec_2[0x1B] & 0x40)
@@ -142,7 +142,7 @@ void diskonchip_g3_device::g3_write_data(uint8_t data)
 	m_transfer_offset++;
 }
 
-WRITE16_MEMBER( diskonchip_g3_device::sec_1_w )
+void diskonchip_g3_device::sec_1_w(offs_t offset, uint16_t data)
 {
 	verboselog(*this, 9, "(DOC) %08X <- %04X\n", 0x0800 + (offset << 1), data);
 	if (m_sec_2[0x1B] & 0x40)
@@ -691,7 +691,7 @@ void diskonchip_g3_device::sec_2_write8(uint32_t offset, uint8_t data)
 	}
 }
 
-READ16_MEMBER( diskonchip_g3_device::sec_2_r )
+uint16_t diskonchip_g3_device::sec_2_r(offs_t offset, uint16_t mem_mask)
 {
 	if (mem_mask == 0xffff)
 	{
@@ -712,7 +712,7 @@ READ16_MEMBER( diskonchip_g3_device::sec_2_r )
 	}
 }
 
-WRITE16_MEMBER( diskonchip_g3_device::sec_2_w )
+void diskonchip_g3_device::sec_2_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	if (mem_mask == 0xffff)
 	{
@@ -732,14 +732,14 @@ WRITE16_MEMBER( diskonchip_g3_device::sec_2_w )
 	}
 }
 
-READ16_MEMBER( diskonchip_g3_device::sec_3_r )
+uint16_t diskonchip_g3_device::sec_3_r(offs_t offset)
 {
 	uint16_t data = 0;
 	verboselog(*this, 9, "(DOC) %08X -> %04X\n", 0x1800 + (offset << 1), data);
 	return data;
 }
 
-WRITE16_MEMBER( diskonchip_g3_device::sec_3_w )
+void diskonchip_g3_device::sec_3_w(offs_t offset, uint16_t data)
 {
 	verboselog(*this, 9, "(DOC) %08X <- %02X\n", 0x1800 + (offset << 1), data);
 }
@@ -777,23 +777,20 @@ void diskonchip_g3_device::device_start()
 
 	memset(m_sec_2, 0, sizeof(m_sec_2));
 
-	m_data[0] = std::make_unique<uint8_t[]>(m_data_size[0]);
-	memset(m_data[0].get(), 0, sizeof(uint8_t) * m_data_size[0]);
-	m_data[1] = std::make_unique<uint8_t[]>(m_data_size[1]);
-	memset(m_data[1].get(), 0, sizeof(uint8_t) * m_data_size[1]);
-	m_data[2] = std::make_unique<uint8_t[]>(m_data_size[2]);
-	memset(m_data[2].get(), 0, sizeof(uint8_t) * m_data_size[2]);
+	m_data[0] = make_unique_clear<uint8_t[]>(m_data_size[0]);
+	m_data[1] = make_unique_clear<uint8_t[]>(m_data_size[1]);
+	m_data[2] = make_unique_clear<uint8_t[]>(m_data_size[2]);
 
 //  diskonchip_load( device, "diskonchip");
 
-	save_item( NAME(m_planes));
-	save_item( NAME(m_blocks));
-	save_item( NAME(m_pages));
-	save_item( NAME(m_user_data_size));
-	save_item( NAME(m_extra_area_size));
-	save_pointer( NAME(m_data[0].get()), m_data_size[0]);
-	save_pointer( NAME(m_data[1].get()), m_data_size[1]);
-	save_pointer( NAME(m_data[2].get()), m_data_size[2]);
+	save_item(NAME(m_planes));
+	save_item(NAME(m_blocks));
+	save_item(NAME(m_pages));
+	save_item(NAME(m_user_data_size));
+	save_item(NAME(m_extra_area_size));
+	save_pointer(NAME(m_data[0]), m_data_size[0]);
+	save_pointer(NAME(m_data[1]), m_data_size[1]);
+	save_pointer(NAME(m_data[2]), m_data_size[2]);
 }
 
 //-------------------------------------------------

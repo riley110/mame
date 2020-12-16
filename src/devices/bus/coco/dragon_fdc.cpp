@@ -66,14 +66,16 @@
 *********************************************************************/
 
 #include "emu.h"
-#include "cococart.h"
+#include "dragon_fdc.h"
+
 #include "coco_fdc.h"
-#include "imagedev/flopdrv.h"
+#include "imagedev/floppy.h"
 #include "machine/wd_fdc.h"
 #include "formats/dmk_dsk.h"
 #include "formats/jvc_dsk.h"
 #include "formats/vdk_dsk.h"
 #include "formats/sdf_dsk.h"
+#include "formats/os9_dsk.h"
 
 
 /***************************************************************************
@@ -81,7 +83,7 @@
 ***************************************************************************/
 
 #define LOG_FDC                 0
-#define WD2797_TAG              "wd2797"
+
 
 
 /***************************************************************************
@@ -94,11 +96,12 @@ namespace
 	{
 	protected:
 		// construction/destruction
-		dragon_fdc_device_base(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock);
+		dragon_fdc_device_base(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, u32 clock);
 
 		// device-level overrides
-		virtual DECLARE_READ8_MEMBER(scs_read) override;
-		virtual DECLARE_WRITE8_MEMBER(scs_write) override;
+		virtual u8 cts_read(offs_t offset) override;
+		virtual u8 scs_read(offs_t offset) override;
+		virtual void scs_write(offs_t offset, u8 data) override;
 		virtual void device_add_mconfig(machine_config &config) override;
 		virtual void update_lines() override;
 
@@ -108,7 +111,29 @@ namespace
 		required_device_array<floppy_connector, 4>  m_floppies;
 
 		// methods
-		void dskreg_w(uint8_t data);
+		void dskreg_w(u8 data);
+	};
+
+	class premier_fdc_device_base : public coco_family_fdc_device_base
+	{
+	protected:
+		// construction/destruction
+		premier_fdc_device_base(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, u32 clock);
+
+		// device-level overrides
+		virtual u8 cts_read(offs_t offset) override;
+		virtual u8 scs_read(offs_t offset) override;
+		virtual void scs_write(offs_t offset, u8 data) override;
+		virtual void device_add_mconfig(machine_config &config) override;
+		virtual void update_lines() override;
+
+	private:
+		// device references
+		required_device<wd2791_device>              m_wd2791;
+		required_device_array<floppy_connector, 4>  m_floppies;
+
+		// methods
+		void dskreg_w(u8 data);
 	};
 }
 
@@ -116,25 +141,34 @@ namespace
     LOCAL VARIABLES
 ***************************************************************************/
 
-static SLOT_INTERFACE_START(dragon_fdc_device_base)
-	SLOT_INTERFACE("qd", FLOPPY_525_QD)
-SLOT_INTERFACE_END
+static void dragon_fdc_drives(device_slot_interface &device)
+{
+	device.option_add("qd", FLOPPY_525_QD);
+}
 
 
-MACHINE_CONFIG_MEMBER(dragon_fdc_device_base::device_add_mconfig)
-	MCFG_WD2797_ADD(WD2797_TAG, XTAL_1MHz)
-	MCFG_WD_FDC_INTRQ_CALLBACK(WRITELINE(dragon_fdc_device_base, fdc_intrq_w))
-	MCFG_WD_FDC_DRQ_CALLBACK(WRITELINE(dragon_fdc_device_base, fdc_drq_w))
+void dragon_fdc_device_base::device_add_mconfig(machine_config &config)
+{
+	WD2797(config, m_wd2797, 4_MHz_XTAL / 4).set_force_ready(true);
+	m_wd2797->intrq_wr_callback().set(FUNC(dragon_fdc_device_base::fdc_intrq_w));
+	m_wd2797->drq_wr_callback().set(FUNC(dragon_fdc_device_base::fdc_drq_w));
 
-	MCFG_FLOPPY_DRIVE_ADD(WD2797_TAG ":0", dragon_fdc_device_base, "qd", dragon_fdc_device_base::floppy_formats)
-	MCFG_FLOPPY_DRIVE_SOUND(true)
-	MCFG_FLOPPY_DRIVE_ADD(WD2797_TAG ":1", dragon_fdc_device_base, "qd", dragon_fdc_device_base::floppy_formats)
-	MCFG_FLOPPY_DRIVE_SOUND(true)
-	MCFG_FLOPPY_DRIVE_ADD(WD2797_TAG ":2", dragon_fdc_device_base, "", dragon_fdc_device_base::floppy_formats)
-	MCFG_FLOPPY_DRIVE_SOUND(true)
-	MCFG_FLOPPY_DRIVE_ADD(WD2797_TAG ":3", dragon_fdc_device_base, "", dragon_fdc_device_base::floppy_formats)
-	MCFG_FLOPPY_DRIVE_SOUND(true)
-MACHINE_CONFIG_END
+	FLOPPY_CONNECTOR(config, m_floppies[0], dragon_fdc_drives, "qd", dragon_fdc_device_base::floppy_formats).enable_sound(true);
+	FLOPPY_CONNECTOR(config, m_floppies[1], dragon_fdc_drives, "qd", dragon_fdc_device_base::floppy_formats).enable_sound(true);
+	FLOPPY_CONNECTOR(config, m_floppies[2], dragon_fdc_drives, nullptr, dragon_fdc_device_base::floppy_formats).enable_sound(true);
+	FLOPPY_CONNECTOR(config, m_floppies[3], dragon_fdc_drives, nullptr, dragon_fdc_device_base::floppy_formats).enable_sound(true);
+}
+
+
+void premier_fdc_device_base::device_add_mconfig(machine_config &config)
+{
+	WD2791(config, m_wd2791, 2_MHz_XTAL / 2).set_force_ready(true);
+
+	FLOPPY_CONNECTOR(config, m_floppies[0], dragon_fdc_drives, "qd", dragon_fdc_device_base::floppy_formats).enable_sound(true);
+	FLOPPY_CONNECTOR(config, m_floppies[1], dragon_fdc_drives, "qd", dragon_fdc_device_base::floppy_formats).enable_sound(true);
+	FLOPPY_CONNECTOR(config, m_floppies[2], dragon_fdc_drives, nullptr, dragon_fdc_device_base::floppy_formats).enable_sound(true);
+	FLOPPY_CONNECTOR(config, m_floppies[3], dragon_fdc_drives, nullptr, dragon_fdc_device_base::floppy_formats).enable_sound(true);
+}
 
 
 //**************************************************************************
@@ -144,10 +178,18 @@ MACHINE_CONFIG_END
 //-------------------------------------------------
 //  dragon_fdc_device_base - constructor
 //-------------------------------------------------
-dragon_fdc_device_base::dragon_fdc_device_base(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock)
+dragon_fdc_device_base::dragon_fdc_device_base(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, u32 clock)
 	: coco_family_fdc_device_base(mconfig, type, tag, owner, clock)
-	, m_wd2797(*this, WD2797_TAG)
-	, m_floppies(*this, WD2797_TAG ":%u", 0)
+	, m_wd2797(*this, "wd2797")
+	, m_floppies(*this, "wd2797:%u", 0)
+{
+}
+
+
+premier_fdc_device_base::premier_fdc_device_base(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, u32 clock)
+	: coco_family_fdc_device_base(mconfig, type, tag, owner, clock)
+	, m_wd2791(*this, "wd2791")
+	, m_floppies(*this, "wd2791:%u", 0)
 {
 }
 
@@ -167,24 +209,29 @@ void dragon_fdc_device_base::update_lines()
 }
 
 
+void premier_fdc_device_base::update_lines()
+{
+}
+
+
 //-------------------------------------------------
 //  dskreg_w - function to write to
 //  Dragon dskreg
 //-------------------------------------------------
 
-void dragon_fdc_device_base::dskreg_w(uint8_t data)
+void dragon_fdc_device_base::dskreg_w(u8 data)
 {
 	if (LOG_FDC)
 	{
 		logerror("fdc_dragon_dskreg_w(): %c%c%c%c%c%c%c%c ($%02x)\n",
-			data & 0x80 ? 'X' : 'x',
-			data & 0x40 ? 'X' : 'x',
-			data & 0x20 ? 'N' : 'n',
-			data & 0x10 ? 'P' : 'p',
-			data & 0x08 ? 'S' : 'D',
-			data & 0x04 ? 'M' : 'm',
-			data & 0x02 ? '1' : '0',
-			data & 0x01 ? '1' : '0',
+			BIT(data, 7) ? 'X' : 'x',
+			BIT(data, 6) ? 'X' : 'x',
+			BIT(data, 5) ? 'N' : 'n',
+			BIT(data, 4) ? 'P' : 'p',
+			BIT(data, 3) ? 'S' : 'D',
+			BIT(data, 2) ? 'M' : 'm',
+			BIT(data, 1) ? '1' : '0',
+			BIT(data, 0) ? '1' : '0',
 			data);
 	}
 
@@ -193,7 +240,7 @@ void dragon_fdc_device_base::dskreg_w(uint8_t data)
 	{
 		floppy_image_device *floppy = m_floppies[i]->get_device();
 		if (floppy)
-			floppy->mon_w((data & 0x04) && (i == (data & 0x03)) ? CLEAR_LINE : ASSERT_LINE);
+			floppy->mon_w(BIT(data,2) && (i == (data & 0x03)) ? CLEAR_LINE : ASSERT_LINE);
 	}
 
 	// manipulate the WD2797
@@ -204,52 +251,109 @@ void dragon_fdc_device_base::dskreg_w(uint8_t data)
 }
 
 
+void premier_fdc_device_base::dskreg_w(u8 data)
+{
+	if (LOG_FDC)
+	{
+		logerror("fdc_premier_dskreg_w(): %c%c%c%c%c%c%c%c ($%02x)\n",
+			BIT(data, 7) ? 'X' : 'x',
+			BIT(data, 6) ? 'X' : 'x',
+			BIT(data, 5) ? 'X' : 'x',
+			BIT(data, 4) ? 'D' : 'S',
+			BIT(data, 3) ? '8' : '5',
+			BIT(data, 2) ? '1' : '0',
+			BIT(data, 1) ? '1' : '0',
+			BIT(data, 0) ? '1' : '0',
+			data);
+	}
+	floppy_image_device *floppy = nullptr;
+
+	// update the motor on each floppy
+	for (int i = 0; i < 4; i++)
+	{
+		floppy = m_floppies[i]->get_device();
+		if (floppy)
+			floppy->mon_w((i == (data & 0x03)) ? CLEAR_LINE : ASSERT_LINE );
+	}
+	floppy = m_floppies[data & 0x03]->get_device();
+
+	// manipulate the WD2791
+	m_wd2791->set_floppy(floppy);
+
+	if (floppy)
+		floppy->ss_w(BIT(data, 2));
+
+	m_wd2791->dden_w(!BIT(data, 4));
+
+	set_dskreg(data);
+}
+
+
+//-------------------------------------------------
+//  cts_read
+//-------------------------------------------------
+
+u8 dragon_fdc_device_base::cts_read(offs_t offset)
+{
+	return memregion("eprom")->base()[offset];
+}
+
+
+u8 premier_fdc_device_base::cts_read(offs_t offset)
+{
+	return memregion("eprom")->base()[offset];
+}
+
+
 //-------------------------------------------------
 //  scs_read
 //-------------------------------------------------
 
-READ8_MEMBER(dragon_fdc_device_base::scs_read)
+u8 dragon_fdc_device_base::scs_read(offs_t offset)
 {
-	uint8_t result = 0;
-	switch (offset & 0xEF)
+	u8 result = 0;
+	switch (offset & 0xef)
 	{
 	case 0:
-		result = m_wd2797->status_r(space, 0);
-		break;
 	case 1:
-		result = m_wd2797->track_r(space, 0);
-		break;
 	case 2:
-		result = m_wd2797->sector_r(space, 0);
-		break;
 	case 3:
-		result = m_wd2797->data_r(space, 0);
+		result = m_wd2797->read(offset & 0xef);
 		break;
 	}
 	return result;
 }
 
 
+u8 premier_fdc_device_base::scs_read(offs_t offset)
+{
+	u8 result = 0;
+	switch (offset)
+	{
+	case 0:
+	case 1:
+	case 2:
+	case 3:
+		result = m_wd2791->read(offset);
+		break;
+	}
+	return result;
+}
+
 
 //-------------------------------------------------
 //  scs_write
 //-------------------------------------------------
 
-WRITE8_MEMBER(dragon_fdc_device_base::scs_write)
+void dragon_fdc_device_base::scs_write(offs_t offset, u8 data)
 {
-	switch (offset & 0xEF)
+	switch (offset & 0xef)
 	{
 	case 0:
-		m_wd2797->cmd_w(space, 0, data);
-		break;
 	case 1:
-		m_wd2797->track_w(space, 0, data);
-		break;
 	case 2:
-		m_wd2797->sector_w(space, 0, data);
-		break;
 	case 3:
-		m_wd2797->data_w(space, 0, data);
+		m_wd2797->write(offset & 0xef, data);
 		break;
 	case 8: case 9: case 10: case 11:
 	case 12: case 13: case 14: case 15:
@@ -259,6 +363,21 @@ WRITE8_MEMBER(dragon_fdc_device_base::scs_write)
 }
 
 
+void premier_fdc_device_base::scs_write(offs_t offset, u8 data)
+{
+	switch (offset)
+	{
+	case 0:
+	case 1:
+	case 2:
+	case 3:
+		m_wd2791->write(offset, data);
+		break;
+	case 4:
+		dskreg_w(data);
+		break;
+	};
+}
 
 
 //**************************************************************************
@@ -267,7 +386,7 @@ WRITE8_MEMBER(dragon_fdc_device_base::scs_write)
 
 ROM_START(dragon_fdc)
 	ROM_REGION(0x4000, "eprom", ROMREGION_ERASE00)
-	ROM_LOAD_OPTIONAL("ddos10.rom", 0x0000, 0x2000, CRC(b44536f6) SHA1(a8918c71d319237c1e3155bb38620acb114a80bc))
+	ROM_LOAD("ddos10.rom", 0x0000, 0x2000, CRC(b44536f6) SHA1(a8918c71d319237c1e3155bb38620acb114a80bc))
 ROM_END
 
 namespace
@@ -276,7 +395,7 @@ namespace
 	{
 	public:
 		// construction/destruction
-		dragon_fdc_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
+		dragon_fdc_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock)
 			: dragon_fdc_device_base(mconfig, DRAGON_FDC, tag, owner, clock)
 		{
 		}
@@ -290,7 +409,39 @@ namespace
 	};
 }
 
-DEFINE_DEVICE_TYPE(DRAGON_FDC, dragon_fdc_device, "dragon_fdc", "Dragon FDC")
+DEFINE_DEVICE_TYPE_PRIVATE(DRAGON_FDC, device_cococart_interface, dragon_fdc_device, "dragon_fdc", "Dragon FDC")
+
+
+//**************************************************************************
+//              PREMIER FDC
+//**************************************************************************
+
+ROM_START(premier_fdc)
+	ROM_REGION(0x4000, "eprom", ROMREGION_ERASE00)
+	ROM_LOAD("deltados.rom", 0x0000, 0x2000, CRC(149eb4dd) SHA1(eb686ce6afe63e4d4011b333a882ca812c69307f))
+ROM_END
+
+namespace
+{
+	class premier_fdc_device : public premier_fdc_device_base
+	{
+	public:
+		// construction/destruction
+		premier_fdc_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock)
+			: premier_fdc_device_base(mconfig, PREMIER_FDC, tag, owner, clock)
+		{
+		}
+
+	protected:
+		// optional information overrides
+		virtual const tiny_rom_entry *device_rom_region() const override
+		{
+			return ROM_NAME(premier_fdc);
+		}
+	};
+};
+
+DEFINE_DEVICE_TYPE_PRIVATE(PREMIER_FDC, device_cococart_interface, premier_fdc_device, "premier_fdc", "Premier FDC")
 
 
 //**************************************************************************
@@ -299,7 +450,7 @@ DEFINE_DEVICE_TYPE(DRAGON_FDC, dragon_fdc_device, "dragon_fdc", "Dragon FDC")
 
 ROM_START(sdtandy_fdc)
 	ROM_REGION(0x4000, "eprom", ROMREGION_ERASE00)
-	ROM_LOAD_OPTIONAL("sdtandy.rom", 0x0000, 0x2000, CRC(5d7779b7) SHA1(ca03942118f2deab2f6c8a89b8a4f41f2d0b94f1))
+	ROM_LOAD("sdtandy.rom", 0x0000, 0x2000, CRC(5d7779b7) SHA1(ca03942118f2deab2f6c8a89b8a4f41f2d0b94f1))
 ROM_END
 
 namespace
@@ -308,7 +459,7 @@ namespace
 	{
 	public:
 		// construction/destruction
-		sdtandy_fdc_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
+		sdtandy_fdc_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock)
 			: dragon_fdc_device_base(mconfig, SDTANDY_FDC, tag, owner, clock)
 		{
 		}
@@ -322,4 +473,4 @@ namespace
 	};
 }
 
-DEFINE_DEVICE_TYPE(SDTANDY_FDC, sdtandy_fdc_device, "sdtandy_fdc", "SDTANDY FDC")
+DEFINE_DEVICE_TYPE_PRIVATE(SDTANDY_FDC, device_cococart_interface, sdtandy_fdc_device, "sdtandy_fdc", "SDTANDY FDC")

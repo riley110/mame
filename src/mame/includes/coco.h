@@ -23,8 +23,7 @@
 #include "machine/ram.h"
 #include "machine/bankdev.h"
 #include "sound/dac.h"
-#include "sound/wave.h"
-
+#include "screen.h"
 
 
 //**************************************************************************
@@ -35,8 +34,9 @@ INPUT_PORTS_EXTERN( coco_analog_control );
 INPUT_PORTS_EXTERN( coco_joystick );
 INPUT_PORTS_EXTERN( coco_rtc );
 INPUT_PORTS_EXTERN( coco_beckerport );
+INPUT_PORTS_EXTERN( coco_beckerport_dw );
 
-SLOT_INTERFACE_EXTERN( coco_cart );
+void coco_cart(device_slot_interface &device);
 
 // constants
 #define JOYSTICK_DELTA          10
@@ -76,10 +76,6 @@ SLOT_INTERFACE_EXTERN( coco_cart );
 #define DIECOM_LIGHTGUN_LY_TAG      "dclg_ly"
 #define DIECOM_LIGHTGUN_BUTTONS_TAG "dclg_triggers"
 
-MACHINE_CONFIG_EXTERN( coco_sound );
-MACHINE_CONFIG_EXTERN( coco_floating );
-
-
 
 //**************************************************************************
 //  TYPE DEFINITIONS
@@ -95,35 +91,32 @@ public:
 	DECLARE_INPUT_CHANGED_MEMBER(joystick_mode_changed);
 
 	// IO
-	virtual DECLARE_READ8_MEMBER( ff00_read );
-	virtual DECLARE_WRITE8_MEMBER( ff00_write );
-	virtual DECLARE_READ8_MEMBER( ff20_read );
-	virtual DECLARE_WRITE8_MEMBER( ff20_write );
-	virtual DECLARE_READ8_MEMBER( ff40_read );
-	virtual DECLARE_WRITE8_MEMBER( ff40_write );
-	DECLARE_READ8_MEMBER( ff60_read );
-	DECLARE_WRITE8_MEMBER( ff60_write );
+	virtual void ff20_write(offs_t offset, uint8_t data);
+	virtual uint8_t ff40_read(offs_t offset);
+	virtual void ff40_write(offs_t offset, uint8_t data);
+	uint8_t ff60_read(offs_t offset);
+	void ff60_write(offs_t offset, uint8_t data);
 
 	// PIA0
-	DECLARE_WRITE8_MEMBER( pia0_pa_w );
-	DECLARE_WRITE8_MEMBER( pia0_pb_w );
+	void pia0_pa_w(uint8_t data);
+	void pia0_pb_w(uint8_t data);
 	DECLARE_WRITE_LINE_MEMBER( pia0_ca2_w );
 	DECLARE_WRITE_LINE_MEMBER( pia0_cb2_w );
 	DECLARE_WRITE_LINE_MEMBER( pia0_irq_a );
 	DECLARE_WRITE_LINE_MEMBER( pia0_irq_b );
 
 	// PIA1
-	DECLARE_READ8_MEMBER( pia1_pa_r );
-	DECLARE_READ8_MEMBER( pia1_pb_r );
-	DECLARE_WRITE8_MEMBER( pia1_pa_w );
-	DECLARE_WRITE8_MEMBER( pia1_pb_w );
+	uint8_t pia1_pa_r();
+	uint8_t pia1_pb_r();
+	void pia1_pa_w(uint8_t data);
+	void pia1_pb_w(uint8_t data);
 	DECLARE_WRITE_LINE_MEMBER( pia1_ca2_w );
 	DECLARE_WRITE_LINE_MEMBER( pia1_cb2_w );
 	DECLARE_WRITE_LINE_MEMBER( pia1_firq_a );
 	DECLARE_WRITE_LINE_MEMBER( pia1_firq_b );
 
 	// floating bus & "space"
-	DECLARE_READ8_MEMBER( floating_bus_read )   { return floating_bus_read(); }
+	uint8_t floating_bus_r()   { return floating_bus_read(); }
 	uint8_t floating_space_read(offs_t offset);
 	void floating_space_write(offs_t offset, uint8_t data);
 
@@ -132,8 +125,13 @@ public:
 	virtual address_space &cartridge_space() override;
 
 	// disassembly override
-	static offs_t os9_dasm_override(device_t &device, std::ostream &stream, offs_t pc, const uint8_t *oprom, const uint8_t *opram, int options);
-	offs_t dasm_override(device_t &device, std::ostream &stream, offs_t pc, const uint8_t *oprom, const uint8_t *opram, int options);
+	static offs_t os9_dasm_override(std::ostream &stream, offs_t pc, const util::disasm_interface::data_buffer &opcodes, const util::disasm_interface::data_buffer &params);
+	offs_t dasm_override(std::ostream &stream, offs_t pc, const util::disasm_interface::data_buffer &opcodes, const util::disasm_interface::data_buffer &params);
+
+	void coco_sound(machine_config &config);
+	void coco_floating(machine_config &config);
+
+	void coco_floating_map(address_map &map);
 
 protected:
 	// device-level overrides
@@ -152,19 +150,17 @@ protected:
 	virtual void pia1_pb_changed(uint8_t data);
 
 	// accessors
-	cpu_device &maincpu() { return *m_maincpu; }
-	address_space &cpu_address_space() { return maincpu().space(); }
 	pia6821_device &pia_0() { return *m_pia_0; }
 	pia6821_device &pia_1() { return *m_pia_1; }
 	cococart_slot_device &cococart() { return *m_cococart; }
 	ram_device &ram() { return *m_ram; }
 
 	// miscellaneous
-	virtual void update_keyboard_input(uint8_t value, uint8_t z);
+	virtual void update_keyboard_input(uint8_t value);
 	virtual void cart_w(bool state);
-	virtual void update_cart_base(uint8_t *cart_base) = 0;
+	virtual void update_cart_base(uint8_t *cart_base) { };
 
-private:
+protected:
 	// timer constants
 	static const device_timer_id TIMER_HIRES_JOYSTICK_X = 0;
 	static const device_timer_id TIMER_HIRES_JOYSTICK_Y = 1;
@@ -237,7 +233,7 @@ private:
 	required_device<pia6821_device> m_pia_1;
 	required_device<dac_byte_interface> m_dac;
 	required_device<dac_1bit_device> m_sbs;
-	required_device<wave_device> m_wave;
+	optional_device<screen_device> m_screen;
 	required_device<cococart_slot_device> m_cococart;
 	required_device<ram_device> m_ram;
 	required_device<cassette_image_device> m_cassette;

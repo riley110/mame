@@ -14,13 +14,6 @@
 
 
 //**************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_SH7604_WDT_ADD(_tag,_freq) \
-	MCFG_DEVICE_ADD(_tag, SH7604_WDT, _freq)
-
-//**************************************************************************
 //  TYPE DEFINITIONS
 //**************************************************************************
 
@@ -33,10 +26,10 @@ public:
 	sh7604_wdt_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 	// I/O operations
-	DECLARE_ADDRESS_MAP( wdt_regs, 8 );
+	void wdt_regs(address_map &map);
 
-	DECLARE_WRITE16_MEMBER( write );
-	DECLARE_READ8_MEMBER( read );
+	void write(address_space &space, offs_t offset, uint16_t data);
+	uint8_t read(address_space &space, offs_t offset);
 
 protected:
 	// device-level overrides

@@ -5,10 +5,11 @@
 #include "mcd.h"
 #include "coreutil.h"
 
-DEVICE_ADDRESS_MAP_START(map, 16, mcd_isa_device)
-	AM_RANGE(0x0, 0x1) AM_READWRITE8(data_r, cmd_w, 0x00ff)
-	AM_RANGE(0x0, 0x1) AM_READWRITE8(flag_r, reset_w, 0xff00)
-ADDRESS_MAP_END
+void mcd_isa_device::map(address_map &map)
+{
+	map(0x0, 0x0).rw(FUNC(mcd_isa_device::data_r), FUNC(mcd_isa_device::cmd_w));
+	map(0x1, 0x1).rw(FUNC(mcd_isa_device::flag_r), FUNC(mcd_isa_device::reset_w));
+}
 
 static INPUT_PORTS_START( ide )
 INPUT_PORTS_END
@@ -51,7 +52,7 @@ void mcd_isa_device::device_start()
 	cdrom_image_device::device_start();
 	set_isa_device();
 	m_isa->set_dma_channel(5, this, false);
-	m_isa->install_device(0x0310, 0x0311, *this, &mcd_isa_device::map, 16);
+	m_isa->install_device(0x0310, 0x0311, *this, &mcd_isa_device::map);
 }
 
 //-------------------------------------------------
@@ -105,10 +106,11 @@ bool mcd_isa_device::read_sector(bool first)
 	return true;
 }
 
-READ8_MEMBER(mcd_isa_device::flag_r)
+uint8_t mcd_isa_device::flag_r()
 {
 	uint8_t ret = 0;
-	m_isa->irq5_w(CLEAR_LINE);
+	if (!machine().side_effects_disabled())
+		m_isa->irq5_w(CLEAR_LINE);
 	if(!m_buf_count || !m_data || m_dma) // if dma enabled the cpu will never not see that flag as it will be halted
 		ret |= FLAG_NODATA;
 	if(!m_cmdbuf_count || !m_newstat)
@@ -116,19 +118,28 @@ READ8_MEMBER(mcd_isa_device::flag_r)
 	return ret | FLAG_UNK;
 }
 
-READ8_MEMBER(mcd_isa_device::data_r)
+uint8_t mcd_isa_device::data_r()
 {
 	if(m_cmdbuf_count)
 	{
-		m_cmdbuf_count--;
-		return m_cmdbuf[m_cmdbuf_idx++];
+		if(machine().side_effects_disabled())
+			return m_cmdbuf[m_cmdbuf_idx];
+		else
+		{
+			m_cmdbuf_count--;
+			return m_cmdbuf[m_cmdbuf_idx++];
+		}
 	}
 	else if(m_buf_count)
 	{
-		uint8_t ret = m_buf_idx < 2352 ? m_buf[m_buf_idx++] : 0;
-		m_buf_count--;
-		if(!m_buf_count)
-			read_sector();
+		uint8_t ret = m_buf_idx < 2352 ? m_buf[m_buf_idx] : 0;
+		if(!machine().side_effects_disabled())
+		{
+			m_buf_idx++;
+			m_buf_count--;
+			if(!m_buf_count)
+				read_sector();
+		}
 		return ret;
 	}
 	return m_stat;
@@ -152,12 +163,12 @@ uint16_t mcd_isa_device::dack16_r(int line)
 	return 0;
 }
 
-WRITE8_MEMBER(mcd_isa_device::reset_w)
+void mcd_isa_device::reset_w(uint8_t data)
 {
 	reset();
 }
 
-WRITE8_MEMBER(mcd_isa_device::cmd_w)
+void mcd_isa_device::cmd_w(uint8_t data)
 {
 	if(m_cmdrd_count)
 	{

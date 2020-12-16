@@ -15,35 +15,6 @@
 
 
 //**************************************************************************
-//  MACROS / CONSTANTS
-//**************************************************************************
-
-#define ECONET_TAG          "econet"
-
-
-
-//**************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_ECONET_ADD() \
-	MCFG_DEVICE_ADD(ECONET_TAG, ECONET, 0)
-
-#define MCFG_ECONET_SLOT_ADD(_tag, _num, _slot_intf, _def_slot) \
-	MCFG_DEVICE_ADD(_tag, ECONET_SLOT, 0) \
-	MCFG_DEVICE_SLOT_INTERFACE(_slot_intf, _def_slot, false) \
-	econet_slot_device::static_set_slot(*device, _num);
-
-
-#define MCFG_ECONET_CLK_CALLBACK(_write) \
-	devcb = &econet_device::set_clk_wr_callback(*device, DEVCB_##_write);
-
-#define MCFG_ECONET_DATA_CALLBACK(_write) \
-	devcb = &econet_device::set_data_wr_callback(*device, DEVCB_##_write);
-
-
-
-//**************************************************************************
 //  TYPE DEFINITIONS
 //**************************************************************************
 
@@ -57,14 +28,14 @@ public:
 	// construction/destruction
 	econet_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	template <class Object> static devcb_base &set_clk_wr_callback(device_t &device, Object &&cb) { return downcast<econet_device &>(device).m_write_clk.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_data_wr_callback(device_t &device, Object &&cb) { return downcast<econet_device &>(device).m_write_data.set_callback(std::forward<Object>(cb)); }
+	auto clk_wr_callback() { return m_write_clk.bind(); }
+	auto data_wr_callback() { return m_write_data.bind(); }
 
 	void add_device(device_t *target, int address);
 
 	// writes for host (driver_device)
-	DECLARE_WRITE_LINE_MEMBER( clk_w );
-	DECLARE_WRITE_LINE_MEMBER( data_w );
+	DECLARE_WRITE_LINE_MEMBER( host_clk_w );
+	DECLARE_WRITE_LINE_MEMBER( host_data_w );
 
 	// writes for peripherals (device_t)
 	void clk_w(device_t *device, int state);
@@ -117,22 +88,31 @@ public:
 	// construction/destruction
 	econet_slot_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
+	template <typename T, typename U>
+	econet_slot_device(const machine_config &mconfig, const char *tag, device_t *owner, T &&econet_tag, U &&devs)
+		: econet_slot_device(mconfig, tag, owner, 0U)
+	{
+		set_econet_tag(std::forward<T>(econet_tag));
+		devs(*this);
+	}
+
 	// device-level overrides
 	virtual void device_start() override;
 
 	// inline configuration
-	static void static_set_slot(device_t &device, int address);
+	template <typename T> void set_econet_tag(T &&tag) { m_econet.set_tag(std::forward<T>(tag)); }
+	void set_slot(int address) { m_address = address; }
 
 private:
 	// configuration
 	uint8_t m_address;
-	econet_device  *m_econet;
+	required_device<econet_device> m_econet;
 };
 
 
 // ======================> device_econet_interface
 
-class device_econet_interface : public device_slot_card_interface
+class device_econet_interface : public device_interface
 {
 	friend class econet_device;
 	template <class ElementType> friend class simple_list;
@@ -156,14 +136,9 @@ private:
 
 
 // device type definition
-extern const device_type ECONET;
-extern const device_type ECONET_SLOT;
 DECLARE_DEVICE_TYPE(ECONET,      econet_device)
 DECLARE_DEVICE_TYPE(ECONET_SLOT, econet_slot_device)
 
-
-SLOT_INTERFACE_EXTERN( econet_devices );
-
-
+void econet_devices(device_slot_interface &device);
 
 #endif // MAME_BUS_ECONET_ECONET_H

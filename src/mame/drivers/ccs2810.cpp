@@ -60,74 +60,132 @@ ToDo:
 - the one disk that exists fails the test:
   Incorrect layout on track 0 head 0, expected_size=41666, current_size=68144
 
+*****************************************************************************
+
+CCS Model 300 / 400
+
+2009-12-11 Skeleton driver.
+
+It requires a floppy disk to boot from.
+
+Early on, it does a read from port F2. If bit 3 is low, the system becomes
+a Model 400.
+
+The CPU board appears to be similar to the 2820 System Processor, which has
+Z80A CTC, Z80A PIO, Z80A SIO/0 and Z80A DMA peripherals on board. Several
+features, including IEI/IEO daisy chain priority, are jumper-configurable.
+
+However, the 2820 has the i/o ports rearranged slightly (even though the
+manual says it should work!), and no fdc support.
+
+ToDo:
+- Using the 2422's FDC, since the ports are the same
+- As before, the only disks that exist cause an unexpected exit.
+
 ****************************************************************************/
 
 #include "emu.h"
 #include "cpu/z80/z80.h"
 #include "bus/rs232/rs232.h"
+//#include "bus/s100/s100.h"
+#include "imagedev/floppy.h"
 #include "machine/ins8250.h"
 #include "machine/ram.h"
 #include "machine/wd_fdc.h"
+#include "machine/z80daisy.h"
+#include "machine/z80ctc.h"
+#include "machine/z80dma.h"
+#include "machine/z80pio.h"
+#include "machine/z80sio.h"
+
 
 class ccs_state : public driver_device
 {
 public:
 	ccs_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
-		m_maincpu(*this, "maincpu"),
-		m_ram(*this, RAM_TAG),
-		m_rom(*this, "maincpu"),
-		m_ins8250(*this, "ins8250"),
-		m_fdc(*this, "fdc"),
-		m_floppy0(*this, "fdc:0"),
-		m_jump_addr_sel(*this, {"ADDRLO", "ADDRHI"}),
-		m_ser_addr_sel(*this, "SERADDR"),
-		m_jump_en(*this, "JMPEN"),
-		m_rom_en(*this, "ROMEN"),
-		m_ser_en(*this, "SEREN")
-	{
-	}
+		: driver_device(mconfig, type, tag)
+		, m_maincpu(*this, "maincpu")
+		, m_ram(*this, RAM_TAG)
+		, m_rom(*this, "maincpu")
+		, m_ins8250(*this, "ins8250")
+		, m_fdc(*this, "fdc")
+		, m_floppy0(*this, "fdc:0")
+		, m_jump_addr_sel(*this, {"ADDRLO", "ADDRHI"})
+		, m_ser_addr_sel(*this, "SERADDR")
+		, m_jump_en(*this, "JMPEN")
+		, m_rom_en(*this, "ROMEN")
+		, m_ser_en(*this, "SEREN")
+	{ }
 
-	DECLARE_READ8_MEMBER(memory_read);
-	DECLARE_WRITE8_MEMBER(memory_write);
-	DECLARE_READ8_MEMBER(io_read);
-	DECLARE_WRITE8_MEMBER(io_write);
-	DECLARE_DRIVER_INIT(ccs2810);
-	DECLARE_DRIVER_INIT(ccs2422);
-	virtual void machine_start() override;
-	virtual void machine_reset() override;
-	DECLARE_READ8_MEMBER(port04_r);
-	DECLARE_READ8_MEMBER(port34_r);
-	DECLARE_WRITE8_MEMBER(port04_w);
-	DECLARE_WRITE8_MEMBER(port34_w);
-	DECLARE_WRITE8_MEMBER(port40_w);
+	void ccs2810(machine_config &config);
+	void ccs2422(machine_config &config);
 
-private:
-	required_device<cpu_device> m_maincpu;
-	required_device<ram_device> m_ram;
-	required_region_ptr<uint8_t> m_rom;
-	required_device<ins8250_device> m_ins8250;
-	optional_device<mb8877_device> m_fdc;
-	optional_device<floppy_connector> m_floppy0;
-
-	required_ioport_array<2> m_jump_addr_sel;
-	required_ioport m_ser_addr_sel;
-	required_ioport m_jump_en;
-	required_ioport m_rom_en;
-	required_ioport m_ser_en;
-
-	uint8_t m_power_on_status;
+protected:
+	u8 port04_r();
+	u8 port34_r();
+	void port04_w(u8 data);
+	void port34_w(u8 data);
 
 	bool m_ss;
 	bool m_dden;
 	bool m_dsize;
-	uint8_t m_ds;
+	u8 m_ds;
 	floppy_image_device *m_floppy;
+
+	required_device<z80_device> m_maincpu;
+	optional_device<ram_device> m_ram;
+	required_region_ptr<u8> m_rom;
+	optional_device<ins8250_device> m_ins8250;
+	optional_device<mb8877_device> m_fdc;
+	optional_device<floppy_connector> m_floppy0;
+	optional_ioport_array<2> m_jump_addr_sel;
+	optional_ioport m_ser_addr_sel;
+	optional_ioport m_jump_en;
+	optional_ioport m_rom_en;
+	optional_ioport m_ser_en;
+
+private:
+	u8 memory_read(offs_t offset);
+	void memory_write(offs_t offset, u8 data);
+	u8 io_read(offs_t offset);
+	void io_write(offs_t offset, u8 data);
+
+	void machine_start() override;
+	void machine_reset() override;
+
+	void port40_w(u8 data);
+
+	void ccs2422_io(address_map &map);
+	void ccs2810_io(address_map &map);
+	void ccs2810_mem(address_map &map);
+
+	u8 m_power_on_status;
 };
 
-READ8_MEMBER(ccs_state::memory_read)
+class ccs300_state : public ccs_state
 {
-	uint8_t result = m_ram->read(offset);
+public:
+	ccs300_state(const machine_config &mconfig, device_type type, const char *tag)
+		: ccs_state(mconfig, type, tag)
+		, m_ram1(*this, "mainram")
+		, m_bank1(*this, "bank1")
+	{ }
+
+	void ccs300(machine_config &config);
+
+private:
+	void machine_start() override;
+	void machine_reset() override;
+	void ccs300_io(address_map &map);
+	void ccs300_mem(address_map &map);
+	void port40_w(u8 data);
+	required_shared_ptr<u8> m_ram1;
+	required_memory_bank    m_bank1;
+};
+
+u8 ccs_state::memory_read(offs_t offset)
+{
+	u8 result = m_ram->read(offset);
 
 	if (!BIT(m_power_on_status, 0))
 	{
@@ -141,52 +199,77 @@ READ8_MEMBER(ccs_state::memory_read)
 		result = m_rom[offset & 0x7ff];
 
 		// wait state forced for 4 MHz operation
-		if (!machine().side_effect_disabled())
+		if (!machine().side_effects_disabled())
 			m_maincpu->adjust_icount(-1);
 	}
 
-	if (!machine().side_effect_disabled())
+	if (!machine().side_effects_disabled())
 		m_power_on_status |= m_power_on_status >> 1;
 
 	return result;
 }
 
-WRITE8_MEMBER(ccs_state::memory_write)
+void ccs_state::memory_write(offs_t offset, u8 data)
 {
 	m_ram->write(offset, data);
 }
 
-READ8_MEMBER(ccs_state::io_read)
+u8 ccs_state::io_read(offs_t offset)
 {
 	// A7-A3 are compared against jumper settings
 	if (m_ser_en->read() && (offset & 0x00f8) == m_ser_addr_sel->read())
-		return m_ins8250->ins8250_r(space, offset & 7);
+		return m_ins8250->ins8250_r(offset & 7);
 
 	return 0xff;
 }
 
-WRITE8_MEMBER(ccs_state::io_write)
+void ccs_state::io_write(offs_t offset, u8 data)
 {
 	// A7-A3 are compared against jumper settings
 	if (m_ser_en->read() && (offset & 0x00f8) == m_ser_addr_sel->read())
-		m_ins8250->ins8250_w(space, offset & 7, data);
+		m_ins8250->ins8250_w(offset & 7, data);
 }
 
-static ADDRESS_MAP_START(ccs2810_mem, AS_PROGRAM, 8, ccs_state)
-	AM_RANGE(0x0000, 0xffff) AM_READWRITE(memory_read, memory_write)
-ADDRESS_MAP_END
+void ccs_state::ccs2810_mem(address_map &map)
+{
+	map(0x0000, 0xffff).rw(FUNC(ccs_state::memory_read), FUNC(ccs_state::memory_write));
+}
 
-static ADDRESS_MAP_START(ccs2810_io, AS_IO, 8, ccs_state)
-	AM_RANGE(0x0000, 0xffff) AM_READWRITE(io_read, io_write)
-ADDRESS_MAP_END
+void ccs_state::ccs2810_io(address_map &map)
+{
+	map(0x0000, 0xffff).rw(FUNC(ccs_state::io_read), FUNC(ccs_state::io_write));
+}
 
-static ADDRESS_MAP_START(ccs2422_io, AS_IO, 8, ccs_state)
-	AM_RANGE(0x04, 0x04) AM_MIRROR(0xff00) AM_READWRITE(port04_r,port04_w)
-	AM_RANGE(0x30, 0x33) AM_MIRROR(0xff00) AM_DEVREADWRITE("fdc", mb8877_device, read, write)
-	AM_RANGE(0x34, 0x34) AM_MIRROR(0xff00) AM_READWRITE(port34_r,port34_w)
-	AM_RANGE(0x40, 0x40) AM_MIRROR(0xff00) AM_WRITE(port40_w)
-	AM_RANGE(0x0000, 0xffff) AM_READWRITE(io_read, io_write)
-ADDRESS_MAP_END
+void ccs_state::ccs2422_io(address_map &map)
+{
+	map(0x0000, 0xffff).rw(FUNC(ccs_state::io_read), FUNC(ccs_state::io_write));
+	map(0x04, 0x04).mirror(0xff00).rw(FUNC(ccs_state::port04_r), FUNC(ccs_state::port04_w));
+	map(0x30, 0x33).mirror(0xff00).rw(m_fdc, FUNC(mb8877_device::read), FUNC(mb8877_device::write));
+	map(0x34, 0x34).mirror(0xff00).rw(FUNC(ccs_state::port34_r), FUNC(ccs_state::port34_w));
+	map(0x40, 0x40).mirror(0xff00).w(FUNC(ccs_state::port40_w));
+}
+
+void ccs300_state::ccs300_mem(address_map &map)
+{
+	map(0x0000, 0xffff).ram().share("mainram");
+	map(0x0000, 0x07ff).bankr("bank1");
+}
+
+void ccs300_state::ccs300_io(address_map &map)
+{
+	map.unmap_value_high();
+	map.global_mask(0xff);
+	map(0x04, 0x04).rw(FUNC(ccs300_state::port04_r), FUNC(ccs300_state::port04_w));
+	map(0x10, 0x13).rw("sio", FUNC(z80sio_device::ba_cd_r), FUNC(z80sio_device::ba_cd_w));
+	map(0x14, 0x17).rw("pio", FUNC(z80pio_device::read_alt), FUNC(z80pio_device::write_alt));
+	map(0x18, 0x1b).rw("ctc", FUNC(z80ctc_device::read), FUNC(z80ctc_device::write));
+	map(0x30, 0x33).rw(m_fdc, FUNC(mb8877_device::read), FUNC(mb8877_device::write));
+	map(0x34, 0x34).rw(FUNC(ccs300_state::port34_r), FUNC(ccs300_state::port34_w));
+	map(0x40, 0x40).w(FUNC(ccs300_state::port40_w));
+	map(0xf0, 0xf0).rw("dma", FUNC(z80dma_device::read), FUNC(z80dma_device::write));
+	map(0xf2, 0xf2); // dip or jumper? only used by CCS-400
+}
+
 
 /* Input ports */
 static INPUT_PORTS_START( ccs2810 )
@@ -759,6 +842,10 @@ static INPUT_PORTS_START( ccs2810 )
 	PORT_DIPSETTING(0xf8, "F8h-FFh")
 INPUT_PORTS_END
 
+static INPUT_PORTS_START( ccs300 )
+INPUT_PORTS_END
+
+
 //*************************************
 //
 //  Status / Control ports
@@ -776,10 +863,10 @@ d6 : autoboot (1=go to monitor)
 d7 : drq
 */
 
-READ8_MEMBER( ccs_state::port34_r )
+u8 ccs_state::port34_r()
 {
-	//return (uint8_t)m_drq | (m_ds << 1) | ((uint8_t)fdc->hld_r() << 5) | 0x40 | ((uint8_t)m_intrq << 7);
-	return (uint8_t)m_fdc->drq_r() | (m_ds << 1) | 0x20 | 0x40 | ((uint8_t)m_fdc->intrq_r() << 7); // hld_r doesn't do anything
+	//return (u8)m_drq | (m_ds << 1) | ((u8)fdc->hld_r() << 5) | 0x40 | ((u8)m_intrq << 7);
+	return (u8)m_fdc->drq_r() | (m_ds << 1) | 0x20 | 0x40 | ((u8)m_fdc->intrq_r() << 7); // hld_r doesn't do anything
 }
 
 /* Status 2
@@ -793,7 +880,7 @@ d6 : double (0 = a double-sided 20cm disk is in the drive)
 d7 : drq
 */
 
-READ8_MEMBER( ccs_state::port04_r )
+u8 ccs_state::port04_r()
 {
 	bool trk00=1,wprt=0,dside=1;
 	int idx=1;
@@ -804,8 +891,8 @@ READ8_MEMBER( ccs_state::port04_r )
 		idx = m_floppy->idx_r()^1;
 		dside = m_floppy->twosid_r();
 	}
-	return (uint8_t)trk00 | 0 | ((uint8_t)wprt << 2) | ((uint8_t)m_ss << 3) |
-		idx << 4 | ((uint8_t)m_dden << 5) | ((uint8_t)dside << 6) | ((uint8_t)m_fdc->drq_r() << 7);
+	return (u8)trk00 | 0 | ((u8)wprt << 2) | ((u8)m_ss << 3) |
+		idx << 4 | ((u8)m_dden << 5) | ((u8)dside << 6) | ((u8)m_fdc->drq_r() << 7);
 }
 
 /* Control 1
@@ -819,7 +906,7 @@ d6 : dden
 d7 : autowait (0=ignore drq)
 */
 
-WRITE8_MEMBER( ccs_state::port34_w )
+void ccs_state::port34_w(u8 data)
 {
 	m_ds = data & 15;
 	m_dsize = BIT(data, 4);
@@ -844,7 +931,7 @@ d7 : rom enable (1=firmware enabled)
 other bits not used
 */
 
-WRITE8_MEMBER( ccs_state::port04_w )
+void ccs_state::port04_w(u8 data)
 {
 	m_ss = BIT(data, 6);
 	if (m_floppy)
@@ -857,14 +944,18 @@ WRITE8_MEMBER( ccs_state::port04_w )
 //  Machine
 //
 //*************************************
-WRITE8_MEMBER( ccs_state::port40_w )
+void ccs_state::port40_w(u8 data)
 {
-	//membank("bankr0")->set_entry( (data) ? 1 : 0);
+	//possibly a banking control, like ccs300 ?
 }
 
 void ccs_state::machine_start()
 {
 	save_item(NAME(m_power_on_status));
+	save_item(NAME(m_ss));
+	save_item(NAME(m_dden));
+	save_item(NAME(m_dsize));
+	save_item(NAME(m_ds));
 }
 
 void ccs_state::machine_reset()
@@ -873,77 +964,157 @@ void ccs_state::machine_reset()
 	m_power_on_status = m_jump_en->read() | 8;
 }
 
-DRIVER_INIT_MEMBER( ccs_state, ccs2810 )
+void ccs300_state::port40_w(u8 data)
 {
+	m_bank1->set_entry(BIT(~data, 0));
 }
 
-DRIVER_INIT_MEMBER( ccs_state, ccs2422 )
+void ccs300_state::machine_reset()
 {
+	m_bank1->set_entry(1);
+}
+
+void ccs300_state::machine_start()
+{
+	m_bank1->configure_entry(0, m_ram1);
+	m_bank1->configure_entry(1, m_rom);
+	save_item(NAME(m_ss));
+	save_item(NAME(m_dden));
+	save_item(NAME(m_dsize));
+	save_item(NAME(m_ds));
 }
 
 //*************************************
 //
-//  Disk
+//  Config
 //
 //*************************************
 
-static SLOT_INTERFACE_START( ccs_floppies )
-	SLOT_INTERFACE( "8sssd", FLOPPY_8_SSSD )
-SLOT_INTERFACE_END
+static const z80_daisy_config daisy_chain[] =
+{
+	{ "ctc" },
+	{ "sio" },
+	{ "pio" },
+	{ "dma" },
+	{ nullptr }
+};
 
-	//SLOT_INTERFACE( "525dd", FLOPPY_525_DD )
+static DEVICE_INPUT_DEFAULTS_START( terminal )
+	DEVICE_INPUT_DEFAULTS( "RS232_RXBAUD", 0xff, RS232_BAUD_9600 )
+	DEVICE_INPUT_DEFAULTS( "RS232_TXBAUD", 0xff, RS232_BAUD_9600 )
+	DEVICE_INPUT_DEFAULTS( "RS232_STARTBITS", 0xff, RS232_STARTBITS_1 )
+	DEVICE_INPUT_DEFAULTS( "RS232_DATABITS", 0xff, RS232_DATABITS_7 )
+	DEVICE_INPUT_DEFAULTS( "RS232_PARITY", 0xff, RS232_PARITY_NONE )
+	DEVICE_INPUT_DEFAULTS( "RS232_STOPBITS", 0xff, RS232_STOPBITS_2 )
+DEVICE_INPUT_DEFAULTS_END
 
-static MACHINE_CONFIG_START( ccs2810 )
+static void ccs_floppies(device_slot_interface &device)
+{
+	device.option_add("8sssd", FLOPPY_8_SSSD);
+	//device.option_add("8sssd", FLOPPY_525_DD);
+}
+
+
+void ccs_state::ccs2810(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", Z80, XTAL_16MHz / 4)
-	MCFG_CPU_PROGRAM_MAP(ccs2810_mem)
-	MCFG_CPU_IO_MAP(ccs2810_io)
+	Z80(config, m_maincpu, 16_MHz_XTAL / 4);
+	m_maincpu->set_addrmap(AS_PROGRAM, &ccs_state::ccs2810_mem);
+	m_maincpu->set_addrmap(AS_IO, &ccs_state::ccs2810_io);
 
-	MCFG_RAM_ADD(RAM_TAG)
-	MCFG_RAM_DEFAULT_SIZE("64K")
+	RAM(config, RAM_TAG).set_default_size("64K");
 
 	/* Devices */
-	MCFG_DEVICE_ADD("ins8250", INS8250, XTAL_1_8432MHz)
-	MCFG_INS8250_OUT_TX_CB(DEVWRITELINE("rs232", rs232_port_device, write_txd))
-	MCFG_INS8250_OUT_DTR_CB(DEVWRITELINE("rs232", rs232_port_device, write_dtr))
-	MCFG_INS8250_OUT_RTS_CB(DEVWRITELINE("rs232", rs232_port_device, write_rts))
-	MCFG_INS8250_OUT_OUT1_CB(DEVWRITELINE("rs232", rs232_port_device, write_etc)) // RLSD
+	INS8250(config, m_ins8250, 1.8432_MHz_XTAL);
+	m_ins8250->out_tx_callback().set("rs232", FUNC(rs232_port_device::write_txd));
+	m_ins8250->out_dtr_callback().set("rs232", FUNC(rs232_port_device::write_dtr));
+	m_ins8250->out_rts_callback().set("rs232", FUNC(rs232_port_device::write_rts));
+	m_ins8250->out_out1_callback().set("rs232", FUNC(rs232_port_device::write_spds)); // RLSD
 
-	MCFG_RS232_PORT_ADD("rs232", default_rs232_devices, "terminal")
-	MCFG_RS232_RXD_HANDLER(DEVWRITELINE("ins8250", ins8250_device, rx_w))
-	MCFG_DEVCB_CHAIN_OUTPUT(DEVWRITELINE("ins8250", ins8250_device, ri_w))
-	MCFG_RS232_DCD_HANDLER(DEVWRITELINE("ins8250", ins8250_device, dcd_w))
-	MCFG_RS232_DSR_HANDLER(DEVWRITELINE("ins8250", ins8250_device, dsr_w))
-	MCFG_RS232_CTS_HANDLER(DEVWRITELINE("ins8250", ins8250_device, cts_w))
-MACHINE_CONFIG_END
+	rs232_port_device &rs232(RS232_PORT(config, "rs232", default_rs232_devices, "terminal"));
+	rs232.rxd_handler().set(m_ins8250, FUNC(ins8250_device::rx_w));
+	rs232.rxd_handler().append(m_ins8250, FUNC(ins8250_device::ri_w));
+	rs232.dcd_handler().set(m_ins8250, FUNC(ins8250_device::dcd_w));
+	rs232.dsr_handler().set(m_ins8250, FUNC(ins8250_device::dsr_w));
+	rs232.cts_handler().set(m_ins8250, FUNC(ins8250_device::cts_w));
+}
 
-static MACHINE_CONFIG_START( ccs2422 )
+void ccs_state::ccs2422(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", Z80, XTAL_16MHz / 4)
-	MCFG_CPU_PROGRAM_MAP(ccs2810_mem)
-	MCFG_CPU_IO_MAP(ccs2422_io)
+	Z80(config, m_maincpu, 16_MHz_XTAL / 4);
+	m_maincpu->set_addrmap(AS_PROGRAM, &ccs_state::ccs2810_mem);
+	m_maincpu->set_addrmap(AS_IO, &ccs_state::ccs2422_io);
 
-	MCFG_RAM_ADD(RAM_TAG)
-	MCFG_RAM_DEFAULT_SIZE("64K")
+	RAM(config, RAM_TAG).set_default_size("64K");
 
 	/* Devices */
-	MCFG_DEVICE_ADD("ins8250", INS8250, XTAL_1_8432MHz)
-	MCFG_INS8250_OUT_TX_CB(DEVWRITELINE("rs232", rs232_port_device, write_txd))
-	MCFG_INS8250_OUT_DTR_CB(DEVWRITELINE("rs232", rs232_port_device, write_dtr))
-	MCFG_INS8250_OUT_RTS_CB(DEVWRITELINE("rs232", rs232_port_device, write_rts))
-	MCFG_INS8250_OUT_OUT1_CB(DEVWRITELINE("rs232", rs232_port_device, write_etc)) // RLSD
+	INS8250(config, m_ins8250, 1.8432_MHz_XTAL);
+	m_ins8250->out_tx_callback().set("rs232", FUNC(rs232_port_device::write_txd));
+	m_ins8250->out_dtr_callback().set("rs232", FUNC(rs232_port_device::write_dtr));
+	m_ins8250->out_rts_callback().set("rs232", FUNC(rs232_port_device::write_rts));
+	m_ins8250->out_out1_callback().set("rs232", FUNC(rs232_port_device::write_etc)); // RLSD
 
-	MCFG_RS232_PORT_ADD("rs232", default_rs232_devices, "terminal")
-	MCFG_RS232_RXD_HANDLER(DEVWRITELINE("ins8250", ins8250_device, rx_w))
-	MCFG_DEVCB_CHAIN_OUTPUT(DEVWRITELINE("ins8250", ins8250_device, ri_w))
-	MCFG_RS232_DCD_HANDLER(DEVWRITELINE("ins8250", ins8250_device, dcd_w))
-	MCFG_RS232_DSR_HANDLER(DEVWRITELINE("ins8250", ins8250_device, dsr_w))
-	MCFG_RS232_CTS_HANDLER(DEVWRITELINE("ins8250", ins8250_device, cts_w))
+	rs232_port_device &rs232(RS232_PORT(config, "rs232", default_rs232_devices, "terminal"));
+	rs232.rxd_handler().set(m_ins8250, FUNC(ins8250_device::rx_w));
+	rs232.rxd_handler().append(m_ins8250, FUNC(ins8250_device::ri_w));
+	rs232.dcd_handler().set(m_ins8250, FUNC(ins8250_device::dcd_w));
+	rs232.dsr_handler().set(m_ins8250, FUNC(ins8250_device::dsr_w));
+	rs232.cts_handler().set(m_ins8250, FUNC(ins8250_device::cts_w));
 
-	MCFG_MB8877_ADD("fdc", XTAL_16MHz / 8) // UB1793 or MB8877
-	MCFG_FLOPPY_DRIVE_ADD("fdc:0", ccs_floppies, "8sssd", floppy_image_device::default_floppy_formats)
-	MCFG_FLOPPY_DRIVE_SOUND(true)
-MACHINE_CONFIG_END
+	MB8877(config, m_fdc, 16_MHz_XTAL / 8); // UB1793 or MB8877
+	FLOPPY_CONNECTOR(config, "fdc:0", ccs_floppies, "8sssd", floppy_image_device::default_floppy_formats).enable_sound(true);
+}
+
+void ccs300_state::ccs300(machine_config & config)
+{
+	/* basic machine hardware */
+	Z80(config, m_maincpu, 16_MHz_XTAL / 4);
+	m_maincpu->set_addrmap(AS_PROGRAM, &ccs300_state::ccs300_mem);
+	m_maincpu->set_addrmap(AS_IO, &ccs300_state::ccs300_io);
+	m_maincpu->set_daisy_config(daisy_chain);
+
+	/* Devices */
+	z80sio_device &sio(Z80SIO(config, "sio", 16_MHz_XTAL / 4));
+	sio.out_int_callback().set_inputline(m_maincpu, INPUT_LINE_IRQ0);
+	sio.out_txda_callback().set("rs232a", FUNC(rs232_port_device::write_txd));
+	sio.out_dtra_callback().set("rs232a", FUNC(rs232_port_device::write_dtr));
+	sio.out_rtsa_callback().set("rs232a", FUNC(rs232_port_device::write_rts));
+	sio.out_txdb_callback().set("rs232b", FUNC(rs232_port_device::write_txd));
+	sio.out_dtrb_callback().set("rs232b", FUNC(rs232_port_device::write_dtr));
+	sio.out_rtsb_callback().set("rs232b", FUNC(rs232_port_device::write_rts));
+
+	rs232_port_device &rs232a(RS232_PORT(config, "rs232a", default_rs232_devices, "terminal"));
+	rs232a.rxd_handler().set("sio", FUNC(z80sio_device::rxa_w));
+	rs232a.cts_handler().set("sio", FUNC(z80sio_device::ctsa_w));
+	rs232a.dcd_handler().set("sio", FUNC(z80sio_device::dcda_w));
+	rs232a.set_option_device_input_defaults("terminal", DEVICE_INPUT_DEFAULTS_NAME(terminal)); // must be exactly here
+
+	rs232_port_device &rs232b(RS232_PORT(config, "rs232b", default_rs232_devices, nullptr));
+	rs232b.rxd_handler().set("sio", FUNC(z80sio_device::rxb_w));
+	rs232b.cts_handler().set("sio", FUNC(z80sio_device::ctsb_w));
+	rs232b.dcd_handler().set("sio", FUNC(z80sio_device::dcdb_w));
+
+	z80ctc_device &ctc(Z80CTC(config, "ctc", 16_MHz_XTAL / 4));
+	ctc.set_clk<0>(16_MHz_XTAL / 8);     // 153'846
+	//ctc.set_clk<1>(16_MHz_XTAL / 8);    // not used
+	ctc.set_clk<2>(16_MHz_XTAL / 8);      // 9'615
+	//ctc.set_clk<3>(16_MHz_XTAL / 8);   // 2'000'000 - this causes an IRQ storm, hanging the machine
+	ctc.zc_callback<0>().set("sio", FUNC(z80sio_device::txca_w));
+	ctc.zc_callback<0>().append("sio", FUNC(z80sio_device::rxca_w));
+	ctc.zc_callback<2>().append("sio", FUNC(z80sio_device::rxtxcb_w));
+	ctc.intr_callback().set_inputline(m_maincpu, INPUT_LINE_IRQ0);
+
+	z80pio_device &pio(Z80PIO(config, "pio", 16_MHz_XTAL / 4));
+	pio.out_int_callback().set_inputline(m_maincpu, INPUT_LINE_IRQ0);
+
+	z80dma_device &dma(Z80DMA(config, "dma", 16_MHz_XTAL / 4));
+	dma.out_int_callback().set_inputline(m_maincpu, INPUT_LINE_IRQ0);
+
+	MB8877(config, m_fdc, 16_MHz_XTAL / 8); // UB1793 or MB8877
+	FLOPPY_CONNECTOR(config, "fdc:0", ccs_floppies, "8sssd", floppy_image_device::default_floppy_formats).enable_sound(true);
+}
+
 
 /* ROM definition */
 ROM_START( ccs2810 )
@@ -964,8 +1135,14 @@ ROM_START( ccs2422 )
 	ROM_LOAD_OPTIONAL( "2422.u21",  0x0200, 0x0100, NO_DUMP )
 ROM_END
 
+ROM_START( ccs300 )
+	ROM_REGION( 0x0800, "maincpu", 0 )
+	ROM_LOAD( "ccs300.rom", 0x0000, 0x0800, CRC(6cf22e31) SHA1(9aa3327cd8c23d0eab82cb6519891aff13ebe1d0))
+ROM_END
+
 /* Driver */
 
-/*    YEAR  NAME      PARENT   COMPAT   MACHINE    INPUT    CLASS       INIT       COMPANY                        FULLNAME                    FLAGS */
-COMP( 1980, ccs2810,  0,       0,       ccs2810,   ccs2810, ccs_state,  ccs2810,   "California Computer Systems", "CCS Model 2810 CPU card",  MACHINE_NO_SOUND_HW)
-COMP( 1980, ccs2422,  ccs2810, 0,       ccs2422,   ccs2810, ccs_state,  ccs2422,   "California Computer Systems", "CCS Model 2422B FDC card", MACHINE_NOT_WORKING | MACHINE_NO_SOUND_HW)
+/*    YEAR  NAME     PARENT   COMPAT  MACHINE   INPUT    CLASS         INIT          COMPANY                        FULLNAME                    FLAGS */
+COMP( 1980, ccs2810, 0,       0,      ccs2810,  ccs2810, ccs_state,    empty_init, "California Computer Systems", "CCS Model 2810 CPU card",  MACHINE_NO_SOUND_HW | MACHINE_SUPPORTS_SAVE )
+COMP( 1980, ccs2422, ccs2810, 0,      ccs2422,  ccs2810, ccs_state,    empty_init, "California Computer Systems", "CCS Model 2422B FDC card", MACHINE_NOT_WORKING | MACHINE_NO_SOUND_HW | MACHINE_SUPPORTS_SAVE )
+COMP( 1981, ccs300,  ccs2810, 0,      ccs300,   ccs300,  ccs300_state, empty_init, "California Computer Systems", "CCS Model 300", MACHINE_NOT_WORKING | MACHINE_NO_SOUND_HW | MACHINE_SUPPORTS_SAVE )

@@ -10,17 +10,17 @@
 
 ***************************************************************************/
 
-WRITE8_MEMBER(lsasquad_state::lsasquad_sh_nmi_disable_w)
+void lsasquad_state::lsasquad_sh_nmi_disable_w(uint8_t data)
 {
 	m_soundnmi->in_w<1>(0);
 }
 
-WRITE8_MEMBER(lsasquad_state::lsasquad_sh_nmi_enable_w)
+void lsasquad_state::lsasquad_sh_nmi_enable_w(uint8_t data)
 {
 	m_soundnmi->in_w<1>(1);
 }
 
-READ8_MEMBER(lsasquad_state::lsasquad_sound_status_r)
+uint8_t lsasquad_state::lsasquad_sound_status_r()
 {
 	/* bit 0: message pending for sound cpu */
 	/* bit 1: message pending for main cpu */
@@ -28,20 +28,20 @@ READ8_MEMBER(lsasquad_state::lsasquad_sound_status_r)
 }
 
 
-READ8_MEMBER(lsasquad_state::daikaiju_sound_status_r)
+uint8_t lsasquad_state::daikaiju_sound_status_r()
 {
 	/* bit 0: message pending for sound cpu */
 	/* bit 1: message pending for main cpu */
 	return (m_soundlatch->pending_r() ? 2 : 1);
 }
 
-READ8_MEMBER(lsasquad_state::lsasquad_mcu_status_r)
+uint8_t lsasquad_state::lsasquad_mcu_status_r()
 {
 	int res = ioport("MCU")->read();
 
 	/* bit 0 = when 1, mcu is ready to receive data from main cpu */
 	/* bit 1 = when 0, mcu has sent data to the main cpu */
-	//logerror("%04x: mcu_status_r\n",space.device().safe_pc());
+	//logerror("%04x: mcu_status_r\n",m_maincpu->pc());
 	if (m_bmcu)
 	{
 		if (CLEAR_LINE == m_bmcu->host_semaphore_r())
@@ -53,13 +53,13 @@ READ8_MEMBER(lsasquad_state::lsasquad_mcu_status_r)
 	return res;
 }
 
-READ8_MEMBER(lsasquad_state::daikaiju_mcu_status_r)
+uint8_t lsasquad_state::daikaiju_mcu_status_r()
 {
 	int res = ioport("MCU")->read();
 
 	/* bit 0 = when 1, mcu is ready to receive data from main cpu */
 	/* bit 1 = when 0, mcu has sent data to the main cpu */
-	//logerror("%04x: mcu_status_r\n",space.device().safe_pc());
+	//logerror("%04x: mcu_status_r\n",m_maincpu->pc());
 	if (m_bmcu)
 	{
 		if (CLEAR_LINE == m_bmcu->host_semaphore_r())

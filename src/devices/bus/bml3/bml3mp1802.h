@@ -15,7 +15,7 @@
 #pragma once
 
 #include "bml3bus.h"
-#include "imagedev/flopdrv.h"
+#include "imagedev/floppy.h"
 #include "machine/wd_fdc.h"
 
 
@@ -31,8 +31,8 @@ public:
 	// construction/destruction
 	bml3bus_mp1802_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	DECLARE_READ8_MEMBER(bml3_mp1802_r);
-	DECLARE_WRITE8_MEMBER(bml3_mp1802_w);
+	uint8_t bml3_mp1802_r();
+	void bml3_mp1802_w(uint8_t data);
 
 protected:
 	virtual void device_start() override;
@@ -55,7 +55,6 @@ private:
 };
 
 // device type definition
-extern const device_type BML3BUS_MP1802;
 DECLARE_DEVICE_TYPE(BML3BUS_MP1802, bml3bus_mp1802_device)
 
 #endif // MAME_BUS_BML3_BML3MP1802_H

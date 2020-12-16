@@ -1,13 +1,72 @@
 // license:BSD-3-Clause
-// copyright-holders:Wilbert Pol
+// copyright-holders:Wilbert Pol, hap
 /***************************************************************************
 
-  /drivers/odyssey2.c
+Driver file to handle emulation of the Magnavox Odyssey 2 (stylized Odyssey²),
+Philips Videopac G7000 and Philips Videopac+ G7400.
 
-  Driver file to handle emulation of the Odyssey2.
+Magnavox was wholly owned by Philips at the time. The console had a limited
+release late-1978 in Europe as the Philips G7000, but the launch was quickly
+halted due to a hardware defect, wide release continued in 1979.
 
-  Minor update to "the voice" rom names, and add comment about
-  the older revision of "the voice" - LN, 10/03/08
+The 2 joysticks have no clear distinction between player 1 and 2, it differs
+per game. And in MAME it's extra awkward due to the default input mapping
+conflicting with the keyboard.
+
+Odyssey 2/Videopac hardware notes:
+- Intel 8048 (1KB internal ROM, 64 bytes internal RAM)
+- 128 bytes RAM(6810)
+- Intel 8244 for video and sound (8245 on PAL consoles)
+- 2 joysticks(either hardwired, or connectors), keyboard
+
+Videopac+ G7400 hardware notes:
+- same base hardware
+- Intel 8243 I/O expander
+- EF9340 + EF9341 graphics chips + 6KB VRAM(3*2128, only 4KB used)
+- larger keyboard
+
+XTAL notes (differs per model):
+- Odyssey 2: 7.15909MHz
+- G7000: 17.734476MHz
+- C52/N60: 17.812
+- G7200: 5.911MHz + 3.547MHz
+- G7400: 5.911MHz + 8.867MHz
+- JO7400: 5.911MHz + 3.5625MHz
+
+TODO:
+- backgamm doesn't draw all the chars/sprites, it does multiple screen updates
+  and writes to the ptr/color registers, but does not increment the Y regs
+- 824x screen resolution is not strictly defined, height(243) is correct, but
+  horizontal overscan differs depending on monitor/tv? see syracuse for overscan
+- 824x on the real console, overlapping characters on eachother will cause
+  glitches (it is used to an advantage in some as-of-yet undumped homebrews)
+- 8244(NTSC) is not supposed to show characters near the upper border, but
+  hiding them will cause bugs in some Euro games
+- 8245(PAL) video timing is not 100% accurate, though vtotal and htotal should
+  be correct
+- ppp(the tetris game) does not work properly on PAL, is this homebrew NTSC-only,
+  or is PAL detection going wrong? It does look like PAL/NTSC detection is working,
+  see internal RAM $3D d7. So maybe it is due to inaccurate PAL video timing.
+  The game does mid-scanline updates.
+- g7400 probably has different video timing too (not same as g7000)
+- g7400 helicopt sometimes locks up at the sea level, timing related?
+- 4in1 and musician are not supposed to work on g7400, but work fine on MAME,
+  caused by bus conflict or because they write to P2?
+- verify odyssey3 cpu/video clocks
+- odyssey3 keyboard layout is not the same as g7400, but there is no software
+  to test the scancodes
+- partial screen updates aren't shown when using MAME's debugger, this is caused
+  by a forced full screen update and a reset_partial_updates in emu/video.cpp.
+  For the same reason, collision detection also won't work properly when stepping
+  through the debugger
+
+BTANB:
+- a lot of PAL games have problems on NTSC (the other way around, not so much)
+- g7400 games don't look correct on odyssey3 and vice versa: ef934x graphics are
+  placed lower on odyssey3
+- Blackjack (Videopac 5) does not work on G7400, caused by a removed BIOS routine
+
+Plenty games have minor bugs not worth mentioning here.
 
 ***************************************************************************/
 
@@ -20,826 +79,761 @@
 
 #include "bus/odyssey2/slot.h"
 
+#include "emupal.h"
 #include "screen.h"
 #include "softlist.h"
 #include "speaker.h"
 
 
+namespace {
+
 class odyssey2_state : public driver_device
 {
 public:
-	odyssey2_state(const machine_config &mconfig, device_type type, const char *tag)
-		: driver_device(mconfig, type, tag),
+	odyssey2_state(const machine_config &mconfig, device_type type, const char *tag) :
+		driver_device(mconfig, type, tag),
 		m_maincpu(*this, "maincpu"),
 		m_i8244(*this, "i8244"),
+		m_screen(*this, "screen"),
 		m_cart(*this, "cartslot"),
 		m_keyboard(*this, "KEY.%u", 0),
-		m_joysticks(*this, "JOY.%u", 0) { }
+		m_joysticks(*this, "JOY.%u", 0)
+	{ }
 
-	required_device<cpu_device> m_maincpu;
-	required_device<i8244_device> m_i8244;
-	required_device<o2_cart_slot_device> m_cart;
+	// Reset button is tied to 8048 RESET pin
+	DECLARE_INPUT_CHANGED_MEMBER(reset_button) { m_maincpu->set_input_line(INPUT_LINE_RESET, newval ? ASSERT_LINE : CLEAR_LINE); }
 
-	uint8_t m_ram[256];
-	uint8_t m_p1;
-	uint8_t m_p2;
-	uint8_t m_lum;
-	DECLARE_READ8_MEMBER(io_read);
-	DECLARE_WRITE8_MEMBER(io_write);
-	DECLARE_READ8_MEMBER(bus_read);
-	DECLARE_WRITE8_MEMBER(bus_write);
-	DECLARE_READ8_MEMBER(p1_read);
-	DECLARE_WRITE8_MEMBER(p1_write);
-	DECLARE_READ8_MEMBER(p2_read);
-	DECLARE_WRITE8_MEMBER(p2_write);
-	DECLARE_READ_LINE_MEMBER(t1_read);
-	DECLARE_DRIVER_INIT(odyssey2);
-	virtual void machine_start() override;
-	virtual void machine_reset() override;
-	DECLARE_PALETTE_INIT(odyssey2);
-	uint32_t screen_update_odyssey2(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
+	void odyssey2(machine_config &config);
+	void videopac(machine_config &config);
+	void videopacf(machine_config &config);
 
-	DECLARE_WRITE16_MEMBER(scanline_postprocess);
+	void odyssey2_palette(palette_device &palette) const;
 
 protected:
-	/* constants */
-	static const uint8_t P1_BANK_LO_BIT          = 0x01;
-	static const uint8_t P1_BANK_HI_BIT          = 0x02;
-	static const uint8_t P1_KEYBOARD_SCAN_ENABLE = 0x04; /* active low */
-	static const uint8_t P1_VDC_ENABLE           = 0x08; /* active low */
-	static const uint8_t P1_EXT_RAM_ENABLE       = 0x10; /* active low */
-	static const uint8_t P1_VPP_ENABLE           = 0x20; /* active low */
-	static const uint8_t P1_VDC_COPY_MODE_ENABLE = 0x40;
-	static const uint8_t P2_KEYBOARD_SELECT_MASK = 0x07; /* select row to scan */
+	required_device<i8048_device> m_maincpu;
+	required_device<i8244_device> m_i8244;
+	required_device<screen_device> m_screen;
+	required_device<o2_cart_slot_device> m_cart;
 
-	required_ioport_array<6> m_keyboard;
+	uint8_t m_ram[0x80];
+	uint8_t m_p1 = 0xff;
+	uint8_t m_p2 = 0xff;
+
+	DECLARE_READ_LINE_MEMBER(t1_read);
+
+	void odyssey2_io(address_map &map);
+	void odyssey2_mem(address_map &map);
+
+	virtual void machine_start() override;
+
+	required_ioport_array<8> m_keyboard;
 	required_ioport_array<2> m_joysticks;
+
+	virtual uint8_t io_read(offs_t offset);
+	virtual void io_write(offs_t offset, uint8_t data);
+	uint8_t bus_read();
+	void p1_write(uint8_t data);
+	uint8_t p2_read();
+	void p2_write(uint8_t data);
+
+private:
+	uint32_t screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 };
 
 class g7400_state : public odyssey2_state
 {
 public:
-	g7400_state(const machine_config &mconfig, device_type type, const char *tag)
-		: odyssey2_state(mconfig, type, tag)
-		, m_i8243(*this, "i8243")
-		, m_ef9340_1(*this, "ef9340_1")
+	g7400_state(const machine_config &mconfig, device_type type, const char *tag) :
+		odyssey2_state(mconfig, type, tag),
+		m_i8243(*this, "i8243"),
+		m_ef934x(*this, "ef934x")
 	{ }
 
-	required_device<i8243_device> m_i8243;
-	required_device<ef9340_1_device> m_ef9340_1;
-
-	DECLARE_PALETTE_INIT(g7400);
-	virtual void machine_start() override;
-	virtual void machine_reset() override;
-	DECLARE_WRITE8_MEMBER(p2_write);
-	DECLARE_READ8_MEMBER(io_read);
-	DECLARE_WRITE8_MEMBER(io_write);
-	DECLARE_WRITE8_MEMBER(i8243_port_w);
-	DECLARE_WRITE16_MEMBER(scanline_postprocess);
+	void g7400(machine_config &config);
+	void jo7400(machine_config &config);
+	void odyssey3(machine_config &config);
 
 protected:
-	uint8_t m_ic674_decode[8];
-	uint8_t m_ic678_decode[8];
+	virtual void machine_start() override;
+
+	virtual uint8_t io_read(offs_t offset) override;
+	virtual void io_write(offs_t offset, uint8_t data) override;
+
+private:
+	required_device<i8243_device> m_i8243;
+	required_device<ef9340_1_device> m_ef934x;
+
+	uint32_t screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
+
+	void p2_write(uint8_t data);
+	uint8_t io_vpp(offs_t offset, uint8_t data);
+	template<int P> void i8243_port_w(uint8_t data);
+
+	inline offs_t ef934x_extram_address(offs_t offset);
+	uint8_t ef934x_extram_r(offs_t offset);
+	void ef934x_extram_w(offs_t offset, uint8_t data);
+
+	uint8_t m_mix_i8244 = 0xff;
+	uint8_t m_mix_ef934x = 0xff;
+	uint8_t m_ef934x_extram[0x800];
 };
-
-
-static ADDRESS_MAP_START( odyssey2_mem , AS_PROGRAM, 8, odyssey2_state )
-	AM_RANGE(0x0000, 0x03ff) AM_ROM
-	AM_RANGE(0x0400, 0x0bff) AM_DEVREAD("cartslot", o2_cart_slot_device, read_rom04)
-	AM_RANGE(0x0c00, 0x0fff) AM_DEVREAD("cartslot", o2_cart_slot_device, read_rom0c)
-ADDRESS_MAP_END
-
-
-static ADDRESS_MAP_START( odyssey2_io , AS_IO, 8, odyssey2_state )
-	AM_RANGE(0x00, 0xff) AM_READWRITE(io_read, io_write)
-ADDRESS_MAP_END
-
-
-static ADDRESS_MAP_START( g7400_io , AS_IO, 8, g7400_state )
-	AM_RANGE(0x00, 0xff) AM_READWRITE(io_read, io_write)
-ADDRESS_MAP_END
-
-
-static INPUT_PORTS_START( odyssey2 )
-	PORT_START("KEY.0")
-	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_0) PORT_CHAR('0')
-	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_1) PORT_CHAR('1')
-	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_2) PORT_CHAR('2')
-	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_3) PORT_CHAR('3')
-	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_4) PORT_CHAR('4')
-	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_5) PORT_CHAR('5')
-	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_6) PORT_CHAR('6')
-	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_7) PORT_CHAR('7')
-
-	PORT_START("KEY.1")
-	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_8) PORT_CHAR('8')
-	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_9) PORT_CHAR('9')
-	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_NAME("?? :") PORT_CODE(KEYCODE_F1) PORT_CHAR(UCHAR_MAMEKEY(F1))
-	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_NAME("?? $") PORT_CODE(KEYCODE_F2) PORT_CHAR(UCHAR_MAMEKEY(F2))
-	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_SPACE) PORT_CHAR(' ')
-	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_SLASH) PORT_CHAR('?')
-	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_L) PORT_CHAR('L')
-	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_P) PORT_CHAR('P')
-
-	PORT_START("KEY.2")
-	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_PLUS_PAD) PORT_CHAR('+')
-	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_W) PORT_CHAR('W')
-	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_E) PORT_CHAR('E')
-	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_R) PORT_CHAR('R')
-	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_T) PORT_CHAR('T')
-	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_U) PORT_CHAR('U')
-	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_I) PORT_CHAR('I')
-	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_O) PORT_CHAR('O')
-
-	PORT_START("KEY.3")
-	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_Q) PORT_CHAR('Q')
-	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_S) PORT_CHAR('S')
-	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_D) PORT_CHAR('D')
-	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_F) PORT_CHAR('F')
-	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_G) PORT_CHAR('G')
-	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_H) PORT_CHAR('H')
-	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_J) PORT_CHAR('J')
-	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_K) PORT_CHAR('K')
-
-	PORT_START("KEY.4")
-	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_A) PORT_CHAR('A')
-	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_Z) PORT_CHAR('Z')
-	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_X) PORT_CHAR('X')
-	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_C) PORT_CHAR('C')
-	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_V) PORT_CHAR('V')
-	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_B) PORT_CHAR('B')
-	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_M) PORT_CHAR('M')
-	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_STOP) PORT_CHAR('.')
-
-	PORT_START("KEY.5")
-	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_MINUS) PORT_CHAR('-')
-	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_ASTERISK) PORT_CHAR('*')
-	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_SLASH_PAD) PORT_CHAR('/')
-	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_CODE(KEYCODE_EQUALS) PORT_CHAR('=')
-	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_NAME(DEF_STR( Yes )) PORT_CODE(KEYCODE_Y) PORT_CHAR('Y')
-	PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_NAME(DEF_STR( No )) PORT_CODE(KEYCODE_N) PORT_CHAR('N')
-	PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_NAME("CLR") PORT_CODE(KEYCODE_BACKSPACE) PORT_CHAR(8)
-	PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_KEYBOARD ) PORT_NAME("ENT") PORT_CODE(KEYCODE_ENTER) PORT_CHAR('\r')
-
-	PORT_START("JOY.0")
-	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP)     PORT_PLAYER(1)
-	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT)  PORT_PLAYER(1)
-	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN)   PORT_PLAYER(1)
-	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT)   PORT_PLAYER(1)
-	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1)         PORT_PLAYER(1)
-	PORT_BIT( 0xe0, 0xe0,    IPT_UNUSED )
-
-	PORT_START("JOY.1")
-	PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP)     PORT_PLAYER(2)
-	PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT)  PORT_PLAYER(2)
-	PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN)   PORT_PLAYER(2)
-	PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT)   PORT_PLAYER(2)
-	PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1)         PORT_PLAYER(2)
-	PORT_BIT( 0xe0, 0xe0,    IPT_UNUSED )
-INPUT_PORTS_END
-
-
-/* character sprite colors
-   dark grey, red, green, yellow, blue, violet, light grey, white
-   dark back / grid colors
-   black, dark blue, dark green, light green, red, violet, yellow, light grey
-   light back / grid colors
-   black, blue, green, light green, red, violet, yellow, light grey */
-
-const uint8_t odyssey2_colors[] =
-{
-	/* Background,Grid Dim */
-	0x00,0x00,0x00,   /* Black */                                         // i r g b
-	0x1A,0x37,0xBE,   /* Blue           - Calibrated To Real VideoPac */  // i r g B
-	0x00,0x6D,0x07,   /* Green          - Calibrated To Real VideoPac */  // i r G b
-	0x2A,0xAA,0xBE,   /* Blue-Green     - Calibrated To Real VideoPac */  // i r G B
-	0x79,0x00,0x00,   /* Red            - Calibrated To Real VideoPac */  // i R g b
-	0x94,0x30,0x9F,   /* Violet         - Calibrated To Real VideoPac */  // i R g B
-	0x77,0x67,0x0B,   /* Khaki          - Calibrated To Real VideoPac */  // i R g B
-	0xCE,0xCE,0xCE,   /* Lt Grey */                                       // i R G B
-
-	/* Background,Grid Bright */
-	0x67,0x67,0x67,   /* Grey           - Calibrated To Real VideoPac */  // I R g B
-	0x5C,0x80,0xF6,   /* Lt Blue        - Calibrated To Real VideoPac */  // I R g B
-	0x56,0xC4,0x69,   /* Lt Green       - Calibrated To Real VideoPac */  // I R g B
-	0x77,0xE6,0xEB,   /* Lt Blue-Green  - Calibrated To Real VideoPac */  // I R g b
-	0xC7,0x51,0x51,   /* Lt Red         - Calibrated To Real VideoPac */  // I R g b
-	0xDC,0x84,0xE8,   /* Lt Violet      - Calibrated To Real VideoPac */  // I R g B
-	0xC6,0xB8,0x6A,   /* Lt Yellow      - Calibrated To Real VideoPac */  // I R G b
-	0xFF,0xFF,0xFF,   /* White */                                         // I R G B
-};
-
-
-PALETTE_INIT_MEMBER(odyssey2_state, odyssey2)
-{
-	for ( int i = 0; i < 16; i++ )
-	{
-		palette.set_pen_color( i, odyssey2_colors[i*3], odyssey2_colors[i*3+1], odyssey2_colors[i*3+2] );
-	}
-}
-
-
-PALETTE_INIT_MEMBER(g7400_state, g7400)
-{
-	const uint8_t g7400_colors[] =
-	{
-	0x00,0x00,0x00, // Black
-	0x1A,0x37,0xBE, // Blue
-	0x00,0x6D,0x07, // Green
-	0x2A,0xAA,0xBE, // Blue-Green
-	0x79,0x00,0x00, // Red
-	0x94,0x30,0x9F, // Violet
-	0x77,0x67,0x0B, // Khaki
-	0xCE,0xCE,0xCE, // Lt Grey
-
-	0x67,0x67,0x67, // Grey
-	0x5C,0x80,0xF6, // Lt Blue
-	0x56,0xC4,0x69, // Lt Green
-	0x77,0xE6,0xEB, // Lt Blue-Green
-	0xC7,0x51,0x51, // Lt Red
-	0xDC,0x84,0xE8, // Lt Violet
-	0xC6,0xB8,0x6A, // Lt Yellow
-	0xff,0xff,0xff  // White
-
-	};
-
-	for ( int i = 0; i < 16; i++ )
-	{
-		palette.set_pen_color( i, g7400_colors[i*3], g7400_colors[i*3+1], g7400_colors[i*3+2] );
-	}
-}
-
-DRIVER_INIT_MEMBER(odyssey2_state,odyssey2)
-{
-	uint8_t *gfx = memregion("gfx1")->base();
-
-	for (int i = 0; i < 256; i++)
-	{
-		gfx[i] = i;     /* TODO: Why i and not 0? */
-		m_ram[i] = 0;
-	}
-}
-
 
 void odyssey2_state::machine_start()
 {
-	save_pointer(NAME(m_ram),256);
+	memset(m_ram, 0, sizeof(m_ram));
+
+	save_item(NAME(m_ram));
 	save_item(NAME(m_p1));
 	save_item(NAME(m_p2));
-	save_item(NAME(m_lum));
 }
-
-
-void odyssey2_state::machine_reset()
-{
-	m_lum = 0;
-
-	/* jump to "last" bank, will work for all sizes due to being mirrored */
-	m_p1 = 0xff;
-	m_p2 = 0xff;
-	m_cart->write_bank(m_p1);
-}
-
 
 void g7400_state::machine_start()
 {
 	odyssey2_state::machine_start();
+	memset(m_ef934x_extram, 0, sizeof(m_ef934x_extram));
 
-	save_pointer(NAME(m_ic674_decode),8);
-	save_pointer(NAME(m_ic678_decode),8);
+	save_item(NAME(m_mix_i8244));
+	save_item(NAME(m_mix_ef934x));
+	save_item(NAME(m_ef934x_extram));
 }
 
 
-void g7400_state::machine_reset()
-{
-	odyssey2_state::machine_reset();
 
-	for ( int i = 0; i < 8; i++ )
-	{
-		m_ic674_decode[i] = 0;
-		m_ic678_decode[i] = 0;
-	}
+/******************************************************************************
+    Video
+******************************************************************************/
+
+constexpr rgb_t odyssey2_colors[] =
+{
+	// Background,Grid Dim
+	{ 0x00, 0x00, 0x00 },   /* Black */                                         // i r g b
+	{ 0x79, 0x00, 0x00 },   /* Red            - Calibrated To Real VideoPac */  // i R g b
+	{ 0x00, 0x6d, 0x07 },   /* Green          - Calibrated To Real VideoPac */  // i r G b
+	{ 0x77, 0x67, 0x0b },   /* Khaki          - Calibrated To Real VideoPac */  // i R g B
+	{ 0x1a, 0x37, 0xbe },   /* Blue           - Calibrated To Real VideoPac */  // i r g B
+	{ 0x94, 0x30, 0x9f },   /* Violet         - Calibrated To Real VideoPac */  // i R g B
+	{ 0x2a, 0xaa, 0xbe },   /* Blue-Green     - Calibrated To Real VideoPac */  // i r G B
+	{ 0xce, 0xce, 0xce },   /* Lt Grey */                                       // i R G B
+
+	// Background,Grid Bright
+	{ 0x67, 0x67, 0x67 },   /* Grey           - Calibrated To Real VideoPac */  // I R g B
+	{ 0xc7, 0x51, 0x51 },   /* Lt Red         - Calibrated To Real VideoPac */  // I R g b
+	{ 0x56, 0xc4, 0x69 },   /* Lt Green       - Calibrated To Real VideoPac */  // I R g B
+	{ 0xc6, 0xb8, 0x6a },   /* Lt Yellow      - Calibrated To Real VideoPac */  // I R G b
+	{ 0x5c, 0x80, 0xf6 },   /* Lt Blue        - Calibrated To Real VideoPac */  // I R g B
+	{ 0xdc, 0x84, 0xe8 },   /* Lt Violet      - Calibrated To Real VideoPac */  // I R g B
+	{ 0x77, 0xe6, 0xeb },   /* Lt Blue-Green  - Calibrated To Real VideoPac */  // I R g b
+	{ 0xff, 0xff, 0xff }    /* White */                                         // I R G B
+};
+
+void odyssey2_state::odyssey2_palette(palette_device &palette) const
+{
+	palette.set_pen_colors(0, odyssey2_colors);
 }
 
-/****** External RAM ******************************/
 
-READ8_MEMBER(odyssey2_state::io_read)
+uint32_t odyssey2_state::screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect)
 {
-	if ((m_p1 & (P1_VDC_COPY_MODE_ENABLE | P1_VDC_ENABLE)) == 0)
-	{
-		return m_i8244->read(space, offset);
-	}
-	if (!(m_p1 & P1_EXT_RAM_ENABLE))
-	{
-		return m_ram[offset];
-	}
+	m_i8244->screen_update(screen, bitmap, cliprect);
+
+	u8 lum = ~m_p1 >> 4 & 0x08;
+
+	// apply external LUM setting
+	for (int y = cliprect.min_y; y <= cliprect.max_y; y++)
+		for (int x = cliprect.min_x; x <= cliprect.max_x; x++)
+			bitmap.pix16(y, x) |= lum;
 
 	return 0;
 }
 
-
-WRITE8_MEMBER(odyssey2_state::io_write)
+uint32_t g7400_state::screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect)
 {
-	if ((m_p1 & (P1_EXT_RAM_ENABLE | P1_VDC_COPY_MODE_ENABLE)) == 0x00)
-	{
-		m_ram[offset] = data;
-		if (offset & 0x80)
-		{
-			logerror("voice write %02X, data = %02X (p1 = %02X)\n", offset, data, m_p1);
-			m_cart->io_write(space, offset, data);
-		}
-	}
-	else if (!(m_p1 & P1_VDC_ENABLE))
-	{
-		m_i8244->write(space, offset, data);
-	}
-}
-
-
-READ8_MEMBER(g7400_state::io_read)
-{
-	if ((m_p1 & (P1_VDC_COPY_MODE_ENABLE | P1_VDC_ENABLE)) == 0)
-	{
-		return m_i8244->read(space, offset);
-	}
-	else if (!(m_p1 & P1_EXT_RAM_ENABLE))
-	{
-		return m_ram[offset];
-	}
-	else if (!(m_p1 & P1_VPP_ENABLE))
-	{
-		return m_ef9340_1->ef9341_read( offset & 0x02, offset & 0x01 );
-	}
-
-	return 0;
-}
-
-
-WRITE8_MEMBER(g7400_state::io_write)
-{
-	if ((m_p1 & (P1_EXT_RAM_ENABLE | P1_VDC_COPY_MODE_ENABLE)) == 0x00)
-	{
-		m_ram[offset] = data;
-		if (offset & 0x80)
-		{
-			logerror("voice write %02X, data = %02X (p1 = %02X)\n", offset, data, m_p1);
-			m_cart->io_write(space, offset, data);
-		}
-	}
-	else if (!(m_p1 & P1_VDC_ENABLE))
-	{
-		m_i8244->write(space, offset, data);
-	}
-	else if (!(m_p1 & P1_VPP_ENABLE))
-	{
-		m_ef9340_1->ef9341_write( offset & 0x02, offset & 0x01, data );
-	}
-}
-
-
-WRITE16_MEMBER(odyssey2_state::scanline_postprocess)
-{
-	int vpos = data;
-	bitmap_ind16 *bitmap = m_i8244->get_bitmap();
-
-	if ( vpos < i8244_device::START_Y || vpos >= i8244_device::START_Y + i8244_device::SCREEN_HEIGHT )
-	{
-		return;
-	}
+	u8 lum = ~m_p1 >> 4 & 0x08;
+	bitmap_ind16 *ef934x_bitmap = m_ef934x->get_bitmap();
 
 	// apply external LUM setting
-	for ( int x = i8244_device::START_ACTIVE_SCAN; x < i8244_device::END_ACTIVE_SCAN; x++ )
+	for (int y = cliprect.min_y; y <= cliprect.max_y; y++)
 	{
-		bitmap->pix16( vpos, x ) |= ( m_lum ^ 0x08 );
-	}
-}
+		rectangle clip = cliprect;
+		clip.min_y = clip.max_y = y;
 
+		m_i8244->screen_update(screen, bitmap, clip);
 
-WRITE16_MEMBER(g7400_state::scanline_postprocess)
-{
-	int vpos = data;
-	int y = vpos - i8244_device::START_Y - 5;
-	bitmap_ind16 *bitmap = m_i8244->get_bitmap();
-	bitmap_ind16 *ef934x_bitmap = m_ef9340_1->get_bitmap();
-
-	if ( vpos < i8244_device::START_Y || vpos >= i8244_device::START_Y + i8244_device::SCREEN_HEIGHT )
-	{
-		return;
-	}
-
-	// apply external LUM setting
-	int x_real_start = i8244_device::START_ACTIVE_SCAN + i8244_device::BORDER_SIZE + 5;
-	int x_real_end = i8244_device::END_ACTIVE_SCAN - i8244_device::BORDER_SIZE + 5;
-	for ( int x = i8244_device::START_ACTIVE_SCAN; x < i8244_device::END_ACTIVE_SCAN; x++ )
-	{
-		uint16_t d = bitmap->pix16( vpos, x );
-
-		if ( ( ! m_ic678_decode[ d & 0x07 ] ) && x >= x_real_start && x < x_real_end && y >= 0 && y < 240 )
+		for (int x = clip.min_x; x <= clip.max_x; x++)
 		{
-			// Use EF934x input
-			d = ef934x_bitmap->pix16( y, x - x_real_start ) & 0x07;
+			uint16_t d = bitmap.pix16(y, x) & 7;
+			uint16_t e = ef934x_bitmap->pix16(y, x);
 
-			if ( ! m_ic674_decode[ d & 0x07 ] )
+			// i8244 decoder enable is masked with cartridge pin B
+			bool en = (e & 8) || !m_cart->b_read();
+			e &= 7;
+
+			// ef934x decoder output is tied to CX
+			bool i2 = !BIT(m_mix_ef934x, e);
+			m_i8244->write_cx(x, i2);
+
+			if (en && BIT(m_mix_i8244, d))
 			{
-				d |= 0x08;
+				// Use i8245 input
+				bitmap.pix16(y, x) |= lum;
+			}
+			else
+			{
+				// Use EF934x input
+				bitmap.pix16(y, x) = e | (i2 ? 8 : 0);
 			}
 		}
-		else
-		{
-			// Use i8245 input
-			d |= ( m_lum ^ 0x08 );
-		}
-		bitmap->pix16( vpos, x ) = d;
 	}
+
+	return 0;
 }
 
 
-uint32_t odyssey2_state::screen_update_odyssey2(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect)
+
+/******************************************************************************
+    I/O
+******************************************************************************/
+
+uint8_t odyssey2_state::io_read(offs_t offset)
 {
-	return m_i8244->screen_update(screen, bitmap, cliprect);
+	u8 data = m_cart->io_read(offset);
+	if (!(m_p1 & 0x10) && ~offset & 0x80)
+		data &= m_ram[offset];
+
+	if ((m_p1 & 0x48) == 0)
+		data &= m_i8244->read(offset);
+
+	return data;
 }
 
+void odyssey2_state::io_write(offs_t offset, uint8_t data)
+{
+	if (!(m_p1 & 0x40))
+	{
+		m_cart->io_write(offset, data);
+		if (!(m_p1 & 0x10) && ~offset & 0x80)
+			m_ram[offset] = data;
+	}
+
+	if (!(m_p1 & 0x08))
+		m_i8244->write(offset, data);
+}
+
+
+// 8048 ports
+
+void odyssey2_state::p1_write(uint8_t data)
+{
+	// LUM changed
+	if ((m_p1 ^ data) & 0x80)
+		m_screen->update_now();
+
+	m_p1 = data;
+	m_cart->write_p1(m_p1 & 0x13);
+}
+
+uint8_t odyssey2_state::p2_read()
+{
+	u8 data = 0xff;
+
+	if (!(m_p1 & 0x04))
+	{
+		// 74148 priority encoder, GS to P24, outputs to P25-P27
+		u8 inp = count_leading_zeros(m_keyboard[m_p2 & 0x07]->read()) - 24;
+		if (inp < 8)
+			data &= inp << 5 | 0xf;
+	}
+
+	return data;
+}
+
+void odyssey2_state::p2_write(uint8_t data)
+{
+	m_p2 = data;
+	m_cart->write_p2(m_p2 & 0x0f);
+}
+
+uint8_t odyssey2_state::bus_read()
+{
+	u8 data = 0xff;
+
+	if (!(m_p1 & 0x04))
+	{
+		u8 sel = m_p2 & 0x07;
+		if (sel < 2)
+			data &= ~m_joysticks[sel]->read();
+	}
+
+	return data;
+}
 
 READ_LINE_MEMBER(odyssey2_state::t1_read)
 {
-	if ( m_i8244->vblank() || m_i8244->hblank() )
-	{
-		return 1;
-	}
-	return 0;
+	return m_i8244->vblank() | m_i8244->hblank();
 }
 
 
-READ8_MEMBER(odyssey2_state::p1_read)
+// G7400-specific
+
+uint8_t g7400_state::io_read(offs_t offset)
 {
-	uint8_t data = m_p1;
+	u8 data = odyssey2_state::io_read(offset);
+	return io_vpp(offset, data);
+}
+
+void g7400_state::io_write(offs_t offset, uint8_t data)
+{
+	odyssey2_state::io_write(offset, data);
+	io_vpp(offset, data);
+}
+
+uint8_t g7400_state::io_vpp(offs_t offset, uint8_t data)
+{
+	if (!(m_p1 & 0x20))
+	{
+		// A2 to R/W pin
+		if (offset & 4)
+			data &= m_ef934x->ef9341_read( offset & 0x02, offset & 0x01 );
+		else
+			m_ef934x->ef9341_write( offset & 0x02, offset & 0x01, data );
+	}
 
 	return data;
 }
 
-
-WRITE8_MEMBER(odyssey2_state::p1_write)
+void g7400_state::p2_write(uint8_t data)
 {
-	m_p1 = data;
-	m_lum = ( data & 0x80 ) >> 4;
-	m_cart->write_bank(m_p1);
+	odyssey2_state::p2_write(data);
+	m_i8243->p2_w(m_p2 & 0x0f);
 }
 
-
-READ8_MEMBER(odyssey2_state::p2_read)
+template<int P>
+void g7400_state::i8243_port_w(uint8_t data)
 {
-	uint8_t h = 0xFF;
-	int i, j;
-
-	if (!(m_p1 & P1_KEYBOARD_SCAN_ENABLE))
+	// P4,P5: color mix I8244 side (IC674)
+	// P6,P7: color mix EF9340 side (IC678)
+	u8 mask = 0xf;
+	if (~P & 1)
 	{
-		if ((m_p2 & P2_KEYBOARD_SELECT_MASK) <= 5)  /* read keyboard */
-		{
-			h &= m_keyboard[m_p2 & P2_KEYBOARD_SELECT_MASK]->read();
-		}
-
-		for (i= 0x80, j = 0; i > 0; i >>= 1, j++)
-		{
-			if (!(h & i))
-			{
-				m_p2 &= ~0x10;                   /* set key was pressed indicator */
-				m_p2 = (m_p2 & ~0xE0) | (j << 5);  /* column that was pressed */
-
-				break;
-			}
-		}
-
-		if (h == 0xFF)  /* active low inputs, so no keypresses */
-		{
-			m_p2 = m_p2 | 0xF0;
-		}
+		data <<= 4;
+		mask <<= 4;
 	}
+
+	m_screen->update_now();
+
+	if (P & 2)
+		m_mix_i8244 = (m_mix_i8244 & ~mask) | (data & mask);
 	else
-	{
-		m_p2 = m_p2 | 0xF0;
-	}
-
-	return m_p2;
+		m_mix_ef934x = (m_mix_ef934x & ~mask) | (data & mask);
 }
 
 
-WRITE8_MEMBER(odyssey2_state::p2_write)
+// EF9341 extended RAM
+
+offs_t g7400_state::ef934x_extram_address(offs_t offset)
 {
-	m_p2 = data;
+	u8 latch = (offset >> 12 & 0x80) | (offset >> 4 & 0x7f);
+	u16 address = (latch & 0x1f) | (offset << 9 & 0x200) | (latch << 3 & 0x400);
+
+	if (offset & 8)
+		return address | (latch & 0x60);
+	else
+		return address | (offset << 4 & 0x60) | (latch << 2 & 0x180);
+}
+
+uint8_t g7400_state::ef934x_extram_r(offs_t offset)
+{
+	return m_ef934x_extram[ef934x_extram_address(offset)];
+}
+
+void g7400_state::ef934x_extram_w(offs_t offset, uint8_t data)
+{
+	m_ef934x_extram[ef934x_extram_address(offset)] = data;
 }
 
 
-WRITE8_MEMBER(g7400_state::p2_write)
+
+/******************************************************************************
+    Address Maps
+******************************************************************************/
+
+void odyssey2_state::odyssey2_mem(address_map &map)
 {
-	m_p2 = data;
-	m_i8243->p2_w( space, 0, m_p2 & 0x0f );
+	map(0x0000, 0x03ff).rom();
+	map(0x0400, 0x0bff).r(m_cart, FUNC(o2_cart_slot_device::read_rom04));
+	map(0x0c00, 0x0fff).r(m_cart, FUNC(o2_cart_slot_device::read_rom0c));
+}
+
+void odyssey2_state::odyssey2_io(address_map &map)
+{
+	map(0x00, 0xff).rw(FUNC(odyssey2_state::io_read), FUNC(odyssey2_state::io_write));
 }
 
 
-READ8_MEMBER(odyssey2_state::bus_read)
+
+/******************************************************************************
+    Input Ports
+******************************************************************************/
+
+static INPUT_PORTS_START( odyssey2 )
+	PORT_START("KEY.0")
+	PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_0) PORT_CHAR('0')
+	PORT_BIT(0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_1) PORT_CHAR('1')
+	PORT_BIT(0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_2) PORT_CHAR('2')
+	PORT_BIT(0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_3) PORT_CHAR('3')
+	PORT_BIT(0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_4) PORT_CHAR('4')
+	PORT_BIT(0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_5) PORT_CHAR('5')
+	PORT_BIT(0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_6) PORT_CHAR('6')
+	PORT_BIT(0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_7) PORT_CHAR('7')
+
+	PORT_START("KEY.1")
+	PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_8) PORT_CHAR('8')
+	PORT_BIT(0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_9) PORT_CHAR('9')
+	PORT_BIT(0x04, IP_ACTIVE_HIGH, IPT_UNUSED)
+	PORT_BIT(0x08, IP_ACTIVE_HIGH, IPT_UNUSED)
+	PORT_BIT(0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_SPACE) PORT_CHAR(' ')
+	PORT_BIT(0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_SLASH) PORT_CHAR('?')
+	PORT_BIT(0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_L) PORT_CHAR('L')
+	PORT_BIT(0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_P) PORT_CHAR('P')
+
+	PORT_START("KEY.2")
+	PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_PLUS_PAD) PORT_CHAR('+')
+	PORT_BIT(0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_W) PORT_CHAR('W')
+	PORT_BIT(0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_E) PORT_CHAR('E')
+	PORT_BIT(0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_R) PORT_CHAR('R')
+	PORT_BIT(0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_T) PORT_CHAR('T')
+	PORT_BIT(0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_U) PORT_CHAR('U')
+	PORT_BIT(0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_I) PORT_CHAR('I')
+	PORT_BIT(0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_O) PORT_CHAR('O')
+
+	PORT_START("KEY.3")
+	PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_Q) PORT_CHAR('Q')
+	PORT_BIT(0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_S) PORT_CHAR('S')
+	PORT_BIT(0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_D) PORT_CHAR('D')
+	PORT_BIT(0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_F) PORT_CHAR('F')
+	PORT_BIT(0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_G) PORT_CHAR('G')
+	PORT_BIT(0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_H) PORT_CHAR('H')
+	PORT_BIT(0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_J) PORT_CHAR('J')
+	PORT_BIT(0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_K) PORT_CHAR('K')
+
+	PORT_START("KEY.4")
+	PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_A) PORT_CHAR('A')
+	PORT_BIT(0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_Z) PORT_CHAR('Z')
+	PORT_BIT(0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_X) PORT_CHAR('X')
+	PORT_BIT(0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_C) PORT_CHAR('C')
+	PORT_BIT(0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_V) PORT_CHAR('V')
+	PORT_BIT(0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_B) PORT_CHAR('B')
+	PORT_BIT(0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_M) PORT_CHAR('M')
+	PORT_BIT(0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_STOP) PORT_CHAR('.')
+
+	PORT_START("KEY.5")
+	PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_MINUS) PORT_CODE(KEYCODE_MINUS_PAD) PORT_CHAR('-')
+	PORT_BIT(0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME(u8"×") PORT_CODE(KEYCODE_ASTERISK) PORT_CHAR('*')
+	PORT_BIT(0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME(u8"÷") PORT_CODE(KEYCODE_SLASH_PAD) PORT_CHAR('/')
+	PORT_BIT(0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_CODE(KEYCODE_EQUALS) PORT_CHAR('=')
+	PORT_BIT(0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("Y / Yes") PORT_CODE(KEYCODE_Y) PORT_CHAR('Y')
+	PORT_BIT(0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("N / No") PORT_CODE(KEYCODE_N) PORT_CHAR('N')
+	PORT_BIT(0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("Clear") PORT_CODE(KEYCODE_BACKSPACE) PORT_CODE(KEYCODE_DEL_PAD) PORT_CHAR(8)
+	PORT_BIT(0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("Enter") PORT_CODE(KEYCODE_ENTER) PORT_CHAR(13)
+
+	PORT_START("KEY.6")
+	PORT_BIT(0xff, IP_ACTIVE_HIGH, IPT_UNUSED)
+
+	PORT_START("KEY.7")
+	PORT_BIT(0xff, IP_ACTIVE_HIGH, IPT_UNUSED)
+
+	PORT_START("JOY.0")
+	PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP)     PORT_PLAYER(2)
+	PORT_BIT(0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT)  PORT_PLAYER(2)
+	PORT_BIT(0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN)   PORT_PLAYER(2)
+	PORT_BIT(0x08, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT)   PORT_PLAYER(2)
+	PORT_BIT(0x10, IP_ACTIVE_HIGH, IPT_BUTTON1)         PORT_PLAYER(2)
+	PORT_BIT(0xe0, IP_ACTIVE_HIGH, IPT_UNUSED)
+
+	PORT_START("JOY.1")
+	PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP)     PORT_PLAYER(1)
+	PORT_BIT(0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT)  PORT_PLAYER(1)
+	PORT_BIT(0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN)   PORT_PLAYER(1)
+	PORT_BIT(0x08, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT)   PORT_PLAYER(1)
+	PORT_BIT(0x10, IP_ACTIVE_HIGH, IPT_BUTTON1)         PORT_PLAYER(1)
+	PORT_BIT(0xe0, IP_ACTIVE_HIGH, IPT_UNUSED)
+
+	PORT_START("RESET")
+	PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("Reset") PORT_CODE(KEYCODE_F1) PORT_CHANGED_MEMBER(DEVICE_SELF, odyssey2_state, reset_button, 0)
+INPUT_PORTS_END
+
+static INPUT_PORTS_START( g7400 )
+	PORT_INCLUDE( odyssey2 )
+
+	PORT_MODIFY("KEY.0")
+	PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("0  #") PORT_CODE(KEYCODE_0) PORT_CHAR('0') PORT_CHAR('#')
+	PORT_BIT(0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("1  !") PORT_CODE(KEYCODE_1) PORT_CHAR('1') PORT_CHAR('!')
+	PORT_BIT(0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("2  \"") PORT_CODE(KEYCODE_2) PORT_CHAR('2') PORT_CHAR('\"')
+	PORT_BIT(0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME(u8"3  £") PORT_CODE(KEYCODE_3) PORT_CHAR('3') PORT_CHAR(0xa3)
+	PORT_BIT(0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("4  $") PORT_CODE(KEYCODE_4) PORT_CHAR('4') PORT_CHAR('$')
+	PORT_BIT(0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("5  %") PORT_CODE(KEYCODE_5) PORT_CHAR('5') PORT_CHAR('%')
+	PORT_BIT(0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("6  &") PORT_CODE(KEYCODE_6) PORT_CHAR('6') PORT_CHAR('&')
+	PORT_BIT(0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("7  '") PORT_CODE(KEYCODE_7) PORT_CHAR('7') PORT_CHAR('\'')
+
+	PORT_MODIFY("KEY.1")
+	PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("8  (") PORT_CODE(KEYCODE_8) PORT_CHAR('8') PORT_CHAR('(')
+	PORT_BIT(0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("9  )") PORT_CODE(KEYCODE_9) PORT_CHAR('9') PORT_CHAR(')')
+	PORT_BIT(0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("L") PORT_CODE(KEYCODE_L) PORT_CHAR('l') PORT_CHAR('L')
+	PORT_BIT(0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("P") PORT_CODE(KEYCODE_P) PORT_CHAR('p') PORT_CHAR('P')
+
+	PORT_MODIFY("KEY.2")
+	PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME(u8"+  \u2191") PORT_CODE(KEYCODE_PLUS_PAD) PORT_CHAR('+') PORT_CHAR(UCHAR_MAMEKEY(UP))
+	PORT_BIT(0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("W") PORT_CODE(KEYCODE_W) PORT_CHAR('w') PORT_CHAR('W')
+	PORT_BIT(0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("E") PORT_CODE(KEYCODE_E) PORT_CHAR('e') PORT_CHAR('E')
+	PORT_BIT(0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("R") PORT_CODE(KEYCODE_R) PORT_CHAR('r') PORT_CHAR('R')
+	PORT_BIT(0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("T") PORT_CODE(KEYCODE_T) PORT_CHAR('t') PORT_CHAR('T')
+	PORT_BIT(0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("U") PORT_CODE(KEYCODE_U) PORT_CHAR('u') PORT_CHAR('U')
+	PORT_BIT(0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("I") PORT_CODE(KEYCODE_I) PORT_CHAR('i') PORT_CHAR('I')
+	PORT_BIT(0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("O") PORT_CODE(KEYCODE_O) PORT_CHAR('o') PORT_CHAR('O')
+
+	PORT_MODIFY("KEY.3")
+	PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("Q") PORT_CODE(KEYCODE_Q) PORT_CHAR('q') PORT_CHAR('Q')
+	PORT_BIT(0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("S") PORT_CODE(KEYCODE_S) PORT_CHAR('s') PORT_CHAR('S')
+	PORT_BIT(0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("D") PORT_CODE(KEYCODE_D) PORT_CHAR('d') PORT_CHAR('D')
+	PORT_BIT(0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("F") PORT_CODE(KEYCODE_F) PORT_CHAR('f') PORT_CHAR('F')
+	PORT_BIT(0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("G") PORT_CODE(KEYCODE_G) PORT_CHAR('g') PORT_CHAR('G')
+	PORT_BIT(0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("H") PORT_CODE(KEYCODE_H) PORT_CHAR('h') PORT_CHAR('H')
+	PORT_BIT(0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("J") PORT_CODE(KEYCODE_J) PORT_CHAR('j') PORT_CHAR('J')
+	PORT_BIT(0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("K") PORT_CODE(KEYCODE_K) PORT_CHAR('k') PORT_CHAR('K')
+
+	PORT_MODIFY("KEY.4")
+	PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("A") PORT_CODE(KEYCODE_A) PORT_CHAR('a') PORT_CHAR('A')
+	PORT_BIT(0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("Z") PORT_CODE(KEYCODE_Z) PORT_CHAR('z') PORT_CHAR('Z')
+	PORT_BIT(0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("X") PORT_CODE(KEYCODE_X) PORT_CHAR('x') PORT_CHAR('X')
+	PORT_BIT(0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("C") PORT_CODE(KEYCODE_C) PORT_CHAR('c') PORT_CHAR('C')
+	PORT_BIT(0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("V") PORT_CODE(KEYCODE_V) PORT_CHAR('v') PORT_CHAR('V')
+	PORT_BIT(0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("B") PORT_CODE(KEYCODE_B) PORT_CHAR('b') PORT_CHAR('B')
+	PORT_BIT(0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("M") PORT_CODE(KEYCODE_M) PORT_CHAR('m') PORT_CHAR('M')
+
+	PORT_MODIFY("KEY.5")
+	PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME(u8"-  \u2193") PORT_CODE(KEYCODE_MINUS) PORT_CODE(KEYCODE_MINUS_PAD) PORT_CHAR('-') PORT_CHAR(UCHAR_MAMEKEY(DOWN))
+	PORT_BIT(0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME(u8"×  \u2196") PORT_CODE(KEYCODE_ASTERISK) PORT_CHAR(0xd7) PORT_CHAR(UCHAR_MAMEKEY(HOME))
+	PORT_BIT(0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME(u8"÷  \u2190") PORT_CODE(KEYCODE_SLASH_PAD) PORT_CHAR(0xf7) PORT_CHAR(UCHAR_MAMEKEY(LEFT))
+	PORT_BIT(0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME(u8"=  \u2192") PORT_CODE(KEYCODE_EQUALS) PORT_CHAR('=') PORT_CHAR(UCHAR_MAMEKEY(RIGHT))
+	PORT_BIT(0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("Y / Yes") PORT_CODE(KEYCODE_Y) PORT_CHAR('y') PORT_CHAR('Y')
+	PORT_BIT(0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("N / No") PORT_CODE(KEYCODE_N) PORT_CHAR('n') PORT_CHAR('N')
+	PORT_BIT(0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("Clear  ;") PORT_CODE(KEYCODE_BACKSPACE) PORT_CODE(KEYCODE_DEL_PAD) PORT_CHAR(8) PORT_CHAR(';')
+	PORT_BIT(0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("Enter  _") PORT_CODE(KEYCODE_ENTER) PORT_CHAR(10) PORT_CHAR('_')
+
+	PORT_MODIFY("KEY.6")
+	PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("Ret") PORT_CODE(KEYCODE_ENTER_PAD) PORT_CHAR(13)
+	PORT_BIT(0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("Lock") PORT_CODE(KEYCODE_CAPSLOCK) PORT_CHAR(UCHAR_MAMEKEY(CAPSLOCK))
+	PORT_BIT(0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME(":  *") PORT_CODE(KEYCODE_COLON) PORT_CHAR(':') PORT_CHAR('*')
+	PORT_BIT(0x08, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("|  @") PORT_CODE(KEYCODE_BACKSLASH) PORT_CHAR('|') PORT_CHAR('@')
+	PORT_BIT(0x10, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("]  [") PORT_CODE(KEYCODE_CLOSEBRACE) PORT_CHAR(']') PORT_CHAR('[')
+	PORT_BIT(0x20, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME(u8"¨  ^") PORT_CODE(KEYCODE_QUOTE) PORT_CHAR(0xa8) PORT_CHAR('^')
+	PORT_BIT(0x40, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME(",  /") PORT_CODE(KEYCODE_COMMA) PORT_CHAR(',') PORT_CHAR('/')
+	PORT_BIT(0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("<  >") PORT_CODE(KEYCODE_OPENBRACE) PORT_CHAR('<') PORT_CHAR('>')
+
+	PORT_MODIFY("KEY.7")
+	PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("Shift") PORT_CODE(KEYCODE_LSHIFT) PORT_CODE(KEYCODE_RSHIFT) PORT_CHAR(UCHAR_SHIFT_1)
+	PORT_BIT(0x02, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("Break") PORT_CODE(KEYCODE_END) PORT_CHAR(UCHAR_MAMEKEY(PAUSE))
+	PORT_BIT(0x04, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("Cntl") PORT_CODE(KEYCODE_LCONTROL) PORT_CODE(KEYCODE_RCONTROL) PORT_CHAR(UCHAR_SHIFT_2)
+	PORT_BIT(0x80, IP_ACTIVE_HIGH, IPT_KEYBOARD) PORT_NAME("Esc") PORT_CODE(KEYCODE_ESC) PORT_CHAR(27)
+INPUT_PORTS_END
+
+
+
+/******************************************************************************
+    Machine Configs
+******************************************************************************/
+
+void odyssey2_state::odyssey2(machine_config &config)
 {
-	uint8_t data = 0xff;
-
-	if ((m_p2 & P2_KEYBOARD_SELECT_MASK) == 1)
-	{
-		data &= m_joysticks[0]->read();
-	}
-
-	if ((m_p2 & P2_KEYBOARD_SELECT_MASK) == 0)
-	{
-		data &= m_joysticks[1]->read();
-	}
-
-	return data;
-}
-
-
-WRITE8_MEMBER(odyssey2_state::bus_write)
-{
-	logerror("%.6f bus written %.2x\n", machine().time().as_double(), data);
-}
-
-
-/*
-    i8243 in the g7400
-*/
-
-WRITE8_MEMBER(g7400_state::i8243_port_w)
-{
-	switch ( offset & 3 )
-	{
-		case 0: // "port 4"
-logerror("setting ef-port4 to %02x\n", data);
-			m_ic674_decode[4] = BIT(data,0);
-			m_ic674_decode[5] = BIT(data,1);
-			m_ic674_decode[6] = BIT(data,2);
-			m_ic674_decode[7] = BIT(data,3);
-			break;
-
-		case 1: // "port 5"
-logerror("setting ef-port5 to %02x\n", data);
-			m_ic674_decode[0] = BIT(data,0);
-			m_ic674_decode[1] = BIT(data,1);
-			m_ic674_decode[2] = BIT(data,2);
-			m_ic674_decode[3] = BIT(data,3);
-			break;
-
-		case 2: // "port 6"
-logerror("setting vdc-port6 to %02x\n", data);
-			m_ic678_decode[4] = BIT(data,0);
-			m_ic678_decode[5] = BIT(data,1);
-			m_ic678_decode[6] = BIT(data,2);
-			m_ic678_decode[7] = BIT(data,3);
-			break;
-
-		case 3: // "port 7"
-logerror("setting vdc-port7 to %02x\n", data);
-			m_ic678_decode[0] = BIT(data,0);
-			m_ic678_decode[1] = BIT(data,1);
-			m_ic678_decode[2] = BIT(data,2);
-			m_ic678_decode[3] = BIT(data,3);
-			break;
-
-	}
-}
-
-
-static const gfx_layout odyssey2_graphicslayout =
-{
-	8,1,
-	256,                                    /* 256 characters */
-	1,                      /* 1 bits per pixel */
-	{ 0 },                  /* no bitplanes; 1 bit per pixel */
-	/* x offsets */
-	{
-	0,
-	1,
-	2,
-	3,
-	4,
-	5,
-	6,
-	7,
-	},
-	/* y offsets */
-	{ 0 },
-	1*8
-};
-
-
-static const gfx_layout odyssey2_spritelayout =
-{
-	8,1,
-	256,                                    /* 256 characters */
-	1,                      /* 1 bits per pixel */
-	{ 0 },                  /* no bitplanes; 1 bit per pixel */
-	/* x offsets */
-	{
-	7,6,5,4,3,2,1,0
-	},
-	/* y offsets */
-	{ 0 },
-	1*8
-};
-
-
-static GFXDECODE_START( odyssey2 )
-	GFXDECODE_ENTRY( "gfx1", 0x0000, odyssey2_graphicslayout, 0, 2 )
-	GFXDECODE_ENTRY( "gfx1", 0x0000, odyssey2_spritelayout, 0, 2 )
-GFXDECODE_END
-
-
-
-static MACHINE_CONFIG_START( odyssey2_cartslot )
-	MCFG_O2_CARTRIDGE_ADD("cartslot", o2_cart, nullptr)
-
-	MCFG_SOFTWARE_LIST_ADD("cart_list","odyssey2")
-MACHINE_CONFIG_END
-
-
-static MACHINE_CONFIG_START( odyssey2 )
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", I8048, ( ( XTAL_7_15909MHz * 3 ) / 4 ) )
-	MCFG_CPU_PROGRAM_MAP(odyssey2_mem)
-	MCFG_CPU_IO_MAP(odyssey2_io)
-	MCFG_MCS48_PORT_P1_IN_CB(READ8(odyssey2_state, p1_read))
-	MCFG_MCS48_PORT_P1_OUT_CB(WRITE8(odyssey2_state, p1_write))
-	MCFG_MCS48_PORT_P2_IN_CB(READ8(odyssey2_state, p2_read))
-	MCFG_MCS48_PORT_P2_OUT_CB(WRITE8(odyssey2_state, p2_write))
-	MCFG_MCS48_PORT_BUS_IN_CB(READ8(odyssey2_state, bus_read))
-	MCFG_MCS48_PORT_BUS_OUT_CB(WRITE8(odyssey2_state, bus_write))
-	MCFG_MCS48_PORT_T0_IN_CB(DEVREADLINE("cartslot", o2_cart_slot_device, t0_read))
-	MCFG_MCS48_PORT_T1_IN_CB(READLINE(odyssey2_state, t1_read))
-	MCFG_QUANTUM_TIME(attotime::from_hz(60))
+	I8048(config, m_maincpu, (7.15909_MHz_XTAL * 3) / 4);
+	m_maincpu->set_addrmap(AS_PROGRAM, &odyssey2_state::odyssey2_mem);
+	m_maincpu->set_addrmap(AS_IO, &odyssey2_state::odyssey2_io);
+	m_maincpu->p1_out_cb().set(FUNC(odyssey2_state::p1_write));
+	m_maincpu->p2_in_cb().set(FUNC(odyssey2_state::p2_read));
+	m_maincpu->p2_out_cb().set(FUNC(odyssey2_state::p2_write));
+	m_maincpu->bus_in_cb().set(FUNC(odyssey2_state::bus_read));
+	m_maincpu->t0_in_cb().set("cartslot", FUNC(o2_cart_slot_device::t0_read));
+	m_maincpu->t1_in_cb().set(FUNC(odyssey2_state::t1_read));
 
 	/* video hardware */
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_RAW_PARAMS( XTAL_7_15909MHz/2 * 2, i8244_device::LINE_CLOCKS, i8244_device::START_ACTIVE_SCAN, i8244_device::END_ACTIVE_SCAN, i8244_device::LINES, i8244_device::START_Y, i8244_device::START_Y + i8244_device::SCREEN_HEIGHT )
-	MCFG_SCREEN_UPDATE_DRIVER(odyssey2_state, screen_update_odyssey2)
-	MCFG_SCREEN_PALETTE("palette")
+	SCREEN(config, m_screen, SCREEN_TYPE_RASTER);
+	m_screen->set_screen_update(FUNC(odyssey2_state::screen_update));
+	m_screen->set_video_attributes(VIDEO_ALWAYS_UPDATE);
+	m_screen->set_palette("palette");
 
-	MCFG_GFXDECODE_ADD("gfxdecode", "palette", odyssey2 )
-	MCFG_PALETTE_ADD("palette", 32)
-	MCFG_PALETTE_INIT_OWNER(odyssey2_state, odyssey2)
+	PALETTE(config, "palette", FUNC(odyssey2_state::odyssey2_palette), 16);
 
-	/* sound hardware */
-	MCFG_SPEAKER_STANDARD_MONO("mono")
-	MCFG_I8244_ADD( "i8244", XTAL_7_15909MHz/2 * 2, "screen", INPUTLINE( "maincpu", 0 ), WRITE16( odyssey2_state, scanline_postprocess ) )
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.40)
+	I8244(config, m_i8244, 7.15909_MHz_XTAL / 2);
+	m_i8244->set_screen("screen");
+	m_i8244->set_screen_size(360, 243);
+	m_i8244->irq_cb().set_inputline(m_maincpu, MCS48_INPUT_IRQ);
+	m_i8244->add_route(ALL_OUTPUTS, "mono", 0.40);
 
-	MCFG_FRAGMENT_ADD(odyssey2_cartslot)
-MACHINE_CONFIG_END
+	SPEAKER(config, "mono").front_center();
+
+	/* cartridge */
+	O2_CART_SLOT(config, m_cart, o2_cart, nullptr);
+	SOFTWARE_LIST(config, "cart_list").set_original("odyssey2").set_filter("O2");
+	SOFTWARE_LIST(config, "g7400_list").set_compatible("g7400").set_filter("O2");
+}
+
+void odyssey2_state::videopac(machine_config &config)
+{
+	odyssey2(config);
+
+	// PAL video chip
+	I8245(config.replace(), m_i8244, 17.734476_MHz_XTAL / 5);
+	m_i8244->set_screen("screen");
+	m_i8244->set_screen_size(360, 243);
+	m_i8244->irq_cb().set_inputline(m_maincpu, MCS48_INPUT_IRQ);
+	m_i8244->add_route(ALL_OUTPUTS, "mono", 0.40);
+
+	m_maincpu->set_clock(17.734476_MHz_XTAL / 3);
+
+	subdevice<software_list_device>("cart_list")->set_filter("VP");
+	subdevice<software_list_device>("g7400_list")->set_filter("VP");
+}
+
+void odyssey2_state::videopacf(machine_config &config)
+{
+	videopac(config);
+
+	// different master XTAL
+	m_maincpu->set_clock(17.812_MHz_XTAL / 3);
+	m_i8244->set_clock(17.812_MHz_XTAL / 5);
+}
 
 
-static MACHINE_CONFIG_START( videopac )
+void g7400_state::g7400(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", I8048, ( XTAL_17_73447MHz / 3 ) )
-	MCFG_CPU_PROGRAM_MAP(odyssey2_mem)
-	MCFG_CPU_IO_MAP(odyssey2_io)
-	MCFG_QUANTUM_TIME(attotime::from_hz(60))
+	I8048(config, m_maincpu, 5.911_MHz_XTAL);
+	m_maincpu->set_addrmap(AS_PROGRAM, &g7400_state::odyssey2_mem);
+	m_maincpu->set_addrmap(AS_IO, &g7400_state::odyssey2_io);
+	m_maincpu->p1_out_cb().set(FUNC(g7400_state::p1_write));
+	m_maincpu->p2_in_cb().set(FUNC(g7400_state::p2_read));
+	m_maincpu->p2_out_cb().set(FUNC(g7400_state::p2_write));
+	m_maincpu->bus_in_cb().set(FUNC(g7400_state::bus_read));
+	m_maincpu->t0_in_cb().set("cartslot", FUNC(o2_cart_slot_device::t0_read));
+	m_maincpu->t1_in_cb().set(FUNC(g7400_state::t1_read));
+	m_maincpu->prog_out_cb().set(m_i8243, FUNC(i8243_device::prog_w));
 
 	/* video hardware */
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_RAW_PARAMS( XTAL_17_73447MHz/5 * 2, i8244_device::LINE_CLOCKS, i8244_device::START_ACTIVE_SCAN, i8244_device::END_ACTIVE_SCAN, i8245_device::LINES, i8244_device::START_Y, i8244_device::START_Y + i8244_device::SCREEN_HEIGHT )
-	MCFG_SCREEN_UPDATE_DRIVER(odyssey2_state, screen_update_odyssey2)
-	MCFG_SCREEN_PALETTE("palette")
+	SCREEN(config, m_screen, SCREEN_TYPE_RASTER);
+	m_screen->set_screen_update(FUNC(g7400_state::screen_update));
+	m_screen->set_video_attributes(VIDEO_ALWAYS_UPDATE);
+	m_screen->set_palette("palette");
 
-	MCFG_GFXDECODE_ADD("gfxdecode", "palette", odyssey2 )
-	MCFG_PALETTE_ADD("palette", 16)
-	MCFG_PALETTE_INIT_OWNER(odyssey2_state, odyssey2)
+	PALETTE(config, "palette", m_i8244, FUNC(i8244_device::i8244_palette), 16);
 
-	/* sound hardware */
-	MCFG_SPEAKER_STANDARD_MONO("mono")
-	MCFG_I8245_ADD( "i8244", XTAL_17_73447MHz/5 * 2, "screen", INPUTLINE( "maincpu", 0 ), WRITE16( odyssey2_state, scanline_postprocess ) )
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.40)
+	I8243(config, m_i8243);
+	m_i8243->p4_out_cb().set(FUNC(g7400_state::i8243_port_w<0>));
+	m_i8243->p5_out_cb().set(FUNC(g7400_state::i8243_port_w<1>));
+	m_i8243->p6_out_cb().set(FUNC(g7400_state::i8243_port_w<2>));
+	m_i8243->p7_out_cb().set(FUNC(g7400_state::i8243_port_w<3>));
 
-	MCFG_FRAGMENT_ADD(odyssey2_cartslot)
-MACHINE_CONFIG_END
+	EF9340_1(config, m_ef934x, (8.867_MHz_XTAL * 2) / 5, "screen");
+	m_ef934x->set_offsets(15, 5);
+	m_ef934x->read_exram().set(FUNC(g7400_state::ef934x_extram_r));
+	m_ef934x->write_exram().set(FUNC(g7400_state::ef934x_extram_w));
+
+	I8245(config, m_i8244, (8.867_MHz_XTAL * 2) / 5);
+	m_i8244->set_screen("screen");
+	m_i8244->set_screen_size(360, 243);
+	m_i8244->irq_cb().set_inputline(m_maincpu, MCS48_INPUT_IRQ);
+	m_i8244->add_route(ALL_OUTPUTS, "mono", 0.40);
+
+	SPEAKER(config, "mono").front_center();
+
+	/* cartridge */
+	O2_CART_SLOT(config, m_cart, o2_cart, nullptr);
+	SOFTWARE_LIST(config, "cart_list").set_original("g7400").set_filter("VPP");
+	SOFTWARE_LIST(config, "ody2_list").set_compatible("odyssey2").set_filter("VPP");
+}
+
+void g7400_state::jo7400(machine_config &config)
+{
+	g7400(config);
+
+	// different video clock
+	m_i8244->set_clock(3.5625_MHz_XTAL);
+	m_ef934x->set_clock(3.5625_MHz_XTAL);
+}
+
+void g7400_state::odyssey3(machine_config &config)
+{
+	g7400(config);
+
+	// NTSC video chip
+	I8244(config.replace(), m_i8244, 7.15909_MHz_XTAL / 2);
+	m_i8244->set_screen("screen");
+	m_i8244->set_screen_size(360, 243);
+	m_i8244->irq_cb().set_inputline(m_maincpu, MCS48_INPUT_IRQ);
+	m_i8244->add_route(ALL_OUTPUTS, "mono", 0.40);
+
+	m_ef934x->set_clock(7.15909_MHz_XTAL / 2);
+	m_ef934x->set_offsets(15, 15);
+
+	m_maincpu->set_clock((7.15909_MHz_XTAL * 3) / 4);
+
+	// same color encoder as O2 (no RGB port)
+	PALETTE(config.replace(), "palette", FUNC(odyssey2_state::odyssey2_palette), 16);
+
+	subdevice<software_list_device>("cart_list")->set_filter("O3");
+	subdevice<software_list_device>("ody2_list")->set_filter("O3");
+}
 
 
-static MACHINE_CONFIG_START( g7400 )
-	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", I8048, XTAL_5_911MHz )
-	MCFG_CPU_PROGRAM_MAP(odyssey2_mem)
-	MCFG_CPU_IO_MAP(g7400_io)
-	MCFG_MCS48_PORT_P1_IN_CB(READ8(g7400_state, p1_read))
-	MCFG_MCS48_PORT_P1_OUT_CB(WRITE8(g7400_state, p1_write))
-	MCFG_MCS48_PORT_P2_IN_CB(READ8(g7400_state, p2_read))
-	MCFG_MCS48_PORT_P2_OUT_CB(WRITE8(g7400_state, p2_write))
-	MCFG_MCS48_PORT_BUS_IN_CB(READ8(g7400_state, bus_read))
-	MCFG_MCS48_PORT_BUS_OUT_CB(WRITE8(g7400_state, bus_write))
-	MCFG_MCS48_PORT_T0_IN_CB(DEVREADLINE("cartslot", o2_cart_slot_device, t0_read))
-	MCFG_MCS48_PORT_T1_IN_CB(READLINE(g7400_state, t1_read))
-	MCFG_MCS48_PORT_PROG_OUT_CB(DEVWRITELINE("i8243", i8243_device, prog_w))
-	MCFG_QUANTUM_TIME(attotime::from_hz(60))
 
-	/* video hardware */
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_RAW_PARAMS( 3540000 * 2, i8244_device::LINE_CLOCKS, i8244_device::START_ACTIVE_SCAN, i8244_device::END_ACTIVE_SCAN, i8245_device::LINES, i8244_device::START_Y, i8244_device::START_Y + i8244_device::SCREEN_HEIGHT )
-	MCFG_SCREEN_UPDATE_DRIVER(odyssey2_state, screen_update_odyssey2)
-	MCFG_SCREEN_PALETTE("palette")
-
-	MCFG_GFXDECODE_ADD("gfxdecode", "palette", odyssey2 )
-	MCFG_PALETTE_ADD("palette", 16)
-	MCFG_PALETTE_INIT_OWNER(g7400_state, g7400)
-
-	MCFG_I8243_ADD( "i8243", NOOP, WRITE8(g7400_state,i8243_port_w))
-
-	MCFG_EF9340_1_ADD( "ef9340_1", 3540000, "screen" )
-
-	MCFG_SPEAKER_STANDARD_MONO("mono")
-	MCFG_I8245_ADD( "i8244", 3540000 * 2, "screen", INPUTLINE( "maincpu", 0 ), WRITE16( g7400_state, scanline_postprocess ) )
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.40)
-
-	MCFG_FRAGMENT_ADD(odyssey2_cartslot)
-	MCFG_DEVICE_REMOVE("cart_list")
-	MCFG_SOFTWARE_LIST_ADD("cart_list","g7400")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("ody2_list","odyssey2")
-MACHINE_CONFIG_END
-
-
-static MACHINE_CONFIG_START( odyssey3 )
-	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", I8048, XTAL_5_911MHz )
-	MCFG_CPU_PROGRAM_MAP(odyssey2_mem)
-	MCFG_CPU_IO_MAP(g7400_io)
-	MCFG_MCS48_PORT_P1_IN_CB(READ8(g7400_state, p1_read))
-	MCFG_MCS48_PORT_P1_OUT_CB(WRITE8(g7400_state, p1_write))
-	MCFG_MCS48_PORT_P2_IN_CB(READ8(g7400_state, p2_read))
-	MCFG_MCS48_PORT_P2_OUT_CB(WRITE8(g7400_state, p2_write))
-	MCFG_MCS48_PORT_BUS_IN_CB(READ8(g7400_state, bus_read))
-	MCFG_MCS48_PORT_BUS_OUT_CB(WRITE8(g7400_state, bus_write))
-	MCFG_MCS48_PORT_T0_IN_CB(DEVREADLINE("cartslot", o2_cart_slot_device, t0_read))
-	MCFG_MCS48_PORT_T1_IN_CB(READLINE(g7400_state, t1_read))
-	MCFG_MCS48_PORT_PROG_OUT_CB(DEVWRITELINE("i8243", i8243_device, prog_w))
-	MCFG_QUANTUM_TIME(attotime::from_hz(60))
-
-	/* video hardware */
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_RAW_PARAMS( 3540000 * 2, i8244_device::LINE_CLOCKS, i8244_device::START_ACTIVE_SCAN, i8244_device::END_ACTIVE_SCAN, i8244_device::LINES, i8244_device::START_Y, i8244_device::START_Y + i8244_device::SCREEN_HEIGHT )
-	MCFG_SCREEN_UPDATE_DRIVER(odyssey2_state, screen_update_odyssey2)
-	MCFG_SCREEN_PALETTE("palette")
-
-	MCFG_GFXDECODE_ADD("gfxdecode", "palette", odyssey2 )
-	MCFG_PALETTE_ADD("palette", 16)
-	MCFG_PALETTE_INIT_OWNER(g7400_state, g7400)
-
-	MCFG_I8243_ADD( "i8243", NOOP, WRITE8(g7400_state,i8243_port_w))
-
-	MCFG_EF9340_1_ADD( "ef9340_1", 3540000, "screen" )
-
-	MCFG_SPEAKER_STANDARD_MONO("mono")
-	MCFG_I8244_ADD( "i8244", 3540000 * 2, "screen", INPUTLINE( "maincpu", 0 ), WRITE16( g7400_state, scanline_postprocess ) )
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.40)
-
-	MCFG_FRAGMENT_ADD(odyssey2_cartslot)
-	MCFG_DEVICE_REMOVE("cart_list")
-	MCFG_SOFTWARE_LIST_ADD("cart_list","g7400")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("ody2_list","odyssey2")
-MACHINE_CONFIG_END
-
+/******************************************************************************
+    ROM Definitions
+******************************************************************************/
 
 ROM_START (odyssey2)
-	ROM_REGION(0x10000,"maincpu",0)    /* safer for the memory handler/bankswitching??? */
+	ROM_REGION(0x0400,"maincpu",0)
 	ROM_LOAD ("o2bios.rom", 0x0000, 0x0400, CRC(8016a315) SHA1(b2e1955d957a475de2411770452eff4ea19f4cee))
-	ROM_REGION(0x100, "gfx1", ROMREGION_ERASEFF)
 ROM_END
 
-
 ROM_START (videopac)
-	ROM_REGION(0x10000,"maincpu",0)    /* safer for the memory handler/bankswitching??? */
-	ROM_SYSTEM_BIOS( 0, "g7000", "g7000" )
-	ROMX_LOAD ("o2bios.rom", 0x0000, 0x0400, CRC(8016a315) SHA1(b2e1955d957a475de2411770452eff4ea19f4cee), ROM_BIOS(1))
-	ROM_SYSTEM_BIOS( 1, "c52", "c52" )
-	ROMX_LOAD ("c52.bin", 0x0000, 0x0400, CRC(a318e8d6) SHA1(a6120aed50831c9c0d95dbdf707820f601d9452e), ROM_BIOS(2))
-	ROM_REGION(0x100, "gfx1", ROMREGION_ERASEFF)
+	ROM_REGION(0x0400,"maincpu",0)
+	ROM_LOAD ("o2bios.rom", 0x0000, 0x0400, CRC(8016a315) SHA1(b2e1955d957a475de2411770452eff4ea19f4cee))
+ROM_END
+
+ROM_START (videopacf)
+	ROM_REGION(0x0400,"maincpu",0)
+	ROM_LOAD ("c52.rom", 0x0000, 0x0400, CRC(a318e8d6) SHA1(a6120aed50831c9c0d95dbdf707820f601d9452e))
 ROM_END
 
 
 ROM_START (g7400)
-	ROM_REGION(0x10000,"maincpu",0)    /* safer for the memory handler/bankswitching??? */
+	ROM_REGION(0x0400,"maincpu",0)
 	ROM_LOAD ("g7400.bin", 0x0000, 0x0400, CRC(e20a9f41) SHA1(5130243429b40b01a14e1304d0394b8459a6fbae))
-	ROM_REGION(0x100, "gfx1", ROMREGION_ERASEFF)
 ROM_END
-
 
 ROM_START (jopac)
-	ROM_REGION(0x10000,"maincpu",0)    /* safer for the memory handler/bankswitching??? */
+	ROM_REGION(0x0400,"maincpu",0)
 	ROM_LOAD ("jopac.bin", 0x0000, 0x0400, CRC(11647ca5) SHA1(54b8d2c1317628de51a85fc1c424423a986775e4))
-	ROM_REGION(0x100, "gfx1", ROMREGION_ERASEFF)
 ROM_END
-
 
 ROM_START (odyssey3)
-	ROM_REGION(0x10000, "maincpu", 0)
+	ROM_REGION(0x0400, "maincpu", 0)
 	ROM_LOAD ("odyssey3.bin", 0x0000, 0x0400, CRC(e2b23324) SHA1(0a38c5f2cea929d2fe0a23e5e1a60de9155815dc))
-
-	ROM_REGION(0x100, "gfx1", ROMREGION_ERASEFF)
 ROM_END
 
-/*    YEAR  NAME      PARENT    COMPAT  MACHINE   INPUT     STATE           INIT      COMPANY     FULLNAME                                FLAGS */
-COMP( 1978, odyssey2, 0,        0,      odyssey2, odyssey2, odyssey2_state, odyssey2, "Magnavox", "Odyssey 2",                            0 )
-COMP( 1979, videopac, odyssey2, 0,      videopac, odyssey2, odyssey2_state, odyssey2, "Philips",  "Videopac G7000/C52",                   0 )
-COMP( 1983, g7400,    odyssey2, 0,      g7400,    odyssey2, g7400_state,    odyssey2, "Philips",  "Videopac Plus G7400",                  MACHINE_IMPERFECT_GRAPHICS )
-COMP( 1983, jopac,    odyssey2, 0,      g7400,    odyssey2, g7400_state,    odyssey2, "Brandt",   "Jopac JO7400",                         MACHINE_IMPERFECT_GRAPHICS )
-COMP( 1983, odyssey3, odyssey2, 0,      odyssey3, odyssey2, g7400_state,    odyssey2, "Magnavox", "Odyssey 3 Command Center (prototype)", MACHINE_IMPERFECT_GRAPHICS )
+} // anonymous namespace
+
+
+
+/******************************************************************************
+    Drivers
+******************************************************************************/
+
+//    YEAR  NAME       PARENT   CMP MACHINE    INPUT     STATE           INIT        COMPANY, FULLNAME, FLAGS
+COMP( 1979, odyssey2,  0,        0, odyssey2,  odyssey2, odyssey2_state, empty_init, "Magnavox", "Odyssey 2 (US)", MACHINE_SUPPORTS_SAVE )
+COMP( 1978, videopac,  odyssey2, 0, videopac,  odyssey2, odyssey2_state, empty_init, "Philips", "Videopac G7000 (Europe)", MACHINE_SUPPORTS_SAVE )
+COMP( 1979, videopacf, odyssey2, 0, videopacf, odyssey2, odyssey2_state, empty_init, "Philips", "Videopac C52 (France)", MACHINE_SUPPORTS_SAVE )
+
+COMP( 1983, g7400,     0,        0, g7400,     g7400,    g7400_state,    empty_init, "Philips", "Videopac+ G7400 (Europe)", MACHINE_SUPPORTS_SAVE )
+COMP( 1983, jopac,     g7400,    0, jo7400,    g7400,    g7400_state,    empty_init, "Philips (Brandt license)", "Jopac JO7400 (France)", MACHINE_SUPPORTS_SAVE )
+COMP( 1983, odyssey3,  g7400,    0, odyssey3,  g7400,    g7400_state,    empty_init, "Magnavox", "Odyssey 3 Command Center (US, prototype)", MACHINE_SUPPORTS_SAVE )

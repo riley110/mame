@@ -63,10 +63,11 @@ const int mos6551_device::transmitter_controls[4][3] =
 	{0, 1, 1}
 };
 
-MACHINE_CONFIG_MEMBER( mos6551_device::device_add_mconfig )
-	MCFG_DEVICE_ADD("clock", CLOCK, 0)
-	MCFG_CLOCK_SIGNAL_HANDLER(WRITELINE(mos6551_device, internal_clock))
-MACHINE_CONFIG_END
+void mos6551_device::device_add_mconfig(machine_config &config)
+{
+	CLOCK(config, m_internal_clock, 0);
+	m_internal_clock->signal_handler().set(FUNC(mos6551_device::internal_clock));
+}
 
 
 void mos6551_device::device_start()
@@ -128,7 +129,6 @@ void mos6551_device::device_start()
 
 	m_internal_clock->set_unscaled_clock(m_xtal);
 
-	output_irq(1);
 	output_txd(1);
 	output_rxc(1);
 	output_rts(1);
@@ -154,6 +154,9 @@ void mos6551_device::device_reset()
 
 	write_command(0);
 	write_control(0);
+
+	m_irq_state = 0;
+	update_irq();
 }
 
 void mos6551_device::output_irq(int irq)
@@ -270,7 +273,8 @@ void mos6551_device::update_divider()
 
 uint8_t mos6551_device::read_rdr()
 {
-	m_status &= ~(SR_PARITY_ERROR | SR_FRAMING_ERROR | SR_OVERRUN | SR_RDRF);
+	if (!machine().side_effects_disabled())
+		m_status &= ~(SR_PARITY_ERROR | SR_FRAMING_ERROR | SR_OVERRUN | SR_RDRF);
 	return m_rdr;
 }
 
@@ -283,7 +287,7 @@ uint8_t mos6551_device::read_status()
 		status &= ~SR_TDRE;
 	}
 
-	if (m_irq_state != 0)
+	if (!machine().side_effects_disabled() && m_irq_state != 0)
 	{
 		m_irq_state = 0;
 		update_irq();
@@ -312,6 +316,7 @@ void mos6551_device::write_reset(uint8_t data)
 {
 	m_status &= ~SR_OVERRUN;
 	m_irq_state &= ~(IRQ_DCD | IRQ_DSR);
+	update_irq();
 
 	write_command(m_command & ~0x1f);
 }
@@ -374,11 +379,8 @@ void mos6551_device::write_command(uint8_t data)
 	update_divider();
 }
 
-READ8_MEMBER( mos6551_device::read )
+uint8_t mos6551_device::read(offs_t offset)
 {
-	if (machine().side_effect_disabled())
-		return 0xff;
-
 	switch (offset & 0x03)
 	{
 	case 0:
@@ -396,7 +398,7 @@ READ8_MEMBER( mos6551_device::read )
 	}
 }
 
-WRITE8_MEMBER( mos6551_device::write )
+void mos6551_device::write(offs_t offset, uint8_t data)
 {
 	switch (offset & 0x03)
 	{

@@ -10,9 +10,6 @@
     Games supported:
         * Revolution X
 
-    Known bugs:
-        * none at this time
-
 ***************************************************************************
 
 Revolution X
@@ -77,18 +74,48 @@ Notes:                                                         |                
       P10      - 10 pin connector
       P12      - 4 pin connector
 
-There's a separate sound board also, but it wasn't available so is not documented here.
+There's a separate sound board also.
+
+SOUND BOARD - 5766-13959-01 - Williams Electronic Games Inc.
+________________________________________________________________
+|                   __________   __________  ________________   |
+|                   PC74HCT541P  |74HC541N_| |U9 M27C4001    |  |
+|                    __________  __________  |_______________|  |
+|                  CY7C128A-35PC |74HC541N_|   ________________ |
+|                                             |U8 M27C4001     ||
+|                    __________  __________   |________________||
+|                  CY7C128A-35PC SN74HC245N    ________________ |
+|                    __________  __________   |U7 M27C4001     ||
+|                  CY7C128A-35PC |74LS174N_|  |________________||
+|                                              ________________ |
+|                                __________   |U6 M27C4001     ||
+|                                |74HC174N_|  |________________||
+|                   __________                 ________________ |
+|                   |ADSP-2105|  __________   |U5 M27C4001     ||
+|             ____  |         |  M74HC138B1   |________________||
+|             XTAL  |         |  __________    ________________ |
+|        10.0000MHz |_________|  |_74F00PC_|  |U4 M27C4001     ||
+|                   __________   __________   |________________||
+|   __________ U17->|GAL16V8A_|  |_M7406N__|   ________________ |
+|SCC2691AC1N24 _________                      |U3 27C040-10    ||
+|    ________  |AD1851N_|                     |________________||
+|    M74HC14B1                                 ________________ |
+|    ________  _________                      |U2 M27C4001     ||
+|   AM26LS31CN |TL084CN_|                     |________________||
+|    ________  AUX-IN AUX-OUT                          FUSE     |
+|   AM26LS31CN                    _________                     |
+| :::::::::: <-SERIAL  PWR/PPKR-> ···· ····              ·· ··  |
+|_______________________________________________________________|
 
 **************************************************************************/
 
 #include "emu.h"
-#include "includes/midtunit.h"
 #include "includes/midxunit.h"
 #include "audio/dcs.h"
 
 #include "cpu/adsp2100/adsp2100.h"
 #include "cpu/tms34010/tms34010.h"
-#include "machine/nvram.h"
+#include "machine/adc0844.h"
 
 #include "screen.h"
 
@@ -103,24 +130,27 @@ There's a separate sound board also, but it wasn't available so is not documente
  *
  *************************************/
 
-static ADDRESS_MAP_START( main_map, AS_PROGRAM, 16, midxunit_state )
-	AM_RANGE(0x00000000, 0x003fffff) AM_READWRITE(midtunit_vram_data_r, midtunit_vram_data_w)
-	AM_RANGE(0x00800000, 0x00bfffff) AM_READWRITE(midtunit_vram_color_r, midtunit_vram_color_w)
-	AM_RANGE(0x20000000, 0x20ffffff) AM_RAM
-	AM_RANGE(0x40800000, 0x4fffffff) AM_WRITE(midxunit_unknown_w)
-	AM_RANGE(0x60400000, 0x6040001f) AM_READWRITE(midxunit_status_r, midxunit_security_clock_w)
-	AM_RANGE(0x60c00000, 0x60c0007f) AM_READ(midxunit_io_r)
-	AM_RANGE(0x60c00080, 0x60c000df) AM_WRITE(midxunit_io_w)
-	AM_RANGE(0x60c000e0, 0x60c000ff) AM_READWRITE(midxunit_security_r, midxunit_security_w)
-	AM_RANGE(0x80800000, 0x8080001f) AM_READWRITE(midxunit_analog_r, midxunit_analog_select_w)
-	AM_RANGE(0x80c00000, 0x80c000ff) AM_READWRITE(midxunit_uart_r, midxunit_uart_w)
-	AM_RANGE(0xa0440000, 0xa047ffff) AM_READWRITE(midxunit_cmos_r, midxunit_cmos_w) AM_SHARE("nvram")
-	AM_RANGE(0xa0800000, 0xa08fffff) AM_READWRITE(midxunit_paletteram_r, midxunit_paletteram_w) AM_SHARE("palette")
-	AM_RANGE(0xc0000000, 0xc00003ff) AM_DEVREADWRITE("maincpu", tms34020_device, io_register_r, io_register_w)
-	AM_RANGE(0xc0800000, 0xc08000ff) AM_MIRROR(0x00400000) AM_READWRITE(midtunit_dma_r, midtunit_dma_w)
-	AM_RANGE(0xf8000000, 0xfeffffff) AM_READ(midwunit_gfxrom_r)
-	AM_RANGE(0xff000000, 0xffffffff) AM_ROM AM_REGION("maincpu", 0)
-ADDRESS_MAP_END
+void midxunit_state::main_map(address_map &map)
+{
+	map(0x00000000, 0x003fffff).rw(m_video, FUNC(midxunit_video_device::midtunit_vram_data_r), FUNC(midxunit_video_device::midtunit_vram_data_w));
+	map(0x00800000, 0x00bfffff).rw(m_video, FUNC(midxunit_video_device::midtunit_vram_color_r), FUNC(midxunit_video_device::midtunit_vram_color_w));
+	map(0x20000000, 0x20ffffff).ram();
+	map(0x40800000, 0x4fffffff).w(FUNC(midxunit_state::midxunit_unknown_w));
+	map(0x60400000, 0x6040001f).rw(FUNC(midxunit_state::midxunit_status_r), FUNC(midxunit_state::midxunit_security_clock_w));
+	map(0x60c00000, 0x60c0001f).portr("IN0");
+	map(0x60c00020, 0x60c0003f).portr("IN1");
+	map(0x60c00040, 0x60c0005f).portr("IN2");
+	map(0x60c00060, 0x60c0007f).portr("DSW");
+	map(0x60c00080, 0x60c000df).w(FUNC(midxunit_state::midxunit_io_w));
+	map(0x60c000e0, 0x60c000ff).rw(FUNC(midxunit_state::midxunit_security_r), FUNC(midxunit_state::midxunit_security_w));
+	map(0x80800000, 0x8080001f).rw("adc", FUNC(adc0848_device::read), FUNC(adc0848_device::write)).umask32(0x000000ff);
+	map(0x80c00000, 0x80c000ff).rw(FUNC(midxunit_state::midxunit_uart_r), FUNC(midxunit_state::midxunit_uart_w)).umask32(0x000000ff);
+	map(0xa0440000, 0xa047ffff).rw(FUNC(midxunit_state::midxunit_cmos_r), FUNC(midxunit_state::midxunit_cmos_w)).umask32(0x000000ff);
+	map(0xa0800000, 0xa08fffff).rw(m_video, FUNC(midxunit_video_device::midxunit_paletteram_r), FUNC(midxunit_video_device::midxunit_paletteram_w)).share("palette");
+	map(0xc0800000, 0xc08000ff).mirror(0x00400000).rw(FUNC(midxunit_state::midxunit_dma_r), FUNC(midxunit_state::midxunit_dma_w));
+	map(0xf8000000, 0xfeffffff).r(m_video, FUNC(midxunit_video_device::midwunit_gfxrom_r));
+	map(0xff000000, 0xffffffff).rom().region("maincpu", 0);
+}
 
 
 
@@ -132,38 +162,39 @@ ADDRESS_MAP_END
 
 static INPUT_PORTS_START( revx )
 	PORT_START("IN0")
-	PORT_BIT( 0x000f, IP_ACTIVE_LOW, IPT_UNUSED )
-	PORT_BIT( 0x0010, IP_ACTIVE_LOW, IPT_BUTTON1 ) PORT_PLAYER(1)
-	PORT_BIT( 0x0020, IP_ACTIVE_LOW, IPT_BUTTON2 ) PORT_PLAYER(1)
-	PORT_BIT( 0x00c0, IP_ACTIVE_LOW, IPT_UNUSED )
-	PORT_BIT( 0x0f00, IP_ACTIVE_LOW, IPT_UNUSED )
-	PORT_BIT( 0x1000, IP_ACTIVE_LOW, IPT_BUTTON1 ) PORT_PLAYER(2)
-	PORT_BIT( 0x2000, IP_ACTIVE_LOW, IPT_BUTTON2 ) PORT_PLAYER(2)
-	PORT_BIT( 0xc000, IP_ACTIVE_LOW, IPT_UNUSED )
+	PORT_BIT( 0x0000000f, IP_ACTIVE_LOW, IPT_UNUSED )
+	PORT_BIT( 0x00000010, IP_ACTIVE_LOW, IPT_BUTTON1 ) PORT_PLAYER(1)
+	PORT_BIT( 0x00000020, IP_ACTIVE_LOW, IPT_BUTTON2 ) PORT_PLAYER(1)
+	PORT_BIT( 0x000000c0, IP_ACTIVE_LOW, IPT_UNUSED )
+	PORT_BIT( 0x00000f00, IP_ACTIVE_LOW, IPT_UNUSED )
+	PORT_BIT( 0x00001000, IP_ACTIVE_LOW, IPT_BUTTON1 ) PORT_PLAYER(2)
+	PORT_BIT( 0x00002000, IP_ACTIVE_LOW, IPT_BUTTON2 ) PORT_PLAYER(2)
+	PORT_BIT( 0xffffc000, IP_ACTIVE_LOW, IPT_UNUSED )
 
 	PORT_START("IN1")
-	PORT_BIT( 0x000f, IP_ACTIVE_LOW, IPT_UNUSED )
-	PORT_BIT( 0x0010, IP_ACTIVE_LOW, IPT_BUTTON1 ) PORT_PLAYER(3)
-	PORT_BIT( 0x0020, IP_ACTIVE_LOW, IPT_BUTTON2 ) PORT_PLAYER(3)
-	PORT_BIT( 0xffc0, IP_ACTIVE_LOW, IPT_UNUSED )
+	PORT_BIT( 0x0000000f, IP_ACTIVE_LOW, IPT_UNUSED )
+	PORT_BIT( 0x00000010, IP_ACTIVE_LOW, IPT_BUTTON1 ) PORT_PLAYER(3)
+	PORT_BIT( 0x00000020, IP_ACTIVE_LOW, IPT_BUTTON2 ) PORT_PLAYER(3)
+	PORT_BIT( 0xffffffc0, IP_ACTIVE_LOW, IPT_UNUSED )
 
 	PORT_START("IN2")
-	PORT_BIT( 0x0001, IP_ACTIVE_LOW, IPT_COIN1 )
-	PORT_BIT( 0x0002, IP_ACTIVE_LOW, IPT_COIN2 )
-	PORT_BIT( 0x0004, IP_ACTIVE_LOW, IPT_START1 )
-	PORT_BIT( 0x0008, IP_ACTIVE_LOW, IPT_TILT ) /* Slam Switch */
-	PORT_SERVICE_NO_TOGGLE(0x0010, IP_ACTIVE_LOW)
-	PORT_BIT( 0x0020, IP_ACTIVE_LOW, IPT_START2 )
-	PORT_BIT( 0x0040, IP_ACTIVE_LOW, IPT_SERVICE1 )
-	PORT_BIT( 0x0080, IP_ACTIVE_LOW, IPT_COIN3 )
-	PORT_BIT( 0x0100, IP_ACTIVE_LOW, IPT_COIN4 )
-	PORT_BIT( 0x0200, IP_ACTIVE_LOW, IPT_START3 )
-	PORT_BIT( 0x0400, IP_ACTIVE_LOW, IPT_UNUSED )
-	PORT_BIT( 0x0800, IP_ACTIVE_LOW, IPT_VOLUME_DOWN )
-	PORT_BIT( 0x1000, IP_ACTIVE_LOW, IPT_VOLUME_UP )
-	PORT_BIT( 0x2000, IP_ACTIVE_LOW, IPT_SPECIAL ) /* coin door */
-	PORT_BIT( 0x4000, IP_ACTIVE_LOW, IPT_UNUSED )
-	PORT_BIT( 0x8000, IP_ACTIVE_LOW, IPT_BILL1 ) /* bill validator */
+	PORT_BIT( 0x00000001, IP_ACTIVE_LOW, IPT_COIN1 )
+	PORT_BIT( 0x00000002, IP_ACTIVE_LOW, IPT_COIN2 )
+	PORT_BIT( 0x00000004, IP_ACTIVE_LOW, IPT_START1 )
+	PORT_BIT( 0x00000008, IP_ACTIVE_LOW, IPT_TILT ) /* Slam Switch */
+	PORT_SERVICE_NO_TOGGLE(0x00000010, IP_ACTIVE_LOW)
+	PORT_BIT( 0x00000020, IP_ACTIVE_LOW, IPT_START2 )
+	PORT_BIT( 0x00000040, IP_ACTIVE_LOW, IPT_SERVICE1 )
+	PORT_BIT( 0x00000080, IP_ACTIVE_LOW, IPT_COIN3 )
+	PORT_BIT( 0x00000100, IP_ACTIVE_LOW, IPT_COIN4 )
+	PORT_BIT( 0x00000200, IP_ACTIVE_LOW, IPT_START3 )
+	PORT_BIT( 0x00000400, IP_ACTIVE_LOW, IPT_UNUSED )
+	PORT_BIT( 0x00000800, IP_ACTIVE_LOW, IPT_VOLUME_DOWN )
+	PORT_BIT( 0x00001000, IP_ACTIVE_LOW, IPT_VOLUME_UP )
+	PORT_BIT( 0x00002000, IP_ACTIVE_LOW, IPT_CUSTOM ) /* coin door */
+	PORT_BIT( 0x00004000, IP_ACTIVE_LOW, IPT_UNUSED )
+	PORT_BIT( 0x00008000, IP_ACTIVE_LOW, IPT_BILL1 ) /* bill validator */
+	PORT_BIT( 0xffff0000, IP_ACTIVE_LOW, IPT_UNUSED )
 
 	PORT_START("DSW")
 	PORT_DIPNAME( 0x0001, 0x0000, DEF_STR( Flip_Screen ))
@@ -208,30 +239,25 @@ static INPUT_PORTS_START( revx )
 	PORT_DIPNAME( 0x8000, 0x8000, "Test Switch" )
 	PORT_DIPSETTING(      0x8000, DEF_STR( Off ))
 	PORT_DIPSETTING(      0x0000, DEF_STR( On ))
+	PORT_BIT( 0xffff0000, IP_ACTIVE_LOW, IPT_UNUSED )
 
 	PORT_START("AN0")
-	PORT_BIT( 0x00ff, 0x0080, IPT_AD_STICK_X ) PORT_SENSITIVITY(20) PORT_KEYDELTA(10) PORT_REVERSE PORT_PLAYER(1)
-	PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED )
+	PORT_BIT( 0xff, 0x80, IPT_AD_STICK_X ) PORT_CROSSHAIR(X, -1.0, 0.0, 0) PORT_SENSITIVITY(20) PORT_KEYDELTA(10) PORT_REVERSE PORT_PLAYER(1)
 
 	PORT_START("AN1")
-	PORT_BIT( 0x00ff, 0x0080, IPT_AD_STICK_Y ) PORT_SENSITIVITY(20) PORT_KEYDELTA(10) PORT_PLAYER(1)
-	PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED )
+	PORT_BIT( 0xff, 0x80, IPT_AD_STICK_Y ) PORT_CROSSHAIR(Y, 1.0, 0.0, 0) PORT_SENSITIVITY(20) PORT_KEYDELTA(10) PORT_PLAYER(1)
 
 	PORT_START("AN2")
-	PORT_BIT( 0x00ff, 0x0080, IPT_AD_STICK_X ) PORT_SENSITIVITY(20) PORT_KEYDELTA(10) PORT_REVERSE PORT_PLAYER(2)
-	PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED )
+	PORT_BIT( 0xff, 0x80, IPT_AD_STICK_X ) PORT_CROSSHAIR(X, -1.0, 0.0, 0) PORT_SENSITIVITY(20) PORT_KEYDELTA(10) PORT_REVERSE PORT_PLAYER(2)
 
 	PORT_START("AN3")
-	PORT_BIT( 0x00ff, 0x0080, IPT_AD_STICK_Y ) PORT_SENSITIVITY(20) PORT_KEYDELTA(10) PORT_PLAYER(2)
-	PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED )
+	PORT_BIT( 0xff, 0x80, IPT_AD_STICK_Y ) PORT_CROSSHAIR(Y, 1.0, 0.0, 0) PORT_SENSITIVITY(20) PORT_KEYDELTA(10) PORT_PLAYER(2)
 
 	PORT_START("AN4")
-	PORT_BIT( 0x00ff, 0x0080, IPT_AD_STICK_X ) PORT_SENSITIVITY(20) PORT_KEYDELTA(10) PORT_REVERSE PORT_PLAYER(3)
-	PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED )
+	PORT_BIT( 0xff, 0x80, IPT_AD_STICK_X ) PORT_CROSSHAIR(X, -1.0, 0.0, 0) PORT_SENSITIVITY(20) PORT_KEYDELTA(10) PORT_REVERSE PORT_PLAYER(3)
 
 	PORT_START("AN5")
-	PORT_BIT( 0x00ff, 0x0080, IPT_AD_STICK_Y ) PORT_SENSITIVITY(20) PORT_KEYDELTA(10) PORT_PLAYER(3)
-	PORT_BIT( 0xff00, IP_ACTIVE_LOW, IPT_UNUSED )
+	PORT_BIT( 0xff, 0x80, IPT_AD_STICK_Y ) PORT_CROSSHAIR(Y, 1.0, 0.0, 0) PORT_SENSITIVITY(20) PORT_KEYDELTA(10) PORT_PLAYER(3)
 INPUT_PORTS_END
 
 
@@ -241,38 +267,50 @@ INPUT_PORTS_END
  *
  *************************************/
 
-static MACHINE_CONFIG_START( midxunit )
+void midxunit_state::midxunit(machine_config &config)
+{
+	MIDXUNIT_VIDEO(config, m_video, m_maincpu, m_palette, m_gfxrom);
 
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", TMS34020, 40000000)
-	MCFG_CPU_PROGRAM_MAP(main_map)
-	MCFG_TMS340X0_HALT_ON_RESET(false) /* halt on reset */
-	MCFG_TMS340X0_PIXEL_CLOCK(PIXEL_CLOCK) /* pixel clock */
-	MCFG_TMS340X0_PIXELS_PER_CLOCK(1) /* pixels per clock */
-	MCFG_TMS340X0_SCANLINE_IND16_CB(midxunit_state, scanline_update)       /* scanline updater (indexed16) */
-	MCFG_TMS340X0_TO_SHIFTREG_CB(midtunit_state, to_shiftreg)           /* write to shiftreg function */
-	MCFG_TMS340X0_FROM_SHIFTREG_CB(midtunit_state, from_shiftreg)          /* read from shiftreg function */
+	TMS34020(config, m_maincpu, 40000000);
+	m_maincpu->set_addrmap(AS_PROGRAM, &midxunit_state::main_map);
+	m_maincpu->set_halt_on_reset(false);        /* halt on reset */
+	m_maincpu->set_pixel_clock(PIXEL_CLOCK);    /* pixel clock */
+	m_maincpu->set_pixels_per_clock(1);         /* pixels per clock */
+	m_maincpu->set_scanline_ind16_callback("video", FUNC(midxunit_video_device::scanline_update));  /* scanline updater (indexed16) */
+	m_maincpu->set_shiftreg_in_callback("video", FUNC(midxunit_video_device::to_shiftreg));         /* write to shiftreg function */
+	m_maincpu->set_shiftreg_out_callback("video", FUNC(midtunit_video_device::from_shiftreg));      /* read from shiftreg function */
+	m_maincpu->set_screen("screen");
 
-	MCFG_MACHINE_RESET_OVERRIDE(midxunit_state,midxunit)
-	MCFG_NVRAM_ADD_0FILL("nvram")
+	NVRAM(config, "nvram", nvram_device::DEFAULT_ALL_0);
 
 	/* video hardware */
-	MCFG_PALETTE_ADD("palette", 32768)
-	MCFG_PALETTE_FORMAT(xRRRRRGGGGGBBBBB)
+	PALETTE(config, "palette").set_format(palette_device::xRGB_555, 32768);
 
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_RAW_PARAMS(PIXEL_CLOCK, 506, 101, 501, 289, 20, 274)
-	MCFG_SCREEN_UPDATE_DEVICE("maincpu", tms34010_device, tms340x0_ind16)
-	MCFG_SCREEN_PALETTE("palette")
-	MCFG_VIDEO_START_OVERRIDE(midxunit_state,midxunit)
+	screen_device &screen(SCREEN(config, "screen", SCREEN_TYPE_RASTER));
+	screen.set_raw(PIXEL_CLOCK, 506, 101, 501, 289, 20, 274);
+	screen.set_screen_update("maincpu", FUNC(tms34010_device::tms340x0_ind16));
+	screen.set_palette(m_palette);
 
-	MCFG_DEVICE_ADD("serial_pic", MIDWAY_SERIAL_PIC, 0)
-	/* serial prefixes 419, 420 */
-	MCFG_MIDWAY_SERIAL_PIC_UPPER(419);
+	PIC16C57(config, m_pic, 625000); // need to be verified
+	m_pic->read_a().set([this]() { return m_pic_command; });
+	m_pic->write_b().set([this](u8 data) { m_pic_data = data; });
+	m_pic->read_c().set([this]() { return m_pic_clk ^ 1; });
+	m_pic->write_c().set([this](u8 data) { m_pic_status = BIT(data, 1); });
+	// there also should be PIC16 reset line control, unknown at the moment
+
+	adc0848_device &adc(ADC0848(config, "adc"));
+	adc.intr_callback().set(FUNC(midxunit_state::adc_int_w)); // ADC INT passed through PLSI1032
+	adc.ch1_callback().set_ioport("AN0");
+	adc.ch2_callback().set_ioport("AN1");
+	adc.ch3_callback().set_ioport("AN2");
+	adc.ch4_callback().set_ioport("AN3");
+	adc.ch5_callback().set_ioport("AN4");
+	adc.ch6_callback().set_ioport("AN5");
 
 	/* sound hardware */
-	MCFG_DEVICE_ADD("dcs", DCS_AUDIO_2K_UART, 0)
-MACHINE_CONFIG_END
+	DCS_AUDIO_2K_UART(config, m_dcs, 0);
+}
 
 
 
@@ -293,14 +331,14 @@ ROM_START( revx )
 	ROM_LOAD16_BYTE( "revx_snd.8", 0xc00000, 0x80000, CRC(793a7eb5) SHA1(4b1f81b68f95cedf1b356ef362d1eb37acc74b16) )
 	ROM_LOAD16_BYTE( "revx_snd.9", 0xe00000, 0x80000, CRC(14ddbea1) SHA1(8dba9dc5529ea77c4312ea61f825bf9062ffc6c3) )
 
-	ROM_REGION16_LE( 0x200000, "maincpu", 0 )   /* 34020 code */
+	ROM_REGION32_LE( 0x200000, "maincpu", 0 )   /* 34020 code */
 	ROM_LOAD32_BYTE( "revx.51",  0x00000, 0x80000, CRC(9960ac7c) SHA1(441322f061d627ca7573f612f370a85794681d0f) )
 	ROM_LOAD32_BYTE( "revx.52",  0x00001, 0x80000, CRC(fbf55510) SHA1(8a5b0004ed09391fe37f0f501b979903d6ae4868) )
 	ROM_LOAD32_BYTE( "revx.53",  0x00002, 0x80000, CRC(a045b265) SHA1(b294d3a56e41f5ec4ab9bbcc0088833b1cab1879) )
 	ROM_LOAD32_BYTE( "revx.54",  0x00003, 0x80000, CRC(24471269) SHA1(262345bd147402100785459af422dafd1c562787) )
 
 	ROM_REGION( 0x2000, "pic", 0 )
-	ROM_LOAD( "revx_16c57.bin", 0x0000000, 0x2000, CRC(eb8a8649) SHA1(a1e1d0b7a5e9802e8f889eb7e719259656dc8133) )
+	ROM_LOAD( "revx_16c57.bin", 0x0000000, 0x2000, BAD_DUMP CRC(517e0110) SHA1(cd603c66794ff426dd2994fc1a0c0c8e6bbd864b) ) // manually restored
 
 	ROM_REGION( 0x1000000, "gfxrom", 0 )
 	ROM_LOAD32_BYTE( "revx.120", 0x0000000, 0x80000, CRC(523af1f0) SHA1(a67c0fd757e860fc1c1236945952a295b4d5df5a) )
@@ -343,9 +381,10 @@ ROM_START( revx )
 	ROM_LOAD32_BYTE( "revx.53",  0x0e00002, 0x80000, CRC(a045b265) SHA1(b294d3a56e41f5ec4ab9bbcc0088833b1cab1879) )
 	ROM_LOAD32_BYTE( "revx.54",  0x0e00003, 0x80000, CRC(24471269) SHA1(262345bd147402100785459af422dafd1c562787) )
 
-	ROM_REGION( 0x400, "plds", 0 )
+	ROM_REGION( 0x600, "plds", 0 )
 	ROM_LOAD( "a-17722.u1",   0x000, 0x117, CRC(054de7a3) SHA1(bb7abaec50ed704c03b44d5d54296898f7c80d38) )
 	ROM_LOAD( "a-17721.u955", 0x200, 0x117, CRC(033fe902) SHA1(6efb4e519ed3c9d49fff046a679762b506b3a75b) )
+	ROM_LOAD( "snd-gal16v8a.u17", 0x400, 0x117, NO_DUMP ) // Protected
 ROM_END
 
 ROM_START( revxp5 )
@@ -359,14 +398,14 @@ ROM_START( revxp5 )
 	ROM_LOAD16_BYTE( "revx_snd.8", 0xc00000, 0x80000, CRC(793a7eb5) SHA1(4b1f81b68f95cedf1b356ef362d1eb37acc74b16) )
 	ROM_LOAD16_BYTE( "revx_snd.9", 0xe00000, 0x80000, CRC(14ddbea1) SHA1(8dba9dc5529ea77c4312ea61f825bf9062ffc6c3) )
 
-	ROM_REGION16_LE( 0x200000, "maincpu", 0 )   /* 34020 code */
+	ROM_REGION32_LE( 0x200000, "maincpu", 0 )   /* 34020 code */
 	ROM_LOAD32_BYTE( "revx_p5.51",  0x00000, 0x80000, CRC(f3877eee) SHA1(7a4fdce36edddd35308c107c992ce626a2c9eb8c) )
 	ROM_LOAD32_BYTE( "revx_p5.52",  0x00001, 0x80000, CRC(199a54d8) SHA1(45319437e11176d4926c00c95c372098203a32a3) )
 	ROM_LOAD32_BYTE( "revx_p5.53",  0x00002, 0x80000, CRC(fcfcf72a) SHA1(b471afb416e3d348b046b0b40f497d27b0afa470) )
 	ROM_LOAD32_BYTE( "revx_p5.54",  0x00003, 0x80000, CRC(fd684c31) SHA1(db3453792e4d9fc375297d030f0b3f9cc3cad925) )
 
 	ROM_REGION( 0x2000, "pic", 0 )
-	ROM_LOAD( "revx_16c57.bin", 0x0000000, 0x2000, CRC(eb8a8649) SHA1(a1e1d0b7a5e9802e8f889eb7e719259656dc8133) )
+	ROM_LOAD( "revx_16c57.bin", 0x0000000, 0x2000, BAD_DUMP CRC(517e0110) SHA1(cd603c66794ff426dd2994fc1a0c0c8e6bbd864b) ) // manually restored
 
 	ROM_REGION( 0x1000000, "gfxrom", 0 )
 	ROM_LOAD32_BYTE( "revx.120", 0x0000000, 0x80000, CRC(523af1f0) SHA1(a67c0fd757e860fc1c1236945952a295b4d5df5a) )
@@ -409,11 +448,11 @@ ROM_START( revxp5 )
 	ROM_LOAD32_BYTE( "revx_p5.53",  0xe00002, 0x80000, CRC(fcfcf72a) SHA1(b471afb416e3d348b046b0b40f497d27b0afa470) )
 	ROM_LOAD32_BYTE( "revx_p5.54",  0xe00003, 0x80000, CRC(fd684c31) SHA1(db3453792e4d9fc375297d030f0b3f9cc3cad925) )
 
-	ROM_REGION( 0x400, "plds", 0 )
-	ROM_LOAD( "a-17722.u1",   0x000, 0x117, CRC(054de7a3) SHA1(bb7abaec50ed704c03b44d5d54296898f7c80d38) )
-	ROM_LOAD( "a-17721.u955", 0x200, 0x117, CRC(033fe902) SHA1(6efb4e519ed3c9d49fff046a679762b506b3a75b) )
+	ROM_REGION( 0x600, "plds", 0 )
+	ROM_LOAD( "a-17722.u1",       0x000, 0x117, CRC(054de7a3) SHA1(bb7abaec50ed704c03b44d5d54296898f7c80d38) )
+	ROM_LOAD( "a-17721.u955",     0x200, 0x117, CRC(033fe902) SHA1(6efb4e519ed3c9d49fff046a679762b506b3a75b) )
+	ROM_LOAD( "snd-gal16v8a.u17", 0x400, 0x117, NO_DUMP ) // Protected
 ROM_END
-
 
 
 /*************************************
@@ -422,5 +461,5 @@ ROM_END
  *
  *************************************/
 
-GAME( 1994, revx,     0,    midxunit, revx, midxunit_state, revx, ROT0, "Midway",   "Revolution X (rev 1.0 6/16/94)", MACHINE_SUPPORTS_SAVE )
-GAME( 1994, revxp5,   revx, midxunit, revx, midxunit_state, revx, ROT0, "Midway",   "Revolution X (prototype, rev 5.0 5/23/94)", MACHINE_SUPPORTS_SAVE )
+GAME( 1994, revx,     0,    midxunit, revx, midxunit_state, empty_init, ROT0, "Midway",   "Revolution X (rev 1.0 6/16/94)", MACHINE_SUPPORTS_SAVE )
+GAME( 1994, revxp5,   revx, midxunit, revx, midxunit_state, empty_init, ROT0, "Midway",   "Revolution X (prototype, rev 5.0 5/23/94)", MACHINE_SUPPORTS_SAVE )

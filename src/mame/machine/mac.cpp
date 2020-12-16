@@ -92,13 +92,15 @@
 
 #include "emu.h"
 #include "includes/mac.h"
-#include "machine/applefdc.h"
 #include "machine/sonydriv.h"
 
 #define AUDIO_IS_CLASSIC (m_model <= MODEL_MAC_CLASSIC)
 #define MAC_HAS_VIA2    ((m_model >= MODEL_MAC_II) && (m_model != MODEL_MAC_IIFX))
 
 #define INTS_RBV    ((m_model >= MODEL_MAC_IICI) && (m_model <= MODEL_MAC_IIVI)) || ((m_model >= MODEL_MAC_LC) && (m_model <= MODEL_MAC_LC_580))
+
+#define MAC_MAIN_SND_BUF_OFFSET 0x0300
+#define MAC_ALT_SND_BUF_OFFSET  0x5F00
 
 #ifdef MAME_DEBUG
 #define LOG_ADB         0
@@ -127,7 +129,7 @@ void mac_fdc_set_enable_lines(device_t *device, int enable_mask)
 {
 	mac_state *mac = device->machine().driver_data<mac_state>();
 
-	if (mac->m_model != MODEL_MAC_SE)
+	if (mac->m_model != mac_state::MODEL_MAC_SE)
 	{
 		sony_set_enable_lines(device, enable_mask);
 	}
@@ -282,7 +284,7 @@ WRITE_LINE_MEMBER(mac_state::mac_asc_irq)
 	}
 }
 
-WRITE16_MEMBER ( mac_state::mac_autovector_w )
+void mac_state::mac_autovector_w(offs_t offset, uint16_t data)
 {
 	if (LOG_GENERAL)
 		logerror("mac_autovector_w: offset=0x%08x data=0x%04x\n", offset, data);
@@ -292,7 +294,7 @@ WRITE16_MEMBER ( mac_state::mac_autovector_w )
 	/* Not yet implemented */
 }
 
-READ16_MEMBER ( mac_state::mac_autovector_r )
+uint16_t mac_state::mac_autovector_r(offs_t offset)
 {
 	if (LOG_GENERAL)
 		logerror("mac_autovector_r: offset=0x%08x\n", offset);
@@ -342,7 +344,7 @@ void mac_state::v8_resize()
 		mac_install_memory(0x00000000, memory_size-1, memory_size, memory_data, is_rom, "bank1");
 
 		// install catcher in place of ROM that will detect the first access to ROM in its real location
-		m_maincpu->space(AS_PROGRAM).install_read_handler(0xa00000, 0xafffff, read32_delegate(FUNC(mac_state::rom_switch_r), this), 0xffffffff);
+		m_maincpu->space(AS_PROGRAM).install_read_handler(0xa00000, 0xafffff, read32sm_delegate(*this, FUNC(mac_state::rom_switch_r)), 0xffffffff);
 	}
 	else
 	{
@@ -462,7 +464,7 @@ void mac_state::set_memory_overlay(int overlay)
 
 			if (is_rom)
 			{
-				m_maincpu->space(AS_PROGRAM).install_read_handler(0x40000000, 0x4fffffff, read32_delegate(FUNC(mac_state::rom_switch_r), this), 0xffffffff);
+				m_maincpu->space(AS_PROGRAM).install_read_handler(0x40000000, 0x4fffffff, read32sm_delegate(*this, FUNC(mac_state::rom_switch_r)), 0xffffffff);
 			}
 			else
 			{
@@ -487,7 +489,7 @@ void mac_state::set_memory_overlay(int overlay)
 	}
 }
 
-READ32_MEMBER(mac_state::rom_switch_r)
+uint32_t mac_state::rom_switch_r(offs_t offset)
 {
 	offs_t ROM_size = memregion("bootrom")->bytes();
 	uint32_t *ROM_data = (uint32_t *)memregion("bootrom")->base();
@@ -503,315 +505,6 @@ READ32_MEMBER(mac_state::rom_switch_r)
 	return ROM_data[offset & ((ROM_size - 1)>>2)];
 }
 
-
-/*
-    R Nabet 000531 : added keyboard code
-*/
-
-/* *************************************************************************
- * non-ADB keyboard support
- *
- * The keyboard uses a i8021 (?) microcontroller.
- * It uses a bidirectional synchonous serial line, connected to the VIA (SR feature)
- *
- * Our emulation is more a hack than anything else - the keyboard controller is
- * not emulated, instead we interpret keyboard commands directly.  I made
- * many guesses, which may be wrong
- *
- * todo :
- * * find the correct model number for the Mac Plus keyboard ?
- * * emulate original Macintosh keyboards (2 layouts : US and international)
- *
- * references :
- * * IM III-29 through III-32 and III-39 through III-42
- * * IM IV-250
- * *************************************************************************/
-
-/*
-    scan_keyboard()
-
-    scan the keyboard, and returns key transition code (or nullptr ($7B) if none)
-*/
-#ifndef MAC_USE_EMULATED_KBD
-int mac_state::scan_keyboard()
-{
-	int i, j;
-	int keybuf = 0;
-	int keycode;
-
-	if (m_keycode_buf_index)
-	{
-		return m_keycode_buf[--m_keycode_buf_index];
-	}
-
-	for (i=0; i<7; i++)
-	{
-		keybuf = m_keys[i]->read();
-
-		if (keybuf != m_key_matrix[i])
-		{
-			/* if state has changed, find first bit which has changed */
-			if (LOG_KEYBOARD)
-				logerror("keyboard state changed, %d %X\n", i, keybuf);
-
-			for (j=0; j<16; j++)
-			{
-				if (((keybuf ^ m_key_matrix[i]) >> j) & 1)
-				{
-					/* update m_key_matrix */
-					m_key_matrix[i] = (m_key_matrix[i] & ~ (1 << j)) | (keybuf & (1 << j));
-
-					if (i < 4)
-					{
-						/* create key code */
-						keycode = (i << 5) | (j << 1) | 0x01;
-						if (! (keybuf & (1 << j)))
-						{
-							/* key up */
-							keycode |= 0x80;
-						}
-						return keycode;
-					}
-					else if (i < 6)
-					{
-						/* create key code */
-						keycode = ((i & 3) << 5) | (j << 1) | 0x01;
-
-						if ((keycode == 0x05) || (keycode == 0x0d) || (keycode == 0x11) || (keycode == 0x1b))
-						{
-							/* these keys cause shift to be pressed (for compatibility with mac 128/512) */
-							if (keybuf & (1 << j))
-							{
-								/* key down */
-								if (! (m_key_matrix[3] & 0x0100))
-								{
-									/* shift key is really up */
-									m_keycode_buf[0] = keycode;
-									m_keycode_buf[1] = 0x79;
-									m_keycode_buf_index = 2;
-									return 0x71;    /* "presses" shift down */
-								}
-							}
-							else
-							{   /* key up */
-								if (! (m_key_matrix[3] & 0x0100))
-								{
-									/* shift key is really up */
-									m_keycode_buf[0] = keycode | 0x80;
-									m_keycode_buf[1] = 0x79;
-									m_keycode_buf_index = 2;
-									return 0xF1;    /* "releases" shift */
-								}
-							}
-						}
-
-						if (! (keybuf & (1 << j)))
-						{
-							/* key up */
-							keycode |= 0x80;
-						}
-						m_keycode_buf[0] = keycode;
-						m_keycode_buf_index = 1;
-						return 0x79;
-					}
-					else /* i == 6 */
-					{
-						/* create key code */
-						keycode = (j << 1) | 0x01;
-						if (! (keybuf & (1 << j)))
-						{
-							/* key up */
-							keycode |= 0x80;
-						}
-						m_keycode_buf[0] = keycode;
-						m_keycode_buf_index = 1;
-						return 0x79;
-					}
-				}
-			}
-		}
-	}
-
-	return 0x7B;    /* return nullptr */
-}
-
-/*
-    power-up init
-*/
-void mac_state::keyboard_init()
-{
-	int i;
-
-	/* init flag */
-	m_kbd_comm = false;
-	m_kbd_receive = false;
-	m_kbd_shift_reg=0;
-	m_kbd_shift_count=0;
-
-	/* clear key matrix */
-	for (i=0; i<7; i++)
-	{
-		m_key_matrix[i] = 0;
-	}
-
-	/* purge transmission buffer */
-	m_keycode_buf_index = 0;
-}
-#endif
-
-/******************* Keyboard <-> VIA communication ***********************/
-
-#ifdef MAC_USE_EMULATED_KBD
-
-WRITE_LINE_MEMBER(mac_state::mac_kbd_clk_in)
-{
-	printf("CLK: %d\n", state^1);
-	m_via1->write_cb1(state ? 0 : 1);
-}
-
-WRITE_LINE_MEMBER(mac_state::mac_via_out_cb2)
-{
-	printf("Sending %d to kbd (PC=%x)\n", data, m_maincpu->pc());
-	m_mackbd->data_w((data & 1) ? ASSERT_LINE : CLEAR_LINE);
-}
-
-#else   // keyboard HLE
-
-TIMER_CALLBACK_MEMBER(mac_state::kbd_clock)
-{
-	int i;
-
-	if (m_kbd_comm == true)
-	{
-		for (i=0; i<8; i++)
-		{
-			/* Put data on CB2 if we are sending*/
-			if (m_kbd_receive == false)
-				m_via1->write_cb2(m_kbd_shift_reg&0x80?1:0);
-			m_kbd_shift_reg <<= 1;
-			m_via1->write_cb1(0);
-			m_via1->write_cb1(1);
-		}
-		if (m_kbd_receive == true)
-		{
-			m_kbd_receive = false;
-			/* Process the command received from mac */
-			keyboard_receive(m_kbd_shift_reg & 0xff);
-		}
-		else
-		{
-			/* Communication is over */
-			m_kbd_comm = false;
-		}
-	}
-}
-
-void mac_state::kbd_shift_out(int data)
-{
-	if (m_kbd_comm == true)
-	{
-		m_kbd_shift_reg = data;
-		machine().scheduler().timer_set(attotime::from_msec(1), timer_expired_delegate(FUNC(mac_state::kbd_clock),this));
-	}
-}
-
-WRITE_LINE_MEMBER(mac_state::mac_via_out_cb2)
-{
-	if (m_kbd_comm == false && state == 0)
-	{
-		/* Mac pulls CB2 down to initiate communication */
-		m_kbd_comm = true;
-		m_kbd_receive = true;
-		machine().scheduler().timer_set(attotime::from_usec(100), timer_expired_delegate(FUNC(mac_state::kbd_clock),this));
-	}
-	if (m_kbd_comm == true && m_kbd_receive == true)
-	{
-		/* Shift in what mac is sending */
-		m_kbd_shift_reg = (m_kbd_shift_reg & ~1) | state;
-	}
-}
-
-/*
-    called when inquiry times out (1/4s)
-*/
-TIMER_CALLBACK_MEMBER(mac_state::inquiry_timeout_func)
-{
-	if (LOG_KEYBOARD)
-		logerror("keyboard enquiry timeout\n");
-	kbd_shift_out(0x7B); /* always send nullptr */
-}
-
-/*
-    called when a command is received from the mac
-*/
-void mac_state::keyboard_receive(int val)
-{
-	switch (val)
-	{
-	case 0x10:
-		/* inquiry - returns key transition code, or nullptr ($7B) if time out (1/4s) */
-		if (LOG_KEYBOARD)
-			logerror("keyboard command : inquiry\n");
-
-		m_inquiry_timeout->adjust(
-			attotime(0, DOUBLE_TO_ATTOSECONDS(0.25)), 0);
-		break;
-
-	case 0x14:
-		/* instant - returns key transition code, or nullptr ($7B) */
-		if (LOG_KEYBOARD)
-			logerror("keyboard command : instant\n");
-
-		kbd_shift_out(scan_keyboard());
-		break;
-
-	case 0x16:
-		/* model number - resets keyboard, return model number */
-		if (LOG_KEYBOARD)
-			logerror("keyboard command : model number\n");
-
-		{   /* reset */
-			int i;
-
-			/* clear key matrix */
-			for (i=0; i<7; i++)
-			{
-				m_key_matrix[i] = 0;
-			}
-
-			/* purge transmission buffer */
-			m_keycode_buf_index = 0;
-		}
-
-		/* format : 1 if another device (-> keypad ?) connected | next device (-> keypad ?) number 1-8
-		                    | keyboard model number 1-8 | 1  */
-		/* keyboards :
-		    3 : mac 512k, US and international layout ? Mac plus ???
-		    other values : Apple II keyboards ?
-		*/
-		/* keypads :
-		    ??? : standard keypad (always available on Mac Plus) ???
-		*/
-		kbd_shift_out(0x17);   /* probably wrong */
-		break;
-
-	case 0x36:
-		/* test - resets keyboard, return ACK ($7D) or NAK ($77) */
-		if (LOG_KEYBOARD)
-			logerror("keyboard command : test\n");
-
-		kbd_shift_out(0x7D);   /* ACK */
-		break;
-
-	default:
-		if (LOG_KEYBOARD)
-			logerror("unknown keyboard command 0x%X\n", val);
-
-		kbd_shift_out(0);
-		break;
-	}
-}
-#endif
 
 /* *************************************************************************
  * Mouse
@@ -943,7 +636,7 @@ Note:  Asserting the DACK signal applies only to write operations to
   scsiRd+sRESET       $580070    Reset Parity/Interrupt
              */
 
-READ16_MEMBER ( mac_state::macplus_scsi_r )
+uint16_t mac_state::macplus_scsi_r(offs_t offset, uint16_t mem_mask)
 {
 	int reg = (offset>>3) & 0xf;
 
@@ -957,7 +650,7 @@ READ16_MEMBER ( mac_state::macplus_scsi_r )
 	return m_ncr5380->ncr5380_read_reg(reg)<<8;
 }
 
-READ32_MEMBER (mac_state::macii_scsi_drq_r)
+uint32_t mac_state::macii_scsi_drq_r(offs_t offset, uint32_t mem_mask)
 {
 	switch (mem_mask)
 	{
@@ -977,7 +670,7 @@ READ32_MEMBER (mac_state::macii_scsi_drq_r)
 	return 0;
 }
 
-WRITE32_MEMBER (mac_state::macii_scsi_drq_w)
+void mac_state::macii_scsi_drq_w(offs_t offset, uint32_t data, uint32_t mem_mask)
 {
 	switch (mem_mask)
 	{
@@ -1003,7 +696,7 @@ WRITE32_MEMBER (mac_state::macii_scsi_drq_w)
 	}
 }
 
-WRITE16_MEMBER ( mac_state::macplus_scsi_w )
+void mac_state::macplus_scsi_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	int reg = (offset>>3) & 0xf;
 
@@ -1017,11 +710,11 @@ WRITE16_MEMBER ( mac_state::macplus_scsi_w )
 	m_ncr5380->ncr5380_write_reg(reg, data);
 }
 
-WRITE16_MEMBER ( mac_state::macii_scsi_w )
+void mac_state::macii_scsi_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	int reg = (offset>>3) & 0xf;
 
-//  logerror("macplus_scsi_w: data %x offset %x mask %x (PC=%x)\n", data, offset, mem_mask, space.device().safe_pc());
+//  logerror("macplus_scsi_w: data %x offset %x mask %x (PC=%x)\n", data, offset, mem_mask, m_maincpu->pc());
 
 	if ((reg == 0) && (offset == 0x100))
 	{
@@ -1064,48 +757,47 @@ WRITE_LINE_MEMBER(mac_state::drq_539x_1_w)
 
 void mac_state::scc_mouse_irq(int x, int y)
 {
-	scc8530_t *scc = machine().device<scc8530_t>("scc");
 	static int lasty = 0;
 	static int lastx = 0;
 
 	if (x && y)
 	{
 		if (m_last_was_x) {
-			scc->set_status(0x0a);
+			m_scc->set_status(0x0a);
 			if(x == 2) {
 				if(lastx) {
-					scc->set_reg_a(0, 0x04);
+					m_scc->set_reg_a(0, 0x04);
 					m_mouse_bit_x = 0;
 				} else {
-					scc->set_reg_a(0, 0x0C);
+					m_scc->set_reg_a(0, 0x0C);
 					m_mouse_bit_x = 1;
 				}
 			} else {
 				if(lastx) {
-					scc->set_reg_a(0, 0x04);
+					m_scc->set_reg_a(0, 0x04);
 					m_mouse_bit_x = 1;
 				} else {
-					scc->set_reg_a(0, 0x0C);
+					m_scc->set_reg_a(0, 0x0C);
 					m_mouse_bit_x = 0;
 				}
 			}
 			lastx = !lastx;
 		} else {
-			scc->set_status(0x02);
+			m_scc->set_status(0x02);
 			if(y == 2) {
 				if(lasty) {
-					scc->set_reg_b(0, 0x04);
+					m_scc->set_reg_b(0, 0x04);
 					m_mouse_bit_y = 0;
 				} else {
-					scc->set_reg_b(0, 0x0C);
+					m_scc->set_reg_b(0, 0x0C);
 					m_mouse_bit_y = 1;
 				}
 			} else {
 				if(lasty) {
-					scc->set_reg_b(0, 0x04);
+					m_scc->set_reg_b(0, 0x04);
 					m_mouse_bit_y = 1;
 				} else {
-					scc->set_reg_b(0, 0x0C);
+					m_scc->set_reg_b(0, 0x0C);
 					m_mouse_bit_y = 0;
 				}
 			}
@@ -1117,41 +809,41 @@ void mac_state::scc_mouse_irq(int x, int y)
 	else
 	{
 		if (x) {
-			scc->set_status(0x0a);
+			m_scc->set_status(0x0a);
 			if(x == 2) {
 				if(lastx) {
-					scc->set_reg_a(0, 0x04);
+					m_scc->set_reg_a(0, 0x04);
 					m_mouse_bit_x = 0;
 				} else {
-					scc->set_reg_a(0, 0x0C);
+					m_scc->set_reg_a(0, 0x0C);
 					m_mouse_bit_x = 1;
 				}
 			} else {
 				if(lastx) {
-					scc->set_reg_a(0, 0x04);
+					m_scc->set_reg_a(0, 0x04);
 					m_mouse_bit_x = 1;
 				} else {
-					scc->set_reg_a(0, 0x0C);
+					m_scc->set_reg_a(0, 0x0C);
 					m_mouse_bit_x = 0;
 				}
 			}
 			lastx = !lastx;
 		} else {
-			scc->set_status(0x02);
+			m_scc->set_status(0x02);
 			if(y == 2) {
 				if(lasty) {
-					scc->set_reg_b(0, 0x04);
+					m_scc->set_reg_b(0, 0x04);
 					m_mouse_bit_y = 0;
 				} else {
-					scc->set_reg_b(0, 0x0C);
+					m_scc->set_reg_b(0, 0x0C);
 					m_mouse_bit_y = 1;
 				}
 			} else {
 				if(lasty) {
-					scc->set_reg_b(0, 0x04);
+					m_scc->set_reg_b(0, 0x04);
 					m_mouse_bit_y = 1;
 				} else {
-					scc->set_reg_b(0, 0x0C);
+					m_scc->set_reg_b(0, 0x0C);
 					m_mouse_bit_y = 0;
 				}
 			}
@@ -1164,34 +856,31 @@ void mac_state::scc_mouse_irq(int x, int y)
 
 
 
-READ16_MEMBER ( mac_state::mac_scc_r )
+uint16_t mac_state::mac_scc_r(offs_t offset)
 {
-	scc8530_t *scc = space.machine().device<scc8530_t>("scc");
 	uint16_t result;
 
-	result = scc->reg_r(space, offset);
+	result = m_scc->reg_r(offset);
 	return (result << 8) | result;
 }
 
 
 
-WRITE16_MEMBER ( mac_state::mac_scc_w )
+void mac_state::mac_scc_w(offs_t offset, uint16_t data)
 {
-	scc8530_t *scc = space.machine().device<scc8530_t>("scc");
-	scc->reg_w(space, offset, data);
+	m_scc->reg_w(offset, data);
 }
 
-WRITE16_MEMBER ( mac_state::mac_scc_2_w )
+void mac_state::mac_scc_2_w(offs_t offset, uint16_t data)
 {
-	scc8530_t *scc = space.machine().device<scc8530_t>("scc");
-	scc->reg_w(space, offset, data >> 8);
+	m_scc->reg_w(offset, data >> 8);
 }
 
 /* ********************************** *
  * IWM Code specific to the Mac Plus  *
  * ********************************** */
 
-READ16_MEMBER ( mac_state::mac_iwm_r )
+uint16_t mac_state::mac_iwm_r(offs_t offset, uint16_t mem_mask)
 {
 	/* The first time this is called is in a floppy test, which goes from
 	 * $400104 to $400126.  After that, all access to the floppy goes through
@@ -1201,28 +890,23 @@ READ16_MEMBER ( mac_state::mac_iwm_r )
 	 * this driver along
 	 */
 
-	uint16_t result = 0;
-	applefdc_base_device *fdc = space.machine().device<applefdc_base_device>("fdc");
-
-	result = fdc->read(offset >> 8);
+	uint16_t result = m_fdc->read(offset >> 8);
 
 	if (LOG_MAC_IWM)
-		printf("mac_iwm_r: offset=0x%08x mem_mask %04x = %02x (PC %x)\n", offset, mem_mask, result, space.device().safe_pc());
+		printf("%s mac_iwm_r: offset=0x%08x mem_mask %04x = %02x\n", machine().describe_context().c_str(), offset, mem_mask, result);
 
 	return (result << 8) | result;
 }
 
-WRITE16_MEMBER ( mac_state::mac_iwm_w )
+void mac_state::mac_iwm_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
-	applefdc_base_device *fdc = space.machine().device<applefdc_base_device>("fdc");
-
 	if (LOG_MAC_IWM)
-		printf("mac_iwm_w: offset=0x%08x data=0x%04x mask %04x (PC=%x)\n", offset, data, mem_mask, space.device().safe_pc());
+		printf("mac_iwm_w: offset=0x%08x data=0x%04x mask %04x (PC=%x)\n", offset, data, mem_mask, m_maincpu->pc());
 
 	if (ACCESSING_BITS_0_7)
-		fdc->write((offset >> 8), data & 0xff);
+		m_fdc->write((offset >> 8), data & 0xff);
 	else
-		fdc->write((offset >> 8), data>>8);
+		m_fdc->write((offset >> 8), data>>8);
 }
 
 WRITE_LINE_MEMBER(mac_state::mac_adb_via_out_cb2)
@@ -1286,9 +970,9 @@ WRITE_LINE_MEMBER(mac_state::mac_adb_via_out_cb2)
 #define PA2 0x04
 #define PA1 0x02
 
-READ8_MEMBER(mac_state::mac_via_in_a)
+uint8_t mac_state::mac_via_in_a()
 {
-//  printf("VIA1 IN_A (PC %x)\n", m_maincpu->safe_pc());
+//  printf("%s VIA1 IN_A\n", machine().describe_context().c_str());
 
 	switch (m_model)
 	{
@@ -1307,6 +991,7 @@ READ8_MEMBER(mac_state::mac_via_in_a)
 		case MODEL_MAC_LC:
 		case MODEL_MAC_LC_II:
 		case MODEL_MAC_IIVX:
+		case MODEL_MAC_IIVI:
 			return 0x81 | PA6 | PA4 | PA2;
 
 		case MODEL_MAC_IICI:
@@ -1341,9 +1026,9 @@ READ8_MEMBER(mac_state::mac_via_in_a)
 	}
 }
 
-READ8_MEMBER(mac_state::mac_via_in_a_pmu)
+uint8_t mac_state::mac_via_in_a_pmu()
 {
-//  printf("VIA1 IN_A (PC %x)\n", m_maincpu->safe_pc());
+//  printf("%s VIA1 IN_A\n", machine().describe_context().c_str());
 
 	#if LOG_ADB
 //  printf("Read PM data %x\n", m_pm_data_recv);
@@ -1351,15 +1036,12 @@ READ8_MEMBER(mac_state::mac_via_in_a_pmu)
 	return m_pm_data_recv;
 }
 
-READ8_MEMBER(mac_state::mac_via_in_b)
+uint8_t mac_state::mac_via_in_b()
 {
 	int val = 0;
 	/* video beam in display (! VBLANK && ! HBLANK basically) */
-	if (machine().first_screen())
-	{
-		if (machine().first_screen()->vpos() >= MAC_V_VIS)
-			val |= 0x40;
-	}
+	if (m_screen->vpos() >= MAC_V_VIS)
+		val |= 0x40;
 
 	if (ADB_IS_BITBANG_CLASS)
 	{
@@ -1392,46 +1074,73 @@ READ8_MEMBER(mac_state::mac_via_in_b)
 		val |= m_rtc->data_r();
 	}
 
-//  printf("VIA1 IN_B = %02x (PC %x)\n", val, m_maincpu->safe_pc());
+//  printf("%s VIA1 IN_B = %02x\n", machine().describe_context().c_str(), val);
 
 	return val;
 }
 
-READ8_MEMBER(mac_state::mac_via_in_b_via2pmu)
+uint8_t mac_state::mac_via_in_b_ii()
+{
+	int val = 0;
+
+	if (ADB_IS_BITBANG_CLASS)
+	{
+		val |= m_adb_state<<4;
+
+		if (!m_adb_irq_pending)
+		{
+			val |= 0x08;
+		}
+
+		val |= m_rtc->data_r();
+	}
+	else if (ADB_IS_EGRET)
+	{
+		val |= m_egret->get_xcvr_session()<<3;
+	}
+	else if (ADB_IS_CUDA)
+	{
+		val |= m_cuda->get_treq()<<3;
+	}
+
+//  printf("%s VIA1 IN_B_II = %02x\n", machine().describe_context().c_str(), val);
+
+	return val;
+}
+
+uint8_t mac_state::mac_via_in_b_via2pmu()
 {
 	int val = 0;
 	// TODO: is this valid for VIA2 PMU machines?
 	/* video beam in display (! VBLANK && ! HBLANK basically) */
-	if (machine().first_screen())
-	{
-		if (machine().first_screen()->vpos() >= MAC_V_VIS)
-			val |= 0x40;
-	}
 
-//  printf("VIA1 IN_B = %02x (PC %x)\n", val, m_maincpu->safe_pc());
+	if (m_screen->vpos() >= MAC_V_VIS)
+		val |= 0x40;
+
+
+//  printf("%s VIA1 IN_B = %02x\n", machine().describe_context().c_str(), val);
 
 	return val;
 }
 
-READ8_MEMBER(mac_state::mac_via_in_b_pmu)
+uint8_t mac_state::mac_via_in_b_pmu()
 {
 	int val = 0;
 //  printf("Read VIA B: PM_ACK %x\n", m_pm_ack);
 	val = 0x80 | 0x04 | m_pm_ack;   // SCC wait/request (bit 2 must be set at 900c1a or startup tests always fail)
 
-//  printf("VIA1 IN_B = %02x (PC %x)\n", val, m_maincpu->safe_pc());
+//  printf("%s VIA1 IN_B = %02x\n", machine().describe_context().c_str(), val);
 
 	return val;
 }
 
-WRITE8_MEMBER(mac_state::mac_via_out_a)
+void mac_state::mac_via_out_a(uint8_t data)
 {
-	device_t *fdc = machine().device("fdc");
-//  printf("VIA1 OUT A: %02x (PC %x)\n", data, m_maincpu->safe_pc());
+//  printf("%s VIA1 OUT A: %02x\n", machine().describe_context().c_str(), data);
 
 	set_scc_waitrequest((data & 0x80) >> 7);
 	m_screen_buffer = (data & 0x40) >> 6;
-	sony_set_sel_line(fdc,(data & 0x20) >> 5);
+	sony_set_sel_line(m_fdc.target(), (data & 0x20) >> 5);
 	if (m_model == MODEL_MAC_SE)    // on SE this selects which floppy drive (0 = upper, 1 = lower)
 	{
 		m_drive_select = ((data & 0x10) >> 4);
@@ -1457,20 +1166,19 @@ WRITE8_MEMBER(mac_state::mac_via_out_a)
 	}
 }
 
-WRITE8_MEMBER(mac_state::mac_via_out_a_pmu)
+void mac_state::mac_via_out_a_pmu(uint8_t data)
 {
-//  printf("VIA1 OUT A: %02x (PC %x)\n", data, m_maincpu->safe_pc());
+//  printf("%s VIA1 OUT A: %02x\n", machine().describe_context().c_str(), data);
 
 	#if LOG_ADB
 //  printf("%02x to PM\n", data);
 	#endif
 	m_pm_data_send = data;
-	return;
 }
 
-WRITE8_MEMBER(mac_state::mac_via_out_b)
+void mac_state::mac_via_out_b(uint8_t data)
 {
-//  printf("VIA1 OUT B: %02x (PC %x)\n", data, m_maincpu->safe_pc());
+//  printf("%s VIA1 OUT B: %02x\n", machine().describe_context().c_str(), data);
 
 	if (AUDIO_IS_CLASSIC)
 	{
@@ -1503,9 +1211,15 @@ void mac_state::update_volume(void)
 	}
 }
 
-WRITE8_MEMBER(mac_state::mac_via_out_b_bbadb)
+void mac_state::mac_via_out_b_bbadb(uint8_t data)
 {
-//  printf("VIA1 OUT B: %02x (PC %x)\n", data, m_maincpu->safe_pc());
+//  printf("%s VIA1 OUT B: %02x\n", machine().describe_context().c_str(), data);
+
+	if (AUDIO_IS_CLASSIC)
+	{
+		m_snd_enable = (data & 0x80) == 0;
+		update_volume();
+	}
 
 	// SE and Classic have SCSI enable/disable here
 	if ((m_model == MODEL_MAC_SE) || (m_model == MODEL_MAC_CLASSIC))
@@ -1533,40 +1247,38 @@ WRITE8_MEMBER(mac_state::mac_via_out_b_bbadb)
 	m_rtc->clk_w((data >> 1) & 0x01);
 }
 
-WRITE8_MEMBER(mac_state::mac_via_out_b_egadb)
+void mac_state::mac_via_out_b_egadb(uint8_t data)
 {
-//  printf("VIA1 OUT B: %02x (PC %x)\n", data, m_maincpu->safe_pc());
+//  printf("%s VIA1 OUT B: %02x\n", machine().describe_context().c_str(), data);
 
 	#if LOG_ADB
-	printf("68K: New Egret state: SS %d VF %d (PC %x)\n", (data>>5)&1, (data>>4)&1, space.device().safe_pc());
+	printf("%s 68K: New Egret state: SS %d VF %d\n", machine().describe_context().c_str(), (data>>5)&1, (data>>4)&1);
 	#endif
 	m_egret->set_via_full((data&0x10) ? 1 : 0);
 	m_egret->set_sys_session((data&0x20) ? 1 : 0);
 }
 
-WRITE8_MEMBER(mac_state::mac_via_out_b_cdadb)
+void mac_state::mac_via_out_b_cdadb(uint8_t data)
 {
-//  printf("VIA1 OUT B: %02x (PC %x)\n", data, m_maincpu->safe_pc());
+//  printf("%s VIA1 OUT B: %02x\n", machine().describe_context().c_str(), data);
 
 	#if LOG_ADB
-	printf("68K: New Cuda state: TIP %d BYTEACK %d (PC %x)\n", (data>>5)&1, (data>>4)&1, space.device().safe_pc());
+	printf("%s 68K: New Cuda state: TIP %d BYTEACK %d\n", machine().describe_context().c_str(), (data>>5)&1, (data>>4)&1);
 	#endif
 	m_cuda->set_byteack((data&0x10) ? 1 : 0);
 	m_cuda->set_tip((data&0x20) ? 1 : 0);
 }
 
-WRITE8_MEMBER(mac_state::mac_via_out_b_via2pmu)
+void mac_state::mac_via_out_b_via2pmu(uint8_t data)
 {
-//  printf("VIA1 OUT B: %02x (PC %x)\n", data, m_maincpu->safe_pc());
+//  printf("%s VIA1 OUT B: %02x\n", machine().describe_context().c_str(), data);
 }
 
-WRITE8_MEMBER(mac_state::mac_via_out_b_pmu)
+void mac_state::mac_via_out_b_pmu(uint8_t data)
 {
-//  printf("VIA1 OUT B: %02x (PC %x)\n", data, m_maincpu->safe_pc());
+//  printf("%s VIA1 OUT B: %02x\n", machine().describe_context().c_str(), data);
 
-	device_t *fdc = machine().device("fdc");
-
-	sony_set_sel_line(fdc,(data & 0x20) >> 5);
+	sony_set_sel_line(m_fdc.target(), (data & 0x20) >> 5);
 	m_drive_select = ((data & 0x10) >> 4);
 
 	if ((data & 1) && !(m_pm_req & 1))
@@ -1631,7 +1343,7 @@ WRITE_LINE_MEMBER(mac_state::mac_via_irq)
 	set_via_interrupt(state);
 }
 
-READ16_MEMBER ( mac_state::mac_via_r )
+uint16_t mac_state::mac_via_r(offs_t offset)
 {
 	uint16_t data;
 
@@ -1640,14 +1352,14 @@ READ16_MEMBER ( mac_state::mac_via_r )
 
 	if (LOG_VIA)
 		logerror("mac_via_r: offset=0x%02x\n", offset);
-	data = m_via1->read(space, offset);
+	data = m_via1->read(offset);
 
 	m_maincpu->adjust_icount(m_via_cycles);
 
 	return (data & 0xff) | (data << 8);
 }
 
-WRITE16_MEMBER ( mac_state::mac_via_w )
+void mac_state::mac_via_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	offset >>= 8;
 	offset &= 0x0f;
@@ -1656,9 +1368,9 @@ WRITE16_MEMBER ( mac_state::mac_via_w )
 		logerror("mac_via_w: offset=0x%02x data=0x%08x\n", offset, data);
 
 	if (ACCESSING_BITS_0_7)
-		m_via1->write(space, offset, data & 0xff);
+		m_via1->write(offset, data & 0xff);
 	if (ACCESSING_BITS_8_15)
-		m_via1->write(space, offset, (data >> 8) & 0xff);
+		m_via1->write(offset, (data >> 8) & 0xff);
 
 	m_maincpu->adjust_icount(m_via_cycles);
 }
@@ -1672,37 +1384,37 @@ WRITE_LINE_MEMBER(mac_state::mac_via2_irq)
 	set_via2_interrupt(state);
 }
 
-READ16_MEMBER ( mac_state::mac_via2_r )
+uint16_t mac_state::mac_via2_r(offs_t offset)
 {
 	int data;
 
 	offset >>= 8;
 	offset &= 0x0f;
 
-	data = m_via2->read(space, offset);
+	data = m_via2->read(offset);
 
 	if (LOG_VIA)
-		logerror("mac_via2_r: offset=0x%02x = %02x (PC=%x)\n", offset*2, data, space.device().safe_pc());
+		logerror("mac_via2_r: offset=0x%02x = %02x (PC=%x)\n", offset*2, data, m_maincpu->pc());
 
 	return (data & 0xff) | (data << 8);
 }
 
-WRITE16_MEMBER ( mac_state::mac_via2_w )
+void mac_state::mac_via2_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	offset >>= 8;
 	offset &= 0x0f;
 
 	if (LOG_VIA)
-		logerror("mac_via2_w: offset=%x data=0x%08x mask=%x (PC=%x)\n", offset, data, mem_mask, space.device().safe_pc());
+		logerror("mac_via2_w: offset=%x data=0x%08x mask=%x (PC=%x)\n", offset, data, mem_mask, m_maincpu->pc());
 
 	if (ACCESSING_BITS_0_7)
-		m_via2->write(space, offset, data & 0xff);
+		m_via2->write(offset, data & 0xff);
 	if (ACCESSING_BITS_8_15)
-		m_via2->write(space, offset, (data >> 8) & 0xff);
+		m_via2->write(offset, (data >> 8) & 0xff);
 }
 
 
-READ8_MEMBER(mac_state::mac_via2_in_a)
+uint8_t mac_state::mac_via2_in_a()
 {
 	uint8_t result;
 
@@ -1718,14 +1430,14 @@ READ8_MEMBER(mac_state::mac_via2_in_a)
 	return result;
 }
 
-READ8_MEMBER(mac_state::mac_via2_in_a_pmu)
+uint8_t mac_state::mac_via2_in_a_pmu()
 {
 	return m_pm_data_recv;
 }
 
-READ8_MEMBER(mac_state::mac_via2_in_b)
+uint8_t mac_state::mac_via2_in_b()
 {
-//  logerror("VIA2 IN B (PC %x)\n", m_maincpu->safe_pc());
+//  logerror("%s VIA2 IN B\n", machine().describe_context());
 
 	if ((m_model == MODEL_MAC_LC) || (m_model == MODEL_MAC_LC_II) || (m_model == MODEL_MAC_CLASSIC_II))
 	{
@@ -1740,9 +1452,9 @@ READ8_MEMBER(mac_state::mac_via2_in_b)
 	return 0xcf;        // indicate no NuBus transaction error
 }
 
-READ8_MEMBER(mac_state::mac_via2_in_b_pmu)
+uint8_t mac_state::mac_via2_in_b_pmu()
 {
-//  logerror("VIA2 IN B (PC %x)\n", m_maincpu->safe_pc());
+//  logerror("%s VIA2 IN B\n", machine().describe_context());
 
 	if (m_pm_ack == 2)
 	{
@@ -1754,20 +1466,20 @@ READ8_MEMBER(mac_state::mac_via2_in_b_pmu)
 	}
 }
 
-WRITE8_MEMBER(mac_state::mac_via2_out_a)
+void mac_state::mac_via2_out_a(uint8_t data)
 {
-//  logerror("VIA2 OUT A: %02x (PC %x)\n", data, m_maincpu->safe_pc());
+//  logerror("%s VIA2 OUT A: %02x\n", machine().describe_context(), data);
 }
 
-WRITE8_MEMBER(mac_state::mac_via2_out_a_pmu)
+void mac_state::mac_via2_out_a_pmu(uint8_t data)
 {
-//  logerror("VIA2 OUT A: %02x (PC %x)\n", data, m_maincpu->safe_pc());
+//  logerror("%s VIA2 OUT A: %02x\n", machine().describe_context(), data);
 	m_pm_data_send = data;
 }
 
-WRITE8_MEMBER(mac_state::mac_via2_out_b)
+void mac_state::mac_via2_out_b(uint8_t data)
 {
-//  logerror("VIA2 OUT B: %02x (PC %x)\n", data, m_maincpu->safe_pc());
+//  logerror("%s VIA2 OUT B: %02x\n", machine().describe_context(), data);
 
 	// chain 60.15 Hz to VIA1
 	m_via1->write_ca1(data>>7);
@@ -1779,9 +1491,9 @@ WRITE8_MEMBER(mac_state::mac_via2_out_b)
 	}
 }
 
-WRITE8_MEMBER(mac_state::mac_via2_out_b_pmu)
+void mac_state::mac_via2_out_b_pmu(uint8_t data)
 {
-//  logerror("VIA2 OUT B PMU: %02x (PC %x)\n", data, m_maincpu->pc());
+//  logerror("%s VIA2 OUT B PMU: %02x\n", machine().describe_context(), data);
 
 	if ((data & 4) && !(m_pm_req & 4))
 	{
@@ -1866,10 +1578,15 @@ void mac_state::machine_start()
 		}
 	}
 
-	if (machine().first_screen())
+	if (m_screen)
 	{
 		this->m_scanline_timer = machine().scheduler().timer_alloc(timer_expired_delegate(FUNC(mac_state::mac_scanline_tick),this));
-		this->m_scanline_timer->adjust(machine().first_screen()->time_until_pos(0, 0));
+		this->m_scanline_timer->adjust(m_screen->time_until_pos(0, 0));
+	}
+	else
+	{
+		m_adbupdate_timer = machine().scheduler().timer_alloc(timer_expired_delegate(FUNC(mac_state::mac_adbrefresh_tick),this));
+		m_adbupdate_timer->adjust(attotime::from_hz(70));
 	}
 
 	m_6015_timer = machine().scheduler().timer_alloc(timer_expired_delegate(FUNC(mac_state::mac_6015_tick),this));
@@ -1878,6 +1595,11 @@ void mac_state::machine_start()
 
 void mac_state::machine_reset()
 {
+	if ((ADB_IS_EGRET) || (ADB_IS_CUDA))
+	{
+		m_maincpu->set_input_line(INPUT_LINE_HALT, ASSERT_LINE);
+	}
+
 	// stop 60.15 Hz timer
 	m_6015_timer->adjust(attotime::never);
 
@@ -2009,13 +1731,6 @@ void mac_state::machine_reset()
 	m_via2_vbl = 0;
 	m_se30_vbl_enable = 0;
 	m_nubus_irq_state = 0xff;
-#ifndef MAC_USE_EMULATED_KBD
-	m_keyboard_reply = 0;
-	m_kbd_comm = 0;
-	m_kbd_receive = 0;
-	m_kbd_shift_reg = 0;
-	m_kbd_shift_count = 0;
-#endif
 	m_mouse_bit_x = m_mouse_bit_y = 0;
 	m_pm_data_send = m_pm_data_recv = m_pm_ack = m_pm_req = m_pm_dptr = 0;
 	m_pm_state = 0;
@@ -2030,6 +1745,7 @@ WRITE_LINE_MEMBER(mac_state::cuda_reset_w)
 		set_memory_overlay(1);
 	}
 
+	m_maincpu->set_input_line(INPUT_LINE_HALT, state);
 	m_maincpu->set_input_line(INPUT_LINE_RESET, state);
 }
 
@@ -2056,7 +1772,7 @@ TIMER_CALLBACK_MEMBER(mac_state::overlay_timeout_func)
 	m_overlay_timeout->adjust(attotime::never);
 }
 
-READ32_MEMBER(mac_state::mac_read_id)
+uint32_t mac_state::mac_read_id()
 {
 //    printf("Mac read ID reg @ PC=%x\n", m_maincpu->pc());
 
@@ -2110,6 +1826,9 @@ READ32_MEMBER(mac_state::mac_read_id)
 		case MODEL_MAC_QUADRA_840AV:
 			return 0xa55a2830;
 
+		case MODEL_MAC_IIVX:
+			return 0xa55a2015;
+
 		default:
 			return 0;
 	}
@@ -2151,23 +1870,18 @@ void mac_state::mac_driver_init(model_t model)
 	}
 
 	/* setup keyboard */
-#ifndef MAC_USE_EMULATED_KBD
-	keyboard_init();
-	m_inquiry_timeout = machine().scheduler().timer_alloc(timer_expired_delegate(FUNC(mac_state::inquiry_timeout_func),this));
-#else
 	/* clear key matrix for macadb */
 	for (int i=0; i<7; i++)
 	{
 		m_key_matrix[i] = 0;
 	}
-#endif
 
 	/* save state stuff */
 	machine().save().register_postload(save_prepost_delegate(FUNC(mac_state::mac_state_load), this));
 }
 
 #define MAC_DRIVER_INIT(label, model)   \
-DRIVER_INIT_MEMBER(mac_state,label)     \
+void mac_state::init_##label()     \
 {   \
 	mac_driver_init(model); \
 }
@@ -2192,6 +1906,7 @@ MAC_DRIVER_INIT(macpb100, MODEL_MAC_PB100)
 MAC_DRIVER_INIT(macpb140, MODEL_MAC_PB140)
 MAC_DRIVER_INIT(macpb160, MODEL_MAC_PB160)
 MAC_DRIVER_INIT(maciivx, MODEL_MAC_IIVX)
+MAC_DRIVER_INIT(maciivi, MODEL_MAC_IIVI)
 MAC_DRIVER_INIT(maciifx, MODEL_MAC_IIFX)
 MAC_DRIVER_INIT(macpd210, MODEL_MAC_PBDUO_210)
 MAC_DRIVER_INIT(macquadra700, MODEL_MAC_QUADRA_700)
@@ -2257,24 +1972,6 @@ void mac_state::vblank_irq()
 		this->adb_vblank();
 	}
 
-#ifndef MAC_USE_EMULATED_KBD
-	/* handle keyboard */
-	if (m_kbd_comm == true && m_kbd_receive == false)
-	{
-		int keycode = scan_keyboard();
-
-		if (keycode != 0x7B)
-		{
-			/* if key pressed, send the code */
-
-			logerror("keyboard enquiry successful, keycode %X\n", keycode);
-
-			m_inquiry_timeout->reset();
-			kbd_shift_out(keycode);
-		}
-	}
-#endif
-
 	/* signal VBlank on CA1 input on the VIA */
 	if ((m_model < MODEL_MAC_II) || (m_model == MODEL_MAC_PB140) || (m_model == MODEL_MAC_PB160) || (m_model == MODEL_MAC_QUADRA_700))
 	{
@@ -2305,6 +2002,12 @@ void mac_state::vblank_irq()
 	}
 }
 
+TIMER_CALLBACK_MEMBER(mac_state::mac_adbrefresh_tick)
+{
+	vblank_irq();
+	m_adbupdate_timer->adjust(attotime::from_hz(70));
+}
+
 TIMER_CALLBACK_MEMBER(mac_state::mac_scanline_tick)
 {
 	int scanline;
@@ -2320,7 +2023,7 @@ TIMER_CALLBACK_MEMBER(mac_state::mac_scanline_tick)
 		}
 	}
 
-	scanline = machine().first_screen()->vpos();
+	scanline = m_screen->vpos();
 	if (scanline == MAC_V_VIS)
 		vblank_irq();
 
@@ -2331,7 +2034,23 @@ TIMER_CALLBACK_MEMBER(mac_state::mac_scanline_tick)
 			mouse_callback();
 	}
 
-	m_scanline_timer->adjust(machine().first_screen()->time_until_pos((scanline+1) % MAC_V_TOTAL, 0));
+	if (m_dac)
+	{
+		uint16_t *snd_buf_ptr;
+		if (m_main_buffer)
+		{
+			snd_buf_ptr = (uint16_t *)(m_ram->pointer() + m_ram->size() - MAC_MAIN_SND_BUF_OFFSET);
+		}
+		else
+		{
+			snd_buf_ptr = (uint16_t *)(m_ram->pointer() + m_ram->size() - MAC_ALT_SND_BUF_OFFSET);
+		}
+
+		m_dac->write(snd_buf_ptr[scanline] >> 8);
+	}
+
+	int next_scanline = (scanline+1) % MAC_V_TOTAL;
+	m_scanline_timer->adjust(m_screen->time_until_pos(next_scanline), next_scanline);
 }
 
 WRITE_LINE_MEMBER(mac_state::nubus_irq_9_w)
@@ -3190,20 +2909,20 @@ const char *lookup_trap(uint16_t opcode)
 
 
 
-offs_t mac_state::mac_dasm_override(device_t &device, std::ostream &stream, offs_t pc, const uint8_t *oprom, const uint8_t *opram, int options)
+offs_t mac_state::mac_dasm_override(std::ostream &stream, offs_t pc, const util::disasm_interface::data_buffer &opcodes, const util::disasm_interface::data_buffer &params)
 {
 	uint16_t opcode;
 	unsigned result = 0;
 	const char *trap;
 
-	opcode = oprom[0]<<8 | oprom[1];
+	opcode = opcodes.r16(pc);
 	if ((opcode & 0xF000) == 0xA000)
 	{
 		trap = lookup_trap(opcode);
 		if (trap != nullptr)
 		{
 			stream << trap;
-			result = 2;
+			result = 2 | util::disasm_interface::SUPPORTED;
 		}
 	}
 	return result;

@@ -7,17 +7,6 @@
 
 
 //**************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_DIGITALKER_ADD(tag, clock) \
-		MCFG_DEVICE_ADD((tag), DIGITALKER, (clock))
-
-#define MCFG_DIGITALKER_REPLACE(tag, clock) \
-		MCFG_DEVICE_REPLACE((tag), DIGITALKER, (clock))
-
-
-//**************************************************************************
 //  TYPE DEFINITIONS
 //**************************************************************************
 
@@ -33,7 +22,7 @@ public:
 	void digitalker_0_wr_w(int line);
 	int digitalker_0_intr_r();
 
-	DECLARE_WRITE8_MEMBER(digitalker_data_w);
+	void digitalker_data_w(uint8_t data);
 
 protected:
 	// device-level overrides

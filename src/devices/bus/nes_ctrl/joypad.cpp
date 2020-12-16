@@ -40,7 +40,6 @@ DEFINE_DEVICE_TYPE(NES_CCPAD_LEFT,  nes_ccpadl_device,   "nes_ccpadl",   "FC Cra
 DEFINE_DEVICE_TYPE(NES_CCPAD_RIGHT, nes_ccpadr_device,   "nes_ccpadr",   "FC Crazy Climber Right Pad")
 DEFINE_DEVICE_TYPE(NES_ARCSTICK,    nes_arcstick_device, "nes_arcstick", "Nintendo Family Computer Arcade Stick")
 
-
 static INPUT_PORTS_START( nes_joypad )
 	PORT_START("JOYPAD")
 	PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON2 ) PORT_NAME("A")
@@ -142,21 +141,23 @@ ioport_constructor nes_arcstick_device::device_input_ports() const
 	return INPUT_PORTS_NAME( nes_arcstick );
 }
 
-
-
-static SLOT_INTERFACE_START( arcstick_daisy )
-	SLOT_INTERFACE("arcstick", NES_ARCSTICK)
-SLOT_INTERFACE_END
+static void arcstick_daisy(device_slot_interface &device)
+{
+	device.option_add("arcstick", NES_ARCSTICK);
+}
 
 
 //-------------------------------------------------
 //  device_add_mconfig - add device configuration
 //-------------------------------------------------
 
-MACHINE_CONFIG_MEMBER( nes_arcstick_device::device_add_mconfig )
+void nes_arcstick_device::device_add_mconfig(machine_config &config)
+{
 	// expansion port to allow daisy chaining
-	MCFG_FC_EXPANSION_PORT_ADD("subexp", arcstick_daisy, nullptr)
-MACHINE_CONFIG_END
+	NES_CONTROL_PORT(config, m_daisychain, arcstick_daisy, nullptr);
+	if (m_port != nullptr)
+		m_daisychain->set_screen_tag(m_port->m_screen);
+}
 
 
 //**************************************************************************

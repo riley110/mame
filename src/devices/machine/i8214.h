@@ -26,43 +26,25 @@
 
 #pragma once
 
-
-
-///*************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-///*************************************************************************
-
-#define MCFG_I8214_INT_CALLBACK(_write) \
-	devcb = &i8214_device::set_int_wr_callback(*device, DEVCB_##_write);
-
-#define MCFG_I8214_ENLG_CALLBACK(_write) \
-	devcb = &i8214_device::set_enlg_wr_callback(*device, DEVCB_##_write);
-
-
-
-///*************************************************************************
-//  TYPE DEFINITIONS
-///*************************************************************************
-
-// ======================> i8214_device
-
 class i8214_device : public device_t
 {
 public:
 	// construction/destruction
 	i8214_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	template <class Object> static devcb_base &set_int_wr_callback(device_t &device, Object &&cb) { return downcast<i8214_device &>(device).m_write_int.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_enlg_wr_callback(device_t &device, Object &&cb) { return downcast<i8214_device &>(device).m_write_enlg.set_callback(std::forward<Object>(cb)); }
+	auto int_wr_callback() { return m_write_int.bind(); }
+	auto enlg_wr_callback() { return m_write_enlg.bind(); }
 
-	DECLARE_WRITE_LINE_MEMBER( sgs_w );
-	DECLARE_WRITE_LINE_MEMBER( etlg_w );
-	DECLARE_WRITE_LINE_MEMBER( inte_w );
+	void sgs_w(int state);
+	void etlg_w(int state);
+	void inte_w(int state);
 
 	uint8_t a_r();
-	DECLARE_READ8_MEMBER(vector_r);
+	uint8_t vector_r();
 	void b_w(uint8_t data);
+	void b_sgs_w(uint8_t data);
 	void r_w(int line, int state);
+	void r_all_w(uint8_t data);
 
 protected:
 	// device-level overrides

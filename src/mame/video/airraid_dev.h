@@ -6,14 +6,12 @@
 
 #pragma once
 
+#include "emupal.h"
 #include "screen.h"
+#include "tilemap.h"
 
 
 DECLARE_DEVICE_TYPE(AIRRAID_VIDEO, airraid_video_device)
-
-#define MCFG_AIRRAID_VIDEO_ADD(_tag) \
-	MCFG_DEVICE_ADD(_tag, AIRRAID_VIDEO, 0)
-
 
 class airraid_video_device :  public device_t
 /*  public device_video_interface */
@@ -22,8 +20,8 @@ public:
 	// construction/destruction
 	airraid_video_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	DECLARE_WRITE8_MEMBER(txram_w);
-	DECLARE_WRITE8_MEMBER(vregs_w);
+	void txram_w(offs_t offset, uint8_t data);
+	void vregs_w(offs_t offset, uint8_t data);
 	void layer_enable_w(uint8_t enable);
 
 protected:

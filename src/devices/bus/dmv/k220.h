@@ -1,5 +1,6 @@
 // license:BSD-3-Clause
 // copyright-holders:Sandro Ronco
+// thanks-to:rfka01
 #ifndef MAME_BUS_DMV_K220_H
 #define MAME_BUS_DMV_K220_H
 
@@ -38,8 +39,8 @@ protected:
 	virtual bool write(offs_t offset, uint8_t data) override;
 
 private:
-	DECLARE_WRITE8_MEMBER(porta_w);
-	DECLARE_WRITE8_MEMBER(portc_w);
+	void porta_w(uint8_t data);
+	void portc_w(uint8_t data);
 	DECLARE_WRITE_LINE_MEMBER(write_out0);
 	DECLARE_WRITE_LINE_MEMBER(write_out1);
 	DECLARE_WRITE_LINE_MEMBER(write_out2);
@@ -49,12 +50,13 @@ private:
 	required_memory_region m_ram;
 	required_memory_region m_rom;
 
+	output_finder<2> m_digits;
+
 	uint8_t   m_portc;
 };
 
 
 // device type definition
-extern const device_type DMV_K220;
 DECLARE_DEVICE_TYPE(DMV_K220, dmv_k220_device)
 
 #endif // MAME_BUS_DMV_K220_H

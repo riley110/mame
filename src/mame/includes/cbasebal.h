@@ -6,6 +6,9 @@
 
 *************************************************************************/
 
+#include "emupal.h"
+#include "tilemap.h"
+
 class cbasebal_state : public driver_device
 {
 public:
@@ -36,18 +39,18 @@ public:
 
 	/* misc */
 	uint8_t      m_rambank;
-	DECLARE_WRITE8_MEMBER(cbasebal_bankswitch_w);
-	DECLARE_READ8_MEMBER(bankedram_r);
-	DECLARE_WRITE8_MEMBER(bankedram_w);
-	DECLARE_WRITE8_MEMBER(cbasebal_coinctrl_w);
-	DECLARE_WRITE8_MEMBER(cbasebal_textram_w);
-	DECLARE_READ8_MEMBER(cbasebal_textram_r);
-	DECLARE_WRITE8_MEMBER(cbasebal_scrollram_w);
-	DECLARE_READ8_MEMBER(cbasebal_scrollram_r);
-	DECLARE_WRITE8_MEMBER(cbasebal_gfxctrl_w);
-	DECLARE_WRITE8_MEMBER(cbasebal_scrollx_w);
-	DECLARE_WRITE8_MEMBER(cbasebal_scrolly_w);
-	DECLARE_DRIVER_INIT(cbasebal);
+	void cbasebal_bankswitch_w(uint8_t data);
+	uint8_t bankedram_r(offs_t offset);
+	void bankedram_w(offs_t offset, uint8_t data);
+	void cbasebal_coinctrl_w(uint8_t data);
+	void cbasebal_textram_w(offs_t offset, uint8_t data);
+	uint8_t cbasebal_textram_r(offs_t offset);
+	void cbasebal_scrollram_w(offs_t offset, uint8_t data);
+	uint8_t cbasebal_scrollram_r(offs_t offset);
+	void cbasebal_gfxctrl_w(uint8_t data);
+	void cbasebal_scrollx_w(offs_t offset, uint8_t data);
+	void cbasebal_scrolly_w(offs_t offset, uint8_t data);
+	void init_cbasebal();
 	TILE_GET_INFO_MEMBER(get_bg_tile_info);
 	TILE_GET_INFO_MEMBER(get_fg_tile_info);
 	virtual void machine_start() override;
@@ -58,4 +61,8 @@ public:
 	required_device<cpu_device> m_maincpu;
 	required_device<gfxdecode_device> m_gfxdecode;
 	required_device<palette_device> m_palette;
+	void cbasebal(machine_config &config);
+	void cbasebal_map(address_map &map);
+	void cbasebal_portmap(address_map &map);
+	void decrypted_opcodes_map(address_map &map);
 };

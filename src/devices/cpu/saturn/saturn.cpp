@@ -15,6 +15,10 @@
 #include "debugger.h"
 
 
+//#define VERBOSE 1
+#include "logmacro.h"
+
+
 #define R0 0
 #define R1 1
 #define R2 2
@@ -27,10 +31,6 @@
 #define I 9 // invalid
 
 
-//#define VERBOSE 1
-#include "logmacro.h"
-
-
 // Hardware status bits
 #define XM 1 // external Modules missing
 #define SB 2 // Sticky bit
@@ -39,7 +39,7 @@
 
 
 
-DEFINE_DEVICE_TYPE(SATURN, saturn_device, "saturn_cpu", "HP Saturn")
+DEFINE_DEVICE_TYPE(SATURN, saturn_device, "saturn_cpu", "Hewlett-Packard Saturn")
 
 
 saturn_device::saturn_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
@@ -52,23 +52,30 @@ saturn_device::saturn_device(const machine_config &mconfig, const char *tag, dev
 	, m_unconfig_func(*this)
 	, m_id_func(*this)
 	, m_crc_func(*this)
-	, m_rsi_func(*this), m_pc(0), m_oldpc(0), m_p(0), m_out(0), m_carry(0), m_decimal(0), m_st(0), m_hst(0), m_nmi_state(0), m_irq_state(0), m_irq_enable(0), m_in_irq(0),
-	m_pending_irq(0), m_sleeping(0), m_monitor_id(0), m_monitor_in(0), m_program(nullptr), m_direct(nullptr), m_icount(0), m_debugger_temp(0)
+	, m_rsi_func(*this)
+	, m_pc(0), m_oldpc(0), m_p(0), m_out(0), m_carry(0), m_decimal(0), m_st(0), m_hst(0)
+	, m_nmi_state(0), m_irq_state(0), m_irq_enable(0), m_in_irq(0), m_pending_irq(0)
+	, m_sleeping(0), m_monitor_id(0), m_monitor_in(0)
+	, m_icount(0)
+	, m_debugger_temp(0)
 {
 }
 
 device_memory_interface::space_config_vector saturn_device::memory_space_config() const
 {
-	return space_config_vector {
-		std::make_pair(AS_PROGRAM, &m_program_config)
-	};
+	return space_config_vector{ std::make_pair(AS_PROGRAM, &m_program_config) };
+}
+
+bool saturn_device::get_nonstandard_mnemonics_mode() const
+{
+	// Needs to become configurable live
+	return false;
 }
 
 
-offs_t saturn_device::disasm_disassemble(std::ostream &stream, offs_t pc, const uint8_t *oprom, const uint8_t *opram, uint32_t options)
+std::unique_ptr<util::disasm_interface> saturn_device::create_disassembler()
 {
-	extern CPU_DISASSEMBLE( saturn );
-	return CPU_DISASSEMBLE_NAME(saturn)(this, stream, pc, oprom, opram, options);
+	return std::make_unique<saturn_disassembler>(this);
 }
 
 
@@ -76,8 +83,8 @@ offs_t saturn_device::disasm_disassemble(std::ostream &stream, offs_t pc, const 
  * include the opcode macros, functions and tables
  ***************************************************************/
 
-#include "satops.hxx"
-#include "sattable.hxx"
+#include "satops.ipp"
+#include "sattable.ipp"
 
 /*****************************************************************************
  *
@@ -87,8 +94,8 @@ offs_t saturn_device::disasm_disassemble(std::ostream &stream, offs_t pc, const 
 
 void saturn_device::device_start()
 {
-	m_program = &space(AS_PROGRAM);
-	m_direct = &m_program->direct();
+	space(AS_PROGRAM).cache(m_cache);
+	space(AS_PROGRAM).specific(m_program);
 
 	m_out_func.resolve_safe();
 	m_in_func.resolve_safe(0);
@@ -174,7 +181,7 @@ void saturn_device::device_start()
 	state_add( STATE_GENPCBASE, "CURPC", m_pc ).noshow();
 	state_add( STATE_GENFLAGS, "GENFLAGS", m_debugger_temp).formatstr("%2s").noshow();
 
-	m_icountptr = &m_icount;
+	set_icountptr(m_icount);
 }
 
 void saturn_device::state_string_export(const device_state_entry &entry, std::string &str) const
@@ -344,7 +351,7 @@ void saturn_device::execute_run()
 	{
 		m_oldpc = m_pc;
 
-		debugger_instruction_hook(this, m_pc);
+		debugger_instruction_hook(m_pc);
 
 		if ( m_sleeping )
 		{

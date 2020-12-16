@@ -11,36 +11,36 @@
 #include "includes/aztarac.h"
 
 
-READ16_MEMBER(aztarac_state::sound_r)
+uint16_t aztarac_state::sound_r()
 {
 	return m_sound_status & 0x01;
 }
 
-WRITE16_MEMBER(aztarac_state::sound_w)
+void aztarac_state::sound_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	if (ACCESSING_BITS_0_7)
 	{
 		data &= 0xff;
-		m_soundlatch->write(space, offset, data);
+		m_soundlatch->write(data);
 		m_sound_status ^= 0x21;
 		if (m_sound_status & 0x20)
 			m_audiocpu->set_input_line(0, HOLD_LINE);
 	}
 }
 
-READ8_MEMBER(aztarac_state::snd_command_r)
+uint8_t aztarac_state::snd_command_r()
 {
 	m_sound_status |= 0x01;
 	m_sound_status &= ~0x20;
-	return m_soundlatch->read(space,offset);
+	return m_soundlatch->read();
 }
 
-READ8_MEMBER(aztarac_state::snd_status_r)
+uint8_t aztarac_state::snd_status_r()
 {
 	return m_sound_status & ~0x01;
 }
 
-WRITE8_MEMBER(aztarac_state::snd_status_w)
+void aztarac_state::snd_status_w(uint8_t data)
 {
 	m_sound_status &= ~0x10;
 }

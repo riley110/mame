@@ -57,22 +57,49 @@ end
 function xml.conv_cheat(data)
 	local spaces, regions, output
 	data = xml_parse(data)
+	local cpu_spaces = {}
+
+	for tag, device in pairs(manager:machine().devices) do
+		local sp
+		for name, space in pairs(device.spaces) do
+			if not sp then
+				sp = {}
+				cpu_spaces[tag] = sp
+			end
+			sp[space.index] = space.name
+		end
+	end
+
 	local function convert_expr(data)
 		local write = false
 
 		local function convert_memref(cpu, phys, space, width, addr, rw)
+			-- debug expressions address spaces by index not by name
+			local function get_space_name(index)
+				local prefix = cpu:sub(1,1)
+				if prefix == ":" then
+					return cpu_spaces[cpu][index]
+				else
+					return cpu_spaces[":" .. cpu][index]
+				end
+			end
+
 			local mod = ""
 			local count
 			if space == "p" then
-				fullspace = "program"
+				fullspace = get_space_name(0)
 			elseif space == "d" then
-				fullspace = "data"
+				fullspace = get_space_name(1)
 			elseif space == "i" then
-				fullspace = "io"
-			elseif space == "r" or space == "o" then
-				fullspace = "program"
+				fullspace = get_space_name(2)
+			elseif space == "r" then
+				fullspace = get_space_name(0)
 				mod = "direct_"
 				space = "p"
+			elseif space == "o" then
+				fullspace = get_space_name(3)
+				mod = "direct_"
+				space = "o"
 			end
 			if width == "b" then
 				width = "u8"
@@ -83,6 +110,12 @@ function xml.conv_cheat(data)
 			elseif width == "q" then
 				width = "u64"
 			end
+
+			local prefix = cpu:sub(1,1)
+			if prefix == ":" then
+				cpu = cpu:sub(2,cpu:len())
+			end
+
 			local cpuname = cpu:gsub(":", "_")
 			if space == "m" then
 				regions[cpuname .. space] = ":" .. cpu
@@ -126,9 +159,10 @@ function xml.conv_cheat(data)
 		data = data:gsub("%f[%w]lshift%f[%W]", "<<")
 		data = data:gsub("(%w-)%+%+", "%1 = %1 + 1")
 		data = data:gsub("%f[%w](%x+)%f[%W]", "0x%1")
-		data = data:gsub("([%w_:]-)%.(p?)([pmrodi3])([bwdq])@(%w+) *(=*)", convert_memref)
+		-- 0?x? avoids an issue where db (data region byte) is interepeted as a hex number
+		data = data:gsub("([%w_:]-)%.(p?)0?x?([pmrodi3])([bwdq])@(%w+) *(=*)", convert_memref)
 		repeat
-			data, count = data:gsub("([%w_:]-)%.(p?)([pmrodi3])([bwdq])@(%b()) *(=*)", convert_memref)
+			data, count = data:gsub("([%w_:]-)%.(p?)0?x?([pmrodi3])([bwdq])@(%b()) *(=*)", convert_memref)
 		until count == 0
 		if write then
 			data = data .. ")"

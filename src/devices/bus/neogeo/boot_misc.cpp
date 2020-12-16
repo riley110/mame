@@ -48,9 +48,10 @@ void neogeo_bootleg_cart_device::device_reset()
  mapper specific handlers
  -------------------------------------------------*/
 
-MACHINE_CONFIG_MEMBER( neogeo_bootleg_cart_device::device_add_mconfig )
-	MCFG_NEOBOOT_PROT_ADD("bootleg_prot")
-MACHINE_CONFIG_END
+void neogeo_bootleg_cart_device::device_add_mconfig(machine_config &config)
+{
+	NEOBOOT_PROT(config, m_prot);
+}
 
 
 /*************************************************
@@ -207,10 +208,11 @@ void neogeo_mslug3b6_cart_device::decrypt_all(DECRYPT_ALL_PARAMS)
 	m_cmc_prot->cmc42_gfx_decrypt(spr_region, spr_region_size, MSLUG3_GFX_KEY);
 }
 
-MACHINE_CONFIG_MEMBER( neogeo_mslug3b6_cart_device::device_add_mconfig )
-	MCFG_CMC_PROT_ADD("cmc_prot")
-	MCFG_NEOBOOT_PROT_ADD("bootleg_prot")
-MACHINE_CONFIG_END
+void neogeo_mslug3b6_cart_device::device_add_mconfig(machine_config &config)
+{
+	NG_CMC_PROT(config, m_cmc_prot);
+	NEOBOOT_PROT(config, m_prot);
+}
 
 
 /*************************************************
@@ -234,11 +236,31 @@ void neogeo_ms5plus_cart_device::decrypt_all(DECRYPT_ALL_PARAMS)
 	m_prot->sx_decrypt(fix_region, fix_region_size, 1);
 }
 
-MACHINE_CONFIG_MEMBER( neogeo_ms5plus_cart_device::device_add_mconfig )
-	MCFG_NEOBOOT_PROT_ADD("bootleg_prot")
-	MCFG_CMC_PROT_ADD("cmc_prot")
-	MCFG_PCM2_PROT_ADD("pcm2_prot")
-MACHINE_CONFIG_END
+void neogeo_ms5plus_cart_device::device_add_mconfig(machine_config &config)
+{
+	NEOBOOT_PROT(config, m_prot);
+	NG_CMC_PROT(config, m_cmc_prot);
+	NG_PCM2_PROT(config, m_pcm2_prot);
+}
+
+
+/*************************************************
+ mslug5b
+ **************************************************/
+
+DEFINE_DEVICE_TYPE(NEOGEO_MSLUG5B_CART, neogeo_mslug5b_cart_device, "neocart_mslug5b", "Neo Geo Metal Slug 5 Bootleg Cart")
+
+neogeo_mslug5b_cart_device::neogeo_mslug5b_cart_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock) :
+	neogeo_bootleg_cart_device(mconfig, NEOGEO_MSLUG5B_CART, tag, owner, clock)
+{
+}
+
+void neogeo_mslug5b_cart_device::decrypt_all(DECRYPT_ALL_PARAMS)
+{
+	m_prot->mslug5b_vx_decrypt(ym_region, ym_region_size);
+	m_prot->sx_decrypt(fix_region, fix_region_size, 2);
+	m_prot->mslug5b_cx_decrypt(spr_region, spr_region_size);
+}
 
 
 /*************************************************
@@ -270,7 +292,7 @@ ioport_constructor neogeo_kog_cart_device::device_input_ports() const
 }
 
 
-READ16_MEMBER(neogeo_kog_cart_device::protection_r)
+uint16_t neogeo_kog_cart_device::protection_r(address_space &space, offs_t offset)
 {
 	return m_jumper->read();
 }

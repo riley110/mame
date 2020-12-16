@@ -23,17 +23,17 @@
 
 /* Video RAM Access */
 
-READ8_MEMBER( v1050_state::attr_r )
+uint8_t v1050_state::attr_r()
 {
 	return m_attr;
 }
 
-WRITE8_MEMBER( v1050_state::attr_w )
+void v1050_state::attr_w(uint8_t data)
 {
 	m_attr = data;
 }
 
-READ8_MEMBER( v1050_state::videoram_r )
+uint8_t v1050_state::videoram_r(offs_t offset)
 {
 	if (offset >= 0x2000)
 	{
@@ -43,7 +43,7 @@ READ8_MEMBER( v1050_state::videoram_r )
 	return m_video_ram[offset];
 }
 
-WRITE8_MEMBER( v1050_state::videoram_w )
+void v1050_state::videoram_w(offs_t offset, uint8_t data)
 {
 	m_video_ram[offset] = data;
 
@@ -109,19 +109,21 @@ void v1050_state::video_start()
 
 /* Machine Drivers */
 
-MACHINE_CONFIG_START( v1050_video )
-	MCFG_MC6845_ADD(H46505_TAG, H46505, SCREEN_TAG, XTAL_15_36MHz/8)
-	MCFG_MC6845_SHOW_BORDER_AREA(true)
-	MCFG_MC6845_CHAR_WIDTH(8)
-	MCFG_MC6845_UPDATE_ROW_CB(v1050_state, crtc_update_row)
-	MCFG_MC6845_OUT_VSYNC_CB(WRITELINE(v1050_state, crtc_vs_w))
+void v1050_state::v1050_video(machine_config &config)
+{
+	HD6845S(config, m_crtc, 15.36_MHz_XTAL/8); // HD6845SP according to Programmer's Technical Document
+	m_crtc->set_screen(SCREEN_TAG);
+	m_crtc->set_show_border_area(true);
+	m_crtc->set_char_width(8);
+	m_crtc->set_update_row_callback(FUNC(v1050_state::crtc_update_row));
+	m_crtc->out_vsync_callback().set(FUNC(v1050_state::crtc_vs_w));
 
-	MCFG_SCREEN_ADD_MONOCHROME(SCREEN_TAG, RASTER, rgb_t::green())
-	MCFG_SCREEN_UPDATE_DEVICE(H46505_TAG, h46505_device, screen_update)
-	MCFG_SCREEN_REFRESH_RATE(60)
-	MCFG_SCREEN_VBLANK_TIME(ATTOSECONDS_IN_USEC(2500))
-	MCFG_SCREEN_SIZE(640, 400)
-	MCFG_SCREEN_VISIBLE_AREA(0,640-1, 0, 400-1)
+	screen_device &screen(SCREEN(config, SCREEN_TAG, SCREEN_TYPE_RASTER, rgb_t::green()));
+	screen.set_screen_update(H46505_TAG, FUNC(hd6845s_device::screen_update));
+	screen.set_refresh_hz(60);
+	screen.set_vblank_time(ATTOSECONDS_IN_USEC(2500));
+	screen.set_size(640, 400);
+	screen.set_visarea(0,640-1, 0, 400-1);
 
-	MCFG_PALETTE_ADD_MONOCHROME_HIGHLIGHT("palette")
-MACHINE_CONFIG_END
+	PALETTE(config, m_palette, palette_device::MONOCHROME_HIGHLIGHT);
+}

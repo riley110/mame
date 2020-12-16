@@ -15,7 +15,7 @@
 #include "bus/centronics/ctronics.h"
 #include "bus/rs232/rs232.h"
 #include "cpu/m6800/m6801.h"
-#include "machine/mc2661.h"
+#include "machine/scn_pci.h"
 
 
 
@@ -32,10 +32,6 @@ public:
 	// construction/destruction
 	adam_spi_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	// not really public
-	DECLARE_READ8_MEMBER( p2_r );
-	DECLARE_WRITE8_MEMBER( p2_w );
-
 protected:
 	// device-level overrides
 	virtual void device_start() override;
@@ -47,7 +43,13 @@ protected:
 	// device_adamnet_card_interface overrides
 	virtual void adamnet_reset_w(int state) override;
 
-	required_device<cpu_device> m_maincpu;
+private:
+	required_device<m6801_cpu_device> m_maincpu;
+
+	uint8_t p2_r();
+	void p2_w(uint8_t data);
+
+	void adam_spi_mem(address_map &map);
 };
 
 

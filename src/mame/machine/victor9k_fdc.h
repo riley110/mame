@@ -20,21 +20,6 @@
 
 
 //**************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_VICTOR_9000_FDC_IRQ_CB(_write) \
-	devcb = &victor_9000_fdc_device::set_irq_wr_callback(*device, DEVCB_##_write);
-
-#define MCFG_VICTOR_9000_FDC_SYN_CB(_write) \
-	devcb = &victor_9000_fdc_device::set_syn_wr_callback(*device, DEVCB_##_write);
-
-#define MCFG_VICTOR_9000_FDC_LBRDY_CB(_write) \
-	devcb = &victor_9000_fdc_device::set_lbrdy_wr_callback(*device, DEVCB_##_write);
-
-
-
-//**************************************************************************
 //  TYPE DEFINITIONS
 //**************************************************************************
 
@@ -46,16 +31,16 @@ public:
 	// construction/destruction
 	victor_9000_fdc_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	template <class Object> static devcb_base &set_irq_wr_callback(device_t &device, Object &&cb) { return downcast<victor_9000_fdc_device &>(device).m_irq_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_syn_wr_callback(device_t &device, Object &&cb) { return downcast<victor_9000_fdc_device &>(device).m_syn_cb.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_lbrdy_wr_callback(device_t &device, Object &&cb) { return downcast<victor_9000_fdc_device &>(device).m_lbrdy_cb.set_callback(std::forward<Object>(cb)); }
+	auto irq_wr_callback() { return m_irq_cb.bind(); }
+	auto syn_wr_callback() { return m_syn_cb.bind(); }
+	auto lbrdy_wr_callback() { return m_lbrdy_cb.bind(); }
 
-	DECLARE_READ8_MEMBER( cs5_r ) { return m_via4->read(space, offset); }
-	DECLARE_WRITE8_MEMBER( cs5_w ) { m_via4->write(space, offset, data); }
-	DECLARE_READ8_MEMBER( cs6_r ) { return m_via6->read(space, offset); }
-	DECLARE_WRITE8_MEMBER( cs6_w ) { m_via6->write(space, offset, data); }
-	DECLARE_READ8_MEMBER( cs7_r );
-	DECLARE_WRITE8_MEMBER( cs7_w );
+	uint8_t cs5_r(offs_t offset) { return m_via4->read(offset); }
+	void cs5_w(offs_t offset, uint8_t data) { m_via4->write(offset, data); }
+	uint8_t cs6_r(offs_t offset) { return m_via6->read(offset); }
+	void cs6_w(offs_t offset, uint8_t data) { m_via6->write(offset, data); }
+	uint8_t cs7_r(offs_t offset);
+	void cs7_w(offs_t offset, uint8_t data);
 
 protected:
 	// device-level overrides
@@ -69,6 +54,8 @@ protected:
 
 private:
 	static const int rpm[0x100];
+
+	void add_floppy_drive(machine_config &config, const char *_tag);
 
 	enum
 	{
@@ -125,13 +112,14 @@ private:
 	devcb_write_line m_syn_cb;
 	devcb_write_line m_lbrdy_cb;
 
-	required_device<cpu_device> m_maincpu;
+	required_device<i8048_device> m_maincpu;
 	required_device<via6522_device> m_via4;
 	required_device<via6522_device> m_via5;
 	required_device<via6522_device> m_via6;
 	required_device<floppy_connector> m_floppy0;
 	required_device<floppy_connector> m_floppy1;
 	required_memory_region m_gcr_rom;
+	output_finder<2> m_leds;
 
 	void update_stepper_motor(floppy_image_device *floppy, int stp, int old_st, int st);
 	void update_spindle_motor(floppy_image_device *floppy, emu_timer *t_tach, bool start, bool stop, bool sel, uint8_t &da);
@@ -208,29 +196,29 @@ private:
 
 	DECLARE_FLOPPY_FORMATS( floppy_formats );
 
-	DECLARE_READ8_MEMBER( floppy_p1_r );
-	DECLARE_WRITE8_MEMBER( floppy_p1_w );
-	DECLARE_READ8_MEMBER( floppy_p2_r );
-	DECLARE_WRITE8_MEMBER( floppy_p2_w );
+	uint8_t floppy_p1_r();
+	void floppy_p1_w(uint8_t data);
+	uint8_t floppy_p2_r();
+	void floppy_p2_w(uint8_t data);
 	DECLARE_READ_LINE_MEMBER( tach0_r );
 	DECLARE_READ_LINE_MEMBER( tach1_r );
-	DECLARE_WRITE8_MEMBER( da_w );
+	void da_w(uint8_t data);
 
-	DECLARE_READ8_MEMBER( via4_pa_r );
-	DECLARE_WRITE8_MEMBER( via4_pa_w );
-	DECLARE_READ8_MEMBER( via4_pb_r );
-	DECLARE_WRITE8_MEMBER( via4_pb_w );
+	uint8_t via4_pa_r();
+	void via4_pa_w(uint8_t data);
+	uint8_t via4_pb_r();
+	void via4_pb_w(uint8_t data);
 	DECLARE_WRITE_LINE_MEMBER( wrsync_w );
 	DECLARE_WRITE_LINE_MEMBER( via4_irq_w );
 
-	DECLARE_READ8_MEMBER( via5_pa_r );
-	DECLARE_WRITE8_MEMBER( via5_pb_w );
+	uint8_t via5_pa_r();
+	void via5_pb_w(uint8_t data);
 	DECLARE_WRITE_LINE_MEMBER( via5_irq_w );
 
-	DECLARE_READ8_MEMBER( via6_pa_r );
-	DECLARE_READ8_MEMBER( via6_pb_r );
-	DECLARE_WRITE8_MEMBER( via6_pa_w );
-	DECLARE_WRITE8_MEMBER( via6_pb_w );
+	uint8_t via6_pa_r();
+	uint8_t via6_pb_r();
+	void via6_pa_w(uint8_t data);
+	void via6_pb_w(uint8_t data);
 	DECLARE_WRITE_LINE_MEMBER( drw_w );
 	DECLARE_WRITE_LINE_MEMBER( erase_w );
 	DECLARE_WRITE_LINE_MEMBER( via6_irq_w );

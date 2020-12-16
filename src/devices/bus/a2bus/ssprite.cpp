@@ -33,19 +33,17 @@ DEFINE_DEVICE_TYPE(A2BUS_SSPRITE, a2bus_ssprite_device, "a2ssprite", "Synetix Su
 //  device_add_mconfig - add device configuration
 //-------------------------------------------------
 
-MACHINE_CONFIG_MEMBER( a2bus_ssprite_device::device_add_mconfig )
-	MCFG_DEVICE_ADD( TMS_TAG, TMS9918A, XTAL_10_738635MHz / 2 )
-	MCFG_TMS9928A_VRAM_SIZE(0x4000) // 16k of VRAM
-	MCFG_TMS9928A_OUT_INT_LINE_CB(WRITELINE(a2bus_ssprite_device, tms_irq_w))
-	MCFG_TMS9928A_SCREEN_ADD_NTSC( SCREEN_TAG )
-	MCFG_SCREEN_UPDATE_DEVICE( TMS_TAG, tms9918a_device, screen_update )
+void a2bus_ssprite_device::device_add_mconfig(machine_config &config)
+{
+	TMS9918A(config, m_tms, XTAL(10'738'635)).set_screen(SCREEN_TAG);
+	m_tms->set_vram_size(0x4000); // 16k of VRAM
+	m_tms->int_callback().set(FUNC(a2bus_ssprite_device::tms_irq_w));
+	SCREEN(config, SCREEN_TAG, SCREEN_TYPE_RASTER);
 
-	MCFG_SPEAKER_STANDARD_MONO("mono")
-	MCFG_SOUND_ADD(AY_TAG, AY8912, 1022727)
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 1.0)
-	MCFG_SOUND_ADD(TMS5220_TAG, TMS5220, 640000)
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 1.0)
-MACHINE_CONFIG_END
+	SPEAKER(config, "mono").front_center();
+	AY8912(config, m_ay, 1022727).add_route(ALL_OUTPUTS, "mono", 1.0);
+	TMS5220(config, m_tms5220, 640000).add_route(ALL_OUTPUTS, "mono", 1.0);
+}
 
 //**************************************************************************
 //  LIVE DEVICE
@@ -71,8 +69,6 @@ a2bus_ssprite_device::a2bus_ssprite_device(const machine_config &mconfig, device
 
 void a2bus_ssprite_device::device_start()
 {
-	// set_a2bus_device makes m_slot valid
-	set_a2bus_device();
 }
 
 void a2bus_ssprite_device::device_reset()
@@ -96,44 +92,44 @@ void a2bus_ssprite_device::device_reset()
 */
 
 
-uint8_t a2bus_ssprite_device::read_c0nx(address_space &space, uint8_t offset)
+uint8_t a2bus_ssprite_device::read_c0nx(uint8_t offset)
 {
 	switch (offset)
 	{
 		case 0:
-			return m_tms->vram_read(space, 0);
+			return m_tms->vram_read();
 		case 1:
-			return m_tms->register_read(space, 0);
+			return m_tms->register_read();
 		case 2:
-			return 0x1f | m_tms5220->status_r(space, 0); // copied this line from a2echoii.cpp
+			return 0x1f | m_tms5220->status_r();
 		case 14:
 		case 15:
-			return m_ay->data_r(space, 0);
+			return m_ay->data_r();
 	}
 
 	return 0xff;
 }
 
-void a2bus_ssprite_device::write_c0nx(address_space &space, uint8_t offset, uint8_t data)
+void a2bus_ssprite_device::write_c0nx(uint8_t offset, uint8_t data)
 {
 	switch (offset)
 	{
 		case 0:
-			m_tms->vram_write(space, 0, data);
+			m_tms->vram_write(data);
 			break;
 		case 1:
-			m_tms->register_write(space, 0, data);
+			m_tms->register_write(data);
 			break;
 		case 2:
-			m_tms5220->data_w(space, offset, data);
+			m_tms5220->data_w(data);
 			break;
 		case 12:
 		case 13:
-			m_ay->data_w(space, 0, data);
+			m_ay->data_w(data);
 			break;
 		case 14:
 		case 15:
-			m_ay->address_w(space, 0, data);
+			m_ay->address_w(data);
 			break;
 	}
 }
@@ -141,11 +137,7 @@ void a2bus_ssprite_device::write_c0nx(address_space &space, uint8_t offset, uint
 WRITE_LINE_MEMBER( a2bus_ssprite_device::tms_irq_w )
 {
 	if (state)
-	{
 		raise_slot_irq();
-	}
 	else
-	{
 		lower_slot_irq();
-	}
 }

@@ -12,12 +12,6 @@
 #pragma once
 
 
-#define MCFG_NT7534_ADD( _tag ) \
-	MCFG_DEVICE_ADD( _tag, NT7534, 0 )
-
-#define MCFG_NT7534_PIXEL_UPDATE_CB(_class, _method) \
-	nt7534_device::static_set_pixel_update_cb(*device, nt7534_device::pixel_update_delegate(&_class::_method, #_class "::" #_method, downcast<_class *>(owner)));
-
 //**************************************************************************
 //  TYPE DEFINITIONS
 //**************************************************************************
@@ -33,17 +27,17 @@ public:
 	typedef device_delegate<void (bitmap_ind16 &bitmap, uint8_t line, uint8_t pos, uint8_t y, uint8_t x, int state)> pixel_update_delegate;
 
 	// construction/destruction
-	nt7534_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+	nt7534_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock = 0);
 
-	static void static_set_pixel_update_cb(device_t &device, pixel_update_delegate &&cb) { downcast<nt7534_device &>(device).m_pixel_update_cb = std::move(cb); }
+	template <typename... T> void set_pixel_update_cb(T &&... args) { m_pixel_update_cb.set(std::forward<T>(args)...); }
 
 	// device interface
-	virtual DECLARE_WRITE8_MEMBER(write);
-	virtual DECLARE_READ8_MEMBER(read);
-	virtual DECLARE_WRITE8_MEMBER(control_write);
-	virtual DECLARE_READ8_MEMBER(control_read);
-	virtual DECLARE_WRITE8_MEMBER(data_write);
-	virtual DECLARE_READ8_MEMBER(data_read);
+	virtual void write(offs_t offset, uint8_t data);
+	virtual uint8_t read(offs_t offset);
+	virtual void control_write(uint8_t data);
+	virtual uint8_t control_read();
+	virtual void data_write(uint8_t data);
+	virtual uint8_t data_read();
 
 	const uint8_t *render();
 	virtual uint32_t screen_update(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);

@@ -13,6 +13,7 @@ There are 2 versions of the colour prom, which have different palettes.
 We have the later version.
 
 Notes:
+- When booted it asks for a disk. Press enter to start ROM BASIC.
 - Control W then Enter will switch between 40 and 80 characters per line.
 - Control V turns cursor on
 - Graphics commands such as LINE, CIRCLE, HGRCLS, HGRSET etc only work with disk basic
@@ -35,6 +36,7 @@ ToDo:
 #include "bus/rs232/rs232.h"
 #include "cpu/z80/z80.h"
 #include "imagedev/cassette.h"
+#include "imagedev/floppy.h"
 #include "machine/74123.h"
 #include "machine/i8251.h"
 #include "machine/i8255.h"
@@ -43,9 +45,9 @@ ToDo:
 #include "machine/wd_fdc.h"
 #include "machine/z80dma.h"
 #include "sound/spkrdev.h"
-#include "sound/wave.h"
 #include "video/mc6845.h"
 
+#include "emupal.h"
 #include "screen.h"
 #include "speaker.h"
 
@@ -71,40 +73,47 @@ public:
 		, m_floppy1(*this, "fdc:1")
 	{ }
 
-	DECLARE_PALETTE_INIT(excali64);
-	DECLARE_WRITE8_MEMBER(ppib_w);
-	DECLARE_READ8_MEMBER(ppic_r);
-	DECLARE_WRITE8_MEMBER(ppic_w);
-	DECLARE_READ8_MEMBER(port00_r);
-	DECLARE_READ8_MEMBER(port50_r);
-	DECLARE_WRITE8_MEMBER(port70_w);
-	DECLARE_WRITE8_MEMBER(porte4_w);
-	DECLARE_READ8_MEMBER(porte8_r);
-	DECLARE_WRITE8_MEMBER(portec_w);
+	void excali64(machine_config &config);
+
+private:
+	virtual void machine_reset() override;
+	virtual void machine_start() override;
+	void excali64_palette(palette_device &palette);
+	void ppib_w(u8 data);
+	u8 ppic_r();
+	void ppic_w(u8 data);
+	u8 port00_r();
+	u8 port50_r();
+	void port70_w(u8 data);
+	void porte4_w(u8 data);
+	u8 porte8_r();
+	void portec_w(u8 data);
 	DECLARE_FLOPPY_FORMATS(floppy_formats);
 	DECLARE_WRITE_LINE_MEMBER(cent_busy_w);
 	DECLARE_WRITE_LINE_MEMBER(busreq_w);
-	DECLARE_READ8_MEMBER(memory_read_byte);
-	DECLARE_WRITE8_MEMBER(memory_write_byte);
-	DECLARE_READ8_MEMBER(io_read_byte);
-	DECLARE_WRITE8_MEMBER(io_write_byte);
+	u8 memory_read_byte(offs_t offset);
+	void memory_write_byte(offs_t offset, u8 data);
+	u8 io_read_byte(offs_t offset);
+	void io_write_byte(offs_t offset, u8 data);
 	MC6845_UPDATE_ROW(update_row);
 	DECLARE_WRITE_LINE_MEMBER(crtc_hs);
 	DECLARE_WRITE_LINE_MEMBER(crtc_vs);
-	DECLARE_WRITE8_MEMBER(motor_w);
-	DECLARE_MACHINE_RESET(excali64);
-	required_device<palette_device> m_palette;
+	DECLARE_WRITE_LINE_MEMBER(motor_w);
 
-private:
-	uint8_t *m_p_videoram;
-	uint8_t *m_p_hiresram;
-	uint8_t m_sys_status;
-	uint8_t m_kbdrow;
+	void io_map(address_map &map);
+	void mem_map(address_map &map);
+
+	u8 m_sys_status;
+	u8 m_kbdrow;
 	bool m_crtc_vs;
 	bool m_crtc_hs;
 	bool m_motor;
 	bool m_centronics_busy;
-	required_device<cpu_device> m_maincpu;
+	std::unique_ptr<u8[]> m_vram;
+	std::unique_ptr<u8[]> m_hram;
+	std::unique_ptr<u8[]> m_ram;
+	required_device<palette_device> m_palette;
+	required_device<z80_device> m_maincpu;
 	required_region_ptr<u8> m_p_chargen;
 	required_device<cassette_image_device> m_cass;
 	required_device<mc6845_device> m_crtc;
@@ -117,31 +126,32 @@ private:
 	required_device<floppy_connector> m_floppy1;
 };
 
-static ADDRESS_MAP_START(excali64_mem, AS_PROGRAM, 8, excali64_state)
-	AM_RANGE(0x0000, 0x1FFF) AM_READ_BANK("bankr1") AM_WRITE_BANK("bankw1")
-	AM_RANGE(0x2000, 0x2FFF) AM_READ_BANK("bankr2") AM_WRITE_BANK("bankw2")
-	AM_RANGE(0x3000, 0x3FFF) AM_READ_BANK("bankr3") AM_WRITE_BANK("bankw3")
-	AM_RANGE(0x4000, 0xBFFF) AM_READ_BANK("bankr4") AM_WRITE_BANK("bankw4")
-	AM_RANGE(0xC000, 0xFFFF) AM_RAM AM_REGION("rambank", 0xC000)
-ADDRESS_MAP_END
+void excali64_state::mem_map(address_map &map)
+{
+	map(0x0000, 0x1FFF).bankr("bankr1").bankw("bankw1");
+	map(0x2000, 0x2FFF).bankr("bankr2").bankw("bankw2");
+	map(0x3000, 0x3FFF).bankr("bankr3").bankw("bankw3");
+	map(0x4000, 0xBFFF).bankr("bankr4").bankw("bankw4");
+	map(0xC000, 0xFFFF).ram();
+}
 
-static ADDRESS_MAP_START(excali64_io, AS_IO, 8, excali64_state)
-	ADDRESS_MAP_GLOBAL_MASK(0xff)
-	AM_RANGE(0x00, 0x0f) AM_READ(port00_r)
-	AM_RANGE(0x10, 0x10) AM_MIRROR(0x0e) AM_DEVREADWRITE("uart",i8251_device, data_r, data_w)
-	AM_RANGE(0x11, 0x11) AM_MIRROR(0x0e) AM_DEVREADWRITE("uart", i8251_device, status_r, control_w)
-	AM_RANGE(0x20, 0x23) AM_MIRROR(0x0c) AM_DEVREADWRITE("pit", pit8253_device, read, write)
-	AM_RANGE(0x30, 0x30) AM_MIRROR(0x0e) AM_DEVREADWRITE("crtc", mc6845_device, status_r, address_w)
-	AM_RANGE(0x31, 0x31) AM_MIRROR(0x0e) AM_DEVREADWRITE("crtc", mc6845_device, register_r, register_w)
-	AM_RANGE(0x50, 0x5f) AM_READ(port50_r)
-	AM_RANGE(0x60, 0x63) AM_MIRROR(0x0c) AM_DEVREADWRITE("ppi", i8255_device, read, write)
-	AM_RANGE(0x70, 0x7f) AM_WRITE(port70_w)
-	AM_RANGE(0xe0, 0xe3) AM_DEVREADWRITE("dma", z80dma_device, read, write)
-	AM_RANGE(0xe4, 0xe7) AM_WRITE(porte4_w)
-	AM_RANGE(0xe8, 0xeb) AM_READ(porte8_r)
-	AM_RANGE(0xec, 0xef) AM_WRITE(portec_w)
-	AM_RANGE(0xf0, 0xf3) AM_DEVREADWRITE("fdc", wd2793_device, read, write)
-ADDRESS_MAP_END
+void excali64_state::io_map(address_map &map)
+{
+	map.global_mask(0xff);
+	map(0x00, 0x0f).r(FUNC(excali64_state::port00_r));
+	map(0x10, 0x11).mirror(0x0e).rw("uart", FUNC(i8251_device::read), FUNC(i8251_device::write));
+	map(0x20, 0x23).mirror(0x0c).rw("pit", FUNC(pit8253_device::read), FUNC(pit8253_device::write));
+	map(0x30, 0x30).mirror(0x0e).rw(m_crtc, FUNC(mc6845_device::status_r), FUNC(mc6845_device::address_w));
+	map(0x31, 0x31).mirror(0x0e).rw(m_crtc, FUNC(mc6845_device::register_r), FUNC(mc6845_device::register_w));
+	map(0x50, 0x5f).r(FUNC(excali64_state::port50_r));
+	map(0x60, 0x63).mirror(0x0c).rw("ppi", FUNC(i8255_device::read), FUNC(i8255_device::write));
+	map(0x70, 0x7f).w(FUNC(excali64_state::port70_w));
+	map(0xe0, 0xe3).rw(m_dma, FUNC(z80dma_device::read), FUNC(z80dma_device::write));
+	map(0xe4, 0xe7).w(FUNC(excali64_state::porte4_w));
+	map(0xe8, 0xeb).r(FUNC(excali64_state::porte8_r));
+	map(0xec, 0xef).w(FUNC(excali64_state::portec_w));
+	map(0xf0, 0xf3).rw(m_fdc, FUNC(wd2793_device::read), FUNC(wd2793_device::write));
+}
 
 
 static INPUT_PORTS_START( excali64 )
@@ -235,24 +245,25 @@ FLOPPY_FORMATS_MEMBER( excali64_state::floppy_formats )
 	FLOPPY_EXCALI64_FORMAT
 FLOPPY_FORMATS_END
 
-static SLOT_INTERFACE_START( excali64_floppies )
-	SLOT_INTERFACE( "525qd", FLOPPY_525_QD )
-SLOT_INTERFACE_END
+static void excali64_floppies(device_slot_interface &device)
+{
+	device.option_add("525qd", FLOPPY_525_QD);
+}
 
 // pulses from port E4 bit 5 restart the 74123. After 3.6 secs without a pulse, the motor gets turned off.
-WRITE8_MEMBER( excali64_state::motor_w )
+WRITE_LINE_MEMBER( excali64_state::motor_w )
 {
-	m_motor = BIT(data, 0);
+	m_motor = state;
 	m_floppy1->get_device()->mon_w(!m_motor);
 	m_floppy0->get_device()->mon_w(!m_motor);
 }
 
-READ8_MEMBER( excali64_state::porte8_r )
+u8 excali64_state::porte8_r()
 {
-	return 0xfc | (uint8_t)m_motor;
+	return 0xfc | (u8)m_motor;
 }
 
-WRITE8_MEMBER( excali64_state::porte4_w )
+void excali64_state::porte4_w(u8 data)
 {
 	floppy_image_device *floppy = nullptr;
 	if (BIT(data, 0))
@@ -265,16 +276,17 @@ WRITE8_MEMBER( excali64_state::porte4_w )
 	if (floppy)
 		floppy->ss_w(BIT(data, 4));
 
-	m_u12->b_w(space,offset, BIT(data, 5)); // motor pulse
+	m_u12->b_w(BIT(data, 5)); // motor pulse
 }
 
 /*
 d0 = precomp (selectable by jumper)
-d1 = size select (we only support 13cm)
+d1 = size select
 d2 = density select (0 = double)
 */
-WRITE8_MEMBER( excali64_state::portec_w )
+void excali64_state::portec_w(u8 data)
 {
+	m_fdc->enmf_w(BIT(data, 1));
 	m_fdc->dden_w(BIT(data, 2));
 }
 
@@ -285,52 +297,52 @@ WRITE_LINE_MEMBER( excali64_state::busreq_w )
 	m_dma->bai_w(state); // tell dma that bus has been granted
 }
 
-READ8_MEMBER( excali64_state::memory_read_byte )
+u8 excali64_state::memory_read_byte(offs_t offset)
 {
 	address_space& prog_space = m_maincpu->space(AS_PROGRAM);
 	return prog_space.read_byte(offset);
 }
 
-WRITE8_MEMBER( excali64_state::memory_write_byte )
+void excali64_state::memory_write_byte(offs_t offset, u8 data)
 {
 	address_space& prog_space = m_maincpu->space(AS_PROGRAM);
 	prog_space.write_byte(offset, data);
 }
 
-READ8_MEMBER( excali64_state::io_read_byte )
+u8 excali64_state::io_read_byte(offs_t offset)
 {
 	address_space& prog_space = m_maincpu->space(AS_IO);
 	return prog_space.read_byte(offset);
 }
 
-WRITE8_MEMBER( excali64_state::io_write_byte )
+void excali64_state::io_write_byte(offs_t offset, u8 data)
 {
 	address_space& prog_space = m_maincpu->space(AS_IO);
 	prog_space.write_byte(offset, data);
 }
 
-WRITE8_MEMBER( excali64_state::ppib_w )
+void excali64_state::ppib_w(u8 data)
 {
 	m_kbdrow = data;
 }
 
-READ8_MEMBER( excali64_state::ppic_r )
+u8 excali64_state::ppic_r()
 {
-	uint8_t data = 0xf4; // READY line must be low to print
-	data |= (uint8_t)m_centronics_busy;
+	u8 data = 0xf4; // READY line must be low to print
+	data |= (u8)m_centronics_busy;
 	data |= (m_cass->input() > 0.1) << 3;
 	return data;
 }
 
-WRITE8_MEMBER( excali64_state::ppic_w )
+void excali64_state::ppic_w(u8 data)
 {
 	m_cass->output(BIT(data, 7) ? -1.0 : +1.0);
 	m_centronics->write_strobe(BIT(data, 4));
 }
 
-READ8_MEMBER( excali64_state::port00_r )
+u8 excali64_state::port00_r()
 {
-	uint8_t data = 0xff;
+	u8 data = 0xff;
 
 	for (int i = 0; i < 8; i++)
 	{
@@ -349,11 +361,11 @@ d3 : 2nd colour set (previously, dispen, which is a mistake in hardware and sche
 d4 : vsync
 d5 : rombank
 */
-READ8_MEMBER( excali64_state::port50_r )
+u8 excali64_state::port50_r()
 {
-	uint8_t data = m_sys_status & 0x2f;
+	u8 data = m_sys_status & 0x2f;
 	bool csync = m_crtc_hs | m_crtc_vs;
-	data |= (uint8_t)csync << 4;
+	data |= (u8)csync << 4;
 	return data;
 }
 
@@ -361,7 +373,7 @@ READ8_MEMBER( excali64_state::port50_r )
 d0,1,2,3,5 : same as port50
 (schematic wrongly says d7 used for 2nd colour set)
 */
-WRITE8_MEMBER( excali64_state::port70_w )
+void excali64_state::port70_w(u8 data)
 {
 	m_sys_status = data;
 	m_crtc->set_unscaled_clock(BIT(data, 2) ? 2e6 : 1e6);
@@ -404,7 +416,7 @@ WRITE8_MEMBER( excali64_state::port70_w )
 		membank("bankr1")->set_entry(2);
 }
 
-MACHINE_RESET_MEMBER( excali64_state, excali64 )
+void excali64_state::machine_reset()
 {
 	membank("bankr1")->set_entry(1); // read from ROM
 	membank("bankr2")->set_entry(1); // read from ROM
@@ -417,6 +429,18 @@ MACHINE_RESET_MEMBER( excali64_state, excali64 )
 	m_maincpu->reset();
 }
 
+void excali64_state::machine_start()
+{
+	save_pointer(NAME(m_vram), 0x2000);
+	save_pointer(NAME(m_hram), 0x8000);
+	save_pointer(NAME(m_ram),  0xc000);
+	save_item(NAME(m_sys_status));
+	save_item(NAME(m_kbdrow));
+	save_item(NAME(m_crtc_vs));
+	save_item(NAME(m_crtc_hs));
+	save_item(NAME(m_motor));
+	save_item(NAME(m_centronics_busy));
+}
 WRITE_LINE_MEMBER( excali64_state::crtc_hs )
 {
 	m_crtc_hs = state;
@@ -441,30 +465,33 @@ static const gfx_layout excali64_charlayout =
 	8*16                    /* every char takes 16 bytes */
 };
 
-static GFXDECODE_START( excali64 )
+static GFXDECODE_START( gfx_excali64 )
 	GFXDECODE_ENTRY( "chargen", 0x0000, excali64_charlayout, 0, 1 )
 GFXDECODE_END
 
 // The prom, the schematic, and the manual all contradict each other,
 // so the colours can only be described as wild guesses. Further, the 38
 // colour-load resistors are missing labels and values.
-PALETTE_INIT_MEMBER( excali64_state, excali64 )
+void excali64_state::excali64_palette(palette_device &palette)
 {
 	// do this here because driver_init hasn't run yet
-	m_p_videoram = memregion("videoram")->base();
-	m_p_hiresram = m_p_videoram + 0x2000;
-	uint8_t *main = memregion("roms")->base();
-	uint8_t *ram = memregion("rambank")->base();
+	m_vram = make_unique_clear<u8[]>(0x2000);
+	m_hram = make_unique_clear<u8[]>(0x8000);
+	m_ram = make_unique_clear<u8[]>(0xc000);
+	u8 *v = m_vram.get();
+	u8 *h = m_hram.get();
+	u8 *r = m_ram.get();
+	u8 *main = memregion("roms")->base();
 
 	// main ram (cp/m mode)
-	membank("bankr1")->configure_entry(0, &ram[0x0000]);
-	membank("bankr2")->configure_entry(0, &ram[0x2000]);
-	membank("bankr3")->configure_entry(0, &ram[0x3000]);
-	membank("bankr4")->configure_entry(0, &ram[0x4000]);//boot
-	membank("bankw1")->configure_entry(0, &ram[0x0000]);//boot
-	membank("bankw2")->configure_entry(0, &ram[0x2000]);
-	membank("bankw3")->configure_entry(0, &ram[0x3000]);
-	membank("bankw4")->configure_entry(0, &ram[0x4000]);//boot
+	membank("bankr1")->configure_entry(0, r);
+	membank("bankr2")->configure_entry(0, r+0x2000);
+	membank("bankr3")->configure_entry(0, r+0x3000);
+	membank("bankr4")->configure_entry(0, r+0x4000);//boot
+	membank("bankw1")->configure_entry(0, r);//boot
+	membank("bankw2")->configure_entry(0, r+0x2000);
+	membank("bankw3")->configure_entry(0, r+0x3000);
+	membank("bankw4")->configure_entry(0, r+0x4000);//boot
 	// rom_1
 	membank("bankr1")->configure_entry(1, &main[0x0000]);//boot
 	membank("bankr1")->configure_entry(2, &main[0x2000]);
@@ -472,22 +499,21 @@ PALETTE_INIT_MEMBER( excali64_state, excali64 )
 	membank("bankr2")->configure_entry(1, &main[0x4000]);//boot
 	membank("bankr3")->configure_entry(1, &main[0x5000]);//boot
 	// videoram
-	membank("bankr2")->configure_entry(2, &m_p_videoram[0x0000]);
-	membank("bankw2")->configure_entry(2, &m_p_videoram[0x0000]);//boot
+	membank("bankr2")->configure_entry(2, v);
+	membank("bankw2")->configure_entry(2, v);//boot
 	// hiresram
-	membank("bankr3")->configure_entry(2, &m_p_videoram[0x1000]);
-	membank("bankw3")->configure_entry(2, &m_p_videoram[0x1000]);//boot
-	membank("bankr4")->configure_entry(2, &m_p_hiresram[0x0000]);
-	membank("bankw4")->configure_entry(2, &m_p_hiresram[0x0000]);
+	membank("bankr3")->configure_entry(2, v+0x1000);
+	membank("bankw3")->configure_entry(2, v+0x1000);//boot
+	membank("bankr4")->configure_entry(2, h);
+	membank("bankw4")->configure_entry(2, h);
 
 	// Set up foreground colours
-	uint8_t r,g,b,i,code;
-	for (i = 0; i < 32; i++)
+	for (u8 i = 0; i < 32; i++)
 	{
-		code = m_p_chargen[0x1000+i];
-		r = (BIT(code, 0) ? 38 : 0) + (BIT(code, 1) ? 73 : 0) + (BIT(code, 2) ? 144 : 0);
-		b = (BIT(code, 3) ? 38 : 0) + (BIT(code, 4) ? 73 : 0) + (BIT(code, 5) ? 144 : 0);
-		g = (BIT(code, 6) ? 85 : 0) + (BIT(code, 7) ? 170 : 0);
+		u8 const code = m_p_chargen[0x1000+i];
+		u8 const r = (BIT(code, 0) ? 38 : 0) + (BIT(code, 1) ? 73 : 0) + (BIT(code, 2) ? 144 : 0);
+		u8 const b = (BIT(code, 3) ? 38 : 0) + (BIT(code, 4) ? 73 : 0) + (BIT(code, 5) ? 144 : 0);
+		u8 const g = (BIT(code, 6) ? 85 : 0) + (BIT(code, 7) ? 170 : 0);
 		palette.set_pen_color(i, r, g, b);
 	}
 
@@ -505,26 +531,26 @@ PALETTE_INIT_MEMBER( excali64_state, excali64 )
 MC6845_UPDATE_ROW( excali64_state::update_row )
 {
 	const rgb_t *palette = m_palette->palette()->entry_list_raw();
-	uint8_t chr,gfx,col,bg,fg;
-	uint16_t mem,x;
-	uint8_t col_base = BIT(m_sys_status, 3) ? 16 : 0;
-	uint32_t *p = &bitmap.pix32(y);
+	u8 chr,gfx,col,bg,fg;
+	u16 mem,x;
+	u8 col_base = BIT(m_sys_status, 3) ? 16 : 0;
+	u32 *p = &bitmap.pix32(y);
 
 	for (x = 0; x < x_count; x++)
 	{
 		mem = (ma + x) & 0x7ff;
-		chr = m_p_videoram[mem];
-		col = m_p_videoram[mem+0x800];
+		chr = m_vram[mem];
+		col = m_vram[mem+0x800];
 		fg = col_base + (col >> 4);
 		bg = 32 + ((col >> 1) & 7);
 
 		if (BIT(col, 0))
 		{
-			uint8_t h = m_p_videoram[mem+0x1000] - 4;
+			u8 h = m_vram[mem+0x1000] - 4;
 			if (h > 5)
 				h = 0; // keep us in bounds
 			// hires definition - pixels are opposite order to characters
-			gfx = BITSWAP8(m_p_hiresram[(h << 12) | (chr<<4) | ra], 0, 1, 2, 3, 4, 5, 6, 7);
+			gfx = bitswap<8>(m_hram[(h << 12) | (chr<<4) | ra], 0, 1, 2, 3, 4, 5, 6, 7);
 		}
 		else
 			gfx = m_p_chargen[(chr<<4) | ra]; // normal character
@@ -543,85 +569,86 @@ MC6845_UPDATE_ROW( excali64_state::update_row )
 	}
 }
 
-static MACHINE_CONFIG_START( excali64 )
+void excali64_state::excali64(machine_config &config)
+{
 	/* basic machine hardware */
-	MCFG_CPU_ADD("maincpu", Z80, XTAL_16MHz / 4)
-	MCFG_CPU_PROGRAM_MAP(excali64_mem)
-	MCFG_CPU_IO_MAP(excali64_io)
+	Z80(config, m_maincpu, 16_MHz_XTAL / 4);
+	m_maincpu->set_addrmap(AS_PROGRAM, &excali64_state::mem_map);
+	m_maincpu->set_addrmap(AS_IO, &excali64_state::io_map);
 
-	MCFG_MACHINE_RESET_OVERRIDE(excali64_state, excali64)
+	I8251(config, "uart", 0);
+	//uart.txd_handler().set("rs232", FUNC(rs232_port_device::write_txd));
+	//uart.rts_handler().set("rs232", FUNC(rs232_port_device::write_rts));
 
-	MCFG_DEVICE_ADD("uart", I8251, 0)
-	//MCFG_I8251_TXD_HANDLER(DEVWRITELINE("rs232", rs232_port_device, write_txd))
-	//MCFG_I8251_RTS_HANDLER(DEVWRITELINE("rs232", rs232_port_device, write_rts))
+	pit8253_device &pit(PIT8253(config, "pit", 0));
+	pit.set_clk<0>(16_MHz_XTAL / 16); /* Timer 0: tone gen for speaker */
+	pit.out_handler<0>().set("speaker", FUNC(speaker_sound_device::level_w));
+	//pit.set_clk<1>(16_MHz_XTAL / 16); /* Timer 1: baud rate gen for 8251 */
+	//pit.out_handler<1>().set(FUNC(excali64_state::write_uart_clock));
+	//pit.set_clk<2>(16_MHz_XTAL / 16); /* Timer 2: not used */
 
-	MCFG_DEVICE_ADD("pit", PIT8253, 0)
-	MCFG_PIT8253_CLK0(XTAL_16MHz / 16) /* Timer 0: tone gen for speaker */
-	MCFG_PIT8253_OUT0_HANDLER(DEVWRITELINE("speaker", speaker_sound_device, level_w))
-	//MCFG_PIT8253_CLK1(XTAL_16MHz / 16) /* Timer 1: baud rate gen for 8251 */
-	//MCFG_PIT8253_OUT1_HANDLER(WRITELINE(excali64_state, write_uart_clock))
-	//MCFG_PIT8253_CLK2(XTAL_16MHz / 16) /* Timer 2: not used */
-
-	MCFG_DEVICE_ADD("ppi", I8255A, 0 )
-	MCFG_I8255_OUT_PORTA_CB(DEVWRITE8("cent_data_out", output_latch_device, write)) // parallel port
-	MCFG_I8255_OUT_PORTB_CB(WRITE8(excali64_state, ppib_w))
-	MCFG_I8255_IN_PORTC_CB(READ8(excali64_state, ppic_r))
-	MCFG_I8255_OUT_PORTC_CB(WRITE8(excali64_state, ppic_w))
+	i8255_device &ppi(I8255A(config, "ppi"));
+	ppi.out_pa_callback().set("cent_data_out", FUNC(output_latch_device::write)); // parallel port
+	ppi.out_pb_callback().set(FUNC(excali64_state::ppib_w));
+	ppi.in_pc_callback().set(FUNC(excali64_state::ppic_r));
+	ppi.out_pc_callback().set(FUNC(excali64_state::ppic_w));
 
 	/* sound hardware */
-	MCFG_SPEAKER_STANDARD_MONO("mono")
-	MCFG_SOUND_ADD("speaker", SPEAKER_SOUND, 0)
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.50)
-	MCFG_SOUND_WAVE_ADD(WAVE_TAG, "cassette")
-	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.05)
+	SPEAKER(config, "mono").front_center();
+	SPEAKER_SOUND(config, "speaker").add_route(ALL_OUTPUTS, "mono", 0.50);
 
 	/* Video hardware */
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_REFRESH_RATE(50)
-	MCFG_SCREEN_VBLANK_TIME(ATTOSECONDS_IN_USEC(2500)) /* not accurate */
-	MCFG_SCREEN_SIZE(80*8, 24*12)
-	MCFG_SCREEN_VISIBLE_AREA(0, 80*8-1, 0, 24*12-1)
-	MCFG_SCREEN_UPDATE_DEVICE("crtc", mc6845_device, screen_update)
-	MCFG_PALETTE_ADD("palette", 40)
-	MCFG_PALETTE_INIT_OWNER(excali64_state, excali64)
-	MCFG_GFXDECODE_ADD("gfxdecode", "palette", excali64)
-	MCFG_MC6845_ADD("crtc", MC6845, "screen", XTAL_16MHz / 16) // 1MHz for lowres; 2MHz for highres
-	MCFG_MC6845_SHOW_BORDER_AREA(false)
-	MCFG_MC6845_CHAR_WIDTH(8)
-	MCFG_MC6845_UPDATE_ROW_CB(excali64_state, update_row)
-	MCFG_MC6845_OUT_HSYNC_CB(WRITELINE(excali64_state, crtc_hs))
-	MCFG_MC6845_OUT_VSYNC_CB(WRITELINE(excali64_state, crtc_vs))
+	screen_device &screen(SCREEN(config, "screen", SCREEN_TYPE_RASTER));
+	screen.set_refresh_hz(50);
+	screen.set_vblank_time(ATTOSECONDS_IN_USEC(2500)); /* not accurate */
+	screen.set_size(80*8, 24*12);
+	screen.set_visarea_full();
+	screen.set_screen_update("crtc", FUNC(mc6845_device::screen_update));
+
+	PALETTE(config, m_palette, FUNC(excali64_state::excali64_palette), 40);
+	GFXDECODE(config, "gfxdecode", m_palette, gfx_excali64);
+
+	MC6845(config, m_crtc, 16_MHz_XTAL / 16); // 1MHz for lowres; 2MHz for highres
+	m_crtc->set_screen("screen");
+	m_crtc->set_show_border_area(false);
+	m_crtc->set_char_width(8);
+	m_crtc->set_update_row_callback(FUNC(excali64_state::update_row));
+	m_crtc->out_hsync_callback().set(FUNC(excali64_state::crtc_hs));
+	m_crtc->out_vsync_callback().set(FUNC(excali64_state::crtc_vs));
 
 	/* Devices */
-	MCFG_CASSETTE_ADD( "cassette" )
+	CASSETTE(config, m_cass);
+	m_cass->add_route(ALL_OUTPUTS, "mono", 0.05);
 
-	MCFG_WD2793_ADD("fdc", XTAL_16MHz / 16)
-	MCFG_WD_FDC_DRQ_CALLBACK(DEVWRITELINE("dma", z80dma_device, rdy_w))
-	MCFG_FLOPPY_DRIVE_ADD("fdc:0", excali64_floppies, "525qd", excali64_state::floppy_formats)
-	MCFG_FLOPPY_DRIVE_SOUND(true)
-	MCFG_FLOPPY_DRIVE_ADD("fdc:1", excali64_floppies, "525qd", excali64_state::floppy_formats)
-	MCFG_FLOPPY_DRIVE_SOUND(true)
+	WD2793(config, m_fdc, 16_MHz_XTAL / 8);
+	m_fdc->drq_wr_callback().set(m_dma, FUNC(z80dma_device::rdy_w));
+	FLOPPY_CONNECTOR(config, "fdc:0", excali64_floppies, "525qd", excali64_state::floppy_formats).enable_sound(true);
+	FLOPPY_CONNECTOR(config, "fdc:1", excali64_floppies, "525qd", excali64_state::floppy_formats).enable_sound(true);
 
-	MCFG_DEVICE_ADD("dma", Z80DMA, XTAL_16MHz/4)
-	MCFG_Z80DMA_OUT_BUSREQ_CB(WRITELINE(excali64_state, busreq_w))
-	MCFG_Z80DMA_IN_MREQ_CB(READ8(excali64_state, memory_read_byte))
-	MCFG_Z80DMA_OUT_MREQ_CB(WRITE8(excali64_state, memory_write_byte))
-	MCFG_Z80DMA_IN_IORQ_CB(READ8(excali64_state, io_read_byte))
-	MCFG_Z80DMA_OUT_IORQ_CB(WRITE8(excali64_state, io_write_byte))
+	Z80DMA(config, m_dma, 16_MHz_XTAL / 4);
+	m_dma->out_busreq_callback().set(FUNC(excali64_state::busreq_w));
+	m_dma->in_mreq_callback().set(FUNC(excali64_state::memory_read_byte));
+	m_dma->out_mreq_callback().set(FUNC(excali64_state::memory_write_byte));
+	m_dma->in_iorq_callback().set(FUNC(excali64_state::io_read_byte));
+	m_dma->out_iorq_callback().set(FUNC(excali64_state::io_write_byte));
 
-	MCFG_DEVICE_ADD("u12", TTL74123, 0)
-	MCFG_TTL74123_CONNECTION_TYPE(TTL74123_GROUNDED)    /* Hook up type (no idea what this means) */
-	MCFG_TTL74123_RESISTOR_VALUE(RES_K(100))               /* resistor connected between RCext & 5v */
-	MCFG_TTL74123_CAPACITOR_VALUE(CAP_U(100))               /* capacitor connected between Cext and RCext */
-	MCFG_TTL74123_A_PIN_VALUE(0)                  /* A pin - grounded */
-	MCFG_TTL74123_B_PIN_VALUE(1)                  /* B pin - driven by port e4 bit 5 */
-	MCFG_TTL74123_CLEAR_PIN_VALUE(1)                  /* Clear pin - pulled high */
-	MCFG_TTL74123_OUTPUT_CHANGED_CB(WRITE8(excali64_state, motor_w))
+	TTL74123(config, m_u12, 0);
+	m_u12->set_connection_type(TTL74123_GROUNDED);  /* Hook up type (no idea what this means) */
+	m_u12->set_resistor_value(RES_K(100));          /* resistor connected between RCext & 5v */
+	m_u12->set_capacitor_value(CAP_U(100));         /* capacitor connected between Cext and RCext */
+	m_u12->set_a_pin_value(0);                      /* A pin - grounded */
+	m_u12->set_b_pin_value(1);                      /* B pin - driven by port e4 bit 5 */
+	m_u12->set_clear_pin_value(1);                  /* Clear pin - pulled high */
+	m_u12->out_cb().set(FUNC(excali64_state::motor_w));
 
-	MCFG_CENTRONICS_ADD("centronics", centronics_devices, "printer")
-	MCFG_CENTRONICS_BUSY_HANDLER(WRITELINE(excali64_state, cent_busy_w))
-	MCFG_CENTRONICS_OUTPUT_LATCH_ADD("cent_data_out", "centronics")
-MACHINE_CONFIG_END
+	CENTRONICS(config, m_centronics, centronics_devices, "printer");
+	m_centronics->busy_handler().set(FUNC(excali64_state::cent_busy_w));
+
+	output_latch_device &cent_data_out(OUTPUT_LATCH(config, "cent_data_out"));
+	m_centronics->set_output_latch(cent_data_out);
+
+	SOFTWARE_LIST(config, "flop_list").set_original("excalibur64");
+}
 
 /* ROM definition */
 ROM_START( excali64 )
@@ -636,9 +663,6 @@ ROM_START( excali64 )
 	// patch out the protection
 	ROM_FILL(0x3ce7, 1, 0)
 
-	ROM_REGION(0x10000, "rambank", ROMREGION_ERASE00)
-	ROM_REGION(0xA000, "videoram", ROMREGION_ERASE00)
-
 	ROM_REGION(0x1020, "chargen", 0)
 	ROM_LOAD( "genex_3.ic43", 0x0000, 0x1000, CRC(b91619a9) SHA1(2ced636cb7b94ba9d329868d7ecf79963cefe9d9) )
 	ROM_LOAD( "hm7603.ic55",  0x1000, 0x0020, CRC(c74f47dc) SHA1(331ff3c913846191ddd97cacb80bd19438c1ff71) )
@@ -646,5 +670,5 @@ ROM_END
 
 /* Driver */
 
-//    YEAR  NAME      PARENT  COMPAT   MACHINE    INPUT     CLASS           INIT  COMPANY          FULLNAME        FLAGS
-COMP( 1984, excali64, 0,      0,       excali64,  excali64, excali64_state, 0,    "BGR Computers", "Excalibur 64", 0 )
+//    YEAR  NAME      PARENT  COMPAT  MACHINE   INPUT     CLASS           INIT        COMPANY          FULLNAME        FLAGS
+COMP( 1984, excali64, 0,      0,      excali64, excali64, excali64_state, empty_init, "BGR Computers", "Excalibur 64", MACHINE_SUPPORTS_SAVE )

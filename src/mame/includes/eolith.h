@@ -4,86 +4,95 @@
 #include "cpu/mcs51/mcs51.h"
 #include "machine/timer.h"
 #include "sound/qs1000.h"
+#include "emupal.h"
 #include "screen.h"
 
 class eolith_state : public driver_device
 {
 public:
 	eolith_state(const machine_config &mconfig, device_type type, const char *tag)
-		:   driver_device(mconfig, type, tag),
-			m_eepromoutport(*this, "EEPROMOUT"),
-			m_qs1000(*this, "qs1000"),
-			m_maincpu(*this, "maincpu"),
-			m_soundcpu(*this, "soundcpu"),
-			m_screen(*this, "screen"),
-			m_palette(*this, "palette"),
-			m_in0(*this, "IN0"),
-			m_penx1port(*this, "PEN_X_P1"),
-			m_peny1port(*this, "PEN_Y_P1"),
-			m_penx2port(*this, "PEN_X_P2"),
-			m_peny2port(*this, "PEN_Y_P2"),
-			m_sndbank(*this, "sound_bank")
-		{ }
+		: driver_device(mconfig, type, tag)
+		, m_maincpu(*this, "maincpu")
+		, m_screen(*this, "screen")
+		, m_palette(*this, "palette")
+		, m_qs1000(*this, "qs1000")
+		, m_eepromoutport(*this, "EEPROMOUT")
+		, m_soundcpu(*this, "soundcpu")
+		, m_in0(*this, "IN0")
+		, m_penxport(*this, "PEN_X_P%u", 1)
+		, m_penyport(*this, "PEN_Y_P%u", 1)
+		, m_led(*this, "led0")
+		, m_sndbank(*this, "sound_bank")
+	{
+	}
 
-	DECLARE_CUSTOM_INPUT_MEMBER(eolith_speedup_getvblank);
-	DECLARE_CUSTOM_INPUT_MEMBER(stealsee_speedup_getvblank);
+	void ironfort(machine_config &config);
+	void eolith50(machine_config &config);
+	void eolith45(machine_config &config);
+	void hidctch3(machine_config &config);
 
-	DECLARE_READ32_MEMBER(eolith_custom_r);
-	DECLARE_WRITE32_MEMBER(systemcontrol_w);
-	DECLARE_WRITE32_MEMBER(sound_w);
-	DECLARE_READ32_MEMBER(hidctch3_pen1_r);
-	DECLARE_READ32_MEMBER(hidctch3_pen2_r);
-	DECLARE_WRITE32_MEMBER(eolith_vram_w);
-	DECLARE_READ32_MEMBER(eolith_vram_r);
-	DECLARE_READ8_MEMBER(sound_cmd_r);
-	DECLARE_WRITE8_MEMBER(sound_p1_w);
-	DECLARE_READ8_MEMBER(qs1000_p1_r);
-	DECLARE_WRITE8_MEMBER(qs1000_p1_w);
-	DECLARE_WRITE8_MEMBER(soundcpu_to_qs1000);
+	void init_eolith();
+	void init_landbrk();
+	void init_hidctch2();
+	void init_hidnc2k();
+	void init_landbrka();
+	void init_landbrkb();
 
-	DECLARE_DRIVER_INIT(eolith);
-	DECLARE_DRIVER_INIT(landbrk);
-	DECLARE_DRIVER_INIT(hidctch3);
-	DECLARE_DRIVER_INIT(hidctch2);
-	DECLARE_DRIVER_INIT(hidnc2k);
-	DECLARE_DRIVER_INIT(landbrka);
-	DECLARE_DRIVER_INIT(landbrkb);
+	DECLARE_READ_LINE_MEMBER(speedup_vblank_r);
+	DECLARE_READ_LINE_MEMBER(stealsee_speedup_vblank_r);
+
+	void speedup_read();
+	void init_speedup();
+
+protected:
+
+	required_device<cpu_device> m_maincpu;
+	required_device<screen_device> m_screen;
+	required_device<palette_device> m_palette;
+	optional_device<qs1000_device> m_qs1000;
+	optional_ioport m_eepromoutport;
+	TIMER_DEVICE_CALLBACK_MEMBER(eolith_speedup);
+
+private:
+
+	uint32_t eolith_custom_r();
+	void systemcontrol_w(uint32_t data);
+	template<int Player> uint32_t hidctch3_pen_r();
+	void eolith_vram_w(offs_t offset, uint16_t data, uint16_t mem_mask = ~0);
+	uint16_t eolith_vram_r(offs_t offset);
+	void sound_p1_w(uint8_t data);
+	uint8_t qs1000_p1_r();
+	void qs1000_p1_w(uint8_t data);
+	void soundcpu_to_qs1000(uint8_t data);
 
 	DECLARE_MACHINE_RESET(eolith);
 	DECLARE_VIDEO_START(eolith);
 
-	TIMER_DEVICE_CALLBACK_MEMBER(eolith_speedup);
 
 	uint32_t screen_update_eolith(screen_device &screen, bitmap_ind16 &bitmap, const rectangle &cliprect);
 
-protected:
-	// shared with eolith16.cpp, vegaeo.cpp
-	optional_ioport m_eepromoutport;
-	optional_device<qs1000_device> m_qs1000;
+	void eolith_map(address_map &map);
+	void hidctch3_map(address_map &map);
+	void sound_io_map(address_map &map);
+	void sound_prg_map(address_map &map);
 
-	void speedup_read();
-	void init_speedup();
+	virtual void machine_start() override;
+	// shared with eolith16.cpp, vegaeo.cpp
+
 	void patch_mcu_protection(uint32_t address);
 
-private:
-	required_device<cpu_device> m_maincpu;
 	optional_device<i8032_device> m_soundcpu;
-	required_device<screen_device> m_screen;
-	required_device<palette_device> m_palette;
 
 	optional_ioport m_in0; // klondkp doesn't have it
-	optional_ioport m_penx1port;
-	optional_ioport m_peny1port;
-	optional_ioport m_penx2port;
-	optional_ioport m_peny2port;
+	optional_ioport_array<2> m_penxport;
+	optional_ioport_array<2> m_penyport;
+	output_finder<> m_led;
 
 	optional_memory_bank m_sndbank;
 
 	int m_coin_counter_bit;
+	std::unique_ptr<uint16_t[]> m_vram;
 	int m_buffer;
-	std::unique_ptr<uint32_t[]> m_vram;
-
-	uint8_t m_sound_data;
 
 	// speedups - see machine/eolithsp.c
 	int m_speedup_address;

@@ -17,10 +17,6 @@
 
 #include <list>
 
-#define MCFG_H8_DTC_ADD( _tag, intc, irq ) \
-	MCFG_DEVICE_ADD( _tag, H8_DTC, 0 ) \
-	downcast<h8_dtc_device *>(device)->set_info(intc, irq);
-
 struct h8_dtc_state {
 	uint32_t base, sra, dar, cr;
 	int32_t incs, incd;
@@ -34,12 +30,17 @@ public:
 	enum { DTC_CHAINED = 1000 };
 
 	h8_dtc_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+	h8_dtc_device(const machine_config &mconfig, const char *tag, device_t *owner, const char *intc, int irq)
+		: h8_dtc_device(mconfig, tag, owner, 0)
+	{
+		set_info(intc, irq);
+	}
 	void set_info(const char *intc, int irq);
 
-	DECLARE_READ8_MEMBER(dtcer_r);
-	DECLARE_WRITE8_MEMBER(dtcer_w);
-	DECLARE_READ8_MEMBER(dtvecr_r);
-	DECLARE_WRITE8_MEMBER(dtvecr_w);
+	uint8_t dtcer_r(offs_t offset);
+	void dtcer_w(offs_t offset, uint8_t data);
+	uint8_t dtvecr_r();
+	void dtvecr_w(uint8_t data);
 
 	bool trigger_dtc(int vector);
 	void count_done(int id);

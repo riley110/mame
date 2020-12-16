@@ -7,7 +7,6 @@
 ****************************************************************************/
 
 #include "emu.h"
-#include "machine/atarigen.h"
 #include "includes/toobin.h"
 
 
@@ -23,7 +22,7 @@ TILE_GET_INFO_MEMBER(toobin_state::get_alpha_tile_info)
 	uint16_t data = m_alpha_tilemap->basemem_read(tile_index);
 	int code = data & 0x3ff;
 	int color = (data >> 12) & 0x0f;
-	SET_TILE_INFO_MEMBER(2, code, color, (data >> 10) & 1);
+	tileinfo.set(2, code, color, (data >> 10) & 1);
 }
 
 
@@ -32,7 +31,7 @@ TILE_GET_INFO_MEMBER(toobin_state::get_playfield_tile_info)
 	uint32_t data = m_playfield_tilemap->basemem_read(tile_index);
 	int code = data & 0x3fff;
 	int color = (data >> 16) & 0x0f;
-	SET_TILE_INFO_MEMBER(0, code, color, TILE_FLIPYX(data >> 14));
+	tileinfo.set(0, code, color, TILE_FLIPYX(data >> 14));
 	tileinfo.category = (data >> 20) & 3;
 }
 
@@ -78,7 +77,7 @@ const atari_motion_objects_config toobin_state::s_mob_config =
 	0                   /* resulting value to indicate "special" */
 };
 
-VIDEO_START_MEMBER(toobin_state,toobin)
+void toobin_state::video_start()
 {
 	/* allocate a playfield bitmap for rendering */
 	m_screen->register_screen_bitmap(m_pfbitmap);
@@ -94,12 +93,10 @@ VIDEO_START_MEMBER(toobin_state,toobin)
  *
  *************************************/
 
-WRITE16_MEMBER( toobin_state::paletteram_w )
+void toobin_state::paletteram_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
-	int newword;
-
-	COMBINE_DATA(&m_generic_paletteram_16[offset]);
-	newword = m_generic_paletteram_16[offset];
+	COMBINE_DATA(&m_paletteram[offset]);
+	uint16_t newword = m_paletteram[offset];
 
 	{
 		int red =   (((newword >> 10) & 31) * 224) >> 5;
@@ -119,16 +116,14 @@ WRITE16_MEMBER( toobin_state::paletteram_w )
 }
 
 
-WRITE16_MEMBER( toobin_state::intensity_w )
+void toobin_state::intensity_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
-	int i;
-
 	if (ACCESSING_BITS_0_7)
 	{
 		m_brightness = (double)(~data & 0x1f) / 31.0;
 
-		for (i = 0; i < 0x400; i++)
-			if (!(m_generic_paletteram_16[i] & 0x8000))
+		for (int i = 0; i < 0x400; i++)
+			if (!BIT(m_paletteram[i], 15))
 				m_palette->set_pen_contrast(i, m_brightness);
 	}
 }
@@ -141,7 +136,7 @@ WRITE16_MEMBER( toobin_state::intensity_w )
  *
  *************************************/
 
-WRITE16_MEMBER( toobin_state::xscroll_w )
+void toobin_state::xscroll_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	uint16_t oldscroll = *m_xscroll;
 	uint16_t newscroll = oldscroll;
@@ -160,7 +155,7 @@ WRITE16_MEMBER( toobin_state::xscroll_w )
 }
 
 
-WRITE16_MEMBER( toobin_state::yscroll_w )
+void toobin_state::yscroll_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	uint16_t oldscroll = *m_yscroll;
 	uint16_t newscroll = oldscroll;
@@ -186,7 +181,7 @@ WRITE16_MEMBER( toobin_state::yscroll_w )
  *
  *************************************/
 
-WRITE16_MEMBER( toobin_state::slip_w )
+void toobin_state::slip_w(offs_t offset, uint16_t data, uint16_t mem_mask)
 {
 	uint16_t oldslip = m_mob->slipram(offset);
 	uint16_t newslip = oldslip;
@@ -224,13 +219,13 @@ uint32_t toobin_state::screen_update(screen_device &screen, bitmap_rgb32 &bitmap
 	/* draw and merge the MO */
 	bitmap_ind16 &mobitmap = m_mob->bitmap();
 	const pen_t *palette = m_palette->pens();
-	for (int y = cliprect.min_y; y <= cliprect.max_y; y++)
+	for (int y = cliprect.top(); y <= cliprect.bottom(); y++)
 	{
 		uint32_t *dest = &bitmap.pix32(y);
 		uint16_t *mo = &mobitmap.pix16(y);
 		uint16_t *pf = &m_pfbitmap.pix16(y);
 		uint8_t *pri = &priority_bitmap.pix8(y);
-		for (int x = cliprect.min_x; x <= cliprect.max_x; x++)
+		for (int x = cliprect.left(); x <= cliprect.right(); x++)
 		{
 			uint16_t pix = pf[x];
 			if (mo[x] != 0xffff)

@@ -13,8 +13,6 @@
 
 #include "bus/centronics/ctronics.h"
 
-#define MCFG_PC_LPT_IRQ_HANDLER(_devcb) \
-	devcb = &pc_lpt_device::set_irq_handler(*device, DEVCB_##_devcb);
 
 /***************************************************************************
     DEVICE CONFIGURATION MACROS
@@ -23,19 +21,19 @@
 class pc_lpt_device : public device_t
 {
 public:
-	pc_lpt_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+	pc_lpt_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock = 0);
 
-	// static configuration helpers
-	template <class Object> static devcb_base &set_irq_handler(device_t &device, Object &&cb) { return downcast<pc_lpt_device &>(device).m_irq_handler.set_callback(std::forward<Object>(cb)); }
+	// configuration helpers
+	auto irq_handler() { return m_irq_handler.bind(); }
 
-	DECLARE_READ8_MEMBER( read );
-	DECLARE_WRITE8_MEMBER( write );
+	uint8_t read(offs_t offset);
+	void write(offs_t offset, uint8_t data);
 
-	DECLARE_READ8_MEMBER( data_r );
-	DECLARE_WRITE8_MEMBER( data_w );
-	DECLARE_READ8_MEMBER( status_r );
-	DECLARE_READ8_MEMBER( control_r );
-	DECLARE_WRITE8_MEMBER( control_w );
+	uint8_t data_r();
+	void data_w(uint8_t data);
+	uint8_t status_r();
+	uint8_t control_r( );
+	void control_w(uint8_t data);
 
 protected:
 	// device-level overrides
@@ -45,8 +43,8 @@ protected:
 
 private:
 	void update_irq();
-	DECLARE_WRITE_LINE_MEMBER( write_irq_enabled );
-	DECLARE_WRITE_LINE_MEMBER( write_centronics_ack );
+	void write_irq_enabled(int state);
+	void write_centronics_ack(int state);
 
 	enum
 	{

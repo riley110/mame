@@ -14,46 +14,30 @@
 #pragma once
 
 
-
-//**************************************************************************
-//  INTERFACE CONFIGURATION MACROS
-//**************************************************************************
-
-#define MCFG_MACPDS_BUS_ADD(_tag, _cputag) \
-	MCFG_DEVICE_ADD(_tag, MACPDS, 0) \
-	macpds_device::static_set_cputag(*device, _cputag);
-
-#define MCFG_MACPDS_SLOT_ADD(_nbtag, _tag, _slot_intf, _def_slot) \
-	MCFG_DEVICE_ADD(_tag, MACPDS_SLOT, 0) \
-	MCFG_DEVICE_SLOT_INTERFACE(_slot_intf, _def_slot, false) \
-	macpds_slot_device::static_set_macpds_slot(*device, _nbtag, _tag);
-
-#define MCFG_MACPDS_SLOT_REMOVE(_tag)    \
-	MCFG_DEVICE_REMOVE(_tag)
-
-#define MCFG_MACPDS_ONBOARD_ADD(_nbtag, _tag, _dev_type, _def_inp) \
-	MCFG_DEVICE_ADD(_tag, _dev_type, 0) \
-	MCFG_DEVICE_INPUT_DEFAULTS(_def_inp) \
-	device_macpds_card_interface::static_set_macpds_tag(*device, _nbtag, _tag);
-
-#define MCFG_MACPDS_BUS_REMOVE(_tag) \
-	MCFG_DEVICE_REMOVE(_tag)
-
 //**************************************************************************
 //  TYPE DEFINITIONS
 //**************************************************************************
 
 class macpds_device;
 
-class macpds_slot_device : public device_t,
-							public device_slot_interface
+class macpds_slot_device : public device_t, public device_slot_interface
 {
 public:
 	// construction/destruction
+	template <typename T>
+	macpds_slot_device(const machine_config &mconfig, const char *tag, device_t *owner, const char *nbtag, T &&opts, const char *dflt)
+		: macpds_slot_device(mconfig, tag, owner, (uint32_t)0)
+	{
+		option_reset();
+		opts(*this);
+		set_default_option(dflt);
+		set_macpds_slot(nbtag, tag);
+	}
+
 	macpds_slot_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 	// inline configuration
-	static void static_set_macpds_slot(device_t &device, const char *tag, const char *slottag);
+	void set_macpds_slot(const char *tag, const char *slottag) { m_macpds_tag = tag; m_macpds_slottag = slottag; }
 
 protected:
 	macpds_slot_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock);
@@ -76,14 +60,20 @@ class macpds_device : public device_t
 {
 public:
 	// construction/destruction
+	macpds_device(const machine_config &mconfig, const char *tag, device_t *owner, const char *cputag)
+		: macpds_device(mconfig, tag, owner, (uint32_t)0)
+	{
+		set_cputag(cputag);
+	}
+
 	macpds_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+
 	~macpds_device() { m_device_list.detach_all(); }
 	// inline configuration
-	static void static_set_cputag(device_t &device, const char *tag);
+	void set_cputag(const char *tag) { m_cputag = tag; }
 
 	void add_macpds_card(device_macpds_card_interface *card);
-	void install_device(offs_t start, offs_t end, read8_delegate rhandler, write8_delegate whandler, uint32_t mask=0xffffffff);
-	void install_device(offs_t start, offs_t end, read16_delegate rhandler, write16_delegate whandler, uint32_t mask=0xffffffff);
+	template<typename R, typename W> void install_device(offs_t start, offs_t end, R rhandler, W whandler, uint32_t mask=0xffffffff);
 	void install_bank(offs_t start, offs_t end, const char *tag, uint8_t *data);
 	void set_irq_line(int line, int state);
 
@@ -108,7 +98,7 @@ DECLARE_DEVICE_TYPE(MACPDS, macpds_device)
 // ======================> device_macpds_card_interface
 
 // class representing interface-specific live macpds card
-class device_macpds_card_interface : public device_slot_card_interface
+class device_macpds_card_interface : public device_interface
 {
 	friend class macpds_device;
 	template <class ElememtType> friend class simple_list;
@@ -125,7 +115,7 @@ public:
 	void install_rom(device_t *dev, const char *romregion, uint32_t addr);
 
 	// inline configuration
-	static void static_set_macpds_tag(device_t &device, const char *tag, const char *slottag);
+	void set_macpds_tag(const char *tag, const char *slottag) { m_macpds_tag = tag; m_macpds_slottag = slottag; }
 
 protected:
 	device_macpds_card_interface(const machine_config &mconfig, device_t &device);

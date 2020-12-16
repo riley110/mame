@@ -1,4 +1,4 @@
-// license:GPL-2.0+
+// license:BSD-3-Clause
 // copyright-holders:Dirk Best
 /***************************************************************************
 
@@ -12,26 +12,6 @@
 #pragma once
 
 /***************************************************************************
-    DEVICE CONFIGURATION MACROS
-***************************************************************************/
-
-#define MCFG_E05A03_NLQ_LP_CALLBACK(_write) \
-	devcb = &e05a03_device::set_nlq_lp_wr_callback(*device, DEVCB_##_write);
-
-#define MCFG_E05A03_PE_LP_CALLBACK(_write) \
-	devcb = &e05a03_device::set_pe_lp_wr_callback(*device, DEVCB_##_write);
-
-#define MCFG_E05A03_RESO_CALLBACK(_write) \
-	devcb = &e05a03_device::set_reso_wr_callback(*device, DEVCB_##_write);
-
-#define MCFG_E05A03_PE_CALLBACK(_write) \
-	devcb = &e05a03_device::set_pe_wr_callback(*device, DEVCB_##_write);
-
-#define MCFG_E05A03_DATA_CALLBACK(_read) \
-	devcb = &e05a03_device::set_data_rd_callback(*device, DEVCB_##_read);
-
-
-/***************************************************************************
     TYPE DEFINITIONS
 ***************************************************************************/
 
@@ -40,14 +20,14 @@ class e05a03_device : public device_t
 public:
 	e05a03_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	template <class Object> static devcb_base &set_nlq_lp_wr_callback(device_t &device, Object &&cb) { return downcast<e05a03_device &>(device).m_write_nlq_lp.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_pe_lp_wr_callback(device_t &device, Object &&cb) { return downcast<e05a03_device &>(device).m_write_pe_lp.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_reso_wr_callback(device_t &device, Object &&cb) { return downcast<e05a03_device &>(device).m_write_reso.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_pe_wr_callback(device_t &device, Object &&cb) { return downcast<e05a03_device &>(device).m_write_pe.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_data_rd_callback(device_t &device, Object &&cb) { return downcast<e05a03_device &>(device).m_read_data.set_callback(std::forward<Object>(cb)); }
+	auto nlq_lp_wr_callback() { return m_write_nlq_lp.bind(); }
+	auto pe_lp_wr_callback() { return m_write_pe_lp.bind(); }
+	auto reso_wr_callback() { return m_write_reso.bind(); }
+	auto pe_wr_callback() { return m_write_pe.bind(); }
+	auto data_rd_callback() { return m_read_data.bind(); }
 
-	DECLARE_WRITE8_MEMBER( write );
-	DECLARE_READ8_MEMBER( read );
+	void write(offs_t offset, uint8_t data);
+	uint8_t read(offs_t offset);
 
 	WRITE_LINE_MEMBER( home_w ); /* home position signal */
 	WRITE_LINE_MEMBER( fire_w ); /* printhead solenoids trigger */

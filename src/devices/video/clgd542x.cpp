@@ -33,7 +33,7 @@
 
 #define IBM8514_LINE_LENGTH (m_vga->offset())
 
-#define CHAR_WIDTH ((vga.sequencer.data[1]&1)?8:9)
+#define VGA_CH_WIDTH ((vga.sequencer.data[1]&1)?8:9)
 
 #define TEXT_COLUMNS (vga.crtc.horz_disp_end+1)
 #define TEXT_START_ADDRESS (vga.crtc.start_addr<<3)
@@ -43,6 +43,7 @@
 
 DEFINE_DEVICE_TYPE(CIRRUS_GD5428, cirrus_gd5428_device, "clgd5428", "Cirrus Logic GD5428")
 DEFINE_DEVICE_TYPE(CIRRUS_GD5430, cirrus_gd5430_device, "clgd5430", "Cirrus Logic GD5430")
+DEFINE_DEVICE_TYPE(CIRRUS_GD5446, cirrus_gd5446_device, "clgd5446", "Cirrus Logic GD5446")
 
 
 cirrus_gd5428_device::cirrus_gd5428_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
@@ -60,23 +61,10 @@ cirrus_gd5430_device::cirrus_gd5430_device(const machine_config &mconfig, const 
 {
 }
 
-MACHINE_CONFIG_START( pcvideo_cirrus_gd5428 )
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_RAW_PARAMS(XTAL_25_1748MHz,900,0,640,526,0,480)
-	MCFG_SCREEN_UPDATE_DEVICE("vga", cirrus_gd5428_device, screen_update)
-
-	MCFG_PALETTE_ADD("palette", 0x100)
-	MCFG_DEVICE_ADD("vga", CIRRUS_GD5428, 0)
-MACHINE_CONFIG_END
-
-MACHINE_CONFIG_START( pcvideo_cirrus_gd5430 )
-	MCFG_SCREEN_ADD("screen", RASTER)
-	MCFG_SCREEN_RAW_PARAMS(XTAL_25_1748MHz,900,0,640,526,0,480)
-	MCFG_SCREEN_UPDATE_DEVICE("vga", cirrus_gd5430_device, screen_update)
-
-	MCFG_PALETTE_ADD("palette", 0x100)
-	MCFG_DEVICE_ADD("vga", CIRRUS_GD5430, 0)
-MACHINE_CONFIG_END
+cirrus_gd5446_device::cirrus_gd5446_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock)
+	: cirrus_gd5428_device(mconfig, CIRRUS_GD5446, tag, owner, clock)
+{
+}
 
 void cirrus_gd5428_device::device_start()
 {
@@ -84,13 +72,13 @@ void cirrus_gd5428_device::device_start()
 
 	int i;
 	for (i = 0; i < 0x100; i++)
-		m_palette->set_pen_color(i, 0, 0, 0);
+		set_pen_color(i, 0, 0, 0);
 
 	// Avoid an infinite loop when displaying.  0 is not possible anyway.
 	vga.crtc.maximum_scan_line = 1;
 
 	// copy over interfaces
-	vga.read_dipswitch = read8_delegate(); //read_dipswitch;
+	vga.read_dipswitch.set(nullptr); //read_dipswitch;
 	vga.svga_intf.seq_regcount = 0x1f;
 	vga.svga_intf.crtc_regcount = 0x2d;
 	vga.svga_intf.vram_size = 0x200000;
@@ -113,6 +101,13 @@ void cirrus_gd5430_device::device_start()
 	cirrus_gd5428_device::device_start();
 	m_chip_id = 0xa0;  // GD5430 - Rev 0
 }
+
+void cirrus_gd5446_device::device_start()
+{
+	cirrus_gd5428_device::device_start();
+	m_chip_id = 0x80 | 0x39;  // GD5446
+}
+
 
 void cirrus_gd5428_device::device_reset()
 {
@@ -216,6 +211,7 @@ void cirrus_gd5428_device::cirrus_define_video_mode()
 {
 	uint8_t divisor = 1;
 	float clock;
+	const XTAL xtal = XTAL(14'318'181);
 	uint8_t clocksel = (vga.miscellaneous_output & 0xc) >> 2;
 
 	svga.rgb8_en = 0;
@@ -225,14 +221,13 @@ void cirrus_gd5428_device::cirrus_define_video_mode()
 	svga.rgb32_en = 0;
 
 	if(gc_locked || m_vclk_num[clocksel] == 0 || m_vclk_denom[clocksel] == 0)
-		clock = (vga.miscellaneous_output & 0xc) ? XTAL_28_63636MHz : XTAL_25_1748MHz;
+		clock = ((vga.miscellaneous_output & 0xc) ? xtal*2: xtal*1.75).dvalue();
 	else
 	{
 		int numerator = m_vclk_num[clocksel] & 0x7f;
 		int denominator = (m_vclk_denom[clocksel] & 0x3e) >> 1;
 		int mul = m_vclk_denom[clocksel] & 0x01 ? 2 : 1;
-		clock = 14.31818f * ((float)numerator / ((float)denominator * mul));
-		clock *= 1000000;
+		clock = (xtal * numerator / denominator / mul).dvalue();
 	}
 
 	if (!gc_locked && (vga.sequencer.data[0x07] & 0x01))
@@ -928,7 +923,7 @@ void cirrus_gd5428_device::cirrus_gc_reg_write(uint8_t index, uint8_t data)
 	}
 }
 
-READ8_MEMBER(cirrus_gd5428_device::port_03c0_r)
+uint8_t cirrus_gd5428_device::port_03c0_r(offs_t offset)
 {
 	uint8_t res = 0xff;
 
@@ -939,7 +934,7 @@ READ8_MEMBER(cirrus_gd5428_device::port_03c0_r)
 			break;
 		case 0x09:
 			if(!m_ext_palette_enabled)
-				res = vga_device::port_03c0_r(space,offset,mem_mask);
+				res = vga_device::port_03c0_r(offset);
 			else
 			{
 				if (vga.dac.read)
@@ -969,14 +964,14 @@ READ8_MEMBER(cirrus_gd5428_device::port_03c0_r)
 			res = cirrus_gc_reg_read(vga.gc.index);
 			break;
 		default:
-			res = vga_device::port_03c0_r(space,offset,mem_mask);
+			res = vga_device::port_03c0_r(offset);
 			break;
 	}
 
 	return res;
 }
 
-WRITE8_MEMBER(cirrus_gd5428_device::port_03c0_w)
+void cirrus_gd5428_device::port_03c0_w(offs_t offset, uint8_t data)
 {
 	switch(offset)
 	{
@@ -985,7 +980,7 @@ WRITE8_MEMBER(cirrus_gd5428_device::port_03c0_w)
 			break;
 		case 0x09:
 			if(!m_ext_palette_enabled)
-				vga_device::port_03c0_w(space,offset,data,mem_mask);
+				vga_device::port_03c0_w(offset,data);
 			else
 			{
 				if (!vga.dac.read)
@@ -1014,13 +1009,13 @@ WRITE8_MEMBER(cirrus_gd5428_device::port_03c0_w)
 			cirrus_gc_reg_write(vga.gc.index,data);
 			break;
 		default:
-			vga_device::port_03c0_w(space,offset,data,mem_mask);
+			vga_device::port_03c0_w(offset,data);
 			break;
 	}
 	cirrus_define_video_mode();
 }
 
-READ8_MEMBER(cirrus_gd5428_device::port_03b0_r)
+uint8_t cirrus_gd5428_device::port_03b0_r(offs_t offset)
 {
 	uint8_t res = 0xff;
 
@@ -1032,7 +1027,7 @@ READ8_MEMBER(cirrus_gd5428_device::port_03b0_r)
 				res = cirrus_crtc_reg_read(vga.crtc.index);
 				break;
 			default:
-				res = vga_device::port_03b0_r(space,offset,mem_mask);
+				res = vga_device::port_03b0_r(offset);
 				break;
 		}
 	}
@@ -1040,7 +1035,7 @@ READ8_MEMBER(cirrus_gd5428_device::port_03b0_r)
 	return res;
 }
 
-READ8_MEMBER(cirrus_gd5428_device::port_03d0_r)
+uint8_t cirrus_gd5428_device::port_03d0_r(offs_t offset)
 {
 	uint8_t res = 0xff;
 
@@ -1052,7 +1047,7 @@ READ8_MEMBER(cirrus_gd5428_device::port_03d0_r)
 				res = cirrus_crtc_reg_read(vga.crtc.index);
 				break;
 			default:
-				res = vga_device::port_03d0_r(space,offset,mem_mask);
+				res = vga_device::port_03d0_r(offset);
 				break;
 		}
 	}
@@ -1060,7 +1055,7 @@ READ8_MEMBER(cirrus_gd5428_device::port_03d0_r)
 	return res;
 }
 
-WRITE8_MEMBER(cirrus_gd5428_device::port_03b0_w)
+void cirrus_gd5428_device::port_03b0_w(offs_t offset, uint8_t data)
 {
 	if (CRTC_PORT_ADDR == 0x3b0)
 	{
@@ -1071,14 +1066,14 @@ WRITE8_MEMBER(cirrus_gd5428_device::port_03b0_w)
 				cirrus_crtc_reg_write(vga.crtc.index,data);
 				break;
 			default:
-				vga_device::port_03b0_w(space,offset,data,mem_mask);
+				vga_device::port_03b0_w(offset,data);
 				break;
 		}
 	}
 	cirrus_define_video_mode();
 }
 
-WRITE8_MEMBER(cirrus_gd5428_device::port_03d0_w)
+void cirrus_gd5428_device::port_03d0_w(offs_t offset, uint8_t data)
 {
 	if (CRTC_PORT_ADDR == 0x3d0)
 	{
@@ -1089,7 +1084,7 @@ WRITE8_MEMBER(cirrus_gd5428_device::port_03d0_w)
 				cirrus_crtc_reg_write(vga.crtc.index,data);
 				break;
 			default:
-				vga_device::port_03d0_w(space,offset,data,mem_mask);
+				vga_device::port_03d0_w(offset,data);
 				break;
 		}
 	}
@@ -1199,14 +1194,14 @@ inline uint8_t cirrus_gd5428_device::cirrus_vga_latch_write(int offs, uint8_t da
 	return res;
 }
 
-READ8_MEMBER(cirrus_gd5428_device::mem_r)
+uint8_t cirrus_gd5428_device::mem_r(offs_t offset)
 {
 	uint32_t addr;
 	uint8_t bank;
 	uint8_t cur_mode = pc_vga_choosevideomode();
 
 	if(gc_locked || offset >= 0x10000 || cur_mode == TEXT_MODE || cur_mode == SCREEN_OFF)
-		return vga_device::mem_r(space,offset,mem_mask);
+		return vga_device::mem_r(offset);
 
 	if(offset >= 0x8000 && offset < 0x10000 && (gc_mode_ext & 0x01)) // if accessing bank 1 (if enabled)
 		bank = gc_bank_1;
@@ -1268,7 +1263,7 @@ READ8_MEMBER(cirrus_gd5428_device::mem_r)
 	if(vga.sequencer.data[4] & 4)
 	{
 		int data;
-		if (!machine().side_effect_disabled())
+		if (!machine().side_effects_disabled())
 		{
 			vga.gc.latch[0]=vga.memory[(offset+addr) % vga.svga_intf.vram_size];
 			vga.gc.latch[1]=vga.memory[((offset+addr)+0x10000) % vga.svga_intf.vram_size];
@@ -1330,7 +1325,7 @@ READ8_MEMBER(cirrus_gd5428_device::mem_r)
 	}
 }
 
-WRITE8_MEMBER(cirrus_gd5428_device::mem_w)
+void cirrus_gd5428_device::mem_w(offs_t offset, uint8_t data)
 {
 	uint32_t addr;
 	uint8_t bank;
@@ -1361,7 +1356,7 @@ WRITE8_MEMBER(cirrus_gd5428_device::mem_w)
 
 	if(gc_locked || offset >= 0x10000 || cur_mode == TEXT_MODE || cur_mode == SCREEN_OFF)
 	{
-		vga_device::mem_w(space,offset,data,mem_mask);
+		vga_device::mem_w(offset,data);
 		return;
 	}
 

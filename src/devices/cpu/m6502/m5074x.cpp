@@ -42,14 +42,8 @@ DEFINE_DEVICE_TYPE(M50741, m50741_device, "m50741", "Mitsubishi M50741")
 m5074x_device::m5074x_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock, address_map_constructor internal_map) :
 	m740_device(mconfig, type, tag, owner, clock),
 	m_program_config("program", ENDIANNESS_LITTLE, 8, 13, 0, internal_map),
-	read_p0(*this),
-	read_p1(*this),
-	read_p2(*this),
-	read_p3(*this),
-	write_p0(*this),
-	write_p1(*this),
-	write_p2(*this),
-	write_p3(*this),
+	m_read_p(*this),
+	m_write_p(*this),
 	m_intctrl(0),
 	m_tmrctrl(0),
 	m_tmr12pre(0),
@@ -70,14 +64,8 @@ m5074x_device::m5074x_device(const machine_config &mconfig, device_type type, co
 
 void m5074x_device::device_start()
 {
-	read_p0.resolve_safe(0);
-	read_p1.resolve_safe(0);
-	read_p2.resolve_safe(0);
-	read_p3.resolve_safe(0);
-	write_p0.resolve_safe();
-	write_p1.resolve_safe();
-	write_p2.resolve_safe();
-	write_p3.resolve_safe();
+	m_read_p.resolve_all_safe(0);
+	m_write_p.resolve_all_safe();
 
 	for (int i = 0; i < NUM_TIMERS; i++)
 	{
@@ -108,6 +96,13 @@ void m5074x_device::device_start()
 	m_last_all_ints = 0;
 }
 
+
+device_memory_interface::space_config_vector m5074x_device::memory_space_config() const
+{
+	return space_config_vector {
+		std::make_pair(AS_PROGRAM, &m_program_config)
+	};
+}
 
 //-------------------------------------------------
 //  device_reset - device-specific reset
@@ -280,50 +275,14 @@ void m5074x_device::recalc_timer(int timer)
 	}
 }
 
-void m5074x_device::send_port(address_space &space, uint8_t offset, uint8_t data)
+void m5074x_device::send_port(uint8_t offset, uint8_t data)
 {
-	switch (offset)
-	{
-		case 0:
-			write_p0(data);
-			break;
-
-		case 1:
-			write_p1(data);
-			break;
-
-		case 2:
-			write_p2(data);
-			break;
-
-		case 3:
-			write_p3(data);
-			break;
-	}
+	m_write_p[offset](data);
 }
 
 uint8_t m5074x_device::read_port(uint8_t offset)
 {
-	uint8_t incoming = 0;
-
-	switch (offset)
-	{
-		case 0:
-			incoming = read_p0();
-			break;
-
-		case 1:
-			incoming = read_p1();
-			break;
-
-		case 2:
-			incoming = read_p2();
-			break;
-
-		case 3:
-			incoming = read_p3();
-			break;
-	}
+	uint8_t incoming = m_read_p[offset]();
 
 	// apply data direction registers
 	incoming &= (m_ddrs[offset] ^ 0xff);
@@ -333,7 +292,7 @@ uint8_t m5074x_device::read_port(uint8_t offset)
 	return incoming;
 }
 
-READ8_MEMBER(m5074x_device::ports_r)
+uint8_t m5074x_device::ports_r(offs_t offset)
 {
 	switch (offset)
 	{
@@ -365,53 +324,53 @@ READ8_MEMBER(m5074x_device::ports_r)
 	return 0xff;
 }
 
-WRITE8_MEMBER(m5074x_device::ports_w)
+void m5074x_device::ports_w(offs_t offset, uint8_t data)
 {
 	switch (offset)
 	{
 		case 0: // p0
-			send_port(space, 0, data & m_ddrs[0]);
+			send_port(0, data & m_ddrs[0]);
 			m_ports[0] = data;
 			break;
 
 		case 1: // p0 ddr
-			send_port(space, 0, m_ports[0] & data);
+			send_port(0, m_ports[0] & data);
 			m_ddrs[0] = data;
 			break;
 
 		case 2: // p1
-			send_port(space, 1, data & m_ddrs[1]);
+			send_port(1, data & m_ddrs[1]);
 			m_ports[1] = data;
 			break;
 
 		case 3: // p1 ddr
-			send_port(space, 1, m_ports[1] & data);
+			send_port(1, m_ports[1] & data);
 			m_ddrs[1] = data;
 			break;
 
 		case 4: // p2
-			send_port(space, 2, data & m_ddrs[2]);
+			send_port(2, data & m_ddrs[2]);
 			m_ports[2] = data;
 			break;
 
 		case 5: // p2 ddr
-			send_port(space, 2, m_ports[2] & data);
+			send_port(2, m_ports[2] & data);
 			m_ddrs[2] = data;
 			break;
 
 		case 8: // p3
-			send_port(space, 3, data & m_ddrs[3]);
+			send_port(3, data & m_ddrs[3]);
 			m_ports[3] = data;
 			break;
 
 		case 9: // p3 ddr
-			send_port(space, 3, m_ports[3] & data);
+			send_port(3, m_ports[3] & data);
 			m_ddrs[3] = data;
 			break;
 	}
 }
 
-READ8_MEMBER(m5074x_device::tmrirq_r)
+uint8_t m5074x_device::tmrirq_r(offs_t offset)
 {
 	switch (offset)
 	{
@@ -440,7 +399,7 @@ READ8_MEMBER(m5074x_device::tmrirq_r)
 	return 0xff;
 }
 
-WRITE8_MEMBER(m5074x_device::tmrirq_w)
+void m5074x_device::tmrirq_w(offs_t offset, uint8_t data)
 {
 //  printf("%02x to tmrirq @ %d\n", data, offset);
 
@@ -482,12 +441,13 @@ WRITE8_MEMBER(m5074x_device::tmrirq_w)
 }
 
 /* M50740 - baseline for this familiy */
-static ADDRESS_MAP_START( m50740_map, AS_PROGRAM, 8, m50740_device )
-	AM_RANGE(0x0000, 0x005f) AM_RAM
-	AM_RANGE(0x00e0, 0x00e9) AM_READWRITE(ports_r, ports_w)
-	AM_RANGE(0x00f9, 0x00ff) AM_READWRITE(tmrirq_r, tmrirq_w)
-	AM_RANGE(0x1400, 0x1fff) AM_ROM AM_REGION(M5074X_INTERNAL_ROM_REGION, 0)
-ADDRESS_MAP_END
+void m50740_device::m50740_map(address_map &map)
+{
+	map(0x0000, 0x005f).ram();
+	map(0x00e0, 0x00e9).rw(FUNC(m50740_device::ports_r), FUNC(m50740_device::ports_w));
+	map(0x00f9, 0x00ff).rw(FUNC(m50740_device::tmrirq_r), FUNC(m50740_device::tmrirq_w));
+	map(0x1400, 0x1fff).rom().region(M5074X_INTERNAL_ROM_REGION, 0);
+}
 
 m50740_device::m50740_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock) :
 	m50740_device(mconfig, M50740, tag, owner, clock)
@@ -495,24 +455,25 @@ m50740_device::m50740_device(const machine_config &mconfig, const char *tag, dev
 }
 
 m50740_device::m50740_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock) :
-	m5074x_device(mconfig, type, tag, owner, clock, ADDRESS_MAP_NAME(m50740_map))
+	m5074x_device(mconfig, type, tag, owner, clock, address_map_constructor(FUNC(m50740_device::m50740_map), this))
 {
 }
 
 /* M50741 - 50740 with a larger internal ROM */
-static ADDRESS_MAP_START( m50741_map, AS_PROGRAM, 8, m50741_device )
-	AM_RANGE(0x0000, 0x005f) AM_RAM
-	AM_RANGE(0x00e0, 0x00e9) AM_READWRITE(ports_r, ports_w)
-	AM_RANGE(0x00f9, 0x00ff) AM_READWRITE(tmrirq_r, tmrirq_w)
-	AM_RANGE(0x1000, 0x1fff) AM_ROM AM_REGION("internal", 0)
-ADDRESS_MAP_END
+void m50741_device::m50741_map(address_map &map)
+{
+	map(0x0000, 0x005f).ram();
+	map(0x00e0, 0x00e9).rw(FUNC(m50741_device::ports_r), FUNC(m50741_device::ports_w));
+	map(0x00f9, 0x00ff).rw(FUNC(m50741_device::tmrirq_r), FUNC(m50741_device::tmrirq_w));
+	map(0x1000, 0x1fff).rom().region("internal", 0);
+}
 
 m50741_device::m50741_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock) :
-	m50741_device(mconfig, M50740, tag, owner, clock)
+	m50741_device(mconfig, M50741, tag, owner, clock)
 {
 }
 
 m50741_device::m50741_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock) :
-	m5074x_device(mconfig, type, tag, owner, clock, ADDRESS_MAP_NAME(m50741_map))
+	m5074x_device(mconfig, type, tag, owner, clock, address_map_constructor(FUNC(m50741_device::m50741_map), this))
 {
 }

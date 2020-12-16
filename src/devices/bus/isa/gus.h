@@ -45,38 +45,6 @@
 #include "isa.h"
 #include "machine/6850acia.h"
 
-#define MCFG_GF1_TXIRQ_HANDLER(_devcb) \
-	devcb = &gf1_device::set_txirq_handler(*device, DEVCB_##_devcb);
-
-#define MCFG_GF1_RXIRQ_HANDLER(_devcb) \
-	devcb = &gf1_device::set_rxirq_handler(*device, DEVCB_##_devcb);
-
-#define MCFG_GF1_WAVE_IRQ_HANDLER(_devcb) \
-	devcb = &gf1_device::set_wave_irq_handler(*device, DEVCB_##_devcb);
-
-#define MCFG_GF1_RAMP_IRQ_HANDLER(_devcb) \
-	devcb = &gf1_device::set_ramp_irq_handler(*device, DEVCB_##_devcb);
-
-#define MCFG_GF1_TIMER1_IRQ_HANDLER(_devcb) \
-	devcb = &gf1_device::set_timer1_irq_handler(*device, DEVCB_##_devcb);
-
-#define MCFG_GF1_TIMER2_IRQ_HANDLER(_devcb) \
-	devcb = &gf1_device::set_timer2_irq_handler(*device, DEVCB_##_devcb);
-
-#define MCFG_GF1_SB_IRQ_HANDLER(_devcb) \
-	devcb = &gf1_device::set_sb_irq_handler(*device, DEVCB_##_devcb);
-
-#define MCFG_GF1_DMA_IRQ_HANDLER(_devcb) \
-	devcb = &gf1_device::set_dma_irq_handler(*device, DEVCB_##_devcb);
-
-#define MCFG_GF1_DRQ1_HANDLER(_devcb) \
-	devcb = &gf1_device::set_drq1_handler(*device, DEVCB_##_devcb);
-
-#define MCFG_GF1_DRQ2_HANDLER(_devcb) \
-	devcb = &gf1_device::set_drq2_handler(*device, DEVCB_##_devcb);
-
-#define MCFG_GF1_NMI_HANDLER(_devcb) \
-	devcb = &gf1_device::set_nmi_handler(*device, DEVCB_##_devcb);
 
 //**************************************************************************
 //  TYPE DEFINITIONS
@@ -112,17 +80,17 @@ public:
 	// construction/destruction
 	gf1_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	template <class Object> static devcb_base &set_txirq_handler(device_t &device, Object &&cb) { return downcast<gf1_device &>(device).m_txirq_handler.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_rxirq_handler(device_t &device, Object &&cb) { return downcast<gf1_device &>(device).m_rxirq_handler.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_wave_irq_handler(device_t &device, Object &&cb) { return downcast<gf1_device &>(device).m_wave_irq_handler.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_ramp_irq_handler(device_t &device, Object &&cb) { return downcast<gf1_device &>(device).m_ramp_irq_handler.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_timer1_irq_handler(device_t &device, Object &&cb) { return downcast<gf1_device &>(device).m_timer1_irq_handler.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_timer2_irq_handler(device_t &device, Object &&cb) { return downcast<gf1_device &>(device).m_timer2_irq_handler.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_sb_irq_handler(device_t &device, Object &&cb) { return downcast<gf1_device &>(device).m_sb_irq_handler.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_dma_irq_handler(device_t &device, Object &&cb) { return downcast<gf1_device &>(device).m_dma_irq_handler.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_drq1_handler(device_t &device, Object &&cb) { return downcast<gf1_device &>(device).m_drq1_handler.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_drq2_handler(device_t &device, Object &&cb) { return downcast<gf1_device &>(device).m_drq2_handler.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_nmi_handler(device_t &device, Object &&cb) { return downcast<gf1_device &>(device).m_nmi_handler.set_callback(std::forward<Object>(cb)); }
+	auto txirq_handler() { return m_txirq_handler.bind(); }
+	auto rxirq_handler() { return m_rxirq_handler.bind(); }
+	auto wave_irq_handler() { return m_wave_irq_handler.bind(); }
+	auto ramp_irq_handler() { return m_ramp_irq_handler.bind(); }
+	auto timer1_irq_handler() { return m_timer1_irq_handler.bind(); }
+	auto timer2_irq_handler() { return m_timer2_irq_handler.bind(); }
+	auto sb_irq_handler() { return m_sb_irq_handler.bind(); }
+	auto dma_irq_handler() { return m_dma_irq_handler.bind(); }
+	auto drq1_handler() { return m_drq1_handler.bind(); }
+	auto drq2_handler() { return m_drq2_handler.bind(); }
+	auto nmi_handler() { return m_nmi_handler.bind(); }
 
 	// current IRQ/DMA channel getters
 	uint8_t gf1_irq() { if(m_gf1_irq != 0) return m_gf1_irq; else return m_midi_irq; }  // workaround for win95 loading dumb values
@@ -130,23 +98,23 @@ public:
 	uint8_t dma_channel1() { return m_dma_channel1; }
 	uint8_t dma_channel2() { if(m_dma_combine == 0) return m_dma_channel2; else return m_dma_channel1; }
 
-	DECLARE_READ8_MEMBER(global_reg_select_r);
-	DECLARE_WRITE8_MEMBER(global_reg_select_w);
-	DECLARE_READ8_MEMBER(global_reg_data_r);
-	DECLARE_WRITE8_MEMBER(global_reg_data_w);
-	DECLARE_READ8_MEMBER(dram_r);
-	DECLARE_WRITE8_MEMBER(dram_w);
-	DECLARE_READ8_MEMBER(adlib_r);
-	DECLARE_WRITE8_MEMBER(adlib_w);
-	DECLARE_READ8_MEMBER(adlib_cmd_r);
-	DECLARE_WRITE8_MEMBER(adlib_cmd_w);
-	DECLARE_READ8_MEMBER(mix_ctrl_r);
-	DECLARE_WRITE8_MEMBER(mix_ctrl_w);
-	DECLARE_READ8_MEMBER(stat_r);
-	DECLARE_WRITE8_MEMBER(stat_w);
-	DECLARE_READ8_MEMBER(sb_r);
-	DECLARE_WRITE8_MEMBER(sb_w);
-	DECLARE_WRITE8_MEMBER(sb2x6_w);
+	uint8_t global_reg_select_r(offs_t offset);
+	void global_reg_select_w(offs_t offset, uint8_t data);
+	uint8_t global_reg_data_r(offs_t offset);
+	void global_reg_data_w(offs_t offset, uint8_t data);
+	uint8_t dram_r(offs_t offset);
+	void dram_w(offs_t offset, uint8_t data);
+	uint8_t adlib_r(offs_t offset);
+	void adlib_w(offs_t offset, uint8_t data);
+	uint8_t adlib_cmd_r(offs_t offset);
+	void adlib_cmd_w(offs_t offset, uint8_t data);
+	uint8_t mix_ctrl_r(offs_t offset);
+	void mix_ctrl_w(offs_t offset, uint8_t data);
+	uint8_t stat_r();
+	void stat_w(uint8_t data);
+	uint8_t sb_r(offs_t offset);
+	void sb_w(offs_t offset, uint8_t data);
+	void sb2x6_w(uint8_t data);
 
 	// DMA signals
 	uint8_t dack_r(int line);
@@ -187,6 +155,7 @@ protected:
 	virtual void device_start() override;
 	virtual void device_reset() override;
 	virtual void device_stop() override;
+	virtual void device_clock_changed() override;
 
 	virtual void update_irq() override;
 
@@ -262,14 +231,14 @@ public:
 	void set_midi_irq(uint8_t source);
 	void reset_midi_irq(uint8_t source);
 
-	DECLARE_READ8_MEMBER(board_r);
-	DECLARE_READ8_MEMBER(synth_r);
-	DECLARE_WRITE8_MEMBER(board_w);
-	DECLARE_WRITE8_MEMBER(synth_w);
-	DECLARE_READ8_MEMBER(adlib_r);
-	DECLARE_WRITE8_MEMBER(adlib_w);
-	DECLARE_READ8_MEMBER(joy_r);
-	DECLARE_WRITE8_MEMBER(joy_w);
+	uint8_t board_r(offs_t offset);
+	uint8_t synth_r(offs_t offset);
+	void board_w(offs_t offset, uint8_t data);
+	void synth_w(offs_t offset, uint8_t data);
+	uint8_t adlib_r(offs_t offset);
+	void adlib_w(offs_t offset, uint8_t data);
+	uint8_t joy_r(offs_t offset);
+	void joy_w(offs_t offset, uint8_t data);
 
 	// DMA overrides
 	virtual uint8_t dack_r(int line) override;

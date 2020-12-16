@@ -26,50 +26,51 @@ dectalk_isa_device::dectalk_isa_device(const machine_config& mconfig, const char
 {
 }
 
-WRITE16_MEMBER(dectalk_isa_device::status_w)
+void dectalk_isa_device::status_w(uint16_t data)
 {
 	m_stat = data;
 }
 
-READ16_MEMBER(dectalk_isa_device::cmd_r)
+uint16_t dectalk_isa_device::cmd_r()
 {
 	return m_cmd;
 }
 
-WRITE16_MEMBER(dectalk_isa_device::data_w)
+void dectalk_isa_device::data_w(uint16_t data)
 {
 	m_data = data;
 }
 
-READ16_MEMBER(dectalk_isa_device::data_r)
+uint16_t dectalk_isa_device::data_r()
 {
 	return m_data;
 }
 
-READ16_MEMBER(dectalk_isa_device::host_irq_r)
+uint16_t dectalk_isa_device::host_irq_r()
 {
 	//m_isa->ir?_w(1);
 	return 0;
 }
 
-READ8_MEMBER(dectalk_isa_device::dma_r)
+uint8_t dectalk_isa_device::dma_r()
 {
-	m_cpu->drq1_w(0);
+	if (!machine().side_effects_disabled())
+		m_cpu->drq1_w(0);
 	return m_dma;
 }
 
-WRITE8_MEMBER(dectalk_isa_device::dma_w)
+void dectalk_isa_device::dma_w(uint8_t data)
 {
 	m_cpu->drq1_w(0);
 	m_dma = data;
 }
 
-WRITE16_MEMBER(dectalk_isa_device::dac_w)
+void dectalk_isa_device::dac_w(uint16_t data)
 {
 	m_dac->write(data >> 4);
 }
 
-WRITE16_MEMBER(dectalk_isa_device::output_ctl_w)
+void dectalk_isa_device::output_ctl_w(uint16_t data)
 {
 	// X9C503P potentiometer, 8-CS, 4-U/D, 2-INC
 	if(!(data & 8) && !(m_ctl & 2) && (data & 2))
@@ -85,14 +86,14 @@ WRITE16_MEMBER(dectalk_isa_device::output_ctl_w)
 	m_ctl = data;
 }
 
-READ16_MEMBER(dectalk_isa_device::dsp_dma_r)
+uint16_t dectalk_isa_device::dsp_dma_r()
 {
 	m_bio = ASSERT_LINE;
 	m_cpu->drq1_w(0);
 	return m_dsp_dma;
 }
 
-WRITE16_MEMBER(dectalk_isa_device::dsp_dma_w)
+void dectalk_isa_device::dsp_dma_w(uint16_t data)
 {
 	m_bio = CLEAR_LINE;
 	m_dsp_dma = data;
@@ -106,7 +107,7 @@ READ_LINE_MEMBER(dectalk_isa_device::bio_line_r)
 	return m_bio;
 }
 
-WRITE16_MEMBER(dectalk_isa_device::irq_line_w)
+void dectalk_isa_device::irq_line_w(uint16_t data)
 {
 	m_cpu->int1_w(0);
 }
@@ -116,29 +117,33 @@ WRITE_LINE_MEMBER(dectalk_isa_device::clock_w)
 	m_dsp->set_input_line(INPUT_LINE_IRQ0, (!(m_ctl & 0x20) || state) ? CLEAR_LINE : ASSERT_LINE);
 }
 
-static ADDRESS_MAP_START(dectalk_cpu_io, AS_IO, 16, dectalk_isa_device)
-	AM_RANGE(0x0400, 0x0401) AM_READWRITE(cmd_r, status_w) //PCS0
-	AM_RANGE(0x0480, 0x0481) AM_READWRITE(data_r, data_w) //PCS1
-	AM_RANGE(0x0500, 0x0501) AM_WRITE(dsp_dma_w) //PCS2
-	AM_RANGE(0x0580, 0x0581) AM_READ(host_irq_r) //PCS3
-	AM_RANGE(0x0600, 0x0601) AM_WRITE(output_ctl_w) //PCS4
-	AM_RANGE(0x0680, 0x0681) AM_READWRITE8(dma_r, dma_w, 0xff) //PCS5
-	AM_RANGE(0x0700, 0x0701) AM_WRITE(irq_line_w) //PCS6
-ADDRESS_MAP_END
+void dectalk_isa_device::dectalk_cpu_io(address_map &map)
+{
+	map(0x0400, 0x0401).rw(FUNC(dectalk_isa_device::cmd_r), FUNC(dectalk_isa_device::status_w)); //PCS0
+	map(0x0480, 0x0481).rw(FUNC(dectalk_isa_device::data_r), FUNC(dectalk_isa_device::data_w)); //PCS1
+	map(0x0500, 0x0501).w(FUNC(dectalk_isa_device::dsp_dma_w)); //PCS2
+	map(0x0580, 0x0581).r(FUNC(dectalk_isa_device::host_irq_r)); //PCS3
+	map(0x0600, 0x0601).w(FUNC(dectalk_isa_device::output_ctl_w)); //PCS4
+	map(0x0680, 0x0680).rw(FUNC(dectalk_isa_device::dma_r), FUNC(dectalk_isa_device::dma_w)); //PCS5
+	map(0x0700, 0x0701).w(FUNC(dectalk_isa_device::irq_line_w)); //PCS6
+}
 
-static ADDRESS_MAP_START(dectalk_cpu_map, AS_PROGRAM, 16, dectalk_isa_device)
-	AM_RANGE(0x00000, 0xFBFFF) AM_RAM
-	AM_RANGE(0xFC000, 0xFFFFF) AM_ROM AM_REGION("dectalk_cpu", 0)
-ADDRESS_MAP_END
+void dectalk_isa_device::dectalk_cpu_map(address_map &map)
+{
+	map(0x00000, 0xFBFFF).ram();
+	map(0xFC000, 0xFFFFF).rom().region("dectalk_cpu", 0);
+}
 
-static ADDRESS_MAP_START(dectalk_dsp_io, AS_IO, 16, dectalk_isa_device)
-	AM_RANGE(0x0, 0x0) AM_READ(dsp_dma_r)
-	AM_RANGE(0x1, 0x1) AM_READWRITE(dsp_dma_r, dac_w)
-ADDRESS_MAP_END
+void dectalk_isa_device::dectalk_dsp_io(address_map &map)
+{
+	map(0x0, 0x0).r(FUNC(dectalk_isa_device::dsp_dma_r));
+	map(0x1, 0x1).rw(FUNC(dectalk_isa_device::dsp_dma_r), FUNC(dectalk_isa_device::dac_w));
+}
 
-static ADDRESS_MAP_START(dectalk_dsp_map, AS_PROGRAM, 16, dectalk_isa_device)
-	AM_RANGE(0x0000, 0x0FFF) AM_ROM AM_REGION("dectalk_dsp", 0)
-ADDRESS_MAP_END
+void dectalk_isa_device::dectalk_dsp_map(address_map &map)
+{
+	map(0x0000, 0x0FFF).rom().region("dectalk_dsp", 0);
+}
 
 ROM_START( dectalk_isa )
 	ROM_REGION( 0x4000, "dectalk_cpu", 0 )
@@ -153,24 +158,26 @@ const tiny_rom_entry* dectalk_isa_device::device_rom_region() const
 	return ROM_NAME( dectalk_isa );
 }
 
-MACHINE_CONFIG_MEMBER( dectalk_isa_device::device_add_mconfig )
-	MCFG_CPU_ADD("dectalk_cpu", I80186, XTAL_20MHz)
-	MCFG_CPU_IO_MAP(dectalk_cpu_io)
-	MCFG_CPU_PROGRAM_MAP(dectalk_cpu_map)
-	MCFG_80186_TMROUT0_HANDLER(WRITELINE(dectalk_isa_device, clock_w));
+void dectalk_isa_device::device_add_mconfig(machine_config &config)
+{
+	I80186(config, m_cpu, XTAL(20'000'000));
+	m_cpu->set_addrmap(AS_PROGRAM, &dectalk_isa_device::dectalk_cpu_map);
+	m_cpu->set_addrmap(AS_IO, &dectalk_isa_device::dectalk_cpu_io);
+	m_cpu->tmrout0_handler().set(FUNC(dectalk_isa_device::clock_w));
 
-	MCFG_CPU_ADD("dectalk_dsp", TMS32015, XTAL_20MHz)
-	MCFG_CPU_IO_MAP(dectalk_dsp_io)
-	MCFG_TMS32010_BIO_IN_CB(READLINE(dectalk_isa_device, bio_line_r))
-	MCFG_CPU_PROGRAM_MAP(dectalk_dsp_map)
+	TMS32015(config, m_dsp, XTAL(20'000'000));
+	m_dsp->set_addrmap(AS_PROGRAM, &dectalk_isa_device::dectalk_dsp_map);
+	m_dsp->set_addrmap(AS_IO, &dectalk_isa_device::dectalk_dsp_io);
+	m_dsp->bio().set(FUNC(dectalk_isa_device::bio_line_r));
 
-	MCFG_SPEAKER_STANDARD_MONO("speaker")
-	MCFG_SOUND_ADD("dac", DAC_12BIT_R2R, 0) MCFG_SOUND_ROUTE(0, "speaker", 1.0) // unknown DAC
-	MCFG_DEVICE_ADD("vref", VOLTAGE_REGULATOR, 0) MCFG_VOLTAGE_REGULATOR_OUTPUT(5.0)
-	MCFG_SOUND_ROUTE_EX(0, "dac", 1.0, DAC_VREF_POS_INPUT) MCFG_SOUND_ROUTE_EX(0, "dac", -1.0, DAC_VREF_NEG_INPUT)
-MACHINE_CONFIG_END
+	SPEAKER(config, "speaker").front_center();
+	DAC_12BIT_R2R(config, m_dac, 0).add_route(0, "speaker", 1.0); // unknown DAC
+	voltage_regulator_device &vref(VOLTAGE_REGULATOR(config, "vref", 0));
+	vref.add_route(0, "dac", 1.0, DAC_VREF_POS_INPUT);
+	vref.add_route(0, "dac", -1.0, DAC_VREF_NEG_INPUT);
+}
 
-WRITE8_MEMBER(dectalk_isa_device::write)
+void dectalk_isa_device::write(offs_t offset, uint8_t data)
 {
 	switch(offset)
 	{
@@ -196,7 +203,7 @@ WRITE8_MEMBER(dectalk_isa_device::write)
 	}
 }
 
-READ8_MEMBER(dectalk_isa_device::read)
+uint8_t dectalk_isa_device::read(offs_t offset)
 {
 	switch(offset)
 	{
@@ -209,7 +216,8 @@ READ8_MEMBER(dectalk_isa_device::read)
 		case 3:
 			return m_data >> 8;
 		case 4:
-			m_cpu->drq1_w(1);
+			if (!machine().side_effects_disabled())
+				m_cpu->drq1_w(1);
 			return m_dma;
 	}
 	return 0;
@@ -218,7 +226,7 @@ READ8_MEMBER(dectalk_isa_device::read)
 void dectalk_isa_device::device_start()
 {
 	set_isa_device();
-	m_isa->install_device(0x0250, 0x0257, read8_delegate(FUNC(dectalk_isa_device::read), this), write8_delegate(FUNC(dectalk_isa_device::write), this));
+	m_isa->install_device(0x0250, 0x0257, read8sm_delegate(*this, FUNC(dectalk_isa_device::read)), write8sm_delegate(*this, FUNC(dectalk_isa_device::write)));
 }
 
 void dectalk_isa_device::device_reset()

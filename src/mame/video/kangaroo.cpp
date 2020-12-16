@@ -19,7 +19,7 @@ void kangaroo_state::video_start()
 {
 	/* video RAM is accessed 32 bits at a time (two planes, 4bpp each, 4 pixels) */
 	m_videoram = std::make_unique<uint32_t[]>(256 * 64);
-	save_pointer(NAME(m_videoram.get()), 256 * 64);
+	save_pointer(NAME(m_videoram), 256 * 64);
 }
 
 
@@ -57,7 +57,7 @@ void kangaroo_state::videoram_write( uint16_t offset, uint8_t data, uint8_t mask
 }
 
 
-WRITE8_MEMBER(kangaroo_state::kangaroo_videoram_w)
+void kangaroo_state::kangaroo_videoram_w(offs_t offset, uint8_t data)
 {
 	videoram_write(offset, data, m_video_control[8]);
 }
@@ -70,7 +70,7 @@ WRITE8_MEMBER(kangaroo_state::kangaroo_videoram_w)
  *
  *************************************/
 
-WRITE8_MEMBER(kangaroo_state::kangaroo_video_control_w)
+void kangaroo_state::kangaroo_video_control_w(offs_t offset, uint8_t data)
 {
 	m_video_control[offset] = data;
 

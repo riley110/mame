@@ -216,10 +216,10 @@ hard_disk_file *xt_hdc_device::pc_hdc_file(int id)
 	switch( id )
 	{
 	case 0:
-		img = dynamic_cast<harddisk_image_device *>(machine().device(subtag("primary").c_str()));
+		img = subdevice<harddisk_image_device>("primary");
 		break;
 	case 1:
-		img = dynamic_cast<harddisk_image_device *>(machine().device(subtag("slave").c_str()));
+		img = subdevice<harddisk_image_device>("slave");
 		break;
 	}
 	if ( img == nullptr )
@@ -918,21 +918,23 @@ DEFINE_DEVICE_TYPE(ISA8_HDC_EC1841, isa8_hdc_ec1841_device, "isa_hdc_ec1841", "E
 //  device_add_mconfig - add device configuration
 //-------------------------------------------------
 
-MACHINE_CONFIG_MEMBER( isa8_hdc_device::device_add_mconfig )
-	MCFG_DEVICE_ADD("hdc",XT_HDC,0)
-	MCFG_XTHDC_IRQ_HANDLER(WRITELINE(isa8_hdc_device,irq_w))
-	MCFG_XTHDC_DRQ_HANDLER(WRITELINE(isa8_hdc_device,drq_w))
-	MCFG_HARDDISK_ADD("hdc:primary")
-	MCFG_HARDDISK_ADD("hdc:slave")
-MACHINE_CONFIG_END
+void isa8_hdc_device::device_add_mconfig(machine_config &config)
+{
+	XT_HDC(config, m_hdc,0);
+	m_hdc->irq_handler().set(FUNC(isa8_hdc_device::irq_w));
+	m_hdc->drq_handler().set(FUNC(isa8_hdc_device::drq_w));
+	HARDDISK(config, "hdc:primary");
+	HARDDISK(config, "hdc:slave");
+}
 
-MACHINE_CONFIG_MEMBER( isa8_hdc_ec1841_device::device_add_mconfig )
-	MCFG_DEVICE_ADD("hdc",EC1841_HDC,0)
-	MCFG_XTHDC_IRQ_HANDLER(WRITELINE(isa8_hdc_ec1841_device,irq_w))
-	MCFG_XTHDC_DRQ_HANDLER(WRITELINE(isa8_hdc_ec1841_device,drq_w))
-	MCFG_HARDDISK_ADD("hdc:primary")
-	MCFG_HARDDISK_ADD("hdc:slave")
-MACHINE_CONFIG_END
+void isa8_hdc_ec1841_device::device_add_mconfig(machine_config &config)
+{
+	EC1841_HDC(config, m_hdc,0);
+	m_hdc->irq_handler().set(FUNC(isa8_hdc_ec1841_device::irq_w));
+	m_hdc->drq_handler().set(FUNC(isa8_hdc_ec1841_device::drq_w));
+	HARDDISK(config, "hdc:primary");
+	HARDDISK(config, "hdc:slave");
+}
 
 //-------------------------------------------------
 //  rom_region - device-specific ROM region
@@ -985,7 +987,7 @@ isa8_hdc_ec1841_device::isa8_hdc_ec1841_device(const machine_config &mconfig, co
 void isa8_hdc_device::device_start()
 {
 	set_isa_device();
-	m_isa->install_device(0x0320, 0x0323, read8_delegate( FUNC(isa8_hdc_device::pc_hdc_r), this ), write8_delegate( FUNC(isa8_hdc_device::pc_hdc_w), this ) );
+	m_isa->install_device(0x0320, 0x0323, read8sm_delegate(*this, FUNC(isa8_hdc_device::pc_hdc_r)), write8sm_delegate(*this, FUNC(isa8_hdc_device::pc_hdc_w)));
 	m_isa->set_dma_channel(3, this, false);
 }
 
@@ -1007,7 +1009,7 @@ void isa8_hdc_device::device_reset()
  *      hard disk controller
  *
  *************************************************************************/
-READ8_MEMBER( isa8_hdc_device::pc_hdc_r )
+uint8_t isa8_hdc_device::pc_hdc_r(offs_t offset)
 {
 	uint8_t data = 0xff;
 
@@ -1025,7 +1027,7 @@ READ8_MEMBER( isa8_hdc_device::pc_hdc_r )
 	return data;
 }
 
-WRITE8_MEMBER( isa8_hdc_device::pc_hdc_w )
+void isa8_hdc_device::pc_hdc_w(offs_t offset, uint8_t data)
 {
 	if (LOG_HDC_CALL)
 		logerror("%s pc_hdc_w(): offs=%d data=0x%02x\n", machine().describe_context(), offset, data);

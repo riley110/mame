@@ -19,11 +19,6 @@
 
 // XT HD controller device
 
-#define MCFG_XTHDC_IRQ_HANDLER(_devcb) \
-	devcb = &xt_hdc_device::set_irq_handler(*device, DEVCB_##_devcb);
-
-#define MCFG_XTHDC_DRQ_HANDLER(_devcb) \
-	devcb = &xt_hdc_device::set_drq_handler(*device, DEVCB_##_devcb);
 
 class xt_hdc_device :
 		public device_t
@@ -32,8 +27,8 @@ public:
 	// construction/destruction
 	xt_hdc_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	template <class Object> static devcb_base &set_irq_handler(device_t &device, Object &&cb) { return downcast<xt_hdc_device &>(device).m_irq_handler.set_callback(std::forward<Object>(cb)); }
-	template <class Object> static devcb_base &set_drq_handler(device_t &device, Object &&cb) { return downcast<xt_hdc_device &>(device).m_drq_handler.set_callback(std::forward<Object>(cb)); }
+	auto irq_handler() { return m_irq_handler.bind(); }
+	auto drq_handler() { return m_drq_handler.bind(); }
 
 	int dack_r();
 	int dack_rs();
@@ -147,8 +142,8 @@ public:
 	// construction/destruction
 	isa8_hdc_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
-	DECLARE_READ8_MEMBER(pc_hdc_r);
-	DECLARE_WRITE8_MEMBER(pc_hdc_w);
+	uint8_t pc_hdc_r(offs_t offset);
+	void pc_hdc_w(offs_t offset, uint8_t data);
 	required_device<xt_hdc_device> m_hdc;
 
 protected:

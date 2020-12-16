@@ -7,6 +7,7 @@
 
 #include "isa.h"
 #include "video/mc6845.h"
+#include "emupal.h"
 #include "screen.h"
 
 
@@ -31,12 +32,7 @@ public:
 	isa8_cga_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 
 	virtual MC6845_UPDATE_ROW( crtc_update_row );
-	MC6845_UPDATE_ROW( cga_text_inten_update_row );
-	MC6845_UPDATE_ROW( cga_text_inten_comp_grey_update_row );
-	MC6845_UPDATE_ROW( cga_text_inten_alt_update_row );
-	MC6845_UPDATE_ROW( cga_text_blink_update_row );
-	MC6845_UPDATE_ROW( cga_text_blink_update_row_si );
-	MC6845_UPDATE_ROW( cga_text_blink_alt_update_row );
+	template<bool blink, bool si, bool comp, bool alt, int width> MC6845_UPDATE_ROW( cga_text );
 	MC6845_UPDATE_ROW( cga_gfx_4bppl_update_row );
 	MC6845_UPDATE_ROW( cga_gfx_4bpph_update_row );
 	MC6845_UPDATE_ROW( cga_gfx_2bpp_update_row );
@@ -45,6 +41,7 @@ public:
 protected:
 	isa8_cga_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock);
 
+	required_device<mc6845_device> m_crtc;
 	required_ioport m_cga_config;
 
 	// device-level overrides
@@ -58,12 +55,15 @@ protected:
 
 	virtual uint32_t screen_update(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect);
 
+	DECLARE_WRITE_LINE_MEMBER( hsync_changed );
+	DECLARE_WRITE_LINE_MEMBER( vsync_changed );
+
 public:
 	void mode_control_w(uint8_t data);
 	void set_palette_luts();
 	void plantronics_w(uint8_t data);
-	virtual DECLARE_READ8_MEMBER( io_read );
-	virtual DECLARE_WRITE8_MEMBER( io_write );
+	virtual uint8_t io_read(offs_t offset);
+	virtual void io_write(offs_t offset, uint8_t data);
 
 public:
 	int     m_framecnt;
@@ -89,8 +89,6 @@ public:
 	required_device<screen_device> m_screen;
 
 private:
-	DECLARE_WRITE_LINE_MEMBER( hsync_changed );
-	DECLARE_WRITE_LINE_MEMBER( vsync_changed );
 	MC6845_RECONFIGURE(reconfigure);
 };
 
@@ -163,10 +161,10 @@ public:
 	static const offs_t vram_offset[4];
 	static const uint8_t mc6845_writeonce_register[31];
 
-	virtual DECLARE_READ8_MEMBER( io_read ) override;
-	virtual DECLARE_WRITE8_MEMBER( io_write ) override;
+	virtual uint8_t io_read(offs_t offset) override;
+	virtual void io_write(offs_t offset, uint8_t data) override;
 
-	DECLARE_WRITE8_MEMBER( vram_w );
+	void vram_w(offs_t offset, uint8_t data);
 };
 
 // device type definition
@@ -189,8 +187,8 @@ protected:
 	virtual void device_reset() override;
 
 public:
-	virtual DECLARE_READ8_MEMBER( io_read ) override;
-	virtual DECLARE_WRITE8_MEMBER( io_write ) override;
+	virtual uint8_t io_read(offs_t offset) override;
+	virtual void io_write(offs_t offset, uint8_t data) override;
 	virtual uint32_t screen_update(screen_device &screen, bitmap_rgb32 &bitmap, const rectangle &cliprect) override;
 	void change_resolution(uint8_t mode);
 
@@ -217,12 +215,12 @@ protected:
 	virtual void device_reset() override;
 
 public:
-	virtual DECLARE_READ8_MEMBER( io_read ) override;
-	virtual DECLARE_WRITE8_MEMBER( io_write ) override;
+	virtual uint8_t io_read(offs_t offset) override;
+	virtual void io_write(offs_t offset, uint8_t data) override;
 
 	uint8_t   m_p3df;
-	DECLARE_READ8_MEMBER( char_ram_read );
-	DECLARE_WRITE8_MEMBER( char_ram_write );
+	uint8_t char_ram_read(offs_t offset);
+	void char_ram_write(offs_t offset, uint8_t data);
 };
 
 // device type definition
@@ -265,7 +263,10 @@ public:
 	// construction/destruction
 	isa8_cga_mc1502_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
 	// optional information overrides
+	virtual void device_add_mconfig(machine_config &config) override;
 	virtual const tiny_rom_entry *device_rom_region() const override;
+private:
+	MC6845_RECONFIGURE(reconfigure);
 };
 
 // device type definition
@@ -278,22 +279,41 @@ class isa8_cga_m24_device :
 public:
 	// construction/destruction
 	isa8_cga_m24_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
-	virtual DECLARE_READ8_MEMBER( io_read ) override;
-	virtual DECLARE_WRITE8_MEMBER( io_write ) override;
+	virtual uint8_t io_read(offs_t offset) override;
+	virtual void io_write(offs_t offset, uint8_t data) override;
 	virtual MC6845_UPDATE_ROW( crtc_update_row ) override;
 	MC6845_UPDATE_ROW( m24_gfx_1bpp_m24_update_row );
 	MC6845_RECONFIGURE(reconfigure);
 
 protected:
+	isa8_cga_m24_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, uint32_t clock);
 	virtual void device_reset() override;
 	// optional information overrides
 	virtual void device_add_mconfig(machine_config &config) override;
-
-private:
+	virtual const tiny_rom_entry *device_rom_region() const override;
 	uint8_t m_mode2, m_index;
 };
 
 // device type definition
 DECLARE_DEVICE_TYPE(ISA8_CGA_M24, isa8_cga_m24_device)
+
+class isa8_cga_cportiii_device :
+		public isa8_cga_m24_device
+{
+public:
+	isa8_cga_cportiii_device(const machine_config &mconfig, const char *tag, device_t *owner, uint32_t clock);
+	uint8_t port_13c6_r();
+	void port_13c6_w(uint8_t data);
+	uint8_t port_23c6_r();
+	void port_23c6_w(uint8_t data);
+	uint8_t char_ram_read(offs_t offset);
+	void char_ram_write(offs_t offset, uint8_t data);
+protected:
+	virtual void device_reset() override;
+	virtual void device_add_mconfig(machine_config &config) override;
+	virtual const tiny_rom_entry *device_rom_region() const override;
+};
+
+DECLARE_DEVICE_TYPE(ISA8_CGA_CPORTIII, isa8_cga_cportiii_device)
 
 #endif  // MAME_BUS_ISA_CGA_H
