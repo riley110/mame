@@ -3,13 +3,26 @@
 <!--
 license:CC0
 -->
-
 <softwarelist name="altos5" description="Altos Series 5 floppies">
 
 	<software name="altdiag">
-		<description>Altos Diag. Exec. v3.0</description>
+		<description>Altos Diag. (v3.2S0)</description>
 		<year>198?</year>
-		<publisher>Digital Research</publisher>
+		<publisher>Altos Computer Systems</publisher>
+		<info name="serial" value="ADX5-13895"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="74214">
+				<rom name="adx5-13895.imd" size="74214" crc="7f76eaed" sha1="11e3ba4fd1c71cb23ab3ef1db0c78ac67cb15fcd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="altdiaga" cloneof="altdiag">
+		<description>Altos Diag. Exec. (v3.0)</description>
+		<year>198?</year>
+		<publisher>Altos Computer Systems</publisher>
+		<info name="serial" value="ADX5-00367"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="134797">
@@ -18,10 +31,11 @@ license:CC0
 		</part>
 	</software>
 
-	<software name="cpm220so" supported="no">
-		<description>CP/M v2.20SO</description>
+	<software name="cpm">
+		<description>CP/M (v2.20S0)</description>
 		<year>198?</year>
-		<publisher>Digital Research</publisher>
+		<publisher>Altos Computer Systems - Digital Research</publisher>
+		<info name="serial" value="25-3709"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="82277">
@@ -30,14 +44,28 @@ license:CC0
 		</part>
 	</software>
 
-	<software name="mpm210so" supported="no">
-		<description>MP-M v2.10SO rev.B</description>
+	<software name="mpm" supported="no">
+		<description>MP/M (v2.10S0 rev. B)</description>
 		<year>1982</year>
-		<publisher>Digital Research</publisher>
+		<publisher>Altos Computer Systems - Digital Research</publisher>
+		<info name="serial" value="25-1941"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="500437">
 				<rom name="25-1941.td0" size="500437" crc="269cb851" sha1="2c5e448bee307e61d3565a63544d00be50da3c77"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mpm2">
+		<description>MP/M II (v2.15S0)</description>
+		<year>1983</year>
+		<publisher>Altos Computer Systems - Digital Research</publisher>
+		<info name="serial" value="25-23025"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="496806">
+				<rom name="25-23025.imd" size="496806" crc="d5462d91" sha1="a5bc0da6ee1a8c0bef1930b124a4720b9a71d5eb" offset="0" />
 			</dataarea>
 		</part>
 	</software>

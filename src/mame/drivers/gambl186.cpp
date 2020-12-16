@@ -356,7 +356,7 @@ void gambl186_state::upd_w(uint16_t data)
 //  if (ACCESSING_BITS_0_7) m_upd7759->port_w(data & 0xff);
 //  if (ACCESSING_BITS_8_15) m_upd7759->port_w((data >> 8) & 0xff);
 	data = (data >> 8);
-	popmessage("sample index: %02x", data);
+//  popmessage("sample index: %02x", data);
 
 //  m_upd7759->start_w(0);
 //  m_upd7759->start_w(1);

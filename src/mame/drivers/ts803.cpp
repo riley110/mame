@@ -58,6 +58,7 @@ PAGE SEL bit in PORT0 set to 1:
 #include "video/mc6845.h"
 #include "emupal.h"
 #include "screen.h"
+#include "softlist.h"
 
 
 class ts803_state : public driver_device
@@ -469,6 +470,8 @@ void ts803_state::ts803(machine_config &config)
 	m_fdc->intrq_wr_callback().set("sti", FUNC(z80sti_device::i7_w));
 	FLOPPY_CONNECTOR(config, "fdc:0", ts803_floppies, "525dd", floppy_image_device::default_floppy_formats).enable_sound(true);
 	FLOPPY_CONNECTOR(config, "fdc:1", ts803_floppies, "525dd", floppy_image_device::default_floppy_formats).enable_sound(true);
+
+	SOFTWARE_LIST(config, "flop_list").set_original("ts803_flop");
 }
 
 /* ROM definition */

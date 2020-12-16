@@ -32,10 +32,10 @@
 
 #include "emupal.h"
 #include "screen.h"
+#include "softlist.h"
 #include "speaker.h"
 
 #include "formats/ap2_dsk.h"
-
 
 #define A2_CPU_TAG "maincpu"
 #define A2_BUS_TAG "a2bus"
@@ -617,6 +617,7 @@ void tk2000_state::tk2000(machine_config &config)
 	CASSETTE(config, m_cassette);
 	m_cassette->set_default_state(CASSETTE_STOPPED);
 	m_cassette->add_route(ALL_OUTPUTS, "mono", 0.05);
+	SOFTWARE_LIST(config, "cass_list").set_original("tk2000_cass");
 
 	CENTRONICS(config, m_printer, centronics_devices, nullptr);
 	m_printer->busy_handler().set(FUNC(tk2000_state::printer_busy_w));

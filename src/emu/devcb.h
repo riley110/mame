@@ -11,6 +11,8 @@
 #ifndef MAME_EMU_DEVCB_H
 #define MAME_EMU_DEVCB_H
 
+#define MAME_DEVCB_GNUC_BROKEN_FRIEND 1
+
 #pragma once
 
 #include <array>

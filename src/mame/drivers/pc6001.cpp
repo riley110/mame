@@ -131,6 +131,7 @@ irq vector 0x26:                                                                
 
 #include "emu.h"
 #include "includes/pc6001.h"
+#include "softlist.h"
 
 #define IRQ_LOG (0)
 
@@ -1510,7 +1511,9 @@ void pc6001_state::pc6001(machine_config &config)
 //  m_cassette->set_formats(pc6001_cassette_formats);
 //  m_cassette->set_default_state(CASSETTE_STOPPED | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED);
 //  m_cassette->add_route(ALL_OUTPUTS, "mono", 0.05);
-	GENERIC_CARTSLOT(config, m_cas_hack, generic_plain_slot, "pc6001_cass", "cas,p6");
+
+	// Interface name changed to prevent conflict with software list
+	GENERIC_CARTSLOT(config, m_cas_hack, generic_plain_slot, "pc6001_cassh", "cas,p6");
 
 	SPEAKER(config, "mono").front_center();
 	ay8910_device &ay8910(AY8910(config, "ay8910", PC6001_MAIN_CLOCK/4));
@@ -1521,6 +1524,10 @@ void pc6001_state::pc6001(machine_config &config)
 	/* TODO: accurate timing on this */
 	TIMER(config, "keyboard_timer").configure_periodic(FUNC(pc6001_state::keyboard_callback), attotime::from_hz(250));
 	TIMER(config, "cassette_timer").configure_periodic(FUNC(pc6001_state::cassette_callback), attotime::from_hz(1200/12));
+
+	SOFTWARE_LIST(config, "cart_list").set_original("pc6001_cart");
+	SOFTWARE_LIST(config, "cass_list").set_original("pc6001_cass");
+	SOFTWARE_LIST(config, "flop_list").set_original("pc6001_flop");
 }
 
 

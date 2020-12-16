@@ -531,6 +531,7 @@ void coco12_state::coco(machine_config &config)
 	CASSETTE(config, m_cassette);
 	m_cassette->set_formats(coco_cassette_formats);
 	m_cassette->set_default_state(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED);
+	m_cassette->set_interface("coco_cass");
 
 	rs232_port_device &rs232(RS232_PORT(config, RS232_TAG, default_rs232_devices, "printer"));
 	rs232.dcd_handler().set(PIA1_TAG, FUNC(pia6821_device::ca1_w));
@@ -558,6 +559,7 @@ void coco12_state::coco(machine_config &config)
 
 	// software lists
 	SOFTWARE_LIST(config, "coco_cart_list").set_original("coco_cart").set_filter("COCO");
+	SOFTWARE_LIST(config, "coco_cass_list").set_original("coco_cass");
 	SOFTWARE_LIST(config, "coco_flop_list").set_original("coco_flop").set_filter("COCO");
 	SOFTWARE_LIST(config, "dragon_cart_list").set_compatible("dragon_cart");
 }

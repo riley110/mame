@@ -16,6 +16,7 @@
 
 #include "emu.h"
 #include "softbox.h"
+#include "softlist.h"
 
 
 //**************************************************************************
@@ -271,6 +272,10 @@ void softbox_device::device_add_mconfig(machine_config &config)
 	HARDDISK(config, "harddisk3", "corvus_hdd");
 	HARDDISK(config, "harddisk4", "corvus_hdd");
 	//imi7000_bus_device::add_config(config, "imi5000h", nullptr, nullptr, nullptr);
+	
+	// software lists
+	SOFTWARE_LIST(config, "flop_list").set_original("softbox_flop");
+	SOFTWARE_LIST(config, "hdd_list").set_original("softbox_hdd");
 }
 
 

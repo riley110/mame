@@ -116,6 +116,7 @@ ToDO:
 #include "cpu/z80/z80.h"
 #include "emupal.h"
 #include "screen.h"
+#include "softlist.h"
 #include "speaker.h"
 
 #include "formats/primoptp.h"
@@ -277,11 +278,13 @@ void primo_state::primoa32(machine_config &config)
 	SNAPSHOT(config, "snapshot", "pss").set_load_callback(FUNC(primo_state::snapshot_cb));
 	QUICKLOAD(config, "quickload", "pp").set_load_callback(FUNC(primo_state::quickload_cb));
 
+	/* cassette */
 	CASSETTE(config, m_cassette);
 	m_cassette->set_formats(primo_ptp_format);
 	m_cassette->set_create_opts(&primo_cassette_options);
 	m_cassette->set_default_state(CASSETTE_STOPPED | CASSETTE_SPEAKER_ENABLED);
 	m_cassette->add_route(ALL_OUTPUTS, "mono", 0.05);
+	m_cassette->set_interface("primo_cass");
 
 	/* floppy from serial bus */
 	cbm_iec_slot_device::add(config, m_iec, nullptr);
@@ -289,6 +292,10 @@ void primo_state::primoa32(machine_config &config)
 	/* cartridge */
 	GENERIC_CARTSLOT(config, m_cart1, generic_plain_slot, nullptr, "bin,rom");
 	GENERIC_CARTSLOT(config, m_cart2, generic_plain_slot, nullptr, "bin,rom");
+
+	/* software lists */
+	SOFTWARE_LIST(config, "cass_list").set_original("primo_cass");
+	SOFTWARE_LIST(config, "flop_list").set_original("primo_flop");
 }
 
 void primo_state::primoa48(machine_config &config)

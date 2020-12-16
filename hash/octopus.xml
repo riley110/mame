@@ -89,5 +89,53 @@ license:CC0
 		</part>
 	</software>
 
+	<software name="cpm8680">
+		<description>CP/M 86/80 (v2.0, Level 7)</description>
+		<year>198?</year>
+		<publisher>LSI / Digital Research</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="387438">
+				<rom name="octcp212.imd" size="387438" crc="ce810ae4" sha1="1f1d51712dd92d98955dd50a45991c3b1ab1fbf4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ccpm2">
+		<description>Conpurrent CP/M (v2.0, Level 8)</description>
+		<year>198?</year>
+		<publisher>LSI / Digital Research</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="267750">
+				<rom name="octcc223.imd" size="267750" crc="c919807b" sha1="775d996b0460d2c13deb57bd980fbeae13cac30f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ccpm2a" cloneof="ccpm2">
+		<description>Conpurrent CP/M (v2.0, Level 8, Alt)</description>
+		<year>198?</year>
+		<publisher>LSI / Digital Research</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="242174">
+				<rom name="octcc233.imd" size="242174" crc="25e9eac0" sha1="6cc03bea40f206c1fe2392cc6c7b62b61680111b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ccpm3">
+		<description>Concurrent CP/M 3 Boot Disk + Standalone and Network Streamer Utilites</description>
+		<year>198?</year>
+		<publisher>LSI / Digital Research</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="303469">
+				<rom name="octstrm.imd" size="303469" crc="e7b6200b" sha1="f65d8bda10f277ee9d4d444d591b240c7d4fd4cc" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 </softwarelist>
 

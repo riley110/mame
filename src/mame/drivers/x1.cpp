@@ -2259,8 +2259,6 @@ void x1_state::x1(machine_config &config)
 	FLOPPY_CONNECTOR(config, "fdc:2", x1_floppies, "dd", x1_state::floppy_formats);
 	FLOPPY_CONNECTOR(config, "fdc:3", x1_floppies, "dd", x1_state::floppy_formats);
 
-	SOFTWARE_LIST(config, "flop_list").set_original("x1_flop");
-
 	GENERIC_CARTSLOT(config, m_cart, generic_plain_slot, "x1_cart", "bin,rom");
 
 	SPEAKER(config, "lspeaker").front_left();
@@ -2281,10 +2279,12 @@ void x1_state::x1(machine_config &config)
 	m_cassette->add_route(ALL_OUTPUTS, "lspeaker", 0.25).add_route(ALL_OUTPUTS, "rspeaker", 0.10);
 	m_cassette->set_interface("x1_cass");
 
-	SOFTWARE_LIST(config, "cass_list").set_original("x1_cass");
-
 	TIMER(config, "keyboard_timer").configure_periodic(FUNC(x1_state::x1_keyboard_callback), attotime::from_hz(250));
 	TIMER(config, "cmt_wind_timer").configure_periodic(FUNC(x1_state::x1_cmt_wind_timer), attotime::from_hz(16));
+
+	SOFTWARE_LIST(config, "cart_list").set_original("x1_cart");
+	SOFTWARE_LIST(config, "cass_list").set_original("x1_cass");
+	SOFTWARE_LIST(config, "flop_list").set_original("x1_flop");
 }
 
 void x1_state::x1turbo(machine_config &config)
@@ -2314,6 +2314,9 @@ void x1_state::x1turbo(machine_config &config)
 	YM2151(config, m_ym, MAIN_CLOCK/8); //option board
 	m_ym->add_route(0, "lspeaker", 0.50);
 	m_ym->add_route(1, "rspeaker", 0.50);
+	
+	SOFTWARE_LIST(config.replace(), "flop_list").set_original("x1turbo_flop");
+	SOFTWARE_LIST(config, "x1_flop_list").set_compatible("x1_flop");
 }
 
 /*************************************

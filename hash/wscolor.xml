@@ -3,8 +3,8 @@
 <!--
 license:CC0
 -->
-
 <softwarelist name="wscolor" description="Bandai Wonderswan Color cartridges">
+
 	<software name="anotherh">
 		<!-- WSC -->
 		<description>Another Heaven - Memory of those Days</description>
@@ -13,6 +13,7 @@ license:CC0
 		<info name="serial" value="SWJ-OMMC03"/>
 		<info name="release" value="20001221"/>
 		<info name="alt_title" value="アナザヘヴン ～memory of those days～"/>
+		<sharedfeat name="compatibility" value="WS,WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_eeprom" />
 			<feature name="rotated" value="yes" />
@@ -32,6 +33,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC2A"/>
 		<info name="release" value="20020704"/>
 		<info name="alt_title" value="アークザラッド 機神復活"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="8388608">
@@ -50,6 +52,7 @@ license:CC0
 		<info name="serial" value="SWJ-HTRC01"/>
 		<info name="release" value="20011025"/>
 		<info name="alt_title" value="マリー&amp;エリー ～ふたりのアトリエ～"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -68,6 +71,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC31"/>
 		<info name="release" value="20021207"/>
 		<info name="alt_title" value="バトルスピリット デジモンフロンティア"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -86,6 +90,7 @@ license:CC0
 		<info name="serial" value="SWJ-SQRC05"/>
 		<info name="release" value="20010705"/>
 		<info name="alt_title" value="ブルー ウイング ブリッツ"/>
+		<sharedfeat name="compatibility" value="WS,WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="2097152">
@@ -104,6 +109,7 @@ license:CC0
 		<info name="serial" value="SWJ-WIZC01"/>
 		<info name="release" value="20020810"/>
 		<info name="alt_title" value="激闘! クラッシュギア ターボギアチャンピオンリーグ"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -122,6 +128,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC08"/>
 		<info name="release" value="20010315"/>
 		<info name="alt_title" value="バトルゲート ダークアイズ"/>
+		<sharedfeat name="compatibility" value="WS,WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -139,6 +146,7 @@ license:CC0
 		<publisher>Qute</publisher>
 		<info name="release" value="20040531"/>
 		<info name="alt_title" value="だいしんぐないと・ピリオド"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<feature name="rtc" value="yes" />
@@ -158,6 +166,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC03"/>
 		<info name="release" value="20001209"/>
 		<info name="alt_title" value="デジモンアドベンチャー02 ディーワンテイマーズ"/>
+		<sharedfeat name="compatibility" value="WS,WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -174,6 +183,7 @@ license:CC0
 		<year>19??</year>
 		<publisher>Bandai</publisher>
 		<info name="serial" value="SWJ-BAN001"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -192,6 +202,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC22"/>
 		<info name="release" value="20020316"/>
 		<info name="alt_title" value="デジタルモンスター カードゲーム バージョン ワンダースワンカラー"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_eeprom" />
 			<feature name="rotated" value="yes" />
@@ -211,6 +222,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC2E"/>
 		<info name="release" value="20020803"/>
 		<info name="alt_title" value="デジタルモンスター ディープロジェクト"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -229,6 +241,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC30"/>
 		<info name="release" value="20020427"/>
 		<info name="alt_title" value="デジモンテイマーズ バトルスピリット Ver.1.5"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="8388608">
@@ -247,6 +260,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC1A / SWJ-BANC24"/>
 		<info name="release" value="20011006"/>
 		<info name="alt_title" value="デジモンテイマーズ バトルスピリット"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<feature name="rtc" value="yes" />
@@ -266,6 +280,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC1D"/>
 		<info name="release" value="20011229"/>
 		<info name="alt_title" value="デジモンテイマーズ ブレイブテイマー"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_eeprom" />
 			<dataarea name="rom" size="4194304">
@@ -284,6 +299,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC14"/>
 		<info name="release" value="20010712"/>
 		<info name="alt_title" value="デジモンテイマーズ デジモンメドレー"/>
+		<sharedfeat name="compatibility" value="WS,WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_eeprom" />
 			<dataarea name="rom" size="4194304">
@@ -302,6 +318,7 @@ license:CC0
 		<info name="serial" value="SWJ-BECC01"/>
 		<info name="release" value="20001214"/>
 		<info name="alt_title" value="どこでもハムスター3 おでかけサフラン"/>
+		<sharedfeat name="compatibility" value="WS,WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<feature name="rtc" value="yes" />
@@ -321,6 +338,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC0D"/>
 		<info name="release" value="20010524"/>
 		<info name="alt_title" value="ポケットの中の ドラえもん"/>
+		<sharedfeat name="compatibility" value="WS,WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_eeprom" />
 			<dataarea name="rom" size="4194304">
@@ -339,6 +357,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC3C"/>
 		<info name="release" value="20031120"/>
 		<info name="alt_title" value="ドラゴンボール"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_rom" />
 			<dataarea name="rom" size="2097152">
@@ -355,6 +374,7 @@ license:CC0
 		<info name="serial" value="SWJ-SQRC01"/>
 		<info name="release" value="20001209"/>
 		<info name="alt_title" value="ファイナルファンタジー"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -373,6 +393,7 @@ license:CC0
 		<info name="serial" value="SWJ-SQRC02"/>
 		<info name="release" value="20010502"/>
 		<info name="alt_title" value="ファイナルファンタジーII"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -391,6 +412,7 @@ license:CC0
 		<info name="serial" value="SWJ-SQRC09"/>
 		<info name="release" value="20020328"/>
 		<info name="alt_title" value="ファイナルファンタジーIV"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -409,6 +431,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC23"/>
 		<info name="release" value="20011115"/>
 		<info name="alt_title" value="ファイナルラップスペシャル"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_eeprom" />
 			<dataarea name="rom" size="4194304">
@@ -427,6 +450,7 @@ license:CC0
 		<info name="serial" value="SWJ-KBSC01"/>
 		<info name="release" value="20001228"/>
 		<info name="alt_title" value="フラッシュ 恋人クン"/>
+		<sharedfeat name="compatibility" value="WS,WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_eeprom" />
 			<dataarea name="rom" size="2097152">
@@ -445,6 +469,7 @@ license:CC0
 		<info name="serial" value="SWJ-SQRC10"/>
 		<info name="release" value="20020712"/>
 		<info name="alt_title" value="フロントミッション"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="8388608">
@@ -462,6 +487,7 @@ license:CC0
 		<publisher>Bandai</publisher>
 		<info name="serial" value="SWJ-BANC2B"/>
 		<info name="release" value="20020228"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_eeprom" />
 			<dataarea name="rom" size="4194304">
@@ -480,6 +506,7 @@ license:CC0
 		<info name="serial" value="SWJ-SESC01"/>
 		<info name="release" value="20010607"/>
 		<info name="alt_title" value="幻想魔伝最遊記 Retribution ～陽のあたる場所で～"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_eeprom" />
 			<dataarea name="rom" size="2097152">
@@ -498,6 +525,7 @@ license:CC0
 		<info name="serial" value="SWJ-SUMC07"/>
 		<info name="release" value="20010125"/>
 		<info name="alt_title" value="ギルティギア プチ"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="2097152">
@@ -516,6 +544,7 @@ license:CC0
 		<info name="serial" value="SWJ-SUMC08"/>
 		<info name="release" value="20010927"/>
 		<info name="alt_title" value="ギルティギア プチ2"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -534,6 +563,7 @@ license:CC0
 		<info name="serial" value="SWJ-MGTC01"/>
 		<info name="release" value="20020613"/>
 		<info name="alt_title" value="グランスタ クロニクル"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="8388608">
@@ -552,6 +582,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC36"/>
 		<info name="release" value="20030315"/>
 		<info name="alt_title" value="機動戦士ガンダム シード"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -570,6 +601,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC3A"/>
 		<info name="release" value="20030502"/>
 		<info name="alt_title" value="機動戦士ガンダム ギレンの野望 特別編 蒼き星の覇者"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -588,6 +620,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC07"/>
 		<info name="release" value="20010201"/>
 		<info name="alt_title" value="機動戦士ガンダム Vol.1 サイドセブン"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -606,6 +639,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC17"/>
 		<info name="release" value="20010816"/>
 		<info name="alt_title" value="機動戦士ガンダム Vol.2 ジャブロー"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="8388608">
@@ -624,6 +658,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC25"/>
 		<info name="release" value="20020525"/>
 		<info name="alt_title" value="機動戦士ガンダム Vol.3 ア・バオア・クー"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="8388608">
@@ -642,6 +677,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC02"/>
 		<info name="release" value="20001209"/>
 		<info name="alt_title" value="グンペイEX"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_eeprom" />
 			<feature name="rotated" value="yes" />
@@ -661,6 +697,7 @@ license:CC0
 		<info name="serial" value="SWJ-SQRC06"/>
 		<info name="release" value="20020214"/>
 		<info name="alt_title" value="はんじゅくヒーロー半熟英雄 ああ、世界よ半熟なれ...!!"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -679,6 +716,7 @@ license:CC0
 		<info name="serial" value="SWJ-SQR004"/>
 		<info name="release" value="20000921"/>
 		<info name="alt_title" value="はたらくチョコボ"/>
+		<sharedfeat name="compatibility" value="WS,WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="1048576">
@@ -697,6 +735,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC39"/>
 		<info name="release" value="20030424"/>
 		<info name="alt_title" value="ハンター×ハンター グリードアイランド"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="8388608">
@@ -715,6 +754,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC18"/>
 		<info name="release" value="20010823"/>
 		<info name="alt_title" value="ハンター×ハンター 導かれし者"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_eeprom" />
 			<dataarea name="rom" size="4194304">
@@ -733,6 +773,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC0F"/>
 		<info name="release" value="20010426"/>
 		<info name="alt_title" value="ハンター×ハンター ～それぞれの決意～"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_eeprom" />
 			<dataarea name="rom" size="4194304">
@@ -751,6 +792,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC26"/>
 		<info name="release" value="20020727"/>
 		<info name="alt_title" value="犬夜叉 風雲絵巻"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -769,6 +811,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC1B"/>
 		<info name="release" value="20011102"/>
 		<info name="alt_title" value="犬夜叉 かごめの戦国日記"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<feature name="rtc" value="yes" />
@@ -788,6 +831,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC32"/>
 		<info name="release" value="20021116"/>
 		<info name="alt_title" value="犬夜叉 かごめの夢日記"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_eeprom" />
 			<dataarea name="rom" size="4194304">
@@ -804,6 +848,7 @@ license:CC0
 		<year>2004</year>
 		<publisher>Qute</publisher>
 		<info name="release" value="20040205"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<feature name="rtc" value="yes" />
@@ -822,6 +867,7 @@ license:CC0
 		<year>2004</year>
 		<publisher>Qute</publisher>
 		<info name="release" value="20040205"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<feature name="rtc" value="yes" />
@@ -842,6 +888,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC34"/>
 		<info name="release" value="20030130"/>
 		<info name="alt_title" value="キン肉マンII世 超人聖戦史"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_eeprom" />
 			<dataarea name="rom" size="4194304">
@@ -860,6 +907,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC20"/>
 		<info name="release" value="20020302"/>
 		<info name="alt_title" value="キン肉マンII世 ドリームタッグマッチ"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_eeprom" />
 			<dataarea name="rom" size="2097152">
@@ -878,6 +926,7 @@ license:CC0
 		<info name="serial" value="SWJ-TMCC01"/>
 		<info name="release" value="20010614"/>
 		<info name="alt_title" value="くるパラ!"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_eeprom" />
 			<feature name="rotated" value="yes" />
@@ -897,6 +946,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC15"/>
 		<info name="release" value="20010726"/>
 		<info name="alt_title" value="ラストアライブ"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_eeprom" />
 			<feature name="rotated" value="yes" />
@@ -916,6 +966,7 @@ license:CC0
 		<info name="serial" value="SWJ-SQRC08"/>
 		<info name="release" value="20020320"/>
 		<info name="alt_title" value="魔界塔士 サ・ガ"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -934,6 +985,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC0E"/>
 		<info name="release" value="20010405"/>
 		<info name="alt_title" value="名探偵コナン ～夕暮れの皇女～"/>
+		<sharedfeat name="compatibility" value="WS,WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -952,6 +1004,7 @@ license:CC0
 		<info name="serial" value="SWJ-KDKC01"/>
 		<info name="release" value="20010308"/>
 		<info name="alt_title" value="メモリーズオフ フェスタ"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="2097152">
@@ -970,6 +1023,7 @@ license:CC0
 		<info name="serial" value="SWJ-KBSC02"/>
 		<info name="release" value="20010426"/>
 		<info name="alt_title" value="サウンドコミック - 三毛猫ホームズ ゴーストパニック"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_eeprom" />
 			<feature name="rotated" value="yes" />
@@ -989,6 +1043,7 @@ license:CC0
 		<info name="serial" value="SWJ-NMCC01"/>
 		<info name="release" value="20010405"/>
 		<info name="alt_title" value="ミスタードリラー"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="2097152">
@@ -1007,6 +1062,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC38"/>
 		<info name="release" value="20030327"/>
 		<info name="alt_title" value="Naruto ナルト- 木ノ葉忍法帖"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -1025,6 +1081,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC29"/>
 		<info name="release" value="20020712"/>
 		<info name="alt_title" value="フロムテレビアニメーション ワンピース グランドバトル スワンコロシアム"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="8388608">
@@ -1043,6 +1100,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC3B"/>
 		<info name="release" value="20031016"/>
 		<info name="alt_title" value="フロムテレビアニメーション ワンピース チョッパーの大冒険"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -1061,6 +1119,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC19"/>
 		<info name="release" value="20010913"/>
 		<info name="alt_title" value="フロムテレビアニメーション ワンピース 虹の島伝説"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -1079,6 +1138,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC1E"/>
 		<info name="release" value="20020103"/>
 		<info name="alt_title" value="フロムテレビアニメーション ワンピース トレジャーウォーズ"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -1097,6 +1157,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC33"/>
 		<info name="release" value="20021220"/>
 		<info name="alt_title" value="フロムテレビアニメーション ワンピース トレジャーウォーズ2 バギーランドへようこそ"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<feature name="rtc" value="yes" />
@@ -1116,6 +1177,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC10"/>
 		<info name="release" value="20010531"/>
 		<info name="alt_title" value="落雀"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_eeprom" />
 			<dataarea name="rom" size="1048576">
@@ -1134,6 +1196,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC01"/>
 		<info name="release" value="20001209"/>
 		<info name="alt_title" value="ライムライダー ケロリカン"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -1152,6 +1215,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC27"/>
 		<info name="release" value="20020712"/>
 		<info name="alt_title" value="Riviera ～約束の地 リヴィエラ～"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="8388608">
@@ -1170,6 +1234,7 @@ license:CC0
 		<info name="serial" value="SWJ-BPRC09"/>
 		<info name="release" value="20030717"/>
 		<info name="alt_title" value="スーパーロボット大戦 コンパクト3"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="8388608">
@@ -1188,6 +1253,7 @@ license:CC0
 		<info name="serial" value="SWJ-BPRC09"/>
 		<info name="release" value="20030717"/>
 		<info name="alt_title" value="スーパーロボット大戦 コンパクト3"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="8388608">
@@ -1206,6 +1272,7 @@ license:CC0
 		<info name="serial" value="SWJ-BPRC08"/>
 		<info name="release" value="20011213"/>
 		<info name="alt_title" value="フォー ワンダースワンカラーコンパクト スーパーロボット大戦"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -1224,6 +1291,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC35"/>
 		<info name="release" value="20030208"/>
 		<info name="alt_title" value="ロックマンエグゼ ワンダースワン"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -1242,6 +1310,7 @@ license:CC0
 		<info name="serial" value="SWJ-CPCC01"/>
 		<info name="release" value="20030808"/>
 		<info name="alt_title" value="ロックマンエグゼ N1バトル"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -1260,6 +1329,7 @@ license:CC0
 		<info name="serial" value="SWJ-SQRC07"/>
 		<info name="release" value="20011220"/>
 		<info name="alt_title" value="ロマンシング サ・ガ"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -1278,6 +1348,7 @@ license:CC0
 		<info name="serial" value="SWJ-DDJC01"/>
 		<info name="release" value="20020207"/>
 		<info name="alt_title" value="ランディム Return To Earth"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="2097152">
@@ -1296,6 +1367,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC0A"/>
 		<info name="release" value="20010315"/>
 		<info name="alt_title" value="SDガンダム英雄伝 ～騎士伝説～"/>
+		<sharedfeat name="compatibility" value="WS,WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -1314,6 +1386,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC0B"/>
 		<info name="release" value="20010315"/>
 		<info name="alt_title" value="SDガンダム英雄伝 ～武者伝説～"/>
+		<sharedfeat name="compatibility" value="WS,WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -1332,6 +1405,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC12"/>
 		<info name="release" value="20010614"/>
 		<info name="alt_title" value="SDガンダム Gジェネレーション ギャザービート2"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="8388608">
@@ -1350,6 +1424,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC2F"/>
 		<info name="release" value="20020926"/>
 		<info name="alt_title" value="SDガンダム ジージェネレーション モノアイガンダムズ"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="8388608">
@@ -1368,6 +1443,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC21"/>
 		<info name="release" value="20020216"/>
 		<info name="alt_title" value="SDガンダム オペレーション U.C."/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="2097152">
@@ -1386,6 +1462,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC04"/>
 		<info name="release" value="20001221"/>
 		<info name="alt_title" value="仙界伝 弐～TVアニメーション仙界伝封神演義より～"/>
+		<sharedfeat name="compatibility" value="WS,WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -1404,6 +1481,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC2D"/>
 		<info name="release" value="20020829"/>
 		<info name="alt_title" value="シャーマンキング 未来への意志"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -1422,6 +1500,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC2D"/>
 		<info name="release" value="20020829"/>
 		<info name="alt_title" value="シャーマンキング 未来への意志"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -1440,6 +1519,7 @@ license:CC0
 		<info name="serial" value="SWJ-KGTC09"/>
 		<info name="release" value="20001209"/>
 		<info name="alt_title" value="そろばんぐ"/>
+		<sharedfeat name="compatibility" value="WS,WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<feature name="rotated" value="yes" />
@@ -1459,6 +1539,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC3D"/>
 		<info name="release" value="20030731"/>
 		<info name="alt_title" value="聖闘士星矢 黄金伝説編 パーフェクトエディション"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_rom" />
 			<dataarea name="rom" size="2097152">
@@ -1475,6 +1556,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC16"/>
 		<info name="release" value="20010827"/>
 		<info name="alt_title" value="スターハーツ ～星と大地の使者～"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -1490,6 +1572,7 @@ license:CC0
 		<description>Star Hearts - Hoshi to Daichi no Shisha - Taikenban</description>
 		<year>2001</year>
 		<publisher>Bandai</publisher>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -1508,6 +1591,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC28"/>
 		<info name="release" value="20021031"/>
 		<info name="alt_title" value="ナムコスーパーウォーズ"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="2097152">
@@ -1526,6 +1610,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC05"/>
 		<info name="release" value="20001221"/>
 		<info name="alt_title" value="テラーズ2"/>
+		<sharedfeat name="compatibility" value="WS,WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_eeprom" />
 			<feature name="rotated" value="yes" />
@@ -1545,6 +1630,7 @@ license:CC0
 		<info name="serial" value="SWJ-VGDC01"/>
 		<info name="release" value="20020418"/>
 		<info name="alt_title" value="テトリス"/>
+		<sharedfeat name="compatibility" value="WS,WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_eeprom" />
 			<feature name="rotated" value="yes" />
@@ -1564,6 +1650,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC13"/>
 		<info name="release" value="20010628"/>
 		<info name="alt_title" value="東風荘"/>
+		<sharedfeat name="compatibility" value="WS,WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_eeprom" />
 			<dataarea name="rom" size="1048576">
@@ -1582,6 +1669,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC09"/>
 		<info name="release" value="20010208"/>
 		<info name="alt_title" value="宇宙戦艦ヤマト"/>
+		<sharedfeat name="compatibility" value="WS,WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="4194304">
@@ -1600,6 +1688,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC11"/>
 		<info name="release" value="20010621"/>
 		<info name="alt_title" value="ウルトラマン 光の国の使者"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="2097152">
@@ -1618,6 +1707,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC06"/>
 		<info name="release" value="20010118"/>
 		<info name="alt_title" value="ナムコワンダークラシック"/>
+		<sharedfeat name="compatibility" value="WS,WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<feature name="rotated" value="yes" />
@@ -1637,6 +1727,7 @@ license:CC0
 		<info name="serial" value="SWJ-SQRC04"/>
 		<info name="release" value="20010329"/>
 		<info name="alt_title" value="ワイルドカード"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="2097152">
@@ -1655,6 +1746,7 @@ license:CC0
 		<info name="serial" value="SWJ-SHLC01"/>
 		<info name="release" value="20010125"/>
 		<info name="alt_title" value="ウィズ・ユー ～みつめていたい～"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_eeprom" />
 			<dataarea name="rom" size="4194304">
@@ -1673,6 +1765,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC0C"/>
 		<info name="release" value="20010301"/>
 		<info name="alt_title" value="ウィザードリィ シナリオ1 狂王の試練場"/>
+		<sharedfeat name="compatibility" value="WS,WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="2097152">
@@ -1690,6 +1783,7 @@ license:CC0
 		<publisher>Qute</publisher>
 		<info name="release" value="20000718"/>
 		<info name="alt_title" value="ワンダーウィッチ"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<dataarea name="rom" size="524288">
 				<rom name="wonderwitch [freyaos 1.2.0].bin" size="524288" crc="8e5e9633" sha1="d9dd280972ec45e56de98f3d425533dd49713caf" offset="000000" />
@@ -1704,6 +1798,7 @@ license:CC0
 		<publisher>Qute</publisher>
 		<info name="release" value="20000718"/>
 		<info name="alt_title" value="ワンダーウィッチ"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<dataarea name="rom" size="524288">
 				<rom name="wonderwitch [freyaos 1.1.5].bin" size="524288" crc="45ba7287" sha1="905cca29fd6188b2c6237b1fb71e89d7b6a1f842" offset="000000" />
@@ -1719,6 +1814,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC2C"/>
 		<info name="release" value="200206??"/>
 		<info name="alt_title" value="エックス カード オブ フェイト"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_eeprom" />
 			<dataarea name="rom" size="4194304">
@@ -1737,6 +1833,7 @@ license:CC0
 		<info name="serial" value="SWJ-BANC1F"/>
 		<info name="release" value="20011220"/>
 		<info name="alt_title" value="サイ リトル"/>
+		<sharedfeat name="compatibility" value="WSC"/>
 		<part name="cart" interface="wswan_cart">
 			<feature name="slot" value="ws_sram" />
 			<dataarea name="rom" size="2097152">

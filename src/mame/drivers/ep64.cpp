@@ -601,7 +601,7 @@ void ep64_state::ep64(machine_config &config)
 	m_dave->add_route(1, "rspeaker", 0.25);
 
 	// devices
-	EP64_EXPANSION_BUS_SLOT(config, m_exp, nullptr);
+	EP64_EXPANSION_BUS_SLOT(config, m_exp, "exdos");
 	m_exp->set_program_space(m_dave, AS_PROGRAM);
 	m_exp->set_io_space(m_dave, AS_IO);
 	m_exp->irq_wr().set_inputline(m_maincpu, INPUT_LINE_IRQ0);

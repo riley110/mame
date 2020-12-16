@@ -873,7 +873,7 @@ void ngp_state::ngp(machine_config &config)
 
 	/* software lists */
 	SOFTWARE_LIST(config, "cart_list").set_original("ngp");
-	SOFTWARE_LIST(config, "ngpc_list").set_compatible("ngpc");
+	SOFTWARE_LIST(config, "ngpc_list").set_compatible("ngpc").set_filter("NGP");
 }
 
 
@@ -891,7 +891,7 @@ void ngp_state::ngpc(machine_config &config)
 	cartslot.set_device_unload(FUNC(ngp_state::unload_ngp_cart));
 
 	/* software lists */
-	SOFTWARE_LIST(config, "cart_list").set_original("ngpc");
+	SOFTWARE_LIST(config, "cart_list").set_original("ngpc").set_filter("NGPC");
 	SOFTWARE_LIST(config, "ngp_list").set_compatible("ngp");
 }
 

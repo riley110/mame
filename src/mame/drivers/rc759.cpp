@@ -26,6 +26,7 @@
 
 #include "bus/centronics/ctronics.h"
 #include "bus/isbx/isbx.h"
+#include "softlist.h"
 
 #include "screen.h"
 #include "speaker.h"
@@ -598,6 +599,9 @@ void rc759_state::rc759(machine_config &config)
 	// floppy drives
 	FLOPPY_CONNECTOR(config, "fdc:0", rc759_floppies, "hd", floppy_image_device::default_floppy_formats);
 	FLOPPY_CONNECTOR(config, "fdc:1", rc759_floppies, "hd", floppy_image_device::default_floppy_formats);
+	
+	// software lists
+	SOFTWARE_LIST(config, "flop_list").set_original("rc759");
 
 	// cassette
 	CASSETTE(config, m_cas);

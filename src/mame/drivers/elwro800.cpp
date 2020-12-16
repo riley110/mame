@@ -11,6 +11,7 @@
           is not emulated
         - 8251 is used for JUNET network (a network of Elwro 800 Junior computers, allows sharing
           floppy disc drives and printers) - network is not emulated
+		- CP/J starts to boot before giving a bad sector(?) error - regression from upd765 rewrite
 
 ****************************************************************************/
 
@@ -31,6 +32,7 @@
 #include "machine/bankdev.h"
 
 #include "screen.h"
+#include "softlist.h"
 #include "speaker.h"
 
 
@@ -537,7 +539,7 @@ INTERRUPT_GEN_MEMBER(elwro800_state::elwro800jr_interrupt)
 
 static void elwro800jr_floppies(device_slot_interface &device)
 {
-	device.option_add("525hd", FLOPPY_525_HD);
+	device.option_add("35dd", FLOPPY_525_HD);
 }
 
 /* F4 Character Displayer */
@@ -612,14 +614,16 @@ void elwro800_state::elwro800(machine_config &config)
 	m_cassette->set_default_state(CASSETTE_STOPPED | CASSETTE_SPEAKER_ENABLED | CASSETTE_MOTOR_ENABLED);
 	m_cassette->add_route(ALL_OUTPUTS, "mono", 0.05);
 
-	FLOPPY_CONNECTOR(config, "upd765:0", elwro800jr_floppies, "525hd", floppy_image_device::default_floppy_formats);
-	FLOPPY_CONNECTOR(config, "upd765:1", elwro800jr_floppies, "525hd", floppy_image_device::default_floppy_formats);
+	FLOPPY_CONNECTOR(config, "upd765:0", elwro800jr_floppies, "35dd", floppy_image_device::default_floppy_formats);
+	FLOPPY_CONNECTOR(config, "upd765:1", elwro800jr_floppies, "35dd", floppy_image_device::default_floppy_formats);
 
 	/* internal ram */
 	RAM(config, RAM_TAG).set_default_size("64K");
 
 	ADDRESS_MAP_BANK(config, "bank1").set_map(&elwro800_state::elwro800_bank1).set_data_width(8).set_stride(0x2000);
 	ADDRESS_MAP_BANK(config, "bank2").set_map(&elwro800_state::elwro800_bank2).set_data_width(8).set_stride(0x2000);
+
+	SOFTWARE_LIST(config, "flop_list").set_original("elwro800");
 }
 
 /*************************************
@@ -643,4 +647,4 @@ ROM_END
 /* Driver */
 
 //    YEAR  NAME      PARENT  COMPAT  MACHINE   INPUT     CLASS           INIT        COMPANY  FULLNAME      FLAGS
-COMP( 1986, elwro800, 0,      0,      elwro800, elwro800, elwro800_state, empty_init, "Elwro", "800 Junior", 0 )
+COMP( 1986, elwro800, 0,      0,      elwro800, elwro800, elwro800_state, empty_init, "Elwro", "800 Junior", MACHINE_NOT_WORKING )

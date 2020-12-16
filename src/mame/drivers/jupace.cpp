@@ -815,6 +815,7 @@ void ace_state::ace(machine_config &config)
 	RAM(config, RAM_TAG).set_default_size("1K").set_extra_options("16K,32K,48K");
 
 	SOFTWARE_LIST(config, "cass_list").set_original("jupace_cass");
+	SOFTWARE_LIST(config, "flop_list").set_original("jupace_flop"); // included only for validation
 	SOFTWARE_LIST(config, "snap_list").set_original("jupace_snap");
 }
 

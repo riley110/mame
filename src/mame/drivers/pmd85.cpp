@@ -678,6 +678,7 @@ void pmd85_state::pmd85(machine_config &config, bool with_uart)
 
 	/* software lists */
 	SOFTWARE_LIST(config, "cass_list").set_original("pmd85_cass");
+	SOFTWARE_LIST(config, "flop_list").set_original("pmd85_flop");
 
 	/* uart */
 	if (with_uart)

@@ -68,6 +68,7 @@ Z - more scan lines per row (cursor is bigger)
 
 #include "emupal.h"
 #include "screen.h"
+#include "softlist.h"
 #include "speaker.h"
 
 class cpu09_state : public driver_device
@@ -474,6 +475,8 @@ void ivg09_state::ivg09(machine_config &config)
 
 	WD2795(config, m_fdc, 8_MHz_XTAL / 8);
 	FLOPPY_CONNECTOR(config, "fdc:0", ifd09_floppies, "525dd", floppy_image_device::default_floppy_formats).enable_sound(true);
+
+	SOFTWARE_LIST(config, "flop_list").set_original("tavernie");
 }
 
 /* ROM definition */

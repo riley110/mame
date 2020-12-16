@@ -85,6 +85,7 @@ X - change banks
 #include "video/mc6845.h"
 #include "emupal.h"
 #include "screen.h"
+#include "softlist.h"
 #include "speaker.h"
 
 
@@ -667,6 +668,8 @@ void bigbord2_state::bigbord2(machine_config &config)
 	/* sound hardware */
 	SPEAKER(config, "mono").front_center();
 	BEEP(config, "beeper", 950).add_route(ALL_OUTPUTS, "mono", 0.50); // actual frequency is unknown
+	
+	SOFTWARE_LIST(config, "flop_list").set_original("bigbord2");
 }
 
 

@@ -406,7 +406,7 @@ void hec2hrp_state::interact_common(machine_config &config)
 	m_cassette->add_route(ALL_OUTPUTS, "mono", 0.05);
 	m_cassette->set_interface("interact_cass");
 
-	SOFTWARE_LIST(config, "cass_list").set_original("interact");
+	SOFTWARE_LIST(config, "int_cass_list").set_original("interact");
 
 	/* printer */
 	PRINTER(config, m_printer, 0);
@@ -430,6 +430,8 @@ void hec2hrp_state::hector1(machine_config &config)
 	m_maincpu->set_periodic_int(FUNC(hec2hrp_state::irq0_line_hold), attotime::from_hz(50));
 
 	interact_common(config);
+
+    SOFTWARE_LIST(config, "h1_cass_list").set_original("hector1");
 }
 
 
@@ -483,7 +485,16 @@ void hec2hrp_state::hec2hr(machine_config &config)
 	/* internal ram */
 	RAM(config, RAM_TAG).set_default_size("80K").set_default_value(0x00);
 
-	SOFTWARE_LIST(config, "cass_list").set_original("interact");
+	SOFTWARE_LIST(config, "int_cass_list").set_original("interact");
+    SOFTWARE_LIST(config, "h1_cass_list").set_original("hector1");
+    SOFTWARE_LIST(config, "hr_cass_list").set_original("hectorhr");
+    SOFTWARE_LIST(config, "vict_cass_list").set_original("victor");
+}
+
+void hec2hrp_state::victor(machine_config &config) {
+    hec2hr(config);
+    
+    config.device_remove("hr_cass_list");
 }
 
 void hec2hrp_state::hec2hrx(machine_config &config)
@@ -505,6 +516,11 @@ void hec2hrp_state::hec2hrx(machine_config &config)
 
 	MCFG_MACHINE_RESET_OVERRIDE(hec2hrp_state,hec2hrx)
 	MCFG_MACHINE_START_OVERRIDE(hec2hrp_state,hec2hrx)
+    
+    config.device_remove("int_cass_list");
+    config.device_remove("h1_cass_list");
+    
+    SOFTWARE_LIST(config, "hrx_cass_list").set_original("hectorhrx");
 }
 
 void hec2hrp_state::hec2mx40(machine_config &config)
@@ -531,6 +547,11 @@ void hec2hrp_state::hec2mdhrx(machine_config &config)
 	/* 3.5" ("mini") disc */
 	FD1793(config, m_minidisc_fdc, 1_MHz_XTAL);
 	FLOPPY_CONNECTOR(config, "wd179x:0", minidisc_floppies, "dd", hec2hrp_state::minidisc_formats).enable_sound(true);
+    
+    config.device_remove("int_cass_list");
+    config.device_remove("h1_cass_list");
+    
+    SOFTWARE_LIST(config, "hrx_cass_list").set_original("hectorhrx");
 }
 
 
@@ -628,7 +649,7 @@ ROM_END
 COMP(1979, interact,  0,        0,        interact,  hec2hrp, hec2hrp_state,  init_interact, "Interact Electronics",   "Interact Family Computer", MACHINE_IMPERFECT_SOUND)
 COMP(1983, hector1,   interact, 0,        hector1,   hec2hrp, hec2hrp_state,  init_interact, "Micronique", "Hector 1",               MACHINE_IMPERFECT_SOUND)
 COMP(1983, hec2hrp,   0,        interact, hec2hr,    hec2hrp, hec2hrp_state,  init_interact, "Micronique", "Hector 2HR+",            MACHINE_IMPERFECT_SOUND)
-COMP(1980, victor,    hec2hrp,  0,        hec2hr,    hec2hrp, hec2hrp_state,  init_victor,   "Micronique", "Victor",                 MACHINE_IMPERFECT_SOUND)
+COMP(1980, victor,    hec2hrp,  0,        victor,    hec2hrp, hec2hrp_state,  init_victor,   "Micronique", "Victor",                 MACHINE_IMPERFECT_SOUND)
 COMP(1983, hec2hr,    hec2hrp,  0,        hec2hr,    hec2hrp, hec2hrp_state,  init_victor,   "Micronique", "Hector 2HR",             MACHINE_IMPERFECT_SOUND)
 COMP(1984, hec2hrx,   hec2hrp,  0,        hec2hrx,   hec2hrp, hec2hrp_state,  init_hrx,      "Micronique", "Hector HRX + Disc2",     MACHINE_IMPERFECT_SOUND)
 COMP(1985, hec2mdhrx, hec2hrp,  0,        hec2mdhrx, hec2hrp, hec2hrp_state,  init_mdhrx,    "Micronique", "Hector HRX + mini Disc", MACHINE_IMPERFECT_SOUND)

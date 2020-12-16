@@ -1,0 +1,853 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+license:CC0
+
+None of these are usable in the PC-6001 drivers for now
+-->
+<softwarelist name="pc6001_flop" description="NEC PC-6001 floppy disks">
+
+	<software name="0101" supported="no">
+		<description>0101</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="0101.d88" size="153008" crc="0dd6346d" sha1="b377e895e93019e5a02d902ba6920ad924deecb3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="asalt" supported="no">
+		<description>Asalt (v1.1)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="asalt (v1.1).d88" size="153008" crc="5649ace5" sha1="4e972be3d60979d1d6c27fb1dc83b623d8157c8b" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="asalt10" cloneof="asalt" supported="no">
+		<description>Asalt (v1.0)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="asalt (v1.0).d88" size="153008" crc="56b5fd8f" sha1="cf89529a77830b4f2c1bfe8930b12f3df4ac69dd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="badapple" supported="no">
+		<description>Bad Apple</description>
+		<year>198?</year>
+		<publisher>Bookworm</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174768">
+				<rom name="bad apple (bap2).d88" size="174768" crc="544d712d" sha1="ac52e4072c076699076d0da1339a986a7cd60d5d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="badapple6601" cloneof="badapple" supported="no">
+		<description>Bad Apple (6601)</description>
+		<year>198?</year>
+		<publisher>Bookworm</publisher>
+		<info name="usage" value="Mode 4, Files 1, Pages 1, RUN IPL.BAS" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174768">
+				<rom name="bad apple (6601) {m4f1p1 run ipl.bas}.d88" size="174768" crc="8f6bc304" sha1="df14c339e114737f215b7f38dfae483ed9e21b12" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="badapplemk2" cloneof="badapple" supported="no">
+		<description>Bad Apple (mkII)</description>
+		<year>198?</year>
+		<publisher>Bookworm</publisher>
+		<info name="usage" value="Mode 4, Files 1, Pages 1, RUN IPL.BAS" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174768">
+				<rom name="bad apple (mkii) {m4f1p1 run ipl.bas}.d88" size="174768" crc="33f92884" sha1="da0c5d7508d8af590bbc1b819bf35e99e3e186de" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="colony" supported="no">
+		<description>Colony Odyssey Bouken-hen (6601)</description>
+		<year>198?</year>
+		<publisher>NEC</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="163840">
+				<rom name="colony odyssey bouken-hen (6601) (disk 1).dsk" size="163840" crc="457bfc89" sha1="63078643aa88080b96ed6b26d6db705e918b0553" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="163840">
+				<rom name="colony odyssey bouken-hen (6601) (disk 2).dsk" size="163840" crc="75eeb13e" sha1="5e99c5dd94da47864696edf3d29990dc304d89fd" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<dataarea name="flop" size="163840">
+				<rom name="colony odyssey bouken-hen (6601) (disk 3).dsk" size="163840" crc="f6c1f0b4" sha1="056def87674aee46fe8e41337907e5a4573f522c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="douga" supported="no">
+		<description>Douga Saisei Azusa (v1.1)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="douga saisei azusa (v1.1).d88" size="153008" crc="ff44dea5" sha1="7be5db37091030dbdcfbe8949861ba6d87644fc8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="douga10" cloneof="douga" supported="no">
+		<description>Douga Saisei Azusa (v1.0?)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="douga saisei azusa.d88" size="153008" crc="a10f7711" sha1="cfb6ebd5f72a76f6031f242db13481bb87df49fb" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fmexrcis" supported="no">
+		<description>FM Music Exercises (SR)</description>
+		<year>198?</year>
+		<publisher>Kaychang</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="348848">
+				<rom name="fm music exercises (sr).d88" size="348848" crc="d287d789" sha1="2e7edfb0b224aba0377ec3896f2e2c23a106b132" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="fmirage" supported="no">
+		<description>Fruit Mirage</description>
+		<year>2009</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="fruit mirage.d88" size="153008" crc="4b7ebba9" sha1="095426670968cf7853c0e2384fa4b7cf5ed33b3d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="golfisla" supported="no">
+		<description>Golf Island (66SR)</description>
+		<year>198?</year>
+		<publisher>テクノソフト (Techno Soft)</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="305328">
+				<rom name="golf island (66sr).d88" size="305328" crc="d4573555" sha1="52953b7c9831726919eae91082b25c21e0bd1d58" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hanabi" supported="no">
+		<description>Hanabi (mkII)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="hanabi mkii.d88" size="153008" crc="7983b4ce" sha1="eb55d0940b90ea2f48f6255c5d98cb9e01a13f08" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hudson3" supported="no">
+		<description>Hudson Soft Best Hit Game Pack 3 (6601)</description>
+		<year>198?</year>
+		<publisher>ハドソン (Hudson Soft)</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="177888">
+				<rom name="hudson soft best hit game pack 3 (6601).d88" size="177888" crc="29e87cef" sha1="2fad4e7785570c25036f1f3c3ceed3a743c54d1c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="hydlidtt" supported="no">
+		<description>Hydlide unofficial time trial (SR)</description>
+		<year>198?</year>
+		<publisher>P6 Monthly</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="hydlide unofficial time trial (sr).d88" size="153008" crc="d14fd9f2" sha1="4b745bd25b750371a8c42e753bd00d4f30d6648f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kaiten" supported="no">
+		<description>Kaiten (mkII)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="kaiten (mkii).d88" size="153008" crc="c3d535e3" sha1="44e091a7f6bdf81a16ca1fd6cdc1957ccfe9b256" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="kamishib" supported="no">
+		<description>Kamishibai-fuu Kinta no Daibouken</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="kamishibai-fuu kinta no daibouken.d88" size="153008" crc="3df60fe7" sha1="6503121d798cf512cd94f05016e7d07d0c65991d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="koinobor" supported="no">
+		<description>Koinobori</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+		<info name="usage" value="Mode 5, Pages 2" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="koinobori {m5p2}.d88" size="153008" crc="beb12674" sha1="bf7f4d118cc12a70a1c05e1a3d8b6c583c31dcf3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lovesong" supported="no">
+		<description>Love Song Sagashite, no Mai</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+		<info name="usage" value="Mode 5, Pages 3" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="love song sagashite, no mai {m5p3}.d88" size="153008" crc="d8520998" sha1="55e44503544f2c8b6720b7601065f3b0e7a86d6a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lupau3" supported="no">
+		<description>Lupau III</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="lupau iii.d88" size="153008" crc="a759b0c1" sha1="c4a6dbccc379dcfdff43e90038073dde8122c99e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nagara" supported="no">
+		<description>Nagara Onsei</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="nagara onsei.d88" size="153008" crc="85bb4e5f" sha1="c51753b3488c5bae2c1e26e1d14693ba065094e1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nyahacks" supported="no">
+		<description>Nyahacks 60</description>
+		<year>198?</year>
+		<publisher>Bookworm</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174768">
+				<rom name="nyahacks 60.d88" size="174768" crc="55bba98d" sha1="a657d00eab72a08b0e3f5a6edd9c040075a9f231" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="offtter" supported="no">
+		<description>OFFtter</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="offtter.d88" size="153008" crc="44a84ac2" sha1="e712794447fc9ec20559f6c44112292a4eed1163" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="p6g2004" supported="no">
+		<description>P6 Gallery 2004</description>
+		<year>2004</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="p6 gallery (2004).d88" size="153008" crc="5353f051" sha1="315166c7017791d9686fcf0f11c7d8c8b1a0f7a8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="p6g2005" supported="no">
+		<description>P6 Gallery 2005</description>
+		<year>2005</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="p6 gallery (2005).d88" size="153008" crc="fd13dde3" sha1="8e34e755ddd51e49efe1489ea40d407e446cdd84" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="p6g2006" supported="no">
+		<description>P6 Gallery 2006</description>
+		<year>2006</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="p6 gallery (2006).d88" size="153008" crc="71504cae" sha1="9058df2acf3a0f79c13efe6af887ed5ea042eb2e" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="p6g2007" supported="no">
+		<description>P6 Gallery 2007</description>
+		<year>2007</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="p6 gallery (2007).d88" size="153008" crc="2634588d" sha1="045c7d65a3f509c9ad83c49e3dbdc70c7b921493" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="p6g2008" supported="no">
+		<description>P6 Gallery 2008</description>
+		<year>2008</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="p6 gallery (2008).d88" size="153008" crc="c1ba4da2" sha1="1fc4fe13b8d7e80cb717f9b80971c12481a74daa" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="p6g2009" supported="no">
+		<description>P6 Gallery 2009 (Updated)</description>
+		<year>2009</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="p6 gallery (2009) (updated).d88" size="153008" crc="7beb5d67" sha1="92ed7bf8178643798447c8851914aabdb03ee8ad" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="p6g2009a" cloneof="p6g2009" supported="no">
+		<description>P6 Gallery 2009 (Original)</description>
+		<year>2009</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="p6 gallery (2009).d88" size="153008" crc="7b11faca" sha1="ec7b962ee85b9b04f7542ddc853d9ce059a373e0" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="p6g2010" supported="no">
+		<description>P6 Gallery 2010</description>
+		<year>2010</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="p6 gallery (2010).d88" size="153008" crc="599b09b5" sha1="980a365878b8e934f9591b599e2c09ea066fe6c9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="p6g2011" supported="no">
+		<description>P6 Gallery 2011</description>
+		<year>2011</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="p6 gallery (2011).d88" size="153008" crc="2b89f80d" sha1="83780ff9ba10e4d35e6bb6468fba404bc64b6612" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="p6g2012" supported="no">
+		<description>P6 Gallery 2012</description>
+		<year>2012</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="p6 gallery (2012).d88" size="153008" crc="b4be5b0d" sha1="a55e6a9fb4989eebd87e36534988b1f8e32fb797" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="p6gvoca" supported="no">
+		<description>P6 Gallery Voca</description>
+		<year>20??</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="p6 gallery (voca).d88" size="153008" crc="4f89aa61" sha1="0f537f81d5861285e554e789fbb1f8788939f892" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="p6utau" supported="no">
+		<description>P6 Utau (Mori no Kuma-san image ver)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="p6 utau (mori no kuma-san image ver).d88" size="153008" crc="305d8abd" sha1="de96a9ce01b82b0fa4f6cd99d9ffc98c4d9da81a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- released from 2003-2012, sort out later according to readme -->
+	<software name="papitsu" supported="no">
+		<description>Papitsu Graphic Data</description>
+		<year>20??</year>
+		<publisher>Hashi</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (crazy climber).d88" size="153008" crc="637adbca" sha1="7775c24e0055cc837f613adfc27054078418207f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (dead or alive xtreme beach volleyball).d88" size="153008" crc="82c63467" sha1="5f145f52f4c560d86ab545d4197f740ad67fd2e9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (dragon spirit).d88" size="153008" crc="512681cc" sha1="6a8a1bbe6d3a2ee1c21db40246e5e945e52b135a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (final fantasy series).d88" size="153008" crc="6e54b542" sha1="095f48401730c170f342949b3b1ee1329e9519c0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (gradius).d88" size="153008" crc="6c190809" sha1="5d560fb35d7563f29f91741f0355ccd23fdc1077" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (guilty gear xx).d88" size="153008" crc="7918aa7f" sha1="d0565e7a30c5948b63439d39e7036ae694346dda" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (gyakuten saiban).d88" size="153008" crc="1613ebda" sha1="49f91e7e0180d9a7f62f2d8a4764700b3feee234" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop8" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (koi wa sensou) [b].d88" size="153008" crc="7a3c6c3e" sha1="56af0d32a221a6eee4384e54ccaa028c13f3d492" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop9" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (manbiki shonen game 2).d88" size="153008" crc="dc1b3f01" sha1="03d28cfe5399b856b6430ac9492d4bf697927fc6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop10" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (metal slader glory).d88" size="153008" crc="74f22170" sha1="f6a6622c4f63197f5a8823c2b94e002b1e8249f6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop11" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (moe 1) {m5}.d88" size="153008" crc="5e346072" sha1="fbc800ce9f5bee84c9cc7883835c294235c297d4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop12" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (moe 2) {m5}.d88" size="153008" crc="da06b053" sha1="3faedd5811b0e54eaa41b360ca1bae5ce8e51e4d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop13" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (nights &amp; x'mas nights).d88" size="153008" crc="a9c44bb9" sha1="12243164b9b15cb415520f81a2f71a95b6f5a084" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop14" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (nyan-chan mahjong, nana-chan no kinjirareta asobi).d88" size="153008" crc="934708e5" sha1="b619a0214f0a262e63901307b1c9f82fce12e18e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop15" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (omake 11) {m4}.d88" size="153008" crc="feb323e9" sha1="73c45b90876c70d8e6e6ead0a8e7c707fdb3d900" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop16" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (omake 21) {m5}.d88" size="153008" crc="c603f02c" sha1="63bc9d14044ec4cd08965a69966fc552ab5bdb9f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop17" interface="floppy_5_25">
+			<dataarea name="flop" size="348848">
+				<rom name="papitsu graphic data (omake sr1) {m6, run menusr.bas}.d88" size="348848" crc="c11bf1aa" sha1="0f3db80e369f025e80cd6f7b1bd594f3851a6fbe" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop18" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (papista '05).d88" size="153008" crc="2fba294b" sha1="fe9e098df823fbe2ebc0ff96153fe23b1e1ddae4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop19" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (phantasy star online).d88" size="153008" crc="362b6d69" sha1="ed45e20d36b264573933d082211e8d9bcf87e044" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop20" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (puyo puyo fever).d88" size="153008" crc="4436b3ee" sha1="84ec67aa84aaf9d43694e3c5fbd936aef9e702c6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop21" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (quest ii - higurashi no naku koro ni).d88" size="153008" crc="9184235d" sha1="9627e3e60f1989dcfb50de0a23c8ee64aa5da03b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop22" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (r-type).d88" size="153008" crc="d5fdac6d" sha1="1ae80ba8946d15f1c5808d9866031752dc610e7c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop23" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (snatcher).d88" size="153008" crc="020c6bac" sha1="0f3a89d25c54eb0d840db36313b6dbd0f1617713" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop24" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (sonic adventure dx).d88" size="153008" crc="6d007435" sha1="5b984840aaae131f72fb536f566a2bc2dc5aa184" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop25" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (sonic h).d88" size="153008" crc="1fa034eb" sha1="b82a895032815f517dbe783a14321b4b29fa5cf3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop26" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (soul calibur ii).d88" size="153008" crc="45d251a3" sha1="b9a2000c41a80b11004ade36516ee9c9a689ce0e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop27" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (space harrier mk2).d88" size="153008" crc="a96def1e" sha1="5ea77331c05ecfd976881705e1f81e82e1053bef" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop28" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (spelunker).d88" size="153008" crc="a9872981" sha1="0a98a2589acf3d94a868e7359815ba02aaf5485a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop29" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (star force).d88" size="153008" crc="3260946e" sha1="1a6bd3e954a05f3990afcacb56448886549aebf2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop30" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (super mario bros.).d88" size="153008" crc="3a1df52e" sha1="8e00cafd93025247885021fca31db35cdb67f13a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop31" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (super tiny xevious).d88" size="153008" crc="e9dd9cd1" sha1="9616157bd5d1a18c1572b96f8afc96819e9063b4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop32" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (tekken 4).d88" size="153008" crc="6fcafabb" sha1="c6e8cc96a950776f7bcc4cbcd906f6b3626356d4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop33" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (tiny dragon buster).d88" size="153008" crc="9b3b093b" sha1="857226756cd423be716ba846dd8f9656fd9044d4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop34" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (tiny king of fighters 6001).d88" size="153008" crc="37ce3151" sha1="2a9a494975a98b9a8197a0537796c2ccedf8b939" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop35" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (tiny steins;gate) {m5p2, run menu}.d88" size="153008" crc="74de21bc" sha1="0a27a794b78863c46c244bcea62572fd229d14ca" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop36" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (tiny tower of druaga).d88" size="153008" crc="652bd7ec" sha1="2e1dee2ed0d5276bd7a676ea78c3a57ec1fe576e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop37" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (tiny xevious mkiii).d88" size="153008" crc="ab8a5361" sha1="bfc443e3a0fffd6109de7a79dac47d4523d568b4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop38" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (trio the punch).d88" size="153008" crc="1d76d2c6" sha1="689cf0ae107cdefc87ca4fa83a23e10811f3a060" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop39" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (virtua fighter 4).d88" size="153008" crc="bf24bfb5" sha1="bfe40c50b1c221996bb84b879aef666d00de5506" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop40" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (virtual-on (screen 4 palette)).d88" size="153008" crc="38f0085c" sha1="5c6114ea768bdc78e2423248b886e357ec77ef67" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop41" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (virtual-on).d88" size="153008" crc="e2dc7b7a" sha1="6d5b7be9e57b63b271f47880dcd00e43411937f2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop42" interface="floppy_5_25">
+			<dataarea name="flop" size="348848">
+				<rom name="papitsu graphic data (windows 6000).d88" size="348848" crc="b198e6bb" sha1="da0eb7c0b849e852f961ab6b2d1eef8186c1362c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop43" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (windows xp6).d88" size="153008" crc="7f1bbfb9" sha1="5d84c1142ef457e8b7455148c779407ab238fd73" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop44" interface="floppy_5_25">
+			<dataarea name="flop" size="348848">
+				<rom name="papitsu graphic data (ys (sr)).d88" size="348848" crc="fcba05a4" sha1="8c4f0f051be053d7a846e4f4e7a1e24a5e08ba39" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop45" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (ys).d88" size="153008" crc="4084d7da" sha1="f1d07ff23ca6bc0ec6b0ff8b2d8009de8b75a270" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop46" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (yumeria).d88" size="153008" crc="603ca2fc" sha1="7ddf34bade29cc80cb64e8d1cace492b1433a3e5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop47" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (zelda no densetsu - kaze no takuto).d88" size="153008" crc="aae1110c" sha1="666214852a7de16f518baa19b7be39e3004141e5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop48" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="papitsu graphic data (zelda no densetsu) {m5p2, run menu}.d88" size="153008" crc="6031e615" sha1="77cb5e4dc12ca39a3722051ab29d6ae9ae01f8e7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sbluster" supported="no">
+		<description>Space Bluster FZ</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="space bluster fz.d88" size="153008" crc="69f716e8" sha1="e78f3962cdce1774fb3ccad1092544df926db7a3" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sblusterp" cloneof="sbluster" supported="no">
+		<description>Space Bluster FZ (Preview)</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="space bluster fz (preview ver.).d88" size="153008" crc="3b302903" sha1="f6f33ccfa292bcf1f4c8d1d83e657497fe6f232d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="akunin" supported="no">
+		<description>The Akunin</description>
+		<year>198?</year>
+		<publisher>Tinyan</publisher>
+		<info name="usage" value="Mode 6, Files 1, RUN BP8510.BAS" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="348848">
+				<rom name="the akunin {m6f1 run bp8510.bas}.d88" size="348848" crc="55c0a6d3" sha1="8b5f1b2b7c0b8b745143062324c83f09dc7f0b81" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="akunin2" supported="no">
+		<description>The Akunin 2</description>
+		<year>198?</year>
+		<publisher>Tinyan</publisher>
+		<info name="usage" value="Mode 6, Files 1, RUN BP8511.BAS" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="348848">
+				<rom name="the akunin 2 {m6f1 run bp8511.bas}.d88" size="348848" crc="9a26d81e" sha1="b82a8ab70f8fb7705f54a6d421309c678758efcf" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="akunin3" supported="no">
+		<description>The Akunin 3</description>
+		<year>198?</year>
+		<publisher>Tinyan</publisher>
+		<info name="usage" value="Mode 6, Files 1, RUN BP8512.BAS" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="348848">
+				<rom name="the akunin 3 {m6f1 run bp8512.bas}.d88" size="348848" crc="d4909944" sha1="cfc22e0547bdb3c92a4ceadc49bd515ed33d5531" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="blankbas" supported="no">
+		<description>Blank disk (BASIC formatted)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="174768">
+				<rom name="[os] blank disk (basic formatted).d88" size="174768" crc="0c229c4a" sha1="10a16fe25ea0b5e51508fc410553f4aef2fbce0d" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="blankunf" supported="no">
+		<description>Blank disk (unformatted)</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="688">
+				<rom name="[os] blank disk (unformatted).d88" size="688" crc="d31eddab" sha1="cd08b6b39026afbe5c0bbaf9732eadd318e3f99a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="chibimoj" supported="no">
+		<description>Chibi Moji Put</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="[utility] chibi moji put.d88" size="153008" crc="242e66d4" sha1="51331cf7464ab626bbecbacf2b5e91377fd04289" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="morecolr" supported="no">
+		<description>More Color</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+		<info name="usage" value="Mode 5, Files 0, Pages 3, RUN MAIN" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="[utility] more color {m5f0p3 run main}.d88" size="153008" crc="422ea37b" sha1="c6b6ea03aef212b1a4ba709ea259626efe650361" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="nihongo" supported="no">
+		<description>PC-6601 Nihongo Word Processor</description>
+		<year>198?</year>
+		<publisher>NEC</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="163840">
+				<rom name="[utility] pc-6601 nihongo word processor.dsk" size="163840" crc="0aaad58e" sha1="bd0f10239208f2c0373246a83ff20b2d49ac4fd6" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="utildisk" supported="no">
+		<description>PC-6601 Utility Disk</description>
+		<year>198?</year>
+		<publisher>NEC</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="163840">
+				<rom name="[utility] pc-6601 utility disk.dsk" size="163840" crc="e3d7f35c" sha1="2453e9215e52425a0742d657dfe7e6d8f0e6ab28" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="semiedit" supported="no">
+		<description>SemiEdit</description>
+		<year>198?</year>
+		<publisher>Kaw</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="[utility] semiedit.d88" size="153008" crc="461edabc" sha1="129f809c9b0874fd3e68a9a015b3bc5de5ad41ba" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="suprword" supported="no">
+		<description>Super Word Test Program</description>
+		<year>198?</year>
+		<publisher>Masato Ryujin - Mycom BASIC</publisher>
+		<info name="usage" value="Mode 5, Files 1, Pages 2, LOAD SWTP.BAS" />
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="153008">
+				<rom name="[utility] super word test program {m5f1p2 load swtp.bas}.d88" size="153008" crc="201de467" sha1="d388499b4a6e1f3caf0b951dac0e38632e8806b4" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>

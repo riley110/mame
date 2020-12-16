@@ -360,6 +360,7 @@ void zx_state::zx81(machine_config &config)
 
 	/* software lists */
 	m_softlist->set_original("zx81_cass");
+	SOFTWARE_LIST(config, "old_cass_list").set_original("zx81_cass_old");
 
 	/* internal ram */
 	m_ram->set_default_size("16K").set_extra_options("1K,32K,48K");

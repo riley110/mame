@@ -917,6 +917,7 @@ void ti99_4x_state::ti99_4_common(machine_config& config)
 
 	// Software list
 	SOFTWARE_LIST(config, "cart_list_ti99").set_original("ti99_cart");
+    SOFTWARE_LIST(config, "flop_list_ti99").set_original("ti99_flop");
 
 	// Cassette drives. Second drive is record-only.
 	SPEAKER(config, "cass_out").front_center();

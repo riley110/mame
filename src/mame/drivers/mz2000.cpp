@@ -938,7 +938,11 @@ void mz2000_state::mz2000(machine_config &config)
 void mz2000_state::mz80b(machine_config &config)
 {
 	mz2000(config);
+
 	m_maincpu->set_addrmap(AS_IO, &mz2000_state::mz80b_io);
+	
+	config.device_remove("cass_list");
+	SOFTWARE_LIST(config.replace(), "flop_list").set_original("mz80b_flop");
 }
 
 

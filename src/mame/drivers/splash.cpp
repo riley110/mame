@@ -1475,8 +1475,8 @@ GAME( 1992, splash,   0,        splash,   splash,   splash_state,   init_splash,
 GAME( 1992, splash10, splash,   splash,   splash,   splash_state,   init_splash10, ROT0, "Gaelco / OMK Software",  "Splash! (Ver. 1.0 World)", MACHINE_SUPPORTS_SAVE )
 GAME( 1992, paintlad, splash,   splash,   splash,   splash_state,   init_splash,   ROT0, "Gaelco / OMK Software",  "Painted Lady (Splash) (Ver. 1.3 US)", MACHINE_SUPPORTS_SAVE )
 
-GAME( 1993, roldfrog, 0,        roldfrog, splash,   splash_state,   init_roldfrog, ROT0, "Microhard",              "The Return of Lady Frog (set 1)", MACHINE_SUPPORTS_SAVE )
-GAME( 1993, roldfroga,roldfrog, roldfrog, splash,   splash_state,   init_roldfrog, ROT0, "Microhard",              "The Return of Lady Frog (set 2)", MACHINE_SUPPORTS_SAVE )
+GAME( 1993, roldfrog, 0,        roldfrog, splash,   splash_state,   init_roldfrog, ROT0, "Microhard",              "The Return of Lady Frog (N. Version 1.2, set 1)", MACHINE_SUPPORTS_SAVE )
+GAME( 1993, roldfroga,roldfrog, roldfrog, splash,   splash_state,   init_roldfrog, ROT0, "Microhard",              "The Return of Lady Frog (N. Version 1.2, set 2)", MACHINE_SUPPORTS_SAVE )
 GAME( 1995, rebus,    0,        roldfrog, splash,   splash_state,   init_rebus,    ROT0, "Microhard",              "Rebus", MACHINE_NOT_WORKING | MACHINE_UNEMULATED_PROTECTION | MACHINE_NO_SOUND | MACHINE_SUPPORTS_SAVE )
 GAME( 199?, funystrp, 0,        funystrp, funystrp, funystrp_state, init_funystrp, ROT0, "Microhard / MagicGames", "Funny Strip", MACHINE_NOT_WORKING | MACHINE_UNEMULATED_PROTECTION | MACHINE_SUPPORTS_SAVE )
 GAME( 199?, puckpepl, funystrp, funystrp, funystrp, funystrp_state, init_funystrp, ROT0, "Microhard",              "Puck People", MACHINE_NOT_WORKING | MACHINE_UNEMULATED_PROTECTION | MACHINE_SUPPORTS_SAVE )

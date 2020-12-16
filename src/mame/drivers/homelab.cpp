@@ -42,6 +42,7 @@ MB7051 - fuse programmed prom.
 #include "machine/timer.h"
 #include "emupal.h"
 #include "screen.h"
+#include "softlist.h"
 #include "speaker.h"
 
 
@@ -821,7 +822,10 @@ void homelab3_state::brailab4(machine_config &config)
 	homelab3(config);
 	m_maincpu->set_addrmap(AS_PROGRAM, &homelab3_state::brailab4_mem);
 	m_maincpu->set_addrmap(AS_IO, &homelab3_state::brailab4_io);
+    
 	MEA8000(config, "mea8000", 3840000).add_route(ALL_OUTPUTS, "mono", 1.0);
+    
+    SOFTWARE_LIST(config, "cass_list").set_original("brailab_cass");
 }
 
 

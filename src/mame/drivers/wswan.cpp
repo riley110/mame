@@ -161,8 +161,7 @@ void wswan_state::wswan(machine_config &config)
 
 	/* software lists */
 	SOFTWARE_LIST(config, "cart_list").set_original("wswan");
-	SOFTWARE_LIST(config, "wsc_list").set_compatible("wscolor");
-
+	SOFTWARE_LIST(config, "wsc_list").set_compatible("wscolor").set_filter("WS");
 	SOFTWARE_LIST(config, "pc2_list").set_compatible("pockchalv2");
 }
 
@@ -180,7 +179,7 @@ void wscolor_state::wscolor(machine_config &config)
 
 	/* software lists */
 	config.device_remove("wsc_list");
-	SOFTWARE_LIST(config.replace(), "cart_list").set_original("wscolor");
+	SOFTWARE_LIST(config.replace(), "cart_list").set_original("wscolor").set_filter("WSC");
 	SOFTWARE_LIST(config, "ws_list").set_compatible("wswan");
 }
 

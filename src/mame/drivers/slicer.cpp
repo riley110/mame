@@ -14,6 +14,7 @@
 #include "bus/rs232/rs232.h"
 #include "bus/isa/isa.h"
 #include "bus/scsi/scsi.h"
+#include "softlist.h"
 
 class slicer_state : public driver_device
 {
@@ -145,6 +146,8 @@ void slicer_state::slicer(machine_config &config)
 	m_sasi->set_output_latch(sasi_data_out);
 	INPUT_BUFFER(config, "sasi_data_in");
 	INPUT_BUFFER(config, "sasi_ctrl_in");
+	
+	SOFTWARE_LIST(config, "flop_list").set_original("slicer");
 }
 
 ROM_START( slicer )

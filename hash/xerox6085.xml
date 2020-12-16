@@ -1,0 +1,1759 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+license:CC0
+-->
+<softwarelist name="xerox6085" description="Xerox 6085 floppy disks">
+
+	<!--
+	130k01861	6085 Xerox ViewPoint 1.0.2 (Installer #1) #1 of 12 1Q86
+	130k01871	6085 Xerox ViewPoint 1.0.2 (BasicWorkstation #1) #3 of 12 1Q86
+	130k01881	6085 Xerox ViewPoint 1.0.2 (BasicWorkstation #2) #4 of 12 1Q86
+	130k01891	6085 Xerox ViewPoint 1.0.2 (BasicWorkstation #3) #5 of 12 1Q86
+	130k01901	6085 Xerox ViewPoint 1.0.2 (BasicWorkstation #4) #6 of 12 1Q86
+	130k01910	6085 Xerox ViewPoint 1.0.2 (Common Software #1) #9 of 12 1Q86
+	130k01921	6085 Xerox ViewPoint 1.0.2 (Common Software #2) #10 of 12 1Q86
+	130k01931	6085 Xerox ViewPoint 1.0.2 (Essential Applications) #12 of 12 1Q86
+	130k01941	6085 Xerox ViewPoint 1.0.2 VP Object Conversion Utility 1Q86
+	130k01960	6085 Keyboard, Display and Mouse Diagnostics 1.0 4Q85
+	130k01981	6085 Xerox Viewpoint 1.0.2 VP Training Exercises #1 1Q86
+	130k01991	6085 Xerox Viewpoint 1.0.2 VP Training Exercises #2 1Q86
+	130k02000	6085 Xerox Viewpoint 1.0 File Check #1 4Q85
+	130k02010	6085 Xerox Viewpoint 1.0 File Check #2 4Q85
+	130k02020	6085 Xerox Viewpoint 1.0 File Check #3 4Q85
+	130k12221	6085 Xerox ViewPoint 1.0.2 (Installer #2) #2 of 12 1Q86
+	130k12231	6085 Xerox ViewPoint 1.0.2 (BasicWorkstation #5) #7 of 12 1Q86
+	130k12241	6085 Xerox ViewPoint 1.0.2 (BasicWorkstation #6) #8 of 12 1Q86
+	130k12250	6085 Extended Boot Diagnostics 1.0 4Q85
+	130k12261	6085 Xerox ViewPoint 1.0.2 VP Training Exercises #3 1Q86
+	130k12270	6085 Rigid Disk Diagnostics 1.0 4Q85
+	130k12281	6085 Xerox ViewPoint 1.0.2 (Common Software #3) #11 of 12 1Q86
+	130k12291	6085 Xerox ViewPoint 1.0.2 Remote System Administration 1Q86
+	130k16610	6085 Rigid Disk Utilities 1.1 1Q86
+	130k16620	6085 System Configuration Utility 1.0 1Q86
+	130k16670	6085 Xerox ViewPoint 1.0.2 VP Training Exercises #4 1Q86
+	-->
+	<software name="vp102">
+		<description>6085 Viewpoint (v1.0.2, 1Q86)</description>
+		<year>1986</year>
+		<publisher>Xerox</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k01861.dmk" size="512016" crc="863d68e8" sha1="6c9f836d263a2a36604a76169fafc9aa46470497" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k01871.dmk" size="512016" crc="c963f581" sha1="14bed3a28eed1c03e51dc3d500d7daf43cd7d9cf" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k01881.dmk" size="512016" crc="f1ca9b42" sha1="319ee5ce4278a1c68c4ae1e37583c4b4763bf028" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k01891.dmk" size="512016" crc="a42f1439" sha1="3ec1d9465a06c8c85cc078de4ab012e388581cdc" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k01901.dmk" size="512016" crc="1111ebfe" sha1="4d2b4f586d9c26ba84583ef33b26f07a235aa2ca" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k01910.dmk" size="512016" crc="8f02dd00" sha1="5b97e3a8f796a1ed5e8c6ec6253110f8254612fe" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k01921.dmk" size="512016" crc="bec7ed37" sha1="b1179ceee55077d4b5c45e81edfe7b4f2ab03a7d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop8" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k01931.dmk" size="512016" crc="7849ce65" sha1="7ed4d9bf5297934ee54367213e5c0136a8e1546d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop9" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k01941.dmk" size="512016" crc="2dfb3f0c" sha1="01c1e3ba666719f1248672f8ee832bb48396c5c7" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop10" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k01960.dmk" size="512016" crc="9945d4e3" sha1="6104ed622f3368c30ad8f7a4b5a1ae935ae8df43" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop11" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k01981.dmk" size="512016" crc="a778d041" sha1="0e0cd9b3f5ea35c2796df7ab07066d5a594a4f58" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop12" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k01991.dmk" size="512016" crc="87fe5613" sha1="962694e242205d4016bcd870fee565c3cb4f551a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop13" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k02000.dmk" size="512016" crc="66dbbbce" sha1="656923d12d7e530c1d6e6167f16577f8cda378ed" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop14" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k02010.dmk" size="512016" crc="4e0a2f47" sha1="a52852785d1202d7213e9a0fdd659eabb73cc5c6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop15" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k02020.dmk" size="512016" crc="45e10a2c" sha1="ca72c836b512a63d34f6577849362235d858895b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop16" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k12221.dmk" size="512016" crc="5b6615aa" sha1="1f81d38fe9224fe152716b35d899a720d22e7365" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop17" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k12231.dmk" size="512016" crc="d739c850" sha1="f548a49a441658a0610154a943ecc1e4b66b580c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop18" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k12241.dmk" size="512016" crc="d0d7f78a" sha1="5d3e56faabb6cb626972c31825e648f131eaf1ad" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop19" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k12250.dmk" size="512016" crc="ed0547ad" sha1="f9f2cd681812813f6fb167d749d412114d55796f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop20" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k12261.dmk" size="512016" crc="b1a53058" sha1="76a43fbeb643283b510719fcf2aa17d8c9a7a971" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop21" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k12270.dmk" size="512016" crc="0ea30b84" sha1="9ca7d9c7688b9cf2d26e27f11fda65c54a555633" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop22" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k12281.dmk" size="512016" crc="600d7c17" sha1="76a280485cd7c92086268bbb793bfcc46da256e6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop23" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k12291.dmk" size="512016" crc="b2202fd9" sha1="c0a03ba48c4423aea70cf64a4ddb2318377bd72b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop24" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k16610.dmk" size="512016" crc="c1ab0487" sha1="236b6e2c474015b4fc2a1a7b423810a638e8fe28" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop25" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k16620.dmk" size="512016" crc="f3074581" sha1="568518a8a19e99cb4ee1cb7ed33a8911ad77fd33" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop26" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k16670.dmk" size="512016" crc="55c98a35" sha1="f267cb009917fe76d0560652f83197dbf73ba8bd" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	130k02770  VP PC emulation Fonts 1.0; 4q85
+	130k17660  6085 Xerox ViewPoint 1.1; Help Documents #1; 2q86
+	130k17710  VP Xerox required Fonts (300dpi) 1.1 #1; 2q86
+	130k17860  VP Xerox Math Classic Fonts (300dpi) 1.1 #1; 2q86
+	130k17910  VP Xerox Math Classic Fonts (300dpi) 1.1 #6; 2q86
+	130k18050  Xerox MS DOS 3.10
+	130k18060  Xerox GW Basic 3.10
+	130k18090  6085 Xerox ViewPoint 1.1; Help Documents #2; 2q86
+	130k32850  Xerox PC emulation Utilities; 3q87; VP 1.1.7
+	130k35701  6085 Offline Diagnostics; System Bootfile; version 1.5.2
+	130k35711  6085 Offline Diagnostics; Workstation Diagnostics; version 1.5.2
+	130k35731  6085 Offline Diagnostics; Boot Diagnostics; version 1.5.2
+	130p26403  6085 Offline Diagnostics 2.0; Boot Diagnostics
+	130p26406  6085 Xerox ViewPoint 2.0; installer #2 2 of 20
+	130p26407  6085 Xerox ViewPoint 2.0; Basic Workstation #1 3 of 20
+	130p26408  6085 Xerox ViewPoint 2.0; Basic Workstation #2 4 of 20
+	130p26409  6085 Xerox ViewPoint 2.0; Basic Workstation #3 5 of 20
+	130p26410  6085 Xerox ViewPoint 2.0; Basic Workstation #4 6 of 20
+	130p26411  6085 Xerox ViewPoint 2.0; Basic Workstation #5 7 of 20
+	130p26412  6085 Xerox ViewPoint 2.0; Basic Workstation #6 8 of 20
+	130p26413  6085 Xerox ViewPoint 2.0; Basic Workstation #7 9 of 20
+	130p26414  6085 Xerox ViewPoint 2.0; Basic Workstation #8 10 of 20
+	130p26415  6085 Xerox ViewPoint 2.0; Common Software #1 11 of 20
+	130p26416  6085 Xerox ViewPoint 2.0; Common Software #2 12 of 20
+	130p26417  6085 Xerox ViewPoint 2.0; Common Software #3 13 of 20
+	130p26418  6085 Xerox ViewPoint 2.0; Common Software #4 14 of 20
+	130p26419  6085 Xerox ViewPoint 2.0; Essential applications 15 of 20
+	130p26420  6085 VP netcom 2.0; Common Software 16 of 20
+	130p26421  6085 VP Remotecom 2.0; Common Software #1 16a of 20
+	130p26422  6085 VP Remotecom 2.0; Common Software #2 16b of 20
+	130p26423  6085 VP standalone 2.0; Common Software 16 of 20
+	130p26424  VP Document Editor 2.0 #1 17 of 20
+	130p26428  6085 Xerox ViewPoint 2.0; file check #1; rel 2.0/3q88
+	130p26429  6085 Xerox ViewPoint 2.0; file check #2; rel 2.0/3q88
+	130p26430  6085 Xerox ViewPoint 2.0; Help Documents #1
+	130p26431  6085 Xerox ViewPoint 2.0; Help Documents #2
+	130p26432  6085 Xerox ViewPoint 2.0; Help Documents #3
+	130p26433  6085 Xerox ViewPoint 2.0; VP training exercises
+	130p26435  Remote System administration; Async Terminal Basic Software 2.0
+	130p26436  Local RS232C Communications; Access 2.0
+	130p26437  6085 VP netcom 2.0; network installation scripts
+	130p26438  VP File Conversion of 860 Documents
+	130p26439  VP File Conversion of 860 Record Files
+	130p26440  VP File Conversion of ASCII Documents
+	130p26441  VP FC of Document Interchange Format
+	130p26442  VP File Conversion of IBM DCA Documents
+	130p26444  VP FC of Lotus 1-2-3 Spreadsheets
+	130p26445  VP FC of VisiCalc Spreadsheets
+	130p26446  VP File Conversion of Wang Documents
+	130p26447  VP File Conversion of WordStar Documents
+	130p26448  VP IBM 3270 File Transfer
+	130p26449  VP Local Character Printing 630
+	130p26450  VP local draft printer 2.0; VP series application; 3q88
+	130p26451  VP Office accessories 2.0 #1
+	130p26452  VP Office accessories 2.0 #2
+	130p26453  VP Office accessories 2.0 #3
+	130p26454  VP Terminal Emulation of DEC VT100
+	130p26455  VP Terminal Emulation of IBM 3270
+	130p26456  VP Terminal Emulation of Tektronix 4014
+	130p26457  VP Terminal Emulation of TTY
+	130p26458  VP data-driven graphics (bar, pie, line) 2.0; 3q88
+	130p26459  VP data capture 2.0; VP series application; 3q88
+	130p26460  VP equations 2.0; VP series application; 3q88
+	130p26461  VP free-hand drawing 2.0; VP series application; 3q88
+	130p26462  VP list manager 2.0; VP series application; 3q88
+	130p26463  VP long Document options 2.0; VP series application; 3q88
+	130p26464  VP spreadsheet 2.0; VP series application; 3q88
+	130p26465  VP spelling checker 2.0; VP series application; 3q88
+	130p26466  VP u.s. english hyphenation 2.0; VP series application; 3q88
+	130p26479  VP cusp buttons 2.0; VP series application; 3q88
+	130p26480  VP integrated financial management 2.0 #1; VP series application
+	130p26481  VP integrated financial management 2.0 #2; VP series application
+	130p26509  6085 VP netcom 2.0; dual mode installation script
+	130p26543  VP PC emulation 2.0
+	130p27201  VP Document Editor 2.0.5 #1 17 of 20; rel 2.0.5 / 1q89
+	130p27202  VP Document Editor 2.0.5 #2 18 of 20; rel 2.0.5 / 1q89
+	130p27203  VP Document Editor 2.0.5 #3 19 of 20; rel 2.0.5 / 1q89
+	130p27204  VP Document Editor 2.0.5 #4 20 of 20; rel 2.0.5 / 1q89
+	130p27205  6085 Xerox ViewPoint 2.0.5; tools; rel 2.0.5 / 1q89
+	130p27206  Document Downgrader tools 2.0.5; (VP1.0, VP1.1, VP1.1.1 use only)
+	130p28051  6085 Offline Diagnostics 2.0.1 System Bootfile; rel 2.0.5/1q89
+	130p28052  6085 Offline Diagnostics 2.0.1 Workstation Diagnostics;
+	-->
+	<software name="vp205">
+		<description>6085 Viewpoint (v2.0.5, 1Q89)</description>
+		<year>1989</year>
+		<publisher>Xerox</publisher>
+
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="130k02770.dmk" size="518416" crc="61dedb2e" sha1="bc99602471d703f7c43cf2328133da80fc70f1b5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="130k17660.dmk" size="518416" crc="cebeea2f" sha1="133b9b93459ec78778e7cf08c532347442bf5abd" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17710.dmk" size="512016" crc="c123e53d" sha1="325eb39d9b5b0009c014642f18b8ff63add41350" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17860.dmk" size="512016" crc="e0d17dd5" sha1="455b36959e4c37de9806fe149ee1c3e9045561de" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17910.dmk" size="512016" crc="ce02d77c" sha1="f545fee833d179f730130234c7497eaa5cff9e40" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k18050.dmk" size="512016" crc="0cbd1a4b" sha1="e3d048c062666e5c3dae3d7b2b56541d1bebc8fb" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop8" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="130k18060.dmk" size="518416" crc="1d278c91" sha1="2a225f2b252ac844f047cca0c75bfc0b692447a1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop9" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k18090.dmk" size="512016" crc="c91a4998" sha1="d18087fe846fa57ed6ce6b0940f0bff441c1a1b7" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop10" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k32850.dmk" size="512016" crc="9e911b7c" sha1="06ec13657d552382dd51bc8b00982fd807823861" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop11" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k35701.dmk" size="512016" crc="3757510b" sha1="d965da86272573d524afd07fa939a6dcff289f22" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop12" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k35711.dmk" size="512016" crc="bfa4c1ce" sha1="b3a2f6e910d8c9dedb190d925feaa17f6e890e39" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop13" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k35731.dmk" size="512016" crc="e9c2d370" sha1="9c257af6c943b829573d92be118a75c161f14615" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop14" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26403.dmk" size="512016" crc="7d7c32be" sha1="51dd5bef3b4031cc721ba022fca2e366300a812c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop15" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26406.dmk" size="512016" crc="c59a5f42" sha1="05f3d011c839223ad29715dc96e13642bec55ab5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop16" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26407.dmk" size="512016" crc="37eef9c2" sha1="d1695feaf75dec21896cdf88aaaf7de67e812233" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop17" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26408.dmk" size="512016" crc="6f28923f" sha1="3e573bae23496cfb88645c60cf99d7b7ffca7173" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop18" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26409.dmk" size="512016" crc="981c3f08" sha1="6e4b4ffbd5682b974ee6c7d1587c37a84d647daa" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop19" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26410.dmk" size="512016" crc="01d786d9" sha1="8d077dab360fea216e72303746d8067eab95f706" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop20" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26411.dmk" size="512016" crc="56fc15dc" sha1="cc48a799663c421ea296a64809e6678139a31f4b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop21" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26412.dmk" size="512016" crc="bc863ac1" sha1="74cec5161e5ef47f621492a59a64da11b9fd19a1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop22" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26413.dmk" size="512016" crc="5665d021" sha1="56a92147fe764a3dea57998d5de75bf30133c0f2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop23" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26414.dmk" size="512016" crc="866e1012" sha1="63462a1f29fc96cbe3eeac4e5e7f318e5fc1940d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop24" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26415.dmk" size="512016" crc="4460553c" sha1="c8cccc4cd31f54c21ef74bd2bd2a9c6b71bfd9a3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop25" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26416.dmk" size="512016" crc="9056487d" sha1="11080f13c6884ae92be5e95c7cbfd45136c9b69b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop26" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26417.dmk" size="512016" crc="a6eb748b" sha1="ae9f25df14a34bc7471078cff5f14a004ea89026" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop27" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26418.dmk" size="512016" crc="1694a849" sha1="d90a173dc96b726c6cdc162e001f78c0a21d0afb" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop28" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26419.dmk" size="512016" crc="f81a279c" sha1="d2a86516656bab25ec44272427a9891e5f059823" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop29" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26420.dmk" size="512016" crc="9148ac5e" sha1="0fb797c50e357262ce2b27a70e2e0ddc35ced620" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop30" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26421.dmk" size="512016" crc="ec6ca094" sha1="832058a0b3c66c1975d9fe491c0adb262c88af00" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop31" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26422.dmk" size="512016" crc="579826d4" sha1="91631ff588a238ca8ee4a5b8ecb19b9273c11801" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop32" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26423.dmk" size="512016" crc="ba5db0cd" sha1="a96c4338c43d956a3f40c53321aaac1075b37a78" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop33" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26424.dmk" size="512016" crc="1036ad5a" sha1="fe1501be7239c4ce7c646c16e649a67d80b41e50" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop34" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26428.dmk" size="512016" crc="bfc6a60a" sha1="2f9e9df788060a32152f6190218e9c3d39f9255f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop35" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26429.dmk" size="512016" crc="8b32cdb0" sha1="3dfff1497ead4c3d3dd12f59ca2d6f5f0f0b7d04" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop36" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26430.dmk" size="512016" crc="6b7f489a" sha1="a57d18ed0d77007774bb392e44f8fdd9722fa9e7" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop37" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26431.dmk" size="512016" crc="c1421821" sha1="d0b1004a6177c1f2ec495cfa7f950afb884f1c54" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop38" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26432.dmk" size="512016" crc="815e946f" sha1="0445205dc2a0022c8112570fd05da44fe11c82bd" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop39" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26433.dmk" size="512016" crc="70910495" sha1="4fb75c3db904d460c52968d967f4413fae465b15" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop40" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26435.dmk" size="512016" crc="15966c29" sha1="d9bc5f80625f05527e15e3a407a5de054ebdac4c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop41" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26436.dmk" size="512016" crc="a5b2a3bb" sha1="50a5be0c1670ccd036b0cc95d767fa9e78212b5f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop42" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26437.dmk" size="512016" crc="112a55bd" sha1="36e55aef6e2d723af64a3009decb5a656678ad24" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop43" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26438.dmk" size="512016" crc="a9af5762" sha1="e5ff65c35f27695bd4174f42e7f05aad5d505d2b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop44" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26439.dmk" size="512016" crc="0c1fef10" sha1="e9eac9b55ac5eee9bce030b7505b930d791d4f32" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop45" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26440.dmk" size="512016" crc="8193840b" sha1="a6f33a2c715f9f886cb4c8736726c42635b7856b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop46" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26441.dmk" size="512016" crc="270e6e8d" sha1="0a6a2529a96da87e349bb3770c08143e9432b527" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop47" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26442.dmk" size="512016" crc="4bfdb5d2" sha1="610b90e7cd7c1ba82e7fa9ab2ceb9029149c3d57" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop48" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26444.dmk" size="512016" crc="010806b8" sha1="ea222d0c61b3acbe170843af9e1266ae3805f7bf" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop49" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26445.dmk" size="512016" crc="90b11e3d" sha1="c98f835d437881163a5de263ce667a0af3584d4d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop50" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26446.dmk" size="512016" crc="b4ea6900" sha1="cb3b92b9109363a884114080fe468af624ebffaf" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop51" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26447.dmk" size="512016" crc="2307a57e" sha1="25a0906ee40aea36763efa90d9f03e2f63d2df51" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop52" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26448.dmk" size="512016" crc="5f6323fa" sha1="55aefaf8171e47db84405c14d05d1be009ac3f94" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop53" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26449.dmk" size="512016" crc="ce61ce0b" sha1="008b4e4c3864f9ae0d65c2cd97ce477cf181221b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop54" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26450.dmk" size="512016" crc="7a390641" sha1="b137635d8e0859a4bb060664ebeba0888ba64b4f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop55" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26451.dmk" size="512016" crc="85978b35" sha1="f1209510b56308a1c36690182f7c90c4d4367613" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop56" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26452.dmk" size="512016" crc="f3a4a259" sha1="818390a9c4f4035ee743c50b126470296374bc75" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop57" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26453.dmk" size="512016" crc="3aa1cb82" sha1="8e058120287fa92de7f98e55fd5ac98f704fa2fd" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop58" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26454.dmk" size="512016" crc="1974f574" sha1="7bcb227d99c74784d970a9708ab144e5743495bb" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop59" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26455.dmk" size="512016" crc="c7ecd08f" sha1="9308a02858d8d73433ad7eeaeaef9e84677d21f3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop60" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26456.dmk" size="512016" crc="abbeca28" sha1="aac121244ad32562b2f058b5bfe2d3967f43bbc0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop61" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26457.dmk" size="512016" crc="86d10483" sha1="23b82fc0b63c68eee78d4d70a2ef5b27ee187084" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop62" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26458.dmk" size="512016" crc="5dc352ae" sha1="7aa7ce8a91178a9507cfe5198b7ca0f28f91a86b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop63" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26459.dmk" size="512016" crc="96644bd9" sha1="46cd8e7534d4558ef231be86957222424916b627" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop64" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26460.dmk" size="512016" crc="67f6ab1d" sha1="70f2295d91f919719d270d9877b41f087e6e68d4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop65" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26461.dmk" size="512016" crc="a92f37fb" sha1="33cbf9f92cacbf6151ccbb424e75f8d448249ec3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop66" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26462.dmk" size="512016" crc="33b65818" sha1="e987ad9cda2237f18448ef71cdf4b243a6e1daeb" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop67" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26463.dmk" size="512016" crc="df23dd0d" sha1="be1704a5eb33b5c245e0c9fd73c5b36aeae8c574" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop68" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26464.dmk" size="512016" crc="c92e5d62" sha1="a0c638757f6f6c1108ae8fdbe315d66a7c3447f1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop69" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26465.dmk" size="512016" crc="51c9732b" sha1="4380577c45fa8d2159a5c357c133d784672921ba" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop70" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26466.dmk" size="512016" crc="2b71150d" sha1="6bd85f9e190c1e28da900736893a2a01b44409c1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop71" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26479.dmk" size="512016" crc="4e914eb0" sha1="fb0f6f42c1fa18413a2589c2e04ea07eb5f0e5ae" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop72" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26480.dmk" size="512016" crc="a7fae95b" sha1="70610a53d435325d56a6a433492dcdc4872fefc0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop73" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26481.dmk" size="512016" crc="69789b95" sha1="8f0c3ebe5b926d7c27fca8a39c8f8f7d5405cdbb" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop74" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26509.dmk" size="512016" crc="556ba00e" sha1="a0f3b9e56f331927c2a1434e185438918b8908f8" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop75" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26543.dmk" size="512016" crc="acd88856" sha1="a84911379f8eef62a0ae3fbcdef92dd720832945" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop76" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p27201.dmk" size="512016" crc="b65ab2b8" sha1="29db9a434b83b4d53d4455a74815eb1fbaa1a115" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop77" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p27202.dmk" size="512016" crc="ea938588" sha1="fc505ce258324afb41eaa1234bdc76a27b4a0931" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop78" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p27203.dmk" size="512016" crc="6fa193d6" sha1="d0761c895e269557e54d4dc9766b44a16b603d69" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop79" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p27204.dmk" size="512016" crc="ab06eb0f" sha1="89ad24859077db24337f176b32dc009b2868c774" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop80" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p27205.dmk" size="512016" crc="c53358ee" sha1="7313cbe3be841b7b4e1ca385cd36667d7c625770" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop81" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p27206.dmk" size="512016" crc="951b209d" sha1="169dc91d7d1cd3ed5ff83b37a0d383599602ba63" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop82" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p28051.dmk" size="512016" crc="a7c061c6" sha1="e996b5e421cbe9da6e27b732fc426af0c24023ff" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop83" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p28052.dmk" size="512016" crc="6383868a" sha1="73055ca8d7af93e1d897782b3d9c47b329d65a60" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	130k02650  VP Xerox Classic Fonts #1
+	130k02660  VP Xerox Classic Fonts #2
+	130k02680  VP Xerox Modern Fonts #1
+	130k02690  VP Xerox Modern Fonts #2
+	130k02720  VP Printwheel Fonts #1
+	130k02730  VP Printwheel Fonts #2
+	130k02751  VP Terminal Fonts
+	130k17710  Xerox Required Fonts (1 of 4) (300 DPI)
+	130k17720  Xerox Required Fonts (2 of 4) (300 DPI)
+	130k17730  Xerox Required Fonts (3 of 4) (300 DPI)
+	130k17740  Xerox Required Fonts (4 of 4) (300 DPI)
+	130k17750  Xerox Modern Fonts (#1 of 11) (300 DPI)
+	130k17760  Xerox Modern Fonts (#2 of 11) (300 DPI)
+	130k17770  Xerox Modern Fonts (#3 of 11) (300 DPI)
+	130k17780  Xerox Modern Fonts (#4 of 11) (300 DPI)
+	130k17790  Xerox Modern Fonts (#5 of 11) (300 DPI)
+	130k17800  Xerox Modern Fonts (#6 of 11) (300 DPI)
+	130k17810  Xerox Modern Fonts (#7 of 11) (300 DPI)
+	130k17820  Xerox Modern Fonts (#8 of 11) (300 DPI)
+	130k17830  Xerox Modern Fonts (#9 of 11) (300 DPI)
+	130k17840  Xerox Modern Fonts (#10 of 11) (300 DPI)
+	130k17850  Xerox Modern Fonts (#11 of 11) (300 DPI)
+	130k17860  Xerox Classic Fonts (#1 of 7) (300 DPI)
+	130k17870  Xerox Classic Fonts (#2 of 7) (300 DPI)
+	130k17880  Xerox Classic Fonts (#3 of 7) (300 DPI)
+	130k17890  Xerox Classic Fonts (#4 of 7) (300 DPI)
+	130k17900  Xerox Classic Fonts (#5 of 7) (300 DPI)
+	130k17910  Xerox Classic Fonts (#6 of 7) (300 DPI)
+	130k17920  Xerox Classic Fonts (#7 of 7) (300 DPI)
+	130k17930  Xerox Printwheel Fonts (#1 of 5) (300 DPI)
+	130k17940  Xerox Printwheel Fonts (#2 of 5) (300 DPI)
+	130k17950  Xerox Printwheel Fonts (#3 of 5) (300 DPI)
+	130k17960  Xerox Printwheel Fonts (#4 of 5) (300 DPI)
+	130k17970  Xerox Printwheel Fonts (#5 of 5) (300 DPI)
+	130k17980  Terminal Fonts (300 DPI)
+	130p26467  VP PC Emulation Fonts
+	130p26468  VP Helvetica 300 Fonts Widths
+	130p26469  VP Optima 300 Fonts Widths
+	130p26470  VP Optima 300 Fonts #1 (72 DPI)
+	130p26471  VP Optima 300 Fonts #2 (72 DPI)
+	130p26472  VP Optima 300 Fonts #3 (72 DPI)
+	130p26473  VP Times 300 Fonts Widths
+	130p26474  VP Univers 300 Fonts Widths
+	130p26475  VP Xerox Quartz Fonts Widths
+	130p26476  VP Xerox Quartz Fonts (#1)
+	130p26477  VP Xerox Quartz Fonts (#2)
+	130p26478  VP Xerox Quartz Fonts (#3)
+	130p26482  VP Xerox Enhanced Classic Fonts #1
+	130p26483  VP Xerox Enhanced Classic Fonts #2
+	130p26484  VP Xerox Enhanced Classic Fonts #3
+	130p26485  VP Xerox Enhanced Classic Fonts #4
+	130p26486  VP Xerox Enhanced Classic Fonts #5
+	130p26487  VP Xerox Enhanced Classic Fonts #6
+	130p26488  VP Xerox Enhanced Classic Fonts #7
+	130p26489  VP Xerox Enhanced Classic Fonts #8
+	130p26490  VP Xerox Classic Thin Fonts
+	130p26491  VP Xerox Enhanced Modern Fonts #1
+	130p26492  VP Xerox Enhanced Modern Fonts #2
+	130p26493  VP Xerox Enhanced Modern Fonts #3
+	130p26494  VP Xerox Enhanced Modern Fonts #4
+	130p26495  VP Xerox Enhanced Modern Fonts #5
+	130p26496  VP Xerox Enhanced Modern Fonts #6
+	130p26497  VP Xerox Enhanced Modern Fonts #7
+	130p26498  VP Xerox Enhanced Modern Fonts #8
+	130p26499  VP Xerox Enhanced Modern Fonts Fonts Metrics
+	130p26510  VP Xerox Enhanced Classic Fonts Metrics
+	130p26544  VP Local Laser Printing
+	130p26545  PC Emulation Fonts (300 DPI)
+	130p26591  Printwheel Fonts (#6) (300 DPI)
+	-->
+	<software name="vpfonts">
+		<description>6085 Viewpoint Fonts</description>
+		<year>198?</year>
+		<publisher>Xerox</publisher>
+
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k02650.dmk" size="512016" crc="17bb9741" sha1="512913ca91bdf6d86c9b69a9ed408217c9a16812" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k02660.dmk" size="512016" crc="1b4c1762" sha1="6195bbee428a0ea1f0bb8c0aa3caf37c940dc00d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k02680.dmk" size="512016" crc="374cd131" sha1="76516f2c92a2e5999337e8b81c2a4749809369fe" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k02690.dmk" size="512016" crc="dd59c8af" sha1="f3b853a6bb594170859b847802ae837c754a8d9c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k02720.dmk" size="512016" crc="eace50c8" sha1="4ccb7e85e0a1e642ff298bfdef7243c01191b8fa" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k02730.dmk" size="512016" crc="0140208c" sha1="078d2af23c8e03258ab31b530e445de8e40ede6c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop8" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k02751.dmk" size="512016" crc="0df30def" sha1="f024e13d6d934378862f6838834cb58c3af84fe1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop9" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17710.dmk" size="512016" crc="1c5cb065" sha1="a0a7fd216c2f93d377cc5451451e203fbfcfe760" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop10" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17720.dmk" size="512016" crc="f70ff742" sha1="d7b6f602ffa0ba8416429fe9b2b4db29874ee424" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop11" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17730.dmk" size="512016" crc="0ef022c3" sha1="bc24aa1005866a48cc8911a017547b276a594a76" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop12" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17740.dmk" size="512016" crc="355b01e3" sha1="05ea7acd37be50b21926d3ff36aefeaba20c9c8c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop13" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17750.dmk" size="512016" crc="4c99e8eb" sha1="2a035034676935af69bc52debb98087248fbdb95" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop14" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17760.dmk" size="512016" crc="88375844" sha1="f0f572576f49a14d0ada33ff76693d45a31bfe2d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop15" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17770.dmk" size="512016" crc="213df45d" sha1="7337d3df23f3ed5dddc6fcc61bb9cff5b39fe8a6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop16" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17780.dmk" size="512016" crc="7bc4afb2" sha1="6d161c28a6cf21244805eebc35cd6a80abf90c6d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop17" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17790.dmk" size="512016" crc="bc77b676" sha1="7a9f91fad75d40ef81e5d3f82a17e5b8843058c2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop18" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17800.dmk" size="512016" crc="7f54925f" sha1="910cc8e716d1f96af03ded12ac427e45d93b1958" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop19" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17810.dmk" size="512016" crc="fa27f217" sha1="57e27f828e356878f2113228ede9e8274c3940ac" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop20" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17820.dmk" size="512016" crc="feff8d53" sha1="cea8eeb9fe712e74833ab26e3af9d821a1159c6f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop21" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17830.dmk" size="512016" crc="d0b5b0d9" sha1="aaa7d7e29f9dda80e0d27799d6d6a99a81351ba6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop22" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17840.dmk" size="512016" crc="bda117ab" sha1="cdf7f6784b22c2c2e9b4915c4af8e4175bfd4ae5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop23" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17850.dmk" size="512016" crc="be7383e5" sha1="de01769c885ce70c4390978323aee1f301602b19" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop24" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17860.dmk" size="512016" crc="695c7d38" sha1="d66b1ace83e1298a19d5828860c296c28637c461" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop25" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17870.dmk" size="512016" crc="432825a5" sha1="7277f7af51faa15a84e61a75627702a21bc1447a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop26" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17880.dmk" size="512016" crc="b756d4e4" sha1="9002f358fdb6265e0236e5946587001544bbb409" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop27" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17890.dmk" size="512016" crc="1974400a" sha1="6a2f555a95df4e0734e6a815ca3d717f849a96e2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop28" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17900.dmk" size="512016" crc="db9cb737" sha1="2f2741a03109d0bbe9cdfabc7b82de90278173af" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop29" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17910.dmk" size="512016" crc="f968e108" sha1="989f6cedf1d67d79200da09bb4603ce517e2db79" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop30" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17920.dmk" size="512016" crc="851bab47" sha1="83b498401d4138018fb132a3703817fdadff974e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop31" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17930.dmk" size="512016" crc="f3e3d415" sha1="069fb1b3d8dfc5ba130eca3a7b7a7ac7a8372454" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop32" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17940.dmk" size="512016" crc="81eca6d8" sha1="ac29ead4b696b9a1b6a383e71b156b9096585260" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop33" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17950.dmk" size="512016" crc="1ef8920e" sha1="d13fa28554585b4ef7be2e64352891158142e3ed" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop34" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17960.dmk" size="512016" crc="b001db3e" sha1="077e45a30521df1903cf7e6c61b17bf15c81b5ce" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop35" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17970.dmk" size="512016" crc="e38ded5c" sha1="0b504112103eabc89110d178221467b9a2a3af90" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop36" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130k17980.dmk" size="512016" crc="cead9c5e" sha1="0612402d96381c56ad8c50b4cba8a6c64715bb5f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop37" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26467.dmk" size="512016" crc="0ca68a24" sha1="f57ed5da8debef46deabc7b876f150278b36e5c1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop38" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26468.dmk" size="512016" crc="7c5caa84" sha1="5b77e22d7e6e4b9cc2081ea066203b1704b8f66b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop39" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26469.dmk" size="512016" crc="227e9bda" sha1="779dada40a29cce15a1ac1445ec00f0ffe4acac8" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop40" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26470.dmk" size="512016" crc="788a2bd1" sha1="f817840c6dea2193cac4cb04c06e78b630493e68" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop41" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26471.dmk" size="512016" crc="b2694719" sha1="9790e49356642cd7914c89e3d8304302a08b16a7" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop42" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26472.dmk" size="512016" crc="c1d3d15b" sha1="f51fecfb8177d35ac5619db4495c431cf5e89142" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop43" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26473.dmk" size="512016" crc="88e44d96" sha1="47a4604032844811d3af91424eedd60fcfcb6f26" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop44" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26474.dmk" size="512016" crc="87d5641d" sha1="6c334ba343b542ec6a31716b2cd01c8918650af0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop45" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26475.dmk" size="512016" crc="2312f4ff" sha1="38f49a4797e9aed6de76975b3031c789515a36d4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop46" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26476.dmk" size="512016" crc="3bb46b95" sha1="735e2614e9a3cca8043a17a1aba82855ea35d267" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop47" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26477.dmk" size="512016" crc="e1611df3" sha1="ba941a48c1ed3d1296087ce203f63c100aa2fd51" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop48" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26478.dmk" size="512016" crc="0d1f4c64" sha1="a3891364933beeeb69e0a486083f7c30e91a9606" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop49" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26482.dmk" size="512016" crc="d30492f7" sha1="e0973af94c9caaf506d2519f367b9b22c60dab70" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop50" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26483.dmk" size="512016" crc="d972f1ba" sha1="81870b38153f0a7eb5c514790e1ac81e6e0c94c1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop51" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26484.dmk" size="512016" crc="860fbfcf" sha1="060b62e0e3308d541f8c8de725a54acdf81f1665" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop52" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26485.dmk" size="512016" crc="192840f2" sha1="037065ca87da67c6eba9a4b28f0dfe1e8743a212" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop53" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26486.dmk" size="512016" crc="2545e99b" sha1="bb5dfe3778a68d10b8b97c8a74f3321c63611ce1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop54" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26487.dmk" size="512016" crc="a7e42fed" sha1="ed690306661afbed8d560edab2ff2eaee8054e74" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop55" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26488.dmk" size="512016" crc="a526d526" sha1="af522e3458c63123a7d15aee58d269d78b47c4e0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop56" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26489.dmk" size="512016" crc="4c8612b0" sha1="3dab75d0d507fd9fc08435818ef1a1134a2b5e0c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop57" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26490.dmk" size="512016" crc="d2914e68" sha1="e484fb260fab38f8bd0bfb04f0f352560277d32f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop58" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26491.dmk" size="512016" crc="ce92a51a" sha1="43cfddeb323c48534955a066b8df4d764e53a25b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop59" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26492.dmk" size="512016" crc="dc3463ed" sha1="22822eb8d982afc830e6450f5a6f4d402bb4e946" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop60" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26493.dmk" size="512016" crc="9bd555da" sha1="7ac52e583b6875652efdd468145ab93037623113" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop61" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26494.dmk" size="512016" crc="066dcb53" sha1="365bc25d0a9a7fdb4315ca24140976bce9388202" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop62" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26495.dmk" size="512016" crc="e283a53c" sha1="d32b8a3dc66542841be25b747ccd46674fb8fe9f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop63" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26496.dmk" size="512016" crc="fcd88245" sha1="41f96627bfa3061213e78bcb52357021a00009ca" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop64" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26497.dmk" size="512016" crc="7c4e6c7f" sha1="6fc7b70520bd8cd5b4fac8598e5f47ac90f407f8" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop65" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26498.dmk" size="512016" crc="fb927b9c" sha1="57c1f57e91abfd0e1f041b2270ca876910f0de90" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop66" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26499.dmk" size="512016" crc="862ee750" sha1="e2021a8072a81c188bf08fc5f3275b4262530e62" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop67" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26510.dmk" size="512016" crc="95f132a0" sha1="19241ecf44322c789fa697f10b24e35288056882" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop68" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26544.dmk" size="512016" crc="2a752306" sha1="b485068b25309a9223ed00b91b96b1304de61b8c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop69" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26545.dmk" size="512016" crc="7aed06c8" sha1="cc19ad1c986fa71030069c8ffc084b47e6215fc0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop70" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="130p26591.dmk" size="512016" crc="2662f395" sha1="0d2ca3fad7bb9de9e9d0287afa0354a4d6598658" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- TODO - Label scans available at http://bitsavers.trailing-edge.com/bits/Xerox/6085/6085_XDE_4_Labels.zip -->
+	<software name="xde4">
+		<description>6085 XDE (v4.0)</description>
+		<year>198?</year>
+		<publisher>Xerox</publisher>
+
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="028001.dmk" size="512016" crc="434217e6" sha1="2e9e08c73e344d91aa0044f51130a527343d08ca" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="028002.dmk" size="512016" crc="78a73262" sha1="d240578cbd5f1e244abc678948e8f137e8e8b989" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="028003.dmk" size="512016" crc="c489c896" sha1="f3bf44dcf83461c8ef7a4dfb7d0ffe9d57d40f21" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="028004.dmk" size="512016" crc="f7a111a2" sha1="397329c5c8df90017365ddab85383a2fae2335a3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="028005.dmk" size="512016" crc="b0794479" sha1="c73eae4bf2bd81b5ca884c898a6fe66ef0180306" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="028006.dmk" size="512016" crc="370c9b46" sha1="6a366d6e670f28cb694f739baa6c84a736b4407e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop8" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="028007.dmk" size="518416" crc="2f06c477" sha1="d60becdf4cb8ff6272c37223bca928eedd96b324" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop9" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="028008.dmk" size="512016" crc="761af0ab" sha1="4b4fda6578919586b05475659363fc55354a7303" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop10" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="028009.dmk" size="512016" crc="92ff195d" sha1="212de1c811124b638fe6ffe4e79a463b08c92e85" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop11" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="028010.dmk" size="512016" crc="598c5c85" sha1="f86f282741666d7f5aa1d4ffef1d45cce365c414" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop12" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="028011.dmk" size="512016" crc="cdefa4f6" sha1="45cd37806136fe665bbb0fc7bfa18912d4f852ff" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop13" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="028012.dmk" size="512016" crc="a9f29f22" sha1="f61669366f428954ba366a4558a424c878b5e9c0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop14" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="028013.dmk" size="512016" crc="b6654750" sha1="5aa4e57d71999c42b0feda96655e51f7bed34b02" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop15" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="028014.dmk" size="512016" crc="501af17f" sha1="6466bbafe1de880354ed7da411da2c6965caacad" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- TODO - Label scans available at http://bitsavers.trailing-edge.com/bits/Xerox/6085/6085_XDE_5_Labels.zip -->
+	<software name="xde5">
+		<description>6085 XDE (v5.0)</description>
+		<year>198?</year>
+		<publisher>Xerox</publisher>
+
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="026001.dmk" size="512016" crc="11632d34" sha1="18a222ed7212c042861b816e6013f7dd8447ad8d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="026002.dmk" size="518416" crc="2c354b0e" sha1="ebd9fa66a17776e7a92248d5f1f76f42d57300f2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="026003.dmk" size="512016" crc="5e54ee39" sha1="ed8a575f1de1720ea05cae3f6f7c97e85f744e24" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="026004.dmk" size="512016" crc="81a73998" sha1="6e4499b7b1ae97a1597f5ed29d6daf7882d1097b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="026005.dmk" size="512016" crc="86e6b00c" sha1="ef6b8bc25602d0ba96164fee5473c9472ce325e3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="026006.dmk" size="512016" crc="a5acf3ca" sha1="7e51854da55a643bff6f5c6247251271ddcda56d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop8" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="026007.dmk" size="512016" crc="52dcfb03" sha1="ee6a4e3228b8efdeea655ff719da1600025b6cb9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop9" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="026008.dmk" size="512016" crc="d7aa4763" sha1="f3e05981105db9a9e3cc0288dee297a9969c01c4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop10" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="026009.dmk" size="512016" crc="e7156460" sha1="06bf8a09ca35e2134dfe9377884b11c62e37b32c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop11" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="026010.dmk" size="512016" crc="aba7c327" sha1="67ba1049dc14d33787df3c1e7dcb29e8d8527d24" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop12" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="026011.dmk" size="518416" crc="91e2a4b9" sha1="737631ffa99776214d82aee4a9cc64df7eb497f4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop13" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="026012.dmk" size="518416" crc="fa3be770" sha1="53b829d030d0102a6d1377948cdde0eae37d2f35" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop14" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="026013.dmk" size="518416" crc="36e05222" sha1="52a3d20288b9ba57f1a020532b37f7fb0b59f13e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop15" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="026014.dmk" size="518416" crc="7a94654d" sha1="3b7d62876087c9eb23230ee241e7ba9a72af45c8" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop16" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="026015.dmk" size="512016" crc="192050e6" sha1="68a7fcdc368958453c6368f4a1d6158690261c00" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!--
+	xde 6.0 vp programming tools & doc
+	xde 6.0 vp programming samples 1
+	xde 6.0 vp programming appication interfaces 1
+	xde 6.0 vp programming appication interfaces 2
+	xde 6.0 vp programming bws interfaces 1
+	...
+	xde 6.0 vp programming bws interfaces 7
+	xde 6.0 vp programming debugging 1
+	...
+	xde 6.0 vp programming debugging 61
+	-->
+	<software name="xde6">
+		<description>6085 XDE (v6.0, VP Devel)</description>
+		<year>198?</year>
+		<publisher>Xerox</publisher>
+
+		<part name="flop2" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="appitf1.dmk" size="518416" crc="687eda84" sha1="2eaade13c7b166afd78a2b03146652290991b0d3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop3" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="applitf2.dmk" size="512016" crc="078ff539" sha1="09c66dadedb1b048b8da4d2d003311a1dcd8d1c3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop4" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="bwsintf1.dmk" size="512016" crc="e00c50ad" sha1="39339a4700c04554832d19022f1cb8ecebfee187" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop5" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="bwsintf2.dmk" size="512016" crc="1486b75d" sha1="e36faabcca661c35078b82b7e49cbe0b81397746" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="bwsintf3.dmk" size="512016" crc="4b5a6d12" sha1="de31798a27b904f10f0291b52e254c1dabbfc5e5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop7" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="bwsintf4.dmk" size="512016" crc="0e222845" sha1="a2bea24fb853f77309ea237da99f05ea175ddf98" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop8" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="bwsintf5.dmk" size="512016" crc="0471bfc7" sha1="3e890ed8e53756817b835ee7946ae89b9c64e0b9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop9" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="bwsintf6.dmk" size="512016" crc="a1536425" sha1="29259e2f2a630792d71bd1baa4a340bf8e18c019" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop10" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="bwsintf7.dmk" size="512016" crc="a1ee635e" sha1="dece0cdb9b835ad037c0d70618226a41e5b4829e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop11" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg01.dmk" size="512016" crc="7dac66d2" sha1="3c9773b75fd10614d47b6fb030f07f2364b6154c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop12" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="dbg02.dmk" size="518416" crc="88b614c0" sha1="4d8a0148236c3d108eeea8fadab3a114ccdf8704" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop13" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg03.dmk" size="512016" crc="0d525967" sha1="8c8c0377654e6e7be3c35bc9311c224f235c55dc" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop14" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="dbg04.dmk" size="518416" crc="59ed957c" sha1="387842f923a7d39170c766ffeb7fef0c470b40e8" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop15" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg05.dmk" size="512016" crc="489db7a1" sha1="5bb8b939fe327e17de00e941a696b872cfc78f1c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop16" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="dbg06.dmk" size="518416" crc="e1bc2835" sha1="6f31816d36f00200f6b64125a22924e781b832c7" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop17" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg07.dmk" size="512016" crc="1dbf2a85" sha1="43f551e180c3b16217c50626c3ae3c730c844010" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop18" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg08.dmk" size="512016" crc="910240fb" sha1="261971dd45a0376e0ce7b801f207629a9723c7ee" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop19" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="dbg09.dmk" size="518416" crc="a8e0ddef" sha1="8449ea80676cb6a7357ec5b39a937b334b5e657e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop20" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="dbg10.dmk" size="518416" crc="ccae400d" sha1="8e2805a030a5010db8763db4c5671584e17027c5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop21" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="dbg11.dmk" size="518416" crc="8ba5fea5" sha1="e87bbad0b9b78e94b7a4e685248141dbe927e99f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop22" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg12.dmk" size="512016" crc="dd52853a" sha1="49f17eced06cf1a0c0b66de498a3294226871b26" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop23" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="dbg13.dmk" size="518416" crc="83badfc2" sha1="04c025cdd8013d51e8eb4d0120506032bdadf7e1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop24" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="dbg14.dmk" size="518416" crc="2a6ee7b7" sha1="a1dbed045d79abf5f6e90110fa0b8b77ff40210b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop25" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="dbg15.dmk" size="518416" crc="7bd05da6" sha1="07bba87c718ce48cef1177bf2f636e0dd82c0b94" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop26" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg16.dmk" size="512016" crc="a029c6ad" sha1="05c4c74c319f1630f159fa9842a9de340938a4ad" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop27" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="dbg17.dmk" size="518416" crc="e487f37f" sha1="426edb4aa999372b2f30a8be2fe85820204b66c3" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop28" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="dbg18.dmk" size="518416" crc="018a546f" sha1="a438636277002c771d653785dbd43b839706421c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop29" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="dbg19.dmk" size="518416" crc="8c4d6e2a" sha1="0221b1ab2330335693c7e3fb49dab0b95328886b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop30" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="dbg20.dmk" size="518416" crc="9c817f8d" sha1="abf1ebd68fd1f831215e65a1395803fb34a6934c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop31" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="dbg21.dmk" size="518416" crc="652e7c8c" sha1="f01065e0969b4088aaa2fdb424199e4427eae66e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop32" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg22.dmk" size="512016" crc="f30dd831" sha1="4ee7e4854dca0cab69c51c60b20ac145ee323080" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop33" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="dbg23.dmk" size="518416" crc="529d310d" sha1="a3b37a42b7b32e6c4351830cd503fbef275e24e8" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop34" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg24.dmk" size="512016" crc="3c729b7f" sha1="d4176b02f197c5cb8b45672c6da08bfc4dee940b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop35" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="dbg25.dmk" size="518416" crc="ead6c3be" sha1="5f63bf06d0deb87510762df8a189740158e528a1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop36" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="dbg26.dmk" size="518416" crc="a24c945c" sha1="464a0f4b5cf304b1867a094d5edd4275651edfdb" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop37" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg27.dmk" size="512016" crc="1d1b4add" sha1="61d0a1ea08bf1d4f44af552e074cdc55d382bc6c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop38" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="dbg28.dmk" size="518416" crc="9aabd5e0" sha1="6c6b6d29dbe7bc29d10ad052a078cedbca63f289" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop39" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="dbg29.dmk" size="518416" crc="34b142a9" sha1="f4b6a86b79e77a583a5ddc6e90857d2dffca63ed" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop40" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="dbg30.dmk" size="518416" crc="22b516f5" sha1="505ae18a7fadeb1e777211c70f6291e9b23d2b7c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop41" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg31.dmk" size="512016" crc="9980ba76" sha1="82712c961009c60569dff96af01e8fef6d966b72" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop42" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg32.dmk" size="512016" crc="bdd14658" sha1="84985e0409f27d47a5389a23d1589b89a78e0f80" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop43" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg33.dmk" size="512016" crc="0496eb79" sha1="0200fd12ef5f85b7130a68867298ababace3b87a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop44" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="dbg34.dmk" size="518416" crc="982f8c68" sha1="a2ef94d6f1b3fca0322d32c9ee3d15746c38307f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop45" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg35.dmk" size="512016" crc="0de7cfd9" sha1="5ee6ea66fa0f854e5e67260efd6a4301ab3c03a1" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop46" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg36.dmk" size="512016" crc="3f2d5c79" sha1="f0d895f3d1c686e1b8c0bc9d5d02772c8011f96e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop47" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="dbg37.dmk" size="518416" crc="a11d9296" sha1="f8383844a028559006449c35dc82e9141f183e63" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop48" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg38.dmk" size="512016" crc="df2396ab" sha1="567ef21ce8904dddbdd0b005ff1473b4cd4ece41" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop49" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg39.dmk" size="512016" crc="cd932744" sha1="2129ccb8a2c4f91d8ee6a87c594ed141841c451c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop50" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="dbg40.dmk" size="518416" crc="c317ca18" sha1="213b5be5e92ffc6eec000df5092f4e271299c373" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop51" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg41.dmk" size="512016" crc="e3052a59" sha1="65b1bef0e872209da97949827ee4982794fc054c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop52" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="dbg42.dmk" size="518416" crc="5a28295a" sha1="fe48d028ee3c295b91dafd4e51b25118cc3f641b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop53" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="dbg43.dmk" size="518416" crc="27398ba4" sha1="016a7f6479bf1e230b3d2e1665d446cd46251af9" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop54" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg44.dmk" size="512016" crc="ea1c2888" sha1="02f60609014c9bab49b5d234f0e67a864cc540e5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop55" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="dbg45_1e.dmk" size="518416" crc="1960425e" sha1="5dba1604618d820ebcb2e348490a9529ef4393d6" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop56" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="dbg46.dmk" size="518416" crc="e4242b70" sha1="24e993dc1d37eb96baf47e60771312b560e4169b" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop57" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg47.dmk" size="512016" crc="5ae6cc70" sha1="e83daa8eafacaf43256fe9d786835148b68edfe0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop58" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg48.dmk" size="512016" crc="6ae22815" sha1="eee6b622e6f6287d715058158c87527cc3f98c15" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop59" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg49.dmk" size="512016" crc="01f7f2f1" sha1="853c526dcafd6bdb7e03c7ddfdd4a251185424ec" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop60" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg50.dmk" size="512016" crc="07b70c80" sha1="9516c242c2f6c6fec4746e0ccf083250f17a7145" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop61" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg51.dmk" size="512016" crc="3efed17a" sha1="e3703b4d94384bb0deaa41c895fa40b26a93168f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop62" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg52.dmk" size="512016" crc="51b946cf" sha1="988acfff613337379b50b7e7225f1d4d2aaeb777" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop63" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg53.dmk" size="512016" crc="7396a190" sha1="1b184a10c5658d8cbe7f780b23ba4fe2f621a8a8" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop64" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg54.dmk" size="512016" crc="d3977bbc" sha1="a63aa6ccdf71c54306961cde7e53afb6d7cfb775" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop65" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg55.dmk" size="512016" crc="7816eb11" sha1="ab1a72f5443f0fa3192eea241e2815eade2aee2e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop66" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg56.dmk" size="512016" crc="0858fcf1" sha1="ca0c1d32b51ef5d789742a36e06595ff66590797" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop67" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg57.dmk" size="512016" crc="cc45ad7f" sha1="a4ca3c29df0d87bb90527995f3f390f9acf8fef5" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop68" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg58.dmk" size="512016" crc="c4377210" sha1="6801fde2da875ec97849a05c8a112147f8809461" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop69" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg59.dmk" size="512016" crc="07c74611" sha1="55eda9076f8281c854fc9023af4146cc67be2c4c" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop70" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg60.dmk" size="512016" crc="17e48fd4" sha1="fd9727a28dea4128897efce3a0182be6b3e845f4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop71" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="dbg61.dmk" size="512016" crc="31176876" sha1="a3526c083c8b57979417ac9442d5567b534dbc54" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop72" interface="floppy_5_25">
+			<dataarea name="flop" size="512016">
+				<rom name="samp1.dmk" size="512016" crc="4d8d12d4" sha1="53f9b446b6018becbe29a0a53e4422fe9ada59a4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop73" interface="floppy_5_25">
+			<dataarea name="flop" size="518416">
+				<rom name="tools.dmk" size="518416" crc="ababab37" sha1="ac7112b47165883943f4b1ed697a4d4f2574b4a8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gview">
+		<description>Globalview 6085 (v3.2.38)</description>
+		<year>198?</year>
+		<publisher>Xerox</publisher>
+
+		<part name="flop4" interface="floppy_5_25">
+			<dataarea name="flop" size="361034">
+				<rom name="300e06950.imd" size="361034" crc="80fc0dbc" sha1="183f82065285036ade74abb263cd4ffdd009cd73" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop6" interface="floppy_5_25">
+			<dataarea name="flop" size="366617">
+				<rom name="300e06960.imd" size="366617" crc="78811acb" sha1="95d0bb45e2c0c6c2e8f6674f76d9511d1205245a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop8" interface="floppy_5_25">
+			<dataarea name="flop" size="365603">
+				<rom name="300e06970.imd" size="365603" crc="4e2372da" sha1="652e56effd30c897ad9db0e6b145eda681bc7b1f" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop10" interface="floppy_5_25">
+			<dataarea name="flop" size="353853">
+				<rom name="300e77460.imd" size="353853" crc="51565f37" sha1="8c67ad3ad3f08b478d8073125402b6ec7f49e937" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop12" interface="floppy_5_25">
+			<dataarea name="flop" size="366628">
+				<rom name="300e77470.imd" size="366628" crc="361e1af1" sha1="962bad2de0ddfe677962fc32fd82db5a3baa0f6e" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop14" interface="floppy_5_25">
+			<dataarea name="flop" size="366628">
+				<rom name="300e77480.imd" size="366628" crc="2fba1e0f" sha1="c1506560c53b65e76eb1ae4e6f470383024bab62" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop16" interface="floppy_5_25">
+			<dataarea name="flop" size="366117">
+				<rom name="300e77490.imd" size="366117" crc="d6e77ee8" sha1="e9b2b0cc700a411147b2a72d7251de384697fb91" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop18" interface="floppy_5_25">
+			<dataarea name="flop" size="365606">
+				<rom name="300e77500.imd" size="365606" crc="618152e9" sha1="c7003c5b5b423af4ca0b3a6e992b79a065a630f2" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop20" interface="floppy_5_25">
+			<dataarea name="flop" size="209234">
+				<rom name="300e77510.imd" size="209234" crc="a8f80d8b" sha1="95db45b86f447b4c3f6adab0e407da72090e03c0" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop24" interface="floppy_5_25">
+			<dataarea name="flop" size="363043">
+				<rom name="300e77520.imd" size="363043" crc="62fe382e" sha1="61835305c78fab7246f73a33452824af746ee509" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop26" interface="floppy_5_25">
+			<dataarea name="flop" size="363043">
+				<rom name="300e77530.imd" size="363043" crc="02bb3420" sha1="1ef2667d4aaf22ed346244bac045e814ca0f8a59" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop28" interface="floppy_5_25">
+			<dataarea name="flop" size="363043">
+				<rom name="300e77540.imd" size="363043" crc="b63a7b0c" sha1="3ebd3e95cf29c0e384ffba05156485825f70c652" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop30" interface="floppy_5_25">
+			<dataarea name="flop" size="363043">
+				<rom name="300e77550.imd" size="363043" crc="2dcb93fd" sha1="917444f80bf9f238e92a2c09145dde6019d09928" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop32" interface="floppy_5_25">
+			<dataarea name="flop" size="121851">
+				<rom name="300e77560.imd" size="121851" crc="683cfb7a" sha1="bf360ec556300e681f9ad86abbeb50356c726195" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop34" interface="floppy_5_25">
+			<dataarea name="flop" size="155054">
+				<rom name="300e77570.imd" size="155054" crc="35d465ef" sha1="8b5e599cee01bc11713944e2b58be3649466277d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop36" interface="floppy_5_25">
+			<dataarea name="flop" size="236302">
+				<rom name="300e77580.imd" size="236302" crc="5359ff7f" sha1="150e9623ef0fa8467a65f516f5e9cb00f16a2526" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop38" interface="floppy_5_25">
+			<dataarea name="flop" size="145883">
+				<rom name="300e77590.imd" size="145883" crc="3e97bb64" sha1="93b712be6a73a1f4daa28ec1ac960ec077cdd10d" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop40" interface="floppy_5_25">
+			<dataarea name="flop" size="291518">
+				<rom name="300e77600.imd" size="291518" crc="8273d65a" sha1="82a17e5dcba3a4d6d920c610080b87f3e2ef3f11" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop44" interface="floppy_5_25">
+			<dataarea name="flop" size="352306">
+				<rom name="300e77610.imd" size="352306" crc="946a4e5c" sha1="69fab3947f4d491a6a244b0b7f404835f44047e4" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop46" interface="floppy_5_25">
+			<dataarea name="flop" size="39067">
+				<rom name="300e77620.imd" size="39067" crc="449403d2" sha1="c7ae17092bae2a2a9113fff6170139d6e42082cb" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop48" interface="floppy_5_25">
+			<dataarea name="flop" size="138194">
+				<rom name="300e77630.imd" size="138194" crc="dad020d8" sha1="1b0a4e5faa532525deafcb40cb82d00a82198a75" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop50" interface="floppy_5_25">
+			<dataarea name="flop" size="358441">
+				<rom name="300e77640.imd" size="358441" crc="3cf5d262" sha1="73e466ac1ff5f3aee7da3838df7232c550271dad" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop52" interface="floppy_5_25">
+			<dataarea name="flop" size="27824">
+				<rom name="300e77650.imd" size="27824" crc="c36d20e3" sha1="a449d7ee000008f979a1fe74829bdeda8b2c78b7" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>

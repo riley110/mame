@@ -1191,7 +1191,7 @@ void amstrad_state::aleste(machine_config &config)
 	FLOPPY_CONNECTOR(config, "upd765:1", aleste_floppies, "35dd", amstrad_state::aleste_floppy_formats);
 
 	SOFTWARE_LIST(config.replace(), "flop_list").set_original("aleste");
-	SOFTWARE_LIST(config, "cpc_list").set_compatible("cpc_flop");
+	//SOFTWARE_LIST(config, "cpc_list").set_compatible("cpc_flop");
 
 	/* internal ram */
 	m_ram->set_default_size("2M");

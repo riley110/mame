@@ -234,7 +234,8 @@ void galaxy_state::galaxyp(machine_config &config)
 	m_cassette->add_route(ALL_OUTPUTS, "mono", 0.05);
 	m_cassette->set_interface("galaxy_cass");
 
-	SOFTWARE_LIST(config, "cass_list").set_original("galaxy");
+	SOFTWARE_LIST(config, "galaxyp_cass_list").set_original("galaxyp");
+    SOFTWARE_LIST(config, "galaxy_cass_list").set_compatible("galaxy");
 }
 
 ROM_START (galaxy)

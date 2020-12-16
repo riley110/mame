@@ -393,6 +393,7 @@ void aquarius_state::aquarius(machine_config &config)
 	CASSETTE(config, m_cassette);
 	m_cassette->set_default_state(CASSETTE_STOPPED | CASSETTE_MOTOR_ENABLED | CASSETTE_SPEAKER_ENABLED);
 	m_cassette->add_route(ALL_OUTPUTS, "mono", 0.05);
+	m_cassette->set_interface("aquarius_cass");
 
 	/* cartridge */
 	GENERIC_CARTSLOT(config, m_cart, generic_linear_slot, "aquarius_cart");
@@ -401,7 +402,8 @@ void aquarius_state::aquarius(machine_config &config)
 	RAM(config, RAM_TAG).set_default_size("4K").set_extra_options("8K,20K,36K");
 
 	/* software lists */
-	SOFTWARE_LIST(config, "cart_list").set_original("aquarius");
+	SOFTWARE_LIST(config, "cart_list").set_original("aquarius_cart");
+	SOFTWARE_LIST(config, "cass_list").set_original("aquarius_cass");
 }
 
 

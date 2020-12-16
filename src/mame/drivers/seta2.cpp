@@ -33,7 +33,7 @@ P0-123A                 1996    Wakakusamonogatari Mahjong Yonshimai    Maborosh
 P0-125A ; KE (Namco)    1996    Kosodate Quiz My Angel                  Namco
 P0-130B ; M-133 (Namco) 1997    Star Audition                           Namco
 P0-136A ; KL (Namco)    1997    Kosodate Quiz My Angel 2                Namco
-P-FG-02                 1997    Reel'N Quake                            <unknown>
+P-FG-02                 1997    Reel'N Quake                            Sammy?
 P-FG-03                 ????    Endless Riches                          E.N.Tiger
 P0-140B                 2000    Funcube                                 Namco
 P0-140B                 2000    Namco Stars                             Namco
@@ -3558,6 +3558,7 @@ ROM_END
 /***************************************************************************
 
 Reel'N Quake!
+(c)1997 Sammy? (based on unused logo found in gfx roms)
 
    CPU: Toshiba TMP68301AF-16 (100 Pin PQFP)
  Video: NEC DX-101 (240 Pin PQFP, @ U10)
@@ -4416,7 +4417,7 @@ GAME( 1997, myangel2,  0,        myangel2, myangel2, seta2_state,    empty_init,
 
 GAME( 1996, telpacfl,  0,        telpacfl, telpacfl, seta2_state,    empty_init,    ROT270, "Sunsoft",               "TelePachi Fever Lion (V1.0)",                         MACHINE_NO_COCKTAIL | MACHINE_IMPERFECT_GRAPHICS )
 
-GAME( 1997, reelquak,  0,        reelquak, reelquak, seta2_state,    empty_init,    ROT0,   "<unknown>",             "Reel'N Quake! (Version 1.05)",                        MACHINE_NO_COCKTAIL | MACHINE_IMPERFECT_GRAPHICS )
+GAME( 1997, reelquak,  0,        reelquak, reelquak, seta2_state,    empty_init,    ROT0,   "Sammy?",                "Reel'N Quake! (Version 1.05)",                        MACHINE_NO_COCKTAIL | MACHINE_IMPERFECT_GRAPHICS )
 
 GAME( 199?, endrichs,  0,        reelquak, endrichs, seta2_state,    empty_init,    ROT0,   "E.N.Tiger",             "Endless Riches (Ver 1.20)",                           MACHINE_NO_COCKTAIL | MACHINE_IMPERFECT_GRAPHICS )
 

@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+license:CC0
+
+All info obtained using label scans from http://bitsavers.trailing-edge.com/bits/Ferguson/Big_Board_II/bigboard_II_disks
+-->
+<softwarelist name="bigbord2" description="Big Board II diskettes">
+
+	<software name="58di">
+		<description>BB II 5&quot; &amp; 8&quot; Drive Interface</description>
+		<year>198?</year>
+		<publisher>Micro Cornucopia</publisher>
+
+		<part name="flop1" interface="floppy_8">
+			<dataarea name="flop" size="248181">
+				<rom name="bb5-8di_s1.imd" size="248181" crc="95c44c17" sha1="1db06b734a88d83ffc92feda03bea509550c349f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bbud2">
+		<description>Big Board User Disk #2</description>
+		<year>198?</year>
+		<publisher>Micro Cornucopia</publisher>
+
+		<part name="flop1" interface="floppy_8">
+			<dataarea name="flop" size="246269">
+				<rom name="bbud#2_s1.imd" size="246269" crc="4acd3619" sha1="14036df2068acb1359e2217eb92478c7f721899c" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bbud5">
+		<description>Big Board User Disk #5</description>
+		<year>198?</year>
+		<publisher>Micro Cornucopia</publisher>
+
+		<part name="flop1" interface="floppy_8">
+			<dataarea name="flop" size="245761">
+				<rom name="bbud#5_s1.imd" size="245761" crc="4447fdde" sha1="7e8a0a5f82cad00525f64dda0fa6990fb96965c2" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="bbud17">
+		<description>Big Board User Disk #17</description>
+		<year>198?</year>
+		<publisher>Micro Cornucopia</publisher>
+
+		<part name="flop1" interface="floppy_8">
+			<dataarea name="flop" size="249699">
+				<rom name="bbud#17_s1.imd" size="249699" crc="891c9eef" sha1="dc6bbe44941ce6f52322ff6f0e22342548397790" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cbios">
+		<description>Big Board II CBIOS Diskette</description>
+		<year>1982</year>
+		<publisher>Cal-Tex Computers</publisher>
+		<info name="serial" value="0093"/>
+
+		<part name="flop1" interface="floppy_8">
+			<dataarea name="flop" size="211116">
+				<rom name="cbios_s1.imd" size="211116" crc="3fd03e98" sha1="448fad468142b7172d18b942294a626274aa4819" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_8">
+			<dataarea name="flop" size="206681">
+				<rom name="cbios_s2.imd" size="206681" crc="4eca0919" sha1="d3713fec0c5a8ff11812dc645db101776b2b2abe" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="ddboot">
+		<description>Big Board II CP/M 2.2</description>
+		<year>198?</year>
+		<publisher>Cal-Tex Computers?</publisher>
+		<info name="serial" value="cp2-677-0093"/>
+
+		<part name="flop1" interface="floppy_8">
+			<dataarea name="flop" size="183711">
+				<rom name="ddboot_s1.imd" size="183711" crc="1676a3c0" sha1="55d707762a32802bf5e2507847c508d0cb2fa829" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_8">
+			<dataarea name="flop" size="108018">
+				<rom name="ddboot_s2.imd" size="108018" crc="3107eeba" sha1="f3751abc72847056a9023cab6ec0eb28665c16e1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="rommon">
+		<description>Big Board II ROM Monitor Source</description>
+		<year>198?</year>
+		<publisher>Cal-Tex Computers</publisher>
+
+		<part name="flop1" interface="floppy_8">
+			<dataarea name="flop" size="104401">
+				<rom name="rommon_s1.imd" size="104401" crc="bf53697e" sha1="4eb8984f9c4376ea1952f851ffc9f0bba2aa805a" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_8">
+			<dataarea name="flop" size="191660">
+				<rom name="rommon_s2.imd" size="191660" crc="839bea83" sha1="030ec6f0eba3400c8655e3641c8f80301f87c385" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sdnoboot">
+		<description>Single Density CP/M 2.2 Distribution Diskette</description>
+		<year>198?</year>
+		<publisher>Cal-Tex Computers?</publisher>
+		<info name="serial" value="cp2-677-0093"/>
+
+		<part name="flop1" interface="floppy_8">
+			<dataarea name="flop" size="106093">
+				<rom name="sdnoboot_s1.imd" size="106093" crc="8901c0eb" sha1="d03559f6c6ce67141e4c271fb395abecd27a4f69" offset="0" />
+			</dataarea>
+		</part>
+		<part name="flop2" interface="floppy_8">
+			<dataarea name="flop" size="6535">
+				<rom name="sdnoboot_s2.imd" size="6535" crc="79cabf49" sha1="78513d7a6b6cf4ac77c5101a744636d5a9e591f8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+</softwarelist>

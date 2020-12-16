@@ -400,7 +400,8 @@ void softbox_state::softbox(machine_config &config)
 	IMI7000_BUS(config, "imi7000").set_slot_default_options("imi5000h", nullptr, nullptr, nullptr);
 
 	// software lists
-	SOFTWARE_LIST(config, "flop_list").set_original("softbox");
+	SOFTWARE_LIST(config, "flop_list").set_original("softbox_flop");
+	SOFTWARE_LIST(config, "hdd_list").set_original("softbox_hdd");
 }
 
 

@@ -7,7 +7,6 @@ Dumps needed: (Info taken from: http://home.pacbell.net/smc777/comsoft.htm )
 
 OS:
   SMC-777 System 1.3j
-  SMC-777 System 1.4j
   Sony Disk Basic
   SMC Edit
 
@@ -22,7 +21,6 @@ Magazine:
   Floppy Magazine #8
   Floppy Magazine 創刊準備号
   Floppy Magazine 特別号
-
 
 SMCゲームパックI
   バイキン君のゴキブリ退治
@@ -83,7 +81,6 @@ Home:
   ラッサピアター
   ラッサピアターE
 
-
 Education:
   SMC LOGOの世界(アプリケーション編)
   SMC LOGOの世界(グラフィック編)
@@ -108,7 +105,7 @@ Other:
   SONY販促用ディスク3
   SONY販促用ディスク4
 
-Known to be dumped, but no longer available: (If you do have any of these please contact the MESS development team)
+Known to be dumped, but no longer available: (If you do have any of these please contact the MAME development team)
   SMC Paint
   PIC->BMPコンバータ
   GIFファイルローダー
@@ -131,16 +128,15 @@ Known to be dumped, but no longer available: (If you do have any of these please
   New Adam & Eve
   A・E
 -->
+<softwarelist name="smc777" description="Sony SMC-777 Disks">
 
-<softwarelist name="smc777" description="Sony SMC777 Disks">
+<!-- Commercial Software -->
 
-	<!-- Commercial Software -->
-
-	<software name="cpm22">
-	<!-- This was originally released for the SMC-70, but also sold for the SMC-777-->
-		<description>CP\M v2.2</description>
-		<year>198?</year>
-		<publisher>Sony Corp.</publisher>
+	<!-- Originally released for the SMC-70, but compatible with SMC-777 -->
+	<software name="smc70cpm">
+		<description>SMC-70 CP/M (v2.2, Release 2.1)</description>
+		<year>1984</year>
+		<publisher>Sony</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="121414">
@@ -149,24 +145,30 @@ Known to be dumped, but no longer available: (If you do have any of these please
 		</part>
 	</software>
 
-	<software name="develop" supported="no">
-	<!-- Seems to be Bad. Added as a placeholder-->
-		<description>Develop v1.4</description>
+    <!-- Includes several development programs -->
+	<software name="system">
+		<description>SMC-777 System (v1.4J)</description>
 		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<publisher>Sony</publisher>
+        <info name="usage" value="Disk must be in both drives to boot fully"/>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="305328">
 				<rom name="develop.1dd" size="305328" crc="13e5971a" sha1="c15d61e00ea2495ef5406a0a6f637ab2746e91cc" />
 			</dataarea>
 		</part>
+		<part name="flop2" interface="floppy_3_5">
+			<dataarea name="flop" size="305328">
+				<rom name="develop.1dd" size="305328" crc="13e5971a" sha1="c15d61e00ea2495ef5406a0a6f637ab2746e91cc" />
+			</dataarea>
+		</part>
 	</software>
 
-	<software name="sys12j">
-		<!-- Includes: Dr. Logo, Bird Catch, Mysterious Boy-->
-		<description>SMC-777 System v1.2j</description>
+    <!-- Includes: Dr. Logo, Bird Catch, Mysterious Boy -->
+	<software name="system12j" cloneof="system">
+		<description>SMC-777 System (v1.2J)</description>
 		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<publisher>Sony</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="261808">
@@ -175,10 +177,10 @@ Known to be dumped, but no longer available: (If you do have any of these please
 		</part>
 	</software>
 
-	<software name="sys11j">
-		<description>SMC-777 System v1.1j</description>
+	<software name="system11j" cloneof="system">
+		<description>SMC-777 System (v1.1J)</description>
 		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<publisher>Sony</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="305328">
@@ -187,10 +189,10 @@ Known to be dumped, but no longer available: (If you do have any of these please
 		</part>
 	</software>
 
-	<software name="sys10j">
-		<description>SMC-777 System v1.0j</description>
+	<software name="system10j" cloneof="system">
+		<description>SMC-777 System (v1.0J)</description>
 		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
+		<publisher>Sony</publisher>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="305328">
@@ -224,11 +226,11 @@ Known to be dumped, but no longer available: (If you do have any of these please
 		</part>
 	</software>
 
-<!-- which issue of the magazine? -->
-	<software name="flopmag" supported="no">
-		<description>Floppy Magazine</description>
+	<software name="flopmag">
+		<description>Floppy Magazine (unknown issue)</description>
 		<year>198?</year>
 		<publisher>&lt;unknown&gt;</publisher>
+        <info name="usage" value="Use FILES command, type RUN next to a .BAS program, then press Enter"/>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="305056">
@@ -251,7 +253,7 @@ Known to be dumped, but no longer available: (If you do have any of these please
 		</part>
 	</software>
 
-	<!-- Homebrew Software-->
+<!-- Homebrew Software-->
 
 	<software name="corewars">
 		<description>Corewars</description>
@@ -266,10 +268,10 @@ Known to be dumped, but no longer available: (If you do have any of these please
 	</software>
 
 	<software name="dragon">
-	<!-- Alternative Title: ドラゴンズアルファベット -->
 		<description>Dragon's Alphabet</description>
 		<year>1987</year>
 		<publisher>M &amp; M / Alines Soft</publisher>
+        <info name="alt_title" value="ドラゴンズアルファベット"/>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="305328">
@@ -278,19 +280,20 @@ Known to be dumped, but no longer available: (If you do have any of these please
 		</part>
 	</software>
 
-	<!-- Alternative Title: ドラゴンズアルファベット -->
-	<!-- Extra Info: Freeware Edition -->
-	<!-- software name="dragona" cloneof="dragon">
-	    <description>Dragon's Alphabet</description>
+<!--
+    <software name="dragona" cloneof="dragon">
+        <description>Dragon's Alphabet (Freeware Edition)</description>
 	    <year>1987</year>
-	    <publisher>M &amp; M</publisher>
+	    <publisher>M &amp; M / Alines Soft</publisher>
+        <info name="alt_title" value="ドラゴンズアルファベット"/>
 
 	    <part name="flop1" interface="floppy_3_5">
 	        <dataarea name="flop" size="305328">
 	            <rom name="dragon (freeware).1dd" size="305328" crc="168925c7" sha1="cf5b4b3f3ae0b77787613c7168eb8cb25dabbe52" />
 	        </dataarea>
 	    </part>
-	</software -->
+	</software>
+-->
 
 	<software name="zebloc2">
 		<description>Zebloc II</description>
@@ -304,11 +307,24 @@ Known to be dumped, but no longer available: (If you do have any of these please
 		</part>
 	</software>
 
-	<software name="sos20" cloneof="sos22">
-	<!-- Alternate Title S-OS Sword-->
-		<description>S-OS Monitor v2.0</description>
+    <software name="sosmon">
+        <description>S-OS Monitor (v2.2)</description>
+        <year>198?</year>
+        <publisher>&lt;unknown&gt;</publisher>
+        <info name="alt_title" value="S-OS Sword"/>
+        
+        <part name="flop1" interface="floppy_3_5">
+            <dataarea name="flop" size="348848">
+                <rom name="s-os sword monitor 2.2.1dd" size="348848" crc="6e3215ce" sha1="1fffac3db3005e3de750c63ce1285f6b8a40310a" />
+            </dataarea>
+        </part>
+    </software>
+
+	<software name="sosmon20" cloneof="sosmon">
+		<description>S-OS Monitor (v2.0)</description>
 		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
+        <publisher>&lt;unknown&gt;</publisher>
+        <info name="alt_title" value="S-OS Sword"/>
 
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="305328">
@@ -317,21 +333,8 @@ Known to be dumped, but no longer available: (If you do have any of these please
 		</part>
 	</software>
 
-	<software name="sos22">
-	<!-- Alternate Title S-OS Sword-->
-		<description>S-OS Monitor v2.2</description>
-		<year>198?</year>
-		<publisher>&lt;unknown&gt;</publisher>
+<!-- Unofficial Game Compilations; original releases are wanted if avaiable (also see above Undumped List) -->
 
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="348848">
-				<rom name="s-os sword monitor 2.2.1dd" size="348848" crc="6e3215ce" sha1="1fffac3db3005e3de750c63ce1285f6b8a40310a" />
-			</dataarea>
-		</part>
-	</software>
-
-
-<!-- It would be nice to find out original releases of some of these, but in the meanwhile let's document what we have -->
 	<software name="comp1">
 		<description>Game Compilation 1</description>
 		<year>198?</year>
@@ -355,4 +358,5 @@ Known to be dumped, but no longer available: (If you do have any of these please
 			</dataarea>
 		</part>
 	</software>
+
 </softwarelist>

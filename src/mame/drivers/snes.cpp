@@ -1361,6 +1361,7 @@ void snes_console_state::snes(machine_config &config)
 	SOFTWARE_LIST(config, "cart_list").set_original("snes");
 	SOFTWARE_LIST(config, "bsx_list").set_original("snes_bspack");
 	SOFTWARE_LIST(config, "st_list").set_original("snes_strom");
+	SOFTWARE_LIST(config, "misc_list").set_original("snes_misc");
 }
 
 void snes_console_state::snespal(machine_config &config)

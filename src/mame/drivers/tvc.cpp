@@ -823,7 +823,7 @@ void tvc_state::tvc(machine_config &config)
 	GENERIC_CARTSLOT(config, m_cart, generic_plain_slot, "tvc_cart", "bin,rom,crt");
 
 	/* expansion interface */
-	TVCEXP_SLOT(config, m_expansions[0], tvc_exp , nullptr);
+	TVCEXP_SLOT(config, m_expansions[0], tvc_exp , "hbf");
 	m_expansions[0]->out_irq_callback().set_inputline(m_maincpu, 0);
 	m_expansions[0]->out_nmi_callback().set_inputline(m_maincpu, INPUT_LINE_NMI);
 	TVCEXP_SLOT(config, m_expansions[1], tvc_exp , nullptr);

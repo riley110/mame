@@ -117,9 +117,6 @@ void apple3_state::apple3(machine_config &config)
 	FLOPPY_CONNECTOR(config, "2", a3_floppies, "525", apple3_state::floppy_formats);
 	FLOPPY_CONNECTOR(config, "3", a3_floppies, "525", apple3_state::floppy_formats);
 
-	/* softlist for fdc */
-	SOFTWARE_LIST(config, "flop525_list").set_original("apple3");
-
 	/* acia */
 	MOS6551(config, m_acia, 0);
 	m_acia->set_xtal(XTAL(1'843'200)); // HACK: The schematic shows an external clock generator but using a XTAL is faster to emulate.
@@ -164,6 +161,10 @@ void apple3_state::apple3(machine_config &config)
 
 	/* internal ram */
 	RAM(config, RAM_TAG).set_default_size("256K").set_extra_options("128K, 512K");
+	
+	/* software lists */
+	SOFTWARE_LIST(config, "flop_list").set_original("apple3_flop");
+	SOFTWARE_LIST(config, "hd_list").set_original("apple3_hd");
 }
 
 

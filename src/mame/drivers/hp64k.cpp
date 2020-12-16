@@ -160,6 +160,7 @@
 #include "video/i8275.h"
 #include "emupal.h"
 #include "screen.h"
+#include "softlist.h"
 #include "speaker.h"
 #include "machine/phi.h"
 #include "bus/ieee488/ieee488.h"
@@ -1476,6 +1477,8 @@ void hp64k_state::hp64k(machine_config &config)
 	ieee.ren_callback().set(m_phi, FUNC(phi_device::ren_w));
 	ieee.dio_callback().set(m_phi, FUNC(phi_device::bus_dio_w));
 	IEEE488_SLOT(config, "ieee_rem", 0, remote488_devices, nullptr);
+
+	SOFTWARE_LIST(config, "flop_list").set_original("hp64k");
 }
 
 ROM_START(hp64k)

@@ -75,6 +75,7 @@ public:
 	void hec2mx40(machine_config &config);
 	void hec2mdhrx(machine_config &config);
 	void hec2hr(machine_config &config);
+    void victor(machine_config &config);
 	void hector_audio(machine_config &config);
 
 	void init_mx40();

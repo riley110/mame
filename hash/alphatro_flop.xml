@@ -5,10 +5,35 @@ license:CC0
 -->
 <softwarelist name="alphatro_flop" description="Triumph-Adler Alphatronic PC diskettes">
 
-	<software name="cpm">
-		<description>CP/M 2.2 / 3.1</description>
-		<year>198?</year>
+	<software name="basic80">
+		<description>BASIC-80 (Rev. 5.26, 27-Oct-83)</description>
+		<year>1984</year>
+		<publisher>Microsoft - Triumph-Adler</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="55813">
+				<rom name="alphatronic cpm 2.2 disk4.imd" size="55813" crc="bdd5ae0d" sha1="3e3f76aa60f1c041c47c025c86a651d38559b8c9"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="basic80a" cloneof="basic80">
+		<description>BASIC-80 (Rev. 5.26, 27-Oct-83, Alt)</description>
+		<year>1984</year>
+		<publisher>Microsoft - Triumph-Adler</publisher>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="64140">
+				<rom name="dskbasic.td0" size="64140" crc="38834574" sha1="27a813ba8f7bb7f024ff5ebc49374bd46e005c65"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpm2231">
+		<description>56K CP/M 2.2/3.1</description>
+		<year>1983</year>
 		<publisher>Triumph-Adler</publisher>
+		<info name="serial" value="17558"/>
 
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="128877">
@@ -17,14 +42,41 @@ license:CC0
 		</part>
 	</software>
 
-	<software name="basic">
-		<description>Disk Basic 5.26b</description>
-		<year>1984</year>
-		<publisher>Microsoft</publisher>
+	<software name="cpm2230" cloneof="cpm2231">
+		<description>56K CP/M 2.2/3.0</description>
+		<year>1983</year>
+		<publisher>Triumph-Adler</publisher>
+		<info name="serial" value="17558"/>
 
 		<part name="flop1" interface="floppy_5_25">
-			<dataarea name="flop" size="64140">
-				<rom name="dskbasic.td0" size="64140" crc="38834574" sha1="27a813ba8f7bb7f024ff5ebc49374bd46e005c65"/>
+			<dataarea name="flop" size="96368">
+				<rom name="alphatronic cpm 2.2 disk1.imd" size="96368" crc="7003ff0f" sha1="0d69eeea8ad56fe0ad449e0339acb8a90cd2139b"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="cpm2230a" cloneof="cpm2231">
+		<description>56K CP/M 2.2/3.0 (Alt)</description>
+		<year>1983</year>
+		<publisher>Triumph-Adler</publisher>
+		<info name="serial" value="17558"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="40277">
+				<rom name="alphatronic cpm 2.2 disk2.imd" size="40277" crc="ece28038" sha1="6665e87d6543dfb5bcc9b6a50ff7984fbb0036e9" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+	
+	<software name="cpm2230b" cloneof="cpm2231">
+		<description>56K CP/M 2.2/3.0 (Alt 2)</description>
+		<year>1983</year>
+		<publisher>Triumph-Adler</publisher>
+		<info name="serial" value="17558"/>
+
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="flop" size="84647">
+				<rom name="alphatronic cpm 2.2 disk3.imd" size="84647" crc="4eb8b1fa" sha1="5d031b837a5a0c2e3aeeb6bd121bdeb117241fb8" offset="0" />
 			</dataarea>
 		</part>
 	</software>

@@ -124,6 +124,7 @@ from Brett Selwood and Andrew Davies.
 #include "emu.h"
 #include "includes/mbee.h"
 #include "formats/mbee_cas.h"
+#include "softlist.h"
 #include "speaker.h"
 
 /********** NOTE !!! ***********************************************************
@@ -784,6 +785,8 @@ void mbee_state::mbee56(machine_config &config)
 	m_fdc->enmf_rd_callback().set_constant(0);
 	FLOPPY_CONNECTOR(config, m_floppy0, mbee_floppies, "525qd", floppy_image_device::default_floppy_formats).enable_sound(true);
 	FLOPPY_CONNECTOR(config, m_floppy1, mbee_floppies, "525qd", floppy_image_device::default_floppy_formats).enable_sound(true);
+	
+	SOFTWARE_LIST(config, "flop_list").set_original("mbee_flop");
 }
 
 void mbee_state::mbee128(machine_config &config)
@@ -808,6 +811,8 @@ void mbee_state::mbee128p(machine_config &config)
 	m_fdc->enmf_rd_callback().set_constant(0);
 	FLOPPY_CONNECTOR(config, m_floppy0, mbee_floppies, "525qd", floppy_image_device::default_floppy_formats).enable_sound(true);
 	FLOPPY_CONNECTOR(config, m_floppy1, mbee_floppies, "525qd", floppy_image_device::default_floppy_formats).enable_sound(true);
+
+	SOFTWARE_LIST(config, "flop_list").set_original("mbee_flop");
 }
 
 void mbee_state::mbee256(machine_config &config)

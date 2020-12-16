@@ -30,6 +30,7 @@ Philips P2000 1 Memory map
 
 #include "emu.h"
 #include "includes/p2000t.h"
+#include "softlist_dev.h"
 
 #include "screen.h"
 #include "speaker.h"
@@ -245,6 +246,8 @@ void p2000t_state::p2000t(machine_config &config)
 	/* sound hardware */
 	SPEAKER(config, "mono").front_center();
 	SPEAKER_SOUND(config, m_speaker).add_route(ALL_OUTPUTS, "mono", 0.25);
+
+	SOFTWARE_LIST(config, "cass_list").set_original("p2k_cass");
 }
 
 
@@ -273,6 +276,8 @@ void p2000m_state::p2000m(machine_config &config)
 	/* sound hardware */
 	SPEAKER(config, "mono").front_center();
 	SPEAKER_SOUND(config, m_speaker).add_route(ALL_OUTPUTS, "mono", 0.25);
+
+	SOFTWARE_LIST(config, "cass_list").set_original("p2k_cass");
 }
 
 

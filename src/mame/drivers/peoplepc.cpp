@@ -38,6 +38,7 @@ The keyboard has a sticker that proclaims it was made by Fujitsu Limited.
 #include "bus/rs232/keyboard.h"
 #include "emupal.h"
 #include "screen.h"
+#include "softlist.h"
 
 class peoplepc_state : public driver_device
 {
@@ -343,6 +344,8 @@ void peoplepc_state::olypeopl(machine_config &config)
 	rs232c.rxd_handler().set(m_8251ser, FUNC(i8251_device::write_rxd));
 	rs232c.dsr_handler().set(m_8251ser, FUNC(i8251_device::write_dsr));
 	rs232c.cts_handler().set(m_8251ser, FUNC(i8251_device::write_cts));
+    
+    SOFTWARE_LIST(config, "flop_list").set_original("peoplepc");
 }
 
 ROM_START( olypeopl )

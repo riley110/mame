@@ -38,6 +38,7 @@
 
 #include "formats/oric_dsk.h"
 #include "formats/oric_tap.h"
+#include "softlist.h"
 
 
 class oric_state : public driver_device
@@ -831,6 +832,10 @@ void oric_state::oric(machine_config &config, bool add_ext)
 
 	/* extension port */
 	ORICEXT_CONNECTOR(config, "ext", oricext_intf, nullptr, "maincpu").irq_callback().set(FUNC(oric_state::ext_irq_w));
+	
+	/* software lists */
+	SOFTWARE_LIST(config, "cass_list").set_original("oric_cass");
+	SOFTWARE_LIST(config, "flop_list").set_original("oric_flop");
 }
 
 void oric_state::prav8d(machine_config &config)
