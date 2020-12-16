@@ -457,8 +457,8 @@ void fireone_state::fireone(machine_config &config)
 	NETLIST_ANALOG_INPUT(config, "sound_nl:volume_l", "R64.DIAL");
 	NETLIST_ANALOG_INPUT(config, "sound_nl:volume_r", "R65.DIAL");
 
-	NETLIST_STREAM_OUTPUT(config, "sound_nl:cout0", 0, "OUT_L").set_mult_offset(100000.0, 0.0);
-	NETLIST_STREAM_OUTPUT(config, "sound_nl:cout1", 1, "OUT_R").set_mult_offset(100000.0, 0.0);
+	NETLIST_STREAM_OUTPUT(config, "sound_nl:cout0", 0, "OUT_L").set_mult_offset(100000.0 / 32768.0, 0.0);
+	NETLIST_STREAM_OUTPUT(config, "sound_nl:cout1", 1, "OUT_R").set_mult_offset(100000.0 / 32768.0, 0.0);
 }
 
 void starfire_state::starfire(machine_config &config)
@@ -493,9 +493,6 @@ void starfire_state::starfire(machine_config &config)
 	NETLIST_ANALOG_OUTPUT(config, "sound_nl:output", 0).set_params("OUTPUT", FUNC(starfire_state::sound_out_cb));
 
 	DAC_16BIT_R2R_TWOS_COMPLEMENT(config, m_dac, 0).add_route(ALL_OUTPUTS, "mono", 0.5); // Not actually a DAC, just here to receive output.
-	voltage_regulator_device &vref(VOLTAGE_REGULATOR(config, "vref"));
-	vref.add_route(0, "dac", 1.0, DAC_VREF_POS_INPUT);
-	vref.add_route(0, "dac", -1.0, DAC_VREF_NEG_INPUT);
 }
 
 

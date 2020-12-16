@@ -1,7 +1,6 @@
 // license:GPL-2.0+
 // copyright-holders:Couriersud
 
-#include "macro/nlm_base_lib.h"
 #include "solver/nld_matrix_solver.h"
 #include "solver/nld_solver.h"
 
@@ -19,17 +18,14 @@
 
 #include <limits>
 
+NETLIST_EXTERNAL(base_lib)
+
 namespace netlist
 {
 
 	// ----------------------------------------------------------------------------------------
 	// callbacks_t
 	// ----------------------------------------------------------------------------------------
-
-	std::unique_ptr<plib::dynlib_base> callbacks_t:: static_solver_lib() const
-	{
-		return std::make_unique<plib::dynlib_static>(nullptr);
-	}
 
 	// ----------------------------------------------------------------------------------------
 	// queue_t
@@ -90,14 +86,14 @@ namespace netlist
 	// ----------------------------------------------------------------------------------------
 
 	netlist_t::netlist_t(netlist_state_t &state, const pstring &aname)
-		: m_state(state)
-		, m_solver(nullptr)
-		, m_time(netlist_time_ext::zero())
-		, m_mainclock(nullptr)
-		, m_queue(config::MAX_QUEUE_SIZE::value,
-			detail::queue_t::id_delegate(&netlist_state_t :: find_net_id, &state),
-			detail::queue_t::obj_delegate(&netlist_state_t :: net_by_id, &state))
-		, m_use_stats(false)
+	: m_state(state)
+	, m_solver(nullptr)
+	, m_time(netlist_time_ext::zero())
+	, m_mainclock(nullptr)
+	, m_use_stats(false)
+	, m_queue(config::MAX_QUEUE_SIZE::value,
+		detail::queue_t::id_delegate(&netlist_state_t :: find_net_id, &state),
+		detail::queue_t::obj_delegate(&netlist_state_t :: net_by_id, &state))
 	{
 		state.save(*this, static_cast<plib::state_manager_t::callback_t &>(m_queue), aname, "m_queue");
 		state.save(*this, m_time, aname, "m_time");
@@ -108,14 +104,10 @@ namespace netlist
 	// ----------------------------------------------------------------------------------------
 
 	netlist_state_t::netlist_state_t(const pstring &name,
-		host_arena::unique_ptr<callbacks_t> &&callbacks)
-	: m_callbacks(std::move(callbacks)) // Order is important here
-	, m_log(*m_callbacks)
-	, m_extended_validation(false)
+		plib::plog_delegate logger)
+	: m_log(logger)
 	, m_dummy_version(1)
 	{
-		m_lib = m_callbacks->static_solver_lib();
-
 		m_setup = plib::make_unique<setup_t, host_arena>(*this);
 		// create the run interface
 		m_netlist = plib::make_unique<netlist_t>(m_pool, *this, name);
@@ -139,14 +131,21 @@ namespace netlist
 		"#define IND_N(ind) ((ind) * 1e-9)   \n"
 		"#define IND_P(ind) ((ind) * 1e-12)  \n";
 		m_setup->parser().add_include<plib::psource_str_t>("netlist/devices/net_lib.h", content);
+
+		// This is for core macro libraries
+		m_setup->parser().add_include<plib::psource_str_t>("devices/net_lib.h", content);
 #if 1
 		NETLIST_NAME(base_lib)(m_setup->parser());
+		//m_setup->parser().register_source<source_pattern_t>("../macro/modules/nlmod_{1}.cpp");
+		//m_setup->parser().register_source<source_pattern_t>("../macro/nlm_{1}.cpp");
 #else
-		// FIXME: This is very slow - need optimized parsing scanning
 #if 1
-		m_setup->parser().register_source<source_pattern_t>("src/lib/netlist/macro/nlm_{1}.cpp");
+		m_setup->parser().register_source<source_pattern_t>("src/lib/netlist/macro/nlm_{1}.cpp", true);
+		m_setup->parser().register_source<source_pattern_t>("src/lib/netlist/generated/nlm_{1}.cpp", true);
+		m_setup->parser().register_source<source_pattern_t>("src/lib/netlist/macro/modules/nlmod_{1}.cpp", true);
 		m_setup->parser().include("base_lib");
 #else
+		// FIXME: This is very slow - need optimized parsing scanning
 		pstring dir = "src/lib/netlist/macro/";
 		//m_setup->parser().register_source<source_pattern_t>("src/lib/netlist/macro/nlm_{}.cpp");
 		m_setup->parser().register_source<source_file_t>(dir + "nlm_base_lib.cpp");
@@ -158,6 +157,11 @@ namespace netlist
 		m_setup->parser().include("base_lib");
 #endif
 #endif
+	}
+
+	void netlist_state_t::set_static_solver_lib(std::unique_ptr<plib::dynlib_base> &&lib)
+	{
+		m_lib = std::move(lib);
 	}
 
 
@@ -209,7 +213,6 @@ namespace netlist
 		ENTRY(NL_USE_MEMPOOL)
 		ENTRY(NL_USE_QUEUE_STATS)
 		ENTRY(NL_USE_COPY_INSTEAD_OF_REFERENCE)
-		ENTRY(NL_AUTO_DEVICES)
 		ENTRY(NL_USE_FLOAT128)
 		ENTRY(NL_USE_FLOAT_MATRIX)
 		ENTRY(NL_USE_LONG_DOUBLE_MATRIX)
@@ -242,6 +245,7 @@ namespace netlist
 
 		ENTRY_EX(sizeof(base_device_t))
 		ENTRY_EX(sizeof(device_t))
+		ENTRY_EX(sizeof(logic_t))
 		ENTRY_EX(sizeof(logic_input_t))
 		ENTRY_EX(sizeof(logic_output_t))
 		ENTRY_EX(sizeof(param_model_t))
@@ -249,6 +253,7 @@ namespace netlist
 		ENTRY_EX(sizeof(state_var<int>))
 		ENTRY_EX(sizeof(pstring))
 		ENTRY_EX(sizeof(core_device_t::stats_t))
+		ENTRY_EX(sizeof(std::vector<detail::core_terminal_t *>))
 		ENTRY_EX(sizeof(plib::plog_level))
 
 		ENTRY_EX(sizeof(nldelegate))
@@ -334,7 +339,7 @@ namespace netlist
 				for (auto &n : m_nets)
 				{
 					n->update_inputs(); // only used if USE_COPY_INSTEAD_OF_REFERENCE == 1
-					for (auto & term : n->core_terms())
+					for (auto & term : core_terms(*n))
 					{
 						if (!plib::container::contains(t, &term->delegate()))
 						{
@@ -428,7 +433,6 @@ namespace netlist
 			log().verbose("Queue Pushes   {1:15}", si.m_queue.m_prof_call());
 			log().verbose("Queue Moves    {1:15}", si.m_queue.m_prof_sortmove());
 			log().verbose("Queue Removes  {1:15}", si.m_queue.m_prof_remove());
-			log().verbose("Queue Retimes  {1:15}", si.m_queue.m_prof_retime());
 			log().verbose("");
 
 			log().verbose("Take the next lines with a grain of salt. They depend on the measurement implementation.");
@@ -615,7 +619,7 @@ namespace netlist
 		// rebuild m_list
 
 		m_list_active.clear();
-		for (auto & term : core_terms())
+		for (auto & term : exec().nlstate().core_terms(*this))
 			if (term->terminal_state() != logic_t::STATE_INP_PASSIVE)
 			{
 				m_list_active.push_back(term);
@@ -640,7 +644,7 @@ namespace netlist
 		// rebuild m_list and reset terminals to active or analog out state
 
 		m_list_active.clear();
-		for (core_terminal_t *ct : core_terms())
+		for (core_terminal_t *ct : exec().nlstate().core_terms(*this))
 		{
 			ct->reset();
 			if (ct->terminal_state() != logic_t::STATE_INP_PASSIVE)
@@ -700,13 +704,21 @@ namespace netlist
 	// terminal_t
 	// ----------------------------------------------------------------------------------------
 
-	terminal_t::terminal_t(core_device_t &dev, const pstring &aname, terminal_t *otherterm, nldelegate delegate)
+	terminal_t::terminal_t(core_device_t &dev, const pstring &aname,
+		terminal_t *otherterm, nldelegate delegate)
+	: terminal_t(dev, aname, otherterm, { nullptr, nullptr }, delegate)
+	{
+	}
+
+	terminal_t::terminal_t(core_device_t &dev, const pstring &aname,
+		terminal_t *otherterm, const std::array<terminal_t *, 2> &splitterterms,
+		nldelegate delegate)
 	: analog_t(dev, aname, STATE_BIDIR, delegate)
 	, m_Idr(nullptr)
 	, m_go(nullptr)
 	, m_gt(nullptr)
 	{
-		state().setup().register_term(*this, *otherterm);
+		state().setup().register_term(*this, otherterm, splitterterms);
 	}
 
 	void terminal_t::set_ptrs(nl_fptype *gt, nl_fptype *go, nl_fptype *Idr) noexcept(false)
@@ -905,7 +917,7 @@ namespace netlist
 	}
 
 
-	plib::psource_t::stream_ptr param_data_t::stream()
+	plib::istream_uptr param_data_t::stream()
 	{
 		return device().state().parser().get_data_stream(str());
 	}
@@ -1025,12 +1037,14 @@ namespace netlist
 				}
 
 				m_time = top->exec_time();
-				auto *const obj(top->object());
+				detail::net_t *const obj(top->object());
 				m_queue.pop();
-				if (obj != nullptr)
-					obj->template update_devs<KEEP_STATS>();
-				else
+
+				if (!!(obj == nullptr))
 					break;
+
+				obj->template update_devs<KEEP_STATS>();
+
 				if (KEEP_STATS)
 					m_perf_out_processed.inc();
 			} while (true);

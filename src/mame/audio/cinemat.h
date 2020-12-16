@@ -9,21 +9,17 @@
 #include "machine/netlist.h"
 #include "netlist/nl_setup.h"
 
-// log to cinemat.csv for nltool playback/analysis
-#define ENABLE_NETLIST_LOGGING      (0)
 
-
-class cinemat_audio_device : public device_t
+class cinemat_audio_device_base : public device_t, public device_mixer_interface
 {
 public:
-	cinemat_audio_device(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, u32 clock, u8 inputs_mask, void (*netlist)(netlist::nlparse_t &), double output_scale);
-
-	void configure_latch_inputs(ls259_device &latch, u8 mask = 0);
+	cinemat_audio_device_base &configure_latch_inputs(ls259_device &latch, u8 mask = 0);
 
 protected:
+	cinemat_audio_device_base(const machine_config &mconfig, device_type type, const char *tag, device_t *owner, u32 clock, u8 inputs_mask, void (*netlist)(netlist::nlparse_t &), double output_scale);
+
 	virtual void device_add_mconfig(machine_config &config) override;
 	virtual void device_start() override;
-	virtual void device_stop() override;
 
 	template<int _Index> DECLARE_WRITE_LINE_MEMBER(sound_w) { input_set(_Index, state); }
 	void input_set(int bit, int state);
@@ -32,102 +28,97 @@ protected:
 
 private:
 	u8 m_inputs = 0xff;
-	u8 m_inputs_mask = 0xff;
-	void (*m_netlist)(netlist::nlparse_t &) = nullptr;
-	double m_output_scale = 0;
-
-#if ENABLE_NETLIST_LOGGING
-	FILE *m_logfile = nullptr;
-#endif
-
+	u8 const m_inputs_mask;
+	void (*const m_netlist)(netlist::nlparse_t &);
+	double const m_output_scale;
 };
 
 
-class spacewar_audio_device : public cinemat_audio_device
+class spacewar_audio_device : public cinemat_audio_device_base
 {
 public:
 	spacewar_audio_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock);
 };
 
 
-class barrier_audio_device : public cinemat_audio_device
+class barrier_audio_device : public cinemat_audio_device_base
 {
 public:
 	barrier_audio_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock);
 };
 
 
-class speedfrk_audio_device : public cinemat_audio_device
+class speedfrk_audio_device : public cinemat_audio_device_base
 {
 public:
 	speedfrk_audio_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock);
 };
 
 
-class starhawk_audio_device : public cinemat_audio_device
+class starhawk_audio_device : public cinemat_audio_device_base
 {
 public:
 	starhawk_audio_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock);
 };
 
 
-class sundance_audio_device : public cinemat_audio_device
+class sundance_audio_device : public cinemat_audio_device_base
 {
 public:
 	sundance_audio_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock);
 };
 
 
-class tailg_audio_device : public cinemat_audio_device
+class tailg_audio_device : public cinemat_audio_device_base
 {
 public:
 	tailg_audio_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock);
 };
 
 
-class warrior_audio_device : public cinemat_audio_device
+class warrior_audio_device : public cinemat_audio_device_base
 {
 public:
 	warrior_audio_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock);
 };
 
 
-class armora_audio_device : public cinemat_audio_device
+class armora_audio_device : public cinemat_audio_device_base
 {
 public:
 	armora_audio_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock);
 };
 
 
-class ripoff_audio_device : public cinemat_audio_device
+class ripoff_audio_device : public cinemat_audio_device_base
 {
 public:
 	ripoff_audio_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock);
 };
 
 
-class starcas_audio_device : public cinemat_audio_device
+class starcas_audio_device : public cinemat_audio_device_base
 {
 public:
 	starcas_audio_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock);
 };
 
 
-class solarq_audio_device : public cinemat_audio_device
+class solarq_audio_device : public cinemat_audio_device_base
 {
 public:
 	solarq_audio_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock);
 };
 
 
-class boxingb_audio_device : public cinemat_audio_device
+class boxingb_audio_device : public cinemat_audio_device_base
 {
 public:
 	boxingb_audio_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock);
 };
 
 
-class wotw_audio_device : public cinemat_audio_device
+class wotw_audio_device : public cinemat_audio_device_base
 {
 public:
 	wotw_audio_device(const machine_config &mconfig, const char *tag, device_t *owner, u32 clock);

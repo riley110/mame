@@ -86,15 +86,15 @@ namespace solver
 
 		for (std::size_t k = 0; k < nets.size(); k++)
 		{
-			analog_net_t *net = nets[k];
+			analog_net_t &net = *nets[k];
 
-			log().debug("adding net with {1} populated connections\n", net->core_terms().size());
+			log().debug("adding net with {1} populated connections\n", setup.nlstate().core_terms(net).size());
 
-			net->set_solver(this);
+			net.set_solver(this);
 
-			for (auto &p : net->core_terms())
+			for (auto &p : setup.nlstate().core_terms(net))
 			{
-				log().debug("{1} {2} {3}\n", p->name(), net->name(), net->is_rail_net());
+				log().debug("{1} {2} {3}\n", p->name(), net.name(), net.is_rail_net());
 				switch (p->type())
 				{
 					case detail::terminal_type::TERMINAL:
@@ -476,7 +476,7 @@ namespace solver
 			resched = solve_nr_base();
 			// update timestep calculation
 			next_time_step = compute_next_timestep(m_params.m_min_ts_ts(), m_params.m_min_ts_ts(), m_params.m_max_timestep);
-			delta -= netlist_time_ext::from_fp(m_params.m_min_ts_ts());
+			delta -= netlist_time::from_fp(m_params.m_min_ts_ts());
 		}
 		// try remaining time using compute_next_timestep
 		while (delta > netlist_time::zero())
@@ -507,13 +507,13 @@ namespace solver
 
 	netlist_time matrix_solver_t::solve(netlist_time_ext now, const char *source)
 	{
-		netlist_time_ext delta = now - m_last_step();
+		netlist_time delta = static_cast<netlist_time>(now - m_last_step());
 		PFDEBUG(printf("solve %.10f\n", delta.as_double());)
 		plib::unused_var(source);
 
 		// We are already up to date. Avoid oscillations.
 		// FIXME: Make this a parameter!
-		if (delta < netlist_time_ext::quantum())
+		if (delta < netlist_time::quantum())
 		{
 			//printf("solve return %s at %f\n", source, now.as_double());
 			return timestep_device_count() > 0 ? netlist_time::from_fp(m_params.m_min_timestep) : netlist_time::zero();

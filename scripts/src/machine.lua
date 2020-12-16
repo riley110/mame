@@ -1021,6 +1021,19 @@ end
 
 ---------------------------------------------------
 --
+--@src/devices/machine/cs8900a.h,MACHINES["CS8900A"] = true
+---------------------------------------------------
+
+if (MACHINES["CS8900A"]~=null) then
+	files {
+		MAME_DIR .. "src/devices/machine/cs8900a.cpp",
+		MAME_DIR .. "src/devices/machine/cs8900a.h",
+	}
+end
+
+
+---------------------------------------------------
+--
 --@src/devices/machine/cxd1095.h,MACHINES["CXD1095"] = true
 ---------------------------------------------------
 
@@ -4520,5 +4533,49 @@ if (MACHINES["SWIM3"]~=null) then
 	files {
 		MAME_DIR .. "src/devices/machine/swim3.cpp",
 		MAME_DIR .. "src/devices/machine/swim3.h",
+	}
+end
+
+---------------------------------------------------
+--
+--@src/devices/machine/alpha_8921.h,MACHINES["ALPHA_8921"] = true
+---------------------------------------------------
+if (MACHINES["ALPHA_8921"]~=null) then
+	files {
+		MAME_DIR .. "src/devices/machine/alpha_8921.cpp",
+		MAME_DIR .. "src/devices/machine/alpha_8921.h",
+	}
+end
+
+---------------------------------------------------
+--
+--@src/devices/machine/bl_handhelds_menucontrol.h,MACHINES["BL_HANDHELDS_MENUCONTROL"] = true
+---------------------------------------------------
+if (MACHINES["BL_HANDHELDS_MENUCONTROL"]~=null) then
+	files {
+		MAME_DIR .. "src/devices/machine/bl_handhelds_menucontrol.cpp",
+		MAME_DIR .. "src/devices/machine/bl_handhelds_menucontrol.h",
+	}
+end
+
+---------------------------------------------------
+--
+--@src/devices/machine/ns32081.h,MACHINES["NS32081"] = true
+---------------------------------------------------
+if (MACHINES["NS32081"]~=null) then
+	files {
+		MAME_DIR .. "src/devices/machine/ns32081.cpp",
+		MAME_DIR .. "src/devices/machine/ns32081.h",
+	}
+end
+
+---------------------------------------------------
+--
+--@src/devices/machine/ns32202.h,MACHINES["NS32202"] = true
+---------------------------------------------------
+if (MACHINES["NS32202"]~=null) then
+	files {
+		MAME_DIR .. "src/devices/machine/ns32202.cpp",
+		MAME_DIR .. "src/devices/machine/ns32202.h",
 	}
 end

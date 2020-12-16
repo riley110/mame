@@ -191,7 +191,6 @@ GFX check (these don't explicitly fails):
 #include "emu.h"
 #include "machine/mega32x.h"
 #include "machine/timer.h"
-#include "sound/volt_reg.h"
 
 
 // Fifa96 needs the CPUs swapped for the gameplay to enter due to some race conditions
@@ -935,13 +934,10 @@ void sega_32x_device::m68k_pwm_w(offs_t offset, uint16_t data)
 		pwm_w(offset,data);
 }
 
-void sega_32x_device::sound_stream_update(sound_stream &stream, stream_sample_t **inputs, stream_sample_t **outputs, int samples)
+void sega_32x_device::sound_stream_update(sound_stream &stream, std::vector<read_stream_view> const &inputs, std::vector<write_stream_view> &outputs)
 {
-	for (int s = 0; s < samples; s++)
-	{
-		outputs[0][s] = inputs[0][s];
-		outputs[1][s] = inputs[1][s];
-	}
+	outputs[0] = inputs[0];
+	outputs[1] = inputs[1];
 }
 
 /**********************************************************************************************/
@@ -1698,12 +1694,6 @@ void sega_32x_device::device_add_mconfig(machine_config &config)
 	m_master_cpu->set_is_slave(0);
 	m_master_cpu->set_dma_fifo_data_available_callback(FUNC(sega_32x_device::_32x_fifo_available_callback));
 #endif
-
-	voltage_regulator_device &vref(VOLTAGE_REGULATOR(config, "vref", 0));
-	vref.add_route(0, "ldac", 1.0, DAC_VREF_POS_INPUT);
-	vref.add_route(0, "ldac", -1.0, DAC_VREF_NEG_INPUT);
-	vref.add_route(0, "rdac", 1.0, DAC_VREF_POS_INPUT);
-	vref.add_route(0, "rdac", -1.0, DAC_VREF_NEG_INPUT);
 
 	_32X_INTERLEAVE_LEVEL
 }

@@ -33,15 +33,13 @@ namespace netlist
 
 		// run functions
 
-		netlist_time_ext time() const noexcept { return m_time; }
+		const netlist_time_ext &time() const noexcept { return m_time; }
 
 		void process_queue(netlist_time_ext delta) noexcept;
 		void abort_current_queue_slice() noexcept
 		{
-			if (!NL_USE_QUEUE_STATS || !m_use_stats)
-				m_queue.retime<false>(detail::queue_t::entry_t(m_time, nullptr));
-			else
-				m_queue.retime<true>(detail::queue_t::entry_t(m_time, nullptr));
+			qremove(nullptr);
+			qpush(m_time, nullptr);
 		}
 
 		const detail::queue_t &queue() const noexcept { return m_queue; }
@@ -49,19 +47,27 @@ namespace netlist
 		template<typename... Args>
 		void qpush(Args&&...args) noexcept
 		{
-			if (!NL_USE_QUEUE_STATS || !m_use_stats)
+#if (!NL_USE_QUEUE_STATS)
+			m_queue.emplace<false>(std::forward<Args>(args)...); // NOLINT(performance-move-const-arg)
+#else
+			if (!m_use_stats)
 				m_queue.emplace<false>(std::forward<Args>(args)...); // NOLINT(performance-move-const-arg)
 			else
 				m_queue.emplace<true>(std::forward<Args>(args)...); // NOLINT(performance-move-const-arg)
+#endif
 		}
 
 		template <class R>
 		void qremove(const R &elem) noexcept
 		{
-			if (!NL_USE_QUEUE_STATS || !m_use_stats)
+#if (!NL_USE_QUEUE_STATS)
+			m_queue.remove<false>(elem);
+#else
+			if (!m_use_stats)
 				m_queue.remove<false>(elem);
 			else
 				m_queue.remove<true>(elem);
+#endif
 		}
 
 		// Control functions
@@ -87,9 +93,8 @@ namespace netlist
 		const log_type &log() const noexcept { return m_state.log(); }
 
 		void print_stats() const;
-		bool use_stats() const { return m_use_stats; }
 
-		bool stats_enabled() const noexcept { return m_use_stats; }
+		constexpr bool stats_enabled() const noexcept { return m_use_stats; }
 		void enable_stats(bool val) noexcept { m_use_stats = val; }
 
 	private:
@@ -107,8 +112,8 @@ namespace netlist
 
 		//PALIGNAS_CACHELINE()
 		//PALIGNAS(16)
-		detail::queue_t                     m_queue;
 		bool                                m_use_stats;
+		detail::queue_t                     m_queue;
 		// performance
 		plib::pperftime_t<true>             m_stat_mainloop;
 		plib::pperfcount_t<true>            m_perf_out_processed;

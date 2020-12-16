@@ -1,7 +1,7 @@
-// license:GPL-2.0+
+// license:CC0
 // copyright-holders:Couriersud
 
-#include "netlist/devices/net_lib.h"
+#include "devices/net_lib.h"
 
 /*
  * 0 = Basic hack (Norton with just amplification, no voltage cutting)
@@ -353,6 +353,16 @@ static NETLIST_START(LM2902_DIP)
 
 NETLIST_END()
 
+static NETLIST_START(LM348_DIP)
+	OPAMP(A, "UA741")
+	OPAMP(B, "UA741")
+	OPAMP(C, "UA741")
+	OPAMP(D, "UA741")
+
+	INCLUDE(opamp_layout_4_4_11)
+
+NETLIST_END()
+
 static NETLIST_START(LM358_DIP)
 	OPAMP(A, "LM358")
 	OPAMP(B, "LM358")
@@ -410,13 +420,6 @@ NETLIST_END()
 
 //- Identifier: AN6551_SIL
 //- Title: AN6551 Dual Operational Amplifier
-//- Description: The AN6551 is a dual operational Amplifier with a
-//-   phase compensation circuit built-in. It is suitable for application to
-//-   various electronic circuits such as active filters and
-//-   audio pre-amplifiers
-//-
-//-   Features: Phase compensation circuit, High gain, low noise,
-//-   Output short-circuit protection, Two circuits symmetrically arranged in 9-pin SIL plastic package
 //- Pinalias: VCC,A.OUT,A-,A+,GND,B+,B-,B.OUT,VCC
 //- Package: SIL
 //- NamingConvention: Naming conventions follow Panasonic datasheet
@@ -623,7 +626,7 @@ NETLIST_START(opamp_lib)
 	NET_MODEL("UA741       OPAMP(TYPE=3 VLH=1.0 VLL=1.0 FPF=5 UGF=1000k SLEW=0.5M RI=2000k RO=75 DAB=0.0017)")
 	NET_MODEL("LM747       OPAMP(TYPE=3 VLH=1.0 VLL=1.0 FPF=5 UGF=1000k SLEW=0.5M RI=2000k RO=50 DAB=0.0017)")
 	NET_MODEL("LM747A      OPAMP(TYPE=3 VLH=2.0 VLL=2.0 FPF=5 UGF=1000k SLEW=0.7M RI=6000k RO=50 DAB=0.0015)")
-	// FIXME: LM748 values are calculated based on a documented schematic of the part and may be wrong.
+	NET_MODEL("LM748       OPAMP(TYPE=3 VLH=2.0 VLL=2.0 FPF=5 UGF=800k SLEW=0.7M RI=800k RO=60 DAB=0.001)")
 	// TI and Motorola Datasheets differ - below are Motorola values, SLEW is average of LH and HL
 	NET_MODEL("LM3900      OPAMP(TYPE=3 VLH=1.0 VLL=0.03 FPF=2k UGF=4M SLEW=10M RI=10M RO=2k DAB=0.0015)")
 
@@ -639,6 +642,7 @@ NETLIST_START(opamp_lib)
 	LOCAL_LIB_ENTRY(TL082_DIP)
 	LOCAL_LIB_ENTRY(TL084_DIP)
 	LOCAL_LIB_ENTRY(LM324_DIP)
+	LOCAL_LIB_ENTRY(LM348_DIP)
 	LOCAL_LIB_ENTRY(LM358_DIP)
 	LOCAL_LIB_ENTRY(LM2902_DIP)
 	LOCAL_LIB_ENTRY(UA741_DIP8)

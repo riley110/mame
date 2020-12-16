@@ -1082,9 +1082,9 @@ end
 					"-Wno-pragma-pack" -- clang 6.0 complains when the packing change lifetime is not contained within a header file.
 				}
 			end
-			if (version >= 100000) and (_OPTIONS["targetos"] ~= 'macosx') then -- TODO when Xcode includes clang 10, update this to detect the vanity version number
+			if ((_OPTIONS["targetos"] == 'macosx') and (version >= 120000)) or (version >= 100000) then
 				buildoptions {
-					"-Wno-xor-used-as-pow " -- clang 10.0 complains that expressions like 10 ^ 7 look like exponention
+					"-Wno-xor-used-as-pow" -- clang 10.0 complains that expressions like 10 ^ 7 look like exponention
 				}
 			end
 			if (version < 60000) or ((_OPTIONS["targetos"] == "macosx") and (version <= 90000)) then
@@ -1173,10 +1173,11 @@ configuration { "asmjs" }
 	buildoptions_cpp {
 		"-std=c++14",
 		"-s DISABLE_EXCEPTION_CATCHING=2",
-		"-s EXCEPTION_CATCHING_WHITELIST=\"['_ZN15running_machine17start_all_devicesEv','_ZN12cli_frontend7executeEiPPc','_ZN8chd_file11open_commonEb','_ZN8chd_file13read_metadataEjjRNSt3__212basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE','_ZN8chd_file13read_metadataEjjRNSt3__26vectorIhNS0_9allocatorIhEEEE']\"",
+		"-s EXCEPTION_CATCHING_WHITELIST=\"['_ZN15running_machine17start_all_devicesEv','_ZN12cli_frontend7executeEiPPc','_ZN8chd_file11open_commonEb','_ZN8chd_file13read_metadataEjjRNSt3__212basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE','_ZN8chd_file13read_metadataEjjRNSt3__26vectorIhNS0_9allocatorIhEEEE','_ZNK19netlist_mame_device19base_validity_checkER16validity_checker']\"",
 	}
 	linkoptions {
 		"-Wl,--start-group",
+		"-r",
 	}
 	archivesplit_size "20"
 

@@ -1,4 +1,4 @@
-// license:BSD-3-Clause
+// license:CC0
 // copyright-holders:Aaron Giles
 
 //
@@ -298,7 +298,9 @@ NETLIST_START(solarq)
 	Q_2N3906(Q10)           // PNP
 	Q_2N3906(Q11)           // PNP
 	Q_2N3904(Q12)           // NPN
+#if !(HLE_CAPTURE_VCO)
 	Q_2N3904(Q13)           // NPN
+#endif
 	Q_2N3906(Q14)           // PNP
 	Q_2N3906(Q15)           // PNP
 	Q_2N3906(Q16)           // PNP

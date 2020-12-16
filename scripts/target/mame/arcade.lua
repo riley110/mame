@@ -274,7 +274,6 @@ SOUNDS["ES1373"] = true
 SOUNDS["L7A1045"] = true
 SOUNDS["AD1848"] = true
 --SOUNDS["UPD1771"] = true
-SOUNDS["VOLT_REG"] = true
 SOUNDS["MEA8000"] = true
 SOUNDS["DAC76"] = true
 SOUNDS["TA7630"] = true
@@ -284,6 +283,7 @@ SOUNDS["LC7535"] = true
 --SOUNDS["UPD934G"] = true
 SOUNDS["S_DSP"] = true
 SOUNDS["KS0164"] = true
+SOUNDS["TT5665"] = true
 --SOUNDS["RP2C33_SOUND"] = true
 
 --------------------------------------------------
@@ -388,6 +388,7 @@ VIDEOS["VRENDER0"] = true
 
 MACHINES["ACORN_VIDC"] = true
 MACHINES["AKIKO"] = true
+MACHINES["ALPHA_8921"] = true
 --MACHINES["AM2901B"] = true
 MACHINES["ARM_IOMD"] = true
 MACHINES["AUTOCONFIG"] = true
@@ -541,7 +542,7 @@ MACHINES["MC6843"] = true
 MACHINES["MC6846"] = true
 MACHINES["MC6852"] = true
 MACHINES["MC6854"] = true
---MACHINES["MC68328"] = true
+MACHINES["MC68328"] = true
 MACHINES["MC68901"] = true
 MACHINES["MCCS1850"] = true
 MACHINES["M68307"] = true
@@ -822,6 +823,7 @@ BUSES["ZORRO"] = true
 -- specify used file formats
 --------------------------------------------------
 
+FORMATS["APOLLO_DSK"] = true
 FORMATS["GUAB_DSK"] = true
 FORMATS["AMI_DSK"] = true
 FORMATS["SC3000_BIT"] = true
@@ -961,7 +963,6 @@ function createMAMEProjects(_target, _subtarget, _name)
 		MAME_DIR .. "src/mame",
 		MAME_DIR .. "src/lib",
 		MAME_DIR .. "src/lib/util",
-		MAME_DIR .. "src/lib/netlist",
 		MAME_DIR .. "3rdparty",
 		GEN_DIR  .. "mame/layout",
 	}
@@ -1939,7 +1940,6 @@ files {
 	MAME_DIR .. "src/mame/audio/exidy.h",
 	MAME_DIR .. "src/mame/video/exidy.cpp",
 	MAME_DIR .. "src/mame/audio/targ.cpp",
-	MAME_DIR .. "src/mame/audio/targ.h",
 	MAME_DIR .. "src/mame/drivers/exidy440.cpp",
 	MAME_DIR .. "src/mame/includes/exidy440.h",
 	MAME_DIR .. "src/mame/audio/exidy440.cpp",
@@ -2505,6 +2505,7 @@ files {
 	MAME_DIR .. "src/mame/drivers/konmedal68k.cpp",
 	MAME_DIR .. "src/mame/drivers/kontest.cpp",
 	MAME_DIR .. "src/mame/drivers/konendev.cpp",
+	MAME_DIR .. "src/mame/drivers/kpython.cpp",
 	MAME_DIR .. "src/mame/drivers/ksys573.cpp",
 	MAME_DIR .. "src/mame/machine/k573cass.cpp",
 	MAME_DIR .. "src/mame/machine/k573cass.h",
@@ -2566,7 +2567,6 @@ files {
 	MAME_DIR .. "src/mame/drivers/pooyan.cpp",
 	MAME_DIR .. "src/mame/includes/pooyan.h",
 	MAME_DIR .. "src/mame/video/pooyan.cpp",
-	MAME_DIR .. "src/mame/drivers/pyson.cpp",
 	MAME_DIR .. "src/mame/drivers/qdrmfgp.cpp",
 	MAME_DIR .. "src/mame/includes/qdrmfgp.h",
 	MAME_DIR .. "src/mame/video/qdrmfgp.cpp",
@@ -3608,6 +3608,10 @@ files {
 	MAME_DIR .. "src/mame/includes/vicdual.h",
 	MAME_DIR .. "src/mame/audio/vicdual.cpp",
 	MAME_DIR .. "src/mame/audio/vicdual.h",
+	MAME_DIR .. "src/mame/audio/nl_brdrline.cpp",
+	MAME_DIR .. "src/mame/audio/nl_brdrline.h",
+	MAME_DIR .. "src/mame/audio/nl_frogs.cpp",
+	MAME_DIR .. "src/mame/audio/nl_frogs.h",
 	MAME_DIR .. "src/mame/audio/vicdual-97271p.cpp",
 	MAME_DIR .. "src/mame/audio/vicdual-97271p.h",
 	MAME_DIR .. "src/mame/video/vicdual.cpp",
@@ -3621,8 +3625,6 @@ files {
 	MAME_DIR .. "src/mame/audio/invinco.h",
 	MAME_DIR .. "src/mame/audio/pulsar.cpp",
 	MAME_DIR .. "src/mame/audio/pulsar.h",
-	MAME_DIR .. "src/mame/audio/tranqgun.cpp",
-	MAME_DIR .. "src/mame/audio/tranqgun.h",
 	MAME_DIR .. "src/mame/drivers/zaxxon.cpp",
 	MAME_DIR .. "src/mame/includes/zaxxon.h",
 	MAME_DIR .. "src/mame/audio/zaxxon.cpp",
@@ -4800,6 +4802,7 @@ files {
 	MAME_DIR .. "src/mame/drivers/coinmstr.cpp",
 	MAME_DIR .. "src/mame/drivers/coinmvga.cpp",
 	MAME_DIR .. "src/mame/drivers/comebaby.cpp",
+	MAME_DIR .. "src/mame/drivers/cowtipping.cpp",
 	MAME_DIR .. "src/mame/drivers/crazybal.cpp",
 	MAME_DIR .. "src/mame/drivers/cromptons.cpp",
 	MAME_DIR .. "src/mame/drivers/cupidon.cpp",
@@ -4900,6 +4903,7 @@ files {
 	MAME_DIR .. "src/mame/drivers/headonb.cpp",
 	MAME_DIR .. "src/mame/drivers/highvdeo.cpp",
 	MAME_DIR .. "src/mame/drivers/hitpoker.cpp",
+	MAME_DIR .. "src/mame/drivers/hobbyplay.cpp",
 	MAME_DIR .. "src/mame/drivers/homedata.cpp",
 	MAME_DIR .. "src/mame/includes/homedata.h",
 	MAME_DIR .. "src/mame/video/homedata.cpp",
@@ -4949,6 +4953,7 @@ files {
 	MAME_DIR .. "src/mame/includes/malzak.h",
 	MAME_DIR .. "src/mame/video/malzak.cpp",
 	MAME_DIR .. "src/mame/drivers/marywu.cpp",
+	MAME_DIR .. "src/mame/drivers/matrix.cpp",
 	MAME_DIR .. "src/mame/drivers/mcatadv.cpp",
 	MAME_DIR .. "src/mame/includes/mcatadv.h",
 	MAME_DIR .. "src/mame/video/mcatadv.cpp",
@@ -5008,6 +5013,7 @@ files {
 	MAME_DIR .. "src/mame/video/pk8000.cpp",
 	MAME_DIR .. "src/mame/drivers/photon2.cpp",
 	MAME_DIR .. "src/mame/drivers/photoply.cpp",
+	MAME_DIR .. "src/mame/drivers/photoplysx.cpp",
 	MAME_DIR .. "src/mame/drivers/pipeline.cpp",
 	MAME_DIR .. "src/mame/drivers/pkscram.cpp",
 	MAME_DIR .. "src/mame/drivers/pntnpuzl.cpp",
@@ -5029,6 +5035,7 @@ files {
 	MAME_DIR .. "src/mame/drivers/rcorsair.cpp",
 	MAME_DIR .. "src/mame/drivers/re900.cpp",
 	MAME_DIR .. "src/mame/drivers/rfslots8085.cpp",
+	MAME_DIR .. "src/mame/drivers/rfslotspcpent.cpp",
 	MAME_DIR .. "src/mame/drivers/rgum.cpp",
 	MAME_DIR .. "src/mame/drivers/roul.cpp",
 	MAME_DIR .. "src/mame/drivers/rulechan.cpp",

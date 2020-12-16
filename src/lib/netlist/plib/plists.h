@@ -42,7 +42,11 @@ namespace plib {
 		//uninitialised_array_t() noexcept = default;
 		uninitialised_array() noexcept = default;
 
-		PCOPYASSIGNMOVE(uninitialised_array, delete)
+		uninitialised_array(const uninitialised_array &) = default;
+		uninitialised_array &operator=(const uninitialised_array &) = default;
+		uninitialised_array(uninitialised_array &&) noexcept = default;
+		uninitialised_array &operator=(uninitialised_array &&) noexcept = default;
+
 		~uninitialised_array() noexcept = default;
 
 		constexpr size_t size() const noexcept { return N; }
@@ -111,7 +115,11 @@ namespace plib {
 		{
 		}
 
-		PCOPYASSIGNMOVE(static_vector, delete)
+		static_vector(const static_vector &) = default;
+		static_vector &operator=(const static_vector &) = default;
+		static_vector(static_vector &&) noexcept = default;
+		static_vector &operator=(static_vector &&) noexcept = default;
+
 		~static_vector() noexcept
 		{
 			clear();
@@ -172,7 +180,7 @@ namespace plib {
 
 	/// \brief a simple linked list.
 	///
-	/// The list allows insertions deletions whilst being processed.
+	/// The list allows insertions and deletions whilst being processed.
 	///
 	template <class LC>
 	class linkedlist_t
@@ -187,10 +195,13 @@ namespace plib {
 			constexpr element_t() : m_next(nullptr), m_prev(nullptr) {}
 			~element_t() noexcept = default;
 
-			PCOPYASSIGNMOVE(element_t, delete)
+			element_t(const element_t &) = default; \
+			element_t &operator=(const element_t &) = default;
+			element_t(element_t &&) noexcept = default;
+			element_t &operator=(element_t &&) noexcept = default;
 
-			constexpr LC *next() const noexcept { return m_next; }
-			constexpr LC *prev() const noexcept { return m_prev; }
+			constexpr LC * &next() noexcept { return m_next; }
+			constexpr LC * &prev() noexcept { return m_prev; }
 		private:
 			LC * m_next;
 			LC * m_prev;
@@ -202,22 +213,14 @@ namespace plib {
 			LC* p;
 		public:
 			explicit constexpr iter_t(LC* x) noexcept : p(x) { }
-			constexpr iter_t(iter_t &rhs) noexcept : p(rhs.p) { }
-			iter_t(iter_t &&rhs) noexcept { std::swap(*this, rhs);  }
+			constexpr iter_t(const iter_t &rhs) noexcept = default;
+			iter_t(iter_t &&rhs) noexcept = default;
 
-			iter_t& operator=(const iter_t &rhs) noexcept // NOLINT(bugprone-unhandled-self-assignment, cert-oop54-cpp)
-			{
-				if (this == &rhs)
-					return *this;
+			iter_t& operator=(const iter_t &rhs) noexcept = default;
+			iter_t& operator=(iter_t &&rhs) noexcept  = default;
+			~iter_t() noexcept = default;
 
-				p = rhs.p;
-				return *this;
-			}
-
-			iter_t& operator=(iter_t &&rhs) noexcept { std::swap(*this, rhs); return *this; }
-			~iter_t() = default;
-
-			iter_t& operator++() noexcept { p = p->next();return *this; }
+			iter_t& operator++() noexcept { p = p->next(); return *this; }
 			// NOLINTNEXTLINE(cert-dcl21-cpp)
 			iter_t operator++(int) & noexcept { const iter_t tmp(*this); operator++(); return tmp; }
 

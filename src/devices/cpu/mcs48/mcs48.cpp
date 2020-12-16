@@ -13,6 +13,9 @@
       reimplement as a push, not a pull
     - add CMOS devices, 1 new opcode (01 IDL)
     - add special 8022 opcodes (RAD, SEL AN0, SEL AN1, RETI)
+    - according to the user manual, some opcodes(dis/enable timer/interrupt)
+      don't increment the timer, does it affect the prescaler too?
+    - IRQ timing is hacked due to WY-100 needing to take JNI branch before servicing interrupt
 
 ****************************************************************************
 
@@ -515,7 +518,7 @@ void mcs48_cpu_device::execute_call(uint16_t address)
     conditional jump instruction
 -------------------------------------------------*/
 
-void mcs48_cpu_device::execute_jcc(uint8_t result)
+void mcs48_cpu_device::execute_jcc(bool result)
 {
 	uint16_t pch = m_pc & 0xf00;
 	uint8_t offset = argument_fetch();
@@ -745,8 +748,8 @@ OPHANDLER( jc )             { burn_cycles(2); execute_jcc((m_psw & C_FLAG) != 0)
 OPHANDLER( jf0 )            { burn_cycles(2); execute_jcc((m_psw & F_FLAG) != 0); }
 OPHANDLER( jf1 )            { burn_cycles(2); execute_jcc((m_sts & STS_F1) != 0); }
 OPHANDLER( jnc )            { burn_cycles(2); execute_jcc((m_psw & C_FLAG) == 0); }
-OPHANDLER( jni )            { burn_cycles(2); execute_jcc(m_irq_state != 0); }
-OPHANDLER( jnibf )          { burn_cycles(2); execute_jcc((m_sts & STS_IBF) == 0); }
+OPHANDLER( jni )            { burn_cycles(2); m_irq_polled = (m_irq_state == 0); execute_jcc(m_irq_state != 0); }
+OPHANDLER( jnibf )          { burn_cycles(2); m_irq_polled = (m_sts & STS_IBF) != 0; execute_jcc((m_sts & STS_IBF) == 0); }
 OPHANDLER( jnt_0 )          { burn_cycles(2); execute_jcc(test_r(0) == 0); }
 OPHANDLER( jnt_1 )          { burn_cycles(2); execute_jcc(test_r(1) == 0); }
 OPHANDLER( jnz )            { burn_cycles(2); execute_jcc(m_a != 0); }
@@ -884,9 +887,15 @@ OPHANDLER( sel_rb0 )        { burn_cycles(1); m_psw &= ~B_FLAG; update_regptr();
 OPHANDLER( sel_rb1 )        { burn_cycles(1); m_psw |=  B_FLAG; update_regptr(); }
 
 OPHANDLER( stop_tcnt )      { burn_cycles(1); m_timecount_enabled = 0; }
-
-OPHANDLER( strt_cnt )       { burn_cycles(1); m_timecount_enabled = COUNTER_ENABLED; m_t1_history = test_r(1); }
 OPHANDLER( strt_t )         { burn_cycles(1); m_timecount_enabled = TIMER_ENABLED; m_prescaler = 0; }
+OPHANDLER( strt_cnt )
+{
+	burn_cycles(1);
+	if (!(m_timecount_enabled & COUNTER_ENABLED))
+		m_t1_history = test_r(1);
+
+	m_timecount_enabled = COUNTER_ENABLED;
+}
 
 OPHANDLER( swap_a )         { burn_cycles(1); m_a = (m_a << 4) | (m_a >> 4); }
 
@@ -1167,6 +1176,7 @@ void mcs48_cpu_device::device_start()
 	save_item(NAME(m_dbbo));
 
 	save_item(NAME(m_irq_state));
+	save_item(NAME(m_irq_polled));
 	save_item(NAME(m_irq_in_progress));
 	save_item(NAME(m_timer_overflow));
 	save_item(NAME(m_timer_flag));
@@ -1208,6 +1218,8 @@ void mcs48_cpu_device::device_reset()
 	/* confirmed from interrupt logic description */
 	m_irq_in_progress = false;
 	m_timer_overflow = false;
+
+	m_irq_polled = false;
 }
 
 
@@ -1230,6 +1242,13 @@ void mcs48_cpu_device::check_irqs()
 	{
 		burn_cycles(2);
 		m_irq_in_progress = true;
+
+		// force JNI to be taken (hack)
+		if (m_irq_polled)
+		{
+			m_pc = ((m_prevpc + 1) & 0x7ff) | (m_prevpc & 0x800);
+			execute_jcc(true);
+		}
 
 		/* transfer to location 0x03 */
 		push_pc_psw();
@@ -1316,15 +1335,16 @@ void mcs48_cpu_device::execute_run()
 	// iterate over remaining cycles, guaranteeing at least one instruction
 	do
 	{
+		// check interrupts
+		check_irqs();
+		m_irq_polled = false;
+
 		m_prevpc = m_pc;
 		debugger_instruction_hook(m_pc);
 
 		// fetch and process opcode
 		unsigned opcode = opcode_fetch();
 		(this->*m_opcode_table[opcode])();
-
-		// check interrupts
-		check_irqs();
 
 	} while (m_icount > 0);
 }

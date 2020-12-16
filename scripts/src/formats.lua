@@ -307,6 +307,18 @@ end
 
 --------------------------------------------------
 --
+--@src/lib/formats/aquarius_caq.h,FORMATS["AQUARIUS_CAQ"] = true
+--------------------------------------------------
+
+if (FORMATS["AQUARIUS_CAQ"]~=null  or _OPTIONS["with-tools"]) then
+	files {
+		MAME_DIR.. "src/lib/formats/aquarius_caq.cpp",
+		MAME_DIR.. "src/lib/formats/aquarius_caq.h",
+	}
+end
+
+--------------------------------------------------
+--
 --@src/lib/formats/asst128_dsk.h,FORMATS["ASST128_DSK"] = true
 --------------------------------------------------
 
@@ -1408,6 +1420,19 @@ if (FORMATS["IBMXDF_DSK"]~=null  or _OPTIONS["with-tools"]) then
 		MAME_DIR.. "src/lib/formats/ibmxdf_dsk.h",
 	}
 end
+
+--------------------------------------------------
+--
+--@src/lib/formats/p2000t_cas.h,FORMATS["P2000T_CAS"] = true
+--------------------------------------------------
+
+if (FORMATS["P2000T_CAS"]~=null  or _OPTIONS["with-tools"]) then
+	files {
+		MAME_DIR.. "src/lib/formats/p2000t_cas.cpp",
+		MAME_DIR.. "src/lib/formats/p2000t_cas.h",
+	}
+end
+
 
 --------------------------------------------------
 --

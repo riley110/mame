@@ -1,7 +1,7 @@
 // license:BSD-3-Clause
 // copyright-holders:Ryan Holtz, David Haywood
 
-/* 'Zone' '32-bit' systems */
+/* Shenzhen Senca Technology Co., Ltd developed "Family Sport" systems - sold by various manufacturers */
 
 #include "emu.h"
 #include "includes/spg2xx.h"
@@ -649,6 +649,26 @@ static INPUT_PORTS_START( zon32bit )
 	PORT_DIPSETTING(      0x0000, DEF_STR( On ) )
 INPUT_PORTS_END
 
+static INPUT_PORTS_START( mywicogt )
+	PORT_START("P1")
+	PORT_BIT( 0xffff, IP_ACTIVE_HIGH, IPT_UNUSED )
+
+	PORT_START("P2")
+	PORT_BIT( 0xffff, IP_ACTIVE_HIGH, IPT_UNUSED )
+
+	PORT_START("P3")
+	PORT_BIT( 0x0001, IP_ACTIVE_HIGH, IPT_BUTTON1 ) PORT_NAME("Green / Left")
+	PORT_BIT( 0x0002, IP_ACTIVE_HIGH, IPT_BUTTON2 ) PORT_NAME("Red / Right")
+	PORT_BIT( 0x0004, IP_ACTIVE_HIGH, IPT_BUTTON3 ) PORT_NAME("Yellow")
+	PORT_BIT( 0x0008, IP_ACTIVE_HIGH, IPT_BUTTON4 ) PORT_NAME("Blue")
+	PORT_BIT( 0x0010, IP_ACTIVE_HIGH, IPT_BUTTON5 ) PORT_NAME("Orange")
+	PORT_BIT( 0x0020, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP )
+	PORT_BIT( 0x0040, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN )
+	PORT_BIT( 0x0080, IP_ACTIVE_HIGH, IPT_START1 ) PORT_NAME("Start / Pause / Menu")
+	PORT_BIT( 0x0100, IP_ACTIVE_HIGH, IPT_BUTTON6 ) PORT_NAME("Back")
+	PORT_BIT( 0xfe00, IP_ACTIVE_HIGH, IPT_UNUSED )
+INPUT_PORTS_END
+
 
 static INPUT_PORTS_START( oplayer )
 	PORT_START("P1")
@@ -988,21 +1008,22 @@ void denver_200in1_state::init_m521neo()
 
 
 // Box advertises this as '40 Games Included' but the cartridge, which was glued directly to the PCB, not removable, is a 41-in-1.  Maybe some versions exist with a 40 game selection.
-CONS( 200?, zon32bit,  0, 0, zon32bit, zon32bit, zon32bit_state,  empty_init,      "Jungle Soft / Ultimate Products (HK) Ltd",    "Zone 32-bit Gaming Console System (Family Sport 41-in-1)", MACHINE_NOT_WORKING | MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS )
+CONS( 200?, zon32bit,  0, 0, zon32bit, zon32bit, zon32bit_state,  empty_init,      "Ultimate Products (HK) Ltd / Senca",    "Zone 32-bit Gaming Console System (Family Sport 41-in-1)", MACHINE_NOT_WORKING | MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS )
 // My Wico Deluxe was also available under the MiWi brand (exact model unknown, but it was a cart there instead of built in)
 // Box claimed 53 Arcade Games + 8 Sports games + 24 Music games, although it's unclear where 24 Music Games comes from, there are 3, which are identical aside from the title screen.
 // The Mi Guitar menu contains 24 games, but they're dupes, and just counting those would exclude the other Mi Fit and Mi Papacon menus (which also contain dupes)
-CONS( 200?, mywicodx,  0, 0, zon32bit, zon32bit, mywicodx_state,  empty_init,      "<unknown>",                                   "My Wico Deluxe (Family Sport 85-in-1)", MACHINE_NOT_WORKING | MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS )
+CONS( 200?, mywicodx,  0, 0, zon32bit, zon32bit, mywicodx_state,  empty_init,      "<unknown> / Senca",                                   "My Wico Deluxe (Family Sport 85-in-1)", MACHINE_NOT_WORKING | MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS )
 
-CONS( 200?, mywicogt,  0, 0, zon32bit, zon32bit, mywicogt_state,  empty_init,      "<unknown>",                                   "My Wico Guitar", MACHINE_NOT_WORKING | MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS )
+// Shows Mi Guitar 2 in the menu, it seems likely that there was an earlier version on VT1682 hardware as there is a very similar Guitar game (with the same song selection) in those multigames
+CONS( 200?, mywicogt,  0, 0, zon32bit, mywicogt, mywicogt_state,  empty_init,      "<unknown> / Senca",                                   "My Wico Guitar", MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS )
 
 // issues with 'low battery' always showing, but otherwise functional
-CONS( 200?, oplayer,   0, 0, zon32bit_bat, oplayer, oplayer_100in1_state, init_oplayer, "OPlayer", "OPlayer Mobile Game Console (MGS03-white) (Family Sport 100-in-1)", MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS )
+CONS( 200?, oplayer,   0, 0, zon32bit_bat, oplayer, oplayer_100in1_state, init_oplayer, "OPlayer / Senca", "OPlayer Mobile Game Console (MGS03-white) (Family Sport 100-in-1)", MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS )
 
-CONS( 2012, m505neo,   0, 0, zon32bit_bat, oplayer, oplayer_100in1_state, init_m505neo, "Millennium 2000 GmbH", "Millennium M505 Arcade Neo Portable Spielkonsole (Family Sport 100-in-1)", MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS )
+CONS( 2012, m505neo,   0, 0, zon32bit_bat, oplayer, oplayer_100in1_state, init_m505neo, "Millennium 2000 GmbH / Senca", "Millennium M505 Arcade Neo Portable Spielkonsole (Family Sport 100-in-1)", MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS )
 
 // a version of this exists with the 'newer' style title screen seen in m505neo
-CONS( 2012, m521neo,   0, 0, zon32bit_bat, oplayer, denver_200in1_state,  init_m521neo, "Millennium 2000 GmbH", "Millennium M521 Arcade Neo 2.0 (Family Sport 220-in-1) ", MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS )
+CONS( 2012, m521neo,   0, 0, zon32bit_bat, oplayer, denver_200in1_state,  init_m521neo, "Millennium 2000 GmbH / Senca", "Millennium M521 Arcade Neo 2.0 (Family Sport 220-in-1) ", MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS )
 
 /*
 DENVER(r)
@@ -1021,6 +1042,6 @@ DENMARK
 
 */
 
-CONS( 200?, dnv200fs,   0, 0, zon32bit_bat, oplayer, denver_200in1_state, init_denver, "Denver", "Denver (GMP-270CMK2) (Family Sport 200-in-1)", MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS )
+CONS( 200?, dnv200fs,   0, 0, zon32bit_bat, oplayer, denver_200in1_state, init_denver, "Denver / Senca", "Denver (GMP-270CMK2) (Family Sport 200-in-1)", MACHINE_IMPERFECT_SOUND | MACHINE_IMPERFECT_GRAPHICS )
 
 

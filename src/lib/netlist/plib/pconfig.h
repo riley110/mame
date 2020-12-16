@@ -8,7 +8,7 @@
 /// \file pconfig.h
 ///
 
-/// \brief More accurate measurements if you processor supports RDTSCP.
+/// \brief More accurate measurements the processor supports RDTSCP.
 ///
 #ifndef PHAS_RDTSCP
 #define PHAS_RDTSCP (0)
@@ -75,8 +75,13 @@
 
 #define PALIGN_MIN_SIZE         (16)
 
+#if (PUSE_ALIGNED_OPTIMIZATIONS)
 #define PALIGNAS_CACHELINE()    PALIGNAS(PALIGN_CACHELINE)
 #define PALIGNAS_VECTOROPT()    PALIGNAS(PALIGN_VECTOROPT)
+#else
+#define PALIGNAS_CACHELINE()
+#define PALIGNAS_VECTOROPT()
+#endif
 
 // FIXME: Breaks mame build on windows mingw due to -Wattribute
 //        also triggers -Wattribute on ARM

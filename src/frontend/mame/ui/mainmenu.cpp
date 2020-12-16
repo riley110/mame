@@ -22,6 +22,7 @@
 #include "ui/info_pty.h"
 #include "ui/inifile.h"
 #include "ui/inputmap.h"
+#include "ui/keyboard.h"
 #include "ui/miscmenu.h"
 #include "ui/pluginopt.h"
 #include "ui/selgame.h"
@@ -108,7 +109,7 @@ void menu_main::populate(float &customtop, float &custombottom)
 	if (network_interface_iterator(machine().root_device()).first() != nullptr)
 		item_append(_("Network Devices"), "", 0, (void*)NETWORK_DEVICES);
 
-	if (ui().machine_info().has_keyboard() && machine().ioport().natkeyboard().can_post())
+	if (machine().ioport().natkeyboard().keyboard_count())
 		item_append(_("Keyboard Mode"), "", 0, (void *)KEYBOARD_MODE);
 
 	item_append(_("Slider Controls"), "", 0, (void *)SLIDERS);
@@ -228,7 +229,7 @@ void menu_main::handle()
 			break;
 
 		case VIDEO_OPTIONS:
-			menu::stack_push<menu_video_options>(ui(), container(), machine().render().first_target());
+			menu::stack_push<menu_video_options>(ui(), container(), *machine().render().first_target());
 			break;
 
 		case CROSSHAIR:
