@@ -1378,8 +1378,10 @@ static MACHINE_CONFIG_START( amiga_base )
 	MCFG_AMIGA_KEYBOARD_KRST_HANDLER(WRITELINE(amiga_state, kbreset_w))
 
 	// software
+	MCFG_SOFTWARE_LIST_ADD("wb_list", "amiga_workbench")
+	MCFG_SOFTWARE_LIST_ADD("hardware_list", "amiga_hardware")
+	MCFG_SOFTWARE_LIST_ADD("apps_list", "amiga_apps")
 	MCFG_SOFTWARE_LIST_ADD("flop_list", "amiga_flop")
-	MCFG_SOFTWARE_LIST_ADD("cd_list", "amiga_cd") //some of these also work on cdtv/cd32
 	MCFG_SOFTWARE_LIST_ADD("ocs_list", "amigaocs_flop")
 MACHINE_CONFIG_END
 
@@ -1552,7 +1554,7 @@ static MACHINE_CONFIG_DERIVED( cdtv, amiga_base )
 	MCFG_CR511B_DTEN_HANDLER(DEVWRITELINE("u36", amiga_dmac_device, xdreq_w))
 
 	// software
-	MCFG_SOFTWARE_LIST_ADD("cdtv_list", "cdtv")
+	MCFG_SOFTWARE_LIST_ADD("cd_list", "cdtv")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( cdtvn, cdtv )
@@ -1867,10 +1869,8 @@ static MACHINE_CONFIG_DERIVED( cd32, amiga_base )
 
 	MCFG_CDROM_ADD("cdrom")
 	MCFG_CDROM_INTERFACE("cd32_cdrom")
-
+	MCFG_SOFTWARE_LIST_ADD("cd_list", "cd32")
 	MCFG_DEVICE_REMOVE("kbd")
-
-	MCFG_SOFTWARE_LIST_ADD("cd32_list", "cd32")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( cd32n, cd32 )

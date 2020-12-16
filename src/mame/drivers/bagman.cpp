@@ -1051,5 +1051,3 @@ GAME( 1983, botanic,  0,       botanic,  botanici, bagman_state, 0,       ROT90,
 GAME( 1984, botanicf, botanic, botanic,  botanicf, bagman_state, 0,       ROT270, "Itisa (Valadon Automation license)", "Botanic (French)", MACHINE_SUPPORTS_SAVE )
 
 GAME( 1984, squaitsa, 0,       squaitsa, squaitsa, bagman_state, 0,       ROT0,   "Itisa", "Squash (Itisa)", MACHINE_SUPPORTS_SAVE )
-
-#include "bagman_hb.hxx"

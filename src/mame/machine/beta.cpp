@@ -16,7 +16,6 @@ BUGS:
 */
 #include "emu.h"
 #include "machine/beta.h"
-#include "softlist.h"
 
 #include "formats/trd_dsk.h"
 
@@ -180,6 +179,7 @@ static SLOT_INTERFACE_START( beta_disk_floppies )
 	SLOT_INTERFACE( "525qd", FLOPPY_525_QD )
 SLOT_INTERFACE_END
 
+
 ROM_START( beta_disk )
 	ROM_REGION( 0x60000, "beta", 0 )
 	ROM_LOAD( "trd501.rom",     0x00000, 0x4000, CRC(3e3cdd4c) SHA1(8303ba0cc79daa6c04cd1e6ce27e8b6886a3f0de))
@@ -276,8 +276,6 @@ MACHINE_CONFIG_MEMBER( beta_disk_device::device_add_mconfig )
 	MCFG_FLOPPY_DRIVE_SOUND(true)
 	MCFG_FLOPPY_DRIVE_ADD("wd179x:3", beta_disk_floppies, "525qd", beta_disk_device::floppy_formats)
 	MCFG_FLOPPY_DRIVE_SOUND(true)
-
-    MCFG_SOFTWARE_LIST_ADD("beta_flop_list", "spectrum_beta")
 MACHINE_CONFIG_END
 
 //-------------------------------------------------

@@ -1,17 +1,18 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<!-- 
-Undumped?
-- B52 Battle (does this exist? the P52 sea battle label would be easy to mistake for this title)
-- Box Carrier
-- Devil Paradise
-- Hash Block, Jacky Lucky, Challenger Tank, Brain Power (4-in-1)
-- Jade Legend
-- Lucky Jack (Jacky Lucky clone or a name mistake?)
-- Money Bee
-- Pacific Bomber
-- USA Sea Battle
+
+<!-- Undumped?
+    - B52 Battle (does this exist? the P52 sea battle label would be easy to mistake for this title)
+    - Box Carrier
+    - Devil Paradise
+    - Hash Block, Jacky Lucky, Challenger Tank, Brain Power (4-in-1)
+    - Jade Legend
+    - Lucky Jack (Jacky Lucky clone or a name mistake?)
+    - Money Bee
+    - Pacific Bomber
+    - USA Sea Battle
 -->
+
 <softwarelist name="svision" description="Watara Supervision cartridges">
 	<software name="2in1">
 		<description>2 in 1 - Block Buster + Cross High (Euro, USA)</description>
@@ -268,8 +269,7 @@ Undumped?
 		</part>
 	</software>
 
-	<!-- this might be bad dump, there are two bad tiles in the data -->
-	<software name="fcombat">
+	<software name="fcombat"> <!-- this might be bad dump, there are two bad tiles in the data -->
 		<description>Final Combat (Euro, USA)</description>
 		<year>199?</year>
 		<publisher>Watara</publisher>
@@ -803,8 +803,7 @@ Undumped?
 		</part>
 	</software>
 
-	<!-- does anyone know if this is the PAL or NTSC version as 'Quickshot' made one in UK -->
-	<software name="tvlink">
+	<software name="tvlink"> <!-- does anyone know if this is the PAL or NTSC version as 'Quickshot' made one in UK -->
 		<description>TV-Link</description>
 		<year>199?</year>
 		<publisher>Watara</publisher>

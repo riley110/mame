@@ -82,7 +82,6 @@ X - change banks
 #include "sound/beep.h"
 #include "video/mc6845.h"
 #include "screen.h"
-#include "softlist.h"
 #include "speaker.h"
 
 
@@ -641,8 +640,6 @@ static MACHINE_CONFIG_START( bigbord2 )
 	MCFG_SPEAKER_STANDARD_MONO("mono")
 	MCFG_SOUND_ADD("beeper", BEEP, 950) // actual frequency is unknown
 	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.50)
-
-	MCFG_SOFTWARE_LIST_ADD("flop_list", "bigbord2")
 MACHINE_CONFIG_END
 
 

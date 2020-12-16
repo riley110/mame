@@ -47,7 +47,6 @@
     TODO :  Add the cartridge function,
             Add diskette support, (done !)
             Adjust the one shot and A/D timing (sn76477)
-			Clean up machine configs (and possibly give victor its own, for softlists)
 ****************************************************************************/
 /* Joystick 1 :
  clavier numerique :
@@ -83,12 +82,12 @@
 #include "sound/wave.h"      /* for K7 sound*/
 
 #include "screen.h"
-#include "softlist.h"
 #include "speaker.h"
 
 #include "formats/hect_dsk.h"
 #include "formats/hect_tap.h"
 #include "formats/hector_minidisc.h"
+
 
 /*****************************************************************************/
 static ADDRESS_MAP_START(hecdisc2_mem, AS_PROGRAM, 8, hec2hrp_state )
@@ -430,12 +429,6 @@ static MACHINE_CONFIG_START( hec2hr )
 	MCFG_CASSETTE_ADD( "cassette" )
 	MCFG_CASSETTE_FORMATS(hector_cassette_formats)
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED)
-	MCFG_CASSETTE_INTERFACE("interact_cass")
-
-	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhr")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("h1_cass_list","hector1")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("vict_cass_list","victor")
 
 	/* printer */
 	MCFG_DEVICE_ADD("printer", PRINTER, 0)
@@ -471,12 +464,6 @@ static MACHINE_CONFIG_START( hec2hrp )
 	MCFG_CASSETTE_ADD( "cassette" )
 	MCFG_CASSETTE_FORMATS(hector_cassette_formats)
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED)
-	MCFG_CASSETTE_INTERFACE("interact_cass")
-
-	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhr")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("h1_cass_list","hector1")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("vict_cass_list","victor")
 
 	/* printer */
 	MCFG_DEVICE_ADD("printer", PRINTER, 0)
@@ -526,13 +513,6 @@ static MACHINE_CONFIG_START( hec2mx40 )
 	MCFG_CASSETTE_ADD( "cassette" )
 	MCFG_CASSETTE_FORMATS(hector_cassette_formats)
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED)
-	MCFG_CASSETTE_INTERFACE("interact_cass")
-
-	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhrx")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("h1_cass_list","hector1")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("vict_cass_list","victor")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("hr_cass_list","hectorhr")
 
 	/* printer */
 	MCFG_DEVICE_ADD("printer", PRINTER, 0)
@@ -577,13 +557,6 @@ static MACHINE_CONFIG_START( hec2hrx )
 	MCFG_CASSETTE_ADD( "cassette" )
 	MCFG_CASSETTE_FORMATS(hector_cassette_formats)
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED)
-	MCFG_CASSETTE_INTERFACE("interact_cass")
-
-	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhrx")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("h1_cass_list","hector1")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("vict_cass_list","victor")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("hr_cass_list","hectorhr")
 
 	/* printer */
 	MCFG_DEVICE_ADD("printer", PRINTER, 0)
@@ -625,13 +598,6 @@ static MACHINE_CONFIG_START( hec2mdhrx )
 	MCFG_CASSETTE_ADD( "cassette" )
 	MCFG_CASSETTE_FORMATS(hector_cassette_formats)
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED)
-	MCFG_CASSETTE_INTERFACE("interact_cass")
-
-	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhrx")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("h1_cass_list","hector1")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("vict_cass_list","victor")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("hr_cass_list","hectorhr")
 
 	/* printer */
 	MCFG_DEVICE_ADD("printer", PRINTER, 0)
@@ -677,13 +643,6 @@ static MACHINE_CONFIG_START( hec2mx80 )
 	MCFG_CASSETTE_ADD( "cassette" )
 	MCFG_CASSETTE_FORMATS(hector_cassette_formats)
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED | CASSETTE_SPEAKER_ENABLED)
-	MCFG_CASSETTE_INTERFACE("interact_cass")
-
-	MCFG_SOFTWARE_LIST_ADD("cass_list","hectorhrx")
-	//MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
-	//MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("h1_cass_list","hector1")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("vict_cass_list","victor")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("hr_cass_list","hectorhr")
 
 	/* printer */
 	MCFG_DEVICE_ADD("printer", PRINTER, 0)

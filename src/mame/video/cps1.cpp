@@ -485,16 +485,6 @@ The games seem to use them to mark platforms, kill zones and no-go areas.
 #define HACK_B_1      -1,   -1,    -1,  -1,  -1,  -1,   -1,  -1,  -1,   0x14,{0x12,0x10,0x0e,0x0c},0x0a, {0x0e,0x0e,0x0e,0x30,0x30}
 #define HACK_B_2      -1,   -1,   0x0e,0x0c,0x0a,0x08, 0x06,0x04,0x02,  0x28,{0x26,0x24,0x22,0x20},0x22, {0x20,0x04,0x08,0x12,0x12}
 
-// HBMAME extras
-
-#define HACK_H_2      -1,   -1,    -1,  -1,  -1,  -1,   -1,  -1,  -1,   0x20,{ -1,  -1,  -1,  -1 },0x2a, {0x02,0x02,0x02,0x00,0x00} // wofh etc
-#define HACK_H_3      -1,   -1,    -1,  -1,  -1,  -1,   -1,  -1,  -1,   0x04,{0x12,0x10,0x0e,0x0c},0x0a, {0x02,0x02,0x02,0x00,0x00} // not used
-#define HACK_H_4      -1,   -1,    -1,  -1,  -1,  -1,   -1,  -1,  -1,   0x30,{0x2e,0x2c,0x2a,0x28},0x26, {0x02,0x04,0x08,0x00,0x00} // not used
-#define HACK_H_5      -1, 0x0000,          __not_applicable__,          0x26,{0x28,0x2a,0x2c,0x2e},0x30, {0x40,0x40,0x40,0x00,0x00} // daimakb
-#define HACK_H_6      -1,   -1,   0x06,0x04,0x02,0x00, 0x1e,0x1c,0x1a,  0x28,{0x26,0x24,0x22,0x20},0x30, {0x40,0x10,0x02,0x00,0x00} // knightsb3
-#define HACK_H_7      -1,   -1,   0x06,0x04,0x02,0x00, 0x1e,0x1c,0x1a,  0x26,{0x28,0x2a,0x2c,0x2e},0x30, {0x20,0x10,0x02,0x00,0x00} // knightsha
-#define HACK_H_8      -1,   -1,    -1,  -1,  -1,  -1,   -1,  -1,  -1,   0x20,{0x00,0x00,0x00,0x00},0x00, {0x80,0x80,0x80,0x00,0x00}
-
 /*
 CPS_B_21_DEF is CPS-B-21 at default settings (no battery)
 CPS_B_21_BTx are various battery configurations
@@ -517,6 +507,7 @@ static const struct gfx_range mapper_LWCHR_table[] =
 	/* type            start    end      bank */
 	{ GFXTYPE_SPRITES, 0x00000, 0x07fff, 0 },
 	{ GFXTYPE_SCROLL1, 0x00000, 0x1ffff, 0 },
+
 	{ GFXTYPE_STARS,   0x00000, 0x1ffff, 1 },
 	{ GFXTYPE_SCROLL2, 0x00000, 0x1ffff, 1 },
 	{ GFXTYPE_SCROLL3, 0x00000, 0x1ffff, 1 },
@@ -548,6 +539,7 @@ static const struct gfx_range mapper_LW621_table[] =
 	/* type            start    end      bank */
 	{ GFXTYPE_SPRITES, 0x00000, 0x07fff, 0 },
 	{ GFXTYPE_SCROLL1, 0x00000, 0x1ffff, 0 },
+
 	{ GFXTYPE_STARS,   0x00000, 0x1ffff, 1 },
 	{ GFXTYPE_SCROLL2, 0x00000, 0x1ffff, 1 },
 	{ GFXTYPE_SCROLL3, 0x00000, 0x1ffff, 1 },
@@ -572,7 +564,9 @@ static const struct gfx_range mapper_DM620_table[] =
 
 	/* type            start   end     bank */
 	{ GFXTYPE_SCROLL3, 0x8000, 0xbfff, 1 },
+
 	{ GFXTYPE_SPRITES, 0x2000, 0x3fff, 2 },
+
 	{ GFXTYPE_STARS | GFXTYPE_SPRITES | GFXTYPE_SCROLL1 | GFXTYPE_SCROLL2 | GFXTYPE_SCROLL3, 0x00000, 0x1ffff, 0 },
 	{ 0 }
 };
@@ -589,8 +583,11 @@ static const struct gfx_range mapper_DM22A_table[] =
 	/* type            start   end     bank */
 	{ GFXTYPE_SPRITES, 0x00000, 0x01fff, 0 },
 	{ GFXTYPE_SCROLL1, 0x02000, 0x03fff, 0 },
+
 	{ GFXTYPE_SCROLL2, 0x04000, 0x07fff, 1 },
+
 	{ GFXTYPE_SCROLL3, 0x00000, 0x1ffff, 2 },
+
 	{ GFXTYPE_SPRITES, 0x02000, 0x03fff, 3 },
 	{ 0 }
 };
@@ -607,6 +604,7 @@ static const struct gfx_range mapper_DAM63B_table[] =
 	{ GFXTYPE_SPRITES, 0x00000, 0x01fff, 0 },
 	{ GFXTYPE_SCROLL1, 0x02000, 0x02fff, 0 },
 	{ GFXTYPE_SCROLL2, 0x04000, 0x07fff, 0 },
+
 	{ GFXTYPE_SCROLL3, 0x00000, 0x1ffff, 1 },
 	{ GFXTYPE_SPRITES, 0x02000, 0x03fff, 1 },
 	{ 0 }
@@ -628,6 +626,7 @@ static const struct gfx_range mapper_ST24M1_table[] =
 	{ GFXTYPE_STARS,   0x00000, 0x003ff, 0 },
 	{ GFXTYPE_SPRITES, 0x00000, 0x04fff, 0 },
 	{ GFXTYPE_SCROLL2, 0x04000, 0x07fff, 0 },
+
 	{ GFXTYPE_SCROLL3, 0x00000, 0x07fff, 1 },
 	{ GFXTYPE_SCROLL1, 0x07000, 0x07fff, 1 },
 	{ 0 }
@@ -645,9 +644,12 @@ static const struct gfx_range mapper_ST22B_table[] =
 	/* type            start    end      bank */
 	{ GFXTYPE_STARS,   0x00000, 0x1ffff, 0 },
 	{ GFXTYPE_SPRITES, 0x00000, 0x03fff, 0 },
+
 	{ GFXTYPE_SPRITES, 0x04000, 0x04fff, 1 },
 	{ GFXTYPE_SCROLL2, 0x04000, 0x07fff, 1 },
+
 	{ GFXTYPE_SCROLL3, 0x00000, 0x03fff, 2 },
+
 	{ GFXTYPE_SCROLL3, 0x04000, 0x07fff, 3 },
 	{ GFXTYPE_SCROLL1, 0x07000, 0x07fff, 3 },
 	{ 0 }
@@ -665,9 +667,12 @@ static const struct gfx_range mapper_TK22B_table[] =
 
 	/* type            start  end      bank */
 	{ GFXTYPE_SPRITES, 0x0000, 0x3fff, 0 },
+
 	{ GFXTYPE_SPRITES, 0x4000, 0x5fff, 1 },
 	{ GFXTYPE_SCROLL1, 0x6000, 0x7fff, 1 },
+
 	{ GFXTYPE_SCROLL3, 0x0000, 0x3fff, 2 },
+
 	{ GFXTYPE_SCROLL2, 0x4000, 0x7fff, 3 },
 	{ 0 }
 };
@@ -685,6 +690,7 @@ static const struct gfx_range mapper_WL24B_table[] =
 	{ GFXTYPE_SPRITES, 0x0000, 0x4fff, 0 },
 	{ GFXTYPE_SCROLL3, 0x5000, 0x6fff, 0 },
 	{ GFXTYPE_SCROLL1, 0x7000, 0x7fff, 0 },
+
 	{ GFXTYPE_SCROLL2, 0x0000, 0x3fff, 1 },
 	{ 0 }
 };
@@ -776,6 +782,7 @@ static const struct gfx_range mapper_AR22B_table[] =
 	/* type            start   end     bank */
 	{ GFXTYPE_SPRITES, 0x0000, 0x2fff, 0 },
 	{ GFXTYPE_SCROLL1, 0x3000, 0x3fff, 0 },
+
 	{ GFXTYPE_SCROLL2, 0x4000, 0x5fff, 1 },
 	{ GFXTYPE_SCROLL3, 0x6000, 0x7fff, 1 },
 	{ 0 }
@@ -802,6 +809,7 @@ static const struct gfx_range mapper_O224B_table[] =
 	{ GFXTYPE_SCROLL2, 0x0c00, 0x3bff, 0 },
 	{ GFXTYPE_SCROLL3, 0x3c00, 0x4bff, 0 },
 	{ GFXTYPE_SPRITES, 0x4c00, 0x7fff, 0 },
+
 	{ GFXTYPE_SPRITES, 0x8000, 0xa7ff, 1 },
 	{ GFXTYPE_SCROLL2, 0xa800, 0xb7ff, 1 },
 	{ GFXTYPE_SCROLL3, 0xb800, 0xbfff, 1 },
@@ -912,6 +920,7 @@ static const struct gfx_range mapper_CA22B_table[] =
 	{ GFXTYPE_SPRITES, 0x0000, 0x2fff, 0 },
 	{ GFXTYPE_SCROLL2, 0x0000, 0x2fff, 0 },
 	{ GFXTYPE_SCROLL3, 0x3000, 0x3fff, 0 },
+
 	{ GFXTYPE_SCROLL3, 0x4000, 0x4fff, 1 },
 	{ GFXTYPE_SCROLL1, 0x5000, 0x57ff, 1 },
 	{ GFXTYPE_SPRITES, 0x5800, 0x7fff, 1 },
@@ -930,7 +939,9 @@ static const struct gfx_range mapper_STF29_table[] =
 
 	/* type            start    end      bank */
 	{ GFXTYPE_SPRITES, 0x00000, 0x07fff, 0 },
+
 	{ GFXTYPE_SPRITES, 0x08000, 0x0ffff, 1 },
+
 	{ GFXTYPE_SPRITES, 0x10000, 0x11fff, 2 },
 	{ GFXTYPE_SCROLL3, 0x02000, 0x03fff, 2 },
 	{ GFXTYPE_SCROLL1, 0x04000, 0x04fff, 2 },
@@ -954,6 +965,7 @@ static const struct gfx_range mapper_RT24B_table[] =
 	{ GFXTYPE_SPRITES, 0x0000, 0x53ff, 0 },
 	{ GFXTYPE_SCROLL1, 0x5400, 0x6fff, 0 },
 	{ GFXTYPE_SCROLL3, 0x7000, 0x7fff, 0 },
+
 	{ GFXTYPE_SCROLL3, 0x0000, 0x3fff, 1 },
 	{ GFXTYPE_SCROLL2, 0x2800, 0x7fff, 1 },
 	{ GFXTYPE_SPRITES, 0x5400, 0x7fff, 1 },
@@ -971,11 +983,14 @@ static const struct gfx_range mapper_RT22B_table[] =
 
 	/* type            start   end     bank */
 	{ GFXTYPE_SPRITES, 0x0000, 0x3fff, 0 },
+
 	{ GFXTYPE_SPRITES, 0x4000, 0x53ff, 1 },
 	{ GFXTYPE_SCROLL1, 0x5400, 0x6fff, 1 },
 	{ GFXTYPE_SCROLL3, 0x7000, 0x7fff, 1 },
+
 	{ GFXTYPE_SCROLL3, 0x0000, 0x3fff, 2 },
 	{ GFXTYPE_SCROLL2, 0x2800, 0x3fff, 2 },
+
 	{ GFXTYPE_SCROLL2, 0x4000, 0x7fff, 3 },
 	{ GFXTYPE_SPRITES, 0x5400, 0x7fff, 3 },
 	{ 0 }
@@ -992,6 +1007,7 @@ static const struct gfx_range mapper_KD29B_table[] =
 
 	/* type            start   end     bank */
 	{ GFXTYPE_SPRITES, 0x0000, 0x7fff, 0 },
+
 	{ GFXTYPE_SPRITES, 0x8000, 0x8fff, 1 },
 	{ GFXTYPE_SCROLL2, 0x9000, 0xbfff, 1 },
 	{ GFXTYPE_SCROLL1, 0xc000, 0xd7ff, 1 },
@@ -1011,6 +1027,7 @@ static const struct gfx_range mapper_CC63B_table[] =
 	/* type            start   end     bank */
 	{ GFXTYPE_SPRITES, 0x0000, 0x7fff, 0 },
 	{ GFXTYPE_SCROLL2, 0x0000, 0x7fff, 0 },
+
 	{ GFXTYPE_SPRITES, 0x8000, 0xffff, 1 },
 	{ GFXTYPE_SCROLL1, 0x8000, 0xffff, 1 },
 	{ GFXTYPE_SCROLL2, 0x8000, 0xffff, 1 },
@@ -1030,6 +1047,7 @@ static const struct gfx_range mapper_KR63B_table[] =
 	/* type            start   end     bank */
 	{ GFXTYPE_SPRITES, 0x0000, 0x7fff, 0 },
 	{ GFXTYPE_SCROLL2, 0x0000, 0x7fff, 0 },
+
 	{ GFXTYPE_SCROLL1, 0x8000, 0x9fff, 1 },
 	{ GFXTYPE_SPRITES, 0x8000, 0xcfff, 1 },
 	{ GFXTYPE_SCROLL2, 0x8000, 0xcfff, 1 },
@@ -1051,7 +1069,9 @@ static const struct gfx_range mapper_S9263B_table[] =
 
 	/* type            start    end      bank */
 	{ GFXTYPE_SPRITES, 0x00000, 0x07fff, 0 },
+
 	{ GFXTYPE_SPRITES, 0x08000, 0x0ffff, 1 },
+
 	{ GFXTYPE_SPRITES, 0x10000, 0x11fff, 2 },
 	{ GFXTYPE_SCROLL3, 0x02000, 0x03fff, 2 },
 	{ GFXTYPE_SCROLL1, 0x04000, 0x04fff, 2 },
@@ -1122,6 +1142,7 @@ static const struct gfx_range mapper_CD63B_table[] =
 	/* type                              start   end     bank */
 	{ GFXTYPE_SCROLL1,                   0x0000, 0x0fff, 0 },
 	{ GFXTYPE_SPRITES,                   0x1000, 0x7fff, 0 },
+
 	{ GFXTYPE_SPRITES | GFXTYPE_SCROLL2, 0x8000, 0xdfff, 1 },
 	{ GFXTYPE_SCROLL3,                   0xe000, 0xffff, 1 },
 	{ 0 }
@@ -1134,6 +1155,7 @@ static const struct gfx_range mapper_PS63B_table[] =
 	/* type                              start   end     bank */
 	{ GFXTYPE_SCROLL1,                   0x0000, 0x0fff, 0 },
 	{ GFXTYPE_SPRITES,                   0x1000, 0x7fff, 0 },
+
 	{ GFXTYPE_SPRITES | GFXTYPE_SCROLL2, 0x8000, 0xdbff, 1 },
 	{ GFXTYPE_SCROLL3,                   0xdc00, 0xffff, 1 },
 	{ 0 }
@@ -1146,7 +1168,9 @@ static const struct gfx_range mapper_MB63B_table[] =
 	/* type                              start    end      bank */
 	{ GFXTYPE_SCROLL1,                   0x00000, 0x00fff, 0 },
 	{ GFXTYPE_SPRITES | GFXTYPE_SCROLL2, 0x01000, 0x07fff, 0 },
+
 	{ GFXTYPE_SPRITES | GFXTYPE_SCROLL2, 0x08000, 0x0ffff, 1 },
+
 	{ GFXTYPE_SPRITES | GFXTYPE_SCROLL2, 0x10000, 0x167ff, 2 },
 	{ GFXTYPE_SCROLL3,                   0x16800, 0x17fff, 2 },
 	{ 0 }
@@ -1186,6 +1210,7 @@ static const struct gfx_range mapper_TN2292_table[] =
 	{ GFXTYPE_SCROLL1,                   0x0000, 0x0fff, 0 },
 	{ GFXTYPE_SCROLL3,                   0x1000, 0x3fff, 0 },
 	{ GFXTYPE_SPRITES | GFXTYPE_SCROLL2, 0x4000, 0x7fff, 0 },
+
 	{ GFXTYPE_SPRITES | GFXTYPE_SCROLL2, 0x8000, 0xffff, 1 },
 	{ 0 }
 };
@@ -1225,6 +1250,7 @@ static const struct gfx_range mapper_pang3_table[] =
 {
 	/* type                              start   end     bank */
 	{ GFXTYPE_SPRITES | GFXTYPE_SCROLL2, 0x0000, 0x7fff, 0 },
+
 	{ GFXTYPE_SPRITES | GFXTYPE_SCROLL2, 0x8000, 0x9fff, 1 },
 	{ GFXTYPE_SCROLL1,                   0xa000, 0xbfff, 1 },
 	{ GFXTYPE_SCROLL3,                   0xc000, 0xffff, 1 },
@@ -1239,30 +1265,6 @@ static const struct gfx_range mapper_sfzch_table[] =
 	{ GFXTYPE_SPRITES | GFXTYPE_SCROLL1 | GFXTYPE_SCROLL2 | GFXTYPE_SCROLL3, 0x00000, 0x1ffff, 0 },
 	{ 0 }
 };
-
-//HBMAME start
-#define mapper_frog     { 0x8000, 0, 0, 0 }, mapper_frog_table
-static const struct gfx_range mapper_frog_table[] =
-{
-	/* type            start   end    bank */
-	{ GFXTYPE_SPRITES, 0x04e0, 0x050f, 0 }, // frogs and bugs
-	{ GFXTYPE_SCROLL1, 0x0000, 0x003f, 0 }, // text
-	{ GFXTYPE_SCROLL2, 0x0140, 0x025f, 0 }, // frog feast title
-	{ GFXTYPE_SCROLL3, 0x0040, 0x04df, 0 }, // logo and background
-	{ 0 }
-};
-
-#define mapper_demo    { 0x8000, 0, 0, 0 }, mapper_demo_table
-static const struct gfx_range mapper_demo_table[] =
-{
-	/* type            start  end      bank */
-	{ GFXTYPE_SPRITES, 0x0000, 0x003f, 0 }, // moveable chaos
-	{ GFXTYPE_SCROLL1, 0x4400, 0x445f, 0 }, // text
-	{ GFXTYPE_SCROLL2, 0x0040, 0x00ff, 0 }, // logo, blue box, 10th
-	{ GFXTYPE_SCROLL3, 0x0100, 0x011f, 0 }, // must not allow access to 0000, otherwise not used
-	{ 0 }
-};
-//HBMAME end
 
 
 /*
@@ -1628,175 +1630,6 @@ static const struct CPS1config cps1_config_table[]=
 
 	{"kenseim",     CPS_B_21_DEF, mapper_KNM10B },  // wrong, need to convert equations from PAL
 
-// HBMAME
-	{"3wondrud",    CPS_B_21_DEF, mapper_RT24B },							//works
-	{"captcocc",    CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },		// nw
-	{"captcoud",    CPS_B_21_DEF, mapper_CC63B,  0x36, 0x38, 0x34 },		//works
-	{"captcovs",    CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },		// nw
-	{"captcomc",    CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },		//works
-	{"captcomh",    CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },		//works
-	{"captcommb2",  CPS_B_21_BT3, mapper_CC63B,  0x36, 0x38, 0x34 },		//works
-	//{"cawingb",     CPS_B_16,     mapper_CA24B, 0, 0, 0, 0x8F },			// no sprites here, ok in fcrash.cpp
-	{"cps1demo",    CPS_B_04,     mapper_demo,  0, 0, 0, 0x80 },			//works
-	{"cps1frog",    CPS_B_04,     mapper_frog,  0, 0, 0, 0x80 },			//works
-	{"cps1tests",   CPS_B_21_DEF, mapper_S9263B, 0x36 },					//works
-	{"cps1testsa",  CPS_B_21_DEF, mapper_S9263B, 0x36 },					//works
-	{"cps1testm",   CPS_B_21_DEF, mapper_RCM63B },							//works
-	{"cps1testma",  CPS_B_21_DEF, mapper_RCM63B },							//works
-	{"daimakb",     HACK_H_5,     mapper_DM22A },							//works
-	{"dino08h2",    CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dino08h3",    CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dino08hp",    CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dinob",       CPS_B_21_QS2, mapper_CD63B, 0, 0, 0, 0x0F },			//works
-	{"dinobt",      CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dinobtpp",    CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dinocgba",    CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dinocgbb",    CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dinocgbc",    CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dinoeh",      CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dinoex",      CPS_B_21_DEF, mapper_CD63B },							//works
-	{"dinoh",       CPS_B_21_DEF, mapper_CD63B, 0x36 },						//works
-	{"dinoha",      CPS_B_21_DEF, mapper_CD63B, 0x36 },						//works
-	{"dinohb",      CPS_B_21_QS2, mapper_CD63B, 0, 0, 0, 0x0F },			//works
-	{"dinohp",      CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dinohx",      CPS_B_21_DEF, mapper_CD63B, 0x36 },						//works
-	{"dinojp",      CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dinorp",      CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dinosf2",     CPS_B_21_QS2, mapper_CD63B },							// nw
-	{"dinoslice",   CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dinouphp",    CPS_B_21_QS2, mapper_CD63B },							//works
-	{"dinoz",       CPS_B_21_QS2, mapper_CD63B },							//works
-	{"ffightb",     CPS_B_01,     mapper_S224B },							//works
-	{"knight21",    CPS_B_21_BT4, mapper_KR63B, 0x36, 0, 0x34 },			//works
-	//{"knightsa",    CPS_B_21_BT4, mapper_KR63B, 0x36, 0, 0x34 },			// a rom is unobtainable
-	{"knightsb3",   HACK_H_6,     mapper_KR63B, 0x36, 0, 0x34, 0x44 }, 		//works
-	{"knightsh",    CPS_B_21_DEF, mapper_KR63B, 0x36, 0, 0x34 },			//works (intro screen is crap)
-	{"knightsha",   HACK_H_7,     mapper_KR63B, 0x36, 0, 0x34 },			//works
-	{"knightsjb",   CPS_B_21_DEF, mapper_KR63B, 0x36, 0, 0x34 },			//works
-	{"knightsro",   CPS_B_21_BT4, mapper_KR63B, 0x36, 0, 0x34 },			//works
-	{"knightud",    CPS_B_21_DEF, mapper_KR63B, 0x36, 0, 0x34 },			//works
-	{"kodd",        CPS_B_21_DEF, mapper_KD29B, 0x36, 0, 0x34 },			// nw
-	{"kodh",        CPS_B_21_DEF, mapper_KD29B, 0x36, 0, 0x34 },			//works
-	{"kodsp",       CPS_B_21_BT2, mapper_KD29B, 0x36, 0, 0x34 },			//works
-	{"kodud",       CPS_B_21_DEF, mapper_KD29B, 0x36, 0, 0x34 },			// nw
-	{"pnicku",      CPS_B_21_DEF, mapper_PKB10B },							//works
-	{"punisherb",   CPS_B_21_QS3, mapper_PS63B, 0, 0, 0, 0x0E },			//works
-	{"punisherf",   CPS_B_21_QS3, mapper_PS63B },							//works
-	{"punisherje1", CPS_B_21_QS3, mapper_PS63B },							//works
-	{"punisherjh",  CPS_B_21_QS3, mapper_PS63B },							//works
-	{"punisherjh1", CPS_B_21_QS3, mapper_PS63B },							//works
-	{"punisherjha", CPS_B_21_QS3, mapper_PS63B },							//works
-	{"punisherud1", CPS_B_21_DEF, mapper_PS63B },							//works
-	{"punisherud2", CPS_B_21_DEF, mapper_PS63B },							//works
-	{"sf2bhj",      CPS_B_12,     mapper_STF29,  0x36 },					//works
-	{"sf2c",        CPS_B_13,     mapper_STF29,  0x36 },					//works
-	{"sf2cebr",     CPS_B_21_DEF, mapper_S9263B, 0x36 },					//works
-	{"sf2ced",      CPS_B_21_DEF, mapper_S9263B, 0x36 },					//works
-	{"sf2ceda",     CPS_B_21_DEF, mapper_S9263B, 0x36 },					//works
-	{"sf2ceh",      CPS_B_21_DEF, mapper_S9263B, 0x36 },					//works
-	{"sf2cehk",     CPS_B_21_DEF, mapper_S9263B, 0x36 },					//works
-	{"sf2cehp",     CPS_B_21_DEF, mapper_S9263B, 0x36 },					//works
-	{"sf2cejem",    CPS_B_21_DEF, mapper_S9263B, 0x36 },					//works
-	{"sf2jbh",      CPS_B_13,     mapper_STF29,  0x36 },					//works
-	{"sf2koryuh",   CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2h9",       CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2h10",      CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2h11",      HACK_B_1,     mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2h12",      HACK_B_1,     mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2h13",      CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2pun",      CPS_B_21_DEF, mapper_S9263B, 0x36 },					//works
-	{"sf2sl73a",    CPS_B_21_DEF, mapper_S9263B, 0x36 },					//works
-	{"sf2th",       CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2tha",      CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2tlona",    CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2tlonb",    CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2tlonc",    CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2turyu",    CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2yyc3d5",   CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2yyc3g",    CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sf2yyc6",     CPS_B_21_DEF, mapper_S9263B, 0x36, 0, 0, 0x41 },		//works
-	{"sk2h1",       HACK_H_2,     mapper_TK263B, 0, 0, 0, 0x8F },			//works, priorities
-	{"sk2h1q",      HACK_H_2,     mapper_TK263B, 0, 0, 0, 0x8F },			//works, priorities
-	{"sk2h2",       HACK_H_2,     mapper_TK263B, 0, 0, 0, 0x8F },			//works, priorities
-	{"sk2h2q",      HACK_H_2,     mapper_TK263B, 0, 0, 0, 0x8F },			//works, priorities
-	{"sk2h3",       HACK_H_2,     mapper_TK263B, 0, 0, 0, 0x8F },			//works, priorities
-	{"sk2h4q",      HACK_H_2,     mapper_TK263B, 0, 0, 0, 0x8F },			//works, priorities
-	{"sk2h5q",      HACK_H_2,     mapper_TK263B, 0, 0, 0, 0x8F },			//works, priorities
-	{"sk2h6q",      HACK_H_2,     mapper_TK263B, 0, 0, 0, 0x8F },			//works, priorities
-	{"sk2h11",      CPS_B_21_DEF, mapper_TK263B },							//works
-	{"sk2h12",      CPS_B_21_DEF, mapper_TK263B },							//works
-	{"sk2h13",      CPS_B_21_DEF, mapper_TK263B },							//works
-	{"sk2h14",      CPS_B_21_DEF, mapper_TK263B },							//works
-	{"sk2h15",      CPS_B_21_DEF, mapper_TK263B },							//works
-	{"sk2h16",      CPS_B_21_DEF, mapper_TK263B },							//works
-	{"sk2h21",      CPS_B_21_DEF, mapper_TK263B, 0x36 },					//works
-	{"sk2h22",      HACK_H_2,     mapper_TK263B, 0x36, 0, 0, 0x8F },		//works, priorities
-	{"sk2h31",      HACK_H_2,     mapper_TK263B, 0x36, 0, 0, 0x8F },		//works, priorities
-	{"sk2h31q",     HACK_H_2,     mapper_TK263B, 0x36, 0, 0, 0x8F },		//works, priorities
-	{"sk2h32",      HACK_H_2,     mapper_TK263B, 0x36, 0, 0, 0x8F },		//works, priorities
-	{"sk2h32q",     HACK_H_2,     mapper_TK263B, 0x36, 0, 0, 0x8F },		//works, priorities
-	{"sk2h33",      HACK_H_2,     mapper_TK263B, 0x36, 0, 0, 0x8F },		//works, priorities
-	{"sk2h33q",     HACK_H_2,     mapper_TK263B, 0x36, 0, 0, 0x8F },		//works, priorities
-	{"sk2h34",      HACK_H_2,     mapper_TK263B, 0x36, 0, 0, 0x8F },		//works, priorities
-	{"sk2h34q",     HACK_H_2,     mapper_TK263B, 0x36, 0, 0, 0x8F },		//works, priorities
-	{"sk2h35",      CPS_B_21_DEF, mapper_TK263B, 0x36 },					//works
-	{"sk3p1",       CPS_B_21_DEF, mapper_sfzch },							//works
-	{"sk3p2",       CPS_B_21_DEF, mapper_TK263B },							//works
-	{"sk3p3",       CPS_B_21_DEF, mapper_TK263B },							//works
-	{"slammastud",  CPS_B_21_DEF, mapper_MB63B },							//works
-	{"stridergf",   CPS_B_01,     mapper_ST24M1 },							//works
-	{"stridergh",   CPS_B_01,     mapper_ST24M1 },							//works
-	{"tk2c1",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c2",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c3",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c4",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c5",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c6",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c7",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c8",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c9",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c10",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c11",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c12",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c13",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c14",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c15",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c16",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c17",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c18",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c19",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c20",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c21",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c22",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2c23",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h1",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h2",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h3",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h4",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h5",       CPS_B_21_QS1, mapper_TK263B },							// problem with chinese language roms
-	{"tk2h6",       CPS_B_21_DEF, mapper_TK263B },							//works
-	{"tk2h7",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h8",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h9",       CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h10",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h11",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h12",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h13",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h14",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h15",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h16",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h17",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2h18",      CPS_B_21_QS1, mapper_TK263B },							//works
-	{"tk2p2",       CPS_B_21_DEF, mapper_sfzch },							//works
-	{"tk2p3",       CPS_B_21_DEF, mapper_TK263B },							//works
-	{"wofb",        CPS_B_21_DEF, mapper_TK263B },							//works
-	{"wofes",       CPS_B_21_DEF, mapper_TK263B },							//works
-	{"woffr",       CPS_B_21_DEF, mapper_sfzch },							//works
-	{"wofr1h",      CPS_B_21_DEF, mapper_TK263B },							//works
-	{"wofsf2",      CPS_B_21_QS1, mapper_TK263B, 0x36 },					//works
-	{"wofud",       CPS_B_21_DEF, mapper_TK263B },							//works
-
-	// HBMAME end
 	{nullptr}     /* End of table */
 };
 
@@ -1957,10 +1790,10 @@ READ16_MEMBER(cps_state::cps1_cps_b_r)
 				m_cps_b_regs[m_game_config->mult_factor2 / 2]) >> 16;
 
 	if (offset == m_game_config->in2_addr / 2)  /* Extra input ports (on C-board) */
-		return cps1_in2_r(space, 0, 0); // HBMAME ioport("IN2")->read();
+		return ioport("IN2")->read();
 
 	if (offset == m_game_config->in3_addr / 2)  /* Player 4 controls (on C-board) ("Captain Commando") */
-		return cps1_in3_r(space, 0, 0); // HBMAME ioport("IN3")->read();
+		return ioport("IN3")->read();
 
 	if (m_cps_version == 2)
 	{
@@ -2439,8 +2272,6 @@ VIDEO_START_MEMBER(cps_state,cps)
 	memset(m_cps_a_regs, 0, 0x40);   /* Clear CPS-A registers */
 	memset(m_cps_b_regs, 0, 0x40);   /* Clear CPS-B registers */
 
-	m_cps_b_regs[m_game_config->palette_control/2] = 0x3F; // HBMAME
-
 	if (m_cps_version == 2)
 	{
 		memset(m_objram1, 0, m_cps2_obj_size);
@@ -2655,7 +2486,7 @@ void cps_state::cps1_render_sprites( screen_device &screen, bitmap_ind16 &bitmap
 	uint16_t *base = m_buffered_obj.get();
 
 	/* some sf2 hacks draw the sprites in reverse order */
-	if (BIT(m_game_config->bootleg_kludge, 6)) // HBMAME
+	if ((m_game_config->bootleg_kludge == 1) || (m_game_config->bootleg_kludge == 2) || (m_game_config->bootleg_kludge == 3))
 	{
 		base += m_last_sprite_offset;
 		baseadd = -4;

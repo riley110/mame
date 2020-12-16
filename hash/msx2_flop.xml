@@ -310,22 +310,22 @@ The following floppies came with the machines.
 		<description>Arc</description>
 		<year>1990</year>
 		<publisher>Parallax</publisher>
-		<part name="flop1" interface="floppy_3_5">
-		<feature name="part_id" value="Manual"/>
-			<dataarea name="flop" size="737280">
-				<rom name="arc_disk_a.dsk" size="737280" crc="dfd9c28d" sha1="ddff24b17fd4fcaecd8197fb8a20099483924565" offset="0" />
-			</dataarea>
-		</part>
+		<!-- Floppy #2 is the game disk -->
 		<part name="flop2" interface="floppy_3_5">
-		<feature name="part_id" value="Game"/>
 			<dataarea name="flop" size="737280">
 				<rom name="arc_disk_b.dsk" size="737280" crc="af2bd084" sha1="8d91f61e28c0d813f16adb06e019da911aa84b2c" offset="0" />
+			</dataarea>
+		</part>
+		<!-- Floppy #1 contains the manual -->
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="flop" size="737280">
+				<rom name="arc_disk_a.dsk" size="737280" crc="dfd9c28d" sha1="ddff24b17fd4fcaecd8197fb8a20099483924565" offset="0" />
 			</dataarea>
 		</part>
 		<part name="cart" interface="msx_cart">
 			<feature name="slot" value="arc" />
 			<dataarea name="rom" size="32768">
-				<rom name="arc.bin" size="32768" crc="3f47382f" sha1="ac43445c9e0a097b6d8116017645fe96b054a111" offset="0" />
+				<rom name="arc.rom" size="32768" crc="3f47382f" sha1="ac43445c9e0a097b6d8116017645fe96b054a111" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -349,7 +349,7 @@ The following floppies came with the machines.
 			<feature name="slot" value="halnote" />
 			<feature name="mapper" value="M60002-0125SP" />
 			<dataarea name="rom" size="1048576">
-				<rom name="hal note (japan) (program).bin" size="1048576" crc="40313fec" sha1="1af617bfd11b10a71936c606174a80019762ea71" offset="0" status="baddump" />
+				<rom name="hal note (japan) (program).rom" size="1048576" crc="40313fec" sha1="1af617bfd11b10a71936c606174a80019762ea71" status="baddump" offset="0" />
 			</dataarea>
 			<dataarea name="sram" size="16384">
 			</dataarea>

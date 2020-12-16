@@ -331,14 +331,4 @@ public:
 	void mshuttle_decode(const uint8_t convtable[8][16]);
 	void common_init(galaxian_draw_bullet_func draw_bullet,galaxian_draw_background_func draw_background,
 		galaxian_extend_tile_info_func extend_tile_info,galaxian_extend_sprite_info_func extend_sprite_info);
-//HBMAME start
-	DECLARE_WRITE8_MEMBER(fourplay_rombank_w);
-	DECLARE_WRITE8_MEMBER(videight_rombank_w);
-	DECLARE_WRITE8_MEMBER(videight_gfxbank_w);
-	DECLARE_DRIVER_INIT(fourplay);
-	DECLARE_DRIVER_INIT(trukker);
-	DECLARE_DRIVER_INIT(videight);
-	void videight_extend_tile_info(uint16_t *code, uint8_t *color, uint8_t attrib, uint8_t x);
-	void videight_extend_sprite_info(const uint8_t *base, uint8_t *sx, uint8_t *sy, uint8_t *flipx, uint8_t *flipy, uint16_t *code, uint8_t *color);
-//HBMAME end
 };

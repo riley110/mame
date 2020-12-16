@@ -13,7 +13,6 @@
 #include "bus/rs232/rs232.h"
 #include "bus/rs232/keyboard.h"
 #include "screen.h"
-#include "softlist.h"
 
 class peoplepc_state : public driver_device
 {
@@ -295,8 +294,6 @@ static MACHINE_CONFIG_START( olypeopl )
 	MCFG_DEVICE_CARD_DEVICE_INPUT_DEFAULTS("keyboard", keyboard)
 
 	MCFG_DEVICE_ADD("i8251_1", I8251, 0)
-
-	MCFG_SOFTWARE_LIST_ADD("flop_list", "peoplepc")
 MACHINE_CONFIG_END
 
 ROM_START( olypeopl )

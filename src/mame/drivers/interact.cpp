@@ -45,10 +45,8 @@
     Importante note : the keyboard function add been piked from
                     DChector project : http://dchector.free.fr/ made by DanielCoulom
                     (thank's Daniel)
-
     TODO :  Add the cartridge function,
             Adjust the one shot and A/D timing (sn76477)
-			Clean up machine configs
 ****************************************************************************/
 /* Mapping for joystick see hec2hrp.c*/
 
@@ -188,9 +186,6 @@ static MACHINE_CONFIG_START( hector1 )
 	MCFG_CASSETTE_FORMATS(hector_cassette_formats)
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_STOPPED | CASSETTE_MASK_SPEAKER)
 	MCFG_CASSETTE_INTERFACE("interact_cass")
-
-	MCFG_SOFTWARE_LIST_ADD("cass_list","hector1")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("int_cass_list","interact")
 
 	/* printer */
 	MCFG_DEVICE_ADD("printer", PRINTER, 0)

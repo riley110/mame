@@ -32,7 +32,7 @@ P0-123A                 1996    Wakakusamonogatari Mahjong Yonshimai    Maborosh
 P0-125A ; KE (Namco)    1996    Kosodate Quiz My Angel                  Namco
 P0-130B ; M-133 (Namco) 1997    Star Audition                           Namco
 P0-136A ; KL (Namco)    1997    Kosodate Quiz My Angel 2                Namco
-P-FG-02                 1997    Reel'N Quake                            Sammy?
+P-FG-02                 1997    Reel'N Quake                            <unknown>
 P-FG-03              <unknown>  Endless Riches                          E.N.Tiger
 P0-140B                 2000    Funcube                                 Namco
 P0-140B                 2000    Namco Stars                             Namco
@@ -3310,7 +3310,6 @@ ROM_END
 /***************************************************************************
 
 Reel'N Quake!
-(c)1997 Sammy? (based on unused logo found in gfx roms)
 
    CPU: Toshiba TMP68301AF-16 (100 Pin PQFP)
  Video: NEC DX-101 (240 Pin PQFP, @ U10)
@@ -3886,7 +3885,7 @@ GAME( 1995, grdians,   0,        grdians,  grdians,  seta2_state, 0,        ROT0
 GAME( 1996, mj4simai,  0,        mj4simai, mj4simai, seta2_state, 0,        ROT0, "Maboroshi Ware",        "Wakakusamonogatari Mahjong Yonshimai (Japan)", MACHINE_NO_COCKTAIL )
 GAME( 1996, myangel,   0,        myangel,  myangel,  seta2_state, 0,        ROT0, "MOSS / Namco",          "Kosodate Quiz My Angel (Japan)",               MACHINE_NO_COCKTAIL | MACHINE_IMPERFECT_GRAPHICS )
 GAME( 1997, myangel2,  0,        myangel2, myangel2, seta2_state, 0,        ROT0, "MOSS / Namco",          "Kosodate Quiz My Angel 2 (Japan)",             MACHINE_NO_COCKTAIL | MACHINE_IMPERFECT_GRAPHICS )
-GAME( 1997, reelquak,  0,        reelquak, reelquak, seta2_state, 0,        ROT0, "Sammy?",                "Reel'N Quake! (Version 1.05)",                 MACHINE_NO_COCKTAIL | MACHINE_IMPERFECT_GRAPHICS )
+GAME( 1997, reelquak,  0,        reelquak, reelquak, seta2_state, 0,        ROT0, "<unknown>",             "Reel'N Quake! (Version 1.05)",                 MACHINE_NO_COCKTAIL | MACHINE_IMPERFECT_GRAPHICS )
 GAME( 199?, endrichs,  0,        reelquak, endrichs, seta2_state, 0,        ROT0, "E.N.Tiger",             "Endless Riches (Ver 1.20)",                    MACHINE_NO_COCKTAIL | MACHINE_IMPERFECT_GRAPHICS )
 GAME( 1997, staraudi,  0,        staraudi, staraudi, staraudi_state, 0,     ROT0, "Namco",                 "Star Audition",                                MACHINE_NO_COCKTAIL | MACHINE_IMPERFECT_GRAPHICS | MACHINE_IMPERFECT_SOUND )
 GAME( 1999, pzlbowl,   0,        pzlbowl,  pzlbowl,  seta2_state, 0,        ROT0, "MOSS / Nihon System",   "Puzzle De Bowling (Japan)",                    MACHINE_NO_COCKTAIL )

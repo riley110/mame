@@ -161,7 +161,6 @@
 #include "sound/beep.h"
 #include "video/i8275.h"
 #include "screen.h"
-#include "softlist.h"
 #include "speaker.h"
 
 #define BIT_MASK(n) (1U << (n))
@@ -1406,7 +1405,6 @@ static MACHINE_CONFIG_START(hp64k)
 	MCFG_RS232_DCD_HANDLER(WRITELINE(hp64k_state , hp64k_rs232_dcd_w))
 	MCFG_RS232_CTS_HANDLER(WRITELINE(hp64k_state , hp64k_rs232_cts_w))
 
-				MCFG_SOFTWARE_LIST_ADD("flop_list", "hp64k")
 MACHINE_CONFIG_END
 
 ROM_START(hp64k)

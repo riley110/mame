@@ -16,7 +16,6 @@
 
 #include "emu.h"
 #include "softbox.h"
-#include "softlist.h"
 
 
 //**************************************************************************
@@ -275,10 +274,6 @@ MACHINE_CONFIG_MEMBER( softbox_device::device_add_mconfig )
 	MCFG_HARDDISK_ADD("harddisk4")
 	MCFG_HARDDISK_INTERFACE("corvus_hdd")
 	//MCFG_IMI7000_BUS_ADD("imi5000h", nullptr, nullptr, nullptr)
-
-	// software lists
-	MCFG_SOFTWARE_LIST_ADD("flop_list", "softbox_flop")
-	MCFG_SOFTWARE_LIST_ADD("hdd_list", "softbox_hdd")
 MACHINE_CONFIG_END
 
 

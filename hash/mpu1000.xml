@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+
 <softwarelist name="mpu1000" description="Acetronic MPU-1000 cartridges">
 
 	<software name="challeng">
@@ -7,7 +8,6 @@
 		<year>19??</year>
 		<publisher>Acetronic?</publisher>
 		<info name="serial" value="9"/>
-
 		<part name="cart" interface="vc4000_cart">
 			<feature name="slot" value="std" />
 			<dataarea name="rom" size="2048">

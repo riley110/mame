@@ -386,7 +386,7 @@ static MACHINE_CONFIG_DERIVED( spectrum_plus3, spectrum_128 )
 	MCFG_DEVICE_MODIFY("exp")
 	MCFG_DEVICE_SLOT_INTERFACE(specpls3_expansion_devices, nullptr, false)
 
-	MCFG_SOFTWARE_LIST_ADD("flop_list", "spectrum_plus3")
+	MCFG_SOFTWARE_LIST_ADD("flop_list", "specpls3_flop")
 MACHINE_CONFIG_END
 
 /***************************************************************************

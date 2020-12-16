@@ -35,7 +35,6 @@ MZ80B
 #include "speaker.h"
 
 #include "formats/mz_cas.h"
-#include "softlist.h"
 
 
 /* Note about natural keyboard support:
@@ -321,10 +320,6 @@ static MACHINE_CONFIG_START( mz80k )
 	MCFG_CASSETTE_ADD( "cassette" )
 	MCFG_CASSETTE_FORMATS(mz700_cassette_formats)
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_STOPPED | CASSETTE_MOTOR_ENABLED | CASSETTE_SPEAKER_ENABLED)
-	MCFG_CASSETTE_INTERFACE("mz_cass")
-
-	MCFG_SOFTWARE_LIST_ADD("cass_list", "mz80k_cass")
-	MCFG_SOFTWARE_LIST_ADD("flop_list", "mz80k_flop")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( mz80kj, mz80k )
@@ -336,11 +331,8 @@ MACHINE_CONFIG_END
 static MACHINE_CONFIG_DERIVED( mz80a, mz80k )
 	MCFG_SCREEN_MODIFY("screen")
 	MCFG_SCREEN_UPDATE_DRIVER(mz80_state, screen_update_mz80a)
-
-	MCFG_DEVICE_REMOVE("cass_list")
-	MCFG_DEVICE_REMOVE("flop_list")
-	MCFG_SOFTWARE_LIST_ADD("cass_list", "mz80a_cass")
 MACHINE_CONFIG_END
+
 
 ROM_START( mz80k )
 	ROM_REGION( 0x10000, "maincpu", 0)

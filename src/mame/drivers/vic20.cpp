@@ -834,9 +834,9 @@ static MACHINE_CONFIG_START( vic20 )
 	MCFG_QUICKLOAD_ADD("quickload", vic20_state, cbm_vc20, "p00,prg", CBM_QUICKLOAD_DELAY_SECONDS)
 
 	// software lists
-	MCFG_SOFTWARE_LIST_ADD("cart_list", "vic20_cart")
-	MCFG_SOFTWARE_LIST_ADD("cass_list", "vic20_cass")
-	MCFG_SOFTWARE_LIST_ADD("flop_list", "vic20_flop")
+	MCFG_SOFTWARE_LIST_ADD("cart_list", "vic1001_cart")
+	MCFG_SOFTWARE_LIST_ADD("cass_list", "vic1001_cass")
+	MCFG_SOFTWARE_LIST_ADD("flop_list", "vic1001_flop")
 
 	// internal ram
 	MCFG_RAM_ADD(RAM_TAG)

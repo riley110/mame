@@ -2158,13 +2158,7 @@ static MACHINE_CONFIG_START( st )
 	MCFG_RAM_EXTRA_OPTIONS("512K,256K") // 520ST, 260ST
 
 	// software lists
-	MCFG_SOFTWARE_LIST_ADD("apps_flop_list", "st_apps")
-	MCFG_SOFTWARE_LIST_ADD("demo_flop_list", "st_demos")
-	MCFG_SOFTWARE_LIST_ADD("edu_flop_list", "st_edu")
-	MCFG_SOFTWARE_LIST_ADD("mags_flop_list", "st_mags")
-	MCFG_SOFTWARE_LIST_ADD("pd_flop_list", "st_pd")
-	MCFG_SOFTWARE_LIST_ADD("sps_flop_list", "st_sps")
-	MCFG_SOFTWARE_LIST_ADD("tos_flop_list", "st_tos")
+	MCFG_SOFTWARE_LIST_ADD("flop_list", "st_flop")
 MACHINE_CONFIG_END
 
 
@@ -2255,15 +2249,7 @@ static MACHINE_CONFIG_START( megast )
 	MCFG_RAM_EXTRA_OPTIONS("2M,1M") //  Mega ST 2 ,Mega ST 1
 
 	// software lists
-	MCFG_SOFTWARE_LIST_ADD("mst_flop_list", "st_megast")
-
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("apps_flop_list", "st_apps")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("demo_flop_list", "st_demos")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("edu_flop_list", "st_edu")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("mags_flop_list", "st_mags")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("pd_flop_list", "st_pd")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("sps_flop_list", "st_sps")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("tos_flop_list", "st_tos")
+	MCFG_SOFTWARE_LIST_ADD("flop_list", "st_flop")
 MACHINE_CONFIG_END
 
 
@@ -2361,15 +2347,7 @@ static MACHINE_CONFIG_START( ste )
 	MCFG_RAM_EXTRA_OPTIONS("512K") //  520STe
 
 	// software lists
-	MCFG_SOFTWARE_LIST_ADD("ste_flop_list", "st_ste")
-
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("apps_flop_list", "st_apps")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("demo_flop_list", "st_demos")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("edu_flop_list", "st_edu")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("mags_flop_list", "st_mags")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("pd_flop_list", "st_pd")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("sps_flop_list", "st_sps")
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("tos_flop_list", "st_tos")
+	MCFG_SOFTWARE_LIST_ADD("flop_list", "st_flop")
 MACHINE_CONFIG_END
 
 
@@ -2387,13 +2365,6 @@ static MACHINE_CONFIG_DERIVED( megaste, ste )
 	MCFG_RAM_MODIFY(RAM_TAG)
 	MCFG_RAM_DEFAULT_SIZE("4M")  //  Mega STe 4
 	MCFG_RAM_EXTRA_OPTIONS("2M,1M") //  Mega STe 2 ,Mega STe 1
-
-	// software lists
-	MCFG_DEVICE_REMOVE("ste_flop_list")
-
-	MCFG_SOFTWARE_LIST_ADD("mste_flop_list", "st_megaste")
-
-	MCFG_SOFTWARE_LIST_COMPATIBLE_ADD("ste_flop_list", "st_ste")
 MACHINE_CONFIG_END
 
 
@@ -2488,10 +2459,6 @@ MACHINE_CONFIG_END
 //-------------------------------------------------
 
 static MACHINE_CONFIG_DERIVED( tt030, ste )
-	// software lists
-	MCFG_DEVICE_REMOVE("ste_flop_list")
-
-	MCFG_SOFTWARE_LIST_ADD("tt_flop_list", "st_tt")
 MACHINE_CONFIG_END
 
 
@@ -2500,10 +2467,6 @@ MACHINE_CONFIG_END
 //-------------------------------------------------
 
 static MACHINE_CONFIG_DERIVED( falcon, ste )
-	// software lists
-	MCFG_DEVICE_REMOVE("ste_flop_list")
-
-	MCFG_SOFTWARE_LIST_ADD("falc_flop_list", "st_falcon")
 MACHINE_CONFIG_END
 
 
@@ -2512,10 +2475,6 @@ MACHINE_CONFIG_END
 //-------------------------------------------------
 
 static MACHINE_CONFIG_DERIVED( falcon40, ste )
-	// software lists
-	MCFG_DEVICE_REMOVE("ste_flop_list")
-
-	MCFG_SOFTWARE_LIST_ADD("falc_flop_list", "st_falcon")
 MACHINE_CONFIG_END
 
 

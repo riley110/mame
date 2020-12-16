@@ -126,7 +126,6 @@ from Brett Selwood and Andrew Davies.
 #include "emu.h"
 #include "includes/mbee.h"
 #include "formats/mbee_cas.h"
-#include "softlist.h"
 #include "speaker.h"
 
 #define XTAL_13_5MHz 13500000
@@ -778,7 +777,6 @@ static MACHINE_CONFIG_DERIVED( mbee56, mbeeic )
 	MCFG_FLOPPY_DRIVE_SOUND(true)
 	MCFG_FLOPPY_DRIVE_ADD("fdc:1", mbee_floppies, "525qd", floppy_image_device::default_floppy_formats)
 	MCFG_FLOPPY_DRIVE_SOUND(true)
-	MCFG_SOFTWARE_LIST_ADD("flop_list", "mbee_flop")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( mbee128, mbee56 )
@@ -803,7 +801,6 @@ static MACHINE_CONFIG_DERIVED( mbee128p, mbeeppc )
 	MCFG_FLOPPY_DRIVE_SOUND(true)
 	MCFG_FLOPPY_DRIVE_ADD("fdc:1", mbee_floppies, "525qd", floppy_image_device::default_floppy_formats)
 	MCFG_FLOPPY_DRIVE_SOUND(true)
-	MCFG_SOFTWARE_LIST_ADD("flop_list", "mbee_flop")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( mbee256, mbee128p )

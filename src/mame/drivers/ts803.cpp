@@ -56,7 +56,6 @@ PAGE SEL bit in PORT0 set to 1:
 #include "machine/z80sti.h"
 #include "video/mc6845.h"
 #include "screen.h"
-#include "softlist.h"
 
 
 class ts803_state : public driver_device
@@ -459,8 +458,6 @@ static MACHINE_CONFIG_START( ts803 )
 	MCFG_FLOPPY_DRIVE_SOUND(true)
 	MCFG_FLOPPY_DRIVE_ADD("fdc:1", ts803_floppies, "525dd", floppy_image_device::default_floppy_formats)
 	MCFG_FLOPPY_DRIVE_SOUND(true)
-	MCFG_SOFTWARE_LIST_ADD("flop_list", "ts803_flop")
-
 MACHINE_CONFIG_END
 
 /* ROM definition */

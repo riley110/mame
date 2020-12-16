@@ -251,7 +251,6 @@ static MACHINE_CONFIG_START( galaxyp )
 	MCFG_CASSETTE_INTERFACE("galaxy_cass")
 
 	MCFG_SOFTWARE_LIST_ADD("cass_list","galaxy")
-	MCFG_SOFTWARE_LIST_ADD("plus_cass_list","galaxyp")
 
 	/* internal ram */
 	MCFG_RAM_ADD(RAM_TAG)

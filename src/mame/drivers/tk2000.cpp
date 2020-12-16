@@ -26,10 +26,10 @@
 #include "sound/spkrdev.h"
 
 #include "screen.h"
-#include "softlist.h"
 #include "speaker.h"
 
 #include "formats/ap2_dsk.h"
+
 
 #define A2_CPU_TAG "maincpu"
 #define A2_BUS_TAG "a2bus"
@@ -599,7 +599,6 @@ static MACHINE_CONFIG_START( tk2000 )
 
 	MCFG_CASSETTE_ADD(A2_CASSETTE_TAG)
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_STOPPED)
-	MCFG_SOFTWARE_LIST_ADD("cass_list", "tk2000_cass")
 MACHINE_CONFIG_END
 
 /***************************************************************************

@@ -30,7 +30,6 @@ Philips P2000 1 Memory map
 
 #include "emu.h"
 #include "includes/p2000t.h"
-#include "softlist_dev.h"
 
 #include "screen.h"
 #include "speaker.h"
@@ -243,8 +242,6 @@ static MACHINE_CONFIG_START( p2000t )
 	MCFG_SPEAKER_STANDARD_MONO("mono")
 	MCFG_SOUND_ADD("speaker", SPEAKER_SOUND, 0)
 	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.25)
-	
-	MCFG_SOFTWARE_LIST_ADD("cass_list","p2k_cass")
 MACHINE_CONFIG_END
 
 
@@ -275,8 +272,6 @@ static MACHINE_CONFIG_START( p2000m )
 	MCFG_SPEAKER_STANDARD_MONO("mono")
 	MCFG_SOUND_ADD("speaker", SPEAKER_SOUND, 0)
 	MCFG_SOUND_ROUTE(ALL_OUTPUTS, "mono", 0.25)
-	
-	MCFG_SOFTWARE_LIST_ADD("cass_list","p2k_cass")
 MACHINE_CONFIG_END
 
 

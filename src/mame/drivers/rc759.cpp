@@ -25,7 +25,6 @@
 
 #include "bus/centronics/ctronics.h"
 #include "bus/isbx/isbx.h"
-#include "softlist.h"
 
 #include "screen.h"
 #include "speaker.h"
@@ -597,9 +596,6 @@ static MACHINE_CONFIG_START( rc759 )
 	// floppy drives
 	MCFG_FLOPPY_DRIVE_ADD("fdc:0", rc759_floppies, "hd", floppy_image_device::default_floppy_formats)
 	MCFG_FLOPPY_DRIVE_ADD("fdc:1", rc759_floppies, "hd", floppy_image_device::default_floppy_formats)
-
-	// software lists
-	MCFG_SOFTWARE_LIST_ADD("flop_list", "rc759")
 MACHINE_CONFIG_END
 
 

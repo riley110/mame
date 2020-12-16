@@ -35,6 +35,7 @@ Cartoon Line Part 1 by Eterna (RiscOS2 & ??)
 Casino by Minerva (RiscOS2+)
 Caves of Confusion by Generation Design (RiscOS3)
 Champions Collection by Krisalis (RiscOS2)
+The Chaos Engine by R-Comp Interactive (RiscOS3+)
 Chequered Flag by CIS (RiscOS3+)
 Chequered Flag Extra Circuits by CIS (??)
 Chocks Away II by 4th Dimension (RiscOS2+)
@@ -67,6 +68,7 @@ Emotions by The Datafile (RiscPC & StrongARM)
 Enter the Realm by 4th Dimension (RiscOS2+)
 Entropy by Oregan Software Developments  (RiscOS2 & 3)
 Eternal Destiny by Destiny Software (RiscPC & StrongARM)
+Exodus by Artex Software (RiscOS3+)
 The Exotic Adventures of Sylvia Lane by 4th Dimension (RiscOS3)
 Face to Face by SYRAsoft (RiscOS3+)
 Family Favourites by ?? (RiscOS2)
@@ -75,6 +77,7 @@ Fireball by CIS (RiscOS2)
 Fist Lore by ICS (RiscOS2+)
 Floopy by Soft Rock Software (RiscOS3)
 Flying High - Euroblaster and Joust by The Datafile (StrongARM)
+Formula Two Thousand by ?? (RiscOS2+)
 Frak by ProAction (RiscPC & StrongARM)
 FRED by Eclipse (RiscOS3+)
 Fyarena by ?? (??)
@@ -119,6 +122,7 @@ The Olympics by 4th Dimension (RiscOS2)
 Omar Sharif's Bridge by Krisalis (RiscOS3+)
 Orion by Minerva (RiscOS2 & 3)
 Overload by Clares Micro Supplies (RiscOS2 & 3)
+Overload by Paradise (RiscOS3+)
 The Pawn by Magnetic Scrolls (RiscOS2 & 3)
 Pesky Muskrats by Coin-Age (RiscOS3)
 Phaethon by System Interrupt (RiscOS3)
@@ -127,9 +131,12 @@ Play It Again Sam 4 by ProAction (RiscOS3+)
 Play It Again Sam 5 by ProAction (RiscOS3+)
 Pon by RTFM (RiscOS2)
 Pon in Winterland by RTFM (RiscOS2)
+Premier Manager by Gremlin (RiscOS3+)
 Provocator by Computer Tutorial (RiscOS2)
 Psyanki by 4th Dimension (RiscOS2 & ?)
+Pushy by 4th Dimension (RiscOS3+)
 Quark by Oregan Software Developments (RiscOS2 & 3)
+Quest for Gold by Krisalis (RiscOS2 & 3)
 Raw Power by Eclipse (??)
 The Real McCoy by 4th Dimension (RiscOS2)
 The Real McCoy 2 by 4th Dimension (RiscOS2 & 3)
@@ -149,6 +156,8 @@ Saloon Cars Deluxe Extra Courses by 4th Dimension (RiscOS2+)
 Scrabble by U.S. Gold (RiscOS3+)
 SeaTrek by Generation Design (RiscOS2+)
 Shuggy by Werewolf Software (RiscOS3+)
+Silverball by 4th Dimension (RiscOS3+)
+Sim City 2000 by Krisalis (RiscOS3+)
 Slappit by ?? (??)
 Spitfire Fury (Unreleased) by 4th Dimension (??)
 Spobbleoid by 4th Dimension (RiscOS3+)
@@ -168,6 +177,7 @@ Thundermonk by Minerva (RiscOS2)
 Time Machine by 4th Dimension (RiscOS3)
 UIM by 4th Dimension (RiscOS2)
 Virtual Golf by 4th Dimension (RiscOS3)
+Virtual Golf - Augusta Course by 4th Dimension (RiscOS3)
 Waterloo by Turcan Research Systems (RiscOS2)
 Wavelength by Eclipse (RiscOS3)
 Wizard Apprentice by The Datafile (RiscPC & StrongARM)
@@ -559,29 +569,8 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 		</part>
 	</software>
 
-	<software name="carnage">
+	<software name="carnagei">
 		<description>Carnage Inc.</description>
-		<year>1993</year>
-		<publisher>Fourth Dimension</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="529101">
-				<rom name="carnage inc (forth dimension) (disc 1 of 3).apd" size="529101" crc="d08a6b55" sha1="7abe33e74787da2c256d77b179a6813c7c78260b" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<dataarea name="flop" size="460907">
-				<rom name="carnage inc (forth dimension) (disc 2 of 3).apd" size="460907" crc="f2319abf" sha1="4a30e8ba5630197a666a92ae85185a9033b2959c" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-			<dataarea name="flop" size="440532">
-				<rom name="carnage inc (forth dimension) (disc 3 of 3).apd" size="440532" crc="5efea00c" sha1="4cd94134651d6fc642c9ab071776bb36a00f2b21" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="carnagea" cloneof="carnage">
-		<description>Carnage Inc. (Alt)</description>
 		<year>1993</year>
 		<publisher>Fourth Dimension</publisher>
 		<part name="flop1" interface="floppy_3_5">
@@ -629,22 +618,6 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="819200">
 				<rom name="Caverns (Minerva).adf" size="819200" crc="0fa79ffc" sha1="3a7e69449d600650985f8f9a889a7bba3d67cc69" offset="0"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="chaoseng">
-		<description>The Chaos Engine</description>
-		<year>2000</year>
-		<publisher>R-Comp Interactive</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1638400">
-				<rom name="the chaos engine (2000) (r-comp) (install disc).adf" size="1638400" crc="c686218e" sha1="bc065b9a7ee78857354fa9ee0bfc02b9631508d8" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<dataarea name="flop" size="1638400">
-				<rom name="the chaos engine (2000) (r-comp) (game disc).adf" size="1638400" crc="bded3ccf" sha1="dd3799c7842b17e144f0067c548613ab479c57f4" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -703,17 +676,6 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 			<feature name="part_id" value="Maps Disk"/>
 			<dataarea name="flop" size="819200">
 				<rom name="chocks away (1990)(fourth dimension)(disk 2 of 3)(maps disk)[a].adf" size="819200" crc="077368b7" sha1="e0d6cdda9a030c0b07fd8387761b7d68e2ff082d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="chokawayd" cloneof="chokaway">
-		<description>Chocks Away (Demo)</description>
-		<year>1990</year>
-		<publisher>Fourth Dimension</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="chocksawaydemo.adf" size="819200" crc="b395ba19" sha1="9da357d456122fbfc78dff53165e828526815216" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -829,17 +791,6 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="814898">
 				<rom name="Cycloids (1993)(Software 42) [m].apd" size="814898" crc="65f9ddd0" sha1="576e191c85b53cbefe18b08d353f8c4d6b377e08" offset="0"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="cycloidsa" cloneof="cycloids">
-		<description>Cycloids (Alt)</description>
-		<year>1993</year>
-		<publisher>Eclipse</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1638400">
-				<rom name="cycloids.adf" size="1638400" crc="9a2f4f1c" sha1="0d3b6ad35293671ced8dce40aac185a6f5967f84" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1039,17 +990,6 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 		<year>1992</year>
 		<publisher>ProAction</publisher>
 		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="689721">
-				<rom name="ego - repton 4 (1992) (superior microcomputing).apd" size="689721" crc="c54b1c95" sha1="8e7bccb5029bbddab4ee0754260a79f113ab140f" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="egoa" cloneof="ego">
-		<description>EGO: Repton 4 (Alt)</description>
-		<year>1992</year>
-		<publisher>ProAction</publisher>
-		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="814080">
 				<rom name="ego - repton 4 (1992)(superior software).adf" size="814080" crc="49857651" sha1="4581c6f40ea3eaaeaa5ea356bb0811c887d0a5ed" offset="0" />
 			</dataarea>
@@ -1118,27 +1058,6 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="819200">
 				<rom name="Enthar7 (Robico).adf" size="819200" crc="701c8e07" sha1="621abffd8aad89c79cfaf57ee65a8ee5de2a2e98" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="exodus">
-		<description>Exodus</description>
-		<year>19??</year>
-		<publisher>Artex</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1638400">
-				<rom name="exodus (19xx) (artex) disc1.adf" size="1638400" crc="c5054214" sha1="ec667da15057db37168de0e9b665a7cd369a7dc1" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<dataarea name="flop" size="1638400">
-				<rom name="exodus (19xx) (artex) disc2.adf" size="1638400" crc="4e294427" sha1="6634a7f888260c2908cb8092eba50015c072bfe7" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-			<dataarea name="flop" size="1638400">
-				<rom name="exodus (19xx) (artex) disc3.adf" size="1638400" crc="03fa0ef3" sha1="c645dd6e7c91139da6a0cd98528557504842857a" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -1290,7 +1209,7 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 		</part>
 	</software>
 
-	<software name="flashbkd" cloneof="flashbk">
+	<software name="flashbd">
 		<description>Flashback (Demo)</description>
 		<year>1992</year>
 		<publisher>U.S. Gold</publisher>
@@ -1400,22 +1319,6 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 		</part>
 	</software>
 
-	<software name="godsca" cloneof="gods">
-		<description>Gods [alt cracked?]</description>
-		<year>1992</year>
-		<publisher>Krisalis</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="gods1.adf" size="819200" crc="45005a8b" sha1="be94b6b814b52bd14e8d8cd1022f23cc7486cc4b" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="gods2.adf" size="819200" crc="36392daf" sha1="25c9345178ab356aa4d894938c90f1755e9ee1ef" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="gorm">
 		<description>Gorm</description>
 		<year>1994</year>
@@ -1471,29 +1374,7 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 		</part>
 	</software>
 
-	<software name="guilea" cloneof="guile">
-		<description>Guile (Alt)</description>
-		<year>199?</year>
-		<publisher>Dream Software</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1638400">
-				<rom name="guile.adf" size="1638400" crc="02b2ba66" sha1="62c091132b60974c942a0b11f37b59512cbc3812" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="hamsters">
-		<description>Hamsters</description>
-		<year>1994</year>
-		<publisher>Eclipse</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1638400">
-				<rom name="hamsters.adf" size="1638400" crc="5e2b405e" sha1="d9563ef272d14d397a522c8d0ad18a0bbfeb83ed" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="hamstersd" cloneof="hamsters">
 		<description>Hamsters (Demo)</description>
 		<year>1994</year>
 		<publisher>Eclipse</publisher>
@@ -1635,17 +1516,6 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 		</part>
 	</software>
 
-	<software name="ixiona" cloneof="ixion">
-		<description>Ixion (Alt)</description>
-		<year>1992</year>
-		<publisher>Eclipse</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1638400">
-				<rom name="ixion.adf" size="1638400" crc="37fb990a" sha1="2f4dfac0a2aa4547547c96ce0f0a51a8fea5f090" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="jksquash">
 		<description>Jahangir Khan Squash</description>
 		<year>1991</year>
@@ -1761,17 +1631,6 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 		</part>
 	</software>
 
-	<software name="lastninjad" cloneof="lastninja">
-		<description>The Last Ninja (Demo)</description>
-		<year>1992?</year>
-		<publisher>Superior Software/Acornsoft</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1638400">
-				<rom name="last ninja (archimedes demo).adf" size="1638400" crc="db2db862" sha1="7c6c9f2e2cef460f147fea0f9d8edd97d2ec6236" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="leedsutd">
 		<description>Leeds United Champions!</description>
 		<year>1993</year>
@@ -1791,24 +1650,6 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 			<feature name="part_id" value="Disk 1"/>
 			<dataarea name="flop" size="819200">
 				<rom name="legendlosttemple.adf" size="819200" crc="807ca016" sha1="3a4f443d5744fe58109aa5ae1378439f736aa84f" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 2"/>
-			<dataarea name="flop" size="819200">
-				<rom name="legendlosttemple2.adf" size="819200" crc="ff98fc34" sha1="5fc29d8003260736b2fdca470299e3ce14ae18d8" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="losttmpla" cloneof="losttmpl">
-		<description>Legend of the Lost Temple (Alt)</description>
-		<year>19??</year>
-		<publisher>Eterna</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Disk 1"/>
-			<dataarea name="flop" size="819200">
-				<rom name="legendlosttemple_disc1.adf" size="819200" crc="5a009377" sha1="f240cb2236bea621a4700c2b977e456bec436a2d" offset="0" />
 			</dataarea>
 		</part>
 		<part name="flop2" interface="floppy_3_5">
@@ -2135,17 +1976,6 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 		</part>
 	</software>
 
-	<software name="overload">
-		<description>Overload</description>
-		<year>19??</year>
-		<publisher>Paradise</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="overload_paradise.adf" size="819200" crc="297930ca" sha1="75ca1cd1877e07d0e377cfa8aa439a6e2cf28bfb" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="pacmania">
 		<description>Pac-Mania</description>
 		<year>1991</year>
@@ -2189,70 +2019,6 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 			<feature name="part_id" value="Disc 2"/>
 			<dataarea name="flop" size="819200">
 				<rom name="Pandora's Box (1991)(Fourth Dimension)(Disc 2 of 2).adf" size="819200" crc="436ee7fe" sha1="6e95a0c794e21b27a8b14b39ebc1040aa10dada3" offset="0"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pandora">
-		<description>Pandora's Box (RISC OS 2)</description>
-		<year>1991</year>
-		<publisher>Fourth Dimension</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="529533">
-				<rom name="pandora's box (1991) (the fourth dimension) (risc os 2) (disk 1 of 2).apd" size="529533" crc="fa3d2fbe" sha1="de3172906cede08a23b2d113927e8fb3ae1cee32" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<dataarea name="flop" size="488987">
-				<rom name="pandora's box (1991) (the fourth dimension) (risc os 2) (disk 2 of 2).apd" size="488987" crc="85065564" sha1="489a13bd025bb701e43290b6545dd93da53ba228" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pandoraa" cloneof="pandora">
-		<description>Pandora's Box (RISC OS 2, Alt)</description>
-		<year>1991</year>
-		<publisher>Fourth Dimension</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="pandora's box (1991)(fourth dimension)(disc 1 of 2).adf" size="819200" crc="10d95572" sha1="3d9d3e968d8acc0d868e1d392e2961b30210e944" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="pandora's box (1991)(fourth dimension)(disc 2 of 2).adf" size="819200" crc="436ee7fe" sha1="6e95a0c794e21b27a8b14b39ebc1040aa10dada3" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pandorab" cloneof="pandora">
-		<description>Pandora's Box (RISC OS 2, Alt 2)</description>
-		<year>1991</year>
-		<publisher>Fourth Dimension</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="pandora disk1.adf" size="819200" crc="86f43eb0" sha1="33e52809d73ea6fcc958f14cf8c9cafc1aa1efdb" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="pandora disk2.adf" size="819200" crc="21a916a0" sha1="f70e76df54b70a306d1cca33f3384847c6e0f0f5" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pandora3" cloneof="pandora">
-		<description>Pandora's Box (RISC OS 3)</description>
-		<year>1991</year>
-		<publisher>Fourth Dimension</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="pandora's box (1991) (the fourth dimension) (risc os 3) (disk 1 of 2).adf" size="819200" crc="cf7680d9" sha1="ada27a28749a8e0dbf228e64c4f7ace87b241993" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="pandora's box (1991) (the fourth dimension) (risc os 3) (disk 2 of 2).adf" size="819200" crc="f8a5c2ff" sha1="36601756fa4cc4ea194baabe97243f93c0c3b50b" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2393,38 +2159,6 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 		</part>
 	</software>
 
-	<software name="powrbanda" cloneof="powrband">
-		<description>Powerband (Alt)</description>
-		<year>1990</year>
-		<publisher>Fourth Dimension</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="428800">
-				<rom name="powerband (the forth dimension) (disk 1 of 2).apd" size="428800" crc="e6fcbfc7" sha1="dbaae87fff47320230b9ac8ce9ea457b4ed3b26d" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<dataarea name="flop" size="186424">
-				<rom name="powerband (the forth dimension) (disk 2 of 2).apd" size="186424" crc="dea85078" sha1="9270e5db93fd74bddd907212a5966c6c62d7a25e" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="powrbandb" cloneof="powrband">
-		<description>Powerband (Alt 2)</description>
-		<year>1990</year>
-		<publisher>Fourth Dimension</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="pwrbnd disk1.adf" size="819200" crc="7cd9684c" sha1="ce8d93e2f830de78a5ad2fcad65a271822fc515d" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="pwrbnd disk2.adf" size="819200" crc="f9d54922" sha1="20991cdfa6803a19e40a9ddf9a21eb0991b7eb6d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="premmngr">
 		<description>Premier Manager</description>
 		<year>1994</year>
@@ -2436,17 +2170,6 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 		</part>
 	</software>
 
-	<software name="pushy">
-		<description>Pushy</description>
-		<year>19??</year>
-		<publisher>Fourth Dimension</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="471552">
-				<rom name="pushy (the forth dimension).apd" size="471552" crc="b54c5d4c" sha1="e90da1a5b19f2aff3bd523048a1f86268378b38b" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="quazer">
 		<description>Quazer</description>
 		<year>1988</year>
@@ -2454,17 +2177,6 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="819200">
 				<rom name="Quazer (Impact).adf" size="819200" crc="2be098ca" sha1="f1a80a6d382f3416656f2c5150bc67e2326f28fb" offset="0"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="qfg">
-		<description>Quest For Gold </description>
-		<year>1992</year>
-		<publisher>Krisalis</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1638400">
-				<rom name="quest for gold (1992) (krisalis) [hd].adf" size="1638400" crc="7b6beaae" sha1="cbdb9fda573acd435a6ac9d34071e7f47d4dbf35" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2486,18 +2198,7 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 		<publisher>Superior Software/Acornsoft</publisher>
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="819200">
-				<rom name="Repton 3 (1988)(Superior Software).adf" size="819200" crc="619c1446" sha1="cc6acf8b65204c314b7e2c8dc764482c7fbd9218" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="repton3ca" cloneof="repton3">
-		<description>Repton 3 [alt cracked?]</description>
-		<year>1988</year>
-		<publisher>Superior Software/Acornsoft</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="repton 3 (1988)(superior).adf" size="819200" crc="65d920c0" sha1="4758ae76abebf310c1b631ef0ebf82e4afcc072e" offset="0" />
+				<rom name="Repton 3 (1988)(Superior).adf" size="819200" crc="619c1446" sha1="cc6acf8b65204c314b7e2c8dc764482c7fbd9218" offset="0"/>
 			</dataarea>
 		</part>
 	</software>
@@ -2557,27 +2258,6 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 		</part>
 	</software>
 
-	<software name="saloon">
-		<description>Saloon Cars Deluxe?</description>
-		<year>19??</year>
-		<publisher>Fourth Dimension?</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="saloon disk1.adf" size="819200" crc="cc3f43bf" sha1="13ec9de644ea3dfd2b2d4c61bb31d134fcda0241" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="saloon disk2.adf" size="819200" crc="ee46f1d1" sha1="5c0f1d472a2c4cb1454d35181f75c7fc0e6c77bc" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="saloon disk3.adf" size="819200" crc="9a229375" sha1="6bae4ab5358711c82d5dd0b01272f2c655ab5fd1" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="sensoccr">
 		<description>Sensible Soccer</description>
 		<year>1993</year>
@@ -2596,22 +2276,6 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 		</part>
 	</software>
 
-	<software name="sensoccra" cloneof="sensoccr">
-		<description>Sensible Soccer (Alt)</description>
-		<year>1993</year>
-		<publisher>Renegade</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="sensible soccer  disk 1.adf" size="819200" crc="fec2e3b4" sha1="896284d7f024c2c0b7f62f51b5177af1c83f6372" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="sensible soccer  disk 2.adf" size="819200" crc="25f42eaa" sha1="f264327bf8418fa630f84eb56cc7b0d0a2e23b3a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="serpents">
 		<description>Serpents</description>
 		<year>1993</year>
@@ -2623,33 +2287,6 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 		</part>
 	</software>
 
-	<software name="serpentsa" cloneof="serpents">
-		<description>Serpents (Alt)</description>
-		<year>1993</year>
-		<publisher>CIS</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="serpents (19xx)(cambridge internation software).adf" size="819200" crc="9f8adde3" sha1="c1a896dcac388597aa1f6a25217393d510431af4" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="silvball">
-		<description>SilverBall</description>
-		<year>19??</year>
-		<publisher>Fourth Dimension</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="354864">
-				<rom name="silverball (the forth dimension) (disk 1 of 2).apd" size="354864" crc="ef86205e" sha1="6b16a17fe46b9ba726b64af64484e6a3383fb2c8" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<dataarea name="flop" size="682374">
-				<rom name="silverball (the forth dimension) (disk 2 of 2).apd" size="682374" crc="628c0d26" sha1="6938a9461dfa5a6b7dbca155a05ded6c64ecb207" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="simcity">
 		<description>Sim City</description>
 		<year>1993</year>
@@ -2657,22 +2294,6 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="814080">
 				<rom name="sim city (1993)(krisalis).adf" size="814080" crc="0c9221a9" sha1="62baf7ffd2162b58ec7e8b2b611dea830d449caa" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="simcity2k">
-		<description>Sim City 2000</description>
-		<year>199?</year>
-		<publisher>Krisalis</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1638400">
-				<rom name="riscos_simcity2k_1.adf" size="1638400" crc="b24ddb12" sha1="bb6c90d5070be7acbd9818bc064ff540f99e2550" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<dataarea name="flop" size="1638400">
-				<rom name="riscos_simcity2k_2.adf" size="1638400" crc="3d041832" sha1="8b9fc51b8850464b1fdd9665915980f1c33fc5e1" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2843,35 +2464,8 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 		<year>1994</year>
 		<publisher>Fednet</publisher>
 		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="741791">
-				<rom name="star fighter 3000 (1994) (fednet software) (disk 1 of 2).apd" size="741791" crc="d78fbf9c" sha1="ec21ac734f6ca1d1fd88fd393efcda84a1a7173f" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<dataarea name="flop" size="673495">
-				<rom name="star fighter 3000 (1994) (fednet software) (disk 2 of 2).apd" size="673495" crc="9ad91bac" sha1="12e98cbeac31a498012499b576765e2c29ea9b08" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="starf3ka" cloneof="starf3k">
-		<description>Star Fighter 3000 (Alt)</description>
-		<year>1994</year>
-		<publisher>Fednet</publisher>
-		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="819200">
 				<rom name="star fighter 3000 (1994)(fednet).adf" size="819200" crc="b894e371" sha1="6f2c094fd7d1c7eaebb79e8343d52cf6bfb86d1b" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="starf3kb" cloneof="starf3k">
-		<description>Star Fighter 3000 (Alt 2)</description>
-		<year>1994</year>
-		<publisher>Fednet</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="star fighter 3000 (y) (fednet).adf" size="819200" crc="68c5486e" sha1="d201b7fa5a89503b055da7d79239eebe183c98aa" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -2904,23 +2498,6 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 		<publisher>Fourth Dimension</publisher>
 		<part name="flop1" interface="floppy_3_5">
 			<feature name="part_id" value="Disc 1"/>
-			<dataarea name="flop" size="642364">
-				<rom name="stunt racer 2000 (1993) (the fourth dimension) (disk 1 of 2).apd" size="642364" crc="d3ce7c31" sha1="2d698fd596571fc83ad1dc7f0e97d0fd3c4a2994" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<dataarea name="flop" size="662863">
-				<rom name="stunt racer 2000 (1993) (the fourth dimension) (disk 2 of 2) [m].apd" size="662863" crc="821aabfe" sha1="d233ff75bea779e6a084c86b0a139a148af58bc0" offset="0" status="baddump" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="stuntr2ka" cloneof="stuntr2k">
-		<description>Stunt Racer 2000 (Alt)</description>
-		<year>1993</year>
-		<publisher>Fourth Dimension</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Disc 1"/>
 			<dataarea name="flop" size="819200">
 				<rom name="Stunt Racer 2000 (1993) (The Fourth Dimension) (Disk 1 of 2).adf" size="819200" crc="05f9f5b2" sha1="46416a6dbf8c129a3ba198e9af74eae874cfc13f" offset="0"/>
 			</dataarea>
@@ -2929,24 +2506,6 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 			<feature name="part_id" value="Disc 2"/>
 			<dataarea name="flop" size="819200">
 				<rom name="Stunt Racer 2000 (1993) (The Fourth Dimension) (Disk 2 of 2).adf" size="819200" crc="bc0c9d91" sha1="f346798a42b348790604b37d4273c3b6ffcc0bf2" offset="0"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="stuntr2kb" cloneof="stuntr2k">
-		<description>Stunt Racer 2000 (Alt 2)</description>
-		<year>1993</year>
-		<publisher>Fourth Dimension</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<feature name="part_id" value="Disc 1"/>
-			<dataarea name="flop" size="819200">
-				<rom name="stunt racer 2000 (1993) (the fourth dimension) (disk 1 of 2).adf" size="819200" crc="05f9f5b2" sha1="46416a6dbf8c129a3ba198e9af74eae874cfc13f" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<feature name="part_id" value="Disc 2"/>
-			<dataarea name="flop" size="814080">
-				<rom name="stunt racer (19xx)(-)(disk 2 of 2).adf" size="814080" crc="5434dea2" sha1="e72e65babcd3db339fea0391aa6cad3c70ee2f60" offset="0" />
 			</dataarea>
 		</part>
 	</software>
@@ -3127,17 +2686,6 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 		</part>
 	</software>
 
-	<software name="vgolfaug">
-		<description>Virtual Golf - Augusta Course</description>
-		<year>19??</year>
-		<publisher>Fourth Dimension</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="700303">
-				<rom name="virtual golf augusta course (the forth dimension).apd" size="700303" crc="3066ea31" sha1="6570e940fde35cbbd159e9d0b0ec0ed32d3ee0c9" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="warlocks">
 		<description>Warlocks (Demo, Bad Dump?)</description>
 		<year>1993</year>
@@ -3194,28 +2742,7 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 	</software>
 
 	<software name="wolf3d">
-		<description>Wolfenstein 3D (v1.00)</description>
-		<year>1994</year>
-		<publisher>Powerslave Software</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="403340">
-				<rom name="wolfenstein 3d (1994) (powerslave software) (disk 0 of 2).apd" size="403340" crc="1bc46d3e" sha1="76cc19e9d87c10e48117fcf629ef67fa85fc08f1" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<dataarea name="flop" size="391042">
-				<rom name="wolfenstein 3d (1994) (powerslave software) (disk 1 of 2).apd" size="391042" crc="7a4c3859" sha1="dbc7903567fe94e994ac08546c16aa3307e9d610" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-			<dataarea name="flop" size="570675">
-				<rom name="wolfenstein 3d (1994) (powerslave software) (disk 2 of 2).apd" size="570675" crc="08f54602" sha1="8ee98e21229865656fb4f82fde6bc00e35b37a59" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="wolf3da" cloneof="wolf3d">
-		<description>Wolfenstein 3D (v1.00, Alt, Bad Dump?)</description>
+		<description>Wolfenstein 3D</description>
 		<year>1994</year>
 		<publisher>Powerslave Software</publisher>
 		<part name="flop1" interface="floppy_3_5">
@@ -3784,362 +3311,6 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 
 	<!-- Compilations -->
 
-	<software name="demos1">
-		<description>Demos 1</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1638400">
-				<rom name="demos01.adf" size="1638400" crc="2d233e25" sha1="aa2c3dbbc38031cbd81657813592ecf3fdf7615d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="demos2">
-		<description>Demos 2</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1638400">
-				<rom name="demos02.adf" size="1638400" crc="86fee24e" sha1="4ce7a0a49d87b5a4163824813df4147050ab01c9" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="demos3">
-		<description>Demos 3</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1638400">
-				<rom name="demos03.adf" size="1638400" crc="e6fb2a6f" sha1="952bf209668ba670fffa4d42e7bbe1222ff1e5c3" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="demos4">
-		<description>Demos 4</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1638400">
-				<rom name="demos04.adf" size="1638400" crc="f26c8580" sha1="d85c99f6edcd82da7ee71aead64ebade536e57d4" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="demos5">
-		<description>Demos 5</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="demos05.adf" size="819200" crc="e83fdbf1" sha1="62f5619de90668a9a0b936a1d58ab75d9f3a9a0e" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="demos6">
-		<description>Demos 6</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="demos06.adf" size="819200" crc="8fdaa1b1" sha1="f14de7a2ae372a16eeb5ac0ed9fb8262beeb9b6d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="demos7">
-		<description>Demos 7</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="demos07.adf" size="819200" crc="8ffd9092" sha1="f52a7494d60927a45b8c7a7e9c11f4009b9dbb0c" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="demos8">
-		<description>Demos 8</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="demos08.adf" size="819200" crc="33afa917" sha1="814281121f15e01077cb8efcd57925127daae666" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="demos9">
-		<description>Demos 9</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1638400">
-				<rom name="demos09.adf" size="1638400" crc="8e90f8ed" sha1="8da9ab76eedda675edf0194e993d249fa1bb542a" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="demos10">
-		<description>Demos 10</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1638400">
-				<rom name="demos10.adf" size="1638400" crc="ae3e3df2" sha1="cb2d56974cc19ee3b45d7e2ec9fd3041cfe7eb6d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gamedemo4">
-		<description>Game Demos 4</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="gamedemos04.adf" size="819200" crc="942f2552" sha1="502d7f78bf828462a181c62d878dfb812976d2ad" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gamedemo5">
-		<description>Game Demos 5</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="gamedemos05.adf" size="819200" crc="a6b9146b" sha1="4e18477954567312e87f6ab10723b15a88fbc972" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gamedemo6">
-		<description>Game Demos 6</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="gamedemos06.adf" size="819200" crc="5716b019" sha1="8d9d51cd5283858b968358fc7d9eb6b6f87904ec" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gamedemo7">
-		<description>Game Demos 7</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="gamedemos07.adf" size="819200" crc="44305908" sha1="f9c87cf8e036a6157105615b6b4c359465a2bf77" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gamedemo8">
-		<description>Game Demos 8</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="gamedemos08.adf" size="819200" crc="176748b4" sha1="20ed6ef8871fe07bf421e1572e0369f1ac11ccc5" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gamedemo9">
-		<description>Game Demos 9</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="gamedemos09.adf" size="819200" crc="b12b25f5" sha1="9d1de071c8cfa311e98a34c548745113a7a3c3e1" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gamedemo10">
-		<description>Game Demos 10</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="gamedemos10.adf" size="819200" crc="269e0dcb" sha1="1ac0a6def320f0c391c581a5e8c559c4392d0cc7" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gamedemo11">
-		<description>Game Demos 11</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="gamedemos11.adf" size="819200" crc="20b56213" sha1="dea12d5ed48fb0ec5b0d4067e5fd641ae09acc78" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gamedemo12">
-		<description>Game Demos 12</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="gamedemos12.adf" size="819200" crc="fa5cad28" sha1="02a548106287f0ea662fe404cb2fcdc7f14089dd" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gamedemo13">
-		<description>Game Demos 13</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="gamedemos13.adf" size="819200" crc="d7bfde95" sha1="3a96bdc6a341ebfd09ac837f93e3917e655a17aa" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gamedemo14">
-		<description>Game Demos 14</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="gamedemos14.adf" size="819200" crc="7640793e" sha1="60f95260f954eefdc82a60f7240eec618d7a9fdf" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gamedemo15">
-		<description>Game Demos 15</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1638400">
-				<rom name="gamedemos15.adf" size="1638400" crc="d8d9ae66" sha1="cd0da67aee1c26f2fbd231edb84614e01de2fa4c" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gamedemo16">
-		<description>Game Demos 16</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="gamedemos16.adf" size="819200" crc="f3f1ad85" sha1="3a6ed8a1688abb1e74046258979fac27ad3d11d0" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gamedemo17">
-		<description>Game Demos 17</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="gamedemos17.adf" size="819200" crc="6f425bcf" sha1="834d966f29ee19cafa1159fe11558d482fc7a055" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gamedemo18">
-		<description>Game Demos 18</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="gamedemos18.adf" size="819200" crc="971f25f5" sha1="d4bb79935e2c1c70e946d02fdac1d79a013bc523" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gamedemo19">
-		<description>Game Demos 19</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="gamedemos19.adf" size="819200" crc="7a7ce25c" sha1="829a018623c88d237c43c5ea83e68dd87f9e5071" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gamedemo20">
-		<description>Game Demos 20</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="gamedemos20.adf" size="819200" crc="2dd96e66" sha1="f0f1190d00f55f6b491efcfd5db24d546f56d49e" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gamedemo21">
-		<description>Game Demos 21</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="gamedemos21.adf" size="819200" crc="d1867360" sha1="eba52f1fc19bce85542fc23b00334b2394035b72" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gamedemo22">
-		<description>Game Demos 22</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="gamedemos22.adf" size="819200" crc="ce75689f" sha1="44e71d71d0b88a5b9f71c1ff0ccaa1c329e68276" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="gamedemo23">
-		<description>Game Demos 23</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="gamedemos23.adf" size="819200" crc="d33458b5" sha1="c8ddee99f42b1e54954a21095313b0c2924afe0c" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="msc">
-		<description>Magnetic Scrolls Collection</description>
-		<year>1991</year>
-		<publisher>Magnetic Scrolls</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="magnetic scrolls collection (1991)(magnetic scrolls) disc 1.adf" size="819200" crc="02909de8" sha1="d3e79d8676253c85d00fe9c0dea7475aa9dffabb" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop2" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="magnetic scrolls collection (1991)(magnetic scrolls) disc 2.adf" size="819200" crc="858c5e34" sha1="b3c45b460ad197028e1ead9146b7bb7255d37d53" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop3" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="magnetic scrolls collection (1991)(magnetic scrolls) disc 3.adf" size="819200" crc="cc3a70d6" sha1="05e3de49a0e317da884abef425ab98c3c4f31202" offset="0" />
-			</dataarea>
-		</part>
-		<part name="flop4" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="magnetic scrolls collection (1991)(magnetic scrolls) disc 4.adf" size="819200" crc="a60e8bcf" sha1="1c10d44e96f90d48a866e5645dbf6ff73c0332d3" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
 	<software name="mprg01">
 		<description>Multi-Program 01</description>
 		<year>19??</year>
@@ -4445,127 +3616,6 @@ Zelanites: The Onslaught by Micro Power (RiscOS2)
 		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="flop" size="819200">
 				<rom name="multi-program 26 (19xx)(-).adf" size="819200" crc="ed67c810" sha1="b914a139f000b9d18137e79b836b8c685920970c" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pdgames1">
-		<description>Public Domain Games 1</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="pdgames01.adf" size="819200" crc="791acd8c" sha1="d235855bc131e605ee7d3d1ce3dfa99e04469230" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pdgames2">
-		<description>Public Domain Games 2</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="pdgames02.adf" size="819200" crc="000bfe2f" sha1="275a93517a6366942b32af8ef9ff5a4eefe5f57f" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pdgames3">
-		<description>Public Domain Games 3</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1638400">
-				<rom name="pdgames03.adf" size="1638400" crc="ec650ace" sha1="5bf7651aa0232baa859aac5055b2560fa3a77adb" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pdgames4">
-		<description>Public Domain Games 4</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1638400">
-				<rom name="pdgames04.adf" size="1638400" crc="e8ced76b" sha1="c69338ea5c952da601f186531021fb7291759cfb" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pdgames5">
-		<description>Public Domain Games 5</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1638400">
-				<rom name="pdgames05.adf" size="1638400" crc="1a5c4a54" sha1="e4c261ecf509bc015de7090429b900e9cb8567d7" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pdgames6">
-		<description>Public Domain Games 6</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1638400">
-				<rom name="pdgames06.adf" size="1638400" crc="ac3ae61a" sha1="4f5e94f8f3ad09af83b96b715be7ec4b66404148" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pdgames7">
-		<description>Public Domain Games 7</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="pdgames07.adf" size="819200" crc="08a41428" sha1="560a93d70e9d4029e04e5dc33eaa1121d25a240d" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pdgames8">
-		<description>Public Domain Games 8</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="pdgames08.adf" size="819200" crc="c5771660" sha1="1ad0034654589008bf86339dc1392c5a6e99ecdc" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="pdgames9">
-		<description>Public Domain Games 9</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="pdgames09.adf" size="819200" crc="01484cb3" sha1="c77d6380e7587075fd7ebaedc34d77cf0c871183" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="textutil1">
-		<description>Text Utilities 1</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1638400">
-				<rom name="textutil01.adf" size="1638400" crc="b58a4f2f" sha1="1af7f7b7c9874b3598f8ed5d3111430f1ea2093b" offset="0" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="textutil2">
-		<description>Text Utilities 2</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-		<part name="flop1" interface="floppy_3_5">
-			<dataarea name="flop" size="1638400">
-				<rom name="textutil02.adf" size="1638400" crc="5a8db654" sha1="5966905bb45933c898ded5b3ae9fa557ef820321" offset="0" />
 			</dataarea>
 		</part>
 	</software>

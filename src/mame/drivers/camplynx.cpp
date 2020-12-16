@@ -128,7 +128,6 @@
 
 #include "formats/camplynx_cas.h"
 #include "formats/camplynx_dsk.h"
-#include "softlist.h"
 
 #include "screen.h"
 #include "speaker.h"
@@ -808,7 +807,6 @@ static MACHINE_CONFIG_START( lynx_disk )
 	MCFG_FLOPPY_DRIVE_SOUND(true)
 	MCFG_FLOPPY_DRIVE_ADD("fdc:1", camplynx_floppies, "525qd", camplynx_state::camplynx_floppy_formats)
 	MCFG_FLOPPY_DRIVE_SOUND(true)
-	MCFG_SOFTWARE_LIST_ADD("flop_list","camplynx_flop")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_START( lynx48k )
@@ -833,8 +831,7 @@ static MACHINE_CONFIG_START( lynx48k )
 	MCFG_CASSETTE_ADD("cassette")
 	MCFG_CASSETTE_FORMATS(lynx48k_cassette_formats)
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY | CASSETTE_SPEAKER_ENABLED | CASSETTE_MOTOR_DISABLED)
-	MCFG_CASSETTE_INTERFACE("camplynx_cass")
-	MCFG_SOFTWARE_LIST_ADD("cass_list","camplynx_cass")
+	//MCFG_CASSETTE_INTERFACE("camplynx_cass")
 
 	/* devices */
 	MCFG_MC6845_ADD("crtc", MC6845, "screen", XTAL_12MHz / 8 )
@@ -850,7 +847,6 @@ static MACHINE_CONFIG_DERIVED( lynx96k, lynx48k )
 	MCFG_CPU_IO_MAP(lynx96k_io)
 
 	MCFG_FRAGMENT_ADD(lynx_disk)
-	MCFG_SOFTWARE_LIST_FILTER("flop_list", "96")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_START( lynx128k )
@@ -875,8 +871,7 @@ static MACHINE_CONFIG_START( lynx128k )
 	MCFG_CASSETTE_ADD("cassette")
 	MCFG_CASSETTE_FORMATS(lynx128k_cassette_formats)
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY | CASSETTE_SPEAKER_ENABLED | CASSETTE_MOTOR_DISABLED)
-	MCFG_CASSETTE_INTERFACE("camplynx_cass")
-	MCFG_SOFTWARE_LIST_ADD("cass_list","camplynx_cass")
+	//MCFG_CASSETTE_INTERFACE("camplynx_cass")
 
 	/* devices */
 	MCFG_MC6845_ADD("crtc", MC6845, "screen", XTAL_12MHz / 8 )
@@ -886,7 +881,6 @@ static MACHINE_CONFIG_START( lynx128k )
 	MCFG_MC6845_OUT_VSYNC_CB(INPUTLINE("maincpu", INPUT_LINE_IRQ0))
 
 	MCFG_FRAGMENT_ADD(lynx_disk)
-	MCFG_SOFTWARE_LIST_FILTER("flop_list", "128")
 MACHINE_CONFIG_END
 
 DRIVER_INIT_MEMBER(camplynx_state, lynx48k)

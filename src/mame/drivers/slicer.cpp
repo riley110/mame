@@ -12,7 +12,6 @@
 #include "bus/rs232/rs232.h"
 #include "bus/isa/isa.h"
 #include "bus/scsi/scsi.h"
-#include "softlist.h"
 
 class slicer_state : public driver_device
 {
@@ -135,8 +134,6 @@ static MACHINE_CONFIG_START( slicer )
 	MCFG_SCSI_OUTPUT_LATCH_ADD("sasi_data_out", "sasi")
 	MCFG_DEVICE_ADD("sasi_data_in", INPUT_BUFFER, 0)
 	MCFG_DEVICE_ADD("sasi_ctrl_in", INPUT_BUFFER, 0)
-
-	MCFG_SOFTWARE_LIST_ADD("flop_list", "slicer")
 MACHINE_CONFIG_END
 
 ROM_START( slicer )

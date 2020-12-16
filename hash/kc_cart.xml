@@ -1,13 +1,11 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<softwarelist name="kc_cart" description="VEB Mikroelektronik KC 85 cartridges">
 
+<softwarelist name="kc_cart" description="VEB Mikroelektronik KC 85 cartridges">
 	<software name="basic">
-		<description>BASIC</description>
+		<description>BASIC (M006)</description>
 		<year>198?</year>
 		<publisher>VEB Mikroelektronik</publisher>
-		<info name="serial" value="M006"/>
-
 		<part name="cart" interface="kc_cart">
 			<feature name="slot" value="m006"/>
 			<feature name="cart_id" value="0xfc" />
@@ -18,11 +16,9 @@
 	</software>
 
 	<software name="texor">
-		<description>Texor</description>
+		<description>Texor (M012)</description>
 		<year>1988</year>
 		<publisher>VEB Mikroelektronik</publisher>
-		<info name="serial" value="M012"/>
-
 		<part name="cart" interface="kc_cart">
 			<feature name="cart_id" value="0xfb" />
 			<dataarea name="rom" size="0x2000">
@@ -32,11 +28,9 @@
 	</software>
 
 	<software name="forth">
-		<description>FORTH</description>
+		<description>FORTH (M026)</description>
 		<year>1989</year>
 		<publisher>VEB Mikroelektronik</publisher>
-		<info name="serial" value="M026"/>
-
 		<part name="cart" interface="kc_cart">
 			<feature name="cart_id" value="0xfb" />
 			<dataarea name="rom" size="0x2000">
@@ -46,11 +40,9 @@
 	</software>
 
 	<software name="develop">
-		<description>Development</description>
+		<description>Development (M027)</description>
 		<year>1989</year>
 		<publisher>VEB Mikroelektronik</publisher>
-		<info name="serial" value="M027"/>
-
 		<part name="cart" interface="kc_cart">
 			<feature name="cart_id" value="0xfb" />
 			<dataarea name="rom" size="0x2000">
@@ -60,11 +52,9 @@
 	</software>
 
 	<software name="typestar">
-		<description>TypeStar</description>
+		<description>TypeStar (M033)</description>
 		<year>1990</year>
 		<publisher>VEB Mikroelektronik</publisher>
-		<info name="serial" value="M033"/>
-
 		<part name="cart" interface="kc_cart">
 			<feature name="slot" value="m033"/>
 			<feature name="cart_id" value="0x01" />
@@ -73,5 +63,4 @@
 			</dataarea>
 		</part>
 	</software>
-
 </softwarelist>

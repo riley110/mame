@@ -38,7 +38,6 @@
 
 #include "formats/oric_dsk.h"
 #include "formats/oric_tap.h"
-#include "softlist.h"
 
 
 class oric_state : public driver_device
@@ -804,7 +803,6 @@ static MACHINE_CONFIG_START( oric )
 	MCFG_CASSETTE_ADD( "cassette" )
 	MCFG_CASSETTE_FORMATS(oric_cassette_formats)
 	MCFG_CASSETTE_DEFAULT_STATE(CASSETTE_PLAY | CASSETTE_MOTOR_DISABLED)
-	MCFG_CASSETTE_INTERFACE("oric_cass")
 
 	MCFG_TIMER_DRIVER_ADD_PERIODIC("tape_timer", oric_state, update_tape, attotime::from_hz(4800))
 
@@ -818,10 +816,6 @@ static MACHINE_CONFIG_START( oric )
 
 	/* extension port */
 	MCFG_ORICEXT_ADD( "ext", oricext_intf, nullptr, "maincpu", WRITELINE(oric_state, ext_irq_w))
-	
-	/* software lists */
-	MCFG_SOFTWARE_LIST_ADD("cass_list","oric_cass")
-	MCFG_SOFTWARE_LIST_ADD("flop_list","oric_flop")
 MACHINE_CONFIG_END
 
 static MACHINE_CONFIG_DERIVED( prav8d, oric )

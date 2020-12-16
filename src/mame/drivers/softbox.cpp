@@ -416,8 +416,7 @@ static MACHINE_CONFIG_START( softbox )
 	MCFG_IMI7000_BUS_ADD("imi5000h", nullptr, nullptr, nullptr)
 
 	// software lists
-	MCFG_SOFTWARE_LIST_ADD("flop_list", "softbox_flop")
-	MCFG_SOFTWARE_LIST_ADD("hdd_list", "softbox_hdd")
+	MCFG_SOFTWARE_LIST_ADD("flop_list", "softbox")
 MACHINE_CONFIG_END
 
 
