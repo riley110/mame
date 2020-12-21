@@ -1,21 +1,25 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<!-- NOTE: This list is here only to document available dumps and it's not used (yet) by MAME! -->
 
 <!--
 These CHD files are part of the Apple /// Ready-to-Run package by Datajerk
 available at https://github.com/datajerk/apple3rtr.
-The necessary floppy disks are in the apple3.xml list.
+
+The necessary BOS floppy disk is mounted automatically, though the CFFA2
+card must be added manually.
+
+Usage: ./mame64 apple3 -sl1 cffa2 -hard1 a3rtr
 -->
-<softwarelist name="apple3_hd" description="Apple III hard disks">
+<softwarelist name="apple3_hdd" description="Apple /// hard disks">
 
 	<software name="a3rtr">
 		<description>Apple /// Ready-to-Run (v2.0)</description>
 		<year>2014</year>
 		<publisher>Datajerk</publisher>
+		<!--<sharedfeat name="sl1_default" value="cffa2"/>-->
 		<sharedfeat name="requirement" value="apple3_flop:boshd" />
 
-		<part name="hdd" interface="ide_hd">
+		<part name="hdd" interface="ide_hdd">
 			<diskarea name="harddriv">
 				<disk name="apple3rtr (v2.0)" sha1="c708956bbd572f4e3d90269c2d3ed3d708afbab7" writeable="yes"/>
 			</diskarea>
@@ -26,9 +30,10 @@ The necessary floppy disks are in the apple3.xml list.
 		<description>Apple /// Ready-to-Run (v1.9)</description>
 		<year>2014</year>
 		<publisher>Datajerk</publisher>
+		<!--<sharedfeat name="sl1_default" value="cffa2"/>-->
 		<sharedfeat name="requirement" value="apple3_flop:boshd" />
 
-		<part name="hdd" interface="ide_hd">
+		<part name="hdd" interface="ide_hdd">
 			<diskarea name="harddriv">
 				<disk name="apple3rtr (v1.9)" sha1="42b05242fb3ff5b6a6febe3c3baa0808c254b1bf" writeable="yes"/>
 			</diskarea>
@@ -39,9 +44,10 @@ The necessary floppy disks are in the apple3.xml list.
 		<description>Apple /// Ready-to-Run (v1.8)</description>
 		<year>2014</year>
 		<publisher>Datajerk</publisher>
+		<!--<sharedfeat name="sl1_default" value="cffa2"/>-->
 		<sharedfeat name="requirement" value="apple3_flop:boshd" />
 
-		<part name="hdd" interface="ide_hd">
+		<part name="hdd" interface="ide_hdd">
 			<diskarea name="harddriv">
 				<disk name="apple3rtr (v1.8)" sha1="93eaa067a247d6a3f58bb4543560605e2d42d86b" writeable="yes"/>
 			</diskarea>
@@ -52,9 +58,10 @@ The necessary floppy disks are in the apple3.xml list.
 		<description>Apple /// Ready-to-Run (v1.7)</description>
 		<year>2014</year>
 		<publisher>Datajerk</publisher>
+		<!--<sharedfeat name="sl1_default" value="cffa2"/>-->
 		<sharedfeat name="requirement" value="apple3_flop:boshd" />
 
-		<part name="hdd" interface="ide_hd">
+		<part name="hdd" interface="ide_hdd">
 			<diskarea name="harddriv">
 				<disk name="apple3rtr (v1.7)" sha1="dfc1e24f9348721c8ee8a6d7b9eaa84eb765eeed" writeable="yes"/>
 			</diskarea>
@@ -65,9 +72,10 @@ The necessary floppy disks are in the apple3.xml list.
 		<description>Apple /// Ready-to-Run (v1.6)</description>
 		<year>2014</year>
 		<publisher>Datajerk</publisher>
+		<!--<sharedfeat name="sl1_default" value="cffa2"/>-->
 		<sharedfeat name="requirement" value="apple3_flop:boshd" />
 
-		<part name="hdd" interface="ide_hd">
+		<part name="hdd" interface="ide_hdd">
 			<diskarea name="harddriv">
 				<disk name="apple3rtr (v1.6)" sha1="284964cf677da5a03b11ee3de52e513bd7181a86" writeable="yes"/>
 			</diskarea>
@@ -78,9 +86,10 @@ The necessary floppy disks are in the apple3.xml list.
 		<description>Apple /// Ready-to-Run (v1.5)</description>
 		<year>2014</year>
 		<publisher>Datajerk</publisher>
+		<!--<sharedfeat name="sl1_default" value="cffa2"/>-->
 		<sharedfeat name="requirement" value="apple3_flop:boshd" />
 
-		<part name="hdd" interface="ide_hd">
+		<part name="hdd" interface="ide_hdd">
 			<diskarea name="harddriv">
 				<disk name="apple3rtr (v1.5)" sha1="31284a4b85692efdb6972f3192a75fb9262a32a6" writeable="yes"/>
 			</diskarea>
@@ -93,9 +102,10 @@ The necessary floppy disks are in the apple3.xml list.
 		<description>Apple /// Ready-to-Run (v1.3)</description>
 		<year>2014</year>
 		<publisher>Datajerk</publisher>
+		<!--<sharedfeat name="sl1_default" value="cffa2"/>-->
 		<sharedfeat name="requirement" value="apple3_flop:boshd" />
 
-		<part name="hdd" interface="ide_hd">
+		<part name="hdd" interface="ide_hdd">
 			<diskarea name="harddriv">
 				<disk name="apple3rtr (v1.3)" sha1="9c2809f801d1c0e23f6fbf426c9e6728573cd39c" writeable="yes"/>
 			</diskarea>
@@ -106,9 +116,10 @@ The necessary floppy disks are in the apple3.xml list.
 		<description>Apple /// Ready-to-Run (v1.2)</description>
 		<year>2014</year>
 		<publisher>Datajerk</publisher>
+		<!--<sharedfeat name="sl1_default" value="cffa2"/>-->
 		<sharedfeat name="requirement" value="apple3_flop:boshd" />
 
-		<part name="hdd" interface="ide_hd">
+		<part name="hdd" interface="ide_hdd">
 			<diskarea name="harddriv">
 				<disk name="apple3rtr (v1.2)" sha1="bcfb2e671112bcf9d100125e43c612bfd424f0f2" writeable="yes"/>
 			</diskarea>
@@ -119,9 +130,10 @@ The necessary floppy disks are in the apple3.xml list.
 		<description>Apple /// Ready-to-Run (v1.1)</description>
 		<year>2014</year>
 		<publisher>Datajerk</publisher>
+		<!--<sharedfeat name="sl1_default" value="cffa2"/>-->
 		<sharedfeat name="requirement" value="apple3_flop:boshd" />
 
-		<part name="hdd" interface="ide_hd">
+		<part name="hdd" interface="ide_hdd">
 			<diskarea name="harddriv">
 				<disk name="apple3rtr (v1.1)" sha1="145ce3d9ec89c839bae4d806f9a64cc05728f5e5" writeable="yes"/>
 			</diskarea>
@@ -132,9 +144,10 @@ The necessary floppy disks are in the apple3.xml list.
 		<description>Apple /// Ready-to-Run (v1.0)</description>
 		<year>2014</year>
 		<publisher>Datajerk</publisher>
+		<!--<sharedfeat name="sl1_default" value="cffa2"/>-->
 		<sharedfeat name="requirement" value="apple3_flop:boshd" />
 
-		<part name="hdd" interface="ide_hd">
+		<part name="hdd" interface="ide_hdd">
 			<diskarea name="harddriv">
 				<disk name="apple3rtr (v1.0)" sha1="a23e22358b28ecec0bcdafc53a067b19305abd0a" writeable="yes"/>
 			</diskarea>

@@ -160,7 +160,7 @@ void apple3_state::apple3(machine_config &config)
 	
 	/* software lists */
 	SOFTWARE_LIST(config, "flop_list").set_original("apple3_flop");
-	SOFTWARE_LIST(config, "hd_list").set_original("apple3_hd");
+	SOFTWARE_LIST(config, "hdd_list").set_original("apple3_hdd");
 }
 
 
