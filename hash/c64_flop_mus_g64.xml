@@ -3,24 +3,36 @@
 <softwarelist name="c64_flop_mus_g64" description="c64_flop_mus_g64">
 
 	<software name="set1" supported="no">
-		<description>SIDBurners 05</description>
-		<year>1999</year>
-		<publisher>Nostalgia</publisher>
+		<description>Painterboy Music</description>
+		<year>1987</year>
+		<publisher>Red Devils</publisher>
 
 		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="333744">
-				<rom name="sidburners 05 (1999)(nostalgia).g64" size="333744" crc="eab86e17" sha1="87ee86c9cccf9428ed9a7660280b8c18d80aafbd"/>
+			<dataarea name="rom" size="333744">
+				<rom name="painterboy music (1987)(red devils).g64" size="333744" crc="29598e4e" sha1="667d3c91c567f45d1d3ab1e60c8ac6264fd41a19"/>
 			</dataarea>
 		</part>
 	</software>
 
 	<software name="set2" supported="no">
+		<description>SIDBurners 05</description>
+		<year>1999</year>
+		<publisher>Nostalgia</publisher>
+
+		<part name="flop" interface="floppy_5_25">
+			<dataarea name="rom" size="333744">
+				<rom name="sidburners 05 (1999)(nostalgia).g64" size="333744" crc="eab86e17" sha1="87ee86c9cccf9428ed9a7660280b8c18d80aafbd"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="set3" supported="no">
 		<description>SIDBurners 05 (Alt)</description>
 		<year>1999</year>
 		<publisher>Nostalgia</publisher>
 
 		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="333744">
+			<dataarea name="rom" size="333744">
 				<rom name="sidburners 05 (1999)(nostalgia)[a].g64" size="333744" crc="8b1ceeb7" sha1="44d9faf41a2265bd2d7dc434fa56df8e4f762470"/>
 			</dataarea>
 		</part>
