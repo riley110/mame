@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<softwarelist name="c64_flop_acs" description="c64_flop_acs">
+<softwarelist name="c64_flop_acs" description="Commodore 64 misc. disks (Adventure Construction Set)">
 
-	<software name="set1" supported="no">
+	<software name="afbs" supported="no">
 		<description>Altered Fantasy Builder Set</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -14,7 +14,7 @@
 		</part>
 	</software>
 
-	<software name="set2" supported="no">
+	<software name="avantar" supported="no">
 		<description>Battle of Avantar</description>
 		<year>1984</year>
 		<publisher>Electronic Arts</publisher>
@@ -26,7 +26,7 @@
 		</part>
 	</software>
 
-	<software name="set3" supported="no">
+    <software name="avantara" cloneof="avantar" supported="no">
 		<description>Battle of Avantar (Alt)</description>
 		<year>1984</year>
 		<publisher>Electronic Arts</publisher>
@@ -38,7 +38,7 @@
 		</part>
 	</software>
 
-	<software name="set4" supported="no">
+    <software name="avantarb" cloneof="avantar" supported="no">
 		<description>Battle of Avantar (Alt 2)</description>
 		<year>1984</year>
 		<publisher>Electronic Arts</publisher>
@@ -50,7 +50,7 @@
 		</part>
 	</software>
 
-	<software name="set5" supported="no">
+	<software name="fbs" supported="no">
 		<description>C64 Fantasy Builder Set</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -62,7 +62,7 @@
 		</part>
 	</software>
 
-	<software name="set6" supported="no">
+	<software name="landadv" supported="no">
 		<description>C64 Lands of Adventuria</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -74,7 +74,7 @@
 		</part>
 	</software>
 
-	<software name="set7" supported="no">
+	<software name="sfbs" supported="no">
 		<description>C64 Science Fiction Builder Set</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -86,7 +86,7 @@
 		</part>
 	</software>
 
-	<software name="set8" supported="no">
+	<software name="spymbs" supported="no">
 		<description>C64 Spy - Mystery Builder Set</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -98,163 +98,93 @@
 		</part>
 	</software>
 
-	<software name="set9" supported="no">
-		<description>Jadeworld I - The Blood Sword (Side A)</description>
+	<software name="jadewld1" supported="no">
+		<description>Jadeworld I - The Blood Sword</description>
 		<year>1992</year>
 		<publisher>John Baber</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="174848">
 				<rom name="jadeworld i - blood sword, the (1992)(baber, john)(side a).d64" size="174848" crc="4956a481" sha1="74c99c3c8bcf8b66e1384ff299c3b42d7a515736"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set10" supported="no">
-		<description>Jadeworld I - The Blood Sword (Side B)</description>
-		<year>2018</year>
-		<publisher>John Baber</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
 			<dataarea name="rom" size="174848">
 				<rom name="jadeworld i - blood sword, the (2018)(baber, john)(side b).d64" size="174848" crc="c66f816f" sha1="89fad14833cd85c8008bdde9941c37005167b251"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set11" supported="no">
-		<description>Jadeworld II - Chan's Ambition (2018-11-01, Disk 0)</description>
+	<software name="jadewld2" supported="no">
+		<description>Jadeworld II - Chan's Ambition (2018-11-01)</description>
 		<year>2018</year>
 		<publisher>John Baber</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="174848">
 				<rom name="jadeworld ii - chan's ambition (2018-11-01)(baber, john)(disk 0 of 6).d64" size="174848" crc="8b9522f4" sha1="15e77a2bbcf7f80286b63dc3989569fb1fa93af3"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set12" supported="no">
-		<description>Jadeworld II - Chan's Ambition (2018-11-01, Disk 1)</description>
-		<year>2018</year>
-		<publisher>John Baber</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
 			<dataarea name="rom" size="174848">
 				<rom name="jadeworld ii - chan's ambition (2018-11-01)(baber, john)(disk 1 of 6).d64" size="174848" crc="0b788606" sha1="125d670f810d8f064f826e96f281818858044876"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set13" supported="no">
-		<description>Jadeworld II - Chan's Ambition (2018-11-01, Disk 2)</description>
-		<year>2018</year>
-		<publisher>John Baber</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop3" interface="floppy_5_25">
 			<dataarea name="rom" size="174848">
 				<rom name="jadeworld ii - chan's ambition (2018-11-01)(baber, john)(disk 2 of 6).d64" size="174848" crc="61ef8682" sha1="17966882553c88abb0f34c864020ca98332594bd"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set14" supported="no">
-		<description>Jadeworld II - Chan's Ambition (2018-11-01, Disk 3)</description>
-		<year>2018</year>
-		<publisher>John Baber</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop4" interface="floppy_5_25">
 			<dataarea name="rom" size="174848">
 				<rom name="jadeworld ii - chan's ambition (2018-11-01)(baber, john)(disk 3 of 6).d64" size="174848" crc="1027ad4b" sha1="287f5603c4855a49d031c169a1e264745a7f131f"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set15" supported="no">
-		<description>Jadeworld II - Chan's Ambition (2018-11-01, Disk 4)</description>
-		<year>2018</year>
-		<publisher>John Baber</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop5" interface="floppy_5_25">
 			<dataarea name="rom" size="174848">
 				<rom name="jadeworld ii - chan's ambition (2018-11-01)(baber, john)(disk 4 of 6).d64" size="174848" crc="4b36ac7a" sha1="36b2bb899b14f8195d5882562482e26c5b6b4675"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set16" supported="no">
-		<description>Jadeworld II - Chan's Ambition (2018-11-01, Disk 5)</description>
-		<year>2018</year>
-		<publisher>John Baber</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop6" interface="floppy_5_25">
 			<dataarea name="rom" size="174848">
 				<rom name="jadeworld ii - chan's ambition (2018-11-01)(baber, john)(disk 5 of 6).d64" size="174848" crc="b9153b0c" sha1="c3bdfed59139e496d852a7519844b242c0083a73"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set17" supported="no">
-		<description>Jadeworld III - The Force of Buddha's Palm (Disk 1)</description>
+	<software name="jadewld3" supported="no">
+		<description>Jadeworld III - The Force of Buddha's Palm</description>
 		<year>1994</year>
 		<publisher>John Baber</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="174848">
 				<rom name="jadeworld iii - the force of buddha's palm (1994)(baber, john)(disk 1 of 5).d64" size="174848" crc="bbfb0224" sha1="6e9677573c18fbc75d60796b8c612ae68e63c09a"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set18" supported="no">
-		<description>Jadeworld III - The Force of Buddha's Palm (Disk 2)</description>
-		<year>1994</year>
-		<publisher>John Baber</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
 			<dataarea name="rom" size="174848">
 				<rom name="jadeworld iii - the force of buddha's palm (1994)(baber, john)(disk 2 of 5).d64" size="174848" crc="6019f9e6" sha1="ad7246be87ee1e58d2f102cece21057997cf26de"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set19" supported="no">
-		<description>Jadeworld III - The Force of Buddha's Palm (Disk 3)</description>
-		<year>1994</year>
-		<publisher>John Baber</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop3" interface="floppy_5_25">
 			<dataarea name="rom" size="174848">
 				<rom name="jadeworld iii - the force of buddha's palm (1994)(baber, john)(disk 3 of 5).d64" size="174848" crc="f73dde8f" sha1="8b05fb766941be1e18490d69cd5e5a8528ef3eeb"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set20" supported="no">
-		<description>Jadeworld III - The Force of Buddha's Palm (Disk 4)</description>
-		<year>1994</year>
-		<publisher>John Baber</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop4" interface="floppy_5_25">
 			<dataarea name="rom" size="174848">
 				<rom name="jadeworld iii - the force of buddha's palm (1994)(baber, john)(disk 4 of 5).d64" size="174848" crc="925c9d44" sha1="1a2b09d3d943611b3e7a5a094c727911fbbda151"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set21" supported="no">
-		<description>Jadeworld III - The Force of Buddha's Palm (Disk 5)</description>
-		<year>1994</year>
-		<publisher>John Baber</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop5" interface="floppy_5_25">
 			<dataarea name="rom" size="174848">
 				<rom name="jadeworld iii - the force of buddha's palm (1994)(baber, john)(disk 5 of 5).d64" size="174848" crc="2c8478ff" sha1="a7b745affb1e21664208638bda2224f15cdf30eb"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set22" supported="no">
+	<software name="rivlight" supported="no">
 		<description>Rivers of Light</description>
 		<year>1984</year>
 		<publisher>Electronic Arts</publisher>
@@ -266,7 +196,7 @@
 		</part>
 	</software>
 
-	<software name="set23" supported="no">
+    <software name="rivlighta" cloneof="rivlight" supported="no">
 		<description>Rivers of Light (Alt)</description>
 		<year>1984</year>
 		<publisher>Electronic Arts</publisher>
@@ -278,7 +208,7 @@
 		</part>
 	</software>
 
-	<software name="set24" supported="no">
+    <software name="rivlightb" cloneof="rivlight" supported="no">
 		<description>Rivers of Light (Alt 2)</description>
 		<year>1984</year>
 		<publisher>Electronic Arts</publisher>
@@ -290,7 +220,7 @@
 		</part>
 	</software>
 
-	<software name="set25" supported="no">
+	<software name="mushitsu" supported="no">
 		<description>The Saga of Mushitsu</description>
 		<year>1993</year>
 		<publisher>John Baber</publisher>

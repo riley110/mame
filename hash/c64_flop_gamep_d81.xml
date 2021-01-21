@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<softwarelist name="c64_flop_gamep_d81" description="c64_flop_gamep_d81">
+<softwarelist name="c64_flop_gamep_d81" description="Commodore 64 misc. disks (Games - Previews - D81)">
 
-	<software name="set1" supported="no">
+	<software name="aftermat" supported="no">
 		<description>Aftermath</description>
 		<year>1990</year>
 		<publisher>Mark A. Dickenson</publisher>
@@ -14,10 +14,10 @@
 		</part>
 	</software>
 
-	<software name="set2" supported="no">
+	<software name="gng" supported="no">
 		<description>Ghosts'n Goblins Arcade (Demo, Cracked by N0)</description>
 		<year>2015</year>
-		<publisher>Butler, Chris - Verschueren, Erhan - Verschueren, Geert - Kac, Tomaz</publisher>
+		<publisher>Chris Butler - Erhan Verschueren - Geert Verschueren - Tomaz Kac</publisher>
 
 		<part name="flop" interface="floppy_3_5">
 			<dataarea name="flop" size="819200">
@@ -26,10 +26,10 @@
 		</part>
 	</software>
 
-	<software name="set3" supported="no">
+	<software name="gnga" cloneof="gng" supported="no">
 		<description>Ghosts'n Goblins Arcade (Demo, Cracked by N0, Alt)</description>
 		<year>2015</year>
-		<publisher>Butler, Chris - Verschueren, Erhan - Verschueren, Geert - Kac, Tomaz</publisher>
+		<publisher>Chris Butler - Erhan Verschueren - Geert Verschueren - Tomaz Kac</publisher>
 
 		<part name="flop" interface="floppy_3_5">
 			<dataarea name="flop" size="819200">
@@ -38,7 +38,7 @@
 		</part>
 	</software>
 
-	<software name="set4" supported="no">
+	<software name="yogiclean" supported="no">
 		<description>Yogi's Big Clean Up</description>
 		<year>1992</year>
 		<publisher>Hi-Tec</publisher>

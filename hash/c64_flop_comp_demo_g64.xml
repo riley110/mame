@@ -1,25 +1,18 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<softwarelist name="c64_flop_comp_demo_g64" description="c64_flop_comp_demo_g64">
+<softwarelist name="c64_flop_comp_demo_g64" description="Commodore 64 misc. disks (Compilations - Demos - G64)">
 
-	<software name="set1" supported="no">
-		<description>Dexion Meeting Demo Disk (Side A)</description>
+	<software name="dexionmd" supported="no">
+		<description>Dexion Meeting Demo Disk</description>
 		<year>1988</year>
 		<publisher>Dexion</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="flop" size="666804">
 				<rom name="dexion meeting demo disk (1988)(dexion)(side a).g64" size="666804" crc="0eb3a72e" sha1="c0a7754f1703eb3ca32ccafb1c7717dd0b967c6b"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set2" supported="no">
-		<description>Dexion Meeting Demo Disk (Side B)</description>
-		<year>1988</year>
-		<publisher>Dexion</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
 			<dataarea name="flop" size="666804">
 				<rom name="dexion meeting demo disk (1988)(dexion)(side b).g64" size="666804" crc="a646bcbe" sha1="740565d8b0e51b7606d65b8d080f7f0800f100fe"/>
 			</dataarea>

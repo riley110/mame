@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<softwarelist name="c64_flop_bdash_g64" description="c64_flop_bdash_g64">
+<softwarelist name="c64_flop_bdash_g64" description="Commodore 64 misc. disks (Boulder Dash - G64)">
 
-	<software name="set1" supported="no">
+	<software name="bdash50" supported="no">
 		<description>Boulder Dash 50</description>
 		<year>2001</year>
-		<publisher>Liepa, Peter &amp; Spaans, Ruben</publisher>
+		<publisher>Peter Liepa - Ruben Spaans</publisher>
 
 		<part name="flop" interface="floppy_5_25">
 			<dataarea name="flop" size="333744">
@@ -14,10 +14,10 @@
 		</part>
 	</software>
 
-	<software name="set2" supported="no">
+    <software name="bdash50a" cloneof="bdash50" supported="no">
 		<description>Boulder Dash 50 (Alt)</description>
 		<year>2001</year>
-		<publisher>Liepa, Peter &amp; Spaans, Ruben</publisher>
+		<publisher>Peter Liepa - Ruben Spaans</publisher>
 
 		<part name="flop" interface="floppy_5_25">
 			<dataarea name="flop" size="333744">

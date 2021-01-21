@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<softwarelist name="c64_flop_comp_game_d81" description="c64_flop_comp_game_d81">
+<softwarelist name="c64_flop_comp_game_d81" description="Commodore 64 misc. disks (Compilations - Games - D81)">
 
-	<software name="set1" supported="no">
+	<software name="adv1" supported="no">
 		<description>Adventure Games #01</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -14,7 +14,7 @@
 		</part>
 	</software>
 
-	<software name="set2" supported="no">
+	<software name="adv2" supported="no">
 		<description>Adventure Games #02</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -26,7 +26,7 @@
 		</part>
 	</software>
 
-	<software name="set3" supported="no">
+	<software name="adv3" supported="no">
 		<description>Adventure Games #03</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -38,7 +38,7 @@
 		</part>
 	</software>
 
-	<software name="set4" supported="no">
+	<software name="baller1" supported="no">
 		<description>Ballergames #01</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -50,7 +50,7 @@
 		</part>
 	</software>
 
-	<software name="set5" supported="no">
+    <software name="baller2" supported="no">
 		<description>Ballergames #02</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -62,7 +62,7 @@
 		</part>
 	</software>
 
-	<software name="set6" supported="no">
+	<software name="brett" supported="no">
 		<description>Brett-Games #01</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -74,7 +74,19 @@
 		</part>
 	</software>
 
-	<software name="set7" supported="no">
+    <software name="epyx" supported="no">
+        <description>Epyx Games Collection (Cracked by John64, EasyFlash 2012-04-06)</description>
+        <year>19??</year>
+        <publisher>Epyx</publisher>
+
+        <part name="flop" interface="floppy_3_5">
+            <dataarea name="flop" size="819200">
+                <rom name="epyx games collection (19xx)(epyx)[cr john64][easyflash 2012-04-06].d81" size="819200" crc="32b9a44a" sha1="ef3aae62ba8a2dfd51ef3d1c700205731a888c60"/>
+            </dataarea>
+        </part>
+    </software>
+
+	<software name="epyxa" cloneof="epyx" supported="no">
 		<description>Epyx Games Collection (Cracked by John64, Alt, EasyFlash 2012-04-06)</description>
 		<year>19??</year>
 		<publisher>Epyx</publisher>
@@ -86,19 +98,7 @@
 		</part>
 	</software>
 
-	<software name="set8" supported="no">
-		<description>Epyx Games Collection (Cracked by John64, EasyFlash 2012-04-06)</description>
-		<year>19??</year>
-		<publisher>Epyx</publisher>
-
-		<part name="flop" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
-				<rom name="epyx games collection (19xx)(epyx)[cr john64][easyflash 2012-04-06].d81" size="819200" crc="32b9a44a" sha1="ef3aae62ba8a2dfd51ef3d1c700205731a888c60"/>
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="set9" supported="no">
+	<software name="frankie269" supported="no">
 		<description>Frankie's C64 Games Collection Disk 0269</description>
 		<year>2001</year>
 		<publisher>Franz Kottira</publisher>
@@ -110,7 +110,7 @@
 		</part>
 	</software>
 
-	<software name="set10" supported="no">
+	<software name="frankie271" supported="no">
 		<description>Frankie's C64 Games Collection Disk 0271</description>
 		<year>2001</year>
 		<publisher>Franz Kottira</publisher>
@@ -122,7 +122,7 @@
 		</part>
 	</software>
 
-	<software name="set11" supported="no">
+	<software name="gkw" supported="no">
 		<description>G.K.W.-Games</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -134,7 +134,7 @@
 		</part>
 	</software>
 
-	<software name="set12" supported="no">
+	<software name="strategi1" supported="no">
 		<description>Strategiegames #01</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -146,7 +146,7 @@
 		</part>
 	</software>
 
-	<software name="set13" supported="no">
+    <software name="strategi2" supported="no">
 		<description>Strategiegames #02</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -158,7 +158,7 @@
 		</part>
 	</software>
 
-	<software name="set14" supported="no">
+    <software name="strategi3" supported="no">
 		<description>Strategiegames #03</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -170,7 +170,7 @@
 		</part>
 	</software>
 
-	<software name="set15" supported="no">
+	<software name="video1" supported="no">
 		<description>Video-Games #01</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -182,7 +182,7 @@
 		</part>
 	</software>
 
-	<software name="set16" supported="no">
+	<software name="video2" supported="no">
 		<description>Video-Games #02</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -194,7 +194,7 @@
 		</part>
 	</software>
 
-	<software name="set17" supported="no">
+    <software name="video2a" cloneof="video2" supported="no">
 		<description>Video-Games #02 (Alt)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -206,7 +206,7 @@
 		</part>
 	</software>
 
-	<software name="set18" supported="no">
+	<software name="video3" supported="no">
 		<description>Video-Games #03</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -218,7 +218,7 @@
 		</part>
 	</software>
 
-	<software name="set19" supported="no">
+	<software name="video4" supported="no">
 		<description>Video-Games #04</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>

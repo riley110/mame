@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
-<softwarelist name="c64_flop_mus_d81" description="c64_flop_mus_d81">
+<softwarelist name="c64_flop_mus_d81" description="Commodore 64 misc. disks (Music - D81)">
 
-	<software name="set1" supported="no">
+	<software name="chicken" supported="no">
 		<description>Chicken Mc Digis</description>
 		<year>19??</year>
 		<publisher>The Ancient Temple</publisher>
@@ -14,7 +14,7 @@
 		</part>
 	</software>
 
-	<software name="set2" supported="no">
+    <software name="chickena" cloneof="chicken" supported="no">
 		<description>Chicken Mc Digis (Hacked)</description>
 		<year>19??</year>
 		<publisher>The Ancient Temple</publisher>
@@ -26,7 +26,7 @@
 		</part>
 	</software>
 
-	<software name="set3" supported="no">
+	<software name="neotunes" supported="no">
 		<description>Neotunes (2011-02-25)</description>
 		<year>2011</year>
 		<publisher>TheRyk</publisher>
@@ -38,7 +38,7 @@
 		</part>
 	</software>
 
-	<software name="set4" supported="no">
+	<software name="neotunesnr" cloneof="neotunes" supported="no">
 		<description>Neotunes (2011-02-25, NeoRAM version)</description>
 		<year>2011</year>
 		<publisher>TheRyk</publisher>
