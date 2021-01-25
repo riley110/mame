@@ -2,37 +2,37 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="bbc_flop_demos" description="bbc_flop_demos">
 
-	<software name="set1" supported="no">
+	<software name="thedream" supported="no">
 		<description>The Dreamscape (Hacked 8-Bit)</description>
 		<year>1994</year>
 		<publisher>DSPD</publisher>
 
 		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="204800">
+			<dataarea name="rom" size="204800">
 				<rom name="dreamscape, the (1994)(dspd)[h 8-bit].ssd" size="204800" crc="f9788ede" sha1="07029fd240d98db2aabdefb98770332ded71e445"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set2" supported="no">
+	<software name="musicdem" supported="no">
 		<description>Music Demo (Alt, DEMO)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="36608">
+			<dataarea name="rom" size="36608">
 				<rom name="music demo (19xx)(-)[a][demo].ssd" size="36608" crc="8ef4d9d6" sha1="451d329b4a2837da06d3ecba7cbcaedcc8a89ab9"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set3" supported="no">
+	<software name="musicdem_1" supported="no">
 		<description>Music Demo (DEMO)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="36608">
+			<dataarea name="rom" size="36608">
 				<rom name="music demo (19xx)(-)[demo].ssd" size="36608" crc="74657735" sha1="bba3adc66fe17bde637a537534156a84e689a447"/>
 			</dataarea>
 		</part>
