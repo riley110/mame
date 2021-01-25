@@ -2,73 +2,75 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="st_comp_edu" description="st_comp_edu">
 
-	<software name="set1" supported="no">
+	<!-- FIXME
+	<software name="" supported="no">
 		<description>A la Decouverte de la Terre (19xx)(Coktel Vision)(fr) &amp; QI Test (19xx)(Pressimage)(fr) &amp; Vie et Mort des Dinosaures (19xx)(Carraz Editions)(fr)</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
 		<part name="part" interface="interface">
-			<dataarea name="flop" size="819200">
-				<rom name="a la decouverte de la terre &amp; qi test &amp; vie et mort des dinosaures.st" size="819200" crc="5235ff1c" sha1="be9a168b0481e52b2b7445590c311e2845c39e5e"/>
+			<dataarea name="data" size="819200">
+				<rom name="a la decouverte de la terre (19xx)(coktel vision)(fr) &amp; qi test (19xx)(pressimage)(fr) &amp; vie et mort des dinosaures .st" size="819200" crc="5235ff1c" sha1="be9a168b0481e52b2b7445590c311e2845c39e5e"/>
 			</dataarea>
 		</part>
 	</software>
+	-->
 
-	<software name="set2" supported="no">
+	<software name="papyboom" supported="no">
 		<description>Papy Boom CD Educatif 1 (fr)</description>
 		<year>2002</year>
 		<publisher>Papy Boom</publisher>
 
 		<part name="flop" interface="floppy_3_5">
-			<dataarea name="flop" size="839680">
+			<dataarea name="rom" size="839680">
 				<rom name="papy boom cd educatif 1 (2002)(papy boom)(fr).st" size="839680" crc="90f2fe62" sha1="844217b85975946649b0dcd72fb940f72fd67a7a"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set3" supported="no">
+	<software name="papyboom_1" supported="no">
 		<description>Papy Boom CD Educatif 1 (fr, Alt)</description>
 		<year>2002</year>
 		<publisher>Papy Boom</publisher>
 
 		<part name="flop" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
+			<dataarea name="rom" size="737280">
 				<rom name="papy boom cd educatif 1 (2002)(papy boom)(fr)[a].st" size="737280" crc="29d00d83" sha1="f9b52487e677812f8683b4787a5b5eeb69e17b71"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set4" supported="no">
+	<software name="sewersof" supported="no">
 		<description>Sewer Software Educational Disk 1</description>
 		<year>19??</year>
 		<publisher>Sewer Software</publisher>
 
 		<part name="flop" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
+			<dataarea name="rom" size="737280">
 				<rom name="sewer software educational disk 1 (19xx)(sewer software).st" size="737280" crc="f1d33ee8" sha1="da1c9025826011387fa8ff21ab0d97d0706a2b7a"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set5" supported="no">
+	<software name="sewersof_1" supported="no">
 		<description>Sewer Software Educational Disk 2</description>
 		<year>19??</year>
 		<publisher>Sewer Software</publisher>
 
 		<part name="flop" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
+			<dataarea name="rom" size="737280">
 				<rom name="sewer software educational disk 2 (19xx)(sewer software).st" size="737280" crc="af094ae5" sha1="9ec70fecaf0d0bcded9a0a02783c7e2ff3fd2fcd"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set6" supported="no">
+	<software name="sewersof_2" supported="no">
 		<description>Sewer Software Educational Disk 3</description>
 		<year>19??</year>
 		<publisher>Sewer Software</publisher>
 
 		<part name="flop" interface="floppy_3_5">
-			<dataarea name="flop" size="737280">
+			<dataarea name="rom" size="737280">
 				<rom name="sewer software educational disk 3 (19xx)(sewer software).st" size="737280" crc="d5fd7dfb" sha1="8686bb0cc1ffb0e008b2ce7a688fb28cc412a343"/>
 			</dataarea>
 		</part>

@@ -2118,15 +2118,14 @@ void st_state::st(machine_config &config)
 	m_ram->set_default_size("1M"); // 1040ST
 	m_ram->set_extra_options("512K,256K"); // 520ST, 260ST
 
-	// software lists
-	SOFTWARE_LIST(config, "apps_flop_list").set_original("st_apps");
-	SOFTWARE_LIST(config, "demo_flop_list").set_original("st_demos");
-	SOFTWARE_LIST(config, "edu_flop_list").set_original("st_edu");
-	SOFTWARE_LIST(config, "mags_flop_list").set_original("st_mags");
-	SOFTWARE_LIST(config, "pd_flop_list").set_original("st_pd");
-	SOFTWARE_LIST(config, "sps_flop_list").set_original("st_sps");
-	SOFTWARE_LIST(config, "stx_flop_list").set_original("st_stx");
-	SOFTWARE_LIST(config, "tos_flop_list").set_original("st_tos");
+    // software lists
+    SOFTWARE_LIST(config, "apps_flop_list").set_original("st_apps");
+    SOFTWARE_LIST(config, "demo_flop_list").set_original("st_demos");
+    SOFTWARE_LIST(config, "edu_flop_list").set_original("st_edu");
+    SOFTWARE_LIST(config, "mags_flop_list").set_original("st_mags");
+    SOFTWARE_LIST(config, "pd_flop_list").set_original("st_pd");
+    SOFTWARE_LIST(config, "sps_flop_list").set_original("st_sps");
+    SOFTWARE_LIST(config, "tos_flop_list").set_original("st_tos");
     
     SOFTWARE_LIST(config, "comp_apps_flop_list").set_original("st_comp_apps");
     SOFTWARE_LIST(config, "comp_demo_flop_list").set_original("st_comp_demo");
@@ -2135,6 +2134,9 @@ void st_state::st(machine_config &config)
     SOFTWARE_LIST(config, "fast_flop_list").set_original("st_fast");
     SOFTWARE_LIST(config, "flopshop_flop_list").set_original("st_flopshop");
     SOFTWARE_LIST(config, "games_flop_list").set_original("st_games");
+    
+    SOFTWARE_LIST(config, "comp_game_stx_flop_list").set_original("st_comp_game_stx");
+    SOFTWARE_LIST(config, "games_stx_flop_list").set_original("st_games_stx");
 }
 
 
@@ -2171,24 +2173,25 @@ void megast_state::megast(machine_config &config)
 	m_ram->set_default_size("4M"); // Mega ST 4
 	m_ram->set_extra_options("2M,1M"); // Mega ST 2, Mega ST 1
 
-	// software lists
-	SOFTWARE_LIST(config, "mst_flop_list").set_original("st_megast");
-	SOFTWARE_LIST(config, "apps_flop_list").set_compatible("st_apps");
-	SOFTWARE_LIST(config, "demo_flop_list").set_compatible("st_demos");
-	SOFTWARE_LIST(config, "edu_flop_list").set_compatible("st_edu");
-	SOFTWARE_LIST(config, "mags_flop_list").set_compatible("st_mags");
-	SOFTWARE_LIST(config, "pd_flop_list").set_compatible("st_pd");
-	SOFTWARE_LIST(config, "sps_flop_list").set_compatible("st_sps");
-	SOFTWARE_LIST(config, "stx_flop_list").set_compatible("st_stx");
-	SOFTWARE_LIST(config, "tos_flop_list").set_compatible("st_tos");
+    // software lists
+    SOFTWARE_LIST(config, "apps_flop_list").set_original("st_apps");
+    SOFTWARE_LIST(config, "demo_flop_list").set_original("st_demos");
+    SOFTWARE_LIST(config, "edu_flop_list").set_original("st_edu");
+    SOFTWARE_LIST(config, "mags_flop_list").set_original("st_mags");
+    SOFTWARE_LIST(config, "pd_flop_list").set_original("st_pd");
+    SOFTWARE_LIST(config, "sps_flop_list").set_original("st_sps");
+    SOFTWARE_LIST(config, "tos_flop_list").set_original("st_tos");
     
-    SOFTWARE_LIST(config, "comp_apps_flop_list").set_compatible("st_comp_apps");
-    SOFTWARE_LIST(config, "comp_demo_flop_list").set_compatible("st_comp_demo");
-    SOFTWARE_LIST(config, "comp_edu_flop_list").set_compatible("st_comp_edu");
-    SOFTWARE_LIST(config, "comp_game_flop_list").set_compatible("st_comp_game");
-    SOFTWARE_LIST(config, "fast_flop_list").set_compatible("st_fast");
-    SOFTWARE_LIST(config, "flopshop_flop_list").set_compatible("st_flopshop");
-    SOFTWARE_LIST(config, "games_flop_list").set_compatible("st_games");
+    SOFTWARE_LIST(config, "comp_apps_flop_list").set_original("st_comp_apps");
+    SOFTWARE_LIST(config, "comp_demo_flop_list").set_original("st_comp_demo");
+    SOFTWARE_LIST(config, "comp_edu_flop_list").set_original("st_comp_edu");
+    SOFTWARE_LIST(config, "comp_game_flop_list").set_original("st_comp_game");
+    SOFTWARE_LIST(config, "fast_flop_list").set_original("st_fast");
+    SOFTWARE_LIST(config, "flopshop_flop_list").set_original("st_flopshop");
+    SOFTWARE_LIST(config, "games_flop_list").set_original("st_games");
+    
+    SOFTWARE_LIST(config, "comp_game_stx_flop_list").set_original("st_comp_game_stx");
+    SOFTWARE_LIST(config, "games_stx_flop_list").set_original("st_games_stx");
 }
 
 
