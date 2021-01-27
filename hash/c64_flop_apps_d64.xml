@@ -2,34 +2,6 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="c64_flop_apps_d64" description="c64_flop_apps_d64">
 
-	<!-- FIXME
-	<software name="" supported="no">
-		<description>F(r)ont Editor (1987)(Front)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="part" interface="interface">
-			<dataarea name="data" size="174848">
-				<rom name="f(r)ont editor (1987)(front).d64" size="174848" crc="582955f2" sha1="3ce9ce98c5bd7ea6c2d6e518e4c52356d55b7971"/>
-			</dataarea>
-		</part>
-	</software>
-	-->
-
-	<!-- FIXME
-	<software name="" supported="no">
-		<description>F(r)ont Editor V2 (1987)(Front)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="part" interface="interface">
-			<dataarea name="data" size="174848">
-				<rom name="f(r)ont editor v2 (1987)(front).d64" size="174848" crc="5ea5ce1c" sha1="85c49a6b9ba5a9d5eef2f92fe1d8b3de5443e435"/>
-			</dataarea>
-		</part>
-	</software>
-	-->
-
 	<software name="0400note" supported="no">
 		<description>$0400 Noter (1996-10-21)</description>
 		<year>1996</year>
@@ -61377,6 +61349,25 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="174848">
 				<rom name="zykloid 64 (19xx)(-)(de).d64" size="174848" crc="ca96f01f" sha1="7af9f000e7bab28104a6c70e6cbc89d3f4c7ed93"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="_fixme" supported="no">
+		<description>_FIXME_</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="part1" interface="interface">
+			<feature name="part_id" value="F(r)ont Editor (1987)(Front)"/>
+			<dataarea name="rom" size="174848">
+				<rom name="f(r)ont editor (1987)(front).d64" size="174848" crc="582955f2" sha1="3ce9ce98c5bd7ea6c2d6e518e4c52356d55b7971"/>
+			</dataarea>
+		</part>
+		<part name="part2" interface="interface">
+			<feature name="part_id" value="F(r)ont Editor V2 (1987)(Front)"/>
+			<dataarea name="rom" size="174848">
+				<rom name="f(r)ont editor v2 (1987)(front).d64" size="174848" crc="5ea5ce1c" sha1="85c49a6b9ba5a9d5eef2f92fe1d8b3de5443e435"/>
 			</dataarea>
 		</part>
 	</software>

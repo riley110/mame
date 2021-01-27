@@ -2,76 +2,6 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="c64_flop_mags_d64" description="c64_flop_mags_d64">
 
-	<!-- FIXME
-	<software name="" supported="no">
-		<description>Influx #02 (1989-07)(Influx Staff) &amp; Influx #03 (1989-08-01)(Influx Staff)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="part" interface="interface">
-			<dataarea name="data" size="174848">
-				<rom name="influx #02 (1989-07)(influx staff) &amp; influx #03 (1989-08-01)(influx staff).d64" size="174848" crc="7c42d786" sha1="33c99f534bb280c291e0cc9b8d158e99db307d79"/>
-			</dataarea>
-		</part>
-	</software>
-	-->
-
-	<!-- FIXME
-	<software name="" supported="no">
-		<description>Internal #04 (1991-02)(Warriors of the Wasteland) &amp; Internal #05 (1991-03)(Warriors of the Wasteland)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="part" interface="interface">
-			<dataarea name="data" size="174848">
-				<rom name="internal #04 (1991-02)(warriors of the wasteland) &amp; internal #05 (1991-03)(warriors of the wasteland).d64" size="174848" crc="520f86b2" sha1="b6a3a76606ef161024a1489b7c465f01e549c469"/>
-			</dataarea>
-		</part>
-	</software>
-	-->
-
-	<!-- FIXME
-	<software name="" supported="no">
-		<description>Nitro #03 (1992-06-01)(Excess) &amp; Partial Mix (1994)(Ethereal)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="part" interface="interface">
-			<dataarea name="data" size="174848">
-				<rom name="nitro #03 (1992-06-01)(excess) &amp; partial mix (1994)(ethereal).d64" size="174848" crc="312483d9" sha1="2726dc377bcdd3479d9bfdc52f6747cafc6f289a"/>
-			</dataarea>
-		</part>
-	</software>
-	-->
-
-	<!-- FIXME
-	<software name="" supported="no">
-		<description>Soulnews #07 (1991-05-30)(Compagnions) &amp; World News #07 (19xx)(-)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="part" interface="interface">
-			<dataarea name="data" size="174848">
-				<rom name="soulnews #07 (1991-05-30)(compagnions) &amp; world news #07 (19xx)(-).d64" size="174848" crc="32613fd7" sha1="a5af9a0505cd1593bb70f6470477f5f6164f0e15"/>
-			</dataarea>
-		</part>
-	</software>
-	-->
-
-	<!-- FIXME
-	<software name="" supported="no">
-		<description>Spotlight #3 (1991)(X-Ray) &amp; Soulnews #11 (1992)(Compagnions)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="part" interface="interface">
-			<dataarea name="data" size="174848">
-				<rom name="spotlight #3 (1991)(x-ray) &amp; soulnews #11 (1992)(compagnions).d64" size="174848" crc="65310810" sha1="2b7d19255aef7364958b343fa007c50539732cc5"/>
-			</dataarea>
-		</part>
-	</software>
-	-->
-
 	<software name="3yearsap" supported="no">
 		<description>3 Years APS (1996-04-08)</description>
 		<year>1996</year>
@@ -89090,6 +89020,43 @@
 			<feature name="part_id" value="Alt 2"/>
 			<dataarea name="rom" size="174848">
 				<rom name="zoom #2 (1994-07-18)(crossline)[a2].d64" size="174848" crc="d0ac18fc" sha1="75e9201d4cb8df017d49b75eca4e52fc3b9814fc"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="_fixme" supported="no">
+		<description>_FIXME_</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="part1" interface="interface">
+			<feature name="part_id" value="Influx #02 (1989-07)(Influx Staff) &amp; Influx #03 (1989-08-01)(Influx Staff)"/>
+			<dataarea name="rom" size="174848">
+				<rom name="influx #02 (1989-07)(influx staff) &amp; influx #03 (1989-08-01)(influx staff).d64" size="174848" crc="7c42d786" sha1="33c99f534bb280c291e0cc9b8d158e99db307d79"/>
+			</dataarea>
+		</part>
+		<part name="part2" interface="interface">
+			<feature name="part_id" value="Internal #04 (1991-02)(Warriors of the Wasteland) &amp; Internal #05 (1991-03)(Warriors of the Wasteland)"/>
+			<dataarea name="rom" size="174848">
+				<rom name="internal #04 (1991-02)(warriors of the wasteland) &amp; internal #05 (1991-03)(warriors of the wasteland).d64" size="174848" crc="520f86b2" sha1="b6a3a76606ef161024a1489b7c465f01e549c469"/>
+			</dataarea>
+		</part>
+		<part name="part3" interface="interface">
+			<feature name="part_id" value="Nitro #03 (1992-06-01)(Excess) &amp; Partial Mix (1994)(Ethereal)"/>
+			<dataarea name="rom" size="174848">
+				<rom name="nitro #03 (1992-06-01)(excess) &amp; partial mix (1994)(ethereal).d64" size="174848" crc="312483d9" sha1="2726dc377bcdd3479d9bfdc52f6747cafc6f289a"/>
+			</dataarea>
+		</part>
+		<part name="part4" interface="interface">
+			<feature name="part_id" value="Soulnews #07 (1991-05-30)(Compagnions) &amp; World News #07 (19xx)(-)"/>
+			<dataarea name="rom" size="174848">
+				<rom name="soulnews #07 (1991-05-30)(compagnions) &amp; world news #07 (19xx)(-).d64" size="174848" crc="32613fd7" sha1="a5af9a0505cd1593bb70f6470477f5f6164f0e15"/>
+			</dataarea>
+		</part>
+		<part name="part5" interface="interface">
+			<feature name="part_id" value="Spotlight #3 (1991)(X-Ray) &amp; Soulnews #11 (1992)(Compagnions)"/>
+			<dataarea name="rom" size="174848">
+				<rom name="spotlight #3 (1991)(x-ray) &amp; soulnews #11 (1992)(compagnions).d64" size="174848" crc="65310810" sha1="2b7d19255aef7364958b343fa007c50539732cc5"/>
 			</dataarea>
 		</part>
 	</software>

@@ -2,90 +2,6 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="c64_flop_mus_d64" description="c64_flop_mus_d64">
 
-	<!-- FIXME
-	<software name="" supported="no">
-		<description>(B)art Zax #001 (1992-09-28)(Collision)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="part" interface="interface">
-			<dataarea name="data" size="174848">
-				<rom name="(b)art zax #001 (1992-09-28)(collision).d64" size="174848" crc="b9210628" sha1="e93868354a4b6f19db918d21917513e004eea606"/>
-			</dataarea>
-		</part>
-	</software>
-	-->
-
-	<!-- FIXME
-	<software name="" supported="no">
-		<description>(B)art Zax #001 (1992-09-28)(Collision)[a]</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="part" interface="interface">
-			<dataarea name="data" size="174848">
-				<rom name="(b)art zax #001 (1992-09-28)(collision)[a].d64" size="174848" crc="7f8f3589" sha1="9d95e0ac783aab98e70f94b70c0fab0a13f9b859"/>
-			</dataarea>
-		</part>
-	</software>
-	-->
-
-	<!-- FIXME
-	<software name="" supported="no">
-		<description>Digitrack #01 (1992-06-21)(Arcade) &amp; Digitrack #02 (1992-06-21)(Arcade)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="part" interface="interface">
-			<dataarea name="data" size="174848">
-				<rom name="digitrack #01 (1992-06-21)(arcade) &amp; digitrack #02 (1992-06-21)(arcade).d64" size="174848" crc="d2fd6f53" sha1="b40a427bf82d52e28ecb59c97485241ece89bde6"/>
-			</dataarea>
-		</part>
-	</software>
-	-->
-
-	<!-- FIXME
-	<software name="" supported="no">
-		<description>Digitrack #01 (1992-06-21)(Arcade) &amp; Digitrack #02 (1992-06-21)(Arcade)[a]</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="part" interface="interface">
-			<dataarea name="data" size="174848">
-				<rom name="digitrack #01 (1992-06-21)(arcade) &amp; digitrack #02 (1992-06-21)(arcade)[a].d64" size="174848" crc="d52b6a2b" sha1="1fccc363e825d565a76f550e8d1fbee3a45b8e8c"/>
-			</dataarea>
-		</part>
-	</software>
-	-->
-
-	<!-- FIXME
-	<software name="" supported="no">
-		<description>Digitrack #01 (1992-06-21)(Arcade) &amp; Digitrack #02 (1992-06-21)(Arcade)[a2]</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="part" interface="interface">
-			<dataarea name="data" size="174848">
-				<rom name="digitrack #01 (1992-06-21)(arcade) &amp; digitrack #02 (1992-06-21)(arcade)[a2].d64" size="174848" crc="9f9dbc72" sha1="ef7e5ed1bfd0a37ca593e7cb48979ccb77d20dd2"/>
-			</dataarea>
-		</part>
-	</software>
-	-->
-
-	<!-- FIXME
-	<software name="" supported="no">
-		<description>J(46) - SIDWAVE 30 Years Anniversary Music Disk (2017-07-14)(SIDWAVE)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="part" interface="interface">
-			<dataarea name="data" size="174848">
-				<rom name="j(46) - sidwave 30 years anniversary music disk (2017-07-14)(sidwave).d64" size="174848" crc="5c18d77f" sha1="a3f4237779b7b83fd85e2164837345e1c67b1c96"/>
-			</dataarea>
-		</part>
-	</software>
-	-->
-
 	<software name="4753digi" supported="no">
 		<description>$4753 Digi-Mixes</description>
 		<year>1989</year>
@@ -104675,6 +104591,49 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="174848">
 				<rom name="zzzzzaaannny (1987)(jellybean cracking service).d64" size="174848" crc="804c45f8" sha1="d1db65540953fd1c915f16dac4ec5ceb7ce02dde"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="_fixme" supported="no">
+		<description>_FIXME_</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="part1" interface="interface">
+			<feature name="part_id" value="(B)art Zax #001 (1992-09-28)(Collision)"/>
+			<dataarea name="rom" size="174848">
+				<rom name="(b)art zax #001 (1992-09-28)(collision).d64" size="174848" crc="b9210628" sha1="e93868354a4b6f19db918d21917513e004eea606"/>
+			</dataarea>
+		</part>
+		<part name="part2" interface="interface">
+			<feature name="part_id" value="(B)art Zax #001 (1992-09-28)(Collision)[a]"/>
+			<dataarea name="rom" size="174848">
+				<rom name="(b)art zax #001 (1992-09-28)(collision)[a].d64" size="174848" crc="7f8f3589" sha1="9d95e0ac783aab98e70f94b70c0fab0a13f9b859"/>
+			</dataarea>
+		</part>
+		<part name="part3" interface="interface">
+			<feature name="part_id" value="Digitrack #01 (1992-06-21)(Arcade) &amp; Digitrack #02 (1992-06-21)(Arcade)"/>
+			<dataarea name="rom" size="174848">
+				<rom name="digitrack #01 (1992-06-21)(arcade) &amp; digitrack #02 (1992-06-21)(arcade).d64" size="174848" crc="d2fd6f53" sha1="b40a427bf82d52e28ecb59c97485241ece89bde6"/>
+			</dataarea>
+		</part>
+		<part name="part4" interface="interface">
+			<feature name="part_id" value="Digitrack #01 (1992-06-21)(Arcade) &amp; Digitrack #02 (1992-06-21)(Arcade)[a]"/>
+			<dataarea name="rom" size="174848">
+				<rom name="digitrack #01 (1992-06-21)(arcade) &amp; digitrack #02 (1992-06-21)(arcade)[a].d64" size="174848" crc="d52b6a2b" sha1="1fccc363e825d565a76f550e8d1fbee3a45b8e8c"/>
+			</dataarea>
+		</part>
+		<part name="part5" interface="interface">
+			<feature name="part_id" value="Digitrack #01 (1992-06-21)(Arcade) &amp; Digitrack #02 (1992-06-21)(Arcade)[a2]"/>
+			<dataarea name="rom" size="174848">
+				<rom name="digitrack #01 (1992-06-21)(arcade) &amp; digitrack #02 (1992-06-21)(arcade)[a2].d64" size="174848" crc="9f9dbc72" sha1="ef7e5ed1bfd0a37ca593e7cb48979ccb77d20dd2"/>
+			</dataarea>
+		</part>
+		<part name="part6" interface="interface">
+			<feature name="part_id" value="J(46) - SIDWAVE 30 Years Anniversary Music Disk (2017-07-14)(SIDWAVE)"/>
+			<dataarea name="rom" size="174848">
+				<rom name="j(46) - sidwave 30 years anniversary music disk (2017-07-14)(sidwave).d64" size="174848" crc="5c18d77f" sha1="a3f4237779b7b83fd85e2164837345e1c67b1c96"/>
 			</dataarea>
 		</part>
 	</software>

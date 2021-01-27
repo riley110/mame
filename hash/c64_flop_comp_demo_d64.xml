@@ -2,48 +2,6 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="c64_flop_comp_demo_d64" description="c64_flop_comp_demo_d64">
 
-	<!-- FIXME
-	<software name="" supported="no">
-		<description>Fantastic Colors (1988)(X-Ample) &amp; Supernova (1988-03-30)(Omega 8)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="part" interface="interface">
-			<dataarea name="data" size="174848">
-				<rom name="fantastic colors (1988)(x-ample) &amp; supernova (1988-03-30)(omega 8).d64" size="174848" crc="4642e575" sha1="d974b85cd0c1d0272a72df6cbf36a6d39ddea5ac"/>
-			</dataarea>
-		</part>
-	</software>
-	-->
-
-	<!-- FIXME
-	<software name="" supported="no">
-		<description>Masque, The (1994)(Oxyron) &amp; Dein Zycrex (1994)(Antic) &amp; Fake (1994)(The Obsessed Maniacs) &amp; Bla Bla (1995)(Censor Design)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="part" interface="interface">
-			<dataarea name="data" size="174848">
-				<rom name="masque, the (1994)(oxyron) &amp; dein zycrex (1994)(antic) &amp; fake (1994)(the obsessed maniacs) &amp; bla bla (1995)(cen.d64" size="174848" crc="5c7bf6c8" sha1="453914d537cbac606d265978f3edcf59b002e937"/>
-			</dataarea>
-		</part>
-	</software>
-	-->
-
-	<!-- FIXME
-	<software name="" supported="no">
-		<description>Masque, The (1994)(Oxyron) &amp; Dein Zycrex (1994)(Antic) &amp; Fake (1994)(The Obsessed Maniacs) &amp; Bla Bla (1995)(Censor Design)[a]</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="part" interface="interface">
-			<dataarea name="data" size="174848">
-				<rom name="masque, the (1994)(oxyron) &amp; dein zycrex (1994)(antic) &amp; fake (1994)(the obsessed maniacs) &amp; bla bla (1995)(cen.d64" size="174848" crc="3c30e8f8" sha1="2f7c5b5c7a1918c5ceab59872f36b368b75cc824"/>
-			</dataarea>
-		</part>
-	</software>
-	-->
-
 	<software name="20cccoll" supported="no">
 		<description>20CC Collection 2</description>
 		<year>19??</year>
@@ -1772,6 +1730,31 @@
 		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="174848">
 				<rom name="zerky's disk (19xx)(front).d64" size="174848" crc="6fbc8e7f" sha1="b051d7dd6a2b380bd61c6952189d56c7fb129772"/>
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="_fixme" supported="no">
+		<description>_FIXME_</description>
+		<year>????</year>
+		<publisher>&lt;unknown&gt;</publisher>
+
+		<part name="part1" interface="interface">
+			<feature name="part_id" value="Fantastic Colors (1988)(X-Ample) &amp; Supernova (1988-03-30)(Omega 8)"/>
+			<dataarea name="rom" size="174848">
+				<rom name="fantastic colors (1988)(x-ample) &amp; supernova (1988-03-30)(omega 8).d64" size="174848" crc="4642e575" sha1="d974b85cd0c1d0272a72df6cbf36a6d39ddea5ac"/>
+			</dataarea>
+		</part>
+		<part name="part2" interface="interface">
+			<feature name="part_id" value="Masque, The (1994)(Oxyron) &amp; Dein Zycrex (1994)(Antic) &amp; Fake (1994)(The Obsessed Maniacs) &amp; Bla Bla (1995)(Censor Design)"/>
+			<dataarea name="rom" size="174848">
+				<rom name="masque, the (1994)(oxyron) &amp; dein zycrex (1994)(antic) &amp; fake (1994)(the obsessed maniacs) &amp; bla bla (1995)(cen.d64" size="174848" crc="5c7bf6c8" sha1="453914d537cbac606d265978f3edcf59b002e937"/>
+			</dataarea>
+		</part>
+		<part name="part3" interface="interface">
+			<feature name="part_id" value="Masque, The (1994)(Oxyron) &amp; Dein Zycrex (1994)(Antic) &amp; Fake (1994)(The Obsessed Maniacs) &amp; Bla Bla (1995)(Censor Design)[a]"/>
+			<dataarea name="rom" size="174848">
+				<rom name="masque, the (1994)(oxyron) &amp; dein zycrex (1994)(antic) &amp; fake (1994)(the obsessed maniacs) &amp; bla bla (1995)(cen.d64" size="174848" crc="3c30e8f8" sha1="2f7c5b5c7a1918c5ceab59872f36b368b75cc824"/>
 			</dataarea>
 		</part>
 	</software>
