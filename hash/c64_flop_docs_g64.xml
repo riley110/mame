@@ -2,25 +2,20 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="c64_flop_docs_g64" description="c64_flop_docs_g64">
 
-	<software name="set1" supported="no">
-		<description>The Original Parameter Cross-Reference (Side A)</description>
+	<software name="theorigi" supported="no">
+		<description>The Original Parameter Cross-Reference</description>
 		<year>1989</year>
 		<publisher>Edward Mallang II</publisher>
 
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="333744">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A"/>
+			<dataarea name="rom" size="333744">
 				<rom name="original parameter cross-reference, the (1989)(mallang ii, edward)(side a).g64" size="333744" crc="da147159" sha1="dcc716fd384dde723d93a16fd6d8f20c11bb109d"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set2" supported="no">
-		<description>The Original Parameter Cross-Reference (Side A, Alt)</description>
-		<year>1989</year>
-		<publisher>Edward Mallang II</publisher>
-
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="278234">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side A, Alt"/>
+			<dataarea name="rom" size="278234">
 				<rom name="original parameter cross-reference, the (1989)(mallang ii, edward)(side a)[a].g64" size="278234" crc="4f2feea2" sha1="da062beb87e0506de9ba89fe9e0a7cf22cba4472"/>
 			</dataarea>
 		</part>

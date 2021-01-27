@@ -2,13 +2,13 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="c64_flop_cover_d81" description="c64_flop_cover_d81">
 
-	<software name="set1" supported="no">
+	<software name="starscom" supported="no">
 		<description>Stars Commodore #2 85-10 (es)</description>
 		<year>1985</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_3_5">
-			<dataarea name="flop" size="819200">
+		<part name="flop1" interface="floppy_3_5">
+			<dataarea name="rom" size="819200">
 				<rom name="stars commodore #2 85-10 (1985)(-)(es).d81" size="819200" crc="8cbe53e8" sha1="16467ec6934552a11224c27d12ef05803dce2a43"/>
 			</dataarea>
 		</part>

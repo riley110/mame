@@ -2,1752 +2,950 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="c64_flop_test_d64" description="c64_flop_test_d64">
 
-	<software name="set1" supported="no">
+	<software name="1351mous" supported="no">
 		<description>1351 Mouse Demo Disk</description>
 		<year>19??</year>
 		<publisher>Commodore</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="174848">
 				<rom name="1351 mouse demo disk (19xx)(commodore).d64" size="174848" crc="d6d23c03" sha1="b461d66fd6324615891625d777a6b1e6e5aef1ae"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set2" supported="no">
-		<description>1351 Mouse Demo Disk (Alt)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1351 mouse demo disk (19xx)(commodore)[a].d64" size="174848" crc="928e0caf" sha1="ccd999ecaa977a46ab7cb50605e32083ee0a8c53"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set3" supported="no">
-		<description>1351 Mouse Demo Disk (Alt 10)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 10"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1351 mouse demo disk (19xx)(commodore)[a10].d64" size="174848" crc="852d4ff2" sha1="e676c6cb6bd1a24ddb69c7920c249e340a9b9a04"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set4" supported="no">
-		<description>1351 Mouse Demo Disk (Alt 11)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 11"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1351 mouse demo disk (19xx)(commodore)[a11].d64" size="174848" crc="9ce0f075" sha1="6e8c646eec410d6966e024c3da4c5b301fe45ac1"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set5" supported="no">
-		<description>1351 Mouse Demo Disk (Alt 12)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop5" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 12"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1351 mouse demo disk (19xx)(commodore)[a12].d64" size="174848" crc="54e9cf0a" sha1="1f4b0dd2d4bdc0f968305a91623905b00adead6b"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set6" supported="no">
-		<description>1351 Mouse Demo Disk (Alt 13)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop6" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 13"/>
 			<dataarea name="rom" size="175531">
 				<rom name="1351 mouse demo disk (19xx)(commodore)[a13].d64" size="175531" crc="75faaa0b" sha1="078acce4a24c9c9032b7bd5395149d1a35a774de"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set7" supported="no">
-		<description>1351 Mouse Demo Disk (Alt 14)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop7" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 14"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1351 mouse demo disk (19xx)(commodore)[a14].d64" size="174848" crc="af3e99e4" sha1="8532e45c7384fef8b075f2446646264f14dfdff6"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set8" supported="no">
-		<description>1351 Mouse Demo Disk (Alt 15)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop8" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 15"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1351 mouse demo disk (19xx)(commodore)[a15].d64" size="174848" crc="9ddb1cab" sha1="1da7f88ec159507e3e2b5863271c841924decb3d"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set9" supported="no">
-		<description>1351 Mouse Demo Disk (Alt 16)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop9" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 16"/>
 			<dataarea name="rom" size="175531">
 				<rom name="1351 mouse demo disk (19xx)(commodore)[a16].d64" size="175531" crc="3d3db2fe" sha1="feb8c0cecad6e477c84b192f397c7d29aadae8cb"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set10" supported="no">
-		<description>1351 Mouse Demo Disk (Alt 17)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop10" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 17"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1351 mouse demo disk (19xx)(commodore)[a17].d64" size="174848" crc="c6e09ec3" sha1="b609efb2530d7556667f89d5809cb012b45ddf1f"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set11" supported="no">
-		<description>1351 Mouse Demo Disk (Alt 18)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop11" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 18"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1351 mouse demo disk (19xx)(commodore)[a18].d64" size="174848" crc="12f4514c" sha1="39706e6d5566a57c5a315b10f835569b978f7db9"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set12" supported="no">
-		<description>1351 Mouse Demo Disk (Alt 19)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop12" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 19"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1351 mouse demo disk (19xx)(commodore)[a19].d64" size="174848" crc="df4ca1b0" sha1="992418fc24478e4e2a0c0bfbd66cd1adcc0a28f0"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set13" supported="no">
-		<description>1351 Mouse Demo Disk (Alt 2)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop13" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 2"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1351 mouse demo disk (19xx)(commodore)[a2].d64" size="174848" crc="b68b4a80" sha1="ed21171fd4c9ecd3f10343fb3bb123bb8c0d66b0"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set14" supported="no">
-		<description>1351 Mouse Demo Disk (Alt 20)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop14" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 20"/>
 			<dataarea name="rom" size="175531">
 				<rom name="1351 mouse demo disk (19xx)(commodore)[a20].d64" size="175531" crc="34f6e645" sha1="f74a311ce49371b3eb69403799f3abc92ea35469"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set15" supported="no">
-		<description>1351 Mouse Demo Disk (Alt 21)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop15" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 21"/>
 			<dataarea name="rom" size="175531">
 				<rom name="1351 mouse demo disk (19xx)(commodore)[a21].d64" size="175531" crc="8fa45e51" sha1="d638df08237e10711f3003280e6673a7969cf9c8"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set16" supported="no">
-		<description>1351 Mouse Demo Disk (Alt 22)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop16" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 22"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1351 mouse demo disk (19xx)(commodore)[a22].d64" size="174848" crc="3dffed06" sha1="784964af41608203d603a00317754753ca842345"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set17" supported="no">
-		<description>1351 Mouse Demo Disk (Alt 23)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop17" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 23"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1351 mouse demo disk (19xx)(commodore)[a23].d64" size="174848" crc="ecbbd6da" sha1="c967a7afa898d86d4f1295396f3ffadf2512505d"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set18" supported="no">
-		<description>1351 Mouse Demo Disk (Alt 24)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop18" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 24"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1351 mouse demo disk (19xx)(commodore)[a24].d64" size="174848" crc="f53b0399" sha1="0432b3bc35f43c603aea3eaa8960bf2958c1b7ee"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set19" supported="no">
-		<description>1351 Mouse Demo Disk (Alt 3)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop19" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 3"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1351 mouse demo disk (19xx)(commodore)[a3].d64" size="174848" crc="19c12dfe" sha1="02172f4b5c5794067157326fd2fb152f7298c0c3"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set20" supported="no">
-		<description>1351 Mouse Demo Disk (Alt 4)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop20" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 4"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1351 mouse demo disk (19xx)(commodore)[a4].d64" size="174848" crc="c3d33865" sha1="9d446aff0c65a4265f16e8bf6b3c3c2a249b9d8f"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set21" supported="no">
-		<description>1351 Mouse Demo Disk (Alt 5)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop21" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 5"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1351 mouse demo disk (19xx)(commodore)[a5].d64" size="174848" crc="9acf3dc6" sha1="65436db202541b3f670bec3b9b30bfa9937ef2e2"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set22" supported="no">
-		<description>1351 Mouse Demo Disk (Alt 6)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop22" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 6"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1351 mouse demo disk (19xx)(commodore)[a6].d64" size="174848" crc="bb48d12f" sha1="f55d19298b6659867c8b31dcd2dd1ac72830ecd7"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set23" supported="no">
-		<description>1351 Mouse Demo Disk (Alt 7)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop23" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 7"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1351 mouse demo disk (19xx)(commodore)[a7].d64" size="174848" crc="3aa2aedb" sha1="9a68e3b38a0b0b0c0f3e9318e2969eb98b8b0e77"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set24" supported="no">
-		<description>1351 Mouse Demo Disk (Alt 8)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop24" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 8"/>
 			<dataarea name="rom" size="175531">
 				<rom name="1351 mouse demo disk (19xx)(commodore)[a8].d64" size="175531" crc="728c5ce7" sha1="46da5804f8fc85459d265b64a88a056bbeaf5760"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set25" supported="no">
-		<description>1351 Mouse Demo Disk (Alt 9)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop25" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 9"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1351 mouse demo disk (19xx)(commodore)[a9].d64" size="174848" crc="3fc7f593" sha1="fc588bbb7e85a2ecbaef2609db2a5ed3fab395d7"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set26" supported="no">
+	<software name="1541demo" supported="no">
 		<description>1541 Demo Disk</description>
 		<year>19??</year>
 		<publisher>Commodore</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="174848">
 				<rom name="1541 demo disk (19xx)(commodore).d64" size="174848" crc="f2e1f736" sha1="2a19d35b332428696b18032511d8a272fceab400"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set27" supported="no">
-		<description>1541 Demo Disk (Alt)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1541 demo disk (19xx)(commodore)[a].d64" size="174848" crc="db9769ba" sha1="8bcfb7f21c5c25bc23474f962bf07eaa0700eb47"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set28" supported="no">
-		<description>1541 Demo Disk (Alt 10)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 10"/>
 			<dataarea name="rom" size="175531">
 				<rom name="1541 demo disk (19xx)(commodore)[a10].d64" size="175531" crc="dd04774f" sha1="2e1f40c7bad45ca97bbcd3f25a8f595d183d3df4"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set29" supported="no">
-		<description>1541 Demo Disk (Alt 11)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 11"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1541 demo disk (19xx)(commodore)[a11].d64" size="174848" crc="43aad1b0" sha1="8a50779b2efdeb2ab8e5d377e5194777afefdb16"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set30" supported="no">
-		<description>1541 Demo Disk (Alt 12)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop5" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 12"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1541 demo disk (19xx)(commodore)[a12].d64" size="174848" crc="9a6819bb" sha1="2601f41a922684b5c83f1c02e59d96250fcf857d"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set31" supported="no">
-		<description>1541 Demo Disk (Alt 13)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop6" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 13"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1541 demo disk (19xx)(commodore)[a13].d64" size="174848" crc="fc981799" sha1="4443771ae67f892bb8c9cc9b59a240074c0bd9ff"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set32" supported="no">
-		<description>1541 Demo Disk (Alt 14)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop7" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 14"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1541 demo disk (19xx)(commodore)[a14].d64" size="174848" crc="4539ef3b" sha1="df63028c6164e3be0b33301245a271034c524edf"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set33" supported="no">
-		<description>1541 Demo Disk (Alt 15)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop8" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 15"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1541 demo disk (19xx)(commodore)[a15].d64" size="174848" crc="0af58daa" sha1="061d49220e763b58e5d1cf041ca37dbe27578830"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set34" supported="no">
-		<description>1541 Demo Disk (Alt 16)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop9" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 16"/>
 			<dataarea name="rom" size="175531">
 				<rom name="1541 demo disk (19xx)(commodore)[a16].d64" size="175531" crc="e3cfff84" sha1="0af426dbe10024a8735d709757231089d7cf3a87"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set35" supported="no">
-		<description>1541 Demo Disk (Alt 17)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop10" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 17"/>
 			<dataarea name="rom" size="175531">
 				<rom name="1541 demo disk (19xx)(commodore)[a17].d64" size="175531" crc="89e352cc" sha1="2cdf04300b5161c9bdface0a1882ec60cb5bd585"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set36" supported="no">
-		<description>1541 Demo Disk (Alt 18)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop11" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 18"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1541 demo disk (19xx)(commodore)[a18].d64" size="174848" crc="8d60fd03" sha1="69d97184f808aaad8d7dfcb9956605f543ee4b7e"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set37" supported="no">
-		<description>1541 Demo Disk (Alt 19)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop12" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 19"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1541 demo disk (19xx)(commodore)[a19].d64" size="174848" crc="352c4d19" sha1="5ae9c6a85f0d51390a231a44dba431350623591a"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set38" supported="no">
-		<description>1541 Demo Disk (Alt 2)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop13" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 2"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1541 demo disk (19xx)(commodore)[a2].d64" size="174848" crc="7f1d215c" sha1="a6abd864c12126c96dd073b84e5a33d88043acbb"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set39" supported="no">
-		<description>1541 Demo Disk (Alt 20)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop14" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 20"/>
 			<dataarea name="rom" size="175531">
 				<rom name="1541 demo disk (19xx)(commodore)[a20].d64" size="175531" crc="1e743774" sha1="f6c373852801fe52dec143866ca9eccd55e3f328"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set40" supported="no">
-		<description>1541 Demo Disk (Alt 21)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop15" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 21"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1541 demo disk (19xx)(commodore)[a21].d64" size="174848" crc="c4297fd1" sha1="2fb1cf312fbc9f7165d2db520c340ed5954cee3a"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set41" supported="no">
-		<description>1541 Demo Disk (Alt 22)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop16" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 22"/>
 			<dataarea name="rom" size="175531">
 				<rom name="1541 demo disk (19xx)(commodore)[a22].d64" size="175531" crc="110cdfef" sha1="e0137af061cfbb6f558af303ba3a5154b9dc4b37"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set42" supported="no">
-		<description>1541 Demo Disk (Alt 3)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop17" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 3"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1541 demo disk (19xx)(commodore)[a3].d64" size="174848" crc="bf6da2a0" sha1="67b694cf6551991d6b87f7bdc03f8f58aa55dbce"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set43" supported="no">
-		<description>1541 Demo Disk (Alt 4)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop18" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 4"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1541 demo disk (19xx)(commodore)[a4].d64" size="174848" crc="42d3b27d" sha1="9bd379e043877355b922685ba60430285a965a91"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set44" supported="no">
-		<description>1541 Demo Disk (Alt 5)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop19" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 5"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1541 demo disk (19xx)(commodore)[a5].d64" size="174848" crc="74e5f5d0" sha1="5fef158ccb43ec3d5de2b5a18cd84199653434a6"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set45" supported="no">
-		<description>1541 Demo Disk (Alt 6)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop20" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 6"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1541 demo disk (19xx)(commodore)[a6].d64" size="174848" crc="3a41166a" sha1="2ae9f96a8d6df98923911c50f38914ba06dff594"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set46" supported="no">
-		<description>1541 Demo Disk (Alt 7)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop21" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 7"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1541 demo disk (19xx)(commodore)[a7].d64" size="174848" crc="6d14e60a" sha1="40ba7390420ca4006793e9316813b0a8d4454294"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set47" supported="no">
-		<description>1541 Demo Disk (Alt 8)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop22" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 8"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1541 demo disk (19xx)(commodore)[a8].d64" size="174848" crc="3ce564ca" sha1="fa4146c5b8a00dbed5a63da458273ebdc2460260"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set48" supported="no">
-		<description>1541 Demo Disk (Alt 9)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop23" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 9"/>
 			<dataarea name="rom" size="175531">
 				<rom name="1541 demo disk (19xx)(commodore)[a9].d64" size="175531" crc="e65a30bf" sha1="7e75f049fb808711b603603039236fbbe846b344"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set49" supported="no">
+	<software name="1571demo" supported="no">
 		<description>1571 Demo Disk</description>
 		<year>19??</year>
 		<publisher>Commodore</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="174848">
 				<rom name="1571 demo disk (19xx)(commodore).d64" size="174848" crc="a89b8c88" sha1="c035598f8bacf8b7198856844cdc78b46cb6ddf3"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set50" supported="no">
-		<description>1571 Demo Disk (Alt)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1571 demo disk (19xx)(commodore)[a].d64" size="174848" crc="0fa12d1d" sha1="9f88a8543c10a85d48df28b2f15aa8ea115ddeae"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set51" supported="no">
-		<description>1571 Demo Disk (Alt 2)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 2"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1571 demo disk (19xx)(commodore)[a2].d64" size="174848" crc="144e5cfd" sha1="85a4594d5a6ecf47fb61d91b889119369ee12d82"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set52" supported="no">
-		<description>1571 Demo Disk (Alt 3)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 3"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1571 demo disk (19xx)(commodore)[a3].d64" size="174848" crc="8785c3e6" sha1="626d923e7e1e97767912254e2952a9178dea0213"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set53" supported="no">
-		<description>1571 Demo Disk (Alt 4)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop5" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 4"/>
 			<dataarea name="rom" size="175531">
 				<rom name="1571 demo disk (19xx)(commodore)[a4].d64" size="175531" crc="b7542890" sha1="b41b0a8dc76f6214e946795253a3e1be2e5673fc"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set54" supported="no">
-		<description>1571 Demo Disk (Alt 5)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop6" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 5"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1571 demo disk (19xx)(commodore)[a5].d64" size="174848" crc="4bb7b7db" sha1="919b4832579cc416b22b35502cb6778a97e9f259"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set55" supported="no">
-		<description>1571 Demo Disk (Alt 6)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop7" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 6"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1571 demo disk (19xx)(commodore)[a6].d64" size="174848" crc="d31a8920" sha1="e74990b2f2b5763313a9fc91e95e5d3a16db1d5f"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set56" supported="no">
-		<description>1571 Demo Disk (Alt 7)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop8" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 7"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1571 demo disk (19xx)(commodore)[a7].d64" size="174848" crc="b626e99f" sha1="01dbd0e5138b01496a924eef31eefc3ef16af21f"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set57" supported="no">
-		<description>1571 Demo Disk (Alt 8)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop9" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 8"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1571 demo disk (19xx)(commodore)[a8].d64" size="174848" crc="72d7d809" sha1="8e452d7bccb36c3b72210092b50b516af806f704"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set58" supported="no">
+	<software name="1700reut" supported="no">
 		<description>1700 REU Test Demo Disk</description>
 		<year>19??</year>
 		<publisher>Commodore</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="174848">
 				<rom name="1700 reu test demo disk (19xx)(commodore).d64" size="174848" crc="673085b6" sha1="ea883cede5677027ef70afc6f164f927cb3be5e3"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set59" supported="no">
-		<description>1700 REU Test Demo Disk (Alt)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1700 reu test demo disk (19xx)(commodore)[a].d64" size="174848" crc="dfe2f6de" sha1="1003f4cbfe41a9e1c250795b908176584c1ac600"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set60" supported="no">
+	<software name="1750clon" supported="no">
 		<description>1750 Clone REU Test Demo Disk</description>
 		<year>19??</year>
 		<publisher>Commodore</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="174848">
 				<rom name="1750 clone reu test demo disk (19xx)(commodore).d64" size="174848" crc="2acd4b4b" sha1="13de015dbcab11ca39daaa3f6907184cbba21141"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set61" supported="no">
-		<description>1750 Clone REU Test Demo Disk (Alt)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1750 clone reu test demo disk (19xx)(commodore)[a].d64" size="174848" crc="a3efc6d4" sha1="938b90d44c8509ee08eb1bd82cdaf9c2e3b7f513"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set62" supported="no">
+	<software name="1764test" supported="no">
 		<description>1764 Test Demo Disk</description>
 		<year>19??</year>
 		<publisher>Commodore</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="174848">
 				<rom name="1764 test demo disk (19xx)(commodore).d64" size="174848" crc="3e7cdda7" sha1="c1f5531faae5e45bdc401d838a4cb2d226f66e97"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set63" supported="no">
-		<description>1764 Test Demo Disk (Alt)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1764 test demo disk (19xx)(commodore)[a].d64" size="174848" crc="9b65bcdb" sha1="968a2b32ed0064db5117eab949a2cde0dc10694d"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set64" supported="no">
-		<description>1764 Test Demo Disk (Alt 2)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 2"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1764 test demo disk (19xx)(commodore)[a2].d64" size="174848" crc="171d3886" sha1="5f73bd940e4a01d5a7f1d9c2e9709ae94eeeb484"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set65" supported="no">
-		<description>1764 Test Demo Disk (Alt 3)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 3"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1764 test demo disk (19xx)(commodore)[a3].d64" size="174848" crc="41ab5c19" sha1="553f76035311d31b9959abebc9d5dec26fd30a56"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set66" supported="no">
-		<description>1764 Test Demo Disk (Alt 4)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop5" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 4"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1764 test demo disk (19xx)(commodore)[a4].d64" size="174848" crc="613fb571" sha1="145627c78c8f577e3140027ccdd14d71a50c3042"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set67" supported="no">
-		<description>1764 Test Demo Disk (Alt 5)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop6" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 5"/>
 			<dataarea name="rom" size="174848">
 				<rom name="1764 test demo disk (19xx)(commodore)[a5].d64" size="174848" crc="44db777f" sha1="dfa726724a5fc47e127b66a67d432f919face663"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set68" supported="no">
+	<software name="aprotekm" supported="no">
 		<description>Aprotek Minimodem Demo Disk</description>
 		<year>19??</year>
 		<publisher>Commodore</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="174848">
 				<rom name="aprotek minimodem demo disk (19xx)(commodore).d64" size="174848" crc="712d78b0" sha1="52e006962b67173f51365a2c6e53a7e7c7138bed"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set69" supported="no">
+	<software name="c64testd" supported="no">
 		<description>C64 Test Demo Disk</description>
 		<year>19??</year>
 		<publisher>Commodore</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore).d64" size="174848" crc="4aeb0038" sha1="780bf7be5e66d2b930ebf55b7cd6c3c3b5941736"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set70" supported="no">
-		<description>C64 Test Demo Disk (Alt)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a].d64" size="174848" crc="dc9498ad" sha1="9b4f5b111a10f5deaaa5e105f0e5bfb5eae66968"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set71" supported="no">
-		<description>C64 Test Demo Disk (Alt 10)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 10"/>
 			<dataarea name="rom" size="175531">
 				<rom name="c64 test demo disk (19xx)(commodore)[a10].d64" size="175531" crc="2f811cb1" sha1="d505a5d1210ae0c3330fe139e0a06b0b0dbfcbcd"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set72" supported="no">
-		<description>C64 Test Demo Disk (Alt 11)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 11"/>
 			<dataarea name="rom" size="175531">
 				<rom name="c64 test demo disk (19xx)(commodore)[a11].d64" size="175531" crc="cb450040" sha1="2ec1f953fa4a1ed28677e1fc7857c136fe73e3da"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set73" supported="no">
-		<description>C64 Test Demo Disk (Alt 12)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop5" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 12"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a12].d64" size="174848" crc="49d8eda0" sha1="e520dda32d3372a68e36ba47e0074a6c6bd4338e"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set74" supported="no">
-		<description>C64 Test Demo Disk (Alt 13)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop6" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 13"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a13].d64" size="174848" crc="82c0a087" sha1="be1924e08f85ead97ddeee8b15752c402a34ce7f"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set75" supported="no">
-		<description>C64 Test Demo Disk (Alt 14)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop7" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 14"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a14].d64" size="174848" crc="a584828d" sha1="bc60671063cb0e92fb67ce3979b03de72fef8449"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set76" supported="no">
-		<description>C64 Test Demo Disk (Alt 15)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop8" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 15"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a15].d64" size="174848" crc="ef7a1dff" sha1="d83060b66de71042c118e689afe316a9fcc486b4"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set77" supported="no">
-		<description>C64 Test Demo Disk (Alt 16)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop9" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 16"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a16].d64" size="174848" crc="7a822922" sha1="9884cd26c5b86e1ebba7649e4b85d5cb8a3c771e"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set78" supported="no">
-		<description>C64 Test Demo Disk (Alt 17)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop10" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 17"/>
 			<dataarea name="rom" size="175531">
 				<rom name="c64 test demo disk (19xx)(commodore)[a17].d64" size="175531" crc="e558d27a" sha1="9ec5aa7cb392218b471864427ede6dfb59bcd226"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set79" supported="no">
-		<description>C64 Test Demo Disk (Alt 18)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop11" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 18"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a18].d64" size="174848" crc="a494ba6e" sha1="4ccd144f9a64ae4c116f89572b886591d65b54a1"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set80" supported="no">
-		<description>C64 Test Demo Disk (Alt 19)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop12" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 19"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a19].d64" size="174848" crc="4d6e1a0e" sha1="bed699e598b0c760ee12c76ed661a114158eef33"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set81" supported="no">
-		<description>C64 Test Demo Disk (Alt 2)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop13" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 2"/>
 			<dataarea name="rom" size="175531">
 				<rom name="c64 test demo disk (19xx)(commodore)[a2].d64" size="175531" crc="ec53bce2" sha1="929862b9fb0ad968fdb12007b5092ac97ba5016e"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set82" supported="no">
-		<description>C64 Test Demo Disk (Alt 20)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop14" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 20"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a20].d64" size="174848" crc="9505ea45" sha1="6208f06c6f0af931b3a33e86c28c0b682cf54d2f"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set83" supported="no">
-		<description>C64 Test Demo Disk (Alt 21)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop15" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 21"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a21].d64" size="174848" crc="bd9d900b" sha1="d870681fe297843ee8f78d4647877f897676b1d8"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set84" supported="no">
-		<description>C64 Test Demo Disk (Alt 22)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop16" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 22"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a22].d64" size="174848" crc="982e1610" sha1="9c42b40349baed4eb1b7299a4e0241cabcb516d9"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set85" supported="no">
-		<description>C64 Test Demo Disk (Alt 23)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop17" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 23"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a23].d64" size="174848" crc="5e1fde5d" sha1="79772b08d18cf9a3333710431b994d844b19a2ba"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set86" supported="no">
-		<description>C64 Test Demo Disk (Alt 24)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop18" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 24"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a24].d64" size="174848" crc="0fb9d936" sha1="8ec597c1fea2a2d96338c40eb559bab1f324b108"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set87" supported="no">
-		<description>C64 Test Demo Disk (Alt 25)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop19" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 25"/>
 			<dataarea name="rom" size="175531">
 				<rom name="c64 test demo disk (19xx)(commodore)[a25].d64" size="175531" crc="1b05e19c" sha1="d51e4d9f951e6e5f83d9a91d5b2bd18b975dbbce"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set88" supported="no">
-		<description>C64 Test Demo Disk (Alt 26)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop20" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 26"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a26].d64" size="174848" crc="b8a9c89a" sha1="1b94281bed88eba0d62a70ff4172d4b5c9671dc1"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set89" supported="no">
-		<description>C64 Test Demo Disk (Alt 27)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop21" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 27"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a27].d64" size="174848" crc="1fd60cd9" sha1="10445f911353415c503ea08ffb09182298ae7d27"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set90" supported="no">
-		<description>C64 Test Demo Disk (Alt 28)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop22" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 28"/>
 			<dataarea name="rom" size="175531">
 				<rom name="c64 test demo disk (19xx)(commodore)[a28].d64" size="175531" crc="60cf3653" sha1="4cc622fde6a3a1cbaca78f526ff421fb7ad7c065"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set91" supported="no">
-		<description>C64 Test Demo Disk (Alt 29)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop23" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 29"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a29].d64" size="174848" crc="fe8ea49f" sha1="59158155e6246253f168014905025e48b3094893"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set92" supported="no">
-		<description>C64 Test Demo Disk (Alt 3)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop24" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 3"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a3].d64" size="174848" crc="3da258e3" sha1="9df0a392ca6749b66ec92a90460ee1c16d06fe96"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set93" supported="no">
-		<description>C64 Test Demo Disk (Alt 30)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop25" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 30"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a30].d64" size="174848" crc="61433346" sha1="bd462740a64968a0fa22d5cf514c373eb3a906c6"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set94" supported="no">
-		<description>C64 Test Demo Disk (Alt 31)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop26" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 31"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a31].d64" size="174848" crc="5e412da9" sha1="d299488f1d2ede9f513c0ba14c78f353f79de67e"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set95" supported="no">
-		<description>C64 Test Demo Disk (Alt 32)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop27" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 32"/>
 			<dataarea name="rom" size="175531">
 				<rom name="c64 test demo disk (19xx)(commodore)[a32].d64" size="175531" crc="379143e0" sha1="1f136920699ddde37e30d9742f4ab111996e0373"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set96" supported="no">
-		<description>C64 Test Demo Disk (Alt 33)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop28" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 33"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a33].d64" size="174848" crc="8a8e1dd4" sha1="6c900f13ee18cd619983cacb6762a6b17f23a67c"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set97" supported="no">
-		<description>C64 Test Demo Disk (Alt 34)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop29" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 34"/>
 			<dataarea name="rom" size="175531">
 				<rom name="c64 test demo disk (19xx)(commodore)[a34].d64" size="175531" crc="6925c517" sha1="7e32a8a1ad7859e39e256fc6dfca8320ae7735ed"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set98" supported="no">
-		<description>C64 Test Demo Disk (Alt 35)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop30" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 35"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a35].d64" size="174848" crc="67a3990a" sha1="cb229e7fef8fc1914066a197c4a1268ff130bf79"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set99" supported="no">
-		<description>C64 Test Demo Disk (Alt 36)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop31" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 36"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a36].d64" size="174848" crc="eee9ce62" sha1="75591b59a00d8c6cf4f5315e03c2c5c24f0fc7b9"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set100" supported="no">
-		<description>C64 Test Demo Disk (Alt 37)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop32" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 37"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a37].d64" size="174848" crc="f61cf1df" sha1="fc70a89d26b4364e5d5bfe76dd820a52f309978d"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set101" supported="no">
-		<description>C64 Test Demo Disk (Alt 38)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop33" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 38"/>
 			<dataarea name="rom" size="175531">
 				<rom name="c64 test demo disk (19xx)(commodore)[a38].d64" size="175531" crc="e453623e" sha1="9d609d547deeab055fa656075855fc662a7964fd"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set102" supported="no">
-		<description>C64 Test Demo Disk (Alt 39)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop34" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 39"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a39].d64" size="174848" crc="bd2133c1" sha1="ab101a714252e7733262c971f1b1c0f1cb53b41c"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set103" supported="no">
-		<description>C64 Test Demo Disk (Alt 4)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop35" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 4"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a4].d64" size="174848" crc="4ca0ac46" sha1="26e615e90a6544c73c30e2ff02d271c2686de617"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set104" supported="no">
-		<description>C64 Test Demo Disk (Alt 40)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop36" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 40"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a40].d64" size="174848" crc="29f16d53" sha1="ab15c5ab63b4901ee320ad3ba441beb600565efb"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set105" supported="no">
-		<description>C64 Test Demo Disk (Alt 5)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop37" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 5"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a5].d64" size="174848" crc="b5d3b5c2" sha1="dd14810e359ceeae34056563eae0cf525a921538"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set106" supported="no">
-		<description>C64 Test Demo Disk (Alt 6)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop38" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 6"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a6].d64" size="174848" crc="915cf2f8" sha1="ee2e16d7f8d87a05db9a7bca37806b7b5189be27"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set107" supported="no">
-		<description>C64 Test Demo Disk (Alt 7)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop39" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 7"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a7].d64" size="174848" crc="2b7d90b3" sha1="32cda1d55318c093a737986c4becd9869fa0acc7"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set108" supported="no">
-		<description>C64 Test Demo Disk (Alt 8)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop40" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 8"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a8].d64" size="174848" crc="484e30a1" sha1="d973dfce1767abe802e9fc2a7e763eed95004f52"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set109" supported="no">
-		<description>C64 Test Demo Disk (Alt 9)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop41" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 9"/>
 			<dataarea name="rom" size="174848">
 				<rom name="c64 test demo disk (19xx)(commodore)[a9].d64" size="174848" crc="2290e46e" sha1="8462c52c4fd00fb6effa39e354f0637347466e12"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set110" supported="no">
-		<description>Commodore 1541 (Alt, test demo-diskette)</description>
+	<software name="commodor" supported="no">
+		<description>Commodore 1541</description>
 		<year>1983</year>
 		<publisher>Commodore</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Alt, test demo-diskette"/>
 			<dataarea name="rom" size="175531">
 				<rom name="commodore 1541 (1983)(commodore)[a][test demo-diskette].d64" size="175531" crc="8c78c7ae" sha1="dd9fb9dff1c9cfba373e4c877586b986ca14150d"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set111" supported="no">
-		<description>Commodore 1541 (Alt 10, test demo-diskette)</description>
-		<year>1983</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 10, test demo-diskette"/>
 			<dataarea name="rom" size="175531">
 				<rom name="commodore 1541 (1983)(commodore)[a10][test demo-diskette].d64" size="175531" crc="4a5ab8d5" sha1="7a62bfcb02e8db992ebc6a0de47a23dad06a016c"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set112" supported="no">
-		<description>Commodore 1541 (Alt 11, test demo-diskette)</description>
-		<year>1983</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 11, test demo-diskette"/>
 			<dataarea name="rom" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a11][test demo-diskette].d64" size="174848" crc="7e27dde7" sha1="73ee80fad9e7f7a137cd1704cdfb0cc1a67cb66f"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set113" supported="no">
-		<description>Commodore 1541 (Alt 12, test demo-diskette)</description>
-		<year>1983</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 12, test demo-diskette"/>
 			<dataarea name="rom" size="175531">
 				<rom name="commodore 1541 (1983)(commodore)[a12][test demo-diskette].d64" size="175531" crc="befcb598" sha1="56de143c88e84161737486f476021aa9c391be78"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set114" supported="no">
-		<description>Commodore 1541 (Alt 13, test demo-diskette)</description>
-		<year>1983</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop5" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 13, test demo-diskette"/>
 			<dataarea name="rom" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a13][test demo-diskette].d64" size="174848" crc="563bfff9" sha1="3505099124c26955ddf5e88084d622b1e8713409"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set115" supported="no">
-		<description>Commodore 1541 (Alt 14, test demo-diskette)</description>
-		<year>1983</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop6" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 14, test demo-diskette"/>
 			<dataarea name="rom" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a14][test demo-diskette].d64" size="174848" crc="594ede78" sha1="466a8eee2e295b82cfde0e999411ad0f4f5346fa"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set116" supported="no">
-		<description>Commodore 1541 (Alt 15, test demo-diskette)</description>
-		<year>1983</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop7" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 15, test demo-diskette"/>
 			<dataarea name="rom" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a15][test demo-diskette].d64" size="174848" crc="5271cb5a" sha1="82b02b0d35e15d7e77301f92b5ab12215414967d"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set117" supported="no">
-		<description>Commodore 1541 (Alt 16, test demo-diskette)</description>
-		<year>1983</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop8" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 16, test demo-diskette"/>
 			<dataarea name="rom" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a16][test demo-diskette].d64" size="174848" crc="c1988021" sha1="a2e16660621e2ed3985fd3725dddf726f399903b"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set118" supported="no">
-		<description>Commodore 1541 (Alt 17, test demo-diskette)</description>
-		<year>1983</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop9" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 17, test demo-diskette"/>
 			<dataarea name="rom" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a17][test demo-diskette].d64" size="174848" crc="88f040f8" sha1="8c0f2507d376e488be318a7f2197d909d9cb3de3"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set119" supported="no">
-		<description>Commodore 1541 (Alt 18, test demo-diskette)</description>
-		<year>1983</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop10" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 18, test demo-diskette"/>
 			<dataarea name="rom" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a18][test demo-diskette].d64" size="174848" crc="c590d39e" sha1="9cad4749f589303af02fe90e13bde39dd4681d7d"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set120" supported="no">
-		<description>Commodore 1541 (Alt 19, test demo-diskette)</description>
-		<year>1983</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop11" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 19, test demo-diskette"/>
 			<dataarea name="rom" size="175531">
 				<rom name="commodore 1541 (1983)(commodore)[a19][test demo-diskette].d64" size="175531" crc="5f7ba3d8" sha1="92aa5203669382faf10ef1c6958eddf1d565b264"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set121" supported="no">
-		<description>Commodore 1541 (Alt 2, test demo-diskette)</description>
-		<year>1983</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop12" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 2, test demo-diskette"/>
 			<dataarea name="rom" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a2][test demo-diskette].d64" size="174848" crc="915d9c20" sha1="a1f75722574afcc30826a9a403c89ddeb668468b"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set122" supported="no">
-		<description>Commodore 1541 (Alt 20, test demo-diskette)</description>
-		<year>1983</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop13" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 20, test demo-diskette"/>
 			<dataarea name="rom" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a20][test demo-diskette].d64" size="174848" crc="33b8a540" sha1="a0acff390b6859ceed37c12a6af66df26f8ba363"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set123" supported="no">
-		<description>Commodore 1541 (Alt 21, test demo-diskette)</description>
-		<year>1983</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop14" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 21, test demo-diskette"/>
 			<dataarea name="rom" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a21][test demo-diskette].d64" size="174848" crc="5f37ff06" sha1="02adcaf76354071f769d157739b13a599096fe31"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set124" supported="no">
-		<description>Commodore 1541 (Alt 22, test demo-diskette)</description>
-		<year>1983</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop15" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 22, test demo-diskette"/>
 			<dataarea name="rom" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a22][test demo-diskette].d64" size="174848" crc="ceb6146b" sha1="4a8b7d6e448567301a15f7367b331aa2ec13057b"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set125" supported="no">
-		<description>Commodore 1541 (Alt 23, test demo-diskette)</description>
-		<year>1983</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop16" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 23, test demo-diskette"/>
 			<dataarea name="rom" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a23][test demo-diskette].d64" size="174848" crc="b97260ee" sha1="a6829a883429c672aa090a8cf826adc0e0bf6df1"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set126" supported="no">
-		<description>Commodore 1541 (Alt 24, test demo-diskette)</description>
-		<year>1983</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop17" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 24, test demo-diskette"/>
 			<dataarea name="rom" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a24][test demo-diskette].d64" size="174848" crc="b29b7c27" sha1="72fc2f68a966cbf2890d8419a10087357facf8f0"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set127" supported="no">
-		<description>Commodore 1541 (Alt 3, test demo-diskette)</description>
-		<year>1983</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop18" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 3, test demo-diskette"/>
 			<dataarea name="rom" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a3][test demo-diskette].d64" size="174848" crc="d97dcfc9" sha1="19412d8be0847b9204054fe8b6f052e1c1a45b81"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set128" supported="no">
-		<description>Commodore 1541 (Alt 4, test demo-diskette)</description>
-		<year>1983</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop19" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 4, test demo-diskette"/>
 			<dataarea name="rom" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a4][test demo-diskette].d64" size="174848" crc="993392db" sha1="1f5412be1bab5fa12e653c7b0d578d99130540f7"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set129" supported="no">
-		<description>Commodore 1541 (Alt 5, test demo-diskette)</description>
-		<year>1983</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop20" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 5, test demo-diskette"/>
 			<dataarea name="rom" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a5][test demo-diskette].d64" size="174848" crc="1632fb46" sha1="d53bea2228d61989e9fa1c2ede4bd86e4fefeb48"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set130" supported="no">
-		<description>Commodore 1541 (Alt 6, test demo-diskette)</description>
-		<year>1983</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop21" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 6, test demo-diskette"/>
 			<dataarea name="rom" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a6][test demo-diskette].d64" size="174848" crc="2ee2c1e6" sha1="7a8dc0fd0f6fbc2c153c0dbd845f513459b463e2"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set131" supported="no">
-		<description>Commodore 1541 (Alt 7, test demo-diskette)</description>
-		<year>1983</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop22" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 7, test demo-diskette"/>
 			<dataarea name="rom" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a7][test demo-diskette].d64" size="174848" crc="a706af44" sha1="7c88ba7858ea51e71414fd4c33c105b08790476a"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set132" supported="no">
-		<description>Commodore 1541 (Alt 8, test demo-diskette)</description>
-		<year>1983</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop23" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 8, test demo-diskette"/>
 			<dataarea name="rom" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a8][test demo-diskette].d64" size="174848" crc="d3fe7b8f" sha1="c153d1432983030f492b439b32497e3272ad7c0f"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set133" supported="no">
-		<description>Commodore 1541 (Alt 9, test demo-diskette)</description>
-		<year>1983</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop24" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 9, test demo-diskette"/>
 			<dataarea name="rom" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[a9][test demo-diskette].d64" size="174848" crc="e984a23f" sha1="e1fd32c6e844a9c610da2adf3ff5f2e5c0aa1a24"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set134" supported="no">
-		<description>Commodore 1541 (test demo-diskette)</description>
-		<year>1983</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop25" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette"/>
 			<dataarea name="rom" size="174848">
 				<rom name="commodore 1541 (1983)(commodore)[test demo-diskette].d64" size="174848" crc="4833e51c" sha1="6eeb59d5c500f4dc690aeb31eb2507973e89ee87"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set135" supported="no">
-		<description>Commodore SX-64 (Alt, test demo-diskette)</description>
+	<software name="commodor_1" supported="no">
+		<description>Commodore SX-64</description>
 		<year>1984</year>
 		<publisher>Commodore</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Alt, test demo-diskette"/>
 			<dataarea name="rom" size="174848">
 				<rom name="commodore sx-64 (1984)(commodore)[a][test demo-diskette].d64" size="174848" crc="99b689fd" sha1="bb270585973317389c2a486f57e5e9646904acbc"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set136" supported="no">
-		<description>Commodore SX-64 (Alt 2, test demo-diskette)</description>
-		<year>1984</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 2, test demo-diskette"/>
 			<dataarea name="rom" size="175531">
 				<rom name="commodore sx-64 (1984)(commodore)[a2][test demo-diskette].d64" size="175531" crc="fe17b24a" sha1="8fd4fb3ae5e255c6e10d4cb8a9157d966e23950c"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set137" supported="no">
-		<description>Commodore SX-64 (Alt 3, test demo-diskette)</description>
-		<year>1984</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 3, test demo-diskette"/>
 			<dataarea name="rom" size="174848">
 				<rom name="commodore sx-64 (1984)(commodore)[a3][test demo-diskette].d64" size="174848" crc="41d06c4f" sha1="a4449ad1c9b2ef4d4f381d9109c9b029f70d9396"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set138" supported="no">
-		<description>Commodore SX-64 (test demo-diskette)</description>
-		<year>1984</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="test demo-diskette"/>
 			<dataarea name="rom" size="174848">
 				<rom name="commodore sx-64 (1984)(commodore)[test demo-diskette].d64" size="174848" crc="d96ab84a" sha1="9f9480afbfcd628f68ad16e1e5a84bbcd86fc426"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set139" supported="no">
+	<software name="ramboard" supported="no">
 		<description>RAMBOard Test Demo Disk</description>
 		<year>19??</year>
 		<publisher>Commodore</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="174848">
 				<rom name="ramboard test demo disk (19xx)(commodore).d64" size="174848" crc="57c29366" sha1="e554b84132ea545a2852a6ddc1fcdd927b634887"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set140" supported="no">
-		<description>RAMBOard Test Demo Disk (Alt)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt"/>
 			<dataarea name="rom" size="175531">
 				<rom name="ramboard test demo disk (19xx)(commodore)[a].d64" size="175531" crc="870fa405" sha1="b5dc15bd509b20fc25974de87badaf3089b1278a"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set141" supported="no">
-		<description>RAMBOard Test Demo Disk (Alt 2)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 2"/>
 			<dataarea name="rom" size="174848">
 				<rom name="ramboard test demo disk (19xx)(commodore)[a2].d64" size="174848" crc="a4f94a9c" sha1="ab0d0beac592bc4770fb609ac026c1adc9585bb0"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set142" supported="no">
-		<description>RAMBOard Test Demo Disk (Alt 3)</description>
-		<year>19??</year>
-		<publisher>Commodore</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 3"/>
 			<dataarea name="rom" size="174848">
 				<rom name="ramboard test demo disk (19xx)(commodore)[a3].d64" size="174848" crc="b1a53b1b" sha1="28a368116bb238c7c7518fdc89aa3c4188a7e2a3"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set143" supported="no">
+	<software name="td64test" supported="no">
 		<description>TD64Test</description>
 		<year>19??</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
 			<dataarea name="rom" size="174848">
 				<rom name="td64test (19xx)(-).d64" size="174848" crc="fbf610d8" sha1="a29ad04c70ad329782822b5b41a91bbad6da3ae4"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set144" supported="no">
-		<description>TD64Test (Alt)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Alt"/>
 			<dataarea name="rom" size="174848">
 				<rom name="td64test (19xx)(-)[a].d64" size="174848" crc="15c45fca" sha1="ea1177a87465dd72c22cfa1a7445049faa4c60f9"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set145" supported="no">
-		<description>TD64Test (Alt 2)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Alt 2"/>
 			<dataarea name="rom" size="174848">
 				<rom name="td64test (19xx)(-)[a2].d64" size="174848" crc="7495c819" sha1="cb9d966a9d8001adb7503800d3fe6bf339595600"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set146" supported="no">
-		<description>TD64Test (Z64 Part 1-4)</description>
-		<year>19??</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Z64 Part 1-4"/>
 			<dataarea name="rom" size="174848">
 				<rom name="td64test (19xx)(-)[z64 part 1-4].d64" size="174848" crc="35eba7b0" sha1="453211a2f4d85a369b113ee0cc439d7945e381fd"/>
 			</dataarea>

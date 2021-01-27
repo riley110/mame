@@ -2,13 +2,13 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="c64_flop_mags_d71" description="c64_flop_mags_d71">
 
-	<software name="set1" supported="no">
+	<software name="recollec" supported="no">
 		<description>Recollection #3 (2010-10-03)</description>
 		<year>2010</year>
 		<publisher>Jazzcat</publisher>
 
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="349696">
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="rom" size="349696">
 				<rom name="recollection #3 (2010-10-03)(jazzcat).d71" size="349696" crc="d049d774" sha1="29607d9443581765503ec25a75d18eb91a0cb088"/>
 			</dataarea>
 		</part>

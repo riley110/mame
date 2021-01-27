@@ -2,24 +2,19 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="c64_flop_mus_d71" description="c64_flop_mus_d71">
 
-	<software name="set1" supported="no">
-		<description>Chicken Mc Digis (Hacked)</description>
+	<software name="chickenm" supported="no">
+		<description>Chicken Mc Digis</description>
 		<year>19??</year>
 		<publisher>The Ancient Temple</publisher>
 
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked"/>
 			<dataarea name="rom" size="351062">
 				<rom name="chicken mc digis (19xx)(the ancient temple)[h].d71" size="351062" crc="25c79b54" sha1="9f2346720450b87a6688a74325396a5f5b4ddd36"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set2" supported="no">
-		<description>Chicken Mc Digis (Hacked, Alt)</description>
-		<year>19??</year>
-		<publisher>The Ancient Temple</publisher>
-
-		<part name="flop" interface="floppy_5_25">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Hacked, Alt"/>
 			<dataarea name="rom" size="349696">
 				<rom name="chicken mc digis (19xx)(the ancient temple)[h][a].d71" size="349696" crc="04c2b349" sha1="54195b851d5567f1e606dea768c028fb5cc11bf8"/>
 			</dataarea>

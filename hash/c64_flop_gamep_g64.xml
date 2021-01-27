@@ -2,350 +2,250 @@
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
 <softwarelist name="c64_flop_gamep_g64" description="c64_flop_gamep_g64">
 
-	<software name="set1" supported="no">
+	<software name="bodyslam" supported="no">
 		<description>Body Slam</description>
 		<year>1988</year>
 		<publisher>Silverbird</publisher>
 
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="279582">
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="rom" size="279582">
 				<rom name="body slam (1988)(silverbird).g64" size="279582" crc="c461d655" sha1="09f239b6e498097afb6eac90603b69644262927c"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set2" supported="no">
+	<software name="equinoxs" supported="no">
 		<description>Equinox &amp; Soda Shop</description>
 		<year>198?</year>
 		<publisher>Micro Fantasy</publisher>
 
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="319232">
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="rom" size="319232">
 				<rom name="equinox &amp; soda shop (198x)(micro fantasy).g64" size="319232" crc="5f55c6fb" sha1="77f4017acc61477165a52674b48ca2d3b9edf69f"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set3" supported="no">
-		<description>Future World (Demo, Cracked by Hitmen)</description>
+	<software name="futurewo" supported="no">
+		<description>Future World (Demo)</description>
 		<year>1995</year>
 		<publisher>Cherry Software</publisher>
 
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="333744">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Cracked by Hitmen"/>
+			<dataarea name="rom" size="333744">
 				<rom name="future world (demo) (1995)(cherry software)[cr hitmen].g64" size="333744" crc="b706571b" sha1="752ecd2bf069895f3e7675901647e781d4fbda58"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set4" supported="no">
-		<description>Future World (Demo, Cracked by Hitmen, Alt)</description>
-		<year>1995</year>
-		<publisher>Cherry Software</publisher>
-
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="333744">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Cracked by Hitmen, Alt"/>
+			<dataarea name="rom" size="333744">
 				<rom name="future world (demo) (1995)(cherry software)[cr hitmen][a].g64" size="333744" crc="09a308ca" sha1="87be3b008c11fdf009896bbb5d787d1bd12f5526"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set5" supported="no">
-		<description>Liberator (Playable Demo, Cracked by CHR)</description>
+	<software name="liberato" supported="no">
+		<description>Liberator (Playable Demo)</description>
 		<year>1992</year>
 		<publisher>Triumwyrath Studios</publisher>
 
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="333744">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Cracked by CHR"/>
+			<dataarea name="rom" size="333744">
 				<rom name="liberator (demo-playable) (1992)(triumwyrath studios)[cr chr].g64" size="333744" crc="8076df81" sha1="2d1a4f498a40fff5c8ab8f7f46f460e19b858c74"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set6" supported="no">
-		<description>Liberator (Playable Demo, Cracked by CHR, Alt)</description>
-		<year>1992</year>
-		<publisher>Triumwyrath Studios</publisher>
-
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="333744">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Cracked by CHR, Alt"/>
+			<dataarea name="rom" size="333744">
 				<rom name="liberator (demo-playable) (1992)(triumwyrath studios)[cr chr][a].g64" size="333744" crc="645294b0" sha1="ff4a4e5a7904d7bd789daab95b8c8f756ca36558"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set7" supported="no">
-		<description>Nether (Demo, Cracked by CHR)</description>
+	<software name="nether" supported="no">
+		<description>Nether (Demo)</description>
 		<year>1996</year>
 		<publisher>Computer Workshops</publisher>
 
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="333744">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Cracked by CHR"/>
+			<dataarea name="rom" size="333744">
 				<rom name="nether (demo) (1996)(computer workshops)[cr chr].g64" size="333744" crc="0f658e24" sha1="e888f16c3e3af79ac2fce08784a75c59f54ac474"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set8" supported="no">
-		<description>Nether (Demo, Cracked by CHR, Alt)</description>
-		<year>1996</year>
-		<publisher>Computer Workshops</publisher>
-
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="333744">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Cracked by CHR, Alt"/>
+			<dataarea name="rom" size="333744">
 				<rom name="nether (demo) (1996)(computer workshops)[cr chr][a].g64" size="333744" crc="3b30fc3f" sha1="112626b7ac31f9473189df67be82e12e79eedcd4"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set9" supported="no">
-		<description>Newcomer (Demo, hu, Disk 1 Side A)</description>
+	<software name="newcomer" supported="no">
+		<description>Newcomer (hu, Demo)</description>
 		<year>1995</year>
 		<publisher>Andras Lay</publisher>
 
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="317884">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 5 Side A"/>
+			<dataarea name="rom" size="317884">
 				<rom name="newcomer (demo) (1995)(lay, andras)(hu)(disk 1 of 5 side a).g64" size="317884" crc="a7a0c5e5" sha1="92a11e5849a05d07be3d80d6cd3486f726df9818"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set10" supported="no">
-		<description>Newcomer (Demo, hu, Disk 1 Side B)</description>
-		<year>1995</year>
-		<publisher>Andras Lay</publisher>
-
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="317884">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 5 Side B"/>
+			<dataarea name="rom" size="317884">
 				<rom name="newcomer (demo) (1995)(lay, andras)(hu)(disk 1 of 5 side b).g64" size="317884" crc="6404f359" sha1="9ed3bdb28ea7062c7d065901402e3a5d372e44cc"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set11" supported="no">
-		<description>Newcomer (Demo, hu, Disk 2 Side A)</description>
-		<year>1995</year>
-		<publisher>Andras Lay</publisher>
-
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="317884">
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 5 Side A"/>
+			<dataarea name="rom" size="317884">
 				<rom name="newcomer (demo) (1995)(lay, andras)(hu)(disk 2 of 5 side a).g64" size="317884" crc="127eb377" sha1="fbe7861deb6d732a8d1b29a653868c4414576558"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set12" supported="no">
-		<description>Newcomer (Demo, hu, Disk 2 Side B)</description>
-		<year>1995</year>
-		<publisher>Andras Lay</publisher>
-
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="317884">
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 5 Side B"/>
+			<dataarea name="rom" size="317884">
 				<rom name="newcomer (demo) (1995)(lay, andras)(hu)(disk 2 of 5 side b).g64" size="317884" crc="63a98827" sha1="b9f1a4f61b2e9b3d972d9e9509911c9dd1d77b40"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set13" supported="no">
-		<description>Newcomer (Demo, hu, Disk 3 Side A)</description>
-		<year>1995</year>
-		<publisher>Andras Lay</publisher>
-
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="317884">
+		<part name="flop5" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 3 of 5 Side A"/>
+			<dataarea name="rom" size="317884">
 				<rom name="newcomer (demo) (1995)(lay, andras)(hu)(disk 3 of 5 side a).g64" size="317884" crc="190c66b5" sha1="458e335920938f912d9ad67e06b6eca4523e0e5d"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set14" supported="no">
-		<description>Newcomer (Demo, hu, Disk 3 Side B)</description>
-		<year>1995</year>
-		<publisher>Andras Lay</publisher>
-
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="317884">
+		<part name="flop6" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 3 of 5 Side B"/>
+			<dataarea name="rom" size="317884">
 				<rom name="newcomer (demo) (1995)(lay, andras)(hu)(disk 3 of 5 side b).g64" size="317884" crc="6ced5c5e" sha1="61f874f99136ff6f10dfb8a9073b0c16299d380f"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set15" supported="no">
-		<description>Newcomer (Demo, hu, Disk 4 Side A)</description>
-		<year>1995</year>
-		<publisher>Andras Lay</publisher>
-
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="317884">
+		<part name="flop7" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 4 of 5 Side A"/>
+			<dataarea name="rom" size="317884">
 				<rom name="newcomer (demo) (1995)(lay, andras)(hu)(disk 4 of 5 side a).g64" size="317884" crc="9b57d39d" sha1="b74d539e99ca094a5e56638c1fcdae4b8672b9c2"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set16" supported="no">
-		<description>Newcomer (Demo, hu, Disk 4 Side B)</description>
-		<year>1995</year>
-		<publisher>Andras Lay</publisher>
-
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="317884">
+		<part name="flop8" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 4 of 5 Side B"/>
+			<dataarea name="rom" size="317884">
 				<rom name="newcomer (demo) (1995)(lay, andras)(hu)(disk 4 of 5 side b).g64" size="317884" crc="d6613fee" sha1="5894c90167a56ec4cafa528a973aa815788d5683"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set17" supported="no">
-		<description>Newcomer (Demo, hu, Disk 5 Side A)</description>
-		<year>1995</year>
-		<publisher>Andras Lay</publisher>
-
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="317884">
+		<part name="flop9" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 5 of 5 Side A"/>
+			<dataarea name="rom" size="317884">
 				<rom name="newcomer (demo) (1995)(lay, andras)(hu)(disk 5 of 5 side a).g64" size="317884" crc="165d5eea" sha1="4835af13793bd949ef6408bc54c3cefab96843df"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set18" supported="no">
-		<description>Newcomer (Demo, hu, Disk 5 Side B)</description>
-		<year>1995</year>
-		<publisher>Andras Lay</publisher>
-
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="317884">
+		<part name="flop10" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 5 of 5 Side B"/>
+			<dataarea name="rom" size="317884">
 				<rom name="newcomer (demo) (1995)(lay, andras)(hu)(disk 5 of 5 side b).g64" size="317884" crc="6e0e8c2c" sha1="f2da31ddea23bc95e2205f7ebeb60c16864fdbaf"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set19" supported="no">
+	<software name="qa" supported="no">
 		<description>QA!</description>
 		<year>1985</year>
 		<publisher>SECS</publisher>
 
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="286164">
+		<part name="flop1" interface="floppy_5_25">
+			<dataarea name="rom" size="286164">
 				<rom name="qa (1985)(secs).g64" size="286164" crc="bb9d392d" sha1="c150e4a9930aba90ec6fdbd545d0d1a0fafc2031"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set20" supported="no">
-		<description>Rigor (Demo, Side B, Cracked by SCS+TRC)</description>
+	<software name="rigor" supported="no">
+		<description>Rigor (Demo)</description>
 		<year>199?</year>
 		<publisher>Nipson</publisher>
 
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="333744">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side B, Cracked by SCS+TRC"/>
+			<dataarea name="rom" size="333744">
 				<rom name="rigor (demo) (199x)(nipson)(side b)[cr scs+trc].g64" size="333744" crc="52c78f2e" sha1="4ee490a496d9657c04357b81a2af200031db6e5c"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set21" supported="no">
-		<description>Rigor (Demo, Side B, Cracked by SCS+TRC, Alt)</description>
-		<year>199?</year>
-		<publisher>Nipson</publisher>
-
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="333744">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side B, Cracked by SCS+TRC, Alt"/>
+			<dataarea name="rom" size="333744">
 				<rom name="rigor (demo) (199x)(nipson)(side b)[cr scs+trc][a].g64" size="333744" crc="b0b44fec" sha1="966109e3ee249f1ef86955f64c45f89da68f3381"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set22" supported="no">
-		<description>Touchlight (Playable Demo, Cracked by The BYG)</description>
+	<software name="touchlig" supported="no">
+		<description>Touchlight (Playable Demo)</description>
 		<year>1990</year>
 		<publisher>Palace</publisher>
 
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="333744">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Cracked by The BYG"/>
+			<dataarea name="rom" size="333744">
 				<rom name="touchlight (demo-playable) (1990)(palace)[cr the byg].g64" size="333744" crc="8954f958" sha1="691cb1c4cdfa7212714414726f85341794a1b974"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set23" supported="no">
-		<description>Touchlight (Playable Demo, Cracked by The BYG, Alt)</description>
-		<year>1990</year>
-		<publisher>Palace</publisher>
-
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="333744">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Cracked by The BYG, Alt"/>
+			<dataarea name="rom" size="333744">
 				<rom name="touchlight (demo-playable) (1990)(palace)[cr the byg][a].g64" size="333744" crc="0756e273" sha1="1e939abdbad81a3ef90beddcd7125e8e8e6dfe10"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set24" supported="no">
-		<description>Vandorlasok az Elveszett Bolcsesseg Foldjen (Demo, Side A)</description>
+	<software name="vandorla" supported="no">
+		<description>Vandorlasok az Elveszett Bolcsesseg Foldjen (Demo)</description>
 		<year>1998</year>
 		<publisher>&lt;unknown&gt;</publisher>
 
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="317884">
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Side A"/>
+			<dataarea name="rom" size="317884">
 				<rom name="vandorlasok az elveszett bolcsesseg foldjen (demo) (1998)(-)(side a).g64" size="317884" crc="1fdea8af" sha1="53d02d5d94aa5b427d231d043bc957f54158e2bf"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set25" supported="no">
-		<description>Vandorlasok az Elveszett Bolcsesseg Foldjen (Demo, Side B)</description>
-		<year>1998</year>
-		<publisher>&lt;unknown&gt;</publisher>
-
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="317884">
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Side B"/>
+			<dataarea name="rom" size="317884">
 				<rom name="vandorlasok az elveszett bolcsesseg foldjen (demo) (1998)(-)(side b).g64" size="317884" crc="76947476" sha1="aaee3f535d050a7511c8eb21c3313ff6a9d63a60"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="set26" supported="no">
-		<description>Vandorlasok az Elveszett Bolcsesseg Foldjen (Demo, hu, Disk 1 Side B)</description>
+	<software name="vndorlso" supported="no">
+		<description>Vándorlások az Elveszett Bölcsesség Földjén (hu, Demo)</description>
 		<year>1998</year>
-		<publisher>Pal Pucsok</publisher>
+		<publisher>Pál Pucsok</publisher>
 
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="317884">
-				<rom name="vandorlasok az elveszett bolcsesseg foldjen (demo) (1998)(pucsok, pal)(hu)(disk 1 of 3 side b).g64" size="317884" crc="64d25355" sha1="ac298ef94e37f25712f7aa18180ba33f402deeb7"/>
+		<part name="flop1" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 1 of 3 Side B"/>
+			<dataarea name="rom" size="317884">
+				<rom name="vndorlsok az elveszett blcsessg fldjn (demo) (1998)(pucsok, pl)(hu)(disk 1 of 3 side b).g64" size="317884" crc="64d25355" sha1="ac298ef94e37f25712f7aa18180ba33f402deeb7"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set27" supported="no">
-		<description>Vandorlasok az Elveszett Bolcsesseg Foldjen (Demo, hu, Disk 2 Side A)</description>
-		<year>1998</year>
-		<publisher>Pal Pucsok</publisher>
-
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="317884">
-				<rom name="vandorlasok az elveszett bolcsesseg foldjen (demo) (1998)(pucsok, pal)(hu)(disk 2 of 3 side a).g64" size="317884" crc="c4fae455" sha1="7850594ac6266bc3c38a0984b14ddfe6483a2364"/>
+		<part name="flop2" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 3 Side A"/>
+			<dataarea name="rom" size="317884">
+				<rom name="vndorlsok az elveszett blcsessg fldjn (demo) (1998)(pucsok, pl)(hu)(disk 2 of 3 side a).g64" size="317884" crc="c4fae455" sha1="7850594ac6266bc3c38a0984b14ddfe6483a2364"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set28" supported="no">
-		<description>Vandorlasok az Elveszett Bolcsesseg Foldjen (Demo, hu, Disk 2 Side B)</description>
-		<year>1998</year>
-		<publisher>Pal Pucsok</publisher>
-
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="317884">
-				<rom name="vandorlasok az elveszett bolcsesseg foldjen (demo) (1998)(pucsok, pal)(hu)(disk 2 of 3 side b).g64" size="317884" crc="271edf55" sha1="83774a90756c6c08e1a775ee9800846e251c0dc3"/>
+		<part name="flop3" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 2 of 3 Side B"/>
+			<dataarea name="rom" size="317884">
+				<rom name="vndorlsok az elveszett blcsessg fldjn (demo) (1998)(pucsok, pl)(hu)(disk 2 of 3 side b).g64" size="317884" crc="271edf55" sha1="83774a90756c6c08e1a775ee9800846e251c0dc3"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="set29" supported="no">
-		<description>Vandorlasok az Elveszett Bolcsesseg Foldjen (Demo, hu, Disk 3 Side A)</description>
-		<year>1998</year>
-		<publisher>Pal Pucsok</publisher>
-
-		<part name="flop" interface="floppy_5_25">
-			<dataarea name="flop" size="317884">
-				<rom name="vandorlasok az elveszett bolcsesseg foldjen (demo) (1998)(pucsok, pal)(hu)(disk 3 of 3 side a).g64" size="317884" crc="764cba4b" sha1="a080c99c4a1dbe9f4a8e07b0250db78bf410bdcc"/>
+		<part name="flop4" interface="floppy_5_25">
+			<feature name="part_id" value="Disk 3 of 3 Side A"/>
+			<dataarea name="rom" size="317884">
+				<rom name="vndorlsok az elveszett blcsessg fldjn (demo) (1998)(pucsok, pl)(hu)(disk 3 of 3 side a).g64" size="317884" crc="764cba4b" sha1="a080c99c4a1dbe9f4a8e07b0250db78bf410bdcc"/>
 			</dataarea>
 		</part>
 	</software>
