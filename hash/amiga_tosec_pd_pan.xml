@@ -1,1081 +1,1140 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
+Credit goes to the TOSECDEV team for building this vast database over the years.
+-->
 <softwarelist name="amiga_tosec_pd_pan" description="Amiga TOSEC - Panorama">
 
 	<software name="panorama" supported="no">
-		<description>Panorama - Disk 01 (1986-02-15, Hacked AFL)</description>
+		<description>Panorama - Disk 01 (1986-02-15)</description>
 		<year>1986</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked AFL"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 01 (1986-02-15)(pacific north-west amigas club)[h afl].adf" size="901120" crc="10789c25" sha1="6afa40c09d79554630536ad4925a4d59bbb01f5d"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="panorama_1" supported="no">
-		<description>Panorama - Disk 01 (1986-02-15, Hacked AFL, Bad corrupt files)</description>
-		<year>1986</year>
-		<publisher>Pacific North-West Amigas Club</publisher>
-
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Hacked AFL, Bad corrupt files"/>
 			<dataarea name="rom" size="901120">
-				<rom name="panorama - disk 01 (1986-02-15)(pacific north-west amigas club)[h afl][b corrupt files].adf" size="901120" crc="e506016e" sha1="742a0f55b500826cb64d8a3f36eaadf443d70dc3"/>
+				<rom name="panorama - disk 01 (1986-02-15)(pacific north-west amigas club)[h afl][b corrupt files].adf" size="901120" crc="e506016e" sha1="742a0f55b500826cb64d8a3f36eaadf443d70dc3" status="baddump"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="panorama_2" supported="no">
-		<description>Panorama - Disk 01 (1986-02-15, WB)</description>
-		<year>1986</year>
-		<publisher>Pacific North-West Amigas Club</publisher>
-
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop3" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 01 (1986-02-15)(pacific north-west amigas club)[wb].adf" size="901120" crc="595e7c75" sha1="d3fe93da60441a4536b2534461d7ccddecfdf073"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_3" supported="no">
-		<description>Panorama - Disk 02 (1986-03-26, WB)</description>
+	<software name="panorama_1" supported="no">
+		<description>Panorama - Disk 02 (1986-03-26)</description>
 		<year>1986</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 02 (1986-03-26)(pacific north-west amigas club)[wb].adf" size="901120" crc="37195495" sha1="b9f143cdf019735a29db46c68ec034ad57f2d745"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_4" supported="no">
-		<description>Panorama - Disk 03 (1986-04-09, Modified, WB)</description>
+	<software name="panorama_2" supported="no">
+		<description>Panorama - Disk 03 (1986-04-09)</description>
 		<year>1986</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Modified, WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 03 (1986-04-09)(pacific north-west amigas club)[m][wb].adf" size="901120" crc="30597dfc" sha1="a0ccf824671049b09255c44e1ad656019d293f80"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="panorama_5" supported="no">
-		<description>Panorama - Disk 03 (1986-04-09, WB)</description>
-		<year>1986</year>
-		<publisher>Pacific North-West Amigas Club</publisher>
-
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 03 (1986-04-09)(pacific north-west amigas club)[wb].adf" size="901120" crc="8ecbdb55" sha1="02c162505615a6ac0c5159e1c5d5de365eb00570"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_6" supported="no">
-		<description>Panorama - Disk 04 (1986-05-14, WB)</description>
+	<software name="panorama_3" supported="no">
+		<description>Panorama - Disk 04 (1986-05-14)</description>
 		<year>1986</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 04 (1986-05-14)(pacific north-west amigas club)[wb].adf" size="901120" crc="786418e5" sha1="2e4b18eec0f0bc9747d3bbcc5195ead1ddd21ef2"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_7" supported="no">
-		<description>Panorama - Disk 04B (Bad corrupt files, WB)</description>
+	<software name="panorama_4" supported="no">
+		<description>Panorama - Disk 04B</description>
 		<year>1986</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Bad corrupt files, WB"/>
 			<dataarea name="rom" size="901120">
-				<rom name="panorama - disk 04b (1986)(pacific north-west amigas club)[b corrupt files][wb].adf" size="901120" crc="b9bdb5af" sha1="d4464b16b9f43fb79cfe735ede146e67dd3e55cc"/>
+				<rom name="panorama - disk 04b (1986)(pacific north-west amigas club)[b corrupt files][wb].adf" size="901120" crc="b9bdb5af" sha1="d4464b16b9f43fb79cfe735ede146e67dd3e55cc" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_8" supported="no">
-		<description>Panorama - Disk 05A (WB)</description>
+	<software name="panorama_5" supported="no">
+		<description>Panorama - Disk 05A</description>
 		<year>1986</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 05a (1986)(pacific north-west amigas club)[wb].adf" size="901120" crc="4cbda034" sha1="24fc4e2d2d1d818b06c4387c6f7671088dacc09e"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_9" supported="no">
-		<description>Panorama - Disk 05B (WB)</description>
+	<software name="panorama_6" supported="no">
+		<description>Panorama - Disk 05B</description>
 		<year>1986</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 05b (1986)(pacific north-west amigas club)[wb].adf" size="901120" crc="644065f3" sha1="eb861f729d238402f93b8c381b908bc238591af3"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_10" supported="no">
-		<description>Panorama - Disk 06B (1986-06-25, WB)</description>
+	<software name="panorama_7" supported="no">
+		<description>Panorama - Disk 06B (1986-06-25)</description>
 		<year>1986</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 06b (1986-06-25)(pacific north-west amigas club)[wb].adf" size="901120" crc="09d17d98" sha1="2a34d3601fd0ff376a722f2ae4b7b15eedbd4f5f"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_11" supported="no">
-		<description>Panorama - Disk 07C (1986-07-23, WB)</description>
+	<software name="panorama_8" supported="no">
+		<description>Panorama - Disk 07C (1986-07-23)</description>
 		<year>1986</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 07c (1986-07-23)(pacific north-west amigas club)[wb].adf" size="901120" crc="4dc72671" sha1="4bd596fd44e841e87c96923e1b616666c07cb39d"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_12" supported="no">
-		<description>Panorama - Disk 07D (1986-07, WB)</description>
+	<software name="panorama_9" supported="no">
+		<description>Panorama - Disk 07D (1986-07)</description>
 		<year>1986</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 07d (1986-07)(pacific north-west amigas club)[wb].adf" size="901120" crc="4cc056b3" sha1="889eb8900677b3e63b27cb95b5eba569ca64e70e"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_13" supported="no">
-		<description>Panorama - Disk 08A (1986-08-13, WB)</description>
+	<software name="panorama_10" supported="no">
+		<description>Panorama - Disk 08A (1986-08-13)</description>
 		<year>1986</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 08a (1986-08-13)(pacific north-west amigas club)[wb].adf" size="901120" crc="49fbc5c1" sha1="af8bbad7b49b02d548210e607f61fbc0cbc372f9"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_14" supported="no">
-		<description>Panorama - Disk 08B (1986-08-13, WB)</description>
+	<software name="panorama_11" supported="no">
+		<description>Panorama - Disk 08B (1986-08-13)</description>
 		<year>1986</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 08b (1986-08-13)(pacific north-west amigas club)[wb].adf" size="901120" crc="d4b2ab08" sha1="7d80a8e6da880e6f94ff933e5a343f07aeb80be2"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_15" supported="no">
-		<description>Panorama - Disk 08C (1986-08, WB)</description>
+	<software name="panorama_12" supported="no">
+		<description>Panorama - Disk 08C (1986-08)</description>
 		<year>1986</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 08c (1986-08)(pacific north-west amigas club)[wb].adf" size="901120" crc="c5036f22" sha1="41556088253b6590c9f423ba590d980ee44b615b"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_16" supported="no">
-		<description>Panorama - Disk 09A (1986-09-10, WB)</description>
+	<software name="panorama_13" supported="no">
+		<description>Panorama - Disk 09A (1986-09-10)</description>
 		<year>1986</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 09a (1986-09-10)(pacific north-west amigas club)[wb].adf" size="901120" crc="5764cbe1" sha1="e08a1d7acae9b0ffabe1383a48349b289b0aa194"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_17" supported="no">
-		<description>Panorama - Disk 09B (1986-09-24, WB)</description>
+	<software name="panorama_14" supported="no">
+		<description>Panorama - Disk 09B (1986-09-24)</description>
 		<year>1986</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 09b (1986-09-24)(pacific north-west amigas club)[wb].adf" size="901120" crc="9fd63a58" sha1="c6c90fe13c1394c5de6fa4559290f56741fc3cd3"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_18" supported="no">
-		<description>Panorama - Disk 09C (1986-09-24, WB)</description>
+	<software name="panorama_15" supported="no">
+		<description>Panorama - Disk 09C (1986-09-24)</description>
 		<year>1986</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 09c (1986-09-24)(pacific north-west amigas club)[wb].adf" size="901120" crc="44e1cde8" sha1="9548fe51a31e18d032462812c75b23a73d7f4b17"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_19" supported="no">
-		<description>Panorama - Disk 10A (1986-10-08, Bad corrupt files, WB)</description>
+	<software name="panorama_16" supported="no">
+		<description>Panorama - Disk 10A (1986-10-08)</description>
 		<year>1986</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Bad corrupt files, WB"/>
 			<dataarea name="rom" size="901120">
-				<rom name="panorama - disk 10a (1986-10-08)(pacific north-west amigas club)[b corrupt files][wb].adf" size="901120" crc="f6593eb8" sha1="3950bc31ffd2330d75b6306d6ab7e837b6e312df"/>
+				<rom name="panorama - disk 10a (1986-10-08)(pacific north-west amigas club)[b corrupt files][wb].adf" size="901120" crc="f6593eb8" sha1="3950bc31ffd2330d75b6306d6ab7e837b6e312df" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_20" supported="no">
-		<description>Panorama - Disk 10B (1986-10-08, WB)</description>
+	<software name="panorama_17" supported="no">
+		<description>Panorama - Disk 10B (1986-10-08)</description>
 		<year>1986</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 10b (1986-10-08)(pacific north-west amigas club)[wb].adf" size="901120" crc="fd0b8266" sha1="2eefb1eb5f71b461bc8e78f5f1a14a9560f86b65"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_21" supported="no">
-		<description>Panorama - Disk 10C (1986-10-22, WB)</description>
+	<software name="panorama_18" supported="no">
+		<description>Panorama - Disk 10C (1986-10-22)</description>
 		<year>1986</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 10c (1986-10-22)(pacific north-west amigas club)[wb].adf" size="901120" crc="fa57b4ac" sha1="bfeb46b6c5ae88dd3d2f0196eb667bb8dd7c2f1a"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_22" supported="no">
-		<description>Panorama - Disk 11A (1986-11-12, WB)</description>
+	<software name="panorama_19" supported="no">
+		<description>Panorama - Disk 11A (1986-11-12)</description>
 		<year>1986</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 11a (1986-11-12)(pacific north-west amigas club)[wb].adf" size="901120" crc="2982ecf0" sha1="e965b3046f6b37aade22efc0554fe8083d6fe90c"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_23" supported="no">
-		<description>Panorama - Disk 12A (1986-12-10, WB)</description>
+	<software name="panorama_20" supported="no">
+		<description>Panorama - Disk 12A (1986-12-10)</description>
 		<year>1986</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 12a (1986-12-10)(pacific north-west amigas club)[wb].adf" size="901120" crc="81fc6e0a" sha1="7fa69d28461afbfb2b7cebdb8f65364f3083d8bc"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_24" supported="no">
-		<description>Panorama - Disk 13A (1987-01-14, WB)</description>
+	<software name="panorama_21" supported="no">
+		<description>Panorama - Disk 13A (1987-01-14)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 13a (1987-01-14)(pacific north-west amigas club)[wb].adf" size="901120" crc="82214d6f" sha1="009f1afb5569bf7efcc3bac2cf4861744471a6f3"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_25" supported="no">
-		<description>Panorama - Disk 13B (1987-01-14, WB)</description>
+	<software name="panorama_22" supported="no">
+		<description>Panorama - Disk 13B (1987-01-14)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 13b (1987-01-14)(pacific north-west amigas club)[wb].adf" size="901120" crc="255523af" sha1="a88f96bcb4c92cf3ba550480cf52a87b67556f7b"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_26" supported="no">
-		<description>Panorama - Disk 13C (1987-01-28, WB)</description>
+	<software name="panorama_23" supported="no">
+		<description>Panorama - Disk 13C (1987-01-28)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 13c (1987-01-28)(pacific north-west amigas club)[wb].adf" size="901120" crc="3f6508dd" sha1="7e64d6c0c56b980b40a98c2f00ded481b82a8204"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_27" supported="no">
-		<description>Panorama - Disk 13D (1987-01-28, WB)</description>
+	<software name="panorama_24" supported="no">
+		<description>Panorama - Disk 13D (1987-01-28)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 13d (1987-01-28)(pacific north-west amigas club)[wb].adf" size="901120" crc="260f38c1" sha1="9b1f4a378f05337e54fd88ad8256e5cb2e149805"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_28" supported="no">
-		<description>Panorama - Disk 14A (1987-02-11, WB)</description>
+	<software name="panorama_25" supported="no">
+		<description>Panorama - Disk 14A (1987-02-11)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 14a (1987-02-11)(pacific north-west amigas club)[wb].adf" size="901120" crc="55d86289" sha1="7f7f6917788be698448dbe1b846a077e89f2aec0"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_29" supported="no">
-		<description>Panorama - Disk 14B (1987-02-11, WB)</description>
+	<software name="panorama_26" supported="no">
+		<description>Panorama - Disk 14B (1987-02-11)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 14b (1987-02-11)(pacific north-west amigas club)[wb].adf" size="901120" crc="b594a6d7" sha1="f7d6439d02d2e2e1d29c6e1444ce9eea5283714c"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_30" supported="no">
-		<description>Panorama - Disk 14C (1987-02-25, WB)</description>
+	<software name="panorama_27" supported="no">
+		<description>Panorama - Disk 14C (1987-02-25)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 14c (1987-02-25)(pacific north-west amigas club)[wb].adf" size="901120" crc="950b8351" sha1="d0159c57ccefd1c53cbdfa7ecff610da394ecca3"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_31" supported="no">
-		<description>Panorama - Disk 14D (1987-02-25, WB)</description>
+	<software name="panorama_28" supported="no">
+		<description>Panorama - Disk 14D (1987-02-25)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 14d (1987-02-25)(pacific north-west amigas club)[wb].adf" size="901120" crc="76795541" sha1="b2e8804ee256800ed779e162daac56cb89958ac2"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_32" supported="no">
-		<description>Panorama - Disk 15A (1987-03-11, WB)</description>
+	<software name="panorama_29" supported="no">
+		<description>Panorama - Disk 15A (1987-03-11)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 15a (1987-03-11)(pacific north-west amigas club)[wb].adf" size="901120" crc="d9ef0be7" sha1="ac46356ff383ed840da819863057a0f03f4aa4c5"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_33" supported="no">
-		<description>Panorama - Disk 15C (1987-03-25, Bad corrupt file, WB)</description>
+	<software name="panorama_30" supported="no">
+		<description>Panorama - Disk 15C (1987-03-25)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Bad corrupt file, WB"/>
 			<dataarea name="rom" size="901120">
-				<rom name="panorama - disk 15c (1987-03-25)(pacific north-west amigas club)[b corrupt file][wb].adf" size="901120" crc="96e2e995" sha1="1698f08b600c1b395ce499720be8eff81a3a2d3f"/>
+				<rom name="panorama - disk 15c (1987-03-25)(pacific north-west amigas club)[b corrupt file][wb].adf" size="901120" crc="96e2e995" sha1="1698f08b600c1b395ce499720be8eff81a3a2d3f" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_34" supported="no">
-		<description>Panorama - Disk 16A (1987-04-08, Bad corrupt file, WB)</description>
+	<software name="panorama_31" supported="no">
+		<description>Panorama - Disk 16A (1987-04-08)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Bad corrupt file, WB"/>
 			<dataarea name="rom" size="901120">
-				<rom name="panorama - disk 16a (1987-04-08)(pacific north-west amigas club)[b corrupt file][wb].adf" size="901120" crc="cab092d4" sha1="6160eb3c4df54a63b9b326ec8ecb8fd5a99a0b68"/>
+				<rom name="panorama - disk 16a (1987-04-08)(pacific north-west amigas club)[b corrupt file][wb].adf" size="901120" crc="cab092d4" sha1="6160eb3c4df54a63b9b326ec8ecb8fd5a99a0b68" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_35" supported="no">
-		<description>Panorama - Disk 16B (1987-04-08, WB)</description>
+	<software name="panorama_32" supported="no">
+		<description>Panorama - Disk 16B (1987-04-08)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 16b (1987-04-08)(pacific north-west amigas club)[wb].adf" size="901120" crc="d11412ce" sha1="4b5d61912ae98aef4d9bbcd22acff0f714e2b0f6"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_36" supported="no">
-		<description>Panorama - Disk 17A (1987-05-13, WB)</description>
+	<software name="panorama_33" supported="no">
+		<description>Panorama - Disk 17A (1987-05-13)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 17a (1987-05-13)(pacific north-west amigas club)[wb].adf" size="901120" crc="e3b892cb" sha1="a8a0d0ee9ca286945b75fbfae948942f17b07792"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_37" supported="no">
-		<description>Panorama - Disk 17B (1987-05-13, WB)</description>
+	<software name="panorama_34" supported="no">
+		<description>Panorama - Disk 17B (1987-05-13)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 17b (1987-05-13)(pacific north-west amigas club)[wb].adf" size="901120" crc="3ee3846e" sha1="6002f740f7dbf71be599cee1308050b90ce2ab33"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_38" supported="no">
-		<description>Panorama - Disk 17C (1987-05, Bad corrupt file, WB)</description>
+	<software name="panorama_35" supported="no">
+		<description>Panorama - Disk 17C (1987-05)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Bad corrupt file, WB"/>
 			<dataarea name="rom" size="901120">
-				<rom name="panorama - disk 17c (1987-05)(pacific north-west amigas club)[b corrupt file][wb].adf" size="901120" crc="5e5b663a" sha1="51bd77faa6a1d23fc75903593c4e2d3eb74cf1e2"/>
+				<rom name="panorama - disk 17c (1987-05)(pacific north-west amigas club)[b corrupt file][wb].adf" size="901120" crc="5e5b663a" sha1="51bd77faa6a1d23fc75903593c4e2d3eb74cf1e2" status="baddump"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="panorama_39" supported="no">
-		<description>Panorama - Disk 17C (1987-05, WB)</description>
-		<year>1987</year>
-		<publisher>Pacific North-West Amigas Club</publisher>
-
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 17c (1987-05)(pacific north-west amigas club)[wb].adf" size="901120" crc="76431410" sha1="b319a12bc346554d1c18af30b45738aefd19b1c3"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_40" supported="no">
-		<description>Panorama - Disk 17D (1987-05-27, WB)</description>
+	<software name="panorama_36" supported="no">
+		<description>Panorama - Disk 17D (1987-05-27)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 17d (1987-05-27)(pacific north-west amigas club)[wb].adf" size="901120" crc="734dfb54" sha1="093c648c4b73455bee0e24e8669277f8e19dd5da"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_41" supported="no">
-		<description>Panorama - Disk 18A (1987-06-10, Bad corrupt files, WB)</description>
+	<software name="panorama_37" supported="no">
+		<description>Panorama - Disk 18A (1987-06-10)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Bad corrupt files, WB"/>
 			<dataarea name="rom" size="901120">
-				<rom name="panorama - disk 18a (1987-06-10)(pacific north-west amigas club)[b corrupt files][wb].adf" size="901120" crc="127860da" sha1="51aac5b10cda9a42ba08da4ecce411226ff50387"/>
+				<rom name="panorama - disk 18a (1987-06-10)(pacific north-west amigas club)[b corrupt files][wb].adf" size="901120" crc="127860da" sha1="51aac5b10cda9a42ba08da4ecce411226ff50387" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_42" supported="no">
-		<description>Panorama - Disk 18B (1987-06-10, WB)</description>
+	<software name="panorama_38" supported="no">
+		<description>Panorama - Disk 18B (1987-06-10)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 18b (1987-06-10)(pacific north-west amigas club)[wb].adf" size="901120" crc="52332d0c" sha1="94effda702199bda0dffaf6e10b9bc99fb11c61e"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_43" supported="no">
-		<description>Panorama - Disk 19A (1987-07-08, Bad corrupt file, WB)</description>
+	<software name="panorama_39" supported="no">
+		<description>Panorama - Disk 19A (1987-07-08)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Bad corrupt file, WB"/>
 			<dataarea name="rom" size="901120">
-				<rom name="panorama - disk 19a (1987-07-08)(pacific north-west amigas club)[b corrupt file][wb].adf" size="901120" crc="b36994d7" sha1="d681a27c57ad15b8cc95f664ec6c65cb9065e5c1"/>
+				<rom name="panorama - disk 19a (1987-07-08)(pacific north-west amigas club)[b corrupt file][wb].adf" size="901120" crc="b36994d7" sha1="d681a27c57ad15b8cc95f664ec6c65cb9065e5c1" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_44" supported="no">
-		<description>Panorama - Disk 19B (1987-07-08, Bad corrupt file, WB)</description>
+	<software name="panorama_40" supported="no">
+		<description>Panorama - Disk 19B (1987-07-08)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Bad corrupt file, WB"/>
 			<dataarea name="rom" size="901120">
-				<rom name="panorama - disk 19b (1987-07-08)(pacific north-west amigas club)[b corrupt file][wb].adf" size="901120" crc="c54fc5f5" sha1="85246a764c53e57cafd294075b4bca6fe135e90a"/>
+				<rom name="panorama - disk 19b (1987-07-08)(pacific north-west amigas club)[b corrupt file][wb].adf" size="901120" crc="c54fc5f5" sha1="85246a764c53e57cafd294075b4bca6fe135e90a" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_45" supported="no">
-		<description>Panorama - Disk 19D (1987-07-22, WB)</description>
+	<software name="panorama_41" supported="no">
+		<description>Panorama - Disk 19D (1987-07-22)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 19d (1987-07-22)(pacific north-west amigas club)[wb].adf" size="901120" crc="39f85def" sha1="3cfb5ed45710d258f2b7f4f1d56ad2388ee6a26d"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_46" supported="no">
-		<description>Panorama - Disk 20A (1987-08-12, WB)</description>
+	<software name="panorama_42" supported="no">
+		<description>Panorama - Disk 20A (1987-08-12)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 20a (1987-08-12)(pacific north-west amigas club)[wb].adf" size="901120" crc="ff0023cc" sha1="6c5cdff01e9a8107c02dd21e67c30bb81387f931"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_47" supported="no">
-		<description>Panorama - Disk 20B (1987-08-12, WB)</description>
+	<software name="panorama_43" supported="no">
+		<description>Panorama - Disk 20B (1987-08-12)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 20b (1987-08-12)(pacific north-west amigas club)[wb].adf" size="901120" crc="2a6bde23" sha1="c13fa1eac197b62074f182bdbb968f68e6fe8ce8"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_48" supported="no">
-		<description>Panorama - Disk 20C (1987-08-26, WB)</description>
+	<software name="panorama_44" supported="no">
+		<description>Panorama - Disk 20C (1987-08-26)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 20c (1987-08-26)(pacific north-west amigas club)[wb].adf" size="901120" crc="dfa84f49" sha1="979d05d88315fc953a3f4a454eef41440d3978c9"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_49" supported="no">
-		<description>Panorama - Disk 20D (1987-08-26, WB)</description>
+	<software name="panorama_45" supported="no">
+		<description>Panorama - Disk 20D (1987-08-26)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 20d (1987-08-26)(pacific north-west amigas club)[wb].adf" size="901120" crc="48ce0f1b" sha1="bf502c9a92e11890f426be7494a638721651b3af"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_50" supported="no">
-		<description>Panorama - Disk 21A (1987-09-09, WB)</description>
+	<software name="panorama_46" supported="no">
+		<description>Panorama - Disk 21A (1987-09-09)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 21a (1987-09-09)(pacific north-west amigas club)[wb].adf" size="901120" crc="c7c78871" sha1="3299d3f6581e3fa7b68d6aca492b5289d1e6459c"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_51" supported="no">
-		<description>Panorama - Disk 21B (1987-09-09, Bad corrupt files, WB)</description>
+	<software name="panorama_47" supported="no">
+		<description>Panorama - Disk 21B (1987-09-09)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Bad corrupt files, WB"/>
 			<dataarea name="rom" size="901120">
-				<rom name="panorama - disk 21b (1987-09-09)(pacific north-west amigas club)[b corrupt files][wb].adf" size="901120" crc="1ce1fe71" sha1="dba877c8e659d298633e8008e73e3058795dac98"/>
+				<rom name="panorama - disk 21b (1987-09-09)(pacific north-west amigas club)[b corrupt files][wb].adf" size="901120" crc="1ce1fe71" sha1="dba877c8e659d298633e8008e73e3058795dac98" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_52" supported="no">
-		<description>Panorama - Disk 21C (1987-09-23, WB)</description>
+	<software name="panorama_48" supported="no">
+		<description>Panorama - Disk 21C (1987-09-23)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 21c (1987-09-23)(pacific north-west amigas club)[wb].adf" size="901120" crc="56307ed8" sha1="4eedea610842cb2b815ff1eda7c21765749e36d6"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_53" supported="no">
-		<description>Panorama - Disk 21D (1987-09-23, WB)</description>
+	<software name="panorama_49" supported="no">
+		<description>Panorama - Disk 21D (1987-09-23)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 21d (1987-09-23)(pacific north-west amigas club)[wb].adf" size="901120" crc="434db1d5" sha1="2379c20853b4ac6cfdef3fef9012edab5fef4dce"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_54" supported="no">
-		<description>Panorama - Disk 22A (1987-10-14, WB)</description>
+	<software name="panorama_50" supported="no">
+		<description>Panorama - Disk 22A (1987-10-14)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 22a (1987-10-14)(pacific north-west amigas club)[wb].adf" size="901120" crc="49a89dc5" sha1="98a5d94b84bb97c1f0bf4c8bda9dc2845b3f48bd"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_55" supported="no">
-		<description>Panorama - Disk 22B (1987-10-14, WB)</description>
+	<software name="panorama_51" supported="no">
+		<description>Panorama - Disk 22B (1987-10-14)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 22b (1987-10-14)(pacific north-west amigas club)[wb].adf" size="901120" crc="30abf3d5" sha1="a863682421cd4de0f4da09487f68e4e87a6e4368"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_56" supported="no">
-		<description>Panorama - Disk 22C (1987-10-28, WB)</description>
+	<software name="panorama_52" supported="no">
+		<description>Panorama - Disk 22C (1987-10-28)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 22c (1987-10-28)(pacific north-west amigas club)[wb].adf" size="901120" crc="a15fcf02" sha1="1fd47ba30bab5f429fc4c5d39a904514692e9634"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_57" supported="no">
-		<description>Panorama - Disk 22D (1987-10-28, WB)</description>
+	<software name="panorama_53" supported="no">
+		<description>Panorama - Disk 22D (1987-10-28)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 22d (1987-10-28)(pacific north-west amigas club)[wb].adf" size="901120" crc="d4712410" sha1="269b89683487fd636ba624d50dc376b6f7a6b584"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_58" supported="no">
-		<description>Panorama - Disk 23A (1987-11-11, WB)</description>
+	<software name="panorama_54" supported="no">
+		<description>Panorama - Disk 23A (1987-11-11)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 23a (1987-11-11)(pacific north-west amigas club)[wb].adf" size="901120" crc="eb608c8a" sha1="c18bfc731d96e067abe5885d9fcf23f27bbbe58b"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_59" supported="no">
-		<description>Panorama - Disk 23B (1987-11-11, Bad corrupt files, WB)</description>
+	<software name="panorama_55" supported="no">
+		<description>Panorama - Disk 23B (1987-11-11)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Bad corrupt files, WB"/>
 			<dataarea name="rom" size="901120">
-				<rom name="panorama - disk 23b (1987-11-11)(pacific north-west amigas club)[b corrupt files][wb].adf" size="901120" crc="aa2cacfe" sha1="4f14c6f24bb57a51148eed0e5b1f8f4ae61bfd3c"/>
+				<rom name="panorama - disk 23b (1987-11-11)(pacific north-west amigas club)[b corrupt files][wb].adf" size="901120" crc="aa2cacfe" sha1="4f14c6f24bb57a51148eed0e5b1f8f4ae61bfd3c" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_60" supported="no">
-		<description>Panorama - Disk 23C (1987-11-25, WB)</description>
+	<software name="panorama_56" supported="no">
+		<description>Panorama - Disk 23C (1987-11-25)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 23c (1987-11-25)(pacific north-west amigas club)[wb].adf" size="901120" crc="fbe80b9b" sha1="911028428696651ccdd94858aad3e1550bbe1138"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_61" supported="no">
-		<description>Panorama - Disk 23D (1987-11-25, WB)</description>
+	<software name="panorama_57" supported="no">
+		<description>Panorama - Disk 23D (1987-11-25)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 23d (1987-11-25)(pacific north-west amigas club)[wb].adf" size="901120" crc="fc7adff7" sha1="44bfb772d8d16be6e974d2dcd2fc0d008aa5476d"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_62" supported="no">
-		<description>Panorama - Disk 24A (1987-12-09, Bad corrupt files, WB)</description>
+	<software name="panorama_58" supported="no">
+		<description>Panorama - Disk 24A (1987-12-09)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Bad corrupt files, WB"/>
 			<dataarea name="rom" size="901120">
-				<rom name="panorama - disk 24a (1987-12-09)(pacific north-west amigas club)[b corrupt files][wb].adf" size="901120" crc="f4562521" sha1="33eb4c5bf3b53b5089f14559f9a3b20f8141f322"/>
+				<rom name="panorama - disk 24a (1987-12-09)(pacific north-west amigas club)[b corrupt files][wb].adf" size="901120" crc="f4562521" sha1="33eb4c5bf3b53b5089f14559f9a3b20f8141f322" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_63" supported="no">
-		<description>Panorama - Disk 24B (1987-12-09, WB)</description>
+	<software name="panorama_59" supported="no">
+		<description>Panorama - Disk 24B (1987-12-09)</description>
 		<year>1987</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 24b (1987-12-09)(pacific north-west amigas club)[wb].adf" size="901120" crc="4fea5fd9" sha1="a151df5bb61bdb4f769f98773e439d52db5094e7"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_64" supported="no">
-		<description>Panorama - Disk 25A (1988-01-13, WB)</description>
+	<software name="panorama_60" supported="no">
+		<description>Panorama - Disk 25A (1988-01-13)</description>
 		<year>1988</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 25a (1988-01-13)(pacific north-west amigas club)[wb].adf" size="901120" crc="8d2b84d8" sha1="3d910d074a5a126a1bc49e24bae75cd67cc9f689"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_65" supported="no">
-		<description>Panorama - Disk 25B (1988-01-13, Bad corrupt file, WB)</description>
+	<software name="panorama_61" supported="no">
+		<description>Panorama - Disk 25B (1988-01-13)</description>
 		<year>1988</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Bad corrupt file, WB"/>
 			<dataarea name="rom" size="901120">
-				<rom name="panorama - disk 25b (1988-01-13)(pacific north-west amigas club)[b corrupt file][wb].adf" size="901120" crc="03b192de" sha1="9a9cd30681965a12a725cb7e75f5a692197bc5e8"/>
+				<rom name="panorama - disk 25b (1988-01-13)(pacific north-west amigas club)[b corrupt file][wb].adf" size="901120" crc="03b192de" sha1="9a9cd30681965a12a725cb7e75f5a692197bc5e8" status="baddump"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="panorama_66" supported="no">
-		<description>Panorama - Disk 25B (1988-01-13, WB)</description>
-		<year>1988</year>
-		<publisher>Pacific North-West Amigas Club</publisher>
-
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 25b (1988-01-13)(pacific north-west amigas club)[wb].adf" size="901120" crc="73031483" sha1="a1a25ded18aa6ff27dc27d74d12daa6deccac955"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_67" supported="no">
-		<description>Panorama - Disk 26A (1988-02-10, WB)</description>
+	<software name="panorama_62" supported="no">
+		<description>Panorama - Disk 26A (1988-02-10)</description>
 		<year>1988</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 26a (1988-02-10)(pacific north-west amigas club)[wb].adf" size="901120" crc="b5470954" sha1="b784a528e8eba6d60d3c9f06cb8adb34498cbe68"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_68" supported="no">
-		<description>Panorama - Disk 26B (1988-02-10, WB)</description>
+	<software name="panorama_63" supported="no">
+		<description>Panorama - Disk 26B (1988-02-10)</description>
 		<year>1988</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 26b (1988-02-10)(pacific north-west amigas club)[wb].adf" size="901120" crc="5d7c777f" sha1="36a96a3db1261f652db765d4dddf8130e46724c3"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_69" supported="no">
-		<description>Panorama - Disk 26C (1988-02-24, Bad corrupt file, WB)</description>
+	<software name="panorama_64" supported="no">
+		<description>Panorama - Disk 26C (1988-02-24)</description>
 		<year>1988</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Bad corrupt file, WB"/>
 			<dataarea name="rom" size="901120">
-				<rom name="panorama - disk 26c (1988-02-24)(pacific north-west amigas club)[b corrupt file][wb].adf" size="901120" crc="eb0cbee7" sha1="c6d7703fbcf3d45a881ef756eb76fe0a3d2c0962"/>
+				<rom name="panorama - disk 26c (1988-02-24)(pacific north-west amigas club)[b corrupt file][wb].adf" size="901120" crc="eb0cbee7" sha1="c6d7703fbcf3d45a881ef756eb76fe0a3d2c0962" status="baddump"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_70" supported="no">
-		<description>Panorama - Disk 26D (1988-02-24, WB)</description>
+	<software name="panorama_65" supported="no">
+		<description>Panorama - Disk 26D (1988-02-24)</description>
 		<year>1988</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 26d (1988-02-24)(pacific north-west amigas club)[wb].adf" size="901120" crc="2c84f878" sha1="21415e8cd0f9ec5c9dbabd85f20914fbc65b0134"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_71" supported="no">
-		<description>Panorama - Disk 27A (1988-03-09, WB)</description>
+	<software name="panorama_66" supported="no">
+		<description>Panorama - Disk 27A (1988-03-09)</description>
 		<year>1988</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 27a (1988-03-09)(pacific north-west amigas club)[wb].adf" size="901120" crc="ca30d5a3" sha1="9928723f73db997abb54a25be5b644db9ab10e94"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_72" supported="no">
-		<description>Panorama - Disk 27B (1988-03-09, WB)</description>
+	<software name="panorama_67" supported="no">
+		<description>Panorama - Disk 27B (1988-03-09)</description>
 		<year>1988</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 27b (1988-03-09)(pacific north-west amigas club)[wb].adf" size="901120" crc="03b1f73b" sha1="85c038445cb03c0e323d8f7b8eb55e8acb1cb772"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_73" supported="no">
-		<description>Panorama - Disk 27C (1988-03-23, WB)</description>
+	<software name="panorama_68" supported="no">
+		<description>Panorama - Disk 27C (1988-03-23)</description>
 		<year>1988</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 27c (1988-03-23)(pacific north-west amigas club)[wb].adf" size="901120" crc="a2a04019" sha1="574db34ff1cb3cf93f8cfee1b3b718ca3ccb90a5"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_74" supported="no">
-		<description>Panorama - Disk 27D (1988-03-23, WB)</description>
+	<software name="panorama_69" supported="no">
+		<description>Panorama - Disk 27D (1988-03-23)</description>
 		<year>1988</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 27d (1988-03-23)(pacific north-west amigas club)[wb].adf" size="901120" crc="7587544e" sha1="ed780cbbc2e7a94db2b6a41f74387da74c29d88a"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_75" supported="no">
-		<description>Panorama - Disk 28A (1988-04-13, WB)</description>
+	<software name="panorama_70" supported="no">
+		<description>Panorama - Disk 28A (1988-04-13)</description>
 		<year>1988</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 28a (1988-04-13)(pacific north-west amigas club)[wb].adf" size="901120" crc="a7fe19a0" sha1="cfed695f54e0970a881675bc55e190da3861f681"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_76" supported="no">
-		<description>Panorama - Disk 28B (1988-04-13, WB)</description>
+	<software name="panorama_71" supported="no">
+		<description>Panorama - Disk 28B (1988-04-13)</description>
 		<year>1988</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 28b (1988-04-13)(pacific north-west amigas club)[wb].adf" size="901120" crc="83bbb4dd" sha1="c6dd8a3d85bcae07d53cd6e771fe0ee22e230948"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_77" supported="no">
-		<description>Panorama - Disk 28C (1988-04-27, WB)</description>
+	<software name="panorama_72" supported="no">
+		<description>Panorama - Disk 28C (1988-04-27)</description>
 		<year>1988</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 28c (1988-04-27)(pacific north-west amigas club)[wb].adf" size="901120" crc="2e70a5c8" sha1="0e36c19f31890de95e59ec454af2d7260f43fac9"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_78" supported="no">
-		<description>Panorama - Disk 28D (1988-04-27, WB)</description>
+	<software name="panorama_73" supported="no">
+		<description>Panorama - Disk 28D (1988-04-27)</description>
 		<year>1988</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 28d (1988-04-27)(pacific north-west amigas club)[wb].adf" size="901120" crc="e7860117" sha1="9377ef7929e277eb61dcfd3e15b96676c5f35835"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_79" supported="no">
-		<description>Panorama - Disk 29A (1988-05-11, WB)</description>
+	<software name="panorama_74" supported="no">
+		<description>Panorama - Disk 29A (1988-05-11)</description>
 		<year>1988</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 29a (1988-05-11)(pacific north-west amigas club)[wb].adf" size="901120" crc="ca38ad87" sha1="a5ba103d58d3d317cb6a1b84a5b096ab7a6dd35f"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_80" supported="no">
-		<description>Panorama - Disk 29B (1988-05-11, WB)</description>
+	<software name="panorama_75" supported="no">
+		<description>Panorama - Disk 29B (1988-05-11)</description>
 		<year>1988</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 29b (1988-05-11)(pacific north-west amigas club)[wb].adf" size="901120" crc="0fb3a5d1" sha1="6868688f20f2e95b4dc033a20613ac8cf4586e00"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_81" supported="no">
-		<description>Panorama - Disk 30A (1988-06-08, WB)</description>
+	<software name="panorama_76" supported="no">
+		<description>Panorama - Disk 30A (1988-06-08)</description>
 		<year>1988</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 30a (1988-06-08)(pacific north-west amigas club)[wb].adf" size="901120" crc="da5fb06c" sha1="b2421b25d6ff4dcaa1558a188d9e06e87fe646a3"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_82" supported="no">
-		<description>Panorama - Disk 30B (1988-06-08, WB)</description>
+	<software name="panorama_77" supported="no">
+		<description>Panorama - Disk 30B (1988-06-08)</description>
 		<year>1988</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 30b (1988-06-08)(pacific north-west amigas club)[wb].adf" size="901120" crc="94d3f652" sha1="45e9c440dd6f2c120b41fb0fb7ddeb752926962a"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_83" supported="no">
-		<description>Panorama - Disk 30C (1988-06-22, WB)</description>
+	<software name="panorama_78" supported="no">
+		<description>Panorama - Disk 30C (1988-06-22)</description>
 		<year>1988</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 30c (1988-06-22)(pacific north-west amigas club)[wb].adf" size="901120" crc="4ef8a4e3" sha1="ba5923bf6c31b24f458901ac08bca3b8784f3f50"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_84" supported="no">
-		<description>Panorama - Disk 31A (1988-07-13, WB)</description>
+	<software name="panorama_79" supported="no">
+		<description>Panorama - Disk 31A (1988-07-13)</description>
 		<year>1988</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 31a (1988-07-13)(pacific north-west amigas club)[wb].adf" size="901120" crc="acba7eca" sha1="8271754c3c7904e7578a1045023ac99a21bde6da"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_85" supported="no">
-		<description>Panorama - Disk 31B (1988-07-13, WB)</description>
+	<software name="panorama_80" supported="no">
+		<description>Panorama - Disk 31B (1988-07-13)</description>
 		<year>1988</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 31b (1988-07-13)(pacific north-west amigas club)[wb].adf" size="901120" crc="0b10206f" sha1="b38c2133953ae2e6df98f23c28e369a3d3e1d407"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_86" supported="no">
-		<description>Panorama - Disk 32A (1988-08-10, WB)</description>
+	<software name="panorama_81" supported="no">
+		<description>Panorama - Disk 32A (1988-08-10)</description>
 		<year>1988</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 32a (1988-08-10)(pacific north-west amigas club)[wb].adf" size="901120" crc="1e957e15" sha1="067e4f8d882b7ebf60d68790fbbc65f47c6ec618"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_87" supported="no">
-		<description>Panorama - Disk 32B (1988-08-10, WB)</description>
+	<software name="panorama_82" supported="no">
+		<description>Panorama - Disk 32B (1988-08-10)</description>
 		<year>1988</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 32b (1988-08-10)(pacific north-west amigas club)[wb].adf" size="901120" crc="54681007" sha1="a974fd6e4c76928c3f2ff460510bc22b39199b07"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_88" supported="no">
-		<description>Panorama - Disk 32C (1988-08-24, WB)</description>
+	<software name="panorama_83" supported="no">
+		<description>Panorama - Disk 32C (1988-08-24)</description>
 		<year>1988</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 32c (1988-08-24)(pacific north-west amigas club)[wb].adf" size="901120" crc="d8912a31" sha1="d54c91e41d49c55970c09897568a9328a68ba594"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="panorama_89" supported="no">
-		<description>Panorama - Disk 32D (1988-08-24, WB)</description>
+	<software name="panorama_84" supported="no">
+		<description>Panorama - Disk 32D (1988-08-24)</description>
 		<year>1988</year>
 		<publisher>Pacific North-West Amigas Club</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="panorama - disk 32d (1988-08-24)(pacific north-west amigas club)[wb].adf" size="901120" crc="1bba5fe8" sha1="c230e177dc4acded6f0d9f9ef83146be89285e94"/>
 			</dataarea>

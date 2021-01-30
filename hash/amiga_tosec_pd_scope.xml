@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
+Credit goes to the TOSECDEV team for building this vast database over the years.
+-->
 <softwarelist name="amiga_tosec_pd_scope" description="Amiga TOSEC - Scope">
 
 	<software name="scopecat" supported="no">
@@ -7,19 +11,13 @@
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
 			<dataarea name="rom" size="901120">
 				<rom name="scope catalogue (199x)(scope pd)(us).adf" size="901120" crc="a8b678b9" sha1="a3722b69e4e6b92380351943ce194ecfa98ae01c"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="scopecat_1" supported="no">
-		<description>Scope Catalogue (US, Modified bamcopy)</description>
-		<year>199?</year>
-		<publisher>Scope PD</publisher>
-
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="Modified bamcopy"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope catalogue (199x)(scope pd)(us)[m bamcopy].adf" size="901120" crc="a350a5e6" sha1="eae22daa7cca16728c6880c410276d8fde0d23e4"/>
 			</dataarea>
@@ -27,11 +25,12 @@
 	</software>
 
 	<software name="scopedis" supported="no">
-		<description>Scope Disk #001 (US, WB)</description>
+		<description>Scope Disk #001 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #001 (199x)(scope pd)(us)[wb].adf" size="901120" crc="0651689c" sha1="748f7ff286dd48d61d9edf493b03b0dc3db6ec23"/>
 			</dataarea>
@@ -39,11 +38,12 @@
 	</software>
 
 	<software name="scopedis_1" supported="no">
-		<description>Scope Disk #002 (US, WB)</description>
+		<description>Scope Disk #002 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #002 (199x)(scope pd)(us)[wb].adf" size="901120" crc="13b7bec8" sha1="ab785d9108bcefa6cbece3834edc46f95239e8fb"/>
 			</dataarea>
@@ -51,11 +51,12 @@
 	</software>
 
 	<software name="scopedis_2" supported="no">
-		<description>Scope Disk #003 (US, WB)</description>
+		<description>Scope Disk #003 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #003 (199x)(scope pd)(us)[wb].adf" size="901120" crc="f286cc05" sha1="3eb548166a1c02764a8332437dbebb382c63062f"/>
 			</dataarea>
@@ -63,11 +64,12 @@
 	</software>
 
 	<software name="scopedis_3" supported="no">
-		<description>Scope Disk #004 (US, WB)</description>
+		<description>Scope Disk #004 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #004 (199x)(scope pd)(us)[wb].adf" size="901120" crc="b2d9f20d" sha1="9c8dff2b2bab2bd0c3948a31df49dc3dacf4591b"/>
 			</dataarea>
@@ -75,11 +77,12 @@
 	</software>
 
 	<software name="scopedis_4" supported="no">
-		<description>Scope Disk #005 (US, WB)</description>
+		<description>Scope Disk #005 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #005 (199x)(scope pd)(us)[wb].adf" size="901120" crc="0fff3304" sha1="b27afc5c85651f3f5a45a2221199dcbe3551788b"/>
 			</dataarea>
@@ -87,11 +90,12 @@
 	</software>
 
 	<software name="scopedis_5" supported="no">
-		<description>Scope Disk #006 (US, WB)</description>
+		<description>Scope Disk #006 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #006 (199x)(scope pd)(us)[wb].adf" size="901120" crc="7171994a" sha1="fec51dd7fe432f5599bafbb8b13bdc29a3bfda53"/>
 			</dataarea>
@@ -99,11 +103,12 @@
 	</software>
 
 	<software name="scopedis_6" supported="no">
-		<description>Scope Disk #007 (US, WB)</description>
+		<description>Scope Disk #007 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #007 (199x)(scope pd)(us)[wb].adf" size="901120" crc="e9daabaa" sha1="24ccfb39398cbf05693117d3fbf26f4c85464790"/>
 			</dataarea>
@@ -111,11 +116,12 @@
 	</software>
 
 	<software name="scopedis_7" supported="no">
-		<description>Scope Disk #008 (US, WB)</description>
+		<description>Scope Disk #008 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #008 (199x)(scope pd)(us)[wb].adf" size="901120" crc="cc41ac3d" sha1="f781158ed0afc8c24be758eedaa4233091cd00eb"/>
 			</dataarea>
@@ -123,11 +129,12 @@
 	</software>
 
 	<software name="scopedis_8" supported="no">
-		<description>Scope Disk #009 (US, WB)</description>
+		<description>Scope Disk #009 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #009 (199x)(scope pd)(us)[wb].adf" size="901120" crc="d2a9f59c" sha1="8153c8900ee715a461fdeac26dbd809a94eb58e9"/>
 			</dataarea>
@@ -135,11 +142,12 @@
 	</software>
 
 	<software name="scopedis_9" supported="no">
-		<description>Scope Disk #010 (US, WB)</description>
+		<description>Scope Disk #010 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #010 (199x)(scope pd)(us)[wb].adf" size="901120" crc="6a4126fc" sha1="dc681abd24433d2cd18255e9cc5e3014ff6a7878"/>
 			</dataarea>
@@ -147,11 +155,12 @@
 	</software>
 
 	<software name="scopedis_10" supported="no">
-		<description>Scope Disk #011 (US, WB)</description>
+		<description>Scope Disk #011 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #011 (199x)(scope pd)(us)[wb].adf" size="901120" crc="d178885d" sha1="9bf5c40b955e0e761c5971e90e78a32050a89b51"/>
 			</dataarea>
@@ -159,11 +168,12 @@
 	</software>
 
 	<software name="scopedis_11" supported="no">
-		<description>Scope Disk #012 (US, WB)</description>
+		<description>Scope Disk #012 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #012 (199x)(scope pd)(us)[wb].adf" size="901120" crc="eb3a8933" sha1="05bcbb46cf7e2ccd85784a0831fc4cca416e610a"/>
 			</dataarea>
@@ -171,11 +181,12 @@
 	</software>
 
 	<software name="scopedis_12" supported="no">
-		<description>Scope Disk #013 (US, WB)</description>
+		<description>Scope Disk #013 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #013 (199x)(scope pd)(us)[wb].adf" size="901120" crc="019821b6" sha1="fbcfd91acd08f44d43009ee1f18bf29ad6eea830"/>
 			</dataarea>
@@ -183,11 +194,12 @@
 	</software>
 
 	<software name="scopedis_13" supported="no">
-		<description>Scope Disk #014 (US, WB)</description>
+		<description>Scope Disk #014 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #014 (199x)(scope pd)(us)[wb].adf" size="901120" crc="6015055b" sha1="22fb2a1706f3a81ef54888230f721872c96f4733"/>
 			</dataarea>
@@ -195,11 +207,12 @@
 	</software>
 
 	<software name="scopedis_14" supported="no">
-		<description>Scope Disk #015 (US, WB)</description>
+		<description>Scope Disk #015 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #015 (199x)(scope pd)(us)[wb].adf" size="901120" crc="46826cac" sha1="538d5970c2dc38ab221e9555c19384c29b8ee57a"/>
 			</dataarea>
@@ -207,11 +220,12 @@
 	</software>
 
 	<software name="scopedis_15" supported="no">
-		<description>Scope Disk #016 (US, WB)</description>
+		<description>Scope Disk #016 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #016 (199x)(scope pd)(us)[wb].adf" size="901120" crc="ed4a5547" sha1="f1774ecf9854ffd28a9a45f12d37f4fd0722b75e"/>
 			</dataarea>
@@ -219,11 +233,12 @@
 	</software>
 
 	<software name="scopedis_16" supported="no">
-		<description>Scope Disk #017 (US, WB)</description>
+		<description>Scope Disk #017 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #017 (199x)(scope pd)(us)[wb].adf" size="901120" crc="7bdb0505" sha1="015a881a6a757a1a05a21d27bef5d3e502b1456c"/>
 			</dataarea>
@@ -231,11 +246,12 @@
 	</software>
 
 	<software name="scopedis_17" supported="no">
-		<description>Scope Disk #018 (US, WB)</description>
+		<description>Scope Disk #018 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #018 (199x)(scope pd)(us)[wb].adf" size="901120" crc="243e29fc" sha1="8bf39caa7494ab2fc370396be0fbc7a89fbc68eb"/>
 			</dataarea>
@@ -243,11 +259,12 @@
 	</software>
 
 	<software name="scopedis_18" supported="no">
-		<description>Scope Disk #019 (US, WB)</description>
+		<description>Scope Disk #019 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #019 (199x)(scope pd)(us)[wb].adf" size="901120" crc="0d16e9fd" sha1="165cdc3ceca9b5e64b7aed5baf4aaf104fb77bfd"/>
 			</dataarea>
@@ -255,11 +272,12 @@
 	</software>
 
 	<software name="scopedis_19" supported="no">
-		<description>Scope Disk #020 (US, WB)</description>
+		<description>Scope Disk #020 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #020 (199x)(scope pd)(us)[wb].adf" size="901120" crc="2dd93450" sha1="bc31c72707d2641c2bc3f8eb09975ca658632133"/>
 			</dataarea>
@@ -267,11 +285,12 @@
 	</software>
 
 	<software name="scopedis_20" supported="no">
-		<description>Scope Disk #021 (US, WB)</description>
+		<description>Scope Disk #021 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #021 (199x)(scope pd)(us)[wb].adf" size="901120" crc="6ecf2b7d" sha1="8683b843c8bb56fa2443a65d3236f61e93dccf6a"/>
 			</dataarea>
@@ -279,11 +298,12 @@
 	</software>
 
 	<software name="scopedis_21" supported="no">
-		<description>Scope Disk #022 (US, WB)</description>
+		<description>Scope Disk #022 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #022 (199x)(scope pd)(us)[wb].adf" size="901120" crc="304041ba" sha1="1f4793223a8736bb7075127451f8ece52c516cb5"/>
 			</dataarea>
@@ -291,11 +311,12 @@
 	</software>
 
 	<software name="scopedis_22" supported="no">
-		<description>Scope Disk #023 (US, WB)</description>
+		<description>Scope Disk #023 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #023 (199x)(scope pd)(us)[wb].adf" size="901120" crc="63afd8f5" sha1="3864401c4ba86b8ccb6f143a66d8f24e04aa3490"/>
 			</dataarea>
@@ -303,2375 +324,2566 @@
 	</software>
 
 	<software name="scopedis_23" supported="no">
-		<description>Scope Disk #024 (US, Bad linkbbs file, WB)</description>
+		<description>Scope Disk #024 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Bad linkbbs file, WB"/>
 			<dataarea name="rom" size="901120">
-				<rom name="scope disk #024 (199x)(scope pd)(us)[b linkbbs file][wb].adf" size="901120" crc="b490c3e3" sha1="2d0fffd65ec7c7413e17eb94fff97b2a15d271f4"/>
+				<rom name="scope disk #024 (199x)(scope pd)(us)[b linkbbs file][wb].adf" size="901120" crc="b490c3e3" sha1="2d0fffd65ec7c7413e17eb94fff97b2a15d271f4" status="baddump"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="scopedis_24" supported="no">
-		<description>Scope Disk #024 (US, WB)</description>
-		<year>199?</year>
-		<publisher>Scope PD</publisher>
-
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #024 (199x)(scope pd)(us)[wb].adf" size="901120" crc="d60aedb4" sha1="9fa435092bc7681b814db97696063dda43e89ddc"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_25" supported="no">
-		<description>Scope Disk #025 (US, WB)</description>
+	<software name="scopedis_24" supported="no">
+		<description>Scope Disk #025 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #025 (199x)(scope pd)(us)[wb].adf" size="901120" crc="a8ea8828" sha1="95f4f5fd41cdada4155531cd6c82e41e919da6d3"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_26" supported="no">
-		<description>Scope Disk #026 (US, WB)</description>
+	<software name="scopedis_25" supported="no">
+		<description>Scope Disk #026 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #026 (199x)(scope pd)(us)[wb].adf" size="901120" crc="7560e7b6" sha1="5ecde20309899197ea28c83f2159de0f5cb586c7"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_27" supported="no">
-		<description>Scope Disk #027 (US, WB)</description>
+	<software name="scopedis_26" supported="no">
+		<description>Scope Disk #027 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #027 (199x)(scope pd)(us)[wb].adf" size="901120" crc="c82a468e" sha1="cdd84594e3c88273521f0049d59af7d462636e4f"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_28" supported="no">
-		<description>Scope Disk #028 (US, WB)</description>
+	<software name="scopedis_27" supported="no">
+		<description>Scope Disk #028 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #028 (199x)(scope pd)(us)[wb].adf" size="901120" crc="e87a0d88" sha1="1154b68970c104b50aa1d992be6778fe1b9fe9fc"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_29" supported="no">
-		<description>Scope Disk #029 (US, WB)</description>
+	<software name="scopedis_28" supported="no">
+		<description>Scope Disk #029 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #029 (199x)(scope pd)(us)[wb].adf" size="901120" crc="930fa347" sha1="afc3cb1a9b8f9d9635bd80d2c67cf374da0d1741"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_30" supported="no">
-		<description>Scope Disk #030 (US, WB)</description>
+	<software name="scopedis_29" supported="no">
+		<description>Scope Disk #030 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #030 (199x)(scope pd)(us)[wb].adf" size="901120" crc="ddee9218" sha1="4f95630f68f7387846169d80c44d1c640e4252db"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_31" supported="no">
-		<description>Scope Disk #031 (US, WB)</description>
+	<software name="scopedis_30" supported="no">
+		<description>Scope Disk #031 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #031 (199x)(scope pd)(us)[wb].adf" size="901120" crc="b5d0d58c" sha1="ae95a847d3f0a97df109a29329470b690b238b32"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_32" supported="no">
-		<description>Scope Disk #032 (US, WB)</description>
+	<software name="scopedis_31" supported="no">
+		<description>Scope Disk #032 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #032 (199x)(scope pd)(us)[wb].adf" size="901120" crc="bf4d35bb" sha1="0e9c8135ca4e51cc910ab07cda343c723ae67fcc"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_33" supported="no">
-		<description>Scope Disk #033 (US, WB)</description>
+	<software name="scopedis_32" supported="no">
+		<description>Scope Disk #033 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #033 (199x)(scope pd)(us)[wb].adf" size="901120" crc="e136218d" sha1="5af788560dd687ba3e5a1fb3cb4ef0aa2f917a87"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_34" supported="no">
-		<description>Scope Disk #034 (US, WB)</description>
+	<software name="scopedis_33" supported="no">
+		<description>Scope Disk #034 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #034 (199x)(scope pd)(us)[wb].adf" size="901120" crc="0eeedeb0" sha1="c5a9e8340606de9a3418f03c6a5db0f04923d4c6"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_35" supported="no">
-		<description>Scope Disk #035 (US, WB)</description>
+	<software name="scopedis_34" supported="no">
+		<description>Scope Disk #035 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #035 (199x)(scope pd)(us)[wb].adf" size="901120" crc="09795f21" sha1="0879a942852e4f5c9643b7f786fcefa51856279a"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_36" supported="no">
-		<description>Scope Disk #036 (US, WB)</description>
+	<software name="scopedis_35" supported="no">
+		<description>Scope Disk #036 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #036 (199x)(scope pd)(us)[wb].adf" size="901120" crc="f587c7e9" sha1="96972ed1bf4c57b4d02ae9a0cb33b0549aa5bb02"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_37" supported="no">
-		<description>Scope Disk #037 (US, WB)</description>
+	<software name="scopedis_36" supported="no">
+		<description>Scope Disk #037 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #037 (199x)(scope pd)(us)[wb].adf" size="901120" crc="73cf1e47" sha1="aa1f50386e8c7ecfae560f622cbf565de3fd99d4"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_38" supported="no">
-		<description>Scope Disk #038 (US, WB)</description>
+	<software name="scopedis_37" supported="no">
+		<description>Scope Disk #038 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #038 (199x)(scope pd)(us)[wb].adf" size="901120" crc="0a3b6763" sha1="529c6b899c1ec453784c932bb62a2a58d81f9ea9"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_39" supported="no">
-		<description>Scope Disk #039 (US, WB)</description>
+	<software name="scopedis_38" supported="no">
+		<description>Scope Disk #039 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #039 (199x)(scope pd)(us)[wb].adf" size="901120" crc="39b77a61" sha1="31d5173a8ca91f89d7c22c54f13a3522feb90c3a"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_40" supported="no">
-		<description>Scope Disk #040 (US, WB)</description>
+	<software name="scopedis_39" supported="no">
+		<description>Scope Disk #040 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #040 (199x)(scope pd)(us)[wb].adf" size="901120" crc="dd901c03" sha1="1ccb458b0e9b0918021c88a7be794eab2a5f996d"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_41" supported="no">
-		<description>Scope Disk #041 (US, WB)</description>
+	<software name="scopedis_40" supported="no">
+		<description>Scope Disk #041 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #041 (199x)(scope pd)(us)[wb].adf" size="901120" crc="d63f6d1b" sha1="408c163c221c970dd24541e524e1eb819bcc09aa"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_42" supported="no">
-		<description>Scope Disk #042 (US, WB)</description>
+	<software name="scopedis_41" supported="no">
+		<description>Scope Disk #042 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #042 (199x)(scope pd)(us)[wb].adf" size="901120" crc="62114d5f" sha1="182b8df6a7655476a2aa412012c327338576e41a"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_43" supported="no">
-		<description>Scope Disk #043 (US, WB)</description>
+	<software name="scopedis_42" supported="no">
+		<description>Scope Disk #043 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #043 (199x)(scope pd)(us)[wb].adf" size="901120" crc="b0433809" sha1="259ef65ac7e28992001248cad74af3ec9391341d"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_44" supported="no">
-		<description>Scope Disk #044 (US, WB)</description>
+	<software name="scopedis_43" supported="no">
+		<description>Scope Disk #044 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #044 (199x)(scope pd)(us)[wb].adf" size="901120" crc="8e6f7f36" sha1="2e2cd5d737d09a685b2e046d82e75b001c979d70"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_45" supported="no">
-		<description>Scope Disk #045 (US, WB)</description>
+	<software name="scopedis_44" supported="no">
+		<description>Scope Disk #045 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #045 (199x)(scope pd)(us)[wb].adf" size="901120" crc="dac123b5" sha1="4f05949937d02567f7a9558f580d3a2eb5ae1f61"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_46" supported="no">
-		<description>Scope Disk #046 (US, WB)</description>
+	<software name="scopedis_45" supported="no">
+		<description>Scope Disk #046 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #046 (199x)(scope pd)(us)[wb].adf" size="901120" crc="1d619f87" sha1="e65e868f126ce5b571b0cc0f7ca47c5f920f07c1"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_47" supported="no">
-		<description>Scope Disk #047 (US, WB)</description>
+	<software name="scopedis_46" supported="no">
+		<description>Scope Disk #047 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #047 (199x)(scope pd)(us)[wb].adf" size="901120" crc="5020002a" sha1="e0a424608b477f5988ef38eed412bf95353e1fc0"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_48" supported="no">
-		<description>Scope Disk #048 (US, WB)</description>
+	<software name="scopedis_47" supported="no">
+		<description>Scope Disk #048 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #048 (199x)(scope pd)(us)[wb].adf" size="901120" crc="616d96e4" sha1="2909e80287564cad8237652bc9ebfe8a5e9ac47a"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_49" supported="no">
-		<description>Scope Disk #049 (US, WB)</description>
+	<software name="scopedis_48" supported="no">
+		<description>Scope Disk #049 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #049 (199x)(scope pd)(us)[wb].adf" size="901120" crc="423e6d8b" sha1="bbc77ca321e690437f4695fcd40d843cb3453e63"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_50" supported="no">
-		<description>Scope Disk #050 (US, WB)</description>
+	<software name="scopedis_49" supported="no">
+		<description>Scope Disk #050 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #050 (199x)(scope pd)(us)[wb].adf" size="901120" crc="7aa010d5" sha1="0f4df4c5823803b674029837f24d27a7efcac3f2"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_51" supported="no">
-		<description>Scope Disk #051 (US, WB)</description>
+	<software name="scopedis_50" supported="no">
+		<description>Scope Disk #051 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #051 (199x)(scope pd)(us)[wb].adf" size="901120" crc="fcbc4dea" sha1="72445f793a866bc94ef196a494ecaa86b7457520"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_52" supported="no">
-		<description>Scope Disk #052 (US, WB)</description>
+	<software name="scopedis_51" supported="no">
+		<description>Scope Disk #052 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #052 (199x)(scope pd)(us)[wb].adf" size="901120" crc="2e2b32cb" sha1="89801b11cd8b77738ba3c06ea316c4744c68c54b"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_53" supported="no">
-		<description>Scope Disk #053 (US, WB)</description>
+	<software name="scopedis_52" supported="no">
+		<description>Scope Disk #053 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #053 (199x)(scope pd)(us)[wb].adf" size="901120" crc="3a2be496" sha1="0974080f3924028616487c791e0665127f2fd08b"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_54" supported="no">
-		<description>Scope Disk #054 (US, WB)</description>
+	<software name="scopedis_53" supported="no">
+		<description>Scope Disk #054 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #054 (199x)(scope pd)(us)[wb].adf" size="901120" crc="f5d4dd26" sha1="a9b01c652ef8ecde5f67cf4e4d7768ec29d27753"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_55" supported="no">
-		<description>Scope Disk #055 (US, WB)</description>
+	<software name="scopedis_54" supported="no">
+		<description>Scope Disk #055 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #055 (199x)(scope pd)(us)[wb].adf" size="901120" crc="efdd0cc7" sha1="a58e420118b9f383d82479cbfa5f115006ad77cf"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_56" supported="no">
-		<description>Scope Disk #056 (US, WB)</description>
+	<software name="scopedis_55" supported="no">
+		<description>Scope Disk #056 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #056 (199x)(scope pd)(us)[wb].adf" size="901120" crc="2e9fbea4" sha1="6144f66731e2dfe5040befc50f64ec45f66ba89f"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_57" supported="no">
-		<description>Scope Disk #057 (US, WB)</description>
+	<software name="scopedis_56" supported="no">
+		<description>Scope Disk #057 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #057 (199x)(scope pd)(us)[wb].adf" size="901120" crc="7a23cbd8" sha1="e342d946ef935d6fbb22255cf43def1c565505df"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_58" supported="no">
-		<description>Scope Disk #058 (US, WB)</description>
+	<software name="scopedis_57" supported="no">
+		<description>Scope Disk #058 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #058 (199x)(scope pd)(us)[wb].adf" size="901120" crc="51436db1" sha1="e43015420aa65251db5893b95424f37ccb5b19fe"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_59" supported="no">
-		<description>Scope Disk #059 (US, WB)</description>
+	<software name="scopedis_58" supported="no">
+		<description>Scope Disk #059 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #059 (199x)(scope pd)(us)[wb].adf" size="901120" crc="00e6679b" sha1="dd30177b6421c58c2f466836af5b3c5eecebe7f9"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_60" supported="no">
-		<description>Scope Disk #060 (US, WB)</description>
+	<software name="scopedis_59" supported="no">
+		<description>Scope Disk #060 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #060 (199x)(scope pd)(us)[wb].adf" size="901120" crc="7d90febc" sha1="a37f5589bb7bf0d01e175e10bdab623a4ad94db9"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_61" supported="no">
-		<description>Scope Disk #061 (US, WB)</description>
+	<software name="scopedis_60" supported="no">
+		<description>Scope Disk #061 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #061 (199x)(scope pd)(us)[wb].adf" size="901120" crc="56a80c0d" sha1="d2af0aad39314e53950330e309ef4eac7e808f4d"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_62" supported="no">
-		<description>Scope Disk #062 (US, WB)</description>
+	<software name="scopedis_61" supported="no">
+		<description>Scope Disk #062 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #062 (199x)(scope pd)(us)[wb].adf" size="901120" crc="d5c3cb9f" sha1="598443742a80cfa4ecc8a8fc6dcc3cbdb0f1a419"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_63" supported="no">
-		<description>Scope Disk #063 (US, WB)</description>
+	<software name="scopedis_62" supported="no">
+		<description>Scope Disk #063 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #063 (199x)(scope pd)(us)[wb].adf" size="901120" crc="3549c239" sha1="9bb0e0af03e3310403d797a7f3bfc7e47d4b523d"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_64" supported="no">
-		<description>Scope Disk #064 (US, WB)</description>
+	<software name="scopedis_63" supported="no">
+		<description>Scope Disk #064 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #064 (199x)(scope pd)(us)[wb].adf" size="901120" crc="a44d4078" sha1="351d98965bdfe5c4cd54c75cca40ef3eaeac833c"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_65" supported="no">
-		<description>Scope Disk #065 (US, WB)</description>
+	<software name="scopedis_64" supported="no">
+		<description>Scope Disk #065 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #065 (199x)(scope pd)(us)[wb].adf" size="901120" crc="33baf0a4" sha1="fa0510de05aa1c9ee962f129f9676b888854c51c"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_66" supported="no">
-		<description>Scope Disk #066 (US, WB)</description>
+	<software name="scopedis_65" supported="no">
+		<description>Scope Disk #066 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #066 (199x)(scope pd)(us)[wb].adf" size="901120" crc="fd965cfc" sha1="90de3e51adef5d1f6da91679c5a5ee100fa84409"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_67" supported="no">
-		<description>Scope Disk #067 (US, WB)</description>
+	<software name="scopedis_66" supported="no">
+		<description>Scope Disk #067 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #067 (199x)(scope pd)(us)[wb].adf" size="901120" crc="f2307907" sha1="40ae3c07dbc6e857c01b4d190bcc9158ccfae9c4"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_68" supported="no">
-		<description>Scope Disk #068 (US, WB)</description>
+	<software name="scopedis_67" supported="no">
+		<description>Scope Disk #068 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #068 (199x)(scope pd)(us)[wb].adf" size="901120" crc="b8ab612d" sha1="a9458e5c58d15cb8e2ac9cc350d29558700a4bc5"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_69" supported="no">
-		<description>Scope Disk #069 (US, WB)</description>
+	<software name="scopedis_68" supported="no">
+		<description>Scope Disk #069 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #069 (199x)(scope pd)(us)[wb].adf" size="901120" crc="48f0c0dd" sha1="ab4d3a5a75f0203e86d9228dbd6fb51a332b88cb"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_70" supported="no">
-		<description>Scope Disk #070 (US, WB)</description>
+	<software name="scopedis_69" supported="no">
+		<description>Scope Disk #070 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #070 (199x)(scope pd)(us)[wb].adf" size="901120" crc="5ca45540" sha1="8ddfe5c06245f44fd0ab0c0ebec127f8ca578bb1"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_71" supported="no">
-		<description>Scope Disk #071 (US, WB)</description>
+	<software name="scopedis_70" supported="no">
+		<description>Scope Disk #071 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #071 (199x)(scope pd)(us)[wb].adf" size="901120" crc="1c8c85b3" sha1="75095848b93a3e7edbef4c619037c5668eda2142"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_72" supported="no">
-		<description>Scope Disk #072 (US, WB)</description>
+	<software name="scopedis_71" supported="no">
+		<description>Scope Disk #072 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #072 (199x)(scope pd)(us)[wb].adf" size="901120" crc="bcd4285b" sha1="c310842357ddb968fee94eb0ec94abd9eef330f5"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_73" supported="no">
-		<description>Scope Disk #073 (US, WB)</description>
+	<software name="scopedis_72" supported="no">
+		<description>Scope Disk #073 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #073 (199x)(scope pd)(us)[wb].adf" size="901120" crc="0580d637" sha1="29c28c29e57d2c833245894c2e96e348b922755d"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_74" supported="no">
-		<description>Scope Disk #074 (US, WB)</description>
+	<software name="scopedis_73" supported="no">
+		<description>Scope Disk #074 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #074 (199x)(scope pd)(us)[wb].adf" size="901120" crc="96e53f03" sha1="a9f9453fd8752cd0a5fced7e953a1573e6903b41"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_75" supported="no">
-		<description>Scope Disk #075 (US, WB)</description>
+	<software name="scopedis_74" supported="no">
+		<description>Scope Disk #075 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #075 (199x)(scope pd)(us)[wb].adf" size="901120" crc="be97efd5" sha1="0690c50435843d15f504ac77b2269c32978cd2a1"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_76" supported="no">
-		<description>Scope Disk #076 (US, WB)</description>
+	<software name="scopedis_75" supported="no">
+		<description>Scope Disk #076 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #076 (199x)(scope pd)(us)[wb].adf" size="901120" crc="e030259a" sha1="b320dfae8e82a35f96bd231b9c36822ea02da441"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_77" supported="no">
-		<description>Scope Disk #077 (US, WB)</description>
+	<software name="scopedis_76" supported="no">
+		<description>Scope Disk #077 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #077 (199x)(scope pd)(us)[wb].adf" size="901120" crc="770c5e1f" sha1="a1f8981713d5bce4e68fc74c490c0e5405cecc11"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_78" supported="no">
-		<description>Scope Disk #078 (US, WB)</description>
+	<software name="scopedis_77" supported="no">
+		<description>Scope Disk #078 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #078 (199x)(scope pd)(us)[wb].adf" size="901120" crc="b48faa1f" sha1="ff5fc6f4fc04cd5c5b3457d3795962bedf350c10"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_79" supported="no">
-		<description>Scope Disk #079 (US, WB)</description>
+	<software name="scopedis_78" supported="no">
+		<description>Scope Disk #079 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #079 (199x)(scope pd)(us)[wb].adf" size="901120" crc="1cabdce0" sha1="9426c49b502f9049897c49a908eb682458a29038"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_80" supported="no">
-		<description>Scope Disk #080 (US, WB)</description>
+	<software name="scopedis_79" supported="no">
+		<description>Scope Disk #080 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #080 (199x)(scope pd)(us)[wb].adf" size="901120" crc="3c3778ec" sha1="f4da66a703a1674eb533c9d9dda443fb80131851"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_81" supported="no">
-		<description>Scope Disk #081 (US, WB)</description>
+	<software name="scopedis_80" supported="no">
+		<description>Scope Disk #081 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #081 (199x)(scope pd)(us)[wb].adf" size="901120" crc="d1cca229" sha1="b7e067a3bd1340e5bf7dc1c6e67fa5d5c67e3f64"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_82" supported="no">
-		<description>Scope Disk #082 (US, WB)</description>
+	<software name="scopedis_81" supported="no">
+		<description>Scope Disk #082 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #082 (199x)(scope pd)(us)[wb].adf" size="901120" crc="51f03517" sha1="1b12533e4773596d430ba9d9901b3bd35a4cbbad"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_83" supported="no">
-		<description>Scope Disk #083 (US, WB)</description>
+	<software name="scopedis_82" supported="no">
+		<description>Scope Disk #083 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #083 (199x)(scope pd)(us)[wb].adf" size="901120" crc="d04daef6" sha1="108d6b5c75e4d5448b11b7ac2af8c06ceaae29c1"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_84" supported="no">
-		<description>Scope Disk #084 (US, WB)</description>
+	<software name="scopedis_83" supported="no">
+		<description>Scope Disk #084 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #084 (199x)(scope pd)(us)[wb].adf" size="901120" crc="b938fc95" sha1="3cf77777df69418b6ed454b53ba4303e06c3fc42"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_85" supported="no">
-		<description>Scope Disk #085 (US, WB)</description>
+	<software name="scopedis_84" supported="no">
+		<description>Scope Disk #085 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #085 (199x)(scope pd)(us)[wb].adf" size="901120" crc="656bf20e" sha1="6acadc7f5036d88288903452fae67fb9947a8fa6"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_86" supported="no">
-		<description>Scope Disk #086 (US, WB)</description>
+	<software name="scopedis_85" supported="no">
+		<description>Scope Disk #086 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #086 (199x)(scope pd)(us)[wb].adf" size="901120" crc="5937966a" sha1="4dd9e3fc6cc422705cd3aa715f23aded239bb0a1"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_87" supported="no">
-		<description>Scope Disk #087 (US, WB)</description>
+	<software name="scopedis_86" supported="no">
+		<description>Scope Disk #087 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #087 (199x)(scope pd)(us)[wb].adf" size="901120" crc="0b73dc2a" sha1="6bacac8e2eea2b48623faa4bafadc2c77390ea8a"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_88" supported="no">
-		<description>Scope Disk #088 (US, WB)</description>
+	<software name="scopedis_87" supported="no">
+		<description>Scope Disk #088 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #088 (199x)(scope pd)(us)[wb].adf" size="901120" crc="21fc848c" sha1="57ea3b37b3d516a04d7f0586aa78031e87bded02"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_89" supported="no">
-		<description>Scope Disk #089 (US, WB)</description>
+	<software name="scopedis_88" supported="no">
+		<description>Scope Disk #089 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #089 (199x)(scope pd)(us)[wb].adf" size="901120" crc="8ca4177f" sha1="c9776109b66e5e9cc372bde329167bc45b00aeb5"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_90" supported="no">
-		<description>Scope Disk #090 (US, WB)</description>
+	<software name="scopedis_89" supported="no">
+		<description>Scope Disk #090 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #090 (199x)(scope pd)(us)[wb].adf" size="901120" crc="611bfea2" sha1="5c5f0a4aef3f52502bae176c4a00e0bc3764a01a"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_91" supported="no">
-		<description>Scope Disk #091 (US, WB)</description>
+	<software name="scopedis_90" supported="no">
+		<description>Scope Disk #091 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #091 (199x)(scope pd)(us)[wb].adf" size="901120" crc="75cb0a35" sha1="d0249040c8850edafd3dac593cc7ccd0085d644e"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_92" supported="no">
-		<description>Scope Disk #092 (US, WB)</description>
+	<software name="scopedis_91" supported="no">
+		<description>Scope Disk #092 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #092 (199x)(scope pd)(us)[wb].adf" size="901120" crc="e949d33e" sha1="950edac72ed4899d1ca09598f51752b4f3d8bece"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_93" supported="no">
-		<description>Scope Disk #093 (US, WB)</description>
+	<software name="scopedis_92" supported="no">
+		<description>Scope Disk #093 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #093 (199x)(scope pd)(us)[wb].adf" size="901120" crc="f017278e" sha1="63651c19e8403b7f2c822aa4b0a758178249c103"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_94" supported="no">
-		<description>Scope Disk #094 (US, WB)</description>
+	<software name="scopedis_93" supported="no">
+		<description>Scope Disk #094 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #094 (199x)(scope pd)(us)[wb].adf" size="901120" crc="234b19ac" sha1="89bcbab75907f1a05992330d057d555310b7c2d6"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_95" supported="no">
-		<description>Scope Disk #095 (US, WB)</description>
+	<software name="scopedis_94" supported="no">
+		<description>Scope Disk #095 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #095 (199x)(scope pd)(us)[wb].adf" size="901120" crc="749454eb" sha1="6626456d8144636333ed674cc920aa31ff3244bc"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_96" supported="no">
-		<description>Scope Disk #096 (US, WB)</description>
+	<software name="scopedis_95" supported="no">
+		<description>Scope Disk #096 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #096 (199x)(scope pd)(us)[wb].adf" size="901120" crc="a672ca9d" sha1="390e5c04c36d3732122b653977f14f0b9c5dce00"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_97" supported="no">
-		<description>Scope Disk #097 (US, WB)</description>
+	<software name="scopedis_96" supported="no">
+		<description>Scope Disk #097 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #097 (199x)(scope pd)(us)[wb].adf" size="901120" crc="062f8874" sha1="fd731d943042bc6e74c6de890793799ea3da85ce"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_98" supported="no">
-		<description>Scope Disk #098 (US, WB)</description>
+	<software name="scopedis_97" supported="no">
+		<description>Scope Disk #098 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #098 (199x)(scope pd)(us)[wb].adf" size="901120" crc="c8113555" sha1="19df04bca3c6564dae853205ca84972330e5b4e8"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_99" supported="no">
-		<description>Scope Disk #099 (US, WB)</description>
+	<software name="scopedis_98" supported="no">
+		<description>Scope Disk #099 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #099 (199x)(scope pd)(us)[wb].adf" size="901120" crc="92c7ea71" sha1="df0f7f37d67c40ae93195fed53acd1051338bb22"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_100" supported="no">
-		<description>Scope Disk #100 (US, WB)</description>
+	<software name="scopedis_99" supported="no">
+		<description>Scope Disk #100 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #100 (199x)(scope pd)(us)[wb].adf" size="901120" crc="68bdf010" sha1="be259f4280a2132893f75e7e66c7cab9c8781b1c"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_101" supported="no">
-		<description>Scope Disk #101 (US, WB)</description>
+	<software name="scopedis_100" supported="no">
+		<description>Scope Disk #101 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #101 (199x)(scope pd)(us)[wb].adf" size="901120" crc="7b95ca80" sha1="1dce9ce8392825988de18f9e29d859f3de586fbc"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_102" supported="no">
-		<description>Scope Disk #102 (US, WB)</description>
+	<software name="scopedis_101" supported="no">
+		<description>Scope Disk #102 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #102 (199x)(scope pd)(us)[wb].adf" size="901120" crc="d7e814d8" sha1="192f88254242f1acaf899458077be393a0afd921"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_103" supported="no">
-		<description>Scope Disk #103 (US, WB)</description>
+	<software name="scopedis_102" supported="no">
+		<description>Scope Disk #103 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #103 (199x)(scope pd)(us)[wb].adf" size="901120" crc="23182f21" sha1="72f6428e04179da9c7638c4097741689b43cecf0"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_104" supported="no">
-		<description>Scope Disk #104 (US, WB)</description>
+	<software name="scopedis_103" supported="no">
+		<description>Scope Disk #104 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #104 (199x)(scope pd)(us)[wb].adf" size="901120" crc="e8f3a027" sha1="e44c388a42efe8711d9d68e4547d90bd5401b2c4"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_105" supported="no">
-		<description>Scope Disk #105 (US, WB)</description>
+	<software name="scopedis_104" supported="no">
+		<description>Scope Disk #105 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #105 (199x)(scope pd)(us)[wb].adf" size="901120" crc="af057683" sha1="00061b33c3baa2a340b88442ca8319bf0107b9f9"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_106" supported="no">
-		<description>Scope Disk #106 (US, WB)</description>
+	<software name="scopedis_105" supported="no">
+		<description>Scope Disk #106 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #106 (199x)(scope pd)(us)[wb].adf" size="901120" crc="49262430" sha1="8713d8179b5c6490ce96239fb21171350507bd17"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_107" supported="no">
-		<description>Scope Disk #107 (US, WB)</description>
+	<software name="scopedis_106" supported="no">
+		<description>Scope Disk #107 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #107 (199x)(scope pd)(us)[wb].adf" size="901120" crc="ddc8103e" sha1="9dc6eaa9c2398f55fc4140fab792ec897678245b"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_108" supported="no">
-		<description>Scope Disk #108 (US, WB)</description>
+	<software name="scopedis_107" supported="no">
+		<description>Scope Disk #108 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #108 (199x)(scope pd)(us)[wb].adf" size="901120" crc="71c7ccb9" sha1="11c7a6a624978a74abe63dc96db4282b8b3f2976"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_109" supported="no">
-		<description>Scope Disk #109 (US, WB)</description>
+	<software name="scopedis_108" supported="no">
+		<description>Scope Disk #109 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #109 (199x)(scope pd)(us)[wb].adf" size="901120" crc="66413a48" sha1="6f196192eb573560aff6c29e6a7e431890f68e74"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_110" supported="no">
-		<description>Scope Disk #110 (US, WB)</description>
+	<software name="scopedis_109" supported="no">
+		<description>Scope Disk #110 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #110 (199x)(scope pd)(us)[wb].adf" size="901120" crc="6d17507f" sha1="6ec362803530b9b30bdcac161bc92149dc7b3918"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_111" supported="no">
-		<description>Scope Disk #111 (US, WB)</description>
+	<software name="scopedis_110" supported="no">
+		<description>Scope Disk #111 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #111 (199x)(scope pd)(us)[wb].adf" size="901120" crc="839128ed" sha1="286268943ad5a6f97b1c5b762e2a154b25980cd1"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_112" supported="no">
-		<description>Scope Disk #112 (US, WB)</description>
+	<software name="scopedis_111" supported="no">
+		<description>Scope Disk #112 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #112 (199x)(scope pd)(us)[wb].adf" size="901120" crc="4e42eb54" sha1="d479c6863aff58ea8c3e0995c2f0d19e516e6100"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_113" supported="no">
-		<description>Scope Disk #113 (US, WB)</description>
+	<software name="scopedis_112" supported="no">
+		<description>Scope Disk #113 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #113 (199x)(scope pd)(us)[wb].adf" size="901120" crc="91a16a73" sha1="329e894316cf9575a4e64c2a4a3b04aef10a244d"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_114" supported="no">
-		<description>Scope Disk #114 (US, WB)</description>
+	<software name="scopedis_113" supported="no">
+		<description>Scope Disk #114 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #114 (199x)(scope pd)(us)[wb].adf" size="901120" crc="68d242a1" sha1="d21cb5c37d9d241f4226d1e81e5f8a57963a3604"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_115" supported="no">
-		<description>Scope Disk #115 (US, WB)</description>
+	<software name="scopedis_114" supported="no">
+		<description>Scope Disk #115 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #115 (199x)(scope pd)(us)[wb].adf" size="901120" crc="f8ee149e" sha1="90a5f0580d324ab4ebf5991e620d43db9f9dcebd"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_116" supported="no">
-		<description>Scope Disk #116 (US, WB)</description>
+	<software name="scopedis_115" supported="no">
+		<description>Scope Disk #116 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #116 (199x)(scope pd)(us)[wb].adf" size="901120" crc="e9c632ec" sha1="5c7cef13810ca32054dd4d4b1dcb24fc43b15118"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_117" supported="no">
-		<description>Scope Disk #117 (US, WB)</description>
+	<software name="scopedis_116" supported="no">
+		<description>Scope Disk #117 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #117 (199x)(scope pd)(us)[wb].adf" size="901120" crc="6af5ee1c" sha1="5466e1cf6ba05083e671adb54e30653f149fbe39"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_118" supported="no">
-		<description>Scope Disk #118 (US, WB)</description>
+	<software name="scopedis_117" supported="no">
+		<description>Scope Disk #118 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #118 (199x)(scope pd)(us)[wb].adf" size="901120" crc="20005065" sha1="d5a86fc59cda420ebac9a5d8e9467f6da6f3e060"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_119" supported="no">
-		<description>Scope Disk #119 (US, WB)</description>
+	<software name="scopedis_118" supported="no">
+		<description>Scope Disk #119 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #119 (199x)(scope pd)(us)[wb].adf" size="901120" crc="7f69ec75" sha1="47a1d44f24ac1b7754d05e114f46df708769691e"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_120" supported="no">
-		<description>Scope Disk #120 (US, WB)</description>
+	<software name="scopedis_119" supported="no">
+		<description>Scope Disk #120 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #120 (199x)(scope pd)(us)[wb].adf" size="901120" crc="d8b88772" sha1="ef228c665c5ab1fd61217f25c44a064ba31e10d8"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_121" supported="no">
-		<description>Scope Disk #121 (US, WB)</description>
+	<software name="scopedis_120" supported="no">
+		<description>Scope Disk #121 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #121 (199x)(scope pd)(us)[wb].adf" size="901120" crc="d66dcbe9" sha1="c13d40fa5a3b6a38bf3d8db5114a93183b2d5486"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_122" supported="no">
-		<description>Scope Disk #122 (US, WB)</description>
+	<software name="scopedis_121" supported="no">
+		<description>Scope Disk #122 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #122 (199x)(scope pd)(us)[wb].adf" size="901120" crc="bdd56694" sha1="ddcf4ab16859af08e3d72e4e3f45d4e9a45f0ef5"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_123" supported="no">
-		<description>Scope Disk #123 (US, WB)</description>
+	<software name="scopedis_122" supported="no">
+		<description>Scope Disk #123 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #123 (199x)(scope pd)(us)[wb].adf" size="901120" crc="702de01e" sha1="356835dfae74f5cd6137eb6c3c196a48b3297c0e"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_124" supported="no">
-		<description>Scope Disk #124 (US, WB)</description>
+	<software name="scopedis_123" supported="no">
+		<description>Scope Disk #124 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #124 (199x)(scope pd)(us)[wb].adf" size="901120" crc="6f4462a7" sha1="8e0418213afb5a178d239699b166287309587d64"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_125" supported="no">
-		<description>Scope Disk #125 (US, WB)</description>
+	<software name="scopedis_124" supported="no">
+		<description>Scope Disk #125 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #125 (199x)(scope pd)(us)[wb].adf" size="901120" crc="96c94cee" sha1="e1294947658bd8d080e444b819ae91fd2ecc77d5"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_126" supported="no">
-		<description>Scope Disk #126 (US, WB)</description>
+	<software name="scopedis_125" supported="no">
+		<description>Scope Disk #126 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #126 (199x)(scope pd)(us)[wb].adf" size="901120" crc="d0c96d4a" sha1="330771d78bf317b0dcadd8059dfb08b24059490a"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_127" supported="no">
-		<description>Scope Disk #127 (US, WB)</description>
+	<software name="scopedis_126" supported="no">
+		<description>Scope Disk #127 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #127 (199x)(scope pd)(us)[wb].adf" size="901120" crc="9a710430" sha1="4ce1978c70e806c07521ac5962e01ddd236446d6"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_128" supported="no">
-		<description>Scope Disk #128 (US, WB)</description>
+	<software name="scopedis_127" supported="no">
+		<description>Scope Disk #128 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #128 (199x)(scope pd)(us)[wb].adf" size="901120" crc="796882fe" sha1="9badb49b077f37a10a84480e39b5e9b7ee44030d"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_129" supported="no">
-		<description>Scope Disk #129 (US, WB)</description>
+	<software name="scopedis_128" supported="no">
+		<description>Scope Disk #129 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #129 (199x)(scope pd)(us)[wb].adf" size="901120" crc="8b1ef694" sha1="5be6845b32e67b99abb9ebe20fbfab6cddea58a8"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_130" supported="no">
-		<description>Scope Disk #130 (US, WB)</description>
+	<software name="scopedis_129" supported="no">
+		<description>Scope Disk #130 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #130 (199x)(scope pd)(us)[wb].adf" size="901120" crc="2a6b7de5" sha1="9384a3f251f7f26e8ded5ca0adcbced0e6e8c71f"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_131" supported="no">
-		<description>Scope Disk #131 (US, WB)</description>
+	<software name="scopedis_130" supported="no">
+		<description>Scope Disk #131 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #131 (199x)(scope pd)(us)[wb].adf" size="901120" crc="5ba2bf7e" sha1="10664d550cd9159f0dedb9d1808c24928efbbd31"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_132" supported="no">
-		<description>Scope Disk #132 (US, WB)</description>
+	<software name="scopedis_131" supported="no">
+		<description>Scope Disk #132 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #132 (199x)(scope pd)(us)[wb].adf" size="901120" crc="e2f5a54f" sha1="18f7141039994fef09bd04e357c073cc918a45ae"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_133" supported="no">
-		<description>Scope Disk #133 (US, WB)</description>
+	<software name="scopedis_132" supported="no">
+		<description>Scope Disk #133 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #133 (199x)(scope pd)(us)[wb].adf" size="901120" crc="bf47ab77" sha1="87d0591eaf805cdf51e6252735e3ad8c61e3c3a4"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_134" supported="no">
-		<description>Scope Disk #134 (US, WB)</description>
+	<software name="scopedis_133" supported="no">
+		<description>Scope Disk #134 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #134 (199x)(scope pd)(us)[wb].adf" size="901120" crc="732dfbe8" sha1="9598681110d9cd27ba821d24a9c01357deb1365a"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_135" supported="no">
-		<description>Scope Disk #135 (US, WB)</description>
+	<software name="scopedis_134" supported="no">
+		<description>Scope Disk #135 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #135 (199x)(scope pd)(us)[wb].adf" size="901120" crc="a652fd8d" sha1="c801082d31d08e33760bf35bf47b9fde2e9b274f"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_136" supported="no">
-		<description>Scope Disk #136 (US, WB)</description>
+	<software name="scopedis_135" supported="no">
+		<description>Scope Disk #136 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #136 (199x)(scope pd)(us)[wb].adf" size="901120" crc="06edcd8d" sha1="815b56c4a6edeb5ae3fa9faf74adaddf2713d324"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_137" supported="no">
-		<description>Scope Disk #137 (US, WB)</description>
+	<software name="scopedis_136" supported="no">
+		<description>Scope Disk #137 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #137 (199x)(scope pd)(us)[wb].adf" size="901120" crc="f6ee84d4" sha1="1ec6aee2fad8f8cb2bbb118cef46841e77bf7e6a"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_138" supported="no">
-		<description>Scope Disk #138 (US, WB)</description>
+	<software name="scopedis_137" supported="no">
+		<description>Scope Disk #138 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #138 (199x)(scope pd)(us)[wb].adf" size="901120" crc="69127203" sha1="5f38580637cfe9e637b431402110bc44a0f12eec"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_139" supported="no">
-		<description>Scope Disk #139 (US, WB)</description>
+	<software name="scopedis_138" supported="no">
+		<description>Scope Disk #139 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #139 (199x)(scope pd)(us)[wb].adf" size="901120" crc="fc298f7f" sha1="964a3bb17ab50a49bee74ae9a9974c6ecb18e237"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_140" supported="no">
-		<description>Scope Disk #140 (US, WB)</description>
+	<software name="scopedis_139" supported="no">
+		<description>Scope Disk #140 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #140 (199x)(scope pd)(us)[wb].adf" size="901120" crc="90a0ff76" sha1="922d147f4a34bd722578c84984a06760923928cf"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_141" supported="no">
-		<description>Scope Disk #141 (US, WB)</description>
+	<software name="scopedis_140" supported="no">
+		<description>Scope Disk #141 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #141 (199x)(scope pd)(us)[wb].adf" size="901120" crc="9fa6fb8a" sha1="8cd825cbf3807107d4046c4ce5dec44bd46c6fc4"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_142" supported="no">
-		<description>Scope Disk #142 (US, WB)</description>
+	<software name="scopedis_141" supported="no">
+		<description>Scope Disk #142 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #142 (199x)(scope pd)(us)[wb].adf" size="901120" crc="fdb9e076" sha1="266b58f8077acba01efc5f56a9850ee8a04ba4af"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_143" supported="no">
-		<description>Scope Disk #143 (US, WB)</description>
+	<software name="scopedis_142" supported="no">
+		<description>Scope Disk #143 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #143 (199x)(scope pd)(us)[wb].adf" size="901120" crc="39a907e7" sha1="0ea385422b6945caaacead63dad38d29a9aa7067"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_144" supported="no">
-		<description>Scope Disk #144 (US, WB)</description>
+	<software name="scopedis_143" supported="no">
+		<description>Scope Disk #144 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #144 (199x)(scope pd)(us)[wb].adf" size="901120" crc="72c3a705" sha1="449ff676a48808ce9c60dd6e51d4772e45ce1297"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_145" supported="no">
-		<description>Scope Disk #145 (US, WB)</description>
+	<software name="scopedis_144" supported="no">
+		<description>Scope Disk #145 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #145 (199x)(scope pd)(us)[wb].adf" size="901120" crc="c38b827c" sha1="084f308f928129cad05a0c1b6f51df8e251309df"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_146" supported="no">
-		<description>Scope Disk #146 (US, WB)</description>
+	<software name="scopedis_145" supported="no">
+		<description>Scope Disk #146 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #146 (199x)(scope pd)(us)[wb].adf" size="901120" crc="e3aac69f" sha1="2a6af2bc4121c257974fe4f83b59965bd898a0c6"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_147" supported="no">
-		<description>Scope Disk #147 (US, WB)</description>
+	<software name="scopedis_146" supported="no">
+		<description>Scope Disk #147 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #147 (199x)(scope pd)(us)[wb].adf" size="901120" crc="79ab3eb1" sha1="bd37156494fd432adcd1c67e16bdeb6351acf91b"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_148" supported="no">
-		<description>Scope Disk #148 (US, WB)</description>
+	<software name="scopedis_147" supported="no">
+		<description>Scope Disk #148 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #148 (199x)(scope pd)(us)[wb].adf" size="901120" crc="b293222f" sha1="3beef037eb1c5625105dfd6aa056338e81cc0ec6"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_149" supported="no">
-		<description>Scope Disk #149 (US, WB)</description>
+	<software name="scopedis_148" supported="no">
+		<description>Scope Disk #149 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #149 (199x)(scope pd)(us)[wb].adf" size="901120" crc="bbb88300" sha1="e3bf4377a838246b6f65f8604da0f9c6dbabcbcc"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_150" supported="no">
-		<description>Scope Disk #150 (US, WB)</description>
+	<software name="scopedis_149" supported="no">
+		<description>Scope Disk #150 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #150 (199x)(scope pd)(us)[wb].adf" size="901120" crc="fa0e1ed8" sha1="800a1adef2d8c34c650ec1c4e2d549360856bcee"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_151" supported="no">
-		<description>Scope Disk #151 (US, WB)</description>
+	<software name="scopedis_150" supported="no">
+		<description>Scope Disk #151 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #151 (199x)(scope pd)(us)[wb].adf" size="901120" crc="8d9e81f9" sha1="c24540ca1f1b3ec13688f4ba57e975869142a15c"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_152" supported="no">
-		<description>Scope Disk #152 (US, WB)</description>
+	<software name="scopedis_151" supported="no">
+		<description>Scope Disk #152 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #152 (199x)(scope pd)(us)[wb].adf" size="901120" crc="e11e2dc8" sha1="fea9da1103806d36248e839a5ac151fb5f2a63c2"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_153" supported="no">
-		<description>Scope Disk #153 (US, WB)</description>
+	<software name="scopedis_152" supported="no">
+		<description>Scope Disk #153 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #153 (199x)(scope pd)(us)[wb].adf" size="901120" crc="6480c390" sha1="b55fa81d97772e965ecb83f7d6a013ff56c1a78d"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_154" supported="no">
-		<description>Scope Disk #154 (US, WB)</description>
+	<software name="scopedis_153" supported="no">
+		<description>Scope Disk #154 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #154 (199x)(scope pd)(us)[wb].adf" size="901120" crc="5bc52357" sha1="1985d5ca06fb184e5223f3123975ba81366c19fd"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_155" supported="no">
-		<description>Scope Disk #155 (US, WB)</description>
+	<software name="scopedis_154" supported="no">
+		<description>Scope Disk #155 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #155 (199x)(scope pd)(us)[wb].adf" size="901120" crc="c08d8586" sha1="5b18fd68eba7698744e0cc98055af9538fdd6bee"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_156" supported="no">
-		<description>Scope Disk #156 (US, WB)</description>
+	<software name="scopedis_155" supported="no">
+		<description>Scope Disk #156 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #156 (199x)(scope pd)(us)[wb].adf" size="901120" crc="8491d8d7" sha1="b1652ec759cbdbcd2188501ac76347ce2e0e4010"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_157" supported="no">
-		<description>Scope Disk #157 (US, WB)</description>
+	<software name="scopedis_156" supported="no">
+		<description>Scope Disk #157 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #157 (199x)(scope pd)(us)[wb].adf" size="901120" crc="fd7f2d4a" sha1="f369aee7f537ee731d69b22a2783c164ac323b97"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_158" supported="no">
-		<description>Scope Disk #158 (US, WB)</description>
+	<software name="scopedis_157" supported="no">
+		<description>Scope Disk #158 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #158 (199x)(scope pd)(us)[wb].adf" size="901120" crc="a5f72006" sha1="af9dddfdea2fcc67207fab5b52bc27a68c987586"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_159" supported="no">
-		<description>Scope Disk #159 (US, WB)</description>
+	<software name="scopedis_158" supported="no">
+		<description>Scope Disk #159 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #159 (199x)(scope pd)(us)[wb].adf" size="901120" crc="8de7258f" sha1="ce79bbbfe84df20461be5f44b46b841d64467f45"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_160" supported="no">
-		<description>Scope Disk #160 (US, WB)</description>
+	<software name="scopedis_159" supported="no">
+		<description>Scope Disk #160 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #160 (199x)(scope pd)(us)[wb].adf" size="901120" crc="575a27b3" sha1="a58fd0bcaef0f44e2c0b266d7b8f55ac9ddfb53b"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_161" supported="no">
-		<description>Scope Disk #161 (US, WB)</description>
+	<software name="scopedis_160" supported="no">
+		<description>Scope Disk #161 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #161 (199x)(scope pd)(us)[wb].adf" size="901120" crc="48f84946" sha1="7c468fd6496b214e58efb05711d8b67435312a97"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_162" supported="no">
-		<description>Scope Disk #162 (US, WB)</description>
+	<software name="scopedis_161" supported="no">
+		<description>Scope Disk #162 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #162 (199x)(scope pd)(us)[wb].adf" size="901120" crc="b37b7c2f" sha1="32c86e0672400bfa3bd00af6680293d1a4a4d37d"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_163" supported="no">
-		<description>Scope Disk #163 (US, WB)</description>
+	<software name="scopedis_162" supported="no">
+		<description>Scope Disk #163 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #163 (199x)(scope pd)(us)[wb].adf" size="901120" crc="eacadd72" sha1="c601a9238663ae8dfa01cd32b38c1813afb1edfb"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_164" supported="no">
-		<description>Scope Disk #164 (US, WB)</description>
+	<software name="scopedis_163" supported="no">
+		<description>Scope Disk #164 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #164 (199x)(scope pd)(us)[wb].adf" size="901120" crc="4d9191e2" sha1="a7efa4c4d13488ac07b7812e9d89580cfae13e22"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_165" supported="no">
-		<description>Scope Disk #165 (US, WB)</description>
+	<software name="scopedis_164" supported="no">
+		<description>Scope Disk #165 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #165 (199x)(scope pd)(us)[wb].adf" size="901120" crc="26fcf469" sha1="0a212615f41f835c52fee3f353e3ed8d4e3b91bb"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_166" supported="no">
-		<description>Scope Disk #166 (US, WB)</description>
+	<software name="scopedis_165" supported="no">
+		<description>Scope Disk #166 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #166 (199x)(scope pd)(us)[wb].adf" size="901120" crc="a3f0591f" sha1="8f1309501938aa4717b99a30bcd8921f427771d9"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_167" supported="no">
-		<description>Scope Disk #167 (US, WB)</description>
+	<software name="scopedis_166" supported="no">
+		<description>Scope Disk #167 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #167 (199x)(scope pd)(us)[wb].adf" size="901120" crc="150d83be" sha1="2e59f23a941038d753e221e826ff29020c80c825"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_168" supported="no">
-		<description>Scope Disk #168 (US, WB)</description>
+	<software name="scopedis_167" supported="no">
+		<description>Scope Disk #168 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #168 (199x)(scope pd)(us)[wb].adf" size="901120" crc="b78d1df4" sha1="cedb79d46aa42542c9b49fc1cc2a12afbc4aab4f"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_169" supported="no">
-		<description>Scope Disk #169 (US, WB)</description>
+	<software name="scopedis_168" supported="no">
+		<description>Scope Disk #169 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #169 (199x)(scope pd)(us)[wb].adf" size="901120" crc="98af4267" sha1="710f5f248cbf52730c4238b34ebf58c4d1750a58"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_170" supported="no">
-		<description>Scope Disk #170 (US, WB)</description>
+	<software name="scopedis_169" supported="no">
+		<description>Scope Disk #170 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #170 (199x)(scope pd)(us)[wb].adf" size="901120" crc="5ee867fd" sha1="02ed1b16f67386ad2e10fd3b361f62c7f3ce8f58"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_171" supported="no">
-		<description>Scope Disk #171 (US, WB)</description>
+	<software name="scopedis_170" supported="no">
+		<description>Scope Disk #171 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #171 (199x)(scope pd)(us)[wb].adf" size="901120" crc="ef12881d" sha1="81708af813ae5fbb1881cfbcd1e68863bad8984c"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_172" supported="no">
-		<description>Scope Disk #172 (US, WB)</description>
+	<software name="scopedis_171" supported="no">
+		<description>Scope Disk #172 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #172 (199x)(scope pd)(us)[wb].adf" size="901120" crc="1a1dff08" sha1="8d2588a8d6efda757a471703240abf2f96ca3b54"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_173" supported="no">
-		<description>Scope Disk #173 (US, WB)</description>
+	<software name="scopedis_172" supported="no">
+		<description>Scope Disk #173 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #173 (199x)(scope pd)(us)[wb].adf" size="901120" crc="9c72bd93" sha1="6de5c41887a47b542b61256bae16ad8e78179fd3"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_174" supported="no">
-		<description>Scope Disk #174 (US, WB)</description>
+	<software name="scopedis_173" supported="no">
+		<description>Scope Disk #174 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #174 (199x)(scope pd)(us)[wb].adf" size="901120" crc="b263fcb3" sha1="d64433c9fe78e30d2f790f08911077ec00c2c1bc"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_175" supported="no">
-		<description>Scope Disk #175 (US, WB)</description>
+	<software name="scopedis_174" supported="no">
+		<description>Scope Disk #175 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #175 (199x)(scope pd)(us)[wb].adf" size="901120" crc="0937d164" sha1="a8fa3f6de56fe25cb8efbc4c05dc9ddad034dbaf"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_176" supported="no">
-		<description>Scope Disk #176 (US, WB)</description>
+	<software name="scopedis_175" supported="no">
+		<description>Scope Disk #176 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #176 (199x)(scope pd)(us)[wb].adf" size="901120" crc="7e9a1722" sha1="645748c841bf4ca8ed8a4e10ec2be4aea18c8260"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_177" supported="no">
-		<description>Scope Disk #177 (US, WB)</description>
+	<software name="scopedis_176" supported="no">
+		<description>Scope Disk #177 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #177 (199x)(scope pd)(us)[wb].adf" size="901120" crc="02392f2b" sha1="74ee8e6096cbdf4b20d14df83f842f45fd902b60"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_178" supported="no">
-		<description>Scope Disk #178 (US, WB)</description>
+	<software name="scopedis_177" supported="no">
+		<description>Scope Disk #178 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #178 (199x)(scope pd)(us)[wb].adf" size="901120" crc="1aed8f21" sha1="1504ef2c3b7cca341b1090cad152b0e1a78646a2"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_179" supported="no">
-		<description>Scope Disk #179 (US, WB)</description>
+	<software name="scopedis_178" supported="no">
+		<description>Scope Disk #179 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #179 (199x)(scope pd)(us)[wb].adf" size="901120" crc="ab503b5f" sha1="c239fb6772204fb1c94990c58409347b884890f0"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_180" supported="no">
-		<description>Scope Disk #180 (US, WB)</description>
+	<software name="scopedis_179" supported="no">
+		<description>Scope Disk #180 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #180 (199x)(scope pd)(us)[wb].adf" size="901120" crc="c6777cc2" sha1="7c337a357f38faf4696eb176c9e1bdcf0f67aadb"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_181" supported="no">
-		<description>Scope Disk #181 (US, WB)</description>
+	<software name="scopedis_180" supported="no">
+		<description>Scope Disk #181 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #181 (199x)(scope pd)(us)[wb].adf" size="901120" crc="0f0a701d" sha1="c2185c23499dbcc81aca88aaa74f0e18f49831e6"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_182" supported="no">
-		<description>Scope Disk #182 (US, WB)</description>
+	<software name="scopedis_181" supported="no">
+		<description>Scope Disk #182 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #182 (199x)(scope pd)(us)[wb].adf" size="901120" crc="be4f0eae" sha1="db569899b4fabf1060636e6c3f3c7ee880691b5d"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_183" supported="no">
-		<description>Scope Disk #183 (US, WB)</description>
+	<software name="scopedis_182" supported="no">
+		<description>Scope Disk #183 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #183 (199x)(scope pd)(us)[wb].adf" size="901120" crc="4b3f50cc" sha1="cf4b319c5ff0d685a5e8da7b3b48805c395de5ea"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_184" supported="no">
-		<description>Scope Disk #184 (US, WB)</description>
+	<software name="scopedis_183" supported="no">
+		<description>Scope Disk #184 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #184 (199x)(scope pd)(us)[wb].adf" size="901120" crc="102884ba" sha1="03e3026f49fe453ba6b3a8a1d41088a79bdd1600"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_185" supported="no">
-		<description>Scope Disk #185 (US, WB)</description>
+	<software name="scopedis_184" supported="no">
+		<description>Scope Disk #185 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #185 (199x)(scope pd)(us)[wb].adf" size="901120" crc="630aec48" sha1="2c77527137d52637f8a1de5bc7df5c7d2d580d9f"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_186" supported="no">
-		<description>Scope Disk #186 (US, WB)</description>
+	<software name="scopedis_185" supported="no">
+		<description>Scope Disk #186 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #186 (199x)(scope pd)(us)[wb].adf" size="901120" crc="71c0eed4" sha1="1f6fa73a6b5357228029e750ba573230ed9ed70a"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_187" supported="no">
-		<description>Scope Disk #187 (US, WB)</description>
+	<software name="scopedis_186" supported="no">
+		<description>Scope Disk #187 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #187 (199x)(scope pd)(us)[wb].adf" size="901120" crc="c79a8325" sha1="6da2f743f3d0030c33a9509478ee7f705db01fe4"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_188" supported="no">
-		<description>Scope Disk #188 (US, WB)</description>
+	<software name="scopedis_187" supported="no">
+		<description>Scope Disk #188 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #188 (199x)(scope pd)(us)[wb].adf" size="901120" crc="0ceb4155" sha1="85d26a4b66fda9b58810c122821d2c724d21859e"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_189" supported="no">
-		<description>Scope Disk #189 (US, WB)</description>
+	<software name="scopedis_188" supported="no">
+		<description>Scope Disk #189 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #189 (199x)(scope pd)(us)[wb].adf" size="901120" crc="e1ae1191" sha1="4cf68dad18c5806733ba492a3e42f9b7dc661a54"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_190" supported="no">
-		<description>Scope Disk #190 (US, WB)</description>
+	<software name="scopedis_189" supported="no">
+		<description>Scope Disk #190 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #190 (199x)(scope pd)(us)[wb].adf" size="901120" crc="36f96a71" sha1="35b853976cd409d1a6c357082d0735e9bc5b4eea"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_191" supported="no">
-		<description>Scope Disk #191 (US, WB)</description>
+	<software name="scopedis_190" supported="no">
+		<description>Scope Disk #191 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #191 (199x)(scope pd)(us)[wb].adf" size="901120" crc="11ec9ba6" sha1="4df4bfb118afd156056ccb65aaa5f18ab98d0884"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_192" supported="no">
-		<description>Scope Disk #192 (US, WB)</description>
+	<software name="scopedis_191" supported="no">
+		<description>Scope Disk #192 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #192 (199x)(scope pd)(us)[wb].adf" size="901120" crc="bf0ea4bf" sha1="169a32909a0fb5f8ae4b5b486326691d1442ef50"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_193" supported="no">
-		<description>Scope Disk #193 (US, WB)</description>
+	<software name="scopedis_192" supported="no">
+		<description>Scope Disk #193 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #193 (199x)(scope pd)(us)[wb].adf" size="901120" crc="2ecef054" sha1="01eba7227da398cef4ae58923905b5f3646c1a56"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_194" supported="no">
-		<description>Scope Disk #194 (US, WB)</description>
+	<software name="scopedis_193" supported="no">
+		<description>Scope Disk #194 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #194 (199x)(scope pd)(us)[wb].adf" size="901120" crc="c059ae17" sha1="4a86414858dd715107c8d18395ad83ff6711039c"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_195" supported="no">
-		<description>Scope Disk #195 (US, WB)</description>
+	<software name="scopedis_194" supported="no">
+		<description>Scope Disk #195 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #195 (199x)(scope pd)(us)[wb].adf" size="901120" crc="0c41f163" sha1="51cf031bce31df9c4e2c28314eb2dee8441e310b"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_196" supported="no">
-		<description>Scope Disk #196 (US, WB)</description>
+	<software name="scopedis_195" supported="no">
+		<description>Scope Disk #196 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #196 (199x)(scope pd)(us)[wb].adf" size="901120" crc="b9767e41" sha1="a0c70266830a6857815fc9b5360b8d88e1acc0b2"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_197" supported="no">
-		<description>Scope Disk #197 (US, WB)</description>
+	<software name="scopedis_196" supported="no">
+		<description>Scope Disk #197 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #197 (199x)(scope pd)(us)[wb].adf" size="901120" crc="75a0b1d5" sha1="22075d4b4f3fa432a898825262610ddd5d35632f"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_198" supported="no">
-		<description>Scope Disk #198 (US, WB)</description>
+	<software name="scopedis_197" supported="no">
+		<description>Scope Disk #198 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #198 (199x)(scope pd)(us)[wb].adf" size="901120" crc="91ece617" sha1="ed379374404b9dc92af5a59511c3d39445702055"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_199" supported="no">
-		<description>Scope Disk #199 (US, WB)</description>
+	<software name="scopedis_198" supported="no">
+		<description>Scope Disk #199 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #199 (199x)(scope pd)(us)[wb].adf" size="901120" crc="e0a0d7ba" sha1="d85f20bb4519ddd927b1febac1070a47058c6e7c"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_200" supported="no">
-		<description>Scope Disk #200 (US, WB)</description>
+	<software name="scopedis_199" supported="no">
+		<description>Scope Disk #200 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #200 (199x)(scope pd)(us)[wb].adf" size="901120" crc="b2f0b34f" sha1="46ba52855cc8e722093177e3e9440868e12a18e4"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_201" supported="no">
-		<description>Scope Disk #201 (US, WB)</description>
+	<software name="scopedis_200" supported="no">
+		<description>Scope Disk #201 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #201 (199x)(scope pd)(us)[wb].adf" size="901120" crc="0859a3dd" sha1="3f01f4bfd2d417b8836939d35c316ec89bf6ccde"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_202" supported="no">
-		<description>Scope Disk #202 (US, WB)</description>
+	<software name="scopedis_201" supported="no">
+		<description>Scope Disk #202 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #202 (199x)(scope pd)(us)[wb].adf" size="901120" crc="2232c70b" sha1="c0c7b60708494ee38e2ff4f2b06c69948381ee18"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_203" supported="no">
-		<description>Scope Disk #203 (US, WB)</description>
+	<software name="scopedis_202" supported="no">
+		<description>Scope Disk #203 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #203 (199x)(scope pd)(us)[wb].adf" size="901120" crc="90881009" sha1="b7dabc718c57400071d898d08ec4b3759540a531"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_204" supported="no">
-		<description>Scope Disk #204 (US, WB)</description>
+	<software name="scopedis_203" supported="no">
+		<description>Scope Disk #204 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #204 (199x)(scope pd)(us)[wb].adf" size="901120" crc="2afd3391" sha1="0df9701189b7259f4627e84a613063ad0d8a92c5"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_205" supported="no">
-		<description>Scope Disk #205 (US, WB)</description>
+	<software name="scopedis_204" supported="no">
+		<description>Scope Disk #205 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #205 (199x)(scope pd)(us)[wb].adf" size="901120" crc="bfd64640" sha1="b7cc9065076e7952b3e16e7ae3dd6aabf1f7e50f"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_206" supported="no">
-		<description>Scope Disk #206 (US, WB)</description>
+	<software name="scopedis_205" supported="no">
+		<description>Scope Disk #206 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #206 (199x)(scope pd)(us)[wb].adf" size="901120" crc="155f5f30" sha1="c969e783efb0ca80b43fae5a72a832e778143171"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_207" supported="no">
-		<description>Scope Disk #207 (US, WB)</description>
+	<software name="scopedis_206" supported="no">
+		<description>Scope Disk #207 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #207 (199x)(scope pd)(us)[wb].adf" size="901120" crc="c51d4737" sha1="659e15b787e7ad92ba83a0b7815922a1d2b28ee0"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_208" supported="no">
-		<description>Scope Disk #208 (US, WB)</description>
+	<software name="scopedis_207" supported="no">
+		<description>Scope Disk #208 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #208 (199x)(scope pd)(us)[wb].adf" size="901120" crc="e56b375f" sha1="b28168bc1c1fb10dcf9f85b7e9c5d49871e7e1f1"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_209" supported="no">
-		<description>Scope Disk #209 (US, WB)</description>
+	<software name="scopedis_208" supported="no">
+		<description>Scope Disk #209 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #209 (199x)(scope pd)(us)[wb].adf" size="901120" crc="34776e09" sha1="ae94cf0e77b3970e77d824f79d08084a2d88bfd3"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_210" supported="no">
-		<description>Scope Disk #210 (US, WB)</description>
+	<software name="scopedis_209" supported="no">
+		<description>Scope Disk #210 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #210 (199x)(scope pd)(us)[wb].adf" size="901120" crc="fc632f34" sha1="175b135923e38f155473856fdf257d232f975b58"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_211" supported="no">
-		<description>Scope Disk #211 (US, WB)</description>
+	<software name="scopedis_210" supported="no">
+		<description>Scope Disk #211 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #211 (199x)(scope pd)(us)[wb].adf" size="901120" crc="84d8a57f" sha1="29fbd91515f3add1b9e3b6a95f5be0ef4948b653"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_212" supported="no">
-		<description>Scope Disk #212 (US, WB)</description>
+	<software name="scopedis_211" supported="no">
+		<description>Scope Disk #212 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #212 (199x)(scope pd)(us)[wb].adf" size="901120" crc="f67770dd" sha1="6fcf5caf7107e23ef566ee8734bfa24e7e64734a"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_213" supported="no">
-		<description>Scope Disk #213 (US, WB)</description>
+	<software name="scopedis_212" supported="no">
+		<description>Scope Disk #213 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #213 (199x)(scope pd)(us)[wb].adf" size="901120" crc="8b75a762" sha1="b367db308738a5054b73e31ce796e58ff279589f"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_214" supported="no">
-		<description>Scope Disk #214 (US, WB)</description>
+	<software name="scopedis_213" supported="no">
+		<description>Scope Disk #214 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #214 (199x)(scope pd)(us)[wb].adf" size="901120" crc="46edff80" sha1="7ab9047907b208a5baaa98ba7e2bd2ec63c200e2"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_215" supported="no">
-		<description>Scope Disk #215 (US, WB)</description>
+	<software name="scopedis_214" supported="no">
+		<description>Scope Disk #215 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #215 (199x)(scope pd)(us)[wb].adf" size="901120" crc="c25f31a5" sha1="122ddbe4ac6753072fe665e458ed40b7872151ff"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_216" supported="no">
-		<description>Scope Disk #216 (US, WB)</description>
+	<software name="scopedis_215" supported="no">
+		<description>Scope Disk #216 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #216 (199x)(scope pd)(us)[wb].adf" size="901120" crc="ff701942" sha1="d07396c18f79effce4fcdb4e63e6a81e184c4c35"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_217" supported="no">
-		<description>Scope Disk #217 (US, WB)</description>
+	<software name="scopedis_216" supported="no">
+		<description>Scope Disk #217 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #217 (199x)(scope pd)(us)[wb].adf" size="901120" crc="d23f7f70" sha1="798122137b7a80bef08984b2e40831ec00327db7"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_218" supported="no">
-		<description>Scope Disk #218 (US, WB)</description>
+	<software name="scopedis_217" supported="no">
+		<description>Scope Disk #218 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #218 (199x)(scope pd)(us)[wb].adf" size="901120" crc="810be979" sha1="00b0ab9c6593dfc402d7086e6a80f52d6ab3425d"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_219" supported="no">
-		<description>Scope Disk #219 (US, WB)</description>
+	<software name="scopedis_218" supported="no">
+		<description>Scope Disk #219 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #219 (199x)(scope pd)(us)[wb].adf" size="901120" crc="11b884cd" sha1="ef87eddd78be5320d6aaf24b148adb2a29ba7548"/>
 			</dataarea>
 		</part>
 	</software>
 
-	<software name="scopedis_220" supported="no">
-		<description>Scope Disk #220 (US, WB)</description>
+	<software name="scopedis_219" supported="no">
+		<description>Scope Disk #220 (US)</description>
 		<year>199?</year>
 		<publisher>Scope PD</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="scope disk #220 (199x)(scope pd)(us)[wb].adf" size="901120" crc="d8b1b608" sha1="5155477b52bd58e1febd34b9cf2cf6e5417bf58c"/>
 			</dataarea>

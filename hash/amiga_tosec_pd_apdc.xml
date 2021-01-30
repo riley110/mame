@@ -1,13 +1,18 @@
 <?xml version="1.0"?>
 <!DOCTYPE softwarelist SYSTEM "softwarelist.dtd">
+<!--
+This file was generated directly from a TOSEC data file as available freely on tosecdev.org.
+Credit goes to the TOSECDEV team for building this vast database over the years.
+-->
 <softwarelist name="amiga_tosec_pd_apdc" description="Amiga TOSEC - APDC">
 
 	<software name="apdcdisk" supported="no">
-		<description>APDC Disk #001 - Best Graphics and Games (US, WB)</description>
+		<description>APDC Disk #001 - Best Graphics and Games (US)</description>
 		<year>198?</year>
 		<publisher>Amiga Public Domain Connection</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="apdc disk #001 - best graphics and games (198x)(amiga public domain connection)(us)[wb].adf" size="901120" crc="d877165f" sha1="35512f2f02ae72b4193fbf444680733009cac2ed"/>
 			</dataarea>
@@ -15,11 +20,12 @@
 	</software>
 
 	<software name="apdcdisk_1" supported="no">
-		<description>APDC Disk #003 - ABasic Games (US, WB)</description>
+		<description>APDC Disk #003 - ABasic Games (US)</description>
 		<year>198?</year>
 		<publisher>Amiga Public Domain Connection</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="apdc disk #003 - abasic games (198x)(amiga public domain connection)(us)[wb].adf" size="901120" crc="9143b84e" sha1="1a29da11cb8825a14de0b23aff12bbb14b3c2bd7"/>
 			</dataarea>
@@ -27,11 +33,12 @@
 	</software>
 
 	<software name="apdcdisk_2" supported="no">
-		<description>APDC Disk #004 - ABasic Games II (US, WB)</description>
+		<description>APDC Disk #004 - ABasic Games II (US)</description>
 		<year>198?</year>
 		<publisher>Amiga Public Domain Connection</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="apdc disk #004 - abasic games ii (198x)(amiga public domain connection)(us)[wb].adf" size="901120" crc="7f33082d" sha1="aae714044b5a9ad2b7b733bb4b6a227cf4b97d3f"/>
 			</dataarea>
@@ -39,11 +46,12 @@
 	</software>
 
 	<software name="apdcdisk_3" supported="no">
-		<description>APDC Disk #005 - Amiga Basic Programs (US, WB)</description>
+		<description>APDC Disk #005 - Amiga Basic Programs (US)</description>
 		<year>198?</year>
 		<publisher>Amiga Public Domain Connection</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="apdc disk #005 - amiga basic programs (198x)(amiga public domain connection)(us)[wb].adf" size="901120" crc="79226656" sha1="3fd49ce8968ac71705c55e05de125376fc39d44c"/>
 			</dataarea>
@@ -51,11 +59,12 @@
 	</software>
 
 	<software name="apdcdisk_4" supported="no">
-		<description>APDC Disk #007 - Mandelbrot and Fractals (US, WB)</description>
+		<description>APDC Disk #007 - Mandelbrot and Fractals (US)</description>
 		<year>198?</year>
 		<publisher>Amiga Public Domain Connection</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="apdc disk #007 - mandelbrot and fractals (198x)(amiga public domain connection)(us)[wb].adf" size="901120" crc="8c1f43b1" sha1="5b4f15724e07972f2b6e8f77feff3dfc21f8c5f2"/>
 			</dataarea>
@@ -63,11 +72,12 @@
 	</software>
 
 	<software name="apdcdisk_5" supported="no">
-		<description>APDC Disk #008 - Assorted Games (US, WB)</description>
+		<description>APDC Disk #008 - Assorted Games (US)</description>
 		<year>198?</year>
 		<publisher>Amiga Public Domain Connection</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="apdc disk #008 - assorted games (198x)(amiga public domain connection)(us)[wb].adf" size="901120" crc="e0cb21ed" sha1="b0f8ab366d02f625974f7e49a1267b63a80ab0a1"/>
 			</dataarea>
@@ -75,11 +85,12 @@
 	</software>
 
 	<software name="apdcdisk_6" supported="no">
-		<description>APDC Disk #009 - Graphics and Animations (US, WB)</description>
+		<description>APDC Disk #009 - Graphics and Animations (US)</description>
 		<year>198?</year>
 		<publisher>Amiga Public Domain Connection</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="apdc disk #009 - graphics and animations (198x)(amiga public domain connection)(us)[wb].adf" size="901120" crc="06dd4a77" sha1="bf9971cf6da2760d2d3e768f8443c134afa87bf3"/>
 			</dataarea>
@@ -87,11 +98,12 @@
 	</software>
 
 	<software name="apdcdisk_7" supported="no">
-		<description>APDC Disk #011 - Sounds (US, WB)</description>
+		<description>APDC Disk #011 - Sounds (US)</description>
 		<year>198?</year>
 		<publisher>Amiga Public Domain Connection</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="apdc disk #011 - sounds (198x)(amiga public domain connection)(us)[wb].adf" size="901120" crc="a0d27dd9" sha1="9d0e9b46f901c2ffe138d1dab1f8825b60881dcc"/>
 			</dataarea>
@@ -99,11 +111,12 @@
 	</software>
 
 	<software name="apdcdisk_8" supported="no">
-		<description>APDC Disk #013 - Interactive Graphics (US, WB)</description>
+		<description>APDC Disk #013 - Interactive Graphics (US)</description>
 		<year>198?</year>
 		<publisher>Amiga Public Domain Connection</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="apdc disk #013 - interactive graphics (198x)(amiga public domain connection)(us)[wb].adf" size="901120" crc="2e0e5ebc" sha1="3e1703e222e7b11addbb7dcbfb3f78c6f243639f"/>
 			</dataarea>
@@ -111,11 +124,12 @@
 	</software>
 
 	<software name="apdcdisk_9" supported="no">
-		<description>APDC Disk #015 - Icons and Icon Utilities (US, WB)</description>
+		<description>APDC Disk #015 - Icons and Icon Utilities (US)</description>
 		<year>198?</year>
 		<publisher>Amiga Public Domain Connection</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="apdc disk #015 - icons and icon utilities (198x)(amiga public domain connection)(us)[wb].adf" size="901120" crc="f086fc1b" sha1="cea65febf4ca60fa67815f2d863f72ee1e2687da"/>
 			</dataarea>
@@ -123,11 +137,12 @@
 	</software>
 
 	<software name="apdcdisk_10" supported="no">
-		<description>APDC Disk #017 - Emacs Editors (US, WB)</description>
+		<description>APDC Disk #017 - Emacs Editors (US)</description>
 		<year>198?</year>
 		<publisher>Amiga Public Domain Connection</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="apdc disk #017 - emacs editors (198x)(amiga public domain connection)(us)[wb].adf" size="901120" crc="6c37e2bd" sha1="59cb1261d44140fc6ce00a90c520632abc3822e9"/>
 			</dataarea>
@@ -135,11 +150,12 @@
 	</software>
 
 	<software name="apdcdisk_11" supported="no">
-		<description>APDC Disk #018 - General User Utilities (US, WB)</description>
+		<description>APDC Disk #018 - General User Utilities (US)</description>
 		<year>198?</year>
 		<publisher>Amiga Public Domain Connection</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="apdc disk #018 - general user utilities (198x)(amiga public domain connection)(us)[wb].adf" size="901120" crc="cf237076" sha1="82d05f2b73537d2d0585170db44bac77063f4b79"/>
 			</dataarea>
@@ -147,11 +163,12 @@
 	</software>
 
 	<software name="apdcdisk_12" supported="no">
-		<description>APDC Disk #019 - Unix Type Commands (US, WB)</description>
+		<description>APDC Disk #019 - Unix Type Commands (US)</description>
 		<year>198?</year>
 		<publisher>Amiga Public Domain Connection</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="apdc disk #019 - unix type commands (198x)(amiga public domain connection)(us)[wb].adf" size="901120" crc="c46cef79" sha1="ba085d8fdf2c605a3006e09cd3189a386be6fc8f"/>
 			</dataarea>
@@ -159,11 +176,12 @@
 	</software>
 
 	<software name="apdcdisk_13" supported="no">
-		<description>APDC Disk #021 - Telecommunications (US, WB)</description>
+		<description>APDC Disk #021 - Telecommunications (US)</description>
 		<year>198?</year>
 		<publisher>Amiga Public Domain Connection</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="apdc disk #021 - telecommunications (198x)(amiga public domain connection)(us)[wb].adf" size="901120" crc="8445318c" sha1="d77f97470c06d60a37362a897d6ccdc730775531"/>
 			</dataarea>
@@ -171,11 +189,12 @@
 	</software>
 
 	<software name="apdcdisk_14" supported="no">
-		<description>APDC Disk #023 - Word Processing and Databasing (US, WB)</description>
+		<description>APDC Disk #023 - Word Processing and Databasing (US)</description>
 		<year>198?</year>
 		<publisher>Amiga Public Domain Connection</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="apdc disk #023 - word processing and databasing (198x)(amiga public domain connection)(us)[wb].adf" size="901120" crc="2252a295" sha1="f2c925a3bda5372d91842ab7deb2daf59ebb922a"/>
 			</dataarea>
@@ -183,11 +202,12 @@
 	</software>
 
 	<software name="apdcdisk_15" supported="no">
-		<description>APDC Disk #024 - Home Finance (US, WB)</description>
+		<description>APDC Disk #024 - Home Finance (US)</description>
 		<year>198?</year>
 		<publisher>Amiga Public Domain Connection</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="apdc disk #024 - home finance (198x)(amiga public domain connection)(us)[wb].adf" size="901120" crc="23b03365" sha1="5430f60af91bbc118569e14d15c2001a3911bc74"/>
 			</dataarea>
@@ -195,23 +215,18 @@
 	</software>
 
 	<software name="apdcdisk_16" supported="no">
-		<description>APDC Disk #025 - Programming Languages (US, Modified, WB)</description>
+		<description>APDC Disk #025 - Programming Languages (US)</description>
 		<year>198?</year>
 		<publisher>Amiga Public Domain Connection</publisher>
 
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop1" interface="floppy_3_5">
+			<feature name="part_id" value="Modified, WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="apdc disk #025 - programming languages (198x)(amiga public domain connection)(us)[m][wb].adf" size="901120" crc="c09bc498" sha1="24de63ce7d8e0b1810663de2a8c3e48934ab3b2f"/>
 			</dataarea>
 		</part>
-	</software>
-
-	<software name="apdcdisk_17" supported="no">
-		<description>APDC Disk #025 - Programming Languages (US, WB)</description>
-		<year>198?</year>
-		<publisher>Amiga Public Domain Connection</publisher>
-
-		<part name="flop" interface="floppy_3_5">
+		<part name="flop2" interface="floppy_3_5">
+			<feature name="part_id" value="WB"/>
 			<dataarea name="rom" size="901120">
 				<rom name="apdc disk #025 - programming languages (198x)(amiga public domain connection)(us)[wb].adf" size="901120" crc="cf3b0a1b" sha1="422b53a712be984db81add255a0aa7bcbf1cf3eb"/>
 			</dataarea>
